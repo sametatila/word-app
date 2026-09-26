@@ -142,11 +142,11 @@
  { "tr": "Almancada „v“ genelde f okunur: faater, fiir. v gibi söylersen başka kelime duyulur.", "kind": "drill.fix", "en": "In German „v“ is usually read as f: faa-ter, feer. Say it as a v and another word is heard." },
  { "tr": "„wohne“ içindeki h ünlüyü uzatır; „Stadt“ kısa a — uzun söylersen „Staat“ (devlet) olur.", "kind": "drill.fix", "en": "The h inside „wohne“ lengthens the vowel; „Stadt“ has a short a — said long it becomes „Staat“ (state)." },
  { "tr": "Tek sessizden önce ünlü uzun, çift sessizden önce kısa: „Ofen“ OO-fen, „offen“ ise kısa OF-fen.", "kind": "drill.fix", "en": "A vowel is long before a single consonant and short before a double one: „Ofen“ is OH-fen, but „offen“ is short: OF-fen." },
- { "tr": "Bildirim kartını doldur.", "kind": "form.prompt", "en": "Fill in the notification card." },
- { "tr": "Dil kartını doldur.", "kind": "form.prompt", "en": "Fill in the language card." },
- { "tr": "Maç kartını doldur.", "kind": "form.prompt", "en": "Fill in the match card." },
- { "tr": "Gezi kartını doldur.", "kind": "form.prompt", "en": "Fill in the trip card." },
- { "tr": "İlaç kartını doldur.", "kind": "form.prompt", "en": "Fill in the medicine card." },
- { "tr": "Durum kartını doldur.", "kind": "form.prompt", "en": "Fill in the situation card." },
- { "tr": "Rakam kartını doldur.", "kind": "form.prompt", "en": "Fill in the figures card." }
+ { "tr": "Bildirim kartını doldur.", "kind": "form.prompt", "en": "Fill out the notification card." },
+ { "tr": "Dil kartını doldur.", "kind": "form.prompt", "en": "Fill out the language card." },
+ { "tr": "Maç kartını doldur.", "kind": "form.prompt", "en": "Fill out the match card." },
+ { "tr": "Gezi kartını doldur.", "kind": "form.prompt", "en": "Fill out the trip card." },
+ { "tr": "İlaç kartını doldur.", "kind": "form.prompt", "en": "Fill out the medicine card." },
+ { "tr": "Durum kartını doldur.", "kind": "form.prompt", "en": "Fill out the situation card." },
+ { "tr": "Rakam kartını doldur.", "kind": "form.prompt", "en": "Fill out the figures card." }
 ]

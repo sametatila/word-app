@@ -112,7 +112,7 @@ export const b1U33: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "die Wunde", tr: "yara", en: "wound" },
-      { de: "das Pflaster", tr: "yara bandı", en: "plaster" },
+      { de: "das Pflaster", tr: "yara bandı", en: "adhesive bandage" },
       { de: "die Infektion", tr: "enfeksiyon", en: "infection" },
       { de: "das Schmerzmittel", tr: "ağrı kesici", en: "painkiller" },
       { de: "brechen", tr: "kırmak", en: "to break" },

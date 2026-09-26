@@ -103,8 +103,8 @@ export const deA2P3: SkillExercise[] = [
     intro: "Bir muhabir sokakta iki kişiye yeni yaya bölgesini soruyor: kim ne buluyor, sorun ne.",
     gloss: [
       { de: "der Fußgänger", tr: "yaya", en: "pedestrian" },
-      { de: "der Kinderwagen", tr: "bebek arabası", en: "pram" },
-      { de: "der Umsatz", tr: "ciro", en: "turnover" },
+      { de: "der Kinderwagen", tr: "bebek arabası", en: "stroller" },
+      { de: "der Umsatz", tr: "ciro", en: "revenue" },
       { de: "der Lieferwagen", tr: "dağıtım aracı", en: "delivery van" },
       { de: "der Lärm", tr: "gürültü", en: "noise" },
       { de: "bestimmen", tr: "belirlemek", en: "to set" },

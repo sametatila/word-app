@@ -6,7 +6,7 @@
  { "tr": "İstisnalar için bir anlaşma öner.", "kind": "exchange.hint", "en": "Propose an agreement for exceptions." },
  { "tr": "İş bölümünü yap ve kararı özetle.", "kind": "exchange.hint", "en": "Share out the work and sum the decision up." },
  { "tr": "Somut bir gözlem ya da rakam ver.", "kind": "exchange.hint", "en": "Give a concrete observation or a figure." },
- { "tr": "Sonra arayıp arayamayacağını sor.", "kind": "exchange.hint", "en": "Ask whether you may ring back later." },
+ { "tr": "Sonra arayıp arayamayacağını sor.", "kind": "exchange.hint", "en": "Ask whether you may call back later." },
  { "tr": "«Ausweis» sözcüğüyle bir soru kur.", "kind": "exchange.hint", "en": "Form a question with the word «Ausweis»." },
  { "tr": "«Beitrag» sözcüğüyle bir soru kur.", "kind": "exchange.hint", "en": "Form a question with the word «Beitrag»." },
  { "tr": "Bir hediye söyle ve nedenini ekle.", "kind": "exchange.hint", "en": "Name a present and add why." },

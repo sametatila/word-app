@@ -137,7 +137,7 @@
  { "tr": "Gerçekleşmemiş bir dileği söylüyorsun.", "kind": "speaking.situation", "en": "You are expressing a wish that did not come true." },
  { "tr": "ist erreicht worden / nachdem … hatten", "kind": "focus", "en": "ist erreicht worden / nachdem … hatten" },
  { "tr": "İş arkadaşlarına kendini tanıtıyorsun.", "kind": "speaking.situation", "en": "You are introducing yourself to your colleagues." },
- { "tr": "İyi fikir! Bence bahçede kutlamalıyız.", "kind": "turn", "en": "Good idea! I think we should celebrate in the garden." },
+ { "tr": "İyi fikir! Bence bahçede kutlamalıyız.", "kind": "turn", "en": "Good idea! I think we should celebrate in the backyard." },
  { "tr": "İyi günler, nasıl yardımcı olabilirim?", "kind": "turn", "en": "Hello, what can I do for you?" },
  { "tr": "İyi günler, üşütmüşüm. Ne önerirsiniz?", "kind": "turn", "en": "Hello, I have caught a cold. What do you recommend?" },
  { "tr": "Jonas neden şehirde bir şey bulamıyor?", "kind": "question", "en": "Why can't Jonas find anything in the city?" },

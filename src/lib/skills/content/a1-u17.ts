@@ -32,7 +32,7 @@ export const a1U17: SkillExercise[] = [
     intro: "Apartman girişindeki kuralları okuyacaksın. Ne yasak?",
     gloss: [
       { de: "die Hausordnung", tr: "apartman yönetmeliği", en: "house rules" },
-      { de: "der Müll", tr: "çöp", en: "rubbish" },
+      { de: "der Müll", tr: "çöp", en: "trash" },
       { de: "leise", tr: "sessiz", en: "quiet" },
       { de: "dürfen", tr: "izinli olmak", en: "to be allowed" },
       { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },

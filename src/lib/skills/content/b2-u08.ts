@@ -441,7 +441,7 @@ export const b2U08: SkillExercise[] = [
         minWords: 70,
         phrases: [
           { de: "Er sagte, der Termin sei nicht zu halten.", tr: "tarihin tutulamayacağını söyledi", en: "he said the deadline could not be met" },
-          { de: "Angeblich soll die Stelle gestrichen werden.", tr: "iddiaya göre kadro kaldırılacakmış", en: "the post is allegedly being cut" },
+          { de: "Angeblich soll die Stelle gestrichen werden.", tr: "iddiaya göre kadro kaldırılacakmış", en: "the position is allegedly being cut" },
           { de: "Ich gebe das nur wieder.", tr: "ben yalnızca aktarıyorum", en: "I'm only relaying this" },
         ],
         sample:

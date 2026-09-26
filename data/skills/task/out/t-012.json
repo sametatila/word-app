@@ -132,7 +132,7 @@
  { "tr": "Baş sorumlu kim, yazıldı mı?", "kind": "free.checklist", "en": "Is it written down who is chiefly responsible?" },
  { "tr": "Bir aile alışkanlığı var mı?", "kind": "free.checklist", "en": "Is there a family habit?" },
  { "tr": "Bir je-desto cümlesi var mı?", "kind": "free.checklist", "en": "Is there a je-desto sentence?" },
- { "tr": "Çöp gününü ve nedenini söyle", "kind": "free.checklist", "en": "Say which day the bins go out and why" },
+ { "tr": "Çöp gününü ve nedenini söyle", "kind": "free.checklist", "en": "Say which day the trash goes out and why" },
  { "tr": "Dükkânın adını ve yerini yaz", "kind": "free.checklist", "en": "Write the name of the shop and where it is" },
  { "tr": "Geçmiş durumu anlatılmış mı?", "kind": "free.checklist", "en": "Has the earlier state been described?" },
  { "tr": "İşle ilgili bir iki soru sor", "kind": "free.checklist", "en": "Ask one or two questions about the job" },

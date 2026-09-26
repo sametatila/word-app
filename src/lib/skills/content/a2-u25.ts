@@ -112,7 +112,7 @@ export const a2U25: SkillExercise[] = [
     intro: "Almanya'ya taşınan biri gözlemlerini yazıyor. Neyi haklı, neyi tuhaf buluyor?",
     gloss: [
       { de: "getrennt", tr: "ayrı", en: "separated" },
-      { de: "der Mülleimer", tr: "çöp kovası", en: "bin" },
+      { de: "der Mülleimer", tr: "çöp kovası", en: "trash can" },
       { de: "sonntags", tr: "pazarları", en: "on Sundays" },
       { de: "der Bäcker", tr: "fırıncı", en: "baker" },
       { de: "ungerecht", tr: "adaletsiz", en: "unfair" },

@@ -141,10 +141,10 @@
  },
  {
   "conversation": "de-a1-cafe",
-  "sceneEn": "You are sitting in a café and the waiter has come to take your order. Order something with the pattern 'Ich möchte …', make small talk, and ask for the bill at the end.",
+  "sceneEn": "You are sitting in a café and the waiter has come to take your order. Order something with the pattern 'Ich möchte …', make small talk, and ask for the check at the end.",
   "partnerEn": "a friendly waiter",
   "openingEn": "Hello! What would you like to order?",
-  "goalEn": "The order has been placed, it has arrived at the table and the bill has been asked for."
+  "goalEn": "The order has been placed, it has arrived at the table and the check has been asked for."
  },
  {
   "conversation": "de-a1-fruehstueck",
@@ -165,7 +165,7 @@
   "sceneEn": "You have sat down at a table in a restaurant and the waiter has come to take your order. Ask for the menu, choose an appetizer, say your main course and ask to pay at the end.",
   "partnerEn": "a calm waiter who knows exactly what to recommend",
   "openingEn": "Good evening! Would you like to order now?",
-  "goalEn": "An appetizer and a main course have been chosen, and the bill has been asked for at the end."
+  "goalEn": "An appetizer and a main course have been chosen, and the check has been asked for at the end."
  },
  {
   "conversation": "de-a1-lieblingsessen",

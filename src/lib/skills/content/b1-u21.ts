@@ -40,7 +40,7 @@ export const b1U21: SkillExercise[] = [
     intro: "Atık ayrımı kuralları. Hangi çöp hangi kutuya?",
     minutes: 5,
     gloss: [
-      { de: "die Tonne", tr: "çöp konteyneri", en: "bin" },
+      { de: "die Tonne", tr: "çöp konteyneri", en: "garbage can" },
       { de: "sortieren", tr: "ayırmak", en: "to sort" },
       { de: "der Abfall", tr: "atık", en: "waste" },
       { de: "das Pfand", tr: "depozito", en: "deposit" },

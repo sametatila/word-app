@@ -44,7 +44,7 @@ export const b2U14: SkillExercise[] = [
       { de: "die Wohnfläche", tr: "kullanım alanı", en: "living space" },
       { de: "der Mietspiegel", tr: "kira endeksi", en: "rent index" },
       { de: "die Gentrifizierung", tr: "soylulaştırma", en: "gentrification" },
-      { de: "der Makler", tr: "emlakçı", en: "estate agent" },
+      { de: "der Makler", tr: "emlakçı", en: "real estate agent" },
       { de: "der Blick", tr: "bakış", en: "look" },
       { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
       { de: "steigen", tr: "artmak", en: "to rise" },

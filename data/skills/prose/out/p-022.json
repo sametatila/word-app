@@ -127,7 +127,7 @@
  {
   "tr": "Nadir bir bisiklet kulübünü arıyor. Hangi grup, nerede, saat kaçta ve yanında ne getirmeli - dinleyip yakala.",
   "kind": "intro",
-  "en": "Nadir is ringing a cycling club. Which group, where, at what time and what to bring — listen and catch it."
+  "en": "Nadir is calling a cycling club. Which group, where, at what time and what to bring — listen and catch it."
  },
  {
   "tr": "Park yeri sorulunca resepsiyonist \"Yes, but it costs 5 euros a day\" diyor. 60 euro odanın bir gecelik fiyatı.",
@@ -242,7 +242,7 @@
  {
   "tr": "Duyuruda \"We are open every day, from 7 a.m. to 10 p.m.\" yazıyor. Yani kulüp 7'de açılıyor, 22.00'de kapanıyor.",
   "kind": "explain",
-  "en": "The notice says \"We are open every day, from 7 a.m. to 10 p.m.\" So the club opens at 7 and closes at 22.00."
+  "en": "The notice says \"We are open every day, from 7 a.m. to 10 p.m.\" So the club opens at 7 and closes at 22:00."
  },
  {
   "tr": "İlk iki paragrafın çelişkisi bu: şehirde her parsel dolu, yirmi kilometre ötede yarısı boş. Fiyat hiç geçmiyor.",
@@ -305,9 +305,9 @@
   "en": "You are going to write instructions for colleagues about maintaining the equipment at work; first form two sentences, then the instructions."
  },
  {
-  "tr": "Müşteri \"Have you got it in black? Blue isn't my color.\" diyor ve sonunda \"The black one, please.\" diye seçiyor.",
+  "tr": "Müşteri \"Do you have it in black? Blue isn't my color.\" diyor ve sonunda \"The black one, please.\" diye seçiyor.",
   "kind": "explain",
-  "en": "The customer says \"Have you got it in black? Blue isn't my color.\" and picks \"The black one, please.\" in the end."
+  "en": "The customer says \"Do you have it in black? Blue isn't my color.\" and picks \"The black one, please.\" in the end."
  },
  {
   "tr": "„Wer sich nicht beschwert, ist nicht unbedingt einverstanden.“ — „wer“ cümlesi özneyi taşır ve fiili sonda kalır.",
@@ -492,7 +492,7 @@
  {
   "tr": "Veteriner muayenehanesi telesekretere mesaj bırakıyor: randevu neden değişti, ne getirilecek, neye dikkat edilecek.",
   "kind": "intro",
-  "en": "A vet's surgery leaves a message on the answerphone: why the appointment has changed, what to bring, what to watch for."
+  "en": "A vet's office leaves a message on the answering machine: why the appointment has changed, what to bring, what to watch for."
  },
  {
   "tr": "„Aber geht es am Sonntag?“ — Almancada reddederken somut bir alternatif sunmak beklenir; „belki“ demek boş sayılır.",
@@ -622,7 +622,7 @@
  {
   "tr": "Broşürde \"Free classes every Tuesday at 6 p.m. in Room 4\" yazıyor. Cumartesi 10.00 ise sadece yemek atölyesinin saati.",
   "kind": "explain",
-  "en": "The leaflet says \"Free classes every Tuesday at 6 p.m. in Room 4\". Saturday at 10.00 is only the cookery workshop."
+  "en": "The leaflet says \"Free classes every Tuesday at 6 p.m. in Room 4\". Saturday at 10:00 is only the cooking workshop."
  },
  {
   "tr": "İnternette gerçek ad zorunluluğu tartışmasını ele alan bir köşe yazısı okuyacaksın: kanıt ne diyor, bedeli kim ödüyor.",

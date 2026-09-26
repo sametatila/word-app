@@ -208,7 +208,7 @@ export const deA2P16: SkillExercise[] = [
         phrases: [
           { de: "Herzlich willkommen im Haus!", tr: "Binaya hoş geldin!", en: "Welcome to the building!" },
           { de: "Ich wohne im … Stock.", tr: "… katta oturuyorum.", en: "I live on the … floor." },
-          { de: "Die Müllabfuhr kommt jeden …", tr: "Çöp her … günü toplanıyor.", en: "The rubbish is collected every …" },
+          { de: "Die Müllabfuhr kommt jeden …", tr: "Çöp her … günü toplanıyor.", en: "The trash is collected every …" },
           { de: "Wenn du etwas brauchst, …", tr: "Bir şeye ihtiyacın olursa …", en: "If you need anything, …" },
           { de: "Hast du am … Zeit für einen Kaffee?", tr: "… günü bir kahveye vaktin var mı?", en: "Do you have time for a coffee on …?" },
         ],

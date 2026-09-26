@@ -20,8 +20,8 @@ export const deA1P10: SkillExercise[] = [
     genre: "info",
     intro: "Apartmanın girişindeki tabela çöpün nasıl ayrılacağını anlatıyor: hangi kutu neye, hangi gün ne için.",
     gloss: [
-      { de: "der Müll", tr: "çöp", en: "rubbish" },
-      { de: "die Tonne", tr: "çöp kutusu", en: "bin" },
+      { de: "der Müll", tr: "çöp", en: "trash" },
+      { de: "die Tonne", tr: "çöp kutusu", en: "trash can" },
       { de: "das Papier", tr: "kâğıt", en: "paper" },
       { de: "die Flasche", tr: "şişe", en: "bottle" },
       { de: "der Keller", tr: "bodrum", en: "cellar" },

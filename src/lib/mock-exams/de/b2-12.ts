@@ -382,7 +382,7 @@ Bemerkenswert finde ich, wie leicht das zu prüfen wäre. Man müsste den Stapel
 
 Mein Vorschlag ist deshalb bescheiden: nicht mehr Personal, sondern eine zweite Runde. Sie kostet zwei Stunden im Monat und würde der Erzählung wenigstens einen Teil ihrer Wahrheit zurückgeben.`,
               gloss: [
-                { de: "besetzen", tr: "(kadroyu) doldurmak", en: "to fill (a post)" },
+                { de: "besetzen", tr: "(kadroyu) doldurmak", en: "to fill (a position)" },
                 { de: "auffällig", tr: "göze çarpan", en: "conspicuous" },
                 { de: "der wahre Kern", tr: "doğru yanı", en: "kernel of truth" },
                 { de: "die Eigenschaft", tr: "nitelik", en: "attribute" },

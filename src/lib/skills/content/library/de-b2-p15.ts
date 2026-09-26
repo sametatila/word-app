@@ -121,7 +121,7 @@ export const deB2P15: SkillExercise[] = [
       { de: "der Strahler", tr: "projektör", en: "floodlight" },
       { de: "anlocken", tr: "cezbetmek", en: "to attract" },
       { de: "die Erschöpfung", tr: "bitkinlik", en: "exhaustion" },
-      { de: "die Taschenlampe", tr: "el feneri", en: "torch" },
+      { de: "die Taschenlampe", tr: "el feneri", en: "flashlight" },
     ],
     minutes: 8,
     segments: [

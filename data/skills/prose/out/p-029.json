@@ -12,7 +12,7 @@
  {
   "tr": "Saati yaz. Sonunda günlük programı doldur.",
   "kind": "intro",
-  "en": "Write the time. At the end, fill in the daily plan."
+  "en": "Write the time. At the end, fill out the daily plan."
  },
  {
   "tr": "„Rice with vegetables. It's easy and cheap.“",
@@ -22,7 +22,7 @@
  {
   "tr": "Hesap ödeniyor. Nakit mi, kart mı, birlikte mi?",
   "kind": "intro",
-  "en": "The bill is being paid. Cash, card or together?"
+  "en": "The check is being paid. Cash, card or together?"
  },
  {
   "tr": "„I often work on Saturday morning.“ — akşamları boş.",
@@ -282,7 +282,7 @@
  {
   "tr": "Önce hesap gelir, sonra birlikte ödeme sorulur, sonra ödeme biçimi, en son saat.",
   "kind": "explain",
-  "en": "First the bill comes, then the question about paying together, then the way of paying, last the time."
+  "en": "First the check comes, then the question about paying together, then the way of paying, last the time."
  },
  {
   "tr": "„First, wash the rice. Then cut the onions.“ — soğan ikinci, domates üçüncü adım.",

@@ -205,7 +205,7 @@ export const deA1P12: SkillExercise[] = [
         ],
         minWords: 35,
         phrases: [
-          { de: "Liebe Frau …,", tr: "Sevgili … Hanım,", en: "Dear Ms …," },
+          { de: "Liebe Frau …,", tr: "Sevgili … Hanım,", en: "Dear Ms. …," },
           { de: "Ich möchte vom … bis zum … Urlaub nehmen.", tr: "…'den …'e kadar izin almak istiyorum.", en: "I would like to take leave from … to …" },
           { de: "Meine Schwester heiratet in …", tr: "Kız kardeşim …'de evleniyor.", en: "My sister is getting married in …" },
           { de: "In dieser Zeit macht … meine Arbeit.", tr: "Bu sürede işimi … yapıyor.", en: "During this time … is doing my work." },

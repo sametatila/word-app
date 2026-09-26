@@ -21,7 +21,7 @@ export const deA2P4: SkillExercise[] = [
     genre: "info",
     intro: "Apartman girişindeki çöp ayırma yazısını okuyacaksın: hangi kutuya ne giriyor, ne girmiyor, sorun olursa kime sorulacak.",
     gloss: [
-      { de: "die Tonne", tr: "çöp kutusu", en: "bin" },
+      { de: "die Tonne", tr: "çöp kutusu", en: "trash can" },
       { de: "sortieren", tr: "ayırmak", en: "to sort" },
       { de: "die Verpackung", tr: "ambalaj", en: "packaging" },
       { de: "der Bioabfall", tr: "organik atık", en: "organic waste" },

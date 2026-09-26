@@ -104,7 +104,7 @@ export const deA2: SkillExercise[] = [
     genre: "phone",
     intro: "Lena, kütüphanedeki ilana cevap veriyor. İkisi dil değişimi için nasıl bir düzen kurduklarını konuşuyor.",
     gloss: [
-      { de: "die Anzeige", tr: "ilan", en: "advert" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
       { de: "der Fehler", tr: "hata", en: "mistake" },
       { de: "korrigieren", tr: "düzeltmek", en: "to correct" },
       { de: "nervös", tr: "gergin", en: "nervous" },
@@ -228,7 +228,7 @@ export const deA2: SkillExercise[] = [
           { de: "Seit … mache ich …", tr: "…'den beri … yapıyorum", en: "I've been doing … since …" },
           { de: "Am Anfang war es …", tr: "Başta … idi", en: "At the start it was …" },
           { de: "Inzwischen …", tr: "Artık …", en: "By now …" },
-          { de: "Hast du Lust, …?", tr: "… ister misin?", en: "Do you fancy …?" },
+          { de: "Hast du Lust, …?", tr: "… ister misin?", en: "Do you feel like …?" },
           { de: "Melde dich, wenn …", tr: "… olursa haber ver", en: "Let me know if …" },
         ],
         sample:

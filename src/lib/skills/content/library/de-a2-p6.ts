@@ -210,7 +210,7 @@ export const deA2P6: SkillExercise[] = [
         ],
         minWords: 50,
         phrases: [
-          { de: "Ich wohne seit … in der Wohnung …", tr: "… tarihinden beri … numaralı dairede oturuyorum", en: "I have lived in flat … since …" },
+          { de: "Ich wohne seit … in der Wohnung …", tr: "… tarihinden beri … numaralı dairede oturuyorum", en: "I have lived in apartment … since …" },
           { de: "Leider gibt es ein Problem mit …", tr: "Maalesef … ile ilgili bir sorun var", en: "Unfortunately there is a problem with …" },
           { de: "Ich habe schon mehrmals …", tr: "Birkaç kez … yaptım", en: "I have already … several times" },
           { de: "Könnten Sie bitte …?", tr: "Lütfen … yapabilir misiniz?", en: "Could you please …?" },

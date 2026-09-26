@@ -36,7 +36,7 @@ export const a2U24: SkillExercise[] = [
     genre: "ad",
     intro: "Halk eğitim programı. Hangi kurs ne zaman, kim katılabilir?",
     gloss: [
-      { de: "der Stundenplan", tr: "ders programı", en: "timetable" },
+      { de: "der Stundenplan", tr: "ders programı", en: "class schedule" },
       { de: "der Workshop", tr: "atölye", en: "workshop" },
       { de: "beibringen", tr: "öğretmek", en: "to teach" },
       { de: "das Klassenzimmer", tr: "sınıf", en: "classroom" },
@@ -115,7 +115,7 @@ export const a2U24: SkillExercise[] = [
     genre: "formal",
     intro: "Uzun kuyruk üstüne resmî bir şikâyet. Ne olmuş, ne isteniyor?",
     gloss: [
-      { de: "die Warteschlange", tr: "kuyruk", en: "queue" },
+      { de: "die Warteschlange", tr: "kuyruk", en: "line" },
       { de: "die Reihe", tr: "sıra", en: "row, turn" },
       { de: "unpünktlich", tr: "vaktinde olmayan", en: "unpunctual" },
       { de: "zeitweise", tr: "zaman zaman", en: "at times" },

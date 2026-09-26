@@ -177,7 +177,7 @@
  {
   "tr": "\"On Sunday morning I visited the old town with Dad.\" Anne otelde kaldı.",
   "kind": "explain",
-  "en": "\"On Sunday morning I visited the old town with Dad.\" Mum stayed at the hotel."
+  "en": "\"On Sunday morning I visited the old town with Dad.\" Mom stayed at the hotel."
  },
  {
   "tr": "\"The kitchen trash can is full. Please take it out.\" Listenin ilk maddesi bu.",
@@ -195,9 +195,9 @@
   "en": "\"It's cold this morning, only four degrees\" — tomorrow it will be twelve."
  },
  {
-  "tr": "\"Please use the stop in Church Road.\" Market Street'te yol çalışması var.",
+  "tr": "\"Please use the stop on Church Road.\" Market Street'te yol çalışması var.",
   "kind": "explain",
-  "en": "\"Please use the stop in Church Road.\" There is roadwork in Market Street."
+  "en": "\"Please use the stop on Church Road.\" There is roadwork on Market Street."
  },
  {
   "tr": "\"Students have got a 10% discount.\" İndirim için öğrenci kartı gerekiyor.",
@@ -217,7 +217,7 @@
  {
   "tr": "\"We're going to stay there for three nights.\" Otelde değil, kuzenin evinde.",
   "kind": "explain",
-  "en": "\"We're going to stay there for three nights.\" Not in a hotel, at the cousin's flat."
+  "en": "\"We're going to stay there for three nights.\" Not in a hotel, at the cousin's apartment."
  },
  {
   "tr": "Kurdeleyi belediye başkanı kesti ve köprünün daha güvenli olduğunu söyledi.",
@@ -245,9 +245,9 @@
   "en": "\"Is the black cable in the yellow port?\" The cable was in the gray port, so there was no connection."
  },
  {
-  "tr": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
+  "tr": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
   "kind": "explain",
-  "en": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Not in the garden, inside yes."
+  "en": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Not in the garden, inside yes."
  },
  {
   "tr": "\"I speak Italian and Spanish.\" İngilizceyi henüz öğreniyor, konuştuğu diller arasında saymıyor.",

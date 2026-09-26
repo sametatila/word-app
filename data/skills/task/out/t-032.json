@@ -2,7 +2,7 @@
   {
     "tr": "Kayıt formunu Selin için doldur.",
     "kind": "form.prompt",
-    "en": "Fill in the registration form for Selin."
+    "en": "Fill out the registration form for Selin."
   },
   {
     "tr": "Selin Kara, 24 yaşında, Türkiye'den; Köln'de Gartenstraße 8'de oturuyor; voleybol oynamak istiyor.",
@@ -52,7 +52,7 @@
   {
     "tr": "Apartman yönetimine bir metin yaz: kim olduğunu ve hangi dairede oturduğunu söyle, sorunun ne olduğunu ve ne zaman olduğunu anlat, şimdiye kadar ne yaptığını yaz ve bir çözüm öner.",
     "kind": "free.prompt",
-    "en": "Write a text to the building management: say who you are and which flat you live in, describe what the problem is and when it happens, write what you have done so far and propose a solution."
+    "en": "Write a text to the building management: say who you are and which apartment you live in, describe what the problem is and when it happens, write what you have done so far and propose a solution."
   },
   {
     "tr": "Tamir kafesi için bir değerlendirme yaz: ne zaman gittiğini ve neyi tamir ettirdiğini söyle, süreci anlat, iyi ve kötü yanlarını yaz, kime uygun olduğunu söyle ve bir öneride bulun.",
@@ -62,7 +62,7 @@
   {
     "tr": "Ev ilanına kısa bir cevap yaz: kendini tanıt, ne iş yaptığını ya da nerede okuduğunu söyle, nasıl biri olduğunu anlat, ne zaman taşınabileceğini yaz ve odayı görmek istediğini belirt.",
     "kind": "free.prompt",
-    "en": "Write a short reply to a flat advert: introduce yourself, say what you do or where you study, describe what sort of person you are, write when you could move in and say that you would like to see the room."
+    "en": "Write a short reply to an apartment ad: introduce yourself, say what you do or where you study, describe what sort of person you are, write when you could move in and say that you would like to see the room."
   },
   {
     "tr": "İlana kısa bir başvuru yaz: hangi ilana yazdığını söyle, kim olduğunu tanıt, hangi deneyimin olduğunu yaz, hangi günler müsait olduğunu belirt ve görüşmeye çağrılmayı istediğini söyle.",
@@ -237,7 +237,7 @@
   {
     "tr": "Kendini tanıt ve daireni yaz",
     "kind": "free.checklist",
-    "en": "Introduce yourself and write your flat"
+    "en": "Introduce yourself and write your apartment"
   },
   {
     "tr": "Konuyu ilk cümlede net söyle",

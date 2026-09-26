@@ -240,7 +240,7 @@ export const deC1P6: SkillExercise[] = [
         minWords: 140,
         phrases: [
           { de: "Gegenstand der Sitzung war …", tr: "Toplantının konusu …", en: "The subject of the meeting was …" },
-          { de: "Frau … vertrat die Auffassung, dass …", tr: "… Hanım, … görüşünü savundu", en: "Ms … took the view that …" },
+          { de: "Frau … vertrat die Auffassung, dass …", tr: "… Hanım, … görüşünü savundu", en: "Ms. … took the view that …" },
           { de: "Einigkeit bestand darüber, dass …", tr: "… konusunda görüş birliği vardı", en: "There was agreement that …" },
           { de: "Der Dissens betraf ausschließlich …", tr: "Görüş ayrılığı yalnız … ile ilgiliydi", en: "The disagreement concerned solely …" },
           { de: "Zur Umsetzung wird empfohlen, …", tr: "Uygulama için … tavsiye edilir", en: "For implementation it is recommended …" },

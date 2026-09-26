@@ -67,7 +67,7 @@ Liebe Grüße
 Nina`,
               gloss: [
                 { de: "der Termin", tr: "randevu", en: "appointment" },
-                { de: "der Kasten", tr: "posta kutusu", en: "letterbox" },
+                { de: "der Kasten", tr: "posta kutusu", en: "mailbox" },
                 { de: "frei haben", tr: "izinli olmak", en: "to be off work" },
               ],
             },

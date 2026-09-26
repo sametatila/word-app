@@ -32,7 +32,7 @@
  {
   "tr": "Düzensiz geçmişi yaz. Sonunda kayıp eşya formunu doldur.",
   "kind": "intro",
-  "en": "Write the irregular past. At the end, fill in the lost property form."
+  "en": "Write the irregular past. At the end, fill out the lost property form."
  },
  {
   "tr": "İki geçmişi bir arada yaz: süren iş ve onun içindeki an.",
@@ -62,7 +62,7 @@
  {
   "tr": "„In the trash. We ate bread and cheese.“ — pirinç çöpe gitti.",
   "kind": "explain",
-  "en": "„In the trash. We ate bread and cheese.“ — the rice ended up in the bin."
+  "en": "„In the trash. We ate bread and cheese.“ — the rice ended up in the trash."
  },
  {
   "tr": "Geçmiş hakkında sorular. Her soru başka bir şeyi öğreniyor.",
@@ -77,7 +77,7 @@
  {
   "tr": "Bir kazayı anlat ve geçmişi sor. Sonunda kaza formunu doldur.",
   "kind": "intro",
-  "en": "Tell about an accident and ask about the past. At the end, fill in the accident form."
+  "en": "Tell about an accident and ask about the past. At the end, fill out the accident form."
  },
  {
   "tr": "„But my neighbor heard me and she came fast.“ — Ali yalnızdı.",
@@ -117,7 +117,7 @@
  {
   "tr": "Bir tatil anlat. Sıralama sözcükleri cümleleri birbirine bağlıyor.",
   "kind": "intro",
-  "en": "Tell about a holiday. The sequencing words tie the sentences together."
+  "en": "Tell about a vacation. The sequencing words tie the sentences together."
  },
  {
   "tr": "Eski alışkanlıklar konuşuluyor. „used to“nun üç biçimi de geçiyor.",
@@ -157,12 +157,12 @@
  {
   "tr": "„My sister used to play with her doll…“ — futbol ve kütüphane yazarın.",
   "kind": "explain",
-  "en": "„My sister used to play with her doll…“ — the football and the library are the writer's."
+  "en": "„My sister used to play with her doll…“ — the soccer and the library are the writer's."
  },
  {
   "tr": "„Yes, when I was a child. I used to play every day.“ — futbol Mert'in.",
   "kind": "explain",
-  "en": "„Yes, when I was a child. I used to play every day.“ — the football was Mert's."
+  "en": "„Yes, when I was a child. I used to play every day.“ — the soccer was Mert's."
  },
  {
   "tr": "Kaybolan bir telefonun hikâyesi. Ne zaman ne oldu, sırasıyla takip et.",

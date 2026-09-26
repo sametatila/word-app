@@ -8,7 +8,7 @@
  { "conversation": "de-a1-familienfest", "de": "Meine Tante bringt …", "en": "says who is bringing what" },
  { "conversation": "de-a1-familienfest", "de": "Wir feiern zusammen.", "en": "says that you celebrate together" },
  { "conversation": "de-a1-cafe", "de": "Ich möchte …", "en": "used to ask for something politely" },
- { "conversation": "de-a1-cafe", "de": "Die Rechnung, bitte!", "en": "used to ask for the bill" },
+ { "conversation": "de-a1-cafe", "de": "Die Rechnung, bitte!", "en": "used to ask for the check" },
  { "conversation": "de-a1-fruehstueck", "de": "Ich esse …", "en": "used to say what you eat" },
  { "conversation": "de-a1-fruehstueck", "de": "Ich trinke …", "en": "used to say what you drink" },
  { "conversation": "de-a1-fruehstueck", "de": "… zum Frühstück", "en": "used to add what you have for breakfast" },

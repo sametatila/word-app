@@ -217,7 +217,7 @@ export const deB1P14: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Ich wohne seit … in der Wohnung …", tr: "…'den beri … numaralı dairede oturuyorum.", en: "I have been living in flat … since …" },
+          { de: "Ich wohne seit … in der Wohnung …", tr: "…'den beri … numaralı dairede oturuyorum.", en: "I have been living in apartment … since …" },
           { de: "Im Sommer steigt die Temperatur so stark, dass …", tr: "Yazın sıcaklık o kadar yükseliyor ki …", en: "In summer the temperature rises so much that …" },
           { de: "Ich bitte Sie deshalb um die Erlaubnis, …", tr: "Bu yüzden … için izninizi rica ediyorum.", en: "I therefore ask for your permission to …" },
           { de: "Selbstverständlich würde ich … übernehmen.", tr: "Elbette …'i üstlenirim.", en: "Of course I would take care of …" },

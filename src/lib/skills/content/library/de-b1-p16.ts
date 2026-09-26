@@ -23,7 +23,7 @@ export const deB1P16: SkillExercise[] = [
     gloss: [
       { de: "die Kasse", tr: "kasa", en: "checkout" },
       { de: "die Ware", tr: "mal", en: "goods" },
-      { de: "die Schlange", tr: "kuyruk", en: "queue" },
+      { de: "die Schlange", tr: "kuyruk", en: "line" },
       { de: "schimpfen", tr: "söylenmek", en: "to grumble" },
       { de: "entlasten", tr: "yükünü hafifletmek", en: "to relieve" },
       { de: "gleichzeitig", tr: "aynı anda", en: "at the same time" },

@@ -70,7 +70,7 @@ Nächsten Monat machen wir zusammen ein Hoffest. Frau Öztürk kocht, ich baue d
               gloss: [
                 { de: "das Hinterhaus", tr: "arka bina", en: "rear building" },
                 { de: "der Hof", tr: "avlu", en: "courtyard" },
-                { de: "die Tonne", tr: "çöp konteyneri", en: "bin" },
+                { de: "die Tonne", tr: "çöp konteyneri", en: "garbage can" },
                 { de: "vermissen", tr: "özlemek", en: "to miss" },
               ],
             },

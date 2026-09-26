@@ -25,7 +25,7 @@ export const deC1P17: SkillExercise[] = [
       { de: "die Beerdigung", tr: "cenaze töreni", en: "funeral" },
       { de: "das Testament", tr: "vasiyetname", en: "will" },
       { de: "erben", tr: "miras almak", en: "to inherit" },
-      { de: "der Makler", tr: "emlakçı", en: "estate agent" },
+      { de: "der Makler", tr: "emlakçı", en: "real estate agent" },
       { de: "schätzen", tr: "değer biçmek", en: "to value" },
       { de: "die Anerkennung", tr: "takdir", en: "recognition" },
     ],

@@ -164,7 +164,7 @@ export const deA1P3: SkillExercise[] = [
     genre: "email",
     intro: "Bir tatil evi ilanı buldun; önce iki cümle kur, sonra ev sahibine sorularını içeren kısa bir e-posta yaz.",
     gloss: [
-      { de: "die Ferienwohnung", tr: "tatil evi", en: "holiday flat" },
+      { de: "die Ferienwohnung", tr: "tatil evi", en: "vacation rental" },
       { de: "frei", tr: "boş", en: "available" },
       { de: "die Nacht", tr: "gece", en: "night" },
       { de: "der Parkplatz", tr: "otopark", en: "parking space" },
@@ -197,9 +197,9 @@ export const deA1P3: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım,", en: "Dear Ms …," },
+          { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım,", en: "Dear Ms. …," },
           { de: "Wir möchten … bleiben.", tr: "… kalmak istiyoruz.", en: "We'd like to stay …" },
-          { de: "Ist die Wohnung … frei?", tr: "Daire … boş mu?", en: "Is the flat free …?" },
+          { de: "Ist die Wohnung … frei?", tr: "Daire … boş mu?", en: "Is the apartment free …?" },
           { de: "Was kostet eine Nacht?", tr: "Bir gece ne kadar?", en: "How much is one night?" },
           { de: "Freundliche Grüße", tr: "Saygılarımla", en: "Kind regards" },
         ],

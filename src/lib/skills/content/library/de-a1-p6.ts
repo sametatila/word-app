@@ -25,8 +25,8 @@ export const deA1P6: SkillExercise[] = [
       { de: "gießen", tr: "sulamak", en: "to water" },
       { de: "die Pflanze", tr: "bitki", en: "plant" },
       { de: "die Post", tr: "posta", en: "mail" },
-      { de: "der Briefkasten", tr: "posta kutusu", en: "letterbox" },
-      { de: "der Postbote", tr: "postacı", en: "postman" },
+      { de: "der Briefkasten", tr: "posta kutusu", en: "mailbox" },
+      { de: "der Postbote", tr: "postacı", en: "mail carrier" },
     ],
     minutes: 4,
     text:

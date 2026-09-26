@@ -67,7 +67,7 @@ Kemal`,
               gloss: [
                 { de: "feiern", tr: "kutlamak", en: "to celebrate" },
                 { de: "Bescheid sagen", tr: "haber vermek", en: "to let someone know" },
-                { de: "der Aufzug", tr: "asansör", en: "lift" },
+                { de: "der Aufzug", tr: "asansör", en: "elevator" },
               ],
             },
             {

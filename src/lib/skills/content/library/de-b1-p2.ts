@@ -110,7 +110,7 @@ export const deB1P2: SkillExercise[] = [
     intro: "Bir podcast bölümünde zaman takasına dayalı bir mahalle ağı anlatılıyor: nasıl işliyor, ne işe yarıyor, sorunu ne.",
     gloss: [
       { de: "der Tauschring", tr: "takas ağı", en: "exchange network" },
-      { de: "der Wasserhahn", tr: "musluk", en: "tap" },
+      { de: "der Wasserhahn", tr: "musluk", en: "faucet" },
       { de: "die Gründerin", tr: "kurucu", en: "founder" },
       { de: "sich schämen", tr: "utanmak", en: "to feel ashamed" },
       { de: "die Fähigkeit", tr: "beceri", en: "skill" },

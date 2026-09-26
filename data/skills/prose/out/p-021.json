@@ -190,9 +190,9 @@
   "en": "An invitation is turned down. Saying no in German has three parts: a clear no + a reason + a CONCRETE alternative."
  },
  {
-  "tr": "Davetiyenin alt kısmında \"Please answer before 20 August\" yazıyor; 12 Eylül ise düğünün kendi tarihi.",
+  "tr": "Davetiyenin alt kısmında \"Please answer before August 20\" yazıyor; 12 Eylül ise düğünün kendi tarihi.",
   "kind": "explain",
-  "en": "At the bottom of the invitation it says \"Please answer before 20 August\"; 12 September is the date of the wedding itself."
+  "en": "At the bottom of the invitation it says \"Please answer before August 20\"; September 12 is the date of the wedding itself."
  },
  {
   "tr": "Edilgen, eylemi yapanı geri plana atar ya da hiç söylemez; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
@@ -350,9 +350,9 @@
   "en": "Mert says \"I'm going to meet Deniz there on Saturday at eleven o'clock.\", so they meet at eleven."
  },
  {
-  "tr": "Metinde \"Check-out: Monday, 15 June, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı.",
+  "tr": "Metinde \"Check-out: Monday, June 15, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı.",
   "kind": "explain",
-  "en": "The text says \"Check-out: Monday, 15 June, before 11:00\", so the room must be left before 11:00."
+  "en": "The text says \"Check-out: Monday, June 15, before 11:00\", so the room must be left before 11:00."
  },
  {
   "tr": "sein + zu + mastar, edilgen yerine geçer: 'değiştirilmesi gerekir'. Ayrılabilen fiilde zu araya girer.",
@@ -392,7 +392,7 @@
  {
   "tr": "Başlık „Ferienprogramm“ ve altında beş gün sıralanıyor — bu bir tatil programı, davet ya da ilan değil.",
   "kind": "explain",
-  "en": "The heading is „Ferienprogramm“ with five days listed under it — a holiday program, not an invitation or an advert."
+  "en": "The heading is „Ferienprogramm“ with five days listed under it — a vacation program, not an invitation or an ad."
  },
  {
   "tr": "Bir buçuk dakikaya kadar konuşacaksın: kolay ölçütü ele, kendi ölçütünü parçalara ayır ve örnekle sına.",
@@ -557,7 +557,7 @@
  {
   "tr": "Bir tatil evi ilanı buldun; önce iki cümle kur, sonra ev sahibine sorularını içeren kısa bir e-posta yaz.",
   "kind": "intro",
-  "en": "You have found a holiday house advert; first form two sentences, then write a short email with your questions to the owner."
+  "en": "You have found a vacation home ad; first form two sentences, then write a short email with your questions to the owner."
  },
  {
   "tr": "Çamaşırhanenin duvarındaki kullanım talimatını okuyacaksın: hangi sırayla ne yapılıyor, ne kadar tutuyor.",
@@ -652,7 +652,7 @@
  {
   "tr": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ Garajlı daire henüz sadece bir plan.",
   "kind": "explain",
-  "en": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ The flat with a garage is still only a plan."
+  "en": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ The apartment with a garage is still only a plan."
  },
  {
   "tr": "\"Next week he will open a small office in Istanbul\" diyor; gelecek hafta İstanbul'da küçük bir ofis açacak.",
@@ -667,7 +667,7 @@
  {
   "tr": "Bir gençlik evinin tatil programını okuyacaksın: hangi gün ne var, ne kadar tutuyor, nasıl kayıt yapılıyor.",
   "kind": "intro",
-  "en": "You are going to read a youth center's holiday program: what is on which day, what it costs, how you sign up."
+  "en": "You are going to read a youth center's vacation program: what is on which day, what it costs, how you sign up."
  },
  {
   "tr": "Bir kafede Emre'nin sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.",
@@ -705,8 +705,8 @@
   "en": "You are going to hear the closing announcement in a museum: which floor shuts first, how long the shop stays open, what is on tomorrow."
  },
  {
-  "tr": "Not şöyle: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var.",
+  "tr": "Not şöyle: \"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var.",
   "kind": "explain",
-  "en": "The note says: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" So there is Wi-Fi only indoors."
+  "en": "The note says: \"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" So there is Wi-Fi only indoors."
  }
 ]

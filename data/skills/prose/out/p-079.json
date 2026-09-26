@@ -42,7 +42,7 @@
  { "tr": "Olumlu cümlenin sonunda „too“ kullanılır.", "kind": "explain", "en": "At the end of a positive sentence „too“ is used." },
  { "tr": "Önceki cümlenin tamamının sonucu: sodass.", "kind": "explain", "en": "The result of the whole previous clause: sodass." },
  { "tr": "Özne „es“: üçüncü tekil kişi biçimi wird.", "kind": "explain", "en": "The subject is „es“: the third person singular form is wird." },
- { "tr": "Takvime bağlı beklenen olay: „be due to“.", "kind": "explain", "en": "An expected event tied to a timetable: „be due to“." },
+ { "tr": "Takvime bağlı beklenen olay: „be due to“.", "kind": "explain", "en": "An expected event tied to a schedule: „be due to“." },
  { "tr": "Tam tersi: „I read those letters on air.“", "kind": "explain", "en": "The opposite: „I read those letters on air.“" },
  { "tr": "Vakit beklenenden erken: erst sieben Uhr.", "kind": "explain", "en": "It is earlier than expected: erst sieben Uhr." },
  { "tr": "Yağmur, yürüyüşe çıkmamanın sebebi: denn.", "kind": "explain", "en": "The rain is the reason for not going for a walk: denn." },
@@ -142,7 +142,7 @@
  { "tr": "Fiil „talk about“; edat sorunun sonunda kalır.", "kind": "explain", "en": "The verb is „talk about“; the preposition stays at the end of the question." },
  { "tr": "Geçmişteki tutmayan beklenti: was supposed to.", "kind": "explain", "en": "An expectation in the past that was not met: was supposed to." },
  { "tr": "Genel bir kural anlatılıyor, özne herkes: man.", "kind": "explain", "en": "A general rule is described and the subject is everyone: man." },
- { "tr": "Hayal kırıklığı yaratan şey filmin sonu: -ing.", "kind": "explain", "en": "What causes the disappointment is the end of the film: -ing." },
+ { "tr": "Hayal kırıklığı yaratan şey filmin sonu: -ing.", "kind": "explain", "en": "What causes the disappointment is the end of the movie: -ing." },
  { "tr": "İki yarım da „the + karşılaştırma“ ile başlar.", "kind": "explain", "en": "Both halves begin with „the + comparative“." },
  { "tr": "İsim olmadan kein ek alır: der Stift → keinen.", "kind": "explain", "en": "Without a noun kein takes an ending: der Stift → keinen." }
 ]

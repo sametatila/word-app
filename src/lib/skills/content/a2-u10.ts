@@ -100,9 +100,9 @@ export const a2U10: SkillExercise[] = [
     genre: "info",
     intro: "Posta kutusundaki kargo kartı. Paket nerede, ne zamana kadar alınmalı?",
     gloss: [
-      { de: "das Päckchen", tr: "küçük paket", en: "small parcel" },
+      { de: "das Päckchen", tr: "küçük paket", en: "small package" },
       { de: "die Bestellung", tr: "sipariş", en: "order" },
-      { de: "der Postbote", tr: "postacı", en: "postman" },
+      { de: "der Postbote", tr: "postacı", en: "mail carrier" },
       { de: "die Sendung", tr: "gönderi", en: "delivery" },
       { de: "die Haustür", tr: "sokak kapısı", en: "front door" },
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },

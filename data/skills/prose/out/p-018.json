@@ -85,9 +85,9 @@
   "en": "The text says \"Do you want a different size? Ask Elif.\" Elif works at the information desk."
  },
  {
-  "tr": "Mr Owens \"I have lived here for thirty years\" diyor, yani otuz yıldır orada yaşıyor.",
+  "tr": "Mr. Owens \"I have lived here for thirty years\" diyor, yani otuz yıldır orada yaşıyor.",
   "kind": "explain",
-  "en": "Mr Owens says \"I have lived here for thirty years\", so he has lived there for thirty years."
+  "en": "Mr. Owens says \"I have lived here for thirty years\", so he has lived there for thirty years."
  },
  {
   "tr": "Sokaktaki açık kitap dolabına bakan bir kadınla yapılmış kısa söyleşiyi okuyacaksın.",
@@ -202,7 +202,7 @@
  {
   "tr": "Aynı kişi iki mesaj yazıyor: biri arkadaşına, biri muayenehaneye. Kapanışlara dikkat.",
   "kind": "intro",
-  "en": "The same person writes two messages: one to a friend, one to the surgery. Watch the closings."
+  "en": "The same person writes two messages: one to a friend, one to the doctor's office. Watch the closings."
  },
  {
   "tr": "Bir dükkâna internette puan vereceksin; önce iki cümle kur, sonra kısa bir yorum yaz.",
@@ -652,7 +652,7 @@
  {
   "tr": "„… sie kommt ohne Verbotsschild aus“ ve kantin örneğinde „niemand hatte etwas verboten“.",
   "kind": "explain",
-  "en": "„… sie kommt ohne Verbotsschild aus“ and in the canteen example „niemand hatte etwas verboten“."
+  "en": "„… sie kommt ohne Verbotsschild aus“ and in the cafeteria example „niemand hatte etwas verboten“."
  },
  {
   "tr": "„als“ tek başına kullanıldığında fiil hemen arkasından gelir: als wäre nichts geschehen.",

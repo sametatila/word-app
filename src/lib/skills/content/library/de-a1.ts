@@ -95,7 +95,7 @@ export const deA1: SkillExercise[] = [
     genre: "dialogue",
     intro: "Postanede bir müşteri Türkiye'ye paket gönderiyor; fiyatı, süreyi ve ne yazması gerektiğini dinle.",
     gloss: [
-      { de: "das Paket", tr: "paket", en: "parcel" },
+      { de: "das Paket", tr: "paket", en: "package" },
       { de: "schicken", tr: "göndermek", en: "to send" },
       { de: "schwer", tr: "ağır", en: "heavy" },
       { de: "ankommen", tr: "varmak", en: "to arrive" },

@@ -200,8 +200,8 @@ export const deA1P15: SkillExercise[] = [
         ],
         minWords: 35,
         phrases: [
-          { de: "Sehr geehrter Herr …,", tr: "Sayın … Bey,", en: "Dear Mr …," },
-          { de: "Ich wohne in der Wohnung …", tr: "… numaralı dairede oturuyorum.", en: "I live in flat …" },
+          { de: "Sehr geehrter Herr …,", tr: "Sayın … Bey,", en: "Dear Mr. …," },
+          { de: "Ich wohne in der Wohnung …", tr: "… numaralı dairede oturuyorum.", en: "I live in apartment …" },
           { de: "Wir möchten gern einen Hund haben.", tr: "Bir köpeğimiz olsun istiyoruz.", en: "We would like to have a dog." },
           { de: "Er ist klein und ruhig.", tr: "Küçük ve sakin.", en: "He is small and quiet." },
           { de: "Dürfen wir einen Hund haben?", tr: "Köpek besleyebilir miyiz?", en: "May we have a dog?" },

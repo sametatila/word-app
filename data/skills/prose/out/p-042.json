@@ -62,7 +62,7 @@
  {
   "tr": "Form doldurma. Hangi bilgi nereye yazılıyor?",
   "kind": "intro",
-  "en": "Filling in a form. Which piece of information goes where?"
+  "en": "Filling out a form. Which piece of information goes where?"
  },
  {
   "tr": "Kopya „make“ ile alınıyor, „take“ ile değil.",
@@ -142,7 +142,7 @@
  {
   "tr": "Çöp, cam, fatura, vergi dairesi — metnin kendi sırası.",
   "kind": "explain",
-  "en": "Rubbish, glass, bills, the tax office — the order of the text itself."
+  "en": "Trash, glass, bills, the tax office — the order of the text itself."
  },
  {
   "tr": "Öğüt ve arama cümleleri. „should“ emir değil, tavsiye.",

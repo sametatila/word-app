@@ -202,7 +202,7 @@ export const b2U20: SkillExercise[] = [
       { de: "die Stellenanzeige", tr: "iş ilanı", en: "job ad" },
       { de: "das Anforderungsprofil", tr: "aranan nitelikler", en: "job requirements" },
       { de: "das Auswahlverfahren", tr: "seçim süreci", en: "selection process" },
-      { de: "antreten", tr: "göreve başlamak", en: "to take up a post" },
+      { de: "antreten", tr: "göreve başlamak", en: "to take up a position" },
       { de: "ausscheiden", tr: "işten ayrılmak", en: "to leave" },
       { de: "betriebsbedingt", tr: "işletme gereği", en: "for operational reasons" },
       { de: "normal", tr: "normal", en: "normal" },

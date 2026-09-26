@@ -109,7 +109,7 @@ export const b1U38: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "die Lehre", tr: "çıraklık eğitimi", en: "apprenticeship" },
-      { de: "die Lehrstelle", tr: "çıraklık yeri", en: "apprenticeship post" },
+      { de: "die Lehrstelle", tr: "çıraklık yeri", en: "apprenticeship position" },
       { de: "der Lehrling", tr: "çırak", en: "apprentice" },
       { de: "das Abitur", tr: "lise bitirme sınavı", en: "school-leaving exam" },
       { de: "die Fortbildung", tr: "mesleki eğitim", en: "further training" },

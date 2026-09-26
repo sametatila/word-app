@@ -113,7 +113,7 @@ export const a2U18: SkillExercise[] = [
       { de: "die Torte", tr: "yaş pasta", en: "cake" },
       { de: "der Zwilling", tr: "ikiz", en: "twin" },
       { de: "veranstalten", tr: "düzenlemek", en: "to organize" },
-      { de: "naschen", tr: "atıştırmak", en: "to nibble sweets", note: "tatlı için" },
+      { de: "naschen", tr: "atıştırmak", en: "to snack on treats", note: "tatlı için" },
     ],
     minutes: 4,
     text:

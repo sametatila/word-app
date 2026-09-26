@@ -37,7 +37,7 @@
  {
   "tr": "Arıza cümlelerini yaz. Sonunda arıza formunu doldur.",
   "kind": "intro",
-  "en": "Write the sentences for a fault. At the end, fill in the fault form."
+  "en": "Write the sentences for a fault. At the end, fill out the fault form."
  },
  {
   "tr": "„In a fire: don't take the elevator. Go down the stairs.“",
@@ -57,7 +57,7 @@
  {
   "tr": "Zorunluluk ve yasak yaz. Sonunda kira formunu doldur.",
   "kind": "intro",
-  "en": "Write duty and prohibition. At the end, fill in the rent form."
+  "en": "Write duty and prohibition. At the end, fill out the rent form."
  },
  {
   "tr": "Önce yardım, sonra taşıma, sonra uzaklık, en son kira.",
@@ -67,7 +67,7 @@
  {
   "tr": "Bir daire tanıtılıyor. Hangi oda nerede, içinde ne var?",
   "kind": "intro",
-  "en": "A flat is shown. Which room is where, and what is in it?"
+  "en": "An apartment is shown. Which room is where, and what is in it?"
  },
  {
   "tr": "„I play soccer every Saturday.“ — pazartesi yüzme günü.",
@@ -77,7 +77,7 @@
  {
   "tr": "Önce futbol, sonra yüzme, sonra koşu, en son kız kardeşi.",
   "kind": "explain",
-  "en": "First football, then swimming, then running, last his sister."
+  "en": "First soccer, then swimming, then running, last his sister."
  },
  {
   "tr": "„But it is on the fourth floor and the elevator doesn't work.“",
@@ -92,7 +92,7 @@
  {
   "tr": "„My sister plays tennis and basketball.“ — futbol Ali'nin.",
   "kind": "explain",
-  "en": "„My sister plays tennis and basketball.“ — football is Ali's."
+  "en": "„My sister plays tennis and basketball.“ — soccer is Ali's."
  },
  {
   "tr": "„I hear the television through the wall.“ — yani adam evde.",
@@ -117,7 +117,7 @@
  {
   "tr": "Taşınma günü. Kutu ağır, asansör çalışmıyor — kim ne yapıyor?",
   "kind": "intro",
-  "en": "Moving day. The box is heavy, the lift does not work — who does what?"
+  "en": "Moving day. The box is heavy, the elevator does not work — who does what?"
  },
  {
   "tr": "Apartmandaki komşular anlatılıyor. Kim hangi katta, nasıl biri?",
@@ -132,7 +132,7 @@
  {
   "tr": "Nil dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
   "kind": "intro",
-  "en": "Nil shows her flat. Catch the order and the number of the rooms."
+  "en": "Nil shows her apartment. Catch the order and the number of the rooms."
  },
  {
   "tr": "„A party has to end at eleven.“ — „has to“ da zorunluluk söylüyor.",
@@ -162,7 +162,7 @@
  {
   "tr": "Önce musluk, sonra yazıcı, sonra telefon; en son ilk arızaya dönülüyor.",
   "kind": "explain",
-  "en": "First the tap, then the printer, then the telephone; at the end it goes back to the first fault."
+  "en": "First the faucet, then the printer, then the telephone; at the end it goes back to the first fault."
  },
  {
   "tr": "„Wash them and then dry them, please.“ — „dry“ burada fiil, sıfat değil.",
@@ -237,7 +237,7 @@
  {
   "tr": "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
   "kind": "explain",
-  "en": "„First, tidy up your room. Then take out the trash.“ — but he starts with the rubbish."
+  "en": "„First, tidy up your room. Then take out the trash.“ — but he starts with the trash."
  },
  {
   "tr": "„Yes, there is one next to the kitchen.“ — „one“ burada „a bathroom“ yerine geçiyor.",

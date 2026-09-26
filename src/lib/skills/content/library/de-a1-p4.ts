@@ -200,7 +200,7 @@ export const deA1P4: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Der Laden liegt …", tr: "Dükkân … konumunda", en: "The shop is …" },
+          { de: "Der Laden liegt …", tr: "Dükkân … konumunda", en: "The store is …" },
           { de: "Mir gefällt besonders …", tr: "Özellikle … hoşuma gidiyor", en: "I particularly like …" },
           { de: "Nur … ist nicht so gut.", tr: "Yalnız … pek iyi değil.", en: "Only … isn't so good." },
           { de: "Ich kann … empfehlen.", tr: "… tavsiye edebilirim.", en: "I can recommend …" },

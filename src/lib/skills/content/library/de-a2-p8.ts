@@ -21,7 +21,7 @@ export const deA2P8: SkillExercise[] = [
     intro: "Bir kullanıcı ulaşım uygulamasını değerlendirmiş: nesi işe yarıyor, nesi sinir bozucu.",
     gloss: [
       { de: "die App", tr: "uygulama", en: "app" },
-      { de: "der Fahrplan", tr: "sefer tarifesi", en: "timetable" },
+      { de: "der Fahrplan", tr: "sefer tarifesi", en: "schedule" },
       { de: "die Verbindung", tr: "bağlantı", en: "connection" },
       { de: "die Werbung", tr: "reklam", en: "advertising" },
       { de: "abstürzen", tr: "çökmek", en: "to crash" },

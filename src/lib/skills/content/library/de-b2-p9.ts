@@ -115,7 +115,7 @@ export const deB2P9: SkillExercise[] = [
       { de: "die Spende", tr: "bağış", en: "donation" },
       { de: "die Schulung", tr: "eğitim", en: "training session" },
       { de: "die Kühlkette", tr: "soğuk zincir", en: "cold chain" },
-      { de: "die Tonne", tr: "çöp kutusu", en: "bin" },
+      { de: "die Tonne", tr: "çöp kutusu", en: "trash can" },
       { de: "aussortieren", tr: "ayıklamak", en: "to sort out" },
     ],
     minutes: 8,

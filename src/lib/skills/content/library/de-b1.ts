@@ -118,7 +118,7 @@ export const deB1: SkillExercise[] = [
       { de: "die Eiche", tr: "meşe", en: "oak" },
       { de: "die Art", tr: "tür", en: "species" },
       { de: "mischen", tr: "karıştırmak", en: "to mix" },
-      { de: "der Müll", tr: "çöp", en: "rubbish" },
+      { de: "der Müll", tr: "çöp", en: "trash" },
     ],
     minutes: 7,
     segments: [
@@ -206,7 +206,7 @@ export const deB1: SkillExercise[] = [
       { de: "das Ehrenamt", tr: "gönüllü iş", en: "voluntary work" },
       { de: "die Geduld", tr: "sabır", en: "patience" },
       { de: "sich bewerben", tr: "başvurmak", en: "to apply" },
-      { de: "die Anzeige", tr: "ilan", en: "advert" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
     ],
     minutes: 10,
     tasks: [

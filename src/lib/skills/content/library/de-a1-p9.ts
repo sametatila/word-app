@@ -319,7 +319,7 @@ export const deA1P9: SkillExercise[] = [
     gloss: [
       { de: "der Schlüssel", tr: "anahtar", en: "key" },
       { de: "die Zeitung", tr: "gazete", en: "newspaper" },
-      { de: "das Paket", tr: "paket", en: "parcel" },
+      { de: "das Paket", tr: "paket", en: "package" },
       { de: "verstehen", tr: "anlamak", en: "to understand" },
       { de: "abholen", tr: "almaya gitmek", en: "to pick up" },
     ],

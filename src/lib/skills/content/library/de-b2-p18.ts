@@ -120,7 +120,7 @@ export const deB2P18: SkillExercise[] = [
     intro: "Şehir parkında akşam yarasa gezisi: rehber hayvanları, bir cihazı ve neden azaldıklarını anlatıyor, bir katılımcı soru soruyor.",
     gloss: [
       { de: "die Fledermaus", tr: "yarasa", en: "bat" },
-      { de: "die Taschenlampe", tr: "el feneri", en: "torch" },
+      { de: "die Taschenlampe", tr: "el feneri", en: "flashlight" },
       { de: "die Mücke", tr: "sivrisinek", en: "mosquito" },
       { de: "das Märchen", tr: "masal", en: "fairy tale" },
       { de: "fällen", tr: "kesmek", en: "to fell" },

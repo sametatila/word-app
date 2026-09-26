@@ -32,7 +32,7 @@
  {
   "tr": "Bekleme salonunda iki saat. Sıra nasıl işliyor?",
   "kind": "intro",
-  "en": "Two hours in a waiting room. How does the queue work?"
+  "en": "Two hours in a waiting room. How does the line work?"
  },
  {
   "tr": "Kayıt işleminin dili. Cümleler neden hep edilgen?",
@@ -62,7 +62,7 @@
  {
   "tr": "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
   "kind": "intro",
-  "en": "The rules for filling in a form. What is required and what is not?"
+  "en": "The rules for filling out a form. What is required and what is not?"
  },
  {
   "tr": "Poliçenin üç cümlesi. Hangi koşul gerçek, hangisi değil?",
@@ -102,7 +102,7 @@
  {
   "tr": "Poliçe ve sıra cümleleri. Hangi koşul gerçek, hangisi değil?",
   "kind": "intro",
-  "en": "Sentences about a policy and a queue. Which condition is real and which is not?"
+  "en": "Sentences about a policy and a line. Which condition is real and which is not?"
  },
  {
   "tr": "Aktarılınca zaman geri kayıyor: „has expired“ → „had expired“.",

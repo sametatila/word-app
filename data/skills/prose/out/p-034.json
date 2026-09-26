@@ -67,7 +67,7 @@
  {
   "tr": "E-posta kalıplarını yaz. Sonunda e-posta formunu doldur.",
   "kind": "intro",
-  "en": "Write the phrases of an email. At the end, fill in the email form."
+  "en": "Write the phrases of an email. At the end, fill out the email form."
  },
  {
   "tr": "Önce bağlantı, sonra haber, sonra öğüt, en son yeni gün.",
@@ -122,7 +122,7 @@
  {
   "tr": "Eczanede ilaç alınıyor. Günde kaç kez, ne kadar, kime uygun?",
   "kind": "intro",
-  "en": "Medicine is bought at the chemist's. How many times a day, how much, and for whom?"
+  "en": "Medicine is bought at the pharmacy. How many times a day, how much, and for whom?"
  },
  {
   "tr": "„…but the people were friendly.“ — çoğul özne „were“ istiyor.",
@@ -142,7 +142,7 @@
  {
   "tr": "Eczane ve rapor cümlelerini yaz. Sonunda eczane fişini doldur.",
   "kind": "intro",
-  "en": "Write sentences for the chemist's and for calling in sick. At the end, fill in the chemist's slip."
+  "en": "Write sentences for the pharmacy and for calling in sick. At the end, fill out the pharmacy slip."
  },
  {
   "tr": "Öğüt ve acil çağrı yaz. „should“ kural değil tavsiye söylüyor.",
@@ -232,7 +232,7 @@
  {
   "tr": "Diş ağrısını iki biçimde de yaz. Sonunda diş hekimi formunu doldur.",
   "kind": "intro",
-  "en": "Write the toothache in both ways. At the end, fill in the dentist's form."
+  "en": "Write the toothache in both ways. At the end, fill out the dentist's form."
  },
  {
   "tr": "„Then you shouldn't drink coffee after six! Try water or light tea.“",

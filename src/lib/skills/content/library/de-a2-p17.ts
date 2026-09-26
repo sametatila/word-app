@@ -27,7 +27,7 @@ export const deA2P17: SkillExercise[] = [
       { de: "ausprobieren", tr: "denemek", en: "to try out" },
       { de: "der Mond", tr: "ay", en: "moon" },
       { de: "die Kasse", tr: "gişe", en: "ticket office" },
-      { de: "die Schlange", tr: "kuyruk", en: "queue" },
+      { de: "die Schlange", tr: "kuyruk", en: "line" },
       { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
     ],
     minutes: 5,

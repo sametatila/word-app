@@ -107,7 +107,7 @@
  { "tr": "Günün akışı sırayla verildi mi? (zuerst, dann, ab neun)", "kind": "rubric.criteria", "en": "Was the course of the day given in order? (zuerst, dann, ab neun)" },
  { "tr": "İstek `möchte` ile ve gerekçesiyle birlikte verildi mi?", "kind": "rubric.criteria", "en": "Was the wish given with `möchte` and together with its reason?" },
  { "tr": "Kendi deneyimi somut mu (ne, ne zaman, ne kadar sürdü)?", "kind": "rubric.criteria", "en": "Is the personal experience concrete (what, when, how long it lasted)?" },
- { "tr": "Ret cevabı tarih ve pozisyon numarasıyla belirtildi mi?", "kind": "rubric.criteria", "en": "Was the rejection named with its date and the post number?" },
+ { "tr": "Ret cevabı tarih ve pozisyon numarasıyla belirtildi mi?", "kind": "rubric.criteria", "en": "Was the rejection named with its date and the position number?" },
  { "tr": "Soru içeriğe ilişkin mi ve gerçekten cevaplanabilir mi?", "kind": "rubric.criteria", "en": "Is the question about the content and can it really be answered?" },
  { "tr": "Sorun tanımlanabilir mi (ne zamandan beri, hangi bina)?", "kind": "rubric.criteria", "en": "Can the problem be identified (since when, which building)?" },
  { "tr": "Yer en az bir kez tam olarak söylendi mi? (kat, bodrum)", "kind": "rubric.criteria", "en": "Was the place named exactly at least once? (floor, cellar)" },

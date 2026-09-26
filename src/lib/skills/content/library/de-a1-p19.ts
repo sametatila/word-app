@@ -227,7 +227,7 @@ export const deA1P19: SkillExercise[] = [
     intro: "Almancada „ie“ çoğunlukla uzun ii'dir; ama bazı kelimelerin sonunda vurgusuz „-ie“ ve „-ien“ iki ayrı ses verir: i-e. Altı cümlede iki okunuşu ayır.",
     gloss: [
       { de: "die Familie", tr: "aile", en: "family" },
-      { de: "die Ferien", tr: "okul tatili", en: "school holidays" },
+      { de: "die Ferien", tr: "okul tatili", en: "school vacation" },
       { de: "die Linie", tr: "hat", en: "line" },
       { de: "die Energie", tr: "enerji", en: "energy" },
     ],

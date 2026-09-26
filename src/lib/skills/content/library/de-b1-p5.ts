@@ -192,7 +192,7 @@ export const deB1P5: SkillExercise[] = [
     intro: "Evine iki hafta bakacak birine yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
       { de: "gießen", tr: "sulamak", en: "to water" },
-      { de: "die Mülltonne", tr: "çöp kutusu", en: "bin" },
+      { de: "die Mülltonne", tr: "çöp kutusu", en: "garbage can" },
       { de: "leeren", tr: "boşaltmak", en: "to empty" },
       { de: "der Zweitschlüssel", tr: "yedek anahtar", en: "spare key" },
     ],

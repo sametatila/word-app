@@ -21,7 +21,7 @@ export const deA1P16: SkillExercise[] = [
     genre: "info",
     intro: "Paylaşımlı bir evin buzdolabında temizlik planı asılı: hangi hafta kim ne yapıyor, neyi birlikte yapıyorlar, parayı kim topluyor.",
     gloss: [
-      { de: "die WG", tr: "paylaşımlı ev", en: "shared flat" },
+      { de: "die WG", tr: "paylaşımlı ev", en: "shared apartment" },
       { de: "putzen", tr: "temizlemek", en: "to clean" },
       { de: "der Müll", tr: "çöp", en: "trash" },
       { de: "das Geschirr", tr: "bulaşık", en: "dishes" },
@@ -96,7 +96,7 @@ export const deA1P16: SkillExercise[] = [
       { de: "der Flohmarkt", tr: "bit pazarı", en: "flea market" },
       { de: "die Lampe", tr: "lamba", en: "lamp" },
       { de: "funktionieren", tr: "işlemek", en: "to function" },
-      { de: "der Schein", tr: "banknot", en: "banknote" },
+      { de: "der Schein", tr: "banknot", en: "bill" },
       { de: "das Kleingeld", tr: "bozuk para", en: "small change" },
       { de: "die Kleidung", tr: "kıyafet", en: "clothing" },
     ],

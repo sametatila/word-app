@@ -240,7 +240,7 @@ export const deA2P14: SkillExercise[] = [
     genre: "pronounce",
     intro: "Almanca kısaltmalar harf harf okunur: harflerin Almanca adlarıyla ve vurgu hep son harfte. Altı cümlede kısaltmaları doğru söyle.",
     gloss: [
-      { de: "die WG", tr: "ortak ev", en: "shared flat" },
+      { de: "die WG", tr: "ortak ev", en: "shared apartment" },
       { de: "der LKW", tr: "kamyon", en: "truck" },
       { de: "die SMS", tr: "kısa mesaj", en: "text message" },
       { de: "das Kabel", tr: "kablo", en: "cable" },
