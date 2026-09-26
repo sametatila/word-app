@@ -82,7 +82,7 @@ export function UserScreen() {
           <SkeletonPill width={84} height={41} />
         </View>
       </SkeletonCard>
-      <CardGrid columns={gridColumns}>
+      <CardGrid columns={gridColumns} balance>
         {[0, 1, 2, 3].map((i) => (
           <SkeletonCard key={i} style={{ gap: 2 }}>
             <SkeletonLine variant="h1" width="55%" />
@@ -127,7 +127,7 @@ export function UserScreen() {
         </Card>
 
         {data.stats ? (
-          <CardGrid columns={gridColumns} stretch style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance stretch style={{ marginBottom: spacing.lg }}>
             <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={formatNumber(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
             <StatTile value={formatNumber(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />

@@ -1,4 +1,4 @@
-import { CONTENT_MAX, contentWidthFor, gridColumnsFor, PHONE_MAX_WIDTH, SIDE_GUTTER } from "../src/lib/useLayout";
+import { CONTENT_MAX, contentWidthFor, DIALOG_INLINE_LABEL_MAX, dialogActionsStacked, gridColumnsFor, PHONE_MAX_WIDTH, SIDE_GUTTER } from "../src/lib/useLayout";
 
 /**
  * İçerik sütunu kırılımları — gerçek cihaz genişlikleriyle.
@@ -18,11 +18,11 @@ const CIHAZLAR: { ad: string; genislik: number; beklenen: number }[] = [
   { ad: "iPhone SE (en dar satılan telefon)", genislik: 375, beklenen: PHONE_MAX_WIDTH },
   { ad: "iPhone 16 Pro Max (6.9\")", genislik: 440, beklenen: PHONE_MAX_WIDTH },
   // Tablet eşiği Android'in sw600dp kırılımıyla aynı.
-  // Tablette kolon = ekran eksi iki yanda 48, en çok 840.
+  // Tablette kolon = ekran eksi iki yanda 48, en çok 1120 (2026-09-26; önce 840).
   { ad: "iPad mini dikey", genislik: 744, beklenen: 648 },
   { ad: "iPad 10.9\" dikey", genislik: 820, beklenen: 724 },
-  { ad: "iPad Pro 13\" dikey", genislik: 1024, beklenen: 840 },
-  { ad: "iPad Pro 13\" yatay", genislik: 1366, beklenen: 840 },
+  { ad: "iPad Pro 13\" dikey", genislik: 1024, beklenen: 928 },
+  { ad: "iPad Pro 13\" yatay", genislik: 1366, beklenen: 1120 },
   // Çoklu görev (Split View / Slide Over): iPad'de uygulama telefon kadar dar
   // bir pencerede açılabiliyor ve UIRequiresFullScreen kapalı olduğu için bu
   // desteklenen bir durum.
@@ -42,8 +42,8 @@ describe("içerik sütunu genişliği", () => {
   });
 
   it("sütun hiçbir ekranda okunabilir ölçüyü aşmıyor", () => {
-    // Üst sınır satır ölçüsü için: 840pt'nin üstünde metin satırı uzayıp
-    // okunaklığı düşüyor. Bütün ekranlar aynı kolonda, tavan da tek.
+    // Tavan tek: bütün ekranlar aynı kolonda. Geniş kolonda düzen satırı
+    // uzatmıyor, sütunu artırıyor; tek başına paragraflar READABLE_TEXT_MAX'ta.
     for (let w = 300; w <= 2048; w += 1) expect(contentWidthFor(w)).toBeLessThanOrEqual(CONTENT_MAX);
   });
 
@@ -51,8 +51,8 @@ describe("içerik sütunu genişliği", () => {
     expect(contentWidthFor(599)).toBe(PHONE_MAX_WIDTH);
     // 600'ün hemen üstünde kolon telefon ölçüsünün altına inmiyor.
     expect(contentWidthFor(600)).toBe(PHONE_MAX_WIDTH);
-    expect(contentWidthFor(935)).toBe(935 - 2 * SIDE_GUTTER);
-    expect(contentWidthFor(936)).toBe(CONTENT_MAX);
+    expect(contentWidthFor(1215)).toBe(1215 - 2 * SIDE_GUTTER);
+    expect(contentWidthFor(1216)).toBe(CONTENT_MAX);
   });
 });
 
@@ -64,9 +64,9 @@ describe("içerik sütunu genişliği", () => {
  * diye satır ölçüsü uzamamalı, ama dikeydeki daralmayı da taşımamalı.
  */
 const YATAY: { ad: string; genislik: number; beklenen: number }[] = [
-  { ad: "iPad mini yatay", genislik: 1133, beklenen: 840 },
-  { ad: "Android tablet yatay (1280x800)", genislik: 1280, beklenen: 840 },
-  { ad: "iPad Pro 13\" yatay", genislik: 1366, beklenen: 840 },
+  { ad: "iPad mini yatay", genislik: 1133, beklenen: 1037 },
+  { ad: "Android tablet yatay (1280x800)", genislik: 1280, beklenen: 1120 },
+  { ad: "iPad Pro 13\" yatay", genislik: 1366, beklenen: 1120 },
 ];
 
 describe("yatay tablette içerik sütunu", () => {
@@ -110,13 +110,25 @@ describe("tek içerik kolonu", () => {
   });
 });
 
+describe("diyalog düğmeleri", () => {
+  it("kısa etiketler yan yana, biri uzunsa alt alta", () => {
+    expect(dialogActionsStacked("Continue", "Exit")).toBe(false);
+    expect(dialogActionsStacked("Vazgeç", "Hesabımı kalıcı olarak sil")).toBe(true);
+    expect(dialogActionsStacked("x".repeat(DIALOG_INLINE_LABEL_MAX))).toBe(false);
+    expect(dialogActionsStacked("x".repeat(DIALOG_INLINE_LABEL_MAX + 1))).toBe(true);
+  });
+});
+
 describe("ızgara sütun sayısı", () => {
   it.each([
     [PHONE_MAX_WIDTH, 2],
     [599, 2],
     [600, 3],
     [648, 3],
-    [CONTENT_MAX, 3],
+    [959, 3],
+    // 960'tan itibaren dört: geniş kolonda karo ~230dp'nin altına inmiyor.
+    [960, 4],
+    [CONTENT_MAX, 4],
   ])("kap %i dp → %i sütun", (kap, beklenen) => {
     expect(gridColumnsFor(kap)).toBe(beklenen);
   });

@@ -16,10 +16,15 @@ import { useWindowDimensions } from "react-native";
  *                        `maxWidth` hiç bağlamıyor, düzen birebir eskisi
  *   tablet  (≥ 600)  →  ekran eksi iki yanda SIDE_GUTTER, en çok CONTENT_MAX
  *
- * CONTENT_MAX 840: Android'in "geniş" (sw840) kırılımı ve Material'ın gövde
- * üst sınırı. Paragraf bu ölçüde hâlâ okunuyor (~100 karakter), kart ızgarası
- * üç sütun taşıyor. Tavanı değiştirmek bütün uygulamayı birlikte değiştirir —
- * istenen de bu, ekran başına genişlik yok.
+ * CONTENT_MAX 1120: ilk tavan 840'tı (Android'in sw840 kırılımı) ve yatay
+ * tablette iki yanda 200dp'yi aşan boş şerit bırakıyordu (2026-09-26, Samet:
+ * "gereksiz sağ sol boş alanlarımız var"). Yeni tavan 1280dp'lik yatay
+ * Android tablette 80dp, 13" iPad'de 128dp pay bırakıyor. Kolon genişleyince
+ * düzen satırı uzatmıyor, sütunu artırıyor: kart ızgarası 960'tan itibaren
+ * dört sütun (`gridColumnsFor`), satır listeleri iki sütun, Patika iki panel.
+ * Tek başına uzayan paragraflar kendi okuma ölçüsünde kalıyor
+ * (`READABLE_TEXT_MAX`). Tavanı değiştirmek bütün uygulamayı birlikte
+ * değiştirir — istenen de bu, ekran başına genişlik yok.
  */
 export const PHONE_MAX_WIDTH = 520;
 /** Tabletin başladığı genişlik — Android'in sw600dp kırılımı. Yönelim kilidi
@@ -28,7 +33,23 @@ export const TABLET_MIN_WIDTH = 600;
 /** Tablette kolonun iki yanında bırakılan pay (dp, tek taraf). */
 export const SIDE_GUTTER = 48;
 /** Tablette kolonun tavanı (dp). */
-export const CONTENT_MAX = 840;
+export const CONTENT_MAX = 1120;
+/** Ortalanmış tek başına metnin (durum gövdesi, açıklama) en çok genişliği:
+ *  kolon genişlese de satır ~75 karakterde kalsın. */
+export const READABLE_TEXT_MAX = 480;
+/** Bütün modal kartların (onay, bildir, kutlama) genişlik tavanı — tek ölçü,
+ *  diyalog başına sayı yok. Telefonda bağlamıyor (ekran eksi dolgu daha dar). */
+export const DIALOG_MAX_WIDTH = 440;
+/** Diyalog düğmesinin yarım genişliğe tek satırda sığdığı en uzun etiket
+ *  (karakter). Kart 440, dolgu 2×24, aralık 12 → düğme ~190dp, iç payla
+ *  ~158dp: kalın gövde yazısında ~18 karakter; 16 güvenli pay. Daha uzun bir
+ *  etiket varsa iki düğme alt alta dizilir (bkz. `dialogActionsStacked`). */
+export const DIALOG_INLINE_LABEL_MAX = 16;
+/** Diyalogdaki iki düğme alt alta mı? Etiket uzunluğuna bakıyor, ölçüme değil:
+ *  ilk çizimde karar belli, düğmeler yer değiştirip zıplamıyor. */
+export function dialogActionsStacked(...labels: string[]): boolean {
+  return labels.some((l) => l.length > DIALOG_INLINE_LABEL_MAX);
+}
 
 export function contentWidthFor(windowWidth: number): number {
   if (windowWidth < TABLET_MIN_WIDTH) return PHONE_MAX_WIDTH;
@@ -38,11 +59,14 @@ export function contentWidthFor(windowWidth: number): number {
 
 /** Izgaraların iki yerine üç sütuna geçtiği kolon genişliği. */
 const THREE_COLUMN_MIN = 600;
+/** Izgaraların dört sütuna geçtiği kolon genişliği: bir karo ~230dp'nin altına inmesin. */
+const FOUR_COLUMN_MIN = 960;
 /** Satır listelerinin (FlatList) iki sütuna bölündüğü kolon genişliği. */
 const TWO_LIST_COLUMN_MIN = 800;
 
 /** Kolonun genişliğine göre ızgara sütunu sayısı. */
-export function gridColumnsFor(containerWidth: number): 2 | 3 {
+export function gridColumnsFor(containerWidth: number): 2 | 3 | 4 {
+  if (containerWidth >= FOUR_COLUMN_MIN) return 4;
   return containerWidth >= THREE_COLUMN_MIN ? 3 : 2;
 }
 
@@ -89,7 +113,7 @@ export type Layout = {
    *  `UISupportedInterfaceOrientations` + `~ipad`). */
   landscape: boolean;
   /** Kart ızgarasının sütun sayısı — kolona göre (bkz. ui/CardGrid). */
-  gridColumns: 2 | 3;
+  gridColumns: 2 | 3 | 4;
   /**
    * SATIR listelerinin (FlatList) sütun sayısı — en çok iki.
    *

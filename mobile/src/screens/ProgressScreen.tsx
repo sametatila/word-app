@@ -240,7 +240,7 @@ export function ProgressScreen() {
 
         {/* istatistik ızgarası */}
         {me ? (
-          <CardGrid columns={gridColumns} stretch style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance stretch style={{ marginBottom: spacing.lg }}>
             <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
             <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
             <Stat icon={ClockIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
@@ -249,7 +249,7 @@ export function ProgressScreen() {
         ) : (
           // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
           // dört karo gelince ekran iki satır boyu uzamasın.
-          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
             {[0, 1, 2, 3].map((i) => (
               <SkeletonCard key={i} style={{ gap: 6 }}>
                 <SkeletonTile size={38} />

@@ -6,6 +6,7 @@ import { PressableScale } from "./PressableScale";
 import { CheckIcon } from "./icons";
 import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "../lib/report";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
+import { DIALOG_MAX_WIDTH, dialogActionsStacked } from "../lib/useLayout";
 
 /**
  * "Bu içeriği bildir" alt kartı — ConfirmDialog ile aynı dil (karartılmış zemin,
@@ -15,6 +16,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
   visible: boolean; kind: ReportKind; refId: string; content: string; onClose: () => void;
 }) {
   const { colors } = useTheme();
+  const stacked = dialogActionsStacked(t("common.discard"), t("common.send"));
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
 
@@ -39,7 +41,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
           accessibilityRole="alert"
           /* Adı başlıktan — bkz. `ui/ConfirmDialog` içindeki not. */
           accessibilityLabel={t("reportsheet.report_this_content")}
-          style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
+          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
           {state === "done" ? (
             /* Sonuç duyuruluyor — web `report-dialog` içindeki nota bak:
                kutu açık kalıyor, içi yerinde değişiyor. */
@@ -71,11 +73,12 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                 })}
               </View>
               {state === "error" ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
-              <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-                <PressableScale onPress={onClose} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
+              {/* Onay kutusuyla aynı kural (bkz. `ConfirmDialog`): uzun etikette alt alta. */}
+              <View style={{ flexDirection: stacked ? "column" : "row", gap: stacked ? spacing.sm : spacing.md, marginTop: spacing.md }}>
+                <PressableScale onPress={onClose} style={{ flex: stacked ? undefined : 1, paddingHorizontal: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
                   <Text variant="bodyStrong" color={colors.text}>{t("common.discard")}</Text>
                 </PressableScale>
-                <PressableScale onPress={submit} disabled={!reason || state === "sending"} accessibilityState={{ disabled: !reason }} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: reason ? colors.primary : colors.surface2, paddingVertical: 14, alignItems: "center" }, reason ? softShadow(colors.primary, 8) : {}]}>
+                <PressableScale onPress={submit} disabled={!reason || state === "sending"} accessibilityState={{ disabled: !reason }} style={[{ flex: stacked ? undefined : 1, paddingHorizontal: spacing.md, borderRadius: radii.lg, backgroundColor: reason ? colors.primary : colors.surface2, paddingVertical: 14, alignItems: "center" }, reason ? softShadow(colors.primary, 8) : {}]}>
                   <Text variant="bodyStrong" color={reason ? colors.onPrimary : colors.textFaint}>{state === "sending" ? "..." : t("common.send")}</Text>
                 </PressableScale>
               </View>

@@ -27,12 +27,20 @@ import { spacing } from "../theme";
  * 2026-09-23) — üstündeki tam genişlik kartlarla hizasız. Şimdi her satır
  * `flex: 1` hücreler ve eksik satır boş hücreyle dolduruluyor: kenar her
  * genişlikte kolonun kenarı, son satırın kartları üsttekilerle aynı ölçüde.
+ *
+ * `balance`: az ve sabit sayıda karo (istatistik ızgaraları) için. İki karo
+ * üç sütunda sağda boş bir hücre, dört karo üç sütunda 3+1 bırakıyordu
+ * (tablet, 2026-09-26). Dengeli dizilişte satır sayısı aynı kalıyor, sütun
+ * sayısı satırları eşit dolduracak kadar azaltılıyor: 2 → 2, 4 → 2+2 ya da
+ * tek satır 4, 5 → 3+2. Uzun ve değişken listelerde (başarımlar) açılmıyor:
+ * orada bölümden bölüme kart genişliği değişirdi.
  */
 export function CardGrid({
   children,
   minItemWidth = 400,
   columns,
   stretch = false,
+  balance = false,
   style,
 }: {
   children: React.ReactNode;
@@ -43,12 +51,15 @@ export function CardGrid({
   /** Bir satırdaki hücreler en uzun olanın boyuna uzasın (hücrenin kendisi
    *  `flex: 1` taşımalı). Kapalıyken her kart kendi boyunda. */
   stretch?: boolean;
+  /** Sütunu satırları eşit dolduracak kadar azalt (bkz. yukarı). */
+  balance?: boolean;
   style?: StyleProp<ViewStyle>;
 }) {
   const { contentWidth } = useLayout();
-  const sutun = columns ?? Math.min(3, Math.max(1, Math.floor(contentWidth / minItemWidth)));
-  if (sutun < 2) return <>{children}</>;
   const ogeler = React.Children.toArray(children);
+  const enCok = columns ?? Math.min(3, Math.max(1, Math.floor(contentWidth / minItemWidth)));
+  const sutun = balance && ogeler.length > 0 ? Math.ceil(ogeler.length / Math.ceil(ogeler.length / enCok)) : enCok;
+  if (sutun < 2) return <>{children}</>;
   const satirlar: React.ReactNode[][] = [];
   for (let i = 0; i < ogeler.length; i += sutun) satirlar.push(ogeler.slice(i, i + sutun));
   return (

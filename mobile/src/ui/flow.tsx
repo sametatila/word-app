@@ -9,6 +9,7 @@ import { Celebrate } from "./Celebrate";
 import { ArrowBackIcon, XIcon } from "./icons";
 import { t } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, soft, type Palette, ds } from "../theme";
+import { READABLE_TEXT_MAX } from "../lib/useLayout";
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.
@@ -311,7 +312,7 @@ export function StateBody({ title, body, icon, children, alert = false }: { titl
     <View accessibilityLiveRegion={alert ? "assertive" : "polite"} style={{ alignItems: "center", gap: spacing.md, paddingVertical: spacing.xl }}>
       {icon}
       <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{title}</Text>
-      {body ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: 340 }}>{body}</Text> : null}
+      {body ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: READABLE_TEXT_MAX }}>{body}</Text> : null}
       {children}
     </View>
   );

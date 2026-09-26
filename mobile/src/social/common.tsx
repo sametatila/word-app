@@ -12,6 +12,7 @@ import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, Bo
 import { useTheme, spacing, radii, softShadow, onTint, soft as softOf, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
+import { READABLE_TEXT_MAX } from "../lib/useLayout";
 
 /**
  * Sosyal ekranların mobil tasarım sözlüğü — Profil/Ayarlar/Başarımlar ile aynı:
@@ -125,7 +126,7 @@ export function EmptyCard({ icon, tint, title, text, action, onAction, live }: {
     <Card padded accessibilityLiveRegion={live} style={{ alignItems: "center", gap: spacing.sm }}>
       <IconTile icon={icon} tint={t} size={ds(52)} solid />
       <Text variant="h3" style={{ textAlign: "center", marginTop: spacing.xs }}>{title}</Text>
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{text}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", maxWidth: READABLE_TEXT_MAX }}>{text}</Text>
       {action && onAction ? <View style={{ marginTop: spacing.sm }}><Pill label={action} onPress={onAction} /></View> : null}
     </Card>
   );

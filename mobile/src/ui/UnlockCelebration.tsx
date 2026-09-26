@@ -12,6 +12,7 @@ import { Celebrate } from "./Celebrate";
 import { Text } from "./Text";
 import { SparkIcon } from "./icons";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
+import { DIALOG_MAX_WIDTH } from "../lib/useLayout";
 
 /**
  * YENİ HAK AÇILDI — kutlama.
@@ -123,7 +124,7 @@ export function UnlockCelebration() {
           accessibilityViewIsModal
           accessibilityRole="alert"
           accessibilityLabel={t("unlock.celebrate")}
-          style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}
+          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}
         >
           <View style={[{ width: ds(72), height: ds(72), borderRadius: ds(36), alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
             <SparkIcon color={colors.onPrimary} size={36} />

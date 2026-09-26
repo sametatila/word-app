@@ -132,9 +132,9 @@ function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: strin
   );
 }
 
-/** İki panelin açıldığı en küçük kolon genişliği (dp). Kolonun tavanı 840
- *  (bkz. `contentWidthFor`): yatay iPad'lerin hepsi ona ulaşıyor, Split View
- *  gibi dar pencereler ulaşmıyor. */
+/** İki panelin açıldığı en küçük kolon genişliği (dp). Yatay tabletlerin
+ *  kolonu bunu aşıyor (bkz. `contentWidthFor`), Split View gibi dar pencereler
+ *  aşmıyor. */
 const IKI_PANEL_MIN = 800;
 
 export function PathScreen() {
@@ -150,7 +150,7 @@ export function PathScreen() {
     iki panele yer yok, akış eskisi gibi yönlendirmeyle.
 
     Izgara sütunu, kolonun tamamına değil SOL PANELİN genişliğine göre
-    sayılıyor: 840'lık kolona üç kart sığıyor ama onun %45'ine iki kart.
+    sayılıyor: geniş kolona dört kart sığıyor ama onun %45'ine iki kart.
   */
   const { contentWidth, landscape } = useLayout();
   /*

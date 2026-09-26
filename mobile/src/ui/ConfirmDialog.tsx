@@ -4,6 +4,7 @@ import { Text } from "./Text";
 import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
 import { useTheme, spacing, radii, softShadow, DIALOG_FILL, DIALOG_INK } from "../theme";
+import { DIALOG_MAX_WIDTH, dialogActionsStacked } from "../lib/useLayout";
 
 /**
  * Uygulama tasarımına uygun onay modalı (native Alert yerine). Karartılmış zemin
@@ -42,6 +43,7 @@ export function ConfirmDialog({
      gerekçesi ve kontrast ölçümleri orada yazılı (koyu temada `colors.danger`
      açık pembeye dönüyor ve beyaz yazıyla 2.06 veriyordu). */
   const accent = destructive ? DIALOG_FILL.destructive : DIALOG_FILL.primary;
+  const stacked = dialogActionsStacked(cancelLabel, confirmLabel);
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onDismiss ?? onCancel}>
       <Pressable onPress={onDismiss ?? onCancel} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
@@ -59,14 +61,20 @@ export function ConfirmDialog({
              sorulduğunu söylemiyor. Web karşılığı `aria-labelledby` ile aynı
              başlığı kutunun adı yapıyor. */
           accessibilityLabel={title}
-          style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
+          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
           <Text variant="h2">{title}</Text>
           {message ? <Text variant="body" color={colors.textMuted} style={{ marginTop: 2 }}>{message}</Text> : null}
-          <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.lg }}>
-            <PressableScale onPress={onCancel} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
+          {/* UZUN ETİKETTE ALT ALTA. İki düğme her zaman `flex: 1` yan yanaydı:
+              uzun bir etiket ("Hesabımı kalıcı olarak sil") yarım genişlikte
+              iki satıra kırılıyordu (tablet incelemesi, 2026-09-26). Karar
+              etiket uzunluğundan (`dialogActionsStacked`): kısa etiketler eşit
+              genişlikte yan yana, biri uzunsa ikisi de tam genişlikte alt alta.
+              Onay altta: sıra iki düzende aynı (önce vazgeç, sonra onay). */}
+          <View style={{ flexDirection: stacked ? "column" : "row", gap: stacked ? spacing.sm : spacing.md, marginTop: spacing.lg }}>
+            <PressableScale onPress={onCancel} style={{ flex: stacked ? undefined : 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, paddingHorizontal: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.text}>{cancelLabel}</Text>
             </PressableScale>
-            <PressableScale onPress={onConfirm} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: accent, paddingVertical: 14, alignItems: "center" }, softShadow(accent, 8)]}>
+            <PressableScale onPress={onConfirm} style={[{ flex: stacked ? undefined : 1, borderRadius: radii.lg, backgroundColor: accent, paddingVertical: 14, paddingHorizontal: spacing.md, alignItems: "center" }, softShadow(accent, 8)]}>
               <Text variant="bodyStrong" color={DIALOG_INK}>{confirmLabel}</Text>
             </PressableScale>
           </View>

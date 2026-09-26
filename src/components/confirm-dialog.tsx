@@ -16,6 +16,10 @@ import { useT } from "@/lib/i18n/client";
  * etkisizleşmesi tarayıcının kendi işi. Elle yazılmış bir modalda bu üçü de
  * ayrı ayrı unutulan şeyler.
  */
+/** Düğme etiketi bundan uzunsa iki düğme alt alta — mobil
+ *  `lib/useLayout` `DIALOG_INLINE_LABEL_MAX` ile aynı sayı (`check:parity`). */
+const INLINE_LABEL_MAX = 16;
+
 export function ConfirmDialog({
   open,
   title,
@@ -43,6 +47,11 @@ export function ConfirmDialog({
   const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   const t = useT();
+  const vazgec = cancelLabel ?? t("common.discard");
+  const onay = confirmLabel ?? t("common.confirm");
+  /* UZUN ETİKETTE ALT ALTA — mobil `ConfirmDialog` ile aynı kural: yarım
+     genişlikte uzun etiket iki satıra kırılıyordu. */
+  const altAlta = vazgec.length > INLINE_LABEL_MAX || onay.length > INLINE_LABEL_MAX;
 
   useEffect(() => {
     const el = ref.current;
@@ -66,14 +75,14 @@ export function ConfirmDialog({
         // hedefi zeminde diyaloğun kendisi olur; kart bir çocuk.
         if (e.target === ref.current) onCancel();
       }}
-      className="card m-auto w-[min(25rem,calc(100vw-2rem))] p-5 backdrop:bg-black/55"
+      className="card m-auto w-[min(27.5rem,calc(100vw-2rem))] p-5 backdrop:bg-black/55"
       style={{ color: "var(--text)" }}
     >
       <h2 id={basligId} className="text-h2">{title}</h2>
       {message ? <p className="muted mt-1 text-body">{message}</p> : null}
-      <div className="mt-4 flex gap-3">
+      <div className={altAlta ? "mt-4 flex flex-col gap-2" : "mt-4 flex gap-3"}>
         <button type="button" onClick={onCancel} className="btn flex-1 py-3.5" style={{ background: "var(--surface-2)", color: "var(--text)" }}>
-          {cancelLabel ?? t("common.discard")}
+          {vazgec}
         </button>
         <button
           type="button"
@@ -86,7 +95,7 @@ export function ConfirmDialog({
             "--tint-fill": destructive ? "var(--color-rose-600)" : "var(--color-brand-500)",
           } as React.CSSProperties}
         >
-          {confirmLabel ?? t("common.confirm")}
+          {onay}
         </button>
       </div>
     </dialog>

@@ -128,7 +128,7 @@ export function ProfileScreen() {
         {meLoading ? (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: iki karo
           // gelince ekran bir satır boyu uzamıyor.
-          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
             {[0, 1].map((i) => (
               <SkeletonCard key={i} style={{ gap: 2 }}>
                 <SkeletonLine variant="h1" width="60%" />
@@ -137,7 +137,7 @@ export function ProfileScreen() {
             ))}
           </CardGrid>
         ) : me ? (
-          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
             <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
           </CardGrid>
