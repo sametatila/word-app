@@ -360,16 +360,6 @@
   "de": "Richtig. Beide Hälften haben die Kiste als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
  },
  {
-  "tr": "Doğru. Kimin arıttığı yazılmıyor ve süreç kaydında bu olağan; kayda geçen işlemin kendisi.",
-  "kind": "why.tr",
-  "de": "Richtig. Wer raffiniert, wird nicht geschrieben, und im Vorgangsprotokoll ist das normal; zu Protokoll geht der Vorgang selbst."
- },
- {
-  "tr": "Doğru. Özne başa geçtiği için fiil mastara dönüyor ve değerlendirme kimseye mal edilmiyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Weil das Subjekt nach vorn rückt, wird das Verb zum Infinitiv, und die Einschätzung wird niemandem zugeschrieben."
- },
- {
   "tr": "Kaynağı açık bırakmak için",
   "kind": "hint.tr",
   "de": "Um die Quelle offen zu lassen –"
@@ -953,11 +943,6 @@
   "tr": "Merhaba! Bugün bir denemenin takvimini anlatmayı öğreneceğiz: o güne kadar ne bitmiş olacak, o an ne sürüyor olacak.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir, den Zeitplan eines Versuchs zu erklären: was bis dahin fertig sein wird und was dann gerade laufen wird."
- },
- {
-  "tr": "Buradaki ek bilgi çoğu zaman edilgen: «ki mayısta kontrol edilmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?",
-  "kind": "say.tr",
-  "de": "Die Ergänzung ist hier meist passiv: «das im Mai geprüft wurde». Du fügst sie an, ohne den Handelnden zu nennen. Bist du bereit?"
  },
  {
   "tr": "Bu modülde edilgenin gelecekteki hâlini göreceksin: bitmiş olacak demek ile bitirilmiş olacak demek ayrı şeyler. Hazır mısın?",

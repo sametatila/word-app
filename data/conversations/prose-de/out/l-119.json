@@ -295,11 +295,6 @@
   "de": "Richtig. „might“ hält das Ergebnis auf Abstand; der Satz bleibt an eine Bedingung gebunden."
  },
  {
-  "tr": "Doğru. Yer öbeği başa alınmış; kayıp sona düşünce daha ağır duyuluyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Ortsangabe steht vorn; fällt der Verlust ans Ende, klingt er schwerer."
- },
- {
   "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil işlemin kendisine bağlanmış.",
   "kind": "why.tr",
   "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Vorgang selbst."
@@ -310,19 +305,9 @@
   "de": "Richtig. Das eine benennt eine Bilanz, das andere eine Aussage auf einem Produkt."
  },
  {
-  "tr": "Doğru. Biri sonucu zayıflatan bir işlem, öteki onun kendi niteliğine dair bir hüküm.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine ist ein Eingriff, der das Ergebnis schwächt, das andere ein Urteil über seine eigene Beschaffenheit."
- },
- {
   "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi belediyenin kendi fiilleriyle doğruluyor.",
   "kind": "why.tr",
   "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe mit den eigenen Verben der Stadt."
- },
- {
-  "tr": "Doğru. Ölçek öbeği başa alınmış; ölçütün hangi düzeyde geçerli olduğu en başta duruyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Maßstabsangabe steht vorn; auf welcher Ebene das Kriterium gilt, steht ganz am Anfang."
  },
  {
   "tr": "Doğru. Biri bir tasarım kararını, öteki bir maliyeti adlandırıyor; edilgen fiiller de o yüzden ayrı.",
@@ -1932,12 +1917,12 @@
  {
   "tr": "dediğinde karşındaki seni rakamları gören biri sayar. Büyümeyi tümden reddeden cümle, haklı olsa bile masadan düşer.",
   "kind": "say.tr",
-  "de": "hält dich dein Gegenüber für jemanden, der die Zahlen sieht. Ein Satz, der Wachstum ganz ablehnt, fällt vom Tisch, auch wenn er recht hat."
+  "de": "– sagst du das, hält dich dein Gegenüber für jemanden, der die Zahlen sieht. Ein Satz, der Wachstum ganz ablehnt, fällt vom Tisch, auch wenn er recht hat."
  },
  {
   "tr": "dediğinde kimin gittiğini söylemene gerek kalmaz. Suçlama yok, yalnız bir boşluk var ve boşluğu dinleyen dolduruyor.",
   "kind": "say.tr",
-  "de": "brauchst du nicht zu sagen, wer geht. Es gibt keinen Vorwurf, nur eine Lücke, und die Lücke füllt die Zuhörerin."
+  "de": "– sagst du das, brauchst du nicht zu sagen, wer geht. Es gibt keinen Vorwurf, nur eine Lücke, und die Lücke füllt die Zuhörerin."
  },
  {
   "tr": "İlke kişiden ayrıldığı anda bir yükümlülük oluyor; «biz istiyoruz» dediğin anda yeniden bir görüş oluyor. Hazır mısın?",
@@ -1948,11 +1933,6 @@
   "tr": "Ölçek değişince aynı ölçüt başka sonuç veriyor; adres yoksa okur bir mahalle ölçüsünü bütün şehre uygular. Hazır mısın?",
   "kind": "say.tr",
   "de": "Ändert sich der Maßstab, wirkt dasselbe Kriterium anders; ohne Adresse überträgt die Leserin das Maß eines Viertels auf die ganze Stadt. Bist du bereit?"
- },
- {
-  "tr": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; bu modülün son dersinde eksiltmeyi okumayı bitiriyoruz. Hazır mısın?",
-  "kind": "say.tr",
-  "de": "Was der Plan verschweigt, ist meist, wer gehen muss; in der letzten Lektion dieses Moduls schließen wir das Lesen der Auslassung ab. Bist du bereit?"
  },
  {
   "tr": "Süreci başa almak kimseyi suçlamıyor, faili başa almak suçluyor; ikisi de doğru cümle ve ikisi ayrı siyaset. Hazır mısın?",
@@ -1972,6 +1952,6 @@
  {
   "tr": "dediğinde bir tarih verilmiş olur ama bir söz verilmemiş olur. Eksiltilen yarı, plana bakan kişinin sorması gereken sorudur.",
   "kind": "say.tr",
-  "de": "ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die stellen muss, wer den Plan liest."
+  "de": "– sagst du das, ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die stellen muss, wer den Plan liest."
  }
 ]

@@ -239,17 +239,21 @@
      },
      {
       "lang": "en",
-      "text": "Stakeholders are thought to be ready."
+      "text": "The indicators are said being stable."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Stakeholders are thought to be ready.",
-     "answer": true,
+     "statement": "The indicators are said being stable.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Özne başa geçtiği için ikinci fiil mastara dönüyor; bu iki kalıbın tek yapısal farkı."
+       "text": "Yanlış. Özne başa geçince aktarım fiilinden sonra mastar gelir, -ing gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The indicators are said to be stable."
       }
      ]
     }
@@ -1205,17 +1209,21 @@
      },
      {
       "lang": "en",
-      "text": "The objective is clear, which is why we met."
+      "text": "Mark, that leads the project, starts on Monday."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The objective is clear, which is why we met.",
-     "answer": true,
+     "statement": "Mark, that leads the project, starts on Monday.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
+       "text": "Yanlış. Virgülle ayrılan açıklayıcı ilgi cümlesinde that kullanılmaz; kişi için who gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Mark, who leads the project, starts on Monday."
       }
      ]
     }
@@ -2676,17 +2684,21 @@
      },
      {
       "lang": "en",
-      "text": "Someone should have raised the alert."
+      "text": "Someone should have check the logs."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Someone should have raised the alert.",
-     "answer": true,
+     "statement": "Someone should have check the logs.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+       "text": "Yanlış. Geçmişe bakan kipte have'den sonra fiil üçüncü hâle geçer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Someone should have checked the logs."
       }
      ]
     }
@@ -3145,17 +3157,21 @@
      },
      {
       "lang": "en",
-      "text": "If we had planned better, the loss would be smaller now."
+      "text": "If we had planned better, the loss would have been smaller now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If we had planned better, the loss would be smaller now.",
-     "answer": true,
+     "statement": "If we had planned better, the loss would have been smaller now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+       "text": "Yanlış. Sonuç bugüne bakıyor; bugünkü sonuç would ile kurulur, would have ile değil. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "If we had planned better, the loss would be smaller now."
       }
      ]
     }
@@ -4139,17 +4155,21 @@
      },
      {
       "lang": "en",
-      "text": "Not only did she moderate, she also spoke."
+      "text": "Rarely we have seen such a turnout."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Not only did she moderate, she also spoke.",
-     "answer": true,
+     "statement": "Rarely we have seen such a turnout.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+       "text": "Yanlış. Bu zarf başa gelince cümle soru sırasına geçer: yardımcı fiil özneden önce durur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Rarely have we seen such a turnout."
       }
      ]
     }
@@ -4894,7 +4914,7 @@
   "vocab": [
    {
     "de": "supplier",
-    "tr": "tedarikçi"
+    "tr": "tedarikçi firma"
    },
    {
     "de": "damages",
@@ -5626,17 +5646,21 @@
      },
      {
       "lang": "en",
-      "text": "It was the threshold that changed."
+      "text": "It was the deadline what changed."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "It was the threshold that changed.",
-     "answer": true,
+     "statement": "It was the deadline what changed.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tek bir parça seçilmiş ve geri kalanına itiraz edilmediği de aynı cümleyle söylenmiş."
+       "text": "Yanlış. It was … yapısında seçilen parçayı that bağlar; what burada kullanılmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the deadline that changed."
       }
      ]
     }
@@ -6628,17 +6652,21 @@
      },
      {
       "lang": "en",
-      "text": "The performance of the contract was late."
+      "text": "The reimburse of the fee is overdue."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The performance of the contract was late.",
-     "answer": true,
+     "statement": "The reimburse of the fee is overdue.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kimin geciktiği yazılmıyor ve resmî şikâyette bu olağan; kayda geçen olayın kendisi."
+       "text": "Yanlış. Fiil isme çevrilmeden kullanılmış; burada fiilin isim hâli gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The reimbursement of the fee is overdue."
       }
      ]
     }
@@ -6898,7 +6926,7 @@
   "vocab": [
    {
     "de": "rigid",
-    "tr": "katı"
+    "tr": "katı / esnek olmayan"
    },
    {
     "de": "flexible",
@@ -8612,17 +8640,21 @@
      },
      {
       "lang": "en",
-      "text": "Being prompt, the team dispatched the goods."
+      "text": "Having checked the stock, the goods were sent."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Being prompt, the team dispatched the goods.",
-     "answer": true,
+     "statement": "Having checked the stock, the goods were sent.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Her iki yarının öznesi de aynı; özne değişseydi bu öbek kurulamazdı."
+       "text": "Yanlış. Ortaç öbeğinin öznesi ana cümlenin öznesiyle aynı olmalı; burada iki yarının öznesi farklı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Having checked the stock, we sent the goods."
       }
      ]
     }
@@ -9570,17 +9602,21 @@
      },
      {
       "lang": "en",
-      "text": "This time next week we will be checking the bond."
+      "text": "By Friday we will have send the reminder."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This time next week we will be checking the bond.",
-     "answer": true,
+     "statement": "By Friday we will have send the reminder.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor."
+       "text": "Yanlış. will have yapısında fiil üçüncü hâle geçer, yalın kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "By Friday we will have sent the reminder."
       }
      ]
     }
@@ -10075,17 +10111,21 @@
      },
      {
       "lang": "en",
-      "text": "The accuracy is thought to be high."
+      "text": "The source is reported being reliable."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The accuracy is thought to be high.",
-     "answer": true,
+     "statement": "The source is reported being reliable.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Özne başa geçtiği için fiil mastara dönüyor ve değerlendirme kimseye mal edilmiyor."
+       "text": "Yanlış. Özne başa geçince aktarım fiilinden sonra mastar gelir, -ing gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The source is reported to be reliable."
       }
      ]
     }
@@ -11033,17 +11073,21 @@
      },
      {
       "lang": "en",
-      "text": "The refinement of the sugar is ongoing."
+      "text": "The inspect of the valves is weekly."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The refinement of the sugar is ongoing.",
-     "answer": true,
+     "statement": "The inspect of the valves is weekly.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kimin arıttığı yazılmıyor ve süreç kaydında bu olağan; kayda geçen işlemin kendisi."
+       "text": "Yanlış. Fiil isme çevrilmeden kullanılmış; burada fiilin isim hâli gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The inspection of the valves is weekly."
       }
      ]
     }
@@ -11538,17 +11582,21 @@
      },
      {
       "lang": "en",
-      "text": "This time next month we will be testing the prototype."
+      "text": "By then the report will have be sent."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This time next month we will be testing the prototype.",
-     "answer": true,
+     "statement": "By then the report will have be sent.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor."
+       "text": "Yanlış. Edilgeni will have been taşır; be yalın kalamaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "By then the report will have been sent."
       }
      ]
     }
@@ -11862,7 +11910,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki ek bilgi çoğu zaman edilgen: «ki mayısta kontrol edilmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
+      "text": "Buradaki ek bilgi çoğu zaman edilgen: «mayısta kontrol edilmiş olan» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
      }
     ],
     "expect": {
@@ -12043,17 +12091,21 @@
      },
      {
       "lang": "en",
-      "text": "The manual is old, which is why we stopped."
+      "text": "The valve, that was replaced in June, is leaking."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The manual is old, which is why we stopped.",
-     "answer": true,
+     "statement": "The valve, that was replaced in June, is leaking.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
+       "text": "Yanlış. Virgülle ayrılan açıklayıcı ilgi cümlesinde that kullanılmaz; şey için which gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The valve, which was replaced in June, is leaking."
       }
      ]
     }
@@ -12504,17 +12556,21 @@
      },
      {
       "lang": "en",
-      "text": "It was the inventory that didn't add up."
+      "text": "What was changed it is the date."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "It was the inventory that didn't add up.",
-     "answer": true,
+     "statement": "What was changed it is the date.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tek bir parça seçilmiş ve geri kalanının tuttuğu da aynı cümleyle söylenmiş."
+       "text": "Yanlış. What ile kurulan yarık cümlede özneyi tekrarlayan it gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "What was changed is the date."
       }
      ]
     }
@@ -13009,17 +13065,21 @@
      },
      {
       "lang": "en",
-      "text": "Rarely has a precaution been so useful."
+      "text": "Nowhere it is written that the check is optional."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Rarely has a precaution been so useful.",
-     "answer": true,
+     "statement": "Nowhere it is written that the check is optional.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+       "text": "Yanlış. Bu zarf başa gelince cümle soru sırasına geçer: yardımcı fiil özneden önce durur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Nowhere is it written that the check is optional."
       }
      ]
     }
@@ -13514,17 +13574,21 @@
      },
      {
       "lang": "en",
-      "text": "The maintenance can't have been done last week."
+      "text": "The outage must have caused by the storm."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The maintenance can't have been done last week.",
-     "answer": true,
+     "statement": "The outage must have caused by the storm.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kimin yapmadığı söylenmiyor; edilgen kip yalnız işin olmadığını söylüyor."
+       "text": "Yanlış. Kesinti bir şeye yol açmadı, kesintiye bir şey yol açtı; edilgen için must have been gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The outage must have been caused by the storm."
       }
      ]
     }
@@ -14027,17 +14091,21 @@
      },
      {
       "lang": "en",
-      "text": "If the variable had been fixed, the result would be clear now."
+      "text": "If the variable would have been fixed, the result would be clear now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If the variable had been fixed, the result would be clear now.",
-     "answer": true,
+     "statement": "If the variable would have been fixed, the result would be clear now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+       "text": "Yanlış. Şart yarısında would durmaz; orada had gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "If the variable had been fixed, the result would be clear now."
       }
      ]
     }
@@ -14488,17 +14556,21 @@
      },
      {
       "lang": "en",
-      "text": "Apparently the bolt was tightened twice."
+      "text": "It seems to be calibrated last month."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Apparently the bolt was tightened twice.",
-     "answer": true,
+     "statement": "It seems to be calibrated last month.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi gözlemi gibi sunmuyor."
+       "text": "Yanlış. Olay geçmişte kaldığı için to be değil to have been gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to have been calibrated last month."
       }
      ]
     }
@@ -16472,17 +16544,21 @@
      },
      {
       "lang": "en",
-      "text": "Being short, the protest got little space."
+      "text": "Published on Monday, readers found the scandal quickly."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Being short, the protest got little space.",
-     "answer": true,
+     "statement": "Published on Monday, readers found the scandal quickly.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Her iki yarının öznesi de protesto; özne değişseydi bu öbek kurulamazdı."
+       "text": "Yanlış. Ortaç öbeğinin öznesi ana cümlenin öznesiyle aynı olmalı; burada iki yarının öznesi farklı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Published on Monday, the scandal spread quickly."
       }
      ]
     }
@@ -17466,17 +17542,21 @@
      },
      {
       "lang": "en",
-      "text": "Apparently the methodology was never published."
+      "text": "It seems to have taken from a database."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Apparently the methodology was never published.",
-     "answer": true,
+     "statement": "It seems to have taken from a database.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi bulgusu gibi sunmuyor."
+       "text": "Yanlış. Bilgi bir şeyi kendisi almadı, alındı; edilgen için been gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to have been taken from a database."
       }
      ]
     }
@@ -17764,7 +17844,7 @@
    },
    {
     "de": "duty",
-    "tr": "görev"
+    "tr": "görev (yükümlülük)"
    }
   ],
   "patterns": [
@@ -19470,17 +19550,21 @@
      },
      {
       "lang": "en",
-      "text": "The distinction between the cases is clear."
+      "text": "The analyze of the data took a month."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The distinction between the cases is clear.",
-     "answer": true,
+     "statement": "The analyze of the data took a month.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kimin ayırdığı yazılmıyor ve çözümlemede bu olağan; yazıya geçen ayrımın kendisi."
+       "text": "Yanlış. Fiil isme çevrilmeden kullanılmış; burada fiilin isim hâli gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The analysis of the data took a month."
       }
      ]
     }
@@ -19975,25 +20059,21 @@
      },
      {
       "lang": "en",
-      "text": "The cohort is thought to have been too small."
+      "text": "The sample is thought to have chosen at random."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The cohort is thought to have been too small.",
-     "answer": true,
+     "statement": "The sample is thought to have chosen at random.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Aktarım geçmişe uzandığı için"
+       "text": "Yanlış. Olay geçmişte kaldı ve edilgen; to have been gerekir, been düşünce cümle etken okunur. Doğrusu:"
       },
       {
        "lang": "en",
-       "text": "to have been"
-      },
-      {
-       "lang": "tr",
-       "text": "biçimini alıyor."
+       "text": "The sample is thought to have been chosen at random."
       }
      ]
     }
@@ -20558,7 +20638,6 @@
      "kind": "produce",
      "target": "Being warm, the sample changed color.",
      "accept": [
-      "Being warm, the sample changed color.",
       "Being warm, that sample changed color."
      ],
      "hint": [
@@ -21742,7 +21821,7 @@
      },
      {
       "lang": "tr",
-      "text": "Teknik yazıda ek bilgi çoğu zaman edilgen: «ki mayısta güncellenmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
+      "text": "Teknik yazıda ek bilgi çoğu zaman edilgen: «mayısta güncellenmiş olan» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
      }
     ],
     "expect": {
@@ -21915,17 +21994,21 @@
      },
      {
       "lang": "en",
-      "text": "The interface is old, which is why we stopped."
+      "text": "The server, that was restarted at noon, is stable now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The interface is old, which is why we stopped.",
-     "answer": true,
+     "statement": "The server, that was restarted at noon, is stable now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
+       "text": "Yanlış. Virgülle ayrılan açıklayıcı ilgi cümlesinde that kullanılmaz; şey için which gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The server, which was restarted at noon, is stable now."
       }
      ]
     }
@@ -22197,7 +22280,7 @@
    },
    {
     "de": "specify",
-    "tr": "belirtmek"
+    "tr": "tam olarak belirtmek"
    },
    {
     "de": "interpret",
@@ -22412,17 +22495,21 @@
      },
      {
       "lang": "en",
-      "text": "It was the statistical test that failed."
+      "text": "It was the control group what surprised us."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "It was the statistical test that failed.",
-     "answer": true,
+     "statement": "It was the control group what surprised us.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tek bir parça seçilmiş ve geri kalanının tuttuğu da aynı cümleyle söylenmiş."
+       "text": "Yanlış. It was … yapısında seçilen parçayı that bağlar; what burada kullanılmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the control group that surprised us."
       }
      ]
     }
@@ -23899,17 +23986,21 @@
      },
      {
       "lang": "en",
-      "text": "If the method had been clear, the result would remain valid now."
+      "text": "If the sample would have been larger, we would have generalized."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If the method had been clear, the result would remain valid now.",
-     "answer": true,
+     "statement": "If the sample would have been larger, we would have generalized.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+       "text": "Yanlış. Şart yarısında would durmaz; orada had gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "If the sample had been larger, we would have generalized."
       }
      ]
     }
@@ -26408,17 +26499,21 @@
      },
      {
       "lang": "en",
-      "text": "Built quickly, the residential area is overcrowded."
+      "text": "Built quickly, families found the apartments too small."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Built quickly, the residential area is overcrowded.",
-     "answer": true,
+     "statement": "Built quickly, families found the apartments too small.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Hızla yapılan şey yerleşim bölgesi, yani ortaç ana cümlenin öznesine bağlanıyor."
+       "text": "Yanlış. Ortaç öbeğinin öznesi ana cümlenin öznesiyle aynı olmalı; burada iki yarının öznesi farklı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Built quickly, the apartments were too small for families."
       }
      ]
     }
@@ -27350,17 +27445,21 @@
      },
      {
       "lang": "en",
-      "text": "Rarely does an election campaign end early."
+      "text": "Only after the vote the opposition speaks."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Rarely does an election campaign end early.",
-     "answer": true,
+     "statement": "Only after the vote the opposition speaks.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+       "text": "Yanlış. Bu zarf başa gelince cümle soru sırasına geçer: yardımcı fiil özneden önce durur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Only after the vote does the opposition speak."
       }
      ]
     }
@@ -27847,17 +27946,21 @@
      },
      {
       "lang": "en",
-      "text": "Next year we will be watching the investment."
+      "text": "This time next year we will building the new plant."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Next year we will be watching the investment.",
-     "answer": true,
+     "statement": "This time next year we will building the new plant.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yapı o sırada sürecek olanı söylüyor, bitmiş olanı değil."
+       "text": "Yanlış. Süregelen gelecekte will ile -ing arasına be girer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "This time next year we will be building the new plant."
       }
      ]
     }
@@ -28108,7 +28211,7 @@
   "focusId": "Perfect modals",
   "vocab": [
    {
-    "de": "draft law",
+    "de": "bill",
     "tr": "kanun tasarısı"
    },
    {
@@ -28142,7 +28245,7 @@
   ],
   "patterns": [
    {
-    "de": "The draft law must have been unclear.",
+    "de": "The bill must have been unclear.",
     "tr": "geçmişe dair emin bir çıkarımı söyler"
    },
    {
@@ -28178,7 +28281,7 @@
      },
      {
       "lang": "en",
-      "text": "draft law"
+      "text": "bill"
      },
      {
       "lang": "tr",
@@ -28186,12 +28289,12 @@
      },
      {
       "lang": "en",
-      "text": "The draft law must have been unclear."
+      "text": "The bill must have been unclear."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The draft law must have been unclear."
+     "target": "The bill must have been unclear."
     }
    },
    {
@@ -28307,10 +28410,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The draft law must have been short.",
+     "target": "The bill must have been short.",
      "accept": [
-      "The draft law must have been brief.",
-      "The draft law must have been unclear."
+      "The bill must have been brief.",
+      "The bill must have been unclear."
      ],
      "hint": [
       {
@@ -28327,7 +28430,7 @@
       },
       {
        "lang": "en",
-       "text": "The draft law must have been short."
+       "text": "The bill must have been short."
       },
       {
        "lang": "tr",
@@ -28344,17 +28447,21 @@
      },
      {
       "lang": "en",
-      "text": "We should have funded enforcement."
+      "text": "They can't have saw the new rule."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We should have funded enforcement.",
-     "answer": true,
+     "statement": "They can't have saw the new rule.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+       "text": "Yanlış. Geçmişe bakan kipte have'den sonra fiil üçüncü hâle geçer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "They can't have seen the new rule."
       }
      ]
     }
@@ -29346,17 +29453,21 @@
      },
      {
       "lang": "en",
-      "text": "Apparently the claim is plausible."
+      "text": "It seems being an exaggeration."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Apparently the claim is plausible.",
-     "answer": true,
+     "statement": "It seems being an exaggeration.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi hükmü gibi sunmuyor."
+       "text": "Yanlış. seem fiilinden sonra -ing değil to gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to be an exaggeration."
       }
      ]
     }
@@ -29843,17 +29954,21 @@
      },
      {
       "lang": "en",
-      "text": "The acquisition of the artwork is documented."
+      "text": "The restore of the frame took a year."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The acquisition of the artwork is documented.",
-     "answer": true,
+     "statement": "The restore of the frame took a year.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümle kimin aldığını söylemiyor, yalnız alımın kayda geçtiğini söylüyor."
+       "text": "Yanlış. Fiil isme çevrilmeden kullanılmış; burada fiilin isim hâli gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The restoration of the frame took a year."
       }
      ]
     }
@@ -30340,17 +30455,21 @@
      },
      {
       "lang": "en",
-      "text": "The premiere is thought to have been delayed."
+      "text": "The concert is said to have postponed."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The premiere is thought to have been delayed.",
-     "answer": true,
+     "statement": "The concert is said to have postponed.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kalıp geçmişe bakıyor ve kimin düşündüğünü söylemiyor."
+       "text": "Yanlış. Olay geçmişte kaldı ve edilgen; to have been gerekir, been düşünce cümle etken okunur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The concert is said to have been postponed."
       }
      ]
     }
@@ -30837,17 +30956,21 @@
      },
      {
       "lang": "en",
-      "text": "It was the tragedy that changed him."
+      "text": "What the play shows it is the cost of silence."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "It was the tragedy that changed him.",
-     "answer": true,
+     "statement": "What the play shows it is the cost of silence.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tek bir yapıt seçilmiş ve ötekilerin onu değiştirmediği aynı cümleyle söylenmiş."
+       "text": "Yanlış. What ile kurulan yarık cümlede özneyi tekrarlayan it gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "What the play shows is the cost of silence."
       }
      ]
     }
@@ -31803,17 +31926,21 @@
      },
      {
       "lang": "en",
-      "text": "The dress, which is a traditional costume, is new."
+      "text": "My uncle, who his costume is famous, dances last."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The dress, which is a traditional costume, is new.",
-     "answer": true,
+     "statement": "My uncle, who his costume is famous, dances last.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Virgüller bilgi ekliyor, yani ortada tek bir elbise var ve cümle onu daraltmıyor."
+       "text": "Yanlış. Sahiplik bildiren ilgi zamiri whose; who ile ayrı bir his gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "My uncle, whose costume is famous, dances last."
       }
      ]
     }
@@ -32056,7 +32183,7 @@
     "tr": "tezahüratla desteklemek"
    },
    {
-    "de": "competitive sport",
+    "de": "competitive sports",
     "tr": "rekabetçi spor"
    },
    {
@@ -32303,7 +32430,7 @@
      },
      {
       "lang": "en",
-      "text": "competitive sport"
+      "text": "competitive sports"
      },
      {
       "lang": "tr",
@@ -32327,7 +32454,7 @@
      },
      {
       "lang": "en",
-      "text": "In a competitive sport no one wants to be defeated."
+      "text": "In competitive sports no one wants to be defeated."
      },
      {
       "lang": "tr",
@@ -32336,7 +32463,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "In a competitive sport no one wants to be defeated."
+     "target": "In competitive sports no one wants to be defeated."
     }
    },
    {
@@ -32733,17 +32860,21 @@
      },
      {
       "lang": "en",
-      "text": "Next month we will be waiting for approval."
+      "text": "By fall we will have choose the artist."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Next month we will be waiting for approval.",
-     "answer": true,
+     "statement": "By fall we will have choose the artist.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yapı o sırada sürecek olanı söylüyor, bitmiş olanı değil."
+       "text": "Yanlış. will have yapısında fiil üçüncü hâle geçer, yalın kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "By fall we will have chosen the artist."
       }
      ]
     }
@@ -33743,17 +33874,21 @@
      },
      {
       "lang": "en",
-      "text": "If the depiction had been more elegant, the hall would be full now."
+      "text": "If the lighting had been better, the hall would have been full now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If the depiction had been more elegant, the hall would be full now.",
-     "answer": true,
+     "statement": "If the lighting had been better, the hall would have been full now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+       "text": "Yanlış. Sonuç bugüne bakıyor; bugünkü sonuç would ile kurulur, would have ile değil. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "If the lighting had been better, the hall would be full now."
       }
      ]
     }
@@ -36144,17 +36279,21 @@
      },
      {
       "lang": "en",
-      "text": "Asked to supervise, she agreed."
+      "text": "Asked to lead the team, the offer surprised her."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Asked to supervise, she agreed.",
-     "answer": true,
+     "statement": "Asked to lead the team, the offer surprised her.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İstenen kişi o, yani ortaç ana cümlenin öznesine bağlanıyor."
+       "text": "Yanlış. Ortaç öbeğinin öznesi ana cümlenin öznesiyle aynı olmalı; burada iki yarının öznesi farklı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Asked to lead the team, she was surprised by the offer."
       }
      ]
     }
@@ -36401,8 +36540,8 @@
     "tr": "vardiyalı çalışma"
    },
    {
-    "de": "employment reference",
-    "tr": "iş referansı"
+    "de": "reference letter",
+    "tr": "referans mektubu"
    },
    {
     "de": "chance of promotion",
@@ -36718,7 +36857,7 @@
      },
      {
       "lang": "en",
-      "text": "employment reference"
+      "text": "reference letter"
      },
      {
       "lang": "tr",
@@ -36734,16 +36873,16 @@
      },
      {
       "lang": "en",
-      "text": "The employment reference mentions shift work."
+      "text": "The reference letter mentions shift work."
      },
      {
       "lang": "tr",
-      "text": "İş referansı vardiyalı çalışmadan söz ediyor."
+      "text": "Referans mektubu vardiyalı çalışmadan söz ediyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The employment reference mentions shift work."
+     "target": "The reference letter mentions shift work."
     }
    },
    {
@@ -37110,17 +37249,21 @@
      },
      {
       "lang": "en",
-      "text": "Rarely does human resources answer so fast."
+      "text": "Rarely a candidate accepts so fast."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Rarely does human resources answer so fast.",
-     "answer": true,
+     "statement": "Rarely a candidate accepts so fast.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+       "text": "Yanlış. Bu zarf başa gelince cümle soru sırasına geçer: yardımcı fiil özneden önce durur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Rarely does a candidate accept so fast."
       }
      ]
     }
@@ -38104,17 +38247,21 @@
      },
      {
       "lang": "en",
-      "text": "We should have asked for an interest-free plan."
+      "text": "The bank must have send a warning."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We should have asked for an interest-free plan.",
-     "answer": true,
+     "statement": "The bank must have send a warning.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+       "text": "Yanlış. Geçmişe bakan kipte have'den sonra fiil üçüncü hâle geçer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The bank must have sent a warning."
       }
      ]
     }
@@ -38397,8 +38544,8 @@
     "tr": "doğum izni"
    },
    {
-    "de": "vacation entitlement",
-    "tr": "izin hakkı"
+    "de": "paid vacation",
+    "tr": "ücretli izin"
    },
    {
     "de": "occupational safety",
@@ -38722,7 +38869,7 @@
      },
      {
       "lang": "en",
-      "text": "vacation entitlement"
+      "text": "paid vacation"
      },
      {
       "lang": "tr",
@@ -38746,16 +38893,16 @@
      },
      {
       "lang": "en",
-      "text": "The vacation entitlement and occupational safety are in the contract."
+      "text": "Paid vacation and occupational safety are in the contract."
      },
      {
       "lang": "tr",
-      "text": "İzin hakkı ve iş güvenliği sözleşmede."
+      "text": "Ücretli izin ve iş güvenliği sözleşmede."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The vacation entitlement and occupational safety are in the contract."
+     "target": "Paid vacation and occupational safety are in the contract."
     }
    },
    {
@@ -38870,8 +39017,8 @@
     "tr": "işten izin vermek"
    },
    {
-    "de": "take up a post",
-    "tr": "göreve başlamak"
+    "de": "start a new job",
+    "tr": "yeni bir işe başlamak"
    }
   ],
   "patterns": [
@@ -39078,17 +39225,21 @@
      },
      {
       "lang": "en",
-      "text": "Apparently the raise was refused for operational reasons."
+      "text": "The offer seems being fair."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Apparently the raise was refused for operational reasons.",
-     "answer": true,
+     "statement": "The offer seems being fair.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi hükmü gibi sunmuyor."
+       "text": "Yanlış. seem fiilinden sonra -ing değil to gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The offer seems to be fair."
       }
      ]
     }
@@ -39223,11 +39374,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yeni bir görevi devralmaya"
+      "text": "Yeni bir işe başlamaya"
      },
      {
       "lang": "en",
-      "text": "take up a post"
+      "text": "start a new job"
      },
      {
       "lang": "tr",
@@ -39243,16 +39394,16 @@
      },
      {
       "lang": "en",
-      "text": "She will take up a post in June."
+      "text": "She will start a new job in June."
      },
      {
       "lang": "tr",
-      "text": "Haziranda bir göreve başlayacak."
+      "text": "Haziranda yeni bir işe başlayacak."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "She will take up a post in June."
+     "target": "She will start a new job in June."
     }
    },
    {
@@ -40072,17 +40223,21 @@
      },
      {
       "lang": "en",
-      "text": "The appreciation is thought to have been genuine."
+      "text": "She is said feeling lonely."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The appreciation is thought to have been genuine.",
-     "answer": true,
+     "statement": "She is said feeling lonely.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kalıp geçmişe bakıyor ve kimin düşündüğünü söylemiyor."
+       "text": "Yanlış. Özne başa geçince aktarım fiilinden sonra mastar gelir, -ing gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "She is said to feel lonely."
       }
      ]
     }
@@ -40569,17 +40724,21 @@
      },
      {
       "lang": "en",
-      "text": "It was the jealousy that ended it."
+      "text": "It was the silence what hurt most."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "It was the jealousy that ended it.",
-     "answer": true,
+     "statement": "It was the silence what hurt most.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tek bir duygu seçilmiş ve ötekilerinin yetmediği aynı cümleyle söylenmiş."
+       "text": "Yanlış. It was … yapısında seçilen parçayı that bağlar; what burada kullanılmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the silence that hurt most."
       }
      ]
     }
@@ -41571,17 +41730,21 @@
      },
      {
       "lang": "en",
-      "text": "My sister, who is ambitious, stayed calm."
+      "text": "My brother, that is very patient, listened first."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "My sister, who is ambitious, stayed calm.",
-     "answer": true,
+     "statement": "My brother, that is very patient, listened first.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Virgüller bilgi ekliyor, yani ortada tek bir kardeş var ve cümle onu daraltmıyor."
+       "text": "Yanlış. Virgülle ayrılan açıklayıcı ilgi cümlesinde that kullanılmaz; kişi için who gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "My brother, who is very patient, listened first."
       }
      ]
     }
@@ -42573,17 +42736,21 @@
      },
      {
       "lang": "en",
-      "text": "Next year we will be building a sense of security."
+      "text": "Next year we will be build a new routine."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Next year we will be building a sense of security.",
-     "answer": true,
+     "statement": "Next year we will be build a new routine.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yapı o sırada sürecek olanı söylüyor, bitmiş olanı değil."
+       "text": "Yanlış. will be kalıbında fiil -ing alır, yalın kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Next year we will be building a new routine."
       }
      ]
     }
@@ -43575,17 +43742,21 @@
      },
      {
       "lang": "en",
-      "text": "If the child support had been fair, the family would be calm now."
+      "text": "If we would have talked earlier, we would be closer now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If the child support had been fair, the family would be calm now.",
-     "answer": true,
+     "statement": "If we would have talked earlier, we would be closer now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+       "text": "Yanlış. Şart yarısında would durmaz; orada had gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "If we had talked earlier, we would be closer now."
       }
      ]
     }
@@ -44349,7 +44520,7 @@
     "tr": "dosyalama"
    },
    {
-    "de": "registered letter",
+    "de": "certified letter",
     "tr": "taahhütlü mektup"
    },
    {
@@ -44379,7 +44550,7 @@
     "tr": "dosyalamayı bir işleme çevirir"
    },
    {
-    "de": "The sending of a registered letter is recorded.",
+    "de": "The sending of a certified letter is recorded.",
     "tr": "göndermeyi bir kayda çevirir"
    },
    {
@@ -44435,7 +44606,7 @@
      },
      {
       "lang": "en",
-      "text": "registered letter"
+      "text": "certified letter"
      },
      {
       "lang": "tr",
@@ -44451,7 +44622,7 @@
      },
      {
       "lang": "en",
-      "text": "The sending of a registered letter is recorded."
+      "text": "The sending of a certified letter is recorded."
      },
      {
       "lang": "tr",
@@ -44460,7 +44631,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The sending of a registered letter is recorded."
+     "target": "The sending of a certified letter is recorded."
     }
    },
    {
@@ -44569,17 +44740,21 @@
      },
      {
       "lang": "en",
-      "text": "The sending of a registered letter is recorded."
+      "text": "The approve of the request is pending."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The sending of a registered letter is recorded.",
-     "answer": true,
+     "statement": "The approve of the request is pending.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümle kimin gönderdiğini söylemiyor, yalnız gönderimin kayda geçtiğini söylüyor."
+       "text": "Yanlış. Fiil isme çevrilmeden kullanılmış; burada fiilin isim hâli gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The approval of the request is pending."
       }
      ]
     }
@@ -44757,7 +44932,7 @@
      "target": "The sending of a letter is recorded.",
      "accept": [
       "The sending of that letter is recorded.",
-      "The sending of a registered letter is recorded."
+      "The sending of a certified letter is recorded."
      ],
      "hint": [
       {
@@ -46067,17 +46242,21 @@
      },
      {
       "lang": "en",
-      "text": "Asked to follow up, she wrote again."
+      "text": "Asked to follow up, the email was sent again."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Asked to follow up, she wrote again.",
-     "answer": true,
+     "statement": "Asked to follow up, the email was sent again.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İstenen kişi o, yani ortaç ana cümlenin öznesine bağlanıyor."
+       "text": "Yanlış. Ortaç öbeğinin öznesi ana cümlenin öznesiyle aynı olmalı; burada iki yarının öznesi farklı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Asked to follow up, she sent the email again."
       }
      ]
     }
@@ -47069,17 +47248,21 @@
      },
      {
       "lang": "en",
-      "text": "Rarely does a reply arrive so swiftly."
+      "text": "Only after the second reminder they sent the invoice."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Rarely does a reply arrive so swiftly.",
-     "answer": true,
+     "statement": "Only after the second reminder they sent the invoice.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+       "text": "Yanlış. Bu zarf başa gelince cümle soru sırasına geçer: yardımcı fiil özneden önce durur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Only after the second reminder did they send the invoice."
       }
      ]
     }
@@ -47851,8 +48034,8 @@
     "tr": "bozdurmak"
    },
    {
-    "de": "credit note",
-    "tr": "alacak dekontu"
+    "de": "store credit",
+    "tr": "mağaza kredisi"
    },
    {
     "de": "high-quality",
@@ -48063,17 +48246,21 @@
      },
      {
       "lang": "en",
-      "text": "We should have kept the proof of purchase."
+      "text": "We should have keep the receipt."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We should have kept the proof of purchase.",
-     "answer": true,
+     "statement": "We should have keep the receipt.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+       "text": "Yanlış. Geçmişe bakan kipte have'den sonra fiil üçüncü hâle geçer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "We should have kept the receipt."
       }
      ]
     }
@@ -48172,11 +48359,11 @@
      },
      {
       "lang": "tr",
-      "text": "alacağı gösteren yazıya ise"
+      "text": "mağazada harcanabilen alacağa ise"
      },
      {
       "lang": "en",
-      "text": "credit note"
+      "text": "store credit"
      },
      {
       "lang": "tr",
@@ -48192,16 +48379,16 @@
      },
      {
       "lang": "en",
-      "text": "You can redeem the credit note."
+      "text": "You can redeem the store credit."
      },
      {
       "lang": "tr",
-      "text": "Alacak dekontunu bozdurabilirsin."
+      "text": "Mağaza kredini kullanabilirsin."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You can redeem the credit note."
+     "target": "You can redeem the store credit."
     }
    },
    {
@@ -48855,7 +49042,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu B2'nin son dersi ve seviyenin bütün yükünü taşıyor: sonucu vermek kolay, karşı tarafa cevap hakkı bırakarak vermek zor. Hazır mısın?"
+      "text": "Bu, B2'nin son Konuşma adımı ve seviyenin bütün yükünü taşıyor: sonucu vermek kolay, karşı tarafa cevap hakkı bırakarak vermek zor. Hazır mısın?"
      }
     ],
     "expect": {
@@ -49036,17 +49223,21 @@
      },
      {
       "lang": "en",
-      "text": "Apparently we can close this, provided that the file is complete."
+      "text": "The matter seems being settled now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Apparently we can close this, provided that the file is complete.",
-     "answer": true,
+     "statement": "The matter seems being settled now.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kapanış bir koşula bağlanmış, yani karşı tarafın hâlâ yapabileceği bir şey var."
+       "text": "Yanlış. seem fiilinden sonra -ing değil to gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The matter seems to be settled now."
       }
      ]
     }
@@ -49279,7 +49470,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi bir yazışmayı kapatacaksın. Bu, B2 seviyesinin de son dersi."
+      "text": "Şimdi bir yazışmayı kapatacaksın. Bu, B2 seviyesinin de son Konuşma adımı."
      }
     ]
    }

@@ -330,19 +330,9 @@
   "de": "Richtig. Was das Register wählt, ist keine Regelliste, sondern das im Gebrauch erworbene Gespür."
  },
  {
-  "tr": "Doğru. Etiket bir hüküm taşır ama okuma değildir; ayrım tam bu iki işin arasında.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Etikett trägt ein Urteil, ist aber keine Lesart; der Unterschied liegt genau zwischen diesen beiden Arbeiten."
- },
- {
   "tr": "Doğru. İki nesne de başa alınmış ve cümle ikiye bölünmüş; vurgu artık ikisinin farkında.",
   "kind": "why.tr",
   "de": "Richtig. Beide Objekte stehen vorn und der Satz ist geteilt; die Betonung liegt jetzt auf ihrem Unterschied."
- },
- {
-  "tr": "Doğru. «as noted» okuru daha önce okuduğu yere gönderiyor; cümle tek başına da anlaşılıyor.",
-  "kind": "why.tr",
-  "de": "Richtig. „as noted“ schickt die Leserin an die Stelle, die sie vorher gelesen hat; der Satz ist auch für sich verständlich."
  },
  {
   "tr": "yalanlayıp doğrular",
@@ -1787,7 +1777,7 @@
  {
   "tr": "derken düşen fiili okur koyar ve o an okumaya katılır. Bu yüzden şiirde eksiltme bir kısaltma değil, bir davettir.",
   "kind": "say.tr",
-  "de": "setzt die Leserin das weggelassene Verb selbst ein und nimmt in diesem Augenblick am Lesen teil. Darum ist die Auslassung im Gedicht keine Kürzung, sondern eine Einladung."
+  "de": "– sagst du das, setzt die Leserin das weggelassene Verb selbst ein und nimmt in diesem Augenblick am Lesen teil. Darum ist die Auslassung im Gedicht keine Kürzung, sondern eine Einladung."
  },
  {
   "tr": "Şimdi sıra sende: Dize bölük pörçük, okur sabırlı.",
@@ -2278,11 +2268,6 @@
   "tr": "On ya da yüz katlık farka",
   "kind": "say.tr",
   "de": "Der Unterschied um das Zehn- oder Hundertfache heißt"
- },
- {
-  "tr": "Bu ders modülün sonuncusu; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın.",
-  "kind": "say.tr",
-  "de": "Diese Lektion ist die letzte des Moduls; du benutzt Register, Wendung und Verbindung zusammen."
  },
  {
   "tr": "Gazap son sayfada diniyor.",

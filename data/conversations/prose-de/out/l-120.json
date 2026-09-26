@@ -285,26 +285,6 @@
   "de": "Das Gespräch gilt als geschafft, wenn du die Fortführungskosten, die Verzichtskosten und die Ankündigung mit drei Wortverbindungen benannt hast."
  },
  {
-  "tr": "Doğru. Ödün başa çekilmiş ve eksik ondan sonra açıkça söylenmiş.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Zugeständnis ist vorangezogen und der Mangel danach offen genannt."
- },
- {
-  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir uyarı olarak kalıyor.",
-  "kind": "why.tr",
-  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Warnung."
- },
- {
-  "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi daha kibar bir adla doğruluyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe unter einem höflicheren Namen."
- },
- {
-  "tr": "Doğru. Biri hesabın, öteki duyurunun eşdizimi; edilgen fiiller de o yüzden ayrı.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine ist die Wortverbindung der Rechnung, das andere die der Ankündigung; darum sind auch die Passivformen verschieden."
- },
- {
   "tr": "Doğru. Biri görüntüyle oynamak, öteki parayı almak; ikisi ayrı suç ve ayrı kanıt ister.",
   "kind": "why.tr",
   "de": "Richtig. Das eine spielt mit dem Anschein, das andere nimmt das Geld; zwei verschiedene Taten und zwei verschiedene Beweise."
@@ -313,11 +293,6 @@
   "tr": "Doğru. Fiil çekilmemiş; talep kişiye değil sürece bağlanmış ve ifşacı görünmez kalıyor.",
   "kind": "why.tr",
   "de": "Richtig. Das Verb ist nicht gebeugt; die Forderung hängt am Verfahren, nicht an einer Person, und die meldende Person bleibt unsichtbar."
- },
- {
-  "tr": "Doğru. Biri ölçülen bir değeri adlandırıyor, öteki o değeri bir sıraya yerleştiren anlatıyı.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine benennt einen gemessenen Wert, das andere die Erzählung, die diesen Wert in eine Reihe stellt."
  },
  {
   "tr": "iki eylemi ayırır",
@@ -1917,7 +1892,7 @@
  {
   "tr": "dediğinde karşındaki senin mekanizmayı bildiğini anlar. Aracı tümden reddeden cümle, teknik bir masada hiç duyulmaz.",
   "kind": "say.tr",
-  "de": "versteht dein Gegenüber, dass du den Mechanismus kennst. Ein Satz, der das Mittel ganz ablehnt, wird an einem fachlichen Tisch gar nicht gehört."
+  "de": "– sagst du das, versteht dein Gegenüber, dass du den Mechanismus kennst. Ein Satz, der das Mittel ganz ablehnt, wird an einem fachlichen Tisch gar nicht gehört."
  },
  {
   "tr": "Her ölçüt başka bir pazarda başka sonuç veriyor; adres yoksa bir pazarın dersi bütün şirkete uygulanıyor. Hazır mısın?",
@@ -1933,11 +1908,6 @@
   "tr": "hiç kimsenin kendine yakıştırmadığı bir sözcüktür; onu bir eksiltmenin yanına koyduğunda kurum kendi diline yakalanmış olur.",
   "kind": "say.tr",
   "de": "ist ein Wort, das sich niemand selbst zuschreibt; stellt man es neben eine Auslassung, ist das Haus in seiner eigenen Sprache gefangen."
- },
- {
-  "tr": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para açısından okuyoruz. Hazır mısın?",
-  "kind": "say.tr",
-  "de": "Was ungesagt bleibt, ist meist, wer das Risiko trägt; in der letzten Lektion dieses Moduls lesen wir die Auslassung von der Geldseite her. Bist du bereit?"
  },
  {
   "tr": "dendiğinde işletmenin kime kalacağı yazılmamış olur ve risk sessizce karşı tarafa geçer. Bir teklifi okumak, adlandırılmayanı aramaktır.",

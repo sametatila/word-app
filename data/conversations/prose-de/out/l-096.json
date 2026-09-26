@@ -425,11 +425,6 @@
   "de": "Richtig. Beide Hälften haben dasselbe Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
  },
  {
-  "tr": "Doğru. Özne başa geçtiği için ikinci fiil mastara dönüyor; bu iki kalıbın tek yapısal farkı.",
-  "kind": "why.tr",
-  "de": "Richtig. Weil das Subjekt nach vorn rückt, wird das zweite Verb zum Infinitiv; das ist der einzige strukturelle Unterschied der beiden Wendungen."
- },
- {
   "tr": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor.",
   "kind": "why.tr",
   "de": "Richtig. Zu diesem Zeitpunkt ist man mitten in der Arbeit, nicht fertig; deshalb steht die Verlaufsform."
@@ -812,7 +807,7 @@
  {
   "tr": "ile cümle kurulur ve özne boş kalır;",
   "kind": "say.tr",
-  "de": "wird ein Satz gebaut und das Subjekt bleibt leer;"
+  "de": "baut einen ganzen Satz, und das Subjekt bleibt leer;"
  },
  {
   "tr": "kurum içinde dolaşan kısa yazıya ise",

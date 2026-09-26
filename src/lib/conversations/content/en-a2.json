@@ -779,7 +779,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders sonunda \"Otobüsü bekliyordum\", \"Yağmur yağıyordu\" gibi cümleleri rahatça kurabileceksin. Başlayalım mı?"
+      "text": "Sonunda \"Otobüsü bekliyordum\", \"Yağmur yağıyordu\" gibi cümleleri rahatça kurabileceksin. Başlayalım mı?"
      }
     ],
     "expect": {
@@ -858,7 +858,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ikisini karıştırmamak dersin en önemli noktası."
+      "text": "Bu ikisini karıştırmamak bugünün en önemli noktası."
      }
     ]
    },
@@ -897,9 +897,7 @@
      "kind": "produce",
      "target": "It was raining and I was waiting for the bus.",
      "accept": [
-      "It was raining and I was waiting for the bus",
-      "I was waiting for the bus and it was raining.",
-      "It was raining, and I was waiting for the bus."
+      "I was waiting for the bus and it was raining."
      ],
      "hint": [
       {
@@ -988,9 +986,7 @@
      "kind": "produce",
      "target": "I wasn't sleeping.",
      "accept": [
-      "I was not sleeping.",
-      "I wasn't sleeping",
-      "I was not sleeping"
+      "I was not sleeping."
      ],
      "hint": [
       {
@@ -1032,7 +1028,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ve dersimizin başlığı, günlük hayatta en çok duyacağın soru:"
+      "text": "Ve bugünün başlığı, günlük hayatta en çok duyacağın soru:"
      },
      {
       "lang": "en",
@@ -1197,9 +1193,6 @@
     "expect": {
      "kind": "produce",
      "target": "What were you wearing?",
-     "accept": [
-      "What were you wearing"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -1612,7 +1605,6 @@
      "target": "When you called, I was sleeping.",
      "accept": [
       "I was sleeping when you called.",
-      "When you called, I was sleeping.",
       "I was sleeping when you phoned.",
       "When you called me, I was sleeping."
      ],
@@ -2162,7 +2154,6 @@
      "kind": "produce",
      "target": "We moved to Izmir last year.",
      "accept": [
-      "We moved to Izmir last year",
       "Last year we moved to Izmir.",
       "We moved to İzmir last year."
      ],
@@ -2380,7 +2371,6 @@
      "kind": "produce",
      "target": "I bought a new phone two months ago.",
      "accept": [
-      "I bought a new phone two months ago",
       "Two months ago I bought a new phone.",
       "I bought a new phone 2 months ago."
      ],
@@ -2571,7 +2561,6 @@
      "kind": "produce",
      "target": "I called you yesterday.",
      "accept": [
-      "I called you yesterday",
       "Yesterday I called you.",
       "I phoned you yesterday."
      ],
@@ -2854,8 +2843,6 @@
      "kind": "produce",
      "target": "First I woke up. Then I had breakfast.",
      "accept": [
-      "First, I woke up. Then, I had breakfast.",
-      "First I woke up, then I had breakfast.",
       "First I got up. Then I had breakfast."
      ],
      "hint": [
@@ -2928,9 +2915,6 @@
     "expect": {
      "kind": "produce",
      "target": "After that, we watched a movie.",
-     "accept": [
-      "After that we watched a movie."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -3159,7 +3143,6 @@
      "target": "I wasn't hungry, so I didn't eat anything.",
      "accept": [
       "I was not hungry, so I didn't eat anything.",
-      "I wasn't hungry so I didn't eat anything.",
       "I wasn't hungry, so I didn't eat.",
       "I wasn't hungry, so I did not eat anything.",
       "I was not hungry, so I did not eat anything.",
@@ -3499,9 +3482,7 @@
      "kind": "produce",
      "target": "I used to walk to school.",
      "accept": [
-      "I used to walk to school",
-      "I used to go to school on foot",
-      "I used to go to school on foot."
+      "I used to go to school on foot"
      ],
      "hint": [
       {
@@ -3578,9 +3559,7 @@
      "kind": "produce",
      "target": "I didn't use to like vegetables.",
      "accept": [
-      "I didn't use to like vegetables",
-      "I did not use to like vegetables",
-      "I did not use to like vegetables."
+      "I did not use to like vegetables"
      ],
      "hint": [
       {
@@ -3656,9 +3635,6 @@
     "expect": {
      "kind": "produce",
      "target": "Did you use to play soccer?",
-     "accept": [
-      "Did you use to play soccer"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -4021,8 +3997,7 @@
      "kind": "produce",
      "target": "I grew up in Istanbul.",
      "accept": [
-      "I grew up in İstanbul.",
-      "I grew up in Istanbul"
+      "I grew up in İstanbul."
      ],
      "hint": [
       {
@@ -4048,7 +4023,7 @@
      },
      {
       "lang": "en",
-      "text": "in Ankara, in Turkey, in a small village"
+      "text": "in Ankara, in Türkiye, in a small village"
      },
      {
       "lang": "tr",
@@ -4369,7 +4344,6 @@
      "kind": "produce",
      "target": "I remember our neighbors.",
      "accept": [
-      "I remember our neighbors",
       "I remember my neighbors."
      ],
      "hint": [
@@ -4723,9 +4697,7 @@
      "kind": "produce",
      "target": "I went to Izmir last summer.",
      "accept": [
-      "Last summer I went to Izmir.",
-      "I went to Izmir last summer",
-      "Last summer, I went to Izmir."
+      "Last summer I went to Izmir."
      ],
      "hint": [
       {
@@ -4960,7 +4932,6 @@
      "kind": "produce",
      "target": "The flight was long, but I enjoyed the vacation.",
      "accept": [
-      "The flight was long but I enjoyed the vacation.",
       "The flight was long, but I enjoyed my vacation."
      ],
      "hint": [
@@ -5250,8 +5221,7 @@
      "kind": "produce",
      "target": "I fell on the stairs and hurt my arm.",
      "accept": [
-      "I fell on the stairs and I hurt my arm.",
-      "I fell on the stairs, and hurt my arm."
+      "I fell on the stairs and I hurt my arm."
      ],
      "hint": [
       {
@@ -5379,7 +5349,6 @@
      "kind": "produce",
      "target": "A woman helped me.",
      "accept": [
-      "A woman helped me",
       "A lady helped me."
      ],
      "hint": [
@@ -5545,7 +5514,6 @@
      "kind": "produce",
      "target": "Luckily, it wasn't serious.",
      "accept": [
-      "Luckily it wasn't serious.",
       "Luckily, it was not serious."
      ],
      "hint": [
@@ -5968,7 +5936,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli kuralı. Geçmişi taşıyan sözcük"
+      "text": "Şimdi bugünün en önemli kuralı. Geçmişi taşıyan sözcük"
      },
      {
       "lang": "en",
@@ -6047,8 +6015,7 @@
      "kind": "produce",
      "target": "How long did you stay?",
      "accept": [
-      "How long did you stay there?",
-      "How long did you stay?"
+      "How long did you stay there?"
      ],
      "hint": [
       {
@@ -6189,8 +6156,7 @@
      "kind": "produce",
      "target": "Why were you alone?",
      "accept": [
-      "Why were you alone there?",
-      "Why were you alone?"
+      "Why were you alone there?"
      ],
      "hint": [
       {
@@ -6363,8 +6329,7 @@
      "target": "Who did you go with?",
      "accept": [
       "Who were you with?",
-      "Who did you go there with?",
-      "Who did you go with?"
+      "Who did you go there with?"
      ],
      "hint": [
       {
@@ -7172,7 +7137,7 @@
      },
      {
       "lang": "tr",
-      "text": "gone, go fiilinin üçüncü hâli; been ise aslında be fiilinin üçüncü hâli, ama 'have been to' kalıbında gidip dönmüş olmak anlamı taşır. İkisinin anlamı bambaşka. Ders bitince birinin gidip döndüğünü mü, yoksa hâlâ orada olduğunu mu söylediğini rahatça anlatabileceksin. Hazır mısın?"
+      "text": "gone, go fiilinin üçüncü hâli; been ise aslında be fiilinin üçüncü hâli, ama 'have been to' kalıbında gidip dönmüş olmak anlamı taşır. İkisinin anlamı bambaşka. Sonunda birinin gidip döndüğünü mü, yoksa hâlâ orada olduğunu mu söylediğini rahatça anlatabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -7940,11 +7905,8 @@
      "kind": "produce",
      "target": "I have known him for five years.",
      "accept": [
-      "I have known him for five years",
       "I've known him for five years",
-      "I've known him for five years.",
-      "I have known her for five years.",
-      "I have known her for five years"
+      "I have known her for five years."
      ],
      "hint": [
       {
@@ -8009,9 +7971,7 @@
      "kind": "produce",
      "target": "I have worked here for two years.",
      "accept": [
-      "I have worked here for two years",
       "I've worked here for two years",
-      "I've worked here for two years.",
       "I have worked here for 2 years.",
       "I have been working here for two years.",
       "I've been working here for two years."
@@ -8103,10 +8063,7 @@
      "kind": "produce",
      "target": "How long have you lived here?",
      "accept": [
-      "How long have you lived here",
-      "How long have you been here?",
-      "How long have you been here",
-      "How long have you lived here?"
+      "How long have you been here?"
      ],
      "hint": [
       {
@@ -8602,9 +8559,7 @@
      "kind": "produce",
      "target": "I have already finished.",
      "accept": [
-      "I've already finished.",
-      "I have already finished",
-      "I've already finished"
+      "I've already finished."
      ],
      "hint": [
       {
@@ -8848,8 +8803,6 @@
      "target": "I have just arrived.",
      "accept": [
       "I've just arrived.",
-      "I have just arrived",
-      "I've just arrived",
       "I've just got here.",
       "I have just gotten here."
      ],
@@ -10206,11 +10159,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizin adı: umutlar ve planlar."
+      "text": "Merhaba, hoş geldin. Bugünkü konumuz: umutlar ve planlar."
      },
      {
       "lang": "tr",
-      "text": "Bu derste gelecekten ne beklediğini, ne istediğini ve hayalinin ne olduğunu İngilizce anlatmayı öğreneceksin. Hazırsan başlıyoruz."
+      "text": "Bugün gelecekten ne beklediğini, ne istediğini ve hayalinin ne olduğunu İngilizce anlatmayı öğreneceksin. Hazırsan başlıyoruz."
      }
     ],
     "expect": {
@@ -10341,7 +10294,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin ilk büyük kalıbına geçiyoruz."
+      "text": "Şimdi bugünün ilk büyük kalıbına geçiyoruz."
      },
      {
       "lang": "en",
@@ -10392,7 +10345,6 @@
      "kind": "produce",
      "target": "I hope to work abroad.",
      "accept": [
-      "I hope to work abroad",
       "I hope I will work abroad.",
       "I hope to get a job abroad."
      ],
@@ -10562,7 +10514,6 @@
      "kind": "produce",
      "target": "My dream is to be a teacher.",
      "accept": [
-      "My dream is to be a teacher",
       "My dream is to become a teacher.",
       "I dream of being a teacher."
      ],
@@ -10721,7 +10672,6 @@
      "kind": "produce",
      "target": "I hope to learn English next year.",
      "accept": [
-      "I hope to learn English next year",
       "I hope to study English next year.",
       "I hope I will learn English next year."
      ],
@@ -10814,7 +10764,7 @@
   "icon": "question",
   "title": "Better than before",
   "titleTr": "Eskisinden daha iyi",
-  "summary": "Bu ders iki şeyi karşılaştırmayı öğretir: kısa sıfatlara -er eklemeyi, uzun sıfatların önüne more koymayı, good–better gibi düzensiz biçimleri ve than kullanımını.",
+  "summary": "İki şeyi karşılaştırmayı öğretir: kısa sıfatlara -er eklemeyi, uzun sıfatların önüne more koymayı, good–better gibi düzensiz biçimleri ve than kullanımını.",
   "minutes": 9,
   "focusId": "Comparatives",
   "vocab": [
@@ -11004,8 +10954,7 @@
      "kind": "produce",
      "target": "This car is cheaper than your car.",
      "accept": [
-      "This car is cheaper than yours.",
-      "This car is cheaper than your car"
+      "This car is cheaper than yours."
      ],
      "hint": [
       {
@@ -11122,7 +11071,6 @@
      "kind": "produce",
      "target": "Health is more important than money.",
      "accept": [
-      "Health is more important than money",
       "Your health is more important than money."
      ],
      "hint": [
@@ -11331,7 +11279,6 @@
      "kind": "produce",
      "target": "Coffee is better than tea.",
      "accept": [
-      "Coffee is better than tea",
       "I think coffee is better than tea."
      ],
      "hint": [
@@ -11515,7 +11462,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda tatilinin en güzel gününü İngilizce anlatabileceksin. Başlayalım mı?"
+      "text": "Sonunda tatilinin en güzel gününü İngilizce anlatabileceksin. Başlayalım mı?"
      }
     ],
     "expect": {
@@ -11718,8 +11665,7 @@
      "target": "This is the best day.",
      "accept": [
       "It is the best day.",
-      "It's the best day.",
-      "This is the best day!"
+      "It's the best day."
      ],
      "hint": [
       {
@@ -11753,7 +11699,7 @@
      },
      {
       "lang": "en",
-      "text": "the biggest city in Turkey"
+      "text": "the biggest city in Türkiye"
      },
      {
       "lang": "tr",
@@ -11825,7 +11771,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en güzel parçası:"
+      "text": "Şimdi en güzel kısım:"
      },
      {
       "lang": "en",
@@ -11948,8 +11894,7 @@
       "It is the worst movie I have ever seen.",
       "This is the worst movie I have ever seen.",
       "it is the worst movie I've ever seen.",
-      "It's the worst movie I have ever seen.",
-      "it's the worst movie I have ever seen."
+      "It's the worst movie I have ever seen."
      ],
      "hint": [
       {
@@ -13525,7 +13470,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersimizin ana kalıbı. Randevunun saatini değiştirmek istediğinde şöyle dersin:"
+      "text": "Şimdi bugünün ana kalıbı. Randevunun saatini değiştirmek istediğinde şöyle dersin:"
      },
      {
       "lang": "en",
@@ -14325,9 +14270,7 @@
      "kind": "produce",
      "target": "You should sleep enough.",
      "accept": [
-      "You should get enough sleep.",
-      "You should sleep enough",
-      "You should get enough sleep"
+      "You should get enough sleep."
      ],
      "hint": [
       {
@@ -14401,9 +14344,7 @@
      "target": "You shouldn't go out today.",
      "accept": [
       "You should not go out today.",
-      "You shouldn't go outside today.",
-      "You shouldn't go out today",
-      "You should not go out today"
+      "You shouldn't go outside today."
      ],
      "hint": [
       {
@@ -14571,7 +14512,6 @@
      "kind": "produce",
      "target": "You should avoid coffee.",
      "accept": [
-      "You should avoid coffee",
       "You shouldn't drink coffee.",
       "You should not drink coffee."
      ],
@@ -15634,9 +15574,7 @@
      "kind": "produce",
      "target": "You should take it after meals.",
      "accept": [
-      "You should take it after meals",
       "You should take it after a meal.",
-      "You should take it after a meal",
       "You should take this after meals."
      ],
      "hint": [
@@ -15714,7 +15652,6 @@
      "kind": "produce",
      "target": "How many tablets should I take?",
      "accept": [
-      "How many tablets should I take",
       "How many tablets do I take?",
       "How many tablets should I take a day?"
      ],
@@ -15848,7 +15785,6 @@
      "kind": "produce",
      "target": "I haven't taken my medicine yet.",
      "accept": [
-      "I haven't taken my medicine yet",
       "I have not taken my medicine yet.",
       "I haven't taken my tablet yet.",
       "I haven't taken it yet.",
@@ -16387,7 +16323,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin asıl konusuna geçelim: kibar sorular. İngilizcede birine bir şey sormadan önce"
+      "text": "Şimdi asıl konuya geçelim: kibar sorular. İngilizcede birine bir şey sormadan önce"
      },
      {
       "lang": "en",
@@ -16682,7 +16618,6 @@
      "target": "I'd like to see a doctor, please.",
      "accept": [
       "I would like to see a doctor, please.",
-      "I'd like to see a doctor please.",
       "Hello, I'd like to see a doctor, please.",
       "Hello, I would like to see a doctor, please."
      ],
@@ -16925,7 +16860,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugünkü dersimizde sağlıklı alışkanlıklarını İngilizce anlatmayı öğreneceğiz: ne sıklıkta spor yaparsın, kaç saat uyursun, şekerden uzak durur musun."
+      "text": "Merhaba! Bugün sağlıklı alışkanlıklarını İngilizce anlatmayı öğreneceğiz: ne sıklıkta spor yaparsın, kaç saat uyursun, şekerden uzak durur musun."
      },
      {
       "lang": "tr",
@@ -17205,7 +17140,6 @@
      "kind": "produce",
      "target": "I hardly ever drink coffee.",
      "accept": [
-      "I hardly ever drink coffee",
       "I almost never drink coffee."
      ],
      "hint": [
@@ -18956,9 +18890,7 @@
      "kind": "produce",
      "target": "I stayed in bed yesterday.",
      "accept": [
-      "I stayed in bed yesterday",
       "Yesterday I stayed in bed.",
-      "Yesterday I stayed in bed",
       "I stayed in bed all day yesterday."
      ],
      "hint": [
@@ -19120,8 +19052,6 @@
      "target": "I've already seen the doctor.",
      "accept": [
       "I have already seen the doctor.",
-      "I've already seen the doctor",
-      "I have already seen the doctor",
       "I've already seen a doctor.",
       "I have already seen a doctor."
      ],
@@ -19269,8 +19199,6 @@
      "target": "I've recovered.",
      "accept": [
       "I have recovered.",
-      "I've recovered",
-      "I have recovered",
       "I've fully recovered.",
       "I have already recovered.",
       "I have fully recovered."
@@ -19536,7 +19464,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün bir ilan gördün ve telefonu açıyorsun. Bu derste bir daire hakkında soru sormayı öğreneceğiz: kira ne kadar, depozito var mı, mobilyalı mı, kaçıncı katta."
+      "text": "Merhaba! Bugün bir ilan gördün ve telefonu açıyorsun. Bir daire hakkında soru sormayı öğreneceğiz: kira ne kadar, depozito var mı, mobilyalı mı, kaçıncı katta."
      },
      {
       "lang": "tr",
@@ -19710,7 +19638,6 @@
      "kind": "produce",
      "target": "How much is the deposit?",
      "accept": [
-      "How much is the deposit",
       "What is the deposit",
       "How much deposit is there"
      ],
@@ -19938,7 +19865,6 @@
      "target": "Which floor is it on?",
      "accept": [
       "What floor is it on",
-      "Which floor is it on",
       "What floor is the apartment on",
       "Which floor is the apartment on"
      ],
@@ -20073,7 +19999,6 @@
      "target": "Can I see the apartment on Saturday?",
      "accept": [
       "Can I see it on Saturday",
-      "Can I see the apartment on Saturday",
       "Could I see the apartment on Saturday",
       "Can I visit the apartment on Saturday"
      ],
@@ -21274,8 +21199,7 @@
      "kind": "produce",
      "target": "There is a cupboard in the kitchen.",
      "accept": [
-      "There's a cupboard in the kitchen.",
-      "There is a cupboard in the kitchen"
+      "There's a cupboard in the kitchen."
      ],
      "hint": [
       {
@@ -21364,8 +21288,7 @@
      "kind": "produce",
      "target": "There is a table in the corner.",
      "accept": [
-      "There's a table in the corner.",
-      "There is a table in the corner"
+      "There's a table in the corner."
      ],
      "hint": [
       {
@@ -21609,9 +21532,6 @@
     "expect": {
      "kind": "produce",
      "target": "Is there a carpet in the living room?",
-     "accept": [
-      "Is there a carpet in the living room"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -21978,8 +21898,7 @@
      "kind": "produce",
      "target": "There's a leak in the kitchen.",
      "accept": [
-      "There is a leak in the kitchen.",
-      "There's a leak in the kitchen"
+      "There is a leak in the kitchen."
      ],
      "hint": [
       {
@@ -22290,7 +22209,6 @@
      "kind": "produce",
      "target": "Nobody has come yet.",
      "accept": [
-      "Nobody has come yet",
       "No one has come yet.",
       "Nobody has arrived yet."
      ],
@@ -22685,7 +22603,6 @@
      "kind": "produce",
      "target": "Could you close the window, please?",
      "accept": [
-      "Could you close the window please?",
       "Can you close the window, please?",
       "Could you please close the window?"
      ],
@@ -23218,7 +23135,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin asıl konusuna geliyoruz: sıralama. Bir olayı adım adım anlatırken İngilizcede dört küçük kelime kullanırız."
+      "text": "Şimdi asıl konuya geliyoruz: sıralama. Bir olayı adım adım anlatırken İngilizcede dört küçük kelime kullanırız."
      },
      {
       "lang": "tr",
@@ -23269,7 +23186,6 @@
      "kind": "produce",
      "target": "First, we looked at the apartment.",
      "accept": [
-      "First we looked at the apartment.",
       "We looked at the apartment first."
      ],
      "hint": [
@@ -23323,7 +23239,6 @@
      "kind": "produce",
      "target": "Then we signed the contract.",
      "accept": [
-      "Then, we signed the contract.",
       "And then we signed the contract."
      ],
      "hint": [
@@ -23377,9 +23292,7 @@
      "kind": "produce",
      "target": "After that, we got the keys.",
      "accept": [
-      "After that we got the keys.",
-      "After that, we took the keys.",
-      "After that we took the keys."
+      "After that, we took the keys."
      ],
      "hint": [
       {
@@ -24565,7 +24478,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli noktası geliyor, buna dikkat et. İngilizcede yasak ile gereksizlik iki ayrı olumsuz kalıpla söylenir. Günlük konuşmada yasak can't ile kurulur:"
+      "text": "Şimdi en önemli nokta geliyor, buna dikkat et. İngilizcede yasak ile gereksizlik iki ayrı olumsuz kalıpla söylenir. Günlük konuşmada yasak can't ile kurulur:"
      },
      {
       "lang": "en",
@@ -25796,7 +25709,6 @@
      "target": "I haven't been to the laundry yet.",
      "accept": [
       "I have not been to the laundry yet.",
-      "I haven't been to the laundry yet",
       "I haven't gone to the laundry yet.",
       "I have not gone to the laundry yet."
      ],
@@ -25918,9 +25830,7 @@
      "kind": "produce",
      "target": "The corner store is cheaper than the supermarket.",
      "accept": [
-      "The corner store is cheaper than the supermarket",
-      "A corner store is cheaper than a supermarket.",
-      "The corner store is cheaper than the supermarket ."
+      "A corner store is cheaper than a supermarket."
      ],
      "hint": [
       {
@@ -26792,7 +26702,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz. Bir işe geçmişte başladın ve hâlâ oradasın. Türkçede çalışıyorum dersin, ama İngilizce bunun için ayrı bir zaman kullanır: have ya da has, sonra fiilin üçüncü hâli. work fiilinin üçüncü hâli worked."
+      "text": "Şimdi işin kalbine geliyoruz. Bir işe geçmişte başladın ve hâlâ oradasın. Türkçede çalışıyorum dersin, ama İngilizce bunun için ayrı bir zaman kullanır: have ya da has, sonra fiilin üçüncü hâli. work fiilinin üçüncü hâli worked."
      },
      {
       "lang": "en",
@@ -26869,7 +26779,6 @@
      "accept": [
       "I've worked here for two years.",
       "I have worked here for 2 years.",
-      "I have worked here for two years",
       "I have been working here for two years.",
       "I've been working here for two years."
      ],
@@ -27032,8 +26941,7 @@
      "kind": "produce",
      "target": "I learned new skills last year.",
      "accept": [
-      "Last year I learned new skills.",
-      "I learned new skills last year"
+      "Last year I learned new skills."
      ],
      "hint": [
       {
@@ -27084,7 +26992,6 @@
      "accept": [
       "How long have you worked at this company?",
       "How long have you worked in this company?",
-      "How long have you worked here",
       "How long have you been working here?",
       "How long have you been working at this company?"
      ],
@@ -28845,7 +28752,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin ana kalıbı. Dikkatle dinle."
+      "text": "Şimdi bugünün ana kalıbı. Dikkatle dinle."
      },
      {
       "lang": "en",
@@ -29550,7 +29457,6 @@
      "target": "I agree with you",
      "accept": [
       "I agree",
-      "I agree with you",
       "Yes, I agree with you"
      ],
      "hint": [
@@ -32214,7 +32120,6 @@
      "kind": "produce",
      "target": "At the end of the day I was tired but happy",
      "accept": [
-      "At the end of the day, I was tired but happy",
       "At the end of the day I felt tired but happy",
       "I was tired but happy at the end of the day"
      ],
@@ -33939,7 +33844,7 @@
    },
    {
     "de": "track",
-    "tr": "takip etmek"
+    "tr": "takip etmek (kargo)"
    },
    {
     "de": "package",
@@ -33981,7 +33886,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders sonunda paketinin gelip gelmediğini soracak, ne zaman geleceğini öğrenecek ve bir sorun olursa anlatabileceksin. Hazır mısın?"
+      "text": "Sonunda paketinin gelip gelmediğini soracak, ne zaman geleceğini öğrenecek ve bir sorun olursa anlatabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -35747,7 +35652,7 @@
    },
    {
     "de": "cancel",
-    "tr": "iptal etmek"
+    "tr": "iptal etmek (sözleşme)"
    },
    {
     "de": "payment",
@@ -35785,7 +35690,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu derste tarifeleri karşılaştırmayı, aylık ücreti ve veriyi sormayı, gerekirse sözleşmeyi iptal etmeyi öğreneceksin. Hazır mısın?"
+      "text": "Bugün tarifeleri karşılaştırmayı, aylık ücreti ve veriyi sormayı, gerekirse sözleşmeyi iptal etmeyi öğreneceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -36582,7 +36487,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün seninle kuaföre gidiyoruz. Dersin sonunda saçının nasıl kesileceğini İngilizce anlatabilecek, kibarca istekte bulunabilecek ve fiyatı sorup bahşiş verebileceksin."
+      "text": "Merhaba! Bugün seninle kuaföre gidiyoruz. Sonunda saçının nasıl kesileceğini İngilizce anlatabilecek, kibarca istekte bulunabilecek ve fiyatı sorup bahşiş verebileceksin."
      },
      {
       "lang": "tr",
@@ -36789,9 +36694,7 @@
      "target": "A bit shorter, please.",
      "accept": [
       "A little shorter, please.",
-      "A bit shorter please",
-      "Can you cut it a bit shorter, please?",
-      "A bit shorter, please"
+      "Can you cut it a bit shorter, please?"
      ],
      "hint": [
       {
@@ -36896,7 +36799,6 @@
      "kind": "produce",
      "target": "Short on the sides, please.",
      "accept": [
-      "Short on the sides please",
       "Can you cut the sides short, please?",
       "Shorter on the sides, please."
      ],
@@ -37163,7 +37065,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli cümlesi. Kapıdan girdin, ne diyorsun?"
+      "text": "Şimdi en önemli cümle. Kapıdan girdin, ne diyorsun?"
      }
     ],
     "expect": {
@@ -37171,7 +37073,6 @@
      "target": "I'd like a haircut, please.",
      "accept": [
       "I would like a haircut, please.",
-      "I'd like a haircut please",
       "Hello, I'd like a haircut, please.",
       "Can I have a haircut, please?",
       "Hello, I would like a haircut, please."
@@ -37307,7 +37208,7 @@
    },
    {
     "de": "sound",
-    "tr": "ses"
+    "tr": "ses (gürültü)"
    },
    {
     "de": "spare part",
@@ -37504,7 +37405,6 @@
      "target": "My screen is broken.",
      "accept": [
       "The screen is broken.",
-      "My screen is broken",
       "My phone screen is broken."
      ],
      "hint": [
@@ -37619,7 +37519,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli sorusu:"
+      "text": "Şimdi en önemli soru:"
      },
      {
       "lang": "en",
@@ -37723,7 +37623,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: ses. Lütfen tekrar et:"
+      "text": "Türkçesi: ses, gürültü. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -37811,8 +37711,7 @@
      "target": "How long will it take?",
      "accept": [
       "How long does it take?",
-      "How long will the repair take?",
-      "How long will it take"
+      "How long will the repair take?"
      ],
      "hint": [
       {
@@ -37913,8 +37812,7 @@
      "target": "It's still under warranty.",
      "accept": [
       "It is still under warranty.",
-      "My phone is still under warranty.",
-      "it is still under warranty."
+      "My phone is still under warranty."
      ],
      "hint": [
       {
@@ -38073,7 +37971,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda iki şeyin fiyatını karşılaştırabilecek, hangisinin daha ucuz, hangisinin daha iyi olduğunu İngilizce söyleyebileceksin. Hazır mısın?"
+      "text": "Sonunda iki şeyin fiyatını karşılaştırabilecek, hangisinin daha ucuz, hangisinin daha iyi olduğunu İngilizce söyleyebileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -38212,7 +38110,6 @@
      "target": "This jacket is more expensive than that one.",
      "accept": [
       "This jacket is more expensive than that jacket.",
-      "This jacket is more expensive than that one",
       "This jacket is more expensive."
      ],
      "hint": [
@@ -38835,7 +38732,6 @@
      "target": "I bought this here two weeks ago.",
      "accept": [
       "I bought it here two weeks ago.",
-      "I bought this here two weeks ago",
       "I bought this here 2 weeks ago."
      ],
      "hint": [
@@ -39102,8 +38998,7 @@
      "target": "Could you repair it, please?",
      "accept": [
       "Can you repair it, please?",
-      "Could you fix it, please?",
-      "Could you repair it please?"
+      "Could you fix it, please?"
      ],
      "hint": [
       {
@@ -40263,8 +40158,7 @@
      "target": "Here is my passport.",
      "accept": [
       "Here's my passport.",
-      "This is my passport.",
-      "Here is my passport"
+      "This is my passport."
      ],
      "hint": [
       {
@@ -40326,8 +40220,7 @@
      "target": "I have one suitcase.",
      "accept": [
       "I've got one suitcase.",
-      "I have one bag.",
-      "I have one suitcase"
+      "I have one bag."
      ],
      "hint": [
       {
@@ -40369,7 +40262,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersimizin can alıcı noktasına geldik: talimatlar."
+      "text": "Şimdi işin can alıcı noktasına geldik: talimatlar."
      },
      {
       "lang": "tr",
@@ -40517,8 +40410,7 @@
      "accept": [
       "Where is gate twelve?",
       "Excuse me, where's gate twelve?",
-      "Where's gate twelve?",
-      "Excuse me, where is gate twelve"
+      "Where's gate twelve?"
      ],
      "hint": [
       {
@@ -41671,7 +41563,6 @@
      "kind": "produce",
      "target": "Turn left at the corner.",
      "accept": [
-      "Turn left at the corner",
       "Go straight and turn left at the corner."
      ],
      "hint": [
@@ -41741,8 +41632,7 @@
      "target": "It's opposite the museum.",
      "accept": [
       "It is opposite the museum.",
-      "The museum is opposite.",
-      "It's opposite the museum"
+      "The museum is opposite."
      ],
      "hint": [
       {
@@ -42016,7 +41906,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz: öneri yapmak. En kolay yol Let's demek. Türkçedeki 'hadi ... yapalım' gibi."
+      "text": "Şimdi işin kalbine geliyoruz: öneri yapmak. En kolay yol Let's demek. Türkçedeki 'hadi ... yapalım' gibi."
      },
      {
       "lang": "en",
@@ -42056,7 +41946,6 @@
      "target": "Let's go to the museum.",
      "accept": [
       "Let's visit the museum.",
-      "Let's go to the museum",
       "Lets go to the museum.",
       "Let us go to the museum.",
       "Let us visit the museum."
@@ -43088,7 +42977,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizde araç kiralıyoruz."
+      "text": "Merhaba, hoş geldin. Bugün araç kiralıyoruz."
      },
      {
       "lang": "tr",
@@ -43744,7 +43633,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ders boyunca ben söyleyeceğim, sen tekrar edeceksin. Sonra da kendi cümlelerini kuracaksın. Hazır mısın?"
+      "text": "Baştan sona ben söyleyeceğim, sen tekrar edeceksin. Sonra da kendi cümlelerini kuracaksın. Hazır mısın?"
      }
     ],
     "expect": {
@@ -43914,9 +43803,7 @@
      "kind": "produce",
      "target": "I'd like the fish, please.",
      "accept": [
-      "I would like the fish, please.",
-      "I'd like the fish please",
-      "I would like the fish please"
+      "I would like the fish, please."
      ],
      "hint": [
       {
@@ -43958,7 +43845,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu dersin belki de en önemli kısmı: sağlığın. \"Alerji\" kelimesi"
+      "text": "Bugünün belki de en önemli kısmı: sağlığın. \"Alerji\" kelimesi"
      },
      {
       "lang": "en",
@@ -44033,9 +43920,7 @@
      "kind": "produce",
      "target": "I'm allergic to milk.",
      "accept": [
-      "I am allergic to milk.",
-      "I'm allergic to milk",
-      "I am allergic to milk"
+      "I am allergic to milk."
      ],
      "hint": [
       {
@@ -44582,7 +44467,6 @@
      "target": "I'm looking for a gift for my sister.",
      "accept": [
       "I am looking for a gift for my sister.",
-      "I'm looking for a gift for my sister",
       "I'm looking for a present for my sister.",
       "I am looking for a present for my sister."
      ],
@@ -45312,8 +45196,7 @@
      "kind": "produce",
      "target": "We arrived in Rome on Tuesday.",
      "accept": [
-      "On Tuesday we arrived in Rome.",
-      "We arrived in Rome on Tuesday"
+      "On Tuesday we arrived in Rome."
      ],
      "hint": [
       {
@@ -45470,7 +45353,6 @@
      "kind": "produce",
      "target": "The weather was amazing.",
      "accept": [
-      "The weather was amazing",
       "It was amazing weather."
      ],
      "hint": [
@@ -45669,7 +45551,6 @@
      "accept": [
       "I'd like to go there again.",
       "I want to go back there again.",
-      "I want to go there again",
       "I would like to go there again."
      ],
      "hint": [
@@ -45931,8 +45812,6 @@
      "kind": "produce",
      "target": "Are you free on Saturday?",
      "accept": [
-      "Are you free on Saturday",
-      "Are you free on saturday?",
       "Are you free Saturday?"
      ],
      "hint": [
@@ -46271,7 +46150,6 @@
      "target": "I'd love to, but I can't.",
      "accept": [
       "I would love to, but I can't.",
-      "I'd love to but I can't",
       "I'd love to, but I can't come.",
       "I'd love to, but I cannot.",
       "I would love to, but I cannot.",
@@ -46377,7 +46255,6 @@
      "kind": "produce",
      "target": "Would you like to join us?",
      "accept": [
-      "Would you like to join us",
       "Do you want to join us?"
      ],
      "hint": [
@@ -46525,7 +46402,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders bitince birine İngilizce doğum günü dileyebilecek, hediyeni uzatabilecek ve hazırlıklarından bahsedebileceksin."
+      "text": "Sonunda birine İngilizce doğum günü dileyebilecek, hediyeni uzatabilecek ve hazırlıklarından bahsedebileceksin."
      },
      {
       "lang": "tr",
@@ -46768,7 +46645,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli cümlesi:"
+      "text": "Şimdi en önemli cümle:"
      },
      {
       "lang": "en",
@@ -46799,9 +46676,7 @@
      "kind": "produce",
      "target": "Happy birthday!",
      "accept": [
-      "Happy birthday",
-      "Happy birthday to you",
-      "Happy birthday to you!"
+      "Happy birthday to you"
      ],
      "hint": [
       {
@@ -46958,10 +46833,8 @@
      "kind": "produce",
      "target": "This is for you.",
      "accept": [
-      "This is for you",
       "It's for you.",
-      "It is for you.",
-      "This is for you!"
+      "It is for you."
      ],
      "hint": [
       {
@@ -47019,7 +46892,6 @@
      "target": "I haven't bought a present yet.",
      "accept": [
       "I have not bought a present yet.",
-      "I haven't bought a present yet",
       "I haven't bought a gift yet.",
       "I don't have a present yet.",
       "I have not bought a gift yet.",
@@ -48371,7 +48243,7 @@
   "chat": {
    "scene": "Amerika'dan gelen bir arkadaşın sana bayramları soruyor. Ona bir bayramı, geleneklerini ve bu yıl ne yapacağını anlat.",
    "partner": "Türkiye'yi merak eden Amerikalı bir arkadaş",
-   "opening": "Have you ever been to a big festival in Turkey? Tell me about it.",
+   "opening": "Have you ever been to a big festival in Türkiye? Tell me about it.",
    "openingTr": "Türkiye'de büyük bir bayramda hiç bulundun mu? Anlatsana.",
    "goal": "Bir bayramın adını ve ne zaman kutlandığını söylemen, en az bir geleneği anlatman ve bu yıl ne yapacağını belirtmen hâlinde konuşma başarılı sayılır.",
    "minTurns": 7
@@ -48440,7 +48312,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün tebrik ve iyi dilek kalıplarını çalışıyoruz. Ders bitince bir arkadaşın sana güzel bir haber verdiğinde İngilizce ne diyeceğini bileceksin: tebrik edeceksin, şans dileyeceksin, gurur duyduğunu söyleyeceksin. Hazır mısın?"
+      "text": "Bugün tebrik ve iyi dilek kalıplarını çalışıyoruz. Sonunda bir arkadaşın sana güzel bir haber verdiğinde İngilizce ne diyeceğini bileceksin: tebrik edeceksin, şans dileyeceksin, gurur duyduğunu söyleyeceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -48714,7 +48586,6 @@
      "kind": "produce",
      "target": "Good luck with your exam. I wish you all the best.",
      "accept": [
-      "Good luck with your exam! I wish you all the best!",
       "Good luck with the exam. I wish you all the best.",
       "Good luck with your exam tomorrow. I wish you all the best."
      ],
@@ -49583,9 +49454,6 @@
      "kind": "produce",
      "target": "I apologize for the delay.",
      "accept": [
-      "I apologize for the delay.",
-      "I apologize for the delay",
-      "I apologize for the delay",
       "I'm sorry for the delay.",
       "I am sorry for the delay."
      ],
@@ -49820,11 +49688,9 @@
      "kind": "produce",
      "target": "That's OK, don't worry about it.",
      "accept": [
-      "That's OK. Don't worry about it.",
       "That's okay, don't worry about it.",
       "It's OK, don't worry about it.",
       "No problem, don't worry about it.",
-      "That's OK don't worry about it",
       "That's OK, do not worry about it.",
       "that is OK, don't worry about it.",
       "that is OK, do not worry about it.",
@@ -50001,11 +49867,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizin adı: Yakın arkadaşlık."
+      "text": "Merhaba, hoş geldin. Bugünkü konumuz: yakın arkadaşlık."
      },
      {
       "lang": "tr",
-      "text": "Bu derste arkadaşlarını İngilizce tanıtmayı, ne kadar süredir arkadaş olduğunuzu ve birlikte neler yaptığınızı anlatmayı öğreneceksin. Hazır mısın?"
+      "text": "Bugün arkadaşlarını İngilizce tanıtmayı, ne kadar süredir arkadaş olduğunuzu ve birlikte neler yaptığınızı anlatmayı öğreneceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -50918,8 +50784,7 @@
      "kind": "produce",
      "target": "They got married last summer.",
      "accept": [
-      "They married last summer.",
-      "They got married last summer"
+      "They married last summer."
      ],
      "hint": [
       {
@@ -51468,7 +51333,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu derste üç şeyi yapabileceksin: tanışmayı başlatmak, sohbeti sürdürmek için soru sormak ve konuşmayı kibarca bitirmek."
+      "text": "Bugün üç şeyi öğreneceksin: tanışmayı başlatmak, sohbeti sürdürmek için soru sormak ve konuşmayı kibarca bitirmek."
      }
     ]
    },
@@ -51567,8 +51432,6 @@
      "kind": "produce",
      "target": "Nice to meet you too.",
      "accept": [
-      "Nice to meet you, too.",
-      "Nice to meet you too",
       "It's nice to meet you too.",
       "it is nice to meet you too."
      ],
@@ -51654,9 +51517,6 @@
     "expect": {
      "kind": "produce",
      "target": "How do you know Sarah?",
-     "accept": [
-      "How do you know Sarah"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -52277,8 +52137,6 @@
      "target": "Thank you for waiting.",
      "accept": [
       "Thanks for waiting.",
-      "Thank you for waiting",
-      "Thanks for waiting",
       "Thank you very much for waiting."
      ],
      "hint": [
@@ -52309,10 +52167,8 @@
      "target": "Thanks for helping me yesterday.",
      "accept": [
       "Thank you for helping me yesterday.",
-      "Thanks for helping me yesterday",
       "Thank you for your help yesterday.",
-      "Thanks for your help yesterday.",
-      "Thanks for your help yesterday"
+      "Thanks for your help yesterday."
      ],
      "hint": [
       {
@@ -52550,7 +52406,6 @@
      "target": "You're welcome. No problem.",
      "accept": [
       "You are welcome. No problem.",
-      "You're welcome, no problem.",
       "No problem. You're welcome.",
       "No problem. you are welcome."
      ],
@@ -53678,7 +53533,6 @@
      "target": "I don't think social media is good.",
      "accept": [
       "I don't think that social media is good.",
-      "I don't think social media is good",
       "In my opinion, social media is not good.",
       "I do not think social media is good.",
       "I do not think that social media is good."
@@ -54094,7 +53948,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dersin anahtar kelimesi:"
+      "text": "Bugünün anahtar kelimesi:"
      },
      {
       "lang": "en",
@@ -54691,7 +54545,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbi. Birine haberi duyup duymadığını sormak için:"
+      "text": "Şimdi işin kalbi. Birine haberi duyup duymadığını sormak için:"
      },
      {
       "lang": "en",
@@ -54742,8 +54596,7 @@
      "kind": "produce",
      "target": "Have you heard the news?",
      "accept": [
-      "Did you hear the news?",
-      "Have you heard the news"
+      "Did you hear the news?"
      ],
      "hint": [
       {
@@ -55217,7 +55070,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders bitince bilgisayarının çalışmadığını, yavaş olduğunu söyleyebilecek, ne denediğini anlatıp yardım isteyebileceksin. Hazır mısın?"
+      "text": "Sonunda bilgisayarının çalışmadığını, yavaş olduğunu söyleyebilecek, ne denediğini anlatıp yardım isteyebileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -55321,7 +55174,6 @@
      "accept": [
       "My computer is really slow.",
       "My computer's very slow.",
-      "My computer is very slow",
       "My laptop is very slow."
      ],
      "hint": [
@@ -55812,7 +55664,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda bir uygulamanın ne işe yaradığını İngilizce olarak rahatça anlatabileceksin."
+      "text": "Sonunda bir uygulamanın ne işe yaradığını İngilizce olarak rahatça anlatabileceksin."
      },
      {
       "lang": "tr",
@@ -55895,7 +55747,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geldik. Bir uygulamayı neden kullandığını söylemek için şu kalıbı kuruyorsun:"
+      "text": "Şimdi işin kalbine geldik. Bir uygulamayı neden kullandığını söylemek için şu kalıbı kuruyorsun:"
      },
      {
       "lang": "en",
@@ -56286,7 +56138,6 @@
      "kind": "produce",
      "target": "I downloaded it to practice English.",
      "accept": [
-      "I downloaded it to practice English.",
       "I downloaded the app to practice English.",
       "I downloaded it for practicing English."
      ],
@@ -56403,7 +56254,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders sonunda \"Parolanı değiştirmelisin\" ya da \"Bunu kimseyle paylaşma\" diyebileceksin. Hazır mısın?"
+      "text": "Sonunda \"Parolanı değiştirmelisin\" ya da \"Bunu kimseyle paylaşma\" diyebileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -56653,7 +56504,6 @@
      "kind": "produce",
      "target": "You should use a strong password.",
      "accept": [
-      "You should use a strong password",
       "You should use strong passwords."
      ],
      "hint": [
@@ -56953,7 +56803,6 @@
      "kind": "produce",
      "target": "Be careful with public wifi.",
      "accept": [
-      "Be careful with public wifi",
       "You should be careful with public wifi.",
       "Be careful with the public wifi."
      ],
@@ -57165,7 +57014,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün görüntülü görüşme dersindeyiz. Ses gitmediğinde, görüntü donduğunda ya da aynı anda konuşmaya başladığınızda ne diyeceğini öğreneceksin."
+      "text": "Merhaba! Bugünkü konumuz görüntülü görüşme. Ses gitmediğinde, görüntü donduğunda ya da aynı anda konuşmaya başladığınızda ne diyeceğini öğreneceksin."
      },
      {
       "lang": "tr",
@@ -57387,9 +57236,7 @@
      "kind": "produce",
      "target": "Can you hear me?",
      "accept": [
-      "Can you hear me",
-      "Can you hear me now?",
-      "Can you hear me now"
+      "Can you hear me now?"
      ],
      "hint": [
       {
@@ -57423,7 +57270,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin asıl konusuna geliyoruz: söz sırası."
+      "text": "Şimdi asıl konuya geliyoruz: söz sırası."
      },
      {
       "lang": "tr",
@@ -57626,9 +57473,7 @@
      "kind": "produce",
      "target": "Could you say that again?",
      "accept": [
-      "Could you say that again",
       "Can you say that again?",
-      "Can you say that again",
       "Sorry, could you say that again?",
       "Sorry, can you say that again?"
      ],
@@ -57750,9 +57595,7 @@
      "kind": "produce",
      "target": "I'll call you back in five minutes.",
      "accept": [
-      "I'll call you back in five minutes",
       "I will call you back in five minutes.",
-      "I will call you back in five minutes",
       "I'll call you back in 5 minutes.",
       "I'll call back in five minutes.",
       "I will call you back in 5 minutes.",
@@ -58841,10 +58684,7 @@
      "kind": "produce",
      "target": "Then choose your password.",
      "accept": [
-      "Then, choose your password.",
-      "Next choose your password.",
-      "Next, choose your password.",
-      "Then choose your password"
+      "Next choose your password."
      ],
      "hint": [
       {
@@ -58922,7 +58762,6 @@
      "target": "Don't press the red button.",
      "accept": [
       "Do not press the red button.",
-      "Don't press the red button",
       "Please don't press the red button.",
       "Please do not press the red button."
      ],
@@ -58991,8 +58830,7 @@
      "accept": [
       "Wait a minute, please.",
       "Please wait a moment.",
-      "Wait a moment, please.",
-      "Please wait a minute"
+      "Wait a moment, please."
      ],
      "hint": [
       {
@@ -59640,8 +59478,7 @@
      "target": "Could you help me, please?",
      "accept": [
       "Could you help me?",
-      "Can you help me, please?",
-      "Could you help me please?"
+      "Can you help me, please?"
      ],
      "hint": [
       {
@@ -60587,7 +60424,7 @@
    },
    {
     "de": "apply",
-    "tr": "başvurmak"
+    "tr": "başvurmak (izin için)"
    },
    {
     "de": "document",
@@ -60633,7 +60470,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba. Bugün oturma izni dersindeyiz. Göçmenlik ofisine gidip başvuru yapacağız: belgelerini anlatacaksın ve memurun sorularına cevap vereceksin."
+      "text": "Merhaba. Bugünkü konumuz oturma izni. Göçmenlik ofisine gidip başvuru yapacağız: belgelerini anlatacaksın ve memurun sorularına cevap vereceksin."
      },
      {
       "lang": "tr",
@@ -60813,8 +60650,7 @@
      "accept": [
       "I've got my passport with me.",
       "I have my passport here.",
-      "My passport is with me.",
-      "My passport is with me"
+      "My passport is with me."
      ],
      "hint": [
       {
@@ -61500,8 +61336,7 @@
      "kind": "produce",
      "target": "I lost my wallet on the bus.",
      "accept": [
-      "I lost my wallet in the bus.",
-      "I lost my wallet on the bus"
+      "I lost my wallet in the bus."
      ],
      "hint": [
       {
@@ -61906,7 +61741,7 @@
    },
    {
     "de": "drop",
-    "tr": "bırakmak"
+    "tr": "(kitap) bırakmak"
    },
    {
     "de": "quiet",
@@ -62732,7 +62567,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugünkü dersimiz ulaşım kartı. Kartı nereden alacağını sormayı, makinede adım adım talimatları anlamayı ve ceza konusunu konuşmayı öğreneceğiz."
+      "text": "Merhaba! Bugünkü konumuz ulaşım kartı. Kartı nereden alacağını sormayı, makinede adım adım talimatları anlamayı ve ceza konusunu konuşmayı öğreneceğiz."
      },
      {
       "lang": "tr",
@@ -63564,8 +63399,6 @@
      "kind": "produce",
      "target": "Is Thursday available?",
      "accept": [
-      "Is Thursday available",
-      "Is Thursday available?",
       "Do you have anything available on Thursday?",
       "Is Thursday free?"
      ],
@@ -63700,8 +63533,6 @@
      "kind": "produce",
      "target": "Do I need to bring my ID?",
      "accept": [
-      "Do I need to bring my ID",
-      "Do I need to bring my ID?",
       "Should I bring my ID?",
       "Do I have to bring my ID?"
      ],
@@ -63891,8 +63722,6 @@
      "kind": "produce",
      "target": "Could I come at three o'clock?",
      "accept": [
-      "Could I come at three o'clock",
-      "Could I come at three o'clock?",
       "Could I come at three?",
       "Could I arrive at three o'clock?",
       "Can I come at three o'clock?"
@@ -65092,7 +64921,6 @@
      "kind": "produce",
      "target": "I have waited since Monday.",
      "accept": [
-      "I have waited since Monday",
       "I've waited since Monday.",
       "I have been waiting since Monday."
      ],
@@ -65552,7 +65380,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ders sonunda yeni taşınmış bir komşuna bütün bunları anlatabileceksin. Hazır mısın?"
+      "text": "Sonunda yeni taşınmış bir komşuna bütün bunları anlatabileceksin. Hazır mısın?"
      }
     ],
     "expect": {

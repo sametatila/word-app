@@ -280,24 +280,9 @@
   "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder die Grenze deines Belegs gesagt hast."
  },
  {
-  "tr": "Doğru. Ödün başa çekilmiş ve bedel ondan sonra açıkça söylenmiş.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Zugeständnis ist vorangezogen und der Preis danach offen genannt."
- },
- {
   "tr": "Doğru. Biri bir aktarımı adlandırıyor, öteki uzmanlık iddiası taşıyor.",
   "kind": "why.tr",
   "de": "Richtig. Das eine benennt eine Weitergabe, das andere erhebt einen Fachanspruch."
- },
- {
-  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil ölçünün kendisine bağlanmış.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Maßstab selbst."
- },
- {
-  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor.",
-  "kind": "why.tr",
-  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt ein Szenario."
  },
  {
   "tr": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sınır aynı yerde duruyor.",
@@ -308,16 +293,6 @@
   "tr": "Doğru. Yer öbeği başa alınmış; asıl neden sona düşünce daha ağır duyuluyor.",
   "kind": "why.tr",
   "de": "Richtig. Die Ortsangabe steht vorn; fällt der eigentliche Grund ans Ende, klingt er schwerer."
- },
- {
-  "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi kurumun kendi sözcüğüyle doğruluyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe mit dem eigenen Wort des Betriebs."
- },
- {
-  "tr": "Doğru. Biri tarafların anlaşmazlığını adlandırıyor, öteki geri dönmeyen bir durumu.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine benennt den Streit der Parteien, das andere einen Zustand ohne Rückweg."
  },
  {
   "tr": "ölçme ile imzayı ayırır",
@@ -1947,12 +1922,12 @@
  {
   "tr": "dediğinde düşen fiili okuyan koyar ve orada bir hak el değiştirir. Sözleşmeyi okumak, eksiltilen yarıyı görmekle başlar.",
   "kind": "say.tr",
-  "de": "setzt die lesende Person das weggelassene Verb ein, und dort wechselt ein Recht den Besitzer. Einen Vertrag zu lesen beginnt damit, die weggelassene Hälfte zu sehen."
+  "de": "– sagst du das, setzt die lesende Person das weggelassene Verb ein, und dort wechselt ein Recht den Besitzer. Einen Vertrag zu lesen beginnt damit, die weggelassene Hälfte zu sehen."
  },
  {
   "tr": "dediğinde karşındaki senin sayıları gördüğünü anlar. Bedeli yok sayan savunma, haklı olsa bile çiftçiye inandırıcı gelmez.",
   "kind": "say.tr",
-  "de": "versteht dein Gegenüber, dass du die Zahlen kennst. Eine Verteidigung, die den Preis übergeht, wirkt auf die Bäuerin auch dann unglaubwürdig, wenn sie recht hat."
+  "de": "– sagst du das, versteht dein Gegenüber, dass du die Zahlen kennst. Eine Verteidigung, die den Preis übergeht, wirkt auf die Bäuerin auch dann unglaubwürdig, wenn sie recht hat."
  },
  {
   "tr": "Piyasayı anlatan söz ile üreticiyi anlatan söz aynı değil; ikisini karıştıran cümle çiftçiyi bir kaleme çevirir. Hazır mısın?",

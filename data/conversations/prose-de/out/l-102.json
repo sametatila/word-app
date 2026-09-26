@@ -350,11 +350,6 @@
   "de": "Richtig. Reicht die Wiedergabe in die Vergangenheit, nimmt sie die"
  },
  {
-  "tr": "Doğru. Her iki yarının öznesi de protesto; özne değişseydi bu öbek kurulamazdı.",
-  "kind": "why.tr",
-  "de": "Richtig. Beide Hälften haben den Protest als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
- },
- {
   "tr": "Kaynağı vermeden aktarmak için",
   "kind": "hint.tr",
   "de": "Um ohne Quellenangabe wiederzugeben –"

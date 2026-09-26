@@ -270,24 +270,9 @@
   "de": "nennt ein Ereignis, das schon im Kalender steht"
  },
  {
-  "tr": "Doğru. Tarif bir şeye ait olduğu için",
-  "kind": "why.tr",
-  "de": "Richtig. Weil die Beschreibung zu einer Sache gehört, steht hier"
- },
- {
-  "tr": "Doğru. Cümlede bitmiş bir tarih var, o yüzden olağan geçmiş zaman kullanılıyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Im Satz steht ein abgeschlossenes Datum, deshalb wird das einfache Präteritum benutzt."
- },
- {
   "tr": "Doğru. Camı kimin topladığı söylenmiyor ve belediye yazısında bu olağan; önemli olan gün.",
   "kind": "why.tr",
   "de": "Richtig. Wer das Glas einsammelt, wird nicht genannt, und in einem Schreiben der Stadt ist das normal; wichtig ist der Tag."
- },
- {
-  "tr": "Doğru. Lamba gerçekte yok, o yüzden şart yarısı geçmiş biçimde ve sonuç yarısı şart kipinde.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Lampe gibt es in Wirklichkeit nicht, deshalb steht die Bedingungshälfte in der Vergangenheitsform und die Folgehälfte im Konjunktiv."
  },
  {
   "tr": "Doğru. Elinde bir belirti yok, salt bir tahmin söyleniyor; belirti olsaydı başka bir biçim gelirdi.",

@@ -1090,7 +1090,7 @@
  { "tr": "bağlantı kurmak", "kind": "vocab.tr", "de": "verbinden" },
  { "tr": "dizüstü bilgisayar", "kind": "vocab.tr", "de": "Laptop" },
  { "tr": "televizyon programı", "kind": "vocab.tr", "de": "Fernsehsendung" },
- { "tr": "Türkçesi: ses. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Ton. Bitte sprich nach:" },
+ { "tr": "Türkçesi: ses. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Stimme. Bitte sprich nach:" },
  { "tr": "Türkçesi: blog. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Blog. Bitte sprich nach:" },
  { "tr": "Türkçesi: fare. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Maus. Bitte sprich nach:" },
  { "tr": "Türkçesi: olgu. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Tatsache. Bitte sprich nach:" },

@@ -20,11 +20,6 @@
   "de": "Symptome beschreiben"
  },
  {
-  "tr": "Aile hekimine kaydolmak",
-  "kind": "titleTr",
-  "de": "Sich bei einer Praxis anmelden"
- },
- {
   "tr": "İlaç kutusundaki yazıyı anlamayı öğretir; kimin yaptığı değil ne yapıldığı söylenir.",
   "kind": "summary",
   "de": "Vermittelt, wie man den Text auf der Packung versteht; genannt wird nicht, wer etwas tut, sondern was getan wird."
@@ -88,11 +83,6 @@
   "tr": "Sen varmadan önce ne olmuştu?",
   "kind": "openingTr",
   "de": "Was war passiert, bevor du ankamst?"
- },
- {
-  "tr": "Daha önce bize kaydoldunuz mu?",
-  "kind": "openingTr",
-  "de": "Waren Sie schon einmal bei uns angemeldet?"
  },
  {
   "tr": "Peki hekim tam olarak ne dedi?",
@@ -168,11 +158,6 @@
   "tr": "göğüs",
   "kind": "vocab.tr",
   "de": "Brustkorb"
- },
- {
-  "tr": "koğuş",
-  "kind": "vocab.tr",
-  "de": "Station"
  },
  {
   "tr": "nefes",
@@ -345,19 +330,9 @@
   "de": "Richtig. Die Blutung hörte vor der Ankunft auf, deshalb steht sie eine Stufe zurück; die Ankunft bleibt im einfachen Präteritum."
  },
  {
-  "tr": "Doğru. Hapı kimin aldığı söylenmiyor ve prospektüs dilinde bu olağan; önemli olan ne yapıldığı.",
-  "kind": "why.tr",
-  "de": "Richtig. Wer die Tablette nimmt, wird nicht genannt, und in der Sprache des Beipackzettels ist das normal; wichtig ist, was gemacht wird."
- },
- {
   "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: hemşireye görünebilirsin de görünmeyebilirsin de.",
   "kind": "why.tr",
   "de": "Richtig. Diese Wendung nennt kein Verbot, sondern Freiheit: du kannst zur Pflegerin gehen oder auch nicht."
- },
- {
-  "tr": "Doğru. Hekim 'is normal' demişti; aktarırken zaman bir basamak geriye gitti ve cümle doğru kuruldu.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Ärztin hatte „is normal“ gesagt; beim Wiedergeben rückte die Zeit eine Stufe zurück und der Satz ist richtig gebaut."
  },
  {
   "tr": "Soru aktarımı için",
@@ -550,11 +525,6 @@
   "de": "Der gespürte Schmerz selbst heißt"
  },
  {
-  "tr": "Hastaların yattığı odaya",
-  "kind": "say.tr",
-  "de": "Der Raum, in dem die Kranken liegen, heißt"
- },
- {
   "tr": "Kalbin bulunduğu bölgeye",
   "kind": "say.tr",
   "de": "Der Bereich, in dem das Herz sitzt, heißt"
@@ -648,11 +618,6 @@
   "tr": "ilacın içinde durduğu kaba ise",
   "kind": "say.tr",
   "de": "und der Behälter, in dem das Medikament steckt, heißt"
- },
- {
-  "tr": "Onu sessiz bir koğuşa aldılar.",
-  "kind": "say.tr",
-  "de": "Sie haben ihn auf eine ruhige Station verlegt."
  },
  {
   "tr": "hastalık yapan küçük etkene ise",

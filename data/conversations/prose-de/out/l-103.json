@@ -360,16 +360,6 @@
   "de": "nennt mit Inversion, was nie geschah"
  },
  {
-  "tr": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi bulgusu gibi sunmuyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Information stützt sich auf eine Quelle, und die sprechende Person gibt sie nicht als eigenen Befund aus."
- },
- {
-  "tr": "Doğru. Kimin ayırdığı yazılmıyor ve çözümlemede bu olağan; yazıya geçen ayrımın kendisi.",
-  "kind": "why.tr",
-  "de": "Richtig. Wer unterscheidet, wird nicht geschrieben, und in der Analyse ist das normal; in den Text kommt die Unterscheidung selbst."
- },
- {
   "tr": "Ayrımı isimle kurmak için",
   "kind": "hint.tr",
   "de": "Um die Unterscheidung mit einem Nomen zu bauen –"

@@ -6674,7 +6674,7 @@
     "tr": "iş bölümü çizelgesi"
    },
    {
-    "de": "tidy",
+    "de": "clean up",
     "tr": "ortalığı toplamak"
    },
    {
@@ -6696,7 +6696,7 @@
   ],
   "patterns": [
    {
-    "de": "You have to tidy the kitchen after cooking.",
+    "de": "You have to clean up the kitchen after cooking.",
     "tr": "ortak kuralı zorunluluk olarak söyler"
    },
    {
@@ -6832,7 +6832,7 @@
      },
      {
       "lang": "en",
-      "text": "tidy"
+      "text": "clean up"
      },
      {
       "lang": "tr",
@@ -6840,12 +6840,12 @@
      },
      {
       "lang": "en",
-      "text": "You have to tidy the kitchen after cooking."
+      "text": "You have to clean up the kitchen after cooking."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You have to tidy the kitchen after cooking."
+     "target": "You have to clean up the kitchen after cooking."
     }
    },
    {
@@ -9637,8 +9637,7 @@
      "kind": "produce",
      "target": "I missed the bus because I woke up late.",
      "accept": [
-      "I missed the bus because I got up late.",
-      "I missed the bus, because I woke up late."
+      "I missed the bus because I got up late."
      ],
      "hint": [
       {
@@ -9960,7 +9959,7 @@
     "tr": "tarife"
    },
    {
-    "de": "platform",
+    "de": "track",
     "tr": "peron"
    },
    {
@@ -10014,7 +10013,7 @@
      },
      {
       "lang": "en",
-      "text": "platform"
+      "text": "track"
      },
      {
       "lang": "tr",
@@ -10022,12 +10021,12 @@
      },
      {
       "lang": "en",
-      "text": "The train departs from platform three."
+      "text": "The train departs from track three."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The train departs from platform three."
+     "target": "The train departs from track three."
     }
    },
    {
@@ -10261,12 +10260,12 @@
      },
      {
       "lang": "en",
-      "text": "You get the tickets. Meanwhile, I will find the platform."
+      "text": "You get the tickets. Meanwhile, I will find the track."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You get the tickets. Meanwhile, I will find the platform."
+     "target": "You get the tickets. Meanwhile, I will find the track."
     }
    },
    {
@@ -12727,7 +12726,7 @@
   "vocab": [
    {
     "de": "report",
-    "tr": "haber"
+    "tr": "haber / rapor"
    },
    {
     "de": "announce",
@@ -18326,7 +18325,7 @@
    },
    {
     "de": "weigh",
-    "tr": "tartmak"
+    "tr": "tartmak (iki tarafı)"
    },
    {
     "de": "conclusion",
@@ -21564,7 +21563,7 @@
    },
    {
     "de": "request",
-    "tr": "talep"
+    "tr": "rica / talep"
    },
    {
     "de": "reply",
@@ -28079,7 +28078,6 @@
      "kind": "produce",
      "target": "I believe it helps, because I feel calmer.",
      "accept": [
-      "I believe it helps because I feel calmer.",
       "I believe it helps, because I feel more calm."
      ],
      "hint": [
@@ -31894,17 +31892,21 @@
      },
      {
       "lang": "en",
-      "text": "By the time I spoke, they had already decided."
+      "text": "They had already decided before I had spoken."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "By the time I spoke, they had already decided.",
-     "answer": true,
+     "statement": "They had already decided before I had spoken.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Karar konuşmadan önce alınmış, o yüzden bir kat geride duruyor; konuşma ise olağan geçmişte."
+       "text": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:"
+      },
+      {
+       "lang": "en",
+       "text": "They had already decided before I spoke."
       }
      ]
     }
@@ -32566,7 +32568,7 @@
   "course": "en",
   "icon": "doctor",
   "title": "Becoming a new patient",
-  "titleTr": "Aile hekimine kaydolmak",
+  "titleTr": "Yeni hasta kaydı",
   "summary": "Bir muayenehaneye kaydolmayı öğretir; neyi yapmak zorundasın, neyi yapmana gerek yok, neyi hiç yapmamalısın.",
   "minutes": 10,
   "focusId": "Modals of obligation",
@@ -33071,8 +33073,8 @@
   "chat": {
    "scene": "Yeni taşındığın mahalledeki muayenehaneye kaydolmak için kayıt masasındasın. Neyi getirmen gerektiğini sor, neyi getirmediğini söyle ve ilk randevuyu al.",
    "partner": "sabırlı ama kuralları tek tek soran bir kayıt görevlisi",
-   "opening": "Have you registered with us before?",
-   "openingTr": "Daha önce bize kaydoldunuz mu?",
+   "opening": "Have you been a patient here before?",
+   "openingTr": "Daha önce burada hastamız oldunuz mu?",
    "goal": "Bir zorunluluğu, bir serbestliği ve bir yasağı üç ayrı kalıpla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -33309,17 +33311,29 @@
      },
      {
       "lang": "en",
-      "text": "The pain started on Tuesday."
+      "text": "The pain has started on Tuesday."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The pain started on Tuesday.",
-     "answer": true,
+     "statement": "The pain has started on Tuesday.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Başlangıç anı bitmiş bir noktadır, o yüzden olağan geçmiş zamanda duruyor."
+       "text": "Yanlış. Zaman belli ve bitmiş:"
+      },
+      {
+       "lang": "en",
+       "text": "on Tuesday"
+      },
+      {
+       "lang": "tr",
+       "text": "Bu durumda past simple gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "The pain started on Tuesday."
       }
      ]
     }
@@ -33574,8 +33588,8 @@
     "tr": "nefes"
    },
    {
-    "de": "ward",
-    "tr": "koğuş"
+    "de": "unit",
+    "tr": "servis (hastanede)"
    }
   ],
   "patterns": [
@@ -33907,11 +33921,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hastaların yattığı odaya"
+      "text": "Hastaların yattığı bölüme"
      },
      {
       "lang": "en",
-      "text": "ward"
+      "text": "unit"
      },
      {
       "lang": "tr",
@@ -33927,16 +33941,16 @@
      },
      {
       "lang": "en",
-      "text": "They moved him to a quiet ward."
+      "text": "They moved him to a quieter unit."
      },
      {
       "lang": "tr",
-      "text": "Onu sessiz bir koğuşa aldılar."
+      "text": "Onu daha sakin bir servise aldılar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They moved him to a quiet ward."
+     "target": "They moved him to a quieter unit."
     }
    },
    {
@@ -34243,17 +34257,21 @@
      },
      {
       "lang": "en",
-      "text": "The tablet is taken twice a day."
+      "text": "The tablet is take twice a day."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The tablet is taken twice a day.",
-     "answer": true,
+     "statement": "The tablet is take twice a day.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Hapı kimin aldığı söylenmiyor ve prospektüs dilinde bu olağan; önemli olan ne yapıldığı."
+       "text": "Yanlış. Edilgende yardımcı fiilden sonra fiilin üçüncü hâli gelir, yalın hâli değil:"
+      },
+      {
+       "lang": "en",
+       "text": "The tablet is taken twice a day."
       }
      ]
     }
@@ -34728,17 +34746,21 @@
      },
      {
       "lang": "en",
-      "text": "The doctor said the blood test was normal."
+      "text": "The doctor asked me whether did I have any allergies."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The doctor said the blood test was normal.",
-     "answer": true,
+     "statement": "The doctor asked me whether did I have any allergies.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Hekim 'is normal' demişti; aktarırken zaman bir basamak geriye gitti ve cümle doğru kuruldu."
+       "text": "Yanlış. Aktarılan soruda soru sırası düz cümleye döner; did gelmez:"
+      },
+      {
+       "lang": "en",
+       "text": "The doctor asked me whether I had any allergies."
       }
      ]
     }
@@ -35225,25 +35247,21 @@
      },
      {
       "lang": "en",
-      "text": "The doctor who referred me works upstairs."
+      "text": "The doctor which referred me works upstairs."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The doctor who referred me works upstairs.",
-     "answer": true,
+     "statement": "The doctor which referred me works upstairs.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tarif kişiye ait olduğu için"
+       "text": "Yanlış. Kişi için which değil who kullanılır:"
       },
       {
        "lang": "en",
-       "text": "who"
-      },
-      {
-       "lang": "tr",
-       "text": "kullanılıyor ve tarif ettiği kelimeden hemen sonra duruyor."
+       "text": "The doctor who referred me works upstairs."
       }
      ]
     }
@@ -36183,25 +36201,21 @@
      },
      {
       "lang": "en",
-      "text": "He gave up smoking last year."
+      "text": "He gave up to smoke last year."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He gave up smoking last year.",
-     "answer": true,
+     "statement": "He gave up to smoke last year.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bırakmayı anlatan fiilden sonra ikinci fiil"
+       "text": "Yanlış. Bırakmayı anlatan fiilden sonra ikinci fiil -ing hâlinde kalır:"
       },
       {
        "lang": "en",
-       "text": "-ing"
-      },
-      {
-       "lang": "tr",
-       "text": "hâlinde kalıyor."
+       "text": "He gave up smoking last year."
       }
      ]
     }
@@ -37154,7 +37168,6 @@
      "kind": "produce",
      "target": "I sent the form; moreover, I called the office.",
      "accept": [
-      "I sent the form; moreover I called the office.",
       "I sent the form; moreover, I phoned the office."
      ],
      "hint": [
@@ -37361,7 +37374,6 @@
      "kind": "produce",
      "target": "Send it today; otherwise you lose the day.",
      "accept": [
-      "Send it today; otherwise, you lose the day.",
       "Send it today; otherwise you will lose the day."
      ],
      "hint": [
@@ -38123,17 +38135,29 @@
      },
      {
       "lang": "en",
-      "text": "If I had a new lamp, I would use less energy."
+      "text": "If I would have a new lamp, I would use less energy."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If I had a new lamp, I would use less energy.",
-     "answer": true,
+     "statement": "If I would have a new lamp, I would use less energy.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Lamba gerçekte yok, o yüzden şart yarısı geçmiş biçimde ve sonuç yarısı şart kipinde."
+       "text": "Yanlış. Koşul cümlesinin içinde"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "durmaz; orası geçmiş biçimi alır:"
+      },
+      {
+       "lang": "en",
+       "text": "If I had a new lamp, I would use less energy."
       }
      ]
     }
@@ -38592,25 +38616,21 @@
      },
      {
       "lang": "en",
-      "text": "The tree that fell was very old."
+      "text": "The tree who fell was very old."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The tree that fell was very old.",
-     "answer": true,
+     "statement": "The tree who fell was very old.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tarif bir şeye ait olduğu için"
+       "text": "Yanlış. Şey için who değil that kullanılır:"
       },
       {
        "lang": "en",
-       "text": "that"
-      },
-      {
-       "lang": "tr",
-       "text": "kullanılıyor ve tarif ettiği kelimeden hemen sonra duruyor."
+       "text": "The tree that fell was very old."
       }
      ]
     }
@@ -39570,17 +39590,29 @@
      },
      {
       "lang": "en",
-      "text": "They built the bridge in 2015."
+      "text": "They have built the bridge in 2015."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They built the bridge in 2015.",
-     "answer": true,
+     "statement": "They have built the bridge in 2015.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümlede bitmiş bir tarih var, o yüzden olağan geçmiş zaman kullanılıyor."
+       "text": "Yanlış. Zaman belli ve bitmiş:"
+      },
+      {
+       "lang": "en",
+       "text": "in 2015"
+      },
+      {
+       "lang": "tr",
+       "text": "Bu durumda past simple gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "They built the bridge in 2015."
       }
      ]
     }
@@ -39851,7 +39883,7 @@
     "tr": "sürücü"
    },
    {
-    "de": "rush",
+    "de": "rush hour",
     "tr": "yoğun saat"
    }
   ],
@@ -40075,17 +40107,21 @@
      },
      {
       "lang": "en",
-      "text": "Passengers don't have to show a card."
+      "text": "Passengers don't have to smoke on the train, because it is not allowed."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Passengers don't have to show a card.",
-     "answer": true,
+     "statement": "Passengers don't have to smoke on the train, because it is not allowed.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: kart gösterebilirsin de göstermeyebilirsin de."
+       "text": "Yanlış. Bu kalıp 'gerekmiyor' demek; yasağın kalıbı başkadır:"
+      },
+      {
+       "lang": "en",
+       "text": "Passengers can't smoke on the train."
       }
      ]
     }
@@ -40196,11 +40232,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Herkesin aynı anda yola çıktığı yoğunluğa"
+      "text": "Herkesin aynı anda yola çıktığı saatlere"
      },
      {
       "lang": "en",
-      "text": "rush"
+      "text": "rush hour"
      },
      {
       "lang": "tr",
@@ -40216,7 +40252,7 @@
      },
      {
       "lang": "en",
-      "text": "The rush is worst at eight."
+      "text": "Rush hour is worst at eight."
      },
      {
       "lang": "tr",
@@ -40225,7 +40261,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The rush is worst at eight."
+     "target": "Rush hour is worst at eight."
     }
    },
    {
@@ -41978,17 +42014,21 @@
      },
      {
       "lang": "en",
-      "text": "Despite the distance, I take my bicycle."
+      "text": "Despite it is far, I take my bicycle."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Despite the distance, I take my bicycle.",
-     "answer": true,
+     "statement": "Despite it is far, I take my bicycle.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu bağlaç cümle değil isim alıyor; ardından gelen 'the distance' bir isim öbeği."
+       "text": "Yanlış. Bu bağlaç cümle almaz, isim alır:"
+      },
+      {
+       "lang": "en",
+       "text": "Despite the distance, I take my bicycle."
       }
      ]
     }
@@ -45367,25 +45407,21 @@
      },
      {
       "lang": "en",
-      "text": "He avoids walking in the dark."
+      "text": "He avoids to walk in the dark."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He avoids walking in the dark.",
-     "answer": true,
+     "statement": "He avoids to walk in the dark.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Kaçınmayı anlatan fiilden sonra ikinci fiil"
+       "text": "Yanlış. Kaçınmayı anlatan fiilden sonra ikinci fiil -ing hâlinde kalır:"
       },
       {
        "lang": "en",
-       "text": "-ing"
-      },
-      {
-       "lang": "tr",
-       "text": "hâlinde kalıyor."
+       "text": "He avoids walking in the dark."
       }
      ]
     }
@@ -45864,17 +45900,21 @@
      },
      {
       "lang": "en",
-      "text": "She said the friendship was over."
+      "text": "She told me don't tell anyone."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "She said the friendship was over.",
-     "answer": true,
+     "statement": "She told me don't tell anyone.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. O anda 'is over' denmişti; aktarırken zaman bir basamak geriye gitti."
+       "text": "Yanlış. Olumsuz yönerge aktarılırken don't değil not to kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "She told me not to tell anyone."
       }
      ]
     }
@@ -46345,25 +46385,21 @@
      },
      {
       "lang": "en",
-      "text": "Her work is appreciated by everyone."
+      "text": "Her work is appreciated from everyone."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Her work is appreciated by everyone.",
-     "answer": true,
+     "statement": "Her work is appreciated from everyone.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İşi yapan gerçekten önemli olduğu için sona"
+       "text": "Yanlış. Edilgende işi yapan from ile değil by ile eklenir:"
       },
       {
        "lang": "en",
-       "text": "by"
-      },
-      {
-       "lang": "tr",
-       "text": "ile eklenmiş."
+       "text": "Her work is appreciated by everyone."
       }
      ]
     }
@@ -46858,17 +46894,21 @@
      },
      {
       "lang": "en",
-      "text": "Even though it makes sense, I hesitate."
+      "text": "Even though it makes sense, but I hesitate."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Even though it makes sense, I hesitate.",
-     "answer": true,
+     "statement": "Even though it makes sense, but I hesitate.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu bağlaç tam bir cümle alıyor ve ardından virgülle asıl cümle geliyor."
+       "text": "Yanlış. Çekince zaten even though ile kuruldu; asıl cümleye ikinci bir bağlaç (but) gelmez:"
+      },
+      {
+       "lang": "en",
+       "text": "Even though it makes sense, I hesitate."
       }
      ]
     }

@@ -295,26 +295,6 @@
   "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe unter einem anderen Namen."
  },
  {
-  "tr": "Doğru. Yer öbeği başa alınmış; özne sona düşünce daha ağır duyuluyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Ortsangabe steht vorn; fällt das Subjekt ans Ende, klingt es schwerer."
- },
- {
-  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir gözlem olarak kalıyor.",
-  "kind": "why.tr",
-  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung."
- },
- {
-  "tr": "Doğru. Fiil çekilmemiş; istek kişiden ayrılmış ve bir koşul hâline gelmiş.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Verb ist nicht gebeugt; die Forderung ist von der Person getrennt und zur Bedingung geworden."
- },
- {
-  "tr": "Doğru. Biri istatistiğin, öteki hukukun eşdizimi; fiiller de o yüzden ayrı.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine ist die Wortverbindung der Statistik, das andere die des Rechts; darum sind auch die Verben verschieden."
- },
- {
   "tr": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sonuç aynı yerde duruyor.",
   "kind": "why.tr",
   "de": "Richtig. Zwei Abschnitte sind in einem Satz gebunden; Bedingung und Folge stehen an derselben Stelle."
@@ -328,11 +308,6 @@
   "tr": "Doğru. Övgü bir hüküm taşır ama bağlayıcı değildir; ayrım tam bu iki iş arasında.",
   "kind": "why.tr",
   "de": "Richtig. Das Lob trägt ein Urteil, bindet aber nicht; der Unterschied liegt genau zwischen diesen beiden Arbeiten."
- },
- {
-  "tr": "Doğru. Biri bir üslup katmanını adlandırıyor, öteki hangi kültürün ölçü olacağını söylüyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine benennt eine Stilschicht, das andere sagt, welche Kultur der Maßstab sein soll."
  },
  {
   "tr": "eylemi başa taşır",
@@ -1940,11 +1915,6 @@
   "de": "Dieser Bedeutungswandel kommt, wie bereits angemerkt, aus dem alltäglichen Sprachgebrauch."
  },
  {
-  "tr": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın.",
-  "kind": "say.tr",
-  "de": "Diese Lektion ist die letzte des Moduls; du benutzt Namen, Zugeständnis und Auslassung zusammen."
- },
- {
   "tr": "Şimdi bugünün kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:",
   "kind": "say.tr",
   "de": "Jetzt die Regel von heute. Der Spott entsteht, wenn zwei Namen desselben Verhaltens nebeneinanderstehen:"
@@ -2112,11 +2082,11 @@
  {
   "tr": "dediğinde düşen fiili yalnız içeriden biri tamamlar. Bu yüzden eksiltme hem bir kısaltma hem de bir kapıdır.",
   "kind": "say.tr",
-  "de": "ergänzt nur jemand von innen das weggelassene Verb. Darum ist die Auslassung zugleich eine Kürzung und eine Tür."
+  "de": "– sagst du das, ergänzt nur jemand von innen das weggelassene Verb. Darum ist die Auslassung zugleich eine Kürzung und eine Tür."
  },
  {
   "tr": "dediğinde karşındaki savunmayı bırakır ve asıl cümleyi duyar. Ödünsüz karşı çıkış ise haklı olsa bile duyulmaz.",
   "kind": "say.tr",
-  "de": "lässt dein Gegenüber die Abwehr fallen und hört den Hauptsatz. Ein Widerspruch ohne Zugeständnis wird nicht gehört, auch wenn er recht hat."
+  "de": "– sagst du das, lässt dein Gegenüber die Abwehr fallen und hört den Hauptsatz. Ein Widerspruch ohne Zugeständnis wird nicht gehört, auch wenn er recht hat."
  }
 ]

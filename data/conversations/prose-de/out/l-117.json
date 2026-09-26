@@ -310,16 +310,6 @@
   "de": "Richtig. Das eine ist die Wortverbindung der Ankündigung, das andere die der Zählung; darum sind auch die Verben verschieden."
  },
  {
-  "tr": "Doğru. Biri bir güç işlemini adlandırıyor, öteki yalnız içi boş bir sözü.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine benennt einen Machtakt, das andere nur einen leeren Satz."
- },
- {
-  "tr": "Doğru. İki bölüm tek cümlede bağlanmış; ölçüt ile sorumlu aynı yerde duruyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Zwei Abschnitte sind in einem Satz gebunden; Maßstab und Verantwortliche stehen an derselben Stelle."
- },
- {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir gözlem kalıyor.",
   "kind": "why.tr",
   "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung, keine Diagnose."
@@ -2012,7 +2002,7 @@
  {
   "tr": "dediğinde karşındaki seni kendi kampından biri sayar ve asıl cümleyi duyar. Ödünsüz itiraz ise daha ilk cümlede reddedilir.",
   "kind": "say.tr",
-  "de": "hält dich dein Gegenüber für jemanden aus dem eigenen Lager und hört den Hauptsatz. Ein Einwand ohne Zugeständnis wird schon im ersten Satz abgelehnt."
+  "de": "– sagst du das, hält dich dein Gegenüber für jemanden aus dem eigenen Lager und hört den Hauptsatz. Ein Einwand ohne Zugeständnis wird schon im ersten Satz abgelehnt."
  },
  {
   "tr": "Yapıyı başa almak kişiyi gizler, kişiyi başa almak yapıyı; ikisi de doğru cümle kurar ve ikisi ayrı şey söyler. Hazır mısın?",
@@ -2033,10 +2023,5 @@
   "tr": "Eksikliği anlatan söz ile insanı anlatan söz aynı değil; ikisini karıştıran cümle çalışanı bir stok kalemine çevirir. Hazır mısın?",
   "kind": "say.tr",
   "de": "Das Wort für den Mangel und das Wort für den Menschen sind nicht dasselbe; ein Satz, der beide verwechselt, macht aus der Beschäftigten einen Lagerposten. Bist du bereit?"
- },
- {
-  "tr": "dediğinde kimse bir söz vermemiş olur ama dinleyen sözü duyar. Bu yüzden bu modülün son dersinde eksiltme bir üslup değil, okumayı öğrenme işidir.",
-  "kind": "say.tr",
-  "de": "hat niemand etwas versprochen, aber die Zuhörerin hört das Versprechen. Darum ist die Auslassung in der letzten Lektion dieses Moduls kein Stil, sondern das Erlernen des Lesens."
  }
 ]

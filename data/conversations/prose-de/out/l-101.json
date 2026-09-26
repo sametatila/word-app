@@ -380,16 +380,6 @@
   "de": "schließt einen passiven Schluss aus"
  },
  {
-  "tr": "Doğru. Kimin yapmadığı söylenmiyor; edilgen kip yalnız işin olmadığını söylüyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Wer es nicht gemacht hat, wird nicht genannt; das passive Modalverb sagt nur, dass die Arbeit nicht geschehen ist."
- },
- {
-  "tr": "Doğru. Tek bir parça seçilmiş ve geri kalanının tuttuğu da aynı cümleyle söylenmiş.",
-  "kind": "why.tr",
-  "de": "Richtig. Ein einzelnes Stück ist ausgewählt, und derselbe Satz sagt zugleich, dass der Rest stimmt."
- },
- {
   "tr": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi gözlemi gibi sunmuyor.",
   "kind": "why.tr",
   "de": "Richtig. Die Information stützt sich auf eine Quelle, und die sprechende Person gibt sie nicht als eigene Beobachtung aus."

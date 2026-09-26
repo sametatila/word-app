@@ -395,11 +395,6 @@
   "de": "Richtig. Die sprechende Person deutet an, dass sie ein Anzeichen hat; bei bloßer Vermutung hätte sie"
  },
  {
-  "tr": "Doğru. Karar konuşmadan önce alınmış, o yüzden bir kat geride duruyor; konuşma ise olağan geçmişte.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Entscheidung fiel vor dem Sprechen, deshalb steht sie eine Stufe zurück; das Sprechen bleibt im einfachen Präteritum."
- },
- {
   "tr": "Şeyi bağlarken",
   "kind": "hint.tr",
   "de": "Beim Verbinden einer Sache –"

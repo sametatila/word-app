@@ -280,19 +280,9 @@
   "de": "Richtig. In der Versammlung hieß es „is free“; beim Wiedergeben rückte die Zeit eine Stufe zurück."
  },
  {
-  "tr": "Doğru. Bu bağlaç cümle değil isim alıyor; ardından gelen 'the distance' bir isim öbeği.",
-  "kind": "why.tr",
-  "de": "Richtig. Dieser Konnektor nimmt keinen Satz, sondern ein Nomen; das folgende „the distance“ ist eine Nominalgruppe."
- },
- {
   "tr": "Doğru. Kapanma taşınmadan önce olmuş, o yüzden bir kat geride; taşınma ise olağan geçmişte.",
   "kind": "why.tr",
   "de": "Richtig. Die Schließung geschah vor dem Umzug, deshalb steht sie eine Stufe zurück; der Umzug bleibt im einfachen Präteritum."
- },
- {
-  "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: kart gösterebilirsin de göstermeyebilirsin de.",
-  "kind": "why.tr",
-  "de": "Richtig. Diese Wendung nennt kein Verbot, sondern Freiheit: du kannst die Karte zeigen oder auch nicht."
  },
  {
   "tr": "Aynı şeyin iki yüzü için",
@@ -593,11 +583,6 @@
   "tr": "ise iki ayrı durumu karşı karşıya koyar.",
   "kind": "say.tr",
   "de": "stellt zwei verschiedene Lagen einander gegenüber."
- },
- {
-  "tr": "Herkesin aynı anda yola çıktığı yoğunluğa",
-  "kind": "say.tr",
-  "de": "Das Gedränge, wenn alle gleichzeitig losfahren, heißt"
  },
  {
   "tr": "Şimdi sen kur: Kara rağmen işe yürüyorum.",

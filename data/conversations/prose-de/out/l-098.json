@@ -395,16 +395,6 @@
   "de": "Richtig. Weil das Subjekt nach vorn rückt, wird das Verb zum Infinitiv, und die Behauptung wird niemandem zugeschrieben."
  },
  {
-  "tr": "Doğru. Kimin geciktiği yazılmıyor ve resmî şikâyette bu olağan; kayda geçen olayın kendisi.",
-  "kind": "why.tr",
-  "de": "Richtig. Wer zu spät war, wird nicht geschrieben, und in einer formellen Beschwerde ist das normal; zu Protokoll geht das Geschehen selbst."
- },
- {
-  "tr": "Doğru. Tek bir parça seçilmiş ve geri kalanına itiraz edilmediği de aynı cümleyle söylenmiş.",
-  "kind": "why.tr",
-  "de": "Richtig. Ein einzelnes Stück ist ausgewählt, und derselbe Satz sagt zugleich, dass dem Rest nicht widersprochen wird."
- },
- {
   "tr": "Tek parçayı seçmek için",
   "kind": "hint.tr",
   "de": "Um das einzelne Stück auszuwählen –"

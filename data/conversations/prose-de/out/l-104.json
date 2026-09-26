@@ -360,11 +360,6 @@
   "de": "gibt einen vergangenen Mangel in einer Wiedergabeform"
  },
  {
-  "tr": "Doğru. Aktarım geçmişe uzandığı için",
-  "kind": "why.tr",
-  "de": "Richtig. Weil die Wiedergabe in die Vergangenheit reicht, nimmt sie die"
- },
- {
   "tr": "Doğru. Her iki yarının öznesi de tepkime; özne değişseydi bu öbek kurulamazdı.",
   "kind": "why.tr",
   "de": "Richtig. Beide Hälften haben die Reaktion als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
@@ -893,11 +888,6 @@
   "tr": "Merhaba! Bugün bir çalışmanın kurgusunu anlatmayı öğreneceğiz: ne tekrarlandı, ölçümler tutarlı mı, grup yeterli miydi.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir, den Aufbau einer Studie zu erklären: was wiederholt wurde, ob die Messungen stimmig sind, ob die Gruppe ausreichte."
- },
- {
-  "tr": "Teknik yazıda ek bilgi çoğu zaman edilgen: «ki mayısta güncellenmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?",
-  "kind": "say.tr",
-  "de": "Im technischen Text ist die Ergänzung meist passiv: «das im Mai aktualisiert wurde». Du fügst sie an, ohne den Handelnden zu nennen. Bist du bereit?"
  },
  {
   "tr": "Laboratuvar yönergesi kısa olmak zorunda ve adım sırası anlamın yarısı; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?",

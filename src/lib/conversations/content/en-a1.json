@@ -304,7 +304,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm from Turkey."
+      "text": "I'm from Türkiye."
      },
      {
       "lang": "tr",
@@ -312,12 +312,12 @@
      },
      {
       "lang": "en",
-      "text": "I'm from Turkey."
+      "text": "I'm from Türkiye."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I'm from Turkey."
+     "target": "I'm from Türkiye."
     }
    },
    {
@@ -589,8 +589,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hello, my name is Deniz. I'm from Turkey.",
+     "target": "Hello, my name is Deniz. I'm from Türkiye.",
      "accept": [
+      "Hello, my name is Deniz. I'm from Turkey.",
       "Hello, I'm Deniz. I'm from Turkey.",
       "Hi, my name is Deniz. I'm from Turkey.",
       "Hello, my name is Deniz. I am from Turkey.",
@@ -622,7 +623,7 @@
       },
       {
        "lang": "en",
-       "text": "I'm from Turkey"
+       "text": "I'm from Türkiye"
       },
       {
        "lang": "tr",
@@ -630,7 +631,7 @@
       },
       {
        "lang": "en",
-       "text": "Hello, my name is Deniz. I'm from Turkey."
+       "text": "Hello, my name is Deniz. I'm from Türkiye."
       },
       {
        "lang": "tr",
@@ -1164,10 +1165,8 @@
      "kind": "produce",
      "target": "And you?",
      "accept": [
-      "And you",
       "How about you?",
       "What about you?",
-      "And you? ",
       "And how are you?"
      ],
      "hint": [
@@ -1312,7 +1311,6 @@
      "kind": "produce",
      "target": "How are you?",
      "accept": [
-      "How are you",
       "How are you doing?",
       "How's it going?"
      ],
@@ -1619,9 +1617,7 @@
      "kind": "produce",
      "target": "You are a teacher.",
      "accept": [
-      "You're a teacher.",
-      "You are a teacher",
-      "You're a teacher"
+      "You're a teacher."
      ],
      "hint": [
       {
@@ -1781,9 +1777,7 @@
      "kind": "produce",
      "target": "I am not a teacher.",
      "accept": [
-      "I'm not a teacher.",
-      "I am not a teacher",
-      "I'm not a teacher"
+      "I'm not a teacher."
      ],
      "hint": [
       {
@@ -1951,9 +1945,6 @@
     "expect": {
      "kind": "produce",
      "target": "Is she a teacher?",
-     "accept": [
-      "Is she a teacher"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -2066,7 +2057,7 @@
     "tr": "birinin nereli olduğunu sorar"
    },
    {
-    "de": "I'm from Turkey.",
+    "de": "I'm from Türkiye.",
     "tr": "kendi ülkeni söylerken kullanılır"
    },
    {
@@ -2366,7 +2357,7 @@
      },
      {
       "lang": "en",
-      "text": "I am from Turkey."
+      "text": "I am from Türkiye."
      },
      {
       "lang": "tr",
@@ -2382,7 +2373,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm from Turkey."
+      "text": "I'm from Türkiye."
      },
      {
       "lang": "tr",
@@ -2399,8 +2390,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'm from Turkey",
+     "target": "I'm from Türkiye",
      "accept": [
+      "I am from Türkiye",
+      "I'm from Turkey",
       "I am from Turkey"
      ],
      "hint": [
@@ -2418,7 +2411,7 @@
       },
       {
        "lang": "en",
-       "text": "I'm from Turkey."
+       "text": "I'm from Türkiye."
       },
       {
        "lang": "tr",
@@ -3015,9 +3008,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you speak Turkish?",
-     "accept": [
-      "Do you speak Turkish"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -3105,7 +3095,6 @@
      "kind": "produce",
      "target": "I speak a little English.",
      "accept": [
-      "I speak a little English",
       "I speak a little bit of English."
      ],
      "hint": [
@@ -3274,9 +3263,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you understand?",
-     "accept": [
-      "Do you understand"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -4409,7 +4395,6 @@
      "kind": "produce",
      "target": "How do you spell your name?",
      "accept": [
-      "How do you spell your name",
       "How do you spell your name, please",
       "Can you spell your name, please"
      ],
@@ -4919,9 +4904,7 @@
      "kind": "produce",
      "target": "I'm a student.",
      "accept": [
-      "I am a student.",
-      "I'm a student",
-      "I am a student"
+      "I am a student."
      ],
      "hint": [
       {
@@ -5205,9 +5188,7 @@
      "kind": "produce",
      "target": "I work in a hospital.",
      "accept": [
-      "I work in a hospital",
-      "I work at a hospital.",
-      "I work at a hospital"
+      "I work at a hospital."
      ],
      "hint": [
       {
@@ -5240,7 +5221,6 @@
      "kind": "produce",
      "target": "What do you do?",
      "accept": [
-      "What do you do",
       "What's your job?",
       "What is your job?"
      ],
@@ -6212,9 +6192,7 @@
      "kind": "produce",
      "target": "What's your address?",
      "accept": [
-      "What is your address?",
-      "What's your address",
-      "What is your address"
+      "What is your address?"
      ],
      "hint": [
       {
@@ -6291,9 +6269,7 @@
      "kind": "produce",
      "target": "What's your phone number?",
      "accept": [
-      "What is your phone number?",
-      "What's your phone number",
-      "What is your phone number"
+      "What is your phone number?"
      ],
      "hint": [
       {
@@ -6485,10 +6461,6 @@
     "expect": {
      "kind": "produce",
      "target": "I live in Ankara.",
-     "accept": [
-      "I live in Ankara",
-      "I live in Ankara."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -7796,7 +7768,6 @@
      "kind": "produce",
      "target": "Do you have a sister?",
      "accept": [
-      "Do you have a sister",
       "Have you got a sister?"
      ],
      "hint": [
@@ -8143,8 +8114,7 @@
      "kind": "produce",
      "target": "I don't drink coffee.",
      "accept": [
-      "I do not drink coffee.",
-      "I don't drink coffee"
+      "I do not drink coffee."
      ],
      "hint": [
       {
@@ -8308,8 +8278,7 @@
      "kind": "produce",
      "target": "She doesn't know me.",
      "accept": [
-      "She does not know me.",
-      "She doesn't know me"
+      "She does not know me."
      ],
      "hint": [
       {
@@ -8512,7 +8481,6 @@
      "accept": [
       "Don't forget your keys.",
       "Do not forget your key.",
-      "Don't forget your key",
       "do not forget your keys."
      ],
      "hint": [
@@ -9023,7 +8991,6 @@
      "kind": "produce",
      "target": "A dog is an animal",
      "accept": [
-      "A dog is an animal.",
       "The dog is an animal"
      ],
      "hint": [
@@ -9076,9 +9043,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you have a cat",
-     "accept": [
-      "Do you have a cat?"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -9749,9 +9713,6 @@
     "expect": {
      "kind": "produce",
      "target": "These are my books.",
-     "accept": [
-      "These are my books"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -10047,7 +10008,6 @@
      "kind": "produce",
      "target": "I have two friends.",
      "accept": [
-      "I have two friends",
       "I have 2 friends",
       "I've got two friends"
      ],
@@ -10321,7 +10281,6 @@
      "kind": "produce",
      "target": "There are many people here.",
      "accept": [
-      "There are many people here",
       "There are a lot of people here",
       "Many people are here",
       "There are many people"
@@ -10381,7 +10340,6 @@
      "kind": "produce",
      "target": "These are my books.",
      "accept": [
-      "These are my books",
       "They are my books",
       "They're my books",
       "These books are mine"
@@ -10669,8 +10627,7 @@
      "kind": "produce",
      "target": "She is short.",
      "accept": [
-      "She's short.",
-      "She is short"
+      "She's short."
      ],
      "hint": [
       {
@@ -10899,8 +10856,7 @@
      "kind": "produce",
      "target": "He has blue eyes.",
      "accept": [
-      "He's got blue eyes.",
-      "He has blue eyes"
+      "He's got blue eyes."
      ],
      "hint": [
       {
@@ -10971,9 +10927,6 @@
     "expect": {
      "kind": "produce",
      "target": "What does she look like?",
-     "accept": [
-      "What does she look like"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -11320,9 +11273,6 @@
     "expect": {
      "kind": "produce",
      "target": "My friend plays soccer.",
-     "accept": [
-      "My friend plays soccer"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -11474,7 +11424,6 @@
      "kind": "produce",
      "target": "We play together.",
      "accept": [
-      "We play together",
       "We play together every day."
      ],
      "hint": [
@@ -11551,9 +11500,7 @@
      "kind": "produce",
      "target": "She plays with us.",
      "accept": [
-      "He plays with us.",
-      "She plays with us",
-      "He plays with us"
+      "He plays with us."
      ],
      "hint": [
       {
@@ -11924,7 +11871,6 @@
      "target": "This is my uncle.",
      "accept": [
       "He is my uncle.",
-      "This is my uncle",
       "he's my uncle."
      ],
      "hint": [
@@ -12085,8 +12031,7 @@
      "kind": "produce",
      "target": "This is Elif's grandmother.",
      "accept": [
-      "This is Elif's grandma.",
-      "This is Elif's grandmother"
+      "This is Elif's grandma."
      ],
      "hint": [
       {
@@ -12343,9 +12288,7 @@
      "kind": "produce",
      "target": "He is very funny.",
      "accept": [
-      "He's very funny.",
-      "He is very funny",
-      "He's very funny"
+      "He's very funny."
      ],
      "hint": [
       {
@@ -12415,7 +12358,6 @@
      "target": "My sister is very quiet.",
      "accept": [
       "My sister's very quiet.",
-      "My sister is very quiet",
       "My sister is quiet."
      ],
      "hint": [
@@ -12465,9 +12407,7 @@
      "kind": "produce",
      "target": "I am busy today.",
      "accept": [
-      "I'm busy today.",
-      "I am busy today",
-      "I'm busy today"
+      "I'm busy today."
      ],
      "hint": [
       {
@@ -13051,7 +12991,6 @@
      "kind": "produce",
      "target": "I'd like a tea, please.",
      "accept": [
-      "I'd like a tea please",
       "I would like a tea, please.",
       "I'd like tea, please.",
       "I would like tea, please."
@@ -13345,7 +13284,6 @@
      "accept": [
       "I will have a coffee, please.",
       "I'd like a coffee, please.",
-      "I'll have a coffee please",
       "I would like a coffee, please."
      ],
      "hint": [
@@ -13747,9 +13685,7 @@
      "kind": "produce",
      "target": "I eat some cheese.",
      "accept": [
-      "I eat some cheese",
-      "I eat cheese.",
-      "I eat cheese"
+      "I eat cheese."
      ],
      "hint": [
       {
@@ -13898,9 +13834,7 @@
      "kind": "produce",
      "target": "Is there any bread?",
      "accept": [
-      "Is there any bread",
-      "Is there bread?",
-      "Is there bread"
+      "Is there bread?"
      ],
      "hint": [
       {
@@ -13984,7 +13918,6 @@
      "kind": "produce",
      "target": "Do you eat cheese?",
      "accept": [
-      "Do you eat cheese",
       "Do you eat any cheese?"
      ],
      "hint": [
@@ -14274,7 +14207,6 @@
      "kind": "produce",
      "target": "Can I have a tea, please?",
      "accept": [
-      "Can I have a tea please",
       "Could I have a tea, please?",
       "Can I have tea, please?"
      ],
@@ -14622,7 +14554,6 @@
      "kind": "produce",
      "target": "Can I have a bag, please?",
      "accept": [
-      "Can I have a bag please",
       "Could I have a bag, please?",
       "Can I get a bag, please?"
      ],
@@ -15584,7 +15515,6 @@
      "kind": "produce",
      "target": "I hate eating fish.",
      "accept": [
-      "I hate eating fish",
       "I hate to eat fish.",
       "I don't like eating fish.",
       "I do not like eating fish."
@@ -15711,7 +15641,6 @@
      "kind": "produce",
      "target": "I prefer water to milk.",
      "accept": [
-      "I prefer water to milk",
       "I prefer drinking water to milk."
      ],
      "hint": [
@@ -15893,7 +15822,6 @@
      "kind": "produce",
      "target": "Do you like cooking?",
      "accept": [
-      "Do you like cooking",
       "Do you like to cook?"
      ],
      "hint": [
@@ -16287,7 +16215,6 @@
      "accept": [
       "I want two kilos of apples.",
       "I'd like two kilos of apples.",
-      "Two kilos of apples please",
       "I would like two kilos of apples."
      ],
      "hint": [
@@ -16810,7 +16737,6 @@
      "kind": "produce",
      "target": "First, cut the tomatoes.",
      "accept": [
-      "First cut the tomatoes.",
       "Cut the tomatoes first."
      ],
      "hint": [
@@ -16900,9 +16826,7 @@
      "kind": "produce",
      "target": "After that, cook the rice.",
      "accept": [
-      "After that cook the rice.",
-      "Then, cook the rice.",
-      "Then cook the rice."
+      "Then, cook the rice."
      ],
      "hint": [
       {
@@ -18430,8 +18354,7 @@
      "kind": "produce",
      "target": "Are the potatoes fresh?",
      "accept": [
-      "Are these potatoes fresh?",
-      "Are the potatoes fresh"
+      "Are these potatoes fresh?"
      ],
      "hint": [
       {
@@ -18505,8 +18428,7 @@
      "target": "How much are the apples?",
      "accept": [
       "How much are apples?",
-      "How much is a kilo of apples?",
-      "How much are the apples"
+      "How much is a kilo of apples?"
      ],
      "hint": [
       {
@@ -20046,8 +19968,7 @@
      "kind": "produce",
      "target": "It's three o'clock.",
      "accept": [
-      "It is three o'clock.",
-      "It's three o'clock"
+      "It is three o'clock."
      ],
      "hint": [
       {
@@ -20853,8 +20774,7 @@
      "kind": "produce",
      "target": "I work on Monday.",
      "accept": [
-      "I work on Mondays.",
-      "I work on Monday"
+      "I work on Mondays."
      ],
      "hint": [
       {
@@ -20931,8 +20851,6 @@
      "kind": "produce",
      "target": "I am at home on the weekend.",
      "accept": [
-      "I'm at home on the weekend.",
-      "I am at home on the weekend.",
       "I'm at home on the weekend."
      ],
      "hint": [
@@ -21150,8 +21068,7 @@
      "target": "Today is Friday.",
      "accept": [
       "It is Friday today.",
-      "It's Friday today.",
-      "Today is Friday"
+      "It's Friday today."
      ],
      "hint": [
       {
@@ -22240,9 +22157,6 @@
     "expect": {
      "kind": "produce",
      "target": "I usually drink coffee.",
-     "accept": [
-      "I usually drink coffee"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -22366,11 +22280,8 @@
      "target": "She is never late.",
      "accept": [
       "He is never late.",
-      "She is never late",
-      "He is never late",
       "she's never late.",
-      "he's never late.",
-      "he's never late"
+      "he's never late."
      ],
      "hint": [
       {
@@ -22423,9 +22334,7 @@
      "kind": "produce",
      "target": "Sometimes I walk to work.",
      "accept": [
-      "I sometimes walk to work.",
-      "Sometimes I walk to work",
-      "I sometimes walk to work"
+      "I sometimes walk to work."
      ],
      "hint": [
       {
@@ -22770,8 +22679,6 @@
      "kind": "produce",
      "target": "First, I take a shower. Then, I have breakfast.",
      "accept": [
-      "First I take a shower. Then I have breakfast.",
-      "First, I take a shower, then I have breakfast.",
       "First I take a shower and then I have breakfast."
      ],
      "hint": [
@@ -22973,8 +22880,7 @@
      "kind": "produce",
      "target": "I brush my teeth before breakfast.",
      "accept": [
-      "Before breakfast, I brush my teeth.",
-      "Before breakfast I brush my teeth."
+      "Before breakfast, I brush my teeth."
      ],
      "hint": [
       {
@@ -23046,7 +22952,6 @@
      "kind": "produce",
      "target": "First, I drink tea. After that, I go out.",
      "accept": [
-      "First I drink tea. After that I go out.",
       "First, I drink tea. Then, I go out.",
       "First I drink tea and after that I go out."
      ],
@@ -24611,9 +24516,7 @@
      "accept": [
       "I am going to travel tomorrow.",
       "Tomorrow I'm going to travel.",
-      "Tomorrow I am going to travel.",
-      "I'm going to travel tomorrow",
-      "I am going to travel tomorrow"
+      "Tomorrow I am going to travel."
      ],
      "hint": [
       {
@@ -24690,9 +24593,7 @@
      "kind": "produce",
      "target": "Are you going to stay at home this weekend?",
      "accept": [
-      "Are you going to stay home this weekend?",
-      "Are you going to stay at home this weekend",
-      "Are you going to stay home this weekend"
+      "Are you going to stay home this weekend?"
      ],
      "hint": [
       {
@@ -24856,9 +24757,7 @@
      "kind": "produce",
      "target": "I'm going to visit my family.",
      "accept": [
-      "I am going to visit my family.",
-      "I'm going to visit my family",
-      "I am going to visit my family"
+      "I am going to visit my family."
      ],
      "hint": [
       {
@@ -25151,9 +25050,7 @@
      "kind": "produce",
      "target": "What time do you close?",
      "accept": [
-      "When do you close?",
-      "What time do you close",
-      "When do you close"
+      "When do you close?"
      ],
      "hint": [
       {
@@ -25474,9 +25371,7 @@
      "kind": "produce",
      "target": "I'm late.",
      "accept": [
-      "I am late.",
-      "I'm late",
-      "I am late"
+      "I am late."
      ],
      "hint": [
       {
@@ -25541,9 +25436,7 @@
      "target": "When does the bus leave?",
      "accept": [
       "What time does the bus leave?",
-      "When does the bus go?",
-      "When does the bus leave",
-      "What time does the bus leave"
+      "When does the bus go?"
      ],
      "hint": [
       {
@@ -25773,8 +25666,6 @@
      "target": "I'm looking for a shirt.",
      "accept": [
       "I am looking for a shirt.",
-      "I'm looking for a shirt",
-      "I am looking for a shirt",
       "I'm looking for a shirt, please.",
       "I am looking for a shirt, please."
      ],
@@ -25900,7 +25791,6 @@
       "Can I try this on?",
       "May I try it on?",
       "May I try this on?",
-      "Can I try it on",
       "Could I try it on?"
      ],
      "hint": [
@@ -25972,7 +25862,6 @@
      "accept": [
       "How much is this?",
       "How much does it cost?",
-      "How much is it",
       "How much is this shirt?"
      ],
      "hint": [
@@ -26678,8 +26567,7 @@
      "target": "Can I try it on?",
      "accept": [
       "Can I try this on?",
-      "Can I try it on please?",
-      "Can I try it on, please?"
+      "Can I try it on please?"
      ],
      "hint": [
       {
@@ -27188,8 +27076,7 @@
      "kind": "produce",
      "target": "It's blue.",
      "accept": [
-      "It is blue.",
-      "It's blue"
+      "It is blue."
      ],
      "hint": [
       {
@@ -27234,8 +27121,7 @@
      "kind": "produce",
      "target": "I have a black car.",
      "accept": [
-      "I've got a black car.",
-      "I have a black car"
+      "I've got a black car."
      ],
      "hint": [
       {
@@ -27413,8 +27299,7 @@
      "target": "It's a white house.",
      "accept": [
       "It is a white house.",
-      "This is a white house.",
-      "It's a white house"
+      "This is a white house."
      ],
      "hint": [
       {
@@ -29692,8 +29577,7 @@
      "target": "Can you help me?",
      "accept": [
       "Can you help me, please?",
-      "Could you help me?",
-      "Can you help me please?"
+      "Could you help me?"
      ],
      "hint": [
       {
@@ -30055,9 +29939,7 @@
      "target": "It's a gift for my friend.",
      "accept": [
       "It is a gift for my friend.",
-      "This is a gift for my friend.",
-      "It's a gift for my friend",
-      "It is a gift for my friend"
+      "This is a gift for my friend."
      ],
      "hint": [
       {
@@ -30186,7 +30068,6 @@
      "kind": "produce",
      "target": "I want to buy a gift for my sister.",
      "accept": [
-      "I want to buy a gift for my sister",
       "I would like to buy a gift for my sister."
      ],
      "hint": [
@@ -30288,8 +30169,7 @@
      "target": "It's a special gift for you.",
      "accept": [
       "It is a special gift for you.",
-      "This is a special gift for you.",
-      "It's a special gift for you"
+      "This is a special gift for you."
      ],
      "hint": [
       {
@@ -32016,7 +31896,6 @@
      "kind": "produce",
      "target": "My address is 3 Ada Street.",
      "accept": [
-      "My address is 3 Ada Street",
       "My address is number 3, Ada Street."
      ],
      "hint": [
@@ -32082,7 +31961,6 @@
      "kind": "produce",
      "target": "When does it arrive",
      "accept": [
-      "When does it arrive?",
       "When will it arrive"
      ],
      "hint": [
@@ -32503,7 +32381,6 @@
      "kind": "produce",
      "target": "Turn left",
      "accept": [
-      "Turn left.",
       "Go left"
      ],
      "hint": [
@@ -32557,7 +32434,6 @@
      "kind": "produce",
      "target": "Turn right at the corner",
      "accept": [
-      "Turn right at the corner.",
       "At the corner, turn right"
      ],
      "hint": [
@@ -32802,7 +32678,6 @@
      "kind": "produce",
      "target": "Go straight, then turn left",
      "accept": [
-      "Go straight, then turn left.",
       "Go straight and turn left",
       "Go straight and then turn left"
      ],
@@ -33105,7 +32980,6 @@
      "kind": "produce",
      "target": "I go to school by bus.",
      "accept": [
-      "I go to school by bus",
       "I go to school by bus every day."
      ],
      "hint": [
@@ -33214,9 +33088,7 @@
      "kind": "produce",
      "target": "I'm on the train.",
      "accept": [
-      "I am on the train.",
-      "I'm on the train",
-      "I am on the train"
+      "I am on the train."
      ],
      "hint": [
       {
@@ -33392,7 +33264,6 @@
      "kind": "produce",
      "target": "I get off at the next stop.",
      "accept": [
-      "I get off at the next stop",
       "I'm getting off at the next stop.",
       "I get off at the next bus stop.",
       "I am getting off at the next stop."
@@ -33747,7 +33618,6 @@
      "kind": "produce",
      "target": "How much is it?",
      "accept": [
-      "How much is it",
       "How much?",
       "How much is the ticket?"
      ],
@@ -34293,9 +34163,7 @@
      "kind": "produce",
      "target": "I'm waiting for the bus.",
      "accept": [
-      "I am waiting for the bus.",
-      "I'm waiting for the bus",
-      "I am waiting for the bus"
+      "I am waiting for the bus."
      ],
      "hint": [
       {
@@ -34404,9 +34272,7 @@
      "kind": "produce",
      "target": "The train is running late.",
      "accept": [
-      "The train is late.",
-      "The train is running late",
-      "The train is late"
+      "The train is late."
      ],
      "hint": [
       {
@@ -34626,9 +34492,7 @@
      "kind": "produce",
      "target": "The bus is running late.",
      "accept": [
-      "The bus is late.",
-      "The bus is running late",
-      "The bus is late"
+      "The bus is late."
      ],
      "hint": [
       {
@@ -34865,9 +34729,7 @@
      "kind": "produce",
      "target": "To the airport, please.",
      "accept": [
-      "To the airport please",
-      "The airport, please.",
-      "To the airport, please"
+      "The airport, please."
      ],
      "hint": [
       {
@@ -34967,9 +34829,6 @@
     "expect": {
      "kind": "produce",
      "target": "How long does it take?",
-     "accept": [
-      "How long does it take"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -35033,7 +34892,6 @@
      "kind": "produce",
      "target": "Can I have a receipt, please?",
      "accept": [
-      "Can I have a receipt please",
       "Can I have the receipt, please?",
       "Can I have a receipt?"
      ],
@@ -35203,7 +35061,6 @@
      "kind": "produce",
      "target": "Is it far?",
      "accept": [
-      "Is it far",
       "Is it far from here?"
      ],
      "hint": [
@@ -35650,9 +35507,6 @@
     "expect": {
      "kind": "produce",
      "target": "The hotel is next to the bank.",
-     "accept": [
-      "The hotel is next to the bank"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -35906,9 +35760,6 @@
     "expect": {
      "kind": "produce",
      "target": "The pharmacy is opposite the bank.",
-     "accept": [
-      "The pharmacy is opposite the bank"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -36838,9 +36689,7 @@
      "kind": "produce",
      "target": "Excuse me, could you help me?",
      "accept": [
-      "Excuse me could you help me",
       "Excuse me, can you help me?",
-      "Excuse me, can you help me",
       "Excuse me, could you help me please?"
      ],
      "hint": [
@@ -36950,12 +36799,9 @@
      "kind": "produce",
      "target": "I can't find my hotel.",
      "accept": [
-      "I can't find my hotel",
       "I cannot find my hotel",
       "I can't find the hotel.",
-      "I can't find the hotel",
-      "I cannot find the hotel.",
-      "I cannot find the hotel"
+      "I cannot find the hotel."
      ],
      "hint": [
       {
@@ -37147,9 +36993,7 @@
      "kind": "produce",
      "target": "Excuse me, I'm lost.",
      "accept": [
-      "Excuse me I'm lost",
       "Excuse me, I am lost.",
-      "Excuse me, I am lost",
       "Excuse me, I'm lost. Could you help me?",
       "Excuse me, I am lost. Could you help me?"
      ],
@@ -37379,9 +37223,6 @@
     "expect": {
      "kind": "produce",
      "target": "I go to school by bus.",
-     "accept": [
-      "I go to school by bus"
-     ],
      "hint": [
       {
        "lang": "en",
@@ -39034,9 +38875,7 @@
      "kind": "produce",
      "target": "There is a window.",
      "accept": [
-      "There is a window",
-      "There's a window.",
-      "There's a window"
+      "There's a window."
      ],
      "hint": [
       {
@@ -39175,9 +39014,6 @@
     "expect": {
      "kind": "produce",
      "target": "Is there a room?",
-     "accept": [
-      "Is there a room"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -39209,9 +39045,7 @@
      "kind": "produce",
      "target": "There are two windows in my room.",
      "accept": [
-      "There are two windows in my room",
-      "There are two windows.",
-      "There are two windows"
+      "There are two windows."
      ],
      "hint": [
       {
@@ -39500,7 +39334,6 @@
      "kind": "produce",
      "target": "This is a bedroom.",
      "accept": [
-      "This is a bedroom",
       "This is the bedroom.",
       "This is my bedroom."
      ],
@@ -39579,7 +39412,6 @@
      "kind": "produce",
      "target": "The kitchen is big.",
      "accept": [
-      "The kitchen is big",
       "The kitchen is large."
      ],
      "hint": [
@@ -39812,7 +39644,6 @@
      "kind": "produce",
      "target": "There is a bathroom on the first floor.",
      "accept": [
-      "There is a bathroom on the first floor",
       "There's a bathroom on the first floor."
      ],
      "hint": [
@@ -40225,10 +40056,6 @@
     "expect": {
      "kind": "produce",
      "target": "The book is on the table.",
-     "accept": [
-      "The book is on the table",
-      "the book is on the table."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -40296,8 +40123,7 @@
      "kind": "produce",
      "target": "Where is my bag?",
      "accept": [
-      "Where's my bag?",
-      "Where is my bag"
+      "Where's my bag?"
      ],
      "hint": [
       {
@@ -40451,7 +40277,6 @@
      "target": "It's on the chair.",
      "accept": [
       "It is on the chair.",
-      "It's on the chair",
       "The phone is on the chair."
      ],
      "hint": [
@@ -40772,7 +40597,6 @@
      "kind": "produce",
      "target": "He lives next door.",
      "accept": [
-      "He lives next door",
       "My neighbor lives next door."
      ],
      "hint": [
@@ -40957,10 +40781,6 @@
     "expect": {
      "kind": "produce",
      "target": "My neighbor is quiet.",
-     "accept": [
-      "My neighbor is quiet",
-      "My neighbor is quiet."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -41042,9 +40862,6 @@
     "expect": {
      "kind": "produce",
      "target": "Where do you live?",
-     "accept": [
-      "Where do you live"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -41943,7 +41760,6 @@
      "kind": "produce",
      "target": "How much is the electricity bill?",
      "accept": [
-      "How much is the electricity bill",
       "How much is electricity?",
       "How much is the electric bill?"
      ],
@@ -42037,9 +41853,6 @@
     "expect": {
      "kind": "produce",
      "target": "I pay the water bill every month.",
-     "accept": [
-      "I pay the water bill every month"
-     ],
      "hint": [
       {
        "lang": "en",
@@ -42234,8 +42047,7 @@
      "kind": "produce",
      "target": "Is electricity included?",
      "accept": [
-      "Is the electricity included?",
-      "Is electricity included"
+      "Is the electricity included?"
      ],
      "hint": [
       {
@@ -42825,7 +42637,6 @@
      "kind": "produce",
      "target": "Do you help at home?",
      "accept": [
-      "Do you help at home",
       "Do you help in the house?"
      ],
      "hint": [
@@ -43238,8 +43049,7 @@
      "kind": "produce",
      "target": "Can you help me?",
      "accept": [
-      "Can you help me, please?",
-      "Can you help me please?"
+      "Can you help me, please?"
      ],
      "hint": [
       {
@@ -44265,7 +44075,7 @@
    },
    {
     "de": "work",
-    "tr": "çalışmak"
+    "tr": "çalışmak (alet için)"
    },
    {
     "de": "fix",
@@ -45244,8 +45054,7 @@
      "target": "I like painting",
      "accept": [
       "I enjoy painting",
-      "I like to paint",
-      "I like painting."
+      "I like to paint"
      ],
      "hint": [
       {
@@ -45306,9 +45115,7 @@
      "kind": "produce",
      "target": "Do you like collecting things",
      "accept": [
-      "Do you like collecting things?",
       "Do you like collecting",
-      "Do you like collecting?",
       "Do you enjoy collecting things"
      ],
      "hint": [
@@ -45395,8 +45202,7 @@
      "target": "I like painting in my free time",
      "accept": [
       "I enjoy painting in my free time",
-      "In my free time I like painting",
-      "I like painting in my free time."
+      "In my free time I like painting"
      ],
      "hint": [
       {
@@ -45747,10 +45553,6 @@
     "expect": {
      "kind": "produce",
      "target": "I play basketball.",
-     "accept": [
-      "I play basketball",
-      "i play basketball."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -45821,10 +45623,6 @@
     "expect": {
      "kind": "produce",
      "target": "I go swimming.",
-     "accept": [
-      "I go swimming",
-      "i go swimming."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -46082,10 +45880,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you play soccer?",
-     "accept": [
-      "Do you play soccer",
-      "do you play soccer?"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -46429,7 +46223,6 @@
      "kind": "produce",
      "target": "I like this song.",
      "accept": [
-      "I like this song",
       "I really like this song."
      ],
      "hint": [
@@ -46639,7 +46432,6 @@
      "kind": "produce",
      "target": "What music do you like?",
      "accept": [
-      "What music do you like",
       "What kind of music do you like?"
      ],
      "hint": [
@@ -46681,9 +46473,7 @@
      "kind": "produce",
      "target": "I prefer pop music.",
      "accept": [
-      "I prefer pop",
-      "I prefer pop music",
-      "I prefer pop."
+      "I prefer pop"
      ],
      "hint": [
       {
@@ -47007,7 +46797,6 @@
      "kind": "produce",
      "target": "Would you like to go to the movies tonight?",
      "accept": [
-      "Would you like to go to the movies tonight",
       "Do you want to go to the movies tonight?",
       "Would you like to go to the movies this evening?"
      ],
@@ -47278,7 +47067,6 @@
      "kind": "produce",
      "target": "Sorry, I can't tonight.",
      "accept": [
-      "Sorry, I can't tonight",
       "I'm sorry, I can't tonight.",
       "Sorry, I cannot tonight.",
       "Sorry, I can't tonight. I'm busy.",
@@ -47391,7 +47179,6 @@
      "kind": "produce",
      "target": "Let's go together.",
      "accept": [
-      "Let's go together",
       "Lets go together.",
       "Let us go together."
      ],
@@ -48494,7 +48281,6 @@
      "target": "There is a child in the park.",
      "accept": [
       "There's a child in the park.",
-      "There is a child in the park",
       "There is one child in the park."
      ],
      "hint": [
@@ -48795,8 +48581,7 @@
      "target": "There are children on the grass.",
      "accept": [
       "There are some children on the grass.",
-      "There are kids on the grass.",
-      "There are children on the grass"
+      "There are kids on the grass."
      ],
      "hint": [
       {
@@ -49145,9 +48930,7 @@
      "kind": "produce",
      "target": "I can swim.",
      "accept": [
-      "I can swim",
-      "I can swim well.",
-      "I can swim well"
+      "I can swim well."
      ],
      "hint": [
       {
@@ -49435,7 +49218,6 @@
      "kind": "produce",
      "target": "Can you swim?",
      "accept": [
-      "Can you swim",
       "Can you swim well?"
      ],
      "hint": [
@@ -49469,9 +49251,7 @@
      "kind": "produce",
      "target": "I can't swim.",
      "accept": [
-      "I can't swim",
       "I cannot swim.",
-      "I cannot swim",
       "I can not swim."
      ],
      "hint": [
@@ -49761,9 +49541,7 @@
      "kind": "produce",
      "target": "I watch series every evening.",
      "accept": [
-      "I watch series every evening",
-      "I watch a series every evening.",
-      "I watch series every evening ."
+      "I watch a series every evening."
      ],
      "hint": [
       {
@@ -49815,10 +49593,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you watch this channel?",
-     "accept": [
-      "Do you watch this channel",
-      "Do you watch this channel ?"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -49985,7 +49759,6 @@
      "kind": "produce",
      "target": "This series is boring.",
      "accept": [
-      "This series is boring",
       "The series is boring.",
       "It's boring.",
       "it is boring."
@@ -50535,7 +50308,6 @@
      "kind": "produce",
      "target": "I'm afraid I can't. Maybe next time.",
      "accept": [
-      "I'm afraid I can't, maybe next time.",
       "Sorry, I'm afraid I can't. Maybe next time.",
       "I am afraid I can't. Maybe next time.",
       "I'm afraid I cannot. Maybe next time.",
@@ -50909,8 +50681,6 @@
      "accept": [
       "I am going to meet Ali tomorrow.",
       "Tomorrow I'm going to meet Ali.",
-      "I'm going to meet Ali tomorrow",
-      "I am going to meet Ali tomorrow",
       "Tomorrow I am going to meet Ali."
      ],
      "hint": [
@@ -51063,10 +50833,6 @@
     "expect": {
      "kind": "produce",
      "target": "Are you going to come tomorrow?",
-     "accept": [
-      "Are you going to come tomorrow",
-      "Are you going to come tomorrow?"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -51161,9 +50927,7 @@
      "kind": "produce",
      "target": "We're going to make a plan together.",
      "accept": [
-      "We are going to make a plan together.",
-      "We're going to make a plan together",
-      "We are going to make a plan together"
+      "We are going to make a plan together."
      ],
      "hint": [
       {
@@ -51676,7 +51440,6 @@
      "kind": "produce",
      "target": "This is my arm.",
      "accept": [
-      "This is my arm",
       "It is my arm.",
       "It's my arm."
      ],
@@ -51731,7 +51494,6 @@
      "kind": "produce",
      "target": "This is your leg.",
      "accept": [
-      "This is your leg",
       "It is your leg.",
       "It's your leg."
      ],
@@ -51778,7 +51540,6 @@
      "kind": "produce",
      "target": "Is this your head?",
      "accept": [
-      "Is this your head",
       "Is it your head?"
      ],
      "hint": [
@@ -52825,7 +52586,6 @@
      "kind": "produce",
      "target": "I need a doctor.",
      "accept": [
-      "I need a doctor",
       "I need to see a doctor."
      ],
      "hint": [
@@ -53476,7 +53236,6 @@
      "target": "I have to work today.",
      "accept": [
       "I must work today.",
-      "I have to work today",
       "Today I have to work."
      ],
      "hint": [
@@ -53546,7 +53305,6 @@
      "kind": "produce",
      "target": "Do I have to wait?",
      "accept": [
-      "Do I have to wait",
       "Must I wait?"
      ],
      "hint": [
@@ -53743,8 +53501,7 @@
      "kind": "produce",
      "target": "You have to take the bus.",
      "accept": [
-      "You must take the bus.",
-      "You have to take the bus"
+      "You must take the bus."
      ],
      "hint": [
       {
@@ -54069,7 +53826,6 @@
      "kind": "produce",
      "target": "I have a headache.",
      "accept": [
-      "I have a headache",
       "I've got a headache."
      ],
      "hint": [
@@ -54163,7 +53919,6 @@
      "kind": "produce",
      "target": "Can I have some medicine, please?",
      "accept": [
-      "Can I have some medicine please?",
       "Could I have some medicine, please?",
       "Can I have medicine, please?"
      ],
@@ -54373,7 +54128,6 @@
      "kind": "produce",
      "target": "How many times a day?",
      "accept": [
-      "How many times a day",
       "How many times per day?",
       "How many times in a day?"
      ],
@@ -54741,7 +54495,6 @@
      "target": "I can't come to work today.",
      "accept": [
       "I cannot come to work today.",
-      "I can't come to work today",
       "I can't go to work today.",
       "I cannot go to work today."
      ],
@@ -54973,7 +54726,6 @@
      "target": "I'll be better tomorrow.",
      "accept": [
       "I will be better tomorrow.",
-      "I'll be better tomorrow",
       "I'll be back tomorrow.",
       "I will be back tomorrow."
      ],
@@ -55045,7 +54797,6 @@
      "accept": [
       "I am staying home today.",
       "I'm staying at home today.",
-      "I'm staying home today",
       "I am staying at home today."
      ],
      "hint": [
@@ -55419,7 +55170,6 @@
      "kind": "produce",
      "target": "You should sleep.",
      "accept": [
-      "you should sleep",
       "You should get some sleep.",
       "You should sleep now."
      ],
@@ -55629,7 +55379,6 @@
      "kind": "produce",
      "target": "You shouldn't drink coffee.",
      "accept": [
-      "you shouldn't drink coffee",
       "You should not drink coffee.",
       "You shouldn't drink coffee now."
      ],
@@ -55676,7 +55425,6 @@
      "kind": "produce",
      "target": "You should see a doctor.",
      "accept": [
-      "you should see a doctor",
       "You should go to the doctor.",
       "You should see a doctor today."
      ],
@@ -56000,8 +55748,7 @@
      "target": "Call an ambulance!",
      "accept": [
       "Call the ambulance!",
-      "Please call an ambulance!",
-      "Call an ambulance"
+      "Please call an ambulance!"
      ],
      "hint": [
       {
@@ -56229,7 +55976,6 @@
      "kind": "produce",
      "target": "I need help.",
      "accept": [
-      "I need help",
       "Help me!",
       "I need some help.",
       "I need help please."
@@ -56285,7 +56031,6 @@
      "kind": "produce",
      "target": "Come quickly!",
      "accept": [
-      "Come quickly",
       "Please come quickly!",
       "Please hurry!",
       "Come fast!"
@@ -56746,7 +56491,6 @@
      "target": "You should exercise more.",
      "accept": [
       "You should do more exercise.",
-      "You should exercise more",
       "You should get more exercise."
      ],
      "hint": [
@@ -56817,7 +56561,6 @@
      "target": "You shouldn't smoke.",
      "accept": [
       "You should not smoke.",
-      "You shouldn't smoke",
       "You shouldn't smoke cigarettes."
      ],
      "hint": [
@@ -56880,7 +56623,6 @@
      "target": "Should I lose weight?",
      "accept": [
       "Should I lose some weight?",
-      "Should I lose weight",
       "Should I lose a little weight?"
      ],
      "hint": [
@@ -57257,9 +56999,7 @@
      "kind": "produce",
      "target": "My tooth hurts.",
      "accept": [
-      "My tooth hurts",
       "My teeth hurt.",
-      "My teeth hurt",
       "My tooth is hurting."
      ],
      "hint": [
@@ -57453,7 +57193,6 @@
      "kind": "produce",
      "target": "I have a toothache.",
      "accept": [
-      "I have a toothache",
       "I have toothache.",
       "I have a tooth ache.",
       "I've got a toothache."
@@ -57532,7 +57271,6 @@
      "kind": "produce",
      "target": "My teeth are clean.",
      "accept": [
-      "My teeth are clean",
       "My tooth is clean.",
       "My teeth are clean now."
      ],
@@ -57946,7 +57684,6 @@
      "kind": "produce",
      "target": "Can you hear me?",
      "accept": [
-      "Can you hear me",
       "Do you hear me?"
      ],
      "hint": [
@@ -58544,7 +58281,6 @@
      "accept": [
       "I will send you a message.",
       "I'll send a message to you.",
-      "I'll send you a message",
       "I will send a message to you."
      ],
      "hint": [
@@ -58851,7 +58587,6 @@
      "target": "I can't talk now. I'll reply later.",
      "accept": [
       "I cannot talk now. I will reply later.",
-      "I can't talk now, I'll reply later.",
       "Sorry, I can't talk now. I'll reply later.",
       "I cannot talk now. I'll reply later.",
       "I can't talk now. I will reply later.",
@@ -59266,7 +59001,6 @@
      "target": "I'm writing an email.",
      "accept": [
       "I am writing an email.",
-      "I'm writing an email",
       "I write an email."
      ],
      "hint": [
@@ -59416,7 +59150,6 @@
      "kind": "produce",
      "target": "Thank you very much.",
      "accept": [
-      "Thank you very much",
       "Thanks a lot.",
       "Thank you so much."
      ],
@@ -59542,7 +59275,6 @@
      "kind": "produce",
      "target": "I have a question.",
      "accept": [
-      "I have a question",
       "I have one question."
      ],
      "hint": [
@@ -59812,7 +59544,6 @@
      "kind": "produce",
      "target": "I use my phone every day.",
      "accept": [
-      "I use my phone every day",
       "I use my phone everyday."
      ],
      "hint": [
@@ -59953,9 +59684,6 @@
     "expect": {
      "kind": "produce",
      "target": "Do you use the internet?",
-     "accept": [
-      "Do you use the internet"
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -60614,7 +60342,6 @@
      "kind": "produce",
      "target": "Can I have three stamps, please?",
      "accept": [
-      "Can I have three stamps please?",
       "Could I have three stamps, please?",
       "I'd like three stamps, please.",
       "I would like three stamps, please."
@@ -61530,7 +61257,6 @@
      "kind": "produce",
      "target": "I played soccer yesterday.",
      "accept": [
-      "I played soccer yesterday",
       "Yesterday I played soccer.",
       "I played soccer."
      ],
@@ -61804,7 +61530,6 @@
      "kind": "produce",
      "target": "Did you visit your family?",
      "accept": [
-      "Did you visit your family",
       "Did you visit your family last week?",
       "Did you visit your parents?"
      ],
@@ -62170,9 +61895,7 @@
      "kind": "produce",
      "target": "When did you come?",
      "accept": [
-      "When did you come",
-      "When did you arrive?",
-      "When did you arrive"
+      "When did you arrive?"
      ],
      "hint": [
       {
@@ -62262,7 +61985,6 @@
      "target": "I didn't study English yesterday.",
      "accept": [
       "I did not study English yesterday.",
-      "I didn't study English yesterday",
       "I didn't study English.",
       "I did not study English."
      ],
@@ -62460,9 +62182,7 @@
      "kind": "produce",
      "target": "Did you see him?",
      "accept": [
-      "Did you see him",
-      "Did you see her?",
-      "Did you see her"
+      "Did you see her?"
      ],
      "hint": [
       {
@@ -62943,7 +62663,6 @@
      "kind": "produce",
      "target": "I went to the movies on Saturday.",
      "accept": [
-      "I went to the movies on Saturday",
       "On Saturday I went to the movies."
      ],
      "hint": [
@@ -62985,7 +62704,6 @@
      "kind": "produce",
      "target": "What did you do last weekend?",
      "accept": [
-      "What did you do last weekend",
       "What did you do on the weekend?"
      ],
      "hint": [
@@ -63053,10 +62771,6 @@
     "expect": {
      "kind": "produce",
      "target": "I met my friend and we ate pizza.",
-     "accept": [
-      "I met my friend and we ate pizza",
-      "I met my friend, and we ate pizza."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -63360,9 +63074,7 @@
      "kind": "produce",
      "target": "I'll call you soon.",
      "accept": [
-      "I will call you soon.",
-      "I'll call you soon",
-      "I will call you soon"
+      "I will call you soon."
      ],
      "hint": [
       {
@@ -63474,7 +63186,6 @@
       "Lets meet again.",
       "Let us meet again.",
       "Let's meet again soon.",
-      "Let's meet again",
       "Let us meet again soon."
      ],
      "hint": [
@@ -63663,12 +63374,9 @@
      "kind": "produce",
      "target": "See you, take care!",
      "accept": [
-      "See you. Take care!",
       "See you soon, take care!",
       "Bye, take care!",
-      "See you take care",
-      "See you later, take care!",
-      "See you later. Take care!"
+      "See you later, take care!"
      ],
      "hint": [
       {

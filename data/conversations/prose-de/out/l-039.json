@@ -61,7 +61,6 @@
  { "tr": "Sormak için başa Do koyuyorsun:", "kind": "say.tr", "de": "Zum Fragen setzt du Do an den Anfang:" },
  { "tr": "Sorusu da aynı kalıpla kurulur.", "kind": "say.tr", "de": "Die Frage dazu wird genauso gebildet." },
  { "tr": "Şimdi cevabı sen ver. Biri sana", "kind": "say.tr", "de": "Jetzt antwortest du. Jemand hat dich" },
- { "tr": "Şimdi dersin en önemli cümlesi:", "kind": "say.tr", "de": "Jetzt der wichtigste Satz der Lektion:" },
  { "tr": "Şimdi en önemli kısma geliyoruz:", "kind": "say.tr", "de": "Jetzt kommen wir zum wichtigsten Teil:" },
  { "tr": "Şimdi hiç istemediğimiz kelime:", "kind": "say.tr", "de": "Jetzt das Wort, das wir gar nicht wollen:" },
  { "tr": "Şimdi hikâyenin tamamını dinle:", "kind": "say.tr", "de": "Jetzt hör die ganze Geschichte:" },

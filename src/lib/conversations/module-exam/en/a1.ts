@@ -64,15 +64,15 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Marco", de: "Hello! I'm Marco. What's your name?", tr: "Merhaba! Ben Marco. Adın ne?" },
         { speaker: "Elif", de: "My name is Elif. I'm very happy to meet you!", tr: "Benim adım Elif. Tanıştığımıza çok sevindim!" },
         { speaker: "Marco", de: "Where are you from, Elif?", tr: "Nerelisin Elif?" },
-        { speaker: "Elif", de: "I'm from Turkey. Now I live in Boston.", tr: "Türkiyeliyim. Şimdi Boston'da oturuyorum." },
+        { speaker: "Elif", de: "I'm from Türkiye. Now I live in Boston.", tr: "Türkiyeliyim. Şimdi Boston'da oturuyorum." },
         { speaker: "Marco", de: "Do you speak English?", tr: "İngilizce konuşuyor musun?" },
         { speaker: "Elif", de: "I speak a little English. I'm a teacher and I work in a school.", tr: "Biraz İngilizce konuşuyorum. Öğretmenim ve bir okulda çalışıyorum." },
         { speaker: "Marco", de: "How do you spell your name?", tr: "Adın nasıl yazılıyor?" },
         { speaker: "Elif", de: "E-L-I-F. And I'm twenty-eight years old.", tr: "E-L-I-F. Bir de yirmi sekiz yaşındayım." },
       ],
       questions: [
-        { de: "Where is Elif from?", tr: "Elif nereli?", options: ["From Italy", "From Turkey", "From America", "From Boston"], answer: 1 },
-        { de: "Which city is Elif in now?", tr: "Elif şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Boston", "In Turkey"], answer: 2 },
+        { de: "Where is Elif from?", tr: "Elif nereli?", options: ["From Italy", "From Türkiye", "From America", "From Boston"], answer: 1 },
+        { de: "Which city is Elif in now?", tr: "Elif şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Boston", "In Türkiye"], answer: 2 },
         { de: "How old is Elif?", tr: "Elif kaç yaşında?", options: ["Eighteen", "Twenty", "Twenty-five", "Twenty-eight"], answer: 3 },
       ],
     },
@@ -80,7 +80,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Language school – new student",
       titleTr: "Kayıt formu",
       genre: "Form",
-      text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Turkey\nCity: Boston\nAddress: 12 Green Street\nZIP code: 02108\nPhone number: 617 555 0143\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
+      text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Türkiye\nCity: Boston\nAddress: 12 Green Street\nZIP code: 02108\nPhone number: 617 555 0143\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
       questions: [
         { de: "What is the last name?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Boston", "Teacher"], answer: 1 },
         { de: "What is the zip code?", tr: "Posta kodu ne?", options: ["02108", "617 555 0143", "12 Green Street", "28"], answer: 0 },
@@ -107,7 +107,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "I'm a … .", tr: "Mesleğim …", en: "I'm a … ." },
       ],
       sample:
-        "Hello! My name is Elif Yilmaz. I'm from Turkey, from Izmir. Now I live in Boston. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
+        "Hello! My name is Elif Yilmaz. I'm from Türkiye, from Izmir. Now I live in Boston. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
     },
   },
 

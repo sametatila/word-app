@@ -143,5 +143,5 @@
  { "tr": "Şimdi aynı bilgiyi başlangıç noktasıyla verelim. Tek değişen kısım cümlenin sonu:", "kind": "say.tr", "de": "Jetzt dieselbe Information mit dem Anfangspunkt. Nur das Satzende ändert sich:" },
  { "tr": "Şimdi bir otelin resepsiyonundasın: görevli adını yazacak. Adını söyle ve harfle.", "kind": "say.tr", "de": "Jetzt bist du an einer Hotelrezeption: dein Name wird notiert. Sag und buchstabier ihn." },
  { "tr": "Şimdi bu cümleye for'u ekle. Söyle: Kız kardeşim için bir hediye almak istiyorum.", "kind": "say.tr", "de": "Häng jetzt das for an. Sag: Ich möchte ein Geschenk für meine Schwester kaufen." },
- { "tr": "Şimdi bugünün kuralı. İngilizcede renk, tıpkı Türkçedeki gibi ismin önünde durur.", "kind": "say.tr", "de": "Jetzt die Regel des Tages. Im Englischen steht die Farbe wie im Deutschen vor dem Substantiv." }
+ { "tr": "Şimdi bugünün kuralı. İngilizcede renk, tıpkı Türkçedeki gibi ismin önünde durur.", "kind": "say.tr", "de": "Jetzt die Regel von heute. Im Englischen steht die Farbe wie im Deutschen vor dem Substantiv." }
 ]

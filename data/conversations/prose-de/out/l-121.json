@@ -180,19 +180,9 @@
   "de": "Lehrt, eine lange These von Anfang bis Ende zu binden; eine These, die zu einer unumkehrbaren Entscheidung führt, muss jeden Schritt mit einer Adresse tragen."
  },
  {
-  "tr": "Alayın son dersi: söylenmeyenin söyleneni nasıl taşıdığını öğretir; alay bir üslup değil, sorumluluğu paylaşan bir araçtır.",
-  "kind": "summary",
-  "de": "Die letzte Lektion zum Spott: lehrt, wie das Ungesagte das Gesagte trägt; der Spott ist kein Stil, sondern ein Mittel, das die Verantwortung teilt."
- },
- {
   "tr": "Aynı savın üsluba göre nasıl değiştiğini öğretir; üslup bir süs değil, savın ne kadar ileri gittiğini gösteren bir ölçüdür.",
   "kind": "summary",
   "de": "Lehrt, wie sich dieselbe These mit dem Stil verändert; der Stil ist kein Schmuck, sondern ein Maß dafür, wie weit die These geht."
- },
- {
-  "tr": "Kursun son dersi: C1'de öğrenilenin yeni bir kural değil bir seçim olduğunu, eksiltmenin de o seçimin en sessiz biçimi olduğunu gösterir.",
-  "kind": "summary",
-  "de": "Die letzte Lektion des Kurses: zeigt, dass auf C1 nicht eine neue Regel, sondern eine Wahl gelernt wurde, und dass die Auslassung die leiseste Form dieser Wahl ist."
  },
  {
   "tr": "Bir savı önce denemenin, sonra broşürün üslubuyla söylüyorsun. İki üslubu da kur ve hangisinde savın yerini duygunun aldığını söyle.",
@@ -280,19 +270,9 @@
   "de": "Richtig. Das Zugeständnis ist vorangezogen und die Grenze danach offen genannt."
  },
  {
-  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil kurumun kendisine bağlanmış.",
-  "kind": "why.tr",
-  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern an der Einrichtung selbst."
- },
- {
   "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı soğukluğu başka bir adla doğruluyor.",
   "kind": "why.tr",
   "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dieselbe Kühle unter einem anderen Namen."
- },
- {
-  "tr": "Doğru. Biri dinleyende bıraktığı etkiyi, öteki savın kendi dayanağını ölçüyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Das eine misst die Wirkung auf die Zuhörerin, das andere die eigene Grundlage der These."
  },
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir olasılık kalıyor.",
@@ -313,11 +293,6 @@
   "tr": "Doğru. İki nesne de başa alınmış ve cümle ikiye bölünmüş; vurgu öğrenmekle seçmenin farkında.",
   "kind": "why.tr",
   "de": "Richtig. Beide Objekte stehen vorn und der Satz ist geteilt; die Betonung liegt auf dem Unterschied zwischen Lernen und Wählen."
- },
- {
-  "tr": "Doğru. Yer öbeği başa alınmış; görüşün arkasındaki topluluk sona düşünce daha ağır duyuluyor.",
-  "kind": "why.tr",
-  "de": "Richtig. Die Ortsangabe steht vorn; fällt die Gemeinschaft hinter der Ansicht ans Ende, klingt sie schwerer."
  },
  {
   "tr": "seçimi hatadan ayırır",
@@ -1185,11 +1160,6 @@
   "de": "und dass alles vorübergeht, heißt"
  },
  {
-  "tr": "Merhaba! Bu kursun son dersindeyiz.",
-  "kind": "say.tr",
-  "de": "Hallo! Wir sind in der letzten Lektion dieses Kurses."
- },
- {
   "tr": "Şimdi bir özgürlük savı kuracaksın.",
   "kind": "say.tr",
   "de": "Jetzt baust du eine These über eine Freiheit."
@@ -1775,11 +1745,6 @@
   "de": "Noch eins: Sie verlangen, dass jeder Vertrag der richterlichen Kontrolle unterzogen werde."
  },
  {
-  "tr": "Bu yüz dersin sonunda elinde bir kural listesi değil, bir seçim aralığı var.",
-  "kind": "say.tr",
-  "de": "Am Ende dieser hundert Lektionen hast du keine Regelliste, sondern einen Spielraum der Wahl."
- },
- {
   "tr": "Bir tane daha: Ayrıntı düşkünlüğü, dediler, üstelik aceleye karşı iyi geliyor.",
   "kind": "say.tr",
   "de": "Noch eins: Ein Hang zum Detail, sagten sie, und dazu gut gegen Eile."
@@ -1838,11 +1803,6 @@
   "tr": "ise bir kural gibi okunur. İkisini karıştıran cümle, veriden fazlasını söz vermiş olur.",
   "kind": "say.tr",
   "de": "dagegen wird wie eine Regel gelesen. Ein Satz, der beide verwechselt, verspricht mehr, als die Daten hergeben."
- },
- {
-  "tr": "Merhaba! Bugün alayın son dersinde söylenmeyenin söyleneni nasıl taşıdığını öğreneceğiz.",
-  "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir in der letzten Lektion zum Spott, wie das Ungesagte das Gesagte trägt."
  },
  {
   "tr": "Uzun bir savda her adres bir sorumluluk halkasıdır; halka düşerse karar dayanaksız kalır.",
@@ -1922,7 +1882,7 @@
  {
   "tr": "dediğinde karşındaki savunmaya geçmez ve asıl ayrımı duyar. Ödünsüz ahlak savı doğru olsa bile kimseyi değiştirmez.",
   "kind": "say.tr",
-  "de": "geht dein Gegenüber nicht in Abwehr und hört den eigentlichen Unterschied. Eine moralische These ohne Zugeständnis verändert niemanden, auch wenn sie stimmt."
+  "de": "– sagst du das, geht dein Gegenüber nicht in Abwehr und hört den eigentlichen Unterschied. Eine moralische These ohne Zugeständnis verändert niemanden, auch wenn sie stimmt."
  },
  {
   "tr": "Seçilen sözcük kanıtın ne kadarını söz verdiğini belirliyor; yanlış sözcük tutulamayacak bir söz verir. Hazır mısın?",
@@ -1942,7 +1902,7 @@
  {
   "tr": "dediğinde hükmü sen vermemiş olursun ama hüküm kurulmuş olur. Bu yüzden alay hem en zor çürütülen hem de en kolay yanlış anlaşılan araçtır.",
   "kind": "say.tr",
-  "de": "hast du das Urteil nicht gefällt, und doch steht es. Darum ist der Spott zugleich das am schwersten zu widerlegende und das am leichtesten misszuverstehende Mittel."
+  "de": "– sagst du das, hast du das Urteil nicht gefällt, und doch steht es. Darum ist der Spott zugleich das am schwersten zu widerlegende und das am leichtesten misszuverstehende Mittel."
  },
  {
   "tr": "cümlesi bunu kendi yapısıyla söylüyor — öğrenilen ile seçilen aynı cümlede ayrılıyor. Kuralı A1'de öğrendin; C1'de hangisini ne zaman kullanacağını seçiyorsun.",

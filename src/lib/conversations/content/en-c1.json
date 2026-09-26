@@ -66,7 +66,7 @@
      },
      {
       "lang": "tr",
-      "text": "İlk ders tam bunu konu ediyor: hitap, ton ve alıntı. Hazır mısın?"
+      "text": "Bu ilk Konuşma adımı tam bunu konu ediyor: hitap, ton ve alıntı. Hazır mısın?"
      }
     ],
     "expect": {
@@ -255,17 +255,21 @@
      },
      {
       "lang": "en",
-      "text": "A cordial note and a matter-of-fact note say the same thing."
+      "text": "Dear Sir or Madam, thanks a bunch for your letter."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "A cordial note and a matter-of-fact note say the same thing.",
-     "answer": true,
+     "statement": "Dear Sir or Madam, thanks a bunch for your letter.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İçerik aynı, değişen yalnız dil düzeyi; C1'de öğretilen şey tam bu ayrım."
+       "text": "Yanlış. Resmî hitaptan sonra konuşma diline ait thanks a bunch gelmez; dil düzeyi karışıyor. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Dear Sir or Madam, thank you for your letter."
       }
      ]
     }
@@ -740,17 +744,21 @@
      },
      {
       "lang": "en",
-      "text": "The first reading is careful; the second is not."
+      "text": "The first reading is careful; the second does not."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The first reading is careful; the second is not.",
-     "answer": true,
+     "statement": "The first reading is careful; the second does not.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İkinci yarıda «reading» düşmüş ve okur onu ilk yarıdan geri getiriyor."
+       "text": "Yanlış. Eksiltide ilk yarının yardımcı fiili tekrar edilir, başka bir yardımcı fiil gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The first reading is careful; the second is not."
       }
      ]
     }
@@ -1261,17 +1269,21 @@
      },
      {
       "lang": "en",
-      "text": "The denotation we know; the subtext we guess."
+      "text": "The first meaning we know it; the second we guess."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The denotation we know; the subtext we guess.",
-     "answer": true,
+     "statement": "The first meaning we know it; the second we guess.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Nesne başa geçmiş ve vurgu ona binmiş; anlam aynı, ağırlık değişmiş."
+       "text": "Yanlış. Nesne başa alınınca yerinde onu tekrarlayan bir zamir kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The first meaning we know; the second we guess."
       }
      ]
     }
@@ -1758,17 +1770,21 @@
      },
      {
       "lang": "en",
-      "text": "Were it not for her firm chairing, we would adjourn."
+      "text": "The chair requests that every member submits the report by Friday."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Were it not for her firm chairing, we would adjourn.",
-     "answer": true,
+     "statement": "The chair requests that every member submits the report by Friday.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Tekil özneyle bile were kullanılıyor; bu bir hata değil kalıplaşmış biçim."
+       "text": "Yanlış. Bu istek kalıbından sonra fiil çekilmez; -s almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The chair requests that every member submit the report by Friday."
       }
      ]
     }
@@ -2275,17 +2291,21 @@
      },
      {
       "lang": "en",
-      "text": "She would concede the point, whereas he would gloss over it."
+      "text": "Albeit the figure is high, it is explicable."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "She would concede the point, whereas he would gloss over it.",
-     "answer": true,
+     "statement": "Albeit the figure is high, it is explicable.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki tutum karşı karşıya konmuş ve hiçbiri küçümsenmemiş; whereas nötr karşıtlık kurar."
+       "text": "Yanlış. albeit tam bir cümle almaz, yalnız bir sıfat ya da öbek alır; cümle gelecekse although kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Although the figure is high, it is explicable."
       }
      ]
     }
@@ -2788,17 +2808,21 @@
      },
      {
       "lang": "en",
-      "text": "Let it play out before you call it damage control."
+      "text": "The idea never caught up with the public."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Let it play out before you call it damage control.",
-     "answer": true,
+     "statement": "The idea never caught up with the public.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki eşdizim de yerinde: olay yaşanır, çaba ise hasar kontrolü diye adlandırılır."
+       "text": "Yanlış. Bir fikrin tutması catch on ile söylenir; catch up yetişmek demek. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The idea never caught on with the public."
       }
      ]
     }
@@ -3786,17 +3810,21 @@
      },
      {
       "lang": "en",
-      "text": "The risk would tend to be incalculable."
+      "text": "The costs might have expected to fall."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The risk would tend to be incalculable.",
-     "answer": true,
+     "statement": "The costs might have expected to fall.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yapı tek bir olayı değil genel eğilimi söylüyor."
+       "text": "Yanlış. Maliyet kendisi bir şey beklemez, beklenen odur; bu yüzden been gerekir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The costs might have been expected to fall."
       }
      ]
     }
@@ -4097,7 +4125,7 @@
     "tr": "istemeyi olumsuzla söyler"
    },
    {
-    "de": "Hardly self-righteous, is it?",
+    "de": "Hardly modest, is it?",
     "tr": "soruyla ters anlamı taşır"
    }
   ],
@@ -4110,7 +4138,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ders iki yönlü: kurmayı da öğreneceksin, duymayı da. İkisinden zor olanı duymak. Hazır mısın?"
+      "text": "Bu konu iki yönlü: kurmayı da öğreneceksin, duymayı da. İkisinden zor olanı duymak. Hazır mısın?"
      }
     ],
     "expect": {
@@ -4197,16 +4225,16 @@
      },
      {
       "lang": "en",
-      "text": "Hardly self-righteous, is it?"
+      "text": "Hardly modest, is it?"
      },
      {
       "lang": "tr",
-      "text": "Pek de kendini haklı görmüyor, öyle mi?"
+      "text": "Pek alçakgönüllü sayılmaz, öyle mi?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Hardly self-righteous, is it?"
+     "target": "Hardly modest, is it?"
     }
    },
    {
@@ -4287,17 +4315,21 @@
      },
      {
       "lang": "en",
-      "text": "Hardly self-righteous, is it?"
+      "text": "I wouldn't say no for a quieter room."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Hardly self-righteous, is it?",
-     "answer": true,
+     "statement": "I wouldn't say no for a quieter room.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Soru biçimi kullanılmış ama beklenen cevap onay değil, ortak bir gülümseme."
+       "text": "Yanlış. Bu kalıp to ile kurulur: I wouldn't say no to. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I wouldn't say no to a quieter room."
       }
      ]
     }
@@ -4460,16 +4492,16 @@
      },
      {
       "lang": "en",
-      "text": "They disparage the superficiality."
+      "text": "Self-righteous critics disparage the superficiality."
      },
      {
       "lang": "tr",
-      "text": "Yüzeyselliği karalıyorlar."
+      "text": "Kendini haklı gören eleştirmenler yüzeyselliği karalıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They disparage the superficiality."
+     "target": "Self-righteous critics disparage the superficiality."
     }
    },
    {
@@ -4484,7 +4516,7 @@
      "target": "Hardly patronizing, is it?",
      "accept": [
       "Hardly condescending, is it?",
-      "Hardly self-righteous, is it?"
+      "Hardly modest, is it?"
      ],
      "hint": [
       {
@@ -4800,17 +4832,21 @@
      },
      {
       "lang": "en",
-      "text": "The latter reading leaves an unease."
+      "text": "Of the three readings, the latter is the most convincing."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The latter reading leaves an unease.",
-     "answer": true,
+     "statement": "Of the three readings, the latter is the most convincing.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki seçenek anılmış ve the latter ikincisini seçiyor; okur geri dönüp saymak zorunda kalmıyor."
+       "text": "Yanlış. the latter yalnız iki seçenekten ikincisini gösterir; üç seçenekte the last kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Of the three readings, the last is the most convincing."
       }
      ]
     }
@@ -5826,17 +5862,21 @@
      },
      {
       "lang": "en",
-      "text": "To report a claim is not to falsify it."
+      "text": "She denied to have written the report."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "To report a claim is not to falsify it.",
-     "answer": true,
+     "statement": "She denied to have written the report.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Aktarmak bir hüküm taşır ama çarpıtma değildir; ayrım tam bu iki fiil arasında."
+       "text": "Yanlış. deny fiilinden sonra -ing gelir, to gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "She denied having written the report."
       }
      ]
     }
@@ -6077,7 +6117,7 @@
   ],
   "patterns": [
    {
-    "de": "Not exactly unscrupulous, are they?",
+    "de": "Not exactly scrupulous, are they?",
     "tr": "olumsuzla överek iğneler"
    },
    {
@@ -6117,16 +6157,16 @@
      },
      {
       "lang": "tr",
-      "text": "Vicdan gözetmeyen demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Vicdan gözetmeyen demek. İlk kalıbımız bunu olumsuzla söylüyor. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "Not exactly unscrupulous, are they?"
+      "text": "Not exactly scrupulous, are they?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Not exactly unscrupulous, are they?"
+     "target": "Not exactly scrupulous, are they?"
     }
    },
    {
@@ -6245,7 +6285,7 @@
      "target": "Not exactly careful, are they?",
      "accept": [
       "Not exactly cautious, are they?",
-      "Not exactly unscrupulous, are they?"
+      "Not exactly scrupulous, are they?"
      ],
      "hint": [
       {
@@ -6408,16 +6448,16 @@
      },
      {
       "lang": "en",
-      "text": "They incite and then defame."
+      "text": "Unscrupulous people incite and then defame."
      },
      {
       "lang": "tr",
-      "text": "Kışkırtıyorlar, sonra iftira atıyorlar."
+      "text": "Vicdansız insanlar kışkırtır, sonra iftira atar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They incite and then defame."
+     "target": "Unscrupulous people incite and then defame."
     }
    },
    {
@@ -8231,17 +8271,21 @@
      },
      {
       "lang": "en",
-      "text": "They ask that no member abstain."
+      "text": "Was it not for the quorum, the vote would fail."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They ask that no member abstain.",
-     "answer": true,
+     "statement": "Was it not for the quorum, the vote would fail.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Fiil çekilmemiş; bu bir hata değil, önergenin kurumsal biçimi."
+       "text": "Yanlış. Bu kalıp tekil özneyle de was değil were alır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the quorum, the vote would fail."
       }
      ]
     }
@@ -9730,17 +9774,21 @@
      },
      {
       "lang": "en",
-      "text": "The latter reflects the current state of research."
+      "text": "Such an evidence is rare."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The latter reflects the current state of research.",
-     "answer": true,
+     "statement": "Such an evidence is rare.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki seçenek anılmış ve the latter ikincisini seçiyor; okur geri dönmüyor."
+       "text": "Yanlış. Bu isim sayılamaz; such ile a gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Such evidence is rare."
       }
      ]
     }
@@ -10538,7 +10586,7 @@
     "tr": "aynı adımın dil düzeyine göre soğuduğunu gösterir"
    },
    {
-    "de": "In the spoken register, the acquittal becomes 'he was cleared.'",
+    "de": "In the spoken register, the acquittal becomes \"he was cleared.\"",
     "tr": "hukuk terimini konuşma diline çevirir"
    }
   ],
@@ -10650,7 +10698,7 @@
      },
      {
       "lang": "en",
-      "text": "In the spoken register, the acquittal becomes 'he was cleared.'"
+      "text": "In the spoken register, the acquittal becomes \"he was cleared.\""
      },
      {
       "lang": "tr",
@@ -10659,7 +10707,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "In the spoken register, the acquittal becomes 'he was cleared.'"
+     "target": "In the spoken register, the acquittal becomes \"he was cleared.\""
     }
    },
    {
@@ -10732,17 +10780,21 @@
      },
      {
       "lang": "en",
-      "text": "Written as an administrative decision, the same step reads colder."
+      "text": "The ruling states that the defendant got off."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Written as an administrative decision, the same step reads colder.",
-     "answer": true,
+     "statement": "The ruling states that the defendant got off.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Adım değişmedi, yalnız yazıldığı dil düzeyi değişti ve okur onu başka duyuyor."
+       "text": "Yanlış. Hukuk metninde konuşma diline ait got off kullanılmaz; karar dili was acquitted der. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The ruling states that the defendant was acquitted."
       }
      ]
     }
@@ -10803,7 +10855,7 @@
      "target": "In the spoken register, the conviction becomes 'he was found guilty.'",
      "accept": [
       "In the spoken register, the conviction becomes 'they found him guilty.'",
-      "In the spoken register, the acquittal becomes 'he was cleared.'"
+      "In the spoken register, the acquittal becomes \"he was cleared.\""
      ],
      "hint": [
       {
@@ -11754,17 +11806,21 @@
      },
      {
       "lang": "en",
-      "text": "What a term of office grants, discretion can take."
+      "text": "The new members were sworn on before the vote."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "What a term of office grants, discretion can take.",
-     "answer": true,
+     "statement": "The new members were sworn on before the vote.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Nesne başa alınmış ve iki hukuk eşdizimi karşı karşıya konmuş."
+       "text": "Yanlış. Göreve yemin etmek sworn in ile söylenir; on burada yanlış edat. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The new members were sworn in before the vote."
       }
      ]
     }
@@ -11989,7 +12045,7 @@
   "chat": {
    "scene": "Bir hukuk metnini sade dile çeviriyorsun ama kalıpları bozmamak gerektiğini biliyorsun. Yürürlüğü, yemini ve takdir yetkisini yerleşik eşdizimlerle söyle.",
    "partner": "kalıpları gereksiz bulan, eş anlamlısıyla değiştirmeyi öneren bir arkadaş",
-   "opening": "Why not just say 'make a law'?",
+   "opening": "Why not just say \"make a law\"?",
    "openingTr": "Neden sadece «kanun yapmak» demiyoruz?",
    "goal": "Yürürlüğü, yemini ve takdir yetkisini üç ayrı yerleşik eşdizimle söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
@@ -12243,17 +12299,21 @@
      },
      {
       "lang": "en",
-      "text": "One road is impassable; the other is not."
+      "text": "One exit is locked; the other doesn't."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "One road is impassable; the other is not.",
-     "answer": true,
+     "statement": "One exit is locked; the other doesn't.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İkinci yarıda sıfat düşmüş ve okur onu ilk yarıdan geri getiriyor."
+       "text": "Yanlış. Eksiltide ilk yarının yardımcı fiili tekrar edilir, başka bir yardımcı fiil gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "One exit is locked; the other isn't."
       }
      ]
     }
@@ -12756,17 +12816,21 @@
      },
      {
       "lang": "en",
-      "text": "The levy is irrevocable, whereas the fee is not."
+      "text": "Much as we accept the debt, but the client is not insolvent."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The levy is irrevocable, whereas the fee is not.",
-     "answer": true,
+     "statement": "Much as we accept the debt, but the client is not insolvent.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki kalem karşı karşıya konmuş ve hiçbiri küçümsenmemiş."
+       "text": "Yanlış. Ödün bağlacı zaten kullanıldı; asıl cümleye ikinci bir bağlaç (but) gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as we accept the debt, the client is not insolvent."
       }
      ]
     }
@@ -13245,17 +13309,21 @@
      },
      {
       "lang": "en",
-      "text": "Liquidity would tend to fall first."
+      "text": "Liquidity would tend falling first."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Liquidity would tend to fall first.",
-     "answer": true,
+     "statement": "Liquidity would tend falling first.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yapı tek bir olayı değil genel eğilimi söylüyor ve taahhüt kurmuyor."
+       "text": "Yanlış. tend fiilinden sonra -ing değil to gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Liquidity would tend to fall first."
       }
      ]
     }
@@ -13757,17 +13825,21 @@
      },
      {
       "lang": "en",
-      "text": "The reduced hours we accepted; the cut in sick pay we did not."
+      "text": "The overtime we accepted it; the pay cut we did not."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The reduced hours we accepted; the cut in sick pay we did not.",
-     "answer": true,
+     "statement": "The overtime we accepted it; the pay cut we did not.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki kalem başa alınmış ve cümle ikiye bölünmüş; vurgu artık kalemlerin üstünde."
+       "text": "Yanlış. Nesne başa alınınca yerinde onu tekrarlayan bir zamir kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The overtime we accepted; the pay cut we did not."
       }
      ]
     }
@@ -14689,11 +14761,7 @@
      },
      {
       "lang": "en",
-      "text": "not exactly"
-     },
-     {
-      "lang": "tr",
-      "text": ","
+      "text": "not exactly,"
      },
      {
       "lang": "en",
@@ -14759,17 +14827,21 @@
      },
      {
       "lang": "en",
-      "text": "I wouldn't call that thrifty."
+      "text": "Hardly lucrative, isn't it?"
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I wouldn't call that thrifty.",
-     "answer": true,
+     "statement": "Hardly lucrative, isn't it?",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Hüküm konuşanın üstünde kalıyor; bu cümle bir sohbette işler ama bir sözleşmede işlemez."
+       "text": "Yanlış. hardly zaten olumsuz; soru eki olumlu olur: is it. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Hardly lucrative, is it?"
       }
      ]
     }
@@ -16779,17 +16851,21 @@
      },
      {
       "lang": "en",
-      "text": "To call a text ideological is not to read it."
+      "text": "The critic accused the author for copying the plot."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "To call a text ideological is not to read it.",
-     "answer": true,
+     "statement": "The critic accused the author for copying the plot.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Etiket bir hüküm taşır ama okuma değildir; ayrım tam bu iki işin arasında."
+       "text": "Yanlış. accuse fiili of ile kurulur, for ile değil. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The critic accused the author of copying the plot."
       }
      ]
     }
@@ -19641,17 +19717,21 @@
      },
      {
       "lang": "en",
-      "text": "This wrath, as noted earlier, grows out of an old resentment."
+      "text": "This two approaches explain the gap."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This wrath, as noted earlier, grows out of an old resentment.",
-     "answer": true,
+     "statement": "This two approaches explain the gap.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. «as noted» okuru daha önce okuduğu yere gönderiyor; cümle tek başına da anlaşılıyor."
+       "text": "Yanlış. İki şeye gönderirken this değil these kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "These two approaches explain the gap."
       }
      ]
     }
@@ -19754,7 +19834,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın."
      }
     ]
    },
@@ -20114,17 +20194,21 @@
      },
      {
       "lang": "en",
-      "text": "High culture is a register; dominant culture is a claim."
+      "text": "The ministry's report calls the subculture a cool scene."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "High culture is a register; dominant culture is a claim.",
-     "answer": true,
+     "statement": "The ministry's report calls the subculture a cool scene.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri bir üslup katmanını adlandırıyor, öteki hangi kültürün ölçü olacağını söylüyor."
+       "text": "Yanlış. Bakanlık raporunda konuşma diline ait cool geçmez; resmî metin vibrant gibi bir söz seçer. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The ministry's report calls the subculture a vibrant scene."
       }
      ]
     }
@@ -20611,17 +20695,21 @@
      },
      {
       "lang": "en",
-      "text": "Behind the demarcation line stands xenophobia."
+      "text": "Exclusion we inherit it; belonging we earn."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Behind the demarcation line stands xenophobia.",
-     "answer": true,
+     "statement": "Exclusion we inherit it; belonging we earn.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yer öbeği başa alınmış; özne sona düşünce daha ağır duyuluyor."
+       "text": "Yanlış. Nesne başa alınınca yerinde onu tekrarlayan bir zamir kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Exclusion we inherit; belonging we earn."
       }
      ]
     }
@@ -21072,17 +21160,21 @@
      },
      {
       "lang": "en",
-      "text": "They ask that every participation model give tenants a vote."
+      "text": "The principle demands that every tenant has a vote."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They ask that every participation model give tenants a vote.",
-     "answer": true,
+     "statement": "The principle demands that every tenant has a vote.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Fiil çekilmemiş; istek kişiden ayrılmış ve bir koşul hâline gelmiş."
+       "text": "Yanlış. Bu istek kalıbından sonra fiil çekilmez; -s almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The principle demands that every tenant have a vote."
       }
      ]
     }
@@ -21533,17 +21625,21 @@
      },
      {
       "lang": "en",
-      "text": "The integration course, albeit useful, is not a culture of welcome."
+      "text": "The course, albeit it is useful, is not enough."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The integration course, albeit useful, is not a culture of welcome.",
-     "answer": true,
+     "statement": "The course, albeit it is useful, is not enough.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ödün iki virgül arasına girmiş ve asıl cümle ondan sonra ayakta kalmış."
+       "text": "Yanlış. albeit tam bir cümle almaz, yalnız bir sıfat ya da öbek alır; cümle gelecekse although kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The course, albeit useful, is not enough."
       }
      ]
     }
@@ -22010,17 +22106,21 @@
      },
      {
       "lang": "en",
-      "text": "An influx is counted; a refugee convention is signed."
+      "text": "They submitted asylum at the border."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "An influx is counted; a refugee convention is signed.",
-     "answer": true,
+     "statement": "They submitted asylum at the border.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri istatistiğin, öteki hukukun eşdizimi; fiiller de o yüzden ayrı."
+       "text": "Yanlış. Sığınma talebi apply for asylum ile söylenir; asylum sunulan bir belge değil. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "They applied for asylum at the border."
       }
      ]
     }
@@ -22956,17 +23056,21 @@
      },
      {
       "lang": "en",
-      "text": "Reciprocity might be reciprocal only in name."
+      "text": "Kinship may well to shape daily life."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Reciprocity might be reciprocal only in name.",
-     "answer": true,
+     "statement": "Kinship may well to shape daily life.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir gözlem olarak kalıyor."
+       "text": "Yanlış. may well kipinden sonra fiil yalın gelir, araya to girmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Kinship may well shape daily life."
       }
      ]
     }
@@ -23425,17 +23529,21 @@
      },
      {
       "lang": "en",
-      "text": "We have no deviance here; we have a local custom."
+      "text": "The food was plentiful; the conversation, less."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We have no deviance here; we have a local custom.",
-     "answer": true,
+     "statement": "The food was plentiful; the conversation, less.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi başka adla doğruluyor."
+       "text": "Yanlış. Bu karşılaştırmalı eksiltide so düşmez: less so denir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The food was plentiful; the conversation, less so."
       }
      ]
     }
@@ -24379,17 +24487,21 @@
      },
      {
       "lang": "en",
-      "text": "The social stratum changed; its values did not."
+      "text": "The language survived; the customs weren't."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The social stratum changed; its values did not.",
-     "answer": true,
+     "statement": "The language survived; the customs weren't.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+       "text": "Yanlış. Eksiltide ilk yarının yardımcı fiili tekrar edilir, başka bir yardımcı fiil gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The language survived; the customs didn't."
       }
      ]
     }
@@ -24496,7 +24608,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -27200,17 +27312,21 @@
      },
      {
       "lang": "en",
-      "text": "To call it disciplining is not to call it a platitude."
+      "text": "The manager suggested us to postpone the vote."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "To call it disciplining is not to call it a platitude.",
-     "answer": true,
+     "statement": "The manager suggested us to postpone the vote.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri bir güç işlemini adlandırıyor, öteki yalnız içi boş bir sözü."
+       "text": "Yanlış. suggest fiili kişiyi doğrudan nesne olarak almaz; that ile yan cümle kurulur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The manager suggested that we postpone the vote."
       }
      ]
     }
@@ -28623,17 +28739,21 @@
      },
      {
       "lang": "en",
-      "text": "Where the operational responsibility is unclear, the performance indicator does not help."
+      "text": "Such an advice is rare in reports."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Where the operational responsibility is unclear, the performance indicator does not help.",
-     "answer": true,
+     "statement": "Such an advice is rare in reports.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki bölüm tek cümlede bağlanmış; ölçüt ile sorumlu aynı yerde duruyor."
+       "text": "Yanlış. Bu isim sayılamaz; such ile a gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Such advice is rare in reports."
       }
      ]
     }
@@ -29050,7 +29170,7 @@
      },
      {
       "lang": "tr",
-      "text": "dediğinde kimse bir söz vermemiş olur ama dinleyen sözü duyar. Bu yüzden bu modülün son dersinde eksiltme bir üslup değil, okumayı öğrenme işidir."
+      "text": "dediğinde kimse bir söz vermemiş olur ama dinleyen sözü duyar. Bu yüzden modülün bu son Konuşma adımında eksiltme bir üslup değil, okumayı öğrenme işidir."
      }
     ]
    },
@@ -29209,7 +29329,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -29561,17 +29681,21 @@
      },
      {
       "lang": "en",
-      "text": "A land use conflict is a dispute; paving over land is a fact."
+      "text": "The zoning plan states that the field is gonna be paved."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "A land use conflict is a dispute; paving over land is a fact.",
-     "answer": true,
+     "statement": "The zoning plan states that the field is gonna be paved.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri tarafların anlaşmazlığını adlandırıyor, öteki geri dönmeyen bir durumu."
+       "text": "Yanlış. İmar planında konuşma diline ait gonna yazılmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The zoning plan states that the field is going to be paved."
       }
      ]
     }
@@ -30491,17 +30615,21 @@
      },
      {
       "lang": "en",
-      "text": "They ask that every supplier meet a sustainability standard."
+      "text": "Was it not for the subsidy, the farm would close."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They ask that every supplier meet a sustainability standard.",
-     "answer": true,
+     "statement": "Was it not for the subsidy, the farm would close.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Fiil çekilmemiş; koşul kişiye değil ölçünün kendisine bağlanmış."
+       "text": "Yanlış. Bu kalıp tekil özneyle de was değil were alır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the subsidy, the farm would close."
       }
      ]
     }
@@ -30960,17 +31088,21 @@
      },
      {
       "lang": "en",
-      "text": "Although site-adapted, a species-rich field yields less."
+      "text": "Although site-adapted, but a species-rich field yields less."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Although site-adapted, a species-rich field yields less.",
-     "answer": true,
+     "statement": "Although site-adapted, but a species-rich field yields less.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ödün başa çekilmiş ve bedel ondan sonra açıkça söylenmiş."
+       "text": "Yanlış. Ödün bağlacı zaten kullanıldı; asıl cümleye ikinci bir bağlaç (but) gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Although site-adapted, a species-rich field yields less."
       }
      ]
     }
@@ -31437,17 +31569,21 @@
      },
      {
       "lang": "en",
-      "text": "Price volatility is measured; a free trade agreement is signed."
+      "text": "Low prices make pressure on small farms."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Price volatility is measured; a free trade agreement is signed.",
-     "answer": true,
+     "statement": "Low prices make pressure on small farms.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri istatistiğin, öteki hukukun eşdizimi; fiiller de o yüzden ayrı."
+       "text": "Yanlış. Baskı kurmak put pressure on ile söylenir; make pressure İngilizcede yok. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Low prices put pressure on small farms."
       }
      ]
     }
@@ -32383,17 +32519,21 @@
      },
      {
       "lang": "en",
-      "text": "To overfertilize might mean nitrate pollution downstream."
+      "text": "The field might have been expected recover faster."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "To overfertilize might mean nitrate pollution downstream.",
-     "answer": true,
+     "statement": "The field might have been expected recover faster.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor."
+       "text": "Yanlış. expected kalıbı ardından to ister. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The field might have been expected to recover faster."
       }
      ]
     }
@@ -32844,17 +32984,21 @@
      },
      {
       "lang": "en",
-      "text": "We have no factory farming here; we have humane housing."
+      "text": "The brochure was glossy; the stalls, less."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We have no factory farming here; we have humane housing.",
-     "answer": true,
+     "statement": "The brochure was glossy; the stalls, less.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi kurumun kendi sözcüğüyle doğruluyor."
+       "text": "Yanlış. Bu karşılaştırmalı eksiltide so düşmez: less so denir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The brochure was glossy; the stalls, less so."
       }
      ]
     }
@@ -33802,17 +33946,21 @@
      },
      {
       "lang": "en",
-      "text": "The precipitation fell; the harvest did not."
+      "text": "The prices rose; the yields weren't."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The precipitation fell; the harvest did not.",
-     "answer": true,
+     "statement": "The prices rose; the yields weren't.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+       "text": "Yanlış. Eksiltide ilk yarının yardımcı fiili tekrar edilir, başka bir yardımcı fiil gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The prices rose; the yields didn't."
       }
      ]
     }
@@ -33911,7 +34059,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -34732,17 +34880,21 @@
      },
      {
       "lang": "en",
-      "text": "Behind the resource consumption stands a lost carbon sink."
+      "text": "The emissions we measure them; the damage we do not."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Behind the resource consumption stands a lost carbon sink.",
-     "answer": true,
+     "statement": "The emissions we measure them; the damage we do not.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yer öbeği başa alınmış; kayıp sona düşünce daha ağır duyuluyor."
+       "text": "Yanlış. Nesne başa alınınca yerinde onu tekrarlayan bir zamir kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The emissions we measure; the damage we do not."
       }
      ]
     }
@@ -36608,17 +36760,21 @@
      },
      {
       "lang": "en",
-      "text": "To dilute a finding is not to call it volatile."
+      "text": "The authors admitted to overstate the effect."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "To dilute a finding is not to call it volatile.",
-     "answer": true,
+     "statement": "The authors admitted to overstate the effect.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri sonucu zayıflatan bir işlem, öteki onun kendi niteliğine dair bir hüküm."
+       "text": "Yanlış. admit fiilinden sonra -ing gelir, to ile mastar gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The authors admitted overstating the effect."
       }
      ]
     }
@@ -38031,17 +38187,21 @@
      },
      {
       "lang": "en",
-      "text": "In terms of scale, a fine-grained quarter serves accessibility better."
+      "text": "Of the three plans, the latter costs the least."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "In terms of scale, a fine-grained quarter serves accessibility better.",
-     "answer": true,
+     "statement": "Of the three plans, the latter costs the least.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ölçek öbeği başa alınmış; ölçütün hangi düzeyde geçerli olduğu en başta duruyor."
+       "text": "Yanlış. the latter yalnız iki seçenekten ikincisini gösterir; üç seçenekte the last kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Of the three plans, the last costs the least."
       }
      ]
     }
@@ -38327,7 +38487,7 @@
      },
      {
       "lang": "tr",
-      "text": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; bu modülün son dersinde eksiltmeyi okumayı bitiriyoruz. Hazır mısın?"
+      "text": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; modülün bu son Konuşma adımında eksiltmeyi okumayı bitiriyoruz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -38603,7 +38763,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -38985,17 +39145,21 @@
      },
      {
       "lang": "en",
-      "text": "Deflation is a number; the business cycle is a story."
+      "text": "The central bank reports that inflation is kinda high."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Deflation is a number; the business cycle is a story.",
-     "answer": true,
+     "statement": "The central bank reports that inflation is kinda high.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri ölçülen bir değeri adlandırıyor, öteki o değeri bir sıraya yerleştiren anlatıyı."
+       "text": "Yanlış. Merkez bankası raporunda konuşma diline ait kinda geçmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The central bank reports that inflation is fairly high."
       }
      ]
     }
@@ -40384,17 +40548,21 @@
      },
      {
       "lang": "en",
-      "text": "Although countercyclical, the fiscal policy arrives too late."
+      "text": "Much as I welcome the rate cut, but it comes too late."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Although countercyclical, the fiscal policy arrives too late.",
-     "answer": true,
+     "statement": "Much as I welcome the rate cut, but it comes too late.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ödün başa çekilmiş ve eksik ondan sonra açıkça söylenmiş."
+       "text": "Yanlış. Ödün bağlacı zaten kullanıldı; asıl cümleye ikinci bir bağlaç (but) gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as I welcome the rate cut, it comes too late."
       }
      ]
     }
@@ -40861,17 +41029,21 @@
      },
      {
       "lang": "en",
-      "text": "Follow-on costs are estimated; a cost overrun is announced."
+      "text": "The project made high costs."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Follow-on costs are estimated; a cost overrun is announced.",
-     "answer": true,
+     "statement": "The project made high costs.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri hesabın, öteki duyurunun eşdizimi; edilgen fiiller de o yüzden ayrı."
+       "text": "Yanlış. Maliyete katlanmak incur costs ile söylenir; make costs İngilizcede yok. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The project incurred high costs."
       }
      ]
     }
@@ -41807,17 +41979,21 @@
      },
      {
       "lang": "en",
-      "text": "A high savings potential might not mean solvency."
+      "text": "The savings rate would tend rising in a crisis."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "A high savings potential might not mean solvency.",
-     "answer": true,
+     "statement": "The savings rate would tend rising in a crisis.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir uyarı olarak kalıyor."
+       "text": "Yanlış. tend fiilinden sonra -ing değil to gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The savings rate would tend to rise in a crisis."
       }
      ]
     }
@@ -42268,17 +42444,21 @@
      },
      {
       "lang": "en",
-      "text": "We have no nepotism here; we have an old boys' network."
+      "text": "We have not nepotism here; we have loyalty."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We have no nepotism here; we have an old boys' network.",
-     "answer": true,
+     "statement": "We have not nepotism here; we have loyalty.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi daha kibar bir adla doğruluyor."
+       "text": "Yanlış. İsimle olumsuzluk no ile kurulur: we have no. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no nepotism here; we have loyalty."
       }
      ]
     }
@@ -43069,7 +43249,7 @@
      },
      {
       "lang": "tr",
-      "text": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para açısından okuyoruz. Hazır mısın?"
+      "text": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; modülün bu son Konuşma adımında eksiltmeyi para açısından okuyoruz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -43250,17 +43430,21 @@
      },
      {
       "lang": "en",
-      "text": "The conflicting goals stayed; the cumbersome wording did not."
+      "text": "The deadline stayed; the budget wasn't."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The conflicting goals stayed; the cumbersome wording did not.",
-     "answer": true,
+     "statement": "The deadline stayed; the budget wasn't.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+       "text": "Yanlış. Eksiltide ilk yarının yardımcı fiili tekrar edilir, başka bir yardımcı fiil gelmez. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The deadline stayed; the budget didn't."
       }
      ]
     }
@@ -43325,7 +43509,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -44176,17 +44360,21 @@
      },
      {
       "lang": "en",
-      "text": "Behind the prevailing doctrine stands a school of thought."
+      "text": "The main thesis we accept it; the conclusion we do not."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Behind the prevailing doctrine stands a school of thought.",
-     "answer": true,
+     "statement": "The main thesis we accept it; the conclusion we do not.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Yer öbeği başa alınmış; görüşün arkasındaki topluluk sona düşünce daha ağır duyuluyor."
+       "text": "Yanlış. Nesne başa alınınca yerinde onu tekrarlayan bir zamir kalmaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The main thesis we accept; the conclusion we do not."
       }
      ]
     }
@@ -44637,17 +44825,21 @@
      },
      {
       "lang": "en",
-      "text": "They ask that freedom of contract be tested by judicial review."
+      "text": "They ask that the court reviews the contract."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They ask that freedom of contract be tested by judicial review.",
-     "answer": true,
+     "statement": "They ask that the court reviews the contract.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Fiil çekilmemiş; koşul kişiye değil kurumun kendisine bağlanmış."
+       "text": "Yanlış. Bu istek kalıbından sonra fiil çekilmez; -s almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that the court review the contract."
       }
      ]
     }
@@ -46052,17 +46244,21 @@
      },
      {
       "lang": "en",
-      "text": "Persuasiveness is not the same as being justifiable."
+      "text": "The report claims him to be the source."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Persuasiveness is not the same as being justifiable.",
-     "answer": true,
+     "statement": "The report claims him to be the source.",
+     "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Biri dinleyende bıraktığı etkiyi, öteki savın kendi dayanağını ölçüyor."
+       "text": "Yanlış. claim fiili kişiyi nesne alıp mastar kurmaz; that ile yan cümle kurulur. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "The report claims that he is the source."
       }
      ]
     }
@@ -46757,7 +46953,7 @@
   "icon": "star",
   "title": "Measured indeed",
   "titleTr": "Ölçülü, tabii",
-  "summary": "Alayın son dersi: söylenmeyenin söyleneni nasıl taşıdığını öğretir; alay bir üslup değil, sorumluluğu paylaşan bir araçtır.",
+  "summary": "Alay üzerine son Konuşma adımı: söylenmeyenin söyleneni nasıl taşıdığını öğretir; alay bir üslup değil, sorumluluğu paylaşan bir araçtır.",
   "minutes": 12,
   "focusId": "Irony and understatement in everyday judgment",
   "vocab": [
@@ -46813,7 +47009,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün alayın son dersinde söylenmeyenin söyleneni nasıl taşıdığını öğreneceğiz."
+      "text": "Merhaba! Alay üzerine bu son Konuşma adımında söylenmeyenin söyleneni nasıl taşıdığını öğreneceğiz."
      },
      {
       "lang": "tr",
@@ -47707,7 +47903,7 @@
   "icon": "mountain",
   "title": "The choice itself",
   "titleTr": "Seçimin kendisi",
-  "summary": "Kursun son dersi: C1'de öğrenilenin yeni bir kural değil bir seçim olduğunu, eksiltmenin de o seçimin en sessiz biçimi olduğunu gösterir.",
+  "summary": "Kursun son Konuşma adımı: C1'de öğrenilenin yeni bir kural değil bir seçim olduğunu, eksiltmenin de o seçimin en sessiz biçimi olduğunu gösterir.",
   "minutes": 14,
   "focusId": "Ellipsis and the closing choice",
   "vocab": [
@@ -47763,7 +47959,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu kursun son dersindeyiz."
+      "text": "Merhaba! Bu, kursun son Konuşma adımı."
      },
      {
       "lang": "tr",
@@ -48065,7 +48261,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu yüz dersin sonunda elinde bir kural listesi değil, bir seçim aralığı var."
+      "text": "Bu yüz Konuşma adımının sonunda elinde bir kural listesi değil, bir seçim aralığı var."
      }
     ]
    },
