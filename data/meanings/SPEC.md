@@ -1,178 +1,102 @@
-# Anlam ve örnek cümle yenileme — şartname
+# Anlam ve örnek cümle — şartname
 
-Sana bir paket Almanca kelime verilir. Her kelime için **beş alan** üretirsin:
+Sana bir paket Almanca kelime verilir. Her kelime için beş alan üretirsin:
 `tr`, `en`, `beispiel`, `beispielTr`, `beispielEn`.
 
-Bu bir gözden geçirme değil, bir **yeniden yazma**. Pakette gördüğün mevcut
-değerler kaynağın kendisidir ve güvenilmez — bilgi olarak oku, doğru kabul etme.
+Bu bir yeniden yazma. Pakette gördüğün mevcut değerleri bilgi olarak oku, doğru kabul etme.
 
-## Neden bu iş yapılıyor
+İngilizce ikinci bir çeviri değil, ayırt edicidir: Türkçede çöken kelimeler İngilizcede ayrışır
+(`er`/`sie`/`es` üçü de "o", ama `he`/`she`/`it`; `das Essen` ile `essen` ikisi de "yemek",
+ama `food` ile `to eat`).
 
-Uygulamadaki geri bildirimlerin tamamı veri doğruluğuyla ilgili. Üç kusur var:
+## `tr`: tek doğal Türkçe karşılık
 
-1. **Bir kelimeye üç dört anlam veriliyordu.** `zu → "çok, fazla; -e, -a"`.
-   Öğrenci hangisini ezberleyeceğini bilmiyor, çoktan seçmelide dört uzun şık
-   okunmuyor, yazarak hatırlamada hangi biçimin beklendiği belirsiz kalıyor.
-2. **Parantezli açıklamalar işi daha da bozuyordu.** `es → "o (nötr, cansız)"`.
-   Parantez bir çeviri değil, bir dipnot; ekranda yer kaplıyor ve okunmuyor.
-3. **Örnek cümleler kelimeyi içermiyordu.** `lang` ("uzun") için verilen cümle
-   `"Das Kleid ist zu kurz."` — kelimenin kendisi cümlede yok, üstelik cümle
-   tam tersini söylüyor. `Disco` için `"…in die Diskothek."`, `Arzt` için
-   `"…bei meiner Ärztin."`. Boşluk doldurma ve cümle dizme turları cümleyi
-   kelimeden kurduğu için bu, oyunun kendisini bozuyor.
-
-Ayrıca artık İngilizce de gösteriliyor. İngilizce yalnızca ikinci bir çeviri
-değil, bir **ayırt edici**: Türkçede birbirine çöken kelimeler İngilizcede
-ayrışıyor (`er`/`sie`/`es` üçü de "o", ama `he` / `she` / `it`; `das Essen` ile
-`essen` ikisi de "yemek", ama `food` ile `to eat`).
-
-## `tr` — tek doğal Türkçe karşılık
-
-**İçerik sözcüklerinde tek karşılık.** İsim, fiil, sıfat, zarf: virgül, noktalı
-virgül, eğik çizgi ve parantez **yasak**. İşlev sözcükleri (edat, bağlaç, zamir,
-tanımlık) bunun tek istisnasıdır — bkz. aşağıda "İşlev sözcükleri: doğal kısa
-gloss". Parantez ise **her durumda** yasak; işlev sözcüğünde bile netleştirme
-parantezle değil, gloss'un kendisiyle yapılır.
-
-Ölçüt: bir Türk'e "bu Almanca kelime ne demek?" diye sorsan vereceği **ilk ve
-tek** cevap. Sözlük maddesi değil, konuşma cevabı.
+Ölçüt: bir Türk'e "bu kelime ne demek?" diye sorsan vereceği ilk ve tek cevap.
 
 ```
 Frau      →  "kadın"         (değil: "kadın, bayan, eş")
-Gegenstand→  "nesne"         (değil: "nesne, şey, cisim")
 schön     →  "güzel"         (değil: "güzel, hoş, iyi")
 wohl      →  "galiba"        (değil: "iyi; galiba, herhalde")
 bekommen  →  "almak"         (değil: "elde etmek, almak")
 ```
 
-Biçim kuralları:
+- İçerik sözcüklerinde (isim, fiil, sıfat, zarf) virgül, noktalı virgül, eğik çizgi, "ya da" yok.
+- Parantez her durumda yasak.
+- Fiiller `-mek`/`-mak` ile biter; dönüşlü fiil de tek karşılık (`sich freuen → "sevinmek"`).
+- İsimler yalın ve artikelsiz (`der Tisch → "masa"`, "bir masa" değil).
+- Kısa: en çok üç kelime hedef; deyimler hariç (`Rad fahren → "bisiklete binmek"`).
+- Sözlük Türkçesi yok (`"gerçekleştirmek"`, `"husus"`, `"vuku bulmak"`).
 
-- Fiiller `-mek`/`-mak` ile biter: `arbeiten → "çalışmak"`.
-- Dönüşlü fiiller de tek karşılık: `sich freuen → "sevinmek"`.
-- İsimler yalın hâlde ve artikelsiz: `der Tisch → "masa"`.
-- Sıfat sıfat kalır, zarf zarf kalır.
-- En fazla üç kelime; deyim niteliğindeki maddeler bunun dışında
-  (`zum Beispiel → "örneğin"`, `Rad fahren → "bisiklete binmek"`).
+### İşlev sözcükleri
 
-### İşlev sözcükleri: doğal kısa gloss
-
-Edat, bağlaç, zamir ve tanımlıklarda tek bir çıplak ek — `"-e"`, `"-de"`,
-`"-in"` — çoğu zaman **kripto** kalır: öğrenci `"-e"` görüp hangi Almanca
-kelime olduğunu hatırlayamaz. Bu maddelerde tek karşılık zorunluluğu gevşer:
-en doğal, öğrenilebilir karşılığı ver ve **gerektiğinde en çok iki çekirdek
-anlamı** noktalı virgülle ayır (`"; "`). Çıplak eki asla tek başına bırakma;
-doğal bir kelimeyle eşle.
+Edat, bağlaç, zamir, tanımlık (kaynakta `typ: "Sonstiges"`): çıplak ek (`"-e"`) tek başına
+kalmaz, doğal bir kelimeyle eşlenir. Gerçekten iki çekirdek anlamı olanda en çok iki anlam
+`"; "` ile ayrılır.
 
 ```
 von   →  "-in; -den"            nach  →  "-e doğru; sonra"
-auch  →  "da; ayrıca"           um    →  "saat …-de; için"
-bis   →  "-e kadar"             als   →  "-den; olarak"
+auch  →  "da; ayrıca"           bis   →  "-e kadar"
+seit  →  "-den beri"            ohne  →  "-siz"
 ```
 
-Sınırlar:
+`"; "` yalnız işlev sözcüğünde ve tam iki parçada geçerli; öteki her durumda hata.
 
-- **Parantez yok.** Netleştirme gloss'un kendisiyle; `nach → "-e doğru; sonra"`,
-  `nach → "-e (yön)"` **değil**.
-- **En çok iki çekirdek anlam.** Sözlükteki her kullanımı sıralama;
-  öğrencinin gerçekten ihtiyaç duyduğu iki temel anlamla sınırlı kal.
-- **Tek anlamlı işlev sözcüğü yine tek kalır:** `seit → "-den beri"`,
-  `ohne → "-siz"`. Gloss zorunluluk değil, gerçekten iki çekirdeği olana ait.
-- **İçerik sözcükleri bu istisnanın dışında** — isim/fiil/sıfat/zarf tek
-  karşılık kuralına tabidir; `"; "` yalnız işlev sözcüğünde.
+### Anlam çakışması
 
-Zamirlerde `er`/`sie`/`es` çakışması öncelikle İngilizceyle ayrışır
-(`he`/`she`/`it`; bkz. giriş). `sie` gibi gerçekten iki çekirdeği olan (dişil
-"o" + çoğul "onlar") bir zamirde `"o; onlar"` glossu uygundur.
-
-### Anlam çakışması: parantez değil, daha kesin Türkçe
-
-İki farklı Almanca kelimenin karşılığı birebir aynı çıkıyorsa ve kelimeler
-gerçekten farklı şeyler demekse, **parantezle dipnot düşme** — daha kesin bir
-Türkçe ifade seç. Pakette bunu görmen için `overlapping` alanı var.
+İki farklı kelimenin karşılığı aynı çıkıyor ama gerçekten farklı şeyler demekse daha kesin
+Türkçe seç; parantezle dipnot düşme. Paketteki `overlapping` alanı çakışan maddeleri (paketin
+dışındakiler dahil) gösterir. Kendi maddeni düzelt, ötekine dokunma.
 
 ```
 Schüler   →  "öğrenci"                 Student   →  "üniversite öğrencisi"
-auf sein  →  "açık olmak"              an sein   →  "çalışıyor olmak"
 Bein      →  "bacak"                   Fuß       →  "ayak"
 ```
 
-Kelimeler gerçekten eşanlamlıysa (`anfangen` / `beginnen`) ikisi de aynı
-karşılığı alır; zorlama ayrım yaratma. İngilizce alan zaten ayırıyor.
-
-`overlapping` listesi **paketinin dışındaki** maddeleri de gösteriyor: `man` A1'in
-ilk paketinde, `Mensch` çok sonrasında ve ikisi de "insan" almaya aday. Kendi
-maddende en kesin karşılığı seçmen yeterli; diğerini düzeltmek senin işin değil.
+Gerçek eşanlamlılar (`anfangen`/`beginnen`) aynı karşılığı alır; İngilizce zaten ayırır.
 
 ### Dilbilgisi maddeleri
 
-Bazı maddelerin Türkçede karşılığı yoktur, işlevi vardır. Orada dürüst cevap
-işlevin kendisidir:
+Türkçe karşılığı olmayan maddede dürüst cevap işlevdir: `der → "belirli artikel"` / `"the"`.
+Yalnız gerçekten karşılığı olmayanda; "edat", "bağlaç" gibi tür adları çeviri yerine geçmez.
 
-```
-der   →  "belirli artikel" / "the"
-```
+## `en`: tek doğal İngilizce karşılık
 
-Kaynak bu maddeye "bu, şu" diyor ama `formen` alanı "die, das" — yani bu bir
-tanımlık maddesi. "bu" demek `Der Bus kommt gleich.` cümlesi için düpedüz
-yanlış olurdu. Bunu yalnızca gerçekten karşılığı olmayan maddelerde yap;
-"edat", "bağlaç" gibi tür adları çeviri yerine geçmez.
-
-## `en` — tek doğal İngilizce karşılık
-
-Aynı kurallar: tek karşılık, virgül/parantez yok, küçük harf (özel isim değilse).
-İşlev sözcüklerinde aynı gloss istisnası geçerli — en çok iki çekirdek anlam
-`"; "` ile (`über → "over; about"`, `oben → "above; up there"`,
-`desto → "the more"`). Parantez burada da yasak.
-
-- **Fiiller `to` ile yazılır**: `essen → "to eat"`. Bu bir üslup tercihi değil:
-  Almancada isim/fiil çiftleri çok yaygın (`das Essen`/`essen`,
-  `die Arbeit`/`arbeiten`, `das Leben`/`leben`) ve Türkçede ikisi de aynı
-  kelimeye çöküyor. `to` olmadan liste ikizlerle dolar.
+- Aynı kurallar: tek karşılık, virgül/parantez yok, küçük harf (özel isim değilse).
+  İşlev sözcüğünde aynı `"; "` istisnası (`über → "over; about"`).
+- Fiiller `to` ile: `essen → "to eat"`. Kip fiili mastar almaz (`möchten → "would like"`,
+  `dürfen → "may"`).
 - İsimler tekil ve artikelsiz: `"table"`, `"food"`.
-- Amerikan yazımı (`color`, `apartment`).
+- **Amerikan İngilizcesi: hem yazım hem sözcük seçimi** (`color`, `apartment`, `sidewalk`,
+  `truck`; `colour`, `flat`, `pavement`, `lorry` değil). Liste: `data/conversations/spelling.mjs`.
+- Türkçeden değil, Almancadan çevir.
 
-## `beispiel` — tek, tam, kelimeyi içeren Almanca cümle
+## `beispiel`: tek, tam, kelimeyi içeren Almanca cümle
 
-Zorunlu ölçütler:
+1. **Kelimeyi içerir.** Çekimli hâl olur (`fahren` → `fährt`); ayrılabilir fiil bölünür
+   (`abfahren` → `"Der Zug fährt gleich ab."`). Başka kelime olmaz (`Arzt` için `Ärztin` yanlış).
+   Yalnız bir bileşiğin içinde geçmesi yetmez (`Fach` için `Lieblingsfach` yanlış): boşluk
+   doldurma turu kelimeyi sözcük sınırıyla arar. Denetleyici bunu yakalamaz, sen bakarsın.
+2. **Tek cümle.** Numaralı derleme, eğik çizgili varyant, `(vgl. …)`/`(siehe …)` artığı yok.
+3. **4–12 kelime.** 3–13 dışı hata, 4–12 dışı uyarı. Uzun cümle turlarda sessizce elenir.
+4. Nokta, soru ya da ünlem işaretiyle biter; büyük harfle başlar.
+5. **Seviyeye uygun.** A1: düz cümle, Präsens ya da Perfekt, yan cümle yok. B1'den itibaren
+   yan cümle, Passiv, Konjunktiv II serbest.
+6. Cümlenin taşıdığı anlam `tr` ve `en`e yazdığın anlamdır.
+7. **Doğal.** Gerçek bir Almanın kuracağı cümle; ders kitabı kokusu yok.
+8. **Özgün.** Yayımlanmış kelime listelerinin (Goethe, telc vb.) cümlesi alınmaz, çevrilerek de
+   alınmaz. Kapı: `npm run check:published-examples` (cümlenin kendisi değil özeti tutulur).
 
-1. **Kelimeyi gerçekten içerir.** Çekimli hâl kabul (`fahren` → `fährt`,
-   `Arzt` → `Arztes`). Ayrılabilir fiil cümlede bölünür ve bu doğrudur
-   (`abfahren` → `"Der Zug fährt gleich ab."`). Ama başka bir kelimeyle
-   değiştirilemez: `Disco` için `Diskothek`, `Arzt` için `Ärztin` **yanlıştır**.
+Kaynaktaki cümle bu ölçütlerin hepsini karşılıyorsa korunabilir; değiştirmek için sebep gerekir.
+Karşılamıyorsa ya da yayımlanmış listeden geliyorsa yeniden yazılır.
 
-   Kelime **yalnızca bir bileşiğin içinde** de geçemez: `das Fach` için
-   `"Mein Lieblingsfach ist Mathe."`, `der Laden` için `"im Buchladen"`
-   yetmez. Sebebi mekanik: boşluk doldurma turu kelimeyi sözcük sınırıyla
-   arıyor ve bileşiğin ortasını boşluğa çeviremiyor — yani o madde hiç
-   boşluk doldurma turu üretmiyor. Denetleyici bunu yakalayamıyor; bakması
-   gereken sensin.
-2. **Tek cümle.** Numaralı derleme yok, eğik çizgiyle birleştirilmiş varyant
-   listesi yok, `(vergl. Grammatik)` / `(siehe …)` gibi sözlük artığı yok.
-3. **4–12 kelime.** Telefonda tek satıra sığmalı ve cümle dizme turunda
-   dizilebilmeli.
-4. **Nokta, soru ya da ünlem işaretiyle biter.**
-5. **Seviyeye uygun.** A1 kelimesinin cümlesi A1 dilbilgisiyle kurulur: düz
-   cümle, Präsens ya da Perfekt, yan cümle yok. B1'den itibaren yan cümle,
-   Passiv ve Konjunktiv II serbest.
-6. **Cümlenin taşıdığı anlam, `tr` ve `en` alanına yazdığın anlamdır.**
-   `wohl → "galiba"` yazdıysan cümle "iyi hissetmek" anlamını göstermez.
-7. **Doğal.** Gerçek bir Almanın kuracağı cümle. Konuşma kitabı kokan
-   ("Das ist ein Tisch. Der Tisch ist braun.") cümleler kurma.
+Anlamı zayıf maddelerde (zamir, edat) cümle tipik kullanımı gösterir:
+`für → "Ich kaufe ein Buch für meine Schwester."`
 
-Kaynaktaki cümle bu yedi ölçütü **zaten karşılıyorsa aynen koru**. Değiştirmek
-için sebep gerekir, "daha iyi olabilirdi" sebep değildir. Pakettekilerin çoğu
-korunur; asıl işin bozuk olanları düzeltmek.
+## `beispielTr` ve `beispielEn`: o cümlenin doğal çevirisi
 
-Şahıs zamirleri ve edatlar gibi kendi başına anlamı olmayan maddelerde cümle,
-kelimenin **tipik kullanımını** gösterir: `für → "Ich kaufe ein Buch für meine
-Schwester."`
-
-## `beispielTr` ve `beispielEn` — o cümlenin doğal çevirisi
-
-- Yazdığın Almanca cümlenin çevirisi. Kaynaktaki eski cümlenin değil.
-- Birebir değil **doğal**: bir Türk'ün / İngiliz'in aynı durumda kuracağı cümle.
-- Tek cümle, numarasız, eğik çizgisiz.
-- Almanca cümle soru ise çeviri de sorudur.
+- Yazdığın Almanca cümlenin çevirisi, kaynaktaki eski cümlenin değil.
+- Birebir değil doğal. Tek cümle, numarasız, eğik çizgisiz.
+- Almanca soru ise çeviri de soru. İki çeviri birbirinin aynısı olmaz.
 
 ```
 beispiel     "Der Zug fährt gleich ab."
@@ -182,23 +106,16 @@ beispielEn   "The train is leaving shortly."
 
 ## Yaygın tuzaklar
 
-- **Anlamı kaynaktan devralma.** Kaynak `lang → "uzun"` diyor ama cümlesi
-  `kurz` üzerine. Cümleyi kelimeye uydur, tersini değil.
-- **İlk anlamı yanlış seçme.** Çok anlamlı bir maddede en yaygın anlamı seç,
-  sözlükteki ilk sırayı değil. `mal` sözlükte "kez" ile başlar ama günlük
-  Almancada `"Lueg mal"` yumuşatıcısıdır — burada seviye ve örnek cümle
-  belirleyicidir.
-- **Türkçeye çeviri kokusu.** `"gerçekleştirmek"`, `"husus"`, `"vuku bulmak"`
-  gibi karşılıklar kimsenin kullanmadığı sözlük Türkçesidir.
-- **İngilizceyi Türkçeden çevirme.** İkisi de Almancadan çevrilir; art arda
-  çeviri iki kat hata taşır.
-- **Cümleyi uzatma.** On iki kelimeyi geçen cümle turlarda kullanılamıyor ve
-  sessizce eleniyor — yani o kelime hiç boşluk doldurma turu üretmiyor.
+- **Anlamı kaynaktan devralma.** Kaynak `lang → "uzun"` diyor ama cümlesi `kurz` üzerine.
+  Cümleyi kelimeye uydur.
+- **En yaygın anlamı seç**, sözlükteki ilk sırayı değil. `mal` sözlükte "kez" ile başlar ama
+  günlük Almancada `"Schau mal!"` yumuşatıcısıdır.
+- **Türkçe `-mek` ile biten isim** (`ekmek`, `yemek`) fiil değildir; kaynaktaki `typ` kazanır.
 
 ## Çıktı
 
-Sana söylenen dosyaya, yalnızca geçerli bir JSON dizisi. Paketteki **her madde**
-çıktıda yer alır, **kaynakla aynı sırada**, id değiştirilmeden.
+Söylenen dosyaya yalnız geçerli bir JSON dizisi. Paketteki her madde, kaynakla aynı sırada,
+id değişmeden.
 
 ```json
 [
@@ -213,16 +130,14 @@ Sana söylenen dosyaya, yalnızca geçerli bir JSON dizisi. Paketteki **her madd
 ]
 ```
 
-Yazdıktan sonra **kendin denetle**:
+## Denetim
 
-```
-node data/meanings/check.mjs <paket-adı>
-```
+| Komut | Ne yapar |
+|---|---|
+| `npm run meanings:packets` | `in/` paketlerini üretir (gitignore) |
+| `node data/meanings/check.mjs <paket\|seviye\|all>` | mekanik kusurlar: çok anlamlılık, parantez, kelimesiz cümle, uzunluk, dil karışması, eksik madde |
+| `npm run check:published-examples` | yayımlanmış listelerden cümle |
+| `npm run meanings:apply -- [seviye\|paket\|all] [--dry]` | `out/`u veritabanına yazar (önce denetler; `db:seed` de `out/`u bindirir) |
 
-Denetleyici mekanik kusurları (çok anlamlılık, parantez, kelimeyi içermeyen
-cümle, uzunluk, bozuk JSON) yakalar. Temiz çıktı alana kadar düzelt; ancak
-ondan sonra işin bitmiştir. Denetleyicinin sustuğu yer doğruluk garantisi
-değildir — anlamın doğruluğu senin sorumluluğunda.
-
-Bitince yalnızca şu satırı döndür: `<paket>: <madde sayısı> tamam` ya da
-düzeltemediğin madde varsa gerekçesiyle birlikte listesi.
+Hata sıfır olana kadar düzelt. Denetleyicinin susması doğruluk garantisi değildir.
+Bitince yalnız şunu döndür: `<paket>: <madde sayısı> tamam` ya da düzeltemediğin maddeler ve gerekçesi.

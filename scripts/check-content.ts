@@ -2,7 +2,7 @@
  * İçerik doğrulayıcı — `npm run test:content` (WP-70)
  *
  *   npm run test:content                 # hepsi
- *   npm run test:content -- conversations      # tek tür: skills | conversations | words | cheatsheet
+ *   npm run test:content -- conversations      # tek tür: skills | conversations | words
  *   npm run test:content -- --baseline   # uyarı sayısını baseline'a yaz
  *
  * Kurallar `data/content/SPEC.md`'de; burası onların kodu. İki liste:

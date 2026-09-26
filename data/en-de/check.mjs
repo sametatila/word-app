@@ -2,6 +2,18 @@
  * İngilizce örnek cümlelerin Almanca çevirisini denetler:
  *   `node data/en-de/check.mjs [paket|seviye|all]`
  *
+ * KURAL. Almanca cümle, İNGİLİZCE CÜMLENİN çevirisidir; kelimenin başka bir
+ * örneği değil. İngilizce örnek cümleler Almanca cümlenin çevirisi değil, aynı
+ * kelime için bağımsız yazılmış cümleler; bu yüzden karşılık türetilemiyor,
+ * yazılıyor. Çeviri doğal Almancadır, kelimesi kelimesine değil ("I am afraid"
+ * → "Ich bin ängstlich" yanlış). Tek cümle, 3–16 kelime, sayılar ve soru/düz
+ * biçimi İngilizceyle aynı, Almanca karşılık cümlede geçer. Yayımlanmış kelime
+ * listelerinin cümlesine dönen çeviri olmaz (`npm run check:published-examples`).
+ *
+ * HAT. `node data/en-de/make-packets.mjs` `in/` üretir (gitignore) → paket
+ * `out/<paket>.json`a yazılır (commit edilir, tohumlama oradan okur) → bu
+ * denetleyici. İkisi birden: `npm run check:en-de`.
+ *
  * Ayrım bilerek: `hata` üretimi durdurur, `uyarı` durdurmaz. Uyarı, doğru
  * olabileceği gibi yanlış da olabilen bir işaret; hataya çevirmek yazarı doğru
  * işi bozmaya iterdi.

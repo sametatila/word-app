@@ -168,7 +168,7 @@ export type ConversationChat = {
    * `ask`i açılış repliğiyle aynı olmalı; en az `minTurns` tur içermeli ki
    * sağlayıcısız ortamda da konuşma geçilebilsin. Yoksa oynatıcı "hedef
    * kalıpları kullan" görevine düşer (`lib/conversations/offline-chat.ts`).
-   * İçerik ayrı dosyada durur (`content/scripts-*.ts`) ve `index.ts` bağlar.
+   * İçerik ayrı dosyada durur (`content/scripts-*.ts`) ve `source.ts` bağlar.
    */
   script?: DialogueTurn[];
 };

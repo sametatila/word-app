@@ -1,52 +1,34 @@
-# Kelime Verisi
+# Kelime verisi
 
-Havuzun tek kaynağı `app/words.json`. Dosya artık ham bir dışa aktarım değil,
-**canlı veritabanının tam görüntüsü**: `scripts/seed.ts` bu dosyadan çalıştığında
-üretimde sıfır fark üretir. Seviye (`niveau`), Türkçe karşılık, tip ve örnek
-cümleler tek tek gözden geçirilip düzeltilmiş durumda; kelime havuzu üzerinde
-çalışırken bu dosya esas alınır.
+Havuzun tek kaynağı `app/words.json`: canlı veritabanının tam görüntüsü. Değişiklik
+doğrudan bu dosyada (ve anlam paketleri `meanings/out`'ta) yapılır; her deploy'un
+sonunda `npm run db:seed` + `npm run db:seed:en` canlıya uygular.
 
-## Dosyalar
-
-| Dosya | Açıklama |
+| Dosya | İçerik |
 |---|---|
-| `app/words.json` | Almanca havuz — canlı DB'nin görüntüsü, satır başına bir JSON nesnesi |
-| `app/words-en.json` | İngilizce havuz (tr → en kursu) |
-| `app/beispiel-tr.json` | Örnek cümlelerin Türkçe çevirileri, kelime id'sine bağlı |
+| `app/words.json` | Almanca havuz, JSON dizisi — 8.704 madde (A1 906 · A2 1.447 · B1 1.836 · B2 2.061 · C1 2.454) |
+| `app/words-en.json` | İngilizce kurs havuzu, satır başına bir JSON — 7.163 madde, kimlik 200000+ |
+| `app/beispiel-tr.json` | Örnek cümle Türkçesi, kelime kimliğine bağlı (seed yedek olarak okur) |
+| `a2-expansion/de_50k.txt` | Almanca sıklık listesi (OpenSubtitles türevi, 50.000 satır); `rank` buradan okunur |
 
-## Alanlar
+**Alanlar:** `id, de, artikel, tr, en, formen, typ, niveau, rank, usage, beispiel, beispielTr, beispielEn`
 
-`id, de, artikel, tr, en, formen, typ, niveau, rank, beispiel, beispielTr, beispielEn`
+- `de` madde başı (artikelsiz), `artikel` der/die/das (isim değilse boş).
+- `tr` / `en` tek doğal karşılık; ikisi birlikte Türkçede çöken ayrımları ayırır.
+- `formen` çoğul eki ya da çekim biçimleri; türevler madde başı olmaz, buraya yazılır.
+- `typ` Nomen / Verb / Adjektiv / Sonstiges; `niveau` A1–C1.
+- `rank` sıklık sırası (düşük = sık): `de_50k.txt` satır numarası, uydurulmaz.
+- `usage` isteğe bağlı kullanım kodu (`src/lib/usage.ts` `USAGE_CODES`: akk, dat, ugs, brit …).
+- `words-en.json` ek alanları: `course` (`en`), `srcId` (türetildiği Almanca madde),
+  `deGloss` (Almanca anadilli için karşılık; boşsa `srcId`'den türetilir). Seed: `npm run db:seed:en`.
 
-- `de` — madde başı (artikelsiz), `artikel` — der/die/das (isim değilse boş)
-- `tr` / `en` — tek doğal karşılık; ikisi birlikte Türkçede çöken ayrımları ayırır
-  (er/sie/es üçü de "o", ama he/she/it)
-- `formen` — çoğul eki (isim) ya da çekim formları (fiil)
-- `typ` — Nomen / Verb / Adjektiv / Sonstiges
-- `niveau` — CEFR seviyesi A1–C1; patika ve oyun zorluğu bunu kullanır
-- `rank` — sıklık sırası; düşük sayı daha sık
+**Silme kilidi.** Seed kaynakta olmayan kelimeyi siler ve bu, kullanıcının o kelimedeki
+ilerlemesini de siler. Silinecek kelime `SEED_MAX_DELETE` (20) eşiğini aşarsa seed hiçbir
+şey yazmadan durur; bilinçli toplu silme `--allow-delete` ile elle yapılır.
 
-## Üretim
+**Yayımlanmış listelerden örnek cümle alınmaz.** `npm run check:published-examples` (CI'da)
+bilinen liste cümlelerinin geri girmesini durdurur; depoda yalnız cümle özetleri var
+(`data/published-examples.sha`).
 
-Havuz artık toplu bir dönüştürme adımıyla üretilmiyor. Değişiklikler doğrudan
-`app/words.json` (ve anlam paketleri `meanings/out`) üzerinde yapılır; canlıya her
-deploy'un sonunda `db:seed` + `db:seed:en` ile kendiliğinden gider (2026-09-26'dan beri,
-sunucudaki `deploy.sh`). Seed kaynakta olmayan kelimeyi siler ve bu, kullanıcının o
-kelimedeki ilerlemesini de siler: silinecek kelime `SEED_MAX_DELETE` (20) eşiğini aşarsa
-seed hiçbir şey yazmadan durur; bilinçli toplu silme `--allow-delete` ile elle yapılır.
-
-**Yayımlanmış listelerden örnek cümle alınmaz.** Havuzun ilk hâli bir sınav kurumunun
-herkese açık kelime listelerinden çıkarılmıştı; o listelerin örnek cümleleri 2026-09-26'da
-özgün cümlelerle değişti (Almanca 1.413, İngilizce kursta 720). `npm run check:published-examples`
-(CI'da) aynı cümlelerin geri girmesini durdurur; liste metni depoda yok, yalnız cümle
-özetleri (`data/published-examples.sha`).
-
-Doğrulama betikleri (`data/meanings/check.mjs`, `npm run test:seed`) fark bırakıp
-bırakmadığını denetler.
-
-## Doğrulama durumu
-
-- 3.192/3.192 madde çevrildi, boş çeviri yok.
-- Tüm çiftler ikinci bir turda kelime-çeviri-örnek uyumu için denetlendi; 6 düzeltme uygulandı.
-- Almanca `ä/ß` kalıntısı, bozuk kodlama, çeviride kalmış artikel: 0.
-- "CD, Film, Internet, Pizza" gibi 37 madde Türkçede de aynı olduğu için birebir aynıdır.
+Denetim: `node data/meanings/check.mjs all`, `npm run test:seed`. İçerik kuralları:
+`data/content/SPEC.md`.

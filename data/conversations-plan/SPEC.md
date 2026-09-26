@@ -1,150 +1,153 @@
 # Konuşma Üretim Şartnamesi
 
-Bu belge, konuşma içeriği üreten ajanın (Opus) uyacağı sözleşmedir. Müfredat
-`topics-a1.md … topics-c1.md` dosyalarında; her satır bir konuşma. Ajan bir
-partide (genellikle 10–20 konuşma) bu satırları alır ve aşağıdaki kurallarla tam
-konuşmalara dönüştürür. **Bu belgeden sapmak yasaktır; belirsizlikte mevcut altı
-örnek konuşma (src/lib/conversations/content/de-*.ts) emsaldir.**
+Konuşma (Patika'nın "Konuşma" adımı) üreten ajanın sözleşmesi. Kapı
+`npm run check:conversations` (`scripts/check-conversations.ts`); bu belge ile
+kapı çelişirse kapı geçerlidir, belge düzeltilir. Belirsizlikte aynı seviyedeki
+mevcut konuşmalar emsaldir.
 
-## 1. Ürünün ne olduğu
+Müfredat: Almanca kurs için `topics-a1.md … topics-c1.md` (her satır bir
+konuşma). Modül adları `src/lib/conversations/modules.ts` (`MODULE_THEMES`).
 
-Konuşma, Türkçe konuşan bir yetişkine Almanca öğreten **sesli, etkileşimli bir
-senaryo**. İki fazı var:
+## 1. Ürün
 
-1. **Anlatım (lecture):** Öğretmen Türkçe anlatır, hedefler Almancadır.
-   Kelimeler tek tek söyletilir, kalıp açıklanır, örnek tekrar ettirilir,
-   öğrenciden kendi cümlesini ÜRETMESİ istenir, doğru/yanlış ile sınanır.
-   Her adım konuşarak cevaplanır. Metinler sesli okunur: **yazı dili değil,
-   sıcak ve doğal konuşma dili yaz.**
-2. **Konuşma (chat):** Model, sahnedeki karakteri oynar ve konuşmayı
-   konuşmanın kalıplarının kullanılacağı yöne sürer. Sen yalnızca sahneyi, rolü
-   ve açılış repliğini yazarsın; konuşmanın kendisi çalışma anında üretilir.
+Türkçe konuşan yetişkine hedef dili öğreten sesli, etkileşimli senaryo. İki faz:
 
-## 2. Dosya ve kayıt düzeni
+1. **Anlatım (`lecture`):** öğretmen anadilde anlatır, hedefler hedef dilde.
+   Kelime söyletilir, kalıp açıklanır, örnek tekrar ettirilir, öğrenci kendi
+   cümlesini üretir, doğru/yanlışla sınanır. Metin sesli okunur: yazı dili değil,
+   sıcak konuşma dili.
+2. **Sohbet (`chat`):** model sahnedeki karakteri oynar. Sen yalnız sahneyi,
+   rolü, açılışı ve amacı yazarsın.
 
-- Parti dosyası: `src/lib/conversations/content/de-<seviye>-b<NN>.ts`
-  (ör. `de-a1-b01.ts`), dışa aktarım: `export const deA1B01: Conversation[] = [...]`.
-- Her seviyenin **ilk partisi**, o seviyenin mevcut örnek konuşmalarını kendi
-  konu numarasındaki yerine **taşır** (obje birebir kopyalanır, eski dosya
-  silinir) — katalog sırası böylece hep konu numarası sırası olur.
-- `src/lib/conversations/index.ts` içindeki `CONVERSATIONS` dizisine parti, konu
-  numarası sırasını koruyacak konuma eklenir.
-- Kimlik: `de-<seviye>-<slug>` — slug, konular dosyasında verilmiştir;
-  değiştirme. İkon da konular dosyasından gelir (tip: `ConversationIcon`).
-- İçerik dosyaları `tr()` ve `de()` yardımcılarını `../types`'tan alır.
+## 2. Dosya ve kayıt
 
-## 3. Konuşma iskeleti (zorunlu sıra)
+| Kurs | Dosya | Biçim |
+|---|---|---|
+| Almanca (`de`) | `src/lib/conversations/content/de-<seviye>-b<NN>.ts`, `export const deA1B01: Conversation[]` | TS, `tr()`/`de()` yardımcıları `../types`'tan |
+| İngilizce (`en`) | `src/lib/conversations/content/en-<seviye>.json` | JSON, segment dili `tr`/`en` |
 
-Adım sayısı 14–24. Sıra:
+- Yeni dosya `src/lib/conversations/source.ts` içindeki `CONVERSATIONS`'a,
+  katalog sırasını bozmadan eklenir. Harita konuşmaları katalog sırasıyla 10'arlı
+  modüllere, 4'erli ünitelere böler: sıra müfredatın kendisidir.
+- Kimlik `<kurs>-<seviye>-<slug>` (`de-a1-hallo`, `en-b1-…`). **Kimlik bir kez
+  yayımlandıktan sonra değişmez, silinmez, yeniden kullanılmaz:**
+  `user_conversations` birincil anahtarı `(user_id, conversation_id)`.
+- Konu satırı varsa id, başlık, ikon, `focusId` oradan birebir alınır.
+- **Konu satırı yoksa** (Almanca B1 modül 11–18, İngilizce kurs): tema
+  `MODULE_THEMES`'ten; ikon `CONVERSATION_ICONS` listesinden
+  (`src/lib/conversations/types.ts`, 65 simge), `focusId` aynı modüldeki komşu
+  konuşmaların kullandığı odaklardan seçilir. Yeni simge ya da odak uydurulmaz.
 
-1. **Onay girişi** (`confirm`): "Merhaba/Bugün …! X, Y ve Z'yi öğreneceğiz.
-   Başlamaya hazır mısın?" — konuşmanın vaadini somut söyler.
-2. **Çerçeve** (beklentisiz `say`): kalıpların ne işe yaradığı, tek küçük
-   paragraf. Sonu "Önce kelimeleri öğrenelim." benzeri bir köprü.
-3. **5 kelime, 5 `repeat` adımı.** Kalıp: "İlk/İkinci/Üçüncü/Dördüncü/Son
-   kelimemiz:" + `de(kelime)` + "Türkçesi '…' demek. Lütfen" + `de(kelime)` +
-   "deyin." Sıra sabittir; övgüyü motor ekler, içerik eklemez.
-4. **Kalıp blokları** (kalıp başına): açıklama `say` → örnek cümle `repeat` →
-   `produce`. En az 2 kalıp bloğu; üçüncü kalıp (soru kalıbı gibi) tek
-   `repeat` ile verilebilir.
-5. **`truefalse`**: "Son bir doğru-yanlış alıştırması:" + `de(cümle)` +
-   "cümlesi doğru mu, yanlış mı?" — yargılanan cümle MUTLAKA bir `de`
-   segmentinde geçer.
-6. **Kapanış** (beklentisiz `say`): bir cümle özet + konuşma sahnesine köprü
-   ("Şimdi … karşısındasın: …"). Beklenti YOK — düğmeyle geçilir.
+## 3. Konuşma başına sözleşme
 
-Puanlanan adımlar: en az 2 `produce` + 1 `truefalse` (toplam ≥ 3).
+| Alan | Kural (kapı) |
+|---|---|
+| `vocab` | **tam 8 kelime**; her biri bir `repeat` hedefinde geçer |
+| `patterns` | 2–3 kalıp |
+| `lecture` | 14–24 adım; ilk adım `confirm`, son adım beklentisiz |
+| puanlanan adım | en az 2 `produce` + en az 1 `truefalse` (toplam ≥ 3) |
+| `minutes` | 6–15 |
+| `summary` | tek cümle (> 15 karakter) |
+| `chat.minTurns` | 6–9 |
+| `chat.goal` | > 25 karakter, `scene`'in kopyası değil |
+| `chat.opening` | soru işareti içerir |
 
-## 4. Dil kalitesi — en önemli bölüm
+Yeni konuşmanın hedefi (İngilizce kursta B1–C1 böyle yazıldı): 8 kelime,
+3 kalıbın üçü de modellenir ve **üçü de üretilir**, her `produce` adımında
+eşdeğer doğru cevaplar `accept` dizisinde.
 
-**Türkçe (anlatım):**
-- Sen-diliyle, sıcak, kısa cümleler. Çeviri kokusu yasak: "Bu, senin için
-  önemlidir" değil, "Bunu çok kullanacaksın".
-- Dilbilgisi terimlerini Türkçe karşılığıyla ve EN AZ terimle anlat; terimi
-  kullanacaksan bir kez tanımla ("belirtme hâli, yani Akkusativ").
-- Türkçeyle KARŞITLIK kur: kural, Türkçede olmayan/farklı olan şey üzerinden
-  anlatılır ("Türkçede fiil sona gider, Almancada ikinci sırada durur").
-- Çeviriler doğal Türkçe: "Ich möchte einen Kaffee" → "Bir kahve istiyorum"
-  (asla "Ben bir kahveyi istemekteyim" gibi).
+Bugünkü değerler (yeni konuşma komşularına uyar):
 
-**Almanca (hedefler):**
-- Kusursuz ve seviyeye uygun. Kelimeler havuzun o seviyedeki katmanıyla
-  hizasında (`data/app/words.json`, `niveau`); seviyenin üstünde yapı ve
-  kelime kullanma.
-- Adlar HEP artikelli öğretilir: `das Fieber`. Fiiller mastar hâlinde;
-  dönüşlüler `sich` ile.
-- Hedef cümleler KONUŞULABİLİR olmalı: tanıyıcı dostu, 3–9 kelime; özel ad
-  gerekiyorsa yaygın olanlar (Anna, Ali, Berlin, Izmir). Noktalama hedefin
-  parçası değildir (değerlendirme noktalamayı zaten atar).
-- Bir üretim hedefinin eşdeğer doğru biçimleri varsa `accept` listesine yaz.
+| Seviye | `minutes` de / en | `minTurns` de / en |
+|---|---|---|
+| A1 | 8–9 / 8–9 | 6–7 / 6–7 |
+| A2 | 10 / 8–9 | 8 / 6–7 |
+| B1 | 10–12 / 10–11 | 8–9 / 7–8 |
+| B2 | 12 / 11 | 8–9 / 7 |
+| C1 | 14 / 12–14 | 8–9 / 8–9 |
 
-**Segment disiplini:**
-- Türkçe metin `tr()`, Almanca metin `de()` segmentinde durur — HİÇ karışmaz.
-  Almanca kelimeyi Türkçe cümlenin içine yazmak yasaktır (yanlış sesle
-  okunur). Kalıbın devamı "…" ile gösterilebilir (seslendirmede atılır).
-- Parantezli açıklama yazma: seslendirme parantez içini okumaz, anlam kaybolur.
+`minTurns` `goal`'un kaç sonuç istediğine göre seçilir: üç ve daha çok sonuçlu
+amaç bir tur fazlasını alır. Çevrimdışı `script` varsa tur sayısı `minTurns`'ten
+az olamaz.
 
-## 5. Alıştırma tasarımı
+## 4. Anlatım iskeleti
 
-- **`produce` ipucu (`hint`):** önce hatanın tipik SEBEBİ, sonra doğru cümle
-  `de` segmentinde, sonunda "Tekrar dene." — ipucu "yanlış" demez, öğretir.
-- **`truefalse`:** cümlede TEK ve net bir hata olur (ya da cümle doğrudur).
-  `answer` dağılımı katalog genelinde %25–60 doğru olmalı — hep "yanlış"
-  yazarsan öğrenci okumadan cevaplıyor. `why` hatayı adlandırır ve doğrusunu
-  `de` segmentiyle verir.
-- Üretim hedefleri katalogda benzersiz olsun; aynı cümleyi iki konuşmaya koyma.
-- Önceki konuşmaların kelimelerini örneklerde ve konuşmada YENİDEN KULLAN
-  (sarmal tekrar) — ama `vocab` listesine yalnızca yeni öğretilen 5 kelime
-  girer. Aynı seviyede bir kelime iki kez "yeni" diye öğretilmez.
+1. **Onay** (`confirm`): konuşmanın vaadini somut söyler, "Başlamaya hazır mısın?"
+2. **Çerçeve** (beklentisiz `say`): kalıpların ne işe yaradığı; sonu kelimelere köprü.
+3. **8 kelime, her biri kendi `repeat` adımıyla:** sıra sözü ("İlk kelimemiz:",
+   "Sıradaki", "Son kelimemiz:") + hedef dil segmenti + "Türkçesi '…' demek" +
+   tekrar isteği. Aynı kelime aynı konuşmada iki kez "yeni" diye öğretilmez.
+4. **Kalıp blokları:** açıklama `say` → örnek `repeat` → `produce`.
+5. **`truefalse`:** yargılanan cümlenin tamamı adımın hedef dil segmentinde geçer.
+6. **Kapanış** (beklentisiz): tek cümle özet + sohbet sahnesine köprü.
 
-## 6. Konuşma fazı (chat)
+## 5. Dil
 
-- `scene`: Türkçe, öğrenciye emir kipiyle ne yapacağını söyler ve konuşmanın
-  kalıplarını adres gösterir (30+ karakter).
+**Türkçe anlatım**
+- Sen-diliyle, kısa, sıcak cümleler; çeviri kokusu yok ("Bunu çok kullanacaksın").
+- Terim az; kullanılırsa bir kez tanımlanır ("belirtme hâli, yani Akkusativ").
+- Kural Türkçeyle karşıtlık üzerinden anlatılır.
+- Çeviriler doğal Türkçe.
+
+**Hedef dil**
+- Kusursuz ve seviyeye uygun; kelimeler havuzun o seviyedeki katmanından
+  (`data/content/SPEC.md` › Havuz ve seviye kuralları).
+- Almanca adlar artikelli (`das Fieber`), fiiller mastar, dönüşlüler `sich` ile.
+- İngilizce **Amerikan yazımı ve Amerikan sözcük seçimi** (anadil hatlarında
+  kapı `data/conversations/spelling.mjs`).
+- Hedef cümle konuşulabilir: tanıyıcı dostu, 3–9 kelime, yaygın özel adlar.
+
+**Segment disiplini**
+- Anadil metni `tr` segmentinde, hedef dil kendi segmentinde; karışmaz. Türkçe
+  segmentte alıntılanmış hedef dil cümlesi kapı hatasıdır (yanlış sesle okunur).
+  Tek terim ("Plusquamperfekt", "I would like") serbest.
+- Parantezli açıklama yok (seslendirme okumaz). Markdown, madde işareti yok.
+
+## 6. Alıştırma tasarımı
+
+- **`produce` ipucu:** önce hatanın tipik sebebi, sonra doğru cümlenin
+  **tamamı** hedef dil segmentinde, sonunda "Tekrar dene." (kapı tam cümleyi arar).
+- **`truefalse`:** tek ve net bir hata ya da doğru cümle. Doğru cevap payı kurs ×
+  seviye başına %25–60 (kapı uyarısı). `why` hatayı adlandırır, doğrusunu verir.
+- Üretim hedefleri ve hüküm cümleleri katalogda benzersiz.
+- Önceki konuşmaların kelimeleri örneklerde yeniden kullanılır, ama `vocab`'a
+  yalnız yeni öğretilen kelime girer; seviye içinde bir kelime iki kez "yeni" olmaz.
+- **Övgü yazılmaz:** `repeat`/`produce` sonrası adım övgüyle başlamaz; övgüyü
+  motor ekler (yanlış cevapta eklemez).
+
+## 7. Sohbet ve meta alanlar
+
+- `scene`: Türkçe, emir kipiyle öğrencinin ne yapacağı, kalıplara işaret (> 30 karakter).
 - `partner`: Türkçe sıfat + rol ("sabırsız ama iyi kalpli bir satıcı").
-- `opening`: Almanca, en fazla 2 cümle, SORUYLA biter. `openingTr` doğal
-  Türkçesi.
-- `goal`: Türkçe, tek cümle — konuşma NE OLUNCA tamamlanır. Bir konu başlığı
-  değil bir SONUÇ yazılır: "Sipariş verilmiş, gelmiş ve hesap istenmiş olur."
-  Sahnenin kopyası olamaz; sahne öğrencinin ne yapacağını, amaç konuşmanın
-  nerede biteceğini söyler. Bu alan olmadan model tur sayısı dolana kadar soru
-  soruyor ve konuşma bitmiyor, KESİLİYOR.
-- `minTurns`: 6–9. Sabit değil, `goal`in kaç adım istediğine bağlı: iki
-  sonuçlu amaç taban turu, üç ve daha çok sonuçlu amaç bir tur fazlasını alır.
-  Taban seviyeyle yükselir (A1 6, A2 7, B1 8); adım sayısı fazlaysa sırasıyla
-  7, 8, 9. (Model konuşmayı dört fazda sürüyor — açılış, gelişme, toparlama,
-  kapanış — ve son turda amacı sonuçlandırıp veda ediyor; sistem hallediyor,
-  içerik karışmaz.)
-- Konuşmanın çevrimdışı `script`i varsa tur sayısı `minTurns`tan az olamaz: az
-  olursa sağlayıcısız ortamda konuşma hiç geçilemez (doğrulayıcı hata verir).
+- `opening`: hedef dilde en çok 2 cümle, soruyla biter; `openingTr` doğal Türkçesi.
+  Açılış ve başlık seviye içinde yinelenmez.
+- `goal`: konuşma NE OLUNCA biter, bir sonuç ("Sipariş verilmiş ve hesap
+  istenmiş olur."). Bu alan olmadan sohbet bitmiyor, kesiliyor.
+- `title` hedef dilde, `titleTr` kısa Türkçesi, `summary` ne öğrettiğini söyler.
 
-## 7. Meta alanlar
+## 8. Anadil eksenleri
 
-- `title` Almanca senaryo adı ("Beim Arzt"); `titleTr` kısa Türkçesi.
-- `summary` tek cümle: konuşmanın NE öğrettiği ("… öğretir: …" kalıbı iyi).
-- `minutes`: A1–A2 → 8–9, B1 → 10, B2 → 11, C1 → 12.
-- `focusId` konular dosyasından; aynı odak birden çok konuşmada olabilir
-  (sarmal), ad UYDURMA — dosyadakini kullan.
-- `icon` konular dosyasından. Geçerli değerlerin tek kaynağı
-  `src/lib/conversations/types.ts` içindeki `ConversationIcon` tipidir (65 simge);
-  listede olmayan bir değer tip hatası verir. Simge eklemek üreticinin işi
-  değildir — konu dosyasındaki değeri aynen kullan.
+Her yeni Türkçe dize öteki anadillerde de karşılık ister:
 
-## 8. Kalite kapıları — partiyi bitirmeden
+| Kaynak | Hat | Kapı |
+|---|---|---|
+| Almanca kurs konuşmaları | `data/conversations/{lecture,chat,meta,patterns,vocab,…}` → İngilizce | `check:conversations-native` |
+| İngilizce kurs konuşmaları | `data/conversations/prose-de` → Almanca | `check:native-de` |
 
-1. `npx tsc --noEmit` → sıfır hata.
-2. `npm run check:conversations` → sıfır HATA; uyarıları oku, haklıysa düzelt.
-3. Kendi gözden geçirmen: her Almanca cümleyi ana dili Almanca biri gibi,
-   her Türkçe cümleyi ana dili Türkçe biri gibi oku. Emin olmadığın cümleyi
-   YAZMA — daha basitini yaz.
-4. Aynı partide iki konuşmanın aynı sahne/aynı soru kalıbıyla açılmadığını
-   kontrol et: girişler, örnekler ve sahneler çeşitlensin.
+Mobil anadil dökümü `npm run dump:native`.
 
-## 9. Yasaklar
+## 9. Kapılar
 
-- Motorun eklediği övgüyü içeriğe yazmak (tekrar/üretimden sonraki adım
-  övgüyle başlamaz).
-- Markdown/yıldız/madde işareti (metinler sesli okunuyor).
-- Seviye üstü kelime ve yapı; birden çok yeni kural aynı konuşmada.
-- "Konuşma 12" gibi künye dili; her konuşma kendi başına bir sohbettir.
-- Konu dosyasındaki id/başlık/ikon/odak alanlarını değiştirmek.
+```
+npx tsc --noEmit
+npm run check:conversations     # sıfır HATA; yeni uyarı taban dosyasına girmeden düşürür
+npm run test:content -- conversations
+npm run check:native-de         # İngilizce kurs
+npm run check:dumps             # mobil döküm kaynakla aynı
+```
+
+Kapıyı `npx tsx scripts/check-conversations.ts` ile doğrudan çağırma:
+`server-only` importu yüzünden sessizce çöker. Hep `npm run` ile.
+
+Son okuma: her hedef dil cümlesini anadili o dil olan biri gibi, her Türkçe
+cümleyi anadili Türkçe biri gibi oku. Emin olmadığın cümleyi daha basitiyle değiştir.

@@ -1,80 +1,118 @@
-# İçerik şartnamesi — tek kaynak (WP-70)
+# İçerik şartnamesi
 
-Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve **tek bir doğrulayıcıdan** geçer: `npm run test:content` (`scripts/check-content.ts`). İçerik üreten ajan (insan ya da model) bu belgeye göre yazar, doğrulayıcı yeşil olmadan içerik depoya girmez. Yeni bir içerik türü eklemek üç adımdır: burada bölüm, `src/lib/**/types.ts`'te tip, doğrulayıcıda kural.
+Beceri egzersizleri ve kelime havuzu için tek şartname. Kodu
+`scripts/check-content.ts` (`npm run test:content`); belge ile kapı çelişirse
+kapı geçerlidir, belge düzeltilir. Konuşmalar: `data/conversations-plan/SPEC.md`.
 
-## İçerik türleri ve yerleri
-
-| Tür | Tip | Dosya | Kimlik |
+| Tür | Tip | Yer | Kimlik |
 |---|---|---|---|
-| Beceri egzersizi (okuma/dinleme/yazma/konuşma/dil bilgisi) | `SkillExercise` — `src/lib/skills/types.ts` | Patika üniteleri: `src/lib/skills/content/{a1..c1}-uNN.ts`; Beceriler kütüphanesi (ünitesiz, iki kurs): `content/library/<kurs>-<seviye>.ts` → `bundled.ts` | `"a1-u1-r1"`, `"de-a2-lib-g1"` — kalıcı, değiştirilmez |
-| Konuşma | `Conversation` — `src/lib/conversations/types.ts` | `src/lib/conversations/content/de-{a1..b1}-bNN.ts` → `index.ts` | `"de-a1-hallo"` |
-| Çevrimdışı sohbet senaryosu | `DialogueTurn[]` — `src/lib/dialogue.ts` | `src/lib/conversations/content/scripts-*.ts` (konuşma kimliğiyle) | konuşmanın kimliği |
-| Dilbilgisi sayfası | `CheatSheet` — `src/lib/cheatsheet/types.ts` | `src/lib/cheatsheet/de-{a1..c1}.ts` | `"a1-artikel"` |
-| Kelime havuzu | `data/app/words.json` → `words` tablosu | `data/*` hattı (bkz. `data/README.md`) | sayısal |
-| Dilbilgisi drill'i (WP-11) | `Drill` — `src/lib/cheatsheet/drills.ts` (henüz yok) | `src/lib/cheatsheet/drills-*.ts` | `"<sheetId>/<n>"` |
+| Ünite egzersizi (Patika) | `SkillExercise` (`src/lib/skills/types.ts`) | `src/lib/skills/content/{a1..c1}-uNN.ts`, `en-<seviye>-uNN.ts` | `b1-u3-r1`, `en-a1-u3-l2` |
+| Kütüphane egzersizi | `SkillExercise`, `unit` yok | `src/lib/skills/content/library/<kurs>-<seviye>[-pN].ts` | `de-a2-lib-g1` |
+| Kelime havuzu | `words` tablosu | `data/app/words.json`, `words-en.json` (bkz. `data/README.md`) | sayısal |
 
-Çalışma zamanı: beceri egzersizleri `npm run db:seed:skills` ile `skill_exercises` tablosuna yüklenir (tablo boşsa gömülü kopya); konuşmalar ve dilbilgisi doğrudan koddan okunur.
+**Kimlikler asla değiştirilmez, yeniden kullanılmaz, yeniden numaralanmaz:**
+`user_skills` birincil anahtarı `(user_id, exercise_id)`, `user_conversations`
+`(user_id, conversation_id)`. Kimlik değişirse canlı ilerleme kopar.
 
-## Dil kuralları (her tür için)
+## Dil kuralları
 
-- **Türkçe açıklama, Almanca içerik.** Öğrenciye söylenen her şey Türkçe (`tr`, `explain`, `cue`, `hint`, `why`, `summary`); öğrencinin okuyup söyleyeceği her şey Almanca. İngilizce yalnız `en` alanlarında, ayırt edici olarak.
-- **Tek doğal karşılık.** `tr` ve `en` alanlarında virgülle ikinci anlam yok (`"kalkmak, hareket etmek"` yasak). Kalıplarda (`…`, `/`) çizgi ve üç nokta serbest. Parantezli açıklama `tr`'ye girmez; `note` alanına gider.
-- **Havuzla tutarlılık.** Egzersiz sözlükçesi ve konuşma kelimeleri kelime havuzundaki karşılığı kullanır; metin gerçekten başka anlam kullanıyorsa bağlamsal karşılık yazılır ve bu bilinçli bir sapmadır (doğrulayıcıda uyarı). Havuzda olmayan kelime uyarıdır; A1/A2 içeriğinde havuz dışı kelime %10'u geçmemeli.
-- **Yazım.** Almanca alanlarda Türkçe harf (ı İ ğ Ğ ş Ş) yok; Türkçe alanlarda ß/umlaut yalnız alıntı içinde. İsimler büyük harfle. `ss`/`ß` kurs kuralına göre: `de` kursunda ß, `gsw-zh` kursunda ss.
-- **Uzunluk.** Okuma metni A1 60–120, A2 100–180, B1 150–260, B2 200–350, C1 250–450 kelime. Dinleme bölümü tek satırda ≤ 40 kelime. Soru ≤ 30 kelime. `explain`/`why` tek cümle, ≤ 200 karakter.
-- **Seviye.** Yapılar seviyenin dilbilgisi tablolarını aşmaz: A1 Präsens/Perfekt(sık fiiller)/ana cümle; A2 Perfekt/Modal/weil-dass/Dativ edatları; B1 yan cümle çeşitleri/Konjunktiv II nezaket/Passiv Präsens; B2 Passiv çeşitleri/Konjunktiv/Partizip; C1 serbest.
-- **Yasaklar.** İngilizce açıklama yok; "çeviri yerine örnek" — kural anlatırken Almanca örnek ver, İngilizceyle açıklama; öğrenciyi suçlayan dil yok; emoji yok.
+- **Açıklama Türkçe, içerik hedef dilde.** `intro`, `explain`, `why`, `hint`
+  Türkçe; öğrencinin okuyup söylediği her şey hedef dilde. İngilizce kursta `de`
+  alanları hedef dil (İngilizce) metnidir.
+- **Tek doğal karşılık.** `tr`/`en` alanında virgülle ikinci anlam yok; kalıplarda
+  `…` ve `/` serbest. Parantezli açıklama `tr`'ye girmez (uyarı), `note`'a gider.
+- **Sözlükçe metnin anlamını verir.** Anlam havuzdakiyle aynıysa havuzun sözcüğü
+  birebir; metin gerçekten başka anlam kullanıyorsa bağlamsal karşılık.
+  `en`: fiil `to` ile, isim tekil, artikelsiz, küçük harf.
+- **Yazım.** Hedef dil metninde ı İ ğ Ğ ş Ş yok (büyük harfli özel adlar hariç;
+  hata). İngilizce Amerikan yazımı ve Amerikan sözcük seçimiyle.
+- **Uzunluk (uyarı).** Okuma metni A1 60–120, A2 100–180, B1 150–260, B2 200–350,
+  C1 250–450 kelime (±%40 dışı uyarı). Dinleme bölümü ≤ 40, soru ≤ 30 kelime.
+  `explain` tek cümle; 260 karakteri aşan uyarı.
+- **Seviye.** A1 Präsens/sık fiillerde Perfekt/ana cümle; A2 Perfekt, modal,
+  weil/dass, Dativ edatları; B1 yan cümleler, nezaket Konjunktiv II, Passiv
+  Präsens; B2 Passiv çeşitleri, Konjunktiv, Partizip; C1 serbest.
+- **Yasak.** İngilizce açıklama, suçlayan dil, emoji.
 
-## Zorunlu alanlar ve iş kuralları
+## SkillExercise
 
-### SkillExercise
-- `id` benzersiz (bütün kurslar arasında), `level` ∈ A1–C1, `title` Almanca, `genre`, `intro` Türkçe, `minutes` 1–20.
-- `gloss[]`: `de` metinde geçer (`contains`, `data/meanings/contains.mjs`), `tr` tek karşılık, `en` var (uyarı).
-- `questions[]` (okuma/dinleme): ≥ 3 soru; `explain` Türkçe, boş değil — geri bildirimin "neden"i budur (WP-13). `kind` (WP-31): `mcq`/`truefalse` → `options` 2–4, `answer` indeks aralıkta; `gapfill` (soruda `___`), `short_answer` (≤ 5 kelime), `dictation` (cümle bölümlerde geçer) → `accept[]` (ilk kanonik), `options: []`, `answer: 0`; `order` → `items[]` doğru sıra (3–6). Egzersiz başına çoktan seçmeli olmayan ≥ 2 soru hedefi (uyarı).
-- `cando?: string[]` — CEFR yapabilirlik etiketleri (WP-43 listesi; şimdilik serbest kısa etiket, ör. `"a1.self.introduce"`).
-- Yazma `free` görevi: `checklist` ≥ 2, `minWords` 15–200, `phrases` ≥ 2, `sample` ≥ minWords kelime.
-- Yazma görev türleri (WP-31): `reply` (free + zorunlu `stimulus`), `form` (`facts` Türkçe, `fields[]` 3–8: `label` Almanca alan adı, `answer`, `accept?`), `rewrite` (`prompt` Türkçe yönerge, `source` ≠ `answer`, `alternatives?`, `why?`), `summary` (B1+; `source`, `maxSentences` 1–4, `sample`).
-- Konuşma drill'i: `tasks` ≥ 4, her `de` ≤ 12 kelime; `confusions[].heard` boş değil.
-- Konuşma diyaloğu: `dialogue[].id` benzersiz, her `next` var olan bir tura gider, `fallback.example` boş değil, `targets` ≥ 2.
-- Konuşma monoloğu: `bulletsTr` 3–5, `minSeconds` ≥ 20 < `maxSeconds` ≤ 120, `sampleDe` ≥ 30 kelime, `targets` ≥ 2.
-- Dil bilgisi (`skill: "grammar"`, yalnız kütüphane): `focus` Türkçe tek satır, `explanation[]` 1–5 blok (`tr` Türkçe; `examples[].de` hedef dil, `tr` Türkçe), toplam örnek ≥ 3, `questions[]` 6–12 (okuma/dinlemeyle aynı soru kuralları), `unit` yok.
-- Kütüphane kimliği `<kurs>-<seviye>-lib-<r|l|w|s|g><n>`: kurs, seviye ve beceri harfi egzersizle uyuşur; `unit` yok (Patika'ya sızar). İngilizce kursta (`course: "en"`) `de` alanı hedef dil (İngilizce) metnidir ve sözlükçede `en` aranmaz.
+- `id` bütün kurslarda benzersiz; `level` A1–C1; `genre` kapalı listeden
+  (`GENRES`, çeviri anahtarı `genre.*`); `minutes` 1–20; `cando` yalnız tanımlı kimlikler.
+- Aynı seviyede iki ayrı ünitede aynı başlık hata (aynı ünite içinde serbest).
+- `gloss`: her `de` metinde geçer (`data/meanings/contains.mjs`; okuma/dinlemede
+  soru ve şıklar da sayılır), aynı madde iki kez yok, `tr` dolu.
+- **Okuma/dinleme:** ≥ 3 soru, her soruda `explain`. `mcq`/`truefalse` 2–4 şık;
+  `gapfill` (soruda `___`), `short_answer` (gösterilen cevap ≤ 5 kelime),
+  `dictation` (cümle bölümlerde geçer) → `accept[]`, ilki kanonik; `order` 3–6
+  madde ve kökteki sayı madde sayısıyla tutar. **En az 2 çoktan seçmeli olmayan
+  soru** (uyarı) **ve en az 1 şıklı soru:** seviye sınavı (`exam.ts` `pickTexts`)
+  yalnız ≥ 2 şıklı soruları alır; şıklı sorusu olmayan metin sınav havuzuna girmez
+  (`npm run test:exams`).
+- **Doğru/yanlış dengesi:** `True/False` ya da `Richtig/Falsch` şıklı sorularda
+  "doğru" payı kurs × seviye başına (ünite ve kütüphane ayrı, ≥ 20 soruda)
+  %35–65; dışı hata.
+- `monologue` türü tek konuşmacı (hata).
+- **Yazma:** `free` checklist ≥ 2, `minWords` 15–200, phrases ≥ 2, `sample` ≥
+  minWords; `reply` + `stimulus`; `form` 3–8 alan; `rewrite` `source` ≠ `answer`
+  ve `why` zorunlu; `build` `hint` zorunlu (yanlış denemeden sonra gösterilir);
+  `sentence` 2–3 kelime; `summary` yalnız B1+. Her yazma setinde Türkçe
+  konuşanın tipik aktarım hatasını hedefleyen bir `rewrite` önerilir.
+- **Konuşma:** drill ≥ 4 görev, cümle ≤ 12 kelime, `confusions[].heard` tanıyıcı
+  çıktısıdır (hedef dil alfabesinde, hedef cümlenin kendisi değil); diyalog
+  `next`'leri kopuk değil, `fallback.example` dolu, `theme.role/goal` dolu;
+  monolog `bulletsTr` 3–5, 20 ≤ minSeconds < maxSeconds ≤ 120, `sampleDe` ≥ 30 kelime.
+- **Dil bilgisi** (yalnız kütüphane): `focus`, 1–5 anlatım bloğu, ≥ 3 örnek,
+  6–12 soru, `unit` yok.
+- **Kütüphane kimliği** `<kurs>-<seviye>-lib-<r|l|w|s|g><n>`: kurs, seviye ve beceri
+  harfi egzersizle uyuşur; `unit` alanı olmaz (Patika'ya sızar).
 
-### Conversation
-- `id` benzersiz, `level`, `course`, `icon` listeden, `title` Almanca, `titleTr`/`summary` Türkçe, `minutes` 3–20, `focusId` boş değil.
-- `vocab` 4–10 (`de`, `tr`), `patterns` 2–5.
-- `lecture` 8–20 adım; puanlanan adım (`produce`/`truefalse`) ≥ 3; `produce` adımında `hint` boş değil, `target` Almanca; `truefalse` adımında `why` boş değil; `repeat` payı ≤ %60 (WP-62 hedefi %40 — uyarı).
-- `chat`: `scene` Türkçe, `partner`, `opening` Almanca, `openingTr`, `minTurns` 2–6; `script` varsa: ≥ `minTurns` tur, `script[0].ask === opening`, her `next` var, her turun `fallback.example`i var, `replies[].match` ≥ 2 kök.
-- `cando?: string[]`.
+## Ünite egzersizleri
 
-### CheatSheet
-- `id` benzersiz, `level`, `title` Türkçe, `de` Almanca, `summary`; `blocks` ≥ 1; tablo bloklarında her satır `columns.length` hücre.
+- Ünite başına altı egzersiz: 2 okuma + 2 dinleme + 2 yazma; dosya
+  `<seviye>-uNN.ts` (İngilizce `en-<seviye>-uNN.ts`), kimlik
+  `<seviye>-u<n>-<r|l|w><1|2>` (İngilizce `en-` önekli).
+- **Liste sırası önemli.** `buildTrack` (`src/lib/immersion/build.ts`) yuvaları
+  `unit` alanına değil liste sırasına göre imleçle doldurur (ünite = 4 konuşma).
+  Ünite dosyaları seviye listesinin (`b1.ts`, `en-a1.ts` …) **başında**, ünite
+  sırasıyla durur. Ünite dosyası olmayan egzersiz arkaya konur; öne konursa bir
+  ünitenin yuvasını kapar.
+- Metin o üniteye kadar öğretilen kelime ve kalıpların dışına çıkmaz; çıkan sözcük
+  sözlükçede verilir. Ölçü: `npm run check:unitvocab` (Almanca),
+  `npm run check:en-unitvocab -- <seviye>` (İngilizce).
+- Sözlükçe metinden gelir; konuşmanın kelimesi metinde yoksa sözlükçeye girmez.
+- Anadil ekseni: Almanca kurs egzersizleri `data/skills/prose` ve `task`
+  (→ İngilizce), İngilizce kurs egzersizleri `data/skills/prose-de` ve `task-de`
+  (→ Almanca). Kapılar `check:skills-prose(-de)`, `check:skills-task(-de)`.
 
-### DialogueTurn (senaryo)
-- `id` benzersiz tur içinde; `ask` Almanca + `askTr`; `cue` Türkçe; `replies` ≥ 1; her `match` en az bir kök; `fallback.say/sayTr/example`.
+## Havuz ve seviye kuralları
 
-### Türetilmiş ve ek içerik dosyaları (WP-72)
-- `src/lib/skills/content/derived-questions.ts` — ÜRETİLMİŞ: `npm run content:derive` (scripts/derive-questions.ts) okuma/dinleme egzersizlerine gapfill/short_answer/dictation ekler; elle düzenlenmez, içerik değişince yeniden üretilir. `bundled.ts` yükleme sırasında birleştirir.
-- `src/lib/skills/content/writing-extra.ts` — elle yazılmış ek yazma görevleri (`form`/`rewrite`/`reply`/`summary`), egzersiz kimliğine göre sona eklenir.
-- Doğrulayıcı birleştirilmiş içeriği (`BUNDLED_EXERCISES`) kontrol eder; DB'ye `npm run db:seed:skills` ile aynı birleşik hâl yüklenir.
+- **Konuşma sözlükçesi seviye başına 8 kelime** (kapı), havuzun o seviyedeki
+  katmanından. Alt seviye payı ~%10 (konuşma başına ~1 pekiştirme); kelime
+  konuşmanın kendi konusuysa fazlası kabul.
+- **`rank` uydurulmaz:** `data/a2-expansion/de_50k.txt` satır numarası (satır =
+  sıra). Sıklık tek başına karar vermez (kısaltma ve çoğulda çarpılır).
+- Yeni havuz kimliği `words.json`'daki en büyük kimlikten devam eder (İngilizce
+  havuz 200000+, gsw-zh 100000+ aralığında).
+- **Havuz dışı kelime vetosu** (konuşma havuzda olmayan kelime öğretiyorsa):
 
-## Doğrulayıcı — `npm run test:content`
+| | Durum | Karar |
+|---|---|---|
+| A | Havuzda aynı anlamda kayıt var, konuşma varyant yazmış | Konuşmayı havuzun yazımına çevir |
+| B | Türev: çoğul, Partizip I/II, derece, üretken sonek (-ung, -heit, -keit, -bar, -sam, -schaft, -lich, -er) | Madde başı değil (`formen`e ait); konuşma başka kelime alır |
+| C | Gerçek madde başı, o seviyede | Havuza ekle (`rank` de_50k'dan) |
+| D | Şeffaf bileşik, kökü üst seviyede, havuzda aynı kavram var, çok dar | Havuza ekleme, konuşmadan çıkar |
 
-`scripts/check-content.ts` bütün içeriği koddan yükler (tsx, path alias'ları `scripts/tsconfig.e2e.json`) ve iki liste basar: **hata** (yapıyı bozan: eksik alan, aralık dışı indeks, kopuk `next`, yinelenen kimlik, Almanca metinde Türkçe harf — özel adlar hariç) → çıkış kodu 1; **uyarı** (kalite: havuz dışı kelime, çok anlamlı karşılık, uzun metin, `en` eksik) → etiket başına sayılır. `data/content/baseline.json` etiket başına tavan tutar: bir kategori tavanı aşarsa ya da yeni kategori açılırsa hata. Mevcut borç bilinir (2026-08-25: 2.227 uyarı, en büyüğü sözlükçede `en` eksik 1.254 ve metinde geçmeyen sözlükçe kelimesi 485 — WP-72 kapatır), yeni borç alınmaz; borç azaldıkça `--baseline` ile tavan indirilir.
+## Doğrulayıcı
+
+Hata çıkış kodu 1 verir. Uyarılar etiket başına sayılır;
+`data/content/baseline.json` tavanı aşan ya da yeni etiket açan uyarı da düşürür.
 
 ```
-npm run test:content            # hepsi
-npm run test:content -- conversations # tek tür: skills | conversations | cheatsheet | scripts
-npm run test:content -- --baseline   # etiket başına uyarı tavanını yaz (bilinçli kabul)
-npm run test:content -- --verbose    # her uyarıyı tek tek bas
+npm run test:content                     # hepsi
+npm run test:content -- skills           # tek tür: skills | conversations | words
+npm run test:content -- --verbose        # her uyarıyı bas
+npm run test:content -- --baseline       # tavanı yaz (bilinçli kabul)
 ```
 
-## Üretim akışı
-
-1. **Paket:** `data/skills/make-packets.mjs` deseni — üretilecek öğeler JSON paketine çıkarılır (`data/content/in/<paket>.json`), istem şablonu bu SPEC'ten (ilgili bölüm + örnek 2 madde).
-2. **Üretim:** model paketi doldurur (`data/content/out/<paket>.json`).
-3. **Doğrulama:** `check-content` + paket denetimi (`data/skills/check.mjs` deseni).
-4. **Gözden geçirme:** `data/content/review/<paket>.md` — her 5 maddede 1 örneklem, insan onayı; sapmalar listelenir.
-5. **Uygulama:** `scripts/apply-*.ts` ile TS içerik dosyasına yazılır; `npm run test:content` yeşil; commit.
-
-Kimlikler asla yeniden kullanılmaz ya da yeniden numaralanmaz: ilerleme kayıtları (`user_skills`, `user_conversations`, `cheat_progress`) kimliğe bağlıdır.
+Uygulamaya giden yol: `npm run db:seed:skills` (web `skill_exercises`), mobil
+döküm (`npm run check:dumps` aynılığı denetler), `npm run content:publish`.
