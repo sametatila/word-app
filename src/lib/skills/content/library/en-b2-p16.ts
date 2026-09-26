@@ -22,7 +22,7 @@ export const enB2P16: SkillExercise[] = [
     genre: "interview",
     intro: "Bir söyleşi: bir apartman otoparkını sebze bahçesine çeviren kişi nasıl başladığını, kimin karşı çıktığını ve neyin zor olduğunu anlatıyor.",
     gloss: [
-      { de: "rubbish", tr: "çöp" },
+      { de: "trash", tr: "çöp" },
       { de: "housing association", tr: "konut kooperatifi" },
       { de: "understandably", tr: "haklı olarak" },
       { de: "raised bed", tr: "yükseltilmiş tarh" },
@@ -34,12 +34,12 @@ export const enB2P16: SkillExercise[] = [
     minutes: 8,
     text:
       "The parking lot that became a garden\n\n" +
-      "Three years ago, the parking lot behind the Elm Street flats was used by eleven cars and a " +
-      "great deal of rubbish. Today it grows vegetables for forty households. We asked Ms Varga, " +
+      "Three years ago, the parking lot behind the Elm Street apartments was used by eleven cars and a " +
+      "great deal of trash. Today it grows vegetables for forty households. We asked Ms Varga, " +
       "who started the project, how it happened.\n\n" +
       "How did it begin?\n" +
       "With a complaint, honestly. I wrote to the housing association to say it was time " +
-      "somebody did something about the rubbish. They wrote back asking whether I had any ideas. " +
+      "somebody did something about the trash. They wrote back asking whether I had any ideas. " +
       "I hadn't expected that, so I'd better admit that the garden was their suggestion as much " +
       "as mine.\n\n" +
       "Was everyone in favor?\n" +
@@ -61,7 +61,7 @@ export const enB2P16: SkillExercise[] = [
       {
         text: "How did the project begin?",
         options: [
-          "with a complaint about rubbish",
+          "with a complaint about trash",
           "with a grant from the council",
           "with an idea from a school",
         ],
@@ -139,7 +139,7 @@ export const enB2P16: SkillExercise[] = [
       { speaker: "Chair", text: "Next item: the empty plot on Canal Road. The owner has agreed to let residents use it for two years while the planning application is decided." },
       { speaker: "Ms Adeyemi", text: "It's time we had somewhere for the younger children. The nearest playground is across the main road, and I'd rather they didn't have to cross it." },
       { speaker: "Mr Lowe", text: "I'm not against that, but a playground needs equipment, insurance and inspections. For a site we might lose in two years, that's a lot of money to spend." },
-      { speaker: "Ms Adeyemi", text: "So what would you rather we did? Leave it fenced off until somebody builds flats on it?" },
+      { speaker: "Ms Adeyemi", text: "So what would you rather we did? Leave it fenced off until somebody builds apartments on it?" },
       { speaker: "Mr Lowe", text: "No. I'd suggest things that can be moved. Planters, benches, a few picnic tables. If we lose the site, we take it all with us." },
       { speaker: "Chair", text: "Can I point out that both ideas need people to look after them? Whatever we choose, we'd better agree tonight who is responsible for opening and locking the gate." },
       { speaker: "Ms Adeyemi", text: "Fair enough. I'd accept planters if one corner is kept clear for the children, with soft ground and nothing sharp." },
@@ -149,7 +149,7 @@ export const enB2P16: SkillExercise[] = [
     questions: [
       {
         text: "How long can residents use the plot?",
-        options: ["for one year", "for two years", "until flats are built"],
+        options: ["for one year", "for two years", "until apartments are built"],
         answer: 1,
         explain: "„let residents use it for two years while the planning application is decided“.",
       },
@@ -302,7 +302,7 @@ export const enB2P16: SkillExercise[] = [
       sampleDe:
         "I'd rather land were used than left empty, but only if everyone knows from the start " +
         "that the arrangement is temporary. " +
-        "An empty plot is not neutral. It collects rubbish, it tells people that nobody cares " +
+        "An empty plot is not neutral. It collects trash, it tells people that nobody cares " +
         "about the street, and it can stay that way for years while a planning decision goes " +
         "back and forth. Lending it to residents for that period costs the owner almost nothing. " +
         "The owner's worry is reasonable: once people have planted something, taking it away " +

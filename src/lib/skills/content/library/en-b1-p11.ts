@@ -21,7 +21,7 @@ export const enB1P11: SkillExercise[] = [
     genre: "story",
     intro: "Kısa bir anlatı: bir apartmanın asansörü iki kat arasında duruyor ve içerideki altı kişi birbirini ilk kez tanıyor.",
     gloss: [
-      { de: "lift", tr: "asansör" },
+      { de: "elevator", tr: "asansör" },
       { de: "floor", tr: "kat" },
       { de: "to carry", tr: "taşımak" },
       { de: "comic", tr: "çizgi roman" },
@@ -32,7 +32,7 @@ export const enB1P11: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Last Thursday evening the lift in our building stopped between the fourth and fifth floors. " +
+      "Last Thursday evening the elevator in our building stopped between the fourth and fifth floors. " +
       "There were six of us inside, and until that evening I knew exactly one of them by name.\n\n" +
       "When it happened, everyone was doing something different. Mrs Okafor was carrying two bags " +
       "of shopping. A young man from the top floor was talking on the phone, and a girl of about " +
@@ -40,34 +40,34 @@ export const enB1P11: SkillExercise[] = [
       "For the first five minutes nobody said a word. Then the lights went off, the girl started " +
       "laughing, and after that it was impossible to stay silent. The man on the phone told the " +
       "fire service where we were. Mrs Okafor opened one of her bags and passed round a packet " +
-      "of biscuits.\n\n" +
+      "of cookies.\n\n" +
       "By the time the engineer arrived, we knew a lot about each other. The young man was " +
       "studying to be a nurse. The girl's father turned out to be the man who plays the trumpet " +
       "on Sunday mornings, the one we all complain about. Mrs Okafor had lived in the building " +
       "for thirty-one years.\n\n" +
-      "The lift was repaired the next day. What surprised me was what happened afterwards. " +
-      "On Saturday there was a note on the door of flat 12: “Lift group, tea on Sunday at four.” " +
+      "The elevator was repaired the next day. What surprised me was what happened afterwards. " +
+      "On Saturday there was a note on the door of apartment 12: “Elevator group, tea on Sunday at four.” " +
       "Five of us went. The sixth was at work that afternoon, but she sent a cake.",
     questions: [
       {
-        text: "Where did the lift stop?",
+        text: "Where did the elevator stop?",
         options: [
           "between the ground and first floors",
           "between the fourth and fifth floors",
           "at the top floor",
         ],
         answer: 1,
-        explain: "„the lift in our building stopped between the fourth and fifth floors“.",
+        explain: "„the elevator in our building stopped between the fourth and fifth floors“.",
       },
       {
-        text: "What was the writer doing when the lift stopped?",
+        text: "What was the writer doing when the elevator stopped?",
         options: ["checking messages", "carrying shopping", "talking on the phone"],
         answer: 0,
         explain: "„I was checking my messages and not paying attention to anything.“",
       },
       {
         kind: "truefalse",
-        text: "The people in the lift started talking immediately.",
+        text: "The people in the elevator started talking immediately.",
         options: ["True", "False"],
         answer: 1,
         explain: "İlk beş dakika kimse konuşmamış; ışıklar sönüp kız gülünce sessizlik bozulmuş.",
@@ -91,7 +91,7 @@ export const enB1P11: SkillExercise[] = [
       {
         text: "What happened on Saturday?",
         options: [
-          "The lift stopped again.",
+          "The elevator stopped again.",
           "The engineer came back.",
           "Someone invited the group to tea.",
         ],

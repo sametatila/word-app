@@ -145,7 +145,7 @@ export const enC1P17: SkillExercise[] = [
       { speaker: "Ms Crowe", text: "Believe me, I'm not committed to keeping the ban. I'm committed to not being the head who ignored a warning." },
       { speaker: "Mr Pajari", text: "Then could it be conditional? The lower branches only, one class at a time, with a member of staff nearby." },
       { speaker: "Ms Crowe", text: "That's close to what we had, minus the staff. The problem is people. We have two adults on the playground for two hundred children." },
-      { speaker: "Ms Crowe", text: "And those two are also dealing with lost coats, arguments about football and the queue for the toilets. A tree needs someone whose only job, for twenty minutes, is the tree." },
+      { speaker: "Ms Crowe", text: "And those two are also dealing with lost coats, arguments about soccer and the line for the toilets. A tree needs someone whose only job, for twenty minutes, is the tree." },
       { speaker: "Mr Pajari", text: "Parents could help. When it comes to supervising a tree, you don't need a teaching qualification." },
       { speaker: "Ms Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rota first." },
       { speaker: "Mr Pajari", text: "Six. I'll have a list by Friday." },
@@ -345,7 +345,7 @@ export const enC1P17: SkillExercise[] = [
     explanation: [
       {
         heading: "Sınama: to'dan sonra isim gelebiliyor mu?",
-        tr: "B2'de „stop smoking“ ile „stop to smoke“ arasındaki fark öğrenildi; orada „to“ mastar işaretiydi. Burada başka bir durum var: bazı kalıplarda „to“ edattır. Sınama basit: „to“dan sonra bir isim koyabiliyorsan („I object to the noise“, „I look forward to the holiday“), fiil de -ing biçiminde gelir: „I object to paying“, „I look forward to hearing from you.“",
+        tr: "B2'de „stop smoking“ ile „stop to smoke“ arasındaki fark öğrenildi; orada „to“ mastar işaretiydi. Burada başka bir durum var: bazı kalıplarda „to“ edattır. Sınama basit: „to“dan sonra bir isim koyabiliyorsan („I object to the noise“, „I look forward to the vacation“), fiil de -ing biçiminde gelir: „I object to paying“, „I look forward to hearing from you.“",
         examples: [
           { de: "I look forward to hearing from you.", tr: "Sizden haber almayı dört gözle bekliyorum.", note: "to + -ing" },
           { de: "Some parents objected to the children climbing the tree.", tr: "Bazı veliler çocukların ağaca tırmanmasına itiraz etti.", note: "object to + özne + -ing" },

@@ -42,7 +42,7 @@ export const enA2P2: SkillExercise[] = [
       "Better than most people think. In the country there are big fields with only one plant. Here we have " +
       "gardens, parks and balconies, so the bees find something from March to October.\n\n" +
       "What is the hardest part?\n" +
-      "The neighbors, not the bees. Before I put a hive on a roof, I talk to every flat in the building. " +
+      "The neighbors, not the bees. Before I put a hive on a roof, I talk to every apartment in the building. " +
       "It takes longer than the beekeeping, but after that nobody is worried.",
     questions: [
       {
@@ -66,7 +66,7 @@ export const enA2P2: SkillExercise[] = [
         text: "Ines talks to the neighbors before she puts a hive on a roof.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Before I put a hive on a roof, I talk to every flat in the building.“",
+        explain: "„Before I put a hive on a roof, I talk to every apartment in the building.“",
       },
       {
         kind: "gapfill",
@@ -92,7 +92,7 @@ export const enA2P2: SkillExercise[] = [
           "She buys a second hive.",
         ],
         answer: 0,
-        explain: "„Before I put a hive on a roof, I talk to every flat in the building.“",
+        explain: "„Before I put a hive on a roof, I talk to every apartment in the building.“",
       },
     ],
   },

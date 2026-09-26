@@ -43,7 +43,7 @@ export const enB1P15: SkillExercise[] = [
       "don't make him share his location all evening. That felt like too much. The first night " +
       "he forgot the second message, and I was standing at the window at midnight. He hasn't " +
       "forgotten since.\n\n" +
-      "LEO, 15: The deal is fair, mostly. What I don't like is when Mum tells me to put on a coat " +
+      "LEO, 15: The deal is fair, mostly. What I don't like is when Mom tells me to put on a coat " +
       "in front of my friends. I'd like her to trust me with small things first, like when I eat " +
       "or when I go to bed, because those are easier to get right. My parents also make me do " +
       "my own washing now. I didn't want that, but I understand it.\n\n" +
@@ -116,7 +116,7 @@ export const enB1P15: SkillExercise[] = [
       { de: "climbing", tr: "tırmanma" },
       { de: "sailing", tr: "yelken" },
       { de: "homesick", tr: "evini özlemiş" },
-      { de: "torch", tr: "el feneri" },
+      { de: "flashlight", tr: "el feneri" },
       { de: "urgent", tr: "acil" },
     ],
     minutes: 6,
@@ -127,7 +127,7 @@ export const enB1P15: SkillExercise[] = [
       { text: "We do want them to try one activity they have never done before. For most it's climbing or sailing. Nobody has to like it, but everybody tries once." },
       { text: "At night we let the older groups stay up until ten. The younger ones are in bed by nine, and yes, they complain about that every single year." },
       { text: "If your child gets homesick, please don't ask us to send them home on the first night. It nearly always passes by Tuesday." },
-      { text: "Please pack old clothes, a torch and a water bottle with their name on it. We'd rather you didn't send sweets, because the ants find them before the children do." },
+      { text: "Please pack old clothes, a flashlight and a water bottle with their name on it. We'd rather you didn't send candy, because the ants find them before the children do." },
       { text: "We'll send you a short message every evening, so there's no need to call the office unless it's urgent." },
     ],
     questions: [
@@ -160,7 +160,7 @@ export const enB1P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why shouldn't parents send sweets?",
+        text: "Why shouldn't parents send candy?",
         options: [],
         answer: 0,
         accept: ["the ants find them", "because of the ants", "ants", "because the ants find them", "the ants"],

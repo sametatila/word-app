@@ -43,7 +43,7 @@ export const enB1: SkillExercise[] = [
       "The first lesson was hard. I was the oldest person in the group, and I couldn't even put my face in the water. Our teacher, Marta, didn't laugh. " +
       "She told us that fear is normal and that most adults learn faster than they expect, because they listen.\n\n" +
       "Since then, I have been to the pool twice a week. I have already learned to breathe in the water, and last month I swam twenty-five meters without stopping. " +
-      "I haven't swum in the sea yet, but we have booked a holiday for August, and this time I won't be sitting on the beach.\n\n" +
+      "I haven't swum in the sea yet, but we have booked a vacation for August, and this time I won't be sitting on the beach.\n\n" +
       "If you have been thinking about lessons for years, my advice is simple: don't wait for the perfect moment. Book the first class. The rest will follow.",
     questions: [
       {
@@ -54,7 +54,7 @@ export const enB1: SkillExercise[] = [
       },
       {
         text: "Why did the writer decide to take lessons?",
-        options: ["Her daughter asked a question she could not answer.", "Her teacher told her that fear is normal.", "Her family booked a holiday by the sea."],
+        options: ["Her daughter asked a question she could not answer.", "Her teacher told her that fear is normal.", "Her family booked a vacation by the sea."],
         answer: 0,
         explain: "„she asked me why I never came into the water … I didn't have a good answer.“ Öğretmenin sözü ve tatil daha sonra geliyor.",
       },
@@ -113,28 +113,28 @@ export const enB1: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Host", text: "Welcome back. My guest today is Leyla, who has spent the last three summers in other people's homes and let other people stay in hers. Leyla, how does a home exchange work?" },
-      { speaker: "Leyla", text: "It's simple, really. You put your flat on a website, with photos, and look for a family who wants to visit your city. You agree on dates, and then you just swap keys." },
+      { speaker: "Leyla", text: "It's simple, really. You put your apartment on a website, with photos, and look for a family who wants to visit your city. You agree on dates, and then you just swap keys." },
       { speaker: "Host", text: "And you don't pay anything?" },
       { speaker: "Leyla", text: "No rent, no. You pay for the flights, of course, but for a family of four, that saves a lot of money." },
       { speaker: "Host", text: "Weren't you worried about strangers living in your home?" },
       { speaker: "Leyla", text: "At first, yes, I have to admit. Before our first exchange, I hid all our photos and locked one room. It sounds silly now." },
       { speaker: "Host", text: "So what changed?" },
-      { speaker: "Leyla", text: "We came home, and the flat was cleaner than before. There was even a cake on the table. Since then, we have done it every year, and we've never had a real problem." },
+      { speaker: "Leyla", text: "We came home, and the apartment was cleaner than before. There was even a cake on the table. Since then, we have done it every year, and we've never had a real problem." },
       { speaker: "Host", text: "Never? Not one?" },
       { speaker: "Leyla", text: "Well, once a guest broke a lamp. He wrote us a long apology and left money for a new one. Honestly, my own children have broken more." },
       { speaker: "Host", text: "Any advice for someone who wants to try it?" },
-      { speaker: "Leyla", text: "Be honest in your description. If the shower is slow, say so. Nobody wants surprises on holiday." },
+      { speaker: "Leyla", text: "Be honest in your description. If the shower is slow, say so. Nobody wants surprises on vacation." },
     ],
     questions: [
       {
         text: "What is the interview mainly about?",
-        options: ["holidays in other people's homes without paying rent", "renting your flat to tourists to make money", "a website where families sell holiday photos"],
+        options: ["vacations in other people's homes without paying rent", "renting your apartment to tourists to make money", "a website where families sell vacation photos"],
         answer: 0,
         explain: "Leyla ev takasını anlatıyor: „you just swap keys“, „No rent, no.“ Para kazanmak ya da fotoğraf satmak yok.",
       },
       {
         text: "What did Leyla do before her first exchange?",
-        options: ["She hid her photos and locked a room.", "She cleaned the flat and baked a cake.", "She paid the other family some money."],
+        options: ["She hid her photos and locked a room.", "She cleaned the apartment and baked a cake.", "She paid the other family some money."],
         answer: 0,
         explain: "„Before our first exchange, I hid all our photos and locked one room.“ Pasta ve temiz ev, döndüklerinde buldukları şey.",
       },
@@ -146,7 +146,7 @@ export const enB1: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The guests pay Leyla rent for her flat.",
+        text: "The guests pay Leyla rent for her apartment.",
         options: ["True", "False"],
         answer: 1,
         explain: "„And you don't pay anything?“ — „No rent, no.“ Yalnız kendi uçak biletleri ödeniyor.",
@@ -156,8 +156,8 @@ export const enB1: SkillExercise[] = [
         text: "Leyla'nın son tavsiye cümlesini duyduğun gibi yaz.",
         options: [],
         answer: 0,
-        accept: ["Nobody wants surprises on holiday.", "Nobody wants surprises on holiday"],
-        explain: "„Nobody wants surprises on holiday.“ — nobody olumsuz anlam taşır ama fiil olumlu ve tekil kalır: wants.",
+        accept: ["Nobody wants surprises on vacation.", "Nobody wants surprises on vacation"],
+        explain: "„Nobody wants surprises on vacation.“ — nobody olumsuz anlam taşır ama fiil olumlu ve tekil kalır: wants.",
       },
       {
         kind: "short_answer",
@@ -206,7 +206,7 @@ export const enB1: SkillExercise[] = [
         prompt:
           "Arkadaşın Ayla köpek almayı düşünüyor ve senin dürüst görüşünü istiyor. E-postasına cevap yaz: görüşünü açıkça söyle, en az iki gerekçe ver, kendi deneyiminden ya da tanıdığın birinden örnek ver ve ona bir soru sor.",
         stimulus:
-          "Hi! I need your honest opinion. I have been thinking about getting a dog for months. I live alone in a small flat, and I work from home three days a week. " +
+          "Hi! I need your honest opinion. I have been thinking about getting a dog for months. I live alone in a small apartment, and I work from home three days a week. " +
           "My neighbor says a dog would be too much for me, but I have wanted one since I was a child. What do you think? Should I do it, or should I wait? Write soon! Ayla",
         checklist: ["Görüşünü açıkça söyle: al, alma ya da bekle", "En az iki gerekçe ver", "Kendi deneyiminden ya da tanıdığın birinden örnek ver", "Bir soru sor ve vedalaş"],
         minWords: 60,
@@ -221,7 +221,7 @@ export const enB1: SkillExercise[] = [
           "Hi Ayla, thanks for your message! In my opinion, you should get a dog, but not yet. I have had one for two years, and it is the best thing that has happened to me. " +
           "But a dog needs a lot of time, and the first months are hard. Since I got mine, I have not slept late once! " +
           "The problem is that you are away from home two days a week. If I were you, I would wait until you have found someone who can walk the dog on those days. " +
-          "Have you thought about a smaller dog? They are happier in a flat. Let me know what you decide! Love, Deniz",
+          "Have you thought about a smaller dog? They are happier in an apartment. Let me know what you decide! Love, Deniz",
       },
     ],
   },
@@ -260,7 +260,7 @@ export const enB1: SkillExercise[] = [
         "In my opinion, young people should move out when they can pay for their own life, not at a fixed age. " +
         "The main reason is that living alone teaches you things that nobody can teach you at home: how to cook, how to plan your money, how to solve problems on your own. " +
         "For example, my cousin moved out at twenty, and after a year he was a completely different person. " +
-        "On the other hand, rents have become very high, and many young people just can't afford a flat. In that case, staying with your parents for a few more years is not a problem. " +
+        "On the other hand, rents have become very high, and many young people just can't afford an apartment. In that case, staying with your parents for a few more years is not a problem. " +
         "That's why I think the right time depends on money and on the person, not on a number.",
       rubricHint: "Görüş + en az iki gerekçe bekle; hedef kalıplardan en az üçü geçmeli. Present perfect (have become) ve koşul yapısı artı puan.",
     },

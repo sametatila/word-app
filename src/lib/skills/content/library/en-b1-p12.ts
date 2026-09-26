@@ -120,7 +120,7 @@ export const enB1P12: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Host", text: "This week: Little Ashby, a village of nine hundred people, whose football team reached the county cup final on Saturday. Their coach, Mr Barnes, is with me." },
+      { speaker: "Host", text: "This week: Little Ashby, a village of nine hundred people, whose soccer team reached the county cup final on Saturday. Their coach, Mr Barnes, is with me." },
       { speaker: "Mr Barnes", text: "Thanks. I should say first that we lost the final three–one. But nobody in the village seems to mind." },
       { speaker: "Host", text: "Why not?" },
       { speaker: "Mr Barnes", text: "Because until this season we had never won a single cup game. Two years ago we almost closed the club, because only eleven players had come to the first training." },
@@ -187,7 +187,7 @@ export const enB1P12: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "writing",
-    title: "Someone Had Been in the Flat",
+    title: "Someone Had Been in the Apartment",
     genre: "story",
     intro: "Bir dergi öykü yarışmasına katılıyorsun: önce iki cümle kur, sonra verilen cümleyle başlayan kısa bir öykü yaz.",
     gloss: [
@@ -203,9 +203,9 @@ export const enB1P12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Eve geldiğimde birinin dairede bulunmuş olduğunu fark ettim.",
-        answer: "When I got home, I realized that someone had been in the flat.",
+        answer: "When I got home, I realized that someone had been in the apartment.",
         alternatives: [
-          "I realized that someone had been in the flat when I got home.",
+          "I realized that someone had been in the apartment when I got home.",
         ],
         hint: "Fark etmekten ÖNCE olan iş bir basamak geriye çekilir: had + üçüncü hâl.",
       },
@@ -219,7 +219,7 @@ export const enB1P12: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Bir dergi yarışması için kısa bir öykü yaz. Öykün şu cümleyle başlamalı: „When I got home, I realized that someone had been in the flat.“ Neyin değiştiğini anlat, okuru kimin gelmiş olabileceği üzerine düşündür, bir sürprizle çöz ve kısa bir cümleyle bitir.",
+          "Bir dergi yarışması için kısa bir öykü yaz. Öykün şu cümleyle başlamalı: „When I got home, I realized that someone had been in the apartment.“ Neyin değiştiğini anlat, okuru kimin gelmiş olabileceği üzerine düşündür, bir sürprizle çöz ve kısa bir cümleyle bitir.",
         checklist: [
           "Verilen cümleyle başla",
           "Neyin değiştiğini somut ayrıntılarla anlat",
@@ -235,7 +235,7 @@ export const enB1P12: SkillExercise[] = [
           { de: "In the end, …", tr: "Sonunda …", en: "" },
         ],
         sample:
-          "When I got home, I realized that someone had been in the flat. The first thing I noticed " +
+          "When I got home, I realized that someone had been in the apartment. The first thing I noticed " +
           "was the smell of coffee, and I never drink coffee. Then I saw that someone had watered " +
           "the plants by the window, which had looked almost dead that morning, and had put my shoes " +
           "in a neat line by the door. " +

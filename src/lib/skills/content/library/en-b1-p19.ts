@@ -22,7 +22,7 @@ export const enB1P19: SkillExercise[] = [
     genre: "blog",
     intro: "İş için başka bir şehre taşınan birinin blog yazısı: hiçbir yerde yazmayan üç kural ve onları öğrenmenin yolu.",
     gloss: [
-      { de: "bin", tr: "çöp kutusu" },
+      { de: "trash can", tr: "çöp kutusu" },
       { de: "polite", tr: "kibar" },
       { de: "collection", tr: "toplama" },
       { de: "to fine", tr: "ceza kesmek" },
@@ -36,8 +36,8 @@ export const enB1P19: SkillExercise[] = [
       "When I moved to Norwich for work, I had read everything about visas, bank accounts and " +
       "doctors. Nobody had written anything about the rules that are never written down, and " +
       "those were the ones I kept breaking.\n\n" +
-      "The first one was the bins. I put mine out on a Tuesday morning, and by the afternoon there " +
-      "was a polite note on my door. In our street you are only allowed to put bins out after six " +
+      "The first one was the trash cans. I put mine out on a Tuesday morning, and by the afternoon there " +
+      "was a polite note on my door. In our street you are only allowed to put trash cans out after six " +
       "on the evening before collection. Nobody fined me. The note was worse.\n\n" +
       "The second was a barbecue. A colleague invited me, so I arrived with nothing, the way I " +
       "would at home. Everybody else had brought something: meat, salad, drinks. You are supposed " +
@@ -47,7 +47,7 @@ export const enB1P19: SkillExercise[] = [
       "so in the contract. But nobody does. You are supposed to stay until at least five, and " +
       "nobody can tell me why.\n\n" +
       "My advice to anyone moving here is simple: find one person who will tell you the truth. " +
-      "Mine is my neighbor Pat, who wrote the note about the bins. We have tea together every " +
+      "Mine is my neighbor Pat, who wrote the note about the trash cans. We have tea together every " +
       "Sunday now.",
     questions: [
       {
@@ -57,18 +57,18 @@ export const enB1P19: SkillExercise[] = [
         explain: "„I had read everything about visas, bank accounts and doctors.“",
       },
       {
-        text: "When are people allowed to put bins out in the writer's street?",
+        text: "When are people allowed to put trash cans out in the writer's street?",
         options: [
           "after six on the evening before collection",
           "early on the morning of collection",
           "at any time on a Tuesday",
         ],
         answer: 0,
-        explain: "„you are only allowed to put bins out after six on the evening before collection“.",
+        explain: "„you are only allowed to put trash cans out after six on the evening before collection“.",
       },
       {
         kind: "truefalse",
-        text: "The writer had to pay a fine because of the bins.",
+        text: "The writer had to pay a fine because of the trash cans.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Nobody fined me. The note was worse.“",
@@ -83,11 +83,11 @@ export const enB1P19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who wrote the note about the bins?",
+        text: "Who wrote the note about the trash cans?",
         options: [],
         answer: 0,
         accept: ["Pat", "the neighbor", "the writer's neighbor", "a neighbor", "her neighbor Pat", "the neighbor Pat", "his neighbor Pat"],
-        explain: "„my neighbor Pat, who wrote the note about the bins“.",
+        explain: "„my neighbor Pat, who wrote the note about the trash cans“.",
       },
       {
         text: "What is the writer's advice?",
@@ -198,7 +198,7 @@ export const enB1P19: SkillExercise[] = [
       { de: "deposit", tr: "kapora" },
       { de: "volume", tr: "ses düzeyi" },
       { de: "candle", tr: "mum" },
-      { de: "bin bag", tr: "çöp torbası" },
+      { de: "trash bag", tr: "çöp torbası" },
     ],
     minutes: 12,
     tasks: [
@@ -242,7 +242,7 @@ export const enB1P19: SkillExercise[] = [
           "to know if there is a volume limit. Are we allowed to bring our own food and a cake with " +
           "candles, or are there rules about fire? " +
           "I've heard that the hall has to be cleaned afterwards. Are we supposed to do that " +
-          "ourselves, and should we bring our own bin bags? " +
+          "ourselves, and should we bring our own trash bags? " +
           "I understand that the hall is used for a yoga class at half past six, so we will leave by " +
           "six at the latest and put all the chairs back. " +
           "Thank you for your help. I look forward to hearing from you. Kind regards, Merve Kaplan",

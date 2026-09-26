@@ -34,7 +34,7 @@ export const enB1P10: SkillExercise[] = [
       "You are receiving this letter because your latest bill is higher than usual. " +
       "We want to explain why before you call us.\n\n" +
       "For the last eleven months we could not read your meter, so we used an estimate based " +
-      "on the flat below yours. In March a colleague finally got access and took a real reading. " +
+      "on the apartment below yours. In March a colleague finally got access and took a real reading. " +
       "It turned out that the estimate was too low, and the difference has now been added " +
       "to one bill.\n\n" +
       "This means you owe two hundred and forty pounds more than you expected. " +
@@ -242,7 +242,7 @@ export const enB1P10: SkillExercise[] = [
           { de: "What this guide can't do is …", tr: "Bu kılavuzun yapamadığı şey …", en: "" },
         ],
         sample:
-          "This guide is for anyone who is moving into their first flat and has never signed " +
+          "This guide is for anyone who is moving into their first apartment and has never signed " +
           "a contract before. " +
           "First, and before anything else, write down what the first month actually costs: " +
           "rent, deposit, and usually a second month in advance. " +
@@ -294,7 +294,7 @@ export const enB1P10: SkillExercise[] = [
         "When politicians talk about this, they mean saving and investing, " +
         "and most eighteen-year-olds have nothing to invest. " +
         "What I would actually teach is smaller and more useful: how to read a contract, " +
-        "what a deposit is, how much a first month in a flat really costs, " +
+        "what a deposit is, how much a first month in an apartment really costs, " +
         "and what happens if you ignore a letter from an electricity company. " +
         "Those are the things that cost my friends money in their first year, " +
         "and none of them are difficult. " +

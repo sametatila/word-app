@@ -264,7 +264,7 @@ export const enB2P5: SkillExercise[] = [
         ],
         sample:
           "Dear Sir or Madam,\n\n" +
-          "We support the proposal to introduce booked time slots. Queuing at the gate has been the main " +
+          "We support the proposal to introduce booked time slots. Lining up at the gate has been the main " +
           "complaint of our members for years, and asking people to choose a time is a reasonable way of " +
           "spreading the load.\n\n" +
           "We object to closing the yard on Saturdays. The consultation document treats the two changes as one " +

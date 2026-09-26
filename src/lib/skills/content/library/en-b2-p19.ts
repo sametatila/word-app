@@ -52,7 +52,7 @@ export const enB2P19: SkillExercise[] = [
       "Offer to reduce the risk, not just to promise good behavior. Common offers include an " +
       "additional deposit, professional cleaning when you leave, or insurance that covers damage " +
       "caused by animals. Some landlords are unaware that such insurance exists.\n\n" +
-      "Be realistic about what counts as reasonable. A large dog in a small flat with no outside " +
+      "Be realistic about what counts as reasonable. A large dog in a small apartment with no outside " +
       "space is a different request from a cat in a house with a garden, and a refusal in the " +
       "first case is not necessarily unfair.\n\n" +
       "Finally, if permission is given, get it in writing and keep a copy. Verbal agreements " +
@@ -98,7 +98,7 @@ export const enB2P19: SkillExercise[] = [
         explain: "İzni yazılı alıp bir kopyasını saklamak gerekiyor; sözlü anlaşmalar unutulur.",
       },
       {
-        text: "What does the text say about a large dog in a small flat?",
+        text: "What does the text say about a large dog in a small apartment?",
         options: [
           "It must always be allowed.",
           "It only needs extra insurance.",
@@ -116,7 +116,7 @@ export const enB2P19: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "listening",
-    title: "The Right Pet for a Flat",
+    title: "The Right Pet for a Apartment",
     genre: "interview",
     intro: "Bir radyo söyleşisi: bir veteriner dairede yaşayan biri için hangi hayvanın uygun olduğunu ve nereden başlanacağını anlatıyor.",
     gloss: [
@@ -132,8 +132,8 @@ export const enB2P19: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Host", text: "A listener writes that she's finally allowed a pet in her flat and wants to know what's suitable. Dr Mensah, where would you start?" },
-      { speaker: "Dr Mensah", text: "With her hours, not with the animal. The most common problem I see in flats isn't space at all. It's loneliness in animals that are left alone for ten hours a day." },
+      { speaker: "Host", text: "A listener writes that she's finally allowed a pet in her apartment and wants to know what's suitable. Dr Mensah, where would you start?" },
+      { speaker: "Dr Mensah", text: "With her hours, not with the animal. The most common problem I see in apartments isn't space at all. It's loneliness in animals that are left alone for ten hours a day." },
       { speaker: "Host", text: "So a dog is out of the question for someone who works full-time in an office?" },
       { speaker: "Dr Mensah", text: "Not necessarily, but it becomes her responsibility to arrange a walker or a daytime carer, and that costs money every single week, not just at the beginning." },
       { speaker: "Host", text: "What about cats? People often assume they're the easy option." },
@@ -147,7 +147,7 @@ export const enB2P19: SkillExercise[] = [
         text: "Where does Dr Mensah say the choice should start?",
         options: [
           "with the owner's working hours",
-          "with the size of the flat",
+          "with the size of the apartment",
           "with the price of the animal",
         ],
         answer: 0,
@@ -252,7 +252,7 @@ export const enB2P19: SkillExercise[] = [
           { de: "I would of course understand if …", tr: "… durumunda elbette anlayışla karşılarım", en: "" },
         ],
         sample:
-          "Dear Mr Price, I am writing to ask for your written consent to keep a cat in the flat " +
+          "Dear Mr Price, I am writing to ask for your written consent to keep a cat in the apartment " +
           "at 14 Mill Lane, as my tenancy agreement requires. " +
           "To give you a clear picture, the cat is a nine-year-old female who has lived indoors " +
           "all her life. She is neutered, vaccinated and very calm, and she currently lives with " +
@@ -306,11 +306,11 @@ export const enB2P19: SkillExercise[] = [
         "heard a story like that, and some have lived through one. " +
         "The trouble with a ban is that it treats every animal and every tenant as the worst " +
         "case. A fairer test would be whether the request is reasonable for that particular " +
-        "home: the size of the animal, the size of the flat, whether there is outside space, " +
+        "home: the size of the animal, the size of the apartment, whether there is outside space, " +
         "and whether the tenant is willing to reduce the risk with a deposit or insurance. " +
         "Take, for example, an elderly tenant who wants a quiet adult cat in a ground-floor " +
-        "flat. Refusing that has no real justification, and it takes something important away " +
-        "from the tenant. A large, young dog in a small upstairs flat is a different request, " +
+        "apartment. Refusing that has no real justification, and it takes something important away " +
+        "from the tenant. A large, young dog in a small upstairs apartment is a different request, " +
         "and a refusal there would be perfectly fair. " +
         "So I'd keep the landlord's right to refuse, but I'd require a reason.",
       rubricHint:

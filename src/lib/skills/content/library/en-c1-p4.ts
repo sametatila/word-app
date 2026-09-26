@@ -143,10 +143,10 @@ export const enC1P4: SkillExercise[] = [
     minutes: 10,
     segments: [
       { text: "There is a number in logistics that surprises everybody who hears it for the first time." },
-      { text: "Of the total cost of moving a parcel from a factory in one country to a door in another, more than half is spent on the final two kilometers." },
-      { text: "Having traveled nine thousand kilometers for a few euros, the parcel then costs several more to cross a town." },
+      { text: "Of the total cost of moving a package from a factory in one country to a door in another, more than half is spent on the final two kilometers." },
+      { text: "Having traveled nine thousand kilometers for a few euros, the package then costs several more to cross a town." },
       { text: "The reason is not distance. It is that everything before the last stage happens in bulk, on schedules, between places designed for it." },
-      { text: "The last stage happens once, to one address, at a time nobody controls. A container ship is loaded by machine. A van is loaded by a person who has to decide, forty times a day, which parcel goes on top." },
+      { text: "The last stage happens once, to one address, at a time nobody controls. A container ship is loaded by machine. A van is loaded by a person who has to decide, forty times a day, which package goes on top." },
       { text: "Considered from the outside, the obvious answer is efficiency: better routes, better software. That has been tried, and it works, up to a point." },
       { text: "The remaining cost is not a routing problem. It is that people are not at home, and that is not a scheduling failure. It is what a working day looks like." },
       { text: "This is why almost every serious attempt to fix the last mile has quietly stopped trying to reach the door. Lockers, shops, pick-up points: all of them move the problem to a place that is always open." },
@@ -159,7 +159,7 @@ export const enC1P4: SkillExercise[] = [
         text: "What is the surprising number?",
         options: [
           "more than half the cost is the last two kilometers",
-          "more than half of parcels arrive late",
+          "more than half of packages arrive late",
           "more than half of the vans travel empty",
         ],
         answer: 0,
@@ -280,7 +280,7 @@ export const enC1P4: SkillExercise[] = [
           "Read together with the transport figures, that suggests a scheduling problem rather than a " +
           "behavioral one, and a fee will not correct it.\n\n" +
           "Second, the exemption is defined by notice rather than by circumstance. Appointments canceled on the " +
-          "same day because a child is ill would be charged, while appointments canceled a month ahead for no " +
+          "same day because a child is sick would be charged, while appointments canceled a month ahead for no " +
           "reason would not.\n\n" +
           "We propose the following amendment: that the fee apply only from the second missed appointment in " +
           "twelve months, that same-day cancellations for care or illness be exempt on a stated reason, and " +

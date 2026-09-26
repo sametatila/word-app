@@ -290,7 +290,7 @@ export const enB1P14: SkillExercise[] = [
       sampleDe:
         "People call it a waste of time, but I think small talk is how bigger conversations are " +
         "allowed to start. Nobody walks up to a stranger and asks about their childhood. You say " +
-        "the queue is long, isn't it, and the other person decides whether they want to talk. " +
+        "the line is long, isn't it, and the other person decides whether they want to talk. " +
         "I realized this when I started a new job last year. For two weeks I only said hello to " +
         "the man at the next desk. Then one Monday we both complained about the rain, and ten " +
         "minutes later I found out he had grown up in the same small town as my grandparents. " +

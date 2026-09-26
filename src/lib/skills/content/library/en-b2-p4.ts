@@ -125,7 +125,7 @@ export const enB2P4: SkillExercise[] = [
       { de: "bedtime", tr: "yatma saati" },
       { de: "body clock", tr: "biyolojik saat" },
       { de: "supervise", tr: "gözetmek" },
-      { de: "pupil", tr: "öğrenci" },
+      { de: "student", tr: "öğrenci" },
       { de: "appear", tr: "görünmek" },
       { de: "genuine", tr: "hakiki" },
       { de: "slight", tr: "hafif" },
@@ -143,7 +143,7 @@ export const enB2P4: SkillExercise[] = [
       { speaker: "Marta", text: "That was my own first thought, and it turned out to be wrong. Bedtimes moved by about fifteen minutes; the extra sleep was about forty. Their body clock genuinely shifts in those years, and it shifts back in their twenties." },
       { speaker: "Host", text: "What about parents who start work at eight?" },
       { speaker: "Marta", text: "That is the real objection and I have no clean answer. One school kept an early room open, supervised, from half past seven." },
-      { speaker: "Marta", text: "About a fifth of the pupils use it, and interestingly they are not the tired ones. They are the ones with the longest journeys." },
+      { speaker: "Marta", text: "About a fifth of the students use it, and interestingly they are not the tired ones. They are the ones with the longest journeys." },
       { speaker: "Host", text: "If you had to advise a school tomorrow?" },
       { speaker: "Marta", text: "Do not promise better grades. Promise a calmer first hour, and measure attendance. That you can deliver." },
     ],
@@ -177,10 +177,10 @@ export const enB2P4: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Which pupils use the early room?",
+        text: "Which students use the early room?",
         options: [],
         answer: 0,
-        accept: ["pupils with the longest journeys", "the ones with the longest journeys", "those with the longest journeys", "pupils with long journeys", "those with long journeys", "the longest journeys", "long journeys"],
+        accept: ["students with the longest journeys", "the ones with the longest journeys", "those with the longest journeys", "students with long journeys", "those with long journeys", "the longest journeys", "long journeys"],
         explain: "„… they are not the tired ones. They are the ones with the longest journeys.“",
       },
       {
@@ -223,8 +223,8 @@ export const enB2P4: SkillExercise[] = [
       {
         kind: "build",
         tr: "Paket salı günü depoda kalmış olmalı.",
-        answer: "On Tuesday the parcel must have stayed in the warehouse.",
-        alternatives: ["The parcel must have stayed in the warehouse on Tuesday."],
+        answer: "On Tuesday the package must have stayed in the warehouse.",
+        alternatives: ["The package must have stayed in the warehouse on Tuesday."],
         hint: "Geçmiş için kesine yakın çıkarım „must have + üçüncü hâl“ ile kurulur.",
       },
       {
@@ -254,10 +254,10 @@ export const enB2P4: SkillExercise[] = [
         ],
         sample:
           "Failed delivery, Tuesday the fourth, order 8812\n\n" +
-          "What is certain: the parcel left our warehouse at seven fifty on Tuesday morning, it was scanned at " +
+          "What is certain: the package left our warehouse at seven fifty on Tuesday morning, it was scanned at " +
           "the depot at nine twenty, and it was scanned back into the depot at four fifteen with the note " +
           "“customer not at home”. The customer was at home from twelve onwards and has a camera at the door.\n\n" +
-          "The most likely explanation is that the parcel stayed on the van and was never taken to the door. " +
+          "The most likely explanation is that the package stayed on the van and was never taken to the door. " +
           "The camera has no recording of anybody in our uniform, and the driver's own log shows twenty-two " +
           "stops in the last ninety minutes of the shift, which is roughly double the usual number.\n\n" +
           "This can't have been an address error: the label is correct in the photograph taken at the depot. " +
@@ -397,7 +397,7 @@ export const enB2P4: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The parcel didn't arrive yesterday. It ___ (must / stay) in the warehouse.",
+        text: "The package didn't arrive yesterday. It ___ (must / stay) in the warehouse.",
         options: [],
         answer: 0,
         accept: ["must have stayed"],

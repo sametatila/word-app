@@ -38,7 +38,7 @@ export const enA2P11: SkillExercise[] = [
     text:
       "TWO WEEKS IN SOMEONE ELSE'S HOME\n\n" +
       "Last summer the Kaya family from Bursa tried something new: they swapped homes with a family from Lyon for " +
-      "two weeks. Nobody paid any money. The French family stayed in the Kayas' flat, and the Kayas stayed in a small " +
+      "two weeks. Nobody paid any money. The French family stayed in the Kayas' apartment, and the Kayas stayed in a small " +
       "house with a garden in Lyon.\n\n" +
       "“We found them on a website in March,” says Deniz Kaya. “We wrote to each other for two months before we said yes.”\n\n" +
       "Not everything was easy. On the first evening the family was having dinner outside when all the lights in the " +
@@ -95,7 +95,7 @@ export const enA2P11: SkillExercise[] = [
         options: [
           "ask more questions before they go",
           "stay for a shorter time",
-          "choose a flat without a garden",
+          "choose an apartment without a garden",
         ],
         answer: 0,
         explain: "„Yes, but next time we will ask more questions before we arrive.“",
@@ -117,7 +117,7 @@ export const enA2P11: SkillExercise[] = [
       { de: "island", tr: "ada" },
       { de: "adult", tr: "yetişkin" },
       { de: "wet", tr: "ıslak" },
-      { de: "ill", tr: "hasta" },
+      { de: "sick", tr: "hasta" },
       { de: "middle", tr: "orta" },
     ],
     minutes: 5,
@@ -126,7 +126,7 @@ export const enA2P11: SkillExercise[] = [
       { text: "The trip takes one hour and forty minutes. We stop once, at Green Bay, where some passengers get off." },
       { text: "Please keep your bags with you or put them in the room behind the café. Do not leave them on the stairs." },
       { text: "Children must stay with an adult when they are outside on the top floor of the ship. The floor can be wet." },
-      { text: "Today there is some wind, so the front of the ship moves more than usual. If you feel ill, sit in the middle." },
+      { text: "Today there is some wind, so the front of the ship moves more than usual. If you feel sick, sit in the middle." },
       { text: "Tickets for the island bus are on sale at the café. They are two euros cheaper here than on the bus." },
       { text: "The café closes at half past ten. We arrive at Castle Island at ten fifty. Thank you, and have a good trip." },
     ],
@@ -152,11 +152,11 @@ export const enA2P11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where should you sit if you feel ill?",
+        text: "Where should you sit if you feel sick?",
         options: [],
         answer: 0,
         accept: ["in the middle", "the middle", "in the middle of the ship"],
-        explain: "„If you feel ill, sit in the middle.“ — önde gemi daha çok sallanıyor.",
+        explain: "„If you feel sick, sit in the middle.“ — önde gemi daha çok sallanıyor.",
       },
       {
         kind: "dictation",

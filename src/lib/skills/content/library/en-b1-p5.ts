@@ -39,7 +39,7 @@ export const enB1P5: SkillExercise[] = [
       "You should take a photo of your passport now, before you travel, and send it to yourself by email. " +
       "A photo is not a legal document, but it saves hours at the consulate, because the number is on it.\n\n" +
       "At the consulate you will normally get an emergency travel document. It is valid for one journey home " +
-      "and for a fixed number of days. You must not use it for a holiday in a third country; that is a common " +
+      "and for a fixed number of days. You must not use it for a vacation in a third country; that is a common " +
       "and expensive mistake.\n\n" +
       "You do not have to pay for everything yourself. Many travel insurance policies cover the fee and the " +
       "extra nights, but almost all of them require the police report within twenty-four hours. Read that line " +

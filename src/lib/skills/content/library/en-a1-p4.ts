@@ -17,7 +17,7 @@ export const enA1P4: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "reading",
-    title: "The Old Cinema Opens Again",
+    title: "The Old Movie Theater Opens Again",
     genre: "article",
     intro: "Kasabanın eski sinemasının yeniden açıldığını duyuran kısa bir haber okuyacaksın.",
     gloss: [
@@ -30,17 +30,17 @@ export const enA1P4: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "THE OLD CINEMA OPENS AGAIN\n\n" +
-      "Good news for our town. The old cinema in Park Street opens again on the twelfth of March, after four years.\n\n" +
+      "THE OLD MOVIE THEATER OPENS AGAIN\n\n" +
+      "Good news for our town. The old movie theater on Park Street opens again on the twelfth of March, after four years.\n\n" +
       "The building is the same, but inside everything is new: new seats, a new floor and a small café.\n\n" +
       "Tickets are seven euros. For children and students they are four euros. On Mondays all tickets are five euros.\n\n" +
       "The first film is a comedy from nineteen fifty-four. It starts at eight in the evening. " +
       "Coffee and cake are free on the first day.\n\n" +
-      "The cinema is open every day from four to eleven.",
+      "The movie theater is open every day from four to eleven.",
     questions: [
       {
         text: "What is the news?",
-        options: ["An old cinema opens again.", "A new cinema is very expensive.", "The cinema closes in March."],
+        options: ["An old movie theater opens again.", "A new movie theater is very expensive.", "The movie theater closes in March."],
         answer: 0,
         explain: "Başlık ve ilk cümle aynı şeyi söylüyor: dört yıl sonra yeniden açılıyor.",
       },
@@ -59,7 +59,7 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The cinema opens on the ___ of March.",
+        text: "The movie theater opens on the ___ of March.",
         options: [],
         answer: 0,
         accept: ["twelfth", "12th", "12"],
@@ -74,10 +74,10 @@ export const enA1P4: SkillExercise[] = [
         explain: "„Coffee and cake are free on the first day.“",
       },
       {
-        text: "When is the cinema open?",
+        text: "When is the movie theater open?",
         options: ["every day from four to eleven", "only on Mondays", "only in the evening at eight"],
         answer: 0,
-        explain: "„The cinema is open every day from four to eleven.“ Saat sekiz ilk filmin saati.",
+        explain: "„The movie theater is open every day from four to eleven.“ Saat sekiz ilk filmin saati.",
       },
     ],
   },

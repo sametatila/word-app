@@ -23,12 +23,12 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "reading",
-    "title": "Cinema on Saturday",
+    "title": "Movies on Saturday",
     "genre": "message",
     "intro": "Deniz ile Emma'nın sinema planı yaptığı mesajlaşmayı okuyacaksın.",
     "gloss": [
       {
-        "de": "cinema",
+        "de": "movie theater",
         "tr": "sinema"
       },
       {
@@ -59,7 +59,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
-    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Cinema. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the cinema.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
+    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Cinema. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
     "questions": [
       {
         "text": "What time does the film start?",
@@ -72,7 +72,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Deniz \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir."
       },
       {
-        "text": "Murat is going to the cinema with them.",
+        "text": "Murat is going to the movies with them.",
         "options": [
           "True",
           "False"
@@ -84,11 +84,11 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Where do Deniz and Emma meet?",
         "options": [
           "At Emma's home",
-          "In front of the cinema",
+          "In front of the movie theater",
           "At Emma's workplace"
         ],
         "answer": 1,
-        "explain": "Deniz \"Let's meet at half past five in front of the cinema.\" diyor. Buluşma yeri sinemanın önü."
+        "explain": "Deniz \"Let's meet at half past five in front of the movie theater.\" diyor. Buluşma yeri sinemanın önü."
       },
       {
         "text": "How much is one ticket?",
@@ -151,7 +151,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "boş / müsait"
       },
       {
-        "de": "flat",
+        "de": "apartment",
         "tr": "daire"
       },
       {
@@ -160,7 +160,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have got a cat, and I love old films and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my flat. We can talk there, or we can talk online. Please write me a message!",
+    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have got a cat, and I love old films and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my apartment. We can talk there, or we can talk online. Please write me a message!",
     "questions": [
       {
         "text": "How old is Elena?",
@@ -640,12 +640,12 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "reading",
-    "title": "Bus 12 Timetable",
+    "title": "Bus 12 Schedule",
     "genre": "guide",
     "intro": "Şehir merkezine giden 12 numaralı otobüsün sefer saatlerini ve yanındaki kısa duyuruyu okuyacaksın.",
     "gloss": [
       {
-        "de": "timetable",
+        "de": "schedule",
         "tr": "sefer saatleri"
       },
       {
@@ -674,7 +674,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "BUS 12 — CITY CENTER\nTIMETABLE · Monday to Friday\n\nFrom Green Park:\n07:15   07:45   08:15   08:45\nThen every 30 minutes until 19:45\n\nFrom Central Station:\n07:30   08:00   08:30   09:00\nThen every 30 minutes until 20:00\n\nSaturday: first bus 09:00, last bus 18:00\nSunday: no service\n\nNOTICE\nThere is roadwork in Market Street this week. Bus 12 does not stop at Market Street. Please use the stop in Church Road. It is a five-minute walk.\n\nThe ticket office is closed on Sunday. You can buy tickets on the bus. A single ticket is 2 euros. Students pay 1 euro.\n\nDo you need help? Call 0800 44 12.",
+    "text": "BUS 12 — CITY CENTER\nSCHEDULE · Monday to Friday\n\nFrom Green Park:\n07:15   07:45   08:15   08:45\nThen every 30 minutes until 19:45\n\nFrom Central Station:\n07:30   08:00   08:30   09:00\nThen every 30 minutes until 20:00\n\nSaturday: first bus 09:00, last bus 18:00\nSunday: no service\n\nNOTICE\nThere is roadwork in Market Street this week. Bus 12 does not stop at Market Street. Please use the stop in Church Road. It is a five-minute walk.\n\nThe ticket office is closed on Sunday. You can buy tickets on the bus. A single ticket is 2 euros. Students pay 1 euro.\n\nDo you need help? Call 0800 44 12.",
     "questions": [
       {
         "text": "What time is the first bus from Central Station on Monday?",
@@ -754,7 +754,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "kira"
       },
       {
-        "de": "flat",
+        "de": "apartment",
         "tr": "daire"
       },
       {
@@ -780,17 +780,17 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big flat. The flat is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small wardrobe. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from 1 October.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small wardrobe. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from 1 October.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
     "questions": [
       {
-        "text": "Where is the flat?",
+        "text": "Where is the apartment?",
         "options": [
           "Near the train station",
           "Near the hospital",
           "Near the school"
         ],
         "answer": 0,
-        "explain": "İlanda 'The flat is on Green Street, near the train station.' yazıyor. Yani daire tren istasyonunun yakınında."
+        "explain": "İlanda 'The apartment is on Green Street, near the train station.' yazıyor. Yani daire tren istasyonunun yakınında."
       },
       {
         "text": "Water and electricity are in the price.",
@@ -859,7 +859,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "dağınık"
       },
       {
-        "de": "bin",
+        "de": "trash can",
         "tr": "çöp kutusu"
       },
       {
@@ -880,7 +880,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the flat is a little messy! Can you help me today, please?\n\n1. The kitchen bin is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small shop on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big cupboard.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the shop is on the table — twenty pounds.\n\nThanks a lot!\nDan",
+    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small shop on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big cupboard.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the shop is on the table — twenty pounds.\n\nThanks a lot!\nDan",
     "questions": [
       {
         "text": "What time is Dan at work until?",
@@ -938,11 +938,11 @@ export const enMobile2026: SkillExercise[] = [
         "options": [],
         "answer": 0,
         "accept": [
-          "the bin",
-          "the kitchen bin",
-          "bin"
+          "the trash can",
+          "the kitchen trash can",
+          "trash can"
         ],
-        "explain": "\"The kitchen bin is full. Please take it out.\" Listenin ilk maddesi bu."
+        "explain": "\"The kitchen trash can is full. Please take it out.\" Listenin ilk maddesi bu."
       }
     ]
   },
@@ -1196,7 +1196,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Elif!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has got a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mum stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nDeniz",
+    "text": "Hi Elif!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has got a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mom stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nDeniz",
     "questions": [
       {
         "text": "When did Deniz's family arrive in Antalya?",
@@ -1228,14 +1228,14 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"I took forty photos\" cümlesine göre kırk fotoğraf çekti. Üç saat yürüdükleri de aynı cümlede yazıyor."
       },
       {
-        "text": "Why did Mum stay at the hotel on Sunday?",
+        "text": "Why did Mom stay at the hotel on Sunday?",
         "options": [
           "She was tired",
-          "She was ill",
+          "She was sick",
           "She was writing a postcard"
         ],
         "answer": 0,
-        "explain": "Metinde \"Mum stayed at the hotel because she was tired\" yazıyor. Kartpostalı yazan kişi ise Deniz."
+        "explain": "Metinde \"Mom stayed at the hotel because she was tired\" yazıyor. Kartpostalı yazan kişi ise Deniz."
       },
       {
         "kind": "gapfill",
@@ -1448,7 +1448,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Emre",
-        "text": "I've got two brothers and one sister. Here in London I'm living with my aunt. I can speak a little English, but I can't speak French. I love music and football."
+        "text": "I've got two brothers and one sister. Here in London I'm living with my aunt. I can speak a little English, but I can't speak French. I love music and soccer."
       },
       {
         "speaker": "Emre",
@@ -1888,7 +1888,7 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Why can't Ayse come on Thursday?",
         "options": [
-          "Because she is ill",
+          "Because she is sick",
           "Because the salon is full that day",
           "Because the salon is closed"
         ],
@@ -2942,12 +2942,12 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "writing",
-    "title": "Let's Go to the Cinema",
+    "title": "Let's Go to the Movies",
     "genre": "message",
     "intro": "Bir arkadaşını sinemaya davet etmeyi, gün ve saat söylemeyi ve buluşma yeri önermeyi çalışacaksın.",
     "gloss": [
       {
-        "de": "cinema",
+        "de": "movie theater",
         "tr": "sinema"
       },
       {
@@ -2980,13 +2980,13 @@ export const enMobile2026: SkillExercise[] = [
       {
         "kind": "build",
         "tr": "Bu cumartesi sinemaya gidiyorum.",
-        "answer": "I'm going to the cinema this Saturday.",
+        "answer": "I'm going to the movies this Saturday.",
         "alternatives": [
-          "I am going to the cinema this Saturday.",
-          "I am going to the cinema this Saturday",
-          "I'm going to the cinema this Saturday",
-          "I'm going to the cinema on Saturday.",
-          "I am going to the cinema on Saturday."
+          "I am going to the movies this Saturday.",
+          "I am going to the movies this Saturday",
+          "I'm going to the movies this Saturday",
+          "I'm going to the movies on Saturday.",
+          "I am going to the movies on Saturday."
         ],
         "hint": "Planlanmış yakın bir plan için present continuous kullanılır: I'm going. Gün adları büyük harfle yazılır: Saturday."
       },
@@ -3006,15 +3006,15 @@ export const enMobile2026: SkillExercise[] = [
       {
         "kind": "build",
         "tr": "Hadi saat altıda sinemanın önünde buluşalım.",
-        "answer": "Let's meet in front of the cinema at six.",
+        "answer": "Let's meet in front of the movie theater at six.",
         "alternatives": [
-          "Let us meet in front of the cinema at six.",
-          "Let us meet in front of the cinema at six",
-          "Let's meet in front of the cinema at six",
-          "Let's meet in front of the cinema at 6.",
-          "Let's meet at six in front of the cinema.",
-          "let us meet in front of the cinema at 6.",
-          "let us meet at six in front of the cinema."
+          "Let us meet in front of the movie theater at six.",
+          "Let us meet in front of the movie theater at six",
+          "Let's meet in front of the movie theater at six",
+          "Let's meet in front of the movie theater at 6.",
+          "Let's meet at six in front of the movie theater.",
+          "let us meet in front of the movie theater at 6.",
+          "let us meet at six in front of the movie theater."
         ],
         "hint": "Teklif ederken 'Let's' (= let us) + yalın fiil kullanılır: Let's meet."
       },
@@ -3024,7 +3024,7 @@ export const enMobile2026: SkillExercise[] = [
         "checklist": [
           "Bir selamlama ve kapanış cümlesi yazdın mı?",
           "Günü ve saati açıkça belirttin mi (on Saturday, at seven)?",
-          "Buluşma yerini söyledin mi (in front of the cinema)?",
+          "Buluşma yerini söyledin mi (in front of the movie theater)?",
           "Arkadaşına bir soru sorup cevap istedin mi (Do you want to come with me?)?"
         ],
         "minWords": 30,
@@ -3034,7 +3034,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Cumartesi boş musun?"
           },
           {
-            "de": "There is a new film at the cinema.",
+            "de": "There is a new film at the movie theater.",
             "tr": "Sinemada yeni bir film var."
           },
           {
@@ -3046,7 +3046,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Film saat sekizde başlıyor."
           },
           {
-            "de": "Let's meet in front of the cinema.",
+            "de": "Let's meet in front of the movie theater.",
             "tr": "Sinemanın önünde buluşalım."
           },
           {
@@ -3054,7 +3054,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Lütfen bana cevap yaz."
           }
         ],
-        "sample": "Hi Deniz! How are you? There is a new action film at the cinema this Saturday. Do you want to come with me? The film starts at seven, so let's meet in front of the cinema at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
+        "sample": "Hi Deniz! How are you? There is a new action film at the movie theater this Saturday. Do you want to come with me? The film starts at seven, so let's meet in front of the movie theater at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
       }
     ]
   },
@@ -3182,7 +3182,7 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "writing",
-    "title": "A Note for My Flatmate",
+    "title": "A Note for My Roommate",
     "genre": "message",
     "intro": "Ev arkadaşına market listesi bırakmayı çalışacaksın: evde ne bittiğini söylemeyi, miktar belirtmeyi ve kibarca rica etmeyi öğreniyorsun.",
     "gloss": [
@@ -3709,12 +3709,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "kind": "build",
         "tr": "Sinemaya gitmedik ama denizde yüzdük.",
-        "answer": "We didn't go to the cinema, but we swam in the sea.",
+        "answer": "We didn't go to the movies, but we swam in the sea.",
         "alternatives": [
-          "We did not go to the cinema, but we swam in the sea.",
-          "We didn't go to the cinema but we swam in the sea",
-          "We did not go to the cinema but we swam in the sea",
-          "We didn't go to the cinema, but we swam in the sea"
+          "We did not go to the movies, but we swam in the sea.",
+          "We didn't go to the movies but we swam in the sea",
+          "We did not go to the movies but we swam in the sea",
+          "We didn't go to the movies, but we swam in the sea"
         ],
         "hint": "Geçmiş zamanda olumsuzluk didn't ile kurulur ve fiil yalın kalır: didn't go (gitmedik); 'swim' düzensizdir, geçmişi 'swam'."
       },
@@ -4067,7 +4067,7 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A2",
     "skill": "reading",
-    "title": "Flat for Rent: 14 Green Street",
+    "title": "Apartment for Rent: 14 Green Street",
     "genre": "ad",
     "intro": "Bir kiralık daire ilanını okuyacaksın.",
     "gloss": [
@@ -4084,7 +4084,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "faturalar"
       },
       {
-        "de": "lift",
+        "de": "elevator",
         "tr": "asansör"
       },
       {
@@ -4103,7 +4103,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
-    "text": "FLAT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on 1 October.\n\nThe flat is on the third floor of a quiet building. There is no lift, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the flat to three people, so please call today. We do not answer emails.",
+    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on 1 October.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
     "questions": [
       {
         "text": "How much is the rent every month?",
@@ -4116,16 +4116,16 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "İlanda \"Rent: £850 a month\" yazıyor. Depozito ayrıca bir aylık kira, ama aylık kira 850 sterlin."
       },
       {
-        "text": "There is a lift in the building.",
+        "text": "There is an elevator in the building.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Metinde \"There is no lift, so you must use the stairs\" deniyor. Yani asansör yok, merdiven kullanmak gerekiyor."
+        "explain": "Metinde \"There is no elevator, so you must use the stairs\" deniyor. Yani asansör yok, merdiven kullanmak gerekiyor."
       },
       {
-        "text": "Which animals can live in the flat?",
+        "text": "Which animals can live in the apartment?",
         "options": [
           "Dogs",
           "Small pets, but not dogs",
@@ -4146,14 +4146,14 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "The flat is on the ___ floor.",
+        "text": "The apartment is on the ___ floor.",
         "options": [],
         "answer": 0,
         "accept": [
           "third",
           "3rd"
         ],
-        "explain": "\"The flat is on the third floor of a quiet building.\" Asansör yok."
+        "explain": "\"The apartment is on the third floor of a quiet building.\" Asansör yok."
       },
       {
         "kind": "short_answer",
@@ -4339,7 +4339,7 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Who will answer questions on Saturday morning?",
         "options": [
-          "A shop assistant at the door",
+          "A sales clerk at the door",
           "Elif Demir, the new manager",
           "The staff of the coffee shop"
         ],

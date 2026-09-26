@@ -245,7 +245,7 @@ export const enA2P3: SkillExercise[] = [
     intro: "İngilizcede vurgusuz heceler kısalır ve ünlüsü belirsiz bir „ı“ sesine döner; her heceyi net söylemek aksanı ağırlaştırır.",
     gloss: [
       { de: "banana", tr: "muz" },
-      { de: "cinema", tr: "sinema" },
+      { de: "animals", tr: "hayvanlar" },
       { de: "company", tr: "şirket" },
       { de: "problem", tr: "sorun" },
     ],
@@ -268,9 +268,9 @@ export const enA2P3: SkillExercise[] = [
         ],
       },
       {
-        de: "The children are at the cinema.",
-        tr: "Çocuklar sinemada.",
-        hint: "„the“ = dı, „children“ = ÇİL-drın, „cinema“ = Sİ-nı-mı. Üçünde de zayıf ünlü var.",
+        de: "The children are with the animals.",
+        tr: "Çocuklar hayvanların yanında.",
+        hint: "„the“ = dı, „children“ = ÇİL-drın, „animals“ = E-nı-mılz. Üçünde de zayıf ünlü var.",
         confusions: [
           { heard: [], fix: "„the“ vurgusuzken „dii“ değil „dı“ okunur.", expected: "the" },
         ],

@@ -62,7 +62,7 @@ export const enA1P14: SkillExercise[] = [
           { de: "I like it because …", tr: "Onu seviyorum çünkü …" },
         ],
         sample:
-          "My favorite place in town is Rose Park. It is near the old bridge, ten minutes from my flat. There is a small " +
+          "My favorite place in town is Rose Park. It is near the old bridge, ten minutes from my apartment. There is a small " +
           "café in the middle of the park and there are many old trees. You can sit by the water and read a book. " +
           "I meet my friends there every Sunday. I like it because it is green and quiet.",
       },

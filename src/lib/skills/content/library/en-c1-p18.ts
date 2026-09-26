@@ -25,7 +25,7 @@ export const enC1P18: SkillExercise[] = [
     gloss: [
       { de: "homework", tr: "ev ödevi" },
       { de: "to grade", tr: "not vermek" },
-      { de: "pupil", tr: "okul öğrencisi" },
+      { de: "student", tr: "okul öğrencisi" },
       { de: "guidance", tr: "yönerge" },
       { de: "trial", tr: "deneme" },
       { de: "share", tr: "oran" },
@@ -41,20 +41,20 @@ export const enC1P18: SkillExercise[] = [
     minutes: 10,
     text:
       "Ridgeway to end graded homework from September\n\n" +
-      "Ridgeway Secondary is to stop grading homework for all pupils under sixteen from the start of the next " +
+      "Ridgeway Secondary is to stop grading homework for all students under sixteen from the start of the next " +
       "school year, the head teacher confirmed on Monday. Homework will still be set, but it will no longer " +
-      "count towards reports, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
+      "count toward reports, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
       "The decision follows a two-year trial in three year groups. According to the school's own figures, the " +
       "share of homework handed in on time fell slightly during the trial, from about eighty-two to seventy-eight " +
       "percent. What changed more was what was handed in. Teachers reported far fewer pieces that had clearly " +
-      "been copied or completed by a parent, and the gap between pupils with and without help at home narrowed " +
+      "been copied or completed by a parent, and the gap between students with and without help at home narrowed " +
       "in the end-of-year tests.\n\n" +
       "“Graded homework was measuring two things at once,” the head, Dr Anita Rao, said. “Partly what a child " +
       "had learned, and partly what kind of kitchen table they went home to. We couldn't separate them, so we " +
       "have stopped pretending to.”\n\n" +
       "Not everyone is convinced. A group of parents is set to present a petition to the governors next week, " +
-      "arguing that without grades pupils will simply stop doing the work. Some teachers share a different " +
-      "worry: that homework which carries no mark will quietly become optional, and that the pupils most in need " +
+      "arguing that without grades students will simply stop doing the work. Some teachers share a different " +
+      "worry: that homework which carries no mark will quietly become optional, and that the students most in need " +
       "of practice will be the first to skip it.\n\n" +
       "The school says it will publish completion rates each term, and that the policy is to be reviewed after " +
       "one year rather than three. Dr Rao admitted that the trial had been too small to settle the question. " +
@@ -64,8 +64,8 @@ export const enC1P18: SkillExercise[] = [
         text: "What will change from September?",
         options: [
           "Homework will no longer be set.",
-          "Homework will no longer count towards reports.",
-          "Pupils will receive more homework.",
+          "Homework will no longer count toward reports.",
+          "Students will receive more homework.",
         ],
         answer: 1,
         explain: "Ödev verilmeye devam edecek ama karneye sayılmayacak.",
@@ -107,8 +107,8 @@ export const enC1P18: SkillExercise[] = [
         text: "What did graded homework measure, according to Dr Rao?",
         options: [
           "learning and home circumstances together",
-          "only the effort a pupil made",
-          "only how often a pupil attended",
+          "only the effort a student made",
+          "only how often a student attended",
         ],
         answer: 0,
         explain: "Çocuğun öğrendiğini ve eve döndüğü mutfak masasını; ikisi ayrılamıyordu.",
@@ -143,7 +143,7 @@ export const enC1P18: SkillExercise[] = [
       { speaker: "Mr Nakamura", text: "First, what is not changing. Homework will still be set every week in every subject, and teachers will still read it and write comments." },
       { speaker: "Mr Nakamura", text: "What is changing is that it will no longer carry a mark, and it will not appear on your child's report." },
       { speaker: "Mr Nakamura", text: "Teachers are to attend two training sessions in June. The aim is simple: to make feedback on homework specific enough to be worth reading without a grade." },
-      { speaker: "Mr Nakamura", text: "We know some of you are worried that pupils will stop doing the work. We share that worry, and we are not going to hide from it." },
+      { speaker: "Mr Nakamura", text: "We know some of you are worried that students will stop doing the work. We share that worry, and we are not going to hide from it." },
       { speaker: "Mr Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
       { speaker: "Mr Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
       { speaker: "Mr Nakamura", text: "If rates in any year group fall below seventy percent, the head and the governors are due to meet within a month to decide what to do." },
@@ -261,7 +261,7 @@ export const enC1P18: SkillExercise[] = [
         sample:
           "Homework without marks: what changes, and what we think\n\n" +
           "From September, homework is to be marked with comments only. It will still be set every week, and " +
-          "teachers will still read it, but it will not count towards our reports. The school ran a trial in three " +
+          "teachers will still read it, but it will not count toward our reports. The school ran a trial in three " +
           "year groups for two years, and the policy is to be reviewed after one year.\n\n" +
           "Not everyone in Year 10 is convinced. “If it doesn't count, half the class will stop doing it,” one " +
           "student told me, and she was not joking. Others see it differently. A student in Year 9, who took part " +
@@ -306,18 +306,18 @@ export const enC1P18: SkillExercise[] = [
       minSeconds: 60,
       maxSeconds: 100,
       sampleDe:
-        "A mark on homework measures more than it is meant to. It is supposed to tell us what a pupil has " +
+        "A mark on homework measures more than it is meant to. It is supposed to tell us what a student has " +
         "learned, but work done at home also records how quiet the home is, whether anyone there can help, and " +
         "sometimes whether an adult did the work. " +
-        "That is why I'm uneasy about grading it: the pupils with the most support collect the best marks for " +
+        "That is why I'm uneasy about grading it: the students with the most support collect the best marks for " +
         "reasons that have little to do with them. " +
-        "The most serious risk of dropping marks is not laziness in general. It is that the pupils who most need " +
+        "The most serious risk of dropping marks is not laziness in general. It is that the students who most need " +
         "practice are the first to decide it is optional, and the gap grows in exactly the place we meant to " +
         "close it. " +
         "What I'd propose is a middle position: no marks, but a simple record of whether the work was attempted, " +
-        "shared with parents, and specific comments that a pupil has to answer in one sentence before the next " +
+        "shared with parents, and specific comments that a student has to answer in one sentence before the next " +
         "piece is set. " +
-        "The test would be whether completion holds up among the pupils who were already struggling, not the " +
+        "The test would be whether completion holds up among the students who were already struggling, not the " +
         "average for the whole school. If it drops there, the policy has failed, however good the overall " +
         "figures look.",
       rubricHint:
@@ -404,7 +404,7 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Teachers are ___ to receive new guidance in June. (expected by the timetable)",
+        text: "Teachers are ___ to receive new guidance in June. (expected by the schedule)",
         options: [],
         answer: 0,
         accept: ["due"],

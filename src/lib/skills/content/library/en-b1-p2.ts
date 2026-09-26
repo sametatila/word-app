@@ -131,14 +131,14 @@ export const enB1P2: SkillExercise[] = [
       { speaker: "Host", text: "And third, Amal, who is thirty-four and has two small children." },
       { speaker: "Amal", text: "People always ask what you would do. Nobody asks what you would stop doing. I would stop apologizing for being late everywhere." },
       { speaker: "Amal", text: "If I had the time, I would just be on time, and that would change more than any big plan." },
-      { speaker: "Host", text: "Three answers, and not one of them is a holiday. Next week we ask the opposite question: what would you do if you had one week and no money?" },
+      { speaker: "Host", text: "Three answers, and not one of them is a vacation. Next week we ask the opposite question: what would you do if you had one week and no money?" },
     ],
     questions: [
       {
         text: "What is the question in this episode?",
         options: [
           "what people would do with a paid free year",
-          "how people usually spend their holidays",
+          "how people usually spend their vacations",
           "why people change jobs after thirty",
         ],
         answer: 0,
@@ -179,9 +179,9 @@ export const enB1P2: SkillExercise[] = [
       },
       {
         text: "What does the host notice at the end?",
-        options: ["Nobody chose a holiday.", "Everybody wants more money.", "All three would move away."],
+        options: ["Nobody chose a vacation.", "Everybody wants more money.", "All three would move away."],
         answer: 0,
-        explain: "„Three answers, and not one of them is a holiday.“",
+        explain: "„Three answers, and not one of them is a vacation.“",
       },
     ],
   },
@@ -208,8 +208,8 @@ export const enB1P2: SkillExercise[] = [
       {
         kind: "build",
         tr: "Herkes katılırsa maliyet daire başına iki bin euro olacak.",
-        answer: "If everybody joins, the cost will be two thousand euros per flat.",
-        alternatives: ["The cost will be two thousand euros per flat if everybody joins."],
+        answer: "If everybody joins, the cost will be two thousand euros per apartment.",
+        alternatives: ["The cost will be two thousand euros per apartment if everybody joins."],
         hint: "Birinci tip koşulda „if“ yarısı geniş zaman, ana yarısı „will“ alır.",
       },
       {
@@ -225,7 +225,7 @@ export const enB1P2: SkillExercise[] = [
           "Apartmanının forumunda çatı terası öneriliyor. Katkını yaz: net bir tutum al, iki gerekçe ver, bir şart koy, haklı bulduğun bir itirazı kabul et ve somut bir öneriyle bitir.",
         stimulus:
           "Proposal for the owners' meeting: we want to open the roof as a shared terrace. Estimated cost: " +
-          "twenty-four thousand euros for the railing, the door and the floor, shared between the twelve flats. " +
+          "twenty-four thousand euros for the railing, the door and the floor, shared between the twelve apartments. " +
           "Please write your opinion before the thirtieth of April.",
         checklist: [
           "Tutumunu ilk cümlede söyle",
@@ -245,7 +245,7 @@ export const enB1P2: SkillExercise[] = [
           "I am in favor, but only with one condition. Two reasons first. If we open the roof, the building gets " +
           "a real common space for the first time; at the moment the only place we meet is the letter boxes. " +
           "And a terrace is worth more than a new front door, both for us now and if somebody sells later. " +
-          "My condition is the noise. If there are no times written down, the flats on the top floor will pay " +
+          "My condition is the noise. If there are no times written down, the apartments on the top floor will pay " +
           "for everybody's summer. I would put quiet hours from ten at night in the same paper as the costs. " +
           "I also accept the objection about money: two thousand euros is a lot in one year. If the payment were " +
           "spread over three years, I think most of us could manage it. So: yes to the terrace, with quiet hours " +

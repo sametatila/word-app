@@ -42,7 +42,7 @@ export const enB2P13: SkillExercise[] = [
       "I voted against the policy, and I want to explain why I have changed my mind, and also " +
       "what I still think we got wrong.\n\n" +
       "The change in the corridors was immediate. Break time became loud again. Students who " +
-      "had spent lunch looking down started arguing about football, which is not an educational " +
+      "had spent lunch looking down started arguing about soccer, which is not an educational " +
       "outcome but is not nothing either. Staff noticed that fewer fights began online and " +
       "finished in the playground, because during the day there was no online for them to " +
       "begin in.\n\n" +

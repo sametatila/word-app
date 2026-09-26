@@ -17,7 +17,7 @@ export const enB2P3: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "reading",
-    title: "Before You Have Work Done on Your Flat",
+    title: "Before You Have Work Done on Your Apartment",
     genre: "info",
     intro: "Tadilat yaptıracaklara yönelik bir rehber okuyacaksın: teklifler nasıl okunur, ödeme nasıl bölünür, ne yazıya geçirilir.",
     gloss: [
@@ -256,7 +256,7 @@ export const enB2P3: SkillExercise[] = [
         ],
         sample:
           "How to get a machine repaired\n\n" +
-          "Where to send it. All requests go to the facilities mailbox, not to a person. People go on holiday; " +
+          "Where to send it. All requests go to the facilities mailbox, not to a person. People go on vacation; " +
           "the mailbox does not.\n\n" +
           "What to write. Four things, in this order: the room number, the label on the machine (a six-digit " +
           "number on the back), what happens and since when, and whether you can work without it today. " +
@@ -306,9 +306,9 @@ export const enB2P3: SkillExercise[] = [
         "interesting. The real cost of doing it yourself is not the tools; it is the second Saturday. Almost " +
         "everything takes twice as long as the video, and the video was made by somebody who had done it forty " +
         "times. On the other hand, if you have it done, you lose something that people rarely mention: you " +
-        "never learn how your own flat is built, so the next problem is also somebody else's problem. " +
+        "never learn how your own apartment is built, so the next problem is also somebody else's problem. " +
         "My rule has two parts. First, if a mistake is invisible and cheap, do it yourself — painting, shelves, " +
-        "a tap washer. Second, if a mistake is hidden inside a wall or involves water, gas or electricity, have " +
+        "a faucet washer. Second, if a mistake is hidden inside a wall or involves water, gas or electricity, have " +
         "it done, and have it done by somebody who will still exist in two years. The test is not how hard the " +
         "job looks. It is how expensive it is to be wrong.",
       rubricHint:

@@ -49,7 +49,7 @@ export const enC1P14: SkillExercise[] = [
       "The songs I heard were not identical, but they belonged to a narrow region of taste, the edges of " +
       "which I had stopped noticing.\n\n" +
       "So last spring I made a rule. For six months, every album I listened to had to be chosen by a person: " +
-      "a friend, a shop assistant, a presenter on the radio, or the stranger to whom the library had lent the " +
+      "a friend, a sales clerk, a presenter on the radio, or the stranger to whom the library had lent the " +
       "record before me and who had left a note inside the sleeve.\n\n" +
       "The first month was irritating. I disliked about half of what I heard, and some of it I switched off " +
       "after ten minutes. By the third month something had changed. I no longer expected to enjoy everything, " +

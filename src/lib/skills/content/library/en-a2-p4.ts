@@ -112,7 +112,7 @@ export const enA2P4: SkillExercise[] = [
     segments: [
       { speaker: "Ana", text: "Have you got a minute? It's about Kerem. His last day is on the twenty-eighth." },
       { speaker: "Bruno", text: "Already? I thought he was leaving in July." },
-      { speaker: "Ana", text: "No, he found a flat there faster than he expected. So we have two weeks." },
+      { speaker: "Ana", text: "No, he found an apartment there faster than he expected. So we have two weeks." },
       { speaker: "Bruno", text: "Okay. Are we doing a present or just a card?" },
       { speaker: "Ana", text: "Both, I think. I asked around: most people want to give something for the garden. He talks about that balcony all the time." },
       { speaker: "Bruno", text: "Good idea. How much do we collect?" },
@@ -226,7 +226,7 @@ export const enA2P4: SkillExercise[] = [
           "canteen. Second, we buy two new printers, one for each floor. Third, the Friday meeting starts at nine " +
           "now, not at half past eight. One question is still open: nobody knows how much money is left for the " +
           "training. Nina is going to ask the office on Monday. The deadline for the party list is the twentieth " +
-          "of June. Please send your holiday dates to Ali before Friday. That was everything important!",
+          "of June. Please send your vacation dates to Ali before Friday. That was everything important!",
       },
     ],
   },

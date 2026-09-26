@@ -245,7 +245,7 @@ export const enB1P3: SkillExercise[] = [
           "The surprise was who comes down at three o'clock. Not the loud guests; they sleep. It is people who " +
           "cannot sleep, and they want to talk to somebody who is not their family. I was never trained for that " +
           "part, and it was the part I did most. The hard part was the second day off: the first day you sleep, " +
-          "and on the second you are awake at four in the morning in a flat where nothing is open. " +
+          "and on the second you are awake at four in the morning in an apartment where nothing is open. " +
           "Would I do it again? Yes, but not in winter.",
       },
     ],
@@ -283,7 +283,7 @@ export const enB1P3: SkillExercise[] = [
         "I think they should, but not in the way it is usually done. The strongest argument is simple and it is " +
         "not about medicine. In an emergency most people do nothing, and they do nothing because they are afraid " +
         "of making it worse. That fear is not removed by one afternoon at the age of sixteen; it is removed by " +
-        "doing the same thing every year until it feels normal. Against this, people say the timetable is " +
+        "doing the same thing every year until it feels normal. Against this, people say the schedule is " +
         "already full, and they are right. But first aid does not need a whole subject. Twenty minutes, three " +
         "times a year, would be enough if it is always the same three things: call, check, press. " +
         "My only condition is that it must be practical. If it is taught from a book and tested on paper, we " +

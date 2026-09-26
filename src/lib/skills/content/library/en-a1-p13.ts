@@ -37,14 +37,14 @@ export const enA1P13: SkillExercise[] = [
       "The laundry room is in the basement, next to the bike room. It is open every day from seven in the morning to ten at night.\n\n" +
       "There are two washing machines and one dryer. One wash costs two euros, and the dryer costs one euro. " +
       "The machines only take coins, so please bring some with you.\n\n" +
-      "Please write your name and flat number on the list on the door. One wash takes about one hour.\n\n" +
+      "Please write your name and apartment number on the list on the door. One wash takes about one hour.\n\n" +
       "When your wash is finished, take your clothes out. Do not leave them in the machine.\n\n" +
       "After you use a machine, please clean the door.\n\n" +
       "A problem with a machine? Call Mr. Bauer on 0160 71 28 44.",
     questions: [
       {
         text: "Where is the laundry room?",
-        options: ["on the first floor", "in the basement", "next to Mr. Bauer's flat"],
+        options: ["on the first floor", "in the basement", "next to Mr. Bauer's apartment"],
         answer: 1,
         explain: "„The laundry room is in the basement, next to the bike room.“",
       },
@@ -74,8 +74,8 @@ export const enA1P13: SkillExercise[] = [
         text: "What do you write on the list?",
         options: [],
         answer: 0,
-        accept: ["your name and flat number", "name and flat number", "my name and flat number", "the name and the flat number"],
-        explain: "„Please write your name and flat number on the list on the door.“",
+        accept: ["your name and apartment number", "name and apartment number", "my name and apartment number", "the name and the apartment number"],
+        explain: "„Please write your name and apartment number on the list on the door.“",
       },
       {
         text: "What must you do after you use a machine?",
@@ -168,11 +168,11 @@ export const enA1P13: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "writing",
-    title: "My New Flat",
+    title: "My New Apartment",
     genre: "email",
     intro: "Yeni bir daireye taşındın; önce iki cümle kur, sonra bir arkadaşına daireni anlatan ve onu davet eden kısa bir e-posta yaz.",
     gloss: [
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "kitchen", tr: "mutfak" },
       { de: "balcony", tr: "balkon" },
       { de: "loud", tr: "gürültülü" },
@@ -205,14 +205,14 @@ export const enA1P13: SkillExercise[] = [
         ],
         minWords: 30,
         phrases: [
-          { de: "My new flat is in …", tr: "Yeni dairem …'de." },
+          { de: "My new apartment is in …", tr: "Yeni dairem …'de." },
           { de: "There are … rooms.", tr: "… oda var." },
           { de: "I really like …", tr: "…'ı çok seviyorum." },
           { de: "The only problem is …", tr: "Tek sorun …" },
           { de: "Can you come on …?", tr: "… günü gelebilir misin?" },
         ],
         sample:
-          "Hi Defne, I have a new flat! It is in Maple Street, near the river. There are two rooms, a small kitchen " +
+          "Hi Defne, I have a new apartment! It is in Maple Street, near the river. There are two rooms, a small kitchen " +
           "and a balcony. There is a big window in the kitchen and I can see the park from my room. The only problem is " +
           "the street: it is loud in the morning. Can you come on Saturday at six? I can cook for us. Love, Pelin",
       },

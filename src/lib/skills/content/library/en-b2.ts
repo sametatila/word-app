@@ -166,7 +166,7 @@ export const enB2: SkillExercise[] = [
         options: [
           "Because he asked in a meeting where he was present.",
           "Because two people have already complained to her.",
-          "Because the team was on holiday at the time.",
+          "Because the team was on vacation at the time.",
         ],
         answer: 0,
         explain: "„You asked in a meeting, with you in the room. That is not the same as an open call.“ — soru soruluş biçimi cevabı belirliyor.",
@@ -273,7 +273,7 @@ export const enB2: SkillExercise[] = [
           "Dear R. Demirci,\n\n" +
           "Thank you for taking the time to write, and I am sorry that you had to. You are right that three teachers " +
           "in eleven weeks is too many, and you are also right that the repeated unit is the real issue, not the staffing.\n\n" +
-          "What happened was that your original teacher left at short notice in week four and her replacement was ill " +
+          "What happened was that your original teacher left at short notice in week four and her replacement was sick " +
           "in week nine. We should have sent you the course plan when the first change was made; if we had done that, " +
           "the second teacher would not have started the same unit again. That was our mistake, not yours.\n\n" +
           "As a first step, we would like to credit four sessions to your account, which you can use in any course " +

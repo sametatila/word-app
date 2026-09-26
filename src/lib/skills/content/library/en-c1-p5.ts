@@ -34,7 +34,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "frame", tr: "gözlük çerçevesi" },
       { de: "pair", tr: "çift" },
       { de: "recommendation", tr: "öneri" },
-      { de: "pupil", tr: "okul öğrencisi" },
+      { de: "student", tr: "okul öğrencisi" },
       { de: "rise", tr: "yükselmek" },
       { de: "accurate", tr: "hatasız" },
     ],
@@ -42,7 +42,7 @@ export const enC1P5: SkillExercise[] = [
     text:
       "SCHOOL EYE TESTS AND GLASSES: THREE-YEAR REVIEW\n" +
       "Summary for the education committee\n\n" +
-      "Background. In the first year of the scheme, sight tests were offered in school to all pupils in year " +
+      "Background. In the first year of the scheme, sight tests were offered in school to all students in year " +
       "three, and glasses were provided free of charge where they were prescribed. The scheme was introduced " +
       "after a survey found that a fifth of children who had failed a test at a routine appointment had never " +
       "collected the prescription.\n\n" +

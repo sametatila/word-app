@@ -123,7 +123,7 @@ export const enA2P13: SkillExercise[] = [
       { text: "Hello, everyone, thanks for waiting. I'm Leo, the coach of the Tuesday group. I only need five minutes." },
       { text: "First, from next week training starts at half past four, not at five. The older team needs the field after us." },
       { text: "Second, the children should bring a bottle of water with their name on it. Last week we found seven bottles with no names." },
-      { text: "Please don't send them in their school shoes. They need football boots or sports shoes." },
+      { text: "Please don't send them in their school shoes. They need soccer cleats or sports shoes." },
       { text: "On Saturday the twelfth we have a small tournament with three other clubs. It starts at ten and finishes around one." },
       { text: "We need four parents with cars to take the children there. If you can drive, please tell me today or send me a message." },
       { text: "And one more thing: the kids played really well today. They enjoyed themselves, and so did I. See you next week." },
@@ -161,8 +161,8 @@ export const enA2P13: SkillExercise[] = [
         text: "Leo'nun ayakkabılarla ilgili söylediği ikinci cümleyi duyduğun gibi yaz.",
         options: [],
         answer: 0,
-        accept: ["They need football boots or sports shoes.", "They need football boots or sports shoes"],
-        explain: "„They need football boots or sports shoes.“ — okul ayakkabısı olmaz.",
+        accept: ["They need soccer cleats or sports shoes.", "They need soccer cleats or sports shoes"],
+        explain: "„They need soccer cleats or sports shoes.“ — okul ayakkabısı olmaz.",
       },
       {
         text: "What should be on each water bottle?",
@@ -227,7 +227,7 @@ export const enA2P13: SkillExercise[] = [
           "minutes. Mert doesn't eat tomatoes, so give him the blue bowl. After dinner they are allowed to watch one " +
           "film, but not on the tablets. They can wash and dress themselves, but please check their teeth. They have to " +
           "be in bed by half past eight. Duru always asks for one more story, and one is enough. If there is a problem, " +
-          "call me on 0532 118 40 27. If you can't reach me, call Mrs Hale in flat four. We'll be back at eleven. Thanks! Aylin",
+          "call me on 0532 118 40 27. If you can't reach me, call Mrs Hale in apartment four. We'll be back at eleven. Thanks! Aylin",
       },
     ],
   },

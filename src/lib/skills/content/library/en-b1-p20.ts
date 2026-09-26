@@ -37,8 +37,8 @@ export const enB1P20: SkillExercise[] = [
       "Six of my oldest friends are turning thirty this year, and someone had the idea that we " +
       "should celebrate with a long weekend in Lisbon. Everybody said yes immediately. I didn't " +
       "say anything, which they took as a yes too.\n\n" +
-      "The problem is money. The flights and the flat together will cost about four hundred " +
-      "pounds, and I'm saving for a deposit on a flat of my own. I'd rather spend one evening with " +
+      "The problem is money. The flights and the apartment together will cost about four hundred " +
+      "pounds, and I'm saving for a deposit on an apartment of my own. I'd rather spend one evening with " +
       "them here than a weekend there. But I'd hate to be the person who spoils it. What should " +
       "I do? — Quietly Counting\n\n" +
       "Dear Quietly Counting,\n\n" +
@@ -57,10 +57,10 @@ export const enB1P20: SkillExercise[] = [
         options: [
           "The writer is afraid of flying.",
           "The writer has to work that weekend.",
-          "The writer is saving for a flat.",
+          "The writer is saving for an apartment.",
         ],
         answer: 2,
-        explain: "„I'm saving for a deposit on a flat of my own.“",
+        explain: "„I'm saving for a deposit on an apartment of my own.“",
       },
       {
         text: "How did the friends understand the writer's silence?",
@@ -194,8 +194,8 @@ export const enB1P20: SkillExercise[] = [
       { de: "internship", tr: "staj" },
       { de: "design", tr: "tasarım" },
       { de: "unpaid", tr: "maaşsız" },
-      { de: "CV", tr: "özgeçmiş" },
-      { de: "autumn", tr: "sonbahar" },
+      { de: "résumé", tr: "özgeçmiş" },
+      { de: "fall", tr: "sonbahar" },
     ],
     minutes: 12,
     tasks: [
@@ -235,10 +235,10 @@ export const enB1P20: SkillExercise[] = [
           "Hi Kerem, thanks for asking me about the summer. I've thought about it for two days, " +
           "which is more than I usually think about my own plans. " +
           "On the one hand, the café pays well, you know the people, and you'd have money for the " +
-          "autumn. On the other hand, the studio is exactly the kind of place you want to work in " +
+          "fall. On the other hand, the studio is exactly the kind of place you want to work in " +
           "after university, and they don't take many students. " +
           "If it were me, I'd rather learn at the studio than work at the café all summer. Three " +
-          "months of making coffee won't look very different on your CV next year, but a real " +
+          "months of making coffee won't look very different on your résumé next year, but a real " +
           "project with real designers will. " +
           "Whatever you choose, you'd better ask the studio two things before you say yes: how many " +
           "hours they expect, and whether you will work on real projects or just make copies. " +
@@ -279,7 +279,7 @@ export const enB1P20: SkillExercise[] = [
       sampleDe:
         "I'd rather live close to my family, but not too close. Forty minutes by train seems about " +
         "right to me. " +
-        "When my father was in hospital two years ago, living nearby meant that I could visit every " +
+        "When my father was in the hospital two years ago, living nearby meant that I could visit every " +
         "evening after work instead of taking a week off and sleeping on a sofa. My brother lives " +
         "in another country, and he felt terrible that he couldn't help. He sent money, but money " +
         "wasn't what my mother needed; she needed someone to sit with her. " +

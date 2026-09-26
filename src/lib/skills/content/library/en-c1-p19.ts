@@ -54,7 +54,7 @@ export const enC1P19: SkillExercise[] = [
       "people during last year's week-long heatwave; a planner explained why the town center stays several " +
       "degrees warmer than the surrounding fields. Only after that did the members begin to argue.\n\n" +
       "What surprised observers most was how often people changed their minds. Early votes favored " +
-      "air-conditioned public buildings. By the final weekend, the assembly had moved towards cheaper and " +
+      "air-conditioned public buildings. By the final weekend, the assembly had moved toward cheaper and " +
       "slower measures: shade trees on the ten hottest streets, a phone list of isolated residents to be called " +
       "during heat warnings, and later opening hours for the town's two swimming pools.\n\n" +
       "The council accepted seven of the nine recommendations, and the other two are still under review. Not " +
@@ -153,7 +153,7 @@ export const enC1P19: SkillExercise[] = [
       { speaker: "Host", text: "Did the members trust what they heard?" },
       { speaker: "Ms Okafor", text: "Not automatically, and I was glad. The best question of the whole process came from a retired roofer, who asked a doctor how many of last summer's admissions were people living alone." },
       { speaker: "Host", text: "And the answer?" },
-      { speaker: "Ms Okafor", text: "Nearly two-thirds. That single figure moved the group away from air-conditioned buildings and towards phoning people at home. Nobody had planned for that question." },
+      { speaker: "Ms Okafor", text: "Nearly two-thirds. That single figure moved the group away from air-conditioned buildings and toward phoning people at home. Nobody had planned for that question." },
       { speaker: "Host", text: "What happens when the group can't agree?" },
       { speaker: "Ms Okafor", text: "We don't force it. The final report records every vote and includes a minority statement, written by the members who disagreed, in their own words and at the same length." },
       { speaker: "Host", text: "Isn't that a way of avoiding a decision?" },

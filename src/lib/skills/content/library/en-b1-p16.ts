@@ -26,7 +26,7 @@ export const enB1P16: SkillExercise[] = [
       { de: "to scream", tr: "çığlık atmak" },
       { de: "council", tr: "belediye" },
       { de: "fascinated", tr: "büyülenmiş" },
-      { de: "rubbish", tr: "çöp" },
+      { de: "trash", tr: "çöp" },
       { de: "to get rid of", tr: "kurtulmak" },
       { de: "lid", tr: "kapak" },
     ],
@@ -41,10 +41,10 @@ export const enB1P16: SkillExercise[] = [
       "Her neighbor, Tom Reilly, is the opposite. He is fascinated by the foxes and has put a small " +
       "camera in his garden. He is proud of his videos, which show the young ones playing with " +
       "a tennis ball at three in the morning. More than two hundred people follow his page.\n\n" +
-      "Most residents are somewhere in the middle. They are tired of finding their rubbish bags " +
+      "Most residents are somewhere in the middle. They are tired of finding their trash bags " +
       "torn open, but they are not interested in getting rid of the animals.\n\n" +
       "The council's answer is simple, and not very popular. Foxes are not pests in law, so it " +
-      "will not remove them. Instead it has asked people to buy bins with lids that lock, and to " +
+      "will not remove them. Instead it has asked people to buy trash cans with lids that lock, and to " +
       "stop feeding the animals. That last request is aimed at one person, and everybody on " +
       "Elm Street knows who it is.",
     questions: [
@@ -84,14 +84,14 @@ export const enB1P16: SkillExercise[] = [
         text: "What are most residents tired of?",
         options: [],
         answer: 0,
-        accept: ["torn rubbish bags", "rubbish bags torn open", "finding their rubbish bags torn open", "their rubbish bags torn open", "finding rubbish bags torn open"],
-        explain: "„They are tired of finding their rubbish bags torn open“.",
+        accept: ["torn trash bags", "trash bags torn open", "finding their trash bags torn open", "their trash bags torn open", "finding trash bags torn open"],
+        explain: "„They are tired of finding their trash bags torn open“.",
       },
       {
         text: "What has the council asked people to do?",
         options: [
           "catch the foxes themselves",
-          "buy bins with lids that lock",
+          "buy trash cans with lids that lock",
           "call a special number at night",
         ],
         answer: 1,
@@ -189,7 +189,7 @@ export const enB1P16: SkillExercise[] = [
     genre: "email",
     intro: "Bir binicilik çiftliğinin hafta sonu ilanına başvuruyorsun: önce iki cümle kur, sonra dürüst ve somut bir başvuru e-postası yaz.",
     gloss: [
-      { de: "advert", tr: "ilan" },
+      { de: "ad", tr: "ilan" },
       { de: "stables", tr: "ahır" },
       { de: "patient", tr: "sabırlı" },
       { de: "beginner", tr: "acemi" },
@@ -224,14 +224,14 @@ export const enB1P16: SkillExercise[] = [
         ],
         minWords: 100,
         phrases: [
-          { de: "I'm replying to your advert for …", tr: "… ilanınıza cevap yazıyorum", en: "" },
+          { de: "I'm replying to your ad for …", tr: "… ilanınıza cevap yazıyorum", en: "" },
           { de: "I've always been interested in …", tr: "…'e her zaman ilgi duydum", en: "" },
           { de: "I'm quite good at …", tr: "…'de oldukça iyiyim", en: "" },
           { de: "To be honest, I'm a little nervous about …", tr: "Açıkçası … konusunda biraz tedirginim", en: "" },
           { de: "I'm available on …", tr: "… günleri müsaitim", en: "" },
         ],
         sample:
-          "Dear Ms Carter, I'm replying to your advert for a weekend helper at Hill Farm Stables. " +
+          "Dear Ms Carter, I'm replying to your ad for a weekend helper at Hill Farm Stables. " +
           "My name is Elif Kaya, I'm nineteen and I'm studying biology at the university in town. " +
           "I've always been interested in horses. I rode every summer at my uncle's farm until I " +
           "was fifteen, so I know how much work a stable needs. I'm not afraid of dirty jobs, and I'm " +
@@ -239,9 +239,9 @@ export const enB1P16: SkillExercise[] = [
           "For two years I have helped at a Saturday swimming club for six-year-olds, and I'm " +
           "patient with nervous beginners. " +
           "To be honest, I'm a little nervous about one thing: I have never looked after a horse " +
-          "that was ill, and I would need someone to show me what to look for. " +
-          "I'm available on Saturdays and Sundays from seven until two, and in the university " +
-          "holidays I could do some weekdays as well. I would be happy to come for a trial day. " +
+          "that was sick, and I would need someone to show me what to look for. " +
+          "I'm available on Saturdays and Sundays from seven until two, and during university " +
+          "breaks I could do some weekdays as well. I would be happy to come for a trial day. " +
           "Kind regards, Elif Kaya",
       },
     ],

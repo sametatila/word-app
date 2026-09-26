@@ -39,7 +39,7 @@ export const enA1P11: SkillExercise[] = [
       "Please come to Leo's birthday party on Saturday, June 14. The party starts at two o'clock and ends at five. " +
       "At five, parents can have a cup of coffee with us.\n\n" +
       "We are in Sunny Hill Park, next to the big playground. Look for the green and yellow balloons! " +
-      "If it rains, the party is at our flat: 21 Oak Street, third floor.\n\n" +
+      "If it rains, the party is at our apartment: 21 Oak Street, third floor.\n\n" +
       "There are games, music and a big chocolate cake. Leo loves books and animals, but please do not buy big presents. " +
       "A card is perfect.\n\n" +
       "Please answer by Wednesday. Call Anna on 0157 342 118.\n\n" +
@@ -53,9 +53,9 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         text: "Where is the party if it rains?",
-        options: ["at Anna and Leo's flat", "next to the playground", "in a café in the park"],
+        options: ["at Anna and Leo's apartment", "next to the playground", "in a café in the park"],
         answer: 0,
-        explain: "„If it rains, the party is at our flat: 21 Oak Street, third floor.“",
+        explain: "„If it rains, the party is at our apartment: 21 Oak Street, third floor.“",
       },
       {
         kind: "truefalse",
@@ -110,7 +110,7 @@ export const enA1P11: SkillExercise[] = [
     segments: [
       { speaker: "Selin", text: "Hi Mert, it's Selin. Have you got a minute?" },
       { speaker: "Mert", text: "Sure. Is it about the party for Ben?" },
-      { speaker: "Selin", text: "Yes. It's a surprise, so don't tell him! It's on Friday at eight, at my flat." },
+      { speaker: "Selin", text: "Yes. It's a surprise, so don't tell him! It's on Friday at eight, at my apartment." },
       { speaker: "Mert", text: "Great. What can I bring?" },
       { speaker: "Selin", text: "Can you bring some drinks? Juice and water, please, but no cola." },
       { speaker: "Mert", text: "No problem. What about the cake?" },

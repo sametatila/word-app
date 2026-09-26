@@ -120,7 +120,7 @@ export const enB1P9: SkillExercise[] = [
       { de: "portion", tr: "porsiyon" },
       { de: "to weigh", tr: "tartmak" },
       { de: "break", tr: "teneffüs" },
-      { de: "timetable", tr: "ders programı" },
+      { de: "schedule", tr: "ders programı" },
       { de: "average", tr: "ortalama" },
       { de: "hire", tr: "işe almak" },
     ],
@@ -129,10 +129,10 @@ export const enB1P9: SkillExercise[] = [
       { text: "Three schools in the county have been weighing what comes back from the tables, and the numbers are higher than anyone expected." },
       { text: "On an average day, just under a third of the hot food served is thrown away. Vegetables make up most of it." },
       { speaker: "Ms Aldridge", text: "Our first idea was that children don't like vegetables. The weighing showed something else. They eat them on Mondays and leave them on Fridays." },
-      { text: "The difference is the timetable. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
-      { speaker: "Ms Aldridge", text: "If you have eighteen minutes to queue, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
+      { text: "The difference is the schedule. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
+      { speaker: "Ms Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
       { text: "Two of the schools have now made Friday lunch the same length as the other days. Waste there has come down by about a fifth." },
-      { text: "The third school could not change the timetable and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
+      { text: "The third school could not change the schedule and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
       { speaker: "Ms Aldridge", text: "What I'd say to other schools is this: weigh it first. We spent two years talking about taste when the problem was the clock." },
     ],
     questions: [
@@ -154,7 +154,7 @@ export const enB1P9: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "All three schools changed the Friday timetable.",
+        text: "All three schools changed the Friday schedule.",
         options: ["True", "False"],
         answer: 1,
         explain: "İkisi değiştirdi; üçüncüsü küçük porsiyon ve ücretsiz ilave denedi.",
@@ -199,8 +199,8 @@ export const enB1P9: SkillExercise[] = [
     intro: "Okul yönetimine yemekler hakkında yazıyorsun: önce iki cümle kur, sonra somut ve kibar bir mektup yaz.",
     gloss: [
       { de: "to complain", tr: "şikâyet etmek" },
-      { de: "pupil", tr: "öğrenci" },
-      { de: "timetable", tr: "ders programı" },
+      { de: "student", tr: "öğrenci" },
+      { de: "schedule", tr: "ders programı" },
       { de: "to suggest", tr: "önermek" },
       { de: "waste", tr: "israf" },
     ],
@@ -240,13 +240,13 @@ export const enB1P9: SkillExercise[] = [
         ],
         sample:
           "Dear Mrs Holt, I am writing about the lunch break for Year 7, where my daughter Selin " +
-          "is a pupil. " +
+          "is a student. " +
           "Over the last few weeks I have noticed that she comes home hungry on Fridays and " +
           "almost never on other days. When I asked her why, she said she can't finish her lunch " +
-          "because the queue is long and the break is shorter on Fridays. " +
+          "because the line is long and the break is shorter on Fridays. " +
           "Two of her friends told her the same thing, so I do not think this is only about my " +
           "daughter being slow. " +
-          "I understand that the Friday timetable exists because of the sports hall booking, " +
+          "I understand that the Friday schedule exists because of the sports hall booking, " +
           "but the result is that food is thrown away and children are hungry in the afternoon. " +
           "Would it be possible to let Year 7 go in first on Fridays, or to make the break " +
           "five minutes longer? " +

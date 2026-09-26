@@ -42,7 +42,7 @@ export const enB2P18: SkillExercise[] = [
       "the post office followed a year later, Mr Okonjo's grocery became something it had never " +
       "planned to be: the only place in a town of three thousand people where you can both pay " +
       "with cash and get some back.\n\n" +
-      "Every morning between eight and ten, a queue forms that has nothing to do with groceries. " +
+      "Every morning between eight and ten, a line forms that has nothing to do with groceries. " +
       "Pensioners withdraw their weekly money at the till. A plumber pays in yesterday's takings. " +
       "The school's parent association drops off the coins from the summer fair, because neither " +
       "the bank nor the building society will accept a deposit that small any more without an " +
@@ -87,11 +87,11 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The morning queue forms between eight and ___.",
+        text: "The morning line forms between eight and ___.",
         options: [],
         answer: 0,
         accept: ["ten", "10"],
-        explain: "„Every morning between eight and ten, a queue forms“.",
+        explain: "„Every morning between eight and ten, a line forms“.",
       },
       {
         kind: "short_answer",
@@ -246,7 +246,7 @@ export const enB2P18: SkillExercise[] = [
           { de: "What would help is …", tr: "İşe yarayacak olan …", en: "" },
         ],
         sample:
-          "Anyone who has stood in the queue at a village shop at nine in the morning knows that " +
+          "Anyone who has stood in the line at a village shop at nine in the morning knows that " +
           "cash has not disappeared; it has simply moved to the places with the fewest " +
           "alternatives. " +
           "This is not about nostalgia; it is about who can still take part in ordinary life. " +

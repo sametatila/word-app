@@ -227,7 +227,7 @@ export const enA2P5: SkillExercise[] = [
         ],
         sample:
           "Dear Ferhat, welcome to the Thursday team! Here is everything I know. The shift starts at five on " +
-          "Tuesday and Thursday and finishes at eight. The key is with Mrs. Lang in flat two; she is at home " +
+          "Tuesday and Thursday and finishes at eight. The key is with Mrs. Lang in apartment two; she is at home " +
           "after four. First, turn on the two heaters in the back room, because it takes an hour to get warm. " +
           "The coffee machine often stops in the middle. Do not open it; just turn it off and on again. " +
           "If something is really broken, call Deniz on 0176 33 88 12. She answers late in the evening too. " +

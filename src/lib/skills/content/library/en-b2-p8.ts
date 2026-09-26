@@ -262,8 +262,8 @@ export const enB2P8: SkillExercise[] = [
           "That is genuinely good and worth saying, because people only write about helplines " +
           "when they are bad. " +
           "The service suits households with outside space. The majority of residents here have " +
-          "that; the flats above the shops do not, and I would not want to be sorting two " +
-          "containers in a one-bedroom flat. " +
+          "that; the apartments above the shops do not, and I would not want to be sorting two " +
+          "containers in a one-bedroom apartment. " +
           "Three out of five, and the missing two are storage and the leaflet.",
       },
     ],

@@ -38,14 +38,14 @@ export const enB2P11: SkillExercise[] = [
       "Portwick has four thousand residents and, on a good day in August, around eighteen " +
       "thousand visitors, most of whom arrive after ten and have left by six. Last spring the " +
       "town became the first on this coast to charge them: six euros a day, collected at the two " +
-      "parking lots and the railway station, with overnight guests exempt.\n\n" +
+      "parking lots and the train station, with overnight guests exempt.\n\n" +
       "The decision did not come out of nowhere. Residents had been complaining for years about " +
-      "the queues at the only pharmacy and the bins that overflowed by lunchtime, and the council " +
+      "the lines at the only pharmacy and the trash cans that overflowed by lunchtime, and the council " +
       "had already tried a parking ban and a leaflet campaign. Neither had changed very much.\n\n" +
       "Six months on, the figures are more modest than either side predicted. Visitor numbers " +
       "fell by about eight percent, mostly on weekdays, and the fee raised enough to pay for " +
       "extra cleaning and a second summer bus. Local businesses had warned that the charge would " +
-      "empty the high street. So far, cafés report takings that are roughly unchanged, because " +
+      "empty Main Street. So far, cafés report takings that are roughly unchanged, because " +
       "the visitors who stayed away were largely those who had been bringing their own food.\n\n" +
       "Not everyone is convinced. Ms Harlow, who runs a gift shop by the harbor, points out that " +
       "the town spent years inviting people to come and is now, in effect, asking them to " +
@@ -123,7 +123,7 @@ export const enB2P11: SkillExercise[] = [
       { de: "verge", tr: "yol kenarı" },
       { de: "ditch", tr: "hendek" },
       { de: "to collapse", tr: "çökmek" },
-      { de: "trainers", tr: "spor ayakkabı" },
+      { de: "sneakers", tr: "spor ayakkabı" },
       { de: "stroll", tr: "gezinti" },
       { de: "booking", tr: "rezervasyon" },
       { de: "uncertainty", tr: "belirsizlik" },
@@ -135,7 +135,7 @@ export const enB2P11: SkillExercise[] = [
       { speaker: "Host", text: "Two years ago, almost nobody walked to Hollin Falls. Then a single photograph was shared a few million times. Ms Kendal, you manage the trail. What happened next?" },
       { speaker: "Ms Kendal", text: "The first thing we noticed was the verges. People had been parking on the grass along the lane for weeks before anyone told us, and by then the ditch had collapsed in two places." },
       { speaker: "Host", text: "And the path itself? Was it ever built for that kind of number?" },
-      { speaker: "Ms Kendal", text: "Not remotely. It was designed for perhaps sixty walkers a day. On the worst Sunday we counted nine hundred, and plenty of them had come in trainers, expecting a short stroll." },
+      { speaker: "Ms Kendal", text: "Not remotely. It was designed for perhaps sixty walkers a day. On the worst Sunday we counted nine hundred, and plenty of them had come in sneakers, expecting a short stroll." },
       { speaker: "Host", text: "So you introduced a booking system for the parking lot. Wasn't that unpopular?" },
       { speaker: "Ms Kendal", text: "Less than we'd feared. Booking is free; what it removes is the uncertainty. People who had driven two hours to find no space were far angrier than people who simply couldn't book." },
       { speaker: "Host", text: "What about the people who don't plan ahead?" },
@@ -206,11 +206,11 @@ export const enB2P11: SkillExercise[] = [
     intro: "Bir gezi blogu yazıyorsun: önce iki cümle kur, sonra kalabalığıyla bilinen bir yeri sezon dışında ziyaret edişini anlat.",
     gloss: [
       { de: "jetty", tr: "iskele" },
-      { de: "to queue", tr: "sıraya girmek" },
+      { de: "to line up", tr: "sıraya girmek" },
       { de: "flask", tr: "termos" },
       { de: "ferry", tr: "feribot" },
       { de: "to survive", tr: "atlatmak" },
-      { de: "torch", tr: "el feneri" },
+      { de: "flashlight", tr: "el feneri" },
       { de: "crowd", tr: "kalabalık" },
     ],
     minutes: 14,
@@ -249,7 +249,7 @@ export const enB2P11: SkillExercise[] = [
         ],
         sample:
           "I had wanted to go to the lake for years, but every picture I had seen showed the same " +
-          "thing: a wooden jetty with forty people queuing to photograph it. " +
+          "thing: a wooden jetty with forty people lining up to photograph it. " +
           "So this time I went in the second week of November, on a Tuesday, with a map and a flask. " +
           "What I had expected was a closed village. What I found instead was a village that had " +
           "been waiting to get its own streets back. The bakery was open, the ferry still ran twice " +
@@ -261,7 +261,7 @@ export const enB2P11: SkillExercise[] = [
           "and it was dark by half past four. " +
           "If you are planning a trip like this, ask what the place is like when nobody is " +
           "photographing it. Go then, spend your money in the shops that stay open all year, " +
-          "and bring a torch.",
+          "and bring a flashlight.",
       },
     ],
   },
@@ -299,7 +299,7 @@ export const enB2P11: SkillExercise[] = [
         "the people with the least money and leaves the crowd more or less where it was. " +
         "The case for some kind of limit is fairly strong. A narrow path or a small village has a " +
         "physical capacity, and once that is passed, the costs land on the people who live there: " +
-        "blocked lanes, full bins, a pharmacy you can't get into. " +
+        "blocked lanes, full trash cans, a pharmacy you can't get into. " +
         "Doing nothing is also a decision: it simply means residents pay instead of visitors. " +
         "What tends to get overlooked is timing. Most famous places are not full all day. " +
         "They are full between eleven and three and almost empty either side of that, " +

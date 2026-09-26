@@ -26,7 +26,7 @@ export const enB1P13: SkillExercise[] = [
       { de: "vehicle", tr: "araç" },
       { de: "shocking", tr: "şok edici" },
       { de: "tiring", tr: "yorucu" },
-      { de: "queue", tr: "kuyruk" },
+      { de: "line", tr: "kuyruk" },
       { de: "confusing", tr: "kafa karıştırıcı" },
       { de: "relaxed", tr: "rahat" },
     ],
@@ -43,7 +43,7 @@ export const enB1P13: SkillExercise[] = [
       "driven the number 14 bus for twenty-six years. His stories were funny, sometimes a little " +
       "shocking, and I was surprised how interested I was in the way tickets worked in 1970.\n\n" +
       "Not everything worked. The music in the main hall was so loud that it was tiring to listen " +
-      "to anybody, and the queue for the café was confusing, because there were two queues and " +
+      "to anybody, and the line for the café was confusing, because there were two lines and " +
       "nobody knew which was which. By ten o'clock the free drinks had run out.\n\n" +
       "Still, I left feeling more relaxed than I had all week. I'd recommend it to anyone, and " +
       "especially to people who think museums are boring. Four stars out of five, and the missing " +
@@ -82,11 +82,11 @@ export const enB1P13: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why was the café queue confusing?",
+        text: "Why was the café line confusing?",
         options: [],
         answer: 0,
-        accept: ["there were two queues", "two queues", "because there were two queues", "there were two queues and nobody knew which was which"],
-        explain: "„there were two queues and nobody knew which was which“.",
+        accept: ["there were two lines", "two lines", "because there were two lines", "there were two lines and nobody knew which was which"],
+        explain: "„there were two lines and nobody knew which was which“.",
       },
       {
         text: "Why did the museum lose a star?",
@@ -237,7 +237,7 @@ export const enB1P13: SkillExercise[] = [
           "in a clay oven. We watched her for twenty minutes and nobody around us was bored. " +
           "The food in general was amazing, and most dishes cost five or six pounds, which I " +
           "thought was fair. " +
-          "The tiring part was the crowd. After two o'clock it was so full that you queued for " +
+          "The tiring part was the crowd. After two o'clock it was so full that you waited in line for " +
           "everything, even for water, and I was exhausted by four. I was a bit disappointed that " +
           "the cooking talks were so short and hard to hear. " +
           "If you go, make sure you arrive before twelve, bring your own bottle and eat something " +

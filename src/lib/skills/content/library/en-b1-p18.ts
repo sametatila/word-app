@@ -105,11 +105,11 @@ export const enB1P18: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "listening",
-    title: "Why Is There Always a Queue on Mill Lane?",
+    title: "Why Is There Always a Line on Mill Lane?",
     genre: "report",
     intro: "Yerel bir radyo haberi: yeni bir fırının önünde her sabah kuyruk var; fırıncı, bir müşteri ve komşular ne diyor.",
     gloss: [
-      { de: "queue", tr: "kuyruk" },
+      { de: "line", tr: "kuyruk" },
       { de: "to sell out", tr: "tükenmek" },
       { de: "oven", tr: "fırın" },
       { de: "trick", tr: "hile" },
@@ -119,19 +119,19 @@ export const enB1P18: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Presenter", text: "If you've walked down Mill Lane before eight in the morning, you've seen it: a queue of thirty people outside a bakery that only opened in March. We went to find out why." },
+      { speaker: "Presenter", text: "If you've walked down Mill Lane before eight in the morning, you've seen it: a line of thirty people outside a bakery that only opened in March. We went to find out why." },
       { speaker: "Mr Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
-      { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the queue. I've made two friends there." },
-      { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the queue blocks its entrance, and a neighbor has complained about the noise at half past six." },
+      { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the line. I've made two friends there." },
+      { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the line blocks its entrance, and a neighbor has complained about the noise at half past six." },
       { speaker: "Mr Novak", text: "That's fair. We've painted a line on the sidewalk, so people stand on one side, and I've asked customers to keep their voices down before seven." },
       { speaker: "Presenter", text: "So will you buy a bigger oven?" },
-      { speaker: "Mr Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the queue will disappear, and it should." },
+      { speaker: "Mr Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the line will disappear, and it should." },
     ],
     questions: [
       {
         text: "Why does the bread sell out by ten?",
         options: [
-          "Mr Novak wants to create a queue.",
+          "Mr Novak wants to create a line.",
           "Most customers come after nine.",
           "His oven is small, so he bakes only a little.",
         ],
@@ -140,13 +140,13 @@ export const enB1P18: SkillExercise[] = [
       },
       {
         text: "Why doesn't Sarah mind waiting?",
-        options: ["The bread is very good.", "She lives next door.", "The queue is short on Saturdays."],
+        options: ["The bread is very good.", "She lives next door.", "The line is short on Saturdays."],
         answer: 0,
         explain: "„The bread is so good that I don't mind waiting twenty minutes.“",
       },
       {
         kind: "truefalse",
-        text: "The shop next door is happy about the queue.",
+        text: "The shop next door is happy about the line.",
         options: ["True", "False"],
         answer: 1,
         explain: "Yan dükkân kuyruğun girişini kapattığını söylüyor.",
@@ -249,7 +249,7 @@ export const enB1P18: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "speaking",
-    title: "Holidays at Home or Abroad?",
+    title: "Vacations at Home or Abroad?",
     genre: "monologue",
     intro: "Yaklaşık bir dakika tek başına konuşacaksın: iki seçenekten birini seç ve ötekinin hakkını ver.",
     gloss: [],
@@ -272,7 +272,7 @@ export const enB1P18: SkillExercise[] = [
       minSeconds: 40,
       maxSeconds: 80,
       sampleDe:
-        "If I have to choose, I'd pick a holiday in my own country, because I spent years going " +
+        "If I have to choose, I'd pick a vacation in my own country, because I spent years going " +
         "abroad and knowing less and less about the places two hours from my home. " +
         "The trip that changed my mind was a week on the Black Sea coast with my aunt. I had " +
         "expected such a boring week that I took four books. I read none of them. The villages " +

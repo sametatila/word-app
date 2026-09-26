@@ -129,7 +129,7 @@ export const enB2P20: SkillExercise[] = [
       { de: "row", tr: "satır" },
       { de: "exhausting", tr: "yorucu" },
       { de: "life stage", tr: "yaşam evresi" },
-      { de: "nappy", tr: "bebek bezi" },
+      { de: "diaper", tr: "bebek bezi" },
       { de: "voucher", tr: "kupon" },
       { de: "privacy notice", tr: "gizlilik bildirimi" },
       { de: "significant", tr: "önemli" },
@@ -140,7 +140,7 @@ export const enB2P20: SkillExercise[] = [
       { speaker: "Mr Halloran", text: "You said you'd asked the supermarket for all the data on your loyalty card. Did they actually send it?" },
       { speaker: "Ms Quinn", text: "Eventually. It took them almost the full month they're allowed, and it arrived as a spreadsheet with about eleven thousand rows. Every single item I've bought since 2019." },
       { speaker: "Mr Halloran", text: "That sounds absolutely exhausting to read. Did you actually go through it all? Was any of it surprising?" },
-      { speaker: "Ms Quinn", text: "Quite a lot, actually. There was a column called “life stage”, and it had me down as a young parent, which is completely wrong. I buy nappies for my sister." },
+      { speaker: "Ms Quinn", text: "Quite a lot, actually. There was a column called “life stage”, and it had me down as a young parent, which is completely wrong. I buy diapers for my sister." },
       { speaker: "Mr Halloran", text: "So they'd simply guessed. Does that really matter, if it's only used for vouchers?" },
       { speaker: "Ms Quinn", text: "That's the thing: it isn't only vouchers. The privacy notice says profiles can be shared with “carefully selected partners”. It doesn't say who they are, or what they pay for it." },
       { speaker: "Mr Halloran", text: "Are you going to cancel the card, then?" },
@@ -158,7 +158,7 @@ export const enB2P20: SkillExercise[] = [
       {
         text: "Why was the “life stage” column wrong?",
         options: [
-          "She buys nappies for her sister.",
+          "She buys diapers for her sister.",
           "She has two young children.",
           "She had never used the card.",
         ],

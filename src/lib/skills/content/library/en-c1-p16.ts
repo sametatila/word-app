@@ -41,7 +41,7 @@ export const enC1P16: SkillExercise[] = [
     minutes: 10,
     text:
       "The review I didn't publish\n\n" +
-      "Last winter I saw a first play by a writer in her twenties, staged in a room above a pub for an " +
+      "Last winter I saw a first play by a writer in her twenties, staged in a room above a bar for an " +
       "audience of about forty. It was not good. The second act collapsed, two of the characters spoke as if " +
       "they had been written by different people, and the ending explained what the play should have shown. " +
       "I wrote four hundred words saying so, and then I did not send them.\n\n" +
@@ -93,7 +93,7 @@ export const enC1P16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["forty", "40"],
-        explain: "„staged in a room above a pub for an audience of about forty“.",
+        explain: "„staged in a room above a bar for an audience of about forty“.",
       },
       {
         kind: "short_answer",

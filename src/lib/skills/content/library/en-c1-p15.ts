@@ -42,15 +42,15 @@ export const enC1P15: SkillExercise[] = [
     text:
       "Linden Yard, five years on\n\n" +
       "When twenty-three households moved into Linden Yard, the shared-housing project on the edge of the " +
-      "old railway land, the brochure promised “private homes, shared lives”. Five years later, residents " +
+      "old railroad land, the brochure promised “private homes, shared lives”. Five years later, residents " +
       "describe something both smaller and more durable than the brochure imagined.\n\n" +
-      "Each household has its own flat, kitchen and front door. What is shared is a large dining room, " +
+      "Each household has its own apartment, kitchen and front door. What is shared is a large dining room, " +
       "a workshop, a guest room and a laundry, together with a meal cooked by a rota of residents three " +
-      "evenings a week. The flats are about fifteen percent smaller than comparable ones nearby, and the " +
+      "evenings a week. The apartments are about fifteen percent smaller than comparable ones nearby, and the " +
       "shared rooms are supposed to make up the difference.\n\n" +
       "Whether they do depends on whom you ask. The more a household uses the common rooms, the less it " +
       "seems to miss the space; families with young children, who eat at the shared table most weeks, " +
-      "rarely mention size at all. Two retired residents who seldom attend meals told me their flats feel " +
+      "rarely mention size at all. Two retired residents who seldom attend meals told me their apartments feel " +
       "nowhere near as large as the ones they left.\n\n" +
       "The project's clearest success is one nobody planned for. Residents report knowing roughly three " +
       "times as many neighbors by name as they did in their previous homes, and loneliness, measured by a " +
@@ -67,10 +67,10 @@ export const enC1P15: SkillExercise[] = [
         options: [
           "a dining room and a laundry",
           "a workshop and a guest room",
-          "its own flat, kitchen and front door",
+          "its own apartment, kitchen and front door",
         ],
         answer: 2,
-        explain: "„Each household has its own flat, kitchen and front door.“ — gerisi ortak.",
+        explain: "„Each household has its own apartment, kitchen and front door.“ — gerisi ortak.",
       },
       {
         text: "Which households seem to miss the space least?",
@@ -91,7 +91,7 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The flats are about ___ percent smaller than comparable ones nearby.",
+        text: "The apartments are about ___ percent smaller than comparable ones nearby.",
         options: [],
         answer: 0,
         accept: ["fifteen", "15"],
@@ -109,7 +109,7 @@ export const enC1P15: SkillExercise[] = [
         text: "What lesson does the writer draw?",
         options: [
           "Sharing works best where it is chosen.",
-          "Shared flats should be larger.",
+          "Shared apartments should be larger.",
           "Meetings should be held less often.",
         ],
         answer: 0,
@@ -143,7 +143,7 @@ export const enC1P15: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Ms Ferrand", text: "Shared housing is often sold as a cure for loneliness. As someone who designs it, I'd put it more cautiously: it makes contact cheaper, which isn't the same as making it happen." },
-      { speaker: "Mr Osei", text: "I agree with the distinction, but the evidence is stronger than you're allowing. In the schemes we studied, residents had twice as many weekly conversations as similar people in ordinary flats." },
+      { speaker: "Mr Osei", text: "I agree with the distinction, but the evidence is stronger than you're allowing. In the schemes we studied, residents had twice as many weekly conversations as similar people in ordinary apartments." },
       { speaker: "Ms Ferrand", text: "Similar on paper. The people who choose to live like this are far more sociable to begin with. The comparison flatters the building." },
       { speaker: "Mr Osei", text: "That's the standard objection, and it's partly fair. So we also followed people who moved in for practical reasons, mainly cost. The effect was smaller, but it was still there." },
       { speaker: "Ms Ferrand", text: "How much smaller?" },
@@ -183,11 +183,11 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Residents had ___ as many weekly conversations as similar people in ordinary flats.",
+        text: "Residents had ___ as many weekly conversations as similar people in ordinary apartments.",
         options: [],
         answer: 0,
         accept: ["twice"],
-        explain: "„twice as many weekly conversations as similar people in ordinary flats“.",
+        explain: "„twice as many weekly conversations as similar people in ordinary apartments“.",
       },
       {
         kind: "short_answer",
@@ -232,8 +232,8 @@ export const enC1P15: SkillExercise[] = [
       {
         kind: "build",
         tr: "Pratikte daireler hiç de sandığım kadar küçük değil.",
-        answer: "In practice, the flats are nowhere near as small as I had expected.",
-        alternatives: ["The flats are nowhere near as small as I had expected in practice."],
+        answer: "In practice, the apartments are nowhere near as small as I had expected.",
+        alternatives: ["The apartments are nowhere near as small as I had expected in practice."],
         hint: "„nowhere near as … as“ „hiç de … değil“ anlamında güçlü bir olumsuz karşılaştırmadır.",
       },
       {
@@ -264,7 +264,7 @@ export const enC1P15: SkillExercise[] = [
         sample:
           "Dear Hana,\n\n" +
           "You asked me whether I'd do it again, and the short answer is yes, with two conditions.\n\n" +
-          "The good part first. In practice, the flats are nowhere near as small as I had expected, because " +
+          "The good part first. In practice, the apartments are nowhere near as small as I had expected, because " +
           "I hardly use half of mine. I cook at the shared table twice a week, I borrow tools from the " +
           "workshop instead of owning them, and I know more of my neighbors than I did in ten years in my " +
           "old building. The more you take part, the more the place gives back.\n\n" +

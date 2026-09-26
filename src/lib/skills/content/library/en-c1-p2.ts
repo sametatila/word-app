@@ -211,7 +211,7 @@ export const enC1P2: SkillExercise[] = [
         text: "What does the phrase “the toilet leash” describe?",
         options: [
           "how far a person can move from a facility",
-          "how long a queue at a facility is",
+          "how long a line at a facility is",
           "how often a facility is cleaned",
         ],
         answer: 0,
