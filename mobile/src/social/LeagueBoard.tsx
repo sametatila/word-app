@@ -11,7 +11,7 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
+import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, IconTile, Pill, SectionTitle } from "./common";
 
@@ -137,6 +137,13 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       </View>
       <Text variant="h3" color={row.isMe ? colors.primaryText : colors.text}>{formatNumber(row.xp)}</Text>
       <Text variant="micro" color={colors.textMuted}>XP</Text>
+      {/* GÖRÜNÜR BİLDİR (denetim İ9): uzun basış keşfedilmiyordu; profildeki
+          "Engelle / Bildir"e ek olarak satırın kendisinde de bir düğme. */}
+      {quiet ? null : (
+        <PressableScale onPress={onReport} hitSlop={10} accessibilityRole="button" accessibilityLabel={`${t("user.report")}: ${row.name ?? t("social.student")}`} style={{ padding: spacing.xs }}>
+          <FlagIcon color={colors.textFaint} size={16} />
+        </PressableScale>
+      )}
     </PressableScale>
   );
 }
