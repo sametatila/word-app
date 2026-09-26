@@ -1,7 +1,7 @@
 {
   "aciklama": "check:en-de uyarı tabanı (scripts/lib/uyari-tabani.mjs). Her kayıt, İngilizce örnek cümle ile Almanca çevirisi yan yana okunarak incelendi; hepsi doğru. Uzunluk oranı sapmaları Almancanın bileşik adlarından, tek sözcüklük zarf ve fiillerinden ya da daha uzun kurulan yapılarından geliyor. Anahtar cümlelerin kendisi: çeviri değişirse kabul düşer ve madde yeniden incelenmeli.",
   "uyarilar": {
-    "200325 «come along» — uzunluk oranı 0.56 (5 ↔ 9) | EN: Do you want to come along to the cinema? | DE: Willst du ins Kino mitkommen?": "İncelendi, doğru: İngilizce kalıbın Almanca karşılığı tek sözcük (mitkommen); oran bundan.",
+    "200325 «come along» — uzunluk oranı 0.56 (5 ↔ 9) | EN: Do you want to come along to the movies? | DE: Willst du ins Kino mitkommen?": "İncelendi, doğru: İngilizce kalıbın Almanca karşılığı tek sözcük (mitkommen); oran bundan. „to the movies“ Amerikan kullanımı, Almancası „ins Kino“.",
     "200365 «post office» — uzunluk oranı 0.50 (4 ↔ 8) | EN: I need to go to the post office. | DE: Ich muss zur Post.": "İncelendi, doğru: İngilizce ad öbeğinin Almanca karşılığı tek ad (Post); oran bundan.",
     "200461 «subway» — uzunluk oranı 1.60 (8 ↔ 5) | EN: We're taking the subway downtown. | DE: Wir fahren mit der U-Bahn in die Stadt.": "İncelendi, doğru: Almancada ulaşım aracı edatla veriliyor (mit der U-Bahn in die Stadt fahren); oran bundan.",
     "200492 «hurt» — uzunluk oranı 1.60 (8 ↔ 5) | EN: My back hurts after exercise. | DE: Nach dem Sport tut mir der Rücken weh.": "İncelendi, doğru: Almanca ayrılabilir fiil ve yönelme durumuyla kuruluyor (tut mir der Rücken weh); oran bundan.",
