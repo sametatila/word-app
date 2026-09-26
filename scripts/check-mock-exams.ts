@@ -184,6 +184,27 @@ const BRANDS = [
 ];
 const BRAND_RE = new RegExp(`(^|[^\\p{L}])(${BRANDS.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})($|[^\\p{L}])`, "iu");
 
+/*
+  SINAV KURUMLARININ STANDART YÖNERGE CÜMLELERİ (denetim 2026-09-25 İ4). Yönergeler
+  aynı işi anlatabilir ama kurumların kendi rubrik cümleleriyle değil: 2026-09-26'da
+  1.466 yönerge alanı kendi üslubumuzla yeniden yazıldı ("Der Text wird zweimal
+  abgespielt", "Kreuzen Sie a, b oder c an", "Pick one answer"). Buradaki kalıplar
+  geri gelmesin diye. Yalnız sınav dilindeki `prompt` ve `instruction` denetlenir.
+*/
+const OFFICIAL_RUBRIC: RegExp[] = [
+  /Dieser Teil hat \w+ Aufgaben/, /Sie hören (den|jeden) Text (ein|zwei)mal/, /Wählen Sie:? a, b/,
+  /Wählen Sie (die|zu|jeweils)/, /Was ist richtig\?/, /Sind die (Sätze|Aussagen)( \d+ bis \d+)? richtig oder falsch/,
+  /Lesen Sie den Text und die Aufgaben \d+ bis \d+/, /Sie können mit jeder Aufgabe beginnen/,
+  /This part has \w+ tasks/, /You hear (every|each) \w+ (twice|once)/, /Choose a, b(, c)? or [cd]/,
+  /Complete the second sentence so that it has a similar meaning/, /Do NOT change the word given/,
+  /word given in capitals at the end of each line/, /may be chosen more than once/,
+  /Choose the correct answer for each question/,
+];
+function rubricHit(text: string): string | null {
+  const r = OFFICIAL_RUBRIC.find((x) => x.test(text));
+  return r ? r.source : null;
+}
+
 /** Nesnedeki tüm dizeleri yolu ile birlikte dolaşır. */
 function* strings(node: unknown, path: string): Generator<[string, string]> {
   if (typeof node === "string") { yield [path, node]; return; }
@@ -276,6 +297,7 @@ function checkItem(where: string, item: MockItem, task: MockTask) {
 
 function checkTask(where: string, task: MockTask, level: MockLevel, course: MockCourse) {
   if (!task.prompt.trim() || !task.promptTr.trim()) fail(where, "görev yönergesi eksik (prompt / promptTr)");
+  { const hit = rubricHit(task.prompt); if (hit) fail(where, `yönergede sınav kurumunun standart cümlesi: /${hit}/ (kendi üslubumuzla yaz)`); }
 
   const textIds = (task.texts ?? []).map((t) => t.id);
   if (new Set(textIds).size !== textIds.length) fail(where, "metin kimlikleri tekrar ediyor");
@@ -465,6 +487,7 @@ function checkPart(where: string, part: MockPart, level: MockLevel, course: Mock
   if (sum !== part.minutes * 60) fail(where, `görev sürelerinin toplamı ${sum} sn, bölüm ${part.minutes * 60} sn`);
   if (secs.some((x) => x < 60)) fail(where, "bir görevin süresi bir dakikadan az");
   if (!part.instruction.trim() || !part.instructionTr.trim()) fail(where, "bölüm yönergesi eksik");
+  { const hit = rubricHit(part.instruction); if (hit) fail(where, `bölüm yönergesinde sınav kurumunun standart cümlesi: /${hit}/`); }
   if (part.tasks.length !== plan.tasks.length) {
     fail(where, `görev sayısı ${part.tasks.length}, plan ${plan.tasks.length}`);
   }
