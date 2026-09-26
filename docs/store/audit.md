@@ -59,7 +59,7 @@ ASC salt okuma dökümünden güncellendi.
 | İ1 | Goethe Wortliste örnek cümleleri, depo geçmişi, şartlar cümlesi | ◐ Samet | Cümleler ✅: db354b44 (1.413), b1779f68 (720), kapı `check:published-examples` (0366e38d). Açık: depo PUBLIC, e53db725 geçmişte (private ya da geçmiş temizliği Samet'te); şartlardaki "The word lists were compiled by Lernomi" cümlesi (?) karar bekliyor |
 | İ2 | Deneme sınavı yapay zekâ sonucunda Bildir ve etiket | ✅ | b6775252; sürdürülen sohbet 247d11cb |
 | İ3 | "officially / resmen", kapakta "resmî değil" notu | ✅ | 607a5fd8, 311edc83 |
-| İ4 | Sınav yönergesi kalıpları + BRANDS | ◐ Claude | BRANDS listesi ✅ (1a36d07d). 2026-09-26: "Sind die Aussagen richtig oder falsch?" 12 dosyada, "Wählen Sie die richtige Lösung a, b oder c." 18, "Do NOT change the word given" 24 yerde duruyor |
+| İ4 | Sınav yönergesi kalıpları + BRANDS | ✅ | BRANDS listesi 1a36d07d; 1.466 yönerge alanı kendi üslubumuzla 6feb7eff (Türkçe `*Tr` alanları aynı anlamda, değişmedi) |
 | İ5 | Defne/Aras referans ses izni ve model lisansı | ⏳ Samet | Kaynak, izin ve lisans `docs/plan/tts-own-voices.md`'ye tek paragraf |
 | İ6 | Edge TTS (resmî olmayan uç) | ⏳ Samet | Beyan tarafı LEG-2 ile kapalı; çıkış planı (Azure ya da kendi sesler) açık |
 | İ7 | Açık kaynak lisans ekranı | ✅ | b01006ea, acbc8cee (`/licenses`, `npm run licenses:gen`) |
@@ -90,6 +90,8 @@ ASC salt okuma dökümünden güncellendi.
 | T5 | Amazon IAP kütüphanesi pakette | ✅ (karar) | Bilerek bırakıldı (2026-09-26): `purchases-hybrid-common` bağımlılığı, çıkarmak R8/çalışma anı riski |
 | T6 | Derleme klasöründe eski AAB | ⏳ Claude | Yüklemeden önce yeniden derle (`npm run release:android`) |
 | T7 | Hukuki sayfalarda lang="tr" | ✅ | 7aecb20f |
+| T8 | Tablet düzeni (IOS-6, Samet 2026-09-26: kolon genişlikleri, sarılan düğme/metin) | ◐ Claude | e6ab84e3: kolon tavanı 840 → 1120, ızgara 960dp'den dört sütun, istatistik ızgaraları dengeli, tek diyalog ölçüsü (440) ve uzun etikette düğmeler alt alta (web de, `check:parity`). Taranan: Android tablet yatay + dikey ve iPad 13"/mini dikey, 33 ekran; yerel sunucuyla. Kalan: iPad yatayda yeni genişlikle ve oturum içi akışlarda (konuşma, sınav, yürüyüş) göz turu build 9'da |
+| T9 | İngilizce/Almanca arayüzde Türkçe içerik (Patika, görevler, başarımlar, Neler yapabilirim) | ◐ Claude | 74466b44: istemci `Accept-Language` gönderiyor; anadilsiz hesaplar (üretimde 40'ın 31'i) açılışta cihaz dilini hesaba yazıyor; onboarding anadili her zaman devrediyor. Yerelde doğrulandı; kullanıcıya build 9 ile ulaşır |
 
 ### B — Belge kaymaları
 
