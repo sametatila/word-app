@@ -1,451 +1,117 @@
 # App Store hazırlığı (Lernomi, iOS)
 
-Bu klasör `docs/play/`in iOS karşılığıdır. **İkisi ayrı beyanlardır**: Play'in Veri
-Güvenliği formu ile App Store Connect'in gizlilik etiketleri farklı sorular sorar ve
-farklı yerlerde yayımlanır. Birini doldurup öbürünü kopyalamak, iki mağazada çelişen
-beyan bırakır.
-
-Klasörde üç belge var, `docs/play/`in üçüne karşılık geliyor:
+`docs/play/`in iOS karşılığı. **İki mağazanın beyanları ayrıdır:** Play'in Veri güvenliği formu
+ile App Store Connect'in gizlilik etiketleri farklı sorular sorar; biri öbürüne kopyalanmaz.
 
 | Burada | Play karşılığı | Ne tutuyor |
 |---|---|---|
-| `README.md` (bu dosya) | `data-safety.md` | Durum, yayın kapıları, gizlilik beyanı |
-| `connect.md` | `console.md` | İnceleme hesabı, giriş sağlayıcılarının kurulumu, yayın öncesi kontrol |
-| `listing.md` | `listing.md` | Yaş derecelendirmesi ve mağaza vitrini (üç dilde metinler, görseller) |
+| `README.md` (bu dosya) | `data-safety.md` | Durum, hukuki kapsam, gizlilik etiketleri, arka plan sesi |
+| `connect.md` | `console.md` | İnceleme hesabı ve notu, giriş sağlayıcılarının kurulumu |
+| `listing.md` | `listing.md` | Yaş derecelendirmesi, diğer alanlar |
 
-## Durum (2026-09-24)
+Vitrin metinleri (açıklama, altyazı, anahtar kelime) `docs/store/README.md`'de; açık denetim
+maddeleri `docs/store/audit.md`'de.
 
-iOS **yayında değil**; App Store Connect kaydı ve TestFlight hazır. Ayrım önemli çünkü
-belgenin geri kalanındaki her "DOĞRULANMADI" notunun anlamı buna bağlı:
+## Durum
 
-| | Durum |
+| | |
 |---|---|
-| **Derleniyor mu** | ✅ Evet. CI (`.github/workflows/ios-build.yml`, macos-15) ve 2026-09-22'den beri yerel Mac mini (Xcode). |
-| **Mağazaya yüklendi mi** | ✅ App Store Connect'te uygulama kaydı (`6810593275`) ve TestFlight'ta build 2–6 (`VALID`; 6 "Dahili test" grubunda, harici grup açık ama build eklenmedi); sürüm 1.0.0 kaydına build 4 bağlı, gönderimden önce son build'e çevrilir. Android: Play dahili test kanalında `1.0.0 (6)`. |
-| **Cihazda koşuldu mu** | Bu belgede kayıtlı bir cihaz koşusu yok. Mikrofon, konuşma tanıma, arka planda ses, kilit ekranı denetimi, haptik ve satın alma yalnız gerçek cihazda (TestFlight) ölçülebiliyor; liste `docs/plan/ios-device-runbook.md`'de. |
+| Kayıt | App Store Connect `6810593275`, bundle `app.lernomi.ios`, sürüm kaydı 1.0.0 |
+| Sürüm | Depoda 1.0.0 (8): kaynak kökteki `package.json`, basılı hâli `mobile/src/version.ts` ve pbxproj |
+| TestFlight | Build 2–8 geçerli. Sürüm kaydına hâlâ build 4 bağlı; gönderimden önce son build bağlanır (denetim M5) |
+| Yayın | **Elle** (`releaseType: MANUAL`, 2026-09-26, Samet; denetim M13): onaydan sonra App Store Connect'te "Release this version" ile açılır. Android 14 günlük kapalı testte olduğundan iki platform birlikte açılabilsin diye |
+| Derleme | CI (`.github/workflows/ios-build.yml`) ve yerel Mac mini (Xcode) |
+| Cihaz | Kayıtlı bir gerçek iPhone koşusu yok (M10). Mikrofon, arka plan sesi, kilit ekranı, satın alma yalnız cihazda ölçülür; sıra `docs/plan/ios-device-runbook.md` |
+| Cihaz ailesi | iPhone + iPad (`TARGETED_DEVICE_FAMILY = "1,2"`, Split View açık). Bedeli: 13" iPad ekran görüntüsü zorunlu. `npm run ios:check` › "cihaz ailesi" beyanı ve kare betiğini birlikte tutuyor |
 
-Yani bugünkü doğru cümle: **derlendi ve TestFlight'ta; cihaz koşusu bu belgede
-kayıtlı değil.** Geliştirme makinesi 2026-09-22'de Linux'tan Mac mini'ye geçti.
+## Hukuki metinler iOS'u kapsıyor
 
-> Aşağıdaki tek tek maddelerde geçen "(derlenmedi)" ve "bu makinede Xcode yok"
-> notları eskidir (Linux dönemi) — hepsi **derlendi**; cihaz sonucu olarak
-> yazılmış bir şey yoksa cihazda doğrulandığı da varsayılmamalı.
+`src/lib/legal/index.ts` › `LEGAL_PLATFORMS.ios = true`. Güncel sürüm aynı dosyada
+`LEGAL_VERSION`; sürüm numarası belgelere yazılmaz. Bayrak açıkken metinlere şunlar giriyor:
 
-Bugün kapanan boşluklar (hepsi DOĞRULANMADI): şablon bundle kimliği `app.lernomi.ios`
-oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uygulama ikonu
-ve markalı açılış ekranı geldi, Apple ile Giriş kuruldu, Google girişi iOS'ta
-kurulabilir hâle getirildi. Açık kalanlar aşağıdaki tabloda.
+- şartlarda "Apple App Store için ek koşullar" (Apple'ın özel EULA için istediği asgari maddeler,
+  Apple'ın üçüncü taraf lehtar olması dahil),
+- satın alma, iptal ve iadenin Apple yolu (Ayarlar › Apple Hesabı › Abonelikler,
+  reportaproblem.apple.com); destek sayfasında da,
+- gizlilik politikasında platform sayımı ve alıcılar tablosunda **Apple (App Store)**.
 
-Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**; güncel sürüm **1.7**, 2026-09-24: sağlayıcı ve veri sorumlusu Musa Atila (Türkiye), GDPR m.27 AB temsilcisi Samet Atila): `src/lib/legal/index.ts`
-içindeki `LEGAL_PLATFORMS.ios` `true`. Bayrak açıkken şunlar basılıyor:
+**Apple (Sign-In)** satırı bayraktan bağımsız: Apple ile giriş web'de ve Android'de de açık
+(`/api/config` → `apple`, `appleWeb`). Üretimde `app_settings["legal.config"]` satırı oluşursa
+onun `platforms.ios` değeri kodun önüne geçer (ayrıntı `LEGAL_PLATFORMS` notunda).
 
-- şartlarda "13a. Apple App Store için ek koşullar" (Apple'ın özel EULA için istediği
-  asgari maddeler: taraflar, lisans kapsamı, bakım, garanti, talepler, fikri mülkiyet,
-  ihracat beyanı, iletişim, üçüncü taraf şartları, **Apple'ın üçüncü taraf lehtar** olması),
-- satın alma / iptal / iade maddelerinin Apple yolu (Ayarlar › Apple Hesabı › Abonelikler,
-  reportaproblem.apple.com); destek sayfasında da aynısı,
-- gizlilik politikasında platform sayımı ve alıcılar tablosuna **Apple (App Store)** satırı.
-
-**Neden yayından önce açıldı.** Eski plan bayrağı App Store'daki yayın günü açmaktı. App
-Review ise gönderimde Privacy Policy URL'sini, şartları ve Support URL'yi okuyor; yalnız
-Android'i sayan bir metin iOS uygulamasının metni sayılmıyor (5.1.1(i), 3.1.2). Bir metnin
-bir uygulamayı kapsaması "yayında" demek değil ve 1.1 kaydı bunu iddia etmiyor. Yayın günü
-için hazır bekleyen `IOS_LAUNCH_ENTRY` tam olarak "App Store'da yayımlandı" dediği için
-kullanılmadı ve silindi.
-
-> **NUMARA NEDEN 1.1.** Sürüm geçmişi 2026-09-09'da sıfırlandı: numara geliştirme
-> sırasında 1.1'den 1.3.1'e yürümüştü ama o kayıtların anlattığı değişikliklerin çoğu
-> henüz yayında olmayan özelliklerin maddeleriydi ve kimsenin kabul ettiği bir sürüm
-> değişmemişti (kabul edilen sürüm hiçbir yerde saklanmıyor). 1.1 metne gerçekten yeni
-> hükümler eklediği için ikinci basamağı aldı: iOS kapsamı, yapay zekâ ve ses için açık
-> rıza, bildirim jetonu, mikrofonun gerçek kapsamı. Gerekçenin tamamı
-> `src/lib/legal/index.ts`'in sürüm notunda.
-
-**Apple (Sign-In)** satırı artık bayraktan **bağımsız**: Apple ile giriş web'de ve Android'de
-de açık (`/api/config` → `"apple":true,"appleWeb":true`), yani bu alıcı iOS'a özgü değil.
-Şartların "üçüncü taraf hizmetleri" maddesi (7b) de Apple ile girişi koşulsuz sayıyor.
-
-> **Panel üstyazımı.** Üretimde `app_settings["legal.config"]` satırı oluşursa oradaki
-> `platforms.ios` kodun önüne geçer. 2026-09-14'te satır yok (salt okuma ile ölçüldü);
-> ayrıntı `LEGAL_PLATFORMS` notunda.
-
-## Yayın denetimi — iOS ve satın alma maddeleri
-
-Yayın denetimi 2026-09-23'te yapıldı (55 madde, rapor: https://claude.ai/artifact/KAAoSCw9PuWrHMaZwvvcEj); durumlar 2026-09-24'te
-güncellendi. **Bu tablo iOS ve satın alma (IAP) maddelerinin tek kaydıdır:** yeni bir denetimde önce buraya
-bakılır, "yapıldı" satırları kanıtıyla (commit, API ölçümü, Samet'in kararı) yazılıdır ve
-yeniden araştırılmaz; yalnız kanıtın hâlâ geçerli olduğu kontrol edilir. Madde kapanınca ya
-da karar değişince satır burada güncellenir. Öteki maddeler: iOS/satın alma
-`docs/appstore/README.md`, Android `docs/play/console.md`, hukuk/içerik/teknik/web `AGENTS.md`
-("Yayın denetimi" bölümü).
-
-| Madde | Konu | Durum | Not / kanıt |
-|---|---|---|---|
-| X-4 | İki abonelik MISSING_METADATA: inceleme görseli yok, sürüme eklenmemiş | ⏳ Samet | İnceleme görselleri UI kontrolünden sonra (Samet'in kararı); abonelikler ilk gönderimde sürüme eklenir. |
-| X-7 | İnceleme notu mikrofonu yanlış anlatıyor, arka plan sesinden söz etmiyor | ✅ Yapıldı | Not 4.000 karakter sınırına sığdırıldı, 1.2 bildir/engelle maddesi eklendi, canlı ASC'ye girildi (dde0d53a). Demo hesaplar açılınca ikinci hesap cümlesi eklenecek. |
-| X-8 | 175 bölgenin hepsinde CANNOT_SELL: Paid Apps sözleşmesi, vergi ya da banka eksik olabilir | ✅ Yapıldı | Yanlış alarm (2026-09-24): Free/Paid Apps sözleşmesi, banka (Musa, TRY), W-8BEN ve DSA aktif. 173 bölgede CANNOT_SELL + AVAILABLE_FOR_SALE_UNRELEASED_APP yayınlanmamış uygulamanın normal durumu; CHN ve RUS bilerek kapalı. |
-| IOS-1 | ASC sürümü '1.0', build'ler '1.0.0'; sürüme build bağlı değil | ✅ Yapıldı | Sürüm 1.0.0 yapıldı, build 4 bağlandı (API). |
-| IOS-2 | Açıklama, anahtar kelimeler, altyazı ve tanıtım metni boş | ✅ Yapıldı | 2026-09-25 API ile girildi (tr/en-US/de-DE; altyazı, açıklama, anahtar kelime, tanıtım metni, destek ve pazarlama URL'si), geri okunup doğrulandı. Metinlerin kaynağı `docs/store/README.md` › Vitrin kararları. |
-| IOS-3 | Ekran görüntüsü yok; iPad beyan edildiği için 13" iPad de zorunlu | ⏳ Samet | Tam UI kontrolünden sonra üretilecek. |
-| IOS-4 | App Privacy (gizlilik etiketleri) yayımlanmış mı? (doğrulanamadı) | ✅ Yapıldı | Yayımlandı (Musa, 2026-09-24): 9 tür — Name, Email, Other User Content, User ID, Device ID, Purchase History (App Functionality, kimliğe bağlı), Product Interaction (Analytics, bağlı), Crash Data ve Other Diagnostic Data (App Functionality, bağlı DEĞİL). Bu belgedeki tablo ve PrivacyInfo.xcprivacy ile birebir. |
-| IOS-5 | Meta veride Kullanım Şartları (EULA) bağlantısı yok | ✅ Yapıldı | 2026-09-25: üç dilde açıklamanın sonunda Kullanım Şartları + Gizlilik Politikası bağlantısı (dile göre `/terms`, `/terms/en`, `/terms/de`; hepsi 200). |
-| IOS-6 | iPad düzeni cihazda hiç denenmedi | ✅ Yapıldı | Simülatör yeterli (Samet, 2026-09-24; gerçek tablet yok): iPad Pro 13" ve mini'de dikey/yatay, tek içerik kolonu 840 (bb78092c…075d7f34), build 6'da. |
-| IOS-7 | Mağaza yalnız Türkçe; binary üç dil beyan ediyor | ✅ Yapıldı | en-US ve de-DE'de ad, altyazı, açıklama, anahtar kelime, tanıtım metni, destek/pazarlama/gizlilik URL'leri dolu (2026-09-25). Ekran görüntüleri IOS-3'te. |
-| IOS-8 | Girişteki Turnstile captcha inceleyiciyi kilitleyebilir | ✅ Yapıldı | Ölçüldü (2026-09-24): iPhone simülatöründe kendiliğinden geçiyor, iPad'de Managed kip "Gerçek kişi" kutusu gösteriyor, dokununca ~2 sn. Uygulama kutu çıkınca "işaretle", takılınca 15 sn'de "Yeniden dene" diyor (360c6218 web, 424d1742 mobil; mobil kısım build 7'yle). İnceleme notunun 3. maddesine kutu cümlesi eklendi. Kip Managed kalıyor (görünmez kipte şüpheli ziyaretçi dokunarak geçemez); inceleme hesabına atlama bilerek yok. |
-| IOS-9 | Harici TestFlight ön koşulları boş | ✅ Yapıldı | Beta açıklamaları (tr/en/de), geri bildirim e-postası ve beta inceleme bilgisi girildi; 'Harici test' grubu açıldı. Build ekleme ve beta incelemesine gönderme istenince. |
-| IOS-10 | Mac ve Vision Pro'da sunulma ayarı; Çin/Rusya; çift boşluk | ✅ Yapıldı | Mac/Vision Pro Samet tarafından kapalı; Çin/Rusya zaten kapalı; çift boşluk düzeltildi. |
-| IOS-11 | Fotoğraf arşivi izin metni 'erişmiyoruz' diyor | ✅ Yapıldı | Photos bağlantısı Firebase çekirdeğinden geliyor; metin zorunlu kalıyor (değişiklik yok). |
-| IAP-1 | Sandbox satın almaları yetki üretmiyor: inceleyici ödeyince 'Satın alma tamamlanmadı' görüyor | ✅ Yapıldı | Sunucu sandbox'ı işaretleyip kabul ediyor; RevenueCat webhook'u tüm ortamlara açıldı. |
-| IAP-2 | iOS'ta deneme uygunluğu kontrol edilmiyor | ✅ Yapıldı | iOS'ta deneme metni yalnız uygun kullanıcıya (15c614e5). |
-| IAP-3 | İptal ve bekleyen ödemede de 'Satın alma tamamlanmadı' hatası | ✅ Yapıldı | İptal sessiz, bekleyen ödeme ve 'işleniyor' durumları eklendi. |
-| IAP-4 | Deneme durumu hiç kaydedilmiyor; webhook ürün kontrolü yok; yenileme metni eksik | ✅ Yapıldı | Deneme durumu, entitlement kontrolü, yenileme '24 saat' ve 'yasal hakların saklıdır' metinleri (663203ed). |
-| IAP-5 | RevenueCat panosu doğrulanamadı | ✅ Yapıldı | RevenueCat panosu API ile doğrulandı: entitlement, lernomi_default offering, iki mağaza ürünleri. |
-
-## iOS yayınından önce bitmesi gereken iş
-
-| # | İş | Neden |
-|---|---|---|
-| 1 | ~~Apple Developer Program hesabı~~ → **açık** (ASC kaydı `6810593275`, TestFlight build 4) | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
-| 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlendi, cihazda denenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
-| 3 | ~~**Apple ile Giriş**~~ → **kod, yetki ve sunucu değerleri yerinde** (`/api/config` → `apple:true`); cihazda doğrulama runbook'ta | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
-| 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlendi, cihazda denenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
-| 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir; 2026-09-23'te Diagnostics satırları eklendi, Connect formu ve `PrivacyInfo.xcprivacy` buna göre güncellenmeli |
-| 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
-| 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi, kod yazıldı ve derleniyor; TestFlight build'iyle cihazda denenecek (aşağıya bak) |
-| 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlendi, cihazda denenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
-| 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
-| 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · ~~`APPLE_BUNDLE_ID` değeri~~ → **sunucuda dolu** (2026-09-14: canlı `/api/config` → `"apple":true,"appleWeb":true`) | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. iOS'ta cihazda henüz denenmedi |
-| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** · ~~Google Console'da iOS istemcisi~~ → **açıldı ve yazıldı** (`googleAuth.ts` › `IOS_CLIENT_ID` dolu) | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
-| 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu — kare betiği ikisini de üretiyor (aşağıda "Cihaz ailesi") |
-| 13 | ~~Cihaz ailesi kararı~~ → **iPhone + iPad, beyan sabitlendi** (2026-09-05) | Aşağıda |
-
-## Ekran kapalıyken yürüyüş modu (arka planda ses)
-
-**Karar:** iOS'ta da ekran kapalıyken çalışacak. Android'de bunu mikrofon tipli ön plan
-servisi yapıyor; iOS'ta böyle bir şey yok — uygulamayı ekran kapalıyken ayakta tutan tek
-şey **etkin bir ses oturumu** ve `UIBackgroundModes = audio`.
-
-Yapılanlar:
-
-- `Info.plist` → `UIBackgroundModes: [audio]`.
-- `LernomiSpeech.swift` → `startWalkService` / `stopWalkService`. Metot adları Android'le
-  birebir aynı; JS (`lib/stt.ts`) bunları zaten çağırıyordu ve iOS'ta sessizce boşa
-  düşüyordu, **JS değişmedi**. Oturum tur boyunca açık tutuluyor.
-- Kelime başına yapılan temizlik artık tur oturumunu kapatmıyor; kapatsaydı ekran
-  kapalıyken bir sonraki kelimeye geçilemezdi.
-- **Kesinti toparlanması (2026-09-05).** Gelen çağrı, alarm ya da Siri oturumu iOS'a
-  devrediyor ve sistem onu kendiliğinden geri vermiyor; `interruptionNotification`
-  dinleniyor, `.ended` + `.shouldResume` gelince oturum yeniden etkinleştirilip Now
-  Playing kaydı yeniden yazılıyor. `.shouldResume` yoksa tur kesilmiyor ama arka plan
-  yolunun kalmadığı JS'e bildiriliyor (`LernomiWalkServiceFailed`) ve ekranda uyarı
-  çiziliyor. `mediaServicesWereReset` de dinleniyor: ses yığını çökerse oturum, kayıt
-  ve uzaktan komutlar birlikte yeniden kuruluyor.
-- **Kulaklık (2026-09-05).** Kategori seçeneklerine `.allowBluetooth` ve
-  `.allowBluetoothA2DP` eklendi. Bunlar olmadan AirPods takılıyken bile GİRİŞ dahili
-  mikrofonda kalıyordu — yani cepteki telefonun mikrofonunda, ki yürüyüş modunun en
-  yaygın kullanımı tam olarak bu.
-- **Kilit ekranı denetimi (2026-09-05).** `MPNowPlayingInfoCenter.playbackState`
-  açıkça `.playing` yazılıyor. Uygulama gerçek bir oynatıcı olmadığı için bu
-  yazılmadan denetim bazı cihazlarda hiç çizilmiyor ve "her an durdurulabilir"
-  iddiası incelemede karşılıksız kalıyordu.
-- `startWalkService` yeniden çağrılmaya dayanıklı (kesinti sonrası aynı yola düşüyor).
-
-**Cihazda doğrulandığı kayıtlı değil.** Kod CI'da ve Mac mini'de derleniyor, TestFlight'ta; aşağıdakiler yalnız gerçek cihazda ölçülebilir.
-Cihazda sınanacak beş şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
-(2) kelimeler arası boşlukta uygulama askıya alınıyor mu, (3) kilit ekranında mikrofon
-göstergesi ve Now Playing denetimi görünüyor mu, (4) telefon çağrısı gelip bittiğinde
-oturum toparlanıyor mu, (5) AirPods takılıyken giriş kulaklık mikrofonuna geçiyor mu.
-
-**İnceleme riski:** arka planda mikrofon isteyen bir uygulama App Review'da en çok
-sorgulanan şeydir ve inceleyenin ilk sorusu "kullanıcı bunu nasıl durduruyor" olur. Üç
-cevabın üçü de artık kodda karşılığı olan cümleler ve App Review Information alanına
-açıkça yazılmalı:
-
-1. **Modu kullanıcı başlatır** — mikrofon açıklama ekranı + sistem izni olmadan tur başlamıyor.
-2. **Sürdüğü görünür** — kilit ekranında Now Playing kaydı duruyor ("Yürüyüş modu açık /
-   Mikrofon dinliyor; söylediklerin tanıma için sunucuya gönderiliyor", cihaz dilinde) ve
-   sistemin mikrofon göstergesi açık kalıyor.
-3. **Her an durdurulabilir** — uygulamanın içinden ya da **kilit ekranından**: durdur,
-   duraklat ve çal/durdur komutlarının üçü de turu bitiriyor, kulaklık düğmesi dahil
-   (`55411a3`). Android'deki kalıcı bildirimdeki "Durdur"un karşılığı bu; §6'daki açık
-   ürün kararı böyle kapandı.
-
-Video eklemek yine en hızlı çözen yol. Bu üç madde + "ses sunucuda tanınır, saklanmaz,
-izin ekranı sağlayıcıları adıyla gösterir" İngilizce not metni olarak `connect.md` §1'in
-7. adımında hazır (2026-09-23). Canlı not 2026-09-25'te arayüz adlarıyla yeniden yazılıp
-API'den girildi (denetim M11 + S4, 3.905 karakter, geri okundu); `connect.md` §1'deki blok canlının aynısı.
-TestFlight beta açıklamaları da aynı gün düzeltildi (M12): her arayüz kendi kursunu anlatıyor (tr Almanca ya
-da İngilizce, en Almanca, de İngilizce), "ders/Lektion/lessons" yok.
-
-
-## Apple ile Giriş (Şerit A — 2026-09-04)
-
-**Yapıldı.** Kod yazıldı ve derleniyor (CI + Mac mini, TestFlight build'lerinde). Aşağıdaki
-"Doğrulanmadı" listesinin 2. ve 3. maddeleri 2026-09-23 itibarıyla kapandı.
-
-Guidelines 4.8 üçüncü taraf girişi sunan uygulamadan Apple ile Giriş'i de istiyor;
-Google sunulduğu için bu bir yayın engeliydi. Kurulan yol Google'ınkinin birebir eşi:
-sistem ekranı → `identityToken` → better-auth `sign-in/social`. WebView yok.
-
-- Sunucu (`src/lib/auth/server.ts`): better-auth `apple` sağlayıcısı. **Yalnız native
-  idToken akışı** açıldı — web/OAuth yönlendirme akışı bir Services ID ve .p8'den
-  üretilen, **en çok 6 ay geçerli** bir client secret ister; süresi dolduğunda giriş
-  kimse fark etmeden kırılır. Native yolda secret hiç okunmuyor: token Apple'ın açık
-  anahtarıyla doğrulanıyor, beklenen `aud` = uygulamanın bundle kimliği.
-- Sağlayıcıyı açan tek env anahtarı **`APPLE_BUNDLE_ID`** (üç env dosyasına da aynı
-  yerde eklendi, üçünde de boş). Boşken sağlayıcı hiç kurulmuyor, `/api/config`
-  `apple: false` diyor ve düğme çizilmiyor — yani **Android'de ve web'de hiçbir şey
-  değişmedi.**
-- Mobil (`mobile/src/lib/appleAuth.ts`): düğme iki kapıdan geçiyor — sunucu açık
-  diyecek ve `appleAuth.isSupported` (iOS 13+) true olacak. Apple düğmesi listede
-  Google'ın **üstünde**; Apple'ın kendi yönergesi bunu istiyor.
-- **Ad tek seferlik:** Apple kişinin adını yalnız İLK yetkilendirmede ve id token'ın
-  DIŞINDA veriyor. Kaçırılırsa kullanıcı `xxxx@privaterelay.appleid.com` adıyla kalır
-  (ve o ad sıralamada başkalarına görünür). Bu yüzden giriş başarılı olur olmaz ad
-  `update-user` ucuna yazılıyor.
-- **`emailVerified` düzeltildi:** better-auth'un apple sağlayıcısı kullanıcıyı her
-  zaman `emailVerified: false` ile kuruyor. Bu hâliyle (1) ilk girişte Apple'ın gizli
-  aktarma adresine bir doğrulama e-postası gidiyor — gönderen alan adı Apple'da
-  kayıtlı değilse **teslim edilmez**, (2) aynı e-postayla hesabı olan kullanıcı
-  "account not linked" ile kendi hesabına giremiyor. Apple `email_verified` iddiasını
-  imzalı token'ın içinde gönderdiği için `mapProfileToUser` ile o okunuyor.
-
-**Nonce göndermiyoruz, bilerek.** Kütüphane isteğe koyduğu nonce'u SHA-256'layıp
-Apple'a özeti yolluyor, JS'e ham değeri döndürüyor; better-auth ise gönderdiğimiz
-dizgiyi token'daki iddiayla düz karşılaştırıyor. Tutması için sunucuya **özeti**
-yollamak gerekir, bu da RN tarafında yeni bir kripto bağımlılığı ya da elle yazılmış
-SHA-256 demek — yanlış hesaplanırsa giriş %100 kırılır ve burada denenemez. Token yine
-tam doğrulanıyor (Apple imzası, `iss`, `aud`) ve bugünkü Google
-native akışında da nonce yok. Açılacaksa: ham nonce üret → `performRequest({ nonce })`
-→ sunucuya SHA-256'nın küçük harf hex'i. **Cihazda doğrulanmadan açılmamalı.**
-
-**Sunucu tarafı canlı sınandı** (yerel `next dev` + curl; cihaz değil):
-`/api/config` `APPLE_BUNDLE_ID` doluyken `apple:true`, boşken `apple:false` dönüyor —
-kapı çalışıyor, Android ve web etkilenmiyor. Bozuk bir idToken 401 `INVALID_TOKEN` ile
-reddediliyor; biçimi doğru ama imzasız bir token'da istek gerçekten Apple'ın JWKS ucuna
-çıkıp bilinmeyen anahtarı reddediyor, yani doğrulama yolu uçtan uca bağlı. (İlk ölçümde
-bozuk token 500 veriyordu — better-auth'un apple doğrulaması fırlatıyor, `false`
-dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
-
-**Doğrulanmadı / bitmesi gerekenler:**
-
-1. Apple Developer hesabında **Sign in with Apple** yetkisi (capability) açılacak ve
-   `Lernomi.entitlements` derlemeye girecek — Şerit P'ye yazılı verildi
-   (`docs/plan/ios-parity-A-teslim.md`). Yetki olmadan istek `1000`/`1004` ile düşer.
-2. ~~`APPLE_BUNDLE_ID` üç env dosyasında da boş~~ → sunucuda dolu (canlı `/api/config`
-   → `"apple":true,"appleWeb":true`).
-3. ~~Hata metinlerinin i18n anahtarları~~ → `autherror.apple_failed` ve
-   `autherror.no_apple_token` üç dilde sözlükte.
-4. **Gizli aktarma adresi (Private Email Relay):** giden posta Resend üzerinden
-   (SMTP ile, `smtp.resend.com`) `noreply@lernomi.app` adresinden çıkıyor.
-   Gönderen kaydedilmezse `@privaterelay.appleid.com` adreslerine giden posta
-   ULAŞMAZ — Apple onu geri döndürür (bounce), sessizce düşürmez. "E-postamı
-   Gizle" seçen kullanıcının tek iletişim kanalı orası olduğu için parola
-   sıfırlama da o hesapta çalışmaz.
-
-   Yol (2026-09-09'da doğrulandı): **Certificates, Identifiers & Profiles →
-   kenar çubuğunda `Services` → "Sign in with Apple for Email Communication" →
-   `Configure`**. Oraya alan adı ya da tekil gönderen adresler yazılıyor;
-   gerçek kişi hesabında en fazla 32 kaynak (kurumsalda 100).
-
-   KAYDEDİLECEK ALAN ADI "`From:`" DEĞİL OLABİLİR. Apple iki yoldan biriyle
-   doğruluyor: (a) **zarf göndericisinin** (MAIL FROM / Return-Path) alan adı
-   kayıtlı ve SPF'ten geçiyor, ya da (b) **DKIM `d=`** değeri `From:` alan
-   adıyla BİREBİR aynı ve kayıtlı. Resend'de DKIM alan adına imzalanır ama
-   Return-Path çoğunlukla bir `send.` alt alan adında durur — yani kaydedilmesi
-   gereken alan adı `lernomi.app` ile sınırlı olmayabilir. Doğrusu tahmin
-   edilmez: hesap açılınca kendine bir test postası gönder, gelen iletinin ham
-   başlıklarındaki `Return-Path:` ve `DKIM-Signature: d=` değerlerine bak, orada
-   hangi alan adı yazıyorsa onu kaydet.
-
-**Cihazda sınanacak:** §5.11'e ek olarak — (a) ilk girişte ad doğru yazılıyor mu,
-(b) "E-postamı Gizle" seçilince oturum açılıyor mu, (c) aynı e-postayla zaten hesabı
-olan kullanıcıda hesap birleşiyor mu, (d) Ayarlar'dan Apple izni geri alınınca
-uygulama makul davranıyor mu.
-
-## Cihaz ailesi: iPhone + iPad — 2026-09-05
-
-Karar: uygulama **iki cihaz ailesinde de** satılıyor
-(`TARGETED_DEVICE_FAMILY = "1,2"`, Info.plist'te iPad yönelimleri açık,
-`UIRequiresFullScreen` yok, yani Split View çalışıyor).
-
-Bu beyanın bedeli var ve bedeli ödenmeden bırakılırsa reddin bilinen yolu oluyor:
-13" iPad ekran görüntüsü **zorunlu** hâle geliyor ve inceleyici uygulamayı iPad'de
-açıp döndürüyor. Üç şey birbirine bağlandı:
-
-- **Kare betiği** (`mobile/scripts/ios-screenshots.sh`) artık üç cihaz koşuyor:
-  iPhone SE (en dar telefon — düzen orada kırılır), **iPhone 6.9"** ve **iPad 13"**;
-  sonuncu ikisi mağazanın zorunlu tuttukları. 10.9" iPad listeden çıktı (mağaza
-  istemiyor, 13" aynı düzeni daha geniş gösteriyor). Cihaz tipi runner'ın
-  Xcode'unda yoksa iş düşmüyor, o cihaz atlanıyor ve günlükte görünüyor.
-- **Beyan denetimi** (`npm run ios:check` › "cihaz ailesi") aileyi, iPad
-  yönelimlerini, `UIRequiresFullScreen`in kapalı olduğunu ve kare betiğinde iki
-  zorunlu cihazın bulunduğunu birlikte tutuyor — biri sessizce düşemiyor.
-- **Düzen testi** (`mobile/__tests__/layout.test.ts`) içerik sütununun kırılımlarını
-  gerçek genişliklerle sabitliyor: iPhone SE 375, 6.9" 440, iPad mini 744, iPad 820,
-  iPad Pro 13" dikey 1024 ve yatay 1366, ayrıca Slide Over 320 ve Split View 678.
-  Sütun hiçbir ekranda 720pt'yi aşmıyor (satır ölçüsü) ve ekran büyürken küçülmüyor.
-  iPad'i bu makinede açmanın başka yolu yok; eşiklerin kaymadığını söyleyen tek şey bu.
-
-**Doğrulanmadı:** düzenin iPad'de gerçekten iyi göründüğü. Test eşikleri sabitliyor,
-kareler ise ancak Mac'te üretilebiliyor. Cihazda/simülatörde bakılacaklar: yatay
-Beceriler ekranı, klavye açıkken yazma görevi, Split View'da alt sekmeler.
-
-## Hesap silme (5.1.1(v)) — 2026-09-05
-
-Ekran ve uç Android'den beri duruyordu (`DeleteAccountScreen`, Better Auth
-`delete-user`), ama iOS'a özgü iki yerde tıkanıyordu. İkisi de kapatıldı; ikisi de
-**derlendi ama cihazda denenmedi**.
-
-**1. Apple ile giren kullanıcı hesabını silemiyordu.** Oturum 24 saatten eskiyse
-Better Auth "taze giriş" istiyor; ekrandaki yeniden giriş düğmesi sabit **Google**
-idi. Apple ile giren kullanıcının Google hesabı yok, dolayısıyla o düğme hiçbir
-zaman geçmiyordu — yani iOS'ta sunulan iki giriş yolundan birinde silme tümüyle
-kapalıydı. Artık sağlayıcı `list-accounts`tan okunuyor ve düğme Apple ya da Google
-oluyor; hiçbiri yoksa (parola hesabı) zaten parola soruluyor.
-
-**2. Apple tarafındaki izin iptal edilmiyordu.** 5.1.1(v) yalnız hesabın silinmesini
-değil, Apple ile Giriş sunan uygulamalardan **Sign in with Apple REST API ile
-token'ın iptal edilmesini** de istiyor. Edilmezse hesap bizde silinse bile Ayarlar ›
-Apple Hesabı › Oturum Açma ve Güvenlik listesinde uygulama duruyor.
-
-Native akış id token ile çalışıyor ve id token iptal EDİLEMİYOR; iptal edilebilen tek
-şey authorization code'dan üretilen refresh token. Kurulan yol:
-
-- Giriş biter bitmez `authorizationCode` `/api/account/apple-code`e gidiyor
-  (`mobile/src/lib/appleAuth.ts`). Kod tek kullanımlık ve ~5 dakika yaşıyor.
-- Sunucu onu refresh token'a çevirip `account.refreshToken`e yazıyor
-  (`src/lib/account/apple-revoke.ts`).
-- Silme anında `beforeDelete` önce iptali çağırıyor, sonra veriyi temizliyor — sıra
-  önemli, `account` satırı silinince token okunamaz.
-- İptalin başarısızlığı silmeyi **durdurmuyor**: Apple'ın ucu erişilemez diye hesap
-  silinemez kalırsa 5.1.1(v) baştan ihlal edilir. Hata günlüğe düşüyor.
-
-Client secret için `jose` eklenmedi; tek bir ES256 JWT'yi Node'un kendi crypto'su
-imzalıyor. İncelik imza biçiminde: Node DER üretir, JWS ham `r||s` ister. Yanlışı
-Apple'da yalnız "invalid_client" olarak görünür ve sebebi hiçbir yerde yazmaz — bu
-yüzden `npm run test:apple` JWT'yi baştan sona doğruluyor (15 denetim, ağ ve
-veritabanı gerektirmiyor, kendi anahtarını üretiyor). **Geçti.**
-
-Yapılandırma dört env değerine bağlı (`APPLE_BUNDLE_ID`, `APPLE_TEAM_ID`,
-`APPLE_KEY_ID`, `APPLE_PRIVATE_KEY`); üç env dosyasına da aynı yerde, boş olarak
-eklendi. Boşken iptal adımı atlanıyor ve silme aynen tamamlanıyor — yani Android ve
-web'de hiçbir şey değişmedi.
-
-**Cihazda sınanacak:** (a) Apple ile giren kullanıcı eski oturumla silmeyi
-tamamlayabiliyor mu, (b) silmeden sonra Apple'ın Ayarlar listesinden uygulama
-düşüyor mu, (c) aynı Apple hesabıyla yeniden giriş temiz bir hesap açıyor mu.
+Kimlik: hizmet sağlayıcı, satıcı ve veri sorumlusu Musa Atila; Samet Atila GDPR m.27 AB
+temsilcisi (`LEGAL_ENTITY`, gerekçe `docs/play/listing.md` §5). Künye `/impressum`.
 
 ## Gizlilik etiketleri (App Store Connect › App Privacy)
 
-Play'in Veri Güvenliği beyanıyla (`docs/play/data-safety.md`) aynı gerçeği anlatır,
-Apple'ın kategorileriyle. **Hiçbir veri türü izleme (tracking) için kullanılmıyor** —
-reklam kimliği toplanmıyor, üçüncü taraf reklam, analitik ya da çökme raporlama SDK'sı
-yok (Firebase Crashlytics 2026-09-23'te çıkarıldı; önceki build'lerde vardı ve hiçbir
-beyanda yoktu, denetim LEG-1).
-
-Dokuz tür var (2026-09-23'e kadar yedi) ve `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile BİREBİR aynı olmak
-zorunda; manifest pakette gidiyor ve Apple ikisini karşılaştırabiliyor. Device ID
-2026-09-10'da eklendi: uzak bildirim o gün açıldı ve cihaz başına bir kayıt jetonu
-saklanmaya başladı (`device_tokens`). Apple'ın örnekleri IDFA/IDFV olduğu için bu
-tartışmalı bir kutu; Play'in tanımı Firebase installation ID'yi açıkça oraya yazdığı
-için iki mağazanın aynı şeyi söylemesi tercih edildi.
+Hiçbir tür izleme (tracking) için kullanılmıyor: reklam kimliği yok, üçüncü taraf reklam,
+analitik ya da çökme raporlama SDK'sı yok. Tablo `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile
+**birebir** olmalı; satır eklenirse manifest aynı commit'te değişir.
 
 | Apple kategorisi | Toplanıyor | Kimliğe bağlı | Amaç |
 |---|---|---|---|
 | Contact Info › Email Address | Evet | Evet | App Functionality |
 | Contact Info › Name | Evet | Evet | App Functionality |
-| User Content › Audio Data | **Hayır** (geçici işlenir, saklanmaz) | — | — |
-| User Content › Other User Content (yazdığın ve söylediğin metinler) | Evet | Evet | App Functionality |
+| User Content › Other User Content (yazılan ve söylenen metinler) | Evet | Evet | App Functionality |
+| User Content › Audio Data | Hayır (geçici işlenir, saklanmaz; aşağıya bak) | — | — |
 | Identifiers › User ID | Evet | Evet | App Functionality |
-| Identifiers › Device ID (bildirim jetonu) | **Evet** | Evet | App Functionality |
+| Identifiers › Device ID (bildirim jetonu) | Evet | Evet | App Functionality |
 | Usage Data › Product Interaction | Evet | Evet | Analytics (ayarlardan kapatılabilir) |
 | Purchases › Purchase History | Evet | Evet | App Functionality |
-| Diagnostics › Crash Data (anonim JS hata raporu: ileti, yığın izi) | **Evet** | **Hayır** | App Functionality |
-| Diagnostics › Other Diagnostic Data (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform; Firebase SDK kalite ölçümü) | **Evet** | **Hayır** | App Functionality **+ Analytics** (2026-09-25, G4) |
-| Location › Coarse Location (Google ile Giriş SDK'sı, IP'den, dolandırıcılık önleme) | **Evet** (2026-09-25, G4) | **Evet** | App Functionality |
-| Contacts, Health, Financial Info, Browsing History, Search History, Sensitive Info, Precise Location | Hayır | — | — |
+| Diagnostics › Crash Data (anonim JS hata raporu) | Evet | Hayır | App Functionality |
+| Diagnostics › Other Diagnostic Data (ekran adı, sürüm, platform; Firebase SDK kalite verisi) | Evet | Hayır | App Functionality + Analytics |
+| Location › Coarse Location (Google ile Giriş SDK'sı, IP'den, dolandırıcılık önleme) | Evet | Evet | App Functionality |
+| Contacts, Health, Financial Info, Browsing/Search History, Sensitive Info, Precise Location | Hayır | — | — |
 
-**Diagnostics 2026-09-23'te Hayır'dan Evet'e döndü.** Web ve mobil JS hataları kendi
-sunucumuza gidiyor (`/api/client-errors`; `src/lib/client-errors.ts`,
-`mobile/src/lib/errorReport.ts`). Kullanıcı kimliği yazılmıyor, e-posta/jeton/uzun
-sayılar sunucuda temizleniyor, kimseyle paylaşılmıyor — yani "Linked to identity: No".
-Apple "collected" için üçüncü tarafı şart koşmuyor; birinci taraf sunucuda saklanan veri
-de toplanmış sayılıyor. Native çökmeler yalnız Apple'ın kendi Organizer raporlarında.
-**Açık iş (mobil):** `PrivacyInfo.xcprivacy`'ye `NSPrivacyCollectedDataTypeCrashData` ve
-`NSPrivacyCollectedDataTypeOtherDiagnosticData` (Linked: false, Tracking: false, Purpose:
-AppFunctionality) eklenmeli; Samet Connect › App Privacy'de aynı iki satırı işaretler.
-**Pod manifestleri karşılaştırması (2026-09-25, LEG-13 / denetim G4):** 51 pod manifesti
-toplandı (`ios/Pods/**/PrivacyInfo.xcprivacy`). Fark iki yerdeydi, ikisi de etikete ve
-uygulama manifestine eklendi:
-- Firebase Installations + GoogleDataTransport: Other Diagnostic Data, bağlı değil,
-  **Analytics** (Firebase'in açıklaması: SDK performans/kalite metaverisi).
-- Google ile Giriş: **Coarse Location**, bağlı, App Functionality (Google'ın açıklaması:
-  "IP adresi, dolandırıcılık önleme için genel konum tahmininde kullanılabilir").
-GoogleSignIn manifesti ayrıca PhoneNumber, OtherUsageData ve analitik amaçlı DeviceID/UserID
-sayıyor; Google'ın yayımladığı SDK açıklaması yalnız kullanıcı kimliği ve IP'yi anıyor
-(developers.google.com/identity/sign-in/ios/app-privacy), bu yüzden bunlar beyan edilmedi.
-Apple inceleyicisi sorarsa gerekçe bu. **Connect › App Privacy'yi Samet günceller** (API yok):
-Diagnostics'e Analytics amacı, Location › Coarse Location (Linked, App Functionality).
+Manifest bu on türü taşıyor. **Connect formu 2026-09-24'te dokuz türle yayımlandı**; Coarse
+Location ve Other Diagnostic Data'ya Analytics amacı henüz eklenmedi (denetim G4, Samet; API yok).
 
-Bu tablo ile uygulama paketindeki `mobile/ios/Lernomi/PrivacyInfo.xcprivacy`
-**birebir aynı olmak zorunda** — ayrışırsa inceleme takılır. 2026-09-04'te makine
-tarafından karşılaştırıldı (o gün altı tür vardı): altı türün her birinde tür adı, "kimliğe bağlı" bayrağı,
-amaç listesi ve `tracking=false` örtüşüyor; belgede "Hayır" yazan hiçbir tür
-manifestoda yok, manifestoda belgede olmayan tür yok, `NSPrivacyTracking` de false.
-Bu tabloya satır eklenirse manifesto da aynı commit'te değişmeli.
+Notlar:
 
-Bugün eklenen Apple girişi paketi (`@invertase/react-native-apple-authentication`)
-`NSPrivacyAccessedAPITypes`'a bir şey eklemiyor: kendi gizlilik manifestosu yok ama
-"gerekçe isteyen" (required reason) API'lerin hiçbirini de kullanmıyor — kaynağında
-`UserDefaults`, dosya zaman damgası, sistem açılış zamanı ya da disk alanı çağrısı
-geçmiyor.
+- **Ses.** Apple "toplanıyor" derken cihazdan çıkıp saklanmayı kastediyor. Ses sunucuda
+  saklanmıyor; Speechmatics işi tanımadan sonra siliniyor, Deepgram'da `mip_opt_out` açık,
+  Mistral ses zincirinde yok (`src/lib/stt.ts`; denetim LEG-3, G5). Groq'un sıfır saklama ayarı
+  açılana kadar G5 açık. Bu koşullardan biri geri alınırsa satır "Evet"e döner. Tanınan
+  **metin** saklanıyor ve User Content olarak beyanlı.
+- **Device ID.** Uzak bildirim jetonu cihaz başına saklanıyor (`device_tokens`). Apple'ın
+  örnekleri IDFA/IDFV olsa da Play'in tanımı Firebase kimliğini açıkça bu kutuya koyduğu için iki
+  mağaza aynı şeyi söylüyor.
+- **Diagnostics birinci taraf.** JS hataları kendi sunucumuza gidiyor (`/api/client-errors`;
+  `src/lib/client-errors.ts`, `mobile/src/lib/errorReport.ts`), kullanıcı kimliği yazılmıyor,
+  paylaşılmıyor. Native çökmeler yalnız Apple'ın Organizer raporlarında.
+- **Pod manifestleri.** GoogleSignIn manifesti ayrıca PhoneNumber, OtherUsageData ve analitik
+  amaçlı DeviceID/UserID sayıyor; Google'ın yayımladığı SDK açıklaması
+  (developers.google.com/identity/sign-in/ios/app-privacy) yalnız kullanıcı kimliği ve IP'yi
+  andığı için bunlar beyan edilmedi. İnceleyici sorarsa gerekçe bu.
+- **Misafir** yeni bir tür açmıyor: misafirde toplanan her şey (rastgele kullanıcı kimliği,
+  öğrenme ve etkileşim verisi) hesapta da toplanıyor; misafirde e-posta ve ad yok.
+- Crashlytics 2026-09-23'te çıkarıldı (X-1).
 
-Ses için dikkat: Apple "toplanıyor" derken **cihazdan ayrılıp saklanmayı** kastediyor
-(gerçek zamanlı işleme dışında). Ses sunucuya gidiyor ama Lernomi'de saklanmıyor;
-sağlayıcı tarafında Speechmatics işi tanımadan sonra siliniyor ve Deepgram'da eğitim
-katılımı kapalı (`mip_opt_out`) — ikisi sunucu tarafında `lib/stt`e bağlı (denetim
-LEG-4). Bu koşullarla "collected" değil; ikisinden biri geri alınırsa bu satır "Evet"e
-döner. Tanınan **metin** saklanıyor ve o User Content olarak beyan ediliyor.
-Bu ayrım gizlilik politikası §3 ve §4 ile birebir aynı.
+## Ekran kapalıyken yürüyüş modu (arka planda ses)
 
-## İnceleme notları (App Review Information)
+iOS'ta uygulamayı ekran kapalıyken ayakta tutan tek şey etkin bir ses oturumu:
+`UIBackgroundModes = audio` ve `LernomiSpeech.swift` › `startWalkService`/`stopWalkService`
+(Android'deki ön plan servisiyle aynı adlar). Kesinti toparlanması, kulaklık mikrofonu ve kilit
+ekranı denetimi kodda; cihazda doğrulanmadı (M10).
 
-Uygulama hesapsız da kullanılabiliyor (misafir kimliği, 2026-09-15, mağaza ön inceleme B24);
-hatırlatmalar (cihaz içi) ve rızayla tek bir yapay zekâ değerlendirmesi misafire açık; sosyal,
-sonraki yapay zekâ değerlendirmeleri ve Premium satın alma hesap istiyor. `docs/appstore/connect.md`'deki
-inceleme hesabı ve adımlar App Store Connect'e girilir; misafir yolu notların 2. adımında.
-Gizlilik etiketinde misafir yeni bir veri türü açmıyor: misafirde toplanan her şey (rastgele
-kullanıcı kimliği, öğrenme ve etkileşim verisi) hesapta da toplanıyor ve beyanlı (User ID,
-Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmıyor. Ek olarak açıklanması gereken:
+App Review'da arka planda mikrofon en çok sorgulanan şeydir. Üç cevap da kodda karşılığı olan
+cümleler ve inceleme notunun 7. adımında yazılı (`connect.md` §1):
 
-- **Mikrofon ve arka plan sesi:** yürüyüş modu kullanıcı başlattığında mikrofonu açar;
-  ekran kapalıyken ses tanınmak üzere sunucuya gider ve saklanmaz. Adım adım metin
-  `connect.md` §1, 7. adım (kilit ekranında Now Playing + mikrofon göstergesi, kilit
-  ekranından durdurma, sağlayıcılar izin ekranında adıyla).
-- **Satın alma:** Premium'lu inceleme hesabı paywall'u göremez; notta ikinci, Premium'suz
-  bir demo hesap ve hesap şartının gerekçesi (hesaba bağlı, platformlar arası abonelik)
-  var (`connect.md` §1).
-- **Yapay zekâ içeriği:** sohbet bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
-  değil" bildirimi ekranda kalıcı ve her yanıtın altında "Bildir" var (Guidelines 1.2 ve
-  üretken içerik beklentileri).
-- **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad ve kullanıcı adı
-  moderasyondan geçiyor (filtreleme; biyografi 2026-09-16'da kaldırıldı), her yapay zekâ yanıtının altında ve
-  profillerde **Bildir**, profillerde **Engelle**, ve **yayımlanmış iletişim bilgisi**
-  olarak `https://www.lernomi.app/support`. Özel mesajlaşma yok. Şartlar §4/§5 1.5'ten
-  beri "sıfır tolerans, bildirimler 24 saat içinde incelenir, bildirene sonuç iletilir"
-  diyor.
+1. **Modu kullanıcı başlatır:** mikrofon açıklama ekranı ve sistem izni olmadan tur başlamaz.
+2. **Sürdüğü görünür:** kilit ekranında Now Playing kaydı ("Walk mode is on") ve sistemin
+   mikrofon göstergesi.
+3. **Her an durdurulabilir:** uygulamadan, kilit ekranındaki denetimden ya da kulaklık düğmesinden.
 
-  Dördüncüsü 2026-09-09'a kadar EKSİKTİ: destek adresi yalnız gizlilik politikası ve
-  şartların içinde geçiyordu, Support URL alanı ise ana sayfayı gösteriyordu ve ana
-  sayfada iletişim bilgisi yoktu. Sayfa artık ayrı (`/support`, üç dilde), ana sayfanın
-  alt şeridinden, hukuki sayfaların gezinme şeridinden ve **uygulama içinde** Profil ›
-  Ayarlar › Destek ve iletişim satırından açılıyor — 1.2 "yayımlanmış" derken
-  uygulamadan ulaşılabilir olmasını da kastediyor.
+Video (App Preview) en hızlı çözen yol; çekim `docs/store/README.md` kararına bağlı.
 
-## Not
+## Apple ile Giriş ve hesap silme — bilinmesi gerekenler
 
-Vergi tarafı iOS'ta da aynı: GVK mükerrer m.20/B istisnası "elektronik uygulama paylaşım
-ve satış platformları" diyor, App Store da bunun içinde. Hizmet sağlayıcı (satıcı ve veri
-sorumlusu, 1.7'den beri tek kişi) Türkiye'de yerleşik gerçek kişi (bkz.
-`src/lib/legal/index.ts` kimlik notu).
+- Sağlayıcıyı `APPLE_BUNDLE_ID` açar; boşken `/api/config` `apple:false` der ve düğme çizilmez.
+  Web ve Android Apple'ın web akışını kullanır (`APPLE_SERVICES_ID`). iOS'ta Apple düğmesi
+  Google'ın üstünde; Google yalnız Apple da açıkken çizilir (4.8).
+- Ad yalnız ilk yetkilendirmede geliyor; giriş biter bitmez yazılıyor. Nonce bilerek
+  gönderilmiyor (gerekçe `mobile/src/lib/appleAuth.ts`).
+- Silmede (5.1.1(v)) yeniden giriş düğmesi sağlayıcıya göre; Apple jetonu silmeden önce REST API
+  ile iptal ediliyor (`src/lib/account/apple-revoke.ts`, `npm run test:apple`). İptalin
+  başarısızlığı silmeyi durdurmaz. Anahtarlar `APPLE_TEAM_ID`, `APPLE_KEY_ID`, `APPLE_PRIVATE_KEY`.
+- "E-postamı Gizle" postası: gönderen alan adı Apple'da kayıtlı (denetim TEC-2).
