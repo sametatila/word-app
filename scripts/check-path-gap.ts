@@ -85,15 +85,26 @@ const kelime = (raw: string) =>
 
 type Kurs = "de" | "en";
 
-/** Havuz: sözcük → ilk göründüğü seviye. */
+/** Havuz: sözcük → ilk göründüğü seviye.
+ *
+ * İNGİLİZ SÖZCÜKLERİ HAVUZDA, AMA ÖĞRETİLMESİ BEKLENENLERİN DIŞINDA
+ * (2026-09-26, Samet'in kararı). Kurs Amerikan; havuz `flat`, `queue`,
+ * `lift` gibi İngiliz sözcüklerini bilerek tutuyor ve kartta `usage: "brit"`
+ * etiketiyle gösteriyor (378f9882). Konuşmalar onları öğretmiyor, çünkü
+ * öğretmemeleri gerekiyor: Amerikan karşılığını öğretiyorlar. Bu satırlar
+ * sayıldıkça kapsam, doğru yapılan her Amerikanlaştırmada DÜŞÜYORDU (A1
+ * %99 → %97). Etiketli satır ne kapsamın paydasına ne boşluğa giriyor;
+ * aynı sözcük etiketsiz başka bir satırda da varsa (`flat` = "düz") o
+ * satır sayılmaya devam ediyor. */
 function havuz(kurs: Kurs): Map<string, string> {
   const dosya = kurs === "en" ? "data/app/words-en.json" : "data/app/words.json";
   const ham = readFileSync(dosya, "utf8").trim();
-  const rows: { de: string; niveau: string }[] = kurs === "en"
+  const rows: { de: string; niveau: string; usage?: string }[] = kurs === "en"
     ? ham.split("\n").filter(Boolean).map((l) => JSON.parse(l))
     : JSON.parse(ham);
   const m = new Map<string, string>();
   for (const r of rows) {
+    if ((r.usage ?? "").split(/\s+/).includes("brit")) continue;
     const lv = r.niveau.toLowerCase();
     for (const w of kelime(r.de)) {
       const eski = m.get(w);
