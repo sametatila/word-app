@@ -85,7 +85,12 @@ const TAKVIM = new Set(["montag", "dienstag", "mittwoch", "donnerstag", "freitag
   "samstag", "sonntag", "januar", "februar", "märz", "april", "mai", "juni",
   "juli", "august", "september", "oktober", "november", "dezember"]);
 
-const AYRILABILIR = /^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
+/* `hervor`, `vorbei`, `um`, `weiter` listede yoktu (2026-09-26): sözlükçesi
+   "hervorheben" / "umtauschen" olan metindeki "heben … hervor" ve
+   "tauschen … um" kayma sayılıyordu (c1-u01-r2, a2-u14-r2), "vorbeireden"
+   sözlükçesi "vorbeigeredet"i tutmuyordu (b2-u02-r1). Uzun önek
+   önde: alternasyon ilk eşleşeni alır. */
+const AYRILABILIR = /^(hervor|vorbei|weiter|an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück|um)/;
 
 /**
  * Düzensiz ortaç ve geçmiş — kural üretemediklerimiz.
@@ -276,6 +281,13 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // gövdesi (aufhören → hören) izinKok'a giriyor ama çekimi üretilmiyordu, o
   // yüzden metindeki "hört … auf" kayma sayılıyordu. Soyulmuş gövdeler de dahil.
   const izinCekim = new Set();
+  // Ayrılabilen fiilin zu'lu mastarı TEK sözcük: weitergehen → "weiterzugehen",
+  // anrufen → "anzurufen". `soyZu` yalnız öneksiz "zu" soyuyordu; sözlükçesinde
+  // "weitergehen" olan b1-u45-r1 metni bu yüzden kayma sayılıyordu.
+  for (const w of izin) {
+    const m = w.match(AYRILABILIR);
+    if (m && w.length - m[0].length >= 4) izinCekim.add(m[0] + "zu" + w.slice(m[0].length));
+  }
   for (const w of [...izin, ...izinKok]) {
     if (w.length >= 4 && (w.endsWith("en") || /[eo]rn$|eln$/.test(w))) {
       // -ern/-eln fiillerinde gövde SON n atılarak bulunur: ändern → änder,
