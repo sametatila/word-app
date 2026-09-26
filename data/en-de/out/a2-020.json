@@ -11,7 +11,7 @@
  { "id": 208084, "beispielDe": "Bitte legen Sie den Sicherheitsgurt an." },
  { "id": 208089, "beispielDe": "Der Autofahrer hielt bei Rot an." },
  { "id": 208097, "beispielDe": "Morgen machen wir eine Bootsfahrt auf dem See." },
- { "id": 208105, "beispielDe": "Welche Jahreszeit magst du am liebsten?" },
+ { "id": 208105, "beispielDe": "Der Herbst ist die beste Jahreszeit zum Wandern." },
  { "id": 208114, "beispielDe": "Eine Biene landete auf der gelben Blume." },
  { "id": 208115, "beispielDe": "Am Teich haben wir einen grünen Frosch gesehen." },
  { "id": 208116, "beispielDe": "Auf der Wiese sind zwanzig Schafe." },
@@ -47,6 +47,6 @@
  { "id": 208357, "beispielDe": "Die alten Koffer sind auf dem Dachboden." },
  { "id": 208358, "beispielDe": "Vergiss nicht, die Haustür abzuschließen." },
  { "id": 208361, "beispielDe": "Meine Schwester schläft im Gästezimmer." },
- { "id": 208364, "beispielDe": "Die Waschmaschine steht im Keller." },
+ { "id": 208364, "beispielDe": "Unsere Waschmaschine macht ein komisches Geräusch." },
  { "id": 208365, "beispielDe": "Kannst du bitte den Mülleimer leeren?" }
 ]
