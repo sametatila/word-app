@@ -1444,7 +1444,7 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Emre",
-        "text": "Hello, everyone. My name is Emre. I'm from Turkey. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital."
+        "text": "Hello, everyone. My name is Emre. I'm from Türkiye. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital."
       },
       {
         "speaker": "Emre",
@@ -2872,14 +2872,18 @@ export const enMobile2026: SkillExercise[] = [
       {
         "kind": "build",
         "tr": "Ben Türkiye'denim ve bir öğrenciyim.",
-        "answer": "I'm from Turkey and I'm a student.",
+        "answer": "I'm from Türkiye and I'm a student.",
         "alternatives": [
+          "I am from Türkiye and I am a student.",
+          "I am from Türkiye and I'm a student.",
+          "I'm from Türkiye and I am a student.",
+          "I'm from Turkey and I'm a student.",
           "I am from Turkey and I am a student.",
           "I am from Turkey and I'm a student.",
           "I'm from Turkey and I am a student.",
           "I'm from Turkey and I'm a student"
         ],
-        "hint": "Ülke söylerken 'from' gelir: I am from Turkey. 'I am' kısaltılınca 'I'm' olur."
+        "hint": "Ülke söylerken 'from' gelir: I am from Türkiye. 'I am' kısaltılınca 'I'm' olur."
       },
       {
         "kind": "build",
@@ -2929,7 +2933,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Hepinizle tanıştığıma memnun oldum!"
           }
         ],
-        "sample": "Hello, everyone! My name is Elif and I'm from Turkey. I live in Izmir with my family. I'm a student, and I also work in a small cafe on the weekend. In my free time, I like listening to music and reading books. I want to speak English every day here. Nice to meet you all!"
+        "sample": "Hello, everyone! My name is Elif and I'm from Türkiye. I live in Izmir with my family. I'm a student, and I also work in a small cafe on the weekend. In my free time, I like listening to music and reading books. I want to speak English every day here. Nice to meet you all!"
       }
     ]
   },
@@ -6399,7 +6403,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Mert",
-        "text": "Perfect. Don't forget your camera. The sunsets there are the best in Turkey."
+        "text": "Perfect. Don't forget your camera. The sunsets there are the best in Türkiye."
       }
     ],
     "questions": [

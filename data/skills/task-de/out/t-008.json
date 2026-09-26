@@ -139,7 +139,7 @@
  { "tr": "Önceden planlanmış işler için 'be going to' kullanılır: We're going to visit.", "kind": "build.hint", "de": "Für vorher geplante Dinge nimmt man 'be going to': We're going to visit." },
  { "tr": "„may well“ olasılığı güçlendirir; tek başına „may“ daha zayıf bir iddia taşır.", "kind": "build.hint", "de": "„may well“ verstärkt die Möglichkeit; ein „may“ allein trägt eine schwächere Behauptung." },
  { "tr": "Kesin bir plan için „be + -ing“: We are visiting. Gün adından önce „on“ gelir.", "kind": "build.hint", "de": "Für einen festen Plan „be + -ing“: We are visiting. Vor dem Tagesnamen steht „on“." },
- { "tr": "Ülke söylerken 'from' gelir: I am from Turkey. 'I am' kısaltılınca 'I'm' olur.", "kind": "build.hint", "de": "Beim Land steht 'from': I am from Turkey. Aus 'I am' wird kurz 'I'm'." },
+ { "tr": "Ülke söylerken 'from' gelir: I am from Türkiye. 'I am' kısaltılınca 'I'm' olur.", "kind": "build.hint", "de": "Beim Land steht 'from': I am from Türkiye. Aus 'I am' wird kurz 'I'm'." },
  { "tr": "Günün bölümü „in the“ ile söylenir ve cümlenin başında da sonunda da durabilir.", "kind": "build.hint", "de": "Der Tagesteil steht mit „in the“ und darf am Satzanfang wie am Satzende stehen." },
  { "tr": "Teşekkür ederken 'thanks for' + isim gelir; kesin karar için 'will' kullanılır.", "kind": "build.hint", "de": "Beim Danken folgt 'thanks for' + Substantiv; für den festen Entschluss nimmt man 'will'." },
  { "tr": "'It is' kısaltması 'it's'; garanti kapsamında olmak için 'under warranty' denir.", "kind": "build.hint", "de": "Die Kurzform von 'It is' ist 'it's'; für die Garantie sagt man 'under warranty'." },

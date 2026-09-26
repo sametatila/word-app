@@ -209,8 +209,12 @@ export const enB1P14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Geçen yıl Türkiye'yi iki kez ziyaret ettin, değil mi?",
-        answer: "You visited Turkey twice last year, didn't you?",
-        alternatives: ["Last year you visited Turkey twice, didn't you?"],
+        answer: "You visited Türkiye twice last year, didn't you?",
+        alternatives: [
+          "Last year you visited Türkiye twice, didn't you?",
+          "You visited Turkey twice last year, didn't you?",
+          "Last year you visited Turkey twice, didn't you?",
+        ],
         hint: "Yardımcı fiil yok, past simple: olumlu cümleye olumsuz ek „didn't you?“ gelir.",
       },
       {
@@ -247,7 +251,7 @@ export const enB1P14: SkillExercise[] = [
           "Would it suit you to meet online twice a week, for an hour each time? We could speak " +
           "English for thirty minutes and Turkish for thirty. I work early shifts, so evenings " +
           "after seven are best for me. " +
-          "You said you had visited Turkey twice, didn't you? I'd love to know which cities you saw. " +
+          "You said you had visited Türkiye twice, didn't you? I'd love to know which cities you saw. " +
           "I can also help with grammar, because Turkish endings confuse everyone at first. " +
           "Let me know what you think, and tell me what time it is in Manchester when it's seven " +
           "here! Burak",

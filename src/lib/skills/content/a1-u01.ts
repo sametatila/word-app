@@ -35,7 +35,7 @@ export const a1U01: SkillExercise[] = [
     intro: "Üç kişi kendini tanıtıyor. Herkes adını, nereli olduğunu ve nerede oturduğunu söylüyor.",
     gloss: [
       { de: "Deutschland", tr: "Almanya", en: "Germany" },
-      { de: "der Türkei", tr: "Türkiye", en: "Turkey" },
+      { de: "der Türkei", tr: "Türkiye", en: "Türkiye" },
       { de: "Österreich", tr: "Avusturya", en: "Austria" },
       { de: "Hamburg / Berlin / Wien", tr: "Hamburg / Berlin / Viyana", en: "cities" },
     ],

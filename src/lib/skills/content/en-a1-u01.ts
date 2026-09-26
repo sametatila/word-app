@@ -47,15 +47,15 @@ export const enA1U01: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hello! My name is Deniz. I am from Turkey. I live in Izmir. Izmir is a big city. I am a student. I am not married.\n\n" +
+      "Hello! My name is Deniz. I am from Türkiye. I live in Izmir. Izmir is a big city. I am a student. I am not married.\n\n" +
       "Hello! My name is Ana. I am from Spain. I live in a town in the north. I am a teacher. I am very happy here.\n\n" +
-      "Hello! My name is Tom. I am from Ireland. I am not from Turkey, but I live in Turkey now. My city is Izmir too. Deniz and I meet on Friday.",
+      "Hello! My name is Tom. I am from Ireland. I am not from Türkiye, but I live in Türkiye now. My city is Izmir too. Deniz and I meet on Friday.",
     questions: [
       {
         text: "Where is Deniz from?",
-        options: ["Turkey", "Spain", "Ireland"],
+        options: ["Türkiye", "Spain", "Ireland"],
         answer: 0,
-        explain: "„I am from Turkey.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
+        explain: "„I am from Türkiye.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
       },
       {
         text: "Who is a teacher?",
@@ -83,8 +83,8 @@ export const enA1U01: SkillExercise[] = [
         text: "Where does Tom live now?",
         options: [],
         answer: 0,
-        accept: ["Turkey", "in Turkey", "Izmir", "in Izmir"],
-        explain: "„I am not from Turkey, but I live in Turkey now.“ — Tom İrlandalı ama Türkiye'de yaşıyor.",
+        accept: ["Türkiye", "in Türkiye", "Turkey", "in Turkey", "Izmir", "in Izmir"],
+        explain: "„I am not from Türkiye, but I live in Türkiye now.“ — Tom İrlandalı ama Türkiye'de yaşıyor.",
       },
     ],
   },
@@ -108,7 +108,7 @@ export const enA1U01: SkillExercise[] = [
       "Lena: Hi! Yes, I am. My name is Lena.\n" +
       "Mert: I am Mert. Where are you from, Lena?\n" +
       "Lena: I am from Germany. I live in Bremen. And you?\n" +
-      "Mert: I am from Turkey. I live in this town now.\n" +
+      "Mert: I am from Türkiye. I live in this town now.\n" +
       "Lena: How are you today?\n" +
       "Mert: I am fine, thanks. But I am very hungry! And you?\n" +
       "Lena: I am not hungry, I am thirsty. And I am a little tired.\n" +
@@ -119,7 +119,7 @@ export const enA1U01: SkillExercise[] = [
     questions: [
       {
         text: "Where is Lena from?",
-        options: ["Germany", "Turkey", "Ireland"],
+        options: ["Germany", "Türkiye", "Ireland"],
         answer: 0,
         explain: "„I am from Germany. I live in Bremen.“ — ülke Almanya, şehir Bremen.",
       },
@@ -159,11 +159,11 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Is Mert from Turkey?",
+        text: "Is Mert from Türkiye?",
         options: [],
         answer: 0,
         accept: ["Yes", "Yes, he is", "yes he is", "Yes, I am"],
-        explain: "„I am from Turkey.“ — evet. Kısa cevap „Yes, he is.“ biçiminde kurulur.",
+        explain: "„I am from Türkiye.“ — evet. Kısa cevap „Yes, he is.“ biçiminde kurulur.",
       },
     ],
   },
@@ -189,15 +189,15 @@ export const enA1U01: SkillExercise[] = [
     segments: [
       { speaker: "Ava", text: "Hello! My name is Ava. I am from Canada." },
       { speaker: "Ava", text: "I was born in a small town in the north. My town is not big." },
-      { speaker: "Ava", text: "Now I live in Istanbul. Istanbul is a big city in Turkey." },
+      { speaker: "Ava", text: "Now I live in Istanbul. Istanbul is a big city in Türkiye." },
       { speaker: "Ava", text: "I am a teacher here. I am not a student." },
-      { speaker: "Ava", text: "I am married. My husband is from Turkey." },
+      { speaker: "Ava", text: "I am married. My husband is from Türkiye." },
       { speaker: "Ava", text: "Today I am a little tired, but I am very happy. Goodbye!" },
     ],
     questions: [
       {
         text: "Where is Ava from?",
-        options: ["Canada", "Turkey", "Germany"],
+        options: ["Canada", "Türkiye", "Germany"],
         answer: 0,
         explain: "„I am from Canada.“ — Türkiye yaşadığı yer, geldiği yer değil.",
       },
@@ -212,7 +212,7 @@ export const enA1U01: SkillExercise[] = [
         text: "Ava is married.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I am married. My husband is from Turkey.“ — evli; hüküm yanlış.",
+        explain: "„I am married. My husband is from Türkiye.“ — evli; hüküm yanlış.",
       },
       {
         kind: "gapfill",
@@ -349,8 +349,8 @@ export const enA1U01: SkillExercise[] = [
       {
         kind: "build",
         tr: "Ben Türkiye'denim.",
-        answer: "I am from Turkey.",
-        alternatives: ["I'm from Turkey."],
+        answer: "I am from Türkiye.",
+        alternatives: ["I'm from Türkiye.", "I am from Turkey.", "I'm from Turkey."],
         hint: "Ülke için „from“: I am from + ülke. Kısası „I'm from …“.",
       },
       {
@@ -372,7 +372,7 @@ export const enA1U01: SkillExercise[] = [
         facts: "Ali Demir; Türkiye'den; şu an Bremen'de yaşıyor.",
         fields: [
           { label: "Name", answer: "Ali Demir", accept: ["Ali", "Demir"] },
-          { label: "Country", answer: "Turkey" },
+          { label: "Country", answer: "Türkiye", accept: ["Turkey"] },
           { label: "City", answer: "Bremen" },
         ],
       },

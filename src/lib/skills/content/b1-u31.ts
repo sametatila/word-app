@@ -408,7 +408,7 @@ export const b1U31: SkillExercise[] = [
           "morgens angekommen, ausgeruht und ohne Umsteigen. Das Flugzeug wäre schneller gelandet, aber der Zug war ruhiger.",
         phrases: [
           { de: "Ich bin nach … gefahren.", tr: "… şehrine gittim.", en: "I traveled to …" },
-          { de: "… in die Schweiz / in die Türkei", tr: "… İsviçre'ye / Türkiye'ye", en: "… to Switzerland / to Turkey" },
+          { de: "… in die Schweiz / in die Türkei", tr: "… İsviçre'ye / Türkiye'ye", en: "… to Switzerland / to Türkiye" },
           { de: "… zu einem Kollegen", tr: "… bir meslektaşa", en: "… to a colleague" },
         ],
       },
