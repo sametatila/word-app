@@ -3106,6 +3106,34 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir şeyi teklif etmek"
+     },
+     {
+      "lang": "en",
+      "text": "offer"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir ve hem fiil hem isim olarak kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "They offered more"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "a good offer"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir kontrol. Şu cümle doğru mu?"
      },
      {
@@ -3136,34 +3164,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir şeyi teklif etmek"
-     },
-     {
-      "lang": "en",
-      "text": "offer"
-     },
-     {
-      "lang": "tr",
-      "text": "ile söylenir ve hem fiil hem isim olarak kullanılır:"
-     },
-     {
-      "lang": "en",
-      "text": "They offered more"
-     },
-     {
-      "lang": "tr",
-      "text": "ve"
-     },
-     {
-      "lang": "en",
-      "text": "a good offer"
-     }
-    ]
    },
    {
     "say": [
@@ -5389,6 +5389,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Ferah bir daire için"
+     },
+     {
+      "lang": "en",
+      "text": "spacious"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; bu kelime ilanların dilidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -5623,22 +5639,6 @@
      "kind": "repeat",
      "target": "The hallway had no storage, but the living room had a nice view."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ferah bir daire için"
-     },
-     {
-      "lang": "en",
-      "text": "spacious"
-     },
-     {
-      "lang": "tr",
-      "text": "denir; bu kelime ilanların dilidir."
-     }
-    ]
    },
    {
     "say": [
@@ -11504,6 +11504,50 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Neyden yapıldığı için"
+     },
+     {
+      "lang": "en",
+      "text": "material"
+     },
+     {
+      "lang": "tr",
+      "text": "deri için ise"
+     },
+     {
+      "lang": "en",
+      "text": "leather"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The material is leather and the label is inside."
+     },
+     {
+      "lang": "tr",
+      "text": "Malzeme deri ve etiket içeride."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The material is leather and the label is inside."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Mavi etiketi olan bavul."
      }
     ],
@@ -11551,50 +11595,6 @@
        "text": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; cümle kısaldı ama anlam aynı kaldı."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Neyden yapıldığı için"
-     },
-     {
-      "lang": "en",
-      "text": "material"
-     },
-     {
-      "lang": "tr",
-      "text": "deri için ise"
-     },
-     {
-      "lang": "en",
-      "text": "leather"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "The material is leather and the label is inside."
-     },
-     {
-      "lang": "tr",
-      "text": "Malzeme deri ve etiket içeride."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The material is leather and the label is inside."
     }
    },
    {
@@ -22747,6 +22747,42 @@
     "say": [
      {
       "lang": "tr",
+      "text": "İstenen belge için"
+     },
+     {
+      "lang": "en",
+      "text": "required"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; resmî listelerde hep bu kelime geçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Every required document goes in one folder."
+     },
+     {
+      "lang": "tr",
+      "text": "Her gerekli belge tek bir dosyaya giriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Every required document goes in one folder."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sen kur: Getirdiğim dosya çok inceydi."
      }
     ],
@@ -22779,42 +22815,6 @@
        "text": "Tekrar dene."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "İstenen belge için"
-     },
-     {
-      "lang": "en",
-      "text": "required"
-     },
-     {
-      "lang": "tr",
-      "text": "denir; resmî listelerde hep bu kelime geçer."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "Every required document goes in one folder."
-     },
-     {
-      "lang": "tr",
-      "text": "Her gerekli belge tek bir dosyaya giriyor."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Every required document goes in one folder."
     }
    },
    {
@@ -23075,6 +23075,50 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir şeyi kanıtlamak"
+     },
+     {
+      "lang": "en",
+      "text": "prove"
+     },
+     {
+      "lang": "tr",
+      "text": "sahip olduğun yetkiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "right"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I can prove it with the evidence, and that is my right."
+     },
+     {
+      "lang": "tr",
+      "text": "Elimdeki kanıtla bunu ispatlayabilirim ve bu benim hakkım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I can prove it with the evidence, and that is my right."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Daha fazla kanıt göndermeye karar verdim."
      }
     ],
@@ -23150,50 +23194,6 @@
        "text": "They insisted on seeing the original."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir şeyi kanıtlamak"
-     },
-     {
-      "lang": "en",
-      "text": "prove"
-     },
-     {
-      "lang": "tr",
-      "text": "sahip olduğun yetkiye ise"
-     },
-     {
-      "lang": "en",
-      "text": "right"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "I can prove it with the evidence, and that is my right."
-     },
-     {
-      "lang": "tr",
-      "text": "Elimdeki kanıtla bunu ispatlayabilirim ve bu benim hakkım."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "I can prove it with the evidence, and that is my right."
     }
    },
    {
@@ -23556,6 +23556,50 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Çalışmaya ara vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "break"
+     },
+     {
+      "lang": "tr",
+      "text": "düzenli akışa ise"
+     },
+     {
+      "lang": "en",
+      "text": "routine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A short break helps me concentrate and keeps my routine healthy."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa bir mola odaklanmama yardım ediyor ve düzenimi sağlıklı tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A short break helps me concentrate and keeps my routine healthy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Bu hafta dil bilgisine odaklanacağım."
      }
     ],
@@ -23603,50 +23647,6 @@
        "text": "Doğru. Gün kararlaşmış ve plana yazılmış; İngilizce bunu şimdiki zamanla söyler, gelecek eki aramaz."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Çalışmaya ara vermeye"
-     },
-     {
-      "lang": "en",
-      "text": "break"
-     },
-     {
-      "lang": "tr",
-      "text": "düzenli akışa ise"
-     },
-     {
-      "lang": "en",
-      "text": "routine"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "A short break helps me concentrate and keeps my routine healthy."
-     },
-     {
-      "lang": "tr",
-      "text": "Kısa bir mola odaklanmama yardım ediyor ve düzenimi sağlıklı tutuyor."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A short break helps me concentrate and keeps my routine healthy."
     }
    },
    {
@@ -24043,6 +24043,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Kopya çekmeye"
+     },
+     {
+      "lang": "en",
+      "text": "cheat"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve bu fiil oyunlarda da kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir kontrol. Şu cümle doğru mu?"
      },
      {
@@ -24065,22 +24081,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kopya çekmeye"
-     },
-     {
-      "lang": "en",
-      "text": "cheat"
-     },
-     {
-      "lang": "tr",
-      "text": "denir ve bu fiil oyunlarda da kullanılır."
-     }
-    ]
    },
    {
     "say": [
@@ -24580,36 +24580,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Otuz dakika odaklanmaya çalışıyorum."
-     }
-    ],
-    "expect": {
-     "kind": "produce",
-     "target": "I try to focus for thirty minutes.",
-     "accept": [
-      "I try to focus for half an hour.",
-      "I try to concentrate for thirty minutes."
-     ],
-     "hint": [
-      {
-       "lang": "tr",
-       "text": "Çaba fiilinden sonra mastar gelir:"
-      },
-      {
-       "lang": "en",
-       "text": "I try to focus for thirty minutes."
-      },
-      {
-       "lang": "tr",
-       "text": "Tekrar dene."
-      }
-     ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Sık yapılan şeye"
      },
      {
@@ -24648,6 +24618,36 @@
     "expect": {
      "kind": "repeat",
      "target": "Writing in a notebook is a good habit that keeps my focus."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Otuz dakika odaklanmaya çalışıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I try to focus for thirty minutes.",
+     "accept": [
+      "I try to focus for half an hour.",
+      "I try to concentrate for thirty minutes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Çaba fiilinden sonra mastar gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I try to focus for thirty minutes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
     }
    },
    {
@@ -26271,6 +26271,42 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Birine arka çıkmaya"
+     },
+     {
+      "lang": "en",
+      "text": "support"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; hem fiil hem isim olarak kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The people who support us will present it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bize destek olanlar onu sunacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The people who support us will present it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Sunum yapan öğrenci çok sakindi."
      }
     ],
@@ -26420,42 +26456,6 @@
        "text": "Tekrar dene."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Birine arka çıkmaya"
-     },
-     {
-      "lang": "en",
-      "text": "support"
-     },
-     {
-      "lang": "tr",
-      "text": "denir; hem fiil hem isim olarak kullanılır."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "The people who support us will present it."
-     },
-     {
-      "lang": "tr",
-      "text": "Bize destek olanlar onu sunacak."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The people who support us will present it."
     }
    },
    {
@@ -27630,6 +27630,50 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Ulaşmak istediğin büyük hedefe"
+     },
+     {
+      "lang": "en",
+      "text": "ambition"
+     },
+     {
+      "lang": "tr",
+      "text": "seçtiğin şeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "choice"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I am ready for the next choice."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonraki seçim için hazırım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am ready for the next choice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Hazır olmama rağmen bir ay bekleyeceğim."
      }
     ],
@@ -27663,30 +27707,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ulaşmak istediğin büyük hedefe"
-     },
-     {
-      "lang": "en",
-      "text": "ambition"
-     },
-     {
-      "lang": "tr",
-      "text": "seçtiğin şeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "choice"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -27795,26 +27815,6 @@
        "text": "Tekrar dene."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "I am ready for the next choice."
-     },
-     {
-      "lang": "tr",
-      "text": "Sonraki seçim için hazırım."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "I am ready for the next choice."
     }
    },
    {
@@ -28071,58 +28071,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: İşe yaradığına inanıyorum, çünkü daha sakin hissediyorum."
-     }
-    ],
-    "expect": {
-     "kind": "produce",
-     "target": "I believe it helps, because I feel calmer.",
-     "accept": [
-      "I believe it helps, because I feel more calm."
-     ],
-     "hint": [
-      {
-       "lang": "tr",
-       "text": "Gerekçe bağlacı, ardından gerekçe:"
-      },
-      {
-       "lang": "en",
-       "text": "I believe it helps, because I feel calmer."
-      },
-      {
-       "lang": "tr",
-       "text": "Tekrar dene."
-      }
-     ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kontrol. Şu cümle doğru mu?"
-     },
-     {
-      "lang": "en",
-      "text": "It is a strong idea. However, it costs a lot."
-     }
-    ],
-    "expect": {
-     "kind": "truefalse",
-     "statement": "It is a strong idea. However, it costs a lot.",
-     "answer": true,
-     "why": [
-      {
-       "lang": "tr",
-       "text": "Doğru. Karşıtlık bağlacı noktadan sonra geliyor ve virgül alıyor; iki yarı da tam bir cümle."
-      }
-     ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Kesin olmayan bir şey için"
      },
      {
@@ -28169,6 +28117,58 @@
     "expect": {
      "kind": "repeat",
      "target": "I feel it is probably true, but maybe I am wrong."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İşe yaradığına inanıyorum, çünkü daha sakin hissediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I believe it helps, because I feel calmer.",
+     "accept": [
+      "I believe it helps, because I feel more calm."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerekçe bağlacı, ardından gerekçe:"
+      },
+      {
+       "lang": "en",
+       "text": "I believe it helps, because I feel calmer."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It is a strong idea. However, it costs a lot."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It is a strong idea. However, it costs a lot.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Karşıtlık bağlacı noktadan sonra geliyor ve virgül alıyor; iki yarı da tam bir cümle."
+      }
+     ]
     }
    },
    {
@@ -29020,6 +29020,62 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Dinleyen topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "audience"
+     },
+     {
+      "lang": "tr",
+      "text": "hiç ses olmamasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "silence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konuşmacı için"
+     },
+     {
+      "lang": "en",
+      "text": "speaker"
+     },
+     {
+      "lang": "tr",
+      "text": "sözünü kesmek için ise"
+     },
+     {
+      "lang": "en",
+      "text": "interrupt"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The audience listened in silence, and nobody dared to interrupt the speaker."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The audience listened in silence, and nobody dared to interrupt the speaker."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Konuşmacının erken bitirdiğini söyledi."
      }
     ],
@@ -29071,62 +29127,6 @@
        "text": "She said that the argument had been weak."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Dinleyen topluluğa"
-     },
-     {
-      "lang": "en",
-      "text": "audience"
-     },
-     {
-      "lang": "tr",
-      "text": "hiç ses olmamasına ise"
-     },
-     {
-      "lang": "en",
-      "text": "silence"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Konuşmacı için"
-     },
-     {
-      "lang": "en",
-      "text": "speaker"
-     },
-     {
-      "lang": "tr",
-      "text": "sözünü kesmek için ise"
-     },
-     {
-      "lang": "en",
-      "text": "interrupt"
-     },
-     {
-      "lang": "tr",
-      "text": "deriz. Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "The audience listened in silence, and nobody dared to interrupt the speaker."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The audience listened in silence, and nobody dared to interrupt the speaker."
     }
    },
    {
@@ -38093,6 +38093,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Sıcaklığın kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "heat"
+     },
+     {
+      "lang": "tr",
+      "text": "sıcaklığın yokluğuna ise"
+     },
+     {
+      "lang": "en",
+      "text": "cold"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Pencereyi kapatırsan ısı tasarrufu yaparsın."
      }
     ],
@@ -38243,30 +38267,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Sıcaklığın kendisine"
-     },
-     {
-      "lang": "en",
-      "text": "heat"
-     },
-     {
-      "lang": "tr",
-      "text": "sıcaklığın yokluğuna ise"
-     },
-     {
-      "lang": "en",
-      "text": "cold"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -39556,6 +39556,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Şehrin dış mahallesine"
+     },
+     {
+      "lang": "en",
+      "text": "suburb"
+     },
+     {
+      "lang": "tr",
+      "text": "içinde yaşanan ya da çalışılan yapıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "building"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Banliyö 2015'ten beri çok değişti."
      }
     ],
@@ -39616,30 +39640,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Şehrin dış mahallesine"
-     },
-     {
-      "lang": "en",
-      "text": "suburb"
-     },
-     {
-      "lang": "tr",
-      "text": "içinde yaşanan ya da çalışılan yapıya ise"
-     },
-     {
-      "lang": "en",
-      "text": "building"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -41484,6 +41484,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Akan büyük suya"
+     },
+     {
+      "lang": "en",
+      "text": "river"
+     },
+     {
+      "lang": "tr",
+      "text": "çevresi kara ile çevrili durgun suya ise"
+     },
+     {
+      "lang": "en",
+      "text": "lake"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sıra sende: Köprüyü yapmadan önce burası göldü."
      }
     ],
@@ -41532,30 +41556,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Akan büyük suya"
-     },
-     {
-      "lang": "en",
-      "text": "river"
-     },
-     {
-      "lang": "tr",
-      "text": "çevresi kara ile çevrili durgun suya ise"
-     },
-     {
-      "lang": "en",
-      "text": "lake"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [

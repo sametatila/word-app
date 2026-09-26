@@ -310,7 +310,7 @@
  { "tr": "Şimdi sen kur: Gelecek ay dosyayı kontrol ediyor olacağız.", "kind": "say.tr", "de": "Jetzt du: Nächsten Monat werden wir die Akte prüfen." },
  { "tr": "İkinci kalıbımız göndermeyi bir kayda çeviriyor. Tekrar et:", "kind": "say.tr", "de": "Unsere zweite Wendung macht aus dem Versand einen Eintrag. Wiederhole:" },
  { "tr": "Şimdi sen kur: Görünüşe göre form tamsa bunu kapatabiliriz.", "kind": "say.tr", "de": "Jetzt du: Anscheinend können wir das schließen, vorausgesetzt das Formular ist vollständig." },
- { "tr": "Yazıya eklenen belge demek. İlk kalıbımız da bu. Tekrar et:", "kind": "say.tr", "de": "Das heißt das Papier, das dem Schreiben beiliegt. Das ist auch unsere erste Wendung. Wiederhole:" },
+ { "tr": "Yazıya eklenen belge demek.", "kind": "say.tr", "de": "Das heißt das Papier, das dem Schreiben beiliegt." },
  { "tr": "Şimdi sıra sende: Gecikmeye yol açan şey eksik bir dosyaydı.", "kind": "say.tr", "de": "Jetzt bist du dran: Was die Verzögerung verursacht hat, war eine fehlende Akte." },
  { "tr": "Şimdi sıra sende: Mektubu okuduktan sonra planı değiştirdik.", "kind": "say.tr", "de": "Jetzt bist du dran: Nachdem wir den Brief gelesen hatten, änderten wir den Plan." },
  { "tr": "Bir tane daha: Teminat daha geniş olsaydı talepte bulunurduk.", "kind": "say.tr", "de": "Noch eins: Wäre der Schutz weiter gewesen, hätten wir Anspruch erhoben." },

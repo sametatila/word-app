@@ -5684,17 +5684,9 @@
      },
      {
       "lang": "tr",
-      "text": "Kanıtlamadan temel olarak öne sürmek demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "She postulates it; he refutes it; they substantiate it."
+      "text": "Kanıtlamadan temel olarak öne sürmek demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "She postulates it; he refutes it; they substantiate it."
-    }
+    ]
    },
    {
     "say": [
@@ -5724,20 +5716,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "The manifesto openly claims what the ideology merely assumes."
-     },
-     {
-      "lang": "tr",
-      "text": "Manifesto, ideolojinin yalnızca varsaydığını açıkça iddia ediyor."
+      "text": "She postulates it; he refutes it; they substantiate it."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The manifesto openly claims what the ideology merely assumes."
+     "target": "She postulates it; he refutes it; they substantiate it."
     }
    },
    {
@@ -5763,6 +5751,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The manifesto openly claims what the ideology merely assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Manifesto, ideolojinin yalnızca varsaydığını açıkça iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The manifesto openly claims what the ideology merely assumes."
+    }
    },
    {
     "say": [
@@ -7159,17 +7167,9 @@
      },
      {
       "lang": "tr",
-      "text": "Kabullenip bırakmak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "To resign oneself is to forfeit the argument."
+      "text": "Kabullenip bırakmak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "To resign oneself is to forfeit the argument."
-    }
+    ]
    },
    {
     "say": [
@@ -7194,6 +7194,22 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To resign oneself is to forfeit the argument."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To resign oneself is to forfeit the argument."
+    }
    },
    {
     "say": [
@@ -10618,17 +10634,9 @@
      },
      {
       "lang": "tr",
-      "text": "Cezası hafif olan suç demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A misdemeanor in one report is a civil infraction in another."
+      "text": "Cezası hafif olan suç demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A misdemeanor in one report is a civil infraction in another."
-    }
+    ]
    },
    {
     "say": [
@@ -10653,6 +10661,22 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A misdemeanor in one report is a civil infraction in another."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A misdemeanor in one report is a civil infraction in another."
+    }
    },
    {
     "say": [
@@ -12137,7 +12161,31 @@
      },
      {
       "lang": "tr",
-      "text": "Kasten yangın çıkarmak demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Kasten yangın çıkarmak demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kişiye bedensel zarar vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "bodily harm"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
@@ -12153,11 +12201,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kişiye bedensel zarar vermeye"
+      "text": "Bir kişiyi yakalayıp alıkoymaya"
      },
      {
       "lang": "en",
-      "text": "bodily harm"
+      "text": "apprehend"
+     },
+     {
+      "lang": "tr",
+      "text": "geçit vermeyene ise"
+     },
+     {
+      "lang": "en",
+      "text": "impassable"
      },
      {
       "lang": "tr",
@@ -12184,30 +12240,6 @@
      "kind": "repeat",
      "target": "The police would apprehend him if they could."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kişiyi yakalayıp alıkoymaya"
-     },
-     {
-      "lang": "en",
-      "text": "apprehend"
-     },
-     {
-      "lang": "tr",
-      "text": "geçit vermeyene ise"
-     },
-     {
-      "lang": "en",
-      "text": "impassable"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -15671,7 +15703,31 @@
      },
      {
       "lang": "tr",
-      "text": "Gereksizini atıp akıcı kılmak demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Gereksizini atıp akıcı kılmak demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir soruyu dolanıp geçmeye"
+     },
+     {
+      "lang": "en",
+      "text": "circumvent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
@@ -15937,22 +15993,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir soruyu dolanıp geçmeye"
-     },
-     {
-      "lang": "en",
-      "text": "circumvent"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -16673,17 +16713,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir şeyi bağlamına yerleştirmek demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "She contextualizes it; he deciphers it; they dissect it."
+      "text": "Bir şeyi bağlamına yerleştirmek demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "She contextualizes it; he deciphers it; they dissect it."
-    }
+    ]
    },
    {
     "say": [
@@ -16713,20 +16745,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "The interpretive framework openly claims what the reading merely assumes."
-     },
-     {
-      "lang": "tr",
-      "text": "Yorumlama çerçevesi, okumanın yalnızca varsaydığını açıkça iddia ediyor."
+      "text": "She contextualizes it; he deciphers it; they dissect it."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The interpretive framework openly claims what the reading merely assumes."
+     "target": "She contextualizes it; he deciphers it; they dissect it."
     }
    },
    {
@@ -16752,6 +16780,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The interpretive framework openly claims what the reading merely assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Yorumlama çerçevesi, okumanın yalnızca varsaydığını açıkça iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The interpretive framework openly claims what the reading merely assumes."
+    }
    },
    {
     "say": [
@@ -17679,17 +17727,9 @@
      },
      {
       "lang": "tr",
-      "text": "Parça parça, tamamlanmamış demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The poem is fragmentary; the reader, contemplative."
+      "text": "Parça parça, tamamlanmamış demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The poem is fragmentary; the reader, contemplative."
-    }
+    ]
    },
    {
     "say": [
@@ -17708,6 +17748,54 @@
      {
       "lang": "en",
       "text": "reminiscence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The poem is fragmentary; the reader, contemplative."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The poem is fragmentary; the reader, contemplative."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ağızdan ağza geçen bilgiye"
+     },
+     {
+      "lang": "en",
+      "text": "lore"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmişten kalan nesneye"
+     },
+     {
+      "lang": "en",
+      "text": "relic"
+     },
+     {
+      "lang": "tr",
+      "text": "çözülmeyi bekleyen kapalı düzene ise"
+     },
+     {
+      "lang": "en",
+      "text": "cipher"
      },
      {
       "lang": "tr",
@@ -17739,27 +17827,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ağızdan ağza geçen bilgiye"
+      "text": "Bir çağın havasına"
      },
      {
       "lang": "en",
-      "text": "lore"
+      "text": "zeitgeist"
      },
      {
       "lang": "tr",
-      "text": "geçmişten kalan nesneye"
+      "text": "bir dönemi ikiye bölene ise"
      },
      {
       "lang": "en",
-      "text": "relic"
-     },
-     {
-      "lang": "tr",
-      "text": "çözülmeyi bekleyen kapalı düzene ise"
-     },
-     {
-      "lang": "en",
-      "text": "cipher"
+      "text": "epochal"
      },
      {
       "lang": "tr",
@@ -17855,30 +17935,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir çağın havasına"
-     },
-     {
-      "lang": "en",
-      "text": "zeitgeist"
-     },
-     {
-      "lang": "tr",
-      "text": "bir dönemi ikiye bölene ise"
-     },
-     {
-      "lang": "en",
-      "text": "epochal"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -18132,17 +18188,9 @@
      },
      {
       "lang": "tr",
-      "text": "Yabancı gelme hâli demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as we like to call it strangeness, it is really otherness."
+      "text": "Yabancı gelme hâli demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as we like to call it strangeness, it is really otherness."
-    }
+    ]
    },
    {
     "say": [
@@ -18161,6 +18209,46 @@
      {
       "lang": "en",
       "text": "demeanor"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as we like to call it strangeness, it is really otherness."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as we like to call it strangeness, it is really otherness."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanın içinde yaşadığı çevreye"
+     },
+     {
+      "lang": "en",
+      "text": "milieu"
+     },
+     {
+      "lang": "tr",
+      "text": "karışmamış olma hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "purity"
      },
      {
       "lang": "tr",
@@ -18192,19 +18280,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İnsanın içinde yaşadığı çevreye"
+      "text": "El yapımı ya da kazı ürünü nesneye"
      },
      {
       "lang": "en",
-      "text": "milieu"
+      "text": "artifact"
      },
      {
       "lang": "tr",
-      "text": "karışmamış olma hâline ise"
+      "text": "insana yapıştırılan olumsuz işarete ise"
      },
      {
       "lang": "en",
-      "text": "purity"
+      "text": "stigma"
      },
      {
       "lang": "tr",
@@ -18321,19 +18409,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "El yapımı ya da kazı ürünü nesneye"
+      "text": "Kişinin kendini nasıl gördüğüne"
      },
      {
       "lang": "en",
-      "text": "artifact"
-     },
-     {
-      "lang": "tr",
-      "text": "insana yapıştırılan olumsuz işarete ise"
-     },
-     {
-      "lang": "en",
-      "text": "stigma"
+      "text": "self-conception"
      },
      {
       "lang": "tr",
@@ -18398,22 +18478,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kişinin kendini nasıl gördüğüne"
-     },
-     {
-      "lang": "en",
-      "text": "self-conception"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -18601,17 +18665,9 @@
      },
      {
       "lang": "tr",
-      "text": "Olağan, gündelik demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The scene may well be mundane rather than highly symbolic."
+      "text": "Olağan, gündelik demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The scene may well be mundane rather than highly symbolic."
-    }
+    ]
    },
    {
     "say": [
@@ -18630,6 +18686,46 @@
      {
       "lang": "en",
       "text": "time-honored"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The scene may well be mundane rather than highly symbolic."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The scene may well be mundane rather than highly symbolic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Her yanına işlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "permeate"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sonraki kuşağa bırakmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "hand down"
      },
      {
       "lang": "tr",
@@ -18661,19 +18757,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Her yanına işlemeye"
+      "text": "Bir topluluğun dışına itmeye"
      },
      {
       "lang": "en",
-      "text": "permeate"
+      "text": "ostracize"
      },
      {
       "lang": "tr",
-      "text": "bir sonraki kuşağa bırakmaya ise"
+      "text": "uzağın çekici bulunmasına ise"
      },
      {
       "lang": "en",
-      "text": "hand down"
+      "text": "exoticism"
      },
      {
       "lang": "tr",
@@ -18798,19 +18894,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir topluluğun dışına itmeye"
+      "text": "İki şeyin ayrılmayacak biçimde birbirine dolanmasına"
      },
      {
       "lang": "en",
-      "text": "ostracize"
-     },
-     {
-      "lang": "tr",
-      "text": "uzağın çekici bulunmasına ise"
-     },
-     {
-      "lang": "en",
-      "text": "exoticism"
+      "text": "entanglement"
      },
      {
       "lang": "tr",
@@ -18875,22 +18963,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "İki şeyin ayrılmayacak biçimde birbirine dolanmasına"
-     },
-     {
-      "lang": "en",
-      "text": "entanglement"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -19283,6 +19355,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Kendine güvenmenin görünen hâline"
+     },
+     {
+      "lang": "en",
+      "text": "self-assurance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -19336,22 +19424,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kendine güvenmenin görünen hâline"
-     },
-     {
-      "lang": "en",
-      "text": "self-assurance"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -19539,17 +19611,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir şeyin katman katman oluşu demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The multilayeredness described above explains the predisposition discussed below."
+      "text": "Bir şeyin katman katman oluşu demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The multilayeredness described above explains the predisposition discussed below."
-    }
+    ]
    },
    {
     "say": [
@@ -19568,6 +19632,46 @@
      {
       "lang": "en",
       "text": "wrath"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The multilayeredness described above explains the predisposition discussed below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The multilayeredness described above explains the predisposition discussed below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İçte biriken kırgınlığa"
+     },
+     {
+      "lang": "en",
+      "text": "resentment"
+     },
+     {
+      "lang": "tr",
+      "text": "bir bağdan kurtulmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "emancipation"
      },
      {
       "lang": "tr",
@@ -19599,19 +19703,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İçte biriken kırgınlığa"
+      "text": "İlerlemeyip olduğu yerde kalmaya"
      },
      {
       "lang": "en",
-      "text": "resentment"
+      "text": "stagnate"
      },
      {
       "lang": "tr",
-      "text": "bir bağdan kurtulmaya ise"
+      "text": "yavaş yavaş geçmeye ise"
      },
      {
       "lang": "en",
-      "text": "emancipation"
+      "text": "subside"
      },
      {
       "lang": "tr",
@@ -19740,23 +19844,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlerlemeyip olduğu yerde kalmaya"
+      "text": "On ya da yüz katlık farka"
      },
      {
       "lang": "en",
-      "text": "stagnate"
-     },
-     {
-      "lang": "tr",
-      "text": "yavaş yavaş geçmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "subside"
+      "text": "order of magnitude"
      },
      {
       "lang": "tr",
       "text": "denir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, modülün son Konuşma adımı; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın."
      }
     ]
    },
@@ -19817,26 +19917,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "On ya da yüz katlık farka"
-     },
-     {
-      "lang": "en",
-      "text": "order of magnitude"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     },
-     {
-      "lang": "tr",
-      "text": "Bu, modülün son Konuşma adımı; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın."
-     }
-    ]
    },
    {
     "say": [
@@ -20032,17 +20112,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bütünün içindeki küçük kültür demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the arts section it is a subculture; in the ministry, cultural policy."
+      "text": "Bütünün içindeki küçük kültür demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the arts section it is a subculture; in the ministry, cultural policy."
-    }
+    ]
    },
    {
     "say": [
@@ -20061,6 +20133,46 @@
      {
       "lang": "en",
       "text": "cultural scene"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the arts section it is a subculture; in the ministry, cultural policy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the arts section it is a subculture; in the ministry, cultural policy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ana toplumun yanında ayrı yaşayan topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "parallel society"
+     },
+     {
+      "lang": "tr",
+      "text": "sanat ve edebiyatın seçkin katmanına ise"
+     },
+     {
+      "lang": "en",
+      "text": "high culture"
      },
      {
       "lang": "tr",
@@ -20092,19 +20204,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ana toplumun yanında ayrı yaşayan topluluğa"
+      "text": "Ötekilerin uyması beklenen kültüre"
      },
      {
       "lang": "en",
-      "text": "parallel society"
+      "text": "dominant culture"
      },
      {
       "lang": "tr",
-      "text": "sanat ve edebiyatın seçkin katmanına ise"
+      "text": "sayıca üstün olan kesime ise"
      },
      {
       "lang": "en",
-      "text": "high culture"
+      "text": "mainstream society"
      },
      {
       "lang": "tr",
@@ -20212,30 +20324,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ötekilerin uyması beklenen kültüre"
-     },
-     {
-      "lang": "en",
-      "text": "dominant culture"
-     },
-     {
-      "lang": "tr",
-      "text": "sayıca üstün olan kesime ise"
-     },
-     {
-      "lang": "en",
-      "text": "mainstream society"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -20517,17 +20605,9 @@
      },
      {
       "lang": "tr",
-      "text": "Birini kenara itme işi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What marginalization does is create a marginal group."
+      "text": "Birini kenara itme işi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What marginalization does is create a marginal group."
-    }
+    ]
    },
    {
     "say": [
@@ -20546,6 +20626,46 @@
      {
       "lang": "en",
       "text": "demarcation line"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What marginalization does is create a marginal group."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What marginalization does is create a marginal group."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yabancıdan duyulan korku ve nefrete"
+     },
+     {
+      "lang": "en",
+      "text": "xenophobia"
+     },
+     {
+      "lang": "tr",
+      "text": "hiçbir devletin yurttaşı olmama hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "statelessness"
      },
      {
       "lang": "tr",
@@ -20577,19 +20697,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yabancıdan duyulan korku ve nefrete"
+      "text": "Bir ülkeyi başka bir devletin yönetmesine"
      },
      {
       "lang": "en",
-      "text": "xenophobia"
-     },
-     {
-      "lang": "tr",
-      "text": "hiçbir devletin yurttaşı olmama hâline ise"
-     },
-     {
-      "lang": "en",
-      "text": "statelessness"
+      "text": "foreign rule"
      },
      {
       "lang": "tr",
@@ -20718,11 +20830,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir ülkeyi başka bir devletin yönetmesine"
+      "text": "Aileden ya da geldiği yerden gelene"
      },
      {
       "lang": "en",
-      "text": "foreign rule"
+      "text": "linked to one's background"
+     },
+     {
+      "lang": "tr",
+      "text": "toplumun kendisinin ürettiğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "socially conditioned"
      },
      {
       "lang": "tr",
@@ -20749,30 +20869,6 @@
      "kind": "repeat",
      "target": "Disadvantage linked to one's background is socially conditioned."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Aileden ya da geldiği yerden gelene"
-     },
-     {
-      "lang": "en",
-      "text": "linked to one's background"
-     },
-     {
-      "lang": "tr",
-      "text": "toplumun kendisinin ürettiğine ise"
-     },
-     {
-      "lang": "en",
-      "text": "socially conditioned"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -20998,17 +21094,9 @@
      },
      {
       "lang": "tr",
-      "text": "Herkesin eşit sayılması ilkesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The principle of equality demands that human dignity be untouchable for all, not just for some."
+      "text": "Herkesin eşit sayılması ilkesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The principle of equality demands that human dignity be untouchable for all, not just for some."
-    }
+    ]
    },
    {
     "say": [
@@ -21038,20 +21126,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı toplumsal savda kuruyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "Were it not for educational inequality, class society would fade."
-     },
-     {
-      "lang": "tr",
-      "text": "Eğitim eşitsizliği olmasaydı sınıflı toplum silinirdi."
+      "text": "The principle of equality demands that human dignity be untouchable for all, not just for some."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Were it not for educational inequality, class society would fade."
+     "target": "The principle of equality demands that human dignity be untouchable for all, not just for some."
     }
    },
    {
@@ -21077,6 +21161,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı toplumsal savda kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for educational inequality, class society would fade."
+     },
+     {
+      "lang": "tr",
+      "text": "Eğitim eşitsizliği olmasaydı sınıflı toplum silinirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for educational inequality, class society would fade."
+    }
    },
    {
     "say": [
@@ -21463,17 +21567,9 @@
      },
      {
       "lang": "tr",
-      "text": "İki kültürün karşılıklı değişmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as we like to call it acculturation, they mean assimilation."
+      "text": "İki kültürün karşılıklı değişmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as we like to call it acculturation, they mean assimilation."
-    }
+    ]
    },
    {
     "say": [
@@ -21492,6 +21588,46 @@
      {
       "lang": "en",
       "text": "integration course"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as we like to call it acculturation, they mean assimilation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as we like to call it acculturation, they mean assimilation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelenin hoş karşılandığı ortama"
+     },
+     {
+      "lang": "en",
+      "text": "culture of welcome"
+     },
+     {
+      "lang": "tr",
+      "text": "iki kültürün karışmasından doğan yeni hâle ise"
+     },
+     {
+      "lang": "en",
+      "text": "hybridity"
      },
      {
       "lang": "tr",
@@ -21523,19 +21659,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Gelenin hoş karşılandığı ortama"
+      "text": "Değişen koşullara ayak uydurabilmeye"
      },
      {
       "lang": "en",
-      "text": "culture of welcome"
+      "text": "adaptability"
      },
      {
       "lang": "tr",
-      "text": "iki kültürün karışmasından doğan yeni hâle ise"
+      "text": "birini yurttaşlığa kabul etmeye ise"
      },
      {
       "lang": "en",
-      "text": "hybridity"
+      "text": "naturalize"
      },
      {
       "lang": "tr",
@@ -21648,19 +21784,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Değişen koşullara ayak uydurabilmeye"
+      "text": "Bir kişinin topluma yeniden katılmasına"
      },
      {
       "lang": "en",
-      "text": "adaptability"
-     },
-     {
-      "lang": "tr",
-      "text": "birini yurttaşlığa kabul etmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "naturalize"
+      "text": "reintegration"
      },
      {
       "lang": "tr",
@@ -21687,22 +21815,6 @@
      "kind": "repeat",
      "target": "They naturalize late and call it reintegration."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kişinin topluma yeniden katılmasına"
-     },
-     {
-      "lang": "en",
-      "text": "reintegration"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -21936,17 +22048,9 @@
      },
      {
       "lang": "tr",
-      "text": "Ailesi göçle gelmiş olma durumu demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "An immigrant background is not a migration flow."
+      "text": "Ailesi göçle gelmiş olma durumu demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "An immigrant background is not a migration flow."
-    }
+    ]
    },
    {
     "say": [
@@ -21965,6 +22069,46 @@
      {
       "lang": "en",
       "text": "out-migration"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "An immigrant background is not a migration flow."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An immigrant background is not a migration flow."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ülke içinde yer değiştirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "internal migration"
+     },
+     {
+      "lang": "tr",
+      "text": "gelenle gidenin farkına ise"
+     },
+     {
+      "lang": "en",
+      "text": "net migration"
      },
      {
       "lang": "tr",
@@ -21996,19 +22140,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ülke içinde yer değiştirmeye"
+      "text": "Kısa sürede gelen kalabalığa"
      },
      {
       "lang": "en",
-      "text": "internal migration"
+      "text": "influx"
      },
      {
       "lang": "tr",
-      "text": "gelenle gidenin farkına ise"
+      "text": "mültecinin haklarını yazan antlaşmaya ise"
      },
      {
       "lang": "en",
-      "text": "net migration"
+      "text": "refugee convention"
      },
      {
       "lang": "tr",
@@ -22129,19 +22273,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kısa sürede gelen kalabalığa"
+      "text": "Birini yerinden yurdundan etmeye"
      },
      {
       "lang": "en",
-      "text": "influx"
-     },
-     {
-      "lang": "tr",
-      "text": "mültecinin haklarını yazan antlaşmaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "refugee convention"
+      "text": "uproot"
      },
      {
       "lang": "tr",
@@ -22168,22 +22304,6 @@
      "kind": "repeat",
      "target": "Numbers do not uproot anyone."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Birini yerinden yurdundan etmeye"
-     },
-     {
-      "lang": "en",
-      "text": "uproot"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -22409,17 +22529,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bilineni yeni baştan okumak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "One reinterprets the culture of remembrance; another guards the interpretive authority."
+      "text": "Bilineni yeni baştan okumak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "One reinterprets the culture of remembrance; another guards the interpretive authority."
-    }
+    ]
    },
    {
     "say": [
@@ -22438,6 +22550,46 @@
      {
       "lang": "en",
       "text": "interpretive authority"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One reinterprets the culture of remembrance; another guards the interpretive authority."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One reinterprets the culture of remembrance; another guards the interpretive authority."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir metni ayrıntısıyla açıklamaya"
+     },
+     {
+      "lang": "en",
+      "text": "exegesis"
+     },
+     {
+      "lang": "tr",
+      "text": "eski yapı ve eserleri korumaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "historic preservation"
      },
      {
       "lang": "tr",
@@ -22469,19 +22621,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir metni ayrıntısıyla açıklamaya"
+      "text": "Yazılı olmayan, gelenekten gelen kurallara"
      },
      {
       "lang": "en",
-      "text": "exegesis"
+      "text": "customary law"
      },
      {
       "lang": "tr",
-      "text": "eski yapı ve eserleri korumaya ise"
+      "text": "uzun geçmişi yüzünden saygı görene ise"
      },
      {
       "lang": "en",
-      "text": "historic preservation"
+      "text": "venerable"
      },
      {
       "lang": "tr",
@@ -22598,19 +22750,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yazılı olmayan, gelenekten gelen kurallara"
+      "text": "Kuşaklar arasındaki anlaşmazlığa"
      },
      {
       "lang": "en",
-      "text": "customary law"
-     },
-     {
-      "lang": "tr",
-      "text": "uzun geçmişi yüzünden saygı görene ise"
-     },
-     {
-      "lang": "en",
-      "text": "venerable"
+      "text": "generational conflict"
      },
      {
       "lang": "tr",
@@ -22637,22 +22781,6 @@
      "kind": "repeat",
      "target": "In historic preservation, the generational conflict is about who reports."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kuşaklar arasındaki anlaşmazlığa"
-     },
-     {
-      "lang": "en",
-      "text": "generational conflict"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -22886,17 +23014,9 @@
      },
      {
       "lang": "tr",
-      "text": "Kan ya da evlilik bağıyla kurulan ilişki demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Kinship may well shape the lifeworld more than the law."
+      "text": "Kan ya da evlilik bağıyla kurulan ilişki demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Kinship may well shape the lifeworld more than the law."
-    }
+    ]
    },
    {
     "say": [
@@ -22915,6 +23035,46 @@
      {
       "lang": "en",
       "text": "reciprocity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Kinship may well shape the lifeworld more than the law."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Kinship may well shape the lifeworld more than the law."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki tarafın birbirine eşit biçimde davranmasına"
+     },
+     {
+      "lang": "en",
+      "text": "reciprocal"
+     },
+     {
+      "lang": "tr",
+      "text": "insanın topluma katılarak kural öğrenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "socialization"
      },
      {
       "lang": "tr",
@@ -22946,19 +23106,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki tarafın birbirine eşit biçimde davranmasına"
+      "text": "Bir toplulukta kimin önde geldiğini belirleyen düzene"
      },
      {
       "lang": "en",
-      "text": "reciprocal"
+      "text": "pecking order"
      },
      {
       "lang": "tr",
-      "text": "insanın topluma katılarak kural öğrenmesine ise"
+      "text": "bir topluluğa törenle kabul edilmeye ise"
      },
      {
       "lang": "en",
-      "text": "socialization"
+      "text": "initiation"
      },
      {
       "lang": "tr",
@@ -23079,19 +23239,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir toplulukta kimin önde geldiğini belirleyen düzene"
+      "text": "Kendi kültürünü ölçü sayma eğilimine"
      },
      {
       "lang": "en",
-      "text": "pecking order"
-     },
-     {
-      "lang": "tr",
-      "text": "bir topluluğa törenle kabul edilmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "initiation"
+      "text": "ethnocentrism"
      },
      {
       "lang": "tr",
@@ -23118,22 +23270,6 @@
      "kind": "repeat",
      "target": "Ethnocentrism might be the last thing we see."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kendi kültürünü ölçü sayma eğilimine"
-     },
-     {
-      "lang": "en",
-      "text": "ethnocentrism"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -23367,17 +23503,9 @@
      },
      {
       "lang": "tr",
-      "text": "Gösterişli ve bol demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The banquet was opulent; the welcome, faceless."
+      "text": "Gösterişli ve bol demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The banquet was opulent; the welcome, faceless."
-    }
+    ]
    },
    {
     "say": [
@@ -23396,6 +23524,46 @@
      {
       "lang": "en",
       "text": "deviance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The banquet was opulent; the welcome, faceless."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The banquet was opulent; the welcome, faceless."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "O yörede olağan sayılan davranışa"
+     },
+     {
+      "lang": "en",
+      "text": "local custom"
+     },
+     {
+      "lang": "tr",
+      "text": "kuralın açıkça çiğnenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "norm violation"
      },
      {
       "lang": "tr",
@@ -23427,19 +23595,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "O yörede olağan sayılan davranışa"
+      "text": "Dokunulmaz sayılanı açıkça çiğnemeye"
      },
      {
       "lang": "en",
-      "text": "local custom"
+      "text": "taboo breaking"
      },
      {
       "lang": "tr",
-      "text": "kuralın açıkça çiğnenmesine ise"
+      "text": "birbirini tutmayan seslerin bir aradalığına ise"
      },
      {
       "lang": "en",
-      "text": "norm violation"
+      "text": "dissonance"
      },
      {
       "lang": "tr",
@@ -23552,19 +23720,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dokunulmaz sayılanı açıkça çiğnemeye"
+      "text": "İnsanın kendine ve çevresine uzak düşmesine"
      },
      {
       "lang": "en",
-      "text": "taboo breaking"
-     },
-     {
-      "lang": "tr",
-      "text": "birbirini tutmayan seslerin bir aradalığına ise"
-     },
-     {
-      "lang": "en",
-      "text": "dissonance"
+      "text": "alienation"
      },
      {
       "lang": "tr",
@@ -23591,22 +23751,6 @@
      "kind": "repeat",
      "target": "They call the alienation a phase and the dissonance a misunderstanding."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "İnsanın kendine ve çevresine uzak düşmesine"
-     },
-     {
-      "lang": "en",
-      "text": "alienation"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -23840,17 +23984,9 @@
      },
      {
       "lang": "tr",
-      "text": "Dilin zamanla dönüşmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The language change described above becomes the language norm discussed below."
+      "text": "Dilin zamanla dönüşmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The language change described above becomes the language norm discussed below."
-    }
+    ]
    },
    {
     "say": [
@@ -23869,6 +24005,46 @@
      {
       "lang": "en",
       "text": "semantic change"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The language change described above becomes the language norm discussed below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The language change described above becomes the language norm discussed below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dilin günlük hayatta fiilen kullanılışına"
+     },
+     {
+      "lang": "en",
+      "text": "language usage"
+     },
+     {
+      "lang": "tr",
+      "text": "sözcüğün içinde durduğu anlam çevresine ise"
+     },
+     {
+      "lang": "en",
+      "text": "semantic context"
      },
      {
       "lang": "tr",
@@ -23900,19 +24076,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dilin günlük hayatta fiilen kullanılışına"
+      "text": "Sözcüğün düz karşılığına"
      },
      {
       "lang": "en",
-      "text": "language usage"
+      "text": "literal meaning"
      },
      {
       "lang": "tr",
-      "text": "sözcüğün içinde durduğu anlam çevresine ise"
+      "text": "taşıdığı anlam yüküne ise"
      },
      {
       "lang": "en",
-      "text": "semantic context"
+      "text": "semantic content"
      },
      {
       "lang": "tr",
@@ -24037,19 +24213,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sözcüğün düz karşılığına"
+      "text": "Çevirinin yapıldığı asıl dile"
      },
      {
       "lang": "en",
-      "text": "literal meaning"
-     },
-     {
-      "lang": "tr",
-      "text": "taşıdığı anlam yüküne ise"
-     },
-     {
-      "lang": "en",
-      "text": "semantic content"
+      "text": "source language"
      },
      {
       "lang": "tr",
@@ -24076,22 +24244,6 @@
      "kind": "repeat",
      "target": "The semantic content travels; the source language does not."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Çevirinin yapıldığı asıl dile"
-     },
-     {
-      "lang": "en",
-      "text": "source language"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -24333,17 +24485,9 @@
      },
      {
       "lang": "tr",
-      "text": "Yurdundan uzakta yaşayan topluluk demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The diaspora keeps the heritage language; the enclave, the silence."
+      "text": "Yurdundan uzakta yaşayan topluluk demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The diaspora keeps the heritage language; the enclave, the silence."
-    }
+    ]
    },
    {
     "say": [
@@ -24373,20 +24517,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız ikinci yarıda yüklemi düşürüyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "The old religion survives as spirituality, the crisis of faith as a question."
-     },
-     {
-      "lang": "tr",
-      "text": "Eski din maneviyat olarak kalır, inanç krizi bir soru olarak."
+      "text": "The diaspora keeps the heritage language; the enclave, the silence."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The old religion survives as spirituality, the crisis of faith as a question."
+     "target": "The diaspora keeps the heritage language; the enclave, the silence."
     }
    },
    {
@@ -24412,6 +24552,50 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnanılan şeyin sarsılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "crisis of faith"
+     },
+     {
+      "lang": "tr",
+      "text": "toplumun gelir ve eğitimle ayrılan katına ise"
+     },
+     {
+      "lang": "en",
+      "text": "social stratum"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda yüklemi düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The old religion survives as spirituality, the crisis of faith as a question."
+     },
+     {
+      "lang": "tr",
+      "text": "Eski din maneviyat olarak kalır, inanç krizi bir soru olarak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The old religion survives as spirituality, the crisis of faith as a question."
+    }
    },
    {
     "say": [
@@ -24510,19 +24694,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İnanılan şeyin sarsılmasına"
+      "text": "Bir toplumun neye değer verdiğinin değişmesine"
      },
      {
       "lang": "en",
-      "text": "crisis of faith"
-     },
-     {
-      "lang": "tr",
-      "text": "toplumun gelir ve eğitimle ayrılan katına ise"
-     },
-     {
-      "lang": "en",
-      "text": "social stratum"
+      "text": "shift in values"
      },
      {
       "lang": "tr",
@@ -24549,22 +24725,6 @@
      "kind": "repeat",
      "target": "The shift in values came first."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir toplumun neye değer verdiğinin değişmesine"
-     },
-     {
-      "lang": "en",
-      "text": "shift in values"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -24798,17 +24958,9 @@
      },
      {
       "lang": "tr",
-      "text": "Aynı işi daha az kaynakla yapma kazancı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the report it is an efficiency gain; on the floor, work intensification."
+      "text": "Aynı işi daha az kaynakla yapma kazancı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the report it is an efficiency gain; on the floor, work intensification."
-    }
+    ]
    },
    {
     "say": [
@@ -24827,6 +24979,46 @@
      {
       "lang": "en",
       "text": "flexibilization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the report it is an efficiency gain; on the floor, work intensification."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the report it is an efficiency gain; on the floor, work intensification."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin güvencesinin azalmasına"
+     },
+     {
+      "lang": "en",
+      "text": "precarization"
+     },
+     {
+      "lang": "tr",
+      "text": "işlerin tek bir ölçüye bağlanmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "standardization"
      },
      {
       "lang": "tr",
@@ -24858,19 +25050,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşin güvencesinin azalmasına"
+      "text": "İşin bütününü akla uygun biçimde yeniden düzenlemeye"
      },
      {
       "lang": "en",
-      "text": "precarization"
-     },
-     {
-      "lang": "tr",
-      "text": "işlerin tek bir ölçüye bağlanmasına ise"
-     },
-     {
-      "lang": "en",
-      "text": "standardization"
+      "text": "rationalization"
      },
      {
       "lang": "tr",
@@ -24979,11 +25163,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşin bütününü akla uygun biçimde yeniden düzenlemeye"
+      "text": "Çalışanların ne sıklıkla değiştiğine"
      },
      {
       "lang": "en",
-      "text": "rationalization"
+      "text": "staff turnover"
+     },
+     {
+      "lang": "tr",
+      "text": "onları şirkette tutabilmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "employee retention"
      },
      {
       "lang": "tr",
@@ -25010,30 +25202,6 @@
      "kind": "repeat",
      "target": "High staff turnover is the price of weak employee retention."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Çalışanların ne sıklıkla değiştiğine"
-     },
-     {
-      "lang": "en",
-      "text": "staff turnover"
-     },
-     {
-      "lang": "tr",
-      "text": "onları şirkette tutabilmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "employee retention"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -25259,17 +25427,9 @@
      },
      {
       "lang": "tr",
-      "text": "Kimin kime karşı güçlü olduğunun düzeni demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What the power structure does is hide the power imbalance."
+      "text": "Kimin kime karşı güçlü olduğunun düzeni demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What the power structure does is hide the power imbalance."
-    }
+    ]
    },
    {
     "say": [
@@ -25288,6 +25448,46 @@
      {
       "lang": "en",
       "text": "delegation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the power structure does is hide the power imbalance."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the power structure does is hide the power imbalance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne yapılacağını söyleme hakkına"
+     },
+     {
+      "lang": "en",
+      "text": "authority to give orders"
+     },
+     {
+      "lang": "tr",
+      "text": "bu hakka uyma hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "subordination"
      },
      {
       "lang": "tr",
@@ -25319,19 +25519,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ne yapılacağını söyleme hakkına"
+      "text": "Kişinin kendi kararını verebildiği alana"
      },
      {
       "lang": "en",
-      "text": "authority to give orders"
+      "text": "room to maneuver"
      },
      {
       "lang": "tr",
-      "text": "bu hakka uyma hâline ise"
+      "text": "kendi isteğiyle boyun eğmeye ise"
      },
      {
       "lang": "en",
-      "text": "subordination"
+      "text": "subordinate oneself"
      },
      {
       "lang": "tr",
@@ -25456,19 +25656,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kişinin kendi kararını verebildiği alana"
+      "text": "Kararı başkasının verdiği işe"
      },
      {
       "lang": "en",
-      "text": "room to maneuver"
-     },
-     {
-      "lang": "tr",
-      "text": "kendi isteğiyle boyun eğmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "subordinate oneself"
+      "text": "externally determined"
      },
      {
       "lang": "tr",
@@ -25495,22 +25687,6 @@
      "kind": "repeat",
      "target": "One should not have to subordinate oneself to an externally determined pace."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kararı başkasının verdiği işe"
-     },
-     {
-      "lang": "en",
-      "text": "externally determined"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -25736,17 +25912,9 @@
      },
      {
       "lang": "tr",
-      "text": "Tarafların devlet karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Collective bargaining rights demand that the conduct of negotiations be free from state interference."
+      "text": "Tarafların devlet karışmadan anlaşma hakkı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Collective bargaining rights demand that the conduct of negotiations be free from state interference."
-    }
+    ]
    },
    {
     "say": [
@@ -25765,6 +25933,46 @@
      {
       "lang": "en",
       "text": "consensus building"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Collective bargaining rights demand that the conduct of negotiations be free from state interference."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Collective bargaining rights demand that the conduct of negotiations be free from state interference."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kurumda uyulması beklenen yazılı ilkelere"
+     },
+     {
+      "lang": "en",
+      "text": "code of conduct"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışanları temsil eden sendika görevlisine ise"
+     },
+     {
+      "lang": "en",
+      "text": "union representative"
      },
      {
       "lang": "tr",
@@ -25796,19 +26004,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kurumda uyulması beklenen yazılı ilkelere"
+      "text": "Geçici bir şeyi sürekli kılmaya"
      },
      {
       "lang": "en",
-      "text": "code of conduct"
+      "text": "make permanent"
      },
      {
       "lang": "tr",
-      "text": "çalışanları temsil eden sendika görevlisine ise"
+      "text": "mesleği işyerinde öğrenme sözleşmesine ise"
      },
      {
       "lang": "en",
-      "text": "union representative"
+      "text": "apprenticeship contract"
      },
      {
       "lang": "tr",
@@ -25917,19 +26125,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Geçici bir şeyi sürekli kılmaya"
+      "text": "Bir kararı sonradan haklı gösterme işine"
      },
      {
       "lang": "en",
-      "text": "make permanent"
-     },
-     {
-      "lang": "tr",
-      "text": "mesleği işyerinde öğrenme sözleşmesine ise"
-     },
-     {
-      "lang": "en",
-      "text": "apprenticeship contract"
+      "text": "legitimization"
      },
      {
       "lang": "tr",
@@ -25956,22 +26156,6 @@
      "kind": "repeat",
      "target": "They make permanent what was agreed; the legitimization comes after the fact."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kararı sonradan haklı gösterme işine"
-     },
-     {
-      "lang": "en",
-      "text": "legitimization"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -26204,17 +26388,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir birimi şirketten ayırıp bağımsızlaştırmak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as they would like to spin off the unit, the real work stays in-house."
+      "text": "Bir birimi şirketten ayırıp bağımsızlaştırmak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as they would like to spin off the unit, the real work stays in-house."
-    }
+    ]
    },
    {
     "say": [
@@ -26233,6 +26409,46 @@
      {
       "lang": "en",
       "text": "permeable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as they would like to spin off the unit, the real work stays in-house."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as they would like to spin off the unit, the real work stays in-house."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin ne kadar süreceğini bilememeye"
+     },
+     {
+      "lang": "en",
+      "text": "job insecurity"
+     },
+     {
+      "lang": "tr",
+      "text": "düzenli geliri olan kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "gainfully employed"
      },
      {
       "lang": "tr",
@@ -26264,19 +26480,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşin ne kadar süreceğini bilememeye"
+      "text": "Asıl işin yanında yapılana"
      },
      {
       "lang": "en",
-      "text": "job insecurity"
+      "text": "on the side"
      },
      {
       "lang": "tr",
-      "text": "düzenli geliri olan kişiye ise"
+      "text": "bir yükü başkasına devretmeye ise"
      },
      {
       "lang": "en",
-      "text": "gainfully employed"
+      "text": "offload"
      },
      {
       "lang": "tr",
@@ -26385,19 +26601,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Asıl işin yanında yapılana"
+      "text": "Geçimini sağlayan çalışmaya"
      },
      {
       "lang": "en",
-      "text": "on the side"
-     },
-     {
-      "lang": "tr",
-      "text": "bir yükü başkasına devretmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "offload"
+      "text": "gainful employment"
      },
      {
       "lang": "tr",
@@ -26424,22 +26632,6 @@
      "kind": "repeat",
      "target": "They offload the risk and call it gainful employment."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Geçimini sağlayan çalışmaya"
-     },
-     {
-      "lang": "en",
-      "text": "gainful employment"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -26673,17 +26865,9 @@
      },
      {
       "lang": "tr",
-      "text": "İşin gerektirdiği becerinin azalması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Deskilling is not the opposite of professionalization."
+      "text": "İşin gerektirdiği becerinin azalması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Deskilling is not the opposite of professionalization."
-    }
+    ]
    },
    {
     "say": [
@@ -26702,6 +26886,46 @@
      {
       "lang": "en",
       "text": "skilled labor shortage"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Deskilling is not the opposite of professionalization."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Deskilling is not the opposite of professionalization."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışabilecek ama çalışmayan kesime"
+     },
+     {
+      "lang": "en",
+      "text": "labor reserve"
+     },
+     {
+      "lang": "tr",
+      "text": "başka bir alandan gelip o işi yapmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "lateral hiring"
      },
      {
       "lang": "tr",
@@ -26733,19 +26957,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çalışabilecek ama çalışmayan kesime"
+      "text": "Neyi bildiğinden çok neyi yapabildiğine bakan yaklaşıma"
      },
      {
       "lang": "en",
-      "text": "labor reserve"
+      "text": "competency-based approach"
      },
      {
       "lang": "tr",
-      "text": "başka bir alandan gelip o işi yapmaya ise"
+      "text": "çalışanları yetiştirme işine ise"
      },
      {
       "lang": "en",
-      "text": "lateral hiring"
+      "text": "staff development"
      },
      {
       "lang": "tr",
@@ -26862,19 +27086,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Neyi bildiğinden çok neyi yapabildiğine bakan yaklaşıma"
+      "text": "Okulla toplumsal basamak çıkmaya"
      },
      {
       "lang": "en",
-      "text": "competency-based approach"
-     },
-     {
-      "lang": "tr",
-      "text": "çalışanları yetiştirme işine ise"
-     },
-     {
-      "lang": "en",
-      "text": "staff development"
+      "text": "upward mobility through education"
      },
      {
       "lang": "tr",
@@ -26901,22 +27117,6 @@
      "kind": "repeat",
      "target": "Staff development is not upward mobility through education."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Okulla toplumsal basamak çıkmaya"
-     },
-     {
-      "lang": "en",
-      "text": "upward mobility through education"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -27142,17 +27342,9 @@
      },
      {
       "lang": "tr",
-      "text": "Görünmesi gerekeni örtmek demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "One obscures the segmentation; another undermines the professional ethic."
+      "text": "Görünmesi gerekeni örtmek demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "One obscures the segmentation; another undermines the professional ethic."
-    }
+    ]
    },
    {
     "say": [
@@ -27171,6 +27363,70 @@
      {
       "lang": "en",
       "text": "undermine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir meslekte uyulan ahlak ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "professional ethic"
+     },
+     {
+      "lang": "tr",
+      "text": "yinelenen davranış biçimine ise"
+     },
+     {
+      "lang": "en",
+      "text": "action pattern"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One obscures the segmentation; another undermines the professional ethic."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One obscures the segmentation; another undermines the professional ethic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gün içinde fiilen yapılana"
+     },
+     {
+      "lang": "en",
+      "text": "everyday practice"
+     },
+     {
+      "lang": "tr",
+      "text": "insanları kurala uydurma işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "disciplining"
      },
      {
       "lang": "tr",
@@ -27202,19 +27458,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir meslekte uyulan ahlak ölçüsüne"
+      "text": "Herkesin söylediği, hiçbir şey söylemeyen söze"
      },
      {
       "lang": "en",
-      "text": "professional ethic"
-     },
-     {
-      "lang": "tr",
-      "text": "yinelenen davranış biçimine ise"
-     },
-     {
-      "lang": "en",
-      "text": "action pattern"
+      "text": "platitude"
      },
      {
       "lang": "tr",
@@ -27335,30 +27583,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Gün içinde fiilen yapılana"
-     },
-     {
-      "lang": "en",
-      "text": "everyday practice"
-     },
-     {
-      "lang": "tr",
-      "text": "insanları kurala uydurma işine ise"
-     },
-     {
-      "lang": "en",
-      "text": "disciplining"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -27374,22 +27598,6 @@
      "kind": "repeat",
      "target": "The platitude survived the meeting, and so did the action pattern."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Herkesin söylediği, hiçbir şey söylemeyen söze"
-     },
-     {
-      "lang": "en",
-      "text": "platitude"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -27623,17 +27831,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bilgiyle yapılan iş demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Knowledge work may well end in self-exploitation."
+      "text": "Bilgiyle yapılan iş demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Knowledge work may well end in self-exploitation."
-    }
+    ]
    },
    {
     "say": [
@@ -27652,6 +27852,46 @@
      {
       "lang": "en",
       "text": "role conflict"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Knowledge work may well end in self-exploitation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Knowledge work may well end in self-exploitation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin hangi hızda yapıldığına"
+     },
+     {
+      "lang": "en",
+      "text": "pacing"
+     },
+     {
+      "lang": "tr",
+      "text": "üretilen parça sayısına göre ödemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "piecework"
      },
      {
       "lang": "tr",
@@ -27683,19 +27923,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşin hangi hızda yapıldığına"
+      "text": "Meslektaşların birbirini kollamasına"
      },
      {
       "lang": "en",
-      "text": "pacing"
+      "text": "collegiality"
      },
      {
       "lang": "tr",
-      "text": "üretilen parça sayısına göre ödemeye ise"
+      "text": "insanlar arasında geçene ise"
      },
      {
       "lang": "en",
-      "text": "piecework"
+      "text": "interpersonal"
      },
      {
       "lang": "tr",
@@ -27812,19 +28052,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Meslektaşların birbirini kollamasına"
+      "text": "Hayatı sürdüren bakım ve ev işine"
      },
      {
       "lang": "en",
-      "text": "collegiality"
-     },
-     {
-      "lang": "tr",
-      "text": "insanlar arasında geçene ise"
-     },
-     {
-      "lang": "en",
-      "text": "interpersonal"
+      "text": "reproductive labor"
      },
      {
       "lang": "tr",
@@ -27851,22 +28083,6 @@
      "kind": "repeat",
      "target": "Reproductive labor might never be counted."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Hayatı sürdüren bakım ve ev işine"
-     },
-     {
-      "lang": "en",
-      "text": "reproductive labor"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -28100,17 +28316,9 @@
      },
      {
       "lang": "tr",
-      "text": "Seçkin araştırmaya ayrılan destek programı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The excellence initiative was a success; the transition rate, less so."
+      "text": "Seçkin araştırmaya ayrılan destek programı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The excellence initiative was a success; the transition rate, less so."
-    }
+    ]
    },
    {
     "say": [
@@ -28140,20 +28348,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "We have no elite formation here; we have a competitive logic."
-     },
-     {
-      "lang": "tr",
-      "text": "Burada elit yetiştirme yok, rekabet mantığı var."
+      "text": "The excellence initiative was a success; the transition rate, less so."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "We have no elite formation here; we have a competitive logic."
+     "target": "The excellence initiative was a success; the transition rate, less so."
     }
    },
    {
@@ -28179,6 +28383,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no elite formation here; we have a competitive logic."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada elit yetiştirme yok, rekabet mantığı var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no elite formation here; we have a competitive logic."
+    }
    },
    {
     "say": [
@@ -28297,6 +28521,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Kanıtı sonucun kendisi olan akıl yürütmeye"
+     },
+     {
+      "lang": "en",
+      "text": "circular reasoning"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -28312,22 +28552,6 @@
      "kind": "repeat",
      "target": "Plagiarism gets a new form; bureaucratization cures itself, by circular reasoning."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kanıtı sonucun kendisi olan akıl yürütmeye"
-     },
-     {
-      "lang": "en",
-      "text": "circular reasoning"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -28561,17 +28785,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir sektörün yapısının kökten dönüşmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The structural change described above threatens the core business discussed below."
+      "text": "Bir sektörün yapısının kökten dönüşmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The structural change described above threatens the core business discussed below."
-    }
+    ]
    },
    {
     "say": [
@@ -28590,6 +28806,46 @@
      {
       "lang": "en",
       "text": "distortion of competition"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The structural change described above threatens the core business discussed below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The structural change described above threatens the core business discussed below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işin yapılabilir olup olmadığını ölçen incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "feasibility study"
+     },
+     {
+      "lang": "tr",
+      "text": "günlük işleyişten sorumlu olmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "operational responsibility"
      },
      {
       "lang": "tr",
@@ -28621,19 +28877,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir işin yapılabilir olup olmadığını ölçen incelemeye"
+      "text": "Başarıyı ölçen sayıya"
      },
      {
       "lang": "en",
-      "text": "feasibility study"
+      "text": "performance indicator"
      },
      {
       "lang": "tr",
-      "text": "günlük işleyişten sorumlu olmaya ise"
+      "text": "yalnız amaca ulaşmayı düşünen akla ise"
      },
      {
       "lang": "en",
-      "text": "operational responsibility"
+      "text": "instrumentally rational"
      },
      {
       "lang": "tr",
@@ -28762,19 +29018,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Başarıyı ölçen sayıya"
+      "text": "Her şeyi işlevine indirgeyen görüşe"
      },
      {
       "lang": "en",
-      "text": "performance indicator"
-     },
-     {
-      "lang": "tr",
-      "text": "yalnız amaca ulaşmayı düşünen akla ise"
-     },
-     {
-      "lang": "en",
-      "text": "instrumentally rational"
+      "text": "functionalism"
      },
      {
       "lang": "tr",
@@ -28801,22 +29049,6 @@
      "kind": "repeat",
      "target": "The instrumentally rational report ends in functionalism."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Her şeyi işlevine indirgeyen görüşe"
-     },
-     {
-      "lang": "en",
-      "text": "functionalism"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -29058,17 +29290,9 @@
      },
      {
       "lang": "tr",
-      "text": "Emekli aylığının ne kadar olduğu demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The pension level fell; the full retirement age did not."
+      "text": "Emekli aylığının ne kadar olduğu demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The pension level fell; the full retirement age did not."
-    }
+    ]
    },
    {
     "say": [
@@ -29087,6 +29311,46 @@
      {
       "lang": "en",
       "text": "intergenerational contract"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The pension level fell; the full retirement age did not."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The pension level fell; the full retirement age did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışma sonrası döneme"
+     },
+     {
+      "lang": "en",
+      "text": "twilight years"
+     },
+     {
+      "lang": "tr",
+      "text": "insanın kendi olabilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "self-fulfillment"
      },
      {
       "lang": "tr",
@@ -29118,19 +29382,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çalışma sonrası döneme"
+      "text": "Çalışabilecek yaştakilerin ne kadarının çalıştığına"
      },
      {
       "lang": "en",
-      "text": "twilight years"
+      "text": "labor force participation rate"
      },
      {
       "lang": "tr",
-      "text": "insanın kendi olabilmesine ise"
+      "text": "belli bir amaca ayrılmış olana ise"
      },
      {
       "lang": "en",
-      "text": "self-fulfillment"
+      "text": "earmarked"
      },
      {
       "lang": "tr",
@@ -29239,19 +29503,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çalışabilecek yaştakilerin ne kadarının çalıştığına"
+      "text": "İyi koşullarda serpilip büyümeye"
      },
      {
       "lang": "en",
-      "text": "labor force participation rate"
-     },
-     {
-      "lang": "tr",
-      "text": "belli bir amaca ayrılmış olana ise"
-     },
-     {
-      "lang": "en",
-      "text": "earmarked"
+      "text": "thrive"
      },
      {
       "lang": "tr",
@@ -29278,22 +29534,6 @@
      "kind": "repeat",
      "target": "Few thrive on the last day."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "İyi koşullarda serpilip büyümeye"
-     },
-     {
-      "lang": "en",
-      "text": "thrive"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -29519,17 +29759,9 @@
      },
      {
       "lang": "tr",
-      "text": "Tarım toprağının yapıya gitmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the plan it is land consumption; in the village, an arable field."
+      "text": "Tarım toprağının yapıya gitmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the plan it is land consumption; in the village, an arable field."
-    }
+    ]
    },
    {
     "say": [
@@ -29548,6 +29780,46 @@
      {
       "lang": "en",
       "text": "land consolidation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the plan it is land consumption; in the village, an arable field."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the plan it is land consumption; in the village, an arable field."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağı satıp değerlenmesini beklemeye"
+     },
+     {
+      "lang": "en",
+      "text": "land speculation"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı yeri iki tarafın başka işe istemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "land use conflict"
      },
      {
       "lang": "tr",
@@ -29579,19 +29851,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprağı satıp değerlenmesini beklemeye"
+      "text": "Toprağın beton altında kalmasına"
      },
      {
       "lang": "en",
-      "text": "land speculation"
+      "text": "paving over land"
      },
      {
       "lang": "tr",
-      "text": "aynı yeri iki tarafın başka işe istemesine ise"
+      "text": "şehrin kırlara doğru dağılmasına ise"
      },
      {
       "lang": "en",
-      "text": "land use conflict"
+      "text": "urban sprawl"
      },
      {
       "lang": "tr",
@@ -29704,19 +29976,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprağın beton altında kalmasına"
+      "text": "Bir yerin bir süreliğine başka işe verilmesine"
      },
      {
       "lang": "en",
-      "text": "paving over land"
-     },
-     {
-      "lang": "tr",
-      "text": "şehrin kırlara doğru dağılmasına ise"
-     },
-     {
-      "lang": "en",
-      "text": "urban sprawl"
+      "text": "interim use"
      },
      {
       "lang": "tr",
@@ -29743,22 +30007,6 @@
      "kind": "repeat",
      "target": "Urban sprawl begins with an interim use."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir yerin bir süreliğine başka işe verilmesine"
-     },
-     {
-      "lang": "en",
-      "text": "interim use"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -29984,17 +30232,9 @@
      },
      {
       "lang": "tr",
-      "text": "Büyük toprakların zorla ya da ucuza ele geçirilmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What land grabbing does is dress up a territorial claim as investment."
+      "text": "Büyük toprakların zorla ya da ucuza ele geçirilmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What land grabbing does is dress up a territorial claim as investment."
-    }
+    ]
    },
    {
     "say": [
@@ -30013,6 +30253,46 @@
      {
       "lang": "en",
       "text": "rural exodus"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What land grabbing does is dress up a territorial claim as investment."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What land grabbing does is dress up a territorial claim as investment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çiftliğin bir sonraki kuşağa geçmesine"
+     },
+     {
+      "lang": "en",
+      "text": "farm succession"
+     },
+     {
+      "lang": "tr",
+      "text": "verimsiz ve çorak toprağa ise"
+     },
+     {
+      "lang": "en",
+      "text": "barren"
      },
      {
       "lang": "tr",
@@ -30044,19 +30324,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çiftliğin bir sonraki kuşağa geçmesine"
+      "text": "Toprağın ekilmeden beklemesine"
      },
      {
       "lang": "en",
-      "text": "farm succession"
+      "text": "lie fallow"
      },
      {
       "lang": "tr",
-      "text": "verimsiz ve çorak toprağa ise"
+      "text": "bakımsızlıktan dökülen yapıya ise"
      },
      {
       "lang": "en",
-      "text": "barren"
+      "text": "dilapidated"
      },
      {
       "lang": "tr",
@@ -30173,19 +30453,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprağın ekilmeden beklemesine"
+      "text": "Merkezin dışında kalan kuşağa"
      },
      {
       "lang": "en",
-      "text": "lie fallow"
-     },
-     {
-      "lang": "tr",
-      "text": "bakımsızlıktan dökülen yapıya ise"
-     },
-     {
-      "lang": "en",
-      "text": "dilapidated"
+      "text": "periphery"
      },
      {
       "lang": "tr",
@@ -30212,22 +30484,6 @@
      "kind": "repeat",
      "target": "The periphery pays first."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Merkezin dışında kalan kuşağa"
-     },
-     {
-      "lang": "en",
-      "text": "periphery"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -30453,17 +30709,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir halkın kendi gıdasına karar verme hakkı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Food sovereignty demands that the agricultural reform be decided locally."
+      "text": "Bir halkın kendi gıdasına karar verme hakkı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Food sovereignty demands that the agricultural reform be decided locally."
-    }
+    ]
    },
    {
     "say": [
@@ -30482,6 +30730,46 @@
      {
       "lang": "en",
       "text": "agricultural subsidy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Food sovereignty demands that the agricultural reform be decided locally."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Food sovereignty demands that the agricultural reform be decided locally."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarımın başka bir modele geçmesine"
+     },
+     {
+      "lang": "en",
+      "text": "agricultural transition"
+     },
+     {
+      "lang": "tr",
+      "text": "ulaşılmak istenen sürdürülebilirlik ölçüsüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "sustainability goal"
      },
      {
       "lang": "tr",
@@ -30513,19 +30801,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Tarımın başka bir modele geçmesine"
+      "text": "Ölçülebilir sürdürülebilirlik kuralına"
      },
      {
       "lang": "en",
-      "text": "agricultural transition"
+      "text": "sustainability standard"
      },
      {
       "lang": "tr",
-      "text": "ulaşılmak istenen sürdürülebilirlik ölçüsüne ise"
+      "text": "piyasayı kurallara bağlayan hukuka ise"
      },
      {
       "lang": "en",
-      "text": "sustainability goal"
+      "text": "regulation"
      },
      {
       "lang": "tr",
@@ -30638,19 +30926,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ölçülebilir sürdürülebilirlik kuralına"
+      "text": "Gıdanın kesintisiz bulunabilmesine"
      },
      {
       "lang": "en",
-      "text": "sustainability standard"
-     },
-     {
-      "lang": "tr",
-      "text": "piyasayı kurallara bağlayan hukuka ise"
-     },
-     {
-      "lang": "en",
-      "text": "regulation"
+      "text": "security of supply"
      },
      {
       "lang": "tr",
@@ -30677,22 +30957,6 @@
      "kind": "repeat",
      "target": "The regulation names security of supply first and the sustainability goal second."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Gıdanın kesintisiz bulunabilmesine"
-     },
-     {
-      "lang": "en",
-      "text": "security of supply"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -30926,17 +31190,9 @@
      },
      {
       "lang": "tr",
-      "text": "Doğal döngülere dayanan tarım demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as we praise agroecology, the monoculture feeds the city."
+      "text": "Doğal döngülere dayanan tarım demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as we praise agroecology, the monoculture feeds the city."
-    }
+    ]
    },
    {
     "say": [
@@ -30955,6 +31211,46 @@
      {
       "lang": "en",
       "text": "soil-conserving"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as we praise agroecology, the monoculture feeds the city."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as we praise agroecology, the monoculture feeds the city."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağın ürün verme gücüne"
+     },
+     {
+      "lang": "en",
+      "text": "soil fertility"
+     },
+     {
+      "lang": "tr",
+      "text": "o yörenin koşullarına göre seçilene ise"
+     },
+     {
+      "lang": "en",
+      "text": "site-adapted"
      },
      {
       "lang": "tr",
@@ -30986,19 +31282,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprağın ürün verme gücüne"
+      "text": "Çok sayıda tür barındırana"
      },
      {
       "lang": "en",
-      "text": "soil fertility"
+      "text": "species-rich"
      },
      {
       "lang": "tr",
-      "text": "o yörenin koşullarına göre seçilene ise"
+      "text": "doğal hâline yakın bırakılana ise"
      },
      {
       "lang": "en",
-      "text": "site-adapted"
+      "text": "near-natural"
      },
      {
       "lang": "tr",
@@ -31111,19 +31407,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok sayıda tür barındırana"
+      "text": "Yıllarca yaşayan bitkiye"
      },
      {
       "lang": "en",
-      "text": "species-rich"
-     },
-     {
-      "lang": "tr",
-      "text": "doğal hâline yakın bırakılana ise"
-     },
-     {
-      "lang": "en",
-      "text": "near-natural"
+      "text": "perennial"
      },
      {
       "lang": "tr",
@@ -31150,22 +31438,6 @@
      "kind": "repeat",
      "target": "A near-natural edge needs a perennial."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Yıllarca yaşayan bitkiye"
-     },
-     {
-      "lang": "en",
-      "text": "perennial"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -31399,17 +31671,9 @@
      },
      {
       "lang": "tr",
-      "text": "Dünya borsasında oluşan fiyat demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A world market price is not a producer price."
+      "text": "Dünya borsasında oluşan fiyat demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A world market price is not a producer price."
-    }
+    ]
    },
    {
     "say": [
@@ -31428,6 +31692,46 @@
      {
       "lang": "en",
       "text": "price volatility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A world market price is not a producer price."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A world market price is not a producer price."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gümrükleri kaldıran antlaşmaya"
+     },
+     {
+      "lang": "en",
+      "text": "free trade agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "ticaretin kurallarının gevşemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "trade liberalization"
      },
      {
       "lang": "tr",
@@ -31459,19 +31763,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Gümrükleri kaldıran antlaşmaya"
+      "text": "Piyasanın kurallarla düzenlenmesine"
      },
      {
       "lang": "en",
-      "text": "free trade agreement"
+      "text": "market regulation"
      },
      {
       "lang": "tr",
-      "text": "ticaretin kurallarının gevşemesine ise"
+      "text": "aracısız satışa ise"
      },
      {
       "lang": "en",
-      "text": "trade liberalization"
+      "text": "direct marketing"
      },
      {
       "lang": "tr",
@@ -31592,19 +31896,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Piyasanın kurallarla düzenlenmesine"
+      "text": "Tarladan sofraya kadar değer katan halkaların bütününe"
      },
      {
       "lang": "en",
-      "text": "market regulation"
-     },
-     {
-      "lang": "tr",
-      "text": "aracısız satışa ise"
-     },
-     {
-      "lang": "en",
-      "text": "direct marketing"
+      "text": "value chain"
      },
      {
       "lang": "tr",
@@ -31631,22 +31927,6 @@
      "kind": "repeat",
      "target": "Direct marketing shortens the value chain."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Tarladan sofraya kadar değer katan halkaların bütününe"
-     },
-     {
-      "lang": "en",
-      "text": "value chain"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -31872,17 +32152,9 @@
      },
      {
       "lang": "tr",
-      "text": "Ürünün nereden geldiğinin yazılması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "One defends the country-of-origin labeling; another doubts the traceability."
+      "text": "Ürünün nereden geldiğinin yazılması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "One defends the country-of-origin labeling; another doubts the traceability."
-    }
+    ]
    },
    {
     "say": [
@@ -31901,6 +32173,46 @@
      {
       "lang": "en",
       "text": "sustainability report"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One defends the country-of-origin labeling; another doubts the traceability."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One defends the country-of-origin labeling; another doubts the traceability."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarlada yapılan incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "field research"
+     },
+     {
+      "lang": "tr",
+      "text": "bilenden bilmeyene aktarma işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "knowledge transfer"
      },
      {
       "lang": "tr",
@@ -31932,19 +32244,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Tarlada yapılan incelemeye"
+      "text": "Toprak ve bitki bilimine ilişkin olana"
      },
      {
       "lang": "en",
-      "text": "field research"
+      "text": "agronomic"
      },
      {
       "lang": "tr",
-      "text": "bilenden bilmeyene aktarma işine ise"
+      "text": "bir çeşidi geliştirenin hakkını koruyan düzene ise"
      },
      {
       "lang": "en",
-      "text": "knowledge transfer"
+      "text": "plant variety protection"
      },
      {
       "lang": "tr",
@@ -32061,19 +32373,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprak ve bitki bilimine ilişkin olana"
+      "text": "Üzerinde uzlaşılamayan noktaya"
      },
      {
       "lang": "en",
-      "text": "agronomic"
-     },
-     {
-      "lang": "tr",
-      "text": "bir çeşidi geliştirenin hakkını koruyan düzene ise"
-     },
-     {
-      "lang": "en",
-      "text": "plant variety protection"
+      "text": "point of contention"
      },
      {
       "lang": "tr",
@@ -32100,22 +32404,6 @@
      "kind": "repeat",
      "target": "Plant variety protection remains a point of contention."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Üzerinde uzlaşılamayan noktaya"
-     },
-     {
-      "lang": "en",
-      "text": "point of contention"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -32349,17 +32637,9 @@
      },
      {
       "lang": "tr",
-      "text": "Üst toprağın su ve rüzgârla gitmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Soil erosion may well deplete the field in one generation."
+      "text": "Üst toprağın su ve rüzgârla gitmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Soil erosion may well deplete the field in one generation."
-    }
+    ]
    },
    {
     "say": [
@@ -32378,6 +32658,46 @@
      {
       "lang": "en",
       "text": "overfertilize"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Soil erosion may well deplete the field in one generation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Soil erosion may well deplete the field in one generation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suya karışan gübre artığına"
+     },
+     {
+      "lang": "en",
+      "text": "nitrate pollution"
+     },
+     {
+      "lang": "tr",
+      "text": "zararlıya karşı ilaç kullanımına ise"
+     },
+     {
+      "lang": "en",
+      "text": "pesticide use"
      },
      {
       "lang": "tr",
@@ -32409,19 +32729,35 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Suya karışan gübre artığına"
+      "text": "Çiçekten çiçeğe tozu taşımaya"
      },
      {
       "lang": "en",
-      "text": "nitrate pollution"
+      "text": "pollinate"
      },
      {
       "lang": "tr",
-      "text": "zararlıya karşı ilaç kullanımına ise"
+      "text": "bitkiyi hastalıktan koruyan kimyasala ise"
      },
      {
       "lang": "en",
-      "text": "pesticide use"
+      "text": "crop protection product"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağa işleyip kaybolmaya"
+     },
+     {
+      "lang": "en",
+      "text": "seep away"
      },
      {
       "lang": "tr",
@@ -32542,30 +32878,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çiçekten çiçeğe tozu taşımaya"
-     },
-     {
-      "lang": "en",
-      "text": "pollinate"
-     },
-     {
-      "lang": "tr",
-      "text": "bitkiyi hastalıktan koruyan kimyasala ise"
-     },
-     {
-      "lang": "en",
-      "text": "crop protection product"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -32581,22 +32893,6 @@
      "kind": "repeat",
      "target": "The rain lets the nitrate seep away."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Toprağa işleyip kaybolmaya"
-     },
-     {
-      "lang": "en",
-      "text": "seep away"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -33007,26 +33303,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "The middlemen skim off the margin; the throwaway society pays."
-     },
-     {
-      "lang": "tr",
-      "text": "Aracılar kaymağını alıyor, bedeli kullan-at toplumu ödüyor."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The middlemen skim off the margin; the throwaway society pays."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Kullanıp atmayı olağan sayan düzene"
      },
      {
@@ -33046,6 +33322,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The middlemen skim off the margin; the throwaway society pays."
+     },
+     {
+      "lang": "tr",
+      "text": "Aracılar kaymağını alıyor, bedeli kullan-at toplumu ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The middlemen skim off the margin; the throwaway society pays."
+    }
    },
    {
     "say": [
@@ -33089,6 +33385,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Denetimsiz çoğalmaya"
+     },
+     {
+      "lang": "en",
+      "text": "grow rampantly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -33107,18 +33419,6 @@
    },
    {
     "say": [
-     {
-      "lang": "tr",
-      "text": "Denetimsiz çoğalmaya"
-     },
-     {
-      "lang": "en",
-      "text": "grow rampantly"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     },
      {
       "lang": "tr",
       "text": "Alay burada suçlamıyor; suçlamayı dinleyene bırakıyor."
@@ -33291,17 +33591,9 @@
      },
      {
       "lang": "tr",
-      "text": "Değişen iklime göre düzen kurma demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The climate adaptation described above raises the questions of climate justice discussed below."
+      "text": "Değişen iklime göre düzen kurma demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The climate adaptation described above raises the questions of climate justice discussed below."
-    }
+    ]
    },
    {
     "say": [
@@ -33320,6 +33612,46 @@
      {
       "lang": "en",
       "text": "environmental compatibility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The climate adaptation described above raises the questions of climate justice discussed below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The climate adaptation described above raises the questions of climate justice discussed below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğaya karşı sorumluluğu soran dala"
+     },
+     {
+      "lang": "en",
+      "text": "environmental ethics"
+     },
+     {
+      "lang": "tr",
+      "text": "gıdasını dışarıdan alana ise"
+     },
+     {
+      "lang": "en",
+      "text": "import-dependent"
      },
      {
       "lang": "tr",
@@ -33351,19 +33683,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Doğaya karşı sorumluluğu soran dala"
+      "text": "Ayrımsız her yerde geçerli olana"
      },
      {
       "lang": "en",
-      "text": "environmental ethics"
+      "text": "across the board"
      },
      {
       "lang": "tr",
-      "text": "gıdasını dışarıdan alana ise"
+      "text": "iki şeyin bağını koparmaya ise"
      },
      {
       "lang": "en",
-      "text": "import-dependent"
+      "text": "decouple"
      },
      {
       "lang": "tr",
@@ -33488,19 +33820,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ayrımsız her yerde geçerli olana"
+      "text": "Tek kaynağa bağlı kalmayıp seçenek çoğaltmaya"
      },
      {
       "lang": "en",
-      "text": "across the board"
-     },
-     {
-      "lang": "tr",
-      "text": "iki şeyin bağını koparmaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "decouple"
+      "text": "diversify"
      },
      {
       "lang": "tr",
@@ -33527,22 +33851,6 @@
      "kind": "repeat",
      "target": "To decouple is not to diversify."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Tek kaynağa bağlı kalmayıp seçenek çoğaltmaya"
-     },
-     {
-      "lang": "en",
-      "text": "diversify"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -33824,26 +34132,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız ikinci yarıda nesneyi başa alıyor. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "They reforest the hillside; the plain, they deforest."
-     },
-     {
-      "lang": "tr",
-      "text": "Yamacı yeniden ağaçlandırıyorlar, ovayı ormansızlaştırıyorlar."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "They reforest the hillside; the plain, they deforest."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Ormanı kaldırmaya"
      },
      {
@@ -33863,6 +34151,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda nesneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They reforest the hillside; the plain, they deforest."
+     },
+     {
+      "lang": "tr",
+      "text": "Yamacı yeniden ağaçlandırıyorlar, ovayı ormansızlaştırıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They reforest the hillside; the plain, they deforest."
+    }
    },
    {
     "say": [
@@ -34249,17 +34557,9 @@
      },
      {
       "lang": "tr",
-      "text": "Salımın düşürülmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the brochure it is emission reduction; in the study, decarbonization."
+      "text": "Salımın düşürülmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the brochure it is emission reduction; in the study, decarbonization."
-    }
+    ]
    },
    {
     "say": [
@@ -34278,6 +34578,46 @@
      {
       "lang": "en",
       "text": "climate neutrality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the brochure it is emission reduction; in the study, decarbonization."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the brochure it is emission reduction; in the study, decarbonization."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünün üstüne basılan iddiaya"
+     },
+     {
+      "lang": "en",
+      "text": "climate-neutral"
+     },
+     {
+      "lang": "tr",
+      "text": "elektriğin kaynağının değişmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "energy transition"
      },
      {
       "lang": "tr",
@@ -34309,19 +34649,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ürünün üstüne basılan iddiaya"
+      "text": "Ulaşımın kendisinin değişmesine"
      },
      {
       "lang": "en",
-      "text": "climate-neutral"
+      "text": "transportation shift"
      },
      {
       "lang": "tr",
-      "text": "elektriğin kaynağının değişmesine ise"
+      "text": "az salım üretene ise"
      },
      {
       "lang": "en",
-      "text": "energy transition"
+      "text": "low-emission"
      },
      {
       "lang": "tr",
@@ -34430,19 +34770,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ulaşımın kendisinin değişmesine"
+      "text": "Kaynağın gelecek için korunmasına"
      },
      {
       "lang": "en",
-      "text": "transportation shift"
-     },
-     {
-      "lang": "tr",
-      "text": "az salım üretene ise"
-     },
-     {
-      "lang": "en",
-      "text": "low-emission"
+      "text": "resource conservation"
      },
      {
       "lang": "tr",
@@ -34469,22 +34801,6 @@
      "kind": "repeat",
      "target": "Resource conservation is more than a low-emission fleet."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kaynağın gelecek için korunmasına"
-     },
-     {
-      "lang": "en",
-      "text": "resource conservation"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -34710,17 +35026,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir kaynağın taşıyamayacağı kadar kullanılması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What overexploitation does is hide the pollutant load."
+      "text": "Bir kaynağın taşıyamayacağı kadar kullanılması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What overexploitation does is hide the pollutant load."
-    }
+    ]
    },
    {
     "say": [
@@ -34739,6 +35047,46 @@
      {
       "lang": "en",
       "text": "resource consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What overexploitation does is hide the pollutant load."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What overexploitation does is hide the pollutant load."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karbonu tutan orman ya da denize"
+     },
+     {
+      "lang": "en",
+      "text": "carbon sink"
+     },
+     {
+      "lang": "tr",
+      "text": "türlerin geri dönmemek üzere kaybolmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "species extinction"
      },
      {
       "lang": "tr",
@@ -34770,19 +35118,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karbonu tutan orman ya da denize"
+      "text": "Yıl boyu donmuş kalan toprağa"
      },
      {
       "lang": "en",
-      "text": "carbon sink"
+      "text": "permafrost"
      },
      {
       "lang": "tr",
-      "text": "türlerin geri dönmemek üzere kaybolmasına ise"
+      "text": "şehrin çevresinden sıcak olan bölgesine ise"
      },
      {
       "lang": "en",
-      "text": "species extinction"
+      "text": "heat island"
      },
      {
       "lang": "tr",
@@ -34903,19 +35251,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yıl boyu donmuş kalan toprağa"
+      "text": "Bir yeri doğal hâline geri getirmeye"
      },
      {
       "lang": "en",
-      "text": "permafrost"
-     },
-     {
-      "lang": "tr",
-      "text": "şehrin çevresinden sıcak olan bölgesine ise"
-     },
-     {
-      "lang": "en",
-      "text": "heat island"
+      "text": "rewild"
      },
      {
       "lang": "tr",
@@ -34942,22 +35282,6 @@
      "kind": "repeat",
      "target": "They rewild the stream and keep the heat island."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir yeri doğal hâline geri getirmeye"
-     },
-     {
-      "lang": "en",
-      "text": "rewild"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -35183,17 +35507,9 @@
      },
      {
       "lang": "tr",
-      "text": "Kesin bilinmese de zarardan kaçınma kuralı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The precautionary principle demands that the responsibility to protect be given priority."
+      "text": "Kesin bilinmese de zarardan kaçınma kuralı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The precautionary principle demands that the responsibility to protect be given priority."
-    }
+    ]
    },
    {
     "say": [
@@ -35212,6 +35528,46 @@
      {
       "lang": "en",
       "text": "natural capital"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The precautionary principle demands that the responsibility to protect be given priority."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The precautionary principle demands that the responsibility to protect be given priority."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Herkesin ortak kullandığı varlığa"
+     },
+     {
+      "lang": "en",
+      "text": "commons"
+     },
+     {
+      "lang": "tr",
+      "text": "doğanın insana karşılıksız verdiği yarara ise"
+     },
+     {
+      "lang": "en",
+      "text": "ecosystem service"
      },
      {
       "lang": "tr",
@@ -35243,19 +35599,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Herkesin ortak kullandığı varlığa"
+      "text": "Devletin kamu yararına el koymasına"
      },
      {
       "lang": "en",
-      "text": "commons"
+      "text": "expropriation"
      },
      {
       "lang": "tr",
-      "text": "doğanın insana karşılıksız verdiği yarara ise"
+      "text": "yaptığının hesabını verme işine ise"
      },
      {
       "lang": "en",
-      "text": "ecosystem service"
+      "text": "account for"
      },
      {
       "lang": "tr",
@@ -35364,19 +35720,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Devletin kamu yararına el koymasına"
+      "text": "Uzun vadede geçerliliğini koruyana"
      },
      {
       "lang": "en",
-      "text": "expropriation"
-     },
-     {
-      "lang": "tr",
-      "text": "yaptığının hesabını verme işine ise"
-     },
-     {
-      "lang": "en",
-      "text": "account for"
+      "text": "future-proof"
      },
      {
       "lang": "tr",
@@ -35403,22 +35751,6 @@
      "kind": "repeat",
      "target": "They must account for a future-proof plan."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Uzun vadede geçerliliğini koruyana"
-     },
-     {
-      "lang": "en",
-      "text": "future-proof"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -35652,17 +35984,9 @@
      },
      {
       "lang": "tr",
-      "text": "Sürekli büyümeye karşı çıkan düşünce demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as I agree with the criticism of growth, the growth imperative pays the pensions."
+      "text": "Sürekli büyümeye karşı çıkan düşünce demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as I agree with the criticism of growth, the growth imperative pays the pensions."
-    }
+    ]
    },
    {
     "say": [
@@ -35681,6 +36005,46 @@
      {
       "lang": "en",
       "text": "decoupling"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as I agree with the criticism of growth, the growth imperative pays the pensions."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as I agree with the criticism of growth, the growth imperative pays the pensions."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Az olanla yetinmeye"
+     },
+     {
+      "lang": "en",
+      "text": "sufficiency"
+     },
+     {
+      "lang": "tr",
+      "text": "kaynağın bir gün biteceğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "finiteness"
      },
      {
       "lang": "tr",
@@ -35712,19 +36076,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Az olanla yetinmeye"
+      "text": "Atığı yeniden üretime sokan düzene"
      },
      {
       "lang": "en",
-      "text": "sufficiency"
+      "text": "circular economy"
      },
      {
       "lang": "tr",
-      "text": "kaynağın bir gün biteceğine ise"
+      "text": "bir darbeden sonra toparlanabilmeye ise"
      },
      {
       "lang": "en",
-      "text": "finiteness"
+      "text": "resilience"
      },
      {
       "lang": "tr",
@@ -35833,19 +36197,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Atığı yeniden üretime sokan düzene"
+      "text": "Bir çözümün büyütülebilmesine"
      },
      {
       "lang": "en",
-      "text": "circular economy"
-     },
-     {
-      "lang": "tr",
-      "text": "bir darbeden sonra toparlanabilmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "resilience"
+      "text": "scalability"
      },
      {
       "lang": "tr",
@@ -35872,22 +36228,6 @@
      "kind": "repeat",
      "target": "Resilience is not the same as scalability."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir çözümün büyütülebilmesine"
-     },
-     {
-      "lang": "en",
-      "text": "scalability"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -36121,17 +36461,9 @@
      },
      {
       "lang": "tr",
-      "text": "Atığın hiç oluşmaması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Waste prevention is not the same as a closed loop."
+      "text": "Atığın hiç oluşmaması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Waste prevention is not the same as a closed loop."
-    }
+    ]
    },
    {
     "say": [
@@ -36150,6 +36482,46 @@
      {
       "lang": "en",
       "text": "obsolescence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Waste prevention is not the same as a closed loop."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Waste prevention is not the same as a closed loop."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünün uzun süre dayanmasına"
+     },
+     {
+      "lang": "en",
+      "text": "longevity"
+     },
+     {
+      "lang": "tr",
+      "text": "atıktan madde çıkarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "reclaim"
      },
      {
       "lang": "tr",
@@ -36181,19 +36553,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ürünün uzun süre dayanmasına"
+      "text": "Atıktan elde edilen ham maddeye"
      },
      {
       "lang": "en",
-      "text": "longevity"
+      "text": "recycled raw material"
      },
      {
       "lang": "tr",
-      "text": "atıktan madde çıkarmaya ise"
+      "text": "az kaynak harcayana ise"
      },
      {
       "lang": "en",
-      "text": "reclaim"
+      "text": "resource-saving"
      },
      {
       "lang": "tr",
@@ -36310,19 +36682,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Atıktan elde edilen ham maddeye"
+      "text": "Ürünün baştan sona çevresel bilançosuna"
      },
      {
       "lang": "en",
-      "text": "recycled raw material"
-     },
-     {
-      "lang": "tr",
-      "text": "az kaynak harcayana ise"
-     },
-     {
-      "lang": "en",
-      "text": "resource-saving"
+      "text": "life cycle assessment"
      },
      {
       "lang": "tr",
@@ -36349,22 +36713,6 @@
      "kind": "repeat",
      "target": "A life cycle assessment tells you if it is resource-saving."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ürünün baştan sona çevresel bilançosuna"
-     },
-     {
-      "lang": "en",
-      "text": "life cycle assessment"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -36590,17 +36938,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir önlemin davranışı yönlendirme gücü demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "One reports an incentive effect; another doubts the transformation process."
+      "text": "Bir önlemin davranışı yönlendirme gücü demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "One reports an incentive effect; another doubts the transformation process."
-    }
+    ]
    },
    {
     "say": [
@@ -36619,6 +36959,46 @@
      {
       "lang": "en",
       "text": "external funding"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One reports an incentive effect; another doubts the transformation process."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One reports an incentive effect; another doubts the transformation process."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alanın uzmanlarının yazdığı yayına"
+     },
+     {
+      "lang": "en",
+      "text": "academic journal"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sonucu su katıp zayıflatmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "dilute"
      },
      {
       "lang": "tr",
@@ -36650,19 +37030,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Alanın uzmanlarının yazdığı yayına"
+      "text": "Sürekli inip çıkan, kararsız olana"
      },
      {
       "lang": "en",
-      "text": "academic journal"
+      "text": "volatile"
      },
      {
       "lang": "tr",
-      "text": "bir sonucu su katıp zayıflatmaya ise"
+      "text": "gösterilebilir biçimde olana ise"
      },
      {
       "lang": "en",
-      "text": "dilute"
+      "text": "demonstrably"
      },
      {
       "lang": "tr",
@@ -36783,19 +37163,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sürekli inip çıkan, kararsız olana"
+      "text": "Bilginin nereden geldiğini sorgulamaya"
      },
      {
       "lang": "en",
-      "text": "volatile"
-     },
-     {
-      "lang": "tr",
-      "text": "gösterilebilir biçimde olana ise"
-     },
-     {
-      "lang": "en",
-      "text": "demonstrably"
+      "text": "source criticism"
      },
      {
       "lang": "tr",
@@ -36822,22 +37194,6 @@
      "kind": "repeat",
      "target": "Source criticism demonstrably improves the report; it starts with the external funding."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bilginin nereden geldiğini sorgulamaya"
-     },
-     {
-      "lang": "en",
-      "text": "source criticism"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -37071,17 +37427,9 @@
      },
      {
       "lang": "tr",
-      "text": "Sonucun kendi nedenini besleyen döngü demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A feedback loop may well push the system past a tipping point."
+      "text": "Sonucun kendi nedenini besleyen döngü demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A feedback loop may well push the system past a tipping point."
-    }
+    ]
    },
    {
     "say": [
@@ -37100,6 +37448,46 @@
      {
       "lang": "en",
       "text": "regenerative capacity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A feedback loop may well push the system past a tipping point."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A feedback loop may well push the system past a tipping point."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çözülüp toprağa karışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "decompose"
+     },
+     {
+      "lang": "tr",
+      "text": "bir maddeyi dışarı vermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "secrete"
      },
      {
       "lang": "tr",
@@ -37131,19 +37519,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çözülüp toprağa karışmaya"
+      "text": "Isıya ilişkin olana"
      },
      {
       "lang": "en",
-      "text": "decompose"
+      "text": "thermal"
      },
      {
       "lang": "tr",
-      "text": "bir maddeyi dışarı vermeye ise"
+      "text": "suyu geçirmeyene ise"
      },
      {
       "lang": "en",
-      "text": "secrete"
+      "text": "water-repellent"
      },
      {
       "lang": "tr",
@@ -37260,19 +37648,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Isıya ilişkin olana"
+      "text": "Zararı azaltmaya"
      },
      {
       "lang": "en",
-      "text": "thermal"
-     },
-     {
-      "lang": "tr",
-      "text": "suyu geçirmeyene ise"
-     },
-     {
-      "lang": "en",
-      "text": "water-repellent"
+      "text": "mitigate"
      },
      {
       "lang": "tr",
@@ -37299,22 +37679,6 @@
      "kind": "repeat",
      "target": "A water-repellent crust can mitigate nothing."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Zararı azaltmaya"
-     },
-     {
-      "lang": "en",
-      "text": "mitigate"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -37588,6 +37952,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Eski yapıyı yenilemeye"
+     },
+     {
+      "lang": "en",
+      "text": "refurbish"
+     },
+     {
+      "lang": "tr",
+      "text": "her şeyi arabaya göre kuran düzene ise"
+     },
+     {
+      "lang": "en",
+      "text": "car-friendly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
      },
      {
@@ -37608,19 +37996,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Eski yapıyı yenilemeye"
+      "text": "Yaşamaya elverişsiz olana"
      },
      {
       "lang": "en",
-      "text": "refurbish"
+      "text": "inhospitable"
      },
      {
       "lang": "tr",
-      "text": "her şeyi arabaya göre kuran düzene ise"
+      "text": "trafiğin tümden tıkanmasına ise"
      },
      {
       "lang": "en",
-      "text": "car-friendly"
+      "text": "traffic gridlock"
      },
      {
       "lang": "tr",
@@ -37721,19 +38109,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yaşamaya elverişsiz olana"
+      "text": "Elektrikle çalışan taşıma düzenine"
      },
      {
       "lang": "en",
-      "text": "inhospitable"
-     },
-     {
-      "lang": "tr",
-      "text": "trafiğin tümden tıkanmasına ise"
-     },
-     {
-      "lang": "en",
-      "text": "traffic gridlock"
+      "text": "electric mobility"
      },
      {
       "lang": "tr",
@@ -37760,22 +38140,6 @@
      "kind": "repeat",
      "target": "The new square is inhospitable but electric mobility arrived."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Elektrikle çalışan taşıma düzenine"
-     },
-     {
-      "lang": "en",
-      "text": "electric mobility"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -38009,17 +38373,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bölgenin bütününü düzenleme işi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The spatial planning outlined above is made concrete in the zoning plan below."
+      "text": "Bölgenin bütününü düzenleme işi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The spatial planning outlined above is made concrete in the zoning plan below."
-    }
+    ]
    },
    {
     "say": [
@@ -38038,6 +38394,46 @@
      {
       "lang": "en",
       "text": "change of use"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The spatial planning outlined above is made concrete in the zoning plan below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The spatial planning outlined above is made concrete in the zoning plan below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kent tasarımı bakımından anlamına gelen öbeğe"
+     },
+     {
+      "lang": "en",
+      "text": "in urban design terms"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüklük bakımından anlamına gelene ise"
+     },
+     {
+      "lang": "en",
+      "text": "in terms of scale"
      },
      {
       "lang": "tr",
@@ -38069,19 +38465,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kent tasarımı bakımından anlamına gelen öbeğe"
+      "text": "Küçük parçalardan oluşan dokuya"
      },
      {
       "lang": "en",
-      "text": "in urban design terms"
+      "text": "fine-grained"
      },
      {
       "lang": "tr",
-      "text": "büyüklük bakımından anlamına gelene ise"
+      "text": "herkesin ulaşabilmesine ise"
      },
      {
       "lang": "en",
-      "text": "in terms of scale"
+      "text": "accessibility"
      },
      {
       "lang": "tr",
@@ -38210,19 +38606,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük parçalardan oluşan dokuya"
+      "text": "Yol, su ve hattın kurulmasına"
      },
      {
       "lang": "en",
-      "text": "fine-grained"
-     },
-     {
-      "lang": "tr",
-      "text": "herkesin ulaşabilmesine ise"
-     },
-     {
-      "lang": "en",
-      "text": "accessibility"
+      "text": "infrastructure development"
      },
      {
       "lang": "tr",
@@ -38249,22 +38637,6 @@
      "kind": "repeat",
      "target": "The infrastructure development came after the accessibility study."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Yol, su ve hattın kurulmasına"
-     },
-     {
-      "lang": "en",
-      "text": "infrastructure development"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -38506,17 +38878,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir işin süreli olarak durdurulması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The moratorium survives as a promise, the construction freeze as a date."
+      "text": "Bir işin süreli olarak durdurulması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The moratorium survives as a promise, the construction freeze as a date."
-    }
+    ]
    },
    {
     "say": [
@@ -38541,6 +38905,22 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The moratorium survives as a promise, the construction freeze as a date."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The moratorium survives as a promise, the construction freeze as a date."
+    }
    },
    {
     "say": [
@@ -38731,26 +39111,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "They designate the block and call it a ground lease."
-     },
-     {
-      "lang": "tr",
-      "text": "Adayı tayin ediyorlar ve buna kiralık mülkiyet diyorlar."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "They designate the block and call it a ground lease."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Bir yeri resmen belirlemeye"
      },
      {
@@ -38766,6 +39126,26 @@
       "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They designate the block and call it a ground lease."
+     },
+     {
+      "lang": "tr",
+      "text": "Adayı tayin ediyorlar ve buna kiralık mülkiyet diyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They designate the block and call it a ground lease."
+    }
    },
    {
     "say": [
@@ -38983,17 +39363,9 @@
      },
      {
       "lang": "tr",
-      "text": "Ekonominin küçülmeye başlaması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the press release it is a downturn; in the model, stagnation."
+      "text": "Ekonominin küçülmeye başlaması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the press release it is a downturn; in the model, stagnation."
-    }
+    ]
    },
    {
     "say": [
@@ -39012,6 +39384,46 @@
      {
       "lang": "en",
       "text": "deflation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the press release it is a downturn; in the model, stagnation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the press release it is a downturn; in the model, stagnation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekonominin iniş çıkış ritmine"
+     },
+     {
+      "lang": "en",
+      "text": "business cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "paranın değerinin düşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "devaluation"
      },
      {
       "lang": "tr",
@@ -39043,19 +39455,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ekonominin iniş çıkış ritmine"
+      "text": "Üretimin ve işin gerçekten döndüğü alana"
      },
      {
       "lang": "en",
-      "text": "business cycle"
+      "text": "real economy"
      },
      {
       "lang": "tr",
-      "text": "paranın değerinin düşmesine ise"
+      "text": "enflasyondan arındırılmamış hâliyle anlamına gelen öbeğe ise"
      },
      {
       "lang": "en",
-      "text": "devaluation"
+      "text": "in nominal terms"
      },
      {
       "lang": "tr",
@@ -39168,19 +39580,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üretimin ve işin gerçekten döndüğü alana"
+      "text": "Fiyatların genel düzeyinin sabit kalmasına"
      },
      {
       "lang": "en",
-      "text": "real economy"
-     },
-     {
-      "lang": "tr",
-      "text": "enflasyondan arındırılmamış hâliyle anlamına gelen öbeğe ise"
-     },
-     {
-      "lang": "en",
-      "text": "in nominal terms"
+      "text": "price stability"
      },
      {
       "lang": "tr",
@@ -39207,22 +39611,6 @@
      "kind": "repeat",
      "target": "In nominal terms, price stability held."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Fiyatların genel düzeyinin sabit kalmasına"
-     },
-     {
-      "lang": "en",
-      "text": "price stability"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -39448,17 +39836,9 @@
      },
      {
       "lang": "tr",
-      "text": "Devletin gelirinden fazla harcaması demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What the budget deficit does is hide a market failure."
+      "text": "Devletin gelirinden fazla harcaması demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What the budget deficit does is hide a market failure."
-    }
+    ]
    },
    {
     "say": [
@@ -39477,6 +39857,46 @@
      {
       "lang": "en",
       "text": "bailout package"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the budget deficit does is hide a market failure."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the budget deficit does is hide a market failure."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyatın gerçek değerden kopup şişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "speculative bubble"
+     },
+     {
+      "lang": "tr",
+      "text": "bir kurumun çöküşünün bütün sistemi tehdit etmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "systemic risk"
      },
      {
       "lang": "tr",
@@ -39508,19 +39928,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Fiyatın gerçek değerden kopup şişmesine"
+      "text": "İthalatın ihracattan fazla olmasına"
      },
      {
       "lang": "en",
-      "text": "speculative bubble"
+      "text": "trade deficit"
      },
      {
       "lang": "tr",
-      "text": "bir kurumun çöküşünün bütün sistemi tehdit etmesine ise"
+      "text": "borcunu taşıyamayacak durumda olana ise"
      },
      {
       "lang": "en",
-      "text": "systemic risk"
+      "text": "over-indebted"
      },
      {
       "lang": "tr",
@@ -39637,19 +40057,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İthalatın ihracattan fazla olmasına"
+      "text": "Paranın ülkeyi hızla terk etmesine"
      },
      {
       "lang": "en",
-      "text": "trade deficit"
-     },
-     {
-      "lang": "tr",
-      "text": "borcunu taşıyamayacak durumda olana ise"
-     },
-     {
-      "lang": "en",
-      "text": "over-indebted"
+      "text": "capital flight"
      },
      {
       "lang": "tr",
@@ -39676,22 +40088,6 @@
      "kind": "repeat",
      "target": "An over-indebted state fears capital flight."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Paranın ülkeyi hızla terk etmesine"
-     },
-     {
-      "lang": "en",
-      "text": "capital flight"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -39917,17 +40313,9 @@
      },
      {
       "lang": "tr",
-      "text": "Piyasayı denetleyen resmî kurum demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The financial regulator demands that the disclosure be complete."
+      "text": "Piyasayı denetleyen resmî kurum demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The financial regulator demands that the disclosure be complete."
-    }
+    ]
    },
    {
     "say": [
@@ -39946,6 +40334,46 @@
      {
       "lang": "en",
       "text": "lack of transparency"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The financial regulator demands that the disclosure be complete."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The financial regulator demands that the disclosure be complete."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İhbarın yapıldığı resmî birime"
+     },
+     {
+      "lang": "en",
+      "text": "reporting office"
+     },
+     {
+      "lang": "tr",
+      "text": "içeriden bildiren kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "whistleblower"
      },
      {
       "lang": "tr",
@@ -39977,19 +40405,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İhbarın yapıldığı resmî birime"
+      "text": "Kurala aykırı davranışa"
      },
      {
       "lang": "en",
-      "text": "reporting office"
+      "text": "misconduct"
      },
      {
       "lang": "tr",
-      "text": "içeriden bildiren kişiye ise"
+      "text": "yetkiyi kendi çıkarına kullanmaya ise"
      },
      {
       "lang": "en",
-      "text": "whistleblower"
+      "text": "abuse of power"
      },
      {
       "lang": "tr",
@@ -40098,19 +40526,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kurala aykırı davranışa"
+      "text": "Ayrıntısıyla incelemeye"
      },
      {
       "lang": "en",
-      "text": "misconduct"
-     },
-     {
-      "lang": "tr",
-      "text": "yetkiyi kendi çıkarına kullanmaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "abuse of power"
+      "text": "scrutinize"
      },
      {
       "lang": "tr",
@@ -40137,22 +40557,6 @@
      "kind": "repeat",
      "target": "They scrutinize every abuse of power."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ayrıntısıyla incelemeye"
-     },
-     {
-      "lang": "en",
-      "text": "scrutinize"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -40386,17 +40790,9 @@
      },
      {
       "lang": "tr",
-      "text": "Merkez bankasının para üstündeki kararları demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as I welcome the monetary policy, the key interest rate hurts the young."
+      "text": "Merkez bankasının para üstündeki kararları demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as I welcome the monetary policy, the key interest rate hurts the young."
-    }
+    ]
    },
    {
     "say": [
@@ -40415,6 +40811,62 @@
      {
       "lang": "en",
       "text": "expansionary"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Parayla ilgili olana"
+     },
+     {
+      "lang": "en",
+      "text": "monetary"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as I welcome the monetary policy, the key interest rate hurts the young."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as I welcome the monetary policy, the key interest rate hurts the young."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Parayı kısan yöne"
+     },
+     {
+      "lang": "en",
+      "text": "restrictive"
+     },
+     {
+      "lang": "tr",
+      "text": "döngünün tersine çalışana ise"
+     },
+     {
+      "lang": "en",
+      "text": "countercyclical"
      },
      {
       "lang": "tr",
@@ -40446,19 +40898,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Parayı kısan yöne"
+      "text": "Devletin vergi ve harcama kararlarına"
      },
      {
       "lang": "en",
-      "text": "restrictive"
+      "text": "fiscal policy"
      },
      {
       "lang": "tr",
-      "text": "döngünün tersine çalışana ise"
+      "text": "piyasadaki toplam paraya ise"
      },
      {
       "lang": "en",
-      "text": "countercyclical"
+      "text": "money supply"
      },
      {
       "lang": "tr",
@@ -40571,30 +41023,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Devletin vergi ve harcama kararlarına"
-     },
-     {
-      "lang": "en",
-      "text": "fiscal policy"
-     },
-     {
-      "lang": "tr",
-      "text": "piyasadaki toplam paraya ise"
-     },
-     {
-      "lang": "en",
-      "text": "money supply"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -40610,22 +41038,6 @@
      "kind": "repeat",
      "target": "The money supply is a monetary question."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Parayla ilgili olana"
-     },
-     {
-      "lang": "en",
-      "text": "monetary"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -40859,17 +41271,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir birim daha üretmenin maliyeti demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A marginal cost is not an opportunity cost."
+      "text": "Bir birim daha üretmenin maliyeti demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A marginal cost is not an opportunity cost."
-    }
+    ]
    },
    {
     "say": [
@@ -40888,6 +41292,46 @@
      {
       "lang": "en",
       "text": "follow-on costs"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A marginal cost is not an opportunity cost."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A marginal cost is not an opportunity cost."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütçenin aşılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "cost overrun"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüdükçe birim maliyetin düşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "economy of scale"
      },
      {
       "lang": "tr",
@@ -40919,19 +41363,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bütçenin aşılmasına"
+      "text": "Yatırım için gereken paraya"
      },
      {
       "lang": "en",
-      "text": "cost overrun"
+      "text": "capital requirement"
      },
      {
       "lang": "tr",
-      "text": "büyüdükçe birim maliyetin düşmesine ise"
+      "text": "yatırımın zamanla geri ödenmesine ise"
      },
      {
       "lang": "en",
-      "text": "economy of scale"
+      "text": "amortization"
      },
      {
       "lang": "tr",
@@ -41052,19 +41496,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yatırım için gereken paraya"
+      "text": "Bir yatırımdan umulan kazanca"
      },
      {
       "lang": "en",
-      "text": "capital requirement"
-     },
-     {
-      "lang": "tr",
-      "text": "yatırımın zamanla geri ödenmesine ise"
-     },
-     {
-      "lang": "en",
-      "text": "amortization"
+      "text": "expected return"
      },
      {
       "lang": "tr",
@@ -41091,22 +41527,6 @@
      "kind": "repeat",
      "target": "The amortization comes before the expected return."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir yatırımdan umulan kazanca"
-     },
-     {
-      "lang": "en",
-      "text": "expected return"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -41332,17 +41752,9 @@
      },
      {
       "lang": "tr",
-      "text": "Defterleri kasten yanlış tutmak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "One alleges accounting fraud; another proves embezzlement."
+      "text": "Defterleri kasten yanlış tutmak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "One alleges accounting fraud; another proves embezzlement."
-    }
+    ]
    },
    {
     "say": [
@@ -41367,6 +41779,22 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One alleges accounting fraud; another proves embezzlement."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One alleges accounting fraud; another proves embezzlement."
+    }
    },
    {
     "say": [
@@ -41405,6 +41833,30 @@
      {
       "lang": "en",
       "text": "feign"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendine ait olmayan parayı almaya"
+     },
+     {
+      "lang": "en",
+      "text": "embezzle"
+     },
+     {
+      "lang": "tr",
+      "text": "içeriden öğrenilen bilgiyle alım satım yapmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "insider trading"
      },
      {
       "lang": "tr",
@@ -41521,19 +41973,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kendine ait olmayan parayı almaya"
+      "text": "Suçtan gelen parayı temiz göstermeye"
      },
      {
       "lang": "en",
-      "text": "embezzle"
-     },
-     {
-      "lang": "tr",
-      "text": "içeriden öğrenilen bilgiyle alım satım yapmaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "insider trading"
+      "text": "money laundering"
      },
      {
       "lang": "tr",
@@ -41560,22 +42004,6 @@
      "kind": "repeat",
      "target": "Insider trading is not money laundering, and a gray area is no pretext."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Suçtan gelen parayı temiz göstermeye"
-     },
-     {
-      "lang": "en",
-      "text": "money laundering"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -41809,17 +42237,9 @@
      },
      {
       "lang": "tr",
-      "text": "Yatırımın iniş çıkış dönemi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The investment cycle may well turn before the savings rate falls."
+      "text": "Yatırımın iniş çıkış dönemi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The investment cycle may well turn before the savings rate falls."
-    }
+    ]
    },
    {
     "say": [
@@ -41838,6 +42258,46 @@
      {
       "lang": "en",
       "text": "savings potential"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The investment cycle may well turn before the savings rate falls."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The investment cycle may well turn before the savings rate falls."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borcunu vadesinde ödeyebilmeye"
+     },
+     {
+      "lang": "en",
+      "text": "solvency"
+     },
+     {
+      "lang": "tr",
+      "text": "bunu yapabilen kuruma ise"
+     },
+     {
+      "lang": "en",
+      "text": "solvent"
      },
      {
       "lang": "tr",
@@ -41869,19 +42329,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Borcunu vadesinde ödeyebilmeye"
+      "text": "Borcun ödenmeme ihtimaline"
      },
      {
       "lang": "en",
-      "text": "solvency"
+      "text": "default risk"
      },
      {
       "lang": "tr",
-      "text": "bunu yapabilen kuruma ise"
+      "text": "risk almaya istekli olmaya ise"
      },
      {
       "lang": "en",
-      "text": "solvent"
+      "text": "risk appetite"
      },
      {
       "lang": "tr",
@@ -42002,19 +42462,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Borcun ödenmeme ihtimaline"
+      "text": "Riskten uzak durma eğilimine"
      },
      {
       "lang": "en",
-      "text": "default risk"
-     },
-     {
-      "lang": "tr",
-      "text": "risk almaya istekli olmaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "risk appetite"
+      "text": "risk aversion"
      },
      {
       "lang": "tr",
@@ -42041,22 +42493,6 @@
      "kind": "repeat",
      "target": "Risk aversion grows in winter."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Riskten uzak durma eğilimine"
-     },
-     {
-      "lang": "en",
-      "text": "risk aversion"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -42775,17 +43211,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir pazarda pay kazanmak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The market penetration described above leads to the market saturation discussed below."
+      "text": "Bir pazarda pay kazanmak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The market penetration described above leads to the market saturation discussed below."
-    }
+    ]
    },
    {
     "say": [
@@ -42804,6 +43232,46 @@
      {
       "lang": "en",
       "text": "competitiveness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The market penetration described above leads to the market saturation discussed below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The market penetration described above leads to the market saturation discussed below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Pazarda tek satıcı olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "monopoly position"
+     },
+     {
+      "lang": "tr",
+      "text": "rakibin altında fiyat vermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "undercut"
      },
      {
       "lang": "tr",
@@ -42835,19 +43303,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Pazarda tek satıcı olmaya"
+      "text": "Rakiplerin gizlice fiyat üstünde anlaşmasına"
      },
      {
       "lang": "en",
-      "text": "monopoly position"
+      "text": "price fixing"
      },
      {
       "lang": "tr",
-      "text": "rakibin altında fiyat vermeye ise"
+      "text": "hızla büyüyen ülke ekonomisine ise"
      },
      {
       "lang": "en",
-      "text": "undercut"
+      "text": "emerging economy"
      },
      {
       "lang": "tr",
@@ -42972,19 +43440,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Rakiplerin gizlice fiyat üstünde anlaşmasına"
+      "text": "Pazarlıkta elde tutulan üstünlüğe"
      },
      {
       "lang": "en",
-      "text": "price fixing"
-     },
-     {
-      "lang": "tr",
-      "text": "hızla büyüyen ülke ekonomisine ise"
-     },
-     {
-      "lang": "en",
-      "text": "emerging economy"
+      "text": "bargaining chip"
      },
      {
       "lang": "tr",
@@ -43011,22 +43471,6 @@
      "kind": "repeat",
      "target": "In an emerging economy, time is the bargaining chip."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Pazarlıkta elde tutulan üstünlüğe"
-     },
-     {
-      "lang": "en",
-      "text": "bargaining chip"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -43268,17 +43712,9 @@
      },
      {
       "lang": "tr",
-      "text": "İşin rekabetle verildiği süreç demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The bidding process survives as a form, the permitting process as a delay."
+      "text": "İşin rekabetle verildiği süreç demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The bidding process survives as a form, the permitting process as a delay."
-    }
+    ]
    },
    {
     "say": [
@@ -43297,6 +43733,46 @@
      {
       "lang": "en",
       "text": "consortium"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The bidding process survives as a form, the permitting process as a delay."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The bidding process survives as a form, the permitting process as a delay."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin kim tarafından ve nasıl işletileceğine"
+     },
+     {
+      "lang": "en",
+      "text": "operating model"
+     },
+     {
+      "lang": "tr",
+      "text": "iki hedefin birbirini engellemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "conflicting goals"
      },
      {
       "lang": "tr",
@@ -43328,19 +43804,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşin kim tarafından ve nasıl işletileceğine"
+      "text": "Ağır ve yorucu olana"
      },
      {
       "lang": "en",
-      "text": "operating model"
+      "text": "cumbersome"
      },
      {
       "lang": "tr",
-      "text": "iki hedefin birbirini engellemesine ise"
+      "text": "bir şeyin eksikliği yüzünden anlamına gelen öbeğe ise"
      },
      {
       "lang": "en",
-      "text": "conflicting goals"
+      "text": "for lack of"
      },
      {
       "lang": "tr",
@@ -43453,23 +43929,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ağır ve yorucu olana"
+      "text": "Birinin tarafından anlamına gelen öbeğe"
      },
      {
       "lang": "en",
-      "text": "cumbersome"
-     },
-     {
-      "lang": "tr",
-      "text": "bir şeyin eksikliği yüzünden anlamına gelen öbeğe ise"
-     },
-     {
-      "lang": "en",
-      "text": "for lack of"
+      "text": "on the part of"
      },
      {
       "lang": "tr",
       "text": "denir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
      }
     ]
    },
@@ -43492,26 +43964,6 @@
      "kind": "repeat",
      "target": "For lack of interest on the part of the city, nothing moved."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Birinin tarafından anlamına gelen öbeğe"
-     },
-     {
-      "lang": "en",
-      "text": "on the part of"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     },
-     {
-      "lang": "tr",
-      "text": "Bu, modülün son Konuşma adımı; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
-     }
-    ]
    },
    {
     "say": [
@@ -43729,17 +44181,9 @@
      },
      {
       "lang": "tr",
-      "text": "İkna etme sanatı demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "In the essay it is rhetoric; in the pamphlet, pathos."
+      "text": "İkna etme sanatı demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "In the essay it is rhetoric; in the pamphlet, pathos."
-    }
+    ]
    },
    {
     "say": [
@@ -43769,20 +44213,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız seçimi hatadan ayırıyor. Tekrar et:"
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "A stylistic device is a choice; a break in style is a mistake."
-     },
-     {
-      "lang": "tr",
-      "text": "Üslup aracı bir seçimdir, üslup kopukluğu bir hatadır."
+      "text": "In the essay it is rhetoric; in the pamphlet, pathos."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A stylistic device is a choice; a break in style is a mistake."
+     "target": "In the essay it is rhetoric; in the pamphlet, pathos."
     }
    },
    {
@@ -43808,6 +44248,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız seçimi hatadan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A stylistic device is a choice; a break in style is a mistake."
+     },
+     {
+      "lang": "tr",
+      "text": "Üslup aracı bir seçimdir, üslup kopukluğu bir hatadır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A stylistic device is a choice; a break in style is a mistake."
+    }
    },
    {
     "say": [
@@ -43934,6 +44394,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Dil bakımından anlamına gelen söze"
+     },
+     {
+      "lang": "en",
+      "text": "linguistically"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -43949,22 +44425,6 @@
      "kind": "repeat",
      "target": "Linguistically, the emotionalization is easy to see: the register drops."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Dil bakımından anlamına gelen söze"
-     },
-     {
-      "lang": "en",
-      "text": "linguistically"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -44190,17 +44650,9 @@
      },
      {
       "lang": "tr",
-      "text": "Savın adım adım kuruluşu demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "What the line of argument does is hide a flaw in reasoning."
+      "text": "Savın adım adım kuruluşu demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "What the line of argument does is hide a flaw in reasoning."
-    }
+    ]
    },
    {
     "say": [
@@ -44219,6 +44671,46 @@
      {
       "lang": "en",
       "text": "prevailing doctrine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the line of argument does is hide a flaw in reasoning."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the line of argument does is hide a flaw in reasoning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ortak varsayımları paylaşan düşünce topluluğuna"
+     },
+     {
+      "lang": "en",
+      "text": "school of thought"
+     },
+     {
+      "lang": "tr",
+      "text": "üstünde anlaşılamayan konuya ise"
+     },
+     {
+      "lang": "en",
+      "text": "contentious issue"
      },
      {
       "lang": "tr",
@@ -44250,19 +44742,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ortak varsayımları paylaşan düşünce topluluğuna"
+      "text": "Uzmanların birbiriyle yürüttüğü tartışmaya"
      },
      {
       "lang": "en",
-      "text": "school of thought"
+      "text": "debate among experts"
      },
      {
       "lang": "tr",
-      "text": "üstünde anlaşılamayan konuya ise"
+      "text": "sonradan bakıldığında anlamına gelen öbeğe ise"
      },
      {
       "lang": "en",
-      "text": "contentious issue"
+      "text": "in retrospect"
      },
      {
       "lang": "tr",
@@ -44383,19 +44875,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Uzmanların birbiriyle yürüttüğü tartışmaya"
+      "text": "Artıyı eksiyi karşılaştırmaya"
      },
      {
       "lang": "en",
-      "text": "debate among experts"
-     },
-     {
-      "lang": "tr",
-      "text": "sonradan bakıldığında anlamına gelen öbeğe ise"
-     },
-     {
-      "lang": "en",
-      "text": "in retrospect"
+      "text": "weighing up"
      },
      {
       "lang": "tr",
@@ -44422,22 +44906,6 @@
      "kind": "repeat",
      "target": "In retrospect, the weighing up came too late."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Artıyı eksiyi karşılaştırmaya"
-     },
-     {
-      "lang": "en",
-      "text": "weighing up"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -44703,6 +45171,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Kamunun bilgiye erişme hakkına"
+     },
+     {
+      "lang": "en",
+      "text": "freedom of information"
+     },
+     {
+      "lang": "tr",
+      "text": "kişinin kendi sözleşmesini kurma serbestliğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "freedom of contract"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "İkinci kalıbımız olmasaydıyı hak savında kuruyor. Tekrar et:"
      },
      {
@@ -44723,19 +45215,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kamunun bilgiye erişme hakkına"
+      "text": "Mahkemenin kararı denetlemesine"
      },
      {
       "lang": "en",
-      "text": "freedom of information"
+      "text": "judicial review"
      },
      {
       "lang": "tr",
-      "text": "kişinin kendi sözleşmesini kurma serbestliğine ise"
+      "text": "devletin kendi varlığını öne süren gerekçesine ise"
      },
      {
       "lang": "en",
-      "text": "freedom of contract"
+      "text": "reasons of state"
      },
      {
       "lang": "tr",
@@ -44848,19 +45340,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Mahkemenin kararı denetlemesine"
+      "text": "Suçtan doğan kişisel sorumluluğa"
      },
      {
       "lang": "en",
-      "text": "judicial review"
-     },
-     {
-      "lang": "tr",
-      "text": "devletin kendi varlığını öne süren gerekçesine ise"
-     },
-     {
-      "lang": "en",
-      "text": "reasons of state"
+      "text": "criminal responsibility"
      },
      {
       "lang": "tr",
@@ -44887,22 +45371,6 @@
      "kind": "repeat",
      "target": "No reasons of state cancel criminal responsibility."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Suçtan doğan kişisel sorumluluğa"
-     },
-     {
-      "lang": "en",
-      "text": "criminal responsibility"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -45136,17 +45604,9 @@
      },
      {
       "lang": "tr",
-      "text": "Her şeyin bakış açısına göre değiştiği görüşü demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Much as relativism unsettles us, no maxim survives without doubt."
+      "text": "Her şeyin bakış açısına göre değiştiği görüşü demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Much as relativism unsettles us, no maxim survives without doubt."
-    }
+    ]
    },
    {
     "say": [
@@ -45165,6 +45625,46 @@
      {
       "lang": "en",
       "text": "commandment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as relativism unsettles us, no maxim survives without doubt."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as relativism unsettles us, no maxim survives without doubt."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yerleşmiş iyi huya"
+     },
+     {
+      "lang": "en",
+      "text": "virtue"
+     },
+     {
+      "lang": "tr",
+      "text": "sözüyle işi bir olma hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "integrity"
      },
      {
       "lang": "tr",
@@ -45196,19 +45696,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yerleşmiş iyi huya"
+      "text": "Başkasını kendinden önce koymaya"
      },
      {
       "lang": "en",
-      "text": "virtue"
+      "text": "altruism"
      },
      {
       "lang": "tr",
-      "text": "sözüyle işi bir olma hâline ise"
+      "text": "kendi sınırını bilmeye ise"
      },
      {
       "lang": "en",
-      "text": "integrity"
+      "text": "humility"
      },
      {
       "lang": "tr",
@@ -45317,19 +45817,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Başkasını kendinden önce koymaya"
+      "text": "Kendini olduğundan büyük görmeye"
      },
      {
       "lang": "en",
-      "text": "altruism"
-     },
-     {
-      "lang": "tr",
-      "text": "kendi sınırını bilmeye ise"
-     },
-     {
-      "lang": "en",
-      "text": "humility"
+      "text": "arrogance"
      },
      {
       "lang": "tr",
@@ -45356,22 +45848,6 @@
      "kind": "repeat",
      "target": "Humility is not the opposite of arrogance."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Kendini olduğundan büyük görmeye"
-     },
-     {
-      "lang": "en",
-      "text": "arrogance"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -45605,17 +46081,9 @@
      },
      {
       "lang": "tr",
-      "text": "Karşılaştırma için alınan ölçü demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A reference value is not a guideline value."
+      "text": "Karşılaştırma için alınan ölçü demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A reference value is not a guideline value."
-    }
+    ]
    },
    {
     "say": [
@@ -45634,6 +46102,46 @@
      {
       "lang": "en",
       "text": "significance level"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A reference value is not a guideline value."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A reference value is not a guideline value."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ötekilerden çok uzak düşen ölçüme"
+     },
+     {
+      "lang": "en",
+      "text": "outlier"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı sonucun yeniden elde edilebilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "repeatability"
      },
      {
       "lang": "tr",
@@ -45665,19 +46173,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ötekilerden çok uzak düşen ölçüme"
+      "text": "Ölçümü bozan etkiye"
      },
      {
       "lang": "en",
-      "text": "outlier"
+      "text": "source of error"
      },
      {
       "lang": "tr",
-      "text": "aynı sonucun yeniden elde edilebilmesine ise"
+      "text": "tam değere yakın sayıya ise"
      },
      {
       "lang": "en",
-      "text": "repeatability"
+      "text": "approximation"
      },
      {
       "lang": "tr",
@@ -45794,19 +46302,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ölçümü bozan etkiye"
+      "text": "Bir olayın olma ihtimaline"
      },
      {
       "lang": "en",
-      "text": "source of error"
-     },
-     {
-      "lang": "tr",
-      "text": "tam değere yakın sayıya ise"
-     },
-     {
-      "lang": "en",
-      "text": "approximation"
+      "text": "probability of occurrence"
      },
      {
       "lang": "tr",
@@ -45833,22 +46333,6 @@
      "kind": "repeat",
      "target": "An approximation is not a probability of occurrence."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir olayın olma ihtimaline"
-     },
-     {
-      "lang": "en",
-      "text": "probability of occurrence"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -46114,6 +46598,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Gerçeğin eğilip bükülmesine"
+     },
+     {
+      "lang": "en",
+      "text": "distortion"
+     },
+     {
+      "lang": "tr",
+      "text": "söylenmesine gerek olmayan apaçık söze ise"
+     },
+     {
+      "lang": "en",
+      "text": "truism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "İkinci kalıbımız çarpıtmayı klişeden ayırıyor. Tekrar et:"
      },
      {
@@ -46134,19 +46642,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Gerçeğin eğilip bükülmesine"
+      "text": "Bir sözün inandırıcılığına"
      },
      {
       "lang": "en",
-      "text": "distortion"
+      "text": "persuasiveness"
      },
      {
       "lang": "tr",
-      "text": "söylenmesine gerek olmayan apaçık söze ise"
+      "text": "gerekçesi olana ise"
      },
      {
       "lang": "en",
-      "text": "truism"
+      "text": "justifiable"
      },
      {
       "lang": "tr",
@@ -46267,19 +46775,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir sözün inandırıcılığına"
+      "text": "Ne yaptığını bilerek anlamına gelen söze"
      },
      {
       "lang": "en",
-      "text": "persuasiveness"
-     },
-     {
-      "lang": "tr",
-      "text": "gerekçesi olana ise"
-     },
-     {
-      "lang": "en",
-      "text": "justifiable"
+      "text": "knowingly"
      },
      {
       "lang": "tr",
@@ -46306,22 +46806,6 @@
      "kind": "repeat",
      "target": "They knowingly left it out."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Ne yaptığını bilerek anlamına gelen söze"
-     },
-     {
-      "lang": "en",
-      "text": "knowingly"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -46555,17 +47039,9 @@
      },
      {
       "lang": "tr",
-      "text": "İnsanın kendini nasıl gördüğü demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "A self-image may well outlive self-knowledge."
+      "text": "İnsanın kendini nasıl gördüğü demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "A self-image may well outlive self-knowledge."
-    }
+    ]
    },
    {
     "say": [
@@ -46584,6 +47060,46 @@
      {
       "lang": "en",
       "text": "self-deception"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A self-image may well outlive self-knowledge."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A self-image may well outlive self-knowledge."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Acıyı uzak tutan iç tepkiye"
+     },
+     {
+      "lang": "en",
+      "text": "defense mechanism"
+     },
+     {
+      "lang": "tr",
+      "text": "zorlukla baş etme yoluna ise"
+     },
+     {
+      "lang": "en",
+      "text": "coping strategy"
      },
      {
       "lang": "tr",
@@ -46615,19 +47131,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Acıyı uzak tutan iç tepkiye"
+      "text": "Bir kişiye duyulanın başkasına yöneltilmesine"
      },
      {
       "lang": "en",
-      "text": "defense mechanism"
+      "text": "transference"
      },
      {
       "lang": "tr",
-      "text": "zorlukla baş etme yoluna ise"
+      "text": "henüz açığa çıkmamış olana ise"
      },
      {
       "lang": "en",
-      "text": "coping strategy"
+      "text": "latent"
      },
      {
       "lang": "tr",
@@ -46744,19 +47260,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kişiye duyulanın başkasına yöneltilmesine"
+      "text": "Farkına varmadan etkileyene"
      },
      {
       "lang": "en",
-      "text": "transference"
-     },
-     {
-      "lang": "tr",
-      "text": "henüz açığa çıkmamış olana ise"
-     },
-     {
-      "lang": "en",
-      "text": "latent"
+      "text": "subliminal"
      },
      {
       "lang": "tr",
@@ -46783,22 +47291,6 @@
      "kind": "repeat",
      "target": "The subliminal part stays unsaid."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Farkına varmadan etkileyene"
-     },
-     {
-      "lang": "en",
-      "text": "subliminal"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -47205,26 +47697,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "Nobody wanted to belittle anyone; they simply chose to retort."
-     },
-     {
-      "lang": "tr",
-      "text": "Kimse kimseyi küçümsemek istemedi, yalnızca ters cevap vermeyi seçtiler."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Nobody wanted to belittle anyone; they simply chose to retort."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Değersizmiş gibi göstermeye"
      },
      {
@@ -47244,6 +47716,26 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody wanted to belittle anyone; they simply chose to retort."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse kimseyi küçümsemek istemedi, yalnızca ters cevap vermeyi seçtiler."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody wanted to belittle anyone; they simply chose to retort."
+    }
    },
    {
     "say": [
@@ -47287,6 +47779,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Hiç umursamamaya"
+     },
+     {
+      "lang": "en",
+      "text": "indifference"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şunu söyle:"
      },
      {
@@ -47305,18 +47813,6 @@
    },
    {
     "say": [
-     {
-      "lang": "tr",
-      "text": "Hiç umursamamaya"
-     },
-     {
-      "lang": "en",
-      "text": "indifference"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     },
      {
       "lang": "tr",
       "text": "Alay burada suçlamıyor; yalnız adın yanlış konduğunu gösteriyor."
@@ -47489,17 +47985,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir kararın etkilerinin ölçülmesi demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The impact assessment above must be weighed against the benefit assessment below."
+      "text": "Bir kararın etkilerinin ölçülmesi demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The impact assessment above must be weighed against the benefit assessment below."
-    }
+    ]
    },
    {
     "say": [
@@ -47518,6 +48006,46 @@
      {
       "lang": "en",
       "text": "pivotal decision"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The impact assessment above must be weighed against the benefit assessment below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The impact assessment above must be weighed against the benefit assessment below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tekniğin sonuçlarının önceden incelenmesine"
+     },
+     {
+      "lang": "en",
+      "text": "technology assessment"
+     },
+     {
+      "lang": "tr",
+      "text": "geri dönüşü olmamasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "irreversibility"
      },
      {
       "lang": "tr",
@@ -47549,19 +48077,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tekniğin sonuçlarının önceden incelenmesine"
+      "text": "İçinde çelişki taşımayana"
      },
      {
       "lang": "en",
-      "text": "technology assessment"
+      "text": "coherent"
      },
      {
       "lang": "tr",
-      "text": "geri dönüşü olmamasına ise"
+      "text": "yeni öğrenilene ise"
      },
      {
       "lang": "en",
-      "text": "irreversibility"
+      "text": "new insight"
      },
      {
       "lang": "tr",
@@ -47686,19 +48214,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İçinde çelişki taşımayana"
+      "text": "Beklenenin olmamasına"
      },
      {
       "lang": "en",
-      "text": "coherent"
-     },
-     {
-      "lang": "tr",
-      "text": "yeni öğrenilene ise"
-     },
-     {
-      "lang": "en",
-      "text": "new insight"
+      "text": "fail to materialize"
      },
      {
       "lang": "tr",
@@ -47725,22 +48245,6 @@
      "kind": "repeat",
      "target": "A new insight can fail to materialize."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Beklenenin olmamasına"
-     },
-     {
-      "lang": "en",
-      "text": "fail to materialize"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -47982,17 +48486,9 @@
      },
      {
       "lang": "tr",
-      "text": "Bir şeyin peşine düşme demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "The pursuit survives as a habit, the end in itself as a memory."
+      "text": "Bir şeyin peşine düşme demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "The pursuit survives as a habit, the end in itself as a memory."
-    }
+    ]
    },
    {
     "say": [
@@ -48011,6 +48507,46 @@
      {
       "lang": "en",
       "text": "transience"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The pursuit survives as a habit, the end in itself as a memory."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The pursuit survives as a habit, the end in itself as a memory."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sarsılmadan durabilmeye"
+     },
+     {
+      "lang": "en",
+      "text": "equanimity"
+     },
+     {
+      "lang": "tr",
+      "text": "içi rahat bir durgunluğa ise"
+     },
+     {
+      "lang": "en",
+      "text": "serenity"
      },
      {
       "lang": "tr",
@@ -48042,19 +48578,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sarsılmadan durabilmeye"
+      "text": "Söylediğini gerçekten kastetmeye"
      },
      {
       "lang": "en",
-      "text": "equanimity"
+      "text": "sincerity"
      },
      {
       "lang": "tr",
-      "text": "içi rahat bir durgunluğa ise"
+      "text": "tatlı bir üzüntüye ise"
      },
      {
       "lang": "en",
-      "text": "serenity"
+      "text": "wistfulness"
      },
      {
       "lang": "tr",
@@ -48163,19 +48699,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Söylediğini gerçekten kastetmeye"
+      "text": "Bir şeyin kendinde bulunmasına"
      },
      {
       "lang": "en",
-      "text": "sincerity"
-     },
-     {
-      "lang": "tr",
-      "text": "tatlı bir üzüntüye ise"
-     },
-     {
-      "lang": "en",
-      "text": "wistfulness"
+      "text": "be inherent"
      },
      {
       "lang": "tr",
@@ -48202,22 +48730,6 @@
      "kind": "repeat",
      "target": "A little wistfulness will be inherent in any ending."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir şeyin kendinde bulunmasına"
-     },
-     {
-      "lang": "en",
-      "text": "be inherent"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [

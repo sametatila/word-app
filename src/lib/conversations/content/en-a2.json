@@ -25058,6 +25058,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "neighborhood"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: mahalle. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "neighborhood"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "neighborhood"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi karşılaştırma yapalım. Kısa sıfatlara -er ekleriz: quiet, quieter. Uzun sıfatların önüne more koyarız: crowded, more crowded. Sonra than gelir. Dinle:"
      },
      {
@@ -25080,30 +25104,6 @@
     "expect": {
      "kind": "repeat",
      "target": "It's more crowded than my old neighborhood."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "neighborhood"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: mahalle. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "neighborhood"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "neighborhood"
     }
    },
    {
@@ -43220,6 +43220,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Dördüncü kelimemiz: return. Türkçesi geri götürmek, iade etmek demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Koşulları anlatırken have to kalıbını kullanıyoruz: zorunluluk. Benimle söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I have to return the car on Sunday morning."
+     },
+     {
+      "lang": "tr",
+      "text": "Arabayı pazar sabahı iade etmem gerekiyor. Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have to return the car on Sunday morning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Küçük bir kontrol. Görevli sana full to full dedi. Şimdi söyleyeceğim cümle bu koşula uyuyor mu? Doğru mu, yanlış mı?"
      },
      {
@@ -43245,30 +43269,6 @@
        "text": "Yani: Arabayı dolu depoyla iade etmem gerekiyor."
       }
      ]
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Dördüncü kelimemiz: return. Türkçesi geri götürmek, iade etmek demek."
-     },
-     {
-      "lang": "tr",
-      "text": "Koşulları anlatırken have to kalıbını kullanıyoruz: zorunluluk. Benimle söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "I have to return the car on Sunday morning."
-     },
-     {
-      "lang": "tr",
-      "text": "Arabayı pazar sabahı iade etmem gerekiyor. Sen söyle."
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "I have to return the car on Sunday morning."
     }
    },
    {
@@ -44717,6 +44717,38 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "wrap"
+     },
+     {
+      "lang": "tr",
+      "text": "paketlemek demek. Kâğıda sarmak, hediye paketi yapmak. Satıcı sorabilir:"
+     },
+     {
+      "lang": "en",
+      "text": "Is it a gift?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen de"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, it's a gift."
+     },
+     {
+      "lang": "tr",
+      "text": "dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Küçük bir doğru mu yanlış mı sorusu. Şu cümleyi dinle ve karar ver."
      },
      {
@@ -44751,38 +44783,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Demek ki"
-     },
-     {
-      "lang": "en",
-      "text": "wrap"
-     },
-     {
-      "lang": "tr",
-      "text": "paketlemek demek. Kâğıda sarmak, hediye paketi yapmak. Satıcı sorabilir:"
-     },
-     {
-      "lang": "en",
-      "text": "Is it a gift?"
-     },
-     {
-      "lang": "tr",
-      "text": "Sen de"
-     },
-     {
-      "lang": "en",
-      "text": "Yes, it's a gift."
-     },
-     {
-      "lang": "tr",
-      "text": "dersin."
-     }
-    ]
    },
    {
     "say": [

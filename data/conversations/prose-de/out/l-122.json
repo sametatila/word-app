@@ -401,5 +401,6 @@
  { "kind": "say.tr", "tr": "Şimdi işin kalbine geliyoruz. Bir işe geçmişte başladın ve hâlâ oradasın. Türkçede çalışıyorum dersin, ama İngilizce bunun için ayrı bir zaman kullanır: have ya da has, sonra fiilin üçüncü hâli. work fiilinin üçüncü hâli worked.", "de": "Jetzt kommen wir zum Herzstück. Du hast eine Stelle in der Vergangenheit begonnen und bist noch dort. Wir sagen „ich arbeite“, aber das Englische nimmt dafür eine eigene Zeit: have oder has, dann die dritte Form des Verbs. Die dritte Form von work ist worked." },
  { "kind": "say.tr", "tr": "Şimdi işin can alıcı noktasına geldik: talimatlar.", "de": "Jetzt der Kern der Sache: die Anweisungen." },
  { "kind": "say.tr", "tr": "Merhaba, hoş geldin. Bugünkü konumuz: yakın arkadaşlık.", "de": "Hallo, willkommen. Unser heutiges Thema: enge Freundschaft." },
- { "kind": "say.tr", "tr": "Türkçesi: ses, gürültü. Lütfen tekrar et:", "de": "Auf Deutsch: Geräusch. Bitte sprich nach:" }
+ { "kind": "say.tr", "tr": "Türkçesi: ses, gürültü. Lütfen tekrar et:", "de": "Auf Deutsch: Geräusch. Bitte sprich nach:" },
+ { "tr": "Şimdi ilk kalıbımız. Tekrar et:", "kind": "say.tr", "de": "Jetzt unsere erste Wendung. Wiederhole:" }
 ]

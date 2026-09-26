@@ -26041,6 +26041,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Yasayla belirlenen en düşük maaşa"
+     },
+     {
+      "lang": "en",
+      "text": "minimum wage"
+     },
+     {
+      "lang": "tr",
+      "text": "iki paranın değişim oranına ise"
+     },
+     {
+      "lang": "en",
+      "text": "exchange rate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sen kur: Önce değişen şey döviz kuruydu."
      }
     ],
@@ -26074,30 +26098,6 @@
       }
      ]
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Yasayla belirlenen en düşük maaşa"
-     },
-     {
-      "lang": "en",
-      "text": "minimum wage"
-     },
-     {
-      "lang": "tr",
-      "text": "iki paranın değişim oranına ise"
-     },
-     {
-      "lang": "en",
-      "text": "exchange rate"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -31267,17 +31267,9 @@
      },
      {
       "lang": "tr",
-      "text": "Gösteriden önce çalışmak demek. İlk kalıbımız da bu. Tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "Having watched her rehearse, the jury voted."
+      "text": "Gösteriden önce çalışmak demek."
      }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "Having watched her rehearse, the jury voted."
-    }
+    ]
    },
    {
     "say": [
@@ -31294,6 +31286,22 @@
       "text": "denir."
      }
     ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Having watched her rehearse, the jury voted."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having watched her rehearse, the jury voted."
+    }
    },
    {
     "say": [
@@ -31764,7 +31772,31 @@
      },
      {
       "lang": "tr",
-      "text": "Bir yörenin topluca kutladığı şenlik demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Bir yörenin topluca kutladığı şenlik demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kuşaktan kuşağa geçen alışkanlığa"
+     },
+     {
+      "lang": "en",
+      "text": "custom"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
@@ -31780,11 +31812,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kuşaktan kuşağa geçen alışkanlığa"
+      "text": "Bir yörenin kendi giysisine"
      },
      {
       "lang": "en",
-      "text": "custom"
+      "text": "traditional costume"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yapıtı kendince okumaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "interpretation"
      },
      {
       "lang": "tr",
@@ -31811,30 +31851,6 @@
      "kind": "repeat",
      "target": "The dress, which is a traditional costume, is new."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir yörenin kendi giysisine"
-     },
-     {
-      "lang": "en",
-      "text": "traditional costume"
-     },
-     {
-      "lang": "tr",
-      "text": "bir yapıtı kendince okumaya ise"
-     },
-     {
-      "lang": "en",
-      "text": "interpretation"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [
@@ -44586,7 +44602,31 @@
      },
      {
       "lang": "tr",
-      "text": "Yazıya eklenen belge demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Yazıya eklenen belge demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belgeleri sıraya koyup saklamaya"
+     },
+     {
+      "lang": "en",
+      "text": "filing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Tekrar et:"
      },
      {
       "lang": "en",
@@ -44883,22 +44923,6 @@
      "kind": "repeat",
      "target": "The template follows the standard form."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Belgeleri sıraya koyup saklamaya"
-     },
-     {
-      "lang": "en",
-      "text": "filing"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
-     }
-    ]
    },
    {
     "say": [

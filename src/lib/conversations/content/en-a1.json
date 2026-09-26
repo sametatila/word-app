@@ -3759,6 +3759,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "how much"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: ne kadar. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "how much"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "how much"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir de fiyat var. Fiyat demek:"
      },
      {
@@ -3845,30 +3869,6 @@
     "expect": {
      "kind": "repeat",
      "target": "one"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "how much"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: ne kadar. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "how much"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "how much"
     }
    },
    {
@@ -7459,6 +7459,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "İki yeni kelime daha. Oğul:"
+     },
+     {
+      "lang": "en",
+      "text": "son"
+     },
+     {
+      "lang": "tr",
+      "text": "Kız evlat:"
+     },
+     {
+      "lang": "en",
+      "text": "daughter"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: son, güneş anlamına gelen sun ile neredeyse aynı ses veriyor. Ama biri oğul, diğeri güneş."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi çok önemli bir nokta. He, she ve it için have değil, has kullanılır."
      },
      {
@@ -7482,30 +7506,6 @@
      "kind": "repeat",
      "target": "She's got a daughter."
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "İki yeni kelime daha. Oğul:"
-     },
-     {
-      "lang": "en",
-      "text": "son"
-     },
-     {
-      "lang": "tr",
-      "text": "Kız evlat:"
-     },
-     {
-      "lang": "en",
-      "text": "daughter"
-     },
-     {
-      "lang": "tr",
-      "text": "Dikkat: son, güneş anlamına gelen sun ile neredeyse aynı ses veriyor. Ama biri oğul, diğeri güneş."
-     }
-    ]
    },
    {
     "say": [
@@ -16803,6 +16803,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "rice"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: pirinç. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "rice"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "rice"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi tam bir tarif gibi dinle:"
      },
      {
@@ -16961,30 +16985,6 @@
     "expect": {
      "kind": "repeat",
      "target": "Is it ready?"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "rice"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: pirinç. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "rice"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "rice"
     }
    },
    {
@@ -37255,6 +37255,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "foot"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: ayak. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "foot"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "foot"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Peki araç yoksa, yani yürüyerek gidiyorsan? Burada tek bir istisna var:"
      },
      {
@@ -37571,30 +37595,6 @@
     "expect": {
      "kind": "repeat",
      "target": "I ride my bike every day."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "foot"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: ayak. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "foot"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "foot"
     }
    },
    {
@@ -41090,6 +41090,22 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Noise gürültü demek. İngilizcede gürültü yapmak için make fiilini kullanıyoruz: make noise. Önce kelimeyi tek başına söyleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "noise"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "noise"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir yasak duyalım: gürültü yapamazsın."
      },
      {
@@ -41104,22 +41120,6 @@
     "expect": {
      "kind": "repeat",
      "target": "You can't make noise."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Noise gürültü demek. İngilizcede gürültü yapmak için make fiilini kullanıyoruz: make noise. Önce kelimeyi tek başına söyleyelim:"
-     },
-     {
-      "lang": "en",
-      "text": "noise"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "noise"
     }
    },
    {
@@ -49559,6 +49559,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "watch TV"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: televizyon izlemek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "watch TV"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "watch TV"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi soru soralım. Türkçede sona mi ekini getiririz ama İngilizcede cümlenin başına küçük bir yardımcı gelir: do. Yani izler misin demek için Do you watch diye başlarız."
      }
     ]
@@ -49627,30 +49651,6 @@
     "expect": {
      "kind": "repeat",
      "target": "boring"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "watch TV"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: televizyon izlemek. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "watch TV"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "watch TV"
     }
    },
    {
@@ -50090,6 +50090,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "thanks"
+     },
+     {
+      "lang": "tr",
+      "text": "yani teşekkürler demek. Kibarca hayır derken önce bunu söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks, but I can't come."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir de teşekkür eklersen ret gerçekten sıcak olur. Davet için teşekkür ediyoruz:"
      },
      {
@@ -50189,26 +50209,6 @@
      "kind": "repeat",
      "target": "want"
     }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "thanks"
-     },
-     {
-      "lang": "tr",
-      "text": "yani teşekkürler demek. Kibarca hayır derken önce bunu söylersin:"
-     },
-     {
-      "lang": "en",
-      "text": "Thanks, but I can't come."
-     }
-    ]
    },
    {
     "say": [
@@ -61844,6 +61844,30 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "go"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: gitmek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "go"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "go"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi soru kelimeleri geliyor."
      },
      {
@@ -62121,30 +62145,6 @@
     "expect": {
      "kind": "repeat",
      "target": "how much; how many"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "go"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: gitmek. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "go"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "go"
     }
    },
    {
