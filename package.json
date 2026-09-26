@@ -123,6 +123,7 @@
     "test:loop": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-loop.ts",
     "logs:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-logs.ts",
     "check:conversations": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-conversations.ts",
+    "check:conversations-order": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-conversations-order.ts",
     "audit": "tsx scripts/audit-quality.ts",
     "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts",
     "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts",

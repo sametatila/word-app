@@ -290,6 +290,10 @@ jobs:
       # DÜŞÜYOR — yani eksik bir çeviri ekranda yalnızca kısalık olarak
       # görünür. Birincisi bugüne kadar hiç CI'da değildi; ikincisi
       # yazılınca ikisi birlikte alındı.
+      #
+      # `check:conversations-order` kelimenin, anlamı söylenmeden önce tekrar/üretim
+      # adımında kullanılmadığını ölçüyor (2026-09-26: İngilizce C1'de 269 kelime
+      # tanımından önce kalıp cümlesinde geçiyordu, 22 kelime hiç tanıtılmıyordu).
       - name: Ana dil çözücüsü
         run: |
           npm run check:conversations-native
@@ -309,6 +313,7 @@ jobs:
           npm run check:conversations-cando
           npm run check:conversations-cando-de
           npm run check:conversations
+          npm run check:conversations-order
       # HATTIN KENDİ KAPILARI — dokuzu da yazılmış, hiçbiri çağrılmıyordu.
       # Yukarıdaki blok TÜRETİLMİŞ tarafı ölçüyor (`-de`, `-native`, `-prose`);
       # bunlar KAYNAK tarafı: konuşma sözlükçesi, kalıplar, üstveri, sohbet,
