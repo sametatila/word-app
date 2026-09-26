@@ -7,6 +7,7 @@ import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
 import { ensureConversations } from "../data/conversations";
 import { getDoneItems } from "../game/pathProgress";
+import { useStatsBump } from "./statsSignal";
 
 /** Pratik adım — içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
 export const isPracticeKind = (kind: string): boolean => kind === "grammar" || kind === "quiz" || kind === "unitQuiz";
@@ -174,10 +175,14 @@ export function useLearningPath(): { data: LearningPath | null; loading: boolean
     if (!user) clearLearningPath();
   }, [user]);
 
+  /* `bump`: sayılar ya da hesabın içerik dili değişince (bkz. useMe
+     `syncNativeLang`) ekran ODAKTAYKEN de tazelensin; odakta değilse zaten
+     döndüğünde tazeleniyor, fazladan istek yok. */
+  const bump = useStatsBump();
   useFocusEffect(
     useCallback(() => {
-      if (user) void refreshLearningPath(level);
-    }, [user, level]),
+      if (user && bump >= 0) void refreshLearningPath(level);
+    }, [user, level, bump]),
   );
 
   return { data: user ? state.data : null, loading: state.loading, source: user ? state.source : null };

@@ -159,8 +159,25 @@ export function currentLang(): NativeLang {
   return lang;
 }
 
+let yukleniyor: Promise<NativeLang> | null = null;
+
+/**
+ * Açılış dili belli olunca çözülür. Yüklenene dek `currentLang()` varsayılanı
+ * (Türkçe) döndürüyor; dili bir yere YAZAN kod (bkz. useMe `syncNativeLang`)
+ * önce bunu beklemeli, yoksa İngilizce cihazın hesabına `tr` yazılır
+ * (2026-09-26'da yerel denemede tam olarak bu oldu).
+ */
+export function langReady(): Promise<NativeLang> {
+  return yukleniyor ?? loadLang();
+}
+
 /** Saklı dil tercihini yükler (uygulama açılışında bir kez). */
-export async function loadLang(): Promise<NativeLang> {
+export function loadLang(): Promise<NativeLang> {
+  yukleniyor = yukle();
+  return yukleniyor;
+}
+
+async function yukle(): Promise<NativeLang> {
   try {
     const saved = await AsyncStorage.getItem(KEY);
     lang = saved && isNativeLang(saved) ? saved : deviceLang();

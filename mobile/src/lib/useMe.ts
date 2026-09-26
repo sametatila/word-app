@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { syncAvatarWithServer, type AvatarConfig } from "./avatar";
-import { setCurrentCourse } from "./courses";
-import { adoptServerLang, dateLocale, t } from "./i18n";
+import { coursesForNative, DEFAULT_NATIVE, setCurrentCourse } from "./courses";
+import { adoptServerLang, dateLocale, langReady, t } from "./i18n";
 import { loadOnboardingPrefs } from "./onboardingPrefs";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
-import { useStatsBump } from "./statsSignal";
+import { bumpStats, useStatsBump } from "./statsSignal";
+import { updateProfile } from "./updateProfile";
 import { todayStr } from "../game/session";
 
 /** /api/me özeti — ana ekran ve profilin gösterdiği gerçek sayılar. */
@@ -57,10 +58,42 @@ export type Me = {
  * yetkili — kayıtlı hesapta seçimler zaten YAZILMADAN atılıyor, oradaki dil de
  * hesabın kendi dili oluyor.
  */
-async function syncNativeLang(server: string | null | undefined): Promise<void> {
+let dilEsitleme: Promise<void> | null = null;
+
+/** Aynı anda birkaç ekran `useMe` çağırıyor; eşitleme tek sefer koşsun. */
+function syncNativeLang(server: string | null | undefined, course: string | undefined): Promise<void> {
+  if (!dilEsitleme) dilEsitleme = dilEsitle(server, course).finally(() => { dilEsitleme = null; });
+  return dilEsitleme;
+}
+
+async function dilEsitle(server: string | null | undefined, course: string | undefined): Promise<void> {
   const pending = await loadOnboardingPrefs();
   if (pending.nativeLang) return;
-  await adoptServerLang(server);
+  if (await adoptServerLang(server)) return;
+  /*
+    HESAPTA ANADİL YOK → cihazdakini hesaba yaz. Arayüz dili cihazdan geliyor,
+    içerik dili (ünite adları, günlük görevler, başarımlar, "Neler
+    yapabilirim") sunucuda `profiles.native_lang`tan; o boşsa sunucu Türkçeye
+    düşüyor. İkisi ayrışınca İngilizce arayüzde Türkçe içerik görünüyordu
+    (tablet incelemesi, 2026-09-26; üretimde 40 profilin 31'i anadilsizdi,
+    onboarding'in dil adımını değiştirmeden geçenler). Kaynak onboarding'de
+    kapatıldı; bu dal eski hesapları kendiliğinden onarıyor.
+
+    Yalnız çift geçerliyse yazılıyor: kayıtlı kurs bu anadile sunulmuyorsa
+    (Almanca cihaz + Almanca kurs) yazmak sunucuya kursu TAŞITIRDI
+    (bkz. api/profile › çift doğrulaması). O durumda sunucunun yetkili dili
+    Türkçe kalıyor ve arayüz ona uyuyor: kurs listesi zaten o dile göre.
+  */
+  const lang = await langReady();
+  if (course && !coursesForNative(lang).some((c) => c.id === course)) {
+    await adoptServerLang(DEFAULT_NATIVE);
+    return;
+  }
+  if (await updateProfile({ nativeLang: lang })) {
+    // Açılışta dilsiz çekilen içerik yeniden istensin: özet (görevler) ve
+    // odaktaki Patika bu sinyali dinliyor (bkz. useLearningPath).
+    bumpStats();
+  }
 }
 
 /** /api/session meta'sının okuduğumuz alt kümesi (özet ucu deploy değilse kaynak). */
@@ -105,7 +138,7 @@ export function useMe(): { me: Me | null; loading: boolean } {
         // Ayarlar ekranı açılınca kuruluyordu, yani uygulama açılışında kurs
         // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
         setCurrentCourse(d.course);
-        void syncNativeLang(d.nativeLang);
+        void syncNativeLang(d.nativeLang, d.course);
         /* Avatar da hesabın: başka bir cihazda ya da web'de değiştirildiyse
            burada da o görünsün (bkz. lib/avatar `syncAvatarWithServer`). */
         void syncAvatarWithServer(d.avatar);

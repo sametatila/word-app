@@ -173,16 +173,22 @@ export function OnboardingScreen() {
     const course = choices.course ?? available[0]?.id ?? DEFAULT_COURSE_ID;
     const goal = choices.goal ? parseInt(choices.goal, 10) : undefined;
     const levelChoice = choices.level;
+    /* ANADİL HER ZAMAN devrediliyor, yalnız dil adımında dokunulunca değil.
+       Cihaz diliyle gelen varsayılanı değiştirmeden geçen kullanıcıda seçim
+       hiç kaydedilmiyordu; hesap anadilsiz açılıyor, sunucu içeriği varsayılan
+       Türkçeyle veriyordu: İngilizce arayüzde Türkçe ünite adları, görevler,
+       başarımlar (tablet incelemesi, 2026-09-26; üretimde 40 profilin 31'i). */
+    const nativeLang = currentLang();
     try { await AsyncStorage.setItem(ONBOARDED_KEY, "1"); } catch { /* geç */ }
     if (levelChoice === "test") {
       // Seviye testin sonunda belirlenir; kurs+hedef şimdiden saklanır → Placement → hesap.
-      await saveOnboardingPrefs({ course, goal });
+      await saveOnboardingPrefs({ course, goal, nativeLang });
       nav.reset({ index: 0, routes: [{ name: "Placement", params: { onboarding: true } }] });
     } else {
       // Sıfırdan (A1) ya da Seviyeni seç (pickedLevel): her ikisi de giriş öncesi
       // kısa bir ısınmadan (FirstPractice) geçer — her yola ilk-değer tadı.
       const lvl = levelChoice === "A1" ? "A1" : (pickedLevel ?? "A1");
-      await saveOnboardingPrefs({ course, goal, level: lvl });
+      await saveOnboardingPrefs({ course, goal, level: lvl, nativeLang });
       // Isınma yalnız o paritenin kelimeleri varsa; yoksa doğrudan giriş duvarı.
       const hedef = hasFirstWords(currentLang(), course) ? "FirstPractice" : "Auth";
       nav.reset({ index: 0, routes: [hedef === "FirstPractice" ? { name: hedef, params: { level: lvl } } : { name: "Auth" }] });

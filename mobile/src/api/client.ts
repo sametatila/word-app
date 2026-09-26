@@ -1,6 +1,7 @@
 import { Platform } from "react-native";
 import { APP_VERSION, APP_VERSION_CODE } from "../version";
 import { apiBase, baseReady, failover, ownBaseOf, rebaseUrl } from "./base";
+import { currentLang } from "../lib/i18n";
 
 /**
  * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; veritabanı
@@ -175,9 +176,17 @@ async function sendOnce(url: string, init?: ApiInit): Promise<Response> {
       ve zaten istediği başlığı koyabilir; burada yapılan, kendi kökenimizi
       kendi istemcimizden doğru bildirmek. İki taban da `trustedOrigins`te.
     */
+    /*
+      DİL DE ELLE. Tarayıcı `Accept-Language` koyar, React Native koymuyor;
+      sunucu ise içeriğin bir kısmını (Patika ünite ve yuva adları, yer tutucu
+      başlıklar) `getLang()` ile bu başlıktan seçiyor ve başlık yoksa Türkçeye
+      düşüyordu: İngilizce arayüzde Türkçe ünite adları (tablet incelemesi,
+      2026-09-26). Değer arayüzün o anki dili; çağıran kendi başlığını verirse
+      o geçerli.
+    */
     const own = ownBaseOf(url);
     const headers = own
-      ? { "x-lernomi-client": CLIENT_HEADER_VALUE, ...((init?.headers as Record<string, string>) ?? {}), origin: own }
+      ? { "x-lernomi-client": CLIENT_HEADER_VALUE, "accept-language": currentLang(), ...((init?.headers as Record<string, string>) ?? {}), origin: own }
       : init?.headers;
     /* RN'in `AbortSignal` tipi DOM'unkiyle birebir değil; dönüşüm burada.
        Çağıranın kendi `signal`ını taşımıyoruz çünkü hiçbir çağrı yeri
