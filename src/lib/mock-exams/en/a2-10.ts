@@ -29,7 +29,7 @@ export const EN_A2_10: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and an interview, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and an interview, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve bir söyleşi okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -72,7 +72,7 @@ Children's clothes, toys and books only. No electrical things.`,
             {
               kind: "text",
               id: "m4",
-              genre: "Notice at a shop",
+              genre: "Notice at a store",
               genreTr: "Dükkân duyurusu",
               title: "WE BUY",
               body: `Books, records and small furniture. Bring three things at most.
@@ -129,7 +129,7 @@ We do not buy clothes.`,
               id: "en-a2-10-l1-4",
               no: 4,
               ref: "m4",
-              text: "What does the shop say about time?",
+              text: "What does the store say about time?",
               options: ["You wait two weeks for an answer", "You must come before twelve", "You get an answer the same day"],
               answer: 2,
               explain:
@@ -154,7 +154,7 @@ We do not buy clothes.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -165,7 +165,7 @@ We do not buy clothes.`,
             { key: "e", label: "Book Shelf in the Hallway", body: "Leave a book, take a book. Free for everybody. Please, no wet books." },
             { key: "f", label: "Clothes Shop", body: "We buy good clothes and we pay the same day. Bring ten pieces at most." },
             { key: "g", label: "Tool Library", body: "Borrow a drill or a saw for two euros a day. You need a card and an address in the city." },
-            { key: "h", label: "Small Ads", body: "Put your advert online free. Photograph, price and your street. You meet the buyer yourself." },
+            { key: "h", label: "Small Ads", body: "Put your ad online free. Photograph, price and your street. You meet the buyer yourself." },
           ],
           items: [
             {
@@ -228,8 +228,8 @@ We do not buy clothes.`,
               id: "t3",
               genre: "Interview",
               genreTr: "Söyleşi",
-              title: "Twenty years in a second-hand shop",
-              body: `We asked Piet, who has had a second-hand shop for twenty years.
+              title: "Twenty years in a secondhand store",
+              body: `We asked Piet, who has had a secondhand store for twenty years.
 
 What do people bring you most?
 Chairs. Every day, chairs. I say no to almost all of them, because everybody already has enough chairs.
@@ -308,13 +308,13 @@ Clean it. That is all. A clean thing sells for twice the money, and cleaning is 
               title: "Forty euros and eleven answers",
               body: `I sold my old bicycle online last month, and here is what I {{15}}.
 
-I put the price at forty euros. That was {{16}} than the price in the shops, and eleven people answered in one hour.
+I put the price at forty euros. That was {{16}} than the price in the stores, and eleven people answered in one hour.
 
 The first man came the same evening. He was very friendly, {{17}} he did not ask a single question. That was the moment I understood my mistake.
 
 Next month I {{18}} sell my desk, and this time I start high.
 
-And one more thing: {{19}} you write an advert, take the photograph in the morning. The light is better.`,
+And one more thing: {{19}} you write an ad, take the photograph in the morning. The light is better.`,
             },
           ],
           items: [
@@ -392,7 +392,7 @@ It is heavier {{22}} anything else in the apartment.
 
 We moved three times and we took it {{23}} us every time.
 
-I bought two chairs from a shop and I {{24}} not know where they are now.`,
+I bought two chairs from a store and I {{24}} not know where they are now.`,
             },
           ],
           items: [
@@ -508,7 +508,7 @@ I bought two chairs from a shop and I {{24}} not know where they are now.`,
             {
               kind: "audio",
               id: "a4",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Dükkânda",
               situation: "Bir müşteri dükkânın ne aldığını soruyor.",
               plays: 2,
@@ -560,7 +560,7 @@ I bought two chairs from a shop and I {{24}} not know where they are now.`,
               no: 3,
               ref: "a3",
               text: "What is the problem?",
-              options: ["The price is too high", "The photograph is not good", "Nobody answered the advert"],
+              options: ["The price is too high", "The photograph is not good", "Nobody answered the ad"],
               answer: 1,
               explain:
                 "Konuşmacı kendi teşhisini veriyor: «I think the photograph is bad. You cannot see the size». Dört kişi yazmış, yani ilan cevapsız değil.",
@@ -570,7 +570,7 @@ I bought two chairs from a shop and I {{24}} not know where they are now.`,
               id: "en-a2-10-h1-4",
               no: 4,
               ref: "a4",
-              text: "What does the shop buy?",
+              text: "What does the store buy?",
               options: ["Books and records", "Clothes", "Radios"],
               answer: 0,
               explain:
@@ -738,7 +738,7 @@ Tell Bexi by:       {{10}}`,
               situation: "Bir konuşmacı internetten satmayı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People say that selling online is easy. It is easy to write the advert. Then you wait at home on a Saturday for somebody who does not come, and you do that three times." },
+                { text: "People say that selling online is easy. It is easy to write the ad. Then you wait at home on a Saturday for somebody who does not come, and you do that three times." },
               ],
             },
           ],
@@ -796,7 +796,7 @@ Tell Bexi by:       {{10}}`,
               options: ["Correcting a common idea", "Recommending a website", "Asking for advice"],
               answer: 0,
               explain:
-                "Konuşmacı yaygın inancı anıp sınırlıyor: «It is easy to write the advert», asıl yük evde beklemek.",
+                "Konuşmacı yaygın inancı anıp sınırlıyor: «It is easy to write the ad», asıl yük evde beklemek.",
             },
           ],
         },
@@ -814,7 +814,7 @@ Tell Bexi by:       {{10}}`,
             { key: "b", label: "The buyer did not come." },
             { key: "c", label: "The thing was broken and nobody said so." },
             { key: "d", label: "It was too big to carry down." },
-            { key: "e", label: "Nobody answered the advert." },
+            { key: "e", label: "Nobody answered the ad." },
             { key: "f", label: "They sold it and then wanted it back." },
             { key: "g", label: "The photograph was bad." },
             { key: "h", label: "They paid too much for it." },
@@ -1066,7 +1066,7 @@ Eren`,
               { de: "say if you like markets like this", tr: "Böyle pazarları sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a street market on a Sunday morning. Along the wall there are three tables with books, lamps and clothes on them. In front of the middle table a man is holding an old radio and he is looking at the price on it. Behind him a small child is sitting on a box and eating something. I like markets like this, because you find things that you cannot buy in a shop.",
+              "This is a street market on a Sunday morning. Along the wall there are three tables with books, lamps and clothes on them. In front of the middle table a man is holding an old radio and he is looking at the price on it. Behind him a small child is sitting on a box and eating something. I like markets like this, because you find things that you cannot buy in a store.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",
@@ -1086,7 +1086,7 @@ Eren`,
             "Bir boş cumartesin ve ihtiyacın olmayan bir sürü eşyan var. Ne yapacağını benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a charity shop. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç euroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a thrift store. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç euroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },
             { who: "you", hint: "İnternetten satma fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see your point. But you have about forty things, and online you write forty adverts and wait at home for forty people. Is the market not easier?", tr: "Anlıyorum. Ama kırk kadar eşyan var; internette kırk ilan yazıp kırk kişiyi evde beklersin. Pazar daha kolay değil mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },

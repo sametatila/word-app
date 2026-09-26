@@ -57,7 +57,7 @@ export const EN_B1_06: MockPaper = {
             {
               kind: "text",
               id: "m3",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Six evenings, three songs",
               body: `Six evenings, and you will play three songs badly by the end. That is the promise and we mean it. No instrument needed for the first evening. Groups of six, and nobody under sixteen.`,
@@ -1110,7 +1110,7 @@ I do not want a refund, because I would like to finish the course. Could I join 
 
 I would be grateful for an answer before Friday.
 
-Yours faithfully,
+Sincerely,
 Hedda Larsen`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

@@ -29,7 +29,7 @@ export const EN_A2_11: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a letter with a reply, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a letter with a reply, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve yanıtlı bir mektup okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -119,7 +119,7 @@ Please take the bags home with you; there is no trash can here.`,
               no: 3,
               ref: "m3",
               text: "What is the writer sorry about?",
-              options: ["The dog is ill", "The chair is broken", "The dog wakes the neighbors"],
+              options: ["The dog is sick", "The chair is broken", "The dog wakes the neighbors"],
               answer: 2,
               explain:
                 "E-posta iki şeyi bağlıyor: «He barks at the mail carrier every morning at eight. I am sorry about your neighbors». Köpek iyi ve sandalye kırılmamış.",
@@ -154,7 +154,7 @@ Please take the bags home with you; there is no trash can here.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -162,7 +162,7 @@ Please take the bags home with you; there is no trash can here.`,
             { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or call us; we come to you for free anywhere in the city." },
             { key: "c", label: "Vacation Care", body: "We keep cats, dogs and rabbits from three days to a month. Fourteen euros a day. Book two weeks before." },
             { key: "d", label: "The Vet Comes to You", body: "For old animals and for people without a car. Thursday afternoons. Thirty euros and then the treatment." },
-            { key: "e", label: "Food Advice", body: "Free, Saturday mornings at the shop in Mill Street. Bring the vet's paper if you have one." },
+            { key: "e", label: "Food Advice", body: "Free, Saturday mornings at the store in Mill Street. Bring the vet's paper if you have one." },
             { key: "f", label: "Dog Walking", body: "One hour a day, ten euros. Mornings only, and only in this part of the city." },
             { key: "g", label: "Animal Photographs", body: "In your home, one hour, sixty euros. Two big pictures and thirty small ones." },
             { key: "h", label: "Cages and Boxes", body: "We lend a travel box for two euros a day. You need a card and an address in the city." },
@@ -233,7 +233,7 @@ Please take the bags home with you; there is no trash can here.`,
 
 We got a dog in March. He is two years old and he came from the animal home. Everything is good except one thing: he cannot be alone.
 
-When I go to the shop for twenty minutes, he cries. The neighbor told us and she was very kind about it. Now I take him everywhere, and that is not a life for me.
+When I go to the store for twenty minutes, he cries. The neighbor told us and she was very kind about it. Now I take him everywhere, and that is not a life for me.
 
 Vesna Roth
 
@@ -314,7 +314,7 @@ The Editor`,
               title: "Our cat and eighteen hours",
               body: `We got our cat in 2019, and here is what I {{15}}.
 
-A cat from the animal home is {{16}} than a young one from a shop. She was four and she knew everything already.
+A cat from the animal home is {{16}} than a young one from a store. She was four and she knew everything already.
 
 She sleeps eighteen hours a day, {{17}} she is awake at exactly five in the morning.
 
@@ -552,7 +552,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               no: 2,
               ref: "a2",
               text: "What does the second speaker say about the care?",
-              options: ["The flight is expensive", "The rabbit is ill", "The care costs a lot"],
+              options: ["The flight is expensive", "The rabbit is sick", "The care costs a lot"],
               answer: 2,
               explain:
                 "Konuşmacı karşılaştırma yapıyor: «Fourteen a day. That is more than the flight».",
@@ -965,7 +965,7 @@ I would like a place for my cat from August 3 to 17. She is six years old.
 
 How much is it for two weeks, please?
 
-One important thing: she takes a tablet every morning with her food. I can bring the tablets and the food.
+One important thing: she takes a pill every morning with her food. I can bring the pills and the food.
 
 Thank you very much!
 Vesna Roth`,
@@ -1028,7 +1028,7 @@ Vesna Roth`,
             { who: "you", hint: "Durumu anlat ve bir örnek ver.", expect: "bir durumu betimlemek ve örneklendirmek", seconds: 30 },
             { who: "partner", de: "Thank you. Is a cat or a dog better for a person who works all day? Why?", tr: "Teşekkürler. Bütün gün çalışan biri için kedi mi köpek mi daha iyi? Neden?" },
             { who: "you", hint: "Tercihini söyle ve bir gerekçe ver.", expect: "bir tercihi gerekçesiyle bildirmek", seconds: 30 },
-            { who: "partner", de: "Interesting. Tell me about a time an animal was ill or lost.", tr: "İlginç. Bir hayvanın hastalandığı ya da kaybolduğu bir zamanı anlat." },
+            { who: "partner", de: "Interesting. Tell me about a time an animal was sick or lost.", tr: "İlginç. Bir hayvanın hastalandığı ya da kaybolduğu bir zamanı anlat." },
             { who: "you", hint: "Geçmiş zamanla kısa bir anı anlat.", expect: "geçmiş zamanda kısa bir anlatı vermek", seconds: 35 },
           ],
           items: [],

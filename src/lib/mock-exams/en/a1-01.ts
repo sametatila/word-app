@@ -93,12 +93,12 @@ Coffee and cake are free. For the food in the evening, every person pays 5 euros
 
 Please bring your children. We have games and music.
 
-Bad weather? Then we go to the big room in the cellar.
+Bad weather? Then we go to the big room in the basement.
 
 The Aydin family, apartment 3B`,
               gloss: [
                 { de: "free", tr: "ücretsiz", en: "kostenlos" },
-                { de: "the cellar", tr: "bodrum", en: "der Keller" },
+                { de: "the basement", tr: "bodrum", en: "der Keller" },
                 { de: "the apartment", tr: "daire", en: "die Wohnung" },
               ],
             },
@@ -283,7 +283,7 @@ Put your books in the blue box next to the door.`,
             {
               kind: "text",
               id: "s2",
-              genre: "Sign in the shop",
+              genre: "Sign in the store",
               genreTr: "Mağazadaki levha",
               title: "CASH DESK 4",
               body: `Only for people with ten things or less.
@@ -310,7 +310,7 @@ The park closes at 22:00.`,
               title: "DEAR GUEST",
               body: `The key for the bikes is in the kitchen, in the little box.
 
-Please put the bikes back in the cellar in the evening.
+Please put the bikes back in the basement in the evening.
 
 Wifi: NEST-3B. The code is on the fridge.`,
             },
@@ -354,7 +354,7 @@ Wifi: NEST-3B. The code is on the fridge.`,
               text: "The bikes stay outside in the night.",
               answer: false,
               explain:
-                "Not tersini istiyor: \"put the bikes back in the cellar in the evening\". Bisikletler akşam bodruma konur, dışarıda kalmaz.",
+                "Not tersini istiyor: \"put the bikes back in the basement in the evening\". Bisikletler akşam bodruma konur, dışarıda kalmaz.",
             },
           ],
         },
@@ -452,7 +452,7 @@ Nuray`,
             {
               kind: "audio",
               id: "a1",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri kasada bir ceket soruyor.",
               plays: 2,
@@ -511,7 +511,7 @@ Nuray`,
               situation: "İki ev arkadaşı akşam yemeğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Rosa", text: "We have no bread and no milk. Can you go to the shop?" },
+                { speaker: "Rosa", text: "We have no bread and no milk. Can you go to the store?" },
                 { speaker: "Ben", text: "I can go, but I have no money with me." },
                 { speaker: "Rosa", text: "Take my card. It is on the table in the kitchen." },
               ],
@@ -582,7 +582,7 @@ Nuray`,
               no: 5,
               ref: "a5",
               text: "What is the problem for Ben?",
-              options: ["He has no money with him", "He does not want to go", "The shop is closed"],
+              options: ["He has no money with him", "He does not want to go", "The store is closed"],
               answer: 0,
               explain:
                 "Ben gitmeyi kabul ediyor («I can go»), tek engel parasının yanında olmaması. Rosa da bu yüzden kartını veriyor. Gitmek istememek ya da kapalı market kayıtta hiç geçmiyor.",
@@ -611,12 +611,12 @@ Nuray`,
             {
               kind: "audio",
               id: "b1",
-              genre: "Announcement in a shop",
+              genre: "Announcement in a store",
               genreTr: "Mağaza anonsu",
               situation: "Bir mağazada kapanış anonsu yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Dear customers, the shop closes in fifteen minutes. Please go to the cash desks now. The bakery is closed already. Thank you." },
+                { text: "Dear customers, the store closes in fifteen minutes. Please go to the cash desks now. The bakery is closed already. Thank you." },
               ],
             },
             {
@@ -659,7 +659,7 @@ Nuray`,
               id: "en-a1-01-h2-7",
               no: 7,
               ref: "b1",
-              text: "You can still buy bread in the shop.",
+              text: "You can still buy bread in the store.",
               answer: false,
               explain:
                 "Anons «The bakery is closed already» diyor: fırın reyonu çoktan kapanmış. Mağazanın kendisi on beş dakika daha açık, ama ekmek reyonu değil. Madde «mağaza açık» ile «her reyon açık» arasındaki farkı ölçüyor.",

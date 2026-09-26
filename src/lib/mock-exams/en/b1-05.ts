@@ -56,7 +56,7 @@ export const EN_B1_05: MockPaper = {
             {
               kind: "text",
               id: "m3",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Old town on foot",
               body: `Two hours on foot, small groups of eight. We do not go inside any building, so you pay nothing extra. The guide is a local person, not a student with a script. If it rains we still walk; if there is ice we do not.`,
@@ -1108,7 +1108,7 @@ I do not want to cancel, because the apartment itself is clean and quiet. I woul
 
 Could you let me know by Wednesday?
 
-Yours sincerely,
+Sincerely,
 Anouk Dekker`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

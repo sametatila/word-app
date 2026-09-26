@@ -56,7 +56,7 @@ export const EN_B1_04: MockPaper = {
             {
               kind: "text",
               id: "m3",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Where does it actually go?",
               body: `Our free workshop shows you where your money actually goes. Bring three months of bank statements, or a rough list if you do not have them. We do not sell anything, and we do not look at your statements: you do.`,
@@ -1106,7 +1106,7 @@ Since the middle of October my employer has moved me onto late shifts, and I now
 
 I would like to move my place to the spring group rather than ask for my money back, because I still want to do the course. If that is not possible, please tell me what my options are.
 
-Yours faithfully,
+Sincerely,
 Farah Demir`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

@@ -742,7 +742,7 @@ Lenn`,
               no: 15,
               ref: "c5",
               text: "Why does she not go tonight?",
-              options: ["She works", "She is ill", "The course is full"],
+              options: ["She works", "She is sick", "The course is full"],
               answer: 0,
               explain:
                 "Konuşmacı sebebi söylüyor: «I work until eight», oysa kurs yedide. Artık perşembe günü gidiyor.",

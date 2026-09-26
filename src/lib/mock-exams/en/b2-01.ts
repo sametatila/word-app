@@ -706,7 +706,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               situation: "Bir kurumda bir duyuru yapılıyor.",
               plays: 2,
               segments: [
-                { text: "From next month the canteen will close at two rather than three. Nobody is losing a job; the two staff affected have been offered hours in the morning, and both have accepted." },
+                { text: "From next month the cafeteria will close at two rather than three. Nobody is losing a job; the two staff affected have been offered hours in the morning, and both have accepted." },
               ],
             },
             {
@@ -795,7 +795,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               no: 5,
               ref: "a5",
               text: "What does the announcement make clear?",
-              options: ["The canteen will open later in the morning", "Nobody will lose their job because of the change", "The change will be reviewed after a month"],
+              options: ["The cafeteria will open later in the morning", "Nobody will lose their job because of the change", "The change will be reviewed after a month"],
               answer: 1,
               explain:
                 "Anons bunu doğrudan söylüyor: «Nobody is losing a job» ve etkilenen iki çalışana sabah saatleri önerilip kabul edilmiş. Sabah açılışı değişmiyor, değerlendirme sözü de verilmiyor.",

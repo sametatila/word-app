@@ -1295,7 +1295,7 @@ What I would like to see is not more visits but a different first question. Ask 
 
 That change would cost nothing and would spare a good many people a visitor they did not need.
 
-Yours faithfully,
+Sincerely,
 Anouk Persson`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

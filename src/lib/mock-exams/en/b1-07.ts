@@ -500,7 +500,7 @@ Do not be afraid {{28}} saying no to a big offer. Twenty hours a week from someb
 
 The list is longer {{29}} it looks. Eleven of the names are people who have not answered since last summer.
 
-And if you are ill, tell somebody early. Nothing here depends {{30}} one person, and it should not.`,
+And if you are sick, tell somebody early. Nothing here depends {{30}} one person, and it should not.`,
             },
           ],
           items: [

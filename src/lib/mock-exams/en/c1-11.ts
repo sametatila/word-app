@@ -458,7 +458,7 @@ None of which should deter the reader. The book is a genuine contribution and it
             {
               key: "c",
               label: "c — Writer C",
-              body: "I ran a service under three successive indicators and I never once saw anybody falsify anything. What I saw was quieter and more corrosive: rotas built around the clock rather than the patient, and a slow drift in what the word urgent meant among people who would have been offended by the suggestion that they had changed at all.",
+              body: "I ran a service under three successive indicators and I never once saw anybody falsify anything. What I saw was quieter and more corrosive: schedules built around the clock rather than the patient, and a slow drift in what the word urgent meant among people who would have been offended by the suggestion that they had changed at all.",
             },
             {
               key: "d",
@@ -530,7 +530,7 @@ None of which should deter the reader. The book is a genuine contribution and it
 
 Better data duly arrived. By 2009 the service could describe the whole distribution of response times, including the long tail that the single proportion had always concealed, and several senior officers said in public that the target had done its work and should be retired. {{32}}
 
-The obstacle was not evidence and it was not cost. It was that the figure had been quoted by three ministers, printed on four hundred thousand leaflets and used, by the service itself, in every argument it had won since 2005. {{33}}
+The obstacle was not evidence and it was not cost. It was that the figure had been quoted by three ministers, printed on four hundred thousand pamphlets and used, by the service itself, in every argument it had won since 2005. {{33}}
 
 There is a general lesson here about the life cycle of a public number, and it is not the one usually drawn. A target does not fail because it is wrong. It fails because it succeeds, acquires defenders, and outlives the question it was invented to answer. {{34}}
 
@@ -595,7 +595,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               text: "Gap 33",
               answer: "a",
               explain:
-                "Paragraf engeli sayarak gösteriyor: «printed on four hundred thousand leaflets» ve üç bakanın alıntıladığı bir rakam. (a) bunun sonucunu veriyor: geri çekmek on iki yılın hesabını vermeyi gerektirirdi.",
+                "Paragraf engeli sayarak gösteriyor: «printed on four hundred thousand pamphlets» ve üç bakanın alıntıladığı bir rakam. (a) bunun sonucunu veriyor: geri çekmek on iki yılın hesabını vermeyi gerektirirdi.",
             },
             {
               kind: "match",
@@ -1233,7 +1233,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               situation: "Sekizinci konuşmacı verdiği kararı savunuyor.",
               plays: 2,
               segments: [
-                { text: "I wrote those rotas and I have read every criticism of them. With what was on my desk, I would write them again, and I say that knowing how it sounds. What I would change is the reporting, not the decision, and I have stopped pretending those are the same admission." },
+                { text: "I wrote those schedules and I have read every criticism of them. With what was on my desk, I would write them again, and I say that knowing how it sounds. What I would change is the reporting, not the decision, and I have stopped pretending those are the same admission." },
               ],
             },
           ],

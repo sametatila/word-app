@@ -56,7 +56,7 @@ export const EN_B1_03: MockPaper = {
             {
               kind: "text",
               id: "m3",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Tuesday and Thursday running group",
               body: `We run at half past six, whatever the weather. Beginners run with a leader who stays at the back, so nobody is left alone. There is no fee, but you register once online so that we know how many we are.`,
@@ -735,7 +735,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "Bir hasta ilacın işe yaramadığını söylüyor.",
               plays: 2,
               segments: [
-                { speaker: "Patient", text: "I have taken the tablets for five days and the pain is the same." },
+                { speaker: "Patient", text: "I have taken the pills for five days and the pain is the same." },
                 { speaker: "Doctor", text: "Then stop them. They should work in three days or not at all. Come back on Friday and we try something different." },
               ],
             },
@@ -811,7 +811,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               no: 9,
               ref: "b2",
               text: "What does the doctor tell the patient?",
-              options: ["To stop taking the tablets", "To take them for two more days", "To take a higher dose"],
+              options: ["To stop taking the pills", "To take them for two more days", "To take a higher dose"],
               answer: 0,
               explain:
                 "Doktor «Then stop them» diyor ve gerekçesini veriyor: «They should work in three days or not at all». Beş gün zaten geçmiş, yani beklemek anlamsız; dozdan hiç söz edilmiyor.",
@@ -1104,7 +1104,7 @@ I would like to pause my membership for two months rather than cancel it, becaus
 
 Could you let me know before the end of this month?
 
-Yours faithfully,
+Sincerely,
 Bora Aksoy`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

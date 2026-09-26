@@ -1,6 +1,6 @@
 [
  { "tr": "bir durumu gerekçesiyle açıklamak", "kind": "exchange.expect", "en": "eine Situation mit Begründung erklären" },
- { "tr": "parcel sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort parcel eine Frage bilden" },
+ { "tr": "package sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort package eine Frage bilden" },
  { "tr": "somut bir örneği süreyle anlatmak", "kind": "exchange.expect", "en": "ein konkretes Beispiel mit Zeitangabe schildern" },
  { "tr": "tek bir durumu sonucuyla anlatmak", "kind": "exchange.expect", "en": "einen einzelnen Fall mit seiner Folge schildern" },
  { "tr": "bir günü tam bir cümleyle anlatmak", "kind": "exchange.expect", "en": "einen Tag in einem vollständigen Satz schildern" },
@@ -89,7 +89,7 @@
  { "tr": "geniş zamanda bir alışkanlığı sıklık bildirerek anlatmak", "kind": "exchange.expect", "en": "eine Gewohnheit im Präsens mit Häufigkeitsangabe schildern" },
  { "tr": "ikinci tip koşulla bir kural önermek ve gerekçelendirmek", "kind": "exchange.expect", "en": "mit dem zweiten Konditionaltyp eine Regel vorschlagen und begründen" },
  { "tr": "post office ile dilbilgisel olarak doğru bir soru kurmak", "kind": "exchange.expect", "en": "mit post office eine grammatisch richtige Frage bilden" },
- { "tr": "shop sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort shop eine grammatisch richtige Frage bilden" },
+ { "tr": "store sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort shop eine grammatisch richtige Frage bilden" },
  { "tr": "varılan kararı açık ve uygulanabilir biçimde ifade etmek", "kind": "exchange.expect", "en": "die getroffene Entscheidung klar und umsetzbar formulieren" },
  { "tr": "varılan kuralı açık ve uygulanabilir biçimde ifade etmek", "kind": "exchange.expect", "en": "die gefundene Regel klar und umsetzbar formulieren" },
  { "tr": "somut bir örnek vermek ve kendi bilgisini gözden geçirmek", "kind": "exchange.expect", "en": "ein konkretes Beispiel geben und das eigene Wissen überprüfen" },

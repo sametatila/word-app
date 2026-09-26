@@ -30,7 +30,7 @@ export const EN_A2_09: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -56,7 +56,7 @@ export const EN_A2_09: MockPaper = {
               genre: "Notice in a building",
               genreTr: "Bina duyurusu",
               title: "The elevator",
-              body: `The elevator is out of order until Thursday. The part comes from Hamburg. If you cannot use the stairs, call the caretaker at 214 and he will bring your shopping up.`,
+              body: `The elevator is out of order until Thursday. The part comes from Hamburg. If you cannot use the stairs, call the superintendent at 214 and he will bring your shopping up.`,
             },
             {
               kind: "text",
@@ -101,10 +101,10 @@ export const EN_A2_09: MockPaper = {
               no: 2,
               ref: "m2",
               text: "What can people do?",
-              options: ["Use the second elevator", "Take the stairs on Thursday", "Ask the caretaker for help"],
+              options: ["Use the second elevator", "Take the stairs on Thursday", "Ask the superintendent for help"],
               answer: 2,
               explain:
-                "Duyuru koşullu bir çözüm veriyor: «If you cannot use the stairs, call the caretaker at 214». İkinci asansörden hiç söz edilmiyor.",
+                "Duyuru koşullu bir çözüm veriyor: «If you cannot use the stairs, call the superintendent at 214». İkinci asansörden hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -134,7 +134,7 @@ export const EN_A2_09: MockPaper = {
               no: 5,
               ref: "m5",
               text: "Why must the writer stay at home?",
-              options: ["She is ill today", "She is cooking for Zeki", "Somebody is coming to the apartment"],
+              options: ["She is sick today", "She is cooking for Zeki", "Somebody is coming to the apartment"],
               answer: 2,
               explain:
                 "İleti sebebi veriyor: «The man from the gas company comes between two and six, and I must be here».",
@@ -147,7 +147,7 @@ export const EN_A2_09: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -254,7 +254,7 @@ And one thing you should not do: never open a machine that uses water or gas. Th
               id: "en-a2-09-l3-12",
               no: 12,
               text: "Where can you find the model number?",
-              options: ["Somewhere on the machine itself", "On the plug at the end of the cable", "In the shop where you bought it"],
+              options: ["Somewhere on the machine itself", "On the plug at the end of the cable", "In the store where you bought it"],
               answer: 0,
               explain:
                 "Metin yeri tarif ediyor: «It is on a small label on the back or under the door». Yani numara makinenin üstünde; fişte ya da dükkânda değil.",
@@ -377,7 +377,7 @@ And the last thing: {{19}} something makes a new noise, write down the day. Nobo
 
 It stops working about four times {{21}} year, always in the summer.
 
-The caretaker is very good, {{22}} he cannot make the parts himself.
+The superintendent is very good, {{22}} he cannot make the parts himself.
 
 Last winter we waited {{23}} three weeks for a small piece of metal.
 
@@ -474,7 +474,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbor on the si
               situation: "İki kişi asansörü konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Woman", text: "Did you call the caretaker?" },
+                { speaker: "Woman", text: "Did you call the superintendent?" },
                 { speaker: "Man", text: "Twice. He says the part comes on Thursday." },
                 { speaker: "Woman", text: "Thursday? It is Monday today." },
                 { speaker: "Man", text: "I know. I have to carry the shopping up four floors until then." },
@@ -538,7 +538,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbor on the si
               no: 2,
               ref: "a2",
               text: "What is the problem?",
-              options: ["The caretaker does not answer", "They must wait until Thursday", "The shopping is too heavy to buy"],
+              options: ["The superintendent does not answer", "They must wait until Thursday", "The shopping is too heavy to buy"],
               answer: 1,
               explain:
                 "Konuşma günleri karşılaştırıyor: «the part comes on Thursday» ve «It is Monday today». Kapıcıya iki kez ulaşılmış.",
@@ -951,7 +951,7 @@ My washing machine is broken. The repair man comes on Thursday between eight and
 
 Could you open the door for him, please? He only needs ten minutes.
 
-The key is with the caretaker in apartment 1. My number is 07700 900 412.
+The key is with the superintendent in apartment 1. My number is 07700 900 412.
 
 Thank you very much!
 Noor`,

@@ -26,7 +26,7 @@ export const EN_A2_04: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -143,7 +143,7 @@ export const EN_A2_04: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -855,7 +855,7 @@ Do the level test:       {{10}}`,
               situation: "Beşinci konuşmacı kursun parasından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I worked in a shop on the weekend and the money went straight to the course. It was two hard years, but nobody paid it for me." },
+                { text: "I worked in a store on the weekend and the money went straight to the course. It was two hard years, but nobody paid it for me." },
               ],
             },
           ],
@@ -928,7 +928,7 @@ Do the level test:       {{10}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You saw an advert for an evening course and you want to know more. Write an email to the school. Write about 50 words. Answer all three points.",
+            "You saw an ad for an evening course and you want to know more. Write an email to the school. Write about 50 words. Answer all three points.",
           promptTr:
             "Bir akşam kursu ilanı gördün ve daha fazlasını öğrenmek istiyorsun. Okula bir e-posta yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
           items: [],
@@ -941,7 +941,7 @@ Do the level test:       {{10}}`,
             ],
             sample: `Dear Sir or Madam,
 
-I saw your advert for the evening course. I work with visitors from other countries, so I need better English for my job.
+I saw your ad for the evening course. I work with visitors from other countries, so I need better English for my job.
 
 Could you tell me which days the lessons are, and at what time they start?
 

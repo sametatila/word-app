@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A1 · Deneme 10 — "Mail, Parcels and Paying Bills".
+ * A1 · Deneme 10 — "Mail, Packages and Paying Bills".
  *
  * A1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Postane A1 için verimli
  * bir zemin: gişe numarası, ağırlık, kuruş cinsinden fiyat, son gün ve
@@ -16,7 +16,7 @@ export const EN_A1_10: MockPaper = {
   course: "en",
   level: "A1",
   no: 10,
-  theme: "Mail, Parcels and Paying Bills",
+  theme: "Mail, Packages and Paying Bills",
   themeTr: "Posta, koliler ve fatura ödemek",
   minutes: 85,
   parts: [
@@ -40,10 +40,10 @@ export const EN_A1_10: MockPaper = {
               id: "t1",
               genre: "Message",
               genreTr: "İleti",
-              title: "Your parcel",
+              title: "Your package",
               body: `Hi Nadia,
 
-Your parcel is at the post office. It came on Tuesday.
+Your package is at the post office. It came on Tuesday.
 
 You must take your passport. They keep it for ten days.
 
@@ -51,7 +51,7 @@ The post office closes at five, but on Saturday at one.
 
 Piet`,
               gloss: [
-                { de: "a parcel", tr: "koli", en: "das Paket" },
+                { de: "a package", tr: "koli", en: "das Paket" },
                 { de: "to keep", tr: "saklamak", en: "aufbewahren" },
               ],
             },
@@ -65,7 +65,7 @@ Piet`,
 
 A letter in this country: 90 cents. To another country: 2 euros.
 
-A parcel up to 2 kilos: 5 euros.
+A package up to 2 kilos: 5 euros.
 
 You can pay bills here. Cash only.`,
             },
@@ -76,10 +76,10 @@ You can pay bills here. Cash only.`,
               id: "en-a1-10-l1-1",
               no: 1,
               ref: "t1",
-              text: "The parcel is at Nadia's house.",
+              text: "The package is at Nadia's house.",
               answer: false,
               explain:
-                "İletinin ilk cümlesi yeri veriyor: «Your parcel is at the post office». Koli evde değil, bu yüzden gidip alınması gerekiyor.",
+                "İletinin ilk cümlesi yeri veriyor: «Your package is at the post office». Koli evde değil, bu yüzden gidip alınması gerekiyor.",
             },
             {
               kind: "bool",
@@ -139,21 +139,21 @@ You can pay bills here. Cash only.`,
               title: "Post Office",
               body: `Open 9 to 17. Saturday 9 to 13.
 
-Letters and parcels.
+Letters and packages.
 
 Pay bills here. Cash only.
 
-Passport for parcels.`,
+Passport for packages.`,
             },
             {
               kind: "text",
               id: "p2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Parcel Shop",
+              title: "Shipping Store",
               body: `In the supermarket. Open every day from 7 to 22.
 
-Take a parcel or send one.
+Take a package or send one.
 
 Boxes: one euro.
 
@@ -180,7 +180,7 @@ Help with forms on Thursday.`,
               id: "en-a1-10-l2-6",
               no: 6,
               text: "You want to pay a bill with your card.",
-              options: ["Post Office", "Parcel Shop", "Bank"],
+              options: ["Post Office", "Shipping Store", "Bank"],
               answer: 2,
               explain:
                 "Banka iki ödeme biçimini de alıyor: «Card and cash». Postane fatura alıyor ama «Cash only» diyor.",
@@ -189,8 +189,8 @@ Help with forms on Thursday.`,
               kind: "mcq",
               id: "en-a1-10-l2-7",
               no: 7,
-              text: "You want to send a parcel at nine in the evening.",
-              options: ["Post Office", "Parcel Shop", "Bank"],
+              text: "You want to send a package at nine in the evening.",
+              options: ["Post Office", "Shipping Store", "Bank"],
               answer: 1,
               explain:
                 "Duyuru saatleri veriyor: «Open every day from 7 to 22». Postane on yedide, banka on altıda kapanıyor.",
@@ -200,17 +200,17 @@ Help with forms on Thursday.`,
               id: "en-a1-10-l2-8",
               no: 8,
               text: "You want to send a letter to another country.",
-              options: ["Post Office", "Parcel Shop", "Bank"],
+              options: ["Post Office", "Shipping Store", "Bank"],
               answer: 0,
               explain:
-                "Postane duyurusu «Letters and parcels» diyor. Koli dükkânı ise mektup almıyor: «No letters here».",
+                "Postane duyurusu «Letters and packages» diyor. Koli dükkânı ise mektup almıyor: «No letters here».",
             },
             {
               kind: "mcq",
               id: "en-a1-10-l2-9",
               no: 9,
               text: "You need help with a form on Thursday.",
-              options: ["Post Office", "Parcel Shop", "Bank"],
+              options: ["Post Office", "Shipping Store", "Bank"],
               answer: 2,
               explain:
                 "Banka günü ve hizmeti birlikte veriyor: «Help with forms on Thursday». Öteki iki duyuruda form yardımı yok.",
@@ -219,8 +219,8 @@ Help with forms on Thursday.`,
               kind: "mcq",
               id: "en-a1-10-l2-10",
               no: 10,
-              text: "You need a box for your parcel.",
-              options: ["Post Office", "Parcel Shop", "Bank"],
+              text: "You need a box for your package.",
+              options: ["Post Office", "Shipping Store", "Bank"],
               answer: 1,
               explain:
                 "Duyuru kutuyu fiyatıyla veriyor: «Boxes: one euro». Postane ve banka kutu satmıyor.",
@@ -240,7 +240,7 @@ Help with forms on Thursday.`,
               id: "s1",
               genre: "Sign",
               genreTr: "Levha",
-              title: "PARCELS",
+              title: "PACKAGES",
               body: `Window 4. Take a number.
 
 Passport, please.`,
@@ -282,7 +282,7 @@ On Saturday: 12:00.`,
               id: "en-a1-10-l3-11",
               no: 11,
               ref: "s1",
-              text: "You need a passport for a parcel.",
+              text: "You need a passport for a package.",
               answer: true,
               explain:
                 "Levha bunu son satırda istiyor: «Passport, please». Ayrıca koliler dördüncü gişede veriliyor ve sıra numarası alınıyor.",
@@ -335,13 +335,13 @@ On Saturday: 12:00.`,
               title: "To Hale",
               body: `Hello Hale,
 
-I am at the post office {{15}} Tuesday. The parcel is very big!
+I am at the post office {{15}} Tuesday. The package is very big!
 
 There {{16}} a new machine now. You can pay bills with a card.
 
 I want to send a letter, {{17}} I have no stamps. I will buy them tomorrow.
 
-Yesterday I {{18}} two boxes for the parcel. They were one euro.
+Yesterday I {{18}} two boxes for the package. They were one euro.
 
 Kiro`,
             },
@@ -417,7 +417,7 @@ Kiro`,
               situation: "Postane bir müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the post office. Your parcel has been here since Tuesday. We keep it for ten days. Please bring your passport." },
+                { text: "Hello, this is the post office. Your package has been here since Tuesday. We keep it for ten days. Please bring your passport." },
               ],
             },
             {
@@ -429,7 +429,7 @@ Kiro`,
               plays: 2,
               segments: [
                 { speaker: "Woman", text: "I want to send this to Poland." },
-                { speaker: "Man", text: "Is it a letter or a parcel?" },
+                { speaker: "Man", text: "Is it a letter or a package?" },
                 { speaker: "Woman", text: "A letter." },
                 { speaker: "Man", text: "Two euros, please." },
               ],
@@ -481,7 +481,7 @@ Kiro`,
               situation: "Bir kişi arkadaşına teşekkür ediyor.",
               plays: 2,
               segments: [
-                { text: "Hi Tarek, it is Anouk. My parcel came today, not on Friday. Thank you very much for your help!" },
+                { text: "Hi Tarek, it is Anouk. My package came today, not on Friday. Thank you very much for your help!" },
               ],
             },
           ],
@@ -536,7 +536,7 @@ Kiro`,
               no: 5,
               ref: "a5",
               text: "Where must people go?",
-              options: ["To window 4", "To window 2", "To another shop"],
+              options: ["To window 4", "To window 2", "To another store"],
               answer: 0,
               explain:
                 "Anons yönlendiriyor: ikinci gişedeki makine bozuk, «Please go to window 4».",
@@ -546,11 +546,11 @@ Kiro`,
               id: "en-a1-10-h1-6",
               no: 6,
               ref: "a6",
-              text: "When did the parcel come?",
+              text: "When did the package come?",
               options: ["On Friday", "Next week", "Today"],
               answer: 2,
               explain:
-                "İleti günü düzeltiyor: «My parcel came today, not on Friday».",
+                "İleti günü düzeltiyor: «My package came today, not on Friday».",
             },
           ],
         },
@@ -633,7 +633,7 @@ Kiro`,
               situation: "Postane koli için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your parcel. It is too big for the mailbox. You can take it from window 4 until Friday." },
+                { text: "Hello, this is about your package. It is too big for the mailbox. You can take it from window 4 until Friday." },
               ],
             },
             {
@@ -658,7 +658,7 @@ Kiro`,
               situation: "İki arkadaş gönderilen bir koliyi konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Maya", text: "I sent the parcel on Monday." },
+                { speaker: "Maya", text: "I sent the package on Monday." },
                 { speaker: "Tim", text: "And?" },
                 { speaker: "Maya", text: "It is not there yet. Three days for two hundred kilometers." },
                 { speaker: "Tim", text: "Call them tomorrow." },
@@ -683,7 +683,7 @@ Kiro`,
               situation: "Bir müşteri kolisini tartıyor.",
               plays: 2,
               segments: [
-                { speaker: "Man", text: "Is this parcel under two kilos?" },
+                { speaker: "Man", text: "Is this package under two kilos?" },
                 { speaker: "Woman", text: "It is two kilos and one hundred grams." },
                 { speaker: "Man", text: "Then it is not five euros?" },
                 { speaker: "Woman", text: "No. Seven." },
@@ -696,7 +696,7 @@ Kiro`,
               id: "en-a1-10-h3-11",
               no: 11,
               ref: "c1",
-              text: "Where is the parcel?",
+              text: "Where is the package?",
               options: ["At the post office", "In the mailbox", "At the neighbor's house"],
               answer: 0,
               explain:
@@ -719,7 +719,7 @@ Kiro`,
               no: 13,
               ref: "c3",
               text: "What is the problem?",
-              options: ["The parcel is too big", "The parcel costs a lot", "The parcel is slow"],
+              options: ["The package is too big", "The package costs a lot", "The package is slow"],
               answer: 2,
               explain:
                 "Konuşmacı süreyi ve mesafeyi yan yana koyuyor: «Three days for two hundred kilometers». Boyut ve fiyat hiç anılmıyor.",
@@ -740,7 +740,7 @@ Kiro`,
               id: "en-a1-10-h3-15",
               no: 15,
               ref: "c5",
-              text: "How much is the parcel?",
+              text: "How much is the package?",
               options: ["Five euros", "Seven euros", "Two euros"],
               answer: 1,
               explain:
@@ -764,7 +764,7 @@ Kiro`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Anouk Vidal wants to send a parcel. The parcel goes to Piet Lang. It weighs 3 kilos. She sends it on Thursday. Her phone number is 07700 900 617. Five things are missing on the form. Write them in the gaps.",
+            "Your friend Anouk Vidal wants to send a package. The package goes to Piet Lang. It weighs 3 kilos. She sends it on Thursday. Her phone number is 07700 900 617. Five things are missing on the form. Write them in the gaps.",
           promptTr:
             "Arkadaşın Anouk Vidal bir koli göndermek istiyor. Koli Piet Lang'e gidiyor. Ağırlığı 3 kilo. Perşembe günü gönderiyor. Telefonu 07700 900 617. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
@@ -773,7 +773,7 @@ Kiro`,
               id: "f1",
               genre: "Form",
               genreTr: "Form",
-              title: "POST OFFICE — PARCEL",
+              title: "POST OFFICE — PACKAGE",
               body: `From (family name): Vidal
 From (first name):  {{1}}
 To (name):          {{2}}
@@ -799,7 +799,7 @@ Phone:              {{5}}`,
               text: "To (name)",
               accept: ["Piet Lang", "Piet"],
               explain:
-                "Yönerge alıcıyı veriyor: «The parcel goes to Piet Lang». Bu satırda soyadı basılı olmadığı için tam ad yazılabilir.",
+                "Yönerge alıcıyı veriyor: «The package goes to Piet Lang». Bu satırda soyadı basılı olmadığı için tam ad yazılabilir.",
             },
             {
               kind: "gap",
@@ -836,20 +836,20 @@ Phone:              {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "A parcel for your friend came to your house. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "A package for your friend came to your house. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Arkadaşına ait bir koli senin evine geldi. Arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 25,
             points: [
-              { de: "Say that the parcel is at your house.", tr: "Kolinin senin evinde olduğunu söyle." },
+              { de: "Say that the package is at your house.", tr: "Kolinin senin evinde olduğunu söyle." },
               { de: "Say when your friend can come.", tr: "Arkadaşının ne zaman gelebileceğini söyle." },
-              { de: "Ask one question about the parcel.", tr: "Koliyle ilgili bir soru sor." },
+              { de: "Ask one question about the package.", tr: "Koliyle ilgili bir soru sor." },
             ],
             sample: `Hi Hale,
 
-Your parcel came to my house today. It is very big!
+Your package came to my house today. It is very big!
 
 I am at home in the evening from six. Come on Tuesday or Wednesday.
 
@@ -880,7 +880,7 @@ Kiro`,
           no: 1,
           format: "speaking",
           goal: "production",
-          prompt: "Talk about mail and money. Speak about these words: a letter — a parcel — a day in the week — a shop — money — something you do not like.",
+          prompt: "Talk about mail and money. Speak about these words: a letter — a package — a day in the week — a store — money — something you do not like.",
           promptTr: "Posta ve parayı anlat. Şu sözcüklere göre konuş: bir mektup — bir koli — haftanın bir günü — bir dükkân — para — sevmediğin bir şey.",
           prepSeconds: 30,
           speakSeconds: 90,
@@ -888,13 +888,13 @@ Kiro`,
           rubric: {
             minutes: 2,
             points: [
-              { de: "a letter or a parcel and the day you send it", tr: "Bir mektup ya da koli ve gönderdiğin gün" },
-              { de: "a shop near you", tr: "Yakınındaki bir dükkân" },
+              { de: "a letter or a package and the day you send it", tr: "Bir mektup ya da koli ve gönderdiğin gün" },
+              { de: "a store near you", tr: "Yakınındaki bir dükkân" },
               { de: "how much it costs", tr: "Ne kadara mal olduğu" },
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I send a parcel to my mother every month. I go on Friday after work. The parcel shop is in the supermarket near my house. It is open until ten. A parcel of three kilos is seven euros. I do not like the line at the post office; it is very long.",
+              "I send a package to my mother every month. I go on Friday after work. The shipping store is in the supermarket near my house. It is open until ten. A package of three kilos is seven euros. I do not like the line at the post office; it is very long.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -909,16 +909,16 @@ Kiro`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Topic: mail and money. Make a question for each word and answer my questions: post office — parcel — card — shop — money.",
+            "Topic: mail and money. Make a question for each word and answer my questions: post office — package — card — store — money.",
           promptTr:
             "Konu: posta ve para. Her sözcük için bir soru kur ve benim sorularımı cevapla: postane — koli — kart — dükkân — para.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "Now we talk about mail and money. Your first word is: post office. Please ask me a question.", tr: "Şimdi posta ve parayı konuşuyoruz. İlk sözcüğün: postane. Bana bir soru sor." },
             { who: "you", hint: "«post office» ile bir soru kur.", expect: "post office ile dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "The post office near me opens at nine. Your next word is: parcel.", tr: "Yakınımdaki postane dokuzda açılıyor. Sıradaki sözcüğün: koli." },
-            { who: "you", hint: "«parcel» için bir soru kur.", expect: "parcel sözcüğüyle bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "I send a parcel to my brother every month. Now a question for you: where do you buy your food?", tr: "Her ay kardeşime bir koli gönderiyorum. Şimdi sana bir soru: Yiyeceğini nereden alıyorsun?" },
+            { who: "partner", de: "The post office near me opens at nine. Your next word is: package.", tr: "Yakınımdaki postane dokuzda açılıyor. Sıradaki sözcüğün: koli." },
+            { who: "you", hint: "«package» için bir soru kur.", expect: "package sözcüğüyle bir soru kurmak", seconds: 25 },
+            { who: "partner", de: "I send a package to my brother every month. Now a question for you: where do you buy your food?", tr: "Her ay kardeşime bir koli gönderiyorum. Şimdi sana bir soru: Yiyeceğini nereden alıyorsun?" },
             { who: "you", hint: "Bir dükkân adı ve yer söyleyerek cevapla.", expect: "bir yeri tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Thank you. Last question: how much is a letter in your country?", tr: "Teşekkürler. Son soru: Ülkende bir mektup ne kadar?" },
             { who: "you", hint: "Bir fiyat söyle.", expect: "bir fiyatı İngilizce söylemek (para birimiyle)", seconds: 25 },
@@ -931,7 +931,7 @@ Kiro`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "When does the post office open? — At nine. Do you send a parcel every month? — Yes, to my brother. Can I pay with a card? — Not here. Where do you buy your food? — In the supermarket near my house. How much is a letter? — Ninety cents.",
+              "When does the post office open? — At nine. Do you send a package every month? — Yes, to my brother. Can I pay with a card? — Not here. Where do you buy your food? — In the supermarket near my house. How much is a letter? — Ninety cents.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (When … / Do you … / How much …)",
@@ -967,7 +967,7 @@ Kiro`,
               { de: "ask when it arrives", tr: "Ne zaman varacağını sormak" },
             ],
             sample:
-              "I would like to send this parcel, please. — It goes to Warsaw, to my sister. — When does it arrive, please?",
+              "I would like to send this package, please. — It goes to Warsaw, to my sister. — When does it arrive, please?",
             criteria: [
               "İstek açıkça söylendi mi? (mektup mu koli mi)",
               "Yer adı doğru söylendi mi?",

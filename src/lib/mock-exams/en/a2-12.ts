@@ -30,7 +30,7 @@ export const EN_A2_12: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a school newsletter, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a school newsletter, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve bir okul bülteni okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -155,13 +155,13 @@ Children who cannot swim are in the second group.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Homework Club", body: "Monday to Thursday, 15:00 to 17:00, in the library. Free, and there is no booking." },
             { key: "b", label: "Extra Lessons", body: "Mathematics and English in small groups, two afternoons a week. Twelve euros an hour." },
-            { key: "c", label: "School Office", body: "Open 8 to 15. For an appointment with a teacher outside the parents' evening, call 6640." },
+            { key: "c", label: "School Office", body: "Open 8 to 15. For an appointment with a teacher outside the parent-teacher conference, call 6640." },
             { key: "d", label: "School Meals", body: "Three euros twenty a day, or free with the card from the town office. Tell us by Friday for the next week." },
             { key: "e", label: "Help Fund", body: "For families with a problem paying for a trip or a book. Write to the office; nobody sees your letter except the head." },
             { key: "f", label: "School Bus", body: "Two euros a week. The bus leaves at 7:40 from the market and comes back at 16:10." },
@@ -182,10 +182,10 @@ Children who cannot swim are in the second group.`,
               kind: "match",
               id: "en-a2-12-l2-7",
               no: 7,
-              text: "Petra cannot come to the parents' evening and wants another time.",
+              text: "Petra cannot come to the parent-teacher conference and wants another time.",
               answer: "c",
               explain:
-                "İlan tam bu durumu karşılıyor: «For an appointment with a teacher outside the parents' evening, call 6640».",
+                "İlan tam bu durumu karşılıyor: «For an appointment with a teacher outside the parent-teacher conference, call 6640».",
             },
             {
               kind: "match",
@@ -240,7 +240,7 @@ Now we do something different. There is one paper letter a week, always on Frida
 
 The number of letters has not gone down. What has changed is that there is one place to look, and the June trip last year had fifty-eight children.
 
-We know that Friday is not a good day for everybody. Tell us at the parents' evening and we will change it.`,
+We know that Friday is not a good day for everybody. Tell us at the parent-teacher conference and we will change it.`,
               gloss: [
                 { de: "a newsletter", tr: "bülten", en: "der Newsletter" },
                 { de: "a trip", tr: "gezi", en: "der Ausflug" },
@@ -287,7 +287,7 @@ We know that Friday is not a good day for everybody. Tell us at the parents' eve
               options: ["Look at the website every Friday", "Say if Friday is bad", "Pay for the trip much earlier"],
               answer: 1,
               explain:
-                "Son satır bir rica taşıyor: «Tell us at the parents' evening and we will change it».",
+                "Son satır bir rica taşıyor: «Tell us at the parent-teacher conference and we will change it».",
             },
           ],
         },
@@ -389,7 +389,7 @@ We have lived in this street {{21}} nine years.
 
 The new letters are shorter {{22}} the old ones.
 
-The parents' evening is always {{23}} a Tuesday.
+The parent-teacher conference is always {{23}} a Tuesday.
 
 I have three children at the school and I still {{24}} not know all the teachers.`,
             },
@@ -470,7 +470,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Okul bir veliye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Mrs. Roth, this is the school office. The parents' evening is now on Wednesday, not on Tuesday. The time is the same: six to eight." },
+                { text: "Hello Mrs. Roth, this is the school office. The parent-teacher conference is now on Wednesday, not on Tuesday. The time is the same: six to eight." },
               ],
             },
             {
@@ -495,7 +495,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Bir anne devamsızlığı bildiriyor.",
               plays: 2,
               segments: [
-                { speaker: "Mother", text: "My son was ill on Monday and Tuesday." },
+                { speaker: "Mother", text: "My son was sick on Monday and Tuesday." },
                 { speaker: "Clerk", text: "We need one line from you, with the dates." },
                 { speaker: "Mother", text: "Can I write it now?" },
                 { speaker: "Clerk", text: "Please do." },
@@ -520,7 +520,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Bir veli başka bir veliden yardım istiyor.",
               plays: 2,
               segments: [
-                { text: "Hi Petra, it is Mirek. I cannot come to the parents' evening on Wednesday. Can you ask the mathematics teacher about the extra lessons for me?" },
+                { text: "Hi Petra, it is Mirek. I cannot come to the parent-teacher conference on Wednesday. Can you ask the mathematics teacher about the extra lessons for me?" },
               ],
             },
           ],
@@ -588,7 +588,7 @@ I have three children at the school and I still {{24}} not know all the teachers
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear information about a parents' evening. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
+            "You hear information about a parent-teacher conference. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
           promptTr:
             "Bir veli toplantısı hakkında bilgi dinleyeceksin. 6–10. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -601,7 +601,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. The parents' evening is on Wednesday the twenty-second, from six to eight. You have ten minutes with each teacher and you can see two teachers. Please write your name on the list in the hall by Monday. If you cannot come, call the office at 6640 and we will find another time.",
+                  text: "Good evening. The parent-teacher conference is on Wednesday the twenty-second, from six to eight. You have ten minutes with each teacher and you can see two teachers. Please write your name on the list in the hall by Monday. If you cannot come, call the office at 6640 and we will find another time.",
                 },
               ],
             },
@@ -720,7 +720,7 @@ If you cannot come, call: {{10}}`,
               situation: "Bir veli toplantı saatini soruyor.",
               plays: 2,
               segments: [
-                { text: "Yes, hello, this is about Wednesday. I work until seven and the parents' evening ends at eight. Is there a teacher who can see me at half past seven?" },
+                { text: "Yes, hello, this is about Wednesday. I work until seven and the parent-teacher conference ends at eight. Is there a teacher who can see me at half past seven?" },
               ],
             },
             {
@@ -1045,7 +1045,7 @@ Petra Roth`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Describe this situation for about one minute: a school hall on a parents' evening. Six adults are waiting on chairs along the wall and a teacher is sitting at a small table with a parent. On the wall there is a list with names on it. Say what you see, what the people are doing, and whether you like meetings like this.",
+            "Describe this situation for about one minute: a school hall during a parent-teacher conference. Six adults are waiting on chairs along the wall and a teacher is sitting at a small table with a parent. On the wall there is a list with names on it. Say what you see, what the people are doing, and whether you like meetings like this.",
           promptTr:
             "Şu durumu bir dakika kadar anlat: veli toplantısında bir okul salonu. Duvar boyunca sandalyelerde altı yetişkin bekliyor; bir öğretmen küçük bir masada bir veliyle oturuyor. Duvarda adların yazılı olduğu bir liste var. Ne gördüğünü, insanların ne yaptığını ve böyle toplantıları sevip sevmediğini söyle.",
           prepSeconds: 45,
@@ -1059,7 +1059,7 @@ Petra Roth`,
               { de: "say if you like meetings like this", tr: "Böyle toplantıları sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a school hall on a parents' evening. Along the wall six adults are sitting on chairs and waiting. In the middle a teacher is sitting at a small table and she is talking to a mother. On the wall on the left there is a list with names on it, and a man is standing in front of it and looking for his name. I do not really like meetings like this, because ten minutes is very short and everybody is listening.",
+              "This is a school hall during a parent-teacher conference. Along the wall six adults are sitting on chairs and waiting. In the middle a teacher is sitting at a small table and she is talking to a mother. On the wall on the left there is a list with names on it, and a man is standing in front of it and looking for his name. I do not really like meetings like this, because ten minutes is very short and everybody is listening.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",
@@ -1079,7 +1079,7 @@ Petra Roth`,
             "Okul gelecek yıl veliler için tek bir şeyi değiştirebiliyor. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: one letter a week instead of many, a parents' evening on two days instead of one, or a person in the office who telephones families who do not answer. What do you think about the weekly letter?", tr: "Üç fikir var: çok sayıda mektup yerine haftada bir mektup, bir gün yerine iki güne yayılmış veli toplantısı ya da cevap vermeyen aileleri arayan bir görevli. Haftalık mektup hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: one letter a week instead of many, a parent-teacher conference on two days instead of one, or a person in the office who telephones families who do not answer. What do you think about the weekly letter?", tr: "Üç fikir var: çok sayıda mektup yerine haftada bir mektup, bir gün yerine iki güne yayılmış veli toplantısı ya da cevap vermeyen aileleri arayan bir görevli. Haftalık mektup hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Haftalık mektup fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see. But some families do not read anything on paper, and one letter a week does not help them. Does that change anything?", tr: "Anlıyorum. Ama bazı aileler kâğıt üzerinde hiçbir şey okumuyor ve haftada bir mektup onlara yardımcı olmuyor. Bu bir şey değiştirir mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },

@@ -25,7 +25,7 @@ export const EN_A2_08: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -43,7 +43,7 @@ export const EN_A2_08: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "Tonight",
-              body: `Hi Cato, I have two tickets for tonight and my brother is ill. The doors open at eight and the band starts at nine. It is a twenty-minute walk from your apartment. Tell me before six, because after that I give the ticket to somebody at work.`,
+              body: `Hi Cato, I have two tickets for tonight and my brother is sick. The doors open at eight and the band starts at nine. It is a twenty-minute walk from your apartment. Tell me before six, because after that I give the ticket to somebody at work.`,
             },
             {
               kind: "text",
@@ -85,7 +85,7 @@ export const EN_A2_08: MockPaper = {
               no: 1,
               ref: "m1",
               text: "What does the writer want?",
-              options: ["Somebody to walk with her to the apartment", "A ticket for her brother, who is ill", "An answer before six o'clock"],
+              options: ["Somebody to walk with her to the apartment", "A ticket for her brother, who is sick", "An answer before six o'clock"],
               answer: 2,
               explain:
                 "İletinin son cümlesi bir süre koyuyor: «Tell me before six, because after that I give the ticket to somebody at work». Kardeşi hasta olduğu için bilet zaten boşta.",
@@ -142,7 +142,7 @@ export const EN_A2_08: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -478,7 +478,7 @@ Last year I {{24}} not miss a single evening.`,
             {
               kind: "audio",
               id: "a3",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Dükkânda",
               situation: "Bir müşteri kulaklık soruyor.",
               plays: 2,
@@ -976,7 +976,7 @@ Vida`,
               { de: "Say when and how you started.", tr: "Ne zaman ve nasıl başladığını söyle." },
               { de: "Say why you continue.", tr: "Neden devam ettiğini söyle." },
             ],
-            sample: `I swim three mornings a week before work. I started four years ago because my back hurt and the doctor said swimming was better than tablets. At the beginning I could only do ten minutes and I hated the cold water. Now I do forty minutes and I am awake for the whole day. That is why I continue, not because of my back.`,
+            sample: `I swim three mornings a week before work. I started four years ago because my back hurt and the doctor said swimming was better than pills. At the beginning I could only do ten minutes and I hated the cold water. Now I do forty minutes and I am awake for the whole day. That is why I continue, not because of my back.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Başlangıç için geçmiş zaman, şimdiki alışkanlık için geniş zaman doğru mu kullanılmış?",

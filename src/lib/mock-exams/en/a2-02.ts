@@ -25,7 +25,7 @@ export const EN_A2_02: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -48,10 +48,10 @@ export const EN_A2_02: MockPaper = {
             {
               kind: "text",
               id: "m2",
-              genre: "Notice in a shop",
+              genre: "Notice in a store",
               genreTr: "Mağaza duyurusu",
               title: "Winter sale",
-              body: `Coats and boots are thirty percent cheaper this week. Sale items cannot go back to the shop, but you can change the size once.`,
+              body: `Coats and boots are thirty percent cheaper this week. Sale items cannot go back to the store, but you can change the size once.`,
             },
             {
               kind: "text",
@@ -99,7 +99,7 @@ export const EN_A2_02: MockPaper = {
               options: ["Get a different size once", "Bring it back for your money", "Buy two and pay for one"],
               answer: 0,
               explain:
-                "Duyuru iki kuralı yan yana koyuyor: «Sale items cannot go back to the shop», ama «you can change the size once». İkinci şık tam yasaklanan şeyi öneriyor; üçüncüsü metinde hiç geçmeyen bir kampanya.",
+                "Duyuru iki kuralı yan yana koyuyor: «Sale items cannot go back to the store», ama «you can change the size once». İkinci şık tam yasaklanan şeyi öneriyor; üçüncüsü metinde hiç geçmeyen bir kampanya.",
             },
             {
               kind: "mcq",
@@ -107,7 +107,7 @@ export const EN_A2_02: MockPaper = {
               no: 3,
               ref: "m3",
               text: "Why must somebody be at home?",
-              options: ["Because the shop needs a signature", "Because the package is large", "Because the driver comes very early"],
+              options: ["Because the store needs a signature", "Because the package is large", "Because the driver comes very early"],
               answer: 1,
               explain:
                 "Sebep cümlenin içinde veriliyor: «because the box is big». İmza ya da erken saat e-postada hiç geçmiyor; teslim aralığı salı ile perşembe arası olarak veriliyor ama saat söylenmiyor.",
@@ -142,7 +142,7 @@ export const EN_A2_02: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -153,7 +153,7 @@ export const EN_A2_02: MockPaper = {
             { key: "e", label: "Airport Shuttle", body: "Every twenty minutes, day and night. Thirty-five minutes to the terminal. Big cases are free. Buy your ticket from the driver." },
             { key: "f", label: "Repair Café", body: "Bring a broken lamp, radio or bag on the first Sunday of the month. Our helpers repair it with you. Free, but please give what you can." },
             { key: "g", label: "Museum Card", body: "One card, twelve museums, one year. 45 pounds for adults, free for children. The card also gives you ten percent in the museum shops." },
-            { key: "h", label: "Late Supermarket", body: "Open until midnight every day, also on Sunday. Fresh bread arrives at eight in the evening. Small shop, low prices, no parking lot." },
+            { key: "h", label: "Late Supermarket", body: "Open until midnight every day, also on Sunday. Fresh bread arrives at eight in the evening. Small store, low prices, no parking lot." },
           ],
           items: [
             {
@@ -287,7 +287,7 @@ Now I have a rule for every journey. I put everything on the bed, and then I tak
             {
               kind: "text",
               id: "t4",
-              genre: "Travel leaflet",
+              genre: "Travel brochure",
               genreTr: "Seyahat broşürü",
               title: "Before you fly",
               body: `Airports are busy places, so it is a good idea to {{15}} early.
@@ -463,7 +463,7 @@ We will come back next year {{24}} the weather is good.`,
             {
               kind: "audio",
               id: "a2",
-              genre: "In a clothes shop",
+              genre: "In a clothing store",
               genreTr: "Giyim mağazasında",
               situation: "Bir müşteri ceket deniyor.",
               plays: 2,
@@ -531,7 +531,7 @@ We will come back next year {{24}} the weather is good.`,
               no: 2,
               ref: "a2",
               text: "Which jacket does the customer try?",
-              options: ["The gray one", "The black one", "A shorter one in another shop"],
+              options: ["The gray one", "The black one", "A shorter one in another store"],
               answer: 0,
               explain:
                 "Daha uzun olanı yalnız gri renkte var ve müşteri «Color is not important. I will try the gray one» diyor. Siyah kayıtta geçiyor ama mevcut olmayan seçenek olarak.",
@@ -671,12 +671,12 @@ Bring:                  a warm {{10}}`,
             {
               kind: "audio",
               id: "c1",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri satış görevlisiyle konuşuyor.",
               plays: 2,
               segments: [
-                { text: "I know the sale finished yesterday, but I was ill and I could not come. Is there any chance of the sale price today?" },
+                { text: "I know the sale finished yesterday, but I was sick and I could not come. Is there any chance of the sale price today?" },
               ],
             },
             {
@@ -742,7 +742,7 @@ Bring:                  a warm {{10}}`,
               no: 12,
               ref: "c2",
               text: "Why is the announcement made?",
-              options: ["To sell something in the shop", "To close the ground floor", "To find the owner of an animal"],
+              options: ["To sell something in the store", "To close the ground floor", "To find the owner of an animal"],
               answer: 2,
               explain:
                 "Anons köpeği tarif edip «If the dog is yours, please come to the ground floor» diyor: sahibini arıyor. Zemin kat buluşma yeri, kapatılan bir bölüm değil.",
@@ -795,7 +795,7 @@ Bring:                  a warm {{10}}`,
             { key: "a", label: "It arrived very late." },
             { key: "b", label: "It was the wrong size." },
             { key: "c", label: "It broke after a short time." },
-            { key: "d", label: "It was much more expensive than in another shop." },
+            { key: "d", label: "It was much more expensive than in another store." },
             { key: "e", label: "It was too heavy to carry." },
             { key: "f", label: "The color was different from the picture." },
             { key: "g", label: "It was never used." },
@@ -854,7 +854,7 @@ Bring:                  a warm {{10}}`,
               situation: "Beşinci konuşmacı bir telefondan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I paid four hundred pounds at the airport. Two days later I saw the same phone in a normal shop for three hundred. That still makes me angry." },
+                { text: "I paid four hundred pounds at the airport. Two days later I saw the same phone in a normal store for three hundred. That still makes me angry." },
               ],
             },
           ],
@@ -1005,7 +1005,7 @@ Elif`,
           exchange: [
             { who: "partner", de: "Good afternoon. How do you usually travel to work or to school?", tr: "İyi günler. İşe ya da okula genelde nasıl gidersin?" },
             { who: "you", hint: "Ulaşım biçimini ve süresini söyle.", expect: "günlük ulaşımı ve süresini tam bir cümleyle anlatmak", seconds: 30 },
-            { who: "partner", de: "Thank you. Do you prefer shopping in a shop or on the internet? Why?", tr: "Teşekkürler. Mağazadan mı internetten mi alışveriş yapmayı seversin? Neden?" },
+            { who: "partner", de: "Thank you. Do you prefer shopping in a store or on the internet? Why?", tr: "Teşekkürler. Mağazadan mı internetten mi alışveriş yapmayı seversin? Neden?" },
             { who: "you", hint: "Tercihini söyle ve bir gerekçe ver.", expect: "bir tercihi gerekçesiyle bildirmek", seconds: 30 },
             { who: "partner", de: "Interesting. Tell me about a journey you made last year.", tr: "İlginç. Geçen yıl yaptığın bir yolculuğu anlat." },
             { who: "you", hint: "Geçmiş zamanla kısa bir yolculuk anlat.", expect: "geçmiş zamanda kısa bir anlatı vermek", seconds: 35 },
@@ -1019,7 +1019,7 @@ Elif`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "I usually go to work by bus. It takes about twenty-five minutes. I prefer shopping in a shop because I want to see the size and the color first. Last year I went to Greece with my sister. We stayed for ten days and we swam every morning.",
+              "I usually go to work by bus. It takes about twenty-five minutes. I prefer shopping in a store because I want to see the size and the color first. Last year I went to Greece with my sister. We stayed for ten days and we swam every morning.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",

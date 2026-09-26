@@ -83,7 +83,7 @@ export const EN_B1_01: MockPaper = {
             {
               kind: "text",
               id: "m4",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Weekend job",
               body: `We need somebody for our garden center on Saturdays. Experience is welcome but not necessary; we will train you. You must be free from March until October, because we do not open in winter.`,
@@ -168,7 +168,7 @@ export const EN_B1_01: MockPaper = {
             { key: "a", label: "Night Shift Support", body: "Evening and night work in a small hotel, three nights a week. No experience needed. We pay for a taxi home after two in the morning. You must be over eighteen." },
             { key: "b", label: "Bookkeeping — Online", body: "A twelve-week course in the evening, entirely online. You need a computer and about four hours a week. The certificate is accepted by most small companies." },
             { key: "c", label: "Volunteer Reading Club", body: "Read with children for one hour on Thursday afternoons in the city library. No qualification necessary, but you must come every week for a term." },
-            { key: "d", label: "Kitchen Assistant", body: "Lunchtimes only, Monday to Friday, in a busy canteen. Hot food is free for staff. Standing work; the shift is four hours with one short break." },
+            { key: "d", label: "Kitchen Assistant", body: "Lunchtimes only, Monday to Friday, in a busy cafeteria. Hot food is free for staff. Standing work; the shift is four hours with one short break." },
             { key: "e", label: "Language Exchange", body: "Meet once a week in a café and speak half the time in English, half in another language. Free. Groups of two or three, all levels." },
             { key: "f", label: "Weekend Warehouse", body: "Saturday and Sunday, seven in the morning until three. Heavy lifting. Good money for students, but you need your own transport: there is no bus before eight." },
             { key: "g", label: "Photography Workshop", body: "Six Saturdays in spring, in the old town. Bring any camera, even a phone. The teacher has worked for magazines for twenty years. 90 pounds for the whole course." },
@@ -1276,7 +1276,7 @@ If you visit, do not start at the bridge like everybody else. Start at the fores
             "Okulumuzun öğrenciler için tek bir yeni şeye ayıracak parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: a quiet study room, a cheap canteen, better wifi, or a bicycle shelter. Which one do you think is most useful, and why?", tr: "Seçenekler: sessiz bir çalışma odası, ucuz bir yemekhane, daha iyi kablosuz ağ ya da bir bisiklet barınağı. Sence hangisi en yararlı, neden?" },
+            { who: "partner", de: "The options are: a quiet study room, a cheap cafeteria, better wifi, or a bicycle shelter. Which one do you think is most useful, and why?", tr: "Seçenekler: sessiz bir çalışma odası, ucuz bir yemekhane, daha iyi kablosuz ağ ya da bir bisiklet barınağı. Sence hangisi en yararlı, neden?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I see. My worry is that a study room is only useful before exams, and empty for the rest of the year. What do you say to that?", tr: "Anlıyorum. Benim endişem, çalışma odasının yalnız sınavlardan önce işe yaraması, yılın geri kalanında boş kalması. Buna ne dersin?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },
@@ -1292,7 +1292,7 @@ If you visit, do not start at the bridge like everybody else. Start at the fores
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would choose the cheap canteen, because everybody eats and not everybody studies here. That is true about the study room, but I think an empty room is still better than no room. All right, let us recommend the canteen, and suggest the study room for next year.",
+              "I would choose the cheap cafeteria, because everybody eats and not everybody studies here. That is true about the study room, but I think an empty room is still better than no room. All right, let us recommend the cafeteria, and suggest the study room for next year.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi, yoksa konu mu değiştirildi?",

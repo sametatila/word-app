@@ -65,9 +65,9 @@ Alma`,
               genre: "Notice at the station",
               genreTr: "İstasyon duyurusu",
               title: "BUS TICKETS",
-              body: `You can buy a ticket in the shop or from the driver.
+              body: `You can buy a ticket in the store or from the driver.
 
-In the shop: 2 euros. From the driver: 3 euros.
+In the store: 2 euros. From the driver: 3 euros.
 
 Children under seven do not pay.
 
@@ -113,7 +113,7 @@ The last bus on Sunday is at 22:00.`,
               text: "A ticket from the driver costs two euros.",
               answer: false,
               explain:
-                "Duyuru iki fiyat veriyor: «In the shop: 2 euros. From the driver: 3 euros». İki euro dükkândaki fiyat; şoförden alınan bilet bir euro daha pahalı.",
+                "Duyuru iki fiyat veriyor: «In the store: 2 euros. From the driver: 3 euros». İki euro dükkândaki fiyat; şoförden alınan bilet bir euro daha pahalı.",
             },
             {
               kind: "bool",
@@ -273,7 +273,7 @@ Push the red button before your stop.`,
 
 No paper money.
 
-If the machine does not work, buy your ticket in the shop.`,
+If the machine does not work, buy your ticket in the store.`,
             },
             {
               kind: "text",
@@ -490,7 +490,7 @@ Timo`,
                 { speaker: "Woman", text: "The machine does not take my card." },
                 { speaker: "Man", text: "Try the other machine, next to the door." },
                 { speaker: "Woman", text: "And if it does not work?" },
-                { speaker: "Man", text: "Then go to the shop. They sell tickets too." },
+                { speaker: "Man", text: "Then go to the store. They sell tickets too." },
               ],
             },
           ],
@@ -556,7 +556,7 @@ Timo`,
               no: 6,
               ref: "a6",
               text: "What does the second person say first?",
-              options: ["Use the other machine", "Go to the shop and ask", "Call for help"],
+              options: ["Use the other machine", "Go to the store and ask", "Call for help"],
               answer: 0,
               explain:
                 "İlk öneri makineyle ilgili: «Try the other machine, next to the door». Dükkân ikinci seçenek olarak, ancak o da işe yaramazsa söyleniyor.",

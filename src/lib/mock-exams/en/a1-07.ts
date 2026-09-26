@@ -47,7 +47,7 @@ export const EN_A1_07: MockPaper = {
 
 It is very cold here — two degrees this morning! Bring your big coat, not the thin one.
 
-The shops are open until eight, so we can go on Friday after work.
+The stores are open until eight, so we can go on Friday after work.
 
 I have a red hat for you. It is a present, please do not buy one.
 
@@ -61,7 +61,7 @@ Cato`,
             {
               kind: "text",
               id: "t2",
-              genre: "Notice in a shop",
+              genre: "Notice in a store",
               genreTr: "Mağaza duyurusu",
               title: "WINTER SALE",
               body: `Coats and shoes: 30 percent less.
@@ -102,7 +102,7 @@ Open Monday to Saturday, 9 to 20.`,
               text: "The shops close at nine in the evening.",
               answer: false,
               explain:
-                "İleti kapanış saatini veriyor: «The shops are open until eight». Dokuz bu saatten sonra; cuma planı da bu saate göre kuruluyor.",
+                "İleti kapanış saatini veriyor: «The stores are open until eight». Dokuz bu saatten sonra; cuma planı da bu saate göre kuruluyor.",
             },
             {
               kind: "bool",
@@ -253,7 +253,7 @@ Do not eat or drink here.`,
             {
               kind: "text",
               id: "s2",
-              genre: "Sign in the shoe shop",
+              genre: "Sign in the shoe store",
               genreTr: "Ayakkabıcıdaki levha",
               title: "SHOES",
               body: `Please do not walk outside with new shoes.
@@ -348,7 +348,7 @@ Thank you!`,
 
 Thank you for the photo! I come {{15}} Sunday, not on Saturday.
 
-The weather here {{16}} very cold. I take two jumpers and a big coat.
+The weather here {{16}} very cold. I take two sweaters and a big coat.
 
 I have a small bag, {{17}} it is full. Sorry!
 
@@ -428,7 +428,7 @@ Eren`,
               situation: "Mağazada anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Attention please. The shop closes at six today, not at eight, because of the snow. The sale starts again tomorrow at nine. Thank you." },
+                { text: "Attention please. The store closes at six today, not at eight, because of the snow. The sale starts again tomorrow at nine. Thank you." },
               ],
             },
             {
@@ -439,7 +439,7 @@ Eren`,
               situation: "Mağaza müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the shop about your coat. The red one in your size is here now. We keep it for you until Friday. Please bring the paper." },
+                { text: "Hello, this is the store about your coat. The red one in your size is here now. We keep it for you until Friday. Please bring the paper." },
               ],
             },
             {
@@ -470,7 +470,7 @@ Eren`,
             {
               kind: "audio",
               id: "a5",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri kazak değiştirmek istiyor.",
               plays: 2,
@@ -499,7 +499,7 @@ Eren`,
               id: "en-a1-07-h1-1",
               no: 1,
               ref: "a1",
-              text: "When does the shop close today?",
+              text: "When does the store close today?",
               options: ["At six", "At eight", "At nine"],
               answer: 0,
               explain:
@@ -567,7 +567,7 @@ Eren`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "You hear an announcement in a big shop. Are sentences 7 to 10 true or false? The announcement plays twice.",
+          prompt: "You hear an announcement in a big store. Are sentences 7 to 10 true or false? The announcement plays twice.",
           promptTr: "Büyük bir mağazada yapılan anonsu dinleyeceksin. 7–10. cümleler doğru mu yanlış mı? Anonsu iki kez dinleyebilirsin.",
           texts: [
             {
@@ -578,7 +578,7 @@ Eren`,
               situation: "Mağaza müdürü iki değişiklik duyuruyor.",
               plays: 2,
               segments: [
-                { text: "Good afternoon. Two things. From Monday the shop opens at eight in the morning, one hour earlier. The winter sale finishes on Saturday, so this is the last week. And a small thing: the elevator to the second floor does not work today; please use the stairs." },
+                { text: "Good afternoon. Two things. From Monday the store opens at eight in the morning, one hour earlier. The winter sale finishes on Saturday, so this is the last week. And a small thing: the elevator to the second floor does not work today; please use the stairs." },
               ],
             },
           ],
@@ -588,7 +588,7 @@ Eren`,
               id: "en-a1-07-h2-7",
               no: 7,
               ref: "b1",
-              text: "From Monday the shop opens earlier.",
+              text: "From Monday the store opens earlier.",
               answer: true,
               explain:
                 "Anons bunu iki kez söylüyor: «opens at eight in the morning, one hour earlier». Yani eski saat dokuzdu.",
@@ -647,7 +647,7 @@ Eren`,
             {
               kind: "audio",
               id: "c2",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri iki gömlek alıyor.",
               plays: 2,
@@ -674,7 +674,7 @@ Eren`,
             {
               kind: "audio",
               id: "c4",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri mont rengi soruyor.",
               plays: 2,
@@ -879,7 +879,7 @@ Cato`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you talk about clothes and weather, you ask and answer questions, and you do a role play in a shop.",
+      instruction: "There are three tasks in this part: you talk about clothes and weather, you ask and answer questions, and you do a role play in a store.",
       instructionTr: "Bu bölümde üç görev var: giysi ve havayı anlatma, soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {
@@ -916,14 +916,14 @@ Cato`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Topic: shopping and weather. Make a question for each word and answer my questions: shop — coat — money — rain — weekend.",
+            "Topic: shopping and weather. Make a question for each word and answer my questions: store — coat — money — rain — weekend.",
           promptTr:
             "Konu: alışveriş ve hava. Her sözcük için bir soru kur ve benim sorularımı cevapla: dükkân — mont — para — yağmur — hafta sonu.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Now we talk about shopping. Your first word is: shop. Please ask me a question.", tr: "Şimdi alışverişi konuşuyoruz. İlk sözcüğün: dükkân. Bana bir soru sor." },
-            { who: "you", hint: "«shop» sözcüğüyle bir soru kur.", expect: "shop sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "I buy my clothes in a small shop near my house. Your next word is: coat.", tr: "Giysilerimi evimin yanındaki küçük bir dükkândan alırım. Sıradaki sözcüğün: mont." },
+            { who: "partner", de: "Now we talk about shopping. Your first word is: store. Please ask me a question.", tr: "Şimdi alışverişi konuşuyoruz. İlk sözcüğün: dükkân. Bana bir soru sor." },
+            { who: "you", hint: "«store» sözcüğüyle bir soru kur.", expect: "store sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
+            { who: "partner", de: "I buy my clothes in a small store near my house. Your next word is: coat.", tr: "Giysilerimi evimin yanındaki küçük bir dükkândan alırım. Sıradaki sözcüğün: mont." },
             { who: "you", hint: "«coat» için bir soru kur.", expect: "coat sözcüğüyle bir soru kurmak", seconds: 25 },
             { who: "partner", de: "My coat is green and it is ten years old. Now a question for you: what do you wear when it rains?", tr: "Montum yeşil ve on yaşında. Şimdi sana bir soru: Yağmur yağdığında ne giyersin?" },
             { who: "you", hint: "Giysi adı vererek cevapla.", expect: "giysi adlarıyla tam bir cümle kurmak", seconds: 25 },
@@ -938,7 +938,7 @@ Cato`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where do you buy your clothes? — In a small shop. Do you have a warm coat? — Yes, a black one. How much money do you take to the shop? — About fifty euros. Do you go shopping on the weekend? — Yes, on Saturday. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
+              "Where do you buy your clothes? — In a small store. Do you have a warm coat? — Yes, a black one. How much money do you take to the store? — About fifty euros. Do you go shopping on the weekend? — Yes, on Saturday. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where … / Do you have … / How much …)",
@@ -953,7 +953,7 @@ Cato`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "You are in a clothes shop. Situations: you say what you want. — You ask about the size. — You ask about changing it.",
+            "You are in a clothing store. Situations: you say what you want. — You ask about the size. — You ask about changing it.",
           promptTr:
             "Giysi mağazasındasın. Durumlar: Ne istediğini söyle. — Bedeni sor. — Değiştirmeyi sor.",
           prepSeconds: 20,

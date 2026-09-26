@@ -56,7 +56,7 @@ export const EN_B1_02: MockPaper = {
             {
               kind: "text",
               id: "m3",
-              genre: "Advert",
+              genre: "Advertisement",
               genreTr: "İlan",
               title: "Repair, do not replace",
               body: `Our workshop repairs coffee machines, toasters and kettles. We look at your machine for free and then tell you the price. If a repair costs more than half of a new machine, we say so honestly and you decide.`,
@@ -1111,7 +1111,7 @@ Closed in the month of:  {{19}}`,
               { de: "Describe the damage clearly.", tr: "Hasarı açıkça tarif et." },
               { de: "Say what you want the store to do, and by when.", tr: "Mağazadan ne yapmasını, ne zamana kadar istediğini söyle." },
             ],
-            sample: `Dear Sir or Madam,
+            sample: `To Whom It May Concern:
 
 I ordered a floor lamp from your website on March 3 and it arrived on March 9.
 
@@ -1119,7 +1119,7 @@ Unfortunately the lamp was damaged. The glass shade has a crack about ten centim
 
 I would like a replacement rather than a refund, because I still want the lamp. Could you send it before the end of the month? If that is not possible, please tell me and I will ask for my money back.
 
-Yours faithfully,
+Sincerely,
 Emre Yildiz`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

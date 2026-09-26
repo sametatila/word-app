@@ -1296,7 +1296,7 @@ I am asking for two things: a written explanation of what your adjuster consider
 
 I would be grateful for a reply within fourteen days.
 
-Yours faithfully,
+Sincerely,
 Selma Aro`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

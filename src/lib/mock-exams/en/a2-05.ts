@@ -26,7 +26,7 @@ export const EN_A2_05: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -49,7 +49,7 @@ export const EN_A2_05: MockPaper = {
             {
               kind: "text",
               id: "m2",
-              genre: "Notice in a canteen",
+              genre: "Notice in a cafeteria",
               genreTr: "Yemekhane duyurusu",
               title: "From Monday",
               body: `The hot food finishes at two, not at half past two. Sandwiches and salads are on the counter until four. Coffee is free after three for people with a staff card.`,
@@ -143,7 +143,7 @@ export const EN_A2_05: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -978,7 +978,7 @@ Esme`,
               { de: "Say what went wrong.", tr: "Neyin ters gittiğini söyle." },
               { de: "Say what you did in the end.", tr: "Sonunda ne yaptığını söyle." },
             ],
-            sample: `Last month I cooked a chicken for my sister and her husband. I put it in the oven at four and I went to the shop for bread. The line was very long. When I came home, the kitchen was full of smoke and the chicken was black. We ate bread, cheese and a big salad, and my sister said it was the best evening of the month.`,
+            sample: `Last month I cooked a chicken for my sister and her husband. I put it in the oven at four and I went to the store for bread. The line was very long. When I came home, the kitchen was full of smoke and the chicken was black. We ate bread, cheese and a big salad, and my sister said it was the best evening of the month.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (went, came, said) doğru mu?",

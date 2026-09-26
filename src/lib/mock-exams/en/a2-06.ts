@@ -26,7 +26,7 @@ export const EN_A2_06: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -143,7 +143,7 @@ export const EN_A2_06: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -479,7 +479,7 @@ If you go in February, take boots {{24}} are really waterproof.`,
             {
               kind: "audio",
               id: "a3",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri kışlık bot bakıyor.",
               plays: 2,
@@ -796,7 +796,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
             "Beş kişi dinleyeceksin, 16–20. maddeler. Her kişi tatil planını neden değiştirdi? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
             { key: "a", label: "The flights got more expensive." },
-            { key: "b", label: "Somebody in the family was ill." },
+            { key: "b", label: "Somebody in the family was sick." },
             { key: "c", label: "The weather was too hot there." },
             { key: "d", label: "A friend could not come." },
             { key: "e", label: "The hotel closed." },

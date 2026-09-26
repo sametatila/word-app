@@ -166,7 +166,7 @@ You can pay in cash or by card.`,
               title: "Late Night Shop",
               body: `Open every day from 6 in the morning to 1 at night.
 
-Bread, milk, water and simple food. Small shop, not cheap.
+Bread, milk, water and simple food. Small store, not cheap.
 
 Hot coffee for one euro. You can drink it here.
 
@@ -251,7 +251,7 @@ Write your name on the paper at the door.`,
             {
               kind: "text",
               id: "s1",
-              genre: "Sign in the shop",
+              genre: "Sign in the store",
               genreTr: "Mağazadaki levha",
               title: "FRUIT AND VEGETABLES",
               body: `Please use the small bags on the left.
@@ -291,7 +291,7 @@ We do not give free water for a big group.`,
               title: "CASH DESK 1",
               body: `We give you your money back for ten days.
 
-Bring the paper from the shop.
+Bring the paper from the store.
 
 Food and drinks: no money back.`,
             },
@@ -302,7 +302,7 @@ Food and drinks: no money back.`,
               id: "en-a1-03-l3-11",
               no: 11,
               ref: "s1",
-              text: "You can eat an apple in the shop before you pay.",
+              text: "You can eat an apple in the store before you pay.",
               answer: false,
               explain:
                 "Levha iki cümleyle bunu kapatıyor: «Do not eat here. You pay first». Yeme yasağı ile ödeme sırası birlikte veriliyor; ilk cümleyi okuyup duran öğrenci de aynı sonuca varır.",
@@ -357,7 +357,7 @@ Food and drinks: no money back.`,
 
 Welcome to the house! My name is Paulo and I live {{15}} the first floor.
 
-The small shop in our street is open every day, {{16}} it is expensive.
+The small store in our street is open every day, {{16}} it is expensive.
 
 There {{17}} a big market on Saturday. I go there at eight in the morning.
 
@@ -484,7 +484,7 @@ Paulo`,
             {
               kind: "audio",
               id: "a5",
-              genre: "In the shop",
+              genre: "In the store",
               genreTr: "Mağazada",
               situation: "Bir müşteri kasada ödüyor.",
               plays: 2,
@@ -526,7 +526,7 @@ Paulo`,
               no: 2,
               ref: "a2",
               text: "When is the next warm bread?",
-              options: ["Now, at the front of the shop", "Tomorrow morning", "At three"],
+              options: ["Now, at the front of the store", "Tomorrow morning", "At three"],
               answer: 2,
               explain:
                 "Fırıncı «The next warm bread comes at three» diyor. Müşterinin sorusu «now» ile başladığı için ilk şık tuzak; cevap soruyu düzeltiyor.",
@@ -588,7 +588,7 @@ Paulo`,
             {
               kind: "audio",
               id: "b1",
-              genre: "Announcement in a shop",
+              genre: "Announcement in a store",
               genreTr: "Mağaza anonsu",
               situation: "Markette bir anons yapılıyor.",
               plays: 2,
@@ -689,7 +689,7 @@ Paulo`,
               situation: "Bir arkadaş ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, it is Greta. I am at the shop. Do you want bread or rice? Call me in five minutes, please." },
+                { text: "Hi, it is Greta. I am at the store. Do you want bread or rice? Call me in five minutes, please." },
               ],
             },
             {
@@ -714,7 +714,7 @@ Paulo`,
               situation: "İki meslektaş öğle yemeğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Hakan", text: "Are you coming to the canteen at twelve?" },
+                { speaker: "Hakan", text: "Are you coming to the cafeteria at twelve?" },
                 { speaker: "Zeynep", text: "I've brought food from home today. But I'll come for a coffee at one." },
               ],
             },
@@ -727,7 +727,7 @@ Paulo`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "One big pizza with cheese, please. To my house." },
-                { speaker: "Shop", text: "That is twelve euros. Twenty minutes." },
+                { speaker: "Clerk", text: "That is twelve euros. Twenty minutes." },
                 { speaker: "Customer", text: "Good. Number 14, second floor." },
               ],
             },
@@ -752,7 +752,7 @@ Paulo`,
               no: 11,
               ref: "c1",
               text: "What does Greta want to know?",
-              options: ["Which food she must buy", "When the shop closes", "Where you are now"],
+              options: ["Which food she must buy", "When the store closes", "Where you are now"],
               answer: 0,
               explain:
                 "İleti tek soru soruyor: «Do you want bread or rice?». Mağazanın kapanış saati ya da karşıdakinin yeri hiç geçmiyor; beş dakika bilgisi geri arama süresi.",
@@ -774,7 +774,7 @@ Paulo`,
               no: 13,
               ref: "c3",
               text: "What does Zeynep do at twelve?",
-              options: ["She goes to the canteen", "She drinks a coffee there", "She eats her own food"],
+              options: ["She goes to the cafeteria", "She drinks a coffee there", "She eats her own food"],
               answer: 2,
               explain:
                 "Zeynep «I've brought food from home today» diyor, yani on ikide yemekhaneye gitmiyor. Kahve için geliyor ama saat birde; iki saati ayırmak gerekiyor.",
@@ -925,7 +925,7 @@ Iris`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you introduce yourself, you ask and answer questions about food, and you do a role play in a shop.",
+      instruction: "There are three tasks in this part: you introduce yourself, you ask and answer questions about food, and you do a role play in a store.",
       instructionTr: "Bu bölümde üç görev var: kendini tanıtma, yemek üzerine soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {
@@ -999,7 +999,7 @@ Iris`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "You are in a shop. Situations: you want two kilos of tomatoes. — You do not have a bag. — The cashier gives you the wrong change.",
+            "You are in a store. Situations: you want two kilos of tomatoes. — You do not have a bag. — The cashier gives you the wrong change.",
           promptTr:
             "Bir mağazadasın. Durumlar: İki kilo domates istiyorsun. — Çantan yok. — Görevli sana yanlış para üstü veriyor.",
           prepSeconds: 20,

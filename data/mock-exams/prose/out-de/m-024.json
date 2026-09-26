@@ -128,13 +128,13 @@
  { "tr": "`miss the point` bir savın özünü kaçırmak demektir. `lose the point` bir tartışmada puan kaybını çağrıştırır; `fail` bu adla doğrudan kullanılmaz ve `drop the point` konuyu bırakmaktır.", "kind": "explain", "en": "`miss the point` heißt den Kern eines Arguments verfehlen. `lose the point` klingt nach Punktverlust in einem Wettbewerb; `fail` wird mit diesem Substantiv nicht direkt verwendet, und `drop the point` heißt das Thema fallen lassen." },
  { "tr": "«call the office at 6640» — gelemeyenler için verilen numara.", "kind": "explain", "en": "«call the office at 6640» — die Nummer für alle, die nicht kommen können." },
  { "tr": "Anons kişiyi ve yeri veriyor: «please tell Mira at the desk».", "kind": "explain", "en": "Die Durchsage nennt Person und Ort: «please tell Mira at the desk»." },
- { "tr": "İleti günü düzeltiyor: «My parcel came today, not on Friday».", "kind": "explain", "en": "Die Nachricht korrigiert den Tag: «My parcel came today, not on Friday»." },
+ { "tr": "İleti günü düzeltiyor: «My package came today, not on Friday».", "kind": "explain", "en": "Die Nachricht korrigiert den Tag: «My package came today, not on Friday»." },
  { "tr": "«the program is paid for until 2029» — finansmanın bitiş yılı.", "kind": "explain", "en": "«the program is paid for until 2029» — das Jahr, in dem die Finanzierung endet." },
  { "tr": "Anonsun son cümlesi iki gişe veriyor: «Please use window 1 or 4».", "kind": "explain", "en": "Der letzte Satz der Durchsage nennt zwei Schalter: «Please use window 1 or 4»." },
  { "tr": "Duyuru bunu son satırda söylüyor: «Newspapers in five languages».", "kind": "explain", "en": "Der Aushang sagt es in der letzten Zeile: «Newspapers in five languages»." },
  { "tr": "İleti saati düzeltiyor: «is at four, not at three». Üç eski saat.", "kind": "explain", "en": "Die Nachricht korrigiert die Uhrzeit: «is at four, not at three». Drei ist die alte Uhrzeit." },
  { "tr": "Levha bunu yasaklıyor: «No telephones». Ücretsiz olan tek şey su.", "kind": "explain", "en": "Das Schild verbietet das: «No telephones». Kostenlos ist nur das Wasser." },
- { "tr": "Anonsun son cümlesi bunu söylüyor: «There is a shop on the corner».", "kind": "explain", "en": "Der letzte Satz der Durchsage sagt es: «There is a shop on the corner»." },
+ { "tr": "Anonsun son cümlesi bunu söylüyor: «There is a store on the corner».", "kind": "explain", "en": "Der letzte Satz der Durchsage sagt es: «There is a store on the corner»." },
  { "tr": "Anonsun son cümlesi bunu söylüyor: «There is a new course in March».", "kind": "explain", "en": "Der letzte Satz der Durchsage sagt es: «There is a new course in March»." },
  { "tr": "Görevli tek bir şey istiyor: «Please wash it after». Kahve ücretsiz.", "kind": "explain", "en": "Der Mitarbeiter verlangt nur eines: «Please wash it after». Der Kaffee ist kostenlos." },
  { "tr": "Anons tek bir şey istiyor: «Please bring your books to the desk now».", "kind": "explain", "en": "Die Durchsage verlangt nur eines: «Please bring your books to the desk now»." },
@@ -146,6 +146,6 @@
  { "tr": "İlan üç koşulu birden veriyor: «Benches, water, no music and no charge».", "kind": "explain", "en": "Die Anzeige nennt drei Bedingungen auf einmal: «Benches, water, no music and no charge»." },
  { "tr": "Anons «the Spanish course is full» diyor. Yer yok; yeni kurs mart ayında.", "kind": "explain", "en": "Die Durchsage sagt «the Spanish course is full». Es gibt keinen Platz; der neue Kurs ist im März." },
  { "tr": "Görevli iki yeri ayırıyor: «We take cash only» ve «the bank takes cards».", "kind": "explain", "en": "Der Mitarbeiter unterscheidet zwei Orte: «We take cash only» und «the bank takes cards»." },
- { "tr": "İleti iki şey istiyor: «Bring your card and the box of your old tablets».", "kind": "explain", "en": "Die Nachricht verlangt zwei Dinge: «Bring your card and the box of your old tablets»." },
+ { "tr": "İleti iki şey istiyor: «Bring your card and the box of your old pills».", "kind": "explain", "en": "Die Nachricht verlangt zwei Dinge: «Bring your card and the box of your old pills»." },
  { "tr": "Duyuru saatleri veriyor: «Open 12 to 14». On iki buçuk bu aralığın içinde.", "kind": "explain", "en": "Der Aushang nennt die Zeiten: «Open 12 to 14». Halb eins liegt in diesem Zeitraum." }
 ]

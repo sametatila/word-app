@@ -44,7 +44,7 @@ export const EN_A2_01: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -62,7 +62,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Note at home",
               genreTr: "Evdeki not",
               title: "For Sara",
-              body: `Sara, I put your medicine in the top drawer in the kitchen. Take one tablet after breakfast, not before it. The doctor said food first. Mom`,
+              body: `Sara, I put your medicine in the top drawer in the kitchen. Take one pill after breakfast, not before it. The doctor said food first. Mom`,
             },
             {
               kind: "text",
@@ -78,7 +78,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Ana",
-              body: `Hi Deniz, I cannot come to the yoga class tonight. My sister is ill and I am staying with her children. Can you tell the teacher? Thanks!`,
+              body: `Hi Deniz, I cannot come to the yoga class tonight. My sister is sick and I am staying with her children. Can you tell the teacher? Thanks!`,
             },
             {
               kind: "text",
@@ -104,7 +104,7 @@ export const EN_A2_01: MockPaper = {
               no: 1,
               ref: "m1",
               text: "What does Sara have to do?",
-              options: ["Take the tablet before she eats", "Eat first and then take the tablet", "Ask the doctor about the medicine"],
+              options: ["Take the pill before she eats", "Eat first and then take the pill", "Ask the doctor about the medicine"],
               answer: 1,
               explain:
                 "Not sırayı iki kez veriyor: «after breakfast, not before it» ve «The doctor said food first». Yani önce yemek, sonra ilaç. Birinci şık sırayı ters çeviriyor; üçüncüsü doktora yeniden sormayı öneriyor ama not zaten doktorun dediğini aktarıyor.",
@@ -161,7 +161,7 @@ export const EN_A2_01: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -306,7 +306,7 @@ People often ask me for a secret. There is no secret. The only rule is this: do 
             {
               kind: "text",
               id: "t4",
-              genre: "Health leaflet",
+              genre: "Health pamphlet",
               genreTr: "Sağlık broşürü",
               title: "Sleep better",
               body: `Many people {{15}} tired in the morning, even after eight hours in bed.
@@ -480,8 +480,8 @@ Leyla`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "I have a bad cough. Do you have something for it?" },
-                { speaker: "Pharmacist", text: "This syrup helps, but it makes you tired. These tablets are better if you drive." },
-                { speaker: "Customer", text: "I drive to work every day, so I will take the tablets." },
+                { speaker: "Pharmacist", text: "This syrup helps, but it makes you tired. These pills are better if you drive." },
+                { speaker: "Customer", text: "I drive to work every day, so I will take the pills." },
               ],
             },
             {
@@ -544,7 +544,7 @@ Leyla`,
               no: 1,
               ref: "a1",
               text: "What does the customer buy?",
-              options: ["The tablets", "The syrup", "Nothing today"],
+              options: ["The pills", "The syrup", "Nothing today"],
               answer: 0,
               explain:
                 "Eczacı iki seçeneği ayırıyor: şurup uyku getiriyor, tabletler araba kullananlar için daha uygun. Müşteri her gün araba kullandığını söyleyip «I will take the tablets» diyor. Şurup kayıtta önce geçiyor, bu yüzden ilk duyulanı seçen öğrenci yanılır.",
@@ -739,7 +739,7 @@ Price for guests:     {{10}} pounds`,
             {
               kind: "audio",
               id: "c5",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri satış görevlisiyle konuşuyor.",
               plays: 2,

@@ -24,7 +24,7 @@ export const EN_A2_07: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -141,7 +141,7 @@ export const EN_A2_07: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -491,7 +491,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
             {
               kind: "audio",
               id: "a4",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Dükkânda",
               situation: "Bir müşteri fotoğraf bastırıyor.",
               plays: 2,
@@ -543,7 +543,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               no: 3,
               ref: "a3",
               text: "Who made the cake?",
-              options: ["A shop in the town center", "The speaker's son", "The speaker"],
+              options: ["A store in the town center", "The speaker's son", "The speaker"],
               answer: 1,
               explain:
                 "Cevap doğrudan veriliyor: «My son made it. He is eleven». Şeker fazlalığı da onun hakkında söyleniyor.",
@@ -677,7 +677,7 @@ Please bring a plate and a {{10}}`,
               situation: "Bir kişi salon kurallarından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I know the hall closes at eleven. But the music was off at half past ten and we were only carrying chairs. Could the caretaker not have waited ten minutes?" },
+                { text: "I know the hall closes at eleven. But the music was off at half past ten and we were only carrying chairs. Could the janitor not have waited ten minutes?" },
               ],
             },
             {
@@ -710,7 +710,7 @@ Please bring a plate and a {{10}}`,
               situation: "Bir müşteri pastacıyı arıyor.",
               plays: 2,
               segments: [
-                { text: "Yes, hello, this is about the cake for Saturday. I ordered it for twelve people and the shop says it is ready, but the name on it is wrong. Can somebody look at it?" },
+                { text: "Yes, hello, this is about the cake for Saturday. I ordered it for twelve people and the store says it is ready, but the name on it is wrong. Can somebody look at it?" },
               ],
             },
             {
@@ -735,7 +735,7 @@ Please bring a plate and a {{10}}`,
               options: ["Asking for a booking next month", "Complaining about a decision", "Saying sorry for the noise"],
               answer: 1,
               explain:
-                "Konuşmacı kuralı biliyor ama uygulamayı sorguluyor: «Could the caretaker not have waited ten minutes?». Özür dilemiyor, müzik zaten kapatılmış.",
+                "Konuşmacı kuralı biliyor ama uygulamayı sorguluyor: «Could the janitor not have waited ten minutes?». Özür dilemiyor, müzik zaten kapatılmış.",
             },
             {
               kind: "mcq",
@@ -794,7 +794,7 @@ Please bring a plate and a {{10}}`,
             "Beş kişi dinleyeceksin, 16–20. maddeler. Her kişi partiye neden gitmedi? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
             { key: "a", label: "The journey was too long." },
-            { key: "b", label: "Somebody in the family was ill." },
+            { key: "b", label: "Somebody in the family was sick." },
             { key: "c", label: "They had to work." },
             { key: "d", label: "They were not invited early enough." },
             { key: "e", label: "They do not like large groups." },
@@ -844,7 +844,7 @@ Please bring a plate and a {{10}}`,
               situation: "Dördüncü konuşmacı o akşamki vardiyasından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I was in the shop until eight and the party started at seven. My colleague was ill and somebody had to be there." },
+                { text: "I was in the store until eight and the party started at seven. My colleague was sick and somebody had to be there." },
               ],
             },
             {
@@ -898,7 +898,7 @@ Please bring a plate and a {{10}}`,
               text: "Speaker 4",
               answer: "c",
               explain:
-                "Konuşmacı sekize kadar dükkândaymış ve parti yedide başlamış: «My colleague was ill and somebody had to be there». Hasta olan kendisi değil, meslektaşı.",
+                "Konuşmacı sekize kadar dükkândaymış ve parti yedide başlamış: «My colleague was sick and somebody had to be there». Hasta olan kendisi değil, meslektaşı.",
             },
             {
               kind: "match",

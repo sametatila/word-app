@@ -1142,7 +1142,7 @@ Could you arrange for somebody to look at the wall before March 20? I am at home
 
 I would be grateful for an answer this week.
 
-Yours sincerely,
+Sincerely,
 Vida Roth`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

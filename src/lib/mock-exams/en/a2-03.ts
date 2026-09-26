@@ -26,7 +26,7 @@ export const EN_A2_03: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -44,7 +44,7 @@ export const EN_A2_03: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Oskar",
-              body: `Hi, a big parcel for you came this morning and the driver left it with me. I am at home after five every day this week. My apartment is number 9, on the second floor.`,
+              body: `Hi, a big package for you came this morning and the driver left it with me. I am at home after five every day this week. My apartment is number 9, on the second floor.`,
             },
             {
               kind: "text",
@@ -86,7 +86,7 @@ export const EN_A2_03: MockPaper = {
               no: 1,
               ref: "m1",
               text: "What does Oskar tell his neighbor?",
-              options: ["He will bring the parcel upstairs", "The parcel is in his apartment", "The driver comes again tomorrow"],
+              options: ["He will bring the package upstairs", "The package is in his apartment", "The driver comes again tomorrow"],
               answer: 1,
               explain:
                 "İleti «the driver left it with me» diyor: koli Oskar'ın yanında duruyor. Oskar onu yukarı çıkaracağını hiç söylemiyor, tersine kendi kapı numarasını veriyor; şoförün tekrar gelmesi de yazmıyor.",
@@ -143,7 +143,7 @@ export const EN_A2_03: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -375,7 +375,7 @@ I moved {{20}} the apartment on the third floor last week.
 
 My name is Sanne and I come {{21}} the north of the country.
 
-I work at home, so I am here {{22}} day. If a parcel arrives for you, I can take it.
+I work at home, so I am here {{22}} day. If a package arrives for you, I can take it.
 
 It is the {{23}} apartment in the building, but that is fine for one person.
 
@@ -458,8 +458,8 @@ I would like to meet you, {{24}} please knock on my door.`,
               situation: "İki komşu ortak çamaşır makinesinden söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Woman", text: "The machine in the cellar is broken again." },
-                { speaker: "Man", text: "I know. The man comes on Wednesday, not on Monday: he was ill. Until then we can use the one in number 14, but only after six." },
+                { speaker: "Woman", text: "The machine in the basement is broken again." },
+                { speaker: "Man", text: "I know. The man comes on Wednesday, not on Monday: he was sick. Until then we can use the one in number 14, but only after six." },
               ],
             },
             {
@@ -591,7 +591,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               plays: 2,
               segments: [
                 {
-                  text: "Good evening and thank you for coming. Three things tonight. First, the front door: the new lock arrives on the fourteenth of May and every apartment gets two keys. Second, the cellar. We must empty it before the workers come, so please take your things out by the end of the month. Third, the garden. Twelve people put their name on the list, and we start on Saturday at ten. Bring gloves if you have them; we have the tools. And one small thing: the bin for glass is now behind the garage, not next to the door.",
+                  text: "Good evening and thank you for coming. Three things tonight. First, the front door: the new lock arrives on the fourteenth of May and every apartment gets two keys. Second, the basement. We must empty it before the workers come, so please take your things out by the end of the month. Third, the garden. Twelve people put their name on the list, and we start on Saturday at ten. Bring gloves if you have them; we have the tools. And one small thing: the bin for glass is now behind the garage, not next to the door.",
                 },
               ],
             },
@@ -603,7 +603,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               title: "Building meeting — notes",
               body: `New lock arrives on:      {{6}} May
 Keys for every apartment: {{7}}
-Empty the cellar before:  the end of the {{8}}
+Empty the basement before:  the end of the {{8}}
 Garden work starts:       Saturday at {{9}}
 Glass bin is now behind:  the {{10}}`,
             },
@@ -975,7 +975,7 @@ Sanne`,
               { de: "Say what you did.", tr: "Sorunla ilgili ne yaptığını söyle." },
               { de: "Say how it ended.", tr: "Nasıl bittiğini söyle." },
             ],
-            sample: `Last winter the heating in our apartment stopped in the middle of January. The rooms were cold and my son was ill. I called the office three times, but nobody came. Then I wrote a letter and I gave a copy to the neighbors. Two days later a man came and repaired it. Now the apartment is warm, but I still keep the letter.`,
+            sample: `Last winter the heating in our apartment stopped in the middle of January. The rooms were cold and my son was sick. I called the office three times, but nobody came. Then I wrote a letter and I gave a copy to the neighbors. Two days later a man came and repaired it. Now the apartment is warm, but I still keep the letter.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (was, went, wrote, came) doğru mu?",

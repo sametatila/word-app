@@ -48,12 +48,12 @@ Your appointment is on Wednesday at 9:20, not on Tuesday.
 
 Please come ten minutes before.
 
-Bring your card and the box of your old tablets.
+Bring your card and the box of your old pills.
 
 Dr. Ilic`,
               gloss: [
                 { de: "an appointment", tr: "randevu", en: "der Termin" },
-                { de: "a tablet", tr: "hap", en: "die Tablette" },
+                { de: "a pill", tr: "hap", en: "die Tablette" },
               ],
             },
             {
@@ -66,7 +66,7 @@ Dr. Ilic`,
 
 On Sunday the store on Green Street is open.
 
-Tablets for a headache: 3 euros.
+Pills for a headache: 3 euros.
 
 Some medicine only with a paper from the doctor.`,
               gloss: [
@@ -104,7 +104,7 @@ Some medicine only with a paper from the doctor.`,
               text: "Noor must bring her old tablets.",
               answer: true,
               explain:
-                "İleti iki şey istiyor: «Bring your card and the box of your old tablets».",
+                "İleti iki şey istiyor: «Bring your card and the box of your old pills».",
             },
             {
               kind: "bool",
@@ -156,7 +156,7 @@ Children before ten in the morning.`,
               title: "Pharmacy",
               body: `Open 8 to 18. Saturday 9 to 13.
 
-Tablets, bandages and tea.
+Pills, bandages and tea.
 
 We can tell you what to take for a small problem. No appointment.`,
             },
@@ -222,7 +222,7 @@ Free parking for one hour.`,
               options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 1,
               explain:
-                "Duyuru hem ürünü hem günü veriyor: «Tablets, bandages and tea» ve «Saturday 9 to 13». Muayenehane cumartesi kapalı.",
+                "Duyuru hem ürünü hem günü veriyor: «Pills, bandages and tea» ve «Saturday 9 to 13». Muayenehane cumartesi kapalı.",
             },
           ],
         },
@@ -416,7 +416,7 @@ Runa`,
               situation: "Muayenehane bir hastaya ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the doctor's office. Your appointment on Tuesday is now on Wednesday at 9:20. The doctor is ill. We are very sorry." },
+                { text: "Hello, this is the doctor's office. Your appointment on Tuesday is now on Wednesday at 9:20. The doctor is sick. We are very sorry." },
               ],
             },
             {
@@ -491,10 +491,10 @@ Runa`,
               no: 1,
               ref: "a1",
               text: "Why is the appointment different?",
-              options: ["The patient is ill", "The doctor is ill", "The doctor's office is closed"],
+              options: ["The patient is sick", "The doctor is sick", "The doctor's office is closed"],
               answer: 1,
               explain:
-                "İleti sebebi tek cümlede veriyor: «The doctor is ill». Randevu salıdan çarşambaya alınıyor.",
+                "İleti sebebi tek cümlede veriyor: «The doctor is sick». Randevu salıdan çarşambaya alınıyor.",
             },
             {
               kind: "mcq",
@@ -834,20 +834,20 @@ Day of appointment: {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "Your friend is ill and is at home. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "Your friend is sick and is at home. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Arkadaşın hasta ve evde. Arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 25,
             points: [
-              { de: "Say that you know she is ill.", tr: "Hasta olduğunu bildiğini söyle." },
+              { de: "Say that you know she is sick.", tr: "Hasta olduğunu bildiğini söyle." },
               { de: "Offer to bring something.", tr: "Bir şey getirmeyi teklif et." },
               { de: "Ask when you can come.", tr: "Ne zaman gelebileceğini sor." },
             ],
             sample: `Hi Runa,
 
-Noor says you are ill. I am sorry!
+Noor says you are sick. I am sorry!
 
 I can bring soup and the tablets from the pharmacy. It is no problem.
 

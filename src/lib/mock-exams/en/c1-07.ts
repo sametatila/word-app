@@ -463,7 +463,7 @@ I notice that the digital form of this problem is discussed as though it had bee
             {
               key: "d",
               label: "d — Writer D",
-              body: "My own practice changed after a single request. A student asked for the staff canteen accounts and I had to tell her they had been weeded in 1994. Everything I had been taught said those were low-value. She was writing about what people could afford to eat, and she was right and the manual was wrong.",
+              body: "My own practice changed after a single request. A student asked for the staff cafeteria accounts and I had to tell her they had been weeded in 1994. Everything I had been taught said those were low-value. She was writing about what people could afford to eat, and she was right and the manual was wrong.",
             },
             {
               key: "e",
@@ -1336,7 +1336,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
             ],
             sample: `The two positions are usually presented as a choice between generosity and discipline, which flatters the first and misrepresents the second.
 
-The case for keeping everything rests on a genuine limit: appraisal requires a prediction about future demand, and the record of such predictions is poor. Categories dismissed as routine in one decade — canteen accounts, complaints files — have repeatedly turned out to carry the only evidence about people who wrote nothing else. Since storage is now inexpensive, the argument runs, the prudent course is to defer the decision indefinitely.
+The case for keeping everything rests on a genuine limit: appraisal requires a prediction about future demand, and the record of such predictions is poor. Categories dismissed as routine in one decade — cafeteria accounts, complaints files — have repeatedly turned out to carry the only evidence about people who wrote nothing else. Since storage is now inexpensive, the argument runs, the prudent course is to defer the decision indefinitely.
 
 The second position accepts the limit and denies that deferral is available. A collection that has not been described cannot be searched, and a researcher who cannot find something is in precisely the position of one for whom it was destroyed. On this view, keeping without describing does not postpone the decision; it transfers it to whoever writes the search software, and that person publishes no criteria at all.
 
@@ -1458,7 +1458,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
               { de: "state a serious objection to your own position", tr: "Kendi konumuna ciddi bir itiraz getir" },
             ],
             sample:
-              "The first approach has the advantage of deferring a judgment that nobody is qualified to make, and the record of appraisal decisions is bad enough to justify a good deal of humility. Against that, it defers the judgment onto the search, and the search is performed by software whose criteria are less inspectable than a committee's. The second approach accepts a real loss in exchange for a collection that can actually be entered, and I would defend it, chiefly because cataloging is the first thing cut in every budget round, which means that a policy of total retention produces vast unusable holdings while allowing everybody to feel that nothing has gone. The serious objection to my own position is that the categories dismissed as routine are precisely the ones that later turn out to carry the only evidence about people who left nothing else; canteen accounts and complaints files are the standard examples, and they are standard because the profession has got them wrong more than once.",
+              "The first approach has the advantage of deferring a judgment that nobody is qualified to make, and the record of appraisal decisions is bad enough to justify a good deal of humility. Against that, it defers the judgment onto the search, and the search is performed by software whose criteria are less inspectable than a committee's. The second approach accepts a real loss in exchange for a collection that can actually be entered, and I would defend it, chiefly because cataloging is the first thing cut in every budget round, which means that a policy of total retention produces vast unusable holdings while allowing everybody to feel that nothing has gone. The serious objection to my own position is that the categories dismissed as routine are precisely the ones that later turn out to carry the only evidence about people who left nothing else; cafeteria accounts and complaints files are the standard examples, and they are standard because the profession has got them wrong more than once.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Konum gerekçelendirildi mi?",

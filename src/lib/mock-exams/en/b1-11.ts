@@ -1141,7 +1141,7 @@ My suggestion is narrow: a small loose box for peppers, onions and carrots, pric
 
 If you did that, I would buy my vegetables here instead of at the market on Saturdays.
 
-Yours faithfully,
+Sincerely,
 Marta Kral`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",

@@ -59,9 +59,9 @@ Mira`,
             {
               kind: "text",
               id: "t2",
-              genre: "Notice in a canteen",
+              genre: "Notice in a cafeteria",
               genreTr: "Kantin duyurusu",
-              title: "CANTEEN",
+              title: "CAFETERIA",
               body: `Open 12 to 14.
 
 Soup and bread are free for staff.
@@ -70,7 +70,7 @@ Hot food: 4 euros. Please bring your card.
 
 You cannot pay with money here.`,
               gloss: [
-                { de: "a canteen", tr: "yemekhane", en: "die Kantine" },
+                { de: "a cafeteria", tr: "yemekhane", en: "die Kantine" },
                 { de: "staff", tr: "çalışanlar", en: "das Personal" },
               ],
             },
@@ -153,7 +153,7 @@ New staff: please come at nine on the first day.`,
               id: "p2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Canteen",
+              title: "Cafeteria",
               body: `Open 12 to 14.
 
 Soup and bread free for staff. Hot food 4 euros.
@@ -179,7 +179,7 @@ Please bring a pen.`,
               id: "en-a1-12-l2-6",
               no: 6,
               text: "It is your first day and you do not know where to go.",
-              options: ["Office", "Canteen", "Training Room"],
+              options: ["Office", "Cafeteria", "Training Room"],
               answer: 0,
               explain:
                 "Duyuru yeni gelenlere yönerge veriyor: «New staff: please come at nine on the first day», ve bankoda kime sorulacağını söylüyor.",
@@ -189,7 +189,7 @@ Please bring a pen.`,
               id: "en-a1-12-l2-7",
               no: 7,
               text: "You want something to eat at half past twelve.",
-              options: ["Office", "Canteen", "Training Room"],
+              options: ["Office", "Cafeteria", "Training Room"],
               answer: 1,
               explain:
                 "Duyuru saatleri veriyor: «Open 12 to 14». On iki buçuk bu aralığın içinde.",
@@ -199,7 +199,7 @@ Please bring a pen.`,
               id: "en-a1-12-l2-8",
               no: 8,
               text: "You want to learn the computer program.",
-              options: ["Office", "Canteen", "Training Room"],
+              options: ["Office", "Cafeteria", "Training Room"],
               answer: 2,
               explain:
                 "Duyuru kursu adlandırıyor: «Computer course for new staff: Tuesday and Thursday at 10».",
@@ -209,7 +209,7 @@ Please bring a pen.`,
               id: "en-a1-12-l2-9",
               no: 9,
               text: "You want to speak to Mira.",
-              options: ["Office", "Canteen", "Training Room"],
+              options: ["Office", "Cafeteria", "Training Room"],
               answer: 0,
               explain:
                 "Duyuru kişiyi ve yeri birlikte veriyor: «Ask for Mira at the desk», ofis ikinci katta.",
@@ -219,7 +219,7 @@ Please bring a pen.`,
               id: "en-a1-12-l2-10",
               no: 10,
               text: "You need a pen on Tuesday morning.",
-              options: ["Office", "Canteen", "Training Room"],
+              options: ["Office", "Cafeteria", "Training Room"],
               answer: 2,
               explain:
                 "Duyuru hem günü hem kalemi veriyor: «Tuesday and Thursday at 10» ve «Please bring a pen».",
@@ -336,7 +336,7 @@ Everybody, please. Ten minutes only.`,
 
 I start my new job {{15}} Monday. I am a little nervous!
 
-There {{16}} a canteen in the building. The soup is free.
+There {{16}} a cafeteria in the building. The soup is free.
 
 The office is very near, {{17}} I go by bicycle. Ten minutes only.
 
@@ -364,7 +364,7 @@ Eyup`,
               options: ["is", "are", "have"],
               answer: 0,
               explain:
-                "Kalıp `there is / there are` ve özne tekil: «a canteen». Tekil özne `is` ister; `have` bu kalıpta kullanılmaz.",
+                "Kalıp `there is / there are` ve özne tekil: «a cafeteria». Tekil özne `is` ister; `have` bu kalıpta kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -427,7 +427,7 @@ Eyup`,
               situation: "İki kişi kantini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Clara", text: "Where is the canteen?" },
+                { speaker: "Clara", text: "Where is the cafeteria?" },
                 { speaker: "Ben", text: "Ground floor, next to the door." },
                 { speaker: "Clara", text: "Is it open now?" },
                 { speaker: "Ben", text: "From twelve. It is half past eleven." },
@@ -464,7 +464,7 @@ Eyup`,
               situation: "İki kişi kantin fiyatlarını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Zoe", text: "Do you eat in the canteen?" },
+                { speaker: "Zoe", text: "Do you eat in the cafeteria?" },
                 { speaker: "Leo", text: "Every day. The soup is free." },
                 { speaker: "Zoe", text: "And the hot food?" },
                 { speaker: "Leo", text: "Four euros, but you need your card." },
@@ -499,7 +499,7 @@ Eyup`,
               id: "en-a1-12-h1-2",
               no: 2,
               ref: "a2",
-              text: "When does the canteen open?",
+              text: "When does the cafeteria open?",
               options: ["Now", "In half an hour", "At two"],
               answer: 1,
               explain:
@@ -567,7 +567,7 @@ Eyup`,
               situation: "Sorumlu yeni çalışanlara iki şey duyuruyor.",
               plays: 2,
               segments: [
-                { text: "Good morning and welcome. Two things. The computer course is on Tuesday and Thursday at ten, in room 5. It is not on Monday. And the canteen is closed this week. There is a shop on the corner." },
+                { text: "Good morning and welcome. Two things. The computer course is on Tuesday and Thursday at ten, in room 5. It is not on Monday. And the cafeteria is closed this week. There is a store on the corner." },
               ],
             },
           ],
@@ -597,20 +597,20 @@ Eyup`,
               id: "en-a1-12-h2-9",
               no: 9,
               ref: "b1",
-              text: "The canteen is open this week.",
+              text: "The cafeteria is open this week.",
               answer: false,
               explain:
-                "Anons «the canteen is closed this week» diyor ve yerine köşedeki dükkânı gösteriyor.",
+                "Anons «the cafeteria is closed this week» diyor ve yerine köşedeki dükkânı gösteriyor.",
             },
             {
               kind: "bool",
               id: "en-a1-12-h2-10",
               no: 10,
               ref: "b1",
-              text: "There is a shop near the building.",
+              text: "There is a store near the building.",
               answer: true,
               explain:
-                "Anonsun son cümlesi bunu söylüyor: «There is a shop on the corner».",
+                "Anonsun son cümlesi bunu söylüyor: «There is a store on the corner».",
             },
           ],
         },
@@ -675,7 +675,7 @@ Eyup`,
             {
               kind: "audio",
               id: "c5",
-              genre: "At the canteen",
+              genre: "At the cafeteria",
               genreTr: "Kantinde",
               situation: "Yeni bir çalışan çorbayı soruyor.",
               plays: 2,
@@ -833,20 +833,20 @@ First day:         {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "A new colleague asks you about the canteen. Write a short message to your colleague. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "A new colleague asks you about the cafeteria. Write a short message to your colleague. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Yeni bir iş arkadaşın sana kantini soruyor. İş arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 25,
             points: [
-              { de: "Say when the canteen is open.", tr: "Kantinin ne zaman açık olduğunu söyle." },
+              { de: "Say when the cafeteria is open.", tr: "Kantinin ne zaman açık olduğunu söyle." },
               { de: "Say what is free and what costs money.", tr: "Neyin ücretsiz, neyin paralı olduğunu söyle." },
               { de: "Say what your colleague must bring.", tr: "İş arkadaşının ne getirmesi gerektiğini söyle." },
             ],
             sample: `Hi Dragan,
 
-The canteen is open from twelve to two.
+The cafeteria is open from twelve to two.
 
 The soup and the bread are free for us. Hot food is four euros.
 
@@ -892,7 +892,7 @@ Eyup`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I work in an office from Monday to Friday. I start at nine and I finish at five. My colleague Mira sits next to me and she is very friendly. I go by bicycle; it is ten minutes. Lunch in the canteen is four euros. I do not like the meetings on Wednesday; they are always long.",
+              "I work in an office from Monday to Friday. I start at nine and I finish at five. My colleague Mira sits next to me and she is very friendly. I go by bicycle; it is ten minutes. Lunch in the cafeteria is four euros. I do not like the meetings on Wednesday; they are always long.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -929,7 +929,7 @@ Eyup`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where is your office? — On the second floor. How many colleagues do you have? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the canteen.",
+              "Where is your office? — On the second floor. How many colleagues do you have? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the cafeteria.",
             criteria: [
               "«office» ve «colleague» için birer soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where is … / How many … / How much …)",

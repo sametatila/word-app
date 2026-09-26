@@ -503,7 +503,7 @@ I {{25}} to defend mine by explaining it. Now I say I am busy, which is shorter 
               genre: "Note left for a colleague",
               genreTr: "Meslektaşa bırakılan not",
               title: "Thursday afternoon",
-              body: `I am not in on Thursday afternoon and I am not ill. I have kept that half day free {{26}} March.
+              body: `I am not in on Thursday afternoon and I am not sick. I have kept that half day free {{26}} March.
 
 If anybody asks {{27}} me, say I am not available and do not explain further.
 
