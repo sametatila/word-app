@@ -146,6 +146,10 @@ const PREFIXES = [
   "kund",
   "irre",
   "voll",
+  // `schief` da sıfat kökenli ayrılabilir ön ek ("geht … schief", "ist
+  // schiefgegangen"); listede yoktu ve "schiefgehen" sözlükçe maddesi kendi
+  // metnindeki "Manche Tage gehen einfach schief" cümlesinde bulunamıyordu.
+  "schief",
   "acht",
   "gut",
   "dar",
