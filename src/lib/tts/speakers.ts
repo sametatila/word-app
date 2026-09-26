@@ -142,6 +142,7 @@ const NEUTRAL = [
   "Neighbour", "Resident", "Staff", "Receptionist", "Cashier", "Assistant", "Agent", "Manager", "Officer",
   "Seller", "Baker", "Chemist", "Owner", "Engineer", "Planner", "Researcher", "Author", "Lecturer", "Tutor",
   "Teacher", "Doctor", "Nurse", "Guide", "Representative", "Supplier", "Editor", "Official", "Critic", "Mediator",
+  "Pharmacist", "Driver", "Vet", "Archivist", "Historian", "Speechwriter", "Lawyer", "Director", "Economist",
   // Türkçe — bu sözcüklerin hiçbiri cinsiyet taşımıyor.
   "Muhabir", "Sözcü", "Aşçı", "Hasta", "Eczacı", "Öğretmen", "Yardımcı", "Kullanıcı", "Destek", "Aday",
   "Öğrenci", "Görevli", "Danışman", "Satıcı", "Müşteri", "Komşu", "Sunucu", "Anons",
@@ -164,7 +165,7 @@ const NEUTRAL = [
  * Ayrım artık DİLDEN: kâğıdın kursu İngilizceyse cinsiyetsiz, Almancaysa
  * `ROLE_REGULAR`ın verdiği eril. Etiketin dilini bilen tek yer çağıran taraf.
  */
-const NEUTRAL_EN_ONLY = ["Student", "Patient", "Reporter", "Journalist", "Tourist", "Trainer"];
+const NEUTRAL_EN_ONLY = ["Student", "Patient", "Reporter", "Journalist", "Tourist", "Trainer", "Neighbor"];
 
 /**
  * İlk adlar.
@@ -174,6 +175,8 @@ const NEUTRAL_EN_ONLY = ["Student", "Patient", "Reporter", "Journalist", "Touris
  * sayıyor; kapı kırılmıyor (ses yine veriliyor) ama sayı görünür oluyor.
  */
 const FIRST_F = [
+  // 2026-09-26: deneme sınavı etiketlerinden (İngilizce kâğıtlar)
+  "Vesna", "Yrsa", "Runa", "Bexi", "Noor", "Hale", "Juno", "Lenn",
   "Ada", "Aisha", "Alev", "Alina", "Amal", "Amina", "Ana", "Anneke", "Anouk", "Aslı", "Astrid", "Ava", "Ayça", "Ayla",
   "Ayse", "Ayşe", "Ayşen", "Aylin", "Bade", "Bahar", "Bea", "Beren", "Berna", "Berrak", "Beyza", "Bilge",
   "Britta", "Carla", "Cemre", "Ceren", "Ceyda", "Clara", "Clare", "Dalia", "Defne", "Derya", "Dilek", "Duru", "Ecem",
@@ -190,13 +193,15 @@ const FIRST_F = [
   "Yaprak", "Yaren", "Yasemin", "Zehra", "Zeynep", "Zoe", "Zsofia", "Zümrüt",
 ];
 const FIRST_M = [
+  // 2026-09-26: deneme sınavı etiketlerinden (İngilizce kâğıtlar)
+  "Ondrej", "Piet", "Halvard", "Kiro",
   "Ahmet", "Ali", "Alp", "Amir", "Ansgar", "Aras", "Arda", "Ayhan", "Baran", "Barış", "Barkın", "Bekir",
   "Ben", "Berat", "Berk", "Bernd", "Bilal", "Bo", "Bora", "Bruno", "Can", "Cem", "Cenk", "Ceyhun", "Cihan",
   "Dan", "Daniel", "Dario", "Deniz", "Devrim", "Diego", "Dmitri", "Doruk", "Dragan", "Efe", "Ege", "Emir",
   "Emre", "Eren", "Erhan", "Erol", "Falk", "Ferit", "Frank", "Gero", "Gino", "Goran", "Görkem", "Hakan",
   "Halid", "Halil", "Halim", "Iker", "Ilhan", "Ilias", "Ilir", "Ilja", "Ilker", "Ilya", "Ito", "Ivan",
-  "Jan", "Jonas", "Joris", "Juno", "Kaan", "Kai", "Karl", "Kaya", "Kemal", "Ken", "Kerem", "Kian", "Koray",
-  "Kuzey", "Lars", "Lenn", "Leo", "Leon", "Levi", "Levin", "Ling", "Lior", "Lu", "Ludwig", "Lukas", "Marc",
+  "Jan", "Jonas", "Joris", "Kaan", "Kai", "Karl", "Kaya", "Kemal", "Ken", "Kerem", "Kian", "Koray",
+  "Kuzey", "Lars", "Leo", "Leon", "Levi", "Levin", "Ling", "Lior", "Lu", "Ludwig", "Lukas", "Marc",
   "Marco", "Marek", "Mert", "Metin", "Milad", "Milo", "Mirek", "Murat", "Nadir", "Nils", "Nuri", "Ole",
   "Ömer", "Onat", "Onur", "Ozan", "Omar", "Paul", "Pavel", "Pedro", "Pierre", "Poyraz", "Rasmus", "Ravi",
   "Reza", "Rico", "Robert", "Robin", "Rolf", "Ruben", "Rudi", "Rui", "Rüzgar", "Sami", "Sam", "Sander",
@@ -233,7 +238,7 @@ const NEUTRAL_SET = new Set(NEUTRAL);
 const NEUTRAL_EN_SET = new Set(NEUTRAL_EN_ONLY);
 
 /** Cinsiyet söylemeyen ama geçerli olan hitaplar — bkz. `genderOf`. */
-const TITLE_ONLY = /^(Dr\.|Prof\.|Dipl\.|Ing\.|Pfr\.|RA\.)(\s|$)/;
+const TITLE_ONLY = /^(Dr\.?|Prof\.?|Dipl\.|Ing\.|Pfr\.|RA\.)(\s|$)/;
 
 /** Etiketin karşılaştırma biçimi — boşluk ve sondaki iki nokta önemsiz. */
 export function speakerKey(label: string | undefined | null): string {
