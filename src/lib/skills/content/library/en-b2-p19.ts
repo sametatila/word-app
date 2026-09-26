@@ -59,7 +59,7 @@ export const enB2P19: SkillExercise[] = [
       "additional deposit, professional cleaning when you leave, or insurance that covers damage " +
       "caused by animals. Some landlords are unaware that such insurance exists.\n\n" +
       "Be realistic about what counts as reasonable. A large dog in a small apartment with no outside " +
-      "space is a different request from a cat in a house with a garden, and a refusal in the " +
+      "space is a different request from a cat in a house with a yard, and a refusal in the " +
       "first case is not necessarily unfair.\n\n" +
       "Finally, if permission is given, get it in writing and keep a copy. Verbal agreements " +
       "tend to be forgotten, especially when a property changes hands.",
@@ -148,19 +148,19 @@ export const enB2P19: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Host", text: "A listener writes that she's finally allowed a pet in her apartment and wants to know what's suitable. Dr Mensah, where would you start?" },
-      { speaker: "Dr Mensah", text: "With her hours, not with the animal. The most common problem I see in apartments isn't space at all. It's loneliness in animals that are left alone for ten hours a day." },
+      { speaker: "Host", text: "A listener writes that she's finally allowed a pet in her apartment and wants to know what's suitable. Dr. Mensah, where would you start?" },
+      { speaker: "Dr. Mensah", text: "With her hours, not with the animal. The most common problem I see in apartments isn't space at all. It's loneliness in animals that are left alone for ten hours a day." },
       { speaker: "Host", text: "So a dog is out of the question for someone who works full-time in an office?" },
-      { speaker: "Dr Mensah", text: "Not necessarily, but it becomes her responsibility to arrange a walker or a daytime carer, and that costs money every single week, not just at the beginning." },
+      { speaker: "Dr. Mensah", text: "Not necessarily, but it becomes her responsibility to arrange a walker or a daytime carer, and that costs money every single week, not just at the beginning." },
       { speaker: "Host", text: "What about cats? People often assume they're the easy option." },
-      { speaker: "Dr Mensah", text: "An adult indoor cat is usually very manageable. Kittens are a different matter: they're energetic, occasionally destructive, and a new sofa is an unwise purchase in the first year." },
+      { speaker: "Dr. Mensah", text: "An adult indoor cat is usually very manageable. Kittens are a different matter: they're energetic, occasionally destructive, and a new sofa is an unwise purchase in the first year." },
       { speaker: "Host", text: "And for someone who has genuinely never had an animal before?" },
-      { speaker: "Dr Mensah", text: "I'd suggest fostering first. Rescue centers need temporary homes, the costs are usually covered, and after two months you'll know whether you can cope, without making an irreversible decision." },
-      { speaker: "Dr Mensah", text: "The unhappiest cases I deal with come from people who chose a pet for how it looked in a photograph rather than for how they actually live." },
+      { speaker: "Dr. Mensah", text: "I'd suggest fostering first. Rescue centers need temporary homes, the costs are usually covered, and after two months you'll know whether you can cope, without making an irreversible decision." },
+      { speaker: "Dr. Mensah", text: "The unhappiest cases I deal with come from people who chose a pet for how it looked in a photograph rather than for how they actually live." },
     ],
     questions: [
       {
-        text: "Where does Dr Mensah say the choice should start?",
+        text: "Where does Dr. Mensah say the choice should start?",
         options: [
           "with the owner's working hours",
           "with the size of the apartment",
@@ -170,10 +170,10 @@ export const enB2P19: SkillExercise[] = [
         explain: "„With her hours, not with the animal.“",
       },
       {
-        text: "What does Dr Mensah say about kittens?",
+        text: "What does Dr. Mensah say about kittens?",
         options: [
           "They are easier than adult cats.",
-          "They always need a garden.",
+          "They always need a yard.",
           "They can damage furniture.",
         ],
         answer: 2,
@@ -181,7 +181,7 @@ export const enB2P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Dr Mensah recommends fostering an animal before adopting one.",
+        text: "Dr. Mensah recommends fostering an animal before adopting one.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I'd suggest fostering first.“",
@@ -270,7 +270,7 @@ export const enB2P19: SkillExercise[] = [
           { de: "I would of course understand if …", tr: "… durumunda elbette anlayışla karşılarım", en: "" },
         ],
         sample:
-          "Dear Mr Price, I am writing to ask for your written consent to keep a cat in the apartment " +
+          "Dear Mr. Price, I am writing to ask for your written consent to keep a cat in the apartment " +
           "at 14 Birch Lane, as my lease requires. " +
           "To give you a clear picture, the cat is a nine-year-old female who has lived indoors " +
           "all her life. She is neutered, vaccinated and very calm, and she currently lives with " +

@@ -101,9 +101,9 @@ export const enA2P18: SkillExercise[] = [
     explanation: [
       {
         heading: "both: ikisi de",
-        tr: "„both“ iki şeyin ikisini birden kapsar ve fiil çoğul olur. İsimden önce doğrudan („both films“) ya da „of“ ile („both of my brothers“) gelir. İki şeyi bağlarken „both … and“ kullanılır.",
+        tr: "„both“ iki şeyin ikisini birden kapsar ve fiil çoğul olur. İsimden önce doğrudan („both movies“) ya da „of“ ile („both of my brothers“) gelir. İki şeyi bağlarken „both … and“ kullanılır.",
         examples: [
-          { de: "Both films are good.", tr: "İki film de güzel." },
+          { de: "Both movies are good.", tr: "İki film de güzel." },
           { de: "Both of my brothers live in Izmir.", tr: "İki erkek kardeşim de İzmir'de yaşıyor." },
           { de: "I like both tea and coffee.", tr: "Hem çayı hem kahveyi severim.", note: "both … and" },
         ],

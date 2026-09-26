@@ -128,12 +128,12 @@ export const enB1P9: SkillExercise[] = [
     segments: [
       { speaker: "Presenter", text: "Three schools in the county have been weighing what comes back from the tables, and the numbers are higher than anyone expected." },
       { speaker: "Presenter", text: "On an average day, just under a third of the hot food served is thrown away. Vegetables make up most of it." },
-      { speaker: "Ms Aldridge", text: "Our first idea was that children don't like vegetables. The weighing showed something else. They eat them on Mondays and leave them on Fridays." },
+      { speaker: "Ms. Aldridge", text: "Our first idea was that children don't like vegetables. The weighing showed something else. They eat them on Mondays and leave them on Fridays." },
       { speaker: "Presenter", text: "The difference is the schedule. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
-      { speaker: "Ms Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
+      { speaker: "Ms. Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
       { speaker: "Presenter", text: "Two of the schools have now made Friday lunch the same length as the other days. Waste there has come down by about a fifth." },
       { speaker: "Presenter", text: "The third school could not change the schedule and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
-      { speaker: "Ms Aldridge", text: "What I'd say to other schools is this: weigh it first. We spent two years talking about taste when the problem was the clock." },
+      { speaker: "Ms. Aldridge", text: "What I'd say to other schools is this: weigh it first. We spent two years talking about taste when the problem was the clock." },
     ],
     questions: [
       {
@@ -169,7 +169,7 @@ export const enB1P9: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Ms Aldridge's advice to other schools?",
+        text: "What is Ms. Aldridge's advice to other schools?",
         options: [],
         answer: 0,
         accept: ["weigh it first", "weigh the waste", "weigh it"],
@@ -239,16 +239,16 @@ export const enB1P9: SkillExercise[] = [
           { de: "Thank you for looking into this.", tr: "İlgilendiğiniz için teşekkürler.", en: "" },
         ],
         sample:
-          "Dear Mrs Holt, I am writing about the lunch break for Year 7, where my daughter Selin " +
+          "Dear Mrs. Holt, I am writing about the lunch break for seventh grade, where my daughter Selin " +
           "is a student. " +
           "Over the last few weeks I have noticed that she comes home hungry on Fridays and " +
           "almost never on other days. When I asked her why, she said she can't finish her lunch " +
           "because the line is long and the break is shorter on Fridays. " +
           "Two of her friends told her the same thing, so I do not think this is only about my " +
           "daughter being slow. " +
-          "I understand that the Friday schedule exists because of the sports hall booking, " +
+          "I understand that the Friday schedule exists because of the gym booking, " +
           "but the result is that food is thrown away and children are hungry in the afternoon. " +
-          "Would it be possible to let Year 7 go in first on Fridays, or to make the break " +
+          "Would it be possible to let the seventh graders go in first on Fridays, or to make the break " +
           "five minutes longer? " +
           "I would be glad to hear whether the school has looked at how much food comes back " +
           "on different days. Thank you for looking into this. Yours sincerely, Aylin Demir",

@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: available, bring, proof, arrive, early, calendar, on the way,
  *           advance, copy, original, stamp, official, need, print out,
  *           several, exactly, complaint, service, wait, answer, expect,
- *           situation, negative, discuss, rubbish, collect, recycle,
+ *           situation, negative, discuss, trash, collect, recycle,
  *           water, bill, trash can, energy, tax.
  *   Kalıp:  Could I book an appointment for Monday? ·
  *           Do you have anything available on Tuesday? ·
@@ -21,9 +21,9 @@ import type { SkillExercise } from "../types";
  *           I expect an answer within a week. ·
  *           They collect the trash on Mondays. ·
  *           You have to separate the paper. ·
- *           How often do they collect the rubbish?
+ *           How often do they collect the trash?
  *
- * Ünitenin tek öğretme noktası BELİRSİZ „they“: „They collect the rubbish
+ * Ünitenin tek öğretme noktası BELİRSİZ „they“: „They collect the trash
  * on Mondays.“ Kim toplar? Belediye — ama adı geçmiyor ve İngilizce yine
  * de bir özne koyuyor. Türkçe aynı yerde edilgen kuruyor ("çöpler
  * pazartesi toplanıyor"). Bu, ünite 24'ün „Someone stole my phone“

@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Reason and result · When I arrive · Why I signed up · Only if.
  *
  *   Kelime: because, so, since, therefore, reason, cause, result, explain,
- *           until, meanwhile, arrive, depart, board, timetable, track,
+ *           until, meanwhile, arrive, depart, board, schedule, track,
  *           journey, purpose, aim, course, enroll, practice, useful, goal,
  *           certificate, unless, agreement, promise, accept, refuse, deal,
  *           keep, risk.

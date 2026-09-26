@@ -158,23 +158,23 @@ export const enC1P19: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Host", text: "You ran the forty-member assembly in Addersley. What is the first problem you face when strangers sit down together?" },
-      { speaker: "Ms Okafor", text: "That the confident ones start talking and the rest decide, quite reasonably, to let them. Within an hour you can have a room where five people speak and thirty-five nod." },
+      { speaker: "Ms. Okafor", text: "That the confident ones start talking and the rest decide, quite reasonably, to let them. Within an hour you can have a room where five people speak and thirty-five nod." },
       { speaker: "Host", text: "How do you stop that?" },
-      { speaker: "Ms Okafor", text: "Small tables of six, a new mix every session, and a rule that everyone at the table speaks once before anyone speaks twice. It sounds childish. It works surprisingly well." },
+      { speaker: "Ms. Okafor", text: "Small tables of six, a new mix every session, and a rule that everyone at the table speaks once before anyone speaks twice. It sounds childish. It works surprisingly well." },
       { speaker: "Host", text: "Who chose the experts?" },
-      { speaker: "Ms Okafor", text: "A steering group that included two people who oppose assemblies on principle. We wanted someone whose job was to spot a one-sided list before the members did." },
+      { speaker: "Ms. Okafor", text: "A steering group that included two people who oppose assemblies on principle. We wanted someone whose job was to spot a one-sided list before the members did." },
       { speaker: "Host", text: "Did the members trust what they heard?" },
-      { speaker: "Ms Okafor", text: "Not automatically, and I was glad. The best question of the whole process came from a retired roofer, who asked a doctor how many of last summer's admissions were people living alone." },
+      { speaker: "Ms. Okafor", text: "Not automatically, and I was glad. The best question of the whole process came from a retired roofer, who asked a doctor how many of last summer's admissions were people living alone." },
       { speaker: "Host", text: "And the answer?" },
-      { speaker: "Ms Okafor", text: "Nearly two-thirds. That single figure moved the group away from air-conditioned buildings and toward phoning people at home. Nobody had planned for that question." },
+      { speaker: "Ms. Okafor", text: "Nearly two-thirds. That single figure moved the group away from air-conditioned buildings and toward phoning people at home. Nobody had planned for that question." },
       { speaker: "Host", text: "What happens when the group can't agree?" },
-      { speaker: "Ms Okafor", text: "We don't force it. The final report records every vote and includes a minority statement, written by the members who disagreed, in their own words and at the same length." },
+      { speaker: "Ms. Okafor", text: "We don't force it. The final report records every vote and includes a minority statement, written by the members who disagreed, in their own words and at the same length." },
       { speaker: "Host", text: "Isn't that a way of avoiding a decision?" },
-      { speaker: "Ms Okafor", text: "I'd say the opposite. A council reading a unanimous report learns what forty people concluded. A report with a minority statement also tells it where the argument is still open." },
+      { speaker: "Ms. Okafor", text: "I'd say the opposite. A council reading a unanimous report learns what forty people concluded. A report with a minority statement also tells it where the argument is still open." },
     ],
     questions: [
       {
-        text: "What is the first problem Ms Okafor describes?",
+        text: "What is the first problem Ms. Okafor describes?",
         options: [
           "Confident people talk and the others let them.",
           "Members arrive without having read the papers.",
@@ -195,7 +195,7 @@ export const enC1P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Okafor admits that the table rule sounds childish.",
+        text: "Ms. Okafor admits that the table rule sounds childish.",
         options: ["True", "False"],
         answer: 0,
         explain: "„It sounds childish. It works surprisingly well.“",
@@ -217,7 +217,7 @@ export const enC1P19: SkillExercise[] = [
         explain: "„written by the members who disagreed, in their own words and at the same length“.",
       },
       {
-        text: "What does a minority statement tell the council, according to Ms Okafor?",
+        text: "What does a minority statement tell the council, according to Ms. Okafor?",
         options: [
           "which members missed the meetings",
           "how long the meetings really lasted",
@@ -286,7 +286,7 @@ export const enC1P19: SkillExercise[] = [
           "I was one of the forty residents whose names were drawn last spring, and I am writing to those of you " +
           "who were not in the room, which is almost everyone. I drive a bus for a living, I had never been to a " +
           "council meeting, and I very nearly threw the invitation away.\n\n" +
-          "Our first recommendation is a phone list for people who live alone. Most of the people taken to hospital " +
+          "Our first recommendation is a phone list for people who live alone. Most of the people taken to the hospital " +
           "during last summer's heat were older residents on their own, and a daily call on the worst days costs " +
           "almost nothing. Our second is planting trees along the town's hottest streets. They are a much-needed " +
           "but slow solution, and we chose them knowing that some of us will be old ourselves before they are " +

@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: already, moment, situation, serious, problem, earlier,
  *           solution, matter, increase, soon, fall, grow, system, predict,
- *           hope, society, reception, surgery, list, nurse, file, vaccine,
+ *           hope, society, reception, practice, list, nurse, file, vaccine,
  *           sick, treatment, fever, cough, sore, pain, dizzy, weak,
  *           stomach, symptom.
  *   Kalıp:  By the time I spoke, they had already decided. ·

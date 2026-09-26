@@ -260,7 +260,7 @@ export const enB2P13: SkillExercise[] = [
           "to make one recommendation to the parent council. " +
           "Since September, the school has made students hand in their phones at the gate each " +
           "morning. They are allowed to collect them at the end of the day, or earlier if a parent " +
-          "rings the office. " +
+          "calls the office. " +
           "Over the term, we observed that break times became noticeably more active and that the " +
           "number of incidents reported by staff fell from thirty-one to twelve. In a short survey, " +
           "sixty percent of students said the rule had helped them concentrate. " +

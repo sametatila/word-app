@@ -146,16 +146,16 @@ export const enC1P17: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Mr Pajari", text: "I'm not here to complain about the teachers. I'm here because my son came home and told me that climbing the oak is now banned. Is that right?" },
-      { speaker: "Ms Crowe", text: "It is, since last month. A child fell from a lower branch and broke a wrist, and some parents objected to our having allowed it at all." },
-      { speaker: "Mr Pajari", text: "I understand why you reacted. But I'd object to a rule that removes the one thing most of them look forward to all day." },
-      { speaker: "Ms Crowe", text: "Believe me, I'm not committed to keeping the ban. I'm committed to not being the head who ignored a warning." },
-      { speaker: "Mr Pajari", text: "Then could it be conditional? The lower branches only, one class at a time, with a member of staff nearby." },
-      { speaker: "Ms Crowe", text: "That's close to what we had, minus the staff. The problem is people. We have two adults on the playground for two hundred children." },
-      { speaker: "Ms Crowe", text: "And those two are also dealing with lost coats, arguments about soccer and the line for the toilets. A tree needs someone whose only job, for twenty minutes, is the tree." },
-      { speaker: "Mr Pajari", text: "Parents could help. When it comes to supervising a tree, you don't need a teaching qualification." },
-      { speaker: "Ms Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rotation first." },
-      { speaker: "Mr Pajari", text: "Six. I'll have a list by Friday." },
+      { speaker: "Mr. Pajari", text: "I'm not here to complain about the teachers. I'm here because my son came home and told me that climbing the oak is now banned. Is that right?" },
+      { speaker: "Ms. Crowe", text: "It is, since last month. A child fell from a lower branch and broke a wrist, and some parents objected to our having allowed it at all." },
+      { speaker: "Mr. Pajari", text: "I understand why you reacted. But I'd object to a rule that removes the one thing most of them look forward to all day." },
+      { speaker: "Ms. Crowe", text: "Believe me, I'm not committed to keeping the ban. I'm committed to not being the principal who ignored a warning." },
+      { speaker: "Mr. Pajari", text: "Then could it be conditional? The lower branches only, one class at a time, with a member of staff nearby." },
+      { speaker: "Ms. Crowe", text: "That's close to what we had, minus the staff. The problem is people. We have two adults on the playground for two hundred children." },
+      { speaker: "Ms. Crowe", text: "And those two are also dealing with lost coats, arguments about soccer and the line for the bathroom. A tree needs someone whose only job, for twenty minutes, is the tree." },
+      { speaker: "Mr. Pajari", text: "Parents could help. When it comes to supervising a tree, you don't need a teaching qualification." },
+      { speaker: "Ms. Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rotation first." },
+      { speaker: "Mr. Pajari", text: "Six. I'll have a list by Friday." },
     ],
     questions: [
       {
@@ -169,9 +169,9 @@ export const enC1P17: SkillExercise[] = [
         explain: "Alt daldan düşen bir çocuğun bileği kırılmış ve bazı veliler itiraz etmiş.",
       },
       {
-        text: "What is Ms Crowe committed to, in her own words?",
+        text: "What is Ms. Crowe committed to, in her own words?",
         options: [
-          "not being the head who ignored a warning",
+          "not being the principal who ignored a warning",
           "keeping the ban permanently",
           "planting a new tree",
         ],
@@ -180,14 +180,14 @@ export const enC1P17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Crowe says that many parents usually volunteer.",
+        text: "Ms. Crowe says that many parents usually volunteer.",
         options: ["True", "False"],
         answer: 1,
         explain: "„You'd be surprised how few volunteer.“",
       },
       {
         kind: "gapfill",
-        text: "Ms Crowe will put the idea to the governors in ___.",
+        text: "Ms. Crowe will put the idea to the governors in ___.",
         options: [],
         answer: 0,
         accept: ["March"],
@@ -195,14 +195,14 @@ export const enC1P17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many parents must Mr Pajari find for the rotation?",
+        text: "How many parents must Mr. Pajari find for the rotation?",
         options: [],
         answer: 0,
         accept: ["six", "6"],
         explain: "Koşul: önce nöbet çizelgesi için altı veli bulmak.",
       },
       {
-        text: "What does Mr Pajari propose?",
+        text: "What does Mr. Pajari propose?",
         options: [
           "cutting down the tree",
           "lower branches only, with an adult nearby",

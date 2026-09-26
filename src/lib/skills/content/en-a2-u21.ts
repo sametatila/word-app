@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A2 · Ünite 21 — "Akıllı telefon, sosyal medya, diziler, haberler".
  *
- * Dört ders: Using a smartphone · Social media · Series and films ·
+ * Dört ders: Using a smartphone · Social media · Series and movies ·
  * Following the news.
  *
  *   Kelime: screen, battery, charge, settings, update, keyboard, speaker,

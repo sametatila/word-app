@@ -158,13 +158,13 @@ export const enB2P14: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Presenter", text: "Sales of electric scooters have risen sharply this year, and so has confusion about where they can actually be ridden." },
-      { speaker: "Ms Rourke", text: "The single most common thing we hear is, “But I bought it in a shop, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
+      { speaker: "Ms. Rourke", text: "The single most common thing we hear is, “But I bought it in a shop, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
       { speaker: "Presenter", text: "Under current rules, a privately owned scooter may only be used on private land with the owner's permission. Rental scooters in the city trial are treated differently because they are insured by the operator." },
-      { speaker: "Ms Rourke", text: "Owing to that difference, two scooters that look identical can be legal and illegal on the same street. I understand why people find that absurd." },
+      { speaker: "Ms. Rourke", text: "Owing to that difference, two scooters that look identical can be legal and illegal on the same street. I understand why people find that absurd." },
       { speaker: "Presenter", text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driving license they may not even hold yet." },
-      { speaker: "Ms Rourke", text: "Our approach with teenagers is to talk to the parents first. Most of them bought the scooter as a present and had no idea there was a problem." },
+      { speaker: "Ms. Rourke", text: "Our approach with teenagers is to talk to the parents first. Most of them bought the scooter as a present and had no idea there was a problem." },
       { speaker: "Presenter", text: "The government has said it intends to change the law, but it has not said when, and several consultations have closed without a decision." },
-      { speaker: "Ms Rourke", text: "Until then my advice is simple: if you haven't bought one yet, check the rules before you pay, not after you've been stopped." },
+      { speaker: "Ms. Rourke", text: "Until then my advice is simple: if you haven't bought one yet, check the rules before you pay, not after you've been stopped." },
     ],
     questions: [
       {
@@ -189,7 +189,7 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Rourke thinks the current rules make perfect sense.",
+        text: "Ms. Rourke thinks the current rules make perfect sense.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I understand why people find that absurd“: kuralın saçma göründüğünü kabul ediyor.",
@@ -204,14 +204,14 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who does Ms Rourke talk to first when teenagers are stopped?",
+        text: "Who does Ms. Rourke talk to first when teenagers are stopped?",
         options: [],
         answer: 0,
         accept: ["the parents", "their parents", "parents"],
         explain: "„Our approach with teenagers is to talk to the parents first.“",
       },
       {
-        text: "What is Ms Rourke's advice?",
+        text: "What is Ms. Rourke's advice?",
         options: [
           "Check the rules before buying.",
           "Only ride on the weekend.",

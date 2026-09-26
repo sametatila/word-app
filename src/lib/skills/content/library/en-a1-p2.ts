@@ -304,7 +304,7 @@ export const enA1P2: SkillExercise[] = [
     gloss: [
       { de: "ready", tr: "hazır" },
       { de: "near", tr: "yakın" },
-      { de: "garden", tr: "bahçe" },
+      { de: "yard", tr: "bahçe" },
       { de: "milk", tr: "süt" },
     ],
     minutes: 6,
@@ -332,7 +332,7 @@ export const enA1P2: SkillExercise[] = [
         tr: "Türkçedeki „var“ İngilizcede „have“ ile değil, „there is“ ve „there are“ ile söylenir. Tekilde is, çoğulda are gelir; olumsuzu there isn't / there aren't, sorusu Is there …? / Are there …?",
         examples: [
           { de: "There is a bank near here.", tr: "Buranın yakınında bir banka var." },
-          { de: "There are two cats in the garden.", tr: "Bahçede iki kedi var.", note: "çoğul → are" },
+          { de: "There are two cats in the yard.", tr: "Bahçede iki kedi var.", note: "çoğul → are" },
           { de: "There isn't any milk.", tr: "Hiç süt yok." },
         ],
       },
@@ -366,7 +366,7 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "There ___ two cats in the garden.",
+        text: "There ___ two cats in the yard.",
         options: [],
         answer: 0,
         accept: ["are"],

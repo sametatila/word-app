@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 20 — "Hastanede bir gece, tedavi seçimi, ikinci görüş, rapor".
  *
- * Dört ders: A night in hospital · Choosing a treatment ·
+ * Dört ders: A night in the hospital · Choosing a treatment ·
  * A second opinion · The sick note.
  *
  *   Kelime: operate, stay, night, bed, care, visit, rest, recover,

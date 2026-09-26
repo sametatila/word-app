@@ -65,7 +65,7 @@ export const enA2P14: SkillExercise[] = [
         ],
         sample:
           "We stayed at Pine Lake Campground for two nights in August with our two children. What we liked most was the " +
-          "lake: the water was clean and warm, and there was a small beach only fifty meters from our tent. The toilets " +
+          "lake: the water was clean and warm, and there was a small beach only fifty meters from our tent. The restrooms " +
           "and showers were clean, and everybody was friendly. The only problem was the shop. It closed at six, and " +
           "after that there was nothing to buy anywhere near the campsite. Also, the internet only worked next to the " +
           "office. I would recommend it to families and to people who like quiet evenings, but not to groups who want " +

@@ -152,19 +152,19 @@ export const enC1P11: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Host", text: "Restaurants have become noticeably louder over the last twenty years. You measure them for a living. Is that impression actually accurate?" },
-      { speaker: "Ms Varga", text: "It is. In the places we survey, the average level at eight in the evening has risen by roughly eight decibels, which the ear hears as close to twice as loud." },
+      { speaker: "Ms. Varga", text: "It is. In the places we survey, the average level at eight in the evening has risen by roughly eight decibels, which the ear hears as close to twice as loud." },
       { speaker: "Host", text: "Why? Nobody sets out to build a noisy room." },
-      { speaker: "Ms Varga", text: "Nobody decides it, which is the point. Carpets, curtains and tablecloths went because hard surfaces look modern and are easier to clean. Each choice was sensible. Together they produced a room that returns every sound." },
+      { speaker: "Ms. Varga", text: "Nobody decides it, which is the point. Carpets, curtains and tablecloths went because hard surfaces look modern and are easier to clean. Each choice was sensible. Together they produced a room that returns every sound." },
       { speaker: "Host", text: "And the owners don't mind?" },
-      { speaker: "Ms Varga", text: "Some prefer it. A loud room feels busy, and people eat faster when they can't hear each other. It's hard to prove that anyone plans for that, but I've heard it said openly more than once." },
+      { speaker: "Ms. Varga", text: "Some prefer it. A loud room feels busy, and people eat faster when they can't hear each other. It's hard to prove that anyone plans for that, but I've heard it said openly more than once." },
       { speaker: "Host", text: "Who pays the price?" },
-      { speaker: "Ms Varga", text: "Anyone with a hearing aid, anyone over sixty, and anyone trying to have a serious conversation. They don't complain. They simply stop coming, so they never appear in the owner's figures." },
+      { speaker: "Ms. Varga", text: "Anyone with a hearing aid, anyone over sixty, and anyone trying to have a serious conversation. They don't complain. They simply stop coming, so they never appear in the owner's figures." },
       { speaker: "Host", text: "What would you change first?" },
-      { speaker: "Ms Varga", text: "The ceiling. It's the largest surface nobody touches, and treating it costs less than a new coffee machine. It makes no sense to redesign the menu before fixing the room." },
+      { speaker: "Ms. Varga", text: "The ceiling. It's the largest surface nobody touches, and treating it costs less than a new coffee machine. It makes no sense to redesign the menu before fixing the room." },
     ],
     questions: [
       {
-        text: "How, according to Ms Varga, did rooms become so loud?",
+        text: "How, according to Ms. Varga, did rooms become so loud?",
         options: [
           "Owners asked designers for louder rooms.",
           "Regulations required hard surfaces.",
@@ -175,7 +175,7 @@ export const enC1P11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Varga has heard the idea of a deliberately loud room discussed openly.",
+        text: "Ms. Varga has heard the idea of a deliberately loud room discussed openly.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I've heard it said openly more than once“ — kanıtlamanın zor olduğunu da ekliyor.",
@@ -190,7 +190,7 @@ export const enC1P11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What would Ms Varga change first?",
+        text: "What would Ms. Varga change first?",
         options: [],
         answer: 0,
         accept: ["the ceiling", "ceiling"],
@@ -267,7 +267,7 @@ export const enC1P11: SkillExercise[] = [
           { de: "I would appreciate it if we could review this after …", tr: "Bunu … sonra gözden geçirebilirsek memnun olurum", en: "" },
         ],
         sample:
-          "Dear Ms Lindqvist,\n\n" +
+          "Dear Ms. Lindqvist,\n\n" +
           "I am writing to suggest a small change to how the second floor is used. " +
           "It is worth saying at the outset that nobody here is behaving badly. " +
           "The problem is that the room is asked to do two jobs at once: it is where people take calls " +

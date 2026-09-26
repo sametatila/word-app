@@ -346,7 +346,7 @@ export const enB2P2: SkillExercise[] = [
         tr: "Hangi kişi ya da şeyden söz edildiğini belirleyen ilgi cümlesi virgül almaz. Burada „that“ kullanılabilir ve ilgi zamiri NESNE konumundaysa tümüyle atılabilir.",
         examples: [
           { de: "The book that I told you about is in the library.", tr: "Sana bahsettiğim kitap kütüphanede." },
-          { de: "The film we saw last night was long.", tr: "Dün gece izlediğimiz film uzundu.", note: "zamir atılmış" },
+          { de: "The movie we saw last night was long.", tr: "Dün gece izlediğimiz film uzundu.", note: "zamir atılmış" },
           { de: "The people who work here are all volunteers.", tr: "Burada çalışanların hepsi gönüllü." },
         ],
       },
@@ -428,7 +428,7 @@ export const enB2P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The film we saw last night was long.“ — Bu cümle doğru mu?",
+        text: "„The movie we saw last night was long.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Nesne konumundaki ilgi zamiri atılabilir; cümle doğru.",

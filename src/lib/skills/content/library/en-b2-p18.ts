@@ -28,7 +28,7 @@ export const enB2P18: SkillExercise[] = [
       { de: "grocery", tr: "bakkal" },
       { de: "pensioner", tr: "emekli" },
       { de: "to withdraw", tr: "para çekmek" },
-      { de: "till", tr: "yazar kasa" },
+      { de: "register", tr: "yazar kasa" },
       { de: "to pay in", tr: "yatırmak" },
       { de: "credit union", tr: "tasarruf kurumu" },
       { de: "deposit", tr: "para yatırma" },
@@ -42,15 +42,15 @@ export const enB2P18: SkillExercise[] = [
     text:
       "The last counter in Hollowford\n\n" +
       "When the bank in Hollowford closed its branch four years ago, and the cash machine outside " +
-      "the post office followed a year later, Mr Okonjo's grocery became something it had never " +
+      "the post office followed a year later, Mr. Okonjo's grocery became something it had never " +
       "planned to be: the only place in a town of three thousand people where you can both pay " +
       "with cash and get some back.\n\n" +
       "Every morning between eight and ten, a line forms that has nothing to do with groceries. " +
-      "Pensioners withdraw their weekly money at the till. A plumber pays in yesterday's takings. " +
+      "Pensioners withdraw their weekly money at the register. A plumber pays in yesterday's takings. " +
       "The school's parent association drops off the coins from the summer fair, because neither " +
       "the bank nor the credit union will accept a deposit that small any more without an " +
       "appointment in the city.\n\n" +
-      "Mr Okonjo does not make money from any of this. Each withdrawal earns him a few cents from " +
+      "Mr. Okonjo does not make money from any of this. Each withdrawal earns him a few cents from " +
       "the card company, and handling cash costs him far more than that in time and insurance. " +
       "When asked why he carries on, he says the answer is simple: if he stopped, none of his " +
       "older customers would have anywhere else to go.\n\n" +
@@ -83,10 +83,10 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mr Okonjo earns good money from handling cash.",
+        text: "Mr. Okonjo earns good money from handling cash.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Mr Okonjo does not make money from any of this“; nakit ona kazandığından fazlasına mal oluyor.",
+        explain: "„Mr. Okonjo does not make money from any of this“; nakit ona kazandığından fazlasına mal oluyor.",
       },
       {
         kind: "gapfill",
@@ -106,7 +106,7 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         text: "How do most people under forty pay?",
-        options: ["by check", "by card or phone", "in cash at the till"],
+        options: ["by check", "by card or phone", "in cash at the register"],
         answer: 1,
         explain: "„Most people under forty pay by card or phone“.",
       },
@@ -137,14 +137,14 @@ export const enB2P18: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ms Brennan", text: "I counted it last night. Only one payment in twelve is cash now, and each of those takes about twice as long at the till." },
-      { speaker: "Mr Voss", text: "Both of those things are true. But going card-only means telling some of our regulars that we don't want their money, and neither of us wants to do that." },
-      { speaker: "Ms Brennan", text: "It isn't only the time. Every Friday one of us drives to the bank in the next town, and last month neither the safe nor the insurance was cheap to renew." },
-      { speaker: "Mr Voss", text: "I know. What if we took cash only in the mornings? The older customers mostly come in before eleven anyway." },
-      { speaker: "Ms Brennan", text: "Either we take cash or we don't. A half rule confuses everyone, and somebody will be turned away at five past eleven and write a review about it." },
-      { speaker: "Mr Voss", text: "Fair point. Then what about the new card reader the business association donated? They offered one to every shop on the street." },
-      { speaker: "Ms Brennan", text: "That doesn't help, though. None of our costs come from cards. It's the cash that costs us, and a new reader won't change that." },
-      { speaker: "Mr Voss", text: "All right. Let's keep cash for another six months, but ask the council about the shared bank counter they keep mentioning. If that opens, both problems get smaller." },
+      { speaker: "Ms. Brennan", text: "I counted it last night. Only one payment in twelve is cash now, and each of those takes about twice as long at the register." },
+      { speaker: "Mr. Voss", text: "Both of those things are true. But going card-only means telling some of our regulars that we don't want their money, and neither of us wants to do that." },
+      { speaker: "Ms. Brennan", text: "It isn't only the time. Every Friday one of us drives to the bank in the next town, and last month neither the safe nor the insurance was cheap to renew." },
+      { speaker: "Mr. Voss", text: "I know. What if we took cash only in the mornings? The older customers mostly come in before eleven anyway." },
+      { speaker: "Ms. Brennan", text: "Either we take cash or we don't. A half rule confuses everyone, and somebody will be turned away at five past eleven and write a review about it." },
+      { speaker: "Mr. Voss", text: "Fair point. Then what about the new card reader the business association donated? They offered one to every shop on the street." },
+      { speaker: "Ms. Brennan", text: "That doesn't help, though. None of our costs come from cards. It's the cash that costs us, and a new reader won't change that." },
+      { speaker: "Mr. Voss", text: "All right. Let's keep cash for another six months, but ask the council about the shared bank counter they keep mentioning. If that opens, both problems get smaller." },
     ],
     questions: [
       {
@@ -154,7 +154,7 @@ export const enB2P18: SkillExercise[] = [
         explain: "„Only one payment in twelve is cash now“.",
       },
       {
-        text: "Why does Ms Brennan reject taking cash only in the mornings?",
+        text: "Why does Ms. Brennan reject taking cash only in the mornings?",
         options: [
           "The mornings are too busy.",
           "The bank opens at eleven.",
@@ -165,7 +165,7 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mr Voss does not want to turn regular customers away.",
+        text: "Mr. Voss does not want to turn regular customers away.",
         options: ["True", "False"],
         answer: 0,
         explain: "Müdavimlere paralarını istemediklerini söylemek ikisinin de istemediği bir şey.",
@@ -187,7 +187,7 @@ export const enB2P18: SkillExercise[] = [
         explain: "„Let's keep cash for another six months“.",
       },
       {
-        text: "What does Ms Brennan say about the card reader?",
+        text: "What does Ms. Brennan say about the card reader?",
         options: [
           "It will not lower their costs.",
           "It is too expensive to buy.",

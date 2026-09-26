@@ -40,7 +40,7 @@ export const enA2P11: SkillExercise[] = [
       "TWO WEEKS IN SOMEONE ELSE'S HOME\n\n" +
       "Last summer the Kaya family from Bursa tried something new: they swapped homes with a family from Lyon for " +
       "two weeks. Nobody paid any money. The French family stayed in the Kayas' apartment, and the Kayas stayed in a small " +
-      "house with a garden in Lyon.\n\n" +
+      "house with a yard in Lyon.\n\n" +
       "“We found them on a website in March,” says Deniz Kaya. “We wrote to each other for two months before we said yes.”\n\n" +
       "Not everything was easy. On the first evening the family was having dinner outside when all the lights in the " +
       "house went off. They looked for the switch for an hour. In the end, the man next door showed them where it was.\n\n" +
@@ -61,7 +61,7 @@ export const enA2P11: SkillExercise[] = [
       {
         text: "What happened on the first evening?",
         options: [
-          "A neighbor came to eat in the garden.",
+          "A neighbor came to eat in the yard.",
           "The family could not find the house.",
           "The lights went off during dinner.",
         ],
@@ -96,7 +96,7 @@ export const enA2P11: SkillExercise[] = [
         options: [
           "ask more questions before they go",
           "stay for a shorter time",
-          "choose an apartment without a garden",
+          "choose an apartment without a yard",
         ],
         answer: 0,
         explain: "„Yes, but next time we will ask more questions before we arrive.“",
@@ -235,7 +235,7 @@ export const enA2P11: SkillExercise[] = [
         ],
         sample:
           "Dear Clara and Marc, thank you for your home. We really enjoyed the two weeks here. The children loved the " +
-          "garden, and we ate outside almost every evening. Mrs Blanc next door was very kind: on Tuesday she brought " +
+          "yard, and we ate outside almost every evening. Mrs. Blanc next door was very kind: on Tuesday she brought " +
           "us a big bag of tomatoes from her garden. One small problem: we broke a glass, but we bought a new one at the " +
           "market. It is in the cupboard with the others. We watered the plants every morning, and the fridge is clean " +
           "and empty. The key is in the green box next to the door. We hope you enjoyed Bursa, too! Best wishes, Deniz and family",
@@ -293,11 +293,11 @@ export const enA2P11: SkillExercise[] = [
         ],
       },
       {
-        de: "The film began at nine.",
+        de: "The movie began at nine.",
         tr: "Film dokuzda başladı.",
         hint: "„began“ = bi-GEN, „begin“ = bi-GİN. Vurgu ikinci hecede, değişen ünlü de orada.",
         confusions: [
-          { heard: ["The film begin at nine"], fix: "Vurgulu hecedeki ünlüyü aç: bi-GEN.", expected: "began" },
+          { heard: ["The movie begin at nine"], fix: "Vurgulu hecedeki ünlüyü aç: bi-GEN.", expected: "began" },
         ],
       },
       {

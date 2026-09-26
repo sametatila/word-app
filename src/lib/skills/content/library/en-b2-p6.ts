@@ -134,19 +134,19 @@ export const enB2P6: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ms Carr", text: "She asked why she didn't get it. I'd rather tell her than send the template again." },
-      { speaker: "Mr Oduro", text: "So would I, in principle. But whatever we write becomes a precedent for the next forty people." },
-      { speaker: "Ms Carr", text: "Then let's write something we're prepared to repeat. The honest version is that her presentation was the weakest of the four." },
-      { speaker: "Mr Oduro", text: "That's honest, but it isn't useful. She can't do anything with it unless we say what a strong one looks like." },
-      { speaker: "Ms Carr", text: "Fair. We could give her the scoring sheet. It's the same one for everyone, so there's nothing to hide." },
-      { speaker: "Mr Oduro", text: "That I'd support. A number with a description behind it is defensible. A sentence about her personality is not." },
-      { speaker: "Ms Carr", text: "Agreed. Although I'd add one line from me, so it doesn't read like it came out of a machine." },
-      { speaker: "Mr Oduro", text: "As long as the line is about the work and not about her. That's where these things usually backfire." },
-      { speaker: "Ms Carr", text: "I'll draft it this afternoon and send it to you before it goes. And if we're doing this, we should do it for all four, not just the one who asked." },
+      { speaker: "Ms. Carr", text: "She asked why she didn't get it. I'd rather tell her than send the template again." },
+      { speaker: "Mr. Oduro", text: "So would I, in principle. But whatever we write becomes a precedent for the next forty people." },
+      { speaker: "Ms. Carr", text: "Then let's write something we're prepared to repeat. The honest version is that her presentation was the weakest of the four." },
+      { speaker: "Mr. Oduro", text: "That's honest, but it isn't useful. She can't do anything with it unless we say what a strong one looks like." },
+      { speaker: "Ms. Carr", text: "Fair. We could give her the scoring sheet. It's the same one for everyone, so there's nothing to hide." },
+      { speaker: "Mr. Oduro", text: "That I'd support. A number with a description behind it is defensible. A sentence about her personality is not." },
+      { speaker: "Ms. Carr", text: "Agreed. Although I'd add one line from me, so it doesn't read like it came out of a machine." },
+      { speaker: "Mr. Oduro", text: "As long as the line is about the work and not about her. That's where these things usually backfire." },
+      { speaker: "Ms. Carr", text: "I'll draft it this afternoon and send it to you before it goes. And if we're doing this, we should do it for all four, not just the one who asked." },
     ],
     questions: [
       {
-        text: "What is Mr Oduro's first concern?",
+        text: "What is Mr. Oduro's first concern?",
         options: [
           "that the reply sets a precedent",
           "that the candidate will complain",
@@ -182,14 +182,14 @@ export const enB2P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ms Carr want to add to the scoring sheet?",
+        text: "What does Ms. Carr want to add to the scoring sheet?",
         options: [],
         answer: 0,
         accept: ["one line from her", "a line from her", "one personal line", "a personal line", "one line", "a line"],
         explain: "Makineden çıkmış gibi durmaması için kendinden bir satır.",
       },
       {
-        text: "What does Ms Carr decide at the end?",
+        text: "What does Ms. Carr decide at the end?",
         options: [
           "to send feedback to all four candidates",
           "to phone the candidate instead",
@@ -255,7 +255,7 @@ export const enB2P6: SkillExercise[] = [
           { de: "If you apply again, I would suggest …", tr: "Tekrar başvurursanız … öneririm", en: "" },
         ],
         sample:
-          "Dear Ms Aydin, thank you for the time you gave us on 14 April. " +
+          "Dear Ms. Aydin, thank you for the time you gave us on April 14. " +
           "I'm writing to let you know that we have offered the role to another candidate, " +
           "and to give you the reasons, since you asked for them. " +
           "Your strongest areas were the written task, where you scored highest of the four, " +

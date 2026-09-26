@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 4 — "Kira sözleşmesi, taşınma günü, ev arkadaşları, tamir".
  *
- * Dört ders: The lease · Moving day · Living with flatmates ·
+ * Dört ders: The lease · Moving day · Living with roommates ·
  * Getting it fixed.
  *
  *   Kelime: lease, deposit, renew, sign, van, carry, fragile, unpack,

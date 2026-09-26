@@ -337,7 +337,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Gözünle gördüğün bir işaretten yola çıkarak tahmin ediyorsan „going to“, yalnız düşüncene dayanıyorsan „will“ kullanılır.",
         examples: [
           { de: "Look at those clouds! It is going to rain.", tr: "Şu bulutlara bak! Yağmur yağacak.", note: "görünen kanıt" },
-          { de: "I think he will like the film.", tr: "Bence filmi beğenecek.", note: "yalnız fikir" },
+          { de: "I think he will like the movie.", tr: "Bence filmi beğenecek.", note: "yalnız fikir" },
           { de: "Don't worry, it will be fine.", tr: "Merak etme, iyi olacak." },
         ],
       },

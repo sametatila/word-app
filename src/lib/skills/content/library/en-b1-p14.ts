@@ -338,7 +338,7 @@ export const enB1P14: SkillExercise[] = [
       },
       {
         heading: "Yardımcı fiil yoksa do / does / did",
-        tr: "Present simple ve past simple cümlelerinde görünür bir yardımcı fiil yoktur; ek „do, does, did“ ile kurulur. Özne bir isimse ekte zamire döner: „The film starts at eight, doesn't it?“",
+        tr: "Present simple ve past simple cümlelerinde görünür bir yardımcı fiil yoktur; ek „do, does, did“ ile kurulur. Özne bir isimse ekte zamire döner: „The movie starts at eight, doesn't it?“",
         examples: [
           { de: "You live near here, don't you?", tr: "Buralarda oturuyorsun, değil mi?", note: "present → don't" },
           { de: "Your sister works at the hospital, doesn't she?", tr: "Kız kardeşin hastanede çalışıyor, değil mi?", note: "isim → she" },

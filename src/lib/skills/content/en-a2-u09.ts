@@ -46,7 +46,7 @@ export const enA2U09: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Dear Mr Yılmaz,\n" +
+      "Dear Mr. Yılmaz,\n" +
       "I am writing about two problems in my apartment.\n" +
       "There's a leak in the bathroom. The water comes from the pipe under the sink and it has been there since Saturday. There is already damage on the carpet.\n" +
       "The second problem is the heating. The heating hasn't worked since Monday. In the morning the rooms are very cold and my daughter is sick.\n" +

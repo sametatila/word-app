@@ -10,7 +10,7 @@ import type { SkillExercise } from "../types";
  *           jewelry, postcard, arrive, stay, weather, amazing, again,
  *           boat trip, wonderful, picnic, invite, join, free, sorry,
  *           maybe, invitation, with pleasure, anytime, birthday, present,
- *           surprise, celebrate, candle, sweets, hug, joke.
+ *           surprise, celebrate, candle, candy, hug, joke.
  *   Kalıp:  How much is this? · Do you have anything cheaper? ·
  *           Could you wrap it as a gift, please? ·
  *           We arrived on Friday evening. · We stayed there for three days. ·

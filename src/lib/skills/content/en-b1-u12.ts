@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: insurance, cover, policy, accident, premium, health, protect,
  *           benefit, tax, income, declare, deduct, earn, annual, payment,
  *           record, letter, subject, regards, sincerely, request, reply,
- *           paragraph, envelope, queue, number, counter, patience, turn,
+ *           paragraph, envelope, line, number, counter, patience, turn,
  *           desk, ticket, wait.
  *   Kalıp:  If you have an accident, the policy covers it. ·
  *           If I paid more, I would get a better policy. ·
@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           I look forward to your reply. Yours sincerely. ·
  *           I had taken a ticket before I sat down. ·
  *           Then they called my number. ·
- *           By the time I got there, the queue had grown.
+ *           By the time I got there, the line had grown.
  *
  * Ünitenin tek öğretme noktası RESMÎ MEKTUBUN DİLİ: sabit açılış („I am
  * writing with a request about …“), sabit kapanış („I look forward to
@@ -54,7 +54,7 @@ export const enB1U12: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Dear Ms Aslan,\n" +
+      "Dear Ms. Aslan,\n" +
       "Subject: account 4471 — request for a written reply\n" +
       "I am writing with a request about my account. The reference is in the subject line and on every page of this letter.\n" +
       "Although I wrote twice, I received no reply. The first letter was sent on the third of March and the second on the twenty-first. Both went to this address and neither came back.\n" +

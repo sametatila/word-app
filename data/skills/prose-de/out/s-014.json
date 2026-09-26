@@ -115,9 +115,9 @@
   "de": "\"The kitchen trash can is full. Please take it out.\" Das ist der erste Punkt der Liste."
  },
  {
-  "tr": "\"Please use the stop in Church Road.\" Market Street'te yol çalışması var.",
+  "tr": "\"Please use the stop on Church Road.\" Market Street'te yol çalışması var.",
   "kind": "explain",
-  "de": "\"Please use the stop in Church Road.\" In der Market Street wird gebaut."
+  "de": "\"Please use the stop on Church Road.\" In der Market Street wird gebaut."
  },
  {
   "tr": "\"Students have got a 10% discount.\" İndirim için öğrenci kartı gerekiyor.",
@@ -140,9 +140,9 @@
   "de": "\"It's forty dollars. The green one is thirty dollars.\" Die Kundin nimmt die schwarze."
  },
  {
-  "tr": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
+  "tr": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
   "kind": "explain",
-  "de": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Im Garten nicht, drinnen schon."
+  "de": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Im Garten nicht, drinnen schon."
  },
  {
   "tr": "\"I speak Italian and Spanish.\" İngilizceyi henüz öğreniyor, konuştuğu diller arasında saymıyor.",

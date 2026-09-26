@@ -1,7 +1,7 @@
 [
  { "tr": "„Please come at half past seven.“ — Ben saat sekizde geliyor, misafirler ondan önce.", "kind": "explain", "de": "„Please come at half past seven.“ — Ben kommt um acht, die Gäste davor." },
  { "tr": "„Welcome on board the Blue Star ferry to Castle Island.“ Green Point yalnız ara durak.", "kind": "explain", "de": "„Welcome on board the Blue Star ferry to Castle Island.“ Green Point ist nur ein Zwischenhalt." },
- { "tr": "Ms Varga kooperatife çöp için şikâyet yazmış; onlar da fikri olup olmadığını sormuş.", "kind": "explain", "de": "Ms Varga schrieb der Genossenschaft eine Beschwerde wegen des Mülls; die fragte sie, ob sie eine Idee habe." },
+ { "tr": "Ms. Varga kooperatife çöp için şikâyet yazmış; onlar da fikri olup olmadığını sormuş.", "kind": "explain", "de": "Ms. Varga schrieb der Genossenschaft eine Beschwerde wegen des Mülls; die fragte sie, ob sie eine Idee habe." },
  { "tr": "Yazılı iptal tarihli bir kayıt bırakır; anlaşmazlıklar çoğu zaman o tarihe bağlıdır.", "kind": "explain", "de": "Eine schriftliche Kündigung hinterlässt einen datierten Nachweis; Streitfälle hängen oft an genau diesem Datum." },
  { "tr": "„But I bought it in a shop, so it must be legal“: satın almak ile sürmek ayrı şeyler.", "kind": "explain", "de": "„But I bought it in a shop, so it must be legal“: Kaufen und Fahren sind zwei verschiedene Dinge." },
  { "tr": "„I'd have thought“ itirazı kesin bir hüküm gibi değil, temkinli bir görüş gibi sunar.", "kind": "explain", "de": "„I'd have thought“ bringt den Einwand nicht als festes Urteil, sondern als vorsichtige Meinung." },
@@ -45,7 +45,7 @@
  { "tr": "„After you use a machine, please clean the door.“ — listeye yazmak kullanmadan ÖNCE yapılıyor.", "kind": "explain", "de": "„After you use a machine, please clean the door.“ — das Eintragen in die Liste kommt VOR der Benutzung." },
  { "tr": "„Please come to Leo's birthday party …“ — metin okuyanları bir doğum günü partisine çağırıyor.", "kind": "explain", "de": "„Please come to Leo's birthday party …“ — der Text lädt die Leser zu einer Geburtstagsfeier ein." },
  { "tr": "„It's twenty-four euros, so everyone pays two euros.“ — yirmi dört euro çantanın toplam fiyatı.", "kind": "explain", "de": "„It's twenty-four euros, so everyone pays two euros.“ — vierundzwanzig Euro ist der Gesamtpreis der Tasche." },
- { "tr": "„Mr Okonjo does not make money from any of this“; nakit ona kazandığından fazlasına mal oluyor.", "kind": "explain", "de": "„Mr Okonjo does not make money from any of this“; das Bargeld kostet ihn mehr, als er damit verdient." },
+ { "tr": "„Mr. Okonjo does not make money from any of this“; nakit ona kazandığından fazlasına mal oluyor.", "kind": "explain", "de": "„Mr. Okonjo does not make money from any of this“; das Bargeld kostet ihn mehr, als er damit verdient." },
  { "tr": "Selin ondan içecek istiyor: „Juice and water, please, but no cola.“ — keki kız kardeşi yapıyor.", "kind": "explain", "de": "Selin bittet ihn um Getränke: „Juice and water, please, but no cola.“ — den Kuchen backt ihre Schwester." },
  { "tr": "Okullar değişebilir ama otobüsler, vardiyalar ve anne babaların işleri onlarla birlikte kaymıyor.", "kind": "explain", "de": "Die Schulen können sich ändern, aber Busse, Schichten und die Arbeitszeiten der Eltern verschieben sich nicht mit." },
  { "tr": "„almost all of it takes place on weekday evenings“ — emeklilere uyuyor, küçük çocuklulara uymuyor.", "kind": "explain", "de": "„almost all of it takes place on weekday evenings“ — das passt Rentnern, aber nicht Menschen mit kleinen Kindern." },

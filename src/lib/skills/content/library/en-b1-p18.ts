@@ -126,18 +126,18 @@ export const enB1P18: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Presenter", text: "If you've walked down Birch Lane before eight in the morning, you've seen it: a line of thirty people outside a bakery that only opened in March. We went to find out why." },
-      { speaker: "Mr Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
+      { speaker: "Mr. Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
       { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the line. I've made two friends there." },
       { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the line blocks its entrance, and a neighbor has complained about the noise at half past six." },
-      { speaker: "Mr Novak", text: "That's fair. We've painted a line on the sidewalk, so people stand on one side, and I've asked customers to keep their voices down before seven." },
+      { speaker: "Mr. Novak", text: "That's fair. We've painted a line on the sidewalk, so people stand on one side, and I've asked customers to keep their voices down before seven." },
       { speaker: "Presenter", text: "So will you buy a bigger oven?" },
-      { speaker: "Mr Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the line will disappear, and it should." },
+      { speaker: "Mr. Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the line will disappear, and it should." },
     ],
     questions: [
       {
         text: "Why does the bread sell out by ten?",
         options: [
-          "Mr Novak wants to create a line.",
+          "Mr. Novak wants to create a line.",
           "Most customers come after nine.",
           "His oven is small, so he bakes only a little.",
         ],
@@ -174,7 +174,7 @@ export const enB1P18: SkillExercise[] = [
         explain: "„We've painted a line on the sidewalk, so people stand on one side“.",
       },
       {
-        text: "What does Mr Novak say about a bigger oven?",
+        text: "What does Mr. Novak say about a bigger oven?",
         options: ["He has already ordered one.", "Maybe next year.", "He will never buy one."],
         answer: 1,
         explain: "„Maybe next year.“ — ama ekmek kötüleşirse kuyruğun kaybolması gerektiğini de ekliyor.",
@@ -336,7 +336,7 @@ export const enB1P18: SkillExercise[] = [
         examples: [
           { de: "It was so cold that the lake froze.", tr: "O kadar soğuktu ki göl dondu.", note: "so … that" },
           { de: "It was such a cold night that the lake froze.", tr: "O kadar soğuk bir geceydi ki göl dondu.", note: "such a … that" },
-          { de: "The film was so funny I cried.", tr: "Film o kadar komikti ki ağladım.", note: "that düşebilir" },
+          { de: "The movie was so funny I cried.", tr: "Film o kadar komikti ki ağladım.", note: "that düşebilir" },
         ],
       },
     ],
@@ -412,7 +412,7 @@ export const enB1P18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The film was so funny that I cried.“ — Bu cümle doğru mu?",
+        text: "„The movie was so funny that I cried.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "so + sıfat + that + sonuç; cümle doğru.",

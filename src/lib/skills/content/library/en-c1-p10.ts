@@ -153,13 +153,13 @@ export const enC1P10: SkillExercise[] = [
     segments: [
       { speaker: "Presenter", text: "There is a version of admitting a mistake that repairs the damage, and a version that doubles it. The difference is almost entirely structural." },
       { speaker: "Presenter", text: "The first mistake is burying it. A correction that appears in the fourth paragraph, after three paragraphs of context, reads as an attempt to be seen to have corrected without being read." },
-      { speaker: "Mr Yildiz", text: "Put the correction in the first sentence. If your audience reads nothing else, they should still leave with the right information." },
+      { speaker: "Mr. Yildiz", text: "Put the correction in the first sentence. If your audience reads nothing else, they should still leave with the right information." },
       { speaker: "Presenter", text: "The second mistake is the grudging form: “while the broad point stands, one figure may have been imprecise.”" },
-      { speaker: "Mr Yildiz", text: "Everyone can hear what that sentence is doing. It costs you more credibility than the original error did, because the error was a mistake and this is a choice." },
+      { speaker: "Mr. Yildiz", text: "Everyone can hear what that sentence is doing. It costs you more credibility than the original error did, because the error was a mistake and this is a choice." },
       { speaker: "Presenter", text: "The third is over-correction, which sounds like the opposite but has the same root. Announcing that you can no longer be trusted on anything invites your audience to agree with you." },
-      { speaker: "Mr Yildiz", text: "State precisely what was wrong, precisely what remains, and what you have changed so that it does not recur. Three sentences. Then stop." },
+      { speaker: "Mr. Yildiz", text: "State precisely what was wrong, precisely what remains, and what you have changed so that it does not recur. Three sentences. Then stop." },
       { speaker: "Presenter", text: "One further point, which people find harder than all of the above: say it in the same place and at the same volume as the original claim." },
-      { speaker: "Mr Yildiz", text: "A mistake made to four thousand people and corrected to forty has not been corrected. It has been filed." },
+      { speaker: "Mr. Yildiz", text: "A mistake made to four thousand people and corrected to forty has not been corrected. It has been filed." },
     ],
     questions: [
       {
@@ -187,7 +187,7 @@ export const enC1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Mr Yildiz recommends ___ sentences and then stopping.",
+        text: "Mr. Yildiz recommends ___ sentences and then stopping.",
         options: [],
         answer: 0,
         accept: ["three", "3"],

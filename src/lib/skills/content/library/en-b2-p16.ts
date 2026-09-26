@@ -38,7 +38,7 @@ export const enB2P16: SkillExercise[] = [
     text:
       "The parking lot that became a garden\n\n" +
       "Three years ago, the parking lot behind the Elm Street apartments was used by eleven cars and a " +
-      "great deal of trash. Today it grows vegetables for forty households. We asked Ms Varga, " +
+      "great deal of trash. Today it grows vegetables for forty households. We asked Ms. Varga, " +
       "who started the project, how it happened.\n\n" +
       "How did it begin?\n" +
       "With a complaint, honestly. I wrote to the housing association to say it was time " +
@@ -69,7 +69,7 @@ export const enB2P16: SkillExercise[] = [
           "with an idea from a school",
         ],
         answer: 0,
-        explain: "Ms Varga kooperatife çöp için şikâyet yazmış; onlar da fikri olup olmadığını sormuş.",
+        explain: "Ms. Varga kooperatife çöp için şikâyet yazmış; onlar da fikri olup olmadığını sormuş.",
       },
       {
         text: "What did two of the drivers want?",
@@ -105,7 +105,7 @@ export const enB2P16: SkillExercise[] = [
         explain: "„In the end we kept six spaces“.",
       },
       {
-        text: "What is Ms Varga's advice?",
+        text: "What is Ms. Varga's advice?",
         options: [
           "Raise the money before anything else.",
           "Start with those who will lose something.",
@@ -142,13 +142,13 @@ export const enB2P16: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Chair", text: "Next item: the empty plot on Canal Road. The owner has agreed to let residents use it for two years while the planning application is decided." },
-      { speaker: "Ms Adeyemi", text: "It's time we had somewhere for the younger children. The nearest playground is across the main road, and I'd rather they didn't have to cross it." },
-      { speaker: "Mr Lowe", text: "I'm not against that, but a playground needs equipment, insurance and inspections. For a site we might lose in two years, that's a lot of money to spend." },
-      { speaker: "Ms Adeyemi", text: "So what would you rather we did? Leave it fenced off until somebody builds apartments on it?" },
-      { speaker: "Mr Lowe", text: "No. I'd suggest things that can be moved. Planters, benches, a few picnic tables. If we lose the site, we take it all with us." },
+      { speaker: "Ms. Adeyemi", text: "It's time we had somewhere for the younger children. The nearest playground is across the main road, and I'd rather they didn't have to cross it." },
+      { speaker: "Mr. Lowe", text: "I'm not against that, but a playground needs equipment, insurance and inspections. For a site we might lose in two years, that's a lot of money to spend." },
+      { speaker: "Ms. Adeyemi", text: "So what would you rather we did? Leave it fenced off until somebody builds apartments on it?" },
+      { speaker: "Mr. Lowe", text: "No. I'd suggest things that can be moved. Planters, benches, a few picnic tables. If we lose the site, we take it all with us." },
       { speaker: "Chair", text: "Can I point out that both ideas need people to look after them? Whatever we choose, we'd better agree tonight who is responsible for opening and locking the gate." },
-      { speaker: "Ms Adeyemi", text: "Fair enough. I'd accept planters if one corner is kept clear for the children, with soft ground and nothing sharp." },
-      { speaker: "Mr Lowe", text: "That I can support. And we'd better ask the owner in writing what happens at the end, so nobody feels cheated in two years' time." },
+      { speaker: "Ms. Adeyemi", text: "Fair enough. I'd accept planters if one corner is kept clear for the children, with soft ground and nothing sharp." },
+      { speaker: "Mr. Lowe", text: "That I can support. And we'd better ask the owner in writing what happens at the end, so nobody feels cheated in two years' time." },
       { speaker: "Chair", text: "Then I'll write to the owner this week, and we'll ask for volunteers for the gate before we leave tonight." },
     ],
     questions: [
@@ -159,7 +159,7 @@ export const enB2P16: SkillExercise[] = [
         explain: "„let residents use it for two years while the planning application is decided“.",
       },
       {
-        text: "What worries Mr Lowe about a playground?",
+        text: "What worries Mr. Lowe about a playground?",
         options: [
           "the cost for a temporary site",
           "the noise the children make",
@@ -170,7 +170,7 @@ export const enB2P16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mr Lowe suggests things that could be taken away if the site is lost.",
+        text: "Mr. Lowe suggests things that could be taken away if the site is lost.",
         options: ["True", "False"],
         answer: 0,
         explain: "„If we lose the site, we take it all with us.“",
@@ -261,7 +261,7 @@ export const enB2P16: SkillExercise[] = [
           { de: "We would therefore ask you to …", tr: "Bu nedenle sizden … rica ediyoruz", en: "" },
         ],
         sample:
-          "Dear Ms Carlisle, we are writing on behalf of the residents of Linden Place to propose " +
+          "Dear Ms. Carlisle, we are writing on behalf of the residents of Linden Place to propose " +
           "a new use for the drying area behind blocks C and D. " +
           "At present, the space is fenced off, the washing lines have been broken for years, and " +
           "it is used mainly for storing old furniture. It's time somebody took responsibility " +

@@ -327,9 +327,9 @@ export const enB1P13: SkillExercise[] = [
       },
       {
         heading: "-ing: bu his nereden geliyor?",
-        tr: "-ing ile biten sıfat bir şeyin ya da kişinin başkasında NASIL BİR HİS YARATTIĞINI anlatır: „The film was boring“ — film sıkıcıydı. „He's boring“ dersen onun başkalarını sıktığını söylersin; bu yüzden „I'm boring“ ile „I'm bored“ çok farklı cümlelerdir.",
+        tr: "-ing ile biten sıfat bir şeyin ya da kişinin başkasında NASIL BİR HİS YARATTIĞINI anlatır: „The movie was boring“ — film sıkıcıydı. „He's boring“ dersen onun başkalarını sıktığını söylersin; bu yüzden „I'm boring“ ile „I'm bored“ çok farklı cümlelerdir.",
         examples: [
-          { de: "The film was boring.", tr: "Film sıkıcıydı.", note: "hissi yaratan şey" },
+          { de: "The movie was boring.", tr: "Film sıkıcıydı.", note: "hissi yaratan şey" },
           { de: "It was a tiring journey.", tr: "Yorucu bir yolculuktu.", note: "ismin önünde de durur" },
           { de: "Our new neighbor is a bit boring.", tr: "Yeni komşumuz biraz sıkıcı biri.", note: "başkalarını sıkıyor" },
         ],
@@ -400,7 +400,7 @@ export const enB1P13: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["The ending", "of the film", "was", "disappointing"],
+        items: ["The ending", "of the movie", "was", "disappointing"],
         explain: "Hayal kırıklığı yaratan şey filmin sonu: -ing.",
       },
       {

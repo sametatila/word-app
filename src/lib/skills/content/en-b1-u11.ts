@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 11 — "Kayıt, form, banka hesabı, büyükelçilik".
  *
- * Dört ders: Registering here · Filling in the form · Opening an account ·
+ * Dört ders: Registering here · Filling out the form · Opening an account ·
  * At the embassy.
  *
  *   Kelime: register, resident, council, proof, stamp, process, issue,
@@ -13,7 +13,7 @@ import type { SkillExercise } from "../types";
  *           extend, passport, applicant.
  *   Kalıp:  The form is stamped at the desk. ·
  *           My application was processed last week. ·
- *           When is the card issued? · You must fill in every section. ·
+ *           When is the card issued? · You must fill out every section. ·
  *           You don't have to give a phone number. ·
  *           You should print your surname. ·
  *           I am opening an account on Friday. ·

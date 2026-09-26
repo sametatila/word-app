@@ -281,11 +281,11 @@ export const enA1P5: SkillExercise[] = [
         ],
       },
       {
-        de: "My sister watches films.",
+        de: "My sister watches movies.",
         tr: "Kız kardeşim film izliyor.",
-        hint: "„watches“ ayrı hece alır (WO-çiz), „films“ ise z ile biter.",
+        hint: "„watches“ ayrı hece alır (WO-çiz), „movies“ ise z ile biter.",
         confusions: [
-          { heard: ["watch films"], fix: "„ch“ sesinden sonra -iz gelir: woçiz.", expected: "watches" },
+          { heard: ["watch movies"], fix: "„ch“ sesinden sonra -iz gelir: woçiz.", expected: "watches" },
         ],
       },
     ],

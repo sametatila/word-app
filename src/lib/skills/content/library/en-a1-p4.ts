@@ -34,7 +34,7 @@ export const enA1P4: SkillExercise[] = [
       "Good news for our town. The old movie theater on Park Street opens again on the twelfth of March, after four years.\n\n" +
       "The building is the same, but inside everything is new: new seats, a new floor and a small café.\n\n" +
       "Tickets are seven euros. For children and students they are four euros. On Mondays all tickets are five euros.\n\n" +
-      "The first film is a comedy from nineteen fifty-four. It starts at eight in the evening. " +
+      "The first movie is a comedy from nineteen fifty-four. It starts at eight in the evening. " +
       "Coffee and cake are free on the first day.\n\n" +
       "The movie theater is open every day from four to eleven.",
     questions: [

@@ -98,9 +98,9 @@ export const enA2P6: SkillExercise[] = [
     explanation: [
       {
         heading: "have + üçüncü biçim",
-        tr: "Present perfect „have/has“ ile fiilin ÜÇÜNCÜ biçiminden kurulur: work → worked, see → seen, be → been. Anlamı, olayın geçmişte olduğunu ama ZAMANININ söylenmediğini bildirir. „I have seen that film“ — ne zaman gördüğü önemli değil, önemli olan görmüş olması.",
+        tr: "Present perfect „have/has“ ile fiilin ÜÇÜNCÜ biçiminden kurulur: work → worked, see → seen, be → been. Anlamı, olayın geçmişte olduğunu ama ZAMANININ söylenmediğini bildirir. „I have seen that movie“ — ne zaman gördüğü önemli değil, önemli olan görmüş olması.",
         examples: [
-          { de: "I have seen that film.", tr: "O filmi gördüm.", note: "zaman söylenmiyor" },
+          { de: "I have seen that movie.", tr: "O filmi gördüm.", note: "zaman söylenmiyor" },
           { de: "She has worked here for two years.", tr: "İki yıldır burada çalışıyor.", note: "hâlâ sürüyor" },
           { de: "We haven't finished yet.", tr: "Henüz bitirmedik.", note: "olumsuz + yet" },
         ],

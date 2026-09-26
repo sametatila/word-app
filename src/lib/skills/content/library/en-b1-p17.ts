@@ -126,14 +126,14 @@ export const enB1P17: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Presenter", text: "When the only shop in Haddon closed last year, the nearest bread and milk were eleven kilometers away. Today the shop is open again, run by the village itself. Mrs Evans led the project." },
-      { speaker: "Mrs Evans", text: "The owner retired and tried to sell it for two years, but he couldn't find a buyer. Nobody could make a normal shop pay in a village this size." },
+      { speaker: "Presenter", text: "When the only shop in Haddon closed last year, the nearest bread and milk were eleven kilometers away. Today the shop is open again, run by the village itself. Mrs. Evans led the project." },
+      { speaker: "Mrs. Evans", text: "The owner retired and tried to sell it for two years, but he couldn't find a buyer. Nobody could make a normal shop pay in a village this size." },
       { speaker: "Presenter", text: "So how were you able to do it?" },
-      { speaker: "Mrs Evans", text: "We sold shares at twenty pounds each. We hoped to raise fifteen thousand. In the end, three hundred and ten people bought shares, and we managed to raise almost twenty-two thousand." },
-      { speaker: "Mrs Evans", text: "The hardest part wasn't the money. It was finding people to work. We couldn't pay a full team, so forty volunteers do shifts of three hours." },
+      { speaker: "Mrs. Evans", text: "We sold shares at twenty pounds each. We hoped to raise fifteen thousand. In the end, three hundred and ten people bought shares, and we managed to raise almost twenty-two thousand." },
+      { speaker: "Mrs. Evans", text: "The hardest part wasn't the money. It was finding people to work. We couldn't pay a full team, so forty volunteers do shifts of three hours." },
       { speaker: "Presenter", text: "And is it working?" },
-      { speaker: "Mrs Evans", text: "We were able to pay the rent from the first month, which surprised the bank. What we still can't do is compete with supermarket prices, and we've stopped trying." },
-      { speaker: "Mrs Evans", text: "People come for the post office counter, the bread from the farm and the conversation. Honestly, I think the conversation matters most." },
+      { speaker: "Mrs. Evans", text: "We were able to pay the rent from the first month, which surprised the bank. What we still can't do is compete with supermarket prices, and we've stopped trying." },
+      { speaker: "Mrs. Evans", text: "People come for the post office counter, the bread from the farm and the conversation. Honestly, I think the conversation matters most." },
     ],
     questions: [
       {
@@ -239,7 +239,7 @@ export const enB1P17: SkillExercise[] = [
           { de: "If you're ever in …, …", tr: "Bir gün yolunuz …'e düşerse …", en: "" },
         ],
         sample:
-          "Dear Mr Hughes, you probably don't remember me, but last Thursday night you stopped on the " +
+          "Dear Mr. Hughes, you probably don't remember me, but last Thursday night you stopped on the " +
           "road between Ashby and Wells when my car broke down. I found your name through the village " +
           "group online, and I wanted to thank you properly. " +
           "I was in a difficult situation. I couldn't start the car, and I wasn't able to call anyone, " +

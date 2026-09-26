@@ -122,17 +122,17 @@ export const enB1P12: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Host", text: "This week: Little Ashby, a village of nine hundred people, whose soccer team reached the county cup final on Saturday. Their coach, Mr Barnes, is with me." },
-      { speaker: "Mr Barnes", text: "Thanks. I should say first that we lost the final three–one. But nobody in the village seems to mind." },
+      { speaker: "Host", text: "This week: Little Ashby, a village of nine hundred people, whose soccer team reached the county cup final on Saturday. Their coach, Mr. Barnes, is with me." },
+      { speaker: "Mr. Barnes", text: "Thanks. I should say first that we lost the final three–one. But nobody in the village seems to mind." },
       { speaker: "Host", text: "Why not?" },
-      { speaker: "Mr Barnes", text: "Because until this season we had never won a single cup game. Two years ago we almost closed the club, because only eleven players had come to the first training." },
+      { speaker: "Mr. Barnes", text: "Because until this season we had never won a single cup game. Two years ago we almost closed the club, because only eleven players had come to the first training." },
       { speaker: "Host", text: "So what changed?" },
-      { speaker: "Mr Barnes", text: "A teacher at the school had started a girls' team, and the parents who came to watch their daughters started watching us as well. Suddenly there were people along the field." },
-      { speaker: "Mr Barnes", text: "By the day of the final, the bus company had put on three extra buses. I'd never seen so many people from the village in one place, not even at a wedding." },
+      { speaker: "Mr. Barnes", text: "A teacher at the school had started a girls' team, and the parents who came to watch their daughters started watching us as well. Suddenly there were people along the field." },
+      { speaker: "Mr. Barnes", text: "By the day of the final, the bus company had put on three extra buses. I'd never seen so many people from the village in one place, not even at a wedding." },
       { speaker: "Host", text: "And the final itself?" },
-      { speaker: "Mr Barnes", text: "The other team came from a town of forty thousand. We were winning one–nil at half-time, which nobody had expected, least of all me." },
+      { speaker: "Mr. Barnes", text: "The other team came from a town of forty thousand. We were winning one–nothing at half-time, which nobody had expected, least of all me." },
       { speaker: "Host", text: "And next season?" },
-      { speaker: "Mr Barnes", text: "Same players, one new goalkeeper, and a promise to the girls' team: from now on they get the good field on Sundays." },
+      { speaker: "Mr. Barnes", text: "Same players, one new goalkeeper, and a promise to the girls' team: from now on they get the good field on Sundays." },
     ],
     questions: [
       {
@@ -328,10 +328,10 @@ export const enB1P12: SkillExercise[] = [
       },
       {
         heading: "Sıra değişince anlam değişir",
-        tr: "„When we arrived, the film started“ dersen önce vardınız, sonra film başladı. „When we arrived, the film had started“ dersen film siz gelmeden başlamıştı. Olaylar anlatıldığı sırayla oluyorsa past perfect gerekmez; yalnız sıra karışacaksa kullanılır.",
+        tr: "„When we arrived, the movie started“ dersen önce vardınız, sonra film başladı. „When we arrived, the movie had started“ dersen film siz gelmeden başlamıştı. Olaylar anlatıldığı sırayla oluyorsa past perfect gerekmez; yalnız sıra karışacaksa kullanılır.",
         examples: [
-          { de: "When we arrived, the film started.", tr: "Biz varınca film başladı.", note: "sırayla" },
-          { de: "When we arrived, the film had started.", tr: "Vardığımızda film başlamıştı.", note: "film daha önce" },
+          { de: "When we arrived, the movie started.", tr: "Biz varınca film başladı.", note: "sırayla" },
+          { de: "When we arrived, the movie had started.", tr: "Vardığımızda film başlamıştı.", note: "film daha önce" },
           { de: "I got up, had a shower and left.", tr: "Kalktım, duş aldım ve çıktım.", note: "sıra belli → past simple yeter" },
         ],
       },

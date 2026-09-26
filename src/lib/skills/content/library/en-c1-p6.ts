@@ -156,19 +156,19 @@ export const enC1P6: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Ms Halloran", text: "We've had the personal-attack rule for two years. Last month we acted on nineteen reports out of two hundred and forty." },
-      { speaker: "Mr Devlin", text: "Which tells us about the backlog, not about the rule. Given three more moderators we'd act on all of them." },
-      { speaker: "Ms Halloran", text: "We won't be given three more, and a rule enforced eight percent of the time is worse than none. People learn that reporting does nothing." },
-      { speaker: "Mr Devlin", text: "They learn that faster if we delete the rule. At least now there's a standard, even if we apply it unevenly." },
-      { speaker: "Ms Halloran", text: "An unevenly applied standard is exactly what people complain about, though. Not that we're strict — that we're inconsistent." },
-      { speaker: "Mr Devlin", text: "So narrow it. Keep the rule for named individuals and drop it for groups, which is where most of the two hundred and forty sit and where the judgments are hardest." },
-      { speaker: "Ms Halloran", text: "That I could defend publicly. What I couldn't defend is quietly doing the same thing without saying so, which is roughly where we are." },
-      { speaker: "Mr Devlin", text: "Agreed. If we're going to water it down, we should write down that we have, and why." },
-      { speaker: "Ms Halloran", text: "And set a date to look at it again. Otherwise the narrow version becomes permanent by accident, as the last one did." },
+      { speaker: "Ms. Halloran", text: "We've had the personal-attack rule for two years. Last month we acted on nineteen reports out of two hundred and forty." },
+      { speaker: "Mr. Devlin", text: "Which tells us about the backlog, not about the rule. Given three more moderators we'd act on all of them." },
+      { speaker: "Ms. Halloran", text: "We won't be given three more, and a rule enforced eight percent of the time is worse than none. People learn that reporting does nothing." },
+      { speaker: "Mr. Devlin", text: "They learn that faster if we delete the rule. At least now there's a standard, even if we apply it unevenly." },
+      { speaker: "Ms. Halloran", text: "An unevenly applied standard is exactly what people complain about, though. Not that we're strict — that we're inconsistent." },
+      { speaker: "Mr. Devlin", text: "So narrow it. Keep the rule for named individuals and drop it for groups, which is where most of the two hundred and forty sit and where the judgments are hardest." },
+      { speaker: "Ms. Halloran", text: "That I could defend publicly. What I couldn't defend is quietly doing the same thing without saying so, which is roughly where we are." },
+      { speaker: "Mr. Devlin", text: "Agreed. If we're going to water it down, we should write down that we have, and why." },
+      { speaker: "Ms. Halloran", text: "And set a date to look at it again. Otherwise the narrow version becomes permanent by accident, as the last one did." },
     ],
     questions: [
       {
-        text: "What is Ms Halloran's main concern?",
+        text: "What is Ms. Halloran's main concern?",
         options: [
           "A rule enforced eight percent of the time teaches people that reporting is pointless.",
           "The rule is too strict.",
@@ -178,7 +178,7 @@ export const enC1P6: SkillExercise[] = [
         explain: "240 bildirimin 19'una işlem yapılmış.",
       },
       {
-        text: "What does Mr Devlin propose?",
+        text: "What does Mr. Devlin propose?",
         options: [
           "narrowing the rule to named individuals",
           "deleting the rule entirely",
@@ -189,7 +189,7 @@ export const enC1P6: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Halloran could defend narrowing the rule publicly.",
+        text: "Ms. Halloran could defend narrowing the rule publicly.",
         options: ["True", "False"],
         answer: 0,
         explain: "„That I could defend publicly.“ — savunamayacağı şey sessizce aynısını yapmak.",
@@ -204,14 +204,14 @@ export const enC1P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ms Halloran want to set at the end?",
+        text: "What does Ms. Halloran want to set at the end?",
         options: [],
         answer: 0,
         accept: ["a date to review it", "a review date", "a date to look at it again", "a date"],
         explain: "Yoksa dar sürüm kazara kalıcı olur.",
       },
       {
-        text: "What do people complain about, according to Ms Halloran?",
+        text: "What do people complain about, according to Ms. Halloran?",
         options: ["inconsistency", "strictness", "slow replies"],
         answer: 0,
         explain: "„Not that we're strict — that we're inconsistent.“",
@@ -274,7 +274,7 @@ export const enC1P6: SkillExercise[] = [
           { de: "I recognize that resources are limited, but …", tr: "Kaynakların sınırlı olduğunu biliyorum ama …", en: "" },
         ],
         sample:
-          "Dear Moderation Team, I am writing about the decision of 4 March to remove my post " +
+          "Dear Moderation Team, I am writing about the decision of March 4 to remove my post " +
           "rather than about its outcome. I am not asking you to restore it. " +
           "I accept that the post named an individual and that your published rule covers " +
           "exactly that; on the substance you were within your own guidelines, and I would " +

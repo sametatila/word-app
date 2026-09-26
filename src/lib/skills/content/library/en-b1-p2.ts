@@ -37,7 +37,7 @@ export const enB1P2: SkillExercise[] = [
       "THE NIGHT THE TOWN TURNED OFF ITS LIGHTS\n\n" +
       "For ninety minutes last Friday, most of Halden was dark. Between ten and half past eleven the council " +
       "switched off the street lights in four areas, and around six hundred people came out to look up.\n\n" +
-      "The idea came from a group of teachers at the secondary school. “If you ask children to draw the night " +
+      "The idea came from a group of teachers at the high school. “If you ask children to draw the night " +
       "sky, they draw six or seven stars,” says Kari Lund, who teaches physics. “That is what they see. " +
       "If they lived thirty kilometers from here, they would draw hundreds.”\n\n" +
       "The evening was not only about stars. Two engineers from the council used the time to measure how much " +
@@ -73,7 +73,7 @@ export const enB1P2: SkillExercise[] = [
         text: "The idea for the evening came from teachers.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The idea came from a group of teachers at the secondary school.“",
+        explain: "„The idea came from a group of teachers at the high school.“",
       },
       {
         kind: "gapfill",

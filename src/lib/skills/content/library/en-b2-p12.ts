@@ -131,18 +131,18 @@ export const enB2P12: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Mr Brandt", text: "I've been looking at the figures again. If we booked one extra patient into every afternoon list, most of the gaps would be filled." },
-      { speaker: "Ms Okafor", text: "Most of them, yes. But on the days when everybody turns up, the last patient would be kept waiting for an hour, and the doctor would finish at eight." },
-      { speaker: "Mr Brandt", text: "Airlines have been doing this for decades. They simply accept that a few people on a full flight will be disappointed." },
-      { speaker: "Ms Okafor", text: "A passenger who is bumped gets a voucher. A patient who is sent home gets nothing, and may not come back. That's the difference I keep returning to." },
-      { speaker: "Mr Brandt", text: "Fair. What if the extra place were kept for someone who can wait? A repeat prescription check, say, rather than a new problem." },
-      { speaker: "Ms Okafor", text: "That's more sensible. It would have to be explained when the appointment is made, though. Nobody should find out on the day that they're the one being pushed back." },
-      { speaker: "Mr Brandt", text: "Agreed. Shall we try it on Tuesdays only? Tuesday has had the most empty slots every month since March." },
-      { speaker: "Ms Okafor", text: "Tuesdays for six weeks, then. And the waiting times should be recorded as well as the gaps, otherwise we'll only be measuring the half that makes us look good." },
+      { speaker: "Mr. Brandt", text: "I've been looking at the figures again. If we booked one extra patient into every afternoon list, most of the gaps would be filled." },
+      { speaker: "Ms. Okafor", text: "Most of them, yes. But on the days when everybody turns up, the last patient would be kept waiting for an hour, and the doctor would finish at eight." },
+      { speaker: "Mr. Brandt", text: "Airlines have been doing this for decades. They simply accept that a few people on a full flight will be disappointed." },
+      { speaker: "Ms. Okafor", text: "A passenger who is bumped gets a voucher. A patient who is sent home gets nothing, and may not come back. That's the difference I keep returning to." },
+      { speaker: "Mr. Brandt", text: "Fair. What if the extra place were kept for someone who can wait? A repeat prescription check, say, rather than a new problem." },
+      { speaker: "Ms. Okafor", text: "That's more sensible. It would have to be explained when the appointment is made, though. Nobody should find out on the day that they're the one being pushed back." },
+      { speaker: "Mr. Brandt", text: "Agreed. Shall we try it on Tuesdays only? Tuesday has had the most empty slots every month since March." },
+      { speaker: "Ms. Okafor", text: "Tuesdays for six weeks, then. And the waiting times should be recorded as well as the gaps, otherwise we'll only be measuring the half that makes us look good." },
     ],
     questions: [
       {
-        text: "What does Mr Brandt suggest at first?",
+        text: "What does Mr. Brandt suggest at first?",
         options: [
           "finishing clinics at eight",
           "an extra patient each afternoon",
@@ -152,7 +152,7 @@ export const enB2P12: SkillExercise[] = [
         explain: "Her öğleden sonra listesine bir hasta fazla yazmayı öneriyor.",
       },
       {
-        text: "What is Ms Okafor's objection to the airline comparison?",
+        text: "What is Ms. Okafor's objection to the airline comparison?",
         options: [
           "Airlines charge far more money.",
           "A plane cannot wait for an hour.",
@@ -178,7 +178,7 @@ export const enB2P12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ms Okafor want recorded as well as the gaps?",
+        text: "What does Ms. Okafor want recorded as well as the gaps?",
         options: [],
         answer: 0,
         accept: ["the waiting times", "waiting times"],

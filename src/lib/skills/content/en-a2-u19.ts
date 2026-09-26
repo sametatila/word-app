@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: wedding, bride, guest, dance, dress, suit, photograph, rose,
  *           festival, tradition, family, special, food, religion,
  *           public holiday, Christmas tree, congratulations, luck, wish,
- *           proud, news, winner, cheers, excited, apologise, forget, late,
+ *           proud, news, winner, thanks, excited, apologize, forget, late,
  *           mistake, promise, forgive, unfortunately, worry.
  *   Kalıp:  The wedding was in a garden. ·
  *           The bride wore a long white dress. ·
@@ -115,7 +115,7 @@ export const enA2U19: SkillExercise[] = [
       "Deniz: Then ask Mert. Mert is good at that.\n" +
       "Nil: I asked. Izmir until Sunday.\n" +
       "Deniz: Then call. Bad luck is only a plan you didn't make.\n" +
-      "Nil: Cheers for that. I'm proud of you. The job is big news.\n" +
+      "Nil: Thanks for that. I'm proud of you. The job is big news.\n" +
       "Deniz: And I'm proud of you on Friday. In advance.",
     questions: [
       {

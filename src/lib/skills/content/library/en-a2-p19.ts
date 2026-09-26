@@ -123,7 +123,7 @@ export const enA2P19: SkillExercise[] = [
         examples: [
           { de: "Why did you go to the post office? — To buy stamps.", tr: "Postaneye neden gittin? — Pul almak için." },
           { de: "Why are you learning English? — To find a better job.", tr: "Neden İngilizce öğreniyorsun? — Daha iyi bir iş bulmak için." },
-          { de: "I watch films in English to practice.", tr: "Pratik yapmak için İngilizce film izliyorum." },
+          { de: "I watch movies in English to practice.", tr: "Pratik yapmak için İngilizce film izliyorum." },
         ],
       },
     ],

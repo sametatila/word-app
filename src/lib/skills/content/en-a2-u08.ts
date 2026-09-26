@@ -3,19 +3,19 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A2 · Ünite 8 — "His, iyileşme, ev arama, evi anlatmak".
  *
- * Dört ders: How are you feeling? · Getting better · Looking for a flat ·
+ * Dört ders: How are you feeling? · Getting better · Looking for an apartment ·
  * My home.
  *
  *   Kelime: worried, stressed, relaxed, afraid, better, feeling,
  *           be afraid, disappointed, recover, almost, still, already,
- *           normal, health, step by step, breathe, flat, rent, deposit,
+ *           normal, health, step by step, breathe, apartment, rent, deposit,
  *           furnished, floor, first floor, ad, old building, bright,
  *           quiet, spacious, balcony, view, ceiling, curtain, comfortable.
  *   Kalıp:  I feel … · I'm worried about … · Are you OK? ·
  *           I've already taken my medicine. · I'm still tired. ·
  *           I've had a cold for three days. · How much is the rent? ·
- *           Is the flat furnished? · Can I see it on Saturday? ·
- *           I live in a bright flat. ·
+ *           Is the apartment furnished? · Can I see it on Saturday? ·
+ *           I live in a bright apartment. ·
  *           It has a balcony with a great view. ·
  *           My kitchen is brighter than the living room.
  *

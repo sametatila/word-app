@@ -187,7 +187,7 @@ export const enC1U23: SkillExercise[] = [
     minutes: 12,
     text:
       "The bidding process survives as a form, the permitting process as a delay. Two processes, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
-      "A form is a thing somebody fills in. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
+      "A form is a thing somebody fills out. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
       "The consortium builds; the operating model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
       "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterwards, and running it is thirty years of the thirty-two.\n" +
       "The consequence is not a scandal. It is a repair that nobody budgeted: a decade in, somebody discovers that the contract names a builder and a payer and no operator, and the negotiation that follows happens with no competition in the room at all.\n" +
@@ -197,7 +197,7 @@ export const enC1U23: SkillExercise[] = [
     questions: [
       {
         text: "What is a delay?",
-        options: ["a thing that happens to somebody", "a thing somebody fills in", "a form"],
+        options: ["a thing that happens to somebody", "a thing somebody fills out", "a form"],
         answer: 0,
         explain: "„A delay is a thing that happens to somebody…“",
       },

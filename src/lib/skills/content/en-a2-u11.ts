@@ -111,7 +111,7 @@ export const enA2U11: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Dear Mr Arda,\n" +
+      "Dear Mr. Arda,\n" +
       "I am writing about the kitchen helper position in your ad.\n" +
       "I have worked in a kitchen for four years. From 2021 to 2023 I worked at a big company with a canteen for three hundred people. After that I worked for two years in a small restaurant near the station.\n" +
       "In the canteen I learned to work fast and in a team. In the small restaurant I learned everything else: the long evenings, the money and the noise.\n" +
@@ -157,7 +157,7 @@ export const enA2U11: SkillExercise[] = [
           "a big company with a canteen",
           "a small restaurant near the station",
           "a talk with the old boss",
-          "a letter to Mr Arda",
+          "a letter to Mr. Arda",
         ],
         explain: "Önce iki iş, sonra bu hafta olanlar: konuşma, sonra mektup.",
       },

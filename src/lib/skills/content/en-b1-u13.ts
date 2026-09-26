@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: document, copy, original, translate, valid, folder, missing,
  *           required, appeal, reject, insist, evidence, prove, right,
- *           response, patient, revise, chapter, topic, weekly,
+ *           response, patient, review, chapter, topic, weekly,
  *           concentrate, break, routine, planner, exam, pass, fail,
  *           nervous, practice, mark, grade, cheat.
  *   Kalıp:  The document that they need is the original. ·
@@ -18,7 +18,7 @@ import type { SkillExercise } from "../types";
  *           They insisted on seeing the original. ·
  *           I have the right to ask for a review. ·
  *           I am starting the new chapter on Monday. ·
- *           I am going to revise every evening. ·
+ *           I am going to review every evening. ·
  *           I will take a break at nine. ·
  *           You must bring your card to the exam. ·
  *           You can't cheat on the test. ·

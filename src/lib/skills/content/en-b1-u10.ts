@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Changing the appointment · Step by step · The mix-up ·
  * Making up my mind.
  *
- *   Kelime: appointment, cancel, reschedule, confirm, slot, diary, clinic,
+ *   Kelime: appointment, cancel, reschedule, confirm, slot, calendar, clinic,
  *           booking, instruction, step, careful, press, avoid, ensure,
  *           safety, tool, confusion, swap, mistake, spot, sort, double,
  *           blame, correct, consider, advantage, disadvantage, weigh,

@@ -147,18 +147,18 @@ export const enB2P15: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Agent", text: "Thanks for holding. I understand you'd like to cancel your weekly recipe box. Can I ask what the reason is?" },
-      { speaker: "Mr Hale", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
+      { speaker: "Mr. Hale", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
       { speaker: "Agent", text: "That's useful to know. Before you go, we could switch you to a box every other week, at twenty percent off for the first three months." },
-      { speaker: "Mr Hale", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
+      { speaker: "Mr. Hale", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
       { speaker: "Agent", text: "No, there's no minimum period on this plan. You can pause or cancel at any time, as long as you do it before Wednesday midnight for the following week." },
-      { speaker: "Mr Hale", text: "In that case I'll try it, but I'd like it in writing. Could you send me an email confirming the new price and the fact that there's no minimum term?" },
+      { speaker: "Mr. Hale", text: "In that case I'll try it, but I'd like it in writing. Could you send me an email confirming the new price and the fact that there's no minimum term?" },
       { speaker: "Agent", text: "Of course, you'll have it within the hour. I've also noted that you're interested in smaller portions, which we're launching in the spring." },
-      { speaker: "Mr Hale", text: "Thanks. And if the new box doesn't work either, I'm assuming I can just cancel online without calling again?" },
+      { speaker: "Mr. Hale", text: "Thanks. And if the new box doesn't work either, I'm assuming I can just cancel online without calling again?" },
       { speaker: "Agent", text: "Yes, there's a button in your account settings. You shouldn't have been told to phone us in the first place; that page is being corrected." },
     ],
     questions: [
       {
-        text: "Why does Mr Hale want to cancel?",
+        text: "Why does Mr. Hale want to cancel?",
         options: [
           "They throw a lot of it away.",
           "The food quality is poor.",
@@ -194,7 +194,7 @@ export const enB2P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Mr Hale ask to receive in writing?",
+        text: "What does Mr. Hale ask to receive in writing?",
         options: [],
         answer: 0,
         accept: ["an email confirming it", "a confirmation email", "an email", "an email confirming the new price", "a confirmation of the new price", "confirmation of the new price", "the new price", "the new price and no minimum term"],
@@ -272,16 +272,16 @@ export const enB2P15: SkillExercise[] = [
         sample:
           "Dear Customer Service, I am writing to complain about being charged twice after " +
           "canceling my membership, and to ask for both payments to be refunded. " +
-          "I canceled my subscription on 3 March by email, as your terms require, and received an " +
+          "I canceled my subscription on March 3 by email, as your terms require, and received an " +
           "automatic reply confirming that my request had arrived. My notice period was one month, " +
-          "so I accepted the payment taken on 1 April. " +
+          "so I accepted the payment taken on April 1. " +
           "Despite this, I have been charged for May and June as well, a total of fifty-eight " +
           "euros. I am not responsible for your system failing to process a cancellation that you " +
           "acknowledged in writing. " +
           "I would therefore like you to refund both payments within fourteen days and to confirm " +
           "that my account has been closed. I have attached a copy of my original email and of " +
           "your automatic reply. " +
-          "If I have not heard from you by 30 June, I will ask my bank to reverse the payments and " +
+          "If I have not heard from you by June 30, I will ask my bank to reverse the payments and " +
           "report the matter to a consumer organization. I would much prefer to settle it with you " +
           "directly. " +
           "Yours faithfully, Daniel Ferreira",

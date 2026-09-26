@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: healthy, exercise, fruit, smoke, weight, fat, salad, chicken,
  *           tooth, dentist, hurt, clean, toothache, ice cream, sit, lemon,
- *           phone, call, speak, hear, number, mobile phone, bye,
+ *           phone, call, speak, hear, number, cell phone, bye,
  *           be called, message, send, reply, quick, sorry, something,
  *           bye-bye, smile.
  *   Kalıp:  You should … · You shouldn't … · Should I …? ·

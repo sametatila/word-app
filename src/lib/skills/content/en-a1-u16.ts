@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: house, home, room, door, window, apartment, wall, stairs,
  *           kitchen, bedroom, bathroom, living room, floor, basement,
- *           toilet, lift, table, chair, bed, under, on, lamp, sofa,
+ *           toilet, elevator, table, chair, bed, under, on, lamp, sofa,
  *           fridge, neighbour, live, next door, quiet, friendly,
  *           downstairs, bell, knock.
  *   Kalıp:  There is a room. · There are three rooms. · Is there a door? ·

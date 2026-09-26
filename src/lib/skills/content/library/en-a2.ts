@@ -276,11 +276,11 @@ export const enA2: SkillExercise[] = [
         ],
       },
       {
-        de: "We watched a film last night.",
+        de: "We watched a movie last night.",
         tr: "Dün gece bir film izledik.",
         hint: "„watched“ = WOÇT. Ötümsüz bir sesten (ç) sonra -ed „t“ olur.",
         confusions: [
-          { heard: ["we watch a film last night"], fix: "„watched“ tek hece: woçt. Sonuna „ıd“ ekleme.", expected: "watched" },
+          { heard: ["we watch a movie last night"], fix: "„watched“ tek hece: woçt. Sonuna „ıd“ ekleme.", expected: "watched" },
         ],
       },
       {
@@ -367,7 +367,7 @@ export const enA2: SkillExercise[] = [
         heading: "Soru ve olumsuzda zamanı „did“ taşır",
         tr: "Soru ve olumsuz cümlede „did“ devreye girer ve geçmiş bilgisini o üstlenir. Bu yüzden asıl fiil YALIN hâle döner. En sık hata budur: „Did you went?“ yanlış, çünkü zaman iki kez işaretlenmiş olur.",
         examples: [
-          { de: "Did you see the film?", tr: "Filmi izledin mi?", note: "see, saw değil" },
+          { de: "Did you see the movie?", tr: "Filmi izledin mi?", note: "see, saw değil" },
           { de: "I didn't understand the question.", tr: "Soruyu anlamadım." },
           { de: "Why did she leave so early?", tr: "Neden bu kadar erken ayrıldı?" },
         ],

@@ -334,7 +334,7 @@ export const enA2P5: SkillExercise[] = [
         heading: "Küçükten büyüğe: at, on, in",
         tr: "Türkçede hepsi „-de“ ekidir: beşte, ayın beşinde, mayısta. İngilizcede zaman birimi büyüdükçe edat değişir: saat için „at“, gün ve tarih için „on“, ay, mevsim ve yıl için „in“.",
         examples: [
-          { de: "The film starts at half past eight.", tr: "Film sekiz buçukta başlıyor.", note: "saat → at" },
+          { de: "The movie starts at half past eight.", tr: "Film sekiz buçukta başlıyor.", note: "saat → at" },
           { de: "My birthday is on the fifth of May.", tr: "Doğum günüm beş Mayıs.", note: "tarih → on" },
           { de: "We are going to Rome in July.", tr: "Temmuzda Roma'ya gidiyoruz.", note: "ay → in" },
         ],
@@ -379,7 +379,7 @@ export const enA2P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The film starts ___ half past eight.",
+        text: "The movie starts ___ half past eight.",
         options: [],
         answer: 0,
         accept: ["at"],

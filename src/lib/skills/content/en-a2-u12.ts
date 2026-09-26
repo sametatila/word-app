@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: usually, customer, answer, check, report, task, regular,
  *           organise, meeting, agree, suggest, decide, later, discussion,
- *           opinion, solution, holiday, permission, leave, reason,
+ *           opinion, solution, vacation, permission, leave, reason,
  *           possible, vacation day, ask for, arrange, mistake, late,
  *           deadline, solve, sorry, be late, hurry, support.
  *   Kalıp:  I usually answer emails in the morning. · How often do you …? ·
@@ -105,7 +105,7 @@ export const enA2U12: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Dear Ms Kaya,\n" +
+      "Dear Ms. Kaya,\n" +
       "Could I take a day off on Friday? My sister arrives from Ankara in the morning and I would like to meet her at the station.\n" +
       "I have already talked to Mert and he can do my tasks that day. The reports for the week are finished and the meeting on Friday is not mine.\n" +
       "If Friday is not possible, would it be possible to leave early, at two? Then I can work in the morning and still meet her.\n" +

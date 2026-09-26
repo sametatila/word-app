@@ -1,13 +1,13 @@
 import type { SkillExercise } from "../types";
 
 /**
- * EN · B1 · Ünite 1 — "Kariyer, CV, ön yazı, mülakat".
+ * EN · B1 · Ünite 1 — "Kariyer, özgeçmiş, ön yazı, mülakat".
  *
  * B1'in ilk ünitesi. Ölçü A2'den bir basamak yukarıda: okuma metni
  * 150–260 kelime (A2'de 100–180) ve cümleler birden çok zamanı aynı anda
  * taşıyabiliyor.
  *
- * Dört ders: My career so far · Writing a CV · The cover letter ·
+ * Dört ders: My career so far · Writing a résumé · The cover letter ·
  * The job interview.
  *
  *   Kelime: career, experience, industry, apply, position, promote,

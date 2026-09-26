@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           If you forgive him, everything gets easier. ·
  *           If I were less shy, I would say it. ·
  *           Unless you thank her, she will feel hurt. ·
- *           The film that made me cry was old. ·
+ *           The movie that made me cry was old. ·
  *           The woman who hugged me was a stranger. ·
  *           The place where I smiled was quiet. ·
  *           You have to cheer her up first. ·

@@ -125,20 +125,20 @@ export const enB1P6: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mr Patel", text: "I'd like to return this one and keep the other for another two weeks, if that's possible." },
-      { speaker: "Ms Oduya", text: "The first one is fine. The second I can't extend, I'm afraid — there are four people on the waiting list." },
-      { speaker: "Mr Patel", text: "Four? For a book about kitchen gardens?" },
-      { speaker: "Ms Oduya", text: "It's the season. Everybody remembers their garden in March and forgets it again in July." },
-      { speaker: "Mr Patel", text: "Fair enough. When is it due back?" },
-      { speaker: "Ms Oduya", text: "Saturday. And there's a fine on your account from last year, one pound eighty." },
-      { speaker: "Mr Patel", text: "I paid that. I'm fairly sure I paid it at the machine in the hall." },
-      { speaker: "Ms Oduya", text: "Then the machine didn't send it through. It happens. Do you have the receipt?" },
-      { speaker: "Mr Patel", text: "Not with me, no." },
-      { speaker: "Ms Oduya", text: "I'll waive it. It's less work than checking, and one pound eighty isn't worth either of our afternoons." },
+      { speaker: "Mr. Patel", text: "I'd like to return this one and keep the other for another two weeks, if that's possible." },
+      { speaker: "Ms. Oduya", text: "The first one is fine. The second I can't extend, I'm afraid — there are four people on the waiting list." },
+      { speaker: "Mr. Patel", text: "Four? For a book about kitchen gardens?" },
+      { speaker: "Ms. Oduya", text: "It's the season. Everybody remembers their garden in March and forgets it again in July." },
+      { speaker: "Mr. Patel", text: "Fair enough. When is it due back?" },
+      { speaker: "Ms. Oduya", text: "Saturday. And there's a fine on your account from last year, one pound eighty." },
+      { speaker: "Mr. Patel", text: "I paid that. I'm fairly sure I paid it at the machine in the hall." },
+      { speaker: "Ms. Oduya", text: "Then the machine didn't send it through. It happens. Do you have the receipt?" },
+      { speaker: "Mr. Patel", text: "Not with me, no." },
+      { speaker: "Ms. Oduya", text: "I'll waive it. It's less work than checking, and one pound eighty isn't worth either of our afternoons." },
     ],
     questions: [
       {
-        text: "Why can't Mr Patel keep the second book?",
+        text: "Why can't Mr. Patel keep the second book?",
         options: [
           "It is damaged.",
           "Four people are waiting for it.",
@@ -148,7 +148,7 @@ export const enB1P6: SkillExercise[] = [
         explain: "„there are four people on the waiting list“.",
       },
       {
-        text: "How does Ms Oduya explain the waiting list?",
+        text: "How does Ms. Oduya explain the waiting list?",
         options: [
           "The book is new.",
           "People think about gardens in spring.",
@@ -159,7 +159,7 @@ export const enB1P6: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mr Patel has the receipt with him.",
+        text: "Mr. Patel has the receipt with him.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Not with me, no.“",
@@ -181,10 +181,10 @@ export const enB1P6: SkillExercise[] = [
         explain: "„Saturday.“",
       },
       {
-        text: "Why does Ms Oduya waive the fine?",
+        text: "Why does Ms. Oduya waive the fine?",
         options: [
           "Checking would cost more time than the fine is worth.",
-          "Mr Patel complained.",
+          "Mr. Patel complained.",
           "The library has a rule about old fines.",
         ],
         answer: 0,

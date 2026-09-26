@@ -240,8 +240,8 @@ export const enB1P19: SkillExercise[] = [
           { de: "I look forward to hearing from you.", tr: "Cevabınızı bekliyorum.", en: "" },
         ],
         sample:
-          "Dear Mr Walsh, I'd like to book the small hall for my daughter's seventh birthday party on " +
-          "Saturday 14 June, from two until six. There will be about eighteen children and ten adults. " +
+          "Dear Mr. Walsh, I'd like to book the small hall for my daughter's seventh birthday party on " +
+          "Saturday, June 14, from two until six. There will be about eighteen children and ten adults. " +
           "Before I pay the deposit, I have a few questions. Could you tell me whether we're allowed " +
           "to play music through our own speaker? The children would like to dance, so I'd also like " +
           "to know if there is a volume limit. Are we allowed to bring our own food and a cake with " +

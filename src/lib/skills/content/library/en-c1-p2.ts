@@ -152,8 +152,8 @@ export const enC1P2: SkillExercise[] = [
     minutes: 10,
     segments: [
       { text: "Good afternoon. Today's lecture is about a piece of infrastructure that appears in no strategy document and that determines who can spend a whole day in a city." },
-      { text: "I mean public toilets. I ask you to resist the smile, because the smile is part of the problem: the difficulty of discussing the subject is one reason for the state of the provision." },
-      { text: "Let me start with the numbers. In the countries where counts have been done, the number of public toilets has fallen by between forty and sixty percent since the nineteen nineties." },
+      { text: "I mean public restrooms. I ask you to resist the smile, because the smile is part of the problem: the difficulty of discussing the subject is one reason for the state of the provision." },
+      { text: "Let me start with the numbers. In the countries where counts have been done, the number of public restrooms has fallen by between forty and sixty percent since the nineteen nineties." },
       { text: "The reason usually given is cost. The reason more often found in the minutes is vandalism, which is a genuine problem and also a convenient one, because it produces closure without a decision." },
       { text: "Now the part that concerns us. The absence of provision does not fall on everybody equally. It falls on people with certain medical conditions, on parents of small children, on older people and on anybody who works outdoors." },
       { text: "There is a useful phrase for the result: the toilet leash. It describes the radius within which a person can move away from a known facility. For some people that radius is under an hour." },
@@ -167,12 +167,12 @@ export const enC1P2: SkillExercise[] = [
       {
         text: "What is the lecture about?",
         options: [
-          "public toilets as infrastructure",
+          "public restrooms as infrastructure",
           "the rising cost of city cleaning",
           "medical conditions in large cities",
         ],
         answer: 0,
-        explain: "„I mean public toilets. I ask you to resist the smile …“",
+        explain: "„I mean public restrooms. I ask you to resist the smile …“",
       },
       {
         text: "Why does the speaker call vandalism a convenient reason?",

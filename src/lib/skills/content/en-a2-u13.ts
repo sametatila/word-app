@@ -46,7 +46,7 @@ export const enA2U13: SkillExercise[] = [
     minutes: 5,
     text:
       "Subject: The Friday meeting\n" +
-      "Dear Ms Aslan,\n" +
+      "Dear Ms. Aslan,\n" +
       "I have attached the file with the numbers for August. It is in the folder Reports and the name is the same as last month.\n" +
       "Could you confirm the time of the meeting on Friday? In my calendar it says two, but Mert wrote three in his email.\n" +
       "One more thing. I sent the short text to the customer yesterday and they replied this morning. They accept the new price but they want the product in September.\n" +
@@ -62,7 +62,7 @@ export const enA2U13: SkillExercise[] = [
         explain: "„I have attached the file with the numbers for August.“",
       },
       {
-        text: "What should Ms Aslan confirm?",
+        text: "What should Ms. Aslan confirm?",
         options: ["the time of the meeting", "the new price", "the name of the folder"],
         answer: 0,
         explain: "„Could you confirm the time of the meeting on Friday?“ — takvimde iki, e-postada üç yazıyor.",

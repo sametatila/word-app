@@ -147,7 +147,7 @@ export const enC1P15: SkillExercise[] = [
       { de: "route", tr: "güzergâh" },
       { de: "basement", tr: "bodrum" },
       { de: "intervention", tr: "müdahale" },
-      { de: "to collect", tr: "almak" },
+      { de: "to pick up", tr: "almak" },
       { de: "reduces", tr: "azaltmak" },
       { de: "entirely", tr: "tamamen" },
       { de: "practical", tr: "pratik" },
@@ -156,20 +156,20 @@ export const enC1P15: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Ms Ferrand", text: "Shared housing is often sold as a cure for loneliness. As someone who designs it, I'd put it more cautiously: it makes contact cheaper, which isn't the same as making it happen." },
-      { speaker: "Mr Osei", text: "I agree with the distinction, but the evidence is stronger than you're allowing. In the schemes we studied, residents had twice as many weekly conversations as similar people in ordinary apartments." },
-      { speaker: "Ms Ferrand", text: "Similar on paper. The people who choose to live like this are far more sociable to begin with. The comparison flatters the building." },
-      { speaker: "Mr Osei", text: "That's the standard objection, and it's partly fair. So we also followed people who moved in for practical reasons, mainly cost. The effect was smaller, but it was still there." },
-      { speaker: "Ms Ferrand", text: "How much smaller?" },
-      { speaker: "Mr Osei", text: "Roughly half. Nowhere near as dramatic as the brochures, but a good deal more than nothing." },
-      { speaker: "Mr Osei", text: "And it took longer to appear. In the first year there was almost no difference at all; the gap opened in the second, once people had stopped thinking of themselves as newcomers." },
-      { speaker: "Ms Ferrand", text: "Then here's where design matters. The effect depends almost entirely on routes. If the laundry and the post boxes sit on the way to every front door, people meet. Put them in a basement and they don't." },
-      { speaker: "Mr Osei", text: "Which suggests the cheapest intervention isn't the shared kitchen everyone photographs." },
-      { speaker: "Ms Ferrand", text: "Exactly. The more ordinary the shared room, the more it gets used. Nobody needs a reason to collect their post." },
+      { speaker: "Ms. Ferrand", text: "Shared housing is often sold as a cure for loneliness. As someone who designs it, I'd put it more cautiously: it makes contact cheaper, which isn't the same as making it happen." },
+      { speaker: "Mr. Osei", text: "I agree with the distinction, but the evidence is stronger than you're allowing. In the schemes we studied, residents had twice as many weekly conversations as similar people in ordinary apartments." },
+      { speaker: "Ms. Ferrand", text: "Similar on paper. The people who choose to live like this are far more sociable to begin with. The comparison flatters the building." },
+      { speaker: "Mr. Osei", text: "That's the standard objection, and it's partly fair. So we also followed people who moved in for practical reasons, mainly cost. The effect was smaller, but it was still there." },
+      { speaker: "Ms. Ferrand", text: "How much smaller?" },
+      { speaker: "Mr. Osei", text: "Roughly half. Nowhere near as dramatic as the brochures, but a good deal more than nothing." },
+      { speaker: "Mr. Osei", text: "And it took longer to appear. In the first year there was almost no difference at all; the gap opened in the second, once people had stopped thinking of themselves as newcomers." },
+      { speaker: "Ms. Ferrand", text: "Then here's where design matters. The effect depends almost entirely on routes. If the laundry and the mailboxes sit on the way to every front door, people meet. Put them in a basement and they don't." },
+      { speaker: "Mr. Osei", text: "Which suggests the cheapest intervention isn't the shared kitchen everyone photographs." },
+      { speaker: "Ms. Ferrand", text: "Exactly. The more ordinary the shared room, the more it gets used. Nobody needs a reason to pick up their mail." },
     ],
     questions: [
       {
-        text: "How does Ms Ferrand describe what shared housing does?",
+        text: "How does Ms. Ferrand describe what shared housing does?",
         options: [
           "It makes contact cheaper.",
           "It cures loneliness.",
@@ -179,7 +179,7 @@ export const enC1P15: SkillExercise[] = [
         explain: "Teması ucuzlatıyor; bu, teması gerçekleştirmekle aynı şey değil.",
       },
       {
-        text: "Why does Ms Ferrand doubt the comparison?",
+        text: "Why does Ms. Ferrand doubt the comparison?",
         options: [
           "The sample of schemes was far too small.",
           "The study lasted only a few months.",
@@ -190,7 +190,7 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mr Osei admits that the standard objection is partly fair.",
+        text: "Mr. Osei admits that the standard objection is partly fair.",
         options: ["True", "False"],
         answer: 0,
         explain: "„That's the standard objection, and it's partly fair.“",
@@ -205,7 +205,7 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does the effect depend on almost entirely, according to Ms Ferrand?",
+        text: "What does the effect depend on almost entirely, according to Ms. Ferrand?",
         options: [],
         answer: 0,
         accept: ["routes", "the routes"],
@@ -329,7 +329,7 @@ export const enC1P15: SkillExercise[] = [
         "size of the effect. " +
         "The strongest case for it is simple and practical: loneliness is partly a problem of cost. " +
         "Meeting someone usually requires a plan, a place and a reason, and shared housing removes all three. " +
-        "You see the same people at the post boxes every morning whether you meant to or not. " +
+        "You see the same people at the mailboxes every morning whether you meant to or not. " +
         "The comparison is flattering, though, because those who sign up for this kind of life tend to be " +
         "unusually sociable before they ever arrive. Comparing them with their old neighbors tells you about " +
         "the kind of person who signs up, not only about the building. " +

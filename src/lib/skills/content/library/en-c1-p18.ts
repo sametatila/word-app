@@ -44,14 +44,14 @@ export const enC1P18: SkillExercise[] = [
     text:
       "Ridgeway to end graded homework from September\n\n" +
       "Ridgeway Secondary is to stop grading homework for all students under sixteen from the start of the next " +
-      "school year, the head teacher confirmed on Monday. Homework will still be set, but it will no longer " +
+      "school year, the principal confirmed on Monday. Homework will still be set, but it will no longer " +
       "count toward reports, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
       "The decision follows a two-year trial in three year groups. According to the school's own figures, the " +
       "share of homework handed in on time fell slightly during the trial, from about eighty-two to seventy-eight " +
       "percent. What changed more was what was handed in. Teachers reported far fewer pieces that had clearly " +
       "been copied or completed by a parent, and the gap between students with and without help at home narrowed " +
       "in the end-of-year tests.\n\n" +
-      "“Graded homework was measuring two things at once,” the head, Dr Anita Rao, said. “Partly what a child " +
+      "“Graded homework was measuring two things at once,” the principal, Dr. Anita Rao, said. “Partly what a child " +
       "had learned, and partly what kind of kitchen table they went home to. We couldn't separate them, so we " +
       "have stopped pretending to.”\n\n" +
       "Not everyone is convinced. A group of parents is set to present a petition to the governors next week, " +
@@ -59,7 +59,7 @@ export const enC1P18: SkillExercise[] = [
       "worry: that homework which carries no mark will quietly become optional, and that the students most in need " +
       "of practice will be the first to skip it.\n\n" +
       "The school says it will publish completion rates each term, and that the policy is to be reviewed after " +
-      "one year rather than three. Dr Rao admitted that the trial had been too small to settle the question. " +
+      "one year rather than three. Dr. Rao admitted that the trial had been too small to settle the question. " +
       "“We are about to find out whether it works at scale,” she said. “If it doesn't, we will say so.”",
     questions: [
       {
@@ -106,7 +106,7 @@ export const enC1P18: SkillExercise[] = [
         explain: "„it will publish completion rates each term“.",
       },
       {
-        text: "What did graded homework measure, according to Dr Rao?",
+        text: "What did graded homework measure, according to Dr. Rao?",
         options: [
           "learning and home circumstances together",
           "only the effort a student made",
@@ -128,7 +128,7 @@ export const enC1P18: SkillExercise[] = [
     genre: "info",
     intro: "Müdür yardımcısının velilere sesli duyurusu: ödev değişikliğinde ne değişiyor, ne değişmiyor, takvim nasıl.",
     gloss: [
-      { de: "deputy", tr: "müdür yardımcısı" },
+      { de: "assistant principal", tr: "müdür yardımcısı" },
       { de: "update", tr: "güncelleme" },
       { de: "to attend", tr: "katılmak" },
       { de: "feedback", tr: "geri bildirim" },
@@ -142,16 +142,16 @@ export const enC1P18: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Mr Nakamura", text: "Good evening. This is Tom Nakamura, deputy head at Ridgeway, with a short update on the homework changes that are due to start in September." },
-      { speaker: "Mr Nakamura", text: "First, what is not changing. Homework will still be set every week in every subject, and teachers will still read it and write comments." },
-      { speaker: "Mr Nakamura", text: "What is changing is that it will no longer carry a mark, and it will not appear on your child's report." },
-      { speaker: "Mr Nakamura", text: "Teachers are to attend two training sessions in June. The aim is simple: to make feedback on homework specific enough to be worth reading without a grade." },
-      { speaker: "Mr Nakamura", text: "We know some of you are worried that students will stop doing the work. We share that worry, and we are not going to hide from it." },
-      { speaker: "Mr Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
-      { speaker: "Mr Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
-      { speaker: "Mr Nakamura", text: "If rates in any year group fall below seventy percent, the head and the governors are due to meet within a month to decide what to do." },
-      { speaker: "Mr Nakamura", text: "One last thing. A parents' evening on the changes is set for the fourteenth of May. We are about to send invitations." },
-      { speaker: "Mr Nakamura", text: "We would much rather hear your doubts there than at the school gate." },
+      { speaker: "Mr. Nakamura", text: "Good evening. This is Tom Nakamura, assistant principal at Ridgeway, with a short update on the homework changes that are due to start in September." },
+      { speaker: "Mr. Nakamura", text: "First, what is not changing. Homework will still be set every week in every subject, and teachers will still read it and write comments." },
+      { speaker: "Mr. Nakamura", text: "What is changing is that it will no longer carry a mark, and it will not appear on your child's report." },
+      { speaker: "Mr. Nakamura", text: "Teachers are to attend two training sessions in June. The aim is simple: to make feedback on homework specific enough to be worth reading without a grade." },
+      { speaker: "Mr. Nakamura", text: "We know some of you are worried that students will stop doing the work. We share that worry, and we are not going to hide from it." },
+      { speaker: "Mr. Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
+      { speaker: "Mr. Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
+      { speaker: "Mr. Nakamura", text: "If rates in any year group fall below seventy percent, the principal and the governors are due to meet within a month to decide what to do." },
+      { speaker: "Mr. Nakamura", text: "One last thing. A parents' evening on the changes is set for the fourteenth of May. We are about to send invitations." },
+      { speaker: "Mr. Nakamura", text: "We would much rather hear your doubts there than at the school gate." },
     ],
     questions: [
       {
@@ -183,7 +183,7 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "If rates fall below ___ percent, the head and the governors will meet.",
+        text: "If rates fall below ___ percent, the principal and the governors will meet.",
         options: [],
         answer: 0,
         accept: ["seventy", "70"],
@@ -258,7 +258,7 @@ export const enC1P18: SkillExercise[] = [
         phrases: [
           { de: "From September, … is to …", tr: "Eylülden itibaren … yapılacak", en: "" },
           { de: "… is due to … in …", tr: "…'in …'de … olması bekleniyor", en: "" },
-          { de: "Not everyone in Year 10 is convinced.", tr: "10. sınıftaki herkes ikna olmuş değil.", en: "" },
+          { de: "Not everyone in tenth grade is convinced.", tr: "10. sınıftaki herkes ikna olmuş değil.", en: "" },
           { de: "My own view is that …", tr: "Benim görüşüm şu: …", en: "" },
           { de: "The number to watch is …", tr: "Takip edilecek rakam …", en: "" },
         ],
@@ -267,8 +267,8 @@ export const enC1P18: SkillExercise[] = [
           "From September, homework is to be marked with comments only. It will still be set every week, and " +
           "teachers will still read it, but it will not count toward our reports. The school ran a trial in three " +
           "year groups for two years, and the policy is to be reviewed after one year.\n\n" +
-          "Not everyone in Year 10 is convinced. “If it doesn't count, half the class will stop doing it,” one " +
-          "student told me, and she was not joking. Others see it differently. A student in Year 9, who took part " +
+          "Not everyone in tenth grade is convinced. “If it doesn't count, half the class will stop doing it,” one " +
+          "student told me, and she was not joking. Others see it differently. A student in ninth grade, who took part " +
           "in the trial, said the comments had become more useful once there was no number to look at first: " +
           "“I actually read them now, because there's nothing else to read.”\n\n" +
           "My own view is that both of them are right. Some of us will treat unmarked work as optional, at least " +

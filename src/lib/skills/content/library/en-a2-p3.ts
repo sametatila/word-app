@@ -343,7 +343,7 @@ export const enA2P3: SkillExercise[] = [
         examples: [
           { de: "This phone is more expensive.", tr: "Bu telefon daha pahalı." },
           { de: "It is the most interesting book in the series.", tr: "Serideki en ilginç kitap bu." },
-          { de: "The film was more difficult than the book.", tr: "Film kitaptan daha zordu." },
+          { de: "The movie was more difficult than the book.", tr: "Film kitaptan daha zordu." },
         ],
       },
       {
@@ -417,7 +417,7 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„This film is more better than the book.“ — Bu cümle doğru mu?",
+        text: "„This movie is more better than the book.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 1,
         explain: "„better“ zaten karşılaştırma biçimidir; „more“ eklenmez.",

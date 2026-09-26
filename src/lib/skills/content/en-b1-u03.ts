@@ -4,7 +4,7 @@ import type { SkillExercise } from "../types";
  * EN · B1 · Ünite 3 — "Değerlendirme, istifa, ev arama, daire gezme".
  *
  * Dört ders: The performance review · Resigning and handing over ·
- * Looking for a flat · The viewing.
+ * Looking for an apartment · The viewing.
  *
  *   Kelime: performance review, improve, progress, criticism, praise, target,
  *           honest, review, resign, handover, replacement, grateful,
@@ -16,11 +16,11 @@ import type { SkillExercise } from "../types";
  *           Although I am leaving, I am grateful. ·
  *           The work was hard. However, the staff was kind. ·
  *           Despite the pressure, I stayed calm. ·
- *           I have seen five flats this month. ·
- *           I saw that flat last week. · Is the flat still available? ·
- *           The flat that I saw yesterday was bright. ·
- *           The flat I saw yesterday was bright. ·
- *           The woman who showed me the flat was kind.
+ *           I have seen five apartments this month. ·
+ *           I saw that apartment last week. · Is the apartment still available? ·
+ *           The apartment that I saw yesterday was bright. ·
+ *           The apartment I saw yesterday was bright. ·
+ *           The woman who showed me the apartment was kind.
  *
  * Ünitenin tek öğretme noktası DOLAYLI ANLATIM ve onun üç ayrı biçimi:
  * „said THAT …“, „told me TO …“, „asked IF …“. Üçü de aktarıyor ama

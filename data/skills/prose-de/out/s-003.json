@@ -92,7 +92,7 @@
  { "tr": "Aktarılan soruda yardımcı fiil kalkar ve zaman geriye kayar: lived.", "kind": "explain", "de": "In der wiedergegebenen Frage fällt das Hilfsverb weg und die Zeit rückt zurück: lived." },
  { "tr": "Ana yarıda „would“ olduğu için „if“ yarısı geçmiş biçim alır: knew.", "kind": "explain", "de": "Weil in der Haupthälfte „would“ steht, nimmt die „if“-Hälfte die Vergangenheitsform: knew." },
  { "tr": "İlki yasak bildirir; çıkarımın olumsuzu yalnız „can't“ ile kurulur.", "kind": "explain", "de": "Das erste verbietet; die Verneinung der Schlussfolgerung baut nur „can't“." },
- { "tr": "Metinde \"A single ticket is 2 euros. Students pay 1 euro.\" yazıyor.", "kind": "explain", "de": "\"A single ticket is 2 euros. Students pay 1 euro.\" steht im Text." },
+ { "tr": "Metinde \"A one-way ticket is 2 euros. Students pay 1 euro.\" yazıyor.", "kind": "explain", "de": "\"A one-way ticket is 2 euros. Students pay 1 euro.\" steht im Text." },
  { "tr": "Soruda zamanı „did“ taşır, asıl fiil yalın kalır: Did you finish …?", "kind": "explain", "de": "In der Frage trägt „did“ die Zeit, das Hauptverb bleibt nackt: Did you finish …?" },
  { "tr": "Tanımlayıcı cümlede kişiler için „who“ ya da „that“ kullanılabilir.", "kind": "explain", "de": "Im bestimmenden Relativsatz kann man für Personen „who“ oder „that“ nehmen." },
  { "tr": "Tanımlayıcı cümlede nesne için „that“ ya da „which“ kullanılabilir.", "kind": "explain", "de": "Im bestimmenden Relativsatz kann man fürs Objekt „that“ oder „which“ nehmen." },

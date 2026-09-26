@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Local shops.
  *
  *   Kelime: repair, tool, cost, estimate, tomorrow, mechanic, drill,
- *           screw, rule, allow, forbidden, rubbish, quiet, be allowed,
+ *           screw, rule, allow, forbidden, trash, quiet, be allowed,
  *           garbage can, attic, area, nearby, crowded, park, safe,
  *           neighborhood, bus stop, city center, bakery, corner shop,
  *           laundry, open, close, butcher shop, bookstore, shopping mall.

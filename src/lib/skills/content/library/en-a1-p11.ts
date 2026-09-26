@@ -108,7 +108,7 @@ export const enA1P11: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Selin", text: "Hi Mert, it's Selin. Have you got a minute?" },
+      { speaker: "Selin", text: "Hi Mert, it's Selin. Do you have a minute?" },
       { speaker: "Mert", text: "Sure. Is it about the party for Ben?" },
       { speaker: "Selin", text: "Yes. It's a surprise, so don't tell him! It's on Friday at eight, at my apartment." },
       { speaker: "Mert", text: "Great. What can I bring?" },

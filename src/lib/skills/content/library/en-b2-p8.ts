@@ -23,36 +23,37 @@ export const enB2P8: SkillExercise[] = [
       { de: "collection", tr: "toplama" },
       { de: "contamination", tr: "karışma" },
       { de: "landfill", tr: "çöp sahası" },
-      { de: "fortnightly", tr: "iki haftada bir" },
+      { de: "every two weeks", tr: "iki haftada bir" },
       { de: "consultation", tr: "görüş alma" },
       { de: "to reject", tr: "geri çevirmek" },
       { de: "current", tr: "mevcut" },
       { de: "container", tr: "konteyner" },
+      { de: "cardboard", tr: "karton" },
       { de: "household", tr: "hane" },
       { de: "object", tr: "itiraz etmek" },
       { de: "property", tr: "mülk" },
-      { de: "tin", tr: "teneke kutu" },
+      { de: "can", tr: "teneke kutu" },
       { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 8,
     text:
       "Dear Resident,\n\n" +
-      "From 1 September the way we collect recycling will change, and we are writing to " +
+      "From September 1 the way we collect recycling will change, and we are writing to " +
       "everyone before the consultation closes rather than after it.\n\n" +
       "At present all recycling goes into one bin and is separated at the plant. " +
       "This is convenient, but the majority of loads we send now arrive with some " +
       "contamination, most often food left in containers. " +
       "When contamination goes above a certain level, the whole load is rejected " +
-      "and goes to landfill. Last year we lost almost a fifth of what residents had " +
+      "and goes to a landfill. Last year we lost almost a fifth of what residents had " +
       "carefully put in the right bin.\n\n" +
-      "From September there will be two containers: one for paper and card, one for " +
-      "plastic, glass and tins. Collections will remain fortnightly. " +
+      "From September there will be two containers: one for paper and cardboard, one for " +
+      "plastic, glass and cans. Collections will still be every two weeks. " +
       "A few streets with no space for two containers will keep the current system, " +
       "and we will write to those households separately.\n\n" +
       "We know this asks more of you, and we want to be straight about the reason. " +
       "It is not that residents have been careless. It is that one bin makes a small " +
       "mistake expensive: a single unwashed jar can cost a whole street's effort.\n\n" +
-      "The consultation runs until 30 June. Few of the responses we have received so far " +
+      "The consultation runs until June 30. Few of the responses we have received so far " +
       "have objected to the change itself; a great deal of the comment has been about " +
       "storage space, which is exactly the point we are least certain about. " +
       "If your property has nowhere to put a second container, please tell us before the end " +
@@ -139,12 +140,12 @@ export const enB2P8: SkillExercise[] = [
     segments: [
       { speaker: "Presenter", text: "Household recycling is usually discussed as a question of behavior. Financially, it is mostly a question of packaging." },
       { speaker: "Presenter", text: "Roughly seventy percent of the cost of kerbside collection is paid by councils, which means by local taxes." },
-      { speaker: "Ms Reinhardt", text: "The people who decide what the packaging looks like pay almost none of it. That is the part worth changing." },
+      { speaker: "Ms. Reinhardt", text: "The people who decide what the packaging looks like pay almost none of it. That is the part worth changing." },
       { speaker: "Presenter", text: "Several countries have introduced a levy on manufacturers, calculated by weight and by how difficult the material is to recycle." },
-      { speaker: "Ms Reinhardt", text: "The effect was not what campaigners expected. Recycling rates moved a little. Packaging design moved a lot." },
+      { speaker: "Ms. Reinhardt", text: "The effect was not what campaigners expected. Recycling rates moved a little. Packaging design moved a lot." },
       { speaker: "Presenter", text: "Within three years, black plastic trays, which machines cannot detect, had largely disappeared from the shelves of the countries with a levy." },
       { speaker: "Presenter", text: "Critics point out that manufacturers pass the cost on to shoppers, so households pay anyway, just through prices instead of taxes." },
-      { speaker: "Ms Reinhardt", text: "That's true, and I don't think it's an argument against. If the cost sits in the price, the incentive sits with the person who chose the material." },
+      { speaker: "Ms. Reinhardt", text: "That's true, and I don't think it's an argument against. If the cost sits in the price, the incentive sits with the person who chose the material." },
       { speaker: "Presenter", text: "What nobody has solved is the small producer. A levy that a supermarket absorbs can close a shop with four employees." },
     ],
     questions: [
@@ -162,7 +163,7 @@ export const enB2P8: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Reinhardt thinks passing the cost to shoppers is an argument against the levy.",
+        text: "Ms. Reinhardt thinks passing the cost to shoppers is an argument against the levy.",
         options: ["True", "False"],
         answer: 1,
         explain: "„That's true, and I don't think it's an argument against.“",

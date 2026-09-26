@@ -150,20 +150,20 @@ export const enC1P14: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Host", text: "You've presented the same late-night music show for nineteen years. What does a person do that an algorithm can't?" },
-      { speaker: "Ms Lund", text: "Take a risk on the listener's behalf. An algorithm plays what you are likely to finish. I play what I think you ought to hear, which is a far more arrogant position, and I'm aware of that." },
+      { speaker: "Ms. Lund", text: "Take a risk on the listener's behalf. An algorithm plays what you are likely to finish. I play what I think you ought to hear, which is a far more arrogant position, and I'm aware of that." },
       { speaker: "Host", text: "Arrogant is your word, not mine." },
-      { speaker: "Ms Lund", text: "It's the right one. My only defense is that I tell you why. Every record comes with a sentence about the reason it's there, which is the part people write in about." },
+      { speaker: "Ms. Lund", text: "It's the right one. My only defense is that I tell you why. Every record comes with a sentence about the reason it's there, which is the part people write in about." },
       { speaker: "Host", text: "Do listeners ever object?" },
-      { speaker: "Ms Lund", text: "Constantly, and I read those letters on air. A show in which nobody ever disagrees with the presenter would be a show nobody was really listening to." },
-      { speaker: "Ms Lund", text: "Last winter a man wrote to say that a record I had defended for ten minutes was the worst thing he'd heard all year. I played it again the next week, with his letter." },
+      { speaker: "Ms. Lund", text: "Constantly, and I read those letters on air. A show in which nobody ever disagrees with the presenter would be a show nobody was really listening to." },
+      { speaker: "Ms. Lund", text: "Last winter a man wrote to say that a record I had defended for ten minutes was the worst thing he'd heard all year. I played it again the next week, with his letter." },
       { speaker: "Host", text: "Streaming services now employ human editors as well." },
-      { speaker: "Ms Lund", text: "They do, and some are excellent. But their names are rarely shown, so there's nobody to whom a listener can reply. Curation without a signature is just another algorithm." },
+      { speaker: "Ms. Lund", text: "They do, and some are excellent. But their names are rarely shown, so there's nobody to whom a listener can reply. Curation without a signature is just another algorithm." },
       { speaker: "Host", text: "What would you change about those services if you could?" },
-      { speaker: "Ms Lund", text: "One thing. Show me who chose the song and let me follow them, the way I'd follow a writer whose reviews I trust." },
+      { speaker: "Ms. Lund", text: "One thing. Show me who chose the song and let me follow them, the way I'd follow a writer whose reviews I trust." },
     ],
     questions: [
       {
-        text: "What does Ms Lund say an algorithm plays?",
+        text: "What does Ms. Lund say an algorithm plays?",
         options: [
           "whatever is newest",
           "what the presenter prefers",
@@ -184,7 +184,7 @@ export const enC1P14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ms Lund refuses to read listeners' complaints on air.",
+        text: "Ms. Lund refuses to read listeners' complaints on air.",
         options: ["True", "False"],
         answer: 1,
         explain: "Tam tersi: „I read those letters on air.“",
@@ -321,7 +321,7 @@ export const enC1P14: SkillExercise[] = [
       maxSeconds: 100,
       sampleDe:
         "My answer is yes, but not for the reason usually given. People say the systems trap us in the same " +
-        "songs or the same films, and that isn't quite true; they are rather good at finding things we have " +
+        "songs or the same movies, and that isn't quite true; they are rather good at finding things we have " +
         "never heard of. " +
         "What these systems do well, and I don't want to deny it, is remove the cost of trying something. " +
         "Nothing has to be bought, carried home or finished. " +

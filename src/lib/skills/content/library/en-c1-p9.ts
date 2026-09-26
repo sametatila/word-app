@@ -152,11 +152,11 @@ export const enC1P9: SkillExercise[] = [
     segments: [
       { speaker: "Presenter", text: "A precedent rarely forms at the moment anybody expects. It does not form when the first exception is granted." },
       { speaker: "Presenter", text: "It forms the second time, when somebody remembers the first and nobody can find a reason why this case is different." },
-      { speaker: "Ms Idrissi", text: "In the audits I've run, the decisive moment is almost always a sentence in a message: “we did this for the other team last year.” Nobody checks whether that is even true." },
+      { speaker: "Ms. Idrissi", text: "In the audits I've run, the decisive moment is almost always a sentence in a message: “we did this for the other team last year.” Nobody checks whether that is even true." },
       { speaker: "Presenter", text: "By the third case there is no longer a decision to make. The rule has been quietly overridden by three data points, none of which was written down." },
-      { speaker: "Ms Idrissi", text: "What makes this hard to trace is that each individual decision was reasonable. You cannot point to the mistake, because there isn't one." },
+      { speaker: "Ms. Idrissi", text: "What makes this hard to trace is that each individual decision was reasonable. You cannot point to the mistake, because there isn't one." },
       { speaker: "Presenter", text: "The cheapest fix is not a stricter rule. It is a log: one line per exception, with the date, the reason and the name of whoever approved it." },
-      { speaker: "Ms Idrissi", text: "Organizations resist this because it looks like distrust. In practice it protects the people making the decisions, who otherwise have to remember why they said yes eighteen months ago." },
+      { speaker: "Ms. Idrissi", text: "Organizations resist this because it looks like distrust. In practice it protects the people making the decisions, who otherwise have to remember why they said yes eighteen months ago." },
       { speaker: "Presenter", text: "Where a log exists, exceptions do not stop. What changes is that they accumulate visibly, and somebody notices at four rather than at forty." },
     ],
     questions: [
@@ -171,7 +171,7 @@ export const enC1P9: SkillExercise[] = [
         explain: "İlk istisnada değil, ikincisinde oluşuyor.",
       },
       {
-        text: "What sentence does Ms Idrissi say is decisive?",
+        text: "What sentence does Ms. Idrissi say is decisive?",
         options: [
           "“we did this for the other team last year”",
           "“the rule does not apply here”",
@@ -293,7 +293,7 @@ export const enC1P9: SkillExercise[] = [
           "The burden is roughly thirty seconds. It is smaller than the burden of " +
           "reconstructing the reasoning eighteen months later, which is the alternative " +
           "and the one we currently choose by default. " +
-          "This guidance will be reviewed on 1 October and will lapse if it is not.",
+          "This guidance will be reviewed on October 1 and will lapse if it is not.",
       },
     ],
   },

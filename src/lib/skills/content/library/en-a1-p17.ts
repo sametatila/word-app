@@ -128,7 +128,7 @@ export const enA1P17: SkillExercise[] = [
         ],
       },
       {
-        de: "Hide the key in the garden.",
+        de: "Hide the key in the yard.",
         tr: "Anahtarı bahçeye sakla.",
         hint: "„hide“ = HAYD; „key“ ise uzun bir i taşır, kaymaz.",
         confusions: [

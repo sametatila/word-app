@@ -148,16 +148,16 @@ export const enC1P16: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Host", text: "Your books pages publish more negative reviews than any other paper in the country. Is that a policy?" },
-      { speaker: "Mr Whitlow", text: "It's a consequence of one. We review what our readers are likely to buy, not what publishers would rather we noticed. Those books are often weaker than their advertising suggests." },
+      { speaker: "Mr. Whitlow", text: "It's a consequence of one. We review what our readers are likely to buy, not what publishers would rather we noticed. Those books are often weaker than their advertising suggests." },
       { speaker: "Host", text: "Authors must hate you." },
-      { speaker: "Mr Whitlow", text: "Some do. But a review that only ever praises is not a review. It's time the industry stopped treating every critical sentence as if it were an attack." },
-      { speaker: "Mr Whitlow", text: "One novelist sent me a four-page letter. I printed a paragraph of it, because it made a fair point about our reviewer, and we corrected the review online." },
+      { speaker: "Mr. Whitlow", text: "Some do. But a review that only ever praises is not a review. It's time the industry stopped treating every critical sentence as if it were an attack." },
+      { speaker: "Mr. Whitlow", text: "One novelist sent me a four-page letter. I printed a paragraph of it, because it made a fair point about our reviewer, and we corrected the review online." },
       { speaker: "Host", text: "Where do you draw the line?" },
-      { speaker: "Mr Whitlow", text: "At personal remarks. A reviewer can say a book is dull. They can't speculate about why the author wrote it, or write as though the book were a moral failing." },
+      { speaker: "Mr. Whitlow", text: "At personal remarks. A reviewer can say a book is dull. They can't speculate about why the author wrote it, or write as though the book were a moral failing." },
       { speaker: "Host", text: "And first novels?" },
-      { speaker: "Mr Whitlow", text: "They get a separate column with a different brief: describe what the book is trying to do, then say whether it manages. Suppose a debut fails at something ambitious; that deserves careful words." },
+      { speaker: "Mr. Whitlow", text: "They get a separate column with a different brief: describe what the book is trying to do, then say whether it manages. Suppose a debut fails at something ambitious; that deserves careful words." },
       { speaker: "Host", text: "Has a review ever made you change the policy?" },
-      { speaker: "Mr Whitlow", text: "Once. We ran a savage notice of a small press title that sold four hundred copies. It was accurate, and it was the only coverage the book ever got. Now we ask whether a review tells the whole story." },
+      { speaker: "Mr. Whitlow", text: "Once. We ran a savage notice of a small press title that sold four hundred copies. It was accurate, and it was the only coverage the book ever got. Now we ask whether a review tells the whole story." },
     ],
     questions: [
       {
@@ -171,7 +171,7 @@ export const enC1P16: SkillExercise[] = [
         explain: "„We review what our readers are likely to buy, not what publishers would rather we noticed.“",
       },
       {
-        text: "Where does Mr Whitlow draw the line?",
+        text: "Where does Mr. Whitlow draw the line?",
         options: [
           "at negative adjectives",
           "at reviews of famous authors",

@@ -236,7 +236,7 @@ export const enB1P15: SkillExercise[] = [
         ],
         sample:
           "Dear Elif, happy eighteenth birthday! I still remember the day you learned to ride a bike in " +
-          "Grandma's garden. You were six, you fell eleven times, and every time you got up and said, “Again.” " +
+          "Grandma's backyard. You were six, you fell eleven times, and every time you got up and said, “Again.” " +
           "I was watching from the kitchen window and I couldn't believe how stubborn you were. " +
           "You taught me something that day: it's fine to look silly while you're learning. I think of it " +
           "every time I try something new at work. " +

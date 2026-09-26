@@ -37,11 +37,11 @@ export const enB1P16: SkillExercise[] = [
       "Nobody on Elm Street agrees about the foxes. There are at least four of them, living under " +
       "the shed at number 9, and in the last year they have become the only subject anyone talks " +
       "about at the bus stop.\n\n" +
-      "Mrs Patel at number 11 is afraid of them. Not because they are dangerous, she says, but " +
+      "Mrs. Patel at number 11 is afraid of them. Not because they are dangerous, she says, but " +
       "because they scream at night, and the first time she heard it she thought someone was being " +
       "attacked. She has complained to the council twice.\n\n" +
       "Her neighbor, Tom Reilly, is the opposite. He is fascinated by the foxes and has put a small " +
-      "camera in his garden. He is proud of his videos, which show the young ones playing with " +
+      "camera in his backyard. He is proud of his videos, which show the young ones playing with " +
       "a tennis ball at three in the morning. More than two hundred people follow his page.\n\n" +
       "Most residents are somewhere in the middle. They are tired of finding their trash bags " +
       "torn open, but they are not interested in getting rid of the animals.\n\n" +
@@ -54,14 +54,14 @@ export const enB1P16: SkillExercise[] = [
         text: "Where do the foxes live?",
         options: [
           "in the park at the end of the street",
-          "in Tom Reilly's garden",
+          "in Tom Reilly's backyard",
           "under the shed at number 9",
         ],
         answer: 2,
         explain: "„living under the shed at number 9“.",
       },
       {
-        text: "Why is Mrs Patel afraid of the foxes?",
+        text: "Why is Mrs. Patel afraid of the foxes?",
         options: ["They scream at night.", "They attacked her cat.", "They are dangerous to children."],
         answer: 0,
         explain: "Tehlikeli oldukları için değil; geceleri çığlık attıkları için korkuyor.",
@@ -237,7 +237,7 @@ export const enB1P16: SkillExercise[] = [
           { de: "I'm available on …", tr: "… günleri müsaitim", en: "" },
         ],
         sample:
-          "Dear Ms Carter, I'm replying to your ad for a weekend helper at Hill Farm Stables. " +
+          "Dear Ms. Carter, I'm replying to your ad for a weekend helper at Hill Farm Stables. " +
           "My name is Elif Kaya, I'm nineteen and I'm studying biology at the university in town. " +
           "I've always been interested in horses. I rode every summer at my uncle's farm until I " +
           "was fifteen, so I know how much work a stable needs. I'm not afraid of dirty jobs, and I'm " +

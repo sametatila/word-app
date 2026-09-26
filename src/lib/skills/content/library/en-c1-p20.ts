@@ -158,16 +158,16 @@ export const enC1P20: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Mr Farrant", text: "Hello, I'm calling with regard to the small grants round. We run a reading club for adults, and I wanted to check we're eligible before we apply." },
-      { speaker: "Ms Obi", text: "Of course. The main condition is that the work is local and open to anyone. In view of what you've described, that shouldn't be a problem." },
-      { speaker: "Mr Farrant", text: "The part I'm unsure about is costs. Most of what we need is rent for the room, not books." },
-      { speaker: "Ms Obi", text: "That's fine. We changed the rules two years ago. Up to twenty percent of any grant can now go on running costs, and you don't need to justify it line by line." },
-      { speaker: "Mr Farrant", text: "That's a relief. The last fund we applied to refused on the grounds that rent wasn't a project." },
-      { speaker: "Ms Obi", text: "We heard that a lot, which is partly why we changed. A club without a room isn't a club." },
-      { speaker: "Mr Farrant", text: "And if we can't spend it all? We're a small group. In the event of our coordinator leaving, things could stop for a while." },
-      { speaker: "Ms Obi", text: "Then tell us early. In accordance with our terms, unspent money can be carried into a second year, as long as you agree it with us in writing." },
-      { speaker: "Mr Farrant", text: "And when's the deadline?" },
-      { speaker: "Ms Obi", text: "The last Friday in October. Decisions are made within eight weeks, and we always give a reason when we say no." },
+      { speaker: "Mr. Farrant", text: "Hello, I'm calling with regard to the small grants round. We run a reading club for adults, and I wanted to check we're eligible before we apply." },
+      { speaker: "Ms. Obi", text: "Of course. The main condition is that the work is local and open to anyone. In view of what you've described, that shouldn't be a problem." },
+      { speaker: "Mr. Farrant", text: "The part I'm unsure about is costs. Most of what we need is rent for the room, not books." },
+      { speaker: "Ms. Obi", text: "That's fine. We changed the rules two years ago. Up to twenty percent of any grant can now go on running costs, and you don't need to justify it line by line." },
+      { speaker: "Mr. Farrant", text: "That's a relief. The last fund we applied to refused on the grounds that rent wasn't a project." },
+      { speaker: "Ms. Obi", text: "We heard that a lot, which is partly why we changed. A club without a room isn't a club." },
+      { speaker: "Mr. Farrant", text: "And if we can't spend it all? We're a small group. In the event of our coordinator leaving, things could stop for a while." },
+      { speaker: "Ms. Obi", text: "Then tell us early. In accordance with our terms, unspent money can be carried into a second year, as long as you agree it with us in writing." },
+      { speaker: "Mr. Farrant", text: "And when's the deadline?" },
+      { speaker: "Ms. Obi", text: "The last Friday in October. Decisions are made within eight weeks, and we always give a reason when we say no." },
     ],
     questions: [
       {
@@ -181,7 +181,7 @@ export const enC1P20: SkillExercise[] = [
         explain: "„The main condition is that the work is local and open to anyone.“",
       },
       {
-        text: "Why did the last fund refuse Mr Farrant's group?",
+        text: "Why did the last fund refuse Mr. Farrant's group?",
         options: [
           "The application arrived late.",
           "Rent was not seen as a project.",
@@ -280,7 +280,7 @@ export const enC1P20: SkillExercise[] = [
           { de: "We would be glad to provide any further information.", tr: "Her türlü ek bilgiyi memnuniyetle sağlarız.", en: "" },
         ],
         sample:
-          "Dear Ms Obi,\n\n" +
+          "Dear Ms. Obi,\n\n" +
           "I am writing with regard to the small grants round on behalf of the Tuesday Reading Club, a group of " +
           "about thirty adults who meet weekly in the community hall on Station Road to read and discuss one book a " +
           "month. We are applying for £2,400 in order to keep the club running for another year.\n\n" +

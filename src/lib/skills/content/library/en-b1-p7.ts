@@ -120,7 +120,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "induction", tr: "işe alıştırma" },
       { de: "buddy", tr: "rehber arkadaş" },
       { de: "login", tr: "giriş bilgisi" },
-      { de: "canteen", tr: "yemekhane" },
+      { de: "cafeteria", tr: "yemekhane" },
       { de: "probation", tr: "deneme süresi" },
       { de: "handbook", tr: "el kitabı" },
       { de: "basic", tr: "basit" },
@@ -131,7 +131,7 @@ export const enB1P7: SkillExercise[] = [
       { text: "On day one you will not do any real work. You will get your card, your login and a tour of the building, and that is enough for one day." },
       { text: "From Tuesday you will work with a buddy — a colleague from your own team, not a manager. Their job is to answer questions, including the ones you think are too basic." },
       { text: "The handbook is online, but nobody expects you to have read it. Read the two pages on safety; the rest you can look up when you need it." },
-      { text: "Lunch is between twelve and two in the canteen, and the first week is free for new staff. Please use it — most people learn more at that table than in the induction." },
+      { text: "Lunch is between twelve and two in the cafeteria, and the first week is free for new staff. Please use it — most people learn more at that table than in the induction." },
       { text: "Your probation lasts three months. There is a short meeting after four weeks, and it is not a test; it exists so that problems come up early." },
       { text: "One last thing. If something feels wrong in the first week, say so in the first week. After a month it becomes something you just live with." },
     ],
@@ -173,10 +173,10 @@ export const enB1P7: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "in the canteen",
-          "the canteen",
+          "in the cafeteria",
+          "the cafeteria",
           "at lunch",
-          "at lunch in the canteen",
+          "at lunch in the cafeteria",
           "at the lunch table",
           "at that table",
         ],
@@ -247,7 +247,7 @@ export const enB1P7: SkillExercise[] = [
           { de: "I would suggest that the school …", tr: "Okula … öneririm", en: "" },
         ],
         sample:
-          "I did my placement at Nova Print from 3 March to 28 March, in the customer orders team. " +
+          "I did my placement at Nova Print from March 3 to March 28, in the customer orders team. " +
           "My main tasks were checking new orders against the file the customer sent, " +
           "answering simple questions by email, and packing finished work for collection. " +
           "In the last week I was also allowed to phone two regular customers about a delay. " +

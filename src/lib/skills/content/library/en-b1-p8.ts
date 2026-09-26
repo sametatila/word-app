@@ -126,15 +126,15 @@ export const enB1P8: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ms Fenton", text: "Right, bikes. We now have nine people cycling in and space for four. Ideas, please." },
+      { speaker: "Ms. Fenton", text: "Right, bikes. We now have nine people cycling in and space for four. Ideas, please." },
       { speaker: "Ahmet", text: "The old storage room by the back door is empty. Six bikes would fit easily, maybe eight." },
-      { speaker: "Ms Fenton", text: "It's empty because the door doesn't lock. That's a hundred and forty pounds for a new lock, and it isn't in this year's budget." },
+      { speaker: "Ms. Fenton", text: "It's empty because the door doesn't lock. That's a hundred and forty pounds for a new lock, and it isn't in this year's budget." },
       { speaker: "Clare", text: "Cheaper idea: two more racks outside, under the roof. About sixty pounds each." },
       { speaker: "Ahmet", text: "Outside is fine in June. In November people stop cycling because the bike gets wet and nobody says why." },
       { speaker: "Clare", text: "Then let's do both, but not at once. Racks now, and the storage room when the budget opens in April." },
-      { speaker: "Ms Fenton", text: "I can agree to that. One condition: if we open the room, we need a booking system, otherwise the same three bikes live there permanently." },
+      { speaker: "Ms. Fenton", text: "I can agree to that. One condition: if we open the room, we need a booking system, otherwise the same three bikes live there permanently." },
       { speaker: "Clare", text: "A sheet on the door is enough. Nobody is going to use an app for this." },
-      { speaker: "Ms Fenton", text: "Agreed. Ahmet, can you check whether our insurance covers bikes stored inside? That decides whether the room is an option at all." },
+      { speaker: "Ms. Fenton", text: "Agreed. Ahmet, can you check whether our insurance covers bikes stored inside? That decides whether the room is an option at all." },
     ],
     questions: [
       {
@@ -182,7 +182,7 @@ export const enB1P8: SkillExercise[] = [
         explain: "„can you check whether our insurance covers bikes stored inside“.",
       },
       {
-        text: "What is Ms Fenton's condition for opening the room?",
+        text: "What is Ms. Fenton's condition for opening the room?",
         options: ["a booking system", "a second door", "a monthly fee"],
         answer: 0,
         explain: "Aksi hâlde aynı üç bisiklet orada kalıcı olur.",

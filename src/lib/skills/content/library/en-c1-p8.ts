@@ -149,13 +149,13 @@ export const enC1P8: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Prof. Adeyemi", text: "An institution is not a person. It cannot feel regret, so an apology from one is always a statement about the future, not the past." },
-      { speaker: "Ms Larkin", text: "I'd accept that and draw the opposite conclusion. If it is about the future, then it commits successors, and that is precisely what makes it worth having." },
+      { speaker: "Ms. Larkin", text: "I'd accept that and draw the opposite conclusion. If it is about the future, then it commits successors, and that is precisely what makes it worth having." },
       { speaker: "Prof. Adeyemi", text: "Only if something follows it. An apology with no obligation attached is the cheapest thing an institution can produce, and it is often produced instead of the expensive thing." },
-      { speaker: "Ms Larkin", text: "That's an argument against bad apologies, not against apologies. Had the Whitfield said nothing at all, nobody would be asking about the two refused claims." },
+      { speaker: "Ms. Larkin", text: "That's an argument against bad apologies, not against apologies. Had the Whitfield said nothing at all, nobody would be asking about the two refused claims." },
       { speaker: "Prof. Adeyemi", text: "A fair point. Though notice what did the work there: not the apology, but the object-by-object disclosure. That could have been done without a word of regret." },
-      { speaker: "Ms Larkin", text: "It could. In practice institutions that disclose tend also to apologize, and those that refuse to apologize rarely disclose. The two travel together." },
+      { speaker: "Ms. Larkin", text: "It could. In practice institutions that disclose tend also to apologize, and those that refuse to apologize rarely disclose. The two travel together." },
       { speaker: "Prof. Adeyemi", text: "Correlation, and I suspect the causation runs the other way: the ones willing to disclose are already the ones under pressure." },
-      { speaker: "Ms Larkin", text: "Then we agree on the test, at least. Ask what the institution does differently the following year. If the answer is nothing, the apology was decoration." },
+      { speaker: "Ms. Larkin", text: "Then we agree on the test, at least. Ask what the institution does differently the following year. If the answer is nothing, the apology was decoration." },
       { speaker: "Prof. Adeyemi", text: "On that we agree entirely, and it is a better standard than either of us started with." },
     ],
     questions: [
@@ -170,7 +170,7 @@ export const enC1P8: SkillExercise[] = [
         explain: "Kurum bir kişi değil; pişmanlık duyamaz.",
       },
       {
-        text: "How does Ms Larkin use the same premise?",
+        text: "How does Ms. Larkin use the same premise?",
         options: [
           "She says committing successors is what makes it valuable.",
           "She rejects the premise entirely.",
@@ -188,7 +188,7 @@ export const enC1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ms Larkin says disclosure and apology tend to ___ together.",
+        text: "Ms. Larkin says disclosure and apology tend to ___ together.",
         options: [],
         answer: 0,
         accept: ["travel"],

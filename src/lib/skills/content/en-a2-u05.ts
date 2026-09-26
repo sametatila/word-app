@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           … is cheaper than … · … is more important than … ·
  *           Which one is better? · It is the best day of my life. ·
  *           She is the most beautiful girl in the class. ·
- *           It's the best film I've ever seen. · I used to … ·
+ *           It's the best movie I've ever seen. · I used to … ·
  *           I don't … anymore. · I'm still …
  *
  * Karşılaştırmanın kuralı UZUNLUĞA bağlı: kısa sıfat „-er“ alıyor

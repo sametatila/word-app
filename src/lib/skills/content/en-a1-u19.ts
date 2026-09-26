@@ -3,15 +3,15 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A1 · Ünite 19 — "Müzik, sinema daveti, hava, park".
  *
- * Dört ders: Music · Cinema invitation · Weather small talk ·
+ * Dört ders: Music · Movie invitation · Weather small talk ·
  * In the park.
  *
- *   Kelime: music, song, listen, band, guitar, piano, sing, CD, cinema,
+ *   Kelime: music, song, listen, band, guitar, piano, sing, CD, movie theater,
  *           invite, together, ticket, tonight, movie, star, story,
  *           weather, rain, cold, hot, sunny, snow, windy, air, park,
  *           grass, child, dog, tree, playground, ball, lake.
  *   Kalıp:  I like this song. · What music do you like? ·
- *           I prefer pop music. · Would you like to go to the cinema? ·
+ *           I prefer pop music. · Would you like to go to the movies? ·
  *           Let's go together. · Sorry, I can't tonight. ·
  *           It's cold today. · It's raining. · How's the weather? ·
  *           There is a … · There are … · Is there a …?

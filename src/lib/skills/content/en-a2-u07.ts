@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           How long do I have to wait? · I usually get up at seven. ·
  *           I exercise three times a week. · How often do you exercise? ·
  *           Does my insurance cover this? ·
- *           I have already filled in the form. · How much do I have to pay?
+ *           I have already filled out the form. · How much do I have to pay?
  *
  * Ünitenin tek öğretme noktası DOLAYLI SORU. „Where is the unit?“ soru
  * sırasıyla kurulur, ama aynı soru „Could you tell me …“ içine girince

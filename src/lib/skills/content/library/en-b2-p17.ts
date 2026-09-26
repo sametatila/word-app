@@ -144,13 +144,13 @@ export const enB2P17: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Presenter", text: "Four-day week trials have produced some of the most enthusiastic headlines in workplace research. A closer look at how they are run suggests some caution." },
-      { speaker: "Ms Petrova", text: "The first thing to know is who takes part. Companies volunteer, and the ones that volunteer tend to be smaller, more flexible and far more confident than average." },
+      { speaker: "Ms. Petrova", text: "The first thing to know is who takes part. Companies volunteer, and the ones that volunteer tend to be smaller, more flexible and far more confident than average." },
       { speaker: "Presenter", text: "In most published trials, around nine in ten firms chose to continue afterwards. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
-      { speaker: "Ms Petrova", text: "That doesn't make the results worthless. It means they tell you what happens in the best conditions, which is not nearly as useful as knowing what happens in ordinary ones." },
+      { speaker: "Ms. Petrova", text: "That doesn't make the results worthless. It means they tell you what happens in the best conditions, which is not nearly as useful as knowing what happens in ordinary ones." },
       { speaker: "Presenter", text: "The measures also vary. Wellbeing is usually recorded through surveys, while productivity is often reported by the managers who chose to run the trial." },
-      { speaker: "Ms Petrova", text: "The more a result depends on a manager's own judgment, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
+      { speaker: "Ms. Petrova", text: "The more a result depends on a manager's own judgment, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
       { speaker: "Presenter", text: "Those harder figures are generally positive too, if a little less dramatic: fewer people leave, and absence falls, at least during the first year." },
-      { speaker: "Ms Petrova", text: "What we still don't have is a large trial in hospitals, schools or factories, where the work can't simply be done faster. That's where the real test is." },
+      { speaker: "Ms. Petrova", text: "What we still don't have is a large trial in hospitals, schools or factories, where the work can't simply be done faster. That's where the real test is." },
     ],
     questions: [
       {
@@ -164,7 +164,7 @@ export const enB2P17: SkillExercise[] = [
         explain: "Gönüllü olanlar ortalamadan daha küçük, esnek ve kendine güvenen şirketler.",
       },
       {
-        text: "According to Ms Petrova, what do the results show?",
+        text: "According to Ms. Petrova, what do the results show?",
         options: [
           "what happens in the best conditions",
           "what happens in ordinary firms",
@@ -190,14 +190,14 @@ export const enB2P17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Which figures does Ms Petrova find harder to argue with?",
+        text: "Which figures does Ms. Petrova find harder to argue with?",
         options: [],
         answer: 0,
         accept: ["sick days and turnover", "sick days and staff turnover", "staff turnover and sick days", "turnover and sick days", "sick days", "staff turnover", "turnover"],
         explain: "Yöneticinin yargısına dayanmayan hastalık izni ve personel devri rakamları.",
       },
       {
-        text: "Where is the real test, according to Ms Petrova?",
+        text: "Where is the real test, according to Ms. Petrova?",
         options: [
           "in small design studios",
           "in jobs that cannot go faster",
@@ -268,7 +268,7 @@ export const enB2P17: SkillExercise[] = [
           "the same targets. Fridays would be covered by a rotation, so that one person is always " +
           "available for urgent requests. " +
           "We would measure success by three things: projects delivered on time, client " +
-          "satisfaction scores and sick days. I'd also like everyone to fill in a short survey at " +
+          "satisfaction scores and sick days. I'd also like everyone to fill out a short survey at " +
           "the start and the end, because the numbers alone won't tell us whether people are more " +
           "tired or less. " +
           "For clients, the main difference would be slower replies on Fridays. I suspect most of " +

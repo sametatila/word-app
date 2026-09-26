@@ -36,16 +36,16 @@ export const enB1P11: SkillExercise[] = [
     text:
       "Last Thursday evening the elevator in our building stopped between the fourth and fifth floors. " +
       "There were six of us inside, and until that evening I knew exactly one of them by name.\n\n" +
-      "When it happened, everyone was doing something different. Mrs Okafor was carrying two bags " +
+      "When it happened, everyone was doing something different. Mrs. Okafor was carrying two bags " +
       "of shopping. A young man from the top floor was talking on the phone, and a girl of about " +
       "ten was reading a comic. I was checking my messages and not paying attention to anything.\n\n" +
       "For the first five minutes nobody said a word. Then the lights went off, the girl started " +
       "laughing, and after that it was impossible to stay silent. The man on the phone told the " +
-      "fire service where we were. Mrs Okafor opened one of her bags and passed round a packet " +
+      "fire service where we were. Mrs. Okafor opened one of her bags and passed round a packet " +
       "of cookies.\n\n" +
       "By the time the engineer arrived, we knew a lot about each other. The young man was " +
       "studying to be a nurse. The girl's father turned out to be the man who plays the trumpet " +
-      "on Sunday mornings, the one we all complain about. Mrs Okafor had lived in the building " +
+      "on Sunday mornings, the one we all complain about. Mrs. Okafor had lived in the building " +
       "for thirty-one years.\n\n" +
       "The elevator was repaired the next day. What surprised me was what happened afterwards. " +
       "On Saturday there was a note on the door of apartment 12: “Elevator group, tea on Sunday at four.” " +
@@ -76,11 +76,11 @@ export const enB1P11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Mrs Okafor had lived in the building for ___ years.",
+        text: "Mrs. Okafor had lived in the building for ___ years.",
         options: [],
         answer: 0,
         accept: ["thirty-one", "31", "thirty one"],
-        explain: "„Mrs Okafor had lived in the building for thirty-one years.“",
+        explain: "„Mrs. Okafor had lived in the building for thirty-one years.“",
       },
       {
         kind: "short_answer",
@@ -238,7 +238,7 @@ export const enB1P11: SkillExercise[] = [
           { de: "If it helps, I'm happy to …", tr: "İşe yararsa memnuniyetle …", en: "" },
         ],
         sample:
-          "Dear Mr Hadley, I was the person standing at the bus stop opposite your bakery on " +
+          "Dear Mr. Hadley, I was the person standing at the bus stop opposite your bakery on " +
           "Sunday morning, and one of your staff gave me your email address. I thought a written " +
           "account of what happened might be useful. " +
           "At the moment it happened, I was waiting for the bus and looking at my phone. A white van " +

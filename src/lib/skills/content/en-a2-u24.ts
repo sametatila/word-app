@@ -10,10 +10,10 @@ import type { SkillExercise } from "../types";
  *           proper, wallet, police, steal, report, describe, police station,
  *           thief, description, borrow, member, return, fine, quiet,
  *           dictionary, notebook, silent, card, reload, machine, subway,
- *           tram, timetable.
+ *           tram, schedule.
  *   Kalıp:  I want to apply for a residence permit. ·
  *           My passport is valid until 2030. ·
- *           I have already filled in the form. · I lost my wallet. ·
+ *           I have already filled out the form. · I lost my wallet. ·
  *           Someone stole my phone. · It happened at about six o'clock. ·
  *           I'd like to borrow this book. ·
  *           You have to be quiet. / You can't eat here. ·

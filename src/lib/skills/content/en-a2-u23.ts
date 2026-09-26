@@ -4,11 +4,11 @@ import type { SkillExercise } from "../types";
  * EN · A2 · Ünite 23 — "Teknoloji görüşleri, nasıl yapılır, belediye, form".
  *
  * Dört ders: What I think about technology · Explaining how to do it ·
- * At the city hall · Filling in a form.
+ * At the city hall · Filling out a form.
  *
  *   Kelime: think, agree, useful, waste, depend, technology, modern,
  *           point, first, press, choose, wait, done, pay attention,
- *           continue, repeat, office, register, queue, number, counter,
+ *           continue, repeat, office, register, line, number, counter,
  *           assistant, entrance, announcement, surname, address, sign,
  *           date, birth, place of birth, year of birth, ID card.
  *   Kalıp:  I think phones are useful. · I agree with you. ·

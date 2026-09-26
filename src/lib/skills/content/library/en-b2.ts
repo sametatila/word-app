@@ -87,7 +87,7 @@ export const enB2: SkillExercise[] = [
         options: [
           "The guest is being asked to work for the company's targets.",
           "The hotel offers guests a job in marketing.",
-          "Guests must fill in a form before they leave.",
+          "Guests must fill out a form before they leave.",
         ],
         answer: 0,
         explain: "On üzerinden ondan azını şikâyet sayan bir sistemde misafirden şirketin hedefini tutturması isteniyor; cümle bunun ironisi.",
@@ -322,7 +322,7 @@ export const enB2: SkillExercise[] = [
         "like. If your income depends on being liked, you cannot afford to correct a rude customer, and that changes " +
         "the job itself. There is also the quiet part: tipping lets the employer move a business cost onto the guest. " +
         "So I would support keeping tips only if they were genuinely extra, on top of a wage people could actually " +
-        "live on. If a restaurant cannot pay that wage, the answer is not a jar by the till; the answer is a higher " +
+        "live on. If a restaurant cannot pay that wage, the answer is not a jar by the register; the answer is a higher " +
         "price on the menu, printed honestly.",
       rubricHint:
         "İki taraf da gerekçesiyle geçmeli; sonuç bir koşula bağlanmalı (conditional yapıları beklenir).",

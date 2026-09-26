@@ -39,11 +39,11 @@ export const enB1P10: SkillExercise[] = [
       "to one bill.\n\n" +
       "This means you owe two hundred and forty pounds more than you expected. " +
       "We understand that this is a large amount to arrive at once, and it is not your fault.\n\n" +
-      "You have three options. You can pay the full amount by 30 April. You can pay in six " +
+      "You have three options. You can pay the full amount by April 30. You can pay in six " +
       "monthly installments at no extra cost — just reply to this letter or call us. " +
       "Or, if you send us a photo of your meter every three months, we will move you to " +
       "a lower monthly payment from May.\n\n" +
-      "Please do not ignore this letter. If we hear nothing by 30 April, the full amount " +
+      "Please do not ignore this letter. If we hear nothing by April 30, the full amount " +
       "becomes due and a late fee is added, which nobody in this office wants.\n\n" +
       "If your circumstances have changed, phone the number below and ask for the support team. " +
       "That call does not go on your account and it is not a complaint.",
@@ -85,7 +85,7 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What happens after 30 April if the customer does nothing?",
+        text: "What happens after April 30 if the customer does nothing?",
         options: [],
         answer: 0,
         accept: ["a late fee is added", "a late fee", "the full amount is due"],

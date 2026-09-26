@@ -59,10 +59,10 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
-    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
+    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new movie at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
     "questions": [
       {
-        "text": "What time does the film start?",
+        "text": "What time does the movie start?",
         "options": [
           "At five o'clock",
           "At half past five",
@@ -113,7 +113,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What has Murat got on Monday?",
+        "text": "What does Murat have on Monday?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -160,7 +160,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have got a cat, and I love old films and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my apartment. We can talk there, or we can talk online. Please write me a message!",
+    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have got a cat, and I love old movies and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my apartment. We can talk there, or we can talk online. Please write me a message!",
     "questions": [
       {
         "text": "How old is Elena?",
@@ -391,7 +391,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Not şöyle: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var."
+        "explain": "Not şöyle: \"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var."
       },
       {
         "text": "Who can help you in English on the weekend?",
@@ -424,7 +424,7 @@ export const enMobile2026: SkillExercise[] = [
           "the garden",
           "garden"
         ],
-        "explain": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var."
+        "explain": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var."
       }
     ]
   },
@@ -469,7 +469,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "math", "tr": "matematik" },
     ],
     "minutes": 4,
-    "text": "Tuesday, 14 March\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favorite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a film.\nI go to bed at eleven. Tomorrow is Wednesday and I have got a math exam!",
+    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favorite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have got a math exam!",
     "questions": [
       {
         "text": "What time does the writer get up?",
@@ -501,11 +501,11 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"After school I go to the library with Deniz. We do our homework there until five.\" Elif kahvaltıdaki kız kardeşi."
       },
       {
-        "text": "What has the writer got tomorrow?",
+        "text": "What does the writer have tomorrow?",
         "options": [
           "A science lesson",
           "A math exam",
-          "A film"
+          "A movie"
         ],
         "answer": 1,
         "explain": "Son cümle: \"Tomorrow is Wednesday and I have got a math exam!\""
@@ -669,12 +669,12 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "bilet gişesi"
       },
       {
-        "de": "single ticket",
+        "de": "one-way ticket",
         "tr": "tek yön bileti"
       }
     ],
     "minutes": 4,
-    "text": "BUS 12 — CITY CENTER\nSCHEDULE · Monday to Friday\n\nFrom Green Park:\n07:15   07:45   08:15   08:45\nThen every 30 minutes until 19:45\n\nFrom Central Station:\n07:30   08:00   08:30   09:00\nThen every 30 minutes until 20:00\n\nSaturday: first bus 09:00, last bus 18:00\nSunday: no service\n\nNOTICE\nThere is roadwork in Market Street this week. Bus 12 does not stop at Market Street. Please use the stop in Church Road. It is a five-minute walk.\n\nThe ticket office is closed on Sunday. You can buy tickets on the bus. A single ticket is 2 euros. Students pay 1 euro.\n\nDo you need help? Call 0800 44 12.",
+    "text": "BUS 12 — CITY CENTER\nSCHEDULE · Monday to Friday\n\nFrom Green Park:\n07:15   07:45   08:15   08:45\nThen every 30 minutes until 19:45\n\nFrom Central Station:\n07:30   08:00   08:30   09:00\nThen every 30 minutes until 20:00\n\nSaturday: first bus 09:00, last bus 18:00\nSunday: no service\n\nNOTICE\nThere is roadwork on Market Street this week. Bus 12 does not stop at Market Street. Please use the stop on Church Road. It is a five-minute walk.\n\nThe ticket office is closed on Sunday. You can buy tickets on the bus. A one-way ticket is 2 euros. Students pay 1 euro.\n\nDo you need help? Call 0800 44 12.",
     "questions": [
       {
         "text": "What time is the first bus from Central Station on Monday?",
@@ -703,28 +703,28 @@ export const enMobile2026: SkillExercise[] = [
           "Because the buses are full."
         ],
         "answer": 1,
-        "explain": "Duyuruda \"There is roadwork in Market Street this week\" diyor; bu yüzden otobüs orada durmuyor."
+        "explain": "Duyuruda \"There is roadwork on Market Street this week\" diyor; bu yüzden otobüs orada durmuyor."
       },
       {
-        "text": "How much does a student pay for a single ticket?",
+        "text": "How much does a student pay for a one-way ticket?",
         "options": [
           "1 euro",
           "2 euros",
           "Nothing, it is free."
         ],
         "answer": 0,
-        "explain": "Metinde \"A single ticket is 2 euros. Students pay 1 euro.\" yazıyor."
+        "explain": "Metinde \"A one-way ticket is 2 euros. Students pay 1 euro.\" yazıyor."
       },
       {
         "kind": "gapfill",
-        "text": "A single ticket is ___ euros.",
+        "text": "A one-way ticket is ___ euros.",
         "options": [],
         "answer": 0,
         "accept": [
           "2",
           "two"
         ],
-        "explain": "\"A single ticket is 2 euros. Students pay 1 euro.\""
+        "explain": "\"A one-way ticket is 2 euros. Students pay 1 euro.\""
       },
       {
         "kind": "short_answer",
@@ -733,10 +733,10 @@ export const enMobile2026: SkillExercise[] = [
         "answer": 0,
         "accept": [
           "Church Road",
-          "the stop in Church Road",
+          "the stop on Church Road",
           "Church Road stop"
         ],
-        "explain": "\"Please use the stop in Church Road.\" Market Street'te yol çalışması var."
+        "explain": "\"Please use the stop on Church Road.\" Market Street'te yol çalışması var."
       }
     ]
   },
@@ -758,7 +758,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "daire"
       },
       {
-        "de": "wardrobe",
+        "de": "closet",
         "tr": "gardırop"
       },
       {
@@ -780,7 +780,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small wardrobe. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from 1 October.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
     "questions": [
       {
         "text": "Where is the apartment?",
@@ -829,7 +829,7 @@ export const enMobile2026: SkillExercise[] = [
         "accept": [
           "October"
         ],
-        "explain": "\"The room is free from 1 October.\""
+        "explain": "\"The room is free from October 1.\""
       },
       {
         "kind": "short_answer",
@@ -1091,7 +1091,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, 14 October\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
         "text": "What time is Elif's appointment?",
@@ -2071,15 +2071,15 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Customer",
-        "text": "Excuse me. I like this jacket. Have you got it in a small?"
+        "text": "Excuse me. I like this jacket. Do you have it in a small?"
       },
       {
         "speaker": "Assistant",
-        "text": "Let me check. Sorry, we haven't got small. There's medium and large."
+        "text": "Let me check. Sorry, we don't have small. There's medium and large."
       },
       {
         "speaker": "Customer",
-        "text": "OK, medium is fine. Have you got it in black? Blue isn't my color."
+        "text": "OK, medium is fine. Do you have it in black? Blue isn't my color."
       },
       {
         "speaker": "Assistant",
@@ -2111,7 +2111,7 @@ export const enMobile2026: SkillExercise[] = [
           "Green"
         ],
         "answer": 1,
-        "explain": "Müşteri \"Have you got it in black? Blue isn't my color.\" diyor ve sonunda \"The black one, please.\" diye seçiyor."
+        "explain": "Müşteri \"Do you have it in black? Blue isn't my color.\" diyor ve sonunda \"The black one, please.\" diye seçiyor."
       },
       {
         "text": "How much is the black jacket?",
@@ -2130,7 +2130,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Görevli \"Sorry, we haven't got small. There's medium and large.\" diyor, yani küçük beden yok."
+        "explain": "Görevli \"Sorry, we don't have small. There's medium and large.\" diyor, yani küçük beden yok."
       },
       {
         "text": "How does the customer want to pay?",
@@ -2273,7 +2273,7 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "How does Kaan describe his uncle?",
         "options": [
-          "He is short and he hasn't got glasses.",
+          "He is short and he doesn't have glasses.",
           "He is tall and he has got a beard.",
           "He has got short blonde hair."
         ],
@@ -2468,7 +2468,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Doctor",
-        "text": "Have you got a fever?"
+        "text": "Do you have a fever?"
       },
       {
         "speaker": "Merve",
@@ -2743,11 +2743,11 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Emre",
-        "text": "That's cheap! I stayed at home. I watched three films and cooked for my family."
+        "text": "That's cheap! I stayed at home. I watched three movies and cooked for my family."
       },
       {
         "speaker": "Deniz",
-        "text": "Three films? You were busy too!"
+        "text": "Three movies? You were busy too!"
       }
     ],
     "questions": [
@@ -2784,11 +2784,11 @@ export const enMobile2026: SkillExercise[] = [
         "text": "What did Emre do on the weekend?",
         "options": [
           "He went to Izmir with Deniz",
-          "He stayed at home and watched three films",
+          "He stayed at home and watched three movies",
           "He worked in a fish restaurant"
         ],
         "answer": 1,
-        "explain": "Emre \"I stayed at home. I watched three films and cooked for my family.\" diyor; evde kaldı."
+        "explain": "Emre \"I stayed at home. I watched three movies and cooked for my family.\" diyor; evde kaldı."
       },
       {
         "kind": "gapfill",
@@ -2951,7 +2951,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "sinema"
       },
       {
-        "de": "film",
+        "de": "movie",
         "tr": "film"
       },
       {
@@ -2993,13 +2993,13 @@ export const enMobile2026: SkillExercise[] = [
       {
         "kind": "build",
         "tr": "Film saat yedide başlıyor.",
-        "answer": "The film starts at seven.",
+        "answer": "The movie starts at seven.",
         "alternatives": [
-          "The film starts at seven",
+          "The movie starts at seven",
           "The movie starts at seven.",
-          "The film starts at 7.",
           "The movie starts at 7.",
-          "The film starts at seven o'clock."
+          "The movie starts at 7.",
+          "The movie starts at seven o'clock."
         ],
         "hint": "Saat söylerken 'at' kullanılır: at seven. Üçüncü tekil kişide fiile -s eklenir: it starts."
       },
@@ -3034,7 +3034,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Cumartesi boş musun?"
           },
           {
-            "de": "There is a new film at the movie theater.",
+            "de": "There is a new movie at the movie theater.",
             "tr": "Sinemada yeni bir film var."
           },
           {
@@ -3042,7 +3042,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Benimle gelmek ister misin?"
           },
           {
-            "de": "The film starts at eight.",
+            "de": "The movie starts at eight.",
             "tr": "Film saat sekizde başlıyor."
           },
           {
@@ -3054,7 +3054,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Lütfen bana cevap yaz."
           }
         ],
-        "sample": "Hi Deniz! How are you? There is a new action film at the movie theater this Saturday. Do you want to come with me? The film starts at seven, so let's meet in front of the movie theater at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
+        "sample": "Hi Deniz! How are you? There is a new action movie at the movie theater this Saturday. Do you want to come with me? The movie starts at seven, so let's meet in front of the movie theater at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
       }
     ]
   },
@@ -3173,7 +3173,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yakında yaz!"
           }
         ],
-        "sample": "Hi Emma,\n\nHow are you? Today I want to tell you about my family. There are five people in my family: my mother, my father, my two sisters and me. We live in Izmir.\n\nMy big sister is tall and she has got long brown hair and green eyes. My father is a teacher and he is very kind. My uncle lives near us, so we see him every week.\n\nOn Sundays we cook together and watch a film at home. I love my family very much.\n\nWrite soon and tell me about your family!\n\nLove,\nDeniz"
+        "sample": "Hi Emma,\n\nHow are you? Today I want to tell you about my family. There are five people in my family: my mother, my father, my two sisters and me. We live in Izmir.\n\nMy big sister is tall and she has got long brown hair and green eyes. My father is a teacher and he is very kind. My uncle lives near us, so we see him every week.\n\nOn Sundays we cook together and watch a movie at home. I love my family very much.\n\nWrite soon and tell me about your family!\n\nLove,\nDeniz"
       }
     ]
   },
@@ -3997,7 +3997,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "GREEN VALLEY HEALTH CENTER\nFree Wellness Program — October\n\nDo you feel tired every morning? Small changes can help.\n\nSLEEP\nYou should go to bed before eleven o'clock. Avoid your phone in bed. Screens make sleep harder.\n\nFOOD\nDrink six glasses of water a day. You should eat fruit at breakfast. Avoid sugar in the afternoon — it gives you energy for twenty minutes only.\n\nMOVE\nWalking is the easiest exercise. Thirty minutes a day is enough. Our nurse, Elif Kaya, says: \"I used to drive to work. Now I walk, and I feel much stronger than before.\"\n\nJOIN US\nFree classes every Tuesday at 6 p.m. in Room 4.\nYoga for beginners — bring a towel.\nCooking workshop — first Saturday of the month, 10 a.m.\n\nWe have already helped 300 people this year. You must call before you come, because the classes are small. Ring 0212 555 04 18.\n\nYour health will thank you!",
+    "text": "GREEN VALLEY HEALTH CENTER\nFree Wellness Program — October\n\nDo you feel tired every morning? Small changes can help.\n\nSLEEP\nYou should go to bed before eleven o'clock. Avoid your phone in bed. Screens make sleep harder.\n\nFOOD\nDrink six glasses of water a day. You should eat fruit at breakfast. Avoid sugar in the afternoon — it gives you energy for twenty minutes only.\n\nMOVE\nWalking is the easiest exercise. Thirty minutes a day is enough. Our nurse, Elif Kaya, says: \"I used to drive to work. Now I walk, and I feel much stronger than before.\"\n\nJOIN US\nFree classes every Tuesday at 6 p.m. in Room 4.\nYoga for beginners — bring a towel.\nCooking workshop — first Saturday of the month, 10 a.m.\n\nWe have already helped 300 people this year. You must call before you come, because the classes are small. Call 0212 555 04 18.\n\nYour health will thank you!",
     "questions": [
       {
         "text": "When are the free classes?",
@@ -4103,7 +4103,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
-    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on 1 October.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
+    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
     "questions": [
       {
         "text": "How much is the rent every month?",
@@ -4138,11 +4138,11 @@ export const enMobile2026: SkillExercise[] = [
         "text": "When can the new person move in?",
         "options": [
           "In July",
-          "On 1 September",
-          "On 1 October"
+          "On September 1",
+          "On October 1"
         ],
         "answer": 2,
-        "explain": "İlanda \"You can move in on 1 October\" yazıyor. Temmuz duvarların boyandığı ay, taşınma ayı değil."
+        "explain": "İlanda \"You can move in on October 1\" yazıyor. Temmuz duvarların boyandığı ay, taşınma ayı değil."
       },
       {
         "kind": "gapfill",
@@ -4519,7 +4519,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pretty", "tr": "şirin" },
     ],
     "minutes": 5,
-    "text": "WEDDING INVITATION\n\nElif Yilmaz & Daniel Brooks\nare getting married!\n\nSaturday, 12 September\nCeremony: 4:00 p.m.\nDinner and dancing: 6:30 p.m.\n\nRosewood Garden Hotel\n45 Lake Road, Brighton\n\nPlease answer before 20 August.\nCall Elif: 0555 214 88 90\n\n------------------------------\n\nHi Marta,\n\nHere is our invitation! We have known each other since 2019, so we really want you at our wedding.\n\nMy parents used to live in Brighton, and we chose this hotel because the garden is prettier than any other garden in the city.\n\nThe ceremony will start at four, but please come earlier. We are going to take photos in the garden at half past three.\n\nYou should bring a jacket. September evenings are colder than you think, and the dinner is outside.\n\nI have already booked a room for you at the hotel. You must not pay for it. It is our present.\n\nPlease write to me soon. I haven't heard from you since June!\n\nLove,\nElif",
+    "text": "WEDDING INVITATION\n\nElif Yilmaz & Daniel Brooks\nare getting married!\n\nSaturday, September 12\nCeremony: 4:00 p.m.\nDinner and dancing: 6:30 p.m.\n\nRosewood Garden Hotel\n45 Lake Road, Brighton\n\nPlease answer before August 20.\nCall Elif: 0555 214 88 90\n\n------------------------------\n\nHi Marta,\n\nHere is our invitation! We have known each other since 2019, so we really want you at our wedding.\n\nMy parents used to live in Brighton, and we chose this hotel because the garden is prettier than any other garden in the city.\n\nThe ceremony will start at four, but please come earlier. We are going to take photos in the garden at half past three.\n\nYou should bring a jacket. September evenings are colder than you think, and the dinner is outside.\n\nI have already booked a room for you at the hotel. You must not pay for it. It is our present.\n\nPlease write to me soon. I haven't heard from you since June!\n\nLove,\nElif",
     "questions": [
       {
         "text": "What time does the ceremony start?",
@@ -4553,12 +4553,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "When must the guests answer the invitation?",
         "options": [
-          "Before 12 September",
-          "Before 20 August",
+          "Before September 12",
+          "Before August 20",
           "Before the photos in the garden"
         ],
         "answer": 1,
-        "explain": "Davetiyenin alt kısmında \"Please answer before 20 August\" yazıyor; 12 Eylül ise düğünün kendi tarihi."
+        "explain": "Davetiyenin alt kısmında \"Please answer before August 20\" yazıyor; 12 Eylül ise düğünün kendi tarihi."
       },
       {
         "kind": "gapfill",
@@ -4621,7 +4621,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "alarm", "tr": "alarm" },
     ],
     "minutes": 5,
-    "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Deniz K. — 2 March\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — 28 February\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — 26 February\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
+    "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Deniz K. — March 2\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — February 28\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — February 26\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
     "questions": [
       {
         "text": "Deniz used to study with music.",
@@ -4726,7 +4726,7 @@ export const enMobile2026: SkillExercise[] = [
       },
     ],
     "minutes": 5,
-    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - 12 March\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Birch Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From 1 April we are going to send all bills by email. Please give us your email address before 25 March. Email is faster and cheaper than regular mail.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
+    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - March 12\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Birch Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From April 1 we are going to send all bills by email. Please give us your email address before March 25. Email is faster and cheaper than regular mail.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
     "questions": [
       {
         "text": "Where is the Housing Office now?",
@@ -4760,12 +4760,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "When must residents give their email address?",
         "options": [
-          "Before 12 March",
-          "Before 25 March",
-          "Before 1 April"
+          "Before March 12",
+          "Before March 25",
+          "Before April 1"
         ],
         "answer": 1,
-        "explain": "Yazıda \"Please give us your email address before 25 March\" deniyor. 1 Nisan e-posta faturalarının başlayacağı tarih, 12 Mart ise yazının tarihidir."
+        "explain": "Yazıda \"Please give us your email address before March 25\" deniyor. 1 Nisan e-posta faturalarının başlayacağı tarih, 12 Mart ise yazının tarihidir."
       },
       {
         "kind": "gapfill",
@@ -4834,7 +4834,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "truck", "tr": "kamyon" },
     ],
     "minutes": 5,
-    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, 12 May\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometres to the next bridge. Many shops near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
+    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, May 12\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometers to the next bridge. Many shops near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr. Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
     "questions": [
       {
         "text": "What time did people come to the park?",
@@ -4857,13 +4857,13 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Haber şöyle diyor: \"The bridge closed last November because heavy rain damaged the stone under it.\" Sebep şiddetli yağmurun köprünün altındaki taşa zarar vermesi."
       },
       {
-        "text": "Mr Owens has lived in the town for thirty years.",
+        "text": "Mr. Owens has lived in the town for thirty years.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "Mr Owens \"I have lived here for thirty years\" diyor, yani otuz yıldır orada yaşıyor."
+        "explain": "Mr. Owens \"I have lived here for thirty years\" diyor, yani otuz yıldır orada yaşıyor."
       },
       {
         "text": "What will the council do next spring?",
@@ -4938,7 +4938,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "confirmation", "tr": "teyit" },
     ],
     "minutes": 5,
-    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, 12 June, after 15:00\nCheck-out: Monday, 15 June, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your car number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until 5 June. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
+    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your car number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
     "questions": [
       {
         "text": "When must the guests leave the room on Monday?",
@@ -4948,7 +4948,7 @@ export const enMobile2026: SkillExercise[] = [
           "At 10:00"
         ],
         "answer": 0,
-        "explain": "Metinde \"Check-out: Monday, 15 June, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı."
+        "explain": "Metinde \"Check-out: Monday, June 15, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı."
       },
       {
         "text": "Breakfast is not in the total price. The guests must pay extra for it.",

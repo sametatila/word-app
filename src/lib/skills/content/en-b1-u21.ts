@@ -3,17 +3,17 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 21 — "Çöp ayrımı, enerji tasarrufu, yeşil alan, iklim".
  *
- * Dört ders: Sorting the rubbish · Saving energy at home ·
+ * Dört ders: Sorting the trash · Saving energy at home ·
  * Parks and green space · Talking about the climate.
  *
  *   Kelime: glass, collect, plastic, separate, throw, bin, metal, recycle,
- *           tap, lamp, energy, shower, warm, cool, heat, cold, park, tree,
+ *           faucet, lamp, energy, shower, warm, cool, heat, cold, park, tree,
  *           flower, grass, path, playground, bird, fountain, climate,
  *           melt, storm, weather, season, flood, drought, rain.
  *   Kalıp:  The glass is collected on Tuesdays. ·
  *           Plastic must be separated from paper. ·
  *           Nothing is thrown into the wrong bin. ·
- *           If you close the tap, you save water. ·
+ *           If you turn off the faucet, you save water. ·
  *           If I had a new lamp, I would use less energy. ·
  *           Unless the shower is short, the bill goes up. ·
  *           The park where we meet is open late. ·
