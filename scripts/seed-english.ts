@@ -159,6 +159,27 @@ async function main() {
   );
   console.log(`  Almanca örnek cümle çevirisi: ${sentences.size}/${rows.length}`);
 
+  /*
+    SİLME KİLİDİ (2026-09-26). Kaynaktan çıkan kelime veritabanından siliniyor ve
+    silme kullanıcının o kelimedeki ilerlemesini de götürüyor (user_words
+    onDelete: cascade). Bu betik artık her deploy'da koşuyor; yarım ya da bozuk
+    bir kaynak dosyası sessizce binlerce kişinin ilerlemesini silmesin diye,
+    silinecek kelime eşiği aşarsa hiçbir şey yazılmadan duruluyor. Bilinçli bir
+    toplu silme `--allow-delete` ile yapılır. Eşik `SEED_MAX_DELETE` (vars. 20).
+  */
+  {
+    const max = Number(process.env.SEED_MAX_DELETE ?? 20);
+    const doomed = await db
+      .select({ id: words.id })
+      .from(words)
+      .where(and(eq(words.course, "en"), notInArray(words.id, values.map((v) => v.id))));
+    if (doomed.length > max && !process.argv.includes("--allow-delete")) {
+      throw new Error(
+        `${doomed.length} kelime silinecekti (eşik ${max}); hiçbir şey yazılmadı. Kaynak dosyayı kontrol et; bilinçli silme için --allow-delete.`,
+      );
+    }
+  }
+
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
     await db
