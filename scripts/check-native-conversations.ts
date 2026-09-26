@@ -132,6 +132,44 @@ for (const p of courseExams("de")) {
   else walk(out, id);
 }
 
+/* KELİME ADIMINDA BAŞKA KELİMENİN KARŞILIĞI (2026-09-26). Çözücü önce düz
+   sözlüğe bakıyor (elle yazılmış "'X' demek. Lütfen" satırları orada ve
+   çoğu şablondan daha iyi İngilizce taşıyor: "'tall' or 'big'"). Ama
+   şablonun kurduğu Türkçe başka bir konuşmadaki aynı satırla çakışınca o
+   satırın İngilizcesi geliyordu: Almanca B1'de 21 kelime başka kelimenin
+   karşılığını gösteriyordu (Stecker "receipt", Mond "month", Ofen "bakery")
+   ve hiçbir kapı görmedi, çünkü dize "çözülüyordu". Ölçüt: düz satırın
+   tırnak içindeki kelimesi, bu konuşmanın sözlükçesindeki karşılıkla
+   örtüşmeli. Sırayı çevirmek yerine kapı: çevirmek 26 iyi satırı
+   bozuyordu. */
+const WORD_FRAMES = [/^'(.+?)' demek\.(?: (.+?))? Lütfen$/, /^Türkçesi '(.+?)' demek(?: — (.+?))?\. Lütfen$/];
+const glossNorm = (x: string) => x.toLowerCase().replace(/^(the|a|an|to) /, "").replace(/[.!?]/g, "").trim();
+const glossAlts = (x: string) => x.split(/;|\/|,| or /).map(glossNorm).filter(Boolean);
+const wrongWord: string[] = [];
+for (const l of conversations) {
+  for (const step of l.lecture ?? []) {
+    const e = step.expect as { hint?: Segment[]; why?: Segment[] } | undefined;
+    for (const arr of [step.say, e?.hint, e?.why]) {
+      let prev: string | null = null;
+      for (const s of arr ?? []) {
+        if (s.lang !== "tr") {
+          prev = s.text;
+          continue;
+        }
+        const plain = dict.lecture[s.text];
+        const word = prev === null ? undefined : dict.vocab[l.id + "\u0000" + prev];
+        if (plain !== undefined && word !== undefined && WORD_FRAMES.some((r) => r.test(s.text))) {
+          const quoted = [...plain.matchAll(/'([^']+)'/g)].map((m) => glossNorm(m[1]));
+          const alts = glossAlts(word);
+          if (!quoted.some((q) => alts.some((a) => a === q || a.includes(q) || q.includes(a))))
+            wrongWord.push(`[${l.id}] ${prev}: sözlükçe "${word}", ekranda "${plain}"`);
+        }
+        prev = null;
+      }
+    }
+  }
+}
+
 console.log(
   `konuşma ${conversations.length} · tr parça ${segs} · çözülen ${ok} · ` +
     `modül sınavı ${courseExams("de").length} · ` +
@@ -142,6 +180,11 @@ if (misses.size) {
   console.log(`\nHATA: ${misses.size} benzersiz dize çözülemedi (${total} parça)\n`);
   for (const [text, m] of [...misses].sort((a, b) => b[1].n - a[1].n).slice(0, 25))
     console.log(`  ${String(m.n).padStart(4)}x [${m.conversation}] önce:${m.prev ?? "—"}\n       ${JSON.stringify(text.slice(0, 90))}`);
+  process.exit(1);
+}
+if (wrongWord.length) {
+  console.log(`\nHATA: ${wrongWord.length} kelime adımı başka kelimenin karşılığını gösteriyor (şablon dizesi başka konuşmanın satırıyla çakışıyor; Türkçeyi ayırt edici yap)\n`);
+  for (const w of wrongWord.slice(0, 25)) console.log(`  ${w}`);
   process.exit(1);
 }
 if (rejected.length) {
