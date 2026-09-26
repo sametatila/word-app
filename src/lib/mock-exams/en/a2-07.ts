@@ -454,10 +454,10 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               situation: "İki arkadaş bir düğün davetini konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Are you coming to the wedding?" },
-                { text: "I have the invitation but I have not answered." },
-                { text: "Why not?" },
-                { text: "It is four hundred kilometers and I have two days off. I want to go and I do not know how." },
+                { speaker: "Man", text: "Are you coming to the wedding?" },
+                { speaker: "Woman", text: "I have the invitation but I have not answered." },
+                { speaker: "Man", text: "Why not?" },
+                { speaker: "Woman", text: "It is four hundred kilometers and I have two days off. I want to go and I do not know how." },
               ],
             },
             {
@@ -468,10 +468,10 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               situation: "Bir kişi salon kiralamak için arıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, is the hall free on the fourteenth?" },
-                { text: "In the afternoon, yes. In the evening there is already a party." },
-                { text: "Then the afternoon. How much?" },
-                { text: "Sixty euros for four hours." },
+                { speaker: "Caller", text: "Hello, is the hall free on the fourteenth?" },
+                { speaker: "Clerk", text: "In the afternoon, yes. In the evening there is already a party." },
+                { speaker: "Caller", text: "Then the afternoon. How much?" },
+                { speaker: "Clerk", text: "Sixty euros for four hours." },
               ],
             },
             {
@@ -482,10 +482,10 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               situation: "İki arkadaş bir pastadan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "Did you like the cake?" },
-                { text: "My son made it. He is eleven." },
-                { text: "Really?" },
-                { text: "He put too much sugar in, but nobody says that to a boy of eleven." },
+                { speaker: "Man", text: "Did you like the cake?" },
+                { speaker: "Woman", text: "My son made it. He is eleven." },
+                { speaker: "Man", text: "Really?" },
+                { speaker: "Woman", text: "He put too much sugar in, but nobody says that to a boy of eleven." },
               ],
             },
             {
@@ -496,10 +496,10 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               situation: "Bir müşteri fotoğraf bastırıyor.",
               plays: 2,
               segments: [
-                { text: "How much are twenty photographs?" },
-                { text: "Twelve euros, or twenty for fifty photographs." },
-                { text: "I need twenty-five." },
-                { text: "Then the second price is better." },
+                { speaker: "Customer", text: "How much are twenty photographs?" },
+                { speaker: "Assistant", text: "Twelve euros, or twenty for fifty photographs." },
+                { speaker: "Customer", text: "I need twenty-five." },
+                { speaker: "Assistant", text: "Then the second price is better." },
               ],
             },
             {

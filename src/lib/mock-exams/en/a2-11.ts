@@ -477,10 +477,10 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               situation: "Bir kişi veterineri arıyor.",
               plays: 2,
               segments: [
-                { text: "My cat is not eating. Since yesterday." },
-                { text: "Can you come at four?" },
-                { text: "Yes, I can." },
-                { text: "Good. Bring the little book with her dates." },
+                { speaker: "Woman", text: "My cat is not eating. Since yesterday." },
+                { speaker: "Receptionist", text: "Can you come at four?" },
+                { speaker: "Woman", text: "Yes, I can." },
+                { speaker: "Receptionist", text: "Good. Bring the little book with her dates." },
               ],
             },
             {
@@ -491,10 +491,10 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               situation: "İki arkadaş tatil bakımını konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Two weeks in Italy? And the rabbit?" },
-                { text: "The pet hotel is taking him." },
-                { text: "How much?" },
-                { text: "Fourteen a day. That is more than the flight." },
+                { speaker: "Woman", text: "Two weeks in Italy? And the rabbit?" },
+                { speaker: "Man", text: "The pet hotel is taking him." },
+                { speaker: "Woman", text: "How much?" },
+                { speaker: "Man", text: "Fourteen a day. That is more than the flight." },
               ],
             },
             {
@@ -505,10 +505,10 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               situation: "Bir sahip kedisinin durumunu soruyor.",
               plays: 2,
               segments: [
-                { text: "Is it serious?" },
-                { text: "No. It is a tooth. We take it out on Thursday." },
-                { text: "And after that?" },
-                { text: "Soft food for ten days, then normal food again." },
+                { speaker: "Owner", text: "Is it serious?" },
+                { speaker: "Vet", text: "No. It is a tooth. We take it out on Thursday." },
+                { speaker: "Owner", text: "And after that?" },
+                { speaker: "Vet", text: "Soft food for ten days, then normal food again." },
               ],
             },
             {

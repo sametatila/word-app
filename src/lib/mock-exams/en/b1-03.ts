@@ -575,10 +575,10 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "İki arkadaş havuza gitmeyi konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Are you coming to the pool on Saturday?" },
-                { text: "I would like to, but I am on the late shift until nine." },
-                { text: "Then come on Sunday morning, it is quieter anyway." },
-                { text: "That works. I will bring Amira." },
+                { speaker: "Man", text: "Are you coming to the pool on Saturday?" },
+                { speaker: "Woman", text: "I would like to, but I am on the late shift until nine." },
+                { speaker: "Man", text: "Then come on Sunday morning, it is quieter anyway." },
+                { speaker: "Woman", text: "That works. I will bring Amira." },
               ],
             },
             {

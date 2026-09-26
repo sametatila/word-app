@@ -575,10 +575,10 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               situation: "İki meslektaş fazladan bir vardiyayı konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Did you get the extra shift?" },
-                { text: "I turned it down." },
-                { text: "Really? It was double pay." },
-                { text: "It was double pay on the night before my exam. That is not extra money, that is borrowed money." },
+                { speaker: "Man", text: "Did you get the extra shift?" },
+                { speaker: "Woman", text: "I turned it down." },
+                { speaker: "Man", text: "Really? It was double pay." },
+                { speaker: "Woman", text: "It was double pay on the night before my exam. That is not extra money, that is borrowed money." },
               ],
             },
             {

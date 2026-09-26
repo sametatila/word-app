@@ -481,10 +481,10 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "İki veli gezinin ödemesini konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Did you pay for the trip?" },
-                { text: "Not yet. When is the last day?" },
-                { text: "The fifth." },
-                { text: "Then I have three days." },
+                { speaker: "Mother", text: "Did you pay for the trip?" },
+                { speaker: "Father", text: "Not yet. When is the last day?" },
+                { speaker: "Mother", text: "The fifth." },
+                { speaker: "Father", text: "Then I have three days." },
               ],
             },
             {
@@ -495,10 +495,10 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Bir anne devamsızlığı bildiriyor.",
               plays: 2,
               segments: [
-                { text: "My son was ill on Monday and Tuesday." },
-                { text: "We need one line from you, with the dates." },
-                { text: "Can I write it now?" },
-                { text: "Please do." },
+                { speaker: "Mother", text: "My son was ill on Monday and Tuesday." },
+                { speaker: "Clerk", text: "We need one line from you, with the dates." },
+                { speaker: "Mother", text: "Can I write it now?" },
+                { speaker: "Clerk", text: "Please do." },
               ],
             },
             {
