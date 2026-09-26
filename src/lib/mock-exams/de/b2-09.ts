@@ -378,7 +378,7 @@ Mein Fazit fällt entsprechend unbequem aus: Ich halte die Reform für richtig u
                 { de: "das Bußgeld", tr: "idari para cezası", en: "administrative fine" },
                 { de: "bemessen", tr: "ölçüye bağlamak", en: "to assess, calculate" },
                 { de: "überfordert", tr: "gücünü aşan", en: "overwhelmed" },
-                { de: "die Datensparsamkeit", tr: "veri asgariliği", en: "data minimisation" },
+                { de: "die Datensparsamkeit", tr: "veri asgariliği", en: "data minimization" },
               ],
             },
           ],

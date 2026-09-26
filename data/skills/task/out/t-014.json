@@ -70,7 +70,7 @@
  { "tr": "En az iki yan cümlede kipli fiil sonda mı?", "kind": "free.checklist", "en": "Is the modal at the end in at least two subordinate clauses?" },
  { "tr": "Gündem maddesi ve alınan karar yazıldı mı?", "kind": "free.checklist", "en": "Have the agenda item and the decision taken been written?" },
  { "tr": "Hasta olduğunu yazdın mı? (Ich bin krank.)", "kind": "free.checklist", "en": "Did you write that you are sick? (Ich bin krank.)" },
- { "tr": "Hem iyileşen hem kötüleşen bir yön var mı?", "kind": "free.checklist", "en": "Is there a side that has got better and one that has got worse?" },
+ { "tr": "Hem iyileşen hem kötüleşen bir yön var mı?", "kind": "free.checklist", "en": "Is there a side that has gotten better and one that has gotten worse?" },
  { "tr": "Hem övgü hem itiraz gerekçelendirilmiş mi?", "kind": "free.checklist", "en": "Are both the praise and the objection backed by reasons?" },
  { "tr": "Kendi itirazını en az iki nedenle destekle", "kind": "free.checklist", "en": "Back your own objection with at least two reasons" },
  { "tr": "Kendi süre ve zorluğu dürüstçe verildi mi?", "kind": "free.checklist", "en": "Have your own timescale and difficulty been given honestly?" },

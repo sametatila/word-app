@@ -27,7 +27,7 @@
  { "tr": "Bir çevre merkezinde konuşma; konuşan tek kişi.", "kind": "situation", "en": "A talk at an environmental center; one speaker only." },
  { "tr": "Bir danışan aylık giderlerini gözden geçiriyor.", "kind": "situation", "en": "A client goes through their monthly outgoings." },
  { "tr": "Bir fizyoterapist uzun süre oturmayı anlatıyor.", "kind": "situation", "en": "A physiotherapist explains about sitting for long periods." },
- { "tr": "Bir halk eğitim merkezinin güz dönemi duyurusu.", "kind": "situation", "en": "An announcement of the autumn term at an adult education center." },
+ { "tr": "Bir halk eğitim merkezinin güz dönemi duyurusu.", "kind": "situation", "en": "An announcement of the fall semester at an adult education center." },
  { "tr": "Bir kadın ikinci kata nasıl çıkacağını soruyor.", "kind": "situation", "en": "A woman asks how to get to the second floor." },
  { "tr": "Bir kültür programının değişikliği anlatılıyor.", "kind": "situation", "en": "A change to a cultural program is explained." },
  { "tr": "Bir muayenehane randevu değişikliği bildiriyor.", "kind": "situation", "en": "A doctor's office reports a change of appointment." },
@@ -143,7 +143,7 @@
  { "tr": "Konum gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?", "kind": "rubric.criteria", "en": "Was the position given reasons and was the other side's argument addressed directly?" },
  { "tr": "Öneri gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?", "kind": "rubric.criteria", "en": "Was the suggestion given reasons and was the other side's argument addressed directly?" },
  { "tr": "Özet açık kalan noktayı da içeriyor mu, yoksa anlaşma varmış gibi mi kapatıyor?", "kind": "rubric.criteria", "en": "Does the summary include the point left open, or does it close as if there were agreement?" },
- { "tr": "C1 yapıları (adlaştırma, edilgen, `lässt sich`, ölçü belirteçleri) kullanılabildi mi?", "kind": "rubric.criteria", "en": "Were C1 structures (nominalisation, passive, `lässt sich`, hedging adverbs) handled?" },
+ { "tr": "C1 yapıları (adlaştırma, edilgen, `lässt sich`, ölçü belirteçleri) kullanılabildi mi?", "kind": "rubric.criteria", "en": "Were C1 structures (nominalization, passive, `lässt sich`, hedging adverbs) handled?" },
  { "tr": "Öneriler gerekçelendirildi mi?", "kind": "rubric.criteria", "en": "Were the suggestions given reasons?" },
  { "tr": "Dört içerik noktası da işlendi mi?", "kind": "rubric.criteria", "en": "Were all four content points dealt with?" }
 ]

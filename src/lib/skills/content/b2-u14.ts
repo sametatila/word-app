@@ -447,7 +447,7 @@ export const b2U14: SkillExercise[] = [
         minWords: 90,
         phrases: [
           { de: "Je …, desto …", tr: "ne kadar …, o kadar …", en: "the more …, the more …" },
-          { de: "die Zunahme der Mieten im Vergleich zum Vorjahr", tr: "geçen yıla göre kiralardaki artış", en: "the rise in rents compared with last year" },
+          { de: "die Zunahme der Mieten im Vergleich zum Vorjahr", tr: "geçen yıla göre kiralardaki artış", en: "the increase in rents compared with last year" },
           { de: "Dagegen spricht, dass …", tr: "buna karşı şu söylenebilir …", en: "against this one can say that …" },
         ],
         sample:

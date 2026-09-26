@@ -190,9 +190,9 @@
   "en": "Deniz says \"I went to Izmir with my sister.\", so she went to Izmir with her sister."
  },
  {
-  "tr": "Deniz \"No, he is busy. He has got an exam on Monday.\" diyor, yani Murat gelmiyor.",
+  "tr": "Deniz \"No, he is busy. He has an exam on Monday.\" diyor, yani Murat gelmiyor.",
   "kind": "explain",
-  "en": "Deniz says \"No, he is busy. He has got an exam on Monday.\", so Murat is not coming."
+  "en": "Deniz says \"No, he is busy. He has an exam on Monday.\", so Murat is not coming."
  },
  {
   "tr": "drängen: gerekçesiz baskı. Gerekçe eklenince aynı istek priorisieren'e dönüşüyor.",

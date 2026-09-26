@@ -60,7 +60,7 @@
   "sceneEn": "You are arranging your new room with a friend. They keep asking where to put the thing in their hands; you say where it goes each time.",
   "partnerEn": "a friend walking around with boxes who keeps asking",
   "openingEn": "I still have the lamp here. Where should I put it?",
-  "goalEn": "Where at least three things go has been said, one has been moved afterwards and the room has been finished."
+  "goalEn": "Where at least three things go has been said, one has been moved afterward and the room has been finished."
  },
  {
   "conversation": "de-a2-einrichten",
@@ -162,7 +162,7 @@
  },
  {
   "conversation": "de-a2-krankmeldung-buero",
-  "sceneEn": "You have fallen ill in the morning and you are calling the office to let them know. Say what is wrong, say how many days you will be off and discuss how you will send in the note.",
+  "sceneEn": "You woke up sick this morning and you are calling the office to let them know. Say what is wrong, say how many days you will be off and discuss how you will send in the note.",
   "partnerEn": "someone from HR who has answered the phone",
   "openingEn": "Good morning, HR department. What can I do for you?",
   "goalEn": "The illness has been reported, the length has been given and it has been agreed when and how the note will arrive."

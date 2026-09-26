@@ -157,7 +157,7 @@ Aber morgens beim Frühstück läuft jetzt wieder ein Programm, das jemand für 
               gloss: [
                 { de: "vorschreiben", tr: "dayatmak, belirlemek", en: "to dictate" },
                 { de: "der Sender", tr: "radyo kanalı", en: "station" },
-                { de: "romantisieren", tr: "gereğinden fazla güzelleştirmek", en: "to romanticise" },
+                { de: "romantisieren", tr: "gereğinden fazla güzelleştirmek", en: "to romanticize" },
               ],
             },
             {

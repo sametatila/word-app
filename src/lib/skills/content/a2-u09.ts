@@ -109,7 +109,7 @@ export const a2U09: SkillExercise[] = [
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
       { de: "außerhalb", tr: "dışında", en: "outside" },
       { de: "parken", tr: "park etmek", en: "to park" },
-      { de: "der Kinderwagen", tr: "bebek arabası", en: "pushchair" },
+      { de: "der Kinderwagen", tr: "bebek arabası", en: "stroller" },
       { de: "leichter", tr: "daha kolay", en: "more easily" },
     ],
     minutes: 4,
@@ -164,7 +164,7 @@ export const a2U09: SkillExercise[] = [
     genre: "dialogue",
     intro: "Oda düzenleniyor. Ne nereye gidiyor, hangi karar değişiyor?",
     gloss: [
-      { de: "der Schrank", tr: "dolap", en: "cupboard" },
+      { de: "der Schrank", tr: "dolap", en: "cabinet" },
       { de: "aufhängen", tr: "asmak", en: "to hang up" },
       { de: "der Schreibtisch", tr: "çalışma masası", en: "desk" },
       { de: "die Matratze", tr: "şilte", en: "mattress" },

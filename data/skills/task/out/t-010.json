@@ -121,7 +121,7 @@
  { "tr": "Hâlini sordun mu („Wie fühlst du dich?“)?", "kind": "reply.checklist", "en": "Did you ask how they are („Wie fühlst du dich?“)?" },
  { "tr": "Ne zaman gelip alabileceğini söyledin mi?", "kind": "reply.checklist", "en": "Did you say when you could come and pick it up?" },
  { "tr": "Doktora gitme konusunda bir şey yazdın mı?", "kind": "reply.checklist", "en": "Did you write something about seeing a doctor?" },
- { "tr": "Açılış saatlerine uyan iki tarih verdin mi?", "kind": "reply.checklist", "en": "Did you give two dates that fit the opening hours?" },
+ { "tr": "Açılış saatlerine uyan iki tarih verdin mi?", "kind": "reply.checklist", "en": "Did you give two dates that fit the library hours?" },
  { "tr": "Bir soru sordun mu — konuyu açık tuttun mu?", "kind": "reply.checklist", "en": "Did you ask a question — did you keep the subject open?" },
  { "tr": "İki ifade de Konjunktiv I ile mi aktarıldı?", "kind": "reply.checklist", "en": "Are both statements reported in the Konjunktiv I?" },
  { "tr": "Kalan deyimler taşıyor ve göze batmıyor mu?", "kind": "reply.checklist", "en": "Do the remaining idioms carry weight without standing out?" },

@@ -290,7 +290,7 @@ export const c1U10: SkillExercise[] = [
       { de: "unauffällig", tr: "göze batmayan", en: "unobtrusive" },
       { de: "der Zusammenhang", tr: "bağlam", en: "context" },
       { de: "ins Wasser fallen", tr: "suya düşmek", en: "to fall through" },
-      { de: "auf Anhieb", tr: "ilk seferde", en: "straight away" },
+      { de: "auf Anhieb", tr: "ilk seferde", en: "right away" },
       { de: "im Gegenzug", tr: "buna karşılık", en: "in return" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "lesen", tr: "okumak", en: "to read" },

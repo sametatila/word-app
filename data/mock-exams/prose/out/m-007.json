@@ -76,7 +76,7 @@
  { "tr": "Bu itiraza karşılık ver ve bir program öner.", "kind": "exchange.hint", "en": "Answer this objection and propose a program." },
  { "tr": "Görevleri paylaş ve en az birini kendine al.", "kind": "exchange.hint", "en": "Share out the tasks and take at least one yourself." },
  { "tr": "Konuları sınırla ve bu çekinceyi ciddiye al.", "kind": "exchange.hint", "en": "Limit the subjects and take this reservation seriously." },
- { "tr": "Önce dinlediğini göster, hemen çözüm önerme.", "kind": "exchange.hint", "en": "Show first that you have listened, do not offer a solution straight away." },
+ { "tr": "Önce dinlediğini göster, hemen çözüm önerme.", "kind": "exchange.hint", "en": "Show first that you have listened, do not offer a solution right away." },
  { "tr": "Teklife karşılık ver ve anlaşmayı netleştir.", "kind": "exchange.hint", "en": "Respond to the offer and settle the agreement." },
  { "tr": "Yemek için bir düzen öner ve yükü paylaştır.", "kind": "exchange.hint", "en": "Propose an arrangement for the food and share out the load." },
  { "tr": "Bir ölçüt öner ve keyfîlik itirazını karşıla.", "kind": "exchange.hint", "en": "Propose a criterion and answer the charge of arbitrariness." },

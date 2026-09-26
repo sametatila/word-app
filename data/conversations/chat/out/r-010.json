@@ -3,8 +3,8 @@
   "conversation": "de-b1-bevor-waehrend",
   "sceneEn": "You are planning a movie night with a friend: dinner before the movie, tickets, the rules during the movie, then a café. Put it in order with 'bevor' and 'während'.",
   "partnerEn": "a practical friend who likes making plans",
-  "openingEn": "So, the movie's at eight. What are we doing before that — shall we eat something before the movie starts?",
-  "goalEn": "A plan has been put in order for before the movie, during the movie and afterwards."
+  "openingEn": "So, the movie's at eight. What are we doing before that — should we eat something before the movie starts?",
+  "goalEn": "A plan has been put in order for before the movie, during the movie and afterward."
  },
  {
   "conversation": "de-b1-deshalb-trotzdem",
@@ -148,7 +148,7 @@
  },
  {
   "conversation": "de-b1-versicherung",
-  "sceneEn": "You are calling the insurance company to report some damage: what happened, when it happened, what you did afterwards. Put the earlier event one step further back as you order it.",
+  "sceneEn": "You are calling the insurance company to report some damage: what happened, when it happened, what you did afterward. Put the earlier event one step further back as you order it.",
   "partnerEn": "a calm insurance clerk who asks the questions in order",
   "openingEn": "Hello, Nordstern Insurance. You'd like to report some damage — what exactly happened?",
   "goalEn": "The damage has been reported in order and you have been told what happens next."

@@ -51,7 +51,7 @@ export const c1U02: SkillExercise[] = [
       { de: "die Aufsichtsbehörde", tr: "denetim kurumu", en: "supervisory authority" },
       { de: "heutige", tr: "bugünkü", en: "today's" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "unberechtigten", tr: "yetkisiz", en: "unauthorised" },
+      { de: "unberechtigten", tr: "yetkisiz", en: "unauthorized" },
     ],
     minutes: 7,
     text:

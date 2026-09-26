@@ -97,7 +97,7 @@ export const deA1P3: SkillExercise[] = [
       { de: "die Umkleide", tr: "soyunma odası", en: "changing room" },
       { de: "die Brille", tr: "gözlük", en: "glasses" },
       { de: "das Handtuch", tr: "havlu", en: "towel" },
-      { de: "die Kasse", tr: "kasa", en: "cash desk" },
+      { de: "die Kasse", tr: "kasa", en: "ticket counter" },
       { de: "das Becken", tr: "havuz teknesi", en: "pool basin" },
     ],
     minutes: 4,

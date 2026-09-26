@@ -31,7 +31,7 @@
  { "conversation": "de-c1-verhandlungsfinale", "de": "Unser letztes Wort wäre …", "en": "a final offer, softly put" },
  { "conversation": "de-c1-verhandlungsfinale", "de": "Kämen Sie uns entgegen, könnten wir …", "en": "a conditional close" },
  { "conversation": "de-c1-pruefungssimulation", "de": "Vom Prüfling werden … verlangt.", "en": "an impersonal requirement" },
- { "conversation": "de-c1-pruefungssimulation", "de": "Zum Bestehen sind … Punkte nötig.", "en": "the pass mark" },
+ { "conversation": "de-c1-pruefungssimulation", "de": "Zum Bestehen sind … Punkte nötig.", "en": "the passing score" },
  { "conversation": "de-c1-mentoring-c1", "de": "An deiner Stelle würde ich …", "en": "advice in the subjunctive" },
  { "conversation": "de-c1-mentoring-c1", "de": "Was mir geholfen hat, war …", "en": "your own experience" },
  { "conversation": "de-c1-zweisprachig-leben", "de": "Es ist, als hätte ich zwei Stimmen.", "en": "an unreal comparison" },

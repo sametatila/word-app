@@ -127,7 +127,7 @@
  },
  {
   "conversation": "de-b1-umzugshelfer",
-  "sceneEn": "It is moving day and a friend has come to help. Split the jobs by time: what happens before you start, what they do while you do something, and what comes afterwards.",
+  "sceneEn": "It is moving day and a friend has come to help. Split the jobs by time: what happens before you start, what they do while you do something, and what comes afterward.",
   "partnerEn": "a friend who likes organizing and takes responsibility",
   "openingEn": "Right, I'm here! What do we do first?",
   "goalEn": "The jobs have been shared out in time order and it has been settled what happens at the end of the day."

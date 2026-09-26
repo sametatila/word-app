@@ -27,7 +27,7 @@ export const deB1P20: SkillExercise[] = [
       { de: "ersetzen", tr: "yerine koymak", en: "to replace" },
       { de: "verpassen", tr: "kaçırmak", en: "to miss" },
       { de: "aussetzen", tr: "ara vermek", en: "to skip" },
-      { de: "das Häkchen", tr: "onay işareti", en: "tick" },
+      { de: "das Häkchen", tr: "onay işareti", en: "check mark" },
     ],
     minutes: 6,
     text:

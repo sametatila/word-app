@@ -10,7 +10,7 @@
  { "tr": "Yağ değişimi yapıldı mı acaba?", "kind": "turn", "en": "Has the oil change actually been done?" },
  { "tr": "Yeni bilet almam gerekiyor mu?", "kind": "turn", "en": "Do I have to buy a new ticket?" },
  { "tr": "Yolda bir arıza bildiriyorsun.", "kind": "speaking.situation", "en": "You are reporting a breakdown on the road." },
- { "tr": "Yorum fiyat artışını neye bağlıyor?", "kind": "question", "en": "What does the commentary attribute the rise in prices to?" },
+ { "tr": "Yorum fiyat artışını neye bağlıyor?", "kind": "question", "en": "What does the commentary attribute the increase in prices to?" },
  { "tr": "Yorum sonunda ne talep ediyor?", "kind": "question", "en": "What does the commentary demand at the end?" },
  { "tr": "Yöntem nerede henüz denenmedi?", "kind": "question", "en": "Where has the method not yet been tried?" },
  { "tr": "„der Verein, in dem ich spiele“", "kind": "focus", "en": "“der Verein, in dem ich spiele”" },

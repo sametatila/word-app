@@ -42,7 +42,7 @@ export const b2U12: SkillExercise[] = [
       { de: "das Nutzerkonto", tr: "kullanıcı hesabı", en: "user account" },
       { de: "der Zugriff", tr: "erişim", en: "access" },
       { de: "verschlüsseln", tr: "şifrelemek", en: "to encrypt" },
-      { de: "unbefugt", tr: "yetkisiz", en: "unauthorised" },
+      { de: "unbefugt", tr: "yetkisiz", en: "unauthorized" },
       { de: "sich anmelden", tr: "oturum açmak", en: "to register" },
       { de: "protokollieren", tr: "kayda geçirmek", en: "to log" },
       { de: "ebenfalls", tr: "aynı şekilde", en: "likewise" },

@@ -206,7 +206,7 @@ export const deB2P12: SkillExercise[] = [
     genre: "email",
     intro: "Eski bir dolabı onartmak istiyorsun: önce iki cümle kur, sonra bir atölyeye açık ve ayrıntılı bir bilgi talebi yaz.",
     gloss: [
-      { de: "der Schrank", tr: "dolap", en: "cupboard" },
+      { de: "der Schrank", tr: "dolap", en: "cabinet" },
       { de: "der Zustand", tr: "durum", en: "condition" },
       { de: "ersetzen", tr: "yenisiyle değiştirmek", en: "to replace" },
       { de: "abholen", tr: "gidip almak", en: "to pick up" },

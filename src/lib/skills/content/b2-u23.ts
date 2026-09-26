@@ -277,7 +277,7 @@ export const b2U23: SkillExercise[] = [
       { de: "sich auseinandersetzen", tr: "kafa yormak", en: "to grapple with" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "unbequem", tr: "rahatsız", en: "uncomfortable" },
-      { de: "hinterher", tr: "sonradan", en: "afterwards" },
+      { de: "hinterher", tr: "sonradan", en: "afterward" },
     ],
     minutes: 5,
     segments: [

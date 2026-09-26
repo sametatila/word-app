@@ -86,7 +86,7 @@
  {
   "conversation": "de-b2-soll-angeblich",
   "sceneEn": "A rumor is going around at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumor.",
-  "partnerEn": "a colleague eager to spread the rumor straight away",
+  "partnerEn": "a colleague eager to spread the rumor right away",
   "openingEn": "Have you heard? The department is supposedly going to be closed. Do you know anything more definite?",
   "goalEn": "What was heard, what is known and what is guessed have been separated and it has been settled how to deal with the rumor."
  },
@@ -101,7 +101,7 @@
   "conversation": "de-b2-leserbrief",
   "sceneEn": "You are responding to a piece in a newspaper and talking to its author. Say where you agree, give the grounds for your objection and leave a concrete suggestion at the end.",
   "partnerEn": "an author who defends the piece but is open to a good argument",
-  "openingEn": "You've read my piece and you want to disagree — go ahead. Where shall we start?",
+  "openingEn": "You've read my piece and you want to disagree — go ahead. Where should we start?",
   "goalEn": "The point of agreement and the objection have been given separately, the objection has been justified and a concrete suggestion has been left."
  },
  {

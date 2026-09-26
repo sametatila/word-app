@@ -25,7 +25,7 @@ export const deA2P16: SkillExercise[] = [
     genre: "profile",
     intro: "Okul bülteninde bir portre: emekli bir kadın her hafta ilkokulda çocuklarla kitap okuyor.",
     gloss: [
-      { de: "die Grundschule", tr: "ilkokul", en: "primary school" },
+      { de: "die Grundschule", tr: "ilkokul", en: "elementary school" },
       { de: "vorlesen", tr: "yüksek sesle okumak", en: "to read aloud" },
       { de: "die Silbe", tr: "hece", en: "syllable" },
       { de: "klatschen", tr: "alkışlamak", en: "to clap" },

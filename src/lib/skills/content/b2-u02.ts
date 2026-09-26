@@ -43,7 +43,7 @@ export const b2U02: SkillExercise[] = [
       { de: "nachdrücklich", tr: "ısrarla", en: "emphatically" },
       { de: "überzeugend", tr: "ikna edici", en: "convincing" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "hinterher", tr: "sonradan", en: "afterwards" },
+      { de: "hinterher", tr: "sonradan", en: "afterward" },
       { de: "am Thema vorbeireden", tr: "konunun dışına çıkmak", en: "to miss the point" },
       { de: "einzige", tr: "tek", en: "only" },
       { de: "klingen", tr: "kulağa gelmek", en: "to sound" },

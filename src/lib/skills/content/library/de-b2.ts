@@ -213,7 +213,7 @@ export const deB2: SkillExercise[] = [
     genre: "formal",
     intro: "Önce iki cümle kur, sonra bir kurum kararına gerekçeli ve nazik bir itiraz yaz.",
     gloss: [
-      { de: "die Öffnungszeit", tr: "çalışma saati", en: "opening hours" },
+      { de: "die Öffnungszeit", tr: "çalışma saati", en: "business hours" },
       { de: "die Einschränkung", tr: "kısıtlama", en: "restriction" },
       { de: "nachvollziehen", tr: "anlamak", en: "to comprehend" },
       { de: "der Vorschlag", tr: "öneri", en: "proposal" },

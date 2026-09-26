@@ -22,7 +22,7 @@ export const deB2P17: SkillExercise[] = [
     genre: "blog",
     intro: "Bir blog yazısı: yazar bir hafta boyunca navigasyon kullanmadan şehrinde dolaşıyor ve ne kaybedip ne kazandığını anlatıyor.",
     gloss: [
-      { de: "das Navi", tr: "navigasyon", en: "satnav" },
+      { de: "das Navi", tr: "navigasyon", en: "GPS" },
       { de: "merken", tr: "aklında tutmak", en: "to memorize" },
       { de: "die Kreuzung", tr: "kavşak", en: "intersection" },
       { de: "zugeben", tr: "itiraf etmek", en: "to admit" },

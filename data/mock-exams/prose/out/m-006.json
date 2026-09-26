@@ -31,7 +31,7 @@
  { "tr": "iki seçeneği ölçütler üzerinden karşılaştırmak ve koşullu bir orta yol önermek", "kind": "exchange.expect", "en": "comparing the two options against criteria and proposing a conditional middle way" },
  { "tr": "anlamadığını söyleyip tekrar ya da açıklama istemek (Können Sie das bitte wiederholen)", "kind": "exchange.expect", "en": "saying that you did not understand and asking for a repeat or an explanation (Können Sie das bitte wiederholen)" },
  { "tr": "hesap istemek için kibar bir kalıp kullanmak (Die Rechnung, bitte / Können wir zahlen)", "kind": "exchange.expect", "en": "using a polite phrase to ask for the check (Die Rechnung, bitte / Können wir zahlen)" },
- { "tr": "bir itirazı kabul edip önlemi yeniden tasarlamak (biçimsel yerine getirmeye karşı ölçüt önermek)", "kind": "exchange.expect", "en": "accepting an objection and redesigning the measure (proposing a criterion against merely ticking the box)" },
+ { "tr": "bir itirazı kabul edip önlemi yeniden tasarlamak (biçimsel yerine getirmeye karşı ölçüt önermek)", "kind": "exchange.expect", "en": "accepting an objection and redesigning the measure (proposing a criterion against merely checking the box)" },
  { "tr": "üç seçenekten birini seçmek ve gerekçeyi açık bir ölçüte bağlamak (kapsayıcılık, dayanıklılık, maliyet)", "kind": "exchange.expect", "en": "choosing one of three options and tying the reason to a clear criterion (inclusiveness, durability, cost)" },
  { "tr": "Varılan anlaşmayı kısa ve eksiksiz özetle.", "kind": "exchange.hint", "en": "Sum the agreement up briefly and completely." },
  { "tr": "Bir önceliklendirme yap ve neyi neden elediğini söyle.", "kind": "exchange.hint", "en": "Set priorities and say what you are dropping and why." },

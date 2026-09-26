@@ -15,7 +15,7 @@
  { "conversation": "de-b1-zukunftsangst", "de": "Was ist, wenn …?", "en": "turns a worry into a question" },
  { "conversation": "de-b1-zukunftsangst", "de": "Selbst wenn …, …", "en": "covers even the worst case" },
  { "conversation": "de-b1-freundschaft-pflegen", "de": "Nachdem wir uns verloren hatten, …", "en": "the earlier event goes one step back" },
- { "conversation": "de-b1-freundschaft-pflegen", "de": "Wir haben uns wiedergefunden.", "en": "describes what happened afterwards" },
+ { "conversation": "de-b1-freundschaft-pflegen", "de": "Wir haben uns wiedergefunden.", "en": "describes what happened afterward" },
  { "conversation": "de-b1-liebeserklaerung", "de": "Ich würde gern mehr …", "en": "puts the wish gently" },
  { "conversation": "de-b1-liebeserklaerung", "de": "Wie wäre es, wenn wir …?", "en": "turns a suggestion into a question" },
  { "conversation": "de-b1-konflikt-loesen", "de": "Ich sage das, damit …", "en": "explains the purpose" },

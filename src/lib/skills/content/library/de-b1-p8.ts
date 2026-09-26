@@ -113,7 +113,7 @@ export const deB1P8: SkillExercise[] = [
     gloss: [
       { de: "die Kernzeit", tr: "ortak çalışma saati", en: "core hours" },
       { de: "die Absprache", tr: "mutabakat", en: "agreement" },
-      { de: "die Kita", tr: "kreş", en: "day nursery" },
+      { de: "die Kita", tr: "kreş", en: "daycare center" },
       { de: "einverstanden", tr: "hemfikir", en: "in agreement" },
       { de: "der Kompromiss", tr: "uzlaşma", en: "compromise" },
       { de: "protokollieren", tr: "tutanağa geçirmek", en: "to minute" },

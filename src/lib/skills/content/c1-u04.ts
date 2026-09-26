@@ -133,7 +133,7 @@ export const c1U04: SkillExercise[] = [
       { de: "der Anhaltspunkt", tr: "ipucu / dayanak", en: "indication" },
       { de: "zweifellos", tr: "kuşkusuz", en: "undoubtedly" },
       { de: "die Wahrscheinlichkeit", tr: "olasılık", en: "probability" },
-      { de: "die Skepsis", tr: "kuşku", en: "scepticism" },
+      { de: "die Skepsis", tr: "kuşku", en: "skepticism" },
       { de: "vermeintlich", tr: "sözde / güya", en: "supposed" },
       { de: "kaum", tr: "neredeyse hiç", en: "hardly" },
       { de: "mehrere", tr: "birden fazla", en: "several" },

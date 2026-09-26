@@ -101,7 +101,7 @@
   "conversation": "de-a1-fotos",
   "sceneEn": "You are showing a friend your family photo album. Say who the people in the photos are and answer your friend's questions.",
   "partnerEn": "a curious friend who asks about every single face",
-  "openingEn": "Lovely photo! Who's that next to you?",
+  "openingEn": "Great photo! Who's that next to you?",
   "goalEn": "Everyone in the photos has been introduced and your friend has worked out who is who."
  },
  {

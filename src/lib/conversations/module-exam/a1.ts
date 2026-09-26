@@ -581,7 +581,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 35,
       phrases: [
-        { de: "Gehen wir …?", tr: "… gidelim mi?", en: "Shall we go …?" },
+        { de: "Gehen wir …?", tr: "… gidelim mi?", en: "Should we go …?" },
         { de: "Es beginnt um … Uhr.", tr: "Saat …'de başlıyor.", en: "It starts at … o'clock." },
         { de: "Wir können …", tr: "… yapabiliriz", en: "We can …" },
         { de: "Hast du am … Zeit?", tr: "… günü vaktin var mı?", en: "Do you have time on …?" },
@@ -658,7 +658,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Ich kann heute leider nicht kommen.", tr: "Bugün maalesef gelemiyorum.", en: "Unfortunately I can't come today." },
         { de: "Ich habe Fieber.", tr: "Ateşim var.", en: "I have a fever." },
         { de: "Ich muss zum Arzt gehen.", tr: "Doktora gitmem gerekiyor.", en: "I have to go to the doctor." },
-        { de: "Ich rufe Sie danach an.", tr: "Sonra sizi ararım.", en: "I will call you afterwards." },
+        { de: "Ich rufe Sie danach an.", tr: "Sonra sizi ararım.", en: "I will call you afterward." },
       ],
       sample:
         "Sehr geehrte Frau Klein,\n\nich bin krank und kann heute leider nicht kommen. Ich habe Fieber und Halsschmerzen. Ich muss zum Arzt gehen und im Bett bleiben. Ich denke, ich bin zwei oder drei Tage nicht im Büro. Ich rufe Sie heute Nachmittag an.\n\nVielen Dank und freundliche Grüße\nAli Kaya",

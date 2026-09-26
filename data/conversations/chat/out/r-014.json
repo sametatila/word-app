@@ -30,7 +30,7 @@
  {
   "conversation": "de-b1-reise-erzaehlen",
   "sceneEn": "You are back from a long journey. You are telling a friend about the day that stayed with you most: what happened, and what had happened before it.",
-  "partnerEn": "a friend who listens without interrupting and asks for detail afterwards",
+  "partnerEn": "a friend who listens without interrupting and asks for detail afterward",
   "openingEn": "Back at last! Tell me — which day stayed with you most?",
   "goalEn": "One day has been told with two layers of the past and your friend's question has been answered."
  },

@@ -211,7 +211,7 @@ export const deC1P8: SkillExercise[] = [
       { de: "die Nachfolgerin", tr: "halef", en: "successor" },
       { de: "die Übergabe", tr: "devir", en: "handover" },
       { de: "die Eigenart", tr: "kendine özgü yan", en: "peculiarity" },
-      { de: "bevormunden", tr: "vesayet altına almak", en: "to patronise" },
+      { de: "bevormunden", tr: "vesayet altına almak", en: "to patronize" },
       { de: "die Zurückhaltung", tr: "çekingenlik", en: "restraint" },
     ],
     minutes: 16,

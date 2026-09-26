@@ -80,14 +80,14 @@
   "conversation": "de-a1-zimmer",
   "sceneEn": "A friend has come to your home for the first time and you are showing them around. Point out the rooms one by one and give each name with the right article.",
   "partnerEn": "a curious friend who likes everything",
-  "openingEn": "Wow, it's lovely here! What sort of room is this?",
+  "openingEn": "Wow, it's beautiful here! What sort of room is this?",
   "goalEn": "All the rooms have been shown and your friend has understood the layout of the apartment."
  },
  {
   "conversation": "de-a1-moebel",
   "sceneEn": "A friend is arranging the furniture in their new apartment and asking for your opinion. Say where each piece should go, and choose the right position verbs.",
   "partnerEn": "an indecisive but entertaining friend",
-  "openingEn": "Tell me, where shall I put the sofa? In the corner?",
+  "openingEn": "Tell me, where should I put the sofa? In the corner?",
   "goalEn": "It has been settled where every piece of furniture is going."
  },
  {
@@ -122,7 +122,7 @@
   "conversation": "de-a1-umzug",
   "sceneEn": "It is moving day and a friend has come to help. Say what you are carrying where, ask them for help, and warn them about the heavy things.",
   "partnerEn": "a friend who rushes in to help but is a bit hasty",
-  "openingEn": "Right, I'm here! What shall I carry first?",
+  "openingEn": "Right, I'm here! What should I carry first?",
   "goalEn": "It has been settled what goes where and help has been arranged for the heavy things."
  },
  {
@@ -155,10 +155,10 @@
  },
  {
   "conversation": "de-a1-sport",
-  "sceneEn": "You have come to look around a gym and the person at the desk is asking questions. Say what sports you play and how often, and ask about the gym's opening hours.",
+  "sceneEn": "You have come to look around a gym and the person at the desk is asking questions. Say what sports you play and how often, and ask about the gym's hours.",
   "partnerEn": "a gym adviser who is trying to sell a membership but is sincere",
   "openingEn": "Welcome! Do you play any sports regularly at the moment?",
-  "goalEn": "What sports you play has been discussed and the opening hours and the membership have been made clear."
+  "goalEn": "What sports you play has been discussed and the hours and the membership have been made clear."
  },
  {
   "conversation": "de-a1-musik",

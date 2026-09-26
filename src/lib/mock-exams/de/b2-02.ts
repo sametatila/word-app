@@ -331,7 +331,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               gloss: [
                 { de: "beziffert", tr: "sayıya dökülmüş", en: "quantified" },
                 { de: "die Spannbreite", tr: "aralık", en: "range" },
-                { de: "abhaken", tr: "listeden düşmek, tamamlandı diye işaretlemek", en: "to tick off" },
+                { de: "abhaken", tr: "listeden düşmek, tamamlandı diye işaretlemek", en: "to check off" },
                 { de: "der Anhaltspunkt", tr: "yol gösterici işaret", en: "point of reference" },
               ],
             },
@@ -571,7 +571,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               gloss: [
                 { de: "die Einwilligung", tr: "onam, rıza", en: "consent" },
                 { de: "die Aufwandsentschädigung", tr: "emek karşılığı ödeme", en: "expense allowance" },
-                { de: "pseudonymisiert", tr: "takma adlandırılmış", en: "pseudonymised" },
+                { de: "pseudonymisiert", tr: "takma adlandırılmış", en: "pseudonymized" },
                 { de: "entgegenstehen", tr: "engel oluşturmak", en: "to preclude" },
               ],
             },

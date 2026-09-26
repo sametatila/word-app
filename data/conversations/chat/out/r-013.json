@@ -10,7 +10,7 @@
   "conversation": "de-b1-im-gasthaus",
   "sceneEn": "You have come to an inn with a friend. You are being seated, talking to the waiter and ordering, and asking for the check at the end.",
   "partnerEn": "a polite waiter who is rushed off their feet",
-  "openingEn": "Good evening! Have you booked, or shall I show you to a table?",
+  "openingEn": "Good evening! Do you have a reservation, or should I show you to a table?",
   "goalEn": "You have been seated, food and drink have been ordered, the check has been asked for and the tip has come up."
  },
  {
@@ -24,7 +24,7 @@
   "conversation": "de-b1-zum-essen-eingeladen",
   "sceneEn": "You are invited to dinner at a friend's home. First you ask what to bring, then at the table you praise the food and ask for a recipe.",
   "partnerEn": "a hospitable host who is proud of their table",
-  "openingEn": "Lovely that you're here! Do sit down — how do you find the food?",
+  "openingEn": "So glad you're here! Have a seat — how do you like the food?",
   "goalEn": "What to bring has been discussed, the table has been praised and a recipe has been asked for."
  },
  {

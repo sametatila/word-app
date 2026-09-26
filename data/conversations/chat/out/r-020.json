@@ -87,7 +87,7 @@
   "conversation": "de-c1-buerojargon",
   "sceneEn": "You are talking to a colleague after a meeting: work out together what the jargon in the meeting actually meant, make clear who has taken on what and settle the next step.",
   "partnerEn": "a colleague fluent in the jargon but open to making things clear",
-  "openingEn": "'We'll take that offline and align on it afterwards' — honestly, do you know who's doing what now?",
+  "openingEn": "'We'll take that offline and align on it afterward' — honestly, do you know who's doing what now?",
   "goalEn": "The real meaning behind the jargon has been worked out, who has taken on what has been made clear and the next step has been tied to a date."
  },
  {
@@ -101,7 +101,7 @@
   "conversation": "de-c1-konfliktmoderation",
   "sceneEn": "You are mediating between two colleagues. Report what each side has said impartially, find the common ground, make a suggestion and bring them to a step both will accept.",
   "partnerEn": "a colleague certain they are in the right and unwilling to hear the other side",
-  "openingEn": "Let me say straight away: I have done nothing wrong. What has the other side claimed, then?",
+  "openingEn": "Let me say right away: I have done nothing wrong. What has the other side claimed, then?",
   "goalEn": "Both sides' views have been reported impartially, common ground has been found and a step both accept has been agreed on."
  },
  {

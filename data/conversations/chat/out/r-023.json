@@ -108,7 +108,7 @@
   "conversation": "de-c1-duzen-siezen-c1",
   "sceneEn": "You are in a new working environment and someone offers to move to first-name terms. Respond to the offer, ask what the custom is there, state your own preference politely and leave the relationship easy.",
   "partnerEn": "a colleague who wants an informal atmosphere and takes the offer as natural",
-  "openingEn": "We don't really use Sie here. Shall we stick with du?",
+  "openingEn": "We don't really use Sie here. Should we stick with du?",
   "goalEn": "The offer has been answered, the custom of the place has been found out and your own preference has been given politely."
  },
  {
@@ -122,7 +122,7 @@
   "conversation": "de-c1-peinlichkeiten",
   "sceneEn": "You said the wrong thing at a party and the room went cold. Accept the gaffe, apologize without trying to save yourself, close the subject and start the conversation again.",
   "partnerEn": "a host who noticed the gaffe and is trying to smooth it over",
-  "openingEn": "No drama — but that was a bit unfortunate just now. Shall we simply put it behind us?",
+  "openingEn": "No drama — but that was a bit unfortunate just now. Should we simply put it behind us?",
   "goalEn": "The gaffe has been accepted, an apology has been made without getting defensive and the conversation has been started again."
  },
  {

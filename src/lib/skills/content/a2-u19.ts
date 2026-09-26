@@ -371,7 +371,7 @@ export const a2U19: SkillExercise[] = [
         phrases: [
           { de: "Ich kann leider nicht kommen, weil …", tr: "maalesef gelemiyorum, çünkü …", en: "unfortunately I can't come because …" },
           { de: "Ich bedauere das sehr.", tr: "buna çok üzülüyorum", en: "I really regret it" },
-          { de: "Können wir es noch mal versuchen?", tr: "bir daha deneyelim mi", en: "shall we try again" },
+          { de: "Können wir es noch mal versuchen?", tr: "bir daha deneyelim mi", en: "can we try again" },
         ],
         sample:
           "Liebe Marie,\n\n" +

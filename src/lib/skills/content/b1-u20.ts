@@ -38,7 +38,7 @@ export const b1U20: SkillExercise[] = [
       { de: "einsam", tr: "yalnız", en: "lonely" },
       { de: "der Druck", tr: "baskı", en: "pressure" },
       { de: "die Krise", tr: "kriz", en: "crisis" },
-      { de: "die Beratung", tr: "danışmanlık", en: "counselling" },
+      { de: "die Beratung", tr: "danışmanlık", en: "counseling" },
       { de: "die Therapie", tr: "terapi", en: "therapy" },
       { de: "vorkommen", tr: "olmak", en: "to occur" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },

@@ -100,7 +100,7 @@
  {
   "conversation": "de-b1-fake-news",
   "sceneEn": "An acquaintance is telling you a surprising piece of news. Question the claim: find out where it came from, who said it and whether it has been confirmed, with indirect questions.",
-  "partnerEn": "an excitable acquaintance who believes what they hear straight away",
+  "partnerEn": "an excitable acquaintance who believes what they hear right away",
   "openingEn": "Have you read this? From next year it's supposedly going to be banned completely. Did you know that?",
   "goalEn": "The source of the claim has been questioned and it has been made clear whether it has been confirmed."
  },

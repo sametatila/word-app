@@ -186,7 +186,7 @@ export const DE_A2_W02: QuizWeek = {
         en: {
           options: ["ich bin krank", "ich krank bin", "bin ich krank", "krank ich bin"],
           answer: 1,
-          why: "İngilizcede `because I am ill` sırası ana cümleyle aynıdır. Almancada `weil` çekimli fiili cümlenin sonuna iter: `weil ich krank bin`.",
+          why: "İngilizcede `because I am sick` sırası ana cümleyle aynıdır. Almancada `weil` çekimli fiili cümlenin sonuna iter: `weil ich krank bin`.",
         },
       },
     },

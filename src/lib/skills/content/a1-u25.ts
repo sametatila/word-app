@@ -46,7 +46,7 @@ export const a1U25: SkillExercise[] = [
     gloss: [
       { de: "der Frühling", tr: "ilkbahar", en: "spring" },
       { de: "der Herbst", tr: "sonbahar", en: "autumn" },
-      { de: "gemütlich", tr: "huzurlu", en: "cosy" },
+      { de: "gemütlich", tr: "huzurlu", en: "cozy" },
       { de: "früher", tr: "eskiden", en: "in the past" },
     ],
     minutes: 3,

@@ -93,7 +93,7 @@ export const a1U03: SkillExercise[] = [
       { de: "die Postleitzahl", tr: "posta kodu", en: "postal code" },
       { de: "der Familienstand", tr: "medeni hâl", en: "marital status" },
       { de: "unterschreiben", tr: "imzalamak", en: "to sign" },
-      { de: "ankreuzen", tr: "işaretlemek", en: "to tick" },
+      { de: "ankreuzen", tr: "işaretlemek", en: "to check" },
       { de: "verheiratet", tr: "evli", en: "married" },
       { de: "die Unterschrift", tr: "imza", en: "signature" },
     ],

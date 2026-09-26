@@ -94,7 +94,7 @@ export const a2U01: SkillExercise[] = [
       { de: "ansehen", tr: "izlemek", en: "to watch" },
       { de: "spannend", tr: "sürükleyici", en: "exciting" },
       { de: "vorher", tr: "önceden", en: "beforehand" },
-      { de: "anschließend", tr: "ardından", en: "afterwards" },
+      { de: "anschließend", tr: "ardından", en: "afterward" },
       { de: "einschlafen", tr: "uykuya dalmak", en: "to fall asleep" },
       { de: "zuletzt", tr: "en son", en: "last of all" },
       { de: "abends", tr: "akşamları", en: "in the evenings" },

@@ -617,7 +617,7 @@ Zugelassen ist ein einsprachiges Wörterbuch. Elektronische Geräte sind ausgesc
 Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekanntgabe möglich. Kopien werden nicht ausgegeben; eigene Notizen sind erlaubt.`,
               gloss: [
                 { de: "die Zulassung", tr: "sınava kabul", en: "admission" },
-                { de: "anrechnen", tr: "hesaba katmak, saymak", en: "to count towards" },
+                { de: "anrechnen", tr: "hesaba katmak, saymak", en: "to count toward" },
                 { de: "der Rücktritt", tr: "vazgeçme, çekilme", en: "withdrawal" },
                 { de: "die Einsicht", tr: "sınav kâğıdını görme", en: "inspection" },
               ],

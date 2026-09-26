@@ -64,7 +64,7 @@ Für die Praxis folgt daraus eine unbequeme Empfehlung. Kommunen sollten Umbenen
               gloss: [
                 { de: "die Ablagerung", tr: "birikinti, tortu", en: "sediment, deposit" },
                 { de: "die Beiläufigkeit", tr: "gelişigüzellik, kendiliğindenlik", en: "casualness" },
-                { de: "die Ehrung", tr: "onurlandırma", en: "honouring" },
+                { de: "die Ehrung", tr: "onurlandırma", en: "honoring" },
                 { de: "die Halbwertszeit", tr: "yarılanma ömrü", en: "half-life" },
               ],
             },

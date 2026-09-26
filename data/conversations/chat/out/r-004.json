@@ -3,14 +3,14 @@
   "conversation": "de-a1-wetter-smalltalk",
   "sceneEn": "You have met your neighbor at the entrance to the building. Talk about the weather, say what you are doing today, and ask about their plans too.",
   "partnerEn": "a chatty neighbor who walks the dog every morning",
-  "openingEn": "Good morning! Lovely weather today, isn't it?",
+  "openingEn": "Good morning! Nice weather today, isn't it?",
   "goalEn": "A short conversation about the weather has been had and you have both learned the other's plans for the day."
  },
  {
   "conversation": "de-a1-park",
   "sceneEn": "You have met a friend in the park on a sunny day. Say what there is in the park, talk about where to sit, and decide together what to do.",
   "partnerEn": "a cheerful friend who likes to plan everything",
-  "openingEn": "There you are! Shall we go to the lake or onto the meadow?",
+  "openingEn": "There you are! Should we go to the lake or onto the meadow?",
   "goalEn": "Where you are sitting and what you are doing in the park have been settled."
  },
  {
@@ -128,7 +128,7 @@
  {
   "conversation": "de-a1-einladung",
   "sceneEn": "You are throwing a party and inviting a friend. Invite them, say when it is, and say what you would like them to bring.",
-  "partnerEn": "a friend who loves a party and asks questions straight away",
+  "partnerEn": "a friend who loves a party and asks questions right away",
   "openingEn": "Oh, a party? When is it, then?",
   "goalEn": "Your friend has said they are coming and it has been settled what they are bringing."
  },

@@ -135,7 +135,7 @@ export const c1U25: SkillExercise[] = [
       { de: "langfristig", tr: "uzun vadede", en: "in the long run" },
       { de: "die Vernunft", tr: "akıl / sağduyu", en: "reason" },
       { de: "unantastbar", tr: "dokunulmaz", en: "inviolable" },
-      { de: "hinterher", tr: "sonradan", en: "afterwards" },
+      { de: "hinterher", tr: "sonradan", en: "afterward" },
       { de: "das Niveau", tr: "seviye", en: "level" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "normal", tr: "normal", en: "normal" },
