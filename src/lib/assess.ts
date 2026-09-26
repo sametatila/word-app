@@ -65,6 +65,10 @@ export function assessHash(req: AssessRequest): string {
       // Almanca değerlendirmesi aynı satır değil. Türkçe `undefined` olarak
       // düşüyor (aşağıdaki kural), yani bugüne kadarki önbellek geçerli kalıyor.
       n: req.native === DEFAULT_NATIVE ? undefined : req.native,
+      // İstem sürümü: 2026-09-26'da İngilizce değerlendirme Amerikan biçimine
+      // bağlandı (`EN_VARIETY`); eski İngilizce sonuçlar İngiliz biçimi önerebiliyordu.
+      // Almanca özet değişmiyor.
+      p: req.lang === "en" || req.native === "en" ? 2 : undefined,
     }),
   );
   return h.digest("hex").slice(0, 40);

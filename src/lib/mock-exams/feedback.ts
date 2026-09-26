@@ -3,6 +3,7 @@ import { completeChat, chatConfigured, type CallReport } from "@/lib/chat-provid
 import type { MockScore } from "./scoring";
 import type { MockCourse } from "./types";
 import { translate, formatPercent, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { EN_VARIETY, EN_FEEDBACK } from "@/lib/assess-prompts";
 
 /**
  * Deneme sınavından sonra yapılacaklar listesi.
@@ -243,7 +244,9 @@ export async function mockFeedback(
     `Yanlış maddeler:\n${wrongDigest(score, explains)}`;
 
   try {
-    const raw = await completeChat(SYSTEM(dil, cevapDili), [{ role: "user", content: user }], 900, report);
+    // İngilizce kurs ve İngilizce geri bildirim Amerikan (bkz. `EN_VARIETY`).
+    const system = SYSTEM(dil, cevapDili) + (course === "en" ? "\n" + EN_VARIETY : "") + (lang === "en" ? "\n" + EN_FEEDBACK : "");
+    const raw = await completeChat(system, [{ role: "user", content: user }], 900, report);
     return parse(raw) ?? rulesFeedback(score, course);
   } catch {
     // Sağlayıcı hatası öğrencinin sonucunu görmesini engellememeli.

@@ -74,7 +74,10 @@ function targetLang(course: string | undefined): { name: string; dialect: string
   if (course === "en") {
     return {
       name: "İngilizce",
-      dialect: "Standart İngilizce konuşuyorsun.",
+      // Kurs baştan sona Amerikan İngilizcesi (Samet, 2026-09-25): içerik, kelime
+      // havuzu ve ses en-US. İngiliz biçimi yanlış değil, yalnız bizim biçimimiz değil.
+      dialect:
+        "Amerikan İngilizcesi konuşuyorsun: yazım ve sözcük seçimi Amerikan (apartment, vacation, elevator, color, center). Öğrenci İngiliz biçimi kullanırsa (flat, holiday, colour) bunu hata sayma ve düzeltme; konuşmayı sürdür.",
       chars: "",
     };
   }

@@ -157,6 +157,17 @@ const KIND_BRIEF: Record<AssessKind, string> = {
 /** Geri bildirimin yazılacağı dilin adı — istemin kendi dili (Türkçe) içinde. */
 const FEEDBACK_LANG: Record<NativeLang, string> = { tr: "Türkçe", en: "İngilizce", de: "Almanca" };
 
+/**
+ * İngilizce kurs Amerikan İngilizcesi öğretiyor (Samet, 2026-09-25): düzeltme ve
+ * örnekler Amerikan biçiminde olmalı, ama öğrencinin İngiliz biçimi yanlış değil.
+ * Model bunu söylenmeden bilmiyor; "colour"u düzeltip "flat" önerebiliyordu.
+ */
+export const EN_VARIETY =
+  "İNGİLİZCE BİÇİMİ: Düzeltmelerde ve örnek cümlelerde Amerikan İngilizcesi kullan (yazım ve sözcük: color, center, apartment, vacation). Öğrencinin İngiliz yazımı ya da sözcüğü (colour, centre, flat, holiday) HATA DEĞİLDİR: puan düşürme, düzeltme önerme.\n";
+
+/** Geri bildirim İngilizce yazılıyorsa (anadili İngilizce olan kullanıcı) o da Amerikan. */
+export const EN_FEEDBACK = "İngilizce yazdığın her açıklama Amerikan yazımı ve sözcüğüyle olsun.\n";
+
 export function assessSystemPrompt(
   kind: AssessKind,
   level: AssessLevel,
@@ -169,7 +180,7 @@ export function assessSystemPrompt(
   return `Sen ${dil} öğrenen öğrencilerin yazılı ve sözlü üretimini değerlendiren deneyimli bir ${dil} öğretmenisin. Öğrencinin seviyesi CEFR ${level} ve ana dili ${anadil}.
 
 GERİ BİLDİRİM DİLİ: ${anadil}. "why_tr", "praise_tr" ve "next_tip_tr" alanlarını YALNIZ ${anadil} yaz; alan adlarındaki "_tr" eki tarihseldir, dili belirtmez. Alıntıladığın ${dil} sözcük ve cümleler kendi dilinde kalır.
-
+${lang === "en" ? EN_VARIETY : ""}${native === "en" ? EN_FEEDBACK : ""}
 ${KIND_BRIEF[kind]}
 
 GÜVENLİK SINIRLARI — her koşulda
