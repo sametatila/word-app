@@ -634,7 +634,7 @@ export function sttProviders(mode: SttMode = "default"): SttProvider[] {
       walk; ekranlı yollara girmez) ve deneme olarak ÖNE alınır.
 
       Sıra: Azure (deneme) → Deepgram (başı-kesik seste uydurmaz, boş döner —
-      ölçüldü, güvenli yedek) → Whisper tabanlılar (Groq/Cloudflare/Mistral;
+      ölçüldü, güvenli yedek) → Whisper tabanlılar (Groq/Cloudflare;
       uydurma eğilimi: "der Großvater" → "Wolfsfatter"). STT_ORDER ile ezilebilir.
     */
     const azKey = process.env.AZURE_SPEECH_KEY;

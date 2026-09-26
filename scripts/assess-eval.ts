@@ -6,7 +6,7 @@
  *   npm run test:assess -- --json                                 (ham çıktıyı da bas)
  *   npm run test:assess -- --only a2-w-mixed                     (tek örnek)
  *
- * 20 örnek cevap (A1–B2, doğru/yanlış/karışık, dört tür). Her örnekte insan
+ * 26 örnek cevap (A1–B2, doğru/yanlış/karışık, dört tür). Her örnekte insan
  * değerlendirmesi (rubrik puanları ve beklenen hata tipleri) önceden yazılı;
  * betik modelin puanını bununla karşılaştırır: alt puan farkı ±1 içinde mi,
  * beklenen hata tipleri yakalandı mı, hata span'leri metinde doğru yeri

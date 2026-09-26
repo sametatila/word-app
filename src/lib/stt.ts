@@ -7,7 +7,8 @@ import { recordAiUsage } from "@/lib/ai-usage";
  *
  * `/api/stt` (yürüyüş modu, tek kelime) ve `/api/pronounce` (telaffuz puanı,
  * kelime zaman damgalı) aynı sağlayıcı zincirini kullanır: Groq → Cloudflare
- * Workers AI → Speechmatics → Deepgram → Mistral. Sıra kota ölçümünden
+ * Workers AI → Speechmatics → Deepgram (Mistral 2026-09-25'te çıktı, denetim G5;
+ * yürüyüş kipinde Azure öne geçer, `chat-providers`). Sıra kota ölçümünden
  * (`docs/plan/stt-capacity.md`): Groq'un darboğazı dakikada 20 istek, o
  * yüzden 429'da hemen bir sonrakine geçilir; Cloudflare günlük süreyle
  * sınırlı ama dakika sınırı yok — tepe dakikanın ikinci hattı.
