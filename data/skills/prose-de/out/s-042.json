@@ -212,7 +212,7 @@
  {
   "tr": "yol",
   "kind": "gloss.tr",
-  "de": "Weg"
+  "de": "Straße"
  },
  {
   "tr": "başına",
@@ -278,6 +278,11 @@
   "tr": "konum",
   "kind": "gloss.tr",
   "de": "Position"
+ },
+ {
+  "tr": "tutum",
+  "kind": "gloss.tr",
+  "de": "Standpunkt"
  },
  {
   "tr": "ortaç",
@@ -382,7 +387,7 @@
  {
   "tr": "kaçamak",
   "kind": "gloss.tr",
-  "de": "ausweichend"
+  "de": "Ausflucht"
  },
  {
   "tr": "karışık",
@@ -412,7 +417,7 @@
  {
   "tr": "aktarmak",
   "kind": "gloss.tr",
-  "de": "zitieren"
+  "de": "weitergeben"
  },
  {
   "tr": "ayın onu",
@@ -632,7 +637,7 @@
  {
   "tr": "merak etmek",
   "kind": "gloss.tr",
-  "de": "sich wundern"
+  "de": "sich fragen"
  },
  {
   "tr": "sağ kalıyor",

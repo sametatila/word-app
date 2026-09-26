@@ -210,11 +210,11 @@ export const b2U17: SkillExercise[] = [
       { de: "eindeutig", tr: "net", en: "unambiguous" },
       { de: "also", tr: "yani", en: "so" },
       { de: "offen", tr: "açık", en: "open" },
-      { de: "umso", tr: "o kadar", en: "the more" },
+      { de: "umso", tr: "daha da", en: "all the" },
     ],
     minutes: 5,
     segments: [
-      { speaker: "Cem", text: "Warst du gestern da? Der gefeierte Sieger stand am Ende ganz woanders, als alle dachten." },
+      { speaker: "Cem", text: "Warst du gestern da? Der gefeierte Sieger war am Ende ein ganz anderer, als alle dachten." },
       { speaker: "Ruth", text: "Ich war da. Bis zur achtzigsten Minute sah es nach einer klaren Niederlage aus." },
       { speaker: "Cem", text: "Und dann dieser eine Moment." },
       { speaker: "Ruth", text: "Der Schiedsrichter hat richtig entschieden, das sage ich als Anhängerin der anderen Seite." },
@@ -265,7 +265,7 @@ export const b2U17: SkillExercise[] = [
         explain: "„Gegen die Mannschaft, die sie im Hinspiel deutlich besiegt hat. Das wird schwer.“",
       },
       {
-        text: "Die Meisterschaft ist rechnerisch schon entschieden.",
+        text: "Die Mannschaft muss nächste Woche nicht mehr gewinnen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Rechnerisch ja. Sie müssen aber im Turnier nächste Woche mindestens einmal gewinnen.“",
@@ -286,8 +286,8 @@ export const b2U17: SkillExercise[] = [
       { de: "der Brauch", tr: "görenek", en: "custom" },
       { de: "die Tracht", tr: "yöresel kıyafet", en: "traditional dress" },
       { de: "die Hochsaison", tr: "yüksek sezon", en: "peak season" },
-      { de: "die Tribüne", tr: "tribün", en: "stand" },
-      { de: "der Andrang", tr: "izdiham", en: "crush" },
+      { de: "die Tribüne", tr: "tribün", en: "grandstand" },
+      { de: "der Andrang", tr: "izdiham", en: "crowds" },
       { de: "ausgebucht", tr: "tamamen dolu", en: "fully booked" },
       { de: "durchhalten", tr: "dayanmak", en: "to hold out" },
       { de: "interessant", tr: "ilginç", en: "interesting" },
@@ -355,7 +355,7 @@ export const b2U17: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 17,
-    title: "Anı kur",
+    title: "Den Moment fassen",
     genre: "build",
     intro: "indem etkiyi, ortaç sıfatı anı, adlaştırma ise hâli tek öbeğe sığdırır.",
     gloss: [
@@ -363,8 +363,7 @@ export const b2U17: SkillExercise[] = [
       { de: "besiegen", tr: "yenmek", en: "to defeat" },
       { de: "abreißen", tr: "yıkmak", en: "to demolish" },
       { de: "der Andrang", tr: "izdiham", en: "crush" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
-      { de: "sich orientieren an", tr: "örnek almak", en: "to model oneself on" },
+      { de: "sich orientieren an", tr: "kendini -e göre ayarlamak", en: "to go by" },
     ],
     minutes: 9,
     tasks: [
@@ -382,7 +381,7 @@ export const b2U17: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Cephesindeki alçı korunmak istenen bir bina.",
+        tr: "Alçı süslemeleri korunmak istenen bir bina.",
         answer: "Ein Gebäude, dessen Stuck man erhalten will",
         hint: "Sahip nötr olduğu için dessen; ardından gelen ad artikelsiz.",
       },
@@ -394,7 +393,7 @@ export const b2U17: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Sıfat yığınını yapıyla değiştir: ne olduğunu söyle.",
+        prompt: "Sıfat yığınını yapıyla değiştir: 'Beim Auftritt der Band' ile başla ve kalabalığın havasını tek bir sıfatla anlat.",
         source: "Das Konzert war einfach wunderschön und toll und super.",
         answer: "Beim Auftritt der Band war die Stimmung der Menge unglaublich.",
         alternatives: [
@@ -438,14 +437,14 @@ export const b2U17: SkillExercise[] = [
         phrases: [
           { de: "Beim Auftritt der Band …", tr: "grup sahne alınca …", en: "when the band came on …" },
           { de: "…, indem sie einfach weitergespielt haben", tr: "sadece çalmaya devam ederek", en: "by simply playing on" },
-          { de: "Das ist mir ins Gedächtnis gegangen.", tr: "bu hafızama kazındı", en: "that stayed with me" },
+          { de: "Das ist mir im Gedächtnis geblieben.", tr: "bu aklımda kaldı", en: "that stayed with me" },
         ],
         sample:
           "ZWEI STUNDEN WARTEN\n\n" +
           "Ich war im Juli auf dem Volksfest in Waldkirch, zum ersten Mal. Erwartet hatte ich wenig: laute Musik, teures Essen, viele Menschen.\n\n" +
           "Der Andrang war tatsächlich groß. Auf die Tribüne kam ich erst nach zwei Stunden Warten, und ich hätte fast aufgegeben. Durchgehalten habe ich nur, weil neben mir zwei ältere Frauen standen, die seit vierzig Jahren jedes Jahr kommen und die ganze Zeit erzählt haben.\n\n" +
           "Beim Auftritt der Band hat sich die Stimmung der Menge innerhalb von zwei Minuten gedreht. Es fing an zu regnen, richtig, nicht ein bisschen. Die Band hat darauf reagiert, indem sie einfach weitergespielt hat, ohne ein Wort. Niemand ist gegangen.\n\n" +
-          "Ins Gedächtnis gegangen ist mir aber etwas anderes: der gefeierte Sänger stand am Ende ohne Mikrofon vorn an der Bühne, und die Leute haben für ihn gesungen. Vielleicht dreißig Sekunden.\n\n" +
+          "Im Gedächtnis geblieben ist mir aber etwas anderes: Der gefeierte Sänger stand am Ende ohne Mikrofon vorn an der Bühne, und die Leute haben für ihn gesungen. Vielleicht dreißig Sekunden.\n\n" +
           "Heute glaube ich, dass es nicht am Konzert lag, sondern am Warten davor. Ohne die zwei Stunden hätte meine Wahrnehmung das gar nicht so aufgenommen.",
       },
     ],

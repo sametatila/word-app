@@ -157,7 +157,7 @@
  {
   "tr": "Apartman görevlisine bozuk bir şey için not yaz.",
   "kind": "intro",
-  "en": "Write a note to the caretaker about something that is broken."
+  "en": "Write a note to the building manager about something that is broken."
  },
  {
   "tr": "Artan yemek konuşuluyor. Ne saklanabilir, nasıl?",
@@ -202,7 +202,7 @@
  {
   "tr": "Dil kursu kayıt formunu doldur ve iki cümle kur.",
   "kind": "intro",
-  "en": "Fill in the language course registration form and make two sentences."
+  "en": "Fill out the language course registration form and make two sentences."
  },
  {
   "tr": "Fiil ada dönüşür ve arkasından „in“ edatı gelir.",
@@ -257,7 +257,7 @@
  {
   "tr": "Mağazada indirim konuşması. Hangi fiyat geçerli?",
   "kind": "intro",
-  "en": "A conversation about a discount in a shop. Which price applies?"
+  "en": "A conversation about a discount in a store. Which price applies?"
  },
  {
   "tr": "Menüde „Kakao — 3,00 Euro“. 2,50 kahve, 1,50 su.",
@@ -462,7 +462,7 @@
  {
   "tr": "Bir randevu erteleniyor. Yeni tarih ne, sebep ne?",
   "kind": "intro",
-  "en": "An appointment is put back. What is the new date, and why?"
+  "en": "An appointment is rescheduled. What is the new date, and why?"
  },
  {
   "tr": "Bir seviyenin sonu. Ne başarıldı, ne başarılmadı?",
@@ -470,9 +470,9 @@
   "en": "The end of a level. What has been achieved, and what has not?"
  },
  {
-  "tr": "Bir yılda tökezleyen senaryo işini yapmış oluyor.",
+  "tr": "Belirli bir yılda tökezleyen senaryo işini yapmış oluyor.",
   "kind": "explain",
-  "en": "A scenario that stumbles within a year has done its job."
+  "en": "A scenario that trips over a particular year has done its job."
  },
  {
   "tr": "Biri bir yakını için endişeli. Nasıl konuşulmalı?",
@@ -517,7 +517,7 @@
  {
   "tr": "Gişede bilet alınıyor. Tek yön mü gidiş dönüş mü?",
   "kind": "intro",
-  "en": "Buying a ticket at the counter. Single or return?"
+  "en": "Buying a ticket at the counter. One-way or round trip?"
  },
  {
   "tr": "İki arkadaş konuşuyor. Kim ne yapamıyor ve neden?",
@@ -560,7 +560,7 @@
   "en": "A verb that takes an object forms a -bar adjective: vermeidbar."
  },
  {
-  "tr": "Onbir kişi kabul etmiş ama „Rechne mit fünfzehn.“",
+  "tr": "On bir kişi kabul etmiş ama „Rechne mit fünfzehn.“",
   "kind": "explain",
   "en": "Eleven have said yes, but „Rechne mit fünfzehn.“"
  },
@@ -692,7 +692,7 @@
  {
   "tr": "Eczanede bir müşteri. Ne alıyor, nasıl kullanacak?",
   "kind": "intro",
-  "en": "A customer at the chemist's. What do they buy, how will they use it?"
+  "en": "A customer at the pharmacy. What do they buy, how will they use it?"
  },
  {
   "tr": "Edat zamirin ÖNÜNE geçer: „in dem“ — sona atılmaz.",

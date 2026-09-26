@@ -489,7 +489,7 @@ export const enB2U06: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Haziranda pilot uygulama bitirilmiş olacak.",
+        tr: "Hazirana kadar pilot uygulama bitirilmiş olacak.",
         answer: "By June the pilot will have been finished.",
         hint: "Edilgen ve gelecek bitmiş: will, have, been, üçüncü hâl.",
       },

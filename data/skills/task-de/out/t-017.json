@@ -95,7 +95,7 @@
   "de": "Ist das dein Arm?"
  },
  {
-  "tr": "Ne müzik seversin?",
+  "tr": "Ne tür müzik seversin?",
   "kind": "build.tr",
   "de": "Welche Musik magst du?"
  },
@@ -117,7 +117,7 @@
  {
   "tr": "Hadi yedide buluşalım.",
   "kind": "build.tr",
-  "de": "Lass uns um sieben treffen."
+  "de": "Treffen wir uns um sieben."
  },
  {
   "tr": "Her akşam dizi izliyorum.",
@@ -270,9 +270,9 @@
   "de": "Das Subjekt im Wettersatz ist „it“ und zeigt auf nichts — genau wie das „es“ in „es ist kalt“, und es fällt ebenso wenig weg."
  },
  {
-  "tr": "Olumsuzu tek sözcük: „can't“. Türkçedeki „-ebil“ eki gibi ayrı bir ek yok.",
+  "tr": "Olumsuzu tek sözcük: „can't“ (uzun biçimi „cannot“).",
   "kind": "build.hint",
-  "de": "Die Verneinung zieht sich zu einem Wort zusammen: „can't“. Das Deutsche schreibt „kann nicht“ getrennt."
+  "de": "Die Verneinung zieht sich zu einem Wort zusammen: „can't“ (lang „cannot“). Das Deutsche schreibt „kann nicht“ getrennt."
  },
  {
   "tr": "„rain“ burada fiil ve şu an sürdüğü için „-ing“. Özne „it“ boş ama zorunlu.",
@@ -295,9 +295,9 @@
   "de": "Für die Gewohnheit das einfache Präsens; „series“ schreibt sich im Singular und im Plural gleich, anders als Serie und Serien."
  },
  {
-  "tr": "„well“ zarf ve „feel“ ile geliyor; „I don't feel good“ da duyulur ama bu daha doğru.",
+  "tr": "Sağlık için „feel well“: I don't feel well. Günlük konuşmada „I don't feel good“ da çok duyulur.",
   "kind": "build.hint",
-  "de": "„well“ ist ein Adverb und steht mit „feel“ — wie „sich wohl fühlen“. „I don't feel good“ hört man auch, aber dies ist richtiger."
+  "de": "Für die Gesundheit „feel well“: I don't feel well. Im Alltag hört man auch oft „I don't feel good“."
  },
  {
   "tr": "Günlerin sırası: doğru sıraya koy.",

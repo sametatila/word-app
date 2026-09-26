@@ -171,7 +171,7 @@ export const b1U37: SkillExercise[] = [
     skill: "listening",
     unit: 37,
     title: "Was zeigt die Grafik?",
-    genre: "monologue",
+    genre: "dialogue",
     intro: "Bir grafik okunuyor. Hangi işaret ne demek?",
     minutes: 4,
     gloss: [
@@ -191,13 +191,13 @@ export const b1U37: SkillExercise[] = [
       { text: "Das Symbol steht für fehlende Werte, nicht für null." },
       { text: "Gut zu wissen. Das ist ein wichtiger Unterschied." },
       { text: "Genau. Und die Darstellung zeigt nur die letzten fünf Jahre." },
-      { text: "Also nicht die ganze Zeit. Gibt es eine Abbildung davor?" },
+      { text: "Also nicht die ganze Zeit. Gibt es auch eine Abbildung für die Zeit davor?" },
       { text: "Ja, auf der nächsten Seite. Die zeigt zwanzig Jahre." },
     ],
     questions: [
       {
         text: "Warum soll die Grafik vergrößert werden?",
-        options: ["Sie ist zu klein für die Zeilen", "Sie ist alt", "Sie ist falsch"],
+        options: ["Man sieht die Zeilen nicht", "Sie ist alt", "Sie ist falsch"],
         answer: 0,
         explain: "„Können Sie die Grafik kurz vergrößern? Ich sehe die Zeilen nicht.“",
       },
@@ -255,7 +255,7 @@ export const b1U37: SkillExercise[] = [
       { text: "Musik aus dem Radio. Ich habe damals den Sender aufgenommen." },
       { text: "Auch die Stimme der Moderatorin?" },
       { text: "Ja, und die Werbung. Das ist heute fast das Beste." },
-      { text: "Umgekehrt als früher: damals hat die Werbung nur gestört." },
+      { text: "Ganz anders als früher: Damals hat die Werbung nur gestört." },
     ],
     questions: [
       {
@@ -290,7 +290,7 @@ export const b1U37: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["gestört", "sie hat gestört", "nur gestört"],
-        explain: "„… damals hat die Werbung nur gestört.“",
+        explain: "„… Damals hat die Werbung nur gestört.“",
       },
     ],
   },
@@ -359,10 +359,10 @@ export const b1U37: SkillExercise[] = [
     intro: "Bir temizlik planı yaz. 'de/da' Almancada sözcüğün önüne geçer.",
     minutes: 12,
     gloss: [
-      { de: "der Dreck", tr: "pislik", en: "muck" },
+      { de: "der Dreck", tr: "pislik", en: "dirt" },
       { de: "gründlich", tr: "iyice", en: "thoroughly" },
       { de: "die Couch", tr: "kanepe", en: "couch" },
-      { de: "glatt", tr: "kaygan / düz", en: "smooth" },
+      { de: "glatt", tr: "kaygan / düz", en: "slippery; smooth" },
       { de: "sich abwechseln", tr: "sırayla yapmak", en: "to take turns" },
       { de: "wischen", tr: "paspaslamak", en: "to mop" },
     ],
@@ -391,21 +391,21 @@ export const b1U37: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Wir wohnen zu dritt und haben drei Bereiche: Küche, Bad und Flur.\n\n" +
+          "Wir wohnen zu dritt und haben drei Bereiche: Küche, Bad und Wohnzimmer.\n\n" +
           "Die Küche macht jede Woche eine andere Person, und zwar gründlich. " +
           "Nicht nur feucht drüberwischen — der Staub oben auf dem Schrank " +
           "gehört dazu. Das Bad machen wir abwechselnd, und wer es macht, " +
           "kauft auch das Waschmittel.\n\n" +
-          "Der Flur war lange das Problem. Auf der Couch wird gegessen, und " +
+          "Das Wohnzimmer war lange das Problem. Auf der Couch wird gegessen, und " +
           "am nächsten Morgen liegt der Dreck noch da. Auch ich habe das " +
           "früher gemacht, das gebe ich zu.\n\n" +
           "Mittlerweile gilt eine einfache Regel: Wer dort isst, räumt " +
           "sofort auf. Nicht am Abend, sofort. Seitdem gibt es fast keinen " +
-          "Streit mehr — und wir putzen alle nur halb so oft wie vorher. Der Boden im Flur ist oft glatt, deshalb wischen wir dort zuletzt.",
+          "Streit mehr — und wir putzen alle nur halb so oft wie vorher. Der Boden im Wohnzimmer ist oft glatt, deshalb wischen wir dort zuletzt.",
         phrases: [
           { de: "und zwar gründlich", tr: "hem de iyice", en: "and thoroughly at that" },
           { de: "Auch ich habe das gemacht.", tr: "Ben de yapmıştım.", en: "I did that too." },
-          { de: "Wer dort isst, räumt sofort auf.", tr: "Orada yiyen hemen toplar.", en: "Whoever eats there tidies up straight away." },
+          { de: "Wer dort isst, räumt sofort auf.", tr: "Orada yiyen hemen toplar.", en: "Whoever eats there tidies up right away." },
         ],
       },
       {

@@ -198,7 +198,7 @@ export const b1U02: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wann fängt die erste Person an?",
+        text: "Wann fängt die zweite Person an?",
         options: ["Um sechs", "Um sieben", "Um acht"],
         answer: 1,
         explain: "„Ich komme um sieben und gehe um vier.“",
@@ -210,7 +210,7 @@ export const b1U02: SkillExercise[] = [
         explain: "„Die schreibe ich auf und nehme später frei.“",
       },
       {
-        text: "Warum kann die zweite Person nicht flexibel arbeiten?",
+        text: "Warum kann die erste Person nicht flexibel arbeiten?",
         options: ["Sie will nicht", "Sie arbeitet in Vollzeit mit festen Zeiten", "Sie hat keinen Chef"],
         answer: 1,
         explain: "„Ich arbeite in Vollzeit mit festen Zeiten.“",
@@ -225,10 +225,10 @@ export const b1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Um wie viel Uhr geht die erste Person nach Hause?",
+        text: "Um wie viel Uhr geht die zweite Person nach Hause?",
         options: [],
         answer: 0,
-        accept: ["um vier", "vier"],
+        accept: ["um vier", "vier", "um 16 Uhr", "16 Uhr"],
         explain: "„… ich komme um sieben und gehe um vier.“",
       },
     ],
@@ -248,11 +248,11 @@ export const b1U02: SkillExercise[] = [
       { de: "das Einkommen", tr: "gelir", en: "income" },
       { de: "die Steuer", tr: "vergi", en: "tax" },
       { de: "normal", tr: "normal", en: "normal" },
-      { de: "bieten", tr: "sağlamak", en: "to provide" },
+      { de: "bieten", tr: "sunmak / teklif etmek", en: "to offer" },
     ],
     segments: [
       { text: "Kommen wir zum Gehalt. Was stellen Sie sich vor?" },
-      { text: "Ich hätte gern etwas mehr als in meiner alten Stelle." },
+      { text: "Ich hätte gern etwas mehr als an meiner alten Stelle." },
       { text: "Wie viel war das denn?" },
       { text: "Mein Einkommen lag bei dreitausend im Monat, vor Steuern." },
       { text: "Wir könnten mit dreitausendzweihundert anfangen." },
@@ -292,7 +292,7 @@ export const b1U02: SkillExercise[] = [
         text: "Wie viel bietet die Firma am Anfang?",
         options: [],
         answer: 0,
-        accept: ["dreitausendzweihundert", "3200"],
+        accept: ["dreitausendzweihundert", "3200", "3.200"],
         explain: "„Wir könnten mit dreitausendzweihundert anfangen.“",
       },
     ],
@@ -331,7 +331,7 @@ export const b1U02: SkillExercise[] = [
       {
         kind: "build",
         tr: "Fazla mesaiyi yazıp sonra dinlenmek için izin almak isterdim.",
-        answer: "Ich würde die Überstunden aufschreiben und später zur Erholung frei nehmen.",
+        answer: "Ich würde die Überstunden gern aufschreiben und später zur Erholung freinehmen.",
         hint: "Kibar istek için Konjunktiv II; iki mastar bağlaçla birleşiyor.",
       },
       {
@@ -340,9 +340,9 @@ export const b1U02: SkillExercise[] = [
         facts: "Çalışan: tam zamanlı; istediği başlangıç saati 07:00; gerekçe: çocuk; fazla mesai için istek: sonradan izin.",
         fields: [
           { label: "Arbeitszeit jetzt", answer: "Vollzeit", accept: ["die Vollzeit", "Vollzeit mit festen Zeiten"] },
-          { label: "Neuer Beginn", answer: "sieben Uhr", accept: ["7 Uhr", "um sieben", "07:00"] },
+          { label: "Neuer Beginn", answer: "sieben Uhr", accept: ["7 Uhr", "um sieben", "07:00", "7:00", "um sieben Uhr", "um 7 Uhr"] },
           { label: "Grund", answer: "das Kind", accept: ["Kind", "mein Kind", "Familie"] },
-          { label: "Überstunden", answer: "später frei nehmen", accept: ["frei nehmen", "Freizeit"] },
+          { label: "Überstunden", answer: "später freinehmen", accept: ["freinehmen", "später frei nehmen", "frei nehmen", "Freizeit"] },
         ],
       },
       {
@@ -369,7 +369,7 @@ export const b1U02: SkillExercise[] = [
       { de: "der Versuch", tr: "deneme", en: "attempt" },
       { de: "melden", tr: "haber vermek", en: "to get in touch" },
       { de: "die Enttäuschung", tr: "hayal kırıklığı", en: "disappointment" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       { de: "natürlich", tr: "elbette", en: "of course" },
       { de: "lesen", tr: "okumak", en: "to read" },
     ],

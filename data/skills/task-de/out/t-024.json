@@ -210,9 +210,9 @@
   "de": "„yet“ in der Verneinung und ganz hinten; noch nicht erledigt, aber es kommt."
  },
  {
-  "tr": "Çoğul özneyle aynı kalıp; „bill“ burada hesap demek.",
+  "tr": "Çoğul özneyle aynı kalıp; Amerikan İngilizcesinde hesap „check“, İngilizcesi „bill“.",
   "kind": "build.hint",
-  "de": "Dasselbe Muster mit Plural-Subjekt; „bill“ heißt hier die Rechnung."
+  "de": "Dasselbe Muster mit Plural-Subjekt; im amerikanischen Englisch heißt die Rechnung „check“, im britischen „bill“."
  },
  {
   "tr": "Tekil özneyle aynı kalıp; lokantada en olağan giriş.",

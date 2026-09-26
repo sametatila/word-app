@@ -226,7 +226,7 @@ export const c1U25: SkillExercise[] = [
       { de: "die Gabe", tr: "yetenek / armağan", en: "gift" },
       { de: "der Rat", tr: "öğüt", en: "advice" },
       { de: "heutige", tr: "bugünkü", en: "today's" },
-      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "aufhören / aufgehört", tr: "bırakmak", en: "to stop" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "umso", tr: "o kadar", en: "the more" },
@@ -348,7 +348,7 @@ export const c1U25: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Das ist ein Reichtum, kein ___ — aber der Satz wird oft benutzt, um etwas wegzureden.",
+        text: "Nur wird der Satz oft benutzt, um den ___ wegzureden.",
         options: [],
         answer: 0,
         accept: ["Riss"],
@@ -448,13 +448,13 @@ export const c1U25: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Bugün Almancaya başlayan birine mektup yaz. Kurallar: (1) en az iki SOMUT tavsiye ver — genel cesaretlendirme değil, yapılabilir adım; (2) zorluğu küçültme, kendi süreni dürüstçe söyle; (3) bir aksiliği anlat ve nasıl geçtiğini değil, o sırada ne düşündüğünü yaz; (4) iki dilliliğe dair bir cümle kur, ama „bu bir zenginlik“ klişesini olduğu gibi kullanma — kendi sözcüklerinle söyle; (5) son cümle yankılansın, yeni argüman taşımasın. Ders sonu bildirisi gibi değil, mektup gibi yaz.",
+          "Bugün Almancaya başlayan birine mektup yaz. Kurallar: (1) en az iki SOMUT tavsiye ver — genel cesaretlendirme değil, yapılabilir adım; (2) zorluğu küçültme, kendi süreni dürüstçe söyle; (3) bir aksiliği anlat ve nasıl geçtiğini değil, o sırada ne düşündüğünü yaz; (4) iki dilliliğe dair bir cümle kur, ama „bu bir zenginlik“ klişesini olduğu gibi kullanma — kendi sözcüklerinle söyle; (5) son cümle yankılansın, yeni argüman taşımasın. Kurs sonu bildirisi gibi değil, mektup gibi yaz.",
         stimulus:
           "İSTERSEN KULLAN\n\n" +
           "· C1'in gerçek işareti: dilin artık konuşmanın konusu olmaması.\n" +
           "· Kelime oyunları en sona kalıyor; ironi çoğu zaman anlaşılıyor ama her zaman değil.\n" +
           "· Yorgunken ve stresliyken daha basit yapılara düşmek normal.\n" +
-          "· Anlaşılmayan alanlar (usta lehçesi, doktorların kendi arasındaki konuşması) her dil bilgisinde var — ana dilde de.\n" +
+          "· Anlaşılmayan alanlar (usta lehçesi, doktorların kendi arasındaki konuşması) her dil düzeyinde var — ana dilde de.\n" +
           "· „Rückschläge gehören dazu und sagen nichts über das Ende.“\n" +
           "· „Die zweite Sprache nimmt die erste nicht weg. Sie stellt sich daneben.“",
         checklist: [

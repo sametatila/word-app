@@ -238,7 +238,7 @@ export const enB1U22: SkillExercise[] = [
     segments: [
       { speaker: "Ada", text: "They decided to clean the river last spring. The first thing they found was a pipe that nobody had on a map." },
       { speaker: "Kerem", text: "Who pays for that?" },
-      { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree." },
+      { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree on." },
       { speaker: "Kerem", text: "And the bottles?" },
       { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one faucet, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
       { speaker: "Kerem", text: "Why does „decided“ take „to“ and „gave up“ take „-ing“?" },
@@ -331,7 +331,7 @@ export const enB1U22: SkillExercise[] = [
       { speaker: "Doruk", text: "She asked whether we had signed the petition. Not „did we sign“: in a reported question the word order goes flat, and „whether“ does the work the inversion used to do." },
       { speaker: "Doruk", text: "Two hundred and forty signatures in the end, and the vote was in September." },
       { speaker: "Doruk", text: "We lost it by nine. The committee had promised a second date and there has not been one." },
-      { speaker: "Doruk", text: "What I learned is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster on a bus stop is read by the same person twice a day for a month." },
+      { speaker: "Doruk", text: "What I learned is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster at a bus stop is read by the same person twice a day for a month." },
     ],
     questions: [
       {

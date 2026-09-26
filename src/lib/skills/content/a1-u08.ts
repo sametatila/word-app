@@ -168,7 +168,7 @@ export const a1U08: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Er hat noch ___ Minuten.",
+        text: "Die Person hat noch ___ Minuten.",
         options: [],
         answer: 0,
         accept: ["dreißig", "30"],
@@ -214,7 +214,7 @@ export const a1U08: SkillExercise[] = [
     questions: [
       {
         text: "Warum möchte die Person keinen Reis mehr?",
-        options: ["Er ist satt", "Es schmeckt nicht", "Er ist allergisch"],
+        options: ["Sie ist satt", "Es schmeckt nicht", "Sie ist müde"],
         answer: 0,
         explain: "„Nein danke, ich bin satt.“ Yemeği beğenmiş — „Das schmeckt sehr gut!“",
       },
@@ -271,7 +271,7 @@ export const a1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Fındığa alerjim var.",
+        tr: "Kuruyemişe alerjim var.",
         answer: "Ich bin allergisch gegen Nüsse",
         hint: "Kalıp sabittir: „allergisch gegen“ + Akkusativ. Çoğul kullanılır: gegen Nüsse.",
       },

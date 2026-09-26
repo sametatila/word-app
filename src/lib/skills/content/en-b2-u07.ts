@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *           maintenance, lower, upkeep, restoration, collapse, jam,
  *           insert.
  *   Kalıp:  The sensor, which was checked in May, failed. ·
- *           The manual, which is why we stopped, is old. ·
+ *           The manual is old, which is why we stopped. ·
  *           The rule to which we refer governs the trial. ·
  *           What was changed is the entry. ·
  *           It was the inventory that failed. ·
@@ -251,7 +251,7 @@ export const enB2U07: SkillExercise[] = [
       { speaker: "Tarık", text: "Extra meaning not needed?" },
       { speaker: "Sinem", text: "Extra meaning not choosing. There is one sensor on that line. Take the commas out and the sentence says there are several and we mean the May one, which would be a different finding." },
       { speaker: "Tarık", text: "And the manual?" },
-      { speaker: "Sinem", text: "The manual, which is why we stopped, is old. „Which“ there is pointing at the whole idea — the manual being old is the reason — and „that“ cannot do it." },
+      { speaker: "Sinem", text: "The manual is old, which is why we stopped. „Which“ there is pointing at the whole idea — the manual being old is the reason — and „that“ cannot do it." },
       { speaker: "Tarık", text: "The third line is the one I never write." },
       { speaker: "Sinem", text: "The rule to which we refer governs the trial. The preposition has gone in front of „which“, and that is the only place it can be in this register." },
       { speaker: "Tarık", text: "In speech?" },
@@ -389,7 +389,7 @@ export const enB2U07: SkillExercise[] = [
         text: "Where does the flat version go?",
         options: [],
         answer: 0,
-        accept: ["in the table", "the table", "with the date"],
+        accept: ["in the table", "the table", "into the table"],
         explain: "„That is the flat version and it goes in the table.“",
       },
     ],

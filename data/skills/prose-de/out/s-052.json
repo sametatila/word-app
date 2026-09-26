@@ -347,7 +347,7 @@
  {
   "tr": "geçmiş",
   "kind": "gloss.tr",
-  "de": "die Vorgeschichte"
+  "de": "die Vergangenheit"
  },
  {
   "tr": "geride",
@@ -632,7 +632,7 @@
  {
   "tr": "yan cümle",
   "kind": "gloss.tr",
-  "de": "der Nebensatz"
+  "de": "Nebensatz"
  },
  {
   "tr": "yineliyor",
@@ -883,11 +883,6 @@
   "tr": "derin düşünceli",
   "kind": "gloss.tr",
   "de": "nachdenklich"
- },
- {
-  "tr": "dördüncü sözcük",
-  "kind": "gloss.tr",
-  "de": "das vierte Wort"
  },
  {
   "tr": "gözaltına almak",

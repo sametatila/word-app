@@ -245,7 +245,7 @@ export const enC1U01: SkillExercise[] = [
     gloss: [
       { de: "neither", tr: "ikisi de değil" },
       { de: "content", tr: "içerik" },
-      { de: "apart", tr: "ayrı" },
+      { de: "apart from", tr: "dışında" },
       { de: "verbs", tr: "fiiller" },
       { de: "a salutation", tr: "hitap" },
       { de: "cordial", tr: "içten" },
@@ -488,7 +488,7 @@ export const enC1U01: SkillExercise[] = [
         kind: "build",
         tr: "Düz anlamı biliriz; alt metni tahmin ederiz.",
         answer: "The denotation we know; the subtext we guess.",
-        hint: "Nesne öne çıkıyor ama devrilme yok.",
+        hint: "Nesne öne çıkıyor ama özne ile fiil yer değiştirmiyor.",
       },
       {
         kind: "build",

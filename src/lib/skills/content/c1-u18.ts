@@ -324,7 +324,7 @@ export const c1U18: SkillExercise[] = [
       { speaker: "Herr Weiß", text: "Was bringt mir das Protokoll?" },
       { speaker: "Frau Arslan", text: "Wenn es schiefgeht, war es meine Entscheidung, nicht Ihr Versäumnis. Das ist keine Höflichkeit, das ist die Verteilung der Verantwortung." },
       { speaker: "Herr Weiß", text: "Dann brauche ich eine Einschränkung darin: Der Test der Migration bleibt unvollständig." },
-      { speaker: "Frau Arslan", text: "Einverstanden. Formulieren Sie ihn, ich unterschreibe. Damit haben wir keine Übereinkunft in der Sache, aber eine über das Verfahren — und das genügt heute." },
+      { speaker: "Frau Arslan", text: "Einverstanden. Formulieren Sie den Satz, ich unterschreibe. Damit haben wir keine Übereinkunft in der Sache, aber eine über das Verfahren — und das genügt heute." },
     ],
     questions: [
       {
@@ -387,13 +387,13 @@ export const c1U18: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Görünüşe göre hasta — sabahtan beri kimse ondan haber almadı.",
+        tr: "Görünüşe göre hasta.",
         answer: "Anscheinend ist er krank",
-        hint: "Elde ipucu var ve muhtemelen doğru: anscheinend.",
+        hint: "Elde ipucu var (sabahtan beri kimse ondan haber almadı) ve muhtemelen doğru: anscheinend.",
       },
       {
         kind: "build",
-        tr: "Teknik biriminden gelen itirazlara rağmen tarihte ısrar ediyorum.",
+        tr: "Teknik birimden gelen itirazlara rağmen tarihte ısrar ediyorum.",
         answer: "Ungeachtet der Einwände aus der Technik halte ich am Termin fest",
         hint: "ungeachtet Genitiv ister; ardından ana cümle fiille başlar.",
       },
@@ -431,7 +431,7 @@ export const c1U18: SkillExercise[] = [
       { de: "die Tonlage", tr: "ton", en: "tone" },
       { de: "einschränken", tr: "sınırlamak", en: "to qualify" },
       { de: "die Schwelle", tr: "eşik", en: "threshold" },
-      { de: "rund", tr: "yuvarlak", en: "round" },
+      { de: "rund", tr: "yaklaşık", en: "about" },
       { de: "der Datenverlust", tr: "veri kaybı", en: "data loss" },
       { de: "ergänzen", tr: "tamamlamak", en: "to complete" },
       { de: "offen", tr: "açık", en: "open" },
@@ -455,7 +455,7 @@ export const c1U18: SkillExercise[] = [
           "Yapılan: düzeltme yayınlandı, izleme eşiği düşürüldü, haftalık bellek raporu eklendi.\n" +
           "Açık kalan: aynı sızıntı Node 5'te de olabilir, kontrol 15.03.'te.",
         checklist: [
-          "İç bildirim eksiltili ve verili mi, özür içermiyor mu?",
+          "İç bildirim eksiltili ve olgusal mı, özür içermiyor mu?",
           "Müşteri bildirimi tam cümlelerle mi, teknik terimsiz mi?",
           "Sorumluluk müşteri metninde açıkça üstlenildi mi?",
           "Veri kaybı olmadığı söylendi, açık kalan nokta gizlenmedi mi?",

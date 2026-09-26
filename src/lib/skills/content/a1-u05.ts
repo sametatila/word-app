@@ -149,7 +149,7 @@ export const a1U05: SkillExercise[] = [
     segments: [
       { text: "Kennst du Max? Wie sieht er aus?" },
       { text: "Max ist klein und hat kurze Haare." },
-      { text: "Quatsch! Das stimmt nicht — Max ist groß." },
+      { text: "Nein, das stimmt nicht! Max ist groß." },
       { text: "Ach ja, richtig. Er ist groß und trägt eine Brille." },
     ],
     questions: [
@@ -166,10 +166,10 @@ export const a1U05: SkillExercise[] = [
         explain: "„Er ist groß und trägt eine Brille.“",
       },
       {
-        text: "Richtig oder falsch? Max hat kurze Haare.",
+        text: "Richtig oder falsch? Max ist klein.",
         options: ["Richtig", "Falsch"],
-        answer: 0,
-        explain: "Doğru: „hat kurze Haare“ deniyor ve bu kısım düzeltilmiyor.",
+        answer: 1,
+        explain: "Yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
       },
       {
         kind: "gapfill",
@@ -200,7 +200,7 @@ export const a1U05: SkillExercise[] = [
     gloss: [
       { de: "gratulieren", tr: "tebrik etmek", en: "to congratulate" },
       { de: "bringen", tr: "getirmek", en: "to bring" },
-      { de: "die Süßigkeiten", tr: "şekerlemeler", en: "sweets" },
+      { de: "die Süßigkeiten", tr: "şekerlemeler", en: "candy" },
     ],
     minutes: 2,
     segments: [
@@ -309,7 +309,7 @@ export const a1U05: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Evlenen bir arkadaşına kısa bir tebrik mesajı yaz (4-5 cümle). Tebrik et, ne getireceğini söyle ve birlikte kutlamak istediğini yaz.",
+          "Evlenen bir arkadaşına kısa bir tebrik mesajı yaz (4-5 cümle). Tebrik et, geleceğini ve ne getireceğini söyle, birlikte kutlamak istediğini yaz.",
         stimulus:
           "Hallo! Wir feiern unsere Hochzeit bei den Großeltern. Kommst du auch? Bitte keine großen Geschenke — aber Kuchen ist immer gut! Mia und Tom",
         minWords: 30,

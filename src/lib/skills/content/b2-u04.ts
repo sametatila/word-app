@@ -369,12 +369,14 @@ export const b2U04: SkillExercise[] = [
         kind: "build",
         tr: "Gecikme sonucunda ek masraflar doğdu.",
         answer: "Infolge der Verspätung sind zusätzliche Kosten entstanden",
-        hint: "infolge tamlayan hâli ister; hareket fiili sein ile çekilir.",
+        alternatives: ["Zusätzliche Kosten sind infolge der Verspätung entstanden"],
+        hint: "infolge tamlayan hâli ister; entstehen bir durum değişikliği bildirdiği için sein ile çekilir.",
       },
       {
         kind: "build",
         tr: "Fiyatta geri adım atıyorum ama tarihte atmıyorum.",
         answer: "Beim Preis gebe ich nach, aber beim Termin nicht",
+        alternatives: ["Ich gebe beim Preis nach, aber beim Termin nicht"],
         hint: "Tümleç başta olduğu için fiil ikinci sırada; ayrılabilen önek sonda.",
       },
       {

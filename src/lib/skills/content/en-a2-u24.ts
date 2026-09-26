@@ -198,8 +198,8 @@ export const enA2U24: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Can", text: "Good morning. I want to apply for a residence permit." },
-      { speaker: "Office", text: "First time or renew?" },
-      { speaker: "Can", text: "Renew. The old one is valid until November." },
+      { speaker: "Office", text: "Is it your first permit, or do you want to renew it?" },
+      { speaker: "Can", text: "Renew it. The old one is valid until November." },
       { speaker: "Office", text: "Good — you are early. Most people come in the last week." },
       { speaker: "Can", text: "I have already filled out the form. Here." },
       { speaker: "Office", text: "Passport?" },
@@ -211,14 +211,14 @@ export const enA2U24: SkillExercise[] = [
       { speaker: "Office", text: "At the city hall, counter four. Ten minutes if you go now — they close at two." },
       { speaker: "Can", text: "And then I come back?" },
       { speaker: "Office", text: "Then you come back. There is one exception: with a document from the university you don't need it. But you are not a student." },
-      { speaker: "Can", text: "I am not. I go now." },
+      { speaker: "Can", text: "I am not. I'll go now." },
     ],
     questions: [
       {
         text: "When is the old permit valid until?",
         options: ["November", "2030", "two o'clock"],
         answer: 0,
-        explain: "„Renew. The old one is valid until November.“ — 2030 pasaportun tarihi.",
+        explain: "„Renew it. The old one is valid until November.“ — 2030 pasaportun tarihi.",
       },
       {
         text: "What does Can still need?",
@@ -274,6 +274,7 @@ export const enA2U24: SkillExercise[] = [
       { de: "eats it", tr: "yutuyor" },
       { de: "the fourth", tr: "dördüncü" },
       { de: "empty", tr: "boş" },
+      { de: "inspectors", tr: "kontrolörler" },
     ],
     minutes: 5,
     segments: [
@@ -285,17 +286,17 @@ export const enA2U24: SkillExercise[] = [
       { speaker: "Man", text: "First put the card in, then press the green button. Then the money." },
       { speaker: "Nil", text: "Coins only?" },
       { speaker: "Man", text: "Coins and cards. Not paper money — the machine eats it and says nothing." },
-      { speaker: "Nil", text: "Good to know. And in the tram?" },
-      { speaker: "Man", text: "You have to reload the card before you get in. In the tram there is nothing." },
+      { speaker: "Nil", text: "Good to know. And on the tram?" },
+      { speaker: "Man", text: "You have to reload the card before you get in. On the tram there is nothing." },
       { speaker: "Nil", text: "And if the card is empty?" },
-      { speaker: "Man", text: "Then it is a fine. Sixty euros. Two of them come together and they are always in the third car." },
+      { speaker: "Man", text: "Then it is a fine. Sixty euros. The inspectors always come in twos, and they are always in the third car." },
       { speaker: "Nil", text: "Why the third?" },
       { speaker: "Man", text: "Because everybody with an empty card walks to the third car." },
     ],
     questions: [
       {
         text: "Which machine sells the card?",
-        options: ["the green one", "the blue one", "the one in the tram"],
+        options: ["the green one", "the blue one", "the one on the tram"],
         answer: 0,
         explain: "„At the machine, over there. The green one, not the blue.“",
       },
@@ -307,10 +308,10 @@ export const enA2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You can reload the card in the tram.",
+        text: "You can reload the card on the tram.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„You have to reload the card before you get in. In the tram there is nothing.“",
+        explain: "„You have to reload the card before you get in. On the tram there is nothing.“",
       },
       {
         kind: "gapfill",
@@ -330,7 +331,7 @@ export const enA2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where are they always?",
+        text: "Where are the inspectors always?",
         options: [],
         answer: 0,
         accept: ["in the third car", "the third car"],
@@ -367,7 +368,7 @@ export const enA2U24: SkillExercise[] = [
         tr: "Telefonumu biri çaldı.",
         answer: "Someone stole my phone.",
         alternatives: ["Somebody stole my phone."],
-        hint: "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe \"çalındı\" der ve faili hiç anmaz.",
+        hint: "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe „çalındı“ der ve faili hiç anmaz.",
       },
       {
         kind: "build",

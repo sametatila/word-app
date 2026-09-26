@@ -185,11 +185,11 @@ export const b1U22: SkillExercise[] = [
       { text: "Hast du die Wettervorhersage gesehen? Es wird noch heißer." },
       { text: "Wie hoch soll die Temperatur denn gehen?" },
       { text: "Sechsunddreißig am Donnerstag. Das ist zu viel für die Kinder." },
-      { text: "Diese Wochen nehmen zu. Früher war das einmal im Sommer." },
+      { text: "So heiße Wochen nehmen zu. Früher gab es das einmal im Sommer." },
       { text: "Der Wetterbericht sagt, es bleibt bis Sonntag so." },
       { text: "Dann machen wir den Garten morgens um sieben." },
       { text: "Gute Idee. Bei der Hitze am Mittag arbeitet sowieso niemand." },
-      { text: "Und wir nehmen abends Wasser, sonst ist es sofort weg." },
+      { text: "Und wir geben den Pflanzen abends Wasser, sonst ist es sofort weg." },
     ],
     questions: [
       {
@@ -220,11 +220,11 @@ export const b1U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wann nehmen sie Wasser?",
+        text: "Wann bekommen die Pflanzen Wasser?",
         options: [],
         answer: 0,
         accept: ["abends", "am Abend"],
-        explain: "„Und wir nehmen abends Wasser, sonst ist es sofort weg.“",
+        explain: "„Und wir geben den Pflanzen abends Wasser, sonst ist es sofort weg.“",
       },
     ],
   },
@@ -297,7 +297,7 @@ export const b1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Notiz zum Wetter",
-    genre: "phone",
+    genre: "message",
     intro: "Sıcak hafta için bir not yaz. Almanca cümle öznesiz kurulmaz.",
     minutes: 8,
     gloss: [
@@ -305,7 +305,7 @@ export const b1U22: SkillExercise[] = [
       { de: "das Klima", tr: "iklim", en: "climate" },
       { de: "zunehmen", tr: "artmak", en: "to increase" },
       { de: "das Zeichen", tr: "işaret", en: "sign" },
-      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "der Grad", tr: "derece", en: "degree" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     tasks: [
@@ -323,8 +323,8 @@ export const b1U22: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu tür haftalar artıyor, iklim için açık bir işaret.",
-        answer: "Diese Wochen nehmen zu, ein deutliches Zeichen für das Klima.",
+        tr: "Böyle sıcak haftalar artıyor, iklim için açık bir işaret.",
+        answer: "So heiße Wochen nehmen zu, ein deutliches Zeichen für das Klima.",
         hint: "Ayrılabilen fiil: önek sonda.",
       },
       {
@@ -332,7 +332,7 @@ export const b1U22: SkillExercise[] = [
         prompt: "Sıcak hafta duyuru kartını doldur.",
         facts: "Konu: sıcak hafta; en yüksek: perşembe 36 derece; bahçe saati: sabah 7; sulama: akşam; süre: pazara kadar.",
         fields: [
-          { label: "Höchste Temperatur", answer: "36 Grad", accept: ["sechsunddreißig", "36"] },
+          { label: "Höchste Temperatur", answer: "36 Grad", accept: ["sechsunddreißig", "36", "sechsunddreißig Grad", "36 °C"] },
           { label: "Tag", answer: "Donnerstag", accept: ["am Donnerstag"] },
           { label: "Gartenzeit", answer: "morgens um sieben", accept: ["um sieben", "morgens"] },
           { label: "Wasser", answer: "abends", accept: ["am Abend"] },
@@ -392,14 +392,14 @@ export const b1U22: SkillExercise[] = [
           "In der Vergangenheit war mein Viertel vor allem ein Ort zum Arbeiten. " +
           "Es gab viele kleine Werkstätten, wenige Läden und sehr viel Lärm.\n\n" +
           "Das hat sich stark verändert. Heute gibt es viele Cafés und wenig " +
-          "Arbeit im Haus. Die Straße vor meinem Haus ist ruhiger geworden, weil " +
+          "Arbeit im Viertel. Die Straße vor meinem Haus ist ruhiger geworden, weil " +
           "weniger Autos durchfahren. Es gibt auch mehr Bäume als früher.\n\n" +
           "Nicht alles ist besser. Die Mieten sind in zehn Jahren stark " +
           "gestiegen, und einige Bewohner konnten nicht bleiben. Eine Nachbarin, " +
           "die vierzig Jahre hier gewohnt hat, ist letztes Jahr weggezogen.\n\n" +
           "Die städtische Planung will bis 2030 weiterbauen. Ich hoffe, dass " +
           "dabei an die alten Bewohner gedacht wird. Ein Viertel ist nicht nur " +
-          "die Fläche, sondern die Leute darauf.",
+          "die Fläche, sondern auch die Leute, die dort wohnen.",
         phrases: [
           { de: "In der Vergangenheit war …", tr: "Geçmişte … idi.", en: "In the past … was …" },
           { de: "Das hat sich verändert.", tr: "Bu değişti.", en: "That has changed." },

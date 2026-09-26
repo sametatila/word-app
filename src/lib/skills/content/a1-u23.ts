@@ -98,7 +98,7 @@ export const a1U23: SkillExercise[] = [
       { de: "der Gruß", tr: "selam", en: "greeting" },
       { de: "die Nachricht", tr: "mesaj", en: "message" },
       { de: "schicken", tr: "göndermek", en: "to send" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely", note: "resmî" },
       { de: "Sehr geehrte …", tr: "Sayın …", en: "Dear … (formal)", note: "resmî hitap" },
       { de: "ändern", tr: "değiştirmek", en: "to change" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -285,8 +285,7 @@ export const a1U23: SkillExercise[] = [
       { de: "das Wiederhören", tr: "tekrar duyma", en: "hearing again", note: "telefonda vedalaşma" },
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },
       { de: "der Gruß", tr: "selam", en: "greeting" },
-      { de: "chic/schick", tr: "şık", en: "stylish" },
-      { de: "schick", tr: "şık", en: "stylish" },
+      { de: "schicken", tr: "göndermek", en: "to send" },
     ],
     minutes: 6,
     tasks: [
@@ -324,7 +323,7 @@ export const a1U23: SkillExercise[] = [
     gloss: [
       { de: "möchten", tr: "istemek", en: "would like", note: "kibar" },
       { de: "die E-Mail", tr: "e-posta", en: "email" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely", note: "resmî" },
       { de: "der Freitag", tr: "cuma", en: "Friday" },
     ],
     minutes: 7,
@@ -347,9 +346,9 @@ export const a1U23: SkillExercise[] = [
           "RESMÎ kapanış kullandın mı? („Liebe Grüße“ burada YANLIŞ.)",
         ],
         phrases: [
-          { de: "Sehr geehrte Frau Weber,", tr: "Sayın Weber Hanım,", en: "Dear Ms Weber," },
+          { de: "Sehr geehrte Frau Weber,", tr: "Sayın Weber Hanım,", en: "Dear Ms. Weber," },
           { de: "Ich möchte meinen Termin ändern.", tr: "Randevumu değiştirmek istiyorum.", en: "I'd like to change my appointment." },
-          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely" },
+          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
         ],
         sample:
           "Sehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Leider muss ich an dem Tag arbeiten.\n\nIst ein Termin am Freitag möglich? Am Nachmittag habe ich Zeit.\n\nSie können mich unter 0231 / 55 44 33 anrufen. Ich bin ab 17 Uhr zu Hause.\n\nMit freundlichen Grüßen\nElif Yılmaz",

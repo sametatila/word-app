@@ -268,7 +268,7 @@ export const a2U08: SkillExercise[] = [
         text: "Wie lange liegen die Handschuhe schon dort?",
         options: [],
         answer: 0,
-        accept: ["seit zwei Wochen", "zwei Wochen"],
+        accept: ["seit zwei Wochen", "zwei Wochen", "seit 2 Wochen", "2 Wochen"],
         explain: "„Die liegen seit zwei Wochen hier, und niemand hat sich gemeldet.“",
       },
     ],
@@ -326,7 +326,7 @@ export const a2U08: SkillExercise[] = [
     genre: "forum",
     intro: "Foruma cevap yaz: stresle nasıl baş ediyorsun, iki somut öneri ver.",
     gloss: [
-      { de: "abschalten", tr: "kafa dağıtmak", en: "to switch off" },
+      { de: "abschalten", tr: "kafa dağıtmak", en: "to unwind" },
       { de: "sich entspannen", tr: "rahatlamak", en: "to relax" },
       { de: "sich hinlegen", tr: "uzanmak", en: "to lie down" },
       { de: "unruhig", tr: "huzursuz", en: "restless" },
@@ -353,7 +353,7 @@ export const a2U08: SkillExercise[] = [
           { de: "Man sollte das Handy weglegen.", tr: "telefonu bir kenara koymalı", en: "one should put the phone away" },
         ],
         sample:
-          "Hallo,\n\ndas kenne ich sehr gut. Letztes Jahr war ich auch monatelang unruhig und konnte abends nicht abschalten.\n\nBei mir haben zwei Dinge geholfen. Erstens: Du solltest nach dem Essen zehn Minuten spazieren gehen, auch bei schlechtem Wetter. Zweitens: Man sollte das Handy eine halbe Stunde vor dem Schlafen weglegen. Das klingt einfach, aber es ist wirklich schwer.\n\nUnd am Wochenende muss ich mich einmal richtig ausschlafen, sonst geht es die ganze Woche nicht.\n\nGute Besserung!\nTarek",
+          "Hallo,\n\ndas kenne ich sehr gut. Letztes Jahr war ich auch monatelang unruhig und konnte abends nicht abschalten.\n\nBei mir haben zwei Dinge geholfen. Erstens: Du solltest nach dem Essen zehn Minuten spazieren gehen, auch bei schlechtem Wetter. Zweitens: Man sollte das Handy eine halbe Stunde vor dem Schlafen weglegen. Das klingt einfach, aber es ist wirklich schwer.\n\nUnd am Wochenende muss ich mich einmal richtig ausschlafen, sonst geht es die ganze Woche nicht.\n\nAlles Gute!\nTarek",
       },
     ],
   },

@@ -188,7 +188,7 @@ export const enA2U05: SkillExercise[] = [
       { speaker: "Kaan", text: "That is the worst of the three. It is tiny and it is not cheap." },
       { speaker: "Ela", text: "Then the brown one. It is the best for me." },
       { speaker: "Kaan", text: "I think so too. And it is thicker, so it is better in the rain." },
-      { speaker: "Ela", text: "Excellent. I take it." },
+      { speaker: "Ela", text: "Excellent. I'll take it." },
     ],
     questions: [
       {
@@ -250,7 +250,7 @@ export const enA2U05: SkillExercise[] = [
       { de: "career", tr: "kariyer" },
       { de: "goal", tr: "hedef" },
       { de: "success", tr: "başarı" },
-      { de: "hop", tr: "zıplamak" },
+      { de: "hope", tr: "umut" },
     ],
     minutes: 4,
     segments: [
@@ -351,7 +351,7 @@ export const enA2U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Hayatımın en güzel günü.",
+        tr: "Bu, hayatımın en güzel günü.",
         answer: "It is the best day of my life.",
         hint: "Üstünlükte „the“ zorunlu: the best, the most important.",
       },

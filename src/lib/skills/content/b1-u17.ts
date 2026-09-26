@@ -183,7 +183,7 @@ export const b1U17: SkillExercise[] = [
       { de: "die Fortsetzung", tr: "devam", en: "sequel" },
       { de: "überraschen", tr: "şaşırtmak", en: "to surprise" },
       { de: "die Stimmung", tr: "atmosfer / hava", en: "mood" },
-      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "rechnen", tr: "beklemek / hesaba katmak", en: "to expect / to count on" },
       { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
@@ -257,7 +257,7 @@ export const b1U17: SkillExercise[] = [
       { text: "Möglich. Mir fehlte trotzdem etwas." },
       { text: "Was denn?" },
       { text: "Ruhe. Alles war laut, von der ersten Minute an." },
-      { text: "Dann gefällt dir das nächste Konzert besser. Da wird nur Klavier aufgeführt." },
+      { text: "Dann gefällt dir das nächste Konzert besser. Da wird nur Klavier gespielt." },
     ],
     questions: [
       {
@@ -288,11 +288,11 @@ export const b1U17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was wird im nächsten Konzert aufgeführt?",
+        text: "Was wird im nächsten Konzert gespielt?",
         options: [],
         answer: 0,
         accept: ["nur Klavier", "Klavier"],
-        explain: "„Da wird nur Klavier aufgeführt.“",
+        explain: "„Da wird nur Klavier gespielt.“",
       },
     ],
   },
@@ -402,7 +402,7 @@ export const b1U17: SkillExercise[] = [
           "Ich habe diesen Monat einen Roman gelesen, den mir eine Kollegin " +
           "empfohlen hat.\n\n" +
           "Die Geschichte spielt in einer kleinen Stadt. Die Hauptfigur ist " +
-          "keine Heldin: sie macht ständig Fehler und sagt fast nie die Wahrheit. " +
+          "keine Heldin: Sie macht ständig Fehler und sagt fast nie die Wahrheit. " +
           "Genau das hat mir gefallen, weil sie dadurch echt ist.\n\n" +
           "Die ersten drei Kapitel haben mir nicht so gut gefallen. Es passiert " +
           "wenig, und ich habe zweimal aufgehört. Ab der Mitte wurde es besser, " +

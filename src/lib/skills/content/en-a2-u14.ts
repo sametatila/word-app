@@ -193,7 +193,7 @@ export const enA2U14: SkillExercise[] = [
       { speaker: "Mert", text: "Good morning. I'd like to open an account." },
       { speaker: "Bank", text: "Of course. Do you have your papers with you?" },
       { speaker: "Mert", text: "Here. And this is the letter from my company." },
-      { speaker: "Bank", text: "Good. Two questions: do you want a credit card too?" },
+      { speaker: "Bank", text: "Good. One question: do you want a credit card too?" },
       { speaker: "Mert", text: "Is there a charge for that?" },
       { speaker: "Bank", text: "Three euros a month. Without the card the account is free." },
       { speaker: "Mert", text: "Then no card for now. Can I get cash from every ATM?" },
@@ -201,9 +201,9 @@ export const enA2U14: SkillExercise[] = [
       { speaker: "Mert", text: "Good to know. And could you transfer this money to my account, please?" },
       { speaker: "Bank", text: "From here? Then I need the account number." },
       { speaker: "Mert", text: "It is on this paper." },
-      { speaker: "Bank", text: "Fine. Two hundred euros. You see it tomorrow in your statement." },
+      { speaker: "Bank", text: "Fine. Two hundred euros. You will see it tomorrow in your statement." },
       { speaker: "Mert", text: "Not today?" },
-      { speaker: "Bank", text: "Today in the evening, tomorrow on paper. The money is faster than the paper." },
+      { speaker: "Bank", text: "The money arrives this evening, the statement tomorrow. The money is faster than the paper." },
     ],
     questions: [
       {
@@ -231,7 +231,7 @@ export const enA2U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„Fine. Two hundred euros. You see it tomorrow in your statement.“",
+        explain: "„Fine. Two hundred euros. You will see it tomorrow in your statement.“",
       },
       {
         kind: "dictation",
@@ -247,7 +247,7 @@ export const enA2U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["tomorrow", "on paper tomorrow"],
-        explain: "„Today in the evening, tomorrow on paper.“",
+        explain: "„The money arrives this evening, the statement tomorrow.“",
       },
     ],
   },
@@ -278,8 +278,8 @@ export const enA2U14: SkillExercise[] = [
       { speaker: "Shop", text: "Yes. Your contract ends in October. You can cancel in August." },
       { speaker: "Sena", text: "And if I cancel today?" },
       { speaker: "Shop", text: "Then you pay until October. Cancel in August, start in November." },
-      { speaker: "Sena", text: "Fine. Write it in my calendar, please." },
-      { speaker: "Shop", text: "In August I write to you. That is my job." },
+      { speaker: "Sena", text: "Fine. I'll write it in my calendar." },
+      { speaker: "Shop", text: "And I'll write to you in August. That is my job." },
     ],
     questions: [
       {
@@ -377,7 +377,7 @@ export const enA2U14: SkillExercise[] = [
         fields: [
           { label: "Weight", answer: "two kilos", accept: ["2 kilos"] },
           { label: "Where to", answer: "Italy", accept: ["to Italy"] },
-          { label: "Post", answer: "normal", accept: ["normal with insurance"] },
+          { label: "Shipping", answer: "normal", accept: ["normal with insurance"] },
           { label: "Total", answer: "fourteen euros", accept: ["14 euros"] },
         ],
       },

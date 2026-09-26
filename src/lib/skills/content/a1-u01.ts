@@ -223,7 +223,7 @@ export const a1U01: SkillExercise[] = [
     intro: "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
     gloss: [
       { de: "Guten Tag", tr: "iyi günler", en: "good day" },
-      { de: "Frau / Herr", tr: "Bayan / Bay", en: "Mrs / Mr" },
+      { de: "Frau / Herr", tr: "Bayan / Bay", en: "Mrs. / Mr." },
       { de: "ja", tr: "evet", en: "yes" },
       { de: "jetzt", tr: "şimdi", en: "now" },
       { de: "Izmir / Frankfurt", tr: "İzmir / Frankfurt", en: "cities" },

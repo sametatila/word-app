@@ -182,7 +182,7 @@ export const enA1U03: SkillExercise[] = [
       { speaker: "Mia", text: "Do you have children?" },
       { speaker: "Tarik", text: "No, I don't. And you?" },
       { speaker: "Mia", text: "I've got one daughter. Her name is Ela. She is six." },
-      { speaker: "Tarik", text: "Six! Is she at school?" },
+      { speaker: "Tarik", text: "Six! Is she in school?" },
       { speaker: "Mia", text: "Yes, she is. She can write her first name and her last name." },
     ],
     questions: [
@@ -218,8 +218,8 @@ export const enA1U03: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["I've got one daughter.", "I've got one daughter", "I have got one daughter.", "I have one daughter."],
-        explain: "„I've got one daughter.“ Amerikan konuşmasında „I have“ yerine çok sık „I've got“ duyulur.",
+        accept: ["I've got one daughter.", "I've got one daughter", "I have got one daughter."],
+        explain: "„I've got one daughter.“ Günlük konuşmada „I have“ yerine „I've got“ da sık duyulur.",
       },
       {
         kind: "short_answer",

@@ -233,7 +233,7 @@ export const c1U22: SkillExercise[] = [
     gloss: [
       { de: "der Dialekt", tr: "lehçe", en: "dialect" },
       { de: "die Mundart", tr: "yerel ağız", en: "vernacular" },
-      { de: "die Färbung", tr: "renk / tını", en: "colouring" },
+      { de: "die Färbung", tr: "renk / tını", en: "coloring" },
       { de: "sich verständigen", tr: "anlaşmak", en: "to communicate" },
       { de: "verblassen", tr: "solmak", en: "to fade" },
       { de: "regional", tr: "bölgesel", en: "regional" },
@@ -312,7 +312,7 @@ export const c1U22: SkillExercise[] = [
     intro: "Gaf yapıldı. Silinebilen ile silinemeyeni ayırmak.",
     gloss: [
       { de: "ins Fettnäpfchen treten", tr: "pot kırmak", en: "to put one's foot in it" },
-      { de: "Schwamm drüber", tr: "geçmiş olsun / unutalım", en: "let's forget it" },
+      { de: "Schwamm drüber", tr: "boş ver / unutalım", en: "let's forget it" },
       { de: "sich herausreden", tr: "mazeret uydurmak", en: "to talk one's way out" },
       { de: "peinlich", tr: "utandırıcı", en: "embarrassing" },
       { de: "die Panne", tr: "aksilik", en: "mishap" },
@@ -387,7 +387,7 @@ export const c1U22: SkillExercise[] = [
     unit: 22,
     title: "İnce ayarın kalıpları",
     genre: "grammar",
-    intro: "duzen teklifi, kibar ret, Schwamm drüber, ölçülü övgü.",
+    intro: "„du“ teklifi, kibar ret, Schwamm drüber, ölçülü övgü.",
     gloss: [
       { de: "heikel", tr: "nazik", en: "delicate" },
       { de: "die Anerkennung", tr: "takdir", en: "recognition" },
@@ -444,7 +444,7 @@ export const c1U22: SkillExercise[] = [
       { de: "ins Fettnäpfchen treten", tr: "pot kırmak", en: "to put one's foot in it" },
       { de: "die Gepflogenheit", tr: "teamül", en: "custom" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Reinigung", tr: "kuru temizlemeci", en: "dry cleaner" },
+      { de: "die Reinigung", tr: "temizlik hizmeti", en: "cleaning service" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "die Erklärung", tr: "açıklama", en: "explanation" },
       { de: "irgendein", tr: "herhangi bir", en: "any" },
@@ -478,7 +478,7 @@ export const c1U22: SkillExercise[] = [
         sample:
           "Liebe Renate, liebe Kolleginnen und Kollegen,\n\n" +
           "ich fange mit meinem eigenen ersten Arbeitstag an. Ich stand im dritten Stock, sah eine Frau mit einem Stapel Ordner und fragte sie, wie ich zum Archiv komme — im festen Glauben, sie arbeite dort für die Reinigung. Sie sagte nur „Ich zeig's Ihnen“, ging mit mir zwei Stockwerke hinunter und erklärte mir vierzig Minuten lang die Systematik. Wer sie war, habe ich eine Woche später erfahren. Da bin ich ins Fettnäpfchen getreten, gründlich, und Renate hat es nie erwähnt.\n\n" +
-          "Genau das ist der Punkt, den ich hervorheben möchte. Diese Führung hat nie jemand angeordnet. Sie hat sie einundvierzig Jahre lang jedem Neuen gegeben, weil sie fand, dass man wissen sollte, wo die Dinge liegen.\n\n" +
+          "Genau das ist der Punkt, den ich hervorheben möchte. Diese Führung hat nie jemand angeordnet. Sie hat sie jahrelang jedem Neuen gegeben, weil sie fand, dass man wissen sollte, wo die Dinge liegen.\n\n" +
           "Ein Zweites, das sie selbst nie erzählt hat: 2019, der Wassereinbruch. Zwei Nächte im Keller, sechshundert Ordner gerettet. Wir wissen es von anderen. Alle Achtung.\n\n" +
           "Was wir nicht ersetzen können, ist der Satz „Das haben wir 1998 auch schon versucht“ — meistens gefolgt von der Erklärung, warum es damals scheiterte. Es hat uns mehr Zeit gespart, als in irgendeiner Statistik steht.\n\n" +
           "Liebe Renate, ich möchte Ihnen meine Anerkennung aussprechen, und ich wünsche Ihnen ab Montag lange Morgen, an denen niemand um sieben Uhr Kaffee braucht.",

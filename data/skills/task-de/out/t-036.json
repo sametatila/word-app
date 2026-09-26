@@ -40,7 +40,7 @@
   "de": "Die Erfüllung des Vertrags kam zu spät."
  },
  {
-  "tr": "İhaleyi imzalayan Ana müdür.",
+  "tr": "İhaleyi imzalayan Ana müdürdür.",
   "kind": "build.tr",
   "de": "Ana, die die Ausschreibung unterschrieb, ist die Direktorin."
  },
@@ -75,7 +75,7 @@
   "de": "Es wird gemeldet, dass die Herkunft unklar ist."
  },
  {
-  "tr": "Masrafın geri ödemesi gelmiş durumda.",
+  "tr": "Masrafın geri ödemesinin vakti geldi.",
   "kind": "build.tr",
   "de": "Die Erstattung der Kosten ist fällig."
  },
@@ -115,7 +115,7 @@
   "de": "Hätten wir zugestimmt, wäre die Sache beigelegt worden."
  },
  {
-  "tr": "Haziranda pilot uygulama bitirilmiş olacak.",
+  "tr": "Hazirana kadar pilot uygulama bitirilmiş olacak.",
   "kind": "build.tr",
   "de": "Bis Juni wird das Pilotprojekt beendet worden sein."
  },
@@ -150,7 +150,7 @@
   "de": "Hätten wir eine Fristverlängerung verlangt, wären wir jetzt ruhiger."
  },
  {
-  "tr": "Ancak üst mercie taşındıktan sonra yanıt verdiler.",
+  "tr": "Ancak mesele üst merciye taşındıktan sonra yanıt verdiler.",
   "kind": "build.tr",
   "de": "Erst nach der Eskalation antworteten sie."
  },

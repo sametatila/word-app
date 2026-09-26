@@ -149,7 +149,7 @@ export const a1U19: SkillExercise[] = [
     genre: "phone",
     intro: "Sinema planı yapılıyor. Hangi film, ne zaman, kim kimi alıyor?",
     gloss: [
-      { de: "der Film", tr: "film", en: "film" },
+      { de: "der Film", tr: "film", en: "movie" },
       { de: "abholen", tr: "almaya gelmek", en: "to pick up" },
       { de: "die Idee", tr: "fikir", en: "idea" },
     ],
@@ -303,7 +303,7 @@ export const a1U19: SkillExercise[] = [
     genre: "forum",
     intro: "Boş zamanını, sporunu ve müzik zevkini yaz.",
     gloss: [
-      { de: "der Sport", tr: "spor", en: "sport" },
+      { de: "der Sport", tr: "spor", en: "sports" },
       { de: "die Musik", tr: "müzik", en: "music" },
       { de: "draußen", tr: "dışarıda", en: "outside" },
     ],
@@ -327,7 +327,7 @@ export const a1U19: SkillExercise[] = [
           "Yapamadığın ya da sevmediğin bir şey yazdın mı?",
         ],
         phrases: [
-          { de: "Ich mache … Sport.", tr: "… spor yaparım.", en: "I do … sport." },
+          { de: "Ich mache … Sport.", tr: "… spor yaparım.", en: "I play … sports." },
           { de: "Ich höre gern …", tr: "… dinlemeyi severim", en: "I like listening to …" },
           { de: "Bei Regen bleibe ich zu Hause.", tr: "Yağmurda evde kalırım.", en: "When it rains I stay home." },
         ],

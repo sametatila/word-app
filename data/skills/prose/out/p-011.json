@@ -132,7 +132,7 @@
  {
   "tr": "Bir başvuru gişede konuşuluyor. Hangi evrak eksik, süre ne kadar?",
   "kind": "intro",
-  "en": "An application is discussed at the counter. Which paper is missing, how long will it take?"
+  "en": "An application is discussed at the counter. Which document is missing, how long will it take?"
  },
  {
   "tr": "Bir belediyenin gürültü broşürü. Hangi adım hangi sırada geliyor?",
@@ -142,7 +142,7 @@
  {
   "tr": "Bir foruma ilk deneyimini anlat: ne oldu ve o an nasıl hissettin?",
   "kind": "intro",
-  "en": "Write your first experience for a forum: what happened and how did you feel?"
+  "en": "Tell a forum about one of your first times: what happened and how did you feel?"
  },
  {
   "tr": "Bir ilacın nasıl kullanılacağını yaz. Resmî emirde zamiri unutma.",
@@ -197,7 +197,7 @@
  {
   "tr": "İki adlaştırma yan yana: beim Auftritt ve die Stimmung der Menge.",
   "kind": "explain",
-  "en": "Two nominalisations side by side: beim Auftritt and die Stimmung der Menge."
+  "en": "Two nominalizations side by side: beim Auftritt and die Stimmung der Menge."
  },
  {
   "tr": "İki arkadaş iki seçenek arasında kalıyor. Hangisi neden eleniyor?",
@@ -210,9 +210,9 @@
   "en": "Two people talk about a series. Who is waiting for the next part, who is not?"
  },
  {
-  "tr": "İki meslektaş işi paylaşıyor. Her yardımın amacı kim için, dinle.",
+  "tr": "İki meslektaş işi paylaşıyor. Dinle: her yardım kimin için, ne amaçla?",
   "kind": "intro",
-  "en": "Two colleagues share out the work. Listen for whom each favor is meant for."
+  "en": "Two colleagues split up the work. Listen: who is each favor for, and why?"
  },
  {
   "tr": "İki parçacık bir arada. Aynı sözcükler, vurguya göre başka anlam.",
@@ -385,9 +385,9 @@
   "en": "„Er sprach mit dem Kollegen über seinen Antrag“ — whose application?"
  },
  {
-  "tr": "„Gleiche Aussage, kein Vorwurf.“ Yargısız olan tek para deyimi bu.",
+  "tr": "„Gleiche Aussage, kein Vorwurf.“ Aynı bilgiyi veriyor ama kimseyi suçlamıyor.",
   "kind": "explain",
-  "en": "„Gleiche Aussage, kein Vorwurf.“ It is the only money idiom that passes no judgment."
+  "en": "„Gleiche Aussage, kein Vorwurf.“ It carries the same information but blames nobody."
  },
  {
   "tr": "„Ich bin allergisch.“ — soru „ist da eine Nuss drin?“ ile geliyor.",
@@ -447,7 +447,7 @@
  {
   "tr": "Bağlaç → dass. „das“ burada olmaz, çünkü bir isim yerine geçmiyor.",
   "kind": "explain",
-  "en": "A connector → dass. „das“ will not do here, because it stands for no noun."
+  "en": "A conjunction → dass. „das“ will not do here, because it stands for no noun."
  },
  {
   "tr": "Bahçedeki hayvanlar konuşuluyor. Hangisi tehlikeli, hangisi değil?",
@@ -477,12 +477,12 @@
  {
   "tr": "Bir tatil önerisi konuşuluyor — ama bilgi hep başkasından geliyor.",
   "kind": "intro",
-  "en": "A holiday is suggested — but the information always comes from somebody else."
+  "en": "A vacation is suggested — but the information always comes from somebody else."
  },
  {
   "tr": "Bir tedarikçiyle görüşme. Talebin nasıl yumuşatıldığına dikkat et.",
   "kind": "intro",
-  "en": "A meeting with a supplier. Watch how the demand is softened."
+  "en": "A call with a supplier. Watch how the demand is softened."
  },
  {
   "tr": "Bir trafik cezası ve buna bir yanıt. Neyin kanıtlanması gerekiyor?",
@@ -547,7 +547,7 @@
  {
   "tr": "Hasta bir tanıdığına yaz. Geçmişte kipli fiili Präteritum ile kur.",
   "kind": "intro",
-  "en": "Write to somebody you know who is ill. Put the modal verb in the Präteritum."
+  "en": "Write to someone you know who is sick. Put the modal verb in the Präteritum."
  },
  {
   "tr": "Hayalindeki evi ve semti anlat. Edatlı ilgi cümlelerini doğru kur.",
@@ -587,7 +587,7 @@
  {
   "tr": "je-desto iki eğilimi bağlar; adlaştırma rakamı başlığa sıkıştırır.",
   "kind": "intro",
-  "en": "je-desto links two trends; nominalisation squeezes the figure into a headline."
+  "en": "je-desto links two trends; nominalization squeezes the figure into a headline."
  },
  {
   "tr": "Karar tarif eden deyim resmî ortamda durur; tutum bildiren durmaz.",

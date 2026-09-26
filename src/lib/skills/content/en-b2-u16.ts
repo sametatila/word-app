@@ -337,7 +337,7 @@ export const enB2U16: SkillExercise[] = [
       { de: "a construction", tr: "kuruluş" },
       { de: "soften", tr: "yumuşatmak" },
       { de: "missed", tr: "gözden kaçan" },
-      { de: "the other way round", tr: "tersinden" },
+      { de: "the other way around", tr: "tam tersi" },
       { de: "drops", tr: "atıyor" },
       { de: "resents", tr: "içerlediği" },
       { de: "a verdict", tr: "hüküm" },
@@ -350,7 +350,7 @@ export const enB2U16: SkillExercise[] = [
       { speaker: "İdil", text: "What the drama does is name the cost. Not describe it, not soften it: name it, and the cleft is there so that the verb cannot be missed." },
       { speaker: "İdil", text: "Look at the shape. After „is“ there is a bare verb — „name“, not „to name“ and not „naming“. That is the one place in English where a bare verb follows „is“, and it only happens in this construction." },
       { speaker: "İdil", text: "It was the tragedy that changed him. The second shape, with the light on a noun, and it answers a question about which of several things did the work." },
-      { speaker: "İdil", text: "What a parody keeps is the context. A useful sentence, because it is easy to get wrong the other way round: people say a parody drops the context, and it does the opposite." },
+      { speaker: "İdil", text: "What a parody keeps is the context. A useful sentence, because it is easy to get wrong the other way around: people say a parody drops the context, and it does the opposite." },
       { speaker: "İdil", text: "One per review. The shape is loud and a page of them reads as a writer telling the reader how to feel, which in a piece about a contemporary play is the one thing a reader resents." },
       { speaker: "İdil", text: "The worldview question is where I use it, if I use it at all, because that is the paragraph somebody will quote." },
       { speaker: "İdil", text: "An artistic claim made in a plain sentence can be argued with. The same claim in a cleft sounds like a verdict, and I would rather be argued with." },
@@ -424,7 +424,7 @@ export const enB2U16: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yeni bir rol istediği için şirketten ayrıldı.",
+        tr: "Yeni bir rol istediği için topluluktan ayrıldı.",
         answer: "Wanting a new role, she left the company.",
         hint: "Ortaç sürerli zaman değil; durum fiili burada „-ing“ alabiliyor.",
       },

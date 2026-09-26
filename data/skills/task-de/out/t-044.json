@@ -20,9 +20,9 @@
   "de": "Das Verb steht aktiv; einen Urheber gibt es gar nicht; fast immer braucht es ein Adverb; das Subjekt ist nie eine Person."
  },
  {
-  "tr": "Dördüncü sözcük „is“ ise yarık cümle; özne ise öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
+  "tr": "„what“ öbeğinden sonra „is“ geliyorsa yarık cümle; özne geliyorsa öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
   "kind": "form.facts",
-  "de": "Ist das vierte Wort „is“, ist es ein Spaltsatz; ist es ein Subjekt, ist es Voranstellung; im Spaltsatz liegt das Gewicht hinten, bei der Voranstellung vorn."
+  "de": "Folgt auf den „what“-Teil „is“, ist es ein Spaltsatz; folgt ein Subjekt, ist es Voranstellung; im Spaltsatz liegt das Gewicht hinten, bei der Voranstellung vorn."
  },
  {
   "tr": "Mastar desteksiz özne olabiliyor; olumlu biçim özdeşlik kuruyor; olumsuz biçim çıkarımı reddediyor; olgular ayakta kalıyor.",
@@ -80,9 +80,9 @@
   "de": "Wäre da nicht die Verjährung, bliebe der Anspruch bestehen."
  },
  {
-  "tr": "Kurulun söz hakkı tanımasını öneriyoruz.",
+  "tr": "Kurulun çalışanlara söz hakkı tanımasını öneriyoruz.",
   "kind": "build.tr",
-  "de": "Wir beantragen, dass der Vorstand Mitbestimmung gewährt."
+  "de": "Wir beantragen, dass der Vorstand den Beschäftigten Mitbestimmung gewährt."
  },
  {
   "tr": "Avukatımızın itirazı bugün sunmasını talep ediyoruz.",
@@ -105,7 +105,7 @@
   "de": "Kaum Alarmismus, oder?"
  },
  {
-  "tr": "Hükme bağladığımız şeyi nadiren idrak ederiz.",
+  "tr": "Güvence altına aldığımız şeyi nadiren idrak ederiz.",
   "kind": "build.tr",
   "de": "Was wir festschreiben, das begreifen wir selten."
  },
@@ -135,7 +135,7 @@
   "de": "Eine Regel zu erlassen heißt nicht, sie durchzusetzen."
  },
  {
-  "tr": "Yeni üyeler yemin etmeden önce grubu oylamada yendiler.",
+  "tr": "Yeni üyelere yemin ettirilmeden önce grubu oylamada yendiler.",
   "kind": "build.tr",
   "de": "Sie überstimmten die Gruppe, bevor die neuen Mitglieder vereidigt wurden."
  },
@@ -185,14 +185,14 @@
   "de": "Die bejahte Form stiftet eine Identität."
  },
  {
-  "tr": "Yarık cümle: dördüncü sözcük „is“.",
+  "tr": "Yarık cümle: „what“ öbeğinden sonra „is“ geliyor.",
   "kind": "build.hint",
-  "de": "Spaltsatz: das vierte Wort ist „is“."
+  "de": "Spaltsatz: auf den „what“-Teil folgt „is“."
  },
  {
-  "tr": "İki nesne öne çıkmış, devrilme yok.",
+  "tr": "İki nesne öne çıkmış; özne ile fiil yer değiştirmiyor.",
   "kind": "build.hint",
-  "de": "Zwei Objekte sind vorangestellt, nichts kippt."
+  "de": "Zwei Objekte sind vorangestellt; Subjekt und Verb tauschen nicht die Plätze."
  },
  {
   "tr": "Dört katman; işe yarayan „expected“.",
@@ -265,14 +265,14 @@
   "de": "Passives Partizip: ändert sich der Zusammenhang, ändert sich der Wert."
  },
  {
-  "tr": "Öne çıkarılmış nesne; dördüncü sözcük „is“ değil.",
+  "tr": "Öne çıkarılmış nesne; „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
   "kind": "build.hint",
-  "de": "Vorangestelltes Objekt; das vierte Wort ist nicht „is“."
+  "de": "Vorangestelltes Objekt; auf den „what“-Teil folgt nicht „is“, sondern ein Subjekt."
  },
  {
-  "tr": "Öne çıkarılmış nesne: dördüncü sözcük „is“ değil.",
+  "tr": "Öne çıkarılmış nesne: „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
   "kind": "build.hint",
-  "de": "Vorangestelltes Objekt: das vierte Wort ist nicht „is“."
+  "de": "Vorangestelltes Objekt: auf den „what“-Teil folgt nicht „is“, sondern ein Subjekt."
  },
  {
   "tr": "Sondaki boşluk: fiil bir önceki cümleden geliyor.",

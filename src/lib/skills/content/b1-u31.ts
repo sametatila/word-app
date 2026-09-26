@@ -308,9 +308,9 @@ export const b1U31: SkillExercise[] = [
     intro: "Bir yolculuk planla. Araç bildirirken artikel düşmez.",
     minutes: 8,
     gloss: [
-      { de: "die Eisenbahn", tr: "demiryolu", en: "railway" },
+      { de: "die Eisenbahn", tr: "demiryolu", en: "railroad" },
       { de: "die Linie", tr: "hat", en: "line" },
-      { de: "das Tram", tr: "tramvay", en: "tram" },
+      { de: "das Tram", tr: "tramvay", en: "streetcar" },
       { de: "der Aufenthalt", tr: "mola", en: "stopover" },
     ],
     tasks: [
@@ -338,7 +338,7 @@ export const b1U31: SkillExercise[] = [
         facts: "Yolcu: Nuri Öz; ilk araç: tramvay; ikinci araç: tren; mola: ortada 40 dakika; son bölüm: yürüyerek.",
         fields: [
           { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
-          { label: "Zuerst", answer: "mit dem Tram", accept: ["Tram", "mit dem Tram zum Bahnhof"] },
+          { label: "Zuerst", answer: "mit dem Tram", accept: ["Tram", "mit der Tram", "mit dem Tram zum Bahnhof"] },
           { label: "Dann", answer: "mit dem Zug", accept: ["Zug", "mit dem Zug"] },
           { label: "Letztes Stück", answer: "zu Fuß", accept: ["zu Fuss", "zu Fuß gehen"] },
         ],
@@ -348,6 +348,7 @@ export const b1U31: SkillExercise[] = [
         prompt: "Araç bildiriminde eksik artikeli ekle.",
         source: "Ich fahre mit Zug bis Bern und dann mit Tram weiter.",
         answer: "Ich fahre mit dem Zug bis Bern und dann mit dem Tram weiter.",
+        alternatives: ["Ich fahre mit dem Zug bis Bern und dann mit der Tram weiter."],
         why: "Türkçe araç bildirmeyi TEK EKLE yapar ('trenle', 'tramvayla') ve artikel diye bir sorun hiç doğmaz, o yüzden Almancada da çıplak isim yazılıyor. Almanca mit + DATİV ister ve artikel düşmez: mit dem Zug, mit der Bahn, mit dem Auto. Tek istisna 'zu Fuß'.",
       },
     ],
@@ -362,9 +363,9 @@ export const b1U31: SkillExercise[] = [
     intro: "Bir yolculuğu anlat. Türkçe '-e' Almancada üç ayrı sözcüktür.",
     minutes: 12,
     gloss: [
-      { de: "die Rückfahrt", tr: "dönüş", en: "return journey" },
+      { de: "die Rückfahrt", tr: "dönüş", en: "return trip" },
       { de: "landen", tr: "inmek", en: "to land" },
-      { de: "die Umleitung", tr: "yol değişikliği", en: "diversion" },
+      { de: "die Umleitung", tr: "yol değişikliği", en: "detour" },
       { de: "das Fahrzeug", tr: "araç", en: "vehicle" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
       { de: "ausgeruht", tr: "dinlenmiş", en: "rested" },
@@ -395,12 +396,12 @@ export const b1U31: SkillExercise[] = [
         minWords: 70,
         sample:
           "Im September bin ich zuerst nach Berlin gefahren und von dort in " +
-          "die Schweiz. Die ganze Strecke habe ich mit dem Zug gemacht, " +
+          "die Schweiz. Die lange Strecke habe ich mit dem Zug gemacht, " +
           "ohne ein Fahrzeug zu mieten.\n\n" +
           "In Berlin hatte ich einen Aufenthalt von vier Stunden. Ich bin " +
           "mit dem Tram in die Stadt gefahren und dann zu einem alten " +
           "Kollegen, der dort wohnt. Das letzte Stück bin ich zu Fuß " +
-          "gegangen, weil eine Umleitung war.\n\n" +
+          "gegangen, weil es eine Umleitung gab.\n\n" +
           "Unterwegs gab es eine Verspätung von einer Stunde. Das war " +
           "ärgerlich, aber die Eisenbahn hat später einen Teil " +
           "zurückgezahlt — schriftlich, mit dem Beleg.\n\n" +

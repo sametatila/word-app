@@ -242,7 +242,7 @@ export const c1U07: SkillExercise[] = [
       { speaker: "Moderatorin", text: "Halb. Die Geschichte liegt bereit, den Anlass finde ich unterwegs. Angekündigt habe ich sie nicht — sonst hätte jeder gewusst, dass ich Zeit fülle." },
       { speaker: "Frau Bergmann", text: "Und wenn Ihnen nichts einfällt?" },
       { speaker: "Moderatorin", text: "Dann eine Denkpause. Ein flüchtiger Blick in die Unterlagen wirkt souveräner als drei Sätze über den Laptop." },
-      { speaker: "Frau Bergmann", text: "Die nehme ich gern. Und die Lagerhalle war übrigens meine Idee." },
+      { speaker: "Frau Bergmann", text: "Die Überleitung nehme ich gern. Und die Lagerhalle war übrigens meine Idee." },
       { speaker: "Moderatorin", text: "Sehen Sie, das nenne ich einen Auftakt." },
     ],
     questions: [
@@ -317,6 +317,7 @@ export const c1U07: SkillExercise[] = [
       { speaker: "Frau Alp", text: "Ich kontere selten. Ich nehme die Spitze auf und gebe ihr eine Richtung — das ist etwas anderes." },
       { speaker: "Kollege", text: "Und wenn jemand nachlegt?" },
       { speaker: "Frau Alp", text: "Dann pariere ich einmal, gelassen, und lasse es dabei. Wer zweimal zurückschlägt, verliert den Raum an sich selbst." },
+      { speaker: "Kollege", text: "Und meine Spitzen stören Sie gar nicht?" },
       { speaker: "Frau Alp", text: "Das sehe ich sportlich. Wenn Sie mir vorher sagen, was Sie interessiert, spare ich uns beiden zehn Minuten." },
       { speaker: "Kollege", text: "Die Margen im Süden." },
       { speaker: "Frau Alp", text: "Dann fange ich damit an. Sehen Sie, das war jetzt produktiv." },

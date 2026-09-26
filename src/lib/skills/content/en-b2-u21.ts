@@ -429,7 +429,7 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ona güvensizlik duyduğu söyleniyor.",
+        tr: "Güvensizlik duyduğu söyleniyor.",
         answer: "She is said to feel distrust.",
         hint: "En zayıf aktarma: biri söyledi.",
       },

@@ -271,7 +271,7 @@ export const enB1U02: SkillExercise[] = [
     gloss: [
       { de: "fire door", tr: "yangın kapısı" },
       { de: "correct", tr: "doğru" },
-      { de: "stands", tr: "takılıp kalıyor" },
+      { de: "stands", tr: "bekliyor" },
       { de: "another building", tr: "başka bir bina" },
       { de: "stood", tr: "dikildi" },
     ],
@@ -279,7 +279,7 @@ export const enB1U02: SkillExercise[] = [
     segments: [
       { speaker: "Nil", text: "How was your first week?" },
       { speaker: "Can", text: "Three parts: the induction, the equipment, and a badge that did not work." },
-      { speaker: "Nil", text: "The badge always." },
+      { speaker: "Nil", text: "It is always the badge." },
       { speaker: "Can", text: "The induction was Monday morning. Two hours, eleven people, and the fire door explained twice." },
       { speaker: "Nil", text: "And the equipment?" },
       { speaker: "Can", text: "The equipment is given on the first day. That is the rule. On my first day the laptop was in a box in another building." },
@@ -288,7 +288,7 @@ export const enB1U02: SkillExercise[] = [
       { speaker: "Nil", text: "So you stood outside." },
       { speaker: "Can", text: "Until Wednesday. Then a colleague from my department saw me there and said: everybody stands here in the first week." },
       { speaker: "Nil", text: "That line is the induction." },
-      { speaker: "Can", text: "By Friday the laptop came, the badge was correct, and I had answered the same question about my name nine times." },
+      { speaker: "Can", text: "By Friday the laptop had arrived, the badge was correct, and I had answered the same question about my name nine times." },
       { speaker: "Nil", text: "When is the induction arranged? Before the badge, or after?" },
       { speaker: "Can", text: "Before. They should change the order." },
     ],
@@ -378,7 +378,7 @@ export const enB1U02: SkillExercise[] = [
         kind: "build",
         tr: "Bana bir giriş kartı verildi.",
         answer: "I was given a badge.",
-        hint: "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi ortada kalır.",
+        hint: "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi „bana“ diye yönelme ekinde kalır.",
       },
       {
         kind: "form",
@@ -404,7 +404,7 @@ export const enB1U02: SkillExercise[] = [
     intro: "İki koşul cümlesi. Biri olabilir, öteki olmuyor.",
     gloss: [
       { de: "If I get", tr: "alırsam" },
-      { de: "If they offered", tr: "teklif etselerdi" },
+      { de: "If they offered", tr: "teklif etseler" },
       { de: "discuss", tr: "görüşmek" },
     ],
     minutes: 8,
@@ -417,7 +417,7 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha fazla teklif etselerdi kabul ederdim.",
+        tr: "Daha fazla teklif etseler kabul ederdim.",
         answer: "If they offered more, I would accept.",
         hint: "Gerçek olmayan koşul: geçmiş biçim burada geçmişi değil, olmayan bir şimdiyi anlatıyor.",
       },

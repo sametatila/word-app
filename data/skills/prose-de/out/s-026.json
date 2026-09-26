@@ -330,11 +330,6 @@
   "de": "Urlaub"
  },
  {
-  "tr": "hafıza",
-  "kind": "gloss.tr",
-  "de": "Erinnerung"
- },
- {
   "tr": "sohbet",
   "kind": "gloss.tr",
   "de": "Gespräch"
@@ -390,9 +385,9 @@
   "de": "Verletzung"
  },
  {
-  "tr": "geçenlerde",
+  "tr": "son zamanlarda",
   "kind": "gloss.tr",
-  "de": "neulich"
+  "de": "in letzter Zeit"
  },
  {
   "tr": "neyse ki …",

@@ -238,7 +238,7 @@ export const enC1U04: SkillExercise[] = [
       { de: "whole", tr: "bütün" },
       { de: "adjective", tr: "sıfat" },
       { de: "entire", tr: "bütün" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "understatement", tr: "eksiltili söyleyiş" },
       { de: "a draft", tr: "taslak" },
       { de: "a tag", tr: "soru eki" },
@@ -345,7 +345,7 @@ export const enC1U04: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Nergis", text: "Some serve the common good; others, themselves. Six words in the second half and one of them is missing, and the sentence is stronger for it." },
+      { speaker: "Nergis", text: "Some serve the common good; others, themselves. Two words in the second half and a third one missing, and the sentence is stronger for it." },
       { speaker: "Nergis", text: "The missing word is „serve“, and the comma is holding its place. Take the comma out and the sentence says that others serve themselves something, which is a different claim and a worse one." },
       { speaker: "Nergis", text: "The electorate would if it could. Here the gap is at the end instead of the middle, and what is missing is everything: „serve the common good“ has gone and only „would“ remains." },
       { speaker: "Nergis", text: "That works because the verb is recoverable from the previous sentence, and it stops working the moment two sentences stand between them." },
@@ -395,7 +395,7 @@ export const enC1U04: SkillExercise[] = [
         text: "Where does she use no gap at all?",
         options: [],
         answer: 0,
-        accept: ["political disillusionment", "the disillusionment paragraph", "the second one"],
+        accept: ["political disillusionment", "about political disillusionment", "a paragraph about political disillusionment", "the disillusionment paragraph", "the second one"],
         explain: "„none at all in a paragraph about political disillusionment…“",
       },
     ],
@@ -410,7 +410,7 @@ export const enC1U04: SkillExercise[] = [
     unit: 4,
     title: "What we enshrine we rarely comprehend",
     genre: "opinion",
-    intro: "İki „what“ ve iki öne çıkarma. Dördüncü sözcük ne?",
+    intro: "İki „what“ ve iki öne çıkarma. „what“ öbeğinden sonra ne geliyor?",
     gloss: [
       { de: "cleft", tr: "yarık cümle" },
       { de: "object", tr: "nesne" },
@@ -423,21 +423,21 @@ export const enC1U04: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Hükme bağladığımız şeyi nadiren idrak ederiz.",
+        tr: "Güvence altına aldığımız şeyi nadiren idrak ederiz.",
         answer: "What we enshrine we rarely comprehend.",
-        hint: "Öne çıkarılmış nesne: dördüncü sözcük „is“ değil.",
+        hint: "Öne çıkarılmış nesne: „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
       },
       {
         kind: "build",
         tr: "Tartışmanın yaptığı şey kutuplaştırmak.",
         answer: "What the debate does is polarize.",
-        hint: "Yarık cümle: dördüncü sözcük „is“.",
+        hint: "Yarık cümle: „what“ öbeğinden sonra „is“ geliyor.",
       },
       {
         kind: "build",
         tr: "Geçmişi yüceltiriz; bugünü stilize ederiz.",
         answer: "The past we glorify; the present we stylize.",
-        hint: "İki nesne öne çıkmış, devrilme yok.",
+        hint: "İki nesne öne çıkmış; özne ile fiil yer değiştirmiyor.",
       },
       {
         kind: "build",
@@ -448,10 +448,10 @@ export const enC1U04: SkillExercise[] = [
       {
         kind: "form",
         prompt: "İki „what“ kartını doldur.",
-        facts: "Dördüncü sözcük „is“ ise yarık cümle; özne ise öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
+        facts: "„what“ öbeğinden sonra „is“ geliyorsa yarık cümle; özne geliyorsa öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
         fields: [
-          { label: "Fourth word „is“", answer: "a cleft", accept: ["cleft"] },
-          { label: "Fourth word a subject", answer: "fronting", accept: ["a fronted object"] },
+          { label: "„is“ after the clause", answer: "a cleft", accept: ["cleft"] },
+          { label: "A subject after the clause", answer: "fronting", accept: ["a fronted object"] },
           { label: "Weight in a cleft", answer: "at the end", accept: ["the end"] },
           { label: "Weight in fronting", answer: "at the front", accept: ["the front"] },
         ],

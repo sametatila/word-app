@@ -201,7 +201,7 @@ export const enA2U08: SkillExercise[] = [
       { speaker: "Deniz", text: "Then go step by step. Don't go back to work on Monday." },
       { speaker: "Ela", text: "My boss called this morning." },
       { speaker: "Deniz", text: "And?" },
-      { speaker: "Ela", text: "He was kind. He said: Your health first, the work waits." },
+      { speaker: "Ela", text: "He was kind. He said: Your health first, the work can wait." },
       { speaker: "Deniz", text: "A good boss. Can you breathe normally now?" },
       { speaker: "Ela", text: "Yes, that is the best part. Last week the stairs were a problem." },
       { speaker: "Deniz", text: "You will recover. But slowly." },
@@ -218,7 +218,7 @@ export const enA2U08: SkillExercise[] = [
         text: "What did the boss say?",
         options: ["health first", "come on Monday", "work first"],
         answer: 0,
-        explain: "„Your health first, the work waits.“",
+        explain: "„Your health first, the work can wait.“",
       },
       {
         kind: "truefalse",
@@ -277,8 +277,8 @@ export const enA2U08: SkillExercise[] = [
       { speaker: "Mert", text: "My kitchen is brighter than the living room. The window there is bigger." },
       { speaker: "Mert", text: "The living room is more comfortable. There is an old chair from my grandmother." },
       { speaker: "Mert", text: "I don't like the ceiling. It is very high and in winter the room is cold." },
-      { speaker: "Mert", text: "The curtains are new. Before that the sun came in at five." },
-      { speaker: "Mert", text: "It is quiet here. Only on Saturday my neighbors have a party — and then I go to the balcony." },
+      { speaker: "Mert", text: "The curtains are new. Before that, the sun came in at five in the morning." },
+      { speaker: "Mert", text: "It is quiet here, but on Saturdays my neighbors have a party — and then I go out on the balcony." },
     ],
     questions: [
       {
@@ -322,7 +322,7 @@ export const enA2U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the sun", "the sun came in at five", "because of the sun"],
-        explain: "„The curtains are new. Before that the sun came in at five.“",
+        explain: "„The curtains are new. Before that, the sun came in at five in the morning.“",
       },
     ],
   },
@@ -348,7 +348,7 @@ export const enA2U08: SkillExercise[] = [
         kind: "build",
         tr: "Kendimi daha iyi hissediyorum.",
         answer: "I feel better.",
-        hint: "„feel“ sonrası sıfat geliyor, zarf değil: „better“, „well“ değil.",
+        hint: "„feel“ sonrası sıfat geliyor: „I feel better“. „better“ hem „good“un hem „well“in karşılaştırması.",
       },
       {
         kind: "build",

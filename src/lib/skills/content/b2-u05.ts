@@ -196,7 +196,6 @@ export const b2U05: SkillExercise[] = [
       { de: "bestehen auf", tr: "ısrar etmek", en: "to insist on" },
       { de: "die Kulanz", tr: "iyi niyet jesti", en: "goodwill" },
       { de: "mangelhaft", tr: "kusurlu", en: "defective" },
-      { de: "verlobt", tr: "nişanlı", en: "engaged" },
     ],
     minutes: 5,
     segments: [
@@ -273,7 +272,6 @@ export const b2U05: SkillExercise[] = [
       { de: "engagiert", tr: "gayretli", en: "committed" },
       { de: "also", tr: "yani", en: "so" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "der Anfänger", tr: "yeni başlayan", en: "beginner" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 5,
@@ -314,7 +312,7 @@ export const b2U05: SkillExercise[] = [
         text: "Warum schreibt Ilkay freitags keinen guten Bericht?",
         options: [],
         answer: 0,
-        accept: ["er ist bei Kunden", "wegen der Kundentermine", "er arbeitet bis sechs"],
+        accept: ["er ist bei Kunden", "wegen der Kundentermine", "er arbeitet bis sechs", "er sitzt bis sechs bei Kunden"],
         explain: "„Freitags sitze ich bis sechs bei Kunden. Danach schreibe ich keinen guten Bericht mehr.“",
       },
       {
@@ -362,6 +360,7 @@ export const b2U05: SkillExercise[] = [
         kind: "build",
         tr: "Siz de kabul ederseniz masrafları paylaşırız.",
         answer: "Sofern Sie einverstanden sind, teilen wir die Kosten",
+        alternatives: ["Wir teilen die Kosten, sofern Sie einverstanden sind"],
         hint: "Yan cümle başta; ana cümle çekimli fiille başlar.",
       },
       {
@@ -374,6 +373,7 @@ export const b2U05: SkillExercise[] = [
         kind: "build",
         tr: "Sizin yerinizde olsam tarihi değiştirirdim.",
         answer: "An Ihrer Stelle würde ich den Termin ändern",
+        alternatives: ["Ich würde an Ihrer Stelle den Termin ändern"],
         hint: "Tümleç başta, dilek kipi ikinci sırada, mastar en sonda.",
       },
       {

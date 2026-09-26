@@ -278,7 +278,7 @@ export const c1U17: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Jonas'ın Almanca'daki ima mekanizmasını özetlediği cümleyi yaz.",
+        text: "Jonas'ın Almancadaki ima mekanizmasını özetlediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -316,7 +316,7 @@ export const c1U17: SkillExercise[] = [
       { speaker: "Teilnehmer", text: "Er erklärt, was Berlin ist." },
       { speaker: "Dozentin", text: "Ja — ergänzend, nicht einschränkend. Man könnte ihn streichen, und der Satz bliebe vollständig." },
       { speaker: "Teilnehmerin", text: "Und wenn man ihn nicht streichen kann?" },
-      { speaker: "Dozentin", text: "Dann ist es keine Apposition. Der Test ist genau das: Streichen Sie ihn. Steht der Satz noch, war es einer." },
+      { speaker: "Dozentin", text: "Dann ist es keine Apposition. Der Test ist genau das: Streichen Sie ihn. Steht der Satz noch, war es eine." },
       { speaker: "Teilnehmer", text: "Die Kommas machen mir Probleme. Ich setze eins und vergesse das zweite." },
       { speaker: "Dozentin", text: "Das ist der häufigste Fehler überhaupt. Der Einschub steht zwischen zwei Kommas — nie zwischen einem." },
       { speaker: "Teilnehmerin", text: "Kann man damit auch eine Sichtweise einbringen?" },
@@ -337,7 +337,7 @@ export const c1U17: SkillExercise[] = [
           "Man ersetzt sie durch einen Relativsatz",
         ],
         answer: 1,
-        explain: "Tamamlayıcı, sınırlandırıcı değil.",
+        explain: "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ Ara açıklama tamamlayıcıdır, sınırlandırıcı değil.",
       },
       {
         kind: "gapfill",
@@ -414,7 +414,7 @@ export const c1U17: SkillExercise[] = [
           "Wir haben zwei Angebote geprüft. Letzteres erscheint uns günstiger; wir möchten es annehmen",
           "Wir haben zwei Angebote geprüft. Letzteres erscheint uns günstiger, daher möchten wir es annehmen.",
         ],
-        why: "Türkçe ismi rahatça tekrar eder, Almanca sachtext etmez: okurun öncekini hatırladığı varsayılır. Aynı öbeği üçüncü kez yazmak dilbilgisi hatası değil ama metni çeviri gibi gösterir.",
+        why: "Türkçe ismi rahatça tekrar eder, Almanca olgu metni (Sachtext) etmez: okurun öncekini hatırladığı varsayılır. Aynı öbeği üçüncü kez yazmak dilbilgisi hatası değil ama metni çeviri gibi gösterir.",
       },
     ],
   },
@@ -450,7 +450,7 @@ export const c1U17: SkillExercise[] = [
           "Absage. Andere Kandidaten passten besser. Unterlagen vernichtet.\n\n" +
           "MfG\nK. Bauer\n\n" +
           "GELEN CEVAP\n\n" +
-          "„Vielen Dank für die vier Wörter. Ich hatte zwei Tage in die Aufgabe investiert.“\n\n" +
+          "„Vielen Dank für die drei Sätze. Ich hatte zwei Tage in die Aufgabe investiert.“\n\n" +
           "DURUMUN: İki finalistten biri seçildi. Diğerinin teknik çözümü iyiydi, ekip liderliği deneyimi yetersiz kaldı. Altı ay içinde ikinci bir pozisyon açılacak ve bu kişiyi tekrar davet etmek istiyorsun.",
         checklist: [
           "Ret açık mı, yumuşatılıp belirsizleştirilmemiş mi?",

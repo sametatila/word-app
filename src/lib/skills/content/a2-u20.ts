@@ -172,12 +172,12 @@ export const a2U20: SkillExercise[] = [
     intro: "Tartışmadan sonra barışma. Kim ne yaptı, nasıl çözülüyor?",
     gloss: [
       { de: "sich zanken", tr: "atışmak", en: "to squabble" },
-      { de: "anschreien", tr: "bağırmak", en: "to shout at" },
+      { de: "anschreien", tr: "bağırmak", en: "to yell at" },
       { de: "beleidigt", tr: "gücenmiş", en: "offended" },
       { de: "absichtlich", tr: "bilerek", en: "on purpose" },
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
       { de: "gemein", tr: "kırıcı", en: "mean" },
-      { de: "vorwerfen", tr: "suçlamak / başa kakmak", en: "to reproach" },
+      { de: "vorwerfen", tr: "suçlamak", en: "to reproach" },
     ],
     minutes: 3,
     segments: [
@@ -224,7 +224,6 @@ export const a2U20: SkillExercise[] = [
         answer: 0,
         accept: [
           "Ich habe das jedenfalls nicht absichtlich gemacht.",
-          "Ich habe das nicht absichtlich gemacht.",
         ],
         explain: "Özür dilerken niyeti ayırmak: yaptığını kabul et, ama kasıtlı olmadığını söyle.",
       },
@@ -241,7 +240,7 @@ export const a2U20: SkillExercise[] = [
     gloss: [
       { de: "boxen", tr: "boks yapmak", en: "to box" },
       { de: "das Tennis", tr: "tenis", en: "tennis" },
-      { de: "sportlich", tr: "sportif", en: "sporty" },
+      { de: "sportlich", tr: "sportif", en: "athletic" },
       { de: "motiviert", tr: "istekli", en: "motivated" },
       { de: "die Unterstützung", tr: "destek", en: "support" },
       { de: "verringern", tr: "azaltmak", en: "to reduce" },
@@ -261,7 +260,7 @@ export const a2U20: SkillExercise[] = [
       { speaker: "Jonas", text: "Zweimal ein ganzes Jahr ist mehr als fünfmal für sechs Wochen. Was willst du denn machen?" },
       { speaker: "Rana", text: "Tennis, glaube ich. Oder boxen — eine Freundin geht dienstags." },
       { speaker: "Jonas", text: "Dann geh mit ihr. Allein hört man auf, zu zweit nicht so schnell." },
-      { speaker: "Rana", text: "Gut. Zweimal die Woche, und den Kaffee verringere ich auch." },
+      { speaker: "Rana", text: "Gut. Zweimal die Woche, und meine Zeit am Handy verringere ich auch." },
       { speaker: "Jonas", text: "Eins nach dem anderen, bitte." },
     ],
     questions: [
@@ -294,8 +293,8 @@ export const a2U20: SkillExercise[] = [
         text: "Was will Rana außerdem verringern?",
         options: [],
         answer: 0,
-        accept: ["den Kaffee", "Kaffee"],
-        explain: "„Zweimal die Woche, und den Kaffee verringere ich auch.“",
+        accept: ["ihre Zeit am Handy", "die Zeit am Handy", "Zeit am Handy", "meine Zeit am Handy"],
+        explain: "„Zweimal die Woche, und meine Zeit am Handy verringere ich auch.“",
       },
     ],
   },
@@ -312,13 +311,13 @@ export const a2U20: SkillExercise[] = [
       { de: "passen", tr: "uymak", en: "to fit" },
       { de: "gefallen", tr: "hoşuna gitmek", en: "to please" },
       { de: "modisch", tr: "modaya uygun", en: "fashionable" },
-      { de: "lässig", tr: "rahat / havalı", en: "casual" },
+      { de: "lässig", tr: "rahat", en: "casual" },
     ],
     minutes: 6,
     tasks: [
       {
         kind: "build",
-        tr: "Bu sana çok yakışıyor!",
+        tr: "Bu sana yakışıyor!",
         answer: "Das steht dir gut",
         hint: "Yakışan şey öznedir; kişi yönelme hâlinde yanda durur — dir.",
       },
@@ -357,7 +356,7 @@ export const a2U20: SkillExercise[] = [
       { de: "beleidigt", tr: "gücenmiş", en: "offended" },
       { de: "absichtlich", tr: "bilerek", en: "on purpose" },
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
-      { de: "gemein", tr: "kırıcı / kötü", en: "mean" },
+      { de: "gemein", tr: "kırıcı", en: "mean" },
       { de: "die Umarmung", tr: "sarılma", en: "hug" },
       { de: "lustig", tr: "komik", en: "funny" },
     ],
@@ -386,7 +385,7 @@ export const a2U20: SkillExercise[] = [
         sample:
           "Liebe Jana,\n\n" +
           "danke, dass du es mir direkt gesagt hast. Es tut mir wirklich leid, dass ich das vor allen gesagt habe.\n\n" +
-          "Ich habe das nicht absichtlich gemacht und wollte dich nicht verletzen. Aber du hast recht: lustig war es nur für mich, nicht für dich. Das war gemein.\n\n" +
+          "Ich habe das nicht absichtlich gemacht und wollte dich nicht verletzen. Aber du hast recht: Lustig war es nur für mich, nicht für dich. Das war gemein.\n\n" +
           "Ich verstehe, dass du beleidigt bist. Können wir darüber reden? Ich lade dich am Donnerstag zum Kaffee ein, dann sage ich es dir auch persönlich.\n\n" +
           "Bitte schreib mir zurück.\nKerem",
       },

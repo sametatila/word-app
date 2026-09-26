@@ -12,7 +12,7 @@
  {
   "tr": "Kademeler, yetki ve ara çözüm — hepsi on dakikada.",
   "kind": "intro",
-  "en": "Registers, authority and the stopgap — all in ten minutes."
+  "en": "Escalation levels, authority and the stopgap — all in ten minutes."
  },
  {
   "tr": "Kısa bir tartışma turu. Kim kaç argüman getiriyor?",
@@ -37,7 +37,7 @@
  {
   "tr": "Postanede bir paket. Kaç gram, hangi yol en hızlı?",
   "kind": "intro",
-  "en": "A parcel at the post office. How many grams, which way is fastest?"
+  "en": "A package at the post office. How many grams, which way is fastest?"
  },
  {
   "tr": "Sırt ağrısı konuşuluyor. Hangi öneri, hangi sebep?",
@@ -52,7 +52,7 @@
  {
   "tr": "Ters giderse karar onun, ihmal Herr Weiß'ın değil.",
   "kind": "explain",
-  "en": "If it goes wrong the decision is theirs, not Herr Weiß's oversight."
+  "en": "If it goes wrong the decision is hers, not Herr Weiß's oversight."
  },
  {
   "tr": "Yan cümle önde → ana cümle FİİLLE başlar: war ich.",
@@ -295,9 +295,9 @@
   "en": "Someone who has just moved in asks the way. Which route is shorter?"
  },
  {
-  "tr": "„garantieren“ ayrılmayan fiil, ortaçta da ge- almaz.",
+  "tr": "„ich“ ile şimdiki zaman: garantiere. -ieren ile biten fiiller ortaçta da ge- almaz: garantiert.",
   "kind": "explain",
-  "en": "„garantieren“ is inseparable and takes no ge- in the participle."
+  "en": "Present tense with „ich“: garantiere. Verbs ending in -ieren take no ge- in the participle either: garantiert."
  },
  {
   "tr": "„hinterlassen“ ayrılmayan fiildir: ortacı ge- almaz.",
@@ -310,9 +310,9 @@
   "en": "„legen“ shows movement → accusative: auf den Tisch."
  },
  {
-  "tr": "„Nein, neun passt.“ — cumartesi sabah dokuz, parkta.",
+  "tr": "„Schon gut, neun passt.“ — cumartesi sabah dokuz, parkta.",
   "kind": "explain",
-  "en": "„Nein, neun passt.“ — Saturday at nine in the morning, in the park."
+  "en": "„Schon gut, neun passt.“ — Saturday at nine in the morning, in the park."
  },
  {
   "tr": "„Nein, sie war sehr nett“ — sonunda ikisi de gülmüş.",
@@ -327,7 +327,7 @@
  {
   "tr": "„Zum Mitnehmen, bitte.“ — paket, yani yanına alıyor.",
   "kind": "explain",
-  "en": "„Zum Mitnehmen, bitte.“ — a takeaway, so they take it with them."
+  "en": "„Zum Mitnehmen, bitte.“ — to go, so they take it with them."
  },
  {
   "tr": "Ara açıklama: virgüller arasına ne sıkıştırılabilir?",
@@ -372,7 +372,7 @@
  {
   "tr": "Bir kuruma ya da firmaya resmî bir bilgi talebi yaz.",
   "kind": "intro",
-  "en": "Write a formal enquiry to an office or a company."
+  "en": "Write a formal inquiry to an office or a company."
  },
  {
   "tr": "Bir önlem etkili ama son derece verimsiz olabiliyor.",
@@ -425,9 +425,9 @@
   "en": "Ellipsis: when is brevity skill, and when is it rudeness?"
  },
  {
-  "tr": "Formda hatalar var. Memur ne düzeltilmesini istiyor?",
+  "tr": "Formda eksikler var. Memur neyin tamamlanmasını istiyor?",
   "kind": "intro",
-  "en": "There are mistakes on the form. What does the official want corrected?"
+  "en": "Things are missing from the form. What does the official want filled in?"
  },
  {
   "tr": "Geçmişteki iş için Präteritum Passiv: wurde geprüft.",
@@ -645,14 +645,14 @@
   "en": "The separable verb vorschreiben: the prefix goes at the end."
  },
  {
-  "tr": "Bir alet için malzeme seçiliyor. Hangisi ne için iyi?",
+  "tr": "Bir kâse için malzeme seçiliyor. Hangisi ne için iyi?",
   "kind": "intro",
-  "en": "A material is being chosen for a tool. Which is good for what?"
+  "en": "A material is being chosen for a bowl. Which is good for what?"
  },
  {
   "tr": "Bir arkadaşına tatilini anlatan kısa bir e-posta yaz.",
   "kind": "intro",
-  "en": "Write a short email telling a friend about your holiday."
+  "en": "Write a short email telling a friend about your vacation."
  },
  {
   "tr": "Bir konuşmayı taşıyan şey: yay, tek fikir, son cümle.",

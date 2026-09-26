@@ -210,9 +210,9 @@
   "de": "Altes vorn, Neues hinten."
  },
  {
-  "tr": "Nesne öne çıkıyor ama devrilme yok.",
+  "tr": "Nesne öne çıkıyor ama özne ile fiil yer değiştirmiyor.",
   "kind": "build.hint",
-  "de": "Das Objekt rückt nach vorn, aber nichts kippt."
+  "de": "Das Objekt rückt nach vorn, aber Subjekt und Verb tauschen nicht die Plätze."
  },
  {
   "tr": "Üç fiil, aynı ölçekte üç ayrı konum.",
@@ -227,7 +227,7 @@
  {
   "tr": "İçinde bir kişi olan ödün: eşit tartmak isteyen ben.",
   "kind": "build.hint",
-  "de": "Eine Einräumung mit einer Person darin: ich, die gern gleich abwägen würde."
+  "de": "Eine Einräumung mit einer Person darin: das Ich, das gern gleich abwägen würde."
  },
  {
   "tr": "Mastarlı iki yarı karşı karşıya konuyor.",

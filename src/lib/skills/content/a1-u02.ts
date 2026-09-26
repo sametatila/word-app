@@ -149,7 +149,7 @@ export const a1U02: SkillExercise[] = [
     intro: "Bir kadın telefonda adını harf harf söylüyor. Dinle ve yaz.",
     gloss: [
       { de: "buchstabieren", tr: "harf harf söylemek", en: "to spell" },
-      { de: "der Nachname", tr: "soyadı", en: "surname" },
+      { de: "der Nachname", tr: "soyadı", en: "last name" },
       { de: "der Buchstabe", tr: "harf", en: "letter" },
     ],
     minutes: 2,
@@ -205,7 +205,7 @@ export const a1U02: SkillExercise[] = [
     minutes: 2,
     segments: [
       { text: "Guten Morgen! Hier ist der Deutschkurs A1." },
-      { text: "Die Kursnummer ist hundert zehn." },
+      { text: "Die Kursnummer ist hundertzehn." },
       { text: "Der Kurs kostet zwanzig Euro." },
       { text: "Bitte wiederholen Sie die Wörter. Ein Fehler ist kein Problem!" },
     ],
@@ -218,17 +218,17 @@ export const a1U02: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Kursnummer ist ___ zehn.",
+        text: "Die Kursnummer ist ___.",
         options: [],
         answer: 0,
-        accept: ["hundert", "100"],
-        explain: "„Die Kursnummer ist hundert zehn.“",
+        accept: ["hundertzehn", "110"],
+        explain: "„Die Kursnummer ist hundertzehn.“ Yazıyla da rakamla da kabul edilir.",
       },
       {
         text: "Wie viel kostet der Kurs?",
         options: ["zwanzig Euro", "zehn Euro", "hundert Euro"],
         answer: 0,
-        explain: "„Der Kurs kostet zwanzig Euro.“ Hundert ise kurs numarasının bir parçası.",
+        explain: "„Der Kurs kostet zwanzig Euro.“ Hundertzehn (110) ise kurs numarası.",
       },
       {
         text: "Richtig oder falsch? Ein Fehler ist kein Problem.",
@@ -256,7 +256,7 @@ export const a1U02: SkillExercise[] = [
     intro: "Dil kursu kayıt formunu doldur ve iki cümle kur.",
     gloss: [
       { de: "der Vorname", tr: "ad", en: "first name" },
-      { de: "der Nachname", tr: "soyadı", en: "surname" },
+      { de: "der Nachname", tr: "soyadı", en: "last name" },
       { de: "der Beruf", tr: "meslek", en: "profession" },
       { de: "die Sprache", tr: "dil", en: "language" },
     ],

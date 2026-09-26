@@ -176,16 +176,16 @@ export const b1U04: SkillExercise[] = [
     intro: "Paylaşımlı eve aday biri geliyor. Dinle: hangi kurallar var, ne konuşuluyor?",
     minutes: 4,
     gloss: [
-      { de: "die WG", tr: "paylaşımlı ev", en: "shared flat" },
+      { de: "die WG", tr: "paylaşımlı ev", en: "shared apartment" },
       { de: "reinigen", tr: "temizlemek", en: "to clean" },
       { de: "das Haustier", tr: "evcil hayvan", en: "pet" },
-      { de: "gemeinsam", tr: "ortak / birlikte", en: "together" },
+      { de: "gemeinsam", tr: "ortak / birlikte", en: "shared / together" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     segments: [
       { text: "Schön, dass du da bist. Wir sind zu dritt in der WG." },
       { text: "Danke. Wie ist das mit der Küche und dem Bad?" },
-      { text: "Jeder reinigt eine Woche lang alles gemeinsame. Danach ist der Nächste dran." },
+      { text: "Jeder reinigt eine Woche lang alles Gemeinsame. Danach ist der Nächste dran." },
       { text: "Das finde ich gut. Und darf man ein Haustier haben?" },
       { text: "Eine Katze wäre möglich, aber wir müssten uns vorher alle einigen." },
       { text: "Verstehe. Wann ist bei euch Ruhe?" },
@@ -203,7 +203,7 @@ export const b1U04: SkillExercise[] = [
         text: "Wie wird das Reinigen geregelt?",
         options: ["Jeder eine Woche", "Eine Firma kommt", "Jeder sein Zimmer"],
         answer: 0,
-        explain: "„Jeder reinigt eine Woche lang alles gemeinsame.“",
+        explain: "„Jeder reinigt eine Woche lang alles Gemeinsame.“",
       },
       {
         text: "Was gilt für ein Haustier?",
@@ -216,7 +216,7 @@ export const b1U04: SkillExercise[] = [
         text: "Ruhe ist ab ___ Uhr.",
         options: [],
         answer: 0,
-        accept: ["elf"],
+        accept: ["elf", "11", "23"],
         explain: "„Ab elf.“",
       },
       {
@@ -225,7 +225,7 @@ export const b1U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eine Woche", "eine Woche lang"],
-        explain: "„Jeder reinigt eine Woche lang alles gemeinsame.“",
+        explain: "„Jeder reinigt eine Woche lang alles Gemeinsame.“",
       },
     ],
   },
@@ -241,7 +241,7 @@ export const b1U04: SkillExercise[] = [
     gloss: [
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
       { de: "der Schaden", tr: "hasar / arıza", en: "damage" },
-      { de: "der Handwerker", tr: "usta / tamirci", en: "tradesman" },
+      { de: "der Handwerker", tr: "usta / tamirci", en: "repairman" },
       { de: "spätestens", tr: "en geç", en: "at the latest" },
     ],
     segments: [
@@ -319,7 +319,6 @@ export const b1U04: SkillExercise[] = [
         kind: "build",
         tr: "Bir sorun olursa lütfen kapımı çalın.",
         answer: "Falls es ein Problem gibt, klopfen Sie bitte bei mir.",
-        alternatives: ["Wenn es ein Problem gibt, klopfen Sie bitte bei mir."],
         hint: "Koşul bağlacı yan cümleyi kurar; ana cümle emir kipiyle başlar.",
       },
       {
@@ -352,7 +351,7 @@ export const b1U04: SkillExercise[] = [
       { de: "der Mechaniker", tr: "tamirci", en: "mechanic" },
       { de: "spätestens", tr: "en geç", en: "at the latest" },
       { de: "sorgen", tr: "gereğini yapmak", en: "to see to it" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
     ],
     tasks: [
       {
@@ -365,7 +364,7 @@ export const b1U04: SkillExercise[] = [
         kind: "build",
         tr: "Arızanın en geç cuma günü giderilmesini rica ediyorum.",
         answer: "Ich bitte darum, dass der Schaden spätestens am Freitag repariert wird.",
-        hint: "„bitten um“ + yan cümle; yan cümlede edilgen ve fiil sonda.",
+        hint: "„bitten um“ yan cümleyle „darum, dass …“ olur; yan cümlede edilgen, fiil sonda.",
       },
       {
         kind: "free",
@@ -389,7 +388,7 @@ export const b1U04: SkillExercise[] = [
           "Falls Sie Fragen haben, klopfen Sie einfach oder rufen Sie an.\n\n" +
           "Mit freundlichen Grüßen\nAyla Yıldız",
         phrases: [
-          { de: "Ich melde Ihnen einen Schaden.", tr: "Size bir arıza bildiriyorum.", en: "I am reporting a damage." },
+          { de: "Ich melde Ihnen einen Schaden.", tr: "Size bir arıza bildiriyorum.", en: "I am reporting some damage." },
           { de: "seit dem …", tr: "…'den beri", en: "since …" },
           { de: "Ich bitte darum, dass …", tr: "… olmasını rica ediyorum", en: "I request that …" },
           { de: "Bitte sorgen Sie dafür, dass …", tr: "Lütfen … olmasını sağlayın", en: "Please see to it that …" },

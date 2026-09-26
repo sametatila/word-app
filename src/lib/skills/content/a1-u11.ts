@@ -142,8 +142,8 @@ export const a1U11: SkillExercise[] = [
     gloss: [
       { de: "suchen", tr: "aramak", en: "to look for" },
       { de: "anprobieren", tr: "denemek", en: "to try on" },
-      { de: "die Umkleide", tr: "soyunma kabini", en: "changing room" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "die Umkleide", tr: "soyunma kabini", en: "fitting room" },
+      { de: "passen", tr: "uymak", en: "to fit" },
     ],
     minutes: 2,
     segments: [
@@ -260,7 +260,7 @@ export const a1U11: SkillExercise[] = [
     gloss: [
       { de: "die Größe", tr: "beden", en: "size" },
       { de: "anprobieren", tr: "denemek", en: "to try on" },
-      { de: "das Angebot", tr: "indirim", en: "offer" },
+      { de: "das Angebot", tr: "indirim", en: "special offer" },
     ],
     minutes: 6,
     tasks: [
@@ -287,7 +287,7 @@ export const a1U11: SkillExercise[] = [
         prompt: "Rengi sorarak yaz.",
         source: "Ich möchte den Pullover.",
         answer: "Haben Sie den Pullover auch in Blau?",
-        alternatives: ["Haben Sie den Pullover auch in Rot?", "Haben Sie den Pullover auch in Schwarz?"],
+        alternatives: ["Haben Sie den Pullover auch in Rot?", "Haben Sie den Pullover auch in Schwarz?", "Haben Sie den Pullover auch in Weiß?", "Haben Sie den Pullover auch in Grün?", "Haben Sie den Pullover auch in Grau?"],
         why: "Renk adı olarak kullanılınca BÜYÜK harfle yazılır: in Blau, in Rot. Sıfat olunca küçük: Der Pullover ist blau.",
       },
     ],
@@ -330,7 +330,7 @@ export const a1U11: SkillExercise[] = [
           { de: "Das ist zu teuer.", tr: "Bu çok pahalı.", en: "That's too expensive." },
         ],
         sample:
-          "Hallo!\n\nIch trage gern Jeans und ein Hemd. Meine Lieblingsfarben sind blau und weiß. Ein schwarzes T-Shirt habe ich auch.\n\nKleider trage ich nie — sie passen mir nicht.\n\nTeure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Pullover für 19 Euro — das ist günstig!\n\nUnd ihr? Welche Farben tragt ihr gern?",
+          "Hallo!\n\nIch trage gern Jeans und ein Hemd. Meine Lieblingsfarben sind Blau und Weiß. Ein schwarzes T-Shirt habe ich auch.\n\nKleider trage ich nie — sie passen mir nicht.\n\nTeure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Pullover für 19 Euro — das ist günstig!\n\nUnd ihr? Welche Farben tragt ihr gern?",
       },
     ],
   },

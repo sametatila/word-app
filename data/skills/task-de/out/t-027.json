@@ -20,9 +20,9 @@
   "de": "Der Fortschritt ist da; von außen sieht ihn niemand; drei Zeilen sind zu schreiben; das neue Ziel hat ein Datum."
  },
  {
-  "tr": "Altı yıl sektörde; diploma işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
+  "tr": "Altı yıl sektörde; üniversite işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
   "kind": "form.facts",
-  "de": "Sechs Jahre in der Branche; Abschluss vor der Stelle beendet; Zeugnis vom früheren Arbeitgeber; zwei Kurse."
+  "de": "Sechs Jahre in der Branche; Studium vor der Stelle abgeschlossen; Zeugnis vom früheren Arbeitgeber; zwei Kurse."
  },
  {
   "tr": "Oryantasyon pazartesi; ekipman ilk gün kuralı; giriş kartı ofis tarafından; addaki hata çarşambaya kadar.",
@@ -155,14 +155,14 @@
   "de": "Mein Ausweis wurde vom Büro besorgt."
  },
  {
-  "tr": "Daha fazla teklif etselerdi kabul ederdim.",
+  "tr": "Daha fazla teklif etseler kabul ederdim.",
   "kind": "build.tr",
   "de": "Wenn sie mehr böten, würde ich annehmen."
  },
  {
-  "tr": "Oraya başlamadan önce diplomamı bitirmiştim.",
+  "tr": "Oraya başlamadan önce üniversiteyi bitirmiştim.",
   "kind": "build.tr",
-  "de": "Ich hatte meinen Abschluss beendet, bevor ich dort anfing."
+  "de": "Ich hatte mein Studium abgeschlossen, bevor ich dort anfing."
  },
  {
   "tr": "„still“ „be“ fiilinden sonra geliyor.",
@@ -280,7 +280,7 @@
   "de": "Von zwei Ereignissen trägt das FRÜHERE „had“ + dritte Form; das spätere bleibt einfach. Deutsch hat dafür das Plusquamperfekt."
  },
  {
-  "tr": "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi ortada kalır.",
+  "tr": "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi „bana“ diye yönelme ekinde kalır.",
   "kind": "build.hint",
   "de": "Englisch kann die PERSON zum Subjekt machen; Deutsch kann das nicht, dort bleibt sie im Dativ: mir wurde ein Ausweis gegeben."
  },

@@ -141,7 +141,7 @@ export const a1U06: SkillExercise[] = [
     intro: "Kafede sipariş veriliyor. Ne isteniyor, hesap ne kadar?",
     gloss: [
       { de: "bestellen", tr: "sipariş etmek", en: "to order" },
-      { de: "die Rechnung", tr: "hesap", en: "bill" },
+      { de: "die Rechnung", tr: "hesap", en: "check" },
       { de: "außer", tr: "hariç", en: "except" },
     ],
     minutes: 2,
@@ -256,7 +256,7 @@ export const a1U06: SkillExercise[] = [
     intro: "Sipariş ve ödeme kalıplarını yaz.",
     gloss: [
       { de: "möchten", tr: "istemek", en: "would like" },
-      { de: "die Rechnung", tr: "hesap", en: "bill" },
+      { de: "die Rechnung", tr: "hesap", en: "check" },
       { de: "kosten", tr: "fiyatı olmak", en: "to cost" },
     ],
     minutes: 6,

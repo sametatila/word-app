@@ -340,9 +340,9 @@
   "de": "„I'd like to return this and get my money back.“ — der Verkäufer bietet eine Farbe an, Ela will sie nicht."
  },
  {
-  "tr": "Önce zaman, sonra patates, sonra peynir, en son para. Sayılamayan ile sayılabilen birbirini izliyor.",
+  "tr": "Önce zaman, sonra patates, sonra peynir, en son para.",
   "kind": "explain",
-  "de": "Zuerst die Zeit, dann die Kartoffeln, dann der Käse, zuletzt das Geld. Unzählbares und Zählbares wechseln sich ab."
+  "de": "Zuerst die Zeit, dann die Kartoffeln, dann der Käse, zuletzt das Geld."
  },
  {
   "tr": "bence",
@@ -367,7 +367,7 @@
  {
   "tr": "özel",
   "kind": "gloss.tr",
-  "de": "besonders"
+  "de": "privat"
  },
  {
   "tr": "park",
@@ -382,7 +382,7 @@
  {
   "tr": "favori",
   "kind": "gloss.tr",
-  "de": "Liebling"
+  "de": "Lieblings-"
  },
  {
   "tr": "görmek",

@@ -20,7 +20,7 @@ import type { SkillExercise } from "../types";
  *           Then the correction helped me. ·
  *           By the time I noticed, I had repeated it often. ·
  *           She said that my comment had helped. ·
- *           He told me to advise the others. ·
+ *           She told me to advise the others. ·
  *           She asked if I had understood the feedback.
  *
  * Ünitenin tek öğretme noktası „USED TO DO“ İLE „BE USED TO DOING“
@@ -257,7 +257,7 @@ export const enB1U14: SkillExercise[] = [
         text: "What are Sena's two measures?",
         options: [],
         answer: 0,
-        accept: ["talking and speaking out loud", "how long and out loud", "two things"],
+        accept: ["talking and speaking out loud", "how long and out loud", "how long I can talk and out loud"],
         explain: "„how long I can talk before I stop … whether I say it out loud…“",
       },
     ],
@@ -286,7 +286,7 @@ export const enB1U14: SkillExercise[] = [
       { speaker: "Nil", text: "It clearly was not." },
       { speaker: "Mert", text: "Three other people had the same question and nobody asked it. She said that out loud, which is why I am telling you." },
       { speaker: "Nil", text: "What else?" },
-      { speaker: "Mert", text: "He told me to advise the others on the writing part. Not to teach them — to say what I do." },
+      { speaker: "Mert", text: "She told me to advise the others on the writing part. Not to teach them — to say what I do." },
       { speaker: "Nil", text: "Can you do that?" },
       { speaker: "Mert", text: "I can say what I do. Whether it helps anybody is a different question." },
       { speaker: "Nil", text: "Any criticism?" },
@@ -305,7 +305,7 @@ export const enB1U14: SkillExercise[] = [
         text: "What was Mert told to do?",
         options: ["advise the others on writing", "teach the group", "repeat the exercise"],
         answer: 0,
-        explain: "„He told me to advise the others on the writing part. Not to teach them — to say what I do.“",
+        explain: "„She told me to advise the others on the writing part. Not to teach them — to say what I do.“",
       },
       {
         kind: "truefalse",

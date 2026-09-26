@@ -183,11 +183,11 @@ export const a2U21: SkillExercise[] = [
       { de: "meistens", tr: "çoğunlukla", en: "mostly" },
       { de: "tagsüber", tr: "gündüzleri", en: "during the day" },
       { de: "gelegentlich", tr: "ara sıra", en: "occasionally" },
-      { de: "sonst", tr: "yoksa / başka türlü", en: "otherwise" },
+      { de: "sonst", tr: "yoksa", en: "otherwise" },
       { de: "einige", tr: "birkaç", en: "some" },
       { de: "manche", tr: "bazıları", en: "some people" },
       { de: "irgendwie", tr: "bir şekilde", en: "somehow" },
-      { de: "vormittags", tr: "öğleden önce", en: "before noon" },
+      { de: "vormittags", tr: "öğleden önce", en: "in the morning" },
       { de: "also", tr: "yani", en: "so" },
       { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
@@ -201,8 +201,8 @@ export const a2U21: SkillExercise[] = [
       { speaker: "Paul", text: "Hm. Dann bleibt eigentlich nur das Wochenende." },
       { speaker: "Elif", text: "Samstagmorgen? Einige aus dem Büro laufen um neun im Park." },
       { speaker: "Paul", text: "Neun ist früh. Aber gut, sonst finden wir nie einen Termin." },
-      { speaker: "Elif", text: "Manche stehen am Samstag um sechs auf. Neun ist also verhandelbar." },
-      { speaker: "Paul", text: "Nein, neun passt. Gelegentlich schaffe ich das sogar freiwillig." },
+      { speaker: "Elif", text: "Manche stehen am Samstag um sechs auf. Neun ist also gar nicht so früh." },
+      { speaker: "Paul", text: "Schon gut, neun passt. Gelegentlich schaffe ich das sogar freiwillig." },
       { speaker: "Elif", text: "Dann Samstag. Irgendwie muss es ja anfangen." },
     ],
     questions: [
@@ -239,8 +239,11 @@ export const a2U21: SkillExercise[] = [
           "Samstagmorgen um neun",
           "Samstag um neun",
           "am Samstag um 9",
+          "am Samstag um neun",
+          "Samstag um 9",
+          "Samstagmorgen um 9",
         ],
-        explain: "„Nein, neun passt.“ — cumartesi sabah dokuz, parkta.",
+        explain: "„Schon gut, neun passt.“ — cumartesi sabah dokuz, parkta.",
       },
     ],
   },
@@ -259,7 +262,7 @@ export const a2U21: SkillExercise[] = [
       { de: "das Profil", tr: "profil", en: "profile" },
       { de: "das Selfie", tr: "özçekim", en: "selfie" },
       { de: "der Chat", tr: "sohbet", en: "chat" },
-      { de: "echt", tr: "gerçek / gerçekten", en: "real, really" },
+      { de: "echt", tr: "gerçekten", en: "really" },
       { de: "online", tr: "çevrimiçi", en: "online" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "also", tr: "yani", en: "so" },
@@ -332,18 +335,21 @@ export const a2U21: SkillExercise[] = [
         kind: "build",
         tr: "Vaktim olunca kitap okurum.",
         answer: "Wenn ich Zeit habe, lese ich",
+        alternatives: ["Ich lese, wenn ich Zeit habe"],
         hint: "Yan cümle başta: virgülden sonra önce fiil, sonra özne gelir.",
       },
       {
         kind: "build",
         tr: "Yorgun olduğumda polisiye izlerim.",
         answer: "Ich schaue Krimis, wenn ich müde bin",
+        alternatives: ["Wenn ich müde bin, schaue ich Krimis"],
         hint: "Yan cümle sonda durursa ana cümle normal sırasını korur.",
       },
       {
         kind: "build",
         tr: "Çoğunlukla gündüzleri evde olmam.",
         answer: "Meistens bin ich tagsüber nicht zu Hause",
+        alternatives: ["Tagsüber bin ich meistens nicht zu Hause", "Ich bin meistens tagsüber nicht zu Hause"],
         hint: "Cümle zarfla başlarsa da fiil ikinci sırada kalır, özne arkaya geçer.",
       },
       {
@@ -381,7 +387,7 @@ export const a2U21: SkillExercise[] = [
         prompt: "Forumdaki soruya cevap yaz. Telefonu ne zaman eline aldığını wenn ile anlat, günde ne kadar sürdüğünü tahmin et, neyi değiştirmek istediğini söyle ve bunun senin için yapılabilir olup olmadığını yaz.",
         stimulus:
           "FORUM: LEBEN OHNE HANDY — GEHT DAS?\n\n" +
-          "Ich schaue jeden Tag ungefähr vier Stunden aufs Handy. Vier! Das sind 28 Stunden pro Woche, also mehr als ein Arbeitstag.\n\n" +
+          "Ich schaue jeden Tag ungefähr vier Stunden aufs Handy. Vier! Das sind 28 Stunden pro Woche, also mehr als drei Arbeitstage.\n\n" +
           "Ich habe zwei Apps gelöscht und poste nichts mehr. Es ist besser geworden, aber abends bin ich trotzdem wieder online.\n\n" +
           "Wie ist das bei euch? Wann nehmt ihr das Handy in die Hand — und was habt ihr geändert?",
         checklist: [

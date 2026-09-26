@@ -194,9 +194,9 @@ export const enA1U24: SkillExercise[] = [
       { speaker: "Nil", text: "You make your own password. It has to be long." },
       { speaker: "Can", text: "My password is my name. Is that bad?" },
       { speaker: "Nil", text: "Very bad! You should make a new one today." },
-      { speaker: "Can", text: "Good. And the phone app?" },
+      { speaker: "Can", text: "OK. And the phone app?" },
       { speaker: "Nil", text: "The app is the same website, only smaller. I use it on the bus." },
-      { speaker: "Can", text: "Then I try it tomorrow." },
+      { speaker: "Can", text: "Then I'm going to try it tomorrow." },
       { speaker: "Nil", text: "And don't write your password on paper!" },
     ],
     questions: [
@@ -214,7 +214,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The app is a smaller website.",
+        text: "The app is not the same website.",
         options: ["True", "False"],
         answer: 1,
         explain: "„The app is the same website, only smaller.“ — daha küçük ama aynı site.",
@@ -341,7 +341,7 @@ export const enA1U24: SkillExercise[] = [
         kind: "build",
         tr: "Sevgili Anna,",
         answer: "Dear Anna,",
-        hint: "E-posta hep „Dear“ ile başlıyor ve sonrasına virgül geliyor.",
+        hint: "Resmî e-posta çoğu zaman „Dear“ ile başlar ve sonrasına virgül gelir.",
       },
       {
         kind: "build",
@@ -359,6 +359,7 @@ export const enA1U24: SkillExercise[] = [
         kind: "build",
         tr: "İnterneti her gün kullanıyorum.",
         answer: "I use the internet every day.",
+        alternatives: ["Every day I use the internet."],
         hint: "„the internet“ hep „the“ ile geliyor, tek bir şey gibi.",
       },
       {

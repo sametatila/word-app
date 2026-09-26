@@ -189,13 +189,13 @@ export const a2U24: SkillExercise[] = [
     gloss: [
       { de: "das E-Book", tr: "e-kitap", en: "e-book" },
       { de: "das Kochbuch", tr: "yemek kitabı", en: "cookbook" },
-      { de: "das Schulbuch", tr: "ders kitabı", en: "schoolbook" },
+      { de: "das Schulbuch", tr: "ders kitabı", en: "textbook" },
       { de: "sortieren", tr: "sıralamak", en: "to sort" },
       { de: "nachlesen", tr: "bakıp okumak", en: "to look up" },
       { de: "das Pfand", tr: "depozito", en: "deposit" },
       { de: "flüstern", tr: "fısıldamak", en: "to whisper" },
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },
-      { de: "verlängern", tr: "uzatmak", en: "to extend" },
+      { de: "verlängern", tr: "uzatmak", en: "to renew" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },
       { de: "also", tr: "yani", en: "so" },
       { de: "normal", tr: "normal", en: "normal" },
@@ -265,7 +265,7 @@ export const a2U24: SkillExercise[] = [
       { de: "anstatt", tr: "yerine", en: "instead of" },
       { de: "jedenfalls", tr: "her hâlükârda", en: "in any case" },
       { de: "vorwärts", tr: "ileri", en: "forward" },
-      { de: "das Ferienhaus", tr: "yazlık", en: "holiday home" },
+      { de: "das Ferienhaus", tr: "yazlık", en: "vacation home" },
       { de: "also", tr: "yani", en: "so" },
     ],
     minutes: 3,
@@ -357,6 +357,7 @@ export const a2U24: SkillExercise[] = [
         kind: "build",
         tr: "Kurs sonbaharda başlayacak.",
         answer: "Der Kurs wird im Herbst beginnen",
+        alternatives: ["Im Herbst wird der Kurs beginnen"],
         hint: "Resmî duyuruda werden doğal durur — broşür dili budur.",
       },
       {
@@ -379,7 +380,7 @@ export const a2U24: SkillExercise[] = [
     intro: "Kursa kayıt yaz: hangi kurs, hangi indirim, hangi soru?",
     gloss: [
       { de: "teilnehmen", tr: "katılmak", en: "to take part" },
-      { de: "der Stundenplan", tr: "ders programı", en: "timetable" },
+      { de: "der Stundenplan", tr: "ders programı", en: "class schedule" },
       { de: "die Universität", tr: "üniversite", en: "university" },
       { de: "das Ziel", tr: "hedef", en: "goal" },
       { de: "zulegen", tr: "artmak", en: "to go up" },
@@ -412,7 +413,7 @@ export const a2U24: SkillExercise[] = [
         phrases: [
           { de: "Ich möchte am Kurs … teilnehmen.", tr: "… kursuna katılmak istiyorum", en: "I'd like to take part in course …" },
           { de: "Mein Ziel ist es, …", tr: "hedefim …", en: "my goal is to …" },
-          { de: "Wie sieht der Stundenplan aus?", tr: "ders programı nasıl", en: "what does the timetable look like" },
+          { de: "Wie sieht der Stundenplan aus?", tr: "ders programı nasıl", en: "what does the schedule look like" },
         ],
         sample:
           "Betreff: Anmeldung Kurs 204 — Deutsch B1\n\n" +

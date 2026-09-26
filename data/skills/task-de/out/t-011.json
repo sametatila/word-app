@@ -95,7 +95,7 @@
   "de": "Ich bin fünfundzwanzig Jahre alt."
  },
  {
-  "tr": "Bunu nasıl hecelersin?",
+  "tr": "Bu nasıl yazılıyor?",
   "kind": "build.tr",
   "de": "Wie buchstabiert man das?"
  },
@@ -120,9 +120,9 @@
   "de": "Ich spreche ein wenig Englisch."
  },
  {
-  "tr": "Yaşta „years old“ ZORUNLU: sayı tek başına kalmaz.",
+  "tr": "Yaş „be“ ile söylenir: I am + sayı + years old. Kısaca „I am thirty.“ da denir.",
   "kind": "build.hint",
-  "de": "Beim Alter ist „years old“ PFLICHT: anders als im Deutschen steht die Zahl nie allein."
+  "de": "Das Alter steht mit „be“: I am + Zahl + years old. Man kann auch kurz „I am thirty.“ sagen."
  },
  {
   "tr": "Bileşik sayı tireyle yazılır: twenty-five, forty-one.",

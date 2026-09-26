@@ -206,7 +206,7 @@ export const a1U10: SkillExercise[] = [
     gloss: [
       { de: "der Feierabend", tr: "iş çıkışı", en: "end of workday" },
       { de: "die Lust", tr: "istek", en: "desire" },
-      { de: "fertig sein", tr: "hazır olmak", en: "to be done" },
+      { de: "fertig sein", tr: "işini bitirmiş olmak", en: "to be done" },
     ],
     minutes: 2,
     segments: [
@@ -282,11 +282,11 @@ export const a1U10: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Teklifi kibarca reddet.",
+        prompt: "Cümleyi „leider“ ile kibar bir redde çevir.",
         source: "Ich habe morgen Zeit.",
         answer: "Leider kann ich morgen nicht.",
         alternatives: ["Leider habe ich morgen keine Zeit."],
-        why: "Reddederken „leider“ ile başlanır; kaba durmamak için gerekçe ya da yeni bir teklif eklenir.",
+        why: "Kibarca reddederken „leider“ ile başlanır ve fiil yine ikinci sırada kalır: Leider KANN ich … İstersen ardından yeni bir teklif eklersin.",
       },
     ],
   },

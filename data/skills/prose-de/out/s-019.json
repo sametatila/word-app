@@ -52,7 +52,7 @@
  {
   "tr": "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",
   "kind": "intro",
-  "de": "„some“ steht im Aussagesatz, „any“ in Frage und Verneinung. Das Deutsche kennt diesen Unterschied ebenso wenig."
+  "de": "„some“ steht im Aussagesatz, „any“ in Frage und Verneinung. Das Deutsche kennt diesen Unterschied nicht."
  },
  {
   "tr": "Olumsuz cümleyi yaz. Dikkat: üçüncü tekil kişide „don't“ değil „doesn't“ geliyor.",
@@ -255,9 +255,9 @@
   "de": "Zuerst wer es ist, dann wie er aussieht. Zwei Fragen mit zwei verschiedenen Wendungen."
  },
  {
-  "tr": "„Is there any milk in it? — No milk, thank you.“ Soruda „any“, cevapta yok.",
+  "tr": "„Any milk? — No milk, thank you.“ Soruda „any“, cevapta yok.",
   "kind": "explain",
-  "de": "„Is there any milk in it? — No milk, thank you.“ In der Frage „any“, in der Antwort nichts."
+  "de": "„Any milk? — No milk, thank you.“ In der Frage „any“, in der Antwort nichts."
  },
  {
   "tr": "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
@@ -495,7 +495,7 @@
   "de": "er ist groß"
  },
  {
-  "tr": "onu alacağım",
+  "tr": "bunu alıyorum",
   "kind": "gloss.tr",
   "de": "ich nehme es"
  },
@@ -505,7 +505,7 @@
   "de": "sonst noch etwas"
  },
  {
-  "tr": "ben … değilim",
+  "tr": "ben … etmiyorum",
   "kind": "gloss.tr",
   "de": "ich … nicht"
  },
@@ -535,7 +535,7 @@
   "de": "ist sie nett"
  },
  {
-  "tr": "o neye benziyor",
+  "tr": "görünüşü nasıl",
   "kind": "gloss.tr",
   "de": "wie sieht er aus"
  },

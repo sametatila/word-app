@@ -194,10 +194,10 @@ export const enA2U13: SkillExercise[] = [
       { speaker: "Nil", text: "At nine my boss introduced me to the team. Ten names in two minutes. I remembered three." },
       { speaker: "Nil", text: "Then somebody showed me my desk. The computer was there, the password was not." },
       { speaker: "Nil", text: "I waited an hour for the password and I was too shy to ask." },
-      { speaker: "Nil", text: "At the lunch break a colleague came and said: Sit with us. That was the moment the day turned." },
+      { speaker: "Nil", text: "At the lunch break a colleague came over and said: Sit with us. That was the moment the day turned." },
       { speaker: "Nil", text: "In the afternoon I read old reports and understood half of them." },
-      { speaker: "Nil", text: "At the end of the day I felt much better. Not because I learned a lot, but because nobody expected that." },
-      { speaker: "Nil", text: "I greet the new people now on their first day. Ten seconds, and the room is not the same room." },
+      { speaker: "Nil", text: "At the end of the day I felt much better. Not because I learned a lot, but because people were kind." },
+      { speaker: "Nil", text: "Now I greet new people on their first day. Ten seconds, and the room is not the same room." },
     ],
     questions: [
       {
@@ -241,7 +241,7 @@ export const enA2U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["greet them", "greet the new people", "say hello"],
-        explain: "„I greet the new people now on their first day.“",
+        explain: "„Now I greet new people on their first day.“",
       },
     ],
   },
@@ -266,7 +266,7 @@ export const enA2U13: SkillExercise[] = [
       { speaker: "Can", text: "I bought it two days ago and the glass is damaged. Look, here." },
       { speaker: "Shop", text: "I see it. Was it in the box like this?" },
       { speaker: "Can", text: "Yes. I opened the box at home and it was already broken." },
-      { speaker: "Shop", text: "Then it happened before the store. Do you have the receipt?" },
+      { speaker: "Shop", text: "Then it happened before it came to the store. Do you have the receipt?" },
       { speaker: "Can", text: "Here. And a photo from Tuesday evening." },
       { speaker: "Shop", text: "Good. I'd like to give you a new one, but this lamp is the last one." },
       { speaker: "Can", text: "Then I'd like a refund, please." },
@@ -274,7 +274,7 @@ export const enA2U13: SkillExercise[] = [
       { speaker: "Can", text: "How long does that take?" },
       { speaker: "Shop", text: "Two minutes. The manager is in the office." },
       { speaker: "Can", text: "Fine. I expected a longer afternoon." },
-      { speaker: "Shop", text: "Most people do. That is the serious problem in this job." },
+      { speaker: "Shop", text: "Most people do. But here it is quick." },
     ],
     questions: [
       {

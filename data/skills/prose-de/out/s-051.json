@@ -25,9 +25,9 @@
   "de": "Das Verb aktiv, das Subjekt erleidend. Welches Genus ist das?"
  },
  {
-  "tr": "Orta çatı ve iki bağlayıcı. Fail nerede?",
+  "tr": "Orta çatı ve üç kalıp daha. Fail nerede?",
   "kind": "intro",
-  "de": "Das Medium und zwei Verknüpfungen. Wo ist der Urheber?"
+  "de": "Das Medium und drei weitere Muster. Wo ist der Urheber?"
  },
  {
   "tr": "Mastarla kurulan denklem. Neyi reddediyor?",
@@ -65,9 +65,9 @@
   "de": "Drei Wörter halten zwanzig Seiten zusammen. Welches ist sicher?"
  },
  {
-  "tr": "İki „what“ ve iki öne çıkarma. Dördüncü sözcük ne?",
+  "tr": "İki „what“ ve iki öne çıkarma. „what“ öbeğinden sonra ne geliyor?",
   "kind": "intro",
-  "de": "Zwei „what“ und zwei Voranstellungen. Wie lautet das vierte Wort?"
+  "de": "Zwei „what“ und zwei Voranstellungen. Was folgt auf den „what“-Teil?"
  },
  {
   "tr": "İki cümle de „what“ ile başlıyor. Ayıran hangi sözcük?",
@@ -367,7 +367,7 @@
  {
   "tr": "harcıyor",
   "kind": "gloss.tr",
-  "de": "verbringt"
+  "de": "verwendet"
  },
  {
   "tr": "kırılgan",

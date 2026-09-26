@@ -267,11 +267,11 @@ export const enA2U22: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Ela", text: "Can you hear me?" },
-      { speaker: "Sena", text: "Now yes. Before that, nothing for ten seconds." },
+      { speaker: "Sena", text: "Yes, now I can. Before that, nothing for ten seconds." },
       { speaker: "Ela", text: "The connection here is bad when it rains. Can you see me?" },
       { speaker: "Sena", text: "The camera is off." },
       { speaker: "Ela", text: "One moment… now?" },
-      { speaker: "Sena", text: "Now yes. Green shirt, white wall, half a plant." },
+      { speaker: "Sena", text: "Yes, now I can. Green shirt, white wall, half a plant." },
       { speaker: "Ela", text: "That is my office. So — the report." },
       { speaker: "Sena", text: "Sorry, could you say that again? Somebody came in." },
       { speaker: "Ela", text: "The report for October. Is it ready?" },
@@ -279,9 +279,9 @@ export const enA2U22: SkillExercise[] = [
       { speaker: "Ela", text: "Sorry, go ahead." },
       { speaker: "Sena", text: "No, you go ahead." },
       { speaker: "Ela", text: "We do this every week." },
-      { speaker: "Sena", text: "Every week. One day we learn." },
-      { speaker: "Ela", text: "I put on headphones now. Then my voice is clear and the room is quiet." },
-      { speaker: "Sena", text: "Do that. And I close the window. The street is louder than both of us." },
+      { speaker: "Sena", text: "Every week. One day we'll learn." },
+      { speaker: "Ela", text: "I'll put on headphones now. Then my voice is clear and the room is quiet." },
+      { speaker: "Sena", text: "Do that. And I'll close the window. The street is louder than both of us." },
     ],
     questions: [
       {
@@ -294,7 +294,7 @@ export const enA2U22: SkillExercise[] = [
         text: "What does Ela put on?",
         options: ["headphones", "a green shirt", "a plant"],
         answer: 0,
-        explain: "„I put on headphones now. Then my voice is clear and the room is quiet.“",
+        explain: "„I'll put on headphones now. Then my voice is clear and the room is quiet.“",
       },
       {
         kind: "truefalse",
@@ -309,7 +309,7 @@ export const enA2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["window"],
-        explain: "„And I close the window. The street is louder than both of us.“",
+        explain: "„And I'll close the window. The street is louder than both of us.“",
       },
       {
         kind: "dictation",
@@ -376,7 +376,7 @@ export const enA2U22: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Arıza kartını doldur.",
-        facts: "Dizüstü yavaş; pazartesiden beri; iki kez yeniden başlatıldı; diskte altı boş.",
+        facts: "Dizüstü yavaş; pazartesiden beri; iki kez yeniden başlatıldı; diskte altı gigabayt boş.",
         fields: [
           { label: "Problem", answer: "slow", accept: ["it is slow", "very slow"] },
           { label: "Since", answer: "Monday", accept: ["since Monday"] },

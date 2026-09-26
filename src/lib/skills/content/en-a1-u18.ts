@@ -193,7 +193,7 @@ export const enA1U18: SkillExercise[] = [
       { speaker: "Nil", text: "Yes, very much. I have two hundred videos." },
       { speaker: "Can", text: "Two hundred! Where do you put them?" },
       { speaker: "Nil", text: "In the basement. My apartment is small." },
-      { speaker: "Can", text: "Then come to my garden. There is a lot of sun and you can draw there." },
+      { speaker: "Can", text: "Then come to my garden. There is a lot of sun and you can play the guitar there." },
     ],
     questions: [
       {
@@ -259,11 +259,11 @@ export const enA1U18: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Ali", text: "I play soccer every Saturday. My team is not good, but we enjoy it." },
-      { speaker: "Ali", text: "Sometimes we win, sometimes not. That is sport." },
+      { speaker: "Ali", text: "Sometimes we win, sometimes we don't. That's sports!" },
       { speaker: "Ali", text: "On Monday and Thursday I go swimming. I swim for one hour." },
       { speaker: "Ali", text: "In the summer I run in the park. In the winter I run on the stairs!" },
-      { speaker: "Ali", text: "My sister plays tennis and basketball. She is in a team too." },
-      { speaker: "Ali", text: "Do you play tennis? Then come with us on Sunday. We have a free place." },
+      { speaker: "Ali", text: "My sister plays tennis and basketball. She is on a team too." },
+      { speaker: "Ali", text: "Do you play tennis? Then come with us on Sunday. We need one more player." },
     ],
     questions: [
       {
@@ -283,7 +283,7 @@ export const enA1U18: SkillExercise[] = [
         text: "Ali's team always wins.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Sometimes we win, sometimes not. That is sport.“",
+        explain: "„Sometimes we win, sometimes we don't. That's sports!“",
       },
       {
         kind: "gapfill",

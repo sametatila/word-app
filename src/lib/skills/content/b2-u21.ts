@@ -250,7 +250,7 @@ export const b2U21: SkillExercise[] = [
         text: "Was rät Til am Ende?",
         options: [],
         answer: 0,
-        accept: ["ihn anzusprechen", "fragen, wie er es sieht", "mit ihm reden"],
+        accept: ["ihn anzusprechen", "fragen, wie er es sieht", "mit ihm reden", "ihn ansprechen"],
         explain: "„Sprich ihn an. Nicht vorwurfsvoll, einfach fragen, wie er es sieht.“",
       },
       {
@@ -290,11 +290,9 @@ export const b2U21: SkillExercise[] = [
       { de: "zögern", tr: "tereddüt etmek", en: "to hesitate" },
       { de: "misstrauen", tr: "güvenmemek", en: "to distrust" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "schließen", tr: "kapatmak", en: "to close" },
-      { de: "summen", tr: "vızıldamak", en: "to buzz" },
+      { de: "ausschließen", tr: "ihtimal dışı bırakmak", en: "to rule out" },
       { de: "abweichen", tr: "sapmak", en: "to deviate" },
       { de: "wetten", tr: "bahse girmek", en: "to bet" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 5,
     segments: [
@@ -362,7 +360,7 @@ export const b2U21: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 21,
-    title: "Sanki ve galiba",
+    title: "Als ob und dürfte",
     genre: "build",
     intro: "als ob gerçek olmayanı, öznel kip ise kesinliğin derecesini işaretler.",
     gloss: [
@@ -393,8 +391,8 @@ export const b2U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Göz temasını normal aralıklarla keserek özgüvenli görünüyoruz.",
-        answer: "Wir wirken selbstbewusst, indem wir den Blickkontakt unterbrechen",
+        tr: "Göz temasını sürdürerek özgüvenli görünüyoruz.",
+        answer: "Wir wirken selbstbewusst, indem wir den Blickkontakt halten",
         hint: "indem yan cümlesinde özne tekrarlanır, fiil sona gider.",
       },
       {
@@ -427,7 +425,7 @@ export const b2U21: SkillExercise[] = [
       { de: "umstellen", tr: "yeniden düzenlemek", en: "to change over" },
       { de: "die Einschätzung", tr: "değerlendirme", en: "assessment" },
       { de: "dumm", tr: "aptal", en: "stupid" },
-      { de: "schief", tr: "eğri", en: "crooked" },
+      { de: "schief ansehen", tr: "ters ters bakmak", en: "to look askance at" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 12,
@@ -446,7 +444,7 @@ export const b2U21: SkillExercise[] = [
         phrases: [
           { de: "Es klang, als ob alles geklärt wäre.", tr: "her şey çözülmüş gibi geldi", en: "it sounded as if everything were settled" },
           { de: "Gemeint war aber etwas anderes.", tr: "ama kastedilen başkaydı", en: "but something else was meant" },
-          { de: "Das dürfte an der Umgangssprache gelegen haben.", tr: "bu günlük dilden olsa gerek", en: "that was probably down to the colloquial language" },
+          { de: "Das dürfte an der Umgangssprache gelegen haben.", tr: "bu günlük dilden olsa gerek", en: "that was probably because of the colloquial language" },
         ],
         sample:
           "„DAS KÖNNEN WIR SO MACHEN“\n\n" +

@@ -191,7 +191,7 @@ export const b1U05: SkillExercise[] = [
       { text: "Also, morgen um acht. Was machen wir zuerst?" },
       { text: "Bevor der Wagen kommt, tragen wir alle Kisten in den Flur." },
       { text: "Gut. Und während du unten packst, reinige ich die Küche." },
-      { text: "Solange die Küche nicht fertig ist, können wir den Schlüssel nicht geben." },
+      { text: "Solange die Küche nicht fertig ist, können wir den Schlüssel nicht abgeben." },
       { text: "Sobald alles unten ist, fahren wir los." },
       { text: "Wer erledigt das mit dem Amt?" },
       { text: "Das mache ich am Montag. Schließlich muss die neue Adresse gemeldet werden." },
@@ -200,21 +200,21 @@ export const b1U05: SkillExercise[] = [
     questions: [
       {
         text: "Was passiert, bevor der Wagen kommt?",
-        options: ["Die Küche wird gereinigt", "Die Kisten kommen in den Flur", "Der Schlüssel wird gegeben"],
+        options: ["Die Küche wird gereinigt", "Die Kisten kommen in den Flur", "Der Schlüssel wird abgegeben"],
         answer: 1,
         explain: "„Bevor der Wagen kommt, tragen wir alle Kisten in den Flur.“",
       },
       {
-        text: "Was macht die zweite Person, während die erste packt?",
+        text: "Was macht die erste Person, während die zweite packt?",
         options: ["Sie reinigt die Küche", "Sie fährt zum Amt", "Sie kauft Essen"],
         answer: 0,
         explain: "„Und während du unten packst, reinige ich die Küche.“",
       },
       {
-        text: "Wann kann der Schlüssel gegeben werden?",
+        text: "Wann kann der Schlüssel abgegeben werden?",
         options: ["Sofort", "Wenn die Küche fertig ist", "Am Montag"],
         answer: 1,
-        explain: "„Solange die Küche nicht fertig ist, können wir den Schlüssel nicht geben.“",
+        explain: "„Solange die Küche nicht fertig ist, können wir den Schlüssel nicht abgeben.“",
       },
       {
         kind: "gapfill",
@@ -259,7 +259,7 @@ export const b1U05: SkillExercise[] = [
       { text: "Von Oktober bis Februar. Danach kommt die Studentin zurück." },
       { text: "Zwar ist das kurz, aber für mich passt es genau." },
       { text: "Gut. Der Spiegel im Flur gehört auch dazu." },
-      { text: "Dann würde ich gern nehmen. Wann kann ich einziehen?" },
+      { text: "Dann würde ich es gern nehmen. Wann kann ich einziehen?" },
     ],
     questions: [
       {
@@ -293,7 +293,7 @@ export const b1U05: SkillExercise[] = [
         text: "Wie viele Decken sind im Regal?",
         options: [],
         answer: 0,
-        accept: ["zwei", "zwei Decken"],
+        accept: ["zwei", "zwei Decken", "2"],
         explain: "„Zwei Decken sind im Regal.“",
       },
     ],
@@ -306,14 +306,14 @@ export const b1U05: SkillExercise[] = [
     unit: 5,
     title: "Widerspruch zur Abrechnung",
     genre: "formal",
-    intro: "Gider hesabındaki bir sayı yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
+    intro: "Yan gider hesabındaki bir tutar yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
     minutes: 8,
     gloss: [
       { de: "die Summe", tr: "toplam", en: "total" },
       { de: "prüfen", tr: "kontrol etmek", en: "to check" },
       { de: "der Grund", tr: "sebep", en: "reason" },
       { de: "die Zahlung", tr: "ödeme", en: "payment" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
@@ -351,8 +351,8 @@ export const b1U05: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "İyelik yapısını düzelt.",
-        source: "Die Höhe von die Kosten ist zu hoch.",
-        answer: "Die Höhe der Kosten ist zu hoch.",
+        source: "Die Summe von die Kosten ist zu hoch.",
+        answer: "Die Summe der Kosten ist zu hoch.",
         why: "Türkçedeki '-in hâli' Almancada Genitiv ile kurulur: 'von die Kosten' değil, 'der Kosten'.",
       },
     ],

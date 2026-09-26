@@ -187,13 +187,13 @@ export const b1U10: SkillExercise[] = [
       { text: "Dann sind wohl die Batterien leer. Hast du neue?" },
       { text: "Nein. Kann man das Ding nicht einfach aufladen?" },
       { text: "Diese hier nicht. Bei der neuen Marke geht das mit einem Kabel." },
-      { text: "Ausgezeichnet. Dann ersetzen wir sie irgendwann." },
+      { text: "Gute Idee. Dann ersetzen wir sie irgendwann." },
       { text: "Ich hole heute Batterien. Das reicht erst mal." },
     ],
     questions: [
       {
         text: "Welche Knöpfe funktionieren?",
-        options: ["Nur der rote", "Gar keiner", "Alle bis auf einen"],
+        options: ["Nur der rote", "Keiner", "Alle bis auf einen"],
         answer: 1,
         explain: "„Gar keiner. Das kleine rote Licht kommt auch nicht.“",
       },
@@ -241,13 +241,13 @@ export const b1U10: SkillExercise[] = [
       { de: "mischen", tr: "karıştırmak", en: "to mix" },
       { de: "die Pfanne", tr: "tava", en: "pan" },
       { de: "der Geschmack", tr: "tat", en: "taste" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay / hafif", en: "easy / light" },
     ],
     segments: [
       { text: "Du hast doch dieses Gericht gemacht. Wie geht das?" },
       { text: "Ganz einfach. Es ist leicht zuzubereiten, sogar am Abend." },
       { text: "Was brauche ich?" },
-      { text: "Kartoffeln, Gemüse und Wasser. Mehr nicht." },
+      { text: "Kartoffeln, Gemüse und Wasser. Das ist schon fast alles." },
       { text: "Und die Pfanne?" },
       { text: "Das Gemüse mische ich zuerst in der Pfanne. Statt Butter nehme ich Öl." },
       { text: "Wie ist der Geschmack?" },
@@ -258,7 +258,7 @@ export const b1U10: SkillExercise[] = [
         text: "Was braucht man für das Gericht?",
         options: ["Kartoffeln, Gemüse und Wasser", "Nur Fleisch", "Brot und Käse"],
         answer: 0,
-        explain: "„Kartoffeln, Gemüse und Wasser. Mehr nicht.“",
+        explain: "„Kartoffeln, Gemüse und Wasser. Das ist schon fast alles.“",
       },
       {
         text: "Was nimmt die Person statt Butter?",
@@ -368,12 +368,11 @@ export const b1U10: SkillExercise[] = [
         kind: "build",
         tr: "Bu yemeği hazırlamak çok kolay.",
         answer: "Dieses Gericht ist sehr leicht zuzubereiten.",
-        alternatives: ["Es ist sehr leicht, dieses Gericht zuzubereiten."],
         hint: "Ayrılabilen fiilde zu araya girer.",
       },
       {
         kind: "build",
-        tr: "Tereyağı yerine yağ alıyorum.",
+        tr: "Tereyağı yerine sıvı yağ kullanıyorum.",
         answer: "Statt Butter nehme ich Öl.",
         hint: "„statt“ birinci öğe ise fiil hemen arkasından gelir.",
       },
@@ -390,12 +389,12 @@ export const b1U10: SkillExercise[] = [
         minWords: 70,
         sample:
           "Ich empfehle ein einfaches Gericht aus der Türkei: eine warme Gemüsesuppe.\n\n" +
-          "Du brauchst Kartoffeln, Gemüse, Öl und Salz. Mehr nicht. Es ist wirklich " +
+          "Du brauchst Kartoffeln, Gemüse, Öl, Salz und Wasser. Mehr nicht. Es ist wirklich " +
           "leicht zuzubereiten, auch nach der Arbeit.\n\n" +
           "Zuerst schneidest du das Gemüse klein und mischst es mit dem Öl in der " +
-          "Pfanne. Danach kommen die Kartoffeln dazu, mit Wasser, in einem großen " +
+          "Pfanne. Danach kommt alles mit den Kartoffeln und dem Wasser in einen großen " +
           "Topf. Statt Butter nehme ich immer Öl, das ist leichter. Zum Schluss " +
-          "wartest du dreißig Minuten.\n\n" +
+          "kocht die Suppe dreißig Minuten.\n\n" +
           "Der Geschmack ist einfach, aber ausgezeichnet, und die Suppe ist warm und " +
           "lecker. Ich empfehle sie, weil man sie am Abend zubereiten und am nächsten " +
           "Tag mitnehmen kann.",

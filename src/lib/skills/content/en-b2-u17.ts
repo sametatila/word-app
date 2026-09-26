@@ -361,7 +361,7 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The line for things that arrive late has a future perfect in it.",
+        text: "The line for things that arrive at short notice has a future perfect in it.",
         options: ["True", "False"],
         answer: 1,
         explain: "„that line has no future perfect in it at all.“",
@@ -426,13 +426,13 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yorumlaması çeşit çeşit olan teyzem ilk dansı ediyor.",
+        tr: "Yorumlaması çeşit çeşit olan teyzem ilk o dans ediyor.",
         answer: "My aunt, whose interpretation is varied, dances first.",
         hint: "„whose“ iyelik taşıyor; silinecek bir şey yok.",
       },
       {
         kind: "build",
-        tr: "Sonun aceleye gelmiş olması gerek.",
+        tr: "Son aceleye gelmiş olmalı.",
         answer: "The ending must have been hasty.",
         hint: "Çıkarım: kanıt tek bir açıklama bırakıyor.",
       },
@@ -486,7 +486,7 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Haziranda mektupları arşivlemiş olacağız.",
+        tr: "Hazirana kadar mektupları arşivlemiş olacağız.",
         answer: "By June we will have archived the letters.",
         hint: "Gelecekte bir tarihten geriye bakış.",
       },

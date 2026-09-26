@@ -220,7 +220,7 @@ export const enA1U02: SkillExercise[] = [
         text: "Emre does not speak fast.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I speak a little English … but I do not speak fast.“ — tam tersini söylüyor.",
+        explain: "„I speak a little English … but I do not speak fast.“ — tam olarak bunu söylüyor.",
       },
       {
         kind: "gapfill",
@@ -268,8 +268,8 @@ export const enA1U02: SkillExercise[] = [
       { speaker: "Leyla", text: "Hello. My name is Leyla. I am a doctor and I work in a small town." },
       { speaker: "Leyla", text: "I speak English and a little Spanish. I am thirty-four years old." },
       { speaker: "Ben", text: "Hi! I am Ben, and I am a singer. My job is not easy, but it is very good." },
-      { speaker: "Ben", text: "I work at night. I am twenty-six years old. I write my words." },
-      { speaker: "Meryem", text: "Good day. I am Meryem. I am a coach. I work with young people." },
+      { speaker: "Ben", text: "I work at night. I am twenty-six years old." },
+      { speaker: "Meryem", text: "Hello. I am Meryem. I am a coach. I work with young people." },
       { speaker: "Meryem", text: "I am forty-one. I do not speak English, but I understand many words." },
     ],
     questions: [
@@ -341,7 +341,7 @@ export const enA1U02: SkillExercise[] = [
         tr: "Ben otuz yaşındayım.",
         answer: "I am thirty years old.",
         alternatives: ["I'm thirty years old."],
-        hint: "Yaşta „years old“ ZORUNLU: sayı tek başına kalmaz.",
+        hint: "Yaş „be“ ile söylenir: I am + sayı + years old. Kısaca „I am thirty.“ da denir.",
       },
       {
         kind: "build",
@@ -357,7 +357,7 @@ export const enA1U02: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bunu nasıl hecelersin?",
+        tr: "Bu nasıl yazılıyor?",
         answer: "How do you spell it?",
         hint: "Soru „do“ ile kuruluyor, çünkü fiil „be“ değil: How do you …?",
       },

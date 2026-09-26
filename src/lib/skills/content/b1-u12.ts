@@ -220,7 +220,7 @@ export const b1U12: SkillExercise[] = [
         text: "Wann ist der neue Termin?",
         options: [],
         answer: 0,
-        accept: ["Donnerstag um zehn", "am Donnerstag um zehn", "Donnerstag"],
+        accept: ["Donnerstag um zehn", "am Donnerstag um zehn", "Donnerstag", "am Donnerstag", "Donnerstag um 10", "Donnerstag, 10 Uhr"],
         explain: "„Donnerstag um zehn?“ — „Donnerstag passt.“",
       },
     ],
@@ -248,7 +248,7 @@ export const b1U12: SkillExercise[] = [
       { text: "Ich glaube schon. Ich bin damals nur dafür hingefahren." },
       { text: "Gut, dann gib auch die Fahrten an. Sammle möglichst alles." },
       { text: "Und meine Einnahmen aus dem Nebenjob?" },
-      { text: "Die musst du sowieso angeben. Das ist keine Wahl." },
+      { text: "Die musst du sowieso angeben. Da hast du keine Wahl." },
     ],
     questions: [
       {
@@ -267,7 +267,7 @@ export const b1U12: SkillExercise[] = [
         text: "Was gilt für die Einnahmen aus dem Nebenjob?",
         options: ["Man kann sie angeben", "Man muss sie angeben", "Sie zählen nicht"],
         answer: 1,
-        explain: "„Die musst du sowieso angeben. Das ist keine Wahl.“",
+        explain: "„Die musst du sowieso angeben. Da hast du keine Wahl.“",
       },
       {
         kind: "gapfill",
@@ -304,12 +304,13 @@ export const b1U12: SkillExercise[] = [
       { de: "bremsen", tr: "fren yapmak", en: "to brake" },
       { de: "das Schild", tr: "tabela", en: "sign" },
       { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "vorbeifahren", tr: "önünden geçmek", en: "to drive past" },
     ],
     tasks: [
       {
         kind: "build",
         tr: "Salı sabahı saat yedide oradan geçtim.",
-        answer: "Ich bin am Dienstagmorgen um sieben dort gefahren.",
+        answer: "Ich bin am Dienstagmorgen um sieben dort vorbeigefahren.",
         hint: "Hareket fiili → sein.",
       },
       {
@@ -327,12 +328,12 @@ export const b1U12: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Hasar bildirim formunu doldur.",
-        facts: "Bildiren: Nuri Öz; olay: trafik cezası; gün: salı, saat 7; tanık: eşi; ek: tamirhane makbuzu.",
+        facts: "Bildiren: Nuri Öz; olay: kaza; gün: salı, saat 7; tanık: eşi; ek: tamirhane makbuzu.",
         fields: [
           { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
-          { label: "Vorfall", answer: "Strafzettel", accept: ["ein Strafzettel", "die Strafe"] },
-          { label: "Zeit", answer: "Dienstag um 7", accept: ["Dienstag", "am Dienstag um sieben"] },
-          { label: "Zeuge", answer: "meine Frau", accept: ["die Frau", "seine Frau"] },
+          { label: "Vorfall", answer: "Unfall", accept: ["ein Unfall", "der Unfall", "Autounfall"] },
+          { label: "Zeit", answer: "Dienstag um 7", accept: ["Dienstag", "am Dienstag", "Dienstag um sieben", "am Dienstag um sieben", "Dienstag, 7 Uhr", "am Dienstag um 7 Uhr"] },
+          { label: "Zeuge", answer: "meine Frau", accept: ["die Frau", "seine Frau", "Frau"] },
         ],
       },
       {
@@ -364,7 +365,7 @@ export const b1U12: SkillExercise[] = [
         kind: "build",
         tr: "Ne yazık ki salı günkü randevuyu iptal etmem gerekiyor.",
         answer: "Leider muss ich den Termin am Dienstag absagen.",
-        hint: "„leider“ birinci öğe değilse özne başta kalır.",
+        hint: "„leider“ birinci öğe olunca fiil hemen arkasından gelir: Leider muss ich …",
       },
       {
         kind: "build",
@@ -374,7 +375,7 @@ export const b1U12: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir randevuyu erteleyen resmî bir e-posta yaz: hangi randevu (gün ve saat), neden erteleyemediğin, hangi tarihlerin sana uygun olduğu ve teyit istediğin. Resmî hitap ve kapanış kullan.",
+        prompt: "Bir randevuyu erteleyen resmî bir e-posta yaz: hangi randevu (gün ve saat), neden gelemeyeceğin, hangi tarihlerin sana uygun olduğu ve teyit istediğin. Resmî hitap ve kapanış kullan.",
         checklist: [
           "Resmî hitap ve kapanış var mı?",
           "Hangi randevu olduğu (gün ve saat) yazılmış mı?",
@@ -392,7 +393,7 @@ export const b1U12: SkillExercise[] = [
           "Freitag geht leider nicht, weil da Feiertag ist.\n\n" +
           "Könnten Sie mir den neuen Termin kurz schriftlich bestätigen? " +
           "Dann muss ich mich am Morgen nicht beeilen und bin sicher pünktlich.\n\n" +
-          "Für Ihre Nachfrage bin ich dankbar.\n\n" +
+          "Für Ihr Verständnis bin ich Ihnen dankbar.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",
         phrases: [
           { de: "Leider muss ich … absagen.", tr: "Ne yazık ki … iptal etmem gerekiyor.", en: "Unfortunately I have to cancel …" },

@@ -23,7 +23,7 @@ import type { SkillExercise } from "../types";
  *           The figures are said to show a fall in circulation. ·
  *           The story is thought to have been broadcast twice. ·
  *           The reporter, who checked the quotation, was new. ·
- *           The attribution, which is why we waited, was unclear. ·
+ *           The attribution was unclear, which is why we waited. ·
  *           The publisher to whom we wrote replied late.
  *
  * Ünitenin tek öğretme noktası „IF“SİZ KOŞUL: devrik sıra burada
@@ -238,7 +238,6 @@ export const enB2U08: SkillExercise[] = [
       { de: "confidence", tr: "güven derecesi" },
       { de: "a photocopy", tr: "fotokopi" },
       { de: "a state", tr: "durum" },
-      { de: "a syllable", tr: "hece" },
       { de: "cheaper", tr: "daha ucuz" },
       { de: "a hedge", tr: "çekince" },
       { de: "a standpoint", tr: "duruş noktası" },
@@ -256,7 +255,7 @@ export const enB2U08: SkillExercise[] = [
       { speaker: "Efe", text: "The two words after „to“ do that on their own?" },
       { speaker: "Nehir", text: "On their own. „It seems to be calibrated“ would mean the state is right now. „It seems to have been calibrated“ means somebody did it, earlier, and I am reading the result." },
       { speaker: "Efe", text: "Apparently the bolt was tightened twice." },
-      { speaker: "Nehir", text: "That is the same move with a different word. „Apparently“ reports and steps back in one syllable, and it is cheaper than a whole clause." },
+      { speaker: "Nehir", text: "That is the same move with a different word. „Apparently“ reports and steps back in one word, and it is cheaper than a whole clause." },
       { speaker: "Efe", text: "And the motor?" },
       { speaker: "Nehir", text: "From one perspective it is arguably enough. Two hedges in one sentence, which is one too many, and I will take one out before it goes anywhere." },
       { speaker: "Efe", text: "Which one?" },
@@ -341,7 +340,7 @@ export const enB2U08: SkillExercise[] = [
     segments: [
       { speaker: "Beren", text: "The reporter, who checked the quotation, was new. Two commas, so the clause is not choosing a reporter out of several; there is one and this is a fact about her." },
       { speaker: "Beren", text: "Without the commas the sentence would be saying that some of the reporters did not check, which is a very different line to print." },
-      { speaker: "Beren", text: "The attribution, which is why we waited, was unclear. „Which“ reaches back to the whole of the first half, and „that“ cannot do that job at all." },
+      { speaker: "Beren", text: "The attribution was unclear, which is why we waited. „Which“ reaches back to the whole of the first half, and „that“ cannot do that job at all." },
       { speaker: "Beren", text: "The publisher to whom we wrote replied late. Nobody says this. In speech it is „the publisher we wrote to“, and the choice between them is about the page, not about the grammar." },
       { speaker: "Beren", text: "Transparency in this trade is mostly punctuation. A comma decides whether we are describing one person or dividing a group, and a reader never notices the comma, only the meaning it made." },
       { speaker: "Beren", text: "The intern who found the second quotation is not named in the piece, which is normal and which I dislike." },
@@ -429,7 +428,7 @@ export const enB2U08: SkillExercise[] = [
         kind: "build",
         tr: "Öncül yanlış olsaydı çıkarım çökerdi.",
         answer: "If the premise had been wrong, the inference would have failed.",
-        hint: "Tam biçim; kısa biçimin olumsuzu yok.",
+        hint: "„if“li tam biçim: iki yarı da geçmişte.",
       },
       {
         kind: "build",

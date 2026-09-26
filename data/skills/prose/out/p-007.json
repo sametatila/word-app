@@ -27,7 +27,7 @@
  {
   "tr": "„Ich hole dich um halb acht ab.“ — 19:30, film 20:00'de.",
   "kind": "explain",
-  "en": "„Ich hole dich um halb acht ab.“ — 19:30, the film is at 20:00."
+  "en": "„Ich hole dich um halb acht ab.“ — 19:30, the movie is at 20:00."
  },
  {
   "tr": "„Ich höre um fünf Uhr auf.“ — aufhören ayrılabilir fiil.",
@@ -72,7 +72,7 @@
  {
   "tr": "Acil serviste bir konuşma. Nasıl olmuş, neresi incinmiş?",
   "kind": "intro",
-  "en": "A conversation in A and E. How did it happen, what is hurt?"
+  "en": "A conversation in the ER. How did it happen, what is hurt?"
  },
  {
   "tr": "Anlatı tekniği üstüne bir yazı. Gerilim nereden geliyor?",
@@ -107,7 +107,7 @@
  {
   "tr": "Bir yere yönelirken zu + Dativ: zu der kısalıp zur olur.",
   "kind": "explain",
-  "en": "Moving towards a place takes zu + dative: zu der shortens to zur."
+  "en": "Moving toward a place takes zu + dative: zu der shortens to zur."
  },
  {
   "tr": "Bu kelime ek almaz, yalnız ünlüsü nokta alır: die Väter.",
@@ -135,9 +135,9 @@
   "en": "The basic form of reported speech in writing is Konjunktiv I: er sei. „wäre“ only comes in when Konjunktiv I is not distinctive, or in speech; „ist“ loses the marker of reported speech."
  },
  {
-  "tr": "dosiert: dozunda. Ayrılabilen fiil ön eki cümle sonunda.",
+  "tr": "einstreuen'in ortacı: -ge- ön ek ile kökün arasına giriyor. Serpiştirilmiş deyim göze batıyor.",
   "kind": "explain",
-  "en": "dosiert: in measured doses. The separable prefix goes at the end."
+  "en": "The participle of einstreuen: -ge- goes between the prefix and the stem. An idiom that is sprinkled in stands out."
  },
  {
   "tr": "dürfte öznel kip olarak tahmin bildirir, kesinlik değil.",
@@ -182,7 +182,7 @@
  {
   "tr": "Mağazaya şikâyet yaz: ne aldın, sorun ne, ne istiyorsun?",
   "kind": "intro",
-  "en": "Write a complaint to a shop: what did you buy, what is wrong, what do you want?"
+  "en": "Write a complaint to a store: what did you buy, what is wrong, what do you want?"
  },
  {
   "tr": "Meldeobliegenheit ihlali — yükümlülük süresi kaçırılmış.",
@@ -247,7 +247,7 @@
  {
   "tr": "Tez savunması. İtiraz nasıl geliyor, nasıl karşılanıyor?",
   "kind": "intro",
-  "en": "A thesis viva. How does the objection come, and how is it met?"
+  "en": "A thesis defense. How does the objection come, and how is it met?"
  },
  {
   "tr": "Üçüncü durum rahatsız ama zararsız: hemen fark ediliyor.",
@@ -322,7 +322,7 @@
  {
   "tr": "Araba yolda sorun çıkarıyor. Ne oluyor, nereye gidiliyor?",
   "kind": "intro",
-  "en": "The car is playing up on the road. What happens, where do they go?"
+  "en": "The car is acting up on the road. What happens, where do they go?"
  },
  {
   "tr": "Aracılık cümlesi, koşullu diplomasi ve son teklif kalıbı.",
@@ -340,9 +340,9 @@
   "en": "LESS than expected → erst. „schon Mittwoch“ would say the opposite."
  },
  {
-  "tr": "Bir davet iptal ediliyor. Sebep ne, yerine ne öneriliyor?",
+  "tr": "Davete gelemeyecek biri arıyor. Sebep ne, yerine ne öneriliyor?",
   "kind": "intro",
-  "en": "An invitation is canceled. What is the reason, what is offered instead?"
+  "en": "Someone calls to say they can't come to a party. What is the reason, what is offered instead?"
  },
  {
   "tr": "Bir hırsızlığı bildir. Almanca öznesiz edilgen kurabilir.",
@@ -392,7 +392,7 @@
  {
   "tr": "dürfte tahmin bildirir: 'kıl payı olacak gibi görünüyor'.",
   "kind": "explain",
-  "en": "dürfte marks a guess: 'it looks like being a close-run thing'."
+  "en": "dürfte marks a guess: 'it looks like it will be close'."
  },
  {
   "tr": "Eczanenin kapısındaki bilgi. Ne zaman açık, gece ne olur?",
@@ -450,7 +450,7 @@
   "en": "When does noun style help, and when does it choke the text?"
  },
  {
-  "tr": "İşte bir sohbet: belirtiler neler, ne yapması öneriliyor?",
+  "tr": "İş yerinde bir sohbet: belirtiler neler, ne yapması öneriliyor?",
   "kind": "intro",
   "en": "A conversation at work: what are the symptoms, what is suggested?"
  },
@@ -507,7 +507,7 @@
  {
   "tr": "Öfkeli bir müşteri arıyor. Gerilim hangi sırayla düşüyor?",
   "kind": "intro",
-  "en": "An angry customer rings. In what order does the tension come down?"
+  "en": "An angry customer calls. In what order does the tension come down?"
  },
  {
   "tr": "Panelde söz sırası ve ayrım yapma. Kim neyi kabul ediyor?",
@@ -552,7 +552,7 @@
  {
   "tr": "Tartışmadan sonra barışma. Kim ne yaptı, nasıl çözülüyor?",
   "kind": "intro",
-  "en": "Making up after a row. Who did what, how is it settled?"
+  "en": "Making up after a fight. Who did what, how is it settled?"
  },
  {
   "tr": "Telgraf üslubuyla yazılmış bir ret mektubunu yeniden yaz.",
@@ -637,7 +637,7 @@
  {
   "tr": "„Wir sind neu hier, Wohnung 7.“ 5 numara komşunun dairesi.",
   "kind": "explain",
-  "en": "„Wir sind neu hier, Wohnung 7.“ Number 5 is the neighbor's flat."
+  "en": "„Wir sind neu hier, Wohnung 7.“ Number 5 is the neighbor's apartment."
  },
  {
   "tr": "„you“ ile yardımcı fiil „do“; „does“ yalnız he/she/it ile.",
@@ -685,9 +685,9 @@
   "en": "The first week of a placement. What happened on which day, read it in order."
  },
  {
-  "tr": "Bir toplantı dağılmak üzere. Kim hangi uzlaşmayı öneriyor?",
+  "tr": "Bir toplantı dağılmak üzere. Sorun ne, nasıl bir çıkış yolu öneriliyor?",
   "kind": "intro",
-  "en": "A meeting is about to break up. Who proposes which compromise?"
+  "en": "A meeting is about to fall apart. What is the problem, and what way out is suggested?"
  },
  {
   "tr": "Bir yemekhane iki seçenek sunuyor. Kim neyi neden seçiyor?",

@@ -333,7 +333,7 @@ export const enB2U18: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Cem", text: "The expansion is said to be paused. Six words, no source, and everybody on the call heard the same thing." },
+      { speaker: "Cem", text: "The expansion is said to be paused. Seven words, no source, and everybody on the call heard the same thing." },
       { speaker: "Cem", text: "„Is said to“ is the weakest of the three and the announcement uses it on purpose. Somebody has said it; we are repeating it; nobody is standing behind it." },
       { speaker: "Cem", text: "The profitability is expected to fall. That one is different and it is the sentence the stock exchange reads. „Expected“ points forward and rests on a model, and the model is in an appendix that four people have opened." },
       { speaker: "Cem", text: "The business model is thought to have changed. A view that is held, and the infinitive is looking backwards: the changing already happened and somebody worked it out." },

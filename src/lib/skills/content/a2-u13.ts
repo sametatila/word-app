@@ -179,8 +179,8 @@ export const a2U13: SkillExercise[] = [
       { speaker: "Frau Petrow", text: "Das sehe ich auch so. Sie arbeiten sehr sorgfältig, und die Kunden sagen, dass Sie immer respektvoll sind." },
       { speaker: "Sinan", text: "Danke. Gibt es auch etwas, das ich besser machen soll?" },
       { speaker: "Frau Petrow", text: "Ja, ein Punkt: Ihre Berichte sind manchmal zu kurz. Schreiben Sie bitte deutlicher, was Sie gemacht haben." },
-      { speaker: "Sinan", text: "Verstanden. Darf ich auch etwas ansprechen? Ich hätte gern mehr Verantwortung." },
-      { speaker: "Frau Petrow", text: "Das motiviert mich zu hören. Eine Beförderung ist dieses Jahr schwierig, aber einen Bonus im Dezember kann ich Ihnen zusagen." },
+      { speaker: "Sinan", text: "Verstanden. Darf ich auch etwas ansprechen? Ich hätte gern mehr Verantwortung, das motiviert mich." },
+      { speaker: "Frau Petrow", text: "Das höre ich gern. Eine Beförderung ist dieses Jahr schwierig, aber einen Bonus im Dezember kann ich Ihnen zusagen." },
       { speaker: "Sinan", text: "Und im nächsten Jahr sprechen wir noch einmal über die Stelle?" },
       { speaker: "Frau Petrow", text: "Auf jeden Fall. Ich notiere das." },
     ],
@@ -313,10 +313,10 @@ export const a2U13: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Cümleyi düzelt: karşılaştırmada hangi kelime kullanılır?",
-        source: "Diese Jacke ist stärker wie die andere.",
-        answer: "Diese Jacke ist stärker als die andere.",
-        alternatives: ["Diese Jacke ist stärker als die andere"],
-        why: "„wie“ benzerlik bildirir (so stark wie), karşılaştırma ise hep „als“ ile kurulur.",
+        source: "Diese Jacke ist wärmer wie die andere.",
+        answer: "Diese Jacke ist wärmer als die andere.",
+        alternatives: ["Diese Jacke ist wärmer als die andere"],
+        why: "„wie“ benzerlik bildirir (so warm wie), karşılaştırma ise hep „als“ ile kurulur.",
       },
     ],
   },
@@ -340,19 +340,19 @@ export const a2U13: SkillExercise[] = [
     tasks: [
       {
         kind: "reply",
-        prompt: "İnsan kaynaklarının yazısına göre hastalık bildirimini yaz. Konu başlığı koy, neyin olduğunu ve kaç gün geleyemeceğini söyle, belgeyi nasıl göndereceğini belirt ve işlerin ne olacağını yaz.",
+        prompt: "İnsan kaynaklarının yazısına göre hastalık bildirimini yaz. Konu başlığı koy, neyin olduğunu ve kaç gün gelemeyeceğini söyle, belgeyi nasıl göndereceğini belirt ve işlerin ne olacağını yaz.",
         stimulus:
           "Sehr geehrte Mitarbeiterinnen und Mitarbeiter,\n\nbitte melden Sie sich im Krankheitsfall am ersten Tag schriftlich per E-Mail. Schreiben Sie in den Betreff das Wort „Krankmeldung“ und die Tage.\n\nDas Attest schicken Sie bitte zusätzlich per Post.\n\nMit freundlichen Grüßen\nPersonalabteilung",
         checklist: [
           "Konu başlığına „Krankmeldung“ ve tarihleri yazdın mı?",
-          "Neyin olduğunu ve kaç gün geleyemeceğini söyledin mi?",
+          "Neyin olduğunu ve kaç gün gelemeyeceğini söyledin mi?",
           "Belgeyi nasıl gönderdiğini belirttin mi (Anhang / Post)?",
           "İşlerin ne olacağına dair bir cümle ekledin mi?",
         ],
         minWords: 45,
         phrases: [
-          { de: "Ich muss Ihnen leider sagen, dass ich krank bin.", tr: "maalesef hasta olduğumu bildirmem gerekiyor", en: "unfortunately I must tell you that I am ill" },
-          { de: "Das Attest ist im Anhang.", tr: "rapor ekte", en: "the sick note is attached" },
+          { de: "Ich muss Ihnen leider sagen, dass ich krank bin.", tr: "maalesef hasta olduğumu bildirmem gerekiyor", en: "unfortunately I must tell you that I am sick" },
+          { de: "Das Attest ist im Anhang.", tr: "rapor ekte", en: "the doctor's note is attached" },
           { de: "Meine Termine habe ich abgesagt.", tr: "randevularımı iptal ettim", en: "I have canceled my appointments" },
         ],
         sample:

@@ -200,6 +200,11 @@
   "de": "von hinten"
  },
  {
+  "tr": "tam tersi",
+  "kind": "gloss.tr",
+  "de": "umgekehrt"
+ },
+ {
   "tr": "durdurulmuş",
   "kind": "gloss.tr",
   "de": "ausgesetzt"
@@ -272,7 +277,7 @@
  {
   "tr": "sahne",
   "kind": "gloss.tr",
-  "de": "Bühne"
+  "de": "Szene"
  },
  {
   "tr": "sezon",
@@ -342,7 +347,7 @@
  {
   "tr": "harcadı",
   "kind": "gloss.tr",
-  "de": "verbrachte"
+  "de": "ausgegeben"
  },
  {
   "tr": "iltifat",

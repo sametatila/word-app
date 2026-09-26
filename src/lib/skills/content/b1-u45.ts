@@ -193,10 +193,10 @@ export const b1U45: SkillExercise[] = [
       { text: "Ich habe gestern hinter dem Haus eine Schlange entdeckt." },
       { text: "War sie giftig?" },
       { text: "Nein. Hier gibt es nur eine giftige Art, und die sieht anders aus." },
-      { text: "Trotzdem: mir wäre das nicht angenehm." },
+      { text: "Trotzdem: Mir wäre das nicht angenehm." },
       { text: "Sie frisst Mäuse. Eigentlich hilft sie uns." },
       { text: "Das schon. Aber ich lasse den Garten trotzdem prüfen." },
-      { text: "Kannst du machen. Kostet gratis, wenn du beim Amt fragst." },
+      { text: "Kannst du machen. Das kostet nichts, wenn du beim Amt fragst." },
       { text: "Gut zu wissen. Dann rufe ich morgen dort an." },
     ],
     questions: [
@@ -223,7 +223,7 @@ export const b1U45: SkillExercise[] = [
         text: "Trotzdem: ___ wäre das nicht angenehm.",
         options: [],
         answer: 0,
-        accept: ["mir"],
+        accept: ["mir", "Mir"],
         explain: "„angenehm sein“ kişiyi Dativ'e koyar — gefallen ve kalt sein gibi.",
       },
       {
@@ -232,7 +232,7 @@ export const b1U45: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["die Prüfung beim Amt", "prüfen lassen", "wenn man beim Amt fragt"],
-        explain: "„Kostet gratis, wenn du beim Amt fragst.“",
+        explain: "„Das kostet nichts, wenn du beim Amt fragst.“",
       },
     ],
   },
@@ -265,7 +265,7 @@ export const b1U45: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Was macht die erste Person im Herbst?",
+        text: "Was macht die Person, die zuerst antwortet, im Herbst?",
         options: ["B2", "Eine Reise", "Nichts"],
         answer: 0,
         explain: "„Ich mache im Herbst B2. Vorher brauche ich eine Pause.“",
@@ -320,7 +320,7 @@ export const b1U45: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Üşürseniz ıslak şeyleri çıkarın.",
+        tr: "Üşürseniz ıslak şeyleri çıkarın; yapay kumaştan giysiler daha çabuk kurur.",
         answer: "Wenn Ihnen kalt wird, ziehen Sie nasse Sachen aus; künstliche Kleidung trocknet schneller.",
         hint: "„kalt werden“ kişiyi Dativ'e koyar.",
       },
@@ -332,9 +332,9 @@ export const b1U45: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yolu en çok iki kişi çapraz geçsin.",
-        answer: "Maximal zwei Personen sollen den Weg quer überqueren, und Beeren mit Gift lassen Sie stehen.",
-        hint: "Sayı zarfı öne alınınca fiil ikinci sırada.",
+        tr: "Yamacı aynı anda en çok iki kişi çapraz geçsin, zehirli yemişleri de toplamayın.",
+        answer: "Maximal zwei Personen gehen gleichzeitig quer über den Hang, und Beeren mit Gift lassen Sie stehen.",
+        hint: "İkinci yarıda nesne öne alınmış: Beeren mit Gift lassen Sie stehen.",
       },
       {
         kind: "form",
@@ -371,7 +371,7 @@ export const b1U45: SkillExercise[] = [
       { de: "optimistisch", tr: "iyimser", en: "optimistic" },
       { de: "endgültig", tr: "kesin", en: "final" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
-      { de: "die Schicht", tr: "toplumsal katman", en: "social stratum" },
+      { de: "die Schicht", tr: "vardiya", en: "shift" },
       { de: "monatelang", tr: "aylarca", en: "for months" },
       { de: "mehrere", tr: "birden fazla", en: "several" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -385,7 +385,7 @@ export const b1U45: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Şimdi gündelik hayatta başa çıkabildiğimi biliyorum.",
+        tr: "Artık gündelik hayatta başa çıktığımı ve görevlerimi yerine getirebildiğimi kesin olarak biliyorum.",
         answer: "Ich weiß jetzt endgültig, dass ich im Alltag zurechtkomme und meine Aufgaben erfüllen kann.",
         hint: "dass yan cümlesinde fiil sonda; ayrılabilen fiil bütün kalır.",
       },
@@ -420,7 +420,7 @@ export const b1U45: SkillExercise[] = [
         phrases: [
           { de: "Angefangen habe ich vor zwei Jahren.", tr: "İki yıl önce başladım.", en: "I started two years ago." },
           { de: "Am schwersten war für mich …", tr: "Benim için en zoru … idi.", en: "The hardest thing for me was …" },
-          { de: "Seitdem weiß ich, dass …", tr: "O zamandan beri biliyorum ki …", en: "Since then I know that …" },
+          { de: "Seitdem weiß ich, dass …", tr: "O zamandan beri biliyorum ki …", en: "Since then I have known that …" },
         ],
       },
       {

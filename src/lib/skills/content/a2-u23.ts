@@ -191,8 +191,8 @@ export const a2U23: SkillExercise[] = [
       { de: "das Mikrofon", tr: "mikrofon", en: "microphone" },
       { de: "die Website", tr: "internet sitesi", en: "website" },
       { de: "der Link", tr: "bağlantı", en: "link" },
-      { de: "sich eintragen", tr: "kaydolmak / adını yazmak", en: "to sign up" },
-      { de: "sich abmelden", tr: "çıkış yapmak", en: "to log out" },
+      { de: "sich eintragen", tr: "kaydolmak", en: "to sign up" },
+      { de: "sich abmelden", tr: "kaydını sildirmek", en: "to withdraw" },
       { de: "unverständlich", tr: "anlaşılmaz", en: "unintelligible" },
       { de: "mitschreiben", tr: "not almak", en: "to take notes" },
     ],
@@ -256,7 +256,7 @@ export const a2U23: SkillExercise[] = [
     unit: 23,
     title: "Das Formular ausfüllen",
     genre: "dialogue",
-    intro: "Formda hatalar var. Memur ne düzeltilmesini istiyor?",
+    intro: "Formda eksikler var. Memur neyin tamamlanmasını istiyor?",
     gloss: [
       { de: "leserlich", tr: "okunaklı", en: "legible" },
       { de: "vollständig", tr: "eksiksiz", en: "complete" },
@@ -267,6 +267,7 @@ export const a2U23: SkillExercise[] = [
       { de: "die Druckbuchstaben", tr: "matbaa harfleri", en: "block letters" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "der Beamte", tr: "memur", en: "civil servant" },
+      { de: "die Zahl", tr: "rakam", en: "number" },
     ],
     minutes: 3,
     segments: [
@@ -274,7 +275,7 @@ export const a2U23: SkillExercise[] = [
       { speaker: "Frau Yıldız", text: "Oh. Welche denn?" },
       { speaker: "Beamter", text: "Die Hausnummer bei der alten Adresse, und hier unten die Unterschrift." },
       { speaker: "Frau Yıldız", text: "Entschuldigung. Haben Sie einen Stift?" },
-      { speaker: "Beamter", text: "Bitte, hier. Und schreiben Sie die Hausnummer leserlich — die letzte konnte ich nicht zuordnen." },
+      { speaker: "Beamter", text: "Bitte, hier. Und schreiben Sie die Hausnummer leserlich — die letzte Zahl konnte ich nicht zuordnen — eine Eins oder eine Sieben?" },
       { speaker: "Frau Yıldız", text: "Ist es besser, wenn ich in Druckbuchstaben schreibe?" },
       { speaker: "Beamter", text: "Viel besser. Bei Zahlen hilft das am meisten." },
       { speaker: "Frau Yıldız", text: "So. Und das Datum hier oben — ist das richtig?" },
@@ -316,6 +317,8 @@ export const a2U23: SkillExercise[] = [
           "alles noch einmal lesen",
           "das Formular noch einmal ganz durchlesen",
           "es durchlesen",
+          "alles noch einmal durchlesen",
+          "es noch einmal durchlesen",
         ],
         explain: "„Lesen Sie es aber bitte noch einmal ganz durch, bevor Sie unterschreiben.“",
       },
@@ -330,7 +333,7 @@ export const a2U23: SkillExercise[] = [
     genre: "grammar",
     intro: "Resmî emirde Sie söylenir, samimi emirde özne hiç söylenmez.",
     gloss: [
-      { de: "ausfüllen", tr: "doldurmak", en: "to fill in" },
+      { de: "ausfüllen", tr: "doldurmak", en: "to fill out" },
       { de: "leserlich", tr: "okunaklı", en: "legible" },
       { de: "durchlesen", tr: "baştan sona okumak", en: "to read through" },
       { de: "speichern", tr: "kaydetmek", en: "to save" },
@@ -348,12 +351,14 @@ export const a2U23: SkillExercise[] = [
         kind: "build",
         tr: "Lütfen okunaklı yazın.",
         answer: "Bitte schreiben Sie leserlich",
+        alternatives: ["Schreiben Sie bitte leserlich"],
         hint: "bitte başta durabilir; fiil yine Sie'den önce gelir.",
       },
       {
         kind: "build",
         tr: "Önce dosyayı kaydet.",
         answer: "Speichere die Datei zuerst",
+        alternatives: ["Speichere zuerst die Datei"],
         hint: "Samimi emirde özne hiç söylenmez, yalnız fiil kökü kullanılır.",
       },
       {
@@ -399,7 +404,7 @@ export const a2U23: SkillExercise[] = [
           "Öffnungszeiten: Mo–Mi 8–15 Uhr, Do 8–18 Uhr, Fr 8–12 Uhr.\n" +
           "Das Anmeldeformular finden Sie auf unserer Website.",
         checklist: [
-          "Resmî hitapla ve konu cümlesiyle başladın mı?",
+          "Resmî hitapla ve konu satırıyla başladın mı?",
           "Geliş sebebini ve ne zaman taşındığını yazdın mı?",
           "Açılış saatlerine uyan iki tarih verdin mi?",
           "Ne getirmen gerektiğini sordun mu?",

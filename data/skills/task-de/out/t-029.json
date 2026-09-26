@@ -60,9 +60,9 @@
   "de": "Hast du je ein Team geleitet?"
  },
  {
-  "tr": "Kıyıdaki kasaba küçüktür.",
+  "tr": "Kasaba küçüktür (bu arada kıyıdadır).",
   "kind": "build.tr",
-  "de": "Die Stadt, die an der Küste liegt, ist klein."
+  "de": "Die Stadt ist klein (sie liegt übrigens an der Küste)."
  },
  {
   "tr": "Daha erken başlamayı önerdi.",
@@ -112,7 +112,7 @@
  {
   "tr": "Ben vardığımda dükkân kapanmıştı.",
   "kind": "build.tr",
-  "de": "Als ich ankam, hatte der Laden schon zu."
+  "de": "Als ich ankam, hatte der Laden schon geschlossen."
  },
  {
   "tr": "Belediye meclisi bir karar duyurdu.",
@@ -242,7 +242,7 @@
  {
   "tr": "„prefer“ doğrudan nesne alıyor; adın yerini yine „one“ tutuyor.",
   "kind": "build.hint",
-  "de": "„prefer“ nimmt das Objekt direkt; das Nomen vertritt wieder „one“."
+  "de": "„prefer“ nimmt das Objekt direkt; „one“ vertritt wieder das Nomen."
  },
  {
   "tr": "„recommend“ sonrası „-ing“ istiyor; „recommend to watch“ olmaz.",

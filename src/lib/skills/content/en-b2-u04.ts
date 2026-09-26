@@ -429,7 +429,7 @@ export const enB2U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Masrafın geri ödemesi gelmiş durumda.",
+        tr: "Masrafın geri ödemesinin vakti geldi.",
         answer: "The reimbursement of the cost is due.",
         hint: "Yine „-ment“; ama bu bir kural değil, liste.",
       },

@@ -181,7 +181,7 @@ export const b1U26: SkillExercise[] = [
     ],
     segments: [
       { text: "Guten Morgen. Was kostet das Kilo Pflaumen?" },
-      { text: "Heute drei Euro. Sonderangebot, sonst vier. Die Frucht ist gerade reif." },
+      { text: "Heute drei Euro. Sonderangebot, sonst vier. Die Früchte sind gerade reif." },
       { text: "Dann nehme ich zwei Kilo. Und vier Karotten." },
       { text: "Gern. Soll ich die Pilze auch wiegen?" },
       { text: "Ja, dreihundert Gramm bitte." },
@@ -197,7 +197,7 @@ export const b1U26: SkillExercise[] = [
         explain: "„Heute drei Euro. Sonderangebot, sonst vier.“",
       },
       {
-        text: "Wie viele Pilze nimmt die Kundin am Ende?",
+        text: "Wie viel Gramm Pilze nimmt die Kundin am Ende?",
         options: ["Dreihundert Gramm", "Fünfhundert Gramm", "Ein Kilo"],
         answer: 1,
         explain: "„… nehmen Sie fünfhundert.“ — „Gut, überzeugt.“",
@@ -278,7 +278,7 @@ export const b1U26: SkillExercise[] = [
         text: "Stellt die Sachen einfach auf ___ Tisch. Die Kanne steht schon auf ___ Tisch.",
         options: [],
         answer: 0,
-        accept: ["den dem", "den / dem"],
+        accept: ["den dem", "den / dem", "den, dem", "den/dem"],
         explain: "Koyma hareketi → Akkusativ; durma → Dativ.",
       },
       {
@@ -358,7 +358,7 @@ export const b1U26: SkillExercise[] = [
     gloss: [
       { de: "die Pflaume", tr: "erik", en: "plum" },
       { de: "die Karotte", tr: "havuç", en: "carrot" },
-      { de: "die Dose", tr: "konserve kutusu", en: "tin" },
+      { de: "die Dose", tr: "konserve kutusu", en: "can" },
       { de: "das Nahrungsmittel", tr: "gıda maddesi", en: "food item" },
       { de: "Früchte", tr: "meyve", en: "fruit" },
     ],
@@ -391,8 +391,8 @@ export const b1U26: SkillExercise[] = [
           "dort noch ruhig, und das Gemüse liegt frisch auf den Tischen.\n\n" +
           "Ich habe drei Zwiebeln, vier Karotten, zwei Kilo Pflaumen und " +
           "fünfhundert Gramm Pilze gekauft. Die Pflaumen waren im " +
-          "Sonderangebot, drei Euro statt vier. Dazu noch eine Dose Konfitüre " +
-          "und eine kleine Kanne Honig vom Stand daneben.\n\n" +
+          "Sonderangebot, drei Euro statt vier. Dazu noch eine Dose Tomaten " +
+          "und ein kleines Glas Honig vom Stand daneben.\n\n" +
           "Zusammen habe ich ungefähr achtzehn Euro bezahlt. Das ist mehr als " +
           "im Laden, aber die Nahrungsmittel kommen von hier und schmecken " +
           "auch anders.\n\n" +
@@ -400,7 +400,7 @@ export const b1U26: SkillExercise[] = [
           "keine Tasche mehr frei. Nächstes Mal nehme ich zwei Taschen mit.",
         phrases: [
           { de: "Ich habe drei … und vier … gekauft.", tr: "Üç … ve dört … aldım.", en: "I bought three … and four …" },
-          { de: "… waren im Sonderangebot.", tr: "… özel fiyattaydı.", en: "… were on special offer." },
+          { de: "… waren im Sonderangebot.", tr: "… özel fiyattaydı.", en: "… were on sale." },
           { de: "Zusammen habe ich … bezahlt.", tr: "Toplam … ödedim.", en: "Altogether I paid …" },
         ],
       },

@@ -318,7 +318,7 @@ export const b1U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha çok yerimiz olsaydı onu kendimiz alırdık.",
+        tr: "Daha çok yerimiz olsaydı onu kendimizde tutardık.",
         answer: "Wenn wir mehr Platz hätten, würden wir ihn selbst behalten.",
         hint: "Şimdiki gerçek dışı: hätten … würden.",
       },
@@ -328,7 +328,7 @@ export const b1U23: SkillExercise[] = [
         facts: "Gün: cumartesi; katılım: yaklaşık 3000 kişi; konu: eski havuzun korunması; ton: barışçıl; sonuç: sonbaharda yeniden görüşme.",
         fields: [
           { label: "Tag", answer: "Samstag", accept: ["am Samstag"] },
-          { label: "Teilnehmer", answer: "etwa 3000", accept: ["dreitausend", "3000"] },
+          { label: "Teilnehmer", answer: "etwa 3000", accept: ["dreitausend", "3000", "etwa dreitausend", "ungefähr 3000", "ca. 3000"] },
           { label: "Forderung", answer: "das alte Bad soll bleiben", accept: ["das Bad soll bleiben", "das alte Bad"] },
           { label: "Ergebnis", answer: "neue Beratung im Herbst", accept: ["im Herbst", "Beratung im Herbst"] },
         ],
@@ -355,7 +355,7 @@ export const b1U23: SkillExercise[] = [
       { de: "sich wünschen", tr: "dilemek", en: "to wish" },
       { de: "reichen", tr: "yetmek", en: "to be enough" },
       { de: "ewig", tr: "sonsuza dek", en: "forever" },
-      { de: "zukünftig", tr: "bundan böyle", en: "in future" },
+      { de: "zukünftig", tr: "bundan böyle", en: "in the future" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "offen", tr: "açık", en: "open" },
       { de: "leicht", tr: "hafif", en: "light" },
@@ -392,7 +392,7 @@ export const b1U23: SkillExercise[] = [
           "Hätte ich das vor fünf Jahren gemacht, wäre vieles leichter gewesen. " +
           "Aber ich hatte Angst vor dem Beginn und vor der Frage, ob das Geld " +
           "reicht.\n\n" +
-          "Jetzt weiß ich: es würde reichen. Zukünftig will ich zumindest " +
+          "Jetzt weiß ich: Es würde reichen. Zukünftig will ich zumindest " +
           "einmal fragen, statt es ewig zu verschieben. Fragen kostet nichts, " +
           "und die Antwort kenne ich sonst nie.",
         phrases: [

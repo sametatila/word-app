@@ -184,7 +184,7 @@ export const b1U42: SkillExercise[] = [
       { de: "der Verbrecher", tr: "suçlu", en: "criminal" },
       { de: "die Kriminalpolizei", tr: "asayiş şubesi", en: "criminal police" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Anzeige", tr: "ilan", en: "ad" },
+      { de: "die Anzeige", tr: "polise ihbar / şikâyet", en: "(police) report" },
     ],
     segments: [
       { text: "Guten Tag. Ich möchte etwas melden." },
@@ -317,7 +317,7 @@ export const b1U42: SkillExercise[] = [
         kind: "build",
         tr: "Tutuklanan bir insan hemen cezaevine girmez.",
         answer: "Ein verhafteter Mensch kommt nicht sofort ins Gefängnis.",
-        hint: "İki ortaç da sıfat gibi çekilir.",
+        hint: "İsimden önceki ortaç sıfat gibi çekilir: verhafteter.",
       },
       {
         kind: "build",
@@ -334,10 +334,10 @@ export const b1U42: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bildirim kartını doldur.",
-        facts: "Bildiren: Sedef Aydın; olay: gece 22'de ev önünde; görülen: iki kişi arkadan; kesin bilgi: yok; sonraki adım: asayiş şubesi.",
+        facts: "Bildiren: Sedef Aydın; olay: gece 22.00'de ev önünde; görülen: iki kişi arkadan; kesin bilgi: yok; sonraki adım: asayiş şubesi.",
         fields: [
           { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
-          { label: "Zeit", answer: "22 Uhr", accept: ["zehn Uhr abends", "gegen zehn"] },
+          { label: "Zeit", answer: "22 Uhr", accept: ["zehn Uhr abends", "gegen zehn", "gegen 22 Uhr", "22:00"] },
           { label: "Ort", answer: "vor dem Haus", accept: ["vor meinem Haus", "Haus"] },
           { label: "Weiter an", answer: "Kriminalpolizei", accept: ["die Kriminalpolizei", "Polizei"] },
         ],
@@ -366,8 +366,8 @@ export const b1U42: SkillExercise[] = [
       { de: "ausschließen", tr: "dışlamak", en: "to exclude" },
       { de: "die Versammlung", tr: "toplanma", en: "assembly" },
       { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
-      { de: "abstellen", tr: "koymak", en: "to set down" },
-      { de: "behindert", tr: "engelli", en: "disabled" },
+      { de: "abstellen", tr: "bırakmak / park etmek", en: "to park; to leave" },
+      { de: "behindert", tr: "engel oluyor", en: "hinders" },
     ],
     tasks: [
       {
@@ -396,7 +396,7 @@ export const b1U42: SkillExercise[] = [
         sample:
           "In unserem Haus gilt seit Januar eine neue Regel für den Hof.\n\n" +
           "Es ist erforderlich, dass jeder sein Rad im hinteren Bereich " +
-          "abstellt. Der Grund ist einfach: ein gesperrter Weg behindert " +
+          "abstellt. Der Grund ist einfach: Ein gesperrter Weg behindert " +
           "im Notfall die Feuerwehr, und das ist untersagt.\n\n" +
           "Die Regel gilt für alle Bewohner. Es gibt eine Ausnahme für " +
           "Besucher, die nur kurz bleiben — aber auch sie sollen den " +
@@ -415,8 +415,8 @@ export const b1U42: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Eksik yer tutucuyu ekle.",
-        source: "Ist erforderlich, dass Sie anmelden, und ist wichtig, dass Sie ruhig bleiben.",
-        answer: "Es ist erforderlich, dass Sie anmelden, und es ist wichtig, dass Sie ruhig bleiben.",
+        source: "Ist erforderlich, dass Sie sich anmelden, und ist wichtig, dass Sie ruhig bleiben.",
+        answer: "Es ist erforderlich, dass Sie sich anmelden, und es ist wichtig, dass Sie ruhig bleiben.",
         why: "Türkçede öznesiz cümle olağandır ('gelmeniz gereklidir'), o yüzden Almancada da cümle doğrudan fiille başlıyor. Almanca yan cümleyi sona atınca başa bir YER TUTUCU koyar: es. Ünite 22 hava ve varlık cümlelerindeki es'i almıştı; buradaki görev başka — es bir CÜMLENİN yerini tutuyor ve o cümle geldiğinde de yerinde kalıyor.",
       },
     ],

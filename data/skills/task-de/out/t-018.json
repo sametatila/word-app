@@ -172,7 +172,7 @@
  {
   "tr": "Hadi tekrar buluşalım.",
   "kind": "build.tr",
-  "de": "Lass uns wieder treffen."
+  "de": "Treffen wir uns wieder."
  },
  {
   "tr": "Yardıma ihtiyacım var.",
@@ -245,9 +245,9 @@
   "de": "„help“ ist nicht zählbar: „a help“ geht nicht und einen Plural gibt es nicht — wie die Hilfe."
  },
  {
-  "tr": "„fruit“ sayılamaz: önünde artikel yok, çoğulu da yok.",
+  "tr": "„fruit“ burada sayılamaz gibi kullanılıyor: önünde „a“ yok.",
   "kind": "build.hint",
-  "de": "„fruit“ ist nicht zählbar: kein Artikel davor und kein Plural — wie das Obst."
+  "de": "„fruit“ steht hier wie ein nicht zählbares Wort: kein „a“ davor — wie das Obst."
  },
  {
   "tr": "„should“ sonrası eksiz fiil; „more“ cümlenin sonunda.",
@@ -280,9 +280,9 @@
   "de": "In der Frage rückt „should“ vor das Subjekt; „do“ ist hier das Vollverb."
  },
  {
-  "tr": "E-posta hep „Dear“ ile başlıyor ve sonrasına virgül geliyor.",
+  "tr": "Resmî e-posta çoğu zaman „Dear“ ile başlar ve sonrasına virgül gelir.",
   "kind": "build.hint",
-  "de": "Eine E-Mail beginnt immer mit „Dear“, danach folgt ein Komma — wie „Liebe Anna,“."
+  "de": "Eine förmliche E-Mail beginnt meist mit „Dear“, danach folgt ein Komma — wie „Liebe Anna,“."
  },
  {
   "tr": "Sahiplik „have“ ile; „question“ sayılabilir, önünde „a“ var.",
@@ -295,9 +295,9 @@
   "de": "„again“ steht am Satzende. Der letzte Satz von A1 endet mit einem Versprechen."
  },
  {
-  "tr": "„call“ burada telefon etmek; sesli harfle başladığı için „an“.",
+  "tr": "„call“ burada telefon etmek; „ambulance“ sesli harfle başladığı için „an“.",
   "kind": "build.hint",
-  "de": "„call“ heißt hier anrufen; weil das nächste Wort mit einem Vokal beginnt, steht „an“."
+  "de": "„call“ heißt hier anrufen; weil „ambulance“ mit einem Vokal beginnt, steht „an“."
  },
  {
   "tr": "İki tane olduğu için çoğul: stamps. „please“ sonda ve virgülle.",

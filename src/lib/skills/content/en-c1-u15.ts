@@ -334,7 +334,7 @@ export const enC1U15: SkillExercise[] = [
         text: "What does a question from a colleague cost?",
         options: [],
         answer: 0,
-        accept: ["money", "it costs money", "a piece"],
+        accept: ["money", "it costs money"],
         explain: "„a question from a colleague costs money…“",
       },
     ],
@@ -469,7 +469,7 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bilgi emeği pekâlâ kendini sömürmeyle bitebilir.",
+        tr: "Bilgi emeği pekâlâ öz sömürüyle sonuçlanabilir.",
         answer: "Knowledge work may well end in self-exploitation.",
         hint: "Çekince burada gerçek bir iş görüyor.",
       },

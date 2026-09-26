@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           blame, correct, consider, advantage, disadvantage, weigh,
  *           conclusion, convince, overall, opinion.
  *   Kalıp:  I am seeing the doctor on Thursday. ·
- *           I am going to cancel the booking. ·
+ *           I am going to cancel the appointment. ·
  *           I will confirm it this evening. ·
  *           You must read every instruction first. ·
  *           You can't press both buttons. ·
@@ -192,10 +192,10 @@ export const enB1U10: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Clinic", text: "Good morning, the clinic." },
+      { speaker: "Clinic", text: "Good morning, this is the clinic." },
       { speaker: "Nil", text: "Hello. I am seeing the doctor on Thursday at four and I need to move it." },
       { speaker: "Clinic", text: "Let me look. Thursday the fourteenth?" },
-      { speaker: "Nil", text: "That one. I am going to cancel the booking if there is nothing next week." },
+      { speaker: "Nil", text: "That one. I am going to cancel the appointment if there is nothing next week." },
       { speaker: "Clinic", text: "There is a slot on Tuesday at nine and one on Friday at half past five." },
       { speaker: "Nil", text: "Friday. Nine in the morning is the one hour I cannot do." },
       { speaker: "Clinic", text: "Friday the twenty-second, half past five. I have put it in." },
@@ -216,7 +216,7 @@ export const enB1U10: SkillExercise[] = [
       },
       {
         text: "What will Nil do this evening?",
-        options: ["confirm it by email", "cancel the booking", "bring the results"],
+        options: ["confirm it by email", "cancel the appointment", "bring the results"],
         answer: 0,
         explain: "„I will confirm it this evening by email. Then we both have it in writing.“",
       },
@@ -277,7 +277,7 @@ export const enB1U10: SkillExercise[] = [
       { speaker: "Ela", text: "And the buttons?" },
       { speaker: "Mert", text: "You can't press both buttons. One at a time, always. Both together is how the last one broke." },
       { speaker: "Ela", text: "Why are there two then?" },
-      { speaker: "Mert", text: "Because one is for the safety. It is written on the label in letters nobody reads." },
+      { speaker: "Mert", text: "Because one is for safety. It is written on the label in letters nobody reads." },
       { speaker: "Ela", text: "Anything to avoid?" },
       { speaker: "Mert", text: "Water and hurry. In that order." },
       { speaker: "Ela", text: "Careful is slower." },
@@ -311,7 +311,7 @@ export const enB1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["safety"],
-        explain: "„Because one is for the safety. It is written on the label…“",
+        explain: "„Because one is for safety. It is written on the label…“",
       },
       {
         kind: "dictation",
@@ -410,8 +410,8 @@ export const enB1U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Rezervasyonu iptal edeceğim.",
-        answer: "I am going to cancel the booking.",
+        tr: "Randevuyu iptal edeceğim.",
+        answer: "I am going to cancel the appointment.",
         hint: "Önceden kurulmuş plan: „going to“.",
       },
       {

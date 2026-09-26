@@ -155,9 +155,9 @@
   "en": "True: „Einzelne Moleküle sieht man damit natürlich nicht.“"
  },
  {
-  "tr": "Doğru: „hat kurze Haare“ deniyor ve bu kısım düzeltilmiyor.",
+  "tr": "Yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
   "kind": "explain",
-  "en": "True: „hat kurze Haare“ is what is said, and that part is not corrected."
+  "en": "False: the first piece of information is corrected — „Nein, das stimmt nicht! Max ist groß.“"
  },
  {
   "tr": "Doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
@@ -242,7 +242,7 @@
  {
   "tr": "Doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
   "kind": "explain",
-  "en": "True: Jonas is zwanzig and his brother zehn. Do not muddle the two numbers."
+  "en": "True: Jonas is zwanzig and his brother zehn. Do not mix up the two numbers."
  },
  {
   "tr": "Doğru: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“",

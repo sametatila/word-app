@@ -199,13 +199,13 @@ export const enA2U06: SkillExercise[] = [
       { speaker: "Can", text: "I have an appointment on Thursday." },
       { speaker: "Nil", text: "Good. Until then you should rest and drink enough water." },
       { speaker: "Can", text: "I drink coffee." },
-      { speaker: "Nil", text: "You shouldn't drink coffee with a fever! You should avoid it." },
+      { speaker: "Nil", text: "You shouldn't drink coffee with a cold! You should avoid it." },
       { speaker: "Can", text: "And my throat is sore. Should I take something?" },
       { speaker: "Nil", text: "Warm tea with lemon. My grandmother's advice — and it works." },
       { speaker: "Can", text: "Should I stay at home tomorrow?" },
       { speaker: "Nil", text: "Of course. Call your office and let them know." },
-      { speaker: "Can", text: "Then I will. Thank you for the advice." },
-      { speaker: "Nil", text: "Get better soon. And relax — the work can wait." },
+      { speaker: "Can", text: "OK, I will. Thank you for the advice." },
+      { speaker: "Nil", text: "Get well soon. And relax — the work can wait." },
     ],
     questions: [
       {
@@ -218,7 +218,7 @@ export const enA2U06: SkillExercise[] = [
         text: "What shouldn't Can drink?",
         options: ["coffee", "warm tea", "water"],
         answer: 0,
-        explain: "„You shouldn't drink coffee with a fever! You should avoid it.“",
+        explain: "„You shouldn't drink coffee with a cold! You should avoid it.“",
       },
       {
         kind: "truefalse",
@@ -270,11 +270,11 @@ export const enA2U06: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Ela", text: "My knee has hurt since March. That is six months." },
-      { speaker: "Ela", text: "At first it was only after sport. Then it was every evening. Now it hurts in the morning too." },
-      { speaker: "Ela", text: "I have had three appointments this year. The first doctor said: rest. The second said: sport." },
+      { speaker: "Ela", text: "At first it was only after sports. Then it was every evening. Now it hurts in the morning too." },
+      { speaker: "Ela", text: "I have had three appointments this year. The first doctor said: rest. The second said: sports." },
       { speaker: "Ela", text: "The third one asked the right question: How long have you had it and when is it worse?" },
       { speaker: "Ela", text: "I said: I've had it for six months and it is worse when I sit for hours." },
-      { speaker: "Ela", text: "Now I stand at my desk two hours a day. The condition is better. Sometimes a question is the medicine." },
+      { speaker: "Ela", text: "Now I stand at my desk two hours a day. My condition is better now. Sometimes a question is the medicine." },
     ],
     questions: [
       {
@@ -285,7 +285,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         text: "When is the pain worse?",
-        options: ["when she sits for hours", "after sport only", "in the morning only"],
+        options: ["when she sits for hours", "after sports only", "in the morning only"],
         answer: 0,
         explain: "„…it is worse when I sit for hours.“ — spordan sonra olması başlangıçtaki hâliydi.",
       },
@@ -311,7 +311,7 @@ export const enA2U06: SkillExercise[] = [
         answer: 0,
         items: [
           "My knee has hurt since March.",
-          "At first it was only after sport.",
+          "At first it was only after sports.",
           "I have had three appointments this year.",
           "Now I stand at my desk two hours a day.",
         ],

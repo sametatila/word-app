@@ -174,7 +174,7 @@ export const b1U14: SkillExercise[] = [
     intro: "Bir mesleki eğitim konuşuluyor. Kim ödüyor, ne kazandırıyor?",
     minutes: 4,
     gloss: [
-      { de: "die Weiterbildung", tr: "mesleki eğitim", en: "further training" },
+      { de: "die Weiterbildung", tr: "mesleki eğitim", en: "continuing education" },
       { de: "finanzieren", tr: "finanse etmek", en: "to fund" },
       { de: "sich lohnen", tr: "değmek", en: "to be worth it" },
       { de: "die Teilzeit", tr: "yarı zamanlı", en: "part-time" },
@@ -183,11 +183,11 @@ export const b1U14: SkillExercise[] = [
     ],
     segments: [
       { text: "Ich überlege, ob ich die Weiterbildung machen soll." },
-      { text: "Wie lang ist die denn?" },
+      { text: "Wie lange dauert die denn?" },
       { text: "Ein Jahr, in Teilzeit. Zwei Abende pro Woche." },
       { text: "Und wer finanziert das?" },
       { text: "Die Firma zahlt einen Teil, wenn ich danach zwei Jahre bleibe." },
-      { text: "Das ist gut. Lohnt es sich denn für den Alltag?" },
+      { text: "Das ist gut. Lohnt es sich denn für deinen Beruf?" },
       { text: "Ich glaube schon. Ich könnte danach selbst unterrichten." },
       { text: "Dann mach das. Du hast Talent dafür, das sieht man." },
     ],
@@ -239,7 +239,7 @@ export const b1U14: SkillExercise[] = [
     minutes: 4,
     gloss: [
       { de: "die Hochschule", tr: "yüksekokul", en: "university" },
-      { de: "sich erkundigen", tr: "bilgi almak", en: "to enquire" },
+      { de: "sich erkundigen", tr: "bilgi almak", en: "to inquire" },
       { de: "das Semester", tr: "dönem", en: "semester" },
       { de: "das Referat", tr: "sunum ödevi", en: "presentation" },
       { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
@@ -253,7 +253,7 @@ export const b1U14: SkillExercise[] = [
       { text: "Wie viele Prüfungen gibt es pro Semester?" },
       { text: "Meistens drei, dazu ein Referat. Der Professor sagt es am Anfang." },
       { text: "Und wenn ich arbeite? Geht das nebenher?" },
-      { text: "Viele Studentinnen arbeiten. Die Auswahl der Kurse hilft dabei." },
+      { text: "Viele Studierende arbeiten nebenher. Die Auswahl der Kurse hilft dabei." },
     ],
     questions: [
       {
@@ -335,14 +335,14 @@ export const b1U14: SkillExercise[] = [
           { label: "Name", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
           { label: "Kurs", answer: "Abendkurs", accept: ["der Abendkurs", "Abend"] },
           { label: "Dauer", answer: "6 Monate", accept: ["sechs Monate", "ein halbes Jahr"] },
-          { label: "Grund", answer: "arbeitet tagsüber", accept: ["Arbeit", "sie arbeitet"] },
+          { label: "Grund", answer: "arbeitet tagsüber", accept: ["Arbeit", "sie arbeitet", "tagsüber arbeiten", "sie arbeitet tagsüber"] },
         ],
       },
       {
         kind: "rewrite",
         prompt: "Karşılaştırma bağlacını düzelt.",
-        source: "Die Prüfung war schwerer wie ich dachte.",
-        answer: "Die Prüfung war schwerer als ich dachte.",
+        source: "Die Prüfung war schwerer, wie ich dachte.",
+        answer: "Die Prüfung war schwerer, als ich dachte.",
         why: "Türkçe karşılaştırmayı tek yapıyla kurar ('sandığımdan zor'), o yüzden als ile wie arasında bir seçim olduğu görünmüyor. Almanca ayırır: EŞİT DEĞİLSE als (schwerer als, mehr als), EŞİTSE so … wie (so schwer wie). Karşılaştırma biçimi (-er) varsa daima als gelir.",
       },
     ],
@@ -357,7 +357,7 @@ export const b1U14: SkillExercise[] = [
     intro: "Bir okula soru sor. Dolaylı soruda 'ob' ile 'wenn' karışmasın.",
     minutes: 12,
     gloss: [
-      { de: "sich erkundigen", tr: "bilgi almak", en: "to enquire" },
+      { de: "sich erkundigen", tr: "bilgi almak", en: "to inquire" },
       { de: "das Semester", tr: "dönem", en: "semester" },
       { de: "beschließen", tr: "karar vermek", en: "to decide" },
       { de: "die Wissenschaft", tr: "bilim", en: "science" },
@@ -375,7 +375,6 @@ export const b1U14: SkillExercise[] = [
         kind: "build",
         tr: "Kayıt olursam ilk dönem ne zaman başlar?",
         answer: "Wenn ich mich anmelde, wann beginnt dann das erste Semester?",
-        alternatives: ["Wann beginnt das erste Semester, wenn ich mich anmelde?"],
         hint: "Burası gerçek bir KOŞUL → wenn.",
       },
       {
@@ -393,7 +392,7 @@ export const b1U14: SkillExercise[] = [
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich möchte mich über Ihr Studium im Bereich Wissenschaft erkundigen. " +
           "Ich arbeite seit vier Jahren in einem Betrieb und habe beschlossen, " +
-          "noch einmal anzufangen.\n\n" +
+          "noch ein Studium anzufangen.\n\n" +
           "Ich habe drei Fragen. Erstens: Wann beginnt das erste Semester? " +
           "Zweitens: Wie viele Prüfungen gibt es pro Semester, und kommt ein " +
           "Referat dazu? Drittens würde ich gern wissen, ob es möglich ist, " +
@@ -403,7 +402,7 @@ export const b1U14: SkillExercise[] = [
           "wäre ich sehr dankbar.\n\n" +
           "Mit freundlichen Grüßen\nLeyla Kaya",
         phrases: [
-          { de: "Ich möchte mich über … erkundigen.", tr: "… hakkında bilgi almak istiyorum.", en: "I would like to enquire about …" },
+          { de: "Ich möchte mich über … erkundigen.", tr: "… hakkında bilgi almak istiyorum.", en: "I would like to inquire about …" },
           { de: "Ich würde gern wissen, ob …", tr: "… olup olmadığını bilmek isterdim.", en: "I would like to know whether …" },
           { de: "Über eine kurze Auskunft wäre ich dankbar.", tr: "Kısa bir bilgi için minnettar olurum.", en: "I would be grateful for brief information." },
         ],
@@ -413,7 +412,7 @@ export const b1U14: SkillExercise[] = [
         prompt: "Dolaylı sorunun bağlacını düzelt.",
         source: "Ich weiß nicht, wenn ich das schaffe.",
         answer: "Ich weiß nicht, ob ich das schaffe.",
-        why: "Türkçede '-ip -mediğini' ile 'eğer' ayrı sözcükler değil, o yüzden ikisi de wenn'e çevriliyor. Almanca ayırır: dolaylı EVET/HAYIR sorusu ob ister ('başarıp başaramayacağımı'), gerçek koşul ise wenn ('başarırsam'). Cümlenin başına 'ya da olmasın' eklenebiliyorsa ob gelir.",
+        why: "Türkçede '-ip -mediğini' bir ektir, ayrı bir bağlacı yoktur; o yüzden Almancada akla ilk gelen bağlaç, 'eğer'in karşılığı wenn konuyor. Almanca ayırır: dolaylı EVET/HAYIR sorusu ob ister ('başarıp başaramayacağımı'), gerçek koşul ise wenn ('başarırsam'). Yan cümlenin sonuna 'ya da değil' eklenebiliyorsa ob gelir.",
       },
     ],
   },

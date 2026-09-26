@@ -268,7 +268,7 @@ export const c1U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["verloren"],
-        explain: "verloren gehen: kalıp fiil, ayrı yazılır.",
+        explain: "verloren gehen: kalıp fiil; ayrı yazımı yaygın, bitişik verlorengehen de doğru.",
       },
       {
         text: "In welcher Reihenfolge kommt das Verstehen laut Tobias?",
@@ -322,7 +322,7 @@ export const c1U21: SkillExercise[] = [
       { speaker: "Halil", text: "Zwei. Der dritte war der hier." },
       { speaker: "Mareike", text: "Sehr gut. Ich bin aus Bayern, ich rede also ununterbrochen und trinke Bier zum Frühstück." },
       { speaker: "Halil", text: "Und wir gelten dafür als zugeknöpft. Pauschal, versteht sich — für einen ganzen Landstrich." },
-      { speaker: "Mareike", text: "Genau wie meine Sitten hier angeblich alle mit Bier anfangen." },
+      { speaker: "Mareike", text: "Genau wie bei uns angeblich jede Sitte mit Bier anfängt." },
       { speaker: "Halil", text: "Ich hätte gesagt: Weißwurst." },
       { speaker: "Mareike", text: "Vor zwölf Uhr, sonst ist es ein Verbrechen. Das ist übrigens kein Klischee, das ist ein Ritual — und ein Ritual verteidigt man nicht, man vollzieht es." },
       { speaker: "Halil", text: "Bei uns im Norden gibt es das auch. Nur ohne Kult, mit Fischbrötchen und ohne Erklärung." },

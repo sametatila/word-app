@@ -57,7 +57,7 @@
  {
   "tr": "Likidite önce düşme eğiliminde olur.",
   "kind": "build.tr",
-  "de": "Die Liquidität dürfte zuerst sinken."
+  "de": "Die Liquidität würde tendenziell zuerst sinken."
  },
  {
   "tr": "Uyuşmazlığa bir uyarı grevi giriyor.",
@@ -180,12 +180,12 @@
   "de": "Eine Erinnerung überlebt als Überlieferung, ein Relikt als Chiffre."
  },
  {
-  "tr": "Dördüncü sözcük „is“: yarma cümle.",
+  "tr": "„what“ öbeğinden sonra „is“: yarık cümle.",
   "kind": "build.hint",
-  "de": "Das vierte Wort ist „is“: ein Spaltsatz."
+  "de": "Auf den „what“-Teil folgt „is“: ein Spaltsatz."
  },
  {
-  "tr": "Beşinci sözcük „is“: yarma cümle.",
+  "tr": "Beşinci sözcük „is“: yarık cümle.",
   "kind": "build.hint",
   "de": "Das fünfte Wort ist „is“: ein Spaltsatz."
  },
@@ -215,9 +215,9 @@
   "de": "Kein Frageanhang: diese Zeile gehört der Schrift."
  },
  {
-  "tr": "İki taviz sözcüğü, hiçbir ödün.",
+  "tr": "İki taviz sözcüğü, ama gerçekte hiçbir şey verilmiyor.",
   "kind": "build.hint",
-  "de": "Zwei Zugeständniswörter, kein Nachgeben."
+  "de": "Zwei Zugeständniswörter, aber in Wahrheit wird nichts hergegeben."
  },
  {
   "tr": "Taviz değil ayrım: soğuk bağlaç.",

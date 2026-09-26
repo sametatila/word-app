@@ -110,11 +110,6 @@
   "en": "„I'm allergic to fish. Is there anything with chicken?“"
  },
  {
-  "tr": "„I invited Nil but it doesn't work. Izmir until Sunday.“",
-  "kind": "explain",
-  "en": "„I invited Nil but it doesn't work. Izmir until Sunday.“"
- },
- {
   "tr": "Önce istek, sonra belge, sonra yakıt, en son iade saati.",
   "kind": "explain",
   "en": "First the wish, then the papers, then the fuel, and the return time last."
@@ -128,11 +123,6 @@
   "tr": "Otel cümleleri. Olumluda „some“, olumsuz ve soruda „any“.",
   "kind": "intro",
   "en": "Hotel sentences. „some“ in statements, „any“ in negatives and questions."
- },
- {
-  "tr": "Mert hediyeyi eylülde veriyor ve kendi doğum günü kasımda.",
-  "kind": "explain",
-  "en": "Mert hands the present over in September, and that birthday is in November."
  },
  {
   "tr": "Üç öneri kalıbı. Hangisi eksiz fiil, hangisi „-ing“ istiyor?",
@@ -208,10 +198,5 @@
   "tr": "„Does the price include breakfast? — Yes, from seven to ten.“ Otopark ayrı ücret.",
   "kind": "explain",
   "en": "„Does the price include breakfast? — Yes, from seven to ten.“ The parking costs extra."
- },
- {
-  "tr": "„My flight is delayed and I've missed my connection.“ — aktarma birdeydi, uçak iki buçukta indi.",
-  "kind": "explain",
-  "en": "„My flight is delayed and I've missed my connection.“ — the connection was at one, the plane landed at half past two."
  }
 ]

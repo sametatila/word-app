@@ -280,7 +280,7 @@ export const enB1U18: SkillExercise[] = [
       { speaker: "Sena", text: "Why quieter?" },
       { speaker: "Can", text: "Because a prediction with a date is a promise and a prediction without one is a feeling. I have stopped giving dates." },
       { speaker: "Sena", text: "And the system?" },
-      { speaker: "Can", text: "The system is going to change. That one I am sure about, because the decision has been taken and the papers are signed." },
+      { speaker: "Can", text: "The system is going to change. That one I am sure about, because the decision has been made and the papers are signed." },
       { speaker: "Sena", text: "So that is not a prediction." },
       { speaker: "Can", text: "It is a plan I have seen. Different word, different sentence, different verb." },
       { speaker: "Sena", text: "Is anybody talking about it?" },
@@ -295,7 +295,7 @@ export const enB1U18: SkillExercise[] = [
         text: "What is Can sure about?",
         options: ["the system is going to change", "prices will fall", "Friday will be long"],
         answer: 0,
-        explain: "„The system is going to change. That one I am sure about, because the decision has been taken…“",
+        explain: "„The system is going to change. That one I am sure about, because the decision has been made…“",
       },
       {
         text: "Why has Can stopped giving dates?",

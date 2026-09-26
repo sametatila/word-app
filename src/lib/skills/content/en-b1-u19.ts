@@ -203,7 +203,7 @@ export const enB1U19: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Nil", text: "You had the results this morning. And?" },
+      { speaker: "Nil", text: "You got the results this morning. And?" },
       { speaker: "Mert", text: "The doctor said the blood test was normal. Everything in the normal range, including the one I was worried about." },
       { speaker: "Nil", text: "And the scan?" },
       { speaker: "Mert", text: "She told me not to worry about the scan. Which is a sentence that makes everybody worry, and she knows it." },
@@ -309,7 +309,7 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         text: "Where is the pain?",
-        options: ["in the joint", "in the bone", "in the knee only"],
+        options: ["in the joint", "in the bone", "in the back"],
         answer: 0,
         explain: "„Not the bone. The joint above it, which does not show on an x-ray at all…“",
       },

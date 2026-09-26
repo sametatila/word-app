@@ -230,7 +230,7 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         text: "Who presented?",
-        options: ["the one who wrote the least", "the leader", "Can"],
+        options: ["the one who wrote the least", "the leader", "the one who wrote the most"],
         answer: 0,
         explain: "„The one who wrote the least. We decided that at the start…“",
       },
@@ -255,7 +255,7 @@ export const enB1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["The part I wrote was the shortest.", "The part I wrote was the shortest"],
-        explain: "Nesne konumundaki ilgi adılı düşmüş: „The part I wrote“ ile aynı.",
+        explain: "Nesne konumundaki ilgi adılı düşmüş: „The part that I wrote“ ile aynı.",
       },
       {
         kind: "short_answer",
@@ -358,7 +358,7 @@ export const enB1U15: SkillExercise[] = [
     genre: "personal",
     intro: "İki koşul ve bir tuzak. Ne zaman „was“ değil „were“?",
     gloss: [
-      { de: "If I were", tr: "olsaydım" },
+      { de: "If I were", tr: "olsam" },
       { de: "bored", tr: "sıkılmış" },
       { de: "unless", tr: "-medikçe" },
     ],
@@ -372,7 +372,7 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha az yorgun olsaydım daha çok çalışırdım.",
+        tr: "Daha az yorgun olsam daha çok çalışırdım.",
         answer: "If I were less tired, I would study more.",
         hint: "Gerçek olmayan koşulda „I“ yanında bile „were“ geliyor; „was“ değil.",
       },
@@ -413,7 +413,7 @@ export const enB1U15: SkillExercise[] = [
     gloss: [
       { de: "reliable", tr: "güvenilir" },
       { de: "go further", tr: "daha ileri gitmek" },
-      { de: "ambition", tr: "hedef" },
+      { de: "ambition", tr: "hırs" },
     ],
     minutes: 8,
     tasks: [
@@ -443,7 +443,7 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Hedefime rağmen seçim gerçekçi olmalı.",
+        tr: "Hırsıma rağmen seçim gerçekçi olmalı.",
         answer: "Despite my ambition, the choice must be realistic.",
         hint: "„despite“ bir isim istiyor; üç sözcük üç ayrı yapı kuruyor.",
       },

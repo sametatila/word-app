@@ -236,14 +236,14 @@ export const c1U12: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Prof. Reinhardt", text: "Ihre These ist schlüssig aufgebaut. Einerseits ließe sich aber einwenden, dass die Stichprobe nur städtisch ist." },
+      { speaker: "Prof. Reinhardt", text: "Ihre These ist schlüssig aufgebaut. Es ließe sich allerdings einwenden, dass die Stichprobe nur städtisch ist." },
       { speaker: "Frau Kilic", text: "Das ist richtig. Dem ist entgegenzuhalten, dass die Fragestellung ausdrücklich städtische Mobilität betrifft." },
       { speaker: "Prof. Reinhardt", text: "Ihre Schlussfolgerung im letzten Kapitel geht aber darüber hinaus." },
       { speaker: "Frau Kilic", text: "Da haben Sie recht. Der Satz auf Seite 112 ist zu weit formuliert." },
       { speaker: "Dr. Weber", text: "Mit Verlaub — mich interessiert eher die Prämisse. Sie setzen voraus, dass Wegezeit der wichtigste Faktor ist." },
       { speaker: "Frau Kilic", text: "Das setze ich voraus, ja. Ich stütze mich dabei auf drei ältere Studien." },
       { speaker: "Dr. Weber", text: "Die sind zehn Jahre alt und stammen aus der Zeit vor den Sharing-Diensten." },
-      { speaker: "Frau Kilic", text: "Das kann ich nicht widerlegen. Ich würde die Prämisse in der Endfassung als solche kennzeichnen statt sie als gesichert zu behandeln." },
+      { speaker: "Frau Kilic", text: "Das kann ich nicht widerlegen. Ich würde die Prämisse in der Endfassung als solche kennzeichnen, statt sie als gesichert zu behandeln." },
       { speaker: "Prof. Reinhardt", text: "Das wäre die saubere Lösung." },
       { speaker: "Dr. Weber", text: "Und es schwächt Ihre Arbeit nicht. Eine benannte Prämisse ist stärker als eine versteckte." },
     ],
@@ -260,7 +260,7 @@ export const c1U12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Einerseits ließe sich ___, dass die Stichprobe nur städtisch ist.",
+        text: "Es ließe sich allerdings ___, dass die Stichprobe nur städtisch ist.",
         options: [],
         answer: 0,
         accept: ["einwenden"],
@@ -322,7 +322,7 @@ export const c1U12: SkillExercise[] = [
       { speaker: "Journalist", text: "Das klingt viel weniger spektakulär." },
       { speaker: "Dr. Sander", text: "Es ist auch weniger spektakulär. Genau deshalb steht es so in der Studie." },
       { speaker: "Journalist", text: "Unsere Leser wollen es aber zugänglich." },
-      { speaker: "Dr. Sander", text: "Zugänglich heißt nicht ungenau. Der Satz „von zwei auf drei von tausend“ ist beides." },
+      { speaker: "Dr. Sander", text: "Zugänglich heißt nicht ungenau. Der Satz „von vier auf zwei von hundert“ ist beides." },
       { speaker: "Journalist", text: "Gibt es eine Faustregel?" },
       { speaker: "Dr. Sander", text: "Ja. Nennen Sie immer beide Zahlen — vorher und nachher. Prozentangaben ohne Ausgangswert sind der häufigste Fehler in Gesundheitsmeldungen." },
       { speaker: "Journalist", text: "Und wenn der Platz nicht reicht?" },
@@ -402,7 +402,7 @@ export const c1U12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Öncülü gizlemek yerine adlandırırdım.",
-        answer: "Ich würde die Prämisse kennzeichnen statt sie zu verstecken",
+        answer: "Ich würde die Prämisse kennzeichnen, statt sie zu verstecken",
         hint: "statt … zu: iki seçeneği karşı karşıya koyar.",
       },
       {
@@ -449,7 +449,7 @@ export const c1U12: SkillExercise[] = [
           "ÇALIŞMA\n\n" +
           "Konu: Küçük belediyelerde kütüphane açılış saatlerinin kullanım üstündeki etkisi\n" +
           "Yöntem: 12 belediyede 2019-2024 ziyaret verisi + 34 yönlendirilmiş görüşme\n" +
-          "Bulgu 1: Akşam 19'a kadar açık olan kütüphanelerde 18 yaş altı ziyaret %23 daha yüksek\n" +
+          "Bulgu 1: Akşam 19.00'a kadar açık olan kütüphanelerde 18 yaş altı ziyaret %23 daha yüksek\n" +
           "Bulgu 2: Görüşmelerde en sık gerekçe ulaşım değil, ödev yapacak sessiz yer\n" +
           "Sınır: 12 belediyenin 9'u aynı eyalette; bütçe verisi yalnız 7'sinde tam\n" +
           "Bulgu 2 nedensellik göstermiyor, yalnız gerekçe beyanı",
@@ -468,7 +468,7 @@ export const c1U12: SkillExercise[] = [
         sample:
           "Die vorliegende Arbeit untersucht, in welchem Verhältnis die Öffnungszeiten kommunaler Bibliotheken zu deren Nutzung durch Jugendliche stehen.\n\n" +
           "Die Untersuchung stützt sich auf Besuchsdaten aus zwölf Kommunen für den Zeitraum 2019 bis 2024 sowie auf 34 leitfadengestützte Interviews.\n\n" +
-          "Die Auswertung zeigt auf, dass Einrichtungen mit Öffnung bis 19 Uhr eine um 23 Prozent höhere Nutzung durch unter Achtzehnjährige verzeichnen. Die Interviews legen darüber hinaus nahe, dass nicht die Erreichbarkeit, sondern das Fehlen eines ruhigen Arbeitsplatzes als Hauptgrund genannt wird; ein kausaler Zusammenhang lässt sich daraus nicht ableiten.\n\n" +
+          "Die Auswertung zeigt auf, dass Einrichtungen mit Öffnung bis 19 Uhr eine um 23 Prozent höhere Nutzung durch unter Achtzehnjährige verzeichnen. Die Interviews legen darüber hinaus nahe, dass für Jugendliche weniger die Erreichbarkeit als ein ruhiger Arbeitsplatz zählt; da es sich um genannte Gründe handelt, lässt sich ein kausaler Zusammenhang daraus nicht ableiten.\n\n" +
           "Die Reichweite der Befunde ist begrenzt: Neun der zwölf Kommunen liegen im selben Bundesland, und vollständige Haushaltsdaten lagen nur für sieben vor.\n\n" +
           "Die Arbeit schließt mit der Frage, ob die beobachtete Differenz auch dort auftritt, wo schulische Lernräume vorhanden sind.",
       },

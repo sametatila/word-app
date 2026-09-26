@@ -334,7 +334,7 @@ export const enB2U15: SkillExercise[] = [
       { speaker: "Doruk", text: "By spring the upturn will have started. A point in time, a finished state, and no person in the sentence." },
       { speaker: "Doruk", text: "That is the right shape for a forecast, because a forecast is about the world and not about the forecaster." },
       { speaker: "Doruk", text: "Next year we will be watching the investment. Inside the work rather than after it, and honest: watching is what we do, not what we cause." },
-      { speaker: "Doruk", text: "By then the market share will have doubled. The same four words again, and this is the sentence that gets quoted back at me." },
+      { speaker: "Doruk", text: "By then the market share will have doubled. The same shape again, and this is the sentence that gets quoted back at me." },
       { speaker: "Doruk", text: "A supply chain that was described in the future perfect two years ago is the reason I now keep a list of every such sentence I have published." },
       { speaker: "Doruk", text: "The list has a column for the evidence and a column for the date, and where the first column is empty the sentence goes out of the draft." },
       { speaker: "Doruk", text: "The stock market does not read the drafts and the job market does not either, but a workforce of two thousand does, and one of them will bring the page back." },
@@ -400,16 +400,16 @@ export const enB2U15: SkillExercise[] = [
     gloss: [
       { de: "flat", tr: "kesin" },
       { de: "refusal", tr: "ret" },
-      { de: "it seems to be", tr: "olduğu anlaşılıyor" },
+      { de: "it seems to be", tr: "gibi görünüyor" },
       { de: "apparently", tr: "görünüşe göre" },
-      { de: "on balance", tr: "sonuçta" },
+      { de: "on balance", tr: "her şey tartıldığında" },
       { de: "by no means", tr: "hiç de değil" },
     ],
     minutes: 9,
     tasks: [
       {
         kind: "build",
-        tr: "Bunun bir genelleme olduğu anlaşılıyor.",
+        tr: "Bu bir genelleme gibi görünüyor.",
         answer: "It seems to be a generalization.",
         hint: "Tek çekince yeter; „seems“ işi yapıyor.",
       },
@@ -421,7 +421,7 @@ export const enB2U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sonuçta rakam tartışmaya açık görünüyor.",
+        tr: "Her şey tartıldığında rakam belki de şüpheli.",
         answer: "On balance the figure is arguably questionable.",
         hint: "„on balance“ bir tartma yapıldığını söylüyor; „arguably“ hiçbir şey söylemiyor.",
       },

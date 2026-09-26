@@ -25,9 +25,9 @@
   "de": "An einen Stamm werden zwei Präfixe gehängt; das Muster ist produktiv; im Deutschen bleibt das Paar unsichtbar, weil es aus verschiedenen Wurzeln kommt; der Preis dafür ist, dass das Wort wie ein etablierter Vorgang aussieht."
  },
  {
-  "tr": "„No“ ismin önünde durup türü yadsıyor; „not“ cümleyi olumsuzluyor ve yardımcı fiile gerek duyuyor; Almanca tek belirleyiciyle geçiyor; hata eksik sözcük değil, bir beden fazla yüksek sözcük.",
+  "tr": "„No“ ismin önünde durup türü yadsıyor; „not“ cümleyi, yani bu tek durumu olumsuzluyor ve yardımcı fiile gerek duyuyor; Almanca tek belirleyiciyle geçiyor; hata eksik sözcük değil, bir beden fazla yüksek sözcük.",
   "kind": "form.facts",
-  "de": "„No“ steht vor dem Nomen und verneint die ganze Art; „not“ verneint den Satz und braucht das Hilfsverb; das Deutsche kommt mit einem einzigen Determinativ aus; der Fehler ist kein fehlendes Wort, sondern ein Wort, das eine Nummer zu laut ist."
+  "de": "„No“ steht vor dem Nomen und verneint die ganze Art; „not“ verneint den Satz, also diesen einen Fall, und braucht das Hilfsverb; das Deutsche kommt mit einem einzigen Determinativ aus; der Fehler ist kein fehlendes Wort, sondern ein Wort, das eine Nummer zu laut ist."
  },
  {
   "tr": "Mera gürdü; ahır, daha az.",
@@ -55,7 +55,7 @@
   "de": "Die oben beschriebene Klimaanpassung wirft die unten behandelten Fragen der Klimagerechtigkeit auf."
  },
  {
-  "tr": "Kıraç tarlalar atıl duruyor; harap ambarlar durmuyor.",
+  "tr": "Kıraç tarlalar nadasta duruyor; harap ambarlar durmuyor.",
   "kind": "build.tr",
   "de": "Die kargen Felder liegen brach; die baufälligen Scheunen nicht."
  },

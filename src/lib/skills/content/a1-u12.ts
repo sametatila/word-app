@@ -148,7 +148,7 @@ export const a1U12: SkillExercise[] = [
     unit: 12,
     title: "Ich möchte das umtauschen",
     genre: "dialogue",
-    intro: "Bir müşteri iade yapmak istiyor. Sorun ne?",
+    intro: "Bir müşteri bir şeyi değiştirmek istiyor. Sorun ne?",
     gloss: [
       { de: "umtauschen", tr: "değiştirmek", en: "to exchange" },
       { de: "eng", tr: "dar", en: "tight" },
@@ -158,7 +158,7 @@ export const a1U12: SkillExercise[] = [
     segments: [
       { text: "Guten Tag, ich möchte diese Hose umtauschen." },
       { text: "Gern. Was ist das Problem?" },
-      { text: "Sie ist zu eng. Haben Sie eine Größe weiter?" },
+      { text: "Sie ist zu eng. Haben Sie die Hose auch in Größe 42?" },
       { text: "Haben Sie den Kassenbon?" },
       { text: "Ja, hier bitte." },
       { text: "Gut. Größe 42 haben wir noch in Schwarz." },
@@ -178,7 +178,7 @@ export const a1U12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Person braucht den ___.",
+        text: "Die Person hat den ___.",
         options: [],
         answer: 0,
         accept: ["Kassenbon"],
@@ -281,7 +281,7 @@ export const a1U12: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu ona (bir kadına) hoşuna gidiyor.",
+        tr: "Bu onun (bir kadının) hoşuna gidiyor.",
         answer: "Das gefällt ihr",
         hint: "„gefallen“ Dativ ister ve üçüncü kişide biçim değişir: er → ihm, sie → ihr, sie (çoğul) → ihnen. „Das gefällt sie“ YANLIŞTIR.",
       },
@@ -312,13 +312,13 @@ export const a1U12: SkillExercise[] = [
     gloss: [
       { de: "das Geschenk", tr: "hediye", en: "gift" },
       { de: "praktisch", tr: "kullanışlı", en: "practical" },
-      { de: "der Laden", tr: "dükkân", en: "shop" },
+      { de: "der Laden", tr: "dükkân", en: "store" },
     ],
     minutes: 7,
     tasks: [
       {
         kind: "build",
-        tr: "Bana çanta daha çok hoş geliyor.",
+        tr: "Çanta daha çok hoşuma gidiyor.",
         answer: "Mir gefällt die Tasche besser",
         hint: "Cümle „Mir“ ile başlayabilir: „Mir gefällt …“ — fiil yine ikinci sırada.",
       },
@@ -336,7 +336,7 @@ export const a1U12: SkillExercise[] = [
           "Nereden alınacağını yazdın mı? (im Laden … / auf dem Markt …)",
         ],
         phrases: [
-          { de: "Mir gefällt … besser.", tr: "Bana … daha çok hoş geliyor.", en: "I prefer …" },
+          { de: "Mir gefällt … besser.", tr: "… daha çok hoşuma gidiyor.", en: "I prefer …" },
           { de: "Ich finde … praktisch.", tr: "… kullanışlı buluyorum.", en: "I find … practical." },
           { de: "Können Sie es einpacken?", tr: "Paketleyebilir misiniz?", en: "Can you wrap it?" },
         ],

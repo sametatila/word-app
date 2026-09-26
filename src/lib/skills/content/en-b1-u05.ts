@@ -341,7 +341,7 @@ export const enB1U05: SkillExercise[] = [
     genre: "personal",
     intro: "Üç ödün sözcüğü. Hangisi cümle, hangisi isim, hangisi yeni cümle istiyor?",
     gloss: [
-      { de: "Although", tr: "rağmen" },
+      { de: "Although", tr: "-mesine rağmen" },
       { de: "However", tr: "ancak" },
       { de: "Despite", tr: "rağmen" },
       { de: "the real reading", tr: "gerçek okuma" },
@@ -368,7 +368,7 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha az ısıtma kullansaydık fatura daha düşük olurdu.",
+        tr: "Daha az ısıtma kullansak fatura daha düşük olurdu.",
         answer: "If we used less heating, the bill would be lower.",
         hint: "Gerçek olmayan koşul: geçmiş biçim burada olmayan bir şimdiyi anlatıyor.",
       },
@@ -377,7 +377,7 @@ export const enB1U05: SkillExercise[] = [
         prompt: "Fatura kartını doldur.",
         facts: "Elektrik iki yüz kırk; üç aylık; son okuma tahminî; gerçek okuma bugün gönderilecek.",
         fields: [
-          { label: "Bill", answer: "two hundred and forty", accept: ["240"] },
+          { label: "Bill", answer: "two hundred forty", accept: ["240", "two hundred and forty"] },
           { label: "Period", answer: "three months", accept: ["3 months"] },
           { label: "Last reading", answer: "an estimate", accept: ["estimate"] },
           { label: "Action", answer: "send the real reading", accept: ["the real reading"] },

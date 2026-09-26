@@ -234,8 +234,7 @@ export const c1U08: SkillExercise[] = [
       { de: "die Redewendung", tr: "deyim", en: "idiom" },
       { de: "wörtlich", tr: "kelimesi kelimesine", en: "literally" },
       { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "chic/schick", tr: "şık", en: "stylish" },
-      { de: "schick", tr: "şık", en: "stylish" },
+      { de: "Schick es mir", tr: "bana gönder", en: "send it to me" },
     ],
     minutes: 5,
     segments: [
@@ -317,6 +316,7 @@ export const c1U08: SkillExercise[] = [
       { de: "egal", tr: "fark etmez", en: "doesn't matter" },
       { de: "zwinkern", tr: "göz kırpmak", en: "to wink" },
       { de: "also", tr: "yani", en: "so" },
+      { de: "offen", tr: "açık fikirli", en: "open-minded" },
     ],
     minutes: 5,
     segments: [
@@ -325,7 +325,7 @@ export const c1U08: SkillExercise[] = [
       { speaker: "Hanna", text: "Es ist doch eine ganz normale Redewendung." },
       { speaker: "Kerem", text: "Am Küchentisch ja. In der Leitungssitzung klingt sie, als wäre dir das Thema gleichgültig — und genau das hast du ja nicht gemeint." },
       { speaker: "Hanna", text: "Ich meinte: Mir ist egal, welche der beiden Varianten wir nehmen." },
-      { speaker: "Kerem", text: "Dann sag das. Oder: „Da bin ich leidenschaftslos.“ Klingt gleich, wirkt anders." },
+      { speaker: "Kerem", text: "Dann sag das. Oder: „Da bin ich offen.“ Meint dasselbe, wirkt anders." },
       { speaker: "Hanna", text: "Und wenn ich sage, wir müssen in den sauren Apfel beißen?" },
       { speaker: "Kerem", text: "Das geht. Die Redewendung beschreibt eine Entscheidung, keine Haltung. Deshalb hält sie den Raum aus." },
       { speaker: "Hanna", text: "Und wenn ich sage, jemand will eine Extrawurst?" },

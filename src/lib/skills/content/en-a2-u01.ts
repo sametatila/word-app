@@ -181,13 +181,14 @@ export const enA2U01: SkillExercise[] = [
       { de: "rang", tr: "çaldı" },
       { de: "smoke", tr: "duman" },
       { de: "Poor you", tr: "vah vah" },
+      { de: "burning", tr: "yanıyordu" },
     ],
     minutes: 4,
     segments: [
       { speaker: "Nil", text: "What happened yesterday? You called me four times!" },
       { speaker: "Can", text: "Sorry! While I was cooking, the phone rang and I answered." },
       { speaker: "Nil", text: "And?" },
-      { speaker: "Can", text: "It was my brother. While we were talking, the water was very hot and the rice was black." },
+      { speaker: "Can", text: "It was my brother. While we were talking, the rice was burning." },
       { speaker: "Nil", text: "Oh no." },
       { speaker: "Can", text: "Then somebody was waving at the window — the neighbor. She was shouting: Fire!" },
       { speaker: "Nil", text: "Fire!" },
@@ -255,7 +256,7 @@ export const enA2U01: SkillExercise[] = [
     gloss: [
       { de: "screen", tr: "ekran" },
       { de: "teach", tr: "öğretmek" },
-      { de: "recently", tr: "geçenlerde" },
+      { de: "recently", tr: "son zamanlarda" },
     ],
     minutes: 4,
     segments: [
@@ -263,8 +264,8 @@ export const enA2U01: SkillExercise[] = [
       { speaker: "Deniz", text: "Last week I lost all my work on it. Suddenly the screen was dark." },
       { speaker: "Deniz", text: "I brought it to a store. The man there was teaching a course, so I waited one hour." },
       { speaker: "Deniz", text: "Finally he looked at it and said: This computer is very old. Buy a new one." },
-      { speaker: "Deniz", text: "Yesterday I went to the city and I looked at three computers. They were not cheap." },
-      { speaker: "Deniz", text: "But recently I work at home every day, so I need a good computer." },
+      { speaker: "Deniz", text: "Three days ago I went to the city and I looked at three computers. They were not cheap." },
+      { speaker: "Deniz", text: "I have worked at home a lot recently, so I need a good computer." },
     ],
     questions: [
       {
@@ -302,18 +303,18 @@ export const enA2U01: SkillExercise[] = [
         items: [
           "Last week I lost all my work on it.",
           "I brought it to a store.",
-          "Yesterday I went to the city.",
+          "Three days ago I went to the city.",
           "I bought a new computer two days ago.",
         ],
         explain: "Anlatım sırası olayların sırası değil: en yeni olay ilk cümlede söyleniyor.",
       },
       {
         kind: "short_answer",
-        text: "Where does Deniz work recently?",
+        text: "Where has Deniz worked a lot recently?",
         options: [],
         answer: 0,
         accept: ["at home", "home"],
-        explain: "„But recently I work at home every day…“",
+        explain: "„I have worked at home a lot recently…“",
       },
     ],
   },

@@ -12,7 +12,7 @@
  {
   "tr": "Sinema planı yapılıyor. Hangi film, ne zaman, kim kimi alıyor?",
   "kind": "intro",
-  "en": "A trip to the cinema is planned. Which film, when, who picks up whom?"
+  "en": "A trip to the movies is planned. Which movie, when, who picks up whom?"
  },
  {
   "tr": "Temerrüt yoksa talep hakkı da doğmuyor — zincirin ilk halkası.",
@@ -62,7 +62,7 @@
  {
   "tr": "„…Eigenkapital und ein Jahr Puffer.“ Tuna altı ay hesaplamıştı.",
   "kind": "explain",
-  "en": "„…Eigenkapital und ein Jahr Puffer.“ Tuna had reckoned on six months."
+  "en": "„…Eigenkapital und ein Jahr Puffer.“ Tuna had counted on six months."
  },
  {
   "tr": "„Danach gibt es nur noch Kaffee und Kuchen.“ — sıcak yemek yok.",
@@ -165,9 +165,9 @@
   "en": "Write both sides of an issue. Watch the case after 'es gibt'."
  },
  {
-  "tr": "Bir kutlama planla. 'daha' ve 'bile' Almancada iki ayrı sözcük.",
+  "tr": "Bir kutlama planla. 'daha' ve 'şimdiden' Almancada erst ve schon olur.",
   "kind": "intro",
-  "en": "Plan a celebration. 'more' and 'even' are two different words in German."
+  "en": "Plan a celebration. 'only' (so far) and 'already' are erst and schon in German."
  },
  {
   "tr": "Bir mesleği tanıt. Almancada meslek adı cinsiyete göre değişir.",
@@ -187,7 +187,7 @@
  {
   "tr": "Bir temizlik planı yaz. 'de/da' Almancada sözcüğün önüne geçer.",
   "kind": "intro",
-  "en": "Write a cleaning rota. In German 'at' goes in front of the word."
+  "en": "Write a cleaning schedule. In German 'too' goes in front of the word."
  },
  {
   "tr": "Bu kalıp iddiayı aktarır ve yazarın onu benimsediğini söylemez.",
@@ -397,7 +397,7 @@
  {
   "tr": "„An der Ampel biegen Sie rechts ab.“ Kavşak ondan sonra geliyor.",
   "kind": "explain",
-  "en": "„An der Ampel biegen Sie rechts ab.“ The junction comes after that."
+  "en": "„An der Ampel biegen Sie rechts ab.“ The intersection comes after that."
  },
  {
   "tr": "„aufhören“ doğrudan nesne almaz: mit + Dativ ya da zu'lu mastar.",
@@ -517,7 +517,7 @@
  {
   "tr": "Bir vekâlet yaz. Kipli fiilden sonra 'zu' gelmediğine dikkat et.",
   "kind": "intro",
-  "en": "Write a letter of authority. Note that no 'zu' follows a modal verb."
+  "en": "Write a power of attorney. Note that no 'zu' follows a modal verb."
  },
  {
   "tr": "Bir veri kaybını bildir. Bazı isimler Almancada yalnız çoğuldur.",
@@ -527,7 +527,7 @@
  {
   "tr": "Biri olumsuz bir karara itiraz etmeyi düşünüyor. Neye dayanacak?",
   "kind": "intro",
-  "en": "Somebody is thinking of appealing against a refusal. What will they rest it on?"
+  "en": "Someone is thinking of appealing a denial. What will they base it on?"
  },
  {
   "tr": "Çoğulda biçim ayırt edilmediği için Konjunktiv II gelir: hätten.",
@@ -587,7 +587,7 @@
  {
   "tr": "İki kişi taşınacakları semti konuşuyor. Hangi ölçüt kime önemli?",
   "kind": "intro",
-  "en": "Two people talk about the district they will move to. Which test matters to whom?"
+  "en": "Two people talk about the district they will move to. Which criterion matters to whom?"
  },
  {
   "tr": "İki şey karşılaştırılırken sıfat -er alır ve ardından als gelir.",
@@ -617,7 +617,7 @@
  {
   "tr": "Kiracı ev sahibini arıyor. Dinle: ne bozuk, ne zaman geliyorlar?",
   "kind": "intro",
-  "en": "A tenant rings the landlord. Listen: what is broken, when are they coming?"
+  "en": "A tenant calls the landlord. Listen: what is broken, when are they coming?"
  },
  {
   "tr": "Koşul ya da tekrarlanan durum wenn ile verilir; fiil sona gider.",

@@ -178,7 +178,7 @@ export const b1U40: SkillExercise[] = [
     skill: "listening",
     unit: 40,
     title: "Das Projekt vorstellen",
-    genre: "monologue",
+    genre: "dialogue",
     intro: "Bir sunum planlanıyor. Ne gösterilecek, ne söz verilecek?",
     minutes: 4,
     gloss: [
@@ -224,7 +224,7 @@ export const b1U40: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["garantiere"],
-        explain: "„garantieren“ ayrılmayan fiil, ortaçta da ge- almaz.",
+        explain: "„ich“ ile şimdiki zaman: garantiere. -ieren ile biten fiiller ortaçta da ge- almaz: garantiert.",
       },
       {
         kind: "short_answer",
@@ -257,10 +257,10 @@ export const b1U40: SkillExercise[] = [
       { text: "Ganz oder nebenbei?" },
       { text: "Erst nebenbei. Ich kann nicht sofort alles aufgeben." },
       { text: "Klug. Und die Steuer? Die ist im ersten Jahr fällig." },
-      { text: "Das weiß ich. Ich habe mich schon bei einer Beratung bemüht." },
+      { text: "Das weiß ich. Ich habe mich schon um eine Beratung bemüht." },
       { text: "Sehr gut. Und wie lange willst du beides machen?" },
       { text: "Ein Jahr. Wenn es dann nicht läuft, höre ich damit auf." },
-      { text: "Klingt ehrlich. Die meisten geben sich diese Grenze nicht." },
+      { text: "Klingt ehrlich. Die meisten setzen sich diese Grenze nicht." },
     ],
     questions: [
       {
@@ -283,7 +283,7 @@ export const b1U40: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ ___ geben sich diese Grenze nicht.",
+        text: "___ ___ setzen sich diese Grenze nicht.",
         options: [],
         answer: 0,
         accept: ["Die meisten"],
@@ -291,11 +291,11 @@ export const b1U40: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wo hat sie sich schon bemüht?",
+        text: "Worum hat sie sich schon bemüht?",
         options: [],
         answer: 0,
-        accept: ["bei einer Beratung", "eine Beratung", "Beratung"],
-        explain: "„Ich habe mich schon bei einer Beratung bemüht.“",
+        accept: ["um eine Beratung", "eine Beratung", "Beratung"],
+        explain: "„Ich habe mich schon um eine Beratung bemüht.“",
       },
     ],
   },
@@ -351,8 +351,9 @@ export const b1U40: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Özneyi düzelt — anlam ters dönmüş.",
-        source: "Ich bin langweilig am Nachmittag, aber die Arbeit ist interessiert.",
-        answer: "Mir ist langweilig am Nachmittag, aber die Arbeit ist interessant.",
+        source: "Ich bin am Nachmittag langweilig, aber die Arbeit ist interessiert.",
+        answer: "Mir ist am Nachmittag langweilig, aber die Arbeit ist interessant.",
+        alternatives: ["Ich langweile mich am Nachmittag, aber die Arbeit ist interessant."],
         why: "Türkçe 'sıkılıyorum' der ve özne KİŞİDİR, o yüzden Almancada 'ich bin langweilig' çıkıyor — ama bu 'ben sıkıcıyım' demektir. Anlam tam tersine döner ve cümle dilbilgisel olarak kusursuz kaldığı için kimse düzeltmez. Doğrusu: mir ist langweilig ya da ich langweile mich. Aynı tuzak interessiert (ilgili) ↔ interessant (ilginç) için de geçerlidir.",
       },
     ],
@@ -377,7 +378,7 @@ export const b1U40: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sorulanların çoğu memnun.",
+        tr: "Çalışanların çoğu memnun.",
         answer: "Die meisten Angestellten sind zufrieden.",
         hint: "isim çoğul + sıfat -en + fiil çoğul.",
       },
@@ -404,7 +405,7 @@ export const b1U40: SkillExercise[] = [
           "Die meisten Angestellten sind zufrieden, aber nicht wegen des " +
           "Gehalts. Viele Kollegen nennen zuerst das Team, einige die " +
           "Arbeitszeiten. Das Gehalt steht erst an vierter Stelle.\n\n" +
-          "Überrascht hat uns eine Zahl: die meisten Jüngeren wünschen sich " +
+          "Überrascht hat uns eine Zahl: Die meisten Jüngeren wünschen sich " +
           "nicht mehr Geld, sondern klarere Aufgaben. Wer sich häufig " +
           "langweilt, denkt eher ans Aufhören — das sagen alle Altersgruppen.\n\n" +
           "Unser Vorschlag ist deshalb einfach. Die Umfrage enthält genug " +

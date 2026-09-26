@@ -1,10 +1,5 @@
 [
  {
-  "tr": "„Don't move him! That is a danger.“",
-  "kind": "explain",
-  "en": "„Don't move him! That is a danger.“"
- },
- {
   "tr": "„And I'll send you a message every day!“",
   "kind": "explain",
   "en": "„And I'll send you a message every day!“"
@@ -13,11 +8,6 @@
   "tr": "„A man is on the ground. He doesn't move.“",
   "kind": "explain",
   "en": "„A man is on the ground. He doesn't move.“"
- },
- {
-  "tr": "„No, I didn't finish it. I do it tonight.“",
-  "kind": "explain",
-  "en": "„No, I didn't finish it. I do it tonight.“"
  },
  {
   "tr": "„July is good. I'll write you the address.“",
@@ -63,11 +53,6 @@
   "tr": "Önce genel soru, sonra iş, sonra yer, en son ulaşım.",
   "kind": "explain",
   "en": "First the general question, then the work, then the place, last the transport."
- },
- {
-  "tr": "„Sorry, I can't hear you. Can you speak more slowly?“",
-  "kind": "explain",
-  "en": "„Sorry, I can't hear you. Can you speak more slowly?“"
  },
  {
   "tr": "İnternet ve uygulama konuşuluyor. Parola neden sorun?",

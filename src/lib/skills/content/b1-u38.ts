@@ -192,7 +192,7 @@ export const b1U38: SkillExercise[] = [
       { text: "Der Kopierer geht wieder nicht. Immer am Montag." },
       { text: "Hast du ihn schon aus- und wieder eingeschaltet?" },
       { text: "Zweimal. Das hat nichts genützt." },
-      { text: "Dann ist es diesmal nicht das Laufwerk." },
+      { text: "Dann liegt es diesmal wohl am Laufwerk." },
       { text: "Ich lasse ihn morgen reparieren. Heute teste ich noch das Papier." },
       { text: "Gute Idee. Manchmal ist es nur falsch eingestellt." },
       { text: "Bis dahin gehe ich unten kopieren." },
@@ -275,7 +275,7 @@ export const b1U38: SkillExercise[] = [
         explain: "„Vom Gerät. Ohne Handy findet heute niemand mehr eine Adresse.“",
       },
       {
-        text: "Was sagt die zweite Person über die Medien?",
+        text: "Was sagt die erste Person über die Medien?",
         options: ["Sie sagen jede Woche etwas anderes", "Sie haben recht", "Sie sagen nichts"],
         answer: 0,
         explain: "„Die Medien sagen dazu jede Woche etwas Unterschiedliches.“",
@@ -313,7 +313,7 @@ export const b1U38: SkillExercise[] = [
       { de: "der Maler", tr: "ressam / boyacı", en: "painter" },
       { de: "der Musiker", tr: "müzisyen", en: "musician" },
       { de: "das Zertifikat", tr: "sertifika", en: "certificate" },
-      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "das Fach", tr: "alan / branş", en: "field" },
     ],
     tasks: [
       {
@@ -342,7 +342,7 @@ export const b1U38: SkillExercise[] = [
           { label: "Name", answer: "Sedef Berger", accept: ["Sedef", "Berger"] },
           { label: "Beruf", answer: "Architektin", accept: ["Architekt", "sie ist Architektin"] },
           { label: "Ausbildung", answer: "6 Jahre Studium", accept: ["sechs Jahre", "Studium"] },
-          { label: "Arbeitsort", answer: "kleines Büro", accept: ["Büro", "ein Büro mit vier Personen"] },
+          { label: "Arbeitsort", answer: "ein Büro mit vier Personen", accept: ["Büro mit vier Personen", "kleines Büro", "Büro"] },
         ],
       },
       {
@@ -364,8 +364,8 @@ export const b1U38: SkillExercise[] = [
     intro: "Okuldan sonraki yolunu yaz. Bazı fiillerden sonra 'zu' gelmez.",
     minutes: 12,
     gloss: [
-      { de: "die Lehrstelle", tr: "çıraklık yeri", en: "apprenticeship post" },
-      { de: "die Matura", tr: "olgunluk sınavı", en: "school-leaving exam" },
+      { de: "die Lehrstelle", tr: "çıraklık yeri", en: "apprenticeship position" },
+      { de: "die Matura", tr: "olgunluk sınavı", en: "high school graduation exam" },
       { de: "das Diplom", tr: "diploma", en: "diploma" },
       { de: "die Fortbildung", tr: "mesleki eğitim", en: "further training" },
       { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
@@ -381,7 +381,7 @@ export const b1U38: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kardeşim yüzmeyi öğreniyor ve ben ona yardım ediyorum.",
+        tr: "Kardeşim yüzmeyi öğreniyor ve ben onun alıştırma yapmasına yardım ediyorum.",
         answer: "Mein Bruder lernt schwimmen und ich helfe ihm üben.",
         hint: "„lernen“ ve „helfen“ de zu almaz.",
       },
@@ -398,7 +398,7 @@ export const b1U38: SkillExercise[] = [
         minWords: 70,
         sample:
           "Nach der Schule mache ich zuerst eine Lehre, kein Studium. " +
-          "Der Grund ist einfach: ich möchte früh arbeiten gehen und dabei " +
+          "Der Grund ist einfach: Ich möchte früh arbeiten gehen und dabei " +
           "etwas verdienen.\n\n" +
           "Im Frühling suche ich eine Lehrstelle. Ich gehe selbst in die " +
           "Betriebe, statt nur Briefe zu schreiben — mein Onkel sagt, viele " +
@@ -408,10 +408,10 @@ export const b1U38: SkillExercise[] = [
           "ist es schwerer. Ein Zertifikat aus einer Fortbildung kann " +
           "dabei helfen.\n\n" +
           "Im März rede ich mit meiner Lehrerin. Sie kennt die Betriebe " +
-          "hier und hilft mir vorbereiten, wenn ich sie darum bitte. Nach der Matura bekomme ich kein Diplom, sondern ein Zeugnis.",
+          "hier und hilft mir suchen, wenn ich sie darum bitte. Nach der Matura bekomme ich kein Diplom, sondern ein Zeugnis.",
         phrases: [
           { de: "Ich möchte früh arbeiten gehen.", tr: "Erken çalışmaya başlamak istiyorum.", en: "I want to start working early." },
-          { de: "Sie hilft mir vorbereiten.", tr: "Hazırlanmama yardım ediyor.", en: "She helps me prepare." },
+          { de: "Sie hilft mir suchen.", tr: "Aramama yardım ediyor.", en: "She helps me look." },
           { de: "Sicher bin ich noch nicht bei …", tr: "Şundan henüz emin değilim …", en: "I'm not yet sure about …" },
         ],
       },

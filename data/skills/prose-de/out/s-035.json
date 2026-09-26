@@ -165,6 +165,11 @@
   "de": "trotz"
  },
  {
+  "tr": "-mesine rağmen",
+  "kind": "gloss.tr",
+  "de": "obwohl"
+ },
+ {
   "tr": "hâline geliyor",
   "kind": "gloss.tr",
   "de": "wird zu"
@@ -333,6 +338,11 @@
   "tr": "vardığımda",
   "kind": "gloss.tr",
   "de": "wenn ich ankomme"
+ },
+ {
+  "tr": "-dığında çoktan",
+  "kind": "gloss.tr",
+  "de": "als (schon)"
  },
  {
   "tr": "ben taşırım",

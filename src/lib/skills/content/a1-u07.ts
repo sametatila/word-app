@@ -155,7 +155,7 @@ export const a1U07: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Was fragt der Kunde?",
+        text: "Was möchte der Kunde finden?",
         options: ["die Milch", "das Öl", "den Zucker"],
         answer: 0,
         explain: "„wo finde ich die Milch?“",
@@ -221,8 +221,8 @@ export const a1U07: SkillExercise[] = [
       {
         text: "Wer schneidet die Tomaten?",
         options: ["die zweite Person", "die erste Person", "niemand"],
-        answer: 0,
-        explain: "„Gut, dann schneide ich die Tomaten.“ — ikinci kişi. İlk kişi soğanları doğruyor.",
+        answer: 1,
+        explain: "„Gut, dann schneide ich die Tomaten.“ — ilk kişi, yani „Was kochen wir heute?“ diye soran. İkinci kişi soğanları doğruyor.",
       },
       {
         kind: "gapfill",
@@ -296,7 +296,7 @@ export const a1U07: SkillExercise[] = [
     gloss: [
       { de: "der Supermarkt", tr: "market", en: "supermarket" },
       { de: "kochen", tr: "yemek pişirmek", en: "to cook" },
-      { de: "das Geschäft", tr: "mağaza", en: "shop" },
+      { de: "das Geschäft", tr: "mağaza", en: "store" },
     ],
     minutes: 7,
     tasks: [

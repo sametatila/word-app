@@ -158,14 +158,14 @@ export const a1U09: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wann steht die erste Person auf?",
+        text: "Wann steht die zweite Person auf?",
         options: ["um halb sieben", "um acht Uhr", "um elf"],
         answer: 0,
         explain: "„Ich stehe um halb sieben auf.“ — 6:30.",
       },
       {
         kind: "gapfill",
-        text: "Die zweite Person steht um ___ Uhr auf.",
+        text: "Die erste Person steht um ___ Uhr auf.",
         options: [],
         answer: 0,
         accept: ["acht", "8"],

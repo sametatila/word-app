@@ -161,7 +161,7 @@ export const a1U03: SkillExercise[] = [
     questions: [
       {
         text: "Wie viele Geschwister hat Jonas?",
-        options: ["zwei", "einen", "drei"],
+        options: ["zwei", "eins", "drei"],
         answer: 0,
         explain: "„einen Bruder und eine Schwester“ — iki kardeş.",
       },
@@ -205,7 +205,7 @@ export const a1U03: SkillExercise[] = [
     intro: "Kayıt masasında bir görevli bilgi soruyor. Cevapları yakala.",
     gloss: [
       { de: "das Formular", tr: "form", en: "form" },
-      { de: "ausfüllen", tr: "doldurmak", en: "to fill in" },
+      { de: "ausfüllen", tr: "doldurmak", en: "to fill out" },
       { de: "die Adresse", tr: "adres", en: "address" },
     ],
     minutes: 2,
@@ -339,7 +339,7 @@ export const a1U03: SkillExercise[] = [
         phrases: [
           { de: "Ich bin … Jahre alt.", tr: "… yaşındayım.", en: "I am … years old." },
           { de: "Ich habe einen Bruder.", tr: "Bir erkek kardeşim var.", en: "I have a brother." },
-          { de: "Meine Eltern wohnen in …", tr: "Ailem …'da oturuyor.", en: "My parents live in …" },
+          { de: "Meine Eltern wohnen in …", tr: "Annemle babam …'da oturuyor.", en: "My parents live in …" },
         ],
         sample:
           "Hallo zusammen!\n\nIch heiße Yusuf und ich bin 25 Jahre alt. Ich bin in Ankara geboren.\n\nDas ist meine Familie: meine Mutter heißt Ayşe und mein Vater heißt Kemal. Beide arbeiten in einer Firma.\n\nIch habe eine Schwester. Sie ist zehn Jahre alt. Meine Großeltern wohnen auch in Ankara.\n\nUnd ihr? Habt ihr Geschwister?\nYusuf",

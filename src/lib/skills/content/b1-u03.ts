@@ -189,12 +189,12 @@ export const b1U03: SkillExercise[] = [
     ],
     segments: [
       { text: "Entschuldigung, darf ich Sie kurz ansprechen? Ich bin Nuri Öz." },
-      { text: "Gern. Ich bin Frau Klein. Womit beschäftigen Sie sich denn?" },
-      { text: "Ich arbeite seit sechs Jahren in der Branche für Möbel." },
+      { text: "Gern. Mein Name ist Klein. Womit beschäftigen Sie sich denn?" },
+      { text: "Ich arbeite seit sechs Jahren in der Möbelbranche." },
       { text: "Interessant. Und was suchen Sie hier auf der Messe?" },
       { text: "Ich möchte wissen, ob es bei Ihnen offene Stellen gibt." },
       { text: "Im Moment nicht, aber im Herbst vielleicht. Haben Sie eine Visitenkarte?" },
-      { text: "Ja, hier bitte. Darf ich auch Ihren Kontakt haben?" },
+      { text: "Ja, hier bitte. Darf ich auch Ihre Karte haben?" },
       { text: "Natürlich. Melden Sie sich einfach im September." },
     ],
     questions: [
@@ -202,7 +202,7 @@ export const b1U03: SkillExercise[] = [
         text: "In welcher Branche arbeitet Herr Öz?",
         options: ["Möbel", "Bau", "Verkauf"],
         answer: 0,
-        explain: "„Ich arbeite seit sechs Jahren in der Branche für Möbel.“",
+        explain: "„Ich arbeite seit sechs Jahren in der Möbelbranche.“",
       },
       {
         text: "Was möchte er auf der Messe wissen?",
@@ -230,7 +230,7 @@ export const b1U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["sechs Jahre", "sechs", "6"],
-        explain: "„Ich arbeite seit sechs Jahren in der Branche für Möbel.“",
+        explain: "„Ich arbeite seit sechs Jahren in der Möbelbranche.“",
       },
     ],
   },
@@ -258,7 +258,7 @@ export const b1U03: SkillExercise[] = [
       { text: "Können Sie mir sagen, wie hoch die Kosten für das Heizen sind?" },
       { text: "Etwa hundert Euro im Monat, zusätzlich zur Miete." },
       { text: "Und wann könnte ich einziehen?" },
-      { text: "Ab dem ersten des nächsten Monats." },
+      { text: "Ab dem Ersten des nächsten Monats." },
       { text: "Gut. Ich überlege es mir und melde mich morgen." },
     ],
     questions: [
@@ -312,14 +312,13 @@ export const b1U03: SkillExercise[] = [
       { de: "kündigen", tr: "istifa etmek", en: "to resign" },
       { de: "die Frist", tr: "süre / ihbar süresi", en: "notice period" },
       { de: "das Verhältnis", tr: "ilişki", en: "relationship" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
     ],
     tasks: [
       {
         kind: "build",
         tr: "Sözleşmemi süresi içinde feshediyorum.",
         answer: "Ich kündige meinen Vertrag fristgemäß.",
-        alternatives: ["Ich kündige meinen Vertrag zum nächsten möglichen Termin."],
         hint: "Kısa ve kuru: özne, fiil, nesne. Gerekçe yok.",
       },
       {
@@ -340,7 +339,7 @@ export const b1U03: SkillExercise[] = [
         facts: "Çalışan: Nuri Öz; son gün 31 Ağustos; ihbar süresi dört hafta; ek istek: çalışma belgesi; kapanış formülü.",
         fields: [
           { label: "Absender", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
-          { label: "Letzter Tag", answer: "31. August", accept: ["31.08.", "einunddreißigster August", "31 August"] },
+          { label: "Letzter Tag", answer: "31. August", accept: ["31.08.", "31.8.", "einunddreißigster August", "31 August", "am 31. August"] },
           { label: "Frist", answer: "vier Wochen", accept: ["4 Wochen", "vier Wochen zum Monatsende"] },
           { label: "Zusätzlich", answer: "Zeugnis", accept: ["ein Zeugnis", "Arbeitszeugnis"] },
           { label: "Grußformel", answer: "Mit freundlichen Grüßen", accept: ["Mit freundlichen Grüßen", "Freundliche Grüße"] },
@@ -369,7 +368,7 @@ export const b1U03: SkillExercise[] = [
       { de: "die Etage", tr: "kat", en: "floor" },
       { de: "der Zustand", tr: "durum / hâl", en: "condition" },
       { de: "nötig", tr: "gerekli", en: "necessary" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       { de: "lesen", tr: "okumak", en: "to read" },
     ],
     tasks: [
@@ -400,9 +399,9 @@ export const b1U03: SkillExercise[] = [
           "ich habe Ihre Anzeige gelesen und interessiere mich sehr für die Wohnung. " +
           "Ich heiße Nuri Öz, bin dreißig Jahre alt und arbeite seit sechs Jahren " +
           "in einer Firma hier in der Stadt.\n\n" +
-          "Ich hätte vier Fragen. Können Sie mir sagen, in welcher Etage die Wohnung " +
+          "Ich hätte ein paar Fragen. Können Sie mir sagen, in welcher Etage die Wohnung " +
           "liegt? Darf ich fragen, wie hoch die Kosten für das Heizen sind? " +
-          "Und ich würde gern wissen, ab wann ich einziehen kann. Außerdem interessiert mich der Zustand der Küche: Ist dort eine Reparatur nötig?\n\n" +
+          "Und ich würde gern wissen, ab wann ich einziehen kann. Außerdem würde ich gern wissen, in welchem Zustand die Küche ist und ob dort eine Reparatur nötig ist.\n\n" +
           "Wäre eine Besichtigung am Samstag möglich? Ich bin den ganzen Tag frei " +
           "und komme gern zu Ihnen.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",

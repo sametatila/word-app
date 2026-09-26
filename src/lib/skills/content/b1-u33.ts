@@ -290,7 +290,7 @@ export const b1U33: SkillExercise[] = [
         text: "Wo hat sie die Wunde gewaschen?",
         options: [],
         answer: 0,
-        accept: ["zu Hause", "sie hat sie gewaschen"],
+        accept: ["zu Hause", "daheim", "zuhause"],
         explain: "„Ich habe sie zu Hause gewaschen.“",
       },
     ],
@@ -328,8 +328,8 @@ export const b1U33: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Düştüğümde omzum yere çarptı ve burnum kanadı.",
-        answer: "Als ich gefallen bin, kam die Schulter auf den Boden und die Nase blutete.",
+        tr: "Düştüğümde omzumu yere çarptım ve burnum kanadı.",
+        answer: "Als ich fiel, schlug ich mit der Schulter auf den Boden, und die Nase blutete.",
         hint: "Yan cümle önde → ana cümle fiille başlar.",
       },
       {
@@ -365,7 +365,7 @@ export const b1U33: SkillExercise[] = [
       { de: "die Erzählung", tr: "anlatı", en: "story" },
       { de: "der Blitz", tr: "şimşek", en: "lightning" },
       { de: "der Mond", tr: "ay", en: "moon" },
-      { de: "die Fotografie", tr: "fotoğrafçılık", en: "photography" },
+      { de: "die Fotografie", tr: "fotoğraf", en: "photograph" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [

@@ -40,11 +40,6 @@
   "en": "First the doctor, then the medicine, then home, last the evening."
  },
  {
-  "tr": "„I learn to swim at forty!“ — daha yeni öğreniyor.",
-  "kind": "explain",
-  "en": "„I learn to swim at forty!“ — he is only learning it now."
- },
- {
   "tr": "Bir haftanın planı. Hangi gün ne var, hangi gün boş?",
   "kind": "intro",
   "en": "The plan for one week. What is on which day, and which day stays free?"
@@ -193,11 +188,6 @@
   "tr": "„The leg is long and the knee is in the middle of it.“ — diz bacakta.",
   "kind": "explain",
   "en": "„The leg is long and the knee is in the middle of it.“ — the knee belongs to the leg."
- },
- {
-  "tr": "„I'm not going to do something in the evening.“ — perşembe akşamı boş.",
-  "kind": "explain",
-  "en": "„I'm not going to do something in the evening.“ — the Thursday evening stays free."
  },
  {
   "tr": "„The children learn to swim in the small pool.“ — derin havuz ötekisi.",

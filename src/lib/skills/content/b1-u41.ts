@@ -186,7 +186,7 @@ export const b1U41: SkillExercise[] = [
     segments: [
       { text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft. Das Konsulat verlangt sie." },
       { text: "Gern. Bitte zuerst die Personalien und den Zivilstand." },
-      { text: "Hier ist mein Ausweis. Ledig, seit letztem Jahr geschieden." },
+      { text: "Hier ist mein Ausweis. Nicht ledig, sondern seit letztem Jahr geschieden." },
       { text: "Danke. Wird Ihr Abschluss hier schon anerkannt?" },
       { text: "Teilweise. Der Rest wird noch geprüft." },
       { text: "Dann brauchen wir davon eine Kopie." },
@@ -252,10 +252,10 @@ export const b1U41: SkillExercise[] = [
       { text: "Es hängt von der Gruppe ab, nicht vom Alter. Nur Verwandte duzen sich immer." },
       { text: "Bei uns duzt der Chef alle, aber niemand duzt ihn zurück." },
       { text: "Das ist seltsam. Dann lieber niemanden duzen." },
-      { text: "Sehe ich auch so. Am liebsten fragt man einfach." },
+      { text: "Ich weiß nicht. Am liebsten fragt man einfach." },
       { text: "Genau. Ein Wörterbuch hilft da gar nicht." },
       { text: "Nein. Das steht in keinem Buch, das lernt man nur so." },
-      { text: "Wie das Alphabet: man lernt es einmal und denkt nie mehr daran." },
+      { text: "Wie das Alphabet: Man lernt es einmal und denkt nie mehr daran." },
     ],
     questions: [
       {
@@ -265,7 +265,7 @@ export const b1U41: SkillExercise[] = [
         explain: "„Es hängt von der Gruppe ab, nicht vom Alter.“",
       },
       {
-        text: "Was ist im Betrieb der zweiten Person seltsam?",
+        text: "Was ist im Betrieb der ersten Person seltsam?",
         options: ["Der Chef duzt alle, aber niemand ihn", "Alle siezen sich", "Niemand redet"],
         answer: 0,
         explain: "„Bei uns duzt der Chef alle, aber niemand duzt ihn zurück.“",
@@ -290,7 +290,7 @@ export const b1U41: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["mit dem Alphabet", "dem Alphabet", "Alphabet"],
-        explain: "„Wie das Alphabet: man lernt es einmal …“",
+        explain: "„Wie das Alphabet: Man lernt es einmal …“",
       },
     ],
   },
@@ -320,7 +320,7 @@ export const b1U41: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İş hakkında en çok Almanca konuşurum.",
+        tr: "İş hakkında en çok Almanca konuşmayı severim.",
         answer: "Über Arbeit rede ich am liebsten auf Deutsch.",
         hint: "gern → am liebsten.",
       },
@@ -414,6 +414,7 @@ export const b1U41: SkillExercise[] = [
         prompt: "Yüklemin hâlini düzelt.",
         source: "Er ist einen guten Lehrer und wird nächstes Jahr einen Bürger.",
         answer: "Er ist ein guter Lehrer und wird nächstes Jahr Bürger.",
+        alternatives: ["Er ist ein guter Lehrer und wird nächstes Jahr ein Bürger."],
         why: "Türkçede yüklem hiç hâl almaz ('o iyi bir öğretmen'), ama öğrenci Almancada öğrendiği 'fiil → Akkusativ' kuralını buraya da taşıyor. sein, werden ve bleiben fiillerinden sonra gelen öğe NESNE DEĞİLDİR — özneyle aynı şeyi anlatır ve hâli Nominativ'dir: er ist ein guter Lehrer, sie wird Bürgerin, es bleibt ein Problem.",
       },
     ],

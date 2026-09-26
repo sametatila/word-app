@@ -238,6 +238,7 @@ export const c1U23: SkillExercise[] = [
       { de: "der Ausländer", tr: "yabancı uyruklu", en: "foreigner" },
       { de: "abwesend", tr: "yok", en: "absent" },
       { de: "das Beispiel", tr: "örnek", en: "example" },
+      { de: "von außen", tr: "dışarıdan", en: "from the outside" },
     ],
     minutes: 5,
     segments: [
@@ -252,7 +253,7 @@ export const c1U23: SkillExercise[] = [
       { speaker: "Pedro", text: "Das hätte ich für ernst gehalten." },
       { speaker: "Nadja", text: "Das ist der Punkt. Wer nicht mitlacht, wird nicht ausgeschlossen — es wird nur nicht wiederholt." },
       { speaker: "Pedro", text: "Und Selbstironie?" },
-      { speaker: "Nadja", text: "Die ist hoch angesehen und wird unterschätzt. Über sich selbst zu lachen ist die sicherste Form: Man nimmt niemanden als Zielscheibe und zeigt trotzdem, dass man locker ist." },
+      { speaker: "Nadja", text: "Die wird von außen unterschätzt und ist hier hoch angesehen. Über sich selbst zu lachen ist die sicherste Form: Man nimmt niemanden als Zielscheibe und zeigt trotzdem, dass man locker ist." },
       { speaker: "Pedro", text: "Kann ich das als Ausländer machen?" },
       { speaker: "Nadja", text: "Besser als alles andere. „Mein Dativ ist noch in der Ausbildung“ funktioniert in jedem Raum. Timing ist alles — sag es beiläufig, nicht als Vorstellungsrunde." },
     ],
@@ -334,7 +335,7 @@ export const c1U23: SkillExercise[] = [
       { speaker: "Frau Baum", text: "Ich formuliere die Kundenmitteilung. Sage ich, wann es behoben ist?" },
       { speaker: "Frau Neubert", text: "Nein. Sagen Sie, was gerade geht und wann wir das nächste Mal informieren. Ein Zeitpunkt, den wir nicht halten, kostet mehr als die Störung." },
       { speaker: "Herr Yildirim", text: "Und die Schadensbegrenzung bei den offenen Warenkörben?" },
-      { speaker: "Frau Neubert", text: "Bewahren Sie sie und schreiben Sie die Kunden morgen an. Heute keine Aktion mehr, die wir nicht überblicken. Ruhe bewahren heißt hier: nichts Zusätzliches kaputtmachen." },
+      { speaker: "Frau Neubert", text: "Sichern Sie sie und schreiben Sie die Kunden morgen an. Heute keine Aktion mehr, die wir nicht überblicken. Ruhe bewahren heißt hier: nichts Zusätzliches kaputtmachen." },
     ],
     questions: [
       {
@@ -397,7 +398,7 @@ export const c1U23: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Derhal önlem almalıyız.",
+        tr: "Derhâl önlem almalıyız.",
         answer: "Wir müssen umgehend Maßnahmen ergreifen",
         hint: "Maßnahmen ergreifen: sabit öbek, fiil mastar olarak sonda.",
       },
@@ -470,7 +471,7 @@ export const c1U23: SkillExercise[] = [
         phrases: [
           { de: "Wir haben umgehend Maßnahmen ergriffen.", tr: "derhal önlem aldık", en: "we have taken immediate measures" },
           { de: "Es handelt sich um eine Zwischenlösung.", tr: "bu bir ara çözümdür", en: "this is an interim solution" },
-          { de: "Wir informieren Sie erneut um 16:00 Uhr.", tr: "saat 16:00'da yeniden bilgilendireceğiz", en: "we will update you again at 16:00" },
+          { de: "Wir informieren Sie erneut um 16:00 Uhr.", tr: "saat 16:00'da yeniden bilgilendireceğiz", en: "we will update you again at 4:00 p.m." },
         ],
         sample:
           "A — INTERN\n\n" +

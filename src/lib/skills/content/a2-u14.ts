@@ -182,7 +182,7 @@ export const a2U14: SkillExercise[] = [
       { speaker: "Friseurin", text: "Nur die Schere, das wird weicher. Möchten Sie danach föhnen?" },
       { speaker: "Herr Adam", text: "Können Sie mir die Haare föhnen? Ich mache das zu Hause nie richtig." },
       { speaker: "Friseurin", text: "Gern. Ich bürste sie vorher gut durch, dann werden sie auch glänzender." },
-      { speaker: "Herr Adam", text: "Und kämmen Sie es bitte nach links, nicht nach rechts." },
+      { speaker: "Herr Adam", text: "Und kämmen Sie sie bitte nach links, nicht nach rechts." },
       { speaker: "Friseurin", text: "Alles klar. Dauert etwa zwanzig Minuten." },
     ],
     questions: [
@@ -227,11 +227,11 @@ export const a2U14: SkillExercise[] = [
     gloss: [
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
       { de: "die Rückgabe", tr: "iade", en: "return" },
-      { de: "fehlerhaft", tr: "hatalı", en: "faulty" },
+      { de: "fehlerhaft", tr: "hatalı", en: "defective" },
       { de: "verärgert", tr: "kızgın", en: "annoyed" },
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "anprobieren", tr: "üstünde denemek", en: "to try on" },
-      { de: "der Reißverschluss", tr: "fermuar", en: "zip" },
+      { de: "der Reißverschluss", tr: "fermuar", en: "zipper" },
       { de: "kompliziert", tr: "karmaşık", en: "complicated" },
       { de: "unkompliziert", tr: "basit", en: "uncomplicated" },
     ],
@@ -288,7 +288,7 @@ export const a2U14: SkillExercise[] = [
     intro: "Sıfat bir ismin önünde durunca son alır, yüklem olunca hiç almaz.",
     gloss: [
       { de: "hellblau", tr: "açık mavi", en: "light blue" },
-      { de: "kariert", tr: "kareli", en: "checked" },
+      { de: "kariert", tr: "kareli", en: "checkered" },
       { de: "einfarbig", tr: "tek renkli", en: "plain" },
       { de: "grau", tr: "gri", en: "gray" },
     ],
@@ -331,7 +331,7 @@ export const a2U14: SkillExercise[] = [
     genre: "formal",
     intro: "Mağazaya şikâyet yaz: ne aldın, sorun ne, ne istiyorsun?",
     gloss: [
-      { de: "fehlerhaft", tr: "hatalı", en: "faulty" },
+      { de: "fehlerhaft", tr: "hatalı", en: "defective" },
       { de: "beschädigt", tr: "hasarlı", en: "damaged" },
       { de: "die Rückgabe", tr: "iade", en: "return" },
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
@@ -350,7 +350,7 @@ export const a2U14: SkillExercise[] = [
         stimulus:
           "RÜCKGABE — WAS SIE WISSEN SOLLTEN\n\nSie können Ware innerhalb von 14 Tagen zurückgeben. Bringen Sie bitte immer den Kassenzettel mit.\n\nIst ein Artikel fehlerhaft, beschädigt oder zerbrochen bei Ihnen angekommen, tauschen wir ihn sofort um.\n\nBei Fragen schreiben Sie an service@nordstern.de.",
         checklist: [
-          "Resmî hitapla ve konu cümlesiyle başladın mı?",
+          "Resmî hitapla ve konu satırıyla başladın mı?",
           "Ne aldığını ve ne zaman aldığını yazdın mı?",
           "Sorunu bir sıfatla tarif ettin mi (fehlerhaft / beschädigt / zerbrochen)?",
           "Ne istediğini ve fişin yanında olduğunu belirttin mi?",
@@ -358,11 +358,11 @@ export const a2U14: SkillExercise[] = [
         minWords: 45,
         phrases: [
           { de: "Ich habe am … eine Jacke gekauft.", tr: "…-de bir ceket aldım", en: "I bought a jacket on …" },
-          { de: "Der Artikel ist leider fehlerhaft.", tr: "ürün maalesef hatalı", en: "unfortunately the item is faulty" },
+          { de: "Der Artikel ist leider fehlerhaft.", tr: "ürün maalesef hatalı", en: "unfortunately the item is defective" },
           { de: "Ich möchte das Geld zurück.", tr: "paramı geri istiyorum", en: "I would like a refund" },
         ],
         sample:
-          "Betreff: Reklamation — bestellte Jacke beschädigt\n\nSehr geehrte Damen und Herren,\n\nich habe am 3. April in Ihrer Filiale in der Bahnhofstraße eine dunkelblaue Jacke gekauft.\n\nLeider ist der Reißverschluss fehlerhaft: er geht nach zwei Tagen nicht mehr zu. Im Laden habe ich die Jacke anprobiert, da hat noch alles funktioniert.\n\nIch möchte die Jacke gern umtauschen, am liebsten in Grau. Wenn Sie diese Farbe nicht mehr haben, hätte ich lieber das Geld zurück.\n\nDen Kassenzettel bringe ich natürlich mit.\n\nMit freundlichen Grüßen\nNuray Roth",
+          "Betreff: Reklamation — Reißverschluss fehlerhaft\n\nSehr geehrte Damen und Herren,\n\nich habe am 3. April in Ihrer Filiale in der Bahnhofstraße eine dunkelblaue Jacke gekauft.\n\nLeider ist der Reißverschluss fehlerhaft: Er geht seit zwei Tagen nicht mehr zu. Im Laden habe ich die Jacke anprobiert, da hat noch alles funktioniert.\n\nIch möchte die Jacke gern umtauschen, am liebsten in Grau. Wenn Sie diese Farbe nicht mehr haben, hätte ich lieber das Geld zurück.\n\nDen Kassenzettel bringe ich natürlich mit.\n\nMit freundlichen Grüßen\nNuray Roth",
       },
     ],
   },

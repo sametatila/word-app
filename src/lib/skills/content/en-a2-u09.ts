@@ -200,7 +200,7 @@ export const enA2U09: SkillExercise[] = [
       { speaker: "Mert", text: "Is there a mirror in the bathroom?" },
       { speaker: "Sena", text: "Of course. And one in the hallway, next to the front door." },
       { speaker: "Mert", text: "You have a lot of furniture for two rooms." },
-      { speaker: "Sena", text: "Not a lot — old. Everything here has a story." },
+      { speaker: "Sena", text: "It's not a lot — it's just old. Everything here has a story." },
       { speaker: "Mert", text: "Then tell me one story. The mirror first." },
       { speaker: "Sena", text: "Later. First the coffee." },
     ],

@@ -20,9 +20,9 @@
   "de": "Müll wird nicht abgeholt; Garden Street; seit dem zwölften August; zweimal angerufen."
  },
  {
-  "tr": "Dizüstü yavaş; pazartesiden beri; iki kez yeniden başlatıldı; diskte altı boş.",
+  "tr": "Dizüstü yavaş; pazartesiden beri; iki kez yeniden başlatıldı; diskte altı gigabayt boş.",
   "kind": "form.facts",
-  "de": "Laptop langsam; seit Montag; zweimal neu gestartet; sechs frei auf der Festplatte."
+  "de": "Laptop langsam; seit Montag; zweimal neu gestartet; sechs Gigabyte frei auf der Festplatte."
  },
  {
   "tr": "Kayıp cüzdan; iki numaralı tramvay; saat altı civarı; içinde kimlik ve yirmi euro.",
@@ -365,7 +365,7 @@
   "de": "Es dauert an: „for“ mit present perfect. Das Muster der ganzen Stufe, zum Abschluss noch einmal."
  },
  {
-  "tr": "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe \"çalındı\" der ve faili hiç anmaz.",
+  "tr": "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe „çalındı“ der ve faili hiç anmaz.",
   "kind": "build.hint",
   "de": "Englisch setzt hier „someone“ statt eines Passivs. Deutsch macht es wie das Türkische: mein Handy wurde gestohlen."
  },

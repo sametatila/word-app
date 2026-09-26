@@ -236,7 +236,7 @@ export const enA1U10: SkillExercise[] = [
         text: "What is Kaan's plan?",
         options: [],
         answer: 0,
-        accept: ["nothing special", "read and watch a movie", "to walk in the city"],
+        accept: ["nothing special", "read and watch a movie", "walk in the city", "to walk in the city", "read, watch a movie and walk in the city"],
         explain: "„Nothing special. I'm going to read, watch a movie and walk in the city.“",
       },
     ],
@@ -263,7 +263,7 @@ export const enA1U10: SkillExercise[] = [
       { speaker: "Ali", text: "On Monday and Wednesday I walk in the park near my office." },
       { speaker: "Ali", text: "In the afternoon I sometimes listen to music on the radio." },
       { speaker: "Ali", text: "On Friday I meet my friends. We watch a movie together." },
-      { speaker: "Ali", text: "On the weekend I am going to travel. I'm going to stay at the sea for two days." },
+      { speaker: "Ali", text: "On the weekend I am going to travel. I'm going to stay by the sea for two days." },
     ],
     questions: [
       {
@@ -311,7 +311,7 @@ export const enA1U10: SkillExercise[] = [
         text: "What is Ali going to do on the weekend?",
         options: [],
         answer: 0,
-        accept: ["travel", "stay at the sea", "he is going to travel"],
+        accept: ["travel", "stay by the sea", "he is going to travel"],
         explain: "„On the weekend I am going to travel.“",
       },
     ],
@@ -339,12 +339,14 @@ export const enA1U10: SkillExercise[] = [
         kind: "build",
         tr: "Saat sekizde işe başlarım.",
         answer: "I start work at eight.",
+        alternatives: ["At eight I start work."],
         hint: "Saatte „at“. „work“ burada isim, önünde „the“ yok.",
       },
       {
         kind: "build",
         tr: "Cuma günü toplantım var.",
         answer: "I have a meeting on Friday.",
+        alternatives: ["On Friday I have a meeting."],
         hint: "Sahiplik „have“ ile, gün „on“ ile. Toplantının önünde „a“ gerekiyor.",
       },
       {

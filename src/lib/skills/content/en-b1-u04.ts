@@ -359,7 +359,7 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Önce mutfağı boşaltacağım.",
+        tr: "Önce mutfağın kolilerini açacağım.",
         answer: "I am going to unpack the kitchen first.",
         alternatives: ["I'm going to unpack the kitchen first."],
         hint: "Önceden kurulmuş plan: „going to“. Kimseyle ayarlanmış değil.",
@@ -408,7 +408,7 @@ export const enB1U04: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yemekten sonra mutfağı toplaman gerekiyor.",
+        tr: "Yemek yaptıktan sonra mutfağı toplaman gerekiyor.",
         answer: "You have to clean up the kitchen after cooking.",
         hint: "Kuraldan gelen zorunluluk; „after“ sonrası fiil „-ing“ alıyor.",
       },
@@ -421,7 +421,7 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir çizelgede anlaşmalıyız.",
+        tr: "Bir program üzerinde anlaşmalıyız.",
         answer: "We should agree on a schedule.",
         hint: "„agree“ konuda „on“ alıyor; kişide „with“ alırdı.",
       },

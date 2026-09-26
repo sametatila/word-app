@@ -294,8 +294,8 @@ export const b2U11: SkillExercise[] = [
       { de: "kompatibel", tr: "uyumlu", en: "compatible" },
       { de: "standardmäßig", tr: "varsayılan olarak", en: "by default" },
       { de: "offen", tr: "açık", en: "open" },
-      { de: "konvertieren", tr: "din değiştirmek", en: "to convert" },
-      { de: "schief", tr: "eğri", en: "crooked" },
+      { de: "konvertieren", tr: "dönüştürmek", en: "to convert" },
+      { de: "schiefgehen", tr: "ters gitmek", en: "to go wrong" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 5,
@@ -366,7 +366,7 @@ export const b2U11: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 11,
-    title: "Süren mi, biten mi",
+    title: "Laufend oder abgeschlossen",
     genre: "build",
     intro: "Ortaç I sürer ve etkendir, ortaç II biter ve edilgendir. Doğru olanı seç.",
     gloss: [
@@ -397,8 +397,9 @@ export const b2U11: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "1987 anket formu değerlendirildi.",
+        tr: "1.987 anket formu değerlendirildi.",
         answer: "Ausgewertet wurden 1.987 Fragebögen",
+        alternatives: ["1.987 Fragebögen wurden ausgewertet"],
         hint: "Rapor dilinde ortaç öne çekilir, edilgen fiil arkasından gelir.",
       },
       {

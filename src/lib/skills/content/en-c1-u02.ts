@@ -316,7 +316,7 @@ export const enC1U02: SkillExercise[] = [
         text: "Why does a reader accept the verdict more easily?",
         options: [],
         answer: 0,
-        accept: ["they saw the weighing", "the weighing was shown", "they watched it"],
+        accept: ["they saw the weighing", "the weighing was shown", "they were shown the weighing", "they have been shown the weighing", "they watched it"],
         explain: "„A reader who has been shown the weighing accepts the verdict more easily…“",
       },
     ],
@@ -372,7 +372,7 @@ export const enC1U02: SkillExercise[] = [
         text: "What cannot be worked out from context?",
         options: ["which near version is right", "the meaning", "the register"],
         answer: 0,
-        explain: "„What cannot be worked out is which of the near-misses is the real one…“",
+        explain: "„What cannot be worked out is which of the near versions is the right one…“",
       },
       {
         kind: "truefalse",

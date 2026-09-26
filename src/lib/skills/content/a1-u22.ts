@@ -235,7 +235,7 @@ export const a1U22: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Welche Nummer ruft man in Europa für einen Unfall?",
+        text: "Welche Nummer ruft man in Europa bei einem Unfall an?",
         options: ["112", "110", "911"],
         answer: 0,
         explain:
@@ -310,7 +310,7 @@ export const a1U22: SkillExercise[] = [
         answer: "Gute Besserung!",
         alternatives: ["Gute Besserung"],
         why:
-          "Almanca'da hasta birine bunu söylemek BEKLENİR; yazmamak soğukluk sayılır. Nezaketin isteğe bağlı değil, standart parçası.",
+          "Almancada hasta birine bunu söylemek BEKLENİR; yazmamak soğukluk sayılır. Nezaketin isteğe bağlı değil, standart parçası.",
       },
     ],
   },

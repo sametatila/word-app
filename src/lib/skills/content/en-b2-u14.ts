@@ -239,7 +239,7 @@ export const enB2U14: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "a shortage", tr: "sıkıntı" },
       { de: "a description", tr: "betimleme" },
-      { de: "a builder", tr: "yapımcı" },
+      { de: "a builder", tr: "müteahhit" },
       { de: "an accident", tr: "rastlantı" },
       { de: "by accident", tr: "istemeden" },
       { de: "measurable", tr: "ölçülebilir" },
@@ -347,7 +347,7 @@ export const enB2U14: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Yaren", text: "Never has voter turnout been so low. „Has“ in front of the subject, and the subject here is three words long." },
+      { speaker: "Yaren", text: "Never has voter turnout been so low. „Has“ in front of the subject, and the subject here is two words long." },
       { speaker: "Yaren", text: "That length is why the shape works. „Voter turnout has never been so low“ puts the news in the middle; this puts „never“ in the first syllable of the sentence." },
       { speaker: "Yaren", text: "Rarely does an election campaign end early. Present simple, so there is nothing to invert, and „does“ arrives for the single purpose of moving." },
       { speaker: "Yaren", text: "And the main verb drops its ending. „End“, not „ends“. That is the error I see most in political writing, and it is always in the second of these sentences rather than the first." },
@@ -477,7 +477,7 @@ export const enB2U14: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Konut sıkıntısıyla karşılaşan aileler taşındı.",
+        tr: "Konut sıkıntısıyla karşı karşıya kaldıkları için aileler taşındı.",
         answer: "Facing a housing shortage, families moved out.",
         hint: "Yalın ortaç burada NEDEN taşıyor.",
       },
@@ -503,7 +503,7 @@ export const enB2U14: SkillExercise[] = [
         kind: "build",
         tr: "Seçmen katılımı hiç bu kadar düşük olmadı.",
         answer: "Never has voter turnout been so low.",
-        hint: "„has“ özneyi atlıyor; özne üç sözcük uzunluğunda.",
+        hint: "„has“ özneyi atlıyor; özne iki sözcük uzunluğunda.",
       },
     ],
   },

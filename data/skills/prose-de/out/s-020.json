@@ -75,9 +75,9 @@
   "de": "Schreibe Bitten zum Zahlen und Einkaufen. Im zählbaren Plural „are“, im Singular „is“."
  },
  {
-  "tr": "Zaman edatlarını yaz: günde „on“, hafta sonunda „at“, sabahta „in“. Üçü üç ayrı sözcük.",
+  "tr": "Zaman edatlarını yaz: günde ve hafta sonunda „on“, sabahta „in“, gecede „at“. Amerikan İngilizcesinde hafta sonu da „on“ alır.",
   "kind": "intro",
-  "de": "Schreibe die Zeitpräpositionen: beim Tag „on“, beim Wochenende „at“, beim Morgen „in“. Drei Fälle, drei verschiedene Wörter."
+  "de": "Schreibe die Zeitpräpositionen: beim Tag und beim Wochenende „on“, beim Morgen „in“, bei der Nacht „at“. Im amerikanischen Englisch steht auch beim Wochenende „on“."
  },
  {
   "tr": "Sevdiğini ve tercih ettiğini yaz. Dikkat: sevmek fiilinden sonra ikinci fiil „-ing“ alıyor.",
@@ -115,9 +115,9 @@
   "de": "„No, thank you. Beer is enough.“ — er lehnt den Wein ab."
  },
  {
-  "tr": "„Eight euros together, then.“ — üç artı dört artı bir.",
+  "tr": "„So that's eight euros, then.“ — üç artı dört artı bir.",
   "kind": "explain",
-  "de": "„Eight euros together, then.“ — drei plus vier plus eins."
+  "de": "„So that's eight euros, then.“ — drei plus vier plus eins."
  },
  {
   "tr": "„First … after that … finally“ üç adımı sırayla bağlıyor.",

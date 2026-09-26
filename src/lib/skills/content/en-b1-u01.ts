@@ -198,7 +198,7 @@ export const enB1U01: SkillExercise[] = [
       { de: "step sideways", tr: "yana adım" },
       { de: "on purpose", tr: "bilerek" },
       { de: "turned out", tr: "sonradan anlaşıldı" },
-      { de: "lesson", tr: "ders" },
+      { de: "lesson", tr: "hayat dersi" },
       { de: "less", tr: "daha az" },
       { de: "title", tr: "unvan" },
       { de: "somewhere", tr: "bir yerde" },
@@ -283,9 +283,9 @@ export const enB1U01: SkillExercise[] = [
       { speaker: "Mert", text: "It is the opening four hundred people write. What did you do that they did not?" },
       { speaker: "Sena", text: "I moved a team from paper to a system in six months." },
       { speaker: "Mert", text: "Then that is your first line. „I moved a team of nine from paper to a system in six months.“ The rest can stay." },
-      { speaker: "Sena", text: "Is that not too direct?" },
+      { speaker: "Sena", text: "Isn't that too direct?" },
       { speaker: "Mert", text: "It is a cover letter, not a poem. Second thing: you mention three strengths and you show no proof." },
-      { speaker: "Sena", text: "I enclose the reference." },
+      { speaker: "Sena", text: "I enclosed the reference." },
       { speaker: "Mert", text: "Nobody opens the second file before the first line works. Put one number in every strength." },
       { speaker: "Sena", text: "And the end?" },
       { speaker: "Mert", text: "„I would enjoy contributing to this team.“ Not „I hope you will consider me.“ One of those two lines has a person in it." },
@@ -358,7 +358,7 @@ export const enB1U01: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Oraya başlamadan önce diplomamı bitirmiştim.",
+        tr: "Oraya başlamadan önce üniversiteyi bitirmiştim.",
         answer: "I had finished my degree before I started there.",
         hint: "İki geçmişten ÖNCE olanı „had“ + üçüncü hâl taşıyor; sonraki sade geçmişte kalıyor.",
       },
@@ -384,7 +384,7 @@ export const enB1U01: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Özgeçmiş kartını doldur.",
-        facts: "Altı yıl sektörde; diploma işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
+        facts: "Altı yıl sektörde; üniversite işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
         fields: [
           { label: "Experience", answer: "six years", accept: ["6 years"] },
           { label: "Degree", answer: "before the job", accept: ["finished before"] },

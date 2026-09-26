@@ -186,15 +186,15 @@ export const enA1U08: SkillExercise[] = [
     segments: [
       { speaker: "Can", text: "Excuse me, what time is it?" },
       { speaker: "Nil", text: "It's half past eight." },
-      { speaker: "Can", text: "Half past eight! I get up at seven every day, but today I sleep until eight." },
+      { speaker: "Can", text: "Half past eight! I get up at seven every day. Today is not a good day!" },
       { speaker: "Nil", text: "Do you work today?" },
       { speaker: "Can", text: "Yes, I work from nine until five. And you?" },
       { speaker: "Nil", text: "I don't work on Monday. I wake up at nine and I take a long shower." },
       { speaker: "Can", text: "You are lucky! What do you do in the morning?" },
       { speaker: "Nil", text: "I have breakfast and I read. At lunchtime I cook." },
       { speaker: "Can", text: "And at night?" },
-      { speaker: "Nil", text: "At night I am always tired. I sleep at a quarter past eleven." },
-      { speaker: "Can", text: "I sleep at midnight. My clock is always in my hand!" },
+      { speaker: "Nil", text: "At night I am always tired. I am in bed at a quarter past eleven." },
+      { speaker: "Can", text: "I am in bed at midnight. My phone is always in my hand!" },
     ],
     questions: [
       {
@@ -234,11 +234,11 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does Can sleep?",
+        text: "When is Can in bed?",
         options: [],
         answer: 0,
         accept: ["at midnight", "midnight"],
-        explain: "„I sleep at midnight.“",
+        explain: "„I am in bed at midnight.“",
       },
     ],
   },
@@ -263,7 +263,7 @@ export const enA1U08: SkillExercise[] = [
       { speaker: "Ela", text: "Are the tomatoes fresh? Yes, they are very fresh and cheap today." },
       { speaker: "Ela", text: "How much are the apples? Two euros a kilo. That is not expensive." },
       { speaker: "Ela", text: "A banana costs half a euro. I take four bananas for my children." },
-      { speaker: "Ela", text: "At the end I pay by card. The check is nine euros." },
+      { speaker: "Ela", text: "At the end I pay by card. It is nine euros." },
     ],
     questions: [
       {
@@ -359,6 +359,7 @@ export const enA1U08: SkillExercise[] = [
         kind: "build",
         tr: "Yedide kalkarım.",
         answer: "I get up at seven.",
+        alternatives: ["At seven I get up."],
         hint: "Saatte „at“: at seven, at midnight. Günde „on“, ayda „in“.",
       },
       {

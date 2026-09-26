@@ -7,7 +7,7 @@
  {
   "tr": "Şikâyet formunu doldur.",
   "kind": "form.prompt",
-  "de": "Fülle das Beschwerdeformular aus."
+  "de": "Fülle den Symptombogen aus."
  },
  {
   "tr": "Karşılaştırma kartını doldur.",
@@ -27,7 +27,7 @@
  {
   "tr": "Kuzeyde küçük bir kasabada doğdu; on bir yıl orada; üniversite için şehre taşındı; dokuz yıldır eşini tanıyor.",
   "kind": "form.facts",
-  "de": "In einer kleinen Stadt im Norden geboren; elf Jahre dort; für die Universität in die Stadt gezogen; kennt seine Frau seit neun Jahren."
+  "de": "In einer kleinen Stadt im Norden geboren; elf Jahre dort; für die Universität in die Stadt gezogen; kennt den Ehepartner seit neun Jahren."
  },
  {
   "tr": "İki cümleyi „than“ ile birleştir.",
@@ -105,9 +105,9 @@
   "de": "Ich bin in einer Kleinstadt geboren."
  },
  {
-  "tr": "Hayatımın en güzel günü.",
+  "tr": "Bu, hayatımın en güzel günü.",
   "kind": "build.tr",
-  "de": "Der schönste Tag meines Lebens."
+  "de": "Das ist der schönste Tag meines Lebens."
  },
  {
   "tr": "Üç gündür öksürüğüm var.",

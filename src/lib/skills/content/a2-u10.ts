@@ -178,7 +178,7 @@ export const a2U10: SkillExercise[] = [
       { speaker: "Herr Bach", text: "Klar, was gibt es denn?" },
       { speaker: "Frau Sander", text: "Es ist mir unangenehm, aber wenn es nachts so laut ist, kann ich einfach nicht schlafen." },
       { speaker: "Herr Bach", text: "Oh. Meinen Sie die Musik? Das tut mir wirklich leid — ich habe gar nicht gemerkt, dass man das unten hört." },
-      { speaker: "Frau Sander", text: "Ich wollte mich nicht beklagen. Aber ab elf brauche ich wirklich Ruhe." },
+      { speaker: "Frau Sander", text: "Ich wollte mich nicht beklagen. Aber abends brauche ich wirklich Ruhe." },
       { speaker: "Herr Bach", text: "Verstehe. Könnten Sie mir sagen, ab wann genau es stört? Dann stelle ich die Lautstärke leiser." },
       { speaker: "Frau Sander", text: "Ab zehn wäre super. Ich stehe um fünf auf." },
       { speaker: "Herr Bach", text: "Kein Problem. Und wenn ich es wieder vergesse, klopfen Sie einfach." },
@@ -206,7 +206,7 @@ export const a2U10: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Herr Bach'ın saati sorduğu kibar cümleyi yaz.",
+        text: "Herr Bach'ın gürültünün saat kaçtan itibaren rahatsız ettiğini sorduğu kibar cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Könnten Sie mir sagen, ab wann genau es stört?"],
@@ -225,7 +225,7 @@ export const a2U10: SkillExercise[] = [
     gloss: [
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
       { de: "defekt", tr: "arızalı", en: "broken" },
-      { de: "der Wasserhahn", tr: "musluk", en: "tap" },
+      { de: "der Wasserhahn", tr: "musluk", en: "faucet" },
       { de: "der Klempner", tr: "tesisatçı", en: "plumber" },
       { de: "der Elektriker", tr: "elektrikçi", en: "electrician" },
       { de: "die Glühbirne", tr: "ampul", en: "light bulb" },
@@ -271,7 +271,7 @@ export const a2U10: SkillExercise[] = [
         text: "Wann kommt der Klempner?",
         options: [],
         answer: 0,
-        accept: ["morgen zwischen acht und zwölf", "zwischen acht und zwölf", "morgen"],
+        accept: ["morgen zwischen acht und zwölf", "zwischen acht und zwölf", "morgen", "morgen zwischen 8 und 12", "zwischen 8 und 12"],
         explain: "„Er kann morgen zwischen acht und zwölf kommen.“",
       },
     ],
@@ -285,7 +285,7 @@ export const a2U10: SkillExercise[] = [
     genre: "grammar",
     intro: "Yardım fiilinin hâli ve ricanın kibar biçimi. İkisi de komşulukta her gün gerekiyor.",
     gloss: [
-      { de: "weiterhelfen", tr: "yardımcı olmak", en: "to help further" },
+      { de: "weiterhelfen", tr: "yardımcı olmak", en: "to assist" },
       { de: "ausleihen", tr: "ödünç almak", en: "to borrow" },
       { de: "die Lautstärke", tr: "ses seviyesi", en: "volume" },
       { de: "der Staubsauger", tr: "elektrikli süpürge", en: "vacuum cleaner" },
@@ -294,7 +294,7 @@ export const a2U10: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bana kısa bir yardım eder misin?",
+        tr: "Bir dakika bana yardım eder misin?",
         answer: "Kannst du mir kurz helfen",
         hint: "Yardım fiili kişiyi YÖNELME hâline sokar: mir, „mich“ değil.",
       },
@@ -306,8 +306,9 @@ export const a2U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sesi biraz kısabilir misiniz?",
+        tr: "Sesi lütfen kısabilir misiniz?",
         answer: "Könnten Sie bitte die Lautstärke leiser stellen",
+        alternatives: ["Könnten Sie die Lautstärke bitte leiser stellen"],
         hint: "Kip fiilinin bu biçimi doğrudan istemez, rica eder — komşu meselelerinde ilk seferde hep bu kullanılır.",
       },
       {
@@ -332,7 +333,7 @@ export const a2U10: SkillExercise[] = [
       { de: "defekt", tr: "arızalı", en: "broken" },
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
       { de: "der Klempner", tr: "tesisatçı", en: "plumber" },
-      { de: "der Wasserhahn", tr: "musluk", en: "tap" },
+      { de: "der Wasserhahn", tr: "musluk", en: "faucet" },
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },
       { de: "die Tropfen", tr: "damla", en: "drops" },
       { de: "per", tr: "yoluyla", en: "by" },

@@ -407,7 +407,7 @@ export const enC1U05: SkillExercise[] = [
     unit: 5,
     title: "A wave of outrage reads differently in each register",
     genre: "info",
-    intro: "Orta çatı ve iki bağlayıcı. Fail nerede?",
+    intro: "Orta çatı ve üç kalıp daha. Fail nerede?",
     gloss: [
       { de: "active", tr: "etken" },
       { de: "none", tr: "hiçbiri" },
@@ -475,7 +475,7 @@ export const enC1U05: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kurulun söz hakkı tanımasını öneriyoruz.",
+        tr: "Kurulun çalışanlara söz hakkı tanımasını öneriyoruz.",
         answer: "We move that the board grant worker participation.",
         hint: "İstek kipi: „grant“, „grants“ değil.",
       },

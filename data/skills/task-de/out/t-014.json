@@ -195,9 +195,9 @@
   "de": "„open“ ist hier ein Verb. Die Frage mit „do“, weil es nicht „be“ ist."
  },
  {
-  "tr": "Nesne „it“ zorunlu: İngilizcede fiil nesnesiz kalmaz.",
+  "tr": "„like“ nesnesiz kalmaz: „I like.“ değil, „I like it.“",
   "kind": "build.hint",
-  "de": "Das Objekt „it“ ist Pflicht: im Englischen bleibt das Verb nicht ohne Objekt, wie deutsch „es gefällt mir“."
+  "de": "„like“ braucht ein Objekt: nicht „I like.“, sondern „I like it.“"
  },
  {
   "tr": "„what color“ birlikte soruyor; sonra „is it“ geliyor.",

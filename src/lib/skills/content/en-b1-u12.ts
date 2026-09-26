@@ -196,7 +196,7 @@ export const enB1U12: SkillExercise[] = [
       { de: "deadline", tr: "son tarih" },
       { de: "worth doing", tr: "yapmaya değer" },
       { de: "spring", tr: "ilkbahar" },
-      { de: "deduction", tr: "indirim" },
+      { de: "deduction", tr: "vergi indirimi" },
       { de: "system", tr: "sistem" },
     ],
     minutes: 6,

@@ -283,7 +283,7 @@ export const enC1U23: SkillExercise[] = [
       { speaker: "Efe", text: "Behind the prevailing doctrine stands a school of thought." },
       { speaker: "Işıl", text: "And behind the school stands a founder, three students and one department that had money in a particular decade." },
       { speaker: "Efe", text: "That sounds unkind." },
-      { speaker: "Işıl", text: "It is only unkind if you think ideas travel on their own. They travel in people, and people need a post and a room and somebody to publish them." },
+      { speaker: "Işıl", text: "It is only unkind if you think ideas travel on their own. They travel in people, and people need a position and a room and somebody to publish them." },
       { speaker: "Efe", text: "The contentious issue we name; the debate among experts we do not." },
       { speaker: "Işıl", text: "That is the line I would want a student to understand before a conference. The issue is public and the debate is a set of names, and only one of the two is in the papers." },
       { speaker: "Efe", text: "Why does that matter?" },

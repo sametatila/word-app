@@ -177,7 +177,7 @@ export const enA1U19: SkillExercise[] = [
       { speaker: "Nil", text: "No, from Ireland. They play in the city on Friday." },
       { speaker: "Ali", text: "Would you like to go together?" },
       { speaker: "Nil", text: "Yes! Is there a ticket for me too?" },
-      { speaker: "Ali", text: "I buy two. Let's meet at seven." },
+      { speaker: "Ali", text: "I'm going to buy two. Let's meet at seven." },
     ],
     questions: [
       {
@@ -236,7 +236,6 @@ export const enA1U19: SkillExercise[] = [
     intro: "İki şehirde hava. Kaç derece, ne yağıyor?",
     gloss: [
       { de: "degrees", tr: "derece" },
-      { de: "air", tr: "hava" },
       { de: "windy", tr: "rüzgârlı" },
     ],
     minutes: 4,
@@ -244,15 +243,15 @@ export const enA1U19: SkillExercise[] = [
       { speaker: "Sena", text: "Hello! How's the weather there?" },
       { speaker: "Kaan", text: "It's raining. And it's cold — ten degrees." },
       { speaker: "Sena", text: "Here it is sunny and hot! Twenty-eight degrees." },
-      { speaker: "Kaan", text: "Twenty-eight! And the air?" },
-      { speaker: "Sena", text: "Very good. I sit in the park under a tree." },
+      { speaker: "Kaan", text: "Twenty-eight! Where are you now?" },
+      { speaker: "Sena", text: "In the park, under a tree. It is very nice." },
       { speaker: "Kaan", text: "Here the children can't play outside. The playground is wet." },
       { speaker: "Sena", text: "Is there snow?" },
       { speaker: "Kaan", text: "No, not now. But it is windy and the rain doesn't stop." },
       { speaker: "Sena", text: "Then come here for the weekend!" },
-      { speaker: "Kaan", text: "A good idea. Is there a lake?" },
+      { speaker: "Kaan", text: "Good idea. Is there a lake?" },
       { speaker: "Sena", text: "Yes, with boats. And in the evening we listen to music outside." },
-      { speaker: "Kaan", text: "Perfect. I buy a ticket tonight." },
+      { speaker: "Kaan", text: "Perfect. I'm going to buy a ticket tonight." },
     ],
     questions: [
       {
@@ -301,7 +300,7 @@ export const enA1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["a ticket", "ticket", "the ticket"],
-        explain: "„Perfect. I buy a ticket tonight.“",
+        explain: "„Perfect. I'm going to buy a ticket tonight.“",
       },
     ],
   },
@@ -331,7 +330,7 @@ export const enA1U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ne müzik seversin?",
+        tr: "Ne tür müzik seversin?",
         answer: "What music do you like?",
         hint: "Soru sözcüğü isimle birlikte başta: „what music“. Sonra „do you like“.",
       },
@@ -345,7 +344,7 @@ export const enA1U19: SkillExercise[] = [
         kind: "build",
         tr: "Bugün hava soğuk.",
         answer: "It's cold today.",
-        alternatives: ["It is cold today."],
+        alternatives: ["It is cold today.", "Today it's cold."],
         hint: "Hava cümlesinin öznesi „it“ ve hiçbir şeyi göstermiyor — ama düşürülemez.",
       },
       {

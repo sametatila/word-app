@@ -35,9 +35,9 @@
   "de": "Es Disziplinierung zu nennen heißt nicht, es eine Floskel zu nennen."
  },
  {
-  "tr": "Bilgi emeği pekâlâ kendini sömürmeyle bitebilir.",
+  "tr": "Bilgi emeği pekâlâ öz sömürüyle sonuçlanabilir.",
   "kind": "build.tr",
-  "de": "Wissensarbeit endet durchaus in Selbstausbeutung."
+  "de": "Wissensarbeit kann durchaus in Selbstausbeutung enden."
  },
  {
   "tr": "Burada elit yetiştirme yok; rekabet mantığı var.",
@@ -275,9 +275,9 @@
   "de": "Weil das Verb dasselbe ist, wird es in der zweiten Hälfte nicht geschrieben."
  },
  {
-  "tr": "„Where“ bir yer değil, „şu durumlarda ki“ demek.",
+  "tr": "„Where“ bir yer bildirmiyor; „…diği durumlarda“ demek.",
   "kind": "build.hint",
-  "de": "„Where“ ist kein Ort, es heißt „in den Fällen, in denen“."
+  "de": "„Where“ nennt keinen Ort; es heißt „in den Fällen, in denen“."
  },
  {
   "tr": "Eksiltilen yarıda fiil yerine bir belirteç kalmış.",

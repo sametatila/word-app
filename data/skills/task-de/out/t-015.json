@@ -15,9 +15,9 @@
   "de": "Fülle das Bestellformular aus."
  },
  {
-  "tr": "Londra; gidiş-dönüş; peron dört; kırk euro.",
+  "tr": "Londra; gidiş-dönüş; peron dört; kırk sterlin.",
   "kind": "form.facts",
-  "de": "London; hin und zurück; Gleis vier; vierzig Euro."
+  "de": "London; hin und zurück; Gleis vier; vierzig Pfund."
  },
  {
   "tr": "Müze; onda açılır; iki saat sürer; harita danışmada.",
@@ -25,9 +25,9 @@
   "de": "Museum; öffnet um zehn; dauert zwei Stunden; Karte an der Information."
  },
  {
-  "tr": "Deniz Kaya; Green Street 12, Bremen; iki kitap; cuma günü teslim.",
+  "tr": "Deniz Kaya; 12 Green Street, Bremen; iki kitap; cuma günü teslim.",
   "kind": "form.facts",
-  "de": "Deniz Kaya; Green Street 12, Bremen; zwei Bücher; Lieferung am Freitag."
+  "de": "Deniz Kaya; 12 Green Street, Bremen; zwei Bücher; Lieferung am Freitag."
  },
  {
   "tr": "Hastayım.",

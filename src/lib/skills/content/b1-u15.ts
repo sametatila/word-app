@@ -189,7 +189,7 @@ export const b1U15: SkillExercise[] = [
       { text: "Danke. Ich ärgere mich trotzdem über mich selbst." },
       { text: "Das bringt nichts. Wichtig ist nur, dass es niemand weitergibt." },
       { text: "Verzeihung, ich mache das sofort." },
-      { text: "Kein Stress. Und nimm dir zehn Minuten, bevor du schickst." },
+      { text: "Kein Stress. Und nimm dir zehn Minuten, bevor du es abschickst." },
       { text: "Einverstanden. Beim nächsten Mal lese ich alles noch einmal." },
     ],
     questions: [
@@ -209,7 +209,7 @@ export const b1U15: SkillExercise[] = [
         text: "Was rät sie zum Schluss?",
         options: ["Schneller arbeiten", "Vor dem Schicken zehn Minuten warten", "Nichts mehr schicken"],
         answer: 1,
-        explain: "„Und nimm dir zehn Minuten, bevor du schickst.“",
+        explain: "„Und nimm dir zehn Minuten, bevor du es abschickst.“",
       },
       {
         kind: "gapfill",
@@ -250,10 +250,10 @@ export const b1U15: SkillExercise[] = [
       { text: "Besser als am Anfang. Aber ich weiß nicht, in welche Richtung es geht." },
       { text: "Das ist normal. Was hast du in dieser Zeit erlebt?" },
       { text: "Dass ich gern erkläre. Der Vortrag im März hat mir Spaß gemacht." },
-      { text: "Dann ist mein Ratschlag: geh in die Richtung." },
+      { text: "Dann ist mein Ratschlag: Geh in diese Richtung." },
       { text: "Meinst du wirklich? Ich habe keine Erfahrung im Unterrichten." },
       { text: "Noch nicht. Meine Empfehlung wäre eine Weiterbildung nebenher." },
-      { text: "Von deinem Standpunkt ist das klar. Ich denke darüber nach." },
+      { text: "Von deinem Standpunkt aus ist das klar. Ich denke darüber nach." },
     ],
     questions: [
       {
@@ -321,7 +321,7 @@ export const b1U15: SkillExercise[] = [
         kind: "build",
         tr: "İlk iki gün sadece izledim ve her şeyi dikkatle gözlemledim.",
         answer: "Die ersten zwei Tage habe ich nur zugesehen und alles genau beobachtet.",
-        hint: "Ayrılabilen fiil: ortaç ge-'yi öneke alır (zugesehen).",
+        hint: "Ayrılabilen fiil: ortaçta ge- önek ile gövdenin arasına girer (zu-ge-sehen).",
       },
       {
         kind: "build",
@@ -361,7 +361,7 @@ export const b1U15: SkillExercise[] = [
     gloss: [
       { de: "hinweisen", tr: "dikkat çekmek", en: "to point out" },
       { de: "die Rücksicht", tr: "anlayış", en: "consideration" },
-      { de: "Ratschlag", tr: "öğüt", en: "piece of advice" },
+      { de: "der Ratschlag", tr: "öğüt", en: "piece of advice" },
       { de: "der Humor", tr: "mizah", en: "humor" },
       { de: "also", tr: "yani", en: "so" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -397,7 +397,7 @@ export const b1U15: SkillExercise[] = [
           "kannst, bevor sie weitergeht.\n\n" +
           "Das ist kein großes Problem und mir ist es auch schon passiert. " +
           "Es muss dir also nicht peinlich sein. Ich schreibe dir mit Rücksicht und ein bisschen Humor.\n\n" +
-          "Ein Ratschlag, der mir sehr geholfen hat: nimm dir zehn Minuten Abstand, " +
+          "Ein Ratschlag, der mir sehr geholfen hat: Nimm dir zehn Minuten Abstand, " +
           "bevor du so etwas schickst. Man sieht mit etwas Abstand mehr als " +
           "direkt danach. Das erleichtert die Sache wirklich.\n\n" +
           "Wenn du willst, schaue ich beim nächsten Mal kurz mit drüber. " +

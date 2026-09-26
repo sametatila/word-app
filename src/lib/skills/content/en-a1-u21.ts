@@ -168,7 +168,7 @@ export const enA1U21: SkillExercise[] = [
       { speaker: "Doctor", text: "Good morning. What is the problem?" },
       { speaker: "Kaan", text: "I don't feel well. My back hurts." },
       { speaker: "Doctor", text: "Since when?" },
-      { speaker: "Kaan", text: "Since three days. And my shoulder hurts too." },
+      { speaker: "Kaan", text: "For three days. And my shoulder hurts too." },
       { speaker: "Doctor", text: "Do you have a headache?" },
       { speaker: "Kaan", text: "No, no headache. But I can't carry a box." },
       { speaker: "Doctor", text: "I understand. Is the pain in the left or the right shoulder?" },
@@ -176,7 +176,7 @@ export const enA1U21: SkillExercise[] = [
       { speaker: "Doctor", text: "Do you work with your hands?" },
       { speaker: "Kaan", text: "Yes, every day. I carry heavy boxes." },
       { speaker: "Doctor", text: "Then you must stay at home for one week. No heavy work." },
-      { speaker: "Kaan", text: "One week! And my leg is good?" },
+      { speaker: "Kaan", text: "One week! And my leg? Is it OK?" },
       { speaker: "Doctor", text: "Your leg is fine. Come again on Monday." },
     ],
     questions: [
@@ -333,7 +333,7 @@ export const enA1U21: SkillExercise[] = [
         kind: "build",
         tr: "Kendimi iyi hissetmiyorum.",
         answer: "I don't feel well.",
-        hint: "„well“ zarf ve „feel“ ile geliyor; „I don't feel good“ da duyulur ama bu daha doğru.",
+        hint: "Sağlık için „feel well“: I don't feel well. Günlük konuşmada „I don't feel good“ da çok duyulur.",
       },
       {
         kind: "build",
@@ -346,7 +346,7 @@ export const enA1U21: SkillExercise[] = [
         prompt: "Randevu formunu doldur.",
         facts: "Doktor randevusu; yarın; saat onda; baş ağrısı.",
         fields: [
-          { label: "Doctor", answer: "yes", accept: ["a doctor"] },
+          { label: "Appointment", answer: "doctor", accept: ["a doctor", "the doctor"] },
           { label: "Day", answer: "tomorrow" },
           { label: "Time", answer: "ten o'clock", accept: ["at ten", "10"] },
           { label: "Problem", answer: "headache", accept: ["a headache"] },

@@ -60,7 +60,7 @@
   "de": "Ein Skaleneffekt senkt den Kapitalbedarf."
  },
  {
-  "tr": "Burada kayırmacılık yok; kayırma ağımız var.",
+  "tr": "Burada kayırmacılık yok; ahbap-çavuş ağımız var.",
   "kind": "build.tr",
   "de": "Wir haben hier keine Vetternwirtschaft; wir haben ein Netzwerk alter Bekannter."
  },
@@ -85,7 +85,7 @@
   "de": "Grenzkosten sind keine Opportunitätskosten."
  },
  {
-  "tr": "Yeşil aklama baştan aşağıydı; denetim, daha az.",
+  "tr": "Yeşil aklama titizdi; denetim, daha az.",
   "kind": "build.tr",
   "de": "Das Greenwashing war gründlich; die Prüfung weniger."
  },
@@ -137,7 +137,7 @@
  {
   "tr": "Benlik algısı kendini bilmeden pekâlâ daha uzun yaşayabilir.",
   "kind": "build.tr",
-  "de": "Ein Selbstbild überdauert durchaus die Selbsterkenntnis."
+  "de": "Ein Selbstbild dürfte die Selbsterkenntnis durchaus überdauern."
  },
  {
   "tr": "Biri iddiayı savunuyor; bir başkası onu yalnızca doğruluyor.",
@@ -150,9 +150,9 @@
   "de": "Die oben beschriebene Marktdurchdringung führt zu der unten behandelten Marktsättigung."
  },
  {
-  "tr": "İrade serbestisinin yargısal denetimle sınanmasını istiyorlar.",
+  "tr": "Sözleşme özgürlüğünün yargısal denetimle sınanmasını istiyorlar.",
   "kind": "build.tr",
-  "de": "Sie verlangen, dass die Privatautonomie richterlich überprüft werde."
+  "de": "Sie verlangen, dass die Vertragsfreiheit richterlich überprüft werde."
  },
  {
   "tr": "Bilgi edinme özgürlüğü olmasaydı kamuoyu bu dosyaları hiç göremezdi.",
@@ -167,7 +167,7 @@
  {
   "tr": "Yatırım döngüsü tasarruf oranı düşmeden önce pekâlâ dönebilir.",
   "kind": "build.tr",
-  "de": "Der Investitionszyklus dreht durchaus, bevor die Sparquote fällt."
+  "de": "Der Investitionszyklus dürfte durchaus drehen, bevor die Sparquote fällt."
  },
  {
   "tr": "Geri dönülmezliğin gerçek olduğu yerde tutarlı bir plan yetmez.",
@@ -210,9 +210,9 @@
   "de": "Das Streben überlebt als Gewohnheit, der Selbstzweck als Andenken."
  },
  {
-  "tr": "Görecelik bizi ne kadar huzursuz etse de hiçbir ilke kuşkusuz ayakta kalmaz.",
+  "tr": "Görecelik bizi ne kadar huzursuz etse de hiçbir ilke kuşkuya uğramadan ayakta kalmaz.",
   "kind": "build.tr",
-  "de": "So sehr der Relativismus uns verunsichert, keine Maxime überlebt ohne Zweifel."
+  "de": "So sehr der Relativismus uns verunsichert, keine Maxime überlebt, ohne bezweifelt zu werden."
  },
  {
   "tr": "Yukarıdaki etki değerlendirmesi, aşağıdaki fayda değerlendirmesiyle tartılmalı.",
@@ -410,9 +410,9 @@
   "de": "Eine Maxime, die den Zweifel überstanden hat, ist mehr wert als eine nie befragte."
  },
  {
-  "tr": "Tanımlık yok, ek yok, ikinci yarıda fiil yok, özne başta değil.",
+  "tr": "Tanımlık yok, ek yok; nesne başta, özne ondan sonra.",
   "kind": "build.hint",
-  "de": "Kein Artikel, keine Endung, kein Verb in der zweiten Hälfte, kein Subjekt am Anfang."
+  "de": "Kein Artikel, keine Endung; das Objekt steht vorn, das Subjekt danach."
  },
  {
   "tr": "İkisinin de önünde tanımlık var; bir satır sonra aynı sözcük tanımlıksız.",

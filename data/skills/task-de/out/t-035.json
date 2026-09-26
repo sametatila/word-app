@@ -125,7 +125,7 @@
   "de": "Man geht davon aus, dass die Haftung bei uns liegt."
  },
  {
-  "tr": "Ekibi eşgüdümleyen Ana mayısta katıldı.",
+  "tr": "Ekibi eşgüdümleyen Ana, mayısta aramıza katıldı.",
   "kind": "build.tr",
   "de": "Ana, die das Team koordiniert, kam im Mai dazu."
  },
@@ -147,7 +147,7 @@
  {
   "tr": "Yalnızca oturumu yönetmedi, konuşma da yaptı.",
   "kind": "build.tr",
-  "de": "Sie leitete nicht nur, sie sprach auch."
+  "de": "Sie moderierte nicht nur die Sitzung, sie sprach auch selbst."
  },
  {
   "tr": "Cuma günü dolaştırılan ana hat herkese ulaştı.",
@@ -290,9 +290,9 @@
   "de": "Die Kommas machen den Satz zur Zugabe; ein Name braucht keine Auswahl."
  },
  {
-  "tr": "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı öne geliyor.",
+  "tr": "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı bugüne geliyor.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge dauert an, die zweite Hälfte rückt vor."
+  "de": "Gemischte Bedingung: die Folge dauert an, die zweite Hälfte reicht bis heute."
  },
  {
   "tr": "Olumsuz zarf başa geçince yardımcı fiil özneden ÖNE geliyor.",

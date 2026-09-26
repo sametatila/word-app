@@ -197,7 +197,7 @@ export const enA2U04: SkillExercise[] = [
       { speaker: "Nil", text: "Eleven years! Then you know everybody." },
       { speaker: "Mert", text: "Almost. I was born in this city, I moved away for three years and then I came back." },
       { speaker: "Nil", text: "Why did you come back?" },
-      { speaker: "Mert", text: "Because of my family. And because the city has changed a lot since two thousand and ten." },
+      { speaker: "Mert", text: "Because of my family. And because the city has changed a lot since twenty ten." },
       { speaker: "Nil", text: "Changed how?" },
       { speaker: "Mert", text: "More parks, more cafés. Better for children." },
     ],
@@ -275,7 +275,7 @@ export const enA2U04: SkillExercise[] = [
     questions: [
       {
         text: "When is Deniz going to visit his sister?",
-        options: ["on Sunday", "on the weekend", "just now"],
+        options: ["on Sunday", "on Saturday", "just now"],
         answer: 0,
         explain: "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
       },

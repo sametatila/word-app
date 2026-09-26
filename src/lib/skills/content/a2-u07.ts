@@ -166,7 +166,7 @@ export const a2U07: SkillExercise[] = [
       { de: "der Knöchel", tr: "ayak bileği", en: "ankle" },
       { de: "geschwollen", tr: "şişmiş", en: "swollen" },
       { de: "röntgen", tr: "röntgen çekmek", en: "to X-ray" },
-      { de: "der Gips", tr: "alçı", en: "plaster cast" },
+      { de: "der Gips", tr: "alçı", en: "cast" },
       { de: "die Erste Hilfe", tr: "ilk yardım", en: "first aid" },
       { de: "rutschig", tr: "kaygan", en: "slippery" },
       { de: "ausgerutscht", tr: "kaymış", en: "slipped" },
@@ -196,7 +196,7 @@ export const a2U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["mir"],
-        explain: "Almanca „bileğimi incittim“ demez: dönüşlü zamir YÖNELME hâlinde durur ve iyelik yerine belirlilik takısı gelir.",
+        explain: "Almanca burada „meinen Knöchel“ değil „mir den Knöchel“ der: dönüşlü zamir YÖNELME hâlinde durur ve iyelik yerine belirlilik takısı gelir.",
       },
       {
         text: "Was hat der Trainer gemacht?",
@@ -269,7 +269,7 @@ export const a2U07: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Herr Roth'un randevu saatini teyit etmek için sorduğu soruyu yaz.",
+        text: "Herr Roth'un hemen gelmesi gerekip gerekmediğini sorduğu soruyu yaz.",
         options: [],
         answer: 0,
         accept: ["Soll ich sofort kommen?"],
@@ -295,8 +295,9 @@ export const a2U07: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Futbolda bileğimi incittim.",
+        tr: "Futbolda ayak bileğimi incittim.",
         answer: "Beim Fußball habe ich mir den Knöchel verletzt",
+        alternatives: ["Ich habe mir beim Fußball den Knöchel verletzt"],
         hint: "Dönüşlü zamir YÖNELME hâlinde (mir) ve incinen yerin önünde iyelik değil belirlilik takısı var (den).",
       },
       {

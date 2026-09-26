@@ -37,7 +37,7 @@
  {
   "tr": "Şikâyeti ve süresini yaz. Sonunda şikâyet formunu doldur.",
   "kind": "intro",
-  "de": "Schreibe die Beschwerde und ihre Dauer. Am Ende füllst du das Beschwerdeformular aus."
+  "de": "Schreibe die Beschwerden und ihre Dauer. Am Ende füllst du den Symptombogen aus."
  },
  {
   "tr": "Üç çanta karşılaştırılıyor. Kısa sıfat mı, uzun sıfat mı?",
@@ -173,11 +173,6 @@
   "tr": "„Which one is better?“ — „good“ düzensiz: better, „gooder“ yok.",
   "kind": "explain",
   "de": "„Which one is better?“ — „good“ ist unregelmäßig: better, „gooder“ gibt es nicht."
- },
- {
-  "tr": "„You shouldn't drink coffee with a fever! You should avoid it.“",
-  "kind": "explain",
-  "de": "„You shouldn't drink coffee with a fever! You should avoid it.“"
  },
  {
   "tr": "Önce süre, sonra gelişim, sonra hekimler, en son bugünkü çözüm.",
@@ -357,7 +352,7 @@
  {
   "tr": "masa",
   "kind": "gloss.tr",
-  "de": "Schreibtisch"
+  "de": "Tafel"
  },
  {
   "tr": "artık",
@@ -373,6 +368,11 @@
   "tr": "hedef",
   "kind": "gloss.tr",
   "de": "Ziel"
+ },
+ {
+  "tr": "hırs",
+  "kind": "gloss.tr",
+  "de": "Ehrgeiz"
  },
  {
   "tr": "kalın",

@@ -115,7 +115,7 @@
   "de": "Die Ausschreibung lebt als Formular weiter, die Genehmigung als Verzögerung. Wem gehört was?"
  },
  {
-  "tr": "Yeşil aklama baştan aşağıydı; denetim daha az. Hangi ad hangisini örtüyor?",
+  "tr": "Yeşil aklama titizdi; denetim daha az. Hangi ad hangisini örtüyor?",
   "kind": "intro",
   "de": "Das Greenwashing war gründlich, die Prüfung weniger. Welcher Name deckt welchen zu?"
  },
@@ -437,7 +437,7 @@
  {
   "tr": "bilanço",
   "kind": "gloss.tr",
-  "de": "die Vermögensaufstellung"
+  "de": "Bilanz"
  },
  {
   "tr": "bulunan",
@@ -745,11 +745,6 @@
   "de": "der Ausreißer"
  },
  {
-  "tr": "baştan aşağı",
-  "kind": "gloss.tr",
-  "de": "gründlich"
- },
- {
   "tr": "çekimli fiil",
   "kind": "gloss.tr",
   "de": "das finite Verb"
@@ -985,9 +980,9 @@
   "de": "in beide Richtungen zugleich"
  },
  {
-  "tr": "irade serbestisi",
+  "tr": "sözleşme özgürlüğü",
   "kind": "gloss.tr",
-  "de": "die Privatautonomie"
+  "de": "Vertragsfreiheit"
  },
  {
   "tr": "kendini kandırma",

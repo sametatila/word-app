@@ -110,11 +110,6 @@
   "de": "„…the answer is two words: You're welcome.“"
  },
  {
-  "tr": "„Done. Tuesday, ten o'clock, with a sound.“",
-  "kind": "explain",
-  "de": "„Done. Tuesday, ten o'clock, with a sound.“"
- },
- {
   "tr": "Deneyim sorusu: „see“nin üçüncü hâli „seen“.",
   "kind": "explain",
   "de": "Eine Erfahrungsfrage: die dritte Form von „see“ ist „seen“."
@@ -222,7 +217,7 @@
  {
   "tr": "ses",
   "kind": "gloss.tr",
-  "de": "Ton"
+  "de": "Stimme"
  },
  {
   "tr": "benim",
@@ -262,7 +257,7 @@
  {
   "tr": "dışında",
   "kind": "gloss.tr",
-  "de": "außer"
+  "de": "abgesehen von"
  },
  {
   "tr": "evliler",

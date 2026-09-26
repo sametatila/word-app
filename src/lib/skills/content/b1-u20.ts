@@ -173,7 +173,7 @@ export const b1U20: SkillExercise[] = [
     intro: "Bir aşı öncesi konuşma. Ne koruyor, ne yan etki var?",
     minutes: 4,
     gloss: [
-      { de: "der Virus", tr: "virüs", en: "virus" },
+      { de: "das Virus", tr: "virüs", en: "virus" },
       { de: "schützen", tr: "korumak", en: "to protect" },
       { de: "auftreten", tr: "ortaya çıkmak", en: "to occur" },
       { de: "die Haut", tr: "cilt", en: "skin" },
@@ -182,19 +182,19 @@ export const b1U20: SkillExercise[] = [
     segments: [
       { text: "Sie bekommen heute die Impfung. Haben Sie noch Fragen?" },
       { text: "Wie lange schützt sie denn?" },
-      { text: "Etwa fünf Jahre. Danach kommen Sie zur Kontrolle. Der Virus bleibt nur kurze Zeit gefährlich." },
+      { text: "Etwa fünf Jahre. Danach kommen Sie zur Kontrolle, damit der Schutz gegen das Virus bleibt." },
       { text: "Und was kann danach auftreten?" },
       { text: "Die Haut wird an der Stelle rot, manchmal für zwei Tage." },
       { text: "Ist das gefährlich?" },
       { text: "Nein, harmlos. Wenn Sie Fieber bekommen, rufen Sie an." },
-      { text: "Gut. Ich konnte letztes Jahr nicht kommen, deshalb bin ich froh." },
+      { text: "Gut. Ich konnte letztes Jahr nicht kommen, deshalb bin ich froh, dass es jetzt klappt." },
     ],
     questions: [
       {
         text: "Wie lange schützt die Impfung?",
         options: ["Etwa fünf Jahre", "Ein Jahr", "Für immer"],
         answer: 0,
-        explain: "„Etwa fünf Jahre. Danach kommen Sie zur Kontrolle.“",
+        explain: "„Etwa fünf Jahre. Danach kommen Sie zur Kontrolle …“",
       },
       {
         text: "Was kann danach auftreten?",
@@ -210,7 +210,7 @@ export const b1U20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ich ___ letztes Jahr nicht kommen, deshalb bin ich froh.",
+        text: "Ich ___ letztes Jahr nicht kommen, deshalb bin ich froh, dass es jetzt klappt.",
         options: [],
         answer: 0,
         accept: ["konnte"],
@@ -339,9 +339,9 @@ export const b1U20: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Süre edatını düzelt.",
-        source: "Ich bin krank für drei Tage und ich nehme die Pille seit morgen.",
-        answer: "Ich bin seit drei Tagen krank und ich nehme die Pille für eine Woche.",
-        why: "Türkçede '-den beri' ile 'için' birbirine yakın durur ve ikisi de süre anlatır, o yüzden karışıyor. Almanca ayırır: HÂLÂ SÜREN bir durum seit + Dativ ister ve şimdiki zamanla kurulur ('seit drei Tagen krank'); für ise PLANLANAN bir süreyi anlatır ('für eine Woche'). 'seit morgen' olmaz, çünkü yarın henüz başlamadı.",
+        source: "Ich bin krank für drei Tage, und der Arzt sagt, ich soll die Pille seit einer Woche nehmen.",
+        answer: "Ich bin seit drei Tagen krank, und der Arzt sagt, ich soll die Pille für eine Woche nehmen.",
+        why: "Türkçede '-den beri' ile 'için' birbirine yakın durur ve ikisi de süre anlatır, o yüzden karışıyor. Almanca ayırır: HÂLÂ SÜREN bir durum seit + Dativ ister ve şimdiki zamanla kurulur ('seit drei Tagen krank'); für ise PLANLANAN bir süreyi anlatır ('für eine Woche'). Doktorun verdiği hafta henüz başlamadı, yani planlanan bir süredir: 'seit' değil, für eine Woche.",
       },
     ],
   },

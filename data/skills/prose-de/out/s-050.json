@@ -25,9 +25,9 @@
   "de": "Altes vorn, Neues hinten. Warum?"
  },
  {
-  "tr": "Olumsuzla söylenen olumlu ve üç bağlayıcı.",
+  "tr": "Olumsuzla söylenen olumlu: üç kalıp ve „the latter“.",
   "kind": "intro",
-  "de": "Das Positive, verneint gesagt, und drei Verknüpfungen."
+  "de": "Das Positive, verneint gesagt: drei Muster und „the latter“."
  },
  {
   "tr": "Aynı içerik, üç mektup. Fark nerede duruyor?",
@@ -107,7 +107,7 @@
  {
   "tr": "Ödün, ama içinde bir kişi var: eşit tartmak isteyen ben.",
   "kind": "explain",
-  "de": "Eine Einräumung, aber mit einer Person darin: ich, die gern gleich abwägen würde."
+  "de": "Eine Einräumung, aber mit einer Person darin: dem Ich, das gern gleich abwägen würde."
  },
  {
   "tr": "Edilgen ortaç: aktarma bağlamı değiştiriyor.",
@@ -212,7 +212,7 @@
  {
   "tr": "her ne kadar",
   "kind": "gloss.tr",
-  "de": "obwohl"
+  "de": "so sehr … auch"
  },
  {
   "tr": "hitap",
@@ -327,7 +327,7 @@
  {
   "tr": "buyruk",
   "kind": "gloss.tr",
-  "de": "Befehl"
+  "de": "Gebot"
  },
  {
   "tr": "deneme",

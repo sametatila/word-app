@@ -174,7 +174,7 @@ export const b1U32: SkillExercise[] = [
     unit: 32,
     title: "Im Hafen",
     genre: "dialogue",
-    intro: "Bir liman gezisi planlanıyor. Feribot ne zaman, nereye?",
+    intro: "Bir liman gezisi planlanıyor. Feribot ne zaman, önce ne görülecek?",
     minutes: 4,
     gloss: [
       { de: "der Hafen", tr: "liman", en: "harbor" },
@@ -244,7 +244,7 @@ export const b1U32: SkillExercise[] = [
       { de: "das Tal", tr: "vadi", en: "valley" },
       { de: "der Nebel", tr: "sis", en: "fog" },
       { de: "der Sturm", tr: "fırtına", en: "storm" },
-      { de: "umschlagen", tr: "tersine dönmek", en: "to swing around" },
+      { de: "umschlagen", tr: "birden değişmek", en: "to change suddenly" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
@@ -332,7 +332,7 @@ export const b1U32: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Gezi kartını doldur.",
-        facts: "Ay: temmuz; yer: sahil; konaklama: dağ evi; gezilen: kule ve anıt; ulaşım: feribot.",
+        facts: "Ay: temmuz; yer: sahil; konaklama: kulübe; gezilen: kule ve anıt; ulaşım: feribot.",
         fields: [
           { label: "Monat", answer: "Juli", accept: ["im Juli"] },
           { label: "Ort", answer: "an der Küste", accept: ["Küste", "die Küste"] },
@@ -360,7 +360,7 @@ export const b1U32: SkillExercise[] = [
     minutes: 12,
     gloss: [
       { de: "der Wohnsitz", tr: "ikametgâh", en: "residence" },
-      { de: "das Quartier", tr: "semt", en: "quarter" },
+      { de: "das Quartier", tr: "semt", en: "neighborhood" },
       { de: "der Vorort", tr: "banliyö", en: "suburb" },
       { de: "die Zone", tr: "bölge", en: "zone" },
       { de: "stürmen", tr: "fırtına esmek", en: "to storm" },
@@ -395,12 +395,12 @@ export const b1U32: SkillExercise[] = [
           "Liebe alle,\n\n" +
           "in drei Wochen ziehen wir um. Wir verlassen die Metropole und " +
           "gehen in einen Vorort im Norden, etwa zwanzig Minuten mit dem Zug.\n\n" +
-          "Der Grund ist einfach: für dasselbe Geld bekommen wir dort zwei " +
+          "Der Grund ist einfach: Für dasselbe Geld bekommen wir dort zwei " +
           "Zimmer mehr, und die Wohnung liegt am Rand einer Wiese. " +
           "Als wir das erste Mal dort waren, hat es gestürmt — und trotzdem " +
           "wollten wir bleiben.\n\n" +
-          "Was fehlen wird, ist die Auswahl am Abend. Hier schließt der " +
-          "letzte Laden um acht. Wir haben aber gemerkt: nach zwei Wochen " +
+          "Was fehlen wird, ist die Auswahl am Abend. Dort schließt der " +
+          "letzte Laden um acht. Freunde dort sagen aber: Nach zwei Wochen " +
           "in der Region ist das ganz normal. Das Quartier ist ruhig und die ganze Zone gehört zur Region.\n\n" +
           "Der neue Wohnsitz steht unten. Kommt uns besuchen, am besten " +
           "im Sommer, wenn man auf dem Hügel sitzen kann.",
@@ -413,8 +413,8 @@ export const b1U32: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Zaman edatını düzelt.",
-        source: "Nach zwei Wochen ziehen wir um, und in zwei Wochen dort war das für mich normal.",
-        answer: "In zwei Wochen ziehen wir um, und nach zwei Wochen dort war das für mich normal.",
+        source: "Nach zwei Wochen ziehen wir um, und in zwei Wochen dort ist das sicher normal.",
+        answer: "In zwei Wochen ziehen wir um, und nach zwei Wochen dort ist das sicher normal.",
         why: "Türkçe 'iki hafta sonra' der ve ŞİMDİDEN mi yoksa BİR OLAYDAN sonra mı olduğunu bağlama bırakır, o yüzden Almancada tek edat seçiliyor. Almanca ayırır: şimdiden itibaren gelecek bir an için in zwei Wochen; bir başlangıçtan sonra geçen süre için nach zwei Wochen. Yanlış seçim cümleyi geçmişe ya da geleceğe kaydırır.",
       },
     ],

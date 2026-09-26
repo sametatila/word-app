@@ -303,7 +303,7 @@ export const enA1U12: SkillExercise[] = [
           "I don't have enough cheese.",
           "I don't have much money today.",
         ],
-        explain: "Önce zaman, sonra patates, sonra peynir, en son para. Sayılamayan ile sayılabilen birbirini izliyor.",
+        explain: "Önce zaman, sonra patates, sonra peynir, en son para.",
       },
       {
         kind: "short_answer",
@@ -337,7 +337,7 @@ export const enA1U12: SkillExercise[] = [
         kind: "build",
         tr: "Beğendim.",
         answer: "I like it.",
-        hint: "Nesne „it“ zorunlu: İngilizcede fiil nesnesiz kalmaz.",
+        hint: "„like“ nesnesiz kalmaz: „I like.“ değil, „I like it.“",
       },
       {
         kind: "build",

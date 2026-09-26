@@ -268,7 +268,7 @@ export const a2U09: SkillExercise[] = [
         text: "Wann darf man nicht vor dem Haus parken?",
         options: [],
         answer: 0,
-        accept: ["dienstags", "am Dienstag"],
+        accept: ["dienstags", "am Dienstag", "jeden Dienstag", "Dienstag"],
         explain: "„Nur dienstags nicht, da kommt die Straßenreinigung.“",
       },
     ],
@@ -305,6 +305,7 @@ export const a2U09: SkillExercise[] = [
         kind: "build",
         tr: "Çiçekleri lütfen oraya koy.",
         answer: "Stell die Blumen bitte dort hin",
+        alternatives: ["Stell bitte die Blumen dort hin"],
         hint: "Emirde fiil başa geçer; ayrılabilen ön ek cümlenin sonuna düşer ve yönü gösterir.",
       },
       {
@@ -348,7 +349,7 @@ export const a2U09: SkillExercise[] = [
         ],
         minWords: 45,
         phrases: [
-          { de: "Der Bäcker ist direkt nebenan.", tr: "fırın hemen yan tarafta", en: "the baker is right next door" },
+          { de: "Der Bäcker ist direkt nebenan.", tr: "fırın hemen yan tarafta", en: "the bakery is right next door" },
           { de: "Da drüben gibt es einen Supermarkt.", tr: "karşıda bir süpermarket var", en: "there is a supermarket over there" },
           { de: "Die Bushaltestelle liegt fünf Minuten weiter.", tr: "otobüs durağı beş dakika ileride", en: "the bus stop is five minutes further on" },
         ],

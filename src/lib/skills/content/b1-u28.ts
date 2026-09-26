@@ -204,7 +204,7 @@ export const b1U28: SkillExercise[] = [
         explain: "„Als Treffpunkt nehmen wir die Brücke.“",
       },
       {
-        text: "Was bringt die zweite Person mit?",
+        text: "Was bringt die erste Person mit?",
         options: ["Tücher und eine Vase", "Kuchen", "Nichts"],
         answer: 0,
         explain: "„Ich bringe Tücher und eine Vase mit, für den Tisch.“",
@@ -239,7 +239,7 @@ export const b1U28: SkillExercise[] = [
     gloss: [
       { de: "umtauschen", tr: "değiştirmek", en: "to exchange" },
       { de: "der Beleg", tr: "fiş", en: "receipt" },
-      { de: "die Garantie", tr: "garanti", en: "guarantee" },
+      { de: "die Garantie", tr: "garanti", en: "warranty" },
       { de: "der Ersatz", tr: "yedek / ikame", en: "replacement" },
       { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
@@ -320,7 +320,7 @@ export const b1U28: SkillExercise[] = [
         kind: "build",
         tr: "Bu, gerçekten önemli olan şey.",
         answer: "Das ist das, was wirklich zählt.",
-        hint: "İsimleşmiş sıfat sonrası da „was“.",
+        hint: "İşaret zamiri „das“tan sonra da „was“.",
       },
       {
         kind: "build",
@@ -361,13 +361,13 @@ export const b1U28: SkillExercise[] = [
       { de: "der Umtausch", tr: "değişim", en: "exchange" },
       { de: "der Beleg", tr: "fiş", en: "receipt" },
       { de: "der Käufer", tr: "alıcı", en: "buyer" },
-      { de: "die Verkäuferin", tr: "satıcı", en: "sales assistant", note: "kadın biçimi" },
+      { de: "die Verkäuferin", tr: "satıcı", en: "saleswoman", note: "kadın biçimi" },
     ],
     tasks: [
       {
         kind: "build",
         tr: "Yedek olarak yeni bir alet rica ediyorum.",
-        answer: "Ich bitte als Ersatz um ein neues Gerät oder um einen Umtausch.",
+        answer: "Ich bitte als Ersatz um ein neues Gerät.",
         hint: "„als Ersatz“ — artikel yok.",
       },
       {

@@ -467,7 +467,7 @@ export const enC1U13: SkillExercise[] = [
         kind: "build",
         tr: "Anlam bağlamının eksik olduğu yerde gerçek anlam tutmaz.",
         answer: "Where the semantic context is missing, the literal meaning does not hold.",
-        hint: "„Where“ bir yer değil, „şu durumlarda ki“ demek.",
+        hint: "„Where“ bir yer bildirmiyor; „…diği durumlarda“ demek.",
       },
       {
         kind: "build",

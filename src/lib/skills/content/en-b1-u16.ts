@@ -276,19 +276,19 @@ export const enB1U16: SkillExercise[] = [
     intro: "Bir fikir savunuluyor. Gerekçe nerede duruyor?",
     gloss: [
       { de: "obvious", tr: "apaçık" },
-      { de: "the catch", tr: "işin püf noktası" },
+      { de: "the catch", tr: "işin kötü yanı" },
       { de: "I mean", tr: "demek istediğim" },
       { de: "system", tr: "sistem" },
       { de: "matters", tr: "önemli" },
       { de: "themselves", tr: "kendileri" },
-      { de: "verdict", tr: "mahkeme kararı" },
+      { de: "verdict", tr: "hüküm" },
     ],
     minutes: 6,
     segments: [
       { speaker: "Nil", text: "You tried the new system for a month. Verdict?" },
       { speaker: "Mert", text: "I believe it works, because I have tried it. That second half is the only part that matters." },
       { speaker: "Nil", text: "Plenty of people believe things they have not tried." },
-      { speaker: "Mert", text: "That is my point. I am not saying it is good. I am saying I have four weeks of evidence and they are not." },
+      { speaker: "Mert", text: "That is my point. I am not saying it is good. I am saying I have four weeks of evidence and they do not." },
       { speaker: "Nil", text: "What is the catch?" },
       { speaker: "Mert", text: "It is a strong idea. However, it costs a lot in the first month, and most teams stop in week two." },
       { speaker: "Nil", text: "So it works for people who finish." },
@@ -298,7 +298,7 @@ export const enB1U16: SkillExercise[] = [
       { speaker: "Nil", text: "That is not what the website says." },
       { speaker: "Mert", text: "Although it is obvious, nobody says it. A tool that needs a month is not a tool for a bad month." },
       { speaker: "Nil", text: "Fair. And after four weeks?" },
-      { speaker: "Mert", text: "Probably I keep it. I mean: I have not decided, and anybody who has decided after four weeks is telling you about themselves, not the tool." },
+      { speaker: "Mert", text: "I will probably keep it. I mean: I have not decided, and anybody who has decided after four weeks is telling you about themselves, not the tool." },
     ],
     questions: [
       {
@@ -366,7 +366,7 @@ export const enB1U16: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Başlığı şaşırtıcı buluyorum.",
+        tr: "Başlığı şok edici buluyorum.",
         answer: "I find the headline shocking.",
         hint: "Fiil, nesne, sıfat: arada „to be“ de „that“ de yok.",
       },
@@ -395,7 +395,7 @@ export const enB1U16: SkillExercise[] = [
         fields: [
           { label: "Published", answer: "this morning", accept: ["today"] },
           { label: "Sites", answer: "four", accept: ["4"] },
-          { label: "Readers", answer: "forty thousand", accept: ["40000"] },
+          { label: "Readers", answer: "forty thousand", accept: ["40000", "40,000"] },
           { label: "Headline", answer: "not the journalist", accept: ["somebody else"] },
         ],
       },
@@ -411,7 +411,7 @@ export const enB1U16: SkillExercise[] = [
     genre: "opinion",
     intro: "Katılmanın dereceleri. Hangi koşul gerçek, hangisi değil?",
     gloss: [
-      { de: "If you mean", tr: "kastettiğin" },
+      { de: "If you mean", tr: "kastediyorsan" },
       { de: "depends on", tr: "bağlı" },
       { de: "sure", tr: "emin" },
     ],
@@ -425,7 +425,7 @@ export const enB1U16: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Emin olsaydım evet derdim.",
+        tr: "Emin olsam evet derdim.",
         answer: "If I were sure, I would say yes.",
         hint: "Gerçek olmayan koşulda „I“ yanında bile „were“ geliyor.",
       },

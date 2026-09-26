@@ -266,7 +266,7 @@ export const enC1U10: SkillExercise[] = [
       { de: "borrowed", tr: "ödünç alınmış" },
       { de: "a complaint", tr: "şikâyet" },
       { de: "louder", tr: "daha yüksek sesli" },
-      { de: "spare", tr: "yedek" },
+      { de: "spare", tr: "fazladan" },
       { de: "an inserted clause", tr: "araya sokulmuş cümlecik" },
       { de: "reported", tr: "aktarılmış" },
       { de: "a verdict", tr: "hüküm" },
@@ -327,7 +327,7 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who does the reader meet first?",
+        text: "What does the reader meet first?",
         options: [],
         answer: 0,
         accept: ["the verdict", "the words", "the adjectives"],
@@ -516,7 +516,7 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Dik başlı bir çocuk, dediler, ve epeyce her şeyi merak eden.",
+        tr: "Dik başlı bir çocuk, dediler, ve epey meraklı.",
         answer: "A headstrong child, they said, and rather inquisitive.",
         hint: "Araya sokulmuş cümlecik hükümden sonra geliyor.",
       },

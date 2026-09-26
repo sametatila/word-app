@@ -201,7 +201,7 @@ export const enA2U03: SkillExercise[] = [
       { speaker: "Ela", text: "Seventy?" },
       { speaker: "Deniz", text: "Ninety-two! And he was still working." },
       { speaker: "Ela", text: "Ninety-two! What happened after that?" },
-      { speaker: "Deniz", text: "We went back to the hotel and we slept twelve hours." },
+      { speaker: "Deniz", text: "We went back to my friend's house and we slept twelve hours." },
     ],
     questions: [
       {

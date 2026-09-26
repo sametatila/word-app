@@ -178,7 +178,7 @@ export const b1U27: SkillExercise[] = [
     minutes: 4,
     gloss: [
       { de: "übrig", tr: "artan", en: "left over" },
-      { de: "die Büchse", tr: "kutu", en: "tin" },
+      { de: "die Büchse", tr: "kutu", en: "container; can" },
       { de: "die Tüte", tr: "poşet", en: "bag" },
       { de: "roh", tr: "çiğ", en: "raw" },
       { de: "beste", tr: "en iyi", en: "best" },
@@ -267,13 +267,13 @@ export const b1U27: SkillExercise[] = [
         explain: "„Fast immer. Zwei Euro achtzig …“",
       },
       {
-        text: "Warum geht die zweite Person lieber zum Imbiss?",
+        text: "Warum geht die erste Person lieber zum Imbiss?",
         options: ["Es ist billiger", "Es ist ruhiger", "Es ist näher"],
         answer: 1,
         explain: "„Dafür ist es dort ruhiger und ich brauche nur eine Semmel.“",
       },
       {
-        text: "Was sagt die erste Person über die Mensa?",
+        text: "Was sagt die zweite Person über die Mensa?",
         options: ["Sie isst dort meistens zu viel", "Sie geht nie hin", "Es ist zu teuer"],
         answer: 0,
         explain: "„Ich esse in der Mensa meistens zu viel.“",
@@ -288,7 +288,7 @@ export const b1U27: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was braucht die zweite Person beim Imbiss?",
+        text: "Was braucht die erste Person beim Imbiss?",
         options: [],
         answer: 0,
         accept: ["nur eine Semmel", "eine Semmel", "Semmel"],
@@ -328,26 +328,26 @@ export const b1U27: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Izgaradaki et çok yağsız olmamalı.",
+        tr: "Izgaradaki et fazla yağsız olmamalı.",
         answer: "Das Fleisch vom Grill soll nicht zu mager sein.",
         hint: "Yüklemdeki sıfat çekilmez.",
       },
       {
         kind: "form",
         prompt: "Yemek kartını doldur.",
-        facts: "Yemek: fırın kızartması; pişirme: fırın, 3 saat; sıcaklık: düşük; dinlendirme: 20 dakika; yanında: ekmek ve turşu.",
+        facts: "Yemek: fırın kızartması; kişi sayısı: 4; pişirme: fırın, 3 saat; sıcaklık: düşük; dinlendirme: 20 dakika; yanında: ekmek ve turşu.",
         fields: [
           { label: "Gericht", answer: "Braten", accept: ["der Braten", "ein Braten"] },
           { label: "Wie", answer: "im Ofen", accept: ["Ofen", "im Ofen, 3 Stunden"] },
           { label: "Ruhezeit", answer: "20 Minuten", accept: ["zwanzig Minuten"] },
-          { label: "Dazu", answer: "Brot und Gemüse", accept: ["Brot", "Brot und eingelegtes Gemüse"] },
+          { label: "Dazu", answer: "Brot und eingelegtes Gemüse", accept: ["Brot und Gemüse", "Brot", "Brot und saure Gurken", "Brot und Essiggurken"] },
           { label: "Anzahl", answer: "4", accept: ["vier", "vier Personen"] },
         ],
       },
       {
         kind: "rewrite",
         prompt: "Üstünlük biçimlerini düzelt.",
-        source: "Am besten Braten meiner Kindheit schmeckte das beste im Ofen.",
+        source: "Am besten Braten meiner Kindheit schmeckte das beste aus dem Ofen.",
         answer: "Der beste Braten meiner Kindheit schmeckte am besten aus dem Ofen.",
         why: "Türkçede 'en' TEK sözcüktür ve sıfatta da zarfta da aynıdır ('en iyi yemek' · 'en iyi burada olur'), o yüzden Almancada iki biçim karışıyor. Almanca ayırır: İSİMDEN ÖNCE der/die/das beste (çekimli sıfat), FİİLİ niteliyorsa am besten (değişmez zarf).",
       },
@@ -363,7 +363,7 @@ export const b1U27: SkillExercise[] = [
     intro: "Lokantadaki bir sorunu yaz. 'bir şey' + sıfat Almancada isimleşir.",
     minutes: 12,
     gloss: [
-      { de: "die Wirtin", tr: "işletmeci", en: "landlady", note: "kadın biçimi" },
+      { de: "die Wirtin", tr: "işletmeci", en: "restaurant owner", note: "kadın biçimi" },
       { de: "der Fleck", tr: "leke", en: "stain" },
       { de: "salzig", tr: "tuzlu", en: "salty" },
       { de: "die Ausgabe", tr: "harcama", en: "expense" },
@@ -410,7 +410,7 @@ export const b1U27: SkillExercise[] = [
           "Mit freundlichen Grüßen\nSedef Aydın",
         phrases: [
           { de: "Ich hatte etwas Warmes bestellt.", tr: "Sıcak bir şey sipariş etmiştim.", en: "I had ordered something warm." },
-          { de: "Ich habe das sofort gesagt.", tr: "Bunu hemen söyledim.", en: "I said so straight away." },
+          { de: "Ich habe das sofort gesagt.", tr: "Bunu hemen söyledim.", en: "I said so right away." },
           { de: "Ich schreibe nicht, weil …", tr: "… olduğu için yazmıyorum.", en: "I am not writing because …" },
         ],
       },

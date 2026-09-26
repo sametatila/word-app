@@ -312,7 +312,7 @@ export const enB2U02: SkillExercise[] = [
         text: "What was the root cause?",
         options: [],
         answer: 0,
-        accept: ["an assumption", "an assumption nobody wrote", "a change"],
+        accept: ["an assumption", "an assumption nobody wrote down", "the assumption"],
         explain: "„An assumption nobody wrote down.“",
       },
     ],
@@ -432,7 +432,7 @@ export const enB2U02: SkillExercise[] = [
         kind: "build",
         tr: "Daha iyi planlasaydık kayıp şimdi daha küçük olurdu.",
         answer: "If we had planned better, the loss would be smaller now.",
-        hint: "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı öne geliyor.",
+        hint: "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı bugüne geliyor.",
       },
       {
         kind: "build",

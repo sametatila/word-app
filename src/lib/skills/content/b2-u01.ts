@@ -240,7 +240,7 @@ export const b2U01: SkillExercise[] = [
         text: "Warum will Nadja nicht überziehen?",
         options: [],
         answer: 0,
-        accept: ["es bringt niemandem etwas", "das bringt niemandem etwas", "es hilft niemandem"],
+        accept: ["es bringt niemandem etwas", "das bringt niemandem etwas", "es hilft niemandem", "es bringt am Ende niemandem etwas", "weil es niemandem etwas bringt"],
         explain: "„Ich würde ungern überziehen, das bringt am Ende niemandem etwas.“",
       },
       {
@@ -277,12 +277,11 @@ export const b2U01: SkillExercise[] = [
       { de: "bekanntgeben", tr: "açıklamak", en: "to announce" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
-      { de: "ergänzen", tr: "tamamlamak", en: "to complete" },
+      { de: "ergänzen", tr: "eklemek", en: "to add" },
       { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "chic/schick", tr: "şık", en: "stylish" },
       { de: "die Fassung", tr: "sürüm", en: "version" },
-      { de: "rausgehen", tr: "dışarı çıkmak", en: "to go out" },
-      { de: "schick", tr: "şık", en: "stylish" },
+      { de: "rausgehen", tr: "gönderilmek", en: "to go out" },
+      { de: "schicken", tr: "göndermek", en: "to send" },
     ],
     minutes: 5,
     segments: [
@@ -369,18 +368,21 @@ export const b2U01: SkillExercise[] = [
         kind: "build",
         tr: "Düşüş mart ayında kayda geçirildi.",
         answer: "Der Rückgang ist im März verzeichnet worden",
+        alternatives: ["Im März ist der Rückgang verzeichnet worden"],
         hint: "Edilgen Perfekt: yardımcı fiil sein, ortaç, sonda kısalmış biçim worden.",
       },
       {
         kind: "build",
         tr: "Cuma günü için kısa bir toplantı çağırmayı öneririm.",
         answer: "Ich würde vorschlagen, für Freitag eine kurze Sitzung einzuberufen",
+        alternatives: ["Ich würde vorschlagen, eine kurze Sitzung für Freitag einzuberufen"],
         hint: "Dilek kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer.",
       },
       {
         kind: "build",
         tr: "Bay Klein rakamların henüz kontrol edilmediğini belirtti.",
         answer: "Herr Klein stellte fest, die Zahlen seien noch nicht geprüft",
+        alternatives: ["Die Zahlen seien noch nicht geprüft, stellte Herr Klein fest"],
         hint: "Aktarım kipi çoğulda seien; tutanak dili mesafeyi böyle kurar.",
       },
       {
@@ -425,7 +427,7 @@ export const b2U01: SkillExercise[] = [
         minWords: 70,
         phrases: [
           { de: "Es wurde beschlossen, dass …", tr: "…-e karar verildi", en: "it was decided that …" },
-          { de: "Frau X stellte fest, … sei …", tr: "X hanım …-in … olduğunu belirtti", en: "Ms X stated that … was …" },
+          { de: "Frau X stellte fest, … sei …", tr: "X hanım …-in … olduğunu belirtti", en: "Ms. X stated that … was …" },
           { de: "Die Freigabe steht noch aus.", tr: "onay hâlâ bekleniyor", en: "approval is still pending" },
         ],
         sample:

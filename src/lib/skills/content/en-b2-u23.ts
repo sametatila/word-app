@@ -419,7 +419,7 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Taahhütlü mektup gönderilmesi kayda geçiyor.",
+        tr: "Taahhütlü bir mektubun gönderilmesi kayda geçiyor.",
         answer: "The sending of a certified letter is recorded.",
         hint: "Aynı biçim; başlık dili böyle kuruluyor.",
       },
@@ -485,7 +485,7 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bunun sözsüz bir işaret olduğu anlaşılıyor.",
+        tr: "Bu, sözsüz bir işaret gibi görünüyor.",
         answer: "It seems to be a nonverbal signal.",
         hint: "Tek çekince yeter.",
       },

@@ -426,18 +426,18 @@ export const enC1U06: SkillExercise[] = [
       {
         kind: "build",
         tr: "Boyun eğmek tartışmayı yitirmektir.",
-        answer: "To resign oneself is to forfeit the argument.",
+        answer: "To give in is to forfeit the argument.",
         hint: "Olumlu biçim bir özdeşlik kuruyor.",
       },
       {
         kind: "build",
         tr: "Bir görev süresinin verdiğini takdir yetkisi alabilir.",
         answer: "What a term of office grants, discretion can take.",
-        hint: "Öne çıkarılmış nesne; dördüncü sözcük „is“ değil.",
+        hint: "Öne çıkarılmış nesne; „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
       },
       {
         kind: "build",
-        tr: "Yeni üyeler yemin etmeden önce grubu oylamada yendiler.",
+        tr: "Yeni üyelere yemin ettirilmeden önce grubu oylamada yendiler.",
         answer: "They outvoted the group before the new members were sworn in.",
         hint: "İki eşdizim bir cümlede; edilgende parçacık sonda kalmış.",
       },

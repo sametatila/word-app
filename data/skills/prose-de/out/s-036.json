@@ -145,6 +145,11 @@
   "de": "die fünfte"
  },
  {
+  "tr": "altıncı",
+  "kind": "gloss.tr",
+  "de": "sechste"
+ },
+ {
   "tr": "hiçbir yerde",
   "kind": "gloss.tr",
   "de": "nirgends"
@@ -185,7 +190,7 @@
   "de": "dazwischen"
  },
  {
-  "tr": "bitti",
+  "tr": "bozuldu",
   "kind": "gloss.tr",
   "de": "ging kaputt"
  },
@@ -425,7 +430,7 @@
   "de": "wird ermittelt"
  },
  {
-  "tr": "tadını kaçırmak",
+  "tr": "sürprizi ele vermek",
   "kind": "gloss.tr",
   "de": "verraten"
  },

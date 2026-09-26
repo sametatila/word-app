@@ -457,9 +457,9 @@ export const c1U03: SkillExercise[] = [
         ],
         sample:
           "Stellen Sie sich vor, jede kleine Bäckerei wüsste am Vorabend, wie viel Brot sie morgen wirklich verkauft.\n\n" +
-          "Der Bedarf ist da: Jede vierte Backware wandert abends in die Tonne. Unsere Vorhersage senkt genau das.\n\n" +
+          "Der Bedarf ist da: Was abends übrig bleibt, wandert in die Tonne. Unsere Vorhersage senkt genau das.\n\n" +
           "Der Clou daran ist, dass wir keine neue Hardware brauchen. Wir rechnen mit den Kassendaten, die jede Bäckerei ohnehin erzeugt — die Wettbewerber verlangen eine eigene Waage.\n\n" +
-          "Belegen können wir das: In sechs Monaten mit 140 Bäckereien ist der Ausschuss um 31 Prozent gesunken. Die Einrichtung dauert einen Nachmittag.\n\n" +
+          "Belegen können wir das: In sechs Monaten mit 140 Bäckereien ist der Ausschuss um 31 Prozent gesunken.\n\n" +
           "Eine Grenze nenne ich Ihnen gleich selbst. Ab etwa 500 Filialen reicht die Kassenquelle nicht mehr; wir brauchen dann eine zweite Datenquelle. Das ist gelöst, aber nicht billig, und es ist der Punkt, an dem wir Kapital brauchen.\n\n" +
           "Alles davor läuft heute schon.",
       },

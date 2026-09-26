@@ -191,9 +191,9 @@ export const b1U21: SkillExercise[] = [
     ],
     segments: [
       { text: "Seit Mai ist die Marktstraße eine Fußgängerzone. Wie finden Sie das?" },
-      { text: "Sehr gut. Ich gehe hier mit den Kindern, statt Angst zu haben." },
+      { text: "Sehr gut. Ich gehe hier mit den Kindern zu Fuß, statt mit dem Auto zu fahren." },
       { text: "Und Sie?" },
-      { text: "Für mich ist die Strecke jetzt länger. Ich muss zwei Ausfahrten weiter." },
+      { text: "Für mich ist die Strecke jetzt länger. Ich muss zwei Ausfahrten weiter fahren." },
       { text: "Aber die Luft ist besser geworden, das merkt man." },
       { text: "Das schon. Nur die Radfahrer fahren zu schnell durch." },
       { text: "Da kommt bald ein Verkehrszeichen hin, hat die Stadt gesagt." },
@@ -207,7 +207,7 @@ export const b1U21: SkillExercise[] = [
         explain: "„Seit Mai ist die Marktstraße eine Fußgängerzone.“",
       },
       {
-        text: "Was ist für die zweite Person schlechter?",
+        text: "Was ist für die zweite Person, die antwortet, schlechter?",
         options: ["Die Luft", "Die Strecke ist länger", "Der Lärm"],
         answer: 1,
         explain: "„Für mich ist die Strecke jetzt länger.“",
@@ -220,10 +220,10 @@ export const b1U21: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ich gehe hier mit den Kindern, statt Angst ___ ___.",
+        text: "Ich gehe hier mit den Kindern zu Fuß, statt mit dem Auto ___ ___.",
         options: [],
         answer: 0,
-        accept: ["zu haben"],
+        accept: ["zu fahren"],
         explain: "„statt“ + zu'lu mastar — Türkçedeki '-mek yerine'.",
       },
       {
@@ -263,7 +263,7 @@ export const b1U21: SkillExercise[] = [
       { text: "Sehr gut. Ich versuche, lange Strecken zu vermeiden." },
       { text: "Dann nehmen Sie die hier statt der Ware aus dem Laden." },
       { text: "Mache ich. Ist das auch Bio?" },
-      { text: "Nein, aber ohne Chemie. Fragen Sie ruhig, das machen wenige Kundinnen." },
+      { text: "Nein, aber ohne Chemie. Fragen Sie ruhig, das machen nur wenige Kunden." },
     ],
     questions: [
       {
@@ -297,7 +297,7 @@ export const b1U21: SkillExercise[] = [
         text: "Wie weit ist der Bauernhof?",
         options: [],
         answer: 0,
-        accept: ["dreißig Kilometer", "30 Kilometer", "dreißig"],
+        accept: ["dreißig Kilometer", "30 Kilometer", "dreißig", "30"],
         explain: "„… dreißig Kilometer von hier.“",
       },
     ],
@@ -309,7 +309,7 @@ export const b1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Aushang für das Haus",
-    genre: "phone",
+    genre: "info",
     intro: "Atık ayrımı için bir duyuru yaz. Bileşik ismin artikeli son parçadan gelir.",
     minutes: 8,
     gloss: [
@@ -382,8 +382,8 @@ export const b1U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sadece inanmak yerine faturayı okudum.",
-        answer: "Statt nur zu glauben, habe ich die Rechnung gelesen.",
+        tr: "Buna öylece inanmak yerine faturayı okudum.",
+        answer: "Statt es einfach zu glauben, habe ich die Rechnung gelesen.",
         hint: "Yine statt + zu'lu mastar.",
       },
       {
@@ -400,13 +400,13 @@ export const b1U21: SkillExercise[] = [
         sample:
           "Früher bin ich jeden Morgen mit dem Auto zur Arbeit gefahren, " +
           "obwohl die Strecke nur vier Kilometer lang ist.\n\n" +
-          "Seit dem Frühling nehme ich das Rad. Statt an der Tankstelle zu " +
-          "halten, fahre ich einfach durch die neue Fußgängerzone. Im Winter " +
-          "war die Kälte am Anfang schwer, das gebe ich zu. Nach zwei Wochen " +
+          "Seit dem Frühling nehme ich das Rad. Statt im Stau zu " +
+          "stehen, fahre ich einfach am Fluss entlang. Im Winter " +
+          "war die Kälte schwer, das gebe ich zu. Nach zwei Wochen " +
           "ging es.\n\n" +
-          "Beim Einkaufen achte ich jetzt auf die Herkunft. Statt lange " +
-          "Strecken zu bezahlen, nehme ich regionale Ware vom Markt. So kann ich lange Wege vermeiden. " +
-          "Der Bauernhof ist dreißig Kilometer weg, das reicht mir.\n\n" +
+          "Beim Einkaufen achte ich jetzt auf die Herkunft. Statt Obst aus dem " +
+          "Ausland zu kaufen, nehme ich regionale Ware vom Markt. So kann ich lange Wege vermeiden. " +
+          "Der Bauernhof, von dem sie kommt, ist nur dreißig Kilometer weg.\n\n" +
           "Ich empfehle, mit einer Sache anzufangen. Wer alles " +
           "gleichzeitig ändern will, hört nach einem Monat wieder auf. " +
           "Der Umweltschutz ist keine Prüfung, sondern eine Gewohnheit.",

@@ -215,9 +215,9 @@
   "de": "Vor dem Tagesnamen steht „on“: on Monday, deutsch „am Montag“."
  },
  {
-  "tr": "Hafta sonunda „at“: on the weekend. Günde „on“, ayda „in“.",
+  "tr": "Amerikan İngilizcesinde hafta sonu da „on“ alır: on the weekend, on Monday. Ayda „in“.",
   "kind": "build.hint",
-  "de": "Beim Wochenende „at“: on the weekend. Deutsch sagt hier dasselbe „am“ wie beim Tag, Englisch nicht: beim Tag „on“, beim Monat „in“."
+  "de": "Im amerikanischen Englisch steht auch beim Wochenende „on“: on the weekend, on Monday — deutsch in beiden Fällen „am“. Beim Monat „in“."
  },
  {
   "tr": "Saatte „at“: at seven, at midnight. Günde „on“, ayda „in“.",
@@ -265,9 +265,9 @@
   "de": "Geht der Preis um Mehreres, steht „are“: how much ARE the apples, nicht is."
  },
  {
-  "tr": "„sometimes“ cümlenin başına da gelebilir — tek gezebilen zarf odur.",
+  "tr": "„sometimes“ cümlenin başına da gelebilir; „always“ ve „never“ gelemez.",
   "kind": "build.hint",
-  "de": "„sometimes“ darf auch am Satzanfang stehen — es ist das einzige Adverb, das wandern darf."
+  "de": "„sometimes“ darf auch am Satzanfang stehen; „always“ und „never“ dürfen das nicht."
  },
  {
   "tr": "„too“ burada „çok“ değil „gereğinden fazla“ demek; şikâyet taşıyor.",

@@ -172,7 +172,7 @@ export const a2U11: SkillExercise[] = [
       { de: "mitfahren", tr: "birlikte gitmek", en: "to ride along" },
       { de: "die Nachtschicht", tr: "gece vardiyası", en: "night shift" },
       { de: "stressig", tr: "stresli", en: "stressful" },
-      { de: "komplett", tr: "eksiksiz", en: "complete" },
+      { de: "komplett", tr: "tamamen", en: "completely" },
       { de: "das Meeting", tr: "toplantı", en: "meeting" },
     ],
     minutes: 3,
@@ -181,7 +181,7 @@ export const a2U11: SkillExercise[] = [
       { speaker: "Frau Petrow", text: "Guten Morgen. Wie viel später denn?" },
       { speaker: "Sinan", text: "Etwa vierzig Minuten. Ich bin schon unterwegs, denn der Verkehr auf der B5 steht komplett." },
       { speaker: "Frau Petrow", text: "Kein Problem. Wir verschieben das Meeting auf zehn." },
-      { speaker: "Sinan", text: "Danke. Mein Arbeitsweg ist normalerweise dreißig Minuten, heute wird es fast eine Stunde." },
+      { speaker: "Sinan", text: "Danke. Mein Arbeitsweg dauert normalerweise dreißig Minuten, heute wird es fast eine Stunde." },
       { speaker: "Frau Petrow", text: "Fahren Sie eigentlich immer allein?" },
       { speaker: "Sinan", text: "Meistens ja. Nächste Woche fahre ich bei einem Kollegen mit, das ist weniger stressig." },
       { speaker: "Frau Petrow", text: "Gute Idee. Und denken Sie an den neuen Dienstplan — Sie haben ab Montag Nachtschicht." },
@@ -297,6 +297,7 @@ export const a2U11: SkillExercise[] = [
         kind: "build",
         tr: "Almanca öğreniyorum çünkü burada çalışıyorum.",
         answer: "Ich lerne Deutsch, weil ich hier arbeite",
+        alternatives: ["Weil ich hier arbeite, lerne ich Deutsch"],
         hint: "Bu bağlaç yan cümle açar ve fiil EN SONA gider: „… weil ich hier arbeite“.",
       },
       {
@@ -309,6 +310,7 @@ export const a2U11: SkillExercise[] = [
         kind: "build",
         tr: "İş yüzünden Almanca öğreniyorum.",
         answer: "Wegen der Arbeit lerne ich Deutsch",
+        alternatives: ["Ich lerne Deutsch wegen der Arbeit"],
         hint: "Bu bir edat, yan cümle kurmaz. Başta olduğu için özne fiilin arkasına düşer.",
       },
       {
@@ -330,7 +332,7 @@ export const a2U11: SkillExercise[] = [
     genre: "formal",
     intro: "İş ilanına kısa bir başvuru yaz: kimsin, neden yazıyorsun, ne zaman başlayabilirsin?",
     gloss: [
-      { de: "die Bewerbung", tr: "iş başvurusu", en: "application" },
+      { de: "die Bewerbung", tr: "iş başvurusu", en: "job application" },
       { de: "die Ausbildung", tr: "meslek eğitimi", en: "vocational training" },
       { de: "der Nebenjob", tr: "ek iş", en: "side job" },
       { de: "das Bewerbungsgespräch", tr: "iş görüşmesi", en: "job interview" },
@@ -345,7 +347,7 @@ export const a2U11: SkillExercise[] = [
         kind: "reply",
         prompt: "İlana kısa bir başvuru e-postası yaz. Kim olduğunu söyle, neden başvurduğunu bir sebep cümlesiyle anlat ve ne zaman başlayabileceğini yaz.",
         stimulus:
-          "CAFÉ LINDE SUCHT VERSTÄRKUNG\n\nWir suchen ab Januar jemanden für den Service. Keine Ausbildung nötig, aber gute Deutschkenntnisse. Auch als Nebenjob am Wochenende möglich.\n\nWir bieten einen festen Vertrag und ein Gehalt über dem Minimum.\n\nIhre Bewerbung per E-Mail an info@cafe-linde.de — zwei Sätze reichen.",
+          "CAFÉ LINDE SUCHT VERSTÄRKUNG\n\nWir suchen ab Januar jemanden für den Service. Keine Ausbildung nötig, aber gute Deutschkenntnisse. Auch als Nebenjob am Wochenende möglich.\n\nWir bieten einen festen Vertrag und ein Gehalt über dem Minimum.\n\nIhre Bewerbung bitte per E-Mail an info@cafe-linde.de.",
         checklist: [
           "Resmî hitapla başladın mı („Sehr geehrte Damen und Herren“)?",
           "Hangi ilan için yazdığını söyledin mi?",
@@ -354,7 +356,7 @@ export const a2U11: SkillExercise[] = [
         ],
         minWords: 45,
         phrases: [
-          { de: "Ich bewerbe mich auf Ihre Anzeige.", tr: "ilanınıza başvuruyorum", en: "I am applying to your advert" },
+          { de: "Ich bewerbe mich auf Ihre Anzeige.", tr: "ilanınıza başvuruyorum", en: "I am applying in response to your ad" },
           { de: "Ich habe schon in einem Café gearbeitet.", tr: "daha önce bir kafede çalıştım", en: "I have already worked in a café" },
           { de: "Ich kann ab Januar anfangen.", tr: "ocaktan itibaren başlayabilirim", en: "I can start in January" },
         ],

@@ -331,10 +331,10 @@ export const enB2U20: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Berrak", text: "It seems to be proportional. Three words of hedge on a sentence about a number, which is two too many." },
+      { speaker: "Berrak", text: "It seems to be proportional. Three words of hedge on a sentence about a number, which is three too many." },
       { speaker: "Berrak", text: "Either the raise is proportional or it is not, and the figure is in front of both of us on a page." },
       { speaker: "Berrak", text: "Apparently the raise was refused for operational reasons. That one earns its hedge: I am reporting somebody else's phrase and I am not adopting it." },
-      { speaker: "Berrak", text: "„For operational reasons“ is itself a hedge, and it is the most common four words in this kind of letter. It names nothing and cannot be argued with." },
+      { speaker: "Berrak", text: "„For operational reasons“ is itself a hedge, and it is the most common three words in this kind of letter. It names nothing and cannot be argued with." },
       { speaker: "Berrak", text: "On balance the work-life balance is arguably the point. Two hedges, and „on balance“ is the one to keep, because it says a weighing has happened and somebody can show the weighing was wrong." },
       { speaker: "Berrak", text: "„Arguably“ says nothing and I take it out every time I find it." },
       { speaker: "Berrak", text: "The rule I use in a salary conversation is that the hedge goes on the part I did not see, and never on the part I can count." },
@@ -487,7 +487,7 @@ export const enB2U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Orantılı olduğu anlaşılıyor.",
+        tr: "Orantılı gibi görünüyor.",
         answer: "It seems to be proportional.",
         hint: "Tek çekince yeter.",
       },

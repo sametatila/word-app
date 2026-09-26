@@ -120,6 +120,11 @@
   "de": "Könnten Sie es ersetzen, bitte?"
  },
  {
+  "tr": "Onu yenisiyle değiştirebilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie es bitte ersetzen?"
+ },
+ {
   "tr": "Para iadesi alabilir miyim, lütfen?",
   "kind": "build.tr",
   "de": "Könnte ich eine Erstattung bekommen, bitte?"
@@ -182,7 +187,7 @@
  {
   "tr": "Kurumda „I want“ yerine „I'd like“ kullanılıyor.",
   "kind": "build.hint",
-  "de": "In der Behörde steht „I'd like“ statt „I want“."
+  "de": "Bei der Bank steht „I'd like“ statt „I want“."
  },
  {
   "tr": "Mağazada „I want“ yerine „I'd like“: kibar ve kısa.",

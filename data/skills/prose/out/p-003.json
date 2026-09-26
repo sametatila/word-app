@@ -12,7 +12,7 @@
  {
   "tr": "Randevu erteleniyor. Yeni tarih ve saat ne?",
   "kind": "intro",
-  "en": "An appointment is put back. What is the new date and time?"
+  "en": "An appointment is being postponed. What is the new date and time?"
  },
  {
   "tr": "Sonradan maddeyi hatırlıyorsun, dili değil.",
@@ -112,7 +112,7 @@
  {
   "tr": "Bisiklet kiralanıyor. Ne kadar, neye dikkat?",
   "kind": "intro",
-  "en": "A bicycle is being hired. How much, and what to watch for?"
+  "en": "A bicycle is being rented. How much, and what to watch for?"
  },
  {
   "tr": "Çelişkili iki ifadeyi taraf tutmadan kaydet.",
@@ -142,7 +142,7 @@
  {
   "tr": "Hasta olduğun için gelemeyeceğini haber ver.",
   "kind": "intro",
-  "en": "Let them know you cannot come because you are ill."
+  "en": "Let them know you cannot come because you are sick."
  },
  {
   "tr": "Herkesin bir tasavvuru var, çoğu yazılmamış.",
@@ -157,12 +157,12 @@
  {
   "tr": "Kalıp: „Hast du Lust …?“ — canın istiyor mu?",
   "kind": "explain",
-  "en": "The pattern „Hast du Lust …?“ — do you fancy it?"
+  "en": "The pattern „Hast du Lust …?“ — do you feel like it?"
  },
  {
   "tr": "Mağazada şikâyet. Sorun ne, çözüm ne oluyor?",
   "kind": "intro",
-  "en": "A complaint in a shop. What is wrong, how is it settled?"
+  "en": "A complaint in a store. What is wrong, how is it settled?"
  },
  {
   "tr": "Senaryo çalışması: gelecekten geriye bakmak.",
@@ -315,9 +315,9 @@
   "en": "Reference words, parenthetical asides and ellipsis."
  },
  {
-  "tr": "Havalimanında saat sormanın en doğrudan yolu.",
+  "tr": "Havalimanında varış saatini sormanın en doğrudan yolu.",
   "kind": "explain",
-  "en": "The most direct way to ask the time at the airport."
+  "en": "The most direct way to ask about the arrival time at the airport."
  },
  {
   "tr": "İfade özgürlüğü neyi koruyor, neyi korumuyor?",
@@ -332,7 +332,7 @@
  {
   "tr": "İki arkadaş. Biri hasta, diğeri öğüt veriyor.",
   "kind": "intro",
-  "en": "Two friends. One is ill, the other gives advice."
+  "en": "Two friends. One is sick, the other gives advice."
  },
  {
   "tr": "İnleme de şakanın parçası — rahatlık işareti.",
@@ -650,9 +650,9 @@
   "en": "„zusagen“ is separable: the prefix goes to the end."
  },
  {
-  "tr": "Ağrı cümlesi Türkçeden ters kurulur. Üç deneme.",
+  "tr": "Ağrı cümlesinin iki kalıbı var: „Mein Kopf tut weh“ ve „Der Hals tut mir weh“. Üç deneme.",
   "kind": "intro",
-  "en": "The sentence for pain is built the other way round from English. Three tries."
+  "en": "There are two patterns for pain: „Mein Kopf tut weh“ and „Der Hals tut mir weh“. Three tries."
  },
  {
   "tr": "Alıcı mahcup oluyor ve ne vereceğini bilemiyor.",

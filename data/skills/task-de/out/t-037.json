@@ -145,7 +145,7 @@
   "de": "Wäre die Variable festgelegt gewesen, wäre das Ergebnis jetzt klar."
  },
  {
-  "tr": "Yöntem düzeninin hiç yayımlanmadığı anlaşılıyor.",
+  "tr": "Görünüşe göre çalışmanın yöntemi hiç yayımlanmadı.",
   "kind": "build.tr",
   "de": "Anscheinend wurde die Methodik nie veröffentlicht."
  },
@@ -170,9 +170,9 @@
   "de": "Gemischte Bedingung, und dazu ohne „if“."
  },
  {
-  "tr": "Tam biçim; kısa biçimin olumsuzu yok.",
+  "tr": "„if“li tam biçim: iki yarı da geçmişte.",
   "kind": "build.hint",
-  "de": "Die volle Form; die Kurzform hat keine Verneinung."
+  "de": "Die volle Form mit „if“: beide Hälften in der Vergangenheit."
  },
  {
   "tr": "Bildiriyor ve aynı anda geri çekiliyor.",

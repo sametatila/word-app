@@ -127,7 +127,7 @@
  {
   "tr": "„He is a baby, so he does not eat cake.“ — bebek olduğu için yemiyor.",
   "kind": "explain",
-  "de": "„He is a baby, so he does not eat cake.“ — weil er ein Baby ist, isst er nichts."
+  "de": "„He is a baby, so he does not eat cake.“ — weil er ein Baby ist, isst er keinen Kuchen."
  },
  {
   "tr": "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
@@ -185,9 +185,9 @@
   "de": "„I speak a little English and a little German.“ — beide Sprachen spricht sie ein wenig."
  },
  {
-  "tr": "„I speak a little English … but I do not speak fast.“ — tam tersini söylüyor.",
+  "tr": "„I speak a little English … but I do not speak fast.“ — tam olarak bunu söylüyor.",
   "kind": "explain",
-  "de": "„I speak a little English … but I do not speak fast.“ — er sagt genau das Gegenteil."
+  "de": "„I speak a little English … but I do not speak fast.“ — genau das sagt er."
  },
  {
   "tr": "Önce Leyla (doktor), sonra Ben (şarkıcı), en son Meryem (antrenör) konuşuyor.",
@@ -195,9 +195,9 @@
   "de": "Zuerst spricht Leyla (Ärztin), dann Ben (Sänger), zuletzt Meryem (Trainerin)."
  },
  {
-  "tr": "„I've got one daughter.“ Amerikan konuşmasında „I have“ yerine çok sık „I've got“ duyulur.",
+  "tr": "„I've got one daughter.“ Günlük konuşmada „I have“ yerine „I've got“ da sık duyulur.",
   "kind": "explain",
-  "de": "„I've got one daughter.“ Im amerikanischen Alltag hört man statt „I have“ sehr oft „I've got“."
+  "de": "„I've got one daughter.“ Im Alltag hört man statt „I have“ oft auch „I've got“."
  },
  {
   "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
@@ -252,7 +252,7 @@
  {
   "tr": "yemek",
   "kind": "gloss.tr",
-  "de": "essen"
+  "de": "Mahlzeit"
  },
  {
   "tr": "onun adı …",
@@ -297,7 +297,7 @@
  {
   "tr": "istemek",
   "kind": "gloss.tr",
-  "de": "wollen"
+  "de": "bitten"
  },
  {
   "tr": "yaşında",

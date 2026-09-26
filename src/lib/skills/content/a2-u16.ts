@@ -188,7 +188,7 @@ export const a2U16: SkillExercise[] = [
       { speaker: "Frau Solak", text: "Danke. Hat das Zimmer ein Doppelbett?" },
       { speaker: "Rezeption", text: "Ja, Zimmer 214 im zweiten Stock. Hier ist Ihr Zimmerschlüssel." },
       { speaker: "Frau Solak", text: "Und mein Mann kommt erst morgen früh. Ab wann kann er einchecken?" },
-      { speaker: "Rezeption", text: "Er hat ja Ihren Namen — er kann jederzeit kommen, auch nachts." },
+      { speaker: "Rezeption", text: "Sie sind ja schon eingecheckt — er kann jederzeit kommen, auch nachts." },
       { speaker: "Frau Solak", text: "Sehr gut. Wann gibt es Frühstück?" },
       { speaker: "Rezeption", text: "Von halb sieben bis zehn, im Raum hinter der Treppe." },
     ],
@@ -218,7 +218,7 @@ export const a2U16: SkillExercise[] = [
         text: "Wann gibt es Frühstück?",
         options: [],
         answer: 0,
-        accept: ["von halb sieben bis zehn", "halb sieben bis zehn", "6:30 bis 10"],
+        accept: ["von halb sieben bis zehn", "halb sieben bis zehn", "6:30 bis 10", "von 6:30 bis 10", "6:30 bis 10 Uhr", "von 6:30 bis 10 Uhr"],
         explain: "„Von halb sieben bis zehn, im Raum hinter der Treppe.“",
       },
     ],
@@ -230,10 +230,10 @@ export const a2U16: SkillExercise[] = [
     unit: 16,
     title: "Am Flughafen",
     genre: "dialogue",
-    intro: "Check-in kuyruğu. Bagaj kaça çıkıyor, hangi kapıdan gidiliyor?",
+    intro: "Check-in kuyruğu. Bavul var mı, yolcu nerede oturacak, sonra nereye gidecek?",
     gloss: [
       { de: "die Bordkarte", tr: "biniş kartı", en: "boarding pass" },
-      { de: "das Handgepäck", tr: "el bagajı", en: "hand luggage" },
+      { de: "das Handgepäck", tr: "el bagajı", en: "carry-on luggage" },
       { de: "die Sicherheitskontrolle", tr: "güvenlik kontrolü", en: "security check" },
       { de: "die Passkontrolle", tr: "pasaport kontrolü", en: "passport control" },
       { de: "der Sitzplatz", tr: "koltuk", en: "seat" },
@@ -279,7 +279,7 @@ export const a2U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Und wann ist die Ankunftszeit in Wien?", "Wann ist die Ankunftszeit in Wien?"],
-        explain: "Havalimanında saat sormanın en doğrudan yolu.",
+        explain: "Havalimanında varış saatini sormanın en doğrudan yolu.",
       },
     ],
   },
@@ -293,7 +293,7 @@ export const a2U16: SkillExercise[] = [
     intro: "Ön ek başta kalır, ge- ortaya girer: einpacken → eingepackt.",
     gloss: [
       { de: "einpacken", tr: "bavula koymak", en: "to pack" },
-      { de: "die Badehose", tr: "mayo", en: "swimming trunks" },
+      { de: "die Badehose", tr: "mayo", en: "swim trunks" },
       { de: "mitnehmen", tr: "yanına almak", en: "to take along" },
       { de: "verstauen", tr: "yerleştirmek", en: "to stow" },
     ],
@@ -344,12 +344,13 @@ export const a2U16: SkillExercise[] = [
       { de: "voraus", tr: "önden", en: "ahead" },
       { de: "das Einzelzimmer", tr: "tek kişilik oda", en: "single room" },
       { de: "der Parkplatz", tr: "otopark", en: "parking lot" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     minutes: 8,
     tasks: [
       {
         kind: "reply",
-        prompt: "Otele bir rezervasyon e-postası yaz. Hangi tarihlerde ve kaç kişi kalacağını, nasıl bir oda istediğini yaz, giriş saatini sor ve fiyatı öğrenmek istediğini belirt.",
+        prompt: "Otele bir rezervasyon e-postası yaz. Hangi tarihlerde ve kaç kişi kalacağını, nasıl bir oda istediğini yaz, erken gelirsen bavulunu bırakıp bırakamayacağını sor ve fiyatı öğrenmek istediğini belirt.",
         stimulus:
           "HOTEL AM PARK\n\n" +
           "Einzelzimmer ab 65 € / Nacht · Doppelzimmer ab 89 € / Nacht\n" +
@@ -357,23 +358,23 @@ export const a2U16: SkillExercise[] = [
           "Check-in ab 15 Uhr, Check-out bis 11 Uhr\n\n" +
           "Anfragen bitte an: info@hotel-am-park.de",
         checklist: [
-          "Resmî hitapla ve konu cümlesiyle başladın mı?",
+          "Resmî hitapla ve konu satırıyla başladın mı?",
           "Tarihleri ve kişi sayısını yazdın mı?",
           "Nasıl bir oda istediğini söyledin mi?",
-          "En az bir soru sordun mu (giriş saati, kahvaltı ya da fiyat)?",
+          "En az bir soru sordun mu (bavul, kahvaltı ya da fiyat)?",
         ],
         minWords: 45,
         phrases: [
           { de: "Ich möchte ein Doppelzimmer buchen.", tr: "çift kişilik bir oda ayırtmak istiyorum", en: "I'd like to book a double room" },
-          { de: "Ab wann kann ich einchecken?", tr: "saat kaçtan itibaren giriş yapabilirim", en: "from when can I check in" },
+          { de: "Können wir das Gepäck vorher bei Ihnen lassen?", tr: "bavulları önceden size bırakabilir miyiz", en: "can we leave our luggage with you beforehand" },
           { de: "Wie hoch ist der Preis pro Nacht?", tr: "gecelik fiyat ne kadar", en: "how much is it per night" },
         ],
         sample:
           "Betreff: Zimmerreservierung 12.–15. Juni\n\n" +
           "Sehr geehrte Damen und Herren,\n\n" +
-          "ich möchte bei Ihnen ein Doppelzimmer buchen, vom 12. bis zum 15. Juni, für zwei Personen. Wenn möglich, hätten wir gern ein Zimmer mit Doppelbett und ruhig zum Hof.\n\n" +
-          "Unsere Anreise ist am Freitag gegen 13 Uhr. Ab wann kann ich einchecken? Können wir das Gepäck vorher bei Ihnen lassen?\n\n" +
-          "Außerdem: wie hoch ist der Preis pro Nacht mit Frühstück?\n\n" +
+          "ich möchte bei Ihnen ein Doppelzimmer buchen, vom 12. bis zum 15. Juni, für zwei Personen. Wenn möglich, hätten wir gern ein ruhiges Zimmer mit Doppelbett zum Hof.\n\n" +
+          "Unsere Anreise ist am Freitag gegen 13 Uhr, also vor dem Check-in. Können wir das Gepäck vorher bei Ihnen lassen?\n\n" +
+          "Außerdem: Wie hoch ist der Preis pro Nacht mit Frühstück?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
           "Mit freundlichen Grüßen\nDeniz Solak",
       },

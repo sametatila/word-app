@@ -375,7 +375,7 @@ export const enC1U20: SkillExercise[] = [
     segments: [
       { speaker: "Neval", text: "A feedback loop may well push the system past a tipping point. Every word in that line is careful and the careful one that matters is „may“." },
       { speaker: "Neval", text: "A loop is not a prediction. It is a shape in the equations, and whether it reaches a threshold depends on numbers nobody has measured well enough yet." },
-      { speaker: "Neval", text: "The regenerative capacity might hold if the litter can decompose. Two conditions in nine words, and the second one is doing the work." },
+      { speaker: "Neval", text: "The regenerative capacity might hold if the litter can decompose. Two conditions in ten words, and the second one is doing the work." },
       { speaker: "Neval", text: "Leaves on cold ground do not break down. A warm winter changes that, and the change is faster than the model was built to follow." },
       { speaker: "Neval", text: "Warm soil may secrete more gas and lose its thermal balance. Here is the loop written out, and this is the sentence I would read twice." },
       { speaker: "Neval", text: "Warmer soil gives off more; more makes it warmer; and the question is only whether that circle is strong enough to keep going on its own." },
@@ -440,7 +440,7 @@ export const enC1U20: SkillExercise[] = [
     unit: 20,
     title: "The dismantling began; the repurposing did not",
     genre: "info",
-    intro: "Ekli isimler ve raporun göndermeleri.",
+    intro: "Fiilden isimler ve raporun göndermeleri.",
     gloss: [
       { de: "visible", tr: "görünür" },
       { de: "a dismantling", tr: "sökme" },
@@ -478,7 +478,7 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet eder.",
+        tr: "Ölçek bakımından ince dokulu bir mahalle erişilebilirliğe daha iyi hizmet eder.",
         answer: "In terms of scale, a fine-grained quarter serves accessibility better.",
         hint: "Çerçeve iddiadan önce boyutu adlandırıyor.",
       },
@@ -542,7 +542,7 @@ export const enC1U20: SkillExercise[] = [
         kind: "build",
         tr: "Döküntü çürüyebilirse yenilenme kapasitesi tutabilir.",
         answer: "The regenerative capacity might hold if the litter can decompose.",
-        hint: "Dokuz sözcükte iki koşul; işi ikincisi görüyor.",
+        hint: "On sözcükte iki koşul; işi ikincisi görüyor.",
       },
     ],
   },

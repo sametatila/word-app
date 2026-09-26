@@ -185,7 +185,7 @@ export const b1U34: SkillExercise[] = [
       { text: "Und wann ist die Geburt?" },
       { text: "Mitten im März. Wir sind fast fertig mit dem Zimmer. Der Nachwuchs bekommt das kleine Zimmer." },
       { text: "Arbeitet ihr beide weiter?" },
-      { text: "Halb. Ich bleibe ein Jahr, mein Mann sechs Monate." },
+      { text: "Erst mal nicht. Ich bleibe ein Jahr zu Hause, mein Mann sechs Monate." },
       { text: "Das ist gut. Erziehung ist nicht die Arbeit von einer Person." },
       { text: "Genau. Wir schaffen das, indem wir uns abwechseln." },
     ],
@@ -206,7 +206,7 @@ export const b1U34: SkillExercise[] = [
         text: "Wie lange bleibt der Mann zu Hause?",
         options: ["Ein Jahr", "Sechs Monate", "Gar nicht"],
         answer: 1,
-        explain: "„Ich bleibe ein Jahr, mein Mann sechs Monate.“",
+        explain: "„Ich bleibe ein Jahr zu Hause, mein Mann sechs Monate.“",
       },
       {
         kind: "gapfill",
@@ -283,7 +283,7 @@ export const b1U34: SkillExercise[] = [
         text: "Wen hat die Person vergessen?",
         options: [],
         answer: 0,
-        accept: ["den Cousin", "ihren Cousin", "Cousin"],
+        accept: ["den Cousin", "ihren Cousin", "seinen Cousin", "Cousin"],
         explain: "„Zwölf. Meinen Cousin habe ich vergessen.“",
       },
     ],
@@ -299,7 +299,7 @@ export const b1U34: SkillExercise[] = [
     intro: "Nasıl sağlıklı kaldığını yaz. Türkçedeki '-erek' burada tam bir cümle.",
     minutes: 8,
     gloss: [
-      { de: "die Gymnastik", tr: "jimnastik", en: "gymnastics" },
+      { de: "die Gymnastik", tr: "jimnastik", en: "calisthenics" },
       { de: "das Vitamin", tr: "vitamin", en: "vitamin" },
       { de: "fest", tr: "sıkı / kesin", en: "firm" },
       { de: "sowieso", tr: "zaten", en: "anyway" },
@@ -332,7 +332,7 @@ export const b1U34: SkillExercise[] = [
           { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
           { label: "Morgens", answer: "10 Minuten Gymnastik", accept: ["Gymnastik", "zehn Minuten"] },
           { label: "Essen", answer: "jeden Tag Gemüse", accept: ["Gemüse", "täglich Gemüse"] },
-          { label: "Bei Schnupfen", answer: "ein halber Tag Ruhe", accept: ["Ruhe", "halber Tag"] },
+          { label: "Bei Schnupfen", answer: "ein halber Tag Ruhe", accept: ["Ruhe", "halber Tag", "einen halben Tag Ruhe"] },
         ],
       },
       {
@@ -395,7 +395,7 @@ export const b1U34: SkillExercise[] = [
           "Meine Großmutter hat über schwere Dinge nie geredet. Wir fragen " +
           "direkt — manchmal zu direkt, und dann ruft jemand eine Woche " +
           "nicht an.\n\n" +
-          "Eine Sache ist geblieben: am Sonntag wird gekocht, und zwar viel " +
+          "Eine Sache ist geblieben: Am Sonntag wird gekocht, und zwar viel " +
           "zu viel. Ich glaube, wir halten die Familie zusammen, indem wir " +
           "einfach jedes Mal wieder an den gleichen Tisch kommen.",
         phrases: [

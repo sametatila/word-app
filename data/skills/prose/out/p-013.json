@@ -42,7 +42,7 @@
  {
   "tr": "„der Reißverschluss ist fehlerhaft“ — mağazada denerken sorun yokmuş.",
   "kind": "explain",
-  "en": "„der Reißverschluss ist fehlerhaft“ — it was fine when she tried it on in the shop."
+  "en": "„der Reißverschluss ist fehlerhaft“ — it was fine when she tried it on in the store."
  },
  {
   "tr": "„der Vater“ eril ve nesne durumunda; doğrusu „Ich sehe meinen Vater.“",
@@ -75,9 +75,9 @@
   "en": "„Luna ist klein, schwarz und weiß.“ It is the collar that is red, not the cat."
  },
  {
-  "tr": "„Über eine Lage geht es.“ Kişiye söylenince kötü niyet iması taşıyor.",
+  "tr": "„Über eine Lage geht es.“ Bir insan hakkında söylenince buz gibi bir suçlamaya dönüşüyor.",
   "kind": "explain",
-  "en": "„Über eine Lage geht es.“ Said about a person it implies bad faith."
+  "en": "„Über eine Lage geht es.“ Said about a person it turns into an ice-cold accusation."
  },
  {
   "tr": "Ailenin sorusu: tek tek de satılıyor mu? Bu ünitenin pazarlık kalıbı.",
@@ -107,12 +107,12 @@
  {
   "tr": "Bıraktığın bir şeyi anlat. 'bırakmak' Almancada doğrudan nesne almaz.",
   "kind": "intro",
-  "en": "Write about something you gave up. In German 'give up' takes no direct object."
+  "en": "Write about something you gave up. In German „aufhören“ (to stop, give up) takes no direct object."
  },
  {
   "tr": "Bir başvuru ön yazısı yaz. Önce iki cümle kur, sonra kısa bir mektup.",
   "kind": "intro",
-  "en": "Write a covering letter. First form two sentences, then a short letter."
+  "en": "Write a cover letter. First form two sentences, then a short letter."
  },
  {
   "tr": "Bir denemenin sonucunu yaz: ne işledi, ne açık kaldı, ne öneriyorsun?",
@@ -180,9 +180,9 @@
   "en": "It is about something general and „music“ is uncountable; no article is needed."
  },
  {
-  "tr": "Gider hesabındaki bir sayı yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
+  "tr": "Yan gider hesabındaki bir tutar yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
   "kind": "intro",
-  "en": "A figure on the expenses claim is wrong. Write it impersonally, dated and with reasons."
+  "en": "An amount on the utility bill statement is wrong. Write impersonally, with a date and with reasons."
  },
  {
   "tr": "İki arkadaş hafta sonunu konuşuyor. Kim nereye gitti, kim evde kaldı?",
@@ -237,7 +237,7 @@
  {
   "tr": "Sinirli bir kullanıcı destek hattını arıyor. Çözüm nasıl anlatılıyor?",
   "kind": "intro",
-  "en": "An irritated user rings the support line. How is the solution explained?"
+  "en": "An irritated user calls the support line. How is the solution explained?"
  },
  {
   "tr": "Son cümle övgüyü geri alıyor: anlık etki ile kalıcı etki ayrı şeyler.",
@@ -282,7 +282,7 @@
  {
   "tr": "Yıllık değerlendirme görüşmesi. Geri bildirim ne, çalışan ne istiyor?",
   "kind": "intro",
-  "en": "An annual appraisal. What is the feedback, and what does the employee want?"
+  "en": "An annual performance review. What is the feedback, and what does the employee want?"
  },
  {
   "tr": "Zamir yan cümlenin ÖZNESİ (sie spielt die Mutter) → Nominativ: „die“.",
@@ -332,7 +332,7 @@
  {
   "tr": "„Nein danke, ich bin satt.“ Yemeği beğenmiş — „Das schmeckt sehr gut!“",
   "kind": "explain",
-  "en": "„Nein danke, ich bin satt.“ He liked the food — „Das schmeckt sehr gut!“"
+  "en": "„Nein danke, ich bin satt.“ She liked the food — „Das schmeckt sehr gut!“"
  },
  {
   "tr": "„sein“ kendi Konjunktiv II biçimini alır: wärst, „sein würdest“ değil.",
@@ -372,7 +372,7 @@
  {
   "tr": "Almancada ücret „yüksek“ sorulur, „çok“ değil — sabit bir soru kalıbı.",
   "kind": "explain",
-  "en": "In German a fee is asked to be „high“, not „much“ — a fixed question pattern."
+  "en": "In German you ask how „high“ a fee is, not how „much“ — a fixed question pattern."
  },
  {
   "tr": "als ob gerçek olmayanı, öznel kip ise kesinliğin derecesini işaretler.",
@@ -387,7 +387,7 @@
  {
   "tr": "Bir dizi ya da kitap hakkında yorum yaz. 'gefallen'in öznesine dikkat.",
   "kind": "intro",
-  "en": "Write a comment about a series or a book. Watch the subject of 'gefallen'."
+  "en": "Write a review of a series or a book. Watch the subject of 'gefallen'."
  },
  {
   "tr": "Bir ekip lideri iş devrediyor — ama emir vermeden. Yetki nereye kadar?",
@@ -487,7 +487,7 @@
  {
   "tr": "Olumsuz karara itiraz et. Kararı kimin verdiğini doğru biçimde göster.",
   "kind": "intro",
-  "en": "Appeal against a refusal. Show correctly who made the decision."
+  "en": "Appeal a denial. Show correctly who made the decision."
  },
  {
   "tr": "Posta kutusundaki kargo kartı. Paket nerede, ne zamana kadar alınmalı?",
@@ -617,7 +617,7 @@
  {
   "tr": "Adlaştırma: 'die Zunahme der Preise' bir cümleyi ad öbeğine sıkıştırır.",
   "kind": "explain",
-  "en": "Nominalisation: 'die Zunahme der Preise' squeezes a whole clause into a noun phrase."
+  "en": "Nominalization: 'die Zunahme der Preise' squeezes a whole clause into a noun phrase."
  },
  {
   "tr": "already olumlu cümlede has ile üçüncü hâl (left) arasında; cümle doğru.",
@@ -657,7 +657,7 @@
  {
   "tr": "Bir daire ilanına yazıyorsun. Kendini tanıt, üç soru sor, randevu iste.",
   "kind": "intro",
-  "en": "You are writing about a flat advert. Introduce yourself, ask three questions, request a viewing."
+  "en": "You are writing about an apartment listing. Introduce yourself, ask three questions, request a viewing."
  },
  {
   "tr": "Bir ekip toplantısı sarkıyor. Toplantıyı yöneten kişi nasıl toparlıyor?",

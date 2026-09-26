@@ -177,11 +177,11 @@ export const enA1U13: SkillExercise[] = [
       { speaker: "Ela", text: "And the bus stop?" },
       { speaker: "Nil", text: "The bus stop is on the right, near the pharmacy." },
       { speaker: "Ela", text: "Thank you. I go to work by bus every day, but I am new here." },
-      { speaker: "Nil", text: "Then take the bus number four. Where do you get off?" },
+      { speaker: "Nil", text: "Then take bus number four. Where do you get off?" },
       { speaker: "Ela", text: "At the market." },
       { speaker: "Nil", text: "Good. The market is the fourth stop." },
       { speaker: "Ela", text: "Thank you very much!" },
-      { speaker: "Nil", text: "Good day!" },
+      { speaker: "Nil", text: "Have a nice day!" },
     ],
     questions: [
       {
@@ -194,7 +194,7 @@ export const enA1U13: SkillExercise[] = [
         text: "Which bus does Ela take?",
         options: ["number four", "number five", "number three"],
         answer: 0,
-        explain: "„Then take the bus number four.“ — dört hem hattın numarası hem durağın sırası.",
+        explain: "„Then take bus number four.“ — dört hem hattın numarası hem durağın sırası.",
       },
       {
         kind: "truefalse",
@@ -248,7 +248,7 @@ export const enA1U13: SkillExercise[] = [
     segments: [
       { speaker: "Kaan", text: "I go to work by train every day. The train station is near my office." },
       { speaker: "Kaan", text: "I am on the train now. There are many passengers this morning." },
-      { speaker: "Kaan", text: "I get off at the third stop. Then I walk five minutes on the road." },
+      { speaker: "Kaan", text: "I get off at the third stop. Then I walk for five minutes." },
       { speaker: "Kaan", text: "Sometimes the train is late. That is not a problem for me." },
       { speaker: "Kaan", text: "I read or I use my computer. There is wifi on the train." },
       { speaker: "Kaan", text: "In the evening I take the bus. The bus is not fast, but I am not in a hurry." },
@@ -350,10 +350,10 @@ export const enA1U13: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Sipariş formunu doldur.",
-        facts: "Deniz Kaya; Green Street 12, Bremen; iki kitap; cuma günü teslim.",
+        facts: "Deniz Kaya; 12 Green Street, Bremen; iki kitap; cuma günü teslim.",
         fields: [
           { label: "Name", answer: "Deniz Kaya", accept: ["Deniz", "Kaya"] },
-          { label: "Address", answer: "Green Street 12", accept: ["Green Street 12, Bremen"] },
+          { label: "Address", answer: "12 Green Street", accept: ["12 Green Street, Bremen", "Green Street 12"] },
           { label: "Order", answer: "two books", accept: ["2 books"] },
           { label: "Delivery", answer: "Friday", accept: ["on Friday"] },
         ],

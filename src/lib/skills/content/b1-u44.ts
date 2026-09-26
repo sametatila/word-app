@@ -180,7 +180,7 @@ export const b1U44: SkillExercise[] = [
       { de: "langweilig", tr: "sıkıcı", en: "boring" },
     ],
     segments: [
-      { text: "Ich will wieder anfangen, aber ich weiß nicht welche Sportart." },
+      { text: "Ich will wieder anfangen, aber ich weiß nicht, welche Sportart." },
       { text: "Was hast du früher gemacht?" },
       { text: "Ich bin geklettert. Aber das ist mir jetzt zu viel." },
       { text: "Dann geh ins Hallenbad. Schwimmen kann man jeden Tag." },
@@ -310,7 +310,7 @@ export const b1U44: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Takımımız bir saat boyunca çok iyi oynadı.",
+        tr: "Takımımız statta bir saat boyunca çok iyi oynadı.",
         answer: "Unsere Mannschaft spielte im Stadion eine Stunde lang sehr gut.",
         hint: "Süre edatsız Akkusativ: eine Stunde lang.",
       },
@@ -353,7 +353,7 @@ export const b1U44: SkillExercise[] = [
     unit: 44,
     title: "Ein Fest planen",
     genre: "info",
-    intro: "Bir kutlama planla. 'daha' ve 'bile' Almancada iki ayrı sözcük.",
+    intro: "Bir kutlama planla. 'daha' ve 'şimdiden' Almancada erst ve schon olur.",
     minutes: 12,
     gloss: [
       { de: "der Fasching", tr: "karnaval", en: "carnival" },
@@ -395,13 +395,13 @@ export const b1U44: SkillExercise[] = [
           "Ein Risiko gibt es: das Wetter. Wenn es regnet, gehen wir nach " +
           "drinnen, aber dann sind wir zu zwanzig in einem Zimmer. " +
           "Ich frage vorher, ob wir den Raum im Erdgeschoss haben können.\n\n" +
-          "Und noch etwas: bitte kommt nicht erst um acht. Letztes Mal war " +
+          "Und noch etwas: Bitte kommt nicht erst um acht. Letztes Mal war " +
           "es schon dunkel, als die Hälfte ankam, und wir haben uns nur " +
           "eine Stunde lang wirklich gesehen.",
         phrases: [
           { de: "Es geht um vier los.", tr: "Saat dörtte başlıyor.", en: "It starts at four." },
           { de: "zwei Stunden lang", tr: "iki saat boyunca", en: "for two hours" },
-          { de: "Kommt nicht erst um acht.", tr: "Sekizi bulmayın.", en: "Don't come only at eight." },
+          { de: "Kommt nicht erst um acht.", tr: "Sekize kalmayın.", en: "Don't wait until eight to come." },
         ],
       },
       {

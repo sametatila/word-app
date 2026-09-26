@@ -160,7 +160,7 @@ export const b1U06: SkillExercise[] = [
     unit: 6,
     title: "Damit du früher gehen kannst",
     genre: "dialogue",
-    intro: "İki meslektaş işi paylaşıyor. Her yardımın amacı kim için, dinle.",
+    intro: "İki meslektaş işi paylaşıyor. Dinle: her yardım kimin için, ne amaçla?",
     minutes: 4,
     gloss: [
       { de: "sich erholen", tr: "dinlenmek", en: "to recover" },
@@ -235,7 +235,7 @@ export const b1U06: SkillExercise[] = [
       { text: "Schau mal, das Foto. Weißt du noch?" },
       { text: "Natürlich. Das war damals in den Ferien." },
       { text: "Als wir dort ankamen, hatte ich eine Erkältung." },
-      { text: "Ja, richtig. Du bliebst drei Tage im Zimmer." },
+      { text: "Ja, richtig. Du bist drei Tage im Zimmer geblieben." },
       { text: "Eigentlich wollte ich schwimmen. Es war nämlich sehr warm." },
       { text: "Jedes Mal, wenn ich das Foto sehe, muss ich lachen." },
       { text: "Ich auch. Es war ein Zufall, dass wir uns dort trafen." },
@@ -270,11 +270,11 @@ export const b1U06: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie viele Tage blieb sie im Zimmer?",
+        text: "Wie viele Tage blieb die erste Person im Zimmer?",
         options: [],
         answer: 0,
         accept: ["drei Tage", "drei", "3"],
-        explain: "„Du bliebst drei Tage im Zimmer.“",
+        explain: "„Du bist drei Tage im Zimmer geblieben.“",
       },
     ],
   },
@@ -311,7 +311,6 @@ export const b1U06: SkillExercise[] = [
         kind: "build",
         tr: "Zamanında bitirmeyi bekliyorum.",
         answer: "Ich erwarte, dass ich rechtzeitig fertig werde.",
-        alternatives: ["Ich erwarte, rechtzeitig fertig zu werden."],
         hint: "„erwarten“ sonrası dass yan cümlesi ya da zu-mastarı.",
       },
       {
@@ -376,7 +375,7 @@ export const b1U06: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Als Kind wohnte ich damals in einem kleinen Ort mit meiner Familie.\n\n" +
+          "Als Kind wohnte ich damals mit meiner Familie in einem kleinen Ort.\n\n" +
           "Jedes Mal, wenn im Winter der erste Schnee kam, gingen mein Bruder und ich " +
           "sofort nach draußen. Meine Mutter rief ständig, wir sollten warme Sachen " +
           "anziehen, aber wir hörten kaum zu.\n\n" +

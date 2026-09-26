@@ -2,7 +2,7 @@
  {
   "tr": "Tatil fotoğrafları gösteriliyor. Hangisi en çok beğeniliyor?",
   "kind": "intro",
-  "en": "Holiday photos are being shown. Which one goes down best?"
+  "en": "Vacation photos are being shown. Which one do they like best?"
  },
  {
   "tr": "Telefonda nezaket. Ses tonu yokken kibarlık neyle taşınıyor?",
@@ -17,7 +17,7 @@
  {
   "tr": "Üçü de gerekçe ya da içerik veriyor, ama fiilin yeri farklı.",
   "kind": "intro",
-  "en": "All three give a reason or a content, but the verb sits in a different place."
+  "en": "All three give a reason or content, but the verb sits in a different place."
  },
  {
   "tr": "wenngleich ve gleichwohl: gerekçeyi tanı, kararı değiştirme.",
@@ -142,7 +142,7 @@
  {
   "tr": "Adlaştırma artı erfolgen: resmî usul dilinin standart kalıbı.",
   "kind": "explain",
-  "en": "Nominalisation plus erfolgen: the standard pattern of formal procedural language."
+  "en": "A nominalization plus erfolgen: the standard pattern of formal procedural language."
  },
  {
   "tr": "Aidiyet üzerine yaz. 'sein' sonrası yüklem yalın hâlde kalır.",
@@ -187,7 +187,7 @@
  {
   "tr": "Bir bakım planı yaz. Mastar isimleşince büyük harfle yazılır.",
   "kind": "intro",
-  "en": "Write a maintenance plan. An infinitive turned noun is written with a capital."
+  "en": "Write a care plan. An infinitive turned noun is written with a capital."
  },
  {
   "tr": "Bir durumu ve ne kadar sürdüğünü yaz. Süren mi, planlanan mı?",
@@ -240,9 +240,9 @@
   "en": "In the dative plural the noun takes -n: mit den KindERN, den ErwachsenEN."
  },
  {
-  "tr": "Daveti iptal et: sebep ne, ne kadar üzgünsün, ne öneriyorsun?",
+  "tr": "Davete gelemeyeceğini bildir: sebep ne, ne kadar üzgünsün, ne öneriyorsun?",
   "kind": "intro",
-  "en": "Cancel the invitation: what is the reason, how sorry are you, what do you suggest?"
+  "en": "Turn down the invitation: what is the reason, how sorry are you, what do you suggest?"
  },
  {
   "tr": "Doğru: „Erwartet worden ist er allerdings auch letztes Jahr.“",
@@ -307,12 +307,12 @@
  {
   "tr": "İki arkadaş bir hediye seçiyor. Hangisi daha çok beğeniliyor?",
   "kind": "intro",
-  "en": "Two friends choose a present. Which one goes down better?"
+  "en": "Two friends choose a present. Which one do they like better?"
  },
  {
   "tr": "İki ev arkadaşı parti hazırlığı yapıyor. Kim neyi üstleniyor?",
   "kind": "intro",
-  "en": "Two flatmates are getting ready for a party. Who takes on what?"
+  "en": "Two roommates are getting ready for a party. Who takes on what?"
  },
  {
   "tr": "İsimleşmiş mastar büyük harfle: „Waschen“ burada bir isimdir.",
@@ -362,7 +362,7 @@
  {
   "tr": "Parktan geçen kestirme yol üç dakika sürüyor, normal yol beş.",
   "kind": "explain",
-  "en": "The short cut through the park takes three minutes, the normal way five."
+  "en": "The shortcut through the park takes three minutes, the normal way five."
  },
  {
   "tr": "Randevu kesinleşmiş; plan için present continuous kullanılır.",
@@ -595,9 +595,9 @@
   "en": "What is running instead, and when the next update will come."
  },
  {
-  "tr": "Check-in kuyruğu. Bagaj kaça çıkıyor, hangi kapıdan gidiliyor?",
+  "tr": "Check-in kuyruğu. Bavul var mı, yolcu nerede oturacak, sonra nereye gidecek?",
   "kind": "intro",
-  "en": "The check-in queue. What does the luggage come to, which gate do they use?"
+  "en": "The check-in line. Is there a suitcase, where will the passenger sit, where does he go next?"
  },
  {
   "tr": "Çekirdek bulununca kalan her şey koşul olarak sıralanabiliyor.",
@@ -712,6 +712,6 @@
  {
   "tr": "Okuldan sonraki yolunu yaz. Bazı fiillerden sonra 'zu' gelmez.",
   "kind": "intro",
-  "en": "Write about your way home from school. Some verbs are not followed by 'zu'."
+  "en": "Write about your path after school. Some verbs are not followed by 'zu'."
  }
 ]

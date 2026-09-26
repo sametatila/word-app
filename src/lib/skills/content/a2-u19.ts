@@ -170,10 +170,10 @@ export const a2U19: SkillExercise[] = [
     gloss: [
       { de: "die Braut", tr: "gelin", en: "bride" },
       { de: "der Bräutigam", tr: "damat", en: "groom" },
-      { de: "der Trauzeuge", tr: "nikâh şahidi", en: "witness" },
+      { de: "der Trauzeuge", tr: "nikâh şahidi", en: "best man" },
       { de: "anstoßen", tr: "kadeh kaldırmak", en: "to toast" },
       { de: "die Schwiegermutter", tr: "kaynana", en: "mother-in-law" },
-      { de: "feierlich", tr: "tören havasında", en: "solemn, festive" },
+      { de: "feierlich", tr: "tören havasında", en: "solemn" },
       { de: "lustig", tr: "komik", en: "funny" },
       { de: "also", tr: "yani", en: "so" },
       { de: "vorhin", tr: "az önce", en: "a little while ago" },
@@ -234,7 +234,7 @@ export const a2U19: SkillExercise[] = [
     unit: 19,
     title: "Ich muss leider absagen",
     genre: "phone",
-    intro: "Bir davet iptal ediliyor. Sebep ne, yerine ne öneriliyor?",
+    intro: "Davete gelemeyecek biri arıyor. Sebep ne, yerine ne öneriliyor?",
     gloss: [
       { de: "die Absage", tr: "iptal", en: "cancellation" },
       { de: "bedauern", tr: "üzülmek", en: "to regret" },
@@ -310,6 +310,7 @@ export const a2U19: SkillExercise[] = [
         kind: "build",
         tr: "Maalesef gelemiyorum, çünkü çalışmam gerekiyor.",
         answer: "Ich kann leider nicht kommen, weil ich arbeiten muss",
+        alternatives: ["Leider kann ich nicht kommen, weil ich arbeiten muss", "Weil ich arbeiten muss, kann ich leider nicht kommen"],
         hint: "weil'den sonra çekimli fiil (muss) en sona gider.",
       },
       {
@@ -341,23 +342,23 @@ export const a2U19: SkillExercise[] = [
     unit: 19,
     title: "Eine höfliche Absage",
     genre: "message",
-    intro: "Daveti iptal et: sebep ne, ne kadar üzgünsün, ne öneriyorsun?",
+    intro: "Davete gelemeyeceğini bildir: sebep ne, ne kadar üzgünsün, ne öneriyorsun?",
     gloss: [
       { de: "die Absage", tr: "iptal", en: "cancellation" },
       { de: "bedauern", tr: "üzülmek", en: "to regret" },
       { de: "stattdessen", tr: "onun yerine", en: "instead" },
       { de: "zusammenkommen", tr: "bir araya gelmek", en: "to get together" },
       { de: "der Gastgeber", tr: "ev sahibi", en: "host" },
-      { de: "die Schicht", tr: "toplumsal katman", en: "social stratum" },
+      { de: "die Schicht", tr: "vardiya", en: "shift" },
     ],
     minutes: 8,
     tasks: [
       {
         kind: "reply",
-        prompt: "Davete iptal cevabı yaz. Gelemeyeceğini söyle, sebebini weil ile açıkla, üzüntünü belirt ve yerine somut bir alternatif öner.",
+        prompt: "Davete olumsuz cevap yaz. Gelemeyeceğini söyle, sebebini weil ile açıkla, üzüntünü belirt ve yerine somut bir alternatif öner.",
         stimulus:
           "Hallo!\n\n" +
-          "Am Samstag um 19 Uhr feiern wir Einzug in der neuen Wohnung — Kaiserstraße 40, dritter Stock.\n\n" +
+          "Am Samstag um 19 Uhr feiern wir unseren Einzug in der neuen Wohnung — Kaiserstraße 40, dritter Stock.\n\n" +
           "Es gibt Suppe und viel zu viel Kuchen. Bringt nichts mit, wirklich nicht.\n\n" +
           "Sagt bitte bis Donnerstag Bescheid, damit ich weiß, wie viele Stühle ich brauche.\n\nLiebe Grüße, Marie",
         checklist: [
@@ -369,14 +370,14 @@ export const a2U19: SkillExercise[] = [
         minWords: 40,
         phrases: [
           { de: "Ich kann leider nicht kommen, weil …", tr: "maalesef gelemiyorum, çünkü …", en: "unfortunately I can't come because …" },
-          { de: "Ich bedauere das sehr.", tr: "buna çok üzüldüm", en: "I really regret it" },
+          { de: "Ich bedauere das sehr.", tr: "buna çok üzülüyorum", en: "I really regret it" },
           { de: "Können wir es noch mal versuchen?", tr: "bir daha deneyelim mi", en: "shall we try again" },
         ],
         sample:
           "Liebe Marie,\n\n" +
           "vielen Dank für die Einladung — und herzlichen Glückwunsch zur neuen Wohnung!\n\n" +
           "Leider kann ich am Samstag nicht kommen, weil meine Kollegin krank ist und ich ihre Schicht übernehmen muss. Ich bin erst um halb elf fertig, und dann fährt kein Bus mehr zu euch.\n\n" +
-          "Ich bedauere das wirklich sehr. Ausnahmsweise geht es diesmal nicht.\n\n" +
+          "Ich bedauere das wirklich sehr.\n\n" +
           "Können wir es noch mal versuchen? Nächsten Samstag habe ich frei. Wenn ihr wollt, kommen wir stattdessen bei mir zusammen, dann koche ich.\n\n" +
           "Viele Grüße und viel Spaß am Samstag!\nDeniz",
       },

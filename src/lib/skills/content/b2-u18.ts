@@ -206,7 +206,7 @@ export const b2U18: SkillExercise[] = [
     intro: "Bir tatil önerisi konuşuluyor — ama bilgi hep başkasından geliyor.",
     gloss: [
       { de: "der Reiseveranstalter", tr: "tur operatörü", en: "tour operator" },
-      { de: "die Pauschalreise", tr: "paket tur", en: "package holiday" },
+      { de: "die Pauschalreise", tr: "paket tur", en: "package tour" },
       { de: "die Besichtigung", tr: "gezme", en: "sightseeing" },
       { de: "der Fremdenverkehr", tr: "turist hareketliliği", en: "tourism" },
       { de: "abgelegen", tr: "ücra", en: "remote" },
@@ -225,7 +225,7 @@ export const b2U18: SkillExercise[] = [
       { speaker: "Jonna", text: "Die Fotos sind jedenfalls atemberaubend. Unberührte Landschaft, keine Menschen drauf." },
       { speaker: "Ansgar", text: "Keine Menschen auf dem Foto heißt nicht keine Menschen im Tal." },
       { speaker: "Jonna", text: "Stimmt. Angeblich ist es aber ziemlich abgelegen." },
-      { speaker: "Ansgar", text: "Dann prüf den Fremdenverkehr für Juli. Ausgebucht sein dürfte dort alles." },
+      { speaker: "Ansgar", text: "Dann schau, wie es im Juli mit dem Fremdenverkehr aussieht. Ausgebucht sein dürfte dort alles." },
       { speaker: "Jonna", text: "Es gibt eine Pauschalreise mit Bus und zwei Besichtigungen." },
       { speaker: "Ansgar", text: "Und was steht im Kleingedruckten? Zwei Besichtigungen können zwei Stunden sein." },
       { speaker: "Jonna", text: "Ich schaue nach. Vielleicht fahren wir doch selbst." },
@@ -256,7 +256,7 @@ export const b2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["den Fremdenverkehr", "ob alles ausgebucht ist", "die Auslastung"],
-        explain: "„Dann prüf den Fremdenverkehr für Juli. Ausgebucht sein dürfte dort alles.“",
+        explain: "„Dann schau, wie es im Juli mit dem Fremdenverkehr aussieht. Ausgebucht sein dürfte dort alles.“",
       },
       {
         text: "Was ist in der Pauschalreise enthalten?",
@@ -283,7 +283,7 @@ export const b2U18: SkillExercise[] = [
     intro: "Maaş görüşmesi. Rakam nasıl söyleniyor, geri adım nasıl açık bırakılıyor?",
     gloss: [
       { de: "die Vergütung", tr: "ücretlendirme", en: "remuneration" },
-      { de: "die Gehaltserhöhung", tr: "maaş zammı", en: "pay rise" },
+      { de: "die Gehaltserhöhung", tr: "maaş zammı", en: "raise" },
       { de: "der Stundenlohn", tr: "saat ücreti", en: "hourly wage" },
       { de: "die Prämie", tr: "prim", en: "bonus" },
       { de: "der Tarifvertrag", tr: "toplu iş sözleşmesi", en: "collective agreement" },
@@ -291,7 +291,7 @@ export const b2U18: SkillExercise[] = [
       { de: "die Aufstiegschance", tr: "yükselme fırsatı", en: "promotion prospect" },
       { de: "angemessen", tr: "makul", en: "appropriate" },
       { de: "gerne", tr: "memnuniyetle", en: "with pleasure" },
-      { de: "bieten", tr: "sağlamak", en: "to provide" },
+      { de: "anbieten", tr: "sunmak", en: "to offer" },
     ],
     minutes: 5,
     segments: [
@@ -356,7 +356,7 @@ export const b2U18: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 18,
-    title: "Değer, karşılaştırma, pazarlık",
+    title: "Behaupten, vergleichen, verhandeln",
     genre: "build",
     intro: "soll iddiayı, je-desto karşılaştırmayı, Konjunktiv II ise pazarlık payını taşır.",
     gloss: [
@@ -389,6 +389,7 @@ export const b2U18: SkillExercise[] = [
         kind: "build",
         tr: "Üstlendiklerime bakılırsa bir düzenleme makul olurdu.",
         answer: "Gemessen an dem, was ich übernommen habe, wäre eine Anpassung angemessen",
+        alternatives: ["Eine Anpassung wäre angemessen, gemessen an dem, was ich übernommen habe"],
         hint: "gemessen an ölçütü verir; ana cümlede yine Konjunktiv II.",
       },
       {
@@ -415,7 +416,7 @@ export const b2U18: SkillExercise[] = [
     intro: "Maaş görüşmesi iste ve gerekçeni önceden yaz — rakamı söyle ama kapıyı kapatma.",
     gloss: [
       { de: "die Vergütung", tr: "ücretlendirme", en: "remuneration" },
-      { de: "die Gehaltserhöhung", tr: "maaş zammı", en: "pay rise" },
+      { de: "die Gehaltserhöhung", tr: "maaş zammı", en: "raise" },
       { de: "die Festanstellung", tr: "kadrolu iş", en: "permanent position" },
       { de: "die Aufstiegschance", tr: "yükselme fırsatı", en: "promotion prospect" },
       { de: "die Erhöhung", tr: "zam", en: "increase" },
@@ -437,7 +438,7 @@ export const b2U18: SkillExercise[] = [
         phrases: [
           { de: "Ich hätte mir … vorgestellt.", tr: "… düşünmüştüm", en: "I had in mind …" },
           { de: "Gemessen an den übernommenen Aufgaben …", tr: "üstlendiğim işlere bakılırsa …", en: "measured against the tasks taken on …" },
-          { de: "Über einen Termin würde ich mich freuen.", tr: "bir randevu için sevinirim", en: "I would be glad of an appointment" },
+          { de: "Über einen Termin würde ich mich freuen.", tr: "bir randevu için sevinirim", en: "I would welcome a meeting" },
         ],
         sample:
           "Betreff: Bitte um ein Gespräch über meine Vergütung\n\n" +

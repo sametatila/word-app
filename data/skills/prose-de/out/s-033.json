@@ -220,11 +220,6 @@
   "de": "„I have already taken a number. Sixty-four.“ — neunundfünfzig ist die aktuelle Nummer."
  },
  {
-  "tr": "„Renew. The old one is valid until November.“ — 2030 pasaportun tarihi.",
-  "kind": "explain",
-  "de": "„Renew. The old one is valid until November.“ — 2030 gehört zum Pass."
- },
- {
   "tr": "„I agree with you about the games“ — yalnız oyunlar için, hepsi için değil.",
   "kind": "explain",
   "de": "„I agree with you about the games“ — nur für die Spiele, nicht für alles."
@@ -350,9 +345,9 @@
   "de": "schluckt es"
  },
  {
-  "tr": "aşağı in",
+  "tr": "aşağı kaydır",
   "kind": "gloss.tr",
-  "de": "scroll nach unten"
+  "de": "nach unten scrollen"
  },
  {
   "tr": "belediye",

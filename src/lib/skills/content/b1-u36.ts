@@ -287,7 +287,7 @@ export const b1U36: SkillExercise[] = [
         text: "Wann soll alles zurückkommen?",
         options: [],
         answer: 0,
-        accept: ["wenn sie fertig ist", "wenn du fertig bist", "nach der Arbeit"],
+        accept: ["wenn sie fertig ist", "wenn er fertig ist", "wenn du fertig bist"],
         explain: "„Bring alles zurück, wenn du fertig bist.“",
       },
     ],
@@ -324,9 +324,9 @@ export const b1U36: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Klimayı hiç kullanmadım, teknik el kitabı zahmete değmedi.",
+        tr: "Klimaya hiç ihtiyacım olmadı, teknik el kitabı zahmete değmedi.",
         answer: "Die Klimaanlage habe ich nie gebraucht, das technische Handbuch war die Mühe nicht wert.",
-        hint: "„gebrauchen“ ayrılmaz ama ge- ile başlar — kök öyle.",
+        hint: "„brauchen“ öneksiz: olağan ge- … -t → gebraucht.",
       },
       {
         kind: "form",

@@ -183,7 +183,7 @@ export const b1U11: SkillExercise[] = [
       { text: "Gut. Ein Dokument wird noch benötigt: die Anmeldung der Wohnung." },
       { text: "Die habe ich zu Hause. Kann ich sie später schicken?" },
       { text: "Ja, per Post oder online. Erst danach wird der Antrag geprüft. Die Behörde meldet sich dann bei Ihnen." },
-      { text: "Und wie lang ist die Dauer etwa?" },
+      { text: "Und mit welcher Dauer muss ich etwa rechnen?" },
       { text: "Etwa acht Wochen. Der Bescheid wird Ihnen dann zugeschickt." },
     ],
     questions: [
@@ -241,13 +241,13 @@ export const b1U11: SkillExercise[] = [
     ],
     segments: [
       { text: "Der Bescheid ist da. Mein Antrag wurde abgelehnt." },
-      { text: "Worüber genau? Steht ein Grund drin?" },
+      { text: "Warum denn? Steht ein Grund drin?" },
       { text: "Ja, angeblich fehlt ein Beweis für meine Wohnzeit." },
       { text: "Dann hast du rechtlich einen Anspruch auf Widerspruch." },
       { text: "Ich habe vier Wochen Zeit, oder?" },
       { text: "Genau. Und du musst ihn schriftlich begründen." },
       { text: "Die alten Verträge habe ich noch. Die lege ich als Anlage bei." },
-      { text: "Sehr gut. Dann bist du entschlossen — schreib ihn heute." },
+      { text: "Sehr gut. Wenn du so entschlossen bist, schreib ihn am besten heute." },
     ],
     questions: [
       {
@@ -371,7 +371,7 @@ export const b1U11: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir başvurunun reddine itiraz mektubu yaz: hangi karara itiraz ettiğini (tarih ve numara), neden itiraz ettiğini, hangi belgeleri ek olarak gönderdiğini ve ne istediğini yaz. Resmî hitap ve kapanış kullan.",
+        prompt: "Bir başvurunun reddine itiraz mektubu yaz: hangi karara itiraz ettiğini (tarihiyle), neden itiraz ettiğini, hangi belgeleri ek olarak gönderdiğini ve ne istediğini yaz. Resmî hitap ve kapanış kullan.",
         checklist: [
           "Resmî hitap ve kapanış var mı?",
           "Hangi karara itiraz edildiği (tarih) belirtilmiş mi?",
@@ -388,12 +388,12 @@ export const b1U11: SkillExercise[] = [
           "und der Vertrag wurde damals bei Ihnen abgegeben. Die Entscheidung wurde " +
           "deshalb von der Behörde auf einer falschen Grundlage getroffen.\n\n" +
           "Als Anlage schicke ich zwei Dokumente: den alten Vertrag und die Anmeldung. " +
-          "Beide Dokumente sind offiziell und mit Datum.\n\n" +
+          "Beide Dokumente sind offiziell und tragen ein Datum.\n\n" +
           "Ich bitte Sie, den Antrag noch einmal zu prüfen und mich über den Stand " +
           "zu informieren.\n\n" +
           "Mit freundlichen Grüßen\nLeyla Kaya",
         phrases: [
-          { de: "Hiermit lege ich Widerspruch ein.", tr: "İşbu yazıyla itiraz ediyorum.", en: "I hereby lodge an objection." },
+          { de: "Hiermit lege ich Widerspruch ein.", tr: "İşbu yazıyla itiraz ediyorum.", en: "I hereby file an objection." },
           { de: "Als Anlage schicke ich …", tr: "Ek olarak gönderiyorum …", en: "Enclosed I am sending …" },
           { de: "Ich bitte Sie, … zu prüfen.", tr: "… incelemenizi rica ederim.", en: "I ask you to check …" },
         ],

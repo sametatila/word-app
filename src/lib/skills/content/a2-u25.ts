@@ -201,12 +201,12 @@ export const a2U25: SkillExercise[] = [
       { speaker: "Ecem", text: "Tagelang, jeden Abend bis eins. Aber wenn ich aufgeregt bin, kann ich nicht schlafen." },
       { speaker: "Marek", text: "Und am nächsten Morgen bist du schläfrig und lernst schlechter." },
       { speaker: "Ecem", text: "Genau das. Ich lese dieselbe Seite wiederholt und verstehe nichts." },
-      { speaker: "Marek", text: "Dann hör um zehn auf. Wirklich. Zwei konzentrierte Stunden sind mehr als fünf müde." },
+      { speaker: "Marek", text: "Dann hör um zehn auf. Wirklich. Zwei konzentrierte Stunden bringen mehr als fünf müde." },
       { speaker: "Ecem", text: "Aber der schriftliche Teil ist so schwierig." },
       { speaker: "Marek", text: "Der schriftliche war bei mir auch das Schlimmste. Weißt du, was geholfen hat? Alte Prüfungen, mit Uhr." },
       { speaker: "Ecem", text: "Mit Uhr?" },
       { speaker: "Marek", text: "Ja. Nicht der Stoff macht Probleme, sondern die Zeit. Wenn du das dreimal übst, bist du am Tag selbst viel ruhiger." },
-      { speaker: "Ecem", text: "Gut. Dann bin ich weniger besorgt als heute Morgen." },
+      { speaker: "Ecem", text: "Gut. Jetzt bin ich schon weniger besorgt als heute Morgen." },
     ],
     questions: [
       {
@@ -239,8 +239,8 @@ export const a2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Zwei konzentrierte Stunden sind mehr als fünf müde.",
-          "Zwei konzentrierte Stunden sind mehr als fünf müde",
+          "Zwei konzentrierte Stunden bringen mehr als fünf müde.",
+          "Zwei konzentrierte Stunden bringen mehr als fünf müde",
         ],
         explain: "Karşılaştırma biçimi burada tavsiyeyi taşıyor: nicelik değil, odak.",
       },
@@ -261,7 +261,7 @@ export const a2U25: SkillExercise[] = [
       { de: "sogar", tr: "hatta", en: "even" },
       { de: "außerdem", tr: "ayrıca", en: "besides" },
       { de: "fast", tr: "neredeyse", en: "almost" },
-      { de: "selbst", tr: "kendisi / bizzat", en: "myself" },
+      { de: "selbst", tr: "kendim", en: "myself" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "vorbei", tr: "bitmiş", en: "over" },
       { de: "lesen", tr: "okumak", en: "to read" },
@@ -297,7 +297,7 @@ export const a2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["fast"],
-        explain: "Kapanış cümlesinin dürüstlüğü burada: hepsi değil, neredeyse hepsi.",
+        explain: "Amir her şeyi değil, neredeyse her şeyi anlamış: „Nicht alles — aber fast.“",
       },
       {
         text: "Was war Ecems Problem beim Sprechen?",
@@ -338,12 +338,14 @@ export const a2U25: SkillExercise[] = [
         kind: "build",
         tr: "Yazılımcı olmak istiyorum, çünkü bilgisayarda çalışmayı seviyorum.",
         answer: "Ich möchte Programmierer werden, weil ich gern am Computer arbeite",
+        alternatives: ["Weil ich gern am Computer arbeite, möchte ich Programmierer werden"],
         hint: "weil çekimli fiili sona atar: arbeite en sonda.",
       },
       {
         kind: "build",
         tr: "Heyecanlandığımda uyuyamıyorum.",
         answer: "Wenn ich aufgeregt bin, kann ich nicht schlafen",
+        alternatives: ["Ich kann nicht schlafen, wenn ich aufgeregt bin"],
         hint: "Yan cümle başta olduğu için ana cümle fiille başlar: kann ich.",
       },
       {
@@ -376,7 +378,7 @@ export const a2U25: SkillExercise[] = [
       { de: "das Ziel", tr: "hedef", en: "goal" },
       { de: "erstaunt", tr: "şaşırmış", en: "astonished" },
       { de: "das Gesuch", tr: "dilekçe", en: "petition" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay", en: "easy" },
     ],
     minutes: 10,
     tasks: [
@@ -399,7 +401,7 @@ export const a2U25: SkillExercise[] = [
         sample:
           "Vor einem Jahr konnte ich im Supermarkt nicht einmal fragen, wo das Mehl steht. Ich habe gesucht, bis ich es selbst gefunden habe, weil ich mich nicht getraut habe.\n\n" +
           "Heute ist das anders. Letzte Woche habe ich beim Amt angerufen und einen Termin gemacht. Die Frau hat schnell gesprochen, und ich habe fast alles verstanden. Meine Schwester war erstaunt.\n\n" +
-          "Am schwierigsten sind für mich immer noch die Nebensätze. Wenn ich schnell spreche, vergesse ich das Verb am Ende. Schreiben ist leichter als sprechen, weil ich beim Schreiben Zeit habe.\n\n" +
+          "Am schwierigsten sind für mich immer noch die Nebensätze. Wenn ich schnell spreche, vergesse ich das Verb am Ende. Schreiben ist leichter als Sprechen, weil ich beim Schreiben Zeit habe.\n\n" +
           "Mein nächstes Ziel ist der B1-Kurs im Oktober. Immerhin traue ich mich jetzt zu sprechen, auch wenn es nicht perfekt ist. Ein Jahr lang habe ich auf den perfekten Satz gewartet — das mache ich nicht noch einmal.",
       },
     ],

@@ -181,8 +181,8 @@ export const enA2U10: SkillExercise[] = [
     segments: [
       { speaker: "Mert", text: "I moved to this area in March and now I don't want to go back." },
       { speaker: "Mert", text: "There is a park nearby. From my front door it takes ten minutes on foot." },
-      { speaker: "Mert", text: "It's quieter than the city center, but it isn't boring. On Saturday the market is crowded." },
-      { speaker: "Mert", text: "The bus stop is under my window. That was a problem in the first week and now I don't hear it." },
+      { speaker: "Mert", text: "It's quieter than the city center, but it isn't boring. On Saturdays the market is crowded." },
+      { speaker: "Mert", text: "The bus stop is under my window. That was a problem in the first week, but now I don't hear it." },
       { speaker: "Mert", text: "At night the streets are safe. There are always people, because the bakery opens at four." },
       { speaker: "Mert", text: "What is missing? A movie theater. For a movie I have to take the bus for twenty minutes." },
       { speaker: "Mert", text: "And the rents are going up. Two years ago this area was cheap." },
@@ -257,7 +257,7 @@ export const enA2U10: SkillExercise[] = [
       { speaker: "Sena", text: "What time do you open on Sunday?" },
       { speaker: "Baker", text: "At seven, like every day. But we close at twelve." },
       { speaker: "Sena", text: "Good to know. Is the corner store open on Sunday too?" },
-      { speaker: "Baker", text: "No, only we and the laundry. The butcher shop and the bookstore are closed." },
+      { speaker: "Baker", text: "No, only us and the laundry. The butcher shop and the bookstore are closed." },
       { speaker: "Sena", text: "And the shopping mall?" },
       { speaker: "Baker", text: "Open, but it takes half an hour by bus. For bread that is too far." },
       { speaker: "Sena", text: "You are right. I've already been to the bakery three times this week." },
@@ -274,7 +274,7 @@ export const enA2U10: SkillExercise[] = [
         text: "Which stores are open on Sunday?",
         options: ["the bakery and the laundry", "the butcher shop", "the bookstore"],
         answer: 0,
-        explain: "„No, only we and the laundry.“",
+        explain: "„No, only us and the laundry.“",
       },
       {
         kind: "truefalse",
@@ -304,7 +304,7 @@ export const enA2U10: SkillExercise[] = [
         text: "How often has Sena been to the bakery this week?",
         options: [],
         answer: 0,
-        accept: ["three times", "four times", "3 times"],
+        accept: ["three times", "four times", "3 times", "4 times"],
         explain: "„I've already been to the bakery three times this week.“ — fırıncı bugünü de sayıyor.",
       },
     ],
@@ -378,7 +378,7 @@ export const enA2U10: SkillExercise[] = [
     genre: "personal",
     intro: "Mahalleni anlat ve tamirciye sor.",
     gloss: [
-      { de: "nearby", tr: "yakında" },
+      { de: "nearby", tr: "yakınlarda" },
       { de: "on foot", tr: "yürüyerek" },
       { de: "cost", tr: "mal olmak" },
     ],
@@ -386,7 +386,7 @@ export const enA2U10: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yakında bir park var.",
+        tr: "Yakınlarda bir park var.",
         answer: "There is a park nearby.",
         alternatives: ["There's a park nearby."],
         hint: "„nearby“ tek sözcük ve önüne edat almıyor.",

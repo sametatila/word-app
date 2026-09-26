@@ -190,7 +190,7 @@ export const b2U19: SkillExercise[] = [
       { de: "die Existenzgründung", tr: "iş kurma", en: "starting a business" },
       { de: "das Eigenkapital", tr: "öz sermaye", en: "equity" },
       { de: "die Liquidität", tr: "likidite", en: "liquidity" },
-      { de: "der Umsatz", tr: "ciro", en: "turnover" },
+      { de: "der Umsatz", tr: "ciro", en: "revenue" },
       { de: "konkurrieren", tr: "rekabet etmek", en: "to compete" },
       { de: "florieren", tr: "iyi gitmek", en: "to flourish" },
       { de: "scheitern", tr: "başarısız olmak", en: "to fail" },
@@ -198,7 +198,7 @@ export const b2U19: SkillExercise[] = [
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "also", tr: "yani", en: "so" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "leeren", tr: "boşaltmak", en: "to empty" },
+      { de: "leer", tr: "boş", en: "empty" },
       { de: "die Krankenversicherung", tr: "sağlık sigortası", en: "health insurance" },
       { de: "die Rücklage", tr: "yedek akçe", en: "reserve" },
       { de: "selbstständig", tr: "serbest çalışan", en: "self-employed" },
@@ -326,7 +326,7 @@ export const b2U19: SkillExercise[] = [
         text: "Wie baut man Kontakte laut Gino auf?",
         options: [],
         answer: 0,
-        accept: ["durch Mitwirken an Projekten", "durch gute Arbeit", "indem man mitwirkt"],
+        accept: ["durch Mitwirken an Projekten", "durch gute Arbeit", "indem man mitwirkt", "indem man an Projekten mitwirkt"],
         explain: "„Indem du an Projekten mitwirkst, bei denen andere zusehen.“",
       },
       {
@@ -353,7 +353,7 @@ export const b2U19: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 19,
-    title: "Koşul, amaç, usul",
+    title: "Bedingung, Zweck, Verfahren",
     genre: "build",
     intro: "sofern koşulu daraltır, um-zu amacı verir, adlaştırma usulü resmîleştirir.",
     gloss: [
@@ -378,8 +378,9 @@ export const b2U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha hızlı olmak için akşamları da ulaşılabilir kalıyor.",
+        tr: "Daha hızlı olmak için akşamları ulaşılabilir kalıyor.",
         answer: "Er bleibt abends erreichbar, um schneller zu sein",
+        alternatives: ["Um schneller zu sein, bleibt er abends erreichbar", "Abends bleibt er erreichbar, um schneller zu sein"],
         hint: "um … zu amaç bildirir ve iki yarıda özne aynı olmalıdır.",
       },
       {
@@ -408,12 +409,12 @@ export const b2U19: SkillExercise[] = [
     genre: "text",
     intro: "Bir işi kısaca tarif et: ne yapacaksın, hangi koşulla, hangi amaçla?",
     gloss: [
-      { de: "der Umsatz", tr: "ciro", en: "turnover" },
+      { de: "der Umsatz", tr: "ciro", en: "revenue" },
       { de: "die Liquidität", tr: "likidite", en: "liquidity" },
       { de: "absichern", tr: "güvenceye almak", en: "to secure" },
       { de: "die Bescheinigung", tr: "belge", en: "certificate" },
       { de: "der Mietvertrag", tr: "kira sözleşmesi", en: "lease" },
-      { de: "die Halle", tr: "salon", en: "hall" },
+      { de: "die Halle", tr: "atölye binası", en: "workshop building" },
       { de: "die Berufsgenossenschaft", tr: "meslek sigortası kurumu", en: "occupational accident insurer" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],
@@ -441,7 +442,7 @@ export const b2U19: SkillExercise[] = [
           "Für wen. Privathaushalte im Umkreis von zwanzig Kilometern und zwei Einrichtungsgeschäfte, mit denen ich schon zweimal kooperiert habe.\n\n" +
           "Bedingungen. Sofern der Mietvertrag für die Halle zustande kommt und die Bescheinigung der Berufsgenossenschaft vorliegt, beginne ich im März. Die Anmeldung des Gewerbes erfolgt in derselben Woche.\n\n" +
           "Geld. Eigenkapital 14.000 Euro, davon 9.000 für Maschinen. Den Rest halte ich zurück, um die ersten Monate abzusichern; ich rechne im ersten Jahr mit einem Umsatz, der die Kosten gerade deckt.\n\n" +
-          "Risiko. Der schwächste Punkt ist die Liquidität im Winter: Reparaturen werden im Frühjahr beauftragt, die Miete läuft aber ab März. Wenn ich scheitere, dann daran — nicht an fehlenden Kunden.",
+          "Risiko. Der schwächste Punkt ist die Liquidität im Winter: Reparaturen werden vor allem im Frühjahr beauftragt, die Miete läuft aber das ganze Jahr. Wenn ich scheitere, dann daran — nicht an fehlenden Kunden.",
       },
     ],
   },

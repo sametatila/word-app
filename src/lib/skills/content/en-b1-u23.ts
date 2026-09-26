@@ -222,7 +222,7 @@ export const enB1U23: SkillExercise[] = [
     intro: "Duyguyu adlandırmak. Hangi cümle çizgi, hangisi nokta?",
     gloss: [
       { de: "sentence", tr: "cümle" },
-      { de: "either", tr: "ikisinden biri" },
+      { de: "either", tr: "de" },
       { de: "honest", tr: "dürüst" },
       { de: "a line", tr: "çizgi" },
       { de: "a point", tr: "nokta" },
@@ -445,7 +445,7 @@ export const enB1U23: SkillExercise[] = [
       { de: "despite", tr: "rağmen" },
       { de: "on the other hand", tr: "öte yandan" },
       { de: "in contrast", tr: "buna karşılık" },
-      { de: "has been low", tr: "düşük" },
+      { de: "has been low", tr: "bozuk" },
     ],
     minutes: 8,
     tasks: [
@@ -469,7 +469,7 @@ export const enB1U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ruh hâlim pazartesiden beri düşük.",
+        tr: "Pazartesiden beri moralim bozuk.",
         answer: "My mood has been low since Monday.",
         hint: "Çizgi: başladı ve sürüyor.",
       },

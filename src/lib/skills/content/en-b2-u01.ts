@@ -325,7 +325,7 @@ export const enB2U01: SkillExercise[] = [
       { de: "sounding", tr: "kulağa gelmek" },
       { de: "control", tr: "denetlemek" },
       { de: "a promise", tr: "söz" },
-      { de: "turn round", tr: "arkanı dönmek" },
+      { de: "turn around", tr: "arkanı dönmek" },
       { de: "in progress", tr: "sürmekte" },
       { de: "a timeline", tr: "zaman çizelgesi" },
       { de: "a planner", tr: "ajanda" },
@@ -340,7 +340,7 @@ export const enB2U01: SkillExercise[] = [
     minutes: 7,
     segments: [
       { speaker: "Emre", text: "By June we will have passed the milestone. That sentence is a promise about a point in time, not about a day of work." },
-      { speaker: "Emre", text: "The future perfect looks back from a date that has not arrived yet. You stand in June, you turn round, and the milestone is behind you." },
+      { speaker: "Emre", text: "The future perfect looks back from a date that has not arrived yet. You stand in June, you turn around, and the milestone is behind you." },
       { speaker: "Emre", text: "This time next week we will be reviewing the scope. That one is different: it puts me inside the activity and not after it." },
       { speaker: "Emre", text: "The two are easy to tell apart if you ask what the sentence is looking at. Finished, or in progress." },
       { speaker: "Emre", text: "The budget will have been approved by then. Passive and future perfect together, and the order does not move: will, have, been, third form." },
@@ -487,7 +487,7 @@ export const enB2U01: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ekibi eşgüdümleyen Ana mayısta katıldı.",
+        tr: "Ekibi eşgüdümleyen Ana, mayısta aramıza katıldı.",
         answer: "Ana, who coordinates the team, joined in May.",
         hint: "Virgüller cümleciği fazladan yapıyor; ad seçim istemiyor.",
       },

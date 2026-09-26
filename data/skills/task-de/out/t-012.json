@@ -75,7 +75,7 @@
   "de": "Er ist groß."
  },
  {
-  "tr": "Onu alacağım.",
+  "tr": "Bunu alıyorum.",
   "kind": "build.tr",
   "de": "Ich nehme es."
  },
@@ -105,7 +105,7 @@
   "de": "Sie mag Musik."
  },
  {
-  "tr": "O neye benziyor?",
+  "tr": "Görünüşü nasıl?",
   "kind": "build.tr",
   "de": "Wie sieht er aus?"
  },

@@ -190,7 +190,7 @@ export const b1U07: SkillExercise[] = [
         explain: "„Bevor der Verkehr schlimm wird. Also etwa um sechs.“",
       },
       {
-        text: "Was macht die zweite Person, während die erste packt?",
+        text: "Was macht die erste Person, während die zweite packt?",
         options: ["Sie schläft", "Sie holt das Auto raus", "Sie kauft ein"],
         answer: 1,
         explain: "„Während du packst, hole ich das Auto raus.“",
@@ -214,7 +214,7 @@ export const b1U07: SkillExercise[] = [
         text: "Wer fährt auch dorthin?",
         options: [],
         answer: 0,
-        accept: ["die Schwester", "meine Schwester", "Schwester"],
+        accept: ["die Schwester", "meine Schwester", "Schwester", "ihre Schwester", "seine Schwester"],
         explain: "„Übrigens fährt meine Schwester auch hin.“",
       },
     ],
@@ -231,7 +231,7 @@ export const b1U07: SkillExercise[] = [
     gloss: [
       { de: "flüssig", tr: "akıcı", en: "fluent" },
       { de: "völlig", tr: "tamamen", en: "completely" },
-      { de: "jemals", tr: "hiçbir zaman", en: "ever", note: "olumsuz ve soru cümlelerinde" },
+      { de: "jemals", tr: "hiç / bir gün", en: "ever", note: "olumsuz ve soru cümlelerinde" },
       { de: "interessiert", tr: "ilgili", en: "interested" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
@@ -242,24 +242,24 @@ export const b1U07: SkillExercise[] = [
       { text: "Wieso denn?" },
       { text: "Je länger ich lerne, desto unsicherer werde ich." },
       { text: "Dann lernst du eben zu viel allein. Such dir jemanden." },
-      { text: "Vielleicht. Ich bin absolut interessiert, aber ich traue mich nicht." },
+      { text: "Vielleicht. Ich bin sehr interessiert, aber ich traue mich nicht." },
       { text: "Fang klein an. Nach zwei Wochen merkst du den Unterschied." },
     ],
     questions: [
       {
-        text: "Was passiert, je mehr die erste Person redet?",
+        text: "Was passiert, je mehr die zweite Person redet?",
         options: ["Sie denkt weniger nach", "Sie wird müde", "Sie macht mehr Fehler"],
         answer: 0,
         explain: "„… je mehr ich rede, desto weniger denke ich nach.“",
       },
       {
-        text: "Was passiert bei der zweiten Person?",
+        text: "Was passiert bei der ersten Person?",
         options: ["Sie wird sicherer", "Sie wird unsicherer", "Nichts ändert sich"],
         answer: 1,
         explain: "„Je länger ich lerne, desto unsicherer werde ich.“",
       },
       {
-        text: "Was rät die erste Person?",
+        text: "Was rät die zweite Person?",
         options: ["Mehr allein lernen", "Jemanden zum Reden suchen", "Aufhören"],
         answer: 1,
         explain: "„Dann lernst du eben zu viel allein. Such dir jemanden.“",
@@ -303,14 +303,13 @@ export const b1U07: SkillExercise[] = [
         kind: "build",
         tr: "Trafik vardı, bu yüzden geç geldim.",
         answer: "Es gab einen Stau, deshalb kam ich zu spät.",
-        alternatives: ["Es gab einen Stau, deswegen kam ich zu spät."],
         hint: "„deshalb“ zarftır: hemen arkasından fiil gelir.",
       },
       {
         kind: "build",
         tr: "Toplantı bittikten sonra hemen size yazdım.",
-        answer: "Nachdem die Besprechung zu Ende war, schrieb ich Ihnen sofort.",
-        hint: "nachdem yan cümlesi; ana cümle fiille başlar.",
+        answer: "Nachdem die Besprechung geendet hatte, schrieb ich Ihnen sofort.",
+        hint: "nachdem yan cümlesi bir adım geride (hatte + Partizip); ana cümle fiille başlar.",
       },
       {
         kind: "build",
@@ -353,7 +352,7 @@ export const b1U07: SkillExercise[] = [
       { de: "die Vorstellung", tr: "tasavvur / fikir", en: "idea" },
       { de: "sich unterhalten", tr: "sohbet etmek", en: "to converse" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay / hafif", en: "easy / light" },
       { de: "beste", tr: "en iyi", en: "best" },
     ],
     tasks: [
@@ -377,12 +376,12 @@ export const b1U07: SkillExercise[] = [
           "Ne zaman başladığı söylenmiş mi (seitdem, nachdem)?",
           "En az iki 'je … desto' cümlesi var mı?",
           "Başlangıç ile bugün karşılaştırılmış mı?",
-          "Bir sonuç zarfı (deshalb / trotzdem) kullanılmış mı?",
+          "Bir bağlayıcı zarf (deshalb / trotzdem) kullanılmış mı?",
         ],
         minWords: 70,
         sample:
           "Seitdem ich mit dem Zug fahre, lese ich jeden Morgen zwanzig Minuten.\n\n" +
-          "Am Anfang war das schwer. Ich war müde und völlig ohne Ruhe. " +
+          "Am Anfang war das schwer. Ich war müde und hatte keine Ruhe. " +
           "Nachdem ich das drei Wochen gemacht hatte, wurde es leichter.\n\n" +
           "Heute merke ich zwei Dinge. Je öfter ich lese, desto schneller verstehe ich " +
           "einen langen Satz. Und je mehr ich verstehe, desto interessierter werde ich. " +

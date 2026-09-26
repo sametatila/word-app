@@ -190,13 +190,13 @@ export const b1U09: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "In welchem Teil der Stadt sucht die erste Person?",
+        text: "In welchem Teil der Stadt sucht die zweite Person?",
         options: ["Im Osten", "Im Westen", "In der Mitte"],
         answer: 0,
         explain: "„Im Osten. Da ist die Umgebung ruhiger.“",
       },
       {
-        text: "Was war der Einwand der zweiten Person?",
+        text: "Was war der Einwand der ersten Person?",
         options: ["Zu teuer", "Schlechter öffentlicher Verkehr", "Kein Park"],
         answer: 1,
         explain: "„Aber der öffentliche Verkehr, auf den du angewiesen bist, ist dort schlecht.“",
@@ -330,7 +330,7 @@ export const b1U09: SkillExercise[] = [
           { label: "Name", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
           { label: "Bezirk", answer: "Osten", accept: ["im Osten", "der Osten"] },
           { label: "Zimmer", answer: "3", accept: ["drei", "drei Zimmer"] },
-          { label: "Wunsch", answer: "Terrasse und Baum", accept: ["eine Terrasse", "Terrasse"] },
+          { label: "Wunsch", answer: "Terrasse und Baum", accept: ["eine Terrasse", "Terrasse", "eine Terrasse und einen Baum", "Terrasse, Baum"] },
         ],
       },
       {
@@ -357,7 +357,7 @@ export const b1U09: SkillExercise[] = [
       { de: "sich verhalten", tr: "davranmak", en: "to behave" },
       { de: "akzeptieren", tr: "kabul etmek", en: "to accept" },
       { de: "natürlich", tr: "elbette", en: "of course" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay / hafif", en: "easy / light" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
@@ -385,8 +385,8 @@ export const b1U09: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Der Mensch, dem ich am meisten vertraue, ist meine ältere Schwester.\n\n" +
-          "Wir sind uns als Kinder täglich begegnet, aber richtig verstanden haben wir " +
+          "Der Mensch, dem ich am meisten vertraue, ist meine Freundin Elif.\n\n" +
+          "Wir sind uns zum ersten Mal in der Schule begegnet, aber richtig verstanden haben wir " +
           "uns erst später. Sie ist der Typ, der wenig sagt und viel merkt.\n\n" +
           "Einmal hatte ich Schulden, über die ich mit niemandem reden wollte. " +
           "Sie hat mich nicht beleidigt und nicht gefragt, wer die Schuld hat. " +

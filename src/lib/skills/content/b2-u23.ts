@@ -197,23 +197,22 @@ export const b2U23: SkillExercise[] = [
       { de: "der Klärungsbedarf", tr: "açıklığa kavuşturma ihtiyacı", en: "need for clarification" },
       { de: "der Handlungsbedarf", tr: "harekete geçme gereği", en: "need for action" },
       { de: "der Auftraggeber", tr: "sipariş veren", en: "client" },
-      { de: "die Nutzungsbedingungen", tr: "kullanım koşulları", en: "terms of use" },
+      { de: "die Geschäftsbedingungen", tr: "sözleşme koşulları", en: "terms and conditions" },
       { de: "die Versandkosten", tr: "kargo ücreti", en: "shipping costs" },
       { de: "anmahnen", tr: "ihtar etmek", en: "to send a reminder" },
       { de: "terminieren", tr: "tarih belirlemek", en: "to schedule" },
       { de: "gerne", tr: "memnuniyetle", en: "with pleasure" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 5,
     segments: [
-      { speaker: "Frau Roth", text: "Guten Tag, es geht um unser Angebot vom 12. Da gibt es noch Klärungsbedarf." },
+      { speaker: "Frau Roth", text: "Guten Tag, es geht um Ihr Angebot vom 12. Da gibt es noch Klärungsbedarf." },
       { speaker: "Herr Sailer", text: "Gerne. Worum geht es genau?" },
       { speaker: "Frau Roth", text: "Könnten Sie uns mitteilen, ob die Versandkosten im Preis enthalten sind?" },
       { speaker: "Herr Sailer", text: "Bei Bestellungen über tausend Euro ja, darunter nicht." },
       { speaker: "Frau Roth", text: "Gut. Wir wären Ihnen dankbar, wenn Sie das im Angebot ausdrücklich vermerken." },
       { speaker: "Herr Sailer", text: "Mache ich. Sonst noch etwas?" },
-      { speaker: "Frau Roth", text: "Ja. In den Nutzungsbedingungen steht eine Frist von vierzehn Tagen. Unser Auftraggeber braucht dreißig." },
+      { speaker: "Frau Roth", text: "Ja. In Ihren Geschäftsbedingungen steht eine Frist von vierzehn Tagen. Unser Auftraggeber braucht dreißig." },
       { speaker: "Herr Sailer", text: "Das müsste ich intern klären. Bis Freitag hätte ich eine Antwort." },
       { speaker: "Frau Roth", text: "Freitag wäre gut. Können wir für Montag ein kurzes Gespräch terminieren?" },
       { speaker: "Herr Sailer", text: "Montag um zehn?" },
@@ -270,7 +269,7 @@ export const b2U23: SkillExercise[] = [
     gloss: [
       { de: "das Wachstum", tr: "büyüme", en: "growth" },
       { de: "die Geborgenheit", tr: "güven duygusu", en: "sense of security" },
-      { de: "die Selbstverwirklichung", tr: "kendini gerçekleştirme", en: "self-realisation" },
+      { de: "die Selbstverwirklichung", tr: "kendini gerçekleştirme", en: "self-realization" },
       { de: "der Wendepunkt", tr: "dönüm noktası", en: "turning point" },
       { de: "die Persönlichkeit", tr: "kişilik", en: "personality" },
       { de: "die Bindung", tr: "bağ", en: "bond" },
@@ -342,7 +341,7 @@ export const b2U23: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 23,
-    title: "Ölçüyü tutturmak",
+    title: "Den richtigen Ton treffen",
     genre: "build",
     intro: "Resmî kalıp, nazik talep ve kendine kurulan varsayım.",
     gloss: [
@@ -402,11 +401,11 @@ export const b2U23: SkillExercise[] = [
     gloss: [
       { de: "der Klärungsbedarf", tr: "açıklığa kavuşturma ihtiyacı", en: "need for clarification" },
       { de: "zeitnah", tr: "kısa sürede", en: "promptly" },
-      { de: "die Nutzungsbedingungen", tr: "kullanım koşulları", en: "terms of use" },
+      { de: "die Geschäftsbedingungen", tr: "sözleşme koşulları", en: "terms and conditions" },
       { de: "amtlich", tr: "resmî", en: "official" },
-      { de: "der Vermerk", tr: "şerh", en: "note" },
+      { de: "der Vermerk", tr: "not", en: "note" },
       { de: "abweichen", tr: "sapmak", en: "to deviate" },
-      { de: "die Staffel", tr: "sezon", en: "season (of a series)" },
+      { de: "die Staffel", tr: "kademeli fiyat", en: "price tier" },
       { de: "voneinander", tr: "birbirinden", en: "from each other" },
     ],
     minutes: 12,
@@ -432,7 +431,7 @@ export const b2U23: SkillExercise[] = [
           "Sehr geehrte Damen und Herren,\n\n" +
           "vielen Dank für Ihr Angebot vom 12. September. Vor einer Entscheidung besteht bei uns noch Klärungsbedarf in drei Punkten.\n\n" +
           "1. Könnten Sie uns mitteilen, ob die Versandkosten im genannten Preis enthalten sind? Im Angebot ist dazu nichts vermerkt.\n\n" +
-          "2. In Ihren Nutzungsbedingungen ist unter Ziffer 6 eine Widerrufsfrist von vierzehn Tagen genannt. Unser Auftraggeber benötigt dreißig Tage. Wäre eine abweichende Vereinbarung möglich?\n\n" +
+          "2. In Ihren Geschäftsbedingungen ist unter Ziffer 6 eine Widerrufsfrist von vierzehn Tagen genannt. Unser Auftraggeber benötigt dreißig Tage. Wäre eine abweichende Vereinbarung möglich?\n\n" +
           "3. Ab welcher Menge gilt die in Ihrer Preisliste genannte Staffel? Die Angaben auf Seite 2 und Seite 4 weichen voneinander ab.\n\n" +
           "Als Anlage erhalten Sie die von uns geprüfte Stückliste mit den betroffenen Positionen.\n\n" +
           "Wir wären Ihnen dankbar, wenn Sie uns zeitnah, möglichst bis zum 30. September, antworten könnten. Für ein kurzes Telefonat stehe ich Ihnen gern zur Verfügung.\n\n" +

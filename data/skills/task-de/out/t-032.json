@@ -22,7 +22,7 @@
  {
   "tr": "Makale bu sabah yayımlandı; dört sitede üç başlık; öğleden önce kırk bin okur; başlığı gazeteci yazmadı.",
   "kind": "form.facts",
-  "de": "Der Artikel erschien heute Morgen; drei Überschriften auf vier Seiten; vierzigtausend Leser vor Mittag; die Überschrift stammt nicht von der Journalistin."
+  "de": "Der Artikel erschien heute Morgen; drei Überschriften auf vier Websites; vierzigtausend Leser vor Mittag; die Überschrift stammt nicht von der Journalistin."
  },
  {
   "tr": "Düzen değişecek.",
@@ -50,7 +50,7 @@
   "de": "Die Preise werden bald steigen."
  },
  {
-  "tr": "Emin olsaydım evet derdim.",
+  "tr": "Emin olsam evet derdim.",
   "kind": "build.tr",
   "de": "Wenn ich sicher wäre, würde ich ja sagen."
  },
@@ -70,7 +70,7 @@
   "de": "Der Artikel wurde heute Morgen veröffentlicht."
  },
  {
-  "tr": "Başlığı şaşırtıcı buluyorum.",
+  "tr": "Başlığı şok edici buluyorum.",
   "kind": "build.tr",
   "de": "Ich finde die Überschrift schockierend."
  },

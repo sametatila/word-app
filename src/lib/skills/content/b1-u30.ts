@@ -210,7 +210,7 @@ export const b1U30: SkillExercise[] = [
         text: "Was bedeutet „Preis auf Anfrage“ laut Gespräch?",
         options: ["Günstig", "Teuer", "Verhandelbar"],
         answer: 1,
-        explain: "„„Preis auf Anfrage“. Das heißt teuer.“",
+        explain: "„‚Preis auf Anfrage‘. Das heißt teuer.“",
       },
       {
         text: "Was fehlt in der Annonce?",
@@ -257,10 +257,10 @@ export const b1U30: SkillExercise[] = [
       { text: "Ich suche die Mappe des Kollegen aus dem Export." },
       { text: "Die liegt in der Verwaltung, im blauen Ordner." },
       { text: "Da habe ich schon geschaut. Der Ordner ist leer." },
-      { text: "Dann hat sie jemand besorgt und nicht zurückgebracht." },
+      { text: "Dann hat sie jemand mitgenommen und nicht zurückgebracht." },
       { text: "Ärgerlich. Ich brauche nur eine Seite mit Stempel." },
       { text: "Frag bei der Vertretung nach, die haben oft eine Kopie." },
-      { text: "Gute Idee. Und wenn nicht, drucke ich es neu und lasse stempeln." },
+      { text: "Gute Idee. Und wenn nicht, drucke ich sie neu aus und lasse sie stempeln." },
       { text: "Genau. Das dauert zehn Minuten, nicht zwei Tage." },
     ],
     questions: [
@@ -288,7 +288,7 @@ export const b1U30: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["des Kollegen"],
-        explain: "Eril Genitiv: des + isim eki.",
+        explain: "Eril Genitiv: des; „Kollege“ n-sınıfından olduğu için -s değil -n alır: des Kollegen.",
       },
       {
         kind: "short_answer",
@@ -342,10 +342,10 @@ export const b1U30: SkillExercise[] = [
         prompt: "Rakam kartını doldur.",
         facts: "İşletme: yerel fabrika; üretim: +%30; istihdam: +%12; ihracat: %60'a çıktı; beş yıl önce: yaklaşık %30.",
         fields: [
-          { label: "Produktion", answer: "um 30 Prozent gestiegen", accept: ["um dreißig Prozent", "+30%"] },
-          { label: "Stellen", answer: "um 12 Prozent gestiegen", accept: ["um zwölf Prozent", "+12%"] },
-          { label: "Export jetzt", answer: "auf 60 Prozent", accept: ["sechzig Prozent", "60%"] },
-          { label: "Export früher", answer: "knapp 30 Prozent", accept: ["knapp dreißig", "30%"] },
+          { label: "Produktion", answer: "um 30 Prozent gestiegen", accept: ["um dreißig Prozent", "um 30 Prozent", "+30%"] },
+          { label: "Stellen", answer: "um 12 Prozent gestiegen", accept: ["um zwölf Prozent", "um 12 Prozent", "+12%"] },
+          { label: "Export jetzt", answer: "auf 60 Prozent", accept: ["auf sechzig Prozent", "sechzig Prozent", "60 Prozent", "60%"] },
+          { label: "Export früher", answer: "etwa 30 Prozent", accept: ["etwa dreißig Prozent", "ungefähr 30 Prozent", "30 Prozent", "30%"] },
         ],
       },
       {
@@ -371,18 +371,18 @@ export const b1U30: SkillExercise[] = [
       { de: "besorgen", tr: "temin etmek", en: "to obtain" },
       { de: "die Vertretung", tr: "temsilcilik", en: "agency" },
       { de: "das Detail", tr: "ayrıntı", en: "detail" },
-      { de: "zurücktreten", tr: "istifa etmek", en: "to resign" },
+      { de: "zurücktreten", tr: "sözleşmeden caymak", en: "to withdraw (from a contract)" },
     ],
     tasks: [
       {
         kind: "build",
-        tr: "Üreticinin adresini aldım.",
+        tr: "Üreticinin adresini aldım ve belgeleri kendim temin ettim.",
         answer: "Ich habe die Adresse des Herstellers erhalten und die Unterlagen selbst besorgt.",
         hint: "Eril Genitiv: des Herstellers.",
       },
       {
         kind: "build",
-        tr: "Sistemin ayrıntılarını hiç kimse açıklayamadı.",
+        tr: "Sistemin ayrıntılarını bana kimse açıklayamadı.",
         answer: "Die Details des Systems konnte mir niemand erklären.",
         hint: "Nötr Genitiv: des Systems.",
       },

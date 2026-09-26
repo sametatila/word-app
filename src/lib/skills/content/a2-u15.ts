@@ -164,7 +164,7 @@ export const a2U15: SkillExercise[] = [
       { de: "die Gebühr", tr: "ücret", en: "fee" },
       { de: "sparen", tr: "biriktirmek", en: "to save" },
       { de: "der Kredit", tr: "kredi", en: "loan" },
-      { de: "das Sparbuch", tr: "tasarruf hesabı cüzdanı", en: "savings book" },
+      { de: "das Sparbuch", tr: "tasarruf cüzdanı", en: "savings book" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "normal", tr: "normal", en: "normal" },
       { de: "also", tr: "yani", en: "so" },
@@ -184,7 +184,7 @@ export const a2U15: SkillExercise[] = [
       { speaker: "Frau Kaya", text: "Und wenn ich später einmal einen Kredit brauche?" },
       { speaker: "Berater", text: "Dann kommen Sie wieder. Für einen Kredit brauchen wir aber Ihre Gehaltsabrechnungen." },
       { speaker: "Frau Kaya", text: "Gut. Wann bekomme ich meine Kontonummer?" },
-      { speaker: "Berater", text: "Heute noch, per Post kommt sie in drei Tagen." },
+      { speaker: "Berater", text: "Heute noch. Die Karte kommt dann in drei Tagen per Post." },
     ],
     questions: [
       {
@@ -228,7 +228,7 @@ export const a2U15: SkillExercise[] = [
     gloss: [
       { de: "das Porto", tr: "posta ücreti", en: "postage" },
       { de: "der Umschlag", tr: "zarf", en: "envelope" },
-      { de: "die Waage", tr: "terazi", en: "scales" },
+      { de: "die Waage", tr: "terazi", en: "scale" },
       { de: "das Gramm", tr: "gram", en: "gram" },
       { de: "abschicken", tr: "göndermek", en: "to send off" },
       { de: "also", tr: "yani", en: "so" },
@@ -287,9 +287,9 @@ export const a2U15: SkillExercise[] = [
     genre: "grammar",
     intro: "İki şeyi karşılaştır ya da en üstününü söyle — iki ayrı biçim.",
     gloss: [
-      { de: "der Tarif", tr: "tarife", en: "tariff" },
+      { de: "der Tarif", tr: "tarife", en: "rate plan" },
       { de: "das Porto", tr: "posta ücreti", en: "postage" },
-      { de: "gebraucht", tr: "ikinci el", en: "second-hand" },
+      { de: "gebraucht", tr: "ikinci el", en: "used" },
     ],
     minutes: 6,
     tasks: [
@@ -328,10 +328,10 @@ export const a2U15: SkillExercise[] = [
     unit: 15,
     title: "Antwort auf eine Kleinanzeige",
     genre: "ad",
-    intro: "Bitpazarı ilanına yaz: neyi istiyorsun, ne kadar veriyorsun, ne zaman geliyorsun?",
+    intro: "İkinci el ilanına yaz: neyi istiyorsun, ne kadar veriyorsun, ne zaman geliyorsun?",
     gloss: [
-      { de: "gebraucht", tr: "ikinci el", en: "second-hand" },
-      { de: "einzeln", tr: "tek tek / ayrı", en: "individually" },
+      { de: "gebraucht", tr: "ikinci el", en: "used" },
+      { de: "einzeln", tr: "tek tek", en: "individually" },
       { de: "der Hocker", tr: "tabure", en: "stool" },
       { de: "das Brettspiel", tr: "kutu oyunu", en: "board game" },
       { de: "abholen", tr: "gelip almak", en: "to pick up" },
@@ -363,7 +363,7 @@ export const a2U15: SkillExercise[] = [
           { de: "Geht es auch etwas billiger?", tr: "biraz daha ucuza olur mu", en: "could it be a bit cheaper" },
         ],
         sample:
-          "Guten Tag, Frau Vogel,\n\n" +
+          "Guten Tag,\n\n" +
           "ich habe Ihre Anzeige gelesen und interessiere mich für die Hocker. Verkaufen Sie die auch einzeln, oder nur alle vier zusammen?\n\n" +
           "Ich brauche eigentlich nur zwei. Sind sie stabil, oder wackelt einer? Fünfzehn Euro pro Stück finde ich etwas viel — geht es auch etwas billiger? Für zwei Hocker würde ich fünfundzwanzig Euro geben.\n\n" +
           "Abholen kann ich am Samstag zwischen zehn und vierzehn Uhr. Sonntag geht bei mir leider nicht.\n\n" +

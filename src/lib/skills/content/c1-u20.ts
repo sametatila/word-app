@@ -230,7 +230,7 @@ export const c1U20: SkillExercise[] = [
       { de: "der Generationenvertrag", tr: "kuşak sözleşmesi", en: "generational contract" },
       { de: "die Beitragslast", tr: "prim yükü", en: "contribution burden" },
       { de: "zulasten", tr: "-in aleyhine", en: "at the expense of" },
-      { de: "solidarisch", tr: "dayanışmacı", en: "solidary" },
+      { de: "solidarisch", tr: "dayanışmacı", en: "based on solidarity" },
       { de: "die Umverteilung", tr: "yeniden dağıtım", en: "redistribution" },
       { de: "der Egoismus", tr: "bencillik", en: "selfishness" },
       { de: "kollektiv", tr: "kolektif", en: "collective" },
@@ -340,7 +340,7 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Leiterin", text: "Utopisch ist kein Einwand, solange die Zwischenschritte denkbar bleiben. Genau darauf prüfen wir es." },
       { speaker: "Teilnehmer", text: "Dann fange ich rückwärts an. 2049 wäre der letzte Parkplatz umgewidmet worden." },
       { speaker: "Teilnehmerin", text: "Vorher hätte der Nahverkehr die Kapazität haben müssen. Also 2040 fertig gebaut, was heute nicht mal geplant ist." },
-      { speaker: "Leiterin", text: "Sehen Sie? Der Bruch liegt nicht in 2050, er liegt in 2040. Genau dafür machen wir das." },
+      { speaker: "Leiterin", text: "Sehen Sie? Der Bruch liegt nicht im Jahr 2050, sondern im Jahr 2040. Genau dafür machen wir das." },
       { speaker: "Teilnehmer", text: "Also ist das Szenario widerlegt." },
       { speaker: "Leiterin", text: "Nein, es ist präzisiert. Wir wissen jetzt, welche Entscheidung wann fallen müsste. Ein Szenario, das an einer Jahreszahl scheitert, hat seine Arbeit getan." },
       { speaker: "Teilnehmer", text: "In manchen Szenarien verschmelzen ja zwei Städte zu einer Region, oder man belebt eine alte Bahnstrecke wieder." },
@@ -377,7 +377,7 @@ export const c1U20: SkillExercise[] = [
           "Das Szenario ist utopisch",
         ],
         answer: 1,
-        explain: "Bir yılda tökezleyen senaryo işini yapmış oluyor.",
+        explain: "Belirli bir yılda tökezleyen senaryo işini yapmış oluyor.",
       },
       {
         kind: "short_answer",
@@ -417,7 +417,7 @@ export const c1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu bakımdan haklısın — ama başka bir durumdan söz ediyorsun.",
+        tr: "Bu bakımdan haklısın.",
         answer: "Insofern hast du recht",
         hint: "Insofern zarf: birinci konumda, fiil hemen ardından.",
       },
@@ -465,7 +465,7 @@ export const c1U20: SkillExercise[] = [
       { de: "die Auswertung", tr: "analiz", en: "analysis" },
       { de: "der Schwellenwert", tr: "eşik değer", en: "threshold" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },
-      { de: "die Revision", tr: "temyiz", en: "appeal" },
+      { de: "die Revision", tr: "iç denetim", en: "internal audit" },
       { de: "vertraglich", tr: "sözleşmeye dayalı", en: "contractual" },
       { de: "offen", tr: "açık", en: "open" },
       { de: "die Offenlegung", tr: "beyan", en: "disclosure" },
@@ -497,7 +497,7 @@ export const c1U20: SkillExercise[] = [
           "Interne Stellungnahme — Vorprüfung Kreditanträge\n\n" +
           "Die Verantwortung ist nicht dem System zuzurechnen. Es hat kein Merkmal verwendet, das ihm untersagt war, und es hat keinen Vorsatz. Es hat fortgeschrieben, was in unseren eigenen Altentscheidungen enthalten war. Damit ist die Frage, ob „der Algorithmus diskriminiert hat“, nicht die Frage, die wir zu beantworten haben.\n\n" +
           "Ebenso wenig trägt die zweite Auskunft. Formal bestätigt eine Mitarbeiterin jede Ablehnung. Insofern trifft der Einwand zu, als der Ablauf eine menschliche Entscheidung vorsieht; die Messung widerlegt ihn jedoch: 98 Prozent der Vorschläge bleiben unverändert, die durchschnittliche Prüfzeit beträgt vierzig Sekunden. Wer in vierzig Sekunden bestätigt, entscheidet nicht, er unterschreibt. Der Prozess war so gebaut, dass er diese Unterschrift erzeugt.\n\n" +
-          "Zurechnung schlage ich wie folgt vor. Die fachliche Verantwortung liegt beim Produktverantwortlichen im Marketing: Der Zweck und die akzeptierte Fehlerquote wurden dort festgelegt. Die Prüfverantwortung liegt bei der Innenrevision, die sechs Monate ohne Merkmalskontrolle hat laufen lassen. Die Betriebsverantwortung der IT beschränkt sich auf die Verfügbarkeit; sie hatte weder Auftrag noch Zugriff auf die Bewertungslogik. Davon zu unterscheiden ist die Haftung gegenüber den abgelehnten Antragstellern — diese trifft das Haus als Ganzes, unabhängig von der internen Aufteilung.\n\n" +
+          "Zurechnung schlage ich wie folgt vor. Die fachliche Verantwortung liegt beim Produktverantwortlichen im Marketing: Der Zweck und die akzeptierte Fehlerquote wurden dort festgelegt. Die Prüfverantwortung liegt bei der Innenrevision, die das System sechs Monate ohne Merkmalskontrolle hat laufen lassen. Die Betriebsverantwortung der IT beschränkt sich auf die Verfügbarkeit; sie hatte weder Auftrag noch Zugriff auf die Bewertungslogik. Davon zu unterscheiden ist die Haftung gegenüber den abgelehnten Antragstellern — diese trifft das Haus als Ganzes, unabhängig von der internen Aufteilung.\n\n" +
           "Drei Maßnahmen: Erstens eine monatliche Auswertung der Ablehnungsquoten nach Region, mit Schwellenwert und automatischer Meldung an die Revision. Zweitens eine verbindliche Mindestprüfzeit und eine Begründungspflicht bei Abweichung vom Vorschlag — ohne beides bleibt die Bestätigung eine Formalie. Drittens die vertragliche Pflicht des Anbieters, die verwendeten Ersatzmerkmale offenzulegen; ohne diese Offenlegung können wir die Prüfung nicht führen, zu der wir verpflichtet sind.",
       },
     ],

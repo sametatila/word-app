@@ -206,7 +206,7 @@ export const enB1U06: SkillExercise[] = [
       { speaker: "Nil", text: "Six hours and one change. Take a photo of the track number when you change, so that you can find the way back." },
       { speaker: "Can", text: "Nothing will go wrong." },
       { speaker: "Nil", text: "Take the photo in case it does. It costs one second." },
-      { speaker: "Can", text: "The train is departing at ten. I have to go." },
+      { speaker: "Can", text: "The train is departing in ten minutes. I have to go." },
       { speaker: "Nil", text: "Go. Text me from the seat, not from the door." },
     ],
     questions: [
@@ -281,8 +281,8 @@ export const enB1U06: SkillExercise[] = [
       { speaker: "Mert", text: "That is not a contract, that is a hope." },
       { speaker: "Sena", text: "I will accept unless the price changes. That is what I want to write back." },
       { speaker: "Mert", text: "Then write exactly that. And add a number: unless it changes by more than three in a hundred." },
-      { speaker: "Sena", text: "Is that not too hard?" },
-      { speaker: "Mert", text: "It is the normal sentence. Without a number, changes means anything." },
+      { speaker: "Sena", text: "Isn't that too hard?" },
+      { speaker: "Mert", text: "It is the normal sentence. Without a number, „changes“ can mean anything." },
       { speaker: "Sena", text: "I will sign as long as you keep the promise about the date. That is the other half." },
       { speaker: "Mert", text: "Put the date in the same line as the price. Two promises in two places is one promise." },
       { speaker: "Sena", text: "And if they refuse?" },
@@ -383,7 +383,7 @@ export const enB1U06: SkillExercise[] = [
         prompt: "Yolculuk kartını doldur.",
         facts: "Tren yedi onda; peron dört yazıyor ama üç; yolculuk altı saat; bir aktarma var.",
         fields: [
-          { label: "Departure", answer: "ten past seven", accept: ["7.10"] },
+          { label: "Departure", answer: "ten past seven", accept: ["7:10"] },
           { label: "Track", answer: "three", accept: ["3"] },
           { label: "Journey", answer: "six hours", accept: ["6 hours"] },
           { label: "Changes", answer: "one", accept: ["1"] },
@@ -404,7 +404,7 @@ export const enB1U06: SkillExercise[] = [
       { de: "because", tr: "çünkü" },
       { de: "so", tr: "bu yüzden" },
       { de: "in order to", tr: "için" },
-      { de: "enroll", tr: "okula yazılmak" },
+      { de: "enroll", tr: "kaydolmak" },
     ],
     minutes: 8,
     tasks: [
@@ -418,13 +418,13 @@ export const enB1U06: SkillExercise[] = [
         kind: "build",
         tr: "Tren durdu, bu yüzden geç kaldım.",
         answer: "The train stopped, so I was late.",
-        hint: "„so“ sonucu getiriyor ve cümleye BAŞLAYAMIYOR.",
+        hint: "„so“ sonucu getiriyor ve sebepten SONRA geliyor; „because“ gibi cümlenin başına alınamıyor.",
       },
       {
         kind: "build",
         tr: "İngilizcemi pratik etmek için kaydoldum.",
         answer: "I enrolled to practice my English.",
-        hint: "Amaç sade mastarla kuruluyor; „for practice“ diye bir kuruluş yok.",
+        hint: "Amaç sade mastarla kuruluyor; amaç için „for practicing“ denmiyor.",
       },
       {
         kind: "build",

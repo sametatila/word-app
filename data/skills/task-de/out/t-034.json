@@ -65,9 +65,9 @@
   "de": "Der Ort, wo ich lächelte, war still."
  },
  {
-  "tr": "O hayali bir gün izleyeceğim.",
+  "tr": "Bir gün o hayalin peşinden gideceğim.",
   "kind": "build.tr",
-  "de": "Ich werde diesem Traum eines Tages folgen."
+  "de": "Eines Tages werde ich diesem Traum folgen."
  },
  {
   "tr": "Gün gerektiği gibi kutlanmalı.",
@@ -125,9 +125,9 @@
   "de": "Wenn du ihm verzeihst, wird alles leichter."
  },
  {
-  "tr": "Ruh hâlim pazartesiden beri düşük.",
+  "tr": "Pazartesiden beri moralim bozuk.",
   "kind": "build.tr",
-  "de": "Meine Stimmung ist seit Montag gedrückt."
+  "de": "Seit Montag ist meine Stimmung gedrückt."
  },
  {
   "tr": "Bir yön bulmak için iş değiştirdim.",
@@ -197,7 +197,7 @@
  {
   "tr": "İşin bir anlamı vardı; sonuç olarak kaldım.",
   "kind": "build.tr",
-  "de": "Die Arbeit hatte einen Sinn; als Folge blieb ich."
+  "de": "Die Arbeit hatte einen Sinn; folglich blieb ich."
  },
  {
   "tr": "Onun işi herkes tarafından takdir ediliyor.",

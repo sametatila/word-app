@@ -383,7 +383,7 @@ export const enC1U08: SkillExercise[] = [
     segments: [
       { speaker: "Tuna", text: "This clause alone binds the sponsor to the affidavit of support. One paragraph out of nine, and the other eight are dates and addresses." },
       { speaker: "Tuna", text: "Notice where „alone“ sits. After the subject, not in front of it, which is an office habit and not a spoken one." },
-      { speaker: "Tuna", text: "Said aloud, you would put the stress on „this“ and drop the word entirely. The written page has no stress, so it spends a word." },
+      { speaker: "Tuna", text: "Reading it aloud, you would put the stress on „this“ and drop the word entirely. The written page has no stress, so it spends a word." },
       { speaker: "Tuna", text: "Such a hardship case is rare. That line is doing two jobs and only one of them is visible." },
       { speaker: "Tuna", text: "It points backwards at the description above it, and by pointing backwards it promises that the description was exact enough to be pointed at." },
       { speaker: "Tuna", text: "If the paragraph above says only that the family had difficulties, the sentence is a promise the file cannot keep, and an audit will find it." },

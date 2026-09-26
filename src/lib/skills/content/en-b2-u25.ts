@@ -341,7 +341,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "a department", tr: "birim" },
       { de: "genuinely", tr: "gerçekten" },
       { de: "hiding", tr: "gizleyen" },
-      { de: "a covering letter", tr: "üst yazı" },
+      { de: "a cover letter", tr: "üst yazı" },
       { de: "compares", tr: "karşılaştıran" },
       { de: "honest", tr: "dürüst" },
     ],
@@ -353,7 +353,7 @@ export const enB2U25: SkillExercise[] = [
       { speaker: "Defne", text: "By then the remaining amount will have been paid. Four words of verb — will, have, been, third form — and it is the only passive on the page." },
       { speaker: "Defne", text: "It is passive because I do not know who pays it. The department has changed twice this year and the answer is genuinely not in my hands." },
       { speaker: "Defne", text: "That is the honest use of the shape, and it has a test. If I could name the person and chose not to, the passive is hiding somebody." },
-      { speaker: "Defne", text: "Here I cannot name them, so it stays. And in the covering letter, where the person is known, the same fact is written with a name in it." },
+      { speaker: "Defne", text: "Here I cannot name them, so it stays. And in the cover letter, where the person is known, the same fact is written with a name in it." },
       { speaker: "Defne", text: "Two pages, one fact, two shapes, and a reader who compares them learns more about us than about the payment." },
     ],
     questions: [
@@ -371,10 +371,10 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The covering letter uses the same passive.",
+        text: "The cover letter uses the same passive.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„in the covering letter, where the person is known, the same fact is written with a name in it.“",
+        explain: "„in the cover letter, where the person is known, the same fact is written with a name in it.“",
       },
       {
         kind: "gapfill",
@@ -430,7 +430,7 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Dosya tam olmak şartıyla bunu kapatabiliriz.",
+        tr: "Görünüşe göre, dosya tam olmak şartıyla bunu kapatabiliriz.",
         answer: "Apparently we can close this, provided that the file is complete.",
         hint: "„provided that“ bir şart koyuyor; „if“ yalnızca durumu betimliyor.",
       },

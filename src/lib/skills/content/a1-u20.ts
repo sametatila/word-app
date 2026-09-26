@@ -159,7 +159,7 @@ export const a1U20: SkillExercise[] = [
     segments: [
       { text: "Guten Tag. Was kostet der Eintritt?" },
       { text: "Für Erwachsene 5 Euro, für Kinder 3 Euro." },
-      { text: "Zweimal Erwachsene, bitte. Wie lange ist heute auf?" },
+      { text: "Zweimal Erwachsene, bitte. Wie lange ist das Schwimmbad heute auf?" },
       { text: "Bis 20 Uhr. Das sind 10 Euro." },
       { text: "Danke. Kann man ein Handtuch kaufen?" },
       { text: "Ja, für 4 Euro. Und bitte nicht im tiefen Wasser tauchen!" },
@@ -209,7 +209,7 @@ export const a1U20: SkillExercise[] = [
     title: "Leider kann ich nicht",
     genre: "phone",
     intro:
-      "Bir davet reddediliyor. Almanca'da hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.",
+      "Bir davet reddediliyor. Almancada hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.",
     gloss: [
       { de: "schade", tr: "yazık", en: "what a pity" },
       { de: "klappen", tr: "denk gelmek", en: "to work out" },
@@ -235,7 +235,7 @@ export const a1U20: SkillExercise[] = [
         options: ["den Sonntag", "den Freitag", "nächste Woche"],
         answer: 0,
         explain:
-          "„Aber geht es am Sonntag?“ — Almanca'da reddederken somut bir alternatif sunmak beklenir; „belki“ demek boş sayılır.",
+          "„Aber geht es am Sonntag?“ — Almancada reddederken somut bir alternatif sunmak beklenir; „belki“ demek boş sayılır.",
       },
       {
         kind: "gapfill",
@@ -249,7 +249,7 @@ export const a1U20: SkillExercise[] = [
         text: "Wie endet das Gespräch?",
         options: ["Sie sind einverstanden.", "Sie streiten.", "Sie legen ohne Antwort auf."],
         answer: 0,
-        explain: "„Einverstanden!“ — anlaşma kapanış sözcüğü.",
+        explain: "„Am Sonntag? Ja, gern!“ — „Super, dann komme ich unbedingt.“ İkisi yeni günde anlaşıyor.",
       },
           {
         kind: "gapfill",
@@ -281,7 +281,7 @@ export const a1U20: SkillExercise[] = [
         kind: "build",
         tr: "Maalesef gelemiyorum.",
         answer: "Leider kann ich nicht kommen",
-        hint: "„Leider“ başa gelince fiil hemen arkasından gelir: Leider KANN ich … Bu Almanca'nın ikinci-konum kuralı.",
+        hint: "„Leider“ başa gelince fiil hemen arkasından gelir: Leider KANN ich … Bu Almancanın ikinci-konum kuralı.",
       },
       {
         kind: "build",
@@ -296,7 +296,7 @@ export const a1U20: SkillExercise[] = [
         answer: "Geht es am Sonntag?",
         alternatives: ["Geht es am Samstag?", "Hast du am Sonntag Zeit?", "Geht es am Sonntag"],
         why:
-          "„Mal sehen“ Almanca'da kaba değil ama BOŞ sayılır — karşı taraf yeni bir tarih bekler. Somut gün sormak nezaketin kendisidir.",
+          "„Mal sehen“ Almancada kaba değil ama BOŞ sayılır — karşı taraf yeni bir tarih bekler. Somut gün sormak nezaketin kendisidir.",
       },
     ],
   },
@@ -324,7 +324,7 @@ export const a1U20: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Arkadaşın seni cumartesi göle piknige çağırdı ama gidemiyorsun. Mesaj yaz (4-5 cümle): teşekkür et, net bir hayır ver, gerekçeni söyle ve BAŞKA bir gün öner.",
+          "Arkadaşın seni cumartesi göle pikniğe çağırdı ama gidemiyorsun. Mesaj yaz (4-5 cümle): teşekkür et, net bir hayır ver, gerekçeni söyle ve BAŞKA bir gün öner.",
         minWords: 30,
         checklist: [
           "Teşekkür ettin mi? (Danke für die Einladung!)",

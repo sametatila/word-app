@@ -242,7 +242,7 @@
  {
   "tr": "İsimleşme ve edilgen sorumluluğu cümleden çıkarır; C1'de her ikisi de araçtır.",
   "kind": "intro",
-  "en": "Nominalisation and the passive take responsibility out of the sentence; at C1 both are tools."
+  "en": "Nominalization and the passive take responsibility out of the sentence; at C1 both are tools."
  },
  {
   "tr": "je yan cümlede, desto ana cümlede; her iki yarı da karşılaştırma biçimi ister.",
@@ -310,9 +310,9 @@
   "en": "False: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Not fake but old."
  },
  {
-  "tr": "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten, yardımcı fiil „ist“.",
+  "tr": "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten. Durmak yer değiştirme olmadığı için yardımcı fiil „hat“.",
   "kind": "explain",
-  "en": "„anhalten“ is both separable and irregular: the participle is angehalten and the auxiliary „ist“."
+  "en": "„anhalten“ is both separable and irregular: the participle is angehalten. Stopping is not a change of place, so the auxiliary is „hat“."
  },
  {
   "tr": "„Anmeldung bis Freitag im Büro oder am Telefon“ — e-posta ya da bahçe geçmiyor.",
@@ -385,9 +385,9 @@
   "en": "„We are for something.“ — it builds a contrast with the „against“ in the sentence before."
  },
  {
-  "tr": "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“, ortaç ortadan açılıyor.",
+  "tr": "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“; „ge“ ön ekle kökün arasına giriyor: weg-ge-laufen.",
   "kind": "explain",
-  "en": "„weglaufen“ is a verb of movement: „ist weggelaufen“, with the participle opening in the middle."
+  "en": "„weglaufen“ is a verb of movement: „ist weggelaufen“; the „ge“ goes between the prefix and the stem: weg-ge-laufen."
  },
  {
   "tr": "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“",
@@ -417,7 +417,7 @@
  {
   "tr": "Bir eczacı hastaya yeni bir ilacı anlatıyor. Neyin denenmiş olduğuna dikkat et.",
   "kind": "intro",
-  "en": "A chemist explains a new medicine to a patient. Watch what has been trialled."
+  "en": "A pharmacist explains a new medicine to a patient. Watch what has been tested."
  },
  {
   "tr": "Bir işletmede boş kadro konuşuluyor. Eksikliğin nasıl dile getirildiğini dinle.",
@@ -437,7 +437,7 @@
  {
   "tr": "Bir radyo muhabiri polis basın sözcüsünü arıyor. Dün olan bir kaza konuşuluyor.",
   "kind": "intro",
-  "en": "A radio reporter rings the police press officer. An accident from yesterday is discussed."
+  "en": "A radio reporter calls the police press officer. An accident from yesterday is discussed."
  },
  {
   "tr": "Biri düzenli (arrive - arrived), öteki düzensiz (leave - left); ikisi de doğru.",
@@ -667,7 +667,7 @@
  {
   "tr": "Çocukluğundan bir anı yaz. Bir kez olanı ve her seferinde olanı ayrı ayrı anlat.",
   "kind": "intro",
-  "en": "Write a memory from your childhood. Tell what happened once and what happened every time apart."
+  "en": "Write a memory from your childhood. Describe what happened once and what happened every time, separately."
  },
  {
   "tr": "Deniz \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir.",

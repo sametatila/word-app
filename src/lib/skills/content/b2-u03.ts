@@ -187,7 +187,7 @@ export const b2U03: SkillExercise[] = [
     intro: "Konferans arasında iki kişi tanışıyor. Tamlayan hâli isteyen edatlara dikkat et.",
     gloss: [
       { de: "der Austausch", tr: "fikir alışverişi", en: "exchange" },
-      { de: "vernetzen", tr: "ağa bağlamak", en: "to network" },
+      { de: "vernetzen", tr: "bağlantı kurmak", en: "to network" },
       { de: "der Redner", tr: "konuşmacı", en: "speaker" },
       { de: "referieren", tr: "sunum yapmak", en: "to give a talk" },
       { de: "die Podiumsdiskussion", tr: "panel", en: "panel discussion" },
@@ -270,7 +270,7 @@ export const b2U03: SkillExercise[] = [
       { de: "zusichern", tr: "taahhüt etmek", en: "to guarantee" },
       { de: "unterbieten", tr: "altına inmek", en: "to undercut" },
       { de: "überteuert", tr: "fahiş fiyatlı", en: "overpriced" },
-      { de: "offen", tr: "açık", en: "open" },
+      { de: "offen", tr: "açıkça", en: "openly" },
     ],
     minutes: 5,
     segments: [
@@ -351,26 +351,30 @@ export const b2U03: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Ekip yönetimiyle mutabakattan sonra evden çalışmak mümkün.",
+        tr: "Ekip yönetimiyle anlaşarak evden çalışmak mümkün.",
         answer: "Nach Absprache mit der Teamleitung ist Homeoffice möglich",
+        alternatives: ["Homeoffice ist nach Absprache mit der Teamleitung möglich"],
         hint: "Koşul yan cümleyle değil isim öbeğiyle kuruluyor; fiil ikinci sırada.",
       },
       {
         kind: "build",
         tr: "Kısa süre nedeniyle yarısını atlamak zorunda kaldım.",
         answer: "Aufgrund der kurzen Zeit musste ich die Hälfte weglassen",
+        alternatives: ["Ich musste aufgrund der kurzen Zeit die Hälfte weglassen"],
         hint: "aufgrund tamlayan hâli ister: der kurzen Zeit.",
       },
       {
         kind: "build",
         tr: "Yüzde altılık bir fiyat indirimi düşünebiliriz.",
         answer: "Wir könnten uns einen Preisnachlass von sechs Prozent vorstellen",
+        alternatives: ["Einen Preisnachlass von sechs Prozent könnten wir uns vorstellen"],
         hint: "Dilek kipi teklifi öneri hâline getirir; dönüşlü zamir fiilden hemen sonra.",
       },
       {
         kind: "build",
         tr: "Sizden on dört gün içinde görüş bildirmenizi rica ediyorum.",
         answer: "Ich bitte Sie um eine Stellungnahme innerhalb von vierzehn Tagen",
+        alternatives: ["Ich bitte Sie innerhalb von vierzehn Tagen um eine Stellungnahme"],
         hint: "bitten fiili um edatıyla ve belirtme hâliyle çalışır; süre en sonda.",
       },
       {

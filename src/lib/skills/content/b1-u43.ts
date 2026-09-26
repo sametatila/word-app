@@ -255,8 +255,8 @@ export const b1U43: SkillExercise[] = [
       { text: "Nein, vor allem Geld. Kleidung liegt schon in den Hallen." },
       { text: "Verstehe. Dann sage ich es den Nachbarn weiter." },
       { text: "Sehr gut. Und sag dazu, wofür genau das Geld ist." },
-      { text: "Mache ich. Sonst geben die Leute nichts, ohne zu fragen." },
-      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem. Erst danach kommt der Frieden zurück." },
+      { text: "Mache ich. Die Leute geben sowieso nichts, ohne zu fragen." },
+      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem. Erst dann haben alle ihren Frieden." },
     ],
     questions: [
       {
@@ -325,7 +325,7 @@ export const b1U43: SkillExercise[] = [
         kind: "build",
         tr: "Kıyafetler zaten salonlarda duruyor.",
         answer: "Die Kleidung liegt schon in den Hallen.",
-        hint: "in + Dativ çoğul: den HallEN.",
+        hint: "Çoğulu die Hallen: zaten -n ile bittiği için Dativ'de ek almaz.",
       },
       {
         kind: "build",
@@ -349,7 +349,7 @@ export const b1U43: SkillExercise[] = [
         prompt: "Dativ çoğuldaki eksik eki tamamla.",
         source: "Wir reden mit den Zuhörer und die Kleidung liegt in den Halle.",
         answer: "Wir reden mit den Zuhörern und die Kleidung liegt in den Hallen.",
-        why: "Türkçede çoğul TEK ektir ve hâl ondan sonra gelir ('dinleyicilerle'), o yüzden Almancada ikinci bir ek beklenmiyor. Almancada çoğul isim DATİV'de -n alır, çoğulu zaten -n ile bitmiyorsa: mit den Zuhörern, in den Hallen, von den Kindern. Çoğulu -s ile bitenler istisnadır (mit den Autos).",
+        why: "Türkçede çoğul TEK ektir ve hâl ondan sonra gelir ('dinleyicilerle'), o yüzden Almancada ikinci bir ek beklenmiyor. Almancada çoğul isim DATİV'de -n alır, çoğulu zaten -n ile bitmiyorsa: mit den Zuhörern, von den Kindern, in den Zimmern; çoğulu zaten -n ile bitenler değişmez (in den Hallen). Çoğulu -s ile bitenler istisnadır (mit den Autos).",
       },
     ],
   },
@@ -402,7 +402,7 @@ export const b1U43: SkillExercise[] = [
           "einen Garten. Für anderes treten wir ein, ohne es selbst zu " +
           "organisieren — sonst wäre es zu viel für uns.\n\n" +
           "Nicht alles hat geklappt. Zwei Jahre lang haben wir vergeblich " +
-          "um einen Raum bei der Stadt gefragt. Irgendwann haben wir " +
+          "bei der Stadt um einen Raum gebeten. Irgendwann haben wir " +
           "aufgehört, ohne böse zu werden, und mieten jetzt privat. Voriges Jahr wollten einige streiken; wir mussten zwischen den Meinungen unterscheiden.\n\n" +
           "Wer mitmachen will, soll einfach einmal kommen. Man muss nichts " +
           "können und nichts versprechen. Zwei Stunden im Monat sind mehr " +

@@ -203,7 +203,7 @@ export const a1U25: SkillExercise[] = [
         explain: "„Danach habe ich meine Hausaufgaben gemacht.“",
       },
       {
-        text: "Warum sagt die zweite Person „ich WAR krank“ und nicht „ich bin krank gewesen“?",
+        text: "Warum sagt die erste Person „ich WAR krank“ und nicht „ich bin krank gewesen“?",
         options: [
           "„sein“ nimmt im Gespräch das Präteritum.",
           "Weil es vorgestern war.",

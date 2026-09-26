@@ -305,6 +305,11 @@
   "de": "eines von beiden"
  },
  {
+  "tr": "de/da",
+  "kind": "gloss.tr",
+  "de": "auch nicht"
+ },
+ {
   "tr": "süs",
   "kind": "gloss.tr",
   "de": "Schmuck"
@@ -423,11 +428,6 @@
   "tr": "durum",
   "kind": "gloss.tr",
   "de": "Lage"
- },
- {
-  "tr": "düşük",
-  "kind": "gloss.tr",
-  "de": "niedrig"
  },
  {
   "tr": "kanıt",
@@ -682,7 +682,7 @@
  {
   "tr": "tartışma",
   "kind": "gloss.tr",
-  "de": "Streit"
+  "de": "Debatte"
  },
  {
   "tr": "ulaşıyor",
@@ -752,7 +752,7 @@
  {
   "tr": "ayarlanmış",
   "kind": "gloss.tr",
-  "de": "fest vereinbart"
+  "de": "kalibriert worden"
  },
  {
   "tr": "bilinmeyen",
@@ -887,7 +887,7 @@
  {
   "tr": "sonuç olarak",
   "kind": "gloss.tr",
-  "de": "als Folge"
+  "de": "folglich"
  },
  {
   "tr": "üstünü çizdi",

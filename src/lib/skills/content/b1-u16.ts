@@ -176,7 +176,7 @@ export const b1U16: SkillExercise[] = [
     unit: 16,
     title: "Wir kommen zu keinem Ergebnis",
     genre: "meeting",
-    intro: "Bir toplantı dağılmak üzere. Kim hangi uzlaşmayı öneriyor?",
+    intro: "Bir toplantı dağılmak üzere. Sorun ne, nasıl bir çıkış yolu öneriliyor?",
     minutes: 4,
     gloss: [
       { de: "der Kompromiss", tr: "uzlaşma", en: "compromise" },
@@ -191,7 +191,7 @@ export const b1U16: SkillExercise[] = [
       { text: "Da stimme ich dir zu. Sollen wir kurz sammeln, worum es geht?" },
       { text: "Gute Idee. Ich schreibe die Punkte auf." },
       { text: "Ich möchte hier widersprechen: Das Geld ist nicht das Problem." },
-      { text: "Vorsichtig — vielleicht ist es für andere Teilnehmer doch eins." },
+      { text: "Vorsicht — vielleicht ist es für andere Teilnehmer doch eins." },
       { text: "Einverstanden. Dann suchen wir einen Kompromiss." },
       { text: "Wenn wir miteinander statt gegeneinander reden, geht das schnell." },
     ],
@@ -203,7 +203,7 @@ export const b1U16: SkillExercise[] = [
         explain: "„Das liegt daran, dass jeder von etwas anderem spricht.“",
       },
       {
-        text: "Was schlägt die dritte Stimme vor?",
+        text: "Was wird vorgeschlagen, um Ordnung zu schaffen?",
         options: ["Aufhören", "Kurz sammeln, worum es geht", "Abstimmen"],
         answer: 1,
         explain: "„Sollen wir kurz sammeln, worum es geht?“",
@@ -237,7 +237,7 @@ export const b1U16: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 16,
-    title: "Wie viel Nachrichten am Tag?",
+    title: "Wie viele Nachrichten am Tag?",
     genre: "personal",
     intro: "İki kişi haber tüketimini konuşuyor. Kim ne kadar azaltmış?",
     minutes: 4,
@@ -253,7 +253,7 @@ export const b1U16: SkillExercise[] = [
     segments: [
       { text: "Ich lese seit einem Monat nur noch morgens Nachrichten." },
       { text: "Und? Fehlt dir etwas?" },
-      { text: "Nein. Am Abend war es sowieso immer dieselbe Neuigkeit." },
+      { text: "Nein. Am Abend waren es sowieso immer dieselben Neuigkeiten." },
       { text: "Bei mir hängt das davon ab, wie der Tag war." },
       { text: "Verstehe. Ich habe vor allem die Werbung reduziert." },
       { text: "Ich lese lieber einmal pro Woche ein Magazin. Das reicht mir." },
@@ -340,8 +340,8 @@ export const b1U16: SkillExercise[] = [
         fields: [
           { label: "Thema", answer: "Bildschirmzeit", accept: ["die Bildschirmzeit", "Bildschirm"] },
           { label: "Vorteil", answer: "besserer Schlaf", accept: ["Schlaf", "man schläft besser"] },
-          { label: "Nachteil", answer: "Arbeitsgerät", accept: ["Arbeit", "der Bildschirm ist Arbeitsgerät"] },
-          { label: "Ergebnis", answer: "bewusst entscheiden", accept: ["bewusst", "bewusst entscheiden"] },
+          { label: "Nachteil", answer: "Arbeitsgerät", accept: ["Arbeit", "ein Arbeitsgerät", "der Bildschirm ist ein Arbeitsgerät"] },
+          { label: "Ergebnis", answer: "bewusst entscheiden", accept: ["bewusst", "bewusste Nutzung"] },
         ],
       },
       {

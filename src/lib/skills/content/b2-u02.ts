@@ -216,7 +216,8 @@ export const b2U02: SkillExercise[] = [
       { speaker: "Brandt", text: "Worum geht es denn? Sagen Sie es ruhig beiläufig, wir haben noch vier Stockwerke." },
       { speaker: "Ilir", text: "Um das Arbeitsklima im Team. Seit dem Umbau reden alle weniger miteinander." },
       { speaker: "Brandt", text: "Das höre ich nicht zum ersten Mal. In der ganzen Belegschaft ist das ein Thema." },
-      { speaker: "Ilir", text: "Und als Führungskraft hören Sie es vermutlich zuletzt. Höflichkeit hält vieles zurück." },
+      { speaker: "Ilir", text: "Und als Führungskraft hören Sie es vermutlich zuletzt." },
+      { speaker: "Brandt", text: "Leider ja. Höflichkeit hält vieles zurück." },
       { speaker: "Ilir", text: "Ich wollte es nur ansprechen, bevor es größer wird." },
       { speaker: "Brandt", text: "Das war klug. Man müsste mal wieder gemeinsam Mittag essen, aber richtig geplant, nicht zufällig." },
       { speaker: "Ilir", text: "Genau das habe ich gedacht." },
@@ -305,7 +306,7 @@ export const b2U02: SkillExercise[] = [
         explain: "sofern bir koşul bağlacıdır: söz veriliyor ama koşulu da açıkça söyleniyor.",
       },
       {
-        text: "Warum kann Melis den Termin gefährdet sehen?",
+        text: "Warum sieht Melis den Termin gefährdet?",
         options: [
           "Weil ihr Team zu klein ist.",
           "Weil die Daten aus der Abteilung des Kunden fehlen.",
@@ -355,7 +356,7 @@ export const b2U02: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sorunuzun neye dayandığını sorabilir miyim?",
+        tr: "Sorunuzun neyle ilgili olduğunu sorabilir miyim?",
         answer: "Darf ich fragen, worauf sich Ihre Frage bezieht",
         hint: "Dolaylı soruda edat soru zamiriyle kaynaşır (worauf) ve fiil sona gider.",
       },
@@ -369,12 +370,14 @@ export const b2U02: SkillExercise[] = [
         kind: "build",
         tr: "Bu perşembeye kadar halledilebilir.",
         answer: "Das lässt sich bis Donnerstag erledigen",
+        alternatives: ["Bis Donnerstag lässt sich das erledigen"],
         hint: "lassen artı dönüşlü zamir edilgen yerine geçer; mastar en sonda.",
       },
       {
         kind: "build",
         tr: "Aksilik çıkmazsa yedek süre bir gün kalır.",
         answer: "Sofern nichts dazwischenkommt, bleibt ein Tag Pufferzeit",
+        alternatives: ["Ein Tag Pufferzeit bleibt, sofern nichts dazwischenkommt"],
         hint: "Yan cümle başta; ana cümle çekimli fiille başlar (bleibt).",
       },
       {
@@ -401,7 +404,7 @@ export const b2U02: SkillExercise[] = [
       { de: "die Zuständigkeit", tr: "sorumluluk alanı", en: "area of responsibility" },
       { de: "termingerecht", tr: "süresinde", en: "on schedule" },
       { de: "nachfassen", tr: "takip etmek", en: "to follow up" },
-      { de: "die Abgabe", tr: "kesinti", en: "levy" },
+      { de: "die Abgabe", tr: "teslim", en: "submission" },
       { de: "raten", tr: "tahmin etmek", en: "to guess" },
       { de: "sammeln", tr: "toplamak", en: "to collect" },
       { de: "die Aussage", tr: "ifade", en: "statement" },

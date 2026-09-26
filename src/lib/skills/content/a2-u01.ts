@@ -182,7 +182,7 @@ export const a2U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["weggelaufen"],
-        explain: "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“, ortaç ortadan açılıyor.",
+        explain: "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“; „ge“ ön ekle kökün arasına giriyor: weg-ge-laufen.",
       },
       {
         text: "Wer hat den Hund gefunden?",
@@ -223,7 +223,7 @@ export const a2U01: SkillExercise[] = [
       { speaker: "Murat", text: "Ich glaube schon. Ich habe die Taschen ins Auto gestellt und den Herd ausgeschaltet." },
       { speaker: "Ela", text: "Und die Bücher aus der Bibliothek? Hast du die zurückgebracht?" },
       { speaker: "Murat", text: "Oh nein. Die liegen noch auf dem Schreibtisch. Das mache ich schnell." },
-      { speaker: "Ela", text: "Bitte hör mir kurz zu: die Bibliothek macht erst um zehn auf. Wir sind dann längst weg." },
+      { speaker: "Ela", text: "Bitte hör mir kurz zu: Die Bibliothek macht erst um zehn auf. Wir sind dann längst weg." },
       { speaker: "Murat", text: "Stimmt. Dann bringe ich sie nächste Woche zurück. Hast du die Kinder schon aufgeweckt?" },
       { speaker: "Ela", text: "Ja, vor einer halben Stunde. Und die Wohnungstür habe ich noch nicht abgeschlossen — das machen wir zuletzt." },
     ],
@@ -240,13 +240,13 @@ export const a2U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["aufgeweckt"],
-        explain: "„aufwecken“ ayrılabilen ve kurallı: ortacın hecesi araya girer, sonu düz kalır — aufgeweckt.",
+        explain: "„aufwecken“ ayrılabilen ve kurallı: ortacın „ge“ hecesi araya girer, sonu -t ile biter: aufgeweckt.",
       },
       {
         text: "Warum bringt Murat die Bücher jetzt nicht zurück?",
         options: ["Er findet sie nicht.", "Die Bibliothek ist noch zu.", "Ela will nicht warten."],
         answer: 1,
-        explain: "„die Bibliothek macht erst um zehn auf. Wir sind dann längst weg.“",
+        explain: "„Die Bibliothek macht erst um zehn auf. Wir sind dann längst weg.“",
       },
       {
         kind: "short_answer",
@@ -279,12 +279,14 @@ export const a2U01: SkillExercise[] = [
         kind: "build",
         tr: "Temmuzda seyahate çıktım.",
         answer: "Im Juli bin ich verreist",
+        alternatives: ["Ich bin im Juli verreist"],
         hint: "„verreisen“ yer değiştiren bir fiil → „sein“ alır. Zaman ifadesi başta olduğu için özne fiilin arkasına düşer.",
       },
       {
         kind: "build",
         tr: "Dağlarda çok şey yaptık.",
         answer: "In den Bergen haben wir viel unternommen",
+        alternatives: ["Wir haben in den Bergen viel unternommen"],
         hint: "„unternehmen“ yer değiştirmez → „haben“. Vurgusuz ön ek yüzünden ortaçta „ge“ yok: unternommen.",
       },
       {
@@ -338,7 +340,7 @@ export const a2U01: SkillExercise[] = [
           { de: "Am … bin ich zurückgekommen.", tr: "…-de geri döndüm", en: "I came back on …" },
         ],
         sample:
-          "Hallo Selin,\n\nvielen Dank für deine E-Mail! Ich bin im August nach Antalya gefahren, zusammen mit meinem Bruder. Wir sind am ersten August losgefahren und waren zwei Wochen dort.\n\nWir haben viel unternommen: wir sind jeden Morgen geschwommen und haben abends in der Altstadt gegessen. Einmal sind wir mit dem Boot gefahren, das war fantastisch. Die Natur dort ist wirklich schön.\n\nAm 15. August bin ich zurückgekommen. Wohin fährst du nächstes Jahr?\n\nLiebe Grüße\nDeniz",
+          "Hallo Selin,\n\nvielen Dank für deine E-Mail! Ich bin im August nach Antalya gefahren, zusammen mit meinem Bruder. Wir sind am ersten August losgefahren und waren zwei Wochen dort.\n\nWir haben viel unternommen: Wir sind jeden Morgen geschwommen und haben abends in der Altstadt gegessen. Einmal sind wir mit dem Boot gefahren, das war fantastisch. Die Natur dort ist wirklich schön.\n\nAm 15. August bin ich zurückgekommen. Wohin fährst du nächstes Jahr?\n\nLiebe Grüße\nDeniz",
       },
     ],
   },

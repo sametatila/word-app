@@ -174,7 +174,7 @@ export const enA2U02: SkillExercise[] = [
     gloss: [
       { de: "soccer", tr: "futbol" },
       { de: "used to", tr: "eskiden" },
-      { de: "memory", tr: "hafıza" },
+      { de: "memory", tr: "anı" },
       { de: "coach", tr: "antrenör" },
     ],
     minutes: 4,

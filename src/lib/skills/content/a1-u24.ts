@@ -175,7 +175,7 @@ export const a1U24: SkillExercise[] = [
       { de: "verschieben", tr: "ertelemek", en: "to postpone" },
       { de: "das Datum", tr: "tarih", en: "date" },
       { de: "der Freitag", tr: "cuma", en: "Friday" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to suit" },
     ],
     minutes: 2,
     segments: [
@@ -243,19 +243,19 @@ export const a1U24: SkillExercise[] = [
       { text: "Wohin bist du am Wochenende gegangen?" },
       { text: "Ich bin mit Tom ins Kino gegangen. Wir haben einen Film gesehen." },
       { text: "Und am Sonntag?" },
-      { text: "Am Sonntag bin ich zu Hause geblieben. Ich habe Musik gehört." },
+      { text: "Am Sonntag bin ich zu Hause geblieben. Ich habe Musik gehört. Und du?" },
       { text: "Ich bin nach Hamburg gefahren. Mit dem Zug — ich fliege nicht gern." },
       { text: "Schön! Erzähl mir mehr." },
     ],
     questions: [
       {
-        text: "Wohin ist die erste Person am Samstag gegangen?",
+        text: "Wohin ist die zweite Person mit Tom gegangen?",
         options: ["ins Kino", "nach Hamburg", "in den Park"],
         answer: 0,
         explain: "„Ich bin mit Tom ins Kino gegangen.“",
       },
       {
-        text: "İkinci kişi Hamburg'a neyle gitti?",
+        text: "İlk kişi Hamburg'a neyle gitti?",
         options: ["mit dem Zug", "mit dem Flugzeug", "mit dem Schiff"],
         answer: 0,
         explain: "„Mit dem Zug — ich fliege nicht gern.“",
@@ -360,8 +360,8 @@ export const a1U24: SkillExercise[] = [
           "„gestern“ ya da „am Wochenende“ gibi bir zaman ifadesi kullandın mı?",
         ],
         phrases: [
-          { de: "Ich bin ins Kino gegangen.", tr: "Sinemaya gittim.", en: "I went to the cinema." },
-          { de: "Ich habe einen Film gesehen.", tr: "Bir film izledim.", en: "I saw a film." },
+          { de: "Ich bin ins Kino gegangen.", tr: "Sinemaya gittim.", en: "I went to the movies." },
+          { de: "Ich habe einen Film gesehen.", tr: "Bir film izledim.", en: "I saw a movie." },
           { de: "Ich bin zu Hause geblieben.", tr: "Evde kaldım.", en: "I stayed home." },
         ],
         sample:

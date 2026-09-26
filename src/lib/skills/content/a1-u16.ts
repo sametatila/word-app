@@ -206,7 +206,7 @@ export const a1U16: SkillExercise[] = [
     intro: "Yeni komşu kapıyı çalıyor.",
     gloss: [
       { de: "neu", tr: "yeni", en: "new" },
-      { de: "der Aufzug", tr: "asansör", en: "lift" },
+      { de: "der Aufzug", tr: "asansör", en: "elevator" },
       { de: "die Nachbarin", tr: "kadın komşu", en: "neighbor (f.)" },
     ],
     minutes: 2,
@@ -214,7 +214,7 @@ export const a1U16: SkillExercise[] = [
       { text: "Guten Tag! Wir sind neu hier, Wohnung 7." },
       { text: "Herzlich willkommen! Ich bin Ihre Nachbarin aus Wohnung 5." },
       { text: "Freut mich! Eine Frage: Funktioniert der Aufzug?" },
-      { text: "Heute nicht. Sie müssen die Treppe gehen." },
+      { text: "Heute nicht. Sie müssen die Treppe nehmen." },
       { text: "Kein Problem. Wir wohnen im zweiten Stock." },
     ],
     questions: [
@@ -228,7 +228,7 @@ export const a1U16: SkillExercise[] = [
         text: "Funktioniert der Aufzug heute?",
         options: ["Nein", "Ja", "Nur bis 22 Uhr"],
         answer: 0,
-        explain: "„Heute nicht. Sie müssen die Treppe gehen.“",
+        explain: "„Heute nicht. Sie müssen die Treppe nehmen.“",
       },
       {
         kind: "gapfill",
@@ -277,7 +277,7 @@ export const a1U16: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Evde asansör yok.",
+        tr: "Binada asansör yok.",
         answer: "Es gibt keinen Aufzug im Haus",
         hint: "„Es gibt“ + Akkusativ: es gibt einen/keinen Aufzug. Türkçedeki „var/yok“un karşılığı.",
       },
@@ -324,7 +324,7 @@ export const a1U16: SkillExercise[] = [
           "Konum fiili kullandın mı? (steht, hängt, liegt)",
         ],
         phrases: [
-          { de: "Meine Wohnung hat …", tr: "Dairemin … var", en: "My flat has …" },
+          { de: "Meine Wohnung hat …", tr: "Dairemin … var", en: "My apartment has …" },
           { de: "… steht in der Ecke.", tr: "… köşede duruyor.", en: "… stands in the corner." },
           { de: "Es gibt …", tr: "… var", en: "There is …" },
         ],

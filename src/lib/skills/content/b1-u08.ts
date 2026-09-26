@@ -187,10 +187,10 @@ export const b1U08: SkillExercise[] = [
       { text: "Wieso denn? Nächste Woche geht doch auch." },
       { text: "Nächste Woche läuft der Film nicht mehr. Eine andere Alternative gibt es nicht." },
       { text: "Dann heute. Aber eher spät, ich habe bis sechs zu tun." },
-      { text: "Um neun? Das Kino ist dann genauso voll, aber wir bekommen noch Plätze." },
-      { text: "Gut. Ich hatte den Eindruck, du wolltest gar nicht." },
-      { text: "Doch, ich wollte. Ich war nur nicht sicher, ob du Zeit hast." },
-      { text: "Habe ich. Dann treffen wir uns um zehn vor neun." },
+      { text: "Um neun? Das Kino ist dann genauso voll wie am Wochenende, aber wir bekommen noch Plätze." },
+      { text: "Gut, einverstanden." },
+      { text: "Ich hatte den Eindruck, du wolltest gar nicht." },
+      { text: "Doch, ich hatte nur viel zu tun. Treffen wir uns um zehn vor neun?" },
     ],
     questions: [
       {
@@ -203,7 +203,7 @@ export const b1U08: SkillExercise[] = [
         text: "Wann treffen sich die beiden?",
         options: ["Um zehn vor neun", "Um sechs", "Um elf"],
         answer: 0,
-        explain: "„Dann treffen wir uns um zehn vor neun.“",
+        explain: "„Treffen wir uns um zehn vor neun?“",
       },
       {
         text: "Welchen Eindruck hatte die erste Person?",
@@ -317,15 +317,14 @@ export const b1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu ucuz değil, sadece daha güvenilir.",
-        answer: "Das ist nicht billig, sondern nur zuverlässiger.",
+        tr: "Bu daha ucuz değil, daha güvenilir.",
+        answer: "Das ist nicht billiger, sondern zuverlässiger.",
         hint: "Olumsuzdan sonra düzeltme: sondern.",
       },
       {
         kind: "build",
         tr: "Bana yardım eden meslektaş yarın izinli.",
         answer: "Die Kollegin, die mir geholfen hat, hat morgen frei.",
-        alternatives: ["Der Kollege, der mir geholfen hat, hat morgen frei."],
         hint: "Zamir yan cümlenin öznesi → Nominativ.",
       },
       {
@@ -342,8 +341,8 @@ export const b1U08: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Olumsuzdan sonraki bağlacı düzelt.",
-        source: "Das war nicht richtig, aber bequem für uns.",
-        answer: "Das war nicht richtig, sondern bequem für uns.",
+        source: "Wir fahren nicht mit dem Auto, aber mit dem Zug.",
+        answer: "Wir fahren nicht mit dem Auto, sondern mit dem Zug.",
         why: "Türkçe 'ama' hem aber hem sondern'i karşılar, o yüzden ikisi de doğru görünür. Almanca ayırır: OLUMSUZ bir ifadeyi DÜZELTEN bir devam geliyorsa sondern zorunludur. 'aber' ise olumsuzu düzeltmez, ona bir çekince ekler.",
       },
     ],
@@ -374,7 +373,7 @@ export const b1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bende iz bırakan davranışı çok kibardı.",
+        tr: "Dikkatimi çeken davranış çok kibardı.",
         answer: "Das Verhalten, das mir aufgefallen ist, war sehr höflich.",
         hint: "Nötr isim, yan cümlenin öznesi → das.",
       },
@@ -392,7 +391,7 @@ export const b1U08: SkillExercise[] = [
         sample:
           "Ich möchte über eine Frau schreiben, die ich seit zwei Jahren kenne.\n\n" +
           "Wir haben uns in dem Kurs kennengelernt, den ich damals abends besucht habe. " +
-          "Sie saß immer vorn und stellte Fragen, die sich sonst niemand traute.\n\n" +
+          "Sie saß immer vorn und stellte Fragen, die sich sonst niemand zu stellen traute.\n\n" +
           "Was mir aufgefallen ist, war ihr Verhalten gegenüber neuen Leuten. Einmal kam " +
           "ein Mann, der kaum ein Wort verstand. Sie hat sich neben ihn gesetzt und alles " +
           "langsam wiederholt. Das war nicht bloß höflich, sondern wirklich hilfsbereit.\n\n" +
@@ -401,7 +400,7 @@ export const b1U08: SkillExercise[] = [
           "Ich schreibe über sie, weil sie mir gezeigt hat, dass eine kleine Tat reicht.",
         phrases: [
           { de: "Ich möchte über … schreiben, die/den …", tr: "… hakkında yazmak istiyorum", en: "I would like to write about …" },
-          { de: "Was mir aufgefallen ist, …", tr: "Bende iz bırakan şey …", en: "What struck me …" },
+          { de: "Was mir aufgefallen ist, …", tr: "Dikkatimi çeken şey …", en: "What struck me …" },
           { de: "nicht nur …, sondern …", tr: "sadece … değil, …", en: "not only …, but …" },
         ],
       },

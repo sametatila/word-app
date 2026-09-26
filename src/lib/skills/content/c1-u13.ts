@@ -234,7 +234,7 @@ export const c1U13: SkillExercise[] = [
       { de: "eingreifen", tr: "müdahale etmek", en: "to intervene" },
       { de: "bevorzugen", tr: "tercih etmek", en: "to favor" },
       { de: "messen", tr: "ölçmek", en: "to measure" },
-      { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
+      { de: "Das räume ich ein", tr: "bunu kabul ediyorum", en: "I concede that" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "aussagekräftig", tr: "açıklayıcı", en: "meaningful" },
       { de: "die Debatte", tr: "tartışma", en: "debate" },
@@ -246,7 +246,7 @@ export const c1U13: SkillExercise[] = [
       { speaker: "Frau Sadik", text: "Das ist mir zu kurz. Sie messen Umsatz, wir reden über Erreichbarkeit." },
       { speaker: "Dr. Ulrich", text: "Einverstanden, das differenziere ich gern. Erreichbarkeit ist ein eigener Wert." },
       { speaker: "Moderatorin", text: "Frau Sadik, Ihre Redezeit läuft." },
-      { speaker: "Frau Sadik", text: "Ich möchte an einem Punkt einhaken, den Herr Ulrich selbst gemacht hat: Er sagt, die Zahlen zeigten keinen Zusammenhang. Sie zeigen aber auch keinen gegenteiligen." },
+      { speaker: "Frau Sadik", text: "Ich möchte an einem Punkt einhaken, den Herr Ulrich selbst angesprochen hat: Er sagt, die Zahlen zeigten keinen Zusammenhang. Sie zeigen aber auch keinen gegenteiligen." },
       { speaker: "Dr. Ulrich", text: "Das räume ich ein. Fehlender Nachweis ist kein Gegenbeweis." },
       { speaker: "Moderatorin", text: "Ich greife hier einmal ein, weil wir uns im Kreis drehen." },
       { speaker: "Dr. Ulrich", text: "Bitte." },
@@ -315,7 +315,7 @@ export const c1U13: SkillExercise[] = [
       { de: "zumutbar", tr: "makul", en: "reasonable" },
       { de: "die Laufzeit", tr: "süre", en: "term" },
       { de: "binden", tr: "bağlamak", en: "to bind" },
-      { de: "der Absatz", tr: "satış", en: "sales" },
+      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "also", tr: "yani", en: "so" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
@@ -423,7 +423,7 @@ export const c1U13: SkillExercise[] = [
           "Wir liefern spätestens am 22. März",
           "Wir verpflichten uns, bis zum 22. März zu liefern.",
         ],
-        why: "Belirsizlik varsa çözüm tarihi askıya almak değil, ötelemek. Kayıtlı bir tarih taahhüt değildir; temerrüt doğmaz, temerrüt doğmayınca talep hakkı da doğmaz.",
+        why: "Belirsizlik varsa çözüm tarihi askıya almak değil, ötelemek. Çekinceye bağlı bir tarih taahhüt değildir; temerrüt doğmaz, temerrüt doğmayınca talep hakkı da doğmaz.",
       },
     ],
   },
@@ -448,7 +448,6 @@ export const c1U13: SkillExercise[] = [
       { de: "einseitig", tr: "tek taraflı", en: "unilateral" },
       { de: "kalkulieren", tr: "hesaplamak", en: "to calculate" },
       { de: "der Umfang", tr: "kapsam", en: "scope" },
-      { de: "ledig", tr: "bekâr", en: "single" },
     ],
     minutes: 12,
     tasks: [
@@ -480,7 +479,6 @@ export const c1U13: SkillExercise[] = [
           "vielen Dank für den Entwurf. Zwei Punkte möchten wir vor Unterzeichnung anpassen; die übrigen Klauseln tragen wir mit.\n\n" +
           "ZU § 3 (LIEFERUNG). Der Zusatz „vorbehaltlich der Verfügbarkeit beim Vorlieferanten“ hebt die Bindung des genannten Datums auf. Damit entsteht bei Überschreitung kein Verzug und folglich kein Anspruch unsererseits — der Termin wäre eine Absichtserklärung. Wir schlagen folgende Fassung vor: „Die Lieferung erfolgt spätestens am 22. März.“ Sollte die Beschaffung unsicher sein, nennen Sie bitte ein späteres, aber verbindliches Datum.\n\n" +
           "ZU § 9 (LEISTUNGSANPASSUNG). Der Halbsatz „soweit dies für den Kunden zumutbar ist“ verlagert die Bewertung einseitig auf Ihre Seite; bei einer Laufzeit von fünf Jahren ist das für uns nicht kalkulierbar. Wir schlagen vor: „Änderungen des Leistungsumfangs bedürfen der Zustimmung des Kunden in Textform. Bleibt diese aus, gilt der bisherige Umfang fort.“\n\n" +
-          "Zu § 15 bitten wir lediglich um die zum Vertragsschluss gültige Fassung der AGB als Anlage, damit sie wirksam einbezogen ist.\n\n" +
           "Mit freundlichen Grüßen\nF. Ekiz",
       },
     ],

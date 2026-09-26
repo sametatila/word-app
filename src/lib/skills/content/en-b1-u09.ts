@@ -198,7 +198,7 @@ export const enB1U09: SkillExercise[] = [
     intro: "Kitap mı önce, dizi mi? Tavsiye nasıl kuruluyor?",
     gloss: [
       { de: "plot", tr: "olay örgüsü" },
-      { de: "spoil", tr: "tadını kaçırmak" },
+      { de: "spoil", tr: "sürprizi ele vermek" },
       { de: "taste", tr: "zevk" },
       { de: "strange", tr: "tuhaf" },
       { de: "make sense", tr: "anlam kazanmak" },
@@ -287,7 +287,7 @@ export const enB1U09: SkillExercise[] = [
       { de: "at the back", tr: "arkada" },
       { de: "Hold the back button down", tr: "arkadaki düğmeyi basılı tut" },
       { de: "cloth", tr: "bez" },
-      { de: "died", tr: "bitti" },
+      { de: "died", tr: "bozuldu" },
       { de: "on purpose", tr: "bilerek" },
     ],
     minutes: 6,
@@ -365,7 +365,7 @@ export const enB1U09: SkillExercise[] = [
     genre: "opinion",
     intro: "İki bağlaç, iki iş. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
     gloss: [
-      { de: "Although", tr: "rağmen" },
+      { de: "Although", tr: "-mesine rağmen" },
       { de: "whereas", tr: "oysa" },
       { de: "prefer", tr: "tercih etmek" },
     ],
@@ -420,7 +420,7 @@ export const enB1U09: SkillExercise[] = [
     gloss: [
       { de: "have written", tr: "yazdım" },
       { de: "is switched on", tr: "açılıyor" },
-      { de: "replace", tr: "değiştirmek" },
+      { de: "replace", tr: "yenisiyle değiştirmek" },
     ],
     minutes: 8,
     tasks: [
@@ -451,7 +451,7 @@ export const enB1U09: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Onu değiştirebilir misiniz, lütfen?",
+        tr: "Onu yenisiyle değiştirebilir misiniz, lütfen?",
         answer: "Could you replace it, please?",
         hint: "„replace“ yerine yenisini koymak; „repair“ onarmak demek.",
       },

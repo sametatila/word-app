@@ -378,7 +378,7 @@ export const enB1U20: SkillExercise[] = [
         prompt: "Rapor kartını doldur.",
         facts: "Rapor üç iş günü; geriye tarihlenmiyor; pazartesi devamsızlığa perşembeye kadar rapor; raporda tanı yazmıyor.",
         fields: [
-          { label: "Time", answer: "three working days", accept: ["3 days"] },
+          { label: "Time", answer: "three working days", accept: ["3 days", "3 working days", "three business days", "3 business days"] },
           { label: "Backdate", answer: "no", accept: ["not possible"] },
           { label: "Monday absence", answer: "by Thursday", accept: ["Thursday"] },
           { label: "The note says", answer: "you were sick", accept: ["only that you were sick"] },

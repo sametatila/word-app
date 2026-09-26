@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 17 — "Çevrimiçi yaşam, ikna, çıkarım, kaynak".
  *
- * Dört ders: Online and offline · Talking someone round ·
+ * Dört ders: Online and offline · Talking someone around ·
  * It must be true · Where did you read that?
  *
  *   Kelime: post, follower, like, block, private, profile, scroll, trend,
@@ -188,7 +188,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 17,
-    title: "Talking someone round",
+    title: "Talking someone around",
     genre: "dialogue",
     intro: "Bir tarih değiştiriliyor. İkna nasıl işliyor?",
     gloss: [

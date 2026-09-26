@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *           dense, neglect, misjudge, observe, exaggerate, downplay,
  *           contradict, perceive, reflect.
  *   Kalıp:  The software, which was updated in May, failed. ·
- *           The interface, which is why we stopped, is old. ·
+ *           The interface is old, which is why we stopped. ·
  *           The method to which we refer uses encryption. ·
  *           What the study determines is the limit. ·
  *           It was the statistical test that failed. ·
@@ -254,7 +254,7 @@ export const enB2U12: SkillExercise[] = [
       { speaker: "Emir", text: "And without them?" },
       { speaker: "Ayça", text: "Without them the sentence says there are several versions installed and the May one is the one that failed. That is a different bug report." },
       { speaker: "Emir", text: "The interface?" },
-      { speaker: "Ayça", text: "The interface, which is why we stopped, is old. „Which“ is pointing at the whole of the first half, and „that“ has never been able to do that." },
+      { speaker: "Ayça", text: "The interface is old, which is why we stopped. „Which“ is pointing at the whole of the first half, and „that“ has never been able to do that." },
       { speaker: "Emir", text: "And the third line." },
       { speaker: "Ayça", text: "The method to which we refer uses encryption. The preposition is in front of „which“, which is the only place it goes in a specification." },
       { speaker: "Emir", text: "Nobody says it." },
@@ -343,7 +343,7 @@ export const enB2U12: SkillExercise[] = [
       { speaker: "Tuğçe", text: "That is a conclusion and not a charge. „Must have“ reads the evidence; it says the evidence leaves one explanation standing." },
       { speaker: "Tuğçe", text: "They can't have misjudged the scale. The scale was fixed in the protocol before anybody saw a number, and „can't have“ is how English closes a door with evidence." },
       { speaker: "Tuğçe", text: "Not „mustn't have“. There is no such sentence, and a review that contains one comes back before anybody reads the finding." },
-      { speaker: "Tuğçe", text: "We should have observed it twice. The third form, and the only one that is about us rather than about the world." },
+      { speaker: "Tuğçe", text: "We should have observed it twice. The third one, and the only one that is about us rather than about the world." },
       { speaker: "Tuğçe", text: "Those three do the whole of an incident note. What the evidence shows, what it rules out, what we did not do." },
       { speaker: "Tuğçe", text: "The temptation is to exaggerate the first and downplay the third, and a note written that way is contradicted by the next note six weeks later." },
       { speaker: "Tuğçe", text: "So I write the third sentence first, in the first person, and then I go back and see how much of the evidence I still need. It is usually less than I thought." },

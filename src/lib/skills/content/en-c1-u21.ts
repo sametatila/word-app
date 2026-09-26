@@ -377,7 +377,7 @@ export const enC1U21: SkillExercise[] = [
       { speaker: "Volkan", text: "Arguing about the deficit is arguing about the size of a symptom, and it can be done for ten years without the word „price“ ever appearing." },
       { speaker: "Volkan", text: "Behind the bailout package stands a speculative bubble. The place is in the front slot again and the subject arrives last, which is how a bulletin puts a new thing on the stage." },
       { speaker: "Volkan", text: "The package is visible, dated and countable. The bubble was none of those things while it was growing, and everyone I have met remembers noticing it." },
-      { speaker: "Volkan", text: "The systemic risk we insure; the trade deficit we do not. Two objects at the front, and the second half has kept its verb because the two are not parallel." },
+      { speaker: "Volkan", text: "The systemic risk we insure; the trade deficit we do not. Two objects at the front, and in the second half only the helping verb is left." },
       { speaker: "Volkan", text: "We insure the first because a bank failing takes others with it. We do not insure the second because it is not an event; it is a direction." },
       { speaker: "Volkan", text: "So here is the line I would put at the end of any lecture on this. Losses that are shared and gains that are private are not a failure of the system." },
       { speaker: "Volkan", text: "They are the system working as it was built, and the building was done in public, in daylight, by people whose names are on the law." },
@@ -392,7 +392,7 @@ export const enC1U21: SkillExercise[] = [
       },
       {
         text: "Why is the trade deficit not insured?",
-        options: ["it is a direction", "it is not an event", "it is private"],
+        options: ["it is a direction", "it is too large", "it is private"],
         answer: 0,
         explain: "„it is not an event; it is a direction.“",
       },

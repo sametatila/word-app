@@ -170,9 +170,9 @@
   "de": "Zuerst die Nachbarwohnung, dann das Untergeschoss, dann die Klingel, zuletzt der dritte Stock."
  },
  {
-  "tr": "„six hundred euros for two rooms“ — doksan elektrik, on merdiven.",
+  "tr": "„six hundred euros for two rooms“ — doksan elektrik, on merdiven temizliği.",
   "kind": "explain",
-  "de": "„six hundred euros for two rooms“ — neunzig der Strom, zehn das Treppenhaus."
+  "de": "„six hundred euros for two rooms“ — neunzig der Strom, zehn die Treppenreinigung."
  },
  {
   "tr": "„A party has to end at eleven.“ — „has to“ da zorunluluk söylüyor.",
@@ -357,7 +357,7 @@
  {
   "tr": "çalışmıyor",
   "kind": "gloss.tr",
-  "de": "es geht nicht"
+  "de": "es funktioniert nicht"
  },
  {
   "tr": "… memelisin",

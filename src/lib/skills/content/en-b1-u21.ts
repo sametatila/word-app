@@ -199,7 +199,7 @@ export const enB1U21: SkillExercise[] = [
     gloss: [
       { de: "the faucet", tr: "musluk" },
       { de: "bulb", tr: "ampul" },
-      { de: "draught", tr: "cereyan" },
+      { de: "draft", tr: "cereyan" },
       { de: "sentence", tr: "cümle" },
       { de: "brush", tr: "fırçalamak" },
       { de: "uncomfortable", tr: "rahatsız edici" },
@@ -215,7 +215,7 @@ export const enB1U21: SkillExercise[] = [
       { speaker: "Mert", text: "And the faucet?" },
       { speaker: "Nil", text: "If you turn off the faucet while you brush your teeth, you save water and almost no money. Do it for the water." },
       { speaker: "Mert", text: "So which one is for the money?" },
-      { speaker: "Nil", text: "Heat. Warm rooms you do not sit in, and the draught under the door of the cold one." },
+      { speaker: "Nil", text: "Heat. Warm rooms you do not sit in, and the draft under the door of the cold one." },
       { speaker: "Mert", text: "The lamps?" },
       { speaker: "Nil", text: "If I had a new lamp, I would use less energy. True, and it is four euros a year; people change bulbs because it feels like doing something." },
       { speaker: "Mert", text: "That is uncomfortable." },
@@ -241,7 +241,7 @@ export const enB1U21: SkillExercise[] = [
         text: "Changing the bulbs saves four euros a year.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„true, and it is four euros a year.“",
+        explain: "„True, and it is four euros a year.“",
       },
       {
         kind: "gapfill",
@@ -379,7 +379,7 @@ export const enB1U21: SkillExercise[] = [
         kind: "build",
         tr: "Fırtına cumartesi geliyor.",
         answer: "The storm is arriving on Saturday.",
-        hint: "En güçlü ve en dar: takvimde saatiyle duruyor.",
+        hint: "En güçlü ve en dar: takvimde günüyle duruyor.",
       },
       {
         kind: "build",
@@ -395,7 +395,7 @@ export const enB1U21: SkillExercise[] = [
           { label: "Climate", answer: "will change", accept: ["slowly"] },
           { label: "Ice", answer: "going to melt", accept: ["faster"] },
           { label: "Storm", answer: "Saturday", accept: ["on Saturday"] },
-          { label: "Strongest form", answer: "the smallest claim", accept: ["the narrowest"] },
+          { label: "Strongest form", answer: "the narrowest", accept: ["narrowest", "the smallest claim"] },
         ],
       },
     ],
@@ -430,7 +430,7 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yeni bir lambam olsaydı daha az enerji kullanırdım.",
+        tr: "Yeni bir lambam olsa daha az enerji kullanırdım.",
         answer: "If I had a new lamp, I would use less energy.",
         hint: "Gerçek olmayan koşul: geçmiş biçim olmayan bir şimdiyi anlatıyor.",
       },

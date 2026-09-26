@@ -122,7 +122,7 @@
  {
   "tr": "Hasta bir arkadaşa öğüt yaz.",
   "kind": "intro",
-  "en": "Write advice to a friend who is ill."
+  "en": "Write advice to a friend who is sick."
  },
  {
   "tr": "Karar o anda alınıyor: will.",
@@ -160,9 +160,9 @@
   "en": "B, E, R, G, E, R — six letters."
  },
  {
-  "tr": "Eril Genitiv: des + isim eki.",
+  "tr": "Eril Genitiv: des; „Kollege“ n-sınıfından olduğu için -s değil -n alır: des Kollegen.",
   "kind": "explain",
-  "en": "Masculine genitive: des + a noun ending."
+  "en": "Masculine genitive: des; „Kollege“ is an n-noun, so it takes -n, not -s: des Kollegen."
  },
  {
   "tr": "İki komşu balkonda konuşuyor.",
@@ -252,7 +252,7 @@
  {
   "tr": "Yön verme ve aktarma cümleleri.",
   "kind": "intro",
-  "en": "Sentences for giving directions and changing."
+  "en": "Sentences for giving directions and changing trains."
  },
  {
   "tr": "„alles“ belirsiz öncüldür → was.",
@@ -312,7 +312,7 @@
  {
   "tr": "Ev arkadaşına alışveriş notu yaz.",
   "kind": "intro",
-  "en": "Write a shopping note for your flatmate."
+  "en": "Write a shopping note for your roommate."
  },
  {
   "tr": "Genel bir durum: is + üçüncü hâl.",
@@ -412,12 +412,12 @@
  {
   "tr": "Markette bir müşteri soru soruyor.",
   "kind": "intro",
-  "en": "A customer asks a question in the shop."
+  "en": "A customer asks a question at the supermarket."
  },
  {
-  "tr": "Tamamlayıcı, sınırlandırıcı değil.",
+  "tr": "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ Ara açıklama tamamlayıcıdır, sınırlandırıcı değil.",
   "kind": "explain",
-  "en": "It adds, it does not restrict."
+  "en": "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ An apposition adds; it does not restrict."
  },
  {
   "tr": "Yeni komşulara bırakılmış bir not.",
@@ -612,7 +612,7 @@
  {
   "tr": "Drogeride bir müşteri bir şey arıyor.",
   "kind": "intro",
-  "en": "A customer is looking for something in the chemist's."
+  "en": "A customer is looking for something in the drugstore."
  },
  {
   "tr": "gern'in üstünlük biçimi: am liebsten.",
@@ -637,7 +637,7 @@
  {
   "tr": "Renk (Färbung) ise her yerde kalıyor.",
   "kind": "explain",
-  "en": "The colouring (Färbung), though, stays everywhere."
+  "en": "The coloring (Färbung), though, stays everywhere."
  },
  {
   "tr": "Sahte bir özürden daha değerli bilgi.",

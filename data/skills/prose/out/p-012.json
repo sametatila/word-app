@@ -102,12 +102,12 @@
  {
   "tr": "Asansörde iki komşu. Almanya'da hava sohbeti bir nezaket biçimidir.",
   "kind": "intro",
-  "en": "Two neighbors in the lift. Small talk about the weather is a form of politeness in Germany."
+  "en": "Two neighbors in the elevator. Small talk about the weather is a form of politeness in Germany."
  },
  {
   "tr": "Asansörde kısa bir sohbet. Konu ne zaman açılıyor, nasıl kapanıyor?",
   "kind": "intro",
-  "en": "A short chat in the lift. When is the subject opened, and how is it closed?"
+  "en": "A short chat in the elevator. When is the subject opened, and how is it closed?"
  },
  {
   "tr": "Asılı durma bir durumdur, soru wo? — nötr kelimede Dativ: dem Sofa.",
@@ -127,7 +127,7 @@
  {
   "tr": "Bir daire geziliyor. Dinle: kiracı ne soruyor, hangi cevabı alıyor?",
   "kind": "intro",
-  "en": "A flat is being viewed. Listen: what does the tenant ask, what answer do they get?"
+  "en": "An apartment is being viewed. Listen: what does the tenant ask, what answer do they get?"
  },
  {
   "tr": "Bugünün biçimlerini kullanan kötü değil, kendi zamanında konuşuyor.",
@@ -147,7 +147,7 @@
  {
   "tr": "Düğünde iki misafir sohbet ediyor. Kim kimin nesi, konuşma nasıldı?",
   "kind": "intro",
-  "en": "Two guests chat at a wedding. Who is whose what, and how did the talk go?"
+  "en": "Two guests chat at a wedding. Who is related to whom, and how was the speech?"
  },
  {
   "tr": "Eczanenin bilgi yazısı: neyi reçetesiz alabilirsin, neyi alamazsın?",
@@ -215,9 +215,9 @@
   "en": "The first marks a prohibition; the negative of an inference is only ever „can't“."
  },
  {
-  "tr": "Kapanış cümlesinin dürüstlüğü burada: hepsi değil, neredeyse hepsi.",
+  "tr": "Amir her şeyi değil, neredeyse her şeyi anlamış: „Nicht alles — aber fast.“",
   "kind": "explain",
-  "en": "The honesty of the closing sentence is here: not everything, but almost everything."
+  "en": "Amir understood not everything, but almost everything: „Nicht alles — aber fast.“"
  },
  {
   "tr": "Karşılaştırma biçimi burada tavsiyeyi taşıyor: nicelik değil, odak.",
@@ -285,9 +285,9 @@
   "en": "First form two sentences, then reply to a complaint on behalf of an organization."
  },
  {
-  "tr": "Sabırsızlık bilgi taşımıyor; tarih taşıyor. Ünitenin asıl dersi bu.",
+  "tr": "Sabırsızlık bilgi taşımıyor; tarih ise taşıyor. Ünitenin asıl dersi bu.",
   "kind": "explain",
-  "en": "Impatience carries no information; it carries a date. That is the real lesson of the unit."
+  "en": "Impatience carries no information; a date does. That is the real lesson of the unit."
  },
  {
   "tr": "Kök sahibinden gelir (sie → ihr-), eki ise „die Tasche“ belirler: ihre Tasche.",
@@ -452,7 +452,7 @@
  {
   "tr": "„in Ihrer Größe leider nur noch dunkelblau“ — istediği gri kalmamış.",
   "kind": "explain",
-  "en": "„in Ihrer Größe leider nur noch dunkelblau“ — the gray she wanted has gone."
+  "en": "„in Ihrer Größe leider nur noch dunkelblau“ — the gray one she wanted is sold out."
  },
  {
   "tr": "„is moving“ bir adım geriye kayarak „was moving“ olmuş; cümle doğru.",

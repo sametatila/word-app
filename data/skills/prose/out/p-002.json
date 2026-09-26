@@ -75,11 +75,6 @@
   "en": "Words ending in -x take -es: boxes."
  },
  {
-  "tr": "„„Preis auf Anfrage“. Das heißt teuer.“",
-  "kind": "explain",
-  "en": "„„Preis auf Anfrage“. Das heißt teuer.“"
- },
- {
   "tr": "„decide“ mastar ister: decided to take.",
   "kind": "explain",
   "en": "„decide“ takes the infinitive: decided to take."
@@ -147,7 +142,7 @@
  {
   "tr": "Kayıp eşya bürosunda. Hangi eşya kimin?",
   "kind": "intro",
-  "en": "At the lost property office. Whose item is whose?"
+  "en": "At the lost and found. Which item belongs to whom?"
  },
  {
   "tr": "Kipli edilgen: müssen + ortaç + werden.",
@@ -227,7 +222,7 @@
  {
   "tr": "Apartman görevlisiyle telefon konuşması.",
   "kind": "intro",
-  "en": "A phone call with the caretaker."
+  "en": "A phone call with the building manager."
  },
  {
   "tr": "Bir andan bugüne süren durum: „Seitdem“.",
@@ -237,7 +232,7 @@
  {
   "tr": "Bir ilan okunuyor. Hangi ayrıntı önemli?",
   "kind": "intro",
-  "en": "An advert is being read. Which detail matters?"
+  "en": "An ad is being read. Which detail matters?"
  },
  {
   "tr": "Bir öneri sunuluyor. Nasıl karşılanıyor?",
@@ -287,7 +282,7 @@
  {
   "tr": "Muayenehaneye telefon. Randevu alınıyor.",
   "kind": "intro",
-  "en": "A call to the surgery. An appointment is made."
+  "en": "A call to the doctor's office. An appointment is made."
  },
  {
   "tr": "Saat söylemeyi ve alerji bildirmeyi yaz.",
@@ -332,7 +327,7 @@
  {
   "tr": "„Ich rufe sie heute an.“ — kız kardeşini.",
   "kind": "explain",
-  "en": "„Ich rufe sie heute an.“ — his sister."
+  "en": "„Ich rufe sie heute an.“ — her sister."
  },
  {
   "tr": "„remove“ fiilinin ad biçimi „removal“dır.",
@@ -347,7 +342,7 @@
  {
   "tr": "Bir davet. Ne getirilmiş, tatlıda ne var?",
   "kind": "intro",
-  "en": "An invitation. What has been brought, and what is for pudding?"
+  "en": "An invitation. What has been brought, and what is for dessert?"
  },
  {
   "tr": "Bir şehir broşürü. Nereleri gezebilirsin?",
@@ -430,9 +425,9 @@
   "en": "ungeachtet + genitive; a preposition, not a conjunction."
  },
  {
-  "tr": "verloren gehen: kalıp fiil, ayrı yazılır.",
+  "tr": "verloren gehen: kalıp fiil; ayrı yazımı yaygın, bitişik verlorengehen de doğru.",
   "kind": "explain",
-  "en": "verloren gehen: a set phrase, written as two words."
+  "en": "verloren gehen: a set phrase; usually written as two words, though verlorengehen is also correct."
  },
  {
   "tr": "zurechnen: atfetmek — keşif değil, karar.",
@@ -490,9 +485,9 @@
   "en": "A customer does not like the price. What do they do?"
  },
  {
-  "tr": "Bir müşteri iade yapmak istiyor. Sorun ne?",
+  "tr": "Bir müşteri bir şeyi değiştirmek istiyor. Sorun ne?",
   "kind": "intro",
-  "en": "A customer wants to return something. What is the problem?"
+  "en": "A customer wants to exchange something. What is the problem?"
  },
  {
   "tr": "Bir plan yapılıyor. Hangi gün, saat kaçta?",
@@ -557,7 +552,7 @@
  {
   "tr": "Sınav ne ölçüyor, puanlar nasıl dağılıyor?",
   "kind": "intro",
-  "en": "What does the exam measure, and how are the marks split?"
+  "en": "What does the exam measure, and how are the points split?"
  },
  {
   "tr": "Televizyon programı. Hangi kanalda ne var?",
@@ -595,9 +590,9 @@
   "en": "„Donnerstag um zehn?“ — „Donnerstag passt.“"
  },
  {
-  "tr": "„Einverstanden!“ — anlaşma kapanış sözcüğü.",
+  "tr": "„Am Sonntag? Ja, gern!“ — „Super, dann komme ich unbedingt.“ İkisi yeni günde anlaşıyor.",
   "kind": "explain",
-  "en": "„Einverstanden!“ — the word that closes an agreement."
+  "en": "„Am Sonntag? Ja, gern!“ — „Super, dann komme ich unbedingt.“ They agree on the new day."
  },
  {
   "tr": "„good“ düzensizdir: good, better, the best.",
@@ -647,7 +642,7 @@
  {
   "tr": "Boş zamanını, sporunu ve müzik zevkini yaz.",
   "kind": "intro",
-  "en": "Write about your free time, your sport and your taste in music."
+  "en": "Write about your free time, the sports you play and your taste in music."
  },
  {
   "tr": "Değişimi savunmak her metni savunmak değil.",
@@ -682,7 +677,7 @@
  {
   "tr": "Hasta bir arkadaşa öğüt vermenin üç biçimi.",
   "kind": "intro",
-  "en": "Three ways of giving advice to a friend who is ill."
+  "en": "Three ways of giving advice to a friend who is sick."
  },
  {
   "tr": "Hazır bloklar; kurulmuyor, yerleştiriliyor.",
@@ -712,7 +707,7 @@
  {
   "tr": "Kayıt formunu doldur ve aile cümleleri kur.",
   "kind": "intro",
-  "en": "Fill in the registration form and make sentences about your family."
+  "en": "Fill out the registration form and make sentences about your family."
  },
  {
   "tr": "Kontrol muayenesi. Neye izin var, ne yasak?",

@@ -209,7 +209,7 @@ export const c1U10: SkillExercise[] = [
     intro: "Bütçe konuşması. Para deyimleri hangi yargıyı taşıyor?",
     gloss: [
       { de: "knapp bei Kasse sein", tr: "parası kıt olmak", en: "to be short of money" },
-      { de: "Geld zum Fenster hinauswerfen", tr: "parayı çöpe atmak", en: "to throw money out of the window" },
+      { de: "Geld zum Fenster hinauswerfen", tr: "parayı çöpe atmak", en: "to throw money down the drain" },
       { de: "tief in die Tasche greifen", tr: "cebinden çok para çıkarmak", en: "to dig deep" },
       { de: "ein Vermögen kosten", tr: "servete mal olmak", en: "to cost a fortune" },
       { de: "jeden Cent umdrehen", tr: "her kuruşu hesaplamak", en: "to count every penny" },
@@ -261,7 +261,7 @@ export const c1U10: SkillExercise[] = [
           "Das hat ein Vermögen gekostet.",
         ],
         answer: 1,
-        explain: "„Gleiche Aussage, kein Vorwurf.“ Yargısız olan tek para deyimi bu.",
+        explain: "„Gleiche Aussage, kein Vorwurf.“ Aynı bilgiyi veriyor ama kimseyi suçlamıyor.",
       },
       {
         kind: "dictation",
@@ -332,11 +332,11 @@ export const c1U10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Streue Redewendungen ___ ein.",
+        text: "Sonst wirkt sie ___, und man sieht das Einstreuen.",
         options: [],
         answer: 0,
-        accept: ["dosiert"],
-        explain: "dosiert: dozunda. Ayrılabilen fiil ön eki cümle sonunda.",
+        accept: ["eingestreut"],
+        explain: "einstreuen'in ortacı: -ge- ön ek ile kökün arasına giriyor. Serpiştirilmiş deyim göze batıyor.",
       },
       {
         text: "Warum behält er „auf Anhieb“?",

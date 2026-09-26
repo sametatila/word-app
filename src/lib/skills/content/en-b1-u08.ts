@@ -192,7 +192,7 @@ export const enB1U08: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Sena", text: "Who is who in this photo? I met four of them last week and I remember two." },
+      { speaker: "Sena", text: "Who is who in this photo? I met four of them this week and I remember two." },
       { speaker: "Mert", text: "Start on the left." },
       { speaker: "Sena", text: "He is the man who wears glasses. Tall, quiet, said about nine words all evening." },
       { speaker: "Mert", text: "That is Deniz. Nine words is a good evening for Deniz." },
@@ -298,7 +298,7 @@ export const enB1U08: SkillExercise[] = [
       },
       {
         text: "What did Nil learn in the five months?",
-        options: ["not to answer questions that were not mine", "to say yes quickly", "to write a summary"],
+        options: ["not to answer other people's questions", "to say yes quickly", "to write a summary"],
         answer: 0,
         explain: "„I stopped answering questions that were not mine to answer.“",
       },
@@ -367,7 +367,7 @@ export const enB1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kıyıdaki kasaba küçüktür.",
+        tr: "Kasaba küçüktür (bu arada kıyıdadır).",
         answer: "The town, which is on the coast, is small.",
         hint: "İki virgül: kasaba zaten belli, arada duran yalnızca ek bilgi.",
       },
@@ -383,7 +383,7 @@ export const enB1U08: SkillExercise[] = [
         facts: "Kışın dört yüz kişi; ağustosta iki bin; vadi sakin kısım; yılda iki kez gidiliyor.",
         fields: [
           { label: "Winter", answer: "four hundred", accept: ["400"] },
-          { label: "August", answer: "two thousand", accept: ["2000"] },
+          { label: "August", answer: "two thousand", accept: ["2000", "2,000"] },
           { label: "Quiet part", answer: "the valley", accept: ["valley"] },
           { label: "Visits", answer: "twice a year", accept: ["2 times a year"] },
         ],

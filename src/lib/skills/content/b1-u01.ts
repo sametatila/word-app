@@ -256,7 +256,7 @@ export const b1U01: SkillExercise[] = [
       { text: "Welche denn?" },
       { text: "Sie haben nach meiner Schwäche gefragt." },
       { text: "Und was hast du gesagt?" },
-      { text: "Ich war ehrlich. Ich sagte, dass ich manchmal zu langsam bin, obwohl ich ordentlich arbeite." },
+      { text: "Ich war ehrlich. Ich habe gesagt, dass ich manchmal zu langsam bin, obwohl ich ordentlich arbeite." },
       { text: "Das war gut. Ehrlichkeit überzeugt mehr als eine schöne Antwort." },
       { text: "Hoffentlich. In zwei Wochen weiß ich, ob es ein Erfolg war." },
     ],
@@ -268,10 +268,10 @@ export const b1U01: SkillExercise[] = [
         explain: "„Sie haben nach meiner Schwäche gefragt.“",
       },
       {
-        text: "Was antwortete er auf die schwierige Frage?",
+        text: "Was hat er auf die schwierige Frage geantwortet?",
         options: ["Dass er keine Schwäche hat", "Dass er manchmal zu langsam ist", "Dass er nicht ordentlich ist"],
         answer: 1,
-        explain: "„Ich sagte, dass ich manchmal zu langsam bin, obwohl ich ordentlich arbeite.“",
+        explain: "„Ich habe gesagt, dass ich manchmal zu langsam bin, obwohl ich ordentlich arbeite.“",
       },
       {
         text: "Was findet die Freundin gut?",
@@ -317,16 +317,16 @@ export const b1U01: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "En güçlü yönüm sabırlı olmam, çünkü müşterilerimizden ben sorumluyum.",
+        tr: "En güçlü yönüm sabrım, çünkü müşterilerimizden ben sorumluyum.",
         answer: "Meine größte Stärke ist meine Geduld, denn ich bin für unsere Kunden verantwortlich.",
-        hint: "En üstün derece belirli artikelle değil, sıfat çekimiyle: „meine größte Stärke“.",
+        hint: "İyelik sözcüğü artikelin yerini alır, en üstün derece sıfat gibi çekilir: „meine größte Stärke“.",
       },
       {
         kind: "build",
         tr: "Yavaş olsam da çok düzenli çalışıyorum.",
         answer: "Obwohl ich langsam bin, arbeite ich sehr ordentlich.",
         alternatives: ["Ich arbeite sehr ordentlich, obwohl ich langsam bin."],
-        hint: "Çekince bağlacı sona atar; yan cümle başta olursa ana cümle fiille başlar.",
+        hint: "Çekince bağlacı fiili sona atar; yan cümle başta olursa ana cümle fiille başlar.",
       },
       {
         kind: "build",
@@ -371,13 +371,13 @@ export const b1U01: SkillExercise[] = [
       { de: "die Herausforderung", tr: "zorlu görev", en: "challenge" },
       { de: "begeistert", tr: "hevesli", en: "enthusiastic" },
       { de: "abgeschlossen", tr: "tamamlanmış", en: "completed" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     tasks: [
       {
         kind: "build",
-        tr: "Deneyimimi kullanabilmek için bu pozisyona başvuruyorum.",
+        tr: "Deneyimimi göstermek için bu pozisyona başvuruyorum.",
         answer: "Ich bewerbe mich auf diese Stelle, um meine Erfahrung zu zeigen.",
         alternatives: ["Um meine Erfahrung zu zeigen, bewerbe ich mich auf diese Stelle."],
         hint: "Amaç kalıbı „um … zu“; dönüşlü fiilin zamiri özneden hemen sonra.",
@@ -404,7 +404,7 @@ export const b1U01: SkillExercise[] = [
           "ich bewerbe mich auf die Stelle in Ihrer Abteilung, weil sie sehr gut zu meiner " +
           "Erfahrung passt. Seit drei Jahren arbeite ich im Büro und bin dort für die Kunden " +
           "zuständig. Meine Ausbildung habe ich 2019 abgeschlossen.\n\n" +
-          "Meine größte Stärke ist meine Geduld: auch wenn ein Kunde laut wird, bleibe ich " +
+          "Meine größte Stärke ist meine Geduld: Auch wenn ein Kunde laut wird, bleibe ich " +
           "ruhig und suche eine Lösung. Obwohl ich mit dem Computer noch nicht schnell bin, " +
           "lerne ich gerade und will mich verbessern.\n\n" +
           "Ich bewerbe mich bei Ihnen, um mich beruflich zu entwickeln. Meine Motivation ist deshalb sehr groß. Die Zusammenarbeit in " +
@@ -415,7 +415,7 @@ export const b1U01: SkillExercise[] = [
           { de: "Ich bewerbe mich auf die Stelle als …", tr: "… pozisyonuna başvuruyorum", en: "I am applying for the position as …" },
           { de: "Seit … arbeite ich …", tr: "…'den beri … çalışıyorum", en: "I have been working … since …" },
           { de: "Ich bin begeistert von …", tr: "… beni heyecanlandırıyor", en: "I am enthusiastic about …" },
-          { de: "Über ein Gespräch würde ich mich sehr freuen.", tr: "Bir görüşmeye çok sevinirim.", en: "I would be delighted about an interview." },
+          { de: "Über ein Gespräch würde ich mich sehr freuen.", tr: "Bir görüşmeye çok sevinirim.", en: "I would be very happy to have an interview." },
         ],
       },
       {
@@ -423,7 +423,7 @@ export const b1U01: SkillExercise[] = [
         prompt: "Fiilin edatını düzelt.",
         source: "Ich bewerbe mich für die Stelle in Ihrer Abteilung.",
         answer: "Ich bewerbe mich um die Stelle in Ihrer Abteilung.",
-        why: "Türkçedeki 'için' doğrudan 'für' olmuyor: sich bewerben fiili 'um' edatını ister (bir firmaya başvururken 'bei').",
+        why: "Türkçedeki 'için' doğrudan 'für' olmuyor: sich bewerben fiili 'um' (ya da 'auf') edatını ister (bir firmaya başvururken 'bei').",
       },
     ],
   },

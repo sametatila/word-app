@@ -253,8 +253,8 @@ export const b1U35: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Worüber macht sich die Person Sorgen?",
-        options: ["Über ihren Bruder", "Über die Arbeit", "Über die Kinder"],
+        text: "Um wen macht sich die Person Sorgen?",
+        options: ["Um ihren Bruder", "Um ihre Chefin", "Um die Kinder"],
         answer: 0,
         explain: "„Ich mache mir Sorgen um meinen Bruder.“",
       },
@@ -323,7 +323,7 @@ export const b1U35: SkillExercise[] = [
         kind: "build",
         tr: "Bugün sigara içmiyorum; kozmetik marketten yalnız diş macunu alıyorum, bağımlılık maddesi değil.",
         answer: "Heute bin ich Nichtraucher und kaufe in der Drogerie nur Zahnpasta, kein Suchtmittel.",
-        hint: "„als/Nichtraucher“ artikelsiz meslek/rol.",
+        hint: "„Nichtraucher“ rol bildiriyor: artikelsiz.",
       },
       {
         kind: "form",
@@ -356,7 +356,7 @@ export const b1U35: SkillExercise[] = [
     intro: "Bir bakım planı yaz. Mastar isimleşince büyük harfle yazılır.",
     minutes: 12,
     gloss: [
-      { de: "der Betreuer", tr: "bakıcı", en: "carer" },
+      { de: "der Betreuer", tr: "bakıcı", en: "caregiver" },
       { de: "die Senioren", tr: "yaşlılar", en: "seniors" },
       { de: "der Krankenpfleger", tr: "hasta bakıcı", en: "nurse" },
       { de: "die Pension", tr: "emeklilik", en: "retirement" },
@@ -397,7 +397,7 @@ export const b1U35: SkillExercise[] = [
           "Zwei kleine Änderungen brauchen wir noch: einen Halt an der " +
           "Badewanne und ein Licht im Flur, das nachts angeht.\n\n" +
           "Mit meinem Bruder müssen wir noch reden. Er wohnt weit weg und " +
-          "sagt bisher nichts — aber schweigen ist auch eine Antwort. Für Senioren in Pension ist der Morgen am schwersten.",
+          "sagt bisher nichts — aber Schweigen ist auch eine Antwort. Für Senioren in Pension ist der Morgen am schwersten.",
         phrases: [
           { de: "Schwierig sind das Aufstehen und das Waschen.", tr: "Zor olan kalkmak ve yıkanmak.", en: "Getting up and washing are difficult." },
           { de: "Er hilft beim Anziehen.", tr: "Giyinmede yardım ediyor.", en: "He helps with getting dressed." },

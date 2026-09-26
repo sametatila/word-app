@@ -252,12 +252,12 @@ export const b1U13: SkillExercise[] = [
       { text: "Ja. Jeden Tag zwanzig Minuten. Lieber kurz als dauernd nichts." },
       { text: "Das ist gut. Und wie merkst du den Fortschritt?" },
       { text: "Ich überprüfe am Monatsende, was ich wirklich verstanden habe." },
-      { text: "Guter Einfall. Bei mir ist das Problem die Gewohnheit." },
+      { text: "Gute Idee. Bei mir ist das Problem die Gewohnheit." },
       { text: "Dann fang klein an. Der Sinn ist nicht, perfekt zu sein." },
     ],
     questions: [
       {
-        text: "Was hat die erste Person vor?",
+        text: "Was hat die zweite Person vor?",
         options: ["Die Prüfung zu schaffen", "Umzuziehen", "Einen Kurs zu geben"],
         answer: 0,
         explain: "„Ich will die Prüfung schaffen.“",
@@ -284,7 +284,7 @@ export const b1U13: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was ist bei der zweiten Person das Problem?",
+        text: "Was ist bei der ersten Person das Problem?",
         options: [],
         answer: 0,
         accept: ["die Gewohnheit", "Gewohnheit"],
@@ -319,13 +319,12 @@ export const b1U13: SkillExercise[] = [
         kind: "build",
         tr: "Bu yüzden kardeşimin beni temsil etmesini istiyorum.",
         answer: "Deshalb möchte ich mich von meinem Bruder vertreten lassen.",
-        alternatives: ["Deshalb soll mich mein Bruder vertreten."],
         hint: "„lassen“ da çıplak mastarla gelir.",
       },
       {
         kind: "build",
         tr: "Belgenin ne için geçerli olduğunu ve niyetimin ne olduğunu belirlemek önemli.",
-        answer: "Es ist wichtig festzulegen, wofür die Urkunde gilt und was meine Absicht ist.",
+        answer: "Es ist wichtig, festzulegen, wofür die Urkunde gilt und was meine Absicht ist.",
         hint: "„es ist wichtig“ sonrası zu'lu mastar.",
       },
       {
@@ -336,7 +335,7 @@ export const b1U13: SkillExercise[] = [
           { label: "Vollmachtgeberin", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
           { label: "Vertreter", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
           { label: "Wofür", answer: "Termin beim Amt", accept: ["der Termin beim Amt", "Termin"] },
-          { label: "Datum", answer: "14. März", accept: ["14. März", "vierzehnter März"] },
+          { label: "Datum", answer: "14. März", accept: ["14.03.", "14.3.", "vierzehnter März", "am 14. März"] },
         ],
       },
       {
@@ -367,7 +366,7 @@ export const b1U13: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bu yıl sınavı geçmeyi hedefliyorum.",
+        tr: "Bu yıl sınavı geçmeyi planlıyorum.",
         answer: "Ich habe vor, dieses Jahr die Prüfung zu schaffen.",
         hint: "„vorhaben“ zu'lu mastar ister.",
       },

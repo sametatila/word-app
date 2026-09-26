@@ -274,7 +274,7 @@ export const enB1U11: SkillExercise[] = [
     gloss: [
       { de: "branch", tr: "şube" },
       { de: "monthly fee", tr: "aylık ücret" },
-      { de: "small print", tr: "ince yazı" },
+      { de: "small print", tr: "küçük puntolu kısım" },
       { de: "above", tr: "üstünde" },
       { de: "strange", tr: "tuhaf" },
       { de: "anyway", tr: "yine de" },
@@ -391,7 +391,7 @@ export const enB1U11: SkillExercise[] = [
         facts: "Form gişede kaşeleniyor; kart on iş günü sonra; adres kanıtı ve pasaport gerekiyor; ilk gelişte bizzat.",
         fields: [
           { label: "Stamp", answer: "at the desk", accept: ["the desk"] },
-          { label: "Card", answer: "ten working days", accept: ["10 days"] },
+          { label: "Card", answer: "ten working days", accept: ["10 days", "10 working days", "ten business days", "10 business days"] },
           { label: "Bring", answer: "proof of address and the passport", accept: ["proof and passport"] },
           { label: "First visit", answer: "in person", accept: ["come in person"] },
         ],

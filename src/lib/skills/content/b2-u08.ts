@@ -203,14 +203,13 @@ export const b2U08: SkillExercise[] = [
       { de: "die Aufgabenverteilung", tr: "görev dağılımı", en: "division of tasks" },
       { de: "die Priorisierung", tr: "önceliklendirme", en: "prioritization" },
       { de: "das Zeitfenster", tr: "zaman aralığı", en: "time slot" },
-      { de: "die Stellvertretung", tr: "vekâlet", en: "deputising" },
+      { de: "die Stellvertretung", tr: "vekâlet", en: "stand-in" },
       { de: "die Verpflegung", tr: "yeme içme", en: "catering" },
       { de: "ausstatten", tr: "donatmak", en: "to equip" },
       { de: "reibungslos", tr: "sorunsuz", en: "smooth" },
       { de: "vorrangig", tr: "öncelikli", en: "priority" },
       { de: "also", tr: "yani", en: "so" },
       { de: "priorisieren", tr: "önceliklendirmek", en: "to prioritize" },
-      { de: "der Vertrieb", tr: "satış bölümü", en: "sales department" },
     ],
     minutes: 5,
     segments: [
@@ -234,7 +233,7 @@ export const b2U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Gute Priorisierung wäre: Strom, Verpflegung, Programm."],
-        explain: "Toplantı dilinde önce sıra, sonra dağıtım. Yazmadan önce sıralamak Kai'nin şartıydı.",
+        explain: "Toplantı dilinde önce sıra, sonra dağıtım. Dağıtmadan önce sıralamak Kai'nin şartıydı.",
       },
       {
         text: "Warum will Kai vor der Verteilung priorisieren?",
@@ -261,7 +260,7 @@ export const b2U08: SkillExercise[] = [
         explain: "„Dann Farida. Sie hat es letztes Jahr gemacht, es lief reibungslos.“",
       },
       {
-        text: "Der Strom kann nicht am Vortag bestellt werden.",
+        text: "Die Stände können nicht erst am Vortag mit Strom ausgestattet werden.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „…das kann nicht am Vortag passieren“, sipariş çarşambaya kadar verilmeli.",
@@ -287,7 +286,7 @@ export const b2U08: SkillExercise[] = [
       { de: "andeuten", tr: "ima etmek", en: "to hint at" },
       { de: "erwidern", tr: "karşılık vermek", en: "to reply" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "grob", tr: "kaba", en: "coarse" },
+      { de: "grob", tr: "kabaca", en: "roughly" },
       { de: "ungenau", tr: "kesin olmayan", en: "imprecise" },
     ],
     minutes: 5,
@@ -345,7 +344,7 @@ export const b2U08: SkillExercise[] = [
         explain: "„Sie erwiderte, ohne zweite Stelle sei der Frühjahrstermin genauso wenig zu halten.“",
       },
       {
-        text: "Gesagt hat es niemand.",
+        text: "Im Raum hat niemand gesagt, dass das Projekt beendet wird.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „Das ist angeblich so, ja. Gesagt hat es niemand.“",
@@ -358,7 +357,7 @@ export const b2U08: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 8,
-    title: "Kısalt, sonra geri aç",
+    title: "Kürzen und wieder auflösen",
     genre: "build",
     intro: "Üç kısaltma yolu: sein + zu, adlaştırma ve dolaylı aktarım. Sonda biri geri açılıyor.",
     gloss: [
@@ -376,7 +375,7 @@ export const b2U08: SkillExercise[] = [
         kind: "build",
         tr: "Sert bir contanın değiştirilmesi gerekir.",
         answer: "Eine harte Dichtung ist zu ersetzen",
-        hint: "sein + zu + mastar edilgen yerine geçer: 'werden zorunluluğu' anlamı verir.",
+        hint: "sein + zu + mastar edilgen yerine geçer ve 'yapılmalı' anlamı verir.",
       },
       {
         kind: "build",
@@ -432,7 +431,7 @@ export const b2U08: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Katılmadığı bir toplantıyı bir iş arkadaşına yaz olarak aktar (gerçek ya da hayalî). Üç şeyi ayrı tut: kimin ne söylediği, neyin karara bağlandığı ve neyin yalnızca söylenti olduğu. Söylenenleri dolaylı aktarımla ver (er sagte, … komme / sei), söylentiyi angeblich ya da es heißt ile işaretle, kararları ise kısa cümlelerle yaz. Kendi yorumunu eklersen ayrı bir cümlede ve açıkça belirt.",
+          "Bir iş arkadaşına, katılmadığı bir toplantıyı yazılı olarak aktar (gerçek ya da hayalî). Üç şeyi ayrı tut: kimin ne söylediği, neyin karara bağlandığı ve neyin yalnızca söylenti olduğu. Söylenenleri dolaylı aktarımla ver (er sagte, … komme / sei), söylentiyi angeblich ya da es heißt ile işaretle, kararları ise kısa cümlelerle yaz. Kendi yorumunu eklersen ayrı bir cümlede ve açıkça belirt.",
         checklist: [
           "En az iki dolaylı aktarım cümlesi var mı?",
           "Söylenti angeblich ya da es heißt ile işaretlendi mi?",

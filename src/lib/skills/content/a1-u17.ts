@@ -306,7 +306,7 @@ export const a1U17: SkillExercise[] = [
     gloss: [
       { de: "der Umzug", tr: "taşınma", en: "move" },
       { de: "packen", tr: "paketlemek", en: "to pack" },
-      { de: "umziehen", tr: "taşınmak", en: "to move house" },
+      { de: "umziehen", tr: "taşınmak", en: "to move" },
       { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
     ],
     minutes: 7,

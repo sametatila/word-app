@@ -221,7 +221,6 @@ export const a2U18: SkillExercise[] = [
         answer: 0,
         accept: [
           "Heben Sie den Fahrschein auf, damit bekommen Sie Geld zurück.",
-          "Heben Sie den Fahrschein auf",
         ],
         explain: "Gecikme parasını almak için bilet gerekiyor — pratik bir bilgi.",
       },
@@ -236,11 +235,11 @@ export const a2U18: SkillExercise[] = [
     genre: "dialogue",
     intro: "İki ev arkadaşı parti hazırlığı yapıyor. Kim neyi üstleniyor?",
     gloss: [
-      { de: "aufstellen", tr: "kurmak / dizmek", en: "to set up" },
+      { de: "aufstellen", tr: "kurmak", en: "to set up" },
       { de: "decken", tr: "masa kurmak", en: "to set (the table)" },
       { de: "die Serviette", tr: "peçete", en: "napkin" },
       { de: "der Teller", tr: "tabak", en: "plate" },
-      { de: "der Besuch", tr: "misafir / ziyaret", en: "visitors" },
+      { de: "der Besuch", tr: "misafirler", en: "guests" },
       { de: "organisieren", tr: "organize etmek", en: "to organize" },
       { de: "leihen", tr: "ödünç vermek", en: "to lend" },
       { de: "also", tr: "yani", en: "so" },
@@ -264,7 +263,7 @@ export const a2U18: SkillExercise[] = [
         text: "Mit wie vielen Gästen rechnen sie?",
         options: ["Acht", "Elf", "Fünfzehn"],
         answer: 2,
-        explain: "Onbir kişi kabul etmiş ama „Rechne mit fünfzehn.“",
+        explain: "On bir kişi kabul etmiş ama „Rechne mit fünfzehn.“",
       },
       {
         kind: "gapfill",
@@ -311,7 +310,7 @@ export const a2U18: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kız kardeşime bir hediyelik alıyorum.",
+        tr: "Kız kardeşime hediyelik bir eşya alıyorum.",
         answer: "Ich kaufe meiner Schwester ein Andenken",
         hint: "Kime alındığı yönelme hâlinde ve nesneden önce durur.",
       },
@@ -319,6 +318,7 @@ export const a2U18: SkillExercise[] = [
         kind: "build",
         tr: "Doğum günüm üç Mayıs'ta.",
         answer: "Ich habe am dritten Mai Geburtstag",
+        alternatives: ["Am dritten Mai habe ich Geburtstag"],
         hint: "Tarih sıra sayısıyla: am + sayı + -ten/-sten.",
       },
       {
@@ -329,7 +329,7 @@ export const a2U18: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Cümleyi düzelt: hediyeyi alan kişi yanlış hâlde.",
+        prompt: "Cümleyi düzelt: kendisine bir şey getirilen kişi yanlış hâlde.",
         source: "Ich bringe meine Vater etwas zu essen mit.",
         answer: "Ich bringe meinem Vater etwas zu essen mit.",
         alternatives: ["Ich bringe meinem Vater etwas zu essen mit"],

@@ -190,14 +190,14 @@ export const enA1U06: SkillExercise[] = [
       { speaker: "Ela", text: "Good morning. Can I have a newspaper, please?" },
       { speaker: "Seller", text: "Good morning. Here you are. Anything else?" },
       { speaker: "Ela", text: "Yes, a coffee, please. A big cup." },
-      { speaker: "Seller", text: "Here is your coffee. Is there any milk in it?" },
+      { speaker: "Seller", text: "Here is your coffee. Any milk?" },
       { speaker: "Ela", text: "No milk, thank you. How much is it?" },
-      { speaker: "Seller", text: "The newspaper is two euros and the coffee is three euros. Five euros." },
+      { speaker: "Seller", text: "The newspaper is two euros and the coffee is three euros. That's five euros." },
       { speaker: "Ela", text: "Here is the money. I only have coins — is that a problem?" },
       { speaker: "Seller", text: "No, it isn't a problem. Thank you." },
       { speaker: "Ela", text: "Can I have a bag too?" },
       { speaker: "Seller", text: "Of course. Here you are." },
-      { speaker: "Ela", text: "Thank you very much. Good day!" },
+      { speaker: "Ela", text: "Thank you very much. Have a nice day!" },
     ],
     questions: [
       {
@@ -217,7 +217,7 @@ export const enA1U06: SkillExercise[] = [
         text: "There is no milk in Ela's coffee.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Is there any milk in it? — No milk, thank you.“ Soruda „any“, cevapta yok.",
+        explain: "„Any milk? — No milk, thank you.“ Soruda „any“, cevapta yok.",
       },
       {
         kind: "gapfill",
@@ -241,7 +241,7 @@ export const enA1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["five euros", "5 euros", "five"],
-        explain: "„The newspaper is two euros and the coffee is three euros. Five euros.“",
+        explain: "„The newspaper is two euros and the coffee is three euros. That's five euros.“",
       },
     ],
   },
@@ -389,7 +389,7 @@ export const enA1U06: SkillExercise[] = [
     gloss: [
       { de: "some", tr: "biraz" },
       { de: "any", tr: "hiç" },
-      { de: "I'll take it.", tr: "onu alacağım" },
+      { de: "I'll take it.", tr: "bunu alıyorum" },
     ],
     minutes: 6,
     tasks: [
@@ -414,7 +414,7 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Onu alacağım.",
+        tr: "Bunu alıyorum.",
         answer: "I'll take it.",
         alternatives: ["I will take it."],
         hint: "Alışverişte karar cümlesi. „I'll“ = „I will“ ve burada „hemen şimdi“ anlamı taşıyor.",

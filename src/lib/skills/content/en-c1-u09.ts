@@ -307,7 +307,7 @@ export const enC1U09: SkillExercise[] = [
       { speaker: "Ozan", text: "Why not say it twice?" },
       { speaker: "Yaprak", text: "Because the ear has already learned the pattern from the first half, and a reader who is told the same shape twice stops listening for the difference between the two halves." },
       { speaker: "Ozan", text: "And the last line is not a poem at all." },
-      { speaker: "Yaprak", text: "The zeitgeist felt epochal; the decade did not. A judgment about a whole period, and it fits in seven words because the second half borrows every one of the first half's." },
+      { speaker: "Yaprak", text: "The zeitgeist felt epochal; the decade did not. A judgment about a whole period, and it fits in eight words because the second half borrows every one of the first half's." },
       { speaker: "Ozan", text: "A witness who disagreed with their own century." },
       { speaker: "Yaprak", text: "Written afterwards, in an archive, by somebody who had been there. That is the only place a sentence this cold can come from, and it is why the line is worth more than the sermon next to it." },
     ],
@@ -368,7 +368,7 @@ export const enC1U09: SkillExercise[] = [
     intro: "Bir metni aktarırken hangi fiili seçtiğin bir kuram seçmektir.",
     gloss: [
       { de: "theory", tr: "kuram" },
-      { de: "either", tr: "ikisinden biri" },
+      { de: "either", tr: "de/da" },
       { de: "clothes", tr: "giysiler" },
       { de: "whole", tr: "bütün" },
       { de: "assume", tr: "varsaymak" },
@@ -397,7 +397,7 @@ export const enC1U09: SkillExercise[] = [
       { speaker: "Merve", text: "A prevailing reading is not a true one. It is the reading that was written by the people who were given the room to write it." },
       { speaker: "Merve", text: "And a normative claim is not a wrong one either. It is a claim about what should happen, wearing the clothes of a claim about what does." },
       { speaker: "Merve", text: "So here is the rule for the second paragraph of any paper you give me. Name the assumption before you use it." },
-      { speaker: "Merve", text: "To call a text ideological is not to read it. Half the papers I mark stop at that line and think they have finished." },
+      { speaker: "Merve", text: "To call a text ideological is not to read it. Half the papers I grade stop at that line and think they have finished." },
       { speaker: "Merve", text: "Naming a habit is the cheapest thing a reader can do. Showing where the habit changed a single sentence is the whole of the work, and it is honest." },
     ],
     questions: [
@@ -493,7 +493,7 @@ export const enC1U09: SkillExercise[] = [
         kind: "build",
         tr: "Anlatı bakış açısının yaptığı şey esirgemektir.",
         answer: "What the narrative perspective does is withhold.",
-        hint: "Dördüncü sözcük „is“: yarma cümle.",
+        hint: "„what“ öbeğinden sonra „is“: yarık cümle.",
       },
       {
         kind: "build",

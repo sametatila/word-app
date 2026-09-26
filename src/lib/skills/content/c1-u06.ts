@@ -284,6 +284,7 @@ export const c1U06: SkillExercise[] = [
       { speaker: "Rednerin", text: "Ein Zwischenruf ist kein Angriff. Wer starr am Manuskript hängt, wirkt getroffen; wer aufgreift, hat den Raum." },
       { speaker: "Moderator", text: "Und wenn jemand nur provozieren will?" },
       { speaker: "Rednerin", text: "Dann merkt es der Saal vor mir. Ich muss es nicht sagen." },
+      { speaker: "Moderator", text: "Dann machen wir hier weiter." },
       { speaker: "Rednerin", text: "Einverstanden. Herr Kollege, ich komme nach dem Vortrag auf Sie zu." },
     ],
     questions: [
@@ -434,7 +435,7 @@ export const c1U06: SkillExercise[] = [
         kind: "build",
         tr: "Ancak o zaman neyin söz konusu olduğunu anladım.",
         answer: "Erst dann verstand ich, worum es ging",
-        hint: "Zaman öne, özne fiilden sonra: vurgu ana.",
+        hint: "Zaman öne, özne fiilden sonra: vurgu o ana düşüyor.",
       },
       {
         kind: "build",

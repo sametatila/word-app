@@ -327,7 +327,7 @@ export const enB2U13: SkillExercise[] = [
       { de: "declines", tr: "geri çeviriyor" },
       { de: "a weighing", tr: "tartma" },
       { de: "at all", tr: "hiç" },
-      { de: "a covering letter", tr: "üst yazı" },
+      { de: "a cover letter", tr: "üst yazı" },
       { de: "care", tr: "özen" },
       { de: "answer", tr: "yanıtlamak" },
       { de: "the test", tr: "sınama" },
@@ -341,7 +341,7 @@ export const enB2U13: SkillExercise[] = [
       { speaker: "Metin", text: "„Arguably“ says nothing at all. It cannot be checked, it cannot be argued with, and it is there because the sentence felt too strong without it." },
       { speaker: "Metin", text: "The test I use is whether the hedge could be wrong. „On balance“ can be wrong: somebody can show that the weighing was done badly. „Arguably“ cannot." },
       { speaker: "Metin", text: "A conclusion that has been read thoroughly and then hedged exclusively with words of the second kind is a conclusion nobody has to answer." },
-      { speaker: "Metin", text: "So the paragraph goes out with one hedge. Likewise the summary, and likewise the line in the covering letter, because those are the three places anybody reads." },
+      { speaker: "Metin", text: "So the paragraph goes out with one hedge. Likewise the summary, and likewise the line in the cover letter, because those are the three places anybody reads." },
     ],
     questions: [
       {

@@ -265,7 +265,7 @@ export const a1U15: SkillExercise[] = [
     intro: "Yön verme ve aktarma cümleleri.",
     gloss: [
       { de: "abbiegen", tr: "dönmek", en: "to turn" },
-      { de: "umsteigen", tr: "aktarma yapmak", en: "to change" },
+      { de: "umsteigen", tr: "aktarma yapmak", en: "to change (trains)" },
       { de: "empfehlen", tr: "tavsiye etmek", en: "to recommend" },
     ],
     minutes: 6,

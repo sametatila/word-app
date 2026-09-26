@@ -97,7 +97,7 @@
  {
   "tr": "Bir arkadaş öğüt veriyor. „should“ ve „shouldn't“ art arda geliyor.",
   "kind": "intro",
-  "de": "Eine Freundin gibt Rat. „should“ und „shouldn't“ kommen nacheinander vor."
+  "de": "Ein Freund gibt Rat. „should“ und „shouldn't“ kommen nacheinander vor."
  },
  {
   "tr": "Diş ağrısını iki biçimde de yaz. Sonunda diş hekimi formunu doldur.",
@@ -120,9 +120,9 @@
   "de": "Sich am Telefon vorstellen. Achtung: von Angesicht zu Angesicht „I am“, am Telefon „this is“."
  },
  {
-  "tr": "„Don't move him! That is a danger.“",
+  "tr": "„Don't move him! That is dangerous.“",
   "kind": "explain",
-  "de": "„Don't move him! That is a danger.“"
+  "de": "„Don't move him! That is dangerous.“"
  },
  {
   "tr": "„And I'll send you a message every day!“",
@@ -135,9 +135,9 @@
   "de": "„A man is on the ground. He doesn't move.“"
  },
  {
-  "tr": "„No, I didn't finish it. I do it tonight.“",
+  "tr": "„No, I didn't finish it. I'm going to do it tonight.“",
   "kind": "explain",
-  "de": "„No, I didn't finish it. I do it tonight.“"
+  "de": "„No, I didn't finish it. I'm going to do it tonight.“"
  },
  {
   "tr": "„July is good. I'll write you the address.“",
@@ -165,9 +165,9 @@
   "de": "Zuerst die allgemeine Frage, dann die Arbeit, dann der Ort, zuletzt das Verkehrsmittel."
  },
  {
-  "tr": "„Sorry, I can't hear you. Can you speak more slowly?“",
+  "tr": "„Sorry, I don't understand. Can you speak more slowly?“",
   "kind": "explain",
-  "de": "„Sorry, I can't hear you. Can you speak more slowly?“"
+  "de": "„Sorry, I don't understand. Can you speak more slowly?“"
  },
  {
   "tr": "Önce soru, sonra şikâyet, sonra ayrıntı, en son tedavi.",
@@ -597,7 +597,7 @@
  {
   "tr": "hadi tekrar buluşalım",
   "kind": "gloss.tr",
-  "de": "lass uns wieder treffen"
+  "de": "treffen wir uns wieder"
  },
  {
   "tr": "… ile konuşabilir miyim",

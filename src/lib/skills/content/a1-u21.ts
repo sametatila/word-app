@@ -156,7 +156,7 @@ export const a1U21: SkillExercise[] = [
     gloss: [
       { de: "dringend", tr: "acil", en: "urgent" },
       { de: "möglich", tr: "mümkün", en: "possible" },
-      { de: "der Bauch", tr: "karın", en: "belly" },
+      { de: "der Bauch", tr: "karın", en: "stomach" },
     ],
     minutes: 2,
     segments: [
@@ -229,7 +229,7 @@ export const a1U21: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Was tut der ersten Person weh?",
+        text: "Was tut der kranken Person weh?",
         options: ["der Rücken", "der Kopf", "der Arm"],
         answer: 0,
         explain: "„Mir tut der Rücken weh.“ — ağrıyan yer ÖZNE, kişi datif („mir“).",
@@ -271,7 +271,7 @@ export const a1U21: SkillExercise[] = [
     unit: 21,
     title: "Wo tut es weh?",
     genre: "grammar",
-    intro: "Ağrı cümlesi Türkçeden ters kurulur. Üç deneme.",
+    intro: "Ağrı cümlesinin iki kalıbı var: „Mein Kopf tut weh“ ve „Der Hals tut mir weh“. Üç deneme.",
     gloss: [
       { de: "wehtun", tr: "ağrımak", en: "to hurt" },
       { de: "fehlen", tr: "eksik olmak", en: "to be missing" },
@@ -311,7 +311,7 @@ export const a1U21: SkillExercise[] = [
     genre: "message",
     intro: "Hasta olduğun için gelemeyeceğini haber ver.",
     gloss: [
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "krank", tr: "hasta", en: "sick" },
       { de: "das Fieber", tr: "ateş", en: "fever" },
       { de: "der Termin", tr: "randevu", en: "appointment" },
     ],
@@ -335,12 +335,12 @@ export const a1U21: SkillExercise[] = [
           "Ne zaman döneceğini yazdın mı? (Am Mittwoch bin ich wieder da.)",
         ],
         phrases: [
-          { de: "Ich bin krank.", tr: "Hastayım.", en: "I'm ill." },
+          { de: "Ich bin krank.", tr: "Hastayım.", en: "I'm sick." },
           { de: "Mein Kopf tut weh.", tr: "Başım ağrıyor.", en: "My head hurts." },
           { de: "Ich habe einen Termin beim Arzt.", tr: "Doktor randevum var.", en: "I have a doctor's appointment." },
         ],
         sample:
-          "Guten Morgen Frau Berger,\n\nleider kann ich heute nicht kommen. Ich bin krank. Mein Hals tut weh und ich habe Fieber. Seit heute Morgen liege ich im Bett.\n\nHeute um 16 Uhr habe ich einen Termin beim Arzt. Hoffentlich ist es nichts Schlimmes.\n\nAm Mittwoch bin ich sicher wieder da. Es tut mir leid!\n\nViele Grüße\nElif Yılmaz",
+          "Guten Morgen Frau Berger,\n\nleider kann ich morgen nicht kommen. Ich bin krank. Mein Hals tut weh und ich habe Fieber. Seit heute Morgen liege ich im Bett.\n\nMorgen um 16 Uhr habe ich einen Termin beim Arzt. Hoffentlich ist es nichts Schlimmes.\n\nAm Mittwoch bin ich sicher wieder da. Es tut mir leid!\n\nViele Grüße\nElif Yılmaz",
       },
     ],
   },

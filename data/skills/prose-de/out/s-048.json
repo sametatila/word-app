@@ -140,9 +140,9 @@
   "de": "Gesagt, erwartet, gedacht; am Ende die Probe."
  },
  {
-  "tr": "İki yarı karşı karşıya; bir aday listeden çıkıyor.",
+  "tr": "İki yarı birbirine karşı çekiyor: hedeflediğimiz şey ile anlattığımız şey aynı değil.",
   "kind": "explain",
-  "de": "Zwei Hälften einander gegenüber; ein Kandidat fällt von der Liste."
+  "de": "Zwei Hälften ziehen gegeneinander: Was wir anstreben und was wir beschreiben, ist nicht dasselbe."
  },
  {
   "tr": "„The full form is „Having been asked to supervise“…“",
@@ -232,7 +232,7 @@
  {
   "tr": "içten",
   "kind": "gloss.tr",
-  "de": "aufrichtig"
+  "de": "herzlich"
  },
  {
   "tr": "süreç",
@@ -283,6 +283,11 @@
   "tr": "üretti",
   "kind": "gloss.tr",
   "de": "erbrachte"
+ },
+ {
+  "tr": "ortaya kondu",
+  "kind": "gloss.tr",
+  "de": "erbracht"
  },
  {
   "tr": "büyümüş",
@@ -535,7 +540,7 @@
   "de": "um Aufsicht gebeten"
  },
  {
-  "tr": "işe almak istediği için",
+  "tr": "işe almak istedikleri için",
   "kind": "gloss.tr",
   "de": "weil sie schnell einstellen wollten"
  }

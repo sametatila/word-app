@@ -248,6 +248,7 @@ export const c1U15: SkillExercise[] = [
       { speaker: "Sachbearbeiterin", text: "Melden Sie ohne Belege und reichen Sie sie nach. Die Frist läuft für die Meldung, nicht für den Nachweis." },
       { speaker: "Herr Pohl", text: "Und wenn Sie gleichwohl ablehnen?" },
       { speaker: "Sachbearbeiterin", text: "Dann können Sie die Aufhebung unseres Bescheids verlangen — schriftlich und mit Begründung." },
+      { speaker: "Herr Pohl", text: "Und wenn Sie auch dann ablehnen?" },
       { speaker: "Sachbearbeiterin", text: "Dann steht Ihnen der Weg zum Ombudsmann offen — kostenlos, und die Frist läuft ab unserem endgültigen Bescheid." },
       { speaker: "Herr Pohl", text: "Das wusste ich nicht. Wie kann ich mich revanchieren?" },
       { speaker: "Sachbearbeiterin", text: "Gar nicht — das gehört zu meiner Arbeit." },
@@ -318,7 +319,6 @@ export const c1U15: SkillExercise[] = [
       { de: "einschlägig", tr: "ilgili", en: "relevant" },
       { de: "schließen", tr: "kapatmak", en: "to close" },
       { de: "heutige", tr: "bugünkü", en: "today's" },
-      { de: "vertagen", tr: "ertelemek", en: "to adjourn" },
       { de: "reagieren", tr: "tepki vermek", en: "to react" },
     ],
     minutes: 5,
@@ -333,7 +333,7 @@ export const c1U15: SkillExercise[] = [
       { speaker: "Staatsanwalt", text: "Der Vorwurf lautet, der Angeklagte habe den Zeugen bestechen wollen. Er ist zudem einschlägig vorbestraft; das stützt die Annahme." },
       { speaker: "Verteidigerin", text: "Eine Vorstrafe ersetzt keinen Beweis. Es geht um diesen Vorgang, nicht um die Person." },
       { speaker: "Vorsitzender", text: "Dem schließt sich die Kammer an. Wir bewerten die heutige Aussage, nicht das Register." },
-      { speaker: "Vorsitzender", text: "Die Verhandlung wird vertagt. Das Urteil wird am 14. Juni verkündet." },
+      { speaker: "Vorsitzender", text: "Die Verhandlung ist geschlossen. Das Urteil wird am 14. Juni verkündet." },
     ],
     questions: [
       {
@@ -352,7 +352,7 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ausgesagt"],
-        explain: "aussagen: mahkemede ifade vermek; ardından Konjunktiv ile aktarım geliyor.",
+        explain: "aussagen: resmî ifade vermek (poliste ya da mahkemede); ardından Konjunktiv ile aktarım geliyor.",
       },
       {
         text: "Wie reagiert die Kammer auf den Hinweis zur Vorstrafe?",
@@ -441,7 +441,7 @@ export const c1U15: SkillExercise[] = [
       { de: "die Aufhebung", tr: "iptal", en: "annulment" },
       { de: "die Begründung", tr: "gerekçe", en: "grounds" },
       { de: "der Umfang", tr: "kapsam", en: "scope" },
-      { de: "die Ermittlung", tr: "soruşturma", en: "investigation" },
+      { de: "die Ermittlung", tr: "tespit / hesaplama", en: "determination" },
     ],
     minutes: 12,
     tasks: [

@@ -163,14 +163,14 @@ export const a2U02: SkillExercise[] = [
       { de: "verpassen", tr: "kaçırmak", en: "to miss" },
       { de: "nass", tr: "ıslak", en: "wet" },
       { de: "erleichtert", tr: "içi rahatlamış", en: "relieved" },
-      { de: "komplett", tr: "eksiksiz", en: "complete" },
+      { de: "komplett", tr: "tamamen", en: "completely" },
     ],
     minutes: 3,
     segments: [
       { speaker: "Lena", text: "Da bist du ja endlich! Ich warte seit vierzig Minuten." },
       { speaker: "Kerem", text: "Es tut mir wirklich leid. Ich habe mich verspätet, und mein Handy war leer." },
       { speaker: "Lena", text: "Hast du wieder verschlafen?" },
-      { speaker: "Kerem", text: "Nein, diesmal nicht. Ich bin pünktlich losgegangen, aber die Bahn ist zwischen zwei Stationen einfach angehalten." },
+      { speaker: "Kerem", text: "Nein, diesmal nicht. Ich bin pünktlich losgegangen, aber die Bahn hat zwischen zwei Stationen einfach angehalten." },
       { speaker: "Lena", text: "Und wie lange?" },
       { speaker: "Kerem", text: "Fast eine halbe Stunde. Danach habe ich auch noch den Anschlussbus verpasst und bin zu Fuß gelaufen. Jetzt bin ich komplett nass." },
       { speaker: "Lena", text: "Okay, dann bin ich erleichtert. Ich dachte schon, du hast unseren Termin vergessen." },
@@ -184,11 +184,11 @@ export const a2U02: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Bahn ist zwischen zwei Stationen einfach ___.",
+        text: "Die Bahn hat zwischen zwei Stationen einfach ___.",
         options: [],
         answer: 0,
         accept: ["angehalten"],
-        explain: "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten, yardımcı fiil „ist“.",
+        explain: "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten. Durmak yer değiştirme olmadığı için yardımcı fiil „hat“.",
       },
       {
         text: "Warum ist Kerem nass?",
@@ -198,7 +198,7 @@ export const a2U02: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Kerem'in geç kalma sebebini söylediği cümleyi yaz.",
+        text: "Kerem'in özür diledikten hemen sonra söylediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Ich habe mich verspätet, und mein Handy war leer."],
@@ -216,7 +216,7 @@ export const a2U02: SkillExercise[] = [
     intro: "İki arkadaş eski bir okul fotoğrafına bakıyor. Kim kimdi, nasıl biriydi?",
     gloss: [
       { de: "damals", tr: "o zamanlar", en: "back then" },
-      { de: "die Grundschule", tr: "ilkokul", en: "primary school" },
+      { de: "die Grundschule", tr: "ilkokul", en: "elementary school" },
       { de: "blond", tr: "sarışın", en: "blond" },
       { de: "schüchtern", tr: "utangaç", en: "shy" },
       { de: "verspielt", tr: "oyunbaz", en: "playful" },
@@ -231,7 +231,7 @@ export const a2U02: SkillExercise[] = [
       { speaker: "Nora", text: "Ja, damals war ich blond. Und ich war furchtbar schüchtern — ich habe fast nie etwas gesagt." },
       { speaker: "Timo", text: "Das kann ich mir gar nicht vorstellen. Und wer ist der Junge daneben?" },
       { speaker: "Nora", text: "Das ist mein Bruder. Er war sehr verspielt und nie brav. Meine Eltern hatten wirklich keine ruhige Zeit." },
-      { speaker: "Timo", text: "Sein Gesicht sieht heute noch genauso aus. Wer hat das Foto denn fotografiert?" },
+      { speaker: "Timo", text: "Sein Gesicht sieht heute noch genauso aus. Wer hat das Foto denn gemacht?" },
       { speaker: "Nora", text: "Unsere Lehrerin. Sie hat jedes Jahr im Juni die ganze Klasse fotografiert." },
     ],
     questions: [
@@ -285,6 +285,7 @@ export const a2U02: SkillExercise[] = [
         kind: "build",
         tr: "O zamanlar çok utangaçtım.",
         answer: "Damals war ich sehr schüchtern",
+        alternatives: ["Ich war damals sehr schüchtern"],
         hint: "Olmak fiili geçmişte Perfekt kurmaz, kısa biçimini alır: war. Zaman ifadesi başta olunca özne arkaya düşer.",
       },
       {
@@ -297,6 +298,7 @@ export const a2U02: SkillExercise[] = [
         kind: "build",
         tr: "Bu sabah uyuyakaldım.",
         answer: "Heute Morgen habe ich verschlafen",
+        alternatives: ["Ich habe heute Morgen verschlafen"],
         hint: "Olay anlatıldığı için Perfekt: „verschlafen“ vurgusuz ön ekli, ortaç „ge“ almaz.",
       },
       {
@@ -322,7 +324,7 @@ export const a2U02: SkillExercise[] = [
       { de: "aufregend", tr: "heyecan verici", en: "exciting" },
       { de: "die Erfahrung", tr: "deneyim", en: "experience" },
       { de: "erleichtert", tr: "içi rahatlamış", en: "relieved" },
-      { de: "der Führerschein", tr: "ehliyet", en: "driving license" },
+      { de: "der Führerschein", tr: "ehliyet", en: "driver's license" },
       { de: "egal", tr: "fark etmez", en: "doesn't matter" },
     ],
     minutes: 8,
@@ -334,7 +336,7 @@ export const a2U02: SkillExercise[] = [
           "FORUM · Erste Male\n\nHallo zusammen! Ich habe gestern zum ersten Mal allein ein Auto gefahren. Ich war so nervös, dass meine Hände gezittert haben. Aber am Ende war ich richtig erleichtert.\n\nWie war euer erstes Mal — egal bei was?",
         checklist: [
           "Olayı Perfekt ile anlattın mı (habe … gemacht / bin … gefahren)?",
-          "O anki duyguyu „war“ ile söyledin mi (Ich war nervös / aufregend)?",
+          "O anki duyguyu „war“ ile söyledin mi (Ich war nervös / erleichtert)?",
           "Sonunda ne düşündüğünü yazdın mı?",
           "En az bir kez „Das war eine … Erfahrung“ kalıbını kullandın mı?",
         ],
@@ -345,7 +347,7 @@ export const a2U02: SkillExercise[] = [
           { de: "Das war eine gute Erfahrung.", tr: "bu iyi bir deneyimdi", en: "that was a good experience" },
         ],
         sample:
-          "Hallo!\n\nBei mir war es der Führerschein. Ich habe die Prüfung im letzten Sommer gemacht. Vorher war ich furchtbar nervös, weil ich nachts fast nicht geschlafen habe.\n\nDer Prüfer hat wenig gesagt, und plötzlich war die Fahrt zu Ende. Ich habe bestanden! In dem Moment war ich einfach nur erleichtert.\n\nHeute finde ich: das war eine sehr gute Erfahrung. Und aufregend war es auch. Ich fahre jetzt jede Woche.\n\nViele Grüße\nEmre",
+          "Hallo!\n\nBei mir war es der Führerschein. Ich habe die Prüfung im letzten Sommer gemacht. Vorher war ich furchtbar nervös und habe nachts fast nicht geschlafen.\n\nDer Prüfer hat wenig gesagt, und plötzlich war die Fahrt zu Ende. Ich habe bestanden! In dem Moment war ich einfach nur erleichtert.\n\nHeute finde ich: Das war eine sehr gute Erfahrung. Und aufregend war es auch. Ich fahre jetzt jede Woche.\n\nViele Grüße\nEmre",
       },
     ],
   },

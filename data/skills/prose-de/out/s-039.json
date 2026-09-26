@@ -157,7 +157,7 @@
  {
   "tr": "düz",
   "kind": "gloss.tr",
-  "de": "glatt"
+  "de": "flach"
  },
  {
   "tr": "kip",
@@ -192,7 +192,7 @@
  {
   "tr": "kesin",
   "kind": "gloss.tr",
-  "de": "sicher"
+  "de": "glatt"
  },
  {
   "tr": "sebep",
@@ -227,7 +227,7 @@
  {
   "tr": "gündem",
   "kind": "gloss.tr",
-  "de": "der Trend"
+  "de": "Tagesordnung"
  },
  {
   "tr": "olamaz",
@@ -292,7 +292,7 @@
  {
   "tr": "kesinlik",
   "kind": "gloss.tr",
-  "de": "Sicherheit"
+  "de": "Gewissheit"
  },
  {
   "tr": "olabilir",
@@ -380,7 +380,7 @@
   "de": "nutzlos"
  },
  {
-  "tr": "kastettiğin",
+  "tr": "kastediyorsan",
   "kind": "gloss.tr",
   "de": "wenn du meinst"
  },
@@ -430,7 +430,7 @@
   "de": "ich meine"
  },
  {
-  "tr": "işin püf noktası",
+  "tr": "işin kötü yanı",
   "kind": "gloss.tr",
   "de": "der Haken"
  },

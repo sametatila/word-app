@@ -418,7 +418,7 @@ export const c1U14: SkillExercise[] = [
           "Wir haben den Mangel heute angezeigt und setzen eine Frist zur Beseitigung bis zum 20. Mai",
           "Wir zeigen den Mangel hiermit an und setzen eine Frist zur Beseitigung.",
         ],
-        why: "İndirim hakkı ayıbın varlığından değil, bildirim ve sürenin geçmesinden doğar. Sırayı atlayan kiracı haklı olduğu hâlde kaybedebilir — hukuk dilinde adımın yeri içerikten önemlidir.",
+        why: "Kira indirimi, kiraya veren ayıptan haberdar edilmeden ileri sürülemez; sonraki adımlar da verilen sürenin sonuçsuz geçmesine bağlı. Sırayı atlayan kiracı haklı olduğu hâlde kaybedebilir — hukuk dilinde adımın yeri içerikten önemlidir.",
       },
     ],
   },
@@ -469,7 +469,7 @@ export const c1U14: SkillExercise[] = [
           "Seit dem 6. Mai steht in der Wohnung kein Warmwasser zur Verfügung. Erst nach etwa fünfzehn Minuten Laufzeit erreicht das Wasser eine lauwarme Temperatur. Am 7. Mai habe ich die Hausverwaltung telefonisch informiert. Am 12. Mai war ein Installateur vor Ort und teilte mit, ein Ersatzteil sei erforderlich; seither habe ich keine Rückmeldung erhalten. In der Nachbarwohnung besteht derselbe Mangel.\n\n" +
           "Ich setze Ihnen hiermit eine Frist zur Beseitigung bis zum 3. Juni. Nach fruchtlosem Ablauf dieser Frist geraten Sie in Verzug; ich behalte mir vor, ab dem 6. Mai eine Mietminderung geltend zu machen und die Beseitigung auf Ihre Kosten zu veranlassen.\n\n" +
           "Die Miete zahle ich bis dahin weiterhin in voller Höhe, ausdrücklich unter Vorbehalt.\n\n" +
-          "Für eine kurze Bestätigung des Termins wäre ich Ihnen dankbar.\n\n" +
+          "Für eine kurze Rückmeldung, bis wann die Reparatur erfolgt, wäre ich Ihnen dankbar.\n\n" +
           "Mit freundlichen Grüßen\nA. Renner",
       },
     ],

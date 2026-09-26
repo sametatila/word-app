@@ -380,7 +380,7 @@ export const enB2U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["What we aim for is not a dead end.", "What we aim for is not a dead end"],
-        explain: "İki yarı karşı karşıya; bir aday listeden çıkıyor.",
+        explain: "İki yarı birbirine karşı çekiyor: hedeflediğimiz şey ile anlattığımız şey aynı değil.",
       },
       {
         kind: "short_answer",
@@ -406,7 +406,7 @@ export const enB2U19: SkillExercise[] = [
     gloss: [
       { de: "asked to supervise", tr: "denetlemesi istenince" },
       { de: "having read", tr: "okuduktan sonra" },
-      { de: "wanting to recruit", tr: "işe almak istediği için" },
+      { de: "wanting to recruit", tr: "işe almak istedikleri için" },
       { de: "which is", tr: "olan" },
     ],
     minutes: 9,
@@ -425,7 +425,7 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Hızlı işe almak istediği için seçim sürecini kıstılar.",
+        tr: "Hızlı işe almak istedikleri için seçim sürecini kısalttılar.",
         answer: "Wanting to recruit fast, they cut the selection process.",
         hint: "Etken ortaç: bir durum ve bir neden.",
       },

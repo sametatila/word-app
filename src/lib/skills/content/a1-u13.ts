@@ -220,7 +220,7 @@ export const a1U13: SkillExercise[] = [
       { text: "Entschuldigung, wo finde ich Zahnpasta?" },
       { text: "Zahnpasta und Seife sind da rechts." },
       { text: "Danke. Haben Sie auch Taschentücher?" },
-      { text: "Ja, die sind links, zwischen Papier und Seife." },
+      { text: "Ja, die sind links, beim Papier." },
       { text: "Gut. Und was kostet dieses Shampoo?" },
       { text: "Das kostet 3,50 Euro." },
     ],
@@ -233,9 +233,9 @@ export const a1U13: SkillExercise[] = [
       },
       {
         text: "Wo sind die Taschentücher?",
-        options: ["links, zwischen Papier und Seife", "rechts bei der Zahnpasta", "an der Kasse"],
+        options: ["links, beim Papier", "rechts bei der Zahnpasta", "an der Kasse"],
         answer: 0,
-        explain: "„die sind links, zwischen Papier und Seife.“",
+        explain: "„die sind links, beim Papier.“",
       },
       {
         kind: "gapfill",

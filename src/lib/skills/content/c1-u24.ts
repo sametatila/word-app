@@ -232,9 +232,9 @@ export const c1U24: SkillExercise[] = [
       { de: "sofern", tr: "-diği takdirde", en: "provided that" },
       { de: "endgültig", tr: "nihai", en: "final" },
       { de: "der Handschlag", tr: "el sıkışma", en: "handshake" },
-      { de: "entgegenkommen", tr: "karşıdan gelmek", en: "to come toward" },
+      { de: "entgegenkommen", tr: "orta yolda buluşmak", en: "to meet halfway" },
       { de: "die Geschäftsführung", tr: "şirket yönetimi", en: "management" },
-      { de: "das Mandat", tr: "milletvekilliği", en: "parliamentary seat" },
+      { de: "das Mandat", tr: "yetki", en: "mandate" },
     ],
     minutes: 6,
     segments: [
@@ -248,9 +248,9 @@ export const c1U24: SkillExercise[] = [
       { speaker: "Herr Vogt", text: "Mit Frist. Sechs Monate Kündigungsfrist — Sie haben Planungssicherheit für zwei Jahre, ich habe eine Tür." },
       { speaker: "Frau Kral", text: "Das ist ein Vorschlag, mit dem ich in die Geschäftsführung gehen kann." },
       { speaker: "Herr Vogt", text: "Und der Preis?" },
-      { speaker: "Frau Kral", text: "Unser letztes Wort wäre 10 Prozent, drei Jahre, Ausstieg nach achtzehn Monaten mit sechs Monaten Frist. Das ist endgültig — darunter habe ich kein Mandat." },
+      { speaker: "Frau Kral", text: "Unser letztes Wort wäre 10 Prozent, drei Jahre, Ausstieg nach achtzehn Monaten mit sechs Monaten Frist. Das ist endgültig — darüber hinaus habe ich kein Mandat." },
       { speaker: "Herr Vogt", text: "Dann machen wir es so. Schicken Sie es unterschriftsreif bis Donnerstag." },
-      { speaker: "Frau Kral", text: "Donnerstag früh. Und Herr Vogt — nachbessern wir das dann nicht mehr." },
+      { speaker: "Frau Kral", text: "Donnerstag früh. Und, Herr Vogt: Nachgebessert wird danach nicht mehr." },
       { speaker: "Herr Vogt", text: "Einverstanden. Handschlag gilt." },
     ],
     questions: [
@@ -288,8 +288,8 @@ export const c1U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Das ist endgültig — darunter habe ich kein Mandat.",
-          "Darunter habe ich kein Mandat",
+          "Das ist endgültig — darüber hinaus habe ich kein Mandat.",
+          "Darüber hinaus habe ich kein Mandat",
         ],
         explain: "Yetki sınırını söylemek son sözü inandırıcı kılıyor.",
       },
@@ -458,7 +458,7 @@ export const c1U24: SkillExercise[] = [
           "· Süre: 3 yıl (2 yıl istiyorlardı).\n" +
           "· Çıkış: 18 ay sonra, 6 ay fesih ihbarıyla.\n" +
           "· Perşembe sabahına kadar imzaya hazır metin sözü verildi.\n" +
-          "· Bu paketin altında yetkin yok; daha fazlası için yönetim kurulu kararı gerekir ve o da bu çeyrekte toplanmıyor.\n" +
+          "· Bu paketin ötesinde yetkin yok; daha fazlası için yönetim kurulu kararı gerekir ve o da bu çeyrekte toplanmıyor.\n" +
           "· Karşı taraf reddederse mevcut sözleşme mayısta kendiliğinden bitiyor, kriz yok.",
         checklist: [
           "Üç madde sayılarıyla ve tek tek yazıldı mı?",

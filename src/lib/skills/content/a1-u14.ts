@@ -144,7 +144,7 @@ export const a1U14: SkillExercise[] = [
     genre: "dialogue",
     intro: "Gişede bilet alınıyor. Tek yön mü gidiş dönüş mü?",
     gloss: [
-      { de: "hin und zurück", tr: "gidiş dönüş", en: "return" },
+      { de: "hin und zurück", tr: "gidiş dönüş", en: "round trip" },
       { de: "das Gleis", tr: "peron", en: "platform" },
     ],
     minutes: 2,
@@ -210,7 +210,7 @@ export const a1U14: SkillExercise[] = [
       { text: "Gern. Steigen Sie ein." },
       { text: "Wie lange dauert es?" },
       { text: "Über die Autobahn 25 Minuten." },
-      { text: "Gut. — So, wir sind da. Das macht 38 Euro." },
+      { text: "So, wir sind da. Das macht 38 Euro." },
       { text: "Hier sind 40. Stimmt so." },
     ],
     questions: [

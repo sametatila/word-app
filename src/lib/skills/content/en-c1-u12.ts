@@ -308,7 +308,7 @@ export const enC1U12: SkillExercise[] = [
         text: "The violation is real.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The violation is real and it is a violation of a rule that holds elsewhere.“",
+        explain: "„The violation is real and it breaks a rule that holds elsewhere.“",
       },
       {
         kind: "gapfill",
@@ -373,7 +373,7 @@ export const enC1U12: SkillExercise[] = [
       { speaker: "Kerem", text: "That is why a new plaque in a museum takes four years and a committee. Nobody is arguing about the dates on it." },
       { speaker: "Kerem", text: "The exegesis openly claims what the tradition merely assumes. A text and a tradition, and the second one is doing its work quietly." },
       { speaker: "Kerem", text: "An assumption never has to be defended, because nobody has written it down where it can be answered. Find it in a footnote or find it nowhere." },
-      { speaker: "Kerem", text: "To call customary law venerable is not to obey it. The infinitive shape from earlier in this level, and here it is the whole of a generational conflict in eight words." },
+      { speaker: "Kerem", text: "To call customary law venerable is not to obey it. The infinitive shape from earlier in this level, and here it is the whole of a generational conflict in ten words." },
       { speaker: "Kerem", text: "The age of a rule is not a reason to keep it. It is a reason to ask who wrote it and what they were afraid of at the time." },
       { speaker: "Kerem", text: "A grandchild who calls a rule venerable and then does something else is not being dishonest. They are doing what the word actually asks for." },
       { speaker: "Kerem", text: "So when a family argues about the past, listen for which of the two verbs each side is using." },
@@ -387,7 +387,7 @@ export const enC1U12: SkillExercise[] = [
         explain: "„The second is keeping a key, and a key is not an argument.“",
       },
       {
-        text: "Why never defend an assumption?",
+        text: "Why does an assumption never have to be defended?",
         options: ["nobody has written it down", "it is always true", "it is in the title"],
         answer: 0,
         explain: "„because nobody has written it down where it can be answered.“",
@@ -461,7 +461,7 @@ export const enC1U12: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir.",
+        tr: "Toplumsallaşma sıra düzenini erginlenmeden önce kurabilir.",
         answer: "Socialization may set the pecking order before the initiation.",
         hint: "Zaman sözcüğü özne diye okunamaz; bu yüzden güvenli.",
       },

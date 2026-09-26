@@ -496,7 +496,7 @@ export const enC1U24: SkillExercise[] = [
     gloss: [
       { de: "freedom of conscience", tr: "vicdan özgürlüğü" },
       { de: "freedom of information", tr: "bilgi edinme özgürlüğü" },
-      { de: "freedom of contract", tr: "irade serbestisi" },
+      { de: "freedom of contract", tr: "sözleşme özgürlüğü" },
       { de: "relativism", tr: "görecelik" },
       { de: "a commandment", tr: "buyruk" },
       { de: "altruism", tr: "özgecilik" },
@@ -518,13 +518,13 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İrade serbestisinin yargısal denetimle sınanmasını istiyorlar.",
+        tr: "Sözleşme özgürlüğünün yargısal denetimle sınanmasını istiyorlar.",
         answer: "They ask that freedom of contract be tested by judicial review.",
         hint: "Taraflar neredeyse hiçbir zaman eşit özgür değil.",
       },
       {
         kind: "build",
-        tr: "Görecelik bizi ne kadar huzursuz etse de hiçbir ilke kuşkusuz ayakta kalmaz.",
+        tr: "Görecelik bizi ne kadar huzursuz etse de hiçbir ilke kuşkuya uğramadan ayakta kalmaz.",
         answer: "Much as relativism unsettles us, no maxim survives without doubt.",
         hint: "Kuşkudan sağ çıkan ilke, hiç sorgulanmamış olandan değerli.",
       },

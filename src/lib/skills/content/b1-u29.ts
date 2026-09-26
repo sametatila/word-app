@@ -204,7 +204,7 @@ export const b1U29: SkillExercise[] = [
       },
       {
         text: "Warum nimmt sie nicht das blaue?",
-        options: ["Es gefällt ihr nicht", "Es gibt es nur eine Nummer größer", "Es ist zu teuer"],
+        options: ["Es gefällt ihr nicht", "Das gibt es nur eine Nummer größer", "Es ist zu teuer"],
         answer: 1,
         explain: "„In Blau leider nur eine Nummer größer.“",
       },
@@ -233,7 +233,7 @@ export const b1U29: SkillExercise[] = [
     unit: 29,
     title: "Aus welchem Material?",
     genre: "dialogue",
-    intro: "Bir alet için malzeme seçiliyor. Hangisi ne için iyi?",
+    intro: "Bir kâse için malzeme seçiliyor. Hangisi ne için iyi?",
     minutes: 4,
     gloss: [
       { de: "das Metall", tr: "metal", en: "metal" },
@@ -360,7 +360,7 @@ export const b1U29: SkillExercise[] = [
       { de: "die Lieferung", tr: "teslimat", en: "delivery" },
       { de: "die Bedienungsanleitung", tr: "kullanma kılavuzu", en: "instruction manual" },
       { de: "die Mahnung", tr: "ihtar", en: "reminder" },
-      { de: "der Schein", tr: "banknot", en: "note" },
+      { de: "der Schein", tr: "banknot", en: "bill" },
       { de: "per", tr: "yoluyla", en: "by" },
       { de: "offen", tr: "açık", en: "open" },
     ],
@@ -395,9 +395,8 @@ export const b1U29: SkillExercise[] = [
           "Es fehlen zwei Teile: die Bedienungsanleitung auf Deutsch und der " +
           "Stecker. Ohne Stecker kann ich das Gerät gar nicht benutzen. " +
           "Die Batterie war dabei, das stimmt.\n\n" +
-          "Ich habe den Beleg und die Bestätigung per Mail. Bezahlt habe ich " +
-          "bei Lieferung, in bar, und ich habe den Schein noch auf der " +
-          "Quittung stehen.\n\n" +
+          "Ich habe die Bestätigung per Mail und die Quittung. Bezahlt habe " +
+          "ich bei Lieferung in bar, mit zwei Scheinen.\n\n" +
           "Ich bitte Sie, die fehlenden Teile bis zum 20. April zu schicken. " +
           "Eine Mahnung habe ich bisher nicht bekommen und erwarte auch keine, " +
           "solange die Sache offen ist.\n\n" +
@@ -411,7 +410,7 @@ export const b1U29: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Bileşik isimleri birleştir.",
-        source: "Die Bedienungs Anleitung und die EC Karte lagen im Geld Automat.",
+        source: "Die Bedienungs Anleitung und die EC Karte lagen im Geld Automaten.",
         answer: "Die Bedienungsanleitung und die EC-Karte lagen im Geldautomaten.",
         why: "Türkçede tamlama İKİ ayrı sözcüktür ('kullanma kılavuzu', 'para makinesi'), o yüzden Almancada da ayrı yazılıyor. Almancada bileşik isim TEK sözcüktür ve ayırmak yalnız yazım hatası değil — okuyucu iki bağımsız isim görür ve anlam dağılır. Kısaltmalı bileşiklerde araya tire girer: EC-Karte, U-Bahn.",
       },

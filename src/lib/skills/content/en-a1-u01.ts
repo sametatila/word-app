@@ -212,7 +212,7 @@ export const enA1U01: SkillExercise[] = [
         text: "Ava is married.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I am married. My husband is from Türkiye.“ — evli; hüküm yanlış.",
+        explain: "„I am married. My husband is from Türkiye.“ — evli; hüküm doğru.",
       },
       {
         kind: "gapfill",
@@ -258,9 +258,9 @@ export const enA1U01: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Woman", text: "Excuse me. Are you Mr. Kaya?" },
+      { speaker: "Ms. Rossi", text: "Excuse me. Are you Mr. Kaya?" },
       { speaker: "Mr. Kaya", text: "Yes, I am. Good morning!" },
-      { speaker: "Woman", text: "Good morning. My name is Sofia Rossi." },
+      { speaker: "Ms. Rossi", text: "Good morning. My name is Sofia Rossi." },
       { speaker: "Mr. Kaya", text: "Nice to meet you, Ms. Rossi. Where are you from?" },
       { speaker: "Ms. Rossi", text: "I am from Italy, but I live in Ankara now." },
       { speaker: "Mr. Kaya", text: "Ankara is a big city. Are you a student here?" },

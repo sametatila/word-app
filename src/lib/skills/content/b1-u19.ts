@@ -181,11 +181,11 @@ export const b1U19: SkillExercise[] = [
     segments: [
       { text: "Seit zwei Wochen tut mir der Rücken weh, vor allem morgens." },
       { text: "Sitzen Sie viel? Wie ist Ihre Haltung am Rechner?" },
-      { text: "Vermutlich schlecht. Ich merke es erst, wenn es weh tut." },
+      { text: "Vermutlich schlecht. Ich merke es erst, wenn es wehtut." },
       { text: "Stellen Sie den Bildschirm höher. Das ist der erste Schritt. Dazu eine kurze Übung am Morgen." },
       { text: "Soll ich mich mehr ausruhen oder mich mehr bewegen?" },
       { text: "Bewegen. Liegen hilft nur am Anfang, danach macht es alles schlechter." },
-      { text: "Rennen mag ich nicht besonders." },
+      { text: "Laufen mag ich nicht besonders." },
       { text: "Dann eine Wanderung am Wochenende. Das ist entspannend und reicht." },
     ],
     questions: [
@@ -217,7 +217,7 @@ export const b1U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was wird statt Rennen empfohlen?",
+        text: "Was wird statt Laufen empfohlen?",
         options: [],
         answer: 0,
         accept: ["eine Wanderung", "Wanderung", "eine Wanderung am Wochenende"],
@@ -281,7 +281,7 @@ export const b1U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie lange bleibt sie nachts wach?",
+        text: "Wie lange bleibt die erste Person nachts wach?",
         options: [],
         answer: 0,
         accept: ["eine Stunde", "eine Stunde lang"],
@@ -359,13 +359,13 @@ export const b1U19: SkillExercise[] = [
       { de: "abnehmen", tr: "kilo vermek", en: "to lose weight" },
       { de: "vermutlich", tr: "muhtemelen", en: "presumably" },
       { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay / hafif", en: "easy / light" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     tasks: [
       {
         kind: "build",
-        tr: "Akşam erken yiyorum çünkü sonra iyi uyuyamıyorum.",
+        tr: "Akşamları daha erken yiyorum, çünkü yoksa iyi uyuyamıyorum.",
         answer: "Ich esse abends früher, weil ich sonst schlecht schlafen kann.",
         hint: "Yan cümlede: asıl fiil, sonra kipli fiil.",
       },

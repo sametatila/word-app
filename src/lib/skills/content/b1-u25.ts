@@ -193,7 +193,7 @@ export const b1U25: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wovon redet die erste Person seit Jahren?",
+        text: "Wovon redet die zweite Person seit Jahren?",
         options: ["Von einer Reise", "Von ihrer eigenen Werkstatt", "Von einem Umzug"],
         answer: 1,
         explain: "„Du redest seit Jahren von deiner Werkstatt.“",
@@ -332,7 +332,7 @@ export const b1U25: SkillExercise[] = [
         facts: "Yazan: Nuri Öz; konu: iki haftadır konuşulmayan mesele; istek: bir görüşme; öneri: cumartesi; ton: suçlamasız.",
         fields: [
           { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
-          { label: "Thema", answer: "das offene Gespräch", accept: ["ein Gespräch", "der Konflikt"] },
+          { label: "Thema", answer: "eine offene Sache seit zwei Wochen", accept: ["die offene Sache", "eine offene Sache", "der Konflikt", "ein Konflikt", "seit zwei Wochen"] },
           { label: "Wunsch", answer: "ein Gespräch", accept: ["reden", "ein Treffen"] },
           { label: "Vorschlag", answer: "Samstag", accept: ["am Samstag"] },
         ],
@@ -342,7 +342,7 @@ export const b1U25: SkillExercise[] = [
         prompt: "İki nesnenin sırasını düzelt.",
         source: "Ich habe ihm es gesagt und dann habe ich das Buch ihm gegeben.",
         answer: "Ich habe es ihm gesagt und dann habe ich ihm das Buch gegeben.",
-        why: "Türkçede iki nesnenin sırası serbesttir ('ona onu verdim' de 'onu ona verdim' de olur), o yüzden Almancada da rastgele seçiliyor. Almancada kural nesnenin ZAMİR olup olmamasına bağlı: iki isimde Dativ önce gelir (ihm das Buch), ama Akkusativ ZAMİR ise o öne geçer (es ihm).",
+        why: "Türkçede iki nesnenin sırası serbesttir ('ona onu verdim' de 'onu ona verdim' de olur), o yüzden Almancada da rastgele seçiliyor. Almancada kural nesnenin ZAMİR olup olmamasına bağlı: Akkusativ bir İSİMSE Dativ önce gelir (dem Kind das Buch, ihm das Buch), ama Akkusativ ZAMİR ise o öne geçer (es ihm).",
       },
     ],
   },

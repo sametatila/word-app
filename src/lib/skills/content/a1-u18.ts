@@ -141,14 +141,14 @@ export const a1U18: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 18,
-    title: "Kannst du das reparieren?",
+    title: "Können Sie das reparieren?",
     genre: "phone",
     intro: "Apartman görevlisiyle telefon konuşması.",
     gloss: [
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to suit" },
     ],
     minutes: 2,
     segments: [
@@ -214,7 +214,7 @@ export const a1U18: SkillExercise[] = [
       { text: "Ja, ich sitze hier gern. Der Stuhl steht immer da." },
       { text: "Und die Blumen? Wer gießt sie?" },
       { text: "Ich gieße sie jeden Abend. Hier ist viel Wind." },
-      { text: "Meine Blumen liegen leider immer im Zimmer." },
+      { text: "Meine Blumen stehen leider immer im Zimmer." },
     ],
     questions: [
       {
@@ -300,7 +300,7 @@ export const a1U18: SkillExercise[] = [
     intro: "Apartman görevlisine bozuk bir şey için not yaz.",
     gloss: [
       { de: "kaputt", tr: "bozuk", en: "broken" },
-      { de: "der Hausmeister", tr: "apartman görevlisi", en: "caretaker" },
+      { de: "der Hausmeister", tr: "apartman görevlisi", en: "building manager" },
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
@@ -310,7 +310,7 @@ export const a1U18: SkillExercise[] = [
         kind: "build",
         tr: "Balkondaki ışık çalışmıyor.",
         answer: "Das Licht auf dem Balkon funktioniert nicht",
-        hint: "„funktionieren“ makine ve elektrik için kullanılır; „kaputt sein“ ile aynı anlama gelir.",
+        hint: "„funktionieren“ makine ve elektrik için kullanılır; „funktioniert nicht“, „ist kaputt“ ile aynı anlama gelir.",
       },
       {
         kind: "free",

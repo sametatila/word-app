@@ -331,7 +331,7 @@ export const enB2U09: SkillExercise[] = [
       { de: "an oversight", tr: "gözden kaçma" },
       { de: "insists", tr: "diretiyor" },
       { de: "the exception", tr: "istisna" },
-      { de: "loudness", tr: "yükseklik" },
+      { de: "loudness", tr: "ses yüksekliği" },
       { de: "the joke", tr: "şaka" },
       { de: "badly", tr: "kötü biçimde" },
       { de: "weaker", tr: "daha zayıf" },
@@ -422,7 +422,7 @@ export const enB2U09: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yöntem düzeninin hiç yayımlanmadığı anlaşılıyor.",
+        tr: "Görünüşe göre çalışmanın yöntemi hiç yayımlanmadı.",
         answer: "Apparently the methodology was never published.",
         hint: "Tek sözcük hem bildiriyor hem geri çekiliyor.",
       },

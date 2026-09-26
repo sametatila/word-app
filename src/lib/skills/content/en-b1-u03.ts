@@ -262,7 +262,7 @@ export const enB1U03: SkillExercise[] = [
     intro: "Beş daire, hiç imza yok. Neden?",
     gloss: [
       { de: "payslips", tr: "maaş bordroları" },
-      { de: "the moment to leave", tr: "kalkma anı" },
+      { de: "the moment to leave", tr: "çekip gitme anı" },
       { de: "That is different from", tr: "şundan farklı" },
     ],
     minutes: 6,
@@ -272,7 +272,7 @@ export const enB1U03: SkillExercise[] = [
       { speaker: "Mert", text: "Nothing is wrong. That is the problem. I saw that apartment near the park last week — bright, furnished, fine." },
       { speaker: "Nil", text: "And?" },
       { speaker: "Mert", text: "The deposit was three months. The landlord said that everybody pays three months here." },
-      { speaker: "Nil", text: "Everybody does not. Two is normal in this city." },
+      { speaker: "Nil", text: "Not everybody does. Two is normal in this city." },
       { speaker: "Mert", text: "He also said that the ad was old and the rent had changed." },
       { speaker: "Nil", text: "That is the moment to leave. An ad is a price." },
       { speaker: "Mert", text: "The agency told me to send my last three payslips before the showing." },
@@ -308,7 +308,7 @@ export const enB1U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„Everybody does not. Two is normal in this city.“",
+        explain: "„Not everybody does. Two is normal in this city.“",
       },
       {
         kind: "dictation",
@@ -320,7 +320,7 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What has Mert got from the five showings?",
+        text: "What did Mert get from the five showings?",
         options: [],
         answer: 0,
         accept: ["two rules", "two new rules", "rules"],

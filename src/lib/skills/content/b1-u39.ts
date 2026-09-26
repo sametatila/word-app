@@ -249,7 +249,7 @@ export const b1U39: SkillExercise[] = [
       { text: "Sie wollten mir etwas vorschlagen?" },
       { text: "Ja. Ich möchte das kleine Projekt im Herbst selbst leiten." },
       { text: "Interessant. Warum Sie?" },
-      { text: "Ich kenne die Kunden, und die Mitarbeiterin dort arbeitet gern mit mir. Die Chefin dort kennt mich auch." },
+      { text: "Ich kenne die Kunden, und die Mitarbeiterin dort arbeitet gern mit mir." },
       { text: "Das stimmt, das habe ich auch gehört." },
       { text: "Wenn es gut läuft, könnten wir danach jemanden anstellen." },
       { text: "Langsam. Erst das Projekt, dann die Leitung, dann neue Leute." },
@@ -400,14 +400,14 @@ export const b1U39: SkillExercise[] = [
           "September beginnt, ist klein genug für einen ersten Versuch.\n\n" +
           "Ich brauche dafür keine neue Stelle. Nötig wären nur zwei Tage " +
           "im Monat, die ich aus der jetzigen Tätigkeit nehmen kann.\n\n" +
-          "Ein Risiko will ich nicht verschweigen: wenn im Herbst mehrere " +
+          "Ein Risiko will ich nicht verschweigen: Wenn im Herbst mehrere " +
           "Aufträge gleichzeitig kommen, wird es eng. Deshalb teile ich " +
           "Ihnen bis Freitag einen Plan mit, der genau diesen Fall regelt. Die Leitung kann mich dafür einsetzen.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",
         phrases: [
           { de: "Ich schlage vor, dass …", tr: "… önerisinde bulunuyorum.", en: "I suggest that …" },
           { de: "Dafür sprechen zwei Gründe.", tr: "Bunun iki gerekçesi var.", en: "Two reasons speak for it." },
-          { de: "Ein Risiko will ich nicht verschweigen.", tr: "Bir riski saklamak istemem.", en: "I don't want to hide one risk." },
+          { de: "Ein Risiko will ich nicht verschweigen.", tr: "Bir riski saklamak istemem.", en: "There is one risk I don't want to hide." },
         ],
       },
       {

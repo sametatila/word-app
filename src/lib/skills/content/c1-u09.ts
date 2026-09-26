@@ -306,7 +306,7 @@ export const c1U09: SkillExercise[] = [
     genre: "dialogue",
     intro: "Deyimler birebir çevrilince ne oluyor? İki dil arasında bir yanlış anlama.",
     gloss: [
-      { de: "einen Bären aufbinden", tr: "kafaya atmak", en: "to pull someone's leg" },
+      { de: "einen Bären aufbinden", tr: "birini işletmek", en: "to pull someone's leg" },
       { de: "im Trüben fischen", tr: "bulanık suda balık avlamak", en: "to fish in troubled waters" },
       { de: "auf Wolke sieben schweben", tr: "bulutların üstünde olmak", en: "to be on cloud nine" },
       { de: "eiskalt", tr: "buz gibi / acımasız", en: "ice-cold" },
@@ -363,14 +363,14 @@ export const c1U09: SkillExercise[] = [
         explain: "Türkçedeki „saf“ kadar yumuşak değil; ihmal suçlamasına yaklaşıyor.",
       },
       {
-        text: "Wann ist „im Trüben fischen“ laut Bernd gefährlich?",
+        text: "Wann ist der Vorwurf „schwarzmalen“ laut Bernd gefährlich?",
         options: [
           "Immer",
           "Wenn man es über Personen sagt",
           "Nur schriftlich",
         ],
         answer: 1,
-        explain: "„Über eine Lage geht es.“ Kişiye söylenince kötü niyet iması taşıyor.",
+        explain: "„Über eine Lage geht es.“ Bir insan hakkında söylenince buz gibi bir suçlamaya dönüşüyor.",
       },
       {
         kind: "short_answer",
@@ -444,9 +444,8 @@ export const c1U09: SkillExercise[] = [
       { de: "im Trüben fischen", tr: "bulanık suda balık avlamak", en: "to fish in troubled waters" },
       { de: "der Lichtblick", tr: "umut ışığı", en: "ray of hope" },
       { de: "strittig", tr: "ihtilaflı", en: "disputed" },
-      { de: "der Kassierer", tr: "kasiyer", en: "cashier" },
+      { de: "kassieren", tr: "geri çevirmek / iptal etmek", en: "to overturn" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "einseitig", tr: "tek taraflı", en: "unilateral" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 12,
@@ -478,7 +477,7 @@ export const c1U09: SkillExercise[] = [
           "Zwischen den beiden Teams herrscht seit gut sechs Wochen dicke Luft. Die gemeinsamen Termine sind von sechs auf zwei gesunken, die Übergabe wurde zweimal verschoben.\n\n" +
           "Das ist kein Sturm im Wasserglas. Es wäre aber falsch, die Ursache im Technischen zu suchen: Die Schnittstelle funktioniert. Strittig ist, wer welche Entscheidung treffen darf. Solange das unklar bleibt, fischen beide Seiten im Trüben — jede Freigabe kann von der anderen kassiert werden, und das erklärt den Ton in den Sitzungen besser als jede Charakterfrage.\n\n" +
           "Ein Lichtblick: Vergangene Woche haben zwei Entwickler von sich aus zusammen Mittag gegessen. Die beiden Tage danach liefen ohne Eskalation. Das Eis lässt sich also brechen, es braucht nur einen Anlass.\n\n" +
-          "Vorschlag: eine einseitige Zuständigkeitstabelle, abgestimmt bis Freitag, und ein wöchentlicher Kurztermin von fünfzehn Minuten. Beides kostet wenig und nimmt der Lage genau das, was sie am Leben hält.",
+          "Vorschlag: eine Zuständigkeitstabelle auf einer Seite, abgestimmt bis Freitag, und ein wöchentlicher Kurztermin von fünfzehn Minuten. Beides kostet wenig und nimmt der Lage genau das, was sie am Leben hält.",
       },
     ],
   },

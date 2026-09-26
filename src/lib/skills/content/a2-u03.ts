@@ -173,11 +173,11 @@ export const a2U03: SkillExercise[] = [
     segments: [
       { speaker: "Fatma", text: "Hallo Leon! Rate mal, was passiert ist!" },
       { speaker: "Leon", text: "Keine Ahnung. Hast du die Prüfung bestanden?" },
-      { speaker: "Fatma", text: "Das auch, aber das ist nicht alles. Die Zusage ist heute gekommen — ich bekomme das Stipendium!" },
+      { speaker: "Fatma", text: "Richtig erraten — aber das ist nicht alles. Die Zusage ist heute gekommen — ich bekomme das Stipendium!" },
       { speaker: "Leon", text: "Was? Das ist ja außergewöhnlich! Ich staune wirklich." },
       { speaker: "Fatma", text: "Meine Mutter hat am Telefon gejubelt. Ich glaube, die ganze Straße hat es gehört." },
       { speaker: "Leon", text: "Das glaube ich sofort. Und wann geht es los?" },
-      { speaker: "Fatma", text: "Im Oktober. Zwei Jahre lang, mit Kurs und allem. Ich habe es selbst noch nicht ganz erraten, wie mein Leben dann aussieht." },
+      { speaker: "Fatma", text: "Im Oktober. Zwei Jahre lang, mit Kurs und allem. Ich kann es selbst noch gar nicht glauben." },
     ],
     questions: [
       {
@@ -192,7 +192,7 @@ export const a2U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["bestanden"],
-        explain: "„bestehen“ kuralsız ve vurgusuz ön ekli: ortaç „ge“ almaz, sonu değişir — bestanden.",
+        explain: "„bestehen“ kuralsız ve vurgusuz ön ekli: ortaç „ge“ almaz, kökü değişir: bestanden.",
       },
       {
         text: "Wer hat am Telefon gejubelt?",
@@ -202,7 +202,7 @@ export const a2U03: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Fatma'nın telefonu açtıktan sonraki ilk cümlesini yaz.",
+        text: "Fatma'nın telefondaki ilk sözlerini yaz.",
         options: [],
         answer: 0,
         accept: ["Hallo Leon! Rate mal, was passiert ist!"],
@@ -232,7 +232,7 @@ export const a2U03: SkillExercise[] = [
     segments: [
       { speaker: "Sofia", text: "Sag mal, was wolltest du als Kind eigentlich werden?" },
       { speaker: "Aylin", text: "Feuerwehrmann. Also Feuerwehrfrau. Ich habe jahrelang davon geträumt." },
-      { speaker: "Sofia", text: "Ernsthaft? Und warum ist es nichts geworden?" },
+      { speaker: "Sofia", text: "Ernsthaft? Und warum ist nichts daraus geworden?" },
       { speaker: "Aylin", text: "Ich konnte nicht gut schwimmen, und dafür muss man das können. Später wollte ich dann Tierärztin werden." },
       { speaker: "Sofia", text: "Und das hat auch nicht geklappt?" },
       { speaker: "Aylin", text: "Nein, ich musste nach der Schule sofort arbeiten. Mein Bruder war der Begabte in der Familie — er ist heute Pilot." },
@@ -296,6 +296,7 @@ export const a2U03: SkillExercise[] = [
         kind: "build",
         tr: "Hemen çalışmak zorundaydım.",
         answer: "Ich musste sofort arbeiten",
+        alternatives: ["Sofort musste ich arbeiten"],
         hint: "müssen → musste. Zarf kip fiiliyle asıl fiilin arasında durur.",
       },
       {
@@ -327,7 +328,7 @@ export const a2U03: SkillExercise[] = [
       { de: "die Zusage", tr: "olumlu cevap", en: "acceptance" },
       { de: "staunen", tr: "hayret etmek", en: "to be amazed" },
       { de: "außergewöhnlich", tr: "olağanüstü", en: "extraordinary" },
-      { de: "schaffen", tr: "yetiştirmek", en: "to manage" },
+      { de: "schaffen", tr: "başarmak", en: "to manage" },
     ],
     minutes: 8,
     tasks: [
@@ -349,7 +350,7 @@ export const a2U03: SkillExercise[] = [
           { de: "Ich habe wirklich gestaunt.", tr: "gerçekten hayret ettim", en: "I was really amazed" },
         ],
         sample:
-          "Hey Fatma,\n\nherzlichen Glückwunsch! Das ist wirklich außergewöhnlich — beides an einem Tag!\n\nBei mir gibt es auch Neues: Ich habe letzte Woche meine Prüfung bestanden und heute die Zusage für den Praktikumsplatz bekommen. Als die Mail gekommen ist, habe ich erst gestaunt und dann meine Schwester angerufen.\n\nIch fange im November an. Ich habe es kaum geschafft, ruhig zu bleiben.\n\nWir müssen das feiern!\n\nLiebe Grüße\nMerve",
+          "Hey Fatma,\n\nherzlichen Glückwunsch! Das ist wirklich außergewöhnlich — beides an einem Tag!\n\nBei mir gibt es auch Neues: Ich habe letzte Woche meine Prüfung bestanden und heute die Zusage für den Praktikumsplatz bekommen. Als die Mail gekommen ist, habe ich erst gestaunt und dann meine Schwester angerufen. Ich habe es kaum geschafft, ruhig zu bleiben.\n\nIch fange im November an. Wir müssen das feiern!\n\nLiebe Grüße\nMerve",
       },
     ],
   },

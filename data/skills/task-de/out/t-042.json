@@ -35,7 +35,7 @@
   "de": "Im auswählenden Teilsatz fällt das Objektpronomen weg; im Teilsatz mit Kommas nicht; „which is“ kann vor einer Nominalphrase gestrichen werden; „whose“ nie."
  },
  {
-  "tr": "Affetmez olmuş olamazlar.",
+  "tr": "Affetmez davranmış olamazlar.",
   "kind": "build.tr",
   "de": "Sie können nicht unversöhnlich gewesen sein."
  },
@@ -135,7 +135,7 @@
   "de": "Erst nach dem Gespräch beginnt die Bewältigung."
  },
  {
-  "tr": "Bunun sözsüz bir işaret olduğu anlaşılıyor.",
+  "tr": "Bu, sözsüz bir işaret gibi görünüyor.",
   "kind": "build.tr",
   "de": "Es scheint ein nonverbales Zeichen zu sein."
  },
@@ -150,7 +150,7 @@
   "de": "Alles in allem ist ein letzter Punkt wohl noch erwähnenswert."
  },
  {
-  "tr": "Dosya tam olmak şartıyla bunu kapatabiliriz.",
+  "tr": "Görünüşe göre, dosya tam olmak şartıyla bunu kapatabiliriz.",
   "kind": "build.tr",
   "de": "Anscheinend können wir das schließen, sofern die Akte vollständig ist."
  },
@@ -170,7 +170,7 @@
   "de": "Wäre der Unterhalt fair gewesen, wäre die Familie jetzt ruhig."
  },
  {
-  "tr": "Taahhütlü mektup gönderilmesi kayda geçiyor.",
+  "tr": "Taahhütlü bir mektubun gönderilmesi kayda geçiyor.",
   "kind": "build.tr",
   "de": "Der Versand eines Einschreibens wird erfasst."
  },

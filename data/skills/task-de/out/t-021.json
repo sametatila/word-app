@@ -245,9 +245,9 @@
   "de": "Der höfliche Einstieg der Beschwerde ist eine Formel; das Thema kommt nach „but“."
  },
  {
-  "tr": "„feel“ sonrası sıfat geliyor, zarf değil: „better“, „well“ değil.",
+  "tr": "„feel“ sonrası sıfat geliyor: „I feel better“. „better“ hem „good“un hem „well“in karşılaştırması.",
   "kind": "build.hint",
-  "de": "Nach „feel“ steht ein Adjektiv, kein Adverb: „better“, nicht „well“."
+  "de": "Nach „feel“ steht ein Adjektiv: „I feel better“. „better“ ist der Komparativ von „good“ und von „well“."
  },
  {
   "tr": "Sayılabilir olduğu için „how many“; soruda „should“ özneden önce.",

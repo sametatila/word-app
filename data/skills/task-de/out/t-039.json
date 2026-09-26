@@ -57,7 +57,7 @@
  {
   "tr": "Kamu borcunun arttığı söyleniyor.",
   "kind": "build.tr",
-  "de": "Die Staatsschuld soll steigen."
+  "de": "Es heißt, die Staatsschuld steige."
  },
  {
   "tr": "Uygulatmayı fonlamamız gerekirdi.",
@@ -85,7 +85,7 @@
   "de": "Der Gesetzentwurf muss unklar gewesen sein."
  },
  {
-  "tr": "Bunun bir genelleme olduğu anlaşılıyor.",
+  "tr": "Bu bir genelleme gibi görünüyor.",
   "kind": "build.tr",
   "de": "Es scheint eine Verallgemeinerung zu sein."
  },
@@ -105,7 +105,7 @@
   "de": "Es wird erwartet, dass das Defizit wieder wächst."
  },
  {
-  "tr": "Sonuçta rakam tartışmaya açık görünüyor.",
+  "tr": "Her şey tartıldığında rakam belki de şüpheli.",
   "kind": "build.tr",
   "de": "Alles in allem ist die Zahl wohl fragwürdig."
  },
@@ -125,9 +125,9 @@
   "de": "Die Steuerlast soll sich verdoppelt haben."
  },
  {
-  "tr": "Konut sıkıntısıyla karşılaşan aileler taşındı.",
+  "tr": "Konut sıkıntısıyla karşı karşıya kaldıkları için aileler taşındı.",
   "kind": "build.tr",
-  "de": "Mit einer Wohnungsnot konfrontiert, zogen Familien weg."
+  "de": "Da sie mit einer Wohnungsnot konfrontiert waren, zogen Familien weg."
  },
  {
   "tr": "Hızlı yapılan yerleşim bölgesi aşırı kalabalık.",
@@ -215,9 +215,9 @@
   "de": "Gemischte Bedingung: die Folge steht heute Morgen auf der Straße."
  },
  {
-  "tr": "„has“ özneyi atlıyor; özne üç sözcük uzunluğunda.",
+  "tr": "„has“ özneyi atlıyor; özne iki sözcük uzunluğunda.",
   "kind": "build.hint",
-  "de": "„has“ überspringt das Subjekt; das Subjekt ist drei Wörter lang."
+  "de": "„has“ überspringt das Subjekt; das Subjekt ist zwei Wörter lang."
  },
  {
   "tr": "„whose“ ilgi adılının iyelik hâli; tek biçimi var.",

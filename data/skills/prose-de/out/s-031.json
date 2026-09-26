@@ -140,11 +140,6 @@
   "de": "„I'm allergic to fish. Is there anything with chicken?“"
  },
  {
-  "tr": "„I invited Nil but it doesn't work. Izmir until Sunday.“",
-  "kind": "explain",
-  "de": "„I invited Nil but it doesn't work. Izmir until Sunday.“"
- },
- {
   "tr": "Önce istek, sonra belge, sonra yakıt, en son iade saati.",
   "kind": "explain",
   "de": "Zuerst der Wunsch, dann die Papiere, dann der Sprit, zuletzt die Rückgabezeit."
@@ -155,9 +150,9 @@
   "de": "„It's my birthday. Would you like to come? … From seven.“"
  },
  {
-  "tr": "Mert hediyeyi eylülde veriyor ve kendi doğum günü kasımda.",
+  "tr": "Mert hediyeyi eylülde, kız kardeşinin doğum gününde veriyor; Mert'in kendi doğum günü kasımda.",
   "kind": "explain",
-  "de": "Mert übergibt das Geschenk im September, der eigene Geburtstag ist im November."
+  "de": "Mert übergibt das Geschenk im September, am Geburtstag seiner Schwester; sein eigener Geburtstag ist im November."
  },
  {
   "tr": "Hediye verirken iki kısa cümle; „hope“ sonrası „that“ düşüyor.",
@@ -208,11 +203,6 @@
   "tr": "„Does the price include breakfast? — Yes, from seven to ten.“ Otopark ayrı ücret.",
   "kind": "explain",
   "de": "„Does the price include breakfast? — Yes, from seven to ten.“ Das Parken kostet extra."
- },
- {
-  "tr": "„My flight is delayed and I've missed my connection.“ — aktarma birdeydi, uçak iki buçukta indi.",
-  "kind": "explain",
-  "de": "„My flight is delayed and I've missed my connection.“ — der Anschluss war um eins, die Maschine landete halb drei."
  },
  {
   "tr": "çok isterim",
@@ -292,7 +282,7 @@
  {
   "tr": "üstünde",
   "kind": "gloss.tr",
-  "de": "über dir"
+  "de": "über"
  },
  {
   "tr": "yapıyor",
@@ -317,7 +307,7 @@
  {
   "tr": "fazladan",
   "kind": "gloss.tr",
-  "de": "zusätzlich"
+  "de": "überflüssig"
  },
  {
   "tr": "ayrı ayrı",
@@ -372,7 +362,7 @@
  {
   "tr": "geldiklerinde",
   "kind": "gloss.tr",
-  "de": "wann sie eben kommen"
+  "de": "wenn sie eben kommen"
  },
  {
   "tr": "karşıya geçmek",

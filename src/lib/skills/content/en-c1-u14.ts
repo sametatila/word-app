@@ -348,7 +348,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "underneath", tr: "altta" },
       { de: "whatever", tr: "her ne" },
       { de: "assumed", tr: "varsaydı" },
-      { de: "a minute", tr: "tutanak" },
+      { de: "the minutes", tr: "tutanak" },
       { de: "two verbs", tr: "iki fiil" },
       { de: "an ethic", tr: "ahlak" },
       { de: "a written rule", tr: "yazılı kural" },
@@ -363,16 +363,16 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Sevil", text: "One obscures the segmentation; another undermines the professional ethic. Two verbs in one line of a minute, and they are not two ways of saying the same thing." },
+      { speaker: "Sevil", text: "One obscures the segmentation; another undermines the professional ethic. Two verbs in one line of the minutes, and they are not two ways of saying the same thing." },
       { speaker: "Sevil", text: "To obscure is to leave something where it is and make it hard to see. To undermine is to take a piece out from underneath while the top of it still looks the same." },
       { speaker: "Sevil", text: "The first can be fixed by writing the thing down clearly. The second cannot, because by the time anybody notices, the part that was removed is a year gone." },
       { speaker: "Sevil", text: "The written rule openly claims what everyday practice merely assumes. The same shape from two units back, and here it is about a meeting rather than a text." },
       { speaker: "Sevil", text: "An assumption in a meeting is whatever nobody wrote on the agenda and everybody arrived with. It gets into the decision without ever being spoken." },
-      { speaker: "Sevil", text: "So the useful minute is not the one that records what was said. It is the one that records what was assumed, and almost nobody writes that one." },
-      { speaker: "Sevil", text: "To call it disciplining is not to call it a platitude. Eight words, and they are doing the work of a whole paragraph of defense." },
+      { speaker: "Sevil", text: "So useful minutes are not the ones that record what was said. They are the ones that record what was assumed, and almost nobody writes those." },
+      { speaker: "Sevil", text: "To call it disciplining is not to call it a platitude. Eleven words, and they are doing the work of a whole paragraph of defense." },
       { speaker: "Sevil", text: "A hard word is not made empty by being hard. „Disciplining“ is worn out from use and it still names something that happened in a room to a person." },
       { speaker: "Sevil", text: "The move to watch for is the one where somebody answers a description with a comment about the word rather than about the thing." },
-      { speaker: "Sevil", text: "It works almost every time and it costs nothing, and the last line of that meeting will record a discussion of vocabulary and no decision at all." },
+      { speaker: "Sevil", text: "It works almost every time and it costs nothing, and the last line of those minutes will record a discussion of vocabulary and no decision at all." },
     ],
     questions: [
       {
@@ -382,10 +382,10 @@ export const enC1U14: SkillExercise[] = [
         explain: "„To undermine is to take a piece out from underneath…“",
       },
       {
-        text: "What does the useful minute record?",
+        text: "What do useful minutes record?",
         options: ["what was assumed", "what was said", "who was there"],
         answer: 0,
-        explain: "„It is the one that records what was assumed…“",
+        explain: "„They are the ones that record what was assumed…“",
       },
       {
         kind: "truefalse",
@@ -412,7 +412,7 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will that meeting record?",
+        text: "What will the minutes of that meeting record?",
         options: [],
         answer: 0,
         accept: ["no decision", "a discussion of vocabulary", "nothing decided"],

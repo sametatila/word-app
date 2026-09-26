@@ -105,9 +105,9 @@
   "de": "Zuerst die Bank, dann das Hotel, dann die Post, zuletzt der Flughafen."
  },
  {
-  "tr": "„Go on foot, five minutes.“ — araçta „by“, yürümekte „on“.",
+  "tr": "„It is five minutes on foot.“ — araçta „by“, yürümekte „on“.",
   "kind": "explain",
-  "de": "„Go on foot, five minutes.“ — beim Verkehrsmittel „by“, beim Gehen „on“."
+  "de": "„It is five minutes on foot.“ — beim Verkehrsmittel „by“, beim Gehen „on“."
  },
  {
   "tr": "„I get off at the third stop.“ — sonra beş dakika yürüyor.",
@@ -150,9 +150,9 @@
   "de": "„I go by bike. It is fast and I see the city.“ — mit dem Zug fährt Nil."
  },
  {
-  "tr": "„The museum is open at ten. It closes at six.“ — üç, kursun saati.",
+  "tr": "„The museum opens at ten. It closes at six.“ — üç, kursun saati.",
   "kind": "explain",
-  "de": "„The museum is open at ten. It closes at six.“ — drei ist die Zeit des Kurses."
+  "de": "„The museum opens at ten. It closes at six.“ — drei ist die Zeit des Kurses."
  },
  {
   "tr": "Önce genel alışkanlık, sonra şimdiki an, sonra iniş, en son akşam.",
@@ -225,9 +225,9 @@
   "de": "„medicine for a cold… I need soap and a toothbrush too.“ Pflaster nimmt sie auch mit."
  },
  {
-  "tr": "„Then take the bus number four.“ — dört hem hattın numarası hem durağın sırası.",
+  "tr": "„Then take bus number four.“ — dört hem hattın numarası hem durağın sırası.",
   "kind": "explain",
-  "de": "„Then take the bus number four.“ — vier ist sowohl die Liniennummer als auch die Reihe der Haltestelle."
+  "de": "„Then take bus number four.“ — vier ist sowohl die Liniennummer als auch die Reihe der Haltestelle."
  },
  {
   "tr": "„You can visit the museum every day from ten to six.“ — pazartesi kapalı olan kilise.",
@@ -240,9 +240,9 @@
   "de": "„Go straight, then turn left at the corner.“ — zwei Imperative hintereinander, dazwischen „then“."
  },
  {
-  "tr": "Önce saat, sonra süre, sonra izin, en son yol. Danışmada sorular hep bu sırayla geliyor.",
+  "tr": "Önce saat, sonra süre, sonra izin, en son yol.",
   "kind": "explain",
-  "de": "Zuerst die Uhrzeit, dann die Dauer, dann die Erlaubnis, zuletzt der Weg. An der Information kommen die Fragen immer so."
+  "de": "Zuerst die Uhrzeit, dann die Dauer, dann die Erlaubnis, zuletzt der Weg."
  },
  {
   "tr": "„The bank is next to the hotel.“ — meydanın arkasında olan otel, istasyonun önünde taksi.",
@@ -312,7 +312,7 @@
  {
   "tr": "makine",
   "kind": "gloss.tr",
-  "de": "Automat"
+  "de": "Maschine"
  },
  {
   "tr": "örneğin",

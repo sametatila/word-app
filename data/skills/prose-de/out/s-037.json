@@ -182,7 +182,12 @@
  {
   "tr": "kayıt",
   "kind": "gloss.tr",
-  "de": "Anmeldung"
+  "de": "Aufnahme"
+ },
+ {
+  "tr": "kısıtlayıcı ifade",
+  "kind": "gloss.tr",
+  "de": "Einschränkung"
  },
  {
   "tr": "ses kaydı",
@@ -275,7 +280,7 @@
   "de": "wer auch immer"
  },
  {
-  "tr": "ince yazı",
+  "tr": "küçük puntolu kısım",
   "kind": "gloss.tr",
   "de": "das Kleingedruckte"
  },

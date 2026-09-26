@@ -45,12 +45,12 @@
   "de": "Der Transporter kommt um neun."
  },
  {
-  "tr": "Önce mutfağı boşaltacağım.",
+  "tr": "Önce mutfağın kolilerini açacağım.",
   "kind": "build.tr",
-  "de": "Ich packe zuerst die Küche aus."
+  "de": "Ich packe zuerst die Kisten für die Küche aus."
  },
  {
-  "tr": "Bir çizelgede anlaşmalıyız.",
+  "tr": "Bir program üzerinde anlaşmalıyız.",
   "kind": "build.tr",
   "de": "Wir sollten uns auf einen Plan einigen."
  },
@@ -67,7 +67,7 @@
  {
   "tr": "Pazartesi geleceğini söyledi.",
   "kind": "build.tr",
-  "de": "Er sagte, er komme am Montag."
+  "de": "Er sagte, er werde am Montag kommen."
  },
  {
   "tr": "Tren durduğu için geç kaldım.",
@@ -117,7 +117,7 @@
  {
   "tr": "Fiyat değişmedikçe kabul edeceğim.",
   "kind": "build.tr",
-  "de": "Ich nehme an, es sei denn, der Preis ändert sich."
+  "de": "Ich sage zu, es sei denn, der Preis ändert sich."
  },
  {
   "tr": "Bana tesisatçıyı beklememi söyledi.",
@@ -150,7 +150,7 @@
   "de": "Ich sitze vorn, damit ich besser hören kann."
  },
  {
-  "tr": "Yemekten sonra mutfağı toplaman gerekiyor.",
+  "tr": "Yemek yaptıktan sonra mutfağı toplaman gerekiyor.",
   "kind": "build.tr",
   "de": "Du musst die Küche nach dem Kochen aufräumen."
  },
@@ -160,7 +160,7 @@
   "de": "Ich hatte alles geputzt, bevor sie kamen."
  },
  {
-  "tr": "Daha az ısıtma kullansaydık fatura daha düşük olurdu.",
+  "tr": "Daha az ısıtma kullansak fatura daha düşük olurdu.",
   "kind": "build.tr",
   "de": "Wenn wir weniger heizten, wäre die Rechnung niedriger."
  },
@@ -190,9 +190,9 @@
   "de": "„in order to“ sagt denselben Zweck förmlicher."
  },
  {
-  "tr": "„so“ sonucu getiriyor ve cümleye BAŞLAYAMIYOR.",
+  "tr": "„so“ sonucu getiriyor ve sebepten SONRA geliyor; „because“ gibi cümlenin başına alınamıyor.",
   "kind": "build.hint",
-  "de": "„so“ leitet die Folge ein und darf den Satz NICHT beginnen — anders als deutsch „also“."
+  "de": "„so“ leitet die Folge ein und steht NACH dem Grund; anders als „because“ lässt es sich nicht an den Satzanfang stellen."
  },
  {
   "tr": "„tell“ kişiyi doğrudan alıyor ve sonrası mastar.",
@@ -270,9 +270,9 @@
   "de": "„however“ beginnt einen NEUEN Satz und bringt sein eigenes Komma mit, wie „jedoch“."
  },
  {
-  "tr": "Amaç sade mastarla kuruluyor; „for practice“ diye bir kuruluş yok.",
+  "tr": "Amaç sade mastarla kuruluyor; amaç için „for practicing“ denmiyor.",
   "kind": "build.hint",
-  "de": "Der Zweck steht mit dem einfachen Infinitiv; „for practice“ gibt es nicht. Deutsch nimmt „um … zu“."
+  "de": "Der Zweck steht mit dem einfachen Infinitiv; für den Zweck sagt man nicht „for practicing“. Deutsch nimmt „um … zu“."
  },
  {
   "tr": "Amaçta bir kip varsa („can“) mastar yetmiyor, „so that“ gerekiyor.",

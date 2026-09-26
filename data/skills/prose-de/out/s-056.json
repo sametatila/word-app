@@ -25,9 +25,9 @@
   "de": "Der Satz, der die Art verneint, und die Einschränkungen des Modells."
  },
  {
-  "tr": "Ekli isimler ve raporun göndermeleri.",
+  "tr": "Fiilden isimler ve raporun göndermeleri.",
   "kind": "intro",
-  "de": "Nomen mit Endung und die Verweise des Berichts."
+  "de": "Nomen aus Verben und die Verweise des Berichts."
  },
  {
   "tr": "Bir açık neyi gizliyor? Hangi riski sigortalıyoruz?",
@@ -147,7 +147,7 @@
  {
   "tr": "döngü",
   "kind": "gloss.tr",
-  "de": "die Schleife"
+  "de": "Zyklus"
  },
  {
   "tr": "çember",
@@ -587,7 +587,7 @@
  {
   "tr": "başarısızlık",
   "kind": "gloss.tr",
-  "de": "das Versagen"
+  "de": "Scheitern"
  },
  {
   "tr": "hukuki belge",

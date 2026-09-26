@@ -315,6 +315,7 @@ export const b1U18: SkillExercise[] = [
       { de: "die Untersuchung", tr: "muayene", en: "examination" },
       { de: "leiden", tr: "acı çekmek", en: "to suffer" },
       { de: "der Facharzt", tr: "uzman doktor", en: "specialist" },
+      { de: "außer Atem", tr: "nefes nefese", en: "out of breath" },
     ],
     tasks: [
       {
@@ -331,9 +332,8 @@ export const b1U18: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Merdivende nefesim daralıyor, nefesim kısalıyor.",
-        answer: "Auf der Treppe bekomme ich schlecht Luft, mein Atem wird zu kurz.",
-        alternatives: ["Auf der Treppe kann ich schlecht atmen, mein Atem wird zu kurz."],
+        tr: "Merdivende nefesim daralıyor, soluk soluğa kalıyorum.",
+        answer: "Auf der Treppe bekomme ich schlecht Luft und komme außer Atem.",
         hint: "Yer öne alınınca fiil ikinci sırada.",
       },
       {
@@ -401,7 +401,7 @@ export const b1U18: SkillExercise[] = [
         sample:
           "Ich möchte zu den Wartezeiten beim Facharzt etwas sagen.\n\n" +
           "Erstens ist die Lage schlechter geworden. Das ist keine Meinung, " +
-          "sondern eine Tatsache: die Zahlen sind in drei Jahren gestiegen. " +
+          "sondern eine Tatsache: Die Zahlen sind in drei Jahren gestiegen. " +
           "Zweitens trifft es vor allem ältere Leute, weil sie den weiten Weg " +
           "in die Klinik nicht schaffen.\n\n" +
           "Es wird gesagt, dass die neuen Buslinien das ändern. Dem möchte ich " +

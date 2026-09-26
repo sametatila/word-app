@@ -284,7 +284,7 @@ export const c1U01: SkillExercise[] = [
           "Irgendwann ist Zurückhaltung auch keine Tugend mehr.",
           "Irgendwann ist Zurückhaltung auch keine Tugend mehr",
         ],
-        explain: "„Bei allem Respekt“ ile başlayan cümle en sert olanıdır; kalıp sertliği taşımak için var.",
+        explain: "„Bei allem Respekt“ ile açılan sözün en sert cümlesi bu; kalıp sertliği taşımak için var.",
       },
     ],
   },
@@ -412,7 +412,7 @@ export const c1U01: SkillExercise[] = [
         source: "Diese Option kommt für uns nicht in die Frage.",
         answer: "Diese Option kommt für uns nicht in Frage.",
         alternatives: ["Diese Option kommt für uns nicht in Frage"],
-        why: "İşlev fiili öbeğindeki isim belirteç almaz. Tek harflik ekleme cümleyi amatör gösterir ve bu ayrım C1'de ölçülür.",
+        why: "İşlev fiili öbeğindeki isim belirteç almaz. Tek sözcüklük ekleme cümleyi amatör gösterir ve bu ayrım C1'de ölçülür.",
       },
     ],
   },
@@ -439,7 +439,7 @@ export const c1U01: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Aşağıdaki başvuruya olumsuz ama kapıyı kapatmayan bir yanıt yaz. Kaliteyi ret gerekçesinden ayır, çekinceyi açıkça koy, somut bir yol göster ve en az bir işlev fiili öbeği kullan (in Frage kommen, zur Verfügung stehen, in Anspruch nehmen, Abstand nehmen).",
+          "Herr Demir'in önümüzdeki yarıyıl için gönderdiği iş birliği önerisine olumsuz ama kapıyı kapatmayan bir yanıt yaz. Kaliteyi ret gerekçesinden ayır, çekinceyi açıkça koy, somut bir yol göster ve en az bir işlev fiili öbeği kullan (in Frage kommen, zur Verfügung stehen, in Anspruch nehmen, Abstand nehmen).",
         checklist: [
           "Kaliteyi ret gerekçesinden ayırdın mı?",
           "Çekinceyi (neye bağlı olduğunu) açıkça yazdın mı?",

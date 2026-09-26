@@ -67,7 +67,7 @@
  {
   "tr": "Rezervasyonda üç gece yazıyordu, o düzeltti: „Für vier Nächte eigentlich.“",
   "kind": "explain",
-  "en": "The booking said three nights and she corrected it: „Für vier Nächte eigentlich.“"
+  "en": "The reservation said three nights and she corrected it: „Für vier Nächte eigentlich.“"
  },
  {
   "tr": "Sayılamayan bir şeyi saymak için araya bir birim girer: a bottle of water.",
@@ -77,7 +77,7 @@
  {
   "tr": "sofern koşulu daraltır, um-zu amacı verir, adlaştırma usulü resmîleştirir.",
   "kind": "intro",
-  "en": "sofern narrows the condition, um-zu gives the purpose, nominalisation makes the procedure formal."
+  "en": "sofern narrows the condition, um-zu gives the purpose, nominalization makes the procedure formal."
  },
  {
   "tr": "Tahmin dereceleri üstüne bir yazı. Hangi sözcük ne kadar kesinlik taşıyor?",
@@ -165,9 +165,9 @@
   "en": "„Nimm sie dann bitte sofort heraus.“ The tumble dryer is separate and optional."
  },
  {
-  "tr": "„Nur an der festen Feuerstelle beim Bach, nicht am Zelt.“ Saat 22'ye kadar.",
+  "tr": "„Nur an der festen Feuerstelle beim Bach, nicht am Zelt.“ Saat 22.00'ye kadar.",
   "kind": "explain",
-  "en": "„Nur an der festen Feuerstelle beim Bach, nicht am Zelt.“ Until 22."
+  "en": "„Nur an der festen Feuerstelle beim Bach, nicht am Zelt.“ Only until 22:00."
  },
  {
   "tr": "„sein“ sonrası yüklem YALIN hâlde kalır: keine Wahrheit, „keine“ Nominativ.",
@@ -197,7 +197,7 @@
  {
   "tr": "Bina yöneticisine arıza bildirimi. Kaç arıza var, tamirci ne zaman geliyor?",
   "kind": "intro",
-  "en": "A fault report to the building manager. How many faults are there, when is the workman coming?"
+  "en": "A repair request to the building manager. How many things are broken, when is the repairman coming?"
  },
  {
   "tr": "Bir arkadaşının hafta sonu planı için bıraktığı sesli mesajı dinleyeceksin.",
@@ -247,7 +247,7 @@
  {
   "tr": "İsimleştirme, tamlayan hâli edatları, dilek kipiyle teklif ve resmî mesafe.",
   "kind": "intro",
-  "en": "Nominalisation, genitive prepositions, an offer in the subjunctive and formal distance."
+  "en": "Nominalization, genitive prepositions, an offer in the subjunctive and formal distance."
  },
  {
   "tr": "İş ile yaşam arasındaki denge üzerine bir yazı. Amaç cümlelerine dikkat et.",
@@ -287,7 +287,7 @@
  {
   "tr": "Staj haftanı anlat. Cümle ortasında zaman, biçim ve yer sırasına dikkat et.",
   "kind": "intro",
-  "en": "Describe your week on a placement. Watch the order of time, manner and place in the middle of the sentence."
+  "en": "Describe your week as an intern. Watch the order of time, manner and place in the middle of the sentence."
  },
  {
   "tr": "Taşınma günü planlanıyor. Dinle: hangi iş hangisinden önce, kim ne yapıyor?",
@@ -327,7 +327,7 @@
  {
   "tr": "„Die Jacke kostet jetzt 49.“ 79 etiket fiyatı, 65 öteki ceketin özel fiyatı.",
   "kind": "explain",
-  "en": "„Die Jacke kostet jetzt 49.“ 79 is the ticket price, 65 the special price of the other jacket."
+  "en": "„Die Jacke kostet jetzt 49.“ 79 is the price on the tag, 65 the special price of the other jacket."
  },
  {
   "tr": "„Die Suppe schmeckt am nächsten Tag noch besser.“ Yirmi dakika pişme süresi.",
@@ -522,7 +522,7 @@
  {
   "tr": "Paylaşımlı eve aday biri geliyor. Dinle: hangi kurallar var, ne konuşuluyor?",
   "kind": "intro",
-  "en": "Somebody comes to look at a shared house. Listen: what are the rules, what is discussed?"
+  "en": "Someone comes to look at a room in a shared apartment. Listen: what are the rules, what is discussed?"
  },
  {
   "tr": "Randevu ayarlanıyor. İlk teklif uymuyor — sonunda hangi saatte buluşuyorlar?",

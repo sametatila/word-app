@@ -357,7 +357,7 @@ export const c1U04: SkillExercise[] = [
           "„endlich“ ist unklar formuliert",
         ],
         answer: 1,
-        explain: "Sabırsızlık bilgi taşımıyor; tarih taşıyor. Ünitenin asıl dersi bu.",
+        explain: "Sabırsızlık bilgi taşımıyor; tarih ise taşıyor. Ünitenin asıl dersi bu.",
       },
       {
         kind: "short_answer",

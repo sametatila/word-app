@@ -251,7 +251,7 @@ export const c1U05: SkillExercise[] = [
       { speaker: "Herr Demir", text: "Ich wollte Ihnen die Dringlichkeit nicht vorenthalten, aber auch keinen Druck machen." },
       { speaker: "Frau Reimer", text: "Sagen Sie es beim nächsten Mal ruhig gleich. Ich hole heute Nachmittag eine Auskunft ein und melde mich umgehend." },
       { speaker: "Herr Demir", text: "Sehr freundlich. Soll ich Ihnen die Unterlagen noch einmal schicken?" },
-      { speaker: "Frau Reimer", text: "Nicht nötig, ich habe die Akte auf der Leitung offen. Sie hören heute von mir." },
+      { speaker: "Frau Reimer", text: "Nicht nötig, die Akte liegt offen vor mir. Bleiben Sie noch kurz in der Leitung, ich notiere Ihre Nummer. Sie hören heute von mir." },
     ],
     questions: [
       {
@@ -331,7 +331,7 @@ export const c1U05: SkillExercise[] = [
       { speaker: "Tuna", text: "Die Nuance ist wirklich fein." },
       { speaker: "Frau Weiß", text: "Sie ist fein, aber nicht zufällig. Schriftlich fehlt die Betonung, deshalb wirkt jede Kombination stärker als gemeint." },
       { speaker: "Tuna", text: "Mündlich hätte ich es also retten können?" },
-      { speaker: "Frau Weiß", text: "Vielleicht. Mit der richtigen Betonung wird aus dem Vorwurf eine Nachfrage. Vielmehr rate ich Ihnen aber: schriftlich weniger Partikel, dafür treffsichere Wörter." },
+      { speaker: "Frau Weiß", text: "Vielleicht. Mit der richtigen Betonung wird aus dem Vorwurf eine Nachfrage. Verlassen würde ich mich darauf nicht; vielmehr rate ich Ihnen: schriftlich weniger Partikel, dafür treffsichere Wörter." },
       { speaker: "Tuna", text: "Also lieber ein klares Wort als zwei kleine." },
       { speaker: "Frau Weiß", text: "Genau. Partikel setzt man ein, wenn man die Stimme dazu hat." },
     ],
@@ -379,11 +379,11 @@ export const c1U05: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 5,
-    title: "Eksiltme ve dilek kipi",
+    title: "Az söyleme ve dilek kipi",
     genre: "grammar",
     intro: "Az söyleyerek övmek, dilek kipiyle rica etmek — iki ayrı ölçek.",
     gloss: [
-      { de: "die Untertreibung", tr: "eksiltme", en: "understatement" },
+      { de: "die Untertreibung", tr: "az söyleme", en: "understatement" },
       { de: "zurückhaltend", tr: "ölçülü", en: "reserved" },
       { de: "durchstellen", tr: "bağlamak", en: "to put through" },
       { de: "vorenthalten", tr: "esirgemek", en: "to withhold" },
@@ -440,7 +440,7 @@ export const c1U05: SkillExercise[] = [
       { de: "die Konsistenz", tr: "tutarlılık", en: "consistency" },
       { de: "tauschen", tr: "takas etmek", en: "to swap" },
       { de: "aufbauen", tr: "kurmak", en: "to set up" },
-      { de: "der Absatz", tr: "satış", en: "sales" },
+      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "die Aussage", tr: "ifade", en: "statement" },
       { de: "zurückführen auf", tr: "dayandırmak", en: "to attribute" },
       { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
@@ -451,7 +451,7 @@ export const c1U05: SkillExercise[] = [
       {
         kind: "reply",
         prompt:
-          "Aşağıdaki iş örneğine yazılı geri bildirim ver. Alman ölçeğine uy: övgüyü şişirme, eksiği kişiye değil işe bağla, en az bir eksiltme kalıbı kullan („nicht schlecht“, „da ist noch Luft nach oben“, „sehr ordentlich“) ve somut bir sonraki adım söyle.",
+          "Aşağıdaki iş örneğine yazılı geri bildirim ver. Alman ölçeğine uy: övgüyü şişirme, eksiği kişiye değil işe bağla, en az bir az söyleme kalıbı kullan („nicht schlecht“, „da ist noch Luft nach oben“, „sehr ordentlich“) ve somut bir sonraki adım söyle.",
         stimulus:
           "STAJYERİN TESLİM ETTİĞİ RAPOR — ÖZET\n\n" +
           "— Yapı net, başlıklar tutarlı, kaynakça eksiksiz\n" +
@@ -462,7 +462,7 @@ export const c1U05: SkillExercise[] = [
         checklist: [
           "Övgü ölçülü mü (abartı yok)?",
           "Eksik kişiye değil işe bağlandı mı?",
-          "En az bir eksiltme kalıbı var mı?",
+          "En az bir az söyleme kalıbı var mı?",
           "Somut bir sonraki adım verdin mi?",
         ],
         minWords: 90,
