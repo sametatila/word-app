@@ -27,7 +27,7 @@ export const enB2P8: SkillExercise[] = [
       { de: "consultation", tr: "görüş alma" },
       { de: "to reject", tr: "geri çevirmek" },
       { de: "current", tr: "mevcut" },
-      { de: "contain", tr: "kap, konteyner" },
+      { de: "container", tr: "konteyner" },
       { de: "household", tr: "hane" },
       { de: "object", tr: "itiraz etmek" },
       { de: "property", tr: "mülk" },

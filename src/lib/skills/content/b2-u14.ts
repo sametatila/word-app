@@ -47,7 +47,7 @@ export const b2U14: SkillExercise[] = [
       { de: "der Makler", tr: "emlakçı", en: "estate agent" },
       { de: "der Blick", tr: "bakış", en: "look" },
       { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
-      { de: "steigen", tr: "artmak, yükselmek", en: "to rise" },
+      { de: "steigen", tr: "artmak", en: "to rise" },
       { de: "die Knappheit", tr: "kıtlık", en: "scarcity" },
       { de: "also", tr: "yani", en: "so" },
       { de: "transportieren", tr: "nakletmek", en: "to transport" },

@@ -110,7 +110,7 @@ export const b1U03: SkillExercise[] = [
       { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
       { de: "die Notiz", tr: "not", en: "note" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "passen", tr: "uymak, uygun olmak", en: "to fit, to suit" },
+      { de: "passen", tr: "uymak", en: "to suit" },
       { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:

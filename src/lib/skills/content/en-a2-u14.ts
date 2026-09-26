@@ -43,7 +43,7 @@ export const enA2U14: SkillExercise[] = [
       { de: "driver", tr: "kurye" },
       { de: "neighbor", tr: "komşu" },
       { de: "the order number", tr: "sipariş numarası" },
-      { de: "stands", tr: "duruyor" },
+      { de: "sits", tr: "duruyor" },
       { de: "the date", tr: "tarih" },
     ], 
     minutes: 6,

@@ -131,7 +131,7 @@ export const c1U18: SkillExercise[] = [
       { de: "herablassend", tr: "tepeden bakan", en: "condescending" },
       { de: "überheblich", tr: "kibirli", en: "arrogant" },
       { de: "die Tonlage", tr: "ton", en: "tone" },
-      { de: "anpassen", tr: "uyarlamak, ayarlamak", en: "to adjust" },
+      { de: "anpassen", tr: "ayarlamak", en: "to adjust" },
       { de: "rund", tr: "yaklaşık", en: "about, roughly" },
       { de: "erweitern", tr: "genişletmek", en: "to expand" },
       { de: "also", tr: "yani", en: "so" },

@@ -41,7 +41,7 @@ export const b1U23: SkillExercise[] = [
       { de: "sich einsetzen", tr: "mücadele etmek", en: "to campaign" },
       { de: "der Streik", tr: "grev", en: "strike" },
       { de: "vorbei", tr: "bitmiş", en: "over" },
-      { de: "beraten", tr: "görüşmek, müzakere etmek", en: "to discuss" },
+      { de: "beraten", tr: "görüşmek", en: "to discuss" },
     ],
     text:
       "Am Samstag haben etwa dreitausend Menschen dafür protestiert, dass das alte " +

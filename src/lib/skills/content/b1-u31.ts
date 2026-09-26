@@ -46,7 +46,7 @@ export const b1U31: SkillExercise[] = [
       { de: "beste", tr: "en iyi", en: "best" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
-      { de: "die Strecke", tr: "mesafe, yol", en: "distance" },
+      { de: "die Strecke", tr: "mesafe", en: "distance" },
       { de: "aussteigen", tr: "inmek", en: "to get off" },
       { de: "großzügig", tr: "cömert", en: "generous" },
       { de: "sammeln", tr: "toplamak", en: "to collect" },

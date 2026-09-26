@@ -49,7 +49,7 @@ export const b2U16: SkillExercise[] = [
       { de: "ergänzen", tr: "tamamlamak", en: "to complete" },
       { de: "das Treppenhaus", tr: "merdiven boşluğu", en: "stairwell" },
       { de: "konstant", tr: "sabit", en: "constant" },
-      { de: "die Rechte", tr: "haklar, telif hakları", en: "rights" },
+      { de: "die Rechte", tr: "telif hakları", en: "rights" },
       { de: "verboten", tr: "yasak", en: "forbidden" },
       { de: "unbekannt", tr: "bilinmeyen", en: "unknown" },
     ],

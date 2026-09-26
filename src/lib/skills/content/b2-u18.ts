@@ -125,7 +125,7 @@ export const b2U18: SkillExercise[] = [
       { de: "die Aktie", tr: "hisse senedi", en: "share" },
       { de: "das Wertpapier", tr: "menkul kıymet", en: "security" },
       { de: "das Vermögen", tr: "servet", en: "wealth" },
-      { de: "umgehen", tr: "atlatmak, etrafından dolaşmak", en: "to get around" },
+      { de: "umgehen", tr: "es geçmek", en: "to get around" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },
       { de: "breit", tr: "geniş", en: "wide" },

@@ -41,7 +41,7 @@ export const b2U05: SkillExercise[] = [
       { de: "die Auflösung", tr: "fesih", en: "termination" },
       { de: "befristen", tr: "süreyle sınırlamak", en: "to limit in time" },
       { de: "unwirksam", tr: "hükümsüz", en: "invalid" },
-      { de: "umgehen", tr: "önlemek, etrafından dolaşmak", en: "to get around" },
+      { de: "umgehen", tr: "önlemek", en: "to avoid" },
       { de: "verlängern", tr: "uzatmak", en: "to extend" },
       { de: "per", tr: "yoluyla", en: "by" },
       { de: "rückwirkend", tr: "geriye dönük", en: "retroactive" },

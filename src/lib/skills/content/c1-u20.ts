@@ -45,7 +45,7 @@ export const c1U20: SkillExercise[] = [
       { de: "simulieren", tr: "benzetimini yapmak", en: "to simulate" },
       { de: "empfinden", tr: "hissetmek", en: "to feel" },
       { de: "die Intervention", tr: "müdahale", en: "intervention" },
-      { de: "voraussetzen", tr: "gerektirmek, önkoşul saymak", en: "to presuppose" },
+      { de: "voraussetzen", tr: "gerektirmek", en: "to presuppose" },
       { de: "fortschreiben", tr: "ileriye taşımak", en: "to carry forward" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "die Rechtsordnung", tr: "hukuk düzeni", en: "legal order" },

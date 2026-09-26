@@ -48,7 +48,7 @@ export const c1U22: SkillExercise[] = [
       { de: "verlegen", tr: "mahcup", en: "embarrassed" },
       { de: "die Demut", tr: "alçakgönüllülük", en: "humility" },
       { de: "ebenfalls", tr: "aynı şekilde", en: "likewise" },
-      { de: "anbieten", tr: "önermek, teklif etmek", en: "to offer" },
+      { de: "anbieten", tr: "teklif etmek", en: "to offer" },
       { de: "die Stufe", tr: "basamak", en: "step" },
       { de: "kühl", tr: "soğuk / mesafeli", en: "cool, distant" },
       { de: "sehen", tr: "görmek", en: "to see" },

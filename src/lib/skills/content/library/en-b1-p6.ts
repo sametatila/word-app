@@ -32,7 +32,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "pick", tr: "gidip almak" },
       { de: "enter", tr: "girmek" },
       { de: "stupid", tr: "aptal" },
-      { de: "basic", tr: "basit, temel" },
+      { de: "basic", tr: "basit" },
     ],
     minutes: 6,
     text:

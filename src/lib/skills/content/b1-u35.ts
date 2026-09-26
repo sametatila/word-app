@@ -42,7 +42,7 @@ export const b1U35: SkillExercise[] = [
       { de: "die Badewanne", tr: "küvet", en: "bathtub" },
       { de: "der Halt", tr: "tutamak / destek", en: "support" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
-      { de: "rund", tr: "gece gündüz, 24 saat", en: "around the clock" },
+      { de: "rund um die Uhr", tr: "gece gündüz", en: "around the clock" },
       { de: "der Anfänger", tr: "yeni başlayan", en: "beginner" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

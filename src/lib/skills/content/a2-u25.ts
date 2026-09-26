@@ -43,7 +43,7 @@ export const a2U25: SkillExercise[] = [
       { de: "der Buchhalter", tr: "muhasebeci", en: "accountant" },
       { de: "der Berater", tr: "danışman", en: "adviser" },
       { de: "unerfahren", tr: "deneyimsiz", en: "inexperienced" },
-      { de: "aufhören", tr: "bırakmak, durmak", en: "to stop" },
+      { de: "aufhören", tr: "bırakmak", en: "to stop" },
       { de: "also", tr: "yani", en: "so" },
       { de: "verdienen", tr: "para kazanmak", en: "to earn" },
       { de: "dumm", tr: "aptal", en: "stupid" },

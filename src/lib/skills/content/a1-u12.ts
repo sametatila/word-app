@@ -94,7 +94,7 @@ export const a1U12: SkillExercise[] = [
       { de: "das Pfund", tr: "yarım kilo", en: "pound (500 g)" },
       { de: "mehr", tr: "daha fazla", en: "more" },
       { de: "die Bäckerei", tr: "fırın", en: "bakery" },
-      { de: "günstig", tr: "ucuz, uygun fiyatlı", en: "cheap" },
+      { de: "günstig", tr: "ucuz", en: "cheap" },
     ],
     minutes: 3,
     text:

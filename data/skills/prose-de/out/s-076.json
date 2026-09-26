@@ -54,5 +54,10 @@
  { "tr": "Yasak günlük dilde „can't“ ile anlatılır; „don't have to“ tam tersini söylerdi.", "kind": "explain", "de": "Ein Verbot sagt man im Alltag mit „can't“; „don't have to“ sagte das Gegenteil." },
  { "tr": "yapamazsın", "kind": "gloss.tr", "de": "du darfst nicht" },
  { "tr": "„ir, er, ur, or“ yazılışları çoğu zaman tek bir orta ünlü verir ve Amerikan söyleyişinde r ile kaynaşır: dudaklar gevşek, dilin ucu geri kıvrılır. Türkçedeki ö'ye yakındır ama yuvarlak değildir.", "kind": "intro", "de": "Die Schreibungen „ir, er, ur, or“ ergeben oft einen einzigen mittleren Vokal, der im amerikanischen Englisch mit dem r verschmilzt: Lippen locker, Zungenspitze zurückgebogen. Er liegt nahe am deutschen ö, aber ohne gerundete Lippen." },
- { "tr": "insancıl", "kind": "gloss.tr", "de": "human" }
+ { "tr": "insancıl", "kind": "gloss.tr", "de": "human" },
+ { "tr": "yer almak", "kind": "gloss.tr", "de": "vorkommen" },
+ { "tr": "konteyner", "kind": "gloss.tr", "de": "der Container" },
+ { "tr": "ayrıcalık", "kind": "gloss.tr", "de": "das Privileg" },
+ { "tr": "ağrımak", "kind": "gloss.tr", "de": "wehtun" },
+ { "tr": "bir o kadar kısa", "kind": "gloss.tr", "de": "genauso kurz" }
 ]

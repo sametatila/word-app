@@ -49,7 +49,7 @@ export const c1U04: SkillExercise[] = [
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "aufhören", tr: "bırakmak, durmak", en: "to stop" },
+      { de: "aufhören", tr: "bırakmak", en: "to stop" },
       { de: "einheitlich", tr: "tek tip", en: "uniform" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

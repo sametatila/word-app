@@ -44,7 +44,7 @@ export const b2U10: SkillExercise[] = [
       { de: "objektiv", tr: "nesnel", en: "objective" },
       { de: "tendenziös", tr: "taraflı", en: "biased" },
       { de: "drucken", tr: "yazdırmak", en: "to print" },
-      { de: "die Anzeige", tr: "reklam, ilan", en: "advertisement" },
+      { de: "die Anzeige", tr: "reklam", en: "advertisement" },
       { de: "vorkommen", tr: "olmak", en: "to occur" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

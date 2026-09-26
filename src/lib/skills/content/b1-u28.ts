@@ -40,7 +40,7 @@ export const b1U28: SkillExercise[] = [
       { de: "der Empfang", tr: "kabul / resepsiyon", en: "reception" },
       { de: "der Saal", tr: "salon", en: "hall" },
       { de: "abwaschen", tr: "bulaşık yıkamak", en: "to wash up" },
-      { de: "die Gratulation", tr: "tebrik", en: "congratulations" },
+      { de: "die Glückwunschrede", tr: "tebrik konuşması", en: "congratulatory speech" },
     ],
     text:
       "Am Samstag ist der Empfang im großen Saal. Alles, was wir dafür " +

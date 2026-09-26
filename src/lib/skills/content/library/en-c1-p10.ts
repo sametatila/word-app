@@ -32,7 +32,7 @@ export const enC1P10: SkillExercise[] = [
       { de: "science", tr: "bilim" },
       { de: "rely", tr: "bel bağlamak" },
       { de: "property", tr: "özellik" },
-      { de: "efficient", tr: "verimli, işe yarar" },
+      { de: "efficient", tr: "verimli" },
       { de: "honesty", tr: "dürüstlük" },
       { de: "shorten", tr: "kısaltmak" },
       { de: "inform", tr: "bilgilendirmek" },

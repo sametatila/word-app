@@ -46,7 +46,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "asserts", tr: "ileri sürüyor" },
       { de: "academic", tr: "akademik" },
       { de: "object", tr: "nesne" },
-      { de: "fourth", tr: "dördüncü" },
+      { de: "fronted", tr: "öne alınmış" },
       { de: "construction", tr: "kuruluş" },
       { de: "phrasal", tr: "öbeksi" },
       { de: "underneath", tr: "altta" },

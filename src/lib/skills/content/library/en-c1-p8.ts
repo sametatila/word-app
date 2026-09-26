@@ -26,7 +26,7 @@ export const enC1P8: SkillExercise[] = [
       { de: "restitution", tr: "iade" },
       { de: "curator", tr: "küratör" },
       { de: "wall text", tr: "duvar metni" },
-      { de: "specific", tr: "açık, somut" },
+      { de: "specific", tr: "somut" },
       { de: "institution", tr: "kurum" },
       { de: "uncomfortable", tr: "rahatsız" },
       { de: "object", tr: "nesne" },

@@ -110,7 +110,7 @@ export const b1U25: SkillExercise[] = [
       { de: "hierher", tr: "buraya", en: "to here" },
       { de: "dorthin", tr: "oraya", en: "to there" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
-      { de: "aufhören", tr: "bırakmak, durmak", en: "to stop" },
+      { de: "aufhören", tr: "bırakmak", en: "to stop" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     text:

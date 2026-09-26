@@ -109,7 +109,7 @@ export const a2U13: SkillExercise[] = [
       { de: "der Schlussverkauf", tr: "sezon sonu indirimi", en: "end-of-season sale" },
       { de: "beliebt", tr: "sevilen", en: "popular" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "stark", tr: "sağlam, dayanıklı", en: "strong, sturdy" },
+      { de: "stark", tr: "dayanıklı", en: "sturdy" },
       { de: "niedrig", tr: "düşük", en: "low" },
     ],
     minutes: 4,

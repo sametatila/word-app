@@ -121,7 +121,7 @@ export const b2U08: SkillExercise[] = [
       { de: "reißerisch", tr: "sansasyonel", en: "sensationalist" },
       { de: "tagesaktuell", tr: "günü gününe güncel", en: "up to the minute" },
       { de: "nominal", tr: "nominal", en: "in nominal terms" },
-      { de: "steigen", tr: "artmak, yükselmek", en: "to rise" },
+      { de: "steigen", tr: "artmak", en: "to rise" },
       { de: "passen", tr: "uymak", en: "to fit, to suit" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "spitz", tr: "sivri", en: "pointed" },

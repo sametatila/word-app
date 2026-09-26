@@ -94,7 +94,7 @@ export const enA1U23: SkillExercise[] = [
     genre: "dialogue",
     intro: "Diş hekiminde. Ne zaman ağrıyor, sebebi ne?",
     gloss: [
-      { de: "since", tr: "-den beri" },
+      { de: "hurt", tr: "ağrımak" },
       { de: "sugar", tr: "şeker" },
       { de: "less", tr: "daha az" },
       { de: "know", tr: "bilmek" },

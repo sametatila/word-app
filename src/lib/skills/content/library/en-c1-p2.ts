@@ -29,7 +29,7 @@ export const enC1P2: SkillExercise[] = [
       { de: "attribute", tr: "atfetmek" },
       { de: "rotation", tr: "döndürme" },
       { de: "instrument", tr: "araç" },
-      { de: "appear", tr: "görünmek, yer almak" },
+      { de: "appear", tr: "yer almak" },
       { de: "precise", tr: "kesin" },
       { de: "visible", tr: "görünür" },
       { de: "judge", tr: "değerlendirmek" },

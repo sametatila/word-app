@@ -127,7 +127,7 @@ export const b2U12: SkillExercise[] = [
       { de: "mehrere", tr: "birden fazla", en: "several" },
       { de: "stark", tr: "güçlü", en: "strong" },
       { de: "die Trockenheit", tr: "kuraklık", en: "drought" },
-      { de: "das Gebiet", tr: "alan, bölge", en: "area" },
+      { de: "das Gebiet", tr: "bölge", en: "area" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
       { de: "lesen", tr: "okumak", en: "to read" },

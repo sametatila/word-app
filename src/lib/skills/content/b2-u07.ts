@@ -41,7 +41,7 @@ export const b2U07: SkillExercise[] = [
       { de: "die Lagerung", tr: "depolama", en: "storage" },
       { de: "abfüllen", tr: "şişelemek", en: "to bottle" },
       { de: "die Verpackung", tr: "ambalaj", en: "packaging" },
-      { de: "die Station", tr: "durak, bölüm", en: "stop, station" },
+      { de: "die Station", tr: "durak", en: "stop" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "der Deckel", tr: "kapak", en: "lid" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },

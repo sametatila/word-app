@@ -156,7 +156,7 @@ export const enB1U25: SkillExercise[] = [
       { de: "a label", tr: "etiket" },
       { de: "a notice", tr: "duyuru" },
       { de: "a trap", tr: "tuzak" },
-      { de: "shorter", tr: "daha kısa" },
+      { de: "just as short", tr: "bir o kadar kısa" },
       { de: "properly", tr: "gerektiği gibi" },
     ],
     minutes: 7,

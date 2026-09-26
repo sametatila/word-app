@@ -160,7 +160,7 @@ export const enC1U09: SkillExercise[] = [
     intro: "Bakış açısı bir yer değil bir liste. Neyin listesi?",
     gloss: [
       { de: "cleft", tr: "yarık cümle" },
-      { de: "fourth", tr: "altıncı" },
+      { de: "creeps", tr: "sızıyor" },
       { de: "narrator", tr: "anlatıcı" },
       { de: "event", tr: "olay" },
       { de: "whole", tr: "bütün" },

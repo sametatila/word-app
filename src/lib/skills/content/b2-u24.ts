@@ -47,7 +47,7 @@ export const b2U24: SkillExercise[] = [
       { de: "die Filiale", tr: "şube", en: "branch" },
       { de: "der Blick", tr: "bakış", en: "look" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Summe", tr: "toplam, tutar", en: "sum, total" },
+      { de: "die Summe", tr: "toplam", en: "total" },
       { de: "die Verzögerung", tr: "gecikme", en: "delay" },
       { de: "interessant", tr: "ilginç", en: "interesting" },
       { de: "zurückgehen", tr: "iade edilmek", en: "to be returned" },

@@ -48,7 +48,7 @@ export const b2U19: SkillExercise[] = [
       { de: "automatisch", tr: "otomatik", en: "automatic" },
       { de: "erstatten", tr: "geri ödemek", en: "to reimburse" },
       { de: "mehrere", tr: "birden fazla", en: "several" },
-      { de: "einrichten", tr: "kurmak, oluşturmak", en: "to set up" },
+      { de: "einrichten", tr: "kurmak", en: "to set up" },
       { de: "genügen", tr: "yetmek", en: "to be enough" },
       { de: "doppelt", tr: "iki kat", en: "double" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
