@@ -657,9 +657,13 @@ export function ConversationScreen() {
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
     const msgs = r.roleMsgs ?? [];
+    /* Geri kurulan yapay zekâ yanıtları da bildirilebilir (denetim İ2): ref canlı
+       akıştakiyle aynı "<konuşma>:<tur>", tur = yanıttan önceki kullanıcı mesajı
+       sayısı. Açılış repliği (ilk kullanıcı mesajından önce) hazır metin, Bildir yok. */
+    let userTurns = 0;
     for (const m of msgs) {
-      if (m.role === "user") push({ role: "student", text: m.content });
-      else push({ role: "teacher", segments: [{ lang: "de", text: m.content }] });
+      if (m.role === "user") { userTurns++; push({ role: "student", text: m.content }); }
+      else push({ role: "teacher", segments: [{ lang: "de", text: m.content }], report: userTurns > 0 ? { ref: `${conversation.id}:${userTurns}`, text: m.content } : undefined });
     }
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.resumed") }], tone: "hint" });
     setRoleMsgs(msgs);
