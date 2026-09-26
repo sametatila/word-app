@@ -226,10 +226,14 @@ for (const l of CONVERSATIONS) {
        konuşmasında HİÇ geçemiyordu — içerik kusuru değil, kapının kendisi iki kurs
        varken görünmeyen bir varsayım taşıyordu (`hasModuleExams` ve
        `targetLang` ile aynı sınıf). */
+    /* Cümlenin TAMAMI aranıyor. Eskiden yalnız ilk 12 karakter aranıyordu ve
+       başı aynı, sonu farklı sekiz cümle (İngilizce A2) yeşil geçmişti:
+       öğrenci bir cümle duyup başka bir cümleyi yargılıyordu. */
     const tag = courseOrDefault(l.course).targetLang;
+    const tfNorm = (x: string) => x.toLowerCase().replace(/[„“”"‚‘’'.,!?…:;–—-]/g, " ").replace(/\s+/g, " ").trim();
     ok(
-      s.say.some((seg) => seg.lang === tag && seg.text.includes(e.statement.replace(/[.?!]$/, "").slice(0, 12))),
-      "yargılanan cümle seste geçiyor",
+      tfNorm(s.say.filter((seg) => seg.lang === tag).map((seg) => seg.text).join(" ")).includes(tfNorm(e.statement)),
+      "yargılanan cümle seste geçiyor", `(${e.statement.slice(0, 40)})`,
     );
   }
 
@@ -297,6 +301,20 @@ const trueRatio = answers.length ? answers.filter(Boolean).length / answers.leng
 warn("doğru/yanlış dengesi (hedef %25-60 doğru)",
   answers.length < 8 || (trueRatio >= 0.25 && trueRatio <= 0.6),
   `(doğru oranı ${(trueRatio * 100).toFixed(0)}%)`);
+/* Aynı denge kurs × seviye başına. Katalog ortalaması bir seviyedeki tek kalıbı
+   örtüyordu: İngilizce B2 ve C1'de 200 cevabın 200'ü "doğru"ydu, toplam oran
+   yine de hedef aralıktaydı (2026-09-26). */
+const byLevel = new Map<string, boolean[]>();
+for (const l of CONVERSATIONS) for (const s of l.lecture) {
+  if (s.expect?.kind !== "truefalse") continue;
+  const k = `${courseOrDefault(l.course).id} ${l.level}`;
+  byLevel.set(k, [...(byLevel.get(k) ?? []), (s.expect as { answer: boolean }).answer]);
+}
+for (const [k, a] of byLevel) {
+  const r = a.filter(Boolean).length / a.length;
+  warn(`doğru/yanlış dengesi ${k} (hedef %25-60 doğru)`, a.length < 8 || (r >= 0.25 && r <= 0.6),
+    `(doğru oranı ${(r * 100).toFixed(0)}%)`, `doğru/yanlış dengesi | ${k}`);
+}
 
 // Aynı kelime iki konuşmada "yeni" diye öğretilmemeli (seviye içinde).
 //
