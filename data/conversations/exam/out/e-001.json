@@ -30,7 +30,7 @@
  { "tr": "Form", "kind": "reading.genre", "en": "Form" },
  { "tr": "Menü", "kind": "reading.genre", "en": "Menu" },
  { "tr": "koşul", "kind": "focus", "en": "condition" },
- { "tr": "Yolculuk ve ulaşım", "kind": "plan.title", "en": "Journeys and transport" },
+ { "tr": "Yolculuk ve ulaşım", "kind": "plan.title", "en": "Travel and transportation" },
  { "tr": "Neden?", "kind": "turn", "en": "Why?" },
  { "tr": "Sağlık", "kind": "plan.title", "en": "Health" },
  { "tr": "Bankada", "kind": "listening.title", "en": "At the bank" },
