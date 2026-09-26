@@ -193,7 +193,7 @@ Vocabulary, practice, reading, listening, grammar and quizzes are free and unlim
 
 PREMIUM
 Pocket Walking with the screen off, every mock exam, and every Speaking and Writing step in Path plus all speaking and writing assessments in Skills, with no waiting for streaks or finishing. Mock exams open in packs of 3 at each level: finish the 3 exams in a pack and the next pack opens. Daily upper limit to prevent abuse: 20 walk rounds, 30 AI assessments, 300 conversation messages.
-Premium is a monthly or yearly auto-renewing subscription and works with the same account on phone, tablet and the web. New subscribers get the first month free; cancel before the trial ends and you won't be charged. It renews unless cancelled at least 24 hours before the end of the period; manage or cancel it in the account settings of the store you bought it from.
+Premium is a monthly or yearly auto-renewing subscription and works with the same account on phone, tablet and the web. New subscribers get the first month free; cancel before the trial ends and you won't be charged. It renews unless canceled at least 24 hours before the end of the period; manage or cancel it in the account settings of the store you bought it from.
 
 Pass module and level exams to earn a certificate of achievement you can share, showing what you can do. The mock exams are Lernomi's own; Lernomi is not affiliated with any exam provider, and certificates of achievement are not official certificates.
 
