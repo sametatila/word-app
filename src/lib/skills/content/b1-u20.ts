@@ -236,7 +236,7 @@ export const b1U20: SkillExercise[] = [
     intro: "Bir hasta ziyareti. Kim nasıl, ne getirilmiş?",
     minutes: 4,
     gloss: [
-      { de: "die Station", tr: "servis / kat", en: "ward" },
+      { de: "die Station", tr: "servis / kat", en: "unit" },
       { de: "die Besserung", tr: "iyileşme", en: "recovery" },
       { de: "aufmuntern", tr: "neşelendirmek", en: "to cheer up" },
       { de: "die Kraft", tr: "güç", en: "strength" },

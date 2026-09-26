@@ -21,7 +21,7 @@
  { "conversation": "de-b1-notaufnahme", "de": "der Verdacht", "en": "suspicion" },
  { "conversation": "de-b1-impfung", "de": "auftreten", "en": "to occur" },
  { "conversation": "de-b1-impfung", "de": "die Möglichkeit", "en": "possibility" },
- { "conversation": "de-b1-krankenhaus-besuch", "de": "die Station", "en": "ward" },
+ { "conversation": "de-b1-krankenhaus-besuch", "de": "die Station", "en": "unit" },
  { "conversation": "de-b1-krankenhaus-besuch", "de": "der Kranke", "en": "patient" },
  { "conversation": "de-b1-muelltrennung", "de": "entsorgen", "en": "to dispose of" },
  { "conversation": "de-b1-muelltrennung", "de": "die Tonne", "en": "trash can" },

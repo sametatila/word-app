@@ -210,7 +210,7 @@ export const deC1P16: SkillExercise[] = [
     genre: "email",
     intro: "Bir hastaneye geri bildirim yazıyorsun: önce iki cümle kur, sonra hem teşekkür eden hem de somut bir eleştiri getiren dengeli bir mektup yaz.",
     gloss: [
-      { de: "die Station", tr: "servis", en: "ward" },
+      { de: "die Station", tr: "servis", en: "unit" },
       { de: "die Entlassung", tr: "taburcu", en: "discharge" },
       { de: "überfordert", tr: "bunalmış", en: "overwhelmed" },
       { de: "das Merkblatt", tr: "bilgi broşürü", en: "information leaflet" },
