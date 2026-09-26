@@ -49,6 +49,11 @@ const PAIRS: [string, string][] = [
   ["defence", "defense"], ["offence", "offense"], ["grey", "gray"],
   ["tyre", "tire"], ["tyres", "tires"], ["pyjamas", "pajamas"], ["aeroplane", "airplane"],
   ["catalogue", "catalog"], ["analogue", "analog"], ["storey", "story"], ["speciality", "specialty"],
+  /* Ülke adı yazımı değil ama aynı sorun (2026-09-26): içerik resmî adı
+     "Türkiye" yazıyor, en-US tanıyıcı çoğu kez "Turkey" ya da "Turkiye"
+     yazıyor. Üçü tek biçime iniyor; hindi (turkey) ile karışması zararsız,
+     çünkü katlama iki tarafa da uygulanıyor. */
+  ["türkiye", "turkey"], ["turkiye", "turkey"],
 ];
 
 const RE = new RegExp(`\\b(${PAIRS.map(([uk]) => uk).join("|")})\\b`, "gi");
