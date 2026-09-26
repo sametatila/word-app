@@ -22,7 +22,7 @@ ASC salt okuma dökümünden güncellendi.
 | M2 | en/de Support URL boş | ✅ | `/support/en`, `/support/de` girildi (2026-09-25, API) |
 | M3 | Ekran görüntüsü, ikon, öne çıkan grafik yok | ◐ Samet | Play 512 ikonu yüklendi (3f8b4ea1). ASC'de üç dilde kare seti 0 (2026-09-26 okuması); iPhone 6.9", iPad 13", Play telefon kareleri ve 1024×500 grafik tasarımdan sonra |
 | M4 | Abonelikler MISSING_METADATA, sürüme eklenmemiş | ⏳ Samet | 2026-09-26: iki abonelik hâlâ MISSING_METADATA, inceleme görseli yok. Paywall görüntüsü yüklenip ikisi 1.0.0'a eklenecek |
-| M5 | Sürüme bağlı build 4 (Crashlytics'li) | ⏳ Samet + Claude | 2026-09-26: 1.0.0'a hâlâ build 4 bağlı; TestFlight'ta 8'e kadar VALID. Gönderimden önce son build bağlanır |
+| M5 | Sürüme bağlı build 4 (Crashlytics'li) | ✅ | 2026-09-26: build 9 yüklendi (VALID, şifreleme beyanı false) ve 1.0.0 sürüm kaydına API ile bağlandı; TestFlight dahili testte, "Neyi test etmeli" notu üç dilde. Harici gruba eklenmedi |
 | M6 | Play listesi boş, en/de yok | ✅ | tr-TR, en-US, de-DE başlık + kısa + tam açıklama girildi, geri okundu (2026-09-25, API) |
 | M7 | Play kapalı test: 12 testçi × 14 gün | ⏳ Samet | 17 testçi `Lernomi-Beta`da, kanalda sürüm yok. Taslak uygulamada API yalnız taslak sürüm koyabiliyor; kanal Console'dan incelemeye gönderilerek açılır (M6, M8 önce) |
 | M8 | Play › Uygulama içeriği formları | ⏳ Samet | Uygulama erişimi (`docs/play/console.md` §1), ön plan servisi beyanı + video (§3), Veri güvenliği (`docs/play/data-safety.md`, G1), IARC, hedef kitle, reklam kimliği "Hayır" |
@@ -88,7 +88,7 @@ ASC salt okuma dökümünden güncellendi.
 | T3 | İnceleme boyunca minBuild ve bakım anahtarı | ⏳ Claude (kural) | İnceleme süresince `minBuild.ios` gönderilen build'in altında, bakım kapalı; Integrity Aşama 3'te iOS muafiyeti korunur |
 | T4 | Debug keystore'a bağlı OAuth istemcisi | ⏳ Samet | Google Cloud'da `lernomi-android` (5E:8F…) silinecek (TEC-1) |
 | T5 | Amazon IAP kütüphanesi pakette | ✅ (karar) | Bilerek bırakıldı (2026-09-26): `purchases-hybrid-common` bağımlılığı, çıkarmak R8/çalışma anı riski |
-| T6 | Derleme klasöründe eski AAB | ⏳ Claude | Yüklemeden önce yeniden derle (`npm run release:android`) |
+| T6 | Derleme klasöründe eski AAB | ✅ | 2026-09-26: `release-android.sh` temiz derlemeyle vc 9 AAB üretti ve dahili teste yüklendi (ProGuard eşlemiyle); eski iOS derleme klasörleri (build 1, 7, 8) silindi |
 | T7 | Hukuki sayfalarda lang="tr" | ✅ | 7aecb20f |
 | T8 | Tablet düzeni (IOS-6, Samet 2026-09-26: kolon genişlikleri, sarılan düğme/metin) | ◐ Claude | e6ab84e3: kolon tavanı 840 → 1120, ızgara 960dp'den dört sütun, istatistik ızgaraları dengeli, tek diyalog ölçüsü (440) ve uzun etikette düğmeler alt alta (web de, `check:parity`). Taranan: Android tablet yatay + dikey, iPad 13"/mini dikey ve iPad 13" yatay (XCUITest ile döndürülerek), 33 ekran; yerel sunucuyla. Kalan: oturum içi akışlarda (konuşma, sınav, yürüyüş) göz turu build 9'da |
 | T9 | İngilizce/Almanca arayüzde Türkçe içerik (Patika, görevler, başarımlar, Neler yapabilirim) | ◐ Claude | 74466b44: istemci `Accept-Language` gönderiyor; anadilsiz hesaplar (üretimde 40'ın 31'i) açılışta cihaz dilini hesaba yazıyor; onboarding anadili her zaman devrediyor. Ek 501b037a: dil değişince (girişte hesabın dili benimsenince ya da Ayarlar'dan) bütün ekranlar yeni dilde kuruluyor; önce sekmelerdeki ekranlar eski dilde kalıyordu. Yerelde doğrulandı (Android, iPad tr→en→de); kullanıcıya build 9 ile ulaşır |

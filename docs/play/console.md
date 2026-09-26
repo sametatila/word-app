@@ -26,7 +26,7 @@ Metin iOS notuyla aynı adları kullanır (`mobile/src/i18n/en.ts`): yürüyüş
 sekmesinde (Öğren › Yürüyüş modu), hesap silme Profil › Ayarlar › Hesap › Hesabı sil (Hesap
 grubunun son satırı; Profil'in altındaki bağlantı da aynı ekrana gider). Android'e özgü olan
 7. adım: ön plan servisi bildirimi. 8. adımdaki Bildir kapsamı Play'deki build'e göre yazılır
-(deneme sınavı ve lig satırı düğmesi 2026-09-25 sonrası commit'lerde, vc 8'de yok).
+(deneme sınavı ve lig satırı düğmesi vc 9'dan beri var; vc 9 dahili testte, 2026-09-26).
 
 ```text
 Review accounts: the account above has active Premium, so Pocket Walking (walk mode with the screen off) and AI feedback work without a paywall. It does not expire and needs no one-time code. Premium on the review accounts was granted on our server for review only. To review the subscriptions, sign in with the second account, which has NO Premium: [[IAP_DEMO_EMAIL]] / [[IAP_DEMO_PASSWORD]]. There, Profile › "Go Premium" opens the purchase screen with both subscriptions, prices, free trial terms, auto-renewal text and links to the Terms of Use and Privacy Policy.

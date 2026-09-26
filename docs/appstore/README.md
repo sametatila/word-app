@@ -17,8 +17,8 @@ maddeleri `docs/store/audit.md`'de.
 | | |
 |---|---|
 | Kayıt | App Store Connect `6810593275`, bundle `app.lernomi.ios`, sürüm kaydı 1.0.0 |
-| Sürüm | Depoda 1.0.0 (8): kaynak kökteki `package.json`, basılı hâli `mobile/src/version.ts` ve pbxproj |
-| TestFlight | Build 2–8 geçerli. Sürüm kaydına hâlâ build 4 bağlı; gönderimden önce son build bağlanır (denetim M5) |
+| Sürüm | Tek kaynak kökteki `package.json` (`version` + `versionCode`); `scripts/version.mjs` yedi kayda yazıyor, `npm run version:check` CI'da denetliyor. Numara belgelere kopyalanmaz |
+| TestFlight | 2026-09-26: build 9 dahili testte (Dahili test grubu bütün build'leri alıyor; Harici test grubuna eklenmedi, kapalı test bekliyor). Sürüm kaydı 1.0.0'a build 9 bağlı (denetim M5); yeni build yüklenince bağlanan build de güncellenir |
 | Yayın | **Elle** (`releaseType: MANUAL`, 2026-09-26, Samet; denetim M13): onaydan sonra App Store Connect'te "Release this version" ile açılır. Android 14 günlük kapalı testte olduğundan iki platform birlikte açılabilsin diye |
 | Derleme | CI (`.github/workflows/ios-build.yml`) ve yerel Mac mini (Xcode) |
 | Cihazda koşuldu mu | Kayıtlı bir gerçek iPhone koşusu yok (M10). Mikrofon, arka plan sesi, kilit ekranı, satın alma yalnız cihazda ölçülür; sıra `docs/plan/ios-device-runbook.md` |

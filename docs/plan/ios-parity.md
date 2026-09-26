@@ -50,7 +50,7 @@ Açık kalanlar kod değil, cihaz işi.
 > | # | Durum |
 > |---|---|
 > | UI test | `LernomiUITests.swift` diskte, pbxproj'da yok. CI hedefi koşu anında ekliyor (`M/scripts/ios-add-uitest-target.rb`, `ios-build.yml`) |
-> | Cihaz | Runbook koşusu. Mac mini'de derleniyor, TestFlight'ta build 8 var; kayıtlı cihaz koşusu yok |
+> | Cihaz | Runbook koşusu. Mac mini'de derleniyor, TestFlight dahili testte 1.0.0 (9) var (2026-09-26); kayıtlı cihaz koşusu yok |
 
 ## 2. Kapsam sınırı
 
