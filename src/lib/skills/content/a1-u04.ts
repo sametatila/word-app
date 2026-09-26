@@ -148,11 +148,11 @@ export const a1U04: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Hallo Nora! Hast du heute Zeit?" },
-      { text: "Nein, leider habe ich keine Zeit." },
-      { text: "Kein Problem! Und morgen?" },
-      { text: "Morgen ja! Morgen habe ich viel Zeit." },
-      { text: "Gut. Bis morgen!" },
+      { speaker: "Freund", text: "Hallo Nora! Hast du heute Zeit?" },
+      { speaker: "Nora", text: "Nein, leider habe ich keine Zeit." },
+      { speaker: "Freund", text: "Kein Problem! Und morgen?" },
+      { speaker: "Nora", text: "Morgen ja! Morgen habe ich viel Zeit." },
+      { speaker: "Freund", text: "Gut. Bis morgen!" },
     ],
     questions: [
       {

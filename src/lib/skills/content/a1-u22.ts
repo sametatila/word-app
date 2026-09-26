@@ -164,14 +164,14 @@ export const a1U22: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Ich brauche etwas gegen Husten." },
-      { text: "Haben Sie ein Rezept?" },
-      { text: "Nein, ich war nicht beim Arzt." },
-      { text: "Kein Problem. Dann nehmen Sie den Saft hier. Er kostet 9 Euro." },
-      { text: "Wie oft soll ich ihn nehmen?" },
-      { text: "Dreimal täglich, immer nach dem Essen. Und trinken Sie viel Wasser!" },
-      { text: "Danke schön." },
-      { text: "Gute Besserung!" },
+      { speaker: "Kunde", text: "Guten Tag. Ich brauche etwas gegen Husten." },
+      { speaker: "Apothekerin", text: "Haben Sie ein Rezept?" },
+      { speaker: "Kunde", text: "Nein, ich war nicht beim Arzt." },
+      { speaker: "Apothekerin", text: "Kein Problem. Dann nehmen Sie den Saft hier. Er kostet 9 Euro." },
+      { speaker: "Kunde", text: "Wie oft soll ich ihn nehmen?" },
+      { speaker: "Apothekerin", text: "Dreimal täglich, immer nach dem Essen. Und trinken Sie viel Wasser!" },
+      { speaker: "Kunde", text: "Danke schön." },
+      { speaker: "Apothekerin", text: "Gute Besserung!" },
     ],
     questions: [
       {
@@ -225,13 +225,13 @@ export const a1U22: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Notruf 112, was ist passiert?" },
-      { text: "Hier ist ein Unfall! Ein Auto und ein Fahrrad." },
-      { text: "Wo sind Sie?" },
-      { text: "In der Bahnhofstraße, direkt vor der Apotheke." },
-      { text: "Wie viele Menschen brauchen Hilfe?" },
-      { text: "Eine Frau. Ihr Bein tut sehr weh." },
-      { text: "Gut. Wir kommen sofort. Bitte bleiben Sie am Telefon." },
+      { speaker: "Mitarbeiter", text: "Notruf 112, was ist passiert?" },
+      { speaker: "Anruferin", text: "Hier ist ein Unfall! Ein Auto und ein Fahrrad." },
+      { speaker: "Mitarbeiter", text: "Wo sind Sie?" },
+      { speaker: "Anruferin", text: "In der Bahnhofstraße, direkt vor der Apotheke." },
+      { speaker: "Mitarbeiter", text: "Wie viele Menschen brauchen Hilfe?" },
+      { speaker: "Anruferin", text: "Eine Frau. Ihr Bein tut sehr weh." },
+      { speaker: "Mitarbeiter", text: "Gut. Wir kommen sofort. Bitte bleiben Sie am Telefon." },
     ],
     questions: [
       {

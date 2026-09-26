@@ -137,15 +137,15 @@ export const enB2P8: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Household recycling is usually discussed as a question of behavior. Financially, it is mostly a question of packaging." },
-      { text: "Roughly seventy percent of the cost of kerbside collection is paid by councils, which means by local taxes." },
+      { speaker: "Presenter", text: "Household recycling is usually discussed as a question of behavior. Financially, it is mostly a question of packaging." },
+      { speaker: "Presenter", text: "Roughly seventy percent of the cost of kerbside collection is paid by councils, which means by local taxes." },
       { speaker: "Ms Reinhardt", text: "The people who decide what the packaging looks like pay almost none of it. That is the part worth changing." },
-      { text: "Several countries have introduced a levy on manufacturers, calculated by weight and by how difficult the material is to recycle." },
+      { speaker: "Presenter", text: "Several countries have introduced a levy on manufacturers, calculated by weight and by how difficult the material is to recycle." },
       { speaker: "Ms Reinhardt", text: "The effect was not what campaigners expected. Recycling rates moved a little. Packaging design moved a lot." },
-      { text: "Within three years, black plastic trays, which machines cannot detect, had largely disappeared from the shelves of the countries with a levy." },
-      { text: "Critics point out that manufacturers pass the cost on to shoppers, so households pay anyway, just through prices instead of taxes." },
+      { speaker: "Presenter", text: "Within three years, black plastic trays, which machines cannot detect, had largely disappeared from the shelves of the countries with a levy." },
+      { speaker: "Presenter", text: "Critics point out that manufacturers pass the cost on to shoppers, so households pay anyway, just through prices instead of taxes." },
       { speaker: "Ms Reinhardt", text: "That's true, and I don't think it's an argument against. If the cost sits in the price, the incentive sits with the person who chose the material." },
-      { text: "What nobody has solved is the small producer. A levy that a supermarket absorbs can close a shop with four employees." },
+      { speaker: "Presenter", text: "What nobody has solved is the small producer. A levy that a supermarket absorbs can close a shop with four employees." },
     ],
     questions: [
       {

@@ -155,15 +155,15 @@ export const enC1P7: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "We tracked eleven thousand repair attempts across four countries over eighteen months, and the pattern is not the one the debate assumes." },
-      { text: "Cost is the stated reason in most surveys. In the data, cost decides only about a third of cases." },
+      { speaker: "Dr Ferreira", text: "We tracked eleven thousand repair attempts across four countries over eighteen months, and the pattern is not the one the debate assumes." },
+      { speaker: "Dr Ferreira", text: "Cost is the stated reason in most surveys. In the data, cost decides only about a third of cases." },
       { speaker: "Dr Ferreira", text: "The larger factor is uncertainty. People will pay sixty percent of the replacement price if they are told what is wrong before they commit." },
-      { text: "Where a diagnostic fee is charged separately, abandonment rises sharply, even when the eventual repair is cheap." },
+      { speaker: "Dr Ferreira", text: "Where a diagnostic fee is charged separately, abandonment rises sharply, even when the eventual repair is cheap." },
       { speaker: "Dr Ferreira", text: "That points at a fix nobody is campaigning for: fold the diagnosis into the quote. It costs the workshop almost nothing and moves more devices than any parts policy we modeled." },
-      { text: "The second finding concerns calibration. Repairs that require proprietary software to complete fail at four times the rate of those that do not." },
-      { text: "The part is available, the technician is competent, and the device still leaves the bench unusable because a value cannot be written back." },
+      { speaker: "Dr Ferreira", text: "The second finding concerns calibration. Repairs that require proprietary software to complete fail at four times the rate of those that do not." },
+      { speaker: "Dr Ferreira", text: "The part is available, the technician is competent, and the device still leaves the bench unusable because a value cannot be written back." },
       { speaker: "Dr Ferreira", text: "If I had to choose one intervention, it would be that, not the battery adhesive that everyone photographs." },
-      { text: "The study has an obvious limit: every workshop in it was already an independent repairer, so we know nothing about the devices that never reach a bench at all." },
+      { speaker: "Dr Ferreira", text: "The study has an obvious limit: every workshop in it was already an independent repairer, so we know nothing about the devices that never reach a bench at all." },
     ],
     questions: [
       {

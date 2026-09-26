@@ -150,11 +150,11 @@ export const a1U09: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wann stehst du auf?" },
-      { text: "Ich stehe um halb sieben auf. Und du?" },
-      { text: "Das ist früh! Ich stehe um acht Uhr auf." },
-      { text: "Am Wochenende stehe ich auch später auf." },
-      { text: "Manchmal schlafe ich am Sonntag bis elf." },
+      { speaker: "Freundin", text: "Wann stehst du auf?" },
+      { speaker: "Freund", text: "Ich stehe um halb sieben auf. Und du?" },
+      { speaker: "Freundin", text: "Das ist früh! Ich stehe um acht Uhr auf." },
+      { speaker: "Freund", text: "Am Wochenende stehe ich auch später auf." },
+      { speaker: "Freund", text: "Manchmal schlafe ich am Sonntag bis elf." },
     ],
     questions: [
       {
@@ -208,11 +208,11 @@ export const a1U09: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Hallo! Hast du am Dienstag Zeit?" },
-      { text: "Am Dienstag arbeite ich. Aber am Samstag habe ich Zeit." },
-      { text: "Gut, dann treffen wir uns am Samstag. Kommt deine Schwester mit?" },
-      { text: "Ich glaube ja. Ich rufe sie heute an." },
-      { text: "Gut. Wir kommen um halb drei an." },
+      { speaker: "Freund", text: "Hallo! Hast du am Dienstag Zeit?" },
+      { speaker: "Freundin", text: "Am Dienstag arbeite ich. Aber am Samstag habe ich Zeit." },
+      { speaker: "Freund", text: "Gut, dann treffen wir uns am Samstag. Kommt deine Schwester mit?" },
+      { speaker: "Freundin", text: "Ich glaube ja. Ich rufe sie heute an." },
+      { speaker: "Freund", text: "Gut. Wir kommen um halb drei an." },
     ],
     questions: [
       {

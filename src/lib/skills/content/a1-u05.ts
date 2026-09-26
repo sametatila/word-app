@@ -147,10 +147,10 @@ export const a1U05: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Kennst du Max? Wie sieht er aus?" },
-      { text: "Max ist klein und hat kurze Haare." },
-      { text: "Nein, das stimmt nicht! Max ist groß." },
-      { text: "Ach ja, richtig. Er ist groß und trägt eine Brille." },
+      { speaker: "Freundin", text: "Kennst du Max? Wie sieht er aus?" },
+      { speaker: "Freund", text: "Max ist klein und hat kurze Haare." },
+      { speaker: "Freundin", text: "Nein, das stimmt nicht! Max ist groß." },
+      { speaker: "Freund", text: "Ach ja, richtig. Er ist groß und trägt eine Brille." },
     ],
     questions: [
       {
@@ -204,11 +204,12 @@ export const a1U05: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Herzlichen Glückwunsch! Wir feiern heute zusammen." },
-      { text: "Danke! Was bringst du?" },
-      { text: "Ich bringe einen Kuchen." },
-      { text: "Und meine Schwester bringt Süßigkeiten für die Kinder." },
-      { text: "Sehr nett! Alle gratulieren dir." },
+      { speaker: "Tante", text: "Herzlichen Glückwunsch! Wir feiern heute zusammen." },
+      { speaker: "Onkel", text: "Danke! Was bringst du?" },
+      { speaker: "Tante", text: "Ich bringe einen Kuchen." },
+      { speaker: "Tante", text: "Und meine Schwester bringt Süßigkeiten für die Kinder." },
+      { speaker: "Onkel", text: "Sehr nett!" },
+      { speaker: "Tante", text: "Alle gratulieren dir." },
     ],
     questions: [
       {

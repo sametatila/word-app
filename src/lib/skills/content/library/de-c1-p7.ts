@@ -130,15 +130,15 @@ export const deC1P7: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "Ein Platz sagt selten, was er will. Er zeigt es: durch die Anordnung der Bänke, durch die Breite der Wege, durch das, was fehlt." },
+      { speaker: "Reporterin", text: "Ein Platz sagt selten, was er will. Er zeigt es: durch die Anordnung der Bänke, durch die Breite der Wege, durch das, was fehlt." },
       { speaker: "Frau Prof. Ohler", text: "Das Interessante ist, dass diese Entscheidungen fast nie begründet werden. Sie stehen in Ausschreibungen als technische Angaben." },
-      { text: "Armlehnen in der Mitte einer Bank etwa erscheinen in den Unterlagen als Komfortmerkmal. Ihre Wirkung ist eine andere." },
+      { speaker: "Reporterin", text: "Armlehnen in der Mitte einer Bank etwa erscheinen in den Unterlagen als Komfortmerkmal. Ihre Wirkung ist eine andere." },
       { speaker: "Herr Kienle", text: "Ich habe sechzehn Jahre für eine Stadtverwaltung geplant. Niemand hat je gesagt: Wir wollen Leute vertreiben. Gesagt wurde: pflegeleicht, robust, unauffällig." },
-      { text: "Unauffällig ist hier das entscheidende Wort. Was nicht begründet wird, muss auch nicht verteidigt werden." },
+      { speaker: "Reporterin", text: "Unauffällig ist hier das entscheidende Wort. Was nicht begründet wird, muss auch nicht verteidigt werden." },
       { speaker: "Frau Prof. Ohler", text: "Und es lässt sich schwer rückgängig machen. Eine Bank steht dreißig Jahre. Ein Beschluss dagegen lässt sich in zwei Jahren ändern." },
-      { text: "In Rotterdam hat eine Bürgerinitiative vor fünf Jahren durchgesetzt, dass jede Sitzgelegenheit im Vergabetext eine Zeile zur Zugänglichkeit enthält." },
+      { speaker: "Reporterin", text: "In Rotterdam hat eine Bürgerinitiative vor fünf Jahren durchgesetzt, dass jede Sitzgelegenheit im Vergabetext eine Zeile zur Zugänglichkeit enthält." },
       { speaker: "Herr Kienle", text: "Das klingt nach Bürokratie, hat aber genau das bewirkt, was Diskussionen nicht bewirkt hatten: Die Absicht musste aufgeschrieben werden." },
-      { text: "Seitdem stehen dort wieder durchgehende Bänke — nicht überall, aber an sieben von zwölf umgebauten Plätzen." },
+      { speaker: "Reporterin", text: "Seitdem stehen dort wieder durchgehende Bänke — nicht überall, aber an sieben von zwölf umgebauten Plätzen." },
     ],
     questions: [
       {

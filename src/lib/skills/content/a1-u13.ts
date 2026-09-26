@@ -155,12 +155,12 @@ export const a1U13: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Entschuldigung, wo ist die Post?" },
-      { text: "Gehen Sie geradeaus, dann rechts." },
-      { text: "Und dann?" },
-      { text: "Die Post ist links, zwischen der Bäckerei und dem Kiosk." },
-      { text: "Wie lange dauert das zu Fuß?" },
-      { text: "Fünf Minuten. Oder Sie fahren mit dem Bus, Linie 3." },
+      { speaker: "Tourist", text: "Entschuldigung, wo ist die Post?" },
+      { speaker: "Passantin", text: "Gehen Sie geradeaus, dann rechts." },
+      { speaker: "Tourist", text: "Und dann?" },
+      { speaker: "Passantin", text: "Die Post ist links, zwischen der Bäckerei und dem Kiosk." },
+      { speaker: "Tourist", text: "Wie lange dauert das zu Fuß?" },
+      { speaker: "Passantin", text: "Fünf Minuten. Oder Sie fahren mit dem Bus, Linie 3." },
     ],
     questions: [
       {
@@ -217,12 +217,12 @@ export const a1U13: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Entschuldigung, wo finde ich Zahnpasta?" },
-      { text: "Zahnpasta und Seife sind da rechts." },
-      { text: "Danke. Haben Sie auch Taschentücher?" },
-      { text: "Ja, die sind links, beim Papier." },
-      { text: "Gut. Und was kostet dieses Shampoo?" },
-      { text: "Das kostet 3,50 Euro." },
+      { speaker: "Kunde", text: "Entschuldigung, wo finde ich Zahnpasta?" },
+      { speaker: "Verkäuferin", text: "Zahnpasta und Seife sind da rechts." },
+      { speaker: "Kunde", text: "Danke. Haben Sie auch Taschentücher?" },
+      { speaker: "Verkäuferin", text: "Ja, die sind links, beim Papier." },
+      { speaker: "Kunde", text: "Gut. Und was kostet dieses Shampoo?" },
+      { speaker: "Verkäuferin", text: "Das kostet 3,50 Euro." },
     ],
     questions: [
       {

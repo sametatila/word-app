@@ -164,12 +164,12 @@ export const a1U23: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Yılmaz?" },
-      { text: "Guten Tag, hier ist Tom Berger. Kann ich bitte mit Elif sprechen?" },
-      { text: "Sie ist gerade nicht da. Sie ruft Sie später zurück." },
-      { text: "Danke. Meine Nummer ist 0231 / 77 88 99." },
-      { text: "Gut, ich schreibe es auf. Auf Wiederhören!" },
-      { text: "Auf Wiederhören!" },
+      { speaker: "Frau Yılmaz", text: "Yılmaz?" },
+      { speaker: "Tom", text: "Guten Tag, hier ist Tom Berger. Kann ich bitte mit Elif sprechen?" },
+      { speaker: "Frau Yılmaz", text: "Sie ist gerade nicht da. Sie ruft Sie später zurück." },
+      { speaker: "Tom", text: "Danke. Meine Nummer ist 0231 / 77 88 99." },
+      { speaker: "Frau Yılmaz", text: "Gut, ich schreibe es auf. Auf Wiederhören!" },
+      { speaker: "Tom", text: "Auf Wiederhören!" },
     ],
     questions: [
       {
@@ -229,12 +229,12 @@ export const a1U23: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Was fehlt Ihnen?" },
-      { text: "Ein Zahn tut sehr weh. Seit drei Tagen schon." },
-      { text: "Bitte den Mund öffnen. … Ja, ich sehe es." },
-      { text: "Müssen Sie den Zahn ziehen? Ich habe ein bisschen Angst." },
-      { text: "Keine Sorge, das müssen wir heute nicht machen. Sie bekommen ein Rezept." },
-      { text: "Zum Schluss noch etwas: Putzen Sie die Zähne zweimal täglich!" },
+      { speaker: "Zahnarzt", text: "Guten Tag. Was fehlt Ihnen?" },
+      { speaker: "Patientin", text: "Ein Zahn tut sehr weh. Seit drei Tagen schon." },
+      { speaker: "Zahnarzt", text: "Bitte den Mund öffnen. … Ja, ich sehe es." },
+      { speaker: "Patientin", text: "Müssen Sie den Zahn ziehen? Ich habe ein bisschen Angst." },
+      { speaker: "Zahnarzt", text: "Keine Sorge, das müssen wir heute nicht machen. Sie bekommen ein Rezept." },
+      { speaker: "Zahnarzt", text: "Zum Schluss noch etwas: Putzen Sie die Zähne zweimal täglich!" },
     ],
     questions: [
       {

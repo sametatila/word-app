@@ -147,11 +147,11 @@ export const a1U07: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Entschuldigung, wo finde ich die Milch?" },
-      { text: "Die Milch ist da, beim Käse." },
-      { text: "Danke! Und haben Sie auch Mineralwasser?" },
-      { text: "Ja, eine Flasche kostet 0,80 Euro." },
-      { text: "Gut, ich möchte zwei Flaschen." },
+      { speaker: "Kunde", text: "Entschuldigung, wo finde ich die Milch?" },
+      { speaker: "Verkäuferin", text: "Die Milch ist da, beim Käse." },
+      { speaker: "Kunde", text: "Danke! Und haben Sie auch Mineralwasser?" },
+      { speaker: "Verkäuferin", text: "Ja, eine Flasche kostet 0,80 Euro." },
+      { speaker: "Kunde", text: "Gut, ich möchte zwei Flaschen." },
     ],
     questions: [
       {
@@ -205,11 +205,11 @@ export const a1U07: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Was kochen wir heute?" },
-      { text: "Reis mit Gemüse. Ich schneide die Zwiebeln." },
-      { text: "Gut, dann schneide ich die Tomaten." },
-      { text: "Das Öl ist schon auf dem Herd." },
-      { text: "Das riecht sehr gut! Wir brauchen noch Salz." },
+      { speaker: "Freundin", text: "Was kochen wir heute?" },
+      { speaker: "Freund", text: "Reis mit Gemüse. Ich schneide die Zwiebeln." },
+      { speaker: "Freundin", text: "Gut, dann schneide ich die Tomaten." },
+      { speaker: "Freund", text: "Das Öl ist schon auf dem Herd." },
+      { speaker: "Freundin", text: "Das riecht sehr gut! Wir brauchen noch Salz." },
     ],
     questions: [
       {

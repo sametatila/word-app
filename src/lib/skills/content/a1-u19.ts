@@ -155,12 +155,12 @@ export const a1U19: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Gehen wir heute ins Kino?" },
-      { text: "Gute Idee! Welcher Film?" },
-      { text: "Eine Geschichte aus Berlin. Alle lachen viel." },
-      { text: "Wann fängt der Film an?" },
-      { text: "Um 20 Uhr. Ich hole dich um halb acht ab." },
-      { text: "Super. Und Popcorn kaufe ich!" },
+      { speaker: "Freund", text: "Gehen wir heute ins Kino?" },
+      { speaker: "Freundin", text: "Gute Idee! Welcher Film?" },
+      { speaker: "Freund", text: "Eine Geschichte aus Berlin. Alle lachen viel." },
+      { speaker: "Freundin", text: "Wann fängt der Film an?" },
+      { speaker: "Freund", text: "Um 20 Uhr. Ich hole dich um halb acht ab." },
+      { speaker: "Freundin", text: "Super. Und Popcorn kaufe ich!" },
     ],
     questions: [
       {
@@ -214,11 +214,11 @@ export const a1U19: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Morgen! Schönes Wetter heute." },
-      { text: "Ja, wunderbar! Die Sonne scheint." },
-      { text: "Und morgen? Hoffentlich regnet es nicht." },
-      { text: "Hoffentlich bleibt es so. Am Samstag will ich draußen sein." },
-      { text: "Ich auch. Einen schönen Tag noch!" },
+      { speaker: "Nachbarin", text: "Guten Morgen! Schönes Wetter heute." },
+      { speaker: "Nachbar", text: "Ja, wunderbar! Die Sonne scheint." },
+      { speaker: "Nachbarin", text: "Und morgen? Hoffentlich regnet es nicht." },
+      { speaker: "Nachbar", text: "Hoffentlich bleibt es so. Am Samstag will ich draußen sein." },
+      { speaker: "Nachbarin", text: "Ich auch. Einen schönen Tag noch!" },
     ],
     questions: [
       {

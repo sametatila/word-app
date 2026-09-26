@@ -179,13 +179,13 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Praxis Weber, guten Tag." },
-      { text: "Guten Tag, hier ist Ali Demir. Ich möchte meinen Termin verschieben." },
-      { text: "Gern. Welches Datum haben Sie denn?" },
-      { text: "Mittwoch um 10 Uhr. Leider muss ich da arbeiten." },
-      { text: "Kein Problem. Geht es nächste Woche am Freitag um 16 Uhr?" },
-      { text: "Ja, das passt gut. Vielen Dank!" },
-      { text: "Ich schreibe es in den Kalender. Auf Wiederhören!" },
+      { speaker: "Arzthelferin", text: "Praxis Weber, guten Tag." },
+      { speaker: "Ali", text: "Guten Tag, hier ist Ali Demir. Ich möchte meinen Termin verschieben." },
+      { speaker: "Arzthelferin", text: "Gern. Welches Datum haben Sie denn?" },
+      { speaker: "Ali", text: "Mittwoch um 10 Uhr. Leider muss ich da arbeiten." },
+      { speaker: "Arzthelferin", text: "Kein Problem. Geht es nächste Woche am Freitag um 16 Uhr?" },
+      { speaker: "Ali", text: "Ja, das passt gut. Vielen Dank!" },
+      { speaker: "Arzthelferin", text: "Ich schreibe es in den Kalender. Auf Wiederhören!" },
     ],
     questions: [
       {
@@ -240,12 +240,12 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wohin bist du am Wochenende gegangen?" },
-      { text: "Ich bin mit Tom ins Kino gegangen. Wir haben einen Film gesehen." },
-      { text: "Und am Sonntag?" },
-      { text: "Am Sonntag bin ich zu Hause geblieben. Ich habe Musik gehört. Und du?" },
-      { text: "Ich bin nach Hamburg gefahren. Mit dem Zug — ich fliege nicht gern." },
-      { text: "Schön! Erzähl mir mehr." },
+      { speaker: "Freundin", text: "Wohin bist du am Wochenende gegangen?" },
+      { speaker: "Freund", text: "Ich bin mit Tom ins Kino gegangen. Wir haben einen Film gesehen." },
+      { speaker: "Freundin", text: "Und am Sonntag?" },
+      { speaker: "Freund", text: "Am Sonntag bin ich zu Hause geblieben. Ich habe Musik gehört. Und du?" },
+      { speaker: "Freundin", text: "Ich bin nach Hamburg gefahren. Mit dem Zug — ich fliege nicht gern." },
+      { speaker: "Freund", text: "Schön! Erzähl mir mehr." },
     ],
     questions: [
       {

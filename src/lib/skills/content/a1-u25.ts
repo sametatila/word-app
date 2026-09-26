@@ -179,13 +179,13 @@ export const a1U25: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wie war dein Tag gestern?" },
-      { text: "Gut! Ich bin um sieben aufgestanden und habe Tee getrunken." },
-      { text: "So früh?" },
-      { text: "Ja, ich hatte Unterricht. Danach habe ich meine Hausaufgaben gemacht." },
-      { text: "Und am Abend?" },
-      { text: "Am Abend habe ich mit Elif gegessen. Es war sehr gemütlich." },
-      { text: "Schön. Vorgestern war mein Tag nicht so gut — ich war krank." },
+      { speaker: "Freund", text: "Wie war dein Tag gestern?" },
+      { speaker: "Freundin", text: "Gut! Ich bin um sieben aufgestanden und habe Tee getrunken." },
+      { speaker: "Freund", text: "So früh?" },
+      { speaker: "Freundin", text: "Ja, ich hatte Unterricht. Danach habe ich meine Hausaufgaben gemacht." },
+      { speaker: "Freund", text: "Und am Abend?" },
+      { speaker: "Freundin", text: "Am Abend habe ich mit Elif gegessen. Es war sehr gemütlich." },
+      { speaker: "Freund", text: "Schön. Vorgestern war mein Tag nicht so gut — ich war krank." },
     ],
     questions: [
       {
@@ -244,13 +244,13 @@ export const a1U25: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wie war dein Wochenende?" },
-      { text: "Toll! Ich bin nach Hamburg gefahren und habe meinen Bruder besucht." },
-      { text: "Wo hast du übernachtet?" },
-      { text: "Bei ihm. Ein Hotel war zu teuer." },
-      { text: "Und was habt ihr gemacht?" },
-      { text: "Am Samstag sind wir ans Meer gefahren. Das Wetter war wunderbar." },
-      { text: "Eine schöne Reise!" },
+      { speaker: "Freund", text: "Wie war dein Wochenende?" },
+      { speaker: "Freundin", text: "Toll! Ich bin nach Hamburg gefahren und habe meinen Bruder besucht." },
+      { speaker: "Freund", text: "Wo hast du übernachtet?" },
+      { speaker: "Freundin", text: "Bei ihm. Ein Hotel war zu teuer." },
+      { speaker: "Freund", text: "Und was habt ihr gemacht?" },
+      { speaker: "Freundin", text: "Am Samstag sind wir ans Meer gefahren. Das Wetter war wunderbar." },
+      { speaker: "Freund", text: "Eine schöne Reise!" },
     ],
     questions: [
       {

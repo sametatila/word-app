@@ -121,13 +121,13 @@ export const deB1P10: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { text: "Seit heute Morgen um sechs ist die Kantstraße für Autos gesperrt, und zwar für vierundzwanzig Stunden." },
-      { text: "Ich stehe auf einer Kreuzung, auf der sonst alle zwei Minuten ein Lastwagen abbiegt. Jetzt sitzen hier Leute auf Klappstühlen." },
+      { speaker: "Reporterin", text: "Seit heute Morgen um sechs ist die Kantstraße für Autos gesperrt, und zwar für vierundzwanzig Stunden." },
+      { speaker: "Reporterin", text: "Ich stehe auf einer Kreuzung, auf der sonst alle zwei Minuten ein Lastwagen abbiegt. Jetzt sitzen hier Leute auf Klappstühlen." },
       { speaker: "Frau Prinz", text: "Ich wohne seit dreißig Jahren hier und höre heute zum ersten Mal die Vögel in diesem Hof." },
-      { text: "Nicht alle sind zufrieden. Ein Bäcker hat mir erzählt, dass seine Lieferung zwei Stunden zu spät kam." },
+      { speaker: "Reporterin", text: "Nicht alle sind zufrieden. Ein Bäcker hat mir erzählt, dass seine Lieferung zwei Stunden zu spät kam." },
       { speaker: "Herr Lorenz", text: "Ich war skeptisch, ehrlich gesagt. Aber wenn die Lieferzeiten vorher besser geklärt werden, kann man das öfter machen." },
-      { text: "Die Stadt hat gezählt: Auf dem Markt am Ende der Straße waren heute doppelt so viele Besucher wie an einem normalen Samstag." },
-      { text: "Ob der Tag wiederholt wird, entscheidet der Stadtrat im November. Die Anwohner werden vorher befragt." },
+      { speaker: "Reporterin", text: "Die Stadt hat gezählt: Auf dem Markt am Ende der Straße waren heute doppelt so viele Besucher wie an einem normalen Samstag." },
+      { speaker: "Reporterin", text: "Ob der Tag wiederholt wird, entscheidet der Stadtrat im November. Die Anwohner werden vorher befragt." },
     ],
     questions: [
       {

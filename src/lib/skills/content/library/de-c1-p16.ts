@@ -131,17 +131,17 @@ export const deC1P16: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "Wer vor einer geplanten Operation steht, hat bei bestimmten Eingriffen einen gesetzlichen Anspruch auf eine zweite ärztliche Meinung. Viele erfahren davon erst, wenn der Termin schon feststeht." },
+      { speaker: "Moderator", text: "Wer vor einer geplanten Operation steht, hat bei bestimmten Eingriffen einen gesetzlichen Anspruch auf eine zweite ärztliche Meinung. Viele erfahren davon erst, wenn der Termin schon feststeht." },
       { speaker: "Frau Dr. Hensel", text: "Das Recht gilt vor allem für Eingriffe, von denen man weiß, dass sie häufiger gemacht werden, als es medizinisch nötig wäre, etwa an Knie, Schulter oder Wirbelsäule." },
-      { text: "Die behandelnde Praxis muss auf dieses Recht hinweisen, und zwar mindestens zehn Tage vor dem Eingriff, sofern es sich nicht um einen Notfall handelt." },
+      { speaker: "Moderator", text: "Die behandelnde Praxis muss auf dieses Recht hinweisen, und zwar mindestens zehn Tage vor dem Eingriff, sofern es sich nicht um einen Notfall handelt." },
       { speaker: "Frau Dr. Hensel", text: "Die Kosten übernimmt die Krankenkasse. Man braucht keine Überweisung, sollte aber alle Befunde mitbringen, sonst werden Untersuchungen doppelt gemacht." },
-      { text: "Wichtig ist die Wahl der zweiten Praxis. Sie darf nicht zur selben Einrichtung gehören wie die erste und soll den Eingriff später auch nicht selbst durchführen." },
+      { speaker: "Moderator", text: "Wichtig ist die Wahl der zweiten Praxis. Sie darf nicht zur selben Einrichtung gehören wie die erste und soll den Eingriff später auch nicht selbst durchführen." },
       { speaker: "Frau Dr. Hensel", text: "Das klingt streng, hat aber einen einfachen Grund. Wer an der Operation verdient, ist kein unabhängiger Gutachter, so ehrlich er auch sein mag." },
-      { text: "Häufig gestellt wird bei uns am Telefon die Frage, was geschieht, wenn die zweite Meinung der ersten widerspricht." },
+      { speaker: "Moderator", text: "Häufig gestellt wird bei uns am Telefon die Frage, was geschieht, wenn die zweite Meinung der ersten widerspricht." },
       { speaker: "Frau Dr. Hensel", text: "Dann entscheiden Sie. Viele wünschen sich an dieser Stelle eine dritte Meinung. Die ist möglich, wird aber nicht mehr automatisch bezahlt." },
       { speaker: "Frau Dr. Hensel", text: "Mein Rat: Fragen Sie beide nicht nur, was sie empfehlen, sondern auch, was passiert, wenn man zunächst gar nichts tut. Diese Frage wird erstaunlich selten gestellt." },
       { speaker: "Frau Dr. Hensel", text: "Und lassen Sie sich nicht drängen, auch nicht von der eigenen Ungeduld. Ein geplanter Eingriff, der zwei Wochen später stattfindet, ist in aller Regel nicht schlechter." },
-      { text: "Informationen und eine Liste zugelassener Praxen gibt es bei der Krankenkasse sowie bei der unabhängigen Patientenberatung, auch telefonisch." },
+      { speaker: "Moderator", text: "Informationen und eine Liste zugelassener Praxen gibt es bei der Krankenkasse sowie bei der unabhängigen Patientenberatung, auch telefonisch." },
     ],
     questions: [
       {

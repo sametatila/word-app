@@ -160,12 +160,12 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Praxis Dr. Weber, guten Tag." },
-      { text: "Guten Tag, hier ist Elif Yılmaz. Ich brauche einen Termin." },
-      { text: "Gern. Was fehlt Ihnen denn?" },
-      { text: "Mein Bauch tut seit zwei Tagen weh. Es ist sehr dringend." },
-      { text: "Dann kommen Sie heute um 16 Uhr. Geht das?" },
-      { text: "Ja, das ist möglich. Vielen Dank!" },
+      { speaker: "Arzthelferin", text: "Praxis Dr. Weber, guten Tag." },
+      { speaker: "Elif", text: "Guten Tag, hier ist Elif Yılmaz. Ich brauche einen Termin." },
+      { speaker: "Arzthelferin", text: "Gern. Was fehlt Ihnen denn?" },
+      { speaker: "Elif", text: "Mein Bauch tut seit zwei Tagen weh. Es ist sehr dringend." },
+      { speaker: "Arzthelferin", text: "Dann kommen Sie heute um 16 Uhr. Geht das?" },
+      { speaker: "Elif", text: "Ja, das ist möglich. Vielen Dank!" },
     ],
     questions: [
       {
@@ -220,12 +220,12 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wie geht es dir? Bist du krank?" },
-      { text: "Mir tut der Rücken weh. Und ich habe Fieber." },
-      { text: "Fieber? Dann musst du sofort zum Arzt!" },
-      { text: "Ach, das geht schon wieder weg." },
-      { text: "Nein. Du sollst ins Bett und viel trinken. Ich kaufe dir Tee." },
-      { text: "Danke. Vielleicht rufe ich morgen die Praxis an." },
+      { speaker: "Freundin", text: "Wie geht es dir? Bist du krank?" },
+      { speaker: "Freund", text: "Mir tut der Rücken weh. Und ich habe Fieber." },
+      { speaker: "Freundin", text: "Fieber? Dann musst du sofort zum Arzt!" },
+      { speaker: "Freund", text: "Ach, das geht schon wieder weg." },
+      { speaker: "Freundin", text: "Nein. Du sollst ins Bett und viel trinken. Ich kaufe dir Tee." },
+      { speaker: "Freund", text: "Danke. Vielleicht rufe ich morgen die Praxis an." },
     ],
     questions: [
       {

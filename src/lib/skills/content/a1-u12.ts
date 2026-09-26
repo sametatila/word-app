@@ -156,12 +156,12 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag, ich möchte diese Hose umtauschen." },
-      { text: "Gern. Was ist das Problem?" },
-      { text: "Sie ist zu eng. Haben Sie die Hose auch in Größe 42?" },
-      { text: "Haben Sie den Kassenbon?" },
-      { text: "Ja, hier bitte." },
-      { text: "Gut. Größe 42 haben wir noch in Schwarz." },
+      { speaker: "Kundin", text: "Guten Tag, ich möchte diese Hose umtauschen." },
+      { speaker: "Verkäufer", text: "Gern. Was ist das Problem?" },
+      { speaker: "Kundin", text: "Sie ist zu eng. Haben Sie die Hose auch in Größe 42?" },
+      { speaker: "Verkäufer", text: "Haben Sie den Kassenbon?" },
+      { speaker: "Kundin", text: "Ja, hier bitte." },
+      { speaker: "Verkäufer", text: "Gut. Größe 42 haben wir noch in Schwarz." },
     ],
     questions: [
       {
@@ -215,11 +215,11 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Schau, ich zeige dir zwei Sachen. Wie findest du den Rucksack?" },
-      { text: "Der gefällt mir gut. Er ist praktisch." },
-      { text: "Und der Koffer? Der ist schön, aber teuer." },
-      { text: "Mir gefällt der Rucksack besser. Der Koffer gefällt mir gar nicht." },
-      { text: "Gut, dann kaufe ich den Rucksack." },
+      { speaker: "Freundin", text: "Schau, ich zeige dir zwei Sachen. Wie findest du den Rucksack?" },
+      { speaker: "Freund", text: "Der gefällt mir gut. Er ist praktisch." },
+      { speaker: "Freundin", text: "Und der Koffer? Der ist schön, aber teuer." },
+      { speaker: "Freund", text: "Mir gefällt der Rucksack besser. Der Koffer gefällt mir gar nicht." },
+      { speaker: "Freundin", text: "Gut, dann kaufe ich den Rucksack." },
     ],
     questions: [
       {

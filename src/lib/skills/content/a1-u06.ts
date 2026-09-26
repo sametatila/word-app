@@ -146,11 +146,12 @@ export const a1U06: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag! Was möchten Sie bestellen?" },
-      { text: "Ich möchte einen Kaffee und ein Brötchen, bitte." },
-      { text: "Gern. Möchten Sie auch Butter und Marmelade?" },
-      { text: "Ja, bitte. Und ein Glas Wasser." },
-      { text: "Die Rechnung, bitte! — Das macht 7,00 Euro." },
+      { speaker: "Kellnerin", text: "Guten Tag! Was möchten Sie bestellen?" },
+      { speaker: "Kunde", text: "Ich möchte einen Kaffee und ein Brötchen, bitte." },
+      { speaker: "Kellnerin", text: "Gern. Möchten Sie auch Butter und Marmelade?" },
+      { speaker: "Kunde", text: "Ja, bitte. Und ein Glas Wasser." },
+      { speaker: "Kunde", text: "Die Rechnung, bitte!" },
+      { speaker: "Kellnerin", text: "Das macht 7,00 Euro." },
     ],
     questions: [
       {
@@ -203,11 +204,11 @@ export const a1U06: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Einmal Wurst mit Pommes, bitte." },
-      { text: "Möchten Sie auch ein Getränk?" },
-      { text: "Ja, ein Wasser bitte. Was kostet das zusammen?" },
-      { text: "Das kostet 6,50 Euro." },
-      { text: "Zum Mitnehmen, bitte." },
+      { speaker: "Kunde", text: "Einmal Wurst mit Pommes, bitte." },
+      { speaker: "Verkäuferin", text: "Möchten Sie auch ein Getränk?" },
+      { speaker: "Kunde", text: "Ja, ein Wasser bitte. Was kostet das zusammen?" },
+      { speaker: "Verkäuferin", text: "Das kostet 6,50 Euro." },
+      { speaker: "Kunde", text: "Zum Mitnehmen, bitte." },
     ],
     questions: [
       {

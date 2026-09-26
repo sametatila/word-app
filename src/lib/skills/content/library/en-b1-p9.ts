@@ -126,13 +126,13 @@ export const enB1P9: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { text: "Three schools in the county have been weighing what comes back from the tables, and the numbers are higher than anyone expected." },
-      { text: "On an average day, just under a third of the hot food served is thrown away. Vegetables make up most of it." },
+      { speaker: "Presenter", text: "Three schools in the county have been weighing what comes back from the tables, and the numbers are higher than anyone expected." },
+      { speaker: "Presenter", text: "On an average day, just under a third of the hot food served is thrown away. Vegetables make up most of it." },
       { speaker: "Ms Aldridge", text: "Our first idea was that children don't like vegetables. The weighing showed something else. They eat them on Mondays and leave them on Fridays." },
-      { text: "The difference is the schedule. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
+      { speaker: "Presenter", text: "The difference is the schedule. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
       { speaker: "Ms Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
-      { text: "Two of the schools have now made Friday lunch the same length as the other days. Waste there has come down by about a fifth." },
-      { text: "The third school could not change the schedule and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
+      { speaker: "Presenter", text: "Two of the schools have now made Friday lunch the same length as the other days. Waste there has come down by about a fifth." },
+      { speaker: "Presenter", text: "The third school could not change the schedule and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
       { speaker: "Ms Aldridge", text: "What I'd say to other schools is this: weigh it first. We spent two years talking about taste when the problem was the clock." },
     ],
     questions: [

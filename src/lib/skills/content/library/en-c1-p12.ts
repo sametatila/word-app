@@ -153,15 +153,15 @@ export const enC1P12: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "Most charities assume that volunteers leave because they run out of time. In our befriending scheme, that turned out to be true for only a minority." },
+      { speaker: "Ms Achterberg", text: "Most charities assume that volunteers leave because they run out of time. In our befriending scheme, that turned out to be true for only a minority." },
       { speaker: "Ms Achterberg", text: "We interviewed everyone who left over two years, eighty-one people. Not all of them would talk to us, but most did, and the answers were surprisingly consistent." },
-      { text: "The largest group had not lost interest in the older person they visited. They had lost confidence that the visits were doing any good." },
+      { speaker: "Ms Achterberg", text: "The largest group had not lost interest in the older person they visited. They had lost confidence that the visits were doing any good." },
       { speaker: "Ms Achterberg", text: "Nobody tells you whether an hour of conversation helped. The person you visit is often too polite to say, and we, frankly, weren't asking." },
-      { text: "The second finding concerned timing. Almost nobody left in the first month. The drop came in the third, once the novelty had gone and before any real friendship had formed." },
+      { speaker: "Ms Achterberg", text: "The second finding concerned timing. Almost nobody left in the first month. The drop came in the third, once the novelty had gone and before any real friendship had formed." },
       { speaker: "Ms Achterberg", text: "So we changed two things. Every volunteer now gets a short call from us at week ten. It is not an inspection, just a question about how it is going." },
-      { text: "And every placement now has an agreed end date of six months, which either side can extend if they wish." },
+      { speaker: "Ms Achterberg", text: "And every placement now has an agreed end date of six months, which either side can extend if they wish." },
       { speaker: "Ms Achterberg", text: "People worried that an end date would sound cold. In practice it made it easier to stay, because leaving no longer felt like abandoning someone." },
-      { text: "Since the change, the share of volunteers still active after a year has risen from under half to nearly two-thirds." },
+      { speaker: "Ms Achterberg", text: "Since the change, the share of volunteers still active after a year has risen from under half to nearly two-thirds." },
     ],
     questions: [
       {

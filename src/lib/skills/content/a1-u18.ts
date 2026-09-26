@@ -152,12 +152,12 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag, hier ist Kaya aus Wohnung 5. Die Lampe im Flur ist kaputt." },
-      { text: "Seit wann funktioniert sie nicht?" },
-      { text: "Seit Montag. Am Abend sieht man nichts." },
-      { text: "Ich komme am Mittwoch. Können Sie um 10 Uhr?" },
-      { text: "Ja, das passt. Was kostet die Reparatur?" },
-      { text: "Nichts. Das macht der Vermieter." },
+      { speaker: "Frau Kaya", text: "Guten Tag, hier ist Kaya aus Wohnung 5. Die Lampe im Flur ist kaputt." },
+      { speaker: "Hausmeister", text: "Seit wann funktioniert sie nicht?" },
+      { speaker: "Frau Kaya", text: "Seit Montag. Am Abend sieht man nichts." },
+      { speaker: "Hausmeister", text: "Ich komme am Mittwoch. Können Sie um 10 Uhr?" },
+      { speaker: "Frau Kaya", text: "Ja, das passt. Was kostet die Reparatur?" },
+      { speaker: "Hausmeister", text: "Nichts. Das macht der Vermieter." },
     ],
     questions: [
       {
@@ -210,11 +210,11 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Schön hier auf dem Balkon!" },
-      { text: "Ja, ich sitze hier gern. Der Stuhl steht immer da." },
-      { text: "Und die Blumen? Wer gießt sie?" },
-      { text: "Ich gieße sie jeden Abend. Hier ist viel Wind." },
-      { text: "Meine Blumen stehen leider immer im Zimmer." },
+      { speaker: "Nachbar", text: "Schön hier auf dem Balkon!" },
+      { speaker: "Nachbarin", text: "Ja, ich sitze hier gern. Der Stuhl steht immer da." },
+      { speaker: "Nachbar", text: "Und die Blumen? Wer gießt sie?" },
+      { speaker: "Nachbarin", text: "Ich gieße sie jeden Abend. Hier ist viel Wind." },
+      { speaker: "Nachbar", text: "Meine Blumen stehen leider immer im Zimmer." },
     ],
     questions: [
       {

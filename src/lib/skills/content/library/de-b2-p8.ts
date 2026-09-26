@@ -124,14 +124,14 @@ export const deB2P8: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Die Zahl der ehrenamtlich Engagierten ist in den letzten zehn Jahren um elf Prozent zurückgegangen." },
-      { text: "Auffällig ist dabei weniger der Rückgang selbst als seine Verteilung: Bei den über Sechzigjährigen ist das Engagement sogar gestiegen." },
-      { text: "Zurückgegangen ist es vor allem bei den Dreißig- bis Fünfundvierzigjährigen, also in der Lebensphase mit Kindern und Karriere." },
-      { text: "Die Forscherin Dr. Halm sieht den Grund nicht in einer fehlenden Bereitschaft, sondern in der Form der Anfrage." },
-      { speaker: "Dr. Halm", text: "Wer gefragt wird, ob er den Vorsitz für drei Jahre übernimmt, sagt Nein. Wer gefragt wird, ob er im Mai zwei Nachmittage organisiert, sagt oft Ja." },
-      { text: "Vereine, die ihre Arbeit in befristete Aufgaben zerlegt haben, verzeichnen dem Bericht zufolge deutlich mehr Zusagen." },
-      { text: "Ein zweiter Punkt ist die Anerkennung. Viele jüngere Engagierte wünschen sich, dass ihr Einsatz nachgewiesen wird, etwa für Bewerbungen." },
-      { text: "Kritisch bleibt die Lage bei den Aufgaben, die sich schlecht befristen lassen: Kassenführung, Ausbildung von Nachwuchs, rechtliche Verantwortung." },
+      { speaker: "Reporter", text: "Die Zahl der ehrenamtlich Engagierten ist in den letzten zehn Jahren um elf Prozent zurückgegangen." },
+      { speaker: "Reporter", text: "Auffällig ist dabei weniger der Rückgang selbst als seine Verteilung: Bei den über Sechzigjährigen ist das Engagement sogar gestiegen." },
+      { speaker: "Reporter", text: "Zurückgegangen ist es vor allem bei den Dreißig- bis Fünfundvierzigjährigen, also in der Lebensphase mit Kindern und Karriere." },
+      { speaker: "Reporter", text: "Die Forscherin Dr. Halm sieht den Grund nicht in einer fehlenden Bereitschaft, sondern in der Form der Anfrage." },
+      { speaker: "Frau Dr. Halm", text: "Wer gefragt wird, ob er den Vorsitz für drei Jahre übernimmt, sagt Nein. Wer gefragt wird, ob er im Mai zwei Nachmittage organisiert, sagt oft Ja." },
+      { speaker: "Reporter", text: "Vereine, die ihre Arbeit in befristete Aufgaben zerlegt haben, verzeichnen dem Bericht zufolge deutlich mehr Zusagen." },
+      { speaker: "Reporter", text: "Ein zweiter Punkt ist die Anerkennung. Viele jüngere Engagierte wünschen sich, dass ihr Einsatz nachgewiesen wird, etwa für Bewerbungen." },
+      { speaker: "Reporter", text: "Kritisch bleibt die Lage bei den Aufgaben, die sich schlecht befristen lassen: Kassenführung, Ausbildung von Nachwuchs, rechtliche Verantwortung." },
     ],
     questions: [
       {

@@ -152,12 +152,12 @@ export const a1U15: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Entschuldigung, ich habe mich verlaufen. Wo ist die Altstadt?" },
-      { text: "Kein Problem. Gehen Sie geradeaus bis zur Ampel." },
-      { text: "Und dann?" },
-      { text: "An der Ampel biegen Sie rechts ab. Nach der Kreuzung ist die Altstadt." },
-      { text: "Ist das weit?" },
-      { text: "Nein, zehn Minuten zu Fuß." },
+      { speaker: "Touristin", text: "Entschuldigung, ich habe mich verlaufen. Wo ist die Altstadt?" },
+      { speaker: "Passant", text: "Kein Problem. Gehen Sie geradeaus bis zur Ampel." },
+      { speaker: "Touristin", text: "Und dann?" },
+      { speaker: "Passant", text: "An der Ampel biegen Sie rechts ab. Nach der Kreuzung ist die Altstadt." },
+      { speaker: "Touristin", text: "Ist das weit?" },
+      { speaker: "Passant", text: "Nein, zehn Minuten zu Fuß." },
     ],
     questions: [
       {
@@ -211,12 +211,12 @@ export const a1U15: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Ich möchte ein Fahrrad leihen." },
-      { text: "Gern. Für einen Tag oder eine Woche?" },
-      { text: "Für einen Tag, bitte. Was kostet das?" },
-      { text: "10 Euro. Möchten Sie auch einen Helm?" },
-      { text: "Ja, bitte." },
-      { text: "Gut. Passen Sie auf: Fahren Sie bitte auf dem Radweg." },
+      { speaker: "Kunde", text: "Guten Tag. Ich möchte ein Fahrrad leihen." },
+      { speaker: "Mitarbeiterin", text: "Gern. Für einen Tag oder eine Woche?" },
+      { speaker: "Kunde", text: "Für einen Tag, bitte. Was kostet das?" },
+      { speaker: "Mitarbeiterin", text: "10 Euro. Möchten Sie auch einen Helm?" },
+      { speaker: "Kunde", text: "Ja, bitte." },
+      { speaker: "Mitarbeiterin", text: "Gut. Passen Sie auf: Fahren Sie bitte auf dem Radweg." },
     ],
     questions: [
       {

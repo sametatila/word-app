@@ -157,12 +157,12 @@ export const a1U20: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Was kostet der Eintritt?" },
-      { text: "Für Erwachsene 5 Euro, für Kinder 3 Euro." },
-      { text: "Zweimal Erwachsene, bitte. Wie lange ist das Schwimmbad heute auf?" },
-      { text: "Bis 20 Uhr. Das sind 10 Euro." },
-      { text: "Danke. Kann man ein Handtuch kaufen?" },
-      { text: "Ja, für 4 Euro. Und bitte nicht im tiefen Wasser tauchen!" },
+      { speaker: "Kundin", text: "Guten Tag. Was kostet der Eintritt?" },
+      { speaker: "Kassierer", text: "Für Erwachsene 5 Euro, für Kinder 3 Euro." },
+      { speaker: "Kundin", text: "Zweimal Erwachsene, bitte. Wie lange ist das Schwimmbad heute auf?" },
+      { speaker: "Kassierer", text: "Bis 20 Uhr. Das sind 10 Euro." },
+      { speaker: "Kundin", text: "Danke. Kann man ein Handtuch kaufen?" },
+      { speaker: "Kassierer", text: "Ja, für 4 Euro. Und bitte nicht im tiefen Wasser tauchen!" },
     ],
     questions: [
       {
@@ -216,12 +216,12 @@ export const a1U20: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wir machen am Samstag ein Picknick im Park. Kommst du?" },
-      { text: "Oh, leider kann ich nicht. Ich muss arbeiten." },
-      { text: "Schade!" },
-      { text: "Ja, diesmal klappt es nicht. Aber geht es am Sonntag?" },
-      { text: "Am Sonntag? Ja, gern!" },
-      { text: "Super, dann komme ich unbedingt. Vergiss es nicht: Sonntag um zwölf!" },
+      { speaker: "Freund", text: "Wir machen am Samstag ein Picknick im Park. Kommst du?" },
+      { speaker: "Freundin", text: "Oh, leider kann ich nicht. Ich muss arbeiten." },
+      { speaker: "Freund", text: "Schade!" },
+      { speaker: "Freundin", text: "Ja, diesmal klappt es nicht. Aber geht es am Sonntag?" },
+      { speaker: "Freund", text: "Am Sonntag? Ja, gern!" },
+      { speaker: "Freundin", text: "Super, dann komme ich unbedingt. Vergiss es nicht: Sonntag um zwölf!" },
     ],
     questions: [
       {

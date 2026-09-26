@@ -129,14 +129,14 @@ export const deB2P10: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Willkommen zum zweiten Teil. Heute geht es nicht um Werkzeuge, sondern um drei Fragen, die man sich selbst stellt." },
-      { text: "Erste Frage: Wer ist der Absender, und was hat er davon, wenn ich das weitergebe?" },
-      { text: "Diese Frage klingt nach Misstrauen, sie ist aber neutral. Auch eine Hilfsorganisation hat etwas davon, und das macht ihre Botschaft nicht falsch." },
-      { text: "Zweite Frage: Was hat der Beitrag bei mir ausgelöst? Wenn die erste Reaktion Empörung war, lohnt sich eine Pause von zehn Minuten." },
+      { speaker: "Kursleiter", text: "Willkommen zum zweiten Teil. Heute geht es nicht um Werkzeuge, sondern um drei Fragen, die man sich selbst stellt." },
+      { speaker: "Kursleiter", text: "Erste Frage: Wer ist der Absender, und was hat er davon, wenn ich das weitergebe?" },
+      { speaker: "Kursleiter", text: "Diese Frage klingt nach Misstrauen, sie ist aber neutral. Auch eine Hilfsorganisation hat etwas davon, und das macht ihre Botschaft nicht falsch." },
+      { speaker: "Kursleiter", text: "Zweite Frage: Was hat der Beitrag bei mir ausgelöst? Wenn die erste Reaktion Empörung war, lohnt sich eine Pause von zehn Minuten." },
       { speaker: "Frau Barth", text: "In unseren Tests war genau das der wirksamste Schritt. Nicht das Prüfen, sondern das Warten." },
-      { text: "Dritte Frage: Wäre ich bereit, das mit meinem Namen zu unterschreiben? Wer zögert, sollte nicht teilen." },
+      { speaker: "Kursleiter", text: "Dritte Frage: Wäre ich bereit, das mit meinem Namen zu unterschreiben? Wer zögert, sollte nicht teilen." },
       { speaker: "Frau Barth", text: "Die Grenze dieser Methode ist klar: Sie hilft gegen Eile, nicht gegen Überzeugung. Wer etwas glauben will, findet immer eine Begründung." },
-      { text: "Deshalb endet der Workshop nicht mit einer Regel, sondern mit einer Übung: Suchen Sie einen Beitrag, den Sie geteilt haben und heute anders sehen." },
+      { speaker: "Kursleiter", text: "Deshalb endet der Workshop nicht mit einer Regel, sondern mit einer Übung: Suchen Sie einen Beitrag, den Sie geteilt haben und heute anders sehen." },
     ],
     questions: [
       {

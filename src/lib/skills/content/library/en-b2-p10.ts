@@ -132,13 +132,13 @@ export const enB2P10: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Most policies fail in the same three ways, and all three are visible before the document is written." },
-      { text: "The first is that nobody has said who enforces it. A rule without a named person is a wish, and by the time anyone notices, it has been ignored for a year." },
+      { speaker: "Presenter", text: "Most policies fail in the same three ways, and all three are visible before the document is written." },
+      { speaker: "Presenter", text: "The first is that nobody has said who enforces it. A rule without a named person is a wish, and by the time anyone notices, it has been ignored for a year." },
       { speaker: "Mr Ellery", text: "I always ask one question first: what happens on the day somebody breaks this? If the honest answer is nothing, we are writing a poster, not a policy." },
-      { text: "The second failure is the exception nobody planned. Every rule meets a case it was not written for, usually within a month." },
+      { speaker: "Presenter", text: "The second failure is the exception nobody planned. Every rule meets a case it was not written for, usually within a month." },
       { speaker: "Mr Ellery", text: "Write the exception into the first version. If you don't, the first exception becomes a private decision, and after that the rule means whatever the last manager decided." },
-      { text: "The third is the review date. A policy without one will still be in force long after the reason for it has gone." },
-      { text: "Set a date before you publish, put it in the document, and treat it as a deadline rather than a suggestion." },
+      { speaker: "Presenter", text: "The third is the review date. A policy without one will still be in force long after the reason for it has gone." },
+      { speaker: "Presenter", text: "Set a date before you publish, put it in the document, and treat it as a deadline rather than a suggestion." },
       { speaker: "Mr Ellery", text: "One more thing on wording. If the policy needs more than one reading to understand, it will be enforced inconsistently, and that is worse than having no policy at all." },
     ],
     questions: [

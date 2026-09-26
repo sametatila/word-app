@@ -120,14 +120,14 @@ export const deB2P9: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Was passiert eigentlich mit Lebensmitteln, die ein Supermarkt nicht mehr verkaufen darf?" },
-      { text: "Ein großer Teil geht an die Tafeln. Allein im letzten Jahr waren das bundesweit über zweihunderttausend Tonnen." },
-      { text: "Der Weg dorthin ist allerdings aufwendiger, als viele denken: Die Ware muss aussortiert, gekühlt und meistens am selben Tag abgeholt werden." },
+      { speaker: "Moderatorin", text: "Was passiert eigentlich mit Lebensmitteln, die ein Supermarkt nicht mehr verkaufen darf?" },
+      { speaker: "Moderatorin", text: "Ein großer Teil geht an die Tafeln. Allein im letzten Jahr waren das bundesweit über zweihunderttausend Tonnen." },
+      { speaker: "Moderatorin", text: "Der Weg dorthin ist allerdings aufwendiger, als viele denken: Die Ware muss aussortiert, gekühlt und meistens am selben Tag abgeholt werden." },
       { speaker: "Herr Dr. Sander", text: "Das Problem ist selten der gute Wille. Es scheitert an der Logistik und an der Frage, wer haftet, wenn jemand krank wird." },
-      { text: "Rechtlich ist die Lage klarer, als der Ruf vermuten lässt: Wer Lebensmittel spendet, haftet nur bei grober Fahrlässigkeit." },
-      { text: "Trotzdem entscheiden sich viele Filialleiterinnen im Zweifel für die Tonne, weil sie die Regel nicht genau kennen." },
+      { speaker: "Moderatorin", text: "Rechtlich ist die Lage klarer, als der Ruf vermuten lässt: Wer Lebensmittel spendet, haftet nur bei grober Fahrlässigkeit." },
+      { speaker: "Moderatorin", text: "Trotzdem entscheiden sich viele Filialleiterinnen im Zweifel für die Tonne, weil sie die Regel nicht genau kennen." },
       { speaker: "Frau Kowalski", text: "Bei uns hat erst eine Schulung etwas verändert. Vorher haben wir zwei Kisten gespendet, heute sind es zwölf." },
-      { text: "Was bleibt, ist die Kühlkette. Fleisch, Fisch und fertige Salate lassen sich kaum weitergeben, wenn der Transport nicht durchgehend kühl ist." },
+      { speaker: "Moderatorin", text: "Was bleibt, ist die Kühlkette. Fleisch, Fisch und fertige Salate lassen sich kaum weitergeben, wenn der Transport nicht durchgehend kühl ist." },
     ],
     questions: [
       {

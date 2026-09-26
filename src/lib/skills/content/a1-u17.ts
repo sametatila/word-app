@@ -153,11 +153,11 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Kannst du mir helfen? Der Umzug ist am Samstag." },
-      { text: "Ja, gern. Was muss ich tun?" },
-      { text: "Wir packen die Kartons und tragen sie nach unten." },
-      { text: "Vorsicht, der Karton ist schwer!" },
-      { text: "Leg ihn hier hin. Den Schrank holen wir später." },
+      { speaker: "Freundin", text: "Kannst du mir helfen? Der Umzug ist am Samstag." },
+      { speaker: "Freund", text: "Ja, gern. Was muss ich tun?" },
+      { speaker: "Freundin", text: "Wir packen die Kartons und tragen sie nach unten." },
+      { speaker: "Freund", text: "Vorsicht, der Karton ist schwer!" },
+      { speaker: "Freundin", text: "Leg ihn hier hin. Den Schrank holen wir später." },
     ],
     questions: [
       {
@@ -211,11 +211,11 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Heute putzen wir die Wohnung. Was machst du?" },
-      { text: "Ich räume das Wohnzimmer auf und wasche ab." },
-      { text: "Gut, dann putze ich das Bad und die Küche." },
-      { text: "Und der Kühlschrank? Der ist nicht sauber." },
-      { text: "Den mache ich morgen. Heute bin ich müde." },
+      { speaker: "Freundin", text: "Heute putzen wir die Wohnung. Was machst du?" },
+      { speaker: "Freund", text: "Ich räume das Wohnzimmer auf und wasche ab." },
+      { speaker: "Freundin", text: "Gut, dann putze ich das Bad und die Küche." },
+      { speaker: "Freund", text: "Und der Kühlschrank? Der ist nicht sauber." },
+      { speaker: "Freundin", text: "Den mache ich morgen. Heute bin ich müde." },
     ],
     questions: [
       {

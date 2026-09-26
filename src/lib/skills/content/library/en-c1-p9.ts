@@ -150,14 +150,14 @@ export const enC1P9: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "A precedent rarely forms at the moment anybody expects. It does not form when the first exception is granted." },
-      { text: "It forms the second time, when somebody remembers the first and nobody can find a reason why this case is different." },
+      { speaker: "Presenter", text: "A precedent rarely forms at the moment anybody expects. It does not form when the first exception is granted." },
+      { speaker: "Presenter", text: "It forms the second time, when somebody remembers the first and nobody can find a reason why this case is different." },
       { speaker: "Ms Idrissi", text: "In the audits I've run, the decisive moment is almost always a sentence in a message: “we did this for the other team last year.” Nobody checks whether that is even true." },
-      { text: "By the third case there is no longer a decision to make. The rule has been quietly overridden by three data points, none of which was written down." },
+      { speaker: "Presenter", text: "By the third case there is no longer a decision to make. The rule has been quietly overridden by three data points, none of which was written down." },
       { speaker: "Ms Idrissi", text: "What makes this hard to trace is that each individual decision was reasonable. You cannot point to the mistake, because there isn't one." },
-      { text: "The cheapest fix is not a stricter rule. It is a log: one line per exception, with the date, the reason and the name of whoever approved it." },
+      { speaker: "Presenter", text: "The cheapest fix is not a stricter rule. It is a log: one line per exception, with the date, the reason and the name of whoever approved it." },
       { speaker: "Ms Idrissi", text: "Organizations resist this because it looks like distrust. In practice it protects the people making the decisions, who otherwise have to remember why they said yes eighteen months ago." },
-      { text: "Where a log exists, exceptions do not stop. What changes is that they accumulate visibly, and somebody notices at four rather than at forty." },
+      { speaker: "Presenter", text: "Where a log exists, exceptions do not stop. What changes is that they accumulate visibly, and somebody notices at four rather than at forty." },
     ],
     questions: [
       {

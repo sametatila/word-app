@@ -133,7 +133,7 @@ export const deC1P19: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { text: "Auf einer Fachtagung zur Verwaltungssprache sprach die Linguistin Frau Prof. Engel über die Frage, was einen Satz eigentlich schwer macht. Ein Auszug aus ihrem Vortrag." },
+      { speaker: "Moderator", text: "Auf einer Fachtagung zur Verwaltungssprache sprach die Linguistin Frau Prof. Engel über die Frage, was einen Satz eigentlich schwer macht. Ein Auszug aus ihrem Vortrag." },
       { speaker: "Frau Prof. Engel", text: "Die übliche Antwort lautet: lange Wörter und lange Sätze. Beides stimmt, erklärt aber weniger, als man denkt. Ein langer Satz, der in der richtigen Reihenfolge erzählt, liest sich oft leichter als ein kurzer." },
       { speaker: "Frau Prof. Engel", text: "Viel schwerer wiegt der Abstand zwischen Teilen, die zusammengehören. Kommt das Verb erst nach zwanzig Wörtern, muss man alles davor im Gedächtnis behalten, bis sich der Satz endlich auflöst." },
       { speaker: "Frau Prof. Engel", text: "Wir haben den Blickverlauf von Versuchspersonen gemessen. Bei solchen Sätzen springen die Augen am Satzende zurück an den Anfang, und zwar im Schnitt zweimal." },
@@ -142,7 +142,7 @@ export const deC1P19: SkillExercise[] = [
       { speaker: "Frau Prof. Engel", text: "Interessant ist, dass geübte Leser von diesen Hürden kaum weniger betroffen sind als ungeübte. Sie sind nur geduldiger. Die Lesezeit steigt bei allen, nur der Ärger nicht gleich stark." },
       { speaker: "Frau Prof. Engel", text: "Daraus folgt etwas Unbequemes. Verständlichkeit ist keine Rücksicht auf Schwache, sondern eine Entlastung für alle, auch für die Fachleute, die solche Texte selbst schreiben." },
       { speaker: "Frau Prof. Engel", text: "Man hat uns oft vorgeworfen, wir wollten die Sprache vereinfachen, bis nichts mehr übrig ist. Das Gegenteil ist der Fall. Wir wollen, dass das Gemeinte ankommt, und zwar vollständig." },
-      { text: "Der vollständige Vortrag ist in der Mediathek der Tagung abrufbar, zusammen mit den Folien und den Messdaten." },
+      { speaker: "Moderator", text: "Der vollständige Vortrag ist in der Mediathek der Tagung abrufbar, zusammen mit den Folien und den Messdaten." },
     ],
     questions: [
       {

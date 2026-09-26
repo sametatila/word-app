@@ -147,12 +147,12 @@ export const a1U11: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag! Ich suche einen Pullover." },
-      { text: "Welche Größe haben Sie?" },
-      { text: "Größe 40. Haben Sie den auch in Blau?" },
-      { text: "Ja. Möchten Sie ihn anprobieren? Die Umkleide ist da." },
-      { text: "Er passt gut. Was kostet er?" },
-      { text: "19 Euro — er ist im Angebot." },
+      { speaker: "Kunde", text: "Guten Tag! Ich suche einen Pullover." },
+      { speaker: "Verkäuferin", text: "Welche Größe haben Sie?" },
+      { speaker: "Kunde", text: "Größe 40. Haben Sie den auch in Blau?" },
+      { speaker: "Verkäuferin", text: "Ja. Möchten Sie ihn anprobieren? Die Umkleide ist da." },
+      { speaker: "Kunde", text: "Er passt gut. Was kostet er?" },
+      { speaker: "Verkäuferin", text: "19 Euro — er ist im Angebot." },
     ],
     questions: [
       {
@@ -206,11 +206,11 @@ export const a1U11: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Was kostet dieser Mantel?" },
-      { text: "Der kostet 120 Euro." },
-      { text: "Oh, das ist zu teuer für mich." },
-      { text: "Wir haben auch Jacken. Die sind günstiger — 45 Euro." },
-      { text: "Gut, die nehme ich. Ich bezahle bar." },
+      { speaker: "Kundin", text: "Was kostet dieser Mantel?" },
+      { speaker: "Verkäufer", text: "Der kostet 120 Euro." },
+      { speaker: "Kundin", text: "Oh, das ist zu teuer für mich." },
+      { speaker: "Verkäufer", text: "Wir haben auch Jacken. Die sind günstiger — 45 Euro." },
+      { speaker: "Kundin", text: "Gut, die nehme ich. Ich bezahle bar." },
     ],
     questions: [
       {

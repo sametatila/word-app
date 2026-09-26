@@ -147,11 +147,11 @@ export const a1U08: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Entschuldigung, wie spät ist es?" },
-      { text: "Einen Moment … es ist halb neun." },
-      { text: "Oh, so spät! Mein Kurs beginnt gleich." },
-      { text: "Der Kurs beginnt um neun Uhr, oder?" },
-      { text: "Ja. Ich habe noch dreißig Minuten." },
+      { speaker: "Studentin", text: "Entschuldigung, wie spät ist es?" },
+      { speaker: "Mann", text: "Einen Moment … es ist halb neun." },
+      { speaker: "Studentin", text: "Oh, so spät! Mein Kurs beginnt gleich." },
+      { speaker: "Mann", text: "Der Kurs beginnt um neun Uhr, oder?" },
+      { speaker: "Studentin", text: "Ja. Ich habe noch dreißig Minuten." },
     ],
     questions: [
       {
@@ -205,11 +205,11 @@ export const a1U08: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Möchtest du noch etwas Reis?" },
-      { text: "Nein danke, ich bin satt. Das schmeckt sehr gut!" },
-      { text: "Möchtest du ein Eis probieren?" },
-      { text: "Gern! Aber ist da eine Nuss drin? Ich bin allergisch." },
-      { text: "Nein, das Eis ist ohne Nüsse." },
+      { speaker: "Gastgeberin", text: "Möchtest du noch etwas Reis?" },
+      { speaker: "Freund", text: "Nein danke, ich bin satt. Das schmeckt sehr gut!" },
+      { speaker: "Gastgeberin", text: "Möchtest du ein Eis probieren?" },
+      { speaker: "Freund", text: "Gern! Aber ist da eine Nuss drin? Ich bin allergisch." },
+      { speaker: "Gastgeberin", text: "Nein, das Eis ist ohne Nüsse." },
     ],
     questions: [
       {

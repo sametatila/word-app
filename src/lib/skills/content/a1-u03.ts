@@ -210,12 +210,12 @@ export const a1U03: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag! Füllen Sie bitte das Formular aus." },
-      { text: "Wie ist Ihr Nachname?" },
-      { text: "Mein Nachname ist Weber." },
-      { text: "Und Ihre Adresse?" },
-      { text: "Lindenstraße zwanzig, Bremen." },
-      { text: "Danke. Unterschreiben Sie bitte hier." },
+      { speaker: "Mitarbeiterin", text: "Guten Tag! Füllen Sie bitte das Formular aus." },
+      { speaker: "Mitarbeiterin", text: "Wie ist Ihr Nachname?" },
+      { speaker: "Kunde", text: "Mein Nachname ist Weber." },
+      { speaker: "Mitarbeiterin", text: "Und Ihre Adresse?" },
+      { speaker: "Kunde", text: "Lindenstraße zwanzig, Bremen." },
+      { speaker: "Mitarbeiterin", text: "Danke. Unterschreiben Sie bitte hier." },
     ],
     questions: [
       {

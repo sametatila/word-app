@@ -132,14 +132,14 @@ export const enB2P7: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "A study on accent and credibility has been quoted everywhere this week, usually with the wrong number attached." },
-      { text: "Participants heard short recordings of the same text read by eight speakers, and rated how believable each one sounded." },
+      { speaker: "Presenter", text: "A study on accent and credibility has been quoted everywhere this week, usually with the wrong number attached." },
+      { speaker: "Presenter", text: "Participants heard short recordings of the same text read by eight speakers, and rated how believable each one sounded." },
       { speaker: "Dr Whelan", text: "The gap was real but small. Speakers with an accent that was unfamiliar to the listener scored about seven percent lower." },
-      { text: "Several headlines turned that into a claim that people with accents are not believed, which the study does not say." },
+      { speaker: "Presenter", text: "Several headlines turned that into a claim that people with accents are not believed, which the study does not say." },
       { speaker: "Dr Whelan", text: "What interested us more was the second condition. When participants read a transcript at the same time, the difference disappeared completely." },
-      { text: "The researchers argue that the effect is about processing effort rather than prejudice: an unfamiliar accent is harder work, and listeners read that effort as doubt." },
+      { speaker: "Presenter", text: "The researchers argue that the effect is about processing effort rather than prejudice: an unfamiliar accent is harder work, and listeners read that effort as doubt." },
       { speaker: "Dr Whelan", text: "That matters practically. It suggests that captions in an online meeting do more for a speaker than months of pronunciation training." },
-      { text: "The team admits the study has limits. It used one language, one text, and listeners from a single city, and nobody has replicated it yet." },
+      { speaker: "Presenter", text: "The team admits the study has limits. It used one language, one text, and listeners from a single city, and nobody has replicated it yet." },
     ],
     questions: [
       {

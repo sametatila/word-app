@@ -152,11 +152,11 @@ export const a1U10: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Hallo! Hast du morgen Zeit?" },
-      { text: "Am Vormittag arbeite ich. Leider kann ich nicht." },
-      { text: "Und am Nachmittag? Um drei Uhr?" },
-      { text: "Um drei passt es mir gut." },
-      { text: "Gut, dann treffen wir uns um drei." },
+      { speaker: "Freund", text: "Hallo! Hast du morgen Zeit?" },
+      { speaker: "Freundin", text: "Am Vormittag arbeite ich. Leider kann ich nicht." },
+      { speaker: "Freund", text: "Und am Nachmittag? Um drei Uhr?" },
+      { speaker: "Freundin", text: "Um drei passt es mir gut." },
+      { speaker: "Freund", text: "Gut, dann treffen wir uns um drei." },
     ],
     questions: [
       {
@@ -210,11 +210,11 @@ export const a1U10: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Bist du fertig? Es ist fünf Uhr." },
-      { text: "Ja, endlich Feierabend! Ich bin sehr müde." },
-      { text: "Hast du Lust, spazieren zu gehen?" },
-      { text: "Heute nicht. Ich sitze zu Hause und sehe fern." },
-      { text: "Gut, dann vielleicht morgen." },
+      { speaker: "Kollege", text: "Bist du fertig? Es ist fünf Uhr." },
+      { speaker: "Kollegin", text: "Ja, endlich Feierabend! Ich bin sehr müde." },
+      { speaker: "Kollege", text: "Hast du Lust, spazieren zu gehen?" },
+      { speaker: "Kollegin", text: "Heute nicht. Ich sitze zu Hause und sehe fern." },
+      { speaker: "Kollege", text: "Gut, dann vielleicht morgen." },
     ],
     questions: [
       {

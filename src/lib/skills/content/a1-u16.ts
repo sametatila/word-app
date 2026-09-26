@@ -153,11 +153,11 @@ export const a1U16: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Wo stellen wir das Sofa?" },
-      { text: "Das Sofa steht gut in der Ecke, beim Fenster." },
-      { text: "Und der Tisch?" },
-      { text: "Der Tisch steht in der Mitte. Das Bild hängt an der Wand." },
-      { text: "Und der Schrank kommt ins Schlafzimmer." },
+      { speaker: "Frau", text: "Wo stellen wir das Sofa?" },
+      { speaker: "Mann", text: "Das Sofa steht gut in der Ecke, beim Fenster." },
+      { speaker: "Frau", text: "Und der Tisch?" },
+      { speaker: "Mann", text: "Der Tisch steht in der Mitte. Das Bild hängt an der Wand." },
+      { speaker: "Frau", text: "Und der Schrank kommt ins Schlafzimmer." },
     ],
     questions: [
       {
@@ -211,11 +211,11 @@ export const a1U16: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag! Wir sind neu hier, Wohnung 7." },
-      { text: "Herzlich willkommen! Ich bin Ihre Nachbarin aus Wohnung 5." },
-      { text: "Freut mich! Eine Frage: Funktioniert der Aufzug?" },
-      { text: "Heute nicht. Sie müssen die Treppe nehmen." },
-      { text: "Kein Problem. Wir wohnen im zweiten Stock." },
+      { speaker: "Nachbar", text: "Guten Tag! Wir sind neu hier, Wohnung 7." },
+      { speaker: "Nachbarin", text: "Herzlich willkommen! Ich bin Ihre Nachbarin aus Wohnung 5." },
+      { speaker: "Nachbar", text: "Freut mich! Eine Frage: Funktioniert der Aufzug?" },
+      { speaker: "Nachbarin", text: "Heute nicht. Sie müssen die Treppe nehmen." },
+      { speaker: "Nachbar", text: "Kein Problem. Wir wohnen im zweiten Stock." },
     ],
     questions: [
       {

@@ -149,12 +149,12 @@ export const a1U14: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Einmal nach Bremen, bitte." },
-      { text: "Einfach oder hin und zurück?" },
-      { text: "Hin und zurück, bitte. Was kostet das?" },
-      { text: "20 Euro. Der Zug fährt um 14:20 von Gleis 4." },
-      { text: "Danke. Ist der Zug pünktlich?" },
-      { text: "Ja, heute hat er keine Verspätung." },
+      { speaker: "Kundin", text: "Guten Tag. Einmal nach Bremen, bitte." },
+      { speaker: "Mitarbeiter", text: "Einfach oder hin und zurück?" },
+      { speaker: "Kundin", text: "Hin und zurück, bitte. Was kostet das?" },
+      { speaker: "Mitarbeiter", text: "20 Euro. Der Zug fährt um 14:20 von Gleis 4." },
+      { speaker: "Kundin", text: "Danke. Ist der Zug pünktlich?" },
+      { speaker: "Mitarbeiter", text: "Ja, heute hat er keine Verspätung." },
     ],
     questions: [
       {
@@ -206,12 +206,12 @@ export const a1U14: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Tag. Zum Flughafen, bitte." },
-      { text: "Gern. Steigen Sie ein." },
-      { text: "Wie lange dauert es?" },
-      { text: "Über die Autobahn 25 Minuten." },
-      { text: "So, wir sind da. Das macht 38 Euro." },
-      { text: "Hier sind 40. Stimmt so." },
+      { speaker: "Kundin", text: "Guten Tag. Zum Flughafen, bitte." },
+      { speaker: "Fahrer", text: "Gern. Steigen Sie ein." },
+      { speaker: "Kundin", text: "Wie lange dauert es?" },
+      { speaker: "Fahrer", text: "Über die Autobahn 25 Minuten." },
+      { speaker: "Fahrer", text: "So, wir sind da. Das macht 38 Euro." },
+      { speaker: "Kundin", text: "Hier sind 40. Stimmt so." },
     ],
     questions: [
       {

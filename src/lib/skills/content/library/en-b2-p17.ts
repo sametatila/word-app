@@ -143,13 +143,13 @@ export const enB2P17: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Four-day week trials have produced some of the most enthusiastic headlines in workplace research. A closer look at how they are run suggests some caution." },
+      { speaker: "Presenter", text: "Four-day week trials have produced some of the most enthusiastic headlines in workplace research. A closer look at how they are run suggests some caution." },
       { speaker: "Ms Petrova", text: "The first thing to know is who takes part. Companies volunteer, and the ones that volunteer tend to be smaller, more flexible and far more confident than average." },
-      { text: "In most published trials, around nine in ten firms chose to continue afterwards. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
+      { speaker: "Presenter", text: "In most published trials, around nine in ten firms chose to continue afterwards. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
       { speaker: "Ms Petrova", text: "That doesn't make the results worthless. It means they tell you what happens in the best conditions, which is not nearly as useful as knowing what happens in ordinary ones." },
-      { text: "The measures also vary. Wellbeing is usually recorded through surveys, while productivity is often reported by the managers who chose to run the trial." },
+      { speaker: "Presenter", text: "The measures also vary. Wellbeing is usually recorded through surveys, while productivity is often reported by the managers who chose to run the trial." },
       { speaker: "Ms Petrova", text: "The more a result depends on a manager's own judgment, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
-      { text: "Those harder figures are generally positive too, if a little less dramatic: fewer people leave, and absence falls, at least during the first year." },
+      { speaker: "Presenter", text: "Those harder figures are generally positive too, if a little less dramatic: fewer people leave, and absence falls, at least during the first year." },
       { speaker: "Ms Petrova", text: "What we still don't have is a large trial in hospitals, schools or factories, where the work can't simply be done faster. That's where the real test is." },
     ],
     questions: [
