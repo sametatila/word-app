@@ -48,7 +48,7 @@ Yollar `src/` altında.
 | Plan kartı / "Bugünkü plan" (WP-60) | 9d2c9311, e558b37e, dosya 0c001fb6; `/api/plan` ve `lib/plan` 2026-09-26 | Öğren merkezi; sıradaki ders Patika kartında |
 | Haftalık kullanım sınavı ve `/api/weekly` (WP-42) | dd8cea71 | Haftalık quiz (`/api/quiz`, `lib/weekly-quiz`); `/learn/weekly` adresi ve `exams` satırı korundu |
 | Dört adımlı web onboarding (WP-65) | c3cf81bd | Mobilin beş ekranı |
-| Koç balonu ve turdaki maskot (WP-66) | 25a4e1df | Koçun cümlesi kaldı (`CoachLine`); Erdi yalnız günlük tur kutusunda |
+| Koç balonu ve turdaki maskot (WP-66) | 25a4e1df | Koçun cümlesi kaldı (`CoachLine`); maskot yalnız günlük tur kutusunda |
 
 ## İlkeler
 

@@ -52,7 +52,8 @@ const PAIRS: [string, string][] = [
      "Türkiye" yazıyor, en-US tanıyıcı çoğu kez "Turkey" ya da "Turkiye"
      yazıyor. Üçü tek biçime iniyor; hindi (turkey) ile karışması zararsız,
      çünkü katlama iki tarafa da uygulanıyor. */
-  ["türkiye", "turkey"], ["turkiye", "turkey"],
+  // \u00fc: i18n taraması düz ü'yü çevrilmemiş arayüz metni sayıyor; bu bir katlama anahtarı.
+  ["t\u00fcrkiye", "turkey"], ["turkiye", "turkey"],
 ];
 
 const RE = new RegExp(`\\b(${PAIRS.map(([uk]) => uk).join("|")})\\b`, "gi");
