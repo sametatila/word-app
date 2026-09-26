@@ -29,8 +29,19 @@ cümleler tek tek gözden geçirilip düzeltilmiş durumda; kelime havuzu üzeri
 ## Üretim
 
 Havuz artık toplu bir dönüştürme adımıyla üretilmiyor. Değişiklikler doğrudan
-`app/words.json` üzerinde yapılır ve `npm run seed` ile veritabanına uygulanır;
-doğrulama betikleri (`data/meanings/check.mjs`, `npm run test:seed`) fark bırakıp
+`app/words.json` (ve anlam paketleri `meanings/out`) üzerinde yapılır; canlıya her
+deploy'un sonunda `db:seed` + `db:seed:en` ile kendiliğinden gider (2026-09-26'dan beri,
+sunucudaki `deploy.sh`). Seed kaynakta olmayan kelimeyi siler ve bu, kullanıcının o
+kelimedeki ilerlemesini de siler: silinecek kelime `SEED_MAX_DELETE` (20) eşiğini aşarsa
+seed hiçbir şey yazmadan durur; bilinçli toplu silme `--allow-delete` ile elle yapılır.
+
+**Yayımlanmış listelerden örnek cümle alınmaz.** Havuzun ilk hâli bir sınav kurumunun
+herkese açık kelime listelerinden çıkarılmıştı; o listelerin örnek cümleleri 2026-09-26'da
+özgün cümlelerle değişti (Almanca 1.413, İngilizce kursta 720). `npm run check:published-examples`
+(CI'da) aynı cümlelerin geri girmesini durdurur; liste metni depoda yok, yalnız cümle
+özetleri (`data/published-examples.sha`).
+
+Doğrulama betikleri (`data/meanings/check.mjs`, `npm run test:seed`) fark bırakıp
 bırakmadığını denetler.
 
 ## Doğrulama durumu
