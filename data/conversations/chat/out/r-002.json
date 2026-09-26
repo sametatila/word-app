@@ -171,7 +171,7 @@
   "conversation": "de-a1-online",
   "sceneEn": "The order you placed online still has not arrived and you have called customer service. Say what you ordered, ask how long the delivery should take, and find out where the package is.",
   "partnerEn": "a calm agent who is used to apologizing",
-  "openingEn": "Customer service, good afternoon! How can I help you?",
+  "openingEn": "Hello, customer service! How can I help you?",
   "goalEn": "You have found out where your order is and been told when it will arrive."
  }
 ]

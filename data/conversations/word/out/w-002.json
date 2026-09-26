@@ -6,8 +6,6 @@
  { "tr": "insan bağlantısı da, ulaşım bağlantısı da", "kind": "note", "en": "a connection between people and a transport connection alike" },
  { "tr": "insan yapımı, taş duvar", "kind": "note", "en": "a man-made stone wall" },
  { "tr": "İstatistikte 'rastlantı olamayacak kadar belirgin'.", "kind": "note", "en": "In statistics, 'too marked to be chance'." },
- { "tr": "İsviçre ve Avusturya'da yaygın", "kind": "note", "en": "common in Switzerland and Austria" },
- { "tr": "İsviçre'de kullanılan biçim", "kind": "note", "en": "the form used in Switzerland" },
  { "tr": "iş ilanlarında 'aranan nitelikler' başlığı altında geçer", "kind": "note", "en": "it appears in job ads under 'what we are looking for'" },
  { "tr": "İş ilanlarının en çok aranan kelimesi.", "kind": "note", "en": "The most sought-after word in a job advert." },
  { "tr": "İşe kendi koyduğun para.", "kind": "note", "en": "The money you put into the business yourself." },
@@ -91,5 +89,6 @@
  { "tr": "Yetkisi olmadan; resmî metinlerin sık sözcüğü.", "kind": "note", "en": "Without authorization; a frequent word in official texts." },
  { "tr": "Yılda kaç gün izin hakkın olduğu.", "kind": "note", "en": "How many days' leave a year you are entitled to." },
  { "tr": "Yönelme hâli ister: bir konuya ayrılmak.", "kind": "note", "en": "It wants the dative: to give yourself to a subject." },
- { "tr": "Yönelme hâli ister: birine güvenmemek.", "kind": "note", "en": "It wants the dative: to mistrust somebody." }
+ { "tr": "Yönelme hâli ister: birine güvenmemek.", "kind": "note", "en": "It wants the dative: to mistrust somebody." },
+ { "tr": "bugün eski moda sayılır", "kind": "note", "en": "it sounds old-fashioned today" }
 ]

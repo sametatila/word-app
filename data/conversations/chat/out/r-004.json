@@ -52,7 +52,7 @@
   "conversation": "de-a1-termin-arzt",
   "sceneEn": "You are calling a doctor's office to make an appointment. Say why you are coming and discuss which day and time suit you.",
   "partnerEn": "a receptionist with a full calendar who talks fast on the phone",
-  "openingEn": "Dr. Weber's office, good afternoon! What can I do for you?",
+  "openingEn": "Hello, Dr. Weber's office! What can I do for you?",
   "goalEn": "The day and time of the appointment have been fixed and you have been told what to bring with you."
  },
  {
@@ -87,7 +87,7 @@
   "conversation": "de-a1-notruf",
   "sceneEn": "You have seen an accident in the street and called the emergency number. Say what has happened and where you are, and answer the operator's questions briefly.",
   "partnerEn": "a calm-voiced emergency operator who guides you step by step",
-  "openingEn": "Emergency services, one one two, good afternoon. Where are you?",
+  "openingEn": "Hello, emergency services, one one two. Where are you?",
   "goalEn": "The place and the state of the accident have been reported and the operator has said a team is on its way."
  },
  {
@@ -108,7 +108,7 @@
   "conversation": "de-a1-telefonieren",
   "sceneEn": "You have called an office and the receptionist has answered. Introduce yourself, say who you want to speak to, and say you will call back if that person is not there.",
   "partnerEn": "a polite receptionist who speaks formally",
-  "openingEn": "Berger Company, good afternoon. What can I do for you?",
+  "openingEn": "Hello, Berger Company. What can I do for you?",
   "goalEn": "You have reached the person you wanted, or settled when you will call back."
  },
  {

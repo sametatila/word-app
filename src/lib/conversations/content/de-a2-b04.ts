@@ -1650,7 +1650,7 @@ export const deA2B04: Conversation[] = [
     ],
     patterns: [
       { de: "Wenn es zu laut ist, kann ich nicht schlafen.", tr: "koşul ile sonucu bağlar" },
-      { de: "Könnten Sie bitte die Lautstärke leiser stellen?", tr: "isteği en kibar hâliyle söyler" },
+      { de: "Könnten Sie bitte die Lautstärke herunterdrehen?", tr: "isteği en kibar hâliyle söyler" },
     ],
     lecture: [
       {
@@ -1782,7 +1782,7 @@ export const deA2B04: Conversation[] = [
       {
         say: [
           tr("İkinci kalıbımız isteği en kibar hâliyle söylüyor:"),
-          de("Könnten Sie bitte die Lautstärke leiser stellen?"),
+          de("Könnten Sie bitte die Lautstärke herunterdrehen?"),
           tr(
             "Kip fiilinin bu biçimi doğrudan istemez, rica eder. Komşu meselelerinde ilk seferde hep bu kullanılır.",
           ),

@@ -127,7 +127,7 @@ export const deB2B09: Conversation[] = [
       { say: [tr("Sıra sende, mantıksal çıkarımla: 'Şimdiye gelmiş olmalı.'")], expect: produce("Er müsste inzwischen angekommen sein", [tr("Geçmişe dönük tahminde ortaç ve sein birlikte gelir:"), de("Er müsste inzwischen angekommen sein."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi en zayıf derece: 'Bu da olabilir.'")], expect: produce("Das könnte auch sein", [tr("Kip fiili ikinci sırada, mastar sonda:"), de("Das könnte auch sein."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bunu tamamen dışlamıyorum.'")], expect: produce("Das schließe ich nicht ganz aus", [tr("Nesne öne alınmış; ayrılabilen önek sonda:"), de("Das schließe ich nicht ganz aus."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Er müsste inzwischen ankommen sein."), tr("cümlesi doğru mu?")], expect: truefalse("Er müsste inzwischen ankommen sein.", false, [tr("Geçmişe dönük tahminde mastar değil ortaç gelir:"), de("Er müsste inzwischen angekommen sein.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Er müsste inzwischen angekommen sein."), tr("cümlesi doğru mu?")], expect: truefalse("Er müsste inzwischen angekommen sein.", true, [tr("Doğru. Geçmişe dönük tahminde kip fiilinden sonra ortaç ve sein geliyor.")]) },
       { say: [tr("Son: 'Başka bir yorum da var.'")], expect: produce("Eine andere Deutung gibt es auch", [tr("Nesne öne alınmış; kalıplaşmış fiil ikinci sırada:"), de("Eine andere Deutung gibt es auch."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette belirsiz bir durumu birlikte yorumlayacaksın.")] },
     ],

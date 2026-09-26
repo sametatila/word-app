@@ -150,14 +150,14 @@
   "conversation": "de-b1-versicherung",
   "sceneEn": "You are calling the insurance company to report some damage: what happened, when it happened, what you did afterwards. Put the earlier event one step further back as you order it.",
   "partnerEn": "a calm insurance clerk who asks the questions in order",
-  "openingEn": "Nordstern Insurance, good afternoon. You'd like to report some damage — what exactly happened?",
+  "openingEn": "Hello, Nordstern Insurance. You'd like to report some damage — what exactly happened?",
   "goalEn": "The damage has been reported in order and you have been told what happens next."
  },
  {
   "conversation": "de-b1-termin-verschieben",
   "sceneEn": "You are calling the office to move your appointment: give the reason briefly, ask for a new date, ask for the confirmation in writing. Put your requests in the subjunctive.",
   "partnerEn": "an appointments clerk who sticks to the rules but will bend them",
-  "openingEn": "Registration office, good afternoon. You'd like to change your appointment? Which appointment is it about?",
+  "openingEn": "Hello, registration office. You'd like to change your appointment? Which appointment is it about?",
   "goalEn": "The reason for moving it has been given, a new date has been taken and it has been settled that the confirmation will come in writing."
  },
  {

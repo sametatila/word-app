@@ -23,7 +23,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -450,7 +450,7 @@ export const deB1B09: Conversation[] = [
       { say: [tr("Sıra sende: 'Eski fırın kapatıldı.'")], expect: produce("Die alte Bäckerei wurde geschlossen", [tr("Geçmiş edilgen: wurde artı ortaç:"), de("Die alte Bäckerei wurde geschlossen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi kendiliğinden olanı söyle: 'Kiralar çok yükseldi.'")], expect: produce("Die Mieten sind stark gestiegen", [tr("Bu değişimi kimse yapmadı; hareket fiili sein ile çekilir:"), de("Die Mieten sind stark gestiegen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Eski komşuların çoğu buradan gitmek zorunda kaldı.'")], expect: produce("Viele alte Nachbarn mussten wegziehen", [tr("Modal fiil çekimli, mastar en sonda:"), de("Viele alte Nachbarn mussten wegziehen."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Die Mieten wurden gestiegen."), tr("cümlesi doğru mu?")], expect: truefalse("Die Mieten wurden gestiegen.", false, [tr("Yükselmek eylemini kimse yapmıyor, yani edilgen kurulmaz:"), de("Die Mieten sind gestiegen.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Die Mieten sind gestiegen."), tr("cümlesi doğru mu?")], expect: truefalse("Die Mieten sind gestiegen.", true, [tr("Doğru. Yükselmeyi kimse yapmıyor, yani edilgen kurulmaz; değişim bildiren bu fiil geçmiş zamanda sein ile kurulur.")]) },
       { say: [tr("Son: 'Boş dükkânlar hızla yeniden kiraya verildi.'")], expect: produce("Die leeren Läden wurden schnell neu vermietet", [tr("Çoğul özne, çoğul yardımcı fiil, ortaç sonda:"), de("Die leeren Läden wurden schnell neu vermietet."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette uzun zamandır burada yaşayan biriyle mahallenin değişimini konuşacaksın.")] },
     ],

@@ -24,7 +24,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -502,10 +502,10 @@ export const deB1B10: Conversation[] = [
       word("Son", { de: "hinterlassen", tr: "geride bırakmak" }),
       { say: [tr("Kalıbımız:"), de("Ich träume davon, … zu …"), tr("Baştaki kelime fiilin edatını taşıyor, asıl hayal virgülden sonra geliyor.")] },
       { say: [tr("Örnek:"), de("Ich träume davon, ein eigenes Café zu eröffnen."), tr("Tekrar et:"), de("Ich träume davon, ein eigenes Café zu eröffnen")], expect: repeat("Ich träume davon, ein eigenes Café zu eröffnen") },
-      { say: [tr("Sıra sende: 'Bu fikri hayata geçirmeye çalışıyorum.'")], expect: produce("Ich versuche, diese Idee umzusetzen", [tr("Ayrılabilen fiilde küçük bağlaç ortaya girer:"), de("Ich versuche, diese Idee umzusetzen."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Bu fikri hayata geçirmeye çalışıyorum.'")], expect: produce("Ich versuche, diese Idee umzusetzen", [tr("Ayrılabilen fiilde zu ortaya girer:"), de("Ich versuche, diese Idee umzusetzen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Kuşkularım var ama devam ediyorum.'")], expect: produce("Ich habe Zweifel, aber ich mache weiter", [tr("İki bağımsız cümle bir bağlaçla:"), de("Ich habe Zweifel, aber ich mache weiter."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Adım adım ilerliyorum.'")], expect: produce("Schritt für Schritt komme ich voran", [tr("Tümleç başta, ayrılabilen fiilin öneki sonda:"), de("Schritt für Schritt komme ich voran."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ich träume davon, ein Café eröffnen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich träume davon, ein Café eröffnen.", false, [tr("Mastarın önündeki küçük bağlaç eksik:"), de("Ich träume davon, ein Café zu eröffnen.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Ich träume davon, ein Café zu eröffnen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich träume davon, ein Café zu eröffnen.", true, [tr("Doğru. Mastar öbeğinde zu mastarın hemen önünde, mastar da en sonda duruyor.")]) },
       { say: [tr("Son: 'Beni asıl iten şey merak.'")], expect: produce("Mein größter Antrieb ist die Neugier", [tr("En üstünlük derecesi özne öbeğinde:"), de("Mein größter Antrieb ist die Neugier."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette birine hayalini anlatacaksın: ne, neden, ilk adım ne.")] },
     ],

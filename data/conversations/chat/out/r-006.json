@@ -101,7 +101,7 @@
   "conversation": "de-a2-hausmeister",
   "sceneEn": "Two things have broken at home and you are calling the property management. Describe what is broken, say how long it has been like that and ask them to send someone.",
   "partnerEn": "a property manager taking notes on the phone",
-  "openingEn": "Weber property management, good afternoon. What's broken at your place?",
+  "openingEn": "Hello, Weber Property Management. What's broken at your place?",
   "goalEn": "Two faults have been described, a repair has been promised and the day and time have been agreed."
  },
  {

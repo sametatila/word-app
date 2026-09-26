@@ -556,7 +556,7 @@ export const deB2B08: Conversation[] = [
       { say: [tr("Sıra sende: 'Ekipmanı pahalı olan bir spor.'")], expect: produce("Ein Sport, dessen Ausrüstung teuer ist", [tr("Eril isimden sonra dessen; fiil tekil isme uyar:"), de("Ein Sport, dessen Ausrüstung teuer ist."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Benim için buna değer.'")], expect: produce("Das ist es mir wert", [tr("Kalıplaşmış ifade; zamir sırası sabit:"), de("Das ist es mir wert."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Ölçülü harcamayı öğrendim.'")], expect: produce("Ich habe gelernt, maßvoll auszugeben", [tr("Mastar öbeğinde ayrılabilen fiil zu'yu ortasına alır:"), de("Ich habe gelernt, maßvoll auszugeben."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ein Hobby, dessen Kosten steigt, macht trotzdem Freude."), tr("cümlesi doğru mu?")], expect: truefalse("Ein Hobby, dessen Kosten steigt, macht trotzdem Freude.", false, [tr("Fiil zamire değil arkasındaki isme uyar ve masraflar çoğuldur:"), de("Ein Hobby, dessen Kosten steigen, macht trotzdem Freude.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Ein Hobby, dessen Kosten steigen, macht trotzdem Freude."), tr("cümlesi doğru mu?")], expect: truefalse("Ein Hobby, dessen Kosten steigen, macht trotzdem Freude.", true, [tr("Doğru. Yan cümlenin fiili zamire değil arkasındaki çoğul isme uyuyor.")]) },
       { say: [tr("Son: 'Üyelik epey masraflı.'")], expect: produce("Die Mitgliedschaft ist ziemlich kostspielig", [tr("Kısa bir hüküm cümlesi; zarf sıfattan önce:"), de("Die Mitgliedschaft ist ziemlich kostspielig."), tr("Tekrar dene.")]) },
       { say: [tr("Modülü bitirdin. Sohbette pahalı bir uğraşını savunacaksın.")] },
     ],

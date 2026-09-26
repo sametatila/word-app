@@ -94,7 +94,7 @@
   "conversation": "de-b1-online-bestellen",
   "sceneEn": "There is a problem with something you ordered online: the wrong model came and the manual is missing. You call customer service and describe what happened in order.",
   "partnerEn": "a methodical agent who asks for the order number first",
-  "openingEn": "Customer service, good afternoon! What's the issue with your order?",
+  "openingEn": "Hello, customer service! What's the issue with your order?",
   "goalEn": "What was ordered, what arrived and what is missing have been described and a solution has been agreed."
  },
  {
@@ -136,7 +136,7 @@
   "conversation": "de-b1-reklamation-brief",
   "sceneEn": "You are calling an agency: the document you sent has been lost. You describe what you sent, what you are expecting and what you will put in a written complaint.",
   "partnerEn": "a polite official who avoids taking responsibility",
-  "openingEn": "Administration office, good afternoon. How can I help you?",
+  "openingEn": "Hello, administration office. How can I help you?",
   "goalEn": "The lost document has been described, your expectation has been put politely and an address for a written complaint has been taken."
  },
  {

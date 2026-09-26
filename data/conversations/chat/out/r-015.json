@@ -17,7 +17,7 @@
   "conversation": "de-b1-experte-fragen",
   "sceneEn": "You have called an institute to get an expert opinion on something. You ask what you want to know with indirect questions and arrange an appointment.",
   "partnerEn": "an expert who answers briefly but explains when pressed",
-  "openingEn": "Institute for Research, good afternoon. What can I help you with?",
+  "openingEn": "Hello, Institute for Research. What can I help you with?",
   "goalEn": "At least three questions have been asked indirectly and a meeting has been arranged."
  },
  {
@@ -141,7 +141,7 @@
  },
  {
   "conversation": "de-b1-oper-konzert",
-  "sceneEn": "You went to a concert last night. You tell a friend about the hall, the piece that was played and how the evening went.",
+  "sceneEn": "You went to the opera last night. You tell a friend about the hall, the work that was performed and how the evening went.",
   "partnerEn": "a friend who is a stranger to classical music but curious",
   "openingEn": "You were at the opera yesterday? How was it — is it worth it?",
   "goalEn": "The venue and the piece have been described, how the evening went has been told and a recommendation has been given."

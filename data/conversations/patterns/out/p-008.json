@@ -31,7 +31,7 @@
  { "conversation": "de-a2-paket", "de": "Ich nehme das Päckchen für Sie an.", "en": "says that you took in a package" },
  { "conversation": "de-a2-paket", "de": "Ich benachrichtige dich, wenn es da ist.", "en": "says that you will let them know" },
  { "conversation": "de-a2-laerm", "de": "Wenn es zu laut ist, kann ich nicht schlafen.", "en": "links a condition to a result" },
- { "conversation": "de-a2-laerm", "de": "Könnten Sie bitte die Lautstärke leiser stellen?", "en": "puts the request in its most polite form" },
+ { "conversation": "de-a2-laerm", "de": "Könnten Sie bitte die Lautstärke herunterdrehen?", "en": "puts the request in its most polite form" },
  { "conversation": "de-a2-hausmeister", "de": "Die Heizung ist defekt.", "en": "reports a fault" },
  { "conversation": "de-a2-hausmeister", "de": "Können Sie mir jemanden schicken?", "en": "asks them to send someone" },
  { "conversation": "de-a2-neue-stelle", "de": "Ich will mich bewerben.", "en": "states a firm intention" },

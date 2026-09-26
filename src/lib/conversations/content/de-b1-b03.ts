@@ -18,7 +18,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -391,7 +391,7 @@ export const deB1B03: Conversation[] = [
       { say: [tr("Sıra sende: 'Teklif kötüydü, bu yüzden reddettim.' —"), de("Das Angebot war schlecht, deshalb …")], expect: produce("Das Angebot war schlecht, deshalb habe ich es abgelehnt", [tr("deshalb + fiil + özne: deshalb habe ich:"), de("Das Angebot war schlecht, deshalb habe ich es abgelehnt."), tr("Tekrar dene.")], ["Das Angebot war schlecht, deshalb lehnte ich es ab", "Das Angebot war schlecht, darum habe ich es abgelehnt"]) },
       { say: [tr("Karşıtı trotzdem: beklenenin tersi."), de("Das Angebot war gut, trotzdem habe ich es abgelehnt."), tr("Aynı diziliş.")] },
       { say: [tr("Sıra sende: 'Yorgundum, yine de spora gittim.' —"), de("Ich war müde, trotzdem …")], expect: produce("Ich war müde, trotzdem bin ich zum Sport gegangen", [tr("trotzdem + fiil + özne; gehen → bin gegangen:"), de("Ich war müde, trotzdem bin ich zum Sport gegangen."), tr("Tekrar dene.")], ["Ich war müde, trotzdem ging ich zum Sport"]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ich hatte keine Zeit, deshalb ich bin nicht gekommen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich hatte keine Zeit, deshalb ich bin nicht gekommen.", false, [de("deshalb"), tr("birinci sırayı kaplar; fiil ikinci sırada olmalı:"), de("…, deshalb bin ich nicht gekommen.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Ich hatte keine Zeit, deshalb bin ich nicht gekommen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich hatte keine Zeit, deshalb bin ich nicht gekommen.", true, [tr("Doğru. Bu bağlayıcı zarf birinci sırayı kaplıyor; çekimli fiil hemen arkasından, özne de ondan sonra geliyor.")]) },
       { say: [tr("Son: aynı fikri denn ile — 'Geç kaldım, çünkü trafik vardı.' —"), de("Ich habe mich verspätet, denn …"), tr("(sıra değişmez!)")], expect: produce("Ich habe mich verspätet, denn es gab Stau", [tr("denn ana cümle bağlacı: özne + fiil sırası korunur: denn es gab:"), de("Ich habe mich verspätet, denn es gab Stau."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette geç kalmanın sebebini ve buna rağmen ne yaptığını anlatacaksın.")] },
     ],
@@ -444,7 +444,7 @@ export const deB1B03: Conversation[] = [
       { say: [tr("Tekrar et:"), de("Je mehr ich übe, desto besser werde ich")], expect: repeat("Je mehr ich übe, desto besser werde ich") },
       { say: [tr("Sıra sende: 'Ne kadar çok okursam kelime hazinem o kadar büyük olur.' —"), de("Je mehr ich lese, desto …"), tr("(groß → größer)")], expect: produce("Je mehr ich lese, desto größer wird mein Wortschatz", [tr("desto + Komparativ + fiil + özne: desto größer wird mein Wortschatz:"), de("Je mehr ich lese, desto größer wird mein Wortschatz."), tr("Tekrar dene.")]) },
       { say: [tr("'Ne kadar çok deneyimim olursa o kadar özgüvenli olurum.' —"), de("Je mehr Erfahrung ich habe, desto …")], expect: produce("Je mehr Erfahrung ich habe, desto selbstbewusster bin ich", [tr("selbstbewusst → selbstbewusster; desto yarısı: bin ich:"), de("Je mehr Erfahrung ich habe, desto selbstbewusster bin ich."), tr("Tekrar dene.")], ["Je mehr Erfahrung ich habe, desto selbstbewusster werde ich"]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Je länger ich lerne, desto ich spreche flüssiger."), tr("cümlesi doğru mu?")], expect: truefalse("Je länger ich lerne, desto ich spreche flüssiger.", false, [de("desto"), tr("yarısında Komparativ hemen desto'dan sonra, ardından fiil ve özne:"), de("Je länger ich lerne, desto flüssiger spreche ich.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Je länger ich lerne, desto flüssiger spreche ich."), tr("cümlesi doğru mu?")], expect: truefalse("Je länger ich lerne, desto flüssiger spreche ich.", true, [tr("Doğru. İlk yarıda fiil sonda; ikinci yarıda karşılaştırma biçimi bağlacın hemen arkasında, fiil de onun ardından geliyor.")]) },
       { say: [tr("Son: 'Ne kadar erken başlarsan o kadar kolay olur.' — 'Je früher du anfängst, desto …' (leicht → leichter)")], expect: produce("Je früher du anfängst, desto leichter ist es", [tr("je früher … anfängst (ayrılabilen fiil birleşik, sonda), desto leichter ist es:"), de("Je früher du anfängst, desto leichter ist es."), tr("Tekrar dene.")], ["Je früher du anfängst, desto leichter wird es"]) },
       { say: [tr("Hazırsın. Sohbette dil öğrenme tavsiyesi vereceksin: je…desto ile üç kural.")] },
     ],
@@ -499,7 +499,7 @@ export const deB1B03: Conversation[] = [
       { say: [tr("Sıra sende: 'Ya bugün ya da yarın karar veriyoruz.' — 'Wir entscheiden uns entweder …'")], expect: produce("Wir entscheiden uns entweder heute oder morgen", [tr("entweder … oder iki zarfı bağlar:"), de("Wir entscheiden uns entweder heute oder morgen."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıp:"), de("sowohl … als auch"), tr("'hem … hem de'."), de("Sie spricht sowohl Deutsch als auch Türkisch."), tr("Üçüncüsü:"), de("weder … noch"), tr("'ne … ne de':"), de("Ich esse weder Fleisch noch Fisch."), tr("— nicht YOK.")] },
       { say: [tr("Sıra sende: 'Hem et hem balık yiyorum.' — 'Ich esse sowohl …'")], expect: produce("Ich esse sowohl Fleisch als auch Fisch", [tr("sowohl X als auch Y:"), de("Ich esse sowohl Fleisch als auch Fisch."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ich trinke weder Kaffee noch nicht Tee."), tr("cümlesi doğru mu?")], expect: truefalse("Ich trinke weder Kaffee noch nicht Tee.", false, [de("weder … noch"), tr("zaten olumsuzdur; nicht eklenmez:"), de("Ich trinke weder Kaffee noch Tee.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Ich trinke weder Kaffee noch Tee."), tr("cümlesi doğru mu?")], expect: truefalse("Ich trinke weder Kaffee noch Tee.", true, [tr("Doğru. Bu ikili bağlaç olumsuzluğu kendisi taşıyor; cümlede ikinci bir olumsuzluk yok.")]) },
       { say: [tr("Son: 'Ne vaktim ne de param var.' —"), de("Ich habe weder …")], expect: produce("Ich habe weder Zeit noch Geld", [tr("weder Zeit noch Geld, nicht/kein olmadan:"), de("Ich habe weder Zeit noch Geld."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir hafta sonu planı için seçenekleri tartacaksın: ya…ya da, hem…hem de, ne…ne de.")] },
     ],

@@ -150,7 +150,7 @@
   "conversation": "de-b1-facharzt",
   "sceneEn": "You are calling a specialist's office: say you have a referral, ask for an appointment, and ask about the waiting time and what you need to bring.",
   "partnerEn": "a receptionist with a full appointment book who talks fast on the phone",
-  "openingEn": "Dr. Ahrens's office, good afternoon. Do you have a referral from your family doctor?",
+  "openingEn": "Hello, Dr. Ahrens's office. Do you have a referral from your family doctor?",
   "goalEn": "An appointment has been made and the waiting time and what to bring have been found out."
  },
  {

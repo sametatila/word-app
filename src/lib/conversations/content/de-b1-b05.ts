@@ -23,7 +23,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -342,7 +342,7 @@ export const deB1B05: Conversation[] = [
       { say: [tr("Sıra sende: 'Vergi beyannamesi geçen ay verildi.'")], expect: produce("Die Steuererklärung wurde letzten Monat eingereicht", [tr("Tekil özne → wurde; ortaç sonda:"), de("Die Steuererklärung wurde letzten Monat eingereicht."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Yol masrafları gider gösterildi.'")], expect: produce("Die Fahrtkosten wurden abgesetzt", [tr("Çoğul özne → wurden:"), de("Die Fahrtkosten wurden abgesetzt."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha, bu kez etken: 'Makbuzları sakladım.'")], expect: produce("Ich habe die Quittungen aufgehoben", [tr("Kendi yaptığın iş etken kalır:"), de("Ich habe die Quittungen aufgehoben."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Die Quittungen wurde geprüft."), tr("cümlesi doğru mu?")], expect: truefalse("Die Quittungen wurde geprüft.", false, [tr("Özne çoğul olduğu için yardımcı fiil de çoğul:"), de("Die Quittungen wurden geprüft.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Die Quittungen wurden geprüft."), tr("cümlesi doğru mu?")], expect: truefalse("Die Quittungen wurden geprüft.", true, [tr("Doğru. Özne çoğul, yardımcı fiil de çoğul çekilmiş ve ortaç en sonda.")]) },
       { say: [tr("Son: 'Paranın bir kısmı iade edildi.'")], expect: produce("Ein Teil des Geldes wurde erstattet", [tr("Tekil özne, ortaç sonda:"), de("Ein Teil des Geldes wurde erstattet."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir mali müşavirle beyanını konuşacaksın: neyi gider gösterebilirsin, ne zaman iade gelir.")] },
     ],

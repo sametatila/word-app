@@ -21,7 +21,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],

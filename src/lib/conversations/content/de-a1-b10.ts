@@ -1502,13 +1502,13 @@ export const deA1B10: Conversation[] = [
       },
       {
         say: [
-          tr("Akşamı anlatalım:"),
-          de("Am Abend habe ich gut geschlafen."),
-          tr("'Akşam iyi uyudum' demek. Lütfen"),
-          de("Am Abend habe ich gut geschlafen"),
+          tr("Geceyi de anlatalım:"),
+          de("In der Nacht habe ich gut geschlafen."),
+          tr("'Gece iyi uyudum' demek. Lütfen"),
+          de("In der Nacht habe ich gut geschlafen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Am Abend habe ich gut geschlafen" },
+        expect: { kind: "repeat", target: "In der Nacht habe ich gut geschlafen" },
       },
       {
         say: [tr("Şimdi sen: 'Akşam pizza yedim.' demek için ne dersin?")],

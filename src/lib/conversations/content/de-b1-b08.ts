@@ -21,7 +21,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -340,7 +340,7 @@ export const deB1B08: Conversation[] = [
       { say: [tr("Sıra sende: 'Yatmadan önce telefonu kapatıyorum.'")], expect: produce("Bevor ich ins Bett gehe, schalte ich das Handy aus", [tr("Yan cümle önde; ana cümlede ayrılabilen fiilin öneki sonda:"), de("Bevor ich ins Bett gehe, schalte ich das Handy aus."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi öteki bağlaçla: 'Gece boyunca iki kez uyanıyorum.'")], expect: produce("Während der Nacht wache ich zweimal auf", [tr("Bu kelime isimle birlikte edat olarak da kullanılır; ana cümlede önek sonda:"), de("Während der Nacht wache ich zweimal auf."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Kesintisiz uyuyamıyorum.'")], expect: produce("Ich kann nicht durchschlafen", [tr("Modal fiil çekimli, mastar en sonda:"), de("Ich kann nicht durchschlafen."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Bevor ich schlafe, ich trinke keinen Kaffee."), tr("cümlesi doğru mu?")], expect: truefalse("Bevor ich schlafe, ich trinke keinen Kaffee.", false, [tr("Yan cümle başta olduğunda ana cümle fiille başlar:"), de("Bevor ich schlafe, trinke ich keinen Kaffee.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Bevor ich schlafe, trinke ich keinen Kaffee."), tr("cümlesi doğru mu?")], expect: truefalse("Bevor ich schlafe, trinke ich keinen Kaffee.", true, [tr("Doğru. Yan cümlenin fiili sonda, ana cümle fiille başlıyor.")]) },
       { say: [tr("Son: 'Bu düzen bana dinlendirici bir uyku sağlıyor.'")], expect: produce("Dieses Ritual gibt mir einen erholsamen Schlaf", [tr("Yönelme ve belirtme nesnesi bir arada:"), de("Dieses Ritual gibt mir einen erholsamen Schlaf."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir uyku danışmanıyla gecelerini anlatacaksın: yatmadan önce ne yapıyorsun, gece ne oluyor.")] },
     ],

@@ -521,7 +521,7 @@ export const deB1B02: Conversation[] = [
       { de: "der Ärger", tr: "sıkıntı / dert" },
       { de: "still", tr: "sessiz" },
       { de: "klopfen", tr: "kapıyı çalmak" },
-      { de: "aufmerksam", tr: "dikkatli" },
+      { de: "aufmerksam", tr: "dikkatli / ilgili" },
     ],
     patterns: [
       { de: "Wären Sie so nett …?", tr: "çok kibar bir rica kurar" },
@@ -551,7 +551,7 @@ export const deB1B02: Conversation[] = [
       word("Beşinci", { de: "der Ärger", tr: "sıkıntı / dert" }),
       word("Altıncı", { de: "still", tr: "sessiz" }),
       word("Yedinci", { de: "klopfen", tr: "kapıyı çalmak" }),
-      word("Son", { de: "aufmerksam", tr: "dikkatli" }),
+      word("Son", { de: "aufmerksam", tr: "dikkatli / ilgili" }),
       {
         say: [
           tr("Şimdi kural. Şikâyeti yumuşatan şey ton değil, fiilin biçimi:"),

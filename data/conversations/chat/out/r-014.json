@@ -115,7 +115,7 @@
   "conversation": "de-b1-computer-problem",
   "sceneEn": "Your computer will not start. You call the technical support line, list the symptoms, and say what you have tried and whether you have a backup.",
   "partnerEn": "a support agent who asks the questions in turn and works step by step",
-  "openingEn": "Technical support, good afternoon. Can you describe to me what exactly is happening?",
+  "openingEn": "Hello, technical support. Can you describe to me what exactly is happening?",
   "goalEn": "The symptoms have been listed, a likely cause has been given and a next step has been settled."
  },
  {

@@ -136,7 +136,7 @@
   "conversation": "de-a1-kaputt",
   "sceneEn": "Something at home has broken and you have called the superintendent. Say what is broken, say how long it has been like that, and ask them to come.",
   "partnerEn": "a superintendent who is rushed off their feet but finds a solution",
-  "openingEn": "Berger, building superintendent, good afternoon. What can I do for you?",
+  "openingEn": "Hello, this is Berger, the building superintendent. What can I do for you?",
   "goalEn": "The fault has been described and it has been settled when the superintendent is coming."
  },
  {

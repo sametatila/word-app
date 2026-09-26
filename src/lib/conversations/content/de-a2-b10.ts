@@ -505,7 +505,7 @@ export const deA2B10: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("das Erdgeschoss"),
-          tr("Türkçesi 'zemin kat' demek. Lütfen"),
+          tr("Türkçesi 'zemin kat' demek; bir üstündeki kat birinci kattır. Lütfen"),
           de("das Erdgeschoss"),
           tr("de."),
         ],

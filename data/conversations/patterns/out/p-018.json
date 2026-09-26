@@ -41,7 +41,7 @@
  { "conversation": "de-b2-praesentation", "de": "Ziel meines Vortrags ist es, … zu …", "en": "states the aim of the talk" },
  { "conversation": "de-b2-praesentation", "de": "Zunächst gebe ich einen Überblick über …", "en": "announces the plan" },
  { "conversation": "de-b2-praesentation", "de": "Kommen wir zu …", "en": "moves between sections" },
- { "conversation": "de-b2-folien", "de": "Wie in der Grafik dargestellt wurde, …", "en": "refers back to the chart" },
+ { "conversation": "de-b2-folien", "de": "Wie in der Grafik dargestellt, …", "en": "refers back to the chart" },
  { "conversation": "de-b2-folien", "de": "… ist … worden", "en": "passive perfect: something that has been done" },
  { "conversation": "de-b2-meeting-leiten", "de": "Ich würde vorschlagen, … zu …", "en": "softens the suggestion" },
  { "conversation": "de-b2-meeting-leiten", "de": "Könnten wir festhalten, dass …?", "en": "puts a decision on record" },

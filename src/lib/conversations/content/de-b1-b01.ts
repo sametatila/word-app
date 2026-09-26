@@ -58,7 +58,7 @@ export const deB1B01: Conversation[] = [
       { de: "der Lebenslauf", tr: "özgeçmiş" },
       { de: "die Erfahrung", tr: "deneyim" },
       { de: "die Voraussetzung", tr: "ön koşul" },
-      { de: "die Fähigkeit", tr: "yetenek" },
+      { de: "die Fähigkeit", tr: "yeti" },
       { de: "verantwortlich", tr: "sorumlu" },
       { de: "die Gelegenheit", tr: "fırsat" },
     ],
@@ -87,7 +87,7 @@ export const deB1B01: Conversation[] = [
       word("Üçüncü", { de: "der Lebenslauf", tr: "özgeçmiş" }),
       word("Dördüncü", { de: "die Erfahrung", tr: "deneyim" }),
       word("Beşinci", { de: "die Voraussetzung", tr: "ön koşul" }, "iş ilanlarında 'aranan nitelikler' başlığı altında geçer"),
-      word("Altıncı", { de: "die Fähigkeit", tr: "yetenek" }),
+      word("Altıncı", { de: "die Fähigkeit", tr: "yeti" }),
       word("Yedinci", { de: "verantwortlich", tr: "sorumlu" }),
       word("Son", { de: "die Gelegenheit", tr: "fırsat" }),
       {

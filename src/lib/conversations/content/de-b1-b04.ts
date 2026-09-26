@@ -21,7 +21,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -179,7 +179,7 @@ export const deB1B04: Conversation[] = [
       { say: [tr("Sıra sende: 'Yardım ettiğim kadın teşekkür etti.'")], expect: produce("Die Frau, der ich geholfen habe, hat sich bedankt", [tr("Yardım etmek yönelme ister; dişilde yönelme zamiri der:"), de("Die Frau, der ich geholfen habe, hat sich bedankt."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Dün rastladığım kadın komşumuz.'")], expect: produce("Die Frau, der ich gestern begegnet bin, ist unsere Nachbarin", [tr("Rastlamak da yönelme ister ve Perfekt'i sein ile kurulur:"), de("Die Frau, der ich gestern begegnet bin, ist unsere Nachbarin."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Kulak verdiğim çocuk çok mutlu oldu.'")], expect: produce("Das Kind, dem ich zugehört habe, war sehr glücklich", [tr("Nötrde yönelme zamiri de dem olur:"), de("Das Kind, dem ich zugehört habe, war sehr glücklich."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Der Mann, den ich vertraue, ist mein Bruder."), tr("cümlesi doğru mu?")], expect: truefalse("Der Mann, den ich vertraue, ist mein Bruder.", false, [de("vertrauen"), tr("yönelme ister, belirtme değil:"), de("Der Mann, dem ich vertraue, ist mein Bruder.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Der Mann, dem ich vertraue, ist mein Bruder."), tr("cümlesi doğru mu?")], expect: truefalse("Der Mann, dem ich vertraue, ist mein Bruder.", true, [tr("Doğru. Güvenmek fiili yönelme hâli ister; eril ilgi zamiri de bu yüzden bu biçimi alıyor.")]) },
       { say: [tr("Son: 'Güvendiğim çok az arkadaşım var.' Çoğul zamiri unutma.")], expect: produce("Ich habe nur wenige Freunde, denen ich vertraue", [tr("Çoğulda yönelme zamiri denen:"), de("Ich habe nur wenige Freunde, denen ich vertraue."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir arkadaşınla güven üzerine konuşacaksın: kime güveniyorsun, kimin öğüdünü dinliyorsun.")] },
     ],

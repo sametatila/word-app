@@ -48,5 +48,5 @@
  { "conversation": "de-c1-generationenvertrag", "de": "Nichtsdestotrotz funktioniert …", "en": "nevertheless it works" },
  { "conversation": "de-c1-meinungsfreiheit", "de": "Davon zu unterscheiden ist …", "en": "what must be distinguished from this" },
  { "conversation": "de-c1-meinungsfreiheit", "de": "Insofern hast du recht.", "en": "in that respect you are right" },
- { "conversation": "de-c1-zukunftsvision", "de": "Stellte man sich vor, es gäbe …", "en": "imagining an unreal situation" }
+ { "conversation": "de-c1-zukunftsvision", "de": "Man stelle sich vor, es gäbe …", "en": "imagining an unreal situation" }
 ]

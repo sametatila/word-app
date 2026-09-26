@@ -28,7 +28,6 @@
  { "conversation": "de-c1-einspruch", "de": "nachreichen", "en": "to submit later" },
  { "conversation": "de-c1-einspruch", "de": "der Bescheid", "en": "official decision" },
  { "conversation": "de-c1-einspruch", "de": "die Aufhebung", "en": "annulment" },
- { "conversation": "de-c1-einspruch", "de": "die Buße", "en": "penance" },
  { "conversation": "de-c1-gericht", "de": "das Urteil", "en": "verdict" },
  { "conversation": "de-c1-gericht", "de": "die Verhandlung", "en": "hearing" },
  { "conversation": "de-c1-partizipial", "de": "auflösen", "en": "to resolve, to unpack" },

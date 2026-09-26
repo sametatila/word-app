@@ -22,7 +22,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -107,7 +107,7 @@ export const deB2B01: Conversation[] = [
       { de: "erheblich", tr: "önemli ölçüde" },
     ],
     patterns: [
-      { de: "Wie in der Grafik dargestellt wurde, …", tr: "grafiğe gönderme yapar" },
+      { de: "Wie in der Grafik dargestellt, …", tr: "grafiğe gönderme yapar" },
       { de: "… ist … worden", tr: "edilgen Perfekt: yapılmış olan" },
     ],
     lecture: [
@@ -124,9 +124,9 @@ export const deB2B01: Conversation[] = [
       { say: [tr("Kalıbımız:"), de("… ist … worden"), tr("Yardımcı fiil sein, sonra ortaç, en sonda kısalmış biçim. Sunumda çok sık duyulur.")] },
       { say: [tr("Örnek:"), de("Diese Grafik ist im März erstellt worden."), tr("Tekrar et:"), de("Diese Grafik ist im März erstellt worden")], expect: repeat("Diese Grafik ist im März erstellt worden") },
       { say: [tr("Sıra sende: 'Veriler geçen hafta güncellendi.'")], expect: produce("Die Daten sind letzte Woche aktualisiert worden", [tr("Çoğul özne, sein yardımcı fiili, sonda kısalmış biçim:"), de("Die Daten sind letzte Woche aktualisiert worden."), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi grafiğe gönderme yap: 'Grafikte gösterildiği gibi maliyetler düştü.'")], expect: produce("Wie in der Grafik dargestellt wurde, sind die Kosten gesunken", [tr("Yan cümle başta olduğu için ana cümle fiille başlar:"), de("Wie in der Grafik dargestellt wurde, sind die Kosten gesunken."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi grafiğe gönderme yap: 'Grafikte gösterildiği gibi maliyetler düştü.'")], expect: produce("Wie in der Grafik dargestellt, sind die Kosten gesunken", [tr("Kısaltılmış yan cümle başta olduğu için ana cümle fiille başlar:"), de("Wie in der Grafik dargestellt, sind die Kosten gesunken."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Dikkat çekici olan, artışın mayısta başlamış olması.'")], expect: produce("Auffällig ist, dass die Zunahme im Mai begonnen hat", [tr("Sıfat başta, yan cümlede yardımcı fiil sonda:"), de("Auffällig ist, dass die Zunahme im Mai begonnen hat."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Wie in der Grafik dargestellt wurde, sind die Kosten gesunken."), tr("cümlesi doğru mu?")], expect: truefalse("Wie in der Grafik dargestellt wurde, sind die Kosten gesunken.", true, [tr("Doğru. Yan cümlede edilgen geçmiş, ana cümlede durum değişikliği bildiren fiil sein ile çekilmiş ve fiil virgülden hemen sonra geliyor.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Wie in der Grafik dargestellt, sind die Kosten gesunken."), tr("cümlesi doğru mu?")], expect: truefalse("Wie in der Grafik dargestellt, sind die Kosten gesunken.", true, [tr("Doğru. Kısaltılmış yan cümlede yalnız ortaç kalıyor; ana cümlede durum değişikliği bildiren fiil sein ile çekilmiş ve fiil virgülden hemen sonra geliyor.")]) },
       { say: [tr("Son: 'Oran mayısta yeniden hesaplandı.'")], expect: produce("Die Quote ist im Mai neu berechnet worden", [tr("Yardımcı fiil ikinci sırada, ortaç ve kısalmış biçim en sonda:"), de("Die Quote ist im Mai neu berechnet worden."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir meslektaşına çeyrek sonuçlarını anlatacaksın: eğilim ne, dikkat çeken ne, neden böyle.")] },
     ],

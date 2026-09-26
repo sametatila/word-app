@@ -24,7 +24,7 @@ const repeat = (target: string): LectureStep["expect"] => ({ kind: "repeat", tar
 const produce = (target: string, hint: Segment[], accept?: string[]): LectureStep["expect"] => ({ kind: "produce", target, accept, hint });
 const truefalse = (statement: string, answer: boolean, why: Segment[]): LectureStep["expect"] => ({ kind: "truefalse", statement, answer, why });
 
-/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X deyin." */
+/** Standart kelime adımı: "n. kelimemiz: X — anlamı; X de." */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
   return {
     say: [tr(`${n} kelimemiz:`), de(w.de), tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`), de(w.de), tr("de.")],
@@ -73,7 +73,7 @@ export const deB1B07: Conversation[] = [
       { say: [tr("Sıra sende: 'Bence bu karar çok erken geldi.'")], expect: produce("Meiner Meinung nach kam die Entscheidung zu früh", [tr("Tümleç başta, çekimli fiil hemen arkasında:"), de("Meiner Meinung nach kam die Entscheidung zu früh."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi yan cümleyle: 'Haklı olduğuna eminim.'")], expect: produce("Ich bin überzeugt, dass du recht hast", [tr("Yan cümlede çekimli fiil en sona gider:"), de("Ich bin überzeugt, dass du recht hast."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu konuda sana katılıyorum.'")], expect: produce("In diesem Punkt stimme ich dir zu", [tr("Katılmak fiili yönelme ister ve öneki sona gider:"), de("In diesem Punkt stimme ich dir zu."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ich bin überzeugt, dass er hat recht."), tr("cümlesi doğru mu?")], expect: truefalse("Ich bin überzeugt, dass er hat recht.", false, [tr("Yan cümlede çekimli fiil en sona gider:"), de("Ich bin überzeugt, dass er recht hat.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Ich bin überzeugt, dass er recht hat."), tr("cümlesi doğru mu?")], expect: truefalse("Ich bin überzeugt, dass er recht hat.", true, [tr("Doğru. Yan cümlede çekimli fiil en sonda duruyor.")]) },
       { say: [tr("Son: 'Bu noktada sana karşı çıkmak zorundayım.'")], expect: produce("In diesem Punkt muss ich dir widersprechen", [tr("Karşı çıkmak fiili de yönelme ister; mastar en sonda:"), de("In diesem Punkt muss ich dir widersprechen."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir tanıdığınla güncel bir konuyu tartışacaksın: görüşünü söyle, gerekçelendir, ona katılıp katılmadığını belirt.")] },
     ],

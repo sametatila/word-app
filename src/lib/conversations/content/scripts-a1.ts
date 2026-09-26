@@ -169,11 +169,11 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["vorname", "nachname", "heiße", "heisse", "name", "bin"], "Danke. Buchstabieren Sie bitte den Nachnamen.", "Teşekkürler. Lütfen soyadınızı harfleyin.", "t2", ["Mein Nachname ist …"]),
     ], { say: "Wie ist Ihr Vor- und Nachname?", sayTr: "Adınız ve soyadınız ne?", example: "Mein Vorname ist Ayşe. Mein Nachname ist Demir." }),
     t("t2", "Buchstabieren Sie bitte den Nachnamen.", "Soyadınızı harfleyin lütfen.", "Harf harf söyle: D-E-M-I-R", [
-      r(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "y", "z", "buchstabiere"], "Danke. Und Ihre Straße? Wie schreibt man das?", "Teşekkürler. Peki sokağınız? Nasıl yazılıyor?", "t3", ["Buchstabieren Sie bitte."]),
+      r(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "y", "z", "buchstabiere"], "Danke. Und wie heißt Ihre Straße?", "Teşekkürler. Peki sokağınızın adı ne?", "t3", ["Buchstabieren Sie bitte."]),
     ], { say: "Bitte langsam buchstabieren: D – E – M …", sayTr: "Lütfen yavaşça harfleyin: D – E – M…", example: "D, E, M, I, R." }),
-    t("t3", "Und Ihre Straße? Wie schreibt man das?", "Sokağınız? Nasıl yazılıyor?", "Sokağını söyle ve harfle; bilmiyorsan sor: Wie schreibt man das?", [
-      r(["straße", "strasse", "weg", "platz", "schreibt", "wohne", "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "r", "s", "t", "u"], "Alles klar. Ist Ihre E-Mail-Adresse auch mit dem Nachnamen?", "Anlaşıldı. E-posta adresiniz de soyadınızla mı?", "t4", ["Wie schreibt man das?"]),
-    ], { say: "Ihre Straße, bitte — und wie schreibt man sie?", sayTr: "Sokağınız, lütfen — nasıl yazılıyor?", example: "Bahnhofstraße. B, A, H, N, H, O, F." }),
+    t("t3", "Und wie heißt Ihre Straße?", "Sokağınızın adı ne?", "Sokağının adını söyle: Ich wohne in der …", [
+      r(["straße", "strasse", "weg", "platz", "allee", "gasse", "ring", "wohne", "heißt", "heisst"], "Alles klar. Ist Ihre E-Mail-Adresse auch mit dem Nachnamen?", "Anlaşıldı. E-posta adresiniz de soyadınızla mı?", "t4", []),
+    ], { say: "Ihre Straße, bitte.", sayTr: "Sokağınız, lütfen.", example: "Ich wohne in der Bahnhofstraße." }),
     t("t4", "Ist Ihre E-Mail-Adresse auch mit dem Nachnamen?", "E-postanız da soyadınızla mı?", "Evet/hayır de; e-postanı söyle (punkt, at)", [
       r(["ja", "nein", "mail", "punkt", "at", "adresse", "gmail", "web"], "Danke schön. Und wie schreibt man Ihre Straße?", "Çok teşekkürler. Peki sokağınız nasıl yazılıyor?", "t5", []),
     ], { say: "Ihre E-Mail-Adresse, bitte.", sayTr: "E-posta adresiniz, lütfen.", example: "Ja: ayse punkt demir at mail punkt de." }),

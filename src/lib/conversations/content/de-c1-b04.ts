@@ -376,7 +376,7 @@ export const deC1B04: Conversation[] = [
       { de: "auf Heller und Pfennig", tr: "tam tamına" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün para. Bu deyimlerin ikisi eski para birimlerinden geliyor ama hâlâ günlük dilde. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün para. Bu deyimlerden biri iki eski madeni paranın adını taşıyor ama hâlâ günlük dilde. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir tanesi özellikle işine yarayacak: parasının kıt olduğunu söylemenin kibar yolu. Türkçede 'sıkışığım' deriz; Almancanın kendi kalıbı var. Önce kelimeler.")] },
       word("İlk", { de: "Geld zum Fenster hinauswerfen", tr: "parayı çöpe atmak" }),
       word("İkinci", { de: "tief in die Tasche greifen", tr: "cebinden çok para çıkarmak" }),
@@ -421,7 +421,7 @@ export const deC1B04: Conversation[] = [
       { de: "die erste Geige spielen", tr: "başı çekmek" },
       { de: "der Ohrwurm", tr: "akıldan çıkmayan şarkı" },
       { de: "den richtigen Ton treffen", tr: "doğru tonu tutturmak" },
-      { de: "das ist eine andere Melodie", tr: "o başka bir hikâye" },
+      { de: "jemandem den Marsch blasen", tr: "birine fırça çekmek" },
       { de: "einen Sturm entfachen", tr: "fırtına koparmak" },
     ],
     patterns: [
@@ -437,7 +437,7 @@ export const deC1B04: Conversation[] = [
       word("Dördüncü", { de: "die erste Geige spielen", tr: "başı çekmek" }),
       word("Beşinci", { de: "der Ohrwurm", tr: "akıldan çıkmayan şarkı" }),
       word("Altıncı", { de: "den richtigen Ton treffen", tr: "doğru tonu tutturmak" }),
-      word("Yedinci", { de: "das ist eine andere Melodie", tr: "o başka bir hikâye" }),
+      word("Yedinci", { de: "jemandem den Marsch blasen", tr: "birine fırça çekmek" }),
       word("Son", { de: "einen Sturm entfachen", tr: "fırtına koparmak" }),
       { say: [tr("Örnek:"), de("Bei uns gibt sie den Ton an."), tr("Tekrar et:"), de("Bei uns gibt sie den Ton an")], expect: repeat("Bei uns gibt sie den Ton an") },
       { say: [tr("Sıra sende: 'Kimsenin dediğini yapmam.'")], expect: produce("Ich tanze nach niemandes Pfeife", [tr("Tamlayan hâlindeki belirsiz zamir; edat sabit:"), de("Ich tanze nach niemandes Pfeife."), tr("Tekrar dene.")]) },

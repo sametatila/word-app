@@ -904,7 +904,7 @@ export const deA1B07: Conversation[] = [
           hint: [
             tr("Kat söylerken"),
             de("im"),
-            tr("kullanılır ve kat sıra sayısına döner:"),
+            tr("kullanılır, kat sıra sayısına döner ve zemin kat sayılmaz:"),
             de("Der Aufzug ist im dritten Stock."),
             tr("Tekrar dene."),
           ],
