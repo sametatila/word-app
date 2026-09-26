@@ -2,17 +2,17 @@
 /**
  * SÜRÜMÜN TEK KAYNAĞI VE KAPISI.
  *
- * NEDEN VAR. Sürüm dört ayrı dosyada yazılıydı ve hiçbir şey onları birbirine
+ * NEDEN VAR. Sürüm ayrı dosyalarda yazılıydı ve hiçbir şey onları birbirine
  * bağlamıyordu; üçü elle eşitleniyor, dördüncüsü (web) kendi başına ilerliyordu.
  * Sonuç ölçüldü: aynı ürün, aynı ekranın aynı yerinde web'de "Lernomi 1.0.5",
  * mobilde "Lernomi 1.0.0" yazıyordu — ve o satırın tek işi, destek isteyen
  * kullanıcının söyleyebileceği şey olmaktı.
  *
- * Elle dört yere doğru sayıyı yazmak bu sorunu çözmez, ertelerdi. Onun yerine:
+ * Elle her yere doğru sayıyı yazmak bu sorunu çözmez, ertelerdi. Onun yerine:
  * bir kaynak, bir yazıcı, bir kapı.
  *
  *   KAYNAK   package.json → "version" (semver) + "versionCode" (tamsayı)
- *   YAZICI   --write / --set / --bump-code  → aşağıdaki üç hedefe basar
+ *   YAZICI   --write / --set / --bump-code  → aşağıdaki hedeflere basar
  *   KAPI     --check  → ayrışma varsa çıkış kodu 1, CI kırılır
  *
  * İKİ SAYI, İKİ İŞ. `version` kullanıcıya görünen semver; mağaza sayfasında ve
@@ -59,6 +59,28 @@ const TARGETS = [
       { key: "version", re: /(^\s*versionName\s+")([^"]+)(")/gm, count: 1 },
       { key: "code", re: /(^\s*versionCode\s+)(\d+)([ \t]*$)/gm, count: 1 },
     ],
+  },
+  {
+    /* npm paket sürümü. Hiçbir derleme okumuyor ama şablondan kalan "0.0.1"
+       ile duruyordu: "hiçbir yerde eski sürüm kalmasın" (Samet, 2026-09-26).
+       Yalnız semver taşıyor, sayaç yok. */
+    label: "mobile/package.json",
+    path: join(ROOT, "mobile/package.json"),
+    fields: [{ key: "version", re: /(^\s*"version":\s*")([^"]+)(")/gm, count: 1 }],
+  },
+  {
+    /* Kilit dosyaları paketin sürümünü İKİ yerde taşıyor: başlıkta ve
+       `packages[""]` girdisinde. `npm install` onları package.json'dan
+       yeniden yazıyor; burada yazılması, kurulum yapılmadan da eski sürümün
+       kalmaması için. */
+    label: "package-lock.json",
+    path: join(ROOT, "package-lock.json"),
+    fields: [{ key: "version", re: /((?:^\{\s*|"":\s*\{\s*)"name":\s*"[^"]+",\s*"version":\s*")([^"]+)(")/g, count: 2 }],
+  },
+  {
+    label: "mobile/package-lock.json",
+    path: join(ROOT, "mobile/package-lock.json"),
+    fields: [{ key: "version", re: /((?:^\{\s*|"":\s*\{\s*)"name":\s*"[^"]+",\s*"version":\s*")([^"]+)(")/g, count: 2 }],
   },
   {
     label: "ios/project.pbxproj",
@@ -109,8 +131,9 @@ function check(src) {
   for (const t of TARGETS) {
     const cur = readTarget(t);
     const v = cur.version.error ? cur.version.error : cur.version.value;
-    const c = cur.code.error ? cur.code.error : cur.code.value;
-    const ok = !cur.version.error && !cur.code.error && v === src.version && c === String(src.code);
+    // Sayaç taşımayan hedef (mobile/package.json) yalnız semver'le denetleniyor.
+    const c = !cur.code ? "—" : cur.code.error ? cur.code.error : cur.code.value;
+    const ok = !cur.version.error && !cur.code?.error && v === src.version && (!cur.code || c === String(src.code));
     if (!ok) bad++;
     rows.push({ label: t.label, version: v, code: c, ok });
   }
@@ -206,7 +229,7 @@ try {
   console.log("== Sürüm");
   const bad = check(src);
   if (bad === 0) {
-    console.log("\nDört kaynak da aynı.");
+    console.log(`\n${TARGETS.length + 1} kayıt da aynı.`);
     process.exit(0);
   }
   console.error(`\n${bad} hedef kaynakla ayrışmış. Düzeltmek için:\n  npm run version:write`);
