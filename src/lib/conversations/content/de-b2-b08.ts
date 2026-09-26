@@ -541,7 +541,7 @@ export const deB2B08: Conversation[] = [
       { de: "Das ist es mir wert.", tr: "değer yargısı" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve konusu keyifli: pahalı hobiler. Ama dilbilgisi ciddi — sahiplik bildiren ilgi cümlesini bir kez daha, bu kez fiil uyumuna dikkat ederek kuracağız. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve konusu keyifli: pahalı hobiler. Ama dilbilgisi ciddi — sahiplik bildiren ilgi cümlesini bir kez daha, bu kez fiil uyumuna dikkat ederek kuracağız. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Dikkat: ilgi zamiri önceki ismin cinsine göre seçilir ama FİİL sonraki ismin sayısına uyar. İki ayrı yere bakman gerekiyor. Önce kelimeler.")] },
       word("İlk", { de: "die Ausrüstung", tr: "ekipman" }),
       word("İkinci", { de: "die Leidenschaft", tr: "tutku" }),

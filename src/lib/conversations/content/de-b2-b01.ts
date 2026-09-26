@@ -544,7 +544,7 @@ export const deB2B01: Conversation[] = [
       { de: "trotz + Genitiv / während + Genitiv", tr: "zıtlık ve süre" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi. Bugün resmî Almancanın küçük ama belirgin bir işareti: bazı edatlar tamlayan hâli ister. Konuşurken bunu doğru kullanmak seviyeni hemen belli eder. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı. Bugün resmî Almancanın küçük ama belirgin bir işareti: bazı edatlar tamlayan hâli ister. Konuşurken bunu doğru kullanmak seviyeni hemen belli eder. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Günlük dilde bu edatlardan sonra yönelme hâli duyarsın ve yanlış sayılmaz; ama yazıda ve resmî konuşmada tamlayan hâli beklenir. Önce kelimeler.")] },
       word("İlk", { de: "der Austausch", tr: "fikir alışverişi" }),
       word("İkinci", { de: "vernetzen", tr: "ağa bağlamak" }, "Dönüşlü kullanınca 'bağlantı kurmak' olur."),

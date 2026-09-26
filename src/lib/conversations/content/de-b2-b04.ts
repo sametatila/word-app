@@ -489,7 +489,7 @@ export const deB2B04: Conversation[] = [
       { de: "gekennzeichnet werden müssen", tr: "işaretlenmek zorunda" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün sosyal medyaya bakıyoruz ve bu ders geçen dersin devamı: ortaç sıfatları. Bu kez reklam ile görüşü ayırmak için. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün sosyal medyaya bakıyoruz ve bu Konuşma adımı bir öncekinin devamı: ortaç sıfatları. Bu kez reklam ile görüşü ayırmak için. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("'Reklamı yapılan ürün' tek bir sıfatla söylenir ve tam da bu yoğunluk, kuralın yazıldığı yerde işe yarar. Önce kelimeler.")] },
       word("İlk", { de: "die Reichweite", tr: "erişim" }),
       word("İkinci", { de: "glaubwürdig", tr: "inandırıcı" }),
@@ -543,7 +543,7 @@ export const deB2B04: Conversation[] = [
       { de: "Tatsächlich aber …", tr: "gerçeği karşısına koyar" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve bütün modülü topluyor: bir iddiayı önce aktaracaksın, sonra gerçeği karşısına koyacaksın. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve bütün modülü topluyor: bir iddiayı önce aktaracaksın, sonra gerçeği karşısına koyacaksın. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bu iki hamlenin ayrı dilbilgisi var: iddia aktarım kipiyle, gerçek düz kipte. Fark cümlede görünür ve dinleyen kimin ne dediğini karıştırmaz. Önce kelimeler.")] },
       word("İlk", { de: "die Falschmeldung", tr: "yalan haber" }),
       word("İkinci", { de: "die Behauptung", tr: "iddia" }),

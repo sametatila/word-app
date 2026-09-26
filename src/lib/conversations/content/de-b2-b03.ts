@@ -435,7 +435,7 @@ export const deB2B03: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün profesyonel mutfaktayız. Tarif kitabı 'sen şunu yap' demez; 'şu şöyle pişirilmeli' der. Yani kipli edilgen. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bu ders geçen derslerdeki yapının mutfaktaki hâli: aynı kural, yeni kelimeler ve çok daha hızlı bir tempo. Önce kelimeler.")] },
+      { say: [tr("Bu Konuşma adımı, önceki adımlardaki yapının mutfaktaki hâli: aynı kural, yeni kelimeler ve çok daha hızlı bir tempo. Önce kelimeler.")] },
       word("İlk", { de: "die Zutat", tr: "malzeme" }),
       word("İkinci", { de: "würzen", tr: "baharatlamak" }),
       word("Üçüncü", { de: "abkühlen", tr: "soğumak" }),
@@ -542,7 +542,7 @@ export const deB2B03: Conversation[] = [
       { de: "… kann übernommen werden", tr: "üstlenilebilir olan" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve edilgenin en pratik hâli: iş bölümü. Kimsenin adını vermeden bütün işleri sayabilirsin. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve edilgenin en pratik hâli: iş bölümü. Kimsenin adını vermeden bütün işleri sayabilirsin. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Sahte özne 'es' burada çok işine yarar:"), de("Es muss noch eingekauft werden"), tr("— alışveriş yapılması gerekiyor, kim yapacak henüz belli değil. Önce kelimeler.")] },
       word("İlk", { de: "die Aufgabenverteilung", tr: "görev dağılımı" }),
       word("İkinci", { de: "die Priorisierung", tr: "önceliklendirme" }),

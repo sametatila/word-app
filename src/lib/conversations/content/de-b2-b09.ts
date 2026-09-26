@@ -544,7 +544,7 @@ export const deB2B09: Conversation[] = [
       { de: "Wage den ersten Schritt.", tr: "emir kipiyle cesaret" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve konusu değişim. Değişim hakkında konuşurken hiçbir söz kesin verilmez, hep bir koşula bağlanır. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve konusu değişim. Değişim hakkında konuşurken hiçbir söz kesin verilmez, hep bir koşula bağlanır. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir de emir kipi var: 'ilk adımı at'. Emirde nesnenin hâline dikkat etmen gerekiyor. Sonda sınayacağız. Önce kelimeler.")] },
       word("İlk", { de: "das Wachstum", tr: "büyüme" }),
       word("İkinci", { de: "die Geborgenheit", tr: "güven duygusu" }, "Korunmuş ve emin hissetme; sıcak bir yuvada olma hâli."),

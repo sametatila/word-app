@@ -533,7 +533,7 @@ export const deB1B16: Conversation[] = [
       { de: "gewöhnt sein an + Akkusativ", tr: "bir şeye alışkın olduğunu söyler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi: işinden memnun musun? Bu konuşmanın fiilleri edatını sabit taşıyor ve yanlış edat cümleyi bozuyor. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı: işinden memnun musun? Bu konuşmanın fiilleri edatını sabit taşıyor ve yanlış edat cümleyi bozuyor. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İki fiilin de edatı ezberlenir, mantığı yoktur. İkisi de belirtme hâli istiyor. Önce kelimeler.")] },
       word("İlk", { de: "anstrengend", tr: "yorucu" }),
       word("İkinci", { de: "sich langweilen", tr: "canı sıkılmak" }),

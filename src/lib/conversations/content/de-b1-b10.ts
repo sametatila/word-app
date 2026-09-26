@@ -490,7 +490,7 @@ export const deB1B10: Conversation[] = [
       { de: "Schritt für Schritt", tr: "adım adım" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Sondan bir önceki ders ve konusu büyük: hayat hayali. Bunu anlatmanın kalıbı, edatı sabit bir fiille kurulan mastar öbeği. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Sondan bir önceki Konuşma adımı ve konusu büyük: hayat hayali. Bunu anlatmanın kalıbı, edatı sabit bir fiille kurulan mastar öbeği. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Hayali söylemek kolay, adımlara bölmek zordur. İkisini de kuracağız — çünkü ikincisi olmadan ilki bir cümle olarak kalıyor. Önce kelimeler.")] },
       word("İlk", { de: "der Zweifel", tr: "kuşku" }),
       word("İkinci", { de: "starten", tr: "başlamak" }),
@@ -544,7 +544,7 @@ export const deB1B10: Conversation[] = [
       { de: "Ich bin stolz darauf, dass …", tr: "gurur duyulan şeyi söyler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! B1'in ilk bölümünün son dersindeyiz. Bugün yeni bir kural yok; bugün öğrendiklerinle kendi yolunu anlatacaksın. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! B1'in ilk bölümünün son Konuşma adımındayız. Bugün yeni bir kural yok; bugün öğrendiklerinle kendi yolunu anlatacaksın. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İki kalıp kullanacağız: olmasaydı ne olurdu ve neyle gurur duyuyorsun. Birincisi dilek kipi, ikincisi yan cümle. Önce kelimeler.")] },
       word("İlk", { de: "weiterhin", tr: "bundan böyle de" }),
       word("İkinci", { de: "erinnern", tr: "hatırlatmak" }),

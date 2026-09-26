@@ -111,7 +111,7 @@ export const deB2B06: Conversation[] = [
       { de: "infolge + Genitiv", tr: "sonucunda" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Geçen derste günlük sebep edatlarını kurduk; bugün onların resmî kardeşleri. Duyurularda, kararlarda ve haberlerde bunları görürsün. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Geçen Konuşma adımında günlük sebep edatlarını kurduk; bugün onların resmî kardeşleri. Duyurularda, kararlarda ve haberlerde bunları görürsün. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Aralarında ince bir fark var: biri sebebi, ikincisi sonucu vurgular, üçüncüsü de bir durumun karşısında alınan tavrı. Önce kelimeler.")] },
       word("İlk", { de: "die Maßnahme", tr: "tedbir" }),
       word("İkinci", { de: "angesichts", tr: "…-in karşısında" }, "Ardından tamlayan hâli gelir."),
@@ -543,7 +543,7 @@ export const deB2B06: Conversation[] = [
       { de: "… dürfte knapp werden", tr: "temkinli tahmin" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi: seçim. Bu konuda konuşurken en önemli şey neyin vaat, neyin anket, neyin senin tahminin olduğunu ayırmak. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı: seçim. Bu konuda konuşurken en önemli şey neyin vaat, neyin anket, neyin senin tahminin olduğunu ayırmak. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Öznel kip fiilleri tam olarak bunu yapıyor. Bir partinin kendi iddiası ile senin tahminin aynı cümle kalıbıyla söylenmez. Önce kelimeler.")] },
       word("İlk", { de: "das Wahlversprechen", tr: "seçim vaadi" }),
       word("İkinci", { de: "der Wahlkampf", tr: "seçim kampanyası" }),

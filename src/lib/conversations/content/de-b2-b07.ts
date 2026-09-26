@@ -542,7 +542,7 @@ export const deB2B07: Conversation[] = [
       { de: "für … verkauft werden", tr: "satış fiyatı" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi: bir sanat eserinin değeri neyle ölçülür? Bu tartışma orantı cümleleriyle yürür. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı: bir sanat eserinin değeri neyle ölçülür? Bu tartışma orantı cümleleriyle yürür. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir de dikkat edeceğin küçük bir nokta var: soru sorarken nesnenin hâli. Sonda sınayacağız. Önce kelimeler.")] },
       word("İlk", { de: "die Sammlung", tr: "koleksiyon" }),
       word("İkinci", { de: "der Investor", tr: "yatırımcı" }),

@@ -111,7 +111,7 @@ export const deB2B05: Conversation[] = [
       { de: "die getestete Methode", tr: "test edilmiş yöntem" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Geçen derste 'yapmakta olan' sıfatını kurduk. Bugün ikizi: 'yapılmış olan'. İkisi zıt yönlere bakıyor ve karıştırmak anlamı tersine çeviriyor. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Geçen Konuşma adımında 'yapmakta olan' sıfatını kurduk. Bugün ikizi: 'yapılmış olan'. İkisi zıt yönlere bakıyor ve karıştırmak anlamı tersine çeviriyor. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bu kez ortaç geçmiş biçimden geliyor. 'Geliştiren yöntem' başka, 'geliştirilen yöntem' başka; Almancada bu fark tek bir ortaçla söyleniyor. Önce kelimeler.")] },
       word("İlk", { de: "das Verfahren", tr: "yöntem" }),
       word("İkinci", { de: "der Testlauf", tr: "deneme çalışması" }),
@@ -490,7 +490,7 @@ export const deB2B05: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün herkesin bildiği bir duygu: teknoloji çalışmıyor. İyi haber, şikâyetin de çözümün de hazır kalıpları var. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Çözüm cümlesi yine yöntem bağlacıyla kuruluyor — 'yeniden başlatarak çözersin'. Bu ders o yapının günlük hâli. Önce kelimeler.")] },
+      { say: [tr("Çözüm cümlesi yine yöntem bağlacıyla kuruluyor — 'yeniden başlatarak çözersin'. Bu Konuşma adımı o yapının günlük hâli. Önce kelimeler.")] },
       word("İlk", { de: "abstürzen", tr: "çökmek (program)" }),
       word("İkinci", { de: "das Endgerät", tr: "uç cihaz" }, "Telefon, tablet, bilgisayar için ortak resmî sözcük."),
       word("Üçüncü", { de: "das Ladegerät", tr: "şarj cihazı" }),
@@ -543,7 +543,7 @@ export const deB2B05: Conversation[] = [
       { de: "Es bleibt abzuwarten, …", tr: "cevabı açık bırakır" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve konusu gelecek. Gelecek hakkında konuşurken Almanca ne kadar emin olduğunu fiille gösterir — kesin, olası ya da sadece duyulmuş. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve konusu gelecek. Gelecek hakkında konuşurken Almanca ne kadar emin olduğunu fiille gösterir — kesin, olası ya da sadece duyulmuş. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("dürfte: büyük ihtimalle. soll: öyle diyorlar. wird: kesin. Üçünü doğru seçmek, tahminini savunulabilir kılar. Önce kelimeler.")] },
       word("İlk", { de: "sich durchsetzen", tr: "yaygınlaşmak" }),
       word("İkinci", { de: "der Prototyp", tr: "prototip" }),

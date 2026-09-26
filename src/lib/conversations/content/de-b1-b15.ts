@@ -533,7 +533,7 @@ export const deB1B15: Conversation[] = [
       { de: "nicht nur …, sondern auch …", tr: "ikincisini öne çıkararak ekler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi: teknoloji bizi özgürleştiriyor mu, bağımlı mı kılıyor? Böyle sorularda tek yanlı cevap zayıf durur. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı: teknoloji bizi özgürleştiriyor mu, bağımlı mı kılıyor? Böyle sorularda tek yanlı cevap zayıf durur. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İkili bağlaçlar bir görüşün iki yanını aynı cümlede tutar. İkinci parçası sabittir ve değiştirilemez. Önce kelimeler.")] },
       word("İlk", { de: "die Technologie", tr: "teknoloji" }),
       word("İkinci", { de: "die Medien", tr: "medya" }, "genelde çoğul kullanılır"),

@@ -539,7 +539,7 @@ export const deB2B02: Conversation[] = [
       { de: "An Ihrer Stelle würde ich …", tr: "öneriyi dilek kipiyle verir" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi ve en faydalısı: eleştiriyi nasıl söylersin. Almancada üçlü bir sıra var — gözlem, öneri, soru. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı ve en faydalısı: eleştiriyi nasıl söylersin. Almancada üçlü bir sıra var — gözlem, öneri, soru. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Gözlem 'sen şöylesin' değil 'şu dikkatimi çekti' diye kurulur; öneri dilek kipindedir; soru da kararı karşı tarafa bırakır. Önce kelimeler.")] },
       word("İlk", { de: "die Rückmeldung", tr: "geri bildirim" }),
       word("İkinci", { de: "der Verbesserungsvorschlag", tr: "iyileştirme önerisi" }),

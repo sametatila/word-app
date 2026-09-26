@@ -490,7 +490,7 @@ export const deB2B10: Conversation[] = [
       { de: "Wo ist noch eine Wissenslücke?", tr: "zayıf noktayı sorar" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Sondan bir önceki ders ve konusu sen: B2'yi bitirdin, C1 ne kadar uzakta? Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Sondan bir önceki Konuşma adımı ve konusu sen: B2'yi bitirdin, C1 ne kadar uzakta? Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Kendi seviyeni değerlendirirken ne fazla iddialı ne fazla kararsız olmak gerekiyor — öznel kip fiilleri tam bu ölçüyü veriyor. Önce kelimeler.")] },
       word("İlk", { de: "die Wissenslücke", tr: "bilgi eksiği" }),
       word("İkinci", { de: "die Lernmethode", tr: "öğrenme yöntemi" }),

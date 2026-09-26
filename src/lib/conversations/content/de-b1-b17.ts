@@ -533,7 +533,7 @@ export const deB1B17: Conversation[] = [
       { de: "eintreten für + Akkusativ", tr: "bir şeyi savunduğunu söyler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Modülün son dersi: bir şeyi değiştirmek için ne yapılır. Her eylemin bir amacı olacak ve o amacı söyleyeceksin. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Modülün son Konuşma adımı: bir şeyi değiştirmek için ne yapılır. Her eylemin bir amacı olacak ve o amacı söyleyeceksin. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Amaç bağlacından sonra fiil sona gider. Bir de edatı sabit bir fiil var; edatı ezberlenir. Önce kelimeler.")] },
       word("İlk", { de: "streiken", tr: "grev yapmak" }),
       word("İkinci", { de: "fördern", tr: "desteklemek" }),

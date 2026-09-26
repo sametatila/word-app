@@ -533,7 +533,7 @@ export const deB1B18: Conversation[] = [
       { de: "nicht nur …, sondern auch …", tr: "ikincisini öne çıkararak ekler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! B1'in son dersindesin. Bugün yeni bir kural yok; bugün geçtiğin yolu kendi cümlelerinle değerlendireceksin. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! B1'in son Konuşma adımındasın. Bugün yeni bir kural yok; bugün geçtiğin yolu kendi cümlelerinle değerlendireceksin. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Değerlendirme dengeli olmalı: neyi başardın ve neyi başaramadın. İkili bağlaçlar tam bunun için var. Önce son kelimelerimiz.")] },
       word("İlk", { de: "optimistisch", tr: "iyimser" }),
       word("İkinci", { de: "realistisch", tr: "gerçekçi" }),
