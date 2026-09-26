@@ -290,10 +290,10 @@
   {
     "id": 7774,
     "tr": "banknot",
-    "en": "banknote",
+    "en": "bill",
     "beispiel": "Ich habe leider nur einen großen Geldschein dabei.",
     "beispielTr": "Yanımda maalesef sadece büyük bir banknot var.",
-    "beispielEn": "Unfortunately I only have a large banknote with me."
+    "beispielEn": "Unfortunately I only have a large bill with me."
   },
   {
     "id": 7775,

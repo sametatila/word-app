@@ -154,10 +154,10 @@
   {
     "id": 4613,
     "tr": "istirahat raporu",
-    "en": "sick note",
+    "en": "doctor's note",
     "beispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben.",
     "beispielTr": "Doktor bana üç günlük istirahat raporu verdi.",
-    "beispielEn": "The doctor gave me a sick note for three days."
+    "beispielEn": "The doctor wrote me a note excusing me from work for three days."
   },
   {
     "id": 4614,

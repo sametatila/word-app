@@ -10,10 +10,10 @@
   {
     "id": 442,
     "tr": "harçlık",
-    "en": "pocket money",
+    "en": "allowance",
     "beispiel": "Von seinem Taschengeld kauft Max Comics.",
     "beispielTr": "Max harçlığıyla çizgi roman alıyor.",
-    "beispielEn": "Max buys comics with his pocket money."
+    "beispielEn": "Max buys comics with his allowance."
   },
   {
     "id": 82,
@@ -234,10 +234,10 @@
   {
     "id": 804,
     "tr": "tramvay",
-    "en": "tram",
+    "en": "streetcar",
     "beispiel": "Die Straßenbahn ist heute Morgen sehr voll.",
     "beispielTr": "Tramvay bu sabah çok kalabalık.",
-    "beispielEn": "The tram is really crowded this morning."
+    "beispielEn": "The streetcar is really crowded this morning."
   },
   {
     "id": 316,
@@ -338,10 +338,10 @@
   {
     "id": 141,
     "tr": "sefer tarifesi",
-    "en": "timetable",
+    "en": "schedule",
     "beispiel": "Laut Fahrplan kommt die Bahn um acht.",
     "beispielTr": "Sefer tarifesine göre tren sekizde geliyor.",
-    "beispielEn": "According to the timetable, the train comes at eight."
+    "beispielEn": "According to the schedule, the train comes at eight."
   },
   {
     "id": 161,

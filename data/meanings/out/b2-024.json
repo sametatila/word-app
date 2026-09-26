@@ -122,18 +122,18 @@
   {
     "id": 4809,
     "tr": "alacak kaydı",
-    "en": "credit note",
+    "en": "credit",
     "beispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
     "beispielTr": "Nakit yerine seksen avroluk bir alacak kaydı aldı.",
-    "beispielEn": "Instead of cash she got a credit note for eighty euros."
+    "beispielEn": "Instead of cash she got a credit of eighty euros."
   },
   {
     "id": 4810,
     "tr": "hediye çeki",
-    "en": "voucher",
+    "en": "gift card",
     "beispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig.",
     "beispielTr": "Hediye çeki üç yıl boyunca bütün şubelerde geçerli.",
-    "beispielEn": "The voucher is valid in all branches for three years."
+    "beispielEn": "The gift card is valid in all branches for three years."
   },
   {
     "id": 4811,
@@ -309,7 +309,7 @@
     "en": "to redeem",
     "beispiel": "Kann ich den Gutschein auch online einlösen?",
     "beispielTr": "Hediye çekini internetten de kullanabilir miyim?",
-    "beispielEn": "Can I redeem the voucher online too?"
+    "beispielEn": "Can I redeem the gift card online too?"
   },
   {
     "id": 4834,

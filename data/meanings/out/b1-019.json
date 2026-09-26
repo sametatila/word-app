@@ -282,10 +282,10 @@
   {
     "id": 2628,
     "tr": "banknot",
-    "en": "banknote",
+    "en": "bill",
     "beispiel": "Kannst du mir einen Schein in Münzen wechseln?",
     "beispielTr": "Bana bir banknotu bozuk parayla değiştirebilir misin?",
-    "beispielEn": "Can you change a banknote into coins for me?"
+    "beispielEn": "Can you change a bill into coins for me?"
   },
   {
     "id": 2172,
@@ -381,7 +381,7 @@
     "en": "strong",
     "beispiel": "Er ist kräftig genug, um den Schrank zu tragen.",
     "beispielTr": "Dolabı taşıyacak kadar kuvvetli.",
-    "beispielEn": "He is strong enough to carry the cupboard."
+    "beispielEn": "He is strong enough to carry the cabinet."
   },
   {
     "id": 2388,

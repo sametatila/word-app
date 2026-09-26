@@ -21,7 +21,7 @@
     "en": "to sit",
     "beispiel": "Wir sitzen im Garten und trinken Kaffee.",
     "beispielTr": "Bahçede oturup kahve içiyoruz.",
-    "beispielEn": "We are sitting in the garden and drinking coffee."
+    "beispielEn": "We are sitting in the backyard and drinking coffee."
   },
   {
     "id": 783,
@@ -162,10 +162,10 @@
   {
     "id": 708,
     "tr": "dükkân",
-    "en": "shop",
+    "en": "store",
     "beispiel": "Der Laden macht um neun Uhr auf.",
     "beispielTr": "Dükkân saat dokuzda açılıyor.",
-    "beispielEn": "The shop opens at nine o'clock."
+    "beispielEn": "The store opens at nine o'clock."
   },
   {
     "id": 666,

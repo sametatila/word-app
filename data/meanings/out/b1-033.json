@@ -306,10 +306,10 @@
  {
   "id": 1488,
   "tr": "bankamatik",
-  "en": "cash machine",
+  "en": "Swiss and Austrian word for ATM",
   "beispiel": "Ich hebe hundert Euro am Bankomaten ab.",
   "beispielTr": "Bankamatikten yüz avro çekiyorum.",
-  "beispielEn": "I am withdrawing a hundred euros from the cash machine."
+  "beispielEn": "I am withdrawing a hundred euros from the ATM."
  },
  {
   "id": 1489,
@@ -381,7 +381,7 @@
   "en": "female resident",
   "beispiel": "Die Bewohnerin aus dem dritten Stock hat sich beschwert.",
   "beispielTr": "Üçüncü kattaki bina sakini şikâyet etti.",
-  "beispielEn": "The resident from the third floor complained."
+  "beispielEn": "The resident from the fourth floor complained."
  },
  {
   "id": 1585,

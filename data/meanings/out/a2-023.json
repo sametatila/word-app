@@ -122,10 +122,10 @@
  {
   "id": 8103,
   "tr": "sonbahar",
-  "en": "autumn",
+  "en": "fall",
   "beispiel": "Im Herbst fallen die Blätter von den Bäumen.",
   "beispielTr": "Sonbaharda yapraklar ağaçlardan düşer.",
-  "beispielEn": "In autumn the leaves fall from the trees."
+  "beispielEn": "In the fall the leaves drop from the trees."
  },
  {
   "id": 8104,
@@ -245,7 +245,7 @@
   "en": "sunshine",
   "beispiel": "Im Garten sitzen wir gern im Sonnenschein.",
   "beispielTr": "Bahçede güneş ışığında oturmayı seviyoruz.",
-  "beispielEn": "We like sitting in the sunshine in the garden."
+  "beispielEn": "We like sitting in the sunshine in the backyard."
  },
  {
   "id": 8119,
@@ -309,7 +309,7 @@
   "en": "to dig up",
   "beispiel": "Der Hund gräbt im Garten einen Knochen aus.",
   "beispielTr": "Köpek bahçede bir kemik kazıp çıkarıyor.",
-  "beispielEn": "The dog is digging up a bone in the garden."
+  "beispielEn": "The dog is digging up a bone in the backyard."
  },
  {
   "id": 8128,
@@ -317,7 +317,7 @@
   "en": "to harvest",
   "beispiel": "Im Herbst ernten die Bauern die Äpfel.",
   "beispielTr": "Sonbaharda çiftçiler elmaları hasat eder.",
-  "beispielEn": "In autumn the farmers harvest the apples."
+  "beispielEn": "In the fall the farmers harvest the apples."
  },
  {
   "id": 8129,
@@ -357,7 +357,7 @@
   "en": "to burn",
   "beispiel": "Im Garten darf man kein Laub verbrennen.",
   "beispielTr": "Bahçede yaprak yakmak yasaktır.",
-  "beispielEn": "You are not allowed to burn leaves in the garden."
+  "beispielEn": "You are not allowed to burn leaves in the yard."
  },
  {
   "id": 8134,

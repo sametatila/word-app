@@ -146,10 +146,10 @@
   {
     "id": 8056,
     "tr": "el bagajı",
-    "en": "hand luggage",
+    "en": "carry-on luggage",
     "beispiel": "Ich nehme nur Handgepäck mit.",
     "beispielTr": "Yanıma sadece el bagajı alıyorum.",
-    "beispielEn": "I'm only taking hand luggage."
+    "beispielEn": "I'm only taking carry-on luggage."
   },
   {
     "id": 8057,
@@ -213,7 +213,7 @@
     "en": "hotel room",
     "beispiel": "Unser Hotelzimmer liegt im dritten Stock.",
     "beispielTr": "Otel odamız üçüncü katta.",
-    "beispielEn": "Our hotel room is on the third floor."
+    "beispielEn": "Our hotel room is on the fourth floor."
   },
   {
     "id": 8065,

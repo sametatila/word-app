@@ -29,7 +29,7 @@
     "en": "floor",
     "beispiel": "Der Aufzug fährt nur bis zum fünften Stock.",
     "beispielTr": "Asansör yalnızca beşinci kata kadar çıkıyor.",
-    "beispielEn": "The elevator only goes up to the fifth floor."
+    "beispielEn": "The elevator only goes up to the sixth floor."
   },
   {
     "id": 833,
@@ -74,10 +74,10 @@
   {
     "id": 452,
     "tr": "tuvalet",
-    "en": "toilet",
+    "en": "restroom",
     "beispiel": "Die Toilette im Erdgeschoss ist leider kaputt.",
     "beispielTr": "Zemin kattaki tuvalet maalesef bozuk.",
-    "beispielEn": "Unfortunately, the toilet on the first floor is broken."
+    "beispielEn": "Unfortunately, the restroom on the ground floor is broken."
   },
   {
     "id": 562,
@@ -162,10 +162,10 @@
   {
     "id": 787,
     "tr": "öğrenci",
-    "en": "pupil",
+    "en": "school student",
     "beispiel": "Die Schüler warten vor der Schule.",
     "beispielTr": "Öğrenciler okulun önünde bekliyor.",
-    "beispielEn": "The pupils are waiting in front of the school."
+    "beispielEn": "The students are waiting in front of the school."
   },
   {
     "id": 672,
@@ -194,10 +194,10 @@
   {
     "id": 263,
     "tr": "sinema",
-    "en": "cinema",
+    "en": "movie theater",
     "beispiel": "Der neue Film läuft jetzt im Kino.",
     "beispielTr": "Yeni film şimdi sinemada oynuyor.",
-    "beispielEn": "The new movie is playing in the cinema now."
+    "beispielEn": "The new movie is playing at the movie theater now."
   },
   {
     "id": 741,
@@ -370,7 +370,7 @@
   {
     "id": 784,
     "tr": "dolap",
-    "en": "cupboard",
+    "en": "closet",
     "beispiel": "Meine Winterjacke hängt im Schrank.",
     "beispielTr": "Kışlık montum dolapta asılı.",
     "beispielEn": "My winter jacket is hanging in the closet."

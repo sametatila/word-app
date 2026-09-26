@@ -77,7 +77,7 @@
     "en": "upward",
     "beispiel": "Der Aufzug fährt langsam aufwärts in den fünften Stock.",
     "beispielTr": "Asansör yavaşça yukarı, beşinci kata çıkıyor.",
-    "beispielEn": "The elevator slowly goes up to the fifth floor."
+    "beispielEn": "The elevator slowly goes up to the sixth floor."
   },
   {
     "id": 2763,
@@ -234,10 +234,10 @@
   {
     "id": 2622,
     "tr": "vitrin",
-    "en": "shop window",
+    "en": "store window",
     "beispiel": "Vor Weihnachten sind die Schaufenster bunt geschmückt.",
     "beispielTr": "Noel'den önce vitrinler rengarenk süslenir.",
-    "beispielEn": "Before Christmas, the shop windows are colorfully decorated."
+    "beispielEn": "Before Christmas, the store windows are colorfully decorated."
   },
   {
     "id": 2512,
