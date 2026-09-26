@@ -53,7 +53,7 @@ export const EN_C1_W03: QuizWeek = {
       genreTr: "Söyleşi",
       plays: 2,
       segments: [
-        { speaker: "Reporter", text: "Ms Okonkwo, your town is growing fast. Are you pleased?" },
+        { speaker: "Reporter", text: "Ms. Okonkwo, your town is growing fast. Are you pleased?" },
         { speaker: "Okonkwo", text: "In principle, yes. But growth on its own solves nothing; it also creates problems." },
         { speaker: "Reporter", text: "What do you have in mind?" },
         { speaker: "Okonkwo", text: "The school. We have two more classes and no room for them." },
@@ -118,7 +118,7 @@ export const EN_C1_W03: QuizWeek = {
       id: "en-c1-w03-l1",
       block: "listen",
       ref: "a1",
-      stem: "How does Ms Okonkwo assess the growth?",
+      stem: "How does Ms. Okonkwo assess the growth?",
       options: [
         "As positive in principle, but problem-creating",
         "As a burden only",

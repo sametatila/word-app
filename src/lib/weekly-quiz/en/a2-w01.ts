@@ -49,7 +49,7 @@ export const EN_A2_W01: QuizWeek = {
       genreTr: "Sohbet",
       plays: 2,
       segments: [
-        { speaker: "Tom", text: "Hi Lisa! How was your holiday in Spain?" },
+        { speaker: "Tom", text: "Hi Lisa! How was your vacation in Spain?" },
         { speaker: "Lisa", text: "Great, thanks! We stayed in a small hotel near the beach." },
         { speaker: "Tom", text: "Did you have good weather?" },
         { speaker: "Lisa", text: "Yes, but it rained on the first day, so we went to a museum." },
@@ -148,10 +148,10 @@ export const EN_A2_W01: QuizWeek = {
       block: "grammar",
       stem: "Which question is correct?",
       options: [
-        "Did you see the film last night?",
-        "Did you saw the film last night?",
-        "Have you seen the film last night?",
-        "Do you saw the film last night?",
+        "Did you see the movie last night?",
+        "Did you saw the movie last night?",
+        "Have you seen the movie last night?",
+        "Do you saw the movie last night?",
       ],
       answer: 0,
       why: "Geçmiş zaman sorusu `did` + yalın fiil ile kurulur. Zamanı `did` taşıdığı için ana fiil ikinci kez geçmiş olmaz (`saw` değil `see`). Türkçede soru eki fiile yapıştığı için ayrı bir yardımcı fiil gereği görünmüyor.",
@@ -159,10 +159,10 @@ export const EN_A2_W01: QuizWeek = {
       byNative: {
         de: {
           options: [
-            "Saw you the film last night?",
-            "Did you see the film last night?",
-            "Have you seen the film last night?",
-            "Did you saw the film last night?",
+            "Saw you the movie last night?",
+            "Did you see the movie last night?",
+            "Have you seen the movie last night?",
+            "Did you saw the movie last night?",
           ],
           answer: 1,
           why: "Almancada soru fiili başa alarak kurulur (`Sahst du den Film?`). İngilizcede ana fiil başa geçmez; `do`/`did` desteği gerekir. `last night` bitmiş zaman olduğu için `Have you seen` de olmaz.",
@@ -222,7 +222,7 @@ export const EN_A2_W01: QuizWeek = {
     {
       id: "en-a2-w01-v1",
       block: "vocab",
-      stem: "We ___ a lot of photos on holiday.",
+      stem: "We ___ a lot of photos on vacation.",
       options: ["drew", "pulled", "took", "did"],
       answer: 2,
       why: "İngilizcede fotoğraf 'alınır': `take photos`. Türkçe 'çekmek' hem `pull` hem `draw` diye çevrildiği için `pulled` ya da `drew` geliyor. Kalıbın fiili sözcük sözcük çeviriyle bulunmaz.",

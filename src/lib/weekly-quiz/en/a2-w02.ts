@@ -36,11 +36,11 @@ export const EN_A2_W02: QuizWeek = {
       genreTr: "E-posta",
       title: "Your appointment",
       body:
-        "Dear Ms Green,\n\nThis is a reminder about your appointment with Dr Patel on Thursday, 12 March, at 10:30 in the morning. " +
+        "Dear Ms. Green,\n\nThis is a reminder about your appointment with Dr. Patel on Thursday, March 12, at 10:30 in the morning. " +
         "Please arrive a bit early and bring your passport and a list of the pills you are taking at the moment. " +
         "If you have a fever or a bad cough, please call us before you come. Do not come into the waiting room. " +
         "If you can't come, you have to cancel your appointment at least one day before. If you don't, you will have to pay 20 pounds. " +
-        "Dr Patel's room is on the second floor. The lift is next to the pharmacy on the ground floor.\n\n" +
+        "Dr. Patel's room is on the second floor. The elevator is next to the pharmacy on the ground floor.\n\n" +
         "Best wishes,\nRiverside Health Center",
     },
     {
@@ -51,13 +51,13 @@ export const EN_A2_W02: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Receptionist", text: "Good morning, Riverside Health Center. How can I help you?" },
-        { speaker: "Mr Kaya", text: "Hello, I'd like to make an appointment, please. I've had a bad headache since Monday." },
-        { speaker: "Receptionist", text: "I'm sorry to hear that. Have you got a temperature?" },
-        { speaker: "Mr Kaya", text: "No, I haven't. But I can't sleep well." },
+        { speaker: "Mr. Kaya", text: "Hello, I'd like to make an appointment, please. I've had a bad headache since Monday." },
+        { speaker: "Receptionist", text: "I'm sorry to hear that. Do you have a temperature?" },
+        { speaker: "Mr. Kaya", text: "No, I don't. But I can't sleep well." },
         { speaker: "Receptionist", text: "We have a free appointment tomorrow at nine in the morning." },
-        { speaker: "Mr Kaya", text: "I'm afraid I have to work in the morning. Is there anything in the afternoon?" },
+        { speaker: "Mr. Kaya", text: "I'm afraid I have to work in the morning. Is there anything in the afternoon?" },
         { speaker: "Receptionist", text: "Yes, tomorrow at a quarter past four. Is that OK?" },
-        { speaker: "Mr Kaya", text: "Perfect. Thank you very much." },
+        { speaker: "Mr. Kaya", text: "Perfect. Thank you very much." },
       ],
     },
   ],
@@ -68,7 +68,7 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-r1",
       block: "read",
       ref: "t1",
-      stem: "What should Ms Green bring?",
+      stem: "What should Ms. Green bring?",
       options: [
         "only a list of her pills",
         "her passport and a list of her pills",
@@ -83,7 +83,7 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-r2",
       block: "read",
       ref: "t1",
-      stem: "Ms Green has a bad cough. What should she do because of it?",
+      stem: "Ms. Green has a bad cough. What should she do because of it?",
       options: ["arrive a bit early", "go to the pharmacy", "cancel her appointment", "call before she comes"],
       answer: 3,
       why: "`If you have a fever or a bad cough` koşulu onun durumuna uyuyor ve talimat hemen arkasında. Herkese verilen genel talimatı (`arrive a bit early`) seçmek, koşul cümlesini okumadan metnin başına dönmek demek.",
@@ -93,10 +93,10 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-r3",
       block: "read",
       ref: "t1",
-      stem: "Where is Dr Patel's room?",
-      options: ["on the ground floor", "on the second floor", "next to the pharmacy", "next to the lift"],
+      stem: "Where is Dr. Patel's room?",
+      options: ["on the ground floor", "on the second floor", "next to the pharmacy", "next to the elevator"],
       answer: 1,
-      why: "Metin iki konum veriyor: muayenehanenin katı ve asansörün yeri. `next to the pharmacy` asansörü tarif ediyor. `The lift is…` cümlesinin öznesini atlayınca konum yanlış şeye bağlanıyor.",
+      why: "Metin iki konum veriyor: muayenehanenin katı ve asansörün yeri. `next to the pharmacy` asansörü tarif ediyor. `The elevator is…` cümlesinin öznesini atlayınca konum yanlış şeye bağlanıyor.",
       targets: ["reading.detail"],
     },
 
@@ -105,17 +105,17 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-l1",
       block: "listen",
       ref: "a1",
-      stem: "Why is Mr Kaya calling?",
+      stem: "Why is Mr. Kaya calling?",
       options: ["He has a temperature.", "He needs some pills.", "He has a headache.", "He can't go to work."],
       answer: 2,
-      why: "`temperature` konuşmada geçiyor ama bir soruda, ve cevap `No, I haven't`. Duyulan her hastalık sözcüğü şikâyet değildir; olumsuz cevapla elenen sözcüğü işaretlemek bu sorunun tuzağı.",
+      why: "`temperature` konuşmada geçiyor ama bir soruda, ve cevap `No, I don't`. Duyulan her hastalık sözcüğü şikâyet değildir; olumsuz cevapla elenen sözcüğü işaretlemek bu sorunun tuzağı.",
       targets: ["listening.detail"],
     },
     {
       id: "en-a2-w02-l2",
       block: "listen",
       ref: "a1",
-      stem: "When is Mr Kaya's appointment?",
+      stem: "When is Mr. Kaya's appointment?",
       options: ["tomorrow at 9:00", "tomorrow at 4:15", "tomorrow at 3:45", "today at 4:15"],
       answer: 1,
       why: "İlk önerilen saat (sabah) reddediliyor. `a quarter past four` 4'ü çeyrek geçe, yani 4:15; `a quarter to four` olsaydı 3:45 olurdu. Telefonda geçerli olan son onaylanan saattir.",
@@ -125,7 +125,7 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-l3",
       block: "listen",
       ref: "a1",
-      stem: "Why can't Mr Kaya come in the morning?",
+      stem: "Why can't Mr. Kaya come in the morning?",
       options: ["He has to work.", "He can't sleep well.", "The doctor is busy.", "He has a headache."],
       answer: 0,
       why: "`I'm afraid` kibar bir ret açar ve gerekçe hemen arkasında: `I have to work`. Uyuyamamak ve baş ağrısı şikâyetin parçası, sabah gelememenin nedeni değil.",

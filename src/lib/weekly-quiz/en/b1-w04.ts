@@ -47,9 +47,9 @@ export const EN_B1_W04: QuizWeek = {
         "Although many people recycle correctly, about a third of all bottles still go into normal trash bins. " +
         "This plastic is not recycled at all. The city says that if everyone used the yellow bin correctly, " +
         "it could save around 200,000 euros a year.\n\n" +
-        "Since January, shops which sell drinks have had to take back empty bottles. " +
+        "Since January, stores which sell drinks have had to take back empty bottles. " +
         "Customers who bring bottles back get 25 cents for each one. " +
-        "Despite some complaints from small shops, the system seems to work: the number of bottles in parks has fallen by half.\n\n" +
+        "Despite some complaints from small stores, the system seems to work: the number of bottles in parks has fallen by half.\n\n" +
         "Small changes make a difference. Bring your bottles back, and if you can, buy your drinks in glass.",
     },
     {
@@ -66,8 +66,8 @@ export const EN_B1_W04: QuizWeek = {
         { speaker: "Olivia", text: "Just a bottle of water. Bags and gloves are provided by the city." },
         { speaker: "Sam", text: "Good. To be honest, I'm not sure it changes much. The park is dirty again a week later." },
         { speaker: "Olivia", text: "I know what you mean. But last time we found lots of broken glass near the playground. Children could get hurt there." },
-        { speaker: "Sam", text: "That's true. Maybe the city should put more bins there." },
-        { speaker: "Olivia", text: "We asked them last time, and they've promised to put four new bins next to the playground." },
+        { speaker: "Sam", text: "That's true. Maybe the city should put more trash cans there." },
+        { speaker: "Olivia", text: "We asked them last time, and they've promised to put four new trash cans next to the playground." },
         { speaker: "Sam", text: "Well, if they keep that promise, I'll come every time." },
       ],
     },
@@ -83,7 +83,7 @@ export const EN_B1_W04: QuizWeek = {
       options: [
         "It is recycled several times.",
         "It is burned to produce energy.",
-        "It is taken back to the shops.",
+        "It is taken back to the stores.",
         "It is cleaned and sold again.",
       ],
       answer: 1,
@@ -97,7 +97,7 @@ export const EN_B1_W04: QuizWeek = {
       stem: "What would happen if everyone used the yellow bin correctly?",
       options: [
         "The city could save money.",
-        "Shops would take back more bottles.",
+        "Stores would take back more bottles.",
         "No plastic would be burned.",
         "Bins would be collected every week.",
       ],
@@ -111,7 +111,7 @@ export const EN_B1_W04: QuizWeek = {
       ref: "t1",
       stem: "What has changed since January?",
       options: [
-        "Small shops have stopped selling drinks.",
+        "Small stores have stopped selling drinks.",
         "Customers pay 25 cents more for a drink.",
         "The yellow bin is collected more often.",
         "There are fewer bottles in the parks.",
@@ -145,7 +145,7 @@ export const EN_B1_W04: QuizWeek = {
       options: [
         "bags",
         "gloves",
-        "some new bins",
+        "some new trash cans",
         "a bottle of water",
       ],
       answer: 3,
@@ -158,7 +158,7 @@ export const EN_B1_W04: QuizWeek = {
       ref: "a1",
       stem: "What will make Sam come every time?",
       options: [
-        "new bins next to the playground",
+        "new trash cans next to the playground",
         "a clean park after one week",
         "more people from the city",
         "help from children",
@@ -209,7 +209,7 @@ export const EN_B1_W04: QuizWeek = {
     {
       id: "en-b1-w04-g3",
       block: "grammar",
-      stem: "___ some complaints from small shops, the system seems to work.",
+      stem: "___ some complaints from small stores, the system seems to work.",
       options: ["Although", "However", "Because", "Despite"],
       answer: 3,
       why: "Boşluktan sonra bir isim öbeği geliyor (`some complaints`), fiilli bir cümle değil: karşıtlık için `despite`. `although` aynı anlamı taşır ama arkasından özne ve fiil ister; `however` iki cümleyi bağlayan bir zarftır.",
@@ -241,21 +241,21 @@ export const EN_B1_W04: QuizWeek = {
     {
       id: "en-b1-w04-g5",
       block: "grammar",
-      stem: "Shops ___ sell drinks have to take back empty bottles.",
+      stem: "Stores ___ sell drinks have to take back empty bottles.",
       options: ["who", "what", "which", "where"],
       answer: 2,
-      why: "`shops` bir nesne ya da kurum, insan değil: ilgi zamiri `which`. `where` ancak ilgi cümlesi bir yer bildirseydi (`shops where you can buy drinks`) doğru olurdu; burada dükkânlar satışı yapan özne.",
+      why: "`stores` bir nesne ya da kurum, insan değil: ilgi zamiri `which`. `where` ancak ilgi cümlesi bir yer bildirseydi (`stores where you can buy drinks`) doğru olurdu; burada dükkânlar satışı yapan özne.",
       targets: ["relative.who-which"],
       byNative: {
         tr: {
           options: ["who", "what", "which", "where"],
           answer: 2,
-          why: "Türkçede `içecek satan dükkânlar` yapısında insan ile nesne ayrılmıyor ve satış eylemi akla insanı getiriyor. İngilizcede zamiri öncül isim belirler: `shops` insan değil, `which`.",
+          why: "Türkçede `içecek satan dükkânlar` yapısında insan ile nesne ayrılmıyor ve satış eylemi akla insanı getiriyor. İngilizcede zamiri öncül isim belirler: `stores` insan değil, `which`.",
         },
         de: {
           options: ["who", "what", "which", "where"],
           answer: 2,
-          why: "Almancada `Läden, die Getränke verkaufen` ilgi zamiri insan ile nesneyi ayırmıyor, o yüzden bu ölçüt İngilizcede yeni. Satış eylemi akla insanı getirince `who` seçiliyor; ama zamiri öncül belirler: `shops` → `which`.",
+          why: "Almancada `Läden, die Getränke verkaufen` ilgi zamiri insan ile nesneyi ayırmıyor, o yüzden bu ölçüt İngilizcede yeni. Satış eylemi akla insanı getirince `who` seçiliyor; ama zamiri öncül belirler: `stores` → `which`.",
         },
       },
     },
@@ -273,7 +273,7 @@ export const EN_B1_W04: QuizWeek = {
     {
       id: "en-b1-w04-v2",
       block: "vocab",
-      stem: "Shops want to ___ the number of plastic bags.",
+      stem: "Stores want to ___ the number of plastic bags.",
       options: ["fall", "sink", "go down", "reduce"],
       answer: 3,
       why: "Boşluktan sonra bir nesne var (`the number`), yani fiil geçişli olmalı: `reduce`. `fall` ve `go down` geçişsizdir: sayı kendiliğinden azalır. `sink` ise geçişli olduğunda bir gemiyi batırmak gibi fiziksel bir anlam taşır, bir sayıyı nesne almaz.",

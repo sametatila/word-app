@@ -47,7 +47,7 @@ export const EN_C1_W05: QuizWeek = {
       genreTr: "Komisyon toplantısı",
       plays: 2,
       segments: [
-        { speaker: "Chair", text: "The complaint is that the procedure was not transparent. Ms Hartley?" },
+        { speaker: "Chair", text: "The complaint is that the procedure was not transparent. Ms. Hartley?" },
         { speaker: "Hartley", text: "Formally everything was correct. Nobody disputes that." },
         { speaker: "Chair", text: "The letter disputes it rather firmly." },
         { speaker: "Hartley", text: "It disputes the effect, not the form. That is a difference." },
@@ -110,7 +110,7 @@ export const EN_C1_W05: QuizWeek = {
       id: "en-c1-w05-l1",
       block: "listen",
       ref: "a1",
-      stem: "How does Ms Hartley first defend the procedure?",
+      stem: "How does Ms. Hartley first defend the procedure?",
       options: [
         "She points out that formally everything was correct",
         "She denies the complaint entirely",
@@ -125,7 +125,7 @@ export const EN_C1_W05: QuizWeek = {
       id: "en-c1-w05-l2",
       block: "listen",
       ref: "a1",
-      stem: "What distinction does Ms Hartley insist on?",
+      stem: "What distinction does Ms. Hartley insist on?",
       options: [
         "Between council and associations",
         "Between costs and charge",
@@ -140,7 +140,7 @@ export const EN_C1_W05: QuizWeek = {
       id: "en-c1-w05-l3",
       block: "listen",
       ref: "a1",
-      stem: "How does Ms Hartley's contribution end?",
+      stem: "How does Ms. Hartley's contribution end?",
       options: [
         "With a resignation",
         "With the admission that they explained too late",

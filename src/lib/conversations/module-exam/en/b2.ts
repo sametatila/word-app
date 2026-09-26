@@ -323,7 +323,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "The relevance of … should therefore be reviewed.", tr: "Bu yüzden …-in önemi gözden geçirilmeli", en: "The relevance of … should therefore be reviewed." },
       ],
       sample:
-        "PRESS SUMMARY — 12 MAY\n\nIt is claimed in the headline that the magazine has lost a quarter of its readers. The figure was taken from a projection published by a database; a survey for the same year is not quoted.\n\nWhat the report argues is that the fall is unusual. What is missing is the method: neither the size of the sample nor the year is named, and the quotation from the publisher was paraphrased rather than printed.\n\nThe mistake must have been noticed before the story was published. The relevance of the projection should therefore be reviewed before the piece is repeated.",
+        "PRESS SUMMARY — MAY 12\n\nIt is claimed in the headline that the magazine has lost a quarter of its readers. The figure was taken from a projection published by a database; a survey for the same year is not quoted.\n\nWhat the report argues is that the fall is unusual. What is missing is the method: neither the size of the sample nor the year is named, and the quotation from the publisher was paraphrased rather than printed.\n\nThe mistake must have been noticed before the story was published. The relevance of the projection should therefore be reviewed before the piece is repeated.",
     },
   },
 

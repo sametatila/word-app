@@ -50,7 +50,7 @@ export const EN_B2_W04: QuizWeek = {
     {
       kind: "audio",
       id: "a1",
-      genre: "Conversation between flatmates",
+      genre: "Conversation between roommates",
       genreTr: "Ev arkadaşları arasında sohbet",
       plays: 2,
       segments: [

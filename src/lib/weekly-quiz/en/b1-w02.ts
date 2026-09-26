@@ -40,16 +40,16 @@ export const EN_B1_W02: QuizWeek = {
       id: "t1",
       genre: "Local news report",
       genreTr: "Yerel haber",
-      title: "Old cinema to become a youth center",
+      title: "Old movie theater to become a youth center",
       body:
         "The old Rex Cinema on Market Street, which was built in 1932, is going to become a youth center. " +
         "The plan was announced on Monday after a long discussion.\n\n" +
-        "The cinema was closed ten years ago because too few people were buying tickets. " +
+        "The theater was closed ten years ago because too few people were buying tickets. " +
         "Since then, the building has been empty, and many people in the area have complained that it looks dangerous.\n\n" +
         "The project will cost a lot of money. Most of it will be paid by the city, but local businesses have also promised to help. " +
         "The mayor said that the work would start in March and that the center would open one year later.\n\n" +
         "Not everyone is happy. Some neighbors told reporters that they were worried about noise in the evenings. " +
-        "Others said they would prefer a new cinema. " +
+        "Others said they would prefer a new movie theater. " +
         "\"Young people in this town have nowhere to go,\" said Sara Malik, 17, who wrote to the mayor about the idea last year. " +
         "\"This is the best news I have heard in a long time.\"\n\n" +
         "The city has promised to talk to the neighbors before the plans are finished.",
@@ -81,7 +81,7 @@ export const EN_B1_W02: QuizWeek = {
       id: "en-b1-w02-r1",
       block: "read",
       ref: "t1",
-      stem: "Why was the cinema closed?",
+      stem: "Why was the theater closed?",
       options: [
         "The building looked dangerous.",
         "Not enough people were buying tickets.",
@@ -113,7 +113,7 @@ export const EN_B1_W02: QuizWeek = {
       ref: "t1",
       stem: "What does Sara Malik think about the plan?",
       options: [
-        "She would prefer a new cinema.",
+        "She would prefer a new movie theater.",
         "She is worried about noise.",
         "She wants to talk to the neighbors first.",
         "She thinks it is very good news.",

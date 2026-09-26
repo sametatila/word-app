@@ -51,11 +51,11 @@ export const EN_C1_W01: QuizWeek = {
       genreTr: "Radyo tartışması",
       plays: 2,
       segments: [
-        { speaker: "Host", text: "Dr Shaw, the study is widely quoted. Does it convince you?" },
+        { speaker: "Host", text: "Dr. Shaw, the study is widely quoted. Does it convince you?" },
         { speaker: "Shaw", text: "Partly. The question is interesting; the method is weak." },
         { speaker: "Host", text: "What exactly do you mean?" },
         { speaker: "Shaw", text: "The data rest on what participants said about themselves. That is an impression, not evidence." },
-        { speaker: "Host", text: "Mr Adeyemi, you see it differently." },
+        { speaker: "Host", text: "Mr. Adeyemi, you see it differently." },
         { speaker: "Adeyemi", text: "I accept that the method has weaknesses. Even so, I find the result plausible." },
         { speaker: "Shaw", text: "Plausible is not the same as demonstrated." },
         { speaker: "Adeyemi", text: "Granted. But we do not demand final proof from any single study." },
@@ -116,7 +116,7 @@ export const EN_C1_W01: QuizWeek = {
       id: "en-c1-w01-l1",
       block: "listen",
       ref: "a1",
-      stem: "How does Dr Shaw assess the study?",
+      stem: "How does Dr. Shaw assess the study?",
       options: [
         "The question is interesting but the method is weak",
         "It convinces her completely",
@@ -131,7 +131,7 @@ export const EN_C1_W01: QuizWeek = {
       id: "en-c1-w01-l2",
       block: "listen",
       ref: "a1",
-      stem: "What is Dr Shaw's objection to the data?",
+      stem: "What is Dr. Shaw's objection to the data?",
       options: [
         "They are too old",
         "They come from another country",

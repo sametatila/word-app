@@ -33,7 +33,7 @@ export const EN_A1_W04: QuizWeek = {
         "I live in a small house in the city. The house has 2 rooms. " +
         "My room is small but good. There is a bed and a table. " +
         "My books are on the table. My dog sleeps under the bed. " +
-        "The door is old. Next to the house there is a garden. My bicycle is there. " +
+        "The door is old. Next to the house there is a yard. My bicycle is there. " +
         "I like the house. I go to school by bicycle.",
     },
     {
@@ -60,7 +60,7 @@ export const EN_A1_W04: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where are the books?",
-      options: ["Under the bed", "Next to the house", "On the table", "In the garden"],
+      options: ["Under the bed", "Next to the house", "On the table", "In the yard"],
       answer: 2,
       why: "\"My books are on the table.\" Metinde dört ayrı yer bildirimi var ve her biri başka bir nesneye ait — edatı değil, edatın BAĞLANDIĞI şeyi takip etmek gerekiyor.",
       targets: ["reading.detail", "preposition.place"],
@@ -70,7 +70,7 @@ export const EN_A1_W04: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where is the dog?",
-      options: ["On the table", "Under the bed", "In the garden", "In the street"],
+      options: ["On the table", "Under the bed", "In the yard", "In the street"],
       answer: 1,
       why: "\"My dog sleeps under the bed.\" Bir önceki cümle masadan söz ediyor; iki cümle arka arkaya iki ayrı yer veriyor.",
       targets: ["reading.detail", "preposition.place"],
@@ -206,7 +206,7 @@ export const EN_A1_W04: QuizWeek = {
     {
       id: "en-a1-w04-v3",
       block: "vocab",
-      stem: "The garden is not in the house; it is ___ the house.",
+      stem: "The yard is not in the house; it is ___ the house.",
       options: ["under", "on", "in", "next to"],
       answer: 3,
       why: "Bir şeyin yanında olmak `next to`. Cümlenin ilk yarısı `in`i zaten eliyor, yani seçim içinde/üstünde değil YANINDA olmak üzerine.",

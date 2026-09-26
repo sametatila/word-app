@@ -51,7 +51,7 @@ export const EN_C1_W04: QuizWeek = {
       genreTr: "Söyleşi programı",
       plays: 2,
       segments: [
-        { speaker: "Host", text: "Mr Novak, was this a technical failure or an organizational one?" },
+        { speaker: "Host", text: "Mr. Novak, was this a technical failure or an organizational one?" },
         { speaker: "Novak", text: "Technically it was trivial. Organisationally it was the real problem." },
         { speaker: "Host", text: "You will have to explain that." },
         { speaker: "Novak", text: "The test was planned. What was not settled was who would carry it out." },
@@ -116,7 +116,7 @@ export const EN_C1_W04: QuizWeek = {
       id: "en-c1-w04-l1",
       block: "listen",
       ref: "a1",
-      stem: "How does Mr Novak classify the failure?",
+      stem: "How does Mr. Novak classify the failure?",
       options: [
         "Technically trivial, organisationally serious",
         "Purely technical",

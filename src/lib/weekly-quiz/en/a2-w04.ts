@@ -41,7 +41,7 @@ export const EN_A2_W04: QuizWeek = {
         "You don't need experience, because our team will teach you everything. " +
         "You must speak good English. If you also speak Spanish or German, that's a big advantage, because many of our guests come from abroad. " +
         "You will earn 12 pounds an hour, and you get a free lunch every day. " +
-        "Interested? Send an email to our manager, Mr Brown, before 30 April. " +
+        "Interested? Send an email to our manager, Mr. Brown, before April 30. " +
         "Tell us a little about yourself and when you can start.",
     },
     {
@@ -51,16 +51,16 @@ export const EN_A2_W04: QuizWeek = {
       genreTr: "İş görüşmesi",
       plays: 2,
       segments: [
-        { speaker: "Ms Hill", text: "Good morning, Mr Demir. Please sit down. So, why do you want to work here?" },
-        { speaker: "Mr Demir", text: "I love working with people, and I'd like to practice my English." },
-        { speaker: "Ms Hill", text: "Have you ever worked in a hotel?" },
-        { speaker: "Mr Demir", text: "No, I haven't. But I worked in a café in Ankara for two years." },
-        { speaker: "Ms Hill", text: "And how long have you lived in England?" },
-        { speaker: "Mr Demir", text: "I've lived here since January. Before that, I studied English at a language school in Ankara." },
-        { speaker: "Ms Hill", text: "Can you work on weekends?" },
-        { speaker: "Mr Demir", text: "Yes, I can. But I can't work on Monday mornings, because I have an English course then." },
-        { speaker: "Ms Hill", text: "That's OK. Can you start on the first of June?" },
-        { speaker: "Mr Demir", text: "Yes, of course." },
+        { speaker: "Ms. Hill", text: "Good morning, Mr. Demir. Please sit down. So, why do you want to work here?" },
+        { speaker: "Mr. Demir", text: "I love working with people, and I'd like to practice my English." },
+        { speaker: "Ms. Hill", text: "Have you ever worked in a hotel?" },
+        { speaker: "Mr. Demir", text: "No, I haven't. But I worked in a café in Ankara for two years." },
+        { speaker: "Ms. Hill", text: "And how long have you lived in England?" },
+        { speaker: "Mr. Demir", text: "I've lived here since January. Before that, I studied English at a language school in Ankara." },
+        { speaker: "Ms. Hill", text: "Can you work on weekends?" },
+        { speaker: "Mr. Demir", text: "Yes, I can. But I can't work on Monday mornings, because I have an English course then." },
+        { speaker: "Ms. Hill", text: "That's OK. Can you start on June 1st?" },
+        { speaker: "Mr. Demir", text: "Yes, of course." },
       ],
     },
   ],
@@ -108,7 +108,7 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-l1",
       block: "listen",
       ref: "a1",
-      stem: "Where did Mr Demir work before?",
+      stem: "Where did Mr. Demir work before?",
       options: ["in a hotel", "in a language school", "in a café", "in a restaurant"],
       answer: 2,
       why: "`Have you ever worked in a hotel?` sorusuna verilen `No, I haven't` oteli eliyor; asıl deneyim `But` ile geliyor. Dil okulu çalıştığı değil okuduğu yer (`studied`); fiile bakmadan yer adını eşlemek hata.",
@@ -118,7 +118,7 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-l2",
       block: "listen",
       ref: "a1",
-      stem: "How long has Mr Demir lived in England?",
+      stem: "How long has Mr. Demir lived in England?",
       options: ["for two years", "since January", "since June", "for one year"],
       answer: 1,
       why: "İki süre duyuluyor: iki yıl kafe işi (bitmiş, past simple `worked`) ve Ocak'tan beri İngiltere (present perfect `I've lived`, hâlâ sürüyor). `How long have you…?` yalnız bugün de süren durumu sorar.",
@@ -128,7 +128,7 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-l3",
       block: "listen",
       ref: "a1",
-      stem: "When can't Mr Demir work?",
+      stem: "When can't Mr. Demir work?",
       options: ["on weekends", "in June", "in the evenings", "on Monday mornings"],
       answer: 3,
       why: "`Yes, I can. But…` kalıbında kısıt `But`tan sonra gelir. Hafta sonu sorusunun cevabı evet; ilk duyulan `Yes`i bütün cevaba yaymak, arkasından gelen istisnayı kaçırmak demek.",

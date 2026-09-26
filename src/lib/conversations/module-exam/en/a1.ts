@@ -505,8 +505,8 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Mrs. Demir", de: "Good afternoon. Can I see the apartment?", tr: "İyi günler. Daireyi görebilir miyim?" },
         { speaker: "Owner", de: "Yes, come in. There are two rooms, a kitchen and a bathroom.", tr: "Evet, buyurun. İki oda, bir mutfak ve bir banyo var." },
-        { speaker: "Mrs. Demir", de: "It is very quiet here. Is there a garden?", tr: "Burası çok sessiz. Bahçe var mı?" },
-        { speaker: "Owner", de: "There is a garden with two trees.", tr: "İki ağaçlı bir bahçe var." },
+        { speaker: "Mrs. Demir", de: "It is very quiet here. Is there a yard?", tr: "Burası çok sessiz. Bahçe var mı?" },
+        { speaker: "Owner", de: "There is a yard with two trees.", tr: "İki ağaçlı bir bahçe var." },
         { speaker: "Mrs. Demir", de: "How much is the rent?", tr: "Kira ne kadar?" },
         { speaker: "Owner", de: "620 every month. Water and electricity are 140.", tr: "Ayda 620. Su ve elektrik 140." },
         { speaker: "Mrs. Demir", de: "The lamp in the kitchen is broken. It doesn't work.", tr: "Mutfaktaki lamba bozuk. Çalışmıyor." },
@@ -514,7 +514,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "How many rooms are there in the apartment?", tr: "Dairede kaç oda var?", options: ["One room", "Two rooms", "Three rooms", "Four rooms"], answer: 1 },
-        { de: "What is there in the garden?", tr: "Bahçede ne var?", options: ["Two trees", "A table and chairs", "A dog", "Flowers"], answer: 0 },
+        { de: "What is there in the yard?", tr: "Bahçede ne var?", options: ["Two trees", "A table and chairs", "A dog", "Flowers"], answer: 0 },
         { de: "What is broken?", tr: "Ne bozuk?", options: ["The window", "The lamp in the kitchen", "The faucet", "The elevator"], answer: 1 },
       ],
     },
@@ -522,7 +522,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Apartment for rent",
       titleTr: "Kiralık daire ilanı",
       genre: "İlan",
-      text: "Apartment for rent\n\n2 rooms, kitchen, bathroom\nFirst floor, with a garden, very quiet\nRent: 620 every month\nWater and electricity: 140\nFree from May 1\n\nThe neighbors are friendly.\nNo animals, please.\nPhone number: 0176 22 33 44",
+      text: "Apartment for rent\n\n2 rooms, kitchen, bathroom\nFirst floor, with a yard, very quiet\nRent: 620 every month\nWater and electricity: 140\nFree from May 1\n\nThe neighbors are friendly.\nNo animals, please.\nPhone number: 0176 22 33 44",
       questions: [
         { de: "How much is the rent every month?", tr: "Kira ayda ne kadar?", options: ["140", "620", "760", "May 1"], answer: 1 },
         { de: "What is not allowed in the apartment?", tr: "Dairede neye izin yok?", options: ["Children", "Animals", "Friends", "Music"], answer: 1 },
@@ -549,7 +549,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "How much is the rent?", tr: "Kira ne kadar?", en: "How much is the rent?" },
       ],
       sample:
-        "Hi Selin, I have got a new apartment! There are two rooms, a kitchen and a bathroom. The apartment is quiet and the neighbors are friendly. There is also a garden with a tree. My sofa is in the living room and the lamp is on the table. The rent is 620 every month, and water and electricity are 140. Can you come on Saturday?",
+        "Hi Selin, I have a new apartment! There are two rooms, a kitchen and a bathroom. The apartment is quiet and the neighbors are friendly. There is also a yard with a tree. My sofa is in the living room and the lamp is on the table. The rent is 620 every month, and water and electricity are 140. Can you come on Saturday?",
     },
   },
 
@@ -740,10 +740,10 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Hello from London",
       titleTr: "Kartpostal",
       genre: "Kartpostal",
-      text: "Dear Grandma,\n\nHello from London! We arrived on Friday. On Saturday we visited the museum and in the evening we went to a restaurant. Yesterday the weather was not good, but we walked in the park. On the first of May we travel home.\n\nSee you soon!\nLove,\nEmre",
+      text: "Dear Grandma,\n\nHello from London! We arrived on Friday. On Saturday we visited the museum and in the evening we went to a restaurant. Yesterday the weather was not good, but we walked in the park. On May 1st we travel home.\n\nSee you soon!\nLove,\nEmre",
       questions: [
         { de: "What did Emre do on Saturday?", tr: "Emre cumartesi ne yaptı?", options: ["He arrived in London", "He visited the museum", "He traveled home", "He stayed at the hotel"], answer: 1 },
-        { de: "When does Emre travel home?", tr: "Emre ne zaman dönüyor?", options: ["On Friday", "On Saturday", "On the first of May", "Yesterday"], answer: 2 },
+        { de: "When does Emre travel home?", tr: "Emre ne zaman dönüyor?", options: ["On Friday", "On Saturday", "On May 1st", "Yesterday"], answer: 2 },
       ],
     },
     speaking: [
@@ -767,7 +767,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "It was very nice.", tr: "Çok güzeldi.", en: "It was very nice." },
       ],
       sample:
-        "Hi Jana, my weekend was great! On Saturday I got up early and I traveled to Brighton by train. First I met a friend. Then we ate fish in a small restaurant. In the evening we saw a film. On Sunday I slept a long time and I visited my mother. It was very nice. And what did you do last weekend?",
+        "Hi Jana, my weekend was great! On Saturday I got up early and I traveled to Brighton by train. First I met a friend. Then we ate fish in a small restaurant. In the evening we saw a movie. On Sunday I slept a long time and I visited my mother. It was very nice. And what did you do last weekend?",
     },
   },
 ];

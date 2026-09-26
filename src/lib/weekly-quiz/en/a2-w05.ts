@@ -38,7 +38,7 @@ export const EN_A2_W05: QuizWeek = {
         "My new colleagues are very friendly, and the work is more interesting than in my old job. " +
         "In my second week I got a bad cold. I had to stay at home for three days, and my boss told me to rest. " +
         "Since then I have felt much better. I have already visited two museums, but I haven't seen the famous castle yet. " +
-        "My flat is smaller than my old one, but it is in a quiet street near the river. " +
+        "My apartment is smaller than my old one, but it is on a quiet street near the river. " +
         "I think I'm going to stay here for a long time!",
     },
     {
@@ -92,8 +92,8 @@ export const EN_A2_W05: QuizWeek = {
       id: "en-a2-w05-r3",
       block: "read",
       ref: "t1",
-      stem: "What does the writer say about the flat?",
-      options: ["It is bigger than the old one.", "It is in a noisy street.", "It is smaller than the old one, but quiet.", "It is next to the castle."],
+      stem: "What does the writer say about the apartment?",
+      options: ["It is bigger than the old one.", "It is on a noisy street.", "It is smaller than the old one, but quiet.", "It is next to the castle."],
       answer: 2,
       why: "`smaller than my old one` bir karşılaştırma: yeni daire eskisinden küçük. `than`ın iki yanını ters okumak ('eskisi daha küçük') karşılaştırmada sık hata; `quiet street` de gürültülü seçeneğini eliyor.",
       targets: ["reading.detail", "compare.comparative"],

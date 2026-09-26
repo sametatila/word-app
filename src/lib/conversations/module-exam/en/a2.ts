@@ -338,12 +338,12 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Manager", de: "And what is your greatest strength?", tr: "En güçlü yanınız ne?" },
         { speaker: "Selin", de: "My greatest strength is working with customers. I am also interested in learning new skills.", tr: "En güçlü yanım müşterilerle çalışmak. Yeni beceriler öğrenmek de ilgimi çekiyor." },
         { speaker: "Manager", de: "Good. When can you start?", tr: "Güzel. Ne zaman başlayabilirsiniz?" },
-        { speaker: "Selin", de: "I can start on the first of April.", tr: "Nisanın birinde başlayabilirim." },
+        { speaker: "Selin", de: "I can start on April 1st.", tr: "Nisanın birinde başlayabilirim." },
       ],
       questions: [
         { de: "How long has Selin worked in a big company?", tr: "Selin büyük bir şirkette ne zamandan beri çalışıyor?", options: ["For two years", "For four years", "Since April", "For ten years"], answer: 1 },
         { de: "What did Selin do in her job?", tr: "Selin işinde ne yaptı?", options: ["She organized projects", "She answered the phone", "She was a teacher", "She worked alone"], answer: 0 },
-        { de: "When can Selin start?", tr: "Selin ne zaman başlayabilir?", options: ["Tomorrow", "On the first of April", "Next year", "After four years"], answer: 1 },
+        { de: "When can Selin start?", tr: "Selin ne zaman başlayabilir?", options: ["Tomorrow", "On April 1st", "Next year", "After four years"], answer: 1 },
       ],
     },
     reading: {
@@ -377,7 +377,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "Best regards,", tr: "Saygılarımla,", en: "Best regards," },
       ],
       sample:
-        "Dear Mrs. Renner,\n\nI want to apply for the position of office worker. I read your ad yesterday and the tasks are very interesting for me.\n\nI have worked at a big company for four years. I organized meetings, I checked reports and I helped customers on the phone every day. My greatest strength is working in a team.\n\nI can start on the first of April. I have attached my documents. Could you tell me when the interview is?\n\nBest regards,\nSelin Kaya",
+        "Dear Mrs. Renner,\n\nI want to apply for the position of office worker. I read your ad yesterday and the tasks are very interesting for me.\n\nI have worked at a big company for four years. I organized meetings, I checked reports and I helped customers on the phone every day. My greatest strength is working in a team.\n\nI can start on April 1st. I have attached my documents. Could you tell me when the interview is?\n\nBest regards,\nSelin Kaya",
     },
   },
 
