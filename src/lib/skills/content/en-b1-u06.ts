@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: because, so, since, therefore, reason, cause, result, explain,
  *           until, meanwhile, arrive, depart, board, timetable, track,
- *           journey, purpose, aim, course, enrol, practise, useful, goal,
+ *           journey, purpose, aim, course, enroll, practice, useful, goal,
  *           certificate, unless, agreement, promise, accept, refuse, deal,
  *           keep, risk.
  *   Kalıp:  I was late because the train stopped. ·
@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           When I arrive, I will call you. ·
  *           I will wait until the train departs. ·
  *           The train is departing at ten. ·
- *           I enrolled to practise my English. ·
+ *           I enrolled to practice my English. ·
  *           I enrolled in order to get a certificate. ·
  *           I sit in front so that I can hear better. ·
  *           I will accept unless the price changes. ·

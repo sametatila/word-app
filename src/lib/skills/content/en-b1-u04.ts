@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Getting it fixed.
  *
  *   Kelime: lease, deposit, renew, sign, van, carry, fragile, unpack,
- *           address, meter, ground, upstairs, share, chore, rota, clean up,
+ *           address, meter, ground, upstairs, share, chore, schedule, clean up,
  *           guest, split, agree, argue, leak, plumber, boiler, fix, moisture,
  *           broken, complain, delay.
  *   Kalıp:  The deposit is paid before you move in. ·
@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           I will carry that one. ·
  *           You have to clean up the kitchen after cooking. ·
  *           You don't have to ask about guests. ·
- *           We should agree on a rota. ·
+ *           We should agree on a schedule. ·
  *           He said that he would come on Monday. ·
  *           She told me to wait for the plumber. ·
  *           He asked if the boiler was old.
