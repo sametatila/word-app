@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: furniture, shelf, carpet, cupboard, corner, armchair, drawer,
  *           mirror, a leak, the heating, broken, to fix, immediately,
- *           damage, pipe, caretaker, noise, loud, late, complain, polite,
+ *           damage, pipe, janitor, noise, loud, late, complain, polite,
  *           noisy, resident, apology, move, key, contract, sign,
  *           electricity, front door, hallway, gas.
  *   Kalıp:  There is a carpet in the living room. ·
@@ -50,7 +50,7 @@ export const enA2U09: SkillExercise[] = [
       "I am writing about two problems in my apartment.\n" +
       "There's a leak in the bathroom. The water comes from the pipe under the sink and it has been there since Saturday. There is already damage on the carpet.\n" +
       "The second problem is the heating. The heating hasn't worked since Monday. In the morning the rooms are very cold and my daughter is sick.\n" +
-      "I called the caretaker twice. He came on Tuesday, looked at the pipe and said: I can't fix it.\n" +
+      "I called the janitor twice. He came on Tuesday, looked at the pipe and said: I can't fix it.\n" +
       "Could you send someone today or tomorrow? I am at home after four.\n" +
       "If it is easier for you, I can be at home on Saturday too.\n" +
       "Thank you very much.\n" +
@@ -64,7 +64,7 @@ export const enA2U09: SkillExercise[] = [
         explain: "„The heating hasn't worked since Monday.“ — cumartesi sızıntının başlangıcı.",
       },
       {
-        text: "What did the caretaker say?",
+        text: "What did the janitor say?",
         options: ["he can't fix it", "he will come on Saturday", "the pipe is new"],
         answer: 0,
         explain: "„He came on Tuesday, looked at the pipe and said: I can't fix it.“",
@@ -286,7 +286,7 @@ export const enA2U09: SkillExercise[] = [
       },
       {
         text: "Who signed the letter?",
-        options: ["two residents from the second floor", "the man above", "the caretaker"],
+        options: ["two residents from the second floor", "the man above", "the janitor"],
         answer: 0,
         explain: "„Two residents from the second floor signed it with me.“",
       },

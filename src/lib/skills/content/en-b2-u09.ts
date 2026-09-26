@@ -65,6 +65,7 @@ export const enB2U09: SkillExercise[] = [
       { de: "the site", tr: "site" },
       { de: "a file", tr: "dosya" },
       { de: "early", tr: "erkenden" },
+      { de: "on top of", tr: "üstüne" },
     ],
     minutes: 9,
     text:

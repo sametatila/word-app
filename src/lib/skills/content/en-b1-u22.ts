@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * A local project.
  *
  *   Kelime: town, bridge, traffic, suburb, building, square, street,
- *           pollution, seat, route, passenger, cycle, lane, commute,
+ *           pollution, seat, route, passenger, bike, lane, commute,
  *           driver, rush, clean, bottle, pipe, supply, landfill, destroy,
  *           plant, dirty, mayor, space, poster, petition, committee,
  *           vote, stop, paper.
@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           I have never seen so much traffic. ·
  *           You have to book a seat on this route. ·
  *           Passengers don't have to show a card. ·
- *           You must not cycle in the bus lane. ·
+ *           You must not bike in the bus lane. ·
  *           They decided to clean the river. ·
  *           We gave up buying bottles. ·
  *           The council suggested repairing the pipe. ·
@@ -67,14 +67,14 @@ export const enB1U22: SkillExercise[] = [
       "Three sentences on a notice by the door, and they are not the same kind of rule.\n" +
       "You have to book a seat on this route. That is a requirement and it comes from outside me: the company has decided, and if I do not book, there is no seat for me on the bus.\n" +
       "Passengers don't have to show a card. That is the opposite of a rule. Nothing is required; if you want to show one, nobody stops you.\n" +
-      "You must not cycle in the bus lane. That is a prohibition and it is the strongest of the three.\n" +
+      "You must not bike in the bus lane. That is a prohibition and it is the strongest of the three.\n" +
       "The trap is in the middle. „Don't have to“ and „must not“ look like a pair and they are not: one removes the rule, the other creates it.\n" +
-      "The thing nobody puts on the notice is what happens in the past. „Must“ has no past. There is no „musted“, and „I must book a seat yesterday“ is not a sentence at all. When the rule was yesterday, English takes the other form: I had to book a seat. The prohibition goes the same way — we were not allowed to cycle there.\n" +
+      "The thing nobody puts on the notice is what happens in the past. „Must“ has no past. There is no „musted“, and „I must book a seat yesterday“ is not a sentence at all. When the rule was yesterday, English takes the other form: I had to book a seat. The prohibition goes the same way — we were not allowed to bike there.\n" +
       "So „must“ is a word for now, and only for now. „Have to“ is the one that travels: to yesterday, to tomorrow, into every other tense in the language. I use „must“ where the rule is mine and „have to“ where it belongs to the company, and both of them turn into „had to“ the moment the day is over.",
     questions: [
       {
         text: "Which sentence takes a rule away?",
-        options: ["Passengers don't have to show a card.", "You must not cycle in the bus lane.", "You have to book a seat."],
+        options: ["Passengers don't have to show a card.", "You must not bike in the bus lane.", "You have to book a seat."],
         answer: 0,
         explain: "„That is the opposite of a rule. Nothing is required.“",
       },
@@ -107,7 +107,7 @@ export const enB1U22: SkillExercise[] = [
         items: [
           "You have to book a seat on this route.",
           "Passengers don't have to show a card.",
-          "You must not cycle in the bus lane.",
+          "You must not bike in the bus lane.",
           "I had to book a seat.",
         ],
         explain: "Gereklilik, gerekliliğin yokluğu, yasak, en sonda geçmiş biçim.",
@@ -387,7 +387,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 22,
-    title: "You must not cycle in the bus lane",
+    title: "You must not bike in the bus lane",
     genre: "info",
     intro: "Üç kural, üç ayrı iş. Hangisi geçmişe gidebiliyor?",
     gloss: [
@@ -413,7 +413,7 @@ export const enB1U22: SkillExercise[] = [
       {
         kind: "build",
         tr: "Otobüs şeridinde bisiklet sürmek yasak.",
-        answer: "You must not cycle in the bus lane.",
+        answer: "You must not bike in the bus lane.",
         hint: "Yasak: „must not“, „don't have to“ değil.",
       },
       {
@@ -429,7 +429,7 @@ export const enB1U22: SkillExercise[] = [
         fields: [
           { label: "Seat", answer: "have to book", accept: ["book a seat"] },
           { label: "Card", answer: "don't have to show", accept: ["no card"] },
-          { label: "Bus lane", answer: "must not cycle", accept: ["no cycling"] },
+          { label: "Bus lane", answer: "must not bike", accept: ["no biking"] },
           { label: "Yesterday", answer: "had to book", accept: ["had to"] },
         ],
       },

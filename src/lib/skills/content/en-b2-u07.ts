@@ -68,6 +68,7 @@ export const enB2U07: SkillExercise[] = [
       { de: "the test", tr: "sınama" },
       { de: "the third form", tr: "üçüncü hâl" },
       { de: "count", tr: "saymak" },
+      { de: "on top of each other", tr: "üst üste" },
     ],
     minutes: 9,
     text:
@@ -158,6 +159,7 @@ export const enB2U07: SkillExercise[] = [
       { de: "slightly", tr: "biraz" },
       { de: "turns up", tr: "ortaya çıkıyor" },
       { de: "in between", tr: "aralarında" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 9,
     text:
@@ -332,6 +334,7 @@ export const enB2U07: SkillExercise[] = [
       { de: "allow", tr: "izin vermek" },
       { de: "free", tr: "serbest" },
       { de: "at all", tr: "hiç" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 7,
     segments: [

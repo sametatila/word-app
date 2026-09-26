@@ -147,6 +147,7 @@ export const enB2U22: SkillExercise[] = [
       { de: "a reader in trouble", tr: "sıkıntıdaki okur" },
       { de: "ordinary", tr: "olağan" },
       { de: "earns", tr: "hak ediyor" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 9,
     text:

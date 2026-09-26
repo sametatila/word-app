@@ -52,6 +52,7 @@ export const enB1U16: SkillExercise[] = [
       { de: "skips", tr: "atlıyor" },
       { de: "reached", tr: "ulaştı" },
       { de: "readers", tr: "okurlar" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 7,
     text:

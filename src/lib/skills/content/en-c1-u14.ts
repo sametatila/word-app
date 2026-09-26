@@ -358,6 +358,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "an agenda", tr: "gündem" },
       { de: "a decision", tr: "karar" },
       { de: "the last line", tr: "son satır" },
+      { de: "the top", tr: "üst kısım" },
     ],
     minutes: 8,
     segments: [

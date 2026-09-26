@@ -4,12 +4,12 @@ import type { SkillExercise } from "../types";
  * EN · A2 · Ünite 24 — "Oturma izni, kayıp bildirimi, kütüphane, ulaşım kartı".
  *
  * Dört ders: Residence permit · Reporting a loss · At the library ·
- * Transport card.
+ * Transit card.
  *
  *   Kelime: permit, apply, document, valid, renew, exception, require,
  *           proper, wallet, police, steal, report, describe, police station,
  *           thief, description, borrow, member, return, fine, quiet,
- *           dictionary, notebook, silent, card, top up, machine, subway,
+ *           dictionary, notebook, silent, card, reload, machine, subway,
  *           tram, timetable.
  *   Kalıp:  I want to apply for a residence permit. ·
  *           My passport is valid until 2030. ·
@@ -18,9 +18,9 @@ import type { SkillExercise } from "../types";
  *           I'd like to borrow this book. ·
  *           You have to be quiet. / You can't eat here. ·
  *           I haven't returned it yet. ·
- *           Where can I buy a transport card? ·
+ *           Where can I buy a transit card? ·
  *           First put the card in, then press the green button. ·
- *           You have to top up the card.
+ *           You have to reload the card.
  *
  * Ünitenin tek öğretme noktası İNGİLİZCENİN ÖZNE ISRARI: „Someone stole
  * my phone.“ Türkçe burada edilgen kuruyor ("telefonum çalındı") ve fail
@@ -57,7 +57,7 @@ export const enA2U24: SkillExercise[] = [
       "Police: When?\n" +
       "Ela: It happened at about six o'clock. I paid at the market at half past five and at six the wallet was gone.\n" +
       "Police: What was in it?\n" +
-      "Ela: My ID card, a transport card, twenty euros and a photo.\n" +
+      "Ela: My ID card, a transit card, twenty euros and a photo.\n" +
       "Police: Can you describe the wallet?\n" +
       "Ela: Brown, small, with a broken button.\n" +
       "Police: And the tram was full?\n" +
@@ -83,7 +83,7 @@ export const enA2U24: SkillExercise[] = [
         text: "There was an ID card and twenty euros in the wallet.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„My ID card, a transport card, twenty euros and a photo.“",
+        explain: "„My ID card, a transit card, twenty euros and a photo.“",
       },
       {
         kind: "gapfill",
@@ -265,7 +265,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 24,
-    title: "Transport card",
+    title: "Transit card",
     genre: "dialogue",
     intro: "Kart ve makine. Hangi düğme, hangi para?",
     gloss: [
@@ -277,7 +277,7 @@ export const enA2U24: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Nil", text: "Where can I buy a transport card?" },
+      { speaker: "Nil", text: "Where can I buy a transit card?" },
       { speaker: "Man", text: "At the machine, over there. The green one, not the blue." },
       { speaker: "Nil", text: "What is the blue one?" },
       { speaker: "Man", text: "Tickets for one trip. The card is cheaper after the fourth trip." },
@@ -286,7 +286,7 @@ export const enA2U24: SkillExercise[] = [
       { speaker: "Nil", text: "Coins only?" },
       { speaker: "Man", text: "Coins and cards. Not paper money — the machine eats it and says nothing." },
       { speaker: "Nil", text: "Good to know. And in the tram?" },
-      { speaker: "Man", text: "You have to top up the card before you get in. In the tram there is nothing." },
+      { speaker: "Man", text: "You have to reload the card before you get in. In the tram there is nothing." },
       { speaker: "Nil", text: "And if the card is empty?" },
       { speaker: "Man", text: "Then it is a fine. Sixty euros. Two of them come together and they are always in the third car." },
       { speaker: "Nil", text: "Why the third?" },
@@ -307,10 +307,10 @@ export const enA2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You can top up the card in the tram.",
+        text: "You can reload the card in the tram.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„You have to top up the card before you get in. In the tram there is nothing.“",
+        explain: "„You have to reload the card before you get in. In the tram there is nothing.“",
       },
       {
         kind: "gapfill",
@@ -325,7 +325,7 @@ export const enA2U24: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Where can I buy a transport card?", "Where can I buy a transport card"],
+        accept: ["Where can I buy a transit card?", "Where can I buy a transit card"],
         explain: "Yer sorusu „where“ ile; „can“ sonrası fiil eksiz.",
       },
       {
@@ -406,7 +406,7 @@ export const enA2U24: SkillExercise[] = [
     gloss: [
       { de: "borrow", tr: "ödünç almak" },
       { de: "returned", tr: "iade ettim" },
-      { de: "top up", tr: "yüklemek" },
+      { de: "reload", tr: "yüklemek" },
     ],
     minutes: 7,
     tasks: [
@@ -440,8 +440,8 @@ export const enA2U24: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kartı yüklemen gerekiyor.",
-        answer: "You have to top up the card.",
-        hint: "„top up“ ayrılabiliyor: „top the card up“ da doğru.",
+        answer: "You have to reload the card.",
+        hint: "Amerikan kullanımında kart „reload“ edilir; nesne fiilin hemen arkasında: „reload the card“.",
       },
     ],
   },

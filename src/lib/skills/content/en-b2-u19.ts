@@ -66,6 +66,7 @@ export const enB2U19: SkillExercise[] = [
       { de: "whoever", tr: "her kim" },
       { de: "underneath", tr: "altta" },
       { de: "a note", tr: "not" },
+      { de: "the top", tr: "baş" },
     ],
     minutes: 9,
     text:

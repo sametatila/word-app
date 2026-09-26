@@ -325,5 +325,6 @@
  {"head": "surprising", "tr": "şaşırtıcı", "de": "überraschend"},
  {"head": "a code", "tr": "şifre", "de": "der Code"},
  {"head": "pretty", "tr": "şirin", "de": "hübsch"},
- {"head": "sits", "tr": "duruyor", "de": "liegt"}
+ {"head": "sits", "tr": "duruyor", "de": "liegt"},
+ {"head": "reload", "tr": "yüklemek", "de": "aufladen"}
 ]

@@ -59,5 +59,10 @@
  { "tr": "konteyner", "kind": "gloss.tr", "de": "der Container" },
  { "tr": "ayrıcalık", "kind": "gloss.tr", "de": "das Privileg" },
  { "tr": "ağrımak", "kind": "gloss.tr", "de": "wehtun" },
- { "tr": "bir o kadar kısa", "kind": "gloss.tr", "de": "genauso kurz" }
+ { "tr": "bir o kadar kısa", "kind": "gloss.tr", "de": "genauso kurz" },
+ { "tr": "en üstte", "kind": "gloss.tr", "de": "ganz oben" },
+ { "tr": "baş", "kind": "gloss.tr", "de": "der Anfang" },
+ { "tr": "bunun üstüne", "kind": "gloss.tr", "de": "obendrein" },
+ { "tr": "üst kısım", "kind": "gloss.tr", "de": "der obere Teil" },
+ { "tr": "üst katman", "kind": "gloss.tr", "de": "die oberste Schicht" }
 ]

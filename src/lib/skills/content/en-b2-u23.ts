@@ -331,6 +331,7 @@ export const enB2U23: SkillExercise[] = [
       { de: "checkable", tr: "denetlenebilir" },
       { de: "face", tr: "yüz" },
       { de: "a recording", tr: "kayıt" },
+      { de: "on top of that", tr: "bunun üstüne" },
     ],
     minutes: 7,
     segments: [

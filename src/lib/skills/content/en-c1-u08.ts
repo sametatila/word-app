@@ -280,6 +280,7 @@ export const enC1U08: SkillExercise[] = [
       { de: "a reprimand", tr: "azar" },
       { de: "softened", tr: "yumuşatılmış" },
       { de: "on record", tr: "kayıtlı" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 8,
     segments: [

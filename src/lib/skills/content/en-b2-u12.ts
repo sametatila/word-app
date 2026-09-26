@@ -68,6 +68,7 @@ export const enB2U12: SkillExercise[] = [
       { de: "a restriction", tr: "sınırlama" },
       { de: "an auxiliary", tr: "yardımcı fiil" },
       { de: "the shape", tr: "biçim" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 9,
     text:

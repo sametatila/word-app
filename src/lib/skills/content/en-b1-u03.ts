@@ -3,10 +3,10 @@ import type { SkillExercise } from "../types";
 /**
  * EN · B1 · Ünite 3 — "Değerlendirme, istifa, ev arama, daire gezme".
  *
- * Dört ders: The appraisal · Resigning and handing over ·
+ * Dört ders: The performance review · Resigning and handing over ·
  * Looking for a flat · The viewing.
  *
- *   Kelime: appraisal, improve, progress, criticism, praise, target,
+ *   Kelime: performance review, improve, progress, criticism, praise, target,
  *           honest, review, resign, handover, replacement, grateful,
  *           although, however, despite, staff, rent, landlord, deposit,
  *           advert, viewing, furnished, available, agency, balcony,
@@ -36,7 +36,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 3,
-    title: "The appraisal",
+    title: "The performance review",
     genre: "story",
     intro: "Bir değerlendirme görüşmesi. Zor olan kısım hangisiymiş?",
     gloss: [
@@ -47,13 +47,13 @@ export const enB1U03: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "My appraisal was on a Tuesday at four, which is the worst hour for honest words.\n" +
+      "My performance review was on a Tuesday at four, which is the worst hour for honest words.\n" +
       "She said that I had improved. Then she said the line I remember: the progress is real, but nobody outside this room can see it.\n" +
       "I asked what she meant. She told me to write down three things I had finished in the last six months, in one line each. Nine words, she said. Not nine pages.\n" +
-      "I had thought criticism was the hard part of an appraisal. It is not. The hard part is praise you cannot use. „Good work“ goes nowhere. „You closed the thing that had been open for two years“ goes into the next conversation about salary.\n" +
+      "I had thought criticism was the hard part of a performance review. It is not. The hard part is praise you cannot use. „Good work“ goes nowhere. „You closed the thing that had been open for two years“ goes into the next conversation about salary.\n" +
       "She asked if I was happy. I said yes and then I said: not with the target. The target was written in January by somebody who had left in March.\n" +
       "We set a new one together. It is smaller and it has a date.\n" +
-      "The last thing she told me was not about work. She said that most people leave an appraisal and do nothing for eleven months. Then they remember it the week before the next one.\n" +
+      "The last thing she told me was not about work. She said that most people leave a performance review and do nothing for eleven months. Then they remember it the week before the next one.\n" +
       "I wrote the three lines that evening. It took twenty minutes and I have used them twice since.",
     questions: [
       {
@@ -63,7 +63,7 @@ export const enB1U03: SkillExercise[] = [
         explain: "„She told me to write down three things I had finished in the last six months, in one line each.“",
       },
       {
-        text: "What is the hard part of an appraisal?",
+        text: "What is the hard part of a performance review?",
         options: ["praise you cannot use", "criticism", "the hour"],
         answer: 0,
         explain: "„I had thought criticism was the hard part … The hard part is praise you cannot use.“",

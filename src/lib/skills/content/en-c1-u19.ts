@@ -188,7 +188,7 @@ export const enC1U19: SkillExercise[] = [
       "The decoupling, albeit real, does not deliver sufficiency. „Albeit real“ is the concession and it is a large one: the curve has flattened, the measurement is good, and the argument that nothing has changed is no longer available.\n" +
       "What the sentence then denies is that the change is enough. A curve that has flattened is still a curve that rises, and the word „sufficiency“ names a limit rather than a direction.\n" +
       "Although aware of finiteness, the circular economy still needs growth. Here the concession at the front has a whole phrase inside it, and the claim behind it is the one that costs friends.\n" +
-      "A loop needs energy to run. Collection, sorting, cleaning, repair and transport are all work, and work is paid in wages that come out of the same place the pensions do. A circle drawn on a page has no cost in it; a circle running in a city has four of them.\n" +
+      "A loop needs energy to run. Collection, sorting, cleaning, repair and transportation are all work, and work is paid in wages that come out of the same place the pensions do. A circle drawn on a page has no cost in it; a circle running in a city has four of them.\n" +
       "So the useful shape for a paragraph on this subject is the one this lesson keeps repeating: a concession large enough to be quoted by the other side, and then one claim.\n" +
       "The hard part is not the writing. It is being willing to put the strongest version of the other argument in your own paragraph, and most papers on this subject do not.",
     questions: [

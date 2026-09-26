@@ -51,6 +51,7 @@ export const enB1U01: SkillExercise[] = [
       { de: "cared for", tr: "baktım" },
       { de: "touch", tr: "ilgili olmak" },
       { de: "somewhere", tr: "bir yerde" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 7,
     text:

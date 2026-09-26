@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * At the embassy.
  *
  *   Kelime: register, resident, council, proof, stamp, process, issue,
- *           application, form, fill, signature, tick, section, detail,
+ *           application, form, fill, signature, mark, section, detail,
  *           print, surname, account, transfer, balance, branch, card, fee,
  *           statement, savings, visa, permit, embassy, residence, expire,
  *           extend, passport, applicant.
@@ -137,7 +137,7 @@ export const enB1U11: SkillExercise[] = [
       "You must fill out every section. An empty section is not read as „nothing to say“; it is read as „not finished“, and the form goes back in the mail.\n" +
       "You should print your last name. Capital letters, one letter per box. The form is read by a scanner first and by a person second, and the scanner has no patience.\n" +
       "You don't have to give a phone number. That box has a small word next to it and the small word is „optional“. Three people in four fill it in anyway.\n" +
-      "Tick one box in section four, not two. If both are true for you, tick the first and write the detail in section seven, which exists for exactly this.\n" +
+      "Mark one box in section four, not two. If both are true for you, mark the first and write the detail in section seven, which exists for exactly this.\n" +
       "The signature goes under the date, not next to it. This is the only line where the order matters, and it is the line most often wrong.\n" +
       "One last detail: use a black pen. Blue is accepted, but blue is copied badly and a bad copy is a second appointment.",
     questions: [
@@ -174,7 +174,7 @@ export const enB1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the detail", "the second case", "the extra detail"],
-        explain: "„tick the first and write the detail in section seven, which exists for exactly this.“",
+        explain: "„mark the first and write the detail in section seven, which exists for exactly this.“",
       },
     ],
   },

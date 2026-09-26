@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: lease, deposit, renew, sign, van, carry, fragile, unpack,
  *           address, meter, ground, upstairs, share, chore, rota, tidy,
- *           guest, split, agree, argue, leak, plumber, boiler, fix, damp,
+ *           guest, split, agree, argue, leak, plumber, boiler, fix, moisture,
  *           broken, complain, delay.
  *   Kalıp:  The deposit is paid before you move in. ·
  *           The lease was signed last week. · When is the lease renewed? ·
@@ -206,7 +206,7 @@ export const enB1U04: SkillExercise[] = [
       { speaker: "Mert", text: "Good. That list is the only thing that works after two weeks." },
       { speaker: "Nil", text: "He asked if the boiler was old. I said it was in the apartment before me and before the person before me." },
       { speaker: "Mert", text: "Then it is old." },
-      { speaker: "Nil", text: "There is also damp in the corner of the bathroom now. Probably not the boiler." },
+      { speaker: "Nil", text: "There is also moisture in the corner of the bathroom now. Probably not the boiler." },
       { speaker: "Mert", text: "Probably the same leak. Send both in one email and ask for a date, not a promise." },
       { speaker: "Nil", text: "And if nothing happens?" },
       { speaker: "Mert", text: "Then you complain in writing and the delay becomes his problem, not yours. But most of the time the email with two dates is enough." },
@@ -252,8 +252,8 @@ export const enB1U04: SkillExercise[] = [
         text: "What is also wrong in the bathroom?",
         options: [],
         answer: 0,
-        accept: ["damp", "there is damp", "damp in the corner"],
-        explain: "„There is also damp in the corner of the bathroom now.“",
+        accept: ["moisture", "there is moisture", "moisture in the corner"],
+        explain: "„There is also moisture in the corner of the bathroom now.“",
       },
     ],
   },

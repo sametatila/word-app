@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * The results are in · Seeing a specialist.
  *
  *   Kelime: bleed, emergency, ambulance, injury, wound, chest, breath,
- *           ward, tablet, dose, pack, medicine, pharmacy, painkiller,
+ *           ward, tablet, dose, package, medicine, pharmacy, painkiller,
  *           side effect, warning, blood, test, sample, scan, infection,
  *           virus, allergy, chronic, refer, specialist, surgeon, examine,
  *           x-ray, bone, knee, joint.
@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           They had already called an ambulance. ·
  *           The tablet is taken twice a day. ·
  *           The medicine was prescribed by a doctor. ·
- *           The pack must be kept in the fridge. ·
+ *           The package must be kept in the fridge. ·
  *           The doctor said the blood test was normal. ·
  *           She told me not to worry about the scan. ·
  *           They asked whether I had an allergy. ·
@@ -24,7 +24,7 @@ import type { SkillExercise } from "../types";
  *           This is the x-ray that shows the bone. ·
  *           The clinic where the specialist works is new.
  *
- * Ünitenin tek öğretme noktası KİPLİ EDİLGEN: „The pack must be kept in
+ * Ünitenin tek öğretme noktası KİPLİ EDİLGEN: „The package must be kept in
  * the fridge.“ Kip ile edilgen üst üste biniyor ve sıra değişmiyor:
  * „must“ + „be“ + üçüncü hâl. Prospektüs dili bu biçimle konuşuyor,
  * çünkü hem kural hem faili söylemeyen bir cümle gerekiyor. Yanında
@@ -57,10 +57,10 @@ export const enB1U19: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Six lines from a pack, and what each one is really doing.\n" +
+      "Six lines from a package, and what each one is really doing.\n" +
       "The tablet is taken twice a day. Not „take the tablet“ — the passive, with no time in it, because this is how the medicine works and not what you are being told to do this morning.\n" +
-      "The medicine was prescribed by a doctor. Here the agent is named, and it is named for one reason: this line exists so that nobody else takes the pack.\n" +
-      "The pack must be kept in the fridge. A modal and a passive together, in that order: „must“, then „be“, then the third form. This is the sentence people read last and the one that decides whether the medicine works at all.\n" +
+      "The medicine was prescribed by a doctor. Here the agent is named, and it is named for one reason: this line exists so that nobody else takes the package.\n" +
+      "The package must be kept in the fridge. A modal and a passive together, in that order: „must“, then „be“, then the third form. This is the sentence people read last and the one that decides whether the medicine works at all.\n" +
       "Each tablet should be swallowed with water, not with tea. The reason is in a smaller line two paragraphs down, and it is about the dose reaching the stomach at the right speed.\n" +
       "Side effects are listed by how often they happen, not by how serious they are. The first three on the list are the common ones and usually the least worrying.\n" +
       "The warning at the bottom is the only line written as an order: do not drive in the first two days. Everything else is a rule about the medicine. That one is a rule about you.",
@@ -73,9 +73,9 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         text: "Why is the doctor named in the second line?",
-        options: ["so that nobody else takes the pack", "so you can call them", "to show the date"],
+        options: ["so that nobody else takes the package", "so you can call them", "to show the date"],
         answer: 0,
-        explain: "„this line exists so that nobody else takes the pack.“",
+        explain: "„this line exists so that nobody else takes the package.“",
       },
       {
         kind: "truefalse",
@@ -86,11 +86,11 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The pack must be kept in the ___.",
+        text: "The package must be kept in the ___.",
         options: [],
         answer: 0,
         accept: ["fridge"],
-        explain: "„The pack must be kept in the fridge.“",
+        explain: "„The package must be kept in the fridge.“",
       },
       {
         kind: "order",
@@ -100,7 +100,7 @@ export const enB1U19: SkillExercise[] = [
         items: [
           "The tablet is taken twice a day.",
           "The medicine was prescribed by a doctor.",
-          "The pack must be kept in the fridge.",
+          "The package must be kept in the fridge.",
           "Do not drive in the first two days.",
         ],
         explain: "Doz, reçete, saklama, en sonda emir kipindeki uyarı.",
@@ -354,7 +354,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 19,
-    title: "The pack must be kept in the fridge",
+    title: "The package must be kept in the fridge",
     genre: "info",
     intro: "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
     gloss: [
@@ -379,7 +379,7 @@ export const enB1U19: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kutu buzdolabında saklanmalı.",
-        answer: "The pack must be kept in the fridge.",
+        answer: "The package must be kept in the fridge.",
         hint: "Kip ve edilgen üst üste: „must“ + „be“ + üçüncü hâl, bu sırayla.",
       },
       {

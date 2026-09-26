@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  * Making the point land.
  *
  *   Kelime: assign, minutes, objection, conclude, consensus, consequence,
- *           compromise, wording, fault, prevent, breakdown, alert, root,
+ *           compromise, wording, fault, cause, breakdown, alert, root,
  *           trigger, observation, assumption, scenario, loss, expense,
  *           expectation, intention, overrun, due, margin, highlight,
  *           circular, essential, critical, mainly, largely, forward,
@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           The objection was noted without discussion. ·
  *           We conclude with the consensus of the group. ·
  *           The fault must have been there for weeks. ·
- *           We can't have prevented the breakdown. ·
+ *           We can't have caused the breakdown. ·
  *           Someone should have raised the alert. ·
  *           If we had known, we would have changed the scenario. ·
  *           If we had planned better, the loss would be smaller now. ·
@@ -261,7 +261,7 @@ export const enB2U02: SkillExercise[] = [
       { speaker: "Merve", text: "„Must have“ — you are not giving an order there." },
       { speaker: "Tuna", text: "No. It is a conclusion. „Must“ stopped being about obligation somewhere in the last level and started being about certainty; this is that same „must“ pointed at the past." },
       { speaker: "Merve", text: "And the negative?" },
-      { speaker: "Tuna", text: "„Can't have“. We can't have prevented the breakdown. Nothing on our side was reading that indicator at all." },
+      { speaker: "Tuna", text: "„Can't have“. We can't have caused the breakdown. Nothing on our side was connected to that indicator at all." },
       { speaker: "Merve", text: "Not „mustn't have“?" },
       { speaker: "Tuna", text: "There is no such sentence. „Mustn't“ is a prohibition, and a prohibition cannot be aimed backwards." },
       { speaker: "Merve", text: "Then where does „should have“ fit?" },
@@ -282,7 +282,7 @@ export const enB2U02: SkillExercise[] = [
         text: "What is the negative of „must have“?",
         options: ["can't have", "mustn't have", "shouldn't have"],
         answer: 0,
-        explain: "„„Can't have“. We can't have prevented the breakdown…“",
+        explain: "„„Can't have“. We can't have caused the breakdown…“",
       },
       {
         kind: "truefalse",
@@ -304,7 +304,7 @@ export const enB2U02: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["We can't have prevented the breakdown.", "We can't have prevented the breakdown"],
+        accept: ["We can't have caused the breakdown.", "We can't have caused the breakdown"],
         explain: "Olumsuz çıkarım „can't have“ ile kuruluyor.",
       },
       {
@@ -484,8 +484,8 @@ export const enB2U02: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Çöküşü önlemiş olamayız.",
-        answer: "We can't have prevented the breakdown.",
+        tr: "Çöküşe biz neden olmuş olamayız.",
+        answer: "We can't have caused the breakdown.",
         hint: "Olumsuzu „can't have“; „mustn't have“ diye bir şey yok.",
       },
       {

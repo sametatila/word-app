@@ -133,6 +133,7 @@ export const enB1U09: SkillExercise[] = [
       { de: "tape", tr: "bant" },
       { de: "instead", tr: "onun yerine" },
       { de: "Sincerely", tr: "saygılarımla" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 7,
     text:

@@ -283,6 +283,7 @@ export const enC1U17: SkillExercise[] = [
       { de: "rented", tr: "kiralanan" },
       { de: "a cost", tr: "maliyet" },
       { de: "a landlord", tr: "toprak sahibi" },
+      { de: "the top", tr: "üst katman" },
     ],
     minutes: 8,
     segments: [

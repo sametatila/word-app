@@ -337,6 +337,7 @@ export const enC1U03: SkillExercise[] = [
       { de: "a verdict", tr: "hüküm" },
       { de: "unchecked", tr: "denetlenmemiş" },
       { de: "fairly", tr: "adilce" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 8,
     segments: [

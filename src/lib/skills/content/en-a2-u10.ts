@@ -49,7 +49,7 @@ export const enA2U10: SkillExercise[] = [
       "Mechanic: Yes. What is the problem?\n" +
       "Ela: My washing machine isn't working. It starts and then it stops after two minutes.\n" +
       "Mechanic: Since when?\n" +
-      "Ela: Since Friday. The caretaker looked at it but he had no tools.\n" +
+      "Ela: Since Friday. The janitor looked at it but he had no tools.\n" +
       "Mechanic: I see. Can you tell me the name on the machine?\n" +
       "Ela: It says Bosch, and under it a number.\n" +
       "Mechanic: Good. Can I come tomorrow morning?\n" +
@@ -74,10 +74,10 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The caretaker had no tools.",
+        text: "The janitor had no tools.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The caretaker looked at it but he had no tools.“",
+        explain: "„The janitor looked at it but he had no tools.“",
       },
       {
         kind: "gapfill",
@@ -116,12 +116,12 @@ export const enA2U10: SkillExercise[] = [
     minutes: 6,
     text:
       "Rules for the residents\n" +
-      "You have to put the trash in the trash can before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
+      "You have to put the trash in the trash can before eight in the evening. The janitor takes it out on Monday and Thursday.\n" +
       "You must not make noise between ten at night and seven in the morning. On Sunday the quiet time is all day.\n" +
       "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your apartment.\n" +
       "Bikes are forbidden in the hallway. There is a room for them next to the front door.\n" +
       "The attic is open from April to October. From November it is closed, because the roof is old.\n" +
-      "If something is broken, tell the caretaker or write to the landlord. Please don't repair it.\n" +
+      "If something is broken, tell the janitor or write to the landlord. Please don't repair it.\n" +
       "Thank you — a quiet building is a good building.",
     questions: [
       {
@@ -132,7 +132,7 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         text: "Who cleans the stairs?",
-        options: ["a company", "the residents", "the caretaker"],
+        options: ["a company", "the residents", "the janitor"],
         answer: 0,
         explain: "„You don't have to clean the stairs. A company comes every week.“",
       },

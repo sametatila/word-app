@@ -239,7 +239,7 @@ export const enC1U22: SkillExercise[] = [
         text: "How was the sentence read back later?",
         options: [],
         answer: 0,
-        accept: ["as a permission", "a permission", "as an allowance"],
+        accept: ["as a permission", "a permission"],
         explain: "„the sentence was read back later as a permission.“",
       },
     ],
