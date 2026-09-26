@@ -60,9 +60,20 @@ const warnings = [];
 const written = new Map();
 
 const end = (t) => {
-  const m = String(t).trim().slice(-1);
+  const m = String(t).trim().replace(/\.\.\.$/, "…").slice(-1);
   return /[.!?:…,;]/.test(m) ? m : "—";
 };
+/* CÜMLE İÇİ KESME NOKTASI (2026-09-26). Anlatım İngilizce sözcüğün çevresinden
+   parçalara bölünüyor ve Almanca söz dizimi Türkçeninkinden farklı: Türkçe
+   parça virgülle ya da noktalamasız biterken Almanca aynı yerde "mit", "von"
+   ya da iki nokta üst üsteyle bitiyor ("Yanlış. İngilizcede" → "Falsch. Im
+   Englischen gilt:"). Kapının amacı DÜŞEN CÜMLE SONUNU yakalamak; o yüzden
+   cümle sonu işaretleri (. ! ? …) birebir aynı olmak zorunda, cümle içi
+   kesmeler (, : ; ya da noktalamasız) kendi aralarında uyumlu sayılıyor.
+   Konuşma adımı incelemesinde 99 satır buna takılıyordu; Almancayı Türkçenin
+   noktalamasına uydurmak cümleleri bozardı. */
+const TERMINAL = /[.!?…]/;
+const sameEnd = (a, b) => a === b || (!TERMINAL.test(a) && !TERMINAL.test(b));
 const numbers = (t) => [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).sort();
 /* Üç nokta BOŞLUK işareti olabiliyor ("Benim adım …"); yanındaki
    noktalama onunla birlikte gidiyor. Gerekçe `data/skills/task/check.ts`te. */
@@ -148,7 +159,7 @@ if (existsSync(`${DIR}out`))
       if (!de) H("karşılık boş");
       else if (row) {
         const [eTr, eDe] = r.tr.includes("…") ? [slots(r.tr), slots(de)] : [r.tr, de];
-        if (end(eTr) !== end(eDe)) H(`son noktalama uyuşmuyor: «${end(eTr)}» → «${end(eDe)}»`);
+        if (!sameEnd(end(eTr), end(eDe))) H(`son noktalama uyuşmuyor: «${end(eTr)}» → «${end(eDe)}»`);
         const a = numbers(r.tr).join(","), b = numbers(de).join(",");
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 

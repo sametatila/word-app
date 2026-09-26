@@ -37,9 +37,19 @@ const src = new Map(extractLecture().map((r) => [K(r), r]));
 
 /** Son noktalama sınıfı; yoksa «—». */
 const end = (s) => {
-  const c = String(s ?? "").trim().slice(-1);
+  const c = String(s ?? "").trim().replace(/\.\.\.$/, "…").slice(-1);
   return ".!?:…,;".includes(c) ? c : "—";
 };
+/* CÜMLE İÇİ KESME NOKTASI (2026-09-26): anlatım Almanca sözcüğün çevresinden
+   parçalara bölünüyor ve İngilizce söz dizimi Türkçeninkinden farklı; aynı
+   kesme noktasında Türkçe virgülle, İngilizce iki nokta üst üsteyle ya da
+   noktalamasız bitebiliyor ("Yanlış. İngilizcede" → "Wrong. In English:").
+   Kapının amacı DÜŞEN CÜMLE SONUNU yakalamak: cümle sonu işaretleri
+   (. ! ? …) birebir aynı olmak zorunda, cümle içi kesmeler (, : ; ya da
+   noktalamasız) kendi aralarında uyumlu. Kardeş kapı `prose-de/check.mjs`
+   aynı kuralı taşıyor. */
+const TERMINAL = /[.!?…]/;
+const sameEnd = (a, b) => a === b || (!TERMINAL.test(a) && !TERMINAL.test(b));
 
 if (existsSync(`${DIR}out`))
   for (const f of readdirSync(`${DIR}out`).filter((x) => x.endsWith(".json")).sort()) {
@@ -53,7 +63,7 @@ if (existsSync(`${DIR}out`))
       const en = String(r.en ?? "").trim();
       if (!en) H("çeviri boş");
       else {
-        if (end(en) !== end(r.tr))
+        if (!sameEnd(end(en), end(r.tr)))
           H(`son noktalama uyuşmuyor: ${"«" + end(r.tr) + "»"} → «${end(en)}»  (${JSON.stringify(en.slice(0, 44))})`);
         // Türkçesi 30 karakterse İngilizcesi 90 olmamalı: sesli okunuyor,
         // uzunluk konuşma süresidir. Eşik geniş — İngilizce doğal olarak
