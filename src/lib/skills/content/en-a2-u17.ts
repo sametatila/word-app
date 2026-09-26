@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: tour, museum, ticket, guide, worth, exhibition, castle, tower,
  *           flight, miss, lost, help, insurance, get lost, backpack,
- *           travel bag, rent, licence, fuel, return, extra, gas station,
+ *           travel bag, rent, license, fuel, return, extra, gas station,
  *           highway, speed limit, menu, allergy, recommend, bill, tip,
  *           main course, dessert, waitress.
  *   Kalıp:  Let's visit the museum. · How about taking a bus tour? ·

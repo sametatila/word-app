@@ -35,7 +35,7 @@ export const enB2P20: SkillExercise[] = [
       { de: "trade", tr: "takas" },
       { de: "deal", tr: "fırsat" },
       { de: "ban", tr: "yasak" },
-      { de: "price rise", tr: "zam" },
+      { de: "price increase", tr: "zam" },
       { de: "tight", tr: "kısıtlı" },
       { de: "noticeable", tr: "gözle görülür" },
       { de: "reasonably", tr: "haklı olarak" },
@@ -77,7 +77,7 @@ export const enB2P20: SkillExercise[] = [
       {
         text: "What can a sudden change in someone's shopping indicate?",
         options: [
-          "a price rise in the store",
+          "a price increase in the store",
           "a move to another supermarket",
           "a new job or an illness",
         ],
@@ -317,7 +317,7 @@ export const enB2P20: SkillExercise[] = [
         "Markets have always charged tourists more, and nobody thinks a student discount is " +
         "unfair. " +
         "To be completely honest, it does help some people. A shopper who is clearly struggling " +
-        "may be offered a lower price on basics, and a store can sell food before it goes off by " +
+        "may be offered a lower price on basics, and a store can sell food before it goes bad by " +
         "targeting the people most likely to buy it. Those are fairly reasonable uses. " +
         "Where it becomes a real problem is when the price depends on things the customer cannot " +
         "see and would never agree to. If a system has worked out that you are too busy to " +

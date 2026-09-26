@@ -3,19 +3,19 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A1 · Ünite 16 — "Ev, odalar, eşyaların yeri, komşular".
  *
- * Dört ders: Showing your home · Rooms · Where things are · Neighbours.
+ * Dört ders: Showing your home · Rooms · Where things are · Neighbors.
  *
  *   Kelime: house, home, room, door, window, apartment, wall, stairs,
  *           kitchen, bedroom, bathroom, living room, floor, basement,
  *           toilet, elevator, table, chair, bed, under, on, lamp, sofa,
- *           fridge, neighbour, live, next door, quiet, friendly,
+ *           fridge, neighbor, live, next door, quiet, friendly,
  *           downstairs, bell, knock.
  *   Kalıp:  There is a room. · There are three rooms. · Is there a door? ·
  *           This is a kitchen. · The kitchen is small. ·
  *           There is a bathroom on the first floor. ·
  *           The book is on the table. · Where is my phone? ·
  *           It's next to the chair. · She lives next door. ·
- *           My neighbour is very friendly. · Where do you live?
+ *           My neighbor is very friendly. · Where do you live?
  *
  * Ünitenin yeni yapısı VAROLUŞ CÜMLESİ: „there is“ / „there are“.
  * Türkçede „var“ tek sözcük ve sayıya göre değişmiyor; İngilizcede yapı

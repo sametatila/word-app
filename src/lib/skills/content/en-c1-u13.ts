@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           The social stratum changed; its values did not. ·
  *           In the report it is an efficiency gain; on the floor, work intensification. ·
  *           What management calls flexibilization, the union calls precarization. ·
- *           Standardization is a method; rationalization is a programme. ·
+ *           Standardization is a method; rationalization is a program. ·
  *           What the power structure does is hide the power imbalance. ·
  *           Behind the delegation stands the authority to give orders. ·
  *           Subordination we notice; room to maneuver we do not.

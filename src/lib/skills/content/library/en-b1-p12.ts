@@ -46,7 +46,7 @@ export const enB1P12: SkillExercise[] = [
       "Then the woman playing my wife did something I will never forget. She looked at me and " +
       "said, “You were going to tell me about the car, weren't you?” It wasn't in the script. " +
       "It gave me my second line, and the play continued as if nothing had happened.\n\n" +
-      "Afterwards people in the audience told us it was the best scene of the evening. " +
+      "Afterward people in the audience told us it was the best scene of the evening. " +
       "Nobody had noticed a thing. I have signed up for the next play and asked for more lines, " +
       "but I have also asked to stand next to her.",
     questions: [

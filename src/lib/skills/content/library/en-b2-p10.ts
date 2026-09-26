@@ -256,7 +256,7 @@ export const enB2P10: SkillExercise[] = [
           "could see what had already been ordered. " +
           "What actually happened was that requests stopped arriving. " +
           "They did not stop existing; they moved into messages to whoever happened to be " +
-          "near the store cupboard, which is exactly where they had been before the form. " +
+          "near the supply closet, which is exactly where they had been before the form. " +
           "I was going to add an exception for urgent items in the first version, " +
           "but there was no time and I told myself we would see how it went. " +
           "Within three weeks the exception existed anyway — it was just invisible and decided " +

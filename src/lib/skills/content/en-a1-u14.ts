@@ -5,12 +5,12 @@ import type { SkillExercise } from "../types";
  *
  * Dört ders: Buying a ticket · Delays · In a taxi · Near and far.
  *
- *   Kelime: ticket, buy, platform, seat, return, airport, plane, place,
+ *   Kelime: ticket, buy, platform, seat, round-trip, airport, plane, place,
  *           late, wait, time, problem, sorry, a long time, attention,
  *           be sorry, taxi, driver, address, to stop, far, car, drive,
  *           square, near, next to, behind, between, in front of, side,
  *           everywhere.
- *   Kalıp:  I'd like a ticket to London, please. · Single or return? ·
+ *   Kalıp:  I'd like a ticket to London, please. · One-way or round-trip? ·
  *           How much is it? · The train is running late. ·
  *           I'm waiting for the bus. · How long is the delay? ·
  *           Can I have a receipt, please? · How long does it take? ·

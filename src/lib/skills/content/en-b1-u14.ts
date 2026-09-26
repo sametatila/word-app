@@ -6,13 +6,13 @@ import type { SkillExercise } from "../types";
  * Dört ders: How I learn best · How far I have come ·
  * Learning from mistakes · What the tutor said.
  *
- *   Kelime: memorise, repeat, visual, listen, notebook, method, habit,
+ *   Kelime: memorize, repeat, visual, listen, notebook, method, habit,
  *           focus, level, fluent, confident, vocabulary, grammar,
  *           pronunciation, measure, gap, correction, forget, common,
  *           pattern, careless, understand, admit, check, feedback,
  *           encourage, comment, advise, remark, tutor, session, clear.
  *   Kalıp:  I enjoy listening to podcasts. ·
- *           I try to memorise ten words a day. ·
+ *           I try to memorize ten words a day. ·
  *           I am used to writing in a notebook. ·
  *           My vocabulary has grown a lot. · I started at a lower level. ·
  *           How long have you studied English? ·

@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  A feedback loop may well push the system past a tipping point. ·
  *           The regenerative capacity might hold if the litter can decompose. ·
  *           Warm soil may secrete more gas and lose its thermal balance. ·
- *           The square was revitalized; the neighbours, less so. ·
+ *           The square was revitalized; the neighbors, less so. ·
  *           We have no gentrification here; we densify and refurbish. ·
  *           Car-friendly, they said, and rather good against traffic gridlock. ·
  *           The spatial planning outlined above is made concrete in the zoning plan below. ·

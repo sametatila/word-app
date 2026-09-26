@@ -46,7 +46,7 @@ export const enC1P8: SkillExercise[] = [
       "The new permanent display at the Whitfield opens with a sentence I did not expect: " +
       "“Most of what you are about to see was acquired in circumstances we would not " +
       "accept today.” It is on the wall, in the same type size as everything else, " +
-      "and it is not repeated anywhere afterwards.\n\n" +
+      "and it is not repeated anywhere afterward.\n\n" +
       "That single decision carries the whole exhibition, and it is worth saying why it works. " +
       "A museum that apologizes in every label teaches visitors to stop reading labels. " +
       "The Whitfield says it once, clearly, and then does something more demanding: " +
@@ -291,9 +291,9 @@ export const enC1P8: SkillExercise[] = [
           "The test I'd propose is the twelve-month test: what is done differently in the year " +
           "after the statement that would not have been done anyway? " +
           "Anything that would have happened regardless — a review already scheduled, " +
-          "a post already funded — does not count. " +
+          "a position already funded — does not count. " +
           "I can see how that could be gamed: an institution could simply schedule nothing in " +
-          "advance, then claim everything afterwards as a consequence. " +
+          "advance, then claim everything afterward as a consequence. " +
           "Had we applied the test to the Whitfield before the display opened, " +
           "we would probably have scored it lower than it deserves. " +
           "What I'm less sure about is whether the test can be applied by anyone outside the " +
@@ -336,7 +336,7 @@ export const enC1P8: SkillExercise[] = [
         "Whatever the people inside it feel, the statement it issues is a promise about " +
         "next year, not a report on anyone's conscience. " +
         "My criterion is not sincerity but consequence: what does the organization do in the " +
-        "twelve months afterwards that it would not have done otherwise? " +
+        "twelve months afterward that it would not have done otherwise? " +
         "Anything already budgeted, already scheduled or already demanded by a regulator " +
         "should be excluded, because it tells you nothing about the statement. " +
         "I can see one case where that criterion fails, and it is not a rare one. " +

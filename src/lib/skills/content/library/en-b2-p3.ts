@@ -268,7 +268,7 @@ export const enB2P3: SkillExercise[] = [
           "Please do not open anything yourself, and please do not have a repair done privately and send us the " +
           "bill. Both are refused, and the second one is refused twice.\n\n" +
           "In an urgent case, for example water or smoke, call the internal number three three three first and " +
-          "write the email afterwards.",
+          "write the email afterward.",
       },
     ],
   },

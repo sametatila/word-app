@@ -43,10 +43,10 @@ export const enC1P18: SkillExercise[] = [
     minutes: 10,
     text:
       "Ridgeway to end graded homework from September\n\n" +
-      "Ridgeway Secondary is to stop grading homework for all students under sixteen from the start of the next " +
-      "school year, the principal confirmed on Monday. Homework will still be set, but it will no longer " +
-      "count toward reports, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
-      "The decision follows a two-year trial in three year groups. According to the school's own figures, the " +
+      "Ridgeway High is to stop grading homework for all students under sixteen from the start of the next " +
+      "school year, the principal confirmed on Monday. Homework will still be assigned, but it will no longer " +
+      "count toward report cards, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
+      "The decision follows a two-year trial in three grade levels. According to the school's own figures, the " +
       "share of homework handed in on time fell slightly during the trial, from about eighty-two to seventy-eight " +
       "percent. What changed more was what was handed in. Teachers reported far fewer pieces that had clearly " +
       "been copied or completed by a parent, and the gap between students with and without help at home narrowed " +
@@ -54,9 +54,9 @@ export const enC1P18: SkillExercise[] = [
       "“Graded homework was measuring two things at once,” the principal, Dr. Anita Rao, said. “Partly what a child " +
       "had learned, and partly what kind of kitchen table they went home to. We couldn't separate them, so we " +
       "have stopped pretending to.”\n\n" +
-      "Not everyone is convinced. A group of parents is set to present a petition to the governors next week, " +
+      "Not everyone is convinced. A group of parents is set to present a petition to the school board next week, " +
       "arguing that without grades students will simply stop doing the work. Some teachers share a different " +
-      "worry: that homework which carries no mark will quietly become optional, and that the students most in need " +
+      "worry: that homework which carries no grade will quietly become optional, and that the students most in need " +
       "of practice will be the first to skip it.\n\n" +
       "The school says it will publish completion rates each term, and that the policy is to be reviewed after " +
       "one year rather than three. Dr. Rao admitted that the trial had been too small to settle the question. " +
@@ -65,8 +65,8 @@ export const enC1P18: SkillExercise[] = [
       {
         text: "What will change from September?",
         options: [
-          "Homework will no longer be set.",
-          "Homework will no longer count toward reports.",
+          "Homework will no longer be assigned.",
+          "Homework will no longer count toward report cards.",
           "Students will receive more homework.",
         ],
         answer: 1,
@@ -95,7 +95,7 @@ export const enC1P18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„The decision follows a two-year trial in three year groups.“",
+        explain: "„The decision follows a two-year trial in three grade levels.“",
       },
       {
         kind: "short_answer",
@@ -143,23 +143,23 @@ export const enC1P18: SkillExercise[] = [
     minutes: 10,
     segments: [
       { speaker: "Mr. Nakamura", text: "Good evening. This is Tom Nakamura, assistant principal at Ridgeway, with a short update on the homework changes that are due to start in September." },
-      { speaker: "Mr. Nakamura", text: "First, what is not changing. Homework will still be set every week in every subject, and teachers will still read it and write comments." },
-      { speaker: "Mr. Nakamura", text: "What is changing is that it will no longer carry a mark, and it will not appear on your child's report." },
+      { speaker: "Mr. Nakamura", text: "First, what is not changing. Homework will still be assigned every week in every subject, and teachers will still read it and write comments." },
+      { speaker: "Mr. Nakamura", text: "What is changing is that it will no longer carry a grade, and it will not appear on your child's report card." },
       { speaker: "Mr. Nakamura", text: "Teachers are to attend two training sessions in June. The aim is simple: to make feedback on homework specific enough to be worth reading without a grade." },
       { speaker: "Mr. Nakamura", text: "We know some of you are worried that students will stop doing the work. We share that worry, and we are not going to hide from it." },
-      { speaker: "Mr. Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
-      { speaker: "Mr. Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
-      { speaker: "Mr. Nakamura", text: "If rates in any year group fall below seventy percent, the principal and the governors are due to meet within a month to decide what to do." },
-      { speaker: "Mr. Nakamura", text: "One last thing. A parent-teacher meeting on the changes is set for the fourteenth of May. We are about to send invitations." },
-      { speaker: "Mr. Nakamura", text: "We would much rather hear your doubts there than at the school gate." },
+      { speaker: "Mr. Nakamura", text: "In the trial grade levels, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
+      { speaker: "Mr. Nakamura", text: "Completion rates for each grade level are to be published on the website every term, starting in December." },
+      { speaker: "Mr. Nakamura", text: "If rates in any grade level fall below seventy percent, the principal and the school board are due to meet within a month to decide what to do." },
+      { speaker: "Mr. Nakamura", text: "One last thing. A parent-teacher meeting on the changes is set for May fourteenth. We are about to send invitations." },
+      { speaker: "Mr. Nakamura", text: "We would much rather hear your doubts there than at school pickup." },
     ],
     questions: [
       {
         text: "What is not changing?",
         options: [
-          "Homework will still be set every week.",
+          "Homework will still be assigned every week.",
           "Homework will still be graded.",
-          "Homework will still appear on reports.",
+          "Homework will still appear on report cards.",
         ],
         answer: 0,
         explain: "Her hafta her derste ödev verilecek ve öğretmenler yorum yazacak.",
@@ -167,9 +167,9 @@ export const enC1P18: SkillExercise[] = [
       {
         text: "What is the purpose of the June training?",
         options: [
-          "to set more homework",
+          "to assign more homework",
           "to make feedback useful without a grade",
-          "to prepare the new style of reports",
+          "to prepare the new style of report cards",
         ],
         answer: 1,
         explain: "Geri bildirimin not olmadan da okunmaya değecek kadar somut olması.",
@@ -183,11 +183,11 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "If rates fall below ___ percent, the principal and the governors will meet.",
+        text: "If rates fall below ___ percent, the principal and the school board will meet.",
         options: [],
         answer: 0,
         accept: ["seventy", "70"],
-        explain: "„If rates in any year group fall below seventy percent“ bir ay içinde toplanılacak.",
+        explain: "„If rates in any grade level fall below seventy percent“ bir ay içinde toplanılacak.",
       },
       {
         kind: "short_answer",
@@ -195,17 +195,17 @@ export const enC1P18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the fourteenth of May", "14 May", "14th May", "the 14th of May", "May 14", "May 14th", "May the fourteenth", "on the fourteenth of May", "on 14 May", "fourteenth of May", "May fourteenth"],
-        explain: "„A parent-teacher meeting on the changes is set for the fourteenth of May.“",
+        explain: "„A parent-teacher meeting on the changes is set for May fourteenth.“",
       },
       {
         text: "Where would the school rather hear parents' doubts?",
         options: [
           "by email",
-          "at the school gate",
+          "at school pickup",
           "at the parent-teacher meeting",
         ],
         answer: 2,
-        explain: "„We would much rather hear your doubts there than at the school gate.“",
+        explain: "„We would much rather hear your doubts there than at school pickup.“",
       },
     ],
   },
@@ -221,7 +221,7 @@ export const enC1P18: SkillExercise[] = [
     intro: "Okul bülteni için bir öğrenci yazısı yazıyorsun: önce iki cümle kur, sonra ödev değişikliğini öğrenci gözüyle anlat.",
     gloss: [
       { de: "newsletter", tr: "bülten" },
-      { de: "mark", tr: "not" },
+      { de: "grade", tr: "not" },
       { de: "comment", tr: "yorum" },
       { de: "effort", tr: "çaba" },
       { de: "to postpone", tr: "ertelemek" },
@@ -233,8 +233,8 @@ export const enC1P18: SkillExercise[] = [
       {
         kind: "build",
         tr: "Eylülden itibaren ödevler yalnızca yorumla değerlendirilecek.",
-        answer: "From September, homework is to be marked with comments only.",
-        alternatives: ["Homework is to be marked with comments only from September."],
+        answer: "From September, homework is to be assessed with comments only.",
+        alternatives: ["Homework is to be assessed with comments only from September."],
         hint: "„be to“ resmî bir düzenlemeyi ya da kararı bildirir; duyurularda sık geçer.",
       },
       {
@@ -263,19 +263,19 @@ export const enC1P18: SkillExercise[] = [
           { de: "The number to watch is …", tr: "Takip edilecek rakam …", en: "" },
         ],
         sample:
-          "Homework without marks: what changes, and what we think\n\n" +
-          "From September, homework is to be marked with comments only. It will still be set every week, and " +
-          "teachers will still read it, but it will not count toward our reports. The school ran a trial in three " +
-          "year groups for two years, and the policy is to be reviewed after one year.\n\n" +
+          "Homework without grades: what changes, and what we think\n\n" +
+          "From September, homework is to be assessed with comments only. It will still be assigned every week, and " +
+          "teachers will still read it, but it will not count toward our report cards. The school ran a trial in three " +
+          "grade levels for two years, and the policy is to be reviewed after one year.\n\n" +
           "Not everyone in tenth grade is convinced. “If it doesn't count, half the class will stop doing it,” one " +
           "student told me, and she was not joking. Others see it differently. A student in ninth grade, who took part " +
           "in the trial, said the comments had become more useful once there was no number to look at first: " +
           "“I actually read them now, because there's nothing else to read.”\n\n" +
-          "My own view is that both of them are right. Some of us will treat unmarked work as optional, at least " +
-          "at first. But a mark was never the reason I learned anything from homework; the comment was, and the " +
-          "mark usually stopped me reading it.\n\n" +
+          "My own view is that both of them are right. Some of us will treat ungraded work as optional, at least " +
+          "at first. But a grade was never the reason I learned anything from homework; the comment was, and the " +
+          "grade usually stopped me reading it.\n\n" +
           "The number to watch is the completion rate. The first figures are due to appear in December, and if " +
-          "they fall below seventy percent the governors are to meet within a month. If you have an opinion, " +
+          "they fall below seventy percent the school board is to meet within a month. If you have an opinion, " +
           "the parent-teacher meeting in May is open to students as well.",
       },
     ],
@@ -302,7 +302,7 @@ export const enC1P18: SkillExercise[] = [
         "Çözümün nasıl sınanacağını anlat",
       ],
       targets: [
-        { de: "A mark on homework measures more than it is meant to.", tr: "Ödevdeki not ölçmesi gerekenden fazlasını ölçüyor." },
+        { de: "A grade on homework measures more than it is meant to.", tr: "Ödevdeki not ölçmesi gerekenden fazlasını ölçüyor." },
         { de: "The most serious risk is that …", tr: "En ciddi risk …" },
         { de: "What I'd propose is a middle position: …", tr: "Önereceğim şey bir ara konum: …" },
         { de: "The test would be whether …", tr: "Sınama … olup olmadığı olurdu" },
@@ -310,17 +310,17 @@ export const enC1P18: SkillExercise[] = [
       minSeconds: 60,
       maxSeconds: 100,
       sampleDe:
-        "A mark on homework measures more than it is meant to. It is supposed to tell us what a student has " +
+        "A grade on homework measures more than it is meant to. It is supposed to tell us what a student has " +
         "learned, but work done at home also records how quiet the home is, whether anyone there can help, and " +
         "sometimes whether an adult did the work. " +
-        "That is why I'm uneasy about grading it: the students with the most support collect the best marks for " +
+        "That is why I'm uneasy about grading it: the students with the most support collect the best grades for " +
         "reasons that have little to do with them. " +
-        "The most serious risk of dropping marks is not laziness in general. It is that the students who most need " +
+        "The most serious risk of dropping grades is not laziness in general. It is that the students who most need " +
         "practice are the first to decide it is optional, and the gap grows in exactly the place we meant to " +
         "close it. " +
-        "What I'd propose is a middle position: no marks, but a simple record of whether the work was attempted, " +
+        "What I'd propose is a middle position: no grades, but a simple record of whether the work was attempted, " +
         "shared with parents, and specific comments that a student has to answer in one sentence before the next " +
-        "piece is set. " +
+        "piece is assigned. " +
         "The test would be whether completion holds up among the students who were already struggling, not the " +
         "average for the whole school. If it drops there, the policy has failed, however good the overall " +
         "figures look.",

@@ -4,7 +4,7 @@ import type { SkillExercise } from "../types";
  * EN · B2 · Ünite 16 — "Katalog künyesi, sezon duyurusu, oyunun yaptığı,
  * sahnede bir ömür".
  *
- * Dört ders: The catalogue entry · The season announcement ·
+ * Dört ders: The catalog entry · The season announcement ·
  * What the play does · A life on stage.
  *
  *   Kelime: canvas, artwork, exhibit, era, Renaissance, fragment,

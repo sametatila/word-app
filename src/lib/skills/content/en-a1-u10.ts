@@ -5,7 +5,7 @@ import type { SkillExercise } from "../types";
  *
  * Dört ders: A work day · After work · Weekend plans · What time …?
  *
- *   Kelime: office, start, finish, lunch, meeting, building, programme,
+ *   Kelime: office, start, finish, lunch, meeting, building, program,
  *           free, watch, read, music, walk, television, radio, movie, plan,
  *           visit, stay, travel, tomorrow, trip, vacation, sea, when,
  *           open, close, late, early, be open, be closed, be ready.

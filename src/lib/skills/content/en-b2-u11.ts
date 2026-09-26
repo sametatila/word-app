@@ -146,7 +146,7 @@ export const enB2U11: SkillExercise[] = [
       { de: "either", tr: "ikisinden biri" },
       { de: "passive", tr: "edilgen" },
       { de: "stable", tr: "kararlı" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
       { de: "familiar", tr: "bildik" },
       { de: "machinery", tr: "düzenek" },
       { de: "left out", tr: "dışarıda bırakılmış" },
@@ -162,7 +162,7 @@ export const enB2U11: SkillExercise[] = [
     minutes: 9,
     text:
       "It is reported that the experiment was repeated. The measurements are said to be stable. The cohort is thought to have been too small. Three sentences about the same study, and the third one is doing something the first two are not.\n" +
-      "„To be stable“ is about now. „To have been too small“ is about before the thinking — the cohort was too small when the study ran, and somebody worked that out afterwards. Two words carry the whole of that, and they sit in the middle of the sentence where a fast reader does not stop.\n" +
+      "„To be stable“ is about now. „To have been too small“ is about before the thinking — the cohort was too small when the study ran, and somebody worked that out afterward. Two words carry the whole of that, and they sit in the middle of the sentence where a fast reader does not stop.\n" +
       "The rest is the familiar machinery: the long route with „it“, the short route with the subject in front, and in both of them the person who reports, says and thinks is left out.\n" +
       "In a paper that omission is defensible, and in a summary of a paper it often is not. The paper names its own sources in a list at the end. A summary that says „the measurements are said to be stable“ and gives no list has borrowed the paper's authority without borrowing its evidence.\n" +
       "The test is the one from the last unit and it has not changed. Put a name in front of the verb. „The second cohort reports that the measurements are stable“ either survives or it does not.\n" +
@@ -172,7 +172,7 @@ export const enB2U11: SkillExercise[] = [
         text: "When was the cohort too small?",
         options: ["when the study ran", "after the thinking", "now"],
         answer: 0,
-        explain: "„the cohort was too small when the study ran, and somebody worked that out afterwards.“",
+        explain: "„the cohort was too small when the study ran, and somebody worked that out afterward.“",
       },
       {
         text: "What has a summary with no list borrowed?",

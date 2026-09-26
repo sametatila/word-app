@@ -8,7 +8,7 @@ import type { SkillExercise } from "../../types";
  *
  * Alan adı `de` İngilizce metni taşır; `en` alanı bu kursta yazılmaz.
  * Türler parti 1'den ayrı: akademik yazı, ders ve özet. Üçü de adlaştırmanın
- * doğal alanı; dil bilgisi nominalisation ve akademik kayıt.
+ * doğal alanı; dil bilgisi nominalization ve akademik kayıt.
  */
 export const enC1P2: SkillExercise[] = [
   // ─────────────────────────── OKUMA ───────────────────────────
@@ -63,7 +63,7 @@ export const enC1P2: SkillExercise[] = [
       "None of this amounts to an argument for suspicion. Forms are among the most useful instruments we have, " +
       "precisely because they force a definition. The argument is for the publication of the definition " +
       "alongside the result. A number without its categories is not a smaller truth; it is a different one, " +
-      "and the difference is not recoverable afterwards.",
+      "and the difference is not recoverable afterward.",
     questions: [
       {
         text: "What is the central claim of the text?",
@@ -350,7 +350,7 @@ export const enC1P2: SkillExercise[] = [
     title: "the removal of the bench",
     genre: "grammar",
     intro: "Akademik ve kurumsal yazının belkemiği: fiili ada çevirmek, bunun neyi kazandırdığını ve neyi gizlediğini bilmek.",
-    focus: "Nominalisation ve akademik kayıt",
+    focus: "Nominalization ve akademik kayıt",
     gloss: [
       { de: "decision", tr: "karar" },
       { de: "removal", tr: "kaldırma" },
@@ -389,7 +389,7 @@ export const enC1P2: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Nominalise: “They decided quickly.” → “The ___ was quick.”",
+        text: "Nominalize: “They decided quickly.” → “The ___ was quick.”",
         options: ["decision", "deciding", "decide"],
         answer: 0,
         explain: "Fiilin ad biçimi „decision“dır; -ing biçimi burada uygun düşmez.",
@@ -412,7 +412,7 @@ export const enC1P2: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nominalise: “Prices increased.” → “The ___ in prices was small.”",
+        text: "Nominalize: “Prices increased.” → “The ___ in prices was small.”",
         options: [],
         answer: 0,
         accept: ["increase"],

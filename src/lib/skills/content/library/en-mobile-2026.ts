@@ -59,7 +59,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
-    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new movie at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
+    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new movie at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has an exam on Monday.\nEmma: Poor Murat! I have twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
     "questions": [
       {
         "text": "What time does the movie start?",
@@ -78,7 +78,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Deniz \"No, he is busy. He has got an exam on Monday.\" diyor, yani Murat gelmiyor."
+        "explain": "Deniz \"No, he is busy. He has an exam on Monday.\" diyor, yani Murat gelmiyor."
       },
       {
         "text": "Where do Deniz and Emma meet?",
@@ -121,7 +121,7 @@ export const enMobile2026: SkillExercise[] = [
           "exam",
           "an exam on Monday"
         ],
-        "explain": "\"He has got an exam on Monday.\" Murat bu yüzden sinemaya gelmiyor."
+        "explain": "\"He has an exam on Monday.\" Murat bu yüzden sinemaya gelmiyor."
       }
     ]
   },
@@ -160,7 +160,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have got a cat, and I love old movies and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my apartment. We can talk there, or we can talk online. Please write me a message!",
+    "text": "LANGUAGE FRIENDS — Member Profile\n\nName: Elena Rossi\nAge: 27\nCity: Milan, Italy\nJob: nurse in a small hospital\n\nAbout me:\nHello! I am Elena. I am 27 years old and I live in Milan with my sister. I work as a nurse. I start work at seven in the morning, so I am always tired at night!\n\nI speak Italian and Spanish. Now I am learning English because I want to work in London. I have a cat, and I love old movies and long walks.\n\nI am free on Tuesday and Thursday evenings. There is a nice café near my apartment. We can talk there, or we can talk online. Please write me a message!",
     "questions": [
       {
         "text": "How old is Elena?",
@@ -260,7 +260,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "From: Elif\nTo: Anna\nSubject: Our family photo\n\nHi Anna,\n\nHere is the photo from my birthday. It is our new family photo.\n\nMy mother is in the middle. She is wearing a red dress. Her name is Ayse. My father is next to her. He is tall and he has got gray hair.\n\nI am on the left with my brother Kerem. He is nine years old. He is holding our cat, Pamuk.\n\nThere are two women behind us. They are my aunts. My aunt Zeynep is a nurse. She is laughing in the photo!\n\nMy grandmother is not in the photo. She is taking the photo.\n\nWrite soon,\nElif",
+    "text": "From: Elif\nTo: Anna\nSubject: Our family photo\n\nHi Anna,\n\nHere is the photo from my birthday. It is our new family photo.\n\nMy mother is in the middle. She is wearing a red dress. Her name is Ayse. My father is next to her. He is tall and he has gray hair.\n\nI am on the left with my brother Kerem. He is nine years old. He is holding our cat, Pamuk.\n\nThere are two women behind us. They are my aunts. My aunt Zeynep is a nurse. She is laughing in the photo!\n\nMy grandmother is not in the photo. She is taking the photo.\n\nWrite soon,\nElif",
     "questions": [
       {
         "text": "Who is in the middle of the photo?",
@@ -362,7 +362,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "toast", "tr": "tost" },
     ],
     "minutes": 4,
-    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have got a 10% discount. Please show your student card.\nThere is free water on every table.\nWe don't have Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here on the weekend. He can help you in English.",
+    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have a 10% discount. Please show your student card.\nThere is free water on every table.\nWe don't have Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here on the weekend. He can help you in English.",
     "questions": [
       {
         "text": "How much is a hot chocolate?",
@@ -405,14 +405,14 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Students have got a ___% discount.",
+        "text": "Students have a ___% discount.",
         "options": [],
         "answer": 0,
         "accept": [
           "10",
           "ten"
         ],
-        "explain": "\"Students have got a 10% discount.\" İndirim için öğrenci kartı gerekiyor."
+        "explain": "\"Students have a 10% discount.\" İndirim için öğrenci kartı gerekiyor."
       },
       {
         "kind": "short_answer",
@@ -469,7 +469,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "math", "tr": "matematik" },
     ],
     "minutes": 4,
-    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favorite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have got a math exam!",
+    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favorite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have a math exam!",
     "questions": [
       {
         "text": "What time does the writer get up?",
@@ -508,7 +508,7 @@ export const enMobile2026: SkillExercise[] = [
           "A movie"
         ],
         "answer": 1,
-        "explain": "Son cümle: \"Tomorrow is Wednesday and I have got a math exam!\""
+        "explain": "Son cümle: \"Tomorrow is Wednesday and I have a math exam!\""
       },
       {
         "kind": "gapfill",
@@ -570,7 +570,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "brown", "tr": "kahverengi" },
     ],
     "minutes": 4,
-    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have got big bags and small bags.\n\nThere are 200 new dresses in the store. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
+    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have big bags and small bags.\n\nThere are 200 new dresses in the store. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
     "questions": [
       {
         "text": "The store closes at 8 p.m. on Sunday.",
@@ -780,7 +780,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
     "questions": [
       {
         "text": "Where is the apartment?",
@@ -863,7 +863,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "çöp kutusu"
       },
       {
-        "de": "cupboard",
+        "de": "closet",
         "tr": "dolap"
       },
       {
@@ -880,7 +880,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big cupboard.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty pounds.\n\nThanks a lot!\nDan",
+    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big closet.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty pounds.\n\nThanks a lot!\nDan",
     "questions": [
       {
         "text": "What time is Dan at work until?",
@@ -1091,7 +1091,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
         "text": "What time is Elif's appointment?",
@@ -1196,7 +1196,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Elif!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has got a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mom stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nDeniz",
+    "text": "Hi Elif!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mom stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nDeniz",
     "questions": [
       {
         "text": "When did Deniz's family arrive in Antalya?",
@@ -2124,7 +2124,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Görevli \"It's forty dollars. The green one is thirty dollars.\" diyor; kırk dolar siyah olanın fiyatı."
       },
       {
-        "text": "The store has got the jacket in small.",
+        "text": "The store has the jacket in small.",
         "options": [
           "True",
           "False"
@@ -2274,8 +2274,8 @@ export const enMobile2026: SkillExercise[] = [
         "text": "How does Kaan describe his uncle?",
         "options": [
           "He is short and he doesn't have glasses.",
-          "He is tall and he has got a beard.",
-          "He has got short blonde hair."
+          "He is tall and he has a beard.",
+          "He has short blonde hair."
         ],
         "answer": 1,
         "explain": "Emma \"the tall man with glasses\" diye soruyor, Kaan da \"He's very tall, and he's got a big beard now.\" diye cevaplıyor."
@@ -3909,7 +3909,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"I grew up in Izmir\" diyor. Ankara'ya üniversite için, İstanbul'a ise 2019'da taşındı."
       },
       {
-        "text": "Elif studied design at university in Ankara.",
+        "text": "Elif studied design in college in Ankara.",
         "options": [
           "True",
           "False"
@@ -4938,7 +4938,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "confirmation", "tr": "teyit" },
     ],
     "minutes": 5,
-    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your car number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
+    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your license plate number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
     "questions": [
       {
         "text": "When must the guests leave the room on Monday?",
@@ -4967,7 +4967,7 @@ export const enMobile2026: SkillExercise[] = [
           "Book a place on the website"
         ],
         "answer": 1,
-        "explain": "Metin \"you must tell us your car number when you arrive\" diyor; otopark ücretsiz ama araç plakasını söylemek gerekiyor."
+        "explain": "Metin \"you must tell us your license plate number when you arrive\" diyor; otopark ücretsiz ama araç plakasını söylemek gerekiyor."
       },
       {
         "text": "How much money has the hotel already received?",

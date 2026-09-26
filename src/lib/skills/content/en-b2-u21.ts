@@ -327,7 +327,7 @@ export const enB2U21: SkillExercise[] = [
       { de: "compress", tr: "sıkıştırmak" },
       { de: "a step", tr: "adım" },
       { de: "a process", tr: "süreç" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
       { de: "backwards", tr: "tersinden" },
       { de: "catches", tr: "yakalıyor" },
       { de: "passive", tr: "pasif" },
@@ -341,7 +341,7 @@ export const enB2U21: SkillExercise[] = [
       { speaker: "Kaya", text: "Three voices in three lines, and a reader takes them in without stopping, which is exactly why they are worth getting right." },
       { speaker: "Kaya", text: "The one that goes wrong is the subject. „Asked to reconcile, the meeting ended“ makes somebody ask the meeting." },
       { speaker: "Kaya", text: "Nobody misreads it and everybody sees it, and in a note about people who fell out, a careless sentence is read as carelessness about the people." },
-      { speaker: "Kaya", text: "So I write the main clause first and put the participle on afterwards, which sounds backwards and catches every one of them." },
+      { speaker: "Kaya", text: "So I write the main clause first and put the participle on afterward, which sounds backwards and catches every one of them." },
       { speaker: "Kaya", text: "What I cannot compress is the part where somebody repressed something for two years. That gets its own sentence, with a subject, because a participle would make it look like a step in a process." },
     ],
     questions: [

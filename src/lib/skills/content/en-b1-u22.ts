@@ -223,7 +223,7 @@ export const enB1U22: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "the city council", tr: "belediye meclisi" },
       { de: "repairing", tr: "onarmak" },
-      { de: "afterwards", tr: "sonrasında" },
+      { de: "afterward", tr: "sonrasında" },
       { de: "agree", tr: "anlaşmak" },
       { de: "measure", tr: "ölçmek" },
       { de: "shape", tr: "biçim" },
@@ -238,7 +238,7 @@ export const enB1U22: SkillExercise[] = [
     segments: [
       { speaker: "Ada", text: "They decided to clean the river last spring. The first thing they found was a pipe that nobody had on a map." },
       { speaker: "Kerem", text: "Who pays for that?" },
-      { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree on." },
+      { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterward, which is the right order and took two years to agree on." },
       { speaker: "Kerem", text: "And the bottles?" },
       { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one faucet, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
       { speaker: "Kerem", text: "Why does „decided“ take „to“ and „gave up“ take „-ing“?" },
@@ -261,7 +261,7 @@ export const enB1U22: SkillExercise[] = [
         text: "What did the city council suggest doing first?",
         options: ["repairing the pipe", "cleaning the water", "closing the plant"],
         answer: 0,
-        explain: "„They suggested repairing the pipe first and cleaning the water afterwards…“",
+        explain: "„They suggested repairing the pipe first and cleaning the water afterward…“",
       },
       {
         kind: "truefalse",

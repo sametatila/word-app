@@ -69,7 +69,7 @@ export const enC1U10: SkillExercise[] = [
       { de: "the opposite", tr: "tersi" },
       { de: "one piece at a time", tr: "parça parça" },
       { de: "complete", tr: "tamamlanmış" },
-      { de: "forwards", tr: "önden" },
+      { de: "forward", tr: "önden" },
       { de: "a bracket", tr: "parantez" },
       { de: "opens early", tr: "erken açılıyor" },
       { de: "arrives", tr: "geliyor" },
@@ -88,7 +88,7 @@ export const enC1U10: SkillExercise[] = [
       "„Above“ and „below“ are prepositions that have been left without an object and hung, together with „described“ and „discussed“, on the end of a noun. English allows this and uses it constantly in long texts: the claim above, the table below, the passage quoted earlier, the objection raised on the first page. Each one is a pointer, and together they make a layer of the essay that says nothing about the subject and everything about where the reader is standing.\n" +
       "This wrath, as noted earlier, grows out of an old resentment. „As noted earlier“ is the same layer speaking from the middle of a sentence, and it is doing a second job as well: it tells the reader that this is a repetition and that nobody is expected to be surprised by it.\n" +
       "Now the measurement, and it runs against the one this level opened with. In a sentence English puts the heavy thing first and asks the reader to hold it. In a noun phrase it does the opposite. Everything that describes a noun can be hung behind it, one piece at a time, and the phrase is complete at every point along the way: the resentment, the resentment in the first chapter, the resentment in the first chapter that nobody answered.\n" +
-      "German builds the same phrase forwards. The describing material goes in front of the noun, inside a bracket that opens early and does not close until the noun arrives, and the reader cannot stop anywhere in the middle, because until the noun comes there is nothing yet to stop on. „The multilayeredness described above“ becomes, word for word, „the above described multilayeredness“.\n" +
+      "German builds the same phrase forward. The describing material goes in front of the noun, inside a bracket that opens early and does not close until the noun arrives, and the reader cannot stop anywhere in the middle, because until the noun comes there is nothing yet to stop on. „The multilayeredness described above“ becomes, word for word, „the above described multilayeredness“.\n" +
       "So the two languages load a noun phrase from opposite ends, and the load is a property of the layer rather than of the language: at the level of the sentence it goes one way, at the level of the phrase the other.\n" +
       "The consequence for a long essay is practical. An English writer can keep adding to the back of a phrase and the sentence never becomes unreadable; a German writer who adds in the same way is filling a bracket, and a bracket has a size after which nobody follows.\n" +
       "Where emancipation stagnates, the anger does not subside. And here at the end is a third pointer: not a place on the page but a place in the argument, which is the one kind of pointer both languages build the same way.",

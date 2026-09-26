@@ -7,9 +7,9 @@ import type { SkillExercise } from "../types";
  * A vacation I remember.
  *
  *   Kelime: first, then, after that, finally, because, at first,
- *           afterwards, that's why, use, school, child, play, live,
- *           primary school, kindergarten, grown-up, grow up, village,
- *           neighbour, toy, remember, memory, doll, yard, travel, beach,
+ *           afterward, that's why, use, school, child, play, live,
+ *           elementary school, kindergarten, grown-up, grow up, village,
+ *           neighbor, toy, remember, memory, doll, yard, travel, beach,
  *           flight, hotel, enjoy, suitcase, island, hostel.
  *   Kalıp:  First I …, then I … · After that, … · I was tired, so I … ·
  *           I used to play soccer. · I didn't use to like coffee. ·
@@ -96,7 +96,7 @@ export const enA2U02: SkillExercise[] = [
     unit: 2,
     title: "A vacation I remember",
     genre: "story",
-    intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, afterwards, after that.",
+    intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, afterward, after that.",
     gloss: [
       { de: "shade", tr: "gölge" },
       { de: "vacation", tr: "tatil" },
@@ -105,7 +105,7 @@ export const enA2U02: SkillExercise[] = [
     minutes: 5,
     text:
       "I went to Antalya last summer with two friends. It was my first flight.\n\n" +
-      "First we took a taxi to the airport. Then we waited two hours because the plane was late. At first I was angry, but afterwards it was fine.\n\n" +
+      "First we took a taxi to the airport. Then we waited two hours because the plane was late. At first I was angry, but afterward it was fine.\n\n" +
       "We stayed at a small hotel for five days. The weather was hot and the beach was beautiful. Every morning we swam in the sea, and after that we ate fruit in the shade.\n\n" +
       "One day we took a boat to an island. While we were on the boat, a big fish jumped out of the water. My friend was wearing a white shirt and the water made it wet. That's why we have a funny photo of that day.\n\n" +
       "I enjoyed the vacation very much. Next year I want to go again.",

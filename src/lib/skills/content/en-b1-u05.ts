@@ -4,10 +4,10 @@ import type { SkillExercise } from "../types";
  * EN · B1 · Ünite 5 — "Faturalar, gürültü, çıkış, mahalle".
  *
  * Dört ders: The bills · The noise problem · Moving out ·
- * The neighbourhood.
+ * The neighborhood.
  *
  *   Kelime: electricity, gas, heating, usage, reading, waste, save,
- *           provider, neighbour, noise, calm, wall, disturb, apologise,
+ *           provider, neighbor, noise, calm, wall, disturb, apologize,
  *           downstairs, ignore, inspection, damage, refund, empty, final,
  *           key, charge, return, area, store, safe, local, community, walk,
  *           green, noisy.

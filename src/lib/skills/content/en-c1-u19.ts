@@ -79,7 +79,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "collected", tr: "biriktirilmiş" },
       { de: "least likely", tr: "en az olası" },
       { de: "a decision", tr: "karar" },
-      { de: "afterwards", tr: "sonrasında" },
+      { de: "afterward", tr: "sonrasında" },
       { de: "the question", tr: "soru" },
     ],
     minutes: 12,
@@ -91,7 +91,7 @@ export const enC1U19: SkillExercise[] = [
       "So „longevity is paid for“ has no word for word equivalent, and a translator meets that fact in the first paragraph of almost any technical text.\n" +
       "It is worth knowing for a second reason. This shape is the main way English writes a sentence about a thing that was done to something without saying who did it. „The risk was accounted for.“ By whom, on what date, in which model: all of it gone, and the sentence is short, ordinary and completely natural.\n" +
       "Which puts it beside the three shapes this level has already collected for the same job. Here is a fourth, and it is the one a reader is least likely to stop on, because the thing at the front is the thing the paragraph was about anyway.\n" +
-      "Waste prevention is not the same as a closed loop. One more line to close the lesson: the first is a decision not to make the thing, and the second is a plan for what to do with it afterwards. A report that offers the second as an answer to the first has changed the question.",
+      "Waste prevention is not the same as a closed loop. One more line to close the lesson: the first is a decision not to make the thing, and the second is a plan for what to do with it afterward. A report that offers the second as an answer to the first has changed the question.",
     questions: [
       {
         text: "What has become the subject?",

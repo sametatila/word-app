@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Telling the time.
  *
  *   Kelime: apple, tomato, potato, fresh, kilo, banana, carrot, vegetable,
- *           bill, pay, cash, card, together, cheque, give, get, get up,
+ *           bill, pay, cash, card, together, check, give, get, get up,
  *           wake up, breakfast, work, sleep, shower, dinner,
  *           in the morning, time, hour, clock, half, quarter, midnight,
  *           at night, lunchtime.

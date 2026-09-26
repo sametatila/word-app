@@ -52,7 +52,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "units", tr: "üniteler" },
       { de: "actually", tr: "aslında" },
       { de: "passive", tr: "edilgen" },
-      { de: "nominalisation", tr: "adlaştırma" },
+      { de: "nominalization", tr: "adlaştırma" },
       { de: "cleft", tr: "yarık cümle" },
       { de: "hedge", tr: "çekince" },
       { de: "inversion", tr: "devrik sıra" },
@@ -84,7 +84,7 @@ export const enB2U25: SkillExercise[] = [
       "„Provided that“ is a condition and it is not „if“. „If the file is complete, we can close this“ describes a situation. „Provided that the file is complete“ sets a condition — it is something I am requiring, and the difference is who is speaking.\n" +
       "„In view of“ does the opposite job. It gives a reason and it points backwards, at something already on the table: your letter. A sentence can hold both, and then it is a whole negotiation in twenty words.\n" +
       "There is something larger to say here, at the end of a level. Look at what these twenty-five units have actually taught.\n" +
-      "The passive that hides the doer. The nominalisation that hides the person. The cleft that tells the reader where to look. The hedge that declines to be the source. The inversion that raises the voice. The participle that says two things belong together. The reporting verb that grades the evidence.\n" +
+      "The passive that hides the doer. The nominalization that hides the person. The cleft that tells the reader where to look. The hedge that declines to be the source. The inversion that raises the voice. The participle that says two things belong together. The reporting verb that grades the evidence.\n" +
       "Not one of those is a new tense. Every one of them is a decision about who is visible, and B2 is the level where the grammar stops being about time and starts being about position.\n" +
       "So the last thing to say is the thing that has been true since the first briefing. Before choosing a shape, ask who disappears when you use it, and whether you would be willing to say their name.",
     questions: [

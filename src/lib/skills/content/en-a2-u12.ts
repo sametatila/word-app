@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * A problem at work.
  *
  *   Kelime: usually, customer, answer, check, report, task, regular,
- *           organise, meeting, agree, suggest, decide, later, discussion,
+ *           organize, meeting, agree, suggest, decide, later, discussion,
  *           opinion, solution, vacation, permission, leave, reason,
  *           possible, vacation day, ask for, arrange, mistake, late,
  *           deadline, solve, sorry, be late, hurry, support.

@@ -171,7 +171,7 @@ export const enC1U23: SkillExercise[] = [
       { de: "builds", tr: "inşa ediyor" },
       { de: "names", tr: "adlandırıyor" },
       { de: "an operator", tr: "işletmeci" },
-      { de: "afterwards", tr: "sonrasında" },
+      { de: "afterward", tr: "sonrasında" },
       { de: "a repair", tr: "onarım" },
       { de: "a decade", tr: "on yıl" },
       { de: "a goal", tr: "hedef" },
@@ -189,7 +189,7 @@ export const enC1U23: SkillExercise[] = [
       "The bidding process survives as a form, the permitting process as a delay. Two processes, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
       "A form is a thing somebody fills out. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
       "The consortium builds; the operating model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
-      "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterwards, and running it is thirty years of the thirty-two.\n" +
+      "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterward, and running it is thirty years of the thirty-two.\n" +
       "The consequence is not a scandal. It is a repair that nobody budgeted: a decade in, somebody discovers that the contract names a builder and a payer and no operator, and the negotiation that follows happens with no competition in the room at all.\n" +
       "The conflicting goals stayed; the cumbersome wording did not. And this is the sentence I would put on the front of any tender file.\n" +
       "The wording was cut because a lawyer read it and found it heavy. The conflict it described was still there the next morning, and now it was not written down anywhere, which made the document shorter and the project longer.\n" +
@@ -203,9 +203,9 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         text: "What is a tender quiet about?",
-        options: ["who runs it afterwards", "who builds", "who pays"],
+        options: ["who runs it afterward", "who builds", "who pays"],
         answer: 0,
-        explain: "„A tender says who builds and is quiet about who runs it afterwards…“",
+        explain: "„A tender says who builds and is quiet about who runs it afterward…“",
       },
       {
         kind: "truefalse",

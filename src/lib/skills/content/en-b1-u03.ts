@@ -127,7 +127,7 @@ export const enB1U03: SkillExercise[] = [
       "Sena: It is brighter than the photos.\n" +
       "Agent: The photos were taken in November. The woman who lived here painted the corridor.\n" +
       "Sena: And the ceiling is high. What is the storage like?\n" +
-      "Agent: There is a basement, two meters by three, and the cupboard in the corridor.\n" +
+      "Agent: There is a basement, two meters by three, and the closet in the corridor.\n" +
       "Sena: Is the basement dry?\n" +
       "Agent: In this building, yes. I would not say that about the one next door.\n" +
       "Sena: That is an honest answer. The apartment I saw yesterday was spacious but the landlord was not there.\n" +

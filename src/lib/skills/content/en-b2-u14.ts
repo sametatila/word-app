@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           Having lost its green space, the district feels urban. ·
  *           The report, which counts every migrant, is public. ·
  *           The law, which mentions migration, is new. ·
- *           My neighbour, whose citizenship is recent, votes today. ·
+ *           My neighbor, whose citizenship is recent, votes today. ·
  *           Never has voter turnout been so low. ·
  *           Rarely does an election campaign end early. ·
  *           Only after the vote does the opposition speak.

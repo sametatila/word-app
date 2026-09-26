@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: hope, dream, future, job, abroad, goal, success, opportunity,
  *           than, cheap, difficult, important, better, narrow, wide,
- *           thick, best, worst, most, favourite, ever, huge, tiny,
+ *           thick, best, worst, most, favorite, ever, huge, tiny,
  *           excellent, change, before, now, still, different, the same,
  *           similar, at the moment.
  *   Kalıp:  I hope to … · I'd like to … · My dream is to … ·

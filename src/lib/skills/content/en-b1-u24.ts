@@ -59,13 +59,13 @@ export const enB1U24: SkillExercise[] = [
       { de: "decoration", tr: "süs" },
       { de: "choosing", tr: "seçen" },
       { de: "belongs", tr: "ait" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
       { de: "the test", tr: "sınama" },
     ],
     minutes: 7,
     text:
       "The movie that made me cry was old. The woman who hugged me was a stranger. The place where I smiled was quiet. Three sentences, three small words, and the only question is which word goes where.\n" +
-      "„That“ is for a thing. „Who“ is for a person. „Where“ is for a place. There is nothing else to decide, because none of the three changes shape afterwards: the same „who“ serves one woman and forty, a subject and an object, this year and last year.\n" +
+      "„That“ is for a thing. „Who“ is for a person. „Where“ is for a place. There is nothing else to decide, because none of the three changes shape afterward: the same „who“ serves one woman and forty, a subject and an object, this year and last year.\n" +
       "That is unusual and it is worth saying out loud, because the words in front of them do change. „The movie“ takes „the“; „movies“ takes nothing.\n" +
       "The second thing to know is where the clause sits. It goes straight after the noun it belongs to and nowhere else. „The woman was a stranger who hugged me“ moves the hugging onto the wrong person, and the reader notices before you do.\n" +
       "The last thing is the comma, and this unit keeps it simple: no comma, because each of these three sentences is choosing. Which movie? The one that made me cry. The clause is doing work, not adding decoration.\n" +

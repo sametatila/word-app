@@ -244,8 +244,8 @@ export const enC1P9: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bu konuda bir karar almamız gerekiyor.",
-        answer: "We need to take a decision on this.",
-        alternatives: ["We need to make a decision on this."],
+        answer: "We need to make a decision on this.",
+        alternatives: ["We need to take a decision on this."],
         hint: "„take/make a decision“ içi boşalmış fiil + isim kalıbıdır; „do a decision“ yanlıştır.",
       },
       {

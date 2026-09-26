@@ -59,7 +59,7 @@ export const enB2P16: SkillExercise[] = [
       "between two households.\n\n" +
       "What would you tell someone thinking of doing the same?\n" +
       "Start with the people who will lose something, not the people who will gain. If the " +
-      "drivers had been against us, we would never have got permission.",
+      "drivers had been against us, we would never have gotten permission.",
     questions: [
       {
         text: "How did the project begin?",

@@ -130,7 +130,7 @@ export const enB2P8: SkillExercise[] = [
       { de: "levy", tr: "harç" },
       { de: "shopper", tr: "alışveriş yapan" },
       { de: "incentive", tr: "teşvik" },
-      { de: "kerbside", tr: "kapı önü" },
+      { de: "curbside", tr: "kapı önü" },
       { de: "household", tr: "hane" },
       { de: "anyway", tr: "zaten" },
       { de: "calculate", tr: "hesaplamak" },
@@ -139,7 +139,7 @@ export const enB2P8: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Presenter", text: "Household recycling is usually discussed as a question of behavior. Financially, it is mostly a question of packaging." },
-      { speaker: "Presenter", text: "Roughly seventy percent of the cost of kerbside collection is paid by councils, which means by local taxes." },
+      { speaker: "Presenter", text: "Roughly seventy percent of the cost of curbside collection is paid by councils, which means by local taxes." },
       { speaker: "Ms. Reinhardt", text: "The people who decide what the packaging looks like pay almost none of it. That is the part worth changing." },
       { speaker: "Presenter", text: "Several countries have introduced a levy on manufacturers, calculated by weight and by how difficult the material is to recycle." },
       { speaker: "Ms. Reinhardt", text: "The effect was not what campaigners expected. Recycling rates moved a little. Packaging design moved a lot." },
@@ -150,7 +150,7 @@ export const enB2P8: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Who pays most of the cost of kerbside collection?",
+        text: "Who pays most of the cost of curbside collection?",
         options: ["manufacturers", "councils, through local taxes", "shoppers, through prices"],
         answer: 1,
         explain: "„Roughly seventy percent … is paid by councils, which means by local taxes.“",

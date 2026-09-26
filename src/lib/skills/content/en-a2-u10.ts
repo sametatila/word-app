@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A2 · Ünite 10 — "Tamirci, bina kuralları, mahalle, dükkânlar".
  *
- * Dört ders: Calling a repairman · Building rules · My neighbourhood ·
+ * Dört ders: Calling a repairman · Building rules · My neighborhood ·
  * Local stores.
  *
  *   Kelime: repair, tool, cost, estimate, tomorrow, mechanic, drill,
@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           Can you come tomorrow morning? · How much will it cost? ·
  *           You have to … · You can't … · You don't have to … ·
  *           There is a park nearby. · It takes ten minutes on foot. ·
- *           It's quieter than the city centre. · What time do you open? ·
+ *           It's quieter than the city center. · What time do you open? ·
  *           I've already been to the bakery. · Do you have any fresh bread?
  *
  * Ünitenin tek öğretme noktası ZORUNLULUK ÜÇLÜSÜ: „have to“ (kural

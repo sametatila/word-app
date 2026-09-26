@@ -63,7 +63,7 @@ export const enC1P19: SkillExercise[] = [
       "What surprised observers most was how often people changed their minds. Early votes favored " +
       "air-conditioned public buildings. By the final weekend, the assembly had moved toward cheaper and " +
       "slower measures: shade trees on the ten hottest streets, a phone list of isolated residents to be called " +
-      "during heat warnings, and later opening hours for the town's two swimming pools.\n\n" +
+      "during heat warnings, and longer hours for the town's two swimming pools.\n\n" +
       "The council accepted seven of the nine recommendations, and the other two are still under review. Not " +
       "everyone is convinced. A long-serving councilor argued that decisions of this kind belong to elected " +
       "members, who can be removed at the next election, while forty volunteers answer to nobody. Supporters " +

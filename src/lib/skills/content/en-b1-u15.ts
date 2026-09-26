@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Working in a group · The online course · Keeping it up ·
  * What comes next.
  *
- *   Kelime: partner, task, organise, leader, project, present, divide,
+ *   Kelime: partner, task, organize, leader, project, present, divide,
  *           support, online, video, lesson, upload, download, module,
  *           access, subtitle, bored, tired, reward, discipline, enjoy,
  *           continue, quit, streak, advanced, further, choice, future,
@@ -144,7 +144,7 @@ export const enB1U15: SkillExercise[] = [
       "When is the next module opened? Two weeks after the last lesson of the one before, and never earlier, even if you finish in three days. The gap is on purpose: the course is built at a speed, not at your own pace.\n" +
       "Subtitles are available in two languages and there is a third setting that shows none. Use the third one in the second half of every video. The first half with, the second half without — that is where the listening actually happens.\n" +
       "Access stays open for a year after the last module. Nothing is deleted, and the videos are not made shorter later.\n" +
-      "One warning about the tasks: they are marked by people, not by the system, and people take four working days. Send the task on Friday and read the answer the following Thursday.",
+      "One warning about the tasks: they are graded by people, not by the system, and people take four working days. Send the task on Friday and read the answer the following Thursday.",
     questions: [
       {
         text: "When is the lesson uploaded?",
@@ -175,11 +175,11 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How long does marking take?",
+        text: "How long does grading take?",
         options: [],
         answer: 0,
         accept: ["four working days", "four days", "4 days"],
-        explain: "„they are marked by people, not by the system, and people take four working days.“",
+        explain: "„they are graded by people, not by the system, and people take four working days.“",
       },
     ],
   },

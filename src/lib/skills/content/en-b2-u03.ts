@@ -342,7 +342,7 @@ export const enB2U03: SkillExercise[] = [
       { de: "unnecessary", tr: "gereksiz" },
       { de: "earn", tr: "hak etmek" },
       { de: "a figure", tr: "rakam" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
       { de: "built", tr: "kurulmuş" },
     ],
     minutes: 7,
@@ -354,7 +354,7 @@ export const enB2U03: SkillExercise[] = [
       { speaker: "Barış", text: "I keep a rule for these. One per letter. The shape is loud, and a letter in which every paragraph shouts is a letter that gets answered by a lawyer rather than by a person." },
       { speaker: "Barış", text: "What is acceptable, since somebody always asks, is a date. Not a remedy yet, not a figure. A date is the minimal thing that would make the next letter unnecessary." },
       { speaker: "Barış", text: "The demand at the end is deliberately small. It asks for one thing, it is satisfactory if it arrives, and it is sufficient to show later that we asked." },
-      { speaker: "Barış", text: "What we contest is the delay. I wrote that sentence first and everything above it was written afterwards to earn it." },
+      { speaker: "Barış", text: "What we contest is the delay. I wrote that sentence first and everything above it was written afterward to earn it." },
     ],
     questions: [
       {

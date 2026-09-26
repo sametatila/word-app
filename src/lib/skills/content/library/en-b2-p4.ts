@@ -40,11 +40,11 @@ export const enB2P4: SkillExercise[] = [
       "An interview with Grete Sandvik, building surveyor\n\n" +
       "You walk into a house for the first time. What do you look at?\n" +
       "The floor, then the ceiling above it, and then I go outside. People expect me to look at the walls. " +
-      "Walls are the last thing. A wall that is wet can't have got wet by itself; something above it or below " +
+      "Walls are the last thing. A wall that is wet can't have gotten wet by itself; something above it or below " +
       "it must be doing that, and the wall is only where you see the result.\n\n" +
       "Can you really tell how old damage is?\n" +
       "Often, yes. Fresh damp is dark and cold to the touch. If the mark has a clean edge and the paint around " +
-      "it is chalky, it must have dried and got wet again several times, which usually means a season, not an " +
+      "it is chalky, it must have dried and gotten wet again several times, which usually means a season, not an " +
       "accident. It may have started with one blocked gutter ten years ago.\n\n" +
       "What is the most common mistake buyers make?\n" +
       "They ask whether there is a problem. The better question is what somebody has already tried. A new floor " +
@@ -72,7 +72,7 @@ export const enB2P4: SkillExercise[] = [
           "It is fresh, because fresh damp is dark and cold.",
         ],
         answer: 0,
-        explain: "„If the mark has a clean edge and the paint around it is chalky, it must have dried and got wet again several times.“",
+        explain: "„If the mark has a clean edge and the paint around it is chalky, it must have dried and gotten wet again several times.“",
       },
       {
         kind: "truefalse",
@@ -139,7 +139,7 @@ export const enB2P4: SkillExercise[] = [
       { speaker: "Host", text: "The headline said that grades improved. Is that what you found?" },
       { speaker: "Marta", text: "Not exactly, and this is where I have to be careful. Grades in one school went up slightly. In the other, they did not move at all. What changed in both was attendance in the first two lessons." },
       { speaker: "Host", text: "So the effect is small?" },
-      { speaker: "Marta", text: "The effect on marks is small. The effect on how the morning feels is not. Teachers reported far fewer conflicts before ten o'clock, and that must have been worth something, even if it does not appear in any table." },
+      { speaker: "Marta", text: "The effect on grades is small. The effect on how the morning feels is not. Teachers reported far fewer conflicts before ten o'clock, and that must have been worth something, even if it does not appear in any table." },
       { speaker: "Host", text: "Critics say that teenagers will simply go to bed later." },
       { speaker: "Marta", text: "That was my own first thought, and it turned out to be wrong. Bedtimes moved by about fifteen minutes; the extra sleep was about forty. Their body clock genuinely shifts in those years, and it shifts back in their twenties." },
       { speaker: "Host", text: "What about parents who start work at eight?" },

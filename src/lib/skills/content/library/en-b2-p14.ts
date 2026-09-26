@@ -31,7 +31,7 @@ export const enB2P14: SkillExercise[] = [
       { de: "compulsory", tr: "zorunlu" },
       { de: "persistent", tr: "süregelen" },
       { de: "stroller", tr: "puset" },
-      { de: "bay", tr: "park yeri" },
+      { de: "parking spot", tr: "park yeri" },
       { de: "nuisance", tr: "rahatsızlık" },
       { de: "permanent", tr: "kalıcı" },
       { de: "rider", tr: "sürücü" },
@@ -67,7 +67,7 @@ export const enB2P14: SkillExercise[] = [
       "The most persistent complaint was not about speed at all. It was about parking. Because " +
       "scooters could be left anywhere, they were left everywhere, and wheelchair users and " +
       "people with strollers reported being blocked on their own streets. Since September, " +
-      "riders have had to end their trip in a marked bay, and complaints have fallen by more " +
+      "riders have had to end their trip in a marked parking spot, and complaints have fallen by more " +
       "than half.\n\n" +
       "The council must now decide whether to make the scheme permanent. The honest lesson of " +
       "the trial is that scooters are a transportation success and a modest environmental one, and " +
@@ -161,7 +161,7 @@ export const enB2P14: SkillExercise[] = [
       { speaker: "Ms. Rourke", text: "The single most common thing we hear is, “But I bought it in a store, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
       { speaker: "Presenter", text: "Under current rules, a privately owned scooter may only be used on private land with the owner's permission. Rental scooters in the city trial are treated differently because they are insured by the operator." },
       { speaker: "Ms. Rourke", text: "Owing to that difference, two scooters that look identical can be legal and illegal on the same street. I understand why people find that absurd." },
-      { speaker: "Presenter", text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driving license they may not even hold yet." },
+      { speaker: "Presenter", text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driver's license they may not even hold yet." },
       { speaker: "Ms. Rourke", text: "Our approach with teenagers is to talk to the parents first. Most of them bought the scooter as a present and had no idea there was a problem." },
       { speaker: "Presenter", text: "The government has said it intends to change the law, but it has not said when, and several consultations have closed without a decision." },
       { speaker: "Ms. Rourke", text: "Until then my advice is simple: if you haven't bought one yet, check the rules before you pay, not after you've been stopped." },
@@ -234,7 +234,7 @@ export const enB2P14: SkillExercise[] = [
     intro: "Yerel gazeteye okur mektubu yazıyorsun: önce iki cümle kur, sonra bir haberin eksik bıraktığını kendi deneyiminle göster.",
     gloss: [
       { de: "obstacle", tr: "engel" },
-      { de: "dropped kerb", tr: "alçaltılmış kaldırım" },
+      { de: "curb cut", tr: "alçaltılmış kaldırım" },
       { de: "considerate", tr: "düşünceli" },
       { de: "condition", tr: "koşul" },
       { de: "to leave out", tr: "dışarıda bırakmak" },
@@ -286,7 +286,7 @@ export const enB2P14: SkillExercise[] = [
           "article leaves out is what the trial was like for people who cannot simply step around " +
           "an obstacle. " +
           "As someone who uses a wheelchair, I spent most of last spring planning routes around " +
-          "scooters that had been left across dropped kerbs. On one occasion the sidewalk outside " +
+          "scooters that had been left across curb cuts. On one occasion the sidewalk outside " +
           "my building was so crowded that I had to go into the road. " +
           "The improvement since September is real, and it is largely due to the parking spaces, " +
           "not to riders becoming more considerate. When there is somewhere obvious to leave a " +
@@ -339,7 +339,7 @@ export const enB2P14: SkillExercise[] = [
         "with strollers, older people who are nervous of anything silent and fast on a " +
         "sidewalk. Owing to the way the first schemes were designed, those people paid for " +
         "other people's convenience. " +
-        "My condition would be that no scooter can end a trip outside a marked bay. It's a " +
+        "My condition would be that no scooter can end a trip outside a marked parking spot. It's a " +
         "small rule, it's easy to enforce because the app knows exactly where the scooter is, " +
         "and wherever it has been tried, complaints have dropped dramatically.",
       rubricHint:

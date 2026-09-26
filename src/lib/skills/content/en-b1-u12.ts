@@ -27,9 +27,9 @@ import type { SkillExercise } from "../types";
  * writing with a request about …“), sabit kapanış („I look forward to
  * your reply. Sincerely.“), „but“ yerine „although“, ve kısaltma
  * yok. Bunlar dilbilgisi kuralı değil, KAYIT kuralı — yanlış olan cümle
- * anlaşılır ama yanlış yerde durur. İngilizcenin burada Almancada
- * olmayan bir kuralı var: adı bildiğinde „Yours sincerely“, bilmediğinde
- * „Yours faithfully“.
+ * anlaşılır ama yanlış yerde durur. Amerikan İngilizcesinde
+ * kapanış tek biçim: alıcının adını bilsen de bilmesen de „Sincerely,“
+ * („Yours sincerely / Yours faithfully“ ayrımı İngiliz kullanımı, öğretilmiyor).
  */
 export const enB1U12: SkillExercise[] = [
   // ─────────────────────────── OKUMA ───────────────────────────

@@ -181,7 +181,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "a date", tr: "tarih" },
       { de: "a copy", tr: "suret" },
       { de: "a witness", tr: "tanık" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
     ],
     minutes: 12,
     text:
@@ -191,7 +191,7 @@ export const enC1U21: SkillExercise[] = [
       "They ask that every whistleblower be heard before the misconduct is buried. Here the order is the rule again, exactly as it was in the unit about a permit. Heard before, not heard after, and the two sentences describe two different countries.\n" +
       "Look at what „buried“ is doing. It is a passive with nobody in it, in a sentence that is otherwise about people, and it is the right choice: burying is usually done by a procedure rather than by a person, and naming one person would make the sentence smaller than the problem.\n" +
       "The practical part of this vocabulary is short and it is about records rather than courage. Write the date. Keep a copy outside the building. Tell one person who is not in the chain, so that there is a witness to the fact that it was said and not only to what was said.\n" +
-      "A leak to a newspaper is a last resort and it is protected in fewer countries than people think. An internal report with a date on it is protected in most of them, and it is the document that decides everything afterwards.\n" +
+      "A leak to a newspaper is a last resort and it is protected in fewer countries than people think. An internal report with a date on it is protected in most of them, and it is the document that decides everything afterward.\n" +
       "None of that is grammar. It is in this unit because the sentences above are the ones a person writes on the worst week of a working life, and they should be written well.",
     questions: [
       {

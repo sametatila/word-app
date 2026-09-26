@@ -246,7 +246,7 @@ export const enB1P19: SkillExercise[] = [
           "to play music through our own speaker? The children would like to dance, so I'd also like " +
           "to know if there is a volume limit. Are we allowed to bring our own food and a cake with " +
           "candles, or are there rules about fire? " +
-          "I've heard that the hall has to be cleaned afterwards. Are we supposed to do that " +
+          "I've heard that the hall has to be cleaned afterward. Are we supposed to do that " +
           "ourselves, and should we bring our own trash bags? " +
           "I understand that the hall is used for a yoga class at half past six, so we will leave by " +
           "six at the latest and put all the chairs back. " +

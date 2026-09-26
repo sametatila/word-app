@@ -47,7 +47,7 @@ export const enB1P11: SkillExercise[] = [
       "studying to be a nurse. The girl's father turned out to be the man who plays the trumpet " +
       "on Sunday mornings, the one we all complain about. Mrs. Okafor had lived in the building " +
       "for thirty-one years.\n\n" +
-      "The elevator was repaired the next day. What surprised me was what happened afterwards. " +
+      "The elevator was repaired the next day. What surprised me was what happened afterward. " +
       "On Saturday there was a note on the door of apartment 12: “Elevator group, tea on Sunday at four.” " +
       "Five of us went. The sixth was at work that afternoon, but she sent a cake.",
     questions: [

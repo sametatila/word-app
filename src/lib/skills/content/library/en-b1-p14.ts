@@ -114,11 +114,11 @@ export const enB1P14: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "listening",
-    title: "Sunday at the Launderette",
+    title: "Sunday at the Laundromat",
     genre: "dialogue",
     intro: "Çamaşırhanede iki yabancı sohbet ediyor: yeni taşınan kadın ne öğreniyor, sohbet nasıl ilerliyor.",
     gloss: [
-      { de: "launderette", tr: "çamaşırhane" },
+      { de: "laundromat", tr: "çamaşırhane" },
       { de: "washing machine", tr: "çamaşır makinesi" },
       { de: "to move in", tr: "taşınmak" },
       { de: "quiet", tr: "sessiz" },
@@ -136,7 +136,7 @@ export const enB1P14: SkillExercise[] = [
       { speaker: "Ken", text: "They always do. You'll be here a few more Sundays, then. It isn't too bad. The café next door does good coffee, and the machines take cards now." },
       { speaker: "Ruth", text: "That's useful. You don't know if there's a library nearby, do you? I need somewhere quiet to work in the mornings." },
       { speaker: "Ken", text: "There's one on Park Road, ten minutes' walk. It's closed on Mondays, though. My daughter studies there most days." },
-      { speaker: "Ruth", text: "She's at university, then, isn't she?" },
+      { speaker: "Ruth", text: "She's in college, then, isn't she?" },
       { speaker: "Ken", text: "Second year, engineering. She says the library is the only place in town without her two little brothers in it." },
       { speaker: "Ruth", text: "Great. And the dryers take about forty minutes, don't they?" },
       { speaker: "Ken", text: "Fifty if you want things properly dry. I'm Ken, by the way." },
@@ -144,7 +144,7 @@ export const enB1P14: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Why is Ruth at the launderette?",
+        text: "Why is Ruth at the laundromat?",
         options: [
           "Her washing machine hasn't arrived.",
           "Her machine is broken.",

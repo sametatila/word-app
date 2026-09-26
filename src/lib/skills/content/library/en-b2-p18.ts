@@ -399,7 +399,7 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The customers ___ asked for longer opening hours; it wasn't the council's idea. (they)",
+        text: "The customers ___ asked for longer hours; it wasn't the council's idea. (they)",
         options: [],
         answer: 0,
         accept: ["themselves"],

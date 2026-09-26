@@ -194,7 +194,7 @@ export const enA2P11: SkillExercise[] = [
     genre: "letter",
     intro: "Ev takasıyla iki hafta başka bir ailenin evinde kaldın; önce iki cümle kur, sonra ayrılırken masaya bırakacağın mektubu yaz.",
     gloss: [
-      { de: "cupboard", tr: "dolap" },
+      { de: "cabinet", tr: "dolap" },
       { de: "plant", tr: "bitki" },
       { de: "glass", tr: "bardak" },
       { de: "key", tr: "anahtar" },
@@ -237,7 +237,7 @@ export const enA2P11: SkillExercise[] = [
           "Dear Clara and Marc, thank you for your home. We really enjoyed the two weeks here. The children loved the " +
           "yard, and we ate outside almost every evening. Mrs. Blanc next door was very kind: on Tuesday she brought " +
           "us a big bag of tomatoes from her garden. One small problem: we broke a glass, but we bought a new one at the " +
-          "market. It is in the cupboard with the others. We watered the plants every morning, and the fridge is clean " +
+          "market. It is in the cabinet with the others. We watered the plants every morning, and the fridge is clean " +
           "and empty. The key is in the green box next to the door. We hope you enjoyed Bursa, too! Best wishes, Deniz and family",
       },
     ],

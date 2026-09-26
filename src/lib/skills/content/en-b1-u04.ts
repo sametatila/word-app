@@ -41,6 +41,7 @@ export const enB1U04: SkillExercise[] = [
     genre: "story",
     intro: "Taşınma günü. Ne plana uydu, ne uymadı?",
     gloss: [
+      { de: "cabinet", tr: "dolap" },
       { de: "knife", tr: "bıçak" },
       { de: "except", tr: "dışında" },
       { de: "went to plan", tr: "plana uydu" },
@@ -51,7 +52,7 @@ export const enB1U04: SkillExercise[] = [
     text:
       "The van came at nine, which is the only thing that went to plan.\n" +
       "I had packed everything except the kitchen. I am going to unpack the kitchen first, I said at eight, and I believed it. At four in the afternoon the kitchen was still four boxes in the corridor and I was looking for a knife.\n" +
-      "Two men carried the cupboard upstairs and stopped. It did not go through the door. They took the doors off the cupboard, carried it in two parts, and put it back together in the bedroom. Twenty minutes. They had done it before.\n" +
+      "Two men carried the cabinet upstairs and stopped. It did not go through the door. They took the doors off the cabinet, carried it in two parts, and put it back together in the bedroom. Twenty minutes. They had done it before.\n" +
       "The fragile box was the one I carried myself. Six glasses from my grandmother, one towel between each. I will carry that one, I said at every step, and nobody argued.\n" +
       "The meter reading is the thing everybody forgets. I took a photo of both meters at ten past nine, before the first box came in. Three weeks later the gas company sent a bill for the previous apartment and the photo closed the question in one email.\n" +
       "The last thing that went wrong was the address. Two streets in this city have almost the same name. The van driver knew. I did not.",
@@ -63,10 +64,10 @@ export const enB1U04: SkillExercise[] = [
         explain: "„The van came at nine, which is the only thing that went to plan.“",
       },
       {
-        text: "How did the cupboard get through the door?",
+        text: "How did the cabinet get through the door?",
         options: ["the doors were taken off", "it went in one part", "it stayed outside"],
         answer: 0,
-        explain: "„They took the doors off the cupboard, carried it in two parts, and put it back together…“",
+        explain: "„They took the doors off the cabinet, carried it in two parts, and put it back together…“",
       },
       {
         kind: "truefalse",
@@ -91,7 +92,7 @@ export const enB1U04: SkillExercise[] = [
         items: [
           "The van came at nine.",
           "I took a photo of both meters.",
-          "Two men carried the cupboard upstairs.",
+          "Two men carried the cabinet upstairs.",
           "At four the kitchen was still in boxes.",
         ],
         explain: "Kamyonet, sayaç, dolap, akşamüstü mutfak.",
@@ -116,6 +117,7 @@ export const enB1U04: SkillExercise[] = [
     genre: "dialogue",
     intro: "Üç kural değil, üç gerekçe. Hangisi neden var?",
     gloss: [
+      { de: "cabinet", tr: "dolap" },
       { de: "apartment", tr: "daire" },
       { de: "columns", tr: "sütun" },
       { de: "fridge", tr: "buzdolabı" },
@@ -138,7 +140,7 @@ export const enB1U04: SkillExercise[] = [
       "Can: Three chores?\n" +
       "Sena: Three columns. Kitchen, bathroom, trash. Everything else is: if you see it, you do it.\n" +
       "Can: And if somebody does not?\n" +
-      "Sena: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cupboard.",
+      "Sena: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cabinet.",
     questions: [
       {
         text: "When do you have to clean up the kitchen?",
@@ -173,7 +175,7 @@ export const enB1U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["twice", "two times", "2"],
-        explain: "„We have argued twice in two years. Both times about the same cupboard.“",
+        explain: "„We have argued twice in two years. Both times about the same cabinet.“",
       },
     ],
   },

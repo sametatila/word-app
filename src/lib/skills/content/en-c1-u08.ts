@@ -286,7 +286,7 @@ export const enC1U08: SkillExercise[] = [
     segments: [
       { speaker: "Deniz", text: "To streamline a talk is not to circumvent a question. I put that line at the top of the page before every meeting I chair." },
       { speaker: "Kaan", text: "Is the difference always visible?" },
-      { speaker: "Deniz", text: "Afterwards it is. A shortened talk leaves the agenda finished and one question still unanswered, and everyone in the room can name which one." },
+      { speaker: "Deniz", text: "Afterward it is. A shortened talk leaves the agenda finished and one question still unanswered, and everyone in the room can name which one." },
       { speaker: "Kaan", text: "Not exactly efficient, is it?" },
       { speaker: "Deniz", text: "Say that at the table and you will get an answer. Write it in the minutes and you will get a complaint about the minutes." },
       { speaker: "Kaan", text: "A quick wit cannot cure a fear of speaking." },

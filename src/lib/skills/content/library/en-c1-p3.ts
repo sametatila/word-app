@@ -224,11 +224,11 @@ export const enC1P3: SkillExercise[] = [
     course: "en",
     level: "C1",
     skill: "writing",
-    title: "Who Are Opening Hours For?",
+    title: "Who Are Business Hours For?",
     genre: "opinion",
     intro: "Kurumların çalışma saatleri üzerine bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
     gloss: [
-      { de: "opening hours", tr: "çalışma saatleri" },
+      { de: "business hours", tr: "çalışma saatleri" },
       { de: "shift", tr: "vardiya" },
       { de: "appointment", tr: "randevu" },
       { de: "trade-off", tr: "ödünleşim" },
@@ -281,7 +281,7 @@ export const enC1P3: SkillExercise[] = [
           "public is an evening taken from somebody else. What tends to be missed is that this is a trade-off " +
           "between two groups of workers, not between citizens and bureaucracy, and it is usually settled by " +
           "whichever group is in the room.\n\n" +
-          "A modest proposal would be one late opening a month, announced a year ahead, and a published figure " +
+          "A modest proposal would be one late night a month, announced a year ahead, and a published figure " +
           "for missed appointments by time of day. If the late slots are not used, the argument is over and I " +
           "will have been wrong in public, which is the least a column can offer.",
       },

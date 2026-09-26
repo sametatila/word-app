@@ -13,7 +13,7 @@ import type { SkillExercise } from "../types";
  *           lie fallow, dilapidated, food sovereignty, agricultural reform,
  *           agroecology, monoculture, soil fertility, perennial.
  *   Kalıp:  In the plan it is land consumption; in the village, an arable field. ·
- *           What the council calls land consolidation, the neighbour calls land speculation. ·
+ *           What the council calls land consolidation, the neighbor calls land speculation. ·
  *           A land use conflict is a dispute; paving over land is a fact. ·
  *           What land grabbing does is dress up a territorial claim as investment. ·
  *           Behind the rural exodus stands a failed farm succession. ·

@@ -145,7 +145,7 @@ export const enB2P17: SkillExercise[] = [
     segments: [
       { speaker: "Presenter", text: "Four-day week trials have produced some of the most enthusiastic headlines in workplace research. A closer look at how they are run suggests some caution." },
       { speaker: "Ms. Petrova", text: "The first thing to know is who takes part. Companies volunteer, and the ones that volunteer tend to be smaller, more flexible and far more confident than average." },
-      { speaker: "Presenter", text: "In most published trials, around nine in ten firms chose to continue afterwards. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
+      { speaker: "Presenter", text: "In most published trials, around nine in ten firms chose to continue afterward. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
       { speaker: "Ms. Petrova", text: "That doesn't make the results worthless. It means they tell you what happens in the best conditions, which is not nearly as useful as knowing what happens in ordinary ones." },
       { speaker: "Presenter", text: "The measures also vary. Wellbeing is usually recorded through surveys, while productivity is often reported by the managers who chose to run the trial." },
       { speaker: "Ms. Petrova", text: "The more a result depends on a manager's own judgment, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
@@ -182,11 +182,11 @@ export const enB2P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Around nine in ___ firms chose to continue afterwards.",
+        text: "Around nine in ___ firms chose to continue afterward.",
         options: [],
         answer: 0,
         accept: ["ten", "10"],
-        explain: "„around nine in ten firms chose to continue afterwards“.",
+        explain: "„around nine in ten firms chose to continue afterward“.",
       },
       {
         kind: "short_answer",
@@ -321,7 +321,7 @@ export const enB2P17: SkillExercise[] = [
         "cover its route in four-fifths of the time. There, a four-day week simply means hiring " +
         "more staff, which is a perfectly reasonable choice, but a far more expensive one. " +
         "I'd draw the line at pretending it costs nothing everywhere. In some jobs it's a way of " +
-        "working smarter; in others it's a pay rise in the form of time, and we should be honest " +
+        "working smarter; in others it's a raise in the form of time, and we should be honest " +
         "about which one we're talking about.",
       rubricHint:
         "Kanıtın kaynağını tartma, somut karşı örnekler ve net bir sınır beklenir; „far better … than“, „the less …, the more …“ ve „I'd draw the line at“ kullanılabilir.",

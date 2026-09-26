@@ -62,14 +62,14 @@ export const enB2U10: SkillExercise[] = [
       { de: "the board", tr: "yönetim kurulu" },
       { de: "look up", tr: "bakıp bulmak" },
       { de: "an ending", tr: "ek" },
-      { de: "a nominalisation", tr: "adlaştırma" },
+      { de: "a nominalization", tr: "adlaştırma" },
       { de: "sharp", tr: "keskin" },
     ],
     minutes: 9,
     text:
       "The comparison of the two reports took a week. The distinction between the cases is clear. The contrast between the versions is sharp. Three nouns made from three verbs, and each of them has brought a preposition with it.\n" +
       "„Comparison“ takes „of“. „Distinction“ takes „between“. „Contrast“ takes „between“ as well, and „with“ when the second thing is named separately: a contrast with last year's narrative. „Parallel“ works like „contrast“: „between“ for both things together and „with“ for the second thing alone, which is the one that catches people.\n" +
-      "So a nominalisation costs twice. Unit 4 showed that the ending cannot be worked out from the verb — enforce, enforcement; perform, performance. This is the second bill: the preposition cannot be worked out either, and the two have nothing to do with each other.\n" +
+      "So a nominalization costs twice. Unit 4 showed that the ending cannot be worked out from the verb — enforce, enforcement; perform, performance. This is the second bill: the preposition cannot be worked out either, and the two have nothing to do with each other.\n" +
       "The verb underneath is no help. You compare one thing with another, but you write the comparison of two things. The preposition changes when the verb becomes a noun, and there is no rule saying it should.\n" +
       "Why does a quarterly report live on these? Because the noun can be counted and dated and put in a heading, and because „we compared the reports“ names us. In a document that will be read by the board, the week that the comparison took is a fact and we are not.\n" +
       "The ritual of the thing is that every one of these headings was a sentence first. I write the sentence, I turn it into the noun, and then I look up the preposition, every time, because I have been wrong about „parallel“ twice.",

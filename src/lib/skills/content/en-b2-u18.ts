@@ -49,7 +49,7 @@ export const enB2U18: SkillExercise[] = [
       { de: "builds", tr: "kuruyor" },
       { de: "noun", tr: "isim" },
       { de: "singular", tr: "tekil" },
-      { de: "nominalisation", tr: "adlaştırma" },
+      { de: "nominalization", tr: "adlaştırma" },
       { de: "compound", tr: "bileşik" },
       { de: "real", tr: "gerçek" },
       { de: "contain", tr: "içermek" },
@@ -75,7 +75,7 @@ export const enB2U18: SkillExercise[] = [
       "English builds new nouns this way constantly and without ceremony. Budget plan. Account balance. Income tax. Contract term. Two nouns, no preposition, no apostrophe, and the one on the left describes the one on the right.\n" +
       "Two rules come with it and both are easy to break. The first is order: a cost estimate is an estimate of costs, and an estimate cost would be the cost of an estimate. Reverse them and the meaning reverses with them.\n" +
       "The second is number. The left noun stays singular even when the sense is plural. It is a cost estimate and not a costs estimate; a budget plan and not a budgets plan. Everything that marks plural or possession goes on the noun to the right: cost estimates, the cost estimate's date.\n" +
-      "The checking of the bookkeeping is monthly. The approval of the budget plan is pending. Both of those have a nominalisation on the outside and a compound on the inside, which is why a page of this kind is so heavy to read and so easy to sign.\n" +
+      "The checking of the bookkeeping is monthly. The approval of the budget plan is pending. Both of those have a nominalization on the outside and a compound on the inside, which is why a page of this kind is so heavy to read and so easy to sign.\n" +
       "There is no limit to the stacking, which is the real danger. „Income tax deduction contract term“ is five nouns and a grammatical sentence could contain it. Two is normal. Three needs a reason. Four is a sign that somebody has stopped writing and started labeling.",
     questions: [
       {

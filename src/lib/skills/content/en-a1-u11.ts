@@ -3,15 +3,15 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A1 · Ünite 11 — "Kıyafet, beden, renk, fiyat".
  *
- * Dört ders: Buying clothes · Size and fitting · Colours · Asking prices.
+ * Dört ders: Buying clothes · Size and fitting · Colors · Asking prices.
  *
  *   Kelime: shirt, try, size, expensive, buy, jacket, shoe, sweater, big,
- *           small, fitting room, try on, thin, high, low, colour, red,
+ *           small, fitting room, try on, thin, high, low, color, red,
  *           blue, black, white, green, yellow, gray, price, cost, cheap,
  *           pay, sell, store, lot.
  *   Kalıp:  I'm looking for a shirt. · Can I try it on? · How much is it? ·
  *           What size are you? · It's too big. · Where is the fitting room? ·
- *           It's red. · a red car · What colour is it? · How much is this? ·
+ *           It's red. · a red car · What color is it? · How much is this? ·
  *           How much are these? · It's ten dollars.
  *
  * İki nokta bu ünitenin taşıdığı iş. Birincisi sıfatın yeri: renk isimden

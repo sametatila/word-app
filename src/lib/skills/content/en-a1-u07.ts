@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A1 · Ünite 7 — "Yemek, market, pişirme, içecek".
  *
- * Dört ders: Favourite food · At the market · Cooking together · Drinks.
+ * Dört ders: Favorite food · At the market · Cooking together · Drinks.
  *
  *   Kelime: food, love, hate, prefer, taste, sweet, meat, pizza, market,
  *           cheap, expensive, kilo, cost, sale, gram, supermarket, cook,

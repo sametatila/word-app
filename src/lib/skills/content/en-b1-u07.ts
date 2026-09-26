@@ -7,14 +7,14 @@ import type { SkillExercise } from "../types";
  * In the news.
  *
  *   Kelime: describe, shape, size, material, leather, label, lost, handle,
- *           happen, suddenly, realise, manage, miss, luckily, finally,
+ *           happen, suddenly, realize, manage, miss, luckily, finally,
  *           mess, state, discussion, point, decision, summary, suggest,
  *           chair, note, report, announce, source, official, recent,
  *           investigate, witness, claim.
  *   Kalıp:  It is the bag that has a red handle. ·
  *           It is the one I bought last year. ·
  *           The man who found it left his number. ·
- *           I had left my keys at home. · Then I realised the problem. ·
+ *           I had left my keys at home. · Then I realized the problem. ·
  *           By the time I arrived, the store had closed. ·
  *           She said that the budget had changed. ·
  *           He suggested starting earlier. ·

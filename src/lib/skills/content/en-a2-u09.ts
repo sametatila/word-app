@@ -3,17 +3,17 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A2 · Ünite 9 — "Mobilya, arıza, gürültü, taşınma".
  *
- * Dört ders: Furniture and rooms · Telling the landlord · Noisy neighbours ·
+ * Dört ders: Furniture and rooms · Telling the landlord · Noisy neighbors ·
  * Moving in.
  *
- *   Kelime: furniture, shelf, carpet, cupboard, corner, armchair, drawer,
+ *   Kelime: furniture, shelf, carpet, cabinet, corner, armchair, drawer,
  *           mirror, a leak, the heating, broken, to fix, immediately,
  *           damage, pipe, janitor, noise, loud, late, complain, polite,
  *           noisy, resident, apology, move, key, contract, sign,
  *           electricity, front door, hallway, gas.
  *   Kalıp:  There is a carpet in the living room. ·
  *           There are two shelves on the wall. ·
- *           Is there a cupboard in the kitchen? ·
+ *           Is there a cabinet in the kitchen? ·
  *           There's a leak in the bathroom. ·
  *           The heating hasn't worked since Monday. ·
  *           Could you send someone today? · Sorry to bother you, but … ·
@@ -104,6 +104,7 @@ export const enA2U09: SkillExercise[] = [
     genre: "story",
     intro: "Taşınma günü, adım adım. Ne bitti, ne henüz bitmedi?",
     gloss: [
+      { de: "cabinet", tr: "dolap" },
       { de: "stairs", tr: "merdiven" },
       { de: "carried", tr: "taşıdılar" },
       { de: "In the end", tr: "sonunda" },
@@ -113,7 +114,7 @@ export const enA2U09: SkillExercise[] = [
     text:
       "We moved in on the first of March. First, we signed the contract in the office of the old building.\n" +
       "After that, we got the keys — three for the front door and one for the apartment.\n" +
-      "The furniture came at eleven. Two men carried the cupboard up the stairs and it didn't go through the door.\n" +
+      "The furniture came at eleven. Two men carried the cabinet up the stairs and it didn't go through the door.\n" +
       "In the end they took the drawers out and then it was fine.\n" +
       "The first night we slept on the carpet, because the bed was still in the hallway.\n" +
       "There is a big mirror in the corner of the bedroom. It was already here before us.\n" +
@@ -122,10 +123,10 @@ export const enA2U09: SkillExercise[] = [
       "My brother asked: Was it a good day? I said: The best. Nothing was ready, but everything was ours.",
     questions: [
       {
-        text: "What was the problem with the cupboard?",
+        text: "What was the problem with the cabinet?",
         options: ["it didn't go through the door", "it was broken", "it was too small"],
         answer: 0,
-        explain: "„Two men carried the cupboard up the stairs and it didn't go through the door.“",
+        explain: "„Two men carried the cabinet up the stairs and it didn't go through the door.“",
       },
       {
         text: "Why did they eat bread and cheese?",
@@ -183,6 +184,7 @@ export const enA2U09: SkillExercise[] = [
     genre: "dialogue",
     intro: "Yeni daire geziliyor. Ne nerede duruyor?",
     gloss: [
+      { de: "cabinet", tr: "dolap" },
       { de: "shelves", tr: "raflar" },
       { de: "papers", tr: "kâğıtlar" },
       { de: "Later", tr: "sonra" },
@@ -196,7 +198,7 @@ export const enA2U09: SkillExercise[] = [
       { speaker: "Mert", text: "And the armchair in the corner — is it old?" },
       { speaker: "Sena", text: "From my grandmother. It is the most comfortable chair in the apartment." },
       { speaker: "Mert", text: "Where do you put your books?" },
-      { speaker: "Sena", text: "In the cupboard next to the door. The drawers are for papers." },
+      { speaker: "Sena", text: "In the cabinet next to the door. The drawers are for papers." },
       { speaker: "Mert", text: "Is there a mirror in the bathroom?" },
       { speaker: "Sena", text: "Of course. And one in the hallway, next to the front door." },
       { speaker: "Mert", text: "You have a lot of furniture for two rooms." },
@@ -215,7 +217,7 @@ export const enA2U09: SkillExercise[] = [
         text: "What is in the drawers?",
         options: ["papers", "books", "the mirror"],
         answer: 0,
-        explain: "„In the cupboard next to the door. The drawers are for papers.“",
+        explain: "„In the cabinet next to the door. The drawers are for papers.“",
       },
       {
         kind: "truefalse",

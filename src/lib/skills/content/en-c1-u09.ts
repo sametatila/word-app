@@ -293,7 +293,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "a sermon", tr: "vaaz" },
       { de: "a note", tr: "not" },
       { de: "an archive", tr: "arşiv" },
-      { de: "afterwards", tr: "sonradan" },
+      { de: "afterward", tr: "sonradan" },
     ],
     minutes: 8,
     segments: [
@@ -309,7 +309,7 @@ export const enC1U09: SkillExercise[] = [
       { speaker: "Ozan", text: "And the last line is not a poem at all." },
       { speaker: "Yaprak", text: "The zeitgeist felt epochal; the decade did not. A judgment about a whole period, and it fits in eight words because the second half borrows every one of the first half's." },
       { speaker: "Ozan", text: "A witness who disagreed with their own century." },
-      { speaker: "Yaprak", text: "Written afterwards, in an archive, by somebody who had been there. That is the only place a sentence this cold can come from, and it is why the line is worth more than the sermon next to it." },
+      { speaker: "Yaprak", text: "Written afterward, in an archive, by somebody who had been there. That is the only place a sentence this cold can come from, and it is why the line is worth more than the sermon next to it." },
     ],
     questions: [
       {
@@ -352,8 +352,8 @@ export const enC1U09: SkillExercise[] = [
         text: "Where was the last line written?",
         options: [],
         answer: 0,
-        accept: ["in an archive", "an archive", "afterwards"],
-        explain: "„Written afterwards, in an archive, by somebody who had been there.“",
+        accept: ["in an archive", "an archive", "afterward", "afterwards"],
+        explain: "„Written afterward, in an archive, by somebody who had been there.“",
       },
     ],
   },

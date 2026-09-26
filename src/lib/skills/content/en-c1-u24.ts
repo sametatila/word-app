@@ -277,7 +277,7 @@ export const enC1U24: SkillExercise[] = [
       { speaker: "Öykü", text: "Exactly that, and a report that puts them in the same table without saying which is which has made a political number look like a laboratory number." },
       { speaker: "Poyraz", text: "A significance level is chosen; an outlier is found." },
       { speaker: "Öykü", text: "And there is the same difference again in a different field. Somebody picked the level before the study started, or should have." },
-      { speaker: "Poyraz", text: "And if they picked it afterwards?" },
+      { speaker: "Poyraz", text: "And if they picked it afterward?" },
       { speaker: "Öykü", text: "Then the number is not a level at all; it is a description of the result. That is the single most common thing wrong with a bad paper and it is almost never visible." },
       { speaker: "Poyraz", text: "Repeatability exposes the source of error." },
       { speaker: "Öykü", text: "Run it again with the same machine and you find the machine. Run it again in another laboratory and you find everything else." },

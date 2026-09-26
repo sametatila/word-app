@@ -83,7 +83,7 @@ export const enB2U04: SkillExercise[] = [
       "There is no rule. There is a list, and it has to be learned one pair at a time. Violate becomes violation. Dismiss becomes dismissal. Acknowledge becomes acknowledgment, and the spelling of that one is argued about in this office twice a year.\n" +
       "The reason it matters here rather than anywhere else is that a formal complaint is written almost entirely in these nouns. „We enforced the rule“ is a sentence about us. „The enforcement of the rule“ is a thing, and a thing can be dated, measured and put in a numbered paragraph without anybody appearing in it.\n" +
       "So a letter of this kind has two costs at once. It buries the people, which is usually the point, and it demands a vocabulary in which every second word has an ending you cannot work out from the verb.\n" +
-      "My own habit is to write the verb first and convert afterwards. „They did not perform the contract on time“ goes down on the page, and then it becomes „the performance of the contract was late“ in the version that is sent. The sentence that goes out has no people in it. The one underneath still does, which is how I check that I know what I am claiming.",
+      "My own habit is to write the verb first and convert afterward. „They did not perform the contract on time“ goes down on the page, and then it becomes „the performance of the contract was late“ in the version that is sent. The sentence that goes out has no people in it. The one underneath still does, which is how I check that I know what I am claiming.",
     questions: [
       {
         text: "What does „perform“ become?",
@@ -131,7 +131,7 @@ export const enB2U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["writes the verb", "the verb first", "writes it with people"],
-        explain: "„My own habit is to write the verb first and convert afterwards.“",
+        explain: "„My own habit is to write the verb first and convert afterward.“",
       },
     ],
   },

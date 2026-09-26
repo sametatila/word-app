@@ -155,7 +155,7 @@ export const enB2U02: SkillExercise[] = [
       { de: "bury", tr: "gömmek" },
       { de: "a record", tr: "kayıt" },
       { de: "a column", tr: "sütun" },
-      { de: "nominalisation", tr: "adlaştırma" },
+      { de: "nominalization", tr: "adlaştırma" },
       { de: "buries", tr: "gömüyor" },
       { de: "an agent", tr: "eyleyen" },
       { de: "survives", tr: "sağ kalıyor" },
@@ -172,16 +172,16 @@ export const enB2U02: SkillExercise[] = [
       "The assignment of the task took ten minutes. Ten minutes of a meeting, and the sentence that records it has no person in it at all.\n" +
       "Minutes are written in nouns. „We assigned the task“ becomes „the assignment of the task“; „they objected“ becomes „the objection“; „we agreed“ becomes „the consensus“. The verb turns into a thing, and a thing can be counted, timed and put in a column.\n" +
       "That is why it is done, and it is not dishonest by itself. A record is not a story. Nobody reading the minutes in a year needs to know who spoke first.\n" +
-      "But the cost is real and worth naming. Every nominalisation buries an agent. „The objection was noted without discussion“ does not say who objected, and it does not say who decided there would be no discussion. Both facts existed in the room; neither survives to the page.\n" +
+      "But the cost is real and worth naming. Every nominalization buries an agent. „The objection was noted without discussion“ does not say who objected, and it does not say who decided there would be no discussion. Both facts existed in the room; neither survives to the page.\n" +
       "So the wording matters more in minutes than anywhere else. I keep people in the sentence wherever a consequence follows from a choice, and I let the nouns take over wherever the group as a whole did something.\n" +
       "We conclude with the consensus of the group. There the noun is right: no individual reached it and no individual owns it.\n" +
       "The compromise on the third item is the only line I rewrote. It had been minuted as „a compromise was reached“, which is true and useless. It now names the two people who moved, because in six months the question will not be whether there was a compromise.",
     questions: [
       {
-        text: "What does every nominalisation bury?",
+        text: "What does every nominalization bury?",
         options: ["an agent", "a date", "a number"],
         answer: 0,
-        explain: "„Every nominalisation buries an agent.“",
+        explain: "„Every nominalization buries an agent.“",
       },
       {
         text: "When does the writer keep people in the sentence?",

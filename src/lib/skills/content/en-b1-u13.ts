@@ -10,7 +10,7 @@ import type { SkillExercise } from "../types";
  *           required, appeal, reject, insist, evidence, prove, right,
  *           response, patient, review, chapter, topic, weekly,
  *           concentrate, break, routine, planner, exam, pass, fail,
- *           nervous, practice, mark, grade, cheat.
+ *           nervous, practice, grade, cheat.
  *   Kalıp:  The document that they need is the original. ·
  *           The copy I sent was not valid. ·
  *           The woman who checked it asked for more. ·

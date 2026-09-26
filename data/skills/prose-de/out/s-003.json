@@ -65,7 +65,7 @@
  { "tr": "Mert biletten söz ederken \"The ticket is only 350 lira.\" diyor.", "kind": "explain", "de": "\"The ticket is only 350 lira.\" sagt Mert über die Fahrkarte." },
  { "tr": "Olumsuz emir „Don't“ ile başlar ve arkasından yalın fiil gelir.", "kind": "explain", "de": "Der verneinte Befehl beginnt mit „Don't“, und dahinter kommt das Verb in der Grundform." },
  { "tr": "Rica „Can you …?“ ile kurulur; ayrı bir yardımcı fiil gerekmez.", "kind": "explain", "de": "Die Bitte baut „Can you …?“; ein eigenes Hilfsverb braucht es nicht." },
- { "tr": "Son cümle: \"Tomorrow is Wednesday and I have got a math exam!\"", "kind": "explain", "de": "Letzter Satz: \"Tomorrow is Wednesday and I have got a math exam!\"" },
+ { "tr": "Son cümle: \"Tomorrow is Wednesday and I have a math exam!\"", "kind": "explain", "de": "Letzter Satz: \"Tomorrow is Wednesday and I have a math exam!\"" },
  { "tr": "Tek bir yumuşatıcıyla desteği bildirir ve kesinlik iddia etmez.", "kind": "explain", "de": "Mit einem einzigen Weichmacher nennt es die Stütze und beansprucht keine Gewissheit." },
  { "tr": "„can“ üçüncü tekilde de değişmez ve arkasından yalın fiil gelir.", "kind": "explain", "de": "„can“ ändert sich auch in der dritten Person nicht, und dahinter kommt das Verb in der Grundform." },
  { "tr": "„child“ düzensizdir: çoğulu children'dır ve üzerine -s eklenmez.", "kind": "explain", "de": "„child“ ist unregelmäßig: die Mehrzahl heißt children und bekommt kein -s dazu." },

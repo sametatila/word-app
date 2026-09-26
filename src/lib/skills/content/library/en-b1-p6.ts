@@ -98,7 +98,7 @@ export const enB1P6: SkillExercise[] = [
       },
       {
         text: "What is the writer's main criticism?",
-        options: ["the opening hours", "the app", "the number of books"],
+        options: ["the library hours", "the app", "the number of books"],
         answer: 1,
         explain: "Uygulama sürekli çıkış yapıyor ve arama yalnız başlık biliniyorsa çalışıyor.",
       },
