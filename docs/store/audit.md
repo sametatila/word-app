@@ -83,7 +83,7 @@ ASC salt okuma dökümünden güncellendi.
 
 | Madde | Konu | Durum | Kanıt / kalan |
 |---|---|---|---|
-| T1 | UIBackgroundModes remote-notification | ◐ Samet | fe0761ab. Kalan: görünür bildirimin cihazda geldiğini görmek (runbook 9.3a) |
+| T1 | UIBackgroundModes remote-notification | ✅ | fe0761ab; 2026-09-26 Samet build 9'da iPhone'da görünür bildirimin geldiğini doğruladı |
 | T2 | NSAllowsLocalNetworking + 1C8F.1 | ✅ | 6f80cdfc |
 | T3 | İnceleme boyunca minBuild ve bakım anahtarı | ⏳ Claude (kural) | İnceleme süresince `minBuild.ios` gönderilen build'in altında, bakım kapalı; Integrity Aşama 3'te iOS muafiyeti korunur |
 | T4 | Debug keystore'a bağlı OAuth istemcisi | ⏳ Samet | Google Cloud'da `lernomi-android` (5E:8F…) silinecek (TEC-1) |
