@@ -414,7 +414,7 @@ export const enC1U04: SkillExercise[] = [
     gloss: [
       { de: "cleft", tr: "yarık cümle" },
       { de: "object", tr: "nesne" },
-      { de: "enshrine", tr: "hükme bağlamak" },
+      { de: "enshrine", tr: "güvence altına almak" },
       { de: "comprehend", tr: "idrak etmek" },
       { de: "polarize", tr: "kutuplaştırmak" },
       { de: "stylize", tr: "stilize etmek" },
