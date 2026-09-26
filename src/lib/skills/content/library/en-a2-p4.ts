@@ -35,16 +35,16 @@ export const enA2P4: SkillExercise[] = [
       "Since April there has been a fridge in front of the old post office in Mill Street. Anybody can put food " +
       "in it, and anybody can take food out. Nobody has to explain why.\n\n" +
       "The idea came from a group of six people from the neighborhood. “We saw two things,” says Ola Brenner, " +
-      "one of them. “Shops throw away good food every evening, and some people in this street do not have " +
+      "one of them. “Stores throw away good food every evening, and some people in this street do not have " +
       "enough. The fridge is the shortest way between the two.”\n\n" +
-      "Three shops and one bakery bring things every day. There are rules: no meat, no fish, no open packets, " +
+      "Three stores and one bakery bring things every day. There are rules: no meat, no fish, no open packets, " +
       "and every person checks the date.\n\n" +
       "Two volunteers clean the fridge in the morning and in the evening. “Most days it is empty by eight,” " +
       "says Ola. “That is not a problem. That is the answer.”",
     questions: [
       {
         text: "What is the fridge for?",
-        options: ["sharing food in the street", "keeping food for the bakery", "selling food that shops throw away"],
+        options: ["sharing food in the street", "keeping food for the bakery", "selling food that stores throw away"],
         answer: 0,
         explain: "„Anybody can put food in it, and anybody can take food out.“",
       },
@@ -56,10 +56,10 @@ export const enA2P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Shops and a bakery bring food to the fridge every day.",
+        text: "Stores and a bakery bring food to the fridge every day.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Three shops and one bakery bring things every day.“",
+        explain: "„Three stores and one bakery bring things every day.“",
       },
       {
         kind: "gapfill",

@@ -150,7 +150,7 @@ export const enC1P18: SkillExercise[] = [
       { speaker: "Mr. Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
       { speaker: "Mr. Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
       { speaker: "Mr. Nakamura", text: "If rates in any year group fall below seventy percent, the principal and the governors are due to meet within a month to decide what to do." },
-      { speaker: "Mr. Nakamura", text: "One last thing. A parents' evening on the changes is set for the fourteenth of May. We are about to send invitations." },
+      { speaker: "Mr. Nakamura", text: "One last thing. A parent-teacher meeting on the changes is set for the fourteenth of May. We are about to send invitations." },
       { speaker: "Mr. Nakamura", text: "We would much rather hear your doubts there than at the school gate." },
     ],
     questions: [
@@ -191,18 +191,18 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When is the parents' evening?",
+        text: "When is the parent-teacher meeting?",
         options: [],
         answer: 0,
         accept: ["the fourteenth of May", "14 May", "14th May", "the 14th of May", "May 14", "May 14th", "May the fourteenth", "on the fourteenth of May", "on 14 May", "fourteenth of May", "May fourteenth"],
-        explain: "„A parents' evening on the changes is set for the fourteenth of May.“",
+        explain: "„A parent-teacher meeting on the changes is set for the fourteenth of May.“",
       },
       {
         text: "Where would the school rather hear parents' doubts?",
         options: [
           "by email",
           "at the school gate",
-          "at the parents' evening",
+          "at the parent-teacher meeting",
         ],
         answer: 2,
         explain: "„We would much rather hear your doubts there than at the school gate.“",
@@ -276,7 +276,7 @@ export const enC1P18: SkillExercise[] = [
           "mark usually stopped me reading it.\n\n" +
           "The number to watch is the completion rate. The first figures are due to appear in December, and if " +
           "they fall below seventy percent the governors are to meet within a month. If you have an opinion, " +
-          "the parents' evening in May is open to students as well.",
+          "the parent-teacher meeting in May is open to students as well.",
       },
     ],
   },

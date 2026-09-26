@@ -45,7 +45,7 @@ export const enB1P18: SkillExercise[] = [
       "The weather was a surprise. I had expected such terrible storms that I would be stuck " +
       "indoors, but most days were cold, bright and completely still. It was so quiet at night " +
       "that I could hear the sea from my bed, three fields away.\n\n" +
-      "There were difficult moments. The shop sells such a small range of food that I ate eggs on " +
+      "There were difficult moments. The store sells such a small range of food that I ate eggs on " +
       "four of the seven days. On Thursday the ferry was canceled because of the wind, and I had " +
       "to stay two extra nights.\n\n" +
       "I didn't mind. The woman who rented me the cottage refused to take money for those nights. " +
@@ -128,7 +128,7 @@ export const enB1P18: SkillExercise[] = [
       { speaker: "Presenter", text: "If you've walked down Birch Lane before eight in the morning, you've seen it: a line of thirty people outside a bakery that only opened in March. We went to find out why." },
       { speaker: "Mr. Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
       { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the line. I've made two friends there." },
-      { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the line blocks its entrance, and a neighbor has complained about the noise at half past six." },
+      { speaker: "Presenter", text: "Not everyone is happy. The store next door says the line blocks its entrance, and a neighbor has complained about the noise at half past six." },
       { speaker: "Mr. Novak", text: "That's fair. We've painted a line on the sidewalk, so people stand on one side, and I've asked customers to keep their voices down before seven." },
       { speaker: "Presenter", text: "So will you buy a bigger oven?" },
       { speaker: "Mr. Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the line will disappear, and it should." },
@@ -152,7 +152,7 @@ export const enB1P18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The shop next door is happy about the line.",
+        text: "The store next door is happy about the line.",
         options: ["True", "False"],
         answer: 1,
         explain: "Yan dükkân kuyruğun girişini kapattığını söylüyor.",

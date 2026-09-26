@@ -285,7 +285,7 @@ export const enC1P17: SkillExercise[] = [
           "providing that supervision: six of us have already agreed to a weekly schedule.\n\n" +
           "We would welcome the chance to run this as a trial for one term and to report back to you at its end, " +
           "including any injuries, however minor.\n\n" +
-          "Yours faithfully,\nJuha Pajari",
+          "Sincerely,\nJuha Pajari",
       },
     ],
   },

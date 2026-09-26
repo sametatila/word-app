@@ -231,8 +231,8 @@ export const enB2P2: SkillExercise[] = [
       {
         kind: "build",
         tr: "Geçen yıldan beri bahsettiğim mağaza iade oranlarını gösteriyor.",
-        answer: "Since last year the shop that I mentioned has shown the return rates.",
-        alternatives: ["The shop that I mentioned has shown the return rates since last year."],
+        answer: "Since last year the store that I mentioned has shown the return rates.",
+        alternatives: ["The store that I mentioned has shown the return rates since last year."],
         hint: "İlgi zamiri nesne konumundaysa atılabilir; „since“ öbeği başta da sonda da durabilir.",
       },
       {
@@ -259,12 +259,12 @@ export const enB2P2: SkillExercise[] = [
           "cases, never sold again. The customers who never send anything back pay the difference, quietly, in " +
           "the price of everything else.\n\n" +
           "The argument for keeping free returns is stronger than it looks. Buying clothes you cannot try on is " +
-          "a gamble, and a fee would fall hardest on the people who cannot easily get to a shop: those who live " +
+          "a gamble, and a fee would fall hardest on the people who cannot easily get to a store: those who live " +
           "far out, those who work shifts, those who are not the size the industry designs for. A charge that " +
           "looks fair on paper is not fair on a Tuesday in a village.\n\n" +
-          "So the answer is not a flat fee, it is information. One shop I buy from now shows, on the " +
+          "So the answer is not a flat fee, it is information. One store I buy from now shows, on the " +
           "product page, how often each item is returned and why. Sales of the worst items fell by a third in " +
-          "six months, and nobody had to be charged anything. Shops already know these numbers. The only reason " +
+          "six months, and nobody had to be charged anything. Stores already know these numbers. The only reason " +
           "we do not see them is that nobody has been made to show them.",
       },
     ],

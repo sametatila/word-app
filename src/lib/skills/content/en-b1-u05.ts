@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: electricity, gas, heating, usage, reading, waste, save,
  *           provider, neighbour, noise, calm, wall, disturb, apologise,
  *           downstairs, ignore, inspection, damage, refund, empty, final,
- *           key, charge, return, area, shop, safe, local, community, walk,
+ *           key, charge, return, area, store, safe, local, community, walk,
  *           green, noisy.
  *   Kalıp:  If we used less heating, the bill would be lower. ·
  *           If the bill comes tomorrow, I will pay it. ·

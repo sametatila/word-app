@@ -62,7 +62,7 @@ export const enB2P18: SkillExercise[] = [
       "the town's financial center is a counter between the bread and the newspapers.",
     questions: [
       {
-        text: "Why did the shop become the town's only place to get cash?",
+        text: "Why did the store become the town's only place to get cash?",
         options: [
           "The council paid him to do it.",
           "He wanted to attract new customers.",
@@ -72,11 +72,11 @@ export const enB2P18: SkillExercise[] = [
         explain: "Banka şubesi dört yıl önce, bankamatik bir yıl sonra kapanmış.",
       },
       {
-        text: "Why does the parent association bring its coins to the shop?",
+        text: "Why does the parent association bring its coins to the store?",
         options: [
           "Banks no longer take small deposits easily.",
-          "The shop gives them a better rate.",
-          "The school insists on using the shop.",
+          "The store gives them a better rate.",
+          "The school insists on using the store.",
         ],
         answer: 0,
         explain: "Banka da tasarruf kurumu da bu kadar küçük bir yatırımı randevusuz kabul etmiyor.",
@@ -142,7 +142,7 @@ export const enB2P18: SkillExercise[] = [
       { speaker: "Ms. Brennan", text: "It isn't only the time. Every Friday one of us drives to the bank in the next town, and last month neither the safe nor the insurance was cheap to renew." },
       { speaker: "Mr. Voss", text: "I know. What if we took cash only in the mornings? The older customers mostly come in before eleven anyway." },
       { speaker: "Ms. Brennan", text: "Either we take cash or we don't. A half rule confuses everyone, and somebody will be turned away at five past eleven and write a review about it." },
-      { speaker: "Mr. Voss", text: "Fair point. Then what about the new card reader the business association donated? They offered one to every shop on the street." },
+      { speaker: "Mr. Voss", text: "Fair point. Then what about the new card reader the business association donated? They offered one to every store on the street." },
       { speaker: "Ms. Brennan", text: "That doesn't help, though. None of our costs come from cards. It's the cash that costs us, and a new reader won't change that." },
       { speaker: "Mr. Voss", text: "All right. Let's keep cash for another six months, but ask the council about the shared bank counter they keep mentioning. If that opens, both problems get smaller." },
     ],
@@ -252,16 +252,16 @@ export const enB2P18: SkillExercise[] = [
           { de: "What would help is …", tr: "İşe yarayacak olan …", en: "" },
         ],
         sample:
-          "Anyone who has stood in the line at a village shop at nine in the morning knows that " +
+          "Anyone who has stood in the line at a village store at nine in the morning knows that " +
           "cash has not disappeared; it has simply moved to the places with the fewest " +
           "alternatives. " +
           "This is not about nostalgia; it is about who can still take part in ordinary life. " +
           "A card works well if you have a bank account, a reliable phone and the confidence to " +
           "manage both. For a surprising number of people, one of those three is missing. " +
           "Both sides have a point. Handling cash is expensive for small businesses, and it is " +
-          "hardly fair to ask a café owner to run a bank for free. At the same time, every shop " +
+          "hardly fair to ask a café owner to run a bank for free. At the same time, every store " +
           "that stops accepting notes makes the next one's decision easier. " +
-          "Neither the banks nor the shops will solve this on their own, because each of them is " +
+          "Neither the banks nor the stores will solve this on their own, because each of them is " +
           "acting sensibly. What would help is a shared counter, paid for by all the banks " +
           "together, in every town that has lost its last branch. It would cost them very little, " +
           "and it would stop each sensible decision from becoming somebody else's problem.",
@@ -275,7 +275,7 @@ export const enB2P18: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "speaking",
-    title: "Should Shops Have to Accept Cash?",
+    title: "Should Stores Have to Accept Cash?",
     genre: "monologue",
     intro: "Bir dakikadan uzun tek başına konuşacaksın: iki kesimin gerekçesini karşılaştır ve bir orta yol öner.",
     gloss: [],
@@ -290,7 +290,7 @@ export const enB2P18: SkillExercise[] = [
         "Bir orta yol öner",
       ],
       targets: [
-        { de: "I'd stop short of forcing every shop to take cash, but …", tr: "Her dükkânı nakit almaya zorlamaya kadar gitmem, ama …" },
+        { de: "I'd stop short of forcing every store to take cash, but …", tr: "Her dükkânı nakit almaya zorlamaya kadar gitmem, ama …" },
         { de: "Both … and … have a genuine case.", tr: "Hem … hem de … gerçekten haklı." },
         { de: "The burden shouldn't fall on …", tr: "Yük … üzerine düşmemeli" },
         { de: "A middle way would be …", tr: "Bir orta yol … olurdu" },
@@ -298,15 +298,15 @@ export const enB2P18: SkillExercise[] = [
       minSeconds: 50,
       maxSeconds: 90,
       sampleDe:
-        "I'd stop short of forcing every shop to take cash, but I do think somebody has to " +
+        "I'd stop short of forcing every store to take cash, but I do think somebody has to " +
         "guarantee that it can still be used. " +
         "Both small businesses and people who rely on cash have a genuine case. A café that takes " +
         "a handful of cash payments a day still has to count them, store them and drive them to a " +
         "bank that may now be an hour away. On the other side, a pensioner without a smartphone, " +
         "or someone whose partner checks every card payment, may have no real alternative. " +
-        "The burden shouldn't fall on the smallest shops just because they happen to be the last " +
+        "The burden shouldn't fall on the smallest stores just because they happen to be the last " +
         "ones left. That is what is happening now: the supermarket decides, the bank closes its " +
-        "branch, and the corner shop quietly turns into a bank without being paid for it. " +
+        "branch, and the corner store quietly turns into a bank without being paid for it. " +
         "A middle way would be to require large retailers and public services to accept cash, " +
         "while leaving small businesses free to choose, and to make the banks fund shared " +
         "counters in towns where every branch has gone. Neither side gets everything it wants, " +

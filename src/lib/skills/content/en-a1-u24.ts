@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: email, write, dear, thanks, question, which, or, with,
  *           internet, phone, password, website, use, make, class, it,
- *           letter, stamp, address, parcel, send, pencil, full, plastic,
+ *           letter, stamp, address, package, send, pencil, full, plastic,
  *           yesterday, last week, home, tired, were, he, she, we.
  *   Kalıp:  Dear Anna, · I have a question. · Thank you very much. ·
  *           I use the internet every day. · Do you use this app? ·

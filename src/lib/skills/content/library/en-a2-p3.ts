@@ -31,10 +31,10 @@ export const enA2P3: SkillExercise[] = [
     minutes: 5,
     text:
       "QUIET HOUR — EVERY TUESDAY, EIGHT TO NINE\n\n" +
-      "From this month, Marlow's is a quieter shop for one hour every week.\n\n" +
+      "From this month, Marlow's is a quieter store for one hour every week.\n\n" +
       "What is different?\n" +
       "- No music and no announcements.\n" +
-      "- The lights in the shop are lower.\n" +
+      "- The lights in the store are lower.\n" +
       "- We do not fill the shelves during this hour, so there are no carts in the way.\n" +
       "- At the checkout, the machines do not beep. Our staff speak quietly.\n\n" +
       "Who is it for?\n" +
@@ -49,11 +49,11 @@ export const enA2P3: SkillExercise[] = [
         text: "What is a quiet hour?",
         options: [
           "one hour a week with less noise and light",
-          "an hour when the shop is closed",
+          "an hour when the store is closed",
           "a special hour only for older people",
         ],
         answer: 0,
-        explain: "„Marlow's is a quieter shop for one hour every week“ — müzik yok, ışıklar kısık.",
+        explain: "„Marlow's is a quieter store for one hour every week“ — müzik yok, ışıklar kısık.",
       },
       {
         text: "What is different at the checkout?",

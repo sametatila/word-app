@@ -268,7 +268,7 @@ export const enB2P6: SkillExercise[] = [
           "If you apply again, I would suggest practicing the presentation against a clock and " +
           "choosing examples from the setting you are applying to, even if they are smaller. " +
           "We expect a similar vacancy in the fall, and I would be glad to see your name again. " +
-          "Yours sincerely, R. Carr",
+          "Sincerely, R. Carr",
       },
     ],
   },

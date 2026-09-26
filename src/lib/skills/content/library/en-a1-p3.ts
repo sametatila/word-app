@@ -44,7 +44,7 @@ export const enA1P3: SkillExercise[] = [
     questions: [
       {
         text: "What is this text?",
-        options: ["a recipe for a cake", "a menu in a café", "an ad for a shop"],
+        options: ["a recipe for a cake", "a menu in a café", "an ad for a store"],
         answer: 0,
         explain: "Önce malzemeler, sonra adımlar geliyor — bu bir tarif.",
       },
@@ -107,7 +107,7 @@ export const enA1P3: SkillExercise[] = [
     segments: [
       { text: "Good afternoon, everyone. The museum closes in twenty minutes, at six o'clock." },
       { text: "Please leave the rooms on the second floor now. That floor closes first." },
-      { text: "The shop is open until ten past six. Today all books are five euros." },
+      { text: "The store is open until ten past six. Today all books are five euros." },
       { text: "Do not forget your coats and bags. The cloakroom closes at six." },
       { text: "Tomorrow we open at ten. The new room about old maps opens on Saturday." },
       { text: "Thank you for your visit. We hope to see you again soon." },
@@ -115,7 +115,7 @@ export const enA1P3: SkillExercise[] = [
     questions: [
       {
         text: "Where are the people?",
-        options: ["in a museum", "in a library", "in a big shop"],
+        options: ["in a museum", "in a library", "in a big store"],
         answer: 0,
         explain: "„The museum closes in twenty minutes“ ve vestiyer, katlar, harita odası — sahne bir müze.",
       },
@@ -127,10 +127,10 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The shop is open longer than the museum.",
+        text: "The store is open longer than the museum.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The museum closes … at six o'clock“ ama „The shop is open until ten past six.“",
+        explain: "„The museum closes … at six o'clock“ ama „The store is open until ten past six.“",
       },
       {
         kind: "short_answer",
@@ -150,7 +150,7 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         text: "What opens on Saturday?",
-        options: ["a new room about old maps", "a new shop for books and gifts", "a bigger cloakroom by the door"],
+        options: ["a new room about old maps", "a new store for books and gifts", "a bigger cloakroom by the door"],
         answer: 0,
         explain: "„The new room about old maps opens on Saturday.“",
       },

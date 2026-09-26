@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A2 · Ünite 14 — "Online sipariş, banka, koli, telefon sözleşmesi".
  *
- * Dört ders: Online orders · At the bank · Sending a parcel ·
+ * Dört ders: Online orders · At the bank · Sending a package ·
  * A phone contract.
  *
  *   Kelime: order, delivery, arrive, track, package, deliver,

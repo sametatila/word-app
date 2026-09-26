@@ -53,7 +53,7 @@ export const enC1P5: SkillExercise[] = [
       "Uptake. This is where the scheme differs from its predecessor. Under the old arrangement, glasses were " +
       "prescribed and the family collected them; uptake was sixty-two percent. Under the current arrangement, " +
       "the glasses are made and delivered to the school; uptake is ninety-six percent. The difference is not " +
-      "attitude. It is a journey to a shop during opening hours.\n\n" +
+      "attitude. It is a journey to a store during opening hours.\n\n" +
       "Effects. Teacher-reported reading fluency improved in the treated group. The design does not, however, " +
       "allow us to say by how much, since there was no comparison class. Attendance did not change. We would " +
       "therefore caution against the claim, made in one newspaper report, that the scheme has improved results; " +
@@ -83,7 +83,7 @@ export const enC1P5: SkillExercise[] = [
           "The year group is tested twice instead of once.",
         ],
         answer: 0,
-        explain: "„Under the current arrangement, the glasses are made and delivered to the school … It is a journey to a shop during opening hours.“",
+        explain: "„Under the current arrangement, the glasses are made and delivered to the school … It is a journey to a store during opening hours.“",
       },
       {
         kind: "truefalse",

@@ -50,7 +50,7 @@ export const enC1P13: SkillExercise[] = [
       "still do this? Surveys suggest that a large majority would like the changes to stop. That sounds like " +
       "the easy part of the debate. It is in fact the only easy part.\n\n" +
       "The difficulty begins with the next question, which is not whether to stop but where. Keep summer time " +
-      "all year, and winter evenings stay light until after five, which shops, sports clubs and anyone who " +
+      "all year, and winter evenings stay light until after five, which stores, sports clubs and anyone who " +
       "walks home from work tend to welcome. The cost appears in the morning. In the north and west of a wide " +
       "time zone, the sun would not rise until well after nine in December, and children would walk to school " +
       "in the dark for weeks on end.\n\n" +
@@ -80,7 +80,7 @@ export const enC1P13: SkillExercise[] = [
         text: "What is the cost of keeping summer time all year?",
         options: [
           "dark winter mornings in the north and west",
-          "earlier closing for shops and sports clubs",
+          "earlier closing for stores and sports clubs",
           "darker evenings in the middle of summer",
         ],
         answer: 0,

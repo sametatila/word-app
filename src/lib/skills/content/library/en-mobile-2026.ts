@@ -362,7 +362,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "toast", "tr": "tost" },
     ],
     "minutes": 4,
-    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have got a 10% discount. Please show your student card.\nThere is free water on every table.\nWe have not got Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here on the weekend. He can help you in English.",
+    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have got a 10% discount. Please show your student card.\nThere is free water on every table.\nWe don't have Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here on the weekend. He can help you in English.",
     "questions": [
       {
         "text": "How much is a hot chocolate?",
@@ -570,10 +570,10 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "brown", "tr": "kahverengi" },
     ],
     "minutes": 4,
-    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have got big bags and small bags.\n\nThere are 200 new dresses in the shop. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
+    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have got big bags and small bags.\n\nThere are 200 new dresses in the store. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
     "questions": [
       {
-        "text": "The shop closes at 8 p.m. on Sunday.",
+        "text": "The store closes at 8 p.m. on Sunday.",
         "options": [
           "True",
           "False"
@@ -880,7 +880,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small shop on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big cupboard.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the shop is on the table — twenty pounds.\n\nThanks a lot!\nDan",
+    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big cupboard.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty pounds.\n\nThanks a lot!\nDan",
     "questions": [
       {
         "text": "What time is Dan at work until?",
@@ -919,18 +919,18 @@ export const enMobile2026: SkillExercise[] = [
           "Two pounds"
         ],
         "answer": 1,
-        "explain": "Son satırda \"Money for the shop is on the table — twenty pounds\" deniyor. Masada yirmi pound var."
+        "explain": "Son satırda \"Money for the store is on the table — twenty pounds\" deniyor. Masada yirmi pound var."
       },
       {
         "kind": "gapfill",
-        "text": "The money for the shop is ___ pounds.",
+        "text": "The money for the store is ___ pounds.",
         "options": [],
         "answer": 0,
         "accept": [
           "twenty",
           "20"
         ],
-        "explain": "\"Money for the shop is on the table — twenty pounds.\""
+        "explain": "\"Money for the store is on the table — twenty pounds.\""
       },
       {
         "kind": "short_answer",
@@ -1065,7 +1065,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "randevu"
       },
       {
-        "de": "tablet",
+        "de": "pill",
         "tr": "hap"
       },
       {
@@ -1091,7 +1091,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
         "text": "What time is Elif's appointment?",
@@ -1113,14 +1113,14 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"There is a pharmacy next to the main door. It is open every day.\" deniyor, yani doğru."
       },
       {
-        "text": "When does the patient take the blue tablet?",
+        "text": "When does the patient take the blue pill?",
         "options": [
           "After breakfast",
           "Before bed",
           "With tea"
         ],
         "answer": 1,
-        "explain": "Not diyor ki: \"Take one blue tablet before bed.\" Kahvaltıdan sonra alınan hap beyaz olan."
+        "explain": "Not diyor ki: \"Take one blue pill before bed.\" Kahvaltıdan sonra alınan hap beyaz olan."
       },
       {
         "text": "What must Elif bring to the health center?",
@@ -1145,7 +1145,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What must the patient drink with the tablets?",
+        "text": "What must the patient drink with the pills?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -1153,7 +1153,7 @@ export const enMobile2026: SkillExercise[] = [
           "a big glass of water",
           "a glass of water"
         ],
-        "explain": "\"Do not take the tablets with coffee or tea. Drink a big glass of water.\""
+        "explain": "\"Do not take the pills with coffee or tea. Drink a big glass of water.\""
       }
     ]
   },
@@ -2038,7 +2038,7 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "listening",
-    "title": "At the Clothes Shop",
+    "title": "At the Clothes Store",
     "genre": "dialogue",
     "intro": "Bir mağazada müşterinin ceket için beden, renk ve fiyat sorduğu konuşmayı dinleyeceksin.",
     "gloss": [
@@ -2124,7 +2124,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Görevli \"It's forty dollars. The green one is thirty dollars.\" diyor; kırk dolar siyah olanın fiyatı."
       },
       {
-        "text": "The shop has got the jacket in small.",
+        "text": "The store has got the jacket in small.",
         "options": [
           "True",
           "False"
@@ -2444,7 +2444,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "reçete"
       },
       {
-        "de": "tablet",
+        "de": "pill",
         "tr": "hap"
       },
       {
@@ -2484,7 +2484,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Doctor",
-        "text": "Sure. Here's a prescription. Take one tablet three times a day, after meals."
+        "text": "Sure. Here's a prescription. Take one pill three times a day, after meals."
       },
       {
         "speaker": "Merve",
@@ -2526,14 +2526,14 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Doktor 'No, stay at home for two days.' diyor; yani yarın işe gidemez, iki gün evde kalacak."
       },
       {
-        "text": "How many tablets a day does she take?",
+        "text": "How many pills a day does she take?",
         "options": [
-          "One tablet a day",
-          "Two tablets a day",
-          "Three tablets a day"
+          "One pill a day",
+          "Two pills a day",
+          "Three pills a day"
         ],
         "answer": 2,
-        "explain": "Doktor 'Take one tablet three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap."
+        "explain": "Doktor 'Take one pill three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap."
       },
       {
         "kind": "gapfill",
@@ -4203,7 +4203,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 pounds an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a shop.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Deniz. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in England before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nDeniz",
+    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 pounds an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a store.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Deniz. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in England before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nDeniz",
     "questions": [
       {
         "text": "What time does the work start?",
@@ -4319,7 +4319,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Duyuruda \"ELECTRONICS: you have 14 days\" yazıyor. Otuz gün diğer ürünler için geçerli."
       },
       {
-        "text": "The shop gives your money back for sale items.",
+        "text": "The store gives your money back for sale items.",
         "options": [
           "True",
           "False"
@@ -4412,7 +4412,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "popular", "tr": "popüler" },
     ],
     "minutes": 5,
-    "text": "THREE DAYS IN EDINBURGH - GROUP PROGRAM\n\nDAY 1 (Friday)\n14:00 Arrival at the hotel. Leave your bags at reception.\n16:30 Walk to the Old Town with our guide, Emma.\n19:00 Dinner on Rose Street. This restaurant is quieter than the one we used last year.\n\nDAY 2 (Saturday)\n08:00 Breakfast in the hotel.\n09:30 Bus to the castle. It is the most popular place in the city, so we will go early.\n13:00 Free time in the shops. You must be back at the bus stop before 16:00.\n20:00 Music evening. Deniz is going to play the guitar for us.\n\nDAY 3 (Sunday)\n07:30 Breakfast.\n09:00 Boat trip. Bring a warm coat! Last year it rained all morning and everybody was cold.\n12:00 Lunch near the harbor.\n15:00 Bus to the airport.\n\nNOTES\nSome of you have not sent us your passport number yet. Please do it today.\nWe have worked with this hotel since 2019 and the staff are very helpful.\nYou should bring comfortable shoes because we are going to walk a lot.",
+    "text": "THREE DAYS IN EDINBURGH - GROUP PROGRAM\n\nDAY 1 (Friday)\n14:00 Arrival at the hotel. Leave your bags at reception.\n16:30 Walk to the Old Town with our guide, Emma.\n19:00 Dinner on Rose Street. This restaurant is quieter than the one we used last year.\n\nDAY 2 (Saturday)\n08:00 Breakfast in the hotel.\n09:30 Bus to the castle. It is the most popular place in the city, so we will go early.\n13:00 Free time in the stores. You must be back at the bus stop before 16:00.\n20:00 Music evening. Deniz is going to play the guitar for us.\n\nDAY 3 (Sunday)\n07:30 Breakfast.\n09:00 Boat trip. Bring a warm coat! Last year it rained all morning and everybody was cold.\n12:00 Lunch near the harbor.\n15:00 Bus to the airport.\n\nNOTES\nSome of you have not sent us your passport number yet. Please do it today.\nWe have worked with this hotel since 2019 and the staff are very helpful.\nYou should bring comfortable shoes because we are going to walk a lot.",
     "questions": [
       {
         "text": "The group visits the castle on Saturday morning.",
@@ -4834,7 +4834,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "truck", "tr": "kamyon" },
     ],
     "minutes": 5,
-    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, May 12\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometers to the next bridge. Many shops near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr. Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
+    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, May 12\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometers to the next bridge. Many stores near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr. Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
     "questions": [
       {
         "text": "What time did people come to the park?",
@@ -5312,7 +5312,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "günde iki kez"
       },
       {
-        "de": "tablet",
+        "de": "pill",
         "tr": "hap"
       },
       {
@@ -5356,7 +5356,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "speaker": "Doctor",
-        "text": "Yes, take these tablets twice a day, after meals. And come back in two weeks."
+        "text": "Yes, take these pills twice a day, after meals. And come back in two weeks."
       }
     ],
     "questions": [
@@ -5412,7 +5412,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "How often must she take the tablets?",
+        "text": "How often must she take the pills?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -5421,7 +5421,7 @@ export const enMobile2026: SkillExercise[] = [
           "2 times a day",
           "twice"
         ],
-        "explain": "\"take these tablets twice a day, after meals.\""
+        "explain": "\"take these pills twice a day, after meals.\""
       }
     ]
   },

@@ -214,7 +214,7 @@ export const enB1U19: SkillExercise[] = [
       { speaker: "Nil", text: "Did they ask you anything?" },
       { speaker: "Mert", text: "They asked whether I had an allergy. Twice, in two rooms, from two people, which I now understand is on purpose." },
       { speaker: "Nil", text: "And the infection?" },
-      { speaker: "Mert", text: "Gone. Ten days of tablets and the sample from Friday came back clear." },
+      { speaker: "Mert", text: "Gone. Ten days of pills and the sample from Friday came back clear." },
       { speaker: "Nil", text: "So a good morning." },
       { speaker: "Mert", text: "A long morning with a good end. And one thing I will do differently: I will write the questions down before, because I forgot two of three." },
     ],
@@ -240,11 +240,11 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The infection needed ___ days of tablets.",
+        text: "The infection needed ___ days of pills.",
         options: [],
         answer: 0,
         accept: ["ten", "10"],
-        explain: "„Ten days of tablets and the sample from Friday came back clear.“",
+        explain: "„Ten days of pills and the sample from Friday came back clear.“",
       },
       {
         kind: "dictation",

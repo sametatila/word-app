@@ -246,7 +246,7 @@ export const enA2U05: SkillExercise[] = [
     genre: "monologue",
     intro: "Üç hedef anlatılıyor. Hangisi umut, hangisi hayal?",
     gloss: [
-      { de: "shop", tr: "dükkân" },
+      { de: "store", tr: "dükkân" },
       { de: "career", tr: "kariyer" },
       { de: "goal", tr: "hedef" },
       { de: "success", tr: "başarı" },
@@ -257,16 +257,16 @@ export const enA2U05: SkillExercise[] = [
       { speaker: "Nil", text: "I have three hopes for the next five years. They are not dreams — they are goals." },
       { speaker: "Nil", text: "First, I hope to finish my studies. I have studied for three years and I have two more." },
       { speaker: "Nil", text: "Second, I'd like to work abroad for one year. Not longer: my family is here." },
-      { speaker: "Nil", text: "Third, my dream is to open a small shop. Books and coffee — the two best things." },
+      { speaker: "Nil", text: "Third, my dream is to open a small store. Books and coffee — the two best things." },
       { speaker: "Nil", text: "Success is not money for me. Success is this: at sixty I want the same job I have at thirty." },
       { speaker: "Nil", text: "I used to want a big career. I don't want that anymore. Something smaller is better." },
     ],
     questions: [
       {
         text: "What is Nil's dream?",
-        options: ["to open a small shop", "to work abroad", "to finish her studies"],
+        options: ["to open a small store", "to work abroad", "to finish her studies"],
         answer: 0,
-        explain: "„Third, my dream is to open a small shop.“ — ötekiler umut ve istek.",
+        explain: "„Third, my dream is to open a small store.“ — ötekiler umut ve istek.",
       },
       {
         text: "How long does Nil want to work abroad?",
@@ -297,7 +297,7 @@ export const enA2U05: SkillExercise[] = [
         items: [
           "First, I hope to finish my studies.",
           "Second, I'd like to work abroad for one year.",
-          "Third, my dream is to open a small shop.",
+          "Third, my dream is to open a small store.",
           "Success is not money for me.",
         ],
         explain: "Üç hedef sırayla, sonra başarının kendi tanımı geliyor.",
@@ -378,7 +378,7 @@ export const enA2U05: SkillExercise[] = [
     genre: "personal",
     intro: "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
     gloss: [
-      { de: "shop", tr: "dükkân" },
+      { de: "store", tr: "dükkân" },
       { de: "I hope to …", tr: "umarım …" },
       { de: "anymore", tr: "artık" },
       { de: "still", tr: "hâlâ" },
@@ -394,7 +394,7 @@ export const enA2U05: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hayalim bir dükkân açmak.",
-        answer: "My dream is to open a shop.",
+        answer: "My dream is to open a store.",
         hint: "„dream“ burada isim; yüklem „is to“ + fiil.",
       },
       {

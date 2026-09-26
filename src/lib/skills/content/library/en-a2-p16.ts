@@ -83,7 +83,7 @@ export const enA2P16: SkillExercise[] = [
     intro: "İngilizcede cümlenin ritmini vurgulu kelimeler belirler: isim, fiil, sıfat güçlüdür; the, a, to, and gibi küçük kelimeler aralara sıkışır. Kelime eklenince süre pek uzamaz.",
     gloss: [
       { de: "meat", tr: "et" },
-      { de: "shop", tr: "dükkân" },
+      { de: "store", tr: "dükkân" },
       { de: "walk", tr: "yürüyüş" },
       { de: "nice", tr: "güzel" },
     ],
@@ -106,11 +106,11 @@ export const enA2P16: SkillExercise[] = [
         ],
       },
       {
-        de: "I want to go to the shop.",
+        de: "I want to go to the store.",
         tr: "Dükkâna gitmek istiyorum.",
-        hint: "WANT, GO, SHOP güçlü; to ve the kısa: ay-WAN-tı-GOU-tı-dı-ŞOP.",
+        hint: "WANT, GO, STORE güçlü; to ve the kısa: ay-WAN-tı-GOU-tı-dı-STOR.",
         confusions: [
-          { heard: [], fix: "„to“ ve „the“yi „tuu“, „dii“ diye uzatırsan ritim bozulur.", expected: "want to go to the shop" },
+          { heard: [], fix: "„to“ ve „the“yi „tuu“, „dii“ diye uzatırsan ritim bozulur.", expected: "want to go to the store" },
         ],
       },
       {

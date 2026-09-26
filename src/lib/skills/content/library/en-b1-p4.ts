@@ -35,14 +35,14 @@ export const enB1P4: SkillExercise[] = [
       "NOTES FROM THE MEETING — FOURTEENTH OF MARCH\n" +
       "For members who could not come\n\n" +
       "Forty-one people were at the meeting in the old school. Here is what was said and what was decided.\n\n" +
-      "Mrs. Ferreira opened the meeting and explained that the shop had closed in November and that the owner " +
-      "did not want to sell to another shop. She said that the building was for sale for one hundred and ten " +
+      "Mrs. Ferreira opened the meeting and explained that the store had closed in November and that the owner " +
+      "did not want to sell to another store. She said that the building was for sale for one hundred and ten " +
       "thousand euros.\n\n" +
       "Bahar Kaya, who runs the bakery van, said that she brought bread to the village three days a week and " +
       "that she could add two more days if there was somewhere to stop. She asked whether the group had thought " +
       "about a smaller solution first.\n\n" +
-      "Two members disagreed. Mr. Lang said that a van was not a shop, because you could not go there when you " +
-      "needed one thing. He added that the last two villages that had lost their shops had also lost their bus " +
+      "Two members disagreed. Mr. Lang said that a van was not a store, because you could not go there when you " +
+      "needed one thing. He added that the last two villages that had lost their stores had also lost their bus " +
       "stops within five years.\n\n" +
       "The vote: thirty-three people said that they would put in five hundred euros each; six were against; " +
       "two did not vote.\n\n" +
@@ -53,7 +53,7 @@ export const enB1P4: SkillExercise[] = [
         text: "What is this text?",
         options: [
           "notes from a village meeting",
-          "a letter from the shop owner",
+          "a letter from the store owner",
           "an advertisement for a building",
         ],
         answer: 0,
@@ -64,7 +64,7 @@ export const enB1P4: SkillExercise[] = [
         options: [
           "two extra days with the bread van",
           "to buy the building herself",
-          "to work in the new village shop",
+          "to work in the new village store",
         ],
         answer: 0,
         explain: "„… she could add two more days if there was somewhere to stop.“",
@@ -248,7 +248,7 @@ export const enB1P4: SkillExercise[] = [
           "before. Two points stayed open. He could not say whether the windows in the back rooms would be " +
           "changed at the same time, and he did not know who I should call if there is a problem on the weekend. " +
           "Could you send me those two answers in writing before the eighth of May? If any of the above is not " +
-          "correct, please tell me. Yours sincerely, Emre Bulut",
+          "correct, please tell me. Sincerely, Emre Bulut",
       },
     ],
   },

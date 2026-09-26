@@ -49,7 +49,7 @@ export const enC1P4: SkillExercise[] = [
       "one in a house where somebody practices Bach. Told that the family also has a violinist, I would change " +
       "something again.\n\n" +
       "What do people get wrong when they buy a second-hand piano?\n" +
-      "They listen to it. Sitting in a shop, having been tuned that morning, almost any piano sounds acceptable. " +
+      "They listen to it. Sitting in a store, having been tuned that morning, almost any piano sounds acceptable. " +
       "The things that matter cannot be heard in ten minutes: whether the frame has moved, whether the pins " +
       "still hold. A piano that has stood in a cold room for two winters may hold a tuning for three weeks, and " +
       "you will not discover that until you have paid for the delivery.\n\n" +
@@ -150,7 +150,7 @@ export const enC1P4: SkillExercise[] = [
       { text: "The last stage happens once, to one address, at a time nobody controls. A container ship is loaded by machine. A van is loaded by a person who has to decide, forty times a day, which package goes on top." },
       { text: "Considered from the outside, the obvious answer is efficiency: better routes, better software. That has been tried, and it works, up to a point." },
       { text: "The remaining cost is not a routing problem. It is that people are not at home, and that is not a scheduling failure. It is what a working day looks like." },
-      { text: "This is why almost every serious attempt to fix the last mile has quietly stopped trying to reach the door. Lockers, shops, pick-up points: all of them move the problem to a place that is always open." },
+      { text: "This is why almost every serious attempt to fix the last mile has quietly stopped trying to reach the door. Lockers, stores, pick-up points: all of them move the problem to a place that is always open." },
       { text: "Having watched three of these systems grow, I would say that the interesting question is no longer technical." },
       { text: "It is who is expected to walk. A locker four streets away is nothing to me and a serious matter to my neighbor, who is eighty-one." },
       { text: "Which brings us to the thing that is rarely said out loud. Delivery to the door was never a service that everybody needed equally, and removing it will not be felt equally either." },
@@ -370,7 +370,7 @@ export const enC1P4: SkillExercise[] = [
         heading: "Üç biçim, üç ilişki",
         tr: "„-ing“ etkin ve aynı zamanlı; „having + üçüncü hâl“ etkin ve daha önce olmuş; yalın üçüncü hâl edilgen. Hangisini seçtiğin iki olay arasındaki sırayı ve çatıyı belirler.",
         examples: [
-          { de: "Walking home, I saw the shop was closed.", tr: "Eve yürürken dükkânın kapalı olduğunu gördüm.", note: "aynı anda" },
+          { de: "Walking home, I saw the store was closed.", tr: "Eve yürürken dükkânın kapalı olduğunu gördüm.", note: "aynı anda" },
           { de: "Having lived here for ten years, he knows everybody.", tr: "On yıldır burada yaşadığı için herkesi tanıyor.", note: "önce olmuş" },
           { de: "Asked about the delay, the driver said nothing.", tr: "Gecikme sorulunca sürücü hiçbir şey söylemedi.", note: "edilgen" },
         ],

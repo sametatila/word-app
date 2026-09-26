@@ -276,7 +276,7 @@ export const enB2P5: SkillExercise[] = [
           "will exempt nobody and will simply be impossible to follow for our oldest members.\n\n" +
           "We would expect a written response before the fifteenth of June, and we would be glad to provide our " +
           "own figures on Saturday use if that would help.\n\n" +
-          "Yours faithfully",
+          "Sincerely",
       },
     ],
   },

@@ -18,14 +18,14 @@ import type { SkillExercise } from "../types";
  *           I declared it last year too. · Have you kept the records? ·
  *           I am writing with a request about my account. ·
  *           Although I wrote twice, I received no reply. ·
- *           I look forward to your reply. Yours sincerely. ·
+ *           I look forward to your reply. Sincerely. ·
  *           I had taken a ticket before I sat down. ·
  *           Then they called my number. ·
  *           By the time I got there, the line had grown.
  *
  * Ünitenin tek öğretme noktası RESMÎ MEKTUBUN DİLİ: sabit açılış („I am
  * writing with a request about …“), sabit kapanış („I look forward to
- * your reply. Yours sincerely.“), „but“ yerine „although“, ve kısaltma
+ * your reply. Sincerely.“), „but“ yerine „although“, ve kısaltma
  * yok. Bunlar dilbilgisi kuralı değil, KAYIT kuralı — yanlış olan cümle
  * anlaşılır ama yanlış yerde durur. İngilizcenin burada Almancada
  * olmayan bir kuralı var: adı bildiğinde „Yours sincerely“, bilmediğinde

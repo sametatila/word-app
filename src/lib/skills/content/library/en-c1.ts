@@ -311,7 +311,7 @@ export const enC1: SkillExercise[] = [
           "change, a date, a person who remains answerable. Warmth costs nothing; a commitment costs something.\n\n" +
           "None of this is an argument for the return of the legal wall. It is an argument for reading the new language " +
           "with the same suspicion we once reserved for the old one.\n\n" +
-          "Yours faithfully,\nD. Karaca",
+          "Sincerely,\nD. Karaca",
       },
     ],
   },

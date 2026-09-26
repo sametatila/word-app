@@ -146,7 +146,7 @@ export const enB2P8: SkillExercise[] = [
       { speaker: "Presenter", text: "Within three years, black plastic trays, which machines cannot detect, had largely disappeared from the shelves of the countries with a levy." },
       { speaker: "Presenter", text: "Critics point out that manufacturers pass the cost on to shoppers, so households pay anyway, just through prices instead of taxes." },
       { speaker: "Ms. Reinhardt", text: "That's true, and I don't think it's an argument against. If the cost sits in the price, the incentive sits with the person who chose the material." },
-      { speaker: "Presenter", text: "What nobody has solved is the small producer. A levy that a supermarket absorbs can close a shop with four employees." },
+      { speaker: "Presenter", text: "What nobody has solved is the small producer. A levy that a supermarket absorbs can close a store with four employees." },
     ],
     questions: [
       {
@@ -181,7 +181,7 @@ export const enB2P8: SkillExercise[] = [
         text: "What problem has nobody solved?",
         options: [],
         answer: 0,
-        accept: ["the small producer", "small producers", "small shops", "small businesses"],
+        accept: ["the small producer", "small producers", "small stores", "small shops", "small businesses"],
         explain: "Süpermarketin yutabildiği bir harç, dört çalışanlı bir dükkânı kapatabiliyor.",
       },
       {
@@ -260,15 +260,15 @@ export const enB2P8: SkillExercise[] = [
           "collected two days later without our having to phone. " +
           "The information was clear about what goes in which container, less so about what " +
           "happens if a container is contaminated. We found that out from a neighbor, " +
-          "not from the leaflet. " +
+          "not from the flyer. " +
           "When something went wrong — our paper container disappeared, probably taken by " +
           "mistake — the helpline answered in four minutes and a replacement arrived in a week. " +
           "That is genuinely good and worth saying, because people only write about helplines " +
           "when they are bad. " +
           "The service suits households with outside space. The majority of residents here have " +
-          "that; the apartments above the shops do not, and I would not want to be sorting two " +
+          "that; the apartments above the stores do not, and I would not want to be sorting two " +
           "containers in a one-bedroom apartment. " +
-          "Three out of five, and the missing two are storage and the leaflet.",
+          "Three out of five, and the missing two are storage and the flyer.",
       },
     ],
   },
@@ -317,7 +317,7 @@ export const enB2P8: SkillExercise[] = [
         "once in prices and once in local taxes that don't fall. " +
         "I'd want a safeguard for small producers, who cannot absorb a fixed charge the way " +
         "a supermarket can. A levy scaled to turnover would keep the incentive and stop the " +
-        "policy from clearing out exactly the shops everyone says they want to keep.",
+        "policy from clearing out exactly the stores everyone says they want to keep.",
       rubricHint:
         "Bir dağılım, istenmeyen sonuç ve somut güvence beklenir; „not … so much as“, „the obvious risk is that“ kullanılabilir.",
     },

@@ -4,12 +4,12 @@ import type { SkillExercise } from "../types";
  * EN · A2 · Ünite 10 — "Tamirci, bina kuralları, mahalle, dükkânlar".
  *
  * Dört ders: Calling a repairman · Building rules · My neighbourhood ·
- * Local shops.
+ * Local stores.
  *
  *   Kelime: repair, tool, cost, estimate, tomorrow, mechanic, drill,
  *           screw, rule, allow, forbidden, trash, quiet, be allowed,
  *           garbage can, attic, area, nearby, crowded, park, safe,
- *           neighborhood, bus stop, city center, bakery, corner shop,
+ *           neighborhood, bus stop, city center, bakery, corner store,
  *           laundry, open, close, butcher shop, bookstore, shopping mall.
  *   Kalıp:  My washing machine isn't working. ·
  *           Can you come tomorrow morning? · How much will it cost? ·

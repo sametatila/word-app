@@ -24,7 +24,7 @@ export const enB2P11: SkillExercise[] = [
       { de: "harbor", tr: "liman" },
       { de: "exempt", tr: "muaf" },
       { de: "to overflow", tr: "taşmak" },
-      { de: "leaflet", tr: "broşür" },
+      { de: "flyer", tr: "broşür" },
       { de: "modest", tr: "mütevazı" },
       { de: "takings", tr: "hasılat" },
       { de: "in effect", tr: "fiilen" },
@@ -47,7 +47,7 @@ export const enB2P11: SkillExercise[] = [
       "parking lots and the train station, with overnight guests exempt.\n\n" +
       "The decision did not come out of nowhere. Residents had been complaining for years about " +
       "the lines at the only pharmacy and the trash cans that overflowed by lunchtime, and the council " +
-      "had already tried a parking ban and a leaflet campaign. Neither had changed very much.\n\n" +
+      "had already tried a parking ban and a flyer campaign. Neither had changed very much.\n\n" +
       "Six months on, the figures are more modest than either side predicted. Visitor numbers " +
       "fell by about eight percent, mostly on weekdays, and the fee raised enough to pay for " +
       "extra cleaning and a second summer bus. Local businesses had warned that the charge would " +
@@ -75,7 +75,7 @@ export const enB2P11: SkillExercise[] = [
         options: [
           "a second bus and extra cleaning",
           "a tax on hotels and guesthouses",
-          "a parking ban and a leaflet campaign",
+          "a parking ban and a flyer campaign",
         ],
         answer: 2,
         explain: "Ücretten önce park yasağı ve broşür kampanyası denenmiş, ikisi de pek bir şey değiştirmemiş.",
@@ -108,7 +108,7 @@ export const enB2P11: SkillExercise[] = [
         options: [
           "Everyone arrives at the same time.",
           "The fee is far too low to matter.",
-          "The shops close much too early.",
+          "The stores close much too early.",
         ],
         answer: 0,
         explain: "„everyone arrives at the same hour“ ve sabit bir ücret buna hiçbir şey yapmıyor.",
@@ -269,7 +269,7 @@ export const enB2P11: SkillExercise[] = [
           "Not everything was better: two of the walking routes had been closed for repairs, " +
           "and it was dark by half past four. " +
           "If you are planning a trip like this, ask what the place is like when nobody is " +
-          "photographing it. Go then, spend your money in the shops that stay open all year, " +
+          "photographing it. Go then, spend your money in the stores that stay open all year, " +
           "and bring a flashlight.",
       },
     ],

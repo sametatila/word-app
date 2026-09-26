@@ -37,7 +37,7 @@ export const enA1P12: SkillExercise[] = [
       "PINE LAKE CAMPGROUND — INFORMATION\n\n" +
       "Welcome! Here is some information for your stay.\n\n" +
       "The office is open every day from eight to seven. After seven, please call 0172 55 60 90.\n\n" +
-      "Our small shop sells bread, milk, fruit and ice. The fresh bread is ready at half past seven.\n\n" +
+      "Our small store sells bread, milk, fruit and ice. The fresh bread is ready at half past seven.\n\n" +
       "The showers have hot water from six to eleven in the morning and from five to ten in the evening.\n\n" +
       "You can swim in the lake, but only near the beach. Please do not swim at night.\n\n" +
       "You can rent a bike at the office. It costs ten euros a day.\n\n" +
@@ -61,7 +61,7 @@ export const enA1P12: SkillExercise[] = [
         text: "You can buy fruit at the campground store.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Our small shop sells bread, milk, fruit and ice.“",
+        explain: "„Our small store sells bread, milk, fruit and ice.“",
       },
       {
         kind: "gapfill",

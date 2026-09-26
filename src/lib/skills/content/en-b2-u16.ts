@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  The restoration of the canvas took two years. ·
  *           The acquisition of the artwork is documented. ·
  *           The display of the exhibit begins in May. ·
- *           The composer is said to be ill. ·
+ *           The composer is said to be sick. ·
  *           The screenplay is expected to change. ·
  *           The premiere is thought to have been delayed. ·
  *           What the drama does is name the cost. ·

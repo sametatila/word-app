@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: performance review, improve, progress, criticism, praise, target,
  *           honest, review, resign, handover, replacement, grateful,
  *           although, however, despite, staff, rent, landlord, deposit,
- *           advert, viewing, furnished, available, agency, balcony,
+ *           ad, viewing, furnished, available, agency, balcony,
  *           basement, ceiling, spacious, bright, storage, view, corridor.
  *   Kalıp:  She said that I had improved. ·
  *           He told me to set a new target. · She asked if I was happy. ·

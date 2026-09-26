@@ -109,7 +109,7 @@ export const enB1P17: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "listening",
-    title: "The Village That Bought Its Shop",
+    title: "The Village That Bought Its Store",
     genre: "interview",
     intro: "Kısa bir radyo söyleşisi: tek dükkânı kapanan bir köy onu nasıl yeniden açtı, neyi başardı, neyi başaramıyor.",
     gloss: [
@@ -126,8 +126,8 @@ export const enB1P17: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Presenter", text: "When the only shop in Haddon closed last year, the nearest bread and milk were eleven kilometers away. Today the shop is open again, run by the village itself. Mrs. Evans led the project." },
-      { speaker: "Mrs. Evans", text: "The owner retired and tried to sell it for two years, but he couldn't find a buyer. Nobody could make a normal shop pay in a village this size." },
+      { speaker: "Presenter", text: "When the only store in Haddon closed last year, the nearest bread and milk were eleven kilometers away. Today the store is open again, run by the village itself. Mrs. Evans led the project." },
+      { speaker: "Mrs. Evans", text: "The owner retired and tried to sell it for two years, but he couldn't find a buyer. Nobody could make a normal store pay in a village this size." },
       { speaker: "Presenter", text: "So how were you able to do it?" },
       { speaker: "Mrs. Evans", text: "We sold shares at twenty pounds each. We hoped to raise fifteen thousand. In the end, three hundred and ten people bought shares, and we managed to raise almost twenty-two thousand." },
       { speaker: "Mrs. Evans", text: "The hardest part wasn't the money. It was finding people to work. We couldn't pay a full team, so forty volunteers do shifts of three hours." },
@@ -137,7 +137,7 @@ export const enB1P17: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Why did the old shop close?",
+        text: "Why did the old store close?",
         options: [
           "The owner retired and couldn't sell it.",
           "The rent went up.",
@@ -169,14 +169,14 @@ export const enB1P17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who works in the shop?",
+        text: "Who works in the store?",
         options: [],
         answer: 0,
         accept: ["volunteers", "forty volunteers", "40 volunteers"],
         explain: "„forty volunteers do shifts of three hours“.",
       },
       {
-        text: "What has the shop stopped trying to do?",
+        text: "What has the store stopped trying to do?",
         options: [
           "pay the rent",
           "sell bread from the farm",
@@ -245,7 +245,7 @@ export const enB1P17: SkillExercise[] = [
           "I was in a difficult situation. I couldn't start the car, and I wasn't able to call anyone, " +
           "because my phone had no signal there. It was raining and completely dark. " +
           "Thanks to you, I managed to get the car off the road and into the parking lot of the farm " +
-          "shop, and you drove me to the village, where my phone worked again. In the end I managed " +
+          "stand, and you drove me to the village, where my phone worked again. In the end I managed " +
           "to reach my brother, and he came to get me an hour later. " +
           "You'll be glad to hear that the car is fine now: it was only the battery. " +
           "If you're ever in Wells, please let me buy you lunch at the café on the square. I really " +

@@ -284,7 +284,7 @@ export const enB2P15: SkillExercise[] = [
           "If I have not heard from you by June 30, I will ask my bank to reverse the payments and " +
           "report the matter to a consumer organization. I would much prefer to settle it with you " +
           "directly. " +
-          "Yours faithfully, Daniel Ferreira",
+          "Sincerely, Daniel Ferreira",
       },
     ],
   },

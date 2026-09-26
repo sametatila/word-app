@@ -132,7 +132,7 @@ export const enB2P14: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "listening",
-    title: "Bought in a Shop, Illegal on the Road",
+    title: "Bought in a Store, Illegal on the Road",
     genre: "info",
     intro: "Bir bilgilendirme yayını: kişisel elektrikli scooterlar nerede kullanılabilir, sürücüler neyi yanlış biliyor?",
     gloss: [
@@ -158,7 +158,7 @@ export const enB2P14: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Presenter", text: "Sales of electric scooters have risen sharply this year, and so has confusion about where they can actually be ridden." },
-      { speaker: "Ms. Rourke", text: "The single most common thing we hear is, “But I bought it in a shop, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
+      { speaker: "Ms. Rourke", text: "The single most common thing we hear is, “But I bought it in a store, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
       { speaker: "Presenter", text: "Under current rules, a privately owned scooter may only be used on private land with the owner's permission. Rental scooters in the city trial are treated differently because they are insured by the operator." },
       { speaker: "Ms. Rourke", text: "Owing to that difference, two scooters that look identical can be legal and illegal on the same street. I understand why people find that absurd." },
       { speaker: "Presenter", text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driving license they may not even hold yet." },
@@ -172,10 +172,10 @@ export const enB2P14: SkillExercise[] = [
         options: [
           "that helmets are optional",
           "that rental scooters are banned",
-          "that a shop sale makes riding legal",
+          "that a store purchase makes riding legal",
         ],
         answer: 2,
-        explain: "„But I bought it in a shop, so it must be legal“: satın almak ile sürmek ayrı şeyler.",
+        explain: "„But I bought it in a store, so it must be legal“: satın almak ile sürmek ayrı şeyler.",
       },
       {
         text: "Why are rental scooters treated differently?",
@@ -294,7 +294,7 @@ export const enB2P14: SkillExercise[] = [
           "The council should therefore make the spaces a condition of any permanent scheme, " +
           "check them every week, and ask disabled residents where they ought to go, rather than " +
           "deciding for us. A few lines of paint have done more for my street than a year of " +
-          "apologies. Yours faithfully, A. Lindqvist",
+          "apologies. Sincerely, A. Lindqvist",
       },
     ],
   },

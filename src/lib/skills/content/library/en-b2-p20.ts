@@ -44,8 +44,8 @@ export const enB2P20: SkillExercise[] = [
     minutes: 8,
     text:
       "What your loyalty card actually buys\n\n" +
-      "Most people think of a loyalty card as a fairly simple exchange: the shop gives you a " +
-      "small discount, and you give the shop your custom. That description is not wrong, but it " +
+      "Most people think of a loyalty card as a fairly simple exchange: the store gives you a " +
+      "small discount, and you give the store your business. That description is not wrong, but it " +
       "is incomplete. What you are really handing over is a detailed record of how you live.\n\n" +
       "A year of shopping data says a great deal. It shows roughly how many people live in your " +
       "home, whether any of them are small children, how often you cook, and when your budget " +
@@ -61,7 +61,7 @@ export const enB2P20: SkillExercise[] = [
       "different deals on the same product. This is perfectly legal in most places, and almost " +
       "completely invisible to the customer.\n\n" +
       "None of this means you should cut up your card. It does mean the trade deserves a clearer " +
-      "description. If the shop is paying you for information, you are entitled to know what the " +
+      "description. If the store is paying you for information, you are entitled to know what the " +
       "information is worth, who else sees it, and how to take it back.",
     questions: [
       {
@@ -77,7 +77,7 @@ export const enB2P20: SkillExercise[] = [
       {
         text: "What can a sudden change in someone's shopping indicate?",
         options: [
-          "a price rise in the shop",
+          "a price rise in the store",
           "a move to another supermarket",
           "a new job or an illness",
         ],
@@ -308,7 +308,7 @@ export const enB2P20: SkillExercise[] = [
         { de: "I find the idea deeply uncomfortable, although …", tr: "Fikri derinden rahatsız edici buluyorum, gerçi …" },
         { de: "To be completely honest, it does help …", tr: "Tamamen dürüst olmak gerekirse, … işine yarıyor" },
         { de: "Where it becomes a real problem is …", tr: "Gerçek bir soruna dönüştüğü yer …" },
-        { de: "At the very least, shops should have to …", tr: "En azından mağazalar … zorunda olmalı" },
+        { de: "At the very least, stores should have to …", tr: "En azından mağazalar … zorunda olmalı" },
       ],
       minSeconds: 50,
       maxSeconds: 90,
@@ -317,14 +317,14 @@ export const enB2P20: SkillExercise[] = [
         "Markets have always charged tourists more, and nobody thinks a student discount is " +
         "unfair. " +
         "To be completely honest, it does help some people. A shopper who is clearly struggling " +
-        "may be offered a lower price on basics, and a shop can sell food before it goes off by " +
+        "may be offered a lower price on basics, and a store can sell food before it goes off by " +
         "targeting the people most likely to buy it. Those are fairly reasonable uses. " +
         "Where it becomes a real problem is when the price depends on things the customer cannot " +
         "see and would never agree to. If a system has worked out that you are too busy to " +
         "compare prices, or that you always buy the same brand, it can charge you slightly more " +
         "every week, and you will never find out. That isn't a discount for some; it's a quiet " +
         "penalty for others. " +
-        "At the very least, shops should have to show the standard price next to any personal " +
+        "At the very least, stores should have to show the standard price next to any personal " +
         "one, so that everybody can see what they are being offered, and why.",
       rubricHint:
         "Karşı tarafın kazancını dürüstçe kabul etme, sorunun sınırını gösterme ve somut bir kural beklenir; „to be completely honest“ ve „where it becomes a real problem“ kullanılabilir.",

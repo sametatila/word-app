@@ -275,7 +275,7 @@ export const enB2P16: SkillExercise[] = [
           "keys, the watering and any complaints. " +
           "We would therefore ask you to allow a one-year trial from April, after which the " +
           "committee would report back to you and to all residents. " +
-          "Yours sincerely, the Linden Place garden group",
+          "Sincerely, the Linden Place garden group",
       },
     ],
   },

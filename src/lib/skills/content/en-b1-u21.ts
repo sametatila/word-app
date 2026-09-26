@@ -134,7 +134,7 @@ export const enB1U21: SkillExercise[] = [
       { de: "spoil", tr: "bozmak" },
       { de: "unsorted", tr: "ayrılmamış" },
       { de: "behavior", tr: "davranış" },
-      { de: "leaflet", tr: "broşür" },
+      { de: "flyer", tr: "broşür" },
       { de: "rinse", tr: "durulamak" },
       { de: "container", tr: "kap" },
     ],
@@ -145,7 +145,7 @@ export const enB1U21: SkillExercise[] = [
       "Plastic must be separated from paper. A modal and a passive together, and this is the line that is broken most often, usually by a box with tape on it.\n" +
       "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole truck contaminated, and a contaminated truck goes where the unsorted trash goes.\n" +
       "That is the part that changes behavior. Not the fine, not the sign — the fact that your one bag decides what happens to the other four hundred.\n" +
-      "Metal and glass go together in this city and separately in the next one. There is no rule you can carry from one place to another, which is why the calendar is on the door and not in a leaflet.\n" +
+      "Metal and glass go together in this city and separately in the next one. There is no rule you can carry from one place to another, which is why the calendar is on the door and not in a flyer.\n" +
       "The one thing nobody does and everybody could: rinse the container. Ten seconds of water, and the paper next to it in the bin stays dry enough to be used.",
     questions: [
       {

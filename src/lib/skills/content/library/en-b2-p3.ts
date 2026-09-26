@@ -197,7 +197,7 @@ export const enB2P3: SkillExercise[] = [
         options: [
           "have the number checked first",
           "ask for the original receipt",
-          "buy only from a real shop",
+          "buy only from a real store",
         ],
         answer: 0,
         explain: "„If you buy a second-hand bike, have the number checked before you pay.“",

@@ -13,7 +13,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  By March we will have signed the supplementary agreement. ·
  *           Next month we will be checking the price adjustment. ·
  *           By then the remaining amount will have been paid. ·
- *           The advert must have been misleading. ·
+ *           The ad must have been misleading. ·
  *           They can't have meant to deceive us. ·
  *           We should have kept the proof of purchase. ·
  *           If the voucher had arrived, we would have ordered. ·

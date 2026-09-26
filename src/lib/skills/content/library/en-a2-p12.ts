@@ -263,7 +263,7 @@ export const enA2P12: SkillExercise[] = [
       {
         de: "I'm going to call her.",
         tr: "Onu arayacağım.",
-        hint: "Hızlı söyleyişte „going to“ = GA-nı: aym-GA-nı-KAL-hır. Plan anlatan „going to“da olur, „gidiyorum“ anlamındaki „going to the shop“ta olmaz.",
+        hint: "Hızlı söyleyişte „going to“ = GA-nı: aym-GA-nı-KAL-hır. Plan anlatan „going to“da olur, „gidiyorum“ anlamındaki „going to the store“ta olmaz.",
         confusions: [
           { heard: [], fix: "Kelimeleri tek tek söylemek yanlış değil ama yavaş duyulur; iki kelimeyi tek hecede birleştir.", expected: "going to" },
         ],

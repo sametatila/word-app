@@ -294,7 +294,7 @@ export const enC1P20: SkillExercise[] = [
           "change would not stop the meetings. If any money remained unspent, we would contact you before the end of " +
           "the year.\n\n" +
           "We would be glad to provide any further information, and you would be very welcome to visit on a Tuesday.\n\n" +
-          "Yours sincerely,\nDaniel Farrant",
+          "Sincerely,\nDaniel Farrant",
       },
     ],
   },

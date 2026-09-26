@@ -203,7 +203,7 @@ export const enB2P12: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "writing",
-    title: "A Leaflet for New Patients",
+    title: "A Pamphlet for New Patients",
     genre: "guide",
     intro: "Yeni hastalar için bir bilgi broşürü yazıyorsun: önce iki cümle kur, sonra randevu düzenini açık ve suçlamayan bir dille anlat.",
     gloss: [
@@ -250,7 +250,7 @@ export const enB2P12: SkillExercise[] = [
           { de: "This does not mean that …", tr: "Bu … anlamına gelmez", en: "" },
         ],
         sample:
-          "Welcome to the practice. This leaflet explains how appointments work and what to do " +
+          "Welcome to the practice. This pamphlet explains how appointments work and what to do " +
           "if your plans change. " +
           "Appointments can be booked by phone, online or at the front desk. Routine appointments " +
           "are usually offered within two weeks; urgent problems are seen on the same day. " +

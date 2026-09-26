@@ -237,7 +237,7 @@ export const enA1P13: SkillExercise[] = [
     minutes: 4,
     tasks: [
       {
-        de: "I work in a big shop.",
+        de: "I work in a big store.",
         tr: "Büyük bir dükkânda çalışıyorum.",
         hint: "„work“ = WÖRK: ünlü r ile kaynaşır, dudaklar yuvarlanmaz. „o“ harfine bakıp o söylersen başka bir fiil çıkar.",
         confusions: [

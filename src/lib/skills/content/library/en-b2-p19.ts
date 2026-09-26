@@ -283,7 +283,7 @@ export const enB2P19: SkillExercise[] = [
           "damage in six years, and a copy of the vet's records. " +
           "I hope you will not find this request unreasonable. I would of course understand if " +
           "you had concerns, and I would be happy to discuss them before you decide. " +
-          "Yours sincerely, Hanna Lindgren",
+          "Sincerely, Hanna Lindgren",
       },
     ],
   },

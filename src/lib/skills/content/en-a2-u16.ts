@@ -267,7 +267,7 @@ export const enA2U16: SkillExercise[] = [
       { speaker: "Sena", text: "Is the post office behind the bank?" },
       { speaker: "Man", text: "No, it's opposite the bank. It is easy to find — the door is yellow." },
       { speaker: "Sena", text: "Do you have a city map?" },
-      { speaker: "Man", text: "In the shop at the station. But the way is easy: straight, left, bridge, bank." },
+      { speaker: "Man", text: "In the store at the station. But the way is easy: straight, left, bridge, bank." },
       { speaker: "Sena", text: "Straight, left, bridge, bank. Thank you very much." },
       { speaker: "Man", text: "One more thing: it closes at half past five. It is five now." },
       { speaker: "Sena", text: "Then I'll run." },
@@ -291,7 +291,7 @@ export const enA2U16: SkillExercise[] = [
         text: "The man gives Sena a city map.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„In the shop at the station.“ — haritayı satan dükkân, adamın kendisi değil.",
+        explain: "„In the store at the station.“ — haritayı satan dükkân, adamın kendisi değil.",
       },
       {
         kind: "gapfill",

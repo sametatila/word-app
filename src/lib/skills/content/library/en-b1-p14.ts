@@ -132,7 +132,7 @@ export const enB1P14: SkillExercise[] = [
     segments: [
       { speaker: "Ruth", text: "Sorry, is this machine free? It's the only one that works, isn't it?" },
       { speaker: "Ken", text: "Go ahead, I've just finished. You're new around here, aren't you? I haven't seen you before." },
-      { speaker: "Ruth", text: "I moved in two weeks ago, above the bakery. My washing machine hasn't arrived yet. The shop says Thursday, but they said that last week too." },
+      { speaker: "Ruth", text: "I moved in two weeks ago, above the bakery. My washing machine hasn't arrived yet. The store says Thursday, but they said that last week too." },
       { speaker: "Ken", text: "They always do. You'll be here a few more Sundays, then. It isn't too bad. The café next door does good coffee, and the machines take cards now." },
       { speaker: "Ruth", text: "That's useful. You don't know if there's a library nearby, do you? I need somewhere quiet to work in the mornings." },
       { speaker: "Ken", text: "There's one on Park Road, ten minutes' walk. It's closed on Mondays, though. My daughter studies there most days." },
@@ -184,7 +184,7 @@ export const enB1P14: SkillExercise[] = [
       },
       {
         text: "How does Ruth feel at the end?",
-        options: ["worried about Thursday", "grateful for the help", "annoyed with the shop"],
+        options: ["worried about Thursday", "grateful for the help", "annoyed with the store"],
         answer: 1,
         explain: "Ken'e teşekkür ediyor: bütün bir sabahlık aramadan kurtulmuş.",
       },

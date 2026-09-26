@@ -291,7 +291,7 @@ export const enC1P6: SkillExercise[] = [
           "I recognize that resources are limited and that most of your work is invisible and " +
           "thankless. Neither of these requests asks you to moderate more; " +
           "they ask you to show what you already decided. " +
-          "Yours sincerely, H. Bergstrom",
+          "Sincerely, H. Bergstrom",
       },
     ],
   },

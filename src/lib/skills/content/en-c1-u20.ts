@@ -174,7 +174,7 @@ export const enC1U20: SkillExercise[] = [
       { de: "a quarter", tr: "mahalle" },
       { de: "a block", tr: "ada" },
       { de: "a corner", tr: "köşe" },
-      { de: "a shop", tr: "dükkân" },
+      { de: "a store", tr: "dükkân" },
       { de: "a distance", tr: "mesafe" },
       { de: "a minute", tr: "dakika" },
       { de: "on foot", tr: "yürüyerek" },
@@ -195,7 +195,7 @@ export const enC1U20: SkillExercise[] = [
       "„As noted“ is a promise about an earlier page, and I check it. The other half is „in urban design terms only“, and that is a limit on the claim rather than a decoration. It says the change works for the facade, the street line and the height, and it says nothing about the rent.\n" +
       "In terms of scale, a fine-grained quarter serves accessibility better. The same frame again, and here it is naming the dimension the claim is measured on before the claim arrives.\n" +
       "That order matters. A reader who is told the dimension first knows what they are being asked to believe; a reader who meets it at the end has already believed something larger and has to take half of it back.\n" +
-      "And the claim itself is a good one to test. A quarter of small blocks puts more corners, more shops and shorter distances into the same area, and accessibility is measured in minutes on foot rather than in meters. A survey of residents will say the same thing in different words, and the map in the annex will show it in one page.",
+      "And the claim itself is a good one to test. A quarter of small blocks puts more corners, more stores and shorter distances into the same area, and accessibility is measured in minutes on foot rather than in meters. A survey of residents will say the same thing in different words, and the map in the annex will show it in one page.",
     questions: [
       {
         text: "What is a zoning plan?",

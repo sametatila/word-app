@@ -47,7 +47,7 @@ export const enA1P11: SkillExercise[] = [
     questions: [
       {
         text: "What is this text?",
-        options: ["a letter from Leo's teacher", "an invitation to a party", "an ad for a toy shop"],
+        options: ["a letter from Leo's teacher", "an invitation to a party", "an ad for a toy store"],
         answer: 1,
         explain: "„Please come to Leo's birthday party …“ — metin okuyanları bir doğum günü partisine çağırıyor.",
       },

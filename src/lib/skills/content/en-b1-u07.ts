@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           It is the one I bought last year. ·
  *           The man who found it left his number. ·
  *           I had left my keys at home. · Then I realised the problem. ·
- *           By the time I arrived, the shop had closed. ·
+ *           By the time I arrived, the store had closed. ·
  *           She said that the budget had changed. ·
  *           He suggested starting earlier. ·
  *           The chair asked if we agreed. ·

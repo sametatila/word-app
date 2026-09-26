@@ -104,7 +104,7 @@ export const enA2U11: SkillExercise[] = [
     genre: "letter",
     intro: "Başvuru mektubu. Hangi cümle deneyimi, hangisi kapanmış dönemi söylüyor?",
     gloss: [
-      { de: "canteen", tr: "yemekhane" },
+      { de: "cafeteria", tr: "yemekhane" },
       { de: "everything else", tr: "kalan her şey" },
       { de: "a little", tr: "biraz" },
       { de: "Best wishes", tr: "saygılarımla" },
@@ -113,8 +113,8 @@ export const enA2U11: SkillExercise[] = [
     text:
       "Dear Mr. Arda,\n" +
       "I am writing about the kitchen helper position in your ad.\n" +
-      "I have worked in a kitchen for four years. From 2021 to 2023 I worked at a big company with a canteen for three hundred people. After that I worked for two years in a small restaurant near the station.\n" +
-      "In the canteen I learned to work fast and in a team. In the small restaurant I learned everything else: the long evenings, the money and the noise.\n" +
+      "I have worked in a kitchen for four years. From 2021 to 2023 I worked at a big company with a cafeteria for three hundred people. After that I worked for two years in a small restaurant near the station.\n" +
+      "In the cafeteria I learned to work fast and in a team. In the small restaurant I learned everything else: the long evenings, the money and the noise.\n" +
       "I have also worked with a cook from Italy, so I know a little Italian, but my English is better.\n" +
       "I can start on the first of March. I am free every day and I have already talked to my old boss.\n" +
       "Thank you for reading this. I hope to hear from you.\n" +
@@ -129,7 +129,7 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         text: "Where did Deniz work from 2021 to 2023?",
-        options: ["at a big company with a canteen", "in a small restaurant", "in Italy"],
+        options: ["at a big company with a cafeteria", "in a small restaurant", "in Italy"],
         answer: 0,
         explain: "Kapanmış bir dönem olduğu için „I worked“, „I have worked“ değil.",
       },
@@ -154,7 +154,7 @@ export const enA2U11: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "a big company with a canteen",
+          "a big company with a cafeteria",
           "a small restaurant near the station",
           "a talk with the old boss",
           "a letter to Mr. Arda",
@@ -163,11 +163,11 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What did Deniz learn in the canteen?",
+        text: "What did Deniz learn in the cafeteria?",
         options: [],
         answer: 0,
         accept: ["to work fast", "to work fast and in a team", "work in a team"],
-        explain: "„In the canteen I learned to work fast and in a team.“",
+        explain: "„In the cafeteria I learned to work fast and in a team.“",
       },
     ],
   },
@@ -338,7 +338,7 @@ export const enA2U11: SkillExercise[] = [
       { de: "apply for", tr: "başvurmak" },
       { de: "of experience", tr: "deneyim" },
       { de: "worked there", tr: "orada çalıştım" },
-      { de: "canteen", tr: "yemekhane" },
+      { de: "cafeteria", tr: "yemekhane" },
     ],
     minutes: 7,
     tasks: [
@@ -373,7 +373,7 @@ export const enA2U11: SkillExercise[] = [
         facts: "Mutfakta dört yıl; 2021–2023 büyük şirket; sonra iki yıl küçük restoran; başlangıç bir mart.",
         fields: [
           { label: "Experience", answer: "four years", accept: ["4 years"] },
-          { label: "2021 to 2023", answer: "a big company", accept: ["a canteen", "a big company with a canteen"] },
+          { label: "2021 to 2023", answer: "a big company", accept: ["a cafeteria", "a big company with a cafeteria"] },
           { label: "After that", answer: "a small restaurant", accept: ["a restaurant"] },
           { label: "Start", answer: "the first of March", accept: ["March 1", "March first", "March 1st", "March"] },
         ],

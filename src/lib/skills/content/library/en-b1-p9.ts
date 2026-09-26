@@ -251,7 +251,7 @@ export const enB1P9: SkillExercise[] = [
           "Would it be possible to let the seventh graders go in first on Fridays, or to make the break " +
           "five minutes longer? " +
           "I would be glad to hear whether the school has looked at how much food comes back " +
-          "on different days. Thank you for looking into this. Yours sincerely, Aylin Demir",
+          "on different days. Thank you for looking into this. Sincerely, Aylin Demir",
       },
     ],
   },
