@@ -83,6 +83,14 @@ if [ "${1:-}" = "--upload" ]; then
   : "${ASC_KEY_PATH:?ASC_KEY_PATH tanımlı değil (App Store Connect .p8 anahtar dosyasının yolu)}"
   : "${ASC_KEY_ID:?ASC_KEY_ID tanımlı değil (anahtar kimliği)}"
   : "${ASC_ISSUER_ID:?ASC_ISSUER_ID tanımlı değil (issuer kimliği)}"
+fi
+# ANAHTAR YALNIZ YÜKLEMEDE DEĞİL, DIŞA AKTARIMDA DA. Bu Mac'te Xcode'a eklenmiş
+# bir Apple hesabı ve yerel "iOS Distribution" sertifikası yok; imza bulutta
+# (automatic + allowProvisioningUpdates) ve o da kimlik ister. Anahtar yalnız
+# --upload'da verildiği için yerel .ipa dışa aktarımı "No Accounts / No signing
+# certificate" ile düşüyordu (build 9, 2026-09-26). Anahtar tanımlıysa iki
+# kipte de veriliyor; tanımlı değilse Xcode hesabı olan makinede eskisi gibi.
+if [ -n "${ASC_KEY_PATH:-}" ] && [ -n "${ASC_KEY_ID:-}" ] && [ -n "${ASC_ISSUER_ID:-}" ]; then
   [ -f "$ASC_KEY_PATH" ] || { echo "ASC_KEY_PATH dosyası yok: $ASC_KEY_PATH"; exit 1; }
   UPLOAD_ARGS=(
     -authenticationKeyPath "$ASC_KEY_PATH"
