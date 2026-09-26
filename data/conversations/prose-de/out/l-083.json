@@ -112,7 +112,7 @@
  {
   "tr": "Bir randevunu değiştirmek için kliniği arıyorsun. Mevcut randevunu söyle, neden değiştirmen gerektiğini anlat ve yeni bir saat üzerinde anlaş.",
   "kind": "scene",
-  "de": "Du rufst in der Praxis an, um einen Termin zu ändern. Nenne deinen bestehenden Termin, erklär, warum du ihn ändern musst, und einigt euch auf eine neue Uhrzeit."
+  "de": "Du rufst in der Praxis an, um einen Termin zu ändern. Nenne deinen bestehenden Termin, erklär, warum du ihn ändern musst, und einige dich mit ihr auf eine neue Uhrzeit."
  },
  {
   "tr": "Zor bir karar vermek üzeresin ve bir arkadaşınla konuşuyorsun. Başkalarının ne dediğini aktar, artı ve eksileri tart ve sonunda kararını söyle.",
@@ -282,7 +282,7 @@
  {
   "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; tehlike varsa yasağın kalıbı gelir:",
   "kind": "why.tr",
-  "de": "Falsch. Diese Wendung heißt «nicht nötig»; bei Gefahr steht die Wendung für das Verbot:"
+  "de": "Falsch. Diese Wendung heißt „nicht nötig“; bei Gefahr steht die Wendung für das Verbot:"
  },
  {
   "tr": "Doğru. Arama sonra oldu, düzeltme önce; o yüzden düzeltme bir basamak geride duruyor.",
@@ -320,11 +320,6 @@
   "de": "Ein fester Termin, deshalb die Verlaufsform:"
  },
  {
-  "tr": "söz",
-  "kind": "say.tr",
-  "de": "Aussage"
- },
- {
   "tr": "uyarı",
   "kind": "say.tr",
   "de": "Warnung"
@@ -352,7 +347,7 @@
  {
   "tr": "Özür için",
   "kind": "say.tr",
-  "de": "Für die Entschuldigung sagen wir"
+  "de": "Die Entschuldigung heißt"
  },
  {
   "tr": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise yerine can't dersin.",
@@ -367,7 +362,7 @@
  {
   "tr": "İptal etmek",
   "kind": "say.tr",
-  "de": "Absagen wird mit"
+  "de": "Absagen heißt"
  },
  {
   "tr": "alet için ise",
@@ -382,12 +377,12 @@
  {
   "tr": "Güvenlik için",
   "kind": "say.tr",
-  "de": "Für die Sicherheit sagen wir"
+  "de": "Die Sicherheit heißt"
  },
  {
   "tr": "Düzeltmek için",
   "kind": "say.tr",
-  "de": "Für korrigieren sagen wir"
+  "de": "Für korrigieren"
  },
  {
   "tr": "basmak için ise",
@@ -402,7 +397,7 @@
  {
   "tr": "Emin olmak için",
   "kind": "say.tr",
-  "de": "Für sicherstellen sagen wir"
+  "de": "Für sicherstellen"
  },
  {
   "tr": "Ödeme belgesine",
@@ -422,12 +417,12 @@
  {
   "tr": "Değiştirmek için",
   "kind": "say.tr",
-  "de": "Für ersetzen sagen wir"
+  "de": "Für ersetzen"
  },
  {
   "tr": "denir; fiil hâli",
   "kind": "say.tr",
-  "de": "genannt; die Verbform ist"
+  "de": "auf Englisch; als Verb"
  },
  {
   "tr": "göz önüne almak,",
@@ -437,7 +432,7 @@
  {
   "tr": "Teyit etmek için",
   "kind": "say.tr",
-  "de": "Für bestätigen sagen wir"
+  "de": "Für bestätigen"
  },
  {
   "tr": "Bir işi halletmek",
@@ -447,7 +442,7 @@
  {
   "tr": "Birini ikna etmek",
   "kind": "say.tr",
-  "de": "Jemanden überzeugen wird mit"
+  "de": "Jemanden überzeugen heißt"
  },
  {
   "tr": "Boş bir saat için",
@@ -487,7 +482,7 @@
  {
   "tr": "rezervasyon için ise",
   "kind": "say.tr",
-  "de": "und für die Buchung"
+  "de": "und die Buchung heißt"
  },
  {
   "tr": "teslimat. Tekrar et:",
@@ -502,7 +497,7 @@
  {
   "tr": "o an verilen söz için",
   "kind": "say.tr",
-  "de": "und für ein spontanes Versprechen"
+  "de": "während bei einem spontanen Versprechen"
  },
  {
   "tr": "dezavantaj. Tekrar et:",
@@ -567,7 +562,7 @@
  {
   "tr": "İki şeyin yerini değiştirmek",
   "kind": "say.tr",
-  "de": "Zwei Dinge vertauschen wird mit"
+  "de": "Zwei Dinge vertauschen heißt"
  },
  {
   "tr": "Karışıklık demek. Tekrar et:",
@@ -650,9 +645,9 @@
   "de": "Jetzt du: Ich werde die Uhrzeit ändern."
  },
  {
-  "tr": "Kimse çifte rezervasyonu suçlamamalı.",
+  "tr": "Çifte rezervasyon için kimseyi suçlamamalıyız.",
   "kind": "say.tr",
-  "de": "Niemand sollte der Doppelbuchung die Schuld geben."
+  "de": "Wir sollten niemandem die Schuld an der Doppelbuchung geben."
  },
  {
   "tr": "Önce her yönergeyi okumak zorundasın.",
@@ -670,9 +665,9 @@
   "de": "Jetzt du: Es zu öffnen, während es läuft, ist verboten."
  },
  {
-  "tr": "Beni tek bir görüşle ikna etmeye çalıştı.",
+  "tr": "Beni ikna etmeye çalıştı ama benim görüşüm farklı.",
   "kind": "say.tr",
-  "de": "Sie hat versucht, mich mit einer einzigen Meinung zu überzeugen."
+  "de": "Sie hat versucht, mich zu überzeugen, aber ich habe eine andere Meinung."
  },
  {
   "tr": "Şimdi sıra sende: Bu hafta üç kez aradım.",
@@ -702,7 +697,7 @@
  {
   "tr": "denir; cümlenin başına gelir ve virgül alır.",
   "kind": "say.tr",
-  "de": "genannt; es steht am Satzanfang und bekommt ein Komma."
+  "de": "; es steht am Satzanfang und bekommt ein Komma."
  },
  {
   "tr": "Şimdi birine bir işi adım adım anlatacaksın.",
@@ -737,7 +732,7 @@
  {
   "tr": "denir ve yönergelerin en sık geçen kelimesidir.",
   "kind": "say.tr",
-  "de": "genannt und ist das häufigste Wort in Anweisungen."
+  "de": "auf Englisch und ist das häufigste Wort in Anweisungen."
  },
  {
   "tr": "Son kalıbımız kibarca çözüm istiyor. Tekrar et:",
@@ -762,7 +757,7 @@
  {
   "tr": "denir ve bu kelimenin p harfi okunmaz. Siparişe ise",
   "kind": "say.tr",
-  "de": "genannt, und der Buchstabe p wird nicht gesprochen. Und die Bestellung heißt"
+  "de": "auf Englisch, und der Buchstabe p wird nicht gesprochen. Und die Bestellung heißt"
  },
  {
   "tr": "Bir tane daha: Lütfen yenisini gönderebilir misiniz?",
@@ -770,7 +765,7 @@
   "de": "Noch eins: Könnten Sie bitte ein neues schicken?"
  },
  {
-  "tr": "Hatadan sonra iki çantayı değiştirmek zorunda kaldık.",
+  "tr": "Hatadan sonra iki çantayı değiş tokuş etmek zorunda kaldık.",
   "kind": "say.tr",
   "de": "Nach dem Fehler mussten wir die beiden Taschen tauschen."
  },
@@ -787,7 +782,7 @@
  {
   "tr": "İkinci kalıbımız sonra olanı anlatıyor. Fark etmek için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung erzählt das Spätere. Für bemerken sagen wir"
+  "de": "Unsere zweite Wendung erzählt das Spätere. Für bemerken"
  },
  {
   "tr": "Şimdi sıra sende: Her adımı sırayla izlemek zorundasın.",
@@ -815,14 +810,14 @@
   "de": "Sagst du, an welchem Tag du geschrieben hast, ist das Ereignis also VORBEI, steht Past Simple:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Takvime yazılmış randevu için şimdiki zaman:",
+  "tr": "Şimdi bugünün kuralı. Takvime yazılmış randevu için şimdiki zaman:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Für einen Termin im Kalender steht die Verlaufsform:"
+  "de": "Jetzt die Regel von heute. Für einen Termin im Kalender steht die Verlaufsform:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kaç kez yazdığın HÂLÂ sayılıyorsa present perfect:",
+  "tr": "Şimdi bugünün kuralı. Kaç kez yazdığın HÂLÂ sayılıyorsa present perfect:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. ZÄHLT noch, wie oft du geschrieben hast, steht Present Perfect:"
+  "de": "Jetzt die Regel von heute. ZÄHLT noch, wie oft du geschrieben hast, steht Present Perfect:"
  },
  {
   "tr": "artı fiilin üçüncü hâliyle geriye alınır; sonra olan normal geçmişte kalır.",
@@ -830,9 +825,9 @@
   "de": "plus die dritte Form des Verbs zurückgesetzt; das Spätere bleibt in der einfachen Vergangenheit."
  },
  {
-  "tr": "ile söylenir; resmî bir kelimedir ve tam olarak 'başka güne almak' demektir.",
+  "tr": "ile söylenir ve tam olarak 'başka bir zamana almak' demektir.",
   "kind": "say.tr",
-  "de": "gesagt; es ist ein formelles Wort und heißt genau «auf einen anderen Tag legen»."
+  "de": "gesagt und heißt genau „auf einen anderen Zeitpunkt legen“."
  },
  {
   "tr": "Merhaba! Bugün randevu işlerini öğreneceğiz: almak, teyit etmek, ertelemek, iptal etmek.",
@@ -865,9 +860,9 @@
   "de": "Hallo! Heute lernen wir, eine Beschwerde vorzubringen: die Bestellung kam fehlerhaft, wie oft du geschrieben hast, was du willst."
  },
  {
-  "tr": "Merhaba! Bu modülün son dersi: bir karara varmak. Kim ne dedi, artısı ne, eksisi ne, sen ne düşünüyorsun.",
+  "tr": "Merhaba! Bu, modülün son Konuşma adımı: bir karara varmak. Kim ne dedi, artısı ne, eksisi ne, sen ne düşünüyorsun.",
   "kind": "say.tr",
-  "de": "Hallo! Die letzte Lektion dieses Moduls: zu einer Entscheidung kommen. Wer was gesagt hat, was dafür spricht, was dagegen, was du denkst."
+  "de": "Hallo! Der letzte Sprechen-Schritt dieses Moduls: zu einer Entscheidung kommen. Wer was gesagt hat, was dafür spricht, was dagegen, was du denkst."
  },
  {
   "tr": "Karışıklığı anlatmanın püf noktası sıra: hangi hata önce olduysa o bir basamak geriye alınır. Hazır mısın?",

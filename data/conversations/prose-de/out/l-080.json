@@ -165,9 +165,9 @@
   "de": "Leder"
  },
  {
-  "tr": "erek",
+  "tr": "cilt",
   "kind": "vocab.tr",
-  "de": "Ziel"
+  "de": "Haut"
  },
  {
   "tr": "risk",
@@ -198,6 +198,11 @@
   "tr": "tarife",
   "kind": "vocab.tr",
   "de": "Fahrplan"
+ },
+ {
+  "tr": "ücret tarifesi",
+  "kind": "vocab.tr",
+  "de": "Tarif"
  },
  {
   "tr": "malzeme",
@@ -337,12 +342,12 @@
  {
   "tr": "Doğru. Bağlaç kendi olumsuzluğunu taşıdığı için cümlede ikinci bir olumsuz yok; anlam 'fiyat değişmezse kabul ederim'.",
   "kind": "why.tr",
-  "de": "Richtig. Der Konnektor trägt die Verneinung selbst, deshalb steht keine zweite im Satz; es heißt «wenn der Preis gleich bleibt, nehme ich an»."
+  "de": "Richtig. Der Konnektor trägt die Verneinung selbst, deshalb steht keine zweite im Satz; es heißt „wenn der Preis gleich bleibt, nehme ich an“."
  },
  {
   "tr": "Açıklamak için",
   "kind": "hint.tr",
-  "de": "Für erklären steht"
+  "de": "Für erklären wird"
  },
  {
   "tr": "Önlem bağlacı:",
@@ -390,9 +395,9 @@
   "de": "Dieser Konnektor trägt die Verneinung in sich:"
  },
  {
-  "tr": "Tarifedeki saat şimdiki zamanla söylenir:",
+  "tr": "Tarifedeki saat geniş zamanla söylenir:",
   "kind": "hint.tr",
-  "de": "Die Uhrzeit aus dem Fahrplan steht in der Verlaufsform:"
+  "de": "Die Uhrzeit aus dem Fahrplan steht im Präsens:"
  },
  {
   "tr": "kullanılır ve ardından doğrudan nesne gelir:",
@@ -450,14 +455,14 @@
   "de": "abfahren,"
  },
  {
-  "tr": "sebebi, ",
+  "tr": "sebebi,",
   "kind": "say.tr",
-  "de": "den Grund, "
+  "de": "bringt den Grund,"
  },
  {
   "tr": "Risk için",
   "kind": "say.tr",
-  "de": "Für das Risiko sagen wir"
+  "de": "Für das Risiko"
  },
  {
   "tr": "kaydolmak,",
@@ -517,7 +522,7 @@
  {
   "tr": "Söz vermek için",
   "kind": "say.tr",
-  "de": "Für ein Versprechen sagen wir"
+  "de": "Für versprechen"
  },
  {
   "tr": "ise neden olmak.",
@@ -557,7 +562,7 @@
  {
   "tr": "Kişiyi tanımlarken",
   "kind": "say.tr",
-  "de": "Beim Beschreiben einer Person steht"
+  "de": "Beim Beschreiben einer Person wird"
  },
  {
   "tr": "sözü tutmak için ise",
@@ -580,14 +585,14 @@
   "de": "Für das, woraus etwas ist, sagen wir"
  },
  {
-  "tr": "Geçen yıl aldığım olan.",
+  "tr": "Geçen yıl aldığım çanta.",
   "kind": "say.tr",
-  "de": "Die, die ich letztes Jahr gekauft habe."
+  "de": "Die Tasche, die ich letztes Jahr gekauft habe."
  },
  {
   "tr": "İlk kalıbımız. Sap için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für den Griff sagen wir"
+  "de": "Unsere erste Wendung. Für den Griff"
  },
  {
   "tr": "saatlerin listesine ise",
@@ -602,7 +607,7 @@
  {
   "tr": "İki iş aynı anda oluyorsa",
   "kind": "say.tr",
-  "de": "Passieren zwei Dinge gleichzeitig, steht"
+  "de": "Passieren zwei Dinge gleichzeitig, wird"
  },
  {
   "tr": "Özetleyelim: sebep arkada",
@@ -617,7 +622,7 @@
  {
   "tr": "İlk kalıbımız. Varmak için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für ankommen sagen wir"
+  "de": "Unsere erste Wendung. Für ankommen"
  },
  {
   "tr": "Özetleyelim: olumsuz koşul",
@@ -672,7 +677,7 @@
  {
   "tr": "İlk kalıbımız. Pratik yapmak için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für üben sagen wir"
+  "de": "Unsere erste Wendung. Für üben"
  },
  {
   "tr": "Tren durdu, bu yüzden geç kaldım.",
@@ -715,9 +720,9 @@
   "de": "Jetzt erklärst du eine Verspätung."
  },
  {
-  "tr": "Şimdi dersin kuralı. İlk bağlacımız",
+  "tr": "Şimdi bugünün kuralı. İlk bağlacımız",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Unser erster Konnektor ist"
+  "de": "Jetzt die Regel von heute. Unser erster Konnektor ist"
  },
  {
   "tr": "Bir tane daha: Sebebini açıklayayım.",
@@ -782,7 +787,7 @@
  {
   "tr": "denir. İkisi çok yakın; ilki daha resmîdir.",
   "kind": "say.tr",
-  "de": "genannt. Die beiden liegen sehr nah beieinander; das erste ist formeller."
+  "de": "auf Englisch. Die beiden liegen sehr nah beieinander; das erste ist formeller."
  },
  {
   "tr": "Bir tane daha: Otobüs altı buçukta kalkıyor.",
@@ -790,9 +795,9 @@
   "de": "Noch eins: Der Bus fährt um halb sieben."
  },
  {
-  "tr": "Amacım net, hedefim basit ve erekim gerçekçi.",
+  "tr": "Amacım belli; hedefim hem basit hem gerçekçi.",
   "kind": "say.tr",
-  "de": "Mein Zweck ist klar, mein Vorhaben einfach und mein Ziel realistisch."
+  "de": "Mein Zweck ist klar; mein Ziel ist einfach und realistisch."
  },
  {
   "tr": "Bir tane daha: Burada çalışan kadın onu gördü.",
@@ -805,14 +810,14 @@
   "de": "Jetzt bist du dran: Ich komme, es sei denn, es regnet."
  },
  {
-  "tr": "Bağlaçların yanında üç isim de işine yarayacak:",
+  "tr": "Bağlaçların yanında üç kelime de işine yarayacak:",
   "kind": "say.tr",
-  "de": "Neben den Konnektoren helfen dir drei Nomen:"
+  "de": "Neben den Konnektoren helfen dir drei Wörter:"
  },
  {
   "tr": "Bir olayın ne zamana kadar süreceğini söylerken",
   "kind": "say.tr",
-  "de": "Wenn du sagst, bis wann etwas dauert, steht"
+  "de": "Wenn du sagst, bis wann etwas dauert, wird"
  },
  {
   "tr": "Çünkü demek ve ardından SEBEP gelir. Tekrar et:",
@@ -897,12 +902,12 @@
  {
   "tr": "kullanılır; noktadan sonra gelir ve 'bu arada' demektir.",
   "kind": "say.tr",
-  "de": "benutzt; es steht nach dem Punkt und heißt «inzwischen»."
+  "de": "benutzt; es steht nach dem Punkt und heißt „inzwischen“."
  },
  {
-  "tr": "Şiddetli yağmur gecikmelere neden olabilir, açıklayayım.",
+  "tr": "Şiddetli yağmur gecikmelere neden oldu, o yüzden neden geç kaldığımı açıklayayım.",
   "kind": "say.tr",
-  "de": "Starker Regen kann Verspätungen verursachen, lass es mich erklären."
+  "de": "Starker Regen hat Verspätungen verursacht, also lass mich erklären, warum ich zu spät bin."
  },
  {
   "tr": "Şimdi sen kur: Sınavı geçmek için her akşam çalışıyorum.",
@@ -915,9 +920,9 @@
   "de": "Fassen wir zusammen: Temporalsatz im Präsens, Hauptsatz in der Zukunft."
  },
  {
-  "tr": "Şimdi dersin kuralı. Amaç en kısa biçimde mastarla söylenir:",
+  "tr": "Şimdi bugünün kuralı. Amaç en kısa biçimde mastarla söylenir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Am kürzesten wird der Zweck mit dem Infinitiv gesagt:"
+  "de": "Jetzt die Regel von heute. Am kürzesten wird der Zweck mit dem Infinitiv gesagt:"
  },
  {
   "tr": "Şimdi sen kur: Bana erken söylediğin sürece yardım edeceğim.",
@@ -927,7 +932,7 @@
  {
   "tr": "denir; bu kelime yolun tamamını anlatır, tek bir bileti değil.",
   "kind": "say.tr",
-  "de": "genannt; das Wort meint den ganzen Weg, nicht eine einzelne Fahrkarte."
+  "de": "auf Englisch; das Wort meint den ganzen Weg, nicht eine einzelne Fahrkarte."
  },
  {
   "tr": "Dolayısıyla demek, noktadan sonra gelir ve resmî metinlerin bağlacıdır.",
@@ -942,7 +947,7 @@
  {
   "tr": "'şu şart sürdüğü sürece' demektir ve çoğu zaman bir sözle birlikte gelir.",
   "kind": "say.tr",
-  "de": "Es heißt «solange diese Bedingung gilt» und steht oft zusammen mit einem Versprechen."
+  "de": "Es heißt „solange diese Bedingung gilt“ und steht oft zusammen mit einem Versprechen."
  },
  {
   "tr": "Merhaba! Bugün sebep ve sonucu bağlamayı öğreneceğiz: neden oldu, ne oldu.",
@@ -955,24 +960,24 @@
   "de": "Die dritte Wendung trägt einen ganzen Satz, und darin steht meist ein Modalverb:"
  },
  {
-  "tr": "Şimdi dersin kuralı. İki bağlaç da aynı iki olayı bağlıyor ama sıra değişiyor:",
+  "tr": "Şimdi bugünün kuralı. İki bağlaç da aynı iki olayı bağlıyor ama sıra değişiyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beide Konnektoren verbinden dieselben zwei Ereignisse, aber die Reihenfolge ändert sich:"
+  "de": "Jetzt die Regel von heute. Beide Konnektoren verbinden dieselben zwei Ereignisse, aber die Reihenfolge ändert sich:"
  },
  {
   "tr": "'eğer olmazsa' demektir. O yüzden ardına ikinci bir olumsuz koymak yanlış olur.",
   "kind": "say.tr",
-  "de": "Es heißt «wenn nicht». Deshalb wäre eine zweite Verneinung dahinter falsch."
+  "de": "Es heißt „wenn nicht“. Deshalb wäre eine zweite Verneinung dahinter falsch."
  },
  {
-  "tr": "ile söylenir. İkincisi sert değildir; kibar bir hayır da bu kelimeyle anlatılır.",
+  "tr": "ile söylenir. İkincisi net bir hayırdır; kibarca geri çevirmek için 'decline' de kullanılır.",
   "kind": "say.tr",
-  "de": "gesagt. Das zweite ist nicht hart; auch ein höfliches Nein wird mit diesem Wort gesagt."
+  "de": "gesagt. Das zweite ist ein klares Nein; für eine höfliche Absage gibt es auch „decline“."
  },
  {
   "tr": "sonucu getirir. Hangisini seçtiğin cümlenin hangi yarısını öne çıkardığını söyler.",
   "kind": "say.tr",
-  "de": "bringt die Folge. Deine Wahl sagt, welche Hälfte des Satzes du nach vorn stellst."
+  "de": "die Folge. Deine Wahl sagt, welche Hälfte des Satzes du nach vorn stellst."
  },
  {
   "tr": "İkisini birden gelecek yapmak İngilizcede yanlıştır; gelecek yalnız ana cümlede durur.",
@@ -985,9 +990,9 @@
   "de": "Er stellt den Grund an den ANFANG und ist etwas formeller. Er wird für einen bekannten Grund benutzt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Bir ismin HANGİSİ olduğunu söylemek için arkasına yan cümle eklenir:",
+  "tr": "Şimdi bugünün kuralı. Bir ismin HANGİSİ olduğunu söylemek için arkasına yan cümle eklenir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Um zu sagen, WELCHES Nomen gemeint ist, hängt man einen Nebensatz an:"
+  "de": "Jetzt die Regel von heute. Um zu sagen, WELCHES Nomen gemeint ist, hängt man einen Nebensatz an:"
  },
  {
   "tr": "Merhaba! Bugün koşulun ince biçimlerini öğreneceğiz: hangi şartla evet, hangi şartla hayır.",
@@ -1005,14 +1010,14 @@
   "de": "Hallo! Heute lernen wir, den Reiseplan zu erzählen: wann der Zug fährt und was du bei der Ankunft machst."
  },
  {
-  "tr": "Şimdi dersin kuralı. İki olay da gelecekte olsa bile, zaman bağlacının ardındaki cümle GENİŞ ZAMAN olur:",
+  "tr": "Şimdi bugünün kuralı. İki olay da gelecekte olsa bile, zaman bağlacının ardındaki cümle GENİŞ ZAMAN olur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Auch wenn beide Ereignisse in der Zukunft liegen, steht der Satz nach dem Temporalkonnektor im PRÄSENS:"
+  "de": "Jetzt die Regel von heute. Auch wenn beide Ereignisse in der Zukunft liegen, steht der Satz nach dem Temporalkonnektor im PRÄSENS:"
  },
  {
   "tr": "Türkçede hepsi 'eğer' ile çıkıyor; İngilizcede üç ayrı kelime var ve üçü farklı şey söylüyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im Deutschen hat jede ihr eigenes Wort — «es sei denn», «solange», «für den Fall, dass»; im Englischen genauso, und die drei sagen nicht dasselbe. Bist du bereit?"
+  "de": "Im Deutschen hat jede ihr eigenes Wort — „es sei denn“, „solange“, „für den Fall, dass“; im Englischen genauso, und die drei sagen nicht dasselbe. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün bir şeyi neden yaptığını anlatmayı öğreneceğiz: bir kursa neden yazıldın, neyi hedefliyorsun.",
@@ -1030,9 +1035,9 @@
   "de": "Für den Zweck gibt es drei Wendungen, und sie sagen nicht dasselbe: eine ist kurz, eine formell, eine trägt einen ganzen Satz. Bist du bereit?"
  },
  {
-  "tr": "Türkçede 'çünkü' ve 'bu yüzden' cümlenin neresine koyulursa koyulsun anlaşılır. İngilizcede bağlacın yeri anlamı belirliyor. Hazır mısın?",
+  "tr": "Türkçede 'çünkü' ve 'bu yüzden' cümlenin neresine konursa konsun anlaşılır. İngilizcede bağlacın yeri anlamı belirliyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im Deutschen ändern «weil» und «deshalb» sogar die Wortstellung. Im Englischen bleibt die Wortstellung gleich, aber der Platz des Konnektors entscheidet über die Bedeutung. Bist du bereit?"
+  "de": "Im Deutschen ändern „weil“ und „deshalb“ sogar die Wortstellung. Im Englischen bleibt die Wortstellung gleich, aber der Platz des Konnektors entscheidet über die Bedeutung. Bist du bereit?"
  },
  {
   "tr": "Tarif etmenin İngilizcedeki en kısa yolu yan cümle: ismin arkasına bir cümle ekliyorsun ve o cümle hangisi olduğunu söylüyor. Hazır mısın?",

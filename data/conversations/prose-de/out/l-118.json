@@ -2,52 +2,52 @@
  {
   "tr": "her şeyi «zaman böyle getirdi» diye anlatan bir köylü",
   "kind": "partner",
-  "de": "ein Dorfbewohner, der alles mit «so hat es die Zeit gebracht» erklärt"
+  "de": "ein Dorfbewohner, der alles mit „so hat es die Zeit gebracht“ erklärt"
  },
  {
   "tr": "her fiyatı arz talep sayan, «piyasa böyle diyor» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jeden Preis für Angebot und Nachfrage hält und sagt «der Markt sagt es so»"
+  "de": "jemand, der jeden Preis für Angebot und Nachfrage hält und sagt „der Markt sagt es so“"
  },
  {
   "tr": "tanıtım broşürünü tekrarlayan, «sertifikası var» diyen biri",
   "kind": "partner",
-  "de": "jemand, der den Werbeprospekt wiederholt und sagt «sie haben ein Zertifikat»"
+  "de": "jemand, der den Werbeprospekt wiederholt und sagt „sie haben ein Zertifikat“"
  },
  {
   "tr": "her savı çıkar sayan, «senin tarlan için istiyorsun» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede These für Eigennutz hält und sagt «du willst es für deinen Acker»"
+  "de": "jemand, der jede These für Eigennutz hält und sagt „du willst es für deinen Acker“"
  },
  {
   "tr": "çeşitliliği lüks sayan, «karnımızı doyuran verim» diyen bir çiftçi",
   "kind": "partner",
-  "de": "ein Bauer, der Vielfalt für Luxus hält und sagt «satt macht uns der Ertrag»"
+  "de": "ein Bauer, der Vielfalt für Luxus hält und sagt „satt macht uns der Ertrag“"
  },
  {
   "tr": "etikete olduğu gibi inanan, «üstünde yazıyor ya» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der dem Etikett wörtlich glaubt und sagt «es steht doch drauf»"
+  "de": "ein Freund, der dem Etikett wörtlich glaubt und sagt „es steht doch drauf“"
  },
  {
   "tr": "her ölçütü evrensel sayan, «o zaman bizde de öyle olur» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jeden Maßstab für allgemeingültig hält und sagt «dann ist es bei uns auch so»"
+  "de": "jemand, der jeden Maßstab für allgemeingültig hält und sagt „dann ist es bei uns auch so“"
  },
  {
   "tr": "adın önemsiz olduğunu düşünen, «toprak yine aynı toprak» diyen biri",
   "kind": "partner",
-  "de": "jemand, der den Namen für unwichtig hält und sagt «der Boden bleibt derselbe Boden»"
+  "de": "jemand, der den Namen für unwichtig hält und sagt „der Boden bleibt derselbe Boden“"
  },
  {
   "tr": "sözleşmeyi olduğu gibi kabul eden, «hepsi standart madde» diyen bir çiftçi",
   "kind": "partner",
-  "de": "eine Bäuerin, die den Vertrag hinnimmt, wie er ist, und sagt «das sind alles Standardklauseln»"
+  "de": "eine Bäuerin, die den Vertrag hinnimmt, wie er ist, und sagt „das sind alles Standardklauseln“"
  },
  {
   "tr": "her uyarıyı felaket senaryosu sayan, «her yıl böyle diyorlar» diyen bir çiftçi",
   "kind": "partner",
-  "de": "ein Bauer, der jede Warnung für ein Katastrophenszenario hält und sagt «das sagen sie jedes Jahr»"
+  "de": "ein Bauer, der jede Warnung für ein Katastrophenszenario hält und sagt „das sagen sie jedes Jahr“"
  },
  {
   "tr": "Yani bizde de aynı olur mu?",
@@ -172,7 +172,7 @@
  {
   "tr": "Toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğretir; kesin felaket cümlesi tartışmayı kapatıyor.",
   "kind": "summary",
-  "de": "Lehrt den Abstand, den das Modalverb beim Reden über die Zukunft des Bodens setzt; ein bestimmter Katastrophensatz beendet das Gespräch."
+  "de": "Lehrt den Abstand, den das Modalverb beim Reden über die Zukunft des Bodens setzt; ein Katastrophensatz ohne Vorbehalt beendet das Gespräch."
  },
  {
   "tr": "Tarım tartışmasında ödün vererek karşı çıkmayı öğretir; verimin haklı yanını teslim etmeyen savunma dinlenmiyor.",
@@ -297,7 +297,7 @@
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt ein Szenario."
+  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt ein Szenario."
  },
  {
   "tr": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sınır aynı yerde duruyor.",
@@ -757,7 +757,7 @@
  {
   "tr": "Olmasaydıyı tarım savında kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht in der Agrarthese zu bauen"
+  "de": "Um das Wäre-nicht in der Agrarthese zu bauen –"
  },
  {
   "tr": "Ödünü başa çekip bedeli göstermek için",
@@ -767,7 +767,7 @@
  {
   "tr": "İki eşdizimi karşıt yönde bağlamak için",
   "kind": "hint.tr",
-  "de": "Um zwei Wortverbindungen gegenläufig zu binden"
+  "de": "Um zwei Wortverbindungen gegenläufig zu binden –"
  },
  {
   "tr": "Tartışmayı olgudan ayırmak için iki yarı kurulur:",
@@ -842,7 +842,7 @@
  {
   "tr": "Kapıyı ad açıyor.",
   "kind": "say.tr",
-  "de": "Das Tor öffnet der Name."
+  "de": "Es ist der Name, der das Tor öffnet."
  },
  {
   "tr": "Ormanı kaldırmaya",
@@ -912,7 +912,7 @@
  {
   "tr": "İddiayı fiil imzalıyor.",
   "kind": "say.tr",
-  "de": "Die Aussage unterschreibt das Verb."
+  "de": "Es ist das Verb, das die Aussage unterschreibt."
  },
  {
   "tr": "köyden şehre gidişe ise",
@@ -940,7 +940,7 @@
   "de": "Fassen wir zusammen: das Prädikat fällt weg"
  },
  {
-  "tr": "Biçim hasadı aşıp kalıyor.",
+  "tr": "Biçim hasattan uzun yaşıyor.",
   "kind": "say.tr",
   "de": "Die Form überdauert die Ernte."
  },
@@ -950,9 +950,9 @@
   "de": "Was viele Arten beherbergt, heißt"
  },
  {
-  "tr": "Ekilmeden bekleyen toprağa",
+  "tr": "Toprağın ekilmeden beklemesine",
   "kind": "say.tr",
-  "de": "Boden, der unbestellt wartet, heißt"
+  "de": "Dass Boden unbestellt daliegt, heißt"
  },
  {
   "tr": "Kaybedeni eşdizim seçiyor.",
@@ -1110,9 +1110,9 @@
   "de": "Dass die Landwirtschaft auf ein anderes Modell übergeht, heißt"
  },
  {
-  "tr": "Bir toprağın kendisinin sayılmasına",
+  "tr": "Bir toprağı kendine ait saymaya",
   "kind": "say.tr",
-  "de": "Ein Gebiet für das eigene zu erklären heißt"
+  "de": "Ein Gebiet für sich zu beanspruchen heißt"
  },
  {
   "tr": "Çiftliğin satabileceği süt sınırına",
@@ -1440,9 +1440,9 @@
   "de": "Die Wortverbindung zu wählen heißt zu wählen, wessen Problem der Preis ist."
  },
  {
-  "tr": "Şimdi dersin kuralı. Toprak konusunda ad izin demektir:",
+  "tr": "Şimdi bugünün kuralı. Toprak konusunda ad izin demektir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Boden heißt der Name Erlaubnis:"
+  "de": "Jetzt die Regel von heute. Beim Boden heißt der Name Erlaubnis:"
  },
  {
   "tr": "Süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor.",
@@ -1480,9 +1480,9 @@
   "de": "Mit Gentechnik kann ein Patent verknappen, was das Feld umsonst gibt."
  },
  {
-  "tr": "Şimdi dersin kuralı. İklim raporunda adres bir KOŞUL taşır:",
+  "tr": "Şimdi bugünün kuralı. İklim raporunda adres bir KOŞUL taşır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Klimabericht trägt die Adresse eine BEDINGUNG:"
+  "de": "Jetzt die Regel von heute. Im Klimabericht trägt die Adresse eine BEDINGUNG:"
  },
  {
   "tr": "Şimdi toprak el değiştirmesini üç ayrı failli anlatacaksın.",
@@ -1520,9 +1520,9 @@
   "de": "Die Preisvolatilität wird gemessen, das Freihandelsabkommen wird unterschrieben."
  },
  {
-  "tr": "Şimdi dersin kuralı. Etiket tartışmasında fiil iddiayı taşır:",
+  "tr": "Şimdi bugünün kuralı. Etiket tartışmasında fiil iddiayı taşır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Etikettendebatte trägt das Verb die Aussage:"
+  "de": "Jetzt die Regel von heute. In der Etikettendebatte trägt das Verb die Aussage:"
  },
  {
   "tr": "Toprak anlatısında fail kaybolursa geriye yalnız kader kalır.",
@@ -1545,7 +1545,7 @@
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Agrarthese. Sprich nach:"
  },
  {
-  "tr": "Şimdi sıra sende: Agroekolojiyi övsek de şehri besleyen verim.",
+  "tr": "Şimdi sıra sende: Agroekolojiyi ne kadar övsek de şehri besleyen verim.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: So sehr wir die Agrarökologie loben, satt macht die Stadt der Ertrag."
  },
@@ -1570,17 +1570,17 @@
   "de": "Hier gibt es keine Massentierhaltung, hier gibt es humane Haltung."
  },
  {
-  "tr": "Şimdi dersin kuralı. Tarım tartışmasında herkesin bir çıkarı var:",
+  "tr": "Şimdi bugünün kuralı. Tarım tartışmasında herkesin bir çıkarı var:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Agrardebatte hat jede Seite einen Vorteil:"
+  "de": "Jetzt die Regel von heute. In der Agrardebatte hat jede Seite ein Interesse:"
  },
  {
   "tr": "Şimdi sıra sende: Gıda egemenliği pazarın yerel olmasını istiyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Ernährungssouveränität verlangt, dass der Markt örtlich sei."
+  "de": "Jetzt bist du dran: Die Ernährungssouveränität verlangt, dass der Markt regional sei."
  },
  {
-  "tr": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı tüketebilir.",
+  "tr": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı pekâlâ tüketebilir.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Die Bodenerosion kann den Hang durchaus in einer Generation auszehren."
  },
@@ -1620,9 +1620,9 @@
   "de": "Das heißt der Preis, der an der Weltbörse entsteht. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:",
+  "tr": "Şimdi bugünün kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Saatgutvertrag ist die Auslassung eine RECHTSFRAGE:"
+  "de": "Jetzt die Regel von heute. Im Saatgutvertrag ist die Auslassung eine RECHTSFRAGE:"
  },
  {
   "tr": "Şimdi sen kur: Rapor, saha araştırmasının yalnızca işaret ettiğini açıkça iddia ediyor.",
@@ -1640,14 +1640,14 @@
   "de": "Hallo! Heute lernen wir die Adressen, die einen langen Klimabericht zusammenhalten."
  },
  {
-  "tr": "Şimdi dersin kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:",
+  "tr": "Şimdi bugünün kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Agrardebatte ist das Zugeständnis ein Maß der Redlichkeit:"
+  "de": "Jetzt die Regel von heute. In der Agrardebatte ist das Zugeständnis ein Maß der Redlichkeit:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:",
+  "tr": "Şimdi bugünün kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Boden bestimmt das Vorangestellte die HANDELNDE PERSON:"
+  "de": "Jetzt die Regel von heute. Beim Boden bestimmt das Vorangestellte die HANDELNDE PERSON:"
  },
  {
   "tr": "Tarım toprağının yapıya gitmesi demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1665,9 +1665,9 @@
   "de": "Hallo! Heute lernen wir das weggelassene Glied im Reden über Saatgutrechte."
  },
  {
-  "tr": "Şimdi dersin kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:",
+  "tr": "Şimdi bugünün kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Reden über die Umwelt ist das Modalverb die Glaubwürdigkeit selbst:"
+  "de": "Jetzt die Regel von heute. Im Reden über die Umwelt ist das Modalverb die Glaubwürdigkeit selbst:"
  },
  {
   "tr": "Şimdi sen kur: Satışın arkasında başarısız bir çiftliğin devri duruyor.",
@@ -1720,14 +1720,14 @@
   "de": "Das heißt, dass der Oberboden mit Wasser und Wind fortgeht. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:",
+  "tr": "Şimdi bugünün kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spott entsteht, wenn man das Werbewort unverändert benutzt:"
+  "de": "Jetzt die Regel von heute. Der Spott entsteht, wenn man das Werbewort unverändert benutzt:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:",
+  "tr": "Şimdi bugünün kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Preise sagt die Wortverbindung, WESSEN Preis gemeint ist:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch der Preise sagt die Wortverbindung, WESSEN Preis gemeint ist:"
  },
  {
   "tr": "Şimdi sen kur: Aşırı gübrelemek kuyuda nitrat kirliliği anlamına gelebilir.",
@@ -1877,7 +1877,7 @@
  {
   "tr": "Kesin felaket cümlesi tartışmayı kapatıyor; kip ise karşındakini masada tutuyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Ein bestimmter Katastrophensatz beendet das Gespräch; das Modalverb dagegen hält das Gegenüber am Tisch. Bist du bereit?"
+  "de": "Ein Katastrophensatz ohne Vorbehalt beendet das Gespräch; das Modalverb dagegen hält das Gegenüber am Tisch. Bist du bereit?"
  },
  {
   "tr": "Hangi adla anıldığı onun ne olacağını belirliyor; ad değişince izin de değişiyor. Hazır mısın?",
@@ -1922,7 +1922,7 @@
  {
   "tr": "ise bunun bir senaryo olduğunu söyler. Kesin söylenen bir felaket, bir kez gerçekleşmezse bütün savı götürür.",
   "kind": "say.tr",
-  "de": "dagegen sagt, dass dies ein Szenario ist. Eine bestimmt genannte Katastrophe reißt die ganze These mit, wenn sie einmal ausbleibt."
+  "de": "dagegen sagt, dass dies ein Szenario ist. Eine als sicher angekündigte Katastrophe reißt die ganze These mit, wenn sie einmal ausbleibt."
  },
  {
   "tr": "Aktarma fiili iddiayı savunur ya da askıya alır; alıcı da çoğu zaman etiketi değil o fiili duyar. Hazır mısın?",
@@ -1932,7 +1932,7 @@
  {
   "tr": "diyorsan istek senin çiftliğinin değil bir ölçünün isteği olur. «Ben istiyorum» diyen çiftçi hemen bir taraf sayılır.",
   "kind": "say.tr",
-  "de": "sagst, ist die Forderung nicht die deines Hofes, sondern die eines Maßstabs. Ein Bauer, der «ich will» sagt, gilt sofort als Partei."
+  "de": "sagst, ist die Forderung nicht die deines Hofes, sondern die eines Maßstabs. Ein Bauer, der „ich will“ sagt, gilt sofort als Partei."
  },
  {
   "tr": "Sözleşmede yazmayan şey çiftçinin kaybettiği haktır; bu yüzden eksiltmeyi okumak burada bir hak bilgisi. Hazır mısın?",
@@ -1967,6 +1967,6 @@
  {
   "tr": "Kimin istediğini tartışma dışına çıkaran biçim savı koruyor; tarımda bu özellikle önemli çünkü herkes bir çıkar sahibi. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Form, die die Frage nach der fordernden Person aus der Debatte nimmt, schützt die These; in der Landwirtschaft ist das besonders wichtig, weil jede Seite einen Vorteil hat. Bist du bereit?"
+  "de": "Die Form, die die Frage nach der fordernden Person aus der Debatte nimmt, schützt die These; in der Landwirtschaft ist das besonders wichtig, weil jede Seite eigene Interessen hat. Bist du bereit?"
  }
 ]

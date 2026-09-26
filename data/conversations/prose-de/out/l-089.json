@@ -15,7 +15,7 @@
   "de": "Mutmaßen"
  },
  {
-  "tr": "Geriden anlatmak",
+  "tr": "Öncesini anlatmak",
   "kind": "titleTr",
   "de": "Von vorher erzählen"
  },
@@ -402,27 +402,27 @@
  {
   "tr": "Şeyi bağlarken",
   "kind": "hint.tr",
-  "de": "Beim Verbinden einer Sache"
+  "de": "Beim Verbinden einer Sache –"
  },
  {
   "tr": "Yeri bağlarken",
   "kind": "hint.tr",
-  "de": "Beim Verbinden eines Ortes"
+  "de": "Beim Verbinden eines Ortes –"
  },
  {
   "tr": "İmkânsızlık için",
   "kind": "hint.tr",
-  "de": "Für die Unmöglichkeit"
+  "de": "Für die Unmöglichkeit –"
  },
  {
   "tr": "Kişiyi bağlarken",
   "kind": "hint.tr",
-  "de": "Beim Verbinden einer Person"
+  "de": "Beim Verbinden einer Person –"
  },
  {
   "tr": "Salt tahmin için",
   "kind": "hint.tr",
-  "de": "Für eine bloße Vermutung"
+  "de": "Für eine bloße Vermutung –"
  },
  {
   "tr": "İhtimal kipi ile:",
@@ -432,17 +432,17 @@
  {
   "tr": "Önce olan iş için",
   "kind": "hint.tr",
-  "de": "Für die frühere Handlung"
+  "de": "Für die frühere Handlung –"
  },
  {
   "tr": "Bu fiilin ardılı için",
   "kind": "hint.tr",
-  "de": "Für das, was diesem Verb folgt"
+  "de": "Für das, was diesem Verb folgt –"
  },
  {
   "tr": "Emin olduğun çıkarım için",
   "kind": "hint.tr",
-  "de": "Für einen sicheren Schluss"
+  "de": "Für einen sicheren Schluss –"
  },
  {
   "tr": "Önce biten iş bir kat geride:",
@@ -452,17 +452,17 @@
  {
   "tr": "Reddetme fiilinin ardılı için",
   "kind": "hint.tr",
-  "de": "Für das, was auf das Verb des Abstreitens folgt"
+  "de": "Für das, was auf das Verb des Abstreitens folgt –"
  },
  {
   "tr": "Belirtiye dayanan beklenti için",
   "kind": "hint.tr",
-  "de": "Für eine Erwartung mit Anzeichen"
+  "de": "Für eine Erwartung mit Anzeichen –"
  },
  {
   "tr": "Bu kibar ricanın ikinci fiili için",
   "kind": "hint.tr",
-  "de": "Für das zweite Verb dieser höflichen Bitte"
+  "de": "Für das zweite Verb dieser höflichen Bitte –"
  },
  {
   "tr": "Ayarlanmış plan şimdiki zamanla söylenir:",
@@ -492,7 +492,7 @@
  {
   "tr": "şeyi,",
   "kind": "say.tr",
-  "de": "die Sache,"
+  "de": "für die Sache,"
  },
  {
   "tr": "ister,",
@@ -507,7 +507,7 @@
  {
   "tr": "kişiyi,",
   "kind": "say.tr",
-  "de": "verbindet die Person,"
+  "de": "für die Person,"
  },
  {
   "tr": "ihtimalse",
@@ -542,7 +542,7 @@
  {
   "tr": "yeri bağlar.",
   "kind": "say.tr",
-  "de": "den Ort."
+  "de": "für den Ort."
  },
  {
   "tr": "belirti varken",
@@ -560,14 +560,14 @@
   "de": "fest vereinbarter Plan"
  },
  {
-  "tr": "Düzen değişecek.",
+  "tr": "Sistem değişecek.",
   "kind": "say.tr",
   "de": "Das System wird sich ändern."
  },
  {
   "tr": "Olabilirlik için",
   "kind": "say.tr",
-  "de": "Für das Mögliche sagen wir"
+  "de": "Für das Mögliche"
  },
  {
   "tr": "Bir işe girişmeye",
@@ -577,7 +577,7 @@
  {
   "tr": "denir. Tekrar et:",
   "kind": "say.tr",
-  "de": "heißt es. Wiederhole:"
+  "de": "auf Englisch. Wiederhole:"
  },
  {
   "tr": "Özetleyelim: ikna",
@@ -587,7 +587,7 @@
  {
   "tr": "denir. Şunu söyle:",
   "kind": "say.tr",
-  "de": "heißt es. Sag das:"
+  "de": "auf Englisch. Sag das:"
  },
  {
   "tr": "ihtimal veriyorsan",
@@ -622,7 +622,7 @@
  {
   "tr": "endişelenmek için ise",
   "kind": "say.tr",
-  "de": "und für sich sorgen"
+  "de": "und für sich sorgen –"
  },
  {
   "tr": "Çözülmesi gereken şeye",
@@ -687,7 +687,7 @@
  {
   "tr": "iyi bir sonuç beklemeye ise",
   "kind": "say.tr",
-  "de": "und für ein gutes Ende erwarten"
+  "de": "und auf ein gutes Ende hoffen heißt"
  },
  {
   "tr": "Sorunu daha önce duymuştum.",
@@ -717,7 +717,7 @@
  {
   "tr": "Şakaya gelmeyen bir hâl için",
   "kind": "say.tr",
-  "de": "Für einen Zustand, der keinen Spaß versteht, sagen wir"
+  "de": "Für einen Zustand, der keinen Spaß versteht, –"
  },
  {
   "tr": "bir şeyin önemli olmasına ise",
@@ -812,7 +812,7 @@
  {
   "tr": "denir. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "heißt es. Das ist auch unsere erste Wendung. Wiederhole:"
+  "de": "auf Englisch. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
   "tr": "Şimdi sıra sende: Şu anda işte olmalı.",
@@ -857,7 +857,7 @@
  {
   "tr": "denir ve bu fiil tartışmanın sert ucudur.",
   "kind": "say.tr",
-  "de": "heißt es, und dieses Verb ist das scharfe Ende der Diskussion."
+  "de": "auf Englisch, und dieses Verb ist das scharfe Ende der Diskussion."
  },
  {
   "tr": "Son kalıbımız ihtimal veriyor. Tekrar et:",
@@ -870,9 +870,9 @@
   "de": "Jetzt bist du dran: Die Umfrage, die ich gelesen habe, war kurz."
  },
  {
-  "tr": "Şimdi dersin kuralı. Elinde belirti yokken",
+  "tr": "Şimdi bugünün kuralı. Elinde belirti yokken",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Ohne Anzeichen steht"
+  "de": "Jetzt die Regel von heute. Ohne Anzeichen steht"
  },
  {
   "tr": "Bir gün daha beklemenizin sakıncası var mı?",
@@ -897,7 +897,7 @@
  {
   "tr": "Bir metni yazan kişi demek. Konuyu bilene ise",
   "kind": "say.tr",
-  "de": "Das heißt die Person, die einen Text schreibt. Und für jemanden, der sich auskennt"
+  "de": "Das heißt die Person, die einen Text schreibt. Und wer sich auskennt, heißt"
  },
  {
   "tr": "Çoktan demek. İlk kalıbımız da bu. Tekrar et:",
@@ -907,7 +907,7 @@
  {
   "tr": "denir ve kaynağı sorgulamak asıl onun işidir.",
   "kind": "say.tr",
-  "de": "heißt es, und die Quelle zu hinterfragen ist eigentlich seine Aufgabe."
+  "de": "auf Englisch, und die Quelle zu hinterfragen ist eigentlich seine Aufgabe."
  },
  {
   "tr": "Endişelenme, buna tek başıma kalkışmayacağım.",
@@ -1027,7 +1027,7 @@
  {
   "tr": "denir; kanıt değildir, bu yüzden ihtimal kipiyle söylenir.",
   "kind": "say.tr",
-  "de": "heißt es, und weil es kein Beweis ist, steht es im Modalverb der Möglichkeit."
+  "de": "auf Englisch, und weil es kein Beweis ist, steht es im Modalverb der Möglichkeit."
  },
  {
   "tr": "Şimdi bir arkadaşınla ne olmuş olabileceğini konuşacaksın.",
@@ -1040,9 +1040,9 @@
   "de": "Unsere zweite Wendung schließt eine Möglichkeit ganz aus. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kesinlik derecesi kipi seçiyor: eminsen",
+  "tr": "Şimdi bugünün kuralı. Kesinlik derecesi kipi seçiyor: eminsen",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Grad der Sicherheit wählt das Modalverb: bist du sicher, sagst du"
+  "de": "Jetzt die Regel von heute. Der Grad der Sicherheit wählt das Modalverb: bist du sicher, sagst du"
  },
  {
   "tr": "Bir tane daha: Kararı tek başlarına aldıklarını reddediyorlar.",
@@ -1050,9 +1050,9 @@
   "de": "Noch eins: Sie streiten ab, die Entscheidung allein getroffen zu haben."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aynı cümlede iki geçmiş iş varsa ÖNCE olan",
+  "tr": "Şimdi bugünün kuralı. Aynı cümlede iki geçmiş iş varsa ÖNCE olan",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Stehen zwei vergangene Handlungen im selben Satz, wird die FRÜHERE mit"
+  "de": "Jetzt die Regel von heute. Stehen zwei vergangene Handlungen im selben Satz, wird die FRÜHERE mit"
  },
  {
   "tr": "hâlini ister. Bu üç yolu ezberlemek yerine örnekle tanıyacaksın.",
@@ -1070,9 +1070,9 @@
   "de": "Jetzt erzählst du einem Freund, was vor der Debatte war, die er verpasst hat."
  },
  {
-  "tr": "Şimdi dersin kuralı. İkna fiillerinden sonra ne geleceğini fiilin kendisi belirler:",
+  "tr": "Şimdi bugünün kuralı. İkna fiillerinden sonra ne geleceğini fiilin kendisi belirler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was nach einem Überzeugungsverb kommt, bestimmt das Verb selbst:"
+  "de": "Jetzt die Regel von heute. Was nach einem Überzeugungsverb kommt, bestimmt das Verb selbst:"
  },
  {
   "tr": "Merhaba! Bugün bir tartışmanın öncesini anlatmayı öğreneceğiz: sen konuşmadan önce ne olmuştu.",
@@ -1135,8 +1135,8 @@
   "de": "Die Quelle zu nennen verlangt meist kein einzelnes Wort, sondern eine Beschreibung, und was diese Beschreibung an den Satz bindet, ist der Relativsatz. Bist du bereit?"
  },
  {
-  "tr": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor ve başındaki kelime neyi tarif ettiğini söylüyor:",
+  "tr": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor ve başındaki kelime neyi tarif ettiğini söylüyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt, und sein erstes Wort sagt, was beschrieben wird:"
+  "de": "Jetzt die Regel von heute. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt, und sein erstes Wort sagt, was beschrieben wird:"
  }
 ]

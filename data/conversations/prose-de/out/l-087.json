@@ -82,10 +82,10 @@
  {
   "tr": "Peki, ileri düzeye hazır mısın?",
   "kind": "openingTr",
-  "de": "Und, bist du bereit für die Oberstufe?"
+  "de": "Und, bist du bereit für die fortgeschrittene Stufe?"
  },
  {
-  "tr": "Kim ne yapıyor peki? Ben kaybettim.",
+  "tr": "Kim ne yapıyor peki? Aklım karıştı.",
   "kind": "openingTr",
   "de": "Wer macht denn was? Ich blicke nicht mehr durch."
  },
@@ -100,9 +100,9 @@
   "de": "Support, was kann ich für Sie tun?"
  },
  {
-  "tr": "Özel dersten yeni çıktın ve bir arkadaşın öğretmenin ne dediğini soruyor. Övgüyü, öğüdü ve sorulan soruyu aktar.",
+  "tr": "Özel dersten yeni çıktın ve bir arkadaşın öğretmenin ne dediğini soruyor. Övgüyü, öğüdü ve sorulan soruyu aktar; sonra kendi düşünceni de söyle.",
   "kind": "scene",
-  "de": "Du kommst gerade aus dem Einzelunterricht und eine Freundin fragt, was die Lehrkraft gesagt hat. Gib das Lob, den Rat und die gestellte Frage weiter."
+  "de": "Du kommst gerade aus dem Einzelunterricht und eine Freundin fragt, was die Lehrkraft gesagt hat. Gib das Lob, den Rat und die gestellte Frage weiter; sag danach auch deine eigene Meinung."
  },
  {
   "tr": "Grup projesinde iş bölümü yapıyorsunuz. Kimin neyi yaptığını, hangi görevin kimde olduğunu ve kimin sunacağını yan cümlelerle netleştir.",
@@ -112,7 +112,7 @@
  {
   "tr": "Bir danışmanla sıradaki adımını konuşuyorsun. İleri düzeye geçmek isteyip istemediğini, çekincelerini ve gerçekçi planını bağlaçlarla anlat.",
   "kind": "scene",
-  "de": "Du besprichst mit einem Berater deinen nächsten Schritt. Erklär mit Konnektoren, ob du in die Oberstufe willst, welche Vorbehalte du hast und wie dein realistischer Plan aussieht."
+  "de": "Du besprichst mit einem Berater deinen nächsten Schritt. Erklär mit Konnektoren, ob du auf die fortgeschrittene Stufe willst, welche Vorbehalte du hast und wie dein realistischer Plan aussieht."
  },
  {
   "tr": "Bir arkadaşın çalışmayı bırakmak üzere ve seninle konuşuyor. Neyin işe yaradığını anlat, koşul cümleleriyle seçenekler sun ve bir öneri getir.",
@@ -210,6 +210,11 @@
   "de": "hochladen"
  },
  {
+  "tr": "araca yüklemek",
+  "kind": "vocab.tr",
+  "de": "verladen"
+ },
+ {
   "tr": "anlaşılır",
   "kind": "vocab.tr",
   "de": "verständlich"
@@ -232,7 +237,7 @@
  {
   "tr": "ileri düzey",
   "kind": "vocab.tr",
-  "de": "Oberstufe"
+  "de": "fortgeschritten"
  },
  {
   "tr": "öğüt vermek",
@@ -290,9 +295,9 @@
   "de": "nennt im Passiv, was möglich ist"
  },
  {
-  "tr": "Yanlış. Zamir düştüğünde sona ikinci bir zamir gelmez:",
+  "tr": "Yanlış. Zamir düştüğünde yan cümlenin sonuna ikinci bir zamir gelmez:",
   "kind": "why.tr",
-  "de": "Falsch. Fällt das Pronomen weg, kommt am Ende kein zweites:"
+  "de": "Falsch. Fällt das Pronomen weg, kommt ans Ende des Nebensatzes kein zweites:"
  },
  {
   "tr": "Yanlış. Koşul cümlesinin içinde gelecek durmaz; orası geniş zaman olur:",
@@ -317,7 +322,7 @@
  {
   "tr": "Bu bağlaçtan sonra tam bir cümle gelir. Hazır için",
   "kind": "hint.tr",
-  "de": "Nach diesem Konnektor steht ein vollständiger Satz. Für bereit sagen wir"
+  "de": "Nach diesem Konnektor steht ein vollständiger Satz. Für bereit"
  },
  {
   "tr": "Kim değerlendirdiği söylenmiyor, o yüzden edilgen:",
@@ -327,7 +332,7 @@
  {
   "tr": "Kişi tanımlanıyor ve zamir özne, o yüzden düşmez. Sunmak için",
   "kind": "hint.tr",
-  "de": "Eine Person wird beschrieben und das Pronomen ist Subjekt, deshalb bleibt es. Für präsentieren sagen wir"
+  "de": "Eine Person wird beschrieben und das Pronomen ist Subjekt, deshalb bleibt es. Für präsentieren"
  },
  {
   "tr": "ders,",
@@ -362,7 +367,7 @@
  {
   "tr": "de duyarsın.",
   "kind": "say.tr",
-  "de": "hörst du auch."
+  "de": "statt was."
  },
  {
   "tr": "ödül için ise",
@@ -427,22 +432,22 @@
  {
   "tr": "Grup sorumlusu için",
   "kind": "say.tr",
-  "de": "Für die Gruppenleitung sagen wir"
+  "de": "Für die Gruppenleitung"
  },
  {
-  "tr": "payın kendisine ise",
+  "tr": "her birinin üstlendiği işe ise",
   "kind": "say.tr",
-  "de": "und der Anteil selbst heißt"
+  "de": "und die Arbeit, die jeder übernimmt, heißt"
  },
  {
   "tr": "şeyi tanımlayan ise",
   "kind": "say.tr",
-  "de": "und der, der ein Ding beschreibt, mit"
+  "de": "; der, der ein Ding beschreibt, mit"
  },
  {
   "tr": "Kesintisiz seri için",
   "kind": "say.tr",
-  "de": "Für eine Serie ohne Unterbrechung sagen wir"
+  "de": "Für eine Serie ohne Unterbrechung"
  },
  {
   "tr": "Kursun her parçasına",
@@ -457,7 +462,7 @@
  {
   "tr": "Cesaretlendirmek için",
   "kind": "say.tr",
-  "de": "Für ermutigen sagen wir"
+  "de": "Für ermutigen"
  },
  {
   "tr": "Ekranda görünen yazıya",
@@ -467,7 +472,7 @@
  {
   "tr": "ile geniş zaman gelir.",
   "kind": "say.tr",
-  "de": "das Präsens."
+  "de": "mit dem Präsens."
  },
  {
   "tr": "izlenen kayıt için ise",
@@ -485,7 +490,7 @@
   "de": "gesagt; die Nomenform ist"
  },
  {
-  "tr": "Bir işi paylara ayırmaya",
+  "tr": "Bir işi parçalara ayırmaya",
   "kind": "say.tr",
   "de": "Eine Arbeit in Teile teilen heißt"
  },
@@ -502,7 +507,7 @@
  {
   "tr": "İlk kalıbımız. Yorum için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für den Kommentar sagen wir"
+  "de": "Unsere erste Wendung. Für den Kommentar"
  },
  {
   "tr": "Erişim bir kodla veriliyor.",
@@ -535,9 +540,9 @@
   "de": "Die Aufgabe, die wir geteilt haben, war leichter."
  },
  {
-  "tr": "denir ve hep çoğul kullanılır.",
+  "tr": "denir ve çoğunlukla çoğul kullanılır.",
   "kind": "say.tr",
-  "de": "genannt und steht immer im Plural."
+  "de": "auf Englisch und steht meist im Plural."
  },
  {
   "tr": "Gerçek OLMAYAN bir durumda ise",
@@ -552,7 +557,7 @@
  {
   "tr": "İkinci kalıbımız. İndirmek için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung. Für herunterladen sagen wir"
+  "de": "Unsere zweite Wendung. Für herunterladen"
  },
  {
   "tr": "Bize destek olanlar onu sunacak.",
@@ -592,12 +597,12 @@
  {
   "tr": "kullanılır; birinci tekilde bu kalıpta",
   "kind": "say.tr",
-  "de": "benutzt; in der ersten Person Singular steht bei dieser Wendung"
+  "de": "wird verwendet; in der ersten Person Singular hörst du bei dieser Wendung auch"
  },
  {
   "tr": "Son kalıbımız isim alıyor. Gerçekçi için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung nimmt ein Nomen. Für realistisch sagen wir"
+  "de": "Unsere letzte Wendung nimmt ein Nomen. Für realistisch"
  },
  {
   "tr": "Bir tane daha: Video ne zaman yükleniyor?",
@@ -627,7 +632,7 @@
  {
   "tr": "denir; hem fiil hem isim olarak kullanılır.",
   "kind": "say.tr",
-  "de": "genannt; es wird als Verb und als Nomen benutzt."
+  "de": "auf Englisch; es wird als Verb und als Nomen benutzt."
  },
  {
   "tr": "İkinci kalıbımız işi tanımlıyor. Tekrar et:",
@@ -667,7 +672,7 @@
  {
   "tr": "İkinci kalıbımız iki cümleyi bağlıyor. Plan için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung verbindet zwei Sätze. Für den Plan sagen wir"
+  "de": "Unsere zweite Wendung verbindet zwei Sätze. Für den Plan"
  },
  {
   "tr": "Şimdi bir arkadaşına geri bildirimi aktaracaksın.",
@@ -687,12 +692,12 @@
  {
   "tr": "İleri düzey demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt Oberstufe. Das ist auch unsere erste Wendung. Sprich nach:"
+  "de": "Das heißt fortgeschritten. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Edilgen iki parçadan kurulur:",
+  "tr": "Şimdi bugünün kuralı. Edilgen iki parçadan kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Passiv besteht aus zwei Teilen:"
+  "de": "Jetzt die Regel von heute. Das Passiv besteht aus zwei Teilen:"
  },
  {
   "tr": "Şimdi sıra sende: Sunum yapan öğrenci çok sakindi.",
@@ -742,12 +747,12 @@
  {
   "tr": "Bir tane daha: Maliyete rağmen ileri düzey kursu alacağım.",
   "kind": "say.tr",
-  "de": "Noch eins: Trotz der Kosten mache ich den Kurs der Oberstufe."
+  "de": "Noch eins: Trotz der Kosten mache ich den Fortgeschrittenenkurs."
  },
  {
   "tr": "denir; yorumdan farkı daha kısa ve daha kişisel olmasıdır.",
   "kind": "say.tr",
-  "de": "genannt; der Unterschied zum Kommentar ist, dass sie kürzer und persönlicher ist."
+  "de": "auf Englisch; der Unterschied zum Kommentar ist, dass sie kürzer und persönlicher ist."
  },
  {
   "tr": "Şimdi sıra sende: Hazır olmama rağmen bir ay bekleyeceğim.",
@@ -762,7 +767,7 @@
  {
   "tr": "ile başlar. Zamir yan cümlenin NESNESİYSE düşebilir, öznesiyse düşmez.",
   "kind": "say.tr",
-  "de": "Ist das Pronomen OBJEKT des Nebensatzes, darf es wegfallen, als Subjekt nicht."
+  "de": ". Ist das Pronomen OBJEKT des Nebensatzes, darf es wegfallen, als Subjekt nicht."
  },
  {
   "tr": "Sıkılmış demek; dikkat, kişi için bu biçim kullanılır. İlk kalıbımız da bu. Tekrar et:",
@@ -780,9 +785,9 @@
   "de": "Hallo! Heute lernen wir weiterzugeben, was die Lehrkraft gesagt hat: was sie sagte, was sie vorschlug, was sie fragte."
  },
  {
-  "tr": "Merhaba! Bu modülün son dersi: sıradaki adımı seçmek. İleri düzeye geçmek mi, sağlamlaştırmak mı.",
+  "tr": "Merhaba! Bu, modülün son Konuşma adımı: sıradaki adımı seçmek. İleri düzeye geçmek mi, sağlamlaştırmak mı.",
   "kind": "say.tr",
-  "de": "Hallo! Die letzte Lektion dieses Moduls: den nächsten Schritt wählen. In die Oberstufe gehen oder festigen."
+  "de": "Hallo! Der letzte Sprechen-Schritt dieses Moduls: den nächsten Schritt wählen. Auf die fortgeschrittene Stufe wechseln oder festigen."
  },
  {
   "tr": "Motivasyon konuşmasının dili koşuldur: şu olursa şunu yaparım, şu olsaydı şu olurdu. Hazır mısın?",
@@ -792,7 +797,7 @@
  {
   "tr": "Grupta beş kişi varsa hepsinin adı 'the partner'; kimi kastettiğini yan cümle söyler. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Sind fünf Leute in der Gruppe, heißen alle 'the partner'; wen du meinst, sagt der Nebensatz. Bist du bereit?"
+  "de": "Sind fünf Leute in der Gruppe, heißen alle „the partner“; wen du meinst, sagt der Nebensatz. Bist du bereit?"
  },
  {
   "tr": "Bu konuşmada heves ile gerçekçilik aynı cümlede duruyor ve onları bağlayan şey bağlaçlar. Hazır mısın?",

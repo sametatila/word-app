@@ -66,7 +66,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu dersin asıl işi tek bir ayrım: bitmiş bir dönemle hâlâ süren bir deneyim İngilizcede farklı zamanla söylenir. Hazır mısın?"
+      "text": "Bugünün asıl işi tek bir ayrım: bitmiş bir dönemle hâlâ süren bir deneyim İngilizcede farklı zamanla söylenir. Hazır mısın?"
      }
     ],
     "expect": {
@@ -145,7 +145,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bir dönem BİTTİYSE ve ne zaman olduğu belliyse past simple kullanılır:"
+      "text": "Şimdi bugünün kuralı. Bir dönem BİTTİYSE ve ne zaman olduğu belliyse past simple kullanılır:"
      },
      {
       "lang": "en",
@@ -393,7 +393,7 @@
      },
      {
       "lang": "tr",
-      "text": "yani 'terfi ettirildim'. Kim ettirdiği söylenmez."
+      "text": "yani 'terfi ettirildim'. Kimin terfi ettirdiği söylenmez."
      }
     ]
    },
@@ -671,23 +671,23 @@
      },
      {
       "lang": "en",
-      "text": "I have a qualification in project training."
+      "text": "I got my qualification after a year of training."
      },
      {
       "lang": "tr",
-      "text": "Proje eğitiminde bir yeterliliğim var."
+      "text": "Yeterliliğimi bir yıllık eğitimden sonra aldım."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have a qualification in project training."
+     "target": "I got my qualification after a year of training."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan bir basamak geriye alınır:"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan bir basamak geriye alınır:"
      },
      {
       "lang": "en",
@@ -1151,7 +1151,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bazı fiiller kendinden sonra -ing ister:"
+      "text": "Şimdi bugünün kuralı. Bazı fiiller kendinden sonra -ing ister:"
      },
      {
       "lang": "en",
@@ -1609,7 +1609,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Dışarıdan gelen bir zorunluluk"
+      "text": "Şimdi bugünün kuralı. Dışarıdan gelen bir zorunluluk"
      },
      {
       "lang": "en",
@@ -2034,7 +2034,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir; çalıştığın birime ise"
+      "text": "denir; Türkçedeki 'mesai arkadaşı' tam olarak budur. Çalıştığın birime ise"
      },
      {
       "lang": "en",
@@ -2042,7 +2042,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçedeki 'mesai arkadaşı' tam olarak bu kelimedir."
+      "text": "denir."
      }
     ]
    },
@@ -2070,7 +2070,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bir işi kimin yaptığı önemli değilse ya da belli değilse edilgen çatı kurulur:"
+      "text": "Şimdi bugünün kuralı. Bir işi kimin yaptığı önemli değilse ya da belli değilse edilgen çatı kurulur:"
      },
      {
       "lang": "en",
@@ -2543,7 +2543,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Takvime yazılmış, karşı tarafla kararlaştırılmış bir iş için şimdiki zaman kullanılır:"
+      "text": "Şimdi bugünün kuralı. Takvime yazılmış, karşı tarafla kararlaştırılmış bir iş için şimdiki zaman kullanılır:"
      },
      {
       "lang": "en",
@@ -3012,7 +3012,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
      },
      {
       "lang": "en",
@@ -3477,7 +3477,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kişi tanımlanıyorsa"
+      "text": "Şimdi bugünün kuralı. Kişi tanımlanıyorsa"
      },
      {
       "lang": "en",
@@ -3849,14 +3849,14 @@
   "level": "B1",
   "course": "en",
   "icon": "chart",
-  "title": "The appraisal",
+  "title": "The performance review",
   "titleTr": "Değerlendirme görüşmesi",
   "summary": "Söyleneni başkasına aktarmayı öğretir: zaman bir basamak geriye gider, zamirler kayar.",
   "minutes": 11,
   "focusId": "Reported speech",
   "vocab": [
    {
-    "de": "appraisal",
+    "de": "performance review",
     "tr": "değerlendirme görüşmesi"
    },
    {
@@ -3926,7 +3926,7 @@
      },
      {
       "lang": "en",
-      "text": "appraisal"
+      "text": "performance review"
      },
      {
       "lang": "tr",
@@ -3934,12 +3934,12 @@
      },
      {
       "lang": "en",
-      "text": "My appraisal is next month."
+      "text": "My performance review is next month."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My appraisal is next month."
+     "target": "My performance review is next month."
     }
    },
    {
@@ -3994,7 +3994,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -4424,7 +4424,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün modülün son dersi: bir işten ayrılmayı ve işi devretmeyi anlatmak."
+      "text": "Merhaba! Bugün modülün son Konuşma adımı: bir işten ayrılmayı ve işi devretmeyi anlatmak."
      },
      {
       "lang": "tr",
@@ -4507,7 +4507,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
+      "text": "Şimdi bugünün kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
      },
      {
       "lang": "en",
@@ -4570,7 +4570,7 @@
      "kind": "produce",
      "target": "Although the job was hard, I learned a lot.",
      "accept": [
-      "Although the job was hard, I learned a lot.",
+      "Although the job was difficult, I learned a lot.",
       "Although the work was hard, I learned a lot."
      ],
      "hint": [
@@ -4660,7 +4660,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Saatler uzundu. Ancak takım harikaydı."
+      "text": "Şimdi sen kur: Çalışma saatleri uzundu. Ancak takım harikaydı."
      }
     ],
     "expect": {
@@ -4738,7 +4738,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Uzun saatlere rağmen keyif aldım."
+      "text": "Bir tane daha: Uzun çalışma saatlerine rağmen keyif aldım."
      }
     ],
     "expect": {
@@ -4952,7 +4952,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Arayış SÜRÜYORSA ve sayı veriyorsan present perfect kullanılır:"
+      "text": "Şimdi bugünün kuralı. Arayış SÜRÜYORSA ve sayı veriyorsan present perfect kullanılır:"
      },
      {
       "lang": "en",
@@ -5151,7 +5151,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir; İngilizcede olumsuzu yapan önek bu."
+      "text": "denir; baştaki un- İngilizcede anlamı olumsuza çeviren önektir."
      }
     ]
    },
@@ -5303,7 +5303,7 @@
     "tr": "manzara"
    },
    {
-    "de": "corridor",
+    "de": "hallway",
     "tr": "koridor"
    }
   ],
@@ -5365,7 +5365,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Evin alt katına"
+      "text": "Bodrum kata"
      },
      {
       "lang": "en",
@@ -5409,7 +5409,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bir ismin hangisi olduğunu söylemek için arkasına yan cümle eklenir:"
+      "text": "Şimdi bugünün kuralı. Bir ismin hangisi olduğunu söylemek için arkasına yan cümle eklenir:"
      },
      {
       "lang": "en",
@@ -5522,11 +5522,11 @@
      },
      {
       "lang": "en",
-      "text": "corridor"
+      "text": "hallway"
      },
      {
       "lang": "tr",
-      "text": "denir; Amerika'da aynı yere 'hallway' denir."
+      "text": "denir; otel ya da ofis gibi büyük binalarda 'corridor' da duyarsın."
      }
     ]
    },
@@ -5612,23 +5612,23 @@
      },
      {
       "lang": "en",
-      "text": "The corridor had no storage but a nice view."
+      "text": "The hallway had no storage, but the living room had a nice view."
      },
      {
       "lang": "tr",
-      "text": "Koridorda depo yoktu ama güzel bir manzara vardı."
+      "text": "Koridorda depolama alanı yoktu ama salonun manzarası güzeldi."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The corridor had no storage but a nice view."
+     "target": "The hallway had no storage, but the living room had a nice view."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Eve gelen misafire kapıyı açan yer koridordur; ferah bir daire için ise"
+      "text": "Ferah bir daire için"
      },
      {
       "lang": "en",
@@ -5636,7 +5636,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir ve bu kelime ilanların dilidir."
+      "text": "denir; bu kelime ilanların dilidir."
      }
     ]
    },
@@ -5870,7 +5870,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Sözleşmede kimin yaptığı önemli değildir, o yüzden edilgen çatı kurulur:"
+      "text": "Şimdi bugünün kuralı. Sözleşmede kimin yaptığı önemli değildir, o yüzden edilgen çatı kurulur:"
      },
      {
       "lang": "en",
@@ -6335,7 +6335,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Saati kararlaşmış bir iş için şimdiki zaman:"
+      "text": "Şimdi bugünün kuralı. Saati kararlaşmış bir iş için şimdiki zaman:"
      },
      {
       "lang": "en",
@@ -6675,7 +6675,7 @@
    },
    {
     "de": "tidy",
-    "tr": "toplamak"
+    "tr": "ortalığı toplamak"
    },
    {
     "de": "guest",
@@ -6796,7 +6796,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Ortak bir kural"
+      "text": "Şimdi bugünün kuralı. Ortak bir kural"
      },
      {
       "lang": "en",
@@ -6995,7 +6995,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile söylenir. İkincisi kavga etmek değil, farklı düşünmek anlamına da gelir."
+      "text": "ile söylenir. İkincisi yalnız kavga etmek değil, farklı düşünmek anlamına da gelir."
      }
     ]
    },
@@ -7135,7 +7135,7 @@
     "tr": "tamir etmek"
    },
    {
-    "de": "damp",
+    "de": "moisture",
     "tr": "rutubet"
    },
    {
@@ -7209,7 +7209,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Suyu tamir edene"
+      "text": "Su tesisatını tamir eden kişiye"
      },
      {
       "lang": "en",
@@ -7257,7 +7257,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -7386,7 +7386,7 @@
      },
      {
       "lang": "en",
-      "text": "damp"
+      "text": "moisture"
      },
      {
       "lang": "tr",
@@ -7418,7 +7418,7 @@
      },
      {
       "lang": "en",
-      "text": "I complained about the damp in the bedroom."
+      "text": "I complained about the moisture in the bedroom."
      },
      {
       "lang": "tr",
@@ -7427,7 +7427,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I complained about the damp in the bedroom."
+     "target": "I complained about the moisture in the bedroom."
     }
    },
    {
@@ -7750,7 +7750,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
      },
      {
       "lang": "en",
@@ -7919,7 +7919,7 @@
      },
      {
       "lang": "tr",
-      "text": "Okuma tüketimimizi gösteriyor, böylece tasarruf edip daha az boşa harcayabiliriz."
+      "text": "Sayaç okuması tüketimimizi gösteriyor, böylece tasarruf edip daha az boşa harcayabiliriz."
      }
     ],
     "expect": {
@@ -7947,7 +7947,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Okuma yanlışsa onları ararım."
+      "text": "Şimdi sen kur: Sayaç okuması yanlışsa onları ararım."
      }
     ],
     "expect": {
@@ -8159,7 +8159,7 @@
      },
      {
       "lang": "tr",
-      "text": "Komşu demek; Britanya yazımı sonunda u taşır. Tekrar et:"
+      "text": "Komşu demek; Britanya yazımında sondaki -or, -our olur. Tekrar et:"
      },
      {
       "lang": "en",
@@ -8219,7 +8219,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
+      "text": "Şimdi bugünün kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
      },
      {
       "lang": "en",
@@ -8696,7 +8696,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan"
      },
      {
       "lang": "en",
@@ -8797,7 +8797,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son ölçüm için"
+      "text": "Son ya da nihai için"
      },
      {
       "lang": "en",
@@ -8825,16 +8825,16 @@
      },
      {
       "lang": "en",
-      "text": "I left the apartment empty and gave the final key back."
+      "text": "The apartment was empty at the final inspection, and I gave back the key."
      },
      {
       "lang": "tr",
-      "text": "Daireyi boş bıraktım ve son anahtarı geri verdim."
+      "text": "Son kontrolde daire boştu ve anahtarı geri verdim."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I left the apartment empty and gave the final key back."
+     "target": "The apartment was empty at the final inspection, and I gave back the key."
     }
    },
    {
@@ -8903,7 +8903,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şu cümle üçünü birden bağlıyor. Tekrar et:"
+      "text": "Şu cümle iki kelimeyi bir arada kullanıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -8997,8 +8997,8 @@
   "chat": {
    "scene": "Çıkış kontrolü yapılıyor ve ev sahibi daireyi geziyor. Kontrolden önce neleri yaptığını sırayla anlat, bir hasar iddiasına cevap ver ve depozitoyu iste.",
    "partner": "her odayı tek tek bakan, titiz bir ev sahibi",
-   "opening": "Right, let's start in the kitchen. Had you cleaned in here?",
-   "openingTr": "Tamam, mutfaktan başlayalım. Burayı temizlemiş miydin?",
+   "opening": "Okay, let's start in the kitchen. Had you cleaned in here before I came?",
+   "openingTr": "Tamam, mutfaktan başlayalım. Ben gelmeden önce burayı temizlemiş miydin?",
    "goal": "Kontrolden önce yaptıklarını doğru sırayla anlattıysan, bir iddiaya cevap verdiysen ve depozitoyu istediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
@@ -9066,7 +9066,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu modülün son dersi: oturduğun mahalleyi anlatmak. Dükkânlar, parklar, komşuluk."
+      "text": "Merhaba! Bu, modülün son Konuşma adımı: oturduğun mahalleyi anlatmak. Dükkânlar, parklar, komşuluk."
      },
      {
       "lang": "tr",
@@ -9157,7 +9157,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bazı fiiller kendinden sonra -ing ister:"
+      "text": "Şimdi bugünün kuralı. Bazı fiiller kendinden sonra -ing ister:"
      },
      {
       "lang": "en",
@@ -9376,7 +9376,7 @@
      },
      {
       "lang": "tr",
-      "text": "deriz; bir önceki dersteki 'noise' isimdi, bu ise sıfat."
+      "text": "deriz; gürültünün kendisi 'noise' bir isimdir, bu ise sıfat."
      }
     ]
    },
@@ -9535,7 +9535,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçede 'çünkü' ve 'bu yüzden' cümlenin neresine koyulursa koyulsun anlaşılır. İngilizcede bağlacın yeri anlamı belirliyor. Hazır mısın?"
+      "text": "Türkçede 'çünkü' ve 'bu yüzden' cümlenin neresine konursa konsun anlaşılır. İngilizcede bağlacın yeri anlamı belirliyor. Hazır mısın?"
      }
     ],
     "expect": {
@@ -9606,7 +9606,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki bağlaç da aynı iki olayı bağlıyor ama sıra değişiyor:"
+      "text": "Şimdi bugünün kuralı. İki bağlaç da aynı iki olayı bağlıyor ama sıra değişiyor:"
      },
      {
       "lang": "en",
@@ -9614,7 +9614,7 @@
      },
      {
       "lang": "tr",
-      "text": "sebebi, "
+      "text": "sebebi,"
      },
      {
       "lang": "en",
@@ -9780,7 +9780,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bağlaçların yanında üç isim de işine yarayacak:"
+      "text": "Bağlaçların yanında üç kelime de işine yarayacak:"
      },
      {
       "lang": "en",
@@ -9832,16 +9832,16 @@
      },
      {
       "lang": "en",
-      "text": "Heavy rain can cause delays, so let me explain."
+      "text": "Heavy rain caused delays, so let me explain why I am late."
      },
      {
       "lang": "tr",
-      "text": "Şiddetli yağmur gecikmelere neden olabilir, açıklayayım."
+      "text": "Şiddetli yağmur gecikmelere neden oldu, o yüzden neden geç kaldığımı açıklayayım."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Heavy rain can cause delays, so let me explain."
+     "target": "Heavy rain caused delays, so let me explain why I am late."
     }
    },
    {
@@ -9949,7 +9949,7 @@
    },
    {
     "de": "depart",
-    "tr": "kalkmak"
+    "tr": "(araç) kalkmak"
    },
    {
     "de": "board",
@@ -9964,7 +9964,7 @@
     "tr": "peron"
    },
    {
-    "de": "journey",
+    "de": "trip",
     "tr": "yolculuk"
    }
   ],
@@ -9978,7 +9978,7 @@
     "tr": "bir olayın ne zamana kadar süreceğini söyler"
    },
    {
-    "de": "The train is departing at ten.",
+    "de": "The train departs at ten.",
     "tr": "tarifedeki saati söyler"
    }
   ],
@@ -10078,7 +10078,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki olay da gelecekte olsa bile, zaman bağlacının ardındaki cümle GENİŞ ZAMAN olur:"
+      "text": "Şimdi bugünün kuralı. İki olay da gelecekte olsa bile, zaman bağlacının ardındaki cümle GENİŞ ZAMAN olur:"
      },
      {
       "lang": "en",
@@ -10277,7 +10277,7 @@
      },
      {
       "lang": "en",
-      "text": "journey"
+      "text": "trip"
      },
      {
       "lang": "tr",
@@ -10293,7 +10293,7 @@
      },
      {
       "lang": "en",
-      "text": "The journey takes four hours."
+      "text": "The trip takes four hours."
      },
      {
       "lang": "tr",
@@ -10302,7 +10302,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The journey takes four hours."
+     "target": "The trip takes four hours."
     }
    },
    {
@@ -10313,12 +10313,12 @@
      },
      {
       "lang": "en",
-      "text": "The train is departing at ten."
+      "text": "The train departs at ten."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The train is departing at ten."
+     "target": "The train departs at ten."
     }
    },
    {
@@ -10330,19 +10330,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The bus is leaving at half past six.",
+     "target": "The bus leaves at six thirty.",
      "accept": [
-      "The bus is leaving at six thirty.",
-      "The bus leaves at half past six."
+      "The bus leaves at half past six.",
+      "The bus is leaving at six thirty."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Tarifedeki saat şimdiki zamanla söylenir:"
+       "text": "Tarifedeki saat geniş zamanla söylenir:"
       },
       {
        "lang": "en",
-       "text": "The bus is leaving at half past six."
+       "text": "The bus leaves at six thirty."
       },
       {
        "lang": "tr",
@@ -10410,7 +10410,7 @@
    },
    {
     "de": "goal",
-    "tr": "erek"
+    "tr": "hedef"
    },
    {
     "de": "certificate",
@@ -10471,12 +10471,12 @@
      },
      {
       "lang": "en",
-      "text": "I enrolled on a language course."
+      "text": "I enrolled in a language course."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I enrolled on a language course."
+     "target": "I enrolled in a language course."
     }
    },
    {
@@ -10523,7 +10523,7 @@
      },
      {
       "lang": "tr",
-      "text": "Amacım net, hedefim basit ve erekim gerçekçi."
+      "text": "Amacım belli; hedefim hem basit hem gerçekçi."
      }
     ],
     "expect": {
@@ -10535,7 +10535,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Amaç en kısa biçimde mastarla söylenir:"
+      "text": "Şimdi bugünün kuralı. Amaç en kısa biçimde mastarla söylenir:"
      },
      {
       "lang": "en",
@@ -10964,7 +10964,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile söylenir. İkincisi sert değildir; kibar bir hayır da bu kelimeyle anlatılır."
+      "text": "ile söylenir. İkincisi net bir hayırdır; kibarca geri çevirmek için 'decline' de kullanılır."
      }
     ]
    },
@@ -10992,7 +10992,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İlk bağlacımız"
+      "text": "Şimdi bugünün kuralı. İlk bağlacımız"
      },
      {
       "lang": "en",
@@ -11457,7 +11457,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bir ismin HANGİSİ olduğunu söylemek için arkasına yan cümle eklenir:"
+      "text": "Şimdi bugünün kuralı. Bir ismin HANGİSİ olduğunu söylemek için arkasına yan cümle eklenir:"
      },
      {
       "lang": "en",
@@ -11510,9 +11510,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "It is the case that has a blue label.",
+     "target": "It is the suitcase that has a blue label.",
      "accept": [
-      "It's the case that has a blue label.",
+      "It's the suitcase that has a blue label.",
       "It is the bag that has a blue label."
      ],
      "hint": [
@@ -11522,7 +11522,7 @@
       },
       {
        "lang": "en",
-       "text": "It is the case that has a blue label."
+       "text": "It is the suitcase that has a blue label."
       },
       {
        "lang": "tr",
@@ -11610,7 +11610,7 @@
      },
      {
       "lang": "tr",
-      "text": "Geçen yıl aldığım olan."
+      "text": "Geçen yıl aldığım çanta."
      }
     ],
     "expect": {
@@ -11765,7 +11765,7 @@
   "vocab": [
    {
     "de": "happen",
-    "tr": "olmak"
+    "tr": "olmak / yaşanmak"
    },
    {
     "de": "suddenly",
@@ -11894,7 +11894,7 @@
      },
      {
       "lang": "tr",
-      "text": "Karışıklığı sonrasına kadar fark etmedim."
+      "text": "Karışıklığı ancak sonra fark ettim."
      }
     ],
     "expect": {
@@ -11906,7 +11906,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olaydan ÖNCE olanı"
      },
      {
       "lang": "en",
@@ -12239,7 +12239,7 @@
   "course": "en",
   "icon": "office",
   "title": "What they said",
-  "titleTr": "Söylenenleri bağlamak",
+  "titleTr": "Söylenenleri aktarmak",
   "summary": "Bir toplantıyı aktarmayı öğretir: kim ne söyledi, ne önerildi, ne karara bağlandı.",
   "minutes": 11,
   "focusId": "Reported speech",
@@ -12387,7 +12387,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -12496,7 +12496,7 @@
      },
      {
       "lang": "tr",
-      "text": "ve bu fiilin ardından her zaman -ing gelir. Toplantıyı yöneten kişiye ise"
+      "text": "; ardından bir eylem gelecekse -ing olur. Toplantıyı yöneten kişiye ise"
      },
      {
       "lang": "en",
@@ -12590,7 +12590,7 @@
      },
      {
       "lang": "tr",
-      "text": "tek tek satırlara ise"
+      "text": "kısa bir hatırlatma yazısına ise"
      },
      {
       "lang": "en",
@@ -12872,7 +12872,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Edilgen çatı iki parçadan kurulur: yardımcı fiil"
+      "text": "Şimdi bugünün kuralı. Edilgen çatı iki parçadan kurulur: yardımcı fiil"
      },
      {
       "lang": "en",
@@ -13333,7 +13333,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı."
+      "text": "Şimdi bugünün kuralı."
      },
      {
       "lang": "en",
@@ -13741,11 +13741,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu modülün son dersi: deneyimini bağlamak. Nerede çalıştın, neyi başardın, neyi hiç yapmadın."
+      "text": "Merhaba! Bu, modülün son Konuşma adımı: deneyimini bağlamak. Nerede çalıştın, neyi başardın, neyi hiç yapmadın."
      },
      {
       "lang": "tr",
-      "text": "Buradaki ayrım modülün başındaki bağlaç işiyle akraba: hangi zamanı seçtiğin olayın hâlâ sayılıp sayılmadığını söylüyor. Hazır mısın?"
+      "text": "Burada seçtiğin zaman, olayın hâlâ sayılıp sayılmadığını söylüyor. Hazır mısın?"
      }
     ],
     "expect": {
@@ -13824,7 +13824,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Deneyim HÂLÂ sayılıyorsa present perfect:"
+      "text": "Şimdi bugünün kuralı. Deneyim HÂLÂ sayılıyorsa present perfect:"
      },
      {
       "lang": "en",
@@ -14015,16 +14015,16 @@
      },
      {
       "lang": "en",
-      "text": "I have recently succeeded in a big challenge."
+      "text": "I have recently succeeded in meeting a big challenge."
      },
      {
       "lang": "tr",
-      "text": "Son zamanlarda zorlu bir işte başarılı oldum."
+      "text": "Son zamanlarda zorlu bir işin üstesinden gelmeyi başardım."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have recently succeeded in a big challenge."
+     "target": "I have recently succeeded in meeting a big challenge."
     }
    },
    {
@@ -14265,7 +14265,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kişiyi tanımlayan yan cümle"
+      "text": "Şimdi bugünün kuralı. Kişiyi tanımlayan yan cümle"
      },
      {
       "lang": "en",
@@ -14706,7 +14706,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Yer tanımlanıyorsa"
+      "text": "Şimdi bugünün kuralı. Yer tanımlanıyorsa"
      },
      {
       "lang": "en",
@@ -15199,7 +15199,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tavsiye fiilinden sonra -ing gelir:"
+      "text": "Şimdi bugünün kuralı. Tavsiye fiilinden sonra -ing gelir:"
      },
      {
       "lang": "en",
@@ -15308,7 +15308,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir. Dikkat: bu sıfatlar ŞEYİ anlatır, kişiyi değil."
+      "text": "denir. Dikkat: bu sıfatlar şeyin nasıl olduğunu anlatır, senin ne hissettiğini değil; hissettiğin için 'bored' ve 'excited' denir."
      }
     ]
    },
@@ -15365,10 +15365,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "It is worth seeing it in the theater.",
+     "target": "It is worth seeing in the theater.",
      "accept": [
-      "It's worth seeing it in the theater.",
-      "It is worth watching it in the theater."
+      "It's worth seeing in the theater.",
+      "It is worth seeing it in the theater."
      ],
      "hint": [
       {
@@ -15377,7 +15377,7 @@
       },
       {
        "lang": "en",
-       "text": "It is worth seeing it in the theater."
+       "text": "It is worth seeing in the theater."
       },
       {
        "lang": "tr",
@@ -15668,7 +15668,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Çekince bildiren bağlaç"
+      "text": "Şimdi bugünün kuralı. Çekince bildiren bağlaç"
      },
      {
       "lang": "en",
@@ -15879,12 +15879,12 @@
      },
      {
       "lang": "en",
-      "text": "I cannot decide, so I like both."
+      "text": "I like both, so I cannot decide."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I cannot decide, so I like both."
+     "target": "I like both, so I cannot decide."
     }
    },
    {
@@ -15984,7 +15984,7 @@
    },
    {
     "de": "plug",
-    "tr": "fiş"
+    "tr": "elektrik fişi"
    },
    {
     "de": "connect",
@@ -15992,7 +15992,7 @@
    },
    {
     "de": "switch",
-    "tr": "anahtar / çevirmek"
+    "tr": "şalter / açıp kapamak"
    },
    {
     "de": "setting",
@@ -16053,7 +16053,7 @@
      },
      {
       "lang": "tr",
-      "text": "çevirmek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "açıp kapamak. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -16113,7 +16113,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:"
+      "text": "Şimdi bugünün kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:"
      },
      {
       "lang": "en",
@@ -16225,7 +16225,7 @@
       },
       {
        "lang": "tr",
-       "text": "Yalın biçim kalırsa cümle emir gibi duyulur."
+       "text": "Yalın biçim kalırsa cümle dil bilgisi açısından bozulur."
       }
      ]
     }
@@ -16332,7 +16332,7 @@
      },
      {
       "lang": "tr",
-      "text": "Eski cihaz bir kabloyla bağlanmıştı."
+      "text": "Eski cihaz bir kabloyla bağlanıyordu."
      }
     ],
     "expect": {
@@ -16352,7 +16352,7 @@
      "target": "The button was replaced two weeks ago.",
      "accept": [
       "The button was changed two weeks ago.",
-      "The button was replaced a two weeks ago."
+      "The button was replaced about two weeks ago."
      ],
      "hint": [
       {
@@ -16558,7 +16558,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kaç kez yazdığın HÂLÂ sayılıyorsa present perfect:"
+      "text": "Şimdi bugünün kuralı. Kaç kez yazdığın HÂLÂ sayılıyorsa present perfect:"
      },
      {
       "lang": "en",
@@ -17035,7 +17035,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Takvime yazılmış randevu için şimdiki zaman:"
+      "text": "Şimdi bugünün kuralı. Takvime yazılmış randevu için şimdiki zaman:"
      },
      {
       "lang": "en",
@@ -17242,7 +17242,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile söylenir; resmî bir kelimedir ve tam olarak 'başka güne almak' demektir."
+      "text": "ile söylenir ve tam olarak 'başka bir zamana almak' demektir."
      }
     ]
    },
@@ -17331,7 +17331,7 @@
      },
      {
       "lang": "tr",
-      "text": "söz"
+      "text": "o anki söz"
      },
      {
       "lang": "en",
@@ -17507,7 +17507,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı."
+      "text": "Şimdi bugünün kuralı."
      },
      {
       "lang": "en",
@@ -17877,7 +17877,7 @@
    },
    {
     "de": "double",
-    "tr": "çift"
+    "tr": "çifte"
    },
    {
     "de": "blame",
@@ -17978,7 +17978,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hatadan sonra iki çantayı değiştirmek zorunda kaldık."
+      "text": "Hatadan sonra iki çantayı değiş tokuş etmek zorunda kaldık."
      }
     ],
     "expect": {
@@ -17990,7 +17990,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olaydan ÖNCE olanı"
      },
      {
       "lang": "en",
@@ -18209,16 +18209,16 @@
      },
      {
       "lang": "en",
-      "text": "Nobody should blame the double booking."
+      "text": "We should not blame anyone for the double booking."
      },
      {
       "lang": "tr",
-      "text": "Kimse çifte rezervasyonu suçlamamalı."
+      "text": "Çifte rezervasyon için kimseyi suçlamamalıyız."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Nobody should blame the double booking."
+     "target": "We should not blame anyone for the double booking."
     }
    },
    {
@@ -18364,7 +18364,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu modülün son dersi: bir karara varmak. Kim ne dedi, artısı ne, eksisi ne, sen ne düşünüyorsun."
+      "text": "Merhaba! Bu, modülün son Konuşma adımı: bir karara varmak. Kim ne dedi, artısı ne, eksisi ne, sen ne düşünüyorsun."
      },
      {
       "lang": "tr",
@@ -18463,7 +18463,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -18592,16 +18592,16 @@
      },
      {
       "lang": "en",
-      "text": "She tried to convince me with one opinion."
+      "text": "She tried to convince me, but I have a different opinion."
      },
      {
       "lang": "tr",
-      "text": "Beni tek bir görüşle ikna etmeye çalıştı."
+      "text": "Beni ikna etmeye çalıştı ama benim görüşüm farklı."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "She tried to convince me with one opinion."
+     "target": "She tried to convince me, but I have a different opinion."
     }
    },
    {
@@ -18936,7 +18936,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:"
+      "text": "Şimdi bugünün kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:"
      },
      {
       "lang": "en",
@@ -19033,7 +19033,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bütün adımların tamamına"
+      "text": "Adımların bütününe"
      },
      {
       "lang": "en",
@@ -19084,7 +19084,7 @@
      "kind": "produce",
      "target": "The letter was sent two days ago.",
      "accept": [
-      "The letter was posted two days ago.",
+      "The letter was mailed two days ago.",
       "The letter was sent two days before."
      ],
      "hint": [
@@ -19255,7 +19255,7 @@
     "tr": "imza"
    },
    {
-    "de": "tick",
+    "de": "mark",
     "tr": "işaretlemek"
    },
    {
@@ -19385,7 +19385,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı."
+      "text": "Şimdi bugünün kuralı."
      },
      {
       "lang": "en",
@@ -19442,10 +19442,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You must write your last name in capitals.",
+     "target": "You must write your last name in capital letters.",
      "accept": [
-      "You must write your last name in capital letters.",
-      "You must put your last name in capitals."
+      "You must write your last name in capitals.",
+      "You must write your last name in all caps."
      ],
      "hint": [
       {
@@ -19462,7 +19462,7 @@
       },
       {
        "lang": "en",
-       "text": "You must write your last name in capitals."
+       "text": "You must write your last name in capital letters."
       },
       {
        "lang": "tr",
@@ -19502,11 +19502,11 @@
      },
      {
       "lang": "en",
-      "text": "tick"
+      "text": "mark"
      },
      {
       "lang": "tr",
-      "text": "ile söylenir; Amerika'da aynı işe 'check' denir."
+      "text": "ile söylenir; formlarda 'check the box' da çok görürsün."
      }
     ]
    },
@@ -19518,7 +19518,7 @@
      },
      {
       "lang": "en",
-      "text": "Tick the box if you agree."
+      "text": "Mark the box if you agree."
      },
      {
       "lang": "tr",
@@ -19527,7 +19527,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Tick the box if you agree."
+     "target": "Mark the box if you agree."
     }
    },
    {
@@ -19862,7 +19862,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Randevu kesinse şimdiki zaman:"
+      "text": "Şimdi bugünün kuralı. Randevu kesinse şimdiki zaman:"
      },
      {
       "lang": "en",
@@ -19899,10 +19899,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I am meeting the adviser at ten.",
+     "target": "I am meeting the advisor at ten.",
      "accept": [
-      "I'm meeting the adviser at ten.",
-      "I am meeting the advisor at ten."
+      "I'm meeting the advisor at ten.",
+      "I am meeting the adviser at ten."
      ],
      "hint": [
       {
@@ -19911,7 +19911,7 @@
       },
       {
        "lang": "en",
-       "text": "I am meeting the adviser at ten."
+       "text": "I am meeting the advisor at ten."
       },
       {
        "lang": "tr",
@@ -20326,7 +20326,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -20811,7 +20811,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
      },
      {
       "lang": "en",
@@ -20880,10 +20880,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "If you go to hospital, the insurance pays.",
+     "target": "If you go to the hospital, the insurance pays.",
      "accept": [
-      "If you go to the hospital, the insurance pays.",
-      "If you go to hospital, the insurance will pay."
+      "If you go to the hospital, the insurance will pay.",
+      "If you go to the hospital, your insurance pays."
      ],
      "hint": [
       {
@@ -20892,7 +20892,7 @@
       },
       {
        "lang": "en",
-       "text": "If you go to hospital, the insurance pays."
+       "text": "If you go to the hospital, the insurance pays."
       },
       {
        "lang": "tr",
@@ -21094,7 +21094,7 @@
    }
   ],
   "chat": {
-   "scene": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren ve daha iyi bir poliçenin ne getireceğini konuş.",
+   "scene": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren, daha iyi bir poliçenin ne getireceğini konuş ve bir karar ver.",
    "partner": "poliçeyi satmaya da çalışan, bilgili bir sigorta görevlisi",
    "opening": "How can I help you with your policy today?",
    "openingTr": "Poliçenizle ilgili bugün nasıl yardımcı olabilirim?",
@@ -21131,7 +21131,7 @@
    },
    {
     "de": "earn",
-    "tr": "kazanmak"
+    "tr": "(para) kazanmak"
    },
    {
     "de": "annual",
@@ -21256,7 +21256,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İçinde bulunduğun yıl HENÜZ BİTMEDİYSE present perfect:"
+      "text": "Şimdi bugünün kuralı. İçinde bulunduğun yıl HENÜZ BİTMEDİYSE present perfect:"
      },
      {
       "lang": "en",
@@ -21397,7 +21397,7 @@
      },
      {
       "lang": "tr",
-      "text": "Geçen yıl da beyan etmiştim."
+      "text": "Geçen yıl da beyan ettim."
      }
     ],
     "expect": {
@@ -21689,7 +21689,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:"
+      "text": "Şimdi bugünün kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:"
      },
      {
       "lang": "en",
@@ -21741,7 +21741,7 @@
      "target": "Although I sent the form, nothing has changed.",
      "accept": [
       "Although I sent the form, nothing changed.",
-      "Although I posted the form, nothing has changed."
+      "Although I mailed the form, nothing has changed."
      ],
      "hint": [
       {
@@ -21834,7 +21834,7 @@
      "target": "I sent the letter. However, nobody replied.",
      "accept": [
       "I sent the letter. However, no one replied.",
-      "I posted the letter. However, nobody replied."
+      "I mailed the letter. However, nobody replied."
      ],
      "hint": [
       {
@@ -22025,7 +22025,7 @@
    },
    {
     "de": "turn",
-    "tr": "sıra"
+    "tr": "(birinin) sırası"
    },
    {
     "de": "desk",
@@ -22146,7 +22146,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olaydan ÖNCE olanı"
      },
      {
       "lang": "en",
@@ -22607,7 +22607,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hangi belgeden söz ettiğini yan cümle söyler:"
+      "text": "Şimdi bugünün kuralı. Hangi belgeden söz ettiğini yan cümle söyler:"
      },
      {
       "lang": "en",
@@ -22952,7 +22952,7 @@
   ],
   "patterns": [
    {
-    "de": "I decided to appeal against the decision.",
+    "de": "I decided to appeal the decision.",
     "tr": "kararı to ile söyler"
    },
    {
@@ -22969,7 +22969,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu modülün son dersi: bir karara itiraz etmek. Neye dayanıyorsun, neyi kanıtlayabilirsin, hakkın ne."
+      "text": "Merhaba! Bu, modülün son Konuşma adımı: bir karara itiraz etmek. Neye dayanıyorsun, neyi kanıtlayabilirsin, hakkın ne."
      },
      {
       "lang": "tr",
@@ -22996,12 +22996,12 @@
      },
      {
       "lang": "en",
-      "text": "I decided to appeal against the decision."
+      "text": "I decided to appeal the decision."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I decided to appeal against the decision."
+     "target": "I decided to appeal the decision."
     }
    },
    {
@@ -23052,7 +23052,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Karar fiillerinden sonra mastar gelir:"
+      "text": "Şimdi bugünün kuralı. Karar fiillerinden sonra mastar gelir:"
      },
      {
       "lang": "en",
@@ -23501,7 +23501,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Takvime yazılmış bir iş için şimdiki zaman:"
+      "text": "Şimdi bugünün kuralı. Takvime yazılmış bir iş için şimdiki zaman:"
      },
      {
       "lang": "en",
@@ -23557,7 +23557,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Bu hafta dilbilgisine odaklanacağım."
+      "text": "Şimdi sıra sende: Bu hafta dil bilgisine odaklanacağım."
      }
     ],
     "expect": {
@@ -23712,7 +23712,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir; ajandadan farkı yalnız çalışma için kullanılmasıdır."
+      "text": "denir; Amerikalılar her türlü ajandaya da böyle der."
      }
     ]
    },
@@ -23829,7 +23829,7 @@
    },
    {
     "de": "fail",
-    "tr": "kalmak"
+    "tr": "(sınavda) kalmak"
    },
    {
     "de": "nervous",
@@ -23840,12 +23840,12 @@
     "tr": "alıştırma"
    },
    {
-    "de": "mark",
+    "de": "score",
     "tr": "puan"
    },
    {
     "de": "grade",
-    "tr": "not"
+    "tr": "not (sınav notu)"
    },
    {
     "de": "cheat",
@@ -23862,7 +23862,7 @@
     "tr": "yasağı söyler"
    },
    {
-    "de": "You should do more practice.",
+    "de": "You should get more practice.",
     "tr": "tavsiye verir"
    }
   ],
@@ -23962,7 +23962,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı."
+      "text": "Şimdi bugünün kuralı."
      },
      {
       "lang": "en",
@@ -24143,7 +24143,7 @@
      },
      {
       "lang": "en",
-      "text": "mark"
+      "text": "score"
      },
      {
       "lang": "tr",
@@ -24167,16 +24167,16 @@
      },
      {
       "lang": "en",
-      "text": "My mark was low but my grade was fine."
+      "text": "My score was low, but my grade was still fine."
      },
      {
       "lang": "tr",
-      "text": "Puanım düşüktü ama notum iyiydi."
+      "text": "Puanım düşüktü ama notum yine de iyiydi."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My mark was low but my grade was fine."
+     "target": "My score was low, but my grade was still fine."
     }
    },
    {
@@ -24195,12 +24195,12 @@
      },
      {
       "lang": "en",
-      "text": "You should do more practice."
+      "text": "You should get more practice."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You should do more practice."
+     "target": "You should get more practice."
     }
    },
    {
@@ -24369,7 +24369,7 @@
      },
      {
       "lang": "tr",
-      "text": "gelir. İlk kalıbımız da bu. Tekrar et:"
+      "text": "edatı gelir. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -24429,7 +24429,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hoşlanma ve alışkanlık fiillerinden sonra -ing gelir:"
+      "text": "Şimdi bugünün kuralı. Hoşlanma ve alışkanlık fiillerinden sonra -ing gelir:"
      },
      {
       "lang": "en",
@@ -24772,7 +24772,7 @@
    },
    {
     "de": "grammar",
-    "tr": "dilbilgisi"
+    "tr": "dil bilgisi"
    },
    {
     "de": "pronunciation",
@@ -24877,7 +24877,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dilbilgim iyi ama telaffuzum zayıf."
+      "text": "Dil bilgim iyi ama telaffuzum zayıf."
      }
     ],
     "expect": {
@@ -24889,7 +24889,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gelişim HÂLÂ sürüyorsa present perfect:"
+      "text": "Şimdi bugünün kuralı. Gelişim HÂLÂ sürüyorsa present perfect:"
      },
      {
       "lang": "en",
@@ -25030,7 +25030,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Geçen bahar bir test yaptım."
+      "text": "Şimdi sen kur: Geçen bahar bir sınava girdim."
      }
     ],
     "expect": {
@@ -25326,7 +25326,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı"
+      "text": "Şimdi bugünün kuralı. İki geçmiş olaydan ÖNCE olanı"
      },
      {
       "lang": "en",
@@ -25803,7 +25803,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -26094,7 +26094,7 @@
    }
   ],
   "chat": {
-   "scene": "Özel dersten yeni çıktın ve bir arkadaşın öğretmenin ne dediğini soruyor. Övgüyü, öğüdü ve sorulan soruyu aktar.",
+   "scene": "Özel dersten yeni çıktın ve bir arkadaşın öğretmenin ne dediğini soruyor. Övgüyü, öğüdü ve sorulan soruyu aktar; sonra kendi düşünceni de söyle.",
    "partner": "aynı öğretmenden ders alan meraklı bir arkadaş",
    "opening": "How was your session? What did she say?",
    "openingTr": "Dersin nasıldı? Ne dedi?",
@@ -26204,7 +26204,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir işi paylara ayırmaya"
+      "text": "Bir işi parçalara ayırmaya"
      },
      {
       "lang": "en",
@@ -26212,7 +26212,7 @@
      },
      {
       "lang": "tr",
-      "text": "payın kendisine ise"
+      "text": "her birinin üstlendiği işe ise"
      },
      {
       "lang": "en",
@@ -26248,7 +26248,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kişiyi tanımlayan yan cümle"
+      "text": "Şimdi bugünün kuralı. Kişiyi tanımlayan yan cümle"
      },
      {
       "lang": "en",
@@ -26354,17 +26354,17 @@
      },
      {
       "lang": "en",
-      "text": "The part I wrote was the shortest it."
+      "text": "The part I wrote it was the shortest."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The part I wrote was the shortest it.",
+     "statement": "The part I wrote it was the shortest.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Zamir düştüğünde sona ikinci bir zamir gelmez:"
+       "text": "Yanlış. Zamir düştüğünde yan cümlenin sonuna ikinci bir zamir gelmez:"
       },
       {
        "lang": "en",
@@ -26522,7 +26522,7 @@
    "scene": "Grup projesinde iş bölümü yapıyorsunuz. Kimin neyi yaptığını, hangi görevin kimde olduğunu ve kimin sunacağını yan cümlelerle netleştir.",
    "partner": "iş bölümünde kendi payını büyütmek isteyen bir grup arkadaşı",
    "opening": "So who is doing what? I lost track.",
-   "openingTr": "Kim ne yapıyor peki? Ben kaybettim.",
+   "openingTr": "Kim ne yapıyor peki? Aklım karıştı.",
    "goal": "En az üç kişiyi ya da görevi yan cümleyle ayırdıysan ve kimin sunacağını netleştirdiysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -26681,7 +26681,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Edilgen iki parçadan kurulur:"
+      "text": "Şimdi bugünün kuralı. Edilgen iki parçadan kurulur:"
      },
      {
       "lang": "en",
@@ -26710,9 +26710,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The homework is marked in two days.",
+     "target": "The homework is graded in two days.",
      "accept": [
-      "The homework is marked within two days.",
+      "The homework is graded within two days.",
       "The homework is corrected in two days."
      ],
      "hint": [
@@ -26722,7 +26722,7 @@
       },
       {
        "lang": "en",
-       "text": "The homework is marked in two days."
+       "text": "The homework is graded in two days."
       },
       {
        "lang": "tr",
@@ -26864,7 +26864,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir ve hep çoğul kullanılır."
+      "text": "denir ve çoğunlukla çoğul kullanılır."
      }
     ]
    },
@@ -27130,7 +27130,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
      },
      {
       "lang": "en",
@@ -27512,7 +27512,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bu modülün son dersi: sıradaki adımı seçmek. İleri düzeye geçmek mi, sağlamlaştırmak mı."
+      "text": "Merhaba! Bu, modülün son Konuşma adımı: sıradaki adımı seçmek. İleri düzeye geçmek mi, sağlamlaştırmak mı."
      },
      {
       "lang": "tr",
@@ -27599,7 +27599,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
+      "text": "Şimdi bugünün kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
      },
      {
       "lang": "en",
@@ -28036,7 +28036,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince."
+      "text": "Şimdi bugünün kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince."
      },
      {
       "lang": "tr",
@@ -28165,7 +28165,7 @@
      },
      {
       "lang": "tr",
-      "text": "Muhtemelen doğru hissediyorum ama belki yanılıyorum."
+      "text": "Bence muhtemelen doğru ama belki yanılıyorum."
      }
     ],
     "expect": {
@@ -28433,7 +28433,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karşı çıkmak"
+      "text": "Katılmamak"
      },
      {
       "lang": "en",
@@ -28477,7 +28477,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
      },
      {
       "lang": "en",
@@ -28978,7 +28978,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider:"
      },
      {
       "lang": "en",
@@ -29123,12 +29123,12 @@
      },
      {
       "lang": "en",
-      "text": "The speaker went on and nobody dared to interrupt the silence."
+      "text": "The audience listened in silence, and nobody dared to interrupt the speaker."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The speaker went on and nobody dared to interrupt the silence."
+     "target": "The audience listened in silence, and nobody dared to interrupt the speaker."
     }
    },
    {
@@ -29273,7 +29273,7 @@
    }
   ],
   "chat": {
-   "scene": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar.",
+   "scene": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar; sonra kendi değerlendirmeni söyle.",
    "partner": "tartışmayı kaçırmış, kimin kazandığını merak eden bir arkadaş",
    "opening": "I missed it. Who made the better argument?",
    "openingTr": "Kaçırdım. Kim daha iyi sav getirdi?",
@@ -29318,7 +29318,7 @@
    },
    {
     "de": "shocking",
-    "tr": "şaşırtıcı"
+    "tr": "şok edici"
    },
    {
     "de": "spread",
@@ -29455,7 +29455,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Haber dilinde özne düşer ve edilgen kurulur:"
+      "text": "Şimdi bugünün kuralı. Haber dilinde özne düşer ve edilgen kurulur:"
      },
      {
       "lang": "en",
@@ -29614,7 +29614,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız tepkiyi söylüyor. Şaşırtıcı için"
+      "text": "Son kalıbımız tepkiyi söylüyor. Şok edici için"
      },
      {
       "lang": "en",
@@ -29747,7 +29747,7 @@
    },
    {
     "de": "trend",
-    "tr": "gündem"
+    "tr": "gündemdeki konu"
    }
   ],
   "patterns": [
@@ -29852,7 +29852,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:"
+      "text": "Şimdi bugünün kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:"
      },
      {
       "lang": "en",
@@ -30087,7 +30087,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hiç birini engelledin mi?"
+      "text": "Hiç kimseyi engelledin mi?"
      }
     ],
     "expect": {
@@ -30099,7 +30099,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Hiç bir paylaşımı sildin mi?"
+      "text": "Bir tane daha: Hiç paylaşım sildin mi?"
      }
     ],
     "expect": {
@@ -30164,7 +30164,7 @@
   "level": "B1",
   "course": "en",
   "icon": "key",
-  "title": "Talking someone round",
+  "title": "Winning someone over",
   "titleTr": "İkna etmek",
   "summary": "Birini ikna etmeyi öğretir; ikna fiilleri kendi ardılını seçer, kimi -ing kimi to ister.",
   "minutes": 10,
@@ -30341,7 +30341,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İkna fiillerinden sonra ne geleceğini fiilin kendisi belirler:"
+      "text": "Şimdi bugünün kuralı. İkna fiillerinden sonra ne geleceğini fiilin kendisi belirler:"
      },
      {
       "lang": "en",
@@ -30619,7 +30619,7 @@
      "kind": "produce",
      "target": "They deny making the decision alone.",
      "accept": [
-      "They deny taking the decision alone.",
+      "They deny making the decision on their own.",
       "They deny making that decision alone."
      ],
      "hint": [
@@ -30854,7 +30854,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kesinlik derecesi kipi seçiyor: eminsen"
+      "text": "Şimdi bugünün kuralı. Kesinlik derecesi kipi seçiyor: eminsen"
      },
      {
       "lang": "en",
@@ -31335,7 +31335,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor ve başındaki kelime neyi tarif ettiğini söylüyor:"
+      "text": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor ve başındaki kelime neyi tarif ettiğini söylüyor:"
      },
      {
       "lang": "en",
@@ -31660,7 +31660,7 @@
   "course": "en",
   "icon": "clock",
   "title": "By the time we decided",
-  "titleTr": "Geriden anlatmak",
+  "titleTr": "Öncesini anlatmak",
   "summary": "Bir tartışmanın öncesini anlatmayı öğretir; daha önce olan iş bir kat daha geriye çekilir.",
   "minutes": 10,
   "focusId": "Past perfect",
@@ -31836,7 +31836,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aynı cümlede iki geçmiş iş varsa ÖNCE olan"
+      "text": "Şimdi bugünün kuralı. Aynı cümlede iki geçmiş iş varsa ÖNCE olan"
      },
      {
       "lang": "en",
@@ -32120,7 +32120,7 @@
    },
    {
     "de": "system",
-    "tr": "düzen"
+    "tr": "sistem"
    },
    {
     "de": "predict",
@@ -32269,7 +32269,7 @@
      },
      {
       "lang": "tr",
-      "text": "Düzen değişecek."
+      "text": "Sistem değişecek."
      }
     ],
     "expect": {
@@ -32281,7 +32281,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Elinde belirti yokken"
+      "text": "Şimdi bugünün kuralı. Elinde belirti yokken"
      },
      {
       "lang": "en",
@@ -32565,14 +32565,14 @@
   "level": "B1",
   "course": "en",
   "icon": "doctor",
-  "title": "Joining a practice",
+  "title": "Becoming a new patient",
   "titleTr": "Aile hekimine kaydolmak",
   "summary": "Bir muayenehaneye kaydolmayı öğretir; neyi yapmak zorundasın, neyi yapmana gerek yok, neyi hiç yapmamalısın.",
   "minutes": 10,
   "focusId": "Modals of obligation",
   "vocab": [
    {
-    "de": "reception",
+    "de": "front desk",
     "tr": "kayıt masası"
    },
    {
@@ -32606,7 +32606,7 @@
   ],
   "patterns": [
    {
-    "de": "You have to bring your ID to reception.",
+    "de": "You have to bring your ID to the front desk.",
     "tr": "dışarıdan gelen bir zorunluluğu söyler"
    },
    {
@@ -32642,7 +32642,7 @@
      },
      {
       "lang": "en",
-      "text": "reception"
+      "text": "front desk"
      },
      {
       "lang": "tr",
@@ -32650,12 +32650,12 @@
      },
      {
       "lang": "en",
-      "text": "You have to bring your ID to reception."
+      "text": "You have to bring your ID to the front desk."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You have to bring your ID to reception."
+     "target": "You have to bring your ID to the front desk."
     }
    },
    {
@@ -32742,7 +32742,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç derece var:"
+      "text": "Şimdi bugünün kuralı. Üç derece var:"
      },
      {
       "lang": "en",
@@ -32766,7 +32766,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise yasak. Ortadaki ikisi birbirine benziyor ama biri serbestlik, öteki yasak."
+      "text": "ise yasak. Son ikisi birbirine benziyor ama biri serbestlik, öteki yasak."
      }
     ]
    },
@@ -32779,10 +32779,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You have to bring your card to reception.",
+     "target": "You have to bring your card to the front desk.",
      "accept": [
-      "You have to take your card to reception.",
-      "You have to bring the card to reception."
+      "You have to take your card to the front desk.",
+      "You have to bring the card to the front desk."
      ],
      "hint": [
       {
@@ -32799,7 +32799,7 @@
       },
       {
        "lang": "en",
-       "text": "You have to bring your card to reception."
+       "text": "You have to bring your card to the front desk."
       },
       {
        "lang": "tr",
@@ -33014,7 +33014,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Yasak için"
+       "text": "Yasak bildirmek için"
       },
       {
        "lang": "en",
@@ -33259,7 +33259,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Şikâyet HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
+      "text": "Şimdi bugünün kuralı. Şikâyet HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
      },
      {
       "lang": "en",
@@ -33700,7 +33700,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Sen varmadan ÖNCE olan iş"
+      "text": "Şimdi bugünün kuralı. Sen varmadan ÖNCE olan iş"
      },
      {
       "lang": "en",
@@ -33895,7 +33895,7 @@
      },
      {
       "lang": "tr",
-      "text": "Göğsümdeki ağrı geçmişti ve nefesim yerine gelmişti."
+      "text": "Göğsümdeki ağrı geçmişti ve nefesim yerine geldi."
      }
     ],
     "expect": {
@@ -34023,7 +34023,7 @@
     "tr": "doz"
    },
    {
-    "de": "pack",
+    "de": "package",
     "tr": "ilaç kutusu"
    },
    {
@@ -34057,7 +34057,7 @@
     "tr": "işi yapanı sona bırakır"
    },
    {
-    "de": "The pack must be kept in the fridge.",
+    "de": "The package must be kept in the fridge.",
     "tr": "zorunluluğu edilgen söyler"
    }
   ],
@@ -34117,7 +34117,7 @@
      },
      {
       "lang": "en",
-      "text": "pack"
+      "text": "package"
      },
      {
       "lang": "tr",
@@ -34133,7 +34133,7 @@
      },
      {
       "lang": "en",
-      "text": "The dose is written on the pack."
+      "text": "The dose is written on the package."
      },
      {
       "lang": "tr",
@@ -34142,7 +34142,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The dose is written on the pack."
+     "target": "The dose is written on the package."
     }
    },
    {
@@ -34193,7 +34193,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Edilgen cümlede özne düşer ve nesne başa geçer; işi yapan gerçekten önemliyse"
+      "text": "Şimdi bugünün kuralı. Edilgen cümlede özne düşer ve nesne başa geçer; işi yapan gerçekten önemliyse"
      },
      {
       "lang": "en",
@@ -34302,16 +34302,16 @@
      },
      {
       "lang": "en",
-      "text": "A painkiller is sold without a note."
+      "text": "This painkiller is sold without a prescription."
      },
      {
       "lang": "tr",
-      "text": "Ağrı kesici reçetesiz satılıyor."
+      "text": "Bu ağrı kesici reçetesiz satılıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A painkiller is sold without a note."
+     "target": "This painkiller is sold without a prescription."
     }
    },
    {
@@ -34404,7 +34404,7 @@
      },
      {
       "lang": "en",
-      "text": "The pack must be kept in the fridge."
+      "text": "The package must be kept in the fridge."
      },
      {
       "lang": "tr",
@@ -34413,7 +34413,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The pack must be kept in the fridge."
+     "target": "The package must be kept in the fridge."
     }
    },
    {
@@ -34425,10 +34425,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The pack must be kept in a cool place.",
+     "target": "The package must be kept in a cool place.",
      "accept": [
-      "The pack must be kept somewhere cool.",
-      "This pack must be kept in a cool place."
+      "The package must be kept somewhere cool.",
+      "This package must be kept in a cool place."
      ],
      "hint": [
       {
@@ -34445,7 +34445,7 @@
       },
       {
        "lang": "en",
-       "text": "The pack must be kept in a cool place."
+       "text": "The package must be kept in a cool place."
       },
       {
        "lang": "tr",
@@ -34525,7 +34525,7 @@
    },
    {
     "de": "infection",
-    "tr": "iltihap"
+    "tr": "enfeksiyon"
    },
    {
     "de": "virus",
@@ -34670,7 +34670,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
      },
      {
       "lang": "en",
@@ -34747,7 +34747,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Mikrobun yaptığı şişkin acıya"
+      "text": "Mikropların vücutta yol açtığı hastalığa"
      },
      {
       "lang": "en",
@@ -34779,7 +34779,7 @@
      },
      {
       "lang": "tr",
-      "text": "İltihap geçmişti ve sadece bir virüstü."
+      "text": "Enfeksiyon geçmişti ve sadece bir virüstü."
      }
     ],
     "expect": {
@@ -35151,7 +35151,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
+      "text": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
      },
      {
       "lang": "en",
@@ -35644,7 +35644,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Karar hastanenin ise"
+      "text": "Şimdi bugünün kuralı. Karar hastanenin ise"
      },
      {
       "lang": "en",
@@ -36117,7 +36117,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Karar ve söz veren fiiller kendinden sonra"
+      "text": "Şimdi bugünün kuralı. Karar ve söz veren fiiller kendinden sonra"
      },
      {
       "lang": "en",
@@ -36356,7 +36356,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Geç yemeyi bıraktı."
+      "text": "Bir tane daha: Geç saatte yemek yemeyi bıraktı."
      }
     ],
     "expect": {
@@ -36469,7 +36469,7 @@
    },
    {
     "de": "skin",
-    "tr": "deri"
+    "tr": "cilt"
    },
    {
     "de": "scale",
@@ -36566,7 +36566,7 @@
      },
      {
       "lang": "tr",
-      "text": "Basınç bu sefer daha yüksekti."
+      "text": "Tansiyon bu sefer daha yüksekti."
      }
     ],
     "expect": {
@@ -36598,7 +36598,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Gerçekleşmesi mümkün şart"
+      "text": "Şimdi bugünün kuralı. Gerçekleşmesi mümkün şart"
      },
      {
       "lang": "en",
@@ -36825,7 +36825,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sadece bir kas ve deri sıcak."
+      "text": "Sorun sadece bir kasta ve cilt sıcak."
      }
     ],
     "expect": {
@@ -36970,7 +36970,7 @@
    },
    {
     "de": "leave",
-    "tr": "izin"
+    "tr": "izin (işten)"
    },
    {
     "de": "otherwise",
@@ -36995,7 +36995,7 @@
   ],
   "patterns": [
    {
-    "de": "I sent the note; moreover I called the office.",
+    "de": "I sent the note; moreover, I called the office.",
     "tr": "aynı yöndeki ikinci bilgiyi ekler"
    },
    {
@@ -37016,7 +37016,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu dersin kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?"
+      "text": "Bugünün kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?"
      }
     ],
     "expect": {
@@ -37039,12 +37039,12 @@
      },
      {
       "lang": "en",
-      "text": "I sent the note; moreover I called the office."
+      "text": "I sent the note; moreover, I called the office."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I sent the note; moreover I called the office."
+     "target": "I sent the note; moreover, I called the office."
     }
    },
    {
@@ -37115,7 +37115,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:"
+      "text": "Şimdi bugünün kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:"
      },
      {
       "lang": "en",
@@ -37152,10 +37152,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I sent the form; moreover I called the office.",
+     "target": "I sent the form; moreover, I called the office.",
      "accept": [
-      "I sent the form; moreover, I called the office.",
-      "I sent the form; moreover I phoned the office."
+      "I sent the form; moreover I called the office.",
+      "I sent the form; moreover, I phoned the office."
      ],
      "hint": [
       {
@@ -37172,7 +37172,7 @@
       },
       {
        "lang": "en",
-       "text": "I sent the form; moreover I called the office."
+       "text": "I sent the form; moreover, I called the office."
       },
       {
        "lang": "tr",
@@ -37584,7 +37584,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Edilgen cümlede nesne başa geçer ve fiil"
+      "text": "Şimdi bugünün kuralı. Edilgen cümlede nesne başa geçer ve fiil"
      },
      {
       "lang": "en",
@@ -37653,7 +37653,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şeyi elden bırakmaya"
+      "text": "Bir şeyi atmaya"
      },
      {
       "lang": "en",
@@ -37763,16 +37763,16 @@
      },
      {
       "lang": "en",
-      "text": "Metal is taken to the yard."
+      "text": "Metal is taken to the recycling center."
      },
      {
       "lang": "tr",
-      "text": "Metal depoya götürülüyor."
+      "text": "Metal geri dönüşüm merkezine götürülüyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Metal is taken to the yard."
+     "target": "Metal is taken to the recycling center."
     }
    },
    {
@@ -38057,7 +38057,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Mümkün şart olağan zamanla kurulur;"
+      "text": "Şimdi bugünün kuralı. Mümkün şart olağan zamanla kurulur;"
      },
      {
       "lang": "en",
@@ -38518,7 +38518,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
+      "text": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
      },
      {
       "lang": "en",
@@ -39039,7 +39039,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Elinde veri yoksa"
+      "text": "Şimdi bugünün kuralı. Elinde veri yoksa"
      },
      {
       "lang": "en",
@@ -39063,7 +39063,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Hava durumu bu gece değişecek."
+      "text": "Şimdi sıra sende: Hava bu gece değişecek."
      }
     ],
     "expect": {
@@ -39148,7 +39148,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hava durumu her mevsimle değişiyor."
+      "text": "Hava her mevsimle değişiyor."
      }
     ],
     "expect": {
@@ -39508,7 +39508,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hiç bu kadar trafik görmemiştim."
+      "text": "Hiç bu kadar trafik görmedim."
      }
     ],
     "expect": {
@@ -39520,7 +39520,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Değişim HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
+      "text": "Şimdi bugünün kuralı. Değişim HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
      },
      {
       "lang": "en",
@@ -39743,15 +39743,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Hiç bu kadar inşaat görmemiştim."
+      "text": "Bir tane daha: Hiç bu kadar inşaat görmedim."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I have never seen so much building work.",
+     "target": "I have never seen so much construction.",
      "accept": [
-      "I have never seen so much construction.",
-      "I've never seen so much building work."
+      "I've never seen so much construction.",
+      "I have never seen so much construction work."
      ],
      "hint": [
       {
@@ -39760,7 +39760,7 @@
       },
       {
        "lang": "en",
-       "text": "I have never seen so much building work."
+       "text": "I have never seen so much construction."
       },
       {
        "lang": "tr",
@@ -39824,7 +39824,7 @@
   "vocab": [
    {
     "de": "seat",
-    "tr": "koltuk"
+    "tr": "koltuk (araçta)"
    },
    {
     "de": "route",
@@ -39835,7 +39835,7 @@
     "tr": "yolcu"
    },
    {
-    "de": "cycle",
+    "de": "bike",
     "tr": "bisiklet sürmek"
    },
    {
@@ -39852,7 +39852,7 @@
    },
    {
     "de": "rush",
-    "tr": "koşuşturma"
+    "tr": "yoğun saat"
    }
   ],
   "patterns": [
@@ -39865,7 +39865,7 @@
     "tr": "zorunluluğun olmadığını söyler"
    },
    {
-    "de": "You can't cycle in the bus lane.",
+    "de": "You can't bike in the bus lane.",
     "tr": "bir yasağı söyler"
    }
   ],
@@ -39961,7 +39961,7 @@
      },
      {
       "lang": "en",
-      "text": "cycle"
+      "text": "bike"
      },
      {
       "lang": "tr",
@@ -39985,7 +39985,7 @@
      },
      {
       "lang": "en",
-      "text": "You can't cycle in the bus lane."
+      "text": "You can't bike in the bus lane."
      },
      {
       "lang": "tr",
@@ -39994,14 +39994,14 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You can't cycle in the bus lane."
+     "target": "You can't bike in the bus lane."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Zorunluluğun üç derecesi var:"
+      "text": "Şimdi bugünün kuralı. Zorunluluğun üç derecesi var:"
      },
      {
       "lang": "en",
@@ -40220,7 +40220,7 @@
      },
      {
       "lang": "tr",
-      "text": "Koşuşturma en çok sekizde oluyor."
+      "text": "Yoğunluk en çok sekizde oluyor."
      }
     ],
     "expect": {
@@ -40237,17 +40237,16 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You can't cycle on this path.",
+     "target": "You can't bike on this path.",
      "accept": [
-      "You cannot cycle on this path.",
-      "You can't cycle on the path.",
-      "You mustn't cycle on this path.",
-      "You must not cycle on this path."
+      "You cannot bike on this path.",
+      "You can't ride your bike on this path.",
+      "You must not bike on this path."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Yasak için"
+       "text": "Yasak bildirmek için"
       },
       {
        "lang": "en",
@@ -40259,7 +40258,7 @@
       },
       {
        "lang": "en",
-       "text": "You can't cycle on this path."
+       "text": "You can't bike on this path."
       },
       {
        "lang": "tr",
@@ -40335,7 +40334,7 @@
    },
    {
     "de": "supply",
-    "tr": "su verme"
+    "tr": "su temini"
    },
    {
     "de": "landfill",
@@ -40484,7 +40483,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Karar veren fiiller kendinden sonra"
+      "text": "Şimdi bugünün kuralı. Karar veren fiiller kendinden sonra"
      },
      {
       "lang": "en",
@@ -40609,7 +40608,7 @@
      },
      {
       "lang": "tr",
-      "text": "Su verme iki saat duruyor."
+      "text": "Su temini iki saat kesiliyor."
      }
     ],
     "expect": {
@@ -40980,7 +40979,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
      },
      {
       "lang": "en",
@@ -41313,7 +41312,7 @@
     "tr": "önce olan işi bir kat geriye çeker"
    },
    {
-    "de": "They had cut the forest before anyone noticed.",
+    "de": "They had cut down the forest before anyone noticed.",
     "tr": "fark edilmeden önce biteni anlatır"
    }
   ],
@@ -41417,7 +41416,7 @@
      },
      {
       "lang": "en",
-      "text": "They had cut the forest before anyone noticed."
+      "text": "They had cut down the forest before anyone noticed."
      },
      {
       "lang": "tr",
@@ -41426,14 +41425,14 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They had cut the forest before anyone noticed."
+     "target": "They had cut down the forest before anyone noticed."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Değişiklikten ÖNCE olan iş"
+      "text": "Şimdi bugünün kuralı. Değişiklikten ÖNCE olan iş"
      },
      {
       "lang": "en",
@@ -41660,10 +41659,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "They had cut the trees before the vote.",
+     "target": "They had cut down the trees before the vote.",
      "accept": [
-      "They had cut the trees before the vote happened.",
-      "They had cut down the trees before the vote."
+      "They had cut down the trees before the vote happened.",
+      "They had cut the trees down before the vote."
      ],
      "hint": [
       {
@@ -41672,7 +41671,7 @@
       },
       {
        "lang": "en",
-       "text": "They had cut the trees before the vote."
+       "text": "They had cut down the trees before the vote."
       },
       {
        "lang": "tr",
@@ -41801,7 +41800,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hareketin çok olduğu demek. Kimsenin olmadığı hâle ise"
+      "text": "Hareketli, kalabalık demek. Kendini yapayalnız hissetmeye ise"
      },
      {
       "lang": "en",
@@ -41905,7 +41904,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç bağlaç üç ayrı ilişki kuruyor:"
+      "text": "Şimdi bugünün kuralı. Üç bağlaç üç ayrı ilişki kuruyor:"
      },
      {
       "lang": "en",
@@ -42354,7 +42353,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hiç böyle bir rahatlama hissetmemiştim."
+      "text": "Hiç böyle bir rahatlama hissetmedim."
      }
     ],
     "expect": {
@@ -42366,7 +42365,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
+      "text": "Şimdi bugünün kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
      },
      {
       "lang": "en",
@@ -42479,14 +42478,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Gürültü çalışma başlayınca başladı."
+      "text": "Şimdi sen kur: Gürültü çalışmalar başlayınca başladı."
      }
     ],
     "expect": {
      "kind": "produce",
      "target": "The noise started when the work began.",
      "accept": [
-      "The noise started when the works began.",
+      "The noise started when the construction began.",
       "The noise began when the work started."
      ],
      "hint": [
@@ -42589,7 +42588,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Hiç böyle bir sevinç hissetmemiştim."
+      "text": "Bir tane daha: Hiç böyle bir sevinç hissetmedim."
      }
     ],
     "expect": {
@@ -42831,7 +42830,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Fark etmeden ÖNCE olan iş"
+      "text": "Şimdi bugünün kuralı. Fark etmeden ÖNCE olan iş"
      },
      {
       "lang": "en",
@@ -43010,7 +43009,7 @@
      },
      {
       "lang": "en",
-      "text": "I felt guilty and a tear came."
+      "text": "I felt guilty, and a tear ran down my face."
      },
      {
       "lang": "tr",
@@ -43019,14 +43018,14 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I felt guilty and a tear came."
+     "target": "I felt guilty, and a tear ran down my face."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Yüksek sesle konuşmaya"
+      "text": "Sesini yükseltip bağırmaya"
      },
      {
       "lang": "en",
@@ -43208,7 +43207,7 @@
      },
      {
       "lang": "tr",
-      "text": "Uykuda ya da uyanıkken kurulan demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Uykuda görülen ya da uyanıkken kurulan hayal demek. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -43296,7 +43295,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Uzak ve belirsiz bir hayal için"
+      "text": "Şimdi bugünün kuralı. Uzak ve belirsiz bir hayal için"
      },
      {
       "lang": "en",
@@ -43617,7 +43616,7 @@
   "course": "en",
   "icon": "handshake",
   "title": "If I could",
-  "titleTr": "Olsaydı",
+  "titleTr": "Yapabilseydim",
   "summary": "Barışmayı konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve tek çıkışı ayırır.",
   "minutes": 10,
   "focusId": "Conditionals",
@@ -43785,7 +43784,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Mümkün şart olağan zamanla kurulur;"
+      "text": "Şimdi bugünün kuralı. Mümkün şart olağan zamanla kurulur;"
      },
      {
       "lang": "en",
@@ -43878,7 +43877,7 @@
      },
      {
       "lang": "tr",
-      "text": "araya mesafe girmemişse ise"
+      "text": "aralarında mesafe olmayanlar için ise"
      },
      {
       "lang": "en",
@@ -44282,7 +44281,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
+      "text": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
      },
      {
       "lang": "en",
@@ -44795,7 +44794,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Destek olurken üç derece var:"
+      "text": "Şimdi bugünün kuralı. Destek olurken üç derece var:"
      },
      {
       "lang": "en",
@@ -44998,16 +44997,16 @@
      },
      {
       "lang": "en",
-      "text": "A kind word cuts the stress."
+      "text": "A kind word eases the stress."
      },
      {
       "lang": "tr",
-      "text": "Nazik bir söz gerilimi kesiyor."
+      "text": "Nazik bir söz gerilimi azaltıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A kind word cuts the stress."
+     "target": "A kind word eases the stress."
     }
    },
    {
@@ -45065,7 +45064,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Yasak için"
+       "text": "Yasak bildirmek için"
       },
       {
        "lang": "en",
@@ -45121,7 +45120,7 @@
   ],
   "chat": {
    "scene": "Bir arkadaşın kötü bir haber aldı ve seninle konuşuyor. Ne yapman gerektiğini, onun neyi yapmak zorunda olmadığını ve senin neyi söylememen gerektiğini gözeterek konuş.",
-   "partner": "kötü bir haber almış, çözüm değil dinlenmek isteyen bir arkadaş",
+   "partner": "kötü bir haber almış, çözüm değil sadece onu dinlemeni isteyen bir arkadaş",
    "opening": "I don't even know where to start. What would you do?",
    "openingTr": "Nereden başlayacağımı bile bilmiyorum. Sen olsan ne yapardın?",
    "goal": "Bir gerekliliği, bir serbestliği ve bir yasağı üç ayrı kalıpla söylediysen konuşma başarılı sayılır.",
@@ -45302,7 +45301,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Karar veren fiiller kendinden sonra"
+      "text": "Şimdi bugünün kuralı. Karar veren fiiller kendinden sonra"
      },
      {
       "lang": "en",
@@ -45439,7 +45438,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Bundan konuşmaktan kaçınıyor."
+      "text": "Şimdi sen kur: Bu konuda konuşmaktan kaçınıyor."
      }
     ],
     "expect": {
@@ -45541,16 +45540,16 @@
      },
      {
       "lang": "en",
-      "text": "I will do it later, not never."
+      "text": "I will do it later, but I will do it."
      },
      {
       "lang": "tr",
-      "text": "Onu sonra yapacağım, hiç değil."
+      "text": "Onu sonra yapacağım ama yapacağım."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I will do it later, not never."
+     "target": "I will do it later, but I will do it."
     }
    },
    {
@@ -45700,7 +45699,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sırdaş olmak neyi aktarmayacağını bilmeyi de gerektiriyor; bu ders aktarmanın dilbilgisini kuruyor. Hazır mısın?"
+      "text": "Sırdaş olmak neyi aktarmayacağını bilmeyi de gerektiriyor; bugün aktarmanın dil bilgisini kuruyoruz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -45807,7 +45806,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
+      "text": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge"
      },
      {
       "lang": "en",
@@ -46296,7 +46295,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Edilgen cümlede nesne başa geçer; işi yapan önemliyse"
+      "text": "Şimdi bugünün kuralı. Edilgen cümlede nesne başa geçer; işi yapan önemliyse"
      },
      {
       "lang": "en",
@@ -46381,7 +46380,7 @@
      },
      {
       "lang": "tr",
-      "text": "başkası için göze alana ise"
+      "text": "başkası için tehlikeyi göze alana ise"
      },
      {
       "lang": "en",
@@ -46487,7 +46486,7 @@
      },
      {
       "lang": "tr",
-      "text": "Örnek tek söz edilmeden konuldu."
+      "text": "Hiç söz söylemeden örnek oldu."
      }
     ],
     "expect": {
@@ -46632,7 +46631,7 @@
    },
    {
     "de": "sense",
-    "tr": "kavrayış"
+    "tr": "anlam / mantık"
    },
    {
     "de": "follow",
@@ -46644,7 +46643,7 @@
    },
    {
     "de": "develop",
-    "tr": "geliştirmek"
+    "tr": "geliştirmek / ortaya koymak"
    },
    {
     "de": "model",
@@ -46678,7 +46677,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu B1'in son dersi ve burada seviyenin bütün bağlaçları bir araya geliyor: amaç, sonuç, çekince. Hazır mısın?"
+      "text": "Bu, B1'in son Konuşma adımı ve burada seviyenin bütün bağlaçları bir araya geliyor: amaç, sonuç, çekince. Hazır mısın?"
      }
     ],
     "expect": {
@@ -46749,7 +46748,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şeyi kavrama gücüne"
+      "text": "Bir şeyin akla yatmasına"
      },
      {
       "lang": "en",
@@ -46757,7 +46756,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir."
+      "text": "denir; 'it makes sense' mantıklı demektir."
      }
     ]
    },
@@ -46785,7 +46784,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç bağlaç üç ayrı ilişki kuruyor:"
+      "text": "Şimdi bugünün kuralı. Üç bağlaç üç ayrı ilişki kuruyor:"
      },
      {
       "lang": "en",
@@ -46988,16 +46987,16 @@
      },
      {
       "lang": "en",
-      "text": "I want to develop my own model of work."
+      "text": "She is my model, so I want to develop my skills."
      },
      {
       "lang": "tr",
-      "text": "Kendi çalışma biçimimi geliştirmek istiyorum."
+      "text": "O benim örnek aldığım kişi, o yüzden becerilerimi geliştirmek istiyorum."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I want to develop my own model of work."
+     "target": "She is my model, so I want to develop my skills."
     }
    },
    {

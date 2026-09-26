@@ -2,52 +2,52 @@
  {
   "tr": "krizi doğal afet sayan, «piyasa böyle işliyor» diyen biri",
   "kind": "partner",
-  "de": "jemand, der die Krise für eine Naturkatastrophe hält und sagt «so funktionieren Märkte»"
+  "de": "jemand, der die Krise für eine Naturkatastrophe hält und sagt „so funktionieren Märkte“"
  },
  {
   "tr": "her tahmini söz sayan, «yani kazanacağız» diyen bir müşteri",
   "kind": "partner",
-  "de": "ein Kunde, der jede Prognose für ein Versprechen hält und sagt «wir verdienen also»"
+  "de": "ein Kunde, der jede Prognose für ein Versprechen hält und sagt „wir verdienen also“"
  },
  {
   "tr": "rakamı tek doğru sayan, «sayı sayıdır» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "ein Kollege, der die Zahl für die einzige Wahrheit hält und sagt «eine Zahl ist eine Zahl»"
+  "de": "ein Kollege, der die Zahl für die einzige Wahrheit hält und sagt „eine Zahl ist eine Zahl“"
  },
  {
   "tr": "metni eksiksiz sayan, «her şey yazıyor» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "eine Kollegin, die den Text für vollständig hält und sagt «es steht alles drin»"
+  "de": "eine Kollegin, die den Text für vollständig hält und sagt „es steht alles drin“"
  },
  {
   "tr": "faizi tek araç sayan, «başka ne yapabilirlerdi» diyen bir iktisatçı",
   "kind": "partner",
-  "de": "ein Ökonom, der den Zins für das einzige Mittel hält und fragt «was hätten sie sonst tun sollen»"
+  "de": "ein Ökonom, der den Zins für das einzige Mittel hält und fragt „was hätten sie sonst tun sollen“"
  },
  {
   "tr": "her söylentiyi kesin bilgi sayan, «demek yapmış» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "ein Kollege, der jedes Gerücht für gesichertes Wissen hält und sagt «er hat es also getan»"
+  "de": "ein Kollege, der jedes Gerücht für gesichertes Wissen hält und sagt „er hat es also getan“"
  },
  {
   "tr": "yalnız harcanmışa bakan, «bu kadar para gitti, bırakamayız» diyen biri",
   "kind": "partner",
-  "de": "jemand, der nur auf das Ausgegebene sieht und sagt «so viel Geld ist weg, wir können nicht aufhören»"
+  "de": "jemand, der nur auf das Ausgegebene sieht und sagt „so viel Geld ist weg, wir können nicht aufhören“"
  },
  {
   "tr": "her bildirimi kişisel husumet sayan, «kime kızgınsın» diyen bir yönetici",
   "kind": "partner",
-  "de": "ein Vorgesetzter, der jede Meldung für persönlichen Groll hält und fragt «auf wen bist du wütend»"
+  "de": "ein Vorgesetzter, der jede Meldung für persönlichen Groll hält und fragt „auf wen bist du wütend“"
  },
  {
   "tr": "iddiayı olduğu gibi savunan, «raporumuz ödül aldı» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "eine Kollegin, die die Aussage unbesehen verteidigt und sagt «unser Bericht wurde ausgezeichnet»"
+  "de": "eine Kollegin, die die Aussage unbesehen verteidigt und sagt „unser Bericht wurde ausgezeichnet“"
  },
  {
   "tr": "her ölçütü kendi pazarına taşıyan, «bizde de böyle olur» diyen bir bölge müdürü",
   "kind": "partner",
-  "de": "ein Regionalleiter, der jeden Maßstab auf seinen Markt überträgt und sagt «bei uns ist das genauso»"
+  "de": "ein Regionalleiter, der jeden Maßstab auf seinen Markt überträgt und sagt „bei uns ist das genauso“"
  },
  {
   "tr": "Burada kime kızgınsın?",
@@ -162,12 +162,12 @@
  {
   "tr": "Maliyet konuşmasının yerleşik eşdizimlerini öğretir; hangi maliyet adı seçilirse karar da o adla verilir.",
   "kind": "summary",
-  "de": "Lehrt die festen Wortverbindungen des Redens über Kosten; welcher Kostenname gewählt wird, so fällt auch die Entscheidung."
+  "de": "Lehrt die festen Wortverbindungen des Redens über Kosten; unter dem gewählten Kostennamen fällt auch die Entscheidung."
  },
  {
   "tr": "Finansal tahmini aktarırken kipin koyduğu mesafeyi öğretir; kesin tahmin bir kez tutmazsa bütün analizi götürür.",
   "kind": "summary",
-  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben einer Finanzprognose setzt; eine bestimmte Prognose reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft."
+  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben einer Finanzprognose setzt; eine Prognose ohne Vorbehalt reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft."
  },
  {
   "tr": "Aynı ekonomik rakamın basında ve modelde başka ad aldığını öğretir; ad seçimi kimin sorumlu olacağını da belirler.",
@@ -292,7 +292,7 @@
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir uyarı olarak kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Warnung."
+  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Warnung."
  },
  {
   "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi daha kibar bir adla doğruluyor.",
@@ -730,7 +730,7 @@
   "de": "Etikettenschwindel"
  },
  {
-  "tr": "muhasebe sahtekarlığı",
+  "tr": "muhasebe sahtekârlığı",
   "kind": "vocab.tr",
   "de": "Bilanzfälschung"
  },
@@ -752,17 +752,17 @@
  {
   "tr": "İki eylemi ayırmak için",
   "kind": "hint.tr",
-  "de": "Um zwei Handlungen zu trennen"
+  "de": "Um zwei Handlungen zu trennen –"
  },
  {
   "tr": "Ödünü başa alıp bedeli söylemek için",
   "kind": "hint.tr",
-  "de": "Um das Zugeständnis voranzustellen und den Preis zu nennen"
+  "de": "Um das Zugeständnis voranzustellen und den Preis zu nennen –"
  },
  {
   "tr": "Olmasaydıyı denetim savında kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht in der Aufsichtsthese zu bauen"
+  "de": "Um das Wäre-nicht in der Aufsichtsthese zu bauen –"
  },
  {
   "tr": "Sayıyı anlatıdan ayırmak için iki yarı kurulur:",
@@ -837,7 +837,7 @@
  {
   "tr": "Yükü fiil taşıyor.",
   "kind": "say.tr",
-  "de": "Die Last trägt das Verb."
+  "de": "Es ist das Verb, das die Last trägt."
  },
  {
   "tr": "Bütçenin aşılmasına",
@@ -872,7 +872,7 @@
  {
   "tr": "Kişiyi biçim koruyor.",
   "kind": "say.tr",
-  "de": "Die Person schützt die Form."
+  "de": "Die Form schützt die Person."
  },
  {
   "tr": "Her gönderme, geçerli olduğu pazarı adlandırır.",
@@ -897,7 +897,7 @@
  {
   "tr": "Kararı eşdizim veriyor.",
   "kind": "say.tr",
-  "de": "Die Entscheidung trifft die Wortverbindung."
+  "de": "Es ist die Wortverbindung, die die Entscheidung trifft."
  },
  {
   "tr": "Kurala aykırı davranışa",
@@ -987,7 +987,7 @@
  {
   "tr": "Dinlenmeyi ödün kazandırıyor.",
   "kind": "say.tr",
-  "de": "Gehört zu werden verschafft das Zugeständnis."
+  "de": "Das Zugeständnis verschafft Gehör."
  },
  {
   "tr": "döngünün tersine çalışana ise",
@@ -1022,7 +1022,7 @@
  {
   "tr": "Kip onu analiz olarak tutuyor.",
   "kind": "say.tr",
-  "de": "Das Modalverb hält es als Analyse."
+  "de": "Das Modalverb lässt sie eine Analyse bleiben."
  },
  {
   "tr": "Para arzı parasal bir sorudur.",
@@ -1182,7 +1182,7 @@
  {
   "tr": "Birinin tarafından anlamına gelen öbeğe",
   "kind": "say.tr",
-  "de": "Die Wendung, die von jemandem her bedeutet, heißt"
+  "de": "Die Wendung mit der Bedeutung „vonseiten einer Person“ heißt"
  },
  {
   "tr": "borcunu taşıyamayacak durumda olana ise",
@@ -1277,7 +1277,7 @@
  {
   "tr": "İşin kim tarafından ve nasıl işletileceğine",
   "kind": "say.tr",
-  "de": "Wer und wie den Betrieb führt, heißt"
+  "de": "Wer den Betrieb wie führt, heißt"
  },
  {
   "tr": "Şimdi aynı rakamı iki dil düzeyinde anlatacaksın.",
@@ -1285,7 +1285,7 @@
   "de": "Jetzt gibst du dieselbe Zahl in zwei Registern wieder."
  },
  {
-  "tr": "Muhbir, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
+  "tr": "İfşacı, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
   "de": "Der Hinweisgeber behauptet offen, was die Prüfer bloß annehmen."
  },
@@ -1377,7 +1377,7 @@
  {
   "tr": "bir şeyin eksikliği yüzünden anlamına gelen öbeğe ise",
   "kind": "say.tr",
-  "de": "und die Wendung, die wegen des Fehlens von etwas bedeutet, heißt"
+  "de": "und die Wendung mit der Bedeutung „wegen des Fehlens von etwas“ heißt"
  },
  {
   "tr": "geçici bir dalgayı anlatır ve kimseyi sorumlu tutmaz,",
@@ -1430,9 +1430,9 @@
   "de": "Das Konsortium baut, das Betreibermodell benennt es nicht."
  },
  {
-  "tr": "Şimdi dersin kuralı. Ekonomi haberinde ad SÜREYİ söyler:",
+  "tr": "Şimdi bugünün kuralı. Ekonomi haberinde ad SÜREYİ söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Wirtschaftsnachricht sagt der Name die DAUER:"
+  "de": "Jetzt die Regel von heute. In der Wirtschaftsnachricht sagt der Name die DAUER:"
  },
  {
   "tr": "Şimdi sıra sende: Kampanya özenliydi, denetim pek değil.",
@@ -1440,7 +1440,7 @@
   "de": "Jetzt bist du dran: Die Kampagne war sorgfältig, die Prüfung weniger."
  },
  {
-  "tr": "Şehrin tarafından ilgi yokluğundan hiçbir şey ilerlemedi.",
+  "tr": "Şehir cephesinde ilgi olmadığından hiçbir şey ilerlemedi.",
   "kind": "say.tr",
   "de": "Mangels Interesse vonseiten der Stadt bewegte sich nichts."
  },
@@ -1450,9 +1450,9 @@
   "de": "Jetzt bist du dran: Grenzkosten sind keine Fixkosten."
  },
  {
-  "tr": "Şimdi sıra sende: Yatırım döngüsü oran düşmeden dönebilir.",
+  "tr": "Şimdi sıra sende: Yatırım döngüsü pekâlâ oran düşmeden dönebilir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Der Investitionszyklus dreht womöglich, bevor die Quote fällt."
+  "de": "Jetzt bist du dran: Der Investitionszyklus kann durchaus drehen, bevor die Quote fällt."
  },
  {
   "tr": "Zarar numarası yapmak kazancı zimmetine geçirmek değildir.",
@@ -1465,9 +1465,9 @@
   "de": "Noch eins: Deflation ist eine Zahl, die Prognose eine Erzählung."
  },
  {
-  "tr": "enflasyondan arındırılmamış haliyle anlamına gelen öbeğe ise",
+  "tr": "enflasyondan arındırılmamış hâliyle anlamına gelen öbeğe ise",
   "kind": "say.tr",
-  "de": "und die Wendung, die ohne Abzug der Teuerung bedeutet, heißt"
+  "de": "und die Wendung mit der Bedeutung „ohne Abzug der Teuerung“ heißt"
  },
  {
   "tr": "Kurtarma paketinin arkasında bir spekülasyon balonu duruyor.",
@@ -1495,14 +1495,14 @@
   "de": "Wenn auch antizyklisch, kommt die Fiskalpolitik zu spät."
  },
  {
-  "tr": "Şimdi dersin kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:",
+  "tr": "Şimdi bugünün kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Finanzvorwurf ist das Verb ein RECHTSANSPRUCH:"
+  "de": "Jetzt die Regel von heute. Im Finanzvorwurf ist das Verb ein RECHTSANSPRUCH:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Strateji raporunda adres bir PAZAR taşır:",
+  "tr": "Şimdi bugünün kuralı. Strateji raporunda adres bir PAZAR taşır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Strategiepapier trägt die Adresse einen MARKT:"
+  "de": "Jetzt die Regel von heute. Im Strategiepapier trägt die Adresse einen MARKT:"
  },
  {
   "tr": "Bir pazarda pay kazanmak demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1515,9 +1515,9 @@
   "de": "Der Name einer Zahl sagt auch, wessen Problem sie sein soll."
  },
  {
-  "tr": "Şimdi dersin kuralı. İhale metninde eksiltme bir RİSK devridir:",
+  "tr": "Şimdi bugünün kuralı. İhale metninde eksiltme bir RİSK devridir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Ausschreibungstext ist die Auslassung eine RISIKOÜBERTRAGUNG:"
+  "de": "Jetzt die Regel von heute. Im Ausschreibungstext ist die Auslassung eine RISIKOÜBERTRAGUNG:"
  },
  {
   "tr": "Şimdi sıra sende: Basın açıklamasında düşüş, modelde durgunluk.",
@@ -1545,9 +1545,9 @@
   "de": "Das Systemrisiko versichern wir, das Handelsdefizit nicht."
  },
  {
-  "tr": "Şimdi dersin kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:",
+  "tr": "Şimdi bugünün kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Kosten trifft die Wortverbindung auch die ENTSCHEIDUNG:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch der Kosten trifft die Wortverbindung auch die ENTSCHEIDUNG:"
  },
  {
   "tr": "Teknik bir tartışmada ödün, itirazın duyulabilmesinin koşuludur.",
@@ -1597,7 +1597,7 @@
  {
   "tr": "Kriz anlatısında özne seçimi, faturanın kime kesileceğini de seçer.",
   "kind": "say.tr",
-  "de": "In der Krisenerzählung wählt die Wahl des Subjekts auch, wem die Rechnung gestellt wird."
+  "de": "In der Krisenerzählung entscheidet die Wahl des Subjekts auch, wem die Rechnung gestellt wird."
  },
  {
   "tr": "Hangi maliyeti hesapladığın, hangi kararı vereceğini önceden söyler.",
@@ -1620,19 +1620,19 @@
   "de": "Das heißt das Verfahren, in dem ein Auftrag im Wettbewerb vergeben wird. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:",
+  "tr": "Şimdi bugünün kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Aufsichtssprache bietet das ungebeugte Verb Schutz:"
+  "de": "Jetzt die Regel von heute. In der Aufsichtssprache bietet das ungebeugte Verb Schutz:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:",
+  "tr": "Şimdi bugünün kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Krisensatz stiftet das Vorangestellte die verantwortliche Seite:"
+  "de": "Jetzt die Regel von heute. Im Krisensatz stiftet das Vorangestellte die verantwortliche Seite:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:",
+  "tr": "Şimdi bugünün kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spott im Unternehmen wird mit dem eigenen Wort der Aussage gebaut:"
+  "de": "Jetzt die Regel von heute. Der Spott im Unternehmen wird mit dem eigenen Wort der Aussage gebaut:"
  },
  {
   "tr": "Defterleri kasten yanlış tutmak demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1700,9 +1700,9 @@
   "de": "Sie verlangen, dass jede Hinweisgeberin gehört werde, bevor das Fehlverhalten begraben wird."
  },
  {
-  "tr": "Şimdi dersin kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:",
+  "tr": "Şimdi bugünün kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Prognose sagt das Modalverb nicht deinen, sondern den Abstand des MODELLS:"
+  "de": "Jetzt die Regel von heute. In der Prognose sagt das Modalverb nicht deinen, sondern den Abstand des MODELLS:"
  },
  {
   "tr": "Şimdi sen kur: Bakanlığın değer kaybı dediğine reel ekonomi zarar diyor.",
@@ -1805,9 +1805,9 @@
   "de": "Das heißt die Entscheidungen der Zentralbank über das Geld. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:",
+  "tr": "Şimdi bugünün kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der geldpolitischen Debatte ist das Zugeständnis ein Zeichen von FACHKUNDE:"
+  "de": "Jetzt die Regel von heute. In der geldpolitischen Debatte ist das Zugeständnis ein Zeichen von FACHKUNDE:"
  },
  {
   "tr": "ise bizi. İlk cümlede kimse karar vermemiştir; ikincisinde kararı biz vermişizdir.",
@@ -1830,7 +1830,7 @@
   "de": "Hallo! Heute lernen wir, in der geldpolitischen Debatte mit Zugeständnis zu widersprechen."
  },
  {
-  "tr": "Şimdi sıra sende: Biri sahtekarlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor.",
+  "tr": "Şimdi sıra sende: Biri sahtekârlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Die eine behauptet Betrug, die andere beweist Unterschlagung."
  },
@@ -1872,7 +1872,7 @@
  {
   "tr": "Kesin tahmin bir kez tutmazsa bütün analizi götürüyor; kip analizi tahminden ayırıyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Eine bestimmte Prognose reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft; das Modalverb trennt die Analyse von der Prognose. Bist du bereit?"
+  "de": "Eine Prognose ohne Vorbehalt reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft; das Modalverb trennt die Analyse von der Prognose. Bist du bereit?"
  },
  {
   "tr": "ise yalnız bir senaryonun verdiğini anlatır. Kipsiz tahmin bir söz olur ve sözler tutulmak zorundadır.",
@@ -1887,12 +1887,12 @@
  {
   "tr": "dersen talep kimsenin talebi olmaz. «Ben istiyorum» diyen ifşacı, kurumun gözünde savı değil kendisi olur.",
   "kind": "say.tr",
-  "de": "sagst, gehört die Forderung niemandem. Eine Hinweisgeberin, die «ich will» sagt, ist in den Augen des Hauses nicht ihre These, sondern sie selbst."
+  "de": "sagst, gehört die Forderung niemandem. Eine Hinweisgeberin, die „ich will“ sagt, ist in den Augen des Hauses nicht ihre These, sondern sie selbst."
  },
  {
   "tr": "Hangi maliyet adı seçilirse karar da o adla veriliyor; yanlış ad yanlış kararı meşru kılıyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Welcher Kostenname gewählt wird, so fällt auch die Entscheidung; ein falscher Name rechtfertigt eine falsche Entscheidung. Bist du bereit?"
+  "de": "Unter dem gewählten Kostennamen fällt auch die Entscheidung; ein falscher Name rechtfertigt eine falsche Entscheidung. Bist du bereit?"
  },
  {
   "tr": "Talebi kişiden ayıran biçim ifşacıyı da koruyor: talep kimseye ait değilse kimse hedef olmaz. Hazır mısın?",
@@ -1935,7 +1935,7 @@
   "de": "ist ein Wort, das sich niemand selbst zuschreibt; stellt man es neben eine Auslassung, ist das Haus in seiner eigenen Sprache gefangen."
  },
  {
-  "tr": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para tarafından okuyoruz. Hazır mısın?",
+  "tr": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para açısından okuyoruz. Hazır mısın?",
   "kind": "say.tr",
   "de": "Was ungesagt bleibt, ist meist, wer das Risiko trägt; in der letzten Lektion dieses Moduls lesen wir die Auslassung von der Geldseite her. Bist du bereit?"
  },

@@ -297,7 +297,7 @@
  {
   "tr": "Edilgen yasak için",
   "kind": "hint.tr",
-  "de": "Für ein Verbot im Passiv"
+  "de": "Für ein Verbot im Passiv –"
  },
  {
   "tr": "Düzenli iş için edilgen kullanılır:",
@@ -322,7 +322,7 @@
  {
   "tr": "yeri,",
   "kind": "say.tr",
-  "de": "verbindet den Ort,"
+  "de": "für den Ort,"
  },
  {
   "tr": "takvim",
@@ -410,9 +410,9 @@
   "de": "Wenn das Wasser übertritt und alles bedeckt, heißt das"
  },
  {
-  "tr": "Bir şeyi elden bırakmaya",
+  "tr": "Bir şeyi atmaya",
   "kind": "say.tr",
-  "de": "Etwas aus der Hand lassen heißt"
+  "de": "Etwas wegwerfen heißt"
  },
  {
   "tr": "Buz daha hızlı eriyecek.",
@@ -450,9 +450,9 @@
   "de": "Sie haben die Brücke 2015 gebaut."
  },
  {
-  "tr": "Metal depoya götürülüyor.",
+  "tr": "Metal geri dönüşüm merkezine götürülüyor.",
   "kind": "say.tr",
-  "de": "Metall wird zum Hof gebracht."
+  "de": "Metall wird zum Recyclinghof gebracht."
  },
  {
   "tr": "Suyun aktığı süslü yapıya",
@@ -545,7 +545,7 @@
   "de": "Die kurze grüne Pflanze auf dem Boden heißt"
  },
  {
-  "tr": "Hiç bu kadar trafik görmemiştim.",
+  "tr": "Hiç bu kadar trafik görmedim.",
   "kind": "say.tr",
   "de": "So viel Verkehr habe ich noch nie gesehen."
  },
@@ -580,7 +580,7 @@
   "de": "Das Zimmer bleibt warm und der Flur ist kühl."
  },
  {
-  "tr": "Hava durumu her mevsimle değişiyor.",
+  "tr": "Hava her mevsimle değişiyor.",
   "kind": "say.tr",
   "de": "Das Wetter ändert sich mit jeder Jahreszeit."
  },
@@ -595,9 +595,9 @@
   "de": "Die Frau, die die Blumen gepflanzt hat, wohnt hier."
  },
  {
-  "tr": "Şimdi dersin kuralı. Elinde veri yoksa",
+  "tr": "Şimdi bugünün kuralı. Elinde veri yoksa",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Hast du keine Daten, steht"
+  "de": "Jetzt die Regel von heute. Hast du keine Daten, steht"
  },
  {
   "tr": "Şimdi sen kur: Diktiğimiz ağaç büyüyor.",
@@ -700,9 +700,9 @@
   "de": "Hätte ich eine neue Lampe, würde ich weniger Energie verbrauchen."
  },
  {
-  "tr": "Bir tane daha: Hiç bu kadar inşaat görmemiştim.",
+  "tr": "Bir tane daha: Hiç bu kadar inşaat görmedim.",
   "kind": "say.tr",
-  "de": "Noch eins: So viel Bauarbeit habe ich noch nie gesehen."
+  "de": "Noch eins: So viele Bauarbeiten habe ich noch nie gesehen."
  },
  {
   "tr": "Her sabah oyun alanının yanında bir kuş ötüyor.",
@@ -720,7 +720,7 @@
   "de": "Noch eins: Wenn das Fenster nicht zu ist, entweicht die Wärme."
  },
  {
-  "tr": "Şimdi sıra sende: Hava durumu bu gece değişecek.",
+  "tr": "Şimdi sıra sende: Hava bu gece değişecek.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Das Wetter wird sich heute Nacht ändern."
  },
@@ -760,9 +760,9 @@
   "de": "Jetzt besprichst du das Sparen zu Hause mit einem Mitbewohner."
  },
  {
-  "tr": "Şimdi dersin kuralı. Mümkün şart olağan zamanla kurulur;",
+  "tr": "Şimdi bugünün kuralı. Mümkün şart olağan zamanla kurulur;",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Eine erfüllbare Bedingung wird in der gewöhnlichen Zeit gebaut;"
+  "de": "Jetzt die Regel von heute. Eine erfüllbare Bedingung wird in der gewöhnlichen Zeit gebaut;"
  },
  {
   "tr": "İkinci kalıbımız tarihi belli bir olayı anlatıyor. Tekrar et:",
@@ -770,9 +770,9 @@
   "de": "Unsere zweite Wendung erzählt ein Ereignis mit festem Datum. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Edilgen cümlede nesne başa geçer ve fiil",
+  "tr": "Şimdi bugünün kuralı. Edilgen cümlede nesne başa geçer ve fiil",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Passivsatz rückt das Objekt nach vorn und das Verb tritt mit"
+  "de": "Jetzt die Regel von heute. Im Passivsatz rückt das Objekt nach vorn und das Verb tritt mit"
  },
  {
   "tr": "Şişenin yapıldığı saydam madde demek. Bir araya getirmeye ise",
@@ -797,7 +797,7 @@
  {
   "tr": "kişiyi bağlar. Bir parkı anlatırken üçü de aynı paragrafta geçer.",
   "kind": "say.tr",
-  "de": "die Person. Wenn man einen Park beschreibt, stehen alle drei im selben Absatz."
+  "de": "für die Person. Wenn man einen Park beschreibt, stehen alle drei im selben Absatz."
  },
  {
   "tr": "Suyun açılıp kapandığı yer demek. İlk kalıbımız da bu. Tekrar et:",
@@ -815,9 +815,9 @@
   "de": "Jetzt du: Hätte ich ein besseres Fenster, würde ich mehr sparen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Değişim HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "tr": "Şimdi bugünün kuralı. Değişim HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Dauert die Veränderung NOCH AN, steht Present Perfect, und mit"
+  "de": "Jetzt die Regel von heute. Dauert die Veränderung NOCH AN, steht Present Perfect, und mit"
  },
  {
   "tr": "Bir bölgenin uzun yıllara yayılan hava düzeni demek. İlk kalıbımız da bu. Tekrar et:",

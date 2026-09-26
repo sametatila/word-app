@@ -122,7 +122,7 @@
  {
   "tr": "Bir dosyayı devralan meslektaşına tarafları tanıtıyorsun. Kimin ne imzaladığını, hangi usulün işlediğini ve kime bağlı çalışıldığını açıklayıcı ilgi cümleleriyle anlat.",
   "kind": "scene",
-  "de": "Du stellst der Kollegin, die die Akte übernimmt, die Parteien vor. Erzähl mit erklärenden Relativsätzen, wer was unterschrieben hat, welches Verfahren läuft und wem zugearbeitet wird."
+  "de": "Du stellst der Kollegin, die die Akte übernimmt, die Parteien vor. Erzähl mit erklärenden Relativsätzen, wer was unterschrieben hat, welches Verfahren läuft und wer wem unterstellt ist."
  },
  {
   "tr": "Kesin reddi, zamanı ve sınırı üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
@@ -163,6 +163,11 @@
   "tr": "ölçüt",
   "kind": "vocab.tr",
   "de": "Kriterium"
+ },
+ {
+  "tr": "sayısal ölçüt",
+  "kind": "vocab.tr",
+  "de": "Kennzahl"
  },
  {
   "tr": "örtük",
@@ -215,7 +220,7 @@
   "de": "ausführlich"
  },
  {
-  "tr": "bağlanmış",
+  "tr": "çözüme bağlanmış",
   "kind": "vocab.tr",
   "de": "beigelegt"
  },
@@ -295,7 +300,7 @@
   "de": "Entschädigung"
  },
  {
-  "tr": "üst mercie taşıma",
+  "tr": "üst merciye taşıma",
   "kind": "vocab.tr",
   "de": "Eskalation"
  },
@@ -342,22 +347,22 @@
  {
   "tr": "Önce biteni bağlamak için",
   "kind": "hint.tr",
-  "de": "Um das früher Beendete anzubinden"
+  "de": "Um das früher Beendete anzubinden –"
  },
  {
   "tr": "Zamanı devrikle vurgulamak için",
   "kind": "hint.tr",
-  "de": "Um den Zeitpunkt mit Inversion hervorzuheben"
+  "de": "Um den Zeitpunkt mit Inversion hervorzuheben –"
  },
  {
   "tr": "Kesin reddi devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um die klare Ablehnung mit Inversion zu sagen"
+  "de": "Um die klare Ablehnung mit Inversion zu sagen –"
  },
  {
   "tr": "Koşulun ancak o zaman doğduğunu söylemek için",
   "kind": "hint.tr",
-  "de": "Um zu sagen, dass die Pflicht erst dann entsteht"
+  "de": "Um zu sagen, dass die Pflicht erst dann entsteht –"
  },
  {
   "tr": "zaman",
@@ -430,9 +435,9 @@
   "de": "Die Lage rund um den Vorfall heißt"
  },
  {
-  "tr": "Resmî olmayan yazışmaya",
+  "tr": "Resmî olmayana",
   "kind": "say.tr",
-  "de": "Der nicht amtliche Schriftwechsel heißt"
+  "de": "Was nicht förmlich ist, heißt"
  },
  {
   "tr": "Tarafları bağlayan hükme",
@@ -485,9 +490,9 @@
   "de": "Dass man seinem Wort trauen kann, heißt"
  },
  {
-  "tr": "Bütün noktaları içeren yazıya",
+  "tr": "Bütün ayrıntıları içerene",
   "kind": "say.tr",
-  "de": "Ein Schreiben, das alle Punkte enthält, heißt"
+  "de": "Was alle Einzelheiten enthält, heißt"
  },
  {
   "tr": "Karar verirken bakılan ölçüye",
@@ -510,9 +515,9 @@
   "de": "Die Entschädigung kam im März."
  },
  {
-  "tr": "Her koşulun kendi anlatımı var.",
+  "tr": "Her anlatım koşulları farklı aktarıyor.",
   "kind": "say.tr",
-  "de": "Jede Lage hat ihre eigene Darstellung."
+  "de": "Jede Darstellung schildert die Umstände anders."
  },
  {
   "tr": "Zarara karşılık yapılan ödemeye",
@@ -670,7 +675,7 @@
   "de": "Jetzt formulierst du einen deutlichen Brief mündlich."
  },
  {
-  "tr": "Şimdi sıra sende: Ana, ki mektubu yazdı, müdür.",
+  "tr": "Şimdi sıra sende: Mektubu yazan Ana müdür.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Ana, die den Brief geschrieben hat, ist die Direktorin."
  },
@@ -790,9 +795,9 @@
   "de": "Das heißt eine Beschaffung über eingeholte Angebote. Und wer die Stelle leitet, heißt"
  },
  {
-  "tr": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve",
+  "tr": "Şimdi bugünün kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und"
+  "de": "Jetzt die Regel von heute. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und"
  },
  {
   "tr": "Son kalıbımız yükümlülüğün ne zaman doğduğunu söylüyor. Tekrar et:",
@@ -810,9 +815,9 @@
   "de": "Das heißt eine Entscheidung oder Arbeit ausführen. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:",
+  "tr": "Şimdi bugünün kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Steht ein negatives Adverb am Anfang, geht der Satz in die FRAGESTELLUNG:"
+  "de": "Jetzt die Regel von heute. Steht ein negatives Adverb am Anfang, geht der Satz in die FRAGESTELLUNG:"
  },
  {
   "tr": "Merhaba! Bugün olayı kısa anlatmayı öğreneceğiz: ne oldu, neden oldu, sonra ne yapıldı.",
@@ -837,7 +842,7 @@
  {
   "tr": "Merhaba! Bugün bir dosyadaki tarafları tanıtmayı öğreneceğiz: kim imzaladı, hangi usul, kime bağlı.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir, die Parteien einer Akte vorzustellen: wer unterschrieben hat, welches Verfahren läuft, wem zugearbeitet wird."
+  "de": "Hallo! Heute lernen wir, die Parteien einer Akte vorzustellen: wer unterschrieben hat, welches Verfahren läuft, wer wem unterstellt ist."
  },
  {
   "tr": "Müzakerede bu cümleler suçlama değil ders çıkarma aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?",

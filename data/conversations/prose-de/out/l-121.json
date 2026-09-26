@@ -2,52 +2,52 @@
  {
   "tr": "her savı «uzmanlar böyle diyor» ile kapatan biri",
   "kind": "partner",
-  "de": "jemand, der jede These mit «so sagen die Fachleute» abschließt"
+  "de": "jemand, der jede These mit „so sagen die Fachleute“ abschließt"
  },
  {
   "tr": "her hak savını çıkar sayan, «size mi lazım bu» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede Rechtsthese für Eigennutz hält und fragt «braucht ihr das»"
+  "de": "jemand, der jede Rechtsthese für Eigennutz hält und fragt „braucht ihr das“"
  },
  {
   "tr": "her adımda «bu neye dayanıyordu» diye soran bir kurul üyesi",
   "kind": "partner",
-  "de": "ein Gremienmitglied, das bei jedem Schritt fragt «worauf beruhte das»"
+  "de": "ein Gremienmitglied, das bei jedem Schritt fragt „worauf beruhte das“"
  },
  {
   "tr": "her sayıyı kesin sınır sayan, «demek aşmışız» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "ein Kollege, der jede Zahl für eine feste Grenze hält und sagt «wir haben sie also überschritten»"
+  "de": "ein Kollege, der jede Zahl für eine feste Grenze hält und sagt „wir haben sie also überschritten“"
  },
  {
   "tr": "sana dair kesin hükümler veren, «sen hep böylesin» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der bestimmte Urteile über dich fällt und sagt «du bist immer so»"
+  "de": "ein Freund, der endgültige Urteile über dich fällt und sagt „du bist immer so“"
  },
  {
   "tr": "her ahlak savını göreceli sayan, «herkesin doğrusu kendine» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede moralische These für relativ hält und sagt «jeder hat seine eigene Wahrheit»"
+  "de": "jemand, der jede moralische These für relativ hält und sagt „jeder hat seine eigene Wahrheit“"
  },
  {
   "tr": "üslubu önemsiz sayan, «sonuçta aynı şeyi söylüyorsun» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der den Stil für unwichtig hält und sagt «am Ende sagst du dasselbe»"
+  "de": "ein Freund, der den Stil für unwichtig hält und sagt „am Ende sagst du dasselbe“"
  },
  {
   "tr": "öğrenmeyi kural ezberi sayan, «kaç kural öğrendin» diye soran bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der Lernen für Regelpauken hält und fragt «wie viele Regeln hast du gelernt»"
+  "de": "ein Freund, der Lernen für Regelpauken hält und fragt „wie viele Regeln hast du gelernt“"
  },
  {
   "tr": "her eksik cümleyi tam anlayan ama «yani ne demek istiyorsun» diye soran bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der jeden unvollständigen Satz genau versteht, aber fragt «was willst du damit sagen»"
+  "de": "ein Freund, der jeden unvollständigen Satz genau versteht, aber fragt „was willst du damit sagen“"
  },
  {
   "tr": "aktardığın her savı senin savın sayan, «demek sen de öyle düşünüyorsun» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der jede wiedergegebene These für deine hält und sagt «du denkst also auch so»"
+  "de": "ein Freund, der jede wiedergegebene These für deine hält und sagt „du denkst also auch so“"
  },
  {
   "tr": "O adım neye dayanıyordu?",
@@ -60,7 +60,7 @@
   "de": "Und wie viele Regeln hast du gelernt?"
  },
  {
-  "tr": "Bu size mi lazım, değil mi?",
+  "tr": "Bu size lazım, değil mi?",
   "kind": "openingTr",
   "de": "Das braucht ihr doch für euch, oder?"
  },
@@ -172,7 +172,7 @@
  {
   "tr": "Kendi güdün üstüne konuşurken kipin koyduğu mesafeyi öğretir; kendine dair kesin cümle en kolay yanılan cümledir.",
   "kind": "summary",
-  "de": "Lehrt den Abstand, den das Modalverb beim Reden über die eigenen Beweggründe setzt; ein bestimmter Satz über sich selbst irrt am leichtesten."
+  "de": "Lehrt den Abstand, den das Modalverb beim Reden über die eigenen Beweggründe setzt; ein Satz ohne Vorbehalt über sich selbst irrt am leichtesten."
  },
  {
   "tr": "Uzun bir savı baştan sona bağlamayı öğretir; geri dönülmez bir karara götüren sav her adımını adresle taşımak zorundadır.",
@@ -237,7 +237,7 @@
  {
   "tr": "Bir arkadaşınla kendi tepkilerinden söz ediyorsun ve kendine dair kesin hükümler vermek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde neyi bilmediğini söyle.",
   "kind": "scene",
-  "de": "Du sprichst mit einer Freundin über deine eigenen Reaktionen und willst keine bestimmten Urteile über dich fällen. Bilde drei Modalstufen und sag bei jeder, was du nicht weißt."
+  "de": "Du sprichst mit einer Freundin über deine eigenen Reaktionen und willst keine endgültigen Urteile über dich fällen. Bilde drei Modalstufen und sag bei jeder, was du nicht weißt."
  },
  {
   "tr": "Kursun sonunda bir arkadaşına neyi öğrendiğini anlatıyorsun ve bunu kural listesi gibi söylemek istemiyorsun. Üç cümlede birer öğe düşür ve öğrendiklerinden hangisinin seçim olduğunu söyle.",
@@ -297,7 +297,7 @@
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir olasılık kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Möglichkeit, keine Diagnose."
+  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Möglichkeit, keine Diagnose."
  },
  {
   "tr": "Doğru. Biri yazarın kararı, öteki kararsızlığı; aradaki fark bilerek yapılıp yapılmadığı.",
@@ -477,7 +477,7 @@
  {
   "tr": "küçümsemek",
   "kind": "vocab.tr",
-  "de": "kleinreden"
+  "de": "herabsetzen"
  },
  {
   "tr": "kayıtsızlık",
@@ -607,7 +607,7 @@
  {
   "tr": "cezai sorumluluk",
   "kind": "vocab.tr",
-  "de": "Strafmündigkeit"
+  "de": "strafrechtliche Verantwortung"
  },
  {
   "tr": "duygusallaştırma",
@@ -662,7 +662,7 @@
  {
   "tr": "ters cevap vermek",
   "kind": "vocab.tr",
-  "de": "erwidern"
+  "de": "scharf erwidern"
  },
  {
   "tr": "tekrarlanabilirlik",
@@ -742,17 +742,17 @@
  {
   "tr": "Çarpıtmayı klişeden ayırmak için",
   "kind": "hint.tr",
-  "de": "Um Verzerrung und Gemeinplatz zu trennen"
+  "de": "Um Verzerrung und Gemeinplatz zu trennen –"
  },
  {
   "tr": "Olmasaydıyı hak savında kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht in der Rechtsthese zu bauen"
+  "de": "Um das Wäre-nicht in der Rechtsthese zu bauen –"
  },
  {
   "tr": "İkna gücünü haklılıktan ayırmak için",
   "kind": "hint.tr",
-  "de": "Um Überzeugungskraft und Berechtigung zu trennen"
+  "de": "Um Überzeugungskraft und Berechtigung zu trennen –"
  },
  {
   "tr": "Ödünü başa çekip sınırı göstermek için",
@@ -887,7 +887,7 @@
  {
   "tr": "Yükü fiil paylaşıyor.",
   "kind": "say.tr",
-  "de": "Die Last teilt das Verb."
+  "de": "Es ist das Verb, das die Last teilt."
  },
  {
   "tr": "gözlemine güvendiğini,",
@@ -917,7 +917,7 @@
  {
   "tr": "Sözü sözcük belirliyor.",
   "kind": "say.tr",
-  "de": "Das Versprechen bestimmt das Wort."
+  "de": "Das Wort bestimmt das Versprechen."
  },
  {
   "tr": "Duygunun ölçüyü aşmasına",
@@ -955,9 +955,9 @@
   "de": "Fassen wir zusammen: Beweisführung"
  },
  {
-  "tr": "Sözünün arkasında durmaya",
+  "tr": "Söylediğini gerçekten kastetmeye",
   "kind": "say.tr",
-  "de": "Zu seinem Wort zu stehen heißt"
+  "de": "Das zu meinen, was man sagt, heißt"
  },
  {
   "tr": "Aşılmaması önerilen sınıra",
@@ -1035,9 +1035,9 @@
   "de": "und eine Ruhe mit leichtem Herzen heißt"
  },
  {
-  "tr": "İlk cümle görüntüyü seçiyor.",
+  "tr": "İlk cümle neyin görüneceğini seçiyor.",
   "kind": "say.tr",
-  "de": "Der erste Satz wählt das Bild."
+  "de": "Der erste Satz wählt, was zu sehen ist."
  },
  {
   "tr": "Kayıtsızlığa sabır, hiddete dürüstlük diyorlar.",
@@ -1157,7 +1157,7 @@
  {
   "tr": "Dil bakımından anlamına gelen söze",
   "kind": "say.tr",
-  "de": "Das Wort, das der Sprache nach bedeutet, heißt"
+  "de": "Das Wort mit der Bedeutung „der Sprache nach“ heißt"
  },
  {
   "tr": "Onu bile bile dışarıda bıraktılar.",
@@ -1252,7 +1252,7 @@
  {
   "tr": "Ne yaptığını bilerek anlamına gelen söze",
   "kind": "say.tr",
-  "de": "Das Wort, das im Bewusstsein des eigenen Tuns bedeutet, heißt"
+  "de": "Das Wort mit der Bedeutung „im Bewusstsein des eigenen Tuns“ heißt"
  },
  {
   "tr": "Kişinin kendine koyduğu davranış kuralına",
@@ -1322,7 +1322,7 @@
  {
   "tr": "sonradan bakıldığında anlamına gelen öbeğe ise",
   "kind": "say.tr",
-  "de": "und die Wendung, die im Nachhinein bedeutet, heißt"
+  "de": "und die Wendung mit der Bedeutung „im Nachhinein“ heißt"
  },
  {
   "tr": "Yaklaşık değer gerçekleşme olasılığı değildir.",
@@ -1360,9 +1360,9 @@
   "de": "Hier gibt es keine schroffen Antworten, hier gibt es vielsagendes Schweigen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Alay eleştiriyi PAYLAŞTIRIR:",
+  "tr": "Şimdi bugünün kuralı. Alay eleştiriyi PAYLAŞTIRIR:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spott TEILT die Kritik:"
+  "de": "Jetzt die Regel von heute. Der Spott TEILT die Kritik:"
  },
  {
   "tr": "Şimdi sen kur: Geçicilik kaldı, sakinlik kalmadı.",
@@ -1377,7 +1377,7 @@
  {
   "tr": "Geri dönülmezlik gerçekse tutarlı bir plan yetmez.",
   "kind": "say.tr",
-  "de": "Ist die Unumkehrbarkeit wirklich, genügt ein kohärenter Plan nicht."
+  "de": "Ist die Unumkehrbarkeit real, genügt ein kohärenter Plan nicht."
  },
  {
   "tr": "İkna gücü savunulabilir olmakla aynı şey değildir.",
@@ -1417,7 +1417,7 @@
  {
   "tr": "Bir tane daha: Risk gerçekse tutarlı bir plan yetmez.",
   "kind": "say.tr",
-  "de": "Noch eins: Ist das Risiko wirklich, genügt ein kohärenter Plan nicht."
+  "de": "Noch eins: Ist das Risiko real, genügt ein kohärenter Plan nicht."
  },
  {
   "tr": "İkinci kalıbımız seçimi buluştan ayırıyor. Tekrar et:",
@@ -1462,7 +1462,7 @@
  {
   "tr": "Hiçbir devlet çıkarı cezai sorumluluğu ortadan kaldırmaz.",
   "kind": "say.tr",
-  "de": "Keine Staatsräson hebt die Strafmündigkeit auf."
+  "de": "Keine Staatsräson hebt die strafrechtliche Verantwortung auf."
  },
  {
   "tr": "İkinci kalıbımız çarpıtmayı klişeden ayırıyor. Tekrar et:",
@@ -1475,9 +1475,9 @@
   "de": "Bilde du jetzt: Die Wiederholbarkeit legt den Fehler offen."
  },
  {
-  "tr": "Şimdi sıra sende: Benlik algısı gerçeği aşıp yaşayabilir.",
+  "tr": "Şimdi sıra sende: Benlik algısı pekâlâ gerçeğin ömrünü aşabilir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Ein Selbstbild überlebt womöglich die Wahrheit."
+  "de": "Jetzt bist du dran: Ein Selbstbild kann durchaus länger leben als die Wahrheit."
  },
  {
   "tr": "Bir tane daha: Dinginliği öğreniyoruz, gerisini seçiyoruz.",
@@ -1545,9 +1545,9 @@
   "de": "Bilde du jetzt: Hinter dem Einvernehmen steht eine Denkschule."
  },
  {
-  "tr": "Şimdi dersin kuralı. Savın sırası neyin görünmeyeceğini seçer:",
+  "tr": "Şimdi bugünün kuralı. Savın sırası neyin görünmeyeceğini seçer:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Ordnung der These wählt, was unsichtbar bleibt:"
+  "de": "Jetzt die Regel von heute. Die Ordnung der These wählt, was unsichtbar bleibt:"
  },
  {
   "tr": "Ayrıntı düşkünlüğü, dediler, üstelik epey sevimli.",
@@ -1570,9 +1570,9 @@
   "de": "Der Spott beschuldigt hier nicht; er zeigt nur, dass der Name falsch gesetzt ist."
  },
  {
-  "tr": "Şimdi dersin kuralı. Uzun savda adres bir SORUMLULUK halkasıdır:",
+  "tr": "Şimdi bugünün kuralı. Uzun savda adres bir SORUMLULUK halkasıdır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der langen These ist die Adresse ein Glied der VERANTWORTUNG:"
+  "de": "Jetzt die Regel von heute. In der langen These ist die Adresse ein Glied der VERANTWORTUNG:"
  },
  {
   "tr": "Şimdi sen kur: Burada soğuk cevap yok, manidar sessizlikler var.",
@@ -1600,17 +1600,17 @@
   "de": "Gäbe es die Informationsfreiheit nicht, würde die Öffentlichkeit diese Akten nie sehen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarma fiili senin nerede durduğunu söyler:",
+  "tr": "Şimdi bugünün kuralı. Aktarma fiili senin nerede durduğunu söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das wiedergebende Verb sagt, wo du stehst:"
+  "de": "Jetzt die Regel von heute. Das wiedergebende Verb sagt, wo du stehst:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Üslup savın ne kadar ileri gittiğini söyler:",
+  "tr": "Şimdi bugünün kuralı. Üslup savın ne kadar ileri gittiğini söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Stil sagt, wie weit die These geht:"
+  "de": "Jetzt die Regel von heute. Der Stil sagt, wie weit die These geht:"
  },
  {
-  "tr": "Bir doğruluk biçimi olsa da, özgecilik bir yükümlülük de olabilir.",
+  "tr": "Bir dürüstlük biçimi olsa da, özgecilik bir yükümlülük de olabilir.",
   "kind": "say.tr",
   "de": "Wenn auch eine Form der Integrität, kann Altruismus auch eine Pflicht sein."
  },
@@ -1620,9 +1620,9 @@
   "de": "Jetzt bist du dran: Die eine vertritt den Plan, die andere bestätigt ihn nur."
  },
  {
-  "tr": "Şimdi dersin kuralı. Ahlak tartışmasında ödün DÜŞÜNMEYİ açık tutar:",
+  "tr": "Şimdi bugünün kuralı. Ahlak tartışmasında ödün DÜŞÜNMEYİ açık tutar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Moraldebatte hält das Zugeständnis das DENKEN offen:"
+  "de": "Jetzt die Regel von heute. In der Moraldebatte hält das Zugeständnis das DENKEN offen:"
  },
  {
   "tr": "Şimdi sıra sende: Denemede retorik, konuşmada abartılı duygusallık.",
@@ -1637,7 +1637,7 @@
  {
   "tr": "Kendi güdün hakkında konuşurken kip, yanılma payını cümlede bırakır.",
   "kind": "say.tr",
-  "de": "Beim Reden über die eigenen Beweggründe lässt das Modalverb den Irrtum im Satz."
+  "de": "Beim Reden über die eigenen Beweggründe lässt das Modalverb im Satz Raum für einen Irrtum."
  },
  {
   "tr": "Merhaba! Bugün aynı savın üsluba göre nasıl değiştiğini öğreneceğiz.",
@@ -1645,9 +1645,9 @@
   "de": "Hallo! Heute lernen wir, wie sich dieselbe These mit dem Stil verändert."
  },
  {
-  "tr": "Şimdi dersin kuralı. Hak dilinde çekimsiz fiil hakkı KİŞİDEN ayırır:",
+  "tr": "Şimdi bugünün kuralı. Hak dilinde çekimsiz fiil hakkı KİŞİDEN ayırır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Rechtssprache trennt das ungebeugte Verb das Recht von der PERSON:"
+  "de": "Jetzt die Regel von heute. In der Rechtssprache trennt das ungebeugte Verb das Recht von der PERSON:"
  },
  {
   "tr": "Karşılaştırma için alınan ölçü demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1690,9 +1690,9 @@
   "de": "Das heißt das Recht, nach dem eigenen Gewissen zu handeln. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kendinden söz ederken kip bir DÜRÜSTLÜK ölçüsüdür:",
+  "tr": "Şimdi bugünün kuralı. Kendinden söz ederken kip bir DÜRÜSTLÜK ölçüsüdür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Reden über sich selbst ist das Modalverb ein Maß der REDLICHKEIT:"
+  "de": "Jetzt die Regel von heute. Beim Reden über sich selbst ist das Modalverb ein Maß der REDLICHKEIT:"
  },
  {
   "tr": "Şimdi sıra sende: Savın yaptığı şey bir akıl yürütme hatasını gizlemek.",
@@ -1717,7 +1717,7 @@
  {
   "tr": "Kimse kimseyi küçümsemek istemedi, yalnızca ters cevap vermeyi seçtiler.",
   "kind": "say.tr",
-  "de": "Niemand wollte jemanden kleinreden, sie wählten nur, zu erwidern."
+  "de": "Niemand wollte jemanden herabsetzen, sie entschieden sich nur, scharf zu erwidern."
  },
  {
   "tr": "Merhaba! Bugün bir savı kurarken neyi başa aldığını seçmeyi öğreneceğiz.",
@@ -1725,9 +1725,9 @@
   "de": "Hallo! Heute lernen wir, beim Bauen einer These zu wählen, was wir voranstellen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kanıt sözlüğünde eşdizim SÖZÜN büyüklüğünü belirler:",
+  "tr": "Şimdi bugünün kuralı. Kanıt sözlüğünde eşdizim SÖZÜN büyüklüğünü belirler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch des Belegs bestimmt die Wortverbindung die Größe des VERSPRECHENS:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch des Belegs bestimmt die Wortverbindung die Größe des VERSPRECHENS:"
  },
  {
   "tr": "Şimdi son konuşmanı yapacaksın: bu kursta neyi seçmeyi öğrendiğini anlat.",
@@ -1815,7 +1815,7 @@
   "de": "dagegen sagt, auf welcher Annahme es beruht. Fällt ein Glied, bleibt die Entscheidung ohne Grundlage."
  },
  {
-  "tr": "Şimdi sıra sende: Kuşku bizi tedirgin etse de hiçbir ilke kuşkusuz ayakta kalmaz.",
+  "tr": "Şimdi sıra sende: Kuşku bizi ne kadar tedirgin etse de hiçbir ilke kuşkusuz ayakta kalmaz.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: So sehr uns der Zweifel beunruhigt, keine Maxime überlebt ohne Zweifel."
  },
@@ -1875,9 +1875,9 @@
   "de": "Der Unterschied zwischen Vertreten und Bestätigen steht im Verb, und die Zuhörerin hört ihn. Bist du bereit?"
  },
  {
-  "tr": "Şimdi dersin kuralı ve kursun sonucu. Bu seviyede öğrendiğin on aracın hiçbiri zorunlu değil:",
+  "tr": "Şimdi bugünün kuralı ve kursun sonucu. Bu seviyede öğrendiğin on aracın hiçbiri zorunlu değil:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion und das Ergebnis des Kurses. Keines der zehn Mittel, die du auf dieser Stufe gelernt hast, ist zwingend:"
+  "de": "Jetzt die Regel von heute und das Ergebnis des Kurses. Keines der zehn Mittel, die du auf dieser Stufe gelernt hast, ist zwingend:"
  },
  {
   "tr": "Kuşkuyu teslim etmeyen ahlak savı vaaz gibi duyuluyor ve kimse üstünde düşünmüyor. Hazır mısın?",
@@ -1897,7 +1897,7 @@
  {
   "tr": "ise bunun bir tahmin olduğunu söyler. Kendine dair kesin cümle, doğrulanamadığı için en tehlikeli cümledir.",
   "kind": "say.tr",
-  "de": "dagegen sagt, dass dies eine Vermutung ist. Ein bestimmter Satz über sich selbst ist der gefährlichste, weil er sich nicht prüfen lässt."
+  "de": "dagegen sagt, dass dies eine Vermutung ist. Ein Satz ohne Vorbehalt über sich selbst ist der gefährlichste, weil er sich nicht prüfen lässt."
  },
  {
   "tr": "ise savın yerini almaya başlar. Bu modülde artık kuralları değil, hangisini ne zaman seçtiğini öğreniyorsun.",
@@ -1907,7 +1907,7 @@
  {
   "tr": "dersen bu bir talep değil bir ölçüdür. «Biz istiyoruz» dersen aynı özgürlük bir grubun ayrıcalığı gibi görünür.",
   "kind": "say.tr",
-  "de": "sagst, ist es keine Forderung, sondern ein Maßstab. Sagst du «wir wollen», sieht dieselbe Freiheit wie das Vorrecht einer Gruppe aus."
+  "de": "sagst, ist es keine Forderung, sondern ein Maßstab. Sagst du „wir wollen“, sieht dieselbe Freiheit wie das Vorrecht einer Gruppe aus."
  },
  {
   "tr": "ise yalnız doğrular. Bir savı aktarırken hangi fiili seçtiğin, o savın sorumluluğunu paylaşıp paylaşmadığındır.",
@@ -1932,7 +1932,7 @@
  {
   "tr": "Kendine dair kesin cümle en kolay yanılan cümledir; kip burada bir alçakgönüllülük değil bir doğruluk aracı. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Ein bestimmter Satz über sich selbst irrt am leichtesten; das Modalverb ist hier keine Bescheidenheit, sondern ein Mittel der Wahrhaftigkeit. Bist du bereit?"
+  "de": "Ein Satz ohne Vorbehalt über sich selbst irrt am leichtesten; das Modalverb ist hier keine Bescheidenheit, sondern ein Mittel der Wahrhaftigkeit. Bist du bereit?"
  },
  {
   "tr": "Geri dönülmez bir karara götüren sav her adımını adresle taşımak zorunda; bir halka düşerse karar dayanaksız kalıyor. Hazır mısın?",

@@ -160,6 +160,11 @@
   "de": "Pflege"
  },
  {
+  "tr": "bakım-onarım",
+  "kind": "vocab.tr",
+  "de": "Wartung"
+ },
+ {
   "tr": "eklem",
   "kind": "vocab.tr",
   "de": "Gelenk"
@@ -382,57 +387,57 @@
  {
   "tr": "Niyet için",
   "kind": "hint.tr",
-  "de": "Für die Absicht"
+  "de": "Für die Absicht –"
  },
  {
   "tr": "Uyarı için",
   "kind": "hint.tr",
-  "de": "Für die Warnung"
+  "de": "Für die Warnung –"
  },
  {
   "tr": "Tek çıkış için",
   "kind": "hint.tr",
-  "de": "Für den einzigen Ausweg"
+  "de": "Für den einzigen Ausweg –"
  },
  {
   "tr": "Mümkün şart için",
   "kind": "hint.tr",
-  "de": "Für eine erfüllbare Bedingung"
+  "de": "Für eine erfüllbare Bedingung –"
  },
  {
   "tr": "Aynı yönde ekleme için",
   "kind": "hint.tr",
-  "de": "Für eine Ergänzung in dieselbe Richtung"
+  "de": "Für eine Ergänzung in dieselbe Richtung –"
  },
  {
   "tr": "Hastanenin kararı için",
   "kind": "hint.tr",
-  "de": "Für die Entscheidung des Krankenhauses"
+  "de": "Für die Entscheidung des Krankenhauses –"
  },
  {
   "tr": "Gerçek olmayan durum için",
   "kind": "hint.tr",
-  "de": "Für eine nicht wirkliche Lage"
+  "de": "Für eine nicht wirkliche Lage –"
  },
  {
   "tr": "Karar fiilinin ardılı için",
   "kind": "hint.tr",
-  "de": "Für das, was auf das Verb des Entscheidens folgt"
+  "de": "Für das, was auf das Verb des Entscheidens folgt –"
  },
  {
   "tr": "Öneri fiilinin ardılı için",
   "kind": "hint.tr",
-  "de": "Für das, was auf das Verb des Vorschlagens folgt"
+  "de": "Für das, was auf das Verb des Vorschlagens folgt –"
  },
  {
   "tr": "Bırakma fiilinin ardılı için",
   "kind": "hint.tr",
-  "de": "Für das, was auf das Verb des Aufhörens folgt"
+  "de": "Für das, was auf das Verb des Aufhörens folgt –"
  },
  {
   "tr": "Cümleyi ek bir şeyle açmak için",
   "kind": "hint.tr",
-  "de": "Um den Satz mit etwas Zusätzlichem zu eröffnen"
+  "de": "Um den Satz mit etwas Zusätzlichem zu eröffnen –"
  },
  {
   "tr": "Saati belli plan şimdiki zamanla söylenir:",
@@ -630,9 +635,9 @@
   "de": "und die Zuwendung für die Kranken heißt"
  },
  {
-  "tr": "Sadece bir kas ve deri sıcak.",
+  "tr": "Sorun sadece bir kasta ve cilt sıcak.",
   "kind": "say.tr",
-  "de": "Es ist nur ein Muskel und die Haut ist warm."
+  "de": "Es ist nur ein Muskel, und die Haut ist warm."
  },
  {
   "tr": "Bacağın ortadan büküldüğü yere",
@@ -640,9 +645,9 @@
   "de": "Die Stelle, an der sich das Bein in der Mitte beugt, heißt"
  },
  {
-  "tr": "Basınç bu sefer daha yüksekti.",
+  "tr": "Tansiyon bu sefer daha yüksekti.",
   "kind": "say.tr",
-  "de": "Der Druck war diesmal höher."
+  "de": "Der Blutdruck war diesmal höher."
  },
  {
   "tr": "ile ve olağan zamanla kurulur;",
@@ -710,9 +715,9 @@
   "de": "Wenn die Körpertemperatur nicht sinkt, rufen Sie uns an."
  },
  {
-  "tr": "Bir tane daha: Geç yemeyi bıraktı.",
+  "tr": "Bir tane daha: Geç saatte yemek yemeyi bıraktı.",
   "kind": "say.tr",
-  "de": "Noch eins: Er hat das späte Essen aufgegeben."
+  "de": "Noch eins: Er hat aufgehört, spät am Abend zu essen."
  },
  {
   "tr": "gerçek olmayan bir durumu anlatır;",
@@ -787,7 +792,7 @@
  {
   "tr": "Şimdi sen kur: Hapı değiştirmeyi önerdi.",
   "kind": "say.tr",
-  "de": "Jetzt du: Sie hat vorgeschlagen, die Pille zu wechseln."
+  "de": "Jetzt du: Sie hat vorgeschlagen, die Tablette zu wechseln."
  },
  {
   "tr": "Şimdi sevkini bir yakınına anlatacaksın.",
@@ -795,9 +800,9 @@
   "de": "Jetzt erzählst du einer Angehörigen von deiner Überweisung."
  },
  {
-  "tr": "Şimdi dersin kuralı. Karar hastanenin ise",
+  "tr": "Şimdi bugünün kuralı. Karar hastanenin ise",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Trifft das Krankenhaus die Entscheidung, steht"
+  "de": "Jetzt die Regel von heute. Trifft das Krankenhaus die Entscheidung, steht"
  },
  {
   "tr": "İkinci kalıbımız uyarı veriyor. Tekrar et:",
@@ -850,9 +855,9 @@
   "de": "Ich habe versprochen, Sport zu treiben, und mein Gewicht ist gesunken."
  },
  {
-  "tr": "Şimdi dersin kuralı. Gerçekleşmesi mümkün şart",
+  "tr": "Şimdi bugünün kuralı. Gerçekleşmesi mümkün şart",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Eine erfüllbare Bedingung wird mit"
+  "de": "Jetzt die Regel von heute. Eine erfüllbare Bedingung wird mit"
  },
  {
   "tr": "Şimdi sen kur: Uzman hekimin yazdığı mektup bu.",
@@ -902,7 +907,7 @@
  {
   "tr": "yeri bağlar. Sevk mektubunda üçü de peş peşe geçer.",
   "kind": "say.tr",
-  "de": "den Ort. Im Überweisungsschreiben stehen alle drei hintereinander."
+  "de": "für den Ort. Im Überweisungsschreiben stehen alle drei hintereinander."
  },
  {
   "tr": "Bir tane daha: Bugün gönder, yoksa günü kaybedersin.",
@@ -955,9 +960,9 @@
   "de": "Jetzt du: An deiner Stelle würde ich eine andere Ärztin fragen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Karar ve söz veren fiiller kendinden sonra",
+  "tr": "Şimdi bugünün kuralı. Karar ve söz veren fiiller kendinden sonra",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Verben des Entscheidens und Versprechens verlangen danach ein"
+  "de": "Jetzt die Regel von heute. Verben des Entscheidens und Versprechens verlangen danach ein"
  },
  {
   "tr": "Yolculuk edemeyecek kadar rahatsızdım ve iyileşme iki hafta sürdü.",
@@ -990,9 +995,9 @@
   "de": "Das heißt der Schlag, den man bei jedem Herzschlag in der Ader spürt. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:",
+  "tr": "Şimdi bugünün kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt:"
+  "de": "Jetzt die Regel von heute. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt:"
  },
  {
   "tr": "ise yeni bir şeyi öne çıkarır. Noktalı virgülden sonra gelenler tam cümle ister.",
@@ -1005,9 +1010,9 @@
   "de": "sagt den einzigen Ausweg und ist selbst schon verneint, deshalb steht daneben keine zweite Verneinung."
  },
  {
-  "tr": "Şimdi dersin kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:",
+  "tr": "Şimdi bugünün kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Alle drei Konnektoren stehen am Satzanfang und jeder baut eine andere Beziehung:"
+  "de": "Jetzt die Regel von heute. Alle drei Konnektoren stehen am Satzanfang und jeder baut eine andere Beziehung:"
  },
  {
   "tr": "Üç ayrı gelecek biçimi var ve hangisini seçtiğin planın ne kadar kesinleştiğini söylüyor. Hazır mısın?",
@@ -1035,9 +1040,9 @@
   "de": "Hallo! Heute lernen wir, über eine zweite Ärztin zu sprechen: unter welcher Bedingung gewartet wird, was du an ihrer Stelle tun würdest."
  },
  {
-  "tr": "Bu dersin kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?",
+  "tr": "Bugünün kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Wörter dieser Lektion sind kein Thema, sondern Konnektoren; jedes baut allein die Beziehung zwischen den Sätzen. Bist du bereit?"
+  "de": "Die Wörter von heute sind kein Thema, sondern Konnektoren; jedes baut allein die Beziehung zwischen den Sätzen. Bist du bereit?"
  },
  {
   "tr": "Sevkte üç şeyin de adı değil tarifi söyleniyor ve bu tarifleri cümleye bağlayan şey ilgi cümlesi. Hazır mısın?",

@@ -357,17 +357,17 @@
  {
   "tr": "Kaynağı vermeden aktarmak için",
   "kind": "hint.tr",
-  "de": "Um ohne Quellenangabe wiederzugeben"
+  "de": "Um ohne Quellenangabe wiederzugeben –"
  },
  {
   "tr": "Geçmişteki bir işi aktarmak için",
   "kind": "hint.tr",
-  "de": "Um eine vergangene Handlung wiederzugeben"
+  "de": "Um eine vergangene Handlung wiederzugeben –"
  },
  {
   "tr": "Savın bütününü başa taşımak için",
   "kind": "hint.tr",
-  "de": "Um die ganze Position an den Anfang zu bringen"
+  "de": "Um die ganze Position an den Anfang zu bringen –"
  },
  {
   "tr": "bugünü,",
@@ -437,7 +437,7 @@
  {
   "tr": "Reform duruşmada anıldı.",
   "kind": "say.tr",
-  "de": "Die Reform wurde in der Anhörung genannt."
+  "de": "Die Reform wurde in der Anhörung erwähnt."
  },
  {
   "tr": "savın bütününü öne alır,",
@@ -552,7 +552,7 @@
  {
   "tr": "Yansızlık göründüğünden pahalıdır.",
   "kind": "say.tr",
-  "de": "Neutralität kostet mehr, als sie aussieht."
+  "de": "Neutralität kostet mehr, als es scheint."
  },
  {
   "tr": "Bir ülkenin üretim ve para düzenine",
@@ -630,9 +630,9 @@
   "de": "Jetzt fasst du die Position eines Blattes zusammen."
  },
  {
-  "tr": "Haberin iki kez yayımlandığı düşünülüyor.",
+  "tr": "Haberin iki kez yayınlandığı düşünülüyor.",
   "kind": "say.tr",
-  "de": "Man hält es für erwiesen, dass die Meldung zweimal gesendet wurde."
+  "de": "Man nimmt an, dass die Meldung zweimal gesendet wurde."
  },
  {
   "tr": "Suçu işlemiş olabileceği düşünülen kişiye",
@@ -652,7 +652,7 @@
  {
   "tr": "kendi görüşünü karıştırmadan anlatmaya ise",
   "kind": "say.tr",
-  "de": "und ohne die eigene Meinung zu erzählen heißt"
+  "de": "und etwas zu erzählen, ohne die eigene Meinung einzumischen, heißt"
  },
  {
   "tr": "Neyin gösterileceğini seçen kural dizisine",
@@ -765,9 +765,9 @@
   "de": "Unsere letzte Wendung gibt eine vergangene Handlung wieder. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarım kalıbı geçmişe de uzanır:",
+  "tr": "Şimdi bugünün kuralı. Aktarım kalıbı geçmişe de uzanır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Wiedergabe reicht auch in die Vergangenheit:"
+  "de": "Jetzt die Regel von heute. Die Wiedergabe reicht auch in die Vergangenheit:"
  },
  {
   "tr": "Şimdi sen kur: Geç kaldığı için haber baskıyı kaçırdı.",
@@ -775,14 +775,14 @@
   "de": "Jetzt du: Weil sie zu spät war, verpasste die Meldung die Ausgabe."
  },
  {
-  "tr": "Şimdi sıra sende: Muhabir, ki yazıyı o yazdı, yeniydi.",
+  "tr": "Şimdi sıra sende: Muhabir yeniydi; yazıyı o yazmıştı.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Der Reporter, der den Text geschrieben hat, war neu."
  },
  {
   "tr": "Bir tane daha: Filmin iki kez gösterildiği düşünülüyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Man hält es für erwiesen, dass der Film zweimal gezeigt wurde."
+  "de": "Noch eins: Man nimmt an, dass der Film zweimal gezeigt wurde."
  },
  {
   "tr": "Şimdi sıra sende: Raporun yanlış olduğu iddia ediliyor.",
@@ -810,9 +810,9 @@
   "de": "Das heißt ein Betrieb, der Nachrichten veröffentlicht. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:",
+  "tr": "Şimdi bugünün kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Alle drei Modalverben blicken zurück, aber jedes leistet etwas anderes:"
+  "de": "Jetzt die Regel von heute. Alle drei Modalverben blicken zurück, aber jedes leistet etwas anderes:"
  },
  {
   "tr": "Gazetenin kendi görüşünü yazdığı yazı demek. İlk kalıbımız da bu. Tekrar et:",
@@ -880,7 +880,7 @@
   "de": "wählt dagegen ein einzelnes Stück. Beim Zusammenfassen einer Position ist die zweite Form eine Deutung: du hältst dieses Stück für entscheidend."
  },
  {
-  "tr": "Merhaba! Bugün haber başlığının arkasını okumayı öğreneceğiz: kim iddia ediyor, ne gösteriliyor, ne zaman yayımlandı.",
+  "tr": "Merhaba! Bugün haber başlığının arkasını okumayı öğreneceğiz: kim iddia ediyor, ne gösteriliyor, ne zaman yayınlandı.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir, hinter eine Schlagzeile zu schauen: wer behauptet, was gezeigt wird, wann es gesendet wurde."
  },

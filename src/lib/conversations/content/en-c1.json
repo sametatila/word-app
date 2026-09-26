@@ -6,7 +6,7 @@
   "icon": "pen",
   "title": "The same thing in three registers",
   "titleTr": "Aynı şey üç dil düzeyinde",
-  "summary": "Aynı içeriği hukuk, nötr ve konuşma diliyle söylemeyi öğretir; C1'de öğrenilen kural değil seçimdir.",
+  "summary": "Aynı içeriği resmî, nötr ve konuşma diliyle söylemeyi öğretir; C1'de öğrenilen kural değil seçimdir.",
   "minutes": 12,
   "focusId": "Register shift across three registers",
   "vocab": [
@@ -181,7 +181,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Dil düzeyi üç yerde belli olur: hitapta, kelime seçiminde ve cümlenin uzunluğunda."
+      "text": "Şimdi bugünün kuralı. Dil düzeyi üç yerde belli olur: hitapta, kelime seçiminde ve cümlenin uzunluğunda."
      },
      {
       "lang": "en",
@@ -189,7 +189,7 @@
      },
      {
       "lang": "tr",
-      "text": "hukuk dili,"
+      "text": "resmî dil,"
      },
      {
       "lang": "en",
@@ -356,7 +356,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Söz verip bağlamayana"
+      "text": "Kimseyi bağlamayana"
      },
      {
       "lang": "en",
@@ -388,7 +388,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bağlayıcı olmayan bir ifade daha çok şey ulaştırabilir."
+      "text": "Bağlayıcı olmayan bir ifade daha çok şey iletebilir."
      }
     ],
     "expect": {
@@ -496,11 +496,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir haberi önce hukuk dilinde, sonra nötr, sonra konuşma dilinde söylüyorsun. Üç dil düzeyini de kur ve içeriğin değişmediğini göster.",
+   "scene": "Bir haberi önce resmî dilde, sonra nötr, sonra konuşma dilinde söylüyorsun. Üç dil düzeyini de kur ve içeriğin değişmediğini göster.",
    "partner": "üç biçimi de aynı sanan, «hepsi aynı şey değil mi» diyen bir arkadaş",
    "opening": "Aren't those all the same?",
    "openingTr": "Bunların hepsi aynı değil mi?",
-   "goal": "Aynı içeriği hukuk, nötr ve konuşma dilinde üç ayrı biçimde söylediysen konuşma başarılı sayılır.",
+   "goal": "Aynı içeriği resmî, nötr ve konuşma dilinde üç ayrı biçimde söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -666,7 +666,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Eksilti üç yerde çalışır: yardımcı fiilden sonra"
+      "text": "Şimdi bugünün kuralı. Eksilti üç yerde çalışır: yardımcı fiilden sonra"
      },
      {
       "lang": "en",
@@ -917,7 +917,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sağlam temelli bir sav başka türlü anlamlandırmak zordur."
+      "text": "Sağlam temelli bir savı başka türlü anlamlandırmak zordur."
      }
     ],
     "expect": {
@@ -1195,7 +1195,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İngilizce ağır parçayı sona sever:"
+      "text": "Şimdi bugünün kuralı. İngilizce ağır parçayı sona sever:"
      },
      {
       "lang": "en",
@@ -1219,7 +1219,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Odaya bir kuşku siziyor."
+      "text": "Şimdi sıra sende: Odaya bir kuşku sızıyor."
      }
     ],
     "expect": {
@@ -1684,7 +1684,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bu kalıpta fiil ÇEKİLMİYOR:"
+      "text": "Şimdi bugünün kuralı. Bu kalıpta fiil ÇEKİLMİYOR:"
      },
      {
       "lang": "en",
@@ -1785,7 +1785,7 @@
      },
      {
       "lang": "tr",
-      "text": "birinin yerine bakmaya ise"
+      "text": "birine vekâlet etmeye ise"
      },
      {
       "lang": "en",
@@ -1927,7 +1927,7 @@
      },
      {
       "lang": "tr",
-      "text": "Nokta kaybolmasın diye yazıya geçiriyoruz."
+      "text": "Asıl nokta unutulmasın diye yazıya geçiriyoruz."
      }
     ],
     "expect": {
@@ -2021,7 +2021,7 @@
   "course": "en",
   "icon": "handshake",
   "title": "The tone of concession",
-  "titleTr": "İmtiyazın tonu",
+  "titleTr": "Ödün vermenin tonu",
   "summary": "Karşı tarafa hak verirken kendi savını korumayı öğretir; granted, albeit ve whereas üç ayrı sıcaklıkta.",
   "minutes": 12,
   "focusId": "Concessive and contrastive range",
@@ -2082,7 +2082,7 @@
      },
      {
       "lang": "tr",
-      "text": "İmtiyaz vermek zayıflık değildir; doğru tonda verilen imtiyaz savı güçlendirir. Hazır mısın?"
+      "text": "Ödün vermek zayıflık değildir; doğru tonda verilen ödün savı güçlendirir. Hazır mısın?"
      }
     ],
     "expect": {
@@ -2193,7 +2193,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Dört sözün sıcaklığı farklı:"
+      "text": "Şimdi bugünün kuralı. Dört sözün sıcaklığı farklı:"
      },
      {
       "lang": "en",
@@ -2518,17 +2518,17 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi imtiyaz verirken savını koruyacaksın."
+      "text": "Şimdi ödün verirken savını koruyacaksın."
      }
     ]
    }
   ],
   "chat": {
    "scene": "Bir tartışmada karşı tarafa hak veriyorsun ama savından vazgeçmiyorsun. Açık teslimi, resmî çekinceyi ve nötr karşıtlığı ayrı ayrı kur.",
-   "partner": "her imtiyazı geri adım sayan, «demek kabul ediyorsun» diyen bir tartışmacı",
+   "partner": "her ödünü geri adım sayan, «demek kabul ediyorsun» diyen bir tartışmacı",
    "opening": "So you admit I'm right?",
    "openingTr": "Demek haklı olduğumu kabul ediyorsun?",
-   "goal": "Açık teslimi, resmî çekinceyi ve nötr karşıtlığı üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
+   "goal": "Açık teslimi, resmî çekinceyi ve nötr karşıtlığı üç ayrı ödün sözüyle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -2722,7 +2722,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Eşdizimde fiil çoğu zaman anlamını yitirir ve ismin yanında yalnız bir taşıyıcı olur:"
+      "text": "Şimdi bugünün kuralı. Eşdizimde fiil çoğu zaman anlamını yitirir ve ismin yanında yalnız bir taşıyıcı olur:"
      },
      {
       "lang": "en",
@@ -3207,7 +3207,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarma fiili üç ayrı mesafe kurar:"
+      "text": "Şimdi bugünün kuralı. Aktarma fiili üç ayrı mesafe kurar:"
      },
      {
       "lang": "en",
@@ -3256,7 +3256,7 @@
       },
       {
        "lang": "en",
-       "text": "claimed … conceded … alleged"
+       "text": "claimed … admitted … alleged"
       },
       {
        "lang": "tr",
@@ -3712,7 +3712,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç yapı üç ayrı uzaklık kurar:"
+      "text": "Şimdi bugünün kuralı. Üç yapı üç ayrı uzaklık kurar:"
      },
      {
       "lang": "en",
@@ -3919,7 +3919,7 @@
      },
      {
       "lang": "tr",
-      "text": "Seyrek veri şeffaf olmayan kalıyor."
+      "text": "Seyrek veri şeffaf olmaktan uzak kalıyor."
      }
     ],
     "expect": {
@@ -4049,8 +4049,8 @@
   "course": "en",
   "icon": "feelings",
   "title": "Not exactly cheap",
-  "titleTr": "Eksiltili övgü",
-  "summary": "Az söyleyip çok anlatmayı öğretir; eksiltili anlatım ve ironi kurmayı da duymayı da gerektirir.",
+  "titleTr": "Pek ucuz sayılmaz",
+  "summary": "Az söyleyip çok anlatmayı öğretir; az söyleme ve ironi kurmayı da duymayı da gerektirir.",
   "minutes": 12,
   "focusId": "Irony, understatement and implicature",
   "vocab": [
@@ -4106,7 +4106,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün az söyleyip çok anlatmayı öğreneceğiz: eksiltili anlatım ve ironi."
+      "text": "Merhaba! Bugün az söyleyip çok anlatmayı öğreneceğiz: az söyleme ve ironi."
      },
      {
       "lang": "tr",
@@ -4213,7 +4213,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Eksiltili anlatımın üç yolu var:"
+      "text": "Şimdi bugünün kuralı. Az söylemenin üç yolu var:"
      },
      {
       "lang": "en",
@@ -4548,7 +4548,7 @@
    "partner": "ironiyi duymayan, söylediğini olduğu gibi alan bir arkadaş",
    "opening": "So you liked it then?",
    "openingTr": "Demek beğendin?",
-   "goal": "Olumsuz övgüyü, olumsuz isteği ve ters soruyu üç ayrı eksiltili anlatımla kurduysan konuşma başarılı sayılır.",
+   "goal": "Olumsuz övgüyü, olumsuz isteği ve ters soruyu üç ayrı az söyleme biçimiyle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -4585,7 +4585,7 @@
    },
    {
     "de": "profound",
-    "tr": "köklü"
+    "tr": "derin"
    },
    {
     "de": "meticulous",
@@ -4726,7 +4726,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üç söz üç ayrı uzaklığa gönderir:"
+      "text": "Şimdi bugünün kuralı. Üç söz üç ayrı uzaklığa gönderir:"
      },
      {
       "lang": "en",
@@ -4901,7 +4901,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yüzeyde kalmayıp köke inene"
+      "text": "Yüzeyde kalmayıp derine inene"
      },
      {
       "lang": "en",
@@ -4933,7 +4933,7 @@
      },
      {
       "lang": "tr",
-      "text": "Köklü bir okuma titizdir."
+      "text": "Derin bir okuma titizdir."
      }
     ],
     "expect": {
@@ -5098,7 +5098,7 @@
    },
    {
     "de": "diminish",
-    "tr": "eksiltmek"
+    "tr": "azaltmak / küçültmek"
    }
   ],
   "patterns": [
@@ -5124,7 +5124,7 @@
      },
      {
       "lang": "tr",
-      "text": "C1'in kendi tehlikesi burada: dil inceldikçe kesinlik kolayca küçümsemeye dönüşüyor. İmtiyaz sözleri bunu engelliyor. Hazır mısın?"
+      "text": "C1'in kendi tehlikesi burada: dil inceldikçe kesinlik kolayca küçümsemeye dönüşüyor. Ödün sözleri bunu engelliyor. Hazır mısın?"
      }
     ],
     "expect": {
@@ -5239,7 +5239,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tartışmada imtiyaz sözü bir taviz değil bir işarettir:"
+      "text": "Şimdi bugünün kuralı. Tartışmada ödün sözü bir geri adım değil bir işarettir:"
      },
      {
       "lang": "en",
@@ -5446,7 +5446,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir planı suya düşürmek bir insanı eksiltmektir."
+      "text": "Bir planı suya düşürmek bir insanı küçültmektir."
      }
     ],
     "expect": {
@@ -5554,11 +5554,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir toplantıda savunduğun görüşe karşı çıkıyorsun ama karşındakiyle çalışmaya devam edeceksin. Teslimi, kusuru görmeyi ve ayrımı imtiyaz sözleriyle kur.",
+   "scene": "Bir toplantıda savunduğun görüşe karşı çıkıyorsun ama karşındakiyle çalışmaya devam edeceksin. Teslimi, kusuru görmeyi ve ayrımı ödün sözleriyle kur.",
    "partner": "karşı çıkışı kişisel alan, «demek bana güvenmiyorsun» diyen bir meslektaş",
    "opening": "So you don't trust my judgment?",
    "openingTr": "Demek kararıma güvenmiyorsun?",
-   "goal": "Teslimi, kusuru görmeyi ve ayrımı üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
+   "goal": "Teslimi, kusuru görmeyi ve ayrımı üç ayrı ödün sözüyle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -5583,7 +5583,7 @@
    },
    {
     "de": "substantiate",
-    "tr": "belgelemek"
+    "tr": "kanıtla desteklemek"
    },
    {
     "de": "manifesto",
@@ -5752,7 +5752,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tartışmada aktarma fiili üç iş görür:"
+      "text": "Şimdi bugünün kuralı. Tartışmada aktarma fiili üç iş görür:"
      },
      {
       "lang": "en",
@@ -5784,7 +5784,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: O öne sürdü, o çürüttü, onlar belgeledi."
+      "text": "Şimdi sıra sende: O öne sürüyor, o çürütüyor, onlar kanıtla destekliyor."
      }
     ],
     "expect": {
@@ -5801,7 +5801,7 @@
       },
       {
        "lang": "en",
-       "text": "postulates … refutes … substantiates"
+       "text": "postulates … refutes … substantiate"
       },
       {
        "lang": "tr",
@@ -5877,7 +5877,7 @@
      },
      {
       "lang": "tr",
-      "text": "Öğreti diyalektiği aşıp kalıyor."
+      "text": "Öğreti diyalektikten sağ çıkıyor."
      }
     ],
     "expect": {
@@ -6205,7 +6205,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tartışmadaki ironinin bedeli var:"
+      "text": "Şimdi bugünün kuralı. Tartışmadaki ironinin bedeli var:"
      },
      {
       "lang": "en",
@@ -6710,7 +6710,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Eksilti tartışmada bir tondur:"
+      "text": "Şimdi bugünün kuralı. Eksilti tartışmada bir tondur:"
      },
      {
       "lang": "en",
@@ -7223,7 +7223,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tartışma kalıpları hazır gelir ve hazır geldikleri için düşünmeyi atlatır:"
+      "text": "Şimdi bugünün kuralı. Tartışma kalıpları hazır gelir ve hazır geldikleri için düşünmeyi atlatır:"
      },
      {
       "lang": "en",
@@ -7620,7 +7620,7 @@
      },
      {
       "lang": "tr",
-      "text": "Anlatıya idealleştirme dürtüsü siziyor."
+      "text": "Anlatıya idealleştirme dürtüsü sızıyor."
      }
     ],
     "expect": {
@@ -7676,7 +7676,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Öne aldığın şey tartışmanın konusu olur:"
+      "text": "Şimdi bugünün kuralı. Öne aldığın şey tartışmanın konusu olur:"
      },
      {
       "lang": "en",
@@ -7805,7 +7805,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Rapora idealleştirme dürtüsü siziyor."
+      "text": "Şimdi sen kur: Rapora idealleştirme dürtüsü sızıyor."
      }
     ],
     "expect": {
@@ -8004,7 +8004,7 @@
   "vocab": [
    {
     "de": "worker participation",
-    "tr": "söz hakkı"
+    "tr": "çalışanların yönetime katılımı"
    },
    {
     "de": "rule of law",
@@ -8077,7 +8077,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kararlara katılma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Çalışanların kararlara katılma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -8137,7 +8137,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Önergede fiil çekilmez:"
+      "text": "Şimdi bugünün kuralı. Önergede fiil çekilmez:"
      },
      {
       "lang": "en",
@@ -8189,7 +8189,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Meclisin söz hakkı tanımasını öneriyoruz."
+      "text": "Şimdi sıra sende: Meclisin çalışanlara yönetime katılım hakkı tanımasını öneriyoruz."
      }
     ],
     "expect": {
@@ -8614,7 +8614,7 @@
      },
      {
       "lang": "tr",
-      "text": "Daha az sömürmesi beklenebilirdi."
+      "text": "Yeni sözleşmenin işçileri daha az sömürmesi beklenebilirdi."
      }
     ],
     "expect": {
@@ -8662,7 +8662,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Suçlamada kip mesafeyi kurar:"
+      "text": "Şimdi bugünün kuralı. Suçlamada kip mesafeyi kurar:"
      },
      {
       "lang": "en",
@@ -8881,7 +8881,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki taraf arasındaki açıklığa"
+      "text": "İki taraf arasındaki farka"
      },
      {
       "lang": "en",
@@ -8905,7 +8905,7 @@
      },
      {
       "lang": "tr",
-      "text": "Eşitsizlik duruyor."
+      "text": "Eşitsizlik sürüyor."
      }
     ],
     "expect": {
@@ -9103,7 +9103,7 @@
      },
      {
       "lang": "tr",
-      "text": "yalnız hoşuna gideni gösteren süzgeçe ise"
+      "text": "yalnız hoşuna gideni gösteren süzgece ise"
      },
      {
       "lang": "en",
@@ -9175,7 +9175,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Dil düzeyi yalnız üslubu değil ADI değiştirir: konuşma dilinde"
+      "text": "Şimdi bugünün kuralı. Dil düzeyi yalnız üslubu değil ADI değiştirir: konuşma dilinde"
      },
      {
       "lang": "en",
@@ -9656,7 +9656,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Uzun savda üç bağ çalışır:"
+      "text": "Şimdi bugünün kuralı. Uzun savda üç bağ çalışır:"
      },
      {
       "lang": "en",
@@ -10161,7 +10161,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Dilekçede fiil çekilmez:"
+      "text": "Şimdi bugünün kuralı. Dilekçede fiil çekilmez:"
      },
      {
       "lang": "en",
@@ -10551,7 +10551,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hukuk dilinde ad seçimi bir hükümdür: aynı davranış «hafif suç» da olabilir «kabahat» de, ve ikisi ayrı sonuç doğurur. Hazır mısın?"
+      "text": "Hukuk dilinde ad seçimi bir hükümdür: aynı davranış «hafif suç» da olabilir «kabahat» de; ikisi ayrı sonuç doğurur. Hazır mısın?"
      }
     ],
     "expect": {
@@ -10666,7 +10666,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hukuk dilinde ad değişimi bir üslup meselesi değil:"
+      "text": "Şimdi bugünün kuralı. Hukuk dilinde ad değişimi bir üslup meselesi değil:"
      },
      {
       "lang": "en",
@@ -11151,7 +11151,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hukuk metninde aktarma fiili üç ayrı sonuç doğurur:"
+      "text": "Şimdi bugünün kuralı. Hukuk metninde aktarma fiili üç ayrı sonuç doğurur:"
      },
      {
       "lang": "en",
@@ -11680,7 +11680,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hukukta eşdizim değiştirilemez:"
+      "text": "Şimdi bugünün kuralı. Hukukta eşdizim değiştirilemez:"
      },
      {
       "lang": "en",
@@ -11781,7 +11781,7 @@
      },
      {
       "lang": "tr",
-      "text": "yasama, yürütme ve yargının ayrılmasına ise"
+      "text": "yetkilerin merkez ile eyaletler arasında bölüşülmesine ise"
      },
      {
       "lang": "en",
@@ -12177,7 +12177,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hukuk metninde eksilti iki yönde okunur:"
+      "text": "Şimdi bugünün kuralı. Hukuk metninde eksilti iki yönde okunur:"
      },
      {
       "lang": "en",
@@ -12499,7 +12499,7 @@
   "icon": "money",
   "title": "The appeal letter",
   "titleTr": "İtiraz dilekçesi",
-  "summary": "Bir borç itirazında hakkı teslim edip savı korumayı öğretir; imtiyaz vermek borçta bir zayıflık değil bir güvenilirlik işaretidir.",
+  "summary": "Bir borç itirazında hakkı teslim edip savı korumayı öğretir; ödün vermek borçta bir zayıflık değil bir güvenilirlik işaretidir.",
   "minutes": 12,
   "focusId": "Concessive range in appeals",
   "vocab": [
@@ -12559,7 +12559,7 @@
      },
      {
       "lang": "tr",
-      "text": "Borç yazışmasında imtiyaz vermek zayıflık değil güvenilirlik işaretidir: hiçbir şeyi kabul etmeyen itiraz okunmaz bile. Hazır mısın?"
+      "text": "Borç yazışmasında ödün vermek zayıflık değil güvenilirlik işaretidir: hiçbir şeyi kabul etmeyen itiraz okunmaz bile. Hazır mısın?"
      }
     ],
     "expect": {
@@ -12682,7 +12682,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İtiraz dilekçesinde imtiyaz bir hesaptır:"
+      "text": "Şimdi bugünün kuralı. İtiraz dilekçesinde ödün bir hesaptır:"
      },
      {
       "lang": "en",
@@ -12989,11 +12989,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir borç bildirimine itiraz ediyorsun ve haklı olduğun noktaları korurken haksız olduğunu kabul ediyorsun. Baştan teslimi, veriyi kabulü ve kalem ayrımını imtiyaz sözleriyle kur.",
+   "scene": "Bir borç bildirimine itiraz ediyorsun ve haklı olduğun noktaları korurken karşı tarafın haklı olduğu noktaları kabul ediyorsun. Baştan teslimi, veriyi kabulü ve kalem ayrımını ödün sözleriyle kur.",
    "partner": "hiçbir şeyi kabul etmemeni söyleyen, «hepsini reddet» diyen bir tanıdık",
    "opening": "Why admit anything at all?",
    "openingTr": "Neden hiçbir şeyi kabul edesin ki?",
-   "goal": "Baştan teslimi, veriyi kabulü ve kalem ayrımını üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
+   "goal": "Baştan teslimi, veriyi kabulü ve kalem ayrımını üç ayrı ödün sözüyle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -13171,7 +13171,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Sözleşmede kip yükümlülük derecesidir:"
+      "text": "Şimdi bugünün kuralı. Sözleşmede kip yükümlülük derecesidir:"
      },
      {
       "lang": "en",
@@ -13535,7 +13535,7 @@
    },
    {
     "de": "residence permit",
-    "tr": "oturma statüsü"
+    "tr": "oturma izni"
    },
    {
     "de": "family reunification",
@@ -13684,7 +13684,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Başa aldığın şey uyuşmazlığın konusu olur:"
+      "text": "Şimdi bugünün kuralı. Başa aldığın şey uyuşmazlığın konusu olur:"
      },
      {
       "lang": "en",
@@ -13716,7 +13716,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Kurulun elde ettiği şey yönetimde çalışan temsili."
+      "text": "Şimdi sıra sende: Sendikanın elde ettiği şey yönetim kurulunda çalışan temsili."
      }
     ],
     "expect": {
@@ -13882,7 +13882,7 @@
      },
      {
       "lang": "tr",
-      "text": "Oturma statüsü aile birleşimine izin veriyor."
+      "text": "Oturma izni aile birleşimini mümkün kılıyor."
      }
     ],
     "expect": {
@@ -14180,7 +14180,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Sözleşmede üç bağ çalışır:"
+      "text": "Şimdi bugünün kuralı. Sözleşmede üç bağ çalışır:"
      },
      {
       "lang": "en",
@@ -14685,7 +14685,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İroni TONLA çalışır, sözcükle değil:"
+      "text": "Şimdi bugünün kuralı. İroni TONLA çalışır, sözcükle değil:"
      },
      {
       "lang": "en",
@@ -14978,7 +14978,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: konuşmada serbest"
+      "text": "Özetleyelim: olumsuz övgü"
      },
      {
       "lang": "en",
@@ -14994,7 +14994,7 @@
      },
      {
       "lang": "tr",
-      "text": "metinde yasak"
+      "text": "ters soru"
      },
      {
       "lang": "en",
@@ -15002,7 +15002,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi ironiyi doğru dil düzeyinde kullanacaksın."
+      "text": "Üçü de konuşmada serbest, sözleşmede yasak. Şimdi ironiyi doğru dil düzeyinde kullanacaksın."
      }
     ]
    }
@@ -15198,7 +15198,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Konuşma ile yazı arasındaki fark sözcük değil DESTEK farkıdır:"
+      "text": "Şimdi bugünün kuralı. Konuşma ile yazı arasındaki fark sözcük değil DESTEK farkıdır:"
      },
      {
       "lang": "en",
@@ -15659,7 +15659,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Birine saygıyla anmaya"
+      "text": "Birini saygıyla anmaya"
      },
      {
       "lang": "en",
@@ -15703,7 +15703,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Konuşma yönetiminde kalıp niyeti ele verir:"
+      "text": "Şimdi bugünün kuralı. Konuşma yönetiminde kalıp niyeti ele verir:"
      },
      {
       "lang": "en",
@@ -15820,7 +15820,7 @@
      },
      {
       "lang": "tr",
-      "text": "İyi bir görüşme yönetimi azardan kaçınır."
+      "text": "Görüşmeyi iyi yönetmek azarı önler."
      }
     ],
     "expect": {
@@ -16002,7 +16002,7 @@
    }
   ],
   "chat": {
-   "scene": "Zor bir soruyu olan bir görüşmeyi yönetiyorsun. Sadeleştirmeyi, atlatmayı ve kalıplaşmayı yerleşik eşdizimlerle adlandır ve hangisini yaptığını açıkça söyle.",
+   "scene": "Zor bir sorunun geldiği bir görüşmeyi yönetiyorsun. Sadeleştirmeyi, atlatmayı ve kalıplaşmayı yerleşik eşdizimlerle adlandır ve hangisini yaptığını açıkça söyle.",
    "partner": "her kısaltmayı kaçamak sayan, «soruma cevap vermedin» diyen biri",
    "opening": "You didn't answer my question, did you?",
    "openingTr": "Soruma cevap vermedin, değil mi?",
@@ -16144,7 +16144,7 @@
      },
      {
       "lang": "tr",
-      "text": "Uzun öyküye bir monolog siziyor."
+      "text": "Uzun öyküye bir monolog sızıyor."
      }
     ],
     "expect": {
@@ -16188,7 +16188,7 @@
      },
      {
       "lang": "tr",
-      "text": "Edebi motifi biliyoruz, kanonu tartışıyoruz."
+      "text": "Edebî motifi biliyoruz, kanonu tartışıyoruz."
      }
     ],
     "expect": {
@@ -16200,7 +16200,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Anlatıda başa alınan şey bir bakış açısıdır:"
+      "text": "Şimdi bugünün kuralı. Anlatıda başa alınan şey bir bakış açısıdır:"
      },
      {
       "lang": "en",
@@ -16337,7 +16337,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Romana bir monolog siziyor."
+      "text": "Şimdi sen kur: Romana bir monolog sızıyor."
      }
     ],
     "expect": {
@@ -16439,7 +16439,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Kanonu biliyoruz, edebi motifi tartışıyoruz."
+      "text": "Bir tane daha: Kanonu biliyoruz, edebî motifi tartışıyoruz."
      }
     ],
     "expect": {
@@ -16705,7 +16705,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Okumayı aktaran fiil okumayı da yargılar:"
+      "text": "Şimdi bugünün kuralı. Okumayı aktaran fiil okumayı da yargılar:"
      },
      {
       "lang": "en",
@@ -16754,7 +16754,7 @@
       },
       {
        "lang": "en",
-       "text": "contextualizes … deciphers … dissects"
+       "text": "contextualizes … deciphers … dissect"
       },
       {
        "lang": "tr",
@@ -17202,7 +17202,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Klasik metinde çekimsiz fiil bir süs değil:"
+      "text": "Şimdi bugünün kuralı. Klasik metinde çekimsiz fiil bir süs değil:"
      },
      {
       "lang": "en",
@@ -17429,7 +17429,7 @@
      },
      {
       "lang": "tr",
-      "text": "Biçim yüzyılı aşıp kalıyor."
+      "text": "Biçim yüzyıldan uzun yaşıyor."
      }
     ],
     "expect": {
@@ -17550,7 +17550,7 @@
    },
    {
     "de": "cipher",
-    "tr": "şifreleme yöntemi"
+    "tr": "şifre"
    },
    {
     "de": "zeitgeist",
@@ -17651,7 +17651,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir anımsama halk bilgisi olarak kalır, bir eski eser şifreleme yöntemi olarak."
+      "text": "Bir anımsama halk bilgisi olarak kalır, bir eski eser şifre olarak."
      }
     ],
     "expect": {
@@ -17703,7 +17703,7 @@
      },
      {
       "lang": "tr",
-      "text": "Zamanın ruhu çığır açan gibi hissettiriyordu, on yıl öyle değildi."
+      "text": "Zamanın ruhu çığır açıyormuş gibi geliyordu, on yıl öyle değildi."
      }
     ],
     "expect": {
@@ -17715,7 +17715,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Düşürme boşluk bırakmaz, İŞ bırakır:"
+      "text": "Şimdi bugünün kuralı. Düşürme boşluk bırakmaz, İŞ bırakır:"
      },
      {
       "lang": "en",
@@ -17828,7 +17828,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Bir anımsama halk bilgisi olarak kalır, bir ad şifreleme yöntemi olarak."
+      "text": "Şimdi sen kur: Bir anımsama halk bilgisi olarak kalır, bir ad şifre olarak."
      }
     ],
     "expect": {
@@ -17894,7 +17894,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: On yıl çığır açan gibi hissettiriyordu, yıl öyle değildi."
+      "text": "Bir tane daha: On yıl çığır açıyormuş gibi geliyordu, yıl öyle değildi."
      }
     ],
     "expect": {
@@ -18160,7 +18160,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Ödün nerede durursa orada bir SES verir:"
+      "text": "Şimdi bugünün kuralı. Ödün nerede durursa orada bir SES verir:"
      },
      {
       "lang": "en",
@@ -18629,7 +18629,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kip okumanın ne kadar ileri gittiğini söyler:"
+      "text": "Şimdi bugünün kuralı. Kip okumanın ne kadar ileri gittiğini söyler:"
      },
      {
       "lang": "en",
@@ -18661,7 +18661,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Bölüm son derece sembolik olmaktan çok sıradan olabilir."
+      "text": "Şimdi sıra sende: Bölüm pekâlâ son derece sembolik olmaktan çok sıradan olabilir."
      }
     ],
     "expect": {
@@ -19062,7 +19062,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sözünden dönmeyen kişiye"
+      "text": "Kimseyi dinlemeden bildiğini okuyan kişiye"
      },
      {
       "lang": "en",
@@ -19106,7 +19106,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Alay eksiltmeyle çalışır:"
+      "text": "Şimdi bugünün kuralı. Alay eksiltmeyle çalışır:"
      },
      {
       "lang": "en",
@@ -19351,7 +19351,7 @@
      },
      {
       "lang": "en",
-      "text": "we just name it later"
+      "text": "never … we just"
      },
      {
       "lang": "tr",
@@ -19567,7 +19567,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Uzun metinde bağlantı sözcük değil ADRES verir:"
+      "text": "Şimdi bugünün kuralı. Uzun metinde bağlantı sözcük değil ADRES verir:"
      },
      {
       "lang": "en",
@@ -20056,7 +20056,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kurum adı seçerken hüküm de veriyor:"
+      "text": "Şimdi bugünün kuralı. Kurum adı seçerken hüküm de veriyor:"
      },
      {
       "lang": "en",
@@ -20165,7 +20165,7 @@
      },
      {
       "lang": "tr",
-      "text": "Adı çoğunluk toplumu koyuyor."
+      "text": "Ötekilere adı çoğunluk toplumu koyuyor."
      }
     ],
     "expect": {
@@ -20537,7 +20537,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Başa alma bir seçimdir:"
+      "text": "Şimdi bugünün kuralı. Başa alma bir seçimdir:"
      },
      {
       "lang": "en",
@@ -20561,7 +20561,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise insanları. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar."
+      "text": "ise nesneyi. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar."
      }
     ]
    },
@@ -20802,7 +20802,7 @@
      },
      {
       "lang": "tr",
-      "text": "insan"
+      "text": "nesne"
      },
      {
       "lang": "en",
@@ -20816,11 +20816,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir dışlanma olayını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Eylemi, yeri ve insanları başa alan üç cümle kur.",
+   "scene": "Bir dışlanma olayını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Eylemi, yeri ve nesneyi başa alan üç cümle kur.",
    "partner": "olayı hep kurumlarla anlatan, insanları hiç anmayan biri",
    "opening": "Isn't that just how the system works?",
    "openingTr": "Sistem böyle işlemiyor mu zaten?",
-   "goal": "Eylemi, yeri ve insanları başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "goal": "Eylemi, yeri ve nesneyi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -21014,7 +21014,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Çekimsiz fiil isteği kişiden ayırır:"
+      "text": "Şimdi bugünün kuralı. Çekimsiz fiil isteği kişiden ayırır:"
      },
      {
       "lang": "en",
@@ -21475,7 +21475,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:"
+      "text": "Şimdi bugünün kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:"
      },
      {
       "lang": "en",
@@ -21944,7 +21944,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Göç sözlüğünde eşdizim İNSANI mı SAYIYI mı anlattığını söyler:"
+      "text": "Şimdi bugünün kuralı. Göç sözlüğünde eşdizim İNSANI mı SAYIYI mı anlattığını söyler:"
      },
      {
       "lang": "en",
@@ -22413,7 +22413,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarma fiili yetkiyi de gösterir:"
+      "text": "Şimdi bugünün kuralı. Aktarma fiili yetkiyi de gösterir:"
      },
      {
       "lang": "en",
@@ -22737,7 +22737,7 @@
    },
    {
     "de": "initiation",
-    "tr": "başlatma"
+    "tr": "erginlenme"
    },
    {
     "de": "ethnocentrism",
@@ -22878,7 +22878,7 @@
      },
      {
       "lang": "tr",
-      "text": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir."
+      "text": "Toplumsallaşma sıra düzenini erginlenmeden önce kurabilir."
      }
     ],
     "expect": {
@@ -22890,7 +22890,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:"
+      "text": "Şimdi bugünün kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:"
      },
      {
       "lang": "en",
@@ -22914,7 +22914,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Akrabalık haneyi kanundan çok biçimlendirebilir."
+      "text": "Şimdi sıra sende: Akrabalık haneyi pekâlâ kanundan çok biçimlendirebilir."
      }
     ],
     "expect": {
@@ -22983,7 +22983,7 @@
      },
      {
       "lang": "tr",
-      "text": "bir işi ya da süreci başlatmaya ise"
+      "text": "bir topluluğa törenle kabul edilmeye ise"
      },
      {
       "lang": "en",
@@ -23367,7 +23367,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:"
+      "text": "Şimdi bugünün kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:"
      },
      {
       "lang": "en",
@@ -23836,7 +23836,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Uzun metinde anlam kayıyorsa okura ADRES vermek gerekir:"
+      "text": "Şimdi bugünün kuralı. Uzun metinde anlam kayıyorsa okura ADRES vermek gerekir:"
      },
      {
       "lang": "en",
@@ -24329,7 +24329,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aidiyet konuşmasında düşen öğe bir SINAV gibidir:"
+      "text": "Şimdi bugünün kuralı. Aidiyet konuşmasında düşen öğe bir SINAV gibidir:"
      },
      {
       "lang": "en",
@@ -24574,7 +24574,7 @@
      },
      {
       "lang": "en",
-      "text": "a crisis of faith as a question"
+      "text": "the crisis of faith as a question"
      },
      {
       "lang": "tr",
@@ -24790,7 +24790,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aynı karar iki dil düzeyinde iki ayrı olgu gibi görünür:"
+      "text": "Şimdi bugünün kuralı. Aynı karar iki dil düzeyinde iki ayrı olgu gibi görünür:"
      },
      {
       "lang": "en",
@@ -24891,7 +24891,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yüksek personel devir hızı zayıf çalışanı elde tutmanın bedelidir."
+      "text": "Yüksek personel devir hızı, çalışanı elde tutmadaki zayıflığın bedelidir."
      }
     ],
     "expect": {
@@ -25251,7 +25251,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Başa aldığın şey sorumluluğu da taşır:"
+      "text": "Şimdi bugünün kuralı. Başa aldığın şey sorumluluğu da taşır:"
      },
      {
       "lang": "en",
@@ -25372,16 +25372,16 @@
      },
      {
       "lang": "en",
-      "text": "Nobody wants to subordinate oneself to an externally determined pace."
+      "text": "One should not have to subordinate oneself to an externally determined pace."
      },
      {
       "lang": "tr",
-      "text": "Kimse başkalarınca belirlenen bir tempoya boyun eğmek istemiyor."
+      "text": "İnsan başkalarınca belirlenen bir tempoya boyun eğmek zorunda kalmamalı."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Nobody wants to subordinate oneself to an externally determined pace."
+     "target": "One should not have to subordinate oneself to an externally determined pace."
     }
    },
    {
@@ -25624,7 +25624,7 @@
      },
      {
       "lang": "tr",
-      "text": "Tarafların devlete karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Tarafların devlet karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -25728,7 +25728,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:"
+      "text": "Şimdi bugünün kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:"
      },
      {
       "lang": "en",
@@ -25761,7 +25761,7 @@
       },
       {
        "lang": "en",
-       "text": "demands that … be"
+       "text": "demand that … be"
       },
       {
        "lang": "tr",
@@ -25972,7 +25972,7 @@
      },
      {
       "lang": "en",
-      "text": "demands that … be"
+      "text": "demand that … be"
      },
      {
       "lang": "tr",
@@ -26152,7 +26152,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konumun ne kadar süreceğini bilememeye"
+      "text": "İşin ne kadar süreceğini bilememeye"
      },
      {
       "lang": "en",
@@ -26196,7 +26196,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:"
+      "text": "Şimdi bugünün kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:"
      },
      {
       "lang": "en",
@@ -26305,7 +26305,7 @@
      },
      {
       "lang": "tr",
-      "text": "Riski üstüne yıkıyorlar ve buna gelir getiren iş diyorlar."
+      "text": "Riski başkalarının üstüne yıkıyorlar ve buna gelir getiren iş diyorlar."
      }
     ],
     "expect": {
@@ -26665,7 +26665,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:"
+      "text": "Şimdi bugünün kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:"
      },
      {
       "lang": "en",
@@ -26951,7 +26951,7 @@
   "icon": "media",
   "title": "Reporting the meeting",
   "titleTr": "Toplantıyı aktarmak",
-  "summary": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili katılanların niyetini de yazar.",
+  "summary": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili, katılanların niyetini de yazar.",
   "minutes": 12,
   "focusId": "Reporting verbs in an account of a meeting",
   "vocab": [
@@ -27011,7 +27011,7 @@
      },
      {
       "lang": "tr",
-      "text": "Tutanağın fiili katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?"
+      "text": "Tutanağın fiili, katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -27134,7 +27134,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tutanakta fiil sessiz bir hükümdür:"
+      "text": "Şimdi bugünün kuralı. Tutanakta fiil sessiz bir hükümdür:"
      },
      {
       "lang": "en",
@@ -27611,7 +27611,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kip burada bir suçlama ölçüsüdür:"
+      "text": "Şimdi bugünün kuralı. Kip burada bir suçlama ölçüsüdür:"
      },
      {
       "lang": "en",
@@ -27635,7 +27635,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Bilgi emeği tükenmişlikle bitebilir."
+      "text": "Şimdi sıra sende: Bilgi emeği pekâlâ tükenmişlikle bitebilir."
      }
     ],
     "expect": {
@@ -27893,7 +27893,7 @@
    "scene": "Bir iş arkadaşının çok fazla çalıştığını anlatıyorsun ve onun iradesi hakkında hüküm vermek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde neyi bilmediğini söyle.",
    "partner": "her fazla mesaiyi kişisel tercih sayan, «kimse zorlamıyor ki» diyen biri",
    "opening": "Nobody made them stay late, did they?",
-   "openingTr": "Kimse geç kalmaya zorlamadı, değil mi?",
+   "openingTr": "Kimse onları geç saate kadar kalmaya zorlamadı, değil mi?",
    "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinde neyi bilmediğini söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
@@ -28088,7 +28088,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:"
+      "text": "Şimdi bugünün kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:"
      },
      {
       "lang": "en",
@@ -28549,7 +28549,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:"
+      "text": "Şimdi bugünün kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:"
      },
      {
       "lang": "en",
@@ -29030,7 +29030,7 @@
      },
      {
       "lang": "tr",
-      "text": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi."
+      "text": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç artmadı."
      }
     ],
     "expect": {
@@ -29042,7 +29042,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Söz verilmeyen şey eksiltilir:"
+      "text": "Şimdi bugünün kuralı. Söz verilmeyen şey eksiltilir:"
      },
      {
       "lang": "en",
@@ -29237,7 +29237,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi."
+      "text": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç artmadı."
      }
     ],
     "expect": {
@@ -29503,7 +29503,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Toprak konusunda ad izin demektir:"
+      "text": "Şimdi bugünün kuralı. Toprak konusunda ad izin demektir:"
      },
      {
       "lang": "en",
@@ -29876,7 +29876,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir toprağın kendisinin sayılmasına"
+      "text": "Bir toprağı kendine ait saymaya"
      },
      {
       "lang": "en",
@@ -29964,7 +29964,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:"
+      "text": "Şimdi bugünün kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:"
      },
      {
       "lang": "en",
@@ -30049,7 +30049,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ekilmeden bekleyen toprağa"
+      "text": "Toprağın ekilmeden beklemesine"
      },
      {
       "lang": "en",
@@ -30433,7 +30433,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tarım tartışmasında herkesin bir çıkarı var:"
+      "text": "Şimdi bugünün kuralı. Tarım tartışmasında herkesin bir çıkarı var:"
      },
      {
       "lang": "en",
@@ -30624,7 +30624,7 @@
      },
      {
       "lang": "tr",
-      "text": "Biçim hasadı aşıp kalıyor."
+      "text": "Biçim hasattan uzun yaşıyor."
      }
     ],
     "expect": {
@@ -30902,11 +30902,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:"
+      "text": "Şimdi bugünün kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:"
      },
      {
       "lang": "en",
-      "text": "albeit site-adapted"
+      "text": "albeit soil-conserving"
      },
      {
       "lang": "tr",
@@ -30918,7 +30918,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Agroekolojiyi övsek de şehri besleyen verim."
+      "text": "Şimdi sıra sende: Agroekolojiyi ne kadar övsek de şehri besleyen verim."
      }
     ],
     "expect": {
@@ -31371,7 +31371,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:"
+      "text": "Şimdi bugünün kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:"
      },
      {
       "lang": "en",
@@ -31840,7 +31840,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Etiket tartışmasında fiil iddiayı taşır:"
+      "text": "Şimdi bugünün kuralı. Etiket tartışmasında fiil iddiayı taşır:"
      },
      {
       "lang": "en",
@@ -32317,7 +32317,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:"
+      "text": "Şimdi bugünün kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:"
      },
      {
       "lang": "en",
@@ -32341,7 +32341,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı tüketebilir."
+      "text": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı pekâlâ tüketebilir."
      }
     ],
     "expect": {
@@ -32794,7 +32794,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:"
+      "text": "Şimdi bugünün kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:"
      },
      {
       "lang": "en",
@@ -33251,7 +33251,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İklim raporunda adres bir KOŞUL taşır:"
+      "text": "Şimdi bugünün kuralı. İklim raporunda adres bir KOŞUL taşır:"
      },
      {
       "lang": "en",
@@ -33744,7 +33744,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:"
+      "text": "Şimdi bugünün kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:"
      },
      {
       "lang": "en",
@@ -34205,7 +34205,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İklimde ad KAPSAM demektir:"
+      "text": "Şimdi bugünün kuralı. İklimde ad KAPSAM demektir:"
      },
      {
       "lang": "en",
@@ -34666,7 +34666,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:"
+      "text": "Şimdi bugünün kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:"
      },
      {
       "lang": "en",
@@ -35135,7 +35135,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:"
+      "text": "Şimdi bugünün kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:"
      },
      {
       "lang": "en",
@@ -35604,7 +35604,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:"
+      "text": "Şimdi bugünün kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:"
      },
      {
       "lang": "en",
@@ -35741,12 +35741,12 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Rapor, gerçek olsa da, yeterliliği sağlamıyor."
+      "text": "Şimdi sen kur: İlerleme, gerçek olsa da, yeterliliği sağlamıyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The report, albeit real, does not deliver sufficiency.",
+     "target": "The progress, albeit real, does not deliver sufficiency.",
      "accept": [
       "The gain, albeit real, does not deliver sufficiency.",
       "The decoupling, albeit real, does not deliver sufficiency."
@@ -35766,7 +35766,7 @@
       },
       {
        "lang": "en",
-       "text": "The report, albeit real, does not deliver sufficiency."
+       "text": "The progress, albeit real, does not deliver sufficiency."
       },
       {
        "lang": "tr",
@@ -36073,7 +36073,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:"
+      "text": "Şimdi bugünün kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:"
      },
      {
       "lang": "en",
@@ -36542,7 +36542,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Bilim aktarımında fiil güveni dağıtır:"
+      "text": "Şimdi bugünün kuralı. Bilim aktarımında fiil güveni dağıtır:"
      },
      {
       "lang": "en",
@@ -37019,7 +37019,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:"
+      "text": "Şimdi bugünün kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:"
      },
      {
       "lang": "en",
@@ -37043,7 +37043,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi devrilme noktasının ötesine itebilir."
+      "text": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi pekâlâ devrilme noktasının ötesine itebilir."
      }
     ],
     "expect": {
@@ -37164,14 +37164,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Toprak çürüyebilirse yenilenme kapasitesi dayanabilir."
+      "text": "Şimdi sen kur: Yapraklar çürüyebilirse yenilenme kapasitesi dayanabilir."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The regenerative capacity might hold if the soil can decompose.",
+     "target": "The regenerative capacity might hold if the leaves can decompose.",
      "accept": [
-      "The regenerative capacity might hold if the leaves can decompose.",
+      "The regenerative capacity might hold if the wood can decompose.",
       "The regenerative capacity might hold if the litter can decompose."
      ],
      "hint": [
@@ -37189,7 +37189,7 @@
       },
       {
        "lang": "en",
-       "text": "The regenerative capacity might hold if the soil can decompose."
+       "text": "The regenerative capacity might hold if the leaves can decompose."
       },
       {
        "lang": "tr",
@@ -37496,7 +37496,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:"
+      "text": "Şimdi bugünün kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:"
      },
      {
       "lang": "en",
@@ -37759,7 +37759,7 @@
    }
   ],
   "chat": {
-   "scene": "Mahallendeki dönüşümü belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
+   "scene": "Mahallendeki dönüşümü, belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
    "partner": "dönüşümü tümden iyi bulan, «her şey daha güzel oldu» diyen bir komşu",
    "opening": "Everything looks nicer now, doesn't it?",
    "openingTr": "Her şey daha güzel oldu, değil mi?",
@@ -37957,7 +37957,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:"
+      "text": "Şimdi bugünün kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:"
      },
      {
       "lang": "en",
@@ -38450,7 +38450,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:"
+      "text": "Şimdi bugünün kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:"
      },
      {
       "lang": "en",
@@ -38927,7 +38927,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Ekonomi haberinde ad SÜREYİ söyler:"
+      "text": "Şimdi bugünün kuralı. Ekonomi haberinde ad SÜREYİ söyler:"
      },
      {
       "lang": "en",
@@ -39012,7 +39012,7 @@
      },
      {
       "lang": "tr",
-      "text": "enflasyondan arındırılmamış haliyle anlamına gelen öbeğe ise"
+      "text": "enflasyondan arındırılmamış hâliyle anlamına gelen öbeğe ise"
      },
      {
       "lang": "en",
@@ -39388,7 +39388,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:"
+      "text": "Şimdi bugünün kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:"
      },
      {
       "lang": "en",
@@ -39857,7 +39857,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:"
+      "text": "Şimdi bugünün kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:"
      },
      {
       "lang": "en",
@@ -40326,7 +40326,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:"
+      "text": "Şimdi bugünün kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:"
      },
      {
       "lang": "en",
@@ -40795,7 +40795,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:"
+      "text": "Şimdi bugünün kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:"
      },
      {
       "lang": "en",
@@ -41087,7 +41087,7 @@
   "vocab": [
    {
     "de": "accounting fraud",
-    "tr": "muhasebe sahtekarlığı"
+    "tr": "muhasebe sahtekârlığı"
    },
    {
     "de": "embezzlement",
@@ -41208,7 +41208,7 @@
      },
      {
       "lang": "tr",
-      "text": "Muhbir, denetçilerin yalnızca varsaydığını açıkça iddia ediyor."
+      "text": "İfşacı, denetçilerin yalnızca varsaydığını açıkça iddia ediyor."
      }
     ],
     "expect": {
@@ -41264,7 +41264,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:"
+      "text": "Şimdi bugünün kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:"
      },
      {
       "lang": "en",
@@ -41288,7 +41288,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Biri sahtekarlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor."
+      "text": "Şimdi sıra sende: Biri sahtekârlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor."
      }
     ],
     "expect": {
@@ -41741,7 +41741,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:"
+      "text": "Şimdi bugünün kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:"
      },
      {
       "lang": "en",
@@ -41765,7 +41765,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Yatırım döngüsü oran düşmeden dönebilir."
+      "text": "Şimdi sıra sende: Yatırım döngüsü pekâlâ oran düşmeden dönebilir."
      }
     ],
     "expect": {
@@ -42218,7 +42218,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:"
+      "text": "Şimdi bugünün kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:"
      },
      {
       "lang": "en",
@@ -42699,7 +42699,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Strateji raporunda adres bir PAZAR taşır:"
+      "text": "Şimdi bugünün kuralı. Strateji raporunda adres bir PAZAR taşır:"
      },
      {
       "lang": "en",
@@ -43007,7 +43007,7 @@
   "level": "C1",
   "course": "en",
   "icon": "key",
-  "title": "What the tender leaves unsaid",
+  "title": "What the bid leaves unsaid",
   "titleTr": "Teklifin söylemediği",
   "summary": "İhale metninde düşen öğeyi öğretir; söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır.",
   "minutes": 13,
@@ -43069,7 +43069,7 @@
      },
      {
       "lang": "tr",
-      "text": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para tarafından okuyoruz. Hazır mısın?"
+      "text": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para açısından okuyoruz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -43192,7 +43192,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. İhale metninde eksiltme bir RİSK devridir:"
+      "text": "Şimdi bugünün kuralı. İhale metninde eksiltme bir RİSK devridir:"
      },
      {
       "lang": "en",
@@ -43301,7 +43301,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şehrin tarafından ilgi yokluğundan hiçbir şey ilerlemedi."
+      "text": "Şehir cephesinde ilgi olmadığından hiçbir şey ilerlemedi."
      }
     ],
     "expect": {
@@ -43649,7 +43649,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Üslup savın ne kadar ileri gittiğini söyler:"
+      "text": "Şimdi bugünün kuralı. Üslup savın ne kadar ileri gittiğini söyler:"
      },
      {
       "lang": "en",
@@ -44110,7 +44110,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Savın sırası neyin görünmeyeceğini seçer:"
+      "text": "Şimdi bugünün kuralı. Savın sırası neyin görünmeyeceğini seçer:"
      },
      {
       "lang": "en",
@@ -44309,7 +44309,7 @@
      },
      {
       "lang": "tr",
-      "text": "İlk cümle görüntüyü seçiyor."
+      "text": "İlk cümle neyin görüneceğini seçiyor."
      }
     ],
     "expect": {
@@ -44579,7 +44579,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Hak dilinde çekimsiz fiil hakkı KİŞİDEN ayırır:"
+      "text": "Şimdi bugünün kuralı. Hak dilinde çekimsiz fiil hakkı KİŞİDEN ayırır:"
      },
      {
       "lang": "en",
@@ -44853,7 +44853,7 @@
    "scene": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her hak savını çıkar sayan, «size mi lazım bu» diyen biri",
    "opening": "You need this for yourselves, don't you?",
-   "openingTr": "Bu size mi lazım, değil mi?",
+   "openingTr": "Bu size lazım, değil mi?",
    "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
@@ -44887,7 +44887,7 @@
    },
    {
     "de": "integrity",
-    "tr": "doğruluk"
+    "tr": "dürüstlük"
    },
    {
     "de": "altruism",
@@ -45036,7 +45036,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir doğruluk biçimi olsa da, özgecilik bir yükümlülük de olabilir."
+      "text": "Bir dürüstlük biçimi olsa da, özgecilik bir yükümlülük de olabilir."
      }
     ],
     "expect": {
@@ -45048,7 +45048,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Ahlak tartışmasında ödün DÜŞÜNMEYİ açık tutar:"
+      "text": "Şimdi bugünün kuralı. Ahlak tartışmasında ödün DÜŞÜNMEYİ açık tutar:"
      },
      {
       "lang": "en",
@@ -45064,7 +45064,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Kuşku bizi tedirgin etse de hiçbir ilke kuşkusuz ayakta kalmaz."
+      "text": "Şimdi sıra sende: Kuşku bizi ne kadar tedirgin etse de hiçbir ilke kuşkusuz ayakta kalmaz."
      }
     ],
     "expect": {
@@ -45517,7 +45517,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kanıt sözlüğünde eşdizim SÖZÜN büyüklüğünü belirler:"
+      "text": "Şimdi bugünün kuralı. Kanıt sözlüğünde eşdizim SÖZÜN büyüklüğünü belirler:"
      },
      {
       "lang": "en",
@@ -45986,7 +45986,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Aktarma fiili senin nerede durduğunu söyler:"
+      "text": "Şimdi bugünün kuralı. Aktarma fiili senin nerede durduğunu söyler:"
      },
      {
       "lang": "en",
@@ -46463,7 +46463,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Kendinden söz ederken kip bir DÜRÜSTLÜK ölçüsüdür:"
+      "text": "Şimdi bugünün kuralı. Kendinden söz ederken kip bir DÜRÜSTLÜK ölçüsüdür:"
      },
      {
       "lang": "en",
@@ -46487,7 +46487,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Benlik algısı gerçeği aşıp yaşayabilir."
+      "text": "Şimdi sıra sende: Benlik algısı pekâlâ gerçeğin ömrünü aşabilir."
      }
     ],
     "expect": {
@@ -46940,7 +46940,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Alay eleştiriyi PAYLAŞTIRIR:"
+      "text": "Şimdi bugünün kuralı. Alay eleştiriyi PAYLAŞTIRIR:"
      },
      {
       "lang": "en",
@@ -47397,7 +47397,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı. Uzun savda adres bir SORUMLULUK halkasıdır:"
+      "text": "Şimdi bugünün kuralı. Uzun savda adres bir SORUMLULUK halkasıdır:"
      },
      {
       "lang": "en",
@@ -47890,7 +47890,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kuralı ve kursun sonucu. Bu seviyede öğrendiğin on aracın hiçbiri zorunlu değil:"
+      "text": "Şimdi bugünün kuralı ve kursun sonucu. Bu seviyede öğrendiğin on aracın hiçbiri zorunlu değil:"
      },
      {
       "lang": "en",
@@ -47967,7 +47967,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sözünün arkasında durmaya"
+      "text": "Söylediğini gerçekten kastetmeye"
      },
      {
       "lang": "en",

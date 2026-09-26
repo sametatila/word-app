@@ -107,10 +107,10 @@
  {
   "tr": "Yeni bir meslektaşını ekibe tanıtıyorsun. Kim olduğunu, neden önemli olduğunu ve kime bağlı çalıştığını açıklayıcı ilgi cümleleriyle anlat.",
   "kind": "scene",
-  "de": "Du stellst dem Team eine neue Kollegin vor. Erzähl mit erklärenden Relativsätzen, wer sie ist, warum sie wichtig ist und wem sie zuarbeitet."
+  "de": "Du stellst dem Team eine neue Kollegin vor. Erzähl mit erklärenden Relativsätzen, wer sie ist, warum sie wichtig ist und wem sie unterstellt ist."
  },
  {
-  "tr": "İzne çıkıyorsun ve işi devrettiğin kişiye durumu anlatıyorsun. Neyi bitirdiğini, kimin yok olduğunu ve neyin dağıtıldığını kısa cümlelerle ver.",
+  "tr": "İzne çıkıyorsun ve işi devrettiğin kişiye durumu anlatıyorsun. Neyi bitirdiğini, kimin gelmediğini ve neyin dağıtıldığını kısa cümlelerle ver.",
   "kind": "scene",
   "de": "Du gehst in den Urlaub und erklärst der Person, die übernimmt, den Stand. Sag in kurzen Sätzen, was du fertig hast, wer gefehlt hat und was verteilt wurde."
  },
@@ -210,6 +210,11 @@
   "de": "Nuance"
  },
  {
+  "tr": "ince davranış",
+  "kind": "vocab.tr",
+  "de": "Takt"
+ },
+ {
   "tr": "öncelik",
   "kind": "vocab.tr",
   "de": "Priorität"
@@ -292,12 +297,17 @@
  {
   "tr": "dönüm noktası",
   "kind": "vocab.tr",
+  "de": "Wendepunkt"
+ },
+ {
+  "tr": "kilometre taşı",
+  "kind": "vocab.tr",
   "de": "Meilenstein"
  },
  {
-  "tr": "sonuca varmak",
+  "tr": "sonuçlandırmak",
   "kind": "vocab.tr",
-  "de": "schließen"
+  "de": "abschließen"
  },
  {
   "tr": "değerlendirmek",
@@ -325,7 +335,7 @@
   "de": "umsetzen"
  },
  {
-  "tr": "üst mercie taşımak",
+  "tr": "üst merciye taşımak",
   "kind": "vocab.tr",
   "de": "eskalieren"
  },
@@ -432,62 +442,62 @@
  {
   "tr": "Edattan sonra",
   "kind": "hint.tr",
-  "de": "Nach einer Präposition"
+  "de": "Nach einer Präposition –"
  },
  {
   "tr": "Sebebi bağlamak için",
   "kind": "hint.tr",
-  "de": "Um den Grund anzubinden"
+  "de": "Um den Grund anzubinden –"
  },
  {
   "tr": "Bulguyu aktarmak için",
   "kind": "hint.tr",
-  "de": "Um den Befund wiederzugeben"
+  "de": "Um den Befund wiederzugeben –"
  },
  {
   "tr": "O an sürüyor olan için",
   "kind": "hint.tr",
-  "de": "Für das, was dann gerade läuft"
+  "de": "Für das, was dann gerade läuft –"
  },
  {
   "tr": "Özneyi başa almak için",
   "kind": "hint.tr",
-  "de": "Um das Subjekt nach vorn zu stellen"
+  "de": "Um das Subjekt nach vorn zu stellen –"
  },
  {
   "tr": "Fiili isme çevirmek için",
   "kind": "hint.tr",
-  "de": "Um das Verb zum Nomen zu machen"
+  "de": "Um das Verb zum Nomen zu machen –"
  },
  {
   "tr": "Kişiye ek bilgi eklemek için",
   "kind": "hint.tr",
-  "de": "Um der Person eine Zusatzinformation anzufügen"
+  "de": "Um der Person eine Zusatzinformation anzufügen –"
  },
  {
   "tr": "O ana kadar bitmiş olan için",
   "kind": "hint.tr",
-  "de": "Für das, was bis dahin fertig ist"
+  "de": "Für das, was bis dahin fertig ist –"
  },
  {
   "tr": "Önce biten işi bağlamak için",
   "kind": "hint.tr",
-  "de": "Um die früher beendete Handlung anzubinden"
+  "de": "Um die früher beendete Handlung anzubinden –"
  },
  {
   "tr": "Edilgen biçimde bitmiş olan için",
   "kind": "hint.tr",
-  "de": "Für das im Passiv Fertige"
+  "de": "Für das im Passiv Fertige –"
  },
  {
   "tr": "Kapanışı resmî dille yazmak için",
   "kind": "hint.tr",
-  "de": "Um den Abschluss formell zu schreiben"
+  "de": "Um den Abschluss formell zu schreiben –"
  },
  {
   "tr": "Kaynağı söylemeden aktarmak için",
   "kind": "hint.tr",
-  "de": "Um ohne Quelle wiederzugeben"
+  "de": "Um ohne Quelle wiederzugeben –"
  },
  {
   "tr": "Edilgen ortaç üçüncü hâlle başlar:",
@@ -497,7 +507,7 @@
  {
   "tr": "Cümlenin tamamına ek bilgi eklemek için",
   "kind": "hint.tr",
-  "de": "Um dem ganzen Satz eine Zusatzinformation anzufügen"
+  "de": "Um dem ganzen Satz eine Zusatzinformation anzufügen –"
  },
  {
   "tr": "Olanı kısa ve resmî söylemek için edilgen kullanılır:",
@@ -550,9 +560,9 @@
   "de": "Die vorgezogene Aufgabe heißt"
  },
  {
-  "tr": "Bir yargıya varmaya",
+  "tr": "Bir işi sonuca bağlamaya",
   "kind": "say.tr",
-  "de": "Zu einem Urteil kommen heißt"
+  "de": "Eine Sache zum Abschluss zu bringen heißt"
  },
  {
   "tr": "O gün işte olmayana",
@@ -757,7 +767,7 @@
  {
   "tr": "Uzaktaki ekip dokuzda katılıyor.",
   "kind": "say.tr",
-  "de": "Das Team aus der Ferne kommt um neun dazu."
+  "de": "Das Remote-Team kommt um neun dazu."
  },
  {
   "tr": "Bir cümlenin seçilmiş kelimelerine",
@@ -765,7 +775,7 @@
   "de": "Die gewählten Wörter eines Satzes heißen"
  },
  {
-  "tr": "Geç uygularsak üst mercie taşırız.",
+  "tr": "Geç uygularsak üst merciye taşırız.",
   "kind": "say.tr",
   "de": "Wenn wir zu spät umsetzen, eskalieren wir."
  },
@@ -912,7 +922,7 @@
  {
   "tr": "Şimdi sen kur: Ekibin önde olduğu düşünülüyor.",
   "kind": "say.tr",
-  "de": "Jetzt du: Man hält das Team für voraus."
+  "de": "Jetzt du: Man glaubt, dass das Team vorn liegt."
  },
  {
   "tr": "İkinci kalıbımız özneyi başa alıyor. Tekrar et:",
@@ -945,9 +955,9 @@
   "de": "Das heißt jemandem eine Aufgabe geben. Und die Aufzeichnung einer Sitzung heißt"
  },
  {
-  "tr": "Şimdi dersin kuralı. Gelecekteki bir ana bakarken",
+  "tr": "Şimdi bugünün kuralı. Gelecekteki bir ana bakarken",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Blickt man auf einen Punkt in der Zukunft, nennt"
+  "de": "Jetzt die Regel von heute. Blickt man auf einen Punkt in der Zukunft, nennt"
  },
  {
   "tr": "Şimdi sıra sende: Bütçenin değişeceği söyleniyor.",
@@ -980,9 +990,9 @@
   "de": "Noch eins: Es wird berichtet, dass die Befunde nützlich sind."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aynı iddia iki biçimle aktarılır:",
+  "tr": "Şimdi bugünün kuralı. Aynı iddia iki biçimle aktarılır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Dieselbe Behauptung wird in zwei Formen wiedergegeben:"
+  "de": "Jetzt die Regel von heute. Dieselbe Behauptung wird in zwei Formen wiedergegeben:"
  },
  {
   "tr": "Bir tane daha: Pazartesi yazılan taslak herkese ulaştı.",
@@ -1027,10 +1037,10 @@
  {
   "tr": "İleriye dönük tahmin demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt eine Vorhersage nach vorn. Das ist auch unsere erste Wendung. Wiederhole:"
+  "de": "Das heißt eine Vorhersage für die Zukunft. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi sıra sende: Ana, ki ekibi yönetiyor, mayısta katıldı.",
+  "tr": "Şimdi sıra sende: Ekibi yöneten Ana mayısta katıldı.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Ana, die das Team leitet, ist im Mai dazugekommen."
  },
@@ -1055,9 +1065,9 @@
   "de": "Das heißt die Teile im Einklang führen. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Ortaç öbeği iki cümlenin ÖZNESİ AYNIYSA kurulur:",
+  "tr": "Şimdi bugünün kuralı. Ortaç öbeği iki cümlenin ÖZNESİ AYNIYSA kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Partizipialkonstruktion geht nur, wenn beide Sätze DASSELBE SUBJEKT haben:"
+  "de": "Jetzt die Regel von heute. Die Partizipialkonstruktion geht nur, wenn beide Sätze DASSELBE SUBJEKT haben:"
  },
  {
   "tr": "Yolun işaretlenmiş önemli noktası demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1070,9 +1080,9 @@
   "de": "Hallo! Heute lernen wir, jemanden vorzustellen: wer, was sie macht, warum sie wichtig ist."
  },
  {
-  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek cümleyi kısaltır ve kişiyi geri çeker:",
+  "tr": "Şimdi bugünün kuralı. Fiili isme çevirmek cümleyi kısaltır ve kişiyi geri çeker:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen kürzt den Satz und nimmt die Person zurück:"
+  "de": "Jetzt die Regel von heute. Das Verb zum Nomen zu machen kürzt den Satz und nimmt die Person zurück:"
  },
  {
   "tr": "ile özne başa geçer ve fiil mastara döner. İkincisi daha kısa, iş yazısında daha sık.",
@@ -1105,9 +1115,9 @@
   "de": "geschrieben. Im Protokoll ist das keine Stilfrage, sondern Regel; die Aufzeichnung soll nicht das Wer, sondern das Was zeigen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve çıkarılsa bile cümle ayakta kalır;",
+  "tr": "Şimdi bugünün kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve çıkarılsa bile cümle ayakta kalır;",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der erklärende Relativsatz wird mit KOMMA abgetrennt und ohne ihn bleibt der Satz stehen;"
+  "de": "Jetzt die Regel von heute. Der erklärende Relativsatz wird mit KOMMA abgetrennt und ohne ihn bleibt der Satz stehen;"
  },
  {
   "tr": "Plan dilinin tamamı bu iki biçimden çıkıyor ve ikisini karıştırmak takvimi yanlış okutuyor. Hazır mısın?",

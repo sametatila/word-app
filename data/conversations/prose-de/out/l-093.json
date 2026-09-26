@@ -210,7 +210,7 @@
   "de": "Strecke"
  },
  {
-  "tr": "su verme",
+  "tr": "su temini",
   "kind": "vocab.tr",
   "de": "Wasserversorgung"
  },
@@ -230,9 +230,9 @@
   "de": "Mülldeponie"
  },
  {
-  "tr": "koşuşturma",
+  "tr": "yoğun saat",
   "kind": "vocab.tr",
-  "de": "Hauptverkehr"
+  "de": "Hauptverkehrszeit"
  },
  {
   "tr": "temizlemek",
@@ -277,12 +277,12 @@
  {
   "tr": "Doğru. Toplantıda 'is free' denmişti; aktarırken zaman bir basamak geriye gitti.",
   "kind": "why.tr",
-  "de": "Richtig. In der Versammlung hieß es 'is free'; beim Wiedergeben rückte die Zeit eine Stufe zurück."
+  "de": "Richtig. In der Versammlung hieß es „is free“; beim Wiedergeben rückte die Zeit eine Stufe zurück."
  },
  {
   "tr": "Doğru. Bu bağlaç cümle değil isim alıyor; ardından gelen 'the distance' bir isim öbeği.",
   "kind": "why.tr",
-  "de": "Richtig. Dieser Konnektor nimmt keinen Satz, sondern ein Nomen; das folgende 'the distance' ist eine Nominalgruppe."
+  "de": "Richtig. Dieser Konnektor nimmt keinen Satz, sondern ein Nomen; das folgende „the distance“ ist eine Nominalgruppe."
  },
  {
   "tr": "Doğru. Kapanma taşınmadan önce olmuş, o yüzden bir kat geride; taşınma ise olağan geçmişte.",
@@ -297,17 +297,17 @@
  {
   "tr": "Aynı şeyin iki yüzü için",
   "kind": "hint.tr",
-  "de": "Für die zwei Seiten derselben Sache"
+  "de": "Für die zwei Seiten derselben Sache –"
  },
  {
   "tr": "Engele rağmen yapılan için",
   "kind": "hint.tr",
-  "de": "Für das, was trotz des Hindernisses getan wird"
+  "de": "Für das, was trotz des Hindernisses getan wird –"
  },
  {
   "tr": "İki durumu karşı karşıya koymak için",
   "kind": "hint.tr",
-  "de": "Um zwei Lagen einander gegenüberzustellen"
+  "de": "Um zwei Lagen einander gegenüberzustellen –"
  },
  {
   "tr": "Kesim oylamadan önce bittiği için bir kat geride:",
@@ -430,7 +430,7 @@
   "de": "und das Weiße, das im Winter fällt, heißt"
  },
  {
-  "tr": "Su verme iki saat duruyor.",
+  "tr": "Su temini iki saat kesiliyor.",
   "kind": "say.tr",
   "de": "Die Wasserversorgung steht zwei Stunden still."
  },
@@ -505,7 +505,7 @@
   "de": "und das Fahrzeug mit zwei Rädern und Pedalen heißt"
  },
  {
-  "tr": "Koşuşturma en çok sekizde oluyor.",
+  "tr": "Yoğunluk en çok sekizde oluyor.",
   "kind": "say.tr",
   "de": "Der Hauptverkehr ist um acht am schlimmsten."
  },
@@ -650,9 +650,9 @@
   "de": "Das heißt die gewählte Person, die die Stadt führt. Und der freie Platz heißt"
  },
  {
-  "tr": "Şimdi dersin kuralı. Değişiklikten ÖNCE olan iş",
+  "tr": "Şimdi bugünün kuralı. Değişiklikten ÖNCE olan iş",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was VOR der Veränderung geschah, wird mit"
+  "de": "Jetzt die Regel von heute. Was VOR der Veränderung geschah, wird mit"
  },
  {
   "tr": "Bir tane daha: Bu patikada bisiklet sürmemelisin.",
@@ -670,9 +670,9 @@
   "de": "Jetzt besprichst du Wasser und Abfall in deinem Viertel."
  },
  {
-  "tr": "Şimdi dersin kuralı. Zorunluluğun üç derecesi var:",
+  "tr": "Şimdi bugünün kuralı. Zorunluluğun üç derecesi var:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Pflicht hat drei Stufen:"
+  "de": "Jetzt die Regel von heute. Die Pflicht hat drei Stufen:"
  },
  {
   "tr": "Şimdi sıra sende: Gölü temizlemeye karar verdiler.",
@@ -700,14 +700,14 @@
   "de": "Jetzt bist du dran: Bevor sie die Brücke bauten, war hier ein See."
  },
  {
-  "tr": "Hareketin çok olduğu demek. Kimsenin olmadığı hâle ise",
+  "tr": "Hareketli, kalabalık demek. Kendini yapayalnız hissetmeye ise",
   "kind": "say.tr",
-  "de": "Das heißt, dass viel los ist. Und wenn niemand da ist, heißt das"
+  "de": "Das heißt belebt, voller Leute. Und wenn man sich ganz allein fühlt, heißt das"
  },
  {
-  "tr": "Şimdi dersin kuralı. Üç bağlaç üç ayrı ilişki kuruyor:",
+  "tr": "Şimdi bugünün kuralı. Üç bağlaç üç ayrı ilişki kuruyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Drei Konnektoren bauen drei verschiedene Beziehungen:"
+  "de": "Jetzt die Regel von heute. Drei Konnektoren bauen drei verschiedene Beziehungen:"
  },
  {
   "tr": "Şimdi sen kur: Belediye çöp sahasını kapatmayı önerdi.",
@@ -740,9 +740,9 @@
   "de": "Der Ausschuss trifft sich donnerstags und alle können abstimmen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Karar veren fiiller kendinden sonra",
+  "tr": "Şimdi bugünün kuralı. Karar veren fiiller kendinden sonra",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Verben des Entscheidens verlangen danach ein"
+  "de": "Jetzt die Regel von heute. Verben des Entscheidens verlangen danach ein"
  },
  {
   "tr": "Son kalıbımız iki durumu karşı karşıya koyuyor. Tekrar et:",

@@ -15,9 +15,9 @@
   "de": "Die Automatisierung des Vorgangs"
  },
  {
-  "tr": "Sabitlenen değişken",
+  "tr": "Güncellenen yazılım",
   "kind": "titleTr",
-  "de": "Die Software, die aktualisiert wurde"
+  "de": "Die aktualisierte Software"
  },
  {
   "tr": "Çalışma nasıl yürüyor",
@@ -120,9 +120,9 @@
   "de": "Du erklärst einer Fördermittelgeberin den Zeitplan einer Messreihe. Sag, was bis dahin gemessen worden sein wird, was dann gerade getestet wird und was geprüft sein wird."
  },
  {
-  "tr": "Bir arıza kaydını inceleyen meslektaşına sistemin parçalarını tanıtıyorsun. Hangi parçanın ne zaman güncellendiğini, hangi arayüzün neden durdurduğunu ve hangi yöntemin neyi kullandığını anlat.",
+  "tr": "Bir arıza kaydını inceleyen meslektaşına sistemin parçalarını tanıtıyorsun. Hangi parçanın ne zaman güncellendiğini, hangi arayüz yüzünden işi durdurduğunuzu ve hangi yöntemin neyi kullandığını anlat.",
   "kind": "scene",
-  "de": "Du stellst einem Kollegen, der ein Störungsprotokoll durchsieht, die Teile des Systems vor. Erzähl, welches Teil wann aktualisiert wurde, welche Oberfläche warum gestoppt hat und welches Verfahren was benutzt."
+  "de": "Du stellst einem Kollegen, der ein Störungsprotokoll durchsieht, die Teile des Systems vor. Erzähl, welches Teil wann aktualisiert wurde, welche Oberfläche euch zum Anhalten gebracht hat und welches Verfahren was benutzt."
  },
  {
   "tr": "Üç bulguyu üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
@@ -377,22 +377,22 @@
  {
   "tr": "Buluşu isimle anlatmak için",
   "kind": "hint.tr",
-  "de": "Um die Erfindung mit einem Nomen zu nennen"
+  "de": "Um die Erfindung mit einem Nomen zu nennen –"
  },
  {
   "tr": "Getirilmeyi isimle anlatmak için",
   "kind": "hint.tr",
-  "de": "Um die Einführung mit einem Nomen zu nennen"
+  "de": "Um die Einführung mit einem Nomen zu nennen –"
  },
  {
   "tr": "Geçmişteki bir kusuru aktarmak için",
   "kind": "hint.tr",
-  "de": "Um einen vergangenen Mangel wiederzugeben"
+  "de": "Um einen vergangenen Mangel wiederzugeben –"
  },
  {
   "tr": "Kimin bulduğunu söylemeden aktarmak için",
   "kind": "hint.tr",
-  "de": "Um wiederzugeben, ohne zu sagen, wer es gefunden hat"
+  "de": "Um wiederzugeben, ohne zu sagen, wer es gefunden hat –"
  },
  {
   "tr": "bugün",
@@ -480,7 +480,7 @@
   "de": "Die Wellenlänge ändert sich mit der Wärme."
  },
  {
-  "tr": "Yamanın getirilmesi gecikti.",
+  "tr": "Yamanın kullanıma sunulması gecikti.",
   "kind": "say.tr",
   "de": "Die Einführung des Patches hat sich verzögert."
  },
@@ -500,19 +500,19 @@
   "de": "Daten unlesbar machen heißt"
  },
  {
-  "tr": "Yerçekimi aynı ivmeyi veriyor.",
+  "tr": "Yer çekimi her cisme aynı ivmeyi verir.",
   "kind": "say.tr",
-  "de": "Die Schwerkraft gibt dieselbe Beschleunigung."
+  "de": "Die Schwerkraft gibt jedem Körper dieselbe Beschleunigung."
  },
  {
-  "tr": "Tepkimeyi yürüten canlı maddeye",
+  "tr": "Canlılarda tepkimeyi hızlandıran maddeye",
   "kind": "say.tr",
-  "de": "Der lebende Stoff, der die Reaktion treibt, heißt"
+  "de": "Der Stoff, der in Lebewesen Reaktionen beschleunigt, heißt"
  },
  {
-  "tr": "Alaşım ağır bir molekül taşıyor.",
+  "tr": "Alaşım moleküllerden oluşmaz.",
   "kind": "say.tr",
-  "de": "Die Legierung trägt ein schweres Molekül."
+  "de": "Eine Legierung besteht nicht aus Molekülen."
  },
  {
   "tr": "Bir araştırmanın yazılı sonucuna",
@@ -560,9 +560,9 @@
   "de": "Die Evolution wirkt über lange Zeiträume."
  },
  {
-  "tr": "Kötücül yazılım gözetime dönüştü.",
+  "tr": "Kötücül yazılım gözetim için kullanıldı.",
   "kind": "say.tr",
-  "de": "Aus der Schadsoftware wurde Überwachung."
+  "de": "Die Schadsoftware wurde zur Überwachung benutzt."
  },
  {
   "tr": "Kütleleri birbirine çeken kuvvete",
@@ -650,7 +650,7 @@
   "de": "Es heißt, dass die Messungen stabil sind."
  },
  {
-  "tr": "Aracın bulunması enstitüyü değiştirdi.",
+  "tr": "Aracın icadı enstitüyü değiştirdi.",
   "kind": "say.tr",
   "de": "Die Erfindung des Werkzeugs hat das Institut verändert."
  },
@@ -722,7 +722,7 @@
  {
   "tr": "İzlem grubunun fazla küçük olduğu düşünülüyor.",
   "kind": "say.tr",
-  "de": "Man hält die Kohorte für zu klein."
+  "de": "Man nimmt an, dass die Kohorte zu klein war."
  },
  {
   "tr": "Şimdi bir bulguyu bilimsel dille anlatacaksın.",
@@ -755,7 +755,7 @@
   "de": "Das heißt der fließende Stoff. Und der Stoff, der die Reaktion beschleunigt, heißt"
  },
  {
-  "tr": "Şimdi sen kur: Yöntemin bulunması alanı değiştirdi.",
+  "tr": "Şimdi sen kur: Yöntemin icadı alanı değiştirdi.",
   "kind": "say.tr",
   "de": "Jetzt du: Die Erfindung des Verfahrens hat das Gebiet verändert."
  },
@@ -792,7 +792,7 @@
  {
   "tr": "Bir tane daha: Örneklemin fazla küçük olduğu düşünülüyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Man hält die Stichprobe für zu klein."
+  "de": "Noch eins: Man nimmt an, dass die Stichprobe zu klein war."
  },
  {
   "tr": "Son kalıbımız geçmişteki bir kusuru aktarıyor. Tekrar et:",
@@ -830,9 +830,9 @@
   "de": "Das heißt der nach außen abgegebene Stoff. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Bilim yazısında aktarım üç biçimde geçer:",
+  "tr": "Şimdi bugünün kuralı. Bilim yazısında aktarım üç biçimde geçer:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im wissenschaftlichen Text kommt die Wiedergabe in drei Formen vor:"
+  "de": "Jetzt die Regel von heute. Im wissenschaftlichen Text kommt die Wiedergabe in drei Formen vor:"
  },
  {
   "tr": "geçmişi anlatır. Üçü de bulguyu verir ama kimseyi öne çıkarmaz.",
@@ -840,7 +840,7 @@
   "de": "erzählt die Vergangenheit. Alle drei nennen den Befund, stellen aber niemanden nach vorn."
  },
  {
-  "tr": "Şimdi sıra sende: Sistem, ki haziranda güncellenmişti, bozuldu.",
+  "tr": "Şimdi sıra sende: Sistem bozuldu; haziranda güncellenmişti.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Das System, das im Juni aktualisiert wurde, ist ausgefallen."
  },

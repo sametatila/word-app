@@ -160,6 +160,11 @@
   "de": "Puffer"
  },
  {
+  "tr": "pay / bölüm",
+  "kind": "vocab.tr",
+  "de": "Portion"
+ },
+ {
   "tr": "aşım",
   "kind": "vocab.tr",
   "de": "Überschreitung"
@@ -230,9 +235,9 @@
   "de": "Rede"
  },
  {
-  "tr": "önlemek",
+  "tr": "yol açmak",
   "kind": "vocab.tr",
-  "de": "verhindern"
+  "de": "verursachen"
  },
  {
   "tr": "senaryo",
@@ -305,7 +310,7 @@
   "de": "unerlässlich"
  },
  {
-  "tr": "teslimi gelen",
+  "tr": "teslim tarihi gelmiş",
   "kind": "vocab.tr",
   "de": "fällig"
  },
@@ -320,7 +325,7 @@
   "de": "moderieren"
  },
  {
-  "tr": "ayarını değiştirmek",
+  "tr": "ince ayar yapmak",
   "kind": "vocab.tr",
   "de": "nachjustieren"
  },
@@ -432,77 +437,77 @@
  {
   "tr": "Yapılmamış olan için",
   "kind": "hint.tr",
-  "de": "Für das Nichtgetane"
+  "de": "Für das Nichtgetane –"
  },
  {
   "tr": "Bütünü öne almak için",
   "kind": "hint.tr",
-  "de": "Um das Ganze nach vorn zu holen"
+  "de": "Um das Ganze nach vorn zu holen –"
  },
  {
   "tr": "Emin bir çıkarım için",
   "kind": "hint.tr",
-  "de": "Für einen sicheren Rückschluss"
+  "de": "Für einen sicheren Rückschluss –"
  },
  {
   "tr": "İmkânsız gördüğün için",
   "kind": "hint.tr",
-  "de": "Für das, was du ausschließt"
+  "de": "Für das, was du ausschließt –"
  },
  {
   "tr": "İddiayı yumuşatmak için",
   "kind": "hint.tr",
-  "de": "Um die Behauptung abzuschwächen"
+  "de": "Um die Behauptung abzuschwächen –"
  },
  {
   "tr": "Kusuru kabul etmek için",
   "kind": "hint.tr",
-  "de": "Um den Mangel einzuräumen"
+  "de": "Um den Mangel einzuräumen –"
  },
  {
   "tr": "Asıl olanı başa almak için",
   "kind": "hint.tr",
-  "de": "Um das Wesentliche nach vorn zu holen"
+  "de": "Um das Wesentliche nach vorn zu holen –"
  },
  {
   "tr": "Sonucu bugüne taşımak için",
   "kind": "hint.tr",
-  "de": "Um die Folge in die Gegenwart zu holen"
+  "de": "Um die Folge in die Gegenwart zu holen –"
  },
  {
   "tr": "Tek bir parçayı seçmek için",
   "kind": "hint.tr",
-  "de": "Um ein einzelnes Stück auszuwählen"
+  "de": "Um ein einzelnes Stück auszuwählen –"
  },
  {
-  "tr": "Karşıtlığa rağmen devam için",
+  "tr": "Karşıtlığa rağmen devam etmek için",
   "kind": "hint.tr",
-  "de": "Für das Weitermachen trotz des Gegensatzes"
+  "de": "Um trotz des Gegensatzes weiterzumachen –"
  },
  {
   "tr": "Sonucu geçmişte bırakmak için",
   "kind": "hint.tr",
-  "de": "Um die Folge in der Vergangenheit zu lassen"
+  "de": "Um die Folge in der Vergangenheit zu lassen –"
  },
  {
   "tr": "İki işi devrikle bağlamak için",
   "kind": "hint.tr",
-  "de": "Um zwei Handlungen mit Inversion zu verbinden"
+  "de": "Um zwei Handlungen mit Inversion zu verbinden –"
  },
  {
   "tr": "Olumsuz zarftan sonra devrik için",
   "kind": "hint.tr",
-  "de": "Für die Inversion nach einem negativen Adverb"
+  "de": "Für die Inversion nach einem negativen Adverb –"
  },
  {
   "tr": "Tamamen geçmişte kalan koşul için",
   "kind": "hint.tr",
-  "de": "Für eine Bedingung, die ganz in der Vergangenheit bleibt"
+  "de": "Für eine Bedingung, die ganz in der Vergangenheit bleibt –"
  },
  {
   "tr": "İlk kez olanı devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um das erste Mal mit Inversion zu sagen"
+  "de": "Um das erste Mal mit Inversion zu sagen –"
  },
  {
   "tr": "yön",
@@ -630,9 +635,9 @@
   "de": "Fassen wir zusammen: Abschwächung"
  },
  {
-  "tr": "Olmasının önüne geçmeye",
+  "tr": "Bir şeye sebep olmaya",
   "kind": "say.tr",
-  "de": "Etwas im Voraus abwenden heißt"
+  "de": "Etwas zu verursachen heißt"
  },
  {
   "tr": "Pay baştan çok küçüktü.",
@@ -665,9 +670,9 @@
   "de": "Heute kann sich jeder beteiligen."
  },
  {
-  "tr": "Çöküşü önlemiş olamazdık.",
+  "tr": "Çöküşe biz yol açmış olamayız.",
   "kind": "say.tr",
-  "de": "Wir können den Ausfall nicht verhindert haben."
+  "de": "Wir können den Ausfall nicht verursacht haben."
  },
  {
   "tr": "İnce bir düzeltme yapmaya",
@@ -870,7 +875,7 @@
   "de": "Die Kosten sind hoch, dennoch machen wir weiter."
  },
  {
-  "tr": "Planın ayarını her cuma değiştiriyoruz.",
+  "tr": "Plana her cuma ince ayar yapıyoruz.",
   "kind": "say.tr",
   "de": "Wir justieren den Plan jeden Freitag nach."
  },
@@ -900,9 +905,9 @@
   "de": "Der Plan ist weitgehend fertig, deshalb leite ich ihn weiter."
  },
  {
-  "tr": "Şimdi dersin kuralı. Üç kip de geçmişe bakar:",
+  "tr": "Şimdi bugünün kuralı. Üç kip de geçmişe bakar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Alle drei Modalverben blicken zurück:"
+  "de": "Jetzt die Regel von heute. Alle drei Modalverben blicken zurück:"
  },
  {
   "tr": "Şimdi bir toplantıda vurgunu yerleştireceksin.",
@@ -980,9 +985,9 @@
   "de": "Unsere letzte Wendung bleibt ganz in der Vergangenheit. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Şart yarısı ikisinde de aynı:",
+  "tr": "Şimdi bugünün kuralı. Şart yarısı ikisinde de aynı:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Bedingungshälfte ist bei beiden gleich:"
+  "de": "Jetzt die Regel von heute. Die Bedingungshälfte ist bei beiden gleich:"
  },
  {
   "tr": "Şimdi sıra sende: Böyle bir sonucu nadiren gördüm.",
@@ -990,9 +995,9 @@
   "de": "Jetzt bist du dran: Selten habe ich so ein Ergebnis gesehen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Yarık cümlenin iki biçimi var:",
+  "tr": "Şimdi bugünün kuralı. Yarık cümlenin iki biçimi var:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spaltsatz hat zwei Formen:"
+  "de": "Jetzt die Regel von heute. Der Spaltsatz hat zwei Formen:"
  },
  {
   "tr": "Daha iyi planlasaydık kayıp bugün daha küçük olurdu.",
@@ -1005,9 +1010,9 @@
   "de": "Sie hat nicht nur moderiert, sie hat auch gesprochen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Bu bağlayıcılar iki iş yapıyor:",
+  "tr": "Şimdi bugünün kuralı. Bu bağlayıcılar iki iş yapıyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Diese Konnektoren leisten zweierlei:"
+  "de": "Jetzt die Regel von heute. Diese Konnektoren leisten zweierlei:"
  },
  {
   "tr": "Şimdi sıra sende: Görünüşe göre teslim tarihi kaymış.",
@@ -1035,9 +1040,9 @@
   "de": "Unsere zweite Wendung verbindet zwei Handlungen mit Inversion. Wiederhole:"
  },
  {
-  "tr": "Bana ulaşana göre demek. İlk kalıbımız da bu. Tekrar et:",
+  "tr": "Bana ulaşan bilgiye göre demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt nach dem, was mich erreicht. Das ist auch unsere erste Wendung. Wiederhole:"
+  "de": "Das heißt: nach dem, was mich erreicht hat. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
   "tr": "İkinci kalıbımız imkânsız gördüğünü söylüyor. Tekrar et:",
@@ -1095,9 +1100,9 @@
   "de": "Das heißt der Weg, den die Ereignisse nehmen können. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçer:",
+  "tr": "Şimdi bugünün kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçer:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Steht ein negatives Adverb am Anfang, geht der Satz in die FRAGESTELLUNG:"
+  "de": "Jetzt die Regel von heute. Steht ein negatives Adverb am Anfang, geht der Satz in die FRAGESTELLUNG:"
  },
  {
   "tr": "ise bugüne taşır. Hangisini seçtiğin sonucun hâlâ sürüp sürmediğini söyler.",

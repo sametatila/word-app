@@ -537,7 +537,7 @@
  {
   "tr": "Terfi etmek için",
   "kind": "say.tr",
-  "de": "Für eine Beförderung nimmt man"
+  "de": "Für eine Beförderung wird"
  },
  {
   "tr": "deriz. Tekrar et:",
@@ -547,7 +547,7 @@
  {
   "tr": "Bir şeyi beklemek",
   "kind": "say.tr",
-  "de": "Etwas erwarten"
+  "de": "Etwas erwarten wird mit"
  },
  {
   "tr": "Bazıları to ister:",
@@ -557,12 +557,12 @@
  {
   "tr": "biçiminde kurulur.",
   "kind": "say.tr",
-  "de": "gebaut."
+  "de": "– so wird er gebaut."
  },
  {
   "tr": "Bir şeyi ayarlamak",
   "kind": "say.tr",
-  "de": "Etwas organisieren"
+  "de": "Etwas organisieren wird mit"
  },
  {
   "tr": "kullanılır; çoğulu",
@@ -572,32 +572,32 @@
  {
   "tr": "Bir ilana başvurmak",
   "kind": "say.tr",
-  "de": "Sich auf eine Anzeige bewerben"
+  "de": "Sich auf eine Anzeige bewerben wird mit"
  },
  {
   "tr": "Bir şeyden söz etmek",
   "kind": "say.tr",
-  "de": "Etwas erwähnen"
+  "de": "Etwas erwähnen wird mit"
  },
  {
   "tr": "gelir. Bir de fırsat:",
   "kind": "say.tr",
-  "de": "Und dazu die Gelegenheit:"
+  "de": "kommt. Und dazu die Gelegenheit:"
  },
  {
   "tr": "Görüşmeye hazırlanmak",
   "kind": "say.tr",
-  "de": "Sich auf das Gespräch vorbereiten"
+  "de": "Sich auf das Gespräch vorbereiten wird mit"
  },
  {
   "tr": "Tavsiye vermek içinse",
   "kind": "say.tr",
-  "de": "Für einen Rat dagegen nimmt man"
+  "de": "Für einen Rat dagegen –"
  },
  {
   "tr": "kullanılır ve ardından",
   "kind": "say.tr",
-  "de": "benutzt, und danach kommt"
+  "de": "benutzt, wobei danach"
  },
  {
   "tr": "Aday demek. Tekrar et:",
@@ -612,7 +612,7 @@
  {
   "tr": "ile söylenir ve ardından",
   "kind": "say.tr",
-  "de": "gesagt, und danach kommt"
+  "de": "gesagt, wobei danach"
  },
  {
   "tr": "artı fiilin üçüncü hâli.",
@@ -632,7 +632,7 @@
  {
   "tr": "Birini biriyle tanıştırmak",
   "kind": "say.tr",
-  "de": "Jemanden vorstellen"
+  "de": "Jemanden vorstellen wird mit"
  },
  {
   "tr": "Birlikte çalıştığın kişiye",
@@ -642,7 +642,7 @@
  {
   "tr": "gelir. İlandaki iş için de",
   "kind": "say.tr",
-  "de": "Für die Stelle in der Anzeige sagt man"
+  "de": "kommt. Die Stelle in der Anzeige wird"
  },
  {
   "tr": "O işten önce ne yapmıştın?",
@@ -657,12 +657,12 @@
  {
   "tr": "Takıma bir şey katmak için",
   "kind": "say.tr",
-  "de": "Um dem Team etwas zu geben, nimmt man"
+  "de": "Um dem Team etwas zu geben, wird"
  },
  {
   "tr": "İlk kalıbımız. Ekipman için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für die Ausstattung sagen wir"
+  "de": "Unsere erste Wendung. Für die Ausstattung"
  },
  {
   "tr": "Kariyerin içindeki birikime",
@@ -680,9 +680,9 @@
   "de": "Unsere zweite Wendung. Sprich nach:"
  },
  {
-  "tr": "denir; çalıştığın birime ise",
+  "tr": "denir; Türkçedeki 'mesai arkadaşı' tam olarak budur. Çalıştığın birime ise",
   "kind": "say.tr",
-  "de": "genannt; deine Abteilung heißt"
+  "de": "auf Englisch; das deutsche Wort dafür ist genau „Kollege“. Deine Abteilung heißt"
  },
  {
   "tr": "Eski iş yerinden söz ederken",
@@ -707,7 +707,7 @@
  {
   "tr": "Şimdi sıra sende. Program için",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran. Für den Plan sagen wir"
+  "de": "Jetzt bist du dran. Für den Plan"
  },
  {
   "tr": "Bir kontrol. Şu cümle doğru mu?",
@@ -727,7 +727,7 @@
  {
   "tr": "İlk kalıbımız. İhbar süresi için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für die Kündigungsfrist sagen wir"
+  "de": "Unsere erste Wendung. Für die Kündigungsfrist"
  },
  {
   "tr": "Oryantasyon ne zamana ayarlandı?",
@@ -767,7 +767,7 @@
  {
   "tr": "ile söylenir. Güçlü yönlerin için de",
   "kind": "say.tr",
-  "de": "gesagt. Und für deine starken Seiten nimmt man"
+  "de": "gesagt. Und für deine starken Seiten wird"
  },
  {
   "tr": "Kariyer demek. Şu cümleyi tekrar et:",
@@ -795,9 +795,9 @@
   "de": "Mein Kollege hat mir die Abteilung gezeigt."
  },
  {
-  "tr": "Proje eğitiminde bir yeterliliğim var.",
+  "tr": "Yeterliliğimi bir yıllık eğitimden sonra aldım.",
   "kind": "say.tr",
-  "de": "Ich habe einen Nachweis in Projektschulung."
+  "de": "Meinen Nachweis habe ich nach einem Jahr Schulung bekommen."
  },
  {
   "tr": "Takımınıza katkıda bulunmak istiyorum.",
@@ -832,7 +832,7 @@
  {
   "tr": "Kendini işe uygun bulduğunu söylemek için",
   "kind": "say.tr",
-  "de": "Um zu sagen, dass du zur Stelle passt, nimmt man"
+  "de": "Um zu sagen, dass du zur Stelle passt, wird"
  },
  {
   "tr": "Son iki kelimemiz işin içeriğiyle ilgili:",
@@ -852,7 +852,7 @@
  {
   "tr": "İlk kalıbımız süre bildiriyor. Sektör için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung nennt die Dauer. Für die Branche sagen wir"
+  "de": "Unsere erste Wendung nennt die Dauer. Für die Branche"
  },
  {
   "tr": "Bir tane daha: O kurstan önce ne okumuştun?",
@@ -927,7 +927,7 @@
  {
   "tr": "denir; 'job' gündelik, 'position' resmî olanıdır.",
   "kind": "say.tr",
-  "de": "genannt; 'job' ist alltäglich, 'position' das formelle Wort."
+  "de": "genannt; „job“ ist alltäglich, „position“ das formelle Wort."
  },
  {
   "tr": "Şimdi sen kur: Bu işten önce bir otelde çalıştım.",
@@ -935,9 +935,9 @@
   "de": "Jetzt du: Vor dieser Stelle habe ich in einem Hotel gearbeitet."
  },
  {
-  "tr": "yani 'terfi ettirildim'. Kim ettirdiği söylenmez.",
+  "tr": "yani 'terfi ettirildim'. Kimin terfi ettirdiği söylenmez.",
   "kind": "say.tr",
-  "de": "also «ich wurde befördert». Wer befördert hat, wird nicht genannt."
+  "de": "also „ich wurde befördert“. Wer befördert hat, wird nicht genannt."
  },
  {
   "tr": "Bir zayıf yönünden ve bir planından söz etmelisin.",
@@ -965,14 +965,14 @@
   "de": "zurück, das spätere bleibt in der einfachen Vergangenheit."
  },
  {
-  "tr": "Şimdi dersin kuralı. Dışarıdan gelen bir zorunluluk",
+  "tr": "Şimdi bugünün kuralı. Dışarıdan gelen bir zorunluluk",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Eine Pflicht, die von außen kommt, wird mit"
+  "de": "Jetzt die Regel von heute. Für eine Pflicht, die von außen kommt –"
  },
  {
-  "tr": "Türkçedeki 'mesai arkadaşı' tam olarak bu kelimedir.",
+  "tr": "denir; 'it makes sense' mantıklı demektir.",
   "kind": "say.tr",
-  "de": "Das deutsche Wort dafür ist genau «Kollege»."
+  "de": "auf Englisch; „it makes sense“ heißt „es ergibt Sinn“."
  },
  {
   "tr": "Bir tane daha: Bu projeye katkıda bulunmayı umuyorum.",
@@ -1025,19 +1025,19 @@
   "de": "Noch eins: Wie lange arbeitest du schon auf dieser Stelle?"
  },
  {
-  "tr": "Şimdi dersin kuralı. Bazı fiiller kendinden sonra -ing ister:",
+  "tr": "Şimdi bugünün kuralı. Bazı fiiller kendinden sonra -ing ister:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Manche Verben verlangen danach -ing:"
+  "de": "Jetzt die Regel von heute. Manche Verben verlangen danach -ing:"
  },
  {
   "tr": "deriz ve bu kelime sayılamaz — 'equipments' yoktur. Tekrar et:",
   "kind": "say.tr",
-  "de": "sagen wir, und das Wort ist unzählbar — 'equipments' gibt es nicht. Sprich nach:"
+  "de": "sagen wir, und das Wort ist unzählbar — „equipments“ gibt es nicht. Sprich nach:"
  },
  {
   "tr": "gelir — dikkat, bu 'yasak' demek değil, 'gerekmiyor' demektir.",
   "kind": "say.tr",
-  "de": "— Achtung, das heißt nicht «verboten», sondern «nicht nötig»."
+  "de": "— Achtung, das heißt nicht „verboten“, sondern „nicht nötig“."
  },
  {
   "tr": "İkinci kalıbımız geçmiş zamanda ve yapanı söylüyor. Tekrar et:",
@@ -1067,7 +1067,7 @@
  {
   "tr": "tek başına yeter. Türkçedeki 'referansım var' cümlesi İngilizcede",
   "kind": "say.tr",
-  "de": "reicht allein. Der deutsche Satz «Ich habe Referenzen» heißt im Englischen"
+  "de": "reicht allein. Der deutsche Satz „Ich habe Referenzen“ heißt im Englischen"
  },
  {
   "tr": "Şimdi bir kariyer danışmanı özgeçmişini birlikte gözden geçirecek.",
@@ -1087,12 +1087,12 @@
  {
   "tr": "Yani 'verilir', 'ayarlandı'. Yapan kişiyi söylemek gerekirse sonuna",
   "kind": "say.tr",
-  "de": "Also «wird gegeben», «wurde organisiert». Wenn man sagen will, wer es tut, kommt am Ende"
+  "de": "Also „wird gegeben“, „wurde organisiert“. Wenn man sagen will, wer es tut, wird am Ende"
  },
  {
   "tr": "denir. Deneyim demek ve sayılamaz bir isimdir: 'a experience' denmez,",
   "kind": "say.tr",
-  "de": "genannt. Das heißt Erfahrung und ist unzählbar: 'a experience' sagt man nicht,"
+  "de": "auf Englisch. Das heißt Erfahrung und ist unzählbar: „a experience“ sagt man nicht; man sagt,"
  },
  {
   "tr": "kullanılır ama dikkat: İngilizcede bu fiil çoğu zaman edilgen kurulur —",
@@ -1122,7 +1122,7 @@
  {
   "tr": "yani işveren kelimeleri kullanılır. 'Boss' gündelik, 'employer' özgeçmişin dilidir.",
   "kind": "say.tr",
-  "de": "also Arbeitgeber, benutzt. 'Boss' ist alltäglich, 'employer' die Sprache des Lebenslaufs."
+  "de": "also Arbeitgeber. „Boss“ ist alltäglich, „employer“ die Sprache des Lebenslaufs."
  },
  {
   "tr": "Özetleyelim: enjoy, finish, avoid sonrası -ing; decide, want, hope, plan sonrası to.",
@@ -1145,9 +1145,9 @@
   "de": "Im Deutschen steht in beiden Fällen ein Infinitiv, deshalb muss man sich das englische Verb selbst merken."
  },
  {
-  "tr": "Şimdi dersin kuralı. Bir dönem BİTTİYSE ve ne zaman olduğu belliyse past simple kullanılır:",
+  "tr": "Şimdi bugünün kuralı. Bir dönem BİTTİYSE ve ne zaman olduğu belliyse past simple kullanılır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Ist ein Abschnitt VORBEI und die Zeit genannt, steht Past Simple:"
+  "de": "Jetzt die Regel von heute. Ist ein Abschnitt VORBEI und die Zeit genannt, steht Past Simple:"
  },
  {
   "tr": "Bu üçü İngilizcede üç ayrı kalıpla söyleniyor ve biri ötekinin yerine geçmiyor. Hazır mısın?",
@@ -1165,9 +1165,9 @@
   "de": "Solange der Satz im Past Simple steht, ist das kein Problem — wichtig ist, dass der Abschnitt zu Ende ist."
  },
  {
-  "tr": "Şimdi dersin kuralı. Bir işi kimin yaptığı önemli değilse ya da belli değilse edilgen çatı kurulur:",
+  "tr": "Şimdi bugünün kuralı. Bir işi kimin yaptığı önemli değilse ya da belli değilse edilgen çatı kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Ist egal oder unklar, wer etwas tut, wird das Passiv gebaut:"
+  "de": "Jetzt die Regel von heute. Ist egal oder unklar, wer etwas tut, wird das Passiv gebaut:"
  },
  {
   "tr": "Merhaba! Bugün yeni bir işteki ilk haftayı anlatmayı öğreneceğiz: kart, ekipman, oryantasyon, tanıştırmalar.",
@@ -1175,9 +1175,9 @@
   "de": "Hallo! Heute lernen wir, die erste Woche im neuen Job zu erzählen: Ausweis, Ausstattung, Einführung, Vorstellungen."
  },
  {
-  "tr": "Şimdi dersin kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan bir basamak geriye alınır:",
+  "tr": "Şimdi bugünün kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan bir basamak geriye alınır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Gibt es zwei vergangene Ereignisse und eines liegt VOR dem anderen, rückt das frühere eine Stufe zurück:"
+  "de": "Jetzt die Regel von heute. Gibt es zwei vergangene Ereignisse und eines liegt VOR dem anderen, rückt das frühere eine Stufe zurück:"
  },
  {
   "tr": "Merhaba! Bugün kariyerini İngilizce anlatmayı öğreneceğiz: nerede çalıştın, ne kadar süredir buradasın, neyi başardın.",
@@ -1195,9 +1195,9 @@
   "de": "Der Kniff ist klein: nach manchen Verben steht -ing, nach anderen to, und der Ton des Schreibens hängt daran. Bist du bereit?"
  },
  {
-  "tr": "Bu dersin asıl işi tek bir ayrım: bitmiş bir dönemle hâlâ süren bir deneyim İngilizcede farklı zamanla söylenir. Hazır mısın?",
+  "tr": "Bugünün asıl işi tek bir ayrım: bitmiş bir dönemle hâlâ süren bir deneyim İngilizcede farklı zamanla söylenir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die eigentliche Arbeit dieser Lektion ist ein Unterschied: ein abgeschlossener Abschnitt und eine laufende Erfahrung stehen im Englischen in verschiedenen Zeiten. Bist du bereit?"
+  "de": "Die eigentliche Aufgabe von heute ist ein einziger Unterschied: ein abgeschlossener Abschnitt und eine laufende Erfahrung stehen im Englischen in verschiedenen Zeiten. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün iş görüşmesinin dilini öğreneceğiz: neyi söylemek zorundasın, neyi söylemek zorunda değilsin, ne yapsan iyi olur.",

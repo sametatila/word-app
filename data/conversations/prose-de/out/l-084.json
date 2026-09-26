@@ -110,9 +110,9 @@
   "de": "Du füllst mit einem Mitarbeiter ein amtliches Formular aus. Frag, welcher Teil Pflicht ist, frag nach einem Detail, das du nicht verstehst, und finde heraus, wo du unterschreibst."
  },
  {
-  "tr": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren ve daha iyi bir poliçenin ne getireceğini konuş.",
+  "tr": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren, daha iyi bir poliçenin ne getireceğini konuş ve bir karar ver.",
   "kind": "scene",
-  "de": "Du sprichst mit einem Mitarbeiter, um deine Police zu verstehen. Frag, was abgedeckt ist, finde heraus, was bei einem Unfall passiert, und sprich darüber, was eine bessere Police bringt."
+  "de": "Du sprichst mit einem Mitarbeiter, um deine Police zu verstehen. Frag, was abgedeckt ist, finde heraus, was bei einem Unfall passiert, sprich darüber, was eine bessere Police bringt, und triff eine Entscheidung."
  },
  {
   "tr": "Yeni taşındığın yerde kayıt yaptırmak için resmî bir masadasın. Hangi belgelerin gerektiğini sor, işlemin ne kadar süreceğini öğren ve kartın ne zaman çıkacağını netleştir.",
@@ -173,6 +173,11 @@
   "tr": "bakiye",
   "kind": "vocab.tr",
   "de": "Kontostand"
+ },
+ {
+  "tr": "artı bakiye",
+  "kind": "vocab.tr",
+  "de": "Guthaben"
  },
  {
   "tr": "havale",
@@ -247,7 +252,7 @@
  {
   "tr": "düzenlemek",
   "kind": "vocab.tr",
-  "de": "ausstellen"
+  "de": "organisieren"
  },
  {
   "tr": "düzenlemek / yönetmek",
@@ -322,7 +327,7 @@
  {
   "tr": "Zorunluluk kalıbı. Soyadı için",
   "kind": "hint.tr",
-  "de": "Die Wendung für die Pflicht. Für den Nachnamen sagen wir"
+  "de": "Die Wendung für die Pflicht. Für den Nachnamen"
  },
  {
   "tr": "Randevu kesin, o yüzden şimdiki zaman:",
@@ -352,7 +357,7 @@
  {
   "tr": "Korumak",
   "kind": "say.tr",
-  "de": "Schützen wird mit"
+  "de": "Schützen heißt"
  },
  {
   "tr": "sağlık,",
@@ -367,7 +372,7 @@
  {
   "tr": "Şube için",
   "kind": "say.tr",
-  "de": "Für die Filiale sagen wir"
+  "de": "Für die Filiale"
  },
  {
   "tr": "imzaya ise",
@@ -467,12 +472,12 @@
  {
   "tr": "Birikimimi taşıyacağım.",
   "kind": "say.tr",
-  "de": "Ich werde meine Ersparnisse umziehen."
+  "de": "Ich werde meine Ersparnisse auf ein anderes Konto übertragen."
  },
  {
   "tr": "karar o anda verilmişse",
   "kind": "say.tr",
-  "de": "ist die Entscheidung spontan gefallen, steht"
+  "de": "während bei einer spontanen Entscheidung"
  },
  {
   "tr": "başvurunun kendisine ise",
@@ -485,19 +490,19 @@
   "de": "und das Geld, das du sparst, heißt"
  },
  {
-  "tr": "Bütün adımların tamamına",
+  "tr": "Adımların bütününe",
   "kind": "say.tr",
   "de": "Die Gesamtheit aller Schritte heißt"
  },
  {
   "tr": "İlk kalıbımız. Kaşe için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für den Stempel sagen wir"
+  "de": "Unsere erste Wendung. Für den Stempel"
  },
  {
   "tr": "İlk kalıbımız. Kaza için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für den Unfall sagen wir"
+  "de": "Unsere erste Wendung. Für den Unfall"
  },
  {
   "tr": "Niyet önceden kurulmuşsa",
@@ -507,7 +512,7 @@
  {
   "tr": "sağladığı yarar için ise",
   "kind": "say.tr",
-  "de": "und für den Nutzen, den sie bringt"
+  "de": "und der Nutzen, den sie bringt, heißt"
  },
  {
   "tr": "süresi dolmak. Tekrar et:",
@@ -710,9 +715,9 @@
   "de": "Jetzt bist du dran: Ich treffe den Berater um zehn."
  },
  {
-  "tr": "ile söylenir; Amerika'da aynı işe 'check' denir.",
+  "tr": "ile söylenir; formlarda 'check the box' da çok görürsün.",
   "kind": "say.tr",
-  "de": "gesagt; in Amerika heißt dieselbe Handlung 'check'."
+  "de": "gesagt; auf Formularen siehst du auch oft „check the box“."
  },
  {
   "tr": "Bir tane daha: Başvuru ne zaman kontrol ediliyor?",
@@ -722,12 +727,12 @@
  {
   "tr": "İkinci kalıbımız yönergeyi aktarıyor. Pasaport için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung gibt die Anweisung wieder. Für den Pass sagen wir"
+  "de": "Unsere zweite Wendung gibt die Anweisung wieder. Für den Pass"
  },
  {
-  "tr": "Şimdi dersin kuralı. Randevu kesinse şimdiki zaman:",
+  "tr": "Şimdi bugünün kuralı. Randevu kesinse şimdiki zaman:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Steht der Termin fest, nimmt man die Verlaufsform:"
+  "de": "Jetzt die Regel von heute. Steht der Termin fest, nimmt man die Verlaufsform:"
  },
  {
   "tr": "Şimdi görüşmeden sonra bir arkadaşına anlatacaksın.",
@@ -757,7 +762,7 @@
  {
   "tr": "ya da geniş zaman gelir. Gerçek OLMAYAN bir durumda ise",
   "kind": "say.tr",
-  "de": "oder das Präsens. Bei einer NICHT realen Lage dagegen steht"
+  "de": "oder das Präsens kommt. Bei einer NICHT realen Lage dagegen steht"
  },
  {
   "tr": "Bir tane daha: Fotoğrafları getirip getirmediğimi sordu.",
@@ -785,9 +790,9 @@
   "de": "Unsere letzte Wendung nennt die negative Bedingung mit einem Wort. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:",
+  "tr": "Şimdi bugünün kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Bei amtlichen Vorgängen fällt das Subjekt weg und das Passiv wird gebaut:"
+  "de": "Jetzt die Regel von heute. Bei amtlichen Vorgängen fällt das Subjekt weg und das Passiv wird gebaut:"
  },
  {
   "tr": "Kim kaşeledi, kim işledi yazmaz; çünkü işlem kurumun işidir, kişinin değil.",
@@ -797,7 +802,7 @@
  {
   "tr": "denir. İkincisi tek başına 'kanıt' demektir ve resmî yazıda hep bu kelime geçer.",
   "kind": "say.tr",
-  "de": "genannt. Das zweite heißt für sich «Nachweis» und steht im Amtsdeutsch immer so."
+  "de": "auf Englisch. Das zweite heißt für sich „Beweis“, und in amtlichen Texten steht immer dieses Wort."
  },
  {
   "tr": "Merhaba! Bugün banka işlerini öğreneceğiz: hesap açmak, havale yapmak, bakiyeye bakmak.",

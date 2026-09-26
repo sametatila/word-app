@@ -275,7 +275,7 @@
   "de": "lockern"
  },
  {
-  "tr": "hizalamak",
+  "tr": "hizalamak / denkleştirmek",
   "kind": "vocab.tr",
   "de": "abgleichen"
  },
@@ -397,47 +397,47 @@
  {
   "tr": "Eksik olanı başa almak için",
   "kind": "hint.tr",
-  "de": "Um das Fehlende nach vorn zu holen"
+  "de": "Um das Fehlende nach vorn zu holen –"
  },
  {
   "tr": "Bakış açısını sınırlamak için",
   "kind": "hint.tr",
-  "de": "Um die Perspektive zu begrenzen"
+  "de": "Um die Perspektive zu begrenzen –"
  },
  {
   "tr": "Zamanı devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um den Zeitpunkt mit Inversion zu sagen"
+  "de": "Um den Zeitpunkt mit Inversion zu sagen –"
  },
  {
   "tr": "Edilgen bütünü başa taşımak için",
   "kind": "hint.tr",
-  "de": "Um das passive Ganze nach vorn zu bringen"
+  "de": "Um das passive Ganze nach vorn zu bringen –"
  },
  {
   "tr": "Edilgen çıkarımı yumuşatmak için",
   "kind": "hint.tr",
-  "de": "Um den passiven Schluss abzuschwächen"
+  "de": "Um den passiven Schluss abzuschwächen –"
  },
  {
   "tr": "Kaynağa yaslayıp yumuşatmak için",
   "kind": "hint.tr",
-  "de": "Um sich auf eine Quelle zu stützen und abzuschwächen"
+  "de": "Um sich auf eine Quelle zu stützen und abzuschwächen –"
  },
  {
   "tr": "Nadirliği devrikle vurgulamak için",
   "kind": "hint.tr",
-  "de": "Um die Seltenheit mit Inversion hervorzuheben"
+  "de": "Um die Seltenheit mit Inversion hervorzuheben –"
  },
  {
   "tr": "Edilgen bir çıkarımı emin söylemek için",
   "kind": "hint.tr",
-  "de": "Um einen passiven Schluss mit Sicherheit zu sagen"
+  "de": "Um einen passiven Schluss mit Sicherheit zu sagen –"
  },
  {
   "tr": "Metinde olmayanı devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um mit Inversion zu sagen, was nicht im Text steht"
+  "de": "Um mit Inversion zu sagen, was nicht im Text steht –"
  },
  {
   "tr": "duyum",
@@ -515,9 +515,9 @@
   "de": "Auf dieselbe Linie bringen heißt"
  },
  {
-  "tr": "Eksik olan şey fazla.",
+  "tr": "Eksik olan şey fazla stok.",
   "kind": "say.tr",
-  "de": "Was fehlt, ist der Überschuss."
+  "de": "Was fehlt, ist der Überschussbestand."
  },
  {
   "tr": "Gevşek hâle getirmeye",
@@ -620,9 +620,9 @@
   "de": "Der Motor läuft mit halber Drehzahl."
  },
  {
-  "tr": "Bilinen her açığı koruyoruz.",
+  "tr": "Bilinen her açığa karşı önlem alıyoruz.",
   "kind": "say.tr",
-  "de": "Wir sichern jede bekannte Schwachstelle."
+  "de": "Wir schützen uns gegen jede bekannte Schwachstelle."
  },
  {
   "tr": "edilgen bir bütünü öne alır,",
@@ -655,7 +655,7 @@
   "de": "Die im Voraus getroffene Schutzmaßnahme heißt"
  },
  {
-  "tr": "Sayıları her cuma hizalıyoruz.",
+  "tr": "Sayıları her cuma denkleştiriyoruz.",
   "kind": "say.tr",
   "de": "Wir gleichen die Zahlen jeden Freitag ab."
  },
@@ -710,9 +710,9 @@
   "de": "Die Hypothese trägt aus einem anderen Blickwinkel."
  },
  {
-  "tr": "Kapı sıkıştığında raflar çöküyor.",
+  "tr": "Raf çökünce kapı sıkıştı.",
   "kind": "say.tr",
-  "de": "Wenn die Tür klemmt, stürzen die Regale ein."
+  "de": "Als das Regal einstürzte, klemmte die Tür."
  },
  {
   "tr": "Kol dönebiliyor ve salınabiliyor.",
@@ -740,12 +740,12 @@
   "de": "Die regelmäßige Schutzarbeit heißt"
  },
  {
-  "tr": "Bir değiştirge bağıntıyı değiştirdi.",
+  "tr": "Bir parametre bağıntıyı değiştirdi.",
   "kind": "say.tr",
   "de": "Ein Parameter hat den Zusammenhang verändert."
  },
  {
-  "tr": "Birinin basıncı indirmesi gerekirdi.",
+  "tr": "Birinin basıncı düşürmesi gerekirdi.",
   "kind": "say.tr",
   "de": "Jemand hätte den Druck senken sollen."
  },
@@ -775,7 +775,7 @@
   "de": "Jetzt sprichst du über einen verpassten Weg."
  },
  {
-  "tr": "İdame eski hâline getirmeden daha ucuz.",
+  "tr": "İdame, eski hâline getirmekten daha ucuz.",
   "kind": "say.tr",
   "de": "Die Instandhaltung kostet weniger als die Wiederherstellung."
  },
@@ -825,7 +825,7 @@
   "de": "Jetzt sagst du eine unsichere Diagnose."
  },
  {
-  "tr": "Bir bakış açısından tartışmalı biçimde yeterli.",
+  "tr": "Bir bakış açısından belki de yeterli.",
   "kind": "say.tr",
   "de": "Aus einer Perspektive ist es wohl ausreichend."
  },
@@ -930,7 +930,7 @@
   "de": "Jetzt du: Selten war eine Prüfung so nützlich."
  },
  {
-  "tr": "Bir tane daha: Bir bakış açısından tartışmalı biçimde güvenli.",
+  "tr": "Bir tane daha: Bir bakış açısından belki de güvenli.",
   "kind": "say.tr",
   "de": "Noch eins: Aus einer Perspektive ist es wohl sicher."
  },
@@ -950,9 +950,9 @@
   "de": "Das heißt der Schutz gegen Schaden. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kip ile edilgen birleşince üç parça üst üste biner:",
+  "tr": "Şimdi bugünün kuralı. Kip ile edilgen birleşince üç parça üst üste biner:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Treffen Modalverb und Passiv zusammen, liegen drei Teile übereinander:"
+  "de": "Jetzt die Regel von heute. Treffen Modalverb und Passiv zusammen, liegen drei Teile übereinander:"
  },
  {
   "tr": "Şimdi sıra sende: Bir kontrolün isteğe bağlı olduğu hiçbir yerde yazmıyor.",
@@ -965,9 +965,9 @@
   "de": "heißt eine begrenzte Sicht. Erweist sich eines der drei als falsch, stehst du nicht als Lügner da."
  },
  {
-  "tr": "Şimdi dersin kuralı. Edilgen çıkarım yumuşatıcıyla birleşince iddia olmaktan çıkar:",
+  "tr": "Şimdi bugünün kuralı. Edilgen çıkarım yumuşatıcıyla birleşince iddia olmaktan çıkar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Verbindet sich ein passiver Schluss mit einer Abschwächung, ist er keine Behauptung mehr:"
+  "de": "Jetzt die Regel von heute. Verbindet sich ein passiver Schluss mit einer Abschwächung, ist er keine Behauptung mehr:"
  },
  {
   "tr": "Edilgen bir çıkarım tek başına iddiadır; yumuşatıcı bağlayıcı onu gözleme çevirir. Hazır mısın?",

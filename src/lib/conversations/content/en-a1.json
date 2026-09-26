@@ -62,11 +62,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizde İngilizce kendini tanıtmayı öğreneceğiz: adını söylemek, nereli olduğunu söylemek ve nerede yaşadığını anlatmak."
+      "text": "Merhaba, hoş geldin. Bugün İngilizce kendini tanıtmayı öğreneceğiz: adını söylemek, nereli olduğunu söylemek ve nerede yaşadığını anlatmak."
      },
      {
       "lang": "tr",
-      "text": "Yanında sessiz bir yer varsa harika, çünkü bol bol sesli tekrar yapacağız. Hazır mısın?"
+      "text": "Sessiz bir yerdeysen harika, çünkü bol bol sesli tekrar yapacağız. Hazır mısın?"
      }
     ],
     "expect": {
@@ -739,7 +739,7 @@
   "course": "en",
   "icon": "greet",
   "title": "How are you?",
-  "titleTr": "Hal hatır sorma",
+  "titleTr": "Hâl hatır sorma",
   "summary": "Karşındakine \"Nasılsın?\" diye sormayı ve \"I'm fine, thanks. And you?\" gibi doğal cevaplar vermeyi öğretir.",
   "minutes": 8,
   "focusId": "Introductions",
@@ -796,7 +796,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün İngilizcede hal hatır sormayı öğreniyoruz. Dersin sonunda hem \"Nasılsın?\" diye sorabilecek hem de bu soruya doğal bir cevap verebileceksin. Hazır mısın?"
+      "text": "Merhaba! Bugün İngilizcede hâl hatır sormayı öğreniyoruz. Sonunda hem \"Nasılsın?\" diye sorabilecek hem de bu soruya doğal bir cevap verebileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -987,7 +987,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi ikisini birleştirelim. İngilizcede hal hatır sorusuna cevap verirken teşekkür etmek çok doğaldır:"
+      "text": "Şimdi ikisini birleştirelim. İngilizcede hâl hatır sorusuna cevap verirken teşekkür etmek çok doğaldır:"
      },
      {
       "lang": "en",
@@ -1394,7 +1394,7 @@
    }
   ],
   "chat": {
-   "scene": "Bir dil kursunun koridorunda sınıf arkadaşınla karşılaşıyorsun. Kısa bir hal hatır sohbeti yapıyorsunuz.",
+   "scene": "Bir dil kursunun koridorunda sınıf arkadaşınla karşılaşıyorsun. Kısa bir hâl hatır sohbeti yapıyorsunuz.",
    "partner": "Sınıf arkadaşın Emma",
    "opening": "Hi! How are you today?",
    "openingTr": "Selam! Bugün nasılsın?",
@@ -1469,7 +1469,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu dersin sonunda kendini tanıtabilecek, bir şeyi inkâr edebilecek ve basit bir soru sorabileceksin. Hazır mısın?"
+      "text": "Sonunda kendini tanıtabilecek, bir şeyi inkâr edebilecek ve basit bir soru sorabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -1540,7 +1540,7 @@
      },
      {
       "lang": "tr",
-      "text": "Anlam tıpatıp aynı, sadece daha doğal duruyor. Bu derste ikisini de duyacaksın."
+      "text": "Anlam tıpatıp aynı, sadece daha doğal duruyor. Bugün ikisini de duyacaksın."
      }
     ]
    },
@@ -1548,7 +1548,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi küçük ama önemli bir nokta. İngilizcede bir mesleği söylerken kelimenin önüne a koyulur. A student, a teacher. Türkçede olmayan bir bir'dir bu."
+      "text": "Şimdi küçük ama önemli bir nokta. İngilizcede bir mesleği söylerken kelimenin önüne a konur. A student, a teacher. Türkçede olmayan bir bir'dir bu."
      },
      {
       "lang": "tr",
@@ -1679,7 +1679,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani şu üçünü aklında tut, dersin özü bu:"
+      "text": "Yani şu üçünü aklında tut, işin özü bu:"
      },
      {
       "lang": "en",
@@ -2725,7 +2725,7 @@
      },
      {
       "lang": "en",
-      "text": "I was born in..."
+      "text": "I was born in …"
      },
      {
       "lang": "tr",
@@ -2736,7 +2736,7 @@
   ],
   "chat": {
    "scene": "Bir dil kursunun ilk günündesin, molada yanındaki kişiyle tanışıyorsun. Nereli olduğunu ve hangi şehirde oturduğunu sor, kendini de anlat.",
-   "partner": "güler yüzlü, meraklı bir kursiyer",
+   "partner": "Güler yüzlü, meraklı bir kursiyer",
    "opening": "Hi! I'm Emma. Where are you from?",
    "openingTr": "Merhaba! Ben Emma. Nerelisin?",
    "goal": "İkiniz de birbirinizin ülkesini ve oturduğu şehri öğrenmiş, sen de doğduğun şehri söylemiş olursun.",
@@ -2806,15 +2806,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizin adı Diller."
+      "text": "Merhaba, hoş geldin. Bugünün konusu: Diller."
      },
      {
       "lang": "tr",
-      "text": "Bu derste hangi dilleri konuştuğunu söylemeyi ve karşındakine \"İngilizce konuşuyor musun?\" diye sormayı öğreneceksin."
+      "text": "Hangi dilleri konuştuğunu söylemeyi ve karşındakine \"İngilizce konuşuyor musun?\" diye sormayı öğreneceksin."
      },
      {
       "lang": "tr",
-      "text": "Sana kelimeleri söyleyeceğim, sen tekrar edeceksin. Hazırsan başlayalım. Hazır mısın?"
+      "text": "Sana kelimeleri söyleyeceğim, sen tekrar edeceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -3001,7 +3001,7 @@
      },
      {
       "lang": "tr",
-      "text": ", \"do not\" demenin kısa halidir. Konuşurken hep kısa halini kullanırız."
+      "text": ", \"do not\" demenin kısa hâlidir. Konuşurken hep kısa hâlini kullanırız."
      }
     ]
    },
@@ -3252,7 +3252,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bunun soru hali de aynı mantıkla kuruluyor. Karşındakine \"Anlıyor musun?\" demek istersen, başa yine"
+      "text": "Bunun soru hâli de aynı mantıkla kuruluyor. Karşındakine \"Anlıyor musun?\" demek istersen, başa yine"
      },
      {
       "lang": "en",
@@ -3410,7 +3410,7 @@
    }
   ],
   "chat": {
-   "scene": "İşe yeni başlayan bir arkadaşınla mutfakta çay alırken tanışıyorsun. Sana hangi dilleri konuştuğunu soruyor.",
+   "scene": "İşe yeni başlayan bir iş arkadaşınla mutfakta çay alırken tanışıyorsun. Sana hangi dilleri konuştuğunu soruyor.",
    "partner": "Emma, yeni iş arkadaşın; sıcak ve yavaş konuşuyor",
    "opening": "Hi! I'm Emma. Do you speak English?",
    "openingTr": "Merhaba! Ben Emma. İngilizce konuşuyor musun?",
@@ -3425,7 +3425,7 @@
   "icon": "question",
   "title": "Numbers 1-100",
   "titleTr": "Sayılar 1-100",
-  "summary": "Bu derste İngilizce sayıları 1'den 100'e kadar sayıyor, yaşını söylüyor ve fiyat soruyorsun.",
+  "summary": "İngilizce 1'den 100'e kadar saymayı, yaşını söylemeyi ve fiyat sormayı öğretir.",
   "minutes": 9,
   "focusId": "Numbers",
   "vocab": [
@@ -4074,7 +4074,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu ders çok işine yarayacak. Otelde, havalimanında, telefonda adını söylediğinde karşındaki çoğu zaman anlamaz ve 'harfle' der. Önce beş kelime öğrenelim."
+      "text": "Bu konu çok işine yarayacak. Otelde, havalimanında, telefonda adını söylediğinde karşındaki çoğu zaman anlamaz ve 'harfle' der. Önce beş kelime öğrenelim."
      }
     ]
    },
@@ -4679,7 +4679,7 @@
   ],
   "chat": {
    "scene": "Bir otelin resepsiyonundasın; görevli adını deftere yazacak ama duyduğundan emin değil. Adını söyle, sonra harfle; anlamazsan tekrar etmesini ya da yazmasını iste.",
-   "partner": "nazik bir otel resepsiyon görevlisi",
+   "partner": "Nazik bir otel resepsiyon görevlisi",
    "opening": "Hello! Can I have your name, please?",
    "openingTr": "Merhaba! Adınızı alabilir miyim, lütfen?",
    "goal": "Adını söyleyip harflemiş, gerektiğinde tekrar etmesini ya da yazmasını rica etmiş olursun.",
@@ -4753,7 +4753,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -5534,7 +5534,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Ben-im ile başla, sonra sayı, sonra \"yıl yaşında\"."
+       "text": "I'm ile başla, sonra sayı, sonra years old."
       },
       {
        "lang": "en",
@@ -6451,7 +6451,7 @@
      },
      {
       "lang": "en",
-      "text": "My city is Izmir."
+      "text": "City: Izmir."
      }
     ]
    },
@@ -7232,7 +7232,7 @@
      },
      {
       "lang": "en",
-      "text": "This is my sister. His name is Ayşe."
+      "text": "This is my sister. Her name is Ayşe."
      },
      {
       "lang": "tr",
@@ -7310,7 +7310,7 @@
   ],
   "chat": {
    "scene": "Yeni bir arkadaşın telefonundaki aile fotoğrafını gördü ve kim kim diye soruyor. Anneni, babanı ve kardeşlerini tanıt, adlarını söyle.",
-   "partner": "meraklı ve arkadaş canlısı bir sınıf arkadaşı",
+   "partner": "Meraklı ve arkadaş canlısı bir sınıf arkadaşın",
    "opening": "Nice photo! Is this your family? Who is this?",
    "openingTr": "Güzel fotoğraf! Bu senin ailen mi? Bu kim?",
    "goal": "Arkadaşın fotoğraftaki kişilerin kim olduğunu ve adlarını öğrenmiş, kendi ailesinden de bir şey anlatmış olur.",
@@ -7324,7 +7324,7 @@
   "icon": "family",
   "title": "Brothers and sisters",
   "titleTr": "Kardeşler",
-  "summary": "Bu derste have got ve has got ile kimin kaç kardeşi, oğlu ya da kızı olduğunu söylemeyi ve karşındakine sormayı öğreniyorsun.",
+  "summary": "have got ve has got ile kimin kaç kardeşi, oğlu ya da kızı olduğunu söylemeyi ve karşındakine sormayı öğretir.",
   "minutes": 8,
   "focusId": "Have-got",
   "vocab": [
@@ -7384,7 +7384,7 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede bir şeye sahip olduğunu söylemenin temel yolu have; Amerikalılar konuşurken bunun yerine çok sık I've got da der. Dersin sonunda kaç kardeşin olduğunu söyleyebilecek, karşındakine de sorabileceksin. Hazır mısın?"
+      "text": "İngilizcede bir şeye sahip olduğunu söylemenin temel yolu have; Amerikalılar konuşurken bunun yerine çok sık I've got da der. Sonunda kaç kardeşin olduğunu söyleyebilecek, karşındakine de sorabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -7455,7 +7455,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cümlenin ortasındaki küçük a kelimesini duydun mu? İngilizcede tek bir şeyden söz ederken kelimenin önüne a koyulur: a brother, a sister."
+      "text": "Cümlenin ortasındaki küçük a kelimesini duydun mu? İngilizcede tek bir şeyden söz ederken kelimenin önüne a konur: a brother, a sister."
      },
      {
       "lang": "tr",
@@ -8242,7 +8242,7 @@
      },
      {
       "lang": "en",
-      "text": "He doesn't likes tea."
+      "text": "He doesn't like tea."
      }
     ],
     "expect": {
@@ -8624,7 +8624,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün evcil hayvanlardan konuşacağız. Ama asıl öğreneceğin şey minik bir kelime: İngilizcede 'bir' demenin iki yolu var, a ve an. Hangisini ne zaman seçeceğini bu derste çözeceksin. Hazır mısın?"
+      "text": "Merhaba! Bugün evcil hayvanlardan konuşacağız. Ama asıl öğreneceğin şey minik bir kelime: İngilizcede 'bir' demenin iki yolu var, a ve an. Hangisini ne zaman seçeceğini bugün çözeceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -8823,7 +8823,7 @@
      },
      {
       "lang": "tr",
-      "text": "var. Ama 'hayvan' kelimesi 'a' sesiyle başlıyor, o yüzden"
+      "text": "var. Ama 'animal' kelimesi 'a' sesiyle başlıyor, o yüzden"
      },
      {
       "lang": "en",
@@ -9149,7 +9149,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. 'Köpek' kelimesi sessiz sesle başlıyor, o yüzden an değil a gelir."
+       "text": "Doğru. 'Dog' kelimesi sessiz sesle başlıyor, o yüzden an değil a gelir."
       }
      ]
     }
@@ -9197,7 +9197,7 @@
   ],
   "chat": {
    "scene": "Parktasın ve yeni komşun köpeğiyle geziyor. Köpeğin adını sor, sonra kendi evcil hayvanından bahset.",
-   "partner": "güler yüzlü, köpeğinden konuşmayı seven bir komşu",
+   "partner": "Güler yüzlü, köpeğinden konuşmayı seven bir komşu",
    "opening": "Hi! Sorry, my dog is very friendly. Do you have a pet?",
    "openingTr": "Merhaba! Kusura bakma, köpeğim çok cana yakın. Senin evcil hayvanın var mı?",
    "goal": "Komşunun köpeğinin adını öğrenmiş, kendi hayvanının ne olduğunu ve adını söylemiş olursun.",
@@ -9712,7 +9712,7 @@
      },
      {
       "lang": "tr",
-      "text": "That is yerine that's dediler. Anlamı aynı, sadece daha hızlı. Ama this is birleşmez, onu her zaman açık söyleriz."
+      "text": "That is yerine that's denir. Anlamı aynı, sadece daha hızlı. Ama this is birleşmez, onu her zaman açık söyleriz."
      }
     ]
    },
@@ -9819,7 +9819,7 @@
   ],
   "chat": {
    "scene": "Bir kafede arkadaşınla oturuyorsun. Telefonundaki aile fotoğrafını ona gösteriyorsun, o da fotoğraftaki kişileri merak ediyor.",
-   "partner": "Emma, İngiliz arkadaşın",
+   "partner": "Emma, Amerikalı arkadaşın",
    "opening": "Oh, nice photo! Who is this?",
    "openingTr": "Ne güzel bir fotoğraf! Bu kim?",
    "goal": "Fotoğraftaki en az iki kişiyi this ya da that ile tanıtman ve bir kez de these ya da those ile çoğul bir şeyi göstermen yeterli.",
@@ -10175,7 +10175,7 @@
      },
      {
       "lang": "en",
-      "text": "I have three childs."
+      "text": "I have three children."
      }
     ],
     "expect": {
@@ -10487,11 +10487,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün birinin dış görünüşünü anlatmayı öğreneceğiz. Ders bitince \"o uzun boylu\", \"onun kısa saçı var\" gibi cümleleri İngilizce kurabileceksin."
+      "text": "Merhaba! Bugün birinin dış görünüşünü anlatmayı öğreneceğiz. Sonunda \"o uzun boylu\", \"onun kısa saçı var\" gibi cümleleri İngilizce kurabileceksin."
      },
      {
       "lang": "tr",
-      "text": "Sesli bir ders bu, ben söyleyeceğim sen tekrar edeceksin. Hazır mısın?"
+      "text": "Ben söyleyeceğim, sen tekrar edeceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -10542,7 +10542,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani: O nasıl biri, neye benziyor? Lütfen sen de söyle:"
+      "text": "Yani: Nasıl görünüyor, neye benziyor? Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -11032,10 +11032,10 @@
    }
   ],
   "chat": {
-   "scene": "Havaalanında bir arkadaşını karşılamaya geldin. Yanındaki kişi onu tanımıyor ve nasıl biri olduğunu soruyor.",
+   "scene": "Havaalanında bir arkadaşını karşılamaya geldin. Yanındaki kişi onu tanımıyor ve nasıl göründüğünü soruyor.",
    "partner": "Seninle birlikte bekleyen bir arkadaş",
    "opening": "Hi! Who are we looking for? What does he look like?",
-   "openingTr": "Selam! Kimi arıyoruz? O nasıl biri?",
+   "openingTr": "Selam! Kimi arıyoruz? Nasıl görünüyor?",
    "goal": "Arkadaşının boyunu, saçını ve gözlerini be ve has kullanarak anlatabildiysen ve karşındakinin sorularına cevap verdiysen konuşma başarılıdır.",
    "minTurns": 7
   }
@@ -11111,7 +11111,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlayalım. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -11509,7 +11509,7 @@
      },
      {
       "lang": "tr",
-      "text": "Arkadaşlarım birlikte oynar. Burada özne birden fazla kişi, yani they gibi. Fiil çıplak kalır."
+      "text": "Arkadaşlarım birlikte oynar. Burada özne birden fazla kişi, yani they gibi. Fiil yalın kalır."
      }
     ]
    },
@@ -11811,7 +11811,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbi. Türkçede 'Ali'nin kuzeni' dersin, değil mi? İngilizcede de sahibi başa koyarsın ve sonuna kesme işareti artı s eklersin:"
+      "text": "Şimdi en önemli kısım. Türkçede 'Ali'nin kuzeni' dersin, değil mi? İngilizcede de sahibi başa koyarsın ve sonuna kesme işareti artı s eklersin:"
      },
      {
       "lang": "en",
@@ -12260,7 +12260,7 @@
      },
      {
       "lang": "tr",
-      "text": "Anlam aynı, sadece daha hızlı söylenmiş hali."
+      "text": "Anlam aynı, sadece daha hızlı söylenmiş hâli."
      }
     ]
    },
@@ -12853,7 +12853,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu derste kibarca sipariş vermeyi öğreneceksin: kahve, çay ya da su isteyeceksin ve bunu İngilizcede nasıl söyleyeceğini bileceksin."
+      "text": "Kibarca sipariş vermeyi öğreneceksin: kahve, çay ya da su isteyeceksin ve bunu İngilizcede nasıl söyleyeceğini bileceksin."
      },
      {
       "lang": "tr",
@@ -12948,7 +12948,7 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen demek. İngilizler ve Amerikalılar bunu her siparişin sonuna koyar. Bugünkü bütün cümlelerimizin sonunda onu duyacaksın."
+      "text": "Lütfen demek. İngilizce konuşanlar bunu her siparişin sonuna koyar. Bugünkü bütün cümlelerimizin sonunda onu duyacaksın."
      }
     ]
    },
@@ -12956,7 +12956,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbi. Bir şey istediğinde 'I want' deme, o biraz emir gibi durur. Bunun yerine:"
+      "text": "Şimdi en önemli kısım. Bir şey istediğinde 'I want' deme, o biraz emir gibi durur. Bunun yerine:"
      },
      {
       "lang": "en",
@@ -14118,11 +14118,11 @@
    },
    {
     "de": "bag",
-    "tr": "çanta"
+    "tr": "poşet / çanta"
    },
    {
     "de": "take",
-    "tr": "götürmek"
+    "tr": "almak / götürmek"
    },
    {
     "de": "coin",
@@ -14156,7 +14156,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün seninle büfedeyiz. Bir kahve, bir çay, bir çanta… İngilizcede bunları kibarca nasıl isteyeceğini öğreneceğiz. Ayrıca fiyatı sormayı da çalışacağız."
+      "text": "Merhaba! Bugün seninle büfedeyiz. Bir kahve, bir çay, bir poşet… İngilizcede bunları kibarca nasıl isteyeceğini öğreneceğiz. Ayrıca fiyatı sormayı da çalışacağız."
      },
      {
       "lang": "tr",
@@ -14211,7 +14211,7 @@
      },
      {
       "lang": "tr",
-      "text": "…artı ne istiyorsan o, artı please. Hepsi bu. Kahve, çay, su, çanta; sadece ortadaki kelimeyi değiştiriyorsun."
+      "text": "…artı ne istiyorsan o, artı please. Hepsi bu. Kahve, çay, su, poşet; sadece ortadaki kelimeyi değiştiriyorsun."
      }
     ]
    },
@@ -14219,7 +14219,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: çanta. İngilizcesi:"
+      "text": "İlk kelimemiz: poşet ya da çanta. İngilizcesi:"
      },
      {
       "lang": "en",
@@ -14251,7 +14251,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi çanta isteyelim. Lütfen tekrar et:"
+      "text": "Şimdi poşet isteyelim. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -14751,7 +14751,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu derste kapıda masa isteyecek, menüyü isteyecek, sipariş verecek ve sonunda hesabı isteyeceksin. Hepsi kısa ve kibar kalıplar."
+      "text": "Kapıda masa isteyecek, menüyü isteyecek, sipariş verecek ve sonunda hesabı isteyeceksin. Hepsi kısa ve kibar kalıplar."
      },
      {
       "lang": "tr",
@@ -14878,7 +14878,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Oturdunuz. Şimdi sipariş vereceğiz ve bu dersin kalbine geliyoruz."
+      "text": "Oturdunuz. Şimdi sipariş vereceğiz ve en önemli kısma geliyoruz."
      },
      {
       "lang": "tr",
@@ -15223,7 +15223,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kısacası şöyle de diyebilirsin:"
+      "text": "Daha kısa olarak şöyle de diyebilirsin:"
      },
      {
       "lang": "en",
@@ -15569,15 +15569,7 @@
      },
      {
       "lang": "tr",
-      "text": "kullanırsın; nefret etmek demek. Balık İngilizcede"
-     },
-     {
-      "lang": "en",
-      "text": "fish"
-     },
-     {
-      "lang": "tr",
-      "text": "demek."
+      "text": "kullanırsın; nefret etmek demek. Balık İngilizcede fish demek."
      }
     ]
    },
@@ -15984,7 +15976,7 @@
   "course": "en",
   "icon": "food",
   "title": "At the market",
-  "titleTr": "Markette",
+  "titleTr": "Pazarda",
   "summary": "Pazarda fiyat ve miktar sormayı öğretir: How much, How many, ucuz ve pahalı demek.",
   "minutes": 9,
   "focusId": "How-much",
@@ -16041,7 +16033,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün pazardayız. Bu derste fiyat sormayı öğreneceksin: ne kadar, kaç tane, ucuz mu pahalı mı."
+      "text": "Merhaba! Bugün pazardayız. Fiyat sormayı öğreneceksin: ne kadar, kaç tane, ucuz mu pahalı mı."
      },
      {
       "lang": "tr",
@@ -16156,7 +16148,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin ana sorusu. Fiyat sormak için:"
+      "text": "Şimdi en önemli soru. Fiyat sormak için:"
      },
      {
       "lang": "en",
@@ -16517,7 +16509,7 @@
      },
      {
       "lang": "en",
-      "text": "It costs three euros."
+      "text": "It costs three dollars."
      }
     ]
    },
@@ -16621,8 +16613,8 @@
    }
   ],
   "chat": {
-   "scene": "Pazarda bir meyve tezgahının önündesin. Elma ve peynir almak istiyorsun ve fiyatları soruyorsun.",
-   "partner": "Tezgahın arkasındaki güler yüzlü satıcı",
+   "scene": "Pazarda bir meyve tezgâhının önündesin. Elma ve peynir almak istiyorsun ve fiyatları soruyorsun.",
+   "partner": "Tezgâhın arkasındaki güler yüzlü satıcı",
    "opening": "Hello! What would you like today?",
    "openingTr": "Merhaba! Bugün ne istersin?",
    "goal": "En az bir kez how much ile fiyat sorup, kaç kilo istediğini söyleyip alışverişi bitirdiğinde başarılı sayılır.",
@@ -16696,7 +16688,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -17498,7 +17490,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz. Kibarca bir şey isterken şöyle başlarsın:"
+      "text": "Şimdi en önemli kısma geliyoruz. Kibarca bir şey isterken şöyle başlarsın:"
      },
      {
       "lang": "en",
@@ -17538,7 +17530,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "I'd aslında I would'un kısaltması. Yani tam hali I would like."
+      "text": "I'd aslında I would'un kısaltması. Yani tam hâli I would like."
      },
      {
       "lang": "tr",
@@ -17932,7 +17924,7 @@
   ],
   "chat": {
    "scene": "Bir kafede tezgâhın önündesin, sıra sana geldi.",
-   "partner": "kafede çalışan barista",
+   "partner": "Kafede çalışan barista",
    "opening": "Hi! What can I get you today?",
    "openingTr": "Merhaba! Bugün ne alırsınız?",
    "goal": "Öğrenci I'd like ile bir içecek ısmarlar, sütlü mü sorusuna cevap verir ve teşekkür ederek siparişi tamamlar.",
@@ -18006,7 +17998,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda \"iki kilo domates istiyorum\" diyebilecek, tazelik ve fiyat sorabileceksin. Hazır mısın?"
+      "text": "Sonunda \"iki kilo domates istiyorum\" diyebilecek, tazelik ve fiyat sorabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -18173,7 +18165,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kural: o harfiyle biten bu iki sebze meyve es alıyor. Domates ve patates ikisi de böyle, birlikte aklında kalsın."
+      "text": "Küçük bir kural: o harfiyle biten bu iki kelime es alıyor. Domates ve patates ikisi de böyle, birlikte aklında kalsın."
      },
      {
       "lang": "en",
@@ -18609,8 +18601,8 @@
    }
   ],
   "chat": {
-   "scene": "Mahalledeki bir manavdasın. Tezgahta elma, domates ve patates var; akşam yemeği için alışveriş yapacaksın.",
-   "partner": "manav tezgâhının arkasındaki satıcı",
+   "scene": "Mahalledeki bir manavdasın. Tezgâhta elma, domates ve patates var; akşam yemeği için alışveriş yapacaksın.",
+   "partner": "Manav tezgâhının arkasındaki satıcı",
    "opening": "Morning! The apples are very fresh today. What would you like?",
    "openingTr": "Günaydın! Elmalar bugün çok taze. Ne almak istersiniz?",
    "goal": "Öğrenci en az iki ürünü çoğul biçimiyle ve kilo belirterek istediğinde, tazelik ya da fiyat sorusu sorup cevabı anladığında konuşma başarılı sayılır.",
@@ -18684,11 +18676,11 @@
      },
      {
       "lang": "tr",
-      "text": "Ders bitince garsondan hesabı isteyebilecek, nakit mi kartla mı ödeyeceğini söyleyebilecek ve arkadaşınla birlikte ödemeyi teklif edebileceksin."
+      "text": "Sonunda garsondan hesabı isteyebilecek, nakit mi kartla mı ödeyeceğini söyleyebilecek ve arkadaşınla birlikte ödemeyi teklif edebileceksin."
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlayalım. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -18719,7 +18711,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bunu bir isteğe çevirelim. En kısa hali şu:"
+      "text": "Şimdi bunu bir isteğe çevirelim. En kısa hâli şu:"
      },
      {
       "lang": "en",
@@ -18739,7 +18731,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Biraz daha kibar bir hali var:"
+      "text": "Biraz daha kibar bir hâli var:"
      },
      {
       "lang": "en",
@@ -18747,7 +18739,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani 'hesabı alabilir miyim, lütfen?'. İngilizcede ricalar çoğu zaman 'Can I' ile başlar; bunu bu derste çok kullanacağız. Lütfen tekrar et."
+      "text": "Yani 'hesabı alabilir miyim, lütfen?'. İngilizcede ricalar çoğu zaman 'Can I' ile başlar; bunu bugün çok kullanacağız. Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -19182,7 +19174,7 @@
   ],
   "chat": {
    "scene": "Bir kafede yemeğini bitirdin, arkadaşınla birliktesin ve hesabı isteyip kartla ödemek istiyorsun.",
-   "partner": "hesabı getiren güler yüzlü garson",
+   "partner": "Hesabı getiren güler yüzlü garson",
    "opening": "Hello! Did you enjoy your meal?",
    "openingTr": "Merhaba! Yemeğiniz güzel miydi?",
    "goal": "Öğrenci hesabı kibarca istedi, nakit mi kartla mı ödeyeceğini söyledi ve birlikte mi ayrı mı ödeneceğini belirtip teşekkür etti.",
@@ -19403,7 +19395,7 @@
      },
      {
       "lang": "tr",
-      "text": "kahvaltı demek. Dikkat: İngilizcede kahvaltı etmek için eat değil, genelde have kullanılır. Söyle bakalım:"
+      "text": "kahvaltı demek. Dikkat: kahvaltı etmek için İngilizcede have breakfast çok yaygındır; eat breakfast da denir. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -19630,7 +19622,7 @@
       },
       {
        "lang": "en",
-       "text": "She get... up at six."
+       "text": "She … up at six."
       },
       {
        "lang": "en",
@@ -19659,11 +19651,11 @@
      },
      {
       "lang": "en",
-      "text": "I go to bed at eleven."
+      "text": "I go to bed at eleven. I sleep eight hours."
      },
      {
       "lang": "tr",
-      "text": "Saat on birde yatarım."
+      "text": "Saat on birde yatarım. Sekiz saat uyurum."
      }
     ]
    },
@@ -19755,7 +19747,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki don't, do not kelimelerinin kısaltılmış hali. Konuşurken hep kısaltma kullanılır."
+      "text": "Buradaki don't, do not kelimelerinin kısaltılmış hâli. Konuşurken hep kısaltma kullanılır."
      }
     ]
    },
@@ -19816,7 +19808,7 @@
   "icon": "clock",
   "title": "Telling the time",
   "titleTr": "Saat",
-  "summary": "Bu derste saati soruyor ve söylüyorsun: o'clock, half past ve quarter to kalıplarıyla.",
+  "summary": "Saati sormayı ve söylemeyi öğretir: o'clock, half past ve quarter to kalıplarıyla.",
   "minutes": 9,
   "focusId": "Time",
   "vocab": [
@@ -19919,7 +19911,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en çok işine yarayacak sorusu:"
+      "text": "Şimdi en çok işine yarayacak soru:"
      },
      {
       "lang": "en",
@@ -20623,7 +20615,7 @@
    "scene": "Sinemanın önünde bekliyorsun. Yanındaki kişi saatin kaç olduğunu ve filmin ne zaman başladığını merak ediyor.",
    "partner": "Tom, sinemada bekleyen bir kişi",
    "opening": "Excuse me, what time is it?",
-   "openingTr": "Affedersin, saat kaç?",
+   "openingTr": "Affedersiniz, saat kaç?",
    "goal": "Öğrenci saati söyler (o'clock, half past ya da quarter kalıbıyla), filmin kaçta başladığını sorar ve 'at' ile bir saat üzerinde anlaşır.",
    "minTurns": 7
   }
@@ -21115,7 +21107,7 @@
      },
      {
       "lang": "en",
-      "text": "I go to school in Monday."
+      "text": "I go to school on Monday."
      }
     ],
     "expect": {
@@ -21923,7 +21915,7 @@
   "icon": "clock",
   "title": "Always, usually, never",
   "titleTr": "Sıklık zarfları",
-  "summary": "Bu derste always, usually, sometimes, often ve never kelimelerini ve bunların İngilizce cümlede nereye konduğunu öğreniyorsun.",
+  "summary": "always, usually, sometimes, often ve never kelimelerini ve bunların İngilizce cümlede nereye konduğunu öğretir.",
   "minutes": 8,
   "focusId": "Word-order",
   "vocab": [
@@ -22467,7 +22459,7 @@
      },
      {
       "lang": "tr",
-      "text": "Karşındaki kişi \"o\" ise does kullanılır:"
+      "text": "Bir başkasını, yani \"o\"yu soruyorsan does kullanılır:"
      },
      {
       "lang": "en",
@@ -23047,7 +23039,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir kuruluş. Şunu İngilizce söyle: Önce çay içerim. Ondan sonra dışarı çıkarım."
+      "text": "Son bir cümle kuralım. Şunu İngilizce söyle: Önce çay içerim. Ondan sonra dışarı çıkarım."
      }
     ],
     "expect": {
@@ -23374,7 +23366,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Öğle yemeği İngilizcede lunch. Yemek için eat değil, çoğunlukla have deriz."
+      "text": "Öğle yemeği İngilizcede lunch. Yemek için çoğunlukla have deriz; eat de olur."
      },
      {
       "lang": "en",
@@ -23777,7 +23769,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizin adı"
+      "text": "Merhaba, hoş geldin. Bugünkü konumuz"
      },
      {
       "lang": "en",
@@ -23785,7 +23777,7 @@
      },
      {
       "lang": "tr",
-      "text": "yani iş sonrası. İş çıkışında ne yaptığını, boş zamanında nelerden hoşlandığını İngilizce anlatmayı öğreneceğiz. Anahtar yapımız şu olacak: like artı fiilin -ing hali. Başlayalım mı? Hazırsan bana hazır olduğunu söyle."
+      "text": "yani iş sonrası. İş çıkışında ne yaptığını, boş zamanında nelerden hoşlandığını İngilizce anlatmayı öğreneceğiz. Anahtar yapımız şu olacak: like artı fiilin -ing hâli. Başlayalım mı? Hazırsan bana hazır olduğunu söyle."
      }
     ],
     "expect": {
@@ -23952,7 +23944,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz. Sevmek, hoşlanmak fiili:"
+      "text": "Şimdi en önemli kısma geliyoruz. Sevmek, hoşlanmak fiili:"
      },
      {
       "lang": "en",
@@ -24158,7 +24150,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce I like, sonra fiilin -ing hali, en sona da"
+       "text": "Önce I like, sonra fiilin -ing hâli, en sona da"
       },
       {
        "lang": "en",
@@ -24227,7 +24219,7 @@
       },
       {
        "lang": "tr",
-       "text": "sonra yürümek fiilinin -ing hali."
+       "text": "sonra yürümek fiilinin -ing hâli."
       },
       {
        "lang": "en",
@@ -24297,7 +24289,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "I don't like ile başla, sonra dinlemek fiilinin -ing hali ve"
+       "text": "I don't like ile başla, sonra dinlemek fiilinin -ing hâli ve"
       },
       {
        "lang": "en",
@@ -24347,7 +24339,7 @@
   "icon": "clock",
   "title": "Weekend plans",
   "titleTr": "Hafta sonu planı",
-  "summary": "Bu derste \"going to\" kalıbıyla hafta sonu planlarını anlatmayı, sormayı ve olumsuz yapmayı öğreniyorsun.",
+  "summary": "\"going to\" kalıbıyla hafta sonu planlarını anlatmayı, sormayı ve olumsuz yapmayı öğretir.",
   "minutes": 9,
   "focusId": "Going-to",
   "vocab": [
@@ -24675,7 +24667,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: \"hafta sonu\" için"
+      "text": "Küçük bir not: \"bu hafta sonu\" için"
      },
      {
       "lang": "en",
@@ -24857,7 +24849,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kuralım. \"Ailemi ziyaret edeceğim\" nasıl derdin?"
+      "text": "Son bir cümle kuralım. \"Ailemi ziyaret edeceğim\" nasıl dersin?"
      }
     ],
     "expect": {
@@ -24914,7 +24906,7 @@
    }
   ],
   "chat": {
-   "scene": "Cuma günü işten çıkarken bir arkadaşın hafta sonu planını soruyor.",
+   "scene": "Cuma günü işten çıkarken bir iş arkadaşın hafta sonu planını soruyor.",
    "partner": "İş arkadaşın Emma",
    "opening": "Hey! What are you going to do this weekend?",
    "openingTr": "Selam! Bu hafta sonu ne yapacaksın?",
@@ -25694,7 +25686,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün İngilizce bir mağazada kıyafet alacağız. Gömlek istemeyi, bedenini söylemeyi, denemek için izin istemeyi ve fiyat sormayı öğreneceksin."
+      "text": "Merhaba! Bugün bir mağazada İngilizce konuşarak kıyafet alacağız. Gömlek istemeyi, bedenini söylemeyi, denemek için izin istemeyi ve fiyat sormayı öğreneceksin."
      },
      {
       "lang": "tr",
@@ -26882,7 +26874,7 @@
   "icon": "shirt",
   "title": "Colors",
   "titleTr": "Renkler",
-  "summary": "Renk sıfatlarını öğrenir, bir şeyin rengini söyler ve sıfatın isimden önce geldiğini kullanırsın.",
+  "summary": "Renk sıfatlarını, bir şeyin rengini söylemeyi ve sıfatın isimden önce geldiğini öğretir.",
   "minutes": 8,
   "focusId": "Adjectives",
   "vocab": [
@@ -26938,7 +26930,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün renkleri öğreniyoruz. Dersin sonunda bir şeyin rengini söyleyebilecek ve rengini sorabileceksin."
+      "text": "Merhaba! Bugün renkleri öğreniyoruz. Sonunda bir şeyin rengini söyleyebilecek ve rengini sorabileceksin."
      },
      {
       "lang": "tr",
@@ -27556,7 +27548,7 @@
    "scene": "Bir mağazadasın, çanta bakıyorsun. Satıcı sana renk soruyor.",
    "partner": "Mağaza görevlisi",
    "opening": "Hello! Can I help you? What color do you want?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim? Hangi rengi istiyorsun?",
+   "openingTr": "Merhaba! Yardımcı olabilir miyim? Hangi rengi istersiniz?",
    "goal": "En az bir renk söylemen, bir renk sorusu sorman ve bir çantayı renkle birlikte tarif etmen (örneğin \"a black bag\") başarılı sayılır.",
    "minTurns": 7
   }
@@ -27608,15 +27600,15 @@
   "patterns": [
    {
     "de": "How much is this?",
-    "tr": "Tek bir şeyin fiyatını sorarken kullanılır"
+    "tr": "tek bir şeyin fiyatını sorarken kullanılır"
    },
    {
     "de": "How much are these?",
-    "tr": "Birden fazla şeyin fiyatını sorarken kullanılır"
+    "tr": "birden fazla şeyin fiyatını sorarken kullanılır"
    },
    {
     "de": "It's ten dollars.",
-    "tr": "Fiyatı söylerken kullanılır"
+    "tr": "fiyatı söylerken kullanılır"
    }
   ],
   "lecture": [
@@ -27624,7 +27616,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün alışverişin en gerekli sorusunu öğreniyoruz: bir şeyin fiyatını sormak. Ders sonunda bir dükkânda \"Bu ne kadar?\" diye rahatça soracak, cevabı da anlayacaksın. Hazır mısın?"
+      "text": "Merhaba! Bugün alışverişin en gerekli sorusunu öğreniyoruz: bir şeyin fiyatını sormak. Sonunda bir dükkânda \"Bu ne kadar?\" diye rahatça soracak, cevabı da anlayacaksın. Hazır mısın?"
      }
     ],
     "expect": {
@@ -28445,7 +28437,7 @@
    },
    {
     "de": "choose",
-    "tr": "seçim yapmak"
+    "tr": "seçmek"
    },
    {
     "de": "favorite",
@@ -29072,7 +29064,7 @@
   ],
   "chat": {
    "scene": "Bir mağazadasın ve arkadaşınla ceket seçiyorsun. Beğendiğini söyle, arkadaşına yakıştığını belirt ve onun fikrini sor.",
-   "partner": "alışverişi seven, fikrini açıkça söyleyen bir arkadaş",
+   "partner": "Alışverişi seven, fikrini açıkça söyleyen bir arkadaş",
    "opening": "Look at this jacket. Do you like it?",
    "openingTr": "Şu cekete bak. Beğendin mi?",
    "goal": "Beğenini söylemiş, en az bir iltifat etmiş, arkadaşının fikrini sormuş ve birlikte bir ceket seçmiş olursunuz.",
@@ -29987,7 +29979,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz. Türkçede kime olduğunu söylerken kelimenin sonuna ek koyarız: anneme, kardeşime. İngilizcede ek yok; kelimenin önüne for koyuyoruz."
+      "text": "Şimdi en önemli kısma geliyoruz. Türkçede kime olduğunu söylerken kelimenin sonuna ek koyarız: anneme, kardeşime. İngilizcede ek yok; kelimenin önüne for koyuyoruz."
      },
      {
       "lang": "en",
@@ -30241,7 +30233,7 @@
      },
      {
       "lang": "en",
-      "text": "I want to buy a gift to my mother."
+      "text": "I want to buy a gift for my mother."
      }
     ],
     "expect": {
@@ -30260,7 +30252,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir küçük not: hediye derken"
+      "text": "Küçük bir not: hediye derken"
      },
      {
       "lang": "en",
@@ -31226,7 +31218,7 @@
      },
      {
       "lang": "en",
-      "text": "Do you have."
+      "text": "Do you have …?"
      },
      {
       "lang": "tr",
@@ -31435,7 +31427,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "This, bu demek. Elindeki kutuyu gösterip this dersen tezgahtaki kişi hemen anlar. This soap, this medicine."
+      "text": "This, bu demek. Elindeki kutuyu gösterip this dersen tezgâhtaki kişi hemen anlar. This soap, this medicine."
      }
     ]
    },
@@ -31819,7 +31811,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My address is Bahar Street number five"
+     "target": "My address is 5 Bahar Street."
     }
    },
    {
@@ -32030,15 +32022,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce sokak, sonra numara:"
-      },
-      {
-       "lang": "en",
-       "text": "My address is Ada Street, number three."
-      },
-      {
-       "lang": "tr",
-       "text": "Tekrar dene."
+       "text": "Önce numara, sonra sokak:"
       },
       {
        "lang": "en",
@@ -32091,7 +32075,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kur: kuryeye 'Ne zaman geliyor?' diye sor."
+      "text": "Son bir cümle kur: telefondaki çalışana 'Ne zaman geliyor?' diye sor."
      }
     ],
     "expect": {
@@ -32147,7 +32131,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Soruda 's' zaten"
+       "text": "Doğru. Düz cümlede fiile 's' gelir: arrives. Soruda ise bu 's'"
       },
       {
        "lang": "en",
@@ -32155,15 +32139,11 @@
       },
       {
        "lang": "tr",
-       "text": "kelimesine geçti, fiil yalın kalır. Doğrusu:"
+       "text": "kelimesine geçer, fiil yalın kalır:"
       },
       {
        "lang": "en",
        "text": "When does it arrive?"
-      },
-      {
-       "lang": "tr",
-       "text": "Ama düz cümlede 's' fiile döner:"
       }
      ]
     }
@@ -32203,7 +32183,7 @@
   ],
   "chat": {
    "scene": "Bir pizzacıyı arıyorsun ve akşam yemeği sipariş ediyorsun. Ne istediğini söyle, adresini ver ve siparişin ne zaman geleceğini sor.",
-   "partner": "neşeli bir pizzacı çalışanı",
+   "partner": "Neşeli bir pizzacı çalışanı",
    "opening": "Hello, City Pizza! What would you like to order?",
    "openingTr": "Merhaba, City Pizza! Ne sipariş etmek istersiniz?",
    "goal": "Siparişini söylemiş, adresini vermiş ve teslimatın ne zaman geleceğini öğrenmiş olursun.",
@@ -32901,7 +32881,7 @@
   ],
   "chat": {
    "scene": "Bir şehirde yolunu kaybettin ve istasyonu arıyorsun. Sokakta duran birine kibarca yaklaş, yolu sor, tarifi anla ve teşekkür et.",
-   "partner": "yardımsever bir yerel",
+   "partner": "Yardımsever bir yerli",
    "opening": "Hello! Do you need some help?",
    "openingTr": "Merhaba! Yardıma ihtiyacın var mı?",
    "goal": "Öğrenci 'Excuse me, where is …?' ile yol sormuş, tarifteki left/right/straight yönünü doğru anlamış ve teşekkür etmiş olur.",
@@ -32949,7 +32929,7 @@
    },
    {
     "de": "road",
-    "tr": "karayolu"
+    "tr": "yol / cadde"
    }
   ],
   "patterns": [
@@ -33058,7 +33038,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi asıl konumuz. Türkçede otobüs-le, tren-le deriz; İngilizcede araç adının önüne by koyulur."
+      "text": "Şimdi asıl konumuz. Türkçede otobüs-le, tren-le deriz; İngilizcede araç adının önüne by konur."
      },
      {
       "lang": "en",
@@ -33180,7 +33160,7 @@
      },
      {
       "lang": "tr",
-      "text": "I'm, I am'in kısa hali. Konuşurken hep kısası kullanılır."
+      "text": "I'm, I am'in kısa hâli. Konuşurken hep kısası kullanılır."
      }
     ],
     "expect": {
@@ -33241,7 +33221,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Ben-im: I'm."
+       "text": "Önce I'm."
       },
       {
        "lang": "tr",
@@ -33362,7 +33342,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: karayolu. Lütfen tekrar et:"
+      "text": "Türkçesi: yol, cadde. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -33392,7 +33372,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Araç için by kullanırken the koyulmaz."
+       "text": "Yanlış. Araç için by kullanırken the konmaz."
       },
       {
        "lang": "tr",
@@ -33542,7 +33522,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün seninle bir gişeye gidiyoruz. Ders bitince İngilizce bilet isteyebilecek, tek yön mü gidiş-dönüş mü olduğunu söyleyebilecek ve fiyatı sorabileceksin."
+      "text": "Merhaba! Bugün seninle bir gişeye gidiyoruz. Sonunda İngilizce bilet isteyebilecek, tek yön mü gidiş-dönüş mü olduğunu söyleyebilecek ve fiyatı sorabileceksin."
      },
      {
       "lang": "tr",
@@ -33597,7 +33577,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbi. İstiyorum demenin kibar yolu: I would like. Ama gerçek hayatta kimse böyle uzun söylemez, kısaltır:"
+      "text": "Şimdi en önemli kısım. İstiyorum demenin kibar yolu: I would like. Ama gerçek hayatta kimse böyle uzun söylemez, kısaltır:"
      },
      {
       "lang": "en",
@@ -34062,7 +34042,7 @@
      },
      {
       "lang": "en",
-      "text": "Which platform."
+      "text": "Which platform?"
      },
      {
       "lang": "tr",
@@ -34417,7 +34397,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin ana cümlesini sen kur. Tren gecikiyor, yani tren rötarlı, cümlesini İngilizce söyle."
+      "text": "Şimdi en önemli cümleyi sen kur. Tren gecikiyor, yani tren rötarlı, cümlesini İngilizce söyle."
      }
     ],
     "expect": {
@@ -34600,7 +34580,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de nazik bir ekleme öğrenelim. Beni beklediğin için özür dilerim demek istersen:"
+      "text": "Bir de nazik bir ekleme öğrenelim. Seni beklettiğim için özür dilemek istersen:"
      },
      {
       "lang": "en",
@@ -34759,7 +34739,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -35261,7 +35241,7 @@
   ],
   "chat": {
    "scene": "Havaalanına gitmek için bir taksiye biniyorsun. Şoför seni karşılıyor.",
-   "partner": "yol tarifine alışkın bir taksi şoförü",
+   "partner": "Yol tarifine alışkın bir taksi şoförü",
    "opening": "Hello! Where to?",
    "openingTr": "Merhaba! Nereye?",
    "goal": "Öğrenci nereye gitmek istediğini söyler, yolun uzak olup olmadığını ya da ne kadar süreceğini sorar, sonunda fiş ister ya da durmasını söyler.",
@@ -35331,7 +35311,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün bir yerin yakın mı uzak mı olduğunu söylemeyi ve bir şeyin nerede durduğunu tarif etmeyi öğreneceğiz. Sokakta yol sorarken en çok işine yarayacak ders bu. Hazır mısın?"
+      "text": "Merhaba! Bugün bir yerin yakın mı uzak mı olduğunu söylemeyi ve bir şeyin nerede durduğunu tarif etmeyi öğreneceğiz. Sokakta yol sorarken en çok işine yarayacak konu bu. Hazır mısın?"
      }
     ],
     "expect": {
@@ -36020,7 +36000,7 @@
   ],
   "chat": {
    "scene": "Şehirde bir sokaktasın. Banka arıyorsun ve yoldan geçen birine soruyorsun.",
-   "partner": "yoldan geçen yardımsever biri",
+   "partner": "Yoldan geçen yardımsever biri",
    "opening": "Excuse me, is the bank near here?",
    "openingTr": "Affedersiniz, banka buraya yakın mı?",
    "goal": "Bankanın yakın mı uzak mı olduğunu öğrenip, yerini en az bir konum kelimesiyle (next to, opposite, behind ya da between) tarif ettirdiğinde ve teşekkür ettiğinde konuşma başarılı sayılır.",
@@ -36157,7 +36137,7 @@
      },
      {
       "lang": "tr",
-      "text": "Müze demek. Vurgu ortada: mü-ZİİI-ım. Belirli bir müzeden söz ederken önüne the koyarız:"
+      "text": "Müze demek. Vurgu ortada: myu-Zİİ-ım. Belirli bir müzeden söz ederken önüne the koyarız:"
      },
      {
       "lang": "en",
@@ -36213,7 +36193,7 @@
      },
      {
       "lang": "tr",
-      "text": "Görmek demek. \"Deniz\" derken uzattığın gibi uzun bir i sesi: siiy. Bir yeri gezmek için visit, bir şeye bakıp görmek için see kullanırız."
+      "text": "Görmek demek. Uzun bir i sesiyle: sii. Bir yeri gezmek için visit, bir şeye bakıp görmek için see kullanırız."
      }
     ]
    },
@@ -36269,7 +36249,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Burada iki küçük kural var, ikisi de işini kolaylaştırıyor. Birincisi: can'den sonra fiil hep yalın halde kalır, araya to koymayız. \"You can to visit\" yanlış. İkincisi: he ve she ile bile can değişmez, sonuna s almaz:"
+      "text": "Burada iki küçük kural var, ikisi de işini kolaylaştırıyor. Birincisi: can'den sonra fiil hep yalın hâlde kalır, araya to koymayız. \"You can to visit\" yanlış. İkincisi: he ve she ile bile can değişmez, sonuna s almaz:"
      },
      {
       "lang": "en",
@@ -36686,7 +36666,7 @@
    },
    {
     "de": "public",
-    "tr": "kamuoyu"
+    "tr": "halka açık / kamu"
    }
   ],
   "patterns": [
@@ -36712,7 +36692,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -37093,7 +37073,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kamuoyu. Lütfen tekrar et:"
+      "text": "Türkçesi: halka açık. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -37712,7 +37692,7 @@
      },
      {
       "lang": "tr",
-      "text": "da \"yavaş\" demek. İkisi birbirinin tam tersi."
+      "text": "ise \"yavaş\" demek. İkisi birbirinin tam tersi."
      }
     ]
    },
@@ -38041,7 +38021,7 @@
    }
   ],
   "chat": {
-   "scene": "İşte kahve molası. Yeni iş arkadaşın sabahları işe nasıl geldiğini merak ediyor.",
+   "scene": "İş yerinde kahve molası. Yeni iş arkadaşın sabahları işe nasıl geldiğini merak ediyor.",
    "partner": "Tom, iş arkadaşın",
    "opening": "Good morning! How do you get to work?",
    "openingTr": "Günaydın! İşe nasıl geliyorsun?",
@@ -38219,7 +38199,7 @@
      },
      {
       "lang": "tr",
-      "text": "nerede demek. Kuruluşu çok basit: önce where, sonra is, sonra aradığın şey."
+      "text": "nerede demek. Yapısı çok basit: önce where, sonra is, sonra aradığın şey."
      }
     ]
    },
@@ -38263,7 +38243,7 @@
      },
      {
       "lang": "tr",
-      "text": "İkinci katta."
+      "text": "Birinci katta."
      }
     ]
    },
@@ -39102,7 +39082,7 @@
      },
      {
       "lang": "en",
-      "text": "There isn't a garden."
+      "text": "There isn't a yard."
      },
      {
       "lang": "tr",
@@ -39130,7 +39110,7 @@
      },
      {
       "lang": "tr",
-      "text": "Odamda büyük bir pencere var. Sen istersen uzun halini kullan, ikisi de doğru."
+      "text": "Odamda büyük bir pencere var. Sen istersen uzun hâlini kullan, ikisi de doğru."
      }
     ]
    },
@@ -39343,8 +39323,8 @@
     "tr": "tuvalet"
    },
    {
-    "de": "lift",
-    "tr": "yukarı kaldırmak"
+    "de": "elevator",
+    "tr": "asansör"
    }
   ],
   "patterns": [
@@ -39654,7 +39634,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kiler. Lütfen tekrar et:"
+      "text": "Türkçesi: bodrum katı. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -39698,20 +39678,20 @@
      },
      {
       "lang": "en",
-      "text": "lift"
+      "text": "elevator"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: yukarı kaldırmak. Lütfen tekrar et:"
+      "text": "Türkçesi: asansör. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "lift"
+      "text": "elevator"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "lift"
+     "target": "elevator"
     }
    },
    {
@@ -39801,7 +39781,7 @@
      },
      {
       "lang": "tr",
-      "text": "Birinci katta demek."
+      "text": "Amerika'da bu giriş katı, yani zemin kat demek."
      }
     ]
    },
@@ -39817,7 +39797,7 @@
      },
      {
       "lang": "tr",
-      "text": "İkinci katta bir yatak odası var. Dikkat et: oda yeni, o yüzden a. Kat belli, o yüzden the."
+      "text": "Bir üst katta, yani bizim birinci katımızda bir yatak odası var. Dikkat et: oda yeni, o yüzden a. Kat belli, o yüzden the."
      }
     ]
    },
@@ -39825,7 +39805,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Şunu söyle: Birinci katta bir banyo var."
+      "text": "Sıra sende. Şunu söyle: Zemin katta bir banyo var."
      }
     ],
     "expect": {
@@ -39838,7 +39818,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "There is ile başla, sonra bir banyo, sonra birinci katta."
+       "text": "There is ile başla, sonra bir banyo, sonra zemin katta: on the first floor."
       },
       {
        "lang": "en",
@@ -39920,7 +39900,7 @@
   "icon": "home",
   "title": "Where things are",
   "titleTr": "Eşyaların yeri",
-  "summary": "Bu derste eşyaların yerini in, on, under ve next to ile söylemeyi ve \"Where is …?\" diye sormayı öğreniyorsun.",
+  "summary": "Eşyaların yerini in, on, under ve next to ile söylemeyi ve \"Where is …?\" diye sormayı öğretir.",
   "minutes": 9,
   "focusId": "Prepositions-place",
   "vocab": [
@@ -40638,11 +40618,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugünkü dersimizin konusu komşular."
+      "text": "Merhaba! Bugünkü konumuz komşular."
      },
      {
       "lang": "tr",
-      "text": "Bu derste komşunun kim olduğunu, nerede oturduğunu ve nasıl biri olduğunu İngilizce anlatmayı öğreneceksin."
+      "text": "Komşunun kim olduğunu, nerede oturduğunu ve nasıl biri olduğunu İngilizce anlatmayı öğreneceksin."
      },
      {
       "lang": "tr",
@@ -40773,7 +40753,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ama İngilizce'de anlamı bitişik daire, yan komşu. Apartmanda yan dairende oturan kişi için de, sokakta yandaki evde oturan kişi için de kullanılır."
+      "text": "Ama İngilizcede anlamı bitişik daire, yan komşu. Apartmanda yan dairede oturan kişi için de, sokakta yandaki evde oturan kişi için de kullanılır."
      }
     ]
    },
@@ -41032,7 +41012,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu, She is friendly ile aynı şey. Sen uzun halini söylesen de kimse yadırgamaz, ama kısasını duyunca tanı."
+      "text": "Bu, She is friendly ile aynı şey. Sen uzun hâlini söylesen de kimse yadırgamaz, ama kısasını duyunca tanı."
      }
     ]
    },
@@ -41241,7 +41221,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir şeye çok dikkat: must'tan sonra fiilin yalın hali gelir. Araya to koymuyoruz ve fiile s eklemiyoruz."
+      "text": "Bir şeye çok dikkat: must'tan sonra fiilin yalın hâli gelir. Araya to koymuyoruz ve fiile s eklemiyoruz."
      }
     ]
    },
@@ -41415,7 +41395,7 @@
      },
      {
       "lang": "tr",
-      "text": "Köpekler serbest değil. Sen de söyle."
+      "text": "Köpeklere izin yok. Sen de söyle."
      }
     ],
     "expect": {
@@ -41500,7 +41480,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de kibar hali. Komşuna kural okumak istemiyorsan please ile yumuşatabilirsin."
+      "text": "Bir de kibar hâli. Komşuna kural okumak istemiyorsan please ile yumuşatabilirsin."
      },
      {
       "lang": "en",
@@ -41548,7 +41528,7 @@
      },
      {
       "lang": "en",
-      "text": "You must be quiet. You can't make noise. Is it allowed?"
+      "text": "You must be quiet. You can't make noise."
      }
     ],
     "expect": {
@@ -41701,7 +41681,7 @@
   "icon": "home",
   "title": "Rent and bills",
   "titleTr": "Kira ve faturalar",
-  "summary": "Kira ve faturaların ne kadar tuttuğunu sormayı, ödediğini söylemeyi ve bir şeyin fiyata dahil olup olmadığını öğrenmeyi öğretir.",
+  "summary": "Kira ve faturaların ne kadar tuttuğunu sormayı, ödediğini söylemeyi ve bir şeyin fiyata dâhil olup olmadığını öğrenmeyi öğretir.",
   "minutes": 9,
   "focusId": "How-much",
   "vocab": [
@@ -41761,7 +41741,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda bir şeyin ne kadar tuttuğunu sorabilecek, ne ödediğini söyleyebilecek ve suyun ya da elektriğin fiyata dahil olup olmadığını öğrenebileceksin. Hazır mısın?"
+      "text": "Sonunda bir şeyin ne kadar tuttuğunu sorabilecek, ne ödediğini söyleyebilecek ve suyun ya da elektriğin fiyata dâhil olup olmadığını öğrenebileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -41900,7 +41880,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli sorusu. Ne kadar demek için"
+      "text": "Şimdi en önemli soru. Ne kadar demek için"
      },
      {
       "lang": "en",
@@ -42088,7 +42068,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de çok işine yarayacak bir kelime var: included. Dahil demek."
+      "text": "Bir de çok işine yarayacak bir kelime var: included. Dâhil demek."
      },
      {
       "lang": "en",
@@ -42096,7 +42076,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ev sahibi kirayı söyler ama su dahil mi, belli değildir. İşte o zaman sorarsın."
+      "text": "Ev sahibi kirayı söyler ama su dâhil mi, belli değildir. İşte o zaman sorarsın."
      }
     ]
    },
@@ -42104,7 +42084,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Su dahil mi:"
+      "text": "Su dâhil mi:"
      },
      {
       "lang": "en",
@@ -42247,7 +42227,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi aynı soruyu elektrik için sen kur. Elektrik dahil mi?"
+      "text": "Şimdi aynı soruyu elektrik için sen kur. Elektrik dâhil mi?"
      }
     ],
     "expect": {
@@ -42264,7 +42244,7 @@
       },
       {
        "lang": "tr",
-       "text": "sonra elektrik, sonra dahil:"
+       "text": "sonra elektrik, sonra dâhil:"
       },
       {
        "lang": "en",
@@ -42325,11 +42305,11 @@
      },
      {
       "lang": "tr",
-      "text": "dahil mi diye sormak için"
+      "text": "dâhil mi diye sormak için"
      },
      {
       "lang": "en",
-      "text": "is water included."
+      "text": "Is water included?"
      },
      {
       "lang": "tr",
@@ -42347,7 +42327,7 @@
    "partner": "Ev sahibi",
    "opening": "Hello! Welcome. This is the apartment. Do you have any questions?",
    "openingTr": "Merhaba! Hoş geldin. İşte daire burası. Sormak istediğin bir şey var mı?",
-   "goal": "Kiranın ne kadar olduğunu sor, su ve elektriğin dahil olup olmadığını öğren ve ne zaman ödeyeceğini konuş.",
+   "goal": "Kiranın ne kadar olduğunu sor, su ve elektriğin dâhil olup olmadığını öğren ve ne zaman ödeyeceğini konuş.",
    "minTurns": 7
   }
  },
@@ -42947,7 +42927,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi ev arkadaşınla konuşup evi paylaşalım."
+      "text": "Şimdi ev arkadaşınla konuşup ev işlerini paylaşalım."
      }
     ]
    }
@@ -43024,7 +43004,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün taşınma günündeyiz! Kutular, ağır eşyalar, yeni bir ev... Bu derste İngilizcede 'can' kelimesiyle yardım istemeyi ve ne yapabildiğini söylemeyi öğreneceksin. Hazır mısın?"
+      "text": "Bugün taşınma günündeyiz! Kutular, ağır eşyalar, yeni bir ev... İngilizcede 'can' kelimesiyle yardım istemeyi ve ne yapabildiğini söylemeyi öğreneceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -43163,7 +43143,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz:"
+      "text": "Şimdi en önemli kısma geliyoruz:"
      },
      {
       "lang": "en",
@@ -43639,7 +43619,7 @@
   ],
   "chat": {
    "scene": "Yeni evinin önünde arabadan kutuları indiriyorsun. Komşun yanına gelip yardım teklif ediyor. Kutuların ağır olduğunu söyle, yardım iste ve neyi taşıyabilip neyi taşıyamadığını anlat.",
-   "partner": "yardımsever komşun Sam",
+   "partner": "Yardımsever komşun Sam",
    "opening": "Hello! Is this your new house? Do you need help with the boxes?",
    "openingTr": "Merhaba! Burası senin yeni evin mi? Kutularda yardıma ihtiyacın var mı?",
    "goal": "Yardım istenmiş, en az bir kutunun ağır olduğu söylenmiş ve can ya da can't ile ne yapabildiğin anlatılmış olur.",
@@ -44261,7 +44241,7 @@
   ],
   "chat": {
    "scene": "Yeni taşındın ve komşun balkonunda seninle sohbet ediyor. Balkonunda ve binanın bahçesinde ne olduğunu anlat, sen de ona kendi bahçesini sor.",
-   "partner": "sıcakkanlı, biraz meraklı bir komşu",
+   "partner": "Sıcakkanlı, biraz meraklı bir komşu",
    "opening": "Your balcony looks nice! Is there a garden here too?",
    "openingTr": "Balkonun güzel görünüyor! Burada bahçe de var mı?",
    "goal": "Balkonunda ve bahçede ne olduğu 'There is' ve 'There are' ile anlatılmış, en az bir şeye sıfat eklenmiş ve komşuya 'Is there …?' ile bir soru sorulmuş olur.",
@@ -44843,7 +44823,7 @@
   ],
   "chat": {
    "scene": "Bir otelde kalıyorsun. Odandaki klima çalışmıyor ve resepsiyona iniyorsun.",
-   "partner": "otel resepsiyonisti",
+   "partner": "Otel resepsiyonisti",
    "opening": "Good evening. Is everything all right with your room?",
    "openingTr": "İyi akşamlar. Odanızla ilgili her şey yolunda mı?",
    "goal": "Öğrenci odasındaki sorunu bildirip (It's broken / It doesn't work) tamir ya da yardım istediğinde (Can you fix it? / Please call me.) konuşma başarılı sayılır.",
@@ -45346,15 +45326,7 @@
       },
       {
        "lang": "en",
-       "text": "Do you like collecting?"
-      },
-      {
-       "lang": "tr",
-       "text": "Tekrar dene."
-      },
-      {
-       "lang": "en",
-       "text": "Do you like collecting things."
+       "text": "Do you like collecting things?"
       },
       {
        "lang": "tr",
@@ -45572,7 +45544,7 @@
   ],
   "chat": {
    "scene": "Yeni tanıştığın bir arkadaşla boş zamanlardan konuşuyorsun. Hobini like veya enjoy + -ing ile anlat ve ona da ne yapmayı sevdiğini sor.",
-   "partner": "hobilerini merak eden, sohbeti seven yeni bir arkadaş",
+   "partner": "Hobilerini merak eden, sohbeti seven yeni bir arkadaş",
    "opening": "Hi! What do you like doing in your free time?",
    "openingTr": "Selam! Boş zamanında ne yapmayı seversin?",
    "goal": "En az bir hobini like veya enjoy + -ing ile anlatmış ve karşındakine de hobisini sormuş olursun.",
@@ -46227,7 +46199,7 @@
   "icon": "music",
   "title": "Music",
   "titleTr": "Müzik",
-  "summary": "Bu derste like ve prefer ile müzik zevkini anlatmayı, \"What music do you like?\" diye sormayı öğreniyorsun.",
+  "summary": "like ve prefer ile müzik zevkini anlatmayı, \"What music do you like?\" diye sormayı öğretir.",
   "minutes": 8,
   "focusId": "Likes",
   "vocab": [
@@ -46283,11 +46255,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün müzik hakkında konuşacağız. Dersin sonunda İngilizce olarak hangi müziği sevdiğini söyleyebilecek ve karşındakine de sorabileceksin."
+      "text": "Merhaba! Bugün müzik hakkında konuşacağız. Sonunda İngilizce olarak hangi müziği sevdiğini söyleyebilecek ve karşındakine de sorabileceksin."
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlayalım. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -46540,7 +46512,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Enstrüman çalmaktan bahsederken İngilizcede araya the koyulur. Bu küçük bir kalıp, ezberle yeter:"
+      "text": "Enstrüman çalmaktan bahsederken İngilizcede araya the konur. Bu küçük bir kalıp, ezberle yeter:"
      },
      {
       "lang": "en",
@@ -46790,8 +46762,8 @@
    }
   ],
   "chat": {
-   "scene": "Otobüs durağında bekliyorsun. Yanındaki İngiliz arkadaşın Emma kulaklığını çıkarıp sana bir şarkıyı dinletiyor.",
-   "partner": "Emma, İngiliz arkadaşın",
+   "scene": "Otobüs durağında bekliyorsun. Yanındaki Amerikalı arkadaşın Emma kulaklığını çıkarıp sana bir şarkıyı dinletiyor.",
+   "partner": "Emma, Amerikalı arkadaşın",
    "opening": "I love this song. Do you like it?",
    "openingTr": "Bu şarkıya bayılıyorum. Sen sever misin?",
    "goal": "Hangi müziği sevdiğini söyleyip Emma'ya da onun zevkini sorduğunda ve en sevdiğin gruptan bahsettiğinde konuşma başarılı sayılır.",
@@ -46865,7 +46837,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dersin sonunda \"Bu akşam sinemaya gitmek ister misin?\" diye sorabilecek, gelen daveti kabul edebilecek ya da kibarca geri çevirebileceksin."
+      "text": "Sonunda \"Bu akşam sinemaya gitmek ister misin?\" diye sorabilecek, gelen daveti kabul edebilecek ya da kibarca geri çevirebileceksin."
      },
      {
       "lang": "tr",
@@ -46952,7 +46924,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz. İngilizcede birini davet ederken en kibar kalıp şu:"
+      "text": "Şimdi en önemli kısma geliyoruz. İngilizcede birini davet ederken en kibar kalıp şu:"
      },
      {
       "lang": "en",
@@ -47271,7 +47243,7 @@
      },
      {
       "lang": "tr",
-      "text": "aslında \"I would\" demek. Anadili İngilizce olanlar konuşurken bu kısaltmaları çok kullanır; \"I would love to\" desen de doğru olur ama kulağa daha resmi gelir."
+      "text": "aslında \"I would\" demek. Anadili İngilizce olanlar konuşurken bu kısaltmaları çok kullanır; \"I would love to\" desen de doğru olur ama kulağa daha resmî gelir."
      }
     ]
    },
@@ -47369,7 +47341,7 @@
      },
      {
       "lang": "en",
-      "text": "Would you like go to the movies?"
+      "text": "Would you like to go to the movies?"
      }
     ],
     "expect": {
@@ -47500,7 +47472,7 @@
   "icon": "weather",
   "title": "Weather small talk",
   "titleTr": "Hava sohbeti",
-  "summary": "Bu derste \"It's cold\", \"It's sunny\" ve \"It's raining\" gibi kalıplarla havanın nasıl olduğunu söylemeyi ve sormayı öğreniyorsun.",
+  "summary": "\"It's cold\", \"It's sunny\" ve \"It's raining\" gibi kalıplarla havanın nasıl olduğunu söylemeyi ve sormayı öğretir.",
   "minutes": 9,
   "focusId": "Present-continuous",
   "vocab": [
@@ -47556,7 +47528,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün İngilizcede hava sohbeti yapmayı öğreneceğiz. Ders sonunda havanın soğuk mu, sıcak mı, güneşli mi olduğunu söyleyebilecek ve karşındakine havayı sorabileceksin. Hazır mısın?"
+      "text": "Merhaba! Bugün İngilizcede hava sohbeti yapmayı öğreneceğiz. Sonunda havanın soğuk mu, sıcak mı, güneşli mi olduğunu söyleyebilecek ve karşındakine havayı sorabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -48434,7 +48406,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geldik. Türkçede parkta bir köpek var deriz; var sona gelir."
+      "text": "Şimdi en önemli kısma geldik. Türkçede parkta bir köpek var deriz; var sona gelir."
      },
      {
       "lang": "tr",
@@ -48806,7 +48778,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. İki köpek çoğul, bu yüzden is değil are gerekir:"
+       "text": "Doğru. İki köpek çoğul, bu yüzden is değil are gerekir."
       }
      ]
     }
@@ -48889,7 +48861,7 @@
   ],
   "chat": {
    "scene": "Bir parkta bankta oturuyorsun; yanındaki kişi etrafı anlatmaya başlıyor.",
-   "partner": "parkta tanıştığın arkadaş canlısı biri",
+   "partner": "Parkta tanıştığın arkadaş canlısı biri",
    "opening": "Look! There is a big dog on the grass. Do you like dogs?",
    "openingTr": "Bak! Çimenin üstünde büyük bir köpek var. Köpekleri sever misin?",
    "goal": "Öğrenci parkta gördüğü en az iki şeyi There is veya There are ile anlatır ve bir kez Is there …? sorusu sorar.",
@@ -48971,7 +48943,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu dersin sonunda yüzebildiğini söyleyebilecek, karşındakine de sorabileceksin. Başlayalım mı?"
+      "text": "Sonunda yüzebildiğini söyleyebilecek, karşındakine de sorabileceksin. Başlayalım mı?"
      }
     ],
     "expect": {
@@ -49253,7 +49225,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu soruya kısa cevap da kısa olur. Evet ise:"
+      "text": "Bu sorunun cevabı da kısa olur. Evet ise:"
      },
      {
       "lang": "en",
@@ -49557,7 +49529,7 @@
   ],
   "chat": {
    "scene": "Havuz kenarındasın. Yanına yeni tanıştığın biri oturuyor ve sohbet başlatıyor.",
-   "partner": "Havuzda tanıştığın arkadaş canlandırılır; sadece basit A1 İngilizcesi kullanır, yavaş konuşur ve takılırsan Türkçe küçük bir ipucu verir.",
+   "partner": "Havuzda tanıştığın biri",
    "opening": "Hi! Nice day. Can you swim?",
    "openingTr": "Merhaba! Güzel bir gün. Yüzebiliyor musun?",
    "goal": "Öğrenci can ile en az bir olumlu ya da olumsuz cümle kurar (I can swim / I can't swim), karşı tarafa can ile bir soru sorar ve havuz kelimelerinden en az birini (water, towel, deep, learn) cümle içinde kullanır.",
@@ -49809,7 +49781,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi soru soralım. Türkçede sadece ses tonunu değiştiririz ama İngilizcede cümlenin başına küçük bir yardımcı gelir: do. Yani izler misin demek için Do you watch diye başlarız."
+      "text": "Şimdi soru soralım. Türkçede sona mi ekini getiririz ama İngilizcede cümlenin başına küçük bir yardımcı gelir: do. Yani izler misin demek için Do you watch diye başlarız."
      }
     ]
    },
@@ -49997,7 +49969,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. She dediğimizde fiil es alır:"
+       "text": "Doğru. She dediğimizde fiil es alır."
       }
      ]
     }
@@ -50042,7 +50014,7 @@
      },
      {
       "lang": "tr",
-      "text": "Televizyon izlemem. Dikkat et, don't'tan sonra fiil sade kalır: watch, watches değil."
+      "text": "Televizyon izlemem. Dikkat et, don't'tan sonra fiil yalın kalır: watch, watches değil."
      }
     ]
    },
@@ -50081,7 +50053,7 @@
   ],
   "chat": {
    "scene": "Bir arkadaşınla kantinde oturuyorsun ve akşamları ne yaptığınızı konuşuyorsunuz.",
-   "partner": "Türkçe bilmeyen İngiliz bir arkadaş",
+   "partner": "Türkçe bilmeyen Amerikalı bir arkadaş",
    "opening": "Hi! Do you watch series in the evening?",
    "openingTr": "Selam! Akşamları dizi izler misin?",
    "goal": "Öğrenci izleme alışkanlığını geniş zamanla anlatır, karşısındakine en az bir soru sorar ve bir dizi ya da kanal hakkında fikrini söyler.",
@@ -50210,7 +50182,7 @@
      },
      {
       "lang": "tr",
-      "text": "olur. Yani I'm busy. Bu kısaltmayı bu derste hep kullanacağız, çünkü uzun hâli biraz resmî durur."
+      "text": "olur. Yani I'm busy. Bu kısaltmayı bugün hep kullanacağız, çünkü uzun hâli biraz resmî durur."
      }
     ]
    },
@@ -50246,7 +50218,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli kalıbına geliyoruz. İngilizler ve Amerikalılar reddederken çoğu zaman şu cümleyi kullanır. Önce sadece dinle:"
+      "text": "Şimdi en önemli kalıba geliyoruz. İngilizce konuşanlar reddederken çoğu zaman şu cümleyi kullanır. Önce sadece dinle:"
      },
      {
       "lang": "en",
@@ -50274,7 +50246,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kelime kelime bakalım. Afraid aslında korkmuş demek, ama bu kalıpta korkarım ki anlamında, cümleyi yumuşatmak için var. Can't ise cannot'ın kısası, yapamam demek. Telaffuzda can't kısa ve serttir; sonundaki t'yi yutma. I'm afraid olmadan tek başına I can't demek biraz kaba durur."
+      "text": "Kelime kelime bakalım. Afraid aslında korkmuş demek, ama bu kalıpta korkarım ki anlamında, cümleyi yumuşatmak için var. Can't ise cannot'ın kısası, yapamam demek. Telaffuzda can't açık bir a ile, vurgulu söylenir; sondaki t çok hafiftir. I'm afraid olmadan tek başına I can't demek biraz kaba durur."
      }
     ]
    },
@@ -50629,7 +50601,7 @@
   "icon": "clock",
   "title": "Making plans",
   "titleTr": "Plan yapmak",
-  "summary": "Bu derste \"be going to\" ile bir arkadaşınla buluşma planı kurmayı ve karşındakinin planını sormayı öğreniyorsun.",
+  "summary": "\"be going to\" ile bir arkadaşınla buluşma planı kurmayı ve karşındakinin planını sormayı öğretir.",
   "minutes": 9,
   "focusId": "be going to",
   "vocab": [
@@ -51169,7 +51141,7 @@
       },
       {
        "lang": "tr",
-       "text": "gitmez. Doğrusu: She is going to meet us later."
+       "text": "gitmez. Doğrusu:"
       },
       {
        "lang": "en",
@@ -51953,7 +51925,7 @@
      },
      {
       "lang": "tr",
-      "text": "Doktorda, eczanede, hatta iş yerinde 'başım ağrıyor' ya da 'sırtım ağrıyor' demen gerekebilir. Dersin sonunda bunu rahatça söyleyeceksin. Hazır mısın?"
+      "text": "Doktorda, eczanede, hatta iş yerinde 'başım ağrıyor' ya da 'sırtım ağrıyor' demen gerekebilir. Sonunda bunu rahatça söyleyeceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -51964,7 +51936,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Önce dersin mantığını söyleyeyim. Türkçede tek bir yol var: 'başım ağrıyor'. İngilizcede ise iki yol var ve ikisi de çok kullanılır."
+      "text": "Önce işin mantığını söyleyeyim. Türkçede tek bir yol var: 'başım ağrıyor'. İngilizcede ise iki yol var ve ikisi de çok kullanılır."
      },
      {
       "lang": "tr",
@@ -52438,7 +52410,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olumsuzu 'don't' ile yapıyorsun, fiil sade kalıyor:"
+       "text": "Olumsuzu 'don't' ile yapıyorsun, fiil yalın kalıyor:"
       },
       {
        "lang": "en",
@@ -52459,7 +52431,7 @@
      },
      {
       "lang": "en",
-      "text": "My head hurt."
+      "text": "My head hurts."
      },
      {
       "lang": "tr",
@@ -52498,7 +52470,7 @@
      },
      {
       "lang": "tr",
-      "text": "'Burası ağrıyor' demek; eline de bakabilirsin."
+      "text": "'Burası ağrıyor' demek; eliyle de gösterebilirsin."
      },
      {
       "lang": "en",
@@ -52552,10 +52524,10 @@
    }
   ],
   "chat": {
-   "scene": "Aile hekimindesin. İki gündür başın ve sırtın ağrıyor, kendini iyi hissetmiyorsun. Doktora şikayetini anlat.",
-   "partner": "sakin ve sorularını yavaş soran bir aile hekimi",
+   "scene": "Aile hekimindesin. İki gündür başın ve sırtın ağrıyor, kendini iyi hissetmiyorsun. Doktora şikâyetini anlat.",
+   "partner": "Sakin ve sorularını yavaş soran bir aile hekimi",
    "opening": "Hello. Please sit down. What's the problem?",
-   "openingTr": "Merhaba. Lütfen oturun. Şikayetiniz nedir?",
+   "openingTr": "Merhaba. Lütfen oturun. Şikâyetiniz nedir?",
    "goal": "Hangi ağrın olduğunu I have ile, neren ağrıdığını My … hurts ile söylemen, kendini nasıl hissettiğini anlatman ve doktorun 'ne zamandır' sorusuna cevap verip teşekkür etmen.",
    "minTurns": 7
   }
@@ -52567,7 +52539,7 @@
   "icon": "doctor",
   "title": "Doctor's appointment",
   "titleTr": "Doktor randevusu",
-  "summary": "Doktordan randevu isteme ve randevu saatini söyleme.",
+  "summary": "Doktordan randevu istemeyi ve randevu saatini söylemeyi öğretir.",
   "minutes": 9,
   "focusId": "Appointments",
   "vocab": [
@@ -52593,7 +52565,7 @@
    },
    {
     "de": "patient",
-    "tr": "sabırlı"
+    "tr": "hasta (doktorun hastası); sabırlı"
    },
    {
     "de": "be there",
@@ -52710,7 +52682,7 @@
      },
      {
       "lang": "tr",
-      "text": "derler. Yani doğal hali:"
+      "text": "derler. Yani doğal hâli:"
      },
      {
       "lang": "en",
@@ -52718,7 +52690,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi bu kısa haliyle söyle:"
+      "text": "Şimdi bu kısa hâliyle söyle:"
      },
      {
       "lang": "en",
@@ -52766,7 +52738,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dersin ana kelimesine geldik: randevu."
+      "text": "Şimdi en önemli kelimeye geldik: randevu."
      },
      {
       "lang": "en",
@@ -52782,15 +52754,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük ama önemli bir kural: İngilizcede \"bir\" demek için genelde \"a\" kullanırız, ama kelime sesli harfle başlıyorsa"
-     },
-     {
-      "lang": "en",
-      "text": "an"
-     },
-     {
-      "lang": "tr",
-      "text": "olur."
+      "text": "Küçük ama önemli bir kural: İngilizcede \"bir\" demek için genelde \"a\" kullanırız, ama kelime sesli harfle başlıyorsa an olur."
      },
      {
       "lang": "en",
@@ -53034,7 +52998,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sabırlı. Lütfen tekrar et:"
+      "text": "Türkçesi: hasta (doktorun hastası); sabırlı. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -53271,7 +53235,7 @@
   ],
   "chat": {
    "scene": "Bir doktor muayenehanesini arıyorsun ve yarın için randevu almak istiyorsun.",
-   "partner": "doktor muayenehanesinin sekreteri",
+   "partner": "Doktor muayenehanesinin sekreteri",
    "opening": "Good morning, doctor's office. How can I help you?",
    "openingTr": "Günaydın, doktor muayenehanesi. Size nasıl yardımcı olabilirim?",
    "goal": "Hasta olduğunu söyleyip randevu istedin ve yarın için bir saatte anlaştın.",
@@ -53285,7 +53249,7 @@
   "icon": "question",
   "title": "Must and have to",
   "titleTr": "Zorunluluk",
-  "summary": "Bu derste must ve have to ile zorunluluk cümleleri kurmayı, soru sormayı ve don't have to ile gerek yok demeyi öğreniyorsun.",
+  "summary": "must ve have to ile zorunluluk cümleleri kurmayı, soru sormayı ve don't have to ile gerek yok demeyi öğretir.",
   "minutes": 8,
   "focusId": "Must",
   "vocab": [
@@ -53384,7 +53348,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat et: must'tan sonra fiil çıplak geliyor. To yok, s yok. Sadece go. Tekrar et lütfen."
+      "text": "Dikkat et: must'tan sonra fiil yalın geliyor. To yok, s yok. Sadece go. Tekrar et lütfen."
      }
     ],
     "expect": {
@@ -53448,7 +53412,7 @@
      },
      {
       "lang": "tr",
-      "text": "Burada have to'dan sonra da fiil çıplak: work. Tekrar et."
+      "text": "Burada have to'dan sonra da fiil yalın: work. Tekrar et."
      }
     ],
     "expect": {
@@ -53919,7 +53883,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün kısa bir eczane dersi yapıyoruz."
+      "text": "Merhaba! Bugün kısa bir eczane ziyareti yapıyoruz."
      },
      {
       "lang": "tr",
@@ -54258,7 +54222,7 @@
      },
      {
       "lang": "en",
-      "text": "after food"
+      "text": "after meals"
      }
     ]
    },
@@ -54270,12 +54234,12 @@
      },
      {
       "lang": "en",
-      "text": "after food"
+      "text": "after meals"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "after food"
+     "target": "after meals"
     }
    },
    {
@@ -54505,7 +54469,7 @@
   "course": "en",
   "icon": "doctor",
   "title": "Calling in sick",
-  "titleTr": "İşe rapor bildirme",
+  "titleTr": "İşe hastalık bildirme",
   "summary": "Hastalandığında işe gelemeyeceğini telefonda İngilizce bildirmeyi öğretir.",
   "minutes": 9,
   "focusId": "Present-continuous",
@@ -54562,7 +54526,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün çok işine yarayacak bir ders var: hastalandığın bir sabah, işe gelemeyeceğini İngilizce nasıl bildirirsin? Kısa cümlelerle, adım adım gideceğiz. Hazır mısın?"
+      "text": "Merhaba! Bugün çok işine yarayacak bir konu var: hastalandığın bir sabah, işe gelemeyeceğini İngilizce nasıl bildirirsin? Kısa cümlelerle, adım adım gideceğiz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -54621,7 +54585,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bu ikisini bir araya getiriyoruz. Dersin en önemli cümlesi:"
+      "text": "Şimdi bu ikisini bir araya getiriyoruz. En önemli cümle:"
      },
      {
       "lang": "en",
@@ -54657,7 +54621,7 @@
      },
      {
       "lang": "tr",
-      "text": "kelimesinin kısaltması. İngilizce konuşurken neredeyse herkes kısaltmayı kullanır. Ve 'işe gitmek' için"
+      "text": "kelimesinin kısaltması. İngilizce konuşurken neredeyse herkes kısaltmayı kullanır. Ve 'işe gelmek' için"
      },
      {
       "lang": "en",
@@ -54849,7 +54813,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Telefonu açtığında neden aradığını hemen söylersin:"
+      "text": "Karşı taraf telefonu açınca neden aradığını hemen söylersin:"
      },
      {
       "lang": "en",
@@ -54857,23 +54821,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani 'Merhaba, ben Ayşe. Hasta olduğum için arıyorum.' Telefonda 'ben' derken"
-     },
-     {
-      "lang": "en",
-      "text": "I am"
-     },
-     {
-      "lang": "tr",
-      "text": "değil,"
-     },
-     {
-      "lang": "en",
-      "text": "this is"
-     },
-     {
-      "lang": "tr",
-      "text": "denir."
+      "text": "Yani 'Merhaba, ben Ayşe. Hasta olduğum için arıyorum.' Telefonda 'ben' derken I am değil, this is denir."
      }
     ]
    },
@@ -55079,7 +55027,7 @@
       },
       {
        "lang": "tr",
-       "text": "dersin, ya da fiile -ing eklersin:"
+       "text": "dersin, ya da fiile -ing eklersin; bu cümle de öyle."
       }
      ]
     }
@@ -55201,7 +55149,7 @@
   "icon": "question",
   "title": "Friendly advice",
   "titleTr": "Arkadaşça öğüt",
-  "summary": "Bu derste \"You should\" ve \"You shouldn't\" ile birine kısa, arkadaşça öğüt vermeyi öğreniyorsun.",
+  "summary": "\"You should\" ve \"You shouldn't\" ile birine kısa, arkadaşça öğüt vermeyi öğretir.",
   "minutes": 8,
   "focusId": "Should",
   "vocab": [
@@ -55276,7 +55224,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz küçük ama dersin kalbi:"
+      "text": "İlk kelimemiz küçük ama en önemlisi:"
      },
      {
       "lang": "en",
@@ -55312,7 +55260,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat: \"should\"dan sonra fiil yalın haliyle gelir. Arada \"to\" yok, fiilin sonuna hiçbir ek gelmez."
+      "text": "Dikkat: \"should\"dan sonra fiil yalın hâliyle gelir. Arada \"to\" yok, fiilin sonuna hiçbir ek gelmez."
      }
     ]
    },
@@ -55924,7 +55872,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Acil durumda uzun cümle kurulmaz, emir cümlesi kurulur. İngilizcede emir çok kolay: fiili çıplak hâliyle söylersin, başına you koymazsın. Come, gel demek. Call, ara demek. Stop, dur demek. Tek kelime yeter."
+      "text": "Acil durumda uzun cümle kurulmaz, emir cümlesi kurulur. İngilizcede emir çok kolay: fiili yalın hâliyle söylersin, başına you koymazsın. Come, gel demek. Call, ara demek. Stop, dur demek. Tek kelime yeter."
      }
     ]
    },
@@ -56955,7 +56903,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Başkası için konuşurken de hiçbir şey değişmez. Türkçe düşünüp \"o\" için fiile bir şey eklemeye çalışma:"
+      "text": "Başkası için konuşurken de hiçbir şey değişmez. He ve she için fiile s eklemeye çalışma:"
      },
      {
       "lang": "en",
@@ -57041,7 +56989,7 @@
   ],
   "chat": {
    "scene": "Arkadaşın son günlerde sürekli yorgun ve halsiz. Senden akıl danışıyor; ona sağlıklı yaşam için tavsiyeler ver, kötü alışkanlığı için de uyar.",
-   "partner": "yorgun ama tavsiyeye açık bir arkadaş",
+   "partner": "Yorgun ama tavsiyeye açık bir arkadaş",
    "opening": "I'm always tired these days. What should I do?",
    "openingTr": "Bu aralar sürekli yorgunum. Ne yapmalıyım?",
    "goal": "Arkadaşına should ile en az üç tavsiye verip shouldn't ile bir uyarıda bulunursun ve o da denemeye karar verir.",
@@ -57111,7 +57059,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün diş hekimindeyiz. Ağrını nasıl anlatacağını ve İngilizcenin \"var\" fiili olan have ile derdini nasıl söyleyeceğini öğreneceğiz. Hazır mısın?"
+      "text": "Merhaba! Bugün diş hekimindeyiz. Ağrını nasıl anlatacağını ve İngilizcede 'var' demek için kullanılan have ile derdini nasıl söyleyeceğini öğreneceğiz. Hazır mısın?"
      }
     ],
     "expect": {
@@ -57238,7 +57186,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz: have. Biz Türkçede ağrım var deriz; İngilizce aynı yerde have kullanır, yani sahibim der. I have, you have, we have, they have."
+      "text": "Şimdi en önemli kısma geliyoruz: have. Biz Türkçede ağrım var deriz; İngilizce aynı yerde have kullanır, yani sahibim der. I have, you have, we have, they have."
      }
     ]
    },
@@ -57622,7 +57570,7 @@
    }
   ],
   "chat": {
-   "scene": "Diş hekiminin muayenehanesindesin. Hekim seni koltuğa alıyor ve şikayetini soruyor.",
+   "scene": "Diş hekiminin muayenehanesindesin. Hekim seni koltuğa alıyor ve şikâyetini soruyor.",
    "partner": "Diş hekimi",
    "opening": "Come in and sit down. Which tooth hurts?",
    "openingTr": "Buyurun, oturun. Hangi dişiniz ağrıyor?",
@@ -57663,7 +57611,7 @@
    },
    {
     "de": "cell phone",
-    "tr": "mobil telefon"
+    "tr": "cep telefonu"
    },
    {
     "de": "bye",
@@ -57693,7 +57641,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimiz telefonda konuşmak."
+      "text": "Merhaba, hoş geldin. Bugünkü konumuz telefonda konuşmak."
      },
      {
       "lang": "tr",
@@ -58069,7 +58017,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: mobil telefon. Lütfen tekrar et:"
+      "text": "Türkçesi: cep telefonu. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -58321,7 +58269,7 @@
    }
   ],
   "chat": {
-   "scene": "Anna'nın evini arıyorsun. Telefonu Anna'nın arkadaşı Tom açıyor. Kendini tanıtacak, Anna'yı telefona isteyecek ve gerekirse numaranı bırakacaksın.",
+   "scene": "Anna'nın evini arıyorsun. Telefonu Anna'nın ev arkadaşı Tom açıyor. Kendini tanıtacak, Anna'yı telefona isteyecek ve gerekirse numaranı bırakacaksın.",
    "partner": "Tom, Anna'nın ev arkadaşı",
    "opening": "Hello?",
    "openingTr": "Alo?",
@@ -58667,23 +58615,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kısa bir mesaj demek. Burada da"
-     },
-     {
-      "lang": "en",
-      "text": "it's"
-     },
-     {
-      "lang": "tr",
-      "text": "var;"
-     },
-     {
-      "lang": "en",
-      "text": "it is"
-     },
-     {
-      "lang": "tr",
-      "text": "'in kısası."
+      "text": "Kısa bir mesaj demek. Burada da it's var; it is'in kısası."
      }
     ]
    },
@@ -59063,7 +58995,7 @@
   "icon": "mail",
   "title": "A short email",
   "titleTr": "Kısa e-posta",
-  "summary": "Kısa ve kibar bir e-postayı İngilizce yazmayı: başlangıç, soru cümlesi, teşekkür ve kapanış.",
+  "summary": "Kısa ve kibar bir e-postayı İngilizce yazmayı öğretir: başlangıç, soru cümlesi, teşekkür ve kapanış.",
   "minutes": 8,
   "focusId": "Written phrases",
   "vocab": [
@@ -59166,23 +59098,7 @@
      },
      {
       "lang": "tr",
-      "text": "ama kelime sesli harfle başlıyorsa"
-     },
-     {
-      "lang": "en",
-      "text": "a"
-     },
-     {
-      "lang": "tr",
-      "text": "yerine"
-     },
-     {
-      "lang": "en",
-      "text": "an"
-     },
-     {
-      "lang": "tr",
-      "text": "deriz. Bu yüzden"
+      "text": "ama kelime sesli harfle başlıyorsa a yerine an deriz. Bu yüzden"
      },
      {
       "lang": "en",
@@ -59318,7 +59234,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en işe yarar cümlesi:"
+      "text": "Şimdi en işe yarar cümle:"
      },
      {
       "lang": "en",
@@ -59619,7 +59535,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son alıştırma. Anna'ya bir sorun olduğunu söyle: 'Bir sorum var.'"
+      "text": "Son alıştırma. Anna'ya soracağın bir şey olduğunu söyle: 'Bir sorum var.'"
      }
     ],
     "expect": {
@@ -59702,8 +59618,8 @@
    "scene": "Sınıf arkadaşın Anna, ona yazdığın kısa e-postayı okumuş ve sana dönüyor.",
    "partner": "Anna, sınıf arkadaşın",
    "opening": "Hi! I read your email. What is your question?",
-   "openingTr": "Merhaba! E-postanı okudum. Sorun ne?",
-   "goal": "Anna'ya bir sorun olduğunu söyleyip sorunu kısaca anlatır ve sonunda teşekkür edersen konuşma başarılı sayılır.",
+   "openingTr": "Merhaba! E-postanı okudum. Ne sormak istiyorsun?",
+   "goal": "Anna'ya soracağın bir şey olduğunu söyler, soruyu kısaca sorar ve sonunda teşekkür edersen konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -59841,7 +59757,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu derste en çok bu fiili çalışacağız."
+      "text": "Bugün en çok bu fiili çalışacağız."
      }
     ]
    },
@@ -60172,7 +60088,7 @@
       },
       {
        "lang": "en",
-       "text": "He use..."
+       "text": "He … this app."
       },
       {
        "lang": "en",
@@ -60508,7 +60424,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşte dersin ana kalıbı. Gişedeki görevliye şöyle dersin:"
+      "text": "İşte en önemli kalıp. Gişedeki görevliye şöyle dersin:"
      },
      {
       "lang": "en",
@@ -60540,7 +60456,7 @@
      },
      {
       "lang": "tr",
-      "text": "aslında I would like'ın kısaltılmışı. İngilizce'de bu kısaltmalar çok doğaldır. I want de diyebilirsin ama kulağa biraz emir gibi gelir;"
+      "text": "aslında I would like'ın kısaltılmışı. İngilizcede bu kısaltmalar çok doğaldır. I want de diyebilirsin ama kulağa biraz emir gibi gelir;"
      },
      {
       "lang": "en",
@@ -60589,7 +60505,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi fiyat soralım. İngilizce'de 'ne kadar' demek için"
+      "text": "Şimdi fiyat soralım. İngilizcede 'ne kadar' demek için"
      },
      {
       "lang": "en",
@@ -60878,7 +60794,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I have two stamps please."
+      "text": "Can I have two stamps, please?"
      },
      {
       "lang": "tr",
@@ -60947,7 +60863,7 @@
    },
    {
     "de": "You were tired.",
-    "tr": "karşındakinin veya birden fazla kişinin geçmişteki halini söylerken kullanılır"
+    "tr": "karşındakinin veya birden fazla kişinin geçmişteki hâlini söylerken kullanılır"
    },
    {
     "de": "Were you at home yesterday?",
@@ -61042,7 +60958,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de duygu ve hal anlatalım. Yorgun demek"
+      "text": "Bir de duygu ve hâl anlatalım. Yorgun demek"
      },
      {
       "lang": "en",
@@ -61425,7 +61341,7 @@
    }
   ],
   "chat": {
-   "scene": "Pazartesi sabahı iş yerinde bir arkadaşın hafta sonunu soruyor.",
+   "scene": "Pazartesi sabahı iş yerinde bir iş arkadaşın geçen haftanı soruyor.",
    "partner": "İş arkadaşın Emma",
    "opening": "Hi! Where were you last week? I didn't see you.",
    "openingTr": "Selam! Geçen hafta neredeydin? Seni görmedim.",
@@ -61496,7 +61412,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba, hoş geldin. Bugünkü dersimizde İngilizcede geçmiş zamanı öğreneceğiz: dün ne yaptığını anlatmayı."
+      "text": "Merhaba, hoş geldin. Bugün İngilizcede geçmiş zamanı öğreneceğiz: dün ne yaptığını anlatmayı."
      },
      {
       "lang": "tr",
@@ -61916,7 +61832,7 @@
      },
      {
       "lang": "en",
-      "text": "Yesterday I watch a movie."
+      "text": "Yesterday I watched a movie."
      }
     ],
     "expect": {
@@ -62712,7 +62628,7 @@
      },
      {
       "lang": "tr",
-      "text": "'gitmek' demek. Geçmiş hali ise -ed almaz, tamamen değişir:"
+      "text": "'gitmek' demek. Geçmiş hâli ise -ed almaz, tamamen değişir:"
      },
      {
       "lang": "en",
@@ -62768,7 +62684,7 @@
      },
      {
       "lang": "tr",
-      "text": "'görmek' demek. Geçmiş hali:"
+      "text": "'görmek' demek. Geçmiş hâli:"
      },
      {
       "lang": "en",
@@ -62812,7 +62728,7 @@
      },
      {
       "lang": "tr",
-      "text": "Geçmiş hali:"
+      "text": "Geçmiş hâli:"
      },
      {
       "lang": "en",
@@ -62844,7 +62760,7 @@
      },
      {
       "lang": "tr",
-      "text": "'yemek yemek'. Geçmiş hali:"
+      "text": "'yemek yemek'. Geçmiş hâli:"
      },
      {
       "lang": "en",
@@ -62996,7 +62912,7 @@
      },
      {
       "lang": "tr",
-      "text": "'buluşmak' demek. Geçmiş hali:"
+      "text": "'buluşmak' demek. Geçmiş hâli:"
      },
      {
       "lang": "en",
@@ -63033,7 +62949,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'gitmek' fiilinin geçmiş hali: went. 'sinema' için the movies."
+       "text": "'gitmek' fiilinin geçmiş hâli: went. 'sinema' için the movies."
       },
       {
        "lang": "en",
@@ -63050,7 +62966,7 @@
      },
      {
       "lang": "tr",
-      "text": "Çok önemli bir kural: 'did' varsa fiil geçmiş halinde kalmaz, yalın haline döner. Yani 'Did you went?' değil,"
+      "text": "Çok önemli bir kural: 'did' varsa fiil geçmiş hâlinde kalmaz, yalın hâline döner. Yani 'Did you went?' değil,"
      },
      {
       "lang": "en",
@@ -63290,7 +63206,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+      "text": "Hazır mısın?"
      }
     ],
     "expect": {
@@ -63712,7 +63628,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin başlığı olan kalıp:"
+      "text": "Şimdi konunun başlığı olan kalıp:"
      },
      {
       "lang": "en",
@@ -63837,7 +63753,7 @@
   ],
   "chat": {
    "scene": "Arkadaşın Emma'nın evinde güzel bir akşam geçirdin, şimdi ayrılma vakti. Kapıda vedalaşıyorsunuz.",
-   "partner": "Emma, İngiliz arkadaşın",
+   "partner": "Emma, Amerikalı arkadaşın",
    "opening": "It was so nice to see you tonight! Let's keep in touch, okay?",
    "openingTr": "Bu akşam seni görmek çok güzeldi! İrtibatta kalalım mı?",
    "goal": "Vedalaşmayı tamamla: yakında görüşmek istediğini söyle, onu arayacağını ya da tekrar buluşmayı teklif et ve 'take care' ile ayrıl.",

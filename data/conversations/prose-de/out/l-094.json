@@ -1,6 +1,6 @@
 [
  {
-  "tr": "Olsaydı",
+  "tr": "Yapabilseydim",
   "kind": "titleTr",
   "de": "Wenn ich könnte"
  },
@@ -312,17 +312,17 @@
  {
   "tr": "Uzak hayal için",
   "kind": "hint.tr",
-  "de": "Für einen fernen Traum"
+  "de": "Für einen fernen Traum –"
  },
  {
   "tr": "Yakın niyet için",
   "kind": "hint.tr",
-  "de": "Für eine nahe Absicht"
+  "de": "Für eine nahe Absicht –"
  },
  {
   "tr": "Önceden süregelen iş için",
   "kind": "hint.tr",
-  "de": "Für eine vorher schon andauernde Handlung"
+  "de": "Für eine vorher schon andauernde Handlung –"
  },
  {
   "tr": "Ayarlanmış adım şimdiki zamanla söylenir:",
@@ -465,9 +465,9 @@
   "de": "und nach dem Fernen suchen heißt"
  },
  {
-  "tr": "Yüksek sesle konuşmaya",
+  "tr": "Sesini yükseltip bağırmaya",
   "kind": "say.tr",
-  "de": "Mit lauter Stimme sprechen heißt"
+  "de": "Laut rufen oder schreien heißt"
  },
  {
   "tr": "Olmasını istediğin şeye",
@@ -525,9 +525,9 @@
   "de": "Der Ort, an dem ich lächelte, war still."
  },
  {
-  "tr": "araya mesafe girmemişse ise",
+  "tr": "aralarında mesafe olmayanlar için ise",
   "kind": "say.tr",
-  "de": "und wenn kein Abstand dazwischen ist, heißt das"
+  "de": "und für Menschen ohne Abstand zueinander sagt man"
  },
  {
   "tr": "Gururlu ve sevinç doluydum.",
@@ -655,9 +655,9 @@
   "de": "Ein tröstendes Wort hilft mehr als ein Rat."
  },
  {
-  "tr": "Hiç böyle bir rahatlama hissetmemiştim.",
+  "tr": "Hiç böyle bir rahatlama hissetmedim.",
   "kind": "say.tr",
-  "de": "So eine Erleichterung hatte ich noch nie gespürt."
+  "de": "So eine Erleichterung habe ich noch nie gespürt."
  },
  {
   "tr": "Son kalıbımız yeri bağlıyor. Tekrar et:",
@@ -710,9 +710,9 @@
   "de": "Jetzt bist du dran: Das Lied, das mich zum Weinen brachte, war neu."
  },
  {
-  "tr": "Şimdi dersin kuralı. Fark etmeden ÖNCE olan iş",
+  "tr": "Şimdi bugünün kuralı. Fark etmeden ÖNCE olan iş",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was VOR dem Merken geschah, wird mit"
+  "de": "Jetzt die Regel von heute. Was VOR dem Merken geschah, wird mit"
  },
  {
   "tr": "Şimdi sen kur: Mektubu yıllarca saklamışlardı.",
@@ -750,7 +750,7 @@
   "de": "Jetzt du: Der Mann, der mir half, war ein Nachbar."
  },
  {
-  "tr": "Şimdi sen kur: Gürültü çalışma başlayınca başladı.",
+  "tr": "Şimdi sen kur: Gürültü çalışmalar başlayınca başladı.",
   "kind": "say.tr",
   "de": "Jetzt du: Der Lärm fing an, als die Arbeiten begannen."
  },
@@ -760,14 +760,14 @@
   "de": "Jetzt bist du dran: Seit Freitag ist meine Stimmung besser."
  },
  {
-  "tr": "Bir tane daha: Hiç böyle bir sevinç hissetmemiştim.",
+  "tr": "Bir tane daha: Hiç böyle bir sevinç hissetmedim.",
   "kind": "say.tr",
-  "de": "Noch eins: So eine Freude hatte ich noch nie gespürt."
+  "de": "Noch eins: So eine Freude habe ich noch nie gespürt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Uzak ve belirsiz bir hayal için",
+  "tr": "Şimdi bugünün kuralı. Uzak ve belirsiz bir hayal için",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Für einen fernen und unbestimmten Traum steht"
+  "de": "Jetzt die Regel von heute. Für einen fernen und unbestimmten Traum steht"
  },
  {
   "tr": "Gözyaşı dökmek demek. İlk kalıbımız da bu. Tekrar et:",
@@ -797,7 +797,7 @@
  {
   "tr": "yeri bağlar. Bir anıyı anlatırken üçü de peş peşe gelir.",
   "kind": "say.tr",
-  "de": "den Ort. Wenn man eine Erinnerung erzählt, kommen alle drei hintereinander."
+  "de": "für den Ort. Wenn man eine Erinnerung erzählt, kommen alle drei hintereinander."
  },
  {
   "tr": "Geçmişten akılda kalan demek. İlk kalıbımız da bu. Tekrar et:",
@@ -815,14 +815,14 @@
   "de": "Unsere zweite Wendung erzählt, was geschah, bevor man es merkte. Wiederhole:"
  },
  {
-  "tr": "Uykuda ya da uyanıkken kurulan demek. İlk kalıbımız da bu. Tekrar et:",
+  "tr": "Uykuda görülen ya da uyanıkken kurulan hayal demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt, was man im Schlaf oder wach vor sich sieht. Das ist auch unsere erste Wendung. Wiederhole:"
+  "de": "Das heißt, was man im Schlaf sieht oder wach träumt. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "tr": "Şimdi bugünün kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Dauert das Gefühl NOCH AN, steht Present Perfect, und mit"
+  "de": "Jetzt die Regel von heute. Dauert das Gefühl NOCH AN, steht Present Perfect, und mit"
  },
  {
   "tr": "İçinde bulunulan genel duygu hâli demek. İlk kalıbımız da bu. Tekrar et:",

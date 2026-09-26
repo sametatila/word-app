@@ -297,7 +297,7 @@
  {
   "tr": "yayın damgası",
   "kind": "vocab.tr",
-  "de": "Impressum"
+  "de": "Verlagsmarke"
  },
  {
   "tr": "yöntem düzeni",
@@ -315,7 +315,12 @@
   "de": "Begründung"
  },
  {
-  "tr": "kaynak aktarımı",
+  "tr": "gerekçe",
+  "kind": "vocab.tr",
+  "de": "Begründung"
+ },
+ {
+  "tr": "finansman",
   "kind": "vocab.tr",
   "de": "Finanzierung"
  },
@@ -367,32 +372,32 @@
  {
   "tr": "Ayrımı isimle kurmak için",
   "kind": "hint.tr",
-  "de": "Um die Unterscheidung mit einem Nomen zu bauen"
+  "de": "Um die Unterscheidung mit einem Nomen zu bauen –"
  },
  {
   "tr": "Bilgiyi kaynağa yaslamak için",
   "kind": "hint.tr",
-  "de": "Um die Information auf eine Quelle zu stützen"
+  "de": "Um die Information auf eine Quelle zu stützen –"
  },
  {
   "tr": "Karşıtlığı isimle kurmak için",
   "kind": "hint.tr",
-  "de": "Um den Gegensatz mit einem Nomen zu bauen"
+  "de": "Um den Gegensatz mit einem Nomen zu bauen –"
  },
  {
   "tr": "Tek yeri devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um den einzigen Ort mit Inversion zu sagen"
+  "de": "Um den einzigen Ort mit Inversion zu sagen –"
  },
  {
   "tr": "Bulguyu gözlem olarak sunmak için",
   "kind": "hint.tr",
-  "de": "Um den Befund als Beobachtung zu geben"
+  "de": "Um den Befund als Beobachtung zu geben –"
  },
  {
   "tr": "Hiç olmayanı devrikle söylemek için",
   "kind": "hint.tr",
-  "de": "Um mit Inversion zu sagen, was nie geschah"
+  "de": "Um mit Inversion zu sagen, was nie geschah –"
  },
  {
   "tr": "hiç",
@@ -445,9 +450,9 @@
   "de": "Zu prüfen ist unsere Pflicht."
  },
  {
-  "tr": "Paraya ortak olan kişiye",
+  "tr": "Bir işe parasını yatıran kişiye",
   "kind": "say.tr",
-  "de": "Wer sein Geld einbringt, heißt"
+  "de": "Wer sein Geld in eine Sache steckt, heißt"
  },
  {
   "tr": "Anmak için dikilen yapıya",
@@ -655,7 +660,7 @@
   "de": "Der Weg, dem eine Arbeit folgt, heißt"
  },
  {
-  "tr": "Her hissedar kaynak aktarımını sordu.",
+  "tr": "Her hissedar finansmanı sordu.",
   "kind": "say.tr",
   "de": "Jeder Aktionär hat nach der Finanzierung gefragt."
  },
@@ -665,9 +670,9 @@
   "de": "Der Gegensatz zwischen den Fassungen ist scharf."
  },
  {
-  "tr": "Derlem eski bir yayın damgası taşıyor.",
+  "tr": "Derleme eski bir yayın damgası taşıyor.",
   "kind": "say.tr",
-  "de": "Die Sammlung trägt ein altes Impressum."
+  "de": "Die Sammlung trägt eine alte Verlagsmarke."
  },
  {
   "tr": "İlgililik anlamlılıkla aynı şey değil.",
@@ -675,7 +680,7 @@
   "de": "Bezug ist nicht dasselbe wie Aussagekraft."
  },
  {
-  "tr": "Emsal onlara bir gerekçelendirme verdi.",
+  "tr": "Emsal onlara bir gerekçe verdi.",
   "kind": "say.tr",
   "de": "Der Präzedenzfall hat ihnen eine Begründung gegeben."
  },
@@ -795,7 +800,7 @@
   "de": "Wäre das Urheberrecht klar gewesen, wäre die Akte heute geschlossen."
  },
  {
-  "tr": "Bir açıdan bakılırsa tahmin tartışmalı biçimde sağlam.",
+  "tr": "Bir açıdan bakılırsa tahmin belki de sağlam.",
   "kind": "say.tr",
   "de": "Aus einem Blickwinkel ist die Hochrechnung wohl solide."
  },
@@ -845,14 +850,14 @@
   "de": "Jetzt bist du dran: Der Vergleich der beiden Akten hat einen Tag gedauert."
  },
  {
-  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek yazıyı kişiden çıkarır:",
+  "tr": "Şimdi bugünün kuralı. Fiili isme çevirmek yazıyı kişiden çıkarır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Text:"
+  "de": "Jetzt die Regel von heute. Das Verb zum Nomen zu machen nimmt die Person aus dem Text:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Doğruluk kontrolünde üç yumuşatıcı iş görür:",
+  "tr": "Şimdi bugünün kuralı. Doğruluk kontrolünde üç yumuşatıcı iş görür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Prüfen leisten drei Abschwächungen die Arbeit:"
+  "de": "Jetzt die Regel von heute. Beim Prüfen leisten drei Abschwächungen die Arbeit:"
  },
  {
   "tr": "Düzenli tutulan veri yığını demek. İlk kalıbımız da bu. Tekrar et:",
@@ -865,7 +870,7 @@
   "de": "heißt eine begrenzte Sicht. Alle drei nennen den Befund, aber sie fällen kein Urteil."
  },
  {
-  "tr": "Bir tane daha: Bir açıdan bakılırsa iddia tartışmalı biçimde doğru.",
+  "tr": "Bir tane daha: Bir açıdan bakılırsa iddia belki de doğru.",
   "kind": "say.tr",
   "de": "Noch eins: Aus einem Blickwinkel ist die Behauptung wohl richtig."
  },

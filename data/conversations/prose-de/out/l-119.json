@@ -2,52 +2,52 @@
  {
   "tr": "her kirlenmeyi «böyle gelmiş böyle gider» diye anlatan biri",
   "kind": "partner",
-  "de": "jemand, der jede Verschmutzung mit «das war schon immer so» erklärt"
+  "de": "jemand, der jede Verschmutzung mit „das war schon immer so“ erklärt"
  },
  {
   "tr": "planı olduğu gibi okuyan, «tarihi yazıyor ya» diyen bir komşu",
   "kind": "partner",
-  "de": "ein Nachbar, der den Plan wörtlich liest und sagt «das Datum steht doch da»"
+  "de": "ein Nachbar, der den Plan wörtlich liest und sagt „das Datum steht doch da“"
  },
  {
   "tr": "belirsizliği güvensizlik sayan, «demek bilmiyorlar» diyen biri",
   "kind": "partner",
-  "de": "jemand, der Unsicherheit für Unzuverlässigkeit hält und sagt «sie wissen es also nicht»"
+  "de": "jemand, der Unsicherheit für Unzuverlässigkeit hält und sagt „sie wissen es also nicht“"
  },
  {
   "tr": "büyümeyi tek çözüm sayan, «büyümezsek kim ödeyecek» diyen biri",
   "kind": "partner",
-  "de": "jemand, der Wachstum für die einzige Lösung hält und sagt «wer zahlt, wenn wir nicht wachsen»"
+  "de": "jemand, der Wachstum für die einzige Lösung hält und sagt „wer zahlt, wenn wir nicht wachsen“"
  },
  {
   "tr": "her iklim sözünü aynı sayan, «hepsi çevre işte» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der jedes Klimaversprechen gleichsetzt und sagt «das ist doch alles Umwelt»"
+  "de": "ein Freund, der jedes Klimaversprechen gleichsetzt und sagt „das ist doch alles Umwelt“"
  },
  {
   "tr": "dönüşümü tümden iyi bulan, «her şey daha güzel oldu» diyen bir komşu",
   "kind": "partner",
-  "de": "eine Nachbarin, die den Umbau rundum gut findet und sagt «alles ist schöner geworden»"
+  "de": "eine Nachbarin, die den Umbau rundum gut findet und sagt „alles ist schöner geworden“"
  },
  {
   "tr": "geri dönüşümü tam çözüm sayan, «zaten geri dönüştürüyoruz» diyen biri",
   "kind": "partner",
-  "de": "jemand, der Recycling für die ganze Lösung hält und sagt «wir recyceln doch schon»"
+  "de": "jemand, der Recycling für die ganze Lösung hält und sagt „wir recyceln doch schon“"
  },
  {
   "tr": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
   "kind": "partner",
-  "de": "ein Beamter, der jede Umweltthese für gefühlig hält und sagt «das ist deine Meinung»"
+  "de": "ein Beamter, der jede Umweltthese für gefühlig hält und sagt „das ist deine Meinung“"
  },
  {
   "tr": "her ölçütü kendi sokağına uygulayan, «bizim sokakta da olur mu» diyen bir komşu",
   "kind": "partner",
-  "de": "eine Nachbarin, die jeden Maßstab auf ihre Straße überträgt und fragt «geht das bei uns auch»"
+  "de": "eine Nachbarin, die jeden Maßstab auf ihre Straße überträgt und fragt „geht das bei uns auch“"
  },
  {
   "tr": "her araştırmayı şüpheyle karşılayan, «kim ödedi bu araştırmayı» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der jeder Studie misstraut und fragt «wer hat diese Studie bezahlt»"
+  "de": "ein Freund, der jeder Studie misstraut und fragt „wer hat diese Studie bezahlt“"
  },
  {
   "tr": "Hep böyleydi, değil mi?",
@@ -157,7 +157,7 @@
  {
   "tr": "Bir ölçümü aktarırken hükmü fiile yüklemeyi öğretir; kimin parasıyla ölçüldüğü de aktarmanın parçasıdır.",
   "kind": "summary",
-  "de": "Lehrt, beim Wiedergeben einer Messung das Urteil ins Verb zu legen; wessen Geld gemessen hat, gehört zur Wiedergabe."
+  "de": "Lehrt, beim Wiedergeben einer Messung das Urteil ins Verb zu legen; mit wessen Geld gemessen wurde, gehört zur Wiedergabe."
  },
  {
   "tr": "Çevre yükümlülüğünü kalıplaşmış biçimle istemeyi öğretir; ilke kişiden ayrıldığı anda bir yükümlülük olur.",
@@ -192,7 +192,7 @@
  {
   "tr": "Uzun bir şehircilik raporunu bağlayan adresleri öğretir; ölçek değişince aynı ölçüt başka sonuç verdiği için bağ zorunlu.",
   "kind": "summary",
-  "de": "Lehrt die Adressen, die einen langen Städtebaubericht zusammenhalten; weil derselbe Maßstab bei anderem Maßstabsniveau anders wirkt, ist die Bindung zwingend."
+  "de": "Lehrt die Adressen, die einen langen Städtebaubericht zusammenhalten; weil dasselbe Kriterium bei einem anderen Maßstab anders wirkt, ist die Bindung zwingend."
  },
  {
   "tr": "Büyüme tartışmasında ödün vererek karşı çıkmayı öğretir; büyümenin sağladığını teslim etmeyen eleştiri ahlak dersi gibi duyuluyor.",
@@ -240,7 +240,7 @@
   "de": "Du diskutierst die Verpackungspolitik einer Firma und willst nicht, dass Recycling die Vermeidung ersetzt. Benenne die Vermeidung, den Kreislauf und die Bilanz mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Mahallendeki dönüşümü belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
+  "tr": "Mahallendeki dönüşümü, belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
   "kind": "scene",
   "de": "Du beschreibst den Umbau in deinem Viertel, indem du den Unterschied zwischen der Sprache der Stadt und dem Gesehenen zeigst. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Stadt selbst."
  },
@@ -292,7 +292,7 @@
  {
   "tr": "Doğru. «might» sonucu uzakta tutuyor; cümle bir koşula bağlı kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält das Ergebnis auf Abstand; der Satz bleibt an eine Bedingung gebunden."
+  "de": "Richtig. „might“ hält das Ergebnis auf Abstand; der Satz bleibt an eine Bedingung gebunden."
  },
  {
   "tr": "Doğru. Yer öbeği başa alınmış; kayıp sona düşünce daha ağır duyuluyor.",
@@ -322,7 +322,7 @@
  {
   "tr": "Doğru. Ölçek öbeği başa alınmış; ölçütün hangi düzeyde geçerli olduğu en başta duruyor.",
   "kind": "why.tr",
-  "de": "Richtig. Die Maßstabsangabe steht vorn; auf welcher Ebene der Maßstab gilt, steht ganz am Anfang."
+  "de": "Richtig. Die Maßstabsangabe steht vorn; auf welcher Ebene das Kriterium gilt, steht ganz am Anfang."
  },
  {
   "tr": "Doğru. Biri bir tasarım kararını, öteki bir maliyeti adlandırıyor; edilgen fiiller de o yüzden ayrı.",
@@ -767,22 +767,22 @@
  {
   "tr": "İki işlemi ayırmak için",
   "kind": "hint.tr",
-  "de": "Um zwei Eingriffe zu trennen"
+  "de": "Um zwei Eingriffe zu trennen –"
  },
  {
   "tr": "Ölçek öbeğini başa almak için",
   "kind": "hint.tr",
-  "de": "Um die Maßstabsangabe voranzustellen"
+  "de": "Um die Maßstabsangabe voranzustellen –"
  },
  {
   "tr": "Olmasaydıyı çevre savında kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht in der Umweltthese zu bauen"
+  "de": "Um das Wäre-nicht in der Umweltthese zu bauen –"
  },
  {
   "tr": "İki eşdizimi tek cümlede bağlamak için",
   "kind": "hint.tr",
-  "de": "Um zwei Wortverbindungen in einem Satz zu binden"
+  "de": "Um zwei Wortverbindungen in einem Satz zu binden –"
  },
  {
   "tr": "Hedefi etiketten ayırmak için iki yarı kurulur:",
@@ -867,7 +867,7 @@
  {
   "tr": "Modeli kip koruyor.",
   "kind": "say.tr",
-  "de": "Das Modell schützt das Modalverb."
+  "de": "Das Modalverb schützt das Modell."
  },
  {
   "tr": "az salım üretene ise",
@@ -877,7 +877,7 @@
  {
   "tr": "Güveni fiil taşıyor.",
   "kind": "say.tr",
-  "de": "Das Vertrauen trägt das Verb."
+  "de": "Es ist das Verb, das das Vertrauen trägt."
  },
  {
   "tr": "Özetleyelim: aktarma",
@@ -972,7 +972,7 @@
  {
   "tr": "Basamağı eşdizim gösteriyor.",
   "kind": "say.tr",
-  "de": "Die Stufe zeigt die Wortverbindung."
+  "de": "Die Wortverbindung zeigt die Stufe."
  },
  {
   "tr": "çoğu senaryoda çıkan sonucu,",
@@ -1037,7 +1037,7 @@
  {
   "tr": "Söz hakkını ödün satın alıyor.",
   "kind": "say.tr",
-  "de": "Das Rederecht kauft das Zugeständnis."
+  "de": "Das Zugeständnis erkauft das Rederecht."
  },
  {
   "tr": "Atıktan elde edilen ham maddeye",
@@ -1232,7 +1232,7 @@
  {
   "tr": "büyüklük bakımından anlamına gelene ise",
   "kind": "say.tr",
-  "de": "und was der Größe nach bedeutet, heißt"
+  "de": "und die Wendung mit der Bedeutung „der Größe nach“ heißt"
  },
  {
   "tr": "doğanın sağladığı varlık birikimine ise",
@@ -1312,7 +1312,7 @@
  {
   "tr": "Kent tasarımı bakımından anlamına gelen öbeğe",
   "kind": "say.tr",
-  "de": "Die Wendung, die nach dem Stadtentwurf bedeutet, heißt"
+  "de": "Die Wendung mit der Bedeutung „im Hinblick auf den Städtebau“ heißt"
  },
  {
   "tr": "Son kalıbımız iki işlemi ayırıyor. Tekrar et:",
@@ -1337,7 +1337,7 @@
  {
   "tr": "Kopma, gerçek olsa da, yeterliliği sağlamıyor.",
   "kind": "say.tr",
-  "de": "Die Entkopplung, wenn auch wirklich, liefert keine Suffizienz."
+  "de": "Die Entkopplung, wenn auch real, liefert keine Suffizienz."
  },
  {
   "tr": "Bir bulguyu seyreltmek ona oynak demek değildir.",
@@ -1350,9 +1350,9 @@
   "de": "Der Rückbau begann, die Umnutzung nicht."
  },
  {
-  "tr": "Şimdi dersin kuralı. İklimde ad KAPSAM demektir:",
+  "tr": "Şimdi bugünün kuralı. İklimde ad KAPSAM demektir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Klima heißt der Name UMFANG:"
+  "de": "Jetzt die Regel von heute. Beim Klima heißt der Name UMFANG:"
  },
  {
   "tr": "Hangi alanda ne yapılabileceğini gösteren belgeye",
@@ -1485,14 +1485,14 @@
   "de": "Jetzt erzählst du einen Fall von Verschmutzung mit drei Verantwortlichen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:",
+  "tr": "Şimdi bugünün kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch des Abfalls sagt die Wortverbindung die REIHENFOLGE:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch des Abfalls sagt die Wortverbindung die REIHENFOLGE:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Bilim aktarımında fiil güveni dağıtır:",
+  "tr": "Şimdi bugünün kuralı. Bilim aktarımında fiil güveni dağıtır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Wissenschaftswiedergabe verteilt das Verb das Vertrauen:"
+  "de": "Jetzt die Regel von heute. In der Wissenschaftswiedergabe verteilt das Verb das Vertrauen:"
  },
  {
   "tr": "Atığın hiç oluşmaması demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1520,9 +1520,9 @@
   "de": "Ressourcenschutz ist mehr als eine emissionsarme Flotte."
  },
  {
-  "tr": "Şimdi sen kur: Rapor, gerçek olsa da, yeterliliği sağlamıyor.",
+  "tr": "Şimdi sen kur: İlerleme, gerçek olsa da, yeterliliği sağlamıyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Der Bericht, wenn auch wirklich, liefert keine Suffizienz."
+  "de": "Bilde du jetzt: Der Fortschritt, wenn auch real, liefert keine Suffizienz."
  },
  {
   "tr": "Altyapı geliştirme erişilebilirlik incelemesinden sonra geldi.",
@@ -1565,9 +1565,9 @@
   "de": "Sie gewinnen das Metall zurück und verkaufen es als Sekundärrohstoff."
  },
  {
-  "tr": "Şimdi dersin kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:",
+  "tr": "Şimdi bugünün kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Modellsprache ist das Modalverb ein Maß der Redlichkeit:"
+  "de": "Jetzt die Regel von heute. In der Modellsprache ist das Modalverb ein Maß der Redlichkeit:"
  },
  {
   "tr": "Ödün karşındakinin haklı olduğu yeri bırakır; kalanı senin olur.",
@@ -1575,14 +1575,14 @@
   "de": "Das Zugeständnis lässt dem Gegenüber den Punkt, in dem es recht hat; der Rest gehört dir."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:",
+  "tr": "Şimdi bugünün kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Stadterneuerung arbeitet der Spott mit Auslassung:"
+  "de": "Jetzt die Regel von heute. In der Stadterneuerung arbeitet der Spott mit Auslassung:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:",
+  "tr": "Şimdi bugünün kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Städtebaubericht trägt die Adresse einen MASSSTAB:"
+  "de": "Jetzt die Regel von heute. Im Städtebaubericht trägt die Adresse einen MASSSTAB:"
  },
  {
   "tr": "Şimdi sen kur: Evler bakımsız kalıyor, okullar harabeye dönüyor.",
@@ -1632,12 +1632,12 @@
  {
   "tr": "Şehircilikte ölçek belirtilmezse her ölçüt yanlış yerde kullanılır.",
   "kind": "say.tr",
-  "de": "Wird im Städtebau der Maßstab nicht genannt, wird jeder Maßstab am falschen Ort benutzt."
+  "de": "Wird im Städtebau der Maßstab nicht genannt, wird jedes Kriterium am falschen Ort benutzt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:",
+  "tr": "Şimdi bugünün kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Wachstumsdebatte ist das Zugeständnis eine EINTRITTSKARTE:"
+  "de": "Jetzt die Regel von heute. In der Wachstumsdebatte ist das Zugeständnis eine EINTRITTSKARTE:"
  },
  {
   "tr": "Şimdi sıra sende: İhtiyat ilkesi, güvenlik incelemesine öncelik verilmesini gerektirir.",
@@ -1670,9 +1670,9 @@
   "de": "Wenn auch der Endlichkeit bewusst, braucht die Kreislaufwirtschaft dennoch Wachstum."
  },
  {
-  "tr": "Şimdi sen kur: Toprak çürüyebilirse yenilenme kapasitesi dayanabilir.",
+  "tr": "Şimdi sen kur: Yapraklar çürüyebilirse yenilenme kapasitesi dayanabilir.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Kann der Boden verrotten, hält die Regenerationsfähigkeit womöglich."
+  "de": "Bilde du jetzt: Können die Blätter verrotten, hält die Regenerationsfähigkeit womöglich."
  },
  {
   "tr": "Bir tane daha: Permafrostu sayıyoruz, türlerin yok oluşunu saymıyoruz.",
@@ -1700,9 +1700,9 @@
   "de": "Hallo! Heute lernen wir, beim Wiedergeben einer Messung das Urteil ins Verb zu legen."
  },
  {
-  "tr": "Şimdi dersin kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:",
+  "tr": "Şimdi bugünün kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Bauentscheidung ist die Auslassung eine Form des NICHT-VERSPRECHENS:"
+  "de": "Jetzt die Regel von heute. In der Bauentscheidung ist die Auslassung eine Form des NICHT-VERSPRECHENS:"
  },
  {
   "tr": "Bir tane daha: Her hizmetin kamulaştırmadan önce sayılmasını istiyorlar.",
@@ -1725,9 +1725,9 @@
   "de": "Hallo! Heute lernen wir, in der Umwelterzählung zu wählen, wen wir voranstellen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:",
+  "tr": "Şimdi bugünün kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Umweltrecht stiftet das ungebeugte Verb eine Pflicht:"
+  "de": "Jetzt die Regel von heute. Im Umweltrecht stiftet das ungebeugte Verb eine Pflicht:"
  },
  {
   "tr": "Şimdi sıra sende: Sanayinin yaptığı şey kirletici madde yükünü gizlemek.",
@@ -1740,9 +1740,9 @@
   "de": "Ob es ressourcenschonend ist, sagt die Ökobilanz."
  },
  {
-  "tr": "Şimdi dersin kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:",
+  "tr": "Şimdi bugünün kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Umweltsatz bestimmt das Vorangestellte die VERANTWORTLICHEN:"
+  "de": "Jetzt die Regel von heute. Im Umweltsatz bestimmt das Vorangestellte die VERANTWORTLICHEN:"
  },
  {
   "tr": "Şimdi sen kur: Büyümenin arkasında kaybedilmiş bir karbon yutağı duruyor.",
@@ -1855,7 +1855,7 @@
   "de": "Maßstäblich dient ein kleinteiliges Viertel der Erreichbarkeit besser."
  },
  {
-  "tr": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi devrilme noktasının ötesine itebilir.",
+  "tr": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi pekâlâ devrilme noktasının ötesine itebilir.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Eine Rückkopplung kann die Region durchaus über einen Kipppunkt schieben."
  },
@@ -1927,7 +1927,7 @@
  {
   "tr": "Kimin parasıyla ölçüldüğü de aktarmanın parçası; bunu söylemek suçlama değil, kaynak bilgisidir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Wessen Geld gemessen hat, gehört zur Wiedergabe; das zu sagen ist kein Vorwurf, sondern Quellenkunde. Bist du bereit?"
+  "de": "Mit wessen Geld gemessen wurde, gehört zur Wiedergabe; das zu sagen ist kein Vorwurf, sondern Quellenkunde. Bist du bereit?"
  },
  {
   "tr": "dediğinde karşındaki seni rakamları gören biri sayar. Büyümeyi tümden reddeden cümle, haklı olsa bile masadan düşer.",
@@ -1942,12 +1942,12 @@
  {
   "tr": "İlke kişiden ayrıldığı anda bir yükümlülük oluyor; «biz istiyoruz» dediğin anda yeniden bir görüş oluyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Sobald das Prinzip von der Person getrennt ist, wird es zur Pflicht; sagst du «wir wollen», wird es wieder eine Meinung. Bist du bereit?"
+  "de": "Sobald das Prinzip von der Person getrennt ist, wird es zur Pflicht; sagst du „wir wollen“, wird es wieder eine Meinung. Bist du bereit?"
  },
  {
   "tr": "Ölçek değişince aynı ölçüt başka sonuç veriyor; adres yoksa okur bir mahalle ölçüsünü bütün şehre uygular. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Ändert sich der Maßstab, wirkt derselbe Maßstab anders; ohne Adresse überträgt die Leserin das Maß eines Viertels auf die ganze Stadt. Bist du bereit?"
+  "de": "Ändert sich der Maßstab, wirkt dasselbe Kriterium anders; ohne Adresse überträgt die Leserin das Maß eines Viertels auf die ganze Stadt. Bist du bereit?"
  },
  {
   "tr": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; bu modülün son dersinde eksiltmeyi okumayı bitiriyoruz. Hazır mısın?",
@@ -1962,7 +1962,7 @@
  {
   "tr": "Belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar; kesin konuşan model ilk sapmada güvenini kaybeder. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig; ein Modell, das bestimmt spricht, verliert beim ersten Abweichen sein Vertrauen. Bist du bereit?"
+  "de": "Die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig; ein Modell, das ohne Vorbehalt spricht, verliert beim ersten Abweichen sein Vertrauen. Bist du bereit?"
  },
  {
   "tr": "Önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değil; ikisini karıştıran cümle atığı meşrulaştırır. Hazır mısın?",
@@ -1972,6 +1972,6 @@
  {
   "tr": "dediğinde bir tarih verilmiş olur ama bir söz verilmemiş olur. Eksiltilen yarı, plana bakan kişinin sorması gereken sorudur.",
   "kind": "say.tr",
-  "de": "ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die wer den Plan liest, stellen muss."
+  "de": "ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die stellen muss, wer den Plan liest."
  }
 ]

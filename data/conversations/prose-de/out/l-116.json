@@ -7,7 +7,7 @@
  {
   "tr": "iki adı da doğal bulan, «bizde öyle denir» diyen biri",
   "kind": "partner",
-  "de": "jemand, der beide Namen natürlich findet und sagt «bei uns heißt das so»"
+  "de": "jemand, der beide Namen natürlich findet und sagt „bei uns heißt das so“"
  },
  {
   "tr": "olayı hep kurumlarla anlatan, insanları hiç anmayan biri",
@@ -17,7 +17,7 @@
  {
   "tr": "her savı kişisel görüş sayan, «bu senin fikrin» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede These für eine persönliche Meinung hält und sagt «das ist deine Meinung»"
+  "de": "jemand, der jede These für eine persönliche Meinung hält und sagt „das ist deine Meinung“"
  },
  {
   "tr": "eksik cümleleri anlamayan ama anlamış gibi yapan bir arkadaş",
@@ -27,27 +27,27 @@
  {
   "tr": "adın önemli olmadığını düşünen, «sonuçta aynı şey» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der den Namen für unwichtig hält und sagt «am Ende ist es dasselbe»"
+  "de": "ein Freund, der den Namen für unwichtig hält und sagt „am Ende ist es dasselbe“"
  },
  {
   "tr": "haberi yalnız sayılarla anlatan, «rakamlar ortada» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der die Nachricht nur über Zahlen erzählt und sagt «die Zahlen liegen vor»"
+  "de": "ein Freund, der die Nachricht nur über Zahlen erzählt und sagt „die Zahlen liegen vor“"
  },
  {
   "tr": "uyumu tek taraflı bir borç sayan, «uyum sağlasınlar yeter» diyen biri",
   "kind": "partner",
-  "de": "jemand, der Anpassung für eine einseitige Schuld hält und sagt «sie sollen sich anpassen, das reicht»"
+  "de": "jemand, der Anpassung für eine einseitige Schuld hält und sagt „sie sollen sich anpassen, das reicht“"
  },
  {
   "tr": "gözlemini kesin bir kural gibi tekrarlayan, «demek hep öyle» diyen biri",
   "kind": "partner",
-  "de": "jemand, der deine Beobachtung wie eine feste Regel wiederholt und sagt «also ist es immer so»"
+  "de": "jemand, der deine Beobachtung wie eine feste Regel wiederholt und sagt „also ist es immer so“"
  },
  {
   "tr": "sözcüğün tek bir anlamı olduğunu düşünen, «sözlükte ne yazıyorsa o» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der glaubt, ein Wort habe nur eine Bedeutung, und sagt «was im Wörterbuch steht, gilt»"
+  "de": "ein Freund, der glaubt, ein Wort habe nur eine Bedeutung, und sagt „was im Wörterbuch steht, gilt“"
  },
  {
   "tr": "Demek orada hep böyle?",
@@ -215,9 +215,9 @@
   "de": "Du bist in einer Debatte über Integration und willst dein Gegenüber nicht verlieren. Setze das Zugeständnis an drei verschiedene Stellen und sag deine eigentliche These jedes Mal danach."
  },
  {
-  "tr": "Bir dışlanma olayını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Eylemi, yeri ve insanları başa alan üç cümle kur.",
+  "tr": "Bir dışlanma olayını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Eylemi, yeri ve nesneyi başa alan üç cümle kur.",
   "kind": "scene",
-  "de": "Du erzählst von einem Fall von Ausgrenzung und wählst in jedem Satz bewusst, was vorn steht. Bilde drei Sätze, die die Handlung, den Ort und die Menschen voranstellen."
+  "de": "Du erzählst von einem Fall von Ausgrenzung und wählst in jedem Satz bewusst, was vorn steht. Bilde drei Sätze, die die Handlung, den Ort und das Objekt voranstellen."
  },
  {
   "tr": "Göç üstüne bir haberi arkadaşına anlatıyorsun ve insanı sayıya indirmek istemiyorsun. İnsanı, tabloyu ve hukuku üç ayrı eşdizimle adlandır.",
@@ -253,11 +253,6 @@
   "tr": "İnsanı, tabloyu ve hukuku üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du den Menschen, die Statistik und das Recht mit drei verschiedenen Wortverbindungen benannt hast."
- },
- {
-  "tr": "Eylemi, yeri ve insanları başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
-  "kind": "goal",
-  "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die die Handlung, den Ort und die Menschen voranstellen."
  },
  {
   "tr": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
@@ -307,7 +302,7 @@
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir gözlem olarak kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung."
+  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung."
  },
  {
   "tr": "Doğru. Fiil çekilmemiş; istek kişiden ayrılmış ve bir koşul hâline gelmiş.",
@@ -440,9 +435,9 @@
   "de": "Nettozuwanderung"
  },
  {
-  "tr": "başlatma",
+  "tr": "erginlenme",
   "kind": "vocab.tr",
-  "de": "Einleitung"
+  "de": "Initiation"
  },
  {
   "tr": "dışa göç",
@@ -822,37 +817,37 @@
  {
   "tr": "Eylemi başa taşımak için",
   "kind": "hint.tr",
-  "de": "Um die Handlung nach vorn zu holen"
+  "de": "Um die Handlung nach vorn zu holen –"
  },
  {
   "tr": "Koşulu kalıpla kurmak için",
   "kind": "hint.tr",
-  "de": "Um die Bedingung mit der Formel zu bauen"
+  "de": "Um die Bedingung mit der Formel zu bauen –"
  },
  {
   "tr": "Övmekle uymayı ayırmak için",
   "kind": "hint.tr",
-  "de": "Um Loben und Befolgen zu trennen"
+  "de": "Um Loben und Befolgen zu trennen –"
  },
  {
   "tr": "İki adı karşı karşıya koymak için",
   "kind": "hint.tr",
-  "de": "Um zwei Namen einander gegenüberzustellen"
+  "de": "Um zwei Namen einander gegenüberzustellen –"
  },
  {
   "tr": "Ödünü başa alıp adı düzeltmek için",
   "kind": "hint.tr",
-  "de": "Um das Zugeständnis voranzustellen und den Namen zu berichtigen"
+  "de": "Um das Zugeständnis voranzustellen und den Namen zu berichtigen –"
  },
  {
   "tr": "Yalanlayıp aynı şeyi doğrulamak için",
   "kind": "hint.tr",
-  "de": "Um zu verneinen und dann dasselbe zu bestätigen"
+  "de": "Um zu verneinen und dann dasselbe zu bestätigen –"
  },
  {
   "tr": "Üç eşdizimi tek cümlede bağlamak için",
   "kind": "hint.tr",
-  "de": "Um drei Wortverbindungen in einem Satz zu binden"
+  "de": "Um drei Wortverbindungen in einem Satz zu binden –"
  },
  {
   "tr": "İki adımı tek kipin altına koymak için",
@@ -862,7 +857,7 @@
  {
   "tr": "İsteği kalıplaşmış biçimle kurmak için",
   "kind": "hint.tr",
-  "de": "Um die Forderung in fester Form zu bauen"
+  "de": "Um die Forderung in fester Form zu bauen –"
  },
  {
   "tr": "Ödünü başa çekip eksiği göstermek için",
@@ -872,12 +867,12 @@
  {
   "tr": "İki aktarmayı karşı karşıya koymak için",
   "kind": "hint.tr",
-  "de": "Um zwei Wiedergaben einander gegenüberzustellen"
+  "de": "Um zwei Wiedergaben einander gegenüberzustellen –"
  },
  {
   "tr": "Olmasaydıyı toplumsal savda kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht in der sozialen These zu bauen"
+  "de": "Um das Wäre-nicht in der sozialen These zu bauen –"
  },
  {
   "tr": "Adı hükümden ayırmak için iki yarı kurulur:",
@@ -918,11 +913,6 @@
   "tr": "iddia",
   "kind": "say.tr",
   "de": "Anspruch"
- },
- {
-  "tr": "insan",
-  "kind": "say.tr",
-  "de": "Mensch"
  },
  {
   "tr": "tablo",
@@ -1017,7 +1007,7 @@
  {
   "tr": "Hakkı dağıtan fiildir.",
   "kind": "say.tr",
-  "de": "Das Recht verteilt das Verb."
+  "de": "Es ist das Verb, das das Recht verteilt."
  },
  {
   "tr": "Eşdizim konuyu seçiyor.",
@@ -1032,7 +1022,7 @@
  {
   "tr": "Sözcüğün düz karşılığına",
   "kind": "say.tr",
-  "de": "Die glatte Entsprechung eines Wortes heißt"
+  "de": "Die wörtliche Entsprechung eines Wortes heißt"
  },
  {
   "tr": "taşıdığı anlam yüküne ise",
@@ -1100,9 +1090,9 @@
   "de": "Den Ort im Land zu wechseln heißt"
  },
  {
-  "tr": "Adı çoğunluk toplumu koyuyor.",
+  "tr": "Ötekilere adı çoğunluk toplumu koyuyor.",
   "kind": "say.tr",
-  "de": "Den Namen vergibt die Mehrheitsgesellschaft."
+  "de": "Den anderen gibt die Mehrheitsgesellschaft ihren Namen."
  },
  {
   "tr": "Çevirinin yapıldığı asıl dile",
@@ -1222,7 +1212,7 @@
  {
   "tr": "topluluğu meşru bir üretici sayar,",
   "kind": "say.tr",
-  "de": "hält die Gruppe für eine rechtmäßige Hervorbringerin,"
+  "de": "sieht in der Gruppe legitime Kulturschaffende,"
  },
  {
   "tr": "toplumun kendisinin ürettiğine ise",
@@ -1235,9 +1225,9 @@
   "de": "Was aus der Familie oder der Herkunft kommt, heißt"
  },
  {
-  "tr": "bir işi ya da süreci başlatmaya ise",
+  "tr": "bir topluluğa törenle kabul edilmeye ise",
   "kind": "say.tr",
-  "de": "und eine Sache oder einen Vorgang in Gang zu setzen heißt"
+  "de": "und die feierliche Aufnahme in eine Gemeinschaft heißt"
  },
  {
   "tr": "birini yurttaşlığa kabul etmeye ise",
@@ -1440,9 +1430,9 @@
   "de": "und die gleiche Verteilung der Last zwischen den Generationen heißt"
  },
  {
-  "tr": "Şimdi dersin kuralı. Başa alma bir seçimdir:",
+  "tr": "Şimdi bugünün kuralı. Başa alma bir seçimdir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Voranstellen ist eine Wahl:"
+  "de": "Jetzt die Regel von heute. Das Voranstellen ist eine Wahl:"
  },
  {
   "tr": "Etnosantrizm en son göreceğimiz şey olabilir.",
@@ -1605,9 +1595,9 @@
   "de": "Hochkultur ist ein Register, Leitkultur ein Anspruch."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarma fiili yetkiyi de gösterir:",
+  "tr": "Şimdi bugünün kuralı. Aktarma fiili yetkiyi de gösterir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das wiedergebende Verb zeigt auch die Befugnis:"
+  "de": "Jetzt die Regel von heute. Das wiedergebende Verb zeigt auch die Befugnis:"
  },
  {
   "tr": "Gösterişli ve bol demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1630,9 +1620,9 @@
   "de": "Die soziale Schicht hat sich verändert, ihre Werte nicht."
  },
  {
-  "tr": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir.",
+  "tr": "Toplumsallaşma sıra düzenini erginlenmeden önce kurabilir.",
   "kind": "say.tr",
-  "de": "Die Sozialisation kann die Hackordnung vor der Einleitung festlegen."
+  "de": "Die Sozialisation kann die Hackordnung vor der Initiation festlegen."
  },
  {
   "tr": "Örf ve âdet hukukuna saygıdeğer demek ona uymak değildir.",
@@ -1640,14 +1630,14 @@
   "de": "Das Gewohnheitsrecht ehrwürdig zu nennen heißt nicht, ihm zu folgen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Çekimsiz fiil isteği kişiden ayırır:",
+  "tr": "Şimdi bugünün kuralı. Çekimsiz fiil isteği kişiden ayırır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das ungebeugte Verb trennt die Forderung von der Person:"
+  "de": "Jetzt die Regel von heute. Das ungebeugte Verb trennt die Forderung von der Person:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kurum adı seçerken hüküm de veriyor:",
+  "tr": "Şimdi bugünün kuralı. Kurum adı seçerken hüküm de veriyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Wählt eine Institution den Namen, fällt sie auch ein Urteil:"
+  "de": "Jetzt die Regel von heute. Wählt eine Institution den Namen, fällt sie auch ein Urteil:"
  },
  {
   "tr": "Şimdi sen kur: Karşılıklılık yalnız adıyla adil olabilir.",
@@ -1737,7 +1727,7 @@
  {
   "tr": "Vatansızlığı devralıyoruz, yabancı egemenliğini hatırlıyoruz.",
   "kind": "say.tr",
-  "de": "Die Staatenlosigkeit erben wir, die Fremdherrschaft erinnern wir."
+  "de": "Die Staatenlosigkeit erben wir, an die Fremdherrschaft erinnern wir uns."
  },
  {
   "tr": "Bir tane daha: Yüksek kültür bir üsluptur, kanon bir iddiadır.",
@@ -1802,7 +1792,7 @@
  {
   "tr": "Şimdi sıra sende: Eşitlik ilkesi okulun parasız olmasını istiyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Der Gleichheitsgrundsatz verlangt, dass die Schule frei sei."
+  "de": "Jetzt bist du dran: Der Gleichheitsgrundsatz verlangt, dass die Schule kostenlos sei."
  },
  {
   "tr": "Şimdi sıra sende: Ona ne kadar kurs demeyi sevsek de onlar asimilasyonu kastediyor.",
@@ -1835,9 +1825,9 @@
   "de": "Hallo! Heute lernen wir die feste Form der Gleichheitsforderung."
  },
  {
-  "tr": "Şimdi sıra sende: Akrabalık haneyi kanundan çok biçimlendirebilir.",
+  "tr": "Şimdi sıra sende: Akrabalık haneyi pekâlâ kanundan çok biçimlendirebilir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Verwandtschaft prägt den Haushalt womöglich mehr als das Gesetz."
+  "de": "Jetzt bist du dran: Verwandtschaft kann den Haushalt durchaus stärker prägen als das Gesetz."
  },
  {
   "tr": "Bir tane daha: Toplumsallaşma sıra düzenini okuldan önce kurabilir.",
@@ -1860,9 +1850,9 @@
   "de": "Die Exegese behauptet offen, was die Überlieferung bloß voraussetzt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:",
+  "tr": "Şimdi bugünün kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Zugeständnis schwächt den Widerspruch nicht, es macht ihn HÖRBAR:"
+  "de": "Jetzt die Regel von heute. Das Zugeständnis schwächt den Widerspruch nicht, es macht ihn HÖRBAR:"
  },
  {
   "tr": "Bütünün içindeki küçük kültür demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1900,9 +1890,9 @@
   "de": "Wenn auch ein Zeichen von Hybridität, wird Anpassungsfähigkeit nur von einer Seite verlangt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aidiyet konuşmasında düşen öğe bir SINAV gibidir:",
+  "tr": "Şimdi bugünün kuralı. Aidiyet konuşmasında düşen öğe bir SINAV gibidir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Reden über Zugehörigkeit ist das weggelassene Glied wie eine PRÜFUNG:"
+  "de": "Jetzt die Regel von heute. Im Reden über Zugehörigkeit ist das weggelassene Glied wie eine PRÜFUNG:"
  },
  {
   "tr": "Şimdi sen kur: Burada kural ihlali yok, yerel bir âdet var.",
@@ -1955,9 +1945,9 @@
   "de": "Diese Lektion ist die letzte des Moduls; du benutzt Namen, Zugeständnis und Auslassung zusammen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:",
+  "tr": "Şimdi bugünün kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spott entsteht, wenn zwei Namen desselben Verhaltens nebeneinanderstehen:"
+  "de": "Jetzt die Regel von heute. Der Spott entsteht, wenn zwei Namen desselben Verhaltens nebeneinanderstehen:"
  },
  {
   "tr": "Alay adlandırmayı görünür kılar; kimin hangi adı aldığını sorduran şey odur.",
@@ -1977,7 +1967,7 @@
  {
   "tr": "Bir tane daha: Yabancı egemenliğini devralıyoruz, vatansızlığı hatırlıyoruz.",
   "kind": "say.tr",
-  "de": "Noch eins: Die Fremdherrschaft erben wir, die Staatenlosigkeit erinnern wir."
+  "de": "Noch eins: Die Fremdherrschaft erben wir, an die Staatenlosigkeit erinnern wir uns."
  },
  {
   "tr": "Şimdi sıra sende: Yukarıda anlatılan dil değişimi, aşağıda ele alınan alışkanlığa dönüşüyor.",
@@ -1990,9 +1980,9 @@
   "de": "Hallo! Heute lernen wir den Abstand, den das Modalverb beim Reden über Nähe setzt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Uzun metinde anlam kayıyorsa okura ADRES vermek gerekir:",
+  "tr": "Şimdi bugünün kuralı. Uzun metinde anlam kayıyorsa okura ADRES vermek gerekir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Rutscht im langen Text die Bedeutung, braucht die Leserin eine ADRESSE:"
+  "de": "Jetzt die Regel von heute. Rutscht im langen Text die Bedeutung, braucht die Leserin eine ADRESSE:"
  },
  {
   "tr": "Merhaba! Bugün anlamı kayan bir sözcüğü uzun metinde takip etmeyi öğreneceğiz.",
@@ -2015,9 +2005,9 @@
   "de": "Bilde du jetzt: Die alte Religion bleibt als Spiritualität, der Zweifel als Frage."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:",
+  "tr": "Şimdi bugünün kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Erzählst du von einem Leben, das du nicht kennst, sagt das Modalverb deinen Abstand:"
+  "de": "Jetzt die Regel von heute. Erzählst du von einem Leben, das du nicht kennst, sagt das Modalverb deinen Abstand:"
  },
  {
   "tr": "Şimdi sıra sende: Biri geçmişi yeniden yorumluyor, öteki yorum yetkisini koruyor.",
@@ -2025,9 +2015,9 @@
   "de": "Jetzt bist du dran: Die eine deutet die Vergangenheit um, die andere schützt die Deutungshoheit."
  },
  {
-  "tr": "Şimdi dersin kuralı. Göç sözlüğünde eşdizim İNSANI mı SAYIYI mı anlattığını söyler:",
+  "tr": "Şimdi bugünün kuralı. Göç sözlüğünde eşdizim İNSANI mı SAYIYI mı anlattığını söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Migration sagt die Wortverbindung, ob vom MENSCHEN oder von der ZAHL die Rede ist:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch der Migration sagt die Wortverbindung, ob vom MENSCHEN oder von der ZAHL die Rede ist:"
  },
  {
   "tr": "ise onu bir sorun sayar. Aynı sokak, aynı insanlar, iki ayrı ad ve iki ayrı politika.",
@@ -2040,9 +2030,9 @@
   "de": "Bilde du jetzt: Dieser Bedeutungswandel kommt, wie bereits angemerkt, aus der Alltagssprache."
  },
  {
-  "tr": "ise insanları. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar.",
+  "tr": "ise nesneyi. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar.",
   "kind": "say.tr",
-  "de": "dagegen die Menschen. Alle drei erzählen dieselbe Tatsache, und in allen dreien erinnert die Zuhörerin etwas anderes."
+  "de": "dagegen das Objekt. Alle drei erzählen dieselbe Tatsache, und in allen dreien erinnert sich die Zuhörerin an etwas anderes."
  },
  {
   "tr": "Merhaba! Bugün kuralı ihlal edenin nasıl adlandırıldığını alayla göstermeyi öğreneceğiz.",
@@ -2097,7 +2087,7 @@
  {
   "tr": "Bu biçim isteği isteyenden ayırır: «insan onurunun dokunulmaz olması» kimin istediğine bağlı değildir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Diese Form trennt die Forderung von der fordernden Person: «dass die Menschenwürde unantastbar sei» hängt nicht davon ab, wer es fordert. Bist du bereit?"
+  "de": "Diese Form trennt die Forderung von der fordernden Person: „dass die Menschenwürde unantastbar sei“ hängt nicht davon ab, wer es fordert. Bist du bereit?"
  },
  {
   "tr": "Bağlantı verilmezse okur hangi anlamın sürdüğünü bilemez ve aynı sözcüğü iki ayrı yerde iki ayrı şey sanır. Hazır mısın?",

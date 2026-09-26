@@ -407,47 +407,47 @@
  {
   "tr": "Tek parçayı seçmek için",
   "kind": "hint.tr",
-  "de": "Um das einzelne Stück auszuwählen"
+  "de": "Um das einzelne Stück auszuwählen –"
  },
  {
   "tr": "Ödünün sınırını çizmek için",
   "kind": "hint.tr",
-  "de": "Um die Grenze des Entgegenkommens zu ziehen"
+  "de": "Um die Grenze des Entgegenkommens zu ziehen –"
  },
  {
   "tr": "Özneyi başa alıp aktarmak için",
   "kind": "hint.tr",
-  "de": "Um das Subjekt nach vorn zu stellen und wiederzugeben"
+  "de": "Um das Subjekt nach vorn zu stellen und wiederzugeben –"
  },
  {
   "tr": "Kendi kusurunu kabul etmek için",
   "kind": "hint.tr",
-  "de": "Um den eigenen Fehler einzuräumen"
+  "de": "Um den eigenen Fehler einzuräumen –"
  },
  {
   "tr": "Öneriyi yumuşatarak sunmak için",
   "kind": "hint.tr",
-  "de": "Um den Vorschlag abgeschwächt vorzubringen"
+  "de": "Um den Vorschlag abgeschwächt vorzubringen –"
  },
  {
   "tr": "Kaynağı üstlenmeden aktarmak için",
   "kind": "hint.tr",
-  "de": "Um wiederzugeben, ohne die Quelle zu übernehmen"
+  "de": "Um wiederzugeben, ohne die Quelle zu übernehmen –"
  },
  {
   "tr": "İtirazın bütününü başa taşımak için",
   "kind": "hint.tr",
-  "de": "Um den ganzen Einwand an den Anfang zu bringen"
+  "de": "Um den ganzen Einwand an den Anfang zu bringen –"
  },
  {
   "tr": "Asıl kabul edilemezi başa almak için",
   "kind": "hint.tr",
-  "de": "Um das eigentlich Inakzeptable nach vorn zu holen"
+  "de": "Um das eigentlich Inakzeptable nach vorn zu holen –"
  },
  {
   "tr": "Yerine getirmeyi isimle anlatmak için",
   "kind": "hint.tr",
-  "de": "Um die Erfüllung mit einem Nomen zu nennen"
+  "de": "Um die Erfüllung mit einem Nomen zu nennen –"
  },
  {
   "tr": "ifa",
@@ -597,7 +597,7 @@
  {
   "tr": "Çözümü iyi niyet getirdi.",
   "kind": "say.tr",
-  "de": "Den Ausgleich hat der gute Wille gebracht."
+  "de": "Die Lösung hat der gute Wille gebracht."
  },
  {
   "tr": "Ödenen parayı iade etmeye",
@@ -620,9 +620,9 @@
   "de": "räumt den eigenen Fehler ein,"
  },
  {
-  "tr": "Karşı tarafa duyulan güvene",
+  "tr": "Karşı tarafa gösterilen yapıcı tutuma",
   "kind": "say.tr",
-  "de": "Das Vertrauen in die Gegenseite heißt"
+  "de": "Die wohlwollende Haltung gegenüber der Gegenseite heißt"
  },
  {
   "tr": "Karşı taraftan istenen şeye",
@@ -775,14 +775,14 @@
   "de": "Der Ton war aggressiv und das Angebot unfair."
  },
  {
-  "tr": "denir ve bu kelime her zaman çoğuldur.",
+  "tr": "denir; bu anlamda kelime hep çoğuldur.",
   "kind": "say.tr",
-  "de": "genannt, und dieses Wort steht immer im Plural."
+  "de": "auf Englisch; in dieser Bedeutung steht das Wort immer im Plural."
  },
  {
   "tr": "Sorumluluğun bizde olduğu düşünülüyor.",
   "kind": "say.tr",
-  "de": "Man hält die Haftung für unsere."
+  "de": "Man glaubt, dass die Haftung bei uns liegt."
  },
  {
   "tr": "bir kurumun karar verebildiği alana ise",
@@ -810,7 +810,7 @@
   "de": "Vermutlich wäre eine Mediation schneller."
  },
  {
-  "tr": "Maddenin o okumasını geçersiz sayıyoruz.",
+  "tr": "Maddenin o yorumunu geçersiz sayıyoruz.",
   "kind": "say.tr",
   "de": "Wir weisen diese Lesart der Klausel zurück."
  },
@@ -950,9 +950,9 @@
   "de": "Noch eins: Vermutlich wäre ein Anruf schneller."
  },
  {
-  "tr": "Şimdi dersin kuralı. Ödün cümlesi üç parçadan kurulur:",
+  "tr": "Şimdi bugünün kuralı. Ödün cümlesi üç parçadan kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Satz des Entgegenkommens hat drei Teile:"
+  "de": "Jetzt die Regel von heute. Der Satz des Entgegenkommens hat drei Teile:"
  },
  {
   "tr": "Şimdi sıra sende: Malların geç kaldığı iddia ediliyor.",
@@ -960,9 +960,9 @@
   "de": "Jetzt bist du dran: Es wird behauptet, dass die Ware zu spät kam."
  },
  {
-  "tr": "Şimdi dersin kuralı. Yarık cümle şikâyette sınır çizer:",
+  "tr": "Şimdi bugünün kuralı. Yarık cümle şikâyette sınır çizer:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spaltsatz zieht in der Beschwerde eine Grenze:"
+  "de": "Jetzt die Regel von heute. Der Spaltsatz zieht in der Beschwerde eine Grenze:"
  },
  {
   "tr": "Son kalıbımız yerine getirmeyi isimle anlatıyor. Tekrar et:",
@@ -980,14 +980,14 @@
   "de": "Das heißt gegen einen Punkt Einwand erheben. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Şikâyet dilinde iddia üç biçimle aktarılır:",
+  "tr": "Şimdi bugünün kuralı. Şikâyet dilinde iddia üç biçimle aktarılır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Beschwerdesprache wird eine Behauptung in drei Formen wiedergegeben:"
+  "de": "Jetzt die Regel von heute. In der Beschwerdesprache wird eine Behauptung in drei Formen wiedergegeben:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek cümleyi kişiden çıkarır:",
+  "tr": "Şimdi bugünün kuralı. Fiili isme çevirmek cümleyi kişiden çıkarır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Satz:"
+  "de": "Jetzt die Regel von heute. Das Verb zum Nomen zu machen nimmt die Person aus dem Satz:"
  },
  {
   "tr": "Şimdi sıra sende: Kabul etmek gerekir ki cevabımız epeyce yavaştı.",
@@ -995,9 +995,9 @@
   "de": "Jetzt bist du dran: Zugegeben, unsere Antwort war ziemlich langsam."
  },
  {
-  "tr": "Şimdi dersin kuralı. Üçü de geçmişe bakar ama üçü de başka iş görür:",
+  "tr": "Şimdi bugünün kuralı. Üçü de geçmişe bakar ama üçü de başka iş görür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Alle drei blicken zurück, aber jedes leistet etwas anderes:"
+  "de": "Jetzt die Regel von heute. Alle drei blicken zurück, aber jedes leistet etwas anderes:"
  },
  {
   "tr": "Yerine getirilmesi gereken şey demek. İlk kalıbımız da bu. Tekrar et:",

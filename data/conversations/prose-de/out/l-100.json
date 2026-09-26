@@ -15,9 +15,9 @@
   "de": "Es wird erledigt sein"
  },
  {
-  "tr": "Ki kontrol edilmişti",
+  "tr": "Mayısta kontrol edilmişti",
   "kind": "titleTr",
-  "de": "Das im Mai geprüft wurde"
+  "de": "Im Mai geprüft"
  },
  {
   "tr": "Aktarıldığı kadarıyla",
@@ -120,9 +120,9 @@
   "de": "Du erklärst den Beteiligten den Zeitplan eines Pilotprojekts. Sag, welche Arbeit bis wann erledigt sein wird, was dann gerade laufen wird und was geprüft sein wird."
  },
  {
-  "tr": "Bir arıza kaydını inceleyen meslektaşına parçaları tanıtıyorsun. Hangi parçanın ne zaman kontrol edildiğini, hangi belgenin neden durdurduğunu ve hangi kuralın neyi düzenlediğini anlat.",
+  "tr": "Bir arıza kaydını inceleyen meslektaşına parçaları tanıtıyorsun. Hangi parçanın ne zaman kontrol edildiğini, hangi belge yüzünden işi durdurduğunuzu ve hangi kuralın neyi düzenlediğini anlat.",
   "kind": "scene",
-  "de": "Du stellst einer Kollegin, die ein Störungsprotokoll durchsieht, die Teile vor. Erzähl, welches Teil wann geprüft wurde, welches Dokument warum gestoppt hat und welche Regel was regelt."
+  "de": "Du stellst einer Kollegin, die ein Störungsprotokoll durchsieht, die Teile vor. Erzähl, welches Teil wann geprüft wurde, welches Dokument euch zum Anhalten gebracht hat und welche Regel was regelt."
  },
  {
   "tr": "Üç bilgiyi üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
@@ -165,9 +165,9 @@
   "de": "Herkunft"
  },
  {
-  "tr": "ölçek",
+  "tr": "gösterge (ölçü aleti)",
   "kind": "vocab.tr",
-  "de": "Anzeige"
+  "de": "Messanzeige"
  },
  {
   "tr": "sapma",
@@ -235,6 +235,11 @@
   "de": "Genauigkeit"
  },
  {
+  "tr": "dürüstlük",
+  "kind": "vocab.tr",
+  "de": "Integrität"
+ },
+ {
   "tr": "genişlik",
   "kind": "vocab.tr",
   "de": "Breite"
@@ -255,7 +260,7 @@
   "de": "Handbuch"
  },
  {
-  "tr": "esirgemek",
+  "tr": "alıkoymak",
   "kind": "vocab.tr",
   "de": "zurückhalten"
  },
@@ -280,9 +285,14 @@
   "de": "bescheinigen"
  },
  {
+  "tr": "kanıtla desteklemek",
+  "kind": "vocab.tr",
+  "de": "belegen / untermauern"
+ },
+ {
   "tr": "doğrulamak",
   "kind": "vocab.tr",
-  "de": "belegen"
+  "de": "bestätigen"
  },
  {
   "tr": "gereklilik",
@@ -362,32 +372,32 @@
  {
   "tr": "Kaynağı açık bırakmak için",
   "kind": "hint.tr",
-  "de": "Um die Quelle offen zu lassen"
+  "de": "Um die Quelle offen zu lassen –"
  },
  {
   "tr": "Değerlendirmeyi aktarmak için",
   "kind": "hint.tr",
-  "de": "Um die Einschätzung wiederzugeben"
+  "de": "Um die Einschätzung wiederzugeben –"
  },
  {
   "tr": "Edilgen ek bilgi eklemek için",
   "kind": "hint.tr",
-  "de": "Um eine passive Zusatzinformation anzufügen"
+  "de": "Um eine passive Zusatzinformation anzufügen –"
  },
  {
   "tr": "Önce biten adımı bağlamak için",
   "kind": "hint.tr",
-  "de": "Um den früher beendeten Schritt anzubinden"
+  "de": "Um den früher beendeten Schritt anzubinden –"
  },
  {
   "tr": "Süren işlemi isimle anlatmak için",
   "kind": "hint.tr",
-  "de": "Um den laufenden Vorgang mit einem Nomen zu nennen"
+  "de": "Um den laufenden Vorgang mit einem Nomen zu nennen –"
  },
  {
   "tr": "Gerekliliği resmî dille yazmak için",
   "kind": "hint.tr",
-  "de": "Um das Erfordernis formell zu schreiben"
+  "de": "Um das Erfordernis formell zu schreiben –"
  },
  {
   "tr": "arıtma",
@@ -585,7 +595,7 @@
   "de": "Das Maß von einem Ende zum anderen heißt"
  },
  {
-  "tr": "Ölçek düştüğünde boşaltıyoruz.",
+  "tr": "Gösterge düştüğünde boşaltıyoruz.",
   "kind": "say.tr",
   "de": "Wir laden ab, wenn die Anzeige fällt."
  },
@@ -605,9 +615,9 @@
   "de": "Das erste Stück vor der Serienfertigung heißt"
  },
  {
-  "tr": "Sürecin arıtılması devam ediyor.",
+  "tr": "Şekerin arıtılması devam ediyor.",
   "kind": "say.tr",
-  "de": "Die Raffination des Vorgangs läuft weiter."
+  "de": "Die Raffination des Zuckers läuft weiter."
  },
  {
   "tr": "izlenmesi istenen yazılı yola ise",
@@ -675,7 +685,7 @@
   "de": "was dann gerade LÄUFT. Das Passiv trägt"
  },
  {
-  "tr": "Geçerli kılana kadar dosyayı esirgiyoruz.",
+  "tr": "Geçerli kılana kadar dosyayı alıkoyuyoruz.",
   "kind": "say.tr",
   "de": "Wir halten die Akte zurück, bis wir sie für gültig erklären."
  },
@@ -700,7 +710,7 @@
   "de": "Jetzt stellst du die Teile einer Akte vor."
  },
  {
-  "tr": "Ölçeği kontrol ettikten sonra vanayı kapat.",
+  "tr": "Göstergeyi kontrol ettikten sonra vanayı kapat.",
   "kind": "say.tr",
   "de": "Nachdem du die Anzeige geprüft hast, schließ das Ventil."
  },
@@ -805,9 +815,9 @@
   "de": "Nächsten Monat um diese Zeit werden wir den Prototyp testen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarım kalıbının iki yolu var:",
+  "tr": "Şimdi bugünün kuralı. Aktarım kalıbının iki yolu var:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Wiedergabe hat zwei Wege:"
+  "de": "Jetzt die Regel von heute. Die Wiedergabe hat zwei Wege:"
  },
  {
   "tr": "Bir tane daha: Miktar o zamana kadar sayılmış olacak.",
@@ -855,12 +865,12 @@
   "de": "Das heißt der erste Versuch in kleinem Maßstab. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek kaydı kişiden çıkarır:",
+  "tr": "Şimdi bugünün kuralı. Fiili isme çevirmek kaydı kişiden çıkarır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Protokoll:"
+  "de": "Jetzt die Regel von heute. Das Verb zum Nomen zu machen nimmt die Person aus dem Protokoll:"
  },
  {
-  "tr": "Şimdi sıra sende: Parça, ki haziranda değiştirilmişti, bozuldu.",
+  "tr": "Şimdi sıra sende: Parça bozuldu; haziranda değiştirilmişti.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Das Teil, das im Juni ersetzt wurde, ist ausgefallen."
  },
@@ -905,9 +915,9 @@
   "de": "In einer Anleitung ist die Reihenfolge der Schritte die halbe Bedeutung; eine falsche Reihenfolge macht auch den richtigen Satz falsch."
  },
  {
-  "tr": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve içindeki bilgi sık sık edilgendir:",
+  "tr": "Şimdi bugünün kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve içindeki bilgi sık sık edilgendir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und was darin steht, ist oft passiv:"
+  "de": "Jetzt die Regel von heute. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und was darin steht, ist oft passiv:"
  },
  {
   "tr": "Merhaba! Bugün yönergeyi kısa yazmayı öğreneceğiz: önce ne yapıldı, neden öyle oldu, ne sonra geldi.",

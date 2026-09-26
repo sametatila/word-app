@@ -115,9 +115,9 @@
   "de": "Du besprichst mit einer Freundin eure Gewohnheiten in sozialen Medien. Erzähl, was du diese Woche gemacht hast, was du früher geändert hast und was du nie gemacht hast."
  },
  {
-  "tr": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar.",
+  "tr": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar; sonra kendi değerlendirmeni söyle.",
   "kind": "scene",
-  "de": "Du warst bei einer Debatte und ein Freund, der nicht kommen konnte, fragt, was war. Gib weiter, wer was verteidigt hat, wer was gesagt hat und was man dich gefragt hat."
+  "de": "Du warst bei einer Debatte und ein Freund, der nicht kommen konnte, fragt, was war. Gib weiter, wer was verteidigt hat, wer was gesagt hat und was man dich gefragt hat; sag danach deine eigene Einschätzung."
  },
  {
   "tr": "Fikrini, gerekçeni ve bir çekinceni üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
@@ -240,7 +240,7 @@
   "de": "Stille"
  },
  {
-  "tr": "şaşırtıcı",
+  "tr": "şok edici",
   "kind": "vocab.tr",
   "de": "schockierend"
  },
@@ -263,6 +263,11 @@
   "tr": "yayımlamak",
   "kind": "vocab.tr",
   "de": "veröffentlichen"
+ },
+ {
+  "tr": "yayınlamak",
+  "kind": "vocab.tr",
+  "de": "senden / ausstrahlen"
  },
  {
   "tr": "demek istemek",
@@ -322,7 +327,7 @@
  {
   "tr": "Bu fiilden sonra",
   "kind": "hint.tr",
-  "de": "Nach diesem Verb steht"
+  "de": "Nach diesem Verb –"
  },
  {
   "tr": "Tepki etken kalır:",
@@ -332,7 +337,7 @@
  {
   "tr": "Olumsuz yönerge aktarımında",
   "kind": "hint.tr",
-  "de": "Bei der Wiedergabe einer verneinten Anweisung steht"
+  "de": "Bei der Wiedergabe einer verneinten Anweisung –"
  },
  {
   "tr": "Gerekçe bağlacı, ardından gerekçe:",
@@ -352,7 +357,7 @@
  {
   "tr": "bağlar.",
   "kind": "say.tr",
-  "de": "verbindet."
+  "de": "an."
  },
  {
   "tr": "makale,",
@@ -367,7 +372,7 @@
  {
   "tr": "Gerekçeyi",
   "kind": "say.tr",
-  "de": "Den Grund verbindet"
+  "de": "Den Grund knüpft"
  },
  {
   "tr": "karşıtlık",
@@ -387,7 +392,7 @@
  {
   "tr": "karşıtlığı",
   "kind": "say.tr",
-  "de": "den Gegensatz"
+  "de": "an, den Gegensatz"
  },
  {
   "tr": "Kısmen için",
@@ -400,19 +405,19 @@
   "de": "und das Like heißt"
  },
  {
-  "tr": "Karşı çıkmak",
+  "tr": "Katılmamak",
   "kind": "say.tr",
-  "de": "Widersprechen wird mit"
+  "de": "Nicht zustimmen heißt"
  },
  {
   "tr": "çekinceyi ise",
   "kind": "say.tr",
-  "de": "und den Vorbehalt mit"
+  "de": "an und den Vorbehalt"
  },
  {
   "tr": "Yayılmak için",
   "kind": "say.tr",
-  "de": "Für sich verbreiten sagen wir"
+  "de": "Für sich verbreiten"
  },
  {
   "tr": "güçlü için ise",
@@ -422,17 +427,17 @@
  {
   "tr": "Hissetmek için",
   "kind": "say.tr",
-  "de": "Für fühlen sagen wir"
+  "de": "Für fühlen"
  },
  {
   "tr": "Kaydırmak için",
   "kind": "say.tr",
-  "de": "Für scrollen sagen wir"
+  "de": "Für scrollen"
  },
  {
   "tr": "Konuşmacı için",
   "kind": "say.tr",
-  "de": "Für den Redner sagen wir"
+  "de": "Für den Redner"
  },
  {
   "tr": "koşula bağlama",
@@ -447,7 +452,7 @@
  {
   "tr": "yanlış için ise",
   "kind": "say.tr",
-  "de": "und für falsch"
+  "de": "und für falsch sagt man"
  },
  {
   "tr": "Bir savı korumaya",
@@ -492,7 +497,7 @@
  {
   "tr": "tam olarak için ise",
   "kind": "say.tr",
-  "de": "und für genau"
+  "de": "und für genau sagt man"
  },
  {
   "tr": "Özetleyelim: gerekçe",
@@ -530,7 +535,7 @@
   "de": "und was nicht für alle offen ist, heißt"
  },
  {
-  "tr": "Hiç birini engelledin mi?",
+  "tr": "Hiç kimseyi engelledin mi?",
   "kind": "say.tr",
   "de": "Hast du jemals jemanden blockiert?"
  },
@@ -562,7 +567,7 @@
  {
   "tr": "denir ve bu kelime çoğuldur.",
   "kind": "say.tr",
-  "de": "genannt, und das Wort steht im Plural."
+  "de": "auf Englisch, und das Wort steht im Plural."
  },
  {
   "tr": "Bütün yayın araçlarına birden",
@@ -622,12 +627,12 @@
  {
   "tr": "denir. İlki sayılamaz: 'a news' denmez,",
   "kind": "say.tr",
-  "de": "genannt. Das erste ist unzählbar: 'a news' sagt man nicht,"
+  "de": "auf Englisch. Das erste ist unzählbar: „a news“ sagt man nicht; man sagt,"
  },
  {
   "tr": "denir. İkincisi kişi için de kullanılır:",
   "kind": "say.tr",
-  "de": "genannt. Das zweite wird auch für Personen benutzt:"
+  "de": "auf Englisch. Das zweite wird auch für Personen benutzt:"
  },
  {
   "tr": "Dinleyicilere önce dinlemelerini söyledi.",
@@ -637,7 +642,7 @@
  {
   "tr": "denir ve İngilizcede hem isim hem fiildir.",
   "kind": "say.tr",
-  "de": "genannt und ist im Englischen Nomen und Verb zugleich."
+  "de": "auf Englisch und ist im Englischen Nomen und Verb zugleich."
  },
  {
   "tr": "Şimdi bir arkadaşınla haberi konuşacaksın.",
@@ -645,7 +650,7 @@
   "de": "Jetzt besprichst du die Nachricht mit einer Freundin."
  },
  {
-  "tr": "Bir tane daha: Hiç bir paylaşımı sildin mi?",
+  "tr": "Bir tane daha: Hiç paylaşım sildin mi?",
   "kind": "say.tr",
   "de": "Noch eins: Hast du jemals einen Beitrag gelöscht?"
  },
@@ -677,7 +682,7 @@
  {
   "tr": "Son kalıbımız çekinceyi bağlıyor. Apaçık için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung verbindet den Vorbehalt. Für offensichtlich sagen wir"
+  "de": "Unsere letzte Wendung verbindet den Vorbehalt. Für offensichtlich"
  },
  {
   "tr": "Şimdi bir arkadaşınla bir konu tartışacaksın.",
@@ -700,9 +705,9 @@
   "de": "Das heißt glauben. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Son kalıbımız tepkiyi söylüyor. Şaşırtıcı için",
+  "tr": "Son kalıbımız tepkiyi söylüyor. Şok edici için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung nennt die Reaktion. Für schockierend sagen wir"
+  "de": "Unsere letzte Wendung nennt die Reaktion. Für schockierend"
  },
  {
   "tr": "Şimdi sen kur: Katılmama rağmen bir sorum var.",
@@ -712,7 +717,7 @@
  {
   "tr": "İkinci kalıbımız varsayımı anlatıyor. Emin için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung nennt die Annahme. Für sicher sagen wir"
+  "de": "Unsere zweite Wendung nennt die Annahme. Für sicher"
  },
  {
   "tr": "Şimdi sen kur: Şifremi mart ayında değiştirdim.",
@@ -735,7 +740,7 @@
   "de": "Ich stimme teilweise zu, aber meine Erfahrung ist das Gegenteil."
  },
  {
-  "tr": "Muhtemelen doğru hissediyorum ama belki yanılıyorum.",
+  "tr": "Bence muhtemelen doğru ama belki yanılıyorum.",
   "kind": "say.tr",
   "de": "Ich habe das Gefühl, dass es wahrscheinlich stimmt, aber vielleicht irre ich mich."
  },
@@ -747,7 +752,7 @@
  {
   "tr": "Son kalıbımız cevabı koşula bağlıyor. Bağlı olmak için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung knüpft die Antwort an eine Bedingung. Für abhängen sagen wir"
+  "de": "Unsere letzte Wendung knüpft die Antwort an eine Bedingung. Für abhängen"
  },
  {
   "tr": "İkinci kalıbımız süren bir işlemi anlatıyor. Tekrar et:",
@@ -762,12 +767,12 @@
  {
   "tr": "denir. İkincisi burada fiziksel değil, fikre yöneliktir.",
   "kind": "say.tr",
-  "de": "genannt. Das zweite meint hier nichts Körperliches, sondern die Idee."
+  "de": "auf Englisch. Das zweite meint hier nichts Körperliches, sondern die Idee."
  },
  {
   "tr": "İkinci kalıbımız bitmiş bir olayı anlatıyor. Profil için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung erzählt ein abgeschlossenes Ereignis. Für das Profil sagen wir"
+  "de": "Unsere zweite Wendung erzählt ein abgeschlossenes Ereignis. Für das Profil"
  },
  {
   "tr": "Şimdi sıra sende: Haber bir gazeteci tarafından yazıldı.",
@@ -792,7 +797,7 @@
  {
   "tr": "denir. İlki sert değildir; tartışmanın olağan kelimesidir.",
   "kind": "say.tr",
-  "de": "genannt. Das erste ist nicht schroff; es ist das übliche Wort der Diskussion."
+  "de": "auf Englisch. Das erste ist nicht schroff; es ist das übliche Wort der Diskussion."
  },
  {
   "tr": "Şimdi sen kur: Bana konuşmacının sözünü kesmememi söyledi.",
@@ -805,9 +810,9 @@
   "de": "Dieses Thema ist schnell gewachsen, deshalb scrolle ich jetzt weniger."
  },
  {
-  "tr": "Şimdi dersin kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:",
+  "tr": "Şimdi bugünün kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Ist die Woche NOCH NICHT VORBEI, steht Present Perfect:"
+  "de": "Jetzt die Regel von heute. Ist die Woche NOCH NICHT VORBEI, steht Present Perfect:"
  },
  {
   "tr": "kullanılır ve bu fiil tartışmanın en sık duyulan kelimesidir.",
@@ -820,9 +825,9 @@
   "de": "Jetzt besprichst du mit einer Freundin deine Gewohnheiten in sozialen Medien."
  },
  {
-  "tr": "Şimdi dersin kuralı. Haber dilinde özne düşer ve edilgen kurulur:",
+  "tr": "Şimdi bugünün kuralı. Haber dilinde özne düşer ve edilgen kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Nachrichtensprache fällt das Subjekt weg und das Passiv wird gebaut:"
+  "de": "Jetzt die Regel von heute. In der Nachrichtensprache fällt das Subjekt weg und das Passiv wird gebaut:"
  },
  {
   "tr": "Bir tane daha: Bunun muhtemelen en iyi fikir olduğunu hissediyorum.",
@@ -840,9 +845,9 @@
   "de": "Jetzt bist du dran: Ich glaube, dass es hilft, weil ich mich ruhiger fühle."
  },
  {
-  "tr": "Şimdi dersin kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince.",
+  "tr": "Şimdi bugünün kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince.",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Meinungssatz besteht aus drei Teilen: Behauptung, Grund und Vorbehalt."
+  "de": "Jetzt die Regel von heute. Der Meinungssatz besteht aus drei Teilen: Behauptung, Grund und Vorbehalt."
  },
  {
   "tr": "Merhaba! Bugün fikir söylemeyi öğreneceğiz: neye inanıyorsun, neden, hangi çekincen var.",
@@ -877,7 +882,7 @@
  {
   "tr": "İngilizcede kibar bir hayır çoğu zaman koşulla kurulur: 'şunu kastediyorsan katılıyorum' gibi. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im Englischen wird ein höfliches Nein oft mit einer Bedingung gebaut: «wenn du das meinst, stimme ich zu». Bist du bereit?"
+  "de": "Im Englischen wird ein höfliches Nein oft mit einer Bedingung gebaut: „wenn du das meinst, stimme ich zu“. Bist du bereit?"
  },
  {
   "tr": "Bir fikir tek başına iddia; onu tartışmaya çeviren şey gerekçe ve gerekçeyi bağlayan şey bağlaç. Hazır mısın?",

@@ -170,6 +170,11 @@
   "de": "Routine"
  },
  {
+  "tr": "sistem",
+  "kind": "vocab.tr",
+  "de": "System"
+ },
+ {
   "tr": "sınav",
   "kind": "vocab.tr",
   "de": "Prüfung"
@@ -250,7 +255,7 @@
   "de": "Gewohnheit"
  },
  {
-  "tr": "dilbilgisi",
+  "tr": "dil bilgisi",
   "kind": "vocab.tr",
   "de": "Grammatik"
  },
@@ -337,7 +342,7 @@
  {
   "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; kopya yasaktır ve yasağın kalıbı başkadır:",
   "kind": "why.tr",
-  "de": "Falsch. Diese Wendung heißt «nicht nötig»; Abschreiben ist verboten, und für das Verbot gibt es eine andere:"
+  "de": "Falsch. Diese Wendung heißt „nicht nötig“; Abschreiben ist verboten, und für das Verbot gibt es eine andere:"
  },
  {
   "tr": "Doğru. Gün kararlaşmış ve plana yazılmış; İngilizce bunu şimdiki zamanla söyler, gelecek eki aramaz.",
@@ -422,7 +427,7 @@
  {
   "tr": "Bir şeyi anlamak",
   "kind": "say.tr",
-  "de": "Etwas verstehen wird mit"
+  "de": "Etwas verstehen heißt"
  },
  {
   "tr": "Bir şeyi ölçmeye",
@@ -482,7 +487,7 @@
  {
   "tr": "Kontrol etmek için",
   "kind": "say.tr",
-  "de": "Für prüfen sagen wir"
+  "de": "Für prüfen"
  },
  {
   "tr": "Tekrarlanan biçime",
@@ -557,7 +562,7 @@
  {
   "tr": "bir hatayı kabul etmek ise",
   "kind": "say.tr",
-  "de": "und einen Fehler zugeben heißt"
+  "de": "und für einen Fehler zugeben –"
  },
  {
   "tr": "Deftere yazmaya alışkınım.",
@@ -567,7 +572,7 @@
  {
   "tr": "Dinlemek demek ve ardından",
   "kind": "say.tr",
-  "de": "Das heißt hören, und danach kommt"
+  "de": "Das heißt hören, wobei danach"
  },
  {
   "tr": "Özetleyelim: süren gelişim",
@@ -577,7 +582,7 @@
  {
   "tr": "o an verilen karar için ise",
   "kind": "say.tr",
-  "de": "und für einen spontanen Entschluss"
+  "de": "während bei einem spontanen Entschluss"
  },
  {
   "tr": "Sınavda kopya çekmek yasak.",
@@ -595,9 +600,9 @@
   "de": "Die Lücke beim Sprechen ist schwer zu messen."
  },
  {
-  "tr": "Puanım düşüktü ama notum iyiydi.",
+  "tr": "Puanım düşüktü ama notum yine de iyiydi.",
   "kind": "say.tr",
-  "de": "Meine Punktzahl war niedrig, aber meine Note war gut."
+  "de": "Meine Punktzahl war niedrig, aber meine Note war trotzdem gut."
  },
  {
   "tr": "sınav öncesi hissettiğin şeye ise",
@@ -615,7 +620,7 @@
   "de": "Dann hat mir die Korrektur geholfen."
  },
  {
-  "tr": "Dilbilgim iyi ama telaffuzum zayıf.",
+  "tr": "Dil bilgim iyi ama telaffuzum zayıf.",
   "kind": "say.tr",
   "de": "Meine Grammatik ist gut, aber meine Aussprache ist schwach."
  },
@@ -632,7 +637,7 @@
  {
   "tr": "denir. İlki Britanya'da s ile yazılır.",
   "kind": "say.tr",
-  "de": "genannt. Das erste wird in Großbritannien mit s geschrieben."
+  "de": "auf Englisch. Das erste wird in Großbritannien mit s geschrieben."
  },
  {
   "tr": "Bu düzeltme öğrenenler arasında yaygın.",
@@ -657,7 +662,7 @@
  {
   "tr": "denir ve bu fiil oyunlarda da kullanılır.",
   "kind": "say.tr",
-  "de": "genannt, und dieses Verb wird auch bei Spielen benutzt."
+  "de": "auf Englisch, und dieses Verb wird auch bei Spielen benutzt."
  },
  {
   "tr": "Kabul ediyorum ve artık kuralı anlıyorum.",
@@ -677,7 +682,7 @@
  {
   "tr": "Son kalıbımız öğüt veriyor. Alıştırma için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung gibt einen Rat. Für die Übung sagen wir"
+  "de": "Unsere letzte Wendung gibt einen Rat. Für die Übung"
  },
  {
   "tr": "Dikkatsiz olduğumda aynı örüntü geri geldi.",
@@ -695,7 +700,7 @@
   "de": "Jetzt besprichst du deinen Plan mit einer Freundin."
  },
  {
-  "tr": "Şimdi sen kur: Geçen bahar bir test yaptım.",
+  "tr": "Şimdi sen kur: Geçen bahar bir sınava girdim.",
   "kind": "say.tr",
   "de": "Jetzt du: Letztes Frühjahr habe ich einen Test gemacht."
  },
@@ -777,7 +782,7 @@
  {
   "tr": "İkinci kalıbımız niyeti anlatıyor. Tekrar etmek için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung nennt die Absicht. Für wiederholen sagen wir"
+  "de": "Unsere zweite Wendung nennt die Absicht. Für wiederholen"
  },
  {
   "tr": "Bir tane daha: Bu akşam ikinci bölümü tekrar ediyorum.",
@@ -790,7 +795,7 @@
   "de": "Mein Lernkalender zeigt jedes Kapitel und jede Pause."
  },
  {
-  "tr": "Şimdi sıra sende: Bu hafta dilbilgisine odaklanacağım.",
+  "tr": "Şimdi sıra sende: Bu hafta dil bilgisine odaklanacağım.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Diese Woche konzentriere ich mich auf die Grammatik."
  },
@@ -815,14 +820,14 @@
   "de": "Jetzt bist du dran: Ich sehe gern Filme ohne Untertitel."
  },
  {
-  "tr": "denir; ajandadan farkı yalnız çalışma için kullanılmasıdır.",
+  "tr": "denir; Amerikalılar her türlü ajandaya da böyle der.",
   "kind": "say.tr",
-  "de": "genannt; der Unterschied zum Kalender ist, dass er nur fürs Lernen da ist."
+  "de": "auf Englisch; so nennen Amerikaner auch jeden Terminkalender."
  },
  {
-  "tr": "Şimdi dersin kuralı. Gelişim HÂLÂ sürüyorsa present perfect:",
+  "tr": "Şimdi bugünün kuralı. Gelişim HÂLÂ sürüyorsa present perfect:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. LÄUFT die Entwicklung noch, steht Present Perfect:"
+  "de": "Jetzt die Regel von heute. LÄUFT die Entwicklung noch, steht Present Perfect:"
  },
  {
   "tr": "Başlangıç gibi bitmiş bir noktadan söz ediyorsan past simple:",
@@ -832,12 +837,12 @@
  {
   "tr": "İkinci kalıbımız bitmiş bir başlangıcı anlatıyor. Seviye için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung erzählt von einem abgeschlossenen Anfang. Für das Niveau sagen wir"
+  "de": "Unsere zweite Wendung erzählt von einem abgeschlossenen Anfang. Für das Niveau"
  },
  {
-  "tr": "Şimdi dersin kuralı. Takvime yazılmış bir iş için şimdiki zaman:",
+  "tr": "Şimdi bugünün kuralı. Takvime yazılmış bir iş için şimdiki zaman:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Für etwas, das im Kalender steht, nimmt man die Verlaufsform:"
+  "de": "Jetzt die Regel von heute. Für etwas, das im Kalender steht, nimmt man die Verlaufsform:"
  },
  {
   "tr": "Bir tane daha: Ne kadar zamandır telaffuzun üzerinde çalışıyorsun?",
@@ -855,9 +860,9 @@
   "de": "Eine kurze Pause hilft mir, mich zu konzentrieren, und hält meine Routine gesund."
  },
  {
-  "tr": "Şimdi dersin kuralı. Hoşlanma ve alışkanlık fiillerinden sonra -ing gelir:",
+  "tr": "Şimdi bugünün kuralı. Hoşlanma ve alışkanlık fiillerinden sonra -ing gelir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Nach Verben der Vorliebe und Gewohnheit steht -ing:"
+  "de": "Jetzt die Regel von heute. Nach Verben der Vorliebe und Gewohnheit steht -ing:"
  },
  {
   "tr": "Hatanın hikâyesi hep aynı sıradadır ve İngilizce o sırayı zamanla gösterir. Hazır mısın?",

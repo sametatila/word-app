@@ -245,7 +245,7 @@
   "de": "tragen"
  },
  {
-  "tr": "anahtar / çevirmek",
+  "tr": "şalter / açıp kapamak",
   "kind": "vocab.tr",
   "de": "Schalter / schalten"
  },
@@ -315,9 +315,9 @@
   "de": "erzählt den Vorgang, ohne zu sagen, wer ihn ausführt"
  },
  {
-  "tr": "Yalın biçim kalırsa cümle emir gibi duyulur.",
+  "tr": "Yalın biçim kalırsa cümle dil bilgisi açısından bozulur.",
   "kind": "why.tr",
-  "de": "Bleibt die Grundform stehen, klingt der Satz wie ein Befehl."
+  "de": "Bleibt die Grundform stehen, ist der Satz grammatisch falsch."
  },
  {
   "tr": "Yanlış. Edilgende fiilin üçüncü hâli gerekir:",
@@ -327,7 +327,7 @@
  {
   "tr": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer eki gelmez:",
   "kind": "why.tr",
-  "de": "Falsch. Dieses Pronomen trägt «dort» schon in sich; am Ende kommt keine zweite Ortsangabe:"
+  "de": "Falsch. Dieses Pronomen trägt „dort“ schon in sich; am Ende kommt keine zweite Ortsangabe:"
  },
  {
   "tr": "Doğru. Bu bağlaç iki şeyi yan yana koyup karşılaştırıyor; çekince bildirmiyor, fark gösteriyor.",
@@ -387,7 +387,7 @@
  {
   "tr": "Tavsiye fiilinden sonra -ing gelir. Roman için",
   "kind": "hint.tr",
-  "de": "Nach dem Empfehlungsverb steht -ing. Für den Roman sagen wir"
+  "de": "Nach dem Empfehlungsverb steht -ing. Für den Roman"
  },
  {
   "tr": "değer",
@@ -427,7 +427,7 @@
  {
   "tr": "Sıkıcı için",
   "kind": "say.tr",
-  "de": "Für langweilig sagen wir"
+  "de": "Langweilig heißt"
  },
  {
   "tr": "uzun boylu,",
@@ -442,12 +442,12 @@
  {
   "tr": "huy için ise",
   "kind": "say.tr",
-  "de": "und für das Wesen"
+  "de": "und das Wesen heißt"
  },
  {
   "tr": "Tercih etmek",
   "kind": "say.tr",
-  "de": "Bevorzugen wird mit"
+  "de": "Bevorzugen heißt"
  },
  {
   "tr": "karşılaştırma",
@@ -467,7 +467,7 @@
  {
   "tr": "Her ikisi için",
   "kind": "say.tr",
-  "de": "Für beide sagen wir"
+  "de": "Für beide"
  },
  {
   "tr": "Zevkine bağlı.",
@@ -492,7 +492,7 @@
  {
   "tr": "demek gerekmez.",
   "kind": "say.tr",
-  "de": "zu sagen ist nicht nötig."
+  "de": "sagen."
  },
  {
   "tr": "karşılaştırmak,",
@@ -502,7 +502,7 @@
  {
   "tr": "sessiz için ise",
   "kind": "say.tr",
-  "de": "und für still"
+  "de": "und für still sagt man"
  },
  {
   "tr": "Denizin kenarına",
@@ -512,7 +512,7 @@
  {
   "tr": "karar vermek ise",
   "kind": "say.tr",
-  "de": "und sich entscheiden mit"
+  "de": "und für sich entscheiden –"
  },
  {
   "tr": "Özetleyelim: yer",
@@ -542,7 +542,7 @@
  {
   "tr": "Genel görünüş için",
   "kind": "say.tr",
-  "de": "Für das gesamte Aussehen sagen wir"
+  "de": "Das gesamte Aussehen heißt"
  },
  {
   "tr": "oynayan kişiye ise",
@@ -597,7 +597,7 @@
  {
   "tr": "heyecan verici için ise",
   "kind": "say.tr",
-  "de": "und für spannend"
+  "de": "und spannend heißt"
  },
  {
   "tr": "sakin ve huzurluysa ise",
@@ -642,12 +642,12 @@
  {
   "tr": "İlk kalıbımız. Gözlük için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für die Brille sagen wir"
+  "de": "Unsere erste Wendung. Für die Brille"
  },
  {
   "tr": "o yüzden arkasından ayrıca",
   "kind": "say.tr",
-  "de": "deshalb danach zusätzlich"
+  "de": "deshalb muss man danach nicht zusätzlich"
  },
  {
   "tr": "Üçüncü bir zamir daha var:",
@@ -662,12 +662,12 @@
  {
   "tr": "İkinci kalıbımız. Ayar için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung. Für die Einstellung sagen wir"
+  "de": "Unsere zweite Wendung. Für die Einstellung"
  },
  {
   "tr": "İkinci kalıbımız. Değer için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung. Für lohnen sagen wir"
+  "de": "Unsere zweite Wendung. Für „wert“"
  },
  {
   "tr": "Filmin ya da kitabın konusuna",
@@ -735,9 +735,9 @@
   "de": "Noch eins: Das Haus, das sehr alt ist, steht leer."
  },
  {
-  "tr": "Eski cihaz bir kabloyla bağlanmıştı.",
+  "tr": "Eski cihaz bir kabloyla bağlanıyordu.",
   "kind": "say.tr",
-  "de": "Das alte Gerät war mit einem Kabel verbunden."
+  "de": "Das alte Gerät wurde mit einem Kabel angeschlossen."
  },
  {
   "tr": "bir şeyin ne kadar iyi yapıldığına ise",
@@ -750,9 +750,9 @@
   "de": "Jetzt du: Er ist der Mann, den ich an der Tür gesehen habe."
  },
  {
-  "tr": "Şimdi dersin kuralı. Yer tanımlanıyorsa",
+  "tr": "Şimdi bugünün kuralı. Yer tanımlanıyorsa",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Wird ein Ort beschrieben, steht"
+  "de": "Jetzt die Regel von heute. Wird ein Ort beschrieben, wird"
  },
  {
   "tr": "Şimdi sen kur: Sinemada izlemeye değer.",
@@ -770,14 +770,14 @@
   "de": "Die erste Stunde ist langweilig, aber das Ende ist spannend."
  },
  {
-  "tr": "çevirmek. İlk kalıbımız da bu. Tekrar et:",
+  "tr": "açıp kapamak. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
   "de": "schalten. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
   "tr": "ile başlar ve ismin HEMEN arkasına gelir.",
   "kind": "say.tr",
-  "de": "beginnt und kommt DIREKT hinter das Nomen."
+  "de": "und kommt DIREKT hinter das Nomen."
  },
  {
   "tr": "Şimdi birini kalabalıkta tarif edeceksin.",
@@ -817,7 +817,7 @@
  {
   "tr": "kullanılır ve 'orada' anlamını kendi taşır;",
   "kind": "say.tr",
-  "de": "benutzt und trägt «dort» selbst in sich;"
+  "de": "benutzt, und es trägt „dort“ selbst in sich;"
  },
  {
   "tr": "Şimdi sen kur: Dil ayarlardan değiştirilir.",
@@ -830,9 +830,9 @@
   "de": "und auch er nimmt einen Satz, stellt aber einen Gegensatz her,"
  },
  {
-  "tr": "Şimdi dersin kuralı. Çekince bildiren bağlaç",
+  "tr": "Şimdi bugünün kuralı. Çekince bildiren bağlaç",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Konnektor für den Vorbehalt"
+  "de": "Jetzt die Regel von heute. Der Konnektor für den Vorbehalt"
  },
  {
   "tr": "Daha ucuz olmasına rağmen kalitesi daha kötü.",
@@ -865,9 +865,9 @@
   "de": "Noch eins: Ich bevorzuge die billigere Option."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kişiyi tanımlayan yan cümle",
+  "tr": "Şimdi bugünün kuralı. Kişiyi tanımlayan yan cümle",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Nebensatz, der eine Person beschreibt, mit"
+  "de": "Jetzt die Regel von heute. Der Nebensatz, der eine Person beschreibt, beginnt mit"
  },
  {
   "tr": "Aidiyet bildirir ve ardından doğrudan isim gelir.",
@@ -905,9 +905,9 @@
   "de": "Jetzt bist du dran: Ich empfehle, zuerst den Roman zu lesen."
  },
  {
-  "tr": "denir. Dikkat: bu sıfatlar ŞEYİ anlatır, kişiyi değil.",
+  "tr": "denir. Dikkat: bu sıfatlar şeyin nasıl olduğunu anlatır, senin ne hissettiğini değil; hissettiğin için 'bored' ve 'excited' denir.",
   "kind": "say.tr",
-  "de": "genannt. Achtung: diese Adjektive beschreiben die SACHE, nicht die Person."
+  "de": "auf Englisch. Achtung: diese Adjektive beschreiben, wie die Sache ist, nicht, was du fühlst; für dein Gefühl sagt man „bored“ und „excited“."
  },
  {
   "tr": "Şimdi bir mağazada iki ürün arasında seçim yapacaksın.",
@@ -917,7 +917,7 @@
  {
   "tr": "denir ve bu kelime hem yemek hem sanat için kullanılır.",
   "kind": "say.tr",
-  "de": "genannt, und das Wort wird für Essen wie für Kunst benutzt."
+  "de": "auf Englisch, und das Wort wird für Essen wie für Kunst benutzt."
  },
  {
   "tr": "Şimdi sıra sende: Küçük olmasına rağmen hoşuma gidiyor.",
@@ -925,19 +925,19 @@
   "de": "Jetzt bist du dran: Obwohl es klein ist, gefällt es mir."
  },
  {
-  "tr": "Şimdi dersin kuralı. Tavsiye fiilinden sonra -ing gelir:",
+  "tr": "Şimdi bugünün kuralı. Tavsiye fiilinden sonra -ing gelir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Nach dem Empfehlungsverb steht -ing:"
+  "de": "Jetzt die Regel von heute. Nach dem Empfehlungsverb steht -ing:"
  },
  {
   "tr": "denir. İkisi ayrı şeylerdir ve İngilizcede karıştırılmaz.",
   "kind": "say.tr",
-  "de": "genannt. Das sind zwei verschiedene Dinge und werden im Englischen nicht vermischt."
+  "de": "auf Englisch. Das sind zwei verschiedene Dinge und werden im Englischen nicht vermischt."
  },
  {
   "tr": "İkinci kalıbımız yeri özelliğiyle tanımlıyor. Turist için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung beschreibt den Ort über seine Eigenschaft. Für den Touristen sagen wir"
+  "de": "Unsere zweite Wendung beschreibt den Ort über seine Eigenschaft. Für den Touristen"
  },
  {
   "tr": "Şimdi bir arkadaşına cihazın nasıl çalıştığını anlatacaksın.",
@@ -950,14 +950,14 @@
   "de": "Und es gibt eine Wendung für den Wert, und danach steht immer -ing:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:",
+  "tr": "Şimdi bugünün kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Anleitungssprache fällt das Subjekt weg und das Passiv wird gebaut:"
+  "de": "Jetzt die Regel von heute. In der Anleitungssprache fällt das Subjekt weg und das Passiv wird gebaut:"
  },
  {
   "tr": "denir. İkincisi olumsuz bir şey değildir; sakin, az konuşan demektir.",
   "kind": "say.tr",
-  "de": "genannt. Das zweite ist nichts Negatives; es heißt ruhig, wortkarg."
+  "de": "auf Englisch. Das zweite ist nichts Negatives; es heißt ruhig, wortkarg."
  },
  {
   "tr": "Bu bir üslup tercihi değil: kılavuz herkese yazılır, o yüzden kimin yaptığı söylenmez.",
@@ -977,7 +977,7 @@
  {
   "tr": "Son bir incelik. Yan cümle zorunlu bilgi değil EK bilgi veriyorsa iki virgül arasına alınır ve",
   "kind": "say.tr",
-  "de": "Eine letzte Feinheit. Gibt der Nebensatz keine nötige, sondern eine ZUSÄTZLICHE Information, steht er zwischen zwei Kommas und wird mit"
+  "de": "Eine letzte Feinheit. Gibt der Nebensatz keine nötige, sondern eine ZUSÄTZLICHE Information, steht er zwischen zwei Kommas, und es wird"
  },
  {
   "tr": "Kullanma kılavuzlarının dili edilgendir; kimin bastığı değil, neye basıldığı yazar. Hazır mısın?",
@@ -1012,11 +1012,11 @@
  {
   "tr": "Yer tarif ederken İngilizcenin ayrı bir zamiri var ve bu zamir cümleye 'orada' anlamını kendisi katıyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Beim Beschreiben von Orten hat das Englische ein eigenes Pronomen, und dieses Pronomen bringt «dort» selbst in den Satz. Bist du bereit?"
+  "de": "Beim Beschreiben von Orten hat das Englische ein eigenes Pronomen, und dieses Pronomen bringt „dort“ selbst in den Satz. Bist du bereit?"
  },
  {
   "tr": "Bir odada beş kişi varsa hepsinin adı 'the man' ya da 'the woman'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Sind fünf Leute im Raum, heißen alle 'the man' oder 'the woman'; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
+  "de": "Sind fünf Leute im Raum, heißen alle „the man“ oder „the woman“; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
  }
 ]

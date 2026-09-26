@@ -357,7 +357,7 @@
  {
   "tr": "Nesne durumunda zamir düşebilir. Dosya için",
   "kind": "hint.tr",
-  "de": "Als Objekt darf das Pronomen wegfallen. Für die Mappe sagen wir"
+  "de": "Als Objekt darf das Pronomen wegfallen. Für die Mappe"
  },
  {
   "tr": "hak",
@@ -407,12 +407,12 @@
  {
   "tr": "Beklemek için",
   "kind": "say.tr",
-  "de": "Für warten sagen wir"
+  "de": "Für warten"
  },
  {
   "tr": "Saygılar için",
   "kind": "say.tr",
-  "de": "Für Grüße sagen wir"
+  "de": "Für Grüße"
  },
  {
   "tr": "daha gündelik,",
@@ -462,7 +462,7 @@
  {
   "tr": "Bir şeyi kanıtlamak",
   "kind": "say.tr",
-  "de": "Etwas beweisen wird mit"
+  "de": "Etwas beweisen heißt"
  },
  {
   "tr": "çağrılan sayıya ise",
@@ -522,7 +522,7 @@
  {
   "tr": "Bir başvuruyu reddetmek",
   "kind": "say.tr",
-  "de": "Einen Antrag ablehnen wird mit"
+  "de": "Einen Antrag ablehnen heißt"
  },
  {
   "tr": "İşlem yapılan pencereye",
@@ -565,7 +565,7 @@
   "de": "Für ein Dokument, das noch gilt, sagen wir"
  },
  {
-  "tr": "Geçen yıl da beyan etmiştim.",
+  "tr": "Geçen yıl da beyan ettim.",
   "kind": "say.tr",
   "de": "Letztes Jahr habe ich es auch angegeben."
  },
@@ -640,6 +640,11 @@
   "de": "Einkommen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
+  "tr": "edatı gelir. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "als Präposition kommt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
   "tr": "Pasaportum geçerli ama bir belge eksik.",
   "kind": "say.tr",
   "de": "Mein Pass ist gültig, aber ein Papier fehlt."
@@ -697,17 +702,17 @@
  {
   "tr": "denir ve vergi işinde hep çoğul kullanılır.",
   "kind": "say.tr",
-  "de": "genannt und steht in Steuersachen immer im Plural."
+  "de": "auf Englisch; in Steuersachen steht das Wort immer im Plural."
  },
  {
   "tr": "denir; resmî listelerde hep bu kelime geçer.",
   "kind": "say.tr",
-  "de": "genannt; in amtlichen Listen steht immer dieses Wort."
+  "de": "; in amtlichen Listen steht immer dieses Wort."
  },
  {
   "tr": "Kopyayı İngilizceye çevirmek zorunda kaldım.",
   "kind": "say.tr",
-  "de": "Ich musste die Kopie ins Englische übersetzen lassen."
+  "de": "Ich musste die Kopie ins Englische übersetzen."
  },
  {
   "tr": "Şimdi sen kur: Getirdiğim dosya çok inceydi.",
@@ -752,7 +757,7 @@
  {
   "tr": "Son kalıbımız mektubu kapatıyor. Saygılarımla için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung schließt den Brief. Für mit freundlichen Grüßen sagen wir"
+  "de": "Unsere letzte Wendung schließt den Brief. Für „mit freundlichen Grüßen“"
  },
  {
   "tr": "Şimdi sıra sende: Gönderdikleri mektup Almancaydı.",
@@ -762,7 +767,7 @@
  {
   "tr": "İkinci kalıbımız ısrarı anlatıyor. Israr etmek için",
   "kind": "say.tr",
-  "de": "Unsere zweite Wendung nennt das Beharren. Für darauf bestehen sagen wir"
+  "de": "Unsere zweite Wendung nennt das Beharren. Für darauf bestehen"
  },
  {
   "tr": "ise resmî kapanıştır.",
@@ -820,9 +825,9 @@
   "de": "Jetzt bist du dran: Bevor sie mich aufriefen, hatte ich das Formular ausgefüllt."
  },
  {
-  "tr": "Şimdi dersin kuralı. Karar fiillerinden sonra mastar gelir:",
+  "tr": "Şimdi bugünün kuralı. Karar fiillerinden sonra mastar gelir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Nach Verben der Entscheidung steht der Infinitiv:"
+  "de": "Jetzt die Regel von heute. Nach Verben der Entscheidung steht der Infinitiv:"
  },
  {
   "tr": "Şimdi sıra sende: Daha fazla kanıt göndermeye karar verdim.",
@@ -845,24 +850,24 @@
   "de": "für Personen. Der Nebensatz kommt direkt hinter das Nomen, nicht ans Satzende."
  },
  {
-  "tr": "Şimdi dersin kuralı. Hangi belgeden söz ettiğini yan cümle söyler:",
+  "tr": "Şimdi bugünün kuralı. Hangi belgeden söz ettiğini yan cümle söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Welches Dokument gemeint ist, sagt der Nebensatz:"
+  "de": "Jetzt die Regel von heute. Welches Dokument gemeint ist, sagt der Nebensatz:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:",
+  "tr": "Şimdi bugünün kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im amtlichen Brief werden die Absätze mit Konnektoren verbunden:"
+  "de": "Jetzt die Regel von heute. Im amtlichen Brief werden die Absätze mit Konnektoren verbunden:"
  },
  {
   "tr": "denir; aynı kelime hastanede 'hasta' anlamına da gelir ve bağlam ayırır.",
   "kind": "say.tr",
-  "de": "genannt; dasselbe Wort heißt im Krankenhaus auch «Patient», und der Zusammenhang entscheidet."
+  "de": "auf Englisch; dasselbe Wort heißt im Krankenhaus auch „Patient“, und der Zusammenhang entscheidet."
  },
  {
-  "tr": "Şimdi dersin kuralı. İçinde bulunduğun yıl HENÜZ BİTMEDİYSE present perfect:",
+  "tr": "Şimdi bugünün kuralı. İçinde bulunduğun yıl HENÜZ BİTMEDİYSE present perfect:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Ist das laufende Jahr NOCH NICHT VORBEI, steht Present Perfect:"
+  "de": "Jetzt die Regel von heute. Ist das laufende Jahr NOCH NICHT VORBEI, steht Present Perfect:"
  },
  {
   "tr": "Merhaba! Bugün resmî bir mektup yazmayı öğreneceğiz: konu satırı, talep, kapanış.",
@@ -900,14 +905,14 @@
   "de": "Hallo! Heute sprechen wir über die Steuererklärung: was du verdient, was du angegeben und welche Belege du aufbewahrt hast."
  },
  {
-  "tr": "Merhaba! Bu modülün son dersi: bir karara itiraz etmek. Neye dayanıyorsun, neyi kanıtlayabilirsin, hakkın ne.",
+  "tr": "Merhaba! Bu, modülün son Konuşma adımı: bir karara itiraz etmek. Neye dayanıyorsun, neyi kanıtlayabilirsin, hakkın ne.",
   "kind": "say.tr",
-  "de": "Hallo! Die letzte Lektion dieses Moduls: gegen eine Entscheidung Widerspruch einlegen. Worauf du dich stützt, was du beweisen kannst, welches Recht du hast."
+  "de": "Hallo! Der letzte Sprechen-Schritt dieses Moduls: gegen eine Entscheidung Widerspruch einlegen. Worauf du dich stützt, was du beweisen kannst, welches Recht du hast."
  },
  {
   "tr": "Bir dosyada on belge varsa hepsinin adı 'the document'; hangisinden söz ettiğini yan cümle söyler. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Liegen zehn Papiere in einer Mappe, heißen alle 'the document'; welches gemeint ist, sagt der Nebensatz. Bist du bereit?"
+  "de": "Liegen zehn Papiere in einer Mappe, heißen alle „the document“; welches gemeint ist, sagt der Nebensatz. Bist du bereit?"
  },
  {
   "tr": "Burada iki zaman yan yana duruyor: bu yıl henüz bitmedi, geçen yıl bitti. İngilizce ikisini ayrı söylüyor. Hazır mısın?",

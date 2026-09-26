@@ -12,42 +12,42 @@
  {
   "tr": "her ihtimali kesinlik sayan, «yani öyle diyorsun» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede Möglichkeit für Gewissheit hält und sagt «du sagst also das»"
+  "de": "jemand, der jede Möglichkeit für Gewissheit hält und sagt „du sagst also das“"
  },
  {
   "tr": "her şeyi düz anlayan, «güzel geçmiş demek» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der alles wörtlich nimmt und sagt «es war also schön»"
+  "de": "ein Freund, der alles wörtlich nimmt und sagt „es war also schön“"
  },
  {
   "tr": "her ödünü geri adım sayan, «demek kabul ediyorsun» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jedes Zugeständnis für einen Rückzieher hält und sagt «du gibst mir also recht»"
+  "de": "jemand, der jedes Zugeständnis für einen Rückzieher hält und sagt „du gibst mir also recht“"
  },
  {
   "tr": "her yeni bölümde «bu neyle ilgiliydi» diye soran bir dinleyici",
   "kind": "partner",
-  "de": "eine Zuhörerin, die bei jedem neuen Abschnitt fragt «worum ging es da»"
+  "de": "eine Zuhörerin, die bei jedem neuen Abschnitt fragt „worum ging es da“"
  },
  {
   "tr": "her kısaltmayı kaçamak sayan, «soruma cevap vermedin» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede Kürzung für ein Ausweichen hält und sagt «du hast meine Frage nicht beantwortet»"
+  "de": "jemand, der jede Kürzung für ein Ausweichen hält und sagt „du hast meine Frage nicht beantwortet“"
  },
  {
   "tr": "bu biçimleri süs sayan, «neden böyle konuşuyorsun» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der diese Formen für Zierrat hält und fragt «warum redest du so»"
+  "de": "ein Freund, der diese Formen für Zierrat hält und fragt „warum redest du so“"
  },
  {
   "tr": "her eksik cümleyi hata sayan, «cümleyi tamamlasana» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der jeden unvollständigen Satz für einen Fehler hält und sagt «sprich den Satz zu Ende»"
+  "de": "ein Freund, der jeden unvollständigen Satz für einen Fehler hält und sagt „sprich den Satz zu Ende“"
  },
  {
   "tr": "anlatıyı yalnız olay örgüsüyle özetleyen, «sonra ne oldu» diye soran bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der die Erzählung nur über die Handlung zusammenfasst und fragt «und dann»"
+  "de": "ein Freund, der die Erzählung nur über die Handlung zusammenfasst und fragt „und dann“"
  },
  {
   "tr": "Sonra ne oldu?",
@@ -240,7 +240,7 @@
   "de": "Du erzählst einer Freundin eine gelesene Erzählung und wählst in jedem Satz, von wo aus geschaut wird. Bilde drei Sätze, die die Arbeit der Erzählstimme, den Ort und das Objekt voranstellen."
  },
  {
-  "tr": "Zor bir soruyu olan bir görüşmeyi yönetiyorsun. Sadeleştirmeyi, atlatmayı ve kalıplaşmayı yerleşik eşdizimlerle adlandır ve hangisini yaptığını açıkça söyle.",
+  "tr": "Zor bir sorunun geldiği bir görüşmeyi yönetiyorsun. Sadeleştirmeyi, atlatmayı ve kalıplaşmayı yerleşik eşdizimlerle adlandır ve hangisini yaptığını açıkça söyle.",
   "kind": "scene",
   "de": "Du führst ein Gespräch, in dem eine schwierige Frage steht. Benenne das Straffen, das Ausweichen und das Erstarren mit festen Wortverbindungen und sag offen, was du getan hast."
  },
@@ -302,12 +302,12 @@
  {
   "tr": "Doğru. Söz aktarılmış ama «rather» onu övgü olmaktan çıkarmış.",
   "kind": "why.tr",
-  "de": "Richtig. Die Rede ist wiedergegeben, aber «rather» nimmt ihr das Lob."
+  "de": "Richtig. Die Rede ist wiedergegeben, aber „rather“ nimmt ihr das Lob."
  },
  {
   "tr": "Doğru. «might» okumayı kabul etmez, uzakta tutar; iddia ölçülü kalır.",
   "kind": "why.tr",
-  "de": "Richtig. «might» nimmt die Lesart nicht an, es hält sie auf Abstand; die Behauptung bleibt maßvoll."
+  "de": "Richtig. „might“ nimmt die Lesart nicht an, es hält sie auf Abstand; die Behauptung bleibt maßvoll."
  },
  {
   "tr": "Doğru. Fiil çekilmemiş; kuramsal metinde bu biçim savı kişiden ayırır.",
@@ -342,7 +342,7 @@
  {
   "tr": "Doğru. «as noted» okuru daha önce okuduğu yere gönderiyor; cümle tek başına da anlaşılıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «as noted» schickt die Leserin an die Stelle, die sie vorher gelesen hat; der Satz ist auch für sich verständlich."
+  "de": "Richtig. „as noted“ schickt die Leserin an die Stelle, die sie vorher gelesen hat; der Satz ist auch für sich verständlich."
  },
  {
   "tr": "yalanlayıp doğrular",
@@ -815,7 +815,7 @@
   "de": "zergliedern"
  },
  {
-  "tr": "şifreleme yöntemi",
+  "tr": "şifre",
   "kind": "vocab.tr",
   "de": "Chiffre"
  },
@@ -887,12 +887,12 @@
  {
   "tr": "Olasılığı uzak tutmak için",
   "kind": "hint.tr",
-  "de": "Um die Möglichkeit auf Abstand zu halten"
+  "de": "Um die Möglichkeit auf Abstand zu halten –"
  },
  {
   "tr": "Yalanlayıp doğrulamak için",
   "kind": "hint.tr",
-  "de": "Um zu verneinen und zugleich zu bestätigen"
+  "de": "Um zu verneinen und zugleich zu bestätigen –"
  },
  {
   "tr": "Ödünü araya sıkıştırmak için",
@@ -902,17 +902,17 @@
  {
   "tr": "Yukarıyı aşağıya bağlamak için",
   "kind": "hint.tr",
-  "de": "Um das Obere an das Untere zu binden"
+  "de": "Um das Obere an das Untere zu binden –"
  },
  {
   "tr": "Aynı metni üç okumaya vermek için",
   "kind": "hint.tr",
-  "de": "Um denselben Text drei Lesarten zu geben"
+  "de": "Um denselben Text drei Lesarten zu geben –"
  },
  {
   "tr": "Eksik söyleyip çok kastetmek için",
   "kind": "hint.tr",
-  "de": "Um wenig zu sagen und viel zu meinen"
+  "de": "Um wenig zu sagen und viel zu meinen –"
  },
  {
   "tr": "Geri göndermeyi araya koymak için",
@@ -922,7 +922,7 @@
  {
   "tr": "Ödünü başa alıp karşı çıkmak için",
   "kind": "hint.tr",
-  "de": "Um das Zugeständnis voranzustellen und zu widersprechen"
+  "de": "Um das Zugeständnis voranzustellen und zu widersprechen –"
  },
  {
   "tr": "Ödünü cümlenin başına çekmek için",
@@ -932,12 +932,12 @@
  {
   "tr": "Etiketlemekle okumayı ayırmak için",
   "kind": "hint.tr",
-  "de": "Um Etikettieren und Lesen zu trennen"
+  "de": "Um Etikettieren und Lesen zu trennen –"
  },
  {
   "tr": "Anlatıcının işini başa taşımak için",
   "kind": "hint.tr",
-  "de": "Um die Arbeit der Erzählstimme nach vorn zu holen"
+  "de": "Um die Arbeit der Erzählstimme nach vorn zu holen –"
  },
  {
   "tr": "İkinci yarıda yüklemi düşürmek için",
@@ -947,17 +947,17 @@
  {
   "tr": "Kuramsal yasağı kalıpla kurmak için",
   "kind": "hint.tr",
-  "de": "Um das theoretische Verbot mit der Formel zu bauen"
+  "de": "Um das theoretische Verbot mit der Formel zu bauen –"
  },
  {
   "tr": "İki bölümü tek cümlede bağlamak için",
   "kind": "hint.tr",
-  "de": "Um zwei Abschnitte in einem Satz zu binden"
+  "de": "Um zwei Abschnitte in einem Satz zu binden –"
  },
  {
   "tr": "Övgüyü aktarıp tersine çevirmek için",
   "kind": "hint.tr",
-  "de": "Um das Lob wiederzugeben und umzukehren"
+  "de": "Um das Lob wiederzugeben und umzukehren –"
  },
  {
   "tr": "Yüklemi yardımcı fiile indirmek için",
@@ -967,7 +967,7 @@
  {
   "tr": "Dil düzeyini sezginin seçtiğini söylemek için",
   "kind": "hint.tr",
-  "de": "Um zu sagen, dass das Gespür das Register wählt"
+  "de": "Um zu sagen, dass das Gespür das Register wählt –"
  },
  {
   "tr": "İki eylemi aynı kipin altına koymak için",
@@ -977,27 +977,27 @@
  {
   "tr": "Olmasaydıyı kuramsal metinde kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht im theoretischen Text zu bauen"
+  "de": "Um das Wäre-nicht im theoretischen Text zu bauen –"
  },
  {
   "tr": "Kabul edilebilir okumayı işaretlemek için",
   "kind": "hint.tr",
-  "de": "Um die vertretbare Lesart zu markieren"
+  "de": "Um die vertretbare Lesart zu markieren –"
  },
  {
   "tr": "Tonun boş sözü doldurduğunu göstermek için",
   "kind": "hint.tr",
-  "de": "Um zu zeigen, dass der Ton die Floskel füllt"
+  "de": "Um zu zeigen, dass der Ton die Floskel füllt –"
  },
  {
   "tr": "Klasik isteği kalıplaşmış biçimle kurmak için",
   "kind": "hint.tr",
-  "de": "Um die klassische Forderung in fester Form zu bauen"
+  "de": "Um die klassische Forderung in fester Form zu bauen –"
  },
  {
   "tr": "Aynı cümlenin dil düzeyine göre değiştiğini söylemek için",
   "kind": "hint.tr",
-  "de": "Um zu sagen, dass derselbe Satz sich mit dem Register ändert"
+  "de": "Um zu sagen, dass derselbe Satz sich mit dem Register ändert –"
  },
  {
   "tr": "ton",
@@ -1175,9 +1175,9 @@
   "de": "Nachdrücklich gesagt klingt eine Floskel wie eine Behauptung."
  },
  {
-  "tr": "Şimdi dersin kuralı. Konuşma ile yazı arasındaki fark sözcük değil DESTEK farkıdır:",
+  "tr": "Şimdi bugünün kuralı. Konuşma ile yazı arasındaki fark sözcük değil DESTEK farkıdır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Unterschied zwischen Sprechen und Schreiben ist kein Unterschied der Wörter, sondern der STÜTZE:"
+  "de": "Jetzt die Regel von heute. Der Unterschied zwischen Sprechen und Schreiben ist kein Unterschied der Wörter, sondern der STÜTZE:"
  },
  {
   "tr": "ses, yüz ve duraklama cümleyi tamamlar; yazıda bu üçü yoktur ve cümle yalnız kalır. Bu yüzden yazıda",
@@ -1275,9 +1275,9 @@
   "de": "Schlagfertigkeit kann die Sprechhemmung nicht heilen."
  },
  {
-  "tr": "Birine saygıyla anmaya",
+  "tr": "Birini saygıyla anmaya",
   "kind": "say.tr",
-  "de": "Jemanden ehrend zu nennen heißt"
+  "de": "Jemandem Ehre zu erweisen heißt"
  },
  {
   "tr": "bir şeyin donup kalıp sabitlenmesine ise",
@@ -1290,9 +1290,9 @@
   "de": "Was wir ehren, neigt dazu, sich zu verfestigen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Konuşma yönetiminde kalıp niyeti ele verir:",
+  "tr": "Şimdi bugünün kuralı. Konuşma yönetiminde kalıp niyeti ele verir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Gesprächsführung verrät die Wendung die Absicht:"
+  "de": "Jetzt die Regel von heute. In der Gesprächsführung verrät die Wendung die Absicht:"
  },
  {
   "tr": "dinleyene hizmet eder,",
@@ -1320,9 +1320,9 @@
   "de": "und die scharfe Rüge heißt"
  },
  {
-  "tr": "İyi bir görüşme yönetimi azardan kaçınır.",
+  "tr": "Görüşmeyi iyi yönetmek azarı önler.",
   "kind": "say.tr",
-  "de": "Eine gute Gesprächsführung vermeidet die Ermahnung."
+  "de": "Ein Gespräch gut zu führen erspart eine Rüge."
  },
  {
   "tr": "Şimdi sen kur: Hazırcevaplık bir korkuyu iyileştiremez.",
@@ -1385,7 +1385,7 @@
   "de": "und die ununterbrochene Rede einer einzigen Person heißt"
  },
  {
-  "tr": "Uzun öyküye bir monolog siziyor.",
+  "tr": "Uzun öyküye bir monolog sızıyor.",
   "kind": "say.tr",
   "de": "In die Novelle sickert ein Monolog."
  },
@@ -1400,14 +1400,14 @@
   "de": "und die Liste der anerkannten Werke heißt"
  },
  {
-  "tr": "Edebi motifi biliyoruz, kanonu tartışıyoruz.",
+  "tr": "Edebî motifi biliyoruz, kanonu tartışıyoruz.",
   "kind": "say.tr",
   "de": "Den Topos kennen wir, den Kanon bestreiten wir."
  },
  {
-  "tr": "Şimdi dersin kuralı. Anlatıda başa alınan şey bir bakış açısıdır:",
+  "tr": "Şimdi bugünün kuralı. Anlatıda başa alınan şey bir bakış açısıdır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was in der Erzählung vorangestellt wird, ist ein Blickpunkt:"
+  "de": "Jetzt die Regel von heute. Was in der Erzählung vorangestellt wird, ist ein Blickpunkt:"
  },
  {
   "tr": "anlatıcının işini konu yapar,",
@@ -1440,7 +1440,7 @@
   "de": "Die Avantgarde schrieb die Ästhetik neu."
  },
  {
-  "tr": "Şimdi sen kur: Romana bir monolog siziyor.",
+  "tr": "Şimdi sen kur: Romana bir monolog sızıyor.",
   "kind": "say.tr",
   "de": "Bilde du jetzt: In den Roman sickert ein Monolog."
  },
@@ -1465,7 +1465,7 @@
   "de": "Der erste Satz wählt das Auge."
  },
  {
-  "tr": "Bir tane daha: Kanonu biliyoruz, edebi motifi tartışıyoruz.",
+  "tr": "Bir tane daha: Kanonu biliyoruz, edebî motifi tartışıyoruz.",
   "kind": "say.tr",
   "de": "Noch eins: Den Kanon kennen wir, den Topos bestreiten wir."
  },
@@ -1520,9 +1520,9 @@
   "de": "Einen Text ideologisch zu nennen heißt nicht, ihn zu lesen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Okumayı aktaran fiil okumayı da yargılar:",
+  "tr": "Şimdi bugünün kuralı. Okumayı aktaran fiil okumayı da yargılar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Verb, das die Lesart wiedergibt, urteilt auch über sie:"
+  "de": "Jetzt die Regel von heute. Das Verb, das die Lesart wiedergibt, urteilt auch über sie:"
  },
  {
   "tr": "okumayı meşru sayar,",
@@ -1607,7 +1607,7 @@
  {
   "tr": "Bu biçimler eski oldukları için değil, savı kişiden ayırdıkları için duruyor: «aklın özgür olması» kimin istediğine bağlı değildir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Diese Formen halten sich nicht, weil sie alt sind, sondern weil sie die These von der Person trennen: «dass die Vernunft frei sei» hängt nicht davon ab, wer es fordert. Bist du bereit?"
+  "de": "Diese Formen halten sich nicht, weil sie alt sind, sondern weil sie die These von der Person trennen: „dass die Vernunft frei sei“ hängt nicht davon ab, wer es fordert. Bist du bereit?"
  },
  {
   "tr": "Aklı öne alan düşünce çağı demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1650,9 +1650,9 @@
   "de": "Sie verlangen, dass keine These paradox sei."
  },
  {
-  "tr": "Şimdi dersin kuralı. Klasik metinde çekimsiz fiil bir süs değil:",
+  "tr": "Şimdi bugünün kuralı. Klasik metinde çekimsiz fiil bir süs değil:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im klassischen Text ist das ungebeugte Verb kein Zierrat:"
+  "de": "Jetzt die Regel von heute. Im klassischen Text ist das ungebeugte Verb kein Zierrat:"
  },
  {
   "tr": "demiyoruz. Bu biçim savı isteyenden ayırır; felsefe metninin sav ile kişiyi ayırma iddiası dilbilgisinde de sürüyor.",
@@ -1705,7 +1705,7 @@
   "de": "Diese Formen heute zu benutzen heißt nicht, das Alte nachzuahmen; es heißt, die Trennung der These von ihrem Urheber fortzuführen."
  },
  {
-  "tr": "Biçim yüzyılı aşıp kalıyor.",
+  "tr": "Biçim yüzyıldan uzun yaşıyor.",
   "kind": "say.tr",
   "de": "Die Form überdauert das Jahrhundert."
  },
@@ -1750,7 +1750,7 @@
   "de": "Unsere zweite Wendung lässt in der zweiten Hälfte das Prädikat weg. Sprich nach:"
  },
  {
-  "tr": "Bir anımsama halk bilgisi olarak kalır, bir eski eser şifreleme yöntemi olarak.",
+  "tr": "Bir anımsama halk bilgisi olarak kalır, bir eski eser şifre olarak.",
   "kind": "say.tr",
   "de": "Eine Erinnerung bleibt als Überlieferung, ein Relikt als Chiffre."
  },
@@ -1775,14 +1775,14 @@
   "de": "Unsere letzte Wendung kürzt das Prädikat auf das Hilfsverb. Sprich nach:"
  },
  {
-  "tr": "Zamanın ruhu çığır açan gibi hissettiriyordu, on yıl öyle değildi.",
+  "tr": "Zamanın ruhu çığır açıyormuş gibi geliyordu, on yıl öyle değildi.",
   "kind": "say.tr",
   "de": "Der Zeitgeist fühlte sich epochal an, das Jahrzehnt nicht."
  },
  {
-  "tr": "Şimdi dersin kuralı. Düşürme boşluk bırakmaz, İŞ bırakır:",
+  "tr": "Şimdi bugünün kuralı. Düşürme boşluk bırakmaz, İŞ bırakır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Die Auslassung lässt keine Lücke, sie lässt ARBEIT:"
+  "de": "Jetzt die Regel von heute. Die Auslassung lässt keine Lücke, sie lässt ARBEIT:"
  },
  {
   "tr": "derken düşen fiili okur koyar ve o an okumaya katılır. Bu yüzden şiirde eksiltme bir kısaltma değil, bir davettir.",
@@ -1797,7 +1797,7 @@
  {
   "tr": "Bir çağın havasına",
   "kind": "say.tr",
-  "de": "Die Luft einer Epoche heißt"
+  "de": "Die Stimmung einer Epoche heißt"
  },
  {
   "tr": "bir dönemi ikiye bölene ise",
@@ -1810,7 +1810,7 @@
   "de": "Das Relikt überlebte die Überlieferung."
  },
  {
-  "tr": "Şimdi sen kur: Bir anımsama halk bilgisi olarak kalır, bir ad şifreleme yöntemi olarak.",
+  "tr": "Şimdi sen kur: Bir anımsama halk bilgisi olarak kalır, bir ad şifre olarak.",
   "kind": "say.tr",
   "de": "Bilde du jetzt: Eine Erinnerung bleibt als Überlieferung, ein Name als Chiffre."
  },
@@ -1825,7 +1825,7 @@
   "de": "Die Lücke tut die Arbeit."
  },
  {
-  "tr": "Bir tane daha: On yıl çığır açan gibi hissettiriyordu, yıl öyle değildi.",
+  "tr": "Bir tane daha: On yıl çığır açıyormuş gibi geliyordu, yıl öyle değildi.",
   "kind": "say.tr",
   "de": "Noch eins: Das Jahrzehnt fühlte sich epochal an, das Jahr nicht."
  },
@@ -1890,9 +1890,9 @@
   "de": "Wenn auch ein Zeichen der Reinheit, trägt das Artefakt ein Stigma."
  },
  {
-  "tr": "Şimdi dersin kuralı. Ödün nerede durursa orada bir SES verir:",
+  "tr": "Şimdi bugünün kuralı. Ödün nerede durursa orada bir SES verir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Wo das Zugeständnis steht, gibt es dort einen KLANG:"
+  "de": "Jetzt die Regel von heute. Wo das Zugeständnis steht, gibt es dort einen KLANG:"
  },
  {
   "tr": "başta itirazı hazırlar,",
@@ -1957,7 +1957,7 @@
  {
   "tr": "«may well» ile «might» arasındaki fark bilgi farkı değil, iddianın ne kadar ileri gittiğidir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Der Unterschied zwischen «may well» und «might» ist kein Unterschied des Wissens, sondern wie weit die Behauptung geht. Bist du bereit?"
+  "de": "Der Unterschied zwischen „may well“ und „might“ ist kein Unterschied des Wissens, sondern wie weit die Behauptung geht. Bist du bereit?"
  },
  {
   "tr": "Olağan, gündelik demek. İlk kalıbımız da bu. Tekrar et:",
@@ -2005,9 +2005,9 @@
   "de": "Eine Kultur kann ihren Exotismus weitergeben und die Zweifelnde ausgrenzen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kip okumanın ne kadar ileri gittiğini söyler:",
+  "tr": "Şimdi bugünün kuralı. Kip okumanın ne kadar ileri gittiğini söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Modalverb sagt, wie weit die Lesart geht:"
+  "de": "Jetzt die Regel von heute. Das Modalverb sagt, wie weit die Lesart geht:"
  },
  {
   "tr": "okumayı ciddiye alınabilir sayar,",
@@ -2025,9 +2025,9 @@
   "de": "dagegen steht in der Mitte. Der Text ändert sich nicht, nur der Grad, in dem du dich auf ihn stützt."
  },
  {
-  "tr": "Şimdi sıra sende: Bölüm son derece sembolik olmaktan çok sıradan olabilir.",
+  "tr": "Şimdi sıra sende: Bölüm pekâlâ son derece sembolik olmaktan çok sıradan olabilir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Das Kapitel ist womöglich eher alltäglich als hochsymbolisch."
+  "de": "Jetzt bist du dran: Das Kapitel mag durchaus eher alltäglich als hochsymbolisch sein."
  },
  {
   "tr": "Bir topluluğun dışına itmeye",
@@ -2105,9 +2105,9 @@
   "de": "Hier entfremdet sich niemand, wir benennen die Entfremdung nur später."
  },
  {
-  "tr": "Sözünden dönmeyen kişiye",
+  "tr": "Kimseyi dinlemeden bildiğini okuyan kişiye",
   "kind": "say.tr",
-  "de": "Wer von seinem Wort nicht abgeht, heißt"
+  "de": "Wer seinen Kopf durchsetzt, ohne auf andere zu hören, heißt"
  },
  {
   "tr": "her şeyi sormak isteyene ise",
@@ -2125,9 +2125,9 @@
   "de": "Ein eigensinniges Kind, sagten sie, und dazu wissbegierig."
  },
  {
-  "tr": "Şimdi dersin kuralı. Alay eksiltmeyle çalışır:",
+  "tr": "Şimdi bugünün kuralı. Alay eksiltmeyle çalışır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Der Spott arbeitet mit Auslassung:"
+  "de": "Jetzt die Regel von heute. Der Spott arbeitet mit Auslassung:"
  },
  {
   "tr": "eksik bırakır ve dinleyen boşluğu kendi doldurur. Bu yüzden alaycı cümle savunulması en zor cümledir: söylenmemiş olanı kimse inkâr edemez.",
@@ -2235,9 +2235,9 @@
   "de": "Wo die Emanzipation stagniert, klingt die Wut nicht ab."
  },
  {
-  "tr": "Şimdi dersin kuralı. Uzun metinde bağlantı sözcük değil ADRES verir:",
+  "tr": "Şimdi bugünün kuralı. Uzun metinde bağlantı sözcük değil ADRES verir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im langen Text gibt die Verbindung kein Wort, sondern eine ADRESSE:"
+  "de": "Jetzt die Regel von heute. Im langen Text gibt die Verbindung kein Wort, sondern eine ADRESSE:"
  },
  {
   "tr": "okuru metnin içinde yerleştirir,",

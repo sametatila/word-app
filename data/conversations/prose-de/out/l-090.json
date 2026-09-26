@@ -215,9 +215,9 @@
   "de": "Symptom"
  },
  {
-  "tr": "iltihap",
+  "tr": "enfeksiyon",
   "kind": "vocab.tr",
-  "de": "Entzündung"
+  "de": "Infektion"
  },
  {
   "tr": "kanamak",
@@ -347,7 +347,7 @@
  {
   "tr": "Doğru. Hapı kimin aldığı söylenmiyor ve prospektüs dilinde bu olağan; önemli olan ne yapıldığı.",
   "kind": "why.tr",
-  "de": "Richtig. Wer die Pille nimmt, wird nicht genannt, und in der Sprache des Beipackzettels ist das normal; wichtig ist, was gemacht wird."
+  "de": "Richtig. Wer die Tablette nimmt, wird nicht genannt, und in der Sprache des Beipackzettels ist das normal; wichtig ist, was gemacht wird."
  },
  {
   "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: hemşireye görünebilirsin de görünmeyebilirsin de.",
@@ -357,22 +357,22 @@
  {
   "tr": "Doğru. Hekim 'is normal' demişti; aktarırken zaman bir basamak geriye gitti ve cümle doğru kuruldu.",
   "kind": "why.tr",
-  "de": "Richtig. Die Ärztin hatte 'is normal' gesagt; beim Wiedergeben rückte die Zeit eine Stufe zurück und der Satz ist richtig gebaut."
+  "de": "Richtig. Die Ärztin hatte „is normal“ gesagt; beim Wiedergeben rückte die Zeit eine Stufe zurück und der Satz ist richtig gebaut."
  },
  {
   "tr": "Soru aktarımı için",
   "kind": "hint.tr",
-  "de": "Für die Wiedergabe einer Frage"
+  "de": "Für die Wiedergabe einer Frage –"
  },
  {
   "tr": "Edilgen zorunluluk için",
   "kind": "hint.tr",
-  "de": "Für eine Pflicht im Passiv"
+  "de": "Für eine Pflicht im Passiv –"
  },
  {
   "tr": "Zorunluluğun yokluğu için",
   "kind": "hint.tr",
-  "de": "Für das Fehlen der Pflicht"
+  "de": "Für das Fehlen der Pflicht –"
  },
  {
   "tr": "Önce olan iş bir kat geride:",
@@ -382,17 +382,17 @@
  {
   "tr": "İşi yapan gerçekten önemliyse",
   "kind": "hint.tr",
-  "de": "Für den wirklich wichtigen Handelnden"
+  "de": "Für den wirklich wichtigen Handelnden –"
  },
  {
   "tr": "Olumsuz yönerge aktarımı için",
   "kind": "hint.tr",
-  "de": "Für die Wiedergabe einer verneinten Anweisung"
+  "de": "Für die Wiedergabe einer verneinten Anweisung –"
  },
  {
   "tr": "Dışarıdan gelen zorunluluk için",
   "kind": "hint.tr",
-  "de": "Für eine Pflicht von außen"
+  "de": "Für eine Pflicht von außen –"
  },
  {
   "tr": "Edilgen cümlede nesne başa geçer:",
@@ -477,7 +477,7 @@
  {
   "tr": "İyi olmayan kişiye",
   "kind": "say.tr",
-  "de": "Wer es nicht gut geht, heißt"
+  "de": "Wem es nicht gut geht, der ist"
  },
  {
   "tr": "Özetleyelim: bilgi",
@@ -630,9 +630,9 @@
   "de": "Die Packung muss im Kühlschrank aufbewahrt werden."
  },
  {
-  "tr": "Mikrobun yaptığı şişkin acıya",
+  "tr": "Mikropların vücutta yol açtığı hastalığa",
   "kind": "say.tr",
-  "de": "Der geschwollene Schmerz durch Keime heißt"
+  "de": "Eine Krankheit, die Keime im Körper auslösen, heißt"
  },
  {
   "tr": "Çoktan ambulans çağırmışlardı.",
@@ -665,9 +665,9 @@
   "de": "Das Stück, das zur Untersuchung genommen wird, heißt"
  },
  {
-  "tr": "Ağrı kesici reçetesiz satılıyor.",
+  "tr": "Bu ağrı kesici reçetesiz satılıyor.",
   "kind": "say.tr",
-  "de": "Ein Schmerzmittel wird ohne Rezept verkauft."
+  "de": "Dieses Schmerzmittel wird ohne Rezept verkauft."
  },
  {
   "tr": "iç organları gösteren çekime ise",
@@ -730,9 +730,9 @@
   "de": "Unsere letzte Wendung ist ein Verbot. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Üç derece var:",
+  "tr": "Şimdi bugünün kuralı. Üç derece var:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Es gibt drei Stufen:"
+  "de": "Jetzt die Regel von heute. Es gibt drei Stufen:"
  },
  {
   "tr": "Şimdi sen kur: İlacı hemşire verdi.",
@@ -770,9 +770,9 @@
   "de": "Die Verletzung sah schlimmer aus, als sie war."
  },
  {
-  "tr": "İltihap geçmişti ve sadece bir virüstü.",
+  "tr": "Enfeksiyon geçmişti ve sadece bir virüstü.",
   "kind": "say.tr",
-  "de": "Die Entzündung war weg und es war nur ein Virus."
+  "de": "Die Infektion war weg, und es war nur ein Virus."
  },
  {
   "tr": "Daha önce hiç böyle bir belirtim olmadı.",
@@ -837,12 +837,12 @@
  {
   "tr": "Şimdi sıra sende: Hap yemekten sonra alınır.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Pille wird nach dem Essen genommen."
+  "de": "Jetzt bist du dran: Die Tablette wird nach dem Essen genommen."
  },
  {
   "tr": "Bir tane daha: Hapı alıp almadığımı sordular.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie haben gefragt, ob ich die Pille genommen hatte."
+  "de": "Noch eins: Sie haben gefragt, ob ich die Tablette genommen hatte."
  },
  {
   "tr": "Önce bir hemşireye görünmek zorunda değilsin.",
@@ -870,9 +870,9 @@
   "de": "Unsere letzte Wendung gibt eine Frage wieder. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Sen varmadan ÖNCE olan iş",
+  "tr": "Şimdi bugünün kuralı. Sen varmadan ÖNCE olan iş",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was VOR deiner Ankunft geschah, wird mit"
+  "de": "Jetzt die Regel von heute. Was VOR deiner Ankunft geschah, wird mit"
  },
  {
   "tr": "Bir tane daha: Kutu serin bir yerde saklanmalı.",
@@ -925,9 +925,9 @@
   "de": "Noch eins: So einen Schmerz hatte ich noch nie."
  },
  {
-  "tr": "Göğsümdeki ağrı geçmişti ve nefesim yerine gelmişti.",
+  "tr": "Göğsümdeki ağrı geçmişti ve nefesim yerine geldi.",
   "kind": "say.tr",
-  "de": "Der Schmerz im Brustkorb war weg und ich hatte meinen Atem wieder."
+  "de": "Der Schmerz im Brustkorb war weg, und ich bekam wieder Luft."
  },
  {
   "tr": "İkinci kalıbımız bir yönergeyi aktarıyor. Tekrar et:",
@@ -995,9 +995,9 @@
   "de": "Das heißt der Anstieg der Körpertemperatur. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Şikâyet HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "tr": "Şimdi bugünün kuralı. Şikâyet HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Dauert die Beschwerde NOCH AN, steht Present Perfect, und mit"
+  "de": "Jetzt die Regel von heute. Dauert die Beschwerde NOCH AN, steht Present Perfect, und mit"
  },
  {
   "tr": "Hekimin ilk sorduğu şey bu üçü ve üçü ayrı zamanlarla söyleniyor. Hazır mısın?",
@@ -1005,14 +1005,14 @@
   "de": "Das sind die drei ersten Fragen der Ärztin, und alle drei stehen in verschiedenen Zeiten. Bist du bereit?"
  },
  {
-  "tr": "ise yasak. Ortadaki ikisi birbirine benziyor ama biri serbestlik, öteki yasak.",
+  "tr": "ise yasak. Son ikisi birbirine benziyor ama biri serbestlik, öteki yasak.",
   "kind": "say.tr",
-  "de": "und das Verbot. Die mittleren beiden ähneln sich, aber das eine ist Freiheit, das andere Verbot."
+  "de": "und das Verbot. Die letzten beiden ähneln sich, aber das eine ist Freiheit, das andere Verbot."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge",
+  "tr": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Beim Wiedergeben rückt die Zeit eine Stufe zurück; eine verneinte Anweisung gibst du mit"
+  "de": "Jetzt die Regel von heute. Beim Wiedergeben rückt die Zeit eine Stufe zurück; eine verneinte Anweisung gibst du mit"
  },
  {
   "tr": "ile başlangıç eklenir; şikâyetin BAŞLADIĞI AN anlatılıyorsa past simple kullanılır.",
@@ -1030,9 +1030,9 @@
   "de": "Die Sprache des Beipackzettels ist durchgehend Passiv: dort steht nicht, wer etwas tut, sondern was getan wird. Bist du bereit?"
  },
  {
-  "tr": "Şimdi dersin kuralı. Edilgen cümlede özne düşer ve nesne başa geçer; işi yapan gerçekten önemliyse",
+  "tr": "Şimdi bugünün kuralı. Edilgen cümlede özne düşer ve nesne başa geçer; işi yapan gerçekten önemliyse",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Passivsatz fällt das Subjekt weg und das Objekt rückt nach vorn; ist der Handelnde wirklich wichtig, wird er mit"
+  "de": "Jetzt die Regel von heute. Im Passivsatz fällt das Subjekt weg und das Objekt rückt nach vorn; ist der Handelnde wirklich wichtig, wird er mit"
  },
  {
   "tr": "Merhaba! Bugün tahlil sonuçlarını aktarmayı öğreneceğiz: hekim ne dedi, ne yapmamanı söyledi, ne sordu.",

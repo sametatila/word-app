@@ -7,47 +7,47 @@
  {
   "tr": "her olayı «kurallar böyle» diye kapatan bir yönetici",
   "kind": "partner",
-  "de": "ein Vorgesetzter, der jeden Vorfall mit «so sind die Regeln» abschließt"
+  "de": "ein Vorgesetzter, der jeden Vorfall mit „so sind die Regeln“ abschließt"
  },
  {
   "tr": "her bölümde «bu hangi karara bağlanıyordu» diye soran bir yönetici",
   "kind": "partner",
-  "de": "eine Vorgesetzte, die bei jedem Abschnitt fragt «an welche Entscheidung war das gebunden»"
+  "de": "eine Vorgesetzte, die bei jedem Abschnitt fragt „an welche Entscheidung war das gebunden“"
  },
  {
   "tr": "açıklamayı olduğu gibi aktaran, «böyle diyorlar işte» diyen bir arkadaş",
   "kind": "partner",
-  "de": "ein Freund, der die Mitteilung so weitergibt, wie sie ist, und sagt «so sagen sie es eben»"
+  "de": "ein Freund, der die Mitteilung so weitergibt, wie sie ist, und sagt „so sagen sie es eben“"
  },
  {
   "tr": "her fazla mesaiyi kişisel tercih sayan, «kimse zorlamıyor ki» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede Überstunde für eine persönliche Wahl hält und sagt «es zwingt doch niemand»"
+  "de": "jemand, der jede Überstunde für eine persönliche Wahl hält und sagt „es zwingt doch niemand“"
  },
  {
   "tr": "esnekliği tamamen bir özgürlük sayan, «kimse kimseyi zorlamıyor» diyen biri",
   "kind": "partner",
-  "de": "jemand, der Flexibilität ganz für Freiheit hält und sagt «niemand zwingt jemanden»"
+  "de": "jemand, der Flexibilität ganz für Freiheit hält und sagt „niemand zwingt jemanden“"
  },
  {
   "tr": "tanıtım dilini olduğu gibi tekrarlayan, «hepsi belgelerde yazıyor» diyen biri",
   "kind": "partner",
-  "de": "jemand, der die Werbesprache wörtlich wiederholt und sagt «es steht alles in den Unterlagen»"
+  "de": "jemand, der die Werbesprache wörtlich wiederholt und sagt „es steht alles in den Unterlagen“"
  },
  {
   "tr": "kararın adının önemsiz olduğunu düşünen, «rakam aynı ya» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "ein Kollege, der den Namen der Entscheidung für unwichtig hält und sagt «die Zahl bleibt gleich»"
+  "de": "ein Kollege, der den Namen der Entscheidung für unwichtig hält und sagt „die Zahl bleibt gleich“"
  },
  {
   "tr": "tutanağı tarafsız bir kayıt sayan, «orada ne yazıyorsa o» diyen bir iş arkadaşı",
   "kind": "partner",
-  "de": "eine Kollegin, die das Protokoll für eine neutrale Aufzeichnung hält und sagt «es gilt, was dort steht»"
+  "de": "eine Kollegin, die das Protokoll für eine neutrale Aufzeichnung hält und sagt „es gilt, was dort steht“"
  },
  {
   "tr": "her talebi kişiselleştiren, «sen istiyorsun demek ki» diyen bir işveren temsilcisi",
   "kind": "partner",
-  "de": "ein Arbeitgebervertreter, der jede Forderung persönlich nimmt und sagt «du willst es also»"
+  "de": "ein Arbeitgebervertreter, der jede Forderung persönlich nimmt und sagt „du willst es also“"
  },
  {
   "tr": "Kurallar böyle, değil mi?",
@@ -90,9 +90,9 @@
   "de": "Welche Entscheidung stützte dieser Abschnitt?"
  },
  {
-  "tr": "Kimse geç kalmaya zorlamadı, değil mi?",
+  "tr": "Kimse onları geç saate kadar kalmaya zorlamadı, değil mi?",
   "kind": "openingTr",
-  "de": "Niemand hat sie zum Bleiben gezwungen, oder?"
+  "de": "Niemand hat sie gezwungen, so lange zu bleiben, oder?"
  },
  {
   "tr": "Nasıl adlandırsan rakam aynı, değil mi?",
@@ -155,7 +155,7 @@
   "de": "Lehrt, die Sprache des Eigenlobs mit Spott zu kritisieren; das Lobwort selbst wird zum Material der Kritik."
  },
  {
-  "tr": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili katılanların niyetini de yazar.",
+  "tr": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili, katılanların niyetini de yazar.",
   "kind": "summary",
   "de": "Lehrt, beim Wiedergeben einer Sitzung das Urteil ins Verb zu legen; das Verb des Protokolls schreibt auch die Absicht der Beteiligten mit."
  },
@@ -322,7 +322,7 @@
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir gözlem kalıyor.",
   "kind": "why.tr",
-  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung, keine Diagnose."
+  "de": "Richtig. „might“ hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung, keine Diagnose."
  },
  {
   "tr": "Doğru. Olmasaydı kuruluşu masada da işliyor; koşul kişiye değil sürece bağlanmış.",
@@ -777,32 +777,32 @@
  {
   "tr": "Talebi kalıpla kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Verlangen mit der Formel zu bauen"
+  "de": "Um das Verlangen mit der Formel zu bauen –"
  },
  {
   "tr": "İki adlandırmayı ayırmak için",
   "kind": "hint.tr",
-  "de": "Um zwei Benennungen zu trennen"
+  "de": "Um zwei Benennungen zu trennen –"
  },
  {
   "tr": "Olmasaydıyı masada kurmak için",
   "kind": "hint.tr",
-  "de": "Um das Wäre-nicht am Tisch zu bauen"
+  "de": "Um das Wäre-nicht am Tisch zu bauen –"
  },
  {
   "tr": "İki eşdizimi birlikte getirmek için",
   "kind": "hint.tr",
-  "de": "Um zwei Wortverbindungen zusammenzubringen"
+  "de": "Um zwei Wortverbindungen zusammenzubringen –"
  },
  {
   "tr": "İkinci yarıyı büsbütün eksiltmek için",
   "kind": "hint.tr",
-  "de": "Um die zweite Hälfte ganz wegzulassen"
+  "de": "Um die zweite Hälfte ganz wegzulassen –"
  },
  {
   "tr": "Ödünü başa alıp gerçeği söylemek için",
   "kind": "hint.tr",
-  "de": "Um das Zugeständnis voranzustellen und die Wahrheit zu sagen"
+  "de": "Um das Zugeständnis voranzustellen und die Wahrheit zu sagen –"
  },
  {
   "tr": "İki sonucu tek kipin altına koymak için",
@@ -942,7 +942,7 @@
  {
   "tr": "Eleştiriyi övgü yaptı.",
   "kind": "say.tr",
-  "de": "Die Kritik machte das Lob."
+  "de": "Es war das Lob, das die Kritik übte."
  },
  {
   "tr": "faili bir düzen yapar,",
@@ -1220,9 +1220,9 @@
   "de": "und der Zwang, ständig zu veröffentlichen, heißt"
  },
  {
-  "tr": "Konumun ne kadar süreceğini bilememeye",
+  "tr": "İşin ne kadar süreceğini bilememeye",
   "kind": "say.tr",
-  "de": "Nicht zu wissen, wie lange die Stellung hält, heißt"
+  "de": "Nicht zu wissen, wie lange die eigene Stelle hält, heißt"
  },
  {
   "tr": "ortak bir noktada buluşma çabasına ise",
@@ -1435,9 +1435,9 @@
   "de": "Unsere letzte Wendung trennt zwei Benennungen. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Söz verilmeyen şey eksiltilir:",
+  "tr": "Şimdi bugünün kuralı. Söz verilmeyen şey eksiltilir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was nicht versprochen wird, wird weggelassen:"
+  "de": "Jetzt die Regel von heute. Was nicht versprochen wird, wird weggelassen:"
  },
  {
   "tr": "Bir tane daha: Ona kural demek klişe demek değildir.",
@@ -1460,12 +1460,12 @@
   "de": "Unsere letzte Wendung trennt Methode und Programm. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kip burada bir suçlama ölçüsüdür:",
+  "tr": "Şimdi bugünün kuralı. Kip burada bir suçlama ölçüsüdür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Modalverb ist hier ein Maß des Vorwurfs:"
+  "de": "Jetzt die Regel von heute. Das Modalverb ist hier ein Maß des Vorwurfs:"
  },
  {
-  "tr": "Şimdi sıra sende: Bilgi emeği tükenmişlikle bitebilir.",
+  "tr": "Şimdi sıra sende: Bilgi emeği pekâlâ tükenmişlikle bitebilir.",
   "kind": "say.tr",
   "de": "Jetzt bist du dran: Wissensarbeit kann durchaus im Burn-out enden."
  },
@@ -1510,9 +1510,9 @@
   "de": "Jetzt erzählst du einen Vorfall um Befugnis mit drei Verantwortlichen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Tutanakta fiil sessiz bir hükümdür:",
+  "tr": "Şimdi bugünün kuralı. Tutanakta fiil sessiz bir hükümdür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Protokoll ist das Verb ein stilles Urteil:"
+  "de": "Jetzt die Regel von heute. Im Protokoll ist das Verb ein stilles Urteil:"
  },
  {
   "tr": "Şimdi sen kur: Burada sıralama yok, rekabet mantığı var.",
@@ -1545,7 +1545,7 @@
   "de": "Unsere zweite Wendung lässt in der zweiten Hälfte das Verb weg. Sprich nach:"
  },
  {
-  "tr": "Riski üstüne yıkıyorlar ve buna gelir getiren iş diyorlar.",
+  "tr": "Riski başkalarının üstüne yıkıyorlar ve buna gelir getiren iş diyorlar.",
   "kind": "say.tr",
   "de": "Sie wälzen das Risiko ab und nennen es Erwerbstätigkeit."
  },
@@ -1565,9 +1565,9 @@
   "de": "Unsere letzte Wendung lässt die zweite Hälfte ganz weg. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Başa aldığın şey sorumluluğu da taşır:",
+  "tr": "Şimdi bugünün kuralı. Başa aldığın şey sorumluluğu da taşır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Was du voranstellst, trägt auch die Verantwortung:"
+  "de": "Jetzt die Regel von heute. Was du voranstellst, trägt auch die Verantwortung:"
  },
  {
   "tr": "Şimdi sıra sende: Emekli aylığı düzeyi düştü, prim düşmedi.",
@@ -1635,9 +1635,9 @@
   "de": "Das heißt, zu verdecken, was sichtbar sein sollte. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Kimse başkalarınca belirlenen bir tempoya boyun eğmek istemiyor.",
+  "tr": "İnsan başkalarınca belirlenen bir tempoya boyun eğmek zorunda kalmamalı.",
   "kind": "say.tr",
-  "de": "Niemand will sich einem fremdbestimmten Takt unterordnen."
+  "de": "Niemand sollte sich einem fremdbestimmten Takt unterordnen müssen."
  },
  {
   "tr": "Standartlaştırma bir yöntemdir, rasyonelleştirme bir programdır.",
@@ -1660,7 +1660,7 @@
   "de": "Am Tisch ist die Form keine Höflichkeit; sie bestimmt, wer die Forderung trägt."
  },
  {
-  "tr": "Yüksek personel devir hızı zayıf çalışanı elde tutmanın bedelidir.",
+  "tr": "Yüksek personel devir hızı, çalışanı elde tutmadaki zayıflığın bedelidir.",
   "kind": "say.tr",
   "de": "Hohe Personalfluktuation ist der Preis schwacher Mitarbeiterbindung."
  },
@@ -1685,7 +1685,7 @@
   "de": "dagegen macht uns zu Tätern. Drei Sätze, ein Vorfall und drei Verantwortliche."
  },
  {
-  "tr": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi.",
+  "tr": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç artmadı.",
   "kind": "say.tr",
   "de": "Die Erwerbsquote stieg, das zweckgebundene Geld überhaupt nicht."
  },
@@ -1730,9 +1730,9 @@
   "de": "Hallo! Heute lernen wir die feste Form der Tarifsprache."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aynı karar iki dil düzeyinde iki ayrı olgu gibi görünür:",
+  "tr": "Şimdi bugünün kuralı. Aynı karar iki dil düzeyinde iki ayrı olgu gibi görünür:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Dieselbe Entscheidung sieht in zwei Registern wie zwei Tatsachen aus:"
+  "de": "Jetzt die Regel von heute. Dieselbe Entscheidung sieht in zwei Registern wie zwei Tatsachen aus:"
  },
  {
   "tr": "Şimdi sıra sende: Ekibi bünyeden ayırmayı ne kadar isteseler de asıl iş şirket içinde kalıyor.",
@@ -1745,9 +1745,9 @@
   "de": "Jetzt bist du dran: Was die Hierarchie tut, ist das Machtgefälle zu verbergen."
  },
  {
-  "tr": "Şimdi dersin kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:",
+  "tr": "Şimdi bugünün kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Am Tisch ist das ungebeugte Verb kein Stil, sondern ein Schutz:"
+  "de": "Jetzt die Regel von heute. Am Tisch ist das ungebeugte Verb kein Stil, sondern ein Schutz:"
  },
  {
   "tr": "Toplantıyı aktaran kişi, farkında olmadan kimin haklı olduğunu da yazar.",
@@ -1770,7 +1770,7 @@
   "de": "Noch eins: Den Handlungsspielraum bemerken wir, die Unterordnung nicht."
  },
  {
-  "tr": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi.",
+  "tr": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç artmadı.",
   "kind": "say.tr",
   "de": "Noch eins: Die Quote stieg, das zweckgebundene Geld überhaupt nicht."
  },
@@ -1845,9 +1845,9 @@
   "de": "Hallo! Heute lernen wir die Rückverweise, die einen langen Unternehmensbericht zusammenhalten."
  },
  {
-  "tr": "Şimdi dersin kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:",
+  "tr": "Şimdi bugünün kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. In der Flexibilitätsdebatte ist das Zugeständnis kein Nachgeben, sondern ein EINTRITT:"
+  "de": "Jetzt die Regel von heute. In der Flexibilitätsdebatte ist das Zugeständnis kein Nachgeben, sondern ein EINTRITT:"
  },
  {
   "tr": "Şimdi sıra sende: Biri bölünmeyi perdeliyor, öteki meslek ahlakını baltalıyor.",
@@ -1855,9 +1855,9 @@
   "de": "Jetzt bist du dran: Der eine verschleiert die Spaltung, der andere untergräbt das Berufsethos."
  },
  {
-  "tr": "Şimdi dersin kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:",
+  "tr": "Şimdi bugünün kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Qualifikation sagt die Wortverbindung auch, WEM etwas fehlt:"
+  "de": "Jetzt die Regel von heute. Im Wörterbuch der Qualifikation sagt die Wortverbindung auch, WEM etwas fehlt:"
  },
  {
   "tr": "Kip burada bir çekingenlik değil; başkasının iradesi hakkında hüküm vermemektir.",
@@ -1895,9 +1895,9 @@
   "de": "Im langen Bericht ist jede Adresse ein Band der Verantwortung; fällt die Adresse, fällt auch die Verantwortung."
  },
  {
-  "tr": "Tarafların devlete karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:",
+  "tr": "Tarafların devlet karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt das Recht der Parteien, sich ohne den Staat zu einigen. Das ist auch unsere erste Wendung. Sprich nach:"
+  "de": "Das heißt das Recht der Parteien, sich ohne Einmischung des Staates zu einigen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
   "tr": "Şimdi sen kur: Kural, geçirgen olsa da, iş güvencesizliğini ortadan kaldırmıyor.",
@@ -1910,9 +1910,9 @@
   "de": "Das heißt, eine Einheit aus der Firma zu lösen und selbständig zu machen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:",
+  "tr": "Şimdi bugünün kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Eigenlob entsteht der Spott, wenn man das Lobwort selbst benutzt:"
+  "de": "Jetzt die Regel von heute. Im Eigenlob entsteht der Spott, wenn man das Lobwort selbst benutzt:"
  },
  {
   "tr": "Rekabetin bozulması, daha önce belirtildiği gibi, fizibilite çalışmasında işaretlenmişti.",
@@ -1960,14 +1960,14 @@
   "de": "Akkordarbeit kann die Kollegialität schwächen und die zwischenmenschliche Seite belasten."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:",
+  "tr": "Şimdi bugünün kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Im Unternehmensbericht ist die Verbindung keine Höflichkeit, sondern eine Kette der VERANTWORTUNG:"
+  "de": "Jetzt die Regel von heute. Im Unternehmensbericht ist die Verbindung keine Höflichkeit, sondern eine Kette der VERANTWORTUNG:"
  },
  {
   "tr": "Övgü sözcüğünün kendisi eleştirinin malzemesi olur; yeter ki cümle yarım bırakılsın. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das Lobwort selbst wird zum Material der Kritik; man muss den Satz nur halb lassen. Bist du bereit?"
+  "de": "Das Lobwort selbst wird zum Material der Kritik; man muss den Satz nur unvollendet lassen. Bist du bereit?"
  },
  {
   "tr": "Masada istek kişisel olduğu anda pazarlık konusu olur; kalıp onu bir ölçü hâline getirir. Hazır mısın?",
@@ -1987,10 +1987,10 @@
  {
   "tr": "Kendi isteğiyle çalışmakla mecbur kalmak arasındaki sınır kipten okunur; kesin cümle o sınırı siler. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Grenze zwischen freiwilliger Arbeit und Zwang liest man am Modalverb; ein bestimmter Satz löscht diese Grenze. Bist du bereit?"
+  "de": "Die Grenze zwischen freiwilliger Arbeit und Zwang liest man am Modalverb; ein Satz ohne Vorbehalt löscht diese Grenze. Bist du bereit?"
  },
  {
-  "tr": "Tutanağın fiili katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?",
+  "tr": "Tutanağın fiili, katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?",
   "kind": "say.tr",
   "de": "Das Verb des Protokolls schreibt auch die Absicht der Beteiligten mit; niemand widerspricht, weil niemand ein Verb für eine Behauptung hält. Bist du bereit?"
  },
@@ -2022,12 +2022,12 @@
  {
   "tr": "dersen istek senin değil tarafların ortak ölçüsü olur. «Ben istiyorum» dersen karşı taraf seninle pazarlık eder, ölçüyle değil.",
   "kind": "say.tr",
-  "de": "sagst, ist die Forderung nicht deine, sondern der gemeinsame Maßstab der Parteien. Sagst du «ich will», verhandelt die Gegenseite mit dir und nicht mit dem Maßstab."
+  "de": "sagst, ist die Forderung nicht deine, sondern der gemeinsame Maßstab der Parteien. Sagst du „ich will“, verhandelt die Gegenseite mit dir und nicht mit dem Maßstab."
  },
  {
   "tr": "ise bunun bir ihtimal olduğunu söyler. Birinin fazla çalışmasını «kendi isteği» diye kesin söylemek, kipin sildiği bir hükümdür.",
   "kind": "say.tr",
-  "de": "dagegen sagt, dass dies eine Möglichkeit ist. Die Überarbeitung eines Menschen bestimmt «sein eigener Wille» zu nennen ist ein Urteil, das das Modalverb löscht."
+  "de": "dagegen sagt, dass dies eine Möglichkeit ist. Die Überarbeitung eines Menschen mit Gewissheit „seinen eigenen Willen“ zu nennen, ist ein Urteil, das das Modalverb löscht."
  },
  {
   "tr": "Eksikliği anlatan söz ile insanı anlatan söz aynı değil; ikisini karıştıran cümle çalışanı bir stok kalemine çevirir. Hazır mısın?",

@@ -205,6 +205,11 @@
   "de": "Tagesordnung"
  },
  {
+  "tr": "gündemdeki konu",
+  "kind": "vocab.tr",
+  "de": "Trend"
+ },
+ {
   "tr": "stajyer",
   "kind": "vocab.tr",
   "de": "Praktikant"
@@ -243,6 +248,11 @@
   "tr": "geliştirmek",
   "kind": "vocab.tr",
   "de": "verbessern"
+ },
+ {
+  "tr": "geliştirmek / ortaya koymak",
+  "kind": "vocab.tr",
+  "de": "entwickeln"
  },
  {
   "tr": "gücü yetmek",
@@ -387,12 +397,12 @@
  {
   "tr": "ile söylenir:",
   "kind": "why.tr",
-  "de": "gesagt:"
+  "de": "schon:"
  },
  {
   "tr": "ile kişi söylenmez,",
   "kind": "why.tr",
-  "de": "wird die Person nicht genannt,"
+  "de": "– damit nennt man die Person nicht,"
  },
  {
   "tr": "Yanlış. Koşul cümlesinin içinde",
@@ -522,7 +532,7 @@
  {
   "tr": "orada",
   "kind": "say.tr",
-  "de": "dort"
+  "de": "dort muss"
  },
  {
   "tr": "övgü ve",
@@ -557,7 +567,7 @@
  {
   "tr": "Kibar için",
   "kind": "say.tr",
-  "de": "Für höflich sagen wir"
+  "de": "Für höflich"
  },
  {
   "tr": "o anki söz",
@@ -572,12 +582,12 @@
  {
   "tr": "Dürüst için",
   "kind": "say.tr",
-  "de": "Für ehrlich sagen wir"
+  "de": "Für ehrlich"
  },
  {
   "tr": "müşteri için",
   "kind": "say.tr",
-  "de": "für den Kunden"
+  "de": "und für den Kunden"
  },
  {
   "tr": "destekleyici,",
@@ -592,17 +602,17 @@
  {
   "tr": "İlerleme için",
   "kind": "say.tr",
-  "de": "Für den Fortschritt sagen wir"
+  "de": "Für den Fortschritt"
  },
  {
   "tr": "Personel için",
   "kind": "say.tr",
-  "de": "Für das Personal sagen wir"
+  "de": "Für das Personal"
  },
  {
   "tr": "Toplantı için",
   "kind": "say.tr",
-  "de": "Für die Besprechung sagen wir"
+  "de": "Für die Besprechung"
  },
  {
   "tr": "bir İSİM alır,",
@@ -622,7 +632,7 @@
  {
   "tr": "Pazarlık etmek",
   "kind": "say.tr",
-  "de": "Verhandeln wird mit"
+  "de": "Verhandeln heißt"
  },
  {
   "tr": "bir CÜMLE alır,",
@@ -632,7 +642,7 @@
  {
   "tr": "kalmak zorunda.",
   "kind": "say.tr",
-  "de": "muss bleiben."
+  "de": "bleiben."
  },
  {
   "tr": "Özneyse düşmez:",
@@ -667,7 +677,7 @@
  {
   "tr": "şey tanımlanıyorsa",
   "kind": "say.tr",
-  "de": "wird ein Ding beschrieben, steht"
+  "de": "; wird ein Ding beschrieben, steht"
  },
  {
   "tr": "Bir işi teslim etmek",
@@ -687,7 +697,7 @@
  {
   "tr": "Şirketin parası için",
   "kind": "say.tr",
-  "de": "Für das Geld der Firma sagen wir"
+  "de": "Das Geld der Firma wird"
  },
  {
   "tr": "Yönerge aktarılırken",
@@ -702,7 +712,7 @@
  {
   "tr": "ile geçmiş, sonucunda",
   "kind": "say.tr",
-  "de": "mit Vergangenheit, in der Folge"
+  "de": "mit Vergangenheit und"
  },
  {
   "tr": "O, dinleyen bir amir.",
@@ -727,7 +737,7 @@
  {
   "tr": "yeni başlayan kişiye ise",
   "kind": "say.tr",
-  "de": "und die neu angefangene Person heißt"
+  "de": "und wer neu anfängt, heißt"
  },
  {
   "tr": "Yerime birini arıyorlar.",
@@ -737,7 +747,7 @@
  {
   "tr": "gelir; ikisinin yerine de",
   "kind": "say.tr",
-  "de": "steht; für beide kann auch"
+  "de": "; für beide kann auch"
  },
  {
   "tr": "Özetleyelim: mümkün koşul",
@@ -752,7 +762,7 @@
  {
   "tr": "ile geniş zaman, sonucunda",
   "kind": "say.tr",
-  "de": "mit Präsens, in der Folge"
+  "de": "mit Präsens und"
  },
  {
   "tr": "Özetleyelim: takvimdeki iş",
@@ -767,7 +777,7 @@
  {
   "tr": "bir rakamı makul bulmak ise",
   "kind": "say.tr",
-  "de": "eine Zahl angemessen finden dagegen mit"
+  "de": "und für „eine Zahl angemessen finden“ –"
  },
  {
   "tr": "Birine bir şeyi hatırlatmak",
@@ -797,7 +807,7 @@
  {
   "tr": "İlk kalıbımız. Minnettar için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für dankbar sagen wir"
+  "de": "Unsere erste Wendung. Für dankbar"
  },
  {
   "tr": "İstifa etmek demek. Tekrar et:",
@@ -812,7 +822,7 @@
  {
   "tr": "Destekleyici ve güvenilir biri.",
   "kind": "say.tr",
-  "de": "Er ist unterstützend und zuverlässig."
+  "de": "Er ist hilfsbereit und zuverlässig."
  },
  {
   "tr": "Devir teslim iki hafta sürecek.",
@@ -822,7 +832,7 @@
  {
   "tr": "İlk kalıbımız. Geliştirmek için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung. Für verbessern sagen wir"
+  "de": "Unsere erste Wendung. Für verbessern"
  },
  {
   "tr": "Önceden kurulmuş bir niyet için",
@@ -877,7 +887,7 @@
  {
   "tr": "o an verilen karar ya da söz için ise",
   "kind": "say.tr",
-  "de": "und für einen spontanen Entschluss oder ein Versprechen steht"
+  "de": "während bei einem spontanen Entschluss oder einem Versprechen"
  },
  {
   "tr": "Pazartesi müşteriyle toplantımız var.",
@@ -895,9 +905,9 @@
   "de": "Jetzt du: Ich werde das Gespräch verschieben."
  },
  {
-  "tr": "Şimdi dersin kuralı. Kişi tanımlanıyorsa",
+  "tr": "Şimdi bugünün kuralı. Kişi tanımlanıyorsa",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Wird eine Person beschrieben, steht"
+  "de": "Jetzt die Regel von heute. Wird eine Person beschrieben, steht"
  },
  {
   "tr": "Değerlendirme görüşmesi demek. Tekrar et:",
@@ -952,12 +962,12 @@
  {
   "tr": "İlk kalıbımız mümkün olanı anlatıyor. Prim için",
   "kind": "say.tr",
-  "de": "Unsere erste Wendung nennt das Mögliche. Für den Bonus sagen wir"
+  "de": "Unsere erste Wendung nennt das Mögliche. Für den Bonus"
  },
  {
   "tr": "Özetleyelim: aktarımda zaman geriye gider, kişi",
   "kind": "say.tr",
-  "de": "Fassen wir zusammen: bei der Wiedergabe rückt die Zeit zurück, die Person steht bei"
+  "de": "Fassen wir zusammen: bei der Wiedergabe rückt die Zeit zurück, die Person wird mit"
  },
  {
   "tr": "Son kalıbımız konuyu kibarca açıyor. Tekrar et:",
@@ -967,12 +977,12 @@
  {
   "tr": "Yönetici demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt Chefin. Das ist auch unsere erste Wendung. Sprich nach:"
+  "de": "Das heißt Leiter oder Manager. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Bir tane daha: Uzun saatlere rağmen keyif aldım.",
+  "tr": "Bir tane daha: Uzun çalışma saatlerine rağmen keyif aldım.",
   "kind": "say.tr",
-  "de": "Noch eins: Trotz der langen Stunden hat es mir Spaß gemacht."
+  "de": "Noch eins: Trotz der langen Arbeitszeiten hat es mir Spaß gemacht."
  },
  {
   "tr": "İkinci kalıbımız bir şeyi tanımlıyor. Tekrar et:",
@@ -997,7 +1007,7 @@
  {
   "tr": "gelir. Gerçek OLMAYAN, varsayılan bir durumda ise",
   "kind": "say.tr",
-  "de": "Bei einer NICHT realen, angenommenen Lage dagegen steht"
+  "de": "kommt. Bei einer NICHT realen, angenommenen Lage dagegen steht"
  },
  {
   "tr": "İkinci kalıbımız iki cümleyi bağlıyor. Tekrar et:",
@@ -1050,14 +1060,14 @@
   "de": "Unsere letzte Wendung nennt ein spontanes Versprechen. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda",
+  "tr": "Şimdi bugünün kuralı. Gerçekleşmesi MÜMKÜN bir koşulda",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Bei einer Bedingung, die eintreten KANN, steht"
+  "de": "Jetzt die Regel von heute. Bei einer Bedingung, die eintreten KANN, steht"
  },
  {
-  "tr": "Şimdi sen kur: Saatler uzundu. Ancak takım harikaydı.",
+  "tr": "Şimdi sen kur: Çalışma saatleri uzundu. Ancak takım harikaydı.",
   "kind": "say.tr",
-  "de": "Jetzt du: Die Stunden waren lang. Jedoch war das Team großartig."
+  "de": "Jetzt du: Die Arbeitszeiten waren lang. Jedoch war das Team großartig."
  },
  {
   "tr": "Şimdi sıra sende: Perşembe günü takımımla buluşuyorum.",
@@ -1077,7 +1087,7 @@
  {
   "tr": "kullanılır — geçmiş burada zaman değil, mesafe işaretidir.",
   "kind": "say.tr",
-  "de": "benutzt — die Vergangenheit ist hier keine Zeit, sondern ein Zeichen von Distanz."
+  "de": "wird verwendet — die Vergangenheit ist hier keine Zeit, sondern ein Zeichen von Distanz."
  },
  {
   "tr": "Şimdi bir iş arkadaşınla haftanın programını konuşacaksın.",
@@ -1097,7 +1107,7 @@
  {
   "tr": "deriz ve bu kelime sayılamaz: 'progresses' yoktur. Hedef için de",
   "kind": "say.tr",
-  "de": "sagen wir, und das Wort ist unzählbar: 'progresses' gibt es nicht. Und für das Ziel sagen wir"
+  "de": "sagen wir, und das Wort ist unzählbar: „progresses“ gibt es nicht. Und für das Ziel sagen wir"
  },
  {
   "tr": "Bir tane daha, bu sefer zamirsiz: Gönderdiğim e-posta çok uzundu.",
@@ -1125,9 +1135,9 @@
   "de": "als Objekt darf es wegfallen. Jetzt stellst du einer neuen Kollegin das Team vor."
  },
  {
-  "tr": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:",
+  "tr": "Şimdi bugünün kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Wenn du die Worte von jemandem wiedergibst, rückt die Zeit eine Stufe zurück:"
+  "de": "Jetzt die Regel von heute. Wenn du die Worte von jemandem wiedergibst, rückt die Zeit eine Stufe zurück:"
  },
  {
   "tr": "ile aktarılır. Şimdi görüşme sonrası bir iş arkadaşın ne konuşulduğunu soruyor.",
@@ -1135,24 +1145,24 @@
   "de": "wiedergegeben. Jetzt fragt dich nach dem Gespräch ein Kollege, worüber gesprochen wurde."
  },
  {
-  "tr": "Merhaba! Bugün modülün son dersi: bir işten ayrılmayı ve işi devretmeyi anlatmak.",
+  "tr": "Merhaba! Bugün modülün son Konuşma adımı: bir işten ayrılmayı ve işi devretmeyi anlatmak.",
   "kind": "say.tr",
-  "de": "Hallo! Heute die letzte Lektion des Moduls: eine Stelle verlassen und die Arbeit übergeben."
+  "de": "Hallo! Heute kommt der letzte Sprechen-Schritt des Moduls: eine Stelle verlassen und die Arbeit übergeben."
  },
  {
   "tr": "ile söylenir. İkincisi resmî bir kelimedir; gündelik konuşmada 'move' de duyarsın.",
   "kind": "say.tr",
-  "de": "gesagt. Das zweite ist ein formelles Wort; im Alltag hörst du auch 'move'."
+  "de": "gesagt. Das zweite ist ein formelles Wort; im Alltag hörst du auch „move“."
  },
  {
-  "tr": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:",
+  "tr": "Şimdi bugünün kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Drei Konnektoren bauen dieselbe Einschränkung, nehmen danach aber Verschiedenes:"
+  "de": "Jetzt die Regel von heute. Drei Konnektoren bauen dieselbe Einschränkung, nehmen danach aber Verschiedenes:"
  },
  {
   "tr": "deriz ve bu kelime topluluk adıdır: 'staffs' yoktur, tek başına bütün ekibi anlatır.",
   "kind": "say.tr",
-  "de": "sagen wir, und das Wort ist ein Sammelbegriff: 'staffs' gibt es nicht, es meint allein die ganze Belegschaft."
+  "de": "sagen wir, und das Wort ist ein Sammelbegriff: „staffs“ gibt es nicht, es meint allein die ganze Belegschaft."
  },
  {
   "tr": "eleştiri. İkincisi İngilizcede Türkçedeki kadar sert duyulmaz; iş dilinde olağandır.",
@@ -1177,7 +1187,7 @@
  {
   "tr": "denir. Bu kelime İngilizcede Türkçedeki kadar sık kullanılmaz; gerçekten acil olanı işaret eder.",
   "kind": "say.tr",
-  "de": "genannt. Im Englischen wird das Wort seltener benutzt als das deutsche «dringend»; es meint wirklich Eiliges."
+  "de": "genannt. Im Englischen wird das Wort seltener benutzt als das deutsche „dringend“; es meint wirklich Eiliges."
  },
  {
   "tr": "Merhaba! Bugün maaş konuşmasını öğreneceğiz: zam istemek, prim konuşmak, bir rakamı makul bulmak.",
@@ -1195,9 +1205,9 @@
   "de": "Hallo! Heute lernen wir, die Menschen vorzustellen, mit denen du arbeitest: wer was macht, wem du vertraust."
  },
  {
-  "tr": "Şimdi dersin kuralı. Takvime yazılmış, karşı tarafla kararlaştırılmış bir iş için şimdiki zaman kullanılır:",
+  "tr": "Şimdi bugünün kuralı. Takvime yazılmış, karşı tarafla kararlaştırılmış bir iş için şimdiki zaman kullanılır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Für etwas, das im Kalender steht und mit der anderen Seite vereinbart ist, steht die Verlaufsform:"
+  "de": "Jetzt die Regel von heute. Für etwas, das im Kalender steht und mit der anderen Seite vereinbart ist, steht die Verlaufsform:"
  },
  {
   "tr": "Merhaba! Bugün iş gününün takvimini İngilizce konuşmayı öğreneceğiz: toplantılar, teslim tarihleri, ertelemeler.",

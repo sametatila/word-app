@@ -20,7 +20,7 @@
   "de": "Erfahrung verbinden"
  },
  {
-  "tr": "Söylenenleri bağlamak",
+  "tr": "Söylenenleri aktarmak",
   "kind": "titleTr",
   "de": "Gesagtes weitergeben"
  },
@@ -160,6 +160,11 @@
   "de": "Notiz"
  },
  {
+  "tr": "not (sınav notu)",
+  "kind": "vocab.tr",
+  "de": "Note"
+ },
+ {
   "tr": "ceza",
   "kind": "vocab.tr",
   "de": "Strafe"
@@ -168,6 +173,11 @@
   "tr": "izin",
   "kind": "vocab.tr",
   "de": "Erlaubnis"
+ },
+ {
+  "tr": "izin (işten)",
+  "kind": "vocab.tr",
+  "de": "Urlaub / Freistellung"
  },
  {
   "tr": "katı",
@@ -208,6 +218,11 @@
   "tr": "kaynak",
   "kind": "vocab.tr",
   "de": "Quelle"
+ },
+ {
+  "tr": "kaynak (zaman / para)",
+  "kind": "vocab.tr",
+  "de": "Ressource"
  },
  {
   "tr": "görüşme",
@@ -272,7 +287,7 @@
  {
   "tr": "son zamanlardaki",
   "kind": "vocab.tr",
-  "de": "jüngst"
+  "de": "aktuell / neu"
  },
  {
   "tr": "toplantı başkanı",
@@ -347,7 +362,7 @@
  {
   "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; yasağın kalıbı başkadır:",
   "kind": "why.tr",
-  "de": "Falsch. Diese Wendung heißt «nicht nötig»; für das Verbot gibt es eine andere:"
+  "de": "Falsch. Diese Wendung heißt „nicht nötig“; für das Verbot gibt es eine andere:"
  },
  {
   "tr": "Yanlış. Yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:",
@@ -452,12 +467,12 @@
  {
   "tr": "İddia için",
   "kind": "say.tr",
-  "de": "Für die Behauptung sagen wir"
+  "de": "Für die Behauptung"
  },
  {
   "tr": "Resmî için",
   "kind": "say.tr",
-  "de": "Für offiziell sagen wir"
+  "de": "Für offiziell"
  },
  {
   "tr": "Öneri fiili",
@@ -467,12 +482,12 @@
  {
   "tr": "Kazanmak için",
   "kind": "say.tr",
-  "de": "Für gewinnen sagen wir"
+  "de": "Für gewinnen"
  },
  {
   "tr": "Birini uyarmak",
   "kind": "say.tr",
-  "de": "Jemanden warnen wird mit"
+  "de": "Jemanden warnen heißt"
  },
  {
   "tr": "Resmî izin için",
@@ -482,7 +497,7 @@
  {
   "tr": "Gönüllü çalışmak",
   "kind": "say.tr",
-  "de": "Sich freiwillig melden heißt"
+  "de": "Ehrenamtlich arbeiten heißt"
  },
  {
   "tr": "İzinli olan için",
@@ -517,7 +532,7 @@
  {
   "tr": "Hikâyeyi kapatırken",
   "kind": "say.tr",
-  "de": "Beim Abschluss der Geschichte sagen wir"
+  "de": "Beim Abschluss der Geschichte"
  },
  {
   "tr": "Özetleyelim: geçmiş",
@@ -530,9 +545,9 @@
   "de": "und für das Verbotene"
  },
  {
-  "tr": "Şimdi dersin kuralı.",
+  "tr": "Şimdi bugünün kuralı.",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion."
+  "de": "Jetzt die Regel von heute."
  },
  {
   "tr": "bir zorunluluk koyar,",
@@ -547,7 +562,7 @@
  {
   "tr": "Dosya soruşturuluyor.",
   "kind": "say.tr",
-  "de": "Der Fall wird ermittelt."
+  "de": "In dem Fall wird ermittelt."
  },
  {
   "tr": "ise YASAKLAR; yazılı kurallarda bunun yerine must not görürsün. Dikkat:",
@@ -557,12 +572,12 @@
  {
   "tr": "İyi tarafı anlatırken",
   "kind": "say.tr",
-  "de": "Wenn du die gute Seite nennst, steht"
+  "de": "Wenn du die gute Seite nennst, wird"
  },
  {
-  "tr": "tek tek satırlara ise",
+  "tr": "kısa bir hatırlatma yazısına ise",
   "kind": "say.tr",
-  "de": "und die einzelnen Zeilen heißen"
+  "de": "und eine kurze Notiz zum Erinnern heißt"
  },
  {
   "tr": "Toplantının kendisine",
@@ -582,7 +597,7 @@
  {
   "tr": "başarılı olmak için ise",
   "kind": "say.tr",
-  "de": "und für Erfolg haben"
+  "de": "und Erfolg haben heißt"
  },
  {
   "tr": "Sonra sorunu fark ettim.",
@@ -592,7 +607,7 @@
  {
   "tr": "son zamanlardaki için ise",
   "kind": "say.tr",
-  "de": "und für jüngst"
+  "de": "und für aktuell"
  },
  {
   "tr": "Görüşme bir kararla bitti.",
@@ -652,7 +667,7 @@
  {
   "tr": "Son kalıbımız bir soru. Hiç için",
   "kind": "say.tr",
-  "de": "Unsere letzte Wendung ist eine Frage. Für jemals sagen wir"
+  "de": "Unsere letzte Wendung ist eine Frage. Für jemals"
  },
  {
   "tr": "Son otobüsü yakalamayı başardım.",
@@ -712,12 +727,12 @@
  {
   "tr": "Şimdi sıra sende. Son zamanlarda için",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran. Für in letzter Zeit sagen wir"
+  "de": "Jetzt bist du dran. Für in letzter Zeit"
  },
  {
   "tr": "Geçen yaz bir okulda gönüllü çalıştım.",
   "kind": "say.tr",
-  "de": "Letzten Sommer habe ich mich in einer Schule freiwillig gemeldet."
+  "de": "Letzten Sommer habe ich ehrenamtlich an einer Schule gearbeitet."
  },
  {
   "tr": "Son kalıbımız öğüt veriyor. Tekrar et:",
@@ -750,7 +765,7 @@
   "de": "Eine Entscheidung wurde von der Stadt bekannt gegeben."
  },
  {
-  "tr": "Karışıklığı sonrasına kadar fark etmedim.",
+  "tr": "Karışıklığı ancak sonra fark ettim.",
   "kind": "say.tr",
   "de": "Ich habe das Durcheinander erst später gemerkt."
  },
@@ -815,9 +830,9 @@
   "de": "Jetzt erzählst du in einem Gespräch von deiner Erfahrung."
  },
  {
-  "tr": "Son zamanlarda zorlu bir işte başarılı oldum.",
+  "tr": "Son zamanlarda zorlu bir işin üstesinden gelmeyi başardım.",
   "kind": "say.tr",
-  "de": "In letzter Zeit hatte ich bei einer schwierigen Aufgabe Erfolg."
+  "de": "In letzter Zeit habe ich es geschafft, eine große Herausforderung zu meistern."
  },
  {
   "tr": "Şimdi sıra sende: Kararın zor olduğunu söyledi.",
@@ -835,9 +850,9 @@
   "de": "Unsere zweite Wendung erzählt das Spätere. Sprich nach:"
  },
  {
-  "tr": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı",
+  "tr": "Şimdi bugünün kuralı. İki geçmiş olaydan ÖNCE olanı",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Von zwei vergangenen Ereignissen wird das FRÜHERE mit"
+  "de": "Jetzt die Regel von heute. Von zwei vergangenen Ereignissen wird das FRÜHERE mit"
  },
  {
   "tr": "Şimdi bir arkadaşına yerel bir haberi anlatacaksın.",
@@ -862,7 +877,7 @@
  {
   "tr": "ve fiilin üçüncü hâli. Yapan kişi gerekiyorsa sonuna",
   "kind": "say.tr",
-  "de": "und die dritte Form des Verbs. Wird der Handelnde gebraucht, kommt am Ende"
+  "de": "und der dritten Form des Verbs. Wird der Handelnde gebraucht, wird am Ende"
  },
  {
   "tr": "Bir tane daha: Biz oraya vardığımızda tren kalkmıştı.",
@@ -877,7 +892,7 @@
  {
   "tr": "yasak demek değil, 'gerekmiyor' demektir. Öğüt içinse",
   "kind": "say.tr",
-  "de": "heißt nicht verboten, sondern «nicht nötig». Für einen Rat dagegen steht"
+  "de": "heißt nicht verboten, sondern „nicht nötig“. Für einen Rat dagegen –"
  },
  {
   "tr": "Son kalıbımız iki olayı tek cümlede veriyor. Tekrar et:",
@@ -900,14 +915,14 @@
   "de": "sagen wir. Bau das: In letzter Zeit habe ich ein großes Projekt beendet."
  },
  {
-  "tr": "Şimdi dersin kuralı. Deneyim HÂLÂ sayılıyorsa present perfect:",
+  "tr": "Şimdi bugünün kuralı. Deneyim HÂLÂ sayılıyorsa present perfect:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. ZÄHLT die Erfahrung noch, steht Present Perfect:"
+  "de": "Jetzt die Regel von heute. ZÄHLT die Erfahrung noch, steht Present Perfect:"
  },
  {
-  "tr": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:",
+  "tr": "Şimdi bugünün kuralı. Aktarırken zaman bir basamak geriye gider:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
+  "de": "Jetzt die Regel von heute. Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
  },
  {
   "tr": "Şimdi sıra sende: Başlamadan önce listeyi imzalamak zorundasın.",
@@ -930,19 +945,19 @@
   "de": "Jetzt gibst du einem Kollegen, der nicht dabei war, weiter, was passiert ist."
  },
  {
-  "tr": "Şimdi dersin kuralı. Edilgen çatı iki parçadan kurulur: yardımcı fiil",
+  "tr": "Şimdi bugünün kuralı. Edilgen çatı iki parçadan kurulur: yardımcı fiil",
   "kind": "say.tr",
-  "de": "Jetzt die Regel der Lektion. Das Passiv besteht aus zwei Teilen: dem Hilfsverb"
+  "de": "Jetzt die Regel von heute. Das Passiv besteht aus zwei Teilen: dem Hilfsverb"
  },
  {
   "tr": "Şimdi sıra sende: Yakın tarihli bir haber bakanlık tarafından yayımlandı.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Ein jüngster Bericht wurde vom Ministerium veröffentlicht."
+  "de": "Jetzt bist du dran: Ein aktueller Bericht wurde vom Ministerium veröffentlicht."
  },
  {
-  "tr": "ve bu fiilin ardından her zaman -ing gelir. Toplantıyı yöneten kişiye ise",
+  "tr": "; ardından bir eylem gelecekse -ing olur. Toplantıyı yöneten kişiye ise",
   "kind": "say.tr",
-  "de": "und nach diesem Verb steht immer -ing. Und wer die Besprechung leitet, heißt"
+  "de": "; folgt eine Handlung, steht danach -ing. Und wer die Besprechung leitet, heißt"
  },
  {
   "tr": "Kimin söylediği belirsizken kullanılır ve haberi kaynağa bağlamadan verir.",
@@ -965,9 +980,9 @@
   "de": "Der Kniff beim Erzählen ist die Reihenfolge: welches Ereignis früher war, rückt eine Stufe zurück. Bist du bereit?"
  },
  {
-  "tr": "Merhaba! Bu modülün son dersi: deneyimini bağlamak. Nerede çalıştın, neyi başardın, neyi hiç yapmadın.",
+  "tr": "Merhaba! Bu, modülün son Konuşma adımı: deneyimini bağlamak. Nerede çalıştın, neyi başardın, neyi hiç yapmadın.",
   "kind": "say.tr",
-  "de": "Hallo! Die letzte Lektion dieses Moduls: Erfahrung verbinden. Wo du gearbeitet hast, was du geschafft hast, was du nie gemacht hast."
+  "de": "Hallo! Der letzte Sprechen-Schritt dieses Moduls: Erfahrung verbinden. Wo du gearbeitet hast, was du geschafft hast, was du nie gemacht hast."
  },
  {
   "tr": "Merhaba! Bugün bir yerin kurallarını anlatmayı öğreneceğiz: neye izin var, ne yasak, ne yapsan iyi olur.",
@@ -997,11 +1012,11 @@
  {
   "tr": "Bu üçü İngilizcede üç ayrı kelime ve karıştırılırsa anlam ciddi biçimde kayar: 'gerekmiyor' ile 'yasak' aynı şey değil. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im Englischen sind das drei eigene Wörter, und wenn man sie verwechselt, kippt die Bedeutung ernsthaft: «nicht nötig» und «verboten» sind nicht dasselbe. Bist du bereit?"
+  "de": "Im Englischen sind das drei eigene Wörter, und wenn man sie verwechselt, kippt die Bedeutung ernsthaft: „nicht nötig“ und „verboten“ sind nicht dasselbe. Bist du bereit?"
  },
  {
-  "tr": "Buradaki ayrım modülün başındaki bağlaç işiyle akraba: hangi zamanı seçtiğin olayın hâlâ sayılıp sayılmadığını söylüyor. Hazır mısın?",
+  "tr": "Burada seçtiğin zaman, olayın hâlâ sayılıp sayılmadığını söylüyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Dieser Unterschied ist mit der Konnektorarbeit vom Anfang des Moduls verwandt: deine Wahl der Zeit sagt, ob das Ereignis noch zählt. Bist du bereit?"
+  "de": "Hier sagt deine Wahl der Zeit, ob das Ereignis noch zählt. Bist du bereit?"
  }
 ]
