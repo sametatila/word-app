@@ -48,7 +48,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       { de: "I can criticize through understatement.", tr: "Ölçülü ifadeyle eleştirebiliyorum.", en: "I can criticize through understatement." },
     ],
     listening: {
-      title: "How shall we word it?",
+      title: "How should we word it?",
       titleTr: "Nasıl yazalım?",
       situation: "Bir yönetim toplantısında aynı kararın nasıl yazılacağı tartışılıyor.",
       turns: [

@@ -36,19 +36,19 @@ export const EN_B1_W03: QuizWeek = {
       id: "t1",
       genre: "Advice column",
       genreTr: "Tavsiye köşesi",
-      title: "Job or university?",
+      title: "Job or college?",
       body:
         "Dear Anna,\n" +
         "I'm 19 and I have just finished school. I have been offered a job at the bank where my father works, " +
         "but I have always wanted to study design. My parents say that if I take the job, I will have a safe future. " +
-        "But if I go to university, I will have to borrow money. What should I do? – Jake\n\n" +
+        "But if I go to college, I will have to borrow money. What should I do? – Jake\n\n" +
         "Dear Jake,\n" +
         "First of all, it's great that you have two choices. Many people who write to me have none.\n\n" +
         "Before you decide, ask yourself one question: where do you want to be in ten years? " +
         "If you accept the job only because it is safe, you may feel unhappy later. " +
         "On the other hand, a design degree which doesn't lead to a job isn't a good plan either.\n\n" +
         "So here is my advice. Talk to people who work in design and find out how they started. " +
-        "Some of them didn't go to university at all. You could also ask the bank if you can start a year later. " +
+        "Some of them didn't go to college at all. You could also ask the bank if you can start a year later. " +
         "If I were you, I would spend that year on a short design course and collect examples of my work.\n\n" +
         "Good luck, and remember that no decision is for your whole life. – Anna",
     },
@@ -82,7 +82,7 @@ export const EN_B1_W03: QuizWeek = {
       stem: "Why doesn't Jake know what to do?",
       options: [
         "He hasn't finished school yet.",
-        "His parents want him to study design at university.",
+        "His parents want him to study design in college.",
         "He wants to study design, but his parents prefer the job.",
         "The bank hasn't offered him a job yet.",
       ],
@@ -112,12 +112,12 @@ export const EN_B1_W03: QuizWeek = {
       stem: "What would Anna do in Jake's situation?",
       options: [
         "take the job at the bank immediately",
-        "borrow money from the bank and go to university",
-        "never go to university",
+        "borrow money from the bank and go to college",
+        "never go to college",
         "take a short course and collect examples of her work",
       ],
       answer: 3,
-      why: "`If I were you, I would …` ikinci tip koşul: kendini okurun yerine koyarak verilen tavsiye. Bankaya sormak (`You could also ask`) ayrı bir öneri ve bankaya HEMEN başlamak değil, bir yıl sonra başlamak. `Some of them didn't go to university` ise bir gözlem, bir öğüt değil.",
+      why: "`If I were you, I would …` ikinci tip koşul: kendini okurun yerine koyarak verilen tavsiye. Bankaya sormak (`You could also ask`) ayrı bir öneri ve bankaya HEMEN başlamak değil, bir yıl sonra başlamak. `Some of them didn't go to college` ise bir gözlem, bir öğüt değil.",
       targets: ["reading.opinion", "conditional.second"],
     },
 

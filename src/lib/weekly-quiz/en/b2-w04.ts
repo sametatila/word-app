@@ -106,7 +106,7 @@ export const EN_B2_W04: QuizWeek = {
       id: "en-b2-w04-r3",
       block: "read",
       ref: "t1",
-      stem: "What is the writer's attitude towards consumers?",
+      stem: "What is the writer's attitude toward consumers?",
       options: [
         "Consumers are not responsible for the problem at all.",
         "Consumers should stop shopping online completely.",
@@ -222,7 +222,7 @@ export const EN_B2_W04: QuizWeek = {
         "The introduction of the implementation of a return fee has been decided upon.",
         "We have decided to charge a small fee for returns.",
         "A decision about the charging of a fee for returns has been made by us.",
-        "The realisation of a return fee introduction is planned by the company.",
+        "The realization of a return fee introduction is planned by the company.",
       ],
       answer: 1,
       why: "Duyuru dili de fiil yeğler: `We have decided to charge`. İsim zincirleri (`the introduction of the implementation`) resmîlik katmaz, okuru yorar. Türkçe resmî dildeki '-me/-ma' ile kurulmuş edilgen yapılar ('alınmasına karar verilmiştir') İngilizceye taşınınca aynı ağırlık çıkıyor.",
@@ -231,7 +231,7 @@ export const EN_B2_W04: QuizWeek = {
         de: {
           options: [
             "A decision about the charging of a fee for returns has been made by us.",
-            "The realisation of a return fee introduction is planned by the company.",
+            "The realization of a return fee introduction is planned by the company.",
             "The introduction of the implementation of a return fee has been decided upon.",
             "We have decided to charge a small fee for returns.",
           ],

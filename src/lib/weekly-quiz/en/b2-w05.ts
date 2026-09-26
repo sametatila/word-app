@@ -256,21 +256,21 @@ export const EN_B2_W05: QuizWeek = {
       block: "grammar",
       stem: "Priya advises keeping the language in job applications clear and simple. Which sentence follows her advice?",
       options: [
-        "Responsible for the realisation of the reduction of costs and the management of a team.",
-        "Management of a team of five persons and realisation of a cost reduction of ten percent.",
+        "Responsible for the realization of the reduction of costs and the management of a team.",
+        "Management of a team of five persons and realization of a cost reduction of ten percent.",
         "I led a team of five and reduced costs by ten percent.",
         "In charge of the carrying out of the management of five members of staff.",
       ],
       answer: 2,
-      why: "İş başvurusunda da fiil yeğlenir: `I led`, `reduced`. İsim zincirleri (`the realisation of the reduction`) bilgi eklemez; hem okuru hem yazılımı zorlar. Türkçe özgeçmişteki '… sorumluluğu', '… gerçekleştirilmesi' kalıpları İngilizceye taşınınca aynı ağırlık çıkıyor.",
+      why: "İş başvurusunda da fiil yeğlenir: `I led`, `reduced`. İsim zincirleri (`the realization of the reduction`) bilgi eklemez; hem okuru hem yazılımı zorlar. Türkçe özgeçmişteki '… sorumluluğu', '… gerçekleştirilmesi' kalıpları İngilizceye taşınınca aynı ağırlık çıkıyor.",
       targets: ["style.verbal"],
       byNative: {
         de: {
           options: [
             "I led a team of five and reduced costs by ten percent.",
-            "Responsible for the realisation of the reduction of costs and the management of a team.",
+            "Responsible for the realization of the reduction of costs and the management of a team.",
             "In charge of the carrying out of the management of five members of staff.",
-            "Management of a team of five persons and realisation of a cost reduction of ten percent.",
+            "Management of a team of five persons and realization of a cost reduction of ten percent.",
           ],
           answer: 0,
           why: "Almanca özgeçmiş dili isim üslubunu sever (`Durchführung der Kostenreduzierung`, `Leitung eines Teams`) ve İngilizceye taşınınca ağır cümleler çıkıyor. İngilizce aynı bilgiyi fiille ve birinci kişiyle verir: `I led …, reduced …`.",

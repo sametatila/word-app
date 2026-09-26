@@ -136,7 +136,7 @@ export const EN_A2_W02: QuizWeek = {
     {
       id: "en-a2-w02-g1",
       block: "grammar",
-      stem: "You look ill. You ___ go to the doctor.",
+      stem: "You look sick. You ___ go to the doctor.",
       options: ["should to", "must to", "should", "have"],
       answer: 2,
       why: "Tavsiye `should` + yalın fiil ile verilir; modal fiilden (`should`, `must`, `can`) sonra `to` gelmez. `have` tek başına zorunluluk bildirmez, `have to` iki parçalıdır.",

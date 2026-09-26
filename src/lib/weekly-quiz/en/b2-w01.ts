@@ -68,7 +68,7 @@ export const EN_B2_W01: QuizWeek = {
         { speaker: "Mark", text: "That's fair. As an apology, we could cover the shipping costs for both deliveries." },
         { speaker: "Sophie", text: "OK, that would help. Could you put that in writing, please?" },
         { speaker: "Mark", text: "Of course. I'll email you this afternoon with the new dates and the offer." },
-        { speaker: "Sophie", text: "Thanks, Mark. And please let me know straight away if anything changes." },
+        { speaker: "Sophie", text: "Thanks, Mark. And please let me know right away if anything changes." },
       ],
     },
   ],
@@ -241,7 +241,7 @@ export const EN_B2_W01: QuizWeek = {
         "We are in need of the making of a quick decision.",
         "A quick decision-making is needed by us.",
         "We need to decide quickly.",
-        "There is a necessity for the realisation of a decision.",
+        "There is a necessity for the realization of a decision.",
       ],
       answer: 2,
       why: "İngilizce iş yazışmasında fiil yeğlenir: `decide`. İsim zincirleri (`the making of a decision`) resmîlik katmaz, cümleyi ağırlaştırır. Türkçede `-me/-ma` ile kurulan edilgen yapılar ('karar verilmesine ihtiyaç var') tanıdık olduğu için ağır seçenekler daha resmî görünüyor.",
@@ -249,7 +249,7 @@ export const EN_B2_W01: QuizWeek = {
       byNative: {
         de: {
           options: [
-            "There is a necessity for the realisation of a decision.",
+            "There is a necessity for the realization of a decision.",
             "We need to decide quickly.",
             "We are in need of the making of a quick decision.",
             "A quick decision-making is needed by us.",

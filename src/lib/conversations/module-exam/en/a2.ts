@@ -303,7 +303,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "I am at home until …", tr: "…-e kadar evdeyim", en: "I am at home until …" },
       ],
       sample:
-        "Dear Mr. Vogt,\n\nSorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cupboard and the damage is getting worse. The heating hasn't worked since Monday, either.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
+        "Dear Mr. Vogt,\n\nSorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cabinet and the damage is getting worse. The heating hasn't worked since Monday, either.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
     },
   },
 

@@ -2710,7 +2710,7 @@
     "tr": "ilk başta"
    },
    {
-    "de": "afterwards",
+    "de": "afterward",
     "tr": "sonrasında"
    },
    {
@@ -3099,7 +3099,7 @@
      },
      {
       "lang": "en",
-      "text": "afterwards"
+      "text": "afterward"
      },
      {
       "lang": "tr",
@@ -3107,12 +3107,12 @@
      },
      {
       "lang": "en",
-      "text": "afterwards"
+      "text": "afterward"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "afterwards"
+     "target": "afterward"
     }
    },
    {

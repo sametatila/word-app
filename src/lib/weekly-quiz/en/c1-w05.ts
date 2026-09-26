@@ -18,7 +18,7 @@ export const EN_C1_W05: QuizWeek = {
   course: "en",
   level: "C1",
   no: 5,
-  theme: "Objection and judgement",
+  theme: "Objection and judgment",
   themeTr: "Transfer — itiraz ve tartma",
   canDo: ["C1.RD.1", "C1.LS.2", "C1.GR.2", "C1.WR.4"],
 
