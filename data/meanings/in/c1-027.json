@@ -10,7 +10,7 @@
    "formen": "Verse",
    "currentTr": "dize, mısra",
    "currentBeispiel": "Die letzten beiden Verse bleiben bewusst unvollendet.",
-   "currentBeispielTr": "Son iki dize bilinçli olarak tamamlanmamış bırakılıyor."
+   "currentBeispielTr": "Son iki dize bilerek yarım bırakılmış."
   },
   {
    "id": 6554,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "düzyazı, nesir",
    "currentBeispiel": "Ihre Prosa ist nüchtern und kommt ohne Schmuck aus.",
-   "currentBeispielTr": "Onun düzyazısı yalın ve hiçbir süse ihtiyaç duymuyor."
+   "currentBeispielTr": "Düzyazısı yalın ve hiç süse kaçmıyor."
   },
   {
    "id": 6556,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şiir sanatı, lirik şiir",
-   "currentBeispiel": "Moderne Lyrik verlangt vom Leser eine hohe Aufmerksamkeit.",
-   "currentBeispielTr": "Modern şiir okurdan yüksek bir dikkat ister."
+   "currentBeispiel": "Moderne Lyrik verlangt vom Leser viel Geduld.",
+   "currentBeispielTr": "Modern şiir okurdan çok sabır ister."
   },
   {
    "id": 6557,
@@ -60,7 +60,7 @@
    "formen": "Leitmotive",
    "currentTr": "ana motif, temel izlek",
    "currentBeispiel": "Das Meer bildet in ihrem Werk ein wiederkehrendes Leitmotiv.",
-   "currentBeispielTr": "Deniz, eserinde yinelenen bir ana motif oluşturuyor."
+   "currentBeispielTr": "Deniz, onun eserinde yinelenen bir ana motif oluşturuyor."
   },
   {
    "id": 6559,
@@ -70,7 +70,7 @@
    "formen": "Streitschriften",
    "currentTr": "polemik yazısı, sert eleştiri metni",
    "currentBeispiel": "Seine Streitschrift gegen die Akademie erschien zunächst anonym.",
-   "currentBeispielTr": "Akademiye karşı yazdığı polemik metni önce imzasız yayımlandı."
+   "currentBeispielTr": "Akademiye karşı yazdığı polemik yazısı önce imzasız yayımlandı."
   },
   {
    "id": 6560,
@@ -90,7 +90,7 @@
    "formen": "",
    "currentTr": "okur kitlesi",
    "currentBeispiel": "Die Zeitschrift hat eine kleine, aber treue Leserschaft.",
-   "currentBeispielTr": "Dergi küçük ama sadık bir okur kitlesine sahip."
+   "currentBeispielTr": "Derginin küçük ama sadık bir okur kitlesi var."
   },
   {
    "id": 6562,
@@ -110,7 +110,7 @@
    "formen": "Sprachbilder",
    "currentTr": "dil imgesi, mecaz",
    "currentBeispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft.",
-   "currentBeispielTr": "Dil imgelerinin neredeyse tamamı tarımdan geliyor."
+   "currentBeispielTr": "Dil imgelerinin neredeyse hepsi tarımdan geliyor."
   },
   {
    "id": 6564,
@@ -139,8 +139,8 @@
    "niveau": "C1",
    "formen": "Fabeln",
    "currentTr": "fabl",
-   "currentBeispiel": "Die Fabel endet mit einer knappen moralischen Lehre.",
-   "currentBeispielTr": "Fabl kısa bir ahlaki dersle sona eriyor."
+   "currentBeispiel": "Die Fabel vom Fuchs und den Trauben kennt jeder.",
+   "currentBeispielTr": "Tilki ile üzümler fablını herkes bilir."
   },
   {
    "id": 6567,
@@ -150,7 +150,7 @@
    "formen": "Stilbrüche",
    "currentTr": "üslup kopukluğu",
    "currentBeispiel": "Der plötzliche Wechsel in die Amtssprache wirkt wie ein Stilbruch.",
-   "currentBeispielTr": "Resmî dile ani geçiş bir üslup kopukluğu gibi duruyor."
+   "currentBeispielTr": "Resmî dile ani geçiş üslup kopukluğu gibi duruyor."
   },
   {
    "id": 6568,
@@ -184,7 +184,7 @@
    "formen": "hat zugespitzt",
    "currentTr": "keskinleştirmek, uca taşımak",
    "currentBeispiel": "Der Essayist spitzt seine These bewusst zu.",
-   "currentBeispielTr": "Denemeci tezini bilinçli olarak uca taşıyor."
+   "currentBeispielTr": "Denemeci tezini bilerek keskinleştiriyor."
   },
   {
    "id": 6571,
@@ -193,8 +193,8 @@
    "niveau": "C1",
    "formen": "hat entlehnt",
    "currentTr": "ödünç almak, alıntılamak",
-   "currentBeispiel": "Das Wort wurde im Mittelalter aus dem Latein entlehnt.",
-   "currentBeispielTr": "Kelime Orta Çağ'da Latinceden ödünç alındı.",
+   "currentBeispiel": "Das Wort wurde im Mittelalter aus dem Lateinischen entlehnt.",
+   "currentBeispielTr": "Kelime Orta Çağ'da Latinceden ödünç alınmış.",
    "overlapping": [
     "ausleihen (A2)"
    ]
@@ -229,8 +229,8 @@
    "niveau": "C1",
    "formen": "hat verwiesen",
    "currentTr": "atıfta bulunmak, yollamak",
-   "currentBeispiel": "Die Autorin verweist im Anhang auf ältere Untersuchungen.",
-   "currentBeispielTr": "Yazar ekte daha eski incelemelere atıfta bulunuyor.",
+   "currentBeispiel": "Die Autorin verweist im Anhang auf ältere Studien.",
+   "currentBeispielTr": "Yazar ekte daha eski çalışmalara atıfta bulunuyor.",
    "overlapping": [
     "sich beziehen auf (B2)"
    ]
@@ -266,8 +266,8 @@
    "niveau": "C1",
    "formen": "ist hervorgegangen",
    "currentTr": "ortaya çıkmak, anlaşılmak",
-   "currentBeispiel": "Aus dem Briefwechsel geht ihre tiefe Freundschaft hervor.",
-   "currentBeispielTr": "Mektuplaşmadan derin dostlukları anlaşılıyor."
+   "currentBeispiel": "Aus dem Briefwechsel geht ihre Freundschaft klar hervor.",
+   "currentBeispielTr": "Mektuplaşmadan dostlukları açıkça anlaşılıyor."
   },
   {
    "id": 6578,
@@ -276,8 +276,8 @@
    "niveau": "C1",
    "formen": "hat eingeflochten",
    "currentTr": "araya serpiştirmek, katmak",
-   "currentBeispiel": "Sie flicht immer wieder kleine Beobachtungen in die Handlung ein.",
-   "currentBeispielTr": "Olay örgüsüne durmadan küçük gözlemler serpiştiriyor."
+   "currentBeispiel": "Sie flicht kleine Beobachtungen in die Handlung ein.",
+   "currentBeispielTr": "Olay örgüsüne küçük gözlemler serpiştiriyor."
   },
   {
    "id": 6579,
@@ -286,8 +286,8 @@
    "niveau": "C1",
    "formen": "ist abgeschweift",
    "currentTr": "konudan sapmak, dağılmak",
-   "currentBeispiel": "Der Redner schweift ständig vom eigentlichen Thema ab.",
-   "currentBeispielTr": "Konuşmacı sürekli asıl konudan sapıyor."
+   "currentBeispiel": "Der Redner schweift ständig vom Thema ab.",
+   "currentBeispielTr": "Konuşmacı sürekli konudan sapıyor."
   },
   {
    "id": 6580,
@@ -317,7 +317,7 @@
    "formen": "",
    "currentTr": "lakonik, az ve öz",
    "currentBeispiel": "Sein Stil bleibt bis zum letzten Satz lakonisch.",
-   "currentBeispielTr": "Üslubu son cümleye kadar az ve öz kalıyor."
+   "currentBeispielTr": "Üslubu son cümleye kadar kısa ve öz kalıyor."
   },
   {
    "id": 6583,
@@ -336,8 +336,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yayıncılık sektörü",
-   "currentBeispiel": "Das gesamte Verlagswesen steht durch schwindende Anzeigenerlöse unter Druck.",
-   "currentBeispielTr": "Azalan ilan gelirleri yüzünden bütün yayıncılık sektörü baskı altında."
+   "currentBeispiel": "Das Verlagswesen steht durch sinkende Anzeigenerlöse unter Druck.",
+   "currentBeispielTr": "Yayımcılık, azalan ilan gelirleri yüzünden baskı altında."
   },
   {
    "id": 6585,
@@ -346,8 +346,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "propaganda",
-   "currentBeispiel": "Wirksame Propaganda arbeitet selten mit Lügen, sondern mit gezielten Auslassungen.",
-   "currentBeispielTr": "Etkili propaganda nadiren yalanla, çoğunlukla hedefli eksik bırakmalarla çalışır."
+   "currentBeispiel": "Der Film wurde damals als Propaganda verboten.",
+   "currentBeispielTr": "Film o dönemde propaganda sayılıp yasaklandı."
   },
   {
    "id": 6586,
@@ -356,8 +356,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "haber kaynağının gizliliği, kaynağın korunması",
-   "currentBeispiel": "Ohne konsequenten Quellenschutz würde kaum ein Insider mit Journalisten sprechen.",
-   "currentBeispielTr": "Tutarlı bir kaynak koruma olmasa hiçbir içeriden kişi gazetecilerle konuşmazdı."
+   "currentBeispiel": "Ohne Quellenschutz spricht kaum ein Insider mit Journalisten.",
+   "currentBeispielTr": "Kaynak gizliliği olmasa hiçbir içeriden kişi gazetecilerle konuşmaz."
   },
   {
    "id": 6587,
@@ -366,8 +366,8 @@
    "niveau": "C1",
    "formen": "Informanten",
    "currentTr": "bilgi kaynağı, haber kaynağı (kişi)",
-   "currentBeispiel": "Der Informant übergab die Unterlagen nur unter der Zusicherung völliger Anonymität.",
-   "currentBeispielTr": "Bilgi kaynağı belgeleri ancak tam anonimlik güvencesi karşılığında teslim etti."
+   "currentBeispiel": "Der Informant übergab die Unterlagen nur anonym.",
+   "currentBeispielTr": "Bilgi kaynağı belgeleri yalnızca isimsiz olarak teslim etti."
   },
   {
    "id": 6588,
@@ -376,8 +376,8 @@
    "niveau": "C1",
    "formen": "Enthüllungen",
    "currentTr": "ifşa, açığa çıkarma",
-   "currentBeispiel": "Die Enthüllung des Verlagsdeals brachte den Aufsichtsrat erheblich in Erklärungsnot.",
-   "currentBeispielTr": "Yayınevi anlaşmasının ifşası denetim kurulunu ciddi biçimde açıklama yapmak zorunda bıraktı."
+   "currentBeispiel": "Die Enthüllung kostete den Chefredakteur sein Amt.",
+   "currentBeispielTr": "İfşa, genel yayın yönetmeninin görevine mal oldu."
   },
   {
    "id": 6589,
@@ -386,8 +386,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "magazin basını, bulvar basını",
-   "currentBeispiel": "Die Boulevardpresse lebt von Empörung, nicht von der geduldigen Einordnung der Fakten.",
-   "currentBeispielTr": "Bulvar basını olguların sabırlı bir şekilde bağlama oturtulmasından değil, öfkeden beslenir."
+   "currentBeispiel": "Die Boulevardpresse lebt von Empörung und Skandalen.",
+   "currentBeispielTr": "Bulvar basını öfke ve skandallardan besleniyor."
   },
   {
    "id": 6590,
@@ -396,8 +396,8 @@
    "niveau": "C1",
    "formen": "Leitmedien",
    "currentTr": "yönlendirici medya, referans yayın organı",
-   "currentBeispiel": "Was die Leitmedien aufgreifen, bestimmt oft die Tagesordnung der übrigen Redaktionen.",
-   "currentBeispielTr": "Referans yayın organlarının ele aldığı konu çoğu zaman diğer yayın kurullarının gündemini belirler."
+   "currentBeispiel": "Was die Leitmedien aufgreifen, prägt die Debatte.",
+   "currentBeispielTr": "Öncü yayın organlarının ele aldığı konu tartışmayı belirliyor."
   },
   {
    "id": 6591,
@@ -406,8 +406,8 @@
    "niveau": "C1",
    "formen": "Meinungsbildungen",
    "currentTr": "kanaat oluşumu, fikir oluşturma",
-   "currentBeispiel": "Algorithmen greifen tiefer in die politische Meinungsbildung ein, als viele annehmen.",
-   "currentBeispielTr": "Algoritmalar siyasi kanaat oluşumuna çoğu kişinin sandığından daha derin biçimde müdahale ediyor."
+   "currentBeispiel": "Algorithmen greifen tief in die politische Meinungsbildung ein.",
+   "currentBeispielTr": "Algoritmalar siyasi kanaat oluşumuna derinden müdahale ediyor."
   },
   {
    "id": 6592,
@@ -416,8 +416,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "görüş çeşitliliği, çoğulculuk",
-   "currentBeispiel": "Der Gesetzgeber soll die Meinungsvielfalt sichern, ohne einzelne Inhalte zu bewerten.",
-   "currentBeispielTr": "Yasa koyucu, tek tek içerikleri değerlendirmeden görüş çeşitliliğini güvence altına almalıdır."
+   "currentBeispiel": "Der Gesetzgeber soll die Meinungsvielfalt im Rundfunk sichern.",
+   "currentBeispielTr": "Yasa koyucu yayıncılıkta görüş çeşitliliğini güvence altına almalı."
   },
   {
    "id": 6593,
@@ -426,8 +426,8 @@
    "niveau": "C1",
    "formen": "Wahrhaftigkeiten",
    "currentTr": "doğruluk, dürüstlük",
-   "currentBeispiel": "Wahrhaftigkeit verlangt mehr als formale Richtigkeit einzelner Angaben.",
-   "currentBeispielTr": "Doğruluk, tek tek verilerin biçimsel olarak yerinde olmasından fazlasını gerektirir."
+   "currentBeispiel": "Der Richter zweifelte an der Wahrhaftigkeit seiner Aussage.",
+   "currentBeispielTr": "Hâkim, ifadesinin doğruluğundan kuşku duydu."
   },
   {
    "id": 6594,
@@ -436,8 +436,8 @@
    "niveau": "C1",
    "formen": "Persönlichkeitsrechte",
    "currentTr": "kişilik hakkı",
-   "currentBeispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer als das Informationsinteresse.",
-   "currentBeispielTr": "Burada ilgililerin kişilik hakkı, bilgi edinme menfaatinden daha ağır basıyor."
+   "currentBeispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer.",
+   "currentBeispielTr": "Burada ilgililerin kişilik hakkı daha ağır basıyor."
   },
   {
    "id": 6595,
@@ -446,8 +446,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dikkat ekonomisi",
-   "currentBeispiel": "In der Aufmerksamkeitsökonomie wird die knappe Ressource nicht Information, sondern Zuwendung.",
-   "currentBeispielTr": "Dikkat ekonomisinde kıt kaynak bilgi değil, ilgi hâline gelir."
+   "currentBeispiel": "Die Aufmerksamkeitsökonomie zwingt Redaktionen zu schrillen Überschriften.",
+   "currentBeispielTr": "Dikkat ekonomisi haber merkezlerini çarpıcı başlıklara zorluyor."
   },
   {
    "id": 6596,
@@ -456,8 +456,8 @@
    "niveau": "C1",
    "formen": "Rundfunkbeiträge",
    "currentTr": "yayın katkı payı, radyo-televizyon aidatı",
-   "currentBeispiel": "Der Rundfunkbeitrag soll Programme unabhängig von Werbeeinnahmen und Quoten finanzieren.",
-   "currentBeispielTr": "Yayın katkı payı, programları reklam gelirlerinden ve reytinglerden bağımsız biçimde finanse etmelidir."
+   "currentBeispiel": "Viele Studenten lassen sich vom Rundfunkbeitrag befreien.",
+   "currentBeispielTr": "Birçok öğrenci yayın katkı payından muaf tutuluyor."
   },
   {
    "id": 6597,
@@ -466,8 +466,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "medya yoğunlaşması, medya tekelleşmesi",
-   "currentBeispiel": "Die wachsende Medienkonzentration verringert die Zahl wirklich unabhängiger Stimmen.",
-   "currentBeispielTr": "Artan medya yoğunlaşması gerçekten bağımsız seslerin sayısını azaltıyor."
+   "currentBeispiel": "Die wachsende Medienkonzentration verringert die Zahl unabhängiger Stimmen.",
+   "currentBeispielTr": "Artan medya yoğunlaşması bağımsız seslerin sayısını azaltıyor."
   },
   {
    "id": 6598,
@@ -476,8 +476,8 @@
    "niveau": "C1",
    "formen": "Pressekodizes",
    "currentTr": "basın meslek ilkeleri",
-   "currentBeispiel": "Der Pressekodex untersagt es, Opfer ohne Not identifizierbar zu machen.",
-   "currentBeispielTr": "Basın meslek ilkeleri, mağdurların gereksiz yere teşhis edilebilir kılınmasını yasaklar."
+   "currentBeispiel": "Der Pressekodex verbietet es, Opfer erkennbar zu zeigen.",
+   "currentBeispielTr": "Basın meslek ilkeleri mağdurları tanınacak şekilde göstermeyi yasaklıyor."
   },
   {
    "id": 6599,
@@ -487,7 +487,7 @@
    "formen": "Redaktionsgeheimnisse",
    "currentTr": "yayın kurulu gizliliği, redaksiyon sırrı",
    "currentBeispiel": "Die Durchsuchung verletzte nach Ansicht des Gerichts das Redaktionsgeheimnis.",
-   "currentBeispielTr": "Mahkemeye göre arama, yayın kurulu gizliliğini ihlal ediyordu."
+   "currentBeispielTr": "Mahkemeye göre arama, yayın kurulu gizliliğini ihlal etti."
   },
   {
    "id": 6600,
@@ -497,7 +497,7 @@
    "formen": "Zeugnisverweigerungsrechte",
    "currentTr": "tanıklıktan çekinme hakkı",
    "currentBeispiel": "Journalisten berufen sich vor Gericht auf ihr Zeugnisverweigerungsrecht.",
-   "currentBeispielTr": "Gazeteciler mahkemede tanıklıktan çekinme haklarına dayanırlar."
+   "currentBeispielTr": "Gazeteciler mahkemede tanıklıktan çekinme haklarına dayanıyor."
   },
   {
    "id": 6601,
@@ -506,8 +506,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bilgi edinme özgürlüğü",
-   "currentBeispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu amtlichen Unterlagen.",
-   "currentBeispielTr": "Bilgi edinme özgürlüğü her yurttaşa resmî belgelere erişim hakkı verir."
+   "currentBeispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu Akten.",
+   "currentBeispielTr": "Bilgi edinme özgürlüğü her yurttaşa dosyalara erişim sağlıyor."
   },
   {
    "id": 6602,
@@ -516,8 +516,8 @@
    "niveau": "C1",
    "formen": "Nachrichtenwerte",
    "currentTr": "haber değeri",
-   "currentBeispiel": "Nähe, Konflikt und Prominenz erhöhen den Nachrichtenwert eines Ereignisses erheblich.",
-   "currentBeispielTr": "Yakınlık, çatışma ve ünlülük bir olayın haber değerini belirgin biçimde artırır."
+   "currentBeispiel": "Nähe und Konflikt erhöhen den Nachrichtenwert eines Ereignisses.",
+   "currentBeispielTr": "Yakınlık ve çatışma bir olayın haber değerini artırır."
   }
  ]
 }

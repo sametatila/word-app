@@ -3,9 +3,9 @@
   "id": 124,
   "tr": "anne baba",
   "en": "parents",
-  "beispiel": "Meine Eltern leben in Spanien.",
-  "beispielTr": "Annemle babam İspanya'da yaşıyor.",
-  "beispielEn": "My parents live in Spain."
+  "beispiel": "Am Wochenende helfe ich meinen Eltern im Garten.",
+  "beispielTr": "Hafta sonu bahçede anne babama yardım ediyorum.",
+  "beispielEn": "On weekends I help my parents in the garden."
  },
  {
   "id": 201,
@@ -19,9 +19,9 @@
   "id": 12,
   "tr": "eski",
   "en": "old",
-  "beispiel": "Unser Haus ist schon sehr alt.",
-  "beispielTr": "Evimiz artık çok eski.",
-  "beispielEn": "Our house is already very old."
+  "beispiel": "Mein Fahrrad ist alt, aber es fährt noch gut.",
+  "beispielTr": "Bisikletim eski ama hâlâ iyi gidiyor.",
+  "beispielEn": "My bike is old, but it still rides well."
  },
  {
   "id": 503,
@@ -35,9 +35,9 @@
   "id": 165,
   "tr": "özgür; boş",
   "en": "free",
-  "beispiel": "Ist dieser Platz noch frei?",
-  "beispielTr": "Bu yer hâlâ boş mu?",
-  "beispielEn": "Is this seat still free?"
+  "beispiel": "Morgen habe ich frei, wir können schwimmen gehen.",
+  "beispielTr": "Yarın boşum, yüzmeye gidebiliriz.",
+  "beispielEn": "I'm off tomorrow, so we can go swimming."
  },
  {
   "id": 329,
@@ -59,9 +59,9 @@
   "id": 639,
   "tr": "yanlış",
   "en": "wrong",
-  "beispiel": "Sie haben die falsche Nummer gewählt.",
-  "beispielTr": "Yanlış numarayı aradınız.",
-  "beispielEn": "You dialed the wrong number."
+  "beispiel": "Entschuldigung, ich habe deinen Namen falsch geschrieben.",
+  "beispielTr": "Özür dilerim, adını yanlış yazdım.",
+  "beispielEn": "Sorry, I spelled your name wrong."
  },
  {
   "id": 349,
@@ -83,17 +83,17 @@
   "id": 511,
   "tr": "nereye",
   "en": "where to",
-  "beispiel": "Wohin fährt dieser Bus?",
-  "beispielTr": "Bu otobüs nereye gidiyor?",
-  "beispielEn": "Where is this bus going?"
+  "beispiel": "Wohin bringst du die alten Zeitungen?",
+  "beispielTr": "Eski gazeteleri nereye götürüyorsun?",
+  "beispielEn": "Where are you taking the old newspapers?"
  },
  {
   "id": 170,
   "tr": "erken",
   "en": "early",
-  "beispiel": "Wir stehen immer früh auf.",
-  "beispielTr": "Biz hep erken kalkarız.",
-  "beispielEn": "We always get up early."
+  "beispiel": "Der Bäcker macht schon früh am Morgen auf.",
+  "beispielTr": "Fırın sabah erkenden açılıyor.",
+  "beispielEn": "The bakery opens early in the morning."
  },
  {
   "id": 526,
@@ -123,9 +123,9 @@
   "id": 505,
   "tr": "hoş geldiniz",
   "en": "welcome",
-  "beispiel": "Herzlich willkommen in Berlin!",
-  "beispielTr": "Berlin'e hoş geldiniz!",
-  "beispielEn": "Welcome to Berlin!"
+  "beispiel": "Willkommen zurück, wir haben dich vermisst!",
+  "beispielTr": "Tekrar hoş geldin, seni özledik!",
+  "beispielEn": "Welcome back, we missed you!"
  },
  {
   "id": 752,
@@ -147,9 +147,9 @@
   "id": 751,
   "tr": "pasaport",
   "en": "passport",
-  "beispiel": "Im Hotel brauchst du deinen Pass.",
-  "beispielTr": "Otelde pasaportun lazım.",
-  "beispielEn": "You need your passport at the hotel."
+  "beispiel": "Mein Pass läuft leider nächsten Monat ab.",
+  "beispielTr": "Pasaportumun süresi ne yazık ki gelecek ay doluyor.",
+  "beispielEn": "My passport unfortunately expires next month."
  },
  {
   "id": 336,
@@ -163,9 +163,9 @@
   "id": 808,
   "tr": "saat",
   "en": "hour",
-  "beispiel": "Ich bin in einer Stunde zurück.",
-  "beispielTr": "Bir saat sonra dönerim.",
-  "beispielEn": "I will be back in an hour."
+  "beispiel": "Der Film dauert zwei Stunden.",
+  "beispielTr": "Film iki saat sürüyor.",
+  "beispielEn": "The movie is two hours long."
  },
  {
   "id": 289,
@@ -179,25 +179,25 @@
   "id": 301,
   "tr": "sevmek",
   "en": "to love",
-  "beispiel": "Ich liebe meine Familie sehr.",
-  "beispielTr": "Ailemi çok seviyorum.",
-  "beispielEn": "I love my family very much."
+  "beispiel": "Unsere Kinder lieben den Strand im Sommer.",
+  "beispielTr": "Çocuklarımız yazın sahili çok seviyor.",
+  "beispielEn": "Our kids love the beach in the summer."
  },
  {
   "id": 296,
   "tr": "maalesef",
   "en": "unfortunately",
-  "beispiel": "Ich kann leider nicht kommen.",
-  "beispielTr": "Maalesef gelemiyorum.",
-  "beispielEn": "Unfortunately I cannot come."
+  "beispiel": "Der Laden ist heute leider geschlossen.",
+  "beispielTr": "Dükkân bugün maalesef kapalı.",
+  "beispielEn": "Unfortunately, the store is closed today."
  },
  {
   "id": 612,
   "tr": "doktor",
   "en": "physician",
-  "beispiel": "Wir gehen heute zum Doktor.",
-  "beispielTr": "Bugün doktora gidiyoruz.",
-  "beispielEn": "We are going to the doctor today."
+  "beispiel": "Der Doktor sagt, ich soll viel Tee trinken.",
+  "beispielTr": "Doktor bol çay içmem gerektiğini söylüyor.",
+  "beispielEn": "The doctor says I should drink lots of tea."
  },
  {
   "id": 151,
@@ -211,9 +211,9 @@
   "id": 464,
   "tr": "her yerde",
   "en": "everywhere",
-  "beispiel": "In der Altstadt gibt es überall kleine Cafés.",
-  "beispielTr": "Eski şehirde her yerde küçük kafeler var.",
-  "beispielEn": "There are small cafés everywhere in the old town."
+  "beispiel": "Nach der Party liegen überall leere Flaschen.",
+  "beispielTr": "Partiden sonra her yerde boş şişeler var.",
+  "beispielEn": "After the party, there are empty bottles everywhere."
  },
  {
   "id": 230,
@@ -267,9 +267,9 @@
   "id": 249,
   "tr": "kahve",
   "en": "coffee",
-  "beispiel": "Möchtest du auch einen Kaffee?",
-  "beispielTr": "Sen de kahve ister misin?",
-  "beispielEn": "Would you like a coffee too?"
+  "beispiel": "Ohne Kaffee bin ich morgens total müde.",
+  "beispielTr": "Kahve olmadan sabahları çok yorgunum.",
+  "beispielEn": "Without coffee I'm totally tired in the morning."
  },
  {
   "id": 554,
@@ -307,9 +307,9 @@
   "id": 34,
   "tr": "doktor",
   "en": "doctor",
-  "beispiel": "Morgen habe ich einen Termin beim Arzt.",
-  "beispielTr": "Yarın doktorda randevum var.",
-  "beispielEn": "I have a doctor's appointment tomorrow."
+  "beispiel": "Du hast Fieber, geh bitte zum Arzt.",
+  "beispielTr": "Ateşin var, lütfen doktora git.",
+  "beispielEn": "You have a fever, please go to the doctor."
  },
  {
   "id": 169,
@@ -339,17 +339,17 @@
   "id": 750,
   "tr": "parti",
   "en": "party",
-  "beispiel": "Heute Abend machen wir eine Party.",
-  "beispielTr": "Bu akşam parti veriyoruz.",
-  "beispielEn": "We are having a party tonight."
+  "beispiel": "Nach der Party war die Küche total schmutzig.",
+  "beispielTr": "Partiden sonra mutfak bayağı kirliydi.",
+  "beispielEn": "After the party the kitchen was a total mess."
  },
  {
   "id": 130,
   "tr": "açıklamak",
   "en": "to explain",
-  "beispiel": "Können Sie mir das bitte erklären?",
-  "beispielTr": "Bunu bana açıklayabilir misiniz lütfen?",
-  "beispielEn": "Could you please explain this to me?"
+  "beispiel": "Der Lehrer erklärt die Regel noch einmal an der Tafel.",
+  "beispielTr": "Öğretmen kuralı tahtada bir kez daha açıklıyor.",
+  "beispielEn": "The teacher explains the rule on the board once more."
  },
  {
   "id": 294,
@@ -371,17 +371,17 @@
   "id": 734,
   "tr": "istemek",
   "en": "would like",
-  "beispiel": "Was möchten Sie trinken?",
-  "beispielTr": "Ne içmek istersiniz?",
-  "beispielEn": "What would you like to drink?"
+  "beispiel": "Ich möchte heute Abend lieber zu Hause bleiben.",
+  "beispielTr": "Bu akşam evde kalmayı tercih ederim.",
+  "beispielEn": "I'd rather stay home tonight."
  },
  {
   "id": 433,
   "tr": "parça",
   "en": "piece",
-  "beispiel": "Willst du noch ein Stück Kuchen?",
-  "beispielTr": "Bir dilim kek daha ister misin?",
-  "beispielEn": "Do you want another piece of cake?"
+  "beispiel": "Gib mir bitte ein Stück Brot.",
+  "beispielTr": "Bana bir parça ekmek ver lütfen.",
+  "beispielEn": "Please give me a piece of bread."
  },
  {
   "id": 718,

@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "strafft, hat gestrafft",
    "currentTr": "sadeleştirmek, kısaltıp toparlamak",
-   "currentBeispiel": "Die neuen Vorgaben straffen die internen Abläufe erheblich.",
-   "currentBeispielTr": "Yeni kurallar iç süreçleri ciddi biçimde sadeleştiriyor."
+   "currentBeispiel": "Wir straffen den Ablauf, damit alle pünktlich fertig werden.",
+   "currentBeispielTr": "Herkes zamanında bitirsin diye süreci sadeleştiriyoruz."
   },
   {
    "id": 3546,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Sachverhalte",
    "currentTr": "olgu, durum",
-   "currentBeispiel": "Der Sachverhalt wurde vom Gericht sorgfältig geprüft.",
-   "currentBeispielTr": "Olgu, mahkemece titizlikle incelendi."
+   "currentBeispiel": "Bitte schildern Sie den Sachverhalt aus Ihrer Sicht.",
+   "currentBeispielTr": "Lütfen durumu kendi bakış açınızdan anlatın."
   },
   {
    "id": 3621,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Satiren",
    "currentTr": "hiciv, taşlama",
-   "currentBeispiel": "Die Satire verspottet die Eitelkeit des Adels scharfzüngig.",
-   "currentBeispielTr": "Hiciv, soyluların kibrini sivri bir dille alaya alıyor."
+   "currentBeispiel": "Seine Satire über den Politiker sorgte für Ärger.",
+   "currentBeispielTr": "Politikacı hakkındaki hicvi ortalığı karıştırdı."
   },
   {
    "id": 3643,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "Chiffren",
    "currentTr": "simge, şifreli işaret",
-   "currentBeispiel": "Der Dichter nutzt die Chiffre als verschlüsseltes Symbol.",
-   "currentBeispielTr": "Şair, şifreyi gizlenmiş bir simge olarak kullanıyor."
+   "currentBeispiel": "Die Nachricht war in einer alten Chiffre geschrieben.",
+   "currentBeispielTr": "Mesaj eski bir şifre sistemiyle yazılmıştı."
   },
   {
    "id": 3722,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Überlieferungen",
    "currentTr": "aktarım, sözlü gelenek",
-   "currentBeispiel": "Die mündliche Überlieferung bewahrte alte Mythen über Jahrhunderte.",
-   "currentBeispielTr": "Sözlü aktarım, eski mitleri yüzyıllar boyunca yaşattı.",
+   "currentBeispiel": "Die mündliche Überlieferung hielt die alten Lieder lebendig.",
+   "currentBeispielTr": "Sözlü gelenek eski şarkıları yaşattı.",
    "overlapping": [
     "die Übertragung (C1)"
    ]
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "Weltanschauungen",
    "currentTr": "dünya görüşü",
-   "currentBeispiel": "Seine Weltanschauung prägte sein gesamtes literarisches Schaffen.",
-   "currentBeispielTr": "Dünya görüşü, tüm edebi üretimine damga vurdu."
+   "currentBeispiel": "Seine Weltanschauung änderte sich nach der langen Reise.",
+   "currentBeispielTr": "Uzun yolculuktan sonra dünya görüşü değişti."
   },
   {
    "id": 3680,
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "hebt hervor, hat hervorgehoben",
    "currentTr": "vurgulamak, öne çıkarmak",
-   "currentBeispiel": "Der Bericht hebt die positiven Aspekte hervor.",
-   "currentBeispielTr": "Rapor olumlu yönleri öne çıkarıyor.",
+   "currentBeispiel": "Ich möchte einen Punkt besonders hervorheben.",
+   "currentBeispielTr": "Bir noktayı özellikle öne çıkarmak istiyorum.",
    "overlapping": [
     "akzentuieren (C1)",
     "betonen (A2)"
@@ -96,8 +96,8 @@
    "niveau": "C1",
    "formen": "Vollstreckungen",
    "currentTr": "icra",
-   "currentBeispiel": "Die Vollstreckung des Urteils wurde ausgesetzt.",
-   "currentBeispielTr": "Kararın icrası askıya alındı."
+   "currentBeispiel": "Die Vollstreckung des Urteils beginnt nächste Woche.",
+   "currentBeispielTr": "Kararın icrası önümüzdeki hafta başlıyor."
   },
   {
    "id": 3683,
@@ -106,8 +106,8 @@
    "niveau": "C1",
    "formen": "beschönigt, hat beschönigt",
    "currentTr": "olduğundan iyi göstermek, kılıfına uydurmak",
-   "currentBeispiel": "Er versucht, die Fehler seiner Firma zu beschönigen.",
-   "currentBeispielTr": "Şirketinin hatalarını güzellemeye çalışıyor."
+   "currentBeispiel": "Er beschönigt seine Fehler vor dem Chef.",
+   "currentBeispielTr": "Hatalarını patronun önünde olduğundan iyi gösteriyor."
   },
   {
    "id": 3971,
@@ -116,8 +116,8 @@
    "niveau": "C1",
    "formen": "Trugbilder",
    "currentTr": "yanılsama, serap",
-   "currentBeispiel": "Grenzenloses Wachstum erweist sich zunehmend als Trugbild.",
-   "currentBeispielTr": "Sınırsız büyüme giderek bir yanılsama olduğunu gösteriyor."
+   "currentBeispiel": "Sein Reichtum entpuppte sich als reines Trugbild.",
+   "currentBeispielTr": "Zenginliğinin koca bir yanılsama olduğu ortaya çıktı."
   },
   {
    "id": 4033,
@@ -126,8 +126,8 @@
    "niveau": "C1",
    "formen": "schmälert, hat geschmälert",
    "currentTr": "azaltmak, değerini düşürmek",
-   "currentBeispiel": "Der Skandal schmälert das Ansehen der Firma erheblich.",
-   "currentBeispielTr": "Skandal, şirketin itibarını ciddi biçimde zedeliyor.",
+   "currentBeispiel": "Ein einziger Fehler schmälert seine Leistung nicht.",
+   "currentBeispielTr": "Tek bir hata başarısını eksiltmez.",
    "overlapping": [
     "reduzieren (B1)",
     "verknappen (C1)",
@@ -141,8 +141,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şüpheli, güvenilmez",
-   "currentBeispiel": "Das Geschäft wirkt auf mich ziemlich dubios und unseriös.",
-   "currentBeispielTr": "Bu iş bana epey şüpheli ve güven vermez görünüyor.",
+   "currentBeispiel": "Das Angebot klingt mir zu dubios.",
+   "currentBeispielTr": "Bu teklif bana fazla şaibeli geliyor.",
    "overlapping": [
     "verdächtig (B1)",
     "fragwürdig (C1)"
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "önem, kapsam",
-   "currentBeispiel": "Die Tragweite der Entscheidung wurde erst später klar.",
-   "currentBeispielTr": "Kararın kapsamı ancak sonradan anlaşıldı.",
+   "currentBeispiel": "Die Tragweite seiner Entscheidung erkannte er zu spät.",
+   "currentBeispielTr": "Kararının ciddiyetini çok geç fark etti.",
    "overlapping": [
     "die Relevanz (C1)"
    ]
@@ -168,8 +168,8 @@
    "niveau": "C1",
    "formen": "Weltbilder",
    "currentTr": "dünya tasavvuru, dünya algısı",
-   "currentBeispiel": "Sein Weltbild geriet durch die neuen Erkenntnisse gehörig ins Wanken.",
-   "currentBeispielTr": "Yeni bulgular dünya görüşünü iyice sarstı."
+   "currentBeispiel": "Kopernikus zerstörte das mittelalterliche Weltbild.",
+   "currentBeispielTr": "Kopernik, ortaçağın dünya tasavvurunu yıktı."
   },
   {
    "id": 3719,
@@ -178,8 +178,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "vazgeçilmez, zorunlu",
-   "currentBeispiel": "Vertrauen ist für eine gute Zusammenarbeit unabdingbar.",
-   "currentBeispielTr": "İyi bir iş birliği için güven vazgeçilmezdir.",
+   "currentBeispiel": "Vertrauen ist für dieses Projekt unabdingbar.",
+   "currentBeispielTr": "Bu proje için güven olmazsa olmaz.",
    "overlapping": [
     "unentbehrlich (B2)",
     "unerlässlich (C1)"
@@ -192,8 +192,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yine de, buna karşın",
-   "currentBeispiel": "Die Kritik war berechtigt, gleichwohl blieb der Autor bei seiner These.",
-   "currentBeispielTr": "Eleştiri haklıydı; yine de yazar tezinden vazgeçmedi.",
+   "currentBeispiel": "Der Preis ist hoch, gleichwohl kaufe ich das Buch.",
+   "currentBeispielTr": "Fiyat yüksek; bununla birlikte kitabı alıyorum.",
    "overlapping": [
     "trotzdem (B1)",
     "nichtsdestotrotz (C1)",
@@ -208,8 +208,8 @@
    "niveau": "C1",
    "formen": "brandmarkt, hat gebrandmarkt",
    "currentTr": "damgalamak, kınamak",
-   "currentBeispiel": "Man brandmarkte ihn öffentlich als Verräter seiner Prinzipien.",
-   "currentBeispielTr": "İlkelerine ihanet etmekle kamuoyu önünde damgalandı.",
+   "currentBeispiel": "Die Zeitung brandmarkte ihn als Lügner.",
+   "currentBeispielTr": "Gazete onu yalancı diye yaftaladı.",
    "overlapping": [
     "stigmatisieren (C1)"
    ]
@@ -221,8 +221,8 @@
    "niveau": "C1",
    "formen": "spiegelt wider, hat widergespiegelt",
    "currentTr": "yansıtmak",
-   "currentBeispiel": "Die Architektur spiegelt den Zeitgeist der Epoche wider.",
-   "currentBeispielTr": "Mimari, dönemin ruhunu yansıtıyor.",
+   "currentBeispiel": "Die Umfrage soll die Meinung der Bürger widerspiegeln.",
+   "currentBeispielTr": "Anket, vatandaşların görüşünü yansıtmalı.",
    "overlapping": [
     "abbilden (C1)"
    ]
@@ -234,7 +234,7 @@
    "niveau": "C1",
    "formen": "Fragestellungen",
    "currentTr": "araştırma sorusu, konu",
-   "currentBeispiel": "Die zentrale Fragestellung der Studie blieb ungeklärt.",
+   "currentBeispiel": "Die zentrale Fragestellung der Arbeit blieb unbeantwortet.",
    "currentBeispielTr": "Çalışmanın temel araştırma sorusu yanıtsız kaldı."
   },
   {
@@ -244,8 +244,8 @@
    "niveau": "C1",
    "formen": "Methodiken",
    "currentTr": "yöntem, metodoloji",
-   "currentBeispiel": "Die Methodik der Studie wurde von Fachkollegen kritisiert.",
-   "currentBeispielTr": "Çalışmanın metodolojisi meslektaşlarca eleştirildi.",
+   "currentBeispiel": "Die Methodik der Studie überzeugte die Gutachter nicht.",
+   "currentBeispielTr": "Çalışmanın metodolojisi hakemleri ikna etmedi.",
    "overlapping": [
     "die Methode (B1)"
    ]
@@ -257,8 +257,8 @@
    "niveau": "C1",
    "formen": "Diskurse",
    "currentTr": "söylem, tartışma",
-   "currentBeispiel": "Der wissenschaftliche Diskurs lebt von unterschiedlichen Meinungen.",
-   "currentBeispielTr": "Bilimsel söylem, farklı görüşlerle beslenir."
+   "currentBeispiel": "Im öffentlichen Diskurs fehlt oft die Sachlichkeit.",
+   "currentBeispielTr": "Kamusal söylemde çoğu zaman nesnellik eksik."
   },
   {
    "id": 3473,
@@ -267,8 +267,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "öznellik",
-   "currentBeispiel": "Man wirft der Studie eine gewisse Subjektivität vor.",
-   "currentBeispielTr": "Çalışma belli bir öznellikle suçlanıyor."
+   "currentBeispiel": "Die Subjektivität des Autors stört viele Leser.",
+   "currentBeispielTr": "Yazarın öznelliği birçok okuru rahatsız ediyor."
   },
   {
    "id": 3476,
@@ -277,8 +277,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "akla yatkınlık, inandırıcılık",
-   "currentBeispiel": "An der Plausibilität dieser Erklärung zweifeln viele Forscher.",
-   "currentBeispielTr": "Birçok araştırmacı bu açıklamanın akla yatkınlığından şüphe duyuyor."
+   "currentBeispiel": "An der Plausibilität dieser Erklärung zweifeln viele Fachleute.",
+   "currentBeispielTr": "Birçok uzman bu açıklamanın akla yatkınlığından şüphe ediyor."
   },
   {
    "id": 3477,
@@ -288,7 +288,7 @@
    "formen": "",
    "currentTr": "anlamlılık, önem derecesi",
    "currentBeispiel": "Das Ergebnis erreichte keine statistische Signifikanz.",
-   "currentBeispielTr": "Sonuç, istatistiksel anlamlılığa ulaşamadı."
+   "currentBeispielTr": "Sonuç istatistiksel anlamlılığa ulaşamadı."
   },
   {
    "id": 3480,
@@ -297,8 +297,8 @@
    "niveau": "C1",
    "formen": "Differenzierungen",
    "currentTr": "ayrım, farklılaştırma",
-   "currentBeispiel": "Eine genaue Differenzierung der Begriffe ist notwendig.",
-   "currentBeispielTr": "Kavramların net biçimde ayrıştırılması şart.",
+   "currentBeispiel": "Hier fehlt eine klare Differenzierung zwischen beiden Begriffen.",
+   "currentBeispielTr": "Burada iki kavram arasında net bir ayrıştırma eksik.",
    "overlapping": [
     "die Distinktion (C1)"
    ]
@@ -310,8 +310,8 @@
    "niveau": "C1",
    "formen": "Verallgemeinerungen",
    "currentTr": "genelleme",
-   "currentBeispiel": "Vorschnelle Verallgemeinerungen sollten vermieden werden.",
-   "currentBeispielTr": "Aceleci genellemelerden kaçınılmalı."
+   "currentBeispiel": "Solche Verallgemeinerungen führen schnell zu falschen Schlüssen.",
+   "currentBeispielTr": "Bu tür genellemeler çabucak yanlış sonuçlara götürür."
   },
   {
    "id": 3483,
@@ -320,8 +320,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "uzmanlık literatürü, alan yazını",
-   "currentBeispiel": "Die Fachliteratur zu diesem Thema ist inzwischen unüberschaubar.",
-   "currentBeispielTr": "Bu konudaki alan yazını artık takip edilemeyecek kadar geniş."
+   "currentBeispiel": "Die Fachliteratur zu diesem Thema füllt ganze Regale.",
+   "currentBeispielTr": "Bu konudaki alan yazını rafları dolduruyor."
   },
   {
    "id": 3484,
@@ -330,8 +330,8 @@
    "niveau": "C1",
    "formen": "Paradigmen",
    "currentTr": "paradigma, model",
-   "currentBeispiel": "Ein neues Paradigma löste die alte Theorie ab.",
-   "currentBeispielTr": "Yeni bir paradigma eski teorinin yerini aldı."
+   "currentBeispiel": "Mit dieser Entdeckung setzte sich ein neues Paradigma durch.",
+   "currentBeispielTr": "Bu keşifle birlikte yeni bir paradigma yerleşti."
   },
   {
    "id": 3485,
@@ -340,8 +340,8 @@
    "niveau": "C1",
    "formen": "Prämissen",
    "currentTr": "öncül, ön kabul",
-   "currentBeispiel": "Die gesamte Argumentation beruht auf einer fragwürdigen Prämisse.",
-   "currentBeispielTr": "Bütün gerekçelendirme, tartışmalı bir öncüle dayanıyor."
+   "currentBeispiel": "Seine ganze Argumentation beruht auf einer falschen Prämisse.",
+   "currentBeispielTr": "Bütün savı yanlış bir öncüle dayanıyor."
   },
   {
    "id": 3486,
@@ -350,8 +350,8 @@
    "niveau": "C1",
    "formen": "Kausalitäten",
    "currentTr": "nedensellik",
-   "currentBeispiel": "Korrelation bedeutet nicht automatisch Kausalität.",
-   "currentBeispielTr": "Korelasyon otomatik olarak nedensellik anlamına gelmez."
+   "currentBeispiel": "Der Forscher konnte keine Kausalität nachweisen.",
+   "currentBeispielTr": "Araştırmacı bir nedensellik ilişkisi kanıtlayamadı."
   },
   {
    "id": 3487,
@@ -360,8 +360,8 @@
    "niveau": "C1",
    "formen": "Korrelationen",
    "currentTr": "korelasyon, ilinti",
-   "currentBeispiel": "Zwischen den beiden Faktoren zeigt sich eine deutliche Korrelation.",
-   "currentBeispielTr": "İki etken arasında belirgin bir korelasyon görülüyor."
+   "currentBeispiel": "Zwischen Schlaf und Konzentration zeigt sich eine deutliche Korrelation.",
+   "currentBeispielTr": "Uyku ile dikkat arasında belirgin bir korelasyon görülüyor."
   },
   {
    "id": 3488,
@@ -370,8 +370,8 @@
    "niveau": "C1",
    "formen": "Stichproben",
    "currentTr": "örneklem",
-   "currentBeispiel": "Die Stichprobe war für allgemeine Aussagen zu klein.",
-   "currentBeispielTr": "Örneklem, genel yargılara varmak için fazla küçüktü."
+   "currentBeispiel": "Die Stichprobe umfasste nur fünfzig Personen.",
+   "currentBeispielTr": "Örneklem yalnızca elli kişiden oluşuyordu."
   },
   {
    "id": 3489,
@@ -380,8 +380,8 @@
    "niveau": "C1",
    "formen": "Datenerhebungen",
    "currentTr": "veri toplama",
-   "currentBeispiel": "Die Datenerhebung erfolgte mittels standardisierter Fragebögen.",
-   "currentBeispielTr": "Veriler standart anket formlarıyla toplandı.",
+   "currentBeispiel": "Die Datenerhebung dauerte insgesamt drei Monate.",
+   "currentBeispielTr": "Veri toplama toplam üç ay sürdü.",
    "overlapping": [
     "die Erhebung (C1)"
    ]
@@ -394,7 +394,7 @@
    "formen": "Forschungsstände",
    "currentTr": "araştırma durumu, literatür durumu",
    "currentBeispiel": "Der aktuelle Forschungsstand wird im zweiten Kapitel dargestellt.",
-   "currentBeispielTr": "Güncel araştırma durumu ikinci bölümde ele alınıyor."
+   "currentBeispielTr": "Güncel araştırma durumu ikinci bölümde anlatılıyor."
   },
   {
    "id": 3491,
@@ -403,8 +403,8 @@
    "niveau": "C1",
    "formen": "Postulate",
    "currentTr": "ilke, varsayım",
-   "currentBeispiel": "Dieses Postulat wurde von der Fachwelt weitgehend akzeptiert.",
-   "currentBeispielTr": "Bu varsayım bilim çevrelerince büyük ölçüde kabul gördü.",
+   "currentBeispiel": "Dieses Postulat blieb jahrzehntelang unbestritten.",
+   "currentBeispielTr": "Bu varsayım onlarca yıl tartışılmadan kabul gördü.",
    "overlapping": [
     "die Maxime (C1)"
    ]
@@ -416,8 +416,8 @@
    "niveau": "C1",
    "formen": "Nuancen",
    "currentTr": "nüans, ince ayrım",
-   "currentBeispiel": "Solche Nuancen entgehen einer oberflächlichen Betrachtung leicht.",
-   "currentBeispielTr": "Böyle nüanslar yüzeysel bir bakışta kolayca gözden kaçar."
+   "currentBeispiel": "Solche Nuancen gehen in der Übersetzung leicht verloren.",
+   "currentBeispielTr": "Bu tür nüanslar çeviride kolayca kaybolur."
   },
   {
    "id": 3493,
@@ -426,8 +426,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tutarlılık, bağdaşıklık",
-   "currentBeispiel": "Dem Text fehlt es an innerer Kohärenz.",
-   "currentBeispielTr": "Metnin iç tutarlılığı eksik.",
+   "currentBeispiel": "Dem Aufsatz fehlt es an innerer Kohärenz.",
+   "currentBeispielTr": "Yazının iç tutarlılığı eksik.",
    "overlapping": [
     "die Konsistenz (C1)",
     "die Stringenz (C1)"
@@ -440,8 +440,8 @@
    "niveau": "C1",
    "formen": "Diskussionsbeiträge",
    "currentTr": "tartışma katkısı, görüş",
-   "currentBeispiel": "Sein Diskussionsbeitrag brachte neue Aspekte in die Debatte ein.",
-   "currentBeispielTr": "Görüşü, tartışmaya yeni boyutlar kazandırdı."
+   "currentBeispiel": "Ihr Diskussionsbeitrag brachte die Debatte deutlich voran.",
+   "currentBeispielTr": "Tartışmadaki katkısı, konuyu belirgin biçimde ilerletti."
   },
   {
    "id": 3496,
@@ -450,8 +450,8 @@
    "niveau": "C1",
    "formen": "Gegenpositionen",
    "currentTr": "karşı görüş, karşı tez",
-   "currentBeispiel": "Eine fundierte Gegenposition fehlt in der Arbeit bislang.",
-   "currentBeispielTr": "Çalışmada temellendirilmiş bir karşı görüş şimdilik yok."
+   "currentBeispiel": "Eine überzeugende Gegenposition hat bisher niemand vorgetragen.",
+   "currentBeispielTr": "Şimdiye dek kimse ikna edici bir karşı görüş ortaya koymadı."
   },
   {
    "id": 3497,
@@ -460,8 +460,8 @@
    "niveau": "C1",
    "formen": "Fallstudien",
    "currentTr": "vaka çalışması, örnek olay",
-   "currentBeispiel": "Die Fallstudie veranschaulicht die theoretischen Überlegungen.",
-   "currentBeispielTr": "Vaka çalışması, kuramsal düşünceleri somutlaştırıyor."
+   "currentBeispiel": "Die Fallstudie zeigt, wie das Modell in der Praxis funktioniert.",
+   "currentBeispielTr": "Vaka çalışması, modelin pratikte nasıl işlediğini gösteriyor."
   },
   {
    "id": 3498,
@@ -470,8 +470,8 @@
    "niveau": "C1",
    "formen": "Argumentationsketten",
    "currentTr": "argüman zinciri",
-   "currentBeispiel": "Die Argumentationskette weist an entscheidender Stelle eine Lücke auf.",
-   "currentBeispielTr": "Argüman zincirinde kritik bir noktada boşluk var."
+   "currentBeispiel": "Seine Argumentationskette hat an einer Stelle eine Lücke.",
+   "currentBeispielTr": "Argüman zincirinde bir yerde boşluk var."
   },
   {
    "id": 3499,
@@ -480,8 +480,8 @@
    "niveau": "C1",
    "formen": "Erklärungsansätze",
    "currentTr": "açıklama yaklaşımı",
-   "currentBeispiel": "Für dieses Phänomen existieren mehrere konkurrierende Erklärungsansätze.",
-   "currentBeispielTr": "Bu olgu için birbiriyle yarışan birden çok açıklama yaklaşımı var."
+   "currentBeispiel": "Für dieses Phänomen gibt es mehrere Erklärungsansätze.",
+   "currentBeispielTr": "Bu olgu için birden çok açıklama yaklaşımı var."
   },
   {
    "id": 3501,
@@ -490,8 +490,8 @@
    "niveau": "C1",
    "formen": "postuliert, hat postuliert",
    "currentTr": "öne sürmek, ileri sürmek",
-   "currentBeispiel": "Der Forscher postuliert einen bislang unbekannten Zusammenhang.",
-   "currentBeispielTr": "Araştırmacı, bugüne dek bilinmeyen bir bağlantı öne sürüyor.",
+   "currentBeispiel": "Der Forscher postuliert einen bisher unbekannten Zusammenhang.",
+   "currentBeispielTr": "Araştırmacı, şimdiye dek bilinmeyen bir bağlantı öne sürüyor.",
    "overlapping": [
     "anführen (C1)"
    ]
@@ -503,8 +503,8 @@
    "niveau": "C1",
    "formen": "konstatiert, hat konstatiert",
    "currentTr": "tespit etmek, saptamak",
-   "currentBeispiel": "Die Studie konstatiert einen deutlichen Rückgang der Werte.",
-   "currentBeispielTr": "Çalışma, değerlerde belirgin bir düşüş saptıyor.",
+   "currentBeispiel": "Der Arzt konstatierte einen leichten Bruch.",
+   "currentBeispielTr": "Doktor hafif bir kırık saptadı.",
    "overlapping": [
     "feststellen (B1)",
     "ermitteln (B2)"
@@ -517,8 +517,8 @@
    "niveau": "C1",
    "formen": "veranschaulicht, hat veranschaulicht",
    "currentTr": "örneklerle açıklamak, gözler önüne sermek",
-   "currentBeispiel": "Ein Diagramm veranschaulicht die komplexen Zusammenhänge.",
-   "currentBeispielTr": "Bir diyagram, karmaşık ilişkileri somutlaştırıyor."
+   "currentBeispiel": "Eine Grafik veranschaulicht die Entwicklung der Preise.",
+   "currentBeispielTr": "Bir grafik, fiyatların gelişimini somutlaştırıyor."
   },
   {
    "id": 3506,
@@ -527,8 +527,8 @@
    "niveau": "C1",
    "formen": "leitet her, hat hergeleitet",
    "currentTr": "türetmek, çıkarım yapmak",
-   "currentBeispiel": "Aus den Prämissen lässt sich die Schlussfolgerung logisch herleiten.",
-   "currentBeispielTr": "Sonuç, öncüllerden mantıksal olarak türetilebiliyor."
+   "currentBeispiel": "Daraus lässt sich die Regel logisch herleiten.",
+   "currentBeispielTr": "Kural buradan mantıksal olarak türetilebilir."
   },
   {
    "id": 3507,
@@ -537,8 +537,8 @@
    "niveau": "C1",
    "formen": "verifiziert, hat verifiziert",
    "currentTr": "doğrulamak",
-   "currentBeispiel": "Die Ergebnisse müssen durch weitere Versuche verifiziert werden.",
-   "currentBeispielTr": "Sonuçların ek deneylerle doğrulanması gerekiyor."
+   "currentBeispiel": "Ein zweites Labor konnte die Messung verifizieren.",
+   "currentBeispielTr": "İkinci bir laboratuvar ölçümü doğrulayabildi."
   },
   {
    "id": 3508,
@@ -547,8 +547,8 @@
    "niveau": "C1",
    "formen": "falsifiziert, hat falsifiziert",
    "currentTr": "yanlışlamak, çürütmek",
-   "currentBeispiel": "Eine Theorie muss grundsätzlich falsifizierbar sein.",
-   "currentBeispielTr": "Bir teori ilkesel olarak yanlışlanabilir olmalıdır."
+   "currentBeispiel": "Schon ein Gegenbeweis kann die Theorie falsifizieren.",
+   "currentBeispielTr": "Tek bir karşı kanıt bile teoriyi yanlışlayabilir."
   },
   {
    "id": 3510,
@@ -557,8 +557,8 @@
    "niveau": "C1",
    "formen": "schlussfolgert, hat geschlussfolgert",
    "currentTr": "sonuç çıkarmak",
-   "currentBeispiel": "Daraus schlussfolgert der Autor eine allgemeine Regel.",
-   "currentBeispielTr": "Yazar buradan genel bir kural çıkarıyor.",
+   "currentBeispiel": "Aus den Zahlen schlussfolgert sie, dass die Kampagne wirkte.",
+   "currentBeispielTr": "Rakamlardan, kampanyanın işe yaradığı çıkarımını yapıyor.",
    "overlapping": [
     "folgern (C1)"
    ]

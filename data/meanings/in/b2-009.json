@@ -10,7 +10,7 @@
    "formen": "immatrikuliert sich, hat sich immatrikuliert",
    "currentTr": "üniversiteye kayıt olmak",
    "currentBeispiel": "Neue Studierende müssen sich online immatrikulieren.",
-   "currentBeispielTr": "Yeni öğrencilerin çevrimiçi kayıt yaptırması gerekiyor."
+   "currentBeispielTr": "Yeni öğrenciler kayıtlarını internetten yaptırmak zorunda."
   },
   {
    "id": 3879,
@@ -20,7 +20,7 @@
    "formen": "",
    "currentTr": "iki dilli",
    "currentBeispiel": "Die Familie erzieht ihre Kinder zweisprachig.",
-   "currentBeispielTr": "Aile, çocuklarını iki dilli yetiştiriyor."
+   "currentBeispielTr": "Aile çocuklarını iki dilli yetiştiriyor."
   },
   {
    "id": 3880,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "süresi içinde, zamanında",
    "currentBeispiel": "Der Antrag muss fristgerecht eingereicht werden.",
-   "currentBeispielTr": "Başvurunun süresi içinde yapılması gerekiyor."
+   "currentBeispielTr": "Başvurunun süresinde yapılması gerekiyor."
   },
   {
    "id": 3882,
@@ -40,7 +40,7 @@
    "formen": "",
    "currentTr": "bağlayıcı, kesin",
    "currentBeispiel": "Die Anmeldung ist ab sofort verbindlich.",
-   "currentBeispielTr": "Kayıt bu andan itibaren bağlayıcıdır."
+   "currentBeispielTr": "Kayıt bu andan itibaren bağlayıcı."
   },
   {
    "id": 4047,
@@ -50,7 +50,7 @@
    "formen": "Tarifverträge",
    "currentTr": "toplu iş sözleşmesi",
    "currentBeispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
-   "currentBeispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanlar için geçerli."
+   "currentBeispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanları kapsıyor."
   },
   {
    "id": 4048,
@@ -60,7 +60,7 @@
    "formen": "Arbeitgeber",
    "currentTr": "işveren",
    "currentBeispiel": "Mein Arbeitgeber übernimmt die Kosten für die Weiterbildung.",
-   "currentBeispielTr": "İşverenim eğitim masraflarını üstleniyor."
+   "currentBeispielTr": "İşverenim eğitim masraflarını karşılıyor."
   },
   {
    "id": 4049,
@@ -70,7 +70,7 @@
    "formen": "Arbeitnehmer",
    "currentTr": "işçi, çalışan",
    "currentBeispiel": "Jeder Arbeitnehmer hat Anspruch auf bezahlten Urlaub.",
-   "currentBeispielTr": "Her çalışanın ücretli izin hakkı vardır.",
+   "currentBeispielTr": "Her çalışanın ücretli izin hakkı var.",
    "overlapping": [
     "der Arbeiter (B1)"
    ]
@@ -83,7 +83,7 @@
    "formen": "Personalabteilungen",
    "currentTr": "insan kaynakları departmanı",
    "currentBeispiel": "Wenden Sie sich mit Ihren Fragen bitte an die Personalabteilung.",
-   "currentBeispielTr": "Sorularınız için lütfen insan kaynakları departmanına başvurun."
+   "currentBeispielTr": "Sorularınız için lütfen insan kaynaklarına başvurun."
   },
   {
    "id": 4051,
@@ -93,7 +93,7 @@
    "formen": "Fachkräfte",
    "currentTr": "uzman eleman, nitelikli işgücü",
    "currentBeispiel": "In der Pflege fehlen seit Jahren ausgebildete Fachkräfte.",
-   "currentBeispielTr": "Bakım sektöründe yıllardır eğitimli uzman eleman eksikliği var."
+   "currentBeispielTr": "Bakım sektöründe yıllardır nitelikli eleman eksiği var."
   },
   {
    "id": 4052,
@@ -103,7 +103,7 @@
    "formen": "Führungskräfte",
    "currentTr": "yönetici, üst düzey yönetici",
    "currentBeispiel": "Als Führungskraft muss man auch unangenehme Entscheidungen treffen.",
-   "currentBeispielTr": "Yönetici olarak insan hoş olmayan kararlar da almak zorunda."
+   "currentBeispielTr": "Yönetici olarak hoş olmayan kararlar da almak zorundasın."
   },
   {
    "id": 4053,
@@ -113,7 +113,7 @@
    "formen": "Abteilungsleiter",
    "currentTr": "departman müdürü, bölüm şefi",
    "currentBeispiel": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben.",
-   "currentBeispielTr": "Departman müdürü izin dilekçesini henüz imzalamadı."
+   "currentBeispielTr": "Bölüm müdürü izin dilekçesini henüz imzalamadı."
   },
   {
    "id": 4054,
@@ -137,7 +137,7 @@
    "formen": "",
    "currentTr": "iş ortamı, çalışma atmosferi",
    "currentBeispiel": "Seit dem Wechsel der Leitung hat sich das Arbeitsklima deutlich verbessert.",
-   "currentBeispielTr": "Yönetim değişikliğinden bu yana çalışma atmosferi belirgin şekilde düzeldi."
+   "currentBeispielTr": "Yönetim değiştiğinden beri çalışma ortamı gözle görülür şekilde düzeldi."
   },
   {
    "id": 4056,
@@ -167,7 +167,7 @@
    "formen": "",
    "currentTr": "vardiyalı çalışma",
    "currentBeispiel": "Ständige Schichtarbeit belastet auf Dauer den Schlafrhythmus.",
-   "currentBeispielTr": "Sürekli vardiyalı çalışma uzun vadede uyku düzenini bozar."
+   "currentBeispielTr": "Sürekli vardiyalı çalışma uzun vadede uyku düzenini bozuyor."
   },
   {
    "id": 4059,
@@ -187,7 +187,7 @@
    "formen": "Probezeiten",
    "currentTr": "deneme süresi",
    "currentBeispiel": "In der Probezeit kann der Vertrag mit kurzer Frist beendet werden.",
-   "currentBeispielTr": "Deneme süresinde sözleşme kısa bir süreyle sonlandırılabilir."
+   "currentBeispielTr": "Deneme süresinde sözleşme kısa bir ihbarla sona erdirilebilir."
   },
   {
    "id": 4061,
@@ -197,7 +197,7 @@
    "formen": "Befristungen",
    "currentTr": "süre sınırlaması, geçici sözleşme",
    "currentBeispiel": "Viele junge Wissenschaftler leiden unter der ständigen Befristung ihrer Stellen.",
-   "currentBeispielTr": "Birçok genç bilim insanı kadrolarının sürekli süreli olmasından muzdarip."
+   "currentBeispielTr": "Birçok genç bilim insanı kadrolarındaki süre sınırlamasından şikâyetçi."
   },
   {
    "id": 4062,
@@ -207,7 +207,7 @@
    "formen": "Festanstellungen",
    "currentTr": "kadrolu iş, daimi istihdam",
    "currentBeispiel": "Nach zwei Praktika bekam sie endlich eine Festanstellung.",
-   "currentBeispielTr": "İki stajdan sonra nihayet kadrolu bir iş buldu."
+   "currentBeispielTr": "İki stajdan sonra nihayet kadrolu bir işe girdi."
   },
   {
    "id": 4063,
@@ -217,7 +217,7 @@
    "formen": "Vergütungen",
    "currentTr": "ücret, ödeme",
    "currentBeispiel": "Über die Höhe der Vergütung wird im zweiten Gespräch verhandelt.",
-   "currentBeispielTr": "Ücretin miktarı ikinci görüşmede pazarlık edilecek.",
+   "currentBeispielTr": "Ücretin miktarı ikinci görüşmede konuşulacak.",
    "overlapping": [
     "die Gebühr (B1)",
     "der Lohn (B1)"
@@ -231,7 +231,7 @@
    "formen": "Stundenlöhne",
    "currentTr": "saat ücreti",
    "currentBeispiel": "Der Stundenlohn liegt in dieser Branche deutlich unter dem Durchschnitt.",
-   "currentBeispielTr": "Bu sektörde saat ücreti ortalamanın belirgin şekilde altında."
+   "currentBeispielTr": "Bu sektörde saat ücreti ortalamanın epey altında."
   },
   {
    "id": 4065,
@@ -241,7 +241,7 @@
    "formen": "",
    "currentTr": "hastalıkta ücret ödemesinin sürmesi",
    "currentBeispiel": "Im Krankheitsfall besteht sechs Wochen lang Anspruch auf Lohnfortzahlung.",
-   "currentBeispielTr": "Hastalık durumunda altı hafta boyunca ücretin ödenmesi hakkı vardır."
+   "currentBeispielTr": "Hastalık hâlinde altı hafta boyunca ücret ödemesi sürer."
   },
   {
    "id": 4066,
@@ -251,7 +251,7 @@
    "formen": "Prämien",
    "currentTr": "prim, ikramiye",
    "currentBeispiel": "Für das gute Jahresergebnis erhielten alle Beschäftigten eine Prämie.",
-   "currentBeispielTr": "İyi yıllık sonuç için bütün çalışanlar prim aldı.",
+   "currentBeispielTr": "İyi giden yıl için bütün çalışanlar prim aldı.",
    "overlapping": [
     "der Bonus (A2)"
    ]
@@ -284,7 +284,7 @@
    "formen": "Arbeitszeugnisse",
    "currentTr": "çalışma belgesi, iş referans belgesi",
    "currentBeispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
-   "currentBeispielTr": "Olumlu yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır."
+   "currentBeispielTr": "İyi niyetle yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır."
   },
   {
    "id": 4070,
@@ -314,7 +314,7 @@
    "formen": "Auswahlverfahren",
    "currentTr": "seçim süreci, eleme süreci",
    "currentBeispiel": "Das Auswahlverfahren zog sich über mehrere Wochen hin.",
-   "currentBeispielTr": "Seçim süreci haftalarca uzadı."
+   "currentBeispielTr": "Seçim süreci haftalarca uzayıp gitti."
   },
   {
    "id": 4073,
@@ -324,7 +324,7 @@
    "formen": "Eignungstests",
    "currentTr": "yetenek testi, uygunluk sınavı",
    "currentBeispiel": "Vor der Einladung müssen alle Kandidaten einen Eignungstest absolvieren.",
-   "currentBeispielTr": "Davetten önce bütün adayların bir yetenek testinden geçmesi gerekiyor."
+   "currentBeispielTr": "Davetten önce bütün adayların bir yetenek testine girmesi gerekiyor."
   },
   {
    "id": 4074,
@@ -374,7 +374,7 @@
    "formen": "",
    "currentTr": "kendi işini kurma, serbest çalışma",
    "currentBeispiel": "Nach zehn Jahren im Konzern wagte er den Schritt in die Selbstständigkeit.",
-   "currentBeispielTr": "Holdingde geçen on yıldan sonra kendi işini kurma adımını attı."
+   "currentBeispielTr": "On yıl holdinde çalıştıktan sonra kendi işini kurma adımını attı."
   },
   {
    "id": 4079,
@@ -384,7 +384,7 @@
    "formen": "",
    "currentTr": "işsizlik maaşı, işsizlik ödeneği",
    "currentBeispiel": "Sie bezog ein halbes Jahr lang Arbeitslosengeld, bevor sie etwas fand.",
-   "currentBeispielTr": "Bir şey bulana kadar altı ay boyunca işsizlik maaşı aldı."
+   "currentBeispielTr": "Bir iş bulana kadar altı ay işsizlik maaşı aldı."
   },
   {
    "id": 4080,
@@ -404,7 +404,7 @@
    "formen": "Betriebsrenten",
    "currentTr": "işyeri emeklilik aylığı, kurumsal emeklilik",
    "currentBeispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
-   "currentBeispielTr": "Yasal emekli aylığının yanında küçük bir işyeri emeklilik aylığı alıyor."
+   "currentBeispielTr": "Yasal emekli aylığının yanı sıra işyerinden de küçük bir emekli aylığı alıyor."
   },
   {
    "id": 4082,
@@ -424,7 +424,7 @@
    "formen": "",
    "currentTr": "ebeveyn izni",
    "currentBeispiel": "Immer mehr Väter nehmen inzwischen mehrere Monate Elternzeit.",
-   "currentBeispielTr": "Artık giderek daha çok baba birkaç aylık ebeveyn izni kullanıyor."
+   "currentBeispielTr": "Artık giderek daha çok baba aylarca ebeveyn izni kullanıyor."
   },
   {
    "id": 4084,
@@ -453,7 +453,7 @@
    "niveau": "B2",
    "formen": "Betriebsvereinbarungen",
    "currentTr": "işyeri anlaşması, işyeri toplu düzenlemesi",
-   "currentBeispiel": "Eine neue Betriebsvereinbarung regelt das mobile Arbeiten von zu Hause.",
+   "currentBeispiel": "Eine neue Betriebsvereinbarung regelt die Arbeit im Homeoffice.",
    "currentBeispielTr": "Yeni bir işyeri anlaşması evden çalışmayı düzenliyor."
   },
   {
@@ -464,7 +464,7 @@
    "formen": "Interessenvertretungen",
    "currentTr": "çıkarların temsili, temsil organı",
    "currentBeispiel": "Ohne eine starke Interessenvertretung haben die Beschäftigten kaum Einfluss.",
-   "currentBeispielTr": "Güçlü bir temsil organı olmadan çalışanların neredeyse hiç etkisi olmaz."
+   "currentBeispielTr": "Güçlü bir çıkar temsili olmadan çalışanların neredeyse hiç etkisi olmaz."
   },
   {
    "id": 4088,
@@ -504,7 +504,7 @@
    "formen": "Arbeitsunfälle",
    "currentTr": "iş kazası",
    "currentBeispiel": "Jeder Arbeitsunfall muss innerhalb weniger Tage gemeldet werden.",
-   "currentBeispielTr": "Her iş kazası birkaç gün içinde bildirilmek zorundadır."
+   "currentBeispielTr": "Her iş kazası birkaç gün içinde bildirilmek zorunda."
   },
   {
    "id": 4092,
@@ -514,7 +514,7 @@
    "formen": "Sicherheitsvorschriften",
    "currentTr": "güvenlik talimatı, güvenlik kuralı",
    "currentBeispiel": "Wer die Sicherheitsvorschriften missachtet, gefährdet auch seine Kollegen.",
-   "currentBeispielTr": "Güvenlik kurallarını hiçe sayan kişi meslektaşlarını da tehlikeye atar."
+   "currentBeispielTr": "Güvenlik kurallarını hiçe sayan, iş arkadaşlarını da tehlikeye atar."
   }
  ]
 }

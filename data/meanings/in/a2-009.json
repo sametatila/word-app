@@ -9,8 +9,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "güneşli",
-   "currentBeispiel": "Morgen ist das Wetter wieder warm und sonnig.",
-   "currentBeispielTr": "Yarın hava yine sıcak ve güneşli."
+   "currentBeispiel": "Der Balkon ist sonnig, dort wachsen die Tomaten gut.",
+   "currentBeispielTr": "Balkon güneşli, domatesler orada iyi yetişiyor."
   },
   {
    "id": 1161,
@@ -19,8 +19,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sığır, sığır eti",
-   "currentBeispiel": "Ich esse nur Fleisch vom Rind.",
-   "currentBeispielTr": "Sadece sığır eti yerim."
+   "currentBeispiel": "Auf der Weide stehen viele Rinder.",
+   "currentBeispielTr": "Otlakta birçok sığır var."
   },
   {
    "id": 1211,
@@ -29,8 +29,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "muayene saati, görüşme saati",
-   "currentBeispiel": "Frau Doktor Weiß hat von 9:00 bis 12:30 Uhr Sprechstunde.",
-   "currentBeispielTr": "Doktor Weiß'ın muayene saatleri 9:00 - 12:30 arası."
+   "currentBeispiel": "Die Sprechstunde ist von neun bis zwölf.",
+   "currentBeispielTr": "Muayene saatleri dokuzdan on ikiye kadar."
   },
   {
    "id": 1257,
@@ -39,8 +39,8 @@
    "niveau": "A2",
    "formen": "steigt um, ist umgestiegen",
    "currentTr": "aktarma yapmak",
-   "currentBeispiel": "Sie müssen in Mannheim umsteigen.",
-   "currentBeispielTr": "Mannheim'da aktarma yapmanız gerekiyor."
+   "currentBeispiel": "Am Hauptbahnhof steigen wir in die U-Bahn um.",
+   "currentBeispielTr": "Merkez istasyonda metroya aktarma yapıyoruz."
   },
   {
    "id": 1062,
@@ -49,8 +49,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "polisiye",
-   "currentBeispiel": "Miriam liest gern spannende Krimis. Schauen wir am Sonntag zusammen den Tatort? – Nein, ich mag keine Krimis.",
-   "currentBeispielTr": "Miriam sürükleyici polisiyeler okumayı sever. Pazar günü birlikte Tatort izleyelim mi? – Hayır, polisiye sevmem."
+   "currentBeispiel": "Im Urlaub habe ich drei Krimis gelesen.",
+   "currentBeispielTr": "Tatilde üç polisiye okudum."
   },
   {
    "id": 1288,
@@ -59,8 +59,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "voleybol",
-   "currentBeispiel": "Ich spiele gern Volleyball.",
-   "currentBeispielTr": "Voleybol oynamayı severim."
+   "currentBeispiel": "Im Sommer spielen wir oft Volleyball.",
+   "currentBeispielTr": "Yazın sık sık voleybol oynarız."
   },
   {
    "id": 1118,
@@ -69,8 +69,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "makarna, erişte",
-   "currentBeispiel": "Möchten Sie lieber Reis oder Nudeln? – Lieber Nudeln, bitte.",
-   "currentBeispielTr": "Pilav mı istersiniz, makarna mı? – Makarna lütfen."
+   "currentBeispiel": "Heute Abend koche ich Nudeln mit Tomatensoße.",
+   "currentBeispielTr": "Bu akşam domates soslu makarna pişiriyorum."
   },
   {
    "id": 895,
@@ -79,8 +79,8 @@
    "niveau": "A2",
    "formen": "begründet, hat begründet",
    "currentTr": "gerekçelendirmek, açıklamak",
-   "currentBeispiel": "Bitte begründen Sie Ihre Meinung.",
-   "currentBeispielTr": "Lütfen görüşünüzü gerekçelendirin."
+   "currentBeispiel": "Kannst du begründen, warum du den Job nicht willst?",
+   "currentBeispielTr": "İşi neden istemediğini gerekçelendirebilir misin?"
   },
   {
    "id": 1229,
@@ -89,8 +89,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "tablet",
-   "currentBeispiel": "Hast du ein Tablet? - Nein, ich habe einen Laptop und ein Handy.",
-   "currentBeispielTr": "Tabletin var mı? - Hayır, dizüstü bilgisayarım ve telefonum var."
+   "currentBeispiel": "Meine Tochter liest gern auf dem Tablet.",
+   "currentBeispielTr": "Kızım tablette okumayı seviyor."
   },
   {
    "id": 1056,
@@ -99,8 +99,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "kozmetik",
-   "currentBeispiel": "Kosmetik können Sie im Erdgeschoss kaufen.",
-   "currentBeispielTr": "Kozmetik ürünlerini zemin kattan alabilirsiniz."
+   "currentBeispiel": "Meine Tante gibt viel Geld für Kosmetik aus.",
+   "currentBeispielTr": "Teyzem kozmetiğe çok para harcıyor."
   },
   {
    "id": 911,
@@ -109,8 +109,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "bulutlu",
-   "currentBeispiel": "Heute ist es bewölkt. Es gibt viele Wolken am Himmel.",
-   "currentBeispielTr": "Bugün hava bulutlu. Gökyüzünde çok bulut var."
+   "currentBeispiel": "Heute ist es bewölkt und ziemlich kühl.",
+   "currentBeispielTr": "Bugün hava bulutlu ve oldukça serin."
   },
   {
    "id": 1210,
@@ -119,8 +119,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "spor sahası",
-   "currentBeispiel": "Das Fußballtraining ist um 17 Uhr auf dem Sportplatz.",
-   "currentBeispielTr": "Futbol antrenmanı saat 17'de spor sahasında."
+   "currentBeispiel": "Die Kinder spielen auf dem Sportplatz.",
+   "currentBeispielTr": "Çocuklar spor sahasında oynuyor."
   },
   {
    "id": 1058,
@@ -129,8 +129,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "sağlık sigortası",
-   "currentBeispiel": "Bei welcher Krankenkasse sind Sie?",
-   "currentBeispielTr": "Hangi sağlık sigortasındasınız?",
+   "currentBeispiel": "Die Krankenkasse bezahlt die neue Brille leider nicht.",
+   "currentBeispielTr": "Sağlık sigortası maalesef yeni gözlüğü ödemiyor.",
    "overlapping": [
     "die Krankenversicherung (B2)"
    ]
@@ -142,8 +142,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "web sitesi, ana sayfa",
-   "currentBeispiel": "Auf der Homepage von Freiburg gibt es alle wichtigen Informationen über die Stadt. Kennst du eine Homepage mit Deutschüb",
-   "currentBeispielTr": "Freiburg'un web sitesinde şehirle ilgili bütün önemli bilgiler var.",
+   "currentBeispiel": "Auf der Homepage findest du alle Informationen.",
+   "currentBeispielTr": "Bütün bilgileri ana sayfada bulabilirsin.",
    "overlapping": [
     "die Webseite (A2)"
    ]
@@ -155,8 +155,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "uygun fiyatlı, ucuz",
-   "currentBeispiel": "Die Jacke ist sehr preiswert. Sie kostet nur 15 Euro.",
-   "currentBeispielTr": "Ceket çok uygun fiyatlı; sadece 15 euro.",
+   "currentBeispiel": "In dem kleinen Hotel kann man preiswert übernachten.",
+   "currentBeispielTr": "O küçük otelde uygun fiyata kalınabiliyor.",
    "overlapping": [
     "günstig (A1)"
    ]
@@ -168,8 +168,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "skuter, motorlu skuter",
-   "currentBeispiel": "Oskar fährt mit dem Motorroller zur Arbeit.",
-   "currentBeispielTr": "Oskar işe skuterle gidiyor."
+   "currentBeispiel": "Mit dem Motorroller finde ich in der Stadt immer einen Parkplatz.",
+   "currentBeispielTr": "Skuterle şehirde her zaman park yeri buluyorum."
   },
   {
    "id": 1212,
@@ -178,8 +178,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "şehir planı, şehir haritası",
-   "currentBeispiel": "Haben Sie einen Stadtplan von Salzburg?",
-   "currentBeispielTr": "Salzburg şehir haritanız var mı?"
+   "currentBeispiel": "Einen kostenlosen Stadtplan bekommen Sie an der Rezeption.",
+   "currentBeispielTr": "Ücretsiz şehir haritasını resepsiyondan alabilirsiniz."
   },
   {
    "id": 1322,
@@ -188,8 +188,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "çalıştay, seminer",
-   "currentBeispiel": "Das war ein toller Workshop. Ich habe viel gelernt. Am Freitag gibt es einen Computer-Workshop in meiner Firma.",
-   "currentBeispielTr": "Harika bir çalıştaydı; çok şey öğrendim. Cuma günü firmamda bir bilgisayar semineri var."
+   "currentBeispiel": "Im Workshop lernen wir, wie man Brot backt.",
+   "currentBeispielTr": "Çalıştayda ekmek yapmayı öğreniyoruz."
   },
   {
    "id": 1111,
@@ -198,8 +198,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sisli",
-   "currentBeispiel": "Fahr vorsichtig! Es ist neblig.",
-   "currentBeispielTr": "Dikkatli sür! Hava sisli."
+   "currentBeispiel": "Heute Morgen ist es sehr neblig.",
+   "currentBeispielTr": "Bu sabah hava çok sisli."
   },
   {
    "id": 1275,
@@ -208,8 +208,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "ulaşım aracı",
-   "currentBeispiel": "Welche Verkehrsmittel benutzen Sie oft?",
-   "currentBeispielTr": "Hangi ulaşım araçlarını sık kullanıyorsunuz?"
+   "currentBeispiel": "Das Fahrrad ist in unserer Stadt das beliebteste Verkehrsmittel.",
+   "currentBeispielTr": "Şehrimizde en sevilen ulaşım aracı bisiklet."
   },
   {
    "id": 924,
@@ -218,8 +218,8 @@
    "niveau": "A2",
    "formen": "chattet, hat gechattet",
    "currentTr": "sohbet etmek, yazışmak",
-   "currentBeispiel": "Luis chattet gern mit seinen Freunden im Internet.",
-   "currentBeispielTr": "Luis internette arkadaşlarıyla yazışmayı sever.",
+   "currentBeispiel": "Luis chattet abends gern mit seinen Freunden.",
+   "currentBeispielTr": "Luis akşamları arkadaşlarıyla yazışmayı sever.",
    "overlapping": [
     "sich unterhalten (B1)",
     "plaudern (A2)"
@@ -232,8 +232,8 @@
    "niveau": "A2",
    "formen": "lädt herunter, hat heruntergeladen",
    "currentTr": "indirmek",
-   "currentBeispiel": "Er lädt die Musik aus dem Internet herunter.",
-   "currentBeispielTr": "Müziği internetten indiriyor."
+   "currentBeispiel": "Du kannst die App kostenlos herunterladen.",
+   "currentBeispielTr": "Uygulamayı ücretsiz indirebilirsin."
   },
   {
    "id": 1041,
@@ -242,8 +242,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "gençlik yurdu",
-   "currentBeispiel": "Wir übernachten in einer Jugendherberge.",
-   "currentBeispielTr": "Bir gençlik yurdunda kalıyoruz."
+   "currentBeispiel": "Die Jugendherberge liegt direkt am See.",
+   "currentBeispielTr": "Gençlik yurdu tam gölün kenarında."
   },
   {
    "id": 874,
@@ -252,8 +252,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kesinlikle, mutlaka",
-   "currentBeispiel": "Ich möchte auf jeden Fall den neuen James-Bond- Film sehen. - Wirklich? Ich finde James-Bond-Filme langweilig. Ich sehe ",
-   "currentBeispielTr": "Yeni James Bond filmini kesinlikle izlemek istiyorum. — Gerçekten mi? Ben James Bond filmlerini sıkıcı buluyorum.",
+   "currentBeispiel": "Ich komme auf jeden Fall zu deiner Party.",
+   "currentBeispielTr": "Partine kesinlikle geleceğim.",
    "overlapping": [
     "absolut (B1)",
     "bestimmt (B1)"
@@ -266,8 +266,8 @@
    "niveau": "A2",
    "formen": "darüber)",
    "currentTr": "ona, buna (bunun üzerine)",
-   "currentBeispiel": "Darauf fällt mir keine Antwort ein. Darüber spreche ich nicht gern.",
-   "currentBeispielTr": "Buna verecek bir cevap aklıma gelmiyor. Bunun hakkında konuşmayı sevmiyorum."
+   "currentBeispiel": "Stell die Tasse bitte darauf.",
+   "currentBeispielTr": "Fincanı lütfen onun üzerine koy."
   },
   {
    "id": 944,
@@ -276,8 +276,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "e-kitap",
-   "currentBeispiel": "Liest du lieber E-Books oder Bücher aus Papier? Entschuldigung, kann man hier E-Books kaufen?",
-   "currentBeispielTr": "E-kitap mı okumayı tercih edersin, kağıt kitap mı? Affedersiniz, burada e-kitap satılıyor mu?"
+   "currentBeispiel": "Auf Reisen lese ich immer E-Books.",
+   "currentBeispielTr": "Seyahatlerde hep e-kitap okurum."
   },
   {
    "id": 948,
@@ -286,8 +286,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "bazı, birkaç",
-   "currentBeispiel": "In diesem Text sind einige Fehler. Das dauert noch einige Zeit, bis das Essen fertig ist.",
-   "currentBeispielTr": "Bu metinde birkaç hata var. Yemeğin hazır olması biraz zaman alacak.",
+   "currentBeispiel": "Nach dem Fest sind noch einige Kuchenstücke übrig.",
+   "currentBeispielTr": "Kutlamadan sonra birkaç dilim pasta arttı.",
    "overlapping": [
     "manche (A2)"
    ]
@@ -299,8 +299,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "tek, ayrı, tekli",
-   "currentBeispiel": "Nicht alle zusammen. Könnt ihr bitte einzeln sprechen? Florian ist ein Einzelkind. Er hat keine Geschwister. Ein Einzelz",
-   "currentBeispielTr": "Hepiniz aynı anda değil. Tek tek konuşabilir misiniz lütfen? Florian tek çocuk; hiç kardeşi yok.",
+   "currentBeispiel": "Bitte sprecht einzeln und nicht alle zusammen.",
+   "currentBeispielTr": "Lütfen hepiniz birden değil, tek tek konuşun.",
    "overlapping": [
     "einzige (B1)"
    ]
@@ -312,8 +312,8 @@
    "niveau": "A2",
    "formen": "ist erkältet, war erkältet, ist erkältet gewesen",
    "currentTr": "nezle olmak, üşütmüş olmak",
-   "currentBeispiel": "Lisa ist erkältet. Sie kann heute nicht zur Schule gehen.",
-   "currentBeispielTr": "Lisa üşütmüş. Bugün okula gidemiyor."
+   "currentBeispiel": "Lisa ist erkältet und bleibt zu Hause.",
+   "currentBeispielTr": "Lisa üşütmüş ve evde kalıyor."
   },
   {
    "id": 962,
@@ -322,8 +322,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "indirim",
-   "currentBeispiel": "Für Schüler, Studenten und Rentner gibt es eine Ermäßigung.",
-   "currentBeispielTr": "Öğrencilere ve emeklilere indirim var.",
+   "currentBeispiel": "Mit dem Schülerausweis bekommst du im Museum eine Ermäßigung.",
+   "currentBeispielTr": "Öğrenci kartıyla müzede indirim alırsın.",
    "overlapping": [
     "das Angebot (A1)",
     "der Rabatt (B1)",
@@ -337,8 +337,8 @@
    "niveau": "A2",
    "formen": "ist fit, war fit, ist fit gewesen",
    "currentTr": "formda olmak",
-   "currentBeispiel": "Tom will fit sein. Er geht jeden Tag ins Fitnessstudio.",
-   "currentBeispielTr": "Tom formda olmak istiyor. Her gün spor salonuna gidiyor."
+   "currentBeispiel": "Tom ist fit, weil er viel Sport macht.",
+   "currentBeispielTr": "Tom formda çünkü çok spor yapıyor."
   },
   {
    "id": 989,
@@ -347,8 +347,8 @@
    "niveau": "A2",
    "formen": "(Pl.)",
    "currentTr": "kayıp eşyalar",
-   "currentBeispiel": "Haben Sie meinen Schirm gefunden? - Sie können dort bei den Fundsachen schauen.",
-   "currentBeispielTr": "Şemsiyemi buldunuz mu? - Şuradaki kayıp eşya bölümüne bakabilirsiniz."
+   "currentBeispiel": "Dein Schlüssel liegt bei den Fundsachen.",
+   "currentBeispielTr": "Anahtarın kayıp eşyalarda duruyor."
   },
   {
    "id": 995,
@@ -357,8 +357,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sayın, saygıdeğer",
-   "currentBeispiel": "Sehr geehrte Damen und Herren,",
-   "currentBeispielTr": "Sayın yetkililer / Değerli hanımefendiler ve beyefendiler,"
+   "currentBeispiel": "Sehr geehrte Frau Meyer, vielen Dank für Ihre E-Mail.",
+   "currentBeispielTr": "Sayın Bayan Meyer, e-postanız için çok teşekkürler."
   },
   {
    "id": 1011,
@@ -367,8 +367,8 @@
    "niveau": "A2",
    "formen": "ist gültig, war gültig, ist gültig gewesen",
    "currentTr": "geçerli olmak",
-   "currentBeispiel": "Der Pass ist nicht mehr gültig.",
-   "currentBeispielTr": "Pasaport artık geçerli değil.",
+   "currentBeispiel": "Die Fahrkarte ist den ganzen Tag gültig.",
+   "currentBeispielTr": "Bilet bütün gün geçerli.",
    "overlapping": [
     "gelten (B1)"
    ]
@@ -380,8 +380,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "bazı, kimi",
-   "currentBeispiel": "Manche Nachbarn sind unfreundlich.",
-   "currentBeispielTr": "Bazı komşular pek cana yakın değil.",
+   "currentBeispiel": "Manche Kinder essen kein Gemüse.",
+   "currentBeispielTr": "Bazı çocuklar hiç sebze yemiyor.",
    "overlapping": [
     "einige (A2)"
    ]
@@ -393,8 +393,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "birkaç",
-   "currentBeispiel": "Wir fahren ein paar Tage ans Meer. Hast du ein paar Minuten Zeit?",
-   "currentBeispielTr": "Birkaç günlüğüne denize gidiyoruz. Birkaç dakikan var mı?",
+   "currentBeispiel": "Kannst du noch ein paar Eier vom Markt mitbringen?",
+   "currentBeispielTr": "Pazardan birkaç yumurta da getirebilir misin?",
    "overlapping": [
     "mehrere (B1)"
    ]
@@ -406,8 +406,8 @@
    "niveau": "A2",
    "formen": "(Pl.)",
    "currentTr": "patates kızartması",
-   "currentBeispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
-   "currentBeispielTr": "Çocuklar patates kızartmasıyla ızgara sosis yiyor.",
+   "currentBeispiel": "Möchtest du Ketchup zu den Pommes frites?",
+   "currentBeispielTr": "Patates kızartmasının yanına ketçap ister misin?",
    "overlapping": [
     "die Pommes (A2)"
    ]
@@ -419,8 +419,8 @@
    "niveau": "A2",
    "formen": "ist unterwegs, war unterwegs, ist unterwegs gewesen",
    "currentTr": "yolda olmak",
-   "currentBeispiel": "Warte bitte auf mich. Ich bin unterwegs und komme gleich.",
-   "currentBeispielTr": "Beni bekle lütfen. Yoldayım, birazdan geliyorum."
+   "currentBeispiel": "Papa ist beruflich viel unterwegs.",
+   "currentBeispielTr": "Babam iş yüzünden sık sık yolda."
   },
   {
    "id": 1269,
@@ -429,8 +429,8 @@
    "niveau": "A2",
    "formen": "ist verabredet, war verabredet, ist verabredet gewesen",
    "currentTr": "sözleşmiş olmak, buluşacak olmak",
-   "currentBeispiel": "Ich bin mit meiner Freundin verabredet.",
-   "currentBeispielTr": "Kız arkadaşımla sözleştik."
+   "currentBeispiel": "Ich bin heute Abend mit Anna verabredet.",
+   "currentBeispielTr": "Bu akşam Anna ile sözleştim."
   },
   {
    "id": 1331,
@@ -439,8 +439,8 @@
    "niveau": "A2",
    "formen": "zieht (an/aus), hat/ist (an/aus)gezogen",
    "currentTr": "giymek, (giysi) giydirmek",
-   "currentBeispiel": "Ich ziehe mir eine Jacke an.",
-   "currentBeispielTr": "Bir ceket giyiyorum."
+   "currentBeispiel": "Es ist kalt, zieh bitte deine Mütze an.",
+   "currentBeispielTr": "Hava soğuk, lütfen bereni giy."
   },
   {
    "id": 7430,
@@ -450,7 +450,7 @@
    "formen": "",
    "currentTr": "minicik, çok küçük",
    "currentBeispiel": "Unsere erste Wohnung war winzig.",
-   "currentBeispielTr": "İlk dairemiz minicikti."
+   "currentBeispielTr": "İlk evimiz minicikti."
   },
   {
    "id": 7431,
@@ -473,7 +473,7 @@
    "formen": "",
    "currentTr": "oval",
    "currentBeispiel": "Der Spiegel im Flur ist oval.",
-   "currentBeispielTr": "Koridordaki ayna ovaldir."
+   "currentBeispielTr": "Koridordaki ayna oval."
   },
   {
    "id": 7433,
@@ -503,7 +503,7 @@
    "formen": "",
    "currentTr": "kaba, iri taneli",
    "currentBeispiel": "Das Salz ist zu grob für den Salat.",
-   "currentBeispielTr": "Tuz salata için fazla iri taneli.",
+   "currentBeispielTr": "Tuz salata için fazla kaba.",
    "overlapping": [
     "unhöflich (A2)"
    ]

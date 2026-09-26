@@ -3,9 +3,9 @@
     "id": 232,
     "tr": "ben",
     "en": "I",
-    "beispiel": "Ich wohne in Berlin.",
-    "beispielTr": "Berlin'de oturuyorum.",
-    "beispielEn": "I live in Berlin."
+    "beispiel": "Morgens trinke ich zuerst ein Glas Wasser.",
+    "beispielTr": "Sabahları önce bir bardak su içerim.",
+    "beispielEn": "In the morning I drink a glass of water first."
   },
   {
     "id": 416,
@@ -27,17 +27,17 @@
     "id": 108,
     "tr": "sen",
     "en": "you",
-    "beispiel": "Was machst du am Wochenende?",
-    "beispielTr": "Hafta sonu ne yapıyorsun?",
-    "beispielEn": "What are you doing this weekend?"
+    "beispiel": "Hast du morgen Zeit für einen Kaffee?",
+    "beispielTr": "Yarın bir kahveye vaktin var mı?",
+    "beispielEn": "Do you have time for a coffee tomorrow?"
   },
   {
     "id": 342,
     "tr": "değil",
     "en": "not",
-    "beispiel": "Ich kann dich nicht verstehen.",
-    "beispielTr": "Seni anlayamıyorum.",
-    "beispielEn": "I can't understand you."
+    "beispiel": "Die Suppe ist heute nicht warm genug.",
+    "beispielTr": "Çorba bugün yeterince sıcak değil.",
+    "beispielEn": "The soup isn't warm enough today."
   },
   {
     "id": 133,
@@ -51,33 +51,33 @@
     "id": 467,
     "tr": "ve",
     "en": "and",
-    "beispiel": "Karl und Susanne kommen auch.",
-    "beispielTr": "Karl ve Susanne de geliyor.",
-    "beispielEn": "Karl and Susanne are coming too."
+    "beispiel": "Zum Frühstück gibt es Brot und Käse.",
+    "beispielTr": "Kahvaltıda ekmek ve peynir var.",
+    "beispielEn": "There's bread and cheese for breakfast."
   },
   {
     "id": 102,
     "tr": "belirli artikel",
     "en": "the",
-    "beispiel": "Der Bus kommt in fünf Minuten.",
-    "beispielTr": "Otobüs beş dakika sonra geliyor.",
-    "beispielEn": "The bus is coming in five minutes."
+    "beispiel": "Der Schlüssel liegt unter der Matte.",
+    "beispielTr": "Anahtar paspasın altında.",
+    "beispielEn": "The key is under the mat."
   },
   {
     "id": 506,
     "tr": "biz",
     "en": "we",
-    "beispiel": "Wir haben eine neue Lehrerin.",
-    "beispielTr": "Yeni bir öğretmenimiz var.",
-    "beispielEn": "We have a new teacher."
+    "beispiel": "Wir fahren im August mit dem Zelt nach Italien.",
+    "beispielTr": "Ağustosta çadırla İtalya'ya gidiyoruz.",
+    "beispielEn": "In August we're going camping in Italy."
   },
   {
     "id": 488,
     "tr": "ne",
     "en": "what",
-    "beispiel": "Was kann man hier kaufen?",
-    "beispielTr": "Burada ne satın alınabilir?",
-    "beispielEn": "What can you buy here?"
+    "beispiel": "Was gibt es heute in der Kantine?",
+    "beispielTr": "Bugün yemekhanede ne var?",
+    "beispielEn": "What's for lunch in the cafeteria today?"
   },
   {
     "id": 525,
@@ -91,9 +91,9 @@
     "id": 129,
     "tr": "o",
     "en": "he",
-    "beispiel": "Was macht er jetzt?",
-    "beispielTr": "O şimdi ne yapıyor?",
-    "beispielEn": "What is he doing now?"
+    "beispiel": "Er trinkt morgens nur Tee.",
+    "beispielTr": "O sabahları sadece çay içiyor.",
+    "beispielEn": "He only drinks tea in the morning."
   },
   {
     "id": 114,
@@ -123,9 +123,9 @@
     "id": 323,
     "tr": "ile",
     "en": "with",
-    "beispiel": "Ich fahre mit dem Bus zur Arbeit.",
-    "beispielTr": "İşe otobüsle gidiyorum.",
-    "beispielEn": "I take the bus to work."
+    "beispiel": "Am Wochenende koche ich mit meiner Schwester.",
+    "beispielTr": "Hafta sonu kız kardeşimle yemek yapıyorum.",
+    "beispielEn": "On the weekend, I cook with my sister."
   },
   {
     "id": 500,
@@ -139,25 +139,25 @@
     "id": 37,
     "tr": "üstünde",
     "en": "on",
-    "beispiel": "Die Zeitung liegt auf dem Tisch.",
-    "beispielTr": "Gazete masanın üstünde.",
-    "beispielEn": "The newspaper is on the table."
+    "beispiel": "Die Katze sitzt auf dem Sofa.",
+    "beispielTr": "Kedi kanepenin üstünde oturuyor.",
+    "beispielEn": "The cat is sitting on the sofa."
   },
   {
     "id": 2,
     "tr": "ama",
     "en": "but",
-    "beispiel": "Der Film ist traurig, aber sehr schön.",
-    "beispielTr": "Film hüzünlü ama çok güzel.",
-    "beispielEn": "The movie is sad but very beautiful."
+    "beispiel": "Die Suppe ist heiß, aber lecker.",
+    "beispielTr": "Çorba sıcak ama lezzetli.",
+    "beispielEn": "The soup is hot, but tasty."
   },
   {
     "id": 418,
     "tr": "bu kadar",
     "en": "so",
-    "beispiel": "Warum bist du so müde?",
-    "beispielTr": "Neden bu kadar yorgunsun?",
-    "beispielEn": "Why are you so tired?"
+    "beispiel": "Heute ist der Himmel so blau!",
+    "beispielTr": "Bugün gökyüzü o kadar mavi ki!",
+    "beispielEn": "The sky is so blue today!"
   },
   {
     "id": 223,
@@ -171,17 +171,17 @@
     "id": 208,
     "tr": "sahip olmak",
     "en": "to have",
-    "beispiel": "Wir haben einen Hund und zwei Katzen.",
-    "beispielTr": "Bir köpeğimiz ve iki kedimiz var.",
-    "beispielEn": "We have a dog and two cats."
+    "beispiel": "Frau Weber hat drei Kinder und einen Garten.",
+    "beispielTr": "Weber Hanım'ın üç çocuğu ve bir bahçesi var.",
+    "beispielEn": "Ms. Weber has three kids and a garden."
   },
   {
     "id": 173,
     "tr": "için",
     "en": "for",
-    "beispiel": "Ich kaufe einen Comic für meine Schwester.",
-    "beispielTr": "Kız kardeşime bir çizgi roman alıyorum.",
-    "beispielEn": "I'm buying a comic for my sister."
+    "beispiel": "Ich suche ein Geschenk für meinen Chef.",
+    "beispielTr": "Patronum için bir hediye arıyorum.",
+    "beispielEn": "I'm looking for a gift for my boss."
   },
   {
     "id": 477,
@@ -211,9 +211,9 @@
     "id": 692,
     "tr": "ona",
     "en": "him",
-    "beispiel": "Gib ihm bitte das Buch.",
-    "beispielTr": "Kitabı ona ver lütfen.",
-    "beispielEn": "Please give him the book."
+    "beispiel": "Wir kaufen ihm ein Buch zum Geburtstag.",
+    "beispielTr": "Doğum günü için ona bir kitap alıyoruz.",
+    "beispielEn": "We're buying him a book for his birthday."
   },
   {
     "id": 339,
@@ -243,9 +243,9 @@
     "id": 350,
     "tr": "sadece",
     "en": "only",
-    "beispiel": "Ich möchte nur ein Glas Wasser.",
-    "beispielTr": "Sadece bir bardak su istiyorum.",
-    "beispielEn": "I only want a glass of water."
+    "beispiel": "Wir bleiben nur zwei Nächte in Berlin.",
+    "beispielTr": "Berlin'de sadece iki gece kalıyoruz.",
+    "beispielEn": "We're only staying in Berlin for two nights."
   },
   {
     "id": 96,
@@ -259,33 +259,33 @@
     "id": 611,
     "tr": "sana",
     "en": "you",
-    "beispiel": "Gefallen dir die Blumen?",
-    "beispielTr": "Çiçekleri beğendin mi?",
-    "beispielEn": "Do you like the flowers?"
+    "beispiel": "Ich schicke dir morgen die Fotos.",
+    "beispielTr": "Fotoğrafları sana yarın gönderiyorum.",
+    "beispielEn": "I'll send you the photos tomorrow."
   },
   {
     "id": 793,
     "tr": "kendini",
     "en": "oneself",
-    "beispiel": "Sie fühlt sich heute nicht gut.",
-    "beispielTr": "Bugün kendini iyi hissetmiyor.",
-    "beispielEn": "She doesn't feel well today."
+    "beispiel": "Er hat sich beim Fußball verletzt.",
+    "beispielTr": "Futbol oynarken kendini yaraladı.",
+    "beispielEn": "He hurt himself playing soccer."
   },
   {
     "id": 206,
     "tr": "iyi",
     "en": "good",
-    "beispiel": "Das Essen ist hier immer sehr gut.",
-    "beispielTr": "Buranın yemekleri her zaman çok iyi.",
-    "beispielEn": "The food here is always very good."
+    "beispiel": "Du hast den Test gut gemacht.",
+    "beispielTr": "Testte iyi iş çıkardın.",
+    "beispielEn": "You did well on the test."
   },
   {
     "id": 36,
     "tr": "da; ayrıca",
     "en": "also",
-    "beispiel": "Ich möchte auch mitspielen.",
-    "beispielTr": "Ben de oynamak istiyorum.",
-    "beispielEn": "I also want to play."
+    "beispiel": "Mein Hund mag auch Katzen.",
+    "beispielTr": "Köpeğim kedileri de seviyor.",
+    "beispielEn": "My dog likes cats too."
   },
   {
     "id": 404,
@@ -315,17 +315,17 @@
     "id": 245,
     "tr": "şimdi",
     "en": "now",
-    "beispiel": "Ich muss jetzt leider gehen.",
-    "beispielTr": "Maalesef şimdi gitmem gerek.",
-    "beispielEn": "I have to go now, unfortunately."
+    "beispiel": "Jetzt ist das Wasser warm genug zum Baden.",
+    "beispielTr": "Su artık yüzmek için yeterince sıcak.",
+    "beispielEn": "Now the water is warm enough for swimming."
   },
   {
     "id": 99,
     "tr": "sonra",
     "en": "then",
-    "beispiel": "Gib mir deine Adresse, dann schreibe ich dir!",
-    "beispielTr": "Bana adresini ver, sonra sana yazarım!",
-    "beispielEn": "Give me your address, then I'll write to you!"
+    "beispiel": "Zuerst essen wir, dann gehen wir spazieren.",
+    "beispielTr": "Önce yemek yiyoruz, sonra yürüyüşe çıkıyoruz.",
+    "beispielEn": "First we eat, then we go for a walk."
   },
   {
     "id": 44,
@@ -339,17 +339,17 @@
     "id": 466,
     "tr": "saat …-de; için",
     "en": "at",
-    "beispiel": "Der Zug kommt um sieben Uhr.",
-    "beispielTr": "Tren saat yedide geliyor.",
-    "beispielEn": "The train comes at seven."
+    "beispiel": "Der Film beginnt um halb neun.",
+    "beispielTr": "Film sekiz buçukta başlıyor.",
+    "beispielEn": "The movie starts at eight thirty."
   },
   {
     "id": 319,
     "tr": "benim",
     "en": "my",
-    "beispiel": "Meine Freundin heißt Gaby.",
-    "beispielTr": "Arkadaşımın adı Gaby.",
-    "beispielEn": "My friend's name is Gaby."
+    "beispiel": "Mein Bruder wohnt jetzt in Köln.",
+    "beispielTr": "Ağabeyim artık Köln'de oturuyor.",
+    "beispielEn": "My brother lives in Cologne now."
   },
   {
     "id": 106,
@@ -363,9 +363,9 @@
     "id": 352,
     "tr": "veya",
     "en": "or",
-    "beispiel": "Trinkst du Tee oder Kaffee?",
-    "beispielTr": "Çay mı içersin, kahve mi?",
-    "beispielEn": "Do you drink tea or coffee?"
+    "beispiel": "Willst du Nudeln oder Reis zum Fisch?",
+    "beispielTr": "Balığın yanında makarna mı istersin, pilav mı?",
+    "beispielEn": "Do you want pasta or rice with the fish?"
   },
   {
     "id": 334,
@@ -379,9 +379,9 @@
     "id": 343,
     "tr": "hiçbir şey",
     "en": "nothing",
-    "beispiel": "Ich möchte nichts essen.",
-    "beispielTr": "Hiçbir şey yemek istemiyorum.",
-    "beispielEn": "I don't want to eat anything."
+    "beispiel": "Im Kühlschrank ist nichts mehr.",
+    "beispielTr": "Buzdolabında hiçbir şey kalmadı.",
+    "beispielEn": "There's nothing left in the fridge."
   },
   {
     "id": 311,
@@ -395,8 +395,8 @@
     "id": 498,
     "tr": "olmak",
     "en": "to become",
-    "beispiel": "Ich möchte Architekt werden.",
-    "beispielTr": "Mimar olmak istiyorum.",
-    "beispielEn": "I want to become an architect."
+    "beispiel": "Im Herbst werden die Blätter gelb und rot.",
+    "beispielTr": "Sonbaharda yapraklar sarı ve kırmızı olur.",
+    "beispielEn": "In the fall, the leaves turn yellow and red."
   }
 ]

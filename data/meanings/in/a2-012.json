@@ -23,7 +23,7 @@
    "formen": "",
    "currentTr": "sevecen, şefkatli",
    "currentBeispiel": "Meine Großmutter war immer sehr liebevoll.",
-   "currentBeispielTr": "Büyükannem her zaman çok sevecendi."
+   "currentBeispielTr": "Büyükannem her zaman çok sevgi doluydu."
   },
   {
    "id": 7540,
@@ -32,7 +32,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şefkatli, nazik (dokunuş, ses)",
-   "currentBeispiel": "Er nahm sie zärtlich in den Arm.",
+   "currentBeispiel": "Er hat sie zärtlich in den Arm genommen.",
    "currentBeispielTr": "Onu şefkatle kollarına aldı.",
    "overlapping": [
     "fürsorglich (A2)"
@@ -59,7 +59,7 @@
    "formen": "",
    "currentTr": "motive, istekli",
    "currentBeispiel": "Die neue Praktikantin ist sehr motiviert.",
-   "currentBeispielTr": "Yeni stajyer çok istekli."
+   "currentBeispielTr": "Yeni stajyer çok motive."
   },
   {
    "id": 7543,
@@ -89,7 +89,7 @@
    "formen": "",
    "currentTr": "hayret etmiş, şaşırmış",
    "currentBeispiel": "Alle waren erstaunt über sein gutes Deutsch.",
-   "currentBeispielTr": "Herkes onun iyi Almancasına hayret etti."
+   "currentBeispielTr": "Herkes onun iyi Almancası karşısında şaşkındı."
   },
   {
    "id": 7546,
@@ -121,8 +121,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "heyecanlı, telaşlı",
-   "currentBeispiel": "Vor der Prüfung war ich sehr aufgeregt.",
-   "currentBeispielTr": "Sınavdan önce çok heyecanlıydım.",
+   "currentBeispiel": "Die Kinder sind vor der Reise sehr aufgeregt.",
+   "currentBeispielTr": "Çocuklar yolculuk öncesinde çok heyecanlı.",
    "overlapping": [
     "spannend (A2)"
    ]
@@ -177,8 +177,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "içi rahatlamış, ferahlamış",
-   "currentBeispiel": "Ich war erleichtert, als der Arzt anrief.",
-   "currentBeispielTr": "Doktor aradığında içim rahatladı."
+   "currentBeispiel": "Nach der Prüfung war ich sehr erleichtert.",
+   "currentBeispielTr": "Sınavdan sonra içim çok rahatladı."
   },
   {
    "id": 7554,
@@ -188,7 +188,7 @@
    "formen": "",
    "currentTr": "stresli",
    "currentBeispiel": "Meine Kollegin ist diese Woche total gestresst.",
-   "currentBeispielTr": "Meslektaşım bu hafta tamamen stresli.",
+   "currentBeispielTr": "İş arkadaşım bu hafta çok stresli.",
    "overlapping": [
     "stressig (A2)"
    ]
@@ -200,8 +200,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "canı sıkkın, sıkılmış",
-   "currentBeispiel": "Die Kinder saßen gelangweilt im Wartezimmer.",
-   "currentBeispielTr": "Çocuklar bekleme odasında canları sıkkın oturuyorlardı."
+   "currentBeispiel": "Sie schaut gelangweilt aus dem Fenster.",
+   "currentBeispielTr": "Sıkılmış bir hâlde pencereden dışarı bakıyor."
   },
   {
    "id": 7556,
@@ -281,7 +281,7 @@
    "formen": "",
    "currentTr": "reşit",
    "currentBeispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
-   "currentBeispielTr": "Almanya'da 18 yaşında reşit olunuyor."
+   "currentBeispielTr": "Almanya'da insan 18 yaşında reşit olur."
   },
   {
    "id": 7564,
@@ -344,8 +344,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "tanıdık, alışık",
-   "currentBeispiel": "Seine Stimme kam mir sofort vertraut vor.",
-   "currentBeispielTr": "Sesi bana hemen tanıdık geldi.",
+   "currentBeispiel": "Seine Stimme kommt mir sehr vertraut vor.",
+   "currentBeispielTr": "Sesi bana çok tanıdık geliyor.",
    "overlapping": [
     "der Bekannte (A1)",
     "die Bekannte (B1)"
@@ -381,8 +381,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şimdiye kadar, bugüne dek",
-   "currentBeispiel": "Bislang habe ich keine Antwort bekommen.",
-   "currentBeispielTr": "Şimdiye kadar hiç cevap almadım.",
+   "currentBeispiel": "Bislang hat uns der Vermieter nicht angerufen.",
+   "currentBeispielTr": "Ev sahibi şimdiye kadar bizi aramadı.",
    "overlapping": [
     "bisher (B1)"
    ]
@@ -404,8 +404,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "daha önce, önceden",
-   "currentBeispiel": "Wir hatten uns nie zuvor gesehen.",
-   "currentBeispielTr": "Birbirimizi daha önce hiç görmemiştik."
+   "currentBeispiel": "Wir haben uns noch nie zuvor gesehen.",
+   "currentBeispielTr": "Birbirimizi daha önce hiç görmedik."
   },
   {
    "id": 7575,
@@ -445,7 +445,7 @@
    "formen": "",
    "currentTr": "o zamandan beri",
    "currentBeispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
-   "currentBeispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi nadiren görüyoruz.",
+   "currentBeispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi az görüyoruz.",
    "overlapping": [
     "seitdem (B1)"
    ]

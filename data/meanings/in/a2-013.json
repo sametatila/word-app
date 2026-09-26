@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "aylarca",
    "currentBeispiel": "Sie hat monatelang eine Wohnung gesucht.",
-   "currentBeispielTr": "Aylarca daire aradı."
+   "currentBeispielTr": "Aylarca bir daire aradı."
   },
   {
    "id": 7589,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "akşamları",
    "currentBeispiel": "Abends bin ich meistens zu müde zum Kochen.",
-   "currentBeispielTr": "Akşamları çoğunlukla yemek yapamayacak kadar yorgun oluyorum."
+   "currentBeispielTr": "Akşamları genelde yemek yapamayacak kadar yorgun oluyorum."
   },
   {
    "id": 7591,
@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "pazarları, pazar günleri",
    "currentBeispiel": "Sonntags haben die Geschäfte geschlossen.",
-   "currentBeispielTr": "Pazarları dükkânlar kapalı."
+   "currentBeispielTr": "Pazarları dükkânlar kapalı oluyor."
   },
   {
    "id": 7594,
@@ -89,8 +89,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "birden çok kez, tekrar tekrar",
-   "currentBeispiel": "Das Formular wurde mehrfach kontrolliert.",
-   "currentBeispielTr": "Form birden çok kez kontrol edildi."
+   "currentBeispiel": "Wir haben das Formular mehrfach kontrolliert.",
+   "currentBeispielTr": "Formu birden çok kez kontrol ettik."
   },
   {
    "id": 7597,
@@ -100,7 +100,7 @@
    "formen": "",
    "currentTr": "defalarca, üst üste",
    "currentBeispiel": "Der Nachbar hat sich wiederholt über den Lärm beschwert.",
-   "currentBeispielTr": "Komşu gürültüden üst üste şikâyet etti."
+   "currentBeispielTr": "Komşu gürültüden defalarca şikâyet etti."
   },
   {
    "id": 7598,
@@ -169,7 +169,7 @@
    "formen": "",
    "currentTr": "az çok, idare eder ölçüde",
    "currentBeispiel": "Ich spreche einigermaßen gut Deutsch.",
-   "currentBeispielTr": "Az çok iyi Almanca konuşuyorum."
+   "currentBeispielTr": "Almancayı az çok iyi konuşuyorum."
   },
   {
    "id": 7604,
@@ -188,8 +188,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kısmen",
-   "currentBeispiel": "Die Rechnung wurde nur teilweise bezahlt.",
-   "currentBeispielTr": "Fatura yalnızca kısmen ödendi."
+   "currentBeispiel": "Ich habe die Rechnung nur teilweise bezahlt.",
+   "currentBeispielTr": "Faturayı sadece kısmen ödedim."
   },
   {
    "id": 7606,
@@ -221,8 +221,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "epeyce, birçok",
-   "currentBeispiel": "Auf dem Markt gab es etliche gute Angebote.",
-   "currentBeispielTr": "Pazarda epeyce iyi teklif vardı."
+   "currentBeispiel": "Auf dem Markt gibt es etliche gute Angebote.",
+   "currentBeispielTr": "Pazarda epeyce iyi teklif var."
   },
   {
    "id": 7609,
@@ -232,7 +232,7 @@
    "formen": "",
    "currentTr": "başlıca, esas olarak",
    "currentBeispiel": "Ich esse hauptsächlich Gemüse und Obst.",
-   "currentBeispielTr": "Başlıca sebze ve meyve yiyorum."
+   "currentBeispielTr": "Ağırlıklı olarak sebze ve meyve yiyorum."
   },
   {
    "id": 7610,
@@ -255,8 +255,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "birincisi, ilk olarak",
-   "currentBeispiel": "Erstens ist die Wohnung zu teuer, zweitens ist sie zu klein.",
-   "currentBeispielTr": "Birincisi daire çok pahalı, ikincisi çok küçük."
+   "currentBeispiel": "Erstens ist die Wohnung zu teuer für mich.",
+   "currentBeispielTr": "Birincisi, daire benim için çok pahalı."
   },
   {
    "id": 7612,
@@ -266,7 +266,7 @@
    "formen": "",
    "currentTr": "ikincisi",
    "currentBeispiel": "Zweitens brauchen wir noch einen Tisch für die Küche.",
-   "currentBeispielTr": "İkincisi mutfak için bir masaya daha ihtiyacımız var."
+   "currentBeispielTr": "İkincisi, mutfak için bir masaya daha ihtiyacımız var."
   },
   {
    "id": 7613,
@@ -275,8 +275,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "üçüncüsü",
-   "currentBeispiel": "Drittens sollten wir früher losfahren.",
-   "currentBeispielTr": "Üçüncüsü daha erken yola çıkmalıyız."
+   "currentBeispiel": "Drittens müssen wir früher losfahren.",
+   "currentBeispielTr": "Üçüncüsü, daha erken yola çıkmalıyız."
   },
   {
    "id": 7614,
@@ -305,7 +305,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "bir daha, tekrar",
-   "currentBeispiel": "Kannst du das bitte nochmal erklären?",
+   "currentBeispiel": "Kannst du das bitte noch mal erklären?",
    "currentBeispielTr": "Bunu lütfen bir daha açıklayabilir misin?"
   },
   {
@@ -388,8 +388,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "ya da, daha doğrusu",
-   "currentBeispiel": "Der Kurs kostet 80 beziehungsweise 60 Euro für Studenten.",
-   "currentBeispielTr": "Kurs 80, öğrenciler için ise 60 avro tutuyor."
+   "currentBeispiel": "Das Konzert beginnt um acht, beziehungsweise um halb neun.",
+   "currentBeispielTr": "Konser sekizde başlıyor, daha doğrusu sekiz buçukta."
   },
   {
    "id": 7625,
@@ -435,7 +435,7 @@
    "formen": "",
    "currentTr": "altında, aşağısında",
    "currentBeispiel": "Unterhalb der Brücke gibt es einen Parkplatz.",
-   "currentBeispielTr": "Köprünün altında bir otopark var.",
+   "currentBeispielTr": "Köprünün aşağısında bir otopark var.",
    "overlapping": [
     "unter (A1)"
    ]
@@ -448,7 +448,7 @@
    "formen": "",
    "currentTr": "nedeniyle, dolayısıyla",
    "currentBeispiel": "Aufgrund des Schnees fällt der Unterricht aus.",
-   "currentBeispielTr": "Kar nedeniyle ders iptal."
+   "currentBeispielTr": "Kar nedeniyle ders iptal oldu."
   },
   {
    "id": 7630,
@@ -468,7 +468,7 @@
    "formen": "",
    "currentTr": "ayrıca, üstelik",
    "currentBeispiel": "Die Wohnung ist günstig, zudem liegt sie sehr zentral.",
-   "currentBeispielTr": "Daire ucuz, ayrıca çok merkezi bir yerde.",
+   "currentBeispielTr": "Daire ucuz, üstelik çok merkezi bir yerde.",
    "overlapping": [
     "außerdem (A2)",
     "extra (B1)"
@@ -496,7 +496,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "onun yerine",
-   "currentBeispiel": "Der Kuchen war aus, stattdessen habe ich ein Eis genommen.",
+   "currentBeispiel": "Der Kuchen war alle, stattdessen habe ich ein Eis genommen.",
    "currentBeispielTr": "Pasta bitmişti, onun yerine dondurma aldım."
   },
   {
@@ -506,8 +506,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "böylece, dolayısıyla",
-   "currentBeispiel": "Der Vertrag ist unterschrieben und somit gültig.",
-   "currentBeispielTr": "Sözleşme imzalandı ve böylece geçerli oldu.",
+   "currentBeispiel": "Ich habe alles bezahlt und bin somit fertig.",
+   "currentBeispielTr": "Her şeyi ödedim ve böylece işim bitti.",
    "overlapping": [
     "sodass (B1)"
    ]
@@ -519,8 +519,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "yine de, hiç yoktan",
-   "currentBeispiel": "Der Zug war spät, aber immerhin hatte ich einen Sitzplatz.",
-   "currentBeispielTr": "Tren gecikti ama yine de oturacak yerim vardı.",
+   "currentBeispiel": "Das Essen war teuer, aber immerhin war es lecker.",
+   "currentBeispielTr": "Yemek pahalıydı ama yine de lezzetliydi.",
    "overlapping": [
     "trotzdem (B1)",
     "gleichwohl (C1)",
@@ -535,8 +535,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "her hâlükârda, ne olursa olsun",
-   "currentBeispiel": "Ich weiß nicht, ob er kommt, ich warte jedenfalls bis acht.",
-   "currentBeispielTr": "Gelir mi bilmiyorum, ben her hâlükârda sekize kadar bekliyorum."
+   "currentBeispiel": "Ich komme jedenfalls pünktlich zum Treffen.",
+   "currentBeispielTr": "Ben her durumda buluşmaya vaktinde gelirim."
   },
   {
    "id": 7637,

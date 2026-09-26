@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "sakin, soğukkanlı",
-   "currentBeispiel": "Er reagierte gelassen auf die überraschende Nachricht.",
-   "currentBeispielTr": "Beklenmedik habere gayet sakin tepki verdi.",
+   "currentBeispiel": "Er blieb gelassen, obwohl alle anderen in Panik gerieten.",
+   "currentBeispielTr": "Herkes paniğe kapılmışken o soğukkanlı kaldı.",
    "overlapping": [
     "ruhig (A1)",
     "der Bewohner (B1)",
@@ -26,8 +26,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "adalet",
-   "currentBeispiel": "Er kämpft sein ganzes Leben für mehr Gerechtigkeit.",
-   "currentBeispielTr": "Hayatı boyunca daha fazla adalet için mücadele ediyor."
+   "currentBeispiel": "Die Opfer warten seit Jahren auf Gerechtigkeit.",
+   "currentBeispielTr": "Mağdurlar yıllardır adalet bekliyor."
   },
   {
    "id": 3436,
@@ -36,8 +36,8 @@
    "niveau": "B2",
    "formen": "die Zellen",
    "currentTr": "hücre",
-   "currentBeispiel": "Jede Zelle des Körpers benötigt ausreichend Sauerstoff.",
-   "currentBeispielTr": "Vücuttaki her hücre yeterli oksijene ihtiyaç duyar."
+   "currentBeispiel": "Unter dem Mikroskop teilte sich die Zelle langsam.",
+   "currentBeispielTr": "Mikroskobun altında hücre yavaşça bölündü."
   },
   {
    "id": 3296,
@@ -46,8 +46,8 @@
    "niveau": "B2",
    "formen": "die Quellen",
    "currentTr": "kaynak (bilgi, haber kaynağı)",
-   "currentBeispiel": "Journalisten müssen ihre Quellen sorgfältig überprüfen.",
-   "currentBeispielTr": "Gazeteciler kaynaklarını titizlikle doğrulamalıdır."
+   "currentBeispiel": "Der Journalist wollte seine Quelle nicht verraten.",
+   "currentBeispielTr": "Gazeteci kaynağını açıklamak istemedi."
   },
   {
    "id": 3345,
@@ -56,8 +56,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "öfke, hiddet",
-   "currentBeispiel": "Vor Wut konnte er kaum noch sprechen.",
-   "currentBeispielTr": "Öfkeden neredeyse konuşamıyordu.",
+   "currentBeispiel": "Vor Wut warf er sein Handy gegen die Wand.",
+   "currentBeispielTr": "Öfkeden telefonunu duvara fırlattı.",
    "overlapping": [
     "der Zorn (B2)",
     "die Empörung (B2)"
@@ -80,8 +80,8 @@
    "niveau": "B2",
    "formen": "verhandelt, hat verhandelt",
    "currentTr": "müzakere etmek, pazarlık yapmak",
-   "currentBeispiel": "Die Gewerkschaft verhandelt seit Wochen mit dem Arbeitgeber über Löhne.",
-   "currentBeispielTr": "Sendika haftalardır işverenle ücretler üzerine pazarlık yürütüyor."
+   "currentBeispiel": "Die Gewerkschaft verhandelt seit Wochen über höhere Löhne.",
+   "currentBeispielTr": "Sendika haftalardır daha yüksek ücretler için müzakere ediyor."
   },
   {
    "id": 3289,
@@ -90,8 +90,8 @@
    "niveau": "B2",
    "formen": "die Widerstände",
    "currentTr": "direniş",
-   "currentBeispiel": "Die Bevölkerung leistete gegen die Reform erbitterten Widerstand.",
-   "currentBeispielTr": "Halk, reforma karşı şiddetli bir direniş gösterdi."
+   "currentBeispiel": "Die Bewohner leisteten erbitterten Widerstand gegen das Projekt.",
+   "currentBeispielTr": "Sakinler projeye karşı şiddetli bir direniş gösterdi."
   },
   {
    "id": 3378,
@@ -101,7 +101,7 @@
    "formen": "",
    "currentTr": "cömert",
    "currentBeispiel": "Sie ist bekannt für ihr großzügiges Trinkgeld.",
-   "currentBeispielTr": "Cömert bahşişleriyle tanınır."
+   "currentBeispielTr": "Cömert bahşişleriyle tanınıyor."
   },
   {
    "id": 3833,
@@ -110,8 +110,8 @@
    "niveau": "B2",
    "formen": "Verhandlungen",
    "currentTr": "müzakere, görüşme",
-   "currentBeispiel": "Die Verhandlungen über das Stipendium zogen sich hin.",
-   "currentBeispielTr": "Burs görüşmeleri uzadıkça uzadı.",
+   "currentBeispiel": "Die Verhandlungen zwischen den beiden Firmen sind gescheitert.",
+   "currentBeispielTr": "İki şirket arasındaki müzakereler başarısız oldu.",
    "overlapping": [
     "die Aushandlung (C1)"
    ]
@@ -123,8 +123,8 @@
    "niveau": "B2",
    "formen": "die Kautionen",
    "currentTr": "depozito",
-   "currentBeispiel": "Die Kaution beträgt meistens drei Monatsmieten.",
-   "currentBeispielTr": "Depozito çoğunlukla üç aylık kira tutarındadır."
+   "currentBeispiel": "Die Kaution bekommst du beim Auszug zurück.",
+   "currentBeispielTr": "Depozitoyu taşınırken geri alacaksın."
   },
   {
    "id": 3460,
@@ -133,8 +133,8 @@
    "niveau": "B2",
    "formen": "die Nachbarschaften",
    "currentTr": "komşuluk, mahalle",
-   "currentBeispiel": "In dieser Nachbarschaft kennt man sich gut.",
-   "currentBeispielTr": "Bu mahallede herkes birbirini iyi tanır."
+   "currentBeispiel": "Eine gute Nachbarschaft ist mehr wert als Geld.",
+   "currentBeispielTr": "İyi komşuluk paradan daha değerlidir."
   },
   {
    "id": 3285,
@@ -143,8 +143,8 @@
    "niveau": "B2",
    "formen": "die Verfassungen",
    "currentTr": "anayasa",
-   "currentBeispiel": "Die Verfassung garantiert die Meinungsfreiheit.",
-   "currentBeispielTr": "Anayasa ifade özgürlüğünü güvence altına alır."
+   "currentBeispiel": "Die Meinungsfreiheit ist in der Verfassung verankert.",
+   "currentBeispielTr": "İfade özgürlüğü anayasada güvence altına alınmıştır."
   },
   {
    "id": 3869,
@@ -154,7 +154,7 @@
    "formen": "beherrscht, hat beherrscht",
    "currentTr": "hakim olmak, iyi bilmek",
    "currentBeispiel": "Sie beherrscht drei Fremdsprachen fließend.",
-   "currentBeispielTr": "Üç yabancı dili akıcı biçimde biliyor."
+   "currentBeispielTr": "Üç yabancı dile akıcı biçimde hâkim."
   },
   {
    "id": 3351,
@@ -163,8 +163,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "duygudaşlık, empati",
-   "currentBeispiel": "Sie brachte den Opfern viel Mitgefühl entgegen.",
-   "currentBeispielTr": "Kurbanlara büyük bir şefkat gösterdi."
+   "currentBeispiel": "Der Arzt zeigte viel Mitgefühl für die Angehörigen.",
+   "currentBeispielTr": "Doktor, hasta yakınlarına büyük şefkat gösterdi."
   },
   {
    "id": 3399,
@@ -173,8 +173,8 @@
    "niveau": "B2",
    "formen": "empfindet, hat empfunden",
    "currentTr": "hissetmek, duyumsamak",
-   "currentBeispiel": "Sie empfand tiefe Dankbarkeit für seine Hilfe.",
-   "currentBeispielTr": "Yardımı için derin bir minnettarlık duydu.",
+   "currentBeispiel": "Nach dem Streit empfand sie nur noch Gleichgültigkeit.",
+   "currentBeispielTr": "Kavgadan sonra artık yalnızca ilgisizlik hissediyordu.",
    "overlapping": [
     "fühlen (B1)",
     "spüren (B1)"
@@ -187,8 +187,8 @@
    "niveau": "B2",
    "formen": "die Skandale",
    "currentTr": "skandal",
-   "currentBeispiel": "Der Skandal erschütterte die gesamte Partei.",
-   "currentBeispielTr": "Skandal bütün partiyi sarstı."
+   "currentBeispiel": "Der Skandal um die Spenden erschütterte die Partei.",
+   "currentBeispielTr": "Bağışlarla ilgili skandal partiyi sarstı."
   },
   {
    "id": 3342,
@@ -197,8 +197,8 @@
    "niveau": "B2",
    "formen": "Narben",
    "currentTr": "yara izi",
-   "currentBeispiel": "Die Narbe am Arm erinnert ihn an den Unfall.",
-   "currentBeispielTr": "Kolundaki yara izi ona kazayı hatırlatıyor."
+   "currentBeispiel": "Die Narbe an seiner Stirn ist kaum noch sichtbar.",
+   "currentBeispielTr": "Alnındaki yara izi artık neredeyse görünmüyor."
   },
   {
    "id": 3194,
@@ -207,8 +207,8 @@
    "niveau": "B2",
    "formen": "die Vorstände",
    "currentTr": "yönetim kurulu",
-   "currentBeispiel": "Der Vorstand entscheidet morgen über die neue Firmenstrategie.",
-   "currentBeispielTr": "Yönetim kurulu yarın yeni şirket stratejisine karar veriyor."
+   "currentBeispiel": "Der Vorstand entscheidet morgen über die neue Strategie.",
+   "currentBeispielTr": "Yönetim kurulu yarın yeni strateji hakkında karar verecek."
   },
   {
    "id": 3865,
@@ -217,8 +217,8 @@
    "niveau": "B2",
    "formen": "Genehmigungen",
    "currentTr": "izin, onay",
-   "currentBeispiel": "Ohne Genehmigung darf die Baustelle nicht beginnen.",
-   "currentBeispielTr": "İzin olmadan şantiye başlayamaz.",
+   "currentBeispiel": "Ohne Genehmigung darf hier nicht gebaut werden.",
+   "currentBeispielTr": "Resmî izin olmadan burada inşaat yapılamaz.",
    "overlapping": [
     "die Erlaubnis (A2)"
    ]
@@ -230,8 +230,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "uygun, makul",
-   "currentBeispiel": "Der geforderte Preis erscheint mir durchaus angemessen.",
-   "currentBeispielTr": "İstenen fiyat bana gayet makul görünüyor.",
+   "currentBeispiel": "Der Preis für die Wohnung scheint mir angemessen.",
+   "currentBeispielTr": "Daire için istenen fiyat bana makul geliyor.",
    "overlapping": [
     "geeignet (B1)"
    ]
@@ -243,8 +243,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kıskançlık",
-   "currentBeispiel": "Eifersucht kann eine Beziehung stark belasten.",
-   "currentBeispielTr": "Kıskançlık bir ilişkiyi ciddi biçimde yıpratabilir."
+   "currentBeispiel": "Seine Eifersucht hat die Beziehung am Ende zerstört.",
+   "currentBeispielTr": "Kıskançlığı sonunda ilişkiyi mahvetti."
   },
   {
    "id": 3335,
@@ -253,8 +253,8 @@
    "niveau": "B2",
    "formen": "Diagnosen",
    "currentTr": "teşhis",
-   "currentBeispiel": "Die Diagnose stellte sich erst nach mehreren Tests heraus.",
-   "currentBeispielTr": "Teşhis ancak birkaç testten sonra konulabildi."
+   "currentBeispiel": "Die Diagnose stand erst nach vielen Tests fest.",
+   "currentBeispielTr": "Teşhis ancak birçok testten sonra kesinleşti."
   },
   {
    "id": 3350,
@@ -264,7 +264,7 @@
    "formen": "",
    "currentTr": "sevgi, yakınlık duyma",
    "currentBeispiel": "Seine Zuneigung zu ihr wuchs mit jedem Tag.",
-   "currentBeispielTr": "Ona duyduğu sevgi her geçen gün büyüyordu."
+   "currentBeispielTr": "Ona duyduğu sevgi her geçen gün büyüdü."
   },
   {
    "id": 3218,
@@ -273,8 +273,8 @@
    "niveau": "B2",
    "formen": "die Standorte",
    "currentTr": "konum, yer (işletmenin bulunduğu yer)",
-   "currentBeispiel": "Das Unternehmen eröffnet nächstes Jahr einen neuen Standort in Polen.",
-   "currentBeispielTr": "Şirket gelecek yıl Polonya'da yeni bir tesis açıyor.",
+   "currentBeispiel": "Der neue Standort liegt direkt an der Autobahn.",
+   "currentBeispielTr": "Yeni konum otoyolun hemen yanında.",
    "overlapping": [
     "die Lage (B1)"
    ]
@@ -286,8 +286,8 @@
    "niveau": "B2",
    "formen": "überwindet, hat überwunden",
    "currentTr": "üstesinden gelmek, aşmak",
-   "currentBeispiel": "Sie musste in ihrem Leben viele Hindernisse überwinden.",
-   "currentBeispielTr": "Hayatında pek çok engeli aşmak zorunda kaldı.",
+   "currentBeispiel": "Sie hat ihre Angst vor dem Fliegen überwunden.",
+   "currentBeispielTr": "Uçak korkusunu aştı.",
    "overlapping": [
     "bewältigen (B2)"
    ]
@@ -299,7 +299,7 @@
    "niveau": "B2",
    "formen": "die Nachtische",
    "currentTr": "tatlı (yemek sonrası)",
-   "currentBeispiel": "Zum Nachtisch gibt es heute einen Schokoladenkuchen.",
+   "currentBeispiel": "Zum Nachtisch gibt es heute Schokoladenkuchen.",
    "currentBeispielTr": "Bugün tatlı olarak çikolatalı kek var.",
    "overlapping": [
     "süß (A1)",
@@ -314,8 +314,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "umutsuzluk, çaresizlik",
-   "currentBeispiel": "In seiner Verzweiflung wusste er nicht mehr weiter.",
-   "currentBeispielTr": "Çaresizlik içinde ne yapacağını bilemiyordu."
+   "currentBeispiel": "Aus Verzweiflung rief sie mitten in der Nacht an.",
+   "currentBeispielTr": "Çaresizlikten gecenin bir yarısı telefon etti."
   },
   {
    "id": 3756,
@@ -324,8 +324,8 @@
    "niveau": "B2",
    "formen": "serviert, hat serviert",
    "currentTr": "servis etmek",
-   "currentBeispiel": "Der Kellner serviert den Wein sehr elegant.",
-   "currentBeispielTr": "Garson şarabı çok zarif bir şekilde servis ediyor."
+   "currentBeispiel": "Das Frühstück wird ab sieben Uhr serviert.",
+   "currentBeispielTr": "Kahvaltı saat yediden itibaren servis ediliyor."
   },
   {
    "id": 3299,
@@ -334,8 +334,8 @@
    "niveau": "B2",
    "formen": "manipuliert, hat manipuliert",
    "currentTr": "manipüle etmek",
-   "currentBeispiel": "Bilder lassen sich heute leicht manipulieren.",
-   "currentBeispielTr": "Görseller günümüzde kolayca manipüle edilebiliyor."
+   "currentBeispiel": "Fotos lassen sich heute leicht manipulieren.",
+   "currentBeispielTr": "Fotoğraflar bugün kolayca manipüle edilebiliyor."
   },
   {
    "id": 3347,
@@ -345,7 +345,7 @@
    "formen": "Sehnsüchte",
    "currentTr": "özlem",
    "currentBeispiel": "Die Sehnsucht nach der Heimat wurde immer größer.",
-   "currentBeispielTr": "Memleket özlemi giderek büyüyordu."
+   "currentBeispielTr": "Memleket özlemi giderek büyüdü."
   },
   {
    "id": 3775,
@@ -354,8 +354,8 @@
    "niveau": "B2",
    "formen": "tritt zurück, ist zurückgetreten",
    "currentTr": "istifa etmek, geri çekilmek",
-   "currentBeispiel": "Der Minister ist nach dem Skandal zurückgetreten.",
-   "currentBeispielTr": "Bakan, skandalın ardından istifa etti.",
+   "currentBeispiel": "Der Trainer ist nach der Niederlage zurückgetreten.",
+   "currentBeispielTr": "Antrenör, yenilginin ardından istifa etti.",
    "overlapping": [
     "kündigen (A2)"
    ]
@@ -367,8 +367,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "pişmanlık",
-   "currentBeispiel": "Reue über seine Worte plagte ihn tagelang.",
-   "currentBeispielTr": "Söyledikleri yüzünden günlerce pişmanlık duydu."
+   "currentBeispiel": "Er zeigte vor Gericht keine Reue.",
+   "currentBeispielTr": "Mahkemede hiç pişmanlık göstermedi."
   },
   {
    "id": 3394,
@@ -377,8 +377,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "(bir şeyle) başa çıkma biçimi, davranış tarzı",
-   "currentBeispiel": "Ihr Umgang mit Rückschlägen beeindruckte alle.",
-   "currentBeispielTr": "Başarısızlıkları ele alış biçimi herkesi etkiledi."
+   "currentBeispiel": "Sein freundlicher Umgang mit Kunden fällt allen auf.",
+   "currentBeispielTr": "Müşterilere karşı nazik davranışı herkesin dikkatini çekiyor."
   },
   {
    "id": 3240,
@@ -387,7 +387,7 @@
    "niveau": "B2",
    "formen": "investiert, hat investiert",
    "currentTr": "yatırım yapmak",
-   "currentBeispiel": "Das Unternehmen investiert kräftig in neue Technologien.",
+   "currentBeispiel": "Die Firma investiert kräftig in neue Technologien.",
    "currentBeispielTr": "Şirket yeni teknolojilere büyük yatırım yapıyor.",
    "overlapping": [
     "anlegen (B2)"
@@ -400,8 +400,8 @@
    "niveau": "B2",
    "formen": "klärt auf, hat aufgeklärt",
    "currentTr": "aydınlatmak, açıklığa kavuşturmak",
-   "currentBeispiel": "Die Polizei konnte den Fall bisher nicht aufklären.",
-   "currentBeispielTr": "Polis olayı henüz aydınlatamadı."
+   "currentBeispiel": "Die Polizei konnte den Fall bis heute nicht aufklären.",
+   "currentBeispielTr": "Polis olayı bugüne kadar aydınlatamadı."
   },
   {
    "id": 3391,
@@ -421,7 +421,7 @@
    "formen": "die Debatten",
    "currentTr": "tartışma, münazara (resmî, kamuya açık)",
    "currentBeispiel": "Im Parlament entbrannte eine hitzige Debatte.",
-   "currentBeispielTr": "Mecliste ateşli bir tartışma patlak verdi.",
+   "currentBeispielTr": "Mecliste ateşli bir tartışma başladı.",
    "overlapping": [
     "die Diskussion (B1)",
     "die Kontroverse (C1)",
@@ -435,8 +435,8 @@
    "niveau": "B2",
    "formen": "die Spezialitäten",
    "currentTr": "yöresel özel yemek",
-   "currentBeispiel": "Diese Spezialität ist typisch für die Region.",
-   "currentBeispielTr": "Bu yöresel yemek bölgeye özgüdür."
+   "currentBeispiel": "Diese Spezialität solltest du unbedingt probieren.",
+   "currentBeispielTr": "Bu yöresel yemeği mutlaka denemelisin."
   },
   {
    "id": 3415,
@@ -445,8 +445,8 @@
    "niveau": "B2",
    "formen": "nur Singular",
    "currentTr": "israf",
-   "currentBeispiel": "Die Verschwendung von Lebensmitteln belastet die Umwelt.",
-   "currentBeispielTr": "Gıda israfı çevreye yük oluyor."
+   "currentBeispiel": "Diese Verschwendung von Lebensmitteln macht mich wütend.",
+   "currentBeispielTr": "Bu gıda israfı beni çok kızdırıyor."
   },
   {
    "id": 3334,
@@ -455,8 +455,8 @@
    "niveau": "B2",
    "formen": "Beschwerden",
    "currentTr": "rahatsızlık, ağrı; şikâyet",
-   "currentBeispiel": "Sie klagte über anhaltende Beschwerden im unteren Rücken.",
-   "currentBeispielTr": "Belinin alt kısmında geçmeyen ağrılardan şikâyet ediyordu.",
+   "currentBeispiel": "Der Kunde reichte eine schriftliche Beschwerde ein.",
+   "currentBeispielTr": "Müşteri yazılı bir şikâyette bulundu.",
    "overlapping": [
     "die Störung (B1)"
    ]
@@ -468,8 +468,8 @@
    "niveau": "B2",
    "formen": "Traumata",
    "currentTr": "travma",
-   "currentBeispiel": "Das Trauma aus der Kindheit wirkte bis ins Erwachsenenalter nach.",
-   "currentBeispielTr": "Çocukluktaki travmanın etkisi yetişkinliğe dek sürdü."
+   "currentBeispiel": "Das Trauma aus der Kindheit belastet ihn bis heute.",
+   "currentBeispielTr": "Çocukluk travması onu bugün bile etkiliyor."
   },
   {
    "id": 3349,
@@ -479,7 +479,7 @@
    "formen": "",
    "currentTr": "rahatlama, ferahlama",
    "currentBeispiel": "Nach der guten Nachricht spürte sie große Erleichterung.",
-   "currentBeispielTr": "İyi haberi alınca büyük bir rahatlama hissetti."
+   "currentBeispielTr": "İyi haberden sonra büyük bir rahatlama hissetti."
   },
   {
    "id": 3361,
@@ -488,8 +488,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "hırs, tutku",
-   "currentBeispiel": "Ihr Ehrgeiz trieb sie zu Höchstleistungen an.",
-   "currentBeispielTr": "Hırsı onu en üst düzey başarılara taşıdı."
+   "currentBeispiel": "Ihr Ehrgeiz hat sie ganz nach oben gebracht.",
+   "currentBeispielTr": "Hırsı onu en tepeye kadar taşıdı."
   },
   {
    "id": 3226,
@@ -498,8 +498,8 @@
    "niveau": "B2",
    "formen": "die Investitionen",
    "currentTr": "yatırım",
-   "currentBeispiel": "Die Investition in neue Maschinen soll sich in zwei Jahren rentieren.",
-   "currentBeispielTr": "Yeni makinelere yapılan yatırımın iki yılda kendini amorti etmesi bekleniyor."
+   "currentBeispiel": "Die Investition in neue Maschinen hat sich gelohnt.",
+   "currentBeispielTr": "Yeni makinelere yapılan yatırım işe yaradı."
   },
   {
    "id": 3293,
@@ -508,8 +508,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yolsuzluk",
-   "currentBeispiel": "Korruption untergräbt das Vertrauen in die Politik.",
-   "currentBeispielTr": "Yolsuzluk, siyasete duyulan güveni sarsar."
+   "currentBeispiel": "Korruption zerstört das Vertrauen in den Staat.",
+   "currentBeispielTr": "Yolsuzluk devlete duyulan güveni yok ediyor."
   },
   {
    "id": 3431,
@@ -518,7 +518,7 @@
    "niveau": "B2",
    "formen": "bedroht, hat bedroht",
    "currentTr": "tehdit etmek",
-   "currentBeispiel": "Die Trockenheit bedroht die Existenz vieler Bauern.",
+   "currentBeispiel": "Die Dürre bedroht die Existenz vieler Bauern.",
    "currentBeispielTr": "Kuraklık birçok çiftçinin geçimini tehdit ediyor.",
    "overlapping": [
     "drohen (A2)"
@@ -531,8 +531,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "mahcubiyet, utanma",
-   "currentBeispiel": "Vor Verlegenheit wurde er rot im Gesicht.",
-   "currentBeispielTr": "Utancından yüzü kıpkırmızı oldu."
+   "currentBeispiel": "Vor Verlegenheit wusste er nicht, wohin er schauen sollte.",
+   "currentBeispielTr": "Mahcubiyetten nereye bakacağını bilemedi."
   },
   {
    "id": 3393,
@@ -541,8 +541,8 @@
    "niveau": "B2",
    "formen": "Belastungen",
    "currentTr": "yük, stres kaynağı",
-   "currentBeispiel": "Die berufliche Belastung führte schließlich zum Burnout.",
-   "currentBeispielTr": "İş yükü sonunda tükenmişliğe yol açtı."
+   "currentBeispiel": "Die ständige Belastung im Job machte ihn krank.",
+   "currentBeispielTr": "İşteki sürekli yük onu hasta etti."
   },
   {
    "id": 3379,
@@ -551,8 +551,8 @@
    "niveau": "B2",
    "formen": "Bindungen",
    "currentTr": "bağ, bağlanma",
-   "currentBeispiel": "Die emotionale Bindung zwischen den Geschwistern war stark.",
-   "currentBeispielTr": "Kardeşler arasındaki duygusal bağ güçlüydü."
+   "currentBeispiel": "Die Bindung zwischen den beiden Schwestern ist stark.",
+   "currentBeispielTr": "İki kardeş arasındaki bağ çok güçlü."
   }
  ]
 }

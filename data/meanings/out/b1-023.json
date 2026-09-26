@@ -27,9 +27,9 @@
     "id": 2642,
     "tr": "kir",
     "en": "dirt",
-    "beispiel": "Du hast Schmutz an deinen Schuhen.",
-    "beispielTr": "Ayakkabılarında kir var.",
-    "beispielEn": "You have dirt on your shoes."
+    "beispiel": "Nach dem Regen war das Auto voller Schmutz.",
+    "beispielTr": "Yağmurdan sonra araba kir içindeydi.",
+    "beispielEn": "After the rain, the car was covered in dirt."
   },
   {
     "id": 1999,
@@ -75,9 +75,9 @@
     "id": 1764,
     "tr": "içermek",
     "en": "to contain",
-    "beispiel": "Diese Schokolade enthält nur wenig Zucker.",
-    "beispielTr": "Bu çikolata çok az şeker içeriyor.",
-    "beispielEn": "This chocolate contains only a little sugar."
+    "beispiel": "Die Kiste enthält alte Spielsachen von meinem Bruder.",
+    "beispielTr": "Kutuda abimin eski oyuncakları var.",
+    "beispielEn": "The box contains my brother's old toys."
   },
   {
     "id": 1824,
@@ -91,9 +91,9 @@
     "id": 2223,
     "tr": "düzeltmek",
     "en": "to correct",
-    "beispiel": "Der Lehrer hat meine Fehler korrigiert.",
-    "beispielTr": "Öğretmen hatalarımı düzeltti.",
-    "beispielEn": "The teacher corrected my mistakes."
+    "beispiel": "Bitte korrigier mich, wenn ich etwas falsch sage.",
+    "beispielTr": "Yanlış bir şey söylersem lütfen beni düzelt.",
+    "beispielEn": "Please correct me if I say something wrong."
   },
   {
     "id": 2533,
@@ -123,9 +123,9 @@
     "id": 1972,
     "tr": "başarılı olmak",
     "en": "to succeed",
-    "beispiel": "Es ist mir gelungen, ihn zu überzeugen.",
-    "beispielTr": "Onu ikna etmeyi başardım.",
-    "beispielEn": "I managed to convince him."
+    "beispiel": "Nach drei Versuchen ist ihr der Sprung endlich gelungen.",
+    "beispielTr": "Üç denemeden sonra atlayışı sonunda başardı.",
+    "beispielEn": "After three tries, she finally managed the jump."
   },
   {
     "id": 2903,
@@ -283,17 +283,17 @@
     "id": 1880,
     "tr": "finanse etmek",
     "en": "to finance",
-    "beispiel": "Ich weiß nicht, wie ich das Auto finanzieren soll.",
-    "beispielTr": "Arabayı nasıl finanse edeceğimi bilmiyorum.",
-    "beispielEn": "I do not know how to finance the car."
+    "beispiel": "Lea finanziert ihr Studium mit einem Job im Café.",
+    "beispielTr": "Lea üniversite masraflarını bir kafedeki işiyle finanse ediyor.",
+    "beispielEn": "Lea finances her studies with a job at a café."
   },
   {
     "id": 1521,
     "tr": "resmî kurum",
     "en": "authority",
-    "beispiel": "Sie erhalten ein Schreiben von der zuständigen Behörde.",
-    "beispielTr": "Yetkili kurumdan bir yazı alacaksınız.",
-    "beispielEn": "You will receive a letter from the responsible authority."
+    "beispiel": "Für die Baugenehmigung ist eine andere Behörde zuständig.",
+    "beispielTr": "İnşaat izni için başka bir kurum yetkili.",
+    "beispielEn": "A different authority is responsible for the building permit."
   },
   {
     "id": 3031,
@@ -307,25 +307,25 @@
     "id": 2980,
     "tr": "büyütmek",
     "en": "to enlarge",
-    "beispiel": "Können Sie das Foto etwas vergrößern?",
-    "beispielTr": "Fotoğrafı biraz büyütebilir misiniz?",
-    "beispielEn": "Could you enlarge the photo a little?"
+    "beispiel": "Mit dieser Taste kannst du die Schrift vergrößern.",
+    "beispielTr": "Bu tuşla yazıyı büyütebilirsin.",
+    "beispielEn": "You can enlarge the text with this key."
   },
   {
     "id": 1402,
     "tr": "üzerinde olmak",
     "en": "to be wearing",
-    "beispiel": "Gestern hatte Julia ein rotes Kleid an.",
-    "beispielTr": "Dün Julia'nın üzerinde kırmızı bir elbise vardı.",
-    "beispielEn": "Yesterday Julia was wearing a red dress."
+    "beispiel": "Bei der Hochzeit hat mein Opa einen alten Anzug angehabt.",
+    "beispielTr": "Düğünde dedemin üzerinde eski bir takım elbise vardı.",
+    "beispielEn": "At the wedding, my grandpa was wearing an old suit."
   },
   {
     "id": 2453,
     "tr": "orkestra",
     "en": "orchestra",
-    "beispiel": "Auf unserer Hochzeit hat ein kleines Orchester gespielt.",
-    "beispielTr": "Düğünümüzde küçük bir orkestra çaldı.",
-    "beispielEn": "A small orchestra played at our wedding."
+    "beispiel": "Das Orchester probt jeden Dienstag in der Aula.",
+    "beispielTr": "Orkestra her salı konferans salonunda prova yapıyor.",
+    "beispielEn": "The orchestra rehearses in the auditorium every Tuesday."
   },
   {
     "id": 3028,
@@ -347,17 +347,17 @@
     "id": 3060,
     "tr": "geçici",
     "en": "provisional",
-    "beispiel": "Das ist nur eine vorläufige Entscheidung.",
-    "beispielTr": "Bu sadece geçici bir karar.",
-    "beispielEn": "This is only a temporary decision."
+    "beispiel": "Die Bibliothek bleibt vorläufig wegen Renovierung geschlossen.",
+    "beispielTr": "Kütüphane tadilat nedeniyle geçici olarak kapalı.",
+    "beispielEn": "The library is provisionally closed for renovation."
   },
   {
     "id": 1804,
     "tr": "soğuk algınlığı",
     "en": "cold",
-    "beispiel": "Du hast eine schlimme Erkältung!",
-    "beispielTr": "Kötü bir soğuk algınlığın var!",
-    "beispielEn": "You have a bad cold!"
+    "beispiel": "Wegen einer Erkältung bleibt Lukas heute im Bett.",
+    "beispielTr": "Lukas soğuk algınlığı yüzünden bugün yatakta kalıyor.",
+    "beispielEn": "Lukas is staying in bed today because of a cold."
   },
   {
     "id": 2435,
@@ -371,9 +371,9 @@
     "id": 2375,
     "tr": "monitör",
     "en": "monitor",
-    "beispiel": "Ich habe mir einen größeren Monitor gekauft.",
-    "beispielTr": "Kendime daha büyük bir monitör aldım.",
-    "beispielEn": "I bought myself a bigger monitor."
+    "beispiel": "Mein Monitor flackert seit gestern ständig.",
+    "beispielTr": "Monitörüm dünden beri sürekli titriyor.",
+    "beispielEn": "My monitor has been flickering constantly since yesterday."
   },
   {
     "id": 1925,

@@ -115,9 +115,9 @@
     "id": 2875,
     "tr": "bahşiş",
     "en": "tip",
-    "beispiel": "Wir haben dem Kellner fünf Euro Trinkgeld gegeben.",
-    "beispielTr": "Garsona beş avro bahşiş verdik.",
-    "beispielEn": "We gave the waiter a five-euro tip."
+    "beispiel": "In manchen Ländern ist Trinkgeld im Restaurant nicht üblich.",
+    "beispielTr": "Bazı ülkelerde restoranda bahşiş vermek alışılmış değil.",
+    "beispielEn": "In some countries tipping at restaurants isn't customary."
   },
   {
     "id": 2609,
@@ -163,9 +163,9 @@
     "id": 1387,
     "tr": "alternatif",
     "en": "alternative",
-    "beispiel": "Auf dieser Strecke ist der Zug eine gute Alternative.",
-    "beispielTr": "Bu güzergâhta tren iyi bir alternatif.",
-    "beispielEn": "On this route the train is a good alternative."
+    "beispiel": "Wenn das Hotel voll ist, haben wir keine Alternative.",
+    "beispielTr": "Otel doluysa başka alternatifimiz yok.",
+    "beispielEn": "If the hotel is full, we have no alternative."
   },
   {
     "id": 1835,
@@ -179,9 +179,9 @@
     "id": 2463,
     "tr": "okyanus",
     "en": "ocean",
-    "beispiel": "Das Schiff fährt über den Atlantischen Ozean.",
-    "beispielTr": "Gemi Atlas Okyanusu'nu aşıyor.",
-    "beispielEn": "The ship crosses the Atlantic Ocean."
+    "beispiel": "Vom Flugzeug aus sah der Ozean unendlich aus.",
+    "beispielTr": "Uçaktan okyanus sonsuz görünüyordu.",
+    "beispielEn": "From the plane, the ocean looked endless."
   },
   {
     "id": 2428,
@@ -227,9 +227,9 @@
     "id": 2883,
     "tr": "poşet",
     "en": "bag",
-    "beispiel": "Brauchen Sie eine Tüte für den Einkauf?",
-    "beispielTr": "Alışverişiniz için poşet ister misiniz?",
-    "beispielEn": "Do you need a bag for your shopping?"
+    "beispiel": "An der Kasse kostet jede Tüte zwanzig Cent.",
+    "beispielTr": "Kasada her poşet yirmi sent.",
+    "beispielEn": "Each bag costs twenty cents at the checkout."
   },
   {
     "id": 1899,
@@ -259,9 +259,9 @@
     "id": 2202,
     "tr": "iletişim",
     "en": "communication",
-    "beispiel": "Die Kommunikation zwischen den Abteilungen läuft sehr gut.",
-    "beispielTr": "Bölümler arasındaki iletişim çok iyi işliyor.",
-    "beispielEn": "Communication between the departments works very well."
+    "beispiel": "Ohne gute Kommunikation funktioniert kein Team.",
+    "beispielTr": "İyi iletişim olmadan hiçbir ekip işlemez.",
+    "beispielEn": "No team works without good communication."
   },
   {
     "id": 2449,
@@ -299,9 +299,9 @@
     "id": 1404,
     "tr": "ek",
     "en": "enclosure",
-    "beispiel": "In der Anlage finden Sie meinen Lebenslauf.",
-    "beispielTr": "Ekte özgeçmişimi bulabilirsiniz.",
-    "beispielEn": "You will find my resume in the attachment."
+    "beispiel": "Die Rechnung schicke ich Ihnen als Anlage mit.",
+    "beispielTr": "Faturayı size ek olarak gönderiyorum.",
+    "beispielEn": "I'm sending you the invoice as an attachment."
   },
   {
     "id": 2738,
@@ -323,9 +323,9 @@
     "id": 2383,
     "tr": "müzisyen",
     "en": "musician",
-    "beispiel": "Mein Bruder möchte später Musiker werden.",
-    "beispielTr": "Kardeşim ileride müzisyen olmak istiyor.",
-    "beispielEn": "My brother wants to become a musician later on."
+    "beispiel": "Auf dem Marktplatz spielt ein Musiker Gitarre.",
+    "beispielTr": "Pazar meydanında bir müzisyen gitar çalıyor.",
+    "beispielEn": "A musician is playing guitar in the market square."
   },
   {
     "id": 1530,
@@ -395,8 +395,8 @@
     "id": 1356,
     "tr": "iptal etmek",
     "en": "to cancel",
-    "beispiel": "Ich muss unser Treffen leider absagen, weil ich krank bin.",
-    "beispielTr": "Hasta olduğum için buluşmamızı maalesef iptal etmek zorundayım.",
-    "beispielEn": "I have to cancel our meeting because I'm sick."
+    "beispiel": "Wegen des Sturms hat die Stadt das Konzert abgesagt.",
+    "beispielTr": "Fırtına yüzünden belediye konseri iptal etti.",
+    "beispielEn": "The city canceled the concert because of the storm."
   }
 ]

@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Satzungen",
    "currentTr": "tüzük, ana sözleşme",
-   "currentBeispiel": "Die Satzung des Vereins wurde auf der Mitgliederversammlung grundlegend geändert.",
-   "currentBeispielTr": "Derneğin tüzüğü genel kurulda esaslı biçimde değiştirildi."
+   "currentBeispiel": "Die Satzung des Vereins wurde grundlegend geändert.",
+   "currentBeispielTr": "Derneğin tüzüğü esaslı biçimde değiştirildi."
   },
   {
    "id": 7254,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Verantwortlichkeiten",
    "currentTr": "sorumluluk, mesuliyet",
-   "currentBeispiel": "Die Verantwortlichkeiten zwischen Bund und Ländern sind kaum klar abgegrenzt.",
-   "currentBeispielTr": "Federal devlet ile eyaletler arasındaki sorumluluklar pek net ayrılmış değil.",
+   "currentBeispiel": "Das Gesetz stärkt die Verantwortlichkeit der Unternehmensleitung.",
+   "currentBeispielTr": "Yasa, şirket yönetiminin hesap verebilirliğini güçlendiriyor.",
    "overlapping": [
     "die Verantwortung (B1)"
    ]
@@ -32,8 +32,8 @@
    "niveau": "C1",
    "formen": "Verwaltungsapparate",
    "currentTr": "yönetim aygıtı, bürokratik yapı",
-   "currentBeispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil der Haushaltsmittel.",
-   "currentBeispielTr": "Şişkin bir yönetim aygıtı bütçe kaynaklarının büyük bölümünü yutuyor."
+   "currentBeispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil des Budgets.",
+   "currentBeispielTr": "Şişkin bir yönetim aygıtı bütçenin büyük bölümünü yutuyor."
   },
   {
    "id": 7256,
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "Verwaltungsreformen",
    "currentTr": "kamu yönetimi reformu",
-   "currentBeispiel": "Die angekündigte Verwaltungsreform scheiterte am Widerstand der Ministerien.",
-   "currentBeispielTr": "Duyurulan kamu yönetimi reformu bakanlıkların direnişine takıldı."
+   "currentBeispiel": "Die geplante Verwaltungsreform scheiterte am Widerstand der Ministerien.",
+   "currentBeispielTr": "Planlanan yönetim reformu bakanlıkların direnişine takıldı."
   },
   {
    "id": 7257,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "Zuständigkeitsbereiche",
    "currentTr": "yetki alanı, görev sahası",
-   "currentBeispiel": "Diese Frage liegt außerhalb des Zuständigkeitsbereichs unserer Abteilung.",
-   "currentBeispielTr": "Bu soru bölümümüzün yetki alanının dışında kalıyor.",
+   "currentBeispiel": "Diese Frage fällt nicht in unseren Zuständigkeitsbereich.",
+   "currentBeispielTr": "Bu soru bizim yetki alanımıza girmiyor.",
    "overlapping": [
     "die Zuständigkeit (B2)"
    ]
@@ -65,8 +65,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bürokratik hantallık, kırtasiyecilik",
-   "currentBeispiel": "Bei jedem Formular wiehert wieder der Amtsschimmel.",
-   "currentBeispielTr": "Her formda kırtasiyecilik yine kendini gösteriyor."
+   "currentBeispiel": "Bei diesem Formular wiehert wieder der Amtsschimmel.",
+   "currentBeispielTr": "Bu formda kırtasiyecilik yine kendini gösteriyor."
   },
   {
    "id": 7259,
@@ -75,8 +75,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "memurluk kurumu, memur sınıfı",
-   "currentBeispiel": "Das preußische Beamtentum galt lange als Vorbild an Pflichttreue.",
-   "currentBeispielTr": "Prusya memurluk geleneği uzun süre görev bağlılığında örnek sayıldı."
+   "currentBeispiel": "Das preußische Beamtentum galt lange als Vorbild.",
+   "currentBeispielTr": "Prusya memur sınıfı uzun süre örnek sayıldı."
   },
   {
    "id": 7260,
@@ -85,8 +85,8 @@
    "niveau": "C1",
    "formen": "Auskunftspflichten",
    "currentTr": "bilgi verme yükümlülüğü",
-   "currentBeispiel": "Gegenüber dem Untersuchungsausschuss besteht eine umfassende Auskunftspflicht.",
-   "currentBeispielTr": "Soruşturma komisyonuna karşı kapsamlı bir bilgi verme yükümlülüğü vardır."
+   "currentBeispiel": "Der Zeuge verletzte seine Auskunftspflicht gegenüber dem Ausschuss.",
+   "currentBeispielTr": "Tanık, komisyona karşı bilgi verme yükümlülüğünü ihlal etti."
   },
   {
    "id": 7261,
@@ -95,8 +95,8 @@
    "niveau": "C1",
    "formen": "Dezentralisierungen",
    "currentTr": "yerelleşme, yetki dağıtımı",
-   "currentBeispiel": "Die Dezentralisierung der Zuständigkeiten hat die Verfahren spürbar beschleunigt.",
-   "currentBeispielTr": "Yetkilerin yerelleştirilmesi süreçleri hissedilir biçimde hızlandırdı."
+   "currentBeispiel": "Die Dezentralisierung hat die Genehmigungsverfahren spürbar beschleunigt.",
+   "currentBeispielTr": "Yerelleşme, izin süreçlerini hissedilir biçimde hızlandırdı."
   },
   {
    "id": 7262,
@@ -116,7 +116,7 @@
    "formen": "",
    "currentTr": "kurumlar arası yardım, idari destek",
    "currentBeispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
-   "currentBeispielTr": "Polis, aramada vergi dairesine idari destek sağladı."
+   "currentBeispielTr": "Polis, aramada vergi dairesine idari yardım sağladı."
   },
   {
    "id": 7264,
@@ -125,8 +125,8 @@
    "niveau": "C1",
    "formen": "Prüfberichte",
    "currentTr": "denetim raporu",
-   "currentBeispiel": "Der Prüfbericht deckte erhebliche Mängel in der Mittelverwendung auf.",
-   "currentBeispielTr": "Denetim raporu kaynak kullanımında ciddi eksiklikler ortaya çıkardı."
+   "currentBeispiel": "Der Prüfbericht deckte erhebliche Mängel in der Buchführung auf.",
+   "currentBeispielTr": "Denetim raporu muhasebede ciddi eksiklikler ortaya çıkardı."
   },
   {
    "id": 7265,
@@ -135,8 +135,8 @@
    "niveau": "C1",
    "formen": "Rechnungshöfe",
    "currentTr": "sayıştay",
-   "currentBeispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Landesbehörden.",
-   "currentBeispielTr": "Sayıştay, birkaç eyalet kurumunun ihale uygulamasını eleştirdi."
+   "currentBeispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Behörden.",
+   "currentBeispielTr": "Sayıştay, birkaç kurumun ihale uygulamasını eleştirdi."
   },
   {
    "id": 7266,
@@ -146,7 +146,7 @@
    "formen": "hat verfügt",
    "currentTr": "resmen karar vermek, emretmek; (über +A) sahip olmak",
    "currentBeispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs.",
-   "currentBeispielTr": "Kurum, işletmenin derhal kapatılmasına karar verdi."
+   "currentBeispielTr": "Kurum, işletmenin derhal kapatılmasına resmen karar verdi."
   },
   {
    "id": 7267,
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "ist eingeschritten",
    "currentTr": "müdahale etmek, işe karışmak",
-   "currentBeispiel": "Die Aufsicht schritt erst ein, als der Schaden längst entstanden war.",
-   "currentBeispielTr": "Denetim organı ancak zarar çoktan oluştuktan sonra müdahale etti.",
+   "currentBeispiel": "Die Polizei schreitet erst bei Gewalt ein.",
+   "currentBeispielTr": "Polis ancak şiddet olunca müdahale ediyor.",
    "overlapping": [
     "eingreifen (C1)"
    ]
@@ -168,8 +168,8 @@
    "niveau": "C1",
    "formen": "hat anberaumt",
    "currentTr": "gün belirlemek, (toplantı, duruşma için) tarih tayin etmek",
-   "currentBeispiel": "Für kommende Woche wurde eine außerordentliche Sitzung anberaumt.",
-   "currentBeispielTr": "Gelecek hafta için olağanüstü bir oturum günü belirlendi."
+   "currentBeispiel": "Für Montag wurde eine zusätzliche Sitzung anberaumt.",
+   "currentBeispielTr": "Pazartesi için ek bir oturum günü belirlendi."
   },
   {
    "id": 7269,
@@ -178,8 +178,8 @@
    "niveau": "C1",
    "formen": "hat zuwidergehandelt",
    "currentTr": "aykırı davranmak, ihlal etmek",
-   "currentBeispiel": "Wer den Auflagen zuwiderhandelt, muss mit einem Bußgeld rechnen.",
-   "currentBeispielTr": "Şartlara aykırı davranan, para cezasını göze almalıdır."
+   "currentBeispiel": "Wer den Auflagen zuwiderhandelt, muss ein Bußgeld zahlen.",
+   "currentBeispielTr": "Şartlara aykırı davranan para cezası öder."
   },
   {
    "id": 7270,
@@ -188,8 +188,8 @@
    "niveau": "C1",
    "formen": "hat erwirkt",
    "currentTr": "elde etmek, çıkarttırmak",
-   "currentBeispiel": "Die Initiative erwirkte einen Baustopp für das umstrittene Gelände.",
-   "currentBeispielTr": "Girişim, tartışmalı arazi için inşaat durdurma kararı çıkarttı.",
+   "currentBeispiel": "Die Anwältin erwirkte eine einstweilige Verfügung gegen ihn.",
+   "currentBeispielTr": "Avukat, ona karşı ihtiyati tedbir kararı elde etti.",
    "overlapping": [
     "erzielen (B2)"
    ]
@@ -201,8 +201,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "biçimsel, resmî",
-   "currentBeispiel": "Formell war alles korrekt, inhaltlich blieb die Entscheidung fragwürdig.",
-   "currentBeispielTr": "Biçimsel olarak her şey doğruydu, içerik olarak karar tartışmalı kaldı."
+   "currentBeispiel": "Für den Empfang war formelle Kleidung vorgeschrieben.",
+   "currentBeispielTr": "Kabul töreni için resmî kıyafet zorunluydu."
   },
   {
    "id": 7272,
@@ -211,8 +211,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hantal, ağır işleyen",
-   "currentBeispiel": "Der Apparat reagiert auf neue Anforderungen ausgesprochen schwerfällig.",
-   "currentBeispielTr": "Aygıt, yeni taleplere son derece hantal biçimde tepki veriyor."
+   "currentBeispiel": "Die Bürokratie in diesem Land ist unglaublich schwerfällig.",
+   "currentBeispielTr": "Bu ülkedeki bürokrasi inanılmaz derecede hantal."
   },
   {
    "id": 7273,
@@ -221,8 +221,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "başvuru hakkı olan",
-   "currentBeispiel": "Antragsberechtigt sind nur Einrichtungen mit Sitz im Inland.",
-   "currentBeispielTr": "Başvuru hakkı yalnızca yurt içinde merkezi bulunan kuruluşlara aittir."
+   "currentBeispiel": "Antragsberechtigt sind nur Vereine mit Sitz in Deutschland.",
+   "currentBeispielTr": "Yalnızca Almanya'da merkezi olan dernekler başvuru hakkına sahiptir."
   },
   {
    "id": 7274,
@@ -231,8 +231,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tarafından (resmî dil)",
-   "currentBeispiel": "Seitens der Verwaltung gab es bislang keine belastbare Stellungnahme.",
-   "currentBeispielTr": "İdare tarafından şimdiye dek sağlam bir açıklama gelmedi."
+   "currentBeispiel": "Seitens der Verwaltung kam bisher keine Stellungnahme.",
+   "currentBeispielTr": "İdare tarafından şimdiye dek bir açıklama gelmedi."
   },
   {
    "id": 7275,
@@ -241,8 +241,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yokluğundan dolayı, bulunmaması nedeniyle",
-   "currentBeispiel": "Das Verfahren wurde mangels hinreichender Beweise eingestellt.",
-   "currentBeispielTr": "Süreç, yeterli delil bulunmaması nedeniyle durduruldu."
+   "currentBeispiel": "Das Verfahren wurde mangels Beweisen eingestellt.",
+   "currentBeispielTr": "Dava delil yokluğundan düşürüldü."
   },
   {
    "id": 7276,
@@ -251,8 +251,8 @@
    "niveau": "C1",
    "formen": "Deflationen",
    "currentTr": "deflasyon, fiyatların genel düşüşü",
-   "currentBeispiel": "Eine anhaltende Deflation kann die Konjunktur stärker lähmen als moderate Preissteigerungen.",
-   "currentBeispielTr": "Süregelen bir deflasyon, ekonomiyi ılımlı fiyat artışlarından daha çok felce uğratabilir."
+   "currentBeispiel": "In Japan hat eine lange Deflation die Wirtschaft gelähmt.",
+   "currentBeispielTr": "Japonya'da uzun bir deflasyon ekonomiyi felce uğrattı."
   },
   {
    "id": 7277,
@@ -261,8 +261,8 @@
    "niveau": "C1",
    "formen": "Stagnationen",
    "currentTr": "durgunluk, duraklama",
-   "currentBeispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft endlich wieder leicht.",
-   "currentBeispielTr": "İki yıllık durgunluğun ardından ekonomi nihayet yeniden hafifçe büyüyor.",
+   "currentBeispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft wieder.",
+   "currentBeispielTr": "İki yıllık durgunluğun ardından ekonomi yeniden büyüyor.",
    "overlapping": [
     "die Rezession (B2)"
    ]
@@ -274,8 +274,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "maliye politikası",
-   "currentBeispiel": "Über die richtige Fiskalpolitik streiten Ökonomen seit der letzten Rezession.",
-   "currentBeispielTr": "İktisatçılar son resesyondan bu yana doğru maliye politikasının ne olduğunu tartışıyor."
+   "currentBeispiel": "Die Regierung verfolgt seit Jahren eine sparsame Fiskalpolitik.",
+   "currentBeispielTr": "Hükümet yıllardır tutumlu bir maliye politikası izliyor."
   },
   {
    "id": 7279,
@@ -284,8 +284,8 @@
    "niveau": "C1",
    "formen": "Anleihen",
    "currentTr": "tahvil, borçlanma senedi",
-   "currentBeispiel": "Die Notenbank kauft Anleihen auf, um die langfristigen Zinsen zu senken.",
-   "currentBeispielTr": "Merkez bankası uzun vadeli faizleri düşürmek için tahvil satın alıyor."
+   "currentBeispiel": "Die Notenbank kauft Anleihen, um die Zinsen zu senken.",
+   "currentBeispielTr": "Merkez bankası faizleri düşürmek için tahvil alıyor."
   },
   {
    "id": 7280,
@@ -294,8 +294,8 @@
    "niveau": "C1",
    "formen": "Kapitalmärkte",
    "currentTr": "sermaye piyasası",
-   "currentBeispiel": "Die Kapitalmärkte reagierten nervös auf die überraschende Zinsentscheidung.",
-   "currentBeispielTr": "Sermaye piyasaları beklenmedik faiz kararına gergin tepki verdi."
+   "currentBeispiel": "Die Kapitalmärkte reagierten nervös auf die Zinsentscheidung.",
+   "currentBeispielTr": "Sermaye piyasaları faiz kararına gergin tepki verdi."
   },
   {
    "id": 7281,
@@ -304,8 +304,8 @@
    "niveau": "C1",
    "formen": "Haushaltsdefizite",
    "currentTr": "bütçe açığı",
-   "currentBeispiel": "Das Haushaltsdefizit stieg im vergangenen Jahr auf vier Prozent der Wirtschaftsleistung.",
-   "currentBeispielTr": "Bütçe açığı geçen yıl milli gelirin yüzde dördüne çıktı."
+   "currentBeispiel": "Das Haushaltsdefizit stieg im letzten Jahr deutlich an.",
+   "currentBeispielTr": "Bütçe açığı geçen yıl belirgin biçimde arttı."
   },
   {
    "id": 7282,
@@ -314,8 +314,8 @@
    "niveau": "C1",
    "formen": "Konjunkturzyklen",
    "currentTr": "konjonktür döngüsü, ekonomik çevrim",
-   "currentBeispiel": "Jeder Konjunkturzyklus durchläuft Phasen des Aufschwungs und der Abkühlung.",
-   "currentBeispielTr": "Her konjonktür döngüsü canlanma ve soğuma evrelerinden geçer."
+   "currentBeispiel": "Der aktuelle Konjunkturzyklus dauert bereits acht Jahre.",
+   "currentBeispielTr": "Mevcut konjonktür döngüsü sekiz yıldır sürüyor bile."
   },
   {
    "id": 7283,
@@ -324,8 +324,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "verimlilik, üretkenlik",
-   "currentBeispiel": "Ohne Investitionen in Bildung stagniert die Produktivität einer Volkswirtschaft.",
-   "currentBeispielTr": "Eğitime yatırım yapılmazsa bir ülke ekonomisinin verimliliği yerinde sayar.",
+   "currentBeispiel": "Die neuen Maschinen haben die Produktivität deutlich erhöht.",
+   "currentBeispielTr": "Yeni makineler üretkenliği belirgin biçimde artırdı.",
    "overlapping": [
     "die Effizienz (B2)"
    ]
@@ -337,8 +337,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "fiyat istikrarı",
-   "currentBeispiel": "Das oberste Ziel der Notenbank bleibt die Preisstabilität im Euroraum.",
-   "currentBeispielTr": "Merkez bankasının başlıca hedefi Euro Bölgesi'nde fiyat istikrarı olmayı sürdürüyor."
+   "currentBeispiel": "Die Notenbank verteidigt die Preisstabilität mit hohen Zinsen.",
+   "currentBeispielTr": "Merkez bankası fiyat istikrarını yüksek faizle savunuyor."
   },
   {
    "id": 7285,
@@ -347,8 +347,8 @@
    "niveau": "C1",
    "formen": "Sozialtransfers",
    "currentTr": "sosyal transfer, sosyal yardım ödemesi",
-   "currentBeispiel": "Ohne staatliche Sozialtransfers läge die Armutsquote deutlich höher.",
-   "currentBeispielTr": "Devletin sosyal transferleri olmasa yoksulluk oranı çok daha yüksek olurdu."
+   "currentBeispiel": "Ohne Sozialtransfers wäre die Armut hier deutlich größer.",
+   "currentBeispielTr": "Sosyal transferler olmasa buradaki yoksulluk çok daha büyük olurdu."
   },
   {
    "id": 7286,
@@ -357,8 +357,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "mali denetim kurumu, finansal denetim",
-   "currentBeispiel": "Die Finanzaufsicht prüft, ob die Institute genügend Rücklagen bilden.",
-   "currentBeispielTr": "Finansal denetim kurumu, kuruluşların yeterli karşılık ayırıp ayırmadığını denetliyor."
+   "currentBeispiel": "Die Finanzaufsicht prüft die Rücklagen der großen Banken.",
+   "currentBeispielTr": "Mali denetim kurumu büyük bankaların rezervlerini denetliyor."
   },
   {
    "id": 7287,
@@ -367,8 +367,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ödeme gücü, borcunu ödeyebilme",
-   "currentBeispiel": "Zweifel an der Zahlungsfähigkeit des Staates trieben die Zinsen nach oben.",
-   "currentBeispielTr": "Devletin ödeme gücüne duyulan kuşku faizleri yukarı itti."
+   "currentBeispiel": "Zweifel an der Zahlungsfähigkeit des Landes trieben die Zinsen hoch.",
+   "currentBeispielTr": "Ülkenin ödeme gücüne duyulan kuşku faizleri yukarı itti."
   },
   {
    "id": 7288,
@@ -377,8 +377,8 @@
    "niveau": "C1",
    "formen": "Spekulationsblasen",
    "currentTr": "spekülasyon balonu",
-   "currentBeispiel": "Kurz vor dem Platzen einer Spekulationsblase wirkt der Markt besonders euphorisch.",
-   "currentBeispielTr": "Bir spekülasyon balonu patlamadan hemen önce piyasa özellikle coşkulu görünür."
+   "currentBeispiel": "Die Spekulationsblase am Immobilienmarkt platzte im Herbst.",
+   "currentBeispielTr": "Konut piyasasındaki spekülasyon balonu sonbaharda patladı."
   },
   {
    "id": 7289,
@@ -387,8 +387,8 @@
    "niveau": "C1",
    "formen": "Finanzkrisen",
    "currentTr": "finansal kriz",
-   "currentBeispiel": "Die Finanzkrise von 2008 erschütterte das Vertrauen in die Banken dauerhaft.",
-   "currentBeispielTr": "2008 finansal krizi bankalara duyulan güveni kalıcı biçimde sarstı."
+   "currentBeispiel": "Die Finanzkrise von 2008 kostete viele Menschen ihr Erspartes.",
+   "currentBeispielTr": "2008 finansal krizi birçok insanın birikimine mal oldu."
   },
   {
    "id": 7290,
@@ -397,8 +397,8 @@
    "niveau": "C1",
    "formen": "Systemrisiken",
    "currentTr": "sistemik risk",
-   "currentBeispiel": "Sehr große Institute bergen ein Systemrisiko für die gesamte Volkswirtschaft.",
-   "currentBeispielTr": "Çok büyük kuruluşlar tüm ülke ekonomisi için sistemik risk taşır."
+   "currentBeispiel": "Sehr große Banken bergen ein Systemrisiko für die Wirtschaft.",
+   "currentBeispielTr": "Çok büyük bankalar ekonomi için sistemik risk taşır."
   },
   {
    "id": 7291,
@@ -407,8 +407,8 @@
    "niveau": "C1",
    "formen": "Rettungspakete",
    "currentTr": "kurtarma paketi",
-   "currentBeispiel": "Das Parlament billigte ein Rettungspaket in Höhe von zwanzig Milliarden Euro.",
-   "currentBeispielTr": "Meclis yirmi milyar euroluk bir kurtarma paketini onayladı."
+   "currentBeispiel": "Das Parlament billigte ein Rettungspaket über zwanzig Milliarden Euro.",
+   "currentBeispielTr": "Meclis yirmi milyar avroluk bir kurtarma paketini onayladı."
   },
   {
    "id": 7292,
@@ -417,8 +417,8 @@
    "niveau": "C1",
    "formen": "Notenbanken",
    "currentTr": "merkez bankası",
-   "currentBeispiel": "Die Notenbank handelt formal unabhängig von den Wünschen der Regierung.",
-   "currentBeispielTr": "Merkez bankası resmen hükümetin isteklerinden bağımsız hareket eder."
+   "currentBeispiel": "Die Notenbank hat den Leitzins erneut angehoben.",
+   "currentBeispielTr": "Merkez bankası politika faizini yeniden yükseltti."
   },
   {
    "id": 7293,
@@ -427,8 +427,8 @@
    "niveau": "C1",
    "formen": "Geldmengen",
    "currentTr": "para arzı, para miktarı",
-   "currentBeispiel": "Eine rasch wachsende Geldmenge gilt vielen Ökonomen als Warnsignal.",
-   "currentBeispielTr": "Hızla büyüyen para arzı birçok iktisatçı için bir uyarı işaretidir."
+   "currentBeispiel": "Die Geldmenge ist im letzten Jahr rasch gewachsen.",
+   "currentBeispielTr": "Para arzı geçen yıl hızla büyüdü."
   },
   {
    "id": 7294,
@@ -437,8 +437,8 @@
    "niveau": "C1",
    "formen": "Abwertungen",
    "currentTr": "değer kaybı, devalüasyon",
-   "currentBeispiel": "Die Abwertung der Landeswährung verteuerte sämtliche Importe schlagartig.",
-   "currentBeispielTr": "Yerli paranın değer kaybı bütün ithalatı bir anda pahalılaştırdı."
+   "currentBeispiel": "Die Abwertung der Landeswährung verteuerte alle Importe schlagartig.",
+   "currentBeispielTr": "Ülke parasının değer kaybı bütün ithalatı bir anda pahalılaştırdı."
   },
   {
    "id": 7295,
@@ -447,8 +447,8 @@
    "niveau": "C1",
    "formen": "Handelsbilanzen",
    "currentTr": "dış ticaret dengesi, ticaret bilançosu",
-   "currentBeispiel": "Das Land weist seit Jahren eine deutlich positive Handelsbilanz auf.",
-   "currentBeispielTr": "Ülke yıllardır belirgin biçimde fazla veren bir dış ticaret dengesine sahip."
+   "currentBeispiel": "Das Land hat seit Jahren eine positive Handelsbilanz.",
+   "currentBeispielTr": "Ülkenin yıllardır dış ticaret dengesi fazla veriyor."
   },
   {
    "id": 7296,
@@ -457,8 +457,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "serbest ticaret",
-   "currentBeispiel": "Befürworter des Freihandels versprechen niedrigere Preise für alle Verbraucher.",
-   "currentBeispielTr": "Serbest ticaret savunucuları bütün tüketicilere daha düşük fiyatlar vaat ediyor."
+   "currentBeispiel": "Beide Länder haben ein Abkommen über Freihandel unterzeichnet.",
+   "currentBeispielTr": "İki ülke serbest ticaret üzerine bir anlaşma imzaladı."
   },
   {
    "id": 7297,
@@ -467,8 +467,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "marjinal fayda",
-   "currentBeispiel": "Der Grenznutzen jedes weiteren Glases Wasser nimmt rasch ab.",
-   "currentBeispielTr": "Her fazladan bir bardak suyun marjinal faydası hızla azalır."
+   "currentBeispiel": "Der Grenznutzen des zweiten Stücks Kuchen ist gering.",
+   "currentBeispielTr": "İkinci dilim pastanın marjinal faydası düşüktür."
   },
   {
    "id": 7298,
@@ -478,7 +478,7 @@
    "formen": "",
    "currentTr": "fırsat maliyeti",
    "currentBeispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
-   "currentBeispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde bir fırsat maliyeti üstlenir."
+   "currentBeispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde fırsat maliyeti üstlenir."
   },
   {
    "id": 7299,
@@ -487,8 +487,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "piyasa başarısızlığı",
-   "currentBeispiel": "Umweltschäden gelten in der Theorie als klassisches Beispiel für Marktversagen.",
-   "currentBeispielTr": "Çevre zararları kuramda piyasa başarısızlığının klasik örneği sayılır."
+   "currentBeispiel": "Bei der Luftverschmutzung sprechen Ökonomen von Marktversagen.",
+   "currentBeispielTr": "İktisatçılar hava kirliliği için piyasa başarısızlığından söz eder."
   },
   {
    "id": 7300,
@@ -497,8 +497,8 @@
    "niveau": "C1",
    "formen": "Allokationen",
    "currentTr": "tahsis, kaynakların dağılımı",
-   "currentBeispiel": "Der Preis sorgt in der Theorie für eine effiziente Allokation knapper Güter.",
-   "currentBeispielTr": "Kuramda fiyat, kıt malların etkin biçimde dağıtılmasını sağlar."
+   "currentBeispiel": "Der Preis sorgt für eine effiziente Allokation knapper Güter.",
+   "currentBeispielTr": "Fiyat, kıt malların etkin tahsisini sağlar."
   },
   {
    "id": 7301,
@@ -507,8 +507,8 @@
    "niveau": "C1",
    "formen": "Sparquoten",
    "currentTr": "tasarruf oranı",
-   "currentBeispiel": "Die Sparquote der privaten Haushalte ist auf ein Rekordhoch geklettert.",
-   "currentBeispielTr": "Hanehalklarının tasarruf oranı rekor düzeye tırmandı."
+   "currentBeispiel": "Die Sparquote der Haushalte ist auf zwölf Prozent gestiegen.",
+   "currentBeispielTr": "Hanehalklarının tasarruf oranı yüzde on ikiye çıktı."
   },
   {
    "id": 7302,

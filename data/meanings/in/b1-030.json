@@ -9,8 +9,8 @@
    "niveau": "B1",
    "formen": "¨-e",
    "currentTr": "alışveriş",
-   "currentBeispiel": "1. Achten Sie beim Einkauf auf Sonderangebote. 2. Ich habe alle Einkäufe erledigt. Jetzt können wir einen Kaffee trinken",
-   "currentBeispielTr": "Alışverişte indirimli ürünlere dikkat edin."
+   "currentBeispiel": "Nach dem Einkauf tranken wir noch einen Kaffee.",
+   "currentBeispielTr": "Alışverişten sonra bir kahve içtik."
   },
   {
    "id": 2898,
@@ -19,8 +19,8 @@
    "niveau": "B1",
    "formen": "die Übersetzerin, -nen",
    "currentTr": "çevirmen, tercüman",
-   "currentBeispiel": "- Meine Tochter möchte als Übersetzerin arbeiten.",
-   "currentBeispielTr": "Kızım çevirmen olarak çalışmak istiyor."
+   "currentBeispiel": "Der Übersetzer arbeitet seit Jahren für unseren Verlag.",
+   "currentBeispielTr": "Çevirmen yıllardır yayınevimiz için çalışıyor."
   },
   {
    "id": 1403,
@@ -29,8 +29,8 @@
    "niveau": "B1",
    "formen": "kündigt an, kündigte an, hat angekündigt",
    "currentTr": "haber vermek, duyurmak",
-   "currentBeispiel": "Wir sollten unseren Besuch ankündigen.",
-   "currentBeispielTr": "Ziyaretimizi önceden haber vermeliyiz.",
+   "currentBeispiel": "Die Firma hat gestern neue Preise angekündigt.",
+   "currentBeispielTr": "Şirket dün yeni fiyatları duyurdu.",
    "overlapping": [
     "Bescheid sagen (B1)",
     "Bescheid geben (B1)",
@@ -46,8 +46,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "telaffuz",
-   "currentBeispiel": "Ali hat eine gute Aussprache.",
-   "currentBeispielTr": "Ali'nin telaffuzu iyi."
+   "currentBeispiel": "Deine Aussprache ist besser geworden, seit du hier lebst.",
+   "currentBeispielTr": "Burada yaşamaya başladığından beri telaffuzun düzeldi."
   },
   {
    "id": 1802,
@@ -56,8 +56,8 @@
    "niveau": "B1",
    "formen": "erkältet sich, erkältete sich, hat sich erkältet",
    "currentTr": "soğuk algınlığına yakalanmak, üşütmek",
-   "currentBeispiel": "Der Junge hat sich beim Baden erkältet.",
-   "currentBeispielTr": "Çocuk yüzerken üşütmüş."
+   "currentBeispiel": "Zieh dich warm an, sonst erkältest du dich.",
+   "currentBeispielTr": "Kalın giyin, yoksa üşütürsün."
   },
   {
    "id": 3116,
@@ -66,8 +66,8 @@
    "niveau": "B1",
    "formen": "-nen",
    "currentTr": "lokantacı, işletmeci (kadın)",
-   "currentBeispiel": "Ich kenne die Wirtin von diesem Lokal. Sie ist sehr nett.",
-   "currentBeispielTr": "Bu lokantanın işletmecisini tanıyorum, çok kibar biri.",
+   "currentBeispiel": "Die Wirtin hat uns einen Tisch am Fenster reserviert.",
+   "currentBeispielTr": "Kadın lokantacı bize pencere kenarında bir masa ayırdı.",
    "overlapping": [
     "der Wirt (B1)"
    ]
@@ -79,8 +79,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "ücret, harç",
-   "currentBeispiel": "Die Gebühr liegt bei 60 Euro.",
-   "currentBeispielTr": "Ücret 60 Euro civarında.",
+   "currentBeispiel": "Die Gebühr für den Kurs beträgt hundert Euro.",
+   "currentBeispielTr": "Kursun ücreti yüz avro.",
    "overlapping": [
     "der Lohn (B1)",
     "die Vergütung (B2)"
@@ -93,8 +93,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "dar (genişliği az), ince",
-   "currentBeispiel": "Hier kannst du nicht parken. Die Straße ist zu schmal.",
-   "currentBeispielTr": "Buraya park edemezsin. Sokak çok dar.",
+   "currentBeispiel": "Der Weg ist zu schmal für zwei Autos.",
+   "currentBeispielTr": "Yol iki araba için fazla dar.",
    "overlapping": [
     "eng (A2)"
    ]
@@ -106,8 +106,8 @@
    "niveau": "B1",
    "formen": "-n",
    "currentTr": "röportaj, haber",
-   "currentBeispiel": "Hast du die Reportage über Afrika gesehen?",
-   "currentBeispielTr": "Afrika hakkındaki haberi izledin mi?",
+   "currentBeispiel": "Gestern lief eine spannende Reportage über Afrika.",
+   "currentBeispielTr": "Dün Afrika hakkında heyecanlı bir haber programı vardı.",
    "overlapping": [
     "das Interview (A2)"
    ]
@@ -119,8 +119,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "karşıdan gelmek, kolaylık göstermek",
-   "currentBeispiel": "1. Auf dem Weg nach Hause ist mir mein Nachbar entgegengekommen. 2. Können Sie mir mit dem Preis entgegenkommen?",
-   "currentBeispielTr": "Eve dönerken komşum karşıdan geliyordu."
+   "currentBeispiel": "Auf der Treppe kam mir der Nachbar entgegen.",
+   "currentBeispielTr": "Merdivende komşum karşıdan geliyordu."
   },
   {
    "id": 2467,
@@ -129,8 +129,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "paralel",
-   "currentBeispiel": "Die Goethestraße ist parallel zur Hauptstraße.",
-   "currentBeispielTr": "Goethe Caddesi, ana caddeye paralel."
+   "currentBeispiel": "Zeichne zwei Linien, die parallel verlaufen.",
+   "currentBeispielTr": "Birbirine paralel iki çizgi çiz."
   },
   {
    "id": 2734,
@@ -139,8 +139,8 @@
    "niveau": "B1",
    "formen": "-n",
    "currentTr": "yabancı dil",
-   "currentBeispiel": "Ich spreche drei Fremdsprachen.",
-   "currentBeispielTr": "Üç yabancı dil konuşuyorum."
+   "currentBeispiel": "In der Schule lernt jedes Kind eine Fremdsprache.",
+   "currentBeispielTr": "Okulda her çocuk bir yabancı dil öğreniyor."
   },
   {
    "id": 1827,
@@ -149,8 +149,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "hikaye, öykü, anlatı",
-   "currentBeispiel": "Diese Erzählung ist sehr berühmt. Du musst sie lesen.",
-   "currentBeispielTr": "Bu öykü çok ünlü; mutlaka okumalısın."
+   "currentBeispiel": "Diese Erzählung habe ich als Kind oft gelesen.",
+   "currentBeispielTr": "Bu öyküyü çocukken sık sık okurdum."
   },
   {
    "id": 1565,
@@ -159,8 +159,8 @@
    "niveau": "B1",
    "formen": "betreut, betreute, hat betreut",
    "currentTr": "bakmak, ilgilenmek",
-   "currentBeispiel": "Wer betreut bei Ihnen die Kinder?",
-   "currentBeispielTr": "Sizde çocuklara kim bakıyor?",
+   "currentBeispiel": "Wer betreut die Kinder, wenn du arbeitest?",
+   "currentBeispielTr": "Sen çalışırken çocuklarla kim ilgileniyor?",
    "overlapping": [
     "ansehen (A2)",
     "gucken (B1)",
@@ -177,8 +177,8 @@
    "niveau": "B1",
    "formen": "-n → D: Möhre, CH: Rüebli",
    "currentTr": "havuç",
-   "currentBeispiel": "Hasen fressen gern Karotten.",
-   "currentBeispielTr": "Tavşanlar havuç yemeyi sever.",
+   "currentBeispiel": "Für die Suppe brauche ich noch zwei Karotten.",
+   "currentBeispielTr": "Çorba için iki havuç daha lazım.",
    "overlapping": [
     "die Möhre (B1)",
     "das Rüebli (B1)"
@@ -191,8 +191,8 @@
    "niveau": "B1",
    "formen": "-",
    "currentTr": "gıda maddesi, besin",
-   "currentBeispiel": "In diesen Ländern fehlen vor allem Nahrungsmittel.",
-   "currentBeispielTr": "Bu ülkelerde her şeyden önce gıda maddeleri eksik."
+   "currentBeispiel": "In der Region fehlen Nahrungsmittel und sauberes Wasser.",
+   "currentBeispielTr": "Bölgede gıda ve temiz su eksik."
   },
   {
    "id": 2506,
@@ -201,8 +201,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "popüler",
-   "currentBeispiel": "Diese Musik ist bei Jugendlichen populär.",
-   "currentBeispielTr": "Bu müzik gençler arasında popüler."
+   "currentBeispiel": "Diese Sängerin ist bei Jugendlichen sehr populär.",
+   "currentBeispielTr": "Bu şarkıcı gençler arasında çok popüler."
   },
   {
    "id": 2081,
@@ -211,8 +211,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "tarihi",
-   "currentBeispiel": "Wir waren mit unserer Klasse im Historischen Museum.",
-   "currentBeispielTr": "Sınıfça Tarih Müzesi'ne gittik."
+   "currentBeispiel": "Die Altstadt hat viele historische Gebäude.",
+   "currentBeispielTr": "Eski şehirde birçok tarihî bina var."
   },
   {
    "id": 1441,
@@ -221,8 +221,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "çağrı, talep, bildirim",
-   "currentBeispiel": "Sie erhalten eine Aufforderung, den Betrag bis Juni zu zahlen.",
-   "currentBeispielTr": "Tutarı haziran ayına kadar ödemeniz için bir bildirim alacaksınız."
+   "currentBeispiel": "Wir haben eine schriftliche Aufforderung zur Zahlung bekommen.",
+   "currentBeispielTr": "Yazılı bir ödeme talebi aldık."
   },
   {
    "id": 1593,
@@ -231,8 +231,8 @@
    "niveau": "B1",
    "formen": "blitzt, blitzte, hat geblitzt",
    "currentTr": "şimşek çakmak, parlamak",
-   "currentBeispiel": "1. Gestern Abend gab es ein Gewitter. Es hat furchtbar geblitzt und gedonnert. 2. Ihre Augen blitzen vor Freude.",
-   "currentBeispielTr": "Dün akşam fırtına vardı; korkunç şimşekler çaktı, gök gürledi."
+   "currentBeispiel": "Als es blitzte, hatte das Kind Angst.",
+   "currentBeispielTr": "Şimşek çaktığında çocuk korktu."
   },
   {
    "id": 1529,
@@ -241,8 +241,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "belge, makbuz, fiş",
-   "currentBeispiel": "5. Laut Wetterbericht bekommen wir Regen. 6. Plötzlich bekam ich starke Kopfschmerzen. Brauchen Sie einen Beleg?",
-   "currentBeispielTr": "Fiş ister misiniz?",
+   "currentBeispiel": "Bewahren Sie den Beleg auf, falls Sie umtauschen möchten.",
+   "currentBeispielTr": "Değişim yapmak isterseniz fişi saklayın.",
    "overlapping": [
     "das Dokument (B1)",
     "die Urkunde (B1)",
@@ -257,8 +257,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "tatmin edici",
-   "currentBeispiel": "Das Ergebnis ist befriedigend.",
-   "currentBeispielTr": "Sonuç tatmin edici."
+   "currentBeispiel": "Sein Vorschlag war für alle befriedigend.",
+   "currentBeispielTr": "Önerisi herkes için tatmin ediciydi."
   },
   {
    "id": 2768,
@@ -267,8 +267,8 @@
    "niveau": "B1",
    "formen": "-s",
    "currentTr": "erkek hostes, kabin memuru",
-   "currentBeispiel": "Die Stewardess bringt das Mittagessen.",
-   "currentBeispielTr": "Kabin görevlisi öğle yemeğini getiriyor."
+   "currentBeispiel": "Der Steward brachte uns Wasser und Kopfhörer.",
+   "currentBeispielTr": "Kabin görevlisi bize su ve kulaklık getirdi."
   },
   {
    "id": 3044,
@@ -277,8 +277,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "tam zamanlı",
-   "currentBeispiel": "Ich möchte gerne Vollzeit arbeiten.",
-   "currentBeispielTr": "Tam zamanlı çalışmak istiyorum."
+   "currentBeispiel": "Nach der Elternzeit arbeitet sie wieder in Vollzeit.",
+   "currentBeispielTr": "Doğum izninden sonra yine tam zamanlı çalışıyor."
   },
   {
    "id": 1440,
@@ -287,8 +287,8 @@
    "niveau": "B1",
    "formen": "fordert auf, forderte auf, hat aufgefordert",
    "currentTr": "çağırmak, talep etmek, davet etmek",
-   "currentBeispiel": "1. Sie forderte mich auf, meine Meinung zu sagen. 2. Er fordert sie zum Tanz auf.",
-   "currentBeispielTr": "Benden fikrimi söylememi istedi.",
+   "currentBeispiel": "Der Lehrer forderte mich auf, lauter zu sprechen.",
+   "currentBeispielTr": "Öğretmen benden daha yüksek sesle konuşmamı istedi.",
    "overlapping": [
     "rufen (A2)"
    ]
@@ -300,8 +300,8 @@
    "niveau": "B1",
    "formen": "Foren (Internetforum)",
    "currentTr": "forum",
-   "currentBeispiel": "Ich melde mich heute bei diesem Forum an.",
-   "currentBeispielTr": "Bugün bu foruma üye oluyorum."
+   "currentBeispiel": "In diesem Forum findest du Antworten auf deine Fragen.",
+   "currentBeispielTr": "Bu forumda sorularının cevaplarını bulursun."
   },
   {
    "id": 1649,
@@ -310,8 +310,8 @@
    "niveau": "B1",
    "formen": "dekoriert, dekorierte, hat dekoriert",
    "currentTr": "süslemek, dekore etmek",
-   "currentBeispiel": "Hilfst du mir, den Tisch für die Party zu dekorieren?",
-   "currentBeispielTr": "Parti için masayı süslememe yardım eder misin?",
+   "currentBeispiel": "Wir haben den Saal für die Hochzeit dekoriert.",
+   "currentBeispielTr": "Salonu düğün için süsledik.",
    "overlapping": [
     "ausschmücken (C1)",
     "schmücken (A2)"
@@ -324,8 +324,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "azınlık",
-   "currentBeispiel": "Frauen sind in unserer Firma in der Minderheit.",
-   "currentBeispielTr": "Şirketimizde kadınlar azınlıkta."
+   "currentBeispiel": "In unserer Firma sind Frauen leider in der Minderheit.",
+   "currentBeispielTr": "Şirketimizde kadınlar maalesef azınlıkta."
   },
   {
    "id": 3050,
@@ -334,8 +334,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "ön koşul, şart",
-   "currentBeispiel": "1. Gesunde Ernährung ist die Voraussetzung für ein langes Leben. 2. Er will die Arbeit nur unter der Voraussetzung anneh",
-   "currentBeispielTr": "1. Sağlıklı beslenme, uzun bir yaşamın ön koşuludur. 2. İşi ancak bir şartla kabul etmek istiyor."
+   "currentBeispiel": "Gute Deutschkenntnisse sind Voraussetzung für diese Stelle.",
+   "currentBeispielTr": "İyi Almanca bilgisi bu iş için ön koşul."
   },
   {
    "id": 1427,
@@ -344,8 +344,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "işsizlik",
-   "currentBeispiel": "Die Arbeitslosigkeit ist gesunken.",
-   "currentBeispielTr": "İşsizlik düştü."
+   "currentBeispiel": "Die Arbeitslosigkeit ist in dieser Region stark gestiegen.",
+   "currentBeispielTr": "Bu bölgede işsizlik ciddi biçimde arttı."
   },
   {
    "id": 2355,
@@ -354,8 +354,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "çok az, minimal",
-   "currentBeispiel": "Da ist nur ein minimaler Unterschied.",
-   "currentBeispielTr": "Arada yalnızca çok küçük bir fark var."
+   "currentBeispiel": "Der Unterschied zwischen den beiden Angeboten ist minimal.",
+   "currentBeispielTr": "İki teklif arasındaki fark çok küçük."
   },
   {
    "id": 2751,
@@ -364,8 +364,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "istatistiksel",
-   "currentBeispiel": "Die statistischen Ergebnisse zeigen eine gute Entwicklung.",
-   "currentBeispielTr": "İstatistiksel sonuçlar olumlu bir gelişme gösteriyor."
+   "currentBeispiel": "Statistisch gesehen leben Frauen länger als Männer.",
+   "currentBeispielTr": "İstatistiksel olarak kadınlar erkeklerden uzun yaşıyor."
   },
   {
    "id": 2608,
@@ -374,8 +374,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "tuzlu",
-   "currentBeispiel": "Dieses Essen ist zu salzig für mich.",
-   "currentBeispielTr": "Bu yemek benim için fazla tuzlu.",
+   "currentBeispiel": "Die Suppe ist mir viel zu salzig.",
+   "currentBeispielTr": "Çorba bana göre çok fazla tuzlu.",
    "overlapping": [
     "herzhaft (B2)"
    ]
@@ -387,8 +387,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "artış, zam",
-   "currentBeispiel": "2. Die Zahl der Unfälle hat sich stark erhöht. Wir streiken für eine Lohnerhöhung.",
-   "currentBeispielTr": "Maaş zammı için grev yapıyoruz.",
+   "currentBeispiel": "Die Erhöhung der Miete kam für uns überraschend.",
+   "currentBeispielTr": "Kira zammı bizim için sürpriz oldu.",
    "overlapping": [
     "die Zunahme (B2)"
    ]
@@ -400,8 +400,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "sunum, rapor",
-   "currentBeispiel": "Vielen Dank für dieses interessante Referat.",
-   "currentBeispielTr": "Bu ilginç sunum için çok teşekkürler.",
+   "currentBeispiel": "Morgen halte ich ein Referat über den Klimawandel.",
+   "currentBeispielTr": "Yarın iklim değişikliği üzerine bir sunum yapacağım.",
    "overlapping": [
     "die Präsentation (B1)"
    ]
@@ -413,8 +413,8 @@
    "niveau": "B1",
    "formen": "-",
    "currentTr": "şnitzel",
-   "currentBeispiel": "Bitte ein Schnitzel mit Kartoffeln und Salat.",
-   "currentBeispielTr": "Patates ve salatayla bir şnitzel lütfen."
+   "currentBeispiel": "Ich nehme ein Schnitzel mit Pommes, bitte.",
+   "currentBeispielTr": "Ben patates kızartmasıyla bir şnitzel alayım, lütfen."
   },
   {
    "id": 2219,
@@ -423,8 +423,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "fotokopi makinesi",
-   "currentBeispiel": "- Der Kopierer ist schon wieder kaputt.",
-   "currentBeispielTr": "Fotokopi makinesi yine bozuldu."
+   "currentBeispiel": "Im zweiten Stock steht ein neuer Kopierer.",
+   "currentBeispielTr": "İkinci katta yeni bir fotokopi makinesi var."
   },
   {
    "id": 2918,
@@ -433,8 +433,8 @@
    "niveau": "B1",
    "formen": "tauscht um, tauschte um, hat umgetauscht",
    "currentTr": "(satın alınanı) değiştirmek, (para) bozdurmak",
-   "currentBeispiel": "1. Ich möchte diese Bluse umtauschen. Sie passt mir nicht. 2. Wo kann ich Geld umtauschen?",
-   "currentBeispielTr": "1. Bu bluzu değiştirmek istiyorum, bana olmadı. 2. Nerede para bozdurabilirim?",
+   "currentBeispiel": "Kann ich diese Bluse gegen eine größere umtauschen?",
+   "currentBeispielTr": "Bu bluzu daha büyük bir bedenle değiştirebilir miyim?",
    "overlapping": [
     "ändern (A2)",
     "wechseln (A2)",
@@ -450,8 +450,8 @@
    "niveau": "B1",
    "formen": "heizt, heizte, hat geheizt",
    "currentTr": "ısıtmak",
-   "currentBeispiel": "1. Wir heizen mit Öl. 2. Ziehen Sie sich warm an. In der Halle ist nicht geheizt.",
-   "currentBeispielTr": "1. Evi fuel oil ile ısıtıyoruz. 2. Kalın giyinin; salon ısıtılmıyor.",
+   "currentBeispiel": "Im Winter heizen wir mit Holz.",
+   "currentBeispielTr": "Kışın odunla ısıtıyoruz.",
    "overlapping": [
     "aufwärmen (A2)"
    ]
@@ -463,8 +463,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "yürüyüş, doğa yürüyüşü",
-   "currentBeispiel": "Wir haben in den Ferien eine schöne Wanderung gemacht.",
-   "currentBeispielTr": "Tatilde güzel bir doğa yürüyüşü yaptık.",
+   "currentBeispiel": "Am Sonntag machen wir eine Wanderung in den Bergen.",
+   "currentBeispielTr": "Pazar günü dağlarda doğa yürüyüşü yapacağız.",
    "overlapping": [
     "der Spaziergang (A2)"
    ]
@@ -476,8 +476,8 @@
    "niveau": "B1",
    "formen": "verbraucht, verbrauchte, hat verbraucht",
    "currentTr": "tüketmek, harcamak",
-   "currentBeispiel": "Wie viel Benzin verbraucht dein Auto?",
-   "currentBeispielTr": "Araban ne kadar benzin yakıyor?",
+   "currentBeispiel": "Der alte Kühlschrank verbraucht zu viel Strom.",
+   "currentBeispielTr": "Eski buzdolabı çok fazla elektrik tüketiyor.",
    "overlapping": [
     "konsumieren (B1)",
     "aufzehren (B2)",
@@ -491,8 +491,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "elektrikli",
-   "currentBeispiel": "Wir kochen nicht mit Gas, sondern elektrisch.",
-   "currentBeispielTr": "Gazla değil, elektrikle pişiriyoruz."
+   "currentBeispiel": "Ich putze meine Zähne mit einer elektrischen Zahnbürste.",
+   "currentBeispielTr": "Dişlerimi elektrikli fırçayla fırçalıyorum."
   },
   {
    "id": 2668,
@@ -501,8 +501,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "zorluk, güçlük",
-   "currentBeispiel": "Ich hatte große Schwierigkeiten einen Parkplatz zu bekommen.",
-   "currentBeispielTr": "Park yeri bulmakta çok zorlandım."
+   "currentBeispiel": "Die größte Schwierigkeit war für mich die Grammatik.",
+   "currentBeispielTr": "Benim için en büyük zorluk dilbilgisiydi."
   },
   {
    "id": 2426,
@@ -511,8 +511,8 @@
    "niveau": "B1",
    "formen": "¨-e",
    "currentTr": "acil çıkış",
-   "currentBeispiel": "Der Notausgang ist gleich hier bei der Treppe.",
-   "currentBeispielTr": "Acil çıkış hemen burada, merdivenin yanında."
+   "currentBeispiel": "Der Notausgang befindet sich hinter der Treppe.",
+   "currentBeispielTr": "Acil çıkış merdivenin arkasında."
   },
   {
    "id": 2491,
@@ -521,8 +521,8 @@
    "niveau": "B1",
    "formen": "-n",
    "currentTr": "erik",
-   "currentBeispiel": "Ich esse gern Pflaumen und noch lieber Pflaumenkuchen.",
-   "currentBeispielTr": "Eriği severim, erikli keki daha da çok severim."
+   "currentBeispiel": "Im Garten sind die Pflaumen endlich reif.",
+   "currentBeispielTr": "Bahçedeki erikler nihayet olgunlaştı."
   },
   {
    "id": 2367,
@@ -531,8 +531,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "hareketli, mobil",
-   "currentBeispiel": "Mit dem Fahrrad bin ich in der Stadt sehr mobil.",
-   "currentBeispielTr": "Bisiklet sayesinde şehirde çok rahat hareket ediyorum.",
+   "currentBeispiel": "Ohne Auto ist man auf dem Land kaum mobil.",
+   "currentBeispielTr": "Kırsalda arabasız insan pek bir yere gidemiyor.",
    "overlapping": [
     "lebhaft (A2)",
     "belebt (A2)"
@@ -545,8 +545,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "stajyer (erkek)",
-   "currentBeispiel": "Bei dieser Firma habe ich zwei Jahre als Praktikantin gearbeitet.",
-   "currentBeispielTr": "Bu şirkette iki yıl stajyer olarak çalıştım.",
+   "currentBeispiel": "Unser neuer Praktikant lernt sehr schnell.",
+   "currentBeispielTr": "Yeni stajyerimiz çok çabuk öğreniyor.",
    "overlapping": [
     "die Praktikantin (B1)"
    ]
@@ -558,8 +558,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "hafif, yumuşak",
-   "currentBeispiel": "1. Möchten Sie die Soße scharf? – Nein, bitte ganz mild. 2. Wie wird das Wetter? – Es soll etwas milder werden.",
-   "currentBeispielTr": "1. Sosu acılı mı istersiniz? – Hayır, lütfen çok hafif olsun. 2. Hava nasıl olacak? – Biraz yumuşayacakmış."
+   "currentBeispiel": "Die Soße ist mild, du kannst sie ruhig probieren.",
+   "currentBeispielTr": "Sos hafif, rahatça deneyebilirsin."
   },
   {
    "id": 3005,
@@ -568,8 +568,8 @@
    "niveau": "B1",
    "formen": "verpackt, verpackte, hat verpackt",
    "currentTr": "paketlemek, ambalajlamak",
-   "currentBeispiel": "Hast Du die Pakete gut verpackt?",
-   "currentBeispielTr": "Paketleri iyice sardın mı?",
+   "currentBeispiel": "Die Gläser müssen gut verpackt werden.",
+   "currentBeispielTr": "Bardakların iyi paketlenmesi gerekiyor.",
    "overlapping": [
     "einpacken (A2)"
    ]
@@ -581,8 +581,8 @@
    "niveau": "B1",
    "formen": "(Pl.)",
    "currentTr": "yaşlılar",
-   "currentBeispiel": "Dieser Computerkurs ist für Senioren.",
-   "currentBeispielTr": "Bu bilgisayar kursu yaşlılar için."
+   "currentBeispiel": "Der Computerkurs ist besonders für Senioren gedacht.",
+   "currentBeispielTr": "Bilgisayar kursu özellikle yaşlılar için düşünülmüş."
   }
  ]
 }

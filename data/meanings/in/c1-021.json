@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geçmişle hesaplaşma",
-   "currentBeispiel": "Vergangenheitsbewältigung lässt sich nicht per Gesetz verordnen.",
-   "currentBeispielTr": "Geçmişle hesaplaşma yasayla dayatılabilecek bir şey değildir."
+   "currentBeispiel": "Die Schule widmet der Vergangenheitsbewältigung eine ganze Projektwoche.",
+   "currentBeispielTr": "Okul geçmişle hesaplaşmaya bütün bir proje haftası ayırıyor."
   },
   {
    "id": 6259,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yorum üstünlüğü, anlamlandırma tekeli",
-   "currentBeispiel": "Um die Deutungshoheit über das Gedenken wird bis heute gerungen.",
-   "currentBeispielTr": "Anma üzerindeki yorum üstünlüğü için bugün hâlâ mücadele ediliyor."
+   "currentBeispiel": "Um die Deutungshoheit über das Jubiläum streiten zwei Ministerien.",
+   "currentBeispielTr": "Yıldönümünün yorum tekeli için iki bakanlık çekişiyor."
   },
   {
    "id": 6260,
@@ -80,7 +80,7 @@
    "formen": "Narrative",
    "currentTr": "anlatı, hâkim söylem",
    "currentBeispiel": "Das nationale Narrativ vom ewigen Opfer hält sich hartnäckig.",
-   "currentBeispielTr": "Ebedî mağduriyet üzerine kurulu ulusal anlatı inatla varlığını koruyor."
+   "currentBeispielTr": "Ebedî mağduriyet üzerine kurulu ulusal anlatı inatla ayakta duruyor."
   },
   {
    "id": 6261,
@@ -100,7 +100,7 @@
    "formen": "Mahnmale",
    "currentTr": "uyarı anıtı, ibret anıtı",
    "currentBeispiel": "Das Mahnmal steht bewusst mitten im Alltag der Stadt.",
-   "currentBeispielTr": "Anıt bilinçli olarak şehrin gündelik hayatının tam ortasında duruyor."
+   "currentBeispielTr": "Uyarı anıtı bilinçli olarak şehrin gündelik hayatının ortasında duruyor."
   },
   {
    "id": 6263,
@@ -146,7 +146,7 @@
    "formen": "",
    "currentTr": "yağmalanmış sanat eseri",
    "currentBeispiel": "Das Museum prüft seine Sammlung systematisch auf Raubkunst.",
-   "currentBeispielTr": "Müze koleksiyonunu yağmalanmış eserler açısından sistemli biçimde inceliyor."
+   "currentBeispielTr": "Müze koleksiyonunu yağmalanmış sanat eserleri açısından sistemli biçimde tarıyor."
   },
   {
    "id": 6267,
@@ -156,7 +156,7 @@
    "formen": "",
    "currentTr": "yakın dönem tarihi",
    "currentBeispiel": "Sie lehrt Zeitgeschichte und forscht zu den Nachkriegsjahren.",
-   "currentBeispielTr": "Yakın dönem tarihi dersleri veriyor ve savaş sonrası yıllar üzerine araştırma yapıyor."
+   "currentBeispielTr": "Yakın dönem tarihi okutuyor ve savaş sonrası yıllar üzerine çalışıyor."
   },
   {
    "id": 6268,
@@ -185,8 +185,8 @@
    "niveau": "C1",
    "formen": "Fälschungen",
    "currentTr": "sahte (belge, eser), sahtecilik",
-   "currentBeispiel": "Erst die Papieranalyse entlarvte das Tagebuch als plumpe Fälschung.",
-   "currentBeispielTr": "Günlüğün kaba bir sahtecilik olduğunu ancak kâğıt analizi ortaya çıkardı."
+   "currentBeispiel": "Die Fälschung des Dokuments flog erst nach Jahrzehnten auf.",
+   "currentBeispielTr": "Belgedeki sahtecilik ancak onlarca yıl sonra ortaya çıktı."
   },
   {
    "id": 6271,
@@ -196,7 +196,7 @@
    "formen": "",
    "currentTr": "özgünlük, gerçeklik",
    "currentBeispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
-   "currentBeispielTr": "Belgenin özgünlüğü birçok uzman tarafından şüpheyle karşılanıyor.",
+   "currentBeispielTr": "Belgenin gerçekliği birçok uzman tarafından şüpheyle karşılanıyor.",
    "overlapping": [
     "die Originalität (C1)"
    ]
@@ -229,7 +229,7 @@
    "formen": "",
    "currentTr": "uzlaşma, barışma",
    "currentBeispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
-   "currentBeispielTr": "İki ülkenin uzlaşması sessiz bir diz çöküşle başladı.",
+   "currentBeispielTr": "İki ülkenin barışması sessiz bir diz çöküşle başladı.",
    "overlapping": [
     "der Kompromiss (B1)"
    ]
@@ -241,8 +241,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "telafi, zararın giderilmesi",
-   "currentBeispiel": "Materielle Wiedergutmachung ersetzt keine ehrliche Entschuldigung.",
-   "currentBeispielTr": "Maddi telafi, içten bir özrün yerini tutmaz."
+   "currentBeispiel": "Die Opfer warten seit Jahrzehnten auf eine finanzielle Wiedergutmachung.",
+   "currentBeispielTr": "Mağdurlar onlarca yıldır maddi bir telafi bekliyor."
   },
   {
    "id": 6276,
@@ -252,7 +252,7 @@
    "formen": "",
    "currentTr": "faillik, suçu işlemiş olma",
    "currentBeispiel": "Die Akten belegen eine aktive Täterschaft, nicht bloßes Mitlaufen.",
-   "currentBeispielTr": "Dosyalar sadece uyum sağlamayı değil, etkin bir failliği ortaya koyuyor."
+   "currentBeispielTr": "Dosyalar sadece sürüklenmeyi değil, etkin bir failliği belgeliyor."
   },
   {
    "id": 6277,
@@ -272,7 +272,7 @@
    "formen": "Relativierungen",
    "currentTr": "göreceleştirme, hafifletme",
    "currentBeispiel": "Solche Vergleiche laufen auf eine Relativierung der Verbrechen hinaus.",
-   "currentBeispielTr": "Bu tür karşılaştırmalar suçların göreceleştirilmesine varıp dayanıyor."
+   "currentBeispielTr": "Bu tür karşılaştırmalar suçların göreceleştirilmesine varır."
   },
   {
    "id": 6279,
@@ -282,7 +282,7 @@
    "formen": "Vereinnahmungen",
    "currentTr": "sahiplenme, kendi amacına alet etme",
    "currentBeispiel": "Die Familie wehrte sich gegen die politische Vereinnahmung des Gedenkens.",
-   "currentBeispielTr": "Aile, anmanın siyasi olarak sahiplenilmesine karşı çıktı."
+   "currentBeispielTr": "Aile, anmanın siyaseten kendine mal edilmesine karşı çıktı."
   },
   {
    "id": 6280,
@@ -292,7 +292,7 @@
    "formen": "",
    "currentTr": "kahraman kültü, kahraman yüceltmesi",
    "currentBeispiel": "Statt Heldenverehrung fordern die Autoren eine nüchterne Bilanz.",
-   "currentBeispielTr": "Yazarlar kahraman yüceltmesi yerine serinkanlı bir bilanço istiyor."
+   "currentBeispielTr": "Yazarlar kahraman kültü yerine serinkanlı bir bilanço istiyor."
   },
   {
    "id": 6281,
@@ -322,7 +322,7 @@
    "formen": "",
    "currentTr": "çöküş, gerileme",
    "currentBeispiel": "Der Niedergang des Reiches vollzog sich über mehrere Generationen.",
-   "currentBeispielTr": "İmparatorluğun çöküşü birkaç kuşak boyunca gerçekleşti."
+   "currentBeispielTr": "İmparatorluğun çöküşü birkaç kuşağa yayıldı."
   },
   {
    "id": 6284,
@@ -341,8 +341,8 @@
    "niveau": "C1",
    "formen": "Machtergreifungen",
    "currentTr": "iktidarı ele geçirme",
-   "currentBeispiel": "Der Begriff Machtergreifung verschleiert, wie viele mitgeholfen haben.",
-   "currentBeispielTr": "İktidarı ele geçirme ifadesi, kaç kişinin buna yardım ettiğini gizliyor."
+   "currentBeispiel": "Nach der Machtergreifung verloren Tausende Beamte ihre Stellen.",
+   "currentBeispielTr": "İktidarın ele geçirilmesinden sonra binlerce memur işini kaybetti."
   },
   {
    "id": 6286,
@@ -352,7 +352,7 @@
    "formen": "Diktaturen",
    "currentTr": "diktatörlük",
    "currentBeispiel": "Zwei Diktaturen innerhalb eines Jahrhunderts haben das Land gezeichnet.",
-   "currentBeispielTr": "Bir yüzyıl içindeki iki diktatörlük ülkeye derin izler bıraktı."
+   "currentBeispielTr": "Bir yüzyıl içindeki iki diktatörlük ülkede derin izler bıraktı."
   },
   {
    "id": 6287,
@@ -426,7 +426,7 @@
    "formen": "hat ergründet",
    "currentTr": "derinlemesine araştırmak, künhüne varmak",
    "currentBeispiel": "Die Studie versucht, die Motive der Mitläufer zu ergründen.",
-   "currentBeispielTr": "Çalışma, sürüklenip gidenlerin saiklerini derinlemesine anlamaya çalışıyor."
+   "currentBeispielTr": "Çalışma, sürüklenip gidenlerin güdülerini derinlemesine araştırmaya çalışıyor."
   },
   {
    "id": 6294,
@@ -436,7 +436,7 @@
    "formen": "hat nachgezeichnet",
    "currentTr": "adım adım ortaya koymak, izini sürmek",
    "currentBeispiel": "Das Buch zeichnet den Weg der Familie durch drei Länder nach.",
-   "currentBeispielTr": "Kitap ailenin üç ülke boyunca izlediği yolu adım adım ortaya koyuyor."
+   "currentBeispielTr": "Kitap, ailenin üç ülkeden geçen yolunun izini sürüyor."
   },
   {
    "id": 6295,
@@ -446,7 +446,7 @@
    "formen": "hat eingeordnet",
    "currentTr": "bağlamına oturtmak, sınıflandırmak",
    "currentBeispiel": "Ohne Kontext lässt sich die Quelle kaum sinnvoll einordnen.",
-   "currentBeispielTr": "Bağlam olmadan bu kaynağı anlamlı biçimde yerine oturtmak zor."
+   "currentBeispielTr": "Bağlam olmadan bu kaynağı doğru bir yere oturtmak zor."
   },
   {
    "id": 6296,
@@ -456,7 +456,7 @@
    "formen": "hat gesichtet",
    "currentTr": "gözden geçirmek, taramak",
    "currentBeispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
-   "currentBeispielTr": "Yazmaya başlamadan önce aylarca dosyaları gözden geçirdi.",
+   "currentBeispielTr": "Yazmaya başlamadan önce aylarca dosyaları taradı.",
    "overlapping": [
     "revidieren (C1)",
     "durchgehen (A2)"
@@ -483,7 +483,7 @@
    "formen": "hat eingestanden",
    "currentTr": "itiraf etmek, kabullenmek",
    "currentBeispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
-   "currentBeispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabul etti.",
+   "currentBeispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabullendi.",
    "overlapping": [
     "zugeben (B2)",
     "gestehen (A2)"
@@ -517,7 +517,7 @@
    "formen": "hat zensiert",
    "currentTr": "sansürlemek",
    "currentBeispiel": "Ganze Passagen des Berichts wurden nachträglich zensiert.",
-   "currentBeispielTr": "Raporun bütün pasajları sonradan sansürlendi."
+   "currentBeispielTr": "Raporun koca koca bölümleri sonradan sansürlendi."
   },
   {
    "id": 6302,

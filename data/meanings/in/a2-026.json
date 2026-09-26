@@ -20,7 +20,7 @@
    "formen": "rutscht, ist gerutscht",
    "currentTr": "kaymak",
    "currentBeispiel": "Im Winter rutschen die Autos oft auf der Straße.",
-   "currentBeispielTr": "Kışın arabalar sokakta sık sık kayıyor.",
+   "currentBeispielTr": "Kışın arabalar yolda sık sık kayıyor.",
    "overlapping": [
     "abgleiten (C1)"
    ]
@@ -43,7 +43,7 @@
    "formen": "fährt hin, ist hingefahren",
    "currentTr": "oraya gitmek (araçla)",
    "currentBeispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
-   "currentBeispielTr": "Pazar uzak, oraya otobüsle gidiyoruz.",
+   "currentBeispielTr": "Pazar yeri uzak, oraya otobüsle gidiyoruz.",
    "overlapping": [
     "hingehen (A2)"
    ]
@@ -55,8 +55,8 @@
    "niveau": "A2",
    "formen": "fährt zurück, ist zurückgefahren",
    "currentTr": "geri dönmek (araçla)",
-   "currentBeispiel": "Am Sonntag fahre ich nach München zurück.",
-   "currentBeispielTr": "Pazar günü Münih'e geri dönüyorum.",
+   "currentBeispiel": "Wir wollen am Sonntag nach München zurückfahren.",
+   "currentBeispielTr": "Pazar günü Münih'e geri dönmek istiyoruz.",
    "overlapping": [
     "umkehren (A2)"
    ]
@@ -68,8 +68,8 @@
    "niveau": "A2",
    "formen": "fährt weg, ist weggefahren",
    "currentTr": "(araçla) ayrılmak, çekip gitmek",
-   "currentBeispiel": "Der Lkw ist gerade vom Hof weggefahren.",
-   "currentBeispielTr": "Kamyon az önce avludan gitti.",
+   "currentBeispiel": "Nach dem Streit fährt er einfach weg.",
+   "currentBeispielTr": "Kavgadan sonra öylece çekip gidiyor.",
    "overlapping": [
     "sich trennen (B1)",
     "ausscheiden (B2)"
@@ -82,8 +82,8 @@
    "niveau": "A2",
    "formen": "lenkt, hat gelenkt",
    "currentTr": "(aracı) kullanmak, yönlendirmek",
-   "currentBeispiel": "Mein Onkel lenkt den Bus sehr ruhig.",
-   "currentBeispielTr": "Amcam otobüsü çok sakin kullanıyor.",
+   "currentBeispiel": "Sie lenkt das Auto vorsichtig in die Garage.",
+   "currentBeispielTr": "Arabayı dikkatlice garaja yönlendiriyor.",
    "overlapping": [
     "benutzen (A1)",
     "gebrauchen (B1)",
@@ -99,7 +99,7 @@
    "formen": "transportiert, hat transportiert",
    "currentTr": "taşımak, nakletmek",
    "currentBeispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
-   "currentBeispielTr": "Firma mobilyaları yeni daireye taşıyor.",
+   "currentBeispielTr": "Firma mobilyaları yeni eve naklediyor.",
    "overlapping": [
     "tragen (A1)"
    ]
@@ -111,8 +111,8 @@
    "niveau": "A2",
    "formen": "trifft ein, ist eingetroffen",
    "currentTr": "varmak, ulaşmak",
-   "currentBeispiel": "Das Paket ist gestern im Lager eingetroffen.",
-   "currentBeispielTr": "Paket dün depoya ulaştı.",
+   "currentBeispiel": "Das Paket trifft heute im Lager ein.",
+   "currentBeispielTr": "Paket bugün depoya ulaşıyor.",
    "overlapping": [
     "ankommen (A1)"
    ]
@@ -125,7 +125,7 @@
    "formen": "bringt weg, hat weggebracht",
    "currentTr": "götürmek, başka yere götürmek",
    "currentBeispiel": "Ich bringe den Müll schnell weg.",
-   "currentBeispielTr": "Çöpü hızlıca götürüyorum."
+   "currentBeispielTr": "Çöpü hemen götürüyorum."
   },
   {
    "id": 8250,
@@ -134,8 +134,8 @@
    "niveau": "A2",
    "formen": "bringt zurück, hat zurückgebracht",
    "currentTr": "geri götürmek, iade etmek",
-   "currentBeispiel": "Bringst du die Bücher heute in die Bibliothek zurück?",
-   "currentBeispielTr": "Kitapları bugün kütüphaneye geri götürüyor musun?"
+   "currentBeispiel": "Kannst du die Bücher morgen zurückbringen?",
+   "currentBeispielTr": "Kitapları yarın geri götürebilir misin?"
   },
   {
    "id": 8251,
@@ -144,8 +144,8 @@
    "niveau": "A2",
    "formen": "schickt weg, hat weggeschickt",
    "currentTr": "geri çevirmek, başka yere yollamak",
-   "currentBeispiel": "Der Kellner hat den Gast ohne Reservierung weggeschickt.",
-   "currentBeispielTr": "Garson rezervasyonu olmayan misafiri geri çevirdi.",
+   "currentBeispiel": "Der Kellner schickt den Gast einfach weg.",
+   "currentBeispielTr": "Garson misafiri öylece geri çeviriyor.",
    "overlapping": [
     "zurückweisen (B2)"
    ]
@@ -178,7 +178,7 @@
    "formen": "arbeitet zusammen, hat zusammengearbeitet",
    "currentTr": "birlikte çalışmak, iş birliği yapmak",
    "currentBeispiel": "Unser Team arbeitet gut mit der Technik zusammen.",
-   "currentBeispielTr": "Ekibimiz teknik bölümle iyi çalışıyor."
+   "currentBeispielTr": "Ekibimiz teknik ekiple birlikte iyi çalışıyor."
   },
   {
    "id": 8255,
@@ -188,7 +188,7 @@
    "formen": "hilft aus, hat ausgeholfen",
    "currentTr": "geçici olarak yardım etmek, yardıma gitmek",
    "currentBeispiel": "Am Samstag helfe ich im Laden aus.",
-   "currentBeispielTr": "Cumartesi günü dükkânda yardım ediyorum."
+   "currentBeispielTr": "Cumartesi günü dükkâna yardıma gidiyorum."
   },
   {
    "id": 8256,
@@ -273,7 +273,7 @@
    "formen": "stellt auf, hat aufgestellt",
    "currentTr": "yerleştirmek, dizmek",
    "currentBeispiel": "Der Hausmeister stellt die Stühle im Saal auf.",
-   "currentBeispielTr": "Kapıcı sandalyeleri salonda yerleştiriyor.",
+   "currentBeispielTr": "Kapıcı sandalyeleri salonda diziyor.",
    "overlapping": [
     "ansiedeln (C1)",
     "unterbringen (C1)",
@@ -307,8 +307,8 @@
    "niveau": "A2",
    "formen": "fegt, hat gefegt",
    "currentTr": "süpürmek",
-   "currentBeispiel": "Jeden Morgen fegt er den Hof vor dem Laden.",
-   "currentBeispielTr": "Her sabah dükkânın önündeki avluyu süpürüyor."
+   "currentBeispiel": "Er fegt jeden Morgen den Hof.",
+   "currentBeispielTr": "Her sabah avluyu süpürüyor."
   },
   {
    "id": 8267,
@@ -346,7 +346,7 @@
    "formen": "lässt los, hat losgelassen",
    "currentTr": "bırakmak, elinden bırakmak",
    "currentBeispiel": "Lass das Seil bitte nicht los!",
-   "currentBeispielTr": "Lütfen ipi bırakma!",
+   "currentBeispielTr": "Lütfen ipi elinden bırakma!",
    "overlapping": [
     "lassen (A1)",
     "abstellen (B2)"
@@ -359,8 +359,8 @@
    "niveau": "A2",
    "formen": "schleppt, hat geschleppt",
    "currentTr": "sürüklemek, güçlükle taşımak",
-   "currentBeispiel": "Wir schleppen die schweren Koffer in den dritten Stock.",
-   "currentBeispielTr": "Ağır bavulları üçüncü kata taşıyoruz."
+   "currentBeispiel": "Der Hund schleppt den Ast durch den Garten.",
+   "currentBeispielTr": "Köpek dalı bahçede sürüklüyor."
   },
   {
    "id": 8271,
@@ -369,8 +369,8 @@
    "niveau": "A2",
    "formen": "hebt an, hat angehoben",
    "currentTr": "kaldırmak, yükseltmek",
-   "currentBeispiel": "Hebst du den Tisch kurz an, bitte?",
-   "currentBeispielTr": "Masayı kısaca kaldırır mısın, lütfen?",
+   "currentBeispiel": "Hebst du den Tisch bitte kurz an?",
+   "currentBeispielTr": "Masayı bir saniye kaldırır mısın?",
    "overlapping": [
     "aufheben (B1)",
     "heben (B1)",
@@ -419,8 +419,8 @@
    "niveau": "A2",
    "formen": "stellt hin, hat hingestellt",
    "currentTr": "koymak, oraya bırakmak",
-   "currentBeispiel": "Stell die Kiste bitte neben die Tür hin.",
-   "currentBeispielTr": "Kutuyu lütfen kapının yanına koy.",
+   "currentBeispiel": "Stell die Blumen bitte dort hin.",
+   "currentBeispielTr": "Çiçekleri lütfen oraya koy.",
    "overlapping": [
     "legen (A1)",
     "stellen (A1)"
@@ -506,7 +506,7 @@
    "formen": "räumt weg, hat weggeräumt",
    "currentTr": "toplayıp yerine kaldırmak, kaldırmak",
    "currentBeispiel": "Räum bitte die Werkzeuge nach der Arbeit weg.",
-   "currentBeispielTr": "Lütfen işten sonra aletleri kaldır."
+   "currentBeispielTr": "Lütfen işten sonra aletleri toplayıp kaldır."
   },
   {
    "id": 8282,
@@ -546,8 +546,8 @@
    "niveau": "A2",
    "formen": "kippt, hat gekippt",
    "currentTr": "yana yatırmak, devirmek",
-   "currentBeispiel": "Im Büro kippen wir das Fenster für frische Luft.",
-   "currentBeispielTr": "Büroda temiz hava için pencereyi yana yatırıyoruz."
+   "currentBeispiel": "Kipp die Kiste bitte nicht zur Seite!",
+   "currentBeispielTr": "Kutuyu lütfen yana yatırma!"
   },
   {
    "id": 8285,
@@ -556,8 +556,8 @@
    "niveau": "A2",
    "formen": "verringert, hat verringert",
    "currentTr": "azaltmak, düşürmek",
-   "currentBeispiel": "Die Firma verringert die Kosten für Papier.",
-   "currentBeispielTr": "Firma kâğıt masraflarını azaltıyor.",
+   "currentBeispiel": "Der Chef verringert die Kosten für Papier.",
+   "currentBeispielTr": "Patron kâğıt masraflarını azaltıyor.",
    "overlapping": [
     "reduzieren (B1)",
     "schmälern (C1)",
@@ -581,8 +581,8 @@
    "niveau": "A2",
    "formen": "spaziert, ist spaziert",
    "currentTr": "gezinmek, yürüyüş yapmak",
-   "currentBeispiel": "Am Sonntag spazieren wir durch den Park.",
-   "currentBeispielTr": "Pazar günü parkta yürüyüş yapıyoruz.",
+   "currentBeispiel": "Am Nachmittag spazieren wir durch den Park.",
+   "currentBeispielTr": "Öğleden sonra parkta yürüyüş yapıyoruz.",
    "overlapping": [
     "bummeln (A2)"
    ]
@@ -594,8 +594,8 @@
    "niveau": "A2",
    "formen": "betont, hat betont",
    "currentTr": "vurgulamak, altını çizmek",
-   "currentBeispiel": "Der Lehrer betont, dass die Hausaufgabe wichtig ist.",
-   "currentBeispielTr": "Öğretmen ödevin önemli olduğunu vurguluyor.",
+   "currentBeispiel": "Die Chefin betont, dass wir pünktlich sein müssen.",
+   "currentBeispielTr": "Patron dakik olmamız gerektiğini vurguluyor.",
    "overlapping": [
     "hervorheben (C1)",
     "akzentuieren (C1)"
@@ -608,8 +608,8 @@
    "niveau": "A2",
    "formen": "erwähnt, hat erwähnt",
    "currentTr": "bahsetmek, söz etmek",
-   "currentBeispiel": "Sie erwähnt den neuen Termin mit keinem Wort.",
-   "currentBeispielTr": "Yeni randevudan tek kelimeyle bile bahsetmiyor."
+   "currentBeispiel": "Er erwähnt seinen neuen Job nur kurz.",
+   "currentBeispielTr": "Yeni işinden sadece kısaca bahsediyor."
   }
  ]
 }

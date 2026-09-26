@@ -20,7 +20,7 @@
    "formen": "",
    "currentTr": "iyi gelen, rahatlatıcı",
    "currentBeispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend.",
-   "currentBeispielTr": "Uzun bir günün ardından sıcak bir banyo insana iyi gelir."
+   "currentBeispielTr": "Uzun bir günün ardından sıcak bir banyo rahatlatıcı oluyor."
   },
   {
    "id": 4796,
@@ -56,7 +56,7 @@
    "formen": "Kaufverträge",
    "currentTr": "satış sözleşmesi",
    "currentBeispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande.",
-   "currentBeispielTr": "Düğmeye tıklamakla bir satış sözleşmesi kurulmuş olur."
+   "currentBeispielTr": "Düğmeye tıklamakla bir satış sözleşmesi kurulmuş oluyor."
   },
   {
    "id": 4799,
@@ -66,7 +66,7 @@
    "formen": "Widerrufe",
    "currentTr": "cayma, geri alma",
    "currentBeispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
-   "currentBeispielTr": "Cayma bildirimi on dört gün içinde yapılmalıdır."
+   "currentBeispielTr": "Cayma bildirimi on dört gün içinde yapılmalı."
   },
   {
    "id": 4800,
@@ -99,7 +99,7 @@
    "formen": "Preisnachlässe",
    "currentTr": "fiyat indirimi",
    "currentBeispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass.",
-   "currentBeispielTr": "Çizik yüzünden satıcı bize bir fiyat indirimi yaptı."
+   "currentBeispielTr": "Çizik yüzünden satıcı bize fiyat indirimi yaptı."
   },
   {
    "id": 4803,
@@ -109,7 +109,7 @@
    "formen": "Dienstleister",
    "currentTr": "hizmet sağlayıcı",
    "currentBeispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen.",
-   "currentBeispielTr": "Hizmet sağlayıcı, çalışanlarının yol açtığı zararlardan sorumludur."
+   "currentBeispielTr": "Hizmet sağlayıcı, çalışanlarının yol açtığı zararlardan sorumlu."
   },
   {
    "id": 4804,
@@ -129,7 +129,7 @@
    "formen": "Schlichtungsstellen",
    "currentTr": "uzlaştırma kurulu, hakem heyeti",
    "currentBeispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
-   "currentBeispielTr": "Havayoluyla anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı olur."
+   "currentBeispielTr": "Havayolu şirketiyle anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı oluyor."
   },
   {
    "id": 4806,
@@ -138,8 +138,8 @@
    "niveau": "B2",
    "formen": "Verbraucherzentralen",
    "currentTr": "tüketici danışma merkezi",
-   "currentBeispiel": "Die Verbraucherzentrale warnt vor unseriösen Anrufen angeblicher Gewinnspiele.",
-   "currentBeispielTr": "Tüketici danışma merkezi, sözde çekilişlerin şüpheli aramalarına karşı uyarıyor."
+   "currentBeispiel": "Die Verbraucherzentrale hat uns bei diesem Vertrag kostenlos beraten.",
+   "currentBeispielTr": "Tüketici danışma merkezi bu sözleşmede bize ücretsiz danışmanlık verdi."
   },
   {
    "id": 4807,
@@ -149,7 +149,7 @@
    "formen": "Preisvergleiche",
    "currentTr": "fiyat karşılaştırması",
    "currentBeispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
-   "currentBeispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz euro tasarruf ettirir."
+   "currentBeispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz avro kazandırır."
   },
   {
    "id": 4808,
@@ -159,7 +159,7 @@
    "formen": "Versandkosten",
    "currentTr": "kargo ücreti, gönderim masrafı",
    "currentBeispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
-   "currentBeispielTr": "Elli euroluk sipariş tutarından itibaren kargo ücreti alınmıyor."
+   "currentBeispielTr": "Elli avroluk sipariş tutarından itibaren kargo ücreti alınmıyor."
   },
   {
    "id": 4809,
@@ -169,7 +169,7 @@
    "formen": "Gutschriften",
    "currentTr": "alacak kaydı, hesaba geçirme",
    "currentBeispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
-   "currentBeispielTr": "Nakit yerine seksen euroluk bir alacak kaydı aldı."
+   "currentBeispielTr": "Nakit yerine seksen avroluk bir alacak kaydı aldı."
   },
   {
    "id": 4810,
@@ -188,8 +188,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "raf ömrü, dayanıklılık",
-   "currentBeispiel": "Die Haltbarkeit des Produkts steht klein auf der Rückseite.",
-   "currentBeispielTr": "Ürünün raf ömrü arka yüzde küçük harflerle yazıyor."
+   "currentBeispiel": "Die Haltbarkeit der Milch beträgt nur wenige Tage.",
+   "currentBeispielTr": "Sütün raf ömrü sadece birkaç gün."
   },
   {
    "id": 4813,
@@ -199,7 +199,7 @@
    "formen": "",
    "currentTr": "müşteri bağlılığı sağlama",
    "currentBeispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
-   "currentBeispielTr": "İndirim kampanyaları her şeyden önce uzun vadeli müşteri bağlılığına hizmet eder."
+   "currentBeispielTr": "İndirim kampanyalarının asıl amacı uzun vadeli müşteri bağlılığı."
   },
   {
    "id": 4814,
@@ -209,7 +209,7 @@
    "formen": "Tarife",
    "currentTr": "tarife, ücret planı",
    "currentBeispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt.",
-   "currentBeispielTr": "Asgari süresi olmayan daha uygun bir tarifeye geçtik."
+   "currentBeispielTr": "Asgari süresi olmayan daha ucuz bir tarifeye geçtik."
   },
   {
    "id": 4815,
@@ -219,7 +219,7 @@
    "formen": "Grundgebühren",
    "currentTr": "sabit ücret, abonelik bedeli",
    "currentBeispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra.",
-   "currentBeispielTr": "Sabit ücretin yanı sıra her dakika için ayrıca ödeme yapıyorsunuz."
+   "currentBeispielTr": "Sabit ücretin yanında her dakika için ayrıca ödüyorsunuz."
   },
   {
    "id": 4816,
@@ -228,7 +228,7 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "iyi niyet gösterme, esneklik",
-   "currentBeispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenfrei.",
+   "currentBeispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenlos.",
    "currentBeispielTr": "Firma iyi niyet göstererek cihazı yine de ücretsiz onardı."
   },
   {
@@ -239,7 +239,7 @@
    "formen": "",
    "currentTr": "sigorta teminatı",
    "currentBeispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen.",
-   "currentBeispielTr": "Primi ödemezseniz sigorta teminatı sona erer."
+   "currentBeispielTr": "Primi ödemezseniz sigorta teminatınız sona erer."
   },
   {
    "id": 4818,
@@ -258,8 +258,8 @@
    "niveau": "B2",
    "formen": "Ansprechpartner",
    "currentTr": "muhatap, ilgili kişi",
-   "currentBeispiel": "Für Beschwerden ist Frau Krüger die zuständige Ansprechpartnerin.",
-   "currentBeispielTr": "Şikâyetler için yetkili muhatap Bayan Krüger'dir.",
+   "currentBeispiel": "Wer ist bei euch der Ansprechpartner für Reklamationen?",
+   "currentBeispielTr": "Sizde şikâyetler için irtibat kişisi kim?",
    "overlapping": [
     "der Gesprächspartner (B2)"
    ]
@@ -282,7 +282,7 @@
    "formen": "",
    "currentTr": "perakende ticaret",
    "currentBeispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft.",
-   "currentBeispielTr": "Fiziksel perakende ticaret yıllardır çevrim içi satıştan zarar görüyor."
+   "currentBeispielTr": "Fiziksel perakende yıllardır internet satışından zarar görüyor."
   },
   {
    "id": 4822,
@@ -322,7 +322,7 @@
    "formen": "Vertragspartner",
    "currentTr": "sözleşme tarafı",
    "currentBeispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler.",
-   "currentBeispielTr": "Sözleşmedeki karşı taraf üretici değil, satıcıdır."
+   "currentBeispielTr": "Sözleşmedeki karşı tarafınız üretici değil, satıcıdır."
   },
   {
    "id": 4826,
@@ -332,7 +332,7 @@
    "formen": "Rückgaberechte",
    "currentTr": "iade hakkı",
    "currentBeispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware.",
-   "currentBeispielTr": "Mağazada kusursuz ürün için yasal bir iade hakkı yoktur."
+   "currentBeispielTr": "Mağazada kusursuz ürün için yasal bir iade hakkı yok."
   },
   {
    "id": 4827,
@@ -341,8 +341,8 @@
    "niveau": "B2",
    "formen": "Rücktritte",
    "currentTr": "sözleşmeden dönme, vazgeçme",
-   "currentBeispiel": "Der Rücktritt vom Vertrag kostet je nach Zeitpunkt unterschiedlich viel.",
-   "currentBeispielTr": "Sözleşmeden dönmenin bedeli zamanlamaya göre değişiyor."
+   "currentBeispiel": "Der Rücktritt vom Kaufvertrag ist nur bei Mängeln möglich.",
+   "currentBeispielTr": "Satış sözleşmesinden dönmek ancak üründe kusur varsa mümkün."
   },
   {
    "id": 4828,
@@ -389,8 +389,8 @@
    "niveau": "B2",
    "formen": "hat gemahnt",
    "currentTr": "ihtar etmek, uyarı göndermek",
-   "currentBeispiel": "Der Verlag mahnte den Kunden wegen zweier offener Beträge.",
-   "currentBeispielTr": "Yayınevi, ödenmemiş iki tutar için müşteriye ihtar gönderdi.",
+   "currentBeispiel": "Der Verlag hat den Kunden zweimal wegen der Rechnung gemahnt.",
+   "currentBeispielTr": "Yayınevi, fatura için müşteriye iki kez ihtar gönderdi.",
    "overlapping": [
     "anmahnen (B2)"
    ]
@@ -403,7 +403,7 @@
    "formen": "hat abgeraten",
    "currentTr": "vazgeçirmeye çalışmak, tavsiye etmemek",
    "currentBeispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
-   "currentBeispielTr": "Danışman bizi pahalı ek sigortadan vazgeçirmeye çalıştı."
+   "currentBeispielTr": "Danışman bize pahalı ek sigortayı tavsiye etmedi."
   },
   {
    "id": 4833,
@@ -412,8 +412,8 @@
    "niveau": "B2",
    "formen": "hat eingelöst",
    "currentTr": "kullanmak (kupon, çek), bozdurmak, yerine getirmek",
-   "currentBeispiel": "Den Gutschein kann man auch in mehreren Teilbeträgen einlösen.",
-   "currentBeispielTr": "Hediye çeki birden çok kısmi tutarda da kullanılabiliyor."
+   "currentBeispiel": "Kann ich den Gutschein auch online einlösen?",
+   "currentBeispielTr": "Hediye çekini internetten de kullanabilir miyim?"
   },
   {
    "id": 4834,
@@ -422,8 +422,8 @@
    "niveau": "B2",
    "formen": "hat verpflichtet",
    "currentTr": "yükümlü kılmak, zorunda bırakmak",
-   "currentBeispiel": "Das Gesetz verpflichtet Händler zu einer verständlichen Preisauszeichnung.",
-   "currentBeispielTr": "Yasa, satıcıları anlaşılır fiyat etiketlemesine yükümlü kılıyor."
+   "currentBeispiel": "Das Gesetz verpflichtet Händler zu klaren Preisangaben.",
+   "currentBeispielTr": "Yasa, satıcıları açık fiyat bilgisi vermeye yükümlü kılıyor."
   },
   {
    "id": 4835,
@@ -433,7 +433,7 @@
    "formen": "hat getäuscht",
    "currentTr": "aldatmak, yanıltmak",
    "currentBeispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer.",
-   "currentBeispielTr": "Yarısı boş ambalajla üretici alıcıları aldatıyor.",
+   "currentBeispielTr": "Yarı boş ambalajla üretici alıcıları aldatıyor.",
    "overlapping": [
     "betrügen (B1)"
    ]
@@ -466,7 +466,7 @@
    "formen": "hat zugesichert",
    "currentTr": "taahhüt etmek, güvence vermek",
    "currentBeispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
-   "currentBeispielTr": "Satıcı bize üç gün içinde teslimat sözü vermişti."
+   "currentBeispielTr": "Satıcı bize üç gün içinde teslimat taahhüt etmişti."
   },
   {
    "id": 4839,
@@ -476,7 +476,7 @@
    "formen": "hat abgerechnet",
    "currentTr": "faturalandırmak, hesabını çıkarmak",
    "currentBeispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
-   "currentBeispielTr": "Danışmanlık götürü değil, saat başına faturalandırılıyor."
+   "currentBeispielTr": "Danışmanlık götürü değil, saat üzerinden faturalandırılıyor."
   },
   {
    "id": 4840,
@@ -512,7 +512,7 @@
    "formen": "",
    "currentTr": "ücretli, ücrete tabi",
    "currentBeispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
-   "currentBeispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli hale geliyor."
+   "currentBeispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli oluyor."
   },
   {
    "id": 4843,
@@ -521,8 +521,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "bağlayıcı olmayan, taahhütsüz",
-   "currentBeispiel": "Lassen Sie sich zunächst unverbindlich ein Angebot erstellen.",
-   "currentBeispielTr": "Önce hiçbir taahhüde girmeden bir teklif hazırlatın."
+   "currentBeispiel": "Das Angebot ist völlig unverbindlich und kostet nichts.",
+   "currentBeispielTr": "Teklif tamamen bağlayıcı değil ve hiçbir ücreti yok."
   },
   {
    "id": 4844,
@@ -531,8 +531,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yanıltıcı",
-   "currentBeispiel": "Das Gericht hielt die Bezeichnung für irreführend und verbot sie.",
-   "currentBeispielTr": "Mahkeme bu adlandırmayı yanıltıcı buldu ve yasakladı."
+   "currentBeispiel": "Das Gericht hielt die Werbung für irreführend und verbot sie.",
+   "currentBeispielTr": "Mahkeme reklamı yanıltıcı buldu ve yasakladı."
   }
  ]
 }

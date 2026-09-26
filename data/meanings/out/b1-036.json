@@ -11,9 +11,9 @@
     "id": 2626,
     "tr": "boşanmak",
     "en": "to get divorced",
-    "beispiel": "Meine Nachbarn haben sich letztes Jahr scheiden lassen.",
-    "beispielTr": "Komşularım geçen yıl boşandı.",
-    "beispielEn": "My neighbors got divorced last year."
+    "beispiel": "Nach zwanzig Jahren Ehe wollen sie sich scheiden lassen.",
+    "beispielTr": "Yirmi yıllık evlilikten sonra boşanmak istiyorlar.",
+    "beispielEn": "After twenty years of marriage, they want to get divorced."
   },
   {
     "id": 2658,
@@ -51,9 +51,9 @@
     "id": 2681,
     "tr": "küçük ekmek",
     "en": "Austrian word for bread roll",
-    "beispiel": "Ich hole schnell ein paar Semmeln zum Frühstück.",
-    "beispielTr": "Kahvaltı için hemen birkaç küçük ekmek alıyorum.",
-    "beispielEn": "I'll quickly get a few rolls for breakfast."
+    "beispiel": "Beim Bäcker sind die Semmeln schon ausverkauft.",
+    "beispielTr": "Fırında küçük ekmekler çoktan tükenmiş.",
+    "beispielEn": "The bakery has already sold out of rolls."
   },
   {
     "id": 2687,
@@ -67,17 +67,17 @@
     "id": 2706,
     "tr": "sözde",
     "en": "so-called",
-    "beispiel": "Wo bleiben denn deine sogenannten Freunde?",
-    "beispielTr": "Peki senin şu sözde arkadaşların nerede kaldı?",
-    "beispielEn": "So where are those so-called friends of yours?"
+    "beispiel": "Der sogenannte Experte wusste gar nichts.",
+    "beispielTr": "Sözde uzman hiçbir şey bilmiyordu.",
+    "beispielEn": "The so-called expert didn't know anything."
   },
   {
     "id": 2708,
     "tr": "böyle",
     "en": "such",
-    "beispiel": "Solche Schuhe finde ich toll.",
-    "beispielTr": "Böyle ayakkabıları çok beğeniyorum.",
-    "beispielEn": "I really like shoes like these."
+    "beispiel": "Solche Fehler passieren sogar Profis.",
+    "beispielTr": "Böyle hatalar profesyonellerin bile başına gelir.",
+    "beispielEn": "Mistakes like that happen even to professionals."
   },
   {
     "id": 2709,
@@ -99,9 +99,9 @@
     "id": 2718,
     "tr": "hem … hem de",
     "en": "both … and",
-    "beispiel": "Sowohl Sie als auch Ihre Frau müssen unterschreiben.",
-    "beispielTr": "Hem sizin hem de eşinizin imzalaması gerekiyor.",
-    "beispielEn": "Both you and your wife have to sign."
+    "beispiel": "Das Hotel ist sowohl für Familien als auch für Paare geeignet.",
+    "beispielTr": "Otel hem aileler hem de çiftler için uygun.",
+    "beispielEn": "The hotel is suitable for both families and couples."
   },
   {
     "id": 2723,
@@ -115,17 +115,17 @@
     "id": 2736,
     "tr": "ikinci dil",
     "en": "second language",
-    "beispiel": "Deutsch ist seine Zweitsprache.",
-    "beispielTr": "Almanca onun ikinci dili.",
-    "beispielEn": "German is his second language."
+    "beispiel": "Viele Kinder hier lernen Englisch als Zweitsprache.",
+    "beispielTr": "Buradaki birçok çocuk İngilizceyi ikinci dil olarak öğreniyor.",
+    "beispielEn": "Many children here learn English as a second language."
   },
   {
     "id": 2743,
     "tr": "belediyeye ait",
     "en": "municipal",
-    "beispiel": "Ich gehe gern in die städtische Bibliothek.",
-    "beispielTr": "Belediye kütüphanesine gitmeyi seviyorum.",
-    "beispielEn": "I like going to the municipal library."
+    "beispiel": "Das städtische Schwimmbad wird im Sommer renoviert.",
+    "beispielTr": "Belediye yüzme havuzu yazın yenileniyor.",
+    "beispielEn": "The municipal swimming pool is being renovated this summer."
   },
   {
     "id": 2760,
@@ -139,17 +139,17 @@
     "id": 2771,
     "tr": "üslup açısından",
     "en": "stylistically",
-    "beispiel": "Der Text ist stilistisch sehr schön.",
-    "beispielTr": "Metin üslup açısından çok güzel.",
-    "beispielEn": "The text is stylistically very nice."
+    "beispiel": "Stilistisch ist dein Aufsatz gut, aber es fehlen Argumente.",
+    "beispielTr": "Kompozisyonun üslup açısından iyi ama argümanlar eksik.",
+    "beispielEn": "Stylistically your essay is good, but it lacks arguments."
   },
   {
     "id": 2773,
     "tr": "merdiven",
     "en": "Austrian word for staircase",
-    "beispiel": "Meine Oma kann nicht mehr gut Stiegen steigen.",
-    "beispielTr": "Babaannem artık merdiven çıkmakta zorlanıyor.",
-    "beispielEn": "My grandma can't climb stairs well anymore."
+    "beispiel": "Im Altbau gibt es keinen Lift, nur eine enge Stiege.",
+    "beispielTr": "Eski binada asansör yok, sadece dar bir merdiven var.",
+    "beispielEn": "The old building has no elevator, just a narrow staircase."
   },
   {
     "id": 2774,
@@ -179,33 +179,33 @@
     "id": 2808,
     "tr": "bağımlılık yapan madde",
     "en": "addictive substance",
-    "beispiel": "Manche Medikamente sind auch Suchtmittel.",
-    "beispielTr": "Bazı ilaçlar aynı zamanda bağımlılık yapan maddelerdir.",
-    "beispielEn": "Some medications are addictive substances too."
+    "beispiel": "Auch Alkohol und Nikotin gelten als Suchtmittel.",
+    "beispielTr": "Alkol ve nikotin de bağımlılık yapan madde sayılır.",
+    "beispielEn": "Alcohol and nicotine are also considered addictive substances."
   },
   {
     "id": 2835,
     "tr": "çayı demlenmeye bırakmak",
     "en": "to let tea steep",
-    "beispiel": "Diesen Tee sollte man zehn Minuten ziehen lassen.",
-    "beispielTr": "Bu çayı on dakika demlenmeye bırakmak gerekir.",
-    "beispielEn": "You should let this tea steep for ten minutes."
+    "beispiel": "Lass den Tee noch drei Minuten ziehen, dann schmeckt er besser.",
+    "beispielTr": "Çayı üç dakika daha demlenmeye bırak, sonra daha güzel olur.",
+    "beispielEn": "Let the tea steep for three more minutes, then it tastes better."
   },
   {
     "id": 2850,
     "tr": "hayvan parkı",
     "en": "animal park",
-    "beispiel": "Wollen wir am Samstag mit den Kindern in den Tierpark gehen?",
-    "beispielTr": "Cumartesi çocuklarla hayvanat bahçesine gidelim mi?",
-    "beispielEn": "Shall we go to the animal park with the kids on Saturday?"
+    "beispiel": "Im Tierpark haben die Kinder zum ersten Mal Elche gesehen.",
+    "beispielTr": "Çocuklar hayvan parkında ilk kez geyik gördü.",
+    "beispielEn": "At the animal park the kids saw moose for the first time."
   },
   {
     "id": 2863,
     "tr": "tramvay",
     "en": "Swiss word for tram",
-    "beispiel": "Fahren wir mit dem Tram oder mit dem Bus?",
-    "beispielTr": "Tramvayla mı gidelim yoksa otobüsle mi?",
-    "beispielEn": "Shall we take the tram or the bus?"
+    "beispiel": "Das Tram zum Bahnhof fährt alle zehn Minuten.",
+    "beispielTr": "Gara giden tramvay on dakikada bir geçiyor.",
+    "beispielEn": "The tram to the station runs every ten minutes."
   },
   {
     "id": 2871,
@@ -267,9 +267,9 @@
     "id": 2953,
     "tr": "bisiklet",
     "en": "Swiss word for bicycle",
-    "beispiel": "Sie fährt jeden Morgen mit dem Velo zur Arbeit.",
-    "beispielTr": "Her sabah işe bisikletle gidiyor.",
-    "beispielEn": "She rides her bike to work every morning."
+    "beispiel": "Mein Velo hat schon wieder einen platten Reifen.",
+    "beispielTr": "Bisikletimin lastiği yine patladı.",
+    "beispielEn": "My bike has a flat tire again."
   },
   {
     "id": 2999,
@@ -291,25 +291,25 @@
     "id": 3039,
     "tr": "sanal",
     "en": "virtual",
-    "beispiel": "Auf dieser Website kann man an einer virtuellen Stadtrundfahrt teilnehmen.",
-    "beispielTr": "Bu web sitesinde sanal bir şehir turuna katılabilirsiniz.",
-    "beispielEn": "On this website you can take a virtual city tour."
+    "beispiel": "Mit dieser Brille kann man durch virtuelle Welten laufen.",
+    "beispielTr": "Bu gözlükle sanal dünyalarda dolaşabiliyorsun.",
+    "beispielEn": "With these glasses you can walk through virtual worlds."
   },
   {
     "id": 3048,
     "tr": "özellikle",
     "en": "above all",
-    "beispiel": "Grüßen Sie alle von mir, vor allem Frau Meier.",
-    "beispielTr": "Herkese benden selam söyleyin, özellikle Bayan Meier'e.",
-    "beispielEn": "Say hello to everyone from me, above all to Mrs. Meier."
+    "beispiel": "Ich esse gern Obst, vor allem Erdbeeren.",
+    "beispielTr": "Meyve yemeyi severim, özellikle çilek.",
+    "beispielEn": "I like eating fruit, above all strawberries."
   },
   {
     "id": 3055,
     "tr": "ön",
     "en": "front",
-    "beispiel": "In den vorderen Reihen sind noch Plätze frei.",
-    "beispielTr": "Ön sıralarda hâlâ boş yer var.",
-    "beispielEn": "There are still free seats in the front rows."
+    "beispiel": "Im Kino sitzen wir am liebsten in den vorderen Reihen.",
+    "beispielTr": "Sinemada en çok ön sıralarda oturmayı seviyoruz.",
+    "beispielEn": "At the movies we like sitting in the front rows best."
   },
   {
     "id": 3084,
@@ -331,33 +331,33 @@
     "id": 3110,
     "tr": "kaç tane",
     "en": "how many",
-    "beispiel": "Wie viele Kinder haben Sie?",
-    "beispielTr": "Kaç çocuğunuz var?",
-    "beispielEn": "How many children do you have?"
+    "beispiel": "Wie viele Leute kommen zu deiner Party?",
+    "beispielTr": "Partine kaç kişi geliyor?",
+    "beispielEn": "How many people are coming to your party?"
   },
   {
     "id": 3137,
     "tr": "diş macunu",
     "en": "toothpaste",
-    "beispiel": "Die neue Zahncreme riecht sehr gut.",
-    "beispielTr": "Yeni diş macunu çok güzel kokuyor.",
-    "beispielEn": "The new toothpaste smells really nice."
+    "beispiel": "Die Zahncreme ist fast leer, kauf bitte eine neue.",
+    "beispielTr": "Diş macunu bitmek üzere, lütfen yenisini al.",
+    "beispielEn": "The toothpaste is almost empty, please buy a new one."
   },
   {
     "id": 3140,
     "tr": "trafik işareti",
     "en": "traffic sign",
-    "beispiel": "Meine Kinder lernen in der Schule die Verkehrszeichen.",
-    "beispielTr": "Çocuklarım okulda trafik işaretlerini öğreniyor.",
-    "beispielEn": "My children are learning the traffic signs at school."
+    "beispiel": "Das dreieckige Verkehrszeichen warnt vor spielenden Kindern.",
+    "beispielTr": "Üçgen trafik işareti oyun oynayan çocuklara karşı uyarıyor.",
+    "beispielEn": "The triangular traffic sign warns of children playing."
   },
   {
     "id": 3154,
     "tr": "medeni hâl",
     "en": "Swiss word for marital status",
-    "beispiel": "Beim Zivilstand musst du hier „ledig“ ankreuzen.",
-    "beispielTr": "Medeni hâl kısmında „bekâr“ seçeneğini işaretlemelisin.",
-    "beispielEn": "For marital status you have to check the single box here."
+    "beispiel": "Im Formular muss man auch den Zivilstand angeben.",
+    "beispielTr": "Formda medeni hâli de belirtmek gerekiyor.",
+    "beispielEn": "On the form you also have to state your marital status."
   },
   {
     "id": 3168,

@@ -3,33 +3,33 @@
     "id": 337,
     "tr": "isim",
     "en": "name",
-    "beispiel": "Mein Name ist Peter Niemöller.",
-    "beispielTr": "Adım Peter Niemöller.",
-    "beispielEn": "My name is Peter Niemöller."
+    "beispiel": "Schreib bitte deinen Namen oben auf das Blatt.",
+    "beispielTr": "Lütfen adını kâğıdın üstüne yaz.",
+    "beispielEn": "Please write your name at the top of the sheet."
   },
   {
     "id": 283,
     "tr": "kısa",
     "en": "short",
-    "beispiel": "Seine Haare sind kurz.",
-    "beispielTr": "Saçları kısa.",
-    "beispielEn": "His hair is short."
+    "beispiel": "Die Pause ist heute leider sehr kurz.",
+    "beispielTr": "Teneffüs bugün maalesef çok kısa.",
+    "beispielEn": "Unfortunately, the break is really short today."
   },
   {
     "id": 434,
     "tr": "aramak",
     "en": "to look for",
-    "beispiel": "Ich suche meinen Kugelschreiber.",
-    "beispielTr": "Tükenmez kalemimi arıyorum.",
-    "beispielEn": "I'm looking for my pen."
+    "beispiel": "Die Polizei sucht einen braunen Hund.",
+    "beispielTr": "Polis kahverengi bir köpek arıyor.",
+    "beispielEn": "The police are looking for a brown dog."
   },
   {
     "id": 510,
     "tr": "nereden",
     "en": "where from",
-    "beispiel": "Woher kommt der Zug?",
-    "beispielTr": "Tren nereden geliyor?",
-    "beispielEn": "Where does the train come from?"
+    "beispiel": "Woher hast du diese schöne Lampe?",
+    "beispielTr": "Bu güzel lambayı nereden buldun?",
+    "beispielEn": "Where did you get this nice lamp?"
   },
   {
     "id": 287,
@@ -43,41 +43,41 @@
     "id": 695,
     "tr": "iş",
     "en": "job",
-    "beispiel": "Jenny hat einen neuen Job bei der Post.",
-    "beispielTr": "Jenny'nin postanede yeni bir işi var.",
-    "beispielEn": "Jenny has a new job at the post office."
+    "beispiel": "Mein Bruder sucht einen Job in einem Restaurant.",
+    "beispielTr": "Ağabeyim bir restoranda iş arıyor.",
+    "beispielEn": "My brother is looking for a job at a restaurant."
   },
   {
     "id": 474,
     "tr": "anlamak",
     "en": "to understand",
-    "beispiel": "Ich verstehe dich nicht.",
-    "beispielTr": "Seni anlamıyorum.",
-    "beispielEn": "I don't understand you."
+    "beispiel": "Der Mechaniker spricht zu schnell, ich verstehe nichts.",
+    "beispielTr": "Tamirci çok hızlı konuşuyor, hiçbir şey anlamıyorum.",
+    "beispielEn": "The mechanic is talking too fast, I don't understand anything."
   },
   {
     "id": 425,
     "tr": "oynamak",
     "en": "to play",
-    "beispiel": "Willst du mit uns spielen?",
-    "beispielTr": "Bizimle oynamak ister misin?",
-    "beispielEn": "Do you want to play with us?"
+    "beispiel": "Mein Opa spielt jeden Abend Schach mit mir.",
+    "beispielTr": "Dedem her akşam benimle satranç oynuyor.",
+    "beispielEn": "My grandpa plays chess with me every evening."
   },
   {
     "id": 681,
     "tr": "el",
     "en": "hand",
-    "beispiel": "Er gibt mir die Hand.",
-    "beispielTr": "Bana elini uzatıyor.",
-    "beispielEn": "He shakes my hand."
+    "beispiel": "Meine Hand tut nach dem Tennis weh.",
+    "beispielTr": "Tenisten sonra elim ağrıyor.",
+    "beispielEn": "My hand hurts after tennis."
   },
   {
     "id": 739,
     "tr": "yukarıda",
     "en": "above; up there",
-    "beispiel": "Ich wohne oben im vierten Stock.",
-    "beispielTr": "Yukarıda, dördüncü katta oturuyorum.",
-    "beispielEn": "I live upstairs on the fourth floor."
+    "beispiel": "Die Teller stehen oben im Regal.",
+    "beispielTr": "Tabaklar yukarıda, rafta duruyor.",
+    "beispielEn": "The plates are up on the shelf."
   },
   {
     "id": 194,
@@ -123,33 +123,33 @@
     "id": 496,
     "tr": "az",
     "en": "little",
-    "beispiel": "Ich habe heute wenig Zeit.",
-    "beispielTr": "Bugün az vaktim var.",
-    "beispielEn": "I have little time today."
+    "beispiel": "Im Dezember haben wir wenig Sonne.",
+    "beispielTr": "Aralıkta az güneş görüyoruz.",
+    "beispielEn": "We get little sun in December."
   },
   {
     "id": 690,
     "tr": "gidip getirmek",
     "en": "to fetch",
-    "beispiel": "Ich hole zwei Flaschen Wasser aus der Küche.",
-    "beispielTr": "Mutfaktan iki şişe su getiriyorum.",
-    "beispielEn": "I'm getting two bottles of water from the kitchen."
+    "beispiel": "Kannst du bitte die Kinder von der Schule holen?",
+    "beispielTr": "Çocukları okuldan alabilir misin lütfen?",
+    "beispielEn": "Can you pick the kids up from school, please?"
   },
   {
     "id": 340,
     "tr": "cana yakın",
     "en": "nice",
-    "beispiel": "Unsere neue Nachbarin ist sehr nett.",
-    "beispielTr": "Yeni komşumuz çok hoş biri.",
-    "beispielEn": "Our new neighbor is very nice."
+    "beispiel": "Die Verkäuferin in der Bäckerei ist immer nett.",
+    "beispielTr": "Fırındaki satış görevlisi hep cana yakın.",
+    "beispielEn": "The saleswoman at the bakery is always nice."
   },
   {
     "id": 103,
     "tr": "bu yüzden",
     "en": "that's why",
-    "beispiel": "Ich muss lernen, deshalb bleibe ich zu Hause.",
-    "beispielTr": "Ders çalışmam lazım, bu yüzden evde kalıyorum.",
-    "beispielEn": "I have to study, that's why I'm staying home."
+    "beispiel": "Ich bin sehr müde, deshalb gehe ich früh schlafen.",
+    "beispielTr": "Çok yorgunum, bu yüzden erken yatıyorum.",
+    "beispielEn": "I'm very tired, so I'm going to bed early."
   },
   {
     "id": 689,
@@ -163,57 +163,57 @@
     "id": 13,
     "tr": "yaş",
     "en": "age",
-    "beispiel": "Wir sind fast im gleichen Alter.",
-    "beispielTr": "Neredeyse aynı yaştayız.",
-    "beispielEn": "We're almost the same age."
+    "beispiel": "In deinem Alter habe ich viel Fußball gespielt.",
+    "beispielTr": "Senin yaşındayken çok futbol oynadım.",
+    "beispielEn": "At your age, I played a lot of soccer."
   },
   {
     "id": 286,
     "tr": "ülke",
     "en": "country",
-    "beispiel": "Österreich ist ein kleines Land.",
-    "beispielTr": "Avusturya küçük bir ülke.",
-    "beispielEn": "Austria is a small country."
+    "beispiel": "Mein Onkel hat schon in vielen Ländern gearbeitet.",
+    "beispielTr": "Amcam daha önce birçok ülkede çalıştı.",
+    "beispielEn": "My uncle has already worked in many countries."
   },
   {
     "id": 524,
     "tr": "oda",
     "en": "room",
-    "beispiel": "Mein Zimmer ist sehr klein.",
-    "beispielTr": "Odam çok küçük.",
-    "beispielEn": "My room is very small."
+    "beispiel": "Das Zimmer von meiner Schwester ist immer ordentlich.",
+    "beispielTr": "Kız kardeşimin odası hep derli toplu.",
+    "beispielEn": "My sister's room is always neat."
   },
   {
     "id": 180,
     "tr": "hoşuna gitmek",
     "en": "to like",
-    "beispiel": "Das gefällt mir nicht.",
-    "beispielTr": "Bu hoşuma gitmiyor.",
-    "beispielEn": "I don't like that."
+    "beispiel": "Gefällt dir mein neuer Haarschnitt?",
+    "beispielTr": "Yeni saç kesimimi beğendin mi?",
+    "beispielEn": "Do you like my new haircut?"
   },
   {
     "id": 420,
     "tr": "eğlence",
     "en": "fun",
-    "beispiel": "Wir haben immer viel Spaß zusammen.",
-    "beispielTr": "Birlikte hep çok eğleniriz.",
-    "beispielEn": "We always have a lot of fun together."
+    "beispiel": "Beim Kochen mit Freunden habe ich immer Spaß.",
+    "beispielTr": "Arkadaşlarla yemek yaparken hep eğlenirim.",
+    "beispielEn": "I always have fun cooking with friends."
   },
   {
     "id": 521,
     "tr": "göstermek",
     "en": "to show",
-    "beispiel": "Zeigst du mir deinen Computer?",
-    "beispielTr": "Bana bilgisayarını gösterir misin?",
-    "beispielEn": "Will you show me your computer?"
+    "beispiel": "Lena zeigt uns die Fotos von ihrer Reise.",
+    "beispielTr": "Lena bize gezisinin fotoğraflarını gösteriyor.",
+    "beispielEn": "Lena is showing us the photos from her trip."
   },
   {
     "id": 72,
     "tr": "en iyi",
     "en": "best",
-    "beispiel": "Sie ist meine beste Freundin.",
-    "beispielTr": "O benim en iyi arkadaşım.",
-    "beispielEn": "She is my best friend."
+    "beispiel": "Das ist die beste Pizza in der Stadt.",
+    "beispielTr": "Bu, şehrin en iyi pizzası.",
+    "beispielEn": "This is the best pizza in town."
   },
   {
     "id": 745,
@@ -227,9 +227,9 @@
     "id": 312,
     "tr": "bazen",
     "en": "sometimes",
-    "beispiel": "Ich bin manchmal sehr traurig.",
-    "beispielTr": "Bazen çok üzgün oluyorum.",
-    "beispielEn": "Sometimes I feel very sad."
+    "beispiel": "Manchmal vergisst Tom seine Hausaufgaben.",
+    "beispielTr": "Tom bazen ödevlerini unutuyor.",
+    "beispielEn": "Sometimes Tom forgets his homework."
   },
   {
     "id": 414,
@@ -243,17 +243,17 @@
     "id": 858,
     "tr": "arasında",
     "en": "between",
-    "beispiel": "Heidelberg liegt zwischen Frankfurt und Stuttgart.",
-    "beispielTr": "Heidelberg, Frankfurt ile Stuttgart arasında.",
-    "beispielEn": "Heidelberg is between Frankfurt and Stuttgart."
+    "beispiel": "Die Apotheke ist zwischen der Bank und dem Café.",
+    "beispielTr": "Eczane, bankayla kafenin arasında.",
+    "beispielEn": "The pharmacy is between the bank and the café."
   },
   {
     "id": 424,
     "tr": "oyun",
     "en": "game",
-    "beispiel": "Ich kenne ein neues Spiel.",
-    "beispielTr": "Yeni bir oyun biliyorum.",
-    "beispielEn": "I know a new game."
+    "beispiel": "Das Spiel dauert ungefähr eine halbe Stunde.",
+    "beispielTr": "Oyun yaklaşık yarım saat sürüyor.",
+    "beispielEn": "The game takes about half an hour."
   },
   {
     "id": 167,
@@ -267,9 +267,9 @@
     "id": 132,
     "tr": "anlatmak",
     "en": "to tell",
-    "beispiel": "Kannst du die Geschichte erzählen?",
-    "beispielTr": "Hikâyeyi anlatabilir misin?",
-    "beispielEn": "Can you tell the story?"
+    "beispiel": "Opa erzählt gern von seiner Jugend.",
+    "beispielTr": "Dedem gençliğini anlatmayı seviyor.",
+    "beispielEn": "Grandpa likes to talk about his youth."
   },
   {
     "id": 127,
@@ -283,33 +283,33 @@
     "id": 499,
     "tr": "önemli",
     "en": "important",
-    "beispiel": "Morgen habe ich einen wichtigen Termin.",
-    "beispielTr": "Yarın önemli bir randevum var.",
-    "beispielEn": "I have an important appointment tomorrow."
+    "beispiel": "Für Kinder ist genug Schlaf sehr wichtig.",
+    "beispielTr": "Çocuklar için yeterli uyku çok önemli.",
+    "beispielEn": "Enough sleep is very important for kids."
   },
   {
     "id": 74,
     "tr": "yatak",
     "en": "bed",
-    "beispiel": "Wann gehst du ins Bett?",
-    "beispielTr": "Ne zaman yatıyorsun?",
-    "beispielEn": "When do you go to bed?"
+    "beispiel": "Mein Bett ist zu klein für mich.",
+    "beispielTr": "Yatağım bana küçük geliyor.",
+    "beispielEn": "My bed is too small for me."
   },
   {
     "id": 399,
     "tr": "kötü",
     "en": "bad",
-    "beispiel": "Das Wetter ist heute sehr schlecht.",
-    "beispielTr": "Bugün hava çok kötü.",
-    "beispielEn": "The weather is very bad today."
+    "beispiel": "Der Kaffee im Zug schmeckt ziemlich schlecht.",
+    "beispielTr": "Trendeki kahvenin tadı epey kötü.",
+    "beispielEn": "The coffee on the train tastes pretty bad."
   },
   {
     "id": 786,
     "tr": "okul",
     "en": "school",
-    "beispiel": "Meine Tochter geht schon in die Schule.",
-    "beispielTr": "Kızım artık okula gidiyor.",
-    "beispielEn": "My daughter already goes to school."
+    "beispiel": "Nach der Schule spielt Tim gern Fußball.",
+    "beispielTr": "Tim okuldan sonra futbol oynamayı seviyor.",
+    "beispielEn": "Tim likes playing soccer after school."
   },
   {
     "id": 128,
@@ -323,25 +323,25 @@
     "id": 516,
     "tr": "kelime",
     "en": "word",
-    "beispiel": "Wie viele Wörter hat dein Brief?",
-    "beispielTr": "Mektubun kaç kelime?",
-    "beispielEn": "How many words does your letter have?"
+    "beispiel": "Dieses Wort ist sehr lang und schwer.",
+    "beispielTr": "Bu kelime çok uzun ve zor.",
+    "beispielEn": "This word is very long and hard."
   },
   {
     "id": 398,
     "tr": "uyumak",
     "en": "to sleep",
-    "beispiel": "Wo kann ich schlafen?",
-    "beispielTr": "Nerede uyuyabilirim?",
-    "beispielEn": "Where can I sleep?"
+    "beispiel": "Unser Baby schläft endlich die ganze Nacht.",
+    "beispielTr": "Bebeğimiz sonunda bütün gece uyuyor.",
+    "beispielEn": "Our baby finally sleeps through the night."
   },
   {
     "id": 137,
     "tr": "sizin",
     "en": "your",
-    "beispiel": "Ist das euer Hund?",
-    "beispielTr": "Bu sizin köpeğiniz mi?",
-    "beispielEn": "Is that your dog?"
+    "beispiel": "Euer Garten ist wirklich schön.",
+    "beispielTr": "Sizin bahçeniz gerçekten güzel.",
+    "beispielEn": "Your garden is really beautiful."
   },
   {
     "id": 827,
@@ -355,41 +355,41 @@
     "id": 810,
     "tr": "kısım",
     "en": "part",
-    "beispiel": "Lies bitte auch den zweiten Teil.",
-    "beispielTr": "Lütfen ikinci kısmı da oku.",
-    "beispielEn": "Please read the second part too."
+    "beispiel": "Den ersten Teil vom Buch finde ich langweilig.",
+    "beispielTr": "Kitabın ilk kısmını sıkıcı buluyorum.",
+    "beispielEn": "I find the first part of the book boring."
   },
   {
     "id": 729,
     "tr": "insan",
     "en": "human",
-    "beispiel": "Die Menschen sind hier anders als bei uns.",
-    "beispielTr": "Buradaki insanlar bizim oradakilerden farklı.",
-    "beispielEn": "The people here are different from back home."
+    "beispiel": "In der Stadt wohnen über eine Million Menschen.",
+    "beispielTr": "Şehirde bir milyondan fazla insan yaşıyor.",
+    "beispielEn": "More than a million people live in the city."
   },
   {
     "id": 802,
     "tr": "koymak",
     "en": "to put",
-    "beispiel": "Stell die Tasche bitte in die Ecke!",
-    "beispielTr": "Çantayı lütfen köşeye koy!",
-    "beispielEn": "Please put the bag in the corner!"
+    "beispiel": "Ich stelle die Blumen auf den Tisch.",
+    "beispielTr": "Çiçekleri masaya koyuyorum.",
+    "beispielEn": "I'm putting the flowers on the table."
   },
   {
     "id": 354,
     "tr": "sık sık",
     "en": "often",
-    "beispiel": "Wir gehen oft im Park spazieren.",
-    "beispielTr": "Sık sık parkta yürüyüş yaparız.",
-    "beispielEn": "We often go for a walk in the park."
+    "beispiel": "Meine Schwester ruft mich oft am Abend an.",
+    "beispielTr": "Kız kardeşim akşamları beni sık sık arar.",
+    "beispielEn": "My sister often calls me in the evening."
   },
   {
     "id": 457,
     "tr": "içmek",
     "en": "to drink",
-    "beispiel": "Wir trinken gern Saft.",
-    "beispielTr": "Meyve suyu içmeyi severiz.",
-    "beispielEn": "We like drinking juice."
+    "beispiel": "Im Sommer trinkt mein Sohn viel Wasser.",
+    "beispielTr": "Oğlum yazın çok su içer.",
+    "beispielEn": "My son drinks a lot of water in the summer."
   },
   {
     "id": 704,

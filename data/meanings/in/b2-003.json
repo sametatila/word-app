@@ -10,7 +10,7 @@
    "formen": "die Vorspeisen",
    "currentTr": "ordövr, ön yemek",
    "currentBeispiel": "Als Vorspeise nehme ich heute einen Salat.",
-   "currentBeispielTr": "Başlangıç olarak bugün salata alacağım."
+   "currentBeispielTr": "Bugün başlangıç olarak salata alacağım."
   },
   {
    "id": 3422,
@@ -40,7 +40,7 @@
    "formen": "",
    "currentTr": "değişim, dönüşüm",
    "currentBeispiel": "Der gesellschaftliche Wandel verläuft rasant.",
-   "currentBeispielTr": "Toplumsal dönüşüm baş döndürücü bir hızla ilerliyor."
+   "currentBeispielTr": "Toplumsal değişim baş döndürücü bir hızla ilerliyor."
   },
   {
    "id": 3196,
@@ -70,7 +70,7 @@
    "formen": "",
    "currentTr": "saygılı, düşünceli",
    "currentBeispiel": "Sein rücksichtsvolles Verhalten wurde von allen geschätzt.",
-   "currentBeispielTr": "Düşünceli davranışları herkes tarafından takdir edildi.",
+   "currentBeispielTr": "Düşünceli davranışı herkes tarafından takdir edildi.",
    "overlapping": [
     "respektvoll (A2)"
    ]
@@ -83,7 +83,7 @@
    "formen": "",
    "currentTr": "çekingen, mesafeli",
    "currentBeispiel": "Bei Fremden verhält er sich eher zurückhaltend.",
-   "currentBeispielTr": "Yabancıların yanında daha çok çekingen davranır.",
+   "currentBeispielTr": "Yabancıların yanında biraz çekingen davranır.",
    "overlapping": [
     "zaghaft (C1)"
    ]
@@ -115,8 +115,8 @@
    "niveau": "B2",
    "formen": "Dolmetscher",
    "currentTr": "tercüman",
-   "currentBeispiel": "Beim Amt stand ein Dolmetscher zur Verfügung.",
-   "currentBeispielTr": "Dairede bir tercüman hazır bulunuyordu."
+   "currentBeispiel": "Bei der Behörde half uns ein Dolmetscher.",
+   "currentBeispielTr": "Resmi dairede bir tercüman bize yardım etti."
   },
   {
    "id": 3326,
@@ -139,8 +139,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "özgüven, öz farkındalık",
-   "currentBeispiel": "Positive Erfahrungen stärken das Selbstbewusstsein.",
-   "currentBeispielTr": "Olumlu deneyimler özgüveni güçlendirir.",
+   "currentBeispiel": "Der Sport hat ihr Selbstbewusstsein deutlich gestärkt.",
+   "currentBeispielTr": "Spor onun özgüvenini epeyce güçlendirdi.",
    "overlapping": [
     "die Selbstsicherheit (B2)",
     "das Selbstvertrauen (B2)"
@@ -174,7 +174,7 @@
    "formen": "die Zuständigkeiten",
    "currentTr": "yetki alanı, sorumluluk",
    "currentBeispiel": "Die Zuständigkeiten der einzelnen Abteilungen sind klar geregelt.",
-   "currentBeispielTr": "Her bölümün yetki alanları açıkça düzenlenmiş durumda.",
+   "currentBeispielTr": "Her bölümün yetki alanları açıkça belirlenmiş.",
    "overlapping": [
     "der Zuständigkeitsbereich (C1)"
    ]
@@ -202,8 +202,8 @@
    "niveau": "B2",
    "formen": "Rückfälle",
    "currentTr": "nüksetme, tekrarlama",
-   "currentBeispiel": "Ein Rückfall in alte Gewohnheiten ist keine Seltenheit.",
-   "currentBeispielTr": "Eski alışkanlıklara geri dönmek hiç de nadir değildir."
+   "currentBeispiel": "Nach der Therapie hatte er leider einen Rückfall.",
+   "currentBeispielTr": "Terapiden sonra maalesef bir nüks yaşadı."
   },
   {
    "id": 3830,
@@ -256,7 +256,7 @@
    "formen": "Bewertungen",
    "currentTr": "değerlendirme, notlandırma",
    "currentBeispiel": "Die Bewertung der Hausarbeit erfolgt nach festen Kriterien.",
-   "currentBeispielTr": "Dönem ödevi belirli ölçütlere göre notlandırılır.",
+   "currentBeispielTr": "Dönem ödevi sabit ölçütlere göre değerlendirilir.",
    "overlapping": [
     "die Auswertung (C1)",
     "die Einschätzung (B2)",
@@ -272,8 +272,8 @@
    "niveau": "B2",
    "formen": "verzweifelt, ist verzweifelt",
    "currentTr": "umutsuzluğa kapılmak",
-   "currentBeispiel": "Bitte verzweifle nicht an dieser Aufgabe.",
-   "currentBeispielTr": "Lütfen bu görev yüzünden umutsuzluğa kapılma."
+   "currentBeispiel": "Sie verzweifelte fast an der schwierigen Prüfung.",
+   "currentBeispielTr": "Zor sınav yüzünden neredeyse umutsuzluğa kapılacaktı."
   },
   {
    "id": 3452,
@@ -283,7 +283,7 @@
    "formen": "",
    "currentTr": "aşırı kalabalık",
    "currentBeispiel": "Die Bahn war zur Stoßzeit völlig überfüllt.",
-   "currentBeispielTr": "Tren, yoğun saatte tıklım tıklımdı."
+   "currentBeispielTr": "Tren yoğun saatte tıklım tıklımdı."
   },
   {
    "id": 3881,
@@ -292,8 +292,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ayrıntılı, detaylı",
-   "currentBeispiel": "Bitte beschreiben Sie Ihre Motivation ausführlich.",
-   "currentBeispielTr": "Lütfen motivasyonunuzu ayrıntılı biçimde anlatın."
+   "currentBeispiel": "Er hat mir alles ausführlich erklärt.",
+   "currentBeispielTr": "Bana her şeyi ayrıntılı olarak anlattı."
   },
   {
    "id": 3428,
@@ -322,8 +322,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "muhalefet",
-   "currentBeispiel": "Die Opposition kritisiert den Gesetzentwurf scharf.",
-   "currentBeispielTr": "Muhalefet kanun tasarısını sert biçimde eleştiriyor."
+   "currentBeispiel": "Die Opposition kritisiert den Haushaltsplan scharf.",
+   "currentBeispielTr": "Muhalefet bütçe planını sert biçimde eleştiriyor."
   },
   {
    "id": 3866,
@@ -365,8 +365,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "güvenilir",
-   "currentBeispiel": "Ein verlässlicher Freund steht auch in schweren Zeiten bei.",
-   "currentBeispielTr": "Güvenilir bir dost zor zamanlarda da yanında olur.",
+   "currentBeispiel": "Wir brauchen einen verlässlichen Partner für dieses Projekt.",
+   "currentBeispielTr": "Bu proje için güvenilir bir ortağa ihtiyacımız var.",
    "overlapping": [
     "zuverlässig (B1)",
     "glaubwürdig (B2)"
@@ -400,7 +400,7 @@
    "formen": "die Investoren",
    "currentTr": "yatırımcı",
    "currentBeispiel": "Ein ausländischer Investor will das Start-up finanziell unterstützen.",
-   "currentBeispielTr": "Yabancı bir yatırımcı, girişime finansal destek vermek istiyor."
+   "currentBeispielTr": "Yabancı bir yatırımcı girişime finansal destek vermek istiyor."
   },
   {
    "id": 3768,
@@ -420,7 +420,7 @@
    "formen": "die Kompetenzen",
    "currentTr": "yetkinlik, beceri",
    "currentBeispiel": "Digitale Kompetenzen werden in der Schule immer wichtiger.",
-   "currentBeispielTr": "Dijital yetkinlikler okulda giderek önem kazanıyor."
+   "currentBeispielTr": "Dijital yetkinlikler okulda giderek daha çok önem kazanıyor."
   },
   {
    "id": 3875,
@@ -467,8 +467,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "anlayışlı, empatik",
-   "currentBeispiel": "Die Therapeutin ging sehr einfühlsam mit ihr um.",
-   "currentBeispielTr": "Terapist ona çok anlayışlı davrandı.",
+   "currentBeispiel": "Sie ist eine sehr einfühlsame Zuhörerin.",
+   "currentBeispielTr": "O çok empatik bir dinleyici.",
    "overlapping": [
     "verständnisvoll (A2)"
    ]
@@ -481,7 +481,7 @@
    "formen": "",
    "currentTr": "iyi hissetme hâli",
    "currentBeispiel": "Ausreichend Schlaf fördert das allgemeine Wohlbefinden.",
-   "currentBeispielTr": "Yeterli uyku, genel olarak iyi hissetmeyi destekler."
+   "currentBeispielTr": "Yeterli uyku genel iyilik hâlini destekler."
   },
   {
    "id": 3809,
@@ -521,7 +521,7 @@
    "formen": "die Aufsichtsräte",
    "currentTr": "denetim kurulu",
    "currentBeispiel": "Der Aufsichtsrat muss der Übernahme noch zustimmen.",
-   "currentBeispielTr": "Denetim kurulunun devralmayı henüz onaylaması gerekiyor."
+   "currentBeispielTr": "Devralmayı denetim kurulunun da onaylaması gerekiyor."
   },
   {
    "id": 3859,
@@ -530,8 +530,8 @@
    "niveau": "B2",
    "formen": "Empfehlungsschreiben",
    "currentTr": "referans mektubu",
-   "currentBeispiel": "Ein Empfehlungsschreiben des Professors stärkt die Bewerbung.",
-   "currentBeispielTr": "Profesörden alınan referans mektubu başvuruyu güçlendirir."
+   "currentBeispiel": "Für die Bewerbung brauche ich ein Empfehlungsschreiben.",
+   "currentBeispielTr": "Başvuru için bir referans mektubuna ihtiyacım var."
   },
   {
    "id": 3765,
@@ -551,7 +551,7 @@
    "formen": "die Belegschaften",
    "currentTr": "çalışanlar, personel",
    "currentBeispiel": "Die gesamte Belegschaft wurde über die Umstrukturierung informiert.",
-   "currentBeispielTr": "Tüm personel, yeniden yapılanma hakkında bilgilendirildi."
+   "currentBeispielTr": "Tüm personel yeniden yapılanma hakkında bilgilendirildi."
   }
  ]
 }

@@ -50,7 +50,7 @@
    "formen": "die Exportquoten",
    "currentTr": "ihracat oranı",
    "currentBeispiel": "Die Exportquote der deutschen Industrie liegt traditionell sehr hoch.",
-   "currentBeispielTr": "Alman sanayisinin ihracat oranı geleneksel olarak çok yüksektir."
+   "currentBeispielTr": "Alman sanayisinin ihracat oranı geleneksel olarak çok yüksek."
   },
   {
    "id": 3234,
@@ -60,7 +60,7 @@
    "formen": "die Handelspartner",
    "currentTr": "ticaret ortağı",
    "currentBeispiel": "China zählt seit Jahren zu den wichtigsten Handelspartnern Deutschlands.",
-   "currentBeispielTr": "Çin, yıllardır Almanya'nın en önemli ticaret ortakları arasında."
+   "currentBeispielTr": "Çin yıllardır Almanya'nın en önemli ticaret ortakları arasında."
   },
   {
    "id": 3243,
@@ -70,7 +70,7 @@
    "formen": "verschuldet sich, hat sich verschuldet",
    "currentTr": "borçlanmak",
    "currentBeispiel": "Durch die falschen Investitionen hat sich die Firma stark verschuldet.",
-   "currentBeispielTr": "Yanlış yatırımlar yüzünden şirket ağır borca girdi."
+   "currentBeispielTr": "Yanlış yatırımlar yüzünden şirket ağır biçimde borçlandı."
   },
   {
    "id": 3247,
@@ -79,8 +79,8 @@
    "niveau": "B2",
    "formen": "lagert aus, hat ausgelagert",
    "currentTr": "dış kaynak kullanmak",
-   "currentBeispiel": "Viele Firmen lagern ihre Produktion inzwischen ins Ausland aus.",
-   "currentBeispielTr": "Birçok firma üretimini artık yurt dışına kaydırıyor."
+   "currentBeispiel": "Die Firma hat ihre Buchhaltung an ein externes Büro ausgelagert.",
+   "currentBeispielTr": "Firma muhasebesini dışarıdan bir büroya verdi."
   },
   {
    "id": 3248,
@@ -89,8 +89,8 @@
    "niveau": "B2",
    "formen": "qualifiziert sich, hat sich qualifiziert",
    "currentTr": "yeterlilik kazanmak, hak kazanmak",
-   "currentBeispiel": "Durch die Weiterbildung hat er sich für die neue Position qualifiziert.",
-   "currentBeispielTr": "Aldığı ek eğitimle yeni pozisyon için gerekli niteliği kazandı."
+   "currentBeispiel": "Die Mannschaft hat sich für das Finale qualifiziert.",
+   "currentBeispielTr": "Takım finale çıkma hakkı kazandı."
   },
   {
    "id": 3252,
@@ -109,8 +109,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "rekabetçi",
-   "currentBeispiel": "Um wettbewerbsfähig zu bleiben, muss die Firma ständig innovieren.",
-   "currentBeispielTr": "Rekabetçi kalabilmek için firmanın sürekli yenilik yapması gerekiyor."
+   "currentBeispiel": "Um wettbewerbsfähig zu bleiben, muss die Firma ständig investieren.",
+   "currentBeispielTr": "Firma rekabetçi kalmak için sürekli yatırım yapmak zorunda."
   },
   {
    "id": 3254,
@@ -120,7 +120,7 @@
    "formen": "",
    "currentTr": "iflas etmiş, borç ödeyemez",
    "currentBeispiel": "Nach dem Umsatzeinbruch war das Unternehmen praktisch insolvent.",
-   "currentBeispielTr": "Cirodaki çöküşün ardından şirket fiilen iflas durumundaydı."
+   "currentBeispielTr": "Cirodaki çöküşün ardından şirket fiilen iflas etmişti."
   },
   {
    "id": 3255,
@@ -129,8 +129,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "konjonktüre bağlı",
-   "currentBeispiel": "Die Baubranche ist besonders konjunkturabhängig und reagiert schnell.",
-   "currentBeispielTr": "İnşaat sektörü konjonktüre özellikle bağlıdır ve hızlı tepki verir."
+   "currentBeispiel": "Die Baubranche ist stark konjunkturabhängig und leidet in Krisen.",
+   "currentBeispielTr": "İnşaat sektörü konjonktüre çok bağlı ve krizlerde zarar görüyor."
   },
   {
    "id": 3256,
@@ -139,8 +139,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kendi sorumluluğunda",
-   "currentBeispiel": "In dieser Position arbeitet man sehr eigenverantwortlich und flexibel.",
-   "currentBeispielTr": "Bu pozisyonda insan büyük ölçüde kendi sorumluluğunda ve esnek çalışıyor."
+   "currentBeispiel": "In dieser Position arbeitet man sehr eigenverantwortlich.",
+   "currentBeispielTr": "Bu pozisyonda insan büyük ölçüde kendi sorumluluğunda çalışıyor."
   },
   {
    "id": 3257,
@@ -149,8 +149,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "sektörde alışılmış",
-   "currentBeispiel": "Das Gehalt liegt im Rahmen des branchenüblichen Durchschnitts.",
-   "currentBeispielTr": "Maaş, sektör ortalamasının sınırları içinde."
+   "currentBeispiel": "Das Gehalt ist branchenüblich und wird jährlich angepasst.",
+   "currentBeispielTr": "Maaş sektörde alışılmış düzeyde ve her yıl güncelleniyor."
   },
   {
    "id": 3258,
@@ -159,8 +159,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "süreli, geçici",
-   "currentBeispiel": "Ihr erster Arbeitsvertrag war zunächst nur befristet auf ein Jahr.",
-   "currentBeispielTr": "İlk iş sözleşmesi başlangıçta yalnızca bir yıllığına süreliydi."
+   "currentBeispiel": "Ihr erster Arbeitsvertrag war auf ein Jahr befristet.",
+   "currentBeispielTr": "İlk iş sözleşmesi bir yıl süreliydi."
   },
   {
    "id": 3259,
@@ -170,7 +170,7 @@
    "formen": "",
    "currentTr": "süresiz",
    "currentBeispiel": "Nach der Probezeit erhielt er einen unbefristeten Arbeitsvertrag.",
-   "currentBeispielTr": "Deneme süresinin ardından süresiz iş sözleşmesi aldı."
+   "currentBeispielTr": "Deneme süresinden sonra süresiz iş sözleşmesi aldı."
   },
   {
    "id": 3261,
@@ -179,8 +179,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kâr getiren",
-   "currentBeispiel": "Die Firma sucht ständig nach neuen, gewinnbringenden Geschäftsideen.",
-   "currentBeispielTr": "Firma sürekli yeni ve kâr getiren iş fikirleri arıyor."
+   "currentBeispiel": "Der Verkauf der alten Lagerhalle war äußerst gewinnbringend.",
+   "currentBeispielTr": "Eski deponun satışı büyük kâr getirdi."
   },
   {
    "id": 3262,
@@ -190,7 +190,7 @@
    "formen": "",
    "currentTr": "sivil toplum",
    "currentBeispiel": "Die Zivilgesellschaft setzt sich aktiv für Menschenrechte ein.",
-   "currentBeispielTr": "Sivil toplum, insan hakları için etkin biçimde mücadele ediyor."
+   "currentBeispielTr": "Sivil toplum insan hakları için etkin biçimde mücadele ediyor."
   },
   {
    "id": 3263,
@@ -200,7 +200,7 @@
    "formen": "die Bevölkerungsgruppen",
    "currentTr": "nüfus grubu, toplumsal kesim",
    "currentBeispiel": "Verschiedene Bevölkerungsgruppen leben hier seit Jahrzehnten zusammen.",
-   "currentBeispielTr": "Farklı toplumsal kesimler burada onlarca yıldır bir arada yaşıyor."
+   "currentBeispielTr": "Farklı nüfus grupları burada onlarca yıldır bir arada yaşıyor."
   },
   {
    "id": 3264,
@@ -219,8 +219,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "açık görüşlülük",
-   "currentBeispiel": "Weltoffenheit ist eine wichtige Voraussetzung für das Zusammenleben.",
-   "currentBeispielTr": "Açık görüşlülük, birlikte yaşamanın önemli bir ön koşuludur."
+   "currentBeispiel": "Die Stadt ist stolz auf ihre Weltoffenheit und Vielfalt.",
+   "currentBeispielTr": "Şehir açık görüşlülüğüyle ve çeşitliliğiyle gurur duyuyor."
   },
   {
    "id": 3268,
@@ -229,8 +229,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "entegrasyon, topluma uyum",
-   "currentBeispiel": "Die Eingliederung von Neuankömmlingen dauert oft Jahre.",
-   "currentBeispielTr": "Yeni gelenlerin topluma uyum sağlaması çoğu zaman yıllar alıyor.",
+   "currentBeispiel": "Die Eingliederung von Neuankömmlingen dauert oft mehrere Jahre.",
+   "currentBeispielTr": "Yeni gelenlerin topluma uyumu çoğu zaman yıllar alıyor.",
    "overlapping": [
     "die Integration (B1)"
    ]
@@ -242,8 +242,8 @@
    "niveau": "B2",
    "formen": "die Ehrenämter",
    "currentTr": "gönüllü görev, fahri görev",
-   "currentBeispiel": "Viele Rentner engagieren sich im Ehrenamt.",
-   "currentBeispielTr": "Birçok emekli gönüllü işlerde görev alıyor."
+   "currentBeispiel": "Sie übt ihr Ehrenamt bei der Feuerwehr aus.",
+   "currentBeispielTr": "İtfaiyedeki gönüllü görevini sürdürüyor."
   },
   {
    "id": 3275,
@@ -267,7 +267,7 @@
    "formen": "",
    "currentTr": "seçime katılım oranı",
    "currentBeispiel": "Die Wahlbeteiligung lag diesmal bei knapp sechzig Prozent.",
-   "currentBeispielTr": "Seçime katılım bu kez yüzde altmışın hemen altında kaldı."
+   "currentBeispielTr": "Seçime katılım bu kez yüzde altmışın biraz altında kaldı."
   },
   {
    "id": 3278,
@@ -276,7 +276,7 @@
    "niveau": "B2",
    "formen": "die Wahlkreise",
    "currentTr": "seçim bölgesi",
-   "currentBeispiel": "Der Kandidat gewann seinen Wahlkreis nur äußerst knapp.",
+   "currentBeispiel": "Der Kandidat gewann seinen Wahlkreis nur ganz knapp.",
    "currentBeispielTr": "Aday kendi seçim bölgesini kıl payı kazandı."
   },
   {
@@ -297,7 +297,7 @@
    "formen": "die Rechtsstaaten",
    "currentTr": "hukuk devleti",
    "currentBeispiel": "Ein funktionierender Rechtsstaat schützt die Bürger vor Willkür.",
-   "currentBeispielTr": "İşleyen bir hukuk devleti, vatandaşları keyfîliğe karşı korur."
+   "currentBeispielTr": "İşleyen bir hukuk devleti vatandaşları keyfîlikten korur."
   },
   {
    "id": 3290,
@@ -307,7 +307,7 @@
    "formen": "die Vertrauenskrisen",
    "currentTr": "güven bunalımı",
    "currentBeispiel": "Die Partei steckt nach dem Skandal in einer tiefen Vertrauenskrise.",
-   "currentBeispielTr": "Parti, skandalın ardından derin bir güven bunalımında."
+   "currentBeispielTr": "Parti skandalın ardından derin bir güven bunalımında."
   },
   {
    "id": 3301,
@@ -327,7 +327,7 @@
    "formen": "",
    "currentTr": "taraflı, yanlı",
    "currentBeispiel": "Der Artikel wurde von Kritikern als tendenziös bezeichnet.",
-   "currentBeispielTr": "Makale, eleştirmenlerce taraflı olarak nitelendirildi."
+   "currentBeispielTr": "Makale eleştirmenlerce taraflı olarak nitelendirildi."
   },
   {
    "id": 3309,
@@ -337,7 +337,7 @@
    "formen": "die Fehlinformationen",
    "currentTr": "yanlış bilgi",
    "currentBeispiel": "Fehlinformationen verbreiten sich im Internet rasend schnell.",
-   "currentBeispielTr": "Yanlış bilgiler internette çığ gibi yayılıyor."
+   "currentBeispielTr": "Yanlış bilgiler internette çok hızlı yayılıyor."
   },
   {
    "id": 3310,
@@ -360,7 +360,7 @@
    "formen": "die Herkunftsländer",
    "currentTr": "geldiği ülke, menşe ülkesi",
    "currentBeispiel": "Viele Migranten pflegen weiterhin Kontakt zu ihrem Herkunftsland.",
-   "currentBeispielTr": "Birçok göçmen, memleketiyle bağını sürdürüyor."
+   "currentBeispielTr": "Birçok göçmen geldiği ülkeyle bağını sürdürüyor."
   },
   {
    "id": 3312,
@@ -379,8 +379,8 @@
    "niveau": "B2",
    "formen": "wandert ein, ist eingewandert",
    "currentTr": "(bir ülkeye) göç etmek",
-   "currentBeispiel": "Seine Großeltern wanderten in den sechziger Jahren ein.",
-   "currentBeispielTr": "Dedeleri altmışlı yıllarda bu ülkeye göç etmiş.",
+   "currentBeispiel": "Seine Großeltern sind in den sechziger Jahren eingewandert.",
+   "currentBeispielTr": "Büyükanne ve büyükbabası altmışlı yıllarda bu ülkeye göç etmiş.",
    "overlapping": [
     "auswandern (C1)"
    ]
@@ -393,7 +393,7 @@
    "formen": "integriert sich, hat sich integriert",
    "currentTr": "uyum sağlamak, entegre olmak",
    "currentBeispiel": "Er hat sich schnell in die neue Gesellschaft integriert.",
-   "currentBeispielTr": "Yeni topluma hızla uyum sağladı.",
+   "currentBeispielTr": "Yeni topluma hızla entegre oldu.",
    "overlapping": [
     "sich anpassen (B2)"
    ]
@@ -436,7 +436,7 @@
    "formen": "",
    "currentTr": "fırsat eşitliği",
    "currentBeispiel": "Chancengleichheit in der Bildung ist noch nicht erreicht.",
-   "currentBeispielTr": "Eğitimde fırsat eşitliği hâlâ sağlanabilmiş değil."
+   "currentBeispielTr": "Eğitimde fırsat eşitliği henüz sağlanabilmiş değil."
   },
   {
    "id": 3323,
@@ -455,8 +455,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "katılım hakkı, söz hakkı",
-   "currentBeispiel": "Mitbestimmung der Bürger stärkt die Demokratie nachhaltig.",
-   "currentBeispielTr": "Vatandaşların söz hakkı, demokrasiyi kalıcı biçimde güçlendirir."
+   "currentBeispiel": "Im Betriebsrat kämpfen die Mitarbeiter um mehr Mitbestimmung.",
+   "currentBeispielTr": "İşyeri kurulunda çalışanlar daha çok söz hakkı için mücadele ediyor."
   },
   {
    "id": 3332,
@@ -466,7 +466,7 @@
    "formen": "Verspannungen",
    "currentTr": "kas gerginliği",
    "currentBeispiel": "Die Verspannung im Nacken kam vom langen Sitzen.",
-   "currentBeispielTr": "Ensesindeki kas gerginliği uzun süre oturmaktan kaynaklanıyordu."
+   "currentBeispielTr": "Ensedeki kas gerginliği uzun süre oturmaktan kaynaklandı."
   },
   {
    "id": 3333,
@@ -475,8 +475,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "uyku eksikliği",
-   "currentBeispiel": "Schlafmangel wirkt sich negativ auf die Konzentration aus.",
-   "currentBeispielTr": "Uyku eksikliği konsantrasyonu olumsuz etkiler."
+   "currentBeispiel": "Nach Wochen mit Schlafmangel machte er ständig Fehler.",
+   "currentBeispielTr": "Haftalarca süren uyku eksikliğinden sonra sürekli hata yapıyordu."
   },
   {
    "id": 3337,
@@ -486,7 +486,7 @@
    "formen": "",
    "currentTr": "bağışıklık savunması",
    "currentBeispiel": "Vitamin C soll die Immunabwehr unterstützen.",
-   "currentBeispielTr": "C vitamininin bağışıklık sistemini desteklediği söyleniyor."
+   "currentBeispielTr": "C vitamininin bağışıklık savunmasını desteklediği söyleniyor."
   },
   {
    "id": 3339,
@@ -495,8 +495,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "dayanıklılık, tahammül gücü",
-   "currentBeispiel": "Seine körperliche Belastbarkeit hat sich deutlich verbessert.",
-   "currentBeispielTr": "Fiziksel dayanıklılığı gözle görülür şekilde arttı.",
+   "currentBeispiel": "Der Job verlangt eine hohe Belastbarkeit und gute Nerven.",
+   "currentBeispielTr": "Bu iş yüksek strese dayanıklılık ve sağlam sinir istiyor.",
    "overlapping": [
     "die Resilienz (C1)",
     "die Ausdauer (B2)",
@@ -510,8 +510,8 @@
    "niveau": "B2",
    "formen": "schont sich, hat sich geschont",
    "currentTr": "kendini yormamak, kendini kollamak",
-   "currentBeispiel": "Nach der Krankheit sollte er sich noch schonen.",
-   "currentBeispielTr": "Hastalıktan sonra kendini biraz daha koruması gerekiyor."
+   "currentBeispiel": "Nach der Operation sollte er sich noch etwas schonen.",
+   "currentBeispielTr": "Ameliyattan sonra bir süre daha kendini yormamalı."
   },
   {
    "id": 3357,
@@ -521,7 +521,7 @@
    "formen": "sehnt sich, hat sich gesehnt",
    "currentTr": "hasretini çekmek, can atmak (sahip olmadığı bir şeye)",
    "currentBeispiel": "Er sehnt sich nach mehr Ruhe im Alltag.",
-   "currentBeispielTr": "Günlük hayatında daha çok huzur özlemi çekiyor."
+   "currentBeispielTr": "Gündelik hayatında daha çok huzura özlem duyuyor."
   }
  ]
 }

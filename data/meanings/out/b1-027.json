@@ -3,17 +3,17 @@
     "id": 1644,
     "tr": "tasvir",
     "en": "depiction",
-    "beispiel": "Ihr Buch enthält eine klare Darstellung dieser Probleme.",
-    "beispielTr": "Kitabında bu sorunların açık bir tasviri var.",
-    "beispielEn": "Her book contains a clear depiction of these problems."
+    "beispiel": "Die Darstellung der Stadt im Film ist ziemlich unrealistisch.",
+    "beispielTr": "Filmdeki şehir tasviri oldukça gerçek dışı.",
+    "beispielEn": "The film's depiction of the city is pretty unrealistic."
   },
   {
     "id": 2739,
     "tr": "bulaşık yıkamak",
     "en": "to do the dishes",
-    "beispiel": "Hast du das Geschirr schon gespült?",
-    "beispielTr": "Bulaşıkları yıkadın mı?",
-    "beispielEn": "Have you done the dishes yet?"
+    "beispiel": "Wer kocht, muss heute nicht spülen.",
+    "beispielTr": "Bugün yemek yapan bulaşık yıkamayacak.",
+    "beispielEn": "Whoever cooks doesn't have to do the dishes today."
   },
   {
     "id": 1923,
@@ -43,17 +43,17 @@
     "id": 3041,
     "tr": "kartvizit",
     "en": "business card",
-    "beispiel": "Darf ich Ihnen meine Visitenkarte geben?",
-    "beispielTr": "Size kartvizitimi verebilir miyim?",
-    "beispielEn": "May I give you my business card?"
+    "beispiel": "Auf der Messe habe ich viele Visitenkarten gesammelt.",
+    "beispielTr": "Fuarda bir sürü kartvizit topladım.",
+    "beispielEn": "I collected lots of business cards at the trade fair."
   },
   {
     "id": 2550,
     "tr": "araştırma",
     "en": "research",
-    "beispiel": "Für diesen Bericht war viel Recherche nötig.",
-    "beispielTr": "Bu rapor için çok araştırma gerekti.",
-    "beispielEn": "A lot of research was needed for this report."
+    "beispiel": "Nach kurzer Recherche fand sie die Telefonnummer.",
+    "beispielTr": "Kısa bir araştırmadan sonra telefon numarasını buldu.",
+    "beispielEn": "After some quick research, she found the phone number."
   },
   {
     "id": 1405,
@@ -91,33 +91,33 @@
     "id": 2725,
     "tr": "uzman",
     "en": "specialist",
-    "beispiel": "Mein Hausarzt hat mich zu einem Spezialisten geschickt.",
-    "beispielTr": "Aile hekimim beni bir uzmana yönlendirdi.",
-    "beispielEn": "My family doctor sent me to a specialist."
+    "beispiel": "Für dieses Problem brauchen wir einen Spezialisten.",
+    "beispielTr": "Bu sorun için bir uzmana ihtiyacımız var.",
+    "beispielEn": "We need a specialist for this problem."
   },
   {
     "id": 1520,
     "tr": "engel olmak",
     "en": "to obstruct",
-    "beispiel": "Bitte parken Sie so, dass Sie niemanden behindern.",
-    "beispielTr": "Lütfen kimseyi engellemeyecek şekilde park edin.",
-    "beispielEn": "Please park so that you don't obstruct anyone."
+    "beispiel": "Der umgefallene Baum behindert den Verkehr auf der Hauptstraße.",
+    "beispielTr": "Devrilen ağaç ana caddedeki trafiği engelliyor.",
+    "beispielEn": "The fallen tree is blocking traffic on the main road."
   },
   {
     "id": 3138,
     "tr": "pense",
     "en": "pliers",
-    "beispiel": "Um das Fahrrad zu reparieren, brauchst du eine Zange.",
-    "beispielTr": "Bisikleti tamir etmek için pense lazım.",
-    "beispielEn": "You need pliers to repair the bike."
+    "beispiel": "Mit der Zange zog er den krummen Nagel aus dem Brett.",
+    "beispielTr": "Eğri çiviyi penseyle tahtadan çıkardı.",
+    "beispielEn": "He pulled the bent nail out of the board with the pliers."
   },
   {
     "id": 1773,
     "tr": "çöpe atmak",
     "en": "to dispose of",
-    "beispiel": "Wo kann ich meine alte Kaffeemaschine entsorgen?",
-    "beispielTr": "Eski kahve makinemi nereye atabilirim?",
-    "beispielEn": "Where can I dispose of my old coffee machine?"
+    "beispiel": "Altes Öl darf man nicht im Waschbecken entsorgen.",
+    "beispielTr": "Kullanılmış yağ lavaboya dökülmez.",
+    "beispielEn": "You mustn't dispose of old oil in the sink."
   },
   {
     "id": 2714,
@@ -139,9 +139,9 @@
     "id": 1442,
     "tr": "sahnelemek",
     "en": "to perform",
-    "beispiel": "Die Kinder führen zu Weihnachten ein Theaterstück auf.",
-    "beispielTr": "Çocuklar Noel'de bir tiyatro oyunu sahneliyor.",
-    "beispielEn": "The children are performing a play at Christmas."
+    "beispiel": "Das Stück wird dieses Jahr im Stadtpark aufgeführt.",
+    "beispielTr": "Oyun bu yıl şehir parkında sahneleniyor.",
+    "beispielEn": "The play is being performed in the city park this year."
   },
   {
     "id": 3111,
@@ -163,9 +163,9 @@
     "id": 2104,
     "tr": "atıştırmalık",
     "en": "snack",
-    "beispiel": "Es ist Zeit für einen kleinen Imbiss.",
-    "beispielTr": "Küçük bir atıştırmalık vakti geldi.",
-    "beispielEn": "It's time for a small snack."
+    "beispiel": "Zwischen den Vorträgen gibt es einen kleinen Imbiss.",
+    "beispielTr": "Sunumların arasında küçük bir atıştırmalık var.",
+    "beispielEn": "There's a light snack between the talks."
   },
   {
     "id": 1870,
@@ -267,9 +267,9 @@
     "id": 2456,
     "tr": "düzene sokmak",
     "en": "to arrange",
-    "beispiel": "Am Wochenende habe ich meine Papiere geordnet.",
-    "beispielTr": "Hafta sonu evraklarımı düzenledim.",
-    "beispielEn": "I organized my papers over the weekend."
+    "beispiel": "Er ordnet seine Bücher nach Farben.",
+    "beispielTr": "Kitaplarını renklere göre diziyor.",
+    "beispielEn": "He arranges his books by color."
   },
   {
     "id": 1792,
@@ -307,9 +307,9 @@
     "id": 1566,
     "tr": "bakıcı",
     "en": "caregiver",
-    "beispiel": "Der Betreuer der Kinder ist sehr nett.",
-    "beispielTr": "Çocukların bakıcısı çok iyi biri.",
-    "beispielEn": "The children's caregiver is very nice."
+    "beispiel": "Der Betreuer meines Opas kommt jeden Morgen um acht.",
+    "beispielTr": "Dedemin bakıcısı her sabah sekizde geliyor.",
+    "beispielEn": "My grandpa's caregiver comes every morning at eight."
   },
   {
     "id": 3105,
@@ -323,9 +323,9 @@
     "id": 2087,
     "tr": "çiftlik",
     "en": "farm",
-    "beispiel": "Meine Großeltern hatten früher einen Bauernhof.",
-    "beispielTr": "Dedemlerin eskiden bir çiftliği vardı.",
-    "beispielEn": "My grandparents used to have a farm."
+    "beispiel": "In den Ferien helfen die Kinder auf einem Bauernhof mit.",
+    "beispielTr": "Çocuklar tatilde bir çiftlikte yardım ediyor.",
+    "beispielEn": "During the holidays, the kids help out on a farm."
   },
   {
     "id": 2300,
@@ -355,9 +355,9 @@
     "id": 1394,
     "tr": "resmen tanımak",
     "en": "to officially recognize",
-    "beispiel": "Meine Ausbildung wird in Deutschland nicht anerkannt.",
-    "beispielTr": "Aldığım eğitim Almanya'da tanınmıyor.",
-    "beispielEn": "My training isn't recognized in Germany."
+    "beispiel": "Das Land hat den neuen Staat offiziell anerkannt.",
+    "beispielTr": "Ülke yeni devleti resmen tanıdı.",
+    "beispielEn": "The country officially recognized the new state."
   },
   {
     "id": 1947,
@@ -371,17 +371,17 @@
     "id": 1665,
     "tr": "diploma",
     "en": "diploma",
-    "beispiel": "Wo kann ich mein Diplom abholen?",
-    "beispielTr": "Diplomamı nereden alabilirim?",
-    "beispielEn": "Where can I pick up my diploma?"
+    "beispiel": "Nach vier Jahren Studium hat Mia endlich ihr Diplom bekommen.",
+    "beispielTr": "Mia dört yıllık öğrenimden sonra nihayet diplomasını aldı.",
+    "beispielEn": "After four years of study, Mia finally got her diploma."
   },
   {
     "id": 1720,
     "tr": "uygulamaya koymak",
     "en": "to introduce",
-    "beispiel": "Die Firma hat letztes Jahr ein neues System eingeführt.",
-    "beispielTr": "Şirket geçen yıl yeni bir sistemi uygulamaya koydu.",
-    "beispielEn": "The company introduced a new system last year."
+    "beispiel": "Die Stadt will im nächsten Jahr ein günstiges Monatsticket einführen.",
+    "beispielTr": "Belediye gelecek yıl ucuz bir aylık bilet uygulamaya koymak istiyor.",
+    "beispielEn": "The city wants to introduce a cheap monthly pass next year."
   },
   {
     "id": 1484,

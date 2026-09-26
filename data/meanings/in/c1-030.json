@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "cezasızlık",
    "currentBeispiel": "Jahrzehntelange Straflosigkeit hat das Vertrauen in die Justiz zerstört.",
-   "currentBeispielTr": "Onlarca yıl süren cezasızlık yargıya duyulan güveni yok etti."
+   "currentBeispielTr": "Onlarca yıl süren cezasızlık yargıya olan güveni yok etti."
   },
   {
    "id": 6704,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Foltern",
    "currentTr": "işkence",
-   "currentBeispiel": "Das Verbot der Folter gilt ausnahmslos und auch im Notstand.",
-   "currentBeispielTr": "İşkence yasağı istisnasız ve olağanüstü hâlde de geçerlidir."
+   "currentBeispiel": "Er berichtete vor Gericht offen über die Folter im Gefängnis.",
+   "currentBeispielTr": "Mahkemede cezaevindeki işkenceyi açıkça anlattı."
   },
   {
    "id": 6705,
@@ -30,7 +30,7 @@
    "formen": "Misshandlungen",
    "currentTr": "kötü muamele, eziyet",
    "currentBeispiel": "Ärzte bestätigten Spuren schwerer Misshandlungen während der Haft.",
-   "currentBeispielTr": "Doktorlar gözaltı sırasındaki ağır kötü muamelenin izlerini doğruladı."
+   "currentBeispielTr": "Doktorlar gözaltındaki ağır kötü muamelenin izlerini doğruladı."
   },
   {
    "id": 6706,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "keyfilik, keyfî davranış",
-   "currentBeispiel": "Klare Verfahrensregeln sollen die Behörden vor Willkür bewahren.",
-   "currentBeispielTr": "Açık usul kuralları makamları keyfilikten uzak tutmalıdır.",
+   "currentBeispiel": "Bei der Vergabe der Studienplätze herrschte reine Willkür.",
+   "currentBeispielTr": "Üniversite kontenjanlarının dağıtımında tam bir keyfilik vardı.",
    "overlapping": [
     "die Beliebigkeit (C1)"
    ]
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "Übergriffe",
    "currentTr": "saldırı, taşkınlık, yetki aşımı",
-   "currentBeispiel": "Übergriffe der Sicherheitskräfte wurden monatelang gar nicht untersucht.",
-   "currentBeispielTr": "Güvenlik güçlerinin taşkınlıkları aylarca hiç soruşturulmadı.",
+   "currentBeispiel": "Übergriffe der Polizei wurden monatelang nicht untersucht.",
+   "currentBeispielTr": "Polisin taşkınlıkları aylarca soruşturulmadı.",
    "overlapping": [
     "der Anschlag (B2)"
    ]
@@ -65,8 +65,8 @@
    "niveau": "C1",
    "formen": "Unterdrückungen",
    "currentTr": "baskı, bastırma, zulüm",
-   "currentBeispiel": "Die Unterdrückung der Opposition wurde als Staatsräson gerechtfertigt.",
-   "currentBeispielTr": "Muhalefetin baskı altına alınması devlet çıkarıyla meşrulaştırıldı.",
+   "currentBeispiel": "Die Unterdrückung der Proteste dauerte mehrere Wochen.",
+   "currentBeispielTr": "Protestoların bastırılması haftalarca sürdü.",
    "overlapping": [
     "der Druck (B1)",
     "die Repression (C1)"
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "hat angeklagt",
    "currentTr": "dava açmak, itham etmek",
-   "currentBeispiel": "Zwei ehemalige Minister wurden wegen schwerer Verbrechen angeklagt.",
-   "currentBeispielTr": "İki eski bakan ağır suçlar nedeniyle yargılanmak üzere itham edildi.",
+   "currentBeispiel": "Zwei ehemalige Minister wurden wegen schwerer Korruption angeklagt.",
+   "currentBeispielTr": "İki eski bakan ağır yolsuzlukla suçlandı.",
    "overlapping": [
     "verklagen (B2)"
    ]
@@ -102,8 +102,8 @@
    "niveau": "C1",
    "formen": "hat eingefordert",
    "currentTr": "(hakkı olanı) ısrarla talep etmek, geri istemek",
-   "currentBeispiel": "Die Angehörigen fordern seit Jahren Aufklärung und Entschädigung ein.",
-   "currentBeispielTr": "Yakınları yıllardır aydınlatılma ve tazminat talep ediyor."
+   "currentBeispiel": "Sie hat ihren Lohn beim Chef energisch eingefordert.",
+   "currentBeispielTr": "Maaşını patronundan ısrarla talep etti."
   },
   {
    "id": 6712,
@@ -112,8 +112,8 @@
    "niveau": "C1",
    "formen": "hat vollstreckt",
    "currentTr": "infaz etmek, icra etmek",
-   "currentBeispiel": "Der Haftbefehl konnte im Ausland lange nicht vollstreckt werden.",
-   "currentBeispielTr": "Tutuklama emri yurt dışında uzun süre infaz edilemedi."
+   "currentBeispiel": "Der Haftbefehl wurde erst nach zehn Jahren vollstreckt.",
+   "currentBeispielTr": "Yakalama emri ancak on yıl sonra infaz edildi."
   },
   {
    "id": 6713,
@@ -122,8 +122,8 @@
    "niveau": "C1",
    "formen": "hat aberkannt",
    "currentTr": "geri almak, elinden almak (hak, statü)",
-   "currentBeispiel": "Der Familie wurde die Staatsangehörigkeit ohne nachvollziehbare Begründung aberkannt.",
-   "currentBeispielTr": "Ailenin vatandaşlığı anlaşılır bir gerekçe olmadan elinden alındı.",
+   "currentBeispiel": "Dem Sportler wurde die Goldmedaille nachträglich aberkannt.",
+   "currentBeispielTr": "Sporcunun altın madalyası sonradan elinden alındı.",
    "overlapping": [
     "entziehen (B2)"
    ]
@@ -135,8 +135,8 @@
    "niveau": "C1",
    "formen": "hat entschädigt",
    "currentTr": "tazmin etmek, zararını karşılamak",
-   "currentBeispiel": "Der Staat muss die Betroffenen für die rechtswidrige Haft entschädigen.",
-   "currentBeispielTr": "Devlet hukuka aykırı tutukluluk nedeniyle ilgilileri tazmin etmek zorunda."
+   "currentBeispiel": "Die Fluggesellschaft entschädigte uns für den verlorenen Koffer.",
+   "currentBeispielTr": "Havayolu kaybolan bavul için bizi tazmin etti."
   },
   {
    "id": 6715,
@@ -145,8 +145,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dokunulmaz",
-   "currentBeispiel": "Die Würde des Menschen gilt in dieser Verfassung als unantastbar.",
-   "currentBeispielTr": "Bu anayasada insan onuru dokunulmaz sayılır."
+   "currentBeispiel": "Der Richter nannte dieses Grundrecht ausdrücklich unantastbar.",
+   "currentBeispielTr": "Hâkim bu temel hakkı açıkça dokunulmaz olarak niteledi."
   },
   {
    "id": 6716,
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "devredilemez, vazgeçilemez",
-   "currentBeispiel": "Diese Rechte sind unveräußerlich und können niemandem abgekauft werden.",
-   "currentBeispielTr": "Bu haklar devredilemez niteliktedir ve kimseden satın alınamaz."
+   "currentBeispiel": "Die Anwältin erinnerte das Gericht an unsere unveräußerlichen Rechte.",
+   "currentBeispielTr": "Avukat mahkemeye devredilemez haklarımızı hatırlattı."
   },
   {
    "id": 6717,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sistematik, dizgesel",
-   "currentBeispiel": "Die Angriffe erfolgten systematisch und richteten sich gegen die Zivilbevölkerung.",
-   "currentBeispielTr": "Saldırılar sistematik biçimde gerçekleşti ve sivil halkı hedef aldı."
+   "currentBeispiel": "Sie geht bei der Recherche sehr systematisch vor.",
+   "currentBeispielTr": "Araştırma yaparken çok sistematik ilerliyor."
   },
   {
    "id": 6718,
@@ -175,8 +175,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "istisnasız",
-   "currentBeispiel": "Dieses Verbot gilt ausnahmslos, auch in Zeiten des Krieges.",
-   "currentBeispielTr": "Bu yasak savaş zamanlarında bile istisnasız geçerlidir."
+   "currentBeispiel": "Alle Schüler haben ausnahmslos die Prüfung bestanden.",
+   "currentBeispielTr": "Bütün öğrenciler istisnasız sınavı geçti."
   },
   {
    "id": 6719,
@@ -185,8 +185,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "korunmaya muhtaç",
-   "currentBeispiel": "Besonders schutzbedürftige Personen brauchen ein beschleunigtes und sensibles Verfahren.",
-   "currentBeispielTr": "Özellikle korunmaya muhtaç kişiler hızlı ve duyarlı bir süreç gerektirir."
+   "currentBeispiel": "Das Amt stufte die Familie als besonders schutzbedürftig ein.",
+   "currentBeispielTr": "Kurum aileyi özellikle korunmaya muhtaç olarak sınıflandırdı."
   },
   {
    "id": 6720,
@@ -195,8 +195,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bölünemez, bir bütün olan",
-   "currentBeispiel": "Soziale und politische Rechte werden in der Erklärung als unteilbar bezeichnet.",
-   "currentBeispielTr": "Bildiride sosyal ve siyasal haklar bölünemez olarak nitelendirilir."
+   "currentBeispiel": "Die Menschenrechte sind universell und unteilbar.",
+   "currentBeispielTr": "İnsan hakları evrensel ve bölünmezdir."
   },
   {
    "id": 6721,
@@ -205,8 +205,8 @@
    "niveau": "C1",
    "formen": "Entropien",
    "currentTr": "entropi, düzensizlik ölçüsü",
-   "currentBeispiel": "In einem geschlossenen System nimmt die Entropie mit der Zeit zu.",
-   "currentBeispielTr": "Kapalı bir sistemde entropi zamanla artar."
+   "currentBeispiel": "In der Prüfung mussten wir die Entropie eines Gases berechnen.",
+   "currentBeispielTr": "Sınavda bir gazın entropisini hesaplamamız gerekti."
   },
   {
    "id": 6722,
@@ -215,8 +215,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yerçekimi",
-   "currentBeispiel": "Ohne die Schwerkraft würde das Wasser einfach im Raum schweben.",
-   "currentBeispielTr": "Yerçekimi olmasaydı su öylece boşlukta asılı kalırdı."
+   "currentBeispiel": "Im Raumschiff fehlt die Schwerkraft und alles schwebt herum.",
+   "currentBeispielTr": "Uzay gemisinde yerçekimi yok ve her şey havada uçuşuyor."
   },
   {
    "id": 6723,
@@ -225,8 +225,8 @@
    "niveau": "C1",
    "formen": "Aggregatzustände",
    "currentTr": "maddenin hâli, fiziksel hâl",
-   "currentBeispiel": "Wasser kommt in allen drei Aggregatzuständen auf der Erde vor.",
-   "currentBeispielTr": "Su yeryüzünde üç hâlin de hepsinde bulunur."
+   "currentBeispiel": "Wasser kommt auf der Erde in allen drei Aggregatzuständen vor.",
+   "currentBeispielTr": "Su yeryüzünde maddenin her üç hâlinde de bulunuyor."
   },
   {
    "id": 6724,
@@ -235,8 +235,8 @@
    "niveau": "C1",
    "formen": "Atomkerne",
    "currentTr": "atom çekirdeği",
-   "currentBeispiel": "Bei der Spaltung eines Atomkerns wird enorm viel Energie frei.",
-   "currentBeispielTr": "Bir atom çekirdeğinin bölünmesinde muazzam bir enerji açığa çıkar."
+   "currentBeispiel": "Der Physiker erklärte uns den Aufbau des Atomkerns.",
+   "currentBeispielTr": "Fizikçi bize atom çekirdeğinin yapısını anlattı."
   },
   {
    "id": 6725,
@@ -255,8 +255,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "radyoaktivite, radyoaktiflik",
-   "currentBeispiel": "Die Radioaktivität im Boden wird seit dem Unfall regelmäßig gemessen.",
-   "currentBeispielTr": "Topraktaki radyoaktiflik kazadan beri düzenli olarak ölçülüyor."
+   "currentBeispiel": "Die Radioaktivität im Boden wird seit dem Unfall gemessen.",
+   "currentBeispielTr": "Topraktaki radyoaktivite kazadan beri ölçülüyor."
   },
   {
    "id": 6727,
@@ -265,8 +265,8 @@
    "niveau": "C1",
    "formen": "Strahlungen",
    "currentTr": "ışınım, radyasyon",
-   "currentBeispiel": "Die Atmosphäre schützt uns vor einem Großteil der kosmischen Strahlung.",
-   "currentBeispielTr": "Atmosfer bizi kozmik ışınımın büyük bölümünden korur."
+   "currentBeispiel": "Die Atmosphäre schützt uns vor der kosmischen Strahlung.",
+   "currentBeispielTr": "Atmosfer bizi kozmik radyasyondan koruyor."
   },
   {
    "id": 6728,
@@ -275,8 +275,8 @@
    "niveau": "C1",
    "formen": "Wellenlängen",
    "currentTr": "dalga boyu",
-   "currentBeispiel": "Rotes Licht hat eine deutlich größere Wellenlänge als blaues.",
-   "currentBeispielTr": "Kırmızı ışığın dalga boyu maviden belirgin biçimde büyüktür."
+   "currentBeispiel": "Rotes Licht hat eine größere Wellenlänge als blaues.",
+   "currentBeispielTr": "Kırmızı ışığın dalga boyu maviden daha büyüktür."
   },
   {
    "id": 6729,
@@ -286,7 +286,7 @@
    "formen": "Frequenzen",
    "currentTr": "frekans, sıklık",
    "currentBeispiel": "Fledermäuse orientieren sich mit Tönen sehr hoher Frequenz.",
-   "currentBeispielTr": "Yarasalar çok yüksek frekanslı seslerle yön bulur."
+   "currentBeispielTr": "Yarasalar çok yüksek frekanslı seslerle yön buluyor."
   },
   {
    "id": 6730,
@@ -305,8 +305,8 @@
    "niveau": "C1",
    "formen": "Resonanzen",
    "currentTr": "rezonans, yankılanma",
-   "currentBeispiel": "Durch Resonanz kann eine Brücke gefährlich stark ins Schwingen geraten.",
-   "currentBeispielTr": "Rezonans yüzünden bir köprü tehlikeli ölçüde titreşmeye başlayabilir."
+   "currentBeispiel": "Durch Resonanz geriet die Brücke gefährlich ins Schwingen.",
+   "currentBeispielTr": "Rezonans yüzünden köprü tehlikeli biçimde sallanmaya başladı."
   },
   {
    "id": 6732,
@@ -315,8 +315,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "eylemsizlik, atalet",
-   "currentBeispiel": "Beim Bremsen spürt man die Trägheit des eigenen Körpers deutlich.",
-   "currentBeispielTr": "Fren yaparken kendi bedeninin eylemsizliğini açıkça hissedersin."
+   "currentBeispiel": "Beim Bremsen spürt man die Trägheit des eigenen Körpers.",
+   "currentBeispielTr": "Fren yaparken insan kendi bedeninin eylemsizliğini hissediyor."
   },
   {
    "id": 6733,
@@ -325,8 +325,8 @@
    "niveau": "C1",
    "formen": "Reibungen",
    "currentTr": "sürtünme",
-   "currentBeispiel": "Auf nassem Asphalt ist die Reibung der Reifen deutlich geringer.",
-   "currentBeispielTr": "Islak asfaltta lastiklerin sürtünmesi belirgin biçimde azdır."
+   "currentBeispiel": "Auf nassem Asphalt ist die Reibung der Reifen geringer.",
+   "currentBeispielTr": "Islak asfaltta lastiklerin sürtünmesi daha azdır."
   },
   {
    "id": 6734,
@@ -335,8 +335,8 @@
    "niveau": "C1",
    "formen": "Beschleunigungen",
    "currentTr": "ivme, hızlanma",
-   "currentBeispiel": "Die Beschleunigung eines fallenden Körpers ist nahezu konstant.",
-   "currentBeispielTr": "Düşen bir cismin ivmesi neredeyse sabittir."
+   "currentBeispiel": "Das Messgerät zeichnete die Beschleunigung des Wagens genau auf.",
+   "currentBeispielTr": "Ölçüm cihazı aracın ivmesini tam olarak kaydetti."
   },
   {
    "id": 6735,
@@ -345,8 +345,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kaldırma kuvveti",
-   "currentBeispiel": "Der Auftrieb im Salzwasser ist größer als im Süßwasser.",
-   "currentBeispielTr": "Tuzlu sudaki kaldırma kuvveti tatlı sudakinden büyüktür."
+   "currentBeispiel": "Im Salzwasser ist der Auftrieb deutlich größer.",
+   "currentBeispielTr": "Tuzlu suda kaldırma kuvveti belirgin biçimde daha fazladır."
   },
   {
    "id": 6736,
@@ -355,8 +355,8 @@
    "niveau": "C1",
    "formen": "Dichten",
    "currentTr": "yoğunluk",
-   "currentBeispiel": "Öl schwimmt oben, weil seine Dichte geringer ist als die von Wasser.",
-   "currentBeispielTr": "Yağ üstte kalır, çünkü yoğunluğu sudan azdır."
+   "currentBeispiel": "Öl schwimmt oben, weil seine Dichte geringer ist.",
+   "currentBeispielTr": "Yağ üstte kalıyor, çünkü yoğunluğu daha az."
   },
   {
    "id": 6737,
@@ -365,8 +365,8 @@
    "niveau": "C1",
    "formen": "Magnetfelder",
    "currentTr": "manyetik alan",
-   "currentBeispiel": "Das Magnetfeld der Erde lenkt geladene Teilchen aus dem All ab.",
-   "currentBeispielTr": "Dünya'nın manyetik alanı uzaydan gelen yüklü parçacıkları saptırır."
+   "currentBeispiel": "Das Magnetfeld der Erde lenkt geladene Teilchen ab.",
+   "currentBeispielTr": "Dünya'nın manyetik alanı yüklü parçacıkları saptırıyor."
   },
   {
    "id": 6738,
@@ -376,7 +376,7 @@
    "formen": "Leitfähigkeiten",
    "currentTr": "iletkenlik",
    "currentBeispiel": "Kupfer wird wegen seiner hohen Leitfähigkeit für Kabel verwendet.",
-   "currentBeispielTr": "Bakır, yüksek iletkenliği nedeniyle kablolarda kullanılır."
+   "currentBeispielTr": "Bakır yüksek iletkenliği nedeniyle kablolarda kullanılıyor."
   },
   {
    "id": 6739,
@@ -386,7 +386,7 @@
    "formen": "Wechselwirkungen",
    "currentTr": "etkileşim, karşılıklı etki",
    "currentBeispiel": "Zwischen den beiden Medikamenten sind gefährliche Wechselwirkungen möglich.",
-   "currentBeispielTr": "İki ilaç arasında tehlikeli etkileşimler olabilir."
+   "currentBeispielTr": "İki ilaç arasında tehlikeli etkileşimler mümkün."
   },
   {
    "id": 6740,
@@ -395,8 +395,8 @@
    "niveau": "C1",
    "formen": "Teilchen",
    "currentTr": "parçacık, zerre",
-   "currentBeispiel": "In der Luft schweben winzige Teilchen, die man kaum sieht.",
-   "currentBeispielTr": "Havada gözle güç görülen minicik parçacıklar asılı duruyor."
+   "currentBeispiel": "In der Luft schweben winzige Teilchen aus Ruß.",
+   "currentBeispielTr": "Havada minicik kurum parçacıkları asılı duruyor."
   },
   {
    "id": 6741,
@@ -405,8 +405,8 @@
    "niveau": "C1",
    "formen": "Katalysatoren",
    "currentTr": "katalizör",
-   "currentBeispiel": "Ein Katalysator beschleunigt die Reaktion, ohne selbst verbraucht zu werden.",
-   "currentBeispielTr": "Katalizör kendisi tükenmeden tepkimeyi hızlandırır."
+   "currentBeispiel": "Ohne Katalysator läuft die Reaktion viel zu langsam.",
+   "currentBeispielTr": "Katalizör olmadan tepkime çok yavaş ilerliyor."
   },
   {
    "id": 6742,
@@ -415,8 +415,8 @@
    "niveau": "C1",
    "formen": "Oxidationen",
    "currentTr": "oksitlenme, yükseltgenme",
-   "currentBeispiel": "Rost entsteht durch die langsame Oxidation von Eisen an der Luft.",
-   "currentBeispielTr": "Pas, demirin havada yavaşça oksitlenmesiyle oluşur."
+   "currentBeispiel": "Rost entsteht durch die langsame Oxidation von Eisen.",
+   "currentBeispielTr": "Pas, demirin yavaşça oksitlenmesiyle oluşuyor."
   },
   {
    "id": 6743,
@@ -425,8 +425,8 @@
    "niveau": "C1",
    "formen": "Verbrennungen",
    "currentTr": "yanma, yakma",
-   "currentBeispiel": "Bei der Verbrennung von Kohle entsteht sehr viel Kohlendioxid.",
-   "currentBeispielTr": "Kömürün yanmasıyla çok miktarda karbondioksit oluşur."
+   "currentBeispiel": "Bei der Verbrennung von Kohle entsteht viel Kohlendioxid.",
+   "currentBeispielTr": "Kömürün yanmasıyla çok miktarda karbondioksit oluşuyor."
   },
   {
    "id": 6744,
@@ -435,8 +435,8 @@
    "niveau": "C1",
    "formen": "Gärungen",
    "currentTr": "mayalanma, fermantasyon",
-   "currentBeispiel": "Ohne Gärung gäbe es weder Brot noch Wein.",
-   "currentBeispielTr": "Mayalanma olmasaydı ne ekmek olurdu ne şarap."
+   "currentBeispiel": "Im Keller hat die Gärung des Weins schon begonnen.",
+   "currentBeispielTr": "Mahzende şarabın mayalanması çoktan başladı."
   },
   {
    "id": 6745,
@@ -445,8 +445,8 @@
    "niveau": "C1",
    "formen": "Zersetzungen",
    "currentTr": "ayrışma, çürüme",
-   "currentBeispiel": "Die Zersetzung der Blätter im Waldboden dauert mehrere Monate.",
-   "currentBeispielTr": "Orman toprağındaki yaprakların ayrışması aylar sürer.",
+   "currentBeispiel": "Die Zersetzung der Blätter im Waldboden dauert Monate.",
+   "currentBeispielTr": "Orman toprağındaki yaprakların çürümesi aylar sürüyor.",
    "overlapping": [
     "die Segregation (C1)",
     "die Verwitterung (C1)",
@@ -460,8 +460,8 @@
    "niveau": "C1",
    "formen": "Siedepunkte",
    "currentTr": "kaynama noktası",
-   "currentBeispiel": "In den Bergen liegt der Siedepunkt von Wasser deutlich niedriger.",
-   "currentBeispielTr": "Dağlarda suyun kaynama noktası belirgin biçimde daha düşüktür."
+   "currentBeispiel": "In den Bergen liegt der Siedepunkt von Wasser niedriger.",
+   "currentBeispielTr": "Dağlarda suyun kaynama noktası daha düşüktür."
   },
   {
    "id": 6747,
@@ -470,8 +470,8 @@
    "niveau": "C1",
    "formen": "Kristalle",
    "currentTr": "kristal",
-   "currentBeispiel": "Beim langsamen Verdunsten bilden sich im Glas feine Kristalle.",
-   "currentBeispielTr": "Yavaş buharlaşma sırasında bardakta ince kristaller oluşur."
+   "currentBeispiel": "Auf dem Fenster wuchsen über Nacht feine Kristalle.",
+   "currentBeispielTr": "Camda gece boyunca ince kristaller oluştu."
   },
   {
    "id": 6748,
@@ -480,8 +480,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "oksijen",
-   "currentBeispiel": "In großer Höhe enthält die Luft deutlich weniger Sauerstoff.",
-   "currentBeispielTr": "Yüksek irtifada hava belirgin biçimde daha az oksijen içerir."
+   "currentBeispiel": "In großer Höhe enthält die Luft weniger Sauerstoff.",
+   "currentBeispielTr": "Yüksek irtifada hava daha az oksijen içeriyor."
   },
   {
    "id": 6749,
@@ -490,8 +490,8 @@
    "niveau": "C1",
    "formen": "Verdunstungen",
    "currentTr": "buharlaşma",
-   "currentBeispiel": "Durch die Verdunstung verliert der See im Sommer viel Wasser.",
-   "currentBeispielTr": "Buharlaşma yüzünden göl yazın çok su kaybediyor."
+   "currentBeispiel": "Durch die Verdunstung verliert der See im Sommer Wasser.",
+   "currentBeispielTr": "Buharlaşma yüzünden göl yazın su kaybediyor."
   },
   {
    "id": 6750,
@@ -500,7 +500,7 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ayrışma, doğal aşınma",
-   "currentBeispiel": "Frost und Regen beschleunigen die Verwitterung des alten Gemäuers.",
+   "currentBeispiel": "Frost und Regen beschleunigen die Verwitterung der alten Mauer.",
    "currentBeispielTr": "Don ve yağmur eski duvarın aşınmasını hızlandırıyor.",
    "overlapping": [
     "die Segregation (C1)",
@@ -516,7 +516,7 @@
    "formen": "Symbiosen",
    "currentTr": "ortak yaşam, simbiyoz",
    "currentBeispiel": "Pilz und Alge leben in der Flechte in enger Symbiose.",
-   "currentBeispielTr": "Likende mantar ve yosun sıkı bir ortak yaşam sürdürür."
+   "currentBeispielTr": "Likende mantar ve yosun sıkı bir ortak yaşam sürüyor."
   },
   {
    "id": 6752,
@@ -525,8 +525,8 @@
    "niveau": "C1",
    "formen": "Mutationen",
    "currentTr": "mutasyon",
-   "currentBeispiel": "Eine einzige Mutation kann die Wirkung des Medikaments aufheben.",
-   "currentBeispielTr": "Tek bir mutasyon ilacın etkisini ortadan kaldırabilir."
+   "currentBeispiel": "Eine einzige Mutation machte das Bakterium resistent.",
+   "currentBeispielTr": "Tek bir mutasyon bakteriyi dirençli hâle getirdi."
   }
  ]
 }

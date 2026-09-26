@@ -20,7 +20,7 @@
    "formen": "-e",
    "currentTr": "el bileği",
    "currentBeispiel": "Mein Handgelenk tut weh, wenn ich schreibe.",
-   "currentBeispielTr": "Yazı yazarken el bileğim ağrıyor."
+   "currentBeispielTr": "Yazarken el bileğim ağrıyor."
   },
   {
    "id": 7940,
@@ -59,8 +59,8 @@
    "niveau": "A2",
    "formen": "(Pl.)",
    "currentTr": "diş ağrısı",
-   "currentBeispiel": "Wegen der Zahnschmerzen konnte ich nachts nicht schlafen.",
-   "currentBeispielTr": "Diş ağrısı yüzünden geceleri uyuyamadım."
+   "currentBeispiel": "Ich habe Zahnschmerzen und muss zum Zahnarzt.",
+   "currentBeispielTr": "Dişim ağrıyor ve dişçiye gitmem gerek."
   },
   {
    "id": 7944,
@@ -90,7 +90,7 @@
    "formen": "-n",
    "currentTr": "migren",
    "currentBeispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe.",
-   "currentBeispielTr": "Kız kardeşimin sık sık migreni oluyor ve o zaman sessizliğe ihtiyacı var."
+   "currentBeispielTr": "Kız kardeşim sık sık migren olur ve sessizlik ister."
   },
   {
    "id": 7947,
@@ -99,8 +99,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "burun kanaması",
-   "currentBeispiel": "Das Kind hat Nasenbluten, hol bitte ein Taschentuch.",
-   "currentBeispielTr": "Çocuğun burnu kanıyor, lütfen bir mendil getir."
+   "currentBeispiel": "Mein Sohn hat im Winter oft Nasenbluten.",
+   "currentBeispielTr": "Oğlumun kışın sık sık burnu kanar."
   },
   {
    "id": 7948,
@@ -152,8 +152,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "acil doktoru",
-   "currentBeispiel": "Nach dem Unfall kam der Notarzt sehr schnell.",
-   "currentBeispielTr": "Kazadan sonra acil doktoru çok çabuk geldi."
+   "currentBeispiel": "Nach dem Unfall ist der Notarzt schnell gekommen.",
+   "currentBeispielTr": "Kazadan sonra acil doktoru çabuk geldi."
   },
   {
    "id": 7953,
@@ -216,7 +216,7 @@
    "formen": "-n",
    "currentTr": "uyku hapı",
    "currentBeispiel": "Ohne Schlaftablette kann er kaum einschlafen.",
-   "currentBeispielTr": "Uyku hapı olmadan neredeyse hiç uyuyamıyor."
+   "currentBeispielTr": "Uyku hapı olmadan zor uyuyor."
   },
   {
    "id": 7959,
@@ -289,7 +289,7 @@
    "formen": "-n",
    "currentTr": "masaj",
    "currentBeispiel": "Gegen die Schmerzen im Rücken hilft eine Massage.",
-   "currentBeispielTr": "Sırttaki ağrılara masaj iyi geliyor."
+   "currentBeispielTr": "Sırt ağrısına masaj iyi geliyor."
   },
   {
    "id": 7966,
@@ -338,8 +338,8 @@
    "niveau": "A2",
    "formen": "impft, hat geimpft",
    "currentTr": "aşılamak, aşı yapmak",
-   "currentBeispiel": "Morgen lasse ich mich gegen Grippe impfen.",
-   "currentBeispielTr": "Yarın grip aşısı olacağım."
+   "currentBeispiel": "Der Arzt impft heute viele Kinder gegen Grippe.",
+   "currentBeispielTr": "Doktor bugün birçok çocuğu gribe karşı aşılıyor."
   },
   {
    "id": 7971,
@@ -359,7 +359,7 @@
    "formen": "steckt sich an, hat sich angesteckt",
    "currentTr": "hastalık kapmak, bulaşmak",
    "currentBeispiel": "Bleib zu Hause, ich möchte mich nicht anstecken.",
-   "currentBeispielTr": "Evde kal, hastalığı kapmak istemiyorum."
+   "currentBeispielTr": "Evde kal, hastalık kapmak istemiyorum."
   },
   {
    "id": 7973,
@@ -379,7 +379,7 @@
    "formen": "schluckt, hat geschluckt",
    "currentTr": "yutmak",
    "currentBeispiel": "Mein Hals tut weh und ich kann kaum schlucken.",
-   "currentBeispielTr": "Boğazım ağrıyor ve neredeyse hiç yutkunamıyorum."
+   "currentBeispielTr": "Boğazım ağrıyor ve zor yutkunuyorum."
   },
   {
    "id": 7975,
@@ -388,8 +388,8 @@
    "niveau": "A2",
    "formen": "kühlt, hat gekühlt",
    "currentTr": "soğutmak, buz koymak",
-   "currentBeispiel": "Kühle das Knie mit Eis, dann wird es besser.",
-   "currentBeispielTr": "Dizi buzla soğut, o zaman daha iyi olur."
+   "currentBeispiel": "Kühle die Wunde sofort mit kaltem Wasser.",
+   "currentBeispielTr": "Yarayı hemen soğuk suyla soğut."
   },
   {
    "id": 7976,
@@ -399,7 +399,7 @@
    "formen": "schläft sich aus, hat sich ausgeschlafen",
    "currentTr": "iyice uyumak, uykusunu almak",
    "currentBeispiel": "Am Wochenende möchte ich mich endlich ausschlafen.",
-   "currentBeispielTr": "Hafta sonunda nihayet uykumu almak istiyorum."
+   "currentBeispielTr": "Hafta sonu nihayet uykumu almak istiyorum."
   },
   {
    "id": 7977,
@@ -409,7 +409,7 @@
    "formen": "",
    "currentTr": "başı dönen",
    "currentBeispiel": "Wenn ich zu schnell aufstehe, wird mir schwindlig.",
-   "currentBeispielTr": "Çok hızlı ayağa kalktığımda başım dönüyor."
+   "currentBeispielTr": "Çok hızlı ayağa kalkınca başım dönüyor."
   },
   {
    "id": 7978,
@@ -428,8 +428,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şişmiş, şiş",
-   "currentBeispiel": "Mein Fuß ist dick und geschwollen.",
-   "currentBeispielTr": "Ayağım kalın ve şişmiş durumda."
+   "currentBeispiel": "Mein Fuß ist geschwollen und tut weh.",
+   "currentBeispielTr": "Ayağım şişmiş ve ağrıyor."
   },
   {
    "id": 7980,
@@ -438,8 +438,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "yaralı, sakatlanmış",
-   "currentBeispiel": "Bei dem Unfall wurde zum Glück niemand verletzt.",
-   "currentBeispielTr": "Kazada şükür ki kimse yaralanmadı."
+   "currentBeispiel": "Der Fahrer war nach dem Unfall schwer verletzt.",
+   "currentBeispielTr": "Sürücü kazadan sonra ağır yaralıydı."
   },
   {
    "id": 7981,
@@ -458,8 +458,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "acı veren, ağrılı",
-   "currentBeispiel": "Die Spritze war kurz, aber schmerzhaft.",
-   "currentBeispielTr": "İğne kısaydı ama acı vericiydi."
+   "currentBeispiel": "Die Behandlung war leider sehr schmerzhaft.",
+   "currentBeispielTr": "Tedavi maalesef çok acı vericiydi."
   },
   {
    "id": 7983,
@@ -481,7 +481,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "baygın",
-   "currentBeispiel": "In der Hitze wurde die alte Frau ohnmächtig.",
+   "currentBeispiel": "In der Hitze ist die alte Frau ohnmächtig geworden.",
    "currentBeispielTr": "Sıcakta yaşlı kadın bayıldı.",
    "overlapping": [
     "bewusstlos (B2)"
@@ -494,8 +494,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "telefon numarası",
-   "currentBeispiel": "Kannst du mir bitte deine Telefonnummer geben?",
-   "currentBeispielTr": "Bana lütfen telefon numaranı verebilir misin?",
+   "currentBeispiel": "Die Telefonnummer der Praxis steht auf der Karte.",
+   "currentBeispielTr": "Muayenehanenin telefon numarası kartta yazıyor.",
    "overlapping": [
     "die Rufnummer (B1)"
    ]
@@ -518,7 +518,7 @@
    "formen": "-e",
    "currentTr": "telefon görüşmesi",
    "currentBeispiel": "Das Telefonat mit meinem Chef hat nur fünf Minuten gedauert.",
-   "currentBeispielTr": "Patronumla yaptığım telefon görüşmesi sadece beş dakika sürdü.",
+   "currentBeispielTr": "Patronumla telefon görüşmem sadece beş dakika sürdü.",
    "overlapping": [
     "der Anruf (A1)"
    ]

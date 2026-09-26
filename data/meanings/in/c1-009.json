@@ -10,7 +10,7 @@
    "formen": "bagatellisiert, hat bagatellisiert",
    "currentTr": "önemsizleştirmek, küçümsemek",
    "currentBeispiel": "Der Politiker bagatellisierte die Vorwürfe in der Pressekonferenz.",
-   "currentBeispielTr": "Politikacı, basın toplantısında suçlamaları önemsizleştirdi."
+   "currentBeispielTr": "Politikacı, basın toplantısında suçlamaları önemsiz gösterdi."
   },
   {
    "id": 3986,
@@ -35,7 +35,7 @@
    "formen": "skandalisiert, hat skandalisiert",
    "currentTr": "skandal haline getirmek",
    "currentBeispiel": "Die Medien skandalisierten den Vorfall, bevor die Fakten geklärt waren.",
-   "currentBeispielTr": "Medya, gerçekler netleşmeden olayı skandala dönüştürdü."
+   "currentBeispielTr": "Medya, gerçekler netleşmeden olayı skandal haline getirdi."
   },
   {
    "id": 3989,
@@ -45,7 +45,7 @@
    "formen": "kaschiert, hat kaschiert",
    "currentTr": "(kusuru, eksiği) gizlemek, üstünü örtmek",
    "currentBeispiel": "Mit warmen Worten kaschierte er das eigentliche Problem.",
-   "currentBeispielTr": "Tatlı sözlerle asıl sorunu örtbas etti."
+   "currentBeispielTr": "Tatlı sözlerle asıl sorunu gizledi."
   },
   {
    "id": 3990,
@@ -65,7 +65,7 @@
    "formen": "gängelt, hat gegängelt",
    "currentTr": "sıkı kontrol altında tutmak",
    "currentBeispiel": "Die Bürokratie gängelt kleine Unternehmen mit unnötigen Vorschriften.",
-   "currentBeispielTr": "Bürokrasi, küçük işletmeleri gereksiz kurallarla boğuyor."
+   "currentBeispielTr": "Bürokrasi, küçük işletmeleri gereksiz kurallarla vesayet altında tutuyor."
   },
   {
    "id": 3993,
@@ -74,8 +74,8 @@
    "niveau": "C1",
    "formen": "entmündigt, hat entmündigt",
    "currentTr": "ehliyetsiz kılmak, iradesini elinden almak",
-   "currentBeispiel": "Übermäßige Bevormundung entmündigt letztlich den mündigen Bürger.",
-   "currentBeispielTr": "Aşırı vesayet, sonunda reşit vatandaşı iradesizleştirir."
+   "currentBeispiel": "Solche Regeln entmündigen die Bewohner des Pflegeheims.",
+   "currentBeispielTr": "Bu kurallar, bakımevi sakinlerinin iradesini elinden alıyor."
   },
   {
    "id": 3994,
@@ -108,7 +108,7 @@
    "formen": "verunglimpft, hat verunglimpft",
    "currentTr": "karalamak, itibarsızlaştırmak",
    "currentBeispiel": "In Kommentaren wurde die Wissenschaftlerin wüst verunglimpft.",
-   "currentBeispielTr": "Yorumlarda bilim insanına ağır hakaretlerle saldırıldı.",
+   "currentBeispielTr": "Yorumlarda bilim insanı ağır biçimde karalandı.",
    "overlapping": [
     "diffamieren (C1)"
    ]
@@ -121,7 +121,7 @@
    "formen": "diffamiert, hat diffamiert",
    "currentTr": "karalamak, iftira atmak",
    "currentBeispiel": "Politische Gegner werden in sozialen Medien oft diffamiert.",
-   "currentBeispielTr": "Siyasi rakipler sosyal medyada sık sık karalanıyor.",
+   "currentBeispielTr": "Siyasi rakiplere sosyal medyada sık sık iftira atılıyor.",
    "overlapping": [
     "verunglimpfen (C1)"
    ]
@@ -146,8 +146,8 @@
    "niveau": "C1",
    "formen": "marginalisiert, hat marginalisiert",
    "currentTr": "ötekileştirmek, marjinalleştirmek",
-   "currentBeispiel": "Der Diskurs marginalisiert häufig die Stimmen der Betroffenen.",
-   "currentBeispielTr": "Tartışma, mağdurların seslerini çoğu zaman ötekileştiriyor."
+   "currentBeispiel": "Die neue Wohnungspolitik marginalisiert arme Familien noch stärker.",
+   "currentBeispielTr": "Yeni konut politikası yoksul aileleri daha da ötekileştiriyor."
   },
   {
    "id": 4002,
@@ -157,7 +157,7 @@
    "formen": "problematisiert, hat problematisiert",
    "currentTr": "sorunsallaştırmak",
    "currentBeispiel": "Die Studie problematisiert den unkritischen Umgang mit Algorithmen.",
-   "currentBeispielTr": "Araştırma, algoritmaların sorgulanmadan kullanılmasını sorunsallaştırıyor."
+   "currentBeispielTr": "Araştırma, algoritmaların eleştirisiz kullanımını sorunsallaştırıyor."
   },
   {
    "id": 4003,
@@ -167,7 +167,7 @@
    "formen": "entmenschlicht, hat entmenschlicht",
    "currentTr": "insanlıktan çıkarmak",
    "currentBeispiel": "Kriegspropaganda entmenschlicht den Feind gezielt in der Sprache.",
-   "currentBeispielTr": "Savaş propagandası, düşmanı dil üzerinden bilinçli olarak insanlıktan çıkarır."
+   "currentBeispielTr": "Savaş propagandası, düşmanı dil yoluyla bilinçli olarak insanlıktan çıkarıyor."
   },
   {
    "id": 4006,
@@ -176,8 +176,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "vicdansız",
-   "currentBeispiel": "Er handelte in dieser Angelegenheit geradezu gewissenlos.",
-   "currentBeispielTr": "Bu meselede resmen vicdansızca davrandı.",
+   "currentBeispiel": "Der Makler nutzte die Not der Familie gewissenlos aus.",
+   "currentBeispielTr": "Emlakçı, ailenin çaresizliğinden vicdansızca yararlandı.",
    "overlapping": [
     "skrupellos (C1)"
    ]
@@ -210,7 +210,7 @@
    "formen": "",
    "currentTr": "sağlam, uygulanabilir, taşıyıcı",
    "currentBeispiel": "Ein wirklich tragfähiges Konzept für die Energiewende fehlt bislang.",
-   "currentBeispielTr": "Enerji dönüşümü için gerçekten sürdürülebilir bir plan hâlâ yok.",
+   "currentBeispielTr": "Enerji dönüşümü için gerçekten uygulanabilir bir plan hâlâ yok.",
    "overlapping": [
     "fest (B1)",
     "stichhaltig (C1)",
@@ -225,8 +225,8 @@
    "niveau": "C1",
    "formen": "begünstigt, hat begünstigt",
    "currentTr": "kolaylaştırmak, teşvik etmek",
-   "currentBeispiel": "Niedrige Zinsen begünstigen private Investitionen.",
-   "currentBeispielTr": "Düşük faizler özel yatırımları teşvik ediyor.",
+   "currentBeispiel": "Das neue Gesetz begünstigt vor allem große Konzerne.",
+   "currentBeispielTr": "Yeni yasa her şeyden önce büyük şirketleri kayırıyor.",
    "overlapping": [
     "erleichtern (B1)"
    ]
@@ -249,7 +249,7 @@
    "formen": "büßt ein, hat eingebüßt",
    "currentTr": "kaybetmek, yitirmek",
    "currentBeispiel": "Die Partei büßte bei der Wahl deutlich an Zustimmung ein.",
-   "currentBeispielTr": "Parti, seçimde ciddi oy kaybına uğradı.",
+   "currentBeispielTr": "Parti, seçimde ciddi ölçüde destek yitirdi.",
    "overlapping": [
     "verlieren (A2)"
    ]
@@ -262,7 +262,7 @@
    "formen": "konzipiert, hat konzipiert",
    "currentTr": "tasarlamak, kurgulamak",
    "currentBeispiel": "Das Projekt wurde für ein internationales Publikum konzipiert.",
-   "currentBeispielTr": "Proje uluslararası bir kitle için tasarlandı.",
+   "currentBeispielTr": "Proje, uluslararası bir kitle için kurgulandı.",
    "overlapping": [
     "entwerfen (C1)"
    ]
@@ -275,7 +275,7 @@
    "formen": "verinnerlicht, hat verinnerlicht",
    "currentTr": "içselleştirmek, benimsemek",
    "currentBeispiel": "Kinder verinnerlichen Werte vor allem durch Vorbilder.",
-   "currentBeispielTr": "Çocuklar değerleri en çok rol modeller üzerinden içselleştirir."
+   "currentBeispielTr": "Çocuklar değerleri en çok rol modellerden içselleştirir."
   },
   {
    "id": 4026,
@@ -284,8 +284,8 @@
    "niveau": "C1",
    "formen": "reglementiert, hat reglementiert",
    "currentTr": "ayrıntılı kurallarla düzenlemek, kurallara bağlamak",
-   "currentBeispiel": "Der Markt wird durch strenge Vorschriften reglementiert.",
-   "currentBeispielTr": "Pazar, sıkı kurallarla düzenleniyor."
+   "currentBeispiel": "Die Schule reglementiert sogar die Pausen der Kinder.",
+   "currentBeispielTr": "Okul, çocukların teneffüslerini bile kurallara bağlıyor."
   },
   {
    "id": 4027,
@@ -295,7 +295,7 @@
    "formen": "entkräftet, hat entkräftet",
    "currentTr": "çürütmek, geçersiz kılmak",
    "currentBeispiel": "Die neuen Beweise entkräften das alte Argument vollständig.",
-   "currentBeispielTr": "Yeni kanıtlar eski savı tamamen çürütüyor.",
+   "currentBeispielTr": "Yeni kanıtlar, eski savı tamamen geçersiz kılıyor.",
    "overlapping": [
     "widerlegen (C1)"
    ]
@@ -317,8 +317,8 @@
    "niveau": "C1",
    "formen": "ufert aus, ist ausgeufert",
    "currentTr": "kontrolden çıkmak, taşmak",
-   "currentBeispiel": "Die Debatte drohte in einen offenen Streit auszuufern.",
-   "currentBeispielTr": "Tartışma açık bir kavgaya dönüşme tehlikesi taşıyordu.",
+   "currentBeispiel": "Die Feier uferte in dieser Nacht völlig aus.",
+   "currentBeispielTr": "Parti o gece tamamen kontrolden çıktı.",
    "overlapping": [
     "entgleisen (C1)"
    ]
@@ -367,8 +367,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çok yönlü, çok boyutlu",
-   "currentBeispiel": "Das Thema ist überraschend facettenreich und komplex.",
-   "currentBeispielTr": "Konu şaşırtıcı derecede çok boyutlu ve karmaşık."
+   "currentBeispiel": "Die Ausstellung zeigt ein facettenreiches Bild der Stadt.",
+   "currentBeispielTr": "Sergi, kentin çok yönlü bir portresini sunuyor."
   },
   {
    "id": 4039,
@@ -378,7 +378,7 @@
    "formen": "",
    "currentTr": "anlaşılmaz, şeffaf olmayan",
    "currentBeispiel": "Die Finanzierung des Projekts bleibt bis heute undurchsichtig.",
-   "currentBeispielTr": "Projenin finansmanı bugüne dek şeffaflıktan uzak.",
+   "currentBeispielTr": "Projenin finansmanı bugüne kadar şeffaf değil.",
    "overlapping": [
     "unverständlich (A2)"
    ]
@@ -390,8 +390,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "titiz, kılı kırk yaran",
-   "currentBeispiel": "Sie bereitet jede Präsentation akribisch und gründlich vor.",
-   "currentBeispielTr": "Her sunumu titizlikle ve derinlemesine hazırlıyor.",
+   "currentBeispiel": "Sie bereitet jede Präsentation akribisch vor.",
+   "currentBeispielTr": "Her sunumu titizlikle hazırlıyor.",
    "overlapping": [
     "gewissenhaft (B2)"
    ]
@@ -424,7 +424,7 @@
    "formen": "Agrarreformen",
    "currentTr": "tarım reformu",
    "currentBeispiel": "Die letzte Agrarreform hat die Verteilungsfrage kaum berührt.",
-   "currentBeispielTr": "Son tarım reformu bölüşüm sorununa neredeyse hiç dokunmadı."
+   "currentBeispielTr": "Son tarım reformu bölüşüm sorununa neredeyse hiç değinmedi."
   },
   {
    "id": 5690,
@@ -433,8 +433,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "agroekoloji, tarımsal ekoloji",
-   "currentBeispiel": "Die Agrarökologie versteht den Betrieb als Teil eines Ökosystems.",
-   "currentBeispielTr": "Agroekoloji, işletmeyi bir ekosistemin parçası olarak görür."
+   "currentBeispiel": "Immer mehr Höfe setzen inzwischen auf Agrarökologie.",
+   "currentBeispielTr": "Giderek daha fazla çiftlik agroekolojiye yöneliyor."
   },
   {
    "id": 5691,
@@ -443,8 +443,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "gıda egemenliği",
-   "currentBeispiel": "Ernährungssouveränität meint das Recht, die eigene Agrarpolitik zu bestimmen.",
-   "currentBeispielTr": "Gıda egemenliği, kendi tarım politikasını belirleme hakkı anlamına gelir."
+   "currentBeispiel": "Kleinbauern fordern weltweit mehr Ernährungssouveränität statt Freihandel.",
+   "currentBeispielTr": "Küçük çiftçiler dünya genelinde serbest ticaret yerine daha fazla gıda egemenliği istiyor."
   },
   {
    "id": 5692,
@@ -464,7 +464,7 @@
    "formen": "",
    "currentTr": "arazi tüketimi, alan kullanımı",
    "currentBeispiel": "Der Flächenverbrauch durch Siedlungen wächst schneller als geplant.",
-   "currentBeispielTr": "Yerleşim alanlarının yol açtığı arazi tüketimi planlanandan hızlı büyüyor."
+   "currentBeispielTr": "Yerleşimlerin yol açtığı arazi tüketimi planlanandan hızlı büyüyor."
   },
   {
    "id": 5694,
@@ -484,7 +484,7 @@
    "formen": "",
    "currentTr": "arazi spekülasyonu",
    "currentBeispiel": "Bodenspekulation treibt die Pachten in vielen Regionen nach oben.",
-   "currentBeispielTr": "Arazi spekülasyonu birçok bölgede kiraları yukarı çekiyor."
+   "currentBeispielTr": "Arazi spekülasyonu birçok bölgede kira bedellerini yukarı çekiyor."
   },
   {
    "id": 5696,
@@ -493,8 +493,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "toprak verimliliği",
-   "currentBeispiel": "Der Erhalt der Bodenfruchtbarkeit wird selten als Gemeinwohlaufgabe verstanden.",
-   "currentBeispielTr": "Toprak verimliliğinin korunması nadiren bir kamu yararı görevi olarak görülüyor."
+   "currentBeispiel": "Zwischenfrüchte verbessern die Bodenfruchtbarkeit deutlich.",
+   "currentBeispielTr": "Ara ürünler toprak verimliliğini belirgin biçimde artırıyor."
   },
   {
    "id": 5697,
@@ -504,7 +504,7 @@
    "formen": "Weltmarktpreise",
    "currentTr": "dünya piyasa fiyatı",
    "currentBeispiel": "Fallende Weltmarktpreise ruinieren kleine Erzeuger im globalen Süden.",
-   "currentBeispielTr": "Düşen dünya piyasa fiyatları küresel güneydeki küçük üreticileri iflasa sürüklüyor."
+   "currentBeispielTr": "Düşen dünya piyasa fiyatları küresel güneydeki küçük üreticileri mahvediyor."
   },
   {
    "id": 5698,
@@ -524,7 +524,7 @@
    "formen": "",
    "currentTr": "fiyat oynaklığı, fiyat dalgalanması",
    "currentBeispiel": "Die Preisvolatilität auf den Rohstoffmärkten erschwert jede Investitionsplanung.",
-   "currentBeispielTr": "Emtia piyasalarındaki fiyat oynaklığı her türlü yatırım planlamasını zorlaştırıyor."
+   "currentBeispielTr": "Emtia piyasalarındaki fiyat oynaklığı her yatırım planını zorlaştırıyor."
   },
   {
    "id": 5700,
@@ -534,7 +534,7 @@
    "formen": "Handelsliberalisierungen",
    "currentTr": "ticaretin serbestleştirilmesi",
    "currentBeispiel": "Die Handelsliberalisierung hat den Wettbewerbsdruck auf europäische Betriebe erhöht.",
-   "currentBeispielTr": "Ticaretin serbestleştirilmesi Avrupalı işletmeler üzerindeki rekabet baskısını artırdı."
+   "currentBeispielTr": "Ticaretin serbestleşmesi, Avrupalı işletmeler üzerindeki rekabet baskısını artırdı."
   },
   {
    "id": 5701,

@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Wertvorstellungen",
    "currentTr": "değer anlayışı, değer yargısı",
-   "currentBeispiel": "Die Wertvorstellungen der Generationen driften spürbar auseinander.",
-   "currentBeispielTr": "Kuşakların değer anlayışları belirgin biçimde birbirinden uzaklaşıyor."
+   "currentBeispiel": "Ihre Wertvorstellungen prallten schon beim ersten Abendessen aufeinander.",
+   "currentBeispielTr": "Değer anlayışları daha ilk akşam yemeğinde çarpıştı."
   },
   {
    "id": 6854,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geçicilik, fanilik",
-   "currentBeispiel": "Das Bewusstsein der Vergänglichkeit verändert unseren Umgang mit Zeit.",
-   "currentBeispielTr": "Geçicilik bilinci, zamanla ilişkimizi değiştirir."
+   "currentBeispiel": "Am Grab seines Vaters begriff er die Vergänglichkeit.",
+   "currentBeispielTr": "Babasının mezarı başında geçiciliği kavradı."
   },
   {
    "id": 6855,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Wesenszüge",
    "currentTr": "karakter özelliği, temel nitelik",
-   "currentBeispiel": "Neugier gilt vielen als grundlegender Wesenszug des Menschen.",
-   "currentBeispielTr": "Merak, birçoklarınca insanın temel bir niteliği sayılır.",
+   "currentBeispiel": "Diese Sturheit ist ein Wesenszug seiner ganzen Familie.",
+   "currentBeispielTr": "Bu inatçılık bütün ailesinin temel bir karakter özelliği.",
    "overlapping": [
     "der Charakterzug (B2)"
    ]
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "Triebfedern",
    "currentTr": "itici güç, saik",
-   "currentBeispiel": "Die eigentliche Triebfeder seines Engagements war schlichte Eitelkeit.",
-   "currentBeispielTr": "Çabalarının asıl itici gücü basit bir kibirdi."
+   "currentBeispiel": "Neid war die eigentliche Triebfeder hinter seiner Kandidatur.",
+   "currentBeispielTr": "Adaylığının asıl itici gücü kıskançlıktı."
   },
   {
    "id": 6857,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çaba, arayış, gayret",
-   "currentBeispiel": "Das Streben nach Glück lässt sich nicht erzwingen.",
-   "currentBeispielTr": "Mutluluğa erişme çabası zorlamayla gerçekleşmez.",
+   "currentBeispiel": "Sein Streben nach Anerkennung bestimmt jede seiner Entscheidungen.",
+   "currentBeispielTr": "Tanınma arayışı bütün kararlarını belirliyor.",
    "overlapping": [
     "die Mühe (B1)",
     "die Bemühung (B2)"
@@ -66,8 +66,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kendini bilme, öz farkındalık",
-   "currentBeispiel": "Selbsterkenntnis gilt seit der Antike als Anfang aller Weisheit.",
-   "currentBeispielTr": "Kendini bilmek, Antik Çağ'dan beri tüm bilgeliğin başlangıcı sayılır."
+   "currentBeispiel": "Nach dem Streit fehlte ihm jede Selbsterkenntnis.",
+   "currentBeispielTr": "Kavgadan sonra kendini bilmekten eser yoktu."
   },
   {
    "id": 6859,
@@ -76,8 +76,8 @@
    "niveau": "C1",
    "formen": "Selbstzwecke",
    "currentTr": "kendi başına amaç",
-   "currentBeispiel": "Der Mensch ist Selbstzweck und darf nie bloßes Mittel sein.",
-   "currentBeispielTr": "İnsan kendi başına bir amaçtır ve asla salt araç olamaz."
+   "currentBeispiel": "Diese Sitzungen sind längst zum Selbstzweck geworden.",
+   "currentBeispielTr": "Bu toplantılar çoktan kendi başına bir amaç hâline geldi."
   },
   {
    "id": 6860,
@@ -86,8 +86,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çıkışsızlık, umutsuzluk",
-   "currentBeispiel": "Camus beschreibt die Ausweglosigkeit als Grundgefühl des modernen Menschen.",
-   "currentBeispielTr": "Camus, çıkışsızlığı modern insanın temel duygusu olarak betimler."
+   "currentBeispiel": "Nach der dritten Absage packte ihn die Ausweglosigkeit.",
+   "currentBeispielTr": "Üçüncü ret cevabından sonra çıkışsızlık duygusuna kapıldı."
   },
   {
    "id": 6861,
@@ -96,8 +96,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bağışlama, affetme",
-   "currentBeispiel": "Vergebung bedeutet nicht, das Geschehene für harmlos zu erklären.",
-   "currentBeispielTr": "Bağışlamak, olup biteni zararsız ilan etmek anlamına gelmez."
+   "currentBeispiel": "Nach Jahren des Schweigens bat er um Vergebung.",
+   "currentBeispielTr": "Yıllar süren sessizliğin ardından bağışlanma diledi."
   },
   {
    "id": 6862,
@@ -106,8 +106,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hoşgörü, müsamaha",
-   "currentBeispiel": "Mit sich selbst übt er weit mehr Nachsicht als mit anderen.",
-   "currentBeispielTr": "Kendisine karşı başkalarına olduğundan çok daha hoşgörülü davranıyor."
+   "currentBeispiel": "Mit Anfängern zeigt der Trainer erstaunlich viel Nachsicht.",
+   "currentBeispielTr": "Antrenör yeni başlayanlara şaşırtıcı ölçüde hoşgörü gösteriyor."
   },
   {
    "id": 6863,
@@ -116,8 +116,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "satın alınamazlık, dürüstlük (rüşvete kapalı olma)",
-   "currentBeispiel": "Die Unbestechlichkeit der Richter ist die Grundlage jedes Rechtsstaats.",
-   "currentBeispielTr": "Yargıçların satın alınamazlığı, her hukuk devletinin temelidir."
+   "currentBeispiel": "Der Beamte lehnte das Geld ab und bewies seine Unbestechlichkeit.",
+   "currentBeispielTr": "Memur parayı geri çevirerek satın alınamazlığını kanıtladı."
   },
   {
    "id": 6864,
@@ -126,8 +126,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "erginlik, kendi aklını kullanabilme",
-   "currentBeispiel": "Bildung soll vor allem zur geistigen Mündigkeit führen.",
-   "currentBeispielTr": "Eğitim her şeyden önce zihinsel erginliğe götürmelidir."
+   "currentBeispiel": "Die Schule soll die Kinder zur Mündigkeit erziehen.",
+   "currentBeispielTr": "Okul, çocukları ergin bireyler olarak yetiştirmeli."
   },
   {
    "id": 6865,
@@ -136,8 +136,8 @@
    "niveau": "C1",
    "formen": "Selbsttäuschungen",
    "currentTr": "kendini kandırma, kendini aldatma",
-   "currentBeispiel": "Wer nur bestätigende Quellen liest, betreibt eine bequeme Selbsttäuschung.",
-   "currentBeispielTr": "Yalnızca kendini doğrulayan kaynakları okuyan kişi rahat bir kendini kandırma içindedir."
+   "currentBeispiel": "Er nannte es Optimismus, doch es war Selbsttäuschung.",
+   "currentBeispielTr": "Buna iyimserlik diyordu, oysa kendini kandırmaktı."
   },
   {
    "id": 6866,
@@ -146,8 +146,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "alçakgönüllülük, tevazu",
-   "currentBeispiel": "Vor der Komplexität des Themas ist etwas Demut angebracht.",
-   "currentBeispielTr": "Konunun karmaşıklığı karşısında biraz tevazu yerinde olur.",
+   "currentBeispiel": "Vor diesem alten Wald empfand sie plötzlich Demut.",
+   "currentBeispielTr": "Bu yaşlı ormanın karşısında birden tevazu duydu.",
    "overlapping": [
     "die Bescheidenheit (B2)"
    ]
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kibir, gurur",
-   "currentBeispiel": "Sein Hochmut verstellte ihm den Blick für eigene Fehler.",
-   "currentBeispielTr": "Kibri, kendi hatalarını görmesini engelledi."
+   "currentBeispiel": "Sein Hochmut kostete ihn am Ende alle Freunde.",
+   "currentBeispielTr": "Kibri yüzünden sonunda bütün arkadaşlarını kaybetti."
   },
   {
    "id": 6868,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "hat geboten",
    "currentTr": "gerektirmek, emretmek, buyurmak",
-   "currentBeispiel": "Die Lage gebietet Zurückhaltung statt vorschneller Urteile.",
-   "currentBeispielTr": "Durum, aceleci yargılar yerine ölçülülük gerektiriyor.",
+   "currentBeispiel": "Der Zustand der Brücke gebietet eine sofortige Sperrung.",
+   "currentBeispielTr": "Köprünün durumu derhal kapatılmasını gerektiriyor.",
    "overlapping": [
     "erfordern (B1)"
    ]
@@ -182,8 +182,8 @@
    "niveau": "C1",
    "formen": "hat missbilligt",
    "currentTr": "onaylamamak, hoş karşılamamak",
-   "currentBeispiel": "Viele Kollegen missbilligten sein Vorgehen, sagten aber nichts.",
-   "currentBeispielTr": "Birçok meslektaşı davranışını onaylamadı, ama bir şey söylemedi."
+   "currentBeispiel": "Ihre Eltern missbilligten die Hochzeit von Anfang an.",
+   "currentBeispielTr": "Ailesi düğünü en başından beri onaylamadı."
   },
   {
    "id": 6870,
@@ -192,8 +192,8 @@
    "niveau": "C1",
    "formen": "hat bejaht",
    "currentTr": "olumlamak, evet demek, onaylamak",
-   "currentBeispiel": "Nietzsche fordert, das Leben mit all seinen Härten zu bejahen.",
-   "currentBeispielTr": "Nietzsche, hayatı tüm sertlikleriyle olumlamayı talep eder."
+   "currentBeispiel": "Sie bejaht ihr Leben trotz aller Rückschläge.",
+   "currentBeispielTr": "Bütün aksiliklere rağmen hayatını olumluyor."
   },
   {
    "id": 6871,
@@ -202,8 +202,8 @@
    "niveau": "C1",
    "formen": "hat verneint",
    "currentTr": "olumsuzlamak, reddetmek, hayır demek",
-   "currentBeispiel": "Die Frage nach einem absoluten Maßstab verneint er entschieden.",
-   "currentBeispielTr": "Mutlak bir ölçüt olup olmadığı sorusunu kararlılıkla reddediyor."
+   "currentBeispiel": "Die Frage nach einem Zeugen verneinte er knapp.",
+   "currentBeispielTr": "Tanık olup olmadığı sorusuna kısaca hayır dedi."
   },
   {
    "id": 6872,
@@ -212,8 +212,8 @@
    "niveau": "C1",
    "formen": "hat beigemessen",
    "currentTr": "önem atfetmek, değer vermek",
-   "currentBeispiel": "Der Autor misst der Absicht mehr Gewicht bei als der Folge.",
-   "currentBeispielTr": "Yazar, niyete sonuçtan daha fazla ağırlık veriyor."
+   "currentBeispiel": "Sie misst dem Urteil ihrer Kollegen große Bedeutung bei.",
+   "currentBeispielTr": "Meslektaşlarının görüşüne büyük önem veriyor."
   },
   {
    "id": 6873,
@@ -222,8 +222,8 @@
    "niveau": "C1",
    "formen": "hat angemaßt",
    "currentTr": "haddi olmadan kalkışmak, kendinde hak görmek",
-   "currentBeispiel": "Niemand sollte sich das Urteil über fremde Gewissensfragen anmaßen.",
-   "currentBeispielTr": "Kimse başkasının vicdan meseleleri hakkında hüküm verme hakkını kendinde görmemeli."
+   "currentBeispiel": "Er maßt sich ein Urteil über meine Ehe an.",
+   "currentBeispielTr": "Evliliğim hakkında hüküm verme hakkını kendinde görüyor."
   },
   {
    "id": 6874,
@@ -232,8 +232,8 @@
    "niveau": "C1",
    "formen": "hat hingenommen",
    "currentTr": "kabullenmek, katlanmak, boyun eğmek",
-   "currentBeispiel": "Eine solche Ungleichheit müssen wir nicht stillschweigend hinnehmen.",
-   "currentBeispielTr": "Böyle bir eşitsizliği sessizce kabullenmek zorunda değiliz.",
+   "currentBeispiel": "Diese Verspätungen müssen wir nicht länger hinnehmen.",
+   "currentBeispielTr": "Bu gecikmeleri daha fazla kabullenmek zorunda değiliz.",
    "overlapping": [
     "sich abfinden (C1)",
     "einsehen (A2)"
@@ -246,8 +246,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ahlaki, ahlaka ilişkin",
-   "currentBeispiel": "Er beurteilte die Tat nach sittlichen, nicht nach juristischen Kriterien.",
-   "currentBeispielTr": "Eylemi hukuki değil, ahlaki ölçütlere göre değerlendirdi."
+   "currentBeispiel": "Er lehnte den Auftrag aus sittlichen Gründen ab.",
+   "currentBeispielTr": "İşi ahlaki gerekçelerle geri çevirdi."
   },
   {
    "id": 6876,
@@ -269,8 +269,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "makul, inandırıcı, akla yatkın",
-   "currentBeispiel": "Seine Erklärung klang einleuchtend, hielt der Prüfung aber nicht stand.",
-   "currentBeispielTr": "Açıklaması akla yatkın geldi, ama incelemeye dayanamadı.",
+   "currentBeispiel": "Seine Erklärung klang einleuchtend, stimmte aber nicht.",
+   "currentBeispielTr": "Açıklaması akla yatkın geldi, ama doğru değildi.",
    "overlapping": [
     "vernünftig (B1)",
     "zumutbar (B2)"
@@ -284,7 +284,7 @@
    "formen": "",
    "currentTr": "görünüşte, yüzeysel olarak",
    "currentBeispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung.",
-   "currentBeispielTr": "Görünüşte mesele para, aslında ise kabul görmek."
+   "currentBeispielTr": "Görünüşte mesele para, aslında ise takdir görmek."
   },
   {
    "id": 6879,
@@ -293,8 +293,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bilerek, iradi olarak, kasten",
-   "currentBeispiel": "Nur willentlich herbeigeführte Folgen lassen sich moralisch zurechnen.",
-   "currentBeispielTr": "Yalnızca iradi olarak yol açılan sonuçlar ahlaken yüklenebilir.",
+   "currentBeispiel": "Diesen Fehler hat er nicht willentlich begangen.",
+   "currentBeispielTr": "Bu hatayı kasten yapmadı.",
    "overlapping": [
     "wissentlich (C1)"
    ]
@@ -306,8 +306,8 @@
    "niveau": "C1",
    "formen": "Verfassungsgerichte",
    "currentTr": "anayasa mahkemesi",
-   "currentBeispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz in Teilen für nichtig.",
-   "currentBeispielTr": "Anayasa mahkemesi tartışmalı yasayı kısmen geçersiz saydı."
+   "currentBeispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz für nichtig.",
+   "currentBeispielTr": "Anayasa mahkemesi tartışmalı yasayı geçersiz ilan etti."
   },
   {
    "id": 6881,
@@ -316,8 +316,8 @@
    "niveau": "C1",
    "formen": "Verhältniswahlen",
    "currentTr": "nispi temsil, oransal seçim sistemi",
-   "currentBeispiel": "Bei der Verhältniswahl spiegelt die Sitzverteilung den Stimmenanteil der Parteien wider.",
-   "currentBeispielTr": "Nispi temsilde sandalye dağılımı partilerin oy oranını yansıtır."
+   "currentBeispiel": "Bei der Verhältniswahl kommen auch kleine Parteien ins Parlament.",
+   "currentBeispielTr": "Nispi temsilde küçük partiler de meclise giriyor."
   },
   {
    "id": 6882,
@@ -326,8 +326,8 @@
    "niveau": "C1",
    "formen": "Exekutiven",
    "currentTr": "yürütme, yürütme erki",
-   "currentBeispiel": "Die Exekutive darf sich nicht über die Beschlüsse des Parlaments hinwegsetzen.",
-   "currentBeispielTr": "Yürütme, parlamentonun kararlarını hiçe sayamaz."
+   "currentBeispiel": "Die Exekutive setzte den Beschluss des Parlaments nicht um.",
+   "currentBeispielTr": "Yürütme, parlamentonun kararını uygulamadı."
   },
   {
    "id": 6883,
@@ -336,8 +336,8 @@
    "niveau": "C1",
    "formen": "Legislativen",
    "currentTr": "yasama organı",
-   "currentBeispiel": "In der Debatte ging es um das Verhältnis von Legislative und Regierung.",
-   "currentBeispielTr": "Tartışmada yasama organı ile hükümet arasındaki ilişki ele alındı."
+   "currentBeispiel": "Die Legislative beschloss das Gesetz gegen den Willen der Regierung.",
+   "currentBeispielTr": "Yasama, yasayı hükümetin isteğine rağmen kabul etti."
   },
   {
    "id": 6884,
@@ -346,8 +346,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "federalizm",
-   "currentBeispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die einzelnen Länder.",
-   "currentBeispielTr": "Alman federalizmi eğitim politikasını eyaletler arasında paylaştırır."
+   "currentBeispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die Länder.",
+   "currentBeispielTr": "Alman federalizmi eğitim politikasını eyaletlere dağıtır."
   },
   {
    "id": 6885,
@@ -356,8 +356,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yerindenlik ilkesi, subsidiyarite",
-   "currentBeispiel": "Nach dem Grundsatz der Subsidiarität entscheidet stets die kleinste geeignete Ebene.",
-   "currentBeispielTr": "Yerindenlik ilkesine göre kararı daima en küçük uygun birim verir."
+   "currentBeispiel": "Nach dem Grundsatz der Subsidiarität entscheidet die Gemeinde selbst.",
+   "currentBeispielTr": "Yerindenlik ilkesine göre kararı belediyenin kendisi verir."
   },
   {
    "id": 6886,
@@ -366,8 +366,8 @@
    "niveau": "C1",
    "formen": "Gebietskörperschaften",
    "currentTr": "yerel yönetim birimi, mahalli idare",
-   "currentBeispiel": "Städte und Landkreise sind Gebietskörperschaften mit eigener Verwaltung.",
-   "currentBeispielTr": "Şehirler ve ilçeler kendi idaresi olan yerel yönetim birimleridir."
+   "currentBeispiel": "Die Gebietskörperschaften finanzieren den Ausbau der Schulen gemeinsam.",
+   "currentBeispielTr": "Yerel yönetim birimleri okulların yapımını birlikte finanse ediyor."
   },
   {
    "id": 6887,
@@ -376,8 +376,8 @@
    "niveau": "C1",
    "formen": "Ressorts",
    "currentTr": "birim, görev alanı, bakanlık dairesi",
-   "currentBeispiel": "Für diese Frage ist ein anderes Ressort im Ministerium zuständig.",
-   "currentBeispielTr": "Bu konudan bakanlıktaki başka bir birim sorumlu."
+   "currentBeispiel": "Für diese Frage ist ein anderes Ressort zuständig.",
+   "currentBeispielTr": "Bu konudan başka bir birim sorumlu."
   },
   {
    "id": 6888,
@@ -387,7 +387,7 @@
    "formen": "Bürokratien",
    "currentTr": "bürokrasi, kırtasiyecilik",
    "currentBeispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie.",
-   "currentBeispielTr": "Küçük işletmeler yıllardır azgın bürokrasiden şikâyetçi."
+   "currentBeispielTr": "Küçük işletmeler yıllardır büyüyen bürokrasiden şikâyetçi."
   },
   {
    "id": 6889,
@@ -406,8 +406,8 @@
    "niveau": "C1",
    "formen": "Machtbefugnisse",
    "currentTr": "yetki, iktidar yetkisi",
-   "currentBeispiel": "Der Präsident schöpfte seine Machtbefugnisse bis an die Grenze des Erlaubten aus.",
-   "currentBeispielTr": "Cumhurbaşkanı yetkilerini izin verilenin sınırına kadar kullandı.",
+   "currentBeispiel": "Der Präsident überschritt seine Machtbefugnisse deutlich.",
+   "currentBeispielTr": "Cumhurbaşkanı iktidar yetkilerini açıkça aştı.",
    "overlapping": [
     "die Berechtigung (B2)",
     "die Befugnis (C1)"
@@ -420,8 +420,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "irade oluşumu, karar oluşturma süreci",
-   "currentBeispiel": "Parteien sind für die politische Willensbildung des Volkes unverzichtbar.",
-   "currentBeispielTr": "Partiler halkın siyasi irade oluşumu için vazgeçilmezdir."
+   "currentBeispiel": "Parteien wirken an der politischen Willensbildung des Volkes mit.",
+   "currentBeispielTr": "Partiler halkın siyasi irade oluşumuna katkıda bulunur."
   },
   {
    "id": 6892,
@@ -431,7 +431,7 @@
    "formen": "Interessenverbände",
    "currentTr": "çıkar grubu, meslek örgütü",
    "currentBeispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein.",
-   "currentBeispielTr": "Güçlü çıkar grupları Berlin'de kendi sektörleri için mücadele ediyor."
+   "currentBeispielTr": "Güçlü çıkar grupları Berlin'de kendi sektörlerini savunuyor."
   },
   {
    "id": 6893,
@@ -440,8 +440,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "lobicilik",
-   "currentBeispiel": "Ein öffentliches Register soll den Lobbyismus im Parlament transparenter machen.",
-   "currentBeispielTr": "Açık bir kayıt sistemi meclisteki lobiciliği daha şeffaf hâle getirecek."
+   "currentBeispiel": "Ein öffentliches Register soll den Lobbyismus transparenter machen.",
+   "currentBeispielTr": "Kamuya açık bir kayıt sistemi lobiciliği şeffaflaştıracak."
   },
   {
    "id": 6894,
@@ -450,8 +450,8 @@
    "niveau": "C1",
    "formen": "Einflussnahmen",
    "currentTr": "etki etme, nüfuz kullanma",
-   "currentBeispiel": "Die Aufsicht untersucht eine mögliche Einflussnahme auf die Vergabe der Aufträge.",
-   "currentBeispielTr": "Denetim kurulu, ihalelerin dağıtımına yönelik olası nüfuz kullanımını inceliyor."
+   "currentBeispiel": "Die Staatsanwaltschaft prüft eine mögliche Einflussnahme auf die Vergabe.",
+   "currentBeispielTr": "Savcılık, ihalelerin dağıtımına etki edilip edilmediğini araştırıyor."
   },
   {
    "id": 6895,
@@ -461,7 +461,7 @@
    "formen": "Gewaltmonopole",
    "currentTr": "güç tekeli, zor kullanma tekeli",
    "currentBeispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren.",
-   "currentBeispielTr": "Bazı bölgelerde devlet güç tekelini fiilen yitirmiş durumda."
+   "currentBeispielTr": "Bazı bölgelerde devlet şiddet tekelini fiilen yitirdi."
   },
   {
    "id": 6896,
@@ -471,7 +471,7 @@
    "formen": "",
    "currentTr": "devlet çıkarı, hikmet-i hükümet",
    "currentBeispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details.",
-   "currentBeispielTr": "Bakan devlet çıkarını öne sürerek ayrıntılar hakkında sustu."
+   "currentBeispielTr": "Bakan devlet çıkarını öne sürüp ayrıntılara girmedi."
   },
   {
    "id": 6897,
@@ -480,8 +480,8 @@
    "niveau": "C1",
    "formen": "Regierungserklärungen",
    "currentTr": "hükümet programı açıklaması",
-   "currentBeispiel": "In seiner Regierungserklärung kündigte der Kanzler eine Wende in der Energiepolitik an.",
-   "currentBeispielTr": "Başbakan hükümet programı konuşmasında enerji politikasında dönüşüm ilan etti."
+   "currentBeispiel": "In seiner Regierungserklärung kündigte der Kanzler höhere Renten an.",
+   "currentBeispielTr": "Başbakan hükümet programı konuşmasında emekli maaşlarına zam duyurdu."
   },
   {
    "id": 6898,
@@ -491,7 +491,7 @@
    "formen": "Bundestage",
    "currentTr": "Federal Meclis",
    "currentBeispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt.",
-   "currentBeispielTr": "Federal Meclis bütçeyi sabahın erken saatlerine kadar tartıştı."
+   "currentBeispielTr": "Federal Meclis bütçeyi sabahın ilk saatlerine kadar tartıştı."
   },
   {
    "id": 6899,
@@ -500,8 +500,8 @@
    "niveau": "C1",
    "formen": "Quoren",
    "currentTr": "yeter sayı, nisap",
-   "currentBeispiel": "Ohne das nötige Quorum ist die Abstimmung von vornherein ungültig.",
-   "currentBeispielTr": "Gerekli nisap olmadan oylama en baştan geçersizdir."
+   "currentBeispiel": "Nur zwanzig Mitglieder kamen, damit fehlte das Quorum.",
+   "currentBeispielTr": "Yalnızca yirmi üye geldi, böylece yeter sayı sağlanamadı."
   },
   {
    "id": 6900,
@@ -511,7 +511,7 @@
    "formen": "Geschäftsordnungen",
    "currentTr": "içtüzük, çalışma yönetmeliği",
    "currentBeispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments.",
-   "currentBeispielTr": "Önerge açıkça parlamentonun içtüzüğüne aykırıydı."
+   "currentBeispielTr": "Önerge açıkça meclisin içtüzüğüne aykırıydı."
   },
   {
    "id": 6901,
@@ -521,7 +521,7 @@
    "formen": "",
    "currentTr": "diplomasi",
    "currentBeispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung.",
-   "currentBeispielTr": "Sessiz diplomasi her türlü açık tehditten daha fazlasını başardı."
+   "currentBeispielTr": "Sessiz diplomasi açık tehditlerden daha fazlasını sağladı."
   },
   {
    "id": 6902,
@@ -531,7 +531,7 @@
    "formen": "hat amtiert",
    "currentTr": "görevde olmak, görevi yürütmek",
    "currentBeispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt.",
-   "currentBeispielTr": "On iki yıl boyunca bu şehrin belediye başkanlığını yürüttü."
+   "currentBeispielTr": "On iki yıl boyunca bu şehrin belediye başkanlığını yaptı."
   }
  ]
 }

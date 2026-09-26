@@ -10,7 +10,7 @@
    "formen": "Stadtverwaltungen",
    "currentTr": "belediye idaresi, şehir yönetimi",
    "currentBeispiel": "Die Stadtverwaltung bearbeitet den Antrag innerhalb von vier Wochen.",
-   "currentBeispielTr": "Belediye idaresi başvuruyu dört hafta içinde işleme alıyor."
+   "currentBeispielTr": "Şehir yönetimi başvuruyu dört hafta içinde işleme alıyor."
   },
   {
    "id": 5146,
@@ -20,7 +20,7 @@
    "formen": "Sitzungen",
    "currentTr": "oturum, toplantı",
    "currentBeispiel": "Die Sitzung wurde nach drei Stunden ohne Ergebnis unterbrochen.",
-   "currentBeispielTr": "Oturum üç saat sonra sonuçsuz kaldığı için ara verildi."
+   "currentBeispielTr": "Oturum üç saat sonra sonuç alınamadan yarıda kesildi."
   },
   {
    "id": 5147,
@@ -50,7 +50,7 @@
    "formen": "Parteitage",
    "currentTr": "parti kongresi, kurultay",
    "currentBeispiel": "Auf dem Parteitag in Hannover wurde heftig über Steuern gestritten.",
-   "currentBeispielTr": "Hannover'deki parti kongresinde vergiler üzerine sert tartışmalar yaşandı."
+   "currentBeispielTr": "Hannover'deki parti kongresinde vergiler sert biçimde tartışıldı."
   },
   {
    "id": 5150,
@@ -80,7 +80,7 @@
    "formen": "Demokratien",
    "currentTr": "demokrasi",
    "currentBeispiel": "Eine Demokratie lebt davon, dass Menschen sich einmischen.",
-   "currentBeispielTr": "Demokrasi, insanların işin içine karışmasıyla ayakta durur."
+   "currentBeispielTr": "Demokrasi, insanların işe karışmasıyla ayakta kalır."
   },
   {
    "id": 5153,
@@ -100,7 +100,7 @@
    "formen": "Demonstrationen",
    "currentTr": "gösteri, yürüyüş",
    "currentBeispiel": "An der Demonstration gegen die Mieterhöhungen nahmen Tausende teil.",
-   "currentBeispielTr": "Kira artışlarına karşı düzenlenen gösteriye binlerce kişi katıldı.",
+   "currentBeispielTr": "Kira artışlarına karşı düzenlenen protesto gösterisine binlerce kişi katıldı.",
    "overlapping": [
     "die Vorstellung (B1)",
     "die Aufführung (B2)"
@@ -113,8 +113,8 @@
    "niveau": "B2",
    "formen": "Petitionen",
    "currentTr": "dilekçe, imza kampanyası",
-   "currentBeispiel": "Die Petition für den Erhalt des Schwimmbads sammelte 20000 Unterschriften.",
-   "currentBeispielTr": "Yüzme havuzunun korunması için açılan dilekçe 20000 imza topladı.",
+   "currentBeispiel": "Die Petition für den Erhalt des Schwimmbads sammelte viele Unterschriften.",
+   "currentBeispielTr": "Yüzme havuzunun korunması için başlatılan imza kampanyası çok sayıda imza topladı.",
    "overlapping": [
     "das Gesuch (C1)"
    ]
@@ -137,7 +137,7 @@
    "formen": "",
    "currentTr": "kamu yararı, ortak iyi",
    "currentBeispiel": "Der Politiker beruft sich bei jeder Entscheidung auf das Gemeinwohl.",
-   "currentBeispielTr": "Siyasetçi her kararında kamu yararına dayanıyor."
+   "currentBeispielTr": "Siyasetçi her kararında kamu yararını öne sürüyor."
   },
   {
    "id": 5158,
@@ -157,7 +157,7 @@
    "formen": "Anhörungen",
    "currentTr": "dinleme oturumu, görüş alma",
    "currentBeispiel": "Vor der Entscheidung findet eine öffentliche Anhörung der Anwohner statt.",
-   "currentBeispielTr": "Karardan önce mahalle sakinleriyle açık bir dinleme oturumu yapılacak."
+   "currentBeispielTr": "Karardan önce mahalle sakinleriyle açık bir dinleme oturumu yapılıyor."
   },
   {
    "id": 5160,
@@ -180,7 +180,7 @@
    "formen": "Misstrauensvoten",
    "currentTr": "güvensizlik oyu",
    "currentBeispiel": "Die Regierung überstand das Misstrauensvotum mit nur zwei Stimmen.",
-   "currentBeispielTr": "Hükümet güvensizlik oylamasını yalnızca iki oy farkla atlattı."
+   "currentBeispielTr": "Hükümet güvensizlik oylamasını yalnızca iki oyla atlattı."
   },
   {
    "id": 5162,
@@ -229,7 +229,7 @@
    "niveau": "B2",
    "formen": "Pressekonferenzen",
    "currentTr": "basın toplantısı",
-   "currentBeispiel": "Der Minister verließ die Pressekonferenz ohne eine einzige Frage zu beantworten.",
+   "currentBeispiel": "Der Minister verließ die Pressekonferenz, ohne eine einzige Frage zu beantworten.",
    "currentBeispielTr": "Bakan tek bir soruya bile cevap vermeden basın toplantısını terk etti."
   },
   {
@@ -260,7 +260,7 @@
    "formen": "Legislaturperioden",
    "currentTr": "yasama dönemi",
    "currentBeispiel": "Das Gesetz soll noch in dieser Legislaturperiode verabschiedet werden.",
-   "currentBeispielTr": "Yasanın bu yasama döneminde çıkarılması planlanıyor."
+   "currentBeispielTr": "Yasanın bu yasama dönemi içinde çıkarılması planlanıyor."
   },
   {
    "id": 5170,
@@ -279,8 +279,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "siyasetten bıkkınlık",
-   "currentBeispiel": "Die wachsende Politikverdrossenheit zeigt sich an der niedrigen Beteiligung.",
-   "currentBeispielTr": "Artan siyaset bıkkınlığı düşük katılımda kendini gösteriyor."
+   "currentBeispiel": "Die wachsende Politikverdrossenheit zeigt sich an der niedrigen Wahlbeteiligung.",
+   "currentBeispielTr": "Artan siyaset bıkkınlığı düşük seçim katılımında kendini gösteriyor."
   },
   {
    "id": 5172,
@@ -290,7 +290,7 @@
    "formen": "Steuererhöhungen",
    "currentTr": "vergi artışı",
    "currentBeispiel": "Vor der Wahl schließt jede Partei eine Steuererhöhung aus.",
-   "currentBeispielTr": "Seçim öncesinde her parti vergi artışını reddediyor."
+   "currentBeispielTr": "Seçim öncesinde her parti vergi artışı ihtimalini reddediyor."
   },
   {
    "id": 5173,
@@ -310,7 +310,7 @@
    "formen": "Wahlergebnisse",
    "currentTr": "seçim sonucu",
    "currentBeispiel": "Das vorläufige Wahlergebnis wird kurz nach Mitternacht erwartet.",
-   "currentBeispielTr": "Geçici seçim sonucunun gece yarısından kısa süre sonra açıklanması bekleniyor."
+   "currentBeispielTr": "Geçici seçim sonucu gece yarısından kısa süre sonra bekleniyor."
   },
   {
    "id": 5175,
@@ -340,7 +340,7 @@
    "formen": "Bürgerbeteiligungen",
    "currentTr": "yurttaş katılımı",
    "currentBeispiel": "Bei großen Bauprojekten ist eine frühe Bürgerbeteiligung inzwischen üblich.",
-   "currentBeispielTr": "Büyük inşaat projelerinde erken yurttaş katılımı artık olağan hâle geldi."
+   "currentBeispielTr": "Büyük inşaat projelerinde erken vatandaş katılımı artık olağan sayılıyor."
   },
   {
    "id": 5178,
@@ -350,7 +350,7 @@
    "formen": "hat kandidiert",
    "currentTr": "adaylığını koymak, aday olmak",
    "currentBeispiel": "Sie kandidiert im Herbst zum ersten Mal für den Stadtrat.",
-   "currentBeispielTr": "Sonbaharda ilk kez şehir meclisi için aday oluyor."
+   "currentBeispielTr": "Sonbaharda ilk kez şehir meclisine aday oluyor."
   },
   {
    "id": 5179,
@@ -390,7 +390,7 @@
    "formen": "hat ernannt",
    "currentTr": "atamak, tayin etmek",
    "currentBeispiel": "Der Rat ernannte sie zur neuen Leiterin des Ordnungsamts.",
-   "currentBeispielTr": "Meclis onu zabıta müdürlüğünün yeni başkanı olarak atadı."
+   "currentBeispielTr": "Meclis onu zabıta müdürlüğünün başına atadı."
   },
   {
    "id": 5182,
@@ -399,8 +399,8 @@
    "niveau": "B2",
    "formen": "hat vereidigt",
    "currentTr": "yemin ettirmek, göreve yemin ile başlatmak",
-   "currentBeispiel": "Die neuen Minister wurden am Mittwoch im Parlament vereidigt.",
-   "currentBeispielTr": "Yeni bakanlar çarşamba günü mecliste yemin ettirildi."
+   "currentBeispiel": "Der neue Bürgermeister wurde gestern feierlich vereidigt.",
+   "currentBeispielTr": "Yeni belediye başkanına dün törenle yemin ettirildi."
   },
   {
    "id": 5183,
@@ -425,7 +425,7 @@
    "formen": "hat reformiert",
    "currentTr": "reform yapmak, yenilemek",
    "currentBeispiel": "Das Rentensystem soll bis 2030 grundlegend reformiert werden.",
-   "currentBeispielTr": "Emeklilik sisteminin 2030'a kadar kökten reforme edilmesi planlanıyor."
+   "currentBeispielTr": "Emeklilik sisteminde 2030'a kadar kökten reform yapılması planlanıyor."
   },
   {
    "id": 5185,
@@ -434,8 +434,8 @@
    "niveau": "B2",
    "formen": "hat erlassen",
    "currentTr": "çıkarmak, yürürlüğe koymak",
-   "currentBeispiel": "Die Stadt hat ein Verbot für laute Feuerwerke erlassen.",
-   "currentBeispielTr": "Şehir, gürültülü havai fişekler için bir yasak çıkardı.",
+   "currentBeispiel": "Das Land hat ein neues Gesetz zum Schutz der Wälder erlassen.",
+   "currentBeispielTr": "Eyalet, ormanları korumak için yeni bir yasayı yürürlüğe koydu.",
    "overlapping": [
     "abnehmen (B1)",
     "ausziehen (B1)",
@@ -450,8 +450,8 @@
    "niveau": "B2",
    "formen": "hat unterzeichnet",
    "currentTr": "imzalamak",
-   "currentBeispiel": "Über 50000 Menschen haben den Aufruf bereits unterzeichnet.",
-   "currentBeispielTr": "50000'den fazla kişi çağrıyı çoktan imzaladı.",
+   "currentBeispiel": "Beide Regierungen haben das Abkommen in Berlin unterzeichnet.",
+   "currentBeispielTr": "İki hükümet anlaşmayı Berlin'de imzaladı.",
    "overlapping": [
     "unterschreiben (A1)"
    ]
@@ -463,8 +463,8 @@
    "niveau": "B2",
    "formen": "hat überstimmt",
    "currentTr": "oylamada yenmek, oy çokluğuyla reddetmek",
-   "currentBeispiel": "Die kleine Fraktion wurde bei der Abstimmung deutlich überstimmt.",
-   "currentBeispielTr": "Küçük grup oylamada açık farkla azınlıkta kaldı."
+   "currentBeispiel": "Die Minderheit wurde bei der Abstimmung deutlich überstimmt.",
+   "currentBeispielTr": "Azınlık oylamada açık farkla yenildi."
   },
   {
    "id": 5188,
@@ -484,7 +484,7 @@
    "formen": "hat gekürzt",
    "currentTr": "kısmak, azaltmak (bütçe, metin)",
    "currentBeispiel": "Die Mittel für Bibliotheken wurden erneut um zehn Prozent gekürzt.",
-   "currentBeispielTr": "Kütüphanelere ayrılan kaynak yeniden yüzde on azaltıldı.",
+   "currentBeispielTr": "Kütüphanelere ayrılan kaynak yeniden yüzde on kısıldı.",
    "overlapping": [
     "drosseln (B2)"
    ]
@@ -497,7 +497,7 @@
    "formen": "hat erhoben",
    "currentTr": "toplamak, tahsil etmek, ileri sürmek",
    "currentBeispiel": "Die Gemeinde erhebt seit Januar eine Gebühr für Straßenreinigung.",
-   "currentBeispielTr": "Belediye ocak ayından beri sokak temizliği için ücret alıyor.",
+   "currentBeispielTr": "Belediye ocak ayından beri sokak temizliği için ücret tahsil ediyor.",
    "overlapping": [
     "aufräumen (A1)",
     "sammeln (A2)",
@@ -530,8 +530,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "belediyeye ait, yerel",
-   "currentBeispiel": "Über den Bau von Radwegen wird auf kommunaler Ebene entschieden.",
-   "currentBeispielTr": "Bisiklet yollarının yapımına yerel yönetim düzeyinde karar veriliyor."
+   "currentBeispiel": "Über den Bau der neuen Sporthalle wird auf kommunaler Ebene entschieden.",
+   "currentBeispielTr": "Yeni spor salonunun yapımına yerel yönetim düzeyinde karar veriliyor."
   },
   {
    "id": 5193,
@@ -540,8 +540,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "oybirliğiyle",
-   "currentBeispiel": "Der Rat nahm den Vorschlag am Ende einstimmig an.",
-   "currentBeispielTr": "Meclis öneriyi sonunda oybirliğiyle kabul etti."
+   "currentBeispiel": "Der Ausschuss lehnte den Antrag am Ende einstimmig ab.",
+   "currentBeispielTr": "Komisyon başvuruyu sonunda oybirliğiyle reddetti."
   },
   {
    "id": 5194,
@@ -550,8 +550,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "oy çokluğuyla, çoğunluğun oyuyla",
-   "currentBeispiel": "Die Bevölkerung lehnt das Projekt mehrheitlich ab.",
-   "currentBeispielTr": "Halk projeyi çoğunlukla reddediyor."
+   "currentBeispiel": "Der Bundestag hat den Haushalt mehrheitlich beschlossen.",
+   "currentBeispielTr": "Federal Meclis bütçeyi oy çokluğuyla kabul etti."
   }
  ]
 }

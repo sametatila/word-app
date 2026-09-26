@@ -10,7 +10,7 @@
    "formen": "zankt sich, hat sich gezankt",
    "currentTr": "atışmak, çekişmek",
    "currentBeispiel": "Die Kinder zanken sich um das neue Spielzeug.",
-   "currentBeispielTr": "Çocuklar yeni oyuncak için atışıyor."
+   "currentBeispielTr": "Çocuklar yeni oyuncak yüzünden atışıyor."
   },
   {
    "id": 8341,
@@ -30,7 +30,7 @@
    "formen": "beschimpft, hat beschimpft",
    "currentTr": "sövmek, ağır sözler söylemek",
    "currentBeispiel": "Im Bus beschimpft ein Mann den Fahrer.",
-   "currentBeispielTr": "Otobüste bir adam şoföre ağzına geleni söylüyor."
+   "currentBeispielTr": "Otobüste bir adam şoföre hakaret ediyor."
   },
   {
    "id": 8343,
@@ -50,7 +50,7 @@
    "formen": "zwinkert, hat gezwinkert",
    "currentTr": "göz kırpmak",
    "currentBeispiel": "Mein Opa zwinkert mir über den Tisch zu.",
-   "currentBeispielTr": "Dedem masanın üzerinden bana göz kırpıyor."
+   "currentBeispielTr": "Dedem masanın üstünden bana göz kırpıyor."
   },
   {
    "id": 8345,
@@ -90,7 +90,7 @@
    "formen": "lügt an, hat angelogen",
    "currentTr": "yalan söylemek (birine)",
    "currentBeispiel": "Warum lügst du deine Eltern so oft an?",
-   "currentBeispielTr": "Neden aileni bu kadar sık kandırıyorsun?",
+   "currentBeispielTr": "Neden ailene bu kadar sık yalan söylüyorsun?",
    "overlapping": [
     "lügen (A2)"
    ]
@@ -135,8 +135,8 @@
    "niveau": "A2",
    "formen": "¨-",
    "currentTr": "soba, fırın",
-   "currentBeispiel": "Im Winter machen wir jeden Abend den Ofen an.",
-   "currentBeispielTr": "Kışın her akşam sobayı yakıyoruz."
+   "currentBeispiel": "Der Kuchen ist noch zehn Minuten im Ofen.",
+   "currentBeispielTr": "Kek on dakika daha fırında kalacak."
   },
   {
    "id": 8353,
@@ -245,7 +245,7 @@
    "formen": "¨-",
    "currentTr": "yer, döşeme",
    "currentBeispiel": "Der Fußboden im Flur ist aus Holz.",
-   "currentBeispielTr": "Koridordaki yer ahşaptan.",
+   "currentBeispielTr": "Koridorun zemini ahşaptan.",
    "overlapping": [
     "der Platz (A1)",
     "der Ort (A1)"
@@ -258,8 +258,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "elektrikli süpürge",
-   "currentBeispiel": "Der Staubsauger ist leider kaputt.",
-   "currentBeispielTr": "Elektrikli süpürge maalesef bozuk."
+   "currentBeispiel": "Der neue Staubsauger ist viel leiser als der alte.",
+   "currentBeispielTr": "Yeni elektrikli süpürge eskisinden çok daha sessiz."
   },
   {
    "id": 8364,
@@ -268,8 +268,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "çamaşır makinesi",
-   "currentBeispiel": "Die Waschmaschine steht im Keller.",
-   "currentBeispielTr": "Çamaşır makinesi bodrumda duruyor."
+   "currentBeispiel": "Kannst du bitte die Wäsche aus der Waschmaschine holen?",
+   "currentBeispielTr": "Çamaşırları makineden alabilir misin lütfen?"
   },
   {
    "id": 8365,
@@ -289,7 +289,7 @@
    "formen": "-",
    "currentTr": "çocuk odası",
    "currentBeispiel": "Im Kinderzimmer liegen überall Spielsachen.",
-   "currentBeispielTr": "Çocuk odasında her yerde oyuncaklar var."
+   "currentBeispielTr": "Çocuk odasında her yerde oyuncak var."
   },
   {
    "id": 8367,
@@ -299,7 +299,7 @@
    "formen": "wischt, hat gewischt",
    "currentTr": "silmek, paspaslamak",
    "currentBeispiel": "Am Samstag wische ich den Boden in der Küche.",
-   "currentBeispielTr": "Cumartesi günü mutfaktaki zemini siliyorum.",
+   "currentBeispielTr": "Cumartesi günü mutfakta yerleri paspaslıyorum.",
    "overlapping": [
     "löschen (B1)",
     "aufwischen (A2)",
@@ -314,7 +314,7 @@
    "formen": "-",
    "currentTr": "yemek odası",
    "currentBeispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
-   "currentBeispielTr": "Pazar günleri hep birlikte yemek odasında yemek yiyoruz."
+   "currentBeispielTr": "Pazarları hep birlikte yemek odasında yemek yiyoruz."
   },
   {
    "id": 8369,
@@ -344,7 +344,7 @@
    "formen": "-n",
    "currentTr": "vida",
    "currentBeispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
-   "currentBeispielTr": "Raf için bir küçük vidaya daha ihtiyacım var."
+   "currentBeispielTr": "Raf için küçük bir vidaya daha ihtiyacım var."
   },
   {
    "id": 8372,
@@ -354,7 +354,7 @@
    "formen": "-n",
    "currentTr": "şifonyer, çekmeceli dolap",
    "currentBeispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
-   "currentBeispielTr": "Çoraplarım yatak odasındaki konsolda."
+   "currentBeispielTr": "Çoraplarım yatak odasındaki şifonyerde."
   },
   {
    "id": 8373,
@@ -403,7 +403,7 @@
    "niveau": "A2",
    "formen": "bügelt, hat gebügelt",
    "currentTr": "ütülemek",
-   "currentBeispiel": "Ich bügele am Abend meine Hemden.",
+   "currentBeispiel": "Am Abend bügle ich meine Hemden.",
    "currentBeispielTr": "Akşam gömleklerimi ütülüyorum."
   },
   {
@@ -424,7 +424,7 @@
    "formen": "-n",
    "currentTr": "ampul",
    "currentBeispiel": "Im Flur ist die Glühbirne kaputt.",
-   "currentBeispielTr": "Koridorda ampul bozuk."
+   "currentBeispielTr": "Koridordaki ampul bozuk."
   },
   {
    "id": 8380,
@@ -434,7 +434,7 @@
    "formen": "-en",
    "currentTr": "vantilatör",
    "currentBeispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
-   "currentBeispielTr": "Yazın yatak odasında bir vantilatöre ihtiyacımız oluyor."
+   "currentBeispielTr": "Yazın yatak odasında vantilatöre ihtiyacımız oluyor."
   },
   {
    "id": 8381,
@@ -443,8 +443,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "komodin",
-   "currentBeispiel": "Meine Brille liegt auf dem Nachttisch.",
-   "currentBeispielTr": "Gözlüğüm komodinin üstünde duruyor."
+   "currentBeispiel": "Neben meinem Bett steht ein kleiner Nachttisch aus Holz.",
+   "currentBeispielTr": "Yatağımın yanında ahşap küçük bir komodin var."
   },
   {
    "id": 8382,
@@ -464,7 +464,7 @@
    "formen": "schließt auf, hat aufgeschlossen",
    "currentTr": "kilidi açmak, açmak",
    "currentBeispiel": "Kannst du bitte die Wohnungstür aufschließen?",
-   "currentBeispielTr": "Lütfen dairenin kapısını açabilir misin?"
+   "currentBeispielTr": "Dairenin kapısını açabilir misin lütfen?"
   },
   {
    "id": 8384,
@@ -494,7 +494,7 @@
    "formen": "-n",
    "currentTr": "duvar kâğıdı",
    "currentBeispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
-   "currentBeispielTr": "Eski duvar kâğıdı bana hiç hoş gelmiyor."
+   "currentBeispielTr": "Eski duvar kâğıdını hiç beğenmiyorum."
   },
   {
    "id": 8387,
@@ -513,8 +513,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "ışık düğmesi",
-   "currentBeispiel": "Der Lichtschalter ist links neben der Tür.",
-   "currentBeispielTr": "Işık düğmesi kapının solunda."
+   "currentBeispiel": "Ich finde im Dunkeln den Lichtschalter nicht.",
+   "currentBeispielTr": "Karanlıkta ışık düğmesini bulamıyorum."
   },
   {
    "id": 8389,

@@ -29,8 +29,8 @@
    "niveau": "B2",
    "formen": "Zertifizierungen",
    "currentTr": "belgelendirme, sertifikasyon",
-   "currentBeispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten.",
-   "currentBeispielTr": "Sertifikasyon olmadan teklif bile veremeyiz."
+   "currentBeispiel": "Ohne Zertifizierung dürfen wir das Gerät nicht verkaufen.",
+   "currentBeispielTr": "Sertifikasyon olmadan cihazı satamayız."
   },
   {
    "id": 4697,
@@ -52,8 +52,8 @@
    "niveau": "B2",
    "formen": "Reklamationen",
    "currentTr": "şikâyet, iade talebi",
-   "currentBeispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile.",
-   "currentBeispielTr": "Şikâyet, hatalı parçalardan oluşan bir partinin tamamıyla ilgiliydi."
+   "currentBeispiel": "Die Reklamation betraf eine ganze Lieferung fehlerhafter Teile.",
+   "currentBeispielTr": "Şikâyet, hatalı parçalardan oluşan bütün bir sevkiyatla ilgiliydi."
   },
   {
    "id": 4699,
@@ -63,7 +63,7 @@
    "formen": "Ausfälle",
    "currentTr": "arıza, devre dışı kalma",
    "currentBeispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
-   "currentBeispielTr": "Soğutmanın devre dışı kalması üretimi bir gün felç etti.",
+   "currentBeispielTr": "Soğutmanın arızası üretimi bir gün felç etti.",
    "overlapping": [
     "die Panne (B1)"
    ]
@@ -76,7 +76,7 @@
    "formen": "Gewährleistungen",
    "currentTr": "garanti, ayıba karşı sorumluluk",
    "currentBeispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
-   "currentBeispielTr": "Garanti, teslim tarihinden itibaren iki yıl geçerli.",
+   "currentBeispielTr": "Yasal garanti, teslim tarihinden itibaren iki yıl sürüyor.",
    "overlapping": [
     "die Garantie (B1)"
    ]
@@ -89,7 +89,7 @@
    "formen": "Ausbeuten",
    "currentTr": "verim, elde edilen miktar",
    "currentBeispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
-   "currentBeispielTr": "İnce sacda levha başına verim belirgin biçimde daha kötü.",
+   "currentBeispielTr": "İnce sacda levha başına randıman belirgin biçimde daha düşük.",
    "overlapping": [
     "der Ertrag (B2)",
     "der Wirkungsgrad (B2)"
@@ -153,7 +153,7 @@
    "formen": "hat eingebaut",
    "currentTr": "monte etmek, yerleştirmek",
    "currentBeispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
-   "currentBeispielTr": "Teknisyen yarın daha güçlü bir motor monte edecek.",
+   "currentBeispielTr": "Teknisyen yarın daha güçlü bir motor takacak.",
    "overlapping": [
     "montieren (A2)"
    ]
@@ -209,7 +209,7 @@
    "formen": "hat verladen",
    "currentTr": "yüklemek, araca yüklemek",
    "currentBeispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
-   "currentBeispielTr": "Konteynerler bu akşam kamyonlara yüklenecek.",
+   "currentBeispielTr": "Konteynerler daha bu akşam kamyonlara yüklenecek.",
    "overlapping": [
     "hochladen (B1)",
     "auferlegen (C1)",
@@ -256,7 +256,7 @@
    "formen": "hat gestanzt",
    "currentTr": "presle delmek, kalıpla kesmek",
    "currentBeispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
-   "currentBeispielTr": "Tek strokta aynı anda dört delik açılıyor."
+   "currentBeispielTr": "Tek harekette aynı anda dört delik zımbalanıyor."
   },
   {
    "id": 4716,
@@ -275,8 +275,8 @@
    "niveau": "B2",
    "formen": "hat lackiert",
    "currentTr": "boyamak, verniklemek",
-   "currentBeispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert.",
-   "currentBeispielTr": "Kasalar iki kat toz boyayla boyanıyor.",
+   "currentBeispiel": "Die Rahmen werden nach dem Schweißen schwarz lackiert.",
+   "currentBeispielTr": "Çerçeveler kaynaktan sonra siyaha boyanıyor.",
    "overlapping": [
     "streichen (A2)"
    ]
@@ -298,8 +298,8 @@
    "niveau": "B2",
    "formen": "hat stillgelegt",
    "currentTr": "faaliyeti durdurmak, kapatmak",
-   "currentBeispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt.",
-   "currentBeispielTr": "Fabrika kırk yıl sonra tamamen kapatıldı."
+   "currentBeispiel": "Der Konzern will das alte Werk zum Jahresende stilllegen.",
+   "currentBeispielTr": "Şirket eski fabrikanın faaliyetini yıl sonunda durdurmak istiyor."
   },
   {
    "id": 4720,
@@ -321,8 +321,8 @@
    "niveau": "B2",
    "formen": "hat vermessen",
    "currentTr": "ölçmek, ölçümünü yapmak",
-   "currentBeispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen.",
-   "currentBeispielTr": "Her onuncu parça laboratuvarda titizlikle ölçülüyor.",
+   "currentBeispiel": "Das Grundstück wurde vor dem Verkauf neu vermessen.",
+   "currentBeispielTr": "Arsanın ölçümü satıştan önce yeniden yapıldı.",
    "overlapping": [
     "messen (B1)"
    ]
@@ -368,7 +368,7 @@
    "formen": "",
    "currentTr": "hava koşullarına dayanıklı",
    "currentBeispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
-   "currentBeispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme gerekiyor."
+   "currentBeispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme lazım."
   },
   {
    "id": 4726,
@@ -388,7 +388,7 @@
    "formen": "",
    "currentTr": "usulüne uygun, tekniğine uygun",
    "currentBeispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
-   "currentBeispielTr": "Atık yağ usulüne uygun bertaraf edilmeli, öylece dökülmemeli.",
+   "currentBeispielTr": "Atık yağ tekniğine uygun şekilde imha edilmeli, öylece dökülmemeli.",
    "overlapping": [
     "sachgemäß (B2)",
     "ordnungsgemäß (B2)"
@@ -401,8 +401,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "el işçiliğine dayalı, zanaatla ilgili",
-   "currentBeispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte.",
-   "currentBeispielTr": "Kapı el işçiliği açısından temiz yapılmış ve onlarca yıl dayanır."
+   "currentBeispiel": "Die Möbel werden bei uns noch rein handwerklich gefertigt.",
+   "currentBeispielTr": "Mobilyalar bizde hâlâ tamamen el işçiliğiyle üretiliyor."
   },
   {
    "id": 4729,
@@ -411,8 +411,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "makineyle, makine ile yapılan",
-   "currentBeispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand.",
-   "currentBeispielTr": "Bu dikiş artık elle değil, makineyle yapılıyor."
+   "currentBeispiel": "Diese Naht wird maschinell genäht, nicht mehr von Hand.",
+   "currentBeispielTr": "Bu dikiş artık elle değil, makineyle dikiliyor."
   },
   {
    "id": 4730,
@@ -432,7 +432,7 @@
    "formen": "",
    "currentTr": "kırılgan, gevrek",
    "currentBeispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
-   "currentBeispielTr": "Soğukta plastik kırılganlaşıyor ve kolayca kırılıyor.",
+   "currentBeispielTr": "Soğukta plastik gevrekleşiyor ve kolayca kırılıyor.",
    "overlapping": [
     "zerbrechlich (A2)"
    ]
@@ -483,7 +483,7 @@
    "formen": "Entlastungen",
    "currentTr": "yükün hafifletilmesi, rahatlama",
    "currentBeispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
-   "currentBeispielTr": "Yüksekliği ayarlanabilir bir masa sırtın yükünü hafifletir."
+   "currentBeispielTr": "Yüksekliği ayarlanabilir bir masa sırta rahatlama sağlar."
   },
   {
    "id": 4736,
@@ -513,7 +513,7 @@
    "formen": "",
    "currentTr": "kan dolaşımı (bir bölgedeki), kanlanma",
    "currentBeispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
-   "currentBeispielTr": "Kısa bir yürüyüş bacaklardaki kan dolaşımını destekler.",
+   "currentBeispielTr": "Kısa bir yürüyüş bacaklardaki kan akışını artırır.",
    "overlapping": [
     "der Kreislauf (B2)"
    ]
@@ -526,7 +526,7 @@
    "formen": "",
    "currentTr": "nefes alıp verme, solunum",
    "currentBeispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
-   "currentBeispielTr": "Yogada her şeyden çok sakin bir nefes alışa dikkat edilir."
+   "currentBeispielTr": "Yogada özellikle sakin bir solunuma dikkat edilir."
   },
   {
    "id": 4740,
@@ -556,7 +556,7 @@
    "formen": "Sehnen",
    "currentTr": "kiriş, tendon",
    "currentBeispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
-   "currentBeispielTr": "Tenis oynarken dirseğindeki bir tendonu tahriş etmiş."
+   "currentBeispielTr": "Tenis oynarken dirseğindeki bir tendonu zorlamış."
   },
   {
    "id": 4743,

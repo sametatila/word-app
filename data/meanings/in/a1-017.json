@@ -9,8 +9,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kültürel",
-   "currentBeispiel": "Ich bin kulturell interessiert. Ich gehe oft ins Museum.",
-   "currentBeispielTr": "Kültüre meraklıyım. Sık sık müzeye giderim."
+   "currentBeispiel": "Wir besuchen oft kulturelle Veranstaltungen in der Stadt.",
+   "currentBeispielTr": "Şehirde sık sık kültürel etkinliklere gidiyoruz."
   },
   {
    "id": 544,
@@ -19,8 +19,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "hitap",
-   "currentBeispiel": "Schreiben Sie auch eine Anrede und einen Gruß.",
-   "currentBeispielTr": "Bir hitap ve bir selamlama da yazın."
+   "currentBeispiel": "In der E-Mail fehlt die Anrede.",
+   "currentBeispielTr": "E-postada hitap eksik."
   },
   {
    "id": 375,
@@ -29,8 +29,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "silgi",
-   "currentBeispiel": "Gibst du mir deinen Radiergummi?",
-   "currentBeispielTr": "Silgini verir misin?"
+   "currentBeispiel": "Mein Radiergummi liegt unter dem Tisch.",
+   "currentBeispielTr": "Silgim masanın altında duruyor."
   },
   {
    "id": 15,
@@ -39,8 +39,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "diğer, başka",
-   "currentBeispiel": "Gefällt dir die Jacke? / Nein, die andere finde ich schöner.",
-   "currentBeispielTr": "Ceket hoşuna gitti mi? / Hayır, diğerini daha güzel buluyorum."
+   "currentBeispiel": "Die anderen Kinder spielen schon draußen.",
+   "currentBeispielTr": "Diğer çocuklar çoktan dışarıda oynuyor."
   },
   {
    "id": 41,
@@ -49,8 +49,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "açık olmak (dükkân, kapı)",
-   "currentBeispiel": "Das Fenster ist auf.",
-   "currentBeispielTr": "Pencere açık."
+   "currentBeispiel": "Der Supermarkt ist bis zehn Uhr auf.",
+   "currentBeispielTr": "Süpermarket saat ona kadar açık."
   },
   {
    "id": 48,
@@ -59,8 +59,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "bitmiş olmak, sona ermek",
-   "currentBeispiel": "Um ein Uhr ist die Schule aus.",
-   "currentBeispielTr": "Okul saat birde bitiyor."
+   "currentBeispiel": "Der Film ist gleich aus.",
+   "currentBeispielTr": "Film birazdan bitiyor."
   },
   {
    "id": 122,
@@ -69,8 +69,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "aynı fikirde olmak, hemfikir olmak",
-   "currentBeispiel": "Bist du einverstanden?",
-   "currentBeispielTr": "Aynı fikirde misin?"
+   "currentBeispiel": "Ich bin mit deinem Vorschlag einverstanden.",
+   "currentBeispielTr": "Önerinle hemfikirim."
   },
   {
    "id": 150,
@@ -79,8 +79,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "hazır olmak, bitmiş olmak",
-   "currentBeispiel": "Ich bin schon fertig.",
-   "currentBeispielTr": "Ben çoktan bitirdim."
+   "currentBeispiel": "Bist du schon fertig mit dem Buch?",
+   "currentBeispielTr": "Kitabı bitirdin mi?"
   },
   {
    "id": 193,
@@ -89,8 +89,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kapalı olmak",
-   "currentBeispiel": "Die Apotheke ist heute geschlossen.",
-   "currentBeispielTr": "Eczane bugün kapalı.",
+   "currentBeispiel": "Das Schwimmbad ist im Winter geschlossen.",
+   "currentBeispielTr": "Yüzme havuzu kışın kapalı.",
    "overlapping": [
     "zu sein (A1)"
    ]
@@ -102,8 +102,8 @@
    "niveau": "A1",
    "formen": "-en",
    "currentTr": "sınav, yazılı sınav",
-   "currentBeispiel": "Ich muss lernen, morgen schreiben wir eine Klassenarbeit.",
-   "currentBeispielTr": "Ders çalışmam lazım, yarın yazılımız var.",
+   "currentBeispiel": "Morgen schreiben wir eine Klassenarbeit in Mathe.",
+   "currentBeispielTr": "Yarın matematikten yazılımız var.",
    "overlapping": [
     "die Prüfung (A1)",
     "die Schularbeit (B1)"
@@ -116,8 +116,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "favori, en sevilen",
-   "currentBeispiel": "Mein Lieblingsfach ist Sozialkunde.",
-   "currentBeispielTr": "En sevdiğim ders sosyal bilgiler."
+   "currentBeispiel": "Das ist mein Lieblingsbuch aus der Kindheit.",
+   "currentBeispielTr": "Bu, çocukluğumdan kalma en sevdiğim kitap."
   },
   {
    "id": 379,
@@ -126,8 +126,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "haklı olmak",
-   "currentBeispiel": "Du hast (nicht) recht.",
-   "currentBeispielTr": "Haklısın. / Haklı değilsin."
+   "currentBeispiel": "Du hast völlig recht.",
+   "currentBeispielTr": "Kesinlikle haklısın."
   },
   {
    "id": 423,
@@ -136,8 +136,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "yürüyüşe çıkmak",
-   "currentBeispiel": "Wollen wir spazieren gehen?",
-   "currentBeispielTr": "Yürüyüşe çıkalım mı?"
+   "currentBeispiel": "Wir gehen jeden Abend im Park spazieren.",
+   "currentBeispielTr": "Her akşam parkta yürüyüşe çıkıyoruz."
   },
   {
    "id": 446,
@@ -146,8 +146,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "tenis oynamak",
-   "currentBeispiel": "Er spielt gut Tennis.",
-   "currentBeispielTr": "İyi tenis oynuyor."
+   "currentBeispiel": "Am Samstag spielen wir immer Tennis.",
+   "currentBeispielTr": "Cumartesileri hep tenis oynarız."
   },
   {
    "id": 468,
@@ -156,8 +156,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ve saire, vesaire",
-   "currentBeispiel": "usw.",
-   "currentBeispielTr": "vs. (ve saire)"
+   "currentBeispiel": "Wir brauchen Brot, Käse, Obst und so weiter.",
+   "currentBeispielTr": "Ekmek, peynir, meyve vesaire lazım."
   },
   {
    "id": 495,
@@ -166,8 +166,8 @@
    "niveau": "A1",
    "formen": "-er, -e, -s",
    "currentTr": "hangi",
-   "currentBeispiel": "Welche CD möchtest du?",
-   "currentBeispielTr": "Hangi CD'yi istersin?"
+   "currentBeispiel": "Welche Farbe hat dein neues Fahrrad?",
+   "currentBeispielTr": "Yeni bisikletin hangi renk?"
   },
   {
    "id": 504,
@@ -176,8 +176,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ne kadar, kaç",
-   "currentBeispiel": "Wie viel kostet das?",
-   "currentBeispielTr": "Bu ne kadar?",
+   "currentBeispiel": "Wie viel kostet die Fahrkarte?",
+   "currentBeispielTr": "Bilet ne kadar?",
    "overlapping": [
     "wie viele (B1)"
    ]
@@ -189,8 +189,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "örneğin",
-   "currentBeispiel": "Mein Freund hat viele Hobbys, zum Beispiel Kochen, Lesen und Tanzen.",
-   "currentBeispielTr": "Arkadaşımın birçok hobisi var; örneğin yemek yapmak, okumak ve dans etmek.",
+   "currentBeispiel": "Ich mag Obst, zum Beispiel Äpfel und Birnen.",
+   "currentBeispielTr": "Meyveyi severim, örneğin elmayı ve armudu.",
    "overlapping": [
     "beispielsweise (A2)"
    ]
@@ -202,8 +202,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kapalı olmak (günlük dil)",
-   "currentBeispiel": "Die Bibliothek ist in den Ferien zu.",
-   "currentBeispielTr": "Kütüphane tatilde kapalı.",
+   "currentBeispiel": "Die Apotheke ist heute leider schon zu.",
+   "currentBeispielTr": "Eczane bugün maalesef çoktan kapanmış.",
    "overlapping": [
     "geschlossen sein (A1)"
    ]
@@ -215,8 +215,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "tıklamak",
-   "currentBeispiel": "Da musst du dieses Wort anklicken.",
-   "currentBeispielTr": "Bu kelimeye tıklaman gerekiyor.",
+   "currentBeispiel": "Du musst zuerst den Link anklicken.",
+   "currentBeispielTr": "Önce bağlantıya tıklaman gerekiyor.",
    "overlapping": [
     "klicken (B1)"
    ]
@@ -228,8 +228,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "işaretlemek, çarpı koymak",
-   "currentBeispiel": "Auf dem Formular müssen Sie an mehreren Stellen etwas ankreuzen.",
-   "currentBeispielTr": "Formda birkaç yeri işaretlemeniz gerekiyor.",
+   "currentBeispiel": "Bitte kreuzen Sie die richtige Antwort an.",
+   "currentBeispielTr": "Lütfen doğru cevabı işaretleyin.",
    "overlapping": [
     "markieren (B1)"
    ]
@@ -241,8 +241,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "açık olmak (cihaz, ışık)",
-   "currentBeispiel": "Heute Nacht war das Licht an.",
-   "currentBeispielTr": "Bu gece ışık açıktı."
+   "currentBeispiel": "Der Computer ist noch an.",
+   "currentBeispielTr": "Bilgisayar hâlâ çalışıyor."
   },
   {
    "id": 560,
@@ -251,8 +251,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "yabancı (ülkeye ait)",
-   "currentBeispiel": "Leider habe ich nur ausländisches Geld.",
-   "currentBeispielTr": "Maalesef yanımda yalnızca yabancı para var.",
+   "currentBeispiel": "In unserer Klasse sind viele ausländische Studenten.",
+   "currentBeispielTr": "Sınıfımızda çok sayıda yabancı öğrenci var.",
    "overlapping": [
     "der Ausländer (A1)",
     "fremd (A1)"
@@ -265,8 +265,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "bu",
-   "currentBeispiel": "Ich nehme lieber diesen Kuchen.",
-   "currentBeispielTr": "Ben bu pastadan alayım.",
+   "currentBeispiel": "Diese Tasche gefällt mir sehr gut.",
+   "currentBeispielTr": "Bu çanta çok hoşuma gidiyor.",
    "overlapping": [
     "der (A1)"
    ]
@@ -278,8 +278,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "medeni hâl",
-   "currentBeispiel": "Bei „Familienstand“ musst du „ledig“ ankreuzen.",
-   "currentBeispielTr": "\"Medeni hâl\" kısmında \"bekâr\" seçeneğini işaretlemelisin.",
+   "currentBeispiel": "Bitte geben Sie auch Ihren Familienstand an.",
+   "currentBeispielTr": "Lütfen medeni hâlinizi de belirtin.",
    "overlapping": [
     "der Personenstand (B1)",
     "der Zivilstand (B1)"
@@ -292,8 +292,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "doğum yılı",
-   "currentBeispiel": "Das Geburtsjahr Ihres Sohnes, bitte?",
-   "currentBeispielTr": "Oğlunuzun doğum yılı lütfen?"
+   "currentBeispiel": "Im Pass steht auch das Geburtsjahr.",
+   "currentBeispielTr": "Pasaportta doğum yılı da yazıyor."
   },
   {
    "id": 679,
@@ -302,8 +302,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "yarım pansiyon",
-   "currentBeispiel": "Möchten Sie Vollpension oder Halbpension?",
-   "currentBeispielTr": "Tam pansiyon mu yarım pansiyon mu istersiniz?"
+   "currentBeispiel": "Wir haben ein Zimmer mit Halbpension gebucht.",
+   "currentBeispielTr": "Yarım pansiyon bir oda ayırttık."
   },
   {
    "id": 697,
@@ -312,8 +312,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "kredi kartı",
-   "currentBeispiel": "Kann ich mit Kreditkarte bezahlen?",
-   "currentBeispielTr": "Kredi kartıyla ödeyebilir miyim?"
+   "currentBeispiel": "Ich habe meine Kreditkarte zu Hause vergessen.",
+   "currentBeispielTr": "Kredi kartımı evde unuttum."
   },
   {
    "id": 717,
@@ -322,8 +322,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "son, sonuncu, geçen (letzte Woche)",
-   "currentBeispiel": "Morgen ist der letzte Kurstag.",
-   "currentBeispielTr": "Yarın kursun son günü.",
+   "currentBeispiel": "Der letzte Zug fährt um Mitternacht.",
+   "currentBeispielTr": "Son tren gece yarısı kalkıyor.",
    "overlapping": [
     "das Ende (A1)",
     "der Schluss (A1)"
@@ -336,8 +336,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "çoğu, en çok",
-   "currentBeispiel": "Die meisten Norddeutschen sind sehr groß.",
-   "currentBeispielTr": "Kuzey Almanların çoğu çok uzun boylu."
+   "currentBeispiel": "Die meisten Kinder mögen Schokolade.",
+   "currentBeispielTr": "Çocukların çoğu çikolatayı sever."
   },
   {
    "id": 761,
@@ -346,8 +346,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "bisiklete binmek",
-   "currentBeispiel": "Das Kind kann schon Rad fahren.",
-   "currentBeispielTr": "Çocuk bisiklete binmeyi biliyor artık."
+   "currentBeispiel": "Im Sommer fahre ich jeden Tag Rad.",
+   "currentBeispielTr": "Yazın her gün bisiklete biniyorum."
   },
   {
    "id": 774,
@@ -356,8 +356,8 @@
    "niveau": "A1",
    "formen": "-en",
    "currentTr": "banliyö treni",
-   "currentBeispiel": "Ich nehme lieber die S-Bahn.",
-   "currentBeispielTr": "Banliyö trenine binmeyi tercih ederim."
+   "currentBeispiel": "Die S-Bahn hält auch am Busbahnhof.",
+   "currentBeispielTr": "Banliyö treni otogarda da duruyor."
   },
   {
    "id": 789,
@@ -366,8 +366,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "görülmeye değer yer, turistik yer",
-   "currentBeispiel": "-en Welche Sehenswürdigkeiten gibt es in Frankfurt?",
-   "currentBeispielTr": "Frankfurt'ta hangi görülmeye değer yerler var?"
+   "currentBeispiel": "Der Dom ist die bekannteste Sehenswürdigkeit der Stadt.",
+   "currentBeispielTr": "Katedral şehrin en ünlü turistik yeri."
   },
   {
    "id": 790,
@@ -376,8 +376,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "gitmiş olmak",
-   "currentBeispiel": "Herr Meier ist schon weg.",
-   "currentBeispielTr": "Bay Meier çoktan gitti."
+   "currentBeispiel": "Der Bus ist leider schon weg.",
+   "currentBeispielTr": "Otobüs maalesef çoktan gitti."
   },
   {
    "id": 844,
@@ -386,8 +386,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ne tür bir, nasıl bir",
-   "currentBeispiel": "Was für eine Farbe möchten Sie?",
-   "currentBeispielTr": "Nasıl bir renk istersiniz?"
+   "currentBeispiel": "Was für ein Auto fährst du?",
+   "currentBeispielTr": "Ne tür bir araba kullanıyorsun?"
   }
  ]
 }

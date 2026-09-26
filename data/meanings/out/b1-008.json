@@ -83,9 +83,9 @@
   "id": 1601,
   "tr": "elçilik",
   "en": "embassy",
-  "beispiel": "Das Visum habe ich von der Botschaft bekommen.",
-  "beispielTr": "Vizeyi elçilikten aldım.",
-  "beispielEn": "I got the visa from the embassy."
+  "beispiel": "Wer seinen Pass verloren hat, sollte sich an die Botschaft wenden.",
+  "beispielTr": "Pasaportunu kaybeden elçiliğe başvurmalı.",
+  "beispielEn": "Anyone who has lost their passport should contact the embassy."
  },
  {
   "id": 1890,
@@ -107,9 +107,9 @@
   "id": 3136,
   "tr": "saymak",
   "en": "to count",
-  "beispiel": "Mein Sohn kann schon bis hundert zählen.",
-  "beispielTr": "Oğlum şimdiden yüze kadar sayabiliyor.",
-  "beispielEn": "My son can already count to a hundred."
+  "beispiel": "Beim Versteckspiel zählt Max laut bis zwanzig.",
+  "beispielTr": "Saklambaçta Max yüksek sesle yirmiye kadar sayıyor.",
+  "beispielEn": "In hide-and-seek, Max counts out loud to twenty."
  },
  {
   "id": 2116,
@@ -155,9 +155,9 @@
   "id": 3065,
   "tr": "seans",
   "en": "showing",
-  "beispiel": "Die nächste Vorstellung beginnt um acht Uhr.",
-  "beispielTr": "Bir sonraki seans saat sekizde başlıyor.",
-  "beispielEn": "The next showing starts at eight."
+  "beispiel": "Für die Vorstellung um acht gibt es keine Karten mehr.",
+  "beispielTr": "Saat sekiz seansı için bilet kalmadı.",
+  "beispielEn": "There are no more tickets for the eight o'clock showing."
  },
  {
   "id": 2943,
@@ -283,9 +283,9 @@
   "id": 1956,
   "tr": "sabır",
   "en": "patience",
-  "beispiel": "Für diese Arbeit braucht man viel Geduld.",
-  "beispielTr": "Bu iş çok sabır ister.",
-  "beispielEn": "This work requires a lot of patience."
+  "beispiel": "Beim Angeln braucht man viel Geduld.",
+  "beispielTr": "Balık tutarken çok sabır gerekir.",
+  "beispielEn": "Fishing takes a lot of patience."
  },
  {
   "id": 1619,
@@ -339,17 +339,17 @@
   "id": 2086,
   "tr": "avlu",
   "en": "courtyard",
-  "beispiel": "Die Kinder spielen am liebsten im Hof.",
-  "beispielTr": "Çocuklar en çok avluda oynamayı seviyor.",
-  "beispielEn": "The children like playing in the courtyard best."
+  "beispiel": "Die Fahrräder stehen hinten im Hof.",
+  "beispielTr": "Bisikletler arkadaki avluda duruyor.",
+  "beispielEn": "The bikes are out back in the courtyard."
  },
  {
   "id": 1374,
   "tr": "kabul etmek",
   "en": "to accept",
-  "beispiel": "Ich kann diese Bedingungen leider nicht akzeptieren.",
-  "beispielTr": "Bu şartları maalesef kabul edemem.",
-  "beispielEn": "Unfortunately I cannot accept these conditions."
+  "beispiel": "Der Chef hat meinen Vorschlag sofort akzeptiert.",
+  "beispielTr": "Şef önerimi hemen kabul etti.",
+  "beispielEn": "The boss accepted my suggestion right away."
  },
  {
   "id": 2913,

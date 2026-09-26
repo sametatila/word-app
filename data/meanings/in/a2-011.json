@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "baharatlı, çeşnili",
    "currentBeispiel": "Die Suppe ist schön würzig.",
-   "currentBeispielTr": "Çorba güzelce baharatlı."
+   "currentBeispielTr": "Çorba güzel baharatlı olmuş."
   },
   {
    "id": 7494,
@@ -70,7 +70,7 @@
    "formen": "",
    "currentTr": "yavan, tatsız",
    "currentBeispiel": "Ohne Salz schmeckt das Essen fad.",
-   "currentBeispielTr": "Tuzsuz olunca yemek yavan geliyor."
+   "currentBeispielTr": "Tuz olmadan yemek yavan oluyor."
   },
   {
    "id": 7495,
@@ -89,8 +89,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "pis kokan, leş gibi kokan",
-   "currentBeispiel": "Vor dem Haus stand eine stinkende Mülltonne.",
-   "currentBeispielTr": "Evin önünde pis kokan bir çöp kovası duruyordu."
+   "currentBeispiel": "Vor dem Haus steht eine stinkende Mülltonne.",
+   "currentBeispielTr": "Evin önünde pis kokan bir çöp kovası duruyor."
   },
   {
    "id": 7497,
@@ -99,7 +99,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "mis kokulu, güzel kokan",
-   "currentBeispiel": "Sie brachte mir duftende Blumen mit.",
+   "currentBeispiel": "Sie hat mir duftende Blumen mitgebracht.",
    "currentBeispielTr": "Bana mis kokulu çiçekler getirdi."
   },
   {
@@ -109,8 +109,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "boğuk (ses)",
-   "currentBeispiel": "Aus dem Nachbarhaus kam ein dumpfes Geräusch.",
-   "currentBeispielTr": "Yandaki evden boğuk bir ses geldi."
+   "currentBeispiel": "Aus der Wohnung kommt ein dumpfes Geräusch.",
+   "currentBeispielTr": "Daireden boğuk bir ses geliyor."
   },
   {
    "id": 7499,
@@ -140,7 +140,7 @@
    "formen": "",
    "currentTr": "sabırsız",
    "currentBeispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
-   "currentBeispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlaşıyor."
+   "currentBeispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlanıyor."
   },
   {
    "id": 7502,
@@ -150,7 +150,7 @@
    "formen": "",
    "currentTr": "alçakgönüllü, mütevazı",
    "currentBeispiel": "Er ist reich, aber er lebt sehr bescheiden.",
-   "currentBeispielTr": "O zengin ama çok mütevazı yaşıyor."
+   "currentBeispielTr": "Zengin ama çok mütevazı yaşıyor."
   },
   {
    "id": 7503,
@@ -189,8 +189,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "misafirperver",
-   "currentBeispiel": "Die Familie war gastfreundlich und hat uns zum Essen eingeladen.",
-   "currentBeispielTr": "Aile misafirperverdi ve bizi yemeğe davet etti."
+   "currentBeispiel": "Die Familie war gastfreundlich und hat uns eingeladen.",
+   "currentBeispielTr": "Aile misafirperverdi ve bizi davet etti."
   },
   {
    "id": 7507,
@@ -219,8 +219,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kötü niyetli, kırıcı",
-   "currentBeispiel": "Das war gemein von dir, sie so zu ärgern.",
-   "currentBeispielTr": "Ona böyle takılman senin için kötü niyetliceydi."
+   "currentBeispiel": "Mein Nachbar ist manchmal richtig gemein.",
+   "currentBeispielTr": "Komşum bazen gerçekten kötü niyetli oluyor."
   },
   {
    "id": 7510,
@@ -230,7 +230,7 @@
    "formen": "",
    "currentTr": "dürüst, terbiyeli",
    "currentBeispiel": "Er ist ein anständiger Mensch und hilft immer.",
-   "currentBeispielTr": "O dürüst bir insan ve her zaman yardım eder.",
+   "currentBeispielTr": "O düzgün bir insan ve her zaman yardım eder.",
    "overlapping": [
     "ehrlich (B1)",
     "integer (C1)"
@@ -254,7 +254,7 @@
    "formen": "",
    "currentTr": "kıskanç, imrenen",
    "currentBeispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
-   "currentBeispielTr": "Meslektaşım yeni arabamı kıskanıyor.",
+   "currentBeispielTr": "İş arkadaşım yeni arabama imreniyor.",
    "overlapping": [
     "eifersüchtig (B2)"
    ]
@@ -267,7 +267,7 @@
    "formen": "",
    "currentTr": "uslu, söz dinleyen",
    "currentBeispiel": "Die Kinder waren heute den ganzen Tag brav.",
-   "currentBeispielTr": "Çocuklar bugün bütün gün uslu durdular.",
+   "currentBeispielTr": "Çocuklar bugün bütün gün uslu durdu.",
    "overlapping": [
     "artig (A2)"
    ]
@@ -323,7 +323,7 @@
    "formen": "",
    "currentTr": "arsız, terbiyesiz",
    "currentBeispiel": "Seine Antwort am Telefon war richtig unverschämt.",
-   "currentBeispielTr": "Telefondaki cevabı gerçekten terbiyesizceydi.",
+   "currentBeispielTr": "Telefondaki cevabı gerçekten terbiyesizdi.",
    "overlapping": [
     "frech (B1)"
    ]
@@ -336,7 +336,7 @@
    "formen": "",
    "currentTr": "kaba, nezaketsiz",
    "currentBeispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
-   "currentBeispielTr": "Yemek sırasında telefona bakmak kabalıktır.",
+   "currentBeispielTr": "Yemek sırasında telefona bakmak nezaketsizliktir.",
    "overlapping": [
     "grob (A2)"
    ]
@@ -348,8 +348,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sadakatsiz, vefasız",
-   "currentBeispiel": "Sie hat sich getrennt, weil ihr Mann untreu war.",
-   "currentBeispielTr": "Kocası sadakatsiz olduğu için ondan ayrıldı."
+   "currentBeispiel": "Sie hat ihn verlassen, weil er untreu war.",
+   "currentBeispielTr": "Sadakatsiz olduğu için onu terk etti."
   },
   {
    "id": 7521,
@@ -392,7 +392,7 @@
    "formen": "",
    "currentTr": "beceriksiz, sakar",
    "currentBeispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
-   "currentBeispielTr": "O kadar sakarım ki hep elimden bir şey düşüyor."
+   "currentBeispielTr": "O kadar sakarım ki elimden hep bir şey düşüyor."
   },
   {
    "id": 7525,
@@ -402,7 +402,7 @@
    "formen": "",
    "currentTr": "akıllı, zeki, kurnaz",
    "currentBeispiel": "Das war eine schlaue Idee von dir.",
-   "currentBeispielTr": "Bu senin akıllıca bir fikrindi.",
+   "currentBeispielTr": "Bu zekice bir fikirdi.",
    "overlapping": [
     "klug (A2)"
    ]
@@ -440,8 +440,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "unutkan",
-   "currentBeispiel": "Im Alter wurde meine Oma sehr vergesslich.",
-   "currentBeispielTr": "Yaşlılıkta babaannem çok unutkan oldu."
+   "currentBeispiel": "Meine Oma ist im Alter sehr vergesslich geworden.",
+   "currentBeispielTr": "Babaannem yaşlılıkta çok unutkan oldu."
   },
   {
    "id": 7529,
@@ -460,8 +460,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "dakik olmayan, geç kalan",
-   "currentBeispiel": "Er ist immer unpünktlich und kommt zu spät.",
-   "currentBeispielTr": "O her zaman dakik değil ve geç geliyor."
+   "currentBeispiel": "Mein Kollege ist leider immer unpünktlich.",
+   "currentBeispielTr": "İş arkadaşım ne yazık ki hiç dakik değil."
   },
   {
    "id": 7531,
@@ -470,8 +470,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "telaşlı, aceleci",
-   "currentBeispiel": "Am Morgen ist meine Mutter immer sehr hektisch.",
-   "currentBeispielTr": "Sabahları annem hep çok telaşlı olur."
+   "currentBeispiel": "Im Büro war es heute sehr hektisch.",
+   "currentBeispielTr": "Bugün ofis çok telaşlıydı."
   },
   {
    "id": 7532,
@@ -480,8 +480,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "rahat, havalı",
-   "currentBeispiel": "Mein Chef ist im Büro sehr lässig.",
-   "currentBeispielTr": "Patronum ofiste çok rahat.",
+   "currentBeispiel": "Mit dieser Jacke siehst du sehr lässig aus.",
+   "currentBeispielTr": "Bu ceketle çok havalı görünüyorsun.",
    "overlapping": [
     "gemütlich (A1)",
     "bequem (A2)"
@@ -495,7 +495,7 @@
    "formen": "",
    "currentTr": "hareketli, canlı (kişi, huy)",
    "currentBeispiel": "Unsere Tochter ist ein lebhaftes Kind.",
-   "currentBeispielTr": "Kızımız canlı bir çocuk.",
+   "currentBeispielTr": "Kızımız hareketli bir çocuk.",
    "overlapping": [
     "mobil (B1)",
     "belebt (A2)"

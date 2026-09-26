@@ -30,7 +30,7 @@
    "formen": "-e",
    "currentTr": "kaldırım",
    "currentBeispiel": "Auf dem Bürgersteig darf man nicht parken.",
-   "currentBeispielTr": "Kaldırıma park etmek yasak.",
+   "currentBeispielTr": "Kaldırıma park etmek yasaktır.",
    "overlapping": [
     "das Trottoir (B1)",
     "der Gehweg (A2)"
@@ -44,7 +44,7 @@
    "formen": "schleppt ab, hat abgeschleppt",
    "currentTr": "çekmek, çekiciyle götürmek",
    "currentBeispiel": "Die Polizei lässt das Auto abschleppen.",
-   "currentBeispielTr": "Polis arabayı çektiriyor.",
+   "currentBeispielTr": "Polis arabayı çekiciyle çektiriyor.",
    "overlapping": [
     "ziehen (B1)"
    ]
@@ -107,7 +107,7 @@
    "formen": "-en",
    "currentTr": "tekne gezisi",
    "currentBeispiel": "Am Nachmittag machen wir eine Bootsfahrt auf dem See.",
-   "currentBeispielTr": "Öğleden sonra gölde bir tekne gezisi yapıyoruz."
+   "currentBeispielTr": "Öğleden sonra gölde tekne gezisi yapıyoruz."
   },
   {
    "id": 8098,
@@ -117,7 +117,7 @@
    "formen": "-n",
    "currentTr": "dünya turu",
    "currentBeispiel": "Mein Bruder träumt von einer Weltreise.",
-   "currentBeispielTr": "Kardeşim bir dünya turu hayal ediyor."
+   "currentBeispielTr": "Kardeşim dünya turu yapmayı hayal ediyor."
   },
   {
    "id": 8099,
@@ -137,7 +137,7 @@
    "formen": "-en",
    "currentTr": "okul gezisi",
    "currentBeispiel": "Meine Tochter fährt nächste Woche auf Klassenfahrt.",
-   "currentBeispielTr": "Kızım gelecek hafta okul gezisine gidiyor."
+   "currentBeispielTr": "Kızım gelecek hafta sınıf gezisine gidiyor."
   },
   {
    "id": 8101,
@@ -186,8 +186,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "mevsim",
-   "currentBeispiel": "Welche Jahreszeit magst du am liebsten?",
-   "currentBeispielTr": "En çok hangi mevsimi seviyorsun?"
+   "currentBeispiel": "Der Frühling ist für viele Menschen die schönste Jahreszeit.",
+   "currentBeispielTr": "İlkbahar birçok insan için en güzel mevsim."
   },
   {
    "id": 8106,
@@ -210,8 +210,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "kaldırım, yaya yolu",
-   "currentBeispiel": "Auf dem Gehweg darf man nicht parken.",
-   "currentBeispielTr": "Kaldırımda park edilmez.",
+   "currentBeispiel": "Der Gehweg vor dem Haus ist sehr schmal.",
+   "currentBeispielTr": "Evin önündeki yaya yolu çok dar.",
    "overlapping": [
     "das Trottoir (B1)",
     "der Bürgersteig (A2)"
@@ -225,7 +225,7 @@
    "formen": "-n",
    "currentTr": "sokak lambası, fener",
    "currentBeispiel": "Vor unserem Haus steht eine alte Laterne.",
-   "currentBeispielTr": "Evimizin önünde eski bir sokak lambası duruyor."
+   "currentBeispielTr": "Evimizin önünde eski bir sokak lambası var."
   },
   {
    "id": 8109,
@@ -245,7 +245,7 @@
    "formen": "¨-e",
    "currentTr": "dere, çay",
    "currentBeispiel": "Hinter dem Dorf fließt ein kleiner Bach.",
-   "currentBeispielTr": "Köyün arkasından küçük bir dere akıyor."
+   "currentBeispielTr": "Köyün arkasında küçük bir dere akıyor."
   },
   {
    "id": 8111,
@@ -264,8 +264,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "dal",
-   "currentBeispiel": "Ein Vogel sitzt auf dem Zweig vor dem Fenster.",
-   "currentBeispielTr": "Pencerenin önündeki dalda bir kuş oturuyor."
+   "currentBeispiel": "Ein Vogel sitzt auf einem dünnen Zweig.",
+   "currentBeispielTr": "Bir kuş ince bir dalın üstünde oturuyor."
   },
   {
    "id": 8113,
@@ -295,7 +295,7 @@
    "formen": "¨-e",
    "currentTr": "kurbağa",
    "currentBeispiel": "Am Teich haben wir einen grünen Frosch gesehen.",
-   "currentBeispielTr": "Göletin yanında yeşil bir kurbağa gördük."
+   "currentBeispielTr": "Göletin kenarında yeşil bir kurbağa gördük."
   },
   {
    "id": 8116,
@@ -324,8 +324,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "güneş ışığı",
-   "currentBeispiel": "Nach dem Regen kam endlich der Sonnenschein.",
-   "currentBeispielTr": "Yağmurdan sonra sonunda güneş ışığı geldi."
+   "currentBeispiel": "Im Garten sitzen wir gern im Sonnenschein.",
+   "currentBeispielTr": "Bahçede güneş ışığında oturmayı seviyoruz."
   },
   {
    "id": 8119,
@@ -334,8 +334,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "ikametgâh belgesi",
-   "currentBeispiel": "Der Vermieter möchte eine Meldebescheinigung von mir sehen.",
-   "currentBeispielTr": "Ev sahibi benden bir ikametgâh belgesi görmek istiyor."
+   "currentBeispiel": "Der Vermieter möchte meine Meldebescheinigung sehen.",
+   "currentBeispielTr": "Ev sahibi ikametgâh belgemi görmek istiyor."
   },
   {
    "id": 8120,
@@ -344,8 +344,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "devriye",
-   "currentBeispiel": "Die Polizei fährt jede Nacht Streife in unserem Viertel.",
-   "currentBeispielTr": "Polis her gece mahallemizde devriye geziyor."
+   "currentBeispiel": "Die Polizei fährt nachts Streife im Park.",
+   "currentBeispielTr": "Polis geceleri parkta devriye geziyor."
   },
   {
    "id": 8121,
@@ -354,8 +354,8 @@
    "niveau": "A2",
    "formen": "weist sich aus, hat sich ausgewiesen",
    "currentTr": "kimliğini göstermek",
-   "currentBeispiel": "Bei der Kontrolle musst du dich mit dem Pass ausweisen.",
-   "currentBeispielTr": "Kontrolde pasaportla kimliğini göstermelisin."
+   "currentBeispiel": "Bei der Kontrolle musst du dich ausweisen.",
+   "currentBeispielTr": "Kontrolde kimliğini göstermek zorundasın."
   },
   {
    "id": 8123,
@@ -374,8 +374,8 @@
    "niveau": "A2",
    "formen": "geht unter, ist untergegangen",
    "currentTr": "batmak (güneş)",
-   "currentBeispiel": "Am Meer ist die Sonne gerade untergegangen.",
-   "currentBeispielTr": "Denizde güneş az önce battı.",
+   "currentBeispiel": "Am Meer geht die Sonne gerade unter.",
+   "currentBeispielTr": "Denizde güneş şu anda batıyor.",
    "overlapping": [
     "sinken (B1)"
    ]
@@ -388,7 +388,7 @@
    "formen": "stempelt, hat gestempelt",
    "currentTr": "mühürlemek, damgalamak",
    "currentBeispiel": "Die Frau am Schalter hat mein Formular gestempelt.",
-   "currentBeispielTr": "Gişedeki kadın formumu mühürledi."
+   "currentBeispielTr": "Gişedeki kadın formumu damgaladı."
   },
   {
    "id": 8126,
@@ -398,7 +398,7 @@
    "formen": "durchsucht, hat durchsucht",
    "currentTr": "aramak, arama yapmak",
    "currentBeispiel": "Die Polizei hat den ganzen Park durchsucht.",
-   "currentBeispielTr": "Polis bütün parkı aradı.",
+   "currentBeispielTr": "Polis bütün parkta arama yaptı.",
    "overlapping": [
     "anrufen (A1)",
     "suchen (A1)"
@@ -411,8 +411,8 @@
    "niveau": "A2",
    "formen": "gräbt aus, hat ausgegraben",
    "currentTr": "kazıp çıkarmak",
-   "currentBeispiel": "Der Hund hat im Garten einen Knochen ausgegraben.",
-   "currentBeispielTr": "Köpek bahçede bir kemik kazıp çıkardı."
+   "currentBeispiel": "Der Hund gräbt im Garten einen Knochen aus.",
+   "currentBeispielTr": "Köpek bahçede bir kemik kazıp çıkarıyor."
   },
   {
    "id": 8128,
@@ -422,7 +422,7 @@
    "formen": "erntet, hat geerntet",
    "currentTr": "hasat etmek, toplamak",
    "currentBeispiel": "Im Herbst ernten die Bauern die Äpfel.",
-   "currentBeispielTr": "Sonbaharda çiftçiler elmaları topluyor."
+   "currentBeispielTr": "Sonbaharda çiftçiler elmaları hasat eder."
   },
   {
    "id": 8129,
@@ -431,8 +431,8 @@
    "niveau": "A2",
    "formen": "sperrt ab, hat abgesperrt",
    "currentTr": "kapatmak, kordona almak",
-   "currentBeispiel": "Die Polizei hat die Straße nach dem Unfall abgesperrt.",
-   "currentBeispielTr": "Polis kazadan sonra caddeyi kapattı.",
+   "currentBeispiel": "Die Polizei sperrt die Straße nach dem Unfall ab.",
+   "currentBeispielTr": "Polis kazadan sonra caddeyi kordona alıyor.",
    "overlapping": [
     "herunterfahren (B1)",
     "ausschalten (A2)"
@@ -502,8 +502,8 @@
    "niveau": "A2",
    "formen": "sagt vorher, hat vorhergesagt",
    "currentTr": "tahmin etmek, önceden bildirmek",
-   "currentBeispiel": "Für morgen sagt man Regen vorher.",
-   "currentBeispielTr": "Yarın için yağmur tahmin ediliyor.",
+   "currentBeispiel": "Das Wetter kann man nicht genau vorhersagen.",
+   "currentBeispielTr": "Hava durumunu kimse tam olarak tahmin edemez.",
    "overlapping": [
     "raten (A1)",
     "schätzen (B1)",
@@ -518,7 +518,7 @@
    "formen": "kriecht, ist gekrochen",
    "currentTr": "sürünmek, emeklemek",
    "currentBeispiel": "Eine Schnecke kriecht langsam über den Weg.",
-   "currentBeispielTr": "Bir salyangoz yavaşça yolun üzerinde sürünüyor."
+   "currentBeispielTr": "Bir salyangoz yavaşça yolun üstünde sürünüyor."
   },
   {
    "id": 8137,
@@ -528,7 +528,7 @@
    "formen": "streitet, hat gestritten",
    "currentTr": "tartışmak, kavga etmek",
    "currentBeispiel": "Die Nachbarn streiten oft über den Lärm.",
-   "currentBeispielTr": "Komşular sık sık gürültü yüzünden tartışıyor.",
+   "currentBeispielTr": "Komşular sık sık gürültü yüzünden kavga ediyor.",
    "overlapping": [
     "diskutieren (A2)",
     "erörtern (C1)"
@@ -541,8 +541,8 @@
    "niveau": "A2",
    "formen": "verletzt, hat verletzt",
    "currentTr": "yaralamak",
-   "currentBeispiel": "Bei dem Unfall hat sich niemand verletzt.",
-   "currentBeispielTr": "Kazada kimse yaralanmadı."
+   "currentBeispiel": "Die Katze hat mich am Arm verletzt.",
+   "currentBeispielTr": "Kedi kolumu yaraladı."
   }
  ]
 }

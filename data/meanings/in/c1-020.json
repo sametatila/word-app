@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Amortisationen",
    "currentTr": "yatırımın kendini amorti etmesi, geri ödeme süresi",
-   "currentBeispiel": "Die Amortisation der Anlage verzögert sich durch die niedrigen Marktpreise.",
-   "currentBeispielTr": "Düşük piyasa fiyatları yüzünden tesisin kendini geri ödemesi gecikiyor."
+   "currentBeispiel": "Die Amortisation der Solaranlage dauert etwa zehn Jahre.",
+   "currentBeispielTr": "Güneş enerjisi tesisinin amortismanı yaklaşık on yıl sürüyor."
   },
   {
    "id": 6204,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Anschubfinanzierungen",
    "currentTr": "başlangıç finansmanı, ilk destek fonu",
-   "currentBeispiel": "Der Bund stellt eine Anschubfinanzierung bereit, den Rest tragen die Kommunen.",
-   "currentBeispielTr": "Federal devlet başlangıç finansmanını sağlıyor, gerisini belediyeler üstleniyor."
+   "currentBeispiel": "Ohne Anschubfinanzierung wäre das Projekt nie gestartet.",
+   "currentBeispielTr": "Başlangıç finansmanı olmasaydı proje hiç başlamazdı."
   },
   {
    "id": 6205,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Kapitalbedarfe",
    "currentTr": "sermaye ihtiyacı",
-   "currentBeispiel": "Der Kapitalbedarf übersteigt bei Weitem das, was ein Stadtwerk allein stemmen kann.",
-   "currentBeispielTr": "Sermaye ihtiyacı, bir belediye şirketinin tek başına kaldırabileceğini fazlasıyla aşıyor."
+   "currentBeispiel": "Der Kapitalbedarf für den Netzausbau liegt bei mehreren Milliarden Euro.",
+   "currentBeispielTr": "Şebeke genişletmesinin sermaye ihtiyacı birkaç milyar avro."
   },
   {
    "id": 6206,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "Renditeerwartungen",
    "currentTr": "getiri beklentisi",
-   "currentBeispiel": "Private Investoren steigen nur bei planbaren Renditeerwartungen ein.",
-   "currentBeispielTr": "Özel yatırımcılar ancak öngörülebilir getiri beklentisi varsa işe giriyor."
+   "currentBeispiel": "Die Renditeerwartung der Anleger war deutlich zu optimistisch.",
+   "currentBeispielTr": "Yatırımcıların getiri beklentisi fazlasıyla iyimserdi."
   },
   {
    "id": 6207,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "marjinal maliyet",
-   "currentBeispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten nahezu null betragen.",
-   "currentBeispielTr": "Rüzgâr enerjisi marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri saf dışı bırakıyor."
+   "currentBeispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten fast null sind.",
+   "currentBeispielTr": "Rüzgâr enerjisi marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri devre dışı bırakıyor."
   },
   {
    "id": 6208,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sonradan doğan maliyetler, ardından gelen masraflar",
-   "currentBeispiel": "Die Folgekosten des Rückbaus wurden in der ursprünglichen Rechnung schlicht ausgeblendet.",
-   "currentBeispielTr": "Sökümün doğuracağı maliyetler ilk hesapta basitçe göz ardı edilmişti."
+   "currentBeispiel": "Die Folgekosten des Rückbaus tauchen im ersten Angebot gar nicht auf.",
+   "currentBeispielTr": "Sökümün sonradan çıkan maliyetleri ilk teklifte hiç yer almıyor."
   },
   {
    "id": 6209,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "Kostenüberschreitungen",
    "currentTr": "maliyet aşımı",
-   "currentBeispiel": "Bei Großprojekten gilt eine Kostenüberschreitung inzwischen fast als Regelfall.",
-   "currentBeispielTr": "Büyük projelerde maliyet aşımı artık neredeyse kural sayılıyor."
+   "currentBeispiel": "Die Kostenüberschreitung beim Flughafen ging in die Milliarden.",
+   "currentBeispielTr": "Havalimanındaki maliyet aşımı milyarları buldu."
   },
   {
    "id": 6210,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "Importabhängigkeiten",
    "currentTr": "ithalata bağımlılık",
-   "currentBeispiel": "Die Importabhängigkeit bei Gas hat sich als politisches Druckmittel erwiesen.",
-   "currentBeispielTr": "Gazda ithalata bağımlılık siyasi bir baskı aracı olduğunu gösterdi."
+   "currentBeispiel": "Beim Gas ist die Importabhängigkeit in den letzten Jahren gesunken.",
+   "currentBeispielTr": "Gazda ithalata bağımlılık son yıllarda azaldı."
   },
   {
    "id": 6213,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "Trägerschaften",
    "currentTr": "işletme sorumluluğu, sahiplik yapısı",
-   "currentBeispiel": "Über die künftige Trägerschaft des Netzes wird seit Monaten gestritten.",
-   "currentBeispielTr": "Şebekenin gelecekteki sahiplik yapısı aylardır tartışılıyor."
+   "currentBeispiel": "Über die künftige Trägerschaft des Krankenhauses wird noch verhandelt.",
+   "currentBeispielTr": "Hastanenin gelecekteki işletme sorumluluğu hâlâ görüşülüyor."
   },
   {
    "id": 6214,
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "Beteiligungsmodelle",
    "currentTr": "ortaklık modeli, katılım modeli",
-   "currentBeispiel": "Ein faires Beteiligungsmodell erhöht die Zustimmung der betroffenen Gemeinden spürbar.",
-   "currentBeispielTr": "Adil bir ortaklık modeli, etkilenen belediyelerin desteğini gözle görülür biçimde artırıyor."
+   "currentBeispiel": "Über ein Beteiligungsmodell verdienen die Anwohner am Windpark mit.",
+   "currentBeispielTr": "Bir ortaklık modeliyle çevre sakinleri de rüzgâr santralinden kazanıyor."
   },
   {
    "id": 6219,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "Rekommunalisierungen",
    "currentTr": "yeniden belediyeleştirme, kamuya geri alma",
-   "currentBeispiel": "Die Rekommunalisierung der Wasserversorgung gilt manchen als Vorbild.",
-   "currentBeispielTr": "Su hizmetinin yeniden belediyeye devri kimilerince örnek sayılıyor."
+   "currentBeispiel": "Nach der Rekommunalisierung sanken die Wasserpreise in der Stadt.",
+   "currentBeispielTr": "Yeniden belediyeleştirmeden sonra şehirde su fiyatları düştü."
   },
   {
    "id": 6220,
@@ -199,8 +199,8 @@
    "niveau": "C1",
    "formen": "Trassenführungen",
    "currentTr": "güzergâh belirleme, hat güzergâhı",
-   "currentBeispiel": "Gegen die geplante Trassenführung regt sich in den Dörfern erheblicher Widerstand.",
-   "currentBeispielTr": "Planlanan güzergâha karşı köylerde ciddi bir direnç oluşuyor."
+   "currentBeispiel": "Gegen die geplante Trassenführung regt sich in den Dörfern Widerstand.",
+   "currentBeispielTr": "Planlanan hat güzergâhına karşı köylerde direniş oluşuyor."
   },
   {
    "id": 6223,
@@ -219,8 +219,8 @@
    "niveau": "C1",
    "formen": "Pfadabhängigkeiten",
    "currentTr": "yol bağımlılığı, geçmiş tercihlere bağlılık",
-   "currentBeispiel": "Frühere Entscheidungen erzeugen eine Pfadabhängigkeit, die spätere Korrekturen erschwert.",
-   "currentBeispielTr": "Geçmiş kararlar, sonraki düzeltmeleri zorlaştıran bir yol bağımlılığı yaratıyor."
+   "currentBeispiel": "Das Land steckt wegen billiger Kohle in einer Pfadabhängigkeit.",
+   "currentBeispielTr": "Ülke ucuz kömür yüzünden bir yol bağımlılığına saplanmış durumda."
   },
   {
    "id": 6225,
@@ -229,7 +229,7 @@
    "niveau": "C1",
    "formen": "Regulierungsbehörden",
    "currentTr": "düzenleyici kurum",
-   "currentBeispiel": "Die Regulierungsbehörde prüft, ob die veranschlagten Kosten überhaupt anerkennungsfähig sind.",
+   "currentBeispiel": "Die Regulierungsbehörde prüft, ob die veranschlagten Kosten anerkennungsfähig sind.",
    "currentBeispielTr": "Düzenleyici kurum, öngörülen maliyetlerin kabul edilebilir olup olmadığını inceliyor."
   },
   {
@@ -240,7 +240,7 @@
    "formen": "Entflechtungen",
    "currentTr": "ayrıştırma, yapısal ayrım",
    "currentBeispiel": "Die Entflechtung von Netzbetrieb und Stromhandel war politisch hart umkämpft.",
-   "currentBeispielTr": "Şebeke işletmeciliği ile elektrik ticaretinin ayrıştırılması siyaseten sert biçimde tartışıldı.",
+   "currentBeispielTr": "Şebeke işletmeciliği ile elektrik ticaretinin ayrıştırılması siyaseten çok tartışıldı.",
    "overlapping": [
     "die Entkopplung (C1)"
    ]
@@ -253,7 +253,7 @@
    "formen": "Umlagen",
    "currentTr": "paylaştırılan katkı payı, tüketiciye yansıtılan pay",
    "currentBeispiel": "Die Kosten werden über eine Umlage auf alle Verbraucher verteilt.",
-   "currentBeispielTr": "Maliyetler bir katkı payı yoluyla bütün tüketicilere dağıtılıyor."
+   "currentBeispielTr": "Maliyetler bir katkı payı üzerinden bütün tüketicilere dağıtılıyor."
   },
   {
    "id": 6228,
@@ -273,7 +273,7 @@
    "formen": "Machbarkeitsstudien",
    "currentTr": "fizibilite çalışması",
    "currentBeispiel": "Die Machbarkeitsstudie kam zu einem deutlich nüchterneren Ergebnis als erwartet.",
-   "currentBeispielTr": "Fizibilite çalışması beklenenden çok daha ölçülü bir sonuca ulaştı."
+   "currentBeispielTr": "Fizibilite çalışması beklenenden çok daha ölçülü bir sonuca vardı."
   },
   {
    "id": 6230,
@@ -282,8 +282,8 @@
    "niveau": "C1",
    "formen": "Fördermechanismen",
    "currentTr": "teşvik mekanizması, destekleme düzeni",
-   "currentBeispiel": "Der bisherige Fördermechanismus belohnt Ausbau, nicht aber Systemdienlichkeit.",
-   "currentBeispielTr": "Şimdiye kadarki teşvik mekanizması kapasite artışını ödüllendiriyor, sisteme katkıyı değil."
+   "currentBeispiel": "Der neue Fördermechanismus zahlt nur noch für gespeicherten Strom.",
+   "currentBeispielTr": "Yeni teşvik mekanizması artık yalnızca depolanan elektriğe ödeme yapıyor."
   },
   {
    "id": 6231,
@@ -303,7 +303,7 @@
    "formen": "hat bereitgestellt",
    "currentTr": "sağlamak, tahsis etmek",
    "currentBeispiel": "Für den Umbau der Kraftwerke werden zusätzliche Mittel bereitgestellt.",
-   "currentBeispielTr": "Santrallerin dönüştürülmesi için ek kaynak tahsis ediliyor.",
+   "currentBeispielTr": "Santrallerin dönüştürülmesi için ek kaynak sağlanıyor.",
    "overlapping": [
     "herbeiführen (C1)"
    ]
@@ -338,8 +338,8 @@
    "niveau": "C1",
    "formen": "hat liberalisiert",
    "currentTr": "serbestleştirmek",
-   "currentBeispiel": "Der Markt wurde in den neunziger Jahren schrittweise liberalisiert.",
-   "currentBeispielTr": "Piyasa doksanlı yıllarda adım adım serbestleştirildi."
+   "currentBeispiel": "Der Strommarkt wurde in den neunziger Jahren schrittweise liberalisiert.",
+   "currentBeispielTr": "Elektrik piyasası doksanlı yıllarda adım adım serbestleştirildi."
   },
   {
    "id": 6236,
@@ -348,8 +348,8 @@
    "niveau": "C1",
    "formen": "hat ertüchtigt",
    "currentTr": "güçlendirmek, kapasitesini iyileştirmek",
-   "currentBeispiel": "Bestehende Leitungen lassen sich oft günstiger ertüchtigen als neu bauen.",
-   "currentBeispielTr": "Mevcut hatları güçlendirmek çoğu zaman yeniden inşa etmekten daha ucuz.",
+   "currentBeispiel": "Die alte Brücke wurde für schwere Lkw ertüchtigt.",
+   "currentBeispielTr": "Eski köprü ağır kamyonlar için güçlendirildi.",
    "overlapping": [
     "verstärken (B2)",
     "stärken (B2)"
@@ -362,8 +362,8 @@
    "niveau": "C1",
    "formen": "hat überbrückt",
    "currentTr": "(dönemi, boşluğu) geçici olarak kapatmak, idare etmek",
-   "currentBeispiel": "Reservekraftwerke sollen die kritischen Wochen im Februar überbrücken.",
-   "currentBeispielTr": "Yedek santrallerin şubattaki kritik haftaları geçici olarak karşılaması bekleniyor."
+   "currentBeispiel": "Ein Kredit soll die Lücke bis zur Auszahlung überbrücken.",
+   "currentBeispielTr": "Bir kredi, ödeme yapılana kadarki açığı geçici olarak kapatacak."
   },
   {
    "id": 6238,
@@ -372,8 +372,8 @@
    "niveau": "C1",
    "formen": "hat gestaffelt",
    "currentTr": "kademelendirmek, basamaklandırmak",
-   "currentBeispiel": "Die Abgabe wird nach Verbrauch gestaffelt, damit Sparsamkeit belohnt wird.",
-   "currentBeispielTr": "Katkı payı tüketime göre kademelendiriliyor, böylece tasarruf ödüllendiriliyor."
+   "currentBeispiel": "Die Elternbeiträge für die Kita werden nach Einkommen gestaffelt.",
+   "currentBeispielTr": "Kreş için ödenen veli katkıları gelire göre kademelendiriliyor."
   },
   {
    "id": 6239,
@@ -382,8 +382,8 @@
    "niveau": "C1",
    "formen": "hat gedeckelt",
    "currentTr": "tavan koymak, üst sınır belirlemek",
-   "currentBeispiel": "Die Politik hat die Preise für Grundverbrauch vorübergehend gedeckelt.",
-   "currentBeispielTr": "Siyaset, temel tüketim fiyatlarına geçici olarak tavan koydu."
+   "currentBeispiel": "Die Regierung hat die Gaspreise für ein Jahr gedeckelt.",
+   "currentBeispielTr": "Hükümet gaz fiyatlarına bir yıllığına tavan koydu."
   },
   {
    "id": 6240,
@@ -393,7 +393,7 @@
    "formen": "hat umgeschichtet",
    "currentTr": "kaynak aktarmak, yeniden dağıtmak",
    "currentBeispiel": "Mittel aus dem Straßenbau wurden in die Schiene umgeschichtet.",
-   "currentBeispielTr": "Karayolu yapımına ayrılan kaynaklar demiryoluna aktarıldı."
+   "currentBeispielTr": "Karayolu yapımına ayrılan ödenekler demiryoluna aktarıldı."
   },
   {
    "id": 6241,
@@ -403,7 +403,7 @@
    "formen": "hat festgeschrieben",
    "currentTr": "yazılı olarak sabitlemek, hükme bağlamak",
    "currentBeispiel": "Das Abkommen schreibt verbindliche Zwischenziele bis 2035 fest.",
-   "currentBeispielTr": "Anlaşma, 2035'e kadar bağlayıcı ara hedefleri hükme bağlıyor."
+   "currentBeispielTr": "Anlaşma 2035'e kadar bağlayıcı ara hedefleri hükme bağlıyor."
   },
   {
    "id": 6242,
@@ -433,7 +433,7 @@
    "formen": "hat dimensioniert",
    "currentTr": "boyutlandırmak, ölçeklendirmek",
    "currentBeispiel": "Das Netz ist für solche Lastspitzen schlicht zu klein dimensioniert.",
-   "currentBeispielTr": "Şebeke bu tür yük tepeleri için basitçe fazla küçük boyutlandırılmış."
+   "currentBeispielTr": "Şebeke bu tür yük tepeleri için fazla küçük boyutlandırılmış."
   },
   {
    "id": 6245,
@@ -443,7 +443,7 @@
    "formen": "",
    "currentTr": "şebekeye yararlı, şebeke dostu",
    "currentBeispiel": "Wer netzdienlich lädt, soll künftig ein niedrigeres Entgelt zahlen.",
-   "currentBeispielTr": "Şebekeye yararlı biçimde şarj eden kişi bundan sonra daha düşük ücret ödeyecek."
+   "currentBeispielTr": "Şebeke dostu biçimde şarj eden bundan böyle daha az ödeyecek."
   },
   {
    "id": 6246,
@@ -452,8 +452,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sermaye yoğun",
-   "currentBeispiel": "Infrastruktur ist kapitalintensiv und rechnet sich erst nach Jahrzehnten.",
-   "currentBeispielTr": "Altyapı sermaye yoğundur ve ancak on yıllar sonra kendini amorti eder."
+   "currentBeispiel": "Chipfabriken sind so kapitalintensiv, dass nur wenige Konzerne mithalten.",
+   "currentBeispielTr": "Çip fabrikaları o kadar sermaye yoğun ki, ancak birkaç şirket yetişebiliyor."
   },
   {
    "id": 6247,
@@ -462,8 +462,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "merkezî olmayan, dağıtık",
-   "currentBeispiel": "Dezentral organisierte Erzeugung verlangt ein völlig anderes Steuerungskonzept.",
-   "currentBeispielTr": "Dağıtık biçimde örgütlenmiş üretim bambaşka bir yönetim anlayışı gerektirir."
+   "currentBeispiel": "Die Firma speichert ihre Daten dezentral auf mehreren Servern.",
+   "currentBeispielTr": "Şirket verilerini merkezi olmayan biçimde birden çok sunucuda saklıyor."
   },
   {
    "id": 6248,
@@ -472,8 +472,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "maliyeti karşılayan, masrafını çıkaran",
-   "currentBeispiel": "Der Tarif ist seit Jahren nicht mehr kostendeckend kalkuliert.",
-   "currentBeispielTr": "Tarife yıllardır maliyeti karşılayacak şekilde hesaplanmıyor."
+   "currentBeispiel": "Der Ticketpreis ist seit Jahren nicht mehr kostendeckend.",
+   "currentBeispielTr": "Bilet fiyatı yıllardır maliyeti karşılamıyor."
   },
   {
    "id": 6249,
@@ -482,8 +482,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "vazgeçilmez, olmazsa olmaz",
-   "currentBeispiel": "Eine verlässliche Datengrundlage ist für jede seriöse Prognose unerlässlich.",
-   "currentBeispielTr": "Güvenilir bir veri temeli, ciddi her öngörü için vazgeçilmezdir.",
+   "currentBeispiel": "Für die Bewerbung ist ein Nachweis über Deutschkenntnisse unerlässlich.",
+   "currentBeispielTr": "Başvuru için Almanca bilgisini belgelemek olmazsa olmaz.",
    "overlapping": [
     "unabdingbar (C1)",
     "unentbehrlich (B2)"
@@ -497,7 +497,7 @@
    "formen": "",
    "currentTr": "tarih yazımı, tarihçilik",
    "currentBeispiel": "Die koloniale Geschichtsschreibung hat viele Stimmen jahrzehntelang ausgeblendet.",
-   "currentBeispielTr": "Sömürgeci tarih yazımı pek çok sesi onlarca yıl boyunca görmezden geldi."
+   "currentBeispielTr": "Sömürgeci tarih yazımı pek çok sesi onlarca yıl görmezden geldi."
   },
   {
    "id": 6251,
@@ -507,7 +507,7 @@
    "formen": "",
    "currentTr": "kaynak eleştirisi",
    "currentBeispiel": "Ohne saubere Quellenkritik bleibt jede historische Deutung angreifbar.",
-   "currentBeispielTr": "Düzgün bir kaynak eleştirisi olmadan her tarihsel yorum saldırıya açık kalır."
+   "currentBeispielTr": "Düzgün bir kaynak eleştirisi olmadan her tarihsel yorum tartışmaya açık kalır."
   },
   {
    "id": 6252,
@@ -516,8 +516,8 @@
    "niveau": "C1",
    "formen": "Zeitzeugen",
    "currentTr": "dönemin tanığı, olayları yaşamış tanık",
-   "currentBeispiel": "Die letzten Zeitzeugen sterben, und ihre Berichte werden umso kostbarer.",
-   "currentBeispielTr": "Son tanıklar hayatını kaybediyor ve anlatıları daha da değerli hâle geliyor."
+   "currentBeispiel": "Ein Zeitzeuge berichtete den Schülern von der Flucht 1945.",
+   "currentBeispielTr": "Dönemin bir tanığı öğrencilere 1945'teki kaçışı anlattı."
   }
  ]
 }

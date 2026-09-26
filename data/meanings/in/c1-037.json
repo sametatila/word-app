@@ -10,7 +10,7 @@
    "formen": "hat verehrt",
    "currentTr": "saygı duymak, hürmet etmek, ululamak",
    "currentBeispiel": "In dieser Region verehrt man den Heiligen bis heute.",
-   "currentBeispielTr": "Bu bölgede azize bugüne dek hürmet edilir.",
+   "currentBeispielTr": "Bu bölgede halk azize bugün de hürmet ediyor.",
    "overlapping": [
     "respektieren (B2)"
    ]
@@ -33,7 +33,7 @@
    "formen": "hat gesegnet",
    "currentTr": "kutsamak, hayır dua etmek",
    "currentBeispiel": "Der Priester segnete die Versammelten am Ende der Feier.",
-   "currentBeispielTr": "Rahip, törenin sonunda orada toplananları kutsadı."
+   "currentBeispielTr": "Rahip, törenin sonunda toplananları kutsadı."
   },
   {
    "id": 7056,
@@ -43,7 +43,7 @@
    "formen": "hat missioniert",
    "currentTr": "misyonerlik yapmak, din yaymak",
    "currentBeispiel": "Die Gemeinschaft missioniert nicht, sondern wartet auf Interessierte.",
-   "currentBeispielTr": "Topluluk misyonerlik yapmaz, ilgi duyanları bekler."
+   "currentBeispielTr": "Topluluk misyonerlik yapmıyor, ilgi duyanları bekliyor."
   },
   {
    "id": 7057,
@@ -63,7 +63,7 @@
    "formen": "ist gepilgert",
    "currentTr": "hacca gitmek, ziyarete gitmek",
    "currentBeispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster.",
-   "currentBeispielTr": "Her yıl on binlerce kişi bu ıssız dağ manastırını ziyarete gider."
+   "currentBeispielTr": "Her yıl on binlerce kişi bu ıssız dağ manastırına hac için gidiyor."
   },
   {
    "id": 7059,
@@ -83,7 +83,7 @@
    "formen": "hat entsagt",
    "currentTr": "vazgeçmek, el etek çekmek",
    "currentBeispiel": "Sie entsagte dem Besitz und lebte fortan im Kloster.",
-   "currentBeispielTr": "Mülkünden vazgeçti ve bundan sonra manastırda yaşadı.",
+   "currentBeispielTr": "Mülkünden feragat etti ve bundan böyle manastırda yaşadı.",
    "overlapping": [
     "aufgeben (B1)",
     "verzichten (B1)",
@@ -98,7 +98,7 @@
    "formen": "hat toleriert",
    "currentTr": "hoşgörmek, tolere etmek",
    "currentBeispiel": "Abweichende Meinungen wurden innerhalb der Gemeinde kaum toleriert.",
-   "currentBeispielTr": "Farklı görüşler cemaat içinde neredeyse hiç hoşgörülmedi."
+   "currentBeispielTr": "Farklı görüşler cemaat içinde neredeyse hiç hoş görülmedi."
   },
   {
    "id": 7062,
@@ -107,8 +107,8 @@
    "niveau": "C1",
    "formen": "hat verketzert",
    "currentTr": "sapkın ilan etmek, karalamak",
-   "currentBeispiel": "Kritische Stimmen wurden damals als abtrünnig verketzert.",
-   "currentBeispielTr": "Eleştirel sesler o dönemde dönek diye sapkın ilan edildi."
+   "currentBeispiel": "Damals verketzerte die Kirche jede kritische Stimme.",
+   "currentBeispielTr": "O dönemde kilise her eleştirel sesi sapkın ilan etti."
   },
   {
    "id": 7063,
@@ -127,8 +127,8 @@
    "niveau": "C1",
    "formen": "hat abgeschworen",
    "currentTr": "yeminle reddetmek, dönmek",
-   "currentBeispiel": "Unter Druck schwor er seiner Überzeugung öffentlich ab.",
-   "currentBeispielTr": "Baskı altında inancını alenen reddetti."
+   "currentBeispiel": "Nach dem Unfall schwor er dem Alkohol ab.",
+   "currentBeispielTr": "Kazadan sonra içkiye tövbe etti."
   },
   {
    "id": 7065,
@@ -137,8 +137,8 @@
    "niveau": "C1",
    "formen": "ist konvertiert",
    "currentTr": "din değiştirmek, geçmek",
-   "currentBeispiel": "Sie ist als Erwachsene zu einer anderen Konfession konvertiert.",
-   "currentBeispielTr": "Yetişkinliğinde başka bir mezhebe geçti."
+   "currentBeispiel": "Nach langem Zweifel konvertierte er zum Islam.",
+   "currentBeispielTr": "Uzun tereddütlerden sonra din değiştirip Müslüman oldu."
   },
   {
    "id": 7066,
@@ -147,8 +147,8 @@
    "niveau": "C1",
    "formen": "hat praktiziert",
    "currentTr": "uygulamak, yaşamak",
-   "currentBeispiel": "Er praktiziert seinen Glauben eher still als demonstrativ.",
-   "currentBeispielTr": "İnancını gösterişli biçimde değil, daha çok sessizce yaşıyor.",
+   "currentBeispiel": "Diese Methode wird in Japan seit Langem praktiziert.",
+   "currentBeispielTr": "Bu yöntem Japonya'da uzun zamandır uygulanıyor.",
    "overlapping": [
     "anwenden (B1)"
    ]
@@ -161,7 +161,7 @@
    "formen": "hat sich distanziert",
    "currentTr": "mesafe koymak, uzak durmak",
    "currentBeispiel": "Die Leitung distanzierte sich klar von den radikalen Äußerungen.",
-   "currentBeispielTr": "Yönetim, radikal açıklamalardan açıkça uzak durdu."
+   "currentBeispielTr": "Yönetim, radikal açıklamalara açıkça mesafe koydu."
   },
   {
    "id": 7068,
@@ -171,7 +171,7 @@
    "formen": "hat sich berufen",
    "currentTr": "dayanmak, referans göstermek",
    "currentBeispiel": "Beide Seiten berufen sich auf dieselbe heilige Schrift.",
-   "currentBeispielTr": "Her iki taraf da aynı kutsal metne dayanıyor.",
+   "currentBeispielTr": "Her iki taraf da aynı kutsal metni dayanak gösteriyor.",
    "overlapping": [
     "beruhen (B2)",
     "aushalten (B2)",
@@ -228,8 +228,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çoğulcu",
-   "currentBeispiel": "In einer pluralistischen Gesellschaft konkurrieren viele Sinnangebote miteinander.",
-   "currentBeispielTr": "Çoğulcu bir toplumda pek çok anlam önerisi birbiriyle yarışır."
+   "currentBeispiel": "In einer pluralistischen Gesellschaft muss man andere Meinungen aushalten.",
+   "currentBeispielTr": "Çoğulcu bir toplumda insan başka görüşlere katlanmak zorundadır."
   },
   {
    "id": 7074,
@@ -259,7 +259,7 @@
    "formen": "Sinngehalte",
    "currentTr": "anlam içeriği, öz anlam",
    "currentBeispiel": "Die Übersetzung bewahrt den Sinngehalt, nicht aber den Klang des Originals.",
-   "currentBeispielTr": "Çeviri, özgün metnin anlamını korur ama sesini korumaz."
+   "currentBeispielTr": "Çeviri, özgün metnin anlam içeriğini koruyor ama sesini koruyamıyor."
   },
   {
    "id": 7077,
@@ -289,7 +289,7 @@
    "formen": "Stilebenen",
    "currentTr": "üslup düzeyi",
    "currentBeispiel": "Beide Wörter bedeuten dasselbe, gehören aber verschiedenen Stilebenen an.",
-   "currentBeispielTr": "İki kelime de aynı şeyi anlatıyor ama farklı üslup düzeylerine ait."
+   "currentBeispielTr": "İki kelime de aynı anlama geliyor ama farklı üslup düzeylerine ait."
   },
   {
    "id": 7080,
@@ -299,7 +299,7 @@
    "formen": "Zielsprachen",
    "currentTr": "erek dil, hedef dil",
    "currentBeispiel": "Der Übersetzer muss vor allem die Zielsprache souverän beherrschen.",
-   "currentBeispielTr": "Çevirmenin her şeyden önce erek dile tam hâkim olması gerekir."
+   "currentBeispielTr": "Çevirmenin her şeyden önce hedef dile tam hâkim olması gerekir."
   },
   {
    "id": 7081,
@@ -309,7 +309,7 @@
    "formen": "Ausgangssprachen",
    "currentTr": "kaynak dil",
    "currentBeispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren.",
-   "currentBeispielTr": "Kaynak dildeki bazı sözcük oyunları aktarımda kayboluyor."
+   "currentBeispielTr": "Kaynak dildeki bazı kelime oyunları aktarımda kayboluyor."
   },
   {
    "id": 7082,
@@ -319,7 +319,7 @@
    "formen": "Wortfelder",
    "currentTr": "kelime alanı, anlam alanı",
    "currentBeispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung.",
-   "currentBeispielTr": "Bütün bu fiiller algı kelime alanına aittir."
+   "currentBeispielTr": "Bütün bu fiiller algı kelime alanına ait."
   },
   {
    "id": 7083,
@@ -342,7 +342,7 @@
    "formen": "Ungenauigkeiten",
    "currentTr": "kesinlik eksikliği, yanlışlık",
    "currentBeispiel": "Kleine Ungenauigkeiten in der Terminologie führen später zu großen Missverständnissen.",
-   "currentBeispielTr": "Terminolojideki küçük belirsizlikler sonradan büyük yanlış anlamalara yol açıyor."
+   "currentBeispielTr": "Terminolojideki küçük yanlışlıklar sonradan büyük yanlış anlamalara yol açıyor."
   },
   {
    "id": 7085,
@@ -351,8 +351,8 @@
    "niveau": "C1",
    "formen": "Abstufungen",
    "currentTr": "derecelendirme, incelikli fark",
-   "currentBeispiel": "Höflichkeitsformen kennen im Deutschen feine Abstufungen.",
-   "currentBeispielTr": "Almancada nezaket biçimlerinin ince dereceleri vardır."
+   "currentBeispiel": "Die Jury arbeitet mit einer feinen Abstufung der Punkte.",
+   "currentBeispielTr": "Jüri, puanlarda ince bir derecelendirmeyle çalışıyor."
   },
   {
    "id": 7086,
@@ -361,8 +361,8 @@
    "niveau": "C1",
    "formen": "Sprechakte",
    "currentTr": "söz edimi",
-   "currentBeispiel": "Eine Frage kann als Sprechakt auch eine höfliche Aufforderung sein.",
-   "currentBeispielTr": "Bir soru, söz edimi olarak kibar bir rica da olabilir."
+   "currentBeispiel": "„Kannst du das Fenster schließen?“ ist ein indirekter Sprechakt.",
+   "currentBeispielTr": "“Pencereyi kapatabilir misin?” cümlesi dolaylı bir söz edimidir."
   },
   {
    "id": 7087,
@@ -371,8 +371,8 @@
    "niveau": "C1",
    "formen": "Äußerungen",
    "currentTr": "söz, ifade, beyan",
-   "currentBeispiel": "Jede Äußerung gewinnt ihren Sinn erst in einer bestimmten Situation.",
-   "currentBeispielTr": "Her söz anlamını ancak belirli bir durumda kazanır."
+   "currentBeispiel": "Seine Äußerung in der Sitzung sorgte für Empörung.",
+   "currentBeispielTr": "Toplantıdaki ifadesi büyük tepki topladı."
   },
   {
    "id": 7088,
@@ -392,7 +392,7 @@
    "formen": "Beiklänge",
    "currentTr": "çağrışım, yan ton",
    "currentBeispiel": "Das Wort trägt einen abschätzigen Beiklang, den kein Wörterbuch verzeichnet.",
-   "currentBeispielTr": "Kelime, hiçbir sözlükte yazmayan küçümseyici bir tınıya sahip."
+   "currentBeispielTr": "Kelime, hiçbir sözlükte yazmayan küçümseyici bir çağrışım taşıyor."
   },
   {
    "id": 7090,
@@ -415,7 +415,7 @@
    "formen": "Sprachnormen",
    "currentTr": "dil normu, ölçünlü kullanım",
    "currentBeispiel": "Die Sprachnorm folgt dem Gebrauch, nicht umgekehrt.",
-   "currentBeispielTr": "Dil normu kullanımı izler, tersi olmaz."
+   "currentBeispielTr": "Dil normu kullanımı izler, tersi değil."
   },
   {
    "id": 7092,
@@ -425,7 +425,7 @@
    "formen": "Terminologien",
    "currentTr": "terminoloji, terim dizgesi",
    "currentBeispiel": "Ohne einheitliche Terminologie wird jede Fachdiskussion mühsam.",
-   "currentBeispielTr": "Tek biçimli bir terminoloji olmadan her uzmanlık tartışması zahmetli olur."
+   "currentBeispielTr": "Ortak bir terminoloji olmadan her uzmanlık tartışması zahmetli olur."
   },
   {
    "id": 7093,
@@ -445,7 +445,7 @@
    "formen": "Begrifflichkeiten",
    "currentTr": "kavram örgüsü, kavramsal çerçeve",
    "currentBeispiel": "Die Autorin übernimmt die Begrifflichkeit der älteren Forschung nicht.",
-   "currentBeispielTr": "Yazar, eski araştırmanın kavram örgüsünü devralmıyor."
+   "currentBeispielTr": "Yazar, eski araştırmanın kavramsal çerçevesini devralmıyor."
   },
   {
    "id": 7095,
@@ -465,7 +465,7 @@
    "formen": "",
    "currentTr": "sözcüğün anlamı, lafzî anlam",
    "currentBeispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu.",
-   "currentBeispielTr": "Dar anlamıyla bu terim burada hiç geçerli değil."
+   "currentBeispielTr": "Kelimenin dar anlamıyla bu terim burada hiç uymuyor."
   },
   {
    "id": 7097,
@@ -494,8 +494,8 @@
    "niveau": "C1",
    "formen": "Übertreibungen",
    "currentTr": "abartma, mübalağa",
-   "currentBeispiel": "Ohne Übertreibung lässt sich das Ausmaß des Wandels kaum beschreiben.",
-   "currentBeispielTr": "Abartmadan bu değişimin boyutunu anlatmak neredeyse imkânsız."
+   "currentBeispiel": "Seine Erzählungen enthalten immer eine kleine Übertreibung.",
+   "currentBeispielTr": "Anlattıklarında hep küçük bir abartma olur."
   },
   {
    "id": 7100,
@@ -515,7 +515,7 @@
    "formen": "Herabsetzungen",
    "currentTr": "küçümseme, aşağılama",
    "currentBeispiel": "Die Bemerkung enthält eine kaum verhüllte Herabsetzung der Gegenseite.",
-   "currentBeispielTr": "Bu söz, karşı tarafa yönelik neredeyse örtüsüz bir küçümseme içeriyor."
+   "currentBeispielTr": "Bu söz, karşı tarafa yönelik neredeyse örtüsüz bir aşağılama içeriyor."
   },
   {
    "id": 7102,
@@ -525,7 +525,7 @@
    "formen": "Auslassungen",
    "currentTr": "atlama, eksiltme",
    "currentBeispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers.",
-   "currentBeispielTr": "Metindeki eksiltmeler tam da yazarın niyetini ele veriyor."
+   "currentBeispielTr": "Metindeki atlamalar tam da yazarın niyetini ele veriyor."
   }
  ]
 }

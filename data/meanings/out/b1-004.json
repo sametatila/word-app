@@ -3,9 +3,9 @@
     "id": 1826,
     "tr": "beklemek",
     "en": "to expect",
-    "beispiel": "Ich erwarte einen wichtigen Anruf aus Berlin.",
-    "beispielTr": "Berlin'den önemli bir telefon bekliyorum.",
-    "beispielEn": "I'm expecting an important call from Berlin."
+    "beispiel": "Zum Fest erwarten wir ungefähr dreißig Gäste.",
+    "beispielTr": "Kutlamaya otuz kadar misafir bekliyoruz.",
+    "beispielEn": "We're expecting about thirty guests at the party."
   },
   {
     "id": 3128,
@@ -19,17 +19,17 @@
     "id": 3003,
     "tr": "muhtemelen",
     "en": "presumably",
-    "beispiel": "Vermutlich sagt er die Wahrheit.",
-    "beispielTr": "Muhtemelen doğruyu söylüyor.",
-    "beispielEn": "He is presumably telling the truth."
+    "beispiel": "Der Brief kommt vermutlich erst am Montag an.",
+    "beispielTr": "Mektup muhtemelen ancak pazartesi gelir.",
+    "beispielEn": "The letter will presumably not arrive until Monday."
   },
   {
     "id": 2528,
     "tr": "nokta",
     "en": "point",
-    "beispiel": "Diesen Punkt haben wir noch nicht besprochen.",
-    "beispielTr": "Bu noktayı henüz konuşmadık.",
-    "beispielEn": "We haven't discussed this point yet."
+    "beispiel": "In einem Punkt muss ich dir widersprechen.",
+    "beispielTr": "Bir noktada sana itiraz etmem gerek.",
+    "beispielEn": "On one point I have to disagree with you."
   },
   {
     "id": 3008,
@@ -51,9 +51,9 @@
     "id": 2052,
     "tr": "cilt",
     "en": "skin",
-    "beispiel": "Haben Sie eine Creme für trockene Haut?",
-    "beispielTr": "Kuru ciltler için kreminiz var mı?",
-    "beispielEn": "Do you have a cream for dry skin?"
+    "beispiel": "Nach dem Sonnenbad war meine Haut ganz rot.",
+    "beispielTr": "Güneşlendikten sonra cildim kıpkırmızı olmuştu.",
+    "beispielEn": "After sunbathing, my skin was bright red."
   },
   {
     "id": 1663,
@@ -67,9 +67,9 @@
     "id": 2483,
     "tr": "kişisel",
     "en": "personal",
-    "beispiel": "Das ist nur meine persönliche Meinung.",
-    "beispielTr": "Bu sadece benim kişisel görüşüm.",
-    "beispielEn": "That's just my personal opinion."
+    "beispiel": "Bitte stellen Sie keine persönlichen Fragen.",
+    "beispielTr": "Lütfen kişisel sorular sormayın.",
+    "beispielEn": "Please don't ask personal questions."
   },
   {
     "id": 2404,
@@ -83,9 +83,9 @@
     "id": 2519,
     "tr": "profesör",
     "en": "professor",
-    "beispiel": "Der Professor hält heute einen Vortrag über Goethe.",
-    "beispielTr": "Profesör bugün Goethe üzerine bir konferans veriyor.",
-    "beispielEn": "The professor is giving a lecture on Goethe today."
+    "beispiel": "Der Professor beantwortet nach der Vorlesung alle Fragen.",
+    "beispielTr": "Profesör dersten sonra bütün soruları yanıtlıyor.",
+    "beispielEn": "The professor answers all the questions after the lecture."
   },
   {
     "id": 2405,
@@ -107,9 +107,9 @@
     "id": 2895,
     "tr": "sürpriz",
     "en": "surprise",
-    "beispiel": "Ich habe eine kleine Überraschung für dich.",
-    "beispielTr": "Senin için küçük bir sürprizim var.",
-    "beispielEn": "I have a little surprise for you."
+    "beispiel": "Zur Überraschung aller hat Opa beim Kartenspiel gewonnen.",
+    "beispielTr": "Herkesi şaşırtarak dedem kâğıt oyununu kazandı.",
+    "beispielEn": "To everyone's surprise, Grandpa won the card game."
   },
   {
     "id": 1967,
@@ -139,9 +139,9 @@
     "id": 2632,
     "tr": "uyku",
     "en": "sleep",
-    "beispiel": "Genügend Schlaf ist wichtig für die Gesundheit.",
-    "beispielTr": "Yeterli uyku sağlık için önemli.",
-    "beispielEn": "Enough sleep is important for your health."
+    "beispiel": "Das Baby hat im Schlaf gelächelt.",
+    "beispielTr": "Bebek uykusunda gülümsedi.",
+    "beispielEn": "The baby smiled in its sleep."
   },
   {
     "id": 3129,
@@ -155,9 +155,9 @@
     "id": 2906,
     "tr": "bu arada",
     "en": "by the way",
-    "beispiel": "Übrigens, kennst du schon die neuen Nachbarn?",
-    "beispielTr": "Bu arada, yeni komşuları tanıdın mı?",
-    "beispielEn": "By the way, have you met the new neighbors?"
+    "beispiel": "Übrigens hat Maria gestern nach dir gefragt.",
+    "beispielTr": "Bu arada Maria dün seni sordu.",
+    "beispielEn": "By the way, Maria asked about you yesterday."
   },
   {
     "id": 2054,
@@ -179,9 +179,9 @@
     "id": 1575,
     "tr": "hareket ettirmek",
     "en": "to move",
-    "beispiel": "Ich kann meinen Arm nicht mehr bewegen.",
-    "beispielTr": "Kolumu artık hareket ettiremiyorum.",
-    "beispielEn": "I can't move my arm anymore."
+    "beispiel": "Die Katze liegt in der Sonne und bewegt sich kaum.",
+    "beispielTr": "Kedi güneşte yatıyor ve neredeyse hiç kıpırdamıyor.",
+    "beispielEn": "The cat is lying in the sun and barely moves."
   },
   {
     "id": 2088,
@@ -219,9 +219,9 @@
     "id": 2106,
     "tr": "-erek",
     "en": "by",
-    "beispiel": "Du kannst die Datei öffnen, indem du hier klickst.",
-    "beispielTr": "Dosyayı buraya tıklayarak açabilirsin.",
-    "beispielEn": "You can open the file by clicking here."
+    "beispiel": "Man lernt Vokabeln am besten, indem man sie laut sagt.",
+    "beispielTr": "Kelimeleri en iyi yüksek sesle söyleyerek öğrenirsin.",
+    "beispielEn": "The best way to learn vocabulary is by saying it out loud."
   },
   {
     "id": 2371,
@@ -291,33 +291,33 @@
     "id": 1946,
     "tr": "bina",
     "en": "building",
-    "beispiel": "In diesem Gebäude sind nur Büros.",
-    "beispielTr": "Bu binada sadece ofisler var.",
-    "beispielEn": "There are only offices in this building."
+    "beispiel": "Das höchste Gebäude der Stadt ist ein Hotel.",
+    "beispielTr": "Şehrin en yüksek binası bir otel.",
+    "beispielEn": "The tallest building in town is a hotel."
   },
   {
     "id": 3139,
     "tr": "işaret",
     "en": "sign",
-    "beispiel": "Bitte fangen Sie erst an, wenn ich Ihnen ein Zeichen gebe.",
-    "beispielTr": "Lütfen ben size işaret verince başlayın.",
-    "beispielEn": "Please don't start until I give you a sign."
+    "beispiel": "Ein Kopfnicken ist in vielen Ländern ein Zeichen für Ja.",
+    "beispielTr": "Baş sallamak birçok ülkede evet işaretidir.",
+    "beispielEn": "In many countries a nod is a sign for yes."
   },
   {
     "id": 2585,
     "tr": "hâkim",
     "en": "judge",
-    "beispiel": "Der Richter hat noch kein Urteil gesprochen.",
-    "beispielTr": "Hâkim henüz kararını açıklamadı.",
-    "beispielEn": "The judge has not passed a verdict yet."
+    "beispiel": "Die Richter entschieden sich für eine milde Strafe.",
+    "beispielTr": "Hâkimler hafif bir cezaya karar verdi.",
+    "beispielEn": "The judges decided on a mild sentence."
   },
   {
     "id": 2977,
     "tr": "eğlenmek",
     "en": "to enjoy oneself",
-    "beispiel": "Auf der Party haben wir uns sehr vergnügt.",
-    "beispielTr": "Partide çok eğlendik.",
-    "beispielEn": "We really enjoyed ourselves at the party."
+    "beispiel": "Die Kinder vergnügen sich im Schnee, während wir Kaffee trinken.",
+    "beispielTr": "Biz kahve içerken çocuklar karda eğleniyor.",
+    "beispielEn": "The kids are enjoying themselves in the snow while we drink coffee."
   },
   {
     "id": 2978,
@@ -339,9 +339,9 @@
     "id": 2540,
     "tr": "öğüt",
     "en": "advice",
-    "beispiel": "Können Sie mir einen guten Rat geben?",
-    "beispielTr": "Bana iyi bir tavsiye verebilir misiniz?",
-    "beispielEn": "Can you give me some good advice?"
+    "beispiel": "Ich habe den Rat meines Vaters befolgt.",
+    "beispielTr": "Babamın öğüdünü dinledim.",
+    "beispielEn": "I followed my father's advice."
   },
   {
     "id": 2752,
@@ -363,9 +363,9 @@
     "id": 1964,
     "tr": "civar",
     "en": "area",
-    "beispiel": "Die Schule muss hier in der Gegend sein.",
-    "beispielTr": "Okul bu civarda bir yerde olmalı.",
-    "beispielEn": "The school must be somewhere around here."
+    "beispiel": "In unserer Gegend gibt es kaum gute Bäckereien.",
+    "beispielTr": "Bizim civarda neredeyse hiç iyi fırın yok.",
+    "beispielEn": "There are hardly any good bakeries in our area."
   },
   {
     "id": 1805,
@@ -379,9 +379,9 @@
     "id": 2960,
     "tr": "sorumlu",
     "en": "responsible",
-    "beispiel": "Sie sind für Ihre Kinder verantwortlich.",
-    "beispielTr": "Çocuklarınızdan siz sorumlusunuz.",
-    "beispielEn": "You are responsible for your children."
+    "beispiel": "Wer ist in eurem Team für die Planung verantwortlich?",
+    "beispielTr": "Ekibinizde planlamadan kim sorumlu?",
+    "beispielEn": "Who is responsible for planning on your team?"
   },
   {
     "id": 3146,

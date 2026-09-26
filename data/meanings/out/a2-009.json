@@ -3,9 +3,9 @@
     "id": 1203,
     "tr": "güneşli",
     "en": "sunny",
-    "beispiel": "Morgen ist das Wetter wieder warm und sonnig.",
-    "beispielTr": "Yarın hava yine sıcak ve güneşli olacak.",
-    "beispielEn": "Tomorrow the weather will be warm and sunny again."
+    "beispiel": "Der Balkon ist sonnig, dort wachsen die Tomaten gut.",
+    "beispielTr": "Balkon güneşli, domatesler orada iyi yetişiyor.",
+    "beispielEn": "The balcony is sunny, so the tomatoes grow well there."
   },
   {
     "id": 1161,
@@ -27,17 +27,17 @@
     "id": 1257,
     "tr": "aktarma yapmak",
     "en": "to change trains",
-    "beispiel": "Sie müssen in Mannheim umsteigen.",
-    "beispielTr": "Mannheim'da aktarma yapmanız gerekiyor.",
-    "beispielEn": "You have to change trains in Mannheim."
+    "beispiel": "Am Hauptbahnhof steigen wir in die U-Bahn um.",
+    "beispielTr": "Merkez istasyonda metroya aktarma yapıyoruz.",
+    "beispielEn": "We change to the subway at the main station."
   },
   {
     "id": 1062,
     "tr": "polisiye",
     "en": "crime novel",
-    "beispiel": "Miriam liest gern spannende Krimis.",
-    "beispielTr": "Miriam sürükleyici polisiyeler okumayı sever.",
-    "beispielEn": "Miriam likes reading exciting crime novels."
+    "beispiel": "Im Urlaub habe ich drei Krimis gelesen.",
+    "beispielTr": "Tatilde üç polisiye okudum.",
+    "beispielEn": "I read three crime novels on vacation."
   },
   {
     "id": 1288,
@@ -59,9 +59,9 @@
     "id": 895,
     "tr": "gerekçelendirmek",
     "en": "to justify",
-    "beispiel": "Bitte begründen Sie Ihre Meinung.",
-    "beispielTr": "Lütfen görüşünüzü gerekçelendirin.",
-    "beispielEn": "Please justify your opinion."
+    "beispiel": "Kannst du begründen, warum du den Job nicht willst?",
+    "beispielTr": "İşi neden istemediğini gerekçelendirebilir misin?",
+    "beispielEn": "Can you explain why you don't want the job?"
   },
   {
     "id": 1229,
@@ -75,9 +75,9 @@
     "id": 1056,
     "tr": "kozmetik",
     "en": "cosmetics",
-    "beispiel": "Kosmetik können Sie im Erdgeschoss kaufen.",
-    "beispielTr": "Kozmetik ürünlerini zemin kattan alabilirsiniz.",
-    "beispielEn": "You can buy cosmetics on the ground floor."
+    "beispiel": "Meine Tante gibt viel Geld für Kosmetik aus.",
+    "beispielTr": "Teyzem kozmetiğe çok para harcıyor.",
+    "beispielEn": "My aunt spends a lot of money on cosmetics."
   },
   {
     "id": 911,
@@ -99,9 +99,9 @@
     "id": 1058,
     "tr": "sağlık sigortası",
     "en": "health insurance fund",
-    "beispiel": "Bei welcher Krankenkasse sind Sie?",
-    "beispielTr": "Hangi sağlık sigortasındasınız?",
-    "beispielEn": "Which health insurance fund are you with?"
+    "beispiel": "Die Krankenkasse bezahlt die neue Brille leider nicht.",
+    "beispielTr": "Sağlık sigortası maalesef yeni gözlüğü ödemiyor.",
+    "beispielEn": "Unfortunately, the health insurance won't pay for the new glasses."
   },
   {
     "id": 1030,
@@ -115,33 +115,33 @@
     "id": 1139,
     "tr": "uygun fiyatlı",
     "en": "reasonably priced",
-    "beispiel": "Die Jacke ist sehr preiswert.",
-    "beispielTr": "Ceket çok uygun fiyatlı.",
-    "beispielEn": "The jacket is very reasonably priced."
+    "beispiel": "In dem kleinen Hotel kann man preiswert übernachten.",
+    "beispielTr": "O küçük otelde uygun fiyata kalınabiliyor.",
+    "beispielEn": "You can stay at that little hotel for a reasonable price."
   },
   {
     "id": 1100,
     "tr": "skuter",
     "en": "scooter",
-    "beispiel": "Oskar fährt mit dem Motorroller zur Arbeit.",
-    "beispielTr": "Oskar işe skuterle gidiyor.",
-    "beispielEn": "Oskar rides his scooter to work."
+    "beispiel": "Mit dem Motorroller finde ich in der Stadt immer einen Parkplatz.",
+    "beispielTr": "Skuterle şehirde her zaman park yeri buluyorum.",
+    "beispielEn": "With my scooter I can always find parking in the city."
   },
   {
     "id": 1212,
     "tr": "şehir haritası",
     "en": "city map",
-    "beispiel": "Haben Sie einen Stadtplan von Salzburg?",
-    "beispielTr": "Salzburg şehir haritanız var mı?",
-    "beispielEn": "Do you have a city map of Salzburg?"
+    "beispiel": "Einen kostenlosen Stadtplan bekommen Sie an der Rezeption.",
+    "beispielTr": "Ücretsiz şehir haritasını resepsiyondan alabilirsiniz.",
+    "beispielEn": "You can get a free city map at the front desk."
   },
   {
     "id": 1322,
     "tr": "çalıştay",
     "en": "workshop",
-    "beispiel": "Am Freitag gibt es einen Workshop in unserer Firma.",
-    "beispielTr": "Cuma günü firmamızda bir çalıştay var.",
-    "beispielEn": "On Friday there's a workshop at our company."
+    "beispiel": "Im Workshop lernen wir, wie man Brot backt.",
+    "beispielTr": "Çalıştayda ekmek yapmayı öğreniyoruz.",
+    "beispielEn": "In the workshop we're learning how to bake bread."
   },
   {
     "id": 1111,
@@ -155,9 +155,9 @@
     "id": 1275,
     "tr": "ulaşım aracı",
     "en": "means of transportation",
-    "beispiel": "Welche Verkehrsmittel benutzen Sie oft?",
-    "beispielTr": "Hangi ulaşım araçlarını sık kullanıyorsunuz?",
-    "beispielEn": "Which means of transportation do you use often?"
+    "beispiel": "Das Fahrrad ist in unserer Stadt das beliebteste Verkehrsmittel.",
+    "beispielTr": "Şehrimizde en sevilen ulaşım aracı bisiklet.",
+    "beispielEn": "The bike is the most popular means of transportation in our city."
   },
   {
     "id": 924,
@@ -179,9 +179,9 @@
     "id": 1041,
     "tr": "gençlik yurdu",
     "en": "youth hostel",
-    "beispiel": "Wir übernachten in einer Jugendherberge.",
-    "beispielTr": "Bir gençlik yurdunda kalıyoruz.",
-    "beispielEn": "We're staying at a youth hostel."
+    "beispiel": "Die Jugendherberge liegt direkt am See.",
+    "beispielTr": "Gençlik yurdu tam gölün kenarında.",
+    "beispielEn": "The youth hostel is right on the lake."
   },
   {
     "id": 874,
@@ -211,9 +211,9 @@
     "id": 948,
     "tr": "birkaç",
     "en": "several",
-    "beispiel": "In diesem Text sind einige Fehler.",
-    "beispielTr": "Bu metinde birkaç hata var.",
-    "beispielEn": "There are several mistakes in this text."
+    "beispiel": "Nach dem Fest sind noch einige Kuchenstücke übrig.",
+    "beispielTr": "Kutlamadan sonra birkaç dilim pasta arttı.",
+    "beispielEn": "After the party, there are still several pieces of cake left."
   },
   {
     "id": 952,
@@ -235,9 +235,9 @@
     "id": 962,
     "tr": "indirim",
     "en": "reduction",
-    "beispiel": "Für Studenten und Rentner gibt es eine Ermäßigung.",
-    "beispielTr": "Öğrencilere ve emeklilere indirim var.",
-    "beispielEn": "There's a reduction for students and retirees."
+    "beispiel": "Mit dem Schülerausweis bekommst du im Museum eine Ermäßigung.",
+    "beispielTr": "Öğrenci kartıyla müzede indirim alırsın.",
+    "beispielEn": "With your student ID, you get a discount at the museum."
   },
   {
     "id": 977,
@@ -267,41 +267,41 @@
     "id": 1011,
     "tr": "geçerli olmak",
     "en": "to be valid",
-    "beispiel": "Mein Pass ist nicht mehr gültig.",
-    "beispielTr": "Pasaportum artık geçerli değil.",
-    "beispielEn": "My passport is no longer valid."
+    "beispiel": "Die Fahrkarte ist den ganzen Tag gültig.",
+    "beispielTr": "Bilet bütün gün geçerli.",
+    "beispielEn": "The ticket is valid all day."
   },
   {
     "id": 1083,
     "tr": "bazı",
     "en": "some",
-    "beispiel": "Manche Nachbarn sind wirklich unfreundlich.",
-    "beispielTr": "Bazı komşular gerçekten cana yakın değil.",
-    "beispielEn": "Some neighbors are really unfriendly."
+    "beispiel": "Manche Kinder essen kein Gemüse.",
+    "beispielTr": "Bazı çocuklar hiç sebze yemiyor.",
+    "beispielEn": "Some kids don't eat any vegetables."
   },
   {
     "id": 1125,
     "tr": "birkaç",
     "en": "a few",
-    "beispiel": "Wir fahren ein paar Tage ans Meer.",
-    "beispielTr": "Birkaç günlüğüne denize gidiyoruz.",
-    "beispielEn": "We're going to the seaside for a few days."
+    "beispiel": "Kannst du noch ein paar Eier vom Markt mitbringen?",
+    "beispielTr": "Pazardan birkaç yumurta da getirebilir misin?",
+    "beispielEn": "Can you bring a few eggs from the market too?"
   },
   {
     "id": 1136,
     "tr": "patates kızartması",
     "en": "french fries",
-    "beispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
-    "beispielTr": "Çocuklar ızgara sosisle patates kızartması yiyor.",
-    "beispielEn": "The kids are eating sausage with french fries."
+    "beispiel": "Möchtest du Ketchup zu den Pommes frites?",
+    "beispielTr": "Patates kızartmasının yanına ketçap ister misin?",
+    "beispielEn": "Do you want ketchup with your french fries?"
   },
   {
     "id": 1268,
     "tr": "yolda olmak",
     "en": "to be on the way",
-    "beispiel": "Ich bin schon unterwegs und komme gleich.",
-    "beispielTr": "Yoldayım, birazdan geliyorum.",
-    "beispielEn": "I'm already on my way and will be there soon."
+    "beispiel": "Papa ist beruflich viel unterwegs.",
+    "beispielTr": "Babam iş yüzünden sık sık yolda.",
+    "beispielEn": "Dad is on the road a lot for work."
   },
   {
     "id": 1269,
@@ -315,9 +315,9 @@
     "id": 1331,
     "tr": "giymek",
     "en": "to put on",
-    "beispiel": "Ich ziehe mir eine Jacke an.",
-    "beispielTr": "Bir ceket giyiyorum.",
-    "beispielEn": "I'm putting on a jacket."
+    "beispiel": "Es ist kalt, zieh bitte deine Mütze an.",
+    "beispielTr": "Hava soğuk, lütfen bereni giy.",
+    "beispielEn": "It's cold, please put on your hat."
   },
   {
     "id": 7430,

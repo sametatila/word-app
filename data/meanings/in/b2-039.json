@@ -45,8 +45,8 @@
    "niveau": "B2",
    "formen": "hat abgebaut",
    "currentTr": "çıkarmak (maden), ayrıştırmak, azaltmak",
-   "currentBeispiel": "In dieser Gegend wird seit hundert Jahren Kohle abgebaut.",
-   "currentBeispielTr": "Bu bölgede yüz yıldır kömür çıkarılıyor.",
+   "currentBeispiel": "Nach der Arbeit baue ich beim Laufen Stress ab.",
+   "currentBeispielTr": "İşten sonra koşarak stresimi azaltıyorum.",
    "overlapping": [
     "abnehmen (B1)",
     "ausziehen (B1)",
@@ -158,7 +158,7 @@
    "formen": "Mietminderungen",
    "currentTr": "kira indirimi, kirada indirim talebi",
    "currentBeispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung.",
-   "currentBeispielTr": "Banyodaki küf yüzünden kirada indirim talep ediyor."
+   "currentBeispielTr": "Banyodaki küf yüzünden kira indirimi talep ediyor."
   },
   {
    "id": 5560,
@@ -168,7 +168,7 @@
    "formen": "Nachmieter",
    "currentTr": "sonraki kiracı, devralan kiracı",
    "currentBeispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
-   "currentBeispielTr": "Yerine bir kiracı bulursan sözleşmeden daha erken çıkabilirsin."
+   "currentBeispielTr": "Sonraki kiracıyı bulursan sözleşmeden daha erken çıkabilirsin."
   },
   {
    "id": 5561,
@@ -208,7 +208,7 @@
    "formen": "Hausordnungen",
    "currentTr": "bina yönetim kuralları, apartman yönetmeliği",
    "currentBeispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr.",
-   "currentBeispielTr": "Apartman yönetmeliği saat yirmi ikiden sonra yüksek sesle müzik yapmayı yasaklıyor."
+   "currentBeispielTr": "Apartman kuralları saat yirmi ikiden sonra yüksek sesle müzik yapmayı yasaklıyor."
   },
   {
    "id": 5565,
@@ -248,7 +248,7 @@
    "formen": "Streitfälle",
    "currentTr": "uyuşmazlık, ihtilaf",
    "currentBeispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters.",
-   "currentBeispielTr": "Uyuşmazlık hâlinde sağlayıcının merkezindeki mahkeme karar verir."
+   "currentBeispielTr": "Uyuşmazlık hâlinde sağlayıcının bulunduğu yerdeki mahkeme karar verir."
   },
   {
    "id": 5569,
@@ -258,7 +258,7 @@
    "formen": "",
    "currentTr": "genel işlem şartları, sözleşme koşulları",
    "currentBeispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite.",
-   "currentBeispielTr": "Genel işlem şartları arka sayfada küçük puntolarla yazıyor."
+   "currentBeispielTr": "Sözleşme koşulları arka sayfada küçük puntolarla yazıyor."
   },
   {
    "id": 5570,
@@ -277,8 +277,8 @@
    "niveau": "B2",
    "formen": "Betriebskostenabrechnungen",
    "currentTr": "işletme giderleri dökümü, aidat hesabı",
-   "currentBeispiel": "Die Betriebskostenabrechnung kam erst ein Jahr später ins Haus.",
-   "currentBeispielTr": "İşletme giderleri dökümü ancak bir yıl sonra elimize ulaştı."
+   "currentBeispiel": "Laut Betriebskostenabrechnung müssen wir dreihundert Euro nachzahlen.",
+   "currentBeispielTr": "Aidat dökümüne göre üç yüz avro daha ödememiz gerekiyor."
   },
   {
    "id": 5572,
@@ -287,8 +287,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kendi ihtiyacı (için tahliye)",
-   "currentBeispiel": "Der Vermieter kündigte die Wohnung wegen Eigenbedarf.",
-   "currentBeispielTr": "Ev sahibi kendi ihtiyacı nedeniyle daireyi tahliye ettirdi."
+   "currentBeispiel": "Der Vermieter hat uns wegen Eigenbedarf gekündigt.",
+   "currentBeispielTr": "Ev sahibi kendi ihtiyacı nedeniyle sözleşmemizi feshetti."
   },
   {
    "id": 5573,
@@ -327,8 +327,8 @@
    "niveau": "B2",
    "formen": "Willenserklärungen",
    "currentTr": "irade beyanı",
-   "currentBeispiel": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen.",
-   "currentBeispielTr": "Sözleşme, birbirine uygun iki irade beyanıyla doğar."
+   "currentBeispiel": "Mit seiner Unterschrift gibt er eine verbindliche Willenserklärung ab.",
+   "currentBeispielTr": "İmzasıyla bağlayıcı bir irade beyanında bulunuyor."
   },
   {
    "id": 5577,
@@ -348,7 +348,7 @@
    "formen": "hat geräumt",
    "currentTr": "boşaltmak, tahliye etmek (konut, mekân)",
    "currentBeispiel": "Der Mieter muss die Wohnung bis Monatsende räumen.",
-   "currentBeispielTr": "Kiracı daireyi ay sonuna kadar boşaltmak zorunda.",
+   "currentBeispielTr": "Kiracı daireyi ay sonuna kadar tahliye etmek zorunda.",
    "overlapping": [
     "ausräumen (A2)",
     "ausleeren (A2)",
@@ -364,7 +364,7 @@
    "formen": "hat beurkundet",
    "currentTr": "resmî olarak tasdik etmek, noterde düzenlemek",
    "currentBeispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet.",
-   "currentBeispielTr": "Satış sözleşmesi her iki tarafın huzurunda resmen tasdik ediliyor."
+   "currentBeispielTr": "Satış sözleşmesi her iki tarafın huzurunda tasdik ediliyor."
   },
   {
    "id": 5580,
@@ -374,7 +374,7 @@
    "formen": "hat bestritten",
    "currentTr": "inkâr etmek, reddetmek (iddiayı)",
    "currentBeispiel": "Die Firma bestreitet, den Schaden verursacht zu haben.",
-   "currentBeispielTr": "Firma zarara yol açtığını reddediyor.",
+   "currentBeispielTr": "Firma zarara yol açtığını inkâr ediyor.",
    "overlapping": [
     "leugnen (C1)"
    ]
@@ -396,8 +396,8 @@
    "niveau": "B2",
    "formen": "hat hinterlegt",
    "currentTr": "depozito olarak bırakmak, tevdi etmek",
-   "currentBeispiel": "Die Kaution wird auf einem gesonderten Konto hinterlegt.",
-   "currentBeispielTr": "Depozito ayrı bir hesapta bloke ediliyor."
+   "currentBeispiel": "Den Ersatzschlüssel habe ich beim Hausmeister hinterlegt.",
+   "currentBeispielTr": "Yedek anahtarı kapıcıya emanet bıraktım."
   },
   {
    "id": 5583,
@@ -417,7 +417,7 @@
    "formen": "hat gutgeschrieben",
    "currentTr": "hesaba geçirmek, alacak kaydetmek",
    "currentBeispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben.",
-   "currentBeispielTr": "Tutar iki gün içinde hesabınıza alacak olarak geçilecek."
+   "currentBeispielTr": "Tutar iki gün içinde hesabınıza geçirilecek."
   },
   {
    "id": 5585,
@@ -437,7 +437,7 @@
    "formen": "",
    "currentTr": "geçersiz, hükümsüz",
    "currentBeispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam.",
-   "currentBeispielTr": "Böyle bir madde yerleşik içtihada göre geçersizdir.",
+   "currentBeispielTr": "Böyle bir madde yerleşik içtihada göre hükümsüzdür.",
    "overlapping": [
     "ungültig (B2)"
    ]
@@ -460,7 +460,7 @@
    "formen": "",
    "currentTr": "zımnen, üstü kapalı biçimde",
    "currentBeispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
-   "currentBeispielTr": "Sözleşme zımnen bir yıl daha uzuyor."
+   "currentBeispielTr": "Sözleşme kendiliğinden bir yıl daha uzuyor."
   },
   {
    "id": 5589,
@@ -480,7 +480,7 @@
    "formen": "",
    "currentTr": "karşılıklı rızayla, mutabakatla",
    "currentBeispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben.",
-   "currentBeispielTr": "İki taraf da sözleşmeyi karşılıklı rızayla sona erdirdi."
+   "currentBeispielTr": "İki taraf sözleşmeyi karşılıklı rızayla sona erdirdi."
   },
   {
    "id": 5591,
@@ -503,7 +503,7 @@
    "formen": "Vertriebe",
    "currentTr": "satış, dağıtım, satış bölümü",
    "currentBeispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa.",
-   "currentBeispielTr": "Satış bölümü Doğu Avrupa'dan artan siparişler bildiriyor.",
+   "currentBeispielTr": "Satış bölümü Doğu Avrupa'dan gelen siparişlerin arttığını bildiriyor.",
    "overlapping": [
     "der Absatz (B2)"
    ]
@@ -516,7 +516,7 @@
    "formen": "",
    "currentTr": "toptan ticaret, toptancılık",
    "currentBeispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel.",
-   "currentBeispielTr": "Mallarımızı doğrudan toptancıdan temin ediyoruz."
+   "currentBeispielTr": "Mallarımızı doğrudan toptancıdan alıyoruz."
   },
   {
    "id": 5594,
@@ -536,7 +536,7 @@
    "formen": "Ausfuhren",
    "currentTr": "ihracat, dışsatım",
    "currentBeispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
-   "currentBeispielTr": "Bazı teknolojilerin ihracatı sıkı denetime tabidir.",
+   "currentBeispielTr": "Bazı teknolojilerin ihracatı sıkı denetim altında.",
    "overlapping": [
     "der Export (B1)"
    ]

@@ -147,9 +147,9 @@
   "id": 1785,
   "tr": "meydana gelmek",
   "en": "to occur",
-  "beispiel": "Der Unfall ereignete sich am frühen Morgen.",
-  "beispielTr": "Kaza sabahın erken saatlerinde meydana geldi.",
-  "beispielEn": "The accident occurred early in the morning."
+  "beispiel": "Wo genau hat sich das Unglück ereignet?",
+  "beispielTr": "Kaza tam olarak nerede meydana geldi?",
+  "beispielEn": "Where exactly did the accident occur?"
  },
  {
   "id": 2340,
@@ -195,9 +195,9 @@
   "id": 3070,
   "tr": "yatay",
   "en": "horizontal",
-  "beispiel": "Ziehen Sie bitte einen waagerechten Strich.",
-  "beispielTr": "Lütfen yatay bir çizgi çizin.",
-  "beispielEn": "Please draw a horizontal line."
+  "beispiel": "Das Bild an der Wand hängt nicht ganz waagerecht.",
+  "beispielTr": "Duvardaki resim tam yatay asılı değil.",
+  "beispielEn": "The picture on the wall isn't hanging quite horizontal."
  },
  {
   "id": 1671,
@@ -219,9 +219,9 @@
   "id": 2601,
   "tr": "şehir turu",
   "en": "sightseeing tour",
-  "beispiel": "Am ersten Tag haben wir eine Rundfahrt durch die Stadt gemacht.",
-  "beispielTr": "İlk gün şehirde bir tur yaptık.",
-  "beispielEn": "On the first day we took a tour through the city."
+  "beispiel": "Die Rundfahrt mit dem Bus dauert etwa zwei Stunden.",
+  "beispielTr": "Otobüsle şehir turu yaklaşık iki saat sürüyor.",
+  "beispielEn": "The sightseeing tour by bus takes about two hours."
  },
  {
   "id": 1354,
@@ -275,33 +275,33 @@
   "id": 1383,
   "tr": "sanki",
   "en": "as if",
-  "beispiel": "Er tut so, als ob wir nie darüber gesprochen hätten.",
-  "beispielTr": "Sanki bunu hiç konuşmamışız gibi davranıyor.",
-  "beispielEn": "He acts as if we had never talked about it."
+  "beispiel": "Anna lächelt, als ob nichts passiert wäre.",
+  "beispielTr": "Anna sanki hiçbir şey olmamış gibi gülümsüyor.",
+  "beispielEn": "Anna is smiling as if nothing had happened."
  },
  {
   "id": 1386,
   "tr": "alternatif",
   "en": "alternative",
-  "beispiel": "Wir brauchen alternative Energien.",
-  "beispielTr": "Alternatif enerjilere ihtiyacımız var.",
-  "beispielEn": "We need alternative energy sources."
+  "beispiel": "Wer kein Fleisch isst, bekommt alternativ eine Gemüsesuppe.",
+  "beispielTr": "Et yemeyenlere alternatif olarak sebze çorbası veriliyor.",
+  "beispielEn": "Anyone who doesn't eat meat gets vegetable soup as an alternative."
  },
  {
   "id": 1424,
   "tr": "kayısı",
   "en": "apricot",
-  "beispiel": "Schmecken dir die Aprikosen?",
-  "beispielTr": "Kayısıları beğendin mi?",
-  "beispielEn": "Do you like the apricots?"
+  "beispiel": "Auf dem Markt sind die Aprikosen heute besonders süß.",
+  "beispielTr": "Pazarda kayısılar bugün özellikle tatlı.",
+  "beispielEn": "The apricots at the market are especially sweet today."
  },
  {
   "id": 1479,
   "tr": "kendine seçmek",
   "en": "to pick out",
-  "beispiel": "Such dir etwas Schönes aus!",
-  "beispielTr": "Kendine güzel bir şey seç!",
-  "beispielEn": "Pick out something nice for yourself!"
+  "beispiel": "Zum Geburtstag darfst du dir ein Restaurant aussuchen.",
+  "beispielTr": "Doğum günün için bir restoran seçebilirsin.",
+  "beispielEn": "For your birthday, you get to pick out a restaurant."
  },
  {
   "id": 1488,
@@ -331,9 +331,9 @@
   "id": 1528,
   "tr": "duyurmak",
   "en": "to announce",
-  "beispiel": "Den Prüfungsort geben wir Ihnen noch rechtzeitig bekannt.",
-  "beispielTr": "Sınav yerini size zamanında duyuracağız.",
-  "beispielEn": "We will announce the exam location to you in good time."
+  "beispiel": "Die Firma hat heute ihren neuen Chef bekannt gegeben.",
+  "beispielTr": "Şirket bugün yeni müdürünü duyurdu.",
+  "beispielEn": "The company announced its new boss today."
  },
  {
   "id": 1543,
@@ -355,9 +355,9 @@
   "id": 1549,
   "tr": "haber vermek",
   "en": "to inform",
-  "beispiel": "Kannst du mir bis morgen Bescheid geben?",
-  "beispielTr": "Yarına kadar bana haber verebilir misin?",
-  "beispielEn": "Can you let me know by tomorrow?"
+  "beispiel": "Gib mir Bescheid, wenn der Handwerker kommt.",
+  "beispielTr": "Tamirci gelince bana haber ver.",
+  "beispielEn": "Let me know when the repairman comes."
  },
  {
   "id": 1555,

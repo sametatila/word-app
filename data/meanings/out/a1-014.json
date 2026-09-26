@@ -3,73 +3,73 @@
     "id": 631,
     "tr": "e-posta",
     "en": "email",
-    "beispiel": "Ich habe Ihre E-Mail nicht bekommen.",
-    "beispielTr": "E-postanızı almadım.",
-    "beispielEn": "I didn't get your email."
+    "beispiel": "Heute habe ich schon zwanzig E-Mails geschrieben.",
+    "beispielTr": "Bugün şimdiden yirmi e-posta yazdım.",
+    "beispielEn": "I've already written twenty emails today."
   },
   {
     "id": 815,
     "tr": "bilet",
     "en": "ticket",
-    "beispiel": "Wie viel kostet das Ticket?",
-    "beispielTr": "Bilet ne kadar?",
-    "beispielEn": "How much is the ticket?"
+    "beispiel": "Ich habe das Ticket auf meinem Handy.",
+    "beispielTr": "Bilet telefonumda.",
+    "beispielEn": "I have the ticket on my phone."
   },
   {
     "id": 765,
     "tr": "pirinç",
     "en": "rice",
-    "beispiel": "Ich esse gern Reis mit Gemüse und Fisch.",
-    "beispielTr": "Pirinci sebze ve balıkla yemeyi severim.",
-    "beispielEn": "I like eating rice with vegetables and fish."
+    "beispiel": "Der Reis braucht noch zehn Minuten.",
+    "beispielTr": "Pirincin pişmesine daha on dakika var.",
+    "beispielEn": "The rice needs another ten minutes."
   },
   {
     "id": 579,
     "tr": "tanıdık",
     "en": "acquaintance",
-    "beispiel": "Ein Bekannter von mir heißt Klaus.",
-    "beispielTr": "Bir tanıdığımın adı Klaus.",
-    "beispielEn": "An acquaintance of mine is called Klaus."
+    "beispiel": "Ein Bekannter hat mir bei dem Umzug geholfen.",
+    "beispielTr": "Bir tanıdığım taşınmada bana yardım etti.",
+    "beispielEn": "An acquaintance helped me with the move."
   },
   {
     "id": 823,
     "tr": "gecelemek",
     "en": "to stay overnight",
-    "beispiel": "Du kannst bei mir übernachten.",
-    "beispielTr": "Geceyi bende geçirebilirsin.",
-    "beispielEn": "You can stay overnight at my place."
+    "beispiel": "Auf der Reise haben wir in einer Jugendherberge übernachtet.",
+    "beispielTr": "Yolculukta bir gençlik hostelinde geceledik.",
+    "beispielEn": "On the trip we stayed overnight at a youth hostel."
   },
   {
     "id": 593,
     "tr": "geniş",
     "en": "wide",
-    "beispiel": "Wie breit ist der Schrank?",
-    "beispielTr": "Dolap ne kadar geniş?",
-    "beispielEn": "How wide is the wardrobe?"
+    "beispiel": "Die Straße vor unserer Schule ist sehr breit.",
+    "beispielTr": "Okulumuzun önündeki cadde çok geniş.",
+    "beispielEn": "The street in front of our school is very wide."
   },
   {
     "id": 26,
     "tr": "elma",
     "en": "apple",
-    "beispiel": "Schmeckt dir der Apfel?",
-    "beispielTr": "Elma hoşuna gitti mi?",
-    "beispielEn": "Do you like the apple?"
+    "beispiel": "Für die Pause nehme ich einen Apfel mit.",
+    "beispielTr": "Teneffüs için yanıma bir elma alıyorum.",
+    "beispielEn": "I'm taking an apple with me for the break."
   },
   {
     "id": 605,
     "tr": "tarih",
     "en": "date",
-    "beispiel": "Bitte schreiben Sie das Datum auf das Formular.",
-    "beispielTr": "Lütfen tarihi forma yazın.",
-    "beispielEn": "Please write the date on the form."
+    "beispiel": "Auf dem Kassenbon steht ein falsches Datum.",
+    "beispielTr": "Fişte yanlış bir tarih yazıyor.",
+    "beispielEn": "The receipt has the wrong date on it."
   },
   {
     "id": 633,
     "tr": "tavsiye etmek",
     "en": "to recommend",
-    "beispiel": "Welchen Wein können Sie mir empfehlen?",
-    "beispielTr": "Bana hangi şarabı tavsiye edersiniz?",
-    "beispielEn": "Which wine can you recommend to me?"
+    "beispiel": "Meine Freundin hat mir dieses Buch empfohlen.",
+    "beispielTr": "Bu kitabı bana arkadaşım tavsiye etti.",
+    "beispielEn": "My friend recommended this book to me."
   },
   {
     "id": 722,
@@ -91,17 +91,17 @@
     "id": 438,
     "tr": "şekerlemeler",
     "en": "sweets",
-    "beispiel": "Am liebsten esse ich Süßigkeiten.",
-    "beispielTr": "En çok şekerleme yemeyi severim.",
-    "beispielEn": "Most of all I like eating sweets."
+    "beispiel": "Zu Halloween bekommen die Kinder viele Süßigkeiten.",
+    "beispielTr": "Cadılar Bayramı'nda çocuklara bir sürü şekerleme veriliyor.",
+    "beispielEn": "The kids get lots of candy on Halloween."
   },
   {
     "id": 40,
     "tr": "toparlamak",
     "en": "to tidy up",
-    "beispiel": "Räum bitte dein Zimmer auf.",
-    "beispielTr": "Lütfen odanı topla.",
-    "beispielEn": "Please tidy up your room."
+    "beispiel": "Am Samstag räumen wir zusammen die Küche auf.",
+    "beispielTr": "Cumartesi mutfağı birlikte topluyoruz.",
+    "beispielEn": "On Saturday we're tidying up the kitchen together."
   },
   {
     "id": 461,
@@ -115,9 +115,9 @@
     "id": 806,
     "tr": "üniversite eğitimi",
     "en": "studies",
-    "beispiel": "Mein Studium beginnt im Oktober.",
-    "beispielTr": "Üniversite eğitimim ekimde başlıyor.",
-    "beispielEn": "My studies begin in October."
+    "beispiel": "Das Studium in Deutschland kostet oft nichts.",
+    "beispielTr": "Almanya'da üniversite eğitimi çoğu zaman ücretsiz.",
+    "beispielEn": "Studying at a university in Germany is often free."
   },
   {
     "id": 389,
@@ -131,9 +131,9 @@
     "id": 458,
     "tr": "tişört",
     "en": "t-shirt",
-    "beispiel": "Wie gefällt dir mein neues T-Shirt?",
-    "beispielTr": "Yeni tişörtümü nasıl buldun?",
-    "beispielEn": "How do you like my new t-shirt?"
+    "beispiel": "Das weiße T-Shirt ist nach dem Waschen grau.",
+    "beispielTr": "Beyaz tişört yıkandıktan sonra griye döndü.",
+    "beispielEn": "The white T-shirt is gray after washing."
   },
   {
     "id": 749,
@@ -155,25 +155,25 @@
     "id": 435,
     "tr": "süpermarket",
     "en": "supermarket",
-    "beispiel": "Wir kaufen immer im Supermarkt ein.",
-    "beispielTr": "Alışverişi hep süpermarketten yaparız.",
-    "beispielEn": "We always shop at the supermarket."
+    "beispiel": "Der Supermarkt hat bis zehn Uhr abends geöffnet.",
+    "beispielTr": "Süpermarket akşam saat ona kadar açık.",
+    "beispielEn": "The supermarket is open until ten at night."
   },
   {
     "id": 840,
     "tr": "akraba",
     "en": "relative",
-    "beispiel": "Peter besucht seine Verwandten in Polen.",
-    "beispielTr": "Peter Polonya'daki akrabalarını ziyaret ediyor.",
-    "beispielEn": "Peter is visiting his relatives in Poland."
+    "beispiel": "Zu Weihnachten kommen alle Verwandten zu uns.",
+    "beispielTr": "Noel'de bütün akrabalar bize geliyor.",
+    "beispielEn": "All our relatives come to our place for Christmas."
   },
   {
     "id": 680,
     "tr": "salon",
     "en": "hall",
-    "beispiel": "Wir treffen uns in Halle B.",
-    "beispielTr": "B salonunda buluşuyoruz.",
-    "beispielEn": "We're meeting in hall B."
+    "beispiel": "Das Konzert ist in der großen Halle.",
+    "beispielTr": "Konser büyük salonda.",
+    "beispielEn": "The concert is in the big hall."
   },
   {
     "id": 483,
@@ -195,9 +195,9 @@
     "id": 775,
     "tr": "gişe",
     "en": "counter",
-    "beispiel": "Gehen Sie bitte zum Schalter drei!",
-    "beispielTr": "Lütfen üç numaralı gişeye gidin!",
-    "beispielEn": "Please go to counter three!"
+    "beispiel": "Am Schalter bekommen Sie auch Fahrkarten.",
+    "beispielTr": "Gişeden bilet de alabilirsiniz.",
+    "beispielEn": "You can also get tickets at the counter."
   },
   {
     "id": 172,
@@ -211,9 +211,9 @@
     "id": 723,
     "tr": "lokanta",
     "en": "restaurant",
-    "beispiel": "In unserer Straße gibt es ein neues Lokal.",
-    "beispielTr": "Sokağımızda yeni bir lokanta açıldı.",
-    "beispielEn": "There's a new restaurant on our street."
+    "beispiel": "Das Lokal an der Ecke hat sehr gute Pizza.",
+    "beispielTr": "Köşedeki lokantanın pizzası çok iyi.",
+    "beispielEn": "The restaurant on the corner has really good pizza."
   },
   {
     "id": 591,
@@ -227,65 +227,65 @@
     "id": 224,
     "tr": "hobi",
     "en": "hobby",
-    "beispiel": "Meine Hobbys sind Lesen und Tanzen.",
-    "beispielTr": "Hobilerim okumak ve dans etmek.",
-    "beispielEn": "My hobbies are reading and dancing."
+    "beispiel": "Sein Hobby ist Angeln am See.",
+    "beispielTr": "Onun hobisi gölde balık tutmak.",
+    "beispielEn": "His hobby is fishing at the lake."
   },
   {
     "id": 670,
     "tr": "tebrik etmek",
     "en": "to congratulate",
-    "beispiel": "Ich gratuliere euch zur Geburt eurer Tochter.",
-    "beispielTr": "Kızınızın doğumu için sizi tebrik ederim.",
-    "beispielEn": "I congratulate you on the birth of your daughter."
+    "beispiel": "Wir gratulieren dir herzlich zum Geburtstag!",
+    "beispielTr": "Doğum gününü içtenlikle kutlarız!",
+    "beispielEn": "Happy birthday from all of us!"
   },
   {
     "id": 730,
     "tr": "kiralamak",
     "en": "to rent",
-    "beispiel": "Ich möchte ein Auto mieten.",
-    "beispielTr": "Bir araba kiralamak istiyorum.",
-    "beispielEn": "I'd like to rent a car."
+    "beispiel": "Wir haben am Strand zwei Fahrräder gemietet.",
+    "beispielTr": "Plajda iki bisiklet kiraladık.",
+    "beispielEn": "We rented two bikes at the beach."
   },
   {
     "id": 243,
     "tr": "kot pantolon",
     "en": "jeans",
-    "beispiel": "Sie trägt heute Jeans und ein Hemd.",
-    "beispielTr": "Bugün kot pantolon ve gömlek giyiyor.",
-    "beispielEn": "She's wearing jeans and a shirt today."
+    "beispiel": "Meine alte Jeans hat ein Loch am Knie.",
+    "beispielTr": "Eski kot pantolonumun dizinde bir delik var.",
+    "beispielEn": "My old jeans have a hole in the knee."
   },
   {
     "id": 664,
     "tr": "kardeşler",
     "en": "siblings",
-    "beispiel": "Ich habe leider keine Geschwister.",
-    "beispielTr": "Maalesef hiç kardeşim yok.",
-    "beispielEn": "Unfortunately I don't have any siblings."
+    "beispiel": "Anna und ihre Geschwister wohnen alle in Berlin.",
+    "beispielTr": "Anna ve kardeşlerinin hepsi Berlin'de oturuyor.",
+    "beispielEn": "Anna and her siblings all live in Berlin."
   },
   {
     "id": 653,
     "tr": "boş zaman",
     "en": "free time",
-    "beispiel": "In meiner Freizeit spiele ich oft Fußball.",
-    "beispielTr": "Boş zamanlarımda sık sık futbol oynarım.",
-    "beispielEn": "In my free time I often play soccer."
+    "beispiel": "Viele Leute verbringen ihre Freizeit gern im Park.",
+    "beispielTr": "Birçok insan boş zamanını parkta geçirmeyi seviyor.",
+    "beispielEn": "Lots of people like spending their free time in the park."
   },
   {
     "id": 351,
     "tr": "meyve",
     "en": "fruit",
-    "beispiel": "Wir essen immer viel Obst.",
-    "beispielTr": "Biz hep bol meyve yeriz.",
-    "beispielEn": "We always eat a lot of fruit."
+    "beispiel": "Zum Frühstück esse ich gern Joghurt mit Obst.",
+    "beispielTr": "Kahvaltıda meyveli yoğurt yemeyi severim.",
+    "beispielEn": "For breakfast I like to eat yogurt with fruit."
   },
   {
     "id": 570,
     "tr": "balkon",
     "en": "balcony",
-    "beispiel": "Die Wohnung hat auch einen kleinen Balkon.",
-    "beispielTr": "Dairenin küçük bir balkonu da var.",
-    "beispielEn": "The apartment also has a small balcony."
+    "beispiel": "Im Sommer frühstücken wir auf dem Balkon.",
+    "beispielTr": "Yazın balkonda kahvaltı yaparız.",
+    "beispielEn": "In the summer we have breakfast on the balcony."
   },
   {
     "id": 60,
@@ -299,33 +299,33 @@
     "id": 837,
     "tr": "satıcı",
     "en": "salesperson",
-    "beispiel": "Der Verkäufer ist sehr freundlich.",
-    "beispielTr": "Satıcı çok güler yüzlü.",
-    "beispielEn": "The salesperson is very friendly."
+    "beispiel": "Der Verkäufer hat mir eine günstigere Jacke gezeigt.",
+    "beispielTr": "Satıcı bana daha ucuz bir ceket gösterdi.",
+    "beispielEn": "The salesperson showed me a cheaper jacket."
   },
   {
     "id": 855,
     "tr": "gümrük",
     "en": "customs",
-    "beispiel": "Wir müssen noch durch den Zoll.",
-    "beispielTr": "Bir de gümrükten geçmemiz gerekiyor.",
-    "beispielEn": "We still have to go through customs."
+    "beispiel": "Am Zoll hat man meinen Koffer kontrolliert.",
+    "beispielTr": "Gümrükte bavulumu kontrol ettiler.",
+    "beispielEn": "They checked my suitcase at customs."
   },
   {
     "id": 807,
     "tr": "üniversite öğrencisi",
     "en": "student",
-    "beispiel": "Schüler und Studenten zahlen die Hälfte.",
-    "beispielTr": "Öğrenciler ve üniversiteliler yarım ücret öder.",
-    "beispielEn": "Pupils and students pay half price."
+    "beispiel": "Viele Studenten wohnen in einer WG.",
+    "beispielTr": "Birçok üniversite öğrencisi ortak evde kalıyor.",
+    "beispielEn": "Many students live in shared apartments."
   },
   {
     "id": 31,
     "tr": "işsiz",
     "en": "unemployed",
-    "beispiel": "Meine Mutter ist arbeitslos.",
-    "beispielTr": "Annem işsiz.",
-    "beispielEn": "My mother is unemployed."
+    "beispiel": "Seit März ist mein Onkel arbeitslos.",
+    "beispielTr": "Amcam marttan beri işsiz.",
+    "beispielEn": "My uncle has been unemployed since March."
   },
   {
     "id": 559,
@@ -339,17 +339,17 @@
     "id": 27,
     "tr": "eczane",
     "en": "pharmacy",
-    "beispiel": "Aspirin bekommen Sie in der Apotheke.",
-    "beispielTr": "Aspirini eczaneden alabilirsiniz.",
-    "beispielEn": "You can get aspirin at the pharmacy."
+    "beispiel": "Die Apotheke am Markt hat auch sonntags offen.",
+    "beispielTr": "Pazar yerindeki eczane pazar günleri de açık.",
+    "beispielEn": "The pharmacy by the market is open on Sundays too."
   },
   {
     "id": 629,
     "tr": "giriş ücreti",
     "en": "admission",
-    "beispiel": "Der Eintritt kostet fünf Euro.",
-    "beispielTr": "Giriş ücreti beş avro.",
-    "beispielEn": "Admission costs five euros."
+    "beispiel": "Für Kinder ist der Eintritt im Museum frei.",
+    "beispielTr": "Müzeye giriş çocuklar için ücretsiz.",
+    "beispielEn": "Admission to the museum is free for kids."
   },
   {
     "id": 566,
@@ -387,16 +387,16 @@
     "id": 348,
     "tr": "okul notu",
     "en": "grade",
-    "beispiel": "Hast du gute Noten in Englisch?",
-    "beispielTr": "İngilizceden notların iyi mi?",
-    "beispielEn": "Do you have good grades in English?"
+    "beispiel": "Für den Test in Biologie bekommt Lena eine gute Note.",
+    "beispielTr": "Lena biyoloji sınavından iyi bir not alıyor.",
+    "beispielEn": "Lena gets a good grade on the biology test."
   },
   {
     "id": 686,
     "tr": "mutfak ocağı",
     "en": "stove",
-    "beispiel": "In der neuen Küche fehlt noch der Herd.",
-    "beispielTr": "Yeni mutfakta bir tek ocak eksik.",
-    "beispielEn": "The stove is still missing in the new kitchen."
+    "beispiel": "Die Suppe steht schon auf dem Herd.",
+    "beispielTr": "Çorba çoktan ocakta.",
+    "beispielEn": "The soup is already on the stove."
   }
 ]

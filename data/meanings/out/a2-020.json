@@ -379,9 +379,9 @@
   "id": 7985,
   "tr": "telefon numarası",
   "en": "phone number",
-  "beispiel": "Kannst du mir bitte deine Telefonnummer geben?",
-  "beispielTr": "Bana telefon numaranı verebilir misin?",
-  "beispielEn": "Can you give me your phone number, please?"
+  "beispiel": "Die Telefonnummer der Praxis steht auf der Karte.",
+  "beispielTr": "Muayenehanenin telefon numarası kartta yazıyor.",
+  "beispielEn": "The doctor's office phone number is on the card."
  },
  {
   "id": 7986,

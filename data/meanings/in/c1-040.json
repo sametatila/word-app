@@ -10,7 +10,7 @@
    "formen": "hat modelliert",
    "currentTr": "modellemek",
    "currentBeispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien.",
-   "currentBeispielTr": "Araştırmacılar süreci üç farklı senaryo altında modelliyor."
+   "currentBeispielTr": "Araştırmacılar gidişatı üç farklı senaryoya göre modelliyor."
   },
   {
    "id": 7204,
@@ -20,7 +20,7 @@
    "formen": "hat simuliert",
    "currentTr": "benzetim yapmak, simüle etmek",
    "currentBeispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren.",
-   "currentBeispielTr": "Program, gelişimi elli yıllık bir süre için simüle ediyor."
+   "currentBeispielTr": "Program, gelişimi elli yıllık bir dönem boyunca simüle ediyor."
   },
   {
    "id": 7205,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "yaklaşık olarak, kabaca",
    "currentBeispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben.",
-   "currentBeispielTr": "Seyir yaklaşık olarak bir doğruyla betimlenebilir."
+   "currentBeispielTr": "Gidişat yaklaşık olarak bir doğruyla betimlenebilir."
   },
   {
    "id": 7206,
@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "nitel",
    "currentBeispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser.",
-   "currentBeispielTr": "Bu soru için nitel bir yaklaşım daha uygun."
+   "currentBeispielTr": "Bu araştırma sorusu için nitel bir yaklaşım daha uygun."
   },
   {
    "id": 7209,
@@ -70,7 +70,7 @@
    "formen": "",
    "currentTr": "yöntemsel, yöntem açısından",
    "currentBeispiel": "Die Studie weist mehrere methodische Schwächen auf.",
-   "currentBeispielTr": "Çalışma birçok yöntemsel zaaf taşıyor."
+   "currentBeispielTr": "Çalışma birkaç yöntemsel zayıflık taşıyor."
   },
   {
    "id": 7210,
@@ -79,8 +79,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "veri etiği",
-   "currentBeispiel": "Ohne eine belastbare Datenethik bleibt jede Digitalstrategie moralisch blind.",
-   "currentBeispielTr": "Sağlam bir veri etiği olmadan her dijitalleşme stratejisi ahlaki olarak kördür."
+   "currentBeispiel": "Die Klinik hat eine Kommission für Datenethik eingerichtet.",
+   "currentBeispielTr": "Klinik, veri etiği için bir kurul oluşturdu."
   },
   {
    "id": 7211,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Überwachungen",
    "currentTr": "gözetim, izleme",
-   "currentBeispiel": "Flächendeckende Überwachung verändert das Verhalten der Menschen im öffentlichen Raum.",
-   "currentBeispielTr": "Yaygın gözetim, insanların kamusal alandaki davranışını değiştiriyor."
+   "currentBeispiel": "Am Bahnhof läuft die Überwachung rund um die Uhr.",
+   "currentBeispielTr": "Garda gözetim gece gündüz sürüyor."
   },
   {
    "id": 7212,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "veri minimizasyonu, az veri toplama ilkesi",
-   "currentBeispiel": "Datensparsamkeit gilt als Leitprinzip, wird in der Praxis aber selten eingehalten.",
-   "currentBeispielTr": "Veri asgariliği bir temel ilke sayılıyor ama uygulamada nadiren gözetiliyor."
+   "currentBeispiel": "Die App speichert aus Datensparsamkeit keine Standortdaten.",
+   "currentBeispielTr": "Uygulama, veri minimizasyonu gereği konum verisi tutmuyor."
   },
   {
    "id": 7213,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "anlaşılabilirlik, izlenebilirlik",
-   "currentBeispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen erheblich.",
-   "currentBeispielTr": "Karmaşık modellerde tek tek kararların izlenebilirliği ciddi biçimde zayıflıyor."
+   "currentBeispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen.",
+   "currentBeispielTr": "Karmaşık modellerde tek tek kararların anlaşılabilirliği azalıyor."
   },
   {
    "id": 7214,
@@ -120,7 +120,7 @@
    "formen": "",
    "currentTr": "amaca bağlılık ilkesi",
    "currentBeispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
-   "currentBeispielTr": "Amaca bağlılık ilkesi, verinin sonradan bambaşka amaçlarla işlenmesine izin vermez."
+   "currentBeispielTr": "Amaca bağlılık, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez."
   },
   {
    "id": 7215,
@@ -139,8 +139,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "örüntü tanıma",
-   "currentBeispiel": "Mustererkennung ersetzt kein Verständnis der zugrunde liegenden Zusammenhänge.",
-   "currentBeispielTr": "Örüntü tanıma, altta yatan bağlantıların anlaşılmasının yerini tutmaz."
+   "currentBeispiel": "Die Software nutzt Mustererkennung, um gefälschte Rechnungen zu finden.",
+   "currentBeispielTr": "Yazılım, sahte faturaları bulmak için örüntü tanıma kullanıyor."
   },
   {
    "id": 7217,
@@ -149,8 +149,8 @@
    "niveau": "C1",
    "formen": "Lernverfahren",
    "currentTr": "öğrenme yöntemi (teknik süreç, algoritma)",
-   "currentBeispiel": "Statistische Lernverfahren liefern Korrelationen, aber keine Erklärungen.",
-   "currentBeispielTr": "İstatistiksel öğrenme yöntemleri korelasyon verir, açıklama değil."
+   "currentBeispiel": "Das Labor testet ein neues Lernverfahren an alten Röntgenbildern.",
+   "currentBeispielTr": "Laboratuvar yeni bir öğrenme yöntemini eski röntgen görüntülerinde deniyor."
   },
   {
    "id": 7218,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "Regulierungen",
    "currentTr": "düzenleme, regülasyon",
-   "currentBeispiel": "Eine zu späte Regulierung zementiert die Vormacht der etablierten Konzerne.",
-   "currentBeispielTr": "Çok geç kalan bir düzenleme, yerleşik şirketlerin üstünlüğünü kalıcılaştırır."
+   "currentBeispiel": "Die EU plant eine strengere Regulierung von Kryptowährungen.",
+   "currentBeispielTr": "AB, kripto paralar için daha sıkı bir düzenleme planlıyor."
   },
   {
    "id": 7220,
@@ -200,7 +200,7 @@
    "formen": "Sachzwänge",
    "currentTr": "nesnel zorunluluk, kaçınılmaz koşul",
    "currentBeispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl.",
-   "currentBeispielTr": "Teknolojik ilerleme çoğu kez siyasi bir tercih değil, nesnel bir zorunluluk gibi sunulur."
+   "currentBeispielTr": "Teknik ilerleme çoğu kez siyasi bir tercih değil, nesnel bir zorunluluk gibi sunuluyor."
   },
   {
    "id": 7223,
@@ -210,7 +210,7 @@
    "formen": "",
    "currentTr": "teknolojinin etkilerinin değerlendirilmesi",
    "currentBeispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden.",
-   "currentBeispielTr": "Ciddi bir teknoloji etki değerlendirmesi piyasaya sürülmeden önce yapılmalıydı."
+   "currentBeispielTr": "Ciddi bir teknoloji etki değerlendirmesinin piyasaya sürülmeden önce yapılması gerekir."
   },
   {
    "id": 7224,
@@ -240,7 +240,7 @@
    "formen": "",
    "currentTr": "sorumluluğun dağılıp kaybolması",
    "currentBeispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
-   "currentBeispielTr": "Dağıtık sistemlerde sorumluluk geliştiricilerle işletmeciler arasında kaybolma tehlikesi taşıyor."
+   "currentBeispielTr": "Dağıtık sistemlerde geliştiricilerle işletmeciler arasında sorumluluğun dağılması tehlikesi var."
   },
   {
    "id": 7227,
@@ -250,7 +250,7 @@
    "formen": "Angriffsflächen",
    "currentTr": "saldırıya açık yüzey, zafiyet alanı",
    "currentBeispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems.",
-   "currentBeispielTr": "Her ek bağlantı, sistemin bütününde saldırıya açık alanı büyütüyor."
+   "currentBeispielTr": "Her ek bağlantı, sistemin tümünün saldırı yüzeyini büyütüyor."
   },
   {
    "id": 7228,
@@ -269,8 +269,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hesaplanabilirlik, öngörülebilirlik",
-   "currentBeispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare erkenntnistheoretische Grenzen.",
-   "currentBeispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin bilgikuramsal sınırları vardır."
+   "currentBeispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare Grenzen.",
+   "currentBeispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin sınırları var."
   },
   {
    "id": 7230,
@@ -280,7 +280,7 @@
    "formen": "Quantifizierungen",
    "currentTr": "sayısallaştırma, niceliğe indirgeme",
    "currentBeispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
-   "currentBeispielTr": "Eğitimin sayısallaştırılması, güç ölçülen şeyleri görmezden geliyor."
+   "currentBeispielTr": "Eğitimin sayısallaştırılması, zor ölçülen şeyleri görmezden geliyor."
   },
   {
    "id": 7231,
@@ -289,7 +289,7 @@
    "niveau": "C1",
    "formen": "Selbstverpflichtungen",
    "currentTr": "gönüllü taahhüt",
-   "currentBeispiel": "Freiwillige Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
+   "currentBeispiel": "Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
    "currentBeispielTr": "Sektörün gönüllü taahhütleri bağlayıcı yasaların yerini tutmaz."
   },
   {
@@ -310,7 +310,7 @@
    "formen": "hat ausgespäht",
    "currentTr": "gizlice gözetlemek, casusluk etmek",
    "currentBeispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht.",
-   "currentBeispielTr": "İstihbarat servisi yıllarca dost hükümetlerin iletişimini gizlice izledi."
+   "currentBeispielTr": "İstihbarat servisi yıllarca dost hükümetlerin iletişimini gizlice gözetledi."
   },
   {
    "id": 7234,
@@ -343,8 +343,8 @@
    "niveau": "C1",
    "formen": "hat skaliert",
    "currentTr": "ölçeklendirmek, büyütmek",
-   "currentBeispiel": "Ein Fehler, der sich beliebig skalieren lässt, wird zum Systemrisiko.",
-   "currentBeispielTr": "İstenildiği kadar ölçeklenebilen bir hata sistemsel bir riske dönüşür."
+   "currentBeispiel": "Das Start-up will sein Geschäftsmodell international skalieren.",
+   "currentBeispielTr": "Girişim, iş modelini uluslararası düzeyde ölçeklendirmek istiyor."
   },
   {
    "id": 7237,
@@ -363,7 +363,7 @@
    "niveau": "C1",
    "formen": "hat vorausgesetzt",
    "currentTr": "varsaymak, önkoşul saymak",
-   "currentBeispiel": "Diese Argumentation setzt voraus, dass Daten neutral seien.",
+   "currentBeispiel": "Diese Argumentation setzt voraus, dass Daten neutral sind.",
    "currentBeispielTr": "Bu akıl yürütme, verilerin tarafsız olduğunu peşinen varsayıyor."
   },
   {
@@ -374,7 +374,7 @@
    "formen": "hat eingehegt",
    "currentTr": "sınırlarını çizmek, denetim altına almak",
    "currentBeispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
-   "currentBeispielTr": "Yasa koyucu platformların gücünü hukuken sınırlamaya çalışıyor."
+   "currentBeispielTr": "Yasa koyucu, platformların gücünü hukuken dizginlemeye çalışıyor."
   },
   {
    "id": 7240,
@@ -404,7 +404,7 @@
    "formen": "",
    "currentTr": "veriye dayalı",
    "currentBeispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste.",
-   "currentBeispielTr": "Veriye dayalı yönetim verimlilik vaat ederken denetim kaybı riskini de doğuruyor."
+   "currentBeispielTr": "Veriye dayalı yönetim verimlilik vaat ederken denetim kaybı riski taşıyor."
   },
   {
    "id": 7243,
@@ -414,7 +414,7 @@
    "formen": "",
    "currentTr": "her yerde olan, her yanı sarmış",
    "currentBeispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
-   "currentBeispielTr": "Veri toplama gündelik hayatta çoktan her yere sinmiş durumda."
+   "currentBeispielTr": "Veri toplama gündelik hayatın çoktan her yerine sindi."
   },
   {
    "id": 7244,
@@ -424,7 +424,7 @@
    "formen": "",
    "currentTr": "kişisel, kişiye ilişkin",
    "currentBeispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein.",
-   "currentBeispielTr": "Görünüşte zararsız bilgiler de kişisel veri niteliği taşıyabilir.",
+   "currentBeispielTr": "Görünüşte zararsız bilgiler de kişiye ilişkin olabilir.",
    "overlapping": [
     "persönlich (B1)"
    ]
@@ -437,7 +437,7 @@
    "formen": "",
    "currentTr": "kaçınılmaz olarak, ister istemez",
    "currentBeispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen.",
-   "currentBeispielTr": "Daha fazla işlem gücü, kaçınılmaz olarak daha iyi kararlar getirmez.",
+   "currentBeispielTr": "Daha fazla işlem gücü zorunlu olarak daha iyi kararlar getirmez.",
    "overlapping": [
     "unweigerlich (C1)"
    ]
@@ -464,7 +464,7 @@
    "formen": "Bewilligungen",
    "currentTr": "onay, tahsis, izin",
    "currentBeispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten.",
-   "currentBeispielTr": "Destek ödeneğinin tahsisi olmadan proje başlayamaz.",
+   "currentBeispielTr": "Destek ödeneğinin resmî onayı olmadan proje başlayamaz.",
    "overlapping": [
     "die Bestätigung (B1)",
     "die Zustimmung (B1)",
@@ -490,7 +490,7 @@
    "formen": "Dienstwege",
    "currentTr": "resmî prosedür, hiyerarşik yol",
    "currentBeispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden.",
-   "currentBeispielTr": "Şikâyetler önce olağan resmî yoldan iletilmelidir."
+   "currentBeispielTr": "Şikâyetler önce olağan resmî yoldan iletilmeli."
   },
   {
    "id": 7250,
@@ -500,7 +500,7 @@
    "formen": "Kontrollinstanzen",
    "currentTr": "denetim mercii",
    "currentBeispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
-   "currentBeispielTr": "Bağımsız bir denetim mercii olmadan her reform sadece niyet beyanı olarak kalır."
+   "currentBeispielTr": "Bağımsız bir denetim mercii olmadan her reform niyet beyanı olarak kalır."
   },
   {
    "id": 7251,

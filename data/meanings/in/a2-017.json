@@ -10,7 +10,7 @@
    "formen": "-n",
    "currentTr": "içecek menüsü",
    "currentBeispiel": "Der Kellner bringt uns gleich die Getränkekarte.",
-   "currentBeispielTr": "Garson birazdan bize içecek menüsünü getiriyor."
+   "currentBeispielTr": "Garson birazdan bize içecek menüsünü getirecek."
   },
   {
    "id": 7789,
@@ -30,7 +30,7 @@
    "formen": "-s",
    "currentTr": "tepsi",
    "currentBeispiel": "Sie trägt vier Gläser auf einem Tablett.",
-   "currentBeispielTr": "Bir tepsinin üzerinde dört bardak taşıyor."
+   "currentBeispielTr": "Bir tepside dört bardak taşıyor."
   },
   {
    "id": 7791,
@@ -40,7 +40,7 @@
    "formen": "(Sg.)",
    "currentTr": "self servis",
    "currentBeispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke.",
-   "currentBeispielTr": "Burası self servis, yemeği tezgâhtan alıyorsun."
+   "currentBeispielTr": "Burası self servis, yemeği tezgâhtan kendin alıyorsun."
   },
   {
    "id": 7792,
@@ -90,8 +90,8 @@
    "niveau": "A2",
    "formen": "rührt, hat gerührt",
    "currentTr": "karıştırmak (kaşıkla çevirmek)",
-   "currentBeispiel": "Rühr die Soße, damit sie nicht anbrennt.",
-   "currentBeispielTr": "Sosu karıştır ki dibi tutmasın.",
+   "currentBeispiel": "Ich rühre die Soße mit einem Löffel.",
+   "currentBeispielTr": "Sosu bir kaşıkla karıştırıyorum.",
    "overlapping": [
     "mischen (B1)",
     "verwechseln (B1)"
@@ -118,7 +118,7 @@
    "formen": "trocknet ab, hat abgetrocknet",
    "currentTr": "kurulamak",
    "currentBeispiel": "Du wäschst ab und ich trockne die Teller ab.",
-   "currentBeispielTr": "Sen bulaşık yıka, ben de tabakları kurulayayım."
+   "currentBeispielTr": "Sen bulaşıkları yıkıyorsun, ben de tabakları kuruluyorum."
   },
   {
    "id": 7798,
@@ -128,7 +128,7 @@
    "formen": "deckt, hat gedeckt",
    "currentTr": "kurmak (sofra), örtmek",
    "currentBeispiel": "Kannst du bitte den Tisch für vier Personen decken?",
-   "currentBeispielTr": "Lütfen dört kişilik sofrayı kurabilir misin?",
+   "currentBeispielTr": "Dört kişilik sofrayı kurabilir misin lütfen?",
    "overlapping": [
     "installieren (B1)",
     "zusammenbauen (A2)",
@@ -142,8 +142,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "kapak",
-   "currentBeispiel": "Mach bitte den Deckel auf den Topf.",
-   "currentBeispielTr": "Lütfen tencerenin kapağını kapat."
+   "currentBeispiel": "Leg den Deckel bitte auf den Topf.",
+   "currentBeispielTr": "Kapağı lütfen tencerenin üstüne koy."
   },
   {
    "id": 7800,
@@ -172,8 +172,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "gram",
-   "currentBeispiel": "Ich brauche 200 Gramm Käse.",
-   "currentBeispielTr": "200 gram peynire ihtiyacım var."
+   "currentBeispiel": "Ich brauche noch 200 Gramm Käse.",
+   "currentBeispielTr": "200 gram peynire daha ihtiyacım var."
   },
   {
    "id": 7803,
@@ -215,8 +215,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "kap, bardak (kulpsuz)",
-   "currentBeispiel": "Ich kaufe einen Becher Sahne für den Kuchen.",
-   "currentBeispielTr": "Pasta için bir kap krema alıyorum."
+   "currentBeispiel": "Ich trinke jeden Morgen einen Becher Kaffee.",
+   "currentBeispielTr": "Her sabah bir bardak kahve içiyorum."
   },
   {
    "id": 7807,
@@ -266,7 +266,7 @@
    "formen": "¨-er",
    "currentTr": "tasarruf hesabı cüzdanı",
    "currentBeispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet.",
-   "currentBeispielTr": "Kızım için bir tasarruf hesabı cüzdanı açtırdım."
+   "currentBeispielTr": "Kızım için bir tasarruf cüzdanı açtırdım."
   },
   {
    "id": 7812,
@@ -275,8 +275,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "cüzdan, para kesesi",
-   "currentBeispiel": "Mein Geldbeutel ist im Bus liegen geblieben.",
-   "currentBeispielTr": "Cüzdanım otobüste kaldı.",
+   "currentBeispiel": "Ich habe meinen Geldbeutel zu Hause vergessen.",
+   "currentBeispielTr": "Cüzdanımı evde unuttum.",
    "overlapping": [
     "die Geldbörse (A2)",
     "die Brieftasche (B1)",
@@ -303,8 +303,8 @@
    "niveau": "A2",
    "formen": "gibt zurück, hat zurückgegeben",
    "currentTr": "geri vermek, iade etmek",
-   "currentBeispiel": "Ich möchte diese Schuhe zurückgeben, sie sind zu klein.",
-   "currentBeispielTr": "Bu ayakkabıları iade etmek istiyorum, çok küçükler."
+   "currentBeispiel": "Ich habe dir dein Buch gestern zurückgegeben.",
+   "currentBeispielTr": "Kitabını sana dün geri verdim."
   },
   {
    "id": 7815,
@@ -313,8 +313,8 @@
    "niveau": "A2",
    "formen": "schickt zurück, hat zurückgeschickt",
    "currentTr": "geri göndermek",
-   "currentBeispiel": "Die Jacke passt nicht, ich schicke sie zurück.",
-   "currentBeispielTr": "Ceket olmadı, onu geri gönderiyorum.",
+   "currentBeispiel": "Ich möchte die Jacke zurückschicken, sie passt nicht.",
+   "currentBeispielTr": "Ceketi geri göndermek istiyorum, bana olmadı.",
    "overlapping": [
     "zurücksenden (B2)"
    ]
@@ -336,8 +336,8 @@
    "niveau": "A2",
    "formen": "¨-",
    "currentTr": "kayınvalide",
-   "currentBeispiel": "Meine Schwiegermutter kocht jeden Sonntag für die ganze Familie.",
-   "currentBeispielTr": "Kayınvalidem her pazar bütün aile için yemek pişiriyor."
+   "currentBeispiel": "Meine Schwiegermutter kocht jeden Sonntag für uns.",
+   "currentBeispielTr": "Kayınvalidem her pazar bizim için yemek pişiriyor."
   },
   {
    "id": 7818,
@@ -370,7 +370,7 @@
    "formen": "¨-",
    "currentTr": "gelin (oğlun eşi)",
    "currentBeispiel": "Seine Schwiegertochter bringt immer Kuchen mit.",
-   "currentBeispielTr": "Gelini her zaman yanında kek getiriyor.",
+   "currentBeispielTr": "Gelini her zaman kek getirir.",
    "overlapping": [
     "die Braut (A2)"
    ]
@@ -482,8 +482,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "kucaklama, sarılma",
-   "currentBeispiel": "Nach der langen Reise bekam ich von meiner Mutter eine herzliche Umarmung.",
-   "currentBeispielTr": "Uzun yolculuktan sonra annemden içten bir kucaklama aldım."
+   "currentBeispiel": "Eine Umarmung tut manchmal richtig gut.",
+   "currentBeispielTr": "Bir sarılma bazen çok iyi geliyor."
   },
   {
    "id": 7831,
@@ -542,8 +542,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "evlilik yıldönümü, düğün günü",
-   "currentBeispiel": "Zum Hochzeitstag schenkt mein Mann mir immer Rosen.",
-   "currentBeispielTr": "Evlilik yıldönümünde kocam bana hep gül hediye eder."
+   "currentBeispiel": "Zum Hochzeitstag schenkt mir mein Mann immer Rosen.",
+   "currentBeispielTr": "Evlilik yıl dönümünde kocam bana hep gül alır."
   },
   {
    "id": 7837,

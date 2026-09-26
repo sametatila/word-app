@@ -19,9 +19,9 @@
     "id": 375,
     "tr": "silgi",
     "en": "eraser",
-    "beispiel": "Gibst du mir deinen Radiergummi?",
-    "beispielTr": "Silgini bana verir misin?",
-    "beispielEn": "Will you give me your eraser?"
+    "beispiel": "Mein Radiergummi liegt unter dem Tisch.",
+    "beispielTr": "Silgim masanın altında duruyor.",
+    "beispielEn": "My eraser is under the table."
   },
   {
     "id": 15,
@@ -59,17 +59,17 @@
     "id": 150,
     "tr": "hazır olmak",
     "en": "to be ready",
-    "beispiel": "Das Essen ist gleich fertig.",
-    "beispielTr": "Yemek birazdan hazır olur.",
-    "beispielEn": "The food will be ready soon."
+    "beispiel": "Bist du schon fertig mit dem Buch?",
+    "beispielTr": "Kitabı bitirdin mi?",
+    "beispielEn": "Are you done with the book yet?"
   },
   {
     "id": 193,
     "tr": "kapalı olmak",
     "en": "to be closed",
-    "beispiel": "Die Apotheke ist heute geschlossen.",
-    "beispielTr": "Eczane bugün kapalı.",
-    "beispielEn": "The pharmacy is closed today."
+    "beispiel": "Das Schwimmbad ist im Winter geschlossen.",
+    "beispielTr": "Yüzme havuzu kışın kapalı.",
+    "beispielEn": "The swimming pool is closed in the winter."
   },
   {
     "id": 267,
@@ -83,9 +83,9 @@
     "id": 303,
     "tr": "favori",
     "en": "favorite",
-    "beispiel": "Mein Lieblingsessen ist Pizza.",
-    "beispielTr": "Favori yemeğim pizza.",
-    "beispielEn": "My favorite food is pizza."
+    "beispiel": "Das ist mein Lieblingsbuch aus der Kindheit.",
+    "beispielTr": "Bu, çocukluğumdan kalma en sevdiğim kitap.",
+    "beispielEn": "This is my favorite book from my childhood."
   },
   {
     "id": 379,
@@ -123,9 +123,9 @@
     "id": 495,
     "tr": "hangi",
     "en": "which",
-    "beispiel": "Welche Farbe magst du am liebsten?",
-    "beispielTr": "En çok hangi rengi seviyorsun?",
-    "beispielEn": "Which color do you like best?"
+    "beispiel": "Welche Farbe hat dein neues Fahrrad?",
+    "beispielTr": "Yeni bisikletin hangi renk?",
+    "beispielEn": "What color is your new bike?"
   },
   {
     "id": 504,
@@ -147,9 +147,9 @@
     "id": 531,
     "tr": "kapalı olmak",
     "en": "to be shut",
-    "beispiel": "Die Bibliothek ist in den Ferien zu.",
-    "beispielTr": "Kütüphane tatilde kapalı.",
-    "beispielEn": "The library is shut during school vacation."
+    "beispiel": "Die Apotheke ist heute leider schon zu.",
+    "beispielTr": "Eczane bugün maalesef çoktan kapanmış.",
+    "beispielEn": "Unfortunately, the pharmacy is already closed today."
   },
   {
     "id": 538,
@@ -179,9 +179,9 @@
     "id": 560,
     "tr": "yabancı",
     "en": "foreign",
-    "beispiel": "Leider habe ich nur ausländisches Geld.",
-    "beispielTr": "Maalesef yanımda sadece yabancı para var.",
-    "beispielEn": "Unfortunately I only have foreign money."
+    "beispiel": "In unserer Klasse sind viele ausländische Studenten.",
+    "beispielTr": "Sınıfımızda çok sayıda yabancı öğrenci var.",
+    "beispielEn": "There are a lot of foreign students in our class."
   },
   {
     "id": 610,
@@ -211,17 +211,17 @@
     "id": 679,
     "tr": "yarım pansiyon",
     "en": "half board",
-    "beispiel": "Möchten Sie Vollpension oder Halbpension?",
-    "beispielTr": "Tam pansiyon mu yarım pansiyon mu istersiniz?",
-    "beispielEn": "Would you like full board or half board?"
+    "beispiel": "Wir haben ein Zimmer mit Halbpension gebucht.",
+    "beispielTr": "Yarım pansiyon bir oda ayırttık.",
+    "beispielEn": "We booked a room with half board."
   },
   {
     "id": 697,
     "tr": "kredi kartı",
     "en": "credit card",
-    "beispiel": "Kann ich mit Kreditkarte bezahlen?",
-    "beispielTr": "Kredi kartıyla ödeyebilir miyim?",
-    "beispielEn": "Can I pay by credit card?"
+    "beispiel": "Ich habe meine Kreditkarte zu Hause vergessen.",
+    "beispielTr": "Kredi kartımı evde unuttum.",
+    "beispielEn": "I left my credit card at home."
   },
   {
     "id": 717,
@@ -259,9 +259,9 @@
     "id": 789,
     "tr": "turistik yer",
     "en": "tourist attraction",
-    "beispiel": "Welche Sehenswürdigkeiten gibt es in Frankfurt?",
-    "beispielTr": "Frankfurt'ta hangi turistik yerler var?",
-    "beispielEn": "What tourist attractions are there in Frankfurt?"
+    "beispiel": "Der Dom ist die bekannteste Sehenswürdigkeit der Stadt.",
+    "beispielTr": "Katedral şehrin en ünlü turistik yeri.",
+    "beispielEn": "The cathedral is the city's best-known sight."
   },
   {
     "id": 790,

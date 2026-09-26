@@ -3,25 +3,25 @@
     "id": 509,
     "tr": "nerede",
     "en": "where",
-    "beispiel": "Wo ist der Bahnhof?",
-    "beispielTr": "Tren garı nerede?",
-    "beispielEn": "Where is the train station?"
+    "beispiel": "Wo parkst du dein Auto am liebsten?",
+    "beispielTr": "Arabanı en çok nereye park etmeyi seversin?",
+    "beispielEn": "Where do you prefer to park your car?"
   },
   {
     "id": 136,
     "tr": "bir şey",
     "en": "something",
-    "beispiel": "Ich möchte dir etwas sagen.",
-    "beispielTr": "Sana bir şey söylemek istiyorum.",
-    "beispielEn": "I want to tell you something."
+    "beispiel": "Trinkst du noch etwas vor dem Film?",
+    "beispielTr": "Filmden önce bir şey içecek misin?",
+    "beispielEn": "Are you having something to drink before the movie?"
   },
   {
     "id": 318,
     "tr": "daha fazla",
     "en": "more",
-    "beispiel": "Ich brauche mehr Zeit.",
-    "beispielTr": "Daha fazla zamana ihtiyacım var.",
-    "beispielEn": "I need more time."
+    "beispiel": "Im Winter brauche ich mehr Schlaf.",
+    "beispielTr": "Kışın daha fazla uykuya ihtiyacım var.",
+    "beispielEn": "I need more sleep in the winter."
   },
   {
     "id": 65,
@@ -35,17 +35,17 @@
     "id": 11,
     "tr": "yani",
     "en": "so",
-    "beispiel": "Es regnet, also bleiben wir zu Hause.",
-    "beispielTr": "Yağmur yağıyor, yani evde kalıyoruz.",
-    "beispielEn": "It's raining, so we're staying home."
+    "beispiel": "Der Laden ist zu, also kaufen wir morgen Brot.",
+    "beispielTr": "Dükkân kapalı, yani ekmeği yarın alıyoruz.",
+    "beispielEn": "The shop is closed, so we'll buy bread tomorrow."
   },
   {
     "id": 80,
     "tr": "lütfen",
     "en": "please",
-    "beispiel": "Können Sie mir bitte helfen?",
-    "beispielTr": "Bana yardım edebilir misiniz lütfen?",
-    "beispielEn": "Could you please help me?"
+    "beispiel": "Zwei Kugeln Schokolade, bitte.",
+    "beispielTr": "İki top çikolatalı, lütfen.",
+    "beispielEn": "Two scoops of chocolate, please."
   },
   {
     "id": 587,
@@ -59,9 +59,9 @@
     "id": 235,
     "tr": "her zaman",
     "en": "always",
-    "beispiel": "Er kommt immer zu spät.",
-    "beispielTr": "O her zaman geç kalıyor.",
-    "beispielEn": "He is always late."
+    "beispiel": "Im Winter trage ich immer eine Mütze.",
+    "beispielTr": "Kışın hep bere takarım.",
+    "beispielEn": "In the winter I always wear a hat."
   },
   {
     "id": 487,
@@ -83,9 +83,9 @@
     "id": 273,
     "tr": "-ebilmek",
     "en": "to be able to",
-    "beispiel": "Ich kann gut schwimmen.",
-    "beispielTr": "İyi yüzebilirim.",
-    "beispielEn": "I can swim well."
+    "beispiel": "Mein kleiner Bruder kann schon lesen.",
+    "beispielTr": "Küçük kardeşim artık okuyabiliyor.",
+    "beispielEn": "My little brother can already read."
   },
   {
     "id": 501,
@@ -115,9 +115,9 @@
     "id": 604,
     "tr": "teşekkürler",
     "en": "thanks",
-    "beispiel": "Danke für deine Hilfe!",
-    "beispielTr": "Yardımın için teşekkürler!",
-    "beispielEn": "Thanks for your help!"
+    "beispiel": "Danke für die schönen Blumen!",
+    "beispielTr": "Güzel çiçekler için teşekkürler!",
+    "beispielEn": "Thanks for the beautiful flowers!"
   },
   {
     "id": 412,
@@ -139,41 +139,41 @@
     "id": 608,
     "tr": "çünkü",
     "en": "because",
-    "beispiel": "Ich kann nicht kommen, denn ich bin krank.",
-    "beispielTr": "Gelemiyorum çünkü hastayım.",
-    "beispielEn": "I can't come because I'm sick."
+    "beispiel": "Tom trinkt keinen Kaffee, denn er schläft sonst schlecht.",
+    "beispielTr": "Tom kahve içmiyor, çünkü yoksa kötü uyuyor.",
+    "beispielEn": "Tom doesn't drink coffee, because otherwise he sleeps badly."
   },
   {
     "id": 313,
     "tr": "adam",
     "en": "man",
-    "beispiel": "Ein Mann geht mit seinem Hund spazieren.",
-    "beispielTr": "Bir adam köpeğiyle yürüyüşe çıkıyor.",
-    "beispielEn": "A man is walking his dog."
+    "beispiel": "Ein alter Mann sitzt allein auf der Bank.",
+    "beispielTr": "Yaşlı bir adam bankta tek başına oturuyor.",
+    "beispielEn": "An old man is sitting alone on the bench."
   },
   {
     "id": 822,
     "tr": "yapmak",
     "en": "to do",
-    "beispiel": "Ich habe heute viel zu tun.",
-    "beispielTr": "Bugün yapacak çok işim var.",
-    "beispielEn": "I have a lot to do today."
+    "beispiel": "Ich muss heute noch etwas für die Schule tun.",
+    "beispielTr": "Bugün daha okul için bir şeyler yapmam lazım.",
+    "beispielEn": "I still have to do some work for school today."
   },
   {
     "id": 181,
     "tr": "gitmek",
     "en": "to go",
-    "beispiel": "Ich gehe jetzt nach Hause.",
-    "beispielTr": "Şimdi eve gidiyorum.",
-    "beispielEn": "I'm going home now."
+    "beispiel": "Die Kinder gehen zu Fuß zur Schule.",
+    "beispielTr": "Çocuklar okula yürüyerek gidiyor.",
+    "beispielEn": "The kids walk to school."
   },
   {
     "id": 411,
     "tr": "görmek",
     "en": "to see",
-    "beispiel": "Siehst du das große Haus dort?",
-    "beispielTr": "Şuradaki büyük evi görüyor musun?",
-    "beispielEn": "Do you see the big house over there?"
+    "beispiel": "Vom Turm sieht man die ganze Altstadt.",
+    "beispielTr": "Kuleden bütün eski şehir görünüyor.",
+    "beispielEn": "From the tower you can see the whole old town."
   },
   {
     "id": 476,
@@ -187,9 +187,9 @@
     "id": 497,
     "tr": "kim",
     "en": "who",
-    "beispiel": "Wer ist die elegante Frau?",
-    "beispielTr": "Şu şık kadın kim?",
-    "beispielEn": "Who is the elegant woman?"
+    "beispiel": "Wer hat den letzten Keks gegessen?",
+    "beispielTr": "Son kurabiyeyi kim yedi?",
+    "beispielEn": "Who ate the last cookie?"
   },
   {
     "id": 463,
@@ -219,25 +219,25 @@
     "id": 344,
     "tr": "asla",
     "en": "never",
-    "beispiel": "Er kommt nie pünktlich.",
-    "beispielTr": "O asla vaktinde gelmez.",
-    "beispielEn": "He is never on time."
+    "beispiel": "Mein Vater trinkt nie Kaffee am Abend.",
+    "beispielTr": "Babam akşamları asla kahve içmez.",
+    "beispielEn": "My dad never drinks coffee in the evening."
   },
   {
     "id": 507,
     "tr": "gerçekten",
     "en": "really",
-    "beispiel": "Willst du das wirklich kaufen?",
-    "beispielTr": "Bunu gerçekten almak istiyor musun?",
-    "beispielEn": "Do you really want to buy this?"
+    "beispiel": "Der Kuchen von deiner Mutter ist wirklich lecker.",
+    "beispielTr": "Annenin yaptığı kek gerçekten çok lezzetli.",
+    "beispielEn": "Your mom's cake is really delicious."
   },
   {
     "id": 259,
     "tr": "hiçbir",
     "en": "no",
-    "beispiel": "Ich habe heute keine Zeit.",
-    "beispielTr": "Bugün hiç vaktim yok.",
-    "beispielEn": "I have no time today."
+    "beispiel": "Im Dorf gibt es kein Kino.",
+    "beispielTr": "Köyde hiç sinema yok.",
+    "beispielEn": "There's no movie theater in the village."
   },
   {
     "id": 475,
@@ -251,9 +251,9 @@
     "id": 115,
     "tr": "kolay",
     "en": "easy",
-    "beispiel": "Die Übung ist ganz einfach.",
-    "beispielTr": "Alıştırma çok kolay.",
-    "beispielEn": "The exercise is very easy."
+    "beispiel": "Das Rezept ist einfach, probier es mal!",
+    "beispielTr": "Tarif kolay, bir dene!",
+    "beispielEn": "The recipe is easy, give it a try!"
   },
   {
     "id": 293,
@@ -267,25 +267,25 @@
     "id": 710,
     "tr": "hayat",
     "en": "life",
-    "beispiel": "Das Leben in diesem Land ist teuer.",
-    "beispielTr": "Bu ülkede hayat pahalı.",
-    "beispielEn": "Life in this country is expensive."
+    "beispiel": "Mit einem Hund ist das Leben nie langweilig.",
+    "beispielTr": "Köpekle hayat asla sıkıcı olmuyor.",
+    "beispielEn": "Life with a dog is never boring."
   },
   {
     "id": 522,
     "tr": "zaman",
     "en": "time",
-    "beispiel": "Wann hast du Zeit für mich?",
-    "beispielTr": "Bana ne zaman vaktin var?",
-    "beispielEn": "When do you have time for me?"
+    "beispiel": "Im Urlaub habe ich endlich Zeit für Bücher.",
+    "beispielTr": "Tatilde nihayet kitaplara zamanım oluyor.",
+    "beispielEn": "On vacation I finally have time for books."
   },
   {
     "id": 272,
     "tr": "gelmek",
     "en": "to come",
-    "beispiel": "Der Bus kommt in fünf Minuten.",
-    "beispielTr": "Otobüs beş dakika sonra geliyor.",
-    "beispielEn": "The bus is coming in five minutes."
+    "beispiel": "Mein Cousin kommt morgen aus Brasilien zu Besuch.",
+    "beispielTr": "Kuzenim yarın Brezilya'dan ziyarete geliyor.",
+    "beispielEn": "My cousin is coming from Brazil to visit tomorrow."
   },
   {
     "id": 100,
@@ -339,9 +339,9 @@
     "id": 295,
     "tr": "üzgün",
     "en": "sorry",
-    "beispiel": "Es tut mir leid.",
-    "beispielTr": "Üzgünüm.",
-    "beispielEn": "I'm sorry."
+    "beispiel": "Dein Unfall tut mir wirklich leid.",
+    "beispielTr": "Kaza geçirdiğin için gerçekten üzgünüm.",
+    "beispielEn": "I'm really sorry about your accident."
   },
   {
     "id": 857,
@@ -355,9 +355,9 @@
     "id": 291,
     "tr": "bırakmak",
     "en": "to leave",
-    "beispiel": "Ihr könnt die Bücher zu Hause lassen.",
-    "beispielTr": "Kitapları evde bırakabilirsiniz.",
-    "beispielEn": "You can leave the books at home."
+    "beispiel": "Lass den Schlüssel bitte auf dem Tisch.",
+    "beispielTr": "Anahtarı lütfen masanın üstüne bırak.",
+    "beispielEn": "Please leave the key on the table."
   },
   {
     "id": 209,
@@ -379,17 +379,17 @@
     "id": 330,
     "tr": "yarın",
     "en": "tomorrow",
-    "beispiel": "Wir gehen morgen ins Schwimmbad.",
-    "beispielTr": "Yarın yüzme havuzuna gidiyoruz.",
-    "beispielEn": "We're going to the swimming pool tomorrow."
+    "beispiel": "Morgen besuche ich meine Großeltern.",
+    "beispielTr": "Yarın dedemle ninemi ziyaret ediyorum.",
+    "beispielEn": "Tomorrow I'm visiting my grandparents."
   },
   {
     "id": 299,
     "tr": "insanlar",
     "en": "people",
-    "beispiel": "In unserem Haus wohnen viele Leute.",
-    "beispielTr": "Bizim apartmanda çok insan oturuyor.",
-    "beispielEn": "A lot of people live in our building."
+    "beispiel": "Am Bahnhof warten heute sehr viele Leute.",
+    "beispielTr": "Bugün garda çok fazla insan bekliyor.",
+    "beispielEn": "A lot of people are waiting at the train station today."
   },
   {
     "id": 832,

@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Gleichgültigkeiten",
    "currentTr": "kayıtsızlık, umursamazlık",
-   "currentBeispiel": "Die größte Gefahr ist nicht der Widerspruch, sondern die Gleichgültigkeit.",
-   "currentBeispielTr": "En büyük tehlike itiraz değil, kayıtsızlıktır."
+   "currentBeispiel": "Ihre Gleichgültigkeit beim Abschied hat mich verletzt.",
+   "currentBeispielTr": "Vedalaşırken takındığı kayıtsızlık beni incitti."
   },
   {
    "id": 7004,
@@ -20,7 +20,7 @@
    "formen": "",
    "currentTr": "sertlik, hararet, coşkunluk",
    "currentBeispiel": "Mit unerwarteter Vehemenz wies er die Vorwürfe zurück.",
-   "currentBeispielTr": "Suçlamaları beklenmedik bir hararetle reddetti."
+   "currentBeispielTr": "Suçlamaları beklenmedik bir sertlikle reddetti."
   },
   {
    "id": 7005,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Schattierungen",
    "currentTr": "ince ayrım, tonlama, nüans",
-   "currentBeispiel": "Der Text kennt viele Schattierungen zwischen Zustimmung und Ablehnung.",
-   "currentBeispielTr": "Metin, onayla ret arasında pek çok ince ayrım barındırıyor."
+   "currentBeispiel": "Er beschrieb die Lage ohne jede Schattierung.",
+   "currentBeispielTr": "Durumu en ufak bir nüans olmadan anlattı."
   },
   {
    "id": 7006,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "olgunluk, yaşanmışlıktan gelen dinginlik",
-   "currentBeispiel": "Die Abgeklärtheit des Alters ersetzt bisweilen den Ehrgeiz der Jugend.",
-   "currentBeispielTr": "Yaşın getirdiği olgunluk zaman zaman gençliğin hırsının yerini alır."
+   "currentBeispiel": "Seine Abgeklärtheit in der Krise beeindruckte alle Kollegen.",
+   "currentBeispielTr": "Kriz sırasındaki dinginliği bütün meslektaşlarını etkiledi."
   },
   {
    "id": 7009,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kuşku, şüphe, güvensizlik",
-   "currentBeispiel": "Die plötzliche Kehrtwende weckte bei vielen Beobachtern Argwohn.",
-   "currentBeispielTr": "Ani dönüş birçok gözlemcide kuşku uyandırdı.",
+   "currentBeispiel": "Sein plötzlicher Reichtum weckte bei den Nachbarn Argwohn.",
+   "currentBeispielTr": "Ani zenginliği komşularda kuşku uyandırdı.",
    "overlapping": [
     "die Skepsis (C1)"
    ]
@@ -103,7 +103,7 @@
    "formen": "Aufrichtigkeiten",
    "currentTr": "içtenlik, dürüstlük, samimiyet",
    "currentBeispiel": "An seiner Aufrichtigkeit zweifelte im Saal niemand.",
-   "currentBeispielTr": "Salonda onun içtenliğinden kimse kuşku duymadı."
+   "currentBeispielTr": "Salonda kimse onun içtenliğinden kuşku duymadı."
   },
   {
    "id": 7013,
@@ -112,8 +112,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "laiklik",
-   "currentBeispiel": "Der Laizismus verlangt eine strikte Trennung von Staat und Kirche.",
-   "currentBeispielTr": "Laiklik, devlet ile kilisenin kesin biçimde ayrılmasını gerektirir."
+   "currentBeispiel": "In der Türkei wird über den Laizismus heftig gestritten.",
+   "currentBeispielTr": "Türkiye'de laiklik üzerine sert tartışmalar yapılıyor."
   },
   {
    "id": 7014,
@@ -123,7 +123,7 @@
    "formen": "",
    "currentTr": "dindarlık, sofuluk",
    "currentBeispiel": "Ihre stille Frömmigkeit war für Außenstehende kaum sichtbar.",
-   "currentBeispielTr": "Onun sessiz dindarlığı dışarıdan bakanlar için neredeyse görünmezdi."
+   "currentBeispielTr": "Onun sessiz dindarlığı dışarıdan pek fark edilmiyordu."
   },
   {
    "id": 7015,
@@ -132,8 +132,8 @@
    "niveau": "C1",
    "formen": "Glaubensbekenntnisse",
    "currentTr": "iman ikrarı, inanç bildirisi",
-   "currentBeispiel": "Die Gemeinde spricht das Glaubensbekenntnis am Ende des Gottesdienstes.",
-   "currentBeispielTr": "Cemaat, ayinin sonunda iman ikrarını birlikte okur."
+   "currentBeispiel": "Die Gemeinde spricht das Glaubensbekenntnis nach der Predigt.",
+   "currentBeispielTr": "Cemaat, vaazdan sonra iman ikrarını okur."
   },
   {
    "id": 7016,
@@ -142,8 +142,8 @@
    "niveau": "C1",
    "formen": "Konfessionen",
    "currentTr": "mezhep, itikat",
-   "currentBeispiel": "In dieser Stadt leben Menschen unterschiedlicher Konfessionen friedlich nebeneinander.",
-   "currentBeispielTr": "Bu şehirde farklı mezheplerden insanlar barış içinde yan yana yaşıyor."
+   "currentBeispiel": "Das Formular fragt nach Name, Alter und Konfession.",
+   "currentBeispielTr": "Formda ad, yaş ve mezhep soruluyor."
   },
   {
    "id": 7017,
@@ -152,8 +152,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "vicdan özgürlüğü",
-   "currentBeispiel": "Die Verfassung schützt die Gewissensfreiheit jedes einzelnen Bürgers.",
-   "currentBeispielTr": "Anayasa her bir yurttaşın vicdan özgürlüğünü korur."
+   "currentBeispiel": "Er berief sich vor Gericht auf seine Gewissensfreiheit.",
+   "currentBeispielTr": "Mahkemede vicdan özgürlüğünü öne sürdü."
   },
   {
    "id": 7018,
@@ -162,8 +162,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "din özgürlüğü",
-   "currentBeispiel": "Ohne Religionsfreiheit bleibt religiöse Vielfalt eine bloße Behauptung.",
-   "currentBeispielTr": "Din özgürlüğü olmadan dinsel çeşitlilik yalnızca bir iddia olarak kalır."
+   "currentBeispiel": "Sie floh in ein Land mit garantierter Religionsfreiheit.",
+   "currentBeispielTr": "Din özgürlüğü güvence altında olan bir ülkeye kaçtı."
   },
   {
    "id": 7019,
@@ -172,8 +172,8 @@
    "niveau": "C1",
    "formen": "Dogmen",
    "currentTr": "dogma, nas",
-   "currentBeispiel": "Er weigerte sich, ein überliefertes Dogma unkritisch zu übernehmen.",
-   "currentBeispielTr": "Aktarılagelen bir dogmayı sorgusuzca benimsemeyi reddetti."
+   "currentBeispiel": "Er weigerte sich, das alte Dogma unkritisch zu übernehmen.",
+   "currentBeispielTr": "Eski dogmayı sorgusuzca benimsemeyi reddetti."
   },
   {
    "id": 7020,
@@ -182,8 +182,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ortodoksi, katı bağlılık",
-   "currentBeispiel": "Die strenge Orthodoxie ließ kaum Raum für abweichende Deutungen.",
-   "currentBeispielTr": "Katı ortodoksi, farklı yorumlara neredeyse hiç yer bırakmadı."
+   "currentBeispiel": "Sein Vater hielt streng an der alten Orthodoxie fest.",
+   "currentBeispielTr": "Babası eski ortodoksiye sıkı sıkıya bağlıydı."
   },
   {
    "id": 7021,
@@ -192,8 +192,8 @@
    "niveau": "C1",
    "formen": "Häresien",
    "currentTr": "sapkınlık, dinî sapma",
-   "currentBeispiel": "Was früher als Häresie galt, wird heute nüchtern diskutiert.",
-   "currentBeispielTr": "Eskiden sapkınlık sayılan şey bugün serinkanlılıkla tartışılıyor."
+   "currentBeispiel": "Seine Thesen wurden damals als Häresie verurteilt.",
+   "currentBeispielTr": "Tezleri o dönemde sapkınlık olarak mahkûm edildi."
   },
   {
    "id": 7022,
@@ -202,8 +202,8 @@
    "niveau": "C1",
    "formen": "Offenbarungen",
    "currentTr": "vahiy, ifşa",
-   "currentBeispiel": "Die Schrift versteht sich selbst als Offenbarung göttlichen Willens.",
-   "currentBeispielTr": "Kutsal metin kendisini ilahi iradenin vahyi olarak anlar."
+   "currentBeispiel": "Der Prophet empfing die Offenbarung in einer Höhle.",
+   "currentBeispielTr": "Peygamber vahyi bir mağarada aldı."
   },
   {
    "id": 7023,
@@ -212,8 +212,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "aşkınlık",
-   "currentBeispiel": "Ohne den Bezug auf Transzendenz verliert der Begriff seinen Sinn.",
-   "currentBeispielTr": "Aşkınlıkla ilişkisi kesildiğinde kavram anlamını yitirir."
+   "currentBeispiel": "Der Philosoph sprach zwei Stunden über Transzendenz.",
+   "currentBeispielTr": "Filozof iki saat boyunca aşkınlık üzerine konuştu."
   },
   {
    "id": 7024,
@@ -222,8 +222,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "öte dünya, ahiret",
-   "currentBeispiel": "Vorstellungen vom Jenseits unterscheiden sich zwischen den Religionen erheblich.",
-   "currentBeispielTr": "Öte dünya tasavvurları dinler arasında hayli farklılık gösterir."
+   "currentBeispiel": "Meine Großmutter glaubt fest an das Jenseits.",
+   "currentBeispielTr": "Büyükannem öte dünyaya kesinlikle inanıyor."
   },
   {
    "id": 7025,
@@ -232,8 +232,8 @@
    "niveau": "C1",
    "formen": "Erlösungen",
    "currentTr": "kurtuluş, selamet",
-   "currentBeispiel": "Die Lehre verspricht Erlösung durch Umkehr und tätige Reue.",
-   "currentBeispielTr": "Öğreti, dönüş ve eylemli pişmanlık yoluyla kurtuluş vaat eder."
+   "currentBeispiel": "Der Priester versprach den Gläubigen Erlösung.",
+   "currentBeispielTr": "Rahip, inananlara kurtuluş vaat etti."
   },
   {
    "id": 7026,
@@ -242,8 +242,8 @@
    "niveau": "C1",
    "formen": "Gnaden",
    "currentTr": "lütuf, merhamet",
-   "currentBeispiel": "Nach dieser Auffassung ist Gnade nicht verdienbar, sondern geschenkt.",
-   "currentBeispielTr": "Bu anlayışa göre lütuf hak edilemez, bağışlanır."
+   "currentBeispiel": "Sie führte ihr Überleben auf göttliche Gnade zurück.",
+   "currentBeispielTr": "Hayatta kalmasını ilahi lütfa bağladı."
   },
   {
    "id": 7027,
@@ -252,8 +252,8 @@
    "niveau": "C1",
    "formen": "Bußen",
    "currentTr": "tövbe, kefaret",
-   "currentBeispiel": "Die Buße galt als sichtbares Zeichen innerer Umkehr.",
-   "currentBeispielTr": "Tövbe, içsel bir dönüşün görünür işareti sayılırdı."
+   "currentBeispiel": "Der Mönch tat wochenlang Buße für seinen Fehler.",
+   "currentBeispielTr": "Keşiş, hatası için haftalarca tövbe etti."
   },
   {
    "id": 7028,
@@ -262,8 +262,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çilecilik, nefis terbiyesi",
-   "currentBeispiel": "Askese bedeutet hier bewussten Verzicht, nicht Verachtung des Körpers.",
-   "currentBeispielTr": "Burada çile, bedeni küçümsemeyi değil bilinçli bir vazgeçişi anlatır."
+   "currentBeispiel": "Er lebte jahrelang in strenger Askese.",
+   "currentBeispielTr": "Yıllarca katı bir çilecilik içinde yaşadı."
   },
   {
    "id": 7029,
@@ -272,8 +272,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "mistisizm, tasavvuf",
-   "currentBeispiel": "Die Mystik sucht die unmittelbare Erfahrung des Göttlichen.",
-   "currentBeispielTr": "Mistisizm, ilahi olanın dolaysız deneyimini arar."
+   "currentBeispiel": "Sie schrieb ihre Doktorarbeit über mittelalterliche Mystik.",
+   "currentBeispielTr": "Doktora tezini ortaçağ mistisizmi üzerine yazdı."
   },
   {
    "id": 7030,
@@ -282,8 +282,8 @@
    "niveau": "C1",
    "formen": "Sakramente",
    "currentTr": "sakrament, kutsal ayin",
-   "currentBeispiel": "Die Taufe gilt in vielen Kirchen als grundlegendes Sakrament.",
-   "currentBeispielTr": "Vaftiz, birçok kilisede temel bir sakrament sayılır."
+   "currentBeispiel": "Das Paar empfing das Sakrament der Ehe.",
+   "currentBeispielTr": "Çift, evlilik sakramentini aldı."
   },
   {
    "id": 7031,
@@ -292,8 +292,8 @@
    "niveau": "C1",
    "formen": "Liturgien",
    "currentTr": "ayin düzeni, litürji",
-   "currentBeispiel": "Die Liturgie folgt einer festen Ordnung von Gesang und Gebet.",
-   "currentBeispielTr": "Ayin düzeni, ilahi ve dua bakımından belirli bir sıra izler."
+   "currentBeispiel": "Der neue Pfarrer änderte die Liturgie behutsam.",
+   "currentBeispielTr": "Yeni papaz ayin düzenini ölçülü biçimde değiştirdi."
   },
   {
    "id": 7032,
@@ -302,8 +302,8 @@
    "niveau": "C1",
    "formen": "Predigten",
    "currentTr": "vaaz",
-   "currentBeispiel": "Seine Predigt griff aktuelle gesellschaftliche Konflikte behutsam auf.",
-   "currentBeispielTr": "Vaazı, güncel toplumsal çatışmaları ölçülü biçimde ele aldı."
+   "currentBeispiel": "Die Predigt am Sonntag dauerte fast eine Stunde.",
+   "currentBeispielTr": "Pazar günkü vaaz neredeyse bir saat sürdü."
   },
   {
    "id": 7033,
@@ -312,8 +312,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "manevi rehberlik, ruhani danışmanlık",
-   "currentBeispiel": "In Kliniken übernimmt die Seelsorge oft eine tröstende Aufgabe.",
-   "currentBeispielTr": "Hastanelerde manevi rehberlik çoğu zaman teselli edici bir işlev üstlenir."
+   "currentBeispiel": "Im Krankenhaus arbeitet sie seit Jahren in der Seelsorge.",
+   "currentBeispielTr": "Hastanede yıllardır manevi rehberlik alanında çalışıyor."
   },
   {
    "id": 7034,
@@ -323,7 +323,7 @@
    "formen": "",
    "currentTr": "ruhban sınıfı, din adamları",
    "currentBeispiel": "Die Geistlichkeit verlor im Zuge der Modernisierung erheblich an Autorität.",
-   "currentBeispielTr": "Ruhban sınıfı, modernleşmeyle birlikte otoritesini büyük ölçüde yitirdi."
+   "currentBeispielTr": "Din adamları, modernleşme sürecinde otoritelerini büyük ölçüde yitirdi."
   },
   {
    "id": 7035,
@@ -343,7 +343,7 @@
    "formen": "Wallfahrten",
    "currentTr": "hac yolculuğu, ziyaret",
    "currentBeispiel": "Jedes Frühjahr brechen Tausende zu einer Wallfahrt auf.",
-   "currentBeispielTr": "Her ilkbaharda binlerce kişi bir hac yolculuğuna çıkar."
+   "currentBeispielTr": "Her ilkbaharda binlerce kişi hac yolculuğuna çıkar."
   },
   {
    "id": 7037,
@@ -352,8 +352,8 @@
    "niveau": "C1",
    "formen": "Fastenzeiten",
    "currentTr": "oruç dönemi, perhiz zamanı",
-   "currentBeispiel": "Während der Fastenzeit verzichten viele bewusst auf gewohnte Annehmlichkeiten.",
-   "currentBeispielTr": "Oruç döneminde birçok kişi alışkın olduğu rahatlıklardan bilinçli olarak vazgeçer."
+   "currentBeispiel": "Während der Fastenzeit isst er kein Fleisch.",
+   "currentBeispielTr": "Oruç döneminde et yemiyor."
   },
   {
    "id": 7038,
@@ -362,8 +362,8 @@
    "niveau": "C1",
    "formen": "Kirchenaustritte",
    "currentTr": "kiliseden ayrılma, üyelikten çıkma",
-   "currentBeispiel": "Die Zahl der Kirchenaustritte ist in den letzten Jahren gestiegen.",
-   "currentBeispielTr": "Kiliseden ayrılanların sayısı son yıllarda arttı."
+   "currentBeispiel": "Nach dem Skandal erklärte sie ihren Kirchenaustritt.",
+   "currentBeispielTr": "Skandaldan sonra kiliseden ayrıldığını açıkladı."
   },
   {
    "id": 7039,
@@ -372,8 +372,8 @@
    "niveau": "C1",
    "formen": "Exegesen",
    "currentTr": "metin şerhi, tefsir",
-   "currentBeispiel": "Seine Exegese des Textes weicht von der herrschenden Lesart ab.",
-   "currentBeispielTr": "Metne ilişkin şerhi, hâkim okumadan ayrılıyor."
+   "currentBeispiel": "Seine Exegese weicht von der herrschenden Lesart ab.",
+   "currentBeispielTr": "Onun tefsiri, yerleşik okumadan ayrılıyor."
   },
   {
    "id": 7040,
@@ -382,8 +382,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "köktencilik",
-   "currentBeispiel": "Fundamentalismus entsteht selten ohne das Gefühl kultureller Bedrohung.",
-   "currentBeispielTr": "Köktencilik, kültürel tehdit duygusu olmadan nadiren ortaya çıkar."
+   "currentBeispiel": "Der Autor warnt seit Jahren vor religiösem Fundamentalismus.",
+   "currentBeispielTr": "Yazar yıllardır dinî köktenciliğe karşı uyarıyor."
   },
   {
    "id": 7041,
@@ -392,8 +392,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "batıl inanç",
-   "currentBeispiel": "Zwischen Aberglaube und gelebtem Volksglauben verläuft keine klare Grenze.",
-   "currentBeispielTr": "Batıl inançla yaşayan halk inancı arasında net bir sınır yoktur."
+   "currentBeispiel": "Ihre Angst vor schwarzen Katzen ist reiner Aberglaube.",
+   "currentBeispielTr": "Kara kedilerden korkması tam bir batıl inanç."
   },
   {
    "id": 7042,
@@ -402,8 +402,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "maneviyat, tinsellik",
-   "currentBeispiel": "Viele suchen Spiritualität heute außerhalb der etablierten Institutionen.",
-   "currentBeispielTr": "Bugün birçok kişi maneviyatı yerleşik kurumların dışında arıyor."
+   "currentBeispiel": "Nach der Krankheit entdeckte er seine Spiritualität neu.",
+   "currentBeispielTr": "Hastalıktan sonra maneviyatını yeniden keşfetti."
   },
   {
    "id": 7043,
@@ -422,8 +422,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "agnostisizm, bilinemezcilik",
-   "currentBeispiel": "Der Agnostizismus hält die Frage nach Gott für unentscheidbar.",
-   "currentBeispielTr": "Agnostisizm, Tanrı sorusunu karara bağlanamaz görür."
+   "currentBeispiel": "Nach langem Zweifeln landete er beim Agnostizismus.",
+   "currentBeispielTr": "Uzun tereddütlerin ardından agnostisizme vardı."
   },
   {
    "id": 7045,
@@ -432,8 +432,8 @@
    "niveau": "C1",
    "formen": "Schöpfungen",
    "currentTr": "yaratılış, kâinat",
-   "currentBeispiel": "Die Schöpfung wird hier als anvertrautes Gut verstanden.",
-   "currentBeispielTr": "Yaratılış burada emanet edilmiş bir varlık olarak anlaşılır."
+   "currentBeispiel": "Das Fresko zeigt die Schöpfung der Welt.",
+   "currentBeispielTr": "Fresk, dünyanın yaratılışını gösteriyor."
   },
   {
    "id": 7046,
@@ -442,8 +442,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ilahi takdir, kader",
-   "currentBeispiel": "An eine lenkende Vorsehung glaubt heute kaum noch jemand.",
-   "currentBeispielTr": "Yönlendirici bir ilahi takdire bugün neredeyse kimse inanmıyor."
+   "currentBeispiel": "Nach dem Unfall sprach sie von der Vorsehung.",
+   "currentBeispielTr": "Kazadan sonra ilahi takdirden söz etti."
   },
   {
    "id": 7047,
@@ -453,7 +453,7 @@
    "formen": "Reliquien",
    "currentTr": "kutsal emanet",
    "currentBeispiel": "Die Reliquie zog jahrhundertelang Pilger aus ganz Europa an.",
-   "currentBeispielTr": "Kutsal emanet yüzyıllar boyunca Avrupa'nın her yerinden hacı çekti."
+   "currentBeispielTr": "Kutsal emanet, yüzyıllarca Avrupa'nın her yerinden hacı çekti."
   },
   {
    "id": 7048,
@@ -462,8 +462,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ekümenizm, kiliseler arası birlik",
-   "currentBeispiel": "Die Ökumene bemüht sich um Annäherung zwischen getrennten Kirchen.",
-   "currentBeispielTr": "Ekümenizm, ayrı düşmüş kiliseler arasında yakınlaşma çabası güder."
+   "currentBeispiel": "Er engagiert sich seit Jahren in der Ökumene.",
+   "currentBeispielTr": "Yıllardır ekümenizm çalışmalarında etkin biçimde yer alıyor."
   },
   {
    "id": 7049,
@@ -473,7 +473,7 @@
    "formen": "",
    "currentTr": "derin saygı, huşu",
    "currentBeispiel": "Er betrat den alten Betsaal mit sichtbarer Ehrfurcht.",
-   "currentBeispielTr": "Eski ibadet salonuna gözle görülür bir huşu içinde girdi."
+   "currentBeispielTr": "Eski ibadet salonuna gözle görülür bir huşuyla girdi."
   },
   {
    "id": 7050,
@@ -492,8 +492,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "büyübozumu, gizemin yitimi",
-   "currentBeispiel": "Die Entzauberung der Welt beschreibt einen langen historischen Prozess.",
-   "currentBeispielTr": "Dünyanın büyübozumu uzun bir tarihsel süreci anlatır."
+   "currentBeispiel": "Max Weber nannte diesen Prozess die Entzauberung der Welt.",
+   "currentBeispielTr": "Max Weber bu süreci dünyanın büyübozumu olarak adlandırdı."
   },
   {
    "id": 7052,
@@ -502,8 +502,8 @@
    "niveau": "C1",
    "formen": "Glaubenskrisen",
    "currentTr": "inanç krizi, iman bunalımı",
-   "currentBeispiel": "Nach dem Verlust geriet er in eine tiefe Glaubenskrise.",
-   "currentBeispielTr": "Kaybın ardından derin bir inanç krizine düştü."
+   "currentBeispiel": "Nach dem Tod seiner Frau geriet er in eine Glaubenskrise.",
+   "currentBeispielTr": "Karısının ölümünden sonra bir inanç krizine düştü."
   }
  ]
 }

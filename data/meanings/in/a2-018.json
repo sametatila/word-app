@@ -9,8 +9,8 @@
    "niveau": "A2",
    "formen": "zieht groß, hat großgezogen",
    "currentTr": "büyütmek, yetiştirmek",
-   "currentBeispiel": "Sie hat drei Kinder allein großgezogen.",
-   "currentBeispielTr": "Üç çocuğu tek başına büyüttü.",
+   "currentBeispiel": "Sie will ihre drei Kinder allein großziehen.",
+   "currentBeispielTr": "Üç çocuğunu tek başına büyütmek istiyor.",
    "overlapping": [
     "vergrößern (B1)"
    ]
@@ -56,8 +56,8 @@
    "niveau": "A2",
    "formen": "erbt, hat geerbt",
    "currentTr": "miras almak",
-   "currentBeispiel": "Er hat von seiner Tante ein altes Haus geerbt.",
-   "currentBeispielTr": "Halasından eski bir ev miras aldı."
+   "currentBeispiel": "Sie erbt von ihrer Tante ein altes Haus.",
+   "currentBeispielTr": "Teyzesinden eski bir ev miras alıyor."
   },
   {
    "id": 7843,
@@ -140,8 +140,8 @@
    "niveau": "A2",
    "formen": "tauft, hat getauft",
    "currentTr": "vaftiz etmek",
-   "currentBeispiel": "Das Baby wird am Sonntag getauft.",
-   "currentBeispielTr": "Bebek pazar günü vaftiz edilecek."
+   "currentBeispiel": "Der Pfarrer tauft das Baby am Sonntag.",
+   "currentBeispielTr": "Papaz bebeği pazar günü vaftiz ediyor."
   },
   {
    "id": 7851,
@@ -161,7 +161,7 @@
    "formen": "trauert, hat getrauert",
    "currentTr": "yas tutmak",
    "currentBeispiel": "Die Familie trauert um den Großvater.",
-   "currentBeispielTr": "Aile büyükbaba için yas tutuyor."
+   "currentBeispielTr": "Aile büyükbabanın ardından yas tutuyor."
   },
   {
    "id": 7853,
@@ -170,8 +170,8 @@
    "niveau": "A2",
    "formen": "überreicht, hat überreicht",
    "currentTr": "takdim etmek, elden vermek",
-   "currentBeispiel": "Am Ende der Feier überreicht er den Gästen kleine Geschenke.",
-   "currentBeispielTr": "Kutlamanın sonunda misafirlere küçük hediyeler takdim ediyor."
+   "currentBeispiel": "Nach der Rede überreicht er der Braut ein Geschenk.",
+   "currentBeispielTr": "Konuşmadan sonra geline bir hediye takdim ediyor."
   },
   {
    "id": 7854,
@@ -191,7 +191,7 @@
    "formen": "hütet, hat gehütet",
    "currentTr": "bakmak, göz kulak olmak",
    "currentBeispiel": "Am Samstag hüte ich die Kinder meiner Schwester.",
-   "currentBeispielTr": "Cumartesi kız kardeşimin çocuklarına bakıyorum.",
+   "currentBeispielTr": "Cumartesi kız kardeşimin çocuklarına göz kulak oluyorum.",
    "overlapping": [
     "ansehen (A2)",
     "betreuen (B1)",
@@ -208,8 +208,8 @@
    "niveau": "A2",
    "formen": "schaut vorbei, hat vorbeigeschaut",
    "currentTr": "uğramak, şöyle bir uğrayıp bakmak",
-   "currentBeispiel": "Schau doch am Sonntag bei uns vorbei!",
-   "currentBeispielTr": "Pazar günü bize uğrasana!",
+   "currentBeispiel": "Kannst du am Sonntag bei uns vorbeischauen?",
+   "currentBeispielTr": "Pazar günü bize uğrayabilir misin?",
    "overlapping": [
     "vorbeikommen (A2)"
    ]
@@ -231,8 +231,8 @@
    "niveau": "A2",
    "formen": "lebt zusammen, hat zusammengelebt",
    "currentTr": "birlikte yaşamak",
-   "currentBeispiel": "In diesem Haus leben drei Generationen zusammen.",
-   "currentBeispielTr": "Bu evde üç kuşak birlikte yaşıyor."
+   "currentBeispiel": "Mein Bruder und seine Freundin wollen bald zusammenleben.",
+   "currentBeispielTr": "Abim ve kız arkadaşı yakında birlikte yaşamak istiyor."
   },
   {
    "id": 7859,
@@ -294,8 +294,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şık (özel gün için), şenlikli",
-   "currentBeispiel": "Alle Gäste sind festlich gekleidet.",
-   "currentBeispielTr": "Bütün misafirler bayramlık giyinmiş.",
+   "currentBeispiel": "Das ganze Haus sieht heute festlich aus.",
+   "currentBeispielTr": "Bütün ev bugün şenlikli görünüyor.",
    "overlapping": [
     "chic/schick (B1)",
     "elegant (B1)"
@@ -309,7 +309,7 @@
    "formen": "",
    "currentTr": "törensel, ağırbaşlı",
    "currentBeispiel": "Die Rede des Vaters war sehr feierlich.",
-   "currentBeispielTr": "Babanın konuşması çok törenseldi."
+   "currentBeispielTr": "Babanın konuşması çok resmî ve ciddiydi."
   },
   {
    "id": 7866,
@@ -341,8 +341,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "terbiyesiz, yaramaz",
-   "currentBeispiel": "Sei nicht so ungezogen zu deiner Oma!",
-   "currentBeispielTr": "Büyükannene karşı bu kadar terbiyesiz olma!"
+   "currentBeispiel": "Der kleine Junge war heute sehr ungezogen.",
+   "currentBeispielTr": "Küçük çocuk bugün çok yaramazdı."
   },
   {
    "id": 7869,
@@ -365,7 +365,7 @@
    "formen": "",
    "currentTr": "evli olmayan, bekâr",
    "currentBeispiel": "Meine Tante ist immer noch unverheiratet.",
-   "currentBeispielTr": "Teyzem hâlâ evli değil."
+   "currentBeispielTr": "Teyzem hâlâ bekâr."
   },
   {
    "id": 7871,
@@ -375,7 +375,7 @@
    "formen": "",
    "currentTr": "kendi aralarında, birbirleriyle",
    "currentBeispiel": "Die Geschwister helfen sich untereinander.",
-   "currentBeispielTr": "Kardeşler kendi aralarında birbirlerine yardım ediyor."
+   "currentBeispielTr": "Kardeşler kendi aralarında yardımlaşıyor."
   },
   {
    "id": 7872,
@@ -385,7 +385,7 @@
    "formen": "",
    "currentTr": "birbiri için",
    "currentBeispiel": "Gute Freunde sind immer füreinander da.",
-   "currentBeispielTr": "İyi arkadaşlar her zaman birbiri için oradadır."
+   "currentBeispielTr": "İyi arkadaşlar her zaman birbirinin yanındadır."
   },
   {
    "id": 7873,
@@ -408,8 +408,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şımarık",
-   "currentBeispiel": "Das Kind ist von seinen Großeltern ziemlich verwöhnt.",
-   "currentBeispielTr": "Çocuk büyükanne ve büyükbabası tarafından epey şımartılmış."
+   "currentBeispiel": "Seine kleine Schwester ist ziemlich verwöhnt.",
+   "currentBeispielTr": "Küçük kız kardeşi epey şımarık."
   },
   {
    "id": 7875,
@@ -418,8 +418,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "bekâr, yalnız yaşayan",
-   "currentBeispiel": "Sie ist alleinstehend und wohnt mit ihrer Katze.",
-   "currentBeispielTr": "O bekâr ve kedisiyle yaşıyor.",
+   "currentBeispiel": "Sie ist alleinstehend und hat keine Kinder.",
+   "currentBeispielTr": "Yalnız yaşıyor ve çocuğu yok.",
    "overlapping": [
     "ledig (A1)"
    ]
@@ -444,8 +444,8 @@
    "niveau": "A2",
    "formen": "entspannt sich, hat sich entspannt",
    "currentTr": "rahatlamak, gevşemek",
-   "currentBeispiel": "Nach der Arbeit entspanne ich mich am liebsten mit Musik.",
-   "currentBeispielTr": "İşten sonra en çok müzikle rahatlıyorum."
+   "currentBeispiel": "Nach der Arbeit entspanne ich mich gern mit Musik.",
+   "currentBeispielTr": "İşten sonra müzikle rahatlamayı seviyorum."
   },
   {
    "id": 7878,
@@ -531,7 +531,7 @@
    "formen": "schaltet ab, hat abgeschaltet",
    "currentTr": "kafa dağıtmak, kapatmak (cihaz)",
    "currentBeispiel": "Beim Wandern kann ich richtig gut abschalten.",
-   "currentBeispielTr": "Doğa yürüyüşünde gerçekten güzel kafa dağıtabiliyorum."
+   "currentBeispielTr": "Doğa yürüyüşünde gerçekten iyi kafa dağıtabiliyorum."
   },
   {
    "id": 7886,
@@ -540,8 +540,8 @@
    "niveau": "A2",
    "formen": "rudert, ist gerudert",
    "currentTr": "kürek çekmek",
-   "currentBeispiel": "Wir sind mit dem Boot bis zur kleinen Insel gerudert.",
-   "currentBeispielTr": "Kayıkla küçük adaya kadar kürek çektik."
+   "currentBeispiel": "Wir rudern mit dem Boot zur kleinen Insel.",
+   "currentBeispielTr": "Kayıkla küçük adaya kürek çekiyoruz."
   },
   {
    "id": 7887,

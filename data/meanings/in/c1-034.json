@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "hat nominiert",
    "currentTr": "aday göstermek",
-   "currentBeispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin.",
-   "currentBeispielTr": "Parti sürpriz biçimde partisiz bir kadın adayı gösterdi."
+   "currentBeispiel": "Der Film wurde für drei Oscars nominiert.",
+   "currentBeispielTr": "Film üç Oscar'a aday gösterildi."
   },
   {
    "id": 6904,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "hat entmachtet",
    "currentTr": "yetkisiz bırakmak, iktidardan düşürmek",
-   "currentBeispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung.",
-   "currentBeispielTr": "Reform, meclisi hükümet lehine fiilen yetkisiz bırakıyor."
+   "currentBeispiel": "Der neue Präsident entmachtete das Parlament innerhalb weniger Monate.",
+   "currentBeispielTr": "Yeni cumhurbaşkanı birkaç ay içinde parlamentoyu yetkisiz bıraktı."
   },
   {
    "id": 6905,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "hat ausgehöhlt",
    "currentTr": "içini boşaltmak, işlevsiz kılmak",
-   "currentBeispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus.",
-   "currentBeispielTr": "Sayısız istisna, anayasanın koruyuculuğunu yavaş yavaş içten boşaltıyor.",
+   "currentBeispiel": "Die vielen Ausnahmen höhlen das neue Gesetz völlig aus.",
+   "currentBeispielTr": "Sayısız istisna yeni yasanın içini tamamen boşaltıyor.",
    "overlapping": [
     "entkernen (C1)"
    ]
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "parlamenter, meclise ilişkin",
-   "currentBeispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument.",
-   "currentBeispielTr": "Araştırma komisyonu keskin bir parlamenter denetim aracıdır."
+   "currentBeispiel": "Die Opposition forderte einen parlamentarischen Untersuchungsausschuss.",
+   "currentBeispielTr": "Muhalefet, parlamenter bir soruşturma komisyonu kurulmasını istedi."
   },
   {
    "id": 6907,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
-   "currentBeispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen.",
-   "currentBeispielTr": "Bu görevleri yalnızca devlet kamu otoritesi olarak yerine getirebilir."
+   "currentBeispiel": "Private Firmen dürfen keine hoheitlichen Aufgaben übernehmen.",
+   "currentBeispielTr": "Özel şirketler kamu gücüne dayalı görevleri üstlenemez."
   },
   {
    "id": 6908,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "talimata bağlı",
-   "currentBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden.",
-   "currentBeispielTr": "Savcılık, Adalet Bakanlığı'nın talimatlarına bağlıdır."
+   "currentBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Ministerium weisungsgebunden.",
+   "currentBeispielTr": "Savcılık bakanlığın talimatlarına bağlıdır."
   },
   {
    "id": 6909,
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "popülist",
-   "currentBeispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen.",
-   "currentBeispielTr": "Popülist sloganlarla karmaşık sorunlar çözülemez."
+   "currentBeispiel": "Der Bürgermeister gewann die Wahl mit populistischen Versprechen.",
+   "currentBeispielTr": "Belediye başkanı seçimi popülist vaatlerle kazandı."
   },
   {
    "id": 6910,
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hatırlama yetisi, anımsama gücü",
-   "currentBeispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach.",
-   "currentBeispielTr": "Yaş ilerledikçe hatırlama yetisi yavaş yavaş zayıflar."
+   "currentBeispiel": "Nach dem Unfall ließ ihr Erinnerungsvermögen deutlich nach.",
+   "currentBeispielTr": "Kazadan sonra hatırlama yetisi belirgin biçimde zayıfladı."
   },
   {
    "id": 6911,
@@ -92,8 +92,8 @@
    "niveau": "C1",
    "formen": "Verzerrungen",
    "currentTr": "çarpıtma, sapma",
-   "currentBeispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden.",
-   "currentBeispielTr": "Düşüncedeki sistematik sapmalardan tümüyle kaçınmak neredeyse imkânsızdır."
+   "currentBeispiel": "Die Statistik enthält eine Verzerrung zugunsten junger Befragter.",
+   "currentBeispielTr": "İstatistikte genç katılımcılar lehine bir çarpıtma var."
   },
   {
    "id": 6912,
@@ -102,8 +102,8 @@
    "niveau": "C1",
    "formen": "Voreingenommenheiten",
    "currentTr": "peşin hüküm, taraflılık",
-   "currentBeispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht.",
-   "currentBeispielTr": "Çalışma, peşin hükmün aday değerlendirmesini nasıl bozduğunu inceliyor."
+   "currentBeispiel": "Seine Voreingenommenheit gegenüber Bewerberinnen fiel sofort auf.",
+   "currentBeispielTr": "Kadın adaylara karşı önyargısı hemen göze çarptı."
   },
   {
    "id": 6913,
@@ -112,8 +112,8 @@
    "niveau": "C1",
    "formen": "Entscheidungsfindungen",
    "currentTr": "karar verme süreci",
-   "currentBeispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln.",
-   "currentBeispielTr": "Zaman baskısı altında karar verme süreci daha çok basit kestirmeleri izler."
+   "currentBeispiel": "Im Team zog sich die Entscheidungsfindung über Wochen hin.",
+   "currentBeispielTr": "Ekipte karar verme süreci haftalarca sürüncemede kaldı."
   },
   {
    "id": 6914,
@@ -122,8 +122,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bilinç, farkındalık",
-   "currentBeispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt.",
-   "currentBeispielTr": "Nöral etkinlikten bilincin nasıl doğduğu bugün hâlâ aydınlatılamamıştır."
+   "currentBeispiel": "Nach dem Sturz verlor er kurz das Bewusstsein.",
+   "currentBeispielTr": "Düşmenin ardından kısa süre bilincini kaybetti."
   },
   {
    "id": 6915,
@@ -132,8 +132,8 @@
    "niveau": "C1",
    "formen": "Bedürfnisse",
    "currentTr": "ihtiyaç, gereksinim",
-   "currentBeispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an.",
-   "currentBeispielTr": "Takdir edilme ihtiyacı birçok insanı fark ettirmeden yönlendirir.",
+   "currentBeispiel": "Nach dem lauten Tag hatte er das Bedürfnis nach Stille.",
+   "currentBeispielTr": "Gürültülü günün ardından sessizlik ihtiyacı duydu.",
    "overlapping": [
     "der Bedarf (B1)"
    ]
@@ -145,8 +145,8 @@
    "niveau": "C1",
    "formen": "Reize",
    "currentTr": "uyaran, uyarıcı",
-   "currentBeispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden.",
-   "currentBeispielTr": "Beyin, uyaranların çoğunu bilince ulaşmadan önce süzer."
+   "currentBeispiel": "Das Gehirn filtert die meisten Reize unbewusst heraus.",
+   "currentBeispielTr": "Beyin uyaranların çoğunu farkında olmadan süzer."
   },
   {
    "id": 6917,
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "Denkfehler",
    "currentTr": "düşünme hatası, akıl yürütme yanlışı",
-   "currentBeispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf.",
-   "currentBeispielTr": "Bu düşünme hatası deneyimli uzmanlarda bile düzenli olarak görülür."
+   "currentBeispiel": "In seiner Rechnung steckt ein einfacher Denkfehler.",
+   "currentBeispielTr": "Hesabında basit bir düşünme hatası var."
   },
   {
    "id": 6918,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "muhakeme yetisi, yargı gücü",
-   "currentBeispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist.",
-   "currentBeispielTr": "Güçlü duygular muhakeme yetisini hoşumuza gidenden fazla bulandırır."
+   "currentBeispiel": "Der Alkohol trübte sein Urteilsvermögen an diesem Abend.",
+   "currentBeispielTr": "Alkol o akşam muhakeme yetisini bulandırdı."
   },
   {
    "id": 6919,
@@ -176,7 +176,7 @@
    "formen": "Selbstbilder",
    "currentTr": "benlik imgesi, kendilik algısı",
    "currentBeispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
-   "currentBeispielTr": "Onun benlik imgesi meslektaşlarının izlenimiyle pek örtüşmüyor."
+   "currentBeispielTr": "Onun benlik algısı meslektaşlarının izlenimiyle pek örtüşmüyor."
   },
   {
    "id": 6920,
@@ -185,8 +185,8 @@
    "niveau": "C1",
    "formen": "Identitäten",
    "currentTr": "kimlik",
-   "currentBeispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt.",
-   "currentBeispielTr": "Gençlikte kişinin kendi kimliği durmadan yeniden müzakere edilir.",
+   "currentBeispiel": "Der Betrüger gab sich mit falscher Identität als Polizist aus.",
+   "currentBeispielTr": "Dolandırıcı sahte kimlikle kendini polis olarak tanıttı.",
    "overlapping": [
     "der Ausweis (A1)"
    ]
@@ -198,8 +198,8 @@
    "niveau": "C1",
    "formen": "Konditionierungen",
    "currentTr": "koşullanma, şartlanma",
-   "currentBeispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals.",
-   "currentBeispielTr": "Pavlov koşullanmayı basit bir zil sinyaliyle gösterdi."
+   "currentBeispiel": "Durch Konditionierung reagierten die Hunde allein auf die Glocke.",
+   "currentBeispielTr": "Koşullanma sonucu köpekler yalnızca zil sesine tepki verdi."
   },
   {
    "id": 6922,
@@ -208,8 +208,8 @@
    "niveau": "C1",
    "formen": "Verstärkungen",
    "currentTr": "pekiştirme, takviye",
-   "currentBeispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe.",
-   "currentBeispielTr": "Olumlu pekiştirme uzun vadede her tür cezadan daha iyi işler."
+   "currentBeispiel": "Positive Verstärkung wirkt bei Kindern besser als Strafe.",
+   "currentBeispielTr": "Olumlu pekiştirme çocuklarda cezadan daha iyi işe yarar."
   },
   {
    "id": 6923,
@@ -218,8 +218,8 @@
    "niveau": "C1",
    "formen": "Belohnungssysteme",
    "currentTr": "ödül sistemi",
-   "currentBeispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an.",
-   "currentBeispielTr": "Sosyal ağlar beyindeki ödül sistemini bilinçli olarak hedefler."
+   "currentBeispiel": "Jede neue Nachricht aktiviert das Belohnungssystem im Gehirn.",
+   "currentBeispielTr": "Her yeni bildirim beyindeki ödül sistemini harekete geçirir."
   },
   {
    "id": 6924,
@@ -228,8 +228,8 @@
    "niveau": "C1",
    "formen": "Neurosen",
    "currentTr": "nevroz",
-   "currentBeispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt.",
-   "currentBeispielTr": "Nevroz kavramı bugünkü tanı sisteminde geçerliliğini yitirmiş sayılır."
+   "currentBeispiel": "Seine Angst vor Keimen entwickelte sich zu einer Neurose.",
+   "currentBeispielTr": "Mikrop korkusu zamanla bir nevroza dönüştü."
   },
   {
    "id": 6925,
@@ -238,8 +238,8 @@
    "niveau": "C1",
    "formen": "Bewältigungsstrategien",
    "currentTr": "başa çıkma stratejisi",
-   "currentBeispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie.",
-   "currentBeispielTr": "Mizah birçok kişi için şaşırtıcı derecede etkili bir başa çıkma stratejisidir."
+   "currentBeispiel": "Laufen ist seine Bewältigungsstrategie in stressigen Wochen.",
+   "currentBeispielTr": "Koşmak stresli haftalarda onun başa çıkma stratejisidir."
   },
   {
    "id": 6926,
@@ -248,8 +248,8 @@
    "niveau": "C1",
    "formen": "Abwehrmechanismen",
    "currentTr": "savunma mekanizması",
-   "currentBeispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet.",
-   "currentBeispielTr": "İnkâr, kısa vadede rahatlatan bir savunma mekanizmasıdır."
+   "currentBeispiel": "Sein Spott ist ein Abwehrmechanismus gegen zu viel Nähe.",
+   "currentBeispielTr": "Alaycılığı, fazla yakınlığa karşı bir savunma mekanizmasıdır."
   },
   {
    "id": 6927,
@@ -258,8 +258,8 @@
    "niveau": "C1",
    "formen": "Projektionen",
    "currentTr": "yansıtma",
-   "currentBeispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion.",
-   "currentBeispielTr": "Sürekli kıskançlık isnat eden kişi belki de kendisi yansıtma yapıyordur."
+   "currentBeispiel": "Seine Wut auf den Kollegen war reine Projektion.",
+   "currentBeispielTr": "Meslektaşına duyduğu öfke tümüyle yansıtmaydı."
   },
   {
    "id": 6928,
@@ -268,8 +268,8 @@
    "niveau": "C1",
    "formen": "Übertragungen",
    "currentTr": "aktarım",
-   "currentBeispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten.",
-   "currentBeispielTr": "Analizde aktarım çoğu zaman terapiste yönelir.",
+   "currentBeispiel": "In der Therapie richtete sich die Übertragung auf den Arzt.",
+   "currentBeispielTr": "Terapide aktarım doğrudan doktora yöneldi.",
    "overlapping": [
     "die Überlieferung (C1)"
    ]
@@ -281,8 +281,8 @@
    "niveau": "C1",
    "formen": "Verhaltenstherapien",
    "currentTr": "davranış terapisi",
-   "currentBeispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an.",
-   "currentBeispielTr": "Davranış terapisi çocukluktan çok güncel örüntülere odaklanır."
+   "currentBeispiel": "Gegen ihre Flugangst half nur eine Verhaltenstherapie.",
+   "currentBeispielTr": "Uçak korkusuna yalnızca davranış terapisi iyi geldi."
   },
   {
    "id": 6930,
@@ -291,8 +291,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "psikanaliz",
-   "currentBeispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert.",
-   "currentBeispielTr": "Psikanaliz, ruhsal yaşama dair bakışımızı kalıcı biçimde değiştirdi."
+   "currentBeispiel": "Nach der Trennung begann sie eine Psychoanalyse.",
+   "currentBeispielTr": "Ayrılıktan sonra psikanalize başladı."
   },
   {
    "id": 6931,
@@ -301,8 +301,8 @@
    "niveau": "C1",
    "formen": "Krankheitsbilder",
    "currentTr": "hastalık tablosu, klinik tablo",
-   "currentBeispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen.",
-   "currentBeispielTr": "Hastalık tablosu çocuklarda yetişkinlerdekinden farklı belirti verir."
+   "currentBeispiel": "Bei Kindern zeigt sich das Krankheitsbild oft ganz anders.",
+   "currentBeispielTr": "Çocuklarda hastalık tablosu çoğu zaman bambaşka görünür."
   },
   {
    "id": 6932,
@@ -311,8 +311,8 @@
    "niveau": "C1",
    "formen": "Bindungstheorien",
    "currentTr": "bağlanma kuramı",
-   "currentBeispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken.",
-   "currentBeispielTr": "Bağlanma kuramı erken ilişkilerin neden bu denli belirleyici olduğunu açıklar."
+   "currentBeispiel": "Im Seminar ging es um die Bindungstheorie nach Bowlby.",
+   "currentBeispielTr": "Seminerde Bowlby'nin bağlanma kuramı ele alındı."
   },
   {
    "id": 6933,
@@ -321,8 +321,8 @@
    "niveau": "C1",
    "formen": "Ablösungen",
    "currentTr": "ayrışma, kopuş",
-   "currentBeispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte.",
-   "currentBeispielTr": "Aile evinden ayrışma nadiren çatışmasız geçer.",
+   "currentBeispiel": "Die Ablösung vom Elternhaus fiel ihr sehr schwer.",
+   "currentBeispielTr": "Aile evinden kopuş ona çok zor geldi.",
    "overlapping": [
     "die Segregation (C1)",
     "die Zersetzung (C1)",
@@ -336,8 +336,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "uyum yeteneği, uyum sağlama becerisi",
-   "currentBeispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert.",
-   "currentBeispielTr": "İnsanın yeni ortamlara uyum yeteneği dikkate değerdir."
+   "currentBeispiel": "Im neuen Team zeigte er erstaunliche Anpassungsfähigkeit.",
+   "currentBeispielTr": "Yeni ekipte şaşırtıcı bir uyum yeteneği gösterdi."
   },
   {
    "id": 6935,
@@ -346,8 +346,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dayanıklılık, psikolojik sağlamlık",
-   "currentBeispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich.",
-   "currentBeispielTr": "İstikrarlı ilişkiler ruhsal dayanıklılığı belirgin biçimde güçlendirir.",
+   "currentBeispiel": "Stabile Freundschaften stärken die psychische Widerstandsfähigkeit.",
+   "currentBeispielTr": "İstikrarlı dostluklar ruhsal dayanıklılığı güçlendirir.",
    "overlapping": [
     "die Belastbarkeit (B2)",
     "die Resilienz (C1)",
@@ -361,8 +361,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "öz düzenleme, kendini düzenleme",
-   "currentBeispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen.",
-   "currentBeispielTr": "Çocuklar öz düzenlemeyi en çok güvenilir bakım verenler aracılığıyla öğrenir."
+   "currentBeispiel": "Kinder lernen Selbstregulation vor allem von ihren Eltern.",
+   "currentBeispielTr": "Çocuklar öz düzenlemeyi en çok anne babasından öğrenir."
   },
   {
    "id": 6937,
@@ -371,8 +371,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dürtü kontrolü",
-   "currentBeispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet.",
-   "currentBeispielTr": "Yorgunluk dürtü kontrolünü sanılandan çok daha fazla zayıflatır."
+   "currentBeispiel": "Nach zwei Bier ließ seine Impulskontrolle spürbar nach.",
+   "currentBeispielTr": "İki biradan sonra dürtü kontrolü belirgin biçimde azaldı."
   },
   {
    "id": 6938,
@@ -381,8 +381,8 @@
    "niveau": "C1",
    "formen": "Frustrationen",
    "currentTr": "hayal kırıklığı, engellenmişlik",
-   "currentBeispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um.",
-   "currentBeispielTr": "Süregelen engellenmişlik duygusu çoğu zaman saldırganlığa dönüşür.",
+   "currentBeispiel": "Die ständige Frustration im Job machte ihn aggressiv.",
+   "currentBeispielTr": "İşteki sürekli engellenmişlik duygusu onu saldırganlaştırdı.",
    "overlapping": [
     "die Enttäuschung (B1)"
    ]
@@ -394,8 +394,8 @@
    "niveau": "C1",
    "formen": "Affekte",
    "currentTr": "duygulanım, ani duygu patlaması",
-   "currentBeispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später.",
-   "currentBeispielTr": "Ani duygu patlamasıyla verilen kararlardan çoğunlukla sonradan pişman olunur."
+   "currentBeispiel": "Der Täter handelte im Affekt und nicht geplant.",
+   "currentBeispielTr": "Fail planlayarak değil, anlık bir duygu patlamasıyla hareket etti."
   },
   {
    "id": 6940,
@@ -404,8 +404,8 @@
    "niveau": "C1",
    "formen": "Emotionen",
    "currentTr": "duygu",
-   "currentBeispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen.",
-   "currentBeispielTr": "Duygular, yalnızca akla gizli kalan bilgiler sunar.",
+   "currentBeispiel": "Beim Abschied konnte er seine Emotionen kaum verbergen.",
+   "currentBeispielTr": "Vedalaşırken duygularını güçlükle gizleyebildi.",
    "overlapping": [
     "das Gefühl (B1)"
    ]
@@ -417,8 +417,8 @@
    "niveau": "C1",
    "formen": "Abneigungen",
    "currentTr": "hoşlanmama, antipati, tiksinti",
-   "currentBeispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker.",
-   "currentBeispielTr": "Kalabalık gruplara karşı hoşnutsuzluğu yıllar içinde arttı."
+   "currentBeispiel": "Seine Abneigung gegen große Feiern wurde immer stärker.",
+   "currentBeispielTr": "Büyük kutlamalardan hoşlanmaması giderek arttı."
   },
   {
    "id": 6942,
@@ -427,8 +427,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "utanç",
-   "currentBeispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen.",
-   "currentBeispielTr": "Utanç, birçok kişinin yardım aramasının önüne geçer."
+   "currentBeispiel": "Aus Scham erzählte er niemandem von den Schulden.",
+   "currentBeispielTr": "Utancından borçlarını kimseye anlatmadı."
   },
   {
    "id": 6943,
@@ -437,8 +437,8 @@
    "niveau": "C1",
    "formen": "hat abgespeichert",
    "currentTr": "kaydetmek, belleğe almak",
-   "currentBeispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab.",
-   "currentBeispielTr": "Beyin özellikle duygusal yüklü sahneleri kalıcı olarak belleğe alır.",
+   "currentBeispiel": "Ich habe die Datei unter einem neuen Namen abgespeichert.",
+   "currentBeispielTr": "Dosyayı yeni bir adla kaydettim.",
    "overlapping": [
     "speichern (A2)",
     "verzeichnen (B2)",
@@ -452,8 +452,8 @@
    "niveau": "C1",
    "formen": "hat ausgeblendet",
    "currentTr": "görmezden gelmek, dikkate almamak",
-   "currentBeispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus.",
-   "currentBeispielTr": "Konuşma sırasında rahatsız edici sesleri neredeyse tümüyle dikkate almayız."
+   "currentBeispiel": "Beim Lernen blendet sie den Lärm völlig aus.",
+   "currentBeispielTr": "Ders çalışırken gürültüyü tamamen yok sayıyor."
   },
   {
    "id": 6945,
@@ -462,8 +462,8 @@
    "niveau": "C1",
    "formen": "hat gesteuert",
    "currentTr": "yönlendirmek, yönetmek",
-   "currentBeispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist.",
-   "currentBeispielTr": "Beklentiler algıyı farkında olduğumuzdan daha güçlü yönlendirir."
+   "currentBeispiel": "Werbung steuert unsere Wünsche oft ganz unbemerkt.",
+   "currentBeispielTr": "Reklamlar isteklerimizi çoğu zaman fark ettirmeden yönlendirir."
   },
   {
    "id": 6946,
@@ -472,8 +472,8 @@
    "niveau": "C1",
    "formen": "hat gehemmt",
    "currentTr": "engellemek, ketlemek",
-   "currentBeispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich.",
-   "currentBeispielTr": "Aşırı sert eleştiri öğrencilerin yaratıcılığını ciddi ölçüde ketler.",
+   "currentBeispiel": "Zu strenge Kritik hemmt die Kreativität von Kindern.",
+   "currentBeispielTr": "Aşırı sert eleştiri çocukların yaratıcılığını ketler.",
    "overlapping": [
     "behindern (B1)",
     "unterbinden (C1)",
@@ -488,8 +488,8 @@
    "niveau": "C1",
    "formen": "hat hervorgerufen",
    "currentTr": "meydana getirmek, doğurmak",
-   "currentBeispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor.",
-   "currentBeispielTr": "Çelişkili mesajlar çocuklarda büyük bir güvensizlik doğurur."
+   "currentBeispiel": "Das Medikament ruft bei manchen Patienten Übelkeit hervor.",
+   "currentBeispielTr": "İlaç bazı hastalarda mide bulantısına yol açıyor."
   },
   {
    "id": 6948,
@@ -498,8 +498,8 @@
    "niveau": "C1",
    "formen": "hat bewirkt",
    "currentTr": "yol açmak, sağlamak, meydana getirmek",
-   "currentBeispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel.",
-   "currentBeispielTr": "Günlük hayattaki küçük değişiklikler bile çoğu zaman şaşırtıcı ölçüde etki eder."
+   "currentBeispiel": "Die neue Regel bewirkte eine deutliche Verbesserung im Team.",
+   "currentBeispielTr": "Yeni kural ekipte belirgin bir iyileşme sağladı."
   },
   {
    "id": 6949,
@@ -508,8 +508,8 @@
    "niveau": "C1",
    "formen": "hat sich hineinversetzt",
    "currentTr": "kendini birinin yerine koymak",
-   "currentBeispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen.",
-   "currentBeispielTr": "Çocuklar ancak dört yaş civarında kendilerini başkasının yerine koyabilir."
+   "currentBeispiel": "Er kann sich gut in andere Menschen hineinversetzen.",
+   "currentBeispielTr": "Kendini başkalarının yerine iyi koyabiliyor."
   },
   {
    "id": 6950,
@@ -518,8 +518,8 @@
    "niveau": "C1",
    "formen": "hat gedeutet",
    "currentTr": "yorumlamak, anlamlandırmak",
-   "currentBeispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet.",
-   "currentBeispielTr": "Aynı davranış, beklentiye göre bambaşka yorumlanır.",
+   "currentBeispiel": "Sie deutete sein Schweigen als Zustimmung.",
+   "currentBeispielTr": "Onun sessizliğini onay olarak yorumladı.",
    "overlapping": [
     "interpretieren (C1)",
     "kommentieren (C1)"
@@ -532,8 +532,8 @@
    "niveau": "C1",
    "formen": "hat überschätzt",
    "currentTr": "abartmak, olduğundan fazla görmek",
-   "currentBeispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil.",
-   "currentBeispielTr": "Yeni başlayanlar becerilerini sıkça abartır, uzmanlar ise tersini yapar.",
+   "currentBeispiel": "Viele Fahrer überschätzen ihr Können bei Schnee.",
+   "currentBeispielTr": "Birçok sürücü karda becerisini olduğundan fazla görür.",
    "overlapping": [
     "übertreiben (B1)",
     "dramatisieren (C1)",
@@ -547,8 +547,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "takıntılı, saplantılı",
-   "currentBeispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit.",
-   "currentBeispielTr": "Kapıları takıntılı biçimde kontrol etmesi her akşam zamanını alıyordu."
+   "currentBeispiel": "Er prüft zwanghaft, ob die Tür verschlossen ist.",
+   "currentBeispielTr": "Kapının kilitli olup olmadığını takıntılı biçimde kontrol ediyor."
   }
  ]
 }

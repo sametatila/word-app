@@ -9,8 +9,8 @@
    "niveau": "A1",
    "formen": "ü, -e",
    "currentTr": "sosis, sucuk",
-   "currentBeispiel": "Ich möchte eine Curry-Wurst.",
-   "currentBeispielTr": "Bir köri sosis istiyorum."
+   "currentBeispiel": "Ich esse gern Wurst mit Senf.",
+   "currentBeispielTr": "Hardallı sosis yemeyi severim."
   },
   {
    "id": 565,
@@ -19,8 +19,8 @@
    "niveau": "A1",
    "formen": "-en",
    "currentTr": "otoyol",
-   "currentBeispiel": "Wo geht‘s hier bitte zur Autobahn?",
-   "currentBeispielTr": "Affedersiniz, otoyola buradan nasıl çıkılır?"
+   "currentBeispiel": "Auf der Autobahn gibt es einen Stau.",
+   "currentBeispielTr": "Otoyolda trafik sıkışıklığı var."
   },
   {
    "id": 90,
@@ -29,8 +29,8 @@
    "niveau": "A1",
    "formen": "-",
    "currentTr": "küçük ekmek, sandviç ekmeği",
-   "currentBeispiel": "Ich esse lieber Brötchen.",
-   "currentBeispielTr": "Ben küçük ekmek yemeyi tercih ederim.",
+   "currentBeispiel": "Ich esse zwei Brötchen zum Frühstück.",
+   "currentBeispielTr": "Kahvaltıda iki küçük ekmek yiyorum.",
    "overlapping": [
     "die Semmel (B1)"
    ]
@@ -42,8 +42,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "yazdırmak, basmak",
-   "currentBeispiel": "Bitte drucke das Formular für mich.",
-   "currentBeispielTr": "Formu benim için yazdırır mısın lütfen?",
+   "currentBeispiel": "Ich drucke die Fotos für meine Mutter.",
+   "currentBeispielTr": "Fotoğrafları annem için yazdırıyorum.",
    "overlapping": [
     "ausdrucken (B1)"
    ]
@@ -55,8 +55,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "ad, isim",
-   "currentBeispiel": "Wie ist dein Vorname?",
-   "currentBeispielTr": "Adın ne?"
+   "currentBeispiel": "Den Vornamen von meiner Nachbarin kenne ich nicht.",
+   "currentBeispielTr": "Komşumun adını bilmiyorum."
   },
   {
    "id": 22,
@@ -65,8 +65,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "telesekreter",
-   "currentBeispiel": "Sind Nachrichten auf dem Anrufbeantworter?",
-   "currentBeispielTr": "Telesekreterde mesaj var mı?",
+   "currentBeispiel": "Sprich bitte auf den Anrufbeantworter, ich rufe zurück.",
+   "currentBeispielTr": "Lütfen telesekretere mesaj bırak, seni geri ararım.",
    "overlapping": [
     "die Mobilbox (B1)"
    ]
@@ -78,8 +78,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kapatmak (kapı, pencere)",
-   "currentBeispiel": "Machst du bitte das Fenster zu?",
-   "currentBeispielTr": "Pencereyi kapatır mısın lütfen?",
+   "currentBeispiel": "Ich mache jetzt das Fenster zu.",
+   "currentBeispielTr": "Şimdi pencereyi kapatıyorum.",
    "overlapping": [
     "schließen (A1)"
    ]
@@ -91,8 +91,8 @@
    "niveau": "A1",
    "formen": "-",
    "currentTr": "kazak",
-   "currentBeispiel": "Du brauchst keinen Pullover, es ist warm.",
-   "currentBeispielTr": "Kazağa ihtiyacın yok, hava sıcak."
+   "currentBeispiel": "Dieser blaue Pullover ist mir zu groß.",
+   "currentBeispielTr": "Bu mavi kazak bana fazla büyük."
   },
   {
    "id": 573,
@@ -101,8 +101,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "memur",
-   "currentBeispiel": "Fragen Sie die Beamtin an Schalter acht!",
-   "currentBeispielTr": "Sekiz numaralı gişedeki memura sorun!",
+   "currentBeispiel": "Der Beamte am Schalter ist sehr freundlich.",
+   "currentBeispielTr": "Gişedeki memur çok güler yüzlü.",
    "overlapping": [
     "der Angestellte (B1)",
     "die Angestellte (B1)",
@@ -117,8 +117,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "anaokulu",
-   "currentBeispiel": "Die kleine Laura geht schon in den Kindergarten.",
-   "currentBeispielTr": "Küçük Laura anaokuluna gidiyor artık."
+   "currentBeispiel": "Der Kindergarten macht um vier Uhr zu.",
+   "currentBeispielTr": "Anaokulu saat dörtte kapanıyor."
   },
   {
    "id": 671,
@@ -127,8 +127,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "mangal yapmak, ızgara yapmak",
-   "currentBeispiel": "Heute grillen wir im Garten.",
-   "currentBeispielTr": "Bugün bahçede mangal yapıyoruz.",
+   "currentBeispiel": "Am Sonntag grillen wir mit Freunden am See.",
+   "currentBeispielTr": "Pazar günü arkadaşlarla gölün kenarında mangal yapıyoruz.",
    "overlapping": [
     "grillieren (B1)"
    ]
@@ -140,8 +140,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "armut",
-   "currentBeispiel": "Ein Kilo Birnen, bitte!",
-   "currentBeispielTr": "Bir kilo armut lütfen!"
+   "currentBeispiel": "Ich kaufe ein Kilo Birnen.",
+   "currentBeispielTr": "Bir kilo armut alıyorum."
   },
   {
    "id": 552,
@@ -150,8 +150,8 @@
    "niveau": "A1",
    "formen": "-ä, e",
    "currentTr": "iş yeri, çalışma yeri",
-   "currentBeispiel": "An meinem Arbeitsplatz fehlt ein Drucker.",
-   "currentBeispielTr": "İş yerimde bir yazıcı eksik.",
+   "currentBeispiel": "Mein Arbeitsplatz ist nur zehn Minuten von zu Hause entfernt.",
+   "currentBeispielTr": "İş yerim evden sadece on dakika uzakta.",
    "overlapping": [
     "die Arbeitsstelle (B1)"
    ]
@@ -163,8 +163,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "anons (hoparlörden duyuru)",
-   "currentBeispiel": "Ich habe die Durchsage nicht verstanden.",
-   "currentBeispielTr": "Anonsu anlamadım.",
+   "currentBeispiel": "Am Bahnhof kommt gerade eine Durchsage für unseren Zug.",
+   "currentBeispielTr": "İstasyonda şu an trenimizle ilgili bir anons yapılıyor.",
    "overlapping": [
     "die Ansage (A1)"
    ]
@@ -176,8 +176,8 @@
    "niveau": "A1",
    "formen": "ü, -e",
    "currentTr": "selam",
-   "currentBeispiel": "Viele Grüße von Angelika.",
-   "currentBeispielTr": "Angelika'dan çok selam var."
+   "currentBeispiel": "Ich schicke dir viele Grüße aus Berlin.",
+   "currentBeispielTr": "Sana Berlin'den selamlar gönderiyorum."
   },
   {
    "id": 677,
@@ -186,8 +186,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "uygun fiyatlı, ucuz",
-   "currentBeispiel": "Dort gibt es günstige Angebote.",
-   "currentBeispielTr": "Orada uygun fiyatlı ürünler var.",
+   "currentBeispiel": "Das Hotel ist sehr günstig.",
+   "currentBeispielTr": "Otel çok uygun fiyatlı.",
    "overlapping": [
     "preiswert (A2)"
    ]
@@ -199,8 +199,8 @@
    "niveau": "A1",
    "formen": "(Pl.)",
    "currentTr": "büyükanne ve büyükbaba",
-   "currentBeispiel": "Meine Großeltern wohnen nicht bei uns.",
-   "currentBeispielTr": "Büyükannemle büyükbabam bizimle oturmuyor."
+   "currentBeispiel": "In den Ferien fahren wir zu den Großeltern aufs Land.",
+   "currentBeispielTr": "Tatilde köydeki büyükannemle büyükbabamın yanına gidiyoruz."
   },
   {
    "id": 696,
@@ -209,8 +209,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "genç, delikanlı (erkek)",
-   "currentBeispiel": "Viele Jugendliche kaufen gern ein.",
-   "currentBeispielTr": "Birçok genç alışveriş yapmayı sever.",
+   "currentBeispiel": "Im Jugendzentrum treffen sich viele Jugendliche am Abend.",
+   "currentBeispielTr": "Gençlik merkezinde akşamları birçok genç buluşuyor.",
    "overlapping": [
     "jung (A1)",
     "jugendlich (A2)"
@@ -223,8 +223,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "bağlantı, aktarma",
-   "currentBeispiel": "In Mannheim haben Sie Anschluss nach Saarbrücken. Ist das die Anmeldung für einen Telefonanschluss?",
-   "currentBeispielTr": "Mannheim'da Saarbrücken aktarması var. Bu, telefon bağlantısı başvurusu mu?",
+   "currentBeispiel": "Wegen der Verspätung haben wir den Anschluss verpasst.",
+   "currentBeispielTr": "Rötar yüzünden aktarmayı kaçırdık.",
    "overlapping": [
     "der Link (A2)",
     "die Verbindung (B1)",
@@ -238,8 +238,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "uluslararası",
-   "currentBeispiel": "Unser Deutschkurs ist international: Silvana kommt aus Italien, Conchi aus Spanien, Yin aus China ...",
-   "currentBeispielTr": "Almanca kursumuz uluslararası: Silvana İtalya'dan, Conchi İspanya'dan, Yin Çin'den..."
+   "currentBeispiel": "Unser Deutschkurs ist international.",
+   "currentBeispielTr": "Almanca kursumuz uluslararası."
   },
   {
    "id": 85,
@@ -248,8 +248,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "bluz",
-   "currentBeispiel": "Ich möchte eine rote Bluse.",
-   "currentBeispielTr": "Kırmızı bir bluz istiyorum."
+   "currentBeispiel": "Zur Hochzeit trägt sie eine weiße Bluse aus Seide.",
+   "currentBeispielTr": "Düğüne beyaz ipek bir bluz giyiyor."
   },
   {
    "id": 589,
@@ -258,8 +258,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "acı",
-   "currentBeispiel": "Der Kaffee schmeckt bitter.",
-   "currentBeispielTr": "Kahvenin tadı acı.",
+   "currentBeispiel": "Diese Schokolade ist mir zu bitter.",
+   "currentBeispielTr": "Bu çikolata bana fazla acı.",
    "overlapping": [
     "scharf (A2)"
    ]
@@ -271,8 +271,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "CD",
-   "currentBeispiel": "Wir können ihm eine CD schenken.",
-   "currentBeispielTr": "Ona bir CD hediye edebiliriz."
+   "currentBeispiel": "Im Auto hören wir immer die gleiche CD.",
+   "currentBeispielTr": "Arabada hep aynı CD'yi dinliyoruz."
   },
   {
    "id": 667,
@@ -281,8 +281,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "içecek",
-   "currentBeispiel": "Mein Lieblingsgetränk ist Tomatensaft.",
-   "currentBeispielTr": "En sevdiğim içecek domates suyu."
+   "currentBeispiel": "Die Getränke sind im Kühlschrank.",
+   "currentBeispielTr": "İçecekler buzdolabında."
   },
   {
    "id": 541,
@@ -291,8 +291,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "çalıştırmak, açmak (cihaz, ışık)",
-   "currentBeispiel": "Mach bitte das Licht an!",
-   "currentBeispielTr": "Işığı aç lütfen!",
+   "currentBeispiel": "Es ist dunkel, ich mache das Licht an.",
+   "currentBeispielTr": "Karanlık, ışığı açıyorum.",
    "overlapping": [
     "anstellen (B1)"
    ]
@@ -304,8 +304,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "muz",
-   "currentBeispiel": "Kann ich eine Banane haben? Ich habe Hunger.",
-   "currentBeispielTr": "Bir muz alabilir miyim? Acıktım."
+   "currentBeispiel": "Ich esse jeden Morgen eine Banane.",
+   "currentBeispielTr": "Her sabah bir muz yiyorum."
   },
   {
    "id": 532,
@@ -314,8 +314,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kalkış, hareket",
-   "currentBeispiel": "Vor der Abfahrt rufe ich an.",
-   "currentBeispielTr": "Yola çıkmadan önce seni ararım.",
+   "currentBeispiel": "Kurz vor der Abfahrt kauft Tom noch einen Kaffee.",
+   "currentBeispielTr": "Tom kalkıştan hemen önce bir kahve daha alıyor.",
    "overlapping": [
     "der Abflug (A1)",
     "der Start (B1)"
@@ -328,8 +328,8 @@
    "niveau": "A1",
    "formen": "-en/",
    "currentTr": "ev hanımı",
-   "currentBeispiel": "",
-   "currentBeispielTr": "",
+   "currentBeispiel": "Meine Mutter ist Hausfrau.",
+   "currentBeispielTr": "Annem ev hanımı.",
    "overlapping": [
     "die Hausfrau/Hausmann (B1)"
    ]
@@ -341,8 +341,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "tamir, onarım",
-   "currentBeispiel": "Die Reparatur ist sehr teuer.",
-   "currentBeispielTr": "Tamiri çok pahalı."
+   "currentBeispiel": "Die Reparatur von meinem Handy dauert drei Tage.",
+   "currentBeispielTr": "Telefonumun tamiri üç gün sürüyor."
   },
   {
    "id": 556,
@@ -351,8 +351,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "doldurmak (form, belge)",
-   "currentBeispiel": "Füllen Sie bitte dieses Formular aus.",
-   "currentBeispielTr": "Lütfen bu formu doldurun."
+   "currentBeispiel": "Beim Arzt muss ich zuerst einen Fragebogen ausfüllen.",
+   "currentBeispielTr": "Doktorda önce bir anket formu doldurmam gerekiyor."
   },
   {
    "id": 250,
@@ -361,8 +361,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "kakao",
-   "currentBeispiel": "Ich trinke lieber Kakao.",
-   "currentBeispielTr": "Ben kakao içmeyi tercih ederim."
+   "currentBeispiel": "Die Kinder trinken jeden Morgen Kakao.",
+   "currentBeispielTr": "Çocuklar her sabah kakao içiyor."
   },
   {
    "id": 317,
@@ -371,8 +371,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "reçel",
-   "currentBeispiel": "Ich esse Brot mit Marmelade.",
-   "currentBeispielTr": "Reçelli ekmek yiyorum.",
+   "currentBeispiel": "Meine Oma macht jeden Sommer Marmelade aus Kirschen.",
+   "currentBeispielTr": "Anneannem her yaz vişneden reçel yapar.",
    "overlapping": [
     "die Konfitüre (B1)"
    ]
@@ -384,8 +384,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kalkış",
-   "currentBeispiel": "Der Abflug ist um 11.20 Uhr.",
-   "currentBeispielTr": "Uçuş 11.20'de kalkıyor.",
+   "currentBeispiel": "Unser Abflug ist um sieben Uhr.",
+   "currentBeispielTr": "Uçağımız yedide kalkıyor.",
    "overlapping": [
     "die Abfahrt (A1)",
     "der Start (B1)"
@@ -398,8 +398,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "form, başvuru formu",
-   "currentBeispiel": "Sie müssen dieses Formular ausfüllen.",
-   "currentBeispielTr": "Bu formu doldurmanız gerekiyor."
+   "currentBeispiel": "Das Formular gibt es auch online.",
+   "currentBeispielTr": "Form internette de var."
   },
   {
    "id": 558,
@@ -408,8 +408,8 @@
    "niveau": "A1",
    "formen": "-ü, e",
    "currentTr": "bilgi, danışma",
-   "currentBeispiel": "Können Sie mir eine Auskunft geben?",
-   "currentBeispielTr": "Bana bir bilgi verebilir misiniz?",
+   "currentBeispiel": "Die Auskunft ist gleich neben dem Ausgang.",
+   "currentBeispielTr": "Danışma çıkışın hemen yanında.",
    "overlapping": [
     "die Angabe (B1)",
     "das Wissen (B1)"
@@ -422,8 +422,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ev sahibi, kiraya veren",
-   "currentBeispiel": "Unser Vermieter heißt Huber. Er wohnt auch hier.",
-   "currentBeispielTr": "Ev sahibimizin adı Huber. O da burada oturuyor.",
+   "currentBeispiel": "Unser Vermieter wohnt auch in diesem Haus.",
+   "currentBeispielTr": "Ev sahibimiz de bu binada oturuyor.",
    "overlapping": [
     "der Gastgeber (A2)"
    ]
@@ -435,8 +435,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kadın, dişi",
-   "currentBeispiel": "Kreuzen Sie bitte an: „weiblich“ oder „männlich“.",
-   "currentBeispielTr": "Lütfen işaretleyin: \"kadın\" mı \"erkek\" mi.",
+   "currentBeispiel": "Kreuzen Sie bitte „männlich“ oder „weiblich“ an.",
+   "currentBeispielTr": "Lütfen 'erkek' ya da 'kadın' işaretleyin.",
    "overlapping": [
     "die Frau (A1)"
    ]
@@ -448,8 +448,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "bilet (toplu taşıma)",
-   "currentBeispiel": "Sie brauchen eine Fahrkarte.",
-   "currentBeispielTr": "Bir bilete ihtiyacınız var.",
+   "currentBeispiel": "Ich kaufe eine Fahrkarte nach Berlin.",
+   "currentBeispielTr": "Berlin'e bir bilet alıyorum.",
    "overlapping": [
     "das Billett (B1)",
     "der Fahrschein (A2)"
@@ -462,8 +462,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kiraya vermek",
-   "currentBeispiel": "Die Wohnung ist schon vermietet.",
-   "currentBeispielTr": "Daire çoktan kiralandı.",
+   "currentBeispiel": "Wir vermieten unsere Wohnung an Studenten.",
+   "currentBeispielTr": "Dairemizi öğrencilere kiraya veriyoruz.",
    "overlapping": [
     "verpachten (C1)"
    ]
@@ -475,8 +475,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "dernek, kulüp",
-   "currentBeispiel": "Es gibt einen neuen Sportverein in der Stadt.",
-   "currentBeispielTr": "Şehirde yeni bir spor kulübü açıldı."
+   "currentBeispiel": "Der Verein hat über hundert Mitglieder.",
+   "currentBeispielTr": "Derneğin yüzden fazla üyesi var."
   },
   {
    "id": 439,
@@ -485,8 +485,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "sempatik, sevimli",
-   "currentBeispiel": "Ich finde ihn sehr sympathisch.",
-   "currentBeispielTr": "Onu çok sempatik buluyorum."
+   "currentBeispiel": "Die Ärztin war freundlich und sehr sympathisch.",
+   "currentBeispielTr": "Doktor nazik ve çok sempatikti."
   },
   {
    "id": 770,
@@ -495,8 +495,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "resepsiyon",
-   "currentBeispiel": "Fragen Sie bitte im Hotel an der Rezeption.",
-   "currentBeispielTr": "Lütfen otelde resepsiyona sorun."
+   "currentBeispiel": "Der Schlüssel liegt an der Rezeption.",
+   "currentBeispielTr": "Anahtar resepsiyonda."
   },
   {
    "id": 756,
@@ -505,8 +505,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "staj",
-   "currentBeispiel": "Ich mache ein Praktikum bei Siemens.",
-   "currentBeispielTr": "Siemens'te staj yapıyorum."
+   "currentBeispiel": "Mein Sohn macht im Sommer ein Praktikum in einem Krankenhaus.",
+   "currentBeispielTr": "Oğlum yazın bir hastanede staj yapıyor."
   },
   {
    "id": 567,
@@ -515,8 +515,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "fırın, ekmek fırını",
-   "currentBeispiel": "Ich geh mal schnell zur Bäckerei.",
-   "currentBeispielTr": "Hemen fırına gidip geliyorum.",
+   "currentBeispiel": "Die Bäckerei an der Ecke öffnet schon um sechs.",
+   "currentBeispielTr": "Köşedeki fırın sabah altıda açılıyor.",
    "overlapping": [
     "der Backofen (B1)",
     "das Backrohr (B1)"
@@ -529,8 +529,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "anons, duyuru",
-   "currentBeispiel": "Hören Sie die Ansagen.",
-   "currentBeispielTr": "Anonsları dinleyin.",
+   "currentBeispiel": "Ich höre die Ansage nicht gut.",
+   "currentBeispielTr": "Duyuruyu iyi duyamıyorum.",
    "overlapping": [
     "die Durchsage (A1)"
    ]
@@ -542,8 +542,8 @@
    "niveau": "A1",
    "formen": "-",
    "currentTr": "piliç, tavuk",
-   "currentBeispiel": "Ein Hähnchen mit Pommes bitte!",
-   "currentBeispielTr": "Bir piliç ve patates kızartması lütfen!",
+   "currentBeispiel": "Ich esse gern Hähnchen mit Pommes.",
+   "currentBeispielTr": "Patates kızartmasıyla piliç yemeyi severim.",
    "overlapping": [
     "das Hendl (B1)"
    ]
@@ -555,8 +555,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kayıt olmak, kaydolmak",
-   "currentBeispiel": "Wo kann ich mich anmelden?",
-   "currentBeispielTr": "Nereye kayıt yaptırabilirim?"
+   "currentBeispiel": "Ich melde mich für den Deutschkurs an.",
+   "currentBeispielTr": "Almanca kursuna kaydoluyorum."
   },
   {
    "id": 366,
@@ -565,8 +565,8 @@
    "niveau": "A1",
    "formen": "-",
    "currentTr": "poster",
-   "currentBeispiel": "In meinem Zimmer sind viele Poster.",
-   "currentBeispielTr": "Odamda bir sürü poster var."
+   "currentBeispiel": "Mein Bruder hat ein Poster von seiner Band gekauft.",
+   "currentBeispielTr": "Ağabeyim sevdiği grubun bir posterini aldı."
   },
   {
    "id": 426,
@@ -575,8 +575,8 @@
    "niveau": "A1",
    "formen": "ä, -e",
    "currentTr": "oyun alanı, oyun parkı",
-   "currentBeispiel": "Sie ist mit Ben auf dem Spielplatz.",
-   "currentBeispielTr": "Ben'le birlikte oyun parkında."
+   "currentBeispiel": "Der neue Spielplatz hat eine lange Rutsche.",
+   "currentBeispielTr": "Yeni oyun parkında uzun bir kaydırak var."
   },
   {
    "id": 632,
@@ -585,8 +585,8 @@
    "niveau": "A1",
    "formen": "–",
    "currentTr": "alıcı",
-   "currentBeispiel": "Auf dem Brief steht dein Name, also bist du der Empfänger.",
-   "currentBeispielTr": "Mektupta senin adın yazıyor, demek ki alıcı sensin.",
+   "currentBeispiel": "Der Empfänger hat das Paket nicht bekommen.",
+   "currentBeispielTr": "Alıcı paketi teslim almadı.",
    "overlapping": [
     "der Käufer (B1)"
    ]

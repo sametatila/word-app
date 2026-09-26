@@ -3,25 +3,25 @@
     "id": 2984,
     "tr": "ilişki",
     "en": "relationship",
-    "beispiel": "Ich habe ein gutes Verhältnis zu meinen Eltern.",
-    "beispielTr": "Ailemle ilişkim iyi.",
-    "beispielEn": "I have a good relationship with my parents."
+    "beispiel": "Zwischen den beiden Schwestern ist das Verhältnis leider schwierig.",
+    "beispielTr": "İki kız kardeş arasındaki ilişki maalesef zor.",
+    "beispielEn": "Unfortunately the relationship between the two sisters is difficult."
   },
   {
     "id": 1611,
     "tr": "cüzdan",
     "en": "wallet",
-    "beispiel": "Ich habe nur Kleingeld in meiner Brieftasche.",
-    "beispielTr": "Cüzdanımda sadece bozuk para var.",
-    "beispielEn": "I only have coins in my wallet."
+    "beispiel": "Er zieht ein Foto seiner Kinder aus der Brieftasche.",
+    "beispielTr": "Cüzdanından çocuklarının fotoğrafını çıkarıyor.",
+    "beispielEn": "He pulls a photo of his kids out of his wallet."
   },
   {
     "id": 1833,
     "tr": "belki",
     "en": "possibly",
-    "beispiel": "Ich komme eventuell etwas später.",
-    "beispielTr": "Belki biraz geç gelirim.",
-    "beispielEn": "I might come a little later."
+    "beispiel": "Eventuell fahren wir am Sonntag an den See.",
+    "beispielTr": "Belki pazar günü göle gideriz.",
+    "beispielEn": "We might possibly drive to the lake on Sunday."
   },
   {
     "id": 2346,
@@ -35,17 +35,17 @@
     "id": 1993,
     "tr": "merakla bekleyen",
     "en": "eagerly awaiting",
-    "beispiel": "Ich bin gespannt, wer bei diesem Spiel gewinnt.",
-    "beispielTr": "Bu maçı kimin kazanacağını merak ediyorum.",
-    "beispielEn": "I'm eager to see who wins this game."
+    "beispiel": "Ich bin schon gespannt auf deine neue Wohnung.",
+    "beispielTr": "Yeni evini görmek için sabırsızlanıyorum.",
+    "beispielEn": "I can't wait to see your new apartment."
   },
   {
     "id": 2187,
     "tr": "zil çalmak",
     "en": "to ring",
-    "beispiel": "Ich glaube, es hat an der Tür geklingelt.",
-    "beispielTr": "Galiba kapı zili çaldı.",
-    "beispielEn": "I think someone rang the doorbell."
+    "beispiel": "Mein Wecker hat heute Morgen nicht geklingelt.",
+    "beispielTr": "Çalar saatim bu sabah çalmadı.",
+    "beispielEn": "My alarm didn't go off this morning."
   },
   {
     "id": 2439,
@@ -59,25 +59,25 @@
     "id": 1756,
     "tr": "kesin",
     "en": "final",
-    "beispiel": "Damit ist das Problem endgültig gelöst.",
-    "beispielTr": "Böylece sorun kesin olarak çözüldü.",
-    "beispielEn": "The problem is now solved for good."
+    "beispiel": "Nach langem Überlegen hat Eva sich endgültig für Berlin entschieden.",
+    "beispielTr": "Eva uzun düşündükten sonra kesin olarak Berlin'e karar verdi.",
+    "beispielEn": "After a lot of thought, Eva has decided on Berlin for good."
   },
   {
     "id": 2303,
     "tr": "ücret",
     "en": "wage",
-    "beispiel": "Sie bekommen Ihren Lohn immer am Ende des Monats.",
-    "beispielTr": "Maaşınızı her zaman ay sonunda alırsınız.",
-    "beispielEn": "You always get your wages at the end of the month."
+    "beispiel": "Am Monatsende bekommt Paul seinen Lohn.",
+    "beispielTr": "Paul ay sonunda ücretini alıyor.",
+    "beispielEn": "Paul gets his wages at the end of the month."
   },
   {
     "id": 3182,
     "tr": "hak vermek",
     "en": "to agree",
-    "beispiel": "Ich stimme dir in dieser Sache völlig zu.",
-    "beispielTr": "Bu konuda seninle tamamen hemfikirim.",
-    "beispielEn": "I completely agree with you on this."
+    "beispiel": "Da kann ich meinem Vater nur zustimmen.",
+    "beispielTr": "Bu konuda babama ancak hak verebilirim.",
+    "beispielEn": "I can only agree with my father on that."
   },
   {
     "id": 2802,
@@ -91,41 +91,41 @@
     "id": 2423,
     "tr": "bir kez daha",
     "en": "once more",
-    "beispiel": "Nochmals vielen Dank für Ihre Hilfe!",
-    "beispielTr": "Yardımınız için bir kez daha çok teşekkürler!",
-    "beispielEn": "Thanks once more for your help!"
+    "beispiel": "Könnten Sie mir den Weg nochmals erklären?",
+    "beispielTr": "Yolu bana bir kez daha anlatabilir misiniz?",
+    "beispielEn": "Could you explain the way to me once more?"
   },
   {
     "id": 2329,
     "tr": "medya",
     "en": "media",
-    "beispiel": "Umweltschutz ist in den Medien ein großes Thema.",
-    "beispielTr": "Çevre koruma medyada büyük bir konu.",
-    "beispielEn": "Environmental protection is a big topic in the media."
+    "beispiel": "Die Medien berichten kaum über diesen Streik.",
+    "beispielTr": "Medya bu grevden neredeyse hiç bahsetmiyor.",
+    "beispielEn": "The media are barely reporting on this strike."
   },
   {
     "id": 2283,
     "tr": "performans",
     "en": "performance",
-    "beispiel": "Meine Leistungen in der Schule sind ganz gut.",
-    "beispielTr": "Okuldaki performansım oldukça iyi.",
-    "beispielEn": "My performance at school is quite good."
+    "beispiel": "Der Trainer war mit der Leistung der Mannschaft zufrieden.",
+    "beispielTr": "Antrenör takımın performansından memnundu.",
+    "beispielEn": "The coach was happy with the team's performance."
   },
   {
     "id": 1817,
     "tr": "açmak",
     "en": "to open",
-    "beispiel": "Mein Nachbar hat letzten Monat ein Geschäft eröffnet.",
-    "beispielTr": "Komşum geçen ay bir dükkân açtı.",
-    "beispielEn": "My neighbor opened a shop last month."
+    "beispiel": "Im Frühling eröffnet die Stadt ein neues Schwimmbad.",
+    "beispielTr": "Belediye baharda yeni bir yüzme havuzu açıyor.",
+    "beispielEn": "The city is opening a new swimming pool in the spring."
   },
   {
     "id": 2784,
     "tr": "çarpmak",
     "en": "to bump",
-    "beispiel": "Ich habe mich an der Autotür gestoßen.",
-    "beispielTr": "Araba kapısına çarptım.",
-    "beispielEn": "I bumped into the car door."
+    "beispiel": "Pass auf, dass du dich nicht am niedrigen Balken stößt!",
+    "beispielTr": "Dikkat et, alçak kirişe çarpma!",
+    "beispielEn": "Be careful not to bump into the low beam!"
   },
   {
     "id": 2896,
@@ -139,9 +139,9 @@
     "id": 1986,
     "tr": "boşanmış",
     "en": "divorced",
-    "beispiel": "Ich bin seit drei Jahren geschieden.",
-    "beispielTr": "Üç yıldır boşanmışım.",
-    "beispielEn": "I've been divorced for three years."
+    "beispiel": "Seine Eltern sind geschieden, aber sie verstehen sich gut.",
+    "beispielTr": "Anne babası boşanmış ama aralarında iyi anlaşıyorlar.",
+    "beispielEn": "His parents are divorced, but they get along well."
   },
   {
     "id": 2695,
@@ -155,17 +155,17 @@
     "id": 1936,
     "tr": "yedirmek",
     "en": "to feed",
-    "beispiel": "Es ist im Zoo nicht erlaubt, die Tiere zu füttern.",
-    "beispielTr": "Hayvanat bahçesinde hayvanları beslemek yasak.",
-    "beispielEn": "Feeding the animals is not allowed at the zoo."
+    "beispiel": "Morgens füttert Paul die Hühner, bevor er zur Schule geht.",
+    "beispielTr": "Paul sabahları okula gitmeden önce tavukları besliyor.",
+    "beispielEn": "Paul feeds the chickens in the morning before he goes to school."
   },
   {
     "id": 2341,
     "tr": "insani",
     "en": "human",
-    "beispiel": "Fehler zu machen ist menschlich.",
-    "beispielTr": "Hata yapmak insani bir şeydir.",
-    "beispielEn": "To err is human."
+    "beispiel": "Die Ärztin war sehr menschlich und nahm sich Zeit.",
+    "beispielTr": "Doktor çok insancıldı ve vakit ayırdı.",
+    "beispielEn": "The doctor was very humane and took her time."
   },
   {
     "id": 2145,
@@ -179,17 +179,17 @@
     "id": 1552,
     "tr": "betimleme",
     "en": "description",
-    "beispiel": "Eine Beschreibung des Geräts liegt bei.",
-    "beispielTr": "Cihazın açıklaması ekte.",
-    "beispielEn": "A description of the device is enclosed."
+    "beispiel": "Die Beschreibung der Wohnung klang besser als die Realität.",
+    "beispielTr": "Evin ilandaki anlatımı gerçeğinden daha iyiydi.",
+    "beispielEn": "The description of the apartment sounded better than the reality."
   },
   {
     "id": 2026,
     "tr": "arsa",
     "en": "plot of land",
-    "beispiel": "Wir wollen ein Haus bauen und suchen ein günstiges Grundstück.",
-    "beispielTr": "Ev yaptırmak istiyoruz ve uygun bir arsa arıyoruz.",
-    "beispielEn": "We want to build a house and are looking for an affordable plot."
+    "beispiel": "Hinter dem Grundstück fängt direkt der Wald an.",
+    "beispielTr": "Arsanın hemen arkasından orman başlıyor.",
+    "beispielEn": "The woods start right behind the lot."
   },
   {
     "id": 2882,
@@ -211,9 +211,9 @@
     "id": 1510,
     "tr": "rastlamak",
     "en": "to run into",
-    "beispiel": "Sind wir uns nicht schon mal irgendwann begegnet?",
-    "beispielTr": "Biz daha önce bir yerde karşılaşmadık mı?",
-    "beispielEn": "Haven't we run into each other somewhere before?"
+    "beispiel": "Heute bin ich im Supermarkt meiner alten Lehrerin begegnet.",
+    "beispielTr": "Bugün süpermarkette eski öğretmenime rastladım.",
+    "beispielEn": "Today I ran into my old teacher at the supermarket."
   },
   {
     "id": 1453,
@@ -227,113 +227,113 @@
     "id": 1422,
     "tr": "kadın avukat",
     "en": "female lawyer",
-    "beispiel": "Ich möchte zuerst mit meiner Anwältin sprechen.",
-    "beispielTr": "Önce avukatımla konuşmak istiyorum.",
-    "beispielEn": "I want to talk to my lawyer first."
+    "beispiel": "Die Anwältin hat den Vertrag genau geprüft.",
+    "beispielTr": "Avukat hanım sözleşmeyi dikkatle inceledi.",
+    "beispielEn": "The lawyer checked the contract carefully."
   },
   {
     "id": 1922,
     "tr": "saç modeli",
     "en": "hairstyle",
-    "beispiel": "Du hast eine tolle neue Frisur!",
-    "beispielTr": "Saç modelin harika olmuş!",
-    "beispielEn": "You have a great new hairstyle!"
+    "beispiel": "Für die Hochzeit wünscht sich Mia eine elegante Frisur.",
+    "beispielTr": "Mia düğün için şık bir saç modeli istiyor.",
+    "beispielEn": "Mia wants an elegant hairstyle for the wedding."
   },
   {
     "id": 1924,
     "tr": "neşeli",
     "en": "cheerful",
-    "beispiel": "Sie ist ein sehr fröhlicher Mensch.",
-    "beispielTr": "O çok neşeli bir insan.",
-    "beispielEn": "She is a very cheerful person."
+    "beispiel": "Die Kinder singen fröhlich im Auto.",
+    "beispielTr": "Çocuklar arabada neşeyle şarkı söylüyor.",
+    "beispielEn": "The kids are singing cheerfully in the car."
   },
   {
     "id": 2614,
     "tr": "kutu",
     "en": "box",
-    "beispiel": "Meiner Mutter schenke ich eine Schachtel Pralinen.",
-    "beispielTr": "Anneme bir kutu çikolata hediye edeceğim.",
-    "beispielEn": "I'm giving my mother a box of chocolates."
+    "beispiel": "Die alten Fotos liegen in einer Schachtel auf dem Dachboden.",
+    "beispielTr": "Eski fotoğraflar tavan arasında bir kutuda duruyor.",
+    "beispielEn": "The old photos are in a box in the attic."
   },
   {
     "id": 1568,
     "tr": "işletme",
     "en": "company",
-    "beispiel": "In diesem Betrieb arbeiten zehn Leute.",
-    "beispielTr": "Bu işletmede on kişi çalışıyor.",
-    "beispielEn": "Ten people work in this company."
+    "beispiel": "Nach der Schule hat Jonas im Betrieb seines Onkels angefangen.",
+    "beispielTr": "Jonas okuldan sonra amcasının işletmesinde işe başladı.",
+    "beispielEn": "After school, Jonas started working at his uncle's company."
   },
   {
     "id": 1965,
     "tr": "zıtlık",
     "en": "contrast",
-    "beispiel": "Diese beiden Meinungen stehen in starkem Gegensatz zueinander.",
-    "beispielTr": "Bu iki görüş birbiriyle taban tabana zıt.",
-    "beispielEn": "These two opinions are in stark contrast."
+    "beispiel": "Der Gegensatz zwischen Stadt und Land ist hier sehr groß.",
+    "beispielTr": "Burada şehirle köy arasındaki zıtlık çok büyük.",
+    "beispielEn": "The contrast between city and countryside is huge here."
   },
   {
     "id": 1780,
     "tr": "gelişim",
     "en": "development",
-    "beispiel": "Genug Schlaf ist wichtig für die Entwicklung Ihres Kindes.",
-    "beispielTr": "Yeterli uyku, çocuğunuzun gelişimi için önemlidir.",
-    "beispielEn": "Enough sleep is important for your child's development."
+    "beispiel": "Die Entwicklung der Stadt hat viele Jahre gedauert.",
+    "beispielTr": "Şehrin gelişimi uzun yıllar sürdü.",
+    "beispielEn": "The city's development took many years."
   },
   {
     "id": 2962,
     "tr": "kendini geliştirmek",
     "en": "to improve",
-    "beispiel": "Meine Kinder haben sich in der Schule verbessert.",
-    "beispielTr": "Çocuklarım okulda kendilerini geliştirdi.",
-    "beispielEn": "My children have improved at school."
+    "beispiel": "Seit dem Training hat sich Tim im Tennis deutlich verbessert.",
+    "beispielTr": "Tim antrenmandan beri teniste kendini epey geliştirdi.",
+    "beispielEn": "Since the training, Tim has clearly improved at tennis."
   },
   {
     "id": 1669,
     "tr": "tartışma",
     "en": "discussion",
-    "beispiel": "Im Fernsehen gab es eine Diskussion über Kinderbetreuung.",
-    "beispielTr": "Televizyonda çocuk bakımı üzerine bir tartışma vardı.",
-    "beispielEn": "There was a discussion about childcare on TV."
+    "beispiel": "Nach dem Vortrag gab es eine lebhafte Diskussion.",
+    "beispielTr": "Konuşmadan sonra hararetli bir tartışma oldu.",
+    "beispielEn": "There was a lively discussion after the talk."
   },
   {
     "id": 1904,
     "tr": "araştırma",
     "en": "research",
-    "beispiel": "Er arbeitet in der Forschung.",
-    "beispielTr": "Araştırma alanında çalışıyor.",
-    "beispielEn": "He works in research."
+    "beispiel": "Für die Forschung braucht die Uni mehr Geld.",
+    "beispielTr": "Üniversitenin araştırma için daha fazla paraya ihtiyacı var.",
+    "beispielEn": "The university needs more money for research."
   },
   {
     "id": 2853,
     "tr": "ölümcül",
     "en": "deadly",
-    "beispiel": "Dieses Gift kann für den Menschen tödlich sein.",
-    "beispielTr": "Bu zehir insan için ölümcül olabilir.",
-    "beispielEn": "This poison can be deadly for humans."
+    "beispiel": "Manche Pilze sehen harmlos aus, sind aber tödlich.",
+    "beispielTr": "Bazı mantarlar zararsız görünür ama ölümcüldür.",
+    "beispielEn": "Some mushrooms look harmless but are deadly."
   },
   {
     "id": 1503,
     "tr": "çalıştırmak",
     "en": "to operate",
-    "beispiel": "Die Kaffeemaschine ist ganz leicht zu bedienen.",
-    "beispielTr": "Kahve makinesini kullanmak çok kolay.",
-    "beispielEn": "The coffee machine is very easy to operate."
+    "beispiel": "Weißt du, wie man diesen Fahrkartenautomaten bedient?",
+    "beispielTr": "Bu bilet makinesinin nasıl kullanıldığını biliyor musun?",
+    "beispielEn": "Do you know how to operate this ticket machine?"
   },
   {
     "id": 2502,
     "tr": "politikacı",
     "en": "politician",
-    "beispiel": "Weißt du, wie dieser Politiker heißt?",
-    "beispielTr": "Bu politikacının adını biliyor musun?",
-    "beispielEn": "Do you know this politician's name?"
+    "beispiel": "Der Politiker hat seine Versprechen nicht gehalten.",
+    "beispielTr": "Politikacı verdiği sözleri tutmadı.",
+    "beispielEn": "The politician didn't keep his promises."
   },
   {
     "id": 3094,
     "tr": "alet",
     "en": "tool",
-    "beispiel": "Wir hatten kein Werkzeug für die Reparatur dabei.",
-    "beispielTr": "Tamir için yanımızda alet yoktu.",
-    "beispielEn": "We didn't have any tools with us for the repair."
+    "beispiel": "Mein Vater bewahrt sein Werkzeug im Keller auf.",
+    "beispielTr": "Babam aletlerini bodrumda saklıyor.",
+    "beispielEn": "My father keeps his tools in the basement."
   },
   {
     "id": 2409,
@@ -355,9 +355,9 @@
     "id": 1655,
     "tr": "detay",
     "en": "detail",
-    "beispiel": "Ich habe alles bis ins kleinste Detail geplant.",
-    "beispielTr": "Her şeyi en ince ayrıntısına kadar planladım.",
-    "beispielEn": "I planned everything down to the last detail."
+    "beispiel": "Auf dem alten Foto erkennt man jedes Detail.",
+    "beispielTr": "Eski fotoğrafta her detay seçilebiliyor.",
+    "beispielEn": "You can make out every detail in the old photo."
   },
   {
     "id": 2652,
@@ -371,32 +371,32 @@
     "id": 1392,
     "tr": "öte yandan",
     "en": "on the other hand",
-    "beispiel": "Tarek möchte zwar studieren, aber andererseits möchte er auch gleich Geld verdienen.",
-    "beispielTr": "Tarek okumak istiyor ama öte yandan hemen para da kazanmak istiyor.",
-    "beispielEn": "Tarek wants to study, but on the other hand he also wants to earn money right away."
+    "beispiel": "Die Stadt ist teuer, andererseits gibt es dort viele Jobs.",
+    "beispielTr": "Şehir pahalı, öte yandan orada çok iş var.",
+    "beispielEn": "The city is expensive, but on the other hand there are lots of jobs."
   },
   {
     "id": 2904,
     "tr": "alışılmış",
     "en": "usual",
-    "beispiel": "In Deutschland ist es üblich, früh zu Abend zu essen.",
-    "beispielTr": "Almanya'da akşam yemeğini erken yemek yaygındır.",
-    "beispielEn": "In Germany it is common to eat dinner early."
+    "beispiel": "Bei einer Einladung ist es üblich, Blumen mitzubringen.",
+    "beispielTr": "Bir davette çiçek götürmek alışılmış bir şeydir.",
+    "beispielEn": "It's usual to bring flowers when you're invited over."
   },
   {
     "id": 1955,
     "tr": "şiir",
     "en": "poem",
-    "beispiel": "Kennst du ein schönes Gedicht?",
-    "beispielTr": "Güzel bir şiir biliyor musun?",
-    "beispielEn": "Do you know a nice poem?"
+    "beispiel": "Zum Muttertag hat Emma ein kurzes Gedicht geschrieben.",
+    "beispielTr": "Emma Anneler Günü için kısa bir şiir yazdı.",
+    "beispielEn": "Emma wrote a short poem for Mother's Day."
   },
   {
     "id": 3063,
     "tr": "önermek",
     "en": "to suggest",
-    "beispiel": "Ich schlage vor, dass wir eine Pause machen.",
-    "beispielTr": "Bir ara vermemizi öneriyorum.",
-    "beispielEn": "I suggest that we take a break."
+    "beispiel": "Der Kellner hat uns den Fisch des Tages vorgeschlagen.",
+    "beispielTr": "Garson bize günün balığını önerdi.",
+    "beispielEn": "The waiter suggested the fish of the day to us."
   }
 ]

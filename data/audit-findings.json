@@ -1,567 +1,135 @@
 [
  {
-  "id": 6,
-  "de": "Achtung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Achtung!\""
- },
- {
-  "id": 14,
-  "de": "an",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Am Sonntag/am Abend/am Anfang/am Meer/ am Fenster/an den See/am Marktp\""
- },
- {
-  "id": 14,
-  "de": "an",
-  "rule": "cümle değil: kalıp yığını",
-  "detail": "\"Am Sonntag/am Abend/am Anfang/am Meer/ am Fenster/an den See/am Marktp…\""
- },
- {
-  "id": 15,
-  "de": "andere",
+  "id": 4,
+  "de": "abgeben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"andere\" → \"Gefällt dir die Jacke?\""
+  "detail": "\"abgeben\" → \"Bitte gebt die Tests am Freitag ab.\""
  },
  {
-  "id": 27,
-  "de": "Apotheke",
-  "rule": "cümle çok kısa",
-  "detail": "\"Aspirin?\""
- },
- {
-  "id": 27,
-  "de": "Apotheke",
+  "id": 5,
+  "de": "abholen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Apotheke\" → \"Aspirin?\""
+  "detail": "\"abholen\" → \"Papa holt die Kinder um drei vom Kindergarten ab.\""
+ },
+ {
+  "id": 20,
+  "de": "anrufen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"anrufen\" → \"Oma ruft jeden Sonntag bei uns an.\""
  },
  {
   "id": 47,
   "de": "aussehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aussehen\" → \"Das Buch sieht sehr interessant aus.\""
+  "detail": "\"aussehen\" → \"Du siehst heute wirklich müde aus.\""
  },
  {
-  "id": 72,
-  "de": "beste",
-  "rule": "cümle noktalamasız",
-  "detail": "\"der beste Schüler, die beste Freundin, das beste Buch\""
- },
- {
-  "id": 97,
-  "de": "Dank",
-  "rule": "cümle çok kısa",
-  "detail": "\"Vielen Dank!\""
- },
- {
-  "id": 102,
-  "de": "der",
+  "id": 208,
+  "de": "haben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"der\" → \"Möchtest du das da?\""
+  "detail": "\"haben\" → \"Frau Weber hat drei Kinder und einen Garten.\""
  },
  {
-  "id": 105,
-  "de": "Disco",
+  "id": 219,
+  "de": "helfen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Disco\" → \"Sie geht gern in die Diskothek.\""
- },
- {
-  "id": 106,
-  "de": "doch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"doch\" → \"Magst du das nicht?\""
- },
- {
-  "id": 107,
-  "de": "dort",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"dort\" → \"Du gehst in die Stadt?\""
- },
- {
-  "id": 111,
-  "de": "Durst",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Durst\" → \"Hast du etwas zu trinken?\""
- },
- {
-  "id": 128,
-  "de": "Entschuldigung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Entschuldigung!\""
- },
- {
-  "id": 200,
-  "de": "Glück",
-  "rule": "cümle çok kısa",
-  "detail": "\"Viel Glück!\""
- },
- {
-  "id": 202,
-  "de": "Glückwunsch",
-  "rule": "cümle çok kısa",
-  "detail": "\"Herzlichen Glückwunsch!\""
- },
- {
-  "id": 209,
-  "de": "hallo",
-  "rule": "cümle çok kısa",
-  "detail": "\"Hallo!\""
- },
- {
-  "id": 228,
-  "de": "hören",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"hören\" → \"Hörst du gern Musik?\""
- },
- {
-  "id": 236,
-  "de": "in",
-  "rule": "cümle noktalamasız",
-  "detail": "\"In Spanien/in der Stadt/ins Schwimmbad/ in den Wald/in den Ferien/im S\""
- },
- {
-  "id": 236,
-  "de": "in",
-  "rule": "cümle değil: kalıp yığını",
-  "detail": "\"In Spanien/in der Stadt/ins Schwimmbad/ in den Wald/in den Ferien/im S…\""
- },
- {
-  "id": 265,
-  "de": "klar",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"klar\" → \"Können wir das mitnehmen?\""
+  "detail": "\"helfen\" → \"Mein Bruder hilft mir beim Umzug.\""
  },
  {
   "id": 273,
   "de": "können",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"können\" → \"Ich kann Deutsch und Russisch.\""
- },
- {
-  "id": 287,
-  "de": "lang",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"lang\" → \"Das Kleid ist zu kurz.\""
+  "detail": "\"können\" → \"Mein kleiner Bruder kann schon lesen.\""
  },
  {
   "id": 293,
   "de": "leben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"leben\" → \"Sie lebt bei ihrer Schwester.\""
+  "detail": "\"leben\" → \"Sie lebt seit zehn Jahren hier.\""
  },
  {
-  "id": 300,
-  "de": "lieb",
-  "rule": "cümle çok kısa",
-  "detail": "\"Lieber Franz!\""
- },
- {
-  "id": 324,
-  "de": "mitbringen",
+  "id": 298,
+  "de": "lesen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mitbringen\" → \"Ich gehe einkaufen.\""
- },
- {
-  "id": 325,
-  "de": "mitkommen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mitkommen\" → \"Ich gehe ins Kino.\""
+  "detail": "\"lesen\" → \"Abends liest mein Sohn gern Comics im Bett.\""
  },
  {
   "id": 328,
   "de": "mögen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mögen\" → \"Ich mag gern Spaghetti und Fleisch.\""
+  "detail": "\"mögen\" → \"Ich mag Kaffee mit Milch.\""
  },
  {
-  "id": 339,
-  "de": "nein",
+  "id": 338,
+  "de": "nehmen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nein\" → \"Kommst du mit?\""
+  "detail": "\"nehmen\" → \"Nimm doch einen Regenschirm mit!\""
  },
  {
   "id": 393,
   "de": "sagen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sagen\" → \"Eva sagt, sie kommt heute nicht.\""
- },
- {
-  "id": 395,
-  "de": "schade",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schade\" → \"Du kannst nicht kommen?\""
+  "detail": "\"sagen\" → \"Er sagt uns die Wahrheit.\""
  },
  {
   "id": 411,
   "de": "sehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sehen\" → \"Siehst du das große Haus?\""
+  "detail": "\"sehen\" → \"Vom Turm sieht man die ganze Altstadt.\""
  },
  {
   "id": 413,
   "de": "sein",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sein\" → \"Ich bin 13 Jahre alt.\""
+  "detail": "\"sein\" → \"Mein Bruder ist heute krank.\""
  },
  {
   "id": 429,
   "de": "sprechen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sprechen\" → \"Sie spricht mit dem Lehrer.\""
- },
- {
-  "id": 468,
-  "de": "und so weiter",
-  "rule": "cümle çok kısa",
-  "detail": "\"usw.\""
- },
- {
-  "id": 468,
-  "de": "und so weiter",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"und so weiter\" → \"usw.\""
- },
- {
-  "id": 503,
-  "de": "Wiedersehen",
-  "rule": "cümle çok kısa",
-  "detail": "\"Auf Wiedersehen!\""
- },
- {
-  "id": 505,
-  "de": "willkommen",
-  "rule": "cümle çok kısa",
-  "detail": "\"Herzlich willkommen!\""
+  "detail": "\"sprechen\" → \"Am Telefon spricht Oma immer sehr laut.\""
  },
  {
   "id": 508,
   "de": "wissen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wissen\" → \"Weißt du, wie er heißt?\""
+  "detail": "\"wissen\" → \"Ich weiß seine Telefonnummer nicht.\""
  },
  {
   "id": 515,
   "de": "wollen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wollen\" → \"Willst du meine Freunde kennenlernen?\""
- },
- {
-  "id": 525,
-  "de": "zu",
-  "rule": "cümle noktalamasız",
-  "detail": "\"zu groß/zum Frühstück/zum Zahnarzt/zur Post/ zum Geburtstag\""
- },
- {
-  "id": 525,
-  "de": "zu",
-  "rule": "cümle değil: kalıp yığını",
-  "detail": "\"zu groß/zum Frühstück/zum Zahnarzt/zur Post/ zum Geburtstag…\""
+  "detail": "\"wollen\" → \"Willst du ein Eis essen?\""
  },
  {
   "id": 529,
   "de": "zumachen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zumachen\" → \"Machst du bitte das Fenster zu?\""
+  "detail": "\"zumachen\" → \"Ich mache jetzt das Fenster zu.\""
  },
  {
   "id": 554,
   "de": "aufhören",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aufhören\" → \"Der Kurs hört in einer Woche auf.\""
- },
- {
-  "id": 566,
-  "de": "automatisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"automatisch\" → \"Du musst nichts machen.\""
- },
- {
-  "id": 603,
-  "de": "daneben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"daneben\" → \"Du kennst doch die Post.\""
- },
- {
-  "id": 604,
-  "de": "danke",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"danke\" → \"Soll ich Ihnen helfen?\""
- },
- {
-  "id": 612,
-  "de": "Doktor",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Doktor\" → \"Meine Tochter ist krank.\""
- },
- {
-  "id": 625,
-  "de": "Ehemann",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Ehemann\" → \"Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.\""
- },
- {
-  "id": 680,
-  "de": "Halle",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Wir treffen uns in Halle B\""
- },
- {
-  "id": 682,
-  "de": "Hausfrau",
-  "rule": "örnek cümle yok",
-  "detail": "Hausfrau"
- },
- {
-  "id": 684,
-  "de": "Heimat",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Heimat\" → \"Ich komme aus der Schweiz.\""
- },
- {
-  "id": 687,
-  "de": "Hilfe",
-  "rule": "cümle çok kısa",
-  "detail": "\"Hilfe!\""
- },
- {
-  "id": 707,
-  "de": "Kunde",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Kunde\" → \"Einen Moment, bitte.\""
- },
- {
-  "id": 713,
-  "de": "ledig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ledig\" → \"Sind Sie verheiratet?\""
- },
- {
-  "id": 716,
-  "de": "leise",
-  "rule": "cümle çok kısa",
-  "detail": "\"Seid leise.\""
- },
- {
-  "id": 722,
-  "de": "Lkw",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Lkw\" → \"Dieser Lastkraftwagen ist sehr groß.\""
- },
- {
-  "id": 739,
-  "de": "oben",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Ich wohne oben im\""
- },
- {
-  "id": 773,
-  "de": "Satz",
-  "rule": "gereksiz artikel",
-  "detail": "\"Satz\" isim değil ama artikeli var: der"
+  "detail": "\"aufhören\" → \"Die Musik hört um Mitternacht auf.\""
  },
  {
   "id": 776,
   "de": "scheinen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"scheinen\" → \"Gestern hat es geregnet.\""
+  "detail": "\"scheinen\" → \"Nach dem Regen hat die Sonne wieder geschienen.\""
  },
  {
-  "id": 798,
-  "de": "Sonne",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Sonne\" → \"Das Wetter ist schön.\""
- },
- {
-  "id": 809,
-  "de": "Taxi",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Taxi\" → \"Es gibt heute keinen Bus mehr.\""
- },
- {
-  "id": 820,
-  "de": "Treppe",
-  "rule": "cümle çok kısa",
-  "detail": "\"Die Toilette?\""
- },
- {
-  "id": 820,
-  "de": "Treppe",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Treppe\" → \"Die Toilette?\""
- },
- {
-  "id": 841,
-  "de": "Vorsicht",
-  "rule": "cümle çok kısa",
-  "detail": "\"Vorsicht!\""
- },
- {
-  "id": 842,
-  "de": "sich vorstellen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich vorstellen\" → \"Wir wollen uns kennenlernen.\""
- },
- {
-  "id": 850,
-  "de": "Wiederhören",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Wiederhören\" → \"Wir müssen jetzt Schluss machen.\""
- },
- {
-  "id": 877,
-  "de": "ausgeben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ausgeben\" → \"Agata gibt viel Geld für Bücher aus.\""
- },
- {
-  "id": 884,
-  "de": "aussprechen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aussprechen\" → \"Wie spricht man das Wort aus?\""
- },
- {
-  "id": 886,
-  "de": "austragen",
+  "id": 797,
+  "de": "sollen",
   "rule": "fiil çevirisi mastar değil",
-  "detail": "\"austragen\" → \"dağıtmak (gazete\""
+  "detail": "\"sollen\" → \"-meli\""
  },
  {
-  "id": 903,
-  "de": "Bescheid",
+  "id": 825,
+  "de": "umziehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Bescheid\" → \"Kann Lisa in Heidelberg studieren?\""
- },
- {
-  "id": 917,
-  "de": "braten",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"braten\" → \"kızartmak (tavada\""
- },
- {
-  "id": 920,
-  "de": "buchen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"buchen\" → \"rezervasyon yaptırmak (uçuş\""
- },
- {
-  "id": 931,
-  "de": "damals",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"damals\" → \"Als Student hatte ich viel Zeit und wollte reisen.\""
- },
- {
-  "id": 938,
-  "de": "dringend",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"dringend\" → \"Bitte kommen Sie schnell.\""
- },
- {
-  "id": 952,
-  "de": "einzeln",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einzeln\" → \"Nicht alle zusammen.\""
- },
- {
-  "id": 974,
-  "de": "Fest",
-  "rule": "cümle çok kısa",
-  "detail": "\"Frohes Fest!\""
- },
- {
-  "id": 992,
-  "de": "ganz",
-  "rule": "cümle çok kısa",
-  "detail": "\"Oh nein!\""
- },
- {
-  "id": 992,
-  "de": "ganz",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ganz\" → \"Oh nein!\""
- },
- {
-  "id": 995,
-  "de": "geehrte",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Sehr geehrte Damen und Herren,\""
- },
- {
-  "id": 996,
-  "de": "gefährlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gefährlich\" → \"Du darfst nicht bei Rot über die Straße gehen.\""
- },
- {
-  "id": 1001,
-  "de": "genau",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Sind Sie sicher, dass die Prüfung am\""
- },
- {
-  "id": 1001,
-  "de": "genau",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"genau\" → \"Sind Sie sicher, dass die Prüfung am\""
- },
- {
-  "id": 1006,
-  "de": "gesund",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gesund\" → \"Ich hatte Grippe.\""
- },
- {
-  "id": 1007,
-  "de": "Gesundheit",
-  "rule": "cümle çok kısa",
-  "detail": "\"Gesundheit!\""
- },
- {
-  "id": 1020,
-  "de": "Heizung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Heizung\" → \"Es ist kalt.\""
- },
- {
-  "id": 1024,
-  "de": "herein",
-  "rule": "cümle çok kısa",
-  "detail": "\"Herein!\""
- },
- {
-  "id": 1034,
-  "de": "Instrument",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Instrument\" → \"Ich spiele Klavier.\""
- },
- {
-  "id": 1038,
-  "de": "Interview",
-  "rule": "cümle çok kısa",
-  "detail": "\"Komm schnell!\""
- },
- {
-  "id": 1038,
-  "de": "Interview",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Interview\" → \"Komm schnell!\""
- },
- {
-  "id": 1043,
-  "de": "Kalender",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Kalender\" → \"Haben Sie am Montag Zeit?\""
- },
- {
-  "id": 1049,
-  "de": "klappen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"klappen\" → \"Können wir uns heute Mittag treffen?\""
- },
- {
-  "id": 1066,
-  "de": "kündigen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"kündigen\" → \"Meine Arbeit gefällt mir nicht mehr.\""
+  "detail": "\"umziehen\" → \"Meine Freundin ist letztes Jahr nach Hamburg umgezogen.\""
  },
  {
   "id": 1070,
@@ -570,532 +138,124 @@
   "detail": "\"Lebensmittel\" → die, ama \"Mittel\" → das"
  },
  {
-  "id": 1077,
-  "de": "Lüge",
+  "id": 1078,
+  "de": "lügen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Lüge\" → \"Das stimmt nicht!\""
+  "detail": "\"lügen\" → \"Ich glaube, Tom hat schon wieder gelogen.\""
  },
  {
-  "id": 1096,
-  "de": "Mobiltelefon",
+  "id": 1082,
+  "de": "malen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Mobiltelefon\" → \"Wie kann ich Sie erreichen?\""
- },
- {
-  "id": 1110,
-  "de": "nebenan",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nebenan\" → \"Das ist José.\""
- },
- {
-  "id": 1111,
-  "de": "neblig",
-  "rule": "cümle çok kısa",
-  "detail": "\"Fahr vorsichtig!\""
- },
- {
-  "id": 1111,
-  "de": "neblig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"neblig\" → \"Fahr vorsichtig!\""
- },
- {
-  "id": 1117,
-  "de": "notwendig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"notwendig\" → \"Muss ich noch einmal kommen?\""
- },
- {
-  "id": 1119,
-  "de": "nützlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nützlich\" → \"Danke für den Tipp.\""
- },
- {
-  "id": 1126,
-  "de": "packen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"packen\" → \"(bavul\""
- },
- {
-  "id": 1138,
-  "de": "praktisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"praktisch\" → \"Mit meinem neuen Handy kann ich auch im Internet surfen und \""
- },
- {
-  "id": 1154,
-  "de": "Reihe",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Reihe\" → \"Ich habe Karten für das Konzert.\""
- },
- {
-  "id": 1157,
-  "de": "Rentner",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Rentner\" → \"Mein Onkel arbeitet nicht mehr.\""
- },
- {
-  "id": 1159,
-  "de": "Rest",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Rest\" → \"Hier sind 50 Euro.\""
- },
- {
-  "id": 1160,
-  "de": "Rezept",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Rezept\" → \"Dieser Kuchen schmeckt super!\""
+  "detail": "\"malen\" → \"Am Wochenende malt mein Opa Bilder vom Meer.\""
  },
  {
   "id": 1166,
   "de": "rufen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"rufen\" → \"Rufst du bitte die Kinder.\""
- },
- {
-  "id": 1167,
-  "de": "Ruhe",
-  "rule": "cümle çok kısa",
-  "detail": "\"Ruhe, bitte!\""
- },
- {
-  "id": 1175,
-  "de": "schaffen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schaffen\" → \"Kannst du mir bitte helfen?\""
- },
- {
-  "id": 1202,
-  "de": "sogar",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sogar\" → \"Heute ist es sehr kalt.\""
- },
- {
-  "id": 1206,
-  "de": "sparen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sparen\" → \"Ein neues Auto ist sehr teuer.\""
- },
- {
-  "id": 1216,
-  "de": "sterben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sterben\" → \"Herr Müller kommt heute nicht.\""
- },
- {
-  "id": 1221,
-  "de": "stören",
-  "rule": "cümle çok kısa",
-  "detail": "\"Störe ich?\""
- },
- {
-  "id": 1235,
-  "de": "teilnehmen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"teilnehmen\" → \"katılmak (kursa\""
- },
- {
-  "id": 1240,
-  "de": "Titel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Titel\" → \"Wie heißt der Film?\""
- },
- {
-  "id": 1254,
-  "de": "übermorgen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"übermorgen\" → \"Morgen habe ich frei.\""
- },
- {
-  "id": 1268,
-  "de": "unterwegs sein",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"unterwegs sein\" → \"Warte bitte auf mich.\""
- },
- {
-  "id": 1270,
-  "de": "Veranstaltung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Veranstaltung\" → \"Am Samstag ist unser Restaurant geschlossen.\""
- },
- {
-  "id": 1290,
-  "de": "vorbereiten",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vorbereiten\" → \"Morgen mache ich eine Party.\""
- },
- {
-  "id": 1292,
-  "de": "vorher",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vorher\" → \"Ich komme mit ins Café.\""
- },
- {
-  "id": 1294,
-  "de": "Vorschlag",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Vorschlag\" → \"Was machen wir am Wochenende?\""
- },
- {
-  "id": 1295,
-  "de": "vorsichtig",
-  "rule": "cümle çok kısa",
-  "detail": "\"Sei vorsichtig!\""
+  "detail": "\"rufen\" → \"Die Mutter ruft die Kinder zum Essen.\""
  },
  {
   "id": 1309,
   "de": "wehtun",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wehtun\" → \"Wo tut es weh?\""
- },
- {
-  "id": 1314,
-  "de": "wenigstens",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wenigstens\" → \"Ich habe keinen Hunger.\""
- },
- {
-  "id": 1317,
-  "de": "Werkstatt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Werkstatt\" → \"Mein Auto ist kaputt.\""
- },
- {
-  "id": 1321,
-  "de": "witzig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"witzig\" → \"Warum lachst du?\""
- },
- {
-  "id": 1332,
-  "de": "Ziel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Ziel\" → \"John läuft sehr schnell.\""
+  "detail": "\"wehtun\" → \"Mein Kopf tut heute sehr weh.\""
  },
  {
   "id": 1337,
   "de": "zuhören",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zuhören\" → \"Hör mir doch mal zu!\""
- },
- {
-  "id": 1339,
-  "de": "zurück-",
-  "rule": "fiil mastar değil",
-  "detail": "\"zurück-\" fiil olarak işaretli ama mastar eki yok"
+  "detail": "\"zuhören\" → \"Hör mir bitte kurz zu!\""
  },
  {
   "id": 1348,
   "de": "abheben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"abheben\" → \"Für die Reise habe ich 500 Euro von meinem Konto abgehoben.\""
+  "detail": "\"abheben\" → \"Ich habe zweihundert Euro vom Konto abgehoben.\""
  },
  {
-  "id": 1360,
-  "de": "Absicht",
+  "id": 1353,
+  "de": "abnehmen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Absicht\" → \"Entschuldigen Sie bitte.\""
+  "detail": "\"abnehmen\" → \"Seit Januar habe ich sechs Kilo abgenommen.\""
  },
  {
-  "id": 1368,
-  "de": "abwesend",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Herr Huber ist bis zum\""
- },
- {
-  "id": 1368,
-  "de": "abwesend",
+  "id": 1356,
+  "de": "absagen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"abwesend\" → \"Herr Huber ist bis zum\""
+  "detail": "\"absagen\" → \"Wegen des Sturms hat die Stadt das Konzert abgesagt.\""
  },
  {
   "id": 1402,
   "de": "anhaben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"anhaben\" → \"Gestern hatte Julia ein rotes Kleid an.\""
+  "detail": "\"anhaben\" → \"Bei der Hochzeit hat mein Opa einen alten Anzug angehabt.\""
  },
  {
   "id": 1411,
   "de": "ansprechen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ansprechen\" → \"Gestern hat mich unsere neue Nachbarin im Treppenhaus angesp\""
+  "detail": "\"ansprechen\" → \"Auf der Party hat mich ein Fremder angesprochen.\""
  },
  {
-  "id": 1412,
-  "de": "Anspruch",
+  "id": 1443,
+  "de": "aufgeben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Anspruch\" → \"Sie wohnen im Stadtzentrum.\""
+  "detail": "\"aufgeben\" → \"Gib nicht auf, du schaffst das bestimmt!\""
  },
  {
-  "id": 1421,
-  "de": "Anwalt",
+  "id": 1445,
+  "de": "aufheben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Anwalt\" → \"Ich werde das nicht bezahlen.\""
+  "detail": "\"aufheben\" → \"Meine Mutter hebt alle Briefe von früher auf.\""
  },
  {
-  "id": 1422,
-  "de": "Anwältin",
+  "id": 1447,
+  "de": "auflösen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Anwältin\" → \"Ich werde das nicht bezahlen.\""
- },
- {
-  "id": 1433,
-  "de": "ärgerlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ärgerlich\" → \"Der Zug hat schon wieder Verspätung.\""
- },
- {
-  "id": 1438,
-  "de": "Aufenthalt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Aufenthalt\" → \"Ich bin schon seit zwei Stunden auf.\""
+  "detail": "\"auflösen\" → \"Salz löst sich in warmem Wasser schneller auf.\""
  },
  {
   "id": 1449,
   "de": "aufnehmen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aufnehmen\" → \"Wir haben Aneta in unseren Verein aufgenommen.\""
- },
- {
-  "id": 1450,
-  "de": "Aufnahme",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Aufnahme\" → \"Bitte seid leise!\""
+  "detail": "\"aufnehmen\" → \"Wir haben das Konzert mit dem Handy aufgenommen.\""
  },
  {
   "id": 1451,
   "de": "aufregen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aufregen\" → \"Es regt mich auf, dass ich schon wieder Überstunden machen m\""
+  "detail": "\"aufregen\" → \"Es regt mich auf, dass er ständig zu spät kommt.\""
  },
  {
-  "id": 1453,
-  "de": "auftreten",
+  "id": 1479,
+  "de": "sich etwas aussuchen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"auftreten\" → \"Nächste Woche tritt in der Stadthalle eine berühmte Musikgru\""
+  "detail": "\"sich etwas aussuchen\" → \"Zum Geburtstag darfst du dir ein Restaurant aussuchen.\""
  },
  {
-  "id": 1456,
-  "de": "aufwärts",
+  "id": 1482,
+  "de": "ausziehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aufwärts\" → \"Sie müssen gute Schuhe anziehen.\""
- },
- {
-  "id": 1457,
-  "de": "Augenblick",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Augenblick\" → \"Ich wollte gerade parken.\""
- },
- {
-  "id": 1467,
-  "de": "Ausnahme",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Ausnahme\" → \"Normalerweise muss ich am Wochenende arbeiten.\""
- },
- {
-  "id": 1470,
-  "de": "ausrichten",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ausrichten\" → \"Mein Mann ist nicht da.\""
- },
- {
-  "id": 1473,
-  "de": "ausschließlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ausschließlich\" → \"Tut mir leid.\""
+  "detail": "\"ausziehen\" → \"Meine Nachbarn sind letzte Woche ausgezogen.\""
  },
  {
   "id": 1488,
   "de": "Bancomat/Bankomat",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Bancomat/Bankomat\" → \"Ich hole noch schnell Geld vom Bankomaten.\""
- },
- {
-  "id": 1511,
-  "de": "begeistert",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"begeistert\" → \"Es war ein tolles Konzert.\""
- },
- {
-  "id": 1529,
-  "de": "Beleg",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Beleg\" → \"Laut Wetterbericht bekommen wir Regen.\""
- },
- {
-  "id": 1540,
-  "de": "bereits",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"bereits\" → \"Bitte melde dich bei Frau Kaiser.\""
- },
- {
-  "id": 1559,
-  "de": "Besserung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Gute Besserung!\""
- },
- {
-  "id": 1563,
-  "de": "sich beteiligen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich beteiligen\" → \"Wir wollen unserer Lehrerin ein Geschenk kaufen.\""
- },
- {
-  "id": 1579,
-  "de": "sich bewerben",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"sich bewerben\" → \"başvurmak (iş\""
+  "detail": "\"Bancomat/Bankomat\" → \"Ich hebe hundert Euro am Bankomaten ab.\""
  },
  {
   "id": 1579,
   "de": "sich bewerben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich bewerben\" → \"Ich habe mich um diese Stelle beworben.\""
- },
- {
-  "id": 1583,
-  "de": "bieten",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"bieten\" → \"Er hat mir für den alten Wagen noch 800 Euro geboten.\""
- },
- {
-  "id": 1587,
-  "de": "Bio-",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Bio-\" → \"Ich kaufe nur noch Biogemüse.\""
- },
- {
-  "id": 1593,
-  "de": "blitzen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"blitzen\" → \"Gestern Abend gab es ein Gewitter.\""
- },
- {
-  "id": 1595,
-  "de": "bloß",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"bloß\" → \"Ich möchte nichts kaufen.\""
- },
- {
-  "id": 1597,
-  "de": "bluten",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"bluten\" → \"Ich habe mich verletzt.\""
+  "detail": "\"sich bewerben\" → \"Meine Schwester bewirbt sich an drei Universitäten.\""
  },
  {
   "id": 1603,
   "de": "brechen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"brechen\" → \"Er hat sich beim Skifahren verletzt, sein Bein ist gebrochen\""
- },
- {
-  "id": 1604,
-  "de": "Breite",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Breite\" → \"Welche Maße hat der Tisch?\""
- },
- {
-  "id": 1605,
-  "de": "bremsen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"bremsen\" → \"Der Mann ist ganz plötzlich über die Straße gegangen.\""
- },
- {
-  "id": 1607,
-  "de": "brennen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"brennen\" → \"In diesem Haus hat es letztes Jahr gebrannt.\""
- },
- {
-  "id": 1628,
-  "de": "Coiffeur",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Coiffeur\" → \"Du siehst toll aus!\""
- },
- {
-  "id": 1629,
-  "de": "Coiffeuse",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Coiffeuse\" → \"Du siehst toll aus!\""
- },
- {
-  "id": 1636,
-  "de": "dafür",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"dafür\" → \"Meine Schwester interessiert sich für Politik.\""
- },
- {
-  "id": 1637,
-  "de": "dagegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"dagegen\" → \"Vorsicht, da ist ein Baum!\""
- },
- {
-  "id": 1639,
-  "de": "dahin",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"dahin\" → \"Der Zug kommt in 30 Minuten.\""
- },
- {
-  "id": 1652,
-  "de": "derselbe",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"derselbe\" → \"Mein Freund und ich gehen in dieselbe Schule.\""
- },
- {
-  "id": 1654,
-  "de": "deswegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"deswegen\" → \"Ich habe falsch geparkt.\""
- },
- {
-  "id": 1656,
-  "de": "Diät",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Diät\" → \"Ich möchte abnehmen.\""
- },
- {
-  "id": 1663,
-  "de": "diesmal",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"diesmal\" → \"Die letzten Spiele haben wir verloren.\""
- },
- {
-  "id": 1671,
-  "de": "Doktorin",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Doktorin\" → \"Ist Frau Dr. Müller da?\""
- },
- {
-  "id": 1679,
-  "de": "Dreck",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Dreck\" → \"Iss den Apfel nicht!\""
- },
- {
-  "id": 1689,
-  "de": "duzen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"duzen\" → \"Wollen wir Du zueinander sagen?\""
- },
- {
-  "id": 1691,
-  "de": "ebenfalls",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ebenfalls\" → \"Ich wünsche Ihnen ein schönes Wochenende.\""
- },
- {
-  "id": 1692,
-  "de": "ebenso",
-  "rule": "cümle çok kısa",
-  "detail": "\"Schöne Feiertage.\""
- },
- {
-  "id": 1692,
-  "de": "ebenso",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ebenso\" → \"Schöne Feiertage.\""
+  "detail": "\"brechen\" → \"Beim Skifahren hat er sich das Bein gebrochen.\""
  },
  {
   "id": 1693,
@@ -1104,1036 +264,76 @@
   "detail": "\"e-card\" isim ama küçük harfle başlıyor"
  },
  {
-  "id": 1694,
-  "de": "Versichertenkarte",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Versichertenkarte\" → \"Haben Sie Ihre e-card dabei?\""
- },
- {
-  "id": 1695,
-  "de": "EC-Karte",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"EC-Karte\" → \"Bezahlen Sie bar?\""
- },
- {
   "id": 1705,
   "de": "eilen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"eilen\" → \"Es eilt sehr.\""
- },
- {
-  "id": 1706,
-  "de": "Eile",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Ich bin sehr in Eile\""
+  "detail": "\"eilen\" → \"Er eilte zum Bahnhof, um den Zug zu erreichen.\""
  },
  {
   "id": 1708,
   "de": "einbrechen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einbrechen\" → \"Jemand ist in unsere Wohnung eingebrochen.\""
- },
- {
-  "id": 1712,
-  "de": "Eindruck",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Eindruck\" → \"Ich finde die Leute auf der Straße ziemlich unfreundlich.\""
- },
- {
-  "id": 1723,
-  "de": "sich einigen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich einigen\" → \"Jeder hat einen anderen Vorschlag.\""
- },
- {
-  "id": 1727,
-  "de": "Einnahme",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Einnahme\" → \"Unser Geschäft läuft gut.\""
- },
- {
-  "id": 1738,
-  "de": "einverstanden",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Als Termin schlage ich den\""
- },
- {
-  "id": 1738,
-  "de": "einverstanden",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einverstanden\" → \"Als Termin schlage ich den\""
- },
- {
-  "id": 1751,
-  "de": "Elektro-",
-  "rule": "cümle noktalamasız",
-  "detail": "\"z.B. Elektrogeschäft, Elektroingenieur, Elektroherd\""
- },
- {
-  "id": 1766,
-  "de": "entlassen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"entlassen\" → \"Die Operation ist gut gelaufen.\""
- },
- {
-  "id": 1782,
-  "de": "Erdapfel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Erdapfel\" → \"An der Konferenz nehmen Vertreter aus fast allen Ländern der\""
+  "detail": "\"einbrechen\" → \"Gestern Nacht ist jemand in unsere Wohnung eingebrochen.\""
  },
  {
   "id": 1787,
   "de": "erfinden",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erfinden\" → \"Das Rad wurde vor ca. 6000 Jahren erfunden.\""
+  "detail": "\"erfinden\" → \"Wer hat eigentlich das Telefon erfunden?\""
  },
  {
-  "id": 1795,
-  "de": "erhalten",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Ihr Schreiben vom\""
- },
- {
-  "id": 1795,
-  "de": "erhalten",
+  "id": 1828,
+  "de": "erziehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erhalten\" → \"Ihr Schreiben vom\""
+  "detail": "\"erziehen\" → \"Meine Großmutter hat sechs Kinder allein erzogen.\""
  },
  {
-  "id": 1799,
-  "de": "Erholung",
+  "id": 1915,
+  "de": "fressen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Erholung\" → \"Ich habe zu viel gearbeitet.\""
- },
- {
-  "id": 1800,
-  "de": "erinnern",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Bitte, erinnern Sie mich noch einmal an den Termin\""
- },
- {
-  "id": 1805,
-  "de": "erkennen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erkennen\" → \"Ich habe Roberto gleich an seiner Stimme erkannt.\""
- },
- {
-  "id": 1810,
-  "de": "erledigen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erledigen\" → \"Diese zwei Pakete müssen zur Post.\""
- },
- {
-  "id": 1817,
-  "de": "eröffnen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"eröffnen\" → \"açmak (dükkân\""
- },
- {
-  "id": 1818,
-  "de": "Eröffnung",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Die Eröffnung der neuen Oper ist am\""
- },
- {
-  "id": 1820,
-  "de": "erschrecken",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erschrecken\" → \"Du hast richtig krank ausgesehen.\""
- },
- {
-  "id": 1831,
-  "de": "Etage",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Das Büro ist in der\""
- },
- {
-  "id": 1831,
-  "de": "Etage",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Etage\" → \"Das Büro ist in der\""
- },
- {
-  "id": 1835,
-  "de": "Experte",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Experte\" → \"Ich verstehe ein bisschen was von Computern.\""
- },
- {
-  "id": 1854,
-  "de": "Fantasie/Phantasie",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Fantasie/Phantasie\" → \"Mein Sohn malt sehr gut.\""
- },
- {
-  "id": 1870,
-  "de": "festlegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"festlegen\" → \"Ich weiß noch nicht, ob ich das mache.\""
- },
- {
-  "id": 1878,
-  "de": "Feuerwehr",
-  "rule": "cümle çok kısa",
-  "detail": "\"Schnell!\""
- },
- {
-  "id": 1878,
-  "de": "Feuerwehr",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Feuerwehr\" → \"Schnell!\""
- },
- {
-  "id": 1889,
-  "de": "fliehen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"fliehen\" → \"Der Einbrecher ist sofort geflohen.\""
- },
- {
-  "id": 1908,
-  "de": "Fortsetzung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Fortsetzung folgt.\""
- },
- {
-  "id": 1920,
-  "de": "Friseur",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Friseur\" → \"Du siehst toll aus!\""
- },
- {
-  "id": 1921,
-  "de": "Friseurin",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Friseurin\" → \"Du siehst toll aus!\""
- },
- {
-  "id": 1931,
-  "de": "Fundbüro",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Fundbüro\" → \"Sie haben Ihren Schirm verloren.\""
+  "detail": "\"fressen\" → \"Unsere Katze frisst am liebsten Fisch.\""
  },
  {
   "id": 1960,
   "de": "sich etwas gefallen lassen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich etwas gefallen lassen\" → \"Das würde ich mir nicht gefallen lassen.\""
- },
- {
-  "id": 1962,
-  "de": "Gefühl",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Gefühl\" → \"Ich glaube, ich schaffe die Prüfung.\""
- },
- {
-  "id": 1967,
-  "de": "Geheimnis",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Geheimnis\" → \"Das kann ich dir nicht sagen.\""
+  "detail": "\"sich etwas gefallen lassen\" → \"Diesen Ton lasse ich mir von dir nicht gefallen!\""
  },
  {
   "id": 1972,
   "de": "gelingen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gelingen\" → \"Es ist mir gelungen, meinen Chef zu überzeugen.\""
+  "detail": "\"gelingen\" → \"Nach drei Versuchen ist ihr der Sprung endlich gelungen.\""
  },
  {
-  "id": 1973,
-  "de": "gelten",
+  "id": 2018,
+  "de": "greifen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gelten\" → \"Mein Pass gilt noch ein Jahr.\""
- },
- {
-  "id": 1974,
-  "de": "gemeinsam",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gemeinsam\" → \"Du musst die Wohnung renovieren?\""
- },
- {
-  "id": 1980,
-  "de": "genügen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"genügen\" → \"Wie viele Zimmer brauchen Sie?\""
- },
- {
-  "id": 1985,
-  "de": "geschehen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"geschehen\" → \"Vielen Dank für Ihre Hilfe.\""
- },
- {
-  "id": 1996,
-  "de": "Gewinn",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Gewinn\" → \"Ich habe bei einem Ratespiel mitge - macht.\""
- },
- {
-  "id": 1997,
-  "de": "Gewissen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Gewissen\" → \"Ich habe deinen Geburtstag vergessen.\""
- },
- {
-  "id": 2003,
-  "de": "gießen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"gießen\" → \"sulamak (çiçek\""
- },
- {
-  "id": 2003,
-  "de": "gießen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gießen\" → \"Es hat nicht geregnet.\""
- },
- {
-  "id": 2006,
-  "de": "die/das Glace/Glacé",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"die/das Glace/Glacé\" → \"Zum Dessert gibt es Schokoladenglace.\""
- },
- {
-  "id": 2007,
-  "de": "glatt",
-  "rule": "cümle çok kısa",
-  "detail": "\"Fahr vorsichtig!\""
- },
- {
-  "id": 2007,
-  "de": "glatt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"glatt\" → \"Fahr vorsichtig!\""
- },
- {
-  "id": 2008,
-  "de": "gleichfalls",
-  "rule": "cümle çok kısa",
-  "detail": "\"Schöne Feiertage!\""
- },
- {
-  "id": 2008,
-  "de": "gleichfalls",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"gleichfalls\" → \"Schöne Feiertage!\""
- },
- {
-  "id": 2016,
-  "de": "Gratulation",
-  "rule": "cümle çok kısa",
-  "detail": "\"Herzliche Gratulation!\""
- },
- {
-  "id": 2022,
-  "de": "Groß-",
-  "rule": "cümle noktalamasız",
-  "detail": "\"z.B. die Großeltern, die Großmutter, der Großvater\""
- },
- {
-  "id": 2023,
-  "de": "gründen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"gründen\" → \"kurmak (şirket\""
- },
- {
-  "id": 2024,
-  "de": "Grund",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Grund\" → \"Sie haben Ihre Stelle gekündigt.\""
- },
- {
-  "id": 2035,
-  "de": "halbtags",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"halbtags\" → \"Ich habe ein kleines Kind und kann nicht acht Stunden am Tag\""
- },
- {
-  "id": 2036,
-  "de": "Hälfte",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Hälfte\" → \"Bitte teilt euch die Schokolade.\""
- },
- {
-  "id": 2038,
-  "de": "halt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"halt\" → \"Es gibt leider keine Karten mehr.\""
- },
- {
-  "id": 2040,
-  "de": "Halt",
-  "rule": "cümle çok kısa",
-  "detail": "\"Halt, Polizei!\""
- },
- {
-  "id": 2041,
-  "de": "Hammer",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Hammer\" → \"Ich möchte ein Bild aufhängen.\""
- },
- {
-  "id": 2043,
-  "de": "handeln",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"handeln\" → \"Herr Huber hat ein kleines Geschäft.\""
- },
- {
-  "id": 2053,
-  "de": "heben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"heben\" → \"Kannst du mir helfen?\""
- },
- {
-  "id": 2067,
-  "de": "Hersteller",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Hersteller\" → \"Ihr Handy ist kaputt?\""
- },
- {
-  "id": 2070,
-  "de": "Herz",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Herz\" → \"Ich bin ganz nervös.\""
- },
- {
-  "id": 2077,
-  "de": "hinterlassen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"hinterlassen\" → \"geride bırakmak (mesaj\""
- },
- {
-  "id": 2078,
-  "de": "hinterher",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"hinterher\" → \"Vor der Prüfung habe ich so viel gelernt.\""
- },
- {
-  "id": 2085,
-  "de": "höchstens",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"höchstens\" → \"Ich habe wenig Zeit.\""
- },
- {
-  "id": 2094,
-  "de": "Zuhörer",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zuhörer\" → \"Die Sendung hat viele Hörer und Hörerinnen.\""
- },
- {
-  "id": 2098,
-  "de": "hupen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"hupen\" → \"Hier ist ein Krankenhaus.\""
- },
- {
-  "id": 2115,
-  "de": "innere",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"innere\" → \"Wir müssen Sie untersuchen.\""
- },
- {
-  "id": 2127,
-  "de": "interessiert",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"interessiert\" → \"Mein Nachbar zieht nächsten Monat aus.\""
- },
- {
-  "id": 2129,
-  "de": "inzwischen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"inzwischen\" → \"Herr Müller kommt gleich zurück.\""
- },
- {
-  "id": 2130,
-  "de": "irgendein",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"irgendein\" → \"Was für einen Saft möchten Sie?\""
+  "detail": "\"greifen\" → \"Das Kind griff nach meiner Hand.\""
  },
  {
   "id": 2132,
   "de": "sich irren",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich irren\" → \"Du irrst dich.\""
- },
- {
-  "id": 2156,
-  "de": "kaputtgehen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"kaputtgehen\" → \"Pass bitte mit diesem Glas auf.\""
- },
- {
-  "id": 2160,
-  "de": "Karriere",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Karriere\" → \"Mein Bruder hat große Pläne.\""
- },
- {
-  "id": 2166,
-  "de": "sich etwas kaufen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich etwas kaufen\" → \"Im Supermarkt kauft man sehr günstig ein.\""
- },
- {
-  "id": 2189,
-  "de": "klingen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"klingen\" → \"Wollen wir einkaufen gehen und danach zusammen kochen?\""
- },
- {
-  "id": 2193,
-  "de": "knapp",
-  "rule": "cümle çok kısa",
-  "detail": "\"Mach schnell.\""
- },
- {
-  "id": 2193,
-  "de": "knapp",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"knapp\" → \"Mach schnell.\""
- },
- {
-  "id": 2196,
-  "de": "Knochen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Knochen\" → \"Ich bin hingefallen.\""
- },
- {
-  "id": 2205,
-  "de": "Kompromiss",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Kompromiss\" → \"Alle wollen etwas anderes.\""
- },
- {
-  "id": 2210,
-  "de": "Konkurrenz",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Konkurrenz\" → \"Die Reparatur ist mir hier zu teuer.\""
- },
- {
-  "id": 2216,
-  "de": "sich konzentrieren",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich konzentrieren\" → \"Bitte stör mich jetzt nicht.\""
- },
- {
-  "id": 2221,
-  "de": "korrekt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"korrekt\" → \"Ich habe die Rechnung geprüft.\""
- },
- {
-  "id": 2240,
-  "de": "Kriminalpolizei",
-  "rule": "gereksiz artikel",
-  "detail": "\"Kriminalpolizei\" isim değil ama artikeli var: die"
- },
- {
-  "id": 2244,
-  "de": "kritisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"kritisch\" → \"Es gab eine Diskussion über die Lebensmittelpreise.\""
- },
- {
-  "id": 2258,
-  "de": "lächeln",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"lächeln\" → \"Schauen Sie in die Kamera.\""
- },
- {
-  "id": 2260,
-  "de": "Lager",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Lager\" → \"Ich weiß nicht, ob wir diesen Schuh in Ihrer Größe haben.\""
- },
- {
-  "id": 2265,
-  "de": "längst",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"längst\" → \"Wann reparierst du die Heizung.\""
- },
- {
-  "id": 2286,
-  "de": "Leitung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Ab\""
- },
- {
-  "id": 2286,
-  "de": "Leitung",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Ab\""
- },
- {
-  "id": 2286,
-  "de": "Leitung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Leitung\" → \"Ab\""
- },
- {
-  "id": 2293,
-  "de": "Lift",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Lift\" → \"In den Bergen liegt schon Schnee.\""
- },
- {
-  "id": 2297,
-  "de": "Lippe",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Lippe\" → \"Es ist sehr kalt.\""
- },
- {
-  "id": 2298,
-  "de": "Liste",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Liste\" → \"Was brauchen wir für die Party?\""
+  "detail": "\"sich irren\" → \"Du irrst dich, das war letzte Woche.\""
  },
  {
   "id": 2300,
   "de": "loben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"loben\" → \"Ich habe alle Hausaufgaben gemacht.\""
- },
- {
-  "id": 2305,
-  "de": "los",
-  "rule": "cümle çok kısa",
-  "detail": "\"Los!\""
- },
- {
-  "id": 2314,
-  "de": "mal",
-  "rule": "cümle çok kısa",
-  "detail": "\"(siehe einmal)\""
- },
- {
-  "id": 2314,
-  "de": "mal",
-  "rule": "cümlede sözlük notu",
-  "detail": "\"(siehe einmal)\""
- },
- {
-  "id": 2322,
-  "de": "markieren",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"markieren\" → \"Hier ist unser Hotel.\""
- },
- {
-  "id": 2326,
-  "de": "maximal",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"maximal\" → \"Wie lange braucht ein Brief?\""
- },
- {
-  "id": 2331,
-  "de": "Mehl",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Mehl\" → \"Ich möchte einen Kuchen backen.\""
- },
- {
-  "id": 2337,
-  "de": "Meister",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Meister\" → \"Ich weiß nicht, wie man das macht.\""
- },
- {
-  "id": 2338,
-  "de": "melden",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"melden\" → \"Ich habe schon zweimal angerufen.\""
- },
- {
-  "id": 2353,
-  "de": "mild",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mild\" → \"Möchten Sie die Soße scharf?\""
- },
- {
-  "id": 2364,
-  "de": "mittlerweile",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mittlerweile\" → \"Am Anfang war die Arbeit schwer.\""
- },
- {
-  "id": 2370,
-  "de": "Modell",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Modell\" → \"Wie findest du dieses Auto?\""
- },
- {
-  "id": 2371,
-  "de": "Möglichkeit",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Möglichkeit\" → \"Sie wollen ans Meer?\""
+  "detail": "\"loben\" → \"Der Lehrer lobte mich vor der ganzen Klasse.\""
  },
  {
   "id": 2385,
   "de": "Müesli/Müsli",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Müesli/Müsli\" → \"Zum Frühstück gibt es Müsli mit Obst.\""
+  "detail": "\"Müesli/Müsli\" → \"Mein Müsli esse ich am liebsten mit Joghurt.\""
  },
  {
-  "id": 2390,
-  "de": "nachdenken",
+  "id": 2621,
+  "de": "zuschauen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nachdenken\" → \"Ich weiß nicht, was ich machen soll.\""
- },
- {
-  "id": 2394,
-  "de": "nachschlagen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nachschlagen\" → \"Ich kenne das Wort nicht.\""
- },
- {
-  "id": 2395,
-  "de": "Nachspeise",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Nach dem Essen gab es noch eine leckere Nachspeise\""
- },
- {
-  "id": 2401,
-  "de": "nähen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nähen\" → \"Meine Mutter näht ihre Kleider selbst.\""
- },
- {
-  "id": 2404,
-  "de": "nämlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nämlich\" → \"Ich muss leider gehen.\""
- },
- {
-  "id": 2408,
-  "de": "nebenbei",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nebenbei\" → \"Mein Freund studiert Geschichte.\""
- },
- {
-  "id": 2409,
-  "de": "Neffe",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Neffe\" → \"Meine Schwester hat zwei Kinder.\""
- },
- {
-  "id": 2425,
-  "de": "Notaufnahme",
-  "rule": "gereksiz artikel",
-  "detail": "\"Notaufnahme\" isim değil ama artikeli var: die"
- },
- {
-  "id": 2430,
-  "de": "nun",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nun\" → \"Schade, dass du arbeiten musst.\""
- },
- {
-  "id": 2432,
-  "de": "nützen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nützen\" → \"Ich habe jeden Tag eine Tablette genommen.\""
- },
- {
-  "id": 2436,
-  "de": "Obers",
-  "rule": "gereksiz artikel",
-  "detail": "\"Obers\" isim değil ama artikeli var: das"
- },
- {
-  "id": 2446,
-  "de": "Öko-",
-  "rule": "cümle noktalamasız",
-  "detail": "\"z.B. Ökoladen, Ökostrom, ökologischer Anbau\""
- },
- {
-  "id": 2446,
-  "de": "Öko-",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Öko-\" → \"z.B. Ökoladen, Ökostrom, ökologischer Anbau\""
- },
- {
-  "id": 2452,
-  "de": "optimistisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"optimistisch\" → \"Glaubst du, dass du den Job bekommst.\""
- },
- {
-  "id": 2455,
-  "de": "Ordination",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Die Ordination bleibt bis zum\""
- },
- {
-  "id": 2474,
-  "de": "Pech",
-  "rule": "cümle çok kısa",
-  "detail": "\"Es regnet.\""
- },
- {
-  "id": 2474,
-  "de": "Pech",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Pech\" → \"Es regnet.\""
- },
- {
-  "id": 2479,
-  "de": "Pensionist",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Pensionist\" → \"Meine Großmutter arbeitet nicht mehr.\""
- },
- {
-  "id": 2480,
-  "de": "per",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"per\" → \"Wie kann ich mich für den Kurs anmelden?\""
- },
- {
-  "id": 2483,
-  "de": "persönlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"persönlich\" → \"Hier gibt es zu viele Autos.\""
- },
- {
-  "id": 2492,
-  "de": "pflegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"pflegen\" → \"Meine Mutter ist sehr krank.\""
- },
- {
-  "id": 2494,
-  "de": "Pflicht",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Pflicht\" → \"Als Autofahrer müssen Sie eine Versicherung haben.\""
- },
- {
-  "id": 2497,
-  "de": "Pille",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Pille\" → \"Am Sonntag machen wir ein Picknick.\""
- },
- {
-  "id": 2500,
-  "de": "Plastik",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Plastik\" → \"Was für ein Spielzeug möchten Sie?\""
- },
- {
-  "id": 2504,
-  "de": "Polizist",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Polizist\" → \"Die Ampel war kaputt.\""
- },
- {
-  "id": 2505,
-  "de": "Polizistin",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Polizistin\" → \"Die Ampel war kaputt.\""
- },
- {
-  "id": 2521,
-  "de": "Profi",
-  "rule": "cümle çok kısa",
-  "detail": "\"Keine Angst.\""
- },
- {
-  "id": 2521,
-  "de": "Profi",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Profi\" → \"Keine Angst.\""
- },
- {
-  "id": 2523,
-  "de": "Prost",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Prost\" → \"Wir trinken auf Ihre Gesundheit!\""
- },
- {
-  "id": 2527,
-  "de": "Publikum",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Publikum\" → \"Es war ein tolles Konzert.\""
- },
- {
-  "id": 2535,
-  "de": "Radfahrer",
-  "rule": "cümle çok kısa",
-  "detail": "\"Achtung!\""
- },
- {
-  "id": 2535,
-  "de": "Radfahrer",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Radfahrer\" → \"Achtung!\""
- },
- {
-  "id": 2539,
-  "de": "sich rasieren",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich rasieren\" → \"Dein Bart ist aber lang!\""
- },
- {
-  "id": 2540,
-  "de": "Rat",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Rat\" → \"Was soll ich machen?\""
- },
- {
-  "id": 2548,
-  "de": "Realität",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Realität\" → \"Das gefällt dir nicht?\""
- },
- {
-  "id": 2549,
-  "de": "realistisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"realistisch\" → \"Ich glaube nicht, dass du für das Auto noch so viel Geld bek\""
- },
- {
-  "id": 2564,
-  "de": "regeln",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"regeln\" → \"Die Ampel ist kaputt.\""
- },
- {
-  "id": 2567,
-  "de": "reichen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"reichen\" → \"Ich nehme nur eine Suppe.\""
- },
- {
-  "id": 2568,
-  "de": "reif",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"reif\" → \"Die Banane kannst du nicht essen.\""
- },
- {
-  "id": 2576,
-  "de": "rennen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"rennen\" → \"Ich bin sehr schnell gerannt, aber der Bus war schon weg.\""
- },
- {
-  "id": 2589,
-  "de": "Risiko",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Risiko\" → \"Ich nehme keinen Kredit auf.\""
- },
- {
-  "id": 2590,
-  "de": "roh",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"roh\" → \"Du kannst das nicht essen.\""
- },
- {
-  "id": 2594,
-  "de": "Rückfahrt",
-  "rule": "gereksiz artikel",
-  "detail": "\"Rückfahrt\" isim değil ama artikeli var: die"
- },
- {
-  "id": 2599,
-  "de": "Rufnummer",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Rufnummer\" → \"Wir möchten Sie gerne anrufen.\""
- },
- {
-  "id": 2605,
-  "de": "Saison",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Saison\" → \"Urlaub in den Schulferien ist immer teurer.\""
- },
- {
-  "id": 2613,
-  "de": "satt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"satt\" → \"Möchten Sie noch etwas?\""
- },
- {
-  "id": 2616,
-  "de": "Schaden",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Schaden\" → \"Ich hatte einen Unfall mit dem Auto.\""
- },
- {
-  "id": 2619,
-  "de": "schätzen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schätzen\" → \"Wie alt ist der Chef?\""
- },
- {
-  "id": 2620,
-  "de": "schauen",
-  "rule": "cümle çok kısa",
-  "detail": "\"Schau mal!\""
- },
- {
-  "id": 2623,
-  "de": "Schauspieler",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Schauspieler\" → \"Der Film war toll.\""
- },
- {
-  "id": 2624,
-  "de": "Schauspielerin",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Schauspielerin\" → \"Der Film war toll.\""
- },
- {
-  "id": 2629,
-  "de": "schieben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schieben\" → \"Leider ist mein Fahrrad kaputtgegangen.\""
- },
- {
-  "id": 2631,
-  "de": "schießen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schießen\" → \"Unsere Mannschaft hat ein Tor geschossen.\""
- },
- {
-  "id": 2638,
-  "de": "schmal",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schmal\" → \"Hier kannst du nicht parken.\""
- },
- {
-  "id": 2649,
-  "de": "Schreiben",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Haben Sie mein Schreiben vom\""
- },
- {
-  "id": 2655,
-  "de": "schuld",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schuld\" → \"Ich hatte einen Unfall.\""
- },
- {
-  "id": 2669,
-  "de": "schwitzen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"schwitzen\" → \"Es war sehr heiß.\""
- },
- {
-  "id": 2670,
-  "de": "Nordsee/Ostsee",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Nordsee/Ostsee\" → \"Im Sommer fahren wir immer an die See.\""
- },
- {
-  "id": 2671,
-  "de": "seitdem",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"seitdem\" → \"Ich bin vor zwei Jahren nach Deutschland gekommen.\""
- },
- {
-  "id": 2679,
-  "de": "Semester",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Mein Neffe studiert im\""
- },
- {
-  "id": 2679,
-  "de": "Semester",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Semester\" → \"Mein Neffe studiert im\""
+  "detail": "\"zuschauen\" → \"Die Großeltern schauen den Enkeln beim Tanzen zu.\""
  },
  {
   "id": 2687,
@@ -2142,448 +342,64 @@
   "detail": "\"Serviceangestellte\" → der, ama \"Angestellte\" → die"
  },
  {
-  "id": 2694,
-  "de": "Sieg",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Sieg\" → \"Unsere Mannschaft hat gewonnen.\""
- },
- {
-  "id": 2695,
-  "de": "Sieger",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Sieger\" → \"Wer hat gewonnen?\""
- },
- {
   "id": 2697,
   "de": "sinken",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sinken\" → \"Das Schiff ist vor der Küste gesunken.\""
- },
- {
-  "id": 2700,
-  "de": "sinnvoll",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sinnvoll\" → \"Es funktioniert einfach nicht.\""
- },
- {
-  "id": 2709,
-  "de": "Sonderangebot",
-  "rule": "gereksiz artikel",
-  "detail": "\"Sonderangebot\" isim değil ama artikeli var: das"
- },
- {
-  "id": 2717,
-  "de": "sowieso",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sowieso\" → \"Willst du mir den Brief mitgeben?\""
- },
- {
-  "id": 2721,
-  "de": "sparsam",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sparsam\" → \"Wir haben fünf Kinder.\""
- },
- {
-  "id": 2728,
-  "de": "Spiegel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Spiegel\" → \"Ich möchte gerne sehen, wie mein Kleid sitzt.\""
+  "detail": "\"sinken\" → \"Die Preise für Benzin sind deutlich gesunken.\""
  },
  {
   "id": 2737,
   "de": "springen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"springen\" → \"Wir waren im Schwimmbad.\""
- },
- {
-  "id": 2741,
-  "de": "spüren",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"spüren\" → \"Wo tut es weh?\""
- },
- {
-  "id": 2745,
-  "de": "ständig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ständig\" → \"Ich habe schon ein paar Mal bei meiner Freundin angerufen.\""
+  "detail": "\"springen\" → \"Mein Sohn ist ins kalte Wasser gesprungen.\""
  },
  {
   "id": 2756,
   "de": "stechen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"stechen\" → \"Stefan wird beim Zelten immer von den Mücken gestochen.\""
- },
- {
-  "id": 2757,
-  "de": "stecken",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"stecken\" → \"Wo ist denn mein Pass?\""
- },
- {
-  "id": 2761,
-  "de": "stehlen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"stehlen\" → \"Gestern hat mir jemand im Zug meine Uhr gestohlen.\""
+  "detail": "\"stechen\" → \"Im Garten wurde ich von einer Biene gestochen.\""
  },
  {
   "id": 2762,
   "de": "steigen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"steigen\" → \"Die Preise für Milch und Gemüse sind schon wieder gestiegen.\""
+  "detail": "\"steigen\" → \"Die Mieten sind in den letzten Jahren stark gestiegen.\""
  },
  {
-  "id": 2773,
-  "de": "Stiege",
+  "id": 2873,
+  "de": "treten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Stiege\" → \"Wo ist die Toilette?\""
- },
- {
-  "id": 2777,
-  "de": "Stimmung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Stimmung\" → \"Es war eine tolle Party.\""
- },
- {
-  "id": 2784,
-  "de": "sich stoßen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich stoßen\" → \"Wie haben Sie sich denn verletzt?\""
- },
- {
-  "id": 2787,
-  "de": "Strafzettel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Strafzettel\" → \"So ein Pech!\""
- },
- {
-  "id": 2802,
-  "de": "Stufe",
-  "rule": "cümle çok kısa",
-  "detail": "\"Vorsicht, Stufe!\""
- },
- {
-  "id": 2854,
-  "de": "tolerant",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"tolerant\" → \"Die Nachbarn hören oft laut Musik.\""
- },
- {
-  "id": 2880,
-  "de": "trotzdem",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"trotzdem\" → \"Es war ziemlich kalt.\""
- },
- {
-  "id": 2889,
-  "de": "überlegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"überlegen\" → \"Ich kann mich nicht entscheiden.\""
- },
- {
-  "id": 2897,
-  "de": "Überschrift",
-  "rule": "cümle noktalamasız",
-  "detail": "\"Der Artikel erschien unter der folgenden Überschrift: „…“\""
- },
- {
-  "id": 2900,
-  "de": "übertreiben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"übertreiben\" → \"Ein bisschen Sport ist gesund.\""
- },
- {
-  "id": 2917,
-  "de": "umsonst",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"umsonst\" → \"Ich musste nichts bezahlen.\""
- },
- {
-  "id": 2923,
-  "de": "un-",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"un-\" → \"Der Verkäufer war sehr unfreundlich.\""
- },
- {
-  "id": 2924,
-  "de": "ungefähr",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ungefähr\" → \"Wie weit ist es bis zum Bahnhof?\""
- },
- {
-  "id": 2928,
-  "de": "unheimlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"unheimlich\" → \"Ich mag dieses Haus nicht.\""
- },
- {
-  "id": 2939,
-  "de": "unterscheiden",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"unterscheiden\" → \"Ihr seid euch sehr ähnlich.\""
- },
- {
-  "id": 2945,
-  "de": "unterwegs",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"unterwegs\" → \"Warte auf mich.\""
- },
- {
-  "id": 2952,
-  "de": "vegetarisch",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vegetarisch\" → \"Ich mag kein Fleisch.\""
- },
- {
-  "id": 2955,
-  "de": "verabredet",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"verabredet\" → \"Tut mir leid, ich habe keine Zeit.\""
- },
- {
-  "id": 2959,
-  "de": "sich verändern",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich verändern\" → \"Das geht so nicht.\""
- },
- {
-  "id": 2970,
-  "de": "sich verbrennen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich verbrennen\" → \"Der Herd war noch heiss.\""
- },
- {
-  "id": 2972,
-  "de": "Verdacht",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Verdacht\" → \"Wer hat das Geld aus der Kasse genommen?\""
- },
- {
-  "id": 2973,
-  "de": "verdächtig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"verdächtig\" → \"Die Tür war nicht abgeschlossen.\""
- },
- {
-  "id": 2988,
-  "de": "verlangen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"verlangen\" → \"Jeden Tag Überstunden?\""
- },
- {
-  "id": 2993,
-  "de": "Verletzung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Keine Angst.\""
- },
- {
-  "id": 2993,
-  "de": "Verletzung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Verletzung\" → \"Keine Angst.\""
- },
- {
-  "id": 3001,
-  "de": "Vermittlung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Vermittlung\" → \"Du suchst ein Zimmer?\""
- },
- {
-  "id": 3016,
-  "de": "verständlich",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"verständlich\" → \"Nach acht Stunden Schule haben die Kinder keine Lust mehr, d\""
- },
- {
-  "id": 3022,
-  "de": "vertrauen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vertrauen\" → \"Ich kenne dich gut.\""
- },
- {
-  "id": 3034,
-  "de": "Verzeihung",
-  "rule": "cümle çok kısa",
-  "detail": "\"Verzeihung!\""
- },
- {
-  "id": 3047,
-  "de": "voneinander",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"voneinander\" → \"Von jetzt an müssen wir sparen.\""
- },
- {
-  "id": 3056,
-  "de": "Vorfahrt",
-  "rule": "cümle çok kısa",
-  "detail": "\"Achtung!\""
- },
- {
-  "id": 3056,
-  "de": "Vorfahrt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Vorfahrt\" → \"Achtung!\""
- },
- {
-  "id": 3059,
-  "de": "vorkommen",
-  "rule": "cümle çok kısa",
-  "detail": "\"Kein Problem.\""
- },
- {
-  "id": 3059,
-  "de": "vorkommen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vorkommen\" → \"Kein Problem.\""
- },
- {
-  "id": 3060,
-  "de": "vorläufig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vorläufig\" → \"Ich habe noch keine Wohnung.\""
- },
- {
-  "id": 3065,
-  "de": "Vorstellung",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Vorstellung\" → \"Wann läuft der Film?\""
- },
- {
-  "id": 3069,
-  "de": "Vorwurf",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Vorwurf\" → \"Eva kann nichts dafür.\""
- },
- {
-  "id": 3073,
-  "de": "wahnsinnig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wahnsinnig\" → \"Du fährst viel zu schnell.\""
+  "detail": "\"treten\" → \"Vorsicht, tritt nicht auf die frische Farbe!\""
  },
  {
   "id": 3092,
   "de": "werfen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"werfen\" → \"Die Kinder haben Steine ins Wasser geworfen.\""
- },
- {
-  "id": 3109,
-  "de": "wieso",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wieso\" → \"Wie lange sind Sie hier?\""
- },
- {
-  "id": 3121,
-  "de": "wohl",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wohl\" → \"Kann ich nach Hause gehen?\""
- },
- {
-  "id": 3125,
-  "de": "worum",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"worum\" → \"Kann ich Herrn Meier sprechen?\""
- },
- {
-  "id": 3128,
-  "de": "Wunder",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Wunder\" → \"Ich bin mit dem Fahrrad gestürzt.\""
- },
- {
-  "id": 3129,
-  "de": "wunderschön",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"wunderschön\" → \"Wir haben einen Ausflug gemacht.\""
- },
- {
-  "id": 3143,
-  "de": "Zeitpunkt",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zeitpunkt\" → \"Er ist krank.\""
- },
- {
-  "id": 3148,
-  "de": "Zeug",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zeug\" → \"Was hast du mit meinen Sachen gemacht?\""
- },
- {
-  "id": 3155,
-  "de": "Zone",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zone\" → \"Hier können wir nicht fahren.\""
+  "detail": "\"werfen\" → \"Wirf die alten Zeitungen bitte in die blaue Tonne.\""
  },
  {
   "id": 3156,
   "de": "zubereiten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zubereiten\" → \"Sie bereitet das Fleisch mit Kartoffeln zu.\""
+  "detail": "\"zubereiten\" → \"Er bereitet das Abendessen für die Gäste zu.\""
  },
  {
   "id": 3161,
   "de": "zugehen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zugehen\" → \"Die Tür geht nicht zu.\""
- },
- {
-  "id": 3162,
-  "de": "Zuhause",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zuhause\" → \"Ich fühle mich hier wohl.\""
- },
- {
-  "id": 3163,
-  "de": "Zukunft",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zukunft\" → \"Du musst mehr für die Schule lernen.\""
+  "detail": "\"zugehen\" → \"Der Koffer geht nicht zu, er ist zu voll.\""
  },
  {
   "id": 3169,
   "de": "zunehmen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zunehmen\" → \"Ich habe im Urlaub 1 Kilo zugenommen.\""
- },
- {
-  "id": 3170,
-  "de": "zurechtkommen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zurechtkommen\" → \"Soll ich Ihnen helfen?\""
+  "detail": "\"zunehmen\" → \"Wer abends viel Süßes isst, nimmt schnell zu.\""
  },
  {
   "id": 3172,
   "de": "zusagen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zusagen\" → \"Meine Eltern haben uns zum Essen eingeladen.\""
- },
- {
-  "id": 3174,
-  "de": "Zusammenarbeit",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"Zusammenarbeit\" → \"Sie sind der neue Kollege?\""
- },
- {
-  "id": 3181,
-  "de": "zuständig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zuständig\" → \"Wir haben ein Problem mit der Heizung.\""
- },
- {
-  "id": 3182,
-  "de": "zustimmen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zustimmen\" → \"Ich stimme dir in dieser Sache völlig zu.\""
- },
- {
-  "id": 3185,
-  "de": "zuverlässig",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zuverlässig\" → \"Der Kollege kommt bestimmt gleich.\""
- },
- {
-  "id": 3186,
-  "de": "das/der Zvieri/Znüni",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"das/der Zvieri/Znüni\" → \"Es ist Zeit für ein kleines Zvieri.\""
+  "detail": "\"zusagen\" → \"Ich habe der Einladung gestern schon zugesagt.\""
  },
  {
   "id": 3236,
@@ -2601,13 +417,13 @@
   "id": 3551,
   "de": "anfechten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"anfechten\" → \"Der Kläger focht den Bescheid vor Gericht an.\""
+  "detail": "\"anfechten\" → \"Der Kläger hat den Bescheid vor Gericht angefochten.\""
  },
  {
-  "id": 3686,
-  "de": "vertagen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"vertagen\" → \"ertelemek (toplantı\""
+  "id": 3675,
+  "de": "abwägen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"abwägen\" → \"Sie wägt jedes Angebot mehrere Tage lang ab.\""
  },
  {
   "id": 3688,
@@ -2618,8 +434,8 @@
  {
   "id": 3698,
   "de": "auslegen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"auslegen\" → \"yorumlamak (yasa\""
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"auslegen\" → \"Das Gericht legt den Vertrag anders aus.\""
  },
  {
   "id": 3738,
@@ -2652,18 +468,6 @@
   "detail": "\"bestehen aus\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3783,
-  "de": "sich bewerben um",
-  "rule": "fiil mastar değil",
-  "detail": "\"sich bewerben um\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 3783,
-  "de": "sich bewerben um",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich bewerben um\" → \"Sie bewirbt sich um ein Stipendium im Ausland.\""
- },
- {
   "id": 3786,
   "de": "sich verlassen auf",
   "rule": "fiil mastar değil",
@@ -2676,22 +480,10 @@
   "detail": "\"sich beziehen auf\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3788,
-  "de": "sich engagieren für",
-  "rule": "fiil mastar değil",
-  "detail": "\"sich engagieren für\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 3790,
   "de": "sich richten nach",
   "rule": "fiil mastar değil",
   "detail": "\"sich richten nach\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 3792,
-  "de": "hinweisen auf",
-  "rule": "fiil mastar değil",
-  "detail": "\"hinweisen auf\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 3793,
@@ -2718,12 +510,6 @@
   "detail": "\"sich entscheiden für\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3804,
-  "de": "sich einsetzen für",
-  "rule": "fiil mastar değil",
-  "detail": "\"sich einsetzen für\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 3805,
   "de": "sich konzentrieren auf",
   "rule": "fiil mastar değil",
@@ -2739,25 +525,13 @@
   "id": 3872,
   "de": "erwerben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erwerben\" → \"Im Kurs erwirbt man wichtige Grammatikkenntnisse.\""
- },
- {
-  "id": 3989,
-  "de": "kaschieren",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"kaschieren\" → \"(kusuru\""
- },
- {
-  "id": 4028,
-  "de": "verankern",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"verankern\" → \"(yasada\""
+  "detail": "\"erwerben\" → \"Er hat sich diese Fähigkeiten in der Praxis erworben.\""
  },
  {
   "id": 4030,
   "de": "abstreiten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"abstreiten\" → \"Der Zeuge stritt jede Beteiligung entschieden ab.\""
+  "detail": "\"abstreiten\" → \"Der Fahrer hat jede Schuld an dem Unfall abgestritten.\""
  },
  {
   "id": 4053,
@@ -2772,28 +546,10 @@
   "detail": "\"Warnstreik\" → der, oysa -ung/-heit/-keit/-tion ailesi die diyor"
  },
  {
-  "id": 4098,
-  "de": "anwerben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"anwerben\" → \"Das Unternehmen wirbt gezielt Ingenieure aus dem Ausland an.\""
- },
- {
   "id": 4100,
   "de": "einweisen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"einweisen\" → \"Alle Beschäftigten werden vor dem ersten Einsatz gründlich e\""
- },
- {
-  "id": 4110,
-  "de": "antreten",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"antreten\" → \"Sie tritt ihre neue Stelle in der Verwaltung schon nächsten \""
- },
- {
-  "id": 4181,
-  "de": "zulegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zulegen\" → \"Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.\""
  },
  {
   "id": 4263,
@@ -2811,31 +567,13 @@
   "id": 4271,
   "de": "einüben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einüben\" → \"Die Klasse übt den Dialog für die Prüfung ein.\""
- },
- {
-  "id": 4406,
-  "de": "melken",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"melken\" → \"Heute werden die Kühe von einem Roboter gemolken.\""
+  "detail": "\"einüben\" → \"Die Klasse hat den Dialog für die Prüfung eingeübt.\""
  },
  {
   "id": 4410,
   "de": "wegwerfen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"wegwerfen\" → \"Jeder Haushalt wirft im Jahr rund achtzig Kilo Essen weg.\""
- },
- {
-  "id": 4416,
-  "de": "säen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"säen\" → \"Wer zu früh sät, riskiert Verluste durch späten Frost.\""
- },
- {
-  "id": 4483,
-  "de": "aufstocken",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"aufstocken\" → \"artırmak (bütçe\""
  },
  {
   "id": 4497,
@@ -2862,18 +600,6 @@
   "detail": "\"dösen\" → \"Im Zug döste ich zwei Stunden vor mich hin.\""
  },
  {
-  "id": 4833,
-  "de": "einlösen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"einlösen\" → \"kullanmak (kupon\""
- },
- {
-  "id": 4836,
-  "de": "beheben",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"beheben\" → \"gidermek (arıza\""
- },
- {
   "id": 4837,
   "de": "werben",
   "rule": "cümle kelimeyi taşımıyor",
@@ -2890,24 +616,6 @@
   "de": "anpreisen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"anpreisen\" → \"Im Fernsehen wird das Mittel als Wunderkur angepriesen.\""
- },
- {
-  "id": 4903,
-  "de": "ausüben",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"ausüben\" → \"Diesen Sport übt er schon seit seiner Schulzeit aus.\""
- },
- {
-  "id": 4907,
-  "de": "mitreißen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"mitreißen\" → \"Der Schlusschor riss selbst die skeptischen Zuhörer mit.\""
- },
- {
-  "id": 4967,
-  "de": "übertragen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"übertragen\" → \"yayınlamak (radyo\""
  },
  {
   "id": 4984,
@@ -2961,13 +669,7 @@
   "id": 5361,
   "de": "auslösen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"auslösen\" → \"Ein defekter Toaster löste den Alarm im ganzen Haus aus.\""
- },
- {
-  "id": 5421,
-  "de": "darlegen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"darlegen\" → \"In der Einleitung legt sie ihre Sicht der Dinge dar.\""
+  "detail": "\"auslösen\" → \"Ein defekter Toaster löste im ganzen Haus den Alarm aus.\""
  },
  {
   "id": 5422,
@@ -2986,12 +688,6 @@
   "de": "ansteigen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"ansteigen\" → \"Die Durchschnittstemperatur ist seit 1900 deutlich angestieg\""
- },
- {
-  "id": 5549,
-  "de": "abbauen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"abbauen\" → \"In dieser Gegend wird seit hundert Jahren Kohle abgebaut.\""
  },
  {
   "id": 5583,
@@ -3039,19 +735,13 @@
   "id": 6001,
   "de": "zuschreiben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zuschreiben\" → \"Den Lehrkräften wird eine Verantwortung zugeschrieben, die s\""
+  "detail": "\"zuschreiben\" → \"Die schlechten Ergebnisse werden allein den Lehrkräften zuge\""
  },
  {
   "id": 6173,
   "de": "vorbringen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"vorbringen\" → \"Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenk\""
- },
- {
-  "id": 6237,
-  "de": "überbrücken",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"überbrücken\" → \"(dönemi\""
  },
  {
   "id": 6401,
@@ -3063,7 +753,7 @@
   "id": 6402,
   "de": "rügen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"rügen\" → \"Das oberste Gericht rügte die schleppende Dauer des Verfahre\""
+  "detail": "\"rügen\" → \"Das Gericht rügte die Behörde in scharfen Worten.\""
  },
  {
   "id": 6451,
@@ -3075,7 +765,7 @@
   "id": 6512,
   "de": "darbieten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"darbieten\" → \"Das Quartett bot die späten Streichquartette hinreißend dar.\""
+  "detail": "\"darbieten\" → \"Die Sängerin bot drei Lieder von Schubert dar.\""
  },
  {
   "id": 6570,
@@ -3087,25 +777,25 @@
   "id": 6578,
   "de": "einflechten",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einflechten\" → \"Sie flicht immer wieder kleine Beobachtungen in die Handlung\""
+  "detail": "\"einflechten\" → \"Sie flicht kleine Beobachtungen in die Handlung ein.\""
  },
  {
   "id": 6682,
   "de": "einholen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"einholen\" → \"Vor dem Eingriff muss eine zweite Meinung eingeholt werden.\""
+  "detail": "\"einholen\" → \"Vor der Operation muss eine zweite Meinung eingeholt werden.\""
  },
  {
   "id": 6872,
   "de": "beimessen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"beimessen\" → \"Der Autor misst der Absicht mehr Gewicht bei als der Folge.\""
+  "detail": "\"beimessen\" → \"Sie misst dem Urteil ihrer Kollegen große Bedeutung bei.\""
  },
  {
   "id": 6990,
   "de": "sich fügen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich fügen\" → \"Am Ende fügte er sich der Mehrheit, wenn auch widerwillig.\""
+  "detail": "\"sich fügen\" → \"Am Ende fügte er sich der Mehrheit.\""
  },
  {
   "id": 6995,
@@ -3123,7 +813,7 @@
   "id": 7146,
   "de": "sich einleben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"sich einleben\" → \"Die Familie hat sich im neuen Viertel überraschend schnell e\""
+  "detail": "\"sich einleben\" → \"Die Familie hat sich im neuen Viertel schnell eingelebt.\""
  },
  {
   "id": 7305,
@@ -3138,22 +828,10 @@
   "detail": "\"ausbleiben\" → \"Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben\""
  },
  {
-  "id": 7472,
-  "de": "edel",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"edel\" → \"Das Restaurant hat edle Möbel aus dunklem Holz.\""
- },
- {
   "id": 7723,
   "de": "abhören",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"abhören\" → \"Meine Mutter hört mich jeden Abend die Vokabeln ab.\""
- },
- {
-  "id": 7725,
-  "de": "beibringen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"beibringen\" → \"Meine Oma hat mir das Lesen beigebracht.\""
  },
  {
   "id": 7731,
@@ -3162,16 +840,10 @@
   "detail": "\"zuordnen\" → \"Ordne die Wörter den richtigen Bildern zu!\""
  },
  {
-  "id": 7732,
-  "de": "austeilen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"austeilen\" → \"dağıtmak (elden\""
- },
- {
   "id": 7842,
   "de": "erben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"erben\" → \"Er hat von seiner Tante ein altes Haus geerbt.\""
+  "detail": "\"erben\" → \"Sie erbt von ihrer Tante ein altes Haus.\""
  },
  {
   "id": 7887,
@@ -3210,34 +882,16 @@
   "detail": "\"aufgehen\" → \"Im Sommer geht die Sonne schon um fünf Uhr auf.\""
  },
  {
-  "id": 8169,
-  "de": "umrühren",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"umrühren\" → \"karıştırmak (kaşıkla\""
- },
- {
   "id": 8171,
   "de": "aufessen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"aufessen\" → \"Mein Sohn isst seinen Teller zum Glück immer ganz auf.\""
- },
- {
-  "id": 8179,
-  "de": "aufsetzen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"aufsetzen\" → \"(su\""
- },
- {
-  "id": 8214,
-  "de": "auftragen",
-  "rule": "fiil çevirisi mastar değil",
-  "detail": "\"auftragen\" → \"sürmek (krem\""
+  "detail": "\"aufessen\" → \"Mein Sohn isst seinen Teller immer ganz auf.\""
  },
  {
   "id": 8218,
   "de": "zudecken",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"zudecken\" → \"Abends decke ich meinen Sohn im Bett warm zu.\""
+  "detail": "\"zudecken\" → \"Abends decke ich meinen Sohn im Bett zu.\""
  },
  {
   "id": 8227,
@@ -3249,25 +903,19 @@
   "id": 8248,
   "de": "eintreffen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"eintreffen\" → \"Das Paket ist gestern im Lager eingetroffen.\""
+  "detail": "\"eintreffen\" → \"Das Paket trifft heute im Lager ein.\""
  },
  {
   "id": 8266,
   "de": "fegen",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"fegen\" → \"Jeden Morgen fegt er den Hof vor dem Laden.\""
+  "detail": "\"fegen\" → \"Er fegt jeden Morgen den Hof.\""
  },
  {
   "id": 8271,
   "de": "anheben",
   "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"anheben\" → \"Hebst du den Tisch kurz an, bitte?\""
- },
- {
-  "id": 8301,
-  "de": "vorwerfen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"vorwerfen\" → \"Er wirft mir jeden Tag meine Unordnung vor.\""
+  "detail": "\"anheben\" → \"Hebst du den Tisch bitte kurz an?\""
  },
  {
   "id": 8303,
@@ -3298,5 +946,137 @@
   "de": "anlügen",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"anlügen\" → \"Warum lügst du deine Eltern so oft an?\""
+ },
+ {
+  "id": 8377,
+  "de": "bügeln",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"bügeln\" → \"Am Abend bügle ich meine Hemden.\""
+ },
+ {
+  "id": 8500,
+  "de": "Weihnachten",
+  "rule": "artikel eksik",
+  "detail": "\"Weihnachten\" isim ama artikeli \"yok\""
+ },
+ {
+  "id": 8501,
+  "de": "Ostern",
+  "rule": "artikel eksik",
+  "detail": "\"Ostern\" isim ama artikeli \"yok\""
+ },
+ {
+  "id": 8537,
+  "de": "eingehen auf",
+  "rule": "fiil mastar değil",
+  "detail": "\"eingehen auf\" fiil olarak işaretli ama mastar eki yok"
+ },
+ {
+  "id": 8540,
+  "de": "bestehen auf",
+  "rule": "fiil mastar değil",
+  "detail": "\"bestehen auf\" fiil olarak işaretli ama mastar eki yok"
+ },
+ {
+  "id": 8543,
+  "de": "sich aufhalten",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"sich aufhalten\" → \"Zum Zeitpunkt des Unfalls hielt er sich im Ausland auf.\""
+ },
+ {
+  "id": 8546,
+  "de": "zulassen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"zulassen\" → \"Das Medikament wurde erst nach langen Tests zugelassen.\""
+ },
+ {
+  "id": 8571,
+  "de": "anregen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"anregen\" → \"Der Betriebsrat hat eine Umfrage unter den Mitarbeitern ange\""
+ },
+ {
+  "id": 8602,
+  "de": "rote Faden",
+  "rule": "isim küçük harfle",
+  "detail": "\"rote Faden\" isim ama küçük harfle başlıyor"
+ },
+ {
+  "id": 8634,
+  "de": "dicke Luft",
+  "rule": "isim küçük harfle",
+  "detail": "\"dicke Luft\" isim ama küçük harfle başlıyor"
+ },
+ {
+  "id": 8643,
+  "de": "rotsehen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"rotsehen\" → \"Wenn er diesen Ton hört, sieht er sofort rot.\""
+ },
+ {
+  "id": 8667,
+  "de": "sich ergeben",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"sich ergeben\" → \"Aus den Daten ergibt sich ein klarer Zusammenhang.\""
+ },
+ {
+  "id": 8672,
+  "de": "sich stützen auf",
+  "rule": "fiil mastar değil",
+  "detail": "\"sich stützen auf\" fiil olarak işaretli ama mastar eki yok"
+ },
+ {
+  "id": 8683,
+  "de": "sich einbringen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"sich einbringen\" → \"Sie hat sich in der Diskussion stark eingebracht.\""
+ },
+ {
+  "id": 8755,
+  "de": "zutreffen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"zutreffen\" → \"Das trifft nur auf die erste Gruppe zu.\""
+ },
+ {
+  "id": 8777,
+  "de": "doppelte Boden",
+  "rule": "isim küçük harfle",
+  "detail": "\"doppelte Boden\" isim ama küçük harfle başlıyor"
+ },
+ {
+  "id": 8800,
+  "de": "sich behelfen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"sich behelfen\" → \"Ohne Beamer haben wir uns mit einem Ausdruck beholfen.\""
+ },
+ {
+  "id": 8819,
+  "de": "jemandem auf den Zahn fühlen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"jemandem auf den Zahn fühlen\" → \"Im Gespräch hat sie ihm gründlich auf den Zahn gefühlt.\""
+ },
+ {
+  "id": 8821,
+  "de": "jemandem unter die Arme greifen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"jemandem unter die Arme greifen\" → \"Die Kollegen haben ihr in der ersten Woche unter die Arme ge\""
+ },
+ {
+  "id": 8837,
+  "de": "das Geld auf den Kopf hauen",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"das Geld auf den Kopf hauen\" → \"Er hat die Prämie in zwei Wochen auf den Kopf gehauen.\""
+ },
+ {
+  "id": 8842,
+  "de": "das ist eine andere Melodie",
+  "rule": "cümle kelimeyi taşımıyor",
+  "detail": "\"das ist eine andere Melodie\" → \"Mit Budget wäre das eine andere Melodie.\""
+ },
+ {
+  "id": 8843,
+  "de": "falsche Freund",
+  "rule": "isim küçük harfle",
+  "detail": "\"falsche Freund\" isim ama küçük harfle başlıyor"
  }
 ]

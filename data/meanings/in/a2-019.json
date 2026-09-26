@@ -30,7 +30,7 @@
    "formen": "blättert, hat geblättert",
    "currentTr": "sayfa çevirmek, karıştırmak (kitap)",
    "currentBeispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
-   "currentBeispielTr": "Bekleme odasında bir dergiyi karıştırmayı severim."
+   "currentBeispielTr": "Bekleme odasında dergi sayfalarını çevirmeyi severim."
   },
   {
    "id": 7891,
@@ -52,8 +52,8 @@
    "niveau": "A2",
    "formen": "jubelt, hat gejubelt",
    "currentTr": "sevinç çığlığı atmak, tezahürat yapmak",
-   "currentBeispiel": "Nach dem letzten Tor jubelten alle im Stadion.",
-   "currentBeispielTr": "Son golden sonra stattaki herkes sevinç çığlıkları attı."
+   "currentBeispiel": "Die Fans jubeln nach dem zweiten Tor.",
+   "currentBeispielTr": "Taraftarlar ikinci golden sonra sevinç çığlıkları atıyor."
   },
   {
    "id": 7893,
@@ -62,8 +62,8 @@
    "niveau": "A2",
    "formen": "klatscht, hat geklatscht",
    "currentTr": "alkışlamak, el çırpmak",
-   "currentBeispiel": "Am Ende des Konzerts klatschte das Publikum sehr lange.",
-   "currentBeispielTr": "Konserin sonunda seyirciler çok uzun süre alkışladı.",
+   "currentBeispiel": "Nach dem Konzert hat das Publikum lange geklatscht.",
+   "currentBeispielTr": "Konserden sonra seyirciler uzun uzun alkışladı.",
    "overlapping": [
     "applaudieren (B2)"
    ]
@@ -75,8 +75,8 @@
    "niveau": "A2",
    "formen": "pfeift, hat gepfiffen",
    "currentTr": "ıslık çalmak, düdük çalmak",
-   "currentBeispiel": "Der Schiedsrichter pfeift und das Spiel ist zu Ende.",
-   "currentBeispielTr": "Hakem düdüğünü çalıyor ve maç bitiyor."
+   "currentBeispiel": "Mein Opa pfeift immer, wenn er gute Laune hat.",
+   "currentBeispielTr": "Dedem keyfi yerindeyken hep ıslık çalar."
   },
   {
    "id": 7895,
@@ -85,8 +85,8 @@
    "niveau": "A2",
    "formen": "plaudert, hat geplaudert",
    "currentTr": "sohbet etmek, çene çalmak",
-   "currentBeispiel": "Nach dem Kurs plaudern wir noch eine halbe Stunde im Café.",
-   "currentBeispielTr": "Kurstan sonra kafede yarım saat daha sohbet ediyoruz.",
+   "currentBeispiel": "Nach dem Kurs plaudern wir noch im Café.",
+   "currentBeispielTr": "Kurstan sonra kafede biraz sohbet ediyoruz.",
    "overlapping": [
     "chatten (A2)",
     "sich unterhalten (B1)"
@@ -100,7 +100,7 @@
    "formen": "bummelt, ist gebummelt",
    "currentTr": "gezinmek, dolaşmak (vitrin gezmek)",
    "currentBeispiel": "Am Samstag bummeln wir gern durch die Altstadt.",
-   "currentBeispielTr": "Cumartesi günleri eski şehirde dolaşmayı severiz.",
+   "currentBeispielTr": "Cumartesileri eski şehirde dolaşmayı severiz.",
    "overlapping": [
     "spazieren (A2)"
    ]
@@ -139,7 +139,7 @@
    "formen": "dehnt, hat gedehnt",
    "currentTr": "germek, esnetmek",
    "currentBeispiel": "Nach dem Laufen dehne ich immer meine Beine.",
-   "currentBeispielTr": "Koşudan sonra bacaklarımı hep gererim."
+   "currentBeispielTr": "Koşudan sonra hep bacaklarımı gererim."
   },
   {
    "id": 7900,
@@ -172,7 +172,7 @@
    "formen": "",
    "currentTr": "haftalık, haftada bir",
    "currentBeispiel": "Der Chor trifft sich wöchentlich am Mittwochabend.",
-   "currentBeispielTr": "Koro her hafta çarşamba akşamı buluşuyor."
+   "currentBeispielTr": "Koro haftada bir çarşamba akşamı buluşuyor."
   },
   {
    "id": 7903,
@@ -204,8 +204,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "formda, zinde",
-   "currentBeispiel": "Mit dem Rad zur Arbeit zu fahren hält mich fit.",
-   "currentBeispielTr": "İşe bisikletle gitmek beni formda tutuyor."
+   "currentBeispiel": "Meine Oma ist mit achtzig noch sehr fit.",
+   "currentBeispielTr": "Babaannem seksen yaşında hâlâ çok formda."
   },
   {
    "id": 7906,
@@ -215,7 +215,7 @@
    "formen": "",
    "currentTr": "oyuncu, oyunbaz",
    "currentBeispiel": "Unser junger Hund ist noch sehr verspielt.",
-   "currentBeispielTr": "Genç köpeğimiz hâlâ çok oyuncu.",
+   "currentBeispielTr": "Genç köpeğimiz hâlâ çok oyunbaz.",
    "overlapping": [
     "der Schauspieler (B1)",
     "der Spieler (B1)",
@@ -240,7 +240,7 @@
    "formen": "-n",
    "currentTr": "spor salonu (okul)",
    "currentBeispiel": "Bei Regen findet das Training in der Turnhalle statt.",
-   "currentBeispielTr": "Yağmurda antrenman spor salonunda yapılıyor.",
+   "currentBeispielTr": "Yağmurda antrenman jimnastik salonunda yapılıyor.",
    "overlapping": [
     "die Sporthalle (A2)",
     "das Fitnessstudio (A2)"
@@ -254,7 +254,7 @@
    "formen": "-s",
    "currentTr": "spor salonu, fitness merkezi",
    "currentBeispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio.",
-   "currentBeispielTr": "Haftada üç kez spor salonuna gidiyorum.",
+   "currentBeispielTr": "Haftada üç kez fitness salonuna gidiyorum.",
    "overlapping": [
     "die Sporthalle (A2)",
     "die Turnhalle (A2)"
@@ -281,7 +281,7 @@
    "formen": "-n",
    "currentTr": "giriş bileti",
    "currentBeispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro.",
-   "currentBeispielTr": "Konserin giriş bileti yirmi euro."
+   "currentBeispielTr": "Konserin giriş bileti yirmi avro."
   },
   {
    "id": 7912,
@@ -331,7 +331,7 @@
    "formen": "(Sg.)",
    "currentTr": "satranç",
    "currentBeispiel": "Mein Großvater hat mir Schach beigebracht.",
-   "currentBeispielTr": "Dedem bana satranç öğretti."
+   "currentBeispielTr": "Satrancı bana dedem öğretti."
   },
   {
    "id": 7917,
@@ -350,8 +350,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "zar, küp",
-   "currentBeispiel": "Ein Würfel fehlt, wir können nicht anfangen.",
-   "currentBeispielTr": "Bir zar eksik, başlayamıyoruz."
+   "currentBeispiel": "Ein Würfel fehlt, deshalb können wir nicht anfangen.",
+   "currentBeispielTr": "Bir zar eksik, bu yüzden başlayamıyoruz."
   },
   {
    "id": 7919,
@@ -381,7 +381,7 @@
    "formen": "-",
    "currentTr": "fırça (boya)",
    "currentBeispiel": "Wasch bitte den Pinsel nach dem Malen aus.",
-   "currentBeispielTr": "Lütfen boyadıktan sonra fırçayı yıka.",
+   "currentBeispielTr": "Lütfen boyadıktan sonra boya fırçasını yıka.",
    "overlapping": [
     "die Bürste (B1)"
    ]
@@ -394,7 +394,7 @@
    "formen": "-e",
    "currentTr": "spor ayakkabısı",
    "currentBeispiel": "Für den Kurs brauchst du saubere Turnschuhe.",
-   "currentBeispielTr": "Kurs için temiz spor ayakkabılarına ihtiyacın var."
+   "currentBeispielTr": "Kurs için temiz spor ayakkabısı lazım."
   },
   {
    "id": 7923,
@@ -423,8 +423,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "devre, devre arası",
-   "currentBeispiel": "In der zweiten Halbzeit fielen drei Tore.",
-   "currentBeispielTr": "İkinci devrede üç gol oldu."
+   "currentBeispiel": "In der ersten Halbzeit war das Spiel langweilig.",
+   "currentBeispielTr": "İlk devrede maç sıkıcıydı."
   },
   {
    "id": 7926,
@@ -443,8 +443,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "dil",
-   "currentBeispiel": "Der Arzt sagt: Bitte zeigen Sie mir Ihre Zunge!",
-   "currentBeispielTr": "Doktor diyor ki: Lütfen bana dilinizi gösterin!",
+   "currentBeispiel": "Zeigen Sie mir bitte Ihre Zunge!",
+   "currentBeispielTr": "Lütfen bana dilinizi gösterin!",
    "overlapping": [
     "die Sprache (A1)"
    ]
@@ -496,8 +496,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "ayak parmağı",
-   "currentBeispiel": "Ich bin gegen den Tisch gelaufen, jetzt tut mein Zeh weh.",
-   "currentBeispielTr": "Masaya çarptım, şimdi ayak parmağım ağrıyor."
+   "currentBeispiel": "Ich bin gegen den Tisch gelaufen und mein Zeh tut weh.",
+   "currentBeispielTr": "Masaya çarptım ve ayak parmağım ağrıyor."
   },
   {
    "id": 7933,
@@ -506,8 +506,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "dirsek",
-   "currentBeispiel": "Beim Fahrradfahren ist er gestürzt und hat sich den Ellenbogen aufgeschlagen.",
-   "currentBeispielTr": "Bisiklet sürerken düştü ve dirseğini yardı."
+   "currentBeispiel": "Ich habe mir den Ellenbogen am Tisch gestoßen.",
+   "currentBeispielTr": "Dirseğimi masaya çarptım."
   },
   {
    "id": 7934,
@@ -547,7 +547,7 @@
    "formen": "-n",
    "currentTr": "karaciğer",
    "currentBeispiel": "Zu viel Alkohol schadet der Leber.",
-   "currentBeispielTr": "Çok fazla alkol karaciğere zarar verir."
+   "currentBeispielTr": "Fazla alkol karaciğere zarar verir."
   }
  ]
 }

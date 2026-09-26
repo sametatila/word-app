@@ -20,7 +20,7 @@
    "formen": "",
    "currentTr": "iklim koruma, iklim koruması",
    "currentBeispiel": "Die Regierung investiert jährlich Milliarden in den Klimaschutz.",
-   "currentBeispielTr": "Hükümet her yıl iklim korumaya milyarlarca yatırım yapıyor."
+   "currentBeispielTr": "Hükümet her yıl iklim korumaya milyarlarca avro yatırıyor."
   },
   {
    "id": 5498,
@@ -69,8 +69,8 @@
    "niveau": "B2",
    "formen": "Abgase",
    "currentTr": "egzoz gazı, atık gaz",
-   "currentBeispiel": "Moderne Filter reinigen die Abgase der Fabrik weitgehend.",
-   "currentBeispielTr": "Modern filtreler fabrikanın atık gazlarını büyük ölçüde temizliyor."
+   "currentBeispiel": "Der Katalysator reinigt die Abgase des Motors zuverlässig.",
+   "currentBeispielTr": "Katalizör motorun egzoz gazlarını güvenilir biçimde temizliyor."
   },
   {
    "id": 5503,
@@ -79,8 +79,8 @@
    "niveau": "B2",
    "formen": "Schadstoffe",
    "currentTr": "zararlı madde, kirletici madde",
-   "currentBeispiel": "Im Boden wurden gefährliche Schadstoffe aus der alten Fabrik gefunden.",
-   "currentBeispielTr": "Toprakta eski fabrikadan kalma tehlikeli zararlı maddeler bulundu."
+   "currentBeispiel": "Im Boden wurden Schadstoffe aus der alten Fabrik gefunden.",
+   "currentBeispielTr": "Toprakta eski fabrikadan kalma zararlı maddeler bulundu."
   },
   {
    "id": 5504,
@@ -130,7 +130,7 @@
    "formen": "Solaranlagen",
    "currentTr": "güneş enerjisi tesisi, güneş paneli sistemi",
    "currentBeispiel": "Die Solaranlage auf dem Dach deckt fast den halben Strombedarf.",
-   "currentBeispielTr": "Çatıdaki güneş paneli sistemi elektrik ihtiyacının neredeyse yarısını karşılıyor."
+   "currentBeispielTr": "Çatıdaki güneş paneli elektrik ihtiyacının neredeyse yarısını karşılıyor."
   },
   {
    "id": 5509,
@@ -210,7 +210,7 @@
    "formen": "",
    "currentTr": "türlerin yok oluşu",
    "currentBeispiel": "Das weltweite Artensterben schreitet schneller voran als befürchtet.",
-   "currentBeispielTr": "Dünya genelinde türlerin yok oluşu korkulandan hızlı ilerliyor."
+   "currentBeispielTr": "Dünya genelinde türlerin yok oluşu korkulandan daha hızlı ilerliyor."
   },
   {
    "id": 5517,
@@ -220,7 +220,7 @@
    "formen": "Regenwälder",
    "currentTr": "yağmur ormanı",
    "currentBeispiel": "Für Weideflächen wird jedes Jahr viel Regenwald vernichtet.",
-   "currentBeispielTr": "Her yıl otlak açmak için çok sayıda yağmur ormanı yok ediliyor."
+   "currentBeispielTr": "Her yıl otlak açmak için çok fazla yağmur ormanı yok ediliyor."
   },
   {
    "id": 5518,
@@ -250,7 +250,7 @@
    "formen": "",
    "currentTr": "içme suyu",
    "currentBeispiel": "In manchen Regionen wird sauberes Trinkwasser immer teurer.",
-   "currentBeispielTr": "Bazı bölgelerde temiz içme suyu giderek pahalanıyor."
+   "currentBeispielTr": "Bazı bölgelerde temiz içme suyu giderek pahalılaşıyor."
   },
   {
    "id": 5521,
@@ -289,8 +289,8 @@
    "niveau": "B2",
    "formen": "Düngemittel",
    "currentTr": "gübre",
-   "currentBeispiel": "Zu viele Düngemittel belasten das Grundwasser der Region.",
-   "currentBeispielTr": "Aşırı gübre bölgenin yer altı suyunu kirletiyor.",
+   "currentBeispiel": "Zu viele Düngemittel schaden dem Grundwasser der Region.",
+   "currentBeispielTr": "Aşırı gübre bölgenin yer altı suyuna zarar veriyor.",
    "overlapping": [
     "der Dünger (B2)"
    ]
@@ -313,7 +313,7 @@
    "formen": "Lärmbelästigungen",
    "currentTr": "gürültü rahatsızlığı, gürültü kirliliği",
    "currentBeispiel": "Die Anwohner klagen über die Lärmbelästigung durch den Flughafen.",
-   "currentBeispielTr": "Mahalle sakinleri havalimanının yol açtığı gürültüden şikâyetçi."
+   "currentBeispielTr": "Mahalle sakinleri havalimanının yarattığı gürültü kirliliğinden şikâyetçi."
   },
   {
    "id": 5527,
@@ -333,7 +333,7 @@
    "formen": "Deponien",
    "currentTr": "çöp depolama alanı, düzenli depolama sahası",
    "currentBeispiel": "Auf der Deponie am Stadtrand wird kaum noch Restmüll gelagert.",
-   "currentBeispielTr": "Şehrin kenarındaki depolama alanında artık pek atık biriktirilmiyor."
+   "currentBeispielTr": "Şehrin kenarındaki çöp sahasında artık pek atık depolanmıyor."
   },
   {
    "id": 5529,
@@ -412,8 +412,8 @@
    "niveau": "B2",
    "formen": "hat belastet",
    "currentTr": "kirletmek, yük bindirmek, zorlamak",
-   "currentBeispiel": "Der Schwerverkehr belastet die Luft in der Innenstadt stark.",
-   "currentBeispielTr": "Ağır trafik şehir merkezindeki havayı ciddi şekilde kirletiyor.",
+   "currentBeispiel": "Der viele Verpackungsmüll belastet die Umwelt zusätzlich.",
+   "currentBeispielTr": "Bunca ambalaj çöpü çevreye ayrıca yük bindiriyor.",
    "overlapping": [
     "verschmutzen (B1)",
     "verseuchen (B2)"
@@ -426,8 +426,8 @@
    "niveau": "B2",
    "formen": "hat eingespart",
    "currentTr": "tasarruf etmek, kısmak",
-   "currentBeispiel": "Mit der neuen Anlage lassen sich jährlich tausend Tonnen einsparen.",
-   "currentBeispielTr": "Yeni tesisle yılda bin ton tasarruf edilebiliyor.",
+   "currentBeispiel": "Durch neue Geräte können wir viel Strom einsparen.",
+   "currentBeispielTr": "Yeni cihazlarla çok elektrik tasarruf edebiliriz.",
    "overlapping": [
     "sparen (A2)"
    ]
@@ -454,7 +454,7 @@
    "formen": "hat ausgestoßen",
    "currentTr": "salmak, yaymak",
    "currentBeispiel": "Ein Flug nach New York stößt mehrere Tonnen Kohlendioxid aus.",
-   "currentBeispielTr": "New York'a bir uçuş birkaç ton karbondioksit salıyor."
+   "currentBeispielTr": "New York'a yapılan bir uçuş birkaç ton karbondioksit salıyor."
   },
   {
    "id": 5540,
@@ -489,7 +489,7 @@
    "formen": "hat gedämmt",
    "currentTr": "yalıtmak, izole etmek",
    "currentBeispiel": "Wer sein Dach gut dämmt, spart im Winter viel Heizöl.",
-   "currentBeispielTr": "Çatısını iyi yalıtan kışın çok fuel oil tasarrufu yapar."
+   "currentBeispielTr": "Çatısını iyi yalıtan biri kışın çok yakıt tasarrufu yapar."
   },
   {
    "id": 5543,
@@ -521,8 +521,8 @@
    "niveau": "B2",
    "formen": "hat verseucht",
    "currentTr": "kirletmek (zehirli maddeyle), bulaştırmak",
-   "currentBeispiel": "Auslaufendes Öl hat den Boden auf Jahre hinaus verseucht.",
-   "currentBeispielTr": "Sızan petrol toprağı yıllarca sürecek şekilde zehirledi.",
+   "currentBeispiel": "Auslaufendes Öl hat den Boden im Hafen verseucht.",
+   "currentBeispielTr": "Sızan petrol limandaki toprağı zehirledi.",
    "overlapping": [
     "verschmutzen (B1)",
     "belasten (B2)"

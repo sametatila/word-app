@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Tabus",
    "currentTr": "tabu, yasak",
-   "currentBeispiel": "Jede Gesellschaft schützt ihre Ordnung durch unausgesprochene Tabus.",
-   "currentBeispielTr": "Her toplum kendi düzenini dile getirilmeyen tabularla korur."
+   "currentBeispiel": "Über Gehälter zu sprechen ist in vielen Familien ein Tabu.",
+   "currentBeispielTr": "Maaşlardan söz etmek birçok ailede tabudur."
   },
   {
    "id": 5754,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Deutungsmuster",
    "currentTr": "yorumlama kalıbı, anlamlandırma şeması",
-   "currentBeispiel": "Solche Deutungsmuster werden schon in der Kindheit erworben.",
-   "currentBeispielTr": "Bu tür yorumlama kalıpları daha çocuklukta edinilir."
+   "currentBeispiel": "Der Journalist griff auf ein vertrautes Deutungsmuster zurück.",
+   "currentBeispielTr": "Gazeteci alışıldık bir yorumlama kalıbına başvurdu."
   },
   {
    "id": 5755,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "Verwandtschaften",
    "currentTr": "akrabalık, hısımlık",
-   "currentBeispiel": "Verwandtschaft ist keine biologische Tatsache, sondern eine soziale Ordnung.",
-   "currentBeispielTr": "Akrabalık biyolojik bir olgu değil, toplumsal bir düzendir."
+   "currentBeispiel": "Zwischen den beiden Familien besteht eine entfernte Verwandtschaft.",
+   "currentBeispielTr": "İki aile arasında uzak bir akrabalık var."
   },
   {
    "id": 5757,
@@ -49,7 +49,7 @@
    "niveau": "C1",
    "formen": "Abstammungen",
    "currentTr": "soy, köken",
-   "currentBeispiel": "Die Abstammung wird in dieser Gruppe über die Mutter berechnet.",
+   "currentBeispiel": "Die Abstammung wird in dieser Gruppe über die Mutter gerechnet.",
    "currentBeispielTr": "Bu grupta soy anne üzerinden hesaplanır."
   },
   {
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yabancılık, ötekilik",
-   "currentBeispiel": "Fremdheit entsteht erst im Blick des Beobachters.",
-   "currentBeispielTr": "Yabancılık ancak gözlemcinin bakışında ortaya çıkar."
+   "currentBeispiel": "Beim ersten Besuch überwog die Fremdheit, nicht die Neugier.",
+   "currentBeispielTr": "İlk ziyarette merak değil, yabancılık ağır bastı."
   },
   {
    "id": 5759,
@@ -70,7 +70,7 @@
    "formen": "Andersartigkeiten",
    "currentTr": "farklılık, başkalık",
    "currentBeispiel": "Die Ausstellung betont die Andersartigkeit statt der Gemeinsamkeiten.",
-   "currentBeispielTr": "Sergi, ortak yönler yerine farklılığı öne çıkarıyor."
+   "currentBeispielTr": "Sergi, ortak yönler yerine başkalığı öne çıkarıyor."
   },
   {
    "id": 5760,
@@ -79,8 +79,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "etnosantrizm, kendi kültürünü merkeze alma",
-   "currentBeispiel": "Ein unbemerkter Ethnozentrismus prägt viele ältere Reiseberichte.",
-   "currentBeispielTr": "Fark edilmeyen bir etnosantrizm birçok eski seyahat anlatısına damgasını vurur."
+   "currentBeispiel": "Der alte Reisebericht strotzt vor unbemerktem Ethnozentrismus.",
+   "currentBeispielTr": "Eski seyahat anlatısı fark edilmemiş etnosantrizmle dolu."
   },
   {
    "id": 5761,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kültürel görelilik",
-   "currentBeispiel": "Der Kulturrelativismus verbietet es, fremde Praktiken vorschnell zu bewerten.",
-   "currentBeispielTr": "Kültürel görelilik, yabancı pratikleri aceleyle değerlendirmeyi yasaklar."
+   "currentBeispiel": "Im Seminar berief sie sich immer wieder auf den Kulturrelativismus.",
+   "currentBeispielTr": "Seminerde sürekli kültürel göreliliğe başvurdu."
   },
   {
    "id": 5762,
@@ -100,7 +100,7 @@
    "formen": "Akkulturationen",
    "currentTr": "kültürleşme, kültürel uyum",
    "currentBeispiel": "Die Akkulturation verlief in der zweiten Generation deutlich schneller.",
-   "currentBeispielTr": "Kültürleşme ikinci kuşakta belirgin biçimde daha hızlı gerçekleşti."
+   "currentBeispielTr": "Kültürleşme ikinci kuşakta belirgin biçimde daha hızlı ilerledi."
   },
   {
    "id": 5763,
@@ -110,7 +110,7 @@
    "formen": "Assimilationen",
    "currentTr": "asimilasyon, benzeşme",
    "currentBeispiel": "Assimilation wurde lange als selbstverständliches Ziel der Einwanderungspolitik gesehen.",
-   "currentBeispielTr": "Asimilasyon uzun süre göç politikasının doğal hedefi olarak görüldü."
+   "currentBeispielTr": "Asimilasyon uzun süre göç politikasının doğal hedefi sayıldı."
   },
   {
    "id": 5764,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "melezlik, karma yapı",
-   "currentBeispiel": "Die Hybridität städtischer Musikszenen widerlegt jedes reine Kulturmodell.",
-   "currentBeispielTr": "Kentli müzik sahnelerinin melezliği her saf kültür modelini çürütür."
+   "currentBeispiel": "Die Hybridität dieser Küche erkennt man an jedem Gericht.",
+   "currentBeispielTr": "Bu mutfağın melezliği her yemekte kendini belli ediyor."
   },
   {
    "id": 5765,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "toplumsallaşma, sosyalleşme",
-   "currentBeispiel": "Werte werden in der frühen Sozialisation eher beiläufig als ausdrücklich vermittelt.",
-   "currentBeispielTr": "Değerler erken toplumsallaşmada açıkça değil, daha çok dolaylı olarak aktarılır."
+   "currentBeispiel": "Seine Sozialisation auf dem Dorf prägt bis heute sein Auftreten.",
+   "currentBeispielTr": "Köydeki toplumsallaşması bugün hâlâ tavırlarını belirliyor."
   },
   {
    "id": 5766,
@@ -139,8 +139,8 @@
    "niveau": "C1",
    "formen": "Vermächtnisse",
    "currentTr": "miras, bırakılan kültürel birikim",
-   "currentBeispiel": "Diese Erzählungen sind das eigentliche Vermächtnis der Dorfgemeinschaft.",
-   "currentBeispielTr": "Bu anlatılar köy topluluğunun asıl mirasıdır.",
+   "currentBeispiel": "Seine Bibliothek war das wertvollste Vermächtnis an die Stadt.",
+   "currentBeispielTr": "Kütüphanesi, şehre bıraktığı en değerli mirastı.",
    "overlapping": [
     "die Erbschaft (B2)"
    ]
@@ -152,8 +152,8 @@
    "niveau": "C1",
    "formen": "Erinnerungskulturen",
    "currentTr": "hatırlama kültürü, anma kültürü",
-   "currentBeispiel": "Die Erinnerungskultur eines Landes zeigt sich an seinen Denkmälern.",
-   "currentBeispielTr": "Bir ülkenin hatırlama kültürü anıtlarında görünür olur."
+   "currentBeispiel": "Die deutsche Erinnerungskultur wird im Ausland oft bewundert.",
+   "currentBeispielTr": "Alman hatırlama kültürü yurt dışında sıkça hayranlık uyandırır."
   },
   {
    "id": 5768,
@@ -163,7 +163,7 @@
    "formen": "Kosmologien",
    "currentTr": "kozmoloji, evren tasavvuru",
    "currentBeispiel": "In ihrer Kosmologie sind Tiere und Menschen keine getrennten Kategorien.",
-   "currentBeispielTr": "Onların evren tasavvurunda hayvanlar ve insanlar ayrı kategoriler değildir."
+   "currentBeispielTr": "Onların kozmolojisinde hayvanlarla insanlar ayrı kategoriler değil."
   },
   {
    "id": 5769,
@@ -183,7 +183,7 @@
    "formen": "Initiationen",
    "currentTr": "erginleme, kabul töreni",
    "currentBeispiel": "Nach der Initiation darf der Jugendliche an den Beratungen teilnehmen.",
-   "currentBeispielTr": "Erginlemeden sonra genç, istişarelere katılabilir."
+   "currentBeispielTr": "Erginlemeden sonra genç, meclis toplantılarına katılabiliyor."
   },
   {
    "id": 5771,
@@ -202,8 +202,8 @@
    "niveau": "C1",
    "formen": "Alltagspraktiken",
    "currentTr": "gündelik pratik, günlük uygulama",
-   "currentBeispiel": "Große Weltbilder zeigen sich am deutlichsten in banaler Alltagspraxis.",
-   "currentBeispielTr": "Büyük dünya görüşleri en açık biçimde sıradan gündelik pratikte görünür."
+   "currentBeispiel": "In der Alltagspraxis hält sich kaum jemand an die Vorschrift.",
+   "currentBeispielTr": "Gündelik pratikte neredeyse kimse bu kurala uymuyor."
   },
   {
    "id": 5773,
@@ -212,8 +212,8 @@
    "niveau": "C1",
    "formen": "Handlungsmuster",
    "currentTr": "davranış kalıbı, eylem örüntüsü",
-   "currentBeispiel": "Dieselben Handlungsmuster wiederholen sich über mehrere Generationen hinweg.",
-   "currentBeispielTr": "Aynı davranış kalıpları birkaç kuşak boyunca yinelenir."
+   "currentBeispiel": "In der Krise fiel er in alte Handlungsmuster zurück.",
+   "currentBeispielTr": "Krizde eski davranış kalıplarına geri döndü."
   },
   {
    "id": 5774,
@@ -223,7 +223,7 @@
    "formen": "Verhaltenskodexe",
    "currentTr": "davranış kuralları, davranış kodu",
    "currentBeispiel": "Ein ungeschriebener Verhaltenskodex regelt, wer zuerst spricht.",
-   "currentBeispielTr": "Yazılı olmayan bir davranış kuralı, kimin önce konuşacağını belirler."
+   "currentBeispielTr": "Yazılı olmayan bir davranış kuralı kimin önce konuşacağını belirler."
   },
   {
    "id": 5775,
@@ -232,8 +232,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "saflık, temizlik, arılık",
-   "currentBeispiel": "Vorstellungen von Reinheit trennen das Essbare vom Verbotenen.",
-   "currentBeispielTr": "Arılık tasavvurları yenilebilir olanı yasak olandan ayırır."
+   "currentBeispiel": "Die Reinheit des Wassers wird jede Woche geprüft.",
+   "currentBeispielTr": "Suyun saflığı her hafta kontrol ediliyor."
   },
   {
    "id": 5776,
@@ -243,7 +243,7 @@
    "formen": "Sippen",
    "currentTr": "sülale, klan",
    "currentBeispiel": "Die Sippe entscheidet gemeinsam über die Verteilung des Landes.",
-   "currentBeispielTr": "Sülale, toprağın paylaşımına birlikte karar verir."
+   "currentBeispielTr": "Sülale, toprağın paylaşımına birlikte karar veriyor."
   },
   {
    "id": 5777,
@@ -252,8 +252,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "karşılıklılık",
-   "currentBeispiel": "Reziprozität hält das Netz gegenseitiger Verpflichtungen zusammen.",
-   "currentBeispielTr": "Karşılıklılık, karşılıklı yükümlülükler ağını bir arada tutar."
+   "currentBeispiel": "Hinter der Einladung steckt eine klare Erwartung von Reziprozität.",
+   "currentBeispielTr": "Davetin ardında açık bir karşılıklılık beklentisi var."
   },
   {
    "id": 5778,
@@ -262,8 +262,8 @@
    "niveau": "C1",
    "formen": "Gaben",
    "currentTr": "armağan, hediye",
-   "currentBeispiel": "Eine Gabe verpflichtet den Empfänger zu einer späteren Gegenleistung.",
-   "currentBeispielTr": "Bir armağan, alıcıyı ileride bir karşılık vermeye mecbur bırakır."
+   "currentBeispiel": "Er überreichte dem Ältesten eine kleine Gabe.",
+   "currentBeispielTr": "Yaşlıya küçük bir armağan sundu."
   },
   {
    "id": 5779,
@@ -295,8 +295,8 @@
    "niveau": "C1",
    "formen": "Zuschreibungen",
    "currentTr": "atıf, yakıştırma",
-   "currentBeispiel": "Solche Zuschreibungen sagen mehr über uns als über die Beschriebenen.",
-   "currentBeispielTr": "Bu tür atıflar, betimlenenlerden çok bizim hakkımızda konuşur."
+   "currentBeispiel": "Solche Zuschreibungen sagen mehr über uns als über andere.",
+   "currentBeispielTr": "Bu tür yakıştırmalar başkalarından çok bizi anlatır."
   },
   {
    "id": 5782,
@@ -306,7 +306,7 @@
    "formen": "Stereotype",
    "currentTr": "basmakalıp yargı, klişe",
    "currentBeispiel": "Das Stereotyp hält sich, obwohl keine Studie es bestätigt.",
-   "currentBeispielTr": "Hiçbir çalışma doğrulamasa da bu basmakalıp yargı varlığını sürdürüyor."
+   "currentBeispielTr": "Hiçbir araştırma doğrulamadığı hâlde bu kalıp yargı ayakta kalıyor."
   },
   {
    "id": 5783,
@@ -316,7 +316,7 @@
    "formen": "Stigmata",
    "currentTr": "damga, damgalanma",
    "currentBeispiel": "Das Stigma haftet an der Familie noch nach zwei Generationen.",
-   "currentBeispielTr": "Damga, iki kuşak sonra bile aileye yapışık kalıyor."
+   "currentBeispielTr": "Damga, iki kuşak sonra bile ailenin üstünde kalıyor."
   },
   {
    "id": 5784,
@@ -326,7 +326,7 @@
    "formen": "",
    "currentTr": "egzotiklik, egzotizm",
    "currentBeispiel": "Die Exotik der Bilder verstellt den Blick auf den Alltag.",
-   "currentBeispielTr": "Fotoğrafların egzotikliği gündelik hayata bakışı engelliyor."
+   "currentBeispielTr": "Fotoğrafların egzotikliği gündelik hayatı görmeyi engelliyor."
   },
   {
    "id": 5785,
@@ -336,7 +336,7 @@
    "formen": "Verflechtungen",
    "currentTr": "iç içe geçme, karşılıklı bağlantı",
    "currentBeispiel": "Die Verflechtung von Religion und Wirtschaft ist hier kaum aufzulösen.",
-   "currentBeispielTr": "Burada din ile ekonominin iç içe geçmişliğini ayırmak neredeyse imkânsız."
+   "currentBeispielTr": "Burada dinle ekonominin iç içe geçmişliğini çözmek neredeyse imkânsız."
   },
   {
    "id": 5786,
@@ -356,7 +356,7 @@
    "formen": "",
    "currentTr": "anlam kurma, anlam yaratma",
    "currentBeispiel": "Rituale dienen der Sinnstiftung in Zeiten großer Unsicherheit.",
-   "currentBeispielTr": "Ritüeller büyük belirsizlik zamanlarında anlam kurmaya hizmet eder."
+   "currentBeispielTr": "Ritüeller büyük belirsizlik zamanlarında anlam kurmaya yarar."
   },
   {
    "id": 5788,
@@ -365,8 +365,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "habitus, yerleşik davranış tarzı",
-   "currentBeispiel": "Der akademische Habitus verrät sich schon an der Wortwahl.",
-   "currentBeispielTr": "Akademik habitus daha sözcük seçiminde kendini ele veriyor."
+   "currentBeispiel": "Sein selbstsicherer Habitus öffnete ihm viele Türen.",
+   "currentBeispielTr": "Kendinden emin duruşu ona birçok kapı açtı."
   },
   {
    "id": 5789,
@@ -376,7 +376,7 @@
    "formen": "Milieus",
    "currentTr": "sosyal çevre, muhit",
    "currentBeispiel": "In diesem Milieu gilt offene Zurschaustellung von Reichtum als peinlich.",
-   "currentBeispielTr": "Bu çevrede zenginliği açıkça sergilemek ayıp sayılır."
+   "currentBeispielTr": "Bu muhitte zenginliği açıkça sergilemek ayıp sayılır."
   },
   {
    "id": 5790,
@@ -409,7 +409,7 @@
    "formen": "Mehrheitsgesellschaften",
    "currentTr": "çoğunluk toplumu",
    "currentBeispiel": "Die Mehrheitsgesellschaft hält ihre eigenen Normen für neutral.",
-   "currentBeispielTr": "Çoğunluk toplumu kendi normlarını tarafsız sanır."
+   "currentBeispielTr": "Çoğunluk toplumu kendi normlarını tarafsız sanıyor."
   },
   {
    "id": 5793,
@@ -419,7 +419,7 @@
    "formen": "",
    "currentTr": "kendini algılayış, kendini tanımlama biçimi",
    "currentBeispiel": "Das Selbstverständnis der Zunft beruht auf jahrhundertealten Erzählungen.",
-   "currentBeispielTr": "Loncanın kendini algılayışı yüzyıllık anlatılara dayanıyor."
+   "currentBeispielTr": "Loncanın kendini algılayışı asırlık anlatılara dayanıyor."
   },
   {
    "id": 5794,
@@ -428,8 +428,8 @@
    "niveau": "C1",
    "formen": "Artefakte",
    "currentTr": "insan yapımı nesne, eser",
-   "currentBeispiel": "Jedes Artefakt im Depot trägt eine Geschichte seiner Aneignung.",
-   "currentBeispielTr": "Depodaki her nesne, kendisine el konuluşunun hikâyesini taşır."
+   "currentBeispiel": "Das älteste Artefakt der Sammlung stammt aus einem Grab.",
+   "currentBeispielTr": "Koleksiyonun en eski eseri bir mezardan çıkmış."
   },
   {
    "id": 5795,
@@ -438,8 +438,8 @@
    "niveau": "C1",
    "formen": "Glaubenssysteme",
    "currentTr": "inanç sistemi",
-   "currentBeispiel": "Ein Glaubenssystem lässt sich nicht in einzelne Sätze zerlegen.",
-   "currentBeispielTr": "Bir inanç sistemi tek tek cümlelere ayrıştırılamaz."
+   "currentBeispiel": "Ihr Glaubenssystem erklärt jede Krankheit als Folge von Streit.",
+   "currentBeispielTr": "Onların inanç sistemi her hastalığı bir kavganın sonucu sayar."
   },
   {
    "id": 5796,
@@ -449,7 +449,7 @@
    "formen": "hat tradiert",
    "currentTr": "kuşaktan kuşağa aktarmak",
    "currentBeispiel": "Diese Formeln werden mündlich tradiert und nie aufgeschrieben.",
-   "currentBeispielTr": "Bu formüller sözlü olarak aktarılır ve hiç yazıya geçirilmez.",
+   "currentBeispielTr": "Bu formüller kuşaktan kuşağa sözlü aktarılır, hiç yazıya geçmez.",
    "overlapping": [
     "überliefern (C1)"
    ]
@@ -475,7 +475,7 @@
    "formen": "ist entstammt",
    "currentTr": "-den gelmek, kökeni -e dayanmak",
    "currentBeispiel": "Der Brauch entstammt einer weit älteren bäuerlichen Ordnung.",
-   "currentBeispielTr": "Bu âdet çok daha eski bir köylü düzeninden gelir.",
+   "currentBeispielTr": "Bu âdet çok daha eski bir köylü düzeninden kaynaklanıyor.",
    "overlapping": [
     "stammen (B1)"
    ]
@@ -488,7 +488,7 @@
    "formen": "hat weitergegeben",
    "currentTr": "aktarmak, iletmek",
    "currentBeispiel": "Die Großmütter geben die Lieder ohne jede Notenschrift weiter.",
-   "currentBeispielTr": "Nineler şarkıları hiçbir nota yazısı olmadan aktarıyor.",
+   "currentBeispielTr": "Nineler şarkıları hiçbir nota olmadan aktarıyor.",
    "overlapping": [
     "vermitteln (B2)",
     "wiedergeben (B2)"
@@ -502,7 +502,7 @@
    "formen": "hat abgeleitet",
    "currentTr": "çıkarmak, çıkarsamak, türetmek",
    "currentBeispiel": "Aus einem einzigen Fall lässt sich keine Regel ableiten.",
-   "currentBeispielTr": "Tek bir vakadan bir kural çıkarsanamaz.",
+   "currentBeispielTr": "Tek bir vakadan hiçbir kural türetilemez.",
    "overlapping": [
     "abnehmen (B1)",
     "ausziehen (B1)",
@@ -518,7 +518,7 @@
    "formen": "hat gestiftet",
    "currentTr": "yaratmak, oluşturmak, bağışlamak",
    "currentBeispiel": "Gemeinsame Mahlzeiten stiften Zusammengehörigkeit über alle Konflikte hinweg.",
-   "currentBeispielTr": "Ortak yemekler bütün çatışmalara rağmen birliktelik duygusu yaratır."
+   "currentBeispielTr": "Ortak yemekler bütün çatışmalara rağmen aidiyet duygusu yaratır."
   },
   {
    "id": 5802,
@@ -528,7 +528,7 @@
    "formen": "hat geächtet",
    "currentTr": "dışlamak, lanetlemek, yasaklamak",
    "currentBeispiel": "Wer gegen das Schweigegebot verstieß, wurde von allen geächtet.",
-   "currentBeispielTr": "Sessizlik kuralını çiğneyen herkes tarafından dışlanırdı.",
+   "currentBeispielTr": "Sessizlik kuralını çiğneyen herkes tarafından aforoz edildi.",
    "overlapping": [
     "ausgrenzen (C1)"
    ]

@@ -10,7 +10,7 @@
    "formen": "hat vorgeschrieben",
    "currentTr": "zorunlu kılmak, öngörmek, emretmek",
    "currentBeispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
-   "currentBeispielTr": "Yönetmelik yazılı gerekçe sunulmasını açıkça zorunlu kılıyor."
+   "currentBeispielTr": "Yönetmelik yazılı gerekçeyi açıkça zorunlu kılıyor."
   },
   {
    "id": 5246,
@@ -20,7 +20,7 @@
    "formen": "hat untersagt",
    "currentTr": "yasaklamak, men etmek",
    "currentBeispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
-   "currentBeispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
+   "currentBeispielTr": "Belediyenin arsada yapılaşmayı sürdürmesi yasaklandı.",
    "overlapping": [
     "verbieten (B1)"
    ]
@@ -33,7 +33,7 @@
    "formen": "hat gestattet",
    "currentTr": "izin vermek, müsaade etmek",
    "currentBeispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
-   "currentBeispielTr": "Ev sahibi köpek beslenmesine yalnızca istisnai olarak izin veriyor.",
+   "currentBeispielTr": "Ev sahibi köpek beslenmesine ancak istisnai olarak izin veriyor.",
    "overlapping": [
     "erlauben (A1)"
    ]
@@ -55,8 +55,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "resmî, idari, daireye ait",
-   "currentBeispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung.",
-   "currentBeispielTr": "Tadilat için resmî bir izne ihtiyacımız var.",
+   "currentBeispiel": "Der Betrieb wurde durch eine behördliche Anordnung geschlossen.",
+   "currentBeispielTr": "İşletme idari bir kararla kapatıldı.",
    "overlapping": [
     "amtlich (B2)"
    ]
@@ -69,7 +69,7 @@
    "formen": "",
    "currentTr": "kabul edilemez, caiz olmayan",
    "currentBeispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
-   "currentBeispielTr": "Dava, kabul edilemez bulunarak reddedildi."
+   "currentBeispielTr": "Dava kabul edilemez bulunarak reddedildi."
   },
   {
    "id": 5251,
@@ -145,7 +145,7 @@
    "formen": "Anzahlungen",
    "currentTr": "kapora, ön ödeme",
    "currentBeispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
-   "currentBeispielTr": "Rezervasyon sırasında yüzde yirmilik bir kapora ödenmesi gerekiyor."
+   "currentBeispielTr": "Rezervasyon sırasında yüzde yirmi kapora ödenmesi gerekiyor."
   },
   {
    "id": 5258,
@@ -154,8 +154,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yeme içme, iaşe",
-   "currentBeispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten.",
-   "currentBeispielTr": "Fiyata yedi günlük konaklama ve yeme içme dahildir."
+   "currentBeispiel": "Im Preis sind Übernachtung und Verpflegung enthalten.",
+   "currentBeispielTr": "Fiyata konaklama ve yeme içme dâhil."
   },
   {
    "id": 5259,
@@ -165,7 +165,7 @@
    "formen": "Pauschalreisen",
    "currentTr": "paket tur",
    "currentBeispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
-   "currentBeispielTr": "Pek çok tatilci tek tek hizmet almak yerine paket tur satın almayı tercih ediyor."
+   "currentBeispielTr": "Pek çok tatilci tek tek hizmet yerine paket tur tercih ediyor."
   },
   {
    "id": 5260,
@@ -201,7 +201,7 @@
    "formen": "Besichtigungen",
    "currentTr": "gezip görme, ziyaret",
    "currentBeispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
-   "currentBeispielTr": "Katedralin gezilmesi ancak rehber eşliğinde mümkün."
+   "currentBeispielTr": "Katedral ancak rehber eşliğinde gezilebiliyor."
   },
   {
    "id": 5263,
@@ -211,7 +211,7 @@
    "formen": "",
    "currentTr": "turizm, turist hareketliliği",
    "currentBeispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
-   "currentBeispielTr": "Turizm bölgeye her yıl milyonlarca kazandırıyor.",
+   "currentBeispielTr": "Turist hareketliliği bölgeye her yıl milyonlar kazandırıyor.",
    "overlapping": [
     "der Tourismus (B1)"
    ]
@@ -224,7 +224,7 @@
    "formen": "",
    "currentTr": "yüksek sezon, sezonun en yoğun dönemi",
    "currentBeispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
-   "currentBeispielTr": "Yoğun sezonda kıyıdaki fiyatlar ikiye katlanıyor."
+   "currentBeispielTr": "Yüksek sezonda kıyıdaki fiyatlar ikiye katlanıyor."
   },
   {
    "id": 5265,
@@ -234,7 +234,7 @@
    "formen": "",
    "currentTr": "izdiham, yığılma",
    "currentBeispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
-   "currentBeispielTr": "Büyük kalabalık yüzünden iki saat sıra beklemek zorunda kaldık."
+   "currentBeispielTr": "Büyük izdiham yüzünden iki saat sıra beklemek zorunda kaldık."
   },
   {
    "id": 5266,
@@ -264,7 +264,7 @@
    "formen": "Einreisen",
    "currentTr": "ülkeye giriş",
    "currentBeispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
-   "currentBeispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaporta ihtiyacınız var."
+   "currentBeispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaport gerekiyor."
   },
   {
    "id": 5269,
@@ -284,7 +284,7 @@
    "formen": "Unterbringungen",
    "currentTr": "yerleştirme, konaklama düzeni",
    "currentBeispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
-   "currentBeispielTr": "Grubun konaklaması için sade bir misafirhane kiralandı."
+   "currentBeispielTr": "Grubun yerleştirilmesi için sade bir misafirhane kiralandı."
   },
   {
    "id": 5271,
@@ -293,8 +293,8 @@
    "niveau": "B2",
    "formen": "Herbergen",
    "currentTr": "hostel, konukevi",
-   "currentBeispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge.",
-   "currentBeispielTr": "Etabın sonunda hacılar mütevazı bir konukevi buldu."
+   "currentBeispiel": "Die Wanderer übernachteten in einer einfachen Herberge am Weg.",
+   "currentBeispielTr": "Yürüyüşçüler yol kenarındaki mütevazı bir konukevinde gecelediler."
   },
   {
    "id": 5272,
@@ -313,8 +313,8 @@
    "niveau": "B2",
    "formen": "Abstecher",
    "currentTr": "kısa uğrayış, yol üstü gezi",
-   "currentBeispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See.",
-   "currentBeispielTr": "Dönüş yolunda göle kısa bir uğrama yaptık."
+   "currentBeispiel": "Auf dem Rückweg machten wir einen Abstecher an den See.",
+   "currentBeispielTr": "Dönüş yolunda kısa bir süreliğine göle uğradık."
   },
   {
    "id": 5274,
@@ -324,7 +324,7 @@
    "formen": "Gipfel",
    "currentTr": "zirve, doruk",
    "currentBeispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
-   "currentBeispielTr": "Hava açıkken zirveden denize kadar görülüyor."
+   "currentBeispielTr": "Hava açıkken zirveden denizi bile görebiliyorsunuz."
   },
   {
    "id": 5275,
@@ -377,7 +377,7 @@
    "formen": "Vulkane",
    "currentTr": "yanardağ",
    "currentBeispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
-   "currentBeispielTr": "Kül bulutu nedeniyle yanardağa tırmanış yasaklandı."
+   "currentBeispielTr": "Kül bulutu yüzünden yanardağa tırmanış kapalı."
   },
   {
    "id": 5280,
@@ -397,7 +397,7 @@
    "formen": "Mündungen",
    "currentTr": "nehir ağzı, döküldüğü yer",
    "currentBeispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
-   "currentBeispielTr": "Nehrin denize döküldüğü yerde çok sayıda nadir kuş kuluçkaya yatıyor."
+   "currentBeispielTr": "Nehrin ağzında çok sayıda nadir kuş kuluçkaya yatıyor."
   },
   {
    "id": 5282,
@@ -407,7 +407,7 @@
    "formen": "Strömungen",
    "currentTr": "akıntı",
    "currentBeispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
-   "currentBeispielTr": "Güçlü akıntı nedeniyle burada denize girmek yasak."
+   "currentBeispielTr": "Güçlü akıntı yüzünden burada yüzmek yasak."
   },
   {
    "id": 5283,
@@ -427,7 +427,7 @@
    "formen": "Seilbahnen",
    "currentTr": "teleferik",
    "currentBeispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
-   "currentBeispielTr": "Şiddetli rüzgârda teleferik seferlerini derhal durduruyor."
+   "currentBeispielTr": "Şiddetli rüzgârda teleferik seferlerini hemen durduruyor."
   },
   {
    "id": 5285,
@@ -447,7 +447,7 @@
    "formen": "Wahrzeichen",
    "currentTr": "simge yapı, sembol",
    "currentBeispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
-   "currentBeispielTr": "Eski deniz feneri bugün hâlâ limanın simgesi."
+   "currentBeispielTr": "Eski deniz feneri bugün hâlâ limanın simge yapısı."
   },
   {
    "id": 5287,
@@ -467,7 +467,7 @@
    "formen": "",
    "currentTr": "konaklama ve yeme içme sektörü",
    "currentBeispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
-   "currentBeispielTr": "Konaklama ve yeme içme sektöründe yıllardır nitelikli eleman bulunamıyor."
+   "currentBeispielTr": "Ağırlama sektöründe yıllardır nitelikli eleman bulunamıyor."
   },
   {
    "id": 5289,
@@ -511,7 +511,7 @@
    "formen": "hat aufgesucht",
    "currentTr": "gitmek, başvurmak, uğramak",
    "currentBeispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
-   "currentBeispielTr": "Şikâyet durumunda yolcular derhal bir doktora başvurmalı.",
+   "currentBeispielTr": "Şikâyet durumunda yolcular hemen bir doktora başvurmalı.",
    "overlapping": [
     "fahren (A1)",
     "gehen (A1)",
@@ -539,7 +539,7 @@
    "formen": "hat sich verirrt",
    "currentTr": "yolunu kaybetmek, kaybolmak",
    "currentBeispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
-   "currentBeispielTr": "Yoğun siste iki yürüyüşçü dağda kayboldu.",
+   "currentBeispielTr": "Yoğun siste iki yürüyüşçü dağda yolunu kaybetti.",
    "overlapping": [
     "sich verlaufen (B1)"
    ]

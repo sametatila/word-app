@@ -3,9 +3,9 @@
     "id": 706,
     "tr": "ilgilenmek",
     "en": "to take care of",
-    "beispiel": "Jede Mutter kümmert sich um ihre kleinen Kinder.",
-    "beispielTr": "Her anne küçük çocuklarıyla ilgilenir.",
-    "beispielEn": "Every mother takes care of her small children."
+    "beispiel": "Mein Nachbar kümmert sich um meine Katze.",
+    "beispielTr": "Komşum kedimle ilgileniyor.",
+    "beispielEn": "My neighbor takes care of my cat."
   },
   {
     "id": 709,
@@ -43,9 +43,9 @@
     "id": 406,
     "tr": "yazmak",
     "en": "to write",
-    "beispiel": "Erika schreibt mir jeden Tag.",
-    "beispielTr": "Erika bana her gün yazıyor.",
-    "beispielEn": "Erika writes to me every day."
+    "beispiel": "Meine Tochter schreibt gerade eine Geschichte über Pferde.",
+    "beispielTr": "Kızım şu an atlarla ilgili bir hikâye yazıyor.",
+    "beispielEn": "My daughter is writing a story about horses right now."
   },
   {
     "id": 592,
@@ -67,33 +67,33 @@
     "id": 842,
     "tr": "kendini tanıtmak",
     "en": "to introduce oneself",
-    "beispiel": "Können Sie sich bitte kurz vorstellen?",
-    "beispielTr": "Kendinizi kısaca tanıtır mısınız?",
-    "beispielEn": "Could you introduce yourself briefly?"
+    "beispiel": "Die neue Kollegin hat sich heute im Team vorgestellt.",
+    "beispielTr": "Yeni iş arkadaşı bugün ekibe kendini tanıttı.",
+    "beispielEn": "The new colleague introduced herself to the team today."
   },
   {
     "id": 513,
     "tr": "daire",
     "en": "apartment",
-    "beispiel": "Unsere Wohnung hat drei Zimmer.",
-    "beispielTr": "Dairemiz üç odalı.",
-    "beispielEn": "Our apartment has three rooms."
+    "beispiel": "Die Wohnung im dritten Stock hat keinen Balkon.",
+    "beispielTr": "Üçüncü kattaki dairenin balkonu yok.",
+    "beispielEn": "The apartment on the fourth floor doesn't have a balcony."
   },
   {
     "id": 218,
     "tr": "adı olmak",
     "en": "to be called",
-    "beispiel": "Ich heiße Charlotte Meier.",
-    "beispielTr": "Adım Charlotte Meier.",
-    "beispielEn": "My name is Charlotte Meier."
+    "beispiel": "Wie heißt dein neuer Nachbar?",
+    "beispielTr": "Yeni komşunun adı ne?",
+    "beispielEn": "What's your new neighbor's name?"
   },
   {
     "id": 277,
     "tr": "hastane",
     "en": "hospital",
-    "beispiel": "Meine Freundin ist im Krankenhaus.",
-    "beispielTr": "Arkadaşım hastanede.",
-    "beispielEn": "My friend is in the hospital."
+    "beispiel": "Tom liegt seit Montag im Krankenhaus.",
+    "beispielTr": "Tom pazartesiden beri hastanede yatıyor.",
+    "beispielEn": "Tom has been in the hospital since Monday."
   },
   {
     "id": 266,
@@ -115,49 +115,49 @@
     "id": 70,
     "tr": "özellikle",
     "en": "especially",
-    "beispiel": "Das finde ich besonders interessant.",
-    "beispielTr": "Bunu özellikle ilginç buluyorum.",
-    "beispielEn": "I find this especially interesting."
+    "beispiel": "Der Kuchen von Oma schmeckt besonders gut.",
+    "beispielTr": "Büyükannemin keki özellikle güzel.",
+    "beispielEn": "Grandma's cake tastes especially good."
   },
   {
     "id": 777,
     "tr": "göndermek",
     "en": "to send",
-    "beispiel": "Bitte schicken Sie mir eine E-Mail.",
-    "beispielTr": "Lütfen bana bir e-posta gönderin.",
-    "beispielEn": "Please send me an email."
+    "beispiel": "Ich habe meiner Oma ein Paket geschickt.",
+    "beispielTr": "Büyükanneme bir paket gönderdim.",
+    "beispielEn": "I sent my grandma a package."
   },
   {
     "id": 20,
     "tr": "telefon etmek",
     "en": "to call",
-    "beispiel": "Ich rufe dich morgen an.",
-    "beispielTr": "Seni yarın ararım.",
-    "beispielEn": "I will call you tomorrow."
+    "beispiel": "Oma ruft jeden Sonntag bei uns an.",
+    "beispielTr": "Büyükannem her pazar bizi arıyor.",
+    "beispielEn": "Grandma calls us every Sunday."
   },
   {
     "id": 736,
     "tr": "ağız",
     "en": "mouth",
-    "beispiel": "Öffnen Sie bitte den Mund.",
-    "beispielTr": "Lütfen ağzınızı açın.",
-    "beispielEn": "Please open your mouth."
+    "beispiel": "Mit vollem Mund spricht man nicht.",
+    "beispielTr": "Ağız doluyken konuşulmaz.",
+    "beispielEn": "You don't talk with your mouth full."
   },
   {
     "id": 284,
     "tr": "gülmek",
     "en": "to laugh",
-    "beispiel": "Lisa lacht immer viel.",
-    "beispielTr": "Lisa hep çok güler.",
-    "beispielEn": "Lisa always laughs a lot."
+    "beispiel": "Über seine Witze lachen alle.",
+    "beispielTr": "Onun şakalarına herkes gülüyor.",
+    "beispielEn": "Everyone laughs at his jokes."
   },
   {
     "id": 306,
     "tr": "komik",
     "en": "funny",
-    "beispiel": "Jan ist nett und lustig.",
-    "beispielTr": "Jan kibar ve eğlenceli biri.",
-    "beispielEn": "Jan is nice and funny."
+    "beispiel": "Unser Lehrer erzählt oft lustige Geschichten.",
+    "beispielTr": "Öğretmenimiz sık sık komik hikâyeler anlatıyor.",
+    "beispielEn": "Our teacher often tells funny stories."
   },
   {
     "id": 708,
@@ -179,25 +179,25 @@
     "id": 298,
     "tr": "okumak",
     "en": "to read",
-    "beispiel": "Ich lese ein Buch von García Márquez.",
-    "beispielTr": "García Márquez'in bir kitabını okuyorum.",
-    "beispielEn": "I am reading a book by García Márquez."
+    "beispiel": "Abends liest mein Sohn gern Comics im Bett.",
+    "beispielTr": "Oğlum akşamları yatakta çizgi roman okumayı sever.",
+    "beispielEn": "In the evening, my son likes to read comics in bed."
   },
   {
     "id": 190,
     "tr": "mağaza",
     "en": "store",
-    "beispiel": "Meine Mutter wartet vor dem Geschäft.",
-    "beispielTr": "Annem mağazanın önünde bekliyor.",
-    "beispielEn": "My mother is waiting in front of the store."
+    "beispiel": "Viele Geschäfte haben am Sonntag zu.",
+    "beispielTr": "Pazar günü birçok mağaza kapalı.",
+    "beispielEn": "Lots of stores are closed on Sunday."
   },
   {
     "id": 156,
     "tr": "uçmak",
     "en": "to fly",
-    "beispiel": "Wir fliegen nach Athen.",
-    "beispielTr": "Atina'ya uçuyoruz.",
-    "beispielEn": "We are flying to Athens."
+    "beispiel": "Im Herbst fliegen die Vögel nach Süden.",
+    "beispielTr": "Sonbaharda kuşlar güneye uçuyor.",
+    "beispielEn": "In the fall the birds fly south."
   },
   {
     "id": 782,
@@ -235,33 +235,33 @@
     "id": 588,
     "tr": "rica etmek",
     "en": "to ask for",
-    "beispiel": "Darf ich Sie um etwas bitten?",
-    "beispielTr": "Sizden bir şey rica edebilir miyim?",
-    "beispielEn": "May I ask you for something?"
+    "beispiel": "Der Kellner bittet uns um etwas Geduld.",
+    "beispielTr": "Garson bizden biraz sabır rica ediyor.",
+    "beispielEn": "The waiter asks us for a little patience."
   },
   {
     "id": 451,
     "tr": "masa",
     "en": "table",
-    "beispiel": "Das Essen steht schon auf dem Tisch.",
-    "beispielTr": "Yemek çoktan masada.",
-    "beispielEn": "The food is already on the table."
+    "beispiel": "Die Katze schläft unter dem Tisch.",
+    "beispielTr": "Kedi masanın altında uyuyor.",
+    "beispielEn": "The cat is sleeping under the table."
   },
   {
     "id": 721,
     "tr": "yatmak",
     "en": "to lie",
-    "beispiel": "Um neun Uhr liegt Judith noch im Bett.",
-    "beispielTr": "Judith saat dokuzda hâlâ yatakta.",
-    "beispielEn": "At nine o'clock Judith is still in bed."
+    "beispiel": "Die Katze liegt den ganzen Tag auf dem Sofa.",
+    "beispielTr": "Kedi bütün gün kanepede yatıyor.",
+    "beispielEn": "The cat lies on the couch all day."
   },
   {
     "id": 836,
     "tr": "satmak",
     "en": "to sell",
-    "beispiel": "Er verkauft sein altes Auto.",
-    "beispielTr": "Eski arabasını satıyor.",
-    "beispielEn": "He is selling his old car."
+    "beispiel": "Der Bäcker verkauft am Sonntag nur Brötchen.",
+    "beispielTr": "Fırın pazar günü yalnızca küçük ekmek satıyor.",
+    "beispielEn": "On Sundays the bakery only sells rolls."
   },
   {
     "id": 17,
@@ -275,25 +275,25 @@
     "id": 691,
     "tr": "otel",
     "en": "hotel",
-    "beispiel": "Im Urlaub sind wir in einem Hotel am Meer.",
-    "beispielTr": "Tatilde deniz kenarında bir oteldeyiz.",
-    "beispielEn": "On vacation we are in a hotel by the sea."
+    "beispiel": "Das Hotel liegt direkt am Bahnhof.",
+    "beispielTr": "Otel tam istasyonun yanında.",
+    "beispielEn": "The hotel is right by the train station."
   },
   {
     "id": 23,
     "tr": "cevap",
     "en": "answer",
-    "beispiel": "Weißt du die Antwort?",
-    "beispielTr": "Cevabı biliyor musun?",
-    "beispielEn": "Do you know the answer?"
+    "beispiel": "Auf meine E-Mail habe ich noch keine Antwort.",
+    "beispielTr": "E-postama henüz cevap gelmedi.",
+    "beispielEn": "I still haven't gotten an answer to my email."
   },
   {
     "id": 195,
     "tr": "kazanmak",
     "en": "to win",
-    "beispiel": "Man kann hier eine Reise gewinnen.",
-    "beispielTr": "Burada bir seyahat kazanabilirsiniz.",
-    "beispielEn": "You can win a trip here."
+    "beispiel": "Mit etwas Glück gewinnen wir heute beim Quiz.",
+    "beispielTr": "Biraz şansla bugün bilgi yarışmasını kazanırız.",
+    "beispielEn": "With a little luck, we'll win the quiz today."
   },
   {
     "id": 109,
@@ -307,49 +307,49 @@
     "id": 585,
     "tr": "resim",
     "en": "picture",
-    "beispiel": "Hast du ein Bild von deinem Sohn?",
-    "beispielTr": "Oğlunun bir resmi var mı?",
-    "beispielEn": "Do you have a picture of your son?"
+    "beispiel": "Das Bild im Flur hat meine Tochter gemalt.",
+    "beispielTr": "Koridordaki resmi kızım yaptı.",
+    "beispielEn": "My daughter painted the picture in the hallway."
   },
   {
     "id": 341,
     "tr": "yeni",
     "en": "new",
-    "beispiel": "Ist der Computer neu?",
-    "beispielTr": "Bilgisayar yeni mi?",
-    "beispielEn": "Is the computer new?"
+    "beispiel": "Mein Opa hat ein neues Fahrrad gekauft.",
+    "beispielTr": "Dedem yeni bir bisiklet aldı.",
+    "beispielEn": "My grandpa bought a new bike."
   },
   {
     "id": 75,
     "tr": "ödemek",
     "en": "to pay for",
-    "beispiel": "Wo muss ich bezahlen?",
-    "beispielTr": "Nerede ödemem gerekiyor?",
-    "beispielEn": "Where do I have to pay?"
+    "beispiel": "Heute bezahle ich den Kaffee für uns beide.",
+    "beispielTr": "Bugün ikimizin kahvesini ben ödüyorum.",
+    "beispielEn": "Today I'm paying for coffee for both of us."
   },
   {
     "id": 43,
     "tr": "göz",
     "en": "eye",
-    "beispiel": "Seine Augen sind grün.",
-    "beispielTr": "Gözleri yeşil.",
-    "beispielEn": "His eyes are green."
+    "beispiel": "Mach die Augen zu und schlaf gut.",
+    "beispielTr": "Gözlerini kapat ve iyi uyu.",
+    "beispielEn": "Close your eyes and sleep well."
   },
   {
     "id": 835,
     "tr": "evli",
     "en": "married",
-    "beispiel": "Ich bin verheiratet und habe drei Kinder.",
-    "beispielTr": "Evliyim ve üç çocuğum var.",
-    "beispielEn": "I am married and have three children."
+    "beispiel": "Anna ist mit einem Italiener verheiratet.",
+    "beispielTr": "Anna bir İtalyanla evli.",
+    "beispielEn": "Anna is married to an Italian."
   },
   {
     "id": 146,
     "tr": "pencere",
     "en": "window",
-    "beispiel": "Ich möchte einen Platz am Fenster.",
-    "beispielTr": "Pencere kenarında bir yer istiyorum.",
-    "beispielEn": "I would like a seat by the window."
+    "beispiel": "Vom Fenster sehe ich den Fluss.",
+    "beispielTr": "Pencereden nehri görüyorum.",
+    "beispielEn": "I can see the river from the window."
   },
   {
     "id": 852,
@@ -363,33 +363,33 @@
     "id": 16,
     "tr": "başlangıç",
     "en": "beginning",
-    "beispiel": "Am Anfang ist das Buch langweilig.",
-    "beispielTr": "Kitap başlangıçta sıkıcı.",
-    "beispielEn": "The book is boring at the beginning."
+    "beispiel": "Anfang Mai fahren wir ans Meer.",
+    "beispielTr": "Mayıs başında denize gidiyoruz.",
+    "beispielEn": "At the beginning of May we're going to the sea."
   },
   {
     "id": 714,
     "tr": "koymak",
     "en": "to lay",
-    "beispiel": "Legen Sie das Buch auf den Tisch.",
-    "beispielTr": "Kitabı masanın üzerine koyun.",
-    "beispielEn": "Lay the book on the table."
+    "beispiel": "Ich lege die Schlüssel immer neben die Tür.",
+    "beispielTr": "Anahtarları hep kapının yanına koyuyorum.",
+    "beispielEn": "I always put the keys next to the door."
   },
   {
     "id": 353,
     "tr": "açık",
     "en": "open",
-    "beispiel": "Jetzt ist die Tür offen.",
-    "beispielTr": "Kapı şimdi açık.",
-    "beispielEn": "The door is open now."
+    "beispiel": "Die Apotheke ist auch am Sonntag offen.",
+    "beispielTr": "Eczane pazar günü de açık.",
+    "beispielEn": "The pharmacy is open on Sundays, too."
   },
   {
     "id": 584,
     "tr": "bira",
     "en": "beer",
-    "beispiel": "Noch ein Bier bitte.",
-    "beispielTr": "Bir bira daha lütfen.",
-    "beispielEn": "Another beer please."
+    "beispiel": "Zum Grillen hat Jan einen Kasten Bier mitgebracht.",
+    "beispielTr": "Jan mangal için bir kasa bira getirdi.",
+    "beispielEn": "Jan brought a case of beer to the barbecue."
   },
   {
     "id": 748,

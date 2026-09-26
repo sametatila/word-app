@@ -30,7 +30,7 @@
    "formen": "Pestizideinsätze",
    "currentTr": "pestisit kullanımı",
    "currentBeispiel": "Der Pestizideinsatz soll bis zum Ende des Jahrzehnts halbiert werden.",
-   "currentBeispielTr": "Pestisit kullanımının on yılın sonuna dek yarıya indirilmesi hedefleniyor."
+   "currentBeispielTr": "Pestisit kullanımının on yılın sonuna kadar yarıya indirilmesi hedefleniyor."
   },
   {
    "id": 5706,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Nachhaltigkeitsstandards",
    "currentTr": "sürdürülebilirlik standardı",
-   "currentBeispiel": "Freiwillige Nachhaltigkeitsstandards ersetzen keine verbindliche Regulierung.",
-   "currentBeispielTr": "Gönüllü sürdürülebilirlik standartları bağlayıcı düzenlemenin yerini tutmaz."
+   "currentBeispiel": "Der Discounter verlangt von seinen Lieferanten strenge Nachhaltigkeitsstandards.",
+   "currentBeispielTr": "İndirim marketi tedarikçilerinden sıkı sürdürülebilirlik standartları istiyor."
   },
   {
    "id": 5709,
@@ -90,7 +90,7 @@
    "formen": "",
    "currentTr": "arz güvenliği, tedarik güvenliği",
    "currentBeispiel": "Versorgungssicherheit wird derzeit als Argument gegen strengere Auflagen benutzt.",
-   "currentBeispielTr": "Arz güvenliği şu sıralar daha sıkı koşullara karşı bir argüman olarak kullanılıyor."
+   "currentBeispielTr": "Arz güvenliği şu sıralar daha sıkı koşullara karşı argüman olarak kullanılıyor."
   },
   {
    "id": 5712,
@@ -110,7 +110,7 @@
    "formen": "",
    "currentTr": "düzenleyici hukuk, emredici mevzuat",
    "currentBeispiel": "Anreize allein genügen nicht, irgendwann greift das Ordnungsrecht.",
-   "currentBeispielTr": "Yalnızca teşvikler yetmez, bir noktada düzenleyici hukuk devreye girer."
+   "currentBeispielTr": "Teşvikler tek başına yetmez, bir noktada düzenleyici hukuk devreye girer."
   },
   {
    "id": 5714,
@@ -120,7 +120,7 @@
    "formen": "Flurbereinigungen",
    "currentTr": "arazi toplulaştırması",
    "currentBeispiel": "Die Flurbereinigung der Nachkriegszeit hat unzählige Hecken beseitigt.",
-   "currentBeispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı ortadan kaldırdı."
+   "currentBeispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı yok etti."
   },
   {
    "id": 5715,
@@ -130,7 +130,7 @@
    "formen": "Landnahmen",
    "currentTr": "toprak gaspı, arazi ele geçirme",
    "currentBeispiel": "Investoren betreiben in mehreren Ländern eine kaum regulierte Landnahme.",
-   "currentBeispielTr": "Yatırımcılar birçok ülkede neredeyse hiç denetlenmeyen bir toprak gaspı yürütüyor.",
+   "currentBeispielTr": "Yatırımcılar birçok ülkede neredeyse hiç denetlenmeden toprak ele geçiriyor.",
    "overlapping": [
     "der Landraub (C1)"
    ]
@@ -142,8 +142,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çeşit koruma hakkı, ıslahçı hakkı",
-   "currentBeispiel": "Der Sortenschutz sichert Züchtern über Jahre exklusive Verwertungsrechte.",
-   "currentBeispielTr": "Çeşit koruma hakkı ıslahçılara yıllarca münhasır kullanım hakkı sağlıyor."
+   "currentBeispiel": "Für diese Kartoffel gilt der Sortenschutz noch fünf Jahre.",
+   "currentBeispielTr": "Bu patates için çeşit koruma hakkı beş yıl daha geçerli."
   },
   {
    "id": 5717,
@@ -153,7 +153,7 @@
    "formen": "",
    "currentTr": "gen teknolojisi, genetik mühendisliği",
    "currentBeispiel": "Über neue Gentechnik wird in Brüssel seit Jahren erbittert gestritten.",
-   "currentBeispielTr": "Yeni gen teknolojisi üzerine Brüksel'de yıllardır sert biçimde tartışılıyor."
+   "currentBeispielTr": "Yeni gen teknolojisi Brüksel'de yıllardır sert biçimde tartışılıyor."
   },
   {
    "id": 5718,
@@ -163,7 +163,7 @@
    "formen": "",
    "currentTr": "tohumu yeniden ekme hakkı",
    "currentBeispiel": "Das Nachbaurecht der Bauern wurde durch Lizenzverträge schrittweise ausgehöhlt.",
-   "currentBeispielTr": "Çiftçilerin tohumu yeniden ekme hakkı lisans sözleşmeleriyle adım adım içi boşaltıldı."
+   "currentBeispielTr": "Çiftçilerin tohumu yeniden ekme hakkı lisans sözleşmeleriyle adım adım aşındırıldı."
   },
   {
    "id": 5719,
@@ -193,7 +193,7 @@
    "formen": "Milchquoten",
    "currentTr": "süt kotası",
    "currentBeispiel": "Nach dem Ende der Milchquote brachen die Preise dramatisch ein.",
-   "currentBeispielTr": "Süt kotasının kalkmasının ardından fiyatlar dramatik biçimde çöktü."
+   "currentBeispielTr": "Süt kotasının kalkmasının ardından fiyatlar sert biçimde çöktü."
   },
   {
    "id": 5722,
@@ -233,7 +233,7 @@
    "formen": "",
    "currentTr": "doğrudan pazarlama, üreticiden satış",
    "currentBeispiel": "Über die Direktvermarktung umgehen Höfe den Druck des Handels.",
-   "currentBeispielTr": "Doğrudan pazarlama sayesinde çiftlikler ticaretin baskısını aşıyor."
+   "currentBeispielTr": "Doğrudan pazarlamayla çiftlikler perakendenin baskısını atlatıyor."
   },
   {
    "id": 5726,
@@ -243,7 +243,7 @@
    "formen": "Nutzungskonflikte",
    "currentTr": "kullanım çatışması, arazi kullanımı uyuşmazlığı",
    "currentBeispiel": "Zwischen Naturschutz und Energieerzeugung entstehen wachsende Nutzungskonflikte.",
-   "currentBeispielTr": "Doğa koruma ile enerji üretimi arasında giderek büyüyen kullanım çatışmaları doğuyor."
+   "currentBeispielTr": "Doğa koruma ile enerji üretimi arasında büyüyen kullanım çatışmaları doğuyor."
   },
   {
    "id": 5727,
@@ -253,7 +253,7 @@
    "formen": "Kleinbauern",
    "currentTr": "küçük çiftçi",
    "currentBeispiel": "Kleinbauern ernähren weltweit einen erstaunlich großen Teil der Bevölkerung.",
-   "currentBeispielTr": "Küçük çiftçiler dünya nüfusunun şaşırtıcı derecede büyük bir kısmını doyuruyor."
+   "currentBeispielTr": "Küçük çiftçiler dünya nüfusunun şaşırtıcı ölçüde büyük bir kısmını doyuruyor."
   },
   {
    "id": 5728,
@@ -306,7 +306,7 @@
    "formen": "hat diversifiziert",
    "currentTr": "çeşitlendirmek",
    "currentBeispiel": "Viele Betriebe diversifizieren ihre Einkommensquellen, um Krisen zu überstehen.",
-   "currentBeispielTr": "Birçok işletme krizleri atlatabilmek için gelir kaynaklarını çeşitlendiriyor."
+   "currentBeispielTr": "Birçok işletme krizleri atlatmak için gelir kaynaklarını çeşitlendiriyor."
   },
   {
    "id": 5733,
@@ -316,7 +316,7 @@
    "formen": "hat ausgelaugt",
    "currentTr": "(toprağın) verimini tüketmek, çoraklaştırmak",
    "currentBeispiel": "Jahrzehntelanger Maisanbau hat die Böden vollständig ausgelaugt.",
-   "currentBeispielTr": "Onlarca yıllık mısır ekimi toprakların verimini tamamen tüketti."
+   "currentBeispielTr": "Onlarca yıllık mısır ekimi toprakları tamamen çoraklaştırdı."
   },
   {
    "id": 5734,
@@ -326,7 +326,7 @@
    "formen": "hat abgeschöpft",
    "currentTr": "kaymağını almak, el koymak",
    "currentBeispiel": "Der Zwischenhandel schöpft den größten Teil der Marge ab.",
-   "currentBeispielTr": "Aracı ticaret marjın en büyük kısmının kaymağını alıyor."
+   "currentBeispielTr": "Kâr marjının en büyük kısmını aracılar götürüyor."
   },
   {
    "id": 5735,
@@ -336,7 +336,7 @@
    "formen": "hat veredelt",
    "currentTr": "işleyip değerini artırmak, ıslah etmek",
    "currentBeispiel": "Regional veredelte Produkte erzielen auf dem Markt höhere Preise.",
-   "currentBeispielTr": "Bölgesel olarak işlenmiş ürünler piyasada daha yüksek fiyat getiriyor."
+   "currentBeispielTr": "Bölgede işlenen ürünler piyasada daha yüksek fiyat getiriyor."
   },
   {
    "id": 5736,
@@ -369,7 +369,7 @@
    "formen": "hat aufgekauft",
    "currentTr": "toptan satın almak, kapatmak",
    "currentBeispiel": "Fonds kaufen in Ostdeutschland ganze Betriebe samt Flächen auf.",
-   "currentBeispielTr": "Fonlar Doğu Almanya'da arazileriyle birlikte bütün işletmeleri satın alıyor."
+   "currentBeispielTr": "Fonlar Doğu Almanya'da arazileriyle birlikte bütün işletmeleri toptan satın alıyor."
   },
   {
    "id": 5739,
@@ -428,8 +428,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çok işlevli",
-   "currentBeispiel": "Die Landwirtschaft gilt als multifunktional, weil sie mehr als Nahrung liefert.",
-   "currentBeispielTr": "Tarım, gıdadan fazlasını sunduğu için çok işlevli sayılıyor."
+   "currentBeispiel": "Der neue Stall ist multifunktional und dient auch als Lager.",
+   "currentBeispielTr": "Yeni ahır çok işlevli ve aynı zamanda depo olarak kullanılıyor."
   },
   {
    "id": 5744,
@@ -489,7 +489,7 @@
    "formen": "",
    "currentTr": "tarla tarımına ilişkin, ziraî",
    "currentBeispiel": "Ackerbauliche Maßnahmen allein lösen das Problem der Verdichtung nicht.",
-   "currentBeispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmüyor."
+   "currentBeispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmez."
   },
   {
    "id": 5750,
@@ -498,8 +498,8 @@
    "niveau": "C1",
    "formen": "Rituale",
    "currentTr": "ritüel, tören",
-   "currentBeispiel": "Das Ritual markiert den Übergang vom Kind zum Erwachsenen.",
-   "currentBeispielTr": "Ritüel, çocukluktan yetişkinliğe geçişi işaretler."
+   "currentBeispiel": "Jeden Morgen kocht er Kaffee, ein Ritual seit Jahren.",
+   "currentBeispielTr": "Her sabah kahve yapıyor, yıllardır süren bir ritüel."
   },
   {
    "id": 5751,
@@ -508,8 +508,8 @@
    "niveau": "C1",
    "formen": "Brauchtümer",
    "currentTr": "gelenek görenek, örf",
-   "currentBeispiel": "Das ländliche Brauchtum wird heute vor allem touristisch vermarktet.",
-   "currentBeispielTr": "Kırsal gelenek görenek bugün daha çok turistik olarak pazarlanıyor."
+   "currentBeispiel": "Das Brauchtum im Dorf lebt vor allem beim Erntefest auf.",
+   "currentBeispielTr": "Köydeki gelenek görenek en çok hasat şenliğinde canlanıyor."
   },
   {
    "id": 5752,
@@ -518,8 +518,8 @@
    "niveau": "C1",
    "formen": "Sitten",
    "currentTr": "âdet, töre",
-   "currentBeispiel": "Fremde Sitten wirken oft nur deshalb befremdlich, weil Kontext fehlt.",
-   "currentBeispielTr": "Yabancı âdetler çoğu kez yalnızca bağlam eksik olduğu için tuhaf görünür."
+   "currentBeispiel": "In manchen Regionen verlangt die Sitte ein Gastgeschenk.",
+   "currentBeispielTr": "Bazı yörelerde âdet, misafirin hediye getirmesini gerektirir."
   }
  ]
 }

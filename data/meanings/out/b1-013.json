@@ -3,17 +3,17 @@
   "id": 2218,
   "tr": "kopya",
   "en": "copy",
-  "beispiel": "Machst du mir bitte eine Kopie?",
-  "beispielTr": "Bana bir kopya çıkarır mısın lütfen?",
-  "beispielEn": "Could you make me a copy, please?"
+  "beispiel": "Schicken Sie uns bitte eine Kopie Ihres Ausweises.",
+  "beispielTr": "Lütfen bize kimliğinizin bir kopyasını gönderin.",
+  "beispielEn": "Please send us a copy of your ID."
  },
  {
   "id": 2925,
   "tr": "alışılmadık",
   "en": "unusual",
-  "beispiel": "Ich finde diese Speise ungewöhnlich, aber sie schmeckt gut.",
-  "beispielTr": "Bu yemeği alışılmadık buluyorum ama lezzetli.",
-  "beispielEn": "I find this dish unusual, but it tastes good."
+  "beispiel": "Für Oktober ist diese Hitze wirklich ungewöhnlich.",
+  "beispielTr": "Ekim için bu sıcak gerçekten alışılmadık.",
+  "beispielEn": "This heat is really unusual for October."
  },
  {
   "id": 2083,
@@ -27,17 +27,17 @@
   "id": 2085,
   "tr": "en fazla",
   "en": "at most",
-  "beispiel": "Ich kann höchstens eine Viertelstunde bleiben.",
-  "beispielTr": "En fazla çeyrek saat kalabilirim.",
-  "beispielEn": "I can stay fifteen minutes at most."
+  "beispiel": "Im Aufzug dürfen höchstens sechs Personen fahren.",
+  "beispielTr": "Asansöre en fazla altı kişi binebilir.",
+  "beispielEn": "At most six people may ride in the elevator."
  },
  {
   "id": 1474,
   "tr": "dıştan",
   "en": "on the outside",
-  "beispiel": "Wir haben das Schloss nur von außen gesehen.",
-  "beispielTr": "Şatoyu yalnızca dıştan gördük.",
-  "beispielEn": "We only saw the castle from the outside."
+  "beispiel": "Die Kekse sind außen knusprig und innen weich.",
+  "beispielTr": "Kurabiyeler dıştan çıtır, içten yumuşak.",
+  "beispielEn": "The cookies are crispy on the outside and soft inside."
  },
  {
   "id": 1652,
@@ -51,9 +51,9 @@
   "id": 3166,
   "tr": "öncelikle",
   "en": "first of all",
-  "beispiel": "Zunächst möchte ich alle herzlich begrüßen.",
-  "beispielTr": "Öncelikle herkesi içtenlikle selamlamak istiyorum.",
-  "beispielEn": "First of all, I would like to welcome everyone."
+  "beispiel": "Zunächst müssen wir die Möbel aus dem Zimmer tragen.",
+  "beispielTr": "Öncelikle eşyaları odadan taşımamız gerekiyor.",
+  "beispielEn": "First of all we have to carry the furniture out of the room."
  },
  {
   "id": 2834,
@@ -91,17 +91,17 @@
   "id": 2165,
   "tr": "felaket",
   "en": "disaster",
-  "beispiel": "Der Urlaub war eine einzige Katastrophe.",
-  "beispielTr": "Tatil tam bir felaketti.",
-  "beispielEn": "The vacation was a complete disaster."
+  "beispiel": "Das Erdbeben war eine Katastrophe für die ganze Region.",
+  "beispielTr": "Deprem bütün bölge için bir felaketti.",
+  "beispielEn": "The earthquake was a disaster for the whole region."
  },
  {
   "id": 3014,
   "tr": "sigorta",
   "en": "insurance",
-  "beispiel": "Sie müssen den Unfall der Versicherung melden.",
-  "beispielTr": "Kazayı sigortaya bildirmeniz gerekiyor.",
-  "beispielEn": "You have to report the accident to the insurance company."
+  "beispiel": "Die Versicherung hat den Schaden am Dach komplett bezahlt.",
+  "beispielTr": "Sigorta çatıdaki hasarı tamamen ödedi.",
+  "beispielEn": "The insurance paid for the roof damage in full."
  },
  {
   "id": 2831,
@@ -115,25 +115,25 @@
   "id": 1735,
   "tr": "işe almak",
   "en": "to hire",
-  "beispiel": "Die Firma will dieses Jahr drei neue Leute einstellen.",
-  "beispielTr": "Firma bu yıl üç yeni eleman işe alacak.",
-  "beispielEn": "The company wants to hire three new people this year."
+  "beispiel": "Der Supermarkt stellt für den Sommer Studenten ein.",
+  "beispielTr": "Süpermarket yaz için öğrenci işe alıyor.",
+  "beispielEn": "The supermarket is hiring students for the summer."
  },
  {
   "id": 2545,
   "tr": "tepki vermek",
   "en": "to react",
-  "beispiel": "Ich habe dem Vermieter geschrieben, aber er hat nicht reagiert.",
-  "beispielTr": "Ev sahibine yazdım ama hiç tepki vermedi.",
-  "beispielEn": "I wrote to the landlord, but he never reacted."
+  "beispiel": "Wie hat deine Chefin auf die Kündigung reagiert?",
+  "beispielTr": "Patronun istifana nasıl tepki verdi?",
+  "beispielEn": "How did your boss react to your resignation?"
  },
  {
   "id": 2682,
   "tr": "göndermek",
   "en": "to send",
-  "beispiel": "Bitte senden Sie uns die Unterlagen per E-Mail.",
-  "beispielTr": "Lütfen belgeleri bize e-postayla gönderin.",
-  "beispielEn": "Please send us the documents by email."
+  "beispiel": "Ich sende dir die Fotos heute Abend.",
+  "beispielTr": "Fotoğrafları sana bu akşam gönderirim.",
+  "beispielEn": "I'll send you the photos tonight."
  },
  {
   "id": 2580,
@@ -155,9 +155,9 @@
   "id": 1998,
   "tr": "alışmak",
   "en": "to get used to",
-  "beispiel": "Wir haben uns schnell an das Leben hier gewöhnt.",
-  "beispielTr": "Buradaki hayata çabuk alıştık.",
-  "beispielEn": "We quickly got used to life here."
+  "beispiel": "Das Kind hat sich schnell an den Kindergarten gewöhnt.",
+  "beispielTr": "Çocuk anaokuluna çabucak alıştı.",
+  "beispielEn": "The child quickly got used to kindergarten."
  },
  {
   "id": 2629,
@@ -211,9 +211,9 @@
   "id": 2529,
   "tr": "oyuncak bebek",
   "en": "doll",
-  "beispiel": "Unsere Tochter bekommt zum Geburtstag eine Puppe.",
-  "beispielTr": "Kızımız doğum gününde bir oyuncak bebek alacak.",
-  "beispielEn": "Our daughter is getting a doll for her birthday."
+  "beispiel": "Die alte Puppe gehörte schon meiner Mutter.",
+  "beispielTr": "Eski oyuncak bebek annemindi.",
+  "beispielEn": "The old doll used to belong to my mother."
  },
  {
   "id": 2885,
@@ -243,25 +243,25 @@
   "id": 1460,
   "tr": "ifade",
   "en": "expression",
-  "beispiel": "Diesen Ausdruck habe ich noch nie gehört.",
-  "beispielTr": "Bu ifadeyi daha önce hiç duymamıştım.",
-  "beispielEn": "I have never heard this expression before."
+  "beispiel": "Was bedeutet dieser Ausdruck auf Türkisch?",
+  "beispielTr": "Bu ifade Türkçede ne anlama geliyor?",
+  "beispielEn": "What does this expression mean in Turkish?"
  },
  {
   "id": 2198,
   "tr": "düğme",
   "en": "button",
-  "beispiel": "An meiner Jacke fehlt ein Knopf.",
-  "beispielTr": "Ceketimin bir düğmesi eksik.",
-  "beispielEn": "A button is missing from my jacket."
+  "beispiel": "Mit diesem Knopf schaltest du das Radio ein.",
+  "beispielTr": "Radyoyu bu düğmeyle açıyorsun.",
+  "beispielEn": "You turn on the radio with this button."
  },
  {
   "id": 2056,
   "tr": "gizlice",
   "en": "secretly",
-  "beispiel": "Ich habe gehört, dass mein Sohn heimlich raucht.",
-  "beispielTr": "Oğlumun gizlice sigara içtiğini duydum.",
-  "beispielEn": "I heard that my son smokes secretly."
+  "beispiel": "Die Kinder haben heimlich ein Geschenk für Mama gebastelt.",
+  "beispielTr": "Çocuklar gizlice anneleri için bir hediye yaptı.",
+  "beispielEn": "The kids secretly made a present for Mom."
  },
  {
   "id": 2699,
@@ -291,9 +291,9 @@
   "id": 1413,
   "tr": "çalıştırmak",
   "en": "to turn on",
-  "beispiel": "Können Sie bitte die Heizung anstellen?",
-  "beispielTr": "Kaloriferi çalıştırabilir misiniz lütfen?",
-  "beispielEn": "Could you turn on the heating, please?"
+  "beispiel": "Stell doch mal das Radio an, ich will Nachrichten hören.",
+  "beispielTr": "Radyoyu bir açsana, haberleri dinlemek istiyorum.",
+  "beispielEn": "Turn on the radio, I want to hear the news."
  },
  {
   "id": 2912,
@@ -307,17 +307,17 @@
   "id": 1779,
   "tr": "geliştirmek",
   "en": "to develop",
-  "beispiel": "Die Firma hat ein neues Produkt entwickelt.",
-  "beispielTr": "Firma yeni bir ürün geliştirdi.",
-  "beispielEn": "The company has developed a new product."
+  "beispiel": "Zwei Studentinnen haben eine App für Allergiker entwickelt.",
+  "beispielTr": "İki öğrenci alerjisi olanlar için bir uygulama geliştirdi.",
+  "beispielEn": "Two students developed an app for people with allergies."
  },
  {
   "id": 2683,
   "tr": "kanal",
   "en": "broadcaster",
-  "beispiel": "Welchen Sender siehst du am liebsten?",
-  "beispielTr": "En çok hangi kanalı izliyorsun?",
-  "beispielEn": "Which channel do you like watching most?"
+  "beispiel": "Das Spiel wird von einem privaten Sender übertragen.",
+  "beispielTr": "Maç özel bir kanalda yayınlanıyor.",
+  "beispielEn": "The game is being broadcast by a private channel."
  },
  {
   "id": 2080,
@@ -347,9 +347,9 @@
   "id": 2292,
   "tr": "teslimat",
   "en": "delivery",
-  "beispiel": "Sie bezahlen erst bei der Lieferung.",
-  "beispielTr": "Ödemeyi ancak teslimatta yapıyorsunuz.",
-  "beispielEn": "You only pay on delivery."
+  "beispiel": "Die Lieferung ist leider zwei Tage zu spät gekommen.",
+  "beispielTr": "Teslimat maalesef iki gün geç geldi.",
+  "beispielEn": "Unfortunately, the delivery arrived two days late."
  },
  {
   "id": 2673,
@@ -371,25 +371,25 @@
   "id": 2508,
   "tr": "olumlu",
   "en": "positive",
-  "beispiel": "Wir haben eine positive Nachricht für Sie.",
-  "beispielTr": "Sizin için olumlu bir haberimiz var.",
-  "beispielEn": "We have some positive news for you."
+  "beispiel": "Die Rückmeldungen der Kunden waren durchweg positiv.",
+  "beispielTr": "Müşterilerden gelen geri bildirimler tamamen olumluydu.",
+  "beispielEn": "The customer feedback was positive across the board."
  },
  {
   "id": 2486,
   "tr": "personel",
   "en": "staff",
-  "beispiel": "Dieser Eingang ist nur für das Personal.",
-  "beispielTr": "Bu giriş yalnızca personel içindir.",
-  "beispielEn": "This entrance is for staff only."
+  "beispiel": "Das Personal im Hotel war sehr freundlich.",
+  "beispielTr": "Oteldeki personel çok güler yüzlüydü.",
+  "beispielEn": "The hotel staff were very friendly."
  },
  {
   "id": 3113,
   "tr": "etki",
   "en": "effect",
-  "beispiel": "Welche Wirkung hat dieses Medikament?",
-  "beispielTr": "Bu ilacın etkisi nedir?",
-  "beispielEn": "What effect does this medicine have?"
+  "beispiel": "Der starke Kaffee hatte bei mir überhaupt keine Wirkung.",
+  "beispielTr": "Sert kahvenin bende hiç etkisi olmadı.",
+  "beispielEn": "The strong coffee had no effect on me at all."
  },
  {
   "id": 2848,

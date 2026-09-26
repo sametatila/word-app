@@ -43,9 +43,9 @@
   "id": 1396,
   "tr": "belirtmek",
   "en": "to state",
-  "beispiel": "Bitte geben Sie Ihre genaue Adresse an.",
-  "beispielTr": "Lütfen tam adresinizi belirtin.",
-  "beispielEn": "Please state your exact address."
+  "beispiel": "Im Formular muss man auch das Geburtsdatum angeben.",
+  "beispielTr": "Formda doğum tarihini de belirtmek gerekiyor.",
+  "beispielEn": "You also have to state your date of birth on the form."
  },
  {
   "id": 2514,
@@ -67,9 +67,9 @@
   "id": 1624,
   "tr": "diş fırçası",
   "en": "toothbrush",
-  "beispiel": "Ich brauche eine neue Zahnbürste.",
-  "beispielTr": "Yeni bir diş fırçasına ihtiyacım var.",
-  "beispielEn": "I need a new toothbrush."
+  "beispiel": "Im Hotel habe ich meine Zahnbürste vergessen.",
+  "beispielTr": "Diş fırçamı otelde unuttum.",
+  "beispielEn": "I forgot my toothbrush at the hotel."
  },
  {
   "id": 3185,
@@ -99,9 +99,9 @@
   "id": 2839,
   "tr": "katılımcı",
   "en": "participant",
-  "beispiel": "Die Teilnehmer des Kurses kommen aus verschiedenen Ländern.",
-  "beispielTr": "Kursun katılımcıları farklı ülkelerden geliyor.",
-  "beispielEn": "The participants in the course come from different countries."
+  "beispiel": "Jeder Teilnehmer bekommt am Ende des Seminars ein kleines Geschenk.",
+  "beispielTr": "Her katılımcı seminerin sonunda küçük bir hediye alıyor.",
+  "beispielEn": "Every participant gets a small gift at the end of the seminar."
  },
  {
   "id": 2267,
@@ -147,9 +147,9 @@
   "id": 2672,
   "tr": "sekreter",
   "en": "secretary",
-  "beispiel": "Der neue Sekretär hat sich gestern vorgestellt.",
-  "beispielTr": "Yeni sekreter dün kendini tanıttı.",
-  "beispielEn": "The new secretary introduced himself yesterday."
+  "beispiel": "Der Sekretär verbindet Sie gleich mit dem Direktor.",
+  "beispielTr": "Sekreter sizi hemen müdüre bağlıyor.",
+  "beispielEn": "The secretary will put you through to the director right away."
  },
  {
   "id": 3085,
@@ -163,9 +163,9 @@
   "id": 1564,
   "tr": "tutar",
   "en": "amount",
-  "beispiel": "Bitte überweisen Sie den Betrag auf unser Konto.",
-  "beispielTr": "Lütfen tutarı hesabımıza havale edin.",
-  "beispielEn": "Please transfer the amount to our account."
+  "beispiel": "Der Betrag auf der Rechnung war viel zu hoch.",
+  "beispielTr": "Faturadaki tutar çok yüksekti.",
+  "beispielEn": "The amount on the bill was way too high."
  },
  {
   "id": 1439,
@@ -187,25 +187,25 @@
   "id": 1608,
   "tr": "posta kutusu",
   "en": "mailbox",
-  "beispiel": "Hol bitte die Zeitung aus dem Briefkasten.",
-  "beispielTr": "Lütfen gazeteyi posta kutusundan al.",
-  "beispielEn": "Please get the newspaper from the mailbox."
+  "beispiel": "Heute war nur Werbung in unserem Briefkasten.",
+  "beispielTr": "Bugün posta kutumuzda yalnızca reklam vardı.",
+  "beispielEn": "There was only junk mail in our mailbox today."
  },
  {
   "id": 2647,
   "tr": "korku",
   "en": "fright",
-  "beispiel": "Ich habe einen großen Schreck bekommen.",
-  "beispielTr": "Çok büyük bir korku yaşadım.",
-  "beispielEn": "I got a really big fright."
+  "beispiel": "Vor Schreck ließ sie die Tasse fallen.",
+  "beispielTr": "Korkudan fincanı düşürdü.",
+  "beispielEn": "She dropped the cup in fright."
  },
  {
   "id": 2951,
   "tr": "vazo",
   "en": "vase",
-  "beispiel": "Hast du eine Vase für die Blumen?",
-  "beispielTr": "Çiçekler için vazon var mı?",
-  "beispielEn": "Do you have a vase for the flowers?"
+  "beispiel": "Die Katze hat die Vase vom Tisch gestoßen.",
+  "beispielTr": "Kedi vazoyu masadan düşürdü.",
+  "beispielEn": "The cat knocked the vase off the table."
  },
  {
   "id": 2140,
@@ -243,9 +243,9 @@
   "id": 1419,
   "tr": "uygulamak",
   "en": "to apply",
-  "beispiel": "Diese Salbe muss man dreimal täglich anwenden.",
-  "beispielTr": "Bu merhemi günde üç kez uygulamak gerekiyor.",
-  "beispielEn": "You have to apply this ointment three times a day."
+  "beispiel": "Im Kurs lernen wir Regeln, die wir sofort anwenden können.",
+  "beispielTr": "Kursta hemen uygulayabileceğimiz kurallar öğreniyoruz.",
+  "beispielEn": "In the course we learn rules we can apply right away."
  },
  {
   "id": 2778,
@@ -283,9 +283,9 @@
   "id": 1379,
   "tr": "genel",
   "en": "general",
-  "beispiel": "Wir haben nur über allgemeine Probleme gesprochen.",
-  "beispielTr": "Sadece genel sorunlar hakkında konuştuk.",
-  "beispielEn": "We only talked about general problems."
+  "beispiel": "Die Stimmung im Team ist allgemein sehr gut.",
+  "beispielTr": "Ekipteki hava genel olarak çok iyi.",
+  "beispielEn": "The mood on the team is generally very good."
  },
  {
   "id": 2016,
@@ -307,9 +307,9 @@
   "id": 2235,
   "tr": "yaratıcı",
   "en": "creative",
-  "beispiel": "Wir brauchen eine kreative Lösung für dieses Problem.",
-  "beispielTr": "Bu sorun için yaratıcı bir çözüme ihtiyacımız var.",
-  "beispielEn": "We need a creative solution for this problem."
+  "beispiel": "Meine Schwester ist sehr kreativ und näht ihre Kleider selbst.",
+  "beispielTr": "Kız kardeşim çok yaratıcı, elbiselerini kendisi dikiyor.",
+  "beispielEn": "My sister is very creative and sews her own clothes."
  },
  {
   "id": 1433,
@@ -347,9 +347,9 @@
   "id": 2621,
   "tr": "izlemek",
   "en": "to watch",
-  "beispiel": "Möchtest du beim Fußballspiel zuschauen?",
-  "beispielTr": "Futbol maçını izlemek ister misin?",
-  "beispielEn": "Would you like to watch the soccer game?"
+  "beispiel": "Die Großeltern schauen den Enkeln beim Tanzen zu.",
+  "beispielTr": "Büyükanne ve büyükbaba torunlarının dans edişini izliyor.",
+  "beispielEn": "The grandparents are watching their grandchildren dance."
  },
  {
   "id": 1362,

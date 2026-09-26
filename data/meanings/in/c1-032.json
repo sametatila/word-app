@@ -32,8 +32,8 @@
    "niveau": "C1",
    "formen": "Vorsorgeprinzipien",
    "currentTr": "ihtiyat ilkesi, önlem alma ilkesi",
-   "currentBeispiel": "Nach dem Vorsorgeprinzip genügt ein begründeter Verdacht für ein Verbot.",
-   "currentBeispielTr": "İhtiyat ilkesine göre bir yasak için makul bir şüphe yeterlidir."
+   "currentBeispiel": "Das Ministerium verbot den Stoff unter Berufung auf das Vorsorgeprinzip.",
+   "currentBeispielTr": "Bakanlık, ihtiyat ilkesine dayanarak maddeyi yasakladı."
   },
   {
    "id": 6806,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "Allmenden",
    "currentTr": "ortak kullanım alanı, müşterek",
-   "currentBeispiel": "Die Tragik der Allmende beschreibt den Verfall gemeinsam genutzter Ressourcen.",
-   "currentBeispielTr": "Müştereklerin trajedisi, ortak kullanılan kaynakların çöküşünü anlatır."
+   "currentBeispiel": "Jeder im Dorf durfte sein Vieh auf die Allmende treiben.",
+   "currentBeispielTr": "Köydeki herkes hayvanlarını ortak kullanım alanına salabilirdi."
   },
   {
    "id": 6808,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "büyüme eleştirisi",
-   "currentBeispiel": "Die Wachstumskritik stellt das Bruttoinlandsprodukt als Wohlstandsmaß infrage.",
-   "currentBeispielTr": "Büyüme eleştirisi, gayrisafi yurt içi hasılayı refah ölçütü olarak sorgular."
+   "currentBeispiel": "Auf dem Kongress stieß die Wachstumskritik auf heftigen Widerspruch.",
+   "currentBeispielTr": "Kongrede büyüme eleştirisi sert bir karşı çıkışla karşılaştı."
   },
   {
    "id": 6809,
@@ -73,7 +73,7 @@
    "formen": "Entkopplungen",
    "currentTr": "ayrıştırma, bağlantının koparılması",
    "currentBeispiel": "Eine absolute Entkopplung von Wachstum und Emissionen ist bislang selten gelungen.",
-   "currentBeispielTr": "Büyüme ile emisyonların mutlak ayrıştırılması şimdiye dek nadiren başarıldı.",
+   "currentBeispielTr": "Büyüme ile emisyonların mutlak ayrışması şimdiye dek nadiren sağlanabildi.",
    "overlapping": [
     "die Entflechtung (C1)"
    ]
@@ -86,7 +86,7 @@
    "formen": "Sekundärrohstoffe",
    "currentTr": "ikincil hammadde, geri kazanılmış hammadde",
    "currentBeispiel": "Aus Altgeräten gewonnene Sekundärrohstoffe ersetzen zunehmend importierte Metalle.",
-   "currentBeispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini giderek alıyor."
+   "currentBeispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini alıyor."
   },
   {
    "id": 6811,
@@ -95,8 +95,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "atık önleme, atığın kaynağında azaltılması",
-   "currentBeispiel": "Abfallvermeidung steht in der Hierarchie noch vor jeder Verwertung.",
-   "currentBeispielTr": "Atık önleme, hiyerarşide her türlü geri kazanımdan önce gelir."
+   "currentBeispiel": "Die Stadt setzt bei Verpackungen konsequent auf Abfallvermeidung.",
+   "currentBeispielTr": "Belediye, ambalajlarda kararlılıkla atık önlemeye ağırlık veriyor."
   },
   {
    "id": 6812,
@@ -116,7 +116,7 @@
    "formen": "",
    "currentTr": "eskime, kullanım dışı kalma",
    "currentBeispiel": "Ob geplante Obsoleszenz tatsächlich existiert, ist wissenschaftlich umstritten.",
-   "currentBeispielTr": "Planlı eskitmenin gerçekten var olup olmadığı bilimsel olarak tartışmalı."
+   "currentBeispielTr": "Planlı eskimenin gerçekten var olup olmadığı bilimsel olarak tartışmalı."
   },
   {
    "id": 6814,
@@ -136,7 +136,7 @@
    "formen": "Ökobilanzen",
    "currentTr": "yaşam döngüsü değerlendirmesi, çevresel bilanço",
    "currentBeispiel": "Die Ökobilanz eines Produkts fällt je nach Systemgrenze völlig anders aus.",
-   "currentBeispielTr": "Bir ürünün çevresel bilançosu, sistem sınırına göre bambaşka çıkabiliyor."
+   "currentBeispielTr": "Bir ürünün yaşam döngüsü değerlendirmesi, sistem sınırına göre bambaşka çıkıyor."
   },
   {
    "id": 6816,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çevre etiği",
-   "currentBeispiel": "Die Umweltethik fragt, ob der Natur ein Eigenwert zukommt.",
-   "currentBeispielTr": "Çevre etiği, doğanın kendinden menkul bir değeri olup olmadığını sorar."
+   "currentBeispiel": "Sie hält an der Universität Vorlesungen über Umweltethik.",
+   "currentBeispielTr": "Üniversitede çevre etiği üzerine dersler veriyor."
   },
   {
    "id": 6819,
@@ -175,8 +175,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iklim adaleti",
-   "currentBeispiel": "Klimagerechtigkeit bedeutet, historische Verantwortung bei der Lastenteilung zu berücksichtigen.",
-   "currentBeispielTr": "İklim adaleti, yük paylaşımında tarihsel sorumluluğu hesaba katmak demektir."
+   "currentBeispiel": "Junge Aktivistinnen fordern auf der Konferenz echte Klimagerechtigkeit.",
+   "currentBeispielTr": "Genç aktivistler konferansta gerçek bir iklim adaleti talep ediyor."
   },
   {
    "id": 6820,
@@ -185,8 +185,8 @@
    "niveau": "C1",
    "formen": "hat erschöpft",
    "currentTr": "tüketmek, bitirmek",
-   "currentBeispiel": "Der Mensch erschöpft Vorräte, deren Neubildung Jahrtausende dauert.",
-   "currentBeispielTr": "İnsan, yeniden oluşması binlerce yıl süren rezervleri tüketiyor.",
+   "currentBeispiel": "Die intensive Fischerei hat die Bestände in der Nordsee erschöpft.",
+   "currentBeispielTr": "Yoğun balıkçılık, Kuzey Denizi'ndeki stokları tüketti.",
    "overlapping": [
     "konsumieren (B1)",
     "verbrauchen (B1)",
@@ -263,7 +263,7 @@
    "formen": "hat bilanziert",
    "currentTr": "bilançosunu çıkarmak, hesabını yapmak",
    "currentBeispiel": "Unternehmen müssen ihre Emissionen künftig lückenlos bilanzieren.",
-   "currentBeispielTr": "Şirketler bundan böyle emisyonlarının eksiksiz hesabını çıkarmak zorunda."
+   "currentBeispielTr": "Şirketler bundan böyle emisyonlarının eksiksiz bilançosunu çıkarmak zorunda."
   },
   {
    "id": 6827,
@@ -283,7 +283,7 @@
    "formen": "",
    "currentTr": "kaynakları koruyan, kaynak tasarruflu",
    "currentBeispiel": "Das Verfahren gilt als besonders ressourcenschonend und energieeffizient.",
-   "currentBeispielTr": "Yöntem, kaynakları koruyucu ve enerji açısından verimli sayılıyor."
+   "currentBeispielTr": "Yöntem, özellikle kaynak tasarruflu ve enerji açısından verimli sayılıyor."
   },
   {
    "id": 6829,
@@ -313,7 +313,7 @@
    "formen": "",
    "currentTr": "ağır sonuçlar doğuran, vahim",
    "currentBeispiel": "Die Entscheidung über den Tagebau war folgenschwerer als erwartet.",
-   "currentBeispielTr": "Açık ocak madenine ilişkin karar beklenenden daha ağır sonuçlar doğurdu."
+   "currentBeispielTr": "Açık ocak madeni kararı, beklenenden daha ağır sonuçlar doğurdu."
   },
   {
    "id": 6832,
@@ -323,7 +323,7 @@
    "formen": "",
    "currentTr": "geleceğe dayanıklı, sürdürülebilir",
    "currentBeispiel": "Ein zukunftsfähiges Wirtschaftsmodell darf nicht auf ewigem Mengenwachstum beruhen.",
-   "currentBeispielTr": "Geleceğe dönük bir ekonomi modeli sonsuz büyümeye dayanamaz."
+   "currentBeispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanamaz."
   },
   {
    "id": 6833,
@@ -346,7 +346,7 @@
    "formen": "",
    "currentTr": "kanıtlanmış biçimde, kanıtlarla sabit olarak",
    "currentBeispiel": "Die Maßnahme hat den Nitratgehalt nachweislich gesenkt.",
-   "currentBeispielTr": "Bu önlem nitrat düzeyini kanıtlanmış biçimde düşürdü."
+   "currentBeispielTr": "Bu önlem, nitrat düzeyini kanıtlanmış biçimde düşürdü."
   },
   {
    "id": 6835,
@@ -356,7 +356,7 @@
    "formen": "Tugenden",
    "currentTr": "erdem, fazilet",
    "currentBeispiel": "Für Aristoteles war Mut eine Tugend zwischen Feigheit und Tollkühnheit.",
-   "currentBeispielTr": "Aristoteles için cesaret, korkaklıkla delice atılganlık arasındaki bir erdemdi."
+   "currentBeispielTr": "Aristoteles için cesaret, korkaklıkla delice atılganlık arasında bir erdemdi."
   },
   {
    "id": 6836,
@@ -366,7 +366,7 @@
    "formen": "",
    "currentTr": "irade özgürlüğü",
    "currentBeispiel": "Die Hirnforschung stellt unsere Vorstellung von Willensfreiheit ernsthaft infrage.",
-   "currentBeispielTr": "Beyin araştırmaları, irade özgürlüğü tasavvurumuzu ciddi biçimde sorgulatıyor."
+   "currentBeispielTr": "Beyin araştırmaları, irade özgürlüğü tasavvurumuzu ciddi biçimde sorguluyor."
   },
   {
    "id": 6837,
@@ -376,7 +376,7 @@
    "formen": "",
    "currentTr": "kusur yeteneği, ceza sorumluluğu (akli yeterlilik)",
    "currentBeispiel": "Das Gericht ließ die Zurechnungsfähigkeit des Angeklagten psychiatrisch prüfen.",
-   "currentBeispielTr": "Mahkeme, sanığın temyiz kudretini psikiyatrik olarak inceletti."
+   "currentBeispielTr": "Mahkeme, sanığın ceza sorumluluğunu psikiyatrik olarak inceletti."
   },
   {
    "id": 6838,
@@ -398,8 +398,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "merhamet, şefkat",
-   "currentBeispiel": "Zwischen kalter Gerechtigkeit und echter Barmherzigkeit besteht eine alte Spannung.",
-   "currentBeispielTr": "Soğuk adaletle gerçek merhamet arasında eski bir gerilim vardır."
+   "currentBeispiel": "Die Nonnen begegneten den Flüchtlingen mit großer Barmherzigkeit.",
+   "currentBeispielTr": "Rahibeler, mültecilere büyük bir merhametle yaklaştı."
   },
   {
    "id": 6840,
@@ -419,7 +419,7 @@
    "formen": "",
    "currentTr": "özgecilik, diğerkâmlık",
    "currentBeispiel": "Ob echter Altruismus überhaupt existiert, ist bis heute umstritten.",
-   "currentBeispielTr": "Gerçek bir özgeciliğin var olup olmadığı bugün hâlâ tartışmalıdır."
+   "currentBeispielTr": "Gerçek bir özgeciliğin var olup olmadığı bugün hâlâ tartışmalı."
   },
   {
    "id": 6842,
@@ -448,8 +448,8 @@
    "niveau": "C1",
    "formen": "Dilemmata",
    "currentTr": "ikilem, çıkmaz",
-   "currentBeispiel": "Das klassische Dilemma lässt beide Auswege gleich schlecht erscheinen.",
-   "currentBeispielTr": "Klasik ikilem, her iki çıkış yolunu da eşit derecede kötü gösterir.",
+   "currentBeispiel": "Sie steckte in einem Dilemma zwischen Karriere und Familie.",
+   "currentBeispielTr": "Kariyerle aile arasında bir ikilemde sıkışıp kalmıştı.",
    "overlapping": [
     "die Zwickmühle (C1)"
    ]
@@ -471,8 +471,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "zihin, muhakeme, anlık",
-   "currentBeispiel": "Der Verstand ordnet, aber er stiftet keinen Sinn.",
-   "currentBeispielTr": "Zihin düzenler, ama anlam yaratmaz."
+   "currentBeispiel": "Sein wacher Verstand fiel allen sofort auf.",
+   "currentBeispielTr": "Uyanık zihni herkesin hemen dikkatini çekti."
   },
   {
    "id": 6847,
@@ -494,8 +494,8 @@
    "niveau": "C1",
    "formen": "Weisheiten",
    "currentTr": "bilgelik, hikmet",
-   "currentBeispiel": "Wissen lässt sich anhäufen, Weisheit dagegen kaum.",
-   "currentBeispielTr": "Bilgi biriktirilebilir, ama bilgelik pek biriktirilemez."
+   "currentBeispiel": "Die Weisheit meiner Großmutter half mir durch schwere Zeiten.",
+   "currentBeispielTr": "Büyükannemin bilgeliği zor zamanlarda bana yardımcı oldu."
   },
   {
    "id": 6849,

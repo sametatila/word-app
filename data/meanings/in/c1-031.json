@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "fotosentez",
-   "currentBeispiel": "Bei der Photosynthese wandeln Pflanzen Licht in chemische Energie um.",
-   "currentBeispielTr": "Fotosentezde bitkiler ışığı kimyasal enerjiye dönüştürür."
+   "currentBeispiel": "Im Dunkeln stellen die Blätter die Photosynthese ein.",
+   "currentBeispielTr": "Karanlıkta yapraklar fotosentezi durduruyor."
   },
   {
    "id": 6754,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Zellkerne",
    "currentTr": "hücre çekirdeği",
-   "currentBeispiel": "Das Erbmaterial liegt bei den meisten Lebewesen im Zellkern.",
-   "currentBeispielTr": "Kalıtım maddesi çoğu canlıda hücre çekirdeğinde bulunur."
+   "currentBeispiel": "Unter dem Mikroskop erkennt man den Zellkern deutlich.",
+   "currentBeispielTr": "Mikroskop altında hücre çekirdeği açıkça görülüyor."
   },
   {
    "id": 6755,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Chromosomen",
    "currentTr": "kromozom",
-   "currentBeispiel": "Der Mensch besitzt in jeder Körperzelle sechsundvierzig Chromosomen.",
-   "currentBeispielTr": "İnsan her vücut hücresinde kırk altı kromozom taşır."
+   "currentBeispiel": "Auf diesem Chromosom liegt das gesuchte Gen.",
+   "currentBeispielTr": "Aranan gen bu kromozomun üzerinde bulunuyor."
   },
   {
    "id": 6756,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kalıtsal madde, genom, genetik yapı",
-   "currentBeispiel": "Ein Eingriff in das Erbgut wirft heikle ethische Fragen auf.",
-   "currentBeispielTr": "Kalıtım maddesine müdahale çetin etik sorular doğuruyor."
+   "currentBeispiel": "Der Forscher veränderte das Erbgut der Pflanze gezielt.",
+   "currentBeispielTr": "Araştırmacı bitkinin kalıtım maddesini bilinçli olarak değiştirdi."
   },
   {
    "id": 6757,
@@ -60,7 +60,7 @@
    "formen": "Hormone",
    "currentTr": "hormon",
    "currentBeispiel": "Bei Stress schüttet der Körper vermehrt bestimmte Hormone aus.",
-   "currentBeispielTr": "Stres hâlinde vücut belirli hormonları daha çok salgılar."
+   "currentBeispielTr": "Stres altında vücut belirli hormonları daha çok salgılıyor."
   },
   {
    "id": 6759,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "evrim",
-   "currentBeispiel": "Die Evolution verläuft nicht zielgerichtet, sondern über zufällige Veränderungen.",
-   "currentBeispielTr": "Evrim bir amaca yönelmez, rastlantısal değişimler üzerinden ilerler."
+   "currentBeispiel": "Im Museum erklärt eine Tafel die Evolution des Pferdes.",
+   "currentBeispielTr": "Müzede bir pano atın evrimini anlatıyor."
   },
   {
    "id": 6760,
@@ -80,7 +80,7 @@
    "formen": "ist verdampft",
    "currentTr": "buharlaşmak, buhara dönüşmek",
    "currentBeispiel": "Bei hundert Grad verdampft das Wasser vollständig.",
-   "currentBeispielTr": "Yüz derecede su tamamen buharlaşır.",
+   "currentBeispielTr": "Yüz derecede su tamamen buharlaşıyor.",
    "overlapping": [
     "sich verflüchtigen (C1)",
     "verdunsten (B2)"
@@ -94,7 +94,7 @@
    "formen": "ist erstarrt",
    "currentTr": "katılaşmak, donmak",
    "currentBeispiel": "Die glühende Lava erstarrt an der Luft zu schwarzem Gestein.",
-   "currentBeispielTr": "Kızgın lav havada katılaşarak siyah kayaya dönüşür."
+   "currentBeispielTr": "Kızgın lav havada katılaşıp siyah kayaya dönüşüyor."
   },
   {
    "id": 6762,
@@ -103,8 +103,8 @@
    "niveau": "C1",
    "formen": "hat gespalten",
    "currentTr": "bölmek, yarmak, ayrıştırmak",
-   "currentBeispiel": "Enzyme spalten die Stärke in einzelne Zuckerbausteine.",
-   "currentBeispielTr": "Enzimler nişastayı tek tek şeker birimlerine ayrıştırır."
+   "currentBeispiel": "Er spaltet das Holz mit einer schweren Axt.",
+   "currentBeispielTr": "Ağır bir baltayla odunu yarıyor."
   },
   {
    "id": 6763,
@@ -114,7 +114,7 @@
    "formen": "hat sich ausgedehnt",
    "currentTr": "genleşmek, yayılmak",
    "currentBeispiel": "Metall dehnt sich bei Hitze deutlich messbar aus.",
-   "currentBeispielTr": "Metal sıcakta ölçülebilir biçimde genleşir."
+   "currentBeispielTr": "Metal sıcakta ölçülebilir biçimde genleşiyor."
   },
   {
    "id": 6764,
@@ -124,7 +124,7 @@
    "formen": "hat sich zusammengezogen",
    "currentTr": "büzülmek, kasılmak",
    "currentBeispiel": "Bei Kälte ziehen sich die Blutgefäße in der Haut zusammen.",
-   "currentBeispielTr": "Soğukta deri altındaki kan damarları büzülür."
+   "currentBeispielTr": "Soğukta derideki kan damarları büzülüyor."
   },
   {
    "id": 6765,
@@ -134,7 +134,7 @@
    "formen": "hat abgestoßen",
    "currentTr": "itmek, geri itmek",
    "currentBeispiel": "Gleiche Pole eines Magneten stoßen einander ab.",
-   "currentBeispielTr": "Bir mıknatısın aynı kutupları birbirini iter.",
+   "currentBeispielTr": "Bir mıknatısın aynı kutupları birbirini itiyor.",
    "overlapping": [
     "schieben (B1)"
    ]
@@ -157,7 +157,7 @@
    "formen": "hat sich vermehrt",
    "currentTr": "çoğalmak, üremek",
    "currentBeispiel": "In warmem Wasser vermehren sich die Keime besonders schnell.",
-   "currentBeispielTr": "Ilık suda mikroplar özellikle hızlı çoğalır."
+   "currentBeispielTr": "Ilık suda mikroplar özellikle hızlı çoğalıyor."
   },
   {
    "id": 6768,
@@ -167,7 +167,7 @@
    "formen": "hat abgelagert",
    "currentTr": "biriktirmek, çökeltmek",
    "currentBeispiel": "Der Fluss lagert an der Mündung feinen Sand ab.",
-   "currentBeispielTr": "Nehir ağzında ince kum biriktiriyor."
+   "currentBeispielTr": "Nehir, ağzında ince kum biriktiriyor."
   },
   {
    "id": 6769,
@@ -177,7 +177,7 @@
    "formen": "hat verdünnt",
    "currentTr": "seyreltmek, sulandırmak",
    "currentBeispiel": "Die Säure muss vor dem Versuch stark verdünnt werden.",
-   "currentBeispielTr": "Asidin deneyden önce iyice seyreltilmesi gerekir."
+   "currentBeispielTr": "Asidin deneyden önce iyice seyreltilmesi gerekiyor."
   },
   {
    "id": 6770,
@@ -187,7 +187,7 @@
    "formen": "hat umgewandelt",
    "currentTr": "dönüştürmek",
    "currentBeispiel": "Der Muskel wandelt chemische Energie in Bewegung um.",
-   "currentBeispielTr": "Kas kimyasal enerjiyi harekete dönüştürür.",
+   "currentBeispielTr": "Kas kimyasal enerjiyi harekete dönüştürüyor.",
    "overlapping": [
     "umrüsten (C1)"
    ]
@@ -212,8 +212,8 @@
    "niveau": "C1",
    "formen": "hat gebunden",
    "currentTr": "bağlamak, tutmak",
-   "currentBeispiel": "Moore binden erhebliche Mengen an Kohlendioxid.",
-   "currentBeispielTr": "Bataklıklar hatırı sayılır miktarda karbondioksit tutar.",
+   "currentBeispiel": "Sie bindet den Strauß mit einem roten Band.",
+   "currentBeispielTr": "Buketi kırmızı bir kurdeleyle bağlıyor.",
    "overlapping": [
     "anschließen (B1)",
     "verbinden (B1)",
@@ -227,8 +227,8 @@
    "niveau": "C1",
    "formen": "hat gezüchtet",
    "currentTr": "yetiştirmek, ıslah etmek",
-   "currentBeispiel": "Forscher züchten im Labor besonders widerstandsfähige Sorten.",
-   "currentBeispielTr": "Araştırmacılar laboratuvarda özellikle dayanıklı türler yetiştiriyor.",
+   "currentBeispiel": "Mein Nachbar züchtet seit Jahren seltene Tauben.",
+   "currentBeispielTr": "Komşum yıllardır nadir güvercinler yetiştiriyor.",
    "overlapping": [
     "erziehen (B1)",
     "anbauen (C1)",
@@ -243,7 +243,7 @@
    "formen": "ist verwest",
    "currentTr": "çürümek, ayrışmak",
    "currentBeispiel": "Im feuchten Boden verwesen die Reste innerhalb weniger Wochen.",
-   "currentBeispielTr": "Nemli toprakta kalıntılar birkaç hafta içinde çürür."
+   "currentBeispielTr": "Nemli toprakta kalıntılar birkaç hafta içinde çürüyor."
   },
   {
    "id": 6775,
@@ -252,8 +252,8 @@
    "niveau": "C1",
    "formen": "hat aufgesaugt",
    "currentTr": "emmek, soğurmak",
-   "currentBeispiel": "Die Wurzeln saugen das Wasser samt gelösten Nährstoffen auf.",
-   "currentBeispielTr": "Kökler suyu, içinde çözünmüş besinlerle birlikte emer."
+   "currentBeispiel": "Ein Tuch saugt die verschüttete Milch schnell auf.",
+   "currentBeispielTr": "Bir bez dökülen sütü çabucak emiyor."
   },
   {
    "id": 6776,
@@ -262,8 +262,8 @@
    "niveau": "C1",
    "formen": "hat geschwebt",
    "currentTr": "asılı durmak, süzülmek",
-   "currentBeispiel": "Der Staub schwebt stundenlang in der stehenden Luft.",
-   "currentBeispielTr": "Toz durgun havada saatlerce asılı kalıyor."
+   "currentBeispiel": "Der bunte Ballon schwebt über den Dächern.",
+   "currentBeispielTr": "Rengârenk balon çatıların üzerinde süzülüyor."
   },
   {
    "id": 6777,
@@ -272,8 +272,8 @@
    "niveau": "C1",
    "formen": "hat rotiert",
    "currentTr": "dönmek, kendi ekseninde dönmek",
-   "currentBeispiel": "Die Erde rotiert einmal in vierundzwanzig Stunden um sich selbst.",
-   "currentBeispielTr": "Dünya yirmi dört saatte bir kez kendi çevresinde döner.",
+   "currentBeispiel": "Die Erde rotiert einmal am Tag um ihre Achse.",
+   "currentBeispielTr": "Dünya günde bir kez kendi ekseni etrafında dönüyor.",
    "overlapping": [
     "abbiegen (B1)",
     "sich umdrehen (B1)"
@@ -286,8 +286,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "uçucu, çabuk buharlaşan",
-   "currentBeispiel": "Der Lösungsstoff ist sehr flüchtig und verliert schnell an Wirkung.",
-   "currentBeispielTr": "Çözücü madde çok uçucudur ve etkisini hızla yitirir."
+   "currentBeispiel": "Aceton ist sehr flüchtig und riecht deshalb stark.",
+   "currentBeispielTr": "Aseton çok uçucudur ve bu yüzden keskin kokar."
   },
   {
    "id": 6779,
@@ -306,8 +306,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ısıl, termik",
-   "currentBeispiel": "Die Fassade ist thermisch schlecht gegen die Kälte isoliert.",
-   "currentBeispielTr": "Cephe soğuğa karşı ısıl olarak kötü yalıtılmış."
+   "currentBeispiel": "Die alte Fassade ist thermisch schlecht isoliert.",
+   "currentBeispielTr": "Eski cephe ısıl olarak kötü yalıtılmış."
   },
   {
    "id": 6781,
@@ -329,8 +329,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hava geçirmez",
-   "currentBeispiel": "Die Proben werden luftdicht verschlossen und gekühlt gelagert.",
-   "currentBeispielTr": "Numuneler hava geçirmez biçimde kapatılıp soğukta saklanıyor."
+   "currentBeispiel": "Bewahre den Kaffee in einer luftdichten Dose auf.",
+   "currentBeispielTr": "Kahveyi hava geçirmez bir kutuda sakla."
   },
   {
    "id": 6783,
@@ -349,8 +349,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "saydam, şeffaf",
-   "currentBeispiel": "Die Larve ist fast durchsichtig und daher kaum zu erkennen.",
-   "currentBeispielTr": "Larva neredeyse saydamdır, bu yüzden güçlükle fark edilir."
+   "currentBeispiel": "Die Larve ist fast durchsichtig und kaum zu erkennen.",
+   "currentBeispielTr": "Larva neredeyse saydam ve güçlükle fark ediliyor."
   },
   {
    "id": 6785,
@@ -369,8 +369,8 @@
    "niveau": "C1",
    "formen": "Ökosystemleistungen",
    "currentTr": "ekosistem hizmeti",
-   "currentBeispiel": "Bestäubung und Wasserreinigung zählen zu den unterschätzten Ökosystemleistungen.",
-   "currentBeispielTr": "Tozlaşma ve suyun temizlenmesi, hafife alınan ekosistem hizmetleri arasındadır."
+   "currentBeispiel": "Die Stadt bezahlt Bauern jetzt für ihre Ökosystemleistungen.",
+   "currentBeispielTr": "Şehir artık çiftçilere ekosistem hizmetleri için para ödüyor."
   },
   {
    "id": 6787,
@@ -379,8 +379,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iklim politikası",
-   "currentBeispiel": "Eine glaubwürdige Klimapolitik braucht verbindliche Ziele statt unverbindlicher Absichtserklärungen.",
-   "currentBeispielTr": "İnandırıcı bir iklim politikası, bağlayıcı olmayan niyet beyanları yerine bağlayıcı hedeflere ihtiyaç duyar."
+   "currentBeispiel": "Die Regierung streitet seit Monaten über ihre Klimapolitik.",
+   "currentBeispielTr": "Hükümet aylardır kendi iklim politikasını tartışıyor."
   },
   {
    "id": 6788,
@@ -390,7 +390,7 @@
    "formen": "Kohlenstoffsenken",
    "currentTr": "karbon yutağı",
    "currentBeispiel": "Alte Wälder wirken über Jahrhunderte als zuverlässige Kohlenstoffsenke.",
-   "currentBeispielTr": "Yaşlı ormanlar yüzyıllar boyunca güvenilir bir karbon yutağı işlevi görür."
+   "currentBeispielTr": "Yaşlı ormanlar yüzyıllarca güvenilir bir karbon yutağı işlevi görüyor."
   },
   {
    "id": 6789,
@@ -400,7 +400,7 @@
    "formen": "",
    "currentTr": "ormansızlaşma",
    "currentBeispiel": "Die Entwaldung schreitet trotz internationaler Abkommen ungebremst voran.",
-   "currentBeispielTr": "Ormansızlaşma, uluslararası anlaşmalara rağmen hız kesmeden sürüyor."
+   "currentBeispielTr": "Ormansızlaşma uluslararası anlaşmalara rağmen hız kesmeden sürüyor."
   },
   {
    "id": 6790,
@@ -409,8 +409,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "toprak erozyonu",
-   "currentBeispiel": "Intensive Landwirtschaft beschleunigt die Bodenerosion in vielen Regionen erheblich.",
-   "currentBeispielTr": "Yoğun tarım, birçok bölgede toprak erozyonunu belirgin biçimde hızlandırıyor."
+   "currentBeispiel": "Hecken am Feldrand bremsen die Bodenerosion wirksam.",
+   "currentBeispielTr": "Tarla kenarındaki çitler toprak erozyonunu etkili biçimde yavaşlatıyor."
   },
   {
    "id": 6791,
@@ -420,7 +420,7 @@
    "formen": "",
    "currentTr": "aşırı kullanım, aşırı yararlanma",
    "currentBeispiel": "Die Übernutzung der Grundwasservorräte lässt sich kaum rückgängig machen.",
-   "currentBeispielTr": "Yeraltı suyu rezervlerinin aşırı kullanımını geri döndürmek neredeyse imkânsız."
+   "currentBeispielTr": "Yeraltı suyu rezervlerinin aşırı kullanımı neredeyse geri döndürülemiyor."
   },
   {
    "id": 6792,
@@ -430,7 +430,7 @@
    "formen": "Belastungsgrenzen",
    "currentTr": "yük sınırı, dayanma sınırı",
    "currentBeispiel": "Viele Böden haben ihre ökologische Belastungsgrenze längst überschritten.",
-   "currentBeispielTr": "Birçok toprak ekolojik dayanma sınırını çoktan aşmış durumda."
+   "currentBeispielTr": "Birçok toprak ekolojik dayanma sınırını çoktan aştı."
   },
   {
    "id": 6793,
@@ -440,7 +440,7 @@
    "formen": "",
    "currentTr": "yenilenme yetisi, kendini onarma kapasitesi",
    "currentBeispiel": "Die Regenerationsfähigkeit der Meere wird systematisch überschätzt.",
-   "currentBeispielTr": "Denizlerin yenilenme yetisi sistemli biçimde fazla iyimser değerlendiriliyor."
+   "currentBeispielTr": "Denizlerin yenilenme yetisi sistemli biçimde abartılıyor."
   },
   {
    "id": 6794,
@@ -450,7 +450,7 @@
    "formen": "Rückkopplungen",
    "currentTr": "geri besleme, geri bildirim döngüsü",
    "currentBeispiel": "Tauender Permafrost löst eine gefährliche Rückkopplung im Klimasystem aus.",
-   "currentBeispielTr": "Çözülen donmuş toprak, iklim sisteminde tehlikeli bir geri besleme başlatıyor."
+   "currentBeispielTr": "Çözülen donmuş toprak iklim sisteminde tehlikeli bir geri besleme başlatıyor."
   },
   {
    "id": 6795,
@@ -459,8 +459,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çevreyle uyumluluk, çevresel uygunluk",
-   "currentBeispiel": "Vor dem Bau wird die Umweltverträglichkeit des Vorhabens sorgfältig geprüft.",
-   "currentBeispielTr": "İnşaattan önce projenin çevreyle uyumluluğu titizlikle inceleniyor."
+   "currentBeispiel": "Vor dem Bau wird die Umweltverträglichkeit des Vorhabens geprüft.",
+   "currentBeispielTr": "İnşaattan önce projenin çevreyle uyumluluğu inceleniyor."
   },
   {
    "id": 6796,
@@ -469,8 +469,8 @@
    "niveau": "C1",
    "formen": "Schadstoffbelastungen",
    "currentTr": "kirletici madde yükü, zararlı madde kirliliği",
-   "currentBeispiel": "Die Schadstoffbelastung der Luft sinkt in den Innenstädten nur langsam.",
-   "currentBeispielTr": "Havadaki kirletici madde yükü şehir merkezlerinde ancak yavaş yavaş azalıyor."
+   "currentBeispiel": "Die Schadstoffbelastung der Luft sinkt in den Innenstädten langsam.",
+   "currentBeispielTr": "Havadaki kirletici madde yükü şehir merkezlerinde yavaş azalıyor."
   },
   {
    "id": 6797,
@@ -490,7 +490,7 @@
    "formen": "Nahrungsketten",
    "currentTr": "besin zinciri",
    "currentBeispiel": "Giftstoffe reichern sich am oberen Ende der Nahrungskette an.",
-   "currentBeispielTr": "Zehirli maddeler besin zincirinin üst basamaklarında birikir."
+   "currentBeispielTr": "Zehirli maddeler besin zincirinin üst ucunda birikiyor."
   },
   {
    "id": 6799,
@@ -500,7 +500,7 @@
    "formen": "Stoffkreisläufe",
    "currentTr": "madde döngüsü",
    "currentBeispiel": "Der natürliche Stoffkreislauf wird durch industrielle Eingriffe empfindlich gestört.",
-   "currentBeispielTr": "Doğal madde döngüsü sanayi müdahaleleriyle hassas biçimde bozuluyor."
+   "currentBeispielTr": "Doğal madde döngüsü sanayi müdahaleleriyle ciddi biçimde bozuluyor."
   },
   {
    "id": 6800,
@@ -509,8 +509,8 @@
    "niveau": "C1",
    "formen": "Bestandsrückgänge",
    "currentTr": "popülasyon azalması, stok gerilemesi",
-   "currentBeispiel": "Der dramatische Bestandsrückgang der Insekten alarmiert inzwischen auch Landwirte.",
-   "currentBeispielTr": "Böcek popülasyonundaki çarpıcı azalma artık çiftçileri de tedirgin ediyor."
+   "currentBeispiel": "Der starke Bestandsrückgang der Insekten alarmiert auch die Landwirte.",
+   "currentBeispielTr": "Böceklerdeki güçlü popülasyon azalması çiftçileri de tedirgin ediyor."
   },
   {
    "id": 6801,
@@ -529,8 +529,8 @@
    "niveau": "C1",
    "formen": "Schutzgebiete",
    "currentTr": "koruma alanı",
-   "currentBeispiel": "Ohne wirksame Kontrolle bleibt ein Schutzgebiet bloß eine Linie auf der Karte.",
-   "currentBeispielTr": "Etkili denetim olmadan koruma alanı haritada bir çizgiden ibaret kalır."
+   "currentBeispiel": "Im Schutzgebiet dürfen keine neuen Häuser gebaut werden.",
+   "currentBeispielTr": "Koruma alanında yeni ev yapılmasına izin verilmiyor."
   }
  ]
 }

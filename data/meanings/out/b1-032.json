@@ -3,33 +3,33 @@
     "id": 2084,
     "tr": "yüklemek",
     "en": "to upload",
-    "beispiel": "Kannst du bitte die Datei für die Hausaufgabe hochladen?",
-    "beispielTr": "Ödev için dosyayı yükler misin lütfen?",
-    "beispielEn": "Can you upload the file for the homework, please?"
+    "beispiel": "Ich lade die Urlaubsfotos heute Abend in unsere Gruppe hoch.",
+    "beispielTr": "Tatil fotoğraflarını bu akşam grubumuza yüklüyorum.",
+    "beispielEn": "I'm uploading the vacation photos to our group tonight."
   },
   {
     "id": 1428,
     "tr": "iş yeri",
     "en": "place of work",
-    "beispiel": "Meine Frau hat eine neue Arbeitsstelle gefunden.",
-    "beispielTr": "Eşim yeni bir iş buldu.",
-    "beispielEn": "My wife has found a new job."
+    "beispiel": "Zu meiner Arbeitsstelle fahre ich jeden Tag mit der S-Bahn.",
+    "beispielTr": "İş yerime her gün banliyö treniyle gidiyorum.",
+    "beispielEn": "I take the commuter train to work every day."
   },
   {
     "id": 2049,
     "tr": "ana gar",
     "en": "central station",
-    "beispiel": "Treffen wir uns am Hauptbahnhof?",
-    "beispielTr": "Ana garda buluşalım mı?",
-    "beispielEn": "Shall we meet at the central station?"
+    "beispiel": "Vom Hauptbahnhof fährt ein Bus direkt zum Flughafen.",
+    "beispielTr": "Ana gardan havaalanına doğrudan otobüs var.",
+    "beispielEn": "A bus runs directly from the central station to the airport."
   },
   {
     "id": 2735,
     "tr": "anadil",
     "en": "native language",
-    "beispiel": "Was ist Ihre Muttersprache?",
-    "beispielTr": "Anadiliniz nedir?",
-    "beispielEn": "What is your native language?"
+    "beispiel": "Meine Muttersprache ist Türkisch, aber ich träume oft auf Deutsch.",
+    "beispielTr": "Anadilim Türkçe ama çoğu zaman Almanca rüya görüyorum.",
+    "beispielEn": "My native language is Turkish, but I often dream in German."
   },
   {
     "id": 2813,
@@ -59,9 +59,9 @@
     "id": 2014,
     "tr": "grafik",
     "en": "chart",
-    "beispiel": "Die Grafik zeigt die Temperaturen im letzten Jahr.",
-    "beispielTr": "Grafik geçen yılki sıcaklıkları gösteriyor.",
-    "beispielEn": "The chart shows the temperatures from last year."
+    "beispiel": "Auf der Grafik sieht man, wie die Preise gestiegen sind.",
+    "beispielTr": "Grafikte fiyatların nasıl arttığı görülüyor.",
+    "beispielEn": "The chart shows how prices have gone up."
   },
   {
     "id": 2859,
@@ -99,17 +99,17 @@
     "id": 3082,
     "tr": "deterjan",
     "en": "detergent",
-    "beispiel": "Diese Bluse darfst du nicht mit jedem Waschmittel waschen.",
-    "beispielTr": "Bu bluzu her deterjanla yıkayamazsın.",
-    "beispielEn": "You can't wash this blouse with just any detergent."
+    "beispiel": "Wir brauchen neues Waschmittel, die Packung ist leer.",
+    "beispielTr": "Yeni deterjan lazım, paket boşaldı.",
+    "beispielEn": "We need new detergent, the box is empty."
   },
   {
     "id": 1872,
     "tr": "belirlemek",
     "en": "to set",
-    "beispiel": "Die Schule hat den Termin für die Prüfung festgesetzt.",
-    "beispielTr": "Okul sınav tarihini belirledi.",
-    "beispielEn": "The school has set the date for the exam."
+    "beispiel": "Die Stadt hat die Gebühren fürs Parken neu festgesetzt.",
+    "beispielTr": "Belediye otopark ücretlerini yeniden belirledi.",
+    "beispielEn": "The city has set new parking fees."
   },
   {
     "id": 2922,
@@ -123,17 +123,17 @@
     "id": 2462,
     "tr": "ikamet yeri",
     "en": "place of residence",
-    "beispiel": "Tragen Sie bitte auch Ihren Wohnort ein.",
-    "beispielTr": "Lütfen ikamet yerinizi de yazın.",
-    "beispielEn": "Please also enter your place of residence."
+    "beispiel": "Seit der Hochzeit hat sich mein Wohnort geändert.",
+    "beispielTr": "Düğünden beri ikamet yerim değişti.",
+    "beispielEn": "My place of residence has changed since the wedding."
   },
   {
     "id": 1745,
     "tr": "ayrıntı",
     "en": "detail",
-    "beispiel": "Du musst mir das in allen Einzelheiten erzählen.",
-    "beispielTr": "Bunu bana bütün ayrıntılarıyla anlatmalısın.",
-    "beispielEn": "You have to tell me every detail."
+    "beispiel": "Die Einzelheiten des Plans erkläre ich euch morgen.",
+    "beispielTr": "Planın ayrıntılarını size yarın anlatırım.",
+    "beispielEn": "I'll explain the details of the plan to you tomorrow."
   },
   {
     "id": 1610,
@@ -155,17 +155,17 @@
     "id": 2212,
     "tr": "tüketmek",
     "en": "to consume",
-    "beispiel": "Die Europäer haben im letzten Jahr mehr Fleisch konsumiert.",
-    "beispielTr": "Avrupalılar geçen yıl daha fazla et tüketti.",
-    "beispielEn": "Europeans consumed more meat last year."
+    "beispiel": "Jugendliche konsumieren heute viele Videos auf dem Handy.",
+    "beispielTr": "Gençler bugün telefonda çok video tüketiyor.",
+    "beispielEn": "Young people today consume a lot of videos on their phones."
   },
   {
     "id": 1741,
     "tr": "para yatırmak",
     "en": "to deposit",
-    "beispiel": "Ich habe gestern Geld auf mein Konto eingezahlt.",
-    "beispielTr": "Dün hesabıma para yatırdım.",
-    "beispielEn": "I deposited money into my account yesterday."
+    "beispiel": "Am Automaten kann man auch Bargeld einzahlen.",
+    "beispielTr": "Makineden nakit para da yatırılabiliyor.",
+    "beispielEn": "You can also deposit cash at the machine."
   },
   {
     "id": 3102,
@@ -179,17 +179,17 @@
     "id": 2156,
     "tr": "bozulmak",
     "en": "to break",
-    "beispiel": "Der Fernseher ist gestern kaputtgegangen.",
-    "beispielTr": "Televizyon dün bozuldu.",
-    "beispielEn": "The TV broke yesterday."
+    "beispiel": "Wenn du das Handy fallen lässt, geht es kaputt.",
+    "beispielTr": "Telefonu düşürürsen bozulur.",
+    "beispielEn": "If you drop the phone, it'll break."
   },
   {
     "id": 2380,
     "tr": "sözlü",
     "en": "oral",
-    "beispiel": "Die mündliche Prüfung ist erst nächste Woche.",
-    "beispielTr": "Sözlü sınav daha gelecek hafta.",
-    "beispielEn": "The oral exam isn't until next week."
+    "beispiel": "Wir haben das nur mündlich vereinbart.",
+    "beispielTr": "Bunu sadece sözlü olarak kararlaştırdık.",
+    "beispielEn": "We only agreed on it verbally."
   },
   {
     "id": 1742,
@@ -203,9 +203,9 @@
     "id": 2107,
     "tr": "bireysel",
     "en": "individual",
-    "beispiel": "Die Lehrerin versucht, jedes Kind individuell zu fördern.",
-    "beispielTr": "Öğretmen her çocuğu bireysel olarak desteklemeye çalışıyor.",
-    "beispielEn": "The teacher tries to support each child individually."
+    "beispiel": "Jeder Kunde bekommt bei uns eine individuelle Beratung.",
+    "beispielTr": "Bizde her müşteriye bireysel danışmanlık veriliyor.",
+    "beispielEn": "Every customer gets individual advice from us."
   },
   {
     "id": 1836,
@@ -259,25 +259,25 @@
     "id": 3145,
     "tr": "merkezî",
     "en": "central",
-    "beispiel": "Wir suchen eine Wohnung in zentraler Lage.",
-    "beispielTr": "Merkezî konumda bir daire arıyoruz.",
-    "beispielEn": "We're looking for an apartment in a central location."
+    "beispiel": "Das Hotel liegt zentral, nur fünf Minuten vom Markt entfernt.",
+    "beispielTr": "Otel merkezî bir yerde, pazara sadece beş dakika.",
+    "beispielEn": "The hotel is central, only five minutes from the market."
   },
   {
     "id": 2952,
     "tr": "vejetaryen",
     "en": "vegetarian",
-    "beispiel": "Haben Sie auch vegetarische Gerichte?",
-    "beispielTr": "Vejetaryen yemekleriniz de var mı?",
-    "beispielEn": "Do you also have vegetarian dishes?"
+    "beispiel": "Seit einem Jahr kocht meine Schwester nur noch vegetarisch.",
+    "beispielTr": "Kız kardeşim bir yıldır sadece vejetaryen yemek pişiriyor.",
+    "beispielEn": "For a year now my sister has only been cooking vegetarian."
   },
   {
     "id": 3147,
     "tr": "sertifika",
     "en": "certificate",
-    "beispiel": "Wenn ich die Prüfung bestehe, bekomme ich ein Zertifikat.",
-    "beispielTr": "Sınavı geçersem bir sertifika alacağım.",
-    "beispielEn": "If I pass the exam, I'll get a certificate."
+    "beispiel": "Für die Bewerbung brauche ich eine Kopie meines Zertifikats.",
+    "beispielTr": "Başvuru için sertifikamın bir fotokopisi lazım.",
+    "beispielEn": "I need a copy of my certificate for the application."
   },
   {
     "id": 1842,
@@ -291,9 +291,9 @@
     "id": 1921,
     "tr": "kadın kuaför",
     "en": "female hairdresser",
-    "beispiel": "Meine Tochter will Friseurin werden.",
-    "beispielTr": "Kızım kuaför olmak istiyor.",
-    "beispielEn": "My daughter wants to become a hairdresser."
+    "beispiel": "Die Friseurin hat mir die Haare zu kurz geschnitten.",
+    "beispielTr": "Kuaför saçımı fazla kısa kesti.",
+    "beispielEn": "The hairdresser cut my hair too short."
   },
   {
     "id": 2207,
@@ -307,9 +307,9 @@
     "id": 1855,
     "tr": "renkli",
     "en": "colored",
-    "beispiel": "Ich brauche kein weißes, sondern farbiges Papier.",
-    "beispielTr": "Bana beyaz değil, renkli kâğıt lazım.",
-    "beispielEn": "I don't need white paper but colored paper."
+    "beispiel": "Auf dem Plakat stehen farbige Buchstaben.",
+    "beispielTr": "Afişte renkli harfler var.",
+    "beispielEn": "The poster has colored letters on it."
   },
   {
     "id": 2599,
@@ -323,9 +323,9 @@
     "id": 1952,
     "tr": "kullanma kılavuzu",
     "en": "instruction manual",
-    "beispiel": "Lesen Sie bitte zuerst die Gebrauchsanweisung.",
-    "beispielTr": "Lütfen önce kullanma kılavuzunu okuyun.",
-    "beispielEn": "Please read the instruction manual first."
+    "beispiel": "Ohne Gebrauchsanweisung verstehe ich die neue Kaffeemaschine nicht.",
+    "beispielTr": "Kullanma kılavuzu olmadan yeni kahve makinesini çözemiyorum.",
+    "beispielEn": "I can't figure out the new coffee machine without the instruction manual."
   },
   {
     "id": 2288,
@@ -339,9 +339,9 @@
     "id": 2197,
     "tr": "hamur topu",
     "en": "dumpling",
-    "beispiel": "Möchten Sie zum Fleisch Kartoffeln oder Knödel?",
-    "beispielTr": "Etin yanına patates mi hamur topu mu istersiniz?",
-    "beispielEn": "Would you like potatoes or dumplings with the meat?"
+    "beispiel": "Zum Braten gibt es bei Oma immer Knödel.",
+    "beispielTr": "Babaannemde rostonun yanında hep hamur topu olur.",
+    "beispielEn": "At Grandma's, there are always dumplings with the roast."
   },
   {
     "id": 2535,
@@ -363,9 +363,9 @@
     "id": 1498,
     "tr": "kadın memur",
     "en": "female civil servant",
-    "beispiel": "Meine Frau ist Beamtin bei der Polizei.",
-    "beispielTr": "Eşim poliste memur.",
-    "beispielEn": "My wife is a civil servant with the police."
+    "beispiel": "Die Beamtin am Schalter hat mir das Formular erklärt.",
+    "beispielTr": "Gişedeki memur hanım bana formu açıkladı.",
+    "beispielEn": "The official at the counter explained the form to me."
   },
   {
     "id": 1898,
@@ -379,9 +379,9 @@
     "id": 1381,
     "tr": "gündelik",
     "en": "everyday",
-    "beispiel": "Das alltägliche Leben ist manchmal ziemlich langweilig.",
-    "beispielTr": "Gündelik hayat bazen epey sıkıcı oluyor.",
-    "beispielEn": "Everyday life is sometimes pretty boring."
+    "beispiel": "Einkaufen und Putzen sind für mich alltägliche Aufgaben.",
+    "beispielTr": "Alışveriş ve temizlik benim için gündelik işler.",
+    "beispielEn": "Shopping and cleaning are everyday chores for me."
   },
   {
     "id": 2035,
@@ -395,8 +395,8 @@
     "id": 1696,
     "tr": "köşe",
     "en": "Austrian word for corner",
-    "beispiel": "Die Apotheke ist gleich ums Eck.",
-    "beispielTr": "Eczane hemen köşede.",
-    "beispielEn": "The pharmacy is just around the corner."
+    "beispiel": "Wir treffen uns beim Café am Eck.",
+    "beispielTr": "Köşedeki kafede buluşuyoruz.",
+    "beispielEn": "We're meeting at the café on the corner."
   }
 ]

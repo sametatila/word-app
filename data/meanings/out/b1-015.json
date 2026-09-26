@@ -11,17 +11,17 @@
     "id": 2931,
     "tr": "sözünü kesmek",
     "en": "to interrupt",
-    "beispiel": "Bitte unterbrich mich nicht, wenn ich spreche.",
-    "beispielTr": "Lütfen konuşurken sözümü kesme.",
-    "beispielEn": "Please don't interrupt me while I'm speaking."
+    "beispiel": "Entschuldige, dass ich dich unterbreche, aber das Taxi ist da.",
+    "beispielTr": "Sözünü kestiğim için kusura bakma ama taksi geldi.",
+    "beispielEn": "Sorry to interrupt you, but the taxi is here."
   },
   {
     "id": 2815,
     "tr": "vadi",
     "en": "valley",
-    "beispiel": "Unser Dorf liegt in einem Tal.",
-    "beispielTr": "Köyümüz bir vadide.",
-    "beispielEn": "Our village lies in a valley."
+    "beispiel": "Vom Gipfel sieht man das ganze Tal mit dem Fluss.",
+    "beispielTr": "Zirveden bütün vadiyi ve nehri görebiliyorsun.",
+    "beispielEn": "From the summit you can see the whole valley with the river."
   },
   {
     "id": 2691,
@@ -43,25 +43,25 @@
     "id": 2537,
     "tr": "kenar",
     "en": "edge",
-    "beispiel": "Wir wohnen am Rand der Stadt.",
-    "beispielTr": "Şehrin kenarında oturuyoruz.",
-    "beispielEn": "We live on the edge of the city."
+    "beispiel": "Stell die Tasse nicht so nah an den Rand.",
+    "beispielTr": "Fincanı kenara bu kadar yakın koyma.",
+    "beispielEn": "Don't put the cup so close to the edge."
   },
   {
     "id": 2958,
     "tr": "veda",
     "en": "farewell",
-    "beispiel": "Der Abschied von meinen Freunden fiel mir schwer.",
-    "beispielTr": "Arkadaşlarıma veda etmek bana zor geldi.",
-    "beispielEn": "Saying goodbye to my friends was hard for me."
+    "beispiel": "Beim Abschied am Flughafen hat meine Mutter geweint.",
+    "beispielTr": "Havalimanındaki vedada annem ağladı.",
+    "beispielEn": "My mother cried when we said farewell at the airport."
   },
   {
     "id": 1533,
     "tr": "ihtiyaç duymak",
     "en": "to require",
-    "beispiel": "Sagen Sie Bescheid, wenn Sie noch etwas benötigen.",
-    "beispielTr": "Başka bir şeye ihtiyacınız olursa haber verin.",
-    "beispielEn": "Let us know if you require anything else."
+    "beispiel": "Für die Anmeldung benötigen Sie einen gültigen Ausweis.",
+    "beispielTr": "Kayıt için geçerli bir kimliğe ihtiyacınız var.",
+    "beispielEn": "You need a valid ID to register."
   },
   {
     "id": 1388,
@@ -75,17 +75,17 @@
     "id": 1512,
     "tr": "başlangıç",
     "en": "beginning",
-    "beispiel": "Zu Beginn der Stunde begrüßt die Lehrerin ihre Schüler.",
-    "beispielTr": "Dersin başında öğretmen öğrencilerini selamlıyor.",
-    "beispielEn": "At the beginning of the lesson the teacher greets her students."
+    "beispiel": "Seit Beginn des Jahres fahre ich mit dem Rad zur Arbeit.",
+    "beispielTr": "Yılın başından beri işe bisikletle gidiyorum.",
+    "beispielEn": "Since the beginning of the year, I've been biking to work."
   },
   {
     "id": 1562,
     "tr": "cezalandırmak",
     "en": "to punish",
-    "beispiel": "Zu schnelles Fahren wird streng bestraft.",
-    "beispielTr": "Aşırı hız ağır şekilde cezalandırılır.",
-    "beispielEn": "Speeding is punished severely."
+    "beispiel": "Die Spieler wurden für ihr schlechtes Benehmen bestraft.",
+    "beispielTr": "Oyuncular kötü davranışları yüzünden cezalandırıldı.",
+    "beispielEn": "The players were punished for their bad behavior."
   },
   {
     "id": 2588,
@@ -99,25 +99,25 @@
     "id": 2321,
     "tr": "marka",
     "en": "brand",
-    "beispiel": "Diese Marke ist bei Jugendlichen sehr beliebt.",
-    "beispielTr": "Bu marka gençler arasında çok popüler.",
-    "beispielEn": "This brand is very popular among young people."
+    "beispiel": "Welche Marke hat dein neues Handy?",
+    "beispielTr": "Yeni telefonun hangi marka?",
+    "beispielEn": "What brand is your new phone?"
   },
   {
     "id": 2089,
     "tr": "kibar",
     "en": "polite",
-    "beispiel": "Unser Nachbar ist immer sehr höflich.",
-    "beispielTr": "Komşumuz her zaman çok kibardır.",
-    "beispielEn": "Our neighbor is always very polite."
+    "beispiel": "Die Verkäuferin hat mir sehr höflich geantwortet.",
+    "beispielTr": "Satış görevlisi bana çok kibar cevap verdi.",
+    "beispielEn": "The saleswoman answered me very politely."
   },
   {
     "id": 2575,
     "tr": "din",
     "en": "religion",
-    "beispiel": "Religion ist für manche Menschen sehr wichtig.",
-    "beispielTr": "Din bazı insanlar için çok önemlidir.",
-    "beispielEn": "Religion is very important to some people."
+    "beispiel": "In unserer Klasse gibt es Kinder mit verschiedener Religion.",
+    "beispielTr": "Sınıfımızda farklı dinlerden çocuklar var.",
+    "beispielEn": "There are children of different religions in our class."
   },
   {
     "id": 3057,
@@ -155,33 +155,33 @@
     "id": 2233,
     "tr": "hemşire",
     "en": "nurse",
-    "beispiel": "Meine Cousine möchte gern Krankenschwester werden.",
-    "beispielTr": "Kuzenim hemşire olmak istiyor.",
-    "beispielEn": "My cousin wants to become a nurse."
+    "beispiel": "Die Krankenschwester misst mir jeden Morgen das Fieber.",
+    "beispielTr": "Hemşire her sabah ateşimi ölçüyor.",
+    "beispielEn": "The nurse takes my temperature every morning."
   },
   {
     "id": 2810,
     "tr": "sembol",
     "en": "symbol",
-    "beispiel": "Das Herz ist ein Symbol für die Liebe.",
-    "beispielTr": "Kalp, aşkın sembolüdür.",
-    "beispielEn": "The heart is a symbol of love."
+    "beispiel": "Die Taube gilt in vielen Ländern als Symbol des Friedens.",
+    "beispielTr": "Güvercin birçok ülkede barışın sembolü sayılır.",
+    "beispielEn": "In many countries the dove is seen as a symbol of peace."
   },
   {
     "id": 1846,
     "tr": "araç",
     "en": "vehicle",
-    "beispiel": "Wem gehört das Fahrzeug?",
-    "beispielTr": "Bu araç kimin?",
-    "beispielEn": "Whose vehicle is this?"
+    "beispiel": "Vor der Einfahrt steht schon wieder ein fremdes Fahrzeug.",
+    "beispielTr": "Garaj girişinin önünde yine yabancı bir araç duruyor.",
+    "beispielEn": "There's a strange vehicle parked in front of the driveway again."
   },
   {
     "id": 2877,
     "tr": "damla",
     "en": "drops",
-    "beispiel": "Hast du die Tropfen schon genommen?",
-    "beispielTr": "Damlaları aldın mı?",
-    "beispielEn": "Have you already taken the drops?"
+    "beispiel": "Für die Augen soll ich morgens und abends Tropfen nehmen.",
+    "beispielTr": "Gözlerim için sabah akşam damla kullanmam gerekiyor.",
+    "beispielEn": "I'm supposed to use drops for my eyes morning and evening."
   },
   {
     "id": 1372,
@@ -195,9 +195,9 @@
     "id": 3178,
     "tr": "izleyici",
     "en": "viewer",
-    "beispiel": "Liebe Zuschauer, wir wünschen Ihnen gute Unterhaltung.",
-    "beispielTr": "Sevgili izleyiciler, iyi seyirler dileriz.",
-    "beispielEn": "Dear viewers, we hope you enjoy the show."
+    "beispiel": "Nach dem Tor sprangen alle Zuschauer von ihren Plätzen auf.",
+    "beispielTr": "Golden sonra bütün izleyiciler yerlerinden fırladı.",
+    "beispielEn": "After the goal all the viewers jumped up from their seats."
   },
   {
     "id": 1710,
@@ -211,9 +211,9 @@
     "id": 1524,
     "tr": "ısırmak",
     "en": "to bite",
-    "beispiel": "Pass auf, dass dich der Hund nicht beißt!",
-    "beispielTr": "Dikkat et, köpek seni ısırmasın!",
-    "beispielEn": "Watch out, don't let the dog bite you!"
+    "beispiel": "Im Garten hat mich eine Mücke ins Bein gebissen.",
+    "beispielTr": "Bahçede bir sivrisinek bacağımı ısırdı.",
+    "beispielEn": "A mosquito bit me on the leg in the garden."
   },
   {
     "id": 2744,
@@ -227,17 +227,17 @@
     "id": 2225,
     "tr": "kostüm",
     "en": "costume",
-    "beispiel": "Im Film tragen die Leute bunte Kostüme.",
-    "beispielTr": "Filmde insanlar rengârenk kostümler giyiyor.",
-    "beispielEn": "In the film the people wear colorful costumes."
+    "beispiel": "Zum Fasching geht mein Sohn im Kostüm eines Piraten.",
+    "beispielTr": "Oğlum karnavala korsan kostümüyle gidiyor.",
+    "beispielEn": "My son is going to the carnival in a pirate costume."
   },
   {
     "id": 2027,
     "tr": "selamlamak",
     "en": "to greet",
-    "beispiel": "Wer war die Frau, die du eben gegrüßt hast?",
-    "beispielTr": "Az önce selam verdiğin kadın kimdi?",
-    "beispielEn": "Who was the woman you just greeted?"
+    "beispiel": "Grüß deine Eltern schön von mir!",
+    "beispielTr": "Annene babana benden selam söyle!",
+    "beispielEn": "Say hi to your parents for me!"
   },
   {
     "id": 1760,
@@ -267,9 +267,9 @@
     "id": 2241,
     "tr": "kriz",
     "en": "crisis",
-    "beispiel": "Die Wirtschaft steckt in einer schweren Krise.",
-    "beispielTr": "Ekonomi ağır bir krizin içinde.",
-    "beispielEn": "The economy is in a serious crisis."
+    "beispiel": "In der Krise haben viele Firmen Mitarbeiter entlassen.",
+    "beispielTr": "Kriz döneminde birçok firma işçi çıkardı.",
+    "beispielEn": "During the crisis, many companies laid off workers."
   },
   {
     "id": 2996,
@@ -307,9 +307,9 @@
     "id": 2407,
     "tr": "sis",
     "en": "fog",
-    "beispiel": "Fahren Sie bei Nebel besonders vorsichtig!",
-    "beispielTr": "Siste özellikle dikkatli sürün!",
-    "beispielEn": "Drive especially carefully in fog!"
+    "beispiel": "Am Morgen lag dichter Nebel über dem See.",
+    "beispielTr": "Sabah gölün üzerinde yoğun bir sis vardı.",
+    "beispielEn": "In the morning, thick fog lay over the lake."
   },
   {
     "id": 2151,
@@ -323,17 +323,17 @@
     "id": 1571,
     "tr": "aldatmak",
     "en": "to cheat",
-    "beispiel": "Ich würde meine Familie niemals betrügen.",
-    "beispielTr": "Ailemi asla aldatmam.",
-    "beispielEn": "I would never deceive my family."
+    "beispiel": "Der Verkäufer hat uns beim Gebrauchtwagen betrogen.",
+    "beispielTr": "Satıcı ikinci el arabada bizi kandırdı.",
+    "beispielEn": "The seller cheated us on the used car."
   },
   {
     "id": 2007,
     "tr": "kaygan",
     "en": "slippery",
-    "beispiel": "Fahr vorsichtig, die Straßen sind glatt!",
-    "beispielTr": "Dikkatli sür, yollar kaygan!",
-    "beispielEn": "Drive carefully, the roads are slippery!"
+    "beispiel": "Vorsicht, die Treppe ist nach dem Putzen glatt!",
+    "beispielTr": "Dikkat, merdiven silindikten sonra kaygan!",
+    "beispielEn": "Careful, the stairs are slippery after being mopped!"
   },
   {
     "id": 1483,
@@ -379,9 +379,9 @@
     "id": 2440,
     "tr": "halka açık",
     "en": "public",
-    "beispiel": "In öffentlichen Gebäuden darf man nicht rauchen.",
-    "beispielTr": "Halka açık binalarda sigara içmek yasak.",
-    "beispielEn": "Smoking is forbidden in public buildings."
+    "beispiel": "Der Park ist öffentlich und rund um die Uhr geöffnet.",
+    "beispielTr": "Park halka açık ve günün her saati açık.",
+    "beispielEn": "The park is public and open around the clock."
   },
   {
     "id": 2177,

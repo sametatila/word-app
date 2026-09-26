@@ -187,17 +187,17 @@
   "id": 8363,
   "tr": "elektrikli süpürge",
   "en": "vacuum cleaner",
-  "beispiel": "Der Staubsauger ist leider kaputt.",
-  "beispielTr": "Elektrikli süpürge maalesef bozuk.",
-  "beispielEn": "The vacuum cleaner is unfortunately broken."
+  "beispiel": "Der neue Staubsauger ist viel leiser als der alte.",
+  "beispielTr": "Yeni elektrikli süpürge eskisinden çok daha sessiz.",
+  "beispielEn": "The new vacuum cleaner is much quieter than the old one."
  },
  {
   "id": 8364,
   "tr": "çamaşır makinesi",
   "en": "washing machine",
-  "beispiel": "Die Waschmaschine steht im Keller.",
-  "beispielTr": "Çamaşır makinesi bodrumda duruyor.",
-  "beispielEn": "The washing machine is in the basement."
+  "beispiel": "Kannst du bitte die Wäsche aus der Waschmaschine holen?",
+  "beispielTr": "Çamaşırları makineden alabilir misin lütfen?",
+  "beispielEn": "Can you please take the laundry out of the washing machine?"
  },
  {
   "id": 8365,
@@ -331,9 +331,9 @@
   "id": 8381,
   "tr": "komodin",
   "en": "nightstand",
-  "beispiel": "Meine Brille liegt auf dem Nachttisch.",
-  "beispielTr": "Gözlüğüm komodinin üstünde duruyor.",
-  "beispielEn": "My glasses are on the nightstand."
+  "beispiel": "Neben meinem Bett steht ein kleiner Nachttisch aus Holz.",
+  "beispielTr": "Yatağımın yanında ahşap küçük bir komodin var.",
+  "beispielEn": "There's a small wooden nightstand next to my bed."
  },
  {
   "id": 8382,
@@ -387,9 +387,9 @@
   "id": 8388,
   "tr": "ışık düğmesi",
   "en": "light switch",
-  "beispiel": "Der Lichtschalter ist links neben der Tür.",
-  "beispielTr": "Işık düğmesi kapının solunda.",
-  "beispielEn": "The light switch is to the left of the door."
+  "beispiel": "Ich finde im Dunkeln den Lichtschalter nicht.",
+  "beispielTr": "Karanlıkta ışık düğmesini bulamıyorum.",
+  "beispielEn": "I can't find the light switch in the dark."
  },
  {
   "id": 8389,

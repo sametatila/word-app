@@ -22,8 +22,8 @@
    "niveau": "C1",
    "formen": "thematisiert, hat thematisiert",
    "currentTr": "konu edinmek, ele almak",
-   "currentBeispiel": "Der Vortrag thematisiert die ethischen Grenzen der Forschung.",
-   "currentBeispielTr": "Konuşma, araştırmanın etik sınırlarını konu ediniyor."
+   "currentBeispiel": "Der Film thematisiert die Armut in den Vorstädten.",
+   "currentBeispielTr": "Film, banliyölerdeki yoksulluğu konu ediniyor."
   },
   {
    "id": 3514,
@@ -33,7 +33,7 @@
    "formen": "relativiert, hat relativiert",
    "currentTr": "göreceleştirmek",
    "currentBeispiel": "Neue Befunde relativieren die bisherige Einschätzung erheblich.",
-   "currentBeispielTr": "Yeni bulgular, önceki değerlendirmeyi büyük ölçüde göreceleştiriyor."
+   "currentBeispielTr": "Yeni bulgular önceki değerlendirmeyi büyük ölçüde göreceleştiriyor."
   },
   {
    "id": 3515,
@@ -43,7 +43,7 @@
    "formen": "verallgemeinert, hat verallgemeinert",
    "currentTr": "genellemek",
    "currentBeispiel": "Man darf Einzelfälle nicht vorschnell verallgemeinern.",
-   "currentBeispielTr": "Tekil vakalar aceleyle genellenmemeli."
+   "currentBeispielTr": "Tek tek olayları aceleyle genellememek gerekir."
   },
   {
    "id": 3517,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "konkretisiert, hat konkretisiert",
    "currentTr": "somutlaştırmak, netleştirmek",
-   "currentBeispiel": "Die vage Fragestellung wurde im Verlauf konkretisiert.",
-   "currentBeispielTr": "Muğlak araştırma sorusu süreç içinde netleştirildi.",
+   "currentBeispiel": "Können Sie Ihren Vorschlag bitte etwas konkretisieren?",
+   "currentBeispielTr": "Önerinizi biraz somutlaştırabilir misiniz?",
    "overlapping": [
     "verkörpern (C1)"
    ]
@@ -65,8 +65,8 @@
    "niveau": "C1",
    "formen": "paraphrasiert, hat paraphrasiert",
    "currentTr": "başka sözcüklerle ifade etmek",
-   "currentBeispiel": "In der Zusammenfassung wird der Originaltext paraphrasiert.",
-   "currentBeispielTr": "Özet bölümünde özgün metin başka sözcüklerle aktarılıyor."
+   "currentBeispiel": "Der Student paraphrasierte die Textstelle in eigenen Worten.",
+   "currentBeispielTr": "Öğrenci, o bölümü kendi sözcükleriyle anlattı."
   },
   {
    "id": 3521,
@@ -75,8 +75,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dolayısıyla, bu nedenle",
-   "currentBeispiel": "Die Stichprobe war klein, mithin sind die Ergebnisse nur bedingt aussagekräftig.",
-   "currentBeispielTr": "Örneklem küçüktü; dolayısıyla sonuçlar ancak sınırlı ölçüde anlamlı.",
+   "currentBeispiel": "Die Stichprobe war klein, mithin bleiben die Ergebnisse vorläufig.",
+   "currentBeispielTr": "Örneklem küçüktü, dolayısıyla sonuçlar şimdilik geçici.",
    "overlapping": [
     "folglich (C1)"
    ]
@@ -88,8 +88,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bunun sonucunda, bu yüzden",
-   "currentBeispiel": "Die Stichprobe war verzerrt, infolgedessen sind die Resultate fragwürdig.",
-   "currentBeispielTr": "Örneklem çarpıktı; bunun sonucunda bulgular tartışmalı."
+   "currentBeispiel": "Der Zug hatte Verspätung, infolgedessen verpasste ich den Anschluss.",
+   "currentBeispielTr": "Tren rötar yaptı, bunun sonucunda aktarmayı kaçırdım."
   },
   {
    "id": 3532,
@@ -98,8 +98,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dayanaklı, sağlam temelli",
-   "currentBeispiel": "Die Autorin argumentiert fundiert und nachvollziehbar.",
-   "currentBeispielTr": "Yazar sağlam temelli ve izlenebilir biçimde tartışıyor."
+   "currentBeispiel": "Seine Einwände waren fundiert und gut belegt.",
+   "currentBeispielTr": "İtirazları sağlam temelliydi ve iyi belgelenmişti."
   },
   {
    "id": 3533,
@@ -108,8 +108,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ampirik, gözleme dayalı",
-   "currentBeispiel": "Die Aussage stützt sich auf empirisch erhobene Daten.",
-   "currentBeispielTr": "İddia, deneysel olarak toplanmış verilere dayanıyor."
+   "currentBeispiel": "Die Behauptung ist empirisch gut belegt.",
+   "currentBeispielTr": "Bu iddia ampirik olarak iyi belgelenmiş."
   },
   {
    "id": 3534,
@@ -118,8 +118,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "varsayılan, tahmin edilen",
-   "currentBeispiel": "Der mutmaßliche Zusammenhang konnte nicht bestätigt werden.",
-   "currentBeispielTr": "Öne sürülen bağlantı doğrulanamadı."
+   "currentBeispiel": "Der mutmaßliche Zusammenhang ließ sich nicht bestätigen.",
+   "currentBeispielTr": "Varsayılan bağlantı doğrulanamadı."
   },
   {
    "id": 3540,
@@ -128,8 +128,8 @@
    "niveau": "C1",
    "formen": "Verjährungen",
    "currentTr": "zamanaşımı",
-   "currentBeispiel": "Der Anspruch unterliegt der dreijährigen Verjährung.",
-   "currentBeispielTr": "Talep, üç yıllık zamanaşımına tabidir."
+   "currentBeispiel": "Nach drei Jahren tritt die Verjährung ein.",
+   "currentBeispielTr": "Üç yıl sonra zamanaşımı devreye girer."
   },
   {
    "id": 3548,
@@ -139,7 +139,7 @@
    "formen": "Straftatbestände",
    "currentTr": "suç unsuru",
    "currentBeispiel": "Der Straftatbestand des Betrugs war eindeutig erfüllt.",
-   "currentBeispielTr": "Dolandırıcılık suçunun unsurları açıkça oluşmuştu."
+   "currentBeispielTr": "Dolandırıcılığın suç unsurları açıkça oluşmuştu."
   },
   {
    "id": 3555,
@@ -148,8 +148,8 @@
    "niveau": "C1",
    "formen": "Verwaltungsvorschriften",
    "currentTr": "idari talimat",
-   "currentBeispiel": "Die Verwaltungsvorschrift konkretisiert das Gesetz.",
-   "currentBeispielTr": "İdari talimat, yasayı somutlaştırıyor."
+   "currentBeispiel": "Die neue Verwaltungsvorschrift regelt die Bearbeitung der Anträge.",
+   "currentBeispielTr": "Yeni idari talimat, başvuruların işlenmesini düzenliyor."
   },
   {
    "id": 3559,
@@ -158,8 +158,8 @@
    "niveau": "C1",
    "formen": "Ermächtigungen",
    "currentTr": "yetkilendirme, izin",
-   "currentBeispiel": "Das Gesetz enthält eine Ermächtigung zum Erlass von Verordnungen.",
-   "currentBeispielTr": "Yasa, yönetmelik çıkarma yetkisi içeriyor."
+   "currentBeispiel": "Ohne ausdrückliche Ermächtigung darf er nichts unterschreiben.",
+   "currentBeispielTr": "Açık bir yetkilendirme olmadan hiçbir şey imzalayamaz."
   },
   {
    "id": 3560,
@@ -168,8 +168,8 @@
    "niveau": "C1",
    "formen": "Amtsträger",
    "currentTr": "kamu görevlisi",
-   "currentBeispiel": "Amtsträger unterliegen einer besonderen Verschwiegenheitspflicht.",
-   "currentBeispielTr": "Kamu görevlileri özel bir sır saklama yükümlülüğüne tabidir."
+   "currentBeispiel": "Als Amtsträger darf er keine Geschenke annehmen.",
+   "currentBeispielTr": "Kamu görevlisi olarak hediye kabul edemez."
   },
   {
    "id": 3562,
@@ -178,8 +178,8 @@
    "niveau": "C1",
    "formen": "Kompetenzverteilungen",
    "currentTr": "yetki dağılımı",
-   "currentBeispiel": "Die Kompetenzverteilung zwischen Bund und Ländern ist komplex.",
-   "currentBeispielTr": "Federal devletle eyaletler arasındaki yetki dağılımı karmaşıktır."
+   "currentBeispiel": "Die Kompetenzverteilung zwischen Bund und Ländern sorgt für Streit.",
+   "currentBeispielTr": "Federal devletle eyaletler arasındaki yetki dağılımı tartışma yaratıyor."
   },
   {
    "id": 3563,
@@ -198,8 +198,8 @@
    "niveau": "C1",
    "formen": "bevollmächtigt, hat bevollmächtigt",
    "currentTr": "yetkilendirmek",
-   "currentBeispiel": "Der Vorstand bevollmächtigte den Geschäftsführer zur Unterzeichnung.",
-   "currentBeispielTr": "Yönetim kurulu, genel müdürü imza atmaya yetkilendirdi.",
+   "currentBeispiel": "Sie bevollmächtigte ihren Sohn zum Verkauf des Hauses.",
+   "currentBeispielTr": "Evi satması için oğluna vekâlet verdi.",
    "overlapping": [
     "ermächtigen (C1)"
    ]
@@ -211,8 +211,8 @@
    "niveau": "C1",
    "formen": "Ausschlussfristen",
    "currentTr": "hak düşürücü süre",
-   "currentBeispiel": "Nach Ablauf der Ausschlussfrist ist der Anspruch erloschen.",
-   "currentBeispielTr": "Hak düşürücü süre dolunca talep hakkı ortadan kalktı."
+   "currentBeispiel": "Die Ausschlussfrist für den Antrag endet am Freitag.",
+   "currentBeispielTr": "Başvuru için hak düşürücü süre cuma günü doluyor."
   },
   {
    "id": 3570,
@@ -221,8 +221,8 @@
    "niveau": "C1",
    "formen": "Rechtsbehelfsbelehrungen",
    "currentTr": "itiraz yolları bildirimi",
-   "currentBeispiel": "Ohne Rechtsbehelfsbelehrung beginnt die Frist nicht zu laufen.",
-   "currentBeispielTr": "İtiraz yolları bildirimi yapılmadan süre işlemeye başlamaz."
+   "currentBeispiel": "Dem Bescheid lag keine Rechtsbehelfsbelehrung bei.",
+   "currentBeispielTr": "Karara itiraz yolları bildirimi eklenmemişti."
   },
   {
    "id": 3571,
@@ -241,8 +241,8 @@
    "niveau": "C1",
    "formen": "Aktenzeichen",
    "currentTr": "dosya numarası",
-   "currentBeispiel": "Bitte geben Sie das Aktenzeichen in Ihrer Korrespondenz an.",
-   "currentBeispielTr": "Yazışmalarınızda lütfen dosya numarasını belirtin."
+   "currentBeispiel": "Bitte geben Sie bei Rückfragen das Aktenzeichen an.",
+   "currentBeispielTr": "Sorularınızda lütfen dosya numarasını belirtin."
   },
   {
    "id": 3576,
@@ -251,8 +251,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şekle bağlı olmayan, biçim şartı aranmayan",
-   "currentBeispiel": "Ein formloser Antrag genügt in diesem besonderen Fall.",
-   "currentBeispielTr": "Bu özel durumda şekle bağlı olmayan bir başvuru yeterli."
+   "currentBeispiel": "Ein formloser Antrag per E-Mail genügt völlig.",
+   "currentBeispielTr": "E-posta ile şekle bağlı olmayan bir başvuru yeterli."
   },
   {
    "id": 3577,
@@ -261,8 +261,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hukuken bağlayıcı",
-   "currentBeispiel": "Erst die Unterschrift macht das Dokument rechtsverbindlich.",
-   "currentBeispielTr": "Belgeyi hukuken bağlayıcı kılan ancak imzadır."
+   "currentBeispiel": "Erst die Unterschrift macht den Vertrag rechtsverbindlich.",
+   "currentBeispielTr": "Sözleşmeyi hukuken bağlayıcı kılan şey imzadır."
   },
   {
    "id": 3578,
@@ -271,8 +271,8 @@
    "niveau": "C1",
    "formen": "Staatshaushalte",
    "currentTr": "devlet bütçesi",
-   "currentBeispiel": "Der Staatshaushalt wies im vergangenen Jahr ein hohes Defizit auf.",
-   "currentBeispielTr": "Devlet bütçesi geçen yıl yüksek bir açık verdi."
+   "currentBeispiel": "Der Staatshaushalt wies letztes Jahr ein großes Defizit auf.",
+   "currentBeispielTr": "Devlet bütçesi geçen yıl büyük bir açık verdi."
   },
   {
    "id": 3580,
@@ -281,8 +281,8 @@
    "niveau": "C1",
    "formen": "Subventionen",
    "currentTr": "devlet desteği, sübvansiyon",
-   "currentBeispiel": "Die Subventionen für die heimische Industrie wurden gekürzt.",
-   "currentBeispielTr": "Yerli sanayiye verilen devlet destekleri kısıldı."
+   "currentBeispiel": "Die Subventionen für die Landwirtschaft wurden gekürzt.",
+   "currentBeispielTr": "Tarıma verilen sübvansiyonlar kısıldı."
   },
   {
    "id": 3581,
@@ -291,8 +291,8 @@
    "niveau": "C1",
    "formen": "Konjunkturpolitiken",
    "currentTr": "konjonktür politikası",
-   "currentBeispiel": "Die Konjunkturpolitik zielt auf die Stabilisierung der Wirtschaft ab.",
-   "currentBeispielTr": "Konjonktür politikası, ekonomiyi istikrara kavuşturmayı amaçlıyor."
+   "currentBeispiel": "Mit ihrer Konjunkturpolitik will die Regierung die Nachfrage stärken.",
+   "currentBeispielTr": "Hükümet, konjonktür politikasıyla talebi güçlendirmek istiyor."
   },
   {
    "id": 3582,
@@ -301,8 +301,8 @@
    "niveau": "C1",
    "formen": "Geldpolitiken",
    "currentTr": "para politikası",
-   "currentBeispiel": "Die Geldpolitik der Notenbank beeinflusst maßgeblich die Zinssätze.",
-   "currentBeispielTr": "Merkez bankasının para politikası faiz oranlarını belirleyici ölçüde etkiler."
+   "currentBeispiel": "Die Geldpolitik der Notenbank hält die Zinsen niedrig.",
+   "currentBeispielTr": "Merkez bankasının para politikası faizleri düşük tutuyor."
   },
   {
    "id": 3583,
@@ -311,7 +311,7 @@
    "niveau": "C1",
    "formen": "Leitzinsen",
    "currentTr": "politika faizi",
-   "currentBeispiel": "Die Notenbank erhöhte den Leitzins um einen halben Prozentpunkt.",
+   "currentBeispiel": "Die Notenbank erhöhte den Leitzins um einen halben Punkt.",
    "currentBeispielTr": "Merkez bankası politika faizini yarım puan artırdı."
   },
   {
@@ -321,8 +321,8 @@
    "niveau": "C1",
    "formen": "Staatsverschuldungen",
    "currentTr": "kamu borcu",
-   "currentBeispiel": "Die Staatsverschuldung erreichte einen historischen Höchststand.",
-   "currentBeispielTr": "Kamu borcu tarihi bir zirveye ulaştı."
+   "currentBeispiel": "Die Staatsverschuldung stieg im letzten Jahr deutlich an.",
+   "currentBeispielTr": "Kamu borcu geçen yıl belirgin biçimde arttı."
   },
   {
    "id": 3585,
@@ -331,8 +331,8 @@
    "niveau": "C1",
    "formen": "Wirtschaftswachstum",
    "currentTr": "ekonomik büyüme",
-   "currentBeispiel": "Das Wirtschaftswachstum verlangsamte sich im letzten Jahr merklich.",
-   "currentBeispielTr": "Ekonomik büyüme geçen yıl gözle görülür biçimde yavaşladı."
+   "currentBeispiel": "Das Wirtschaftswachstum hat sich im letzten Quartal verlangsamt.",
+   "currentBeispielTr": "Ekonomik büyüme geçen çeyrekte yavaşladı."
   },
   {
    "id": 3586,
@@ -341,8 +341,8 @@
    "niveau": "C1",
    "formen": "Deregulierungen",
    "currentTr": "deregülasyon",
-   "currentBeispiel": "Die Deregulierung des Marktes führte zu mehr Wettbewerb.",
-   "currentBeispielTr": "Piyasanın deregülasyonu rekabeti artırdı."
+   "currentBeispiel": "Die Deregulierung des Strommarktes brachte mehr Wettbewerb.",
+   "currentBeispielTr": "Elektrik piyasasının deregülasyonu rekabeti artırdı."
   },
   {
    "id": 3587,
@@ -351,8 +351,8 @@
    "niveau": "C1",
    "formen": "Marktwirtschaften",
    "currentTr": "piyasa ekonomisi",
-   "currentBeispiel": "Die soziale Marktwirtschaft verbindet Wettbewerb mit sozialer Absicherung.",
-   "currentBeispielTr": "Sosyal piyasa ekonomisi, rekabeti sosyal güvenceyle birleştirir."
+   "currentBeispiel": "Viele Länder Osteuropas führten damals die Marktwirtschaft ein.",
+   "currentBeispielTr": "Doğu Avrupa ülkelerinin çoğu o dönemde piyasa ekonomisine geçti."
   },
   {
    "id": 3588,
@@ -361,8 +361,8 @@
    "niveau": "C1",
    "formen": "Strukturwandel",
    "currentTr": "yapısal değişim",
-   "currentBeispiel": "Der Strukturwandel trifft besonders die alten Industrieregionen.",
-   "currentBeispielTr": "Yapısal değişim en çok eski sanayi bölgelerini vuruyor."
+   "currentBeispiel": "Der Strukturwandel trifft die alten Industrieregionen besonders hart.",
+   "currentBeispielTr": "Yapısal değişim eski sanayi bölgelerini özellikle sert vuruyor."
   },
   {
    "id": 3589,
@@ -371,8 +371,8 @@
    "niveau": "C1",
    "formen": "Kaufkräfte",
    "currentTr": "satın alma gücü",
-   "currentBeispiel": "Die steigenden Preise mindern spürbar die Kaufkraft der Verbraucher.",
-   "currentBeispielTr": "Artan fiyatlar tüketicilerin satın alma gücünü hissedilir ölçüde azaltıyor."
+   "currentBeispiel": "Die hohe Inflation frisst die Kaufkraft der Familien auf.",
+   "currentBeispielTr": "Yüksek enflasyon ailelerin satın alma gücünü eritiyor."
   },
   {
    "id": 3590,
@@ -381,8 +381,8 @@
    "niveau": "C1",
    "formen": "Bruttoinlandsprodukte",
    "currentTr": "gayri safi yurtiçi hasıla",
-   "currentBeispiel": "Das Bruttoinlandsprodukt wuchs im Vergleich zum Vorjahr deutlich.",
-   "currentBeispielTr": "Gayri safi yurtiçi hasıla bir önceki yıla göre belirgin arttı."
+   "currentBeispiel": "Das Bruttoinlandsprodukt wuchs im letzten Jahr um zwei Prozent.",
+   "currentBeispielTr": "Gayri safi yurtiçi hasıla geçen yıl yüzde iki büyüdü."
   },
   {
    "id": 3591,
@@ -391,8 +391,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "mali, maliyeye ilişkin",
-   "currentBeispiel": "Die fiskalische Disziplin der Regierung wurde international gelobt.",
-   "currentBeispielTr": "Hükümetin mali disiplini uluslararası alanda övüldü.",
+   "currentBeispiel": "Aus fiskalischer Sicht war die Reform ein Erfolg.",
+   "currentBeispielTr": "Mali açıdan bakıldığında reform bir başarıydı.",
    "overlapping": [
     "finanziell (B1)"
    ]
@@ -404,8 +404,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "konjonktürel",
-   "currentBeispiel": "Der Rückgang der Nachfrage war rein konjunkturell bedingt.",
-   "currentBeispielTr": "Talepteki düşüş tamamen konjonktürel nedenlerden kaynaklanıyordu."
+   "currentBeispiel": "Der Auftragsrückgang ist rein konjunkturell bedingt.",
+   "currentBeispielTr": "Siparişlerdeki düşüş tamamen konjonktürel nedenlerden kaynaklanıyor."
   },
   {
    "id": 3598,
@@ -414,8 +414,8 @@
    "niveau": "C1",
    "formen": "Kuratorien",
    "currentTr": "mütevelli heyeti, yönetim kurulu",
-   "currentBeispiel": "Das Kuratorium entscheidet über die Vergabe der Fördermittel.",
-   "currentBeispielTr": "Mütevelli heyeti, teşvik fonlarının dağıtımına karar veriyor."
+   "currentBeispiel": "Das Kuratorium entscheidet über die Vergabe der Stipendien.",
+   "currentBeispielTr": "Mütevelli heyeti, bursların dağıtımına karar veriyor."
   },
   {
    "id": 3599,
@@ -424,8 +424,8 @@
    "niveau": "C1",
    "formen": "Körperschaften",
    "currentTr": "tüzel kişilik, kurum",
-   "currentBeispiel": "Die Körperschaft des öffentlichen Rechts genießt besondere Rechte.",
-   "currentBeispielTr": "Kamu hukuku tüzel kişiliği özel haklardan yararlanır."
+   "currentBeispiel": "Die Universität ist eine Körperschaft des öffentlichen Rechts.",
+   "currentBeispielTr": "Üniversite, kamu hukuku tüzel kişiliğidir."
   },
   {
    "id": 3601,
@@ -434,8 +434,8 @@
    "niveau": "C1",
    "formen": "Amtsinhaber",
    "currentTr": "makam sahibi, görevdeki kişi",
-   "currentBeispiel": "Der Amtsinhaber wurde für eine weitere Amtszeit bestätigt.",
-   "currentBeispielTr": "Görevdeki isim bir dönem daha görev yapmak üzere yeniden seçildi."
+   "currentBeispiel": "Der Amtsinhaber tritt bei der Wahl erneut an.",
+   "currentBeispielTr": "Görevdeki kişi seçimde yeniden aday oluyor."
   },
   {
    "id": 3602,
@@ -444,8 +444,8 @@
    "niveau": "C1",
    "formen": "Selbstverwaltungen",
    "currentTr": "özyönetim",
-   "currentBeispiel": "Die kommunale Selbstverwaltung ist im Grundgesetz verankert.",
-   "currentBeispielTr": "Yerel özyönetim anayasada güvence altına alınmıştır."
+   "currentBeispiel": "Die Gemeinden wehren sich gegen Eingriffe in ihre Selbstverwaltung.",
+   "currentBeispielTr": "Belediyeler özyönetimlerine yapılan müdahalelere karşı çıkıyor."
   },
   {
    "id": 3606,
@@ -454,8 +454,8 @@
    "niveau": "C1",
    "formen": "Doktrinen",
    "currentTr": "doktrin, öğreti",
-   "currentBeispiel": "Die philosophische Doktrin wurde von Generationen weitergegeben.",
-   "currentBeispielTr": "Bu felsefi öğreti kuşaktan kuşağa aktarıldı."
+   "currentBeispiel": "Er hält bis heute an dieser politischen Doktrin fest.",
+   "currentBeispielTr": "Bugün hâlâ bu siyasi öğretiye bağlı kalıyor."
   },
   {
    "id": 3608,
@@ -464,8 +464,8 @@
    "niveau": "C1",
    "formen": "Avantgarden",
    "currentTr": "avangart, öncü sanat akımı",
-   "currentBeispiel": "Die Avantgarde brach bewusst mit den ästhetischen Konventionen.",
-   "currentBeispielTr": "Avangard, estetik kalıplarla bilinçli olarak bağını kopardı.",
+   "currentBeispiel": "Die Avantgarde brach damals mit allen ästhetischen Regeln.",
+   "currentBeispielTr": "Avangart, o dönemde bütün estetik kuralları yıktı.",
    "overlapping": [
     "avantgardistisch (C1)"
    ]
@@ -477,8 +477,8 @@
    "niveau": "C1",
    "formen": "Kanons",
    "currentTr": "kanon, klasikler listesi",
-   "currentBeispiel": "Der literarische Kanon wird ständig neu verhandelt und erweitert.",
-   "currentBeispielTr": "Edebi kanon sürekli yeniden tartışılıyor ve genişletiliyor."
+   "currentBeispiel": "Frauen fehlen bis heute im literarischen Kanon.",
+   "currentBeispielTr": "Kadınlar bugün hâlâ edebi kanonda yer almıyor."
   },
   {
    "id": 3610,
@@ -487,8 +487,8 @@
    "niveau": "C1",
    "formen": "Rezensionen",
    "currentTr": "eleştiri yazısı, tanıtım yazısı",
-   "currentBeispiel": "Die Rezension lobte die stilistische Finesse des Romans.",
-   "currentBeispielTr": "Eleştiri yazısı, romanın üslup inceliğini övüyordu."
+   "currentBeispiel": "Die Rezension in der Zeitung hat dem Roman geschadet.",
+   "currentBeispielTr": "Gazetedeki eleştiri yazısı romana zarar verdi."
   },
   {
    "id": 3611,
@@ -497,8 +497,8 @@
    "niveau": "C1",
    "formen": "Essayisten",
    "currentTr": "deneme yazarı",
-   "currentBeispiel": "Der Essayist beleuchtet gesellschaftliche Fragen mit scharfem Verstand.",
-   "currentBeispielTr": "Deneme yazarı toplumsal meseleleri keskin bir zekâyla ele alıyor."
+   "currentBeispiel": "Als Essayist schreibt er über Politik und Kunst.",
+   "currentBeispielTr": "Deneme yazarı olarak siyaset ve sanat üzerine yazıyor."
   },
   {
    "id": 3616,
@@ -507,8 +507,8 @@
    "niveau": "C1",
    "formen": "Novellen",
    "currentTr": "uzun hikaye, novella",
-   "currentBeispiel": "Die Novelle konzentriert sich auf ein einziges dramatisches Ereignis.",
-   "currentBeispielTr": "Novella, tek bir dramatik olaya odaklanır."
+   "currentBeispiel": "Die Novelle erzählt die Geschichte einer unglücklichen Ehe.",
+   "currentBeispielTr": "Uzun öykü, mutsuz bir evliliğin hikâyesini anlatıyor."
   },
   {
    "id": 3617,
@@ -517,8 +517,8 @@
    "niveau": "C1",
    "formen": "Erzählperspektiven",
    "currentTr": "anlatı bakış açısı",
-   "currentBeispiel": "Die Erzählperspektive wechselt mehrfach zwischen den Figuren.",
-   "currentBeispielTr": "Anlatı bakış açısı karakterler arasında birkaç kez değişiyor."
+   "currentBeispiel": "Die Erzählperspektive wechselt in jedem Kapitel.",
+   "currentBeispielTr": "Anlatı bakış açısı her bölümde değişiyor."
   }
  ]
 }

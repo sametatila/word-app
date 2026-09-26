@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "hat beschleunigt",
    "currentTr": "hızlandırmak",
-   "currentBeispiel": "Die digitale Ablage hat die Bearbeitung spürbar beschleunigt.",
-   "currentBeispielTr": "Dijital dosyalama işlem sürecini gözle görülür şekilde hızlandırdı.",
+   "currentBeispiel": "Die neue Software hat die Bearbeitung deutlich beschleunigt.",
+   "currentBeispielTr": "Yeni yazılım işlemleri belirgin biçimde hızlandırdı.",
    "overlapping": [
     "ankurbeln (B2)"
    ]
@@ -32,8 +32,8 @@
    "niveau": "B2",
    "formen": "hat durchgeführt",
    "currentTr": "gerçekleştirmek, yürütmek",
-   "currentBeispiel": "Die Schulung wird in zwei Gruppen durchgeführt.",
-   "currentBeispielTr": "Eğitim iki grup hâlinde gerçekleştirilecek.",
+   "currentBeispiel": "Die Untersuchung wird von einem unabhängigen Labor durchgeführt.",
+   "currentBeispielTr": "İnceleme bağımsız bir laboratuvar tarafından yürütülüyor.",
    "overlapping": [
     "realisieren (B1)",
     "verwirklichen (B2)"
@@ -46,8 +46,8 @@
    "niveau": "B2",
    "formen": "hat überwacht",
    "currentTr": "denetlemek, izlemek",
-   "currentBeispiel": "Ein Kollege überwacht laufend die Einhaltung der Fristen.",
-   "currentBeispielTr": "Bir meslektaşımız sürelere uyulmasını sürekli izliyor.",
+   "currentBeispiel": "Kameras überwachen den Eingang rund um die Uhr.",
+   "currentBeispielTr": "Kameralar girişi gece gündüz izliyor.",
    "overlapping": [
     "beaufsichtigen (B2)"
    ]
@@ -109,8 +109,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "eksiksiz, kesintisiz",
-   "currentBeispiel": "Die Bearbeitung jedes Vorgangs muss lückenlos dokumentiert sein.",
-   "currentBeispielTr": "Her işlemin görülmesi eksiksiz biçimde belgelenmiş olmalı.",
+   "currentBeispiel": "Die Kühlkette muss vom Hof bis zum Laden lückenlos sein.",
+   "currentBeispielTr": "Soğuk zincir çiftlikten mağazaya kadar kesintisiz olmalı.",
    "overlapping": [
     "vollständig (A2)"
    ]
@@ -143,7 +143,7 @@
    "formen": "",
    "currentTr": "bölümler arası, birimleri kapsayan",
    "currentBeispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe.",
-   "currentBeispielTr": "Bu tür sorular için bölümler arası bir çalışma grubuna ihtiyacımız var."
+   "currentBeispielTr": "Bu tür sorular için bölümler arası bir çalışma grubu gerekiyor."
   },
   {
    "id": 4356,
@@ -153,7 +153,7 @@
    "formen": "",
    "currentTr": "zamanında, tarihine uygun",
    "currentBeispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein.",
-   "currentBeispielTr": "Belgeler kuruma zamanında ulaştı.",
+   "currentBeispielTr": "Belgeler kuruma süresinde ulaştı.",
    "overlapping": [
     "rechtzeitig (B1)"
    ]
@@ -166,7 +166,7 @@
    "formen": "",
    "currentTr": "yetiştirme, ekim, tarım",
    "currentBeispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
-   "currentBeispielTr": "Bu topraklarda mısır yetiştirmek artık pek kârlı değil.",
+   "currentBeispielTr": "Bu topraklarda mısır yetiştiriciliği artık pek kârlı değil.",
    "overlapping": [
     "die Erziehung (B1)"
    ]
@@ -199,7 +199,7 @@
    "formen": "Dünger",
    "currentTr": "gübre",
    "currentBeispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend.",
-   "currentBeispielTr": "Aşırı gübre, bütün yörenin yeraltı suyunu kirletiyor.",
+   "currentBeispielTr": "Aşırı gübre bütün yörenin yeraltı suyunu kirletiyor.",
    "overlapping": [
     "das Düngemittel (B2)"
    ]
@@ -212,7 +212,7 @@
    "formen": "Nährstoffe",
    "currentTr": "besin maddesi, besleyici madde",
    "currentBeispiel": "Beim langen Kochen gehen viele Nährstoffe verloren.",
-   "currentBeispielTr": "Uzun süre pişirmede birçok besin maddesi kayboluyor."
+   "currentBeispielTr": "Uzun süre pişirince birçok besin maddesi kayboluyor."
   },
   {
    "id": 4362,
@@ -222,7 +222,7 @@
    "formen": "Ballaststoffe",
    "currentTr": "lif, posa",
    "currentBeispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot.",
-   "currentBeispielTr": "Tam tahıllı ekmek beyaz ekmekten belirgin biçimde daha fazla lif içerir."
+   "currentBeispielTr": "Tam tahıllı ekmek beyaz ekmekten çok daha fazla lif içerir."
   },
   {
    "id": 4363,
@@ -262,7 +262,7 @@
    "formen": "Erzeuger",
    "currentTr": "üretici (tarım, ham ürün), yetiştirici",
    "currentBeispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil.",
-   "currentBeispielTr": "Nihai fiyattan üreticiye çoğu zaman küçük bir pay kalıyor."
+   "currentBeispielTr": "Nihai fiyattan üreticiye çoğu zaman küçük bir pay kalır."
   },
   {
    "id": 4367,
@@ -272,7 +272,7 @@
    "formen": "Verpackungen",
    "currentTr": "ambalaj, paketleme",
    "currentBeispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier.",
-   "currentBeispielTr": "Yeni ambalaj tamamen geri dönüştürülmüş kâğıttan oluşuyor."
+   "currentBeispielTr": "Yeni ambalaj tamamen geri dönüştürülmüş kâğıttan yapılıyor."
   },
   {
    "id": 4368,
@@ -282,7 +282,7 @@
    "formen": "Kennzeichnungen",
    "currentTr": "işaretleme, etiketleme, tanımlama",
    "currentBeispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht.",
-   "currentBeispielTr": "Menşein açıkça belirtilmesi ocaktan beri zorunlu."
+   "currentBeispielTr": "Menşe ülkenin açıkça etiketlenmesi ocaktan beri zorunlu."
   },
   {
    "id": 4369,
@@ -311,8 +311,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "tüketicinin korunması, tüketici hakları",
-   "currentBeispiel": "Der Verbraucherschutz fordert strengere Regeln für Werbung mit Kindern.",
-   "currentBeispielTr": "Tüketici koruma kurumu, çocuklu reklamlar için daha sıkı kurallar istiyor."
+   "currentBeispiel": "Wegen des Verbraucherschutzes musste die Firma die Werbung ändern.",
+   "currentBeispielTr": "Tüketicinin korunması nedeniyle firma reklamını değiştirmek zorunda kaldı."
   },
   {
    "id": 4372,
@@ -322,7 +322,7 @@
    "formen": "Sorten",
    "currentTr": "çeşit, tür, cins",
    "currentBeispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte.",
-   "currentBeispielTr": "Eski çeşitler daha dayanıklı, ama daha az ürün veriyor."
+   "currentBeispielTr": "Eski çeşitler daha dayanıklı ama daha az ürün veriyor."
   },
   {
    "id": 4373,
@@ -332,7 +332,7 @@
    "formen": "Genossenschaften",
    "currentTr": "kooperatif, birlik",
    "currentBeispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen.",
-   "currentBeispielTr": "Sütçüler bir kooperatif çatısı altında birleşti."
+   "currentBeispielTr": "Süt üreticileri bir kooperatif çatısı altında birleşti."
   },
   {
    "id": 4374,
@@ -351,8 +351,8 @@
    "niveau": "B2",
    "formen": "Vermarktungen",
    "currentTr": "pazarlama, satışa sunma",
-   "currentBeispiel": "Die Vermarktung regionaler Produkte läuft inzwischen über eine eigene Plattform.",
-   "currentBeispielTr": "Yöresel ürünlerin pazarlaması artık kendi platformu üzerinden yürüyor."
+   "currentBeispiel": "Die Vermarktung regionaler Produkte läuft über eine eigene Plattform.",
+   "currentBeispielTr": "Yöresel ürünlerin pazarlaması kendi platformu üzerinden yürüyor."
   },
   {
    "id": 4376,
@@ -375,7 +375,7 @@
    "formen": "",
    "currentTr": "gıda israfı",
    "currentBeispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
-   "currentBeispielTr": "Gıda israfına karşı en çok evde daha iyi planlama yardımcı oluyor."
+   "currentBeispielTr": "Gıda israfına karşı en çok evde iyi planlama yardımcı oluyor."
   },
   {
    "id": 4378,
@@ -385,7 +385,7 @@
    "formen": "",
    "currentTr": "bertaraf, atıkların yok edilmesi",
    "currentBeispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld.",
-   "currentBeispielTr": "Tarihi geçmiş malların bertarafı süpermarkete çok pahalıya mal oluyor."
+   "currentBeispielTr": "Tarihi geçmiş malların bertarafı süpermarkete pahalıya mal oluyor."
   },
   {
    "id": 4379,
@@ -395,7 +395,7 @@
    "formen": "Landwirte",
    "currentTr": "çiftçi, tarım üreticisi",
    "currentBeispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof.",
-   "currentBeispielTr": "Giderek daha az çiftçi çiftliği için bir devralan bulabiliyor.",
+   "currentBeispielTr": "Giderek daha az çiftçi çiftliğini devralacak birini bulabiliyor.",
    "overlapping": [
     "der Bauer (B1)"
    ]
@@ -408,7 +408,7 @@
    "formen": "Siegel",
    "currentTr": "sertifika etiketi, mühür, damga",
    "currentBeispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
-   "currentBeispielTr": "Yeşil damga tek başına hayvan yetiştiriciliği hakkında hiçbir şey söylemiyor."
+   "currentBeispielTr": "Yeşil damga tek başına hayvancılık hakkında bir şey söylemiyor."
   },
   {
    "id": 4381,
@@ -441,7 +441,7 @@
    "formen": "Pflanzenschutzmittel",
    "currentTr": "bitki koruma ilacı, zirai ilaç",
    "currentBeispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen.",
-   "currentBeispielTr": "Yeni bitki koruma ilaçları uzun bir ruhsat sürecinden geçmek zorunda."
+   "currentBeispielTr": "Yeni bitki koruma ilaçları uzun bir ruhsat sürecinden geçer."
   },
   {
    "id": 4384,
@@ -450,8 +450,8 @@
    "niveau": "B2",
    "formen": "Schädlinge",
    "currentTr": "zararlı, haşere",
-   "currentBeispiel": "Ein einziger Schädling kann die halbe Ernte vernichten.",
-   "currentBeispielTr": "Tek bir zararlı hasadın yarısını yok edebilir.",
+   "currentBeispiel": "Gegen diesen Schädling hilft nur eine frühe Behandlung.",
+   "currentBeispielTr": "Bu zararlı böceğe karşı sadece erken ilaçlama işe yarar.",
    "overlapping": [
     "schädlich (A2)"
    ]
@@ -463,8 +463,8 @@
    "niveau": "B2",
    "formen": "Unkräuter",
    "currentTr": "yabani ot",
-   "currentBeispiel": "Auf dem Bioacker wird das Unkraut mechanisch entfernt.",
-   "currentBeispielTr": "Organik tarlada yabani otlar mekanik olarak temizleniyor."
+   "currentBeispiel": "Im Garten muss ich ständig das Unkraut jäten.",
+   "currentBeispielTr": "Bahçede sürekli yabani otları yolmam gerekiyor."
   },
   {
    "id": 4386,
@@ -484,7 +484,7 @@
    "formen": "Missernten",
    "currentTr": "ürün kıtlığı, kötü hasat",
    "currentBeispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf.",
-   "currentBeispielTr": "Üst üste ikinci kötü hasattan sonra işletme pes etti."
+   "currentBeispielTr": "Üst üste ikinci kötü hasattan sonra işletme işi bıraktı."
   },
   {
    "id": 4388,
@@ -504,7 +504,7 @@
    "formen": "Monokulturen",
    "currentTr": "tek ürün tarımı, monokültür",
    "currentBeispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten.",
-   "currentBeispielTr": "Tek ürün tarımı hastalıklara ve böceklere karşı özellikle savunmasızdır."
+   "currentBeispielTr": "Tek ürün tarımı hastalıklara ve böceklere karşı çok savunmasızdır."
   },
   {
    "id": 4390,
@@ -534,7 +534,7 @@
    "formen": "",
    "currentTr": "hayvan refahı",
    "currentBeispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen.",
-   "currentBeispielTr": "Daha fazla hayvan refahı için birçok müşteri fazla ödemeye razı olurdu."
+   "currentBeispielTr": "Daha iyi hayvan refahı için birçok müşteri fazla ödemeye razı olurdu."
   }
  ]
 }

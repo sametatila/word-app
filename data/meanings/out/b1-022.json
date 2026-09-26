@@ -43,17 +43,17 @@
     "id": 1358,
     "tr": "bölüm",
     "en": "section",
-    "beispiel": "Lesen Sie bitte den zweiten Abschnitt.",
-    "beispielTr": "Lütfen ikinci bölümü okuyun.",
-    "beispielEn": "Please read the second section."
+    "beispiel": "Dieser Abschnitt der Autobahn wird gerade repariert.",
+    "beispielTr": "Otoyolun bu bölümü şu an onarılıyor.",
+    "beispielEn": "This section of the highway is being repaired right now."
   },
   {
     "id": 1995,
     "tr": "sendika",
     "en": "labor union",
-    "beispiel": "Die Gewerkschaft vertritt die Interessen der Arbeitnehmer.",
-    "beispielTr": "Sendika, çalışanların çıkarlarını savunuyor.",
-    "beispielEn": "The union represents the interests of the employees."
+    "beispiel": "Die Gewerkschaft fordert mehr Lohn für die Pflegekräfte.",
+    "beispielTr": "Sendika bakım personeli için daha yüksek ücret talep ediyor.",
+    "beispielEn": "The union is demanding higher pay for nursing staff."
   },
   {
     "id": 2807,
@@ -83,9 +83,9 @@
     "id": 1653,
     "tr": "tatlı",
     "en": "dessert",
-    "beispiel": "Nach dem Essen gab es noch ein leckeres Dessert.",
-    "beispielTr": "Yemekten sonra nefis bir tatlı da vardı.",
-    "beispielEn": "After dinner there was also a delicious dessert."
+    "beispiel": "Als Dessert nehme ich heute nur ein Stück Obst.",
+    "beispielTr": "Bugün tatlı olarak sadece biraz meyve alacağım.",
+    "beispielEn": "For dessert today, I'll just have some fruit."
   },
   {
     "id": 1646,
@@ -139,17 +139,17 @@
     "id": 2963,
     "tr": "yasaklamak",
     "en": "to forbid",
-    "beispiel": "Ich werde meinen Kindern das Rauchen verbieten.",
-    "beispielTr": "Çocuklarıma sigara içmeyi yasaklayacağım.",
-    "beispielEn": "I will forbid my children to smoke."
+    "beispiel": "Der Vermieter verbietet Haustiere in der Wohnung.",
+    "beispielTr": "Ev sahibi dairede evcil hayvanı yasaklıyor.",
+    "beispielEn": "The landlord forbids pets in the apartment."
   },
   {
     "id": 2821,
     "tr": "mendil",
     "en": "tissue",
-    "beispiel": "Hast du ein Taschentuch für mich?",
-    "beispielTr": "Bana bir mendil verir misin?",
-    "beispielEn": "Do you have a tissue for me?"
+    "beispiel": "Im Kino hat sie beim traurigen Ende ein Taschentuch gebraucht.",
+    "beispielTr": "Sinemada hüzünlü sonda bir mendile ihtiyacı oldu.",
+    "beispielEn": "At the movies she needed a tissue during the sad ending."
   },
   {
     "id": 2893,
@@ -235,17 +235,17 @@
     "id": 2274,
     "tr": "özgeçmiş",
     "en": "resume",
-    "beispiel": "Hast du den Lebenslauf für die Bewerbung schon geschrieben?",
-    "beispielTr": "Başvuru için özgeçmişini yazdın mı?",
-    "beispielEn": "Have you already written the resume for the application?"
+    "beispiel": "In deinem Lebenslauf fehlt noch das Praktikum.",
+    "beispielTr": "Özgeçmişinde staj hâlâ eksik.",
+    "beispielEn": "Your internship is still missing from your resume."
   },
   {
     "id": 2574,
     "tr": "nispeten",
     "en": "relatively",
-    "beispiel": "Die Wohnung ist relativ groß, aber sehr teuer.",
-    "beispielTr": "Daire nispeten büyük ama çok pahalı.",
-    "beispielEn": "The apartment is relatively big but very expensive."
+    "beispiel": "Die Prüfung war relativ leicht.",
+    "beispielTr": "Sınav nispeten kolaydı.",
+    "beispielEn": "The exam was relatively easy."
   },
   {
     "id": 2597,
@@ -275,9 +275,9 @@
     "id": 2604,
     "tr": "krema",
     "en": "cream",
-    "beispiel": "Ich hätte gern ein Stück Torte mit Sahne.",
-    "beispielTr": "Kremalı bir dilim pasta rica ediyorum.",
-    "beispielEn": "I would like a piece of cake with cream."
+    "beispiel": "Für die Soße brauchst du einen Becher Sahne.",
+    "beispielTr": "Sos için bir kutu kremaya ihtiyacın var.",
+    "beispielEn": "You need a carton of cream for the sauce."
   },
   {
     "id": 2391,
@@ -339,25 +339,25 @@
     "id": 2152,
     "tr": "aday",
     "en": "candidate",
-    "beispiel": "Wie viele Kandidaten kommen zur Prüfung?",
-    "beispielTr": "Sınava kaç aday geliyor?",
-    "beispielEn": "How many candidates are coming to the exam?"
+    "beispiel": "Für die Stelle gibt es drei gute Kandidaten.",
+    "beispielTr": "Pozisyon için üç iyi aday var.",
+    "beispielEn": "There are three good candidates for the position."
   },
   {
     "id": 2648,
     "tr": "not almak",
     "en": "to write down",
-    "beispiel": "Ich habe mir deine Telefonnummer aufgeschrieben.",
-    "beispielTr": "Telefon numaranı not aldım.",
-    "beispielEn": "I wrote down your phone number."
+    "beispiel": "Schreib dir die Adresse lieber auf.",
+    "beispielTr": "Adresi not alsan iyi olur.",
+    "beispielEn": "You'd better write the address down."
   },
   {
     "id": 2561,
     "tr": "raf",
     "en": "shelf",
-    "beispiel": "Das Buch steht im Regal oben rechts.",
-    "beispielTr": "Kitap rafın sağ üstünde duruyor.",
-    "beispielEn": "The book is on the shelf at the top right."
+    "beispiel": "Im Keller haben wir ein Regal für Werkzeug aufgebaut.",
+    "beispielTr": "Bodrumda aletler için bir raf kurduk.",
+    "beispielEn": "We put up a shelf for tools in the basement."
   },
   {
     "id": 1918,

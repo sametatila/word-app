@@ -11,9 +11,9 @@
     "id": 1315,
     "tr": "eğer",
     "en": "if",
-    "beispiel": "Wenn es regnet, bleiben wir zu Hause.",
-    "beispielTr": "Yağmur yağarsa evde kalırız.",
-    "beispielEn": "If it rains, we'll stay home."
+    "beispiel": "Wenn du Hunger hast, mache ich dir ein Brot.",
+    "beispielTr": "Açsan sana bir sandviç hazırlarım.",
+    "beispielEn": "If you're hungry, I'll make you a sandwich."
   },
   {
     "id": 863,
@@ -27,17 +27,17 @@
     "id": 1306,
     "tr": "kayıp",
     "en": "gone",
-    "beispiel": "Meine Brille ist weg.",
-    "beispielTr": "Gözlüğüm kayıp.",
-    "beispielEn": "My glasses are gone."
+    "beispiel": "Heute Morgen war mein Fahrrad einfach weg.",
+    "beispielTr": "Bu sabah bisikletim ortadan kaybolmuştu.",
+    "beispielEn": "This morning my bike was just gone."
   },
   {
     "id": 1307,
     "tr": "yol",
     "en": "way",
-    "beispiel": "Können Sie mir den Weg zum Bahnhof zeigen?",
-    "beispielTr": "Bana gara giden yolu gösterebilir misiniz?",
-    "beispielEn": "Can you show me the way to the station?"
+    "beispiel": "Auf dem Weg zur Arbeit kaufe ich mir einen Kaffee.",
+    "beispielTr": "İşe giderken yolda kendime bir kahve alıyorum.",
+    "beispielEn": "On the way to work I buy myself a coffee."
   },
   {
     "id": 1311,
@@ -67,17 +67,17 @@
     "id": 1001,
     "tr": "tam olarak",
     "en": "exactly",
-    "beispiel": "Es ist genau acht Uhr.",
-    "beispielTr": "Saat tam sekiz.",
-    "beispielEn": "It's exactly eight o'clock."
+    "beispiel": "Weißt du genau, wo das Restaurant ist?",
+    "beispielTr": "Restoranın tam olarak nerede olduğunu biliyor musun?",
+    "beispielEn": "Do you know exactly where the restaurant is?"
   },
   {
     "id": 1151,
     "tr": "konuşmak",
     "en": "to talk",
-    "beispiel": "Mit meiner Freundin kann ich über alles reden.",
-    "beispielTr": "Kız arkadaşımla her şeyi konuşabiliyorum.",
-    "beispielEn": "I can talk about anything with my girlfriend."
+    "beispiel": "Wir haben die ganze Nacht über den Urlaub geredet.",
+    "beispielTr": "Bütün gece tatil hakkında konuştuk.",
+    "beispielEn": "We talked about the vacation all night."
   },
   {
     "id": 1039,
@@ -91,9 +91,9 @@
     "id": 1124,
     "tr": "çift",
     "en": "pair",
-    "beispiel": "Ich brauche ein neues Paar Schuhe.",
-    "beispielTr": "Yeni bir çift ayakkabıya ihtiyacım var.",
-    "beispielEn": "I need a new pair of shoes."
+    "beispiel": "Im Winter trage ich immer zwei Paar Socken.",
+    "beispielTr": "Kışın hep iki çift çorap giyiyorum.",
+    "beispielEn": "In winter I always wear two pairs of socks."
   },
   {
     "id": 1195,
@@ -107,25 +107,25 @@
     "id": 1022,
     "tr": "buraya",
     "en": "over here",
-    "beispiel": "Komm bitte mal her!",
-    "beispielTr": "Lütfen buraya gel!",
-    "beispielEn": "Please come over here!"
+    "beispiel": "Gib mir mal den Schlüssel her.",
+    "beispielTr": "Anahtarı bir buraya ver.",
+    "beispielEn": "Hand the key over here."
   },
   {
     "id": 1108,
     "tr": "elbette",
     "en": "of course",
-    "beispiel": "Natürlich helfen wir dir.",
-    "beispielTr": "Elbette sana yardım ederiz.",
-    "beispielEn": "Of course we'll help you."
+    "beispiel": "Du kannst natürlich gern bei uns übernachten.",
+    "beispielTr": "Elbette bizde kalabilirsin.",
+    "beispielEn": "Of course you're welcome to stay the night with us."
   },
   {
     "id": 1308,
     "tr": "yüzünden",
     "en": "because of",
-    "beispiel": "Wegen des Regens bleiben wir zu Hause.",
-    "beispielTr": "Yağmur yüzünden evde kalıyoruz.",
-    "beispielEn": "We're staying home because of the rain."
+    "beispiel": "Wegen der Baustelle fährt der Bus heute eine andere Strecke.",
+    "beispielTr": "Yol çalışması yüzünden otobüs bugün başka güzergâhtan gidiyor.",
+    "beispielEn": "Because of the construction, the bus is taking a different route today."
   },
   {
     "id": 1028,
@@ -147,9 +147,9 @@
     "id": 1204,
     "tr": "yoksa",
     "en": "otherwise",
-    "beispiel": "Beeil dich, sonst kommen wir zu spät!",
-    "beispielTr": "Acele et, yoksa geç kalacağız!",
-    "beispielEn": "Hurry up, otherwise we'll be late!"
+    "beispiel": "Zieh eine Jacke an, sonst wirst du krank.",
+    "beispielTr": "Bir ceket giy, yoksa hasta olursun.",
+    "beispielEn": "Put on a jacket, otherwise you'll get sick."
   },
   {
     "id": 929,
@@ -163,17 +163,17 @@
     "id": 946,
     "tr": "fark etmez",
     "en": "doesn't matter",
-    "beispiel": "Das ist mir egal.",
-    "beispielTr": "Benim için fark etmez.",
-    "beispielEn": "It doesn't matter to me."
+    "beispiel": "Ob wir Pizza oder Pasta essen, ist mir egal.",
+    "beispielTr": "Pizza mı makarna mı yiyeceğimiz fark etmez.",
+    "beispielEn": "Whether we have pizza or pasta doesn't matter to me."
   },
   {
     "id": 945,
     "tr": "gerçek",
     "en": "real",
-    "beispiel": "Ist das Bild ein echter Picasso?",
-    "beispielTr": "Bu tablo gerçek bir Picasso mu?",
-    "beispielEn": "Is this painting a real Picasso?"
+    "beispiel": "Der Stein im Ring ist leider nicht echt.",
+    "beispielTr": "Yüzükteki taş ne yazık ki gerçek değil.",
+    "beispielEn": "Unfortunately the stone in the ring isn't real."
   },
   {
     "id": 1216,
@@ -187,9 +187,9 @@
     "id": 970,
     "tr": "neredeyse",
     "en": "almost",
-    "beispiel": "Ich habe fast alles verstanden.",
-    "beispielTr": "Neredeyse her şeyi anladım.",
-    "beispielEn": "I understood almost everything."
+    "beispiel": "Wir sind fast da, nur noch fünf Minuten.",
+    "beispielTr": "Neredeyse geldik, sadece beş dakika kaldı.",
+    "beispielEn": "We're almost there, just five more minutes."
   },
   {
     "id": 1289,
@@ -211,9 +211,9 @@
     "id": 1202,
     "tr": "bile",
     "en": "even",
-    "beispiel": "In den Bergen schneit es sogar.",
-    "beispielTr": "Dağlarda kar bile yağıyor.",
-    "beispielEn": "It's even snowing in the mountains."
+    "beispiel": "Unser Opa kann sogar mit dem Handy Fotos schicken.",
+    "beispielTr": "Dedemiz telefonla fotoğraf bile gönderebiliyor.",
+    "beispielEn": "Our grandpa can even send photos with his phone."
   },
   {
     "id": 1167,
@@ -251,17 +251,17 @@
     "id": 1005,
     "tr": "yüz",
     "en": "face",
-    "beispiel": "Wasch dir bitte das Gesicht!",
-    "beispielTr": "Lütfen yüzünü yıka!",
-    "beispielEn": "Please wash your face!"
+    "beispiel": "Nach dem Spiel war sein Gesicht ganz rot.",
+    "beispielTr": "Maçtan sonra yüzü kıpkırmızıydı.",
+    "beispielEn": "After the game his face was all red."
   },
   {
     "id": 935,
     "tr": "şey",
     "en": "thing",
-    "beispiel": "Was macht man mit diesem Ding?",
-    "beispielTr": "Bu nesne ne işe yarıyor?",
-    "beispielEn": "What do you do with this object?"
+    "beispiel": "Im Keller stehen noch viele alte Dinge.",
+    "beispielTr": "Bodrumda hâlâ bir sürü eski şey duruyor.",
+    "beispielEn": "There's still a lot of old stuff in the basement."
   },
   {
     "id": 974,
@@ -307,41 +307,41 @@
     "id": 922,
     "tr": "ofis",
     "en": "office",
-    "beispiel": "Ich arbeite in einem kleinen Büro.",
-    "beispielTr": "Küçük bir ofiste çalışıyorum.",
-    "beispielEn": "I work in a small office."
+    "beispiel": "Das Büro ist im dritten Stock neben der Küche.",
+    "beispielTr": "Ofis üçüncü katta, mutfağın yanında.",
+    "beispielEn": "The office is on the third floor, next to the kitchen."
   },
   {
     "id": 1175,
     "tr": "başarmak",
     "en": "to manage",
-    "beispiel": "Ich schaffe das nicht allein.",
-    "beispielTr": "Bunu tek başıma başaramıyorum.",
-    "beispielEn": "I can't manage this alone."
+    "beispiel": "Wir haben den Zug gerade noch geschafft.",
+    "beispielTr": "Trene son anda yetiştik.",
+    "beispielEn": "We just barely managed to catch the train."
   },
   {
     "id": 1287,
     "tr": "dolu",
     "en": "full",
-    "beispiel": "Morgens sind die Züge immer sehr voll.",
-    "beispielTr": "Sabahları trenler hep çok dolu olur.",
-    "beispielEn": "The trains are always very full in the morning."
+    "beispiel": "Mach das Glas bitte nicht so voll.",
+    "beispielTr": "Bardağı lütfen o kadar doldurma.",
+    "beispielEn": "Please don't fill the glass so full."
   },
   {
     "id": 936,
     "tr": "doğrudan",
     "en": "directly",
-    "beispiel": "Der Bus fährt direkt zum Bahnhof.",
-    "beispielTr": "Otobüs doğrudan gara gidiyor.",
-    "beispielEn": "The bus goes directly to the station."
+    "beispiel": "Ich sage dir meine Meinung lieber direkt.",
+    "beispielTr": "Fikrimi sana doğrudan söylemeyi tercih ederim.",
+    "beispielEn": "I'd rather tell you my opinion directly."
   },
   {
     "id": 1112,
     "tr": "adlandırmak",
     "en": "to name",
-    "beispiel": "Mein Freund heißt Alexander, aber alle nennen ihn Alex.",
-    "beispielTr": "Arkadaşımın adı Alexander ama herkes ona Alex diyor.",
-    "beispielEn": "My friend's name is Alexander, but everyone calls him Alex."
+    "beispiel": "Wie wollt ihr euer Baby nennen?",
+    "beispielTr": "Bebeğinize ne ad koymak istiyorsunuz?",
+    "beispielEn": "What do you want to name your baby?"
   },
   {
     "id": 959,
@@ -355,17 +355,17 @@
     "id": 1278,
     "tr": "kaybetmek",
     "en": "to lose",
-    "beispiel": "Ich habe meinen Schlüssel verloren.",
-    "beispielTr": "Anahtarımı kaybettim.",
-    "beispielEn": "I've lost my key."
+    "beispiel": "Leider hat unsere Mannschaft das Finale verloren.",
+    "beispielTr": "Maalesef takımımız finali kaybetti.",
+    "beispielEn": "Unfortunately, our team lost the final."
   },
   {
     "id": 1166,
     "tr": "çağırmak",
     "en": "to call",
-    "beispiel": "Wir müssen sofort einen Arzt rufen.",
-    "beispielTr": "Hemen bir doktor çağırmalıyız.",
-    "beispielEn": "We have to call a doctor right away."
+    "beispiel": "Die Mutter ruft die Kinder zum Essen.",
+    "beispielTr": "Anne çocukları yemeğe çağırıyor.",
+    "beispielEn": "The mother calls the kids for dinner."
   },
   {
     "id": 1227,

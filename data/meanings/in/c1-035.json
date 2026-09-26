@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dengesiz, kırılgan",
-   "currentBeispiel": "In dieser Phase war sie emotional außerordentlich labil.",
-   "currentBeispielTr": "Bu dönemde duygusal olarak son derece dengesizdi."
+   "currentBeispiel": "In dieser Phase war sie emotional äußerst labil.",
+   "currentBeispielTr": "O dönemde duygusal olarak son derece dengesizdi."
   },
   {
    "id": 6954,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "seçici",
-   "currentBeispiel": "Unsere Erinnerung arbeitet selektiv und formt die Vergangenheit um.",
-   "currentBeispielTr": "Hafızamız seçici çalışır ve geçmişi yeniden biçimlendirir."
+   "currentBeispiel": "Der Verlag geht bei neuen Manuskripten sehr selektiv vor.",
+   "currentBeispielTr": "Yayınevi yeni el yazmalarında çok seçici davranıyor."
   },
   {
    "id": 6955,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "aceleci, düşünmeden",
-   "currentBeispiel": "Man sollte aus einem einzigen Test keine voreiligen Schlüsse ziehen.",
-   "currentBeispielTr": "Tek bir testten aceleci sonuçlar çıkarılmamalıdır.",
+   "currentBeispiel": "Aus einem einzigen Test sollte man keine voreiligen Schlüsse ziehen.",
+   "currentBeispielTr": "Tek bir testten aceleci sonuçlar çıkarılmamalı.",
    "overlapping": [
     "vorschnell (C1)"
    ]
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "doğuştan gelen",
-   "currentBeispiel": "Ob Temperament angeboren ist, wird bis heute kontrovers diskutiert.",
-   "currentBeispielTr": "Mizacın doğuştan gelip gelmediği bugün hâlâ tartışmalıdır."
+   "currentBeispiel": "Manche Kinder haben ein angeborenes Gefühl für Rhythmus.",
+   "currentBeispielTr": "Bazı çocuklarda ritim duygusu doğuştan gelir."
   },
   {
    "id": 6957,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sezgisel",
-   "currentBeispiel": "Erfahrene Ärzte urteilen oft intuitiv und liegen dabei richtig.",
-   "currentBeispielTr": "Deneyimli hekimler çoğu kez sezgisel karar verir ve isabet ederler."
+   "currentBeispiel": "Erfahrene Ärzte entscheiden oft intuitiv und liegen damit richtig.",
+   "currentBeispielTr": "Deneyimli hekimler çoğu kez sezgisel karar verir ve isabet eder."
   },
   {
    "id": 6959,
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "içe dönük",
-   "currentBeispiel": "Introvertierte Menschen brauchen nach Gesprächen mehr Zeit für sich.",
-   "currentBeispielTr": "İçe dönük insanlar sohbetlerden sonra kendilerine daha çok zaman ayırmak ister."
+   "currentBeispiel": "Introvertierte Menschen brauchen nach langen Gesprächen Zeit für sich.",
+   "currentBeispielTr": "İçe dönük insanlar uzun sohbetlerden sonra yalnız kalmaya ihtiyaç duyar."
   },
   {
    "id": 6960,
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sarsılmaz, tartışılmaz, kesin",
-   "currentBeispiel": "Seine Überzeugung galt ihm als unumstößliche Wahrheit.",
-   "currentBeispielTr": "Kendi kanaatini sarsılmaz bir gerçek sayıyordu."
+   "currentBeispiel": "Für ihn war dieser Satz eine unumstößliche Wahrheit.",
+   "currentBeispielTr": "Onun için bu cümle sarsılmaz bir gerçekti."
   },
   {
    "id": 6961,
@@ -93,7 +93,7 @@
    "formen": "",
    "currentTr": "yolundan sapmayan, kararlı, yılmadan",
    "currentBeispiel": "Trotz aller Kritik verfolgte sie ihr Ziel unbeirrt weiter.",
-   "currentBeispielTr": "Bütün eleştirilere rağmen hedefini kararlılıkla izlemeyi sürdürdü."
+   "currentBeispielTr": "Bütün eleştirilere rağmen hedefinin peşinden yılmadan gitmeyi sürdürdü."
   },
   {
    "id": 6962,
@@ -102,8 +102,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ihtiyatlı, özenli, nazik",
-   "currentBeispiel": "Das Thema muss man behutsam ansprechen, sonst verhärten sich die Fronten.",
-   "currentBeispielTr": "Bu konuya ihtiyatla girilmeli, yoksa taraflar iyice katılaşır."
+   "currentBeispiel": "Dieses Thema muss man behutsam ansprechen.",
+   "currentBeispielTr": "Bu konuya ihtiyatla girmek gerekir."
   },
   {
    "id": 6963,
@@ -112,8 +112,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tepeden bakan, küçümseyici",
-   "currentBeispiel": "Sein herablassender Ton machte eine sachliche Debatte unmöglich.",
-   "currentBeispielTr": "Tepeden bakan üslubu nesnel bir tartışmayı olanaksız kıldı."
+   "currentBeispiel": "Sein herablassender Ton machte jede sachliche Debatte unmöglich.",
+   "currentBeispielTr": "Tepeden bakan üslubu her nesnel tartışmayı olanaksız kıldı."
   },
   {
    "id": 6964,
@@ -135,8 +135,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iyi niyetli, olumlu bakan, hayırhah",
-   "currentBeispiel": "Die Jury nahm den Entwurf wohlwollend zur Kenntnis.",
-   "currentBeispielTr": "Jüri taslağı iyi niyetle karşıladı.",
+   "currentBeispiel": "Sie beurteilte die Arbeit ihrer Studenten wohlwollend.",
+   "currentBeispielTr": "Öğrencilerinin çalışmalarını iyi niyetle değerlendirdi.",
    "overlapping": [
     "gutgläubig (C1)"
    ]
@@ -158,8 +158,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "önyargısız, tarafsız",
-   "currentBeispiel": "Ein Gutachter sollte die Unterlagen unvoreingenommen prüfen.",
-   "currentBeispielTr": "Bir bilirkişi belgeleri önyargısız biçimde incelemelidir."
+   "currentBeispiel": "Ein Gutachter muss die Unterlagen unvoreingenommen prüfen.",
+   "currentBeispielTr": "Bilirkişi belgeleri önyargısız biçimde incelemek zorundadır."
   },
   {
    "id": 6968,
@@ -168,8 +168,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "inatçı, hırslı, dişini sıkmış",
-   "currentBeispiel": "Er verteidigte seine These mit verbissener Entschlossenheit.",
-   "currentBeispielTr": "Tezini dişini sıkarak, inatçı bir kararlılıkla savundu.",
+   "currentBeispiel": "Sie kämpfte verbissen um jeden einzelnen Punkt.",
+   "currentBeispielTr": "Her bir puan için inatla mücadele etti.",
    "overlapping": [
     "eigensinnig (B2)",
     "stur (A2)"
@@ -183,7 +183,7 @@
    "formen": "",
    "currentTr": "basiretli, tedbirli, her yönü düşünen",
    "currentBeispiel": "Die Leitung hat in der Krise umsichtig gehandelt.",
-   "currentBeispielTr": "Yönetim kriz sırasında basiretli davrandı."
+   "currentBeispielTr": "Yönetim kriz sırasında tedbirli davrandı."
   },
   {
    "id": 6970,
@@ -192,8 +192,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sağduyulu, soğukkanlı, ölçülü",
-   "currentBeispiel": "Gerade in aufgeheizten Debatten wirkt ihre besonnene Art beruhigend.",
-   "currentBeispielTr": "Özellikle gergin tartışmalarda onun soğukkanlı tavrı yatıştırıcı oluyor."
+   "currentBeispiel": "In hitzigen Debatten wirkt ihre besonnene Art beruhigend.",
+   "currentBeispielTr": "Gergin tartışmalarda onun soğukkanlı tavrı yatıştırıcı oluyor."
   },
   {
    "id": 6971,
@@ -202,8 +202,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kibirli, burnu büyük",
-   "currentBeispiel": "Wer andere Disziplinen überheblich abtut, verliert schnell an Glaubwürdigkeit.",
-   "currentBeispielTr": "Başka disiplinleri kibirle geçiştiren kişi inandırıcılığını çabuk yitirir."
+   "currentBeispiel": "Er tat die Einwände seiner Kollegen überheblich ab.",
+   "currentBeispielTr": "Meslektaşlarının itirazlarını kibirle geçiştirdi."
   },
   {
    "id": 6972,
@@ -222,8 +222,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sırnaşık, rahatsız edici ölçüde ısrarcı",
-   "currentBeispiel": "Die Werbung im Text wirkt aufdringlich und stört den Lesefluss.",
-   "currentBeispielTr": "Metindeki reklam rahatsız edici ölçüde ısrarcı ve okuma akışını bozuyor."
+   "currentBeispiel": "Der Verkäufer wurde am Telefon richtig aufdringlich.",
+   "currentBeispielTr": "Satıcı telefonda iyice sırnaşık oldu."
   },
   {
    "id": 6974,
@@ -243,7 +243,7 @@
    "formen": "",
    "currentTr": "sert, ters, haşin",
    "currentBeispiel": "Seine schroffe Antwort beendete das Gespräch abrupt.",
-   "currentBeispielTr": "Sert cevabı konuşmayı bir anda bitirdi.",
+   "currentBeispielTr": "Ters cevabı konuşmayı bir anda bitirdi.",
    "overlapping": [
     "hart (A2)",
     "streng (A2)",
@@ -259,7 +259,7 @@
    "formen": "",
    "currentTr": "üstü örtülü, bilinçaltına seslenen, sezdirmeden",
    "currentBeispiel": "In dem Bericht schwingt unterschwellig eine Warnung mit.",
-   "currentBeispielTr": "Raporda üstü örtülü bir uyarı hissediliyor."
+   "currentBeispielTr": "Raporda örtük bir uyarı sezilir."
   },
   {
    "id": 6977,
@@ -268,8 +268,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "gizli, örtük, potansiyel hâlde",
-   "currentBeispiel": "Der Konflikt blieb jahrelang latent, bevor er offen ausbrach.",
-   "currentBeispielTr": "Çatışma açıkça patlak vermeden önce yıllarca gizli kaldı.",
+   "currentBeispiel": "Der Konflikt blieb jahrelang latent, bevor er ausbrach.",
+   "currentBeispielTr": "Çatışma patlak vermeden önce yıllarca gizli kaldı.",
    "overlapping": [
     "geheim (B1)",
     "vertraulich (B2)"
@@ -302,8 +302,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "derinlikli, derin anlamlı",
-   "currentBeispiel": "Der Essay wirkt auf den ersten Blick schlicht, ist aber tiefgründig.",
-   "currentBeispielTr": "Deneme ilk bakışta yalın görünse de derinlikli bir metin."
+   "currentBeispiel": "Der Essay wirkt schlicht, ist aber sehr tiefgründig.",
+   "currentBeispielTr": "Deneme yalın görünüyor ama çok derinlikli."
   },
   {
    "id": 6981,
@@ -312,7 +312,7 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tutarlı, mantıklı, ikna edici",
-   "currentBeispiel": "Die Argumentation ist elegant, aber nicht in allen Punkten schlüssig.",
+   "currentBeispiel": "Die Argumentation ist elegant, aber nicht überall schlüssig.",
    "currentBeispielTr": "Argümantasyon zarif ama her noktada tutarlı değil."
   },
   {
@@ -343,7 +343,7 @@
    "formen": "",
    "currentTr": "sebatlı, ısrarlı, azimli",
    "currentBeispiel": "Beharrlich fragte die Journalistin nach den fehlenden Zahlen.",
-   "currentBeispielTr": "Gazeteci eksik rakamları ısrarla sorup durdu."
+   "currentBeispielTr": "Gazeteci eksik rakamları ısrarla sordu."
   },
   {
    "id": 6985,
@@ -352,8 +352,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çekingen, ürkek, tereddütlü",
-   "currentBeispiel": "Die Reformen wurden nur zaghaft und mit großer Verspätung umgesetzt.",
-   "currentBeispielTr": "Reformlar ancak çekingen biçimde ve büyük gecikmeyle uygulandı.",
+   "currentBeispiel": "Zaghaft klopfte er an die Tür des Chefs.",
+   "currentBeispielTr": "Patronun kapısını çekingen bir tavırla çaldı.",
    "overlapping": [
     "zurückhaltend (B2)"
    ]
@@ -379,7 +379,7 @@
    "formen": "hat sich gesträubt",
    "currentTr": "direnmek, karşı koymak, yanaşmamak",
    "currentBeispiel": "Viele Betriebe sträuben sich gegen die neuen Auflagen.",
-   "currentBeispielTr": "Birçok işletme yeni yükümlülüklere karşı direniyor."
+   "currentBeispielTr": "Birçok işletme yeni yükümlülüklere direniyor."
   },
   {
    "id": 6988,
@@ -399,7 +399,7 @@
    "formen": "hat herabgesetzt",
    "currentTr": "küçük düşürmek, değerini azaltmak",
    "currentBeispiel": "Niemand darf die Leistung anderer öffentlich herabsetzen.",
-   "currentBeispielTr": "Kimse başkalarının emeğini alenen küçük düşüremez."
+   "currentBeispielTr": "Kimse başkalarının emeğini alenen küçümseyemez."
   },
   {
    "id": 6990,
@@ -408,8 +408,8 @@
    "niveau": "C1",
    "formen": "hat sich gefügt",
    "currentTr": "boyun eğmek, uymak",
-   "currentBeispiel": "Am Ende fügte er sich der Mehrheit, wenn auch widerwillig.",
-   "currentBeispielTr": "Sonunda isteksizce de olsa çoğunluğa boyun eğdi.",
+   "currentBeispiel": "Am Ende fügte er sich der Mehrheit.",
+   "currentBeispielTr": "Sonunda çoğunluğa boyun eğdi.",
    "overlapping": [
     "nachgeben (B2)",
     "sich unterordnen (C1)"
@@ -423,7 +423,7 @@
    "formen": "hat gezaudert",
    "currentTr": "duraksamak, ayak sürümek",
    "currentBeispiel": "Die Politik zaudert, während die Kosten weiter steigen.",
-   "currentBeispielTr": "Maliyetler artmaya devam ederken siyaset ayak sürüyor."
+   "currentBeispielTr": "Maliyetler artmaya devam ederken siyaset duraksıyor."
   },
   {
    "id": 6992,
@@ -460,8 +460,8 @@
    "niveau": "C1",
    "formen": "hat angemutet",
    "currentTr": "izlenimi vermek, gibi görünmek",
-   "currentBeispiel": "Der Vorschlag mutet auf den ersten Blick reichlich naiv an.",
-   "currentBeispielTr": "Öneri ilk bakışta hayli saf bir izlenim veriyor."
+   "currentBeispiel": "Der Vorschlag mutet auf den ersten Blick naiv an.",
+   "currentBeispielTr": "Öneri ilk bakışta saf bir izlenim veriyor."
   },
   {
    "id": 6995,
@@ -471,7 +471,7 @@
    "formen": "hat sich erwiesen",
    "currentTr": "çıkmak, olduğu anlaşılmak",
    "currentBeispiel": "Die anfängliche Skepsis erwies sich später als berechtigt.",
-   "currentBeispielTr": "Başlangıçtaki kuşkuculuğun sonradan haklı olduğu anlaşıldı.",
+   "currentBeispielTr": "Başlangıçtaki kuşkunun sonradan haklı olduğu anlaşıldı.",
    "overlapping": [
     "sich entpuppen (C1)"
    ]
@@ -483,8 +483,8 @@
    "niveau": "C1",
    "formen": "hat überwogen",
    "currentTr": "ağır basmak, baskın gelmek",
-   "currentBeispiel": "In der Diskussion überwogen am Ende die kritischen Stimmen.",
-   "currentBeispielTr": "Tartışmada sonunda eleştirel sesler ağır bastı."
+   "currentBeispiel": "Die Vorteile überwiegen in diesem Fall die Nachteile.",
+   "currentBeispielTr": "Bu durumda avantajlar dezavantajlardan ağır basıyor."
   },
   {
    "id": 6997,
@@ -493,8 +493,8 @@
    "niveau": "C1",
    "formen": "hat vorgeherrscht",
    "currentTr": "hâkim olmak, egemen olmak",
-   "currentBeispiel": "Lange Zeit herrschte in der Forschung eine ganz andere Auffassung vor.",
-   "currentBeispielTr": "Uzun süre araştırmalarda bambaşka bir anlayış hâkimdi.",
+   "currentBeispiel": "In der Forschung herrschte lange eine andere Auffassung vor.",
+   "currentBeispielTr": "Araştırmada uzun süre başka bir anlayış hâkimdi.",
    "overlapping": [
     "dominieren (C1)"
    ]
@@ -529,8 +529,8 @@
    "niveau": "C1",
    "formen": "hat erahnt",
    "currentTr": "sezmek, hissetmek, kestirmek",
-   "currentBeispiel": "Die Tragweite dieser Entscheidung lässt sich erst erahnen.",
-   "currentBeispielTr": "Bu kararın kapsamı henüz ancak sezilebiliyor.",
+   "currentBeispiel": "Die Tragweite dieser Entscheidung lässt sich nur erahnen.",
+   "currentBeispielTr": "Bu kararın kapsamı ancak sezilebiliyor.",
    "overlapping": [
     "ahnen (A2)"
    ]
@@ -542,8 +542,8 @@
    "niveau": "C1",
    "formen": "hat sich bewährt",
    "currentTr": "kendini kanıtlamak, işe yaradığını göstermek",
-   "currentBeispiel": "Das Verfahren hat sich auch unter schwierigen Bedingungen bewährt.",
-   "currentBeispielTr": "Yöntem zor koşullarda da kendini kanıtladı."
+   "currentBeispiel": "Das Verfahren hat sich auch unter Zeitdruck bewährt.",
+   "currentBeispielTr": "Yöntem zaman baskısı altında da kendini kanıtladı."
   },
   {
    "id": 7002,
@@ -552,8 +552,8 @@
    "niveau": "C1",
    "formen": "Hänge",
    "currentTr": "eğilim, düşkünlük, temayül",
-   "currentBeispiel": "Sein Hang zur Übertreibung schwächt sonst gute Argumente.",
-   "currentBeispielTr": "Abartıya olan düşkünlüğü, iyi argümanlarını bile zayıflatıyor.",
+   "currentBeispiel": "Sein Hang zur Übertreibung schwächt gute Argumente.",
+   "currentBeispielTr": "Abartıya düşkünlüğü iyi argümanlarını zayıflatıyor.",
    "overlapping": [
     "die Tendenz (B2)",
     "die Neigung (B2)"

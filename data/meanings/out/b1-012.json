@@ -35,9 +35,9 @@
   "id": 2295,
   "tr": "hat",
   "en": "line",
-  "beispiel": "Die Linie 8 fährt direkt zum Hauptbahnhof.",
-  "beispielTr": "8 numaralı hat doğrudan ana gara gidiyor.",
-  "beispielEn": "Line 8 goes straight to the main station."
+  "beispiel": "Welche Linie fährt nach dem Konzert noch zum Stadion?",
+  "beispielTr": "Konserden sonra stadyuma hangi hat hâlâ gidiyor?",
+  "beispielEn": "Which line still runs to the stadium after the concert?"
  },
  {
   "id": 1496,
@@ -67,9 +67,9 @@
   "id": 2956,
   "tr": "buluşma",
   "en": "date",
-  "beispiel": "Ich habe um drei eine Verabredung mit Klaus.",
-  "beispielTr": "Saat üçte Klaus'la buluşmam var.",
-  "beispielEn": "I have a date with Klaus at three."
+  "beispiel": "Ich muss los, ich habe gleich eine Verabredung im Café.",
+  "beispielTr": "Gitmem lazım, birazdan kafede bir buluşmam var.",
+  "beispielEn": "I have to go, I've got a date at the café soon."
  },
  {
   "id": 2910,
@@ -83,9 +83,9 @@
   "id": 2410,
   "tr": "olumsuz",
   "en": "negative",
-  "beispiel": "Du solltest nicht alles so negativ sehen.",
-  "beispielTr": "Her şeyi bu kadar olumsuz görmemelisin.",
-  "beispielEn": "You shouldn't see everything so negatively."
+  "beispiel": "Die Kritiken zum neuen Film waren überwiegend negativ.",
+  "beispielTr": "Yeni filme yapılan eleştiriler çoğunlukla olumsuzdu.",
+  "beispielEn": "The reviews of the new movie were mostly negative."
  },
  {
   "id": 2970,
@@ -155,9 +155,9 @@
   "id": 2998,
   "tr": "kaçınmak",
   "en": "to avoid",
-  "beispiel": "Der Arzt sagt, ich soll Stress vermeiden.",
-  "beispielTr": "Doktor stresten kaçınmam gerektiğini söylüyor.",
-  "beispielEn": "The doctor says I should avoid stress."
+  "beispiel": "Um den Berufsverkehr zu vermeiden, fahren wir früh los.",
+  "beispielTr": "İşe gidiş trafiğinden kaçınmak için erken yola çıkıyoruz.",
+  "beispielEn": "To avoid rush hour, we're leaving early."
  },
  {
   "id": 1839,
@@ -195,9 +195,9 @@
   "id": 2110,
   "tr": "bilgilendirmek",
   "en": "to inform",
-  "beispiel": "Wir informieren Sie rechtzeitig über die neuen Termine.",
-  "beispielTr": "Yeni tarihleri size zamanında bildireceğiz.",
-  "beispielEn": "We will inform you about the new dates in time."
+  "beispiel": "Bitte informieren Sie mich, sobald das Paket ankommt.",
+  "beispielTr": "Paket gelir gelmez lütfen beni bilgilendirin.",
+  "beispielEn": "Please inform me as soon as the package arrives."
  },
  {
   "id": 2143,
@@ -219,9 +219,9 @@
   "id": 2325,
   "tr": "duvar",
   "en": "wall",
-  "beispiel": "Die Kinder sind über die Mauer geklettert.",
-  "beispielTr": "Çocuklar duvara tırmanıp karşıya geçti.",
-  "beispielEn": "The children climbed over the wall."
+  "beispiel": "Hinter der hohen Mauer liegt ein alter Garten.",
+  "beispielTr": "Yüksek duvarın arkasında eski bir bahçe var.",
+  "beispielEn": "Behind the high wall there is an old garden."
  },
  {
   "id": 1357,
@@ -259,9 +259,9 @@
   "id": 2001,
   "tr": "genellikle",
   "en": "usually",
-  "beispiel": "Um diese Zeit ist er gewöhnlich zu Hause.",
-  "beispielTr": "Bu saatlerde genellikle evde olur.",
-  "beispielEn": "He's usually at home around this time."
+  "beispiel": "Sonntags frühstücken wir gewöhnlich erst um zehn.",
+  "beispielTr": "Pazarları genellikle ancak saat onda kahvaltı ederiz.",
+  "beispielEn": "On Sundays, we usually don't have breakfast until ten."
  },
  {
   "id": 3078,
@@ -291,9 +291,9 @@
   "id": 2323,
   "tr": "malzeme",
   "en": "material",
-  "beispiel": "Aus welchem Material ist der Schrank gemacht?",
-  "beispielTr": "Dolap hangi malzemeden yapılmış?",
-  "beispielEn": "What material is the closet made of?"
+  "beispiel": "Für den Bau braucht man stabiles Material.",
+  "beispielTr": "İnşaat için sağlam malzeme gerekir.",
+  "beispielEn": "You need sturdy material for the construction."
  },
  {
   "id": 1715,

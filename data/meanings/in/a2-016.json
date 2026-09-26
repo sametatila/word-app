@@ -9,8 +9,8 @@
    "niveau": "A2",
    "formen": "sitzt nach, hat nachgesessen",
    "currentTr": "okulda cezalı kalmak",
-   "currentBeispiel": "Weil er zu spät kam, musste er nachsitzen.",
-   "currentBeispielTr": "Geç geldiği için okulda cezalı kalmak zorunda kaldı."
+   "currentBeispiel": "Weil er zu spät gekommen ist, muss er nachsitzen.",
+   "currentBeispielTr": "Geç geldiği için okulda cezalı kalması gerekiyor."
   },
   {
    "id": 7739,
@@ -35,7 +35,7 @@
    "formen": "sagt auf, hat aufgesagt",
    "currentTr": "ezbere okumak",
    "currentBeispiel": "Jedes Kind muss ein Gedicht aufsagen.",
-   "currentBeispielTr": "Her çocuk bir şiiri ezbere okumak zorunda."
+   "currentBeispielTr": "Her çocuk bir şiir ezbere okumak zorunda."
   },
   {
    "id": 7741,
@@ -84,7 +84,7 @@
    "formen": "",
    "currentTr": "odaklanmış, konsantre",
    "currentBeispiel": "Nach der Pause arbeiten wir wieder konzentriert.",
-   "currentBeispielTr": "Teneffüsten sonra yine odaklanmış şekilde çalışıyoruz."
+   "currentBeispielTr": "Teneffüsten sonra yine odaklanarak çalışıyoruz."
   },
   {
    "id": 7745,
@@ -94,7 +94,7 @@
    "formen": "",
    "currentTr": "özenli, dikkatli",
    "currentBeispiel": "Sie macht ihre Hausaufgaben immer sorgfältig.",
-   "currentBeispielTr": "Ödevlerini her zaman özenli yapıyor."
+   "currentBeispielTr": "Ödevlerini her zaman özenle yapıyor."
   },
   {
    "id": 7746,
@@ -127,7 +127,7 @@
    "formen": "",
    "currentTr": "öğretici",
    "currentBeispiel": "Der Ausflug ins Museum war sehr lehrreich.",
-   "currentBeispielTr": "Müzeye yapılan gezi çok öğreticiydi."
+   "currentBeispielTr": "Müze gezisi çok öğreticiydi."
   },
   {
    "id": 7749,
@@ -177,7 +177,7 @@
    "formen": "",
    "currentTr": "yıllık, her yıl",
    "currentBeispiel": "Die Schule macht jährlich einen Ausflug.",
-   "currentBeispielTr": "Okul yılda bir gezi düzenliyor."
+   "currentBeispielTr": "Okul her yıl bir gezi düzenliyor."
   },
   {
    "id": 7754,
@@ -260,7 +260,7 @@
    "formen": "-en",
    "currentTr": "pastane",
    "currentBeispiel": "Die Torte kommt aus einer kleinen Konditorei.",
-   "currentBeispielTr": "Yaş pasta küçük bir pastaneden geliyor."
+   "currentBeispielTr": "Bu pasta küçük bir pastaneden geliyor."
   },
   {
    "id": 7762,
@@ -279,8 +279,8 @@
    "niveau": "A2",
    "formen": "¨-er",
    "currentTr": "büyük mağaza",
-   "currentBeispiel": "Im Warenhaus gibt es alles von Kleidung bis Küchenmöbel.",
-   "currentBeispielTr": "Büyük mağazada kıyafetten mutfak mobilyasına kadar her şey var.",
+   "currentBeispiel": "Im Warenhaus gibt es Kleidung, Möbel und Spielzeug.",
+   "currentBeispielTr": "Büyük mağazada kıyafet, mobilya ve oyuncak var.",
    "overlapping": [
     "das Kaufhaus (A2)"
    ]
@@ -322,8 +322,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "sürekli müşteri, devamlı müşteri",
-   "currentBeispiel": "Als Stammkunde bekomme ich in dem Laden zehn Prozent Rabatt.",
-   "currentBeispielTr": "Sürekli müşteri olarak o dükkânda yüzde on indirim alıyorum."
+   "currentBeispiel": "Als Stammkunde bekomme ich hier zehn Prozent Rabatt.",
+   "currentBeispielTr": "Sürekli müşteri olarak burada yüzde on indirim alıyorum."
   },
   {
    "id": 7768,
@@ -342,8 +342,8 @@
    "niveau": "A2",
    "formen": "steht an, hat angestanden",
    "currentTr": "kuyrukta beklemek, sıraya girmek",
-   "currentBeispiel": "Wir mussten zwanzig Minuten an der Kasse anstehen.",
-   "currentBeispielTr": "Kasada yirmi dakika sıra beklemek zorunda kaldık."
+   "currentBeispiel": "An der Kasse müssen wir lange anstehen.",
+   "currentBeispielTr": "Kasada uzun süre kuyrukta beklememiz gerekiyor."
   },
   {
    "id": 7770,
@@ -392,8 +392,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "banknot, kâğıt para",
-   "currentBeispiel": "Ich habe nur einen Geldschein von 50 Euro dabei.",
-   "currentBeispielTr": "Yanımda sadece 50 avroluk bir banknot var.",
+   "currentBeispiel": "Ich habe leider nur einen großen Geldschein dabei.",
+   "currentBeispielTr": "Yanımda maalesef sadece büyük bir banknot var.",
    "overlapping": [
     "der Schein (B1)"
    ]
@@ -429,7 +429,7 @@
    "formen": "-nen",
    "currentTr": "kasiyer (kadın)",
    "currentBeispiel": "Die Kassiererin war sehr freundlich zu mir.",
-   "currentBeispielTr": "Kasiyer bana karşı çok nazikti.",
+   "currentBeispielTr": "Kadın kasiyer bana karşı çok nazikti.",
    "overlapping": [
     "der Kassierer (A2)"
    ]
@@ -472,7 +472,7 @@
    "formen": "",
    "currentTr": "çıtır, gevrek",
    "currentBeispiel": "Das Brot vom Bäcker ist heute schön knusprig.",
-   "currentBeispielTr": "Fırıncıdan aldığımız ekmek bugün güzelce çıtır çıtır."
+   "currentBeispielTr": "Fırıncıdan aldığımız ekmek bugün çok çıtır."
   },
   {
    "id": 7782,

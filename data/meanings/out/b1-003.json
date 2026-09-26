@@ -3,9 +3,9 @@
     "id": 2620,
     "tr": "bakmak",
     "en": "to look",
-    "beispiel": "Schau mal, da vorne ist noch ein Platz frei.",
-    "beispielTr": "Baksana, şu ilerde bir yer daha boş.",
-    "beispielEn": "Look, there's still a free seat up front."
+    "beispiel": "Er schaute nervös auf die Uhr.",
+    "beispielTr": "Gergin bir şekilde saate baktı.",
+    "beispielEn": "He looked nervously at the clock."
   },
   {
     "id": 1985,
@@ -19,17 +19,17 @@
     "id": 3034,
     "tr": "affedersiniz",
     "en": "excuse me",
-    "beispiel": "Verzeihung, ich habe die falsche Nummer gewählt.",
-    "beispielTr": "Affedersiniz, yanlış numarayı aradım.",
-    "beispielEn": "Excuse me, I dialed the wrong number."
+    "beispiel": "Verzeihung, dürfte ich kurz an Ihnen vorbei?",
+    "beispielTr": "Affedersiniz, bir saniye geçebilir miyim?",
+    "beispielEn": "Excuse me, could I just squeeze past you?"
   },
   {
     "id": 2481,
     "tr": "mükemmel",
     "en": "perfect",
-    "beispiel": "Die Reiseorganisation war perfekt.",
-    "beispielTr": "Gezinin organizasyonu mükemmeldi.",
-    "beispielEn": "The organization of the trip was perfect."
+    "beispiel": "Dein Deutsch ist ja fast perfekt!",
+    "beispielTr": "Almancan neredeyse mükemmel!",
+    "beispielEn": "Your German is almost perfect!"
   },
   {
     "id": 2429,
@@ -43,9 +43,9 @@
     "id": 2828,
     "tr": "gerçekten de",
     "en": "actually",
-    "beispiel": "Die Hose ist tatsächlich zu klein, obwohl sie so groß aussieht.",
-    "beispielTr": "Pantolon büyük görünse de gerçekten çok küçük.",
-    "beispielEn": "The pants are actually too small, although they look so big."
+    "beispiel": "Ich dachte, er macht Witze, aber er hat tatsächlich gekündigt.",
+    "beispielTr": "Şaka yapıyor sandım ama gerçekten de istifa etmiş.",
+    "beispielEn": "I thought he was joking, but he actually quit."
   },
   {
     "id": 1896,
@@ -59,17 +59,17 @@
     "id": 1517,
     "tr": "kendinde tutmak",
     "en": "to keep",
-    "beispiel": "Darf ich die Zeitschrift behalten?",
-    "beispielTr": "Dergi bende kalabilir mi?",
-    "beispielEn": "May I keep the magazine?"
+    "beispiel": "Das Wechselgeld können Sie behalten.",
+    "beispielTr": "Para üstü sizde kalsın.",
+    "beispielEn": "You can keep the change."
   },
   {
     "id": 2139,
     "tr": "hiç",
     "en": "ever",
-    "beispiel": "Hast du jemals von diesem Problem gehört?",
-    "beispielTr": "Bu sorunu hiç duydun mu?",
-    "beispielEn": "Have you ever heard of this problem?"
+    "beispiel": "Warst du jemals in Japan?",
+    "beispielTr": "Hiç Japonya'da bulundun mu?",
+    "beispielEn": "Have you ever been to Japan?"
   },
   {
     "id": 2337,
@@ -83,17 +83,17 @@
     "id": 2150,
     "tr": "mücadele",
     "en": "fight",
-    "beispiel": "Im Schulbus gibt es immer einen Kampf um die Sitzplätze.",
-    "beispielTr": "Okul servisinde koltuklar için hep bir mücadele olur.",
-    "beispielEn": "On the school bus there's always a fight over the seats."
+    "beispiel": "Der Kampf gegen den Krebs hat ihn viel Kraft gekostet.",
+    "beispielTr": "Kanserle mücadele onu çok yıprattı.",
+    "beispielEn": "The fight against cancer took a lot out of him."
   },
   {
     "id": 2438,
     "tr": "olmasına rağmen",
     "en": "although",
-    "beispiel": "Obwohl meine Kollegin krank ist, geht sie arbeiten.",
-    "beispielTr": "İş arkadaşım hasta olmasına rağmen işe gidiyor.",
-    "beispielEn": "Although my colleague is sick, she goes to work."
+    "beispiel": "Wir gingen baden, obwohl das Wasser eiskalt war.",
+    "beispielTr": "Su buz gibi olmasına rağmen denize girdik.",
+    "beispielEn": "We went swimming, although the water was ice-cold."
   },
   {
     "id": 2945,
@@ -123,9 +123,9 @@
     "id": 1769,
     "tr": "karar",
     "en": "decision",
-    "beispiel": "Diese wichtige Entscheidung möchte ich zuerst mit meinem Mann besprechen.",
-    "beispielTr": "Bu önemli kararı önce eşimle konuşmak istiyorum.",
-    "beispielEn": "I'd like to discuss this important decision with my husband first."
+    "beispiel": "Umzuziehen war die beste Entscheidung meines Lebens.",
+    "beispielTr": "Taşınmak hayatımın en iyi kararıydı.",
+    "beispielEn": "Moving was the best decision of my life."
   },
   {
     "id": 2564,
@@ -163,9 +163,9 @@
     "id": 1361,
     "tr": "kesinlikle",
     "en": "absolutely",
-    "beispiel": "Was Sie da sagen, ist absolut falsch.",
-    "beispielTr": "Söyledikleriniz kesinlikle yanlış.",
-    "beispielEn": "What you're saying is absolutely wrong."
+    "beispiel": "Nach der langen Reise war ich absolut müde.",
+    "beispielTr": "Uzun yolculuktan sonra tamamen yorgundum.",
+    "beispielEn": "After the long trip, I was absolutely exhausted."
   },
   {
     "id": 1457,
@@ -195,25 +195,25 @@
     "id": 1882,
     "tr": "parmak",
     "en": "finger",
-    "beispiel": "Alessandro hat sich in den Finger geschnitten.",
-    "beispielTr": "Alessandro parmağını kesti.",
-    "beispielEn": "Alessandro cut his finger."
+    "beispiel": "Das Baby hält meinen Finger ganz fest.",
+    "beispielTr": "Bebek parmağımı sımsıkı tutuyor.",
+    "beispielEn": "The baby is holding my finger really tight."
   },
   {
     "id": 1698,
     "tr": "evlilik",
     "en": "marriage",
-    "beispiel": "Sie hat zwei Kinder aus erster Ehe.",
-    "beispielTr": "İlk evliliğinden iki çocuğu var.",
-    "beispielEn": "She has two children from her first marriage."
+    "beispiel": "Nach dreißig Jahren Ehe feiern meine Eltern ein großes Fest.",
+    "beispielTr": "Annemle babam otuz yıllık evliliklerinin ardından büyük bir kutlama yapıyor.",
+    "beispielEn": "After thirty years of marriage, my parents are throwing a big party."
   },
   {
     "id": 2592,
     "tr": "rol",
     "en": "role",
-    "beispiel": "Die Schauspielerin hat ihre Rolle sehr gut gespielt.",
-    "beispielTr": "Oyuncu rolünü çok iyi oynadı.",
-    "beispielEn": "The actress played her role very well."
+    "beispiel": "Im Schultheater bekam Mia die Rolle der Königin.",
+    "beispielTr": "Okul tiyatrosunda kraliçe rolü Mia'ya verildi.",
+    "beispielEn": "In the school play, Mia got the role of the queen."
   },
   {
     "id": 3162,
@@ -267,9 +267,9 @@
     "id": 2215,
     "tr": "kontrol",
     "en": "check",
-    "beispiel": "An den Grenzen gibt es kaum noch Kontrollen.",
-    "beispielTr": "Sınırlarda artık neredeyse hiç kontrol yok.",
-    "beispielEn": "There are hardly any checks at the borders."
+    "beispiel": "Am Flughafen dauert die Kontrolle heute sehr lange.",
+    "beispielTr": "Havaalanında kontrol bugün çok uzun sürüyor.",
+    "beispielEn": "The security check at the airport is taking a really long time today."
   },
   {
     "id": 2633,
@@ -291,9 +291,9 @@
     "id": 1577,
     "tr": "kanıtlamak",
     "en": "to prove",
-    "beispiel": "Wir können beweisen, dass Sie bei Rot gefahren sind.",
-    "beispielTr": "Kırmızı ışıkta geçtiğinizi kanıtlayabiliriz.",
-    "beispielEn": "We can prove that you drove through a red light."
+    "beispiel": "Die Fotos beweisen, dass er an dem Abend zu Hause war.",
+    "beispielTr": "Fotoğraflar o akşam evde olduğunu kanıtlıyor.",
+    "beispielEn": "The photos prove that he was at home that evening."
   },
   {
     "id": 3165,
@@ -315,17 +315,17 @@
     "id": 2587,
     "tr": "yön",
     "en": "direction",
-    "beispiel": "In welche Richtung muss ich zum Bahnhof fahren?",
-    "beispielTr": "İstasyona gitmek için hangi yöne gitmeliyim?",
-    "beispielEn": "Which direction do I have to go to the station?"
+    "beispiel": "Der Wind hat plötzlich die Richtung gewechselt.",
+    "beispielTr": "Rüzgâr birden yön değiştirdi.",
+    "beispielEn": "The wind suddenly changed direction."
   },
   {
     "id": 2259,
     "tr": "konum",
     "en": "location",
-    "beispiel": "Wir suchen eine Wohnung in zentraler Lage.",
-    "beispielTr": "Merkezi konumda bir daire arıyoruz.",
-    "beispielEn": "We're looking for an apartment in a central location."
+    "beispiel": "Das Hotel ist nicht schön, aber die Lage ist perfekt.",
+    "beispielTr": "Otel güzel değil ama konumu mükemmel.",
+    "beispielEn": "The hotel isn't pretty, but the location is perfect."
   },
   {
     "id": 2717,
@@ -339,25 +339,25 @@
     "id": 2226,
     "tr": "güç",
     "en": "strength",
-    "beispiel": "Für diese Arbeit braucht man viel Kraft.",
-    "beispielTr": "Bu iş için çok güç gerekiyor.",
-    "beispielEn": "This work requires a lot of strength."
+    "beispiel": "Nach dem Marathon hatte ich keine Kraft mehr.",
+    "beispielTr": "Maratondan sonra hiç gücüm kalmamıştı.",
+    "beispielEn": "After the marathon, I had no strength left."
   },
   {
     "id": 1491,
     "tr": "bar",
     "en": "bar",
-    "beispiel": "Setzen wir uns doch an die Bar!",
-    "beispielTr": "Hadi bara oturalım!",
-    "beispielEn": "Let's sit at the bar!"
+    "beispiel": "Nach dem Kino haben wir noch etwas in einer Bar getrunken.",
+    "beispielTr": "Sinemadan sonra bir barda bir şeyler daha içtik.",
+    "beispielEn": "After the movie, we had a drink at a bar."
   },
   {
     "id": 1582,
     "tr": "ilişki",
     "en": "relationship",
-    "beispiel": "Wir haben eine gute Beziehung zu unseren Nachbarn.",
-    "beispielTr": "Komşularımızla iyi bir ilişkimiz var.",
-    "beispielEn": "We have a good relationship with our neighbors."
+    "beispiel": "Nach fünf Jahren haben Lena und Max ihre Beziehung beendet.",
+    "beispielTr": "Lena ile Max beş yıl sonra ilişkilerini bitirdi.",
+    "beispielEn": "After five years, Lena and Max ended their relationship."
   },
   {
     "id": 2298,
@@ -379,17 +379,17 @@
     "id": 1600,
     "tr": "tekne",
     "en": "boat",
-    "beispiel": "An diesem See kann man Boote mieten.",
-    "beispielTr": "Bu gölde tekne kiralanabiliyor.",
-    "beispielEn": "You can rent boats at this lake."
+    "beispiel": "Mit dem Boot fahren wir morgen zu der kleinen Insel.",
+    "beispielTr": "Yarın tekneyle o küçük adaya gidiyoruz.",
+    "beispielEn": "Tomorrow we're taking the boat to the little island."
   },
   {
     "id": 2678,
     "tr": "garip",
     "en": "strange",
-    "beispiel": "Es ist seltsam, dass mein Bruder noch nicht hier ist.",
-    "beispielTr": "Kardeşimin hâlâ burada olmaması garip.",
-    "beispielEn": "It's strange that my brother isn't here yet."
+    "beispiel": "Der neue Kollege benimmt sich manchmal seltsam.",
+    "beispielTr": "Yeni iş arkadaşı bazen garip davranıyor.",
+    "beispielEn": "The new coworker sometimes acts strange."
   },
   {
     "id": 2819,

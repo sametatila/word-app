@@ -20,7 +20,7 @@
    "formen": "Rechtsquellen",
    "currentTr": "hukuk kaynağı",
    "currentBeispiel": "Neben dem Gesetz gelten auch Verträge als anerkannte Rechtsquellen.",
-   "currentBeispielTr": "Kanunun yanı sıra sözleşmeler de tanınmış hukuk kaynağı sayılır."
+   "currentBeispielTr": "Kanunun yanı sıra sözleşmeler de tanınmış hukuk kaynağı sayılıyor."
   },
   {
    "id": 6355,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "hukukun geliştirilmesi, yargı yoluyla hukuk yaratma",
    "currentBeispiel": "Durch Rechtsfortbildung schließen die Gerichte Lücken, die der Gesetzgeber hinterlassen hat.",
-   "currentBeispielTr": "Mahkemeler, yasa koyucunun bıraktığı boşlukları hukuku geliştirerek doldurur."
+   "currentBeispielTr": "Mahkemeler, yasa koyucunun bıraktığı boşlukları hukuku geliştirerek dolduruyor."
   },
   {
    "id": 6356,
@@ -60,7 +60,7 @@
    "formen": "Rechtslücken",
    "currentTr": "hukuk boşluğu",
    "currentBeispiel": "Der neue Sachverhalt offenbart eine Rechtslücke, die niemand vorhergesehen hatte.",
-   "currentBeispielTr": "Yeni durum, kimsenin öngörmediği bir hukuk boşluğunu açığa çıkarıyor."
+   "currentBeispielTr": "Yeni olay, kimsenin öngörmediği bir hukuk boşluğunu ortaya çıkarıyor."
   },
   {
    "id": 6359,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hukuki pozitivizm",
-   "currentBeispiel": "Der Rechtspositivismus trennt die Geltung des Rechts streng von der Moral.",
-   "currentBeispielTr": "Hukuki pozitivizm, hukukun geçerliliğini ahlaktan kesin biçimde ayırır."
+   "currentBeispiel": "Im Seminar verteidigte sie den Rechtspositivismus gegen jede Kritik.",
+   "currentBeispielTr": "Seminerde hukuki pozitivizmi her türlü eleştiriye karşı savundu."
   },
   {
    "id": 6360,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Rechtsordnungen",
    "currentTr": "hukuk düzeni",
-   "currentBeispiel": "Jede Rechtsordnung beruht auf Grundentscheidungen, die selten offen diskutiert werden.",
-   "currentBeispielTr": "Her hukuk düzeni, nadiren açıkça tartışılan temel tercihlere dayanır."
+   "currentBeispiel": "Der EU-Beitritt zwang das Land, seine Rechtsordnung anzupassen.",
+   "currentBeispielTr": "AB üyeliği, ülkeyi hukuk düzenini uyarlamaya zorladı."
   },
   {
    "id": 6362,
@@ -100,7 +100,7 @@
    "formen": "Rechtsgüter",
    "currentTr": "hukuki değer, korunan hukuki menfaat",
    "currentBeispiel": "Das Strafrecht schützt Rechtsgüter wie Leben, Freiheit und Eigentum.",
-   "currentBeispielTr": "Ceza hukuku yaşam, özgürlük ve mülkiyet gibi hukuki değerleri korur."
+   "currentBeispielTr": "Ceza hukuku yaşam, özgürlük ve mülkiyet gibi hukuki değerleri koruyor."
   },
   {
    "id": 6363,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hukuk felsefesi",
-   "currentBeispiel": "In der Rechtsphilosophie streitet man seit Jahrhunderten über den Gerechtigkeitsbegriff.",
-   "currentBeispielTr": "Hukuk felsefesinde adalet kavramı yüzyıllardır tartışılıyor."
+   "currentBeispiel": "Sie schreibt ihre Doktorarbeit über Rechtsphilosophie.",
+   "currentBeispielTr": "Doktora tezini hukuk felsefesi üzerine yazıyor."
   },
   {
    "id": 6364,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hukuk dogmatiği",
-   "currentBeispiel": "Die Rechtsdogmatik ordnet die Vorschriften zu einem widerspruchsfreien System.",
-   "currentBeispielTr": "Hukuk dogmatiği, kuralları çelişkisiz bir sistem hâline getirir."
+   "currentBeispiel": "Der Aufsatz kritisiert die herrschende Rechtsdogmatik scharf.",
+   "currentBeispielTr": "Makale, hâkim hukuk dogmatiğini sert biçimde eleştiriyor."
   },
   {
    "id": 6365,
@@ -130,7 +130,7 @@
    "formen": "",
    "currentTr": "adalet duygusu, hukuk duygusu",
    "currentBeispiel": "Das milde Urteil verletzte das Rechtsempfinden vieler Beobachter.",
-   "currentBeispielTr": "Hafif karar, birçok gözlemcinin adalet duygusunu incitti."
+   "currentBeispielTr": "Hafif ceza, birçok gözlemcinin adalet duygusunu incitti."
   },
   {
    "id": 6366,
@@ -140,7 +140,7 @@
    "formen": "",
    "currentTr": "ölçülülük, orantılılık",
    "currentBeispiel": "Das Gericht prüfte die Verhältnismäßigkeit des polizeilichen Eingriffs sehr genau.",
-   "currentBeispielTr": "Mahkeme, polis müdahalesinin orantılılığını çok titizlikle inceledi."
+   "currentBeispielTr": "Mahkeme, polis müdahalesinin ölçülülüğünü çok titizlikle inceledi."
   },
   {
    "id": 6367,
@@ -149,8 +149,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kuvvetler ayrılığı",
-   "currentBeispiel": "Die Gewaltenteilung soll verhindern, dass sich Macht an einer Stelle bündelt.",
-   "currentBeispielTr": "Kuvvetler ayrılığı, gücün tek bir noktada toplanmasını engellemeyi amaçlar."
+   "currentBeispiel": "Die Reform greift nach Ansicht der Kritiker die Gewaltenteilung an.",
+   "currentBeispielTr": "Eleştirmenlere göre reform, kuvvetler ayrılığına saldırıyor."
   },
   {
    "id": 6368,
@@ -160,7 +160,7 @@
    "formen": "Verfassungsbeschwerden",
    "currentTr": "anayasa şikâyeti, bireysel başvuru",
    "currentBeispiel": "Gegen das Gesetz wurde bereits mehrfach Verfassungsbeschwerde erhoben.",
-   "currentBeispielTr": "Yasaya karşı daha şimdiden birçok kez anayasa şikâyetinde bulunuldu."
+   "currentBeispielTr": "Yasaya karşı şimdiden birçok kez anayasa şikâyetinde bulunuldu."
   },
   {
    "id": 6369,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "Normenkontrollen",
    "currentTr": "norm denetimi",
-   "currentBeispiel": "Im Rahmen der Normenkontrolle prüft das Gericht die Vereinbarkeit mit der Verfassung.",
-   "currentBeispielTr": "Norm denetimi çerçevesinde mahkeme, düzenlemenin anayasaya uygunluğunu inceler."
+   "currentBeispiel": "Mehrere Länder haben eine Normenkontrolle des Gesetzes beantragt.",
+   "currentBeispielTr": "Birkaç eyalet, yasanın norm denetimini talep etti."
   },
   {
    "id": 6370,
@@ -180,7 +180,7 @@
    "formen": "Gesetzgebungsverfahren",
    "currentTr": "yasama süreci, kanun yapım usulü",
    "currentBeispiel": "Das Gesetzgebungsverfahren wurde wegen formeller Fehler abgebrochen.",
-   "currentBeispielTr": "Yasama süreci biçimsel hatalar nedeniyle yarıda kesildi."
+   "currentBeispielTr": "Yasama süreci biçimsel hatalar yüzünden yarıda kesildi."
   },
   {
    "id": 6371,
@@ -199,8 +199,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "keyfilik yasağı",
-   "currentBeispiel": "Das Willkürverbot zwingt die Behörden, gleiche Fälle gleich zu behandeln.",
-   "currentBeispielTr": "Keyfilik yasağı, idareyi aynı olayları aynı biçimde ele almaya zorlar."
+   "currentBeispiel": "Das Amt behandelte gleiche Fälle unterschiedlich und missachtete das Willkürverbot.",
+   "currentBeispielTr": "İdare aynı olayları farklı ele alarak keyfilik yasağını çiğnedi."
   },
   {
    "id": 6373,
@@ -210,7 +210,7 @@
    "formen": "Ermessensspielräume",
    "currentTr": "takdir alanı, takdir yetkisi",
    "currentBeispiel": "Der Behörde bleibt bei dieser Entscheidung ein erheblicher Ermessensspielraum.",
-   "currentBeispielTr": "İdarenin bu kararda hatırı sayılır bir takdir alanı bulunuyor."
+   "currentBeispielTr": "İdarenin bu kararda hatırı sayılır bir takdir yetkisi kalıyor."
   },
   {
    "id": 6374,
@@ -220,7 +220,7 @@
    "formen": "Strafmaße",
    "currentTr": "ceza miktarı, verilecek ceza",
    "currentBeispiel": "Über das Strafmaß entscheidet das Gericht nach der Schwere der Tat.",
-   "currentBeispielTr": "Ceza miktarına mahkeme, fiilin ağırlığına göre karar verir."
+   "currentBeispielTr": "Ceza miktarına mahkeme, fiilin ağırlığına göre karar veriyor."
   },
   {
    "id": 6375,
@@ -259,8 +259,8 @@
    "niveau": "C1",
    "formen": "Leitsätze",
    "currentTr": "içtihat özeti, temel ilke",
-   "currentBeispiel": "Der erste Leitsatz des Urteils wird in allen Kommentaren zitiert.",
-   "currentBeispielTr": "Kararın ilk içtihat özeti bütün şerhlerde alıntılanıyor."
+   "currentBeispiel": "Dieser Leitsatz hängt gerahmt im Büro des Chefs.",
+   "currentBeispielTr": "Bu temel ilke, patronun odasında çerçeveli olarak asılı duruyor."
   },
   {
    "id": 6379,
@@ -270,7 +270,7 @@
    "formen": "Tatbestände",
    "currentTr": "suçun unsurları, olgusal durum",
    "currentBeispiel": "Das Verhalten erfüllt den Tatbestand der Nötigung.",
-   "currentBeispielTr": "Bu davranış, tehditle zorlama suçunun unsurlarını oluşturuyor."
+   "currentBeispielTr": "Bu davranış, cebir suçunun unsurlarını oluşturuyor."
   },
   {
    "id": 6380,
@@ -289,8 +289,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "doğal hukuk",
-   "currentBeispiel": "Das Naturrecht leitet seine Sätze aus der Vernunft ab.",
-   "currentBeispielTr": "Doğal hukuk, ilkelerini akıldan türetir."
+   "currentBeispiel": "Sie begründete ihren Protest mit dem Naturrecht.",
+   "currentBeispielTr": "Protestosunu doğal hukuka dayandırdı."
   },
   {
    "id": 6382,
@@ -299,8 +299,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "meşruiyet",
-   "currentBeispiel": "Ohne breite Zustimmung verliert eine Ordnung ihre Legitimität.",
-   "currentBeispielTr": "Geniş bir onay olmadan bir düzen meşruiyetini yitirir.",
+   "currentBeispiel": "Nach der gefälschten Wahl fehlt der Regierung jede Legitimität.",
+   "currentBeispielTr": "Hileli seçimden sonra hükümetin hiçbir meşruiyeti kalmadı.",
    "overlapping": [
     "die Legitimation (C1)"
    ]
@@ -313,7 +313,7 @@
    "formen": "",
    "currentTr": "kasıt",
    "currentBeispiel": "Für eine Verurteilung muss dem Täter Vorsatz nachgewiesen werden.",
-   "currentBeispielTr": "Mahkûmiyet için failin kastının kanıtlanması gerekir."
+   "currentBeispielTr": "Mahkûmiyet için failin kastının kanıtlanması gerekiyor."
   },
   {
    "id": 6384,
@@ -343,7 +343,7 @@
    "formen": "",
    "currentTr": "insan onuru",
    "currentBeispiel": "Die Menschenwürde steht am Anfang der Verfassung und ist unantastbar.",
-   "currentBeispielTr": "İnsan onuru anayasanın başında yer alır ve dokunulmazdır."
+   "currentBeispielTr": "İnsan onuru anayasanın en başında yer alır ve dokunulmazdır."
   },
   {
    "id": 6387,
@@ -363,7 +363,7 @@
    "formen": "Grundrechtseingriffe",
    "currentTr": "temel hakka müdahale",
    "currentBeispiel": "Jeder Grundrechtseingriff braucht eine klare gesetzliche Grundlage.",
-   "currentBeispielTr": "Temel haklara yapılan her müdahale açık bir yasal dayanak gerektirir."
+   "currentBeispielTr": "Temel hakka yapılan her müdahale açık bir yasal dayanak gerektiriyor."
   },
   {
    "id": 6389,
@@ -373,7 +373,7 @@
    "formen": "Präambeln",
    "currentTr": "başlangıç metni, önsöz",
    "currentBeispiel": "Die Präambel nennt die Werte, auf die sich der Staat gründet.",
-   "currentBeispielTr": "Başlangıç metni, devletin dayandığı değerleri sayar."
+   "currentBeispielTr": "Başlangıç metni, devletin dayandığı değerleri sayıyor."
   },
   {
    "id": 6390,
@@ -383,7 +383,7 @@
    "formen": "",
    "currentTr": "hakkaniyet, nasafet",
    "currentBeispiel": "Wo das Gesetz schweigt, entscheidet das Gericht nach Billigkeit.",
-   "currentBeispielTr": "Kanunun sustuğu yerde mahkeme hakkaniyete göre karar verir."
+   "currentBeispielTr": "Kanunun sustuğu yerde mahkeme hakkaniyete göre karar veriyor."
   },
   {
    "id": 6391,
@@ -392,8 +392,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "irade serbestisi, özel hukuk özerkliği",
-   "currentBeispiel": "Die Privatautonomie erlaubt den Parteien, ihre Verträge frei zu gestalten.",
-   "currentBeispielTr": "İrade serbestisi, taraflara sözleşmelerini serbestçe düzenleme imkânı verir."
+   "currentBeispiel": "Der Gesetzgeber schränkt die Privatautonomie im Mietrecht stark ein.",
+   "currentBeispielTr": "Yasa koyucu, kira hukukunda irade serbestisini ciddi biçimde sınırlıyor."
   },
   {
    "id": 6392,
@@ -402,8 +402,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yargı erki",
-   "currentBeispiel": "Die Judikative darf sich nicht zum Ersatzgesetzgeber aufschwingen.",
-   "currentBeispielTr": "Yargı erki kendini yedek yasa koyucu yerine koyamaz."
+   "currentBeispiel": "In diesem Land ist die Judikative längst nicht mehr unabhängig.",
+   "currentBeispielTr": "Bu ülkede yargı erki çoktandır bağımsız değil."
   },
   {
    "id": 6393,
@@ -412,8 +412,8 @@
    "niveau": "C1",
    "formen": "Gerichtsbarkeiten",
    "currentTr": "yargı yetkisi, yargı kolu",
-   "currentBeispiel": "Für diesen Streit ist die ordentliche Gerichtsbarkeit zuständig.",
-   "currentBeispielTr": "Bu uyuşmazlıkta adli yargı görevli."
+   "currentBeispiel": "Die deutsche Gerichtsbarkeit erstreckt sich nicht auf Diplomaten.",
+   "currentBeispielTr": "Alman yargı yetkisi diplomatları kapsamıyor."
   },
   {
    "id": 6394,
@@ -458,7 +458,7 @@
    "formen": "hat freigesprochen",
    "currentTr": "beraat ettirmek",
    "currentBeispiel": "Das Gericht sprach den Angeklagten aus Mangel an Beweisen frei.",
-   "currentBeispielTr": "Mahkeme, delil yetersizliğinden sanığın beraatine karar verdi."
+   "currentBeispielTr": "Mahkeme, delil yetersizliğinden sanığı beraat ettirdi."
   },
   {
    "id": 6398,
@@ -468,7 +468,7 @@
    "formen": "hat oblegen",
    "currentTr": "yükümlülüğünde olmak, düşmek",
    "currentBeispiel": "Die Beweisführung obliegt in diesem Verfahren der Anklage.",
-   "currentBeispielTr": "Bu davada ispat yükümlülüğü iddia makamına düşer."
+   "currentBeispielTr": "Bu davada delilleri sunmak iddia makamının sorumluluğunda."
   },
   {
    "id": 6399,
@@ -492,7 +492,7 @@
    "formen": "hat verkündet",
    "currentTr": "ilan etmek, açıklamak",
    "currentBeispiel": "Das Urteil wird kommenden Dienstag öffentlich verkündet.",
-   "currentBeispielTr": "Karar, önümüzdeki salı günü aleni olarak açıklanacak.",
+   "currentBeispielTr": "Karar önümüzdeki salı günü aleni olarak ilan edilecek.",
    "overlapping": [
     "ausweisen (C1)"
    ]
@@ -517,8 +517,8 @@
    "niveau": "C1",
    "formen": "hat gerügt",
    "currentTr": "kınamak, eleştirmek",
-   "currentBeispiel": "Das oberste Gericht rügte die schleppende Dauer des Verfahrens.",
-   "currentBeispielTr": "Yüksek mahkeme, sürecin ağır aksak uzunluğunu eleştirdi."
+   "currentBeispiel": "Das Gericht rügte die Behörde in scharfen Worten.",
+   "currentBeispielTr": "Mahkeme, idareyi sert sözlerle kınadı."
   }
  ]
 }

@@ -3,9 +3,9 @@
     "id": 2572,
     "tr": "reklam",
     "en": "advertisement",
-    "beispiel": "Ich möchte keine Reklame im Briefkasten.",
-    "beispielTr": "Posta kutuma reklam istemiyorum.",
-    "beispielEn": "I don't want any ads in my mailbox."
+    "beispiel": "Vor dem Film läuft im Kino immer viel Reklame.",
+    "beispielTr": "Sinemada filmden önce hep bir sürü reklam oluyor.",
+    "beispielEn": "At the movies, there are always lots of ads before the film."
   },
   {
     "id": 1609,
@@ -35,17 +35,17 @@
     "id": 2606,
     "tr": "merhem",
     "en": "ointment",
-    "beispiel": "Diese Salbe gibt es nur auf Rezept.",
-    "beispielTr": "Bu merhem sadece reçeteyle alınıyor.",
-    "beispielEn": "This ointment is only available with a prescription."
+    "beispiel": "Trag die Salbe zweimal täglich auf die Wunde auf.",
+    "beispielTr": "Merhemi günde iki kez yaraya sür.",
+    "beispielEn": "Apply the ointment to the wound twice a day."
   },
   {
     "id": 1892,
     "tr": "akıcı",
     "en": "fluent",
-    "beispiel": "Mein Kollege spricht fließend Deutsch.",
-    "beispielTr": "İş arkadaşım akıcı Almanca konuşuyor.",
-    "beispielEn": "My colleague speaks fluent German."
+    "beispiel": "Tim liest schon fließend, obwohl er erst sechs ist.",
+    "beispielTr": "Tim daha altı yaşında olmasına rağmen akıcı okuyor.",
+    "beispielEn": "Tim already reads fluently, even though he's only six."
   },
   {
     "id": 1840,
@@ -59,41 +59,41 @@
     "id": 2901,
     "tr": "havale",
     "en": "bank transfer",
-    "beispiel": "Sie können bar oder per Überweisung bezahlen.",
-    "beispielTr": "Nakit ya da havaleyle ödeyebilirsiniz.",
-    "beispielEn": "You can pay in cash or by bank transfer."
+    "beispiel": "Die Überweisung ist noch nicht auf meinem Konto angekommen.",
+    "beispielTr": "Havale henüz hesabıma gelmedi.",
+    "beispielEn": "The bank transfer hasn't reached my account yet."
   },
   {
     "id": 1888,
     "tr": "esnek",
     "en": "flexible",
-    "beispiel": "Meine Arbeitszeit ist flexibel.",
-    "beispielTr": "Çalışma saatlerim esnek.",
-    "beispielEn": "My working hours are flexible."
+    "beispiel": "Bei der Terminplanung sind wir ganz flexibel.",
+    "beispielTr": "Randevu konusunda oldukça esneğiz.",
+    "beispielEn": "We're very flexible about scheduling."
   },
   {
     "id": 1456,
     "tr": "yukarı doğru",
     "en": "upward",
-    "beispiel": "Der Weg geht ab hier immer aufwärts.",
-    "beispielTr": "Yol buradan itibaren hep yukarı doğru gidiyor.",
-    "beispielEn": "From here on the path goes steadily upward."
+    "beispiel": "Der Aufzug fährt langsam aufwärts in den fünften Stock.",
+    "beispielTr": "Asansör yavaşça yukarı, beşinci kata çıkıyor.",
+    "beispielEn": "The elevator slowly goes up to the fifth floor."
   },
   {
     "id": 2763,
     "tr": "dik",
     "en": "steep",
-    "beispiel": "Die Straße zu unserem Haus ist sehr steil.",
-    "beispielTr": "Evimize çıkan yol çok dik.",
-    "beispielEn": "The road up to our house is very steep."
+    "beispiel": "Der Weg zur Burg war so steil, dass wir oft Pause machten.",
+    "beispielTr": "Kaleye giden yol o kadar dikti ki sık sık mola verdik.",
+    "beispielEn": "The path to the castle was so steep that we often took breaks."
   },
   {
     "id": 1623,
     "tr": "fırça",
     "en": "brush",
-    "beispiel": "Ich brauche eine neue Bürste für meine Haare.",
-    "beispielTr": "Saçlarım için yeni bir fırçaya ihtiyacım var.",
-    "beispielEn": "I need a new brush for my hair."
+    "beispiel": "Mit einer weichen Bürste putze ich die Schuhe.",
+    "beispielTr": "Ayakkabıları yumuşak bir fırçayla temizliyorum.",
+    "beispielEn": "I clean the shoes with a soft brush."
   },
   {
     "id": 2317,
@@ -131,9 +131,9 @@
     "id": 1612,
     "tr": "broşür",
     "en": "brochure",
-    "beispiel": "In der Broschüre finden Sie alle wichtigen Informationen.",
-    "beispielTr": "Bütün önemli bilgileri broşürde bulabilirsiniz.",
-    "beispielEn": "You'll find all the important information in the brochure."
+    "beispiel": "Das Reisebüro hat uns eine Broschüre über Norwegen gegeben.",
+    "beispielTr": "Seyahat acentesi bize Norveç hakkında bir broşür verdi.",
+    "beispielEn": "The travel agency gave us a brochure about Norway."
   },
   {
     "id": 1350,
@@ -147,9 +147,9 @@
     "id": 1657,
     "tr": "lehçe",
     "en": "dialect",
-    "beispiel": "Ich verstehe dich besser, wenn du keinen Dialekt sprichst.",
-    "beispielTr": "Lehçe konuşmadığında seni daha iyi anlıyorum.",
-    "beispielEn": "I understand you better when you don't speak dialect."
+    "beispiel": "Meine Oma spricht einen Dialekt, den kaum jemand versteht.",
+    "beispielTr": "Babaannem neredeyse kimsenin anlamadığı bir lehçe konuşuyor.",
+    "beispielEn": "My grandma speaks a dialect that hardly anyone understands."
   },
   {
     "id": 3011,
@@ -163,17 +163,17 @@
     "id": 2457,
     "tr": "klasör",
     "en": "binder",
-    "beispiel": "Für den Deutschkurs habe ich mir einen Ordner gekauft.",
-    "beispielTr": "Almanca kursu için kendime bir klasör aldım.",
-    "beispielEn": "I bought myself a binder for the German course."
+    "beispiel": "Die Rechnungen sind alle in dem blauen Ordner.",
+    "beispielTr": "Faturaların hepsi mavi klasörde.",
+    "beispielEn": "The bills are all in the blue binder."
   },
   {
     "id": 1687,
     "tr": "ortalama olarak",
     "en": "on average",
-    "beispiel": "Die Preise sind letztes Jahr um durchschnittlich sechs Prozent gestiegen.",
-    "beispielTr": "Fiyatlar geçen yıl ortalama olarak yüzde altı arttı.",
-    "beispielEn": "Prices rose by an average of six percent last year."
+    "beispiel": "Ich schlafe durchschnittlich nur sechs Stunden pro Nacht.",
+    "beispielTr": "Gecede ortalama sadece altı saat uyuyorum.",
+    "beispielEn": "On average I only sleep six hours a night."
   },
   {
     "id": 2547,
@@ -187,9 +187,9 @@
     "id": 3101,
     "tr": "hava raporu",
     "en": "weather report",
-    "beispiel": "Hast du heute schon den Wetterbericht gehört?",
-    "beispielTr": "Bugün hava raporunu dinledin mi?",
-    "beispielEn": "Have you heard the weather report today?"
+    "beispiel": "Laut Wetterbericht soll es am Wochenende schneien.",
+    "beispielTr": "Hava raporuna göre hafta sonu kar yağacakmış.",
+    "beispielEn": "According to the weather report, it's supposed to snow this weekend."
   },
   {
     "id": 3043,
@@ -235,25 +235,25 @@
     "id": 2622,
     "tr": "vitrin",
     "en": "shop window",
-    "beispiel": "Ich habe im Schaufenster eine schicke Bluse gesehen.",
-    "beispielTr": "Vitrinde şık bir bluz gördüm.",
-    "beispielEn": "I saw a stylish blouse in the shop window."
+    "beispiel": "Vor Weihnachten sind die Schaufenster bunt geschmückt.",
+    "beispielTr": "Noel'den önce vitrinler rengarenk süslenir.",
+    "beispielEn": "Before Christmas, the shop windows are colorfully decorated."
   },
   {
     "id": 2512,
     "tr": "kadın stajyer",
     "en": "female intern",
-    "beispiel": "Bei dieser Firma habe ich als Praktikantin gearbeitet.",
-    "beispielTr": "Bu şirkette stajyer olarak çalıştım.",
-    "beispielEn": "I worked as an intern at this company."
+    "beispiel": "Die neue Praktikantin kommt aus Spanien.",
+    "beispielTr": "Yeni stajyer kız İspanya'dan geliyor.",
+    "beispielEn": "The new intern is from Spain."
   },
   {
     "id": 2911,
     "tr": "anket",
     "en": "survey",
-    "beispiel": "Wir machen eine Umfrage zum Thema Umweltschutz.",
-    "beispielTr": "Çevre koruma konusunda bir anket yapıyoruz.",
-    "beispielEn": "We're doing a survey on environmental protection."
+    "beispiel": "Laut einer Umfrage fahren immer mehr Leute mit dem Rad.",
+    "beispielTr": "Bir ankete göre giderek daha çok insan bisiklete biniyor.",
+    "beispielEn": "According to a survey, more and more people ride bikes."
   },
   {
     "id": 2822,
@@ -299,9 +299,9 @@
     "id": 1466,
     "tr": "yardımcı eleman",
     "en": "temporary worker",
-    "beispiel": "Wir suchen eine freundliche Aushilfe für unser Geschäft.",
-    "beispielTr": "Mağazamız için güler yüzlü bir yardımcı eleman arıyoruz.",
-    "beispielEn": "We're looking for a friendly temporary worker for our shop."
+    "beispiel": "Im Sommer arbeite ich als Aushilfe in einem Café.",
+    "beispielTr": "Yazın bir kafede yardımcı eleman olarak çalışıyorum.",
+    "beispielEn": "In the summer I work as a temp in a café."
   },
   {
     "id": 3122,
@@ -347,9 +347,9 @@
     "id": 1475,
     "tr": "dıştan",
     "en": "external",
-    "beispiel": "Das Medikament darf man nur äußerlich anwenden.",
-    "beispielTr": "Bu ilaç sadece dıştan kullanılabilir.",
-    "beispielEn": "This medication may only be used externally."
+    "beispiel": "Äußerlich wirkte er ruhig, aber er war sehr nervös.",
+    "beispielTr": "Dıştan sakin görünüyordu ama çok gergindi.",
+    "beispielEn": "Outwardly he seemed calm, but he was very nervous."
   },
   {
     "id": 2640,
@@ -371,9 +371,9 @@
     "id": 1733,
     "tr": "taahhütlü mektup",
     "en": "registered letter",
-    "beispiel": "Ich habe den Vertrag als Einschreiben geschickt.",
-    "beispielTr": "Sözleşmeyi taahhütlü olarak gönderdim.",
-    "beispielEn": "I sent the contract by registered letter."
+    "beispiel": "Die Kündigung kam heute per Einschreiben.",
+    "beispielTr": "Fesih bildirimi bugün taahhütlü mektupla geldi.",
+    "beispielEn": "The termination notice came today by registered mail."
   },
   {
     "id": 1567,
@@ -387,16 +387,16 @@
     "id": 1704,
     "tr": "uygun olmak",
     "en": "to be suitable",
-    "beispiel": "Dieses Hotel eignet sich besonders für Familien mit Kindern.",
-    "beispielTr": "Bu otel özellikle çocuklu aileler için uygun.",
-    "beispielEn": "This hotel is especially suitable for families with children."
+    "beispiel": "Diese Schuhe eignen sich nicht für lange Wanderungen.",
+    "beispielTr": "Bu ayakkabılar uzun yürüyüşler için uygun değil.",
+    "beispielEn": "These shoes aren't suitable for long hikes."
   },
   {
     "id": 2461,
     "tr": "banliyö",
     "en": "suburb",
-    "beispiel": "Mein Bruder wohnt in einem Vorort von Hamburg.",
-    "beispielTr": "Kardeşim Hamburg'un bir banliyösünde oturuyor.",
-    "beispielEn": "My brother lives in a suburb of Hamburg."
+    "beispiel": "Viele Familien ziehen in einen ruhigen Vorort.",
+    "beispielTr": "Birçok aile sakin bir banliyöye taşınıyor.",
+    "beispielEn": "Many families move to a quiet suburb."
   }
 ]

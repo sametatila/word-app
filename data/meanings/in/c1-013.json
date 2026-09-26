@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "meslektaş dayanışması, iş arkadaşlığı",
-   "currentBeispiel": "Unter dem Wettbewerb der Abteilungen leidet zuerst die Kollegialität.",
-   "currentBeispielTr": "Birimler arası rekabetten ilk zarar gören meslektaş dayanışması olur."
+   "currentBeispiel": "Aus reiner Kollegialität übernahm sie meine Nachtschicht.",
+   "currentBeispielTr": "Sırf meslektaş dayanışmasından gece vardiyamı devraldı."
   },
   {
    "id": 5854,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "rekabet baskısı",
-   "currentBeispiel": "Interner Konkurrenzdruck verwandelt Kollegen unmerklich in Gegner.",
-   "currentBeispielTr": "İç rekabet baskısı meslektaşları fark ettirmeden rakibe dönüştürür."
+   "currentBeispiel": "Der Konkurrenzdruck im Büro raubt ihm den Schlaf.",
+   "currentBeispielTr": "Ofisteki rekabet baskısı adamın uykusunu kaçırıyor."
   },
   {
    "id": 5855,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Segmentierungen",
    "currentTr": "bölümlenme, katmanlaşma",
-   "currentBeispiel": "Die Segmentierung des Arbeitsmarktes hält Randgruppen dauerhaft draußen.",
-   "currentBeispielTr": "İşgücü piyasasının katmanlaşması kenardaki grupları kalıcı olarak dışarıda tutar."
+   "currentBeispiel": "Für die neue Kampagne brauchen wir eine feinere Segmentierung.",
+   "currentBeispielTr": "Yeni kampanya için daha ince bir segmentasyon gerekiyor."
   },
   {
    "id": 5856,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kenara itilme, ötekileştirme",
-   "currentBeispiel": "Befristungen fördern die Marginalisierung junger Wissenschaftlerinnen.",
-   "currentBeispielTr": "Süreli sözleşmeler genç kadın bilim insanlarının kenara itilmesini besliyor."
+   "currentBeispiel": "Befristete Verträge beschleunigen die Marginalisierung junger Forscherinnen.",
+   "currentBeispielTr": "Süreli sözleşmeler genç kadın araştırmacıların kenara itilmesini hızlandırıyor."
   },
   {
    "id": 5857,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "Disziplinierungen",
    "currentTr": "disipline etme, hizaya sokma",
-   "currentBeispiel": "Ständige Erreichbarkeit wirkt als subtile Form der Disziplinierung.",
-   "currentBeispielTr": "Sürekli ulaşılabilirlik ince bir hizaya sokma biçimi olarak işliyor."
+   "currentBeispiel": "Der Chef nutzt die Anwesenheitsliste zur Disziplinierung des Teams.",
+   "currentBeispielTr": "Patron yoklama listesini ekibi hizaya sokmak için kullanıyor."
   },
   {
    "id": 5858,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Legitimationen",
    "currentTr": "meşruiyet, meşrulaştırma",
-   "currentBeispiel": "Der Führung fehlte jede Legitimation für diesen einsamen Beschluss.",
-   "currentBeispielTr": "Yönetimin bu tek başına aldığı karar için hiçbir meşru dayanağı yoktu.",
+   "currentBeispiel": "Das Gutachten diente nur der Legitimation einer längst gefallenen Entscheidung.",
+   "currentBeispielTr": "Rapor yalnızca çoktan alınmış bir kararı meşrulaştırmaya yarıyordu.",
    "overlapping": [
     "die Legitimität (C1)"
    ]
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "katılım, söz sahibi olma",
-   "currentBeispiel": "Partizipation ohne Entscheidungsmacht bleibt eine freundliche Geste.",
-   "currentBeispielTr": "Karar gücü olmayan katılım, nazik bir jest olarak kalır.",
+   "currentBeispiel": "Die Belegschaft fordert bei der Schichtplanung echte Partizipation.",
+   "currentBeispielTr": "Çalışanlar vardiya planlamasında gerçekten söz sahibi olmak istiyor.",
    "overlapping": [
     "die Teilnahme (B1)",
     "die Teilhabe (B2)"
@@ -86,8 +86,8 @@
    "niveau": "C1",
    "formen": "Aushandlungen",
    "currentTr": "müzakere, uzlaşarak belirleme",
-   "currentBeispiel": "Regeln entstehen hier durch tägliche Aushandlung, nicht durch Erlass.",
-   "currentBeispielTr": "Kurallar burada emirle değil, günlük müzakereyle oluşuyor.",
+   "currentBeispiel": "Die Aushandlung des neuen Mietvertrags zog sich über Wochen.",
+   "currentBeispielTr": "Yeni kira sözleşmesinin pazarlığı haftalarca sürdü.",
    "overlapping": [
     "die Verhandlung (B2)"
    ]
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "uzlaşıya varma",
-   "currentBeispiel": "Die Konsensfindung dauerte länger, trug die Entscheidung aber besser.",
-   "currentBeispielTr": "Uzlaşıya varmak uzun sürdü ama kararı daha sağlam taşıdı."
+   "currentBeispiel": "Die Konsensfindung im Gemeinderat dauerte bis nach Mitternacht.",
+   "currentBeispielTr": "Belediye meclisinde uzlaşıya varmak gece yarısını buldu."
   },
   {
    "id": 5862,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "statü belirsizliği",
-   "currentBeispiel": "Statusunsicherheit macht Menschen anfällig für autoritäre Versprechen.",
-   "currentBeispielTr": "Statü belirsizliği insanları otoriter vaatlere açık hâle getirir."
+   "currentBeispiel": "Nach der Umstrukturierung wuchs die Statusunsicherheit in der ganzen Abteilung.",
+   "currentBeispielTr": "Yeniden yapılanmadan sonra tüm birimde statü belirsizliği arttı."
   },
   {
    "id": 5863,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "hat untergraben",
    "currentTr": "temelini sarsmak, baltalamak",
-   "currentBeispiel": "Willkürliche Ausnahmen untergraben das Vertrauen in jede Regel.",
-   "currentBeispielTr": "Keyfî istisnalar her kurala duyulan güveni baltalar."
+   "currentBeispiel": "Mit seiner ständigen Kritik untergräbt er die Autorität der Trainerin.",
+   "currentBeispielTr": "Sürekli eleştirileriyle antrenörün otoritesini baltalıyor."
   },
   {
    "id": 5864,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "hat sich untergeordnet",
    "currentTr": "boyun eğmek, tabi olmak",
-   "currentBeispiel": "Er weigerte sich, dem Kalkül der Zentrale unterzuordnen.",
-   "currentBeispielTr": "Merkezin hesabına boyun eğmeyi reddetti.",
+   "currentBeispiel": "Der neue Kollege ordnet sich der Teamleiterin bereitwillig unter.",
+   "currentBeispielTr": "Yeni iş arkadaşı, ekip liderinin otoritesini seve seve kabul ediyor.",
    "overlapping": [
     "nachgeben (B2)",
     "sich fügen (C1)"
@@ -143,8 +143,8 @@
    "niveau": "C1",
    "formen": "hat eingebunden",
    "currentTr": "dahil etmek, sürece katmak",
-   "currentBeispiel": "Wer Veränderungen will, muss die Betroffenen früh einbinden.",
-   "currentBeispielTr": "Değişim isteyen, etkilenenleri erkenden sürece katmalı.",
+   "currentBeispiel": "Die Chefin bindet die Azubis früh in die Planung ein.",
+   "currentBeispielTr": "Müdür, çırakları planlama sürecine erkenden katıyor.",
    "overlapping": [
     "einbeziehen (B2)"
    ]
@@ -156,8 +156,8 @@
    "niveau": "C1",
    "formen": "hat befähigt",
    "currentTr": "muktedir kılmak, yetkin hâle getirmek",
-   "currentBeispiel": "Gute Führung soll Mitarbeitende befähigen, nicht bevormunden.",
-   "currentBeispielTr": "İyi yöneticilik çalışanı vesayet altına almak değil, yetkin kılmaktır."
+   "currentBeispiel": "Die Schulung befähigt die Mitarbeiter zu selbstständiger Arbeit.",
+   "currentBeispielTr": "Eğitim, çalışanları bağımsız çalışmaya yetkin kılıyor."
   },
   {
    "id": 5867,
@@ -166,8 +166,8 @@
    "niveau": "C1",
    "formen": "hat ermächtigt",
    "currentTr": "yetkilendirmek, güç vermek",
-   "currentBeispiel": "Der Vorstand ermächtigte die Abteilung zu eigenständigen Entscheidungen.",
-   "currentBeispielTr": "Yönetim kurulu birimi kendi başına karar almaya yetkilendirdi.",
+   "currentBeispiel": "Der Vorstand ermächtigte sie, den Vertrag allein zu unterschreiben.",
+   "currentBeispielTr": "Yönetim kurulu, sözleşmeyi tek başına imzalaması için onu yetkilendirdi.",
    "overlapping": [
     "bevollmächtigen (C1)"
    ]
@@ -179,8 +179,8 @@
    "niveau": "C1",
    "formen": "hat honoriert",
    "currentTr": "karşılığını vermek, ödüllendirmek",
-   "currentBeispiel": "Der Einsatz am Wochenende wurde von niemandem honoriert.",
-   "currentBeispielTr": "Hafta sonundaki çabanın karşılığını kimse vermedi.",
+   "currentBeispiel": "Niemand hat ihre Mehrarbeit am Wochenende honoriert.",
+   "currentBeispielTr": "Hafta sonundaki fazla mesaisini kimse ödüllendirmedi.",
    "overlapping": [
     "sich auszahlen (C1)",
     "sich revanchieren (C1)"
@@ -193,8 +193,8 @@
    "niveau": "C1",
    "formen": "hat abgewälzt",
    "currentTr": "üstünden atmak, başkasına yıkmak",
-   "currentBeispiel": "Das Risiko wird konsequent auf die Soloselbstständigen abgewälzt.",
-   "currentBeispielTr": "Risk sistematik biçimde tek kişilik serbest çalışanların sırtına yıkılıyor."
+   "currentBeispiel": "Die Firma wälzt die Kosten auf die Kunden ab.",
+   "currentBeispielTr": "Şirket masrafları müşterilerin üstüne yıkıyor."
   },
   {
    "id": 5870,
@@ -203,8 +203,8 @@
    "niveau": "C1",
    "formen": "hat vorenthalten",
    "currentTr": "esirgemek, vermemek",
-   "currentBeispiel": "Der Belegschaft wurden wesentliche Zahlen bis zuletzt vorenthalten.",
-   "currentBeispielTr": "Çalışanlardan önemli rakamlar son ana kadar gizlendi.",
+   "currentBeispiel": "Man hat ihr den Bonus ohne Begründung vorenthalten.",
+   "currentBeispielTr": "Primini hiçbir gerekçe göstermeden ondan esirgediler.",
    "overlapping": [
     "versagen (B2)"
    ]
@@ -216,8 +216,8 @@
    "niveau": "C1",
    "formen": "hat sich abgegrenzt",
    "currentTr": "sınır koymak, kendini ayırmak",
-   "currentBeispiel": "Wer sich nicht abgrenzt, arbeitet irgendwann rund um die Uhr.",
-   "currentBeispielTr": "Sınır koymayan bir noktada gece gündüz çalışır hâle gelir."
+   "currentBeispiel": "Sie grenzt sich abends klar von der Arbeit ab.",
+   "currentBeispielTr": "Akşamları işe karşı net bir sınır koyuyor."
   },
   {
    "id": 5872,
@@ -226,8 +226,8 @@
    "niveau": "C1",
    "formen": "hat verschleiert",
    "currentTr": "gerçeği gizlemek, örtbas etmek",
-   "currentBeispiel": "Schöne Kennziffern verschleiern häufig die Lage in den Werkstätten.",
-   "currentBeispielTr": "Güzel göstergeler çoğu zaman atölyelerdeki durumu örtbas eder."
+   "currentBeispiel": "Die schönen Zahlen verschleiern den Zustand der Werkstatt.",
+   "currentBeispielTr": "Güzel rakamlar atölyenin gerçek durumunu örtbas ediyor."
   },
   {
    "id": 5873,
@@ -236,8 +236,8 @@
    "niveau": "C1",
    "formen": "hat beansprucht",
    "currentTr": "hak iddia etmek, talep etmek",
-   "currentBeispiel": "Beide Abteilungen beanspruchten den Erfolg des Projekts für sich.",
-   "currentBeispielTr": "İki birim de projenin başarısını kendine mal etti."
+   "currentBeispiel": "Beide Abteilungen beanspruchen den Erfolg des Projekts für sich.",
+   "currentBeispielTr": "İki birim de projenin başarısı üzerinde hak iddia ediyor."
   },
   {
    "id": 5874,
@@ -246,8 +246,8 @@
    "niveau": "C1",
    "formen": "hat entfaltet",
    "currentTr": "geliştirmek, açığa çıkarmak",
-   "currentBeispiel": "Erst im kleinen Team konnte sie ihre Fähigkeiten entfalten.",
-   "currentBeispielTr": "Yeteneklerini ancak küçük bir ekipte açığa çıkarabildi.",
+   "currentBeispiel": "Erst im kleinen Team konnte sie ihr Talent entfalten.",
+   "currentBeispielTr": "Yeteneğini ancak küçük bir ekipte açığa çıkarabildi.",
    "overlapping": [
     "entwickeln (B1)",
     "verbessern (A2)"
@@ -260,8 +260,8 @@
    "niveau": "C1",
    "formen": "hat verstetigt",
    "currentTr": "kalıcılaştırmak, sürekli hâle getirmek",
-   "currentBeispiel": "Aus der Notlösung wurde eine verstetigte Form der Zusammenarbeit.",
-   "currentBeispielTr": "Geçici çözüm, kalıcılaşmış bir iş birliği biçimine dönüştü."
+   "currentBeispiel": "Die Stadt will das Projekt nach der Testphase verstetigen.",
+   "currentBeispielTr": "Şehir, deneme aşamasından sonra projeyi kalıcılaştırmak istiyor."
   },
   {
    "id": 5876,
@@ -270,8 +270,8 @@
    "niveau": "C1",
    "formen": "hat ausgegliedert",
    "currentTr": "dışarıya devretmek, bünyeden ayırmak",
-   "currentBeispiel": "Die Reinigung wurde ausgegliedert, die Löhne fielen sofort.",
-   "currentBeispielTr": "Temizlik hizmeti dışarıya devredildi, ücretler hemen düştü."
+   "currentBeispiel": "Die Klinik hat die Reinigung an eine Fremdfirma ausgegliedert.",
+   "currentBeispielTr": "Klinik, temizlik işini dışarıdan bir firmaya verdi."
   },
   {
    "id": 5877,
@@ -280,8 +280,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şirket içi, kurum içi",
-   "currentBeispiel": "Die Studie wurde betriebsintern erstellt und nie veröffentlicht.",
-   "currentBeispielTr": "Araştırma şirket içinde hazırlandı ve hiç yayımlanmadı."
+   "currentBeispiel": "Der Bericht wurde betriebsintern erstellt und nie veröffentlicht.",
+   "currentBeispielTr": "Rapor şirket içinde hazırlandı ve hiç yayımlanmadı."
   },
   {
    "id": 5878,
@@ -290,8 +290,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yıpratıcı, insanı bitiren",
-   "currentBeispiel": "Nicht die Aufgaben, sondern die zermürbenden Abstimmungsrunden kosten Kraft.",
-   "currentBeispielTr": "Gücü tüketen işler değil, yıpratıcı mutabakat turlarıdır."
+   "currentBeispiel": "Das ständige Warten auf eine Antwort ist zermürbend.",
+   "currentBeispielTr": "Sürekli bir cevap beklemek çok yıpratıcı."
   },
   {
    "id": 5879,
@@ -300,8 +300,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ücretsiz, karşılığı ödenmeyen",
-   "currentBeispiel": "Ein großer Teil der geleisteten Arbeit bleibt schlicht unbezahlt.",
-   "currentBeispielTr": "Yapılan işin büyük bir kısmı öylece ücretsiz kalıyor.",
+   "currentBeispiel": "Die Überstunden vom letzten Monat sind bis heute unbezahlt.",
+   "currentBeispielTr": "Geçen ayın fazla mesaileri bugüne kadar ödenmedi.",
    "overlapping": [
     "kostenlos (A2)",
     "unentgeltlich (B2)",
@@ -315,8 +315,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "gayriresmî, resmî olmayan",
-   "currentBeispiel": "Wichtige Entscheidungen fallen oft informell in der Kaffeeküche.",
-   "currentBeispielTr": "Önemli kararlar çoğu zaman gayriresmî olarak çay ocağında alınır."
+   "currentBeispiel": "Die wichtigen Absprachen werden hier informell in der Kaffeeküche getroffen.",
+   "currentBeispielTr": "Önemli anlaşmalar burada gayriresmî olarak çay ocağında yapılıyor."
   },
   {
    "id": 5881,
@@ -325,8 +325,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yapısal",
-   "currentBeispiel": "Das Problem ist strukturell und nicht durch Motivation zu lösen.",
-   "currentBeispielTr": "Sorun yapısaldır ve motivasyonla çözülemez."
+   "currentBeispiel": "Der Personalmangel in der Pflege ist strukturell bedingt.",
+   "currentBeispielTr": "Bakımdaki personel açığı yapısal nedenlerden kaynaklanıyor."
   },
   {
    "id": 5882,
@@ -335,8 +335,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kolektif, ortaklaşa",
-   "currentBeispiel": "Nur kollektiv organisiert konnten sie überhaupt etwas durchsetzen.",
-   "currentBeispielTr": "Ancak kolektif örgütlendiklerinde bir şey kabul ettirebildiler."
+   "currentBeispiel": "Die Fahrer haben den Streik kollektiv beschlossen.",
+   "currentBeispielTr": "Şoförler grev kararını kolektif olarak aldı."
   },
   {
    "id": 5883,
@@ -345,8 +345,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geçirgen, geçiş imkânı olan",
-   "currentBeispiel": "Der Aufstieg ist theoretisch durchlässig, praktisch bleibt er verschlossen.",
-   "currentBeispielTr": "Yükselme teoride geçirgen, pratikte kapalı kalıyor."
+   "currentBeispiel": "Das Schulsystem ist nur auf dem Papier durchlässig.",
+   "currentBeispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçirgen."
   },
   {
    "id": 5884,
@@ -355,8 +355,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "katı, esnemeyen",
-   "currentBeispiel": "Starre Zuständigkeiten verhindern, dass jemand über den Rand blickt.",
-   "currentBeispielTr": "Katı görev tanımları kimsenin kendi sınırının ötesine bakmasını engeller."
+   "currentBeispiel": "Der Zeitplan ist zu starr für spontane Änderungen.",
+   "currentBeispielTr": "Program ani değişiklikler için fazla katı."
   },
   {
    "id": 5885,
@@ -365,8 +365,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "başkası tarafından belirlenen, iradesi dışında",
-   "currentBeispiel": "Wer fremdbestimmt arbeitet, erlebt seinen Tag als fremdes Programm.",
-   "currentBeispielTr": "İradesi dışında çalışan biri, gününü yabancı bir program gibi yaşar."
+   "currentBeispiel": "Sein Arbeitstag ist von morgens bis abends fremdbestimmt.",
+   "currentBeispielTr": "Mesai günü sabahtan akşama kadar başkaları tarafından belirleniyor."
   },
   {
    "id": 5886,
@@ -375,8 +375,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "amaca yönelik akılcı, araçsal akılcı",
-   "currentBeispiel": "Rein zweckrational betrachtet lohnt sich Rücksicht auf Menschen nie.",
-   "currentBeispielTr": "Salt araçsal akılcı bakıldığında insanları gözetmek hiç kârlı değildir."
+   "currentBeispiel": "Er entscheidet rein zweckrational und fragt nie nach Gefühlen.",
+   "currentBeispielTr": "Kararlarını salt araçsal akılcılıkla verir, duyguları hiç hesaba katmaz."
   },
   {
    "id": 5887,
@@ -385,8 +385,8 @@
    "niveau": "C1",
    "formen": "Zersiedelungen",
    "currentTr": "düzensiz yayılma, kırsalın yapılaşması",
-   "currentBeispiel": "Die ungebremste Zersiedelung der Landschaft gilt als planerisches Versagen.",
-   "currentBeispielTr": "Peyzajın önü alınamayan düzensiz yapılaşması, planlamanın başarısızlığı sayılıyor."
+   "currentBeispiel": "Die Zersiedelung frisst jedes Jahr mehr Ackerland.",
+   "currentBeispielTr": "Düzensiz yapılaşma her yıl daha çok tarım arazisi yutuyor."
   },
   {
    "id": 5888,
@@ -395,8 +395,8 @@
    "niveau": "C1",
    "formen": "Bauvorhaben",
    "currentTr": "yapı projesi, inşaat girişimi",
-   "currentBeispiel": "Das umstrittene Bauvorhaben am Hafen wurde vorerst zurückgestellt.",
-   "currentBeispielTr": "Limandaki tartışmalı yapı projesi şimdilik ertelendi."
+   "currentBeispiel": "Das Bauvorhaben am Hafen wurde vorerst gestoppt.",
+   "currentBeispielTr": "Limandaki yapı projesi şimdilik durduruldu."
   },
   {
    "id": 5889,
@@ -415,8 +415,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yapı kültürü, mimarlık kültürü",
-   "currentBeispiel": "Eine hohe Baukultur zeigt sich weniger im Prunk als im Alltäglichen.",
-   "currentBeispielTr": "Yüksek bir yapı kültürü, gösterişten çok gündelik olanda kendini gösterir."
+   "currentBeispiel": "Der neue Bahnhof zeigt, wie ernst die Stadt es mit Baukultur meint.",
+   "currentBeispielTr": "Yeni gar, şehrin yapı kültürü konusunda ne kadar ciddi olduğunu gösteriyor."
   },
   {
    "id": 5891,
@@ -425,8 +425,8 @@
    "niveau": "C1",
    "formen": "Bausubstanzen",
    "currentTr": "yapı dokusu, mevcut yapı stoku",
-   "currentBeispiel": "Die Bausubstanz der Siedlung ist trotz ihres Alters erstaunlich solide.",
-   "currentBeispielTr": "Sitenin yapı dokusu, yaşına rağmen şaşırtıcı ölçüde sağlam."
+   "currentBeispiel": "Die Bausubstanz des Altbaus ist erstaunlich gut erhalten.",
+   "currentBeispielTr": "Eski binanın yapı dokusu şaşırtıcı derecede iyi korunmuş."
   },
   {
    "id": 5892,
@@ -435,8 +435,8 @@
    "niveau": "C1",
    "formen": "Bauträger",
    "currentTr": "yapı yatırımcısı, müteahhit firma",
-   "currentBeispiel": "Der Bauträger hatte bezahlbare Wohnungen versprochen und teure Eigentumswohnungen gebaut.",
-   "currentBeispielTr": "Müteahhit firma uygun fiyatlı konut sözü verip pahalı mülk daireler yaptı."
+   "currentBeispiel": "Der Bauträger hat den Fertigstellungstermin schon zweimal verschoben.",
+   "currentBeispielTr": "Müteahhit teslim tarihini şimdiden iki kez erteledi."
   },
   {
    "id": 5893,
@@ -446,7 +446,7 @@
    "formen": "Brachflächen",
    "currentTr": "atıl arazi, boş kalmış alan",
    "currentBeispiel": "Auf der Brachfläche hinter dem Bahnhof entsteht ein neues Wohnviertel.",
-   "currentBeispielTr": "Gar arkasındaki atıl arazide yeni bir konut mahallesi kuruluyor."
+   "currentBeispielTr": "Gar arkasındaki atıl arazide yeni bir konut mahallesi yükseliyor."
   },
   {
    "id": 5894,
@@ -455,8 +455,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "zeminin geçirimsizleştirilmesi, yüzeyin betonlaşması",
-   "currentBeispiel": "Die zunehmende Flächenversiegelung verschärft die Hochwassergefahr in den Städten.",
-   "currentBeispielTr": "Artan zemin betonlaşması şehirlerde sel tehlikesini ağırlaştırıyor."
+   "currentBeispiel": "Die Flächenversiegelung im Neubaugebiet verschärft die Hochwassergefahr.",
+   "currentBeispielTr": "Yeni yapı bölgesindeki zemin betonlaşması sel tehlikesini artırıyor."
   },
   {
    "id": 5895,
@@ -466,7 +466,7 @@
    "formen": "Ensembles",
    "currentTr": "yapı bütünü, birlikte korunan yapı grubu",
    "currentBeispiel": "Das barocke Ensemble am Marktplatz darf nicht verändert werden.",
-   "currentBeispielTr": "Meydandaki barok yapı bütününde değişiklik yapılamaz."
+   "currentBeispielTr": "Meydandaki barok yapı bütününe dokunulamaz."
   },
   {
    "id": 5896,
@@ -475,8 +475,8 @@
    "niveau": "C1",
    "formen": "Zwischennutzungen",
    "currentTr": "geçici kullanım, ara kullanım",
-   "currentBeispiel": "Die Zwischennutzung der Halle als Atelier läuft bis zum Abriss.",
-   "currentBeispielTr": "Salonun atölye olarak geçici kullanımı yıkıma kadar sürüyor."
+   "currentBeispiel": "Die Zwischennutzung der Halle als Atelier endet im Mai.",
+   "currentBeispielTr": "Salonun atölye olarak geçici kullanımı mayısta sona eriyor."
   },
   {
    "id": 5897,
@@ -485,8 +485,8 @@
    "niveau": "C1",
    "formen": "Aufwertungen",
    "currentTr": "değer kazandırma, iyileştirme",
-   "currentBeispiel": "Die Aufwertung des Viertels hat die Mieten binnen fünf Jahren verdoppelt.",
-   "currentBeispielTr": "Mahallenin değer kazanması kiraları beş yıl içinde ikiye katladı."
+   "currentBeispiel": "Die Aufwertung des Viertels hat die Mieten verdoppelt.",
+   "currentBeispielTr": "Mahalleye değer kazandırılması kiraları ikiye katladı."
   },
   {
    "id": 5898,
@@ -495,8 +495,8 @@
    "niveau": "C1",
    "formen": "Segregationen",
    "currentTr": "ayrışma, mekânsal ayrışma",
-   "currentBeispiel": "Soziale Segregation lässt sich an den Schulbezirken deutlich ablesen.",
-   "currentBeispielTr": "Toplumsal ayrışma okul bölgelerinden açıkça okunabiliyor.",
+   "currentBeispiel": "Die Segregation zeigt sich am deutlichsten in den Grundschulen.",
+   "currentBeispielTr": "Ayrışma en açık biçimde ilkokullarda göze çarpıyor.",
    "overlapping": [
     "die Zersetzung (C1)",
     "die Verwitterung (C1)",
@@ -520,8 +520,8 @@
    "niveau": "C1",
    "formen": "Trabantenstädte",
    "currentTr": "uydu kent",
-   "currentBeispiel": "Die Trabantenstadt der Sechzigerjahre kämpft bis heute mit ihrem Ruf.",
-   "currentBeispielTr": "Altmışlı yılların uydu kenti bugün hâlâ ününü düzeltmeye uğraşıyor."
+   "currentBeispiel": "Meine Großeltern wohnen in einer Trabantenstadt bei Hannover.",
+   "currentBeispielTr": "Büyükannemler Hannover yakınlarındaki bir uydu kentte oturuyor."
   },
   {
    "id": 5901,
@@ -530,8 +530,8 @@
    "niveau": "C1",
    "formen": "Erschließungen",
    "currentTr": "altyapıya bağlama, imara açma",
-   "currentBeispiel": "Die Erschließung des Baugebiets kostet die Gemeinde mehrere Millionen.",
-   "currentBeispielTr": "İmar alanının altyapıya bağlanması belediyeye birkaç milyona mal oluyor."
+   "currentBeispiel": "Die Erschließung des neuen Baugebiets kostet die Gemeinde Millionen.",
+   "currentBeispielTr": "Yeni imar alanının altyapıya bağlanması belediyeye milyonlara mal oluyor."
   },
   {
    "id": 5902,
@@ -540,8 +540,8 @@
    "niveau": "C1",
    "formen": "Stadtbilder",
    "currentTr": "kent görünümü, kentin genel dokusu",
-   "currentBeispiel": "Der Turm fügt sich nur schwer in das gewachsene Stadtbild ein.",
-   "currentBeispielTr": "Kule, zamanla oluşmuş kent görünümüne güçlükle uyum sağlıyor."
+   "currentBeispiel": "Der neue Turm passt nicht ins historische Stadtbild.",
+   "currentBeispielTr": "Yeni kule tarihî kent görünümüne hiç uymuyor."
   }
  ]
 }

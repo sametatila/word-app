@@ -10,7 +10,7 @@
    "formen": "Berufsgenossenschaften",
    "currentTr": "meslek kazaları sigorta kurumu",
    "currentBeispiel": "Die Berufsgenossenschaft zahlt die Behandlung nach einem Unfall im Betrieb.",
-   "currentBeispielTr": "İşyerindeki bir kazadan sonra tedaviyi meslek sigortası kurumu karşılıyor."
+   "currentBeispielTr": "Bir iş kazasından sonra tedaviyi meslek sigortası kurumu karşılıyor."
   },
   {
    "id": 4094,
@@ -30,7 +30,7 @@
    "formen": "hat angelernt",
    "currentTr": "iş başında öğretmek, yetiştirmek",
    "currentBeispiel": "Für diese Tätigkeit werden die Hilfskräfte in zwei Tagen angelernt.",
-   "currentBeispielTr": "Bu iş için yardımcı elemanlar iki günde yetiştiriliyor."
+   "currentBeispielTr": "Bu iş için yardımcı elemanlar iki günde iş başında yetiştiriliyor."
   },
   {
    "id": 4096,
@@ -59,8 +59,8 @@
    "niveau": "B2",
    "formen": "hat angeworben",
    "currentTr": "eleman temin etmek, işe çekmek",
-   "currentBeispiel": "Das Unternehmen wirbt gezielt Ingenieure aus dem Ausland an.",
-   "currentBeispielTr": "Şirket bilinçli olarak yurt dışından mühendis kazanmaya çalışıyor."
+   "currentBeispiel": "Das Unternehmen will gezielt Ingenieure aus dem Ausland anwerben.",
+   "currentBeispielTr": "Şirket özellikle yurt dışından mühendis toplamak istiyor."
   },
   {
    "id": 4099,
@@ -70,7 +70,7 @@
    "formen": "hat beaufsichtigt",
    "currentTr": "denetlemek, gözetim altında tutmak",
    "currentBeispiel": "Ein Meister beaufsichtigt die Arbeiten an der neuen Maschine.",
-   "currentBeispielTr": "Bir usta yeni makinedeki çalışmaları denetliyor.",
+   "currentBeispielTr": "Bir usta yeni makinedeki çalışmaları gözetiyor.",
    "overlapping": [
     "überwachen (B2)"
    ]
@@ -83,7 +83,7 @@
    "formen": "hat eingewiesen",
    "currentTr": "bilgilendirmek, işin nasıl yapılacağını göstermek",
    "currentBeispiel": "Alle Beschäftigten werden vor dem ersten Einsatz gründlich eingewiesen.",
-   "currentBeispielTr": "Bütün çalışanlar ilk görevden önce ayrıntılı biçimde bilgilendiriliyor.",
+   "currentBeispielTr": "Bütün çalışanlara ilk görevden önce işin nasıl yapılacağı ayrıntılı biçimde gösteriliyor.",
    "overlapping": [
     "informieren (B1)"
    ]
@@ -96,7 +96,7 @@
    "formen": "hat geschult",
    "currentTr": "eğitmek, kurs vermek",
    "currentBeispiel": "Die Mitarbeiter werden jedes Jahr im Umgang mit Kundendaten geschult.",
-   "currentBeispielTr": "Çalışanlar her yıl müşteri verileriyle çalışma konusunda eğitiliyor."
+   "currentBeispielTr": "Çalışanlar her yıl müşteri verilerinin kullanımı konusunda eğitiliyor."
   },
   {
    "id": 4102,
@@ -106,7 +106,7 @@
    "formen": "hat zugemutet",
    "currentTr": "katlanmasını beklemek, reva görmek",
    "currentBeispiel": "So lange Schichten kann man niemandem auf Dauer zumuten.",
-   "currentBeispielTr": "Bu kadar uzun vardiyalar uzun vadede kimseden beklenemez."
+   "currentBeispielTr": "Bu kadar uzun vardiyalara kimsenin uzun vadede katlanması beklenemez."
   },
   {
    "id": 4103,
@@ -116,7 +116,7 @@
    "formen": "hat kooperiert",
    "currentTr": "işbirliği yapmak",
    "currentBeispiel": "Die beiden Abteilungen kooperieren bei der Einführung der Software.",
-   "currentBeispielTr": "İki departman yazılımın devreye alınmasında işbirliği yapıyor."
+   "currentBeispielTr": "İki bölüm yazılımın devreye alınmasında işbirliği yapıyor."
   },
   {
    "id": 4104,
@@ -136,7 +136,7 @@
    "formen": "hat rationalisiert",
    "currentTr": "verimlilik için küçültmek, akılcılaştırmak",
    "currentBeispiel": "Durch die Automatisierung wurden ganze Arbeitsbereiche rationalisiert.",
-   "currentBeispielTr": "Otomasyon sayesinde bütün çalışma alanları verimlilik adına küçültüldü."
+   "currentBeispielTr": "Otomasyon yüzünden bütün çalışma alanları verimlilik adına küçültüldü."
   },
   {
    "id": 4106,
@@ -172,7 +172,7 @@
    "formen": "hat vorgelegt",
    "currentTr": "ibraz etmek, gösterip sunmak (belge)",
    "currentBeispiel": "Bitte legen Sie am ersten Arbeitstag Ihre Zeugnisse im Original vor.",
-   "currentBeispielTr": "Lütfen ilk iş gününde belgelerinizin asıllarını ibraz edin."
+   "currentBeispielTr": "Lütfen ilk iş gününde belgelerinizin asıllarını sunun."
   },
   {
    "id": 4109,
@@ -195,8 +195,8 @@
    "niveau": "B2",
    "formen": "hat angetreten",
    "currentTr": "göreve başlamak, işe başlamak",
-   "currentBeispiel": "Sie tritt ihre neue Stelle in der Verwaltung schon nächsten Montag an.",
-   "currentBeispielTr": "İdaredeki yeni işine daha gelecek pazartesi başlıyor."
+   "currentBeispiel": "Sie hat ihre neue Stelle in der Verwaltung gestern angetreten.",
+   "currentBeispielTr": "İdaredeki yeni görevine dün başladı."
   },
   {
    "id": 4111,
@@ -206,7 +206,7 @@
    "formen": "hat abgesichert",
    "currentTr": "güvence altına almak, teminat altına almak",
    "currentBeispiel": "Der Vertrag sichert die Beschäftigten für den Fall einer Insolvenz ab.",
-   "currentBeispielTr": "Sözleşme çalışanları bir iflas durumuna karşı güvence altına alıyor."
+   "currentBeispielTr": "Sözleşme çalışanları olası bir iflasa karşı güvence altına alıyor."
   },
   {
    "id": 4112,
@@ -216,7 +216,7 @@
    "formen": "hat eingehalten",
    "currentTr": "uymak, riayet etmek",
    "currentBeispiel": "Die gesetzlichen Ruhepausen müssen in jeder Schicht eingehalten werden.",
-   "currentBeispielTr": "Yasal dinlenme molalarına her vardiyada uyulmak zorundadır.",
+   "currentBeispielTr": "Yasal dinlenme molalarına her vardiyada uyulması gerekiyor.",
    "overlapping": [
     "passen (A2)",
     "sich richten nach (B2)"
@@ -230,7 +230,7 @@
    "formen": "hat verstoßen",
    "currentTr": "ihlal etmek, aykırı davranmak",
    "currentBeispiel": "Wer gegen die Betriebsordnung verstößt, muss mit Konsequenzen rechnen.",
-   "currentBeispielTr": "İşyeri yönetmeliğini ihlal eden kişi sonuçlarına katlanmayı beklemelidir."
+   "currentBeispielTr": "İşyeri yönetmeliğini ihlal eden, sonuçlarını göze almalıdır."
   },
   {
    "id": 4114,
@@ -240,7 +240,7 @@
    "formen": "hat mitgewirkt",
    "currentTr": "katkıda bulunmak, iştirak etmek",
    "currentBeispiel": "An der Erarbeitung des Sozialplans haben mehrere Gremien mitgewirkt.",
-   "currentBeispielTr": "Sosyal planın hazırlanmasına birçok kurul katkıda bulundu.",
+   "currentBeispielTr": "Sosyal planın hazırlanmasında birçok kurul yer aldı.",
    "overlapping": [
     "beitragen zu (B2)"
    ]
@@ -253,7 +253,7 @@
    "formen": "hat mitbestimmt",
    "currentTr": "birlikte karar vermek, söz sahibi olmak",
    "currentBeispiel": "Bei der Gestaltung der Dienstpläne dürfen die Beschäftigten mitbestimmen.",
-   "currentBeispielTr": "Vardiya çizelgelerinin düzenlenmesinde çalışanlar da söz sahibi olabiliyor."
+   "currentBeispielTr": "Vardiya çizelgeleri düzenlenirken çalışanlar da söz sahibi olabiliyor."
   },
   {
    "id": 4116,
@@ -263,7 +263,7 @@
    "formen": "",
    "currentTr": "işletme gereği, işletmesel nedenli",
    "currentBeispiel": "Zwanzig Stellen wurden betriebsbedingt gestrichen.",
-   "currentBeispielTr": "İşletme gerekçesiyle yirmi kadro kaldırıldı."
+   "currentBeispielTr": "İşletme gereği yirmi kadro kaldırıldı."
   },
   {
    "id": 4117,
@@ -283,7 +283,7 @@
    "formen": "",
    "currentTr": "kendini kabul ettirebilen, dediğini yaptırabilen",
    "currentBeispiel": "Für diese Position suchen wir eine durchsetzungsfähige Persönlichkeit.",
-   "currentBeispielTr": "Bu pozisyon için kendini kabul ettirebilen bir kişilik arıyoruz."
+   "currentBeispielTr": "Bu pozisyon için dediğini yaptırabilen bir kişilik arıyoruz."
   },
   {
    "id": 4119,
@@ -293,7 +293,7 @@
    "formen": "",
    "currentTr": "titiz, özenli, vicdanlı",
    "currentBeispiel": "Sie erledigt auch die langweiligsten Aufgaben gewissenhaft.",
-   "currentBeispielTr": "En sıkıcı görevleri bile titizlikle yerine getiriyor.",
+   "currentBeispielTr": "En sıkıcı görevleri bile özenle yerine getiriyor.",
    "overlapping": [
     "akribisch (C1)"
    ]
@@ -306,7 +306,7 @@
    "formen": "",
    "currentTr": "kendini işine adamış, gayretli",
    "currentBeispiel": "Der Betriebsrat setzt sich engagiert für die jüngeren Kollegen ein.",
-   "currentBeispielTr": "İşyeri kurulu genç meslektaşlar için gayretle mücadele ediyor."
+   "currentBeispielTr": "İşyeri kurulu genç meslektaşları için gayretle mücadele ediyor."
   },
   {
    "id": 4121,
@@ -326,7 +326,7 @@
    "formen": "",
    "currentTr": "ücretsiz, karşılıksız",
    "currentBeispiel": "Die Schulungen stehen den Beschäftigten unentgeltlich zur Verfügung.",
-   "currentBeispielTr": "Eğitimler çalışanların ücretsiz olarak hizmetindedir.",
+   "currentBeispielTr": "Eğitimler çalışanlara bedelsiz sunuluyor.",
    "overlapping": [
     "kostenlos (A2)",
     "gebührenfrei (B2)",
@@ -341,7 +341,7 @@
    "formen": "",
    "currentTr": "çalışan, gelir getiren bir işte olan",
    "currentBeispiel": "In dieser Altersgruppe sind mehr als achtzig Prozent erwerbstätig.",
-   "currentBeispielTr": "Bu yaş grubunda yüzde sekseni aşkın kısım çalışıyor.",
+   "currentBeispielTr": "Bu yaş grubunda yüzde sekseni aşkın kişi iş sahibi.",
    "overlapping": [
     "der Mitarbeiter (A2)",
     "berufstätig (B1)"
@@ -385,7 +385,7 @@
    "formen": "",
    "currentTr": "cüzi, önemsiz, az miktarda",
    "currentBeispiel": "Die Abweichung vom Plan war nur geringfügig.",
-   "currentBeispielTr": "Plandan sapma yalnızca çok azdı."
+   "currentBeispielTr": "Plandan sapma yalnızca cüzi düzeydeydi."
   },
   {
    "id": 4128,
@@ -415,7 +415,7 @@
    "formen": "",
    "currentTr": "epey, hayli, kayda değer",
    "currentBeispiel": "Das Projekt verschlang einen beträchtlichen Teil des Budgets.",
-   "currentBeispielTr": "Proje bütçenin epey büyük bir kısmını yuttu."
+   "currentBeispielTr": "Proje bütçenin kayda değer bir kısmını yuttu."
   },
   {
    "id": 4131,
@@ -471,7 +471,7 @@
    "formen": "",
    "currentTr": "yavaş yavaş, giderek",
    "currentBeispiel": "Die Spannungen im Team lösten sich allmählich auf.",
-   "currentBeispielTr": "Ekipteki gerginlikler yavaş yavaş çözüldü."
+   "currentBeispielTr": "Ekipteki gerginlikler yavaş yavaş dağıldı."
   },
   {
    "id": 4136,
@@ -510,8 +510,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "aşırı, ölçüsüz",
-   "currentBeispiel": "Übermäßiger Konsum von Zucker schadet der Gesundheit.",
-   "currentBeispielTr": "Aşırı şeker tüketimi sağlığa zarar verir.",
+   "currentBeispiel": "Er trinkt übermäßig viel Kaffee, wenn er Stress hat.",
+   "currentBeispielTr": "Stresliyken aşırı miktarda kahve içiyor.",
    "overlapping": [
     "extrem (B1)"
    ]
@@ -524,7 +524,7 @@
    "formen": "",
    "currentTr": "neredeyse, hemen hemen",
    "currentBeispiel": "Die Halle war am Eröffnungsabend nahezu leer.",
-   "currentBeispielTr": "Salon açılış akşamı neredeyse boştu.",
+   "currentBeispielTr": "Salon açılış akşamı hemen hemen boştu.",
    "overlapping": [
     "fast (A2)",
     "beinahe (B1)"
@@ -548,7 +548,7 @@
    "formen": "",
    "currentTr": "nispeten, kıyaslandığında",
    "currentBeispiel": "Die Mieten sind hier vergleichsweise niedrig geblieben.",
-   "currentBeispielTr": "Kiralar burada nispeten düşük kaldı.",
+   "currentBeispielTr": "Kiralar burada görece düşük kaldı.",
    "overlapping": [
     "relativ (B1)"
    ]

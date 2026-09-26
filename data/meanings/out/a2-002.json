@@ -3,17 +3,17 @@
     "id": 940,
     "tr": "karşıda",
     "en": "over there",
-    "beispiel": "Da drüben ist die Haltestelle.",
-    "beispielTr": "Durak tam karşıda.",
-    "beispielEn": "The bus stop is over there."
+    "beispiel": "Drüben auf der anderen Seite gibt es einen Bäcker.",
+    "beispielTr": "Karşıda, öbür tarafta bir fırın var.",
+    "beispielEn": "Over there on the other side there's a bakery."
   },
   {
     "id": 1159,
     "tr": "kalan",
     "en": "rest",
-    "beispiel": "Den Rest gebe ich dir später.",
-    "beispielTr": "Kalanını sana sonra veririm.",
-    "beispielEn": "I'll give you the rest later."
+    "beispiel": "Den Rest vom Kuchen essen wir morgen.",
+    "beispielTr": "Pastanın kalanını yarın yeriz.",
+    "beispielEn": "We'll eat the rest of the cake tomorrow."
   },
   {
     "id": 1055,
@@ -27,9 +27,9 @@
     "id": 1015,
     "tr": "sert",
     "en": "hard",
-    "beispiel": "Das Bett im Hotel war sehr hart.",
-    "beispielTr": "Oteldeki yatak çok sertti.",
-    "beispielEn": "The bed at the hotel was very hard."
+    "beispiel": "Das Brot von gestern ist schon ganz hart.",
+    "beispielTr": "Dünkü ekmek iyice sertleşmiş.",
+    "beispielEn": "Yesterday's bread is already completely hard."
   },
   {
     "id": 882,
@@ -83,9 +83,9 @@
     "id": 1181,
     "tr": "fena",
     "en": "bad",
-    "beispiel": "Kein Problem, das ist nicht so schlimm.",
-    "beispielTr": "Sorun değil, o kadar da fena değil.",
-    "beispielEn": "No problem, it's not that bad."
+    "beispiel": "Der Unfall war schlimm, aber niemand ist verletzt.",
+    "beispielTr": "Kaza fenaydı ama kimse yaralanmadı.",
+    "beispielEn": "The accident was bad, but nobody got hurt."
   },
   {
     "id": 1087,
@@ -99,9 +99,9 @@
     "id": 1233,
     "tr": "ekip",
     "en": "team",
-    "beispiel": "Ich arbeite gern in einem Team.",
-    "beispielTr": "Ekip içinde çalışmayı severim.",
-    "beispielEn": "I like working in a team."
+    "beispiel": "Unser Team hat das Projekt pünktlich fertig gemacht.",
+    "beispielTr": "Ekibimiz projeyi zamanında bitirdi.",
+    "beispielEn": "Our team finished the project on time."
   },
   {
     "id": 1292,
@@ -115,9 +115,9 @@
     "id": 967,
     "tr": "düşmek",
     "en": "to fall",
-    "beispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
-    "beispielTr": "Dikkat et, bardak birazdan masadan düşecek.",
-    "beispielEn": "Watch out, the glass is about to fall off the table."
+    "beispiel": "Vorsicht, das Glas ist vom Tisch gefallen!",
+    "beispielTr": "Dikkat, bardak masadan düştü!",
+    "beispielEn": "Careful, the glass fell off the table!"
   },
   {
     "id": 1023,
@@ -131,17 +131,17 @@
     "id": 1105,
     "tr": "yakınlık",
     "en": "proximity",
-    "beispiel": "Die Post ist in der Nähe vom Bahnhof.",
-    "beispielTr": "Postane garın yakınında.",
-    "beispielEn": "The post office is near the train station."
+    "beispiel": "Wohnt ihr in der Nähe von eurer Schule?",
+    "beispielTr": "Okulunuzun yakınında mı oturuyorsunuz?",
+    "beispielEn": "Do you live close to your school?"
   },
   {
     "id": 1135,
     "tr": "aniden",
     "en": "suddenly",
-    "beispiel": "Plötzlich ist das Licht ausgegangen.",
-    "beispielTr": "Işık aniden söndü.",
-    "beispielEn": "The light suddenly went out."
+    "beispiel": "Mitten in der Nacht hat plötzlich das Telefon geklingelt.",
+    "beispielTr": "Gecenin bir yarısı telefon aniden çaldı.",
+    "beispielEn": "In the middle of the night, the phone suddenly rang."
   },
   {
     "id": 996,
@@ -155,9 +155,9 @@
     "id": 1051,
     "tr": "tuhaf",
     "en": "strange",
-    "beispiel": "Das Essen schmeckt heute komisch.",
-    "beispielTr": "Yemeğin tadı bugün tuhaf.",
-    "beispielEn": "The food tastes strange today."
+    "beispiel": "Der neue Nachbar ist ein bisschen komisch.",
+    "beispielTr": "Yeni komşu biraz tuhaf.",
+    "beispielEn": "The new neighbor is a little strange."
   },
   {
     "id": 1248,
@@ -179,17 +179,17 @@
     "id": 1332,
     "tr": "hedef",
     "en": "goal",
-    "beispiel": "Was ist dein Ziel im Leben?",
-    "beispielTr": "Hayattaki hedefin ne?",
-    "beispielEn": "What is your goal in life?"
+    "beispiel": "Unser Ziel für dieses Jahr ist eine größere Wohnung.",
+    "beispielTr": "Bu yılki hedefimiz daha büyük bir ev.",
+    "beispielEn": "Our goal for this year is a bigger apartment."
   },
   {
     "id": 1298,
     "tr": "uyanık",
     "en": "awake",
-    "beispiel": "Bist du schon lange wach?",
-    "beispielTr": "Uyanalı çok mu oldu?",
-    "beispielEn": "Have you been awake long?"
+    "beispiel": "Das Baby war die halbe Nacht wach.",
+    "beispielTr": "Bebek gecenin yarısını uyanık geçirdi.",
+    "beispielEn": "The baby was awake half the night."
   },
   {
     "id": 873,
@@ -219,9 +219,9 @@
     "id": 1260,
     "tr": "mutlaka",
     "en": "definitely",
-    "beispiel": "Ich muss unbedingt mit dir sprechen.",
-    "beispielTr": "Seninle mutlaka konuşmam gerekiyor.",
-    "beispielEn": "I definitely need to talk to you."
+    "beispiel": "Bei diesem Wetter brauchst du unbedingt einen Schirm.",
+    "beispielTr": "Bu havada mutlaka şemsiyeye ihtiyacın var.",
+    "beispielEn": "In this weather you definitely need an umbrella."
   },
   {
     "id": 1261,
@@ -235,17 +235,17 @@
     "id": 1238,
     "tr": "derin",
     "en": "deep",
-    "beispiel": "Vorsicht, das Wasser ist hier sehr tief!",
-    "beispielTr": "Dikkat, su burada çok derin!",
-    "beispielEn": "Careful, the water is very deep here!"
+    "beispiel": "Die Kinder dürfen nicht ins tiefe Becken springen.",
+    "beispielTr": "Çocukların derin havuza atlaması yasak.",
+    "beispielEn": "The kids aren't allowed to jump into the deep pool."
   },
   {
     "id": 1078,
     "tr": "yalan söylemek",
     "en": "to lie",
-    "beispiel": "Glaub ihm nicht, er lügt!",
-    "beispielTr": "Ona inanma, yalan söylüyor!",
-    "beispielEn": "Don't believe him, he's lying!"
+    "beispiel": "Ich glaube, Tom hat schon wieder gelogen.",
+    "beispielTr": "Bence Tom yine yalan söyledi.",
+    "beispielEn": "I think Tom lied again."
   },
   {
     "id": 1320,
@@ -259,17 +259,17 @@
     "id": 1109,
     "tr": "yanında",
     "en": "next to",
-    "beispiel": "Die Apotheke ist neben der Post.",
-    "beispielTr": "Eczane postanenin yanında.",
-    "beispielEn": "The pharmacy is next to the post office."
+    "beispiel": "Im Kino saß ich neben einem sehr großen Mann.",
+    "beispielTr": "Sinemada çok iri bir adamın yanında oturdum.",
+    "beispielEn": "At the movies I sat next to a very tall man."
   },
   {
     "id": 1165,
     "tr": "sırt",
     "en": "back",
-    "beispiel": "Mein Rücken tut heute weh.",
-    "beispielTr": "Bugün sırtım ağrıyor.",
-    "beispielEn": "My back hurts today."
+    "beispiel": "Mit einem schweren Rucksack auf dem Rücken wandern wir los.",
+    "beispielTr": "Sırtımızda ağır bir çantayla yürüyüşe koyuluyoruz.",
+    "beispielEn": "We set off hiking with a heavy backpack on our backs."
   },
   {
     "id": 1187,
@@ -283,9 +283,9 @@
     "id": 1173,
     "tr": "ekşi",
     "en": "sour",
-    "beispiel": "Diese Zitronen sind mir zu sauer.",
-    "beispielTr": "Bu limonlar bana fazla ekşi geliyor.",
-    "beispielEn": "These lemons are too sour for me."
+    "beispiel": "Die Milch ist sauer, wir müssen neue kaufen.",
+    "beispielTr": "Süt ekşimiş, yenisini almamız lazım.",
+    "beispielEn": "The milk has gone sour, we need to buy more."
   },
   {
     "id": 963,
@@ -299,9 +299,9 @@
     "id": 1048,
     "tr": "kilise",
     "en": "church",
-    "beispiel": "Diese Kirche ist fast 800 Jahre alt.",
-    "beispielTr": "Bu kilise neredeyse 800 yıllık.",
-    "beispielEn": "This church is almost 800 years old."
+    "beispiel": "Die Glocken der Kirche läuten jeden Sonntag.",
+    "beispielTr": "Kilisenin çanları her pazar çalıyor.",
+    "beispielEn": "The church bells ring every Sunday."
   },
   {
     "id": 1152,
@@ -331,9 +331,9 @@
     "id": 1052,
     "tr": "iletişim",
     "en": "contact",
-    "beispiel": "Ich habe wenig Kontakt zu meinen Kollegen.",
-    "beispielTr": "İş arkadaşlarımla pek iletişimim yok.",
-    "beispielEn": "I have little contact with my colleagues."
+    "beispiel": "Nach der Schule hatten wir leider keinen Kontakt mehr.",
+    "beispielTr": "Okuldan sonra maalesef hiç irtibatımız kalmadı.",
+    "beispielEn": "Sadly, we lost contact after school."
   },
   {
     "id": 998,
@@ -363,17 +363,17 @@
     "id": 1172,
     "tr": "temiz",
     "en": "clean",
-    "beispiel": "Bringen Sie mir bitte ein sauberes Glas!",
-    "beispielTr": "Lütfen bana temiz bir bardak getirin!",
-    "beispielEn": "Please bring me a clean glass!"
+    "beispiel": "Ist die Wäsche auf dem Stuhl sauber?",
+    "beispielTr": "Sandalyedeki çamaşırlar temiz mi?",
+    "beispielEn": "Is the laundry on the chair clean?"
   },
   {
     "id": 1113,
     "tr": "gergin",
     "en": "nervous",
-    "beispiel": "Vor Prüfungen bin ich immer sehr nervös.",
-    "beispielTr": "Sınavlardan önce hep çok gergin olurum.",
-    "beispielEn": "I'm always very nervous before exams."
+    "beispiel": "Vor dem ersten Date war Lukas total nervös.",
+    "beispielTr": "Lukas ilk buluşmadan önce çok gergindi.",
+    "beispielEn": "Lukas was really nervous before the first date."
   },
   {
     "id": 1129,
@@ -387,16 +387,16 @@
     "id": 1234,
     "tr": "paylaşmak",
     "en": "to share",
-    "beispiel": "Wollen wir die Pizza teilen?",
-    "beispielTr": "Pizzayı paylaşalım mı?",
-    "beispielEn": "Shall we share the pizza?"
+    "beispiel": "Die Geschwister teilen sich ein Zimmer.",
+    "beispielTr": "Kardeşler bir odayı paylaşıyor.",
+    "beispielEn": "The siblings share a room."
   },
   {
     "id": 1200,
     "tr": "durum",
     "en": "situation",
-    "beispiel": "Ich bin gerade in einer schwierigen Situation.",
-    "beispielTr": "Şu anda zor bir durumdayım.",
-    "beispielEn": "I'm in a difficult situation right now."
+    "beispiel": "Die Situation auf den Straßen ist nach dem Schnee chaotisch.",
+    "beispielTr": "Kardan sonra yollarda durum karmakarışık.",
+    "beispielEn": "After the snow, the situation on the roads is chaotic."
   }
 ]

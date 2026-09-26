@@ -43,33 +43,33 @@
     "id": 2013,
     "tr": "tanrı",
     "en": "god",
-    "beispiel": "Glaubst du an Gott?",
-    "beispielTr": "Sen Tanrı'ya inanıyor musun?",
-    "beispielEn": "Do you believe in God?"
+    "beispiel": "Meine Oma betet jeden Abend zu Gott.",
+    "beispielTr": "Babaannem her akşam Tanrı'ya dua ediyor.",
+    "beispielEn": "My grandma prays to God every evening."
   },
   {
     "id": 3121,
     "tr": "galiba",
     "en": "probably",
-    "beispiel": "Das wird wohl etwas länger dauern als geplant.",
-    "beispielTr": "Bu galiba planlanandan biraz uzun sürecek.",
-    "beispielEn": "That will probably take a bit longer than planned."
+    "beispiel": "Bei dem Verkehr kommt Anna wohl etwas später.",
+    "beispielTr": "Bu trafikte Anna galiba biraz geç gelecek.",
+    "beispielEn": "With this traffic, Anna will probably be a bit late."
   },
   {
     "id": 2291,
     "tr": "aşk",
     "en": "love",
-    "beispiel": "Wir haben aus Liebe geheiratet.",
-    "beispielTr": "Biz aşk için evlendik.",
-    "beispielEn": "We married for love."
+    "beispiel": "Ihre Liebe hat alle Schwierigkeiten überstanden.",
+    "beispielTr": "Aşkları bütün zorlukları atlattı.",
+    "beispielEn": "Their love survived every hardship."
   },
   {
     "id": 2433,
     "tr": "acaba",
     "en": "whether",
-    "beispiel": "Ich weiß noch nicht, ob ich kommen kann.",
-    "beispielTr": "Gelip gelemeyeceğimi henüz bilmiyorum.",
-    "beispielEn": "I don't know yet whether I can come."
+    "beispiel": "Frag doch mal, ob der Laden sonntags offen hat.",
+    "beispielTr": "Dükkânın pazar günleri açık olup olmadığını bir sorsana.",
+    "beispielEn": "Just ask whether the store is open on Sundays."
   },
   {
     "id": 2544,
@@ -123,9 +123,9 @@
     "id": 2570,
     "tr": "saf",
     "en": "pure",
-    "beispiel": "Der Pullover ist aus reiner Wolle.",
-    "beispielTr": "Kazak saf yünden yapılmış.",
-    "beispielEn": "The sweater is made of pure wool."
+    "beispiel": "Die Kette ist aus reinem Silber.",
+    "beispielTr": "Kolye saf gümüşten.",
+    "beispielEn": "The necklace is made of pure silver."
   },
   {
     "id": 1634,
@@ -139,17 +139,17 @@
     "id": 1574,
     "tr": "-meden önce",
     "en": "before",
-    "beispiel": "Bevor wir gehen, möchte ich noch etwas essen.",
-    "beispielTr": "Gitmeden önce bir şeyler yemek istiyorum.",
-    "beispielEn": "Before we go, I'd like to eat something."
+    "beispiel": "Bevor du losfährst, ruf bitte kurz an.",
+    "beispielTr": "Yola çıkmadan önce lütfen kısaca ara.",
+    "beispielEn": "Please give me a quick call before you leave."
   },
   {
     "id": 2038,
     "tr": "işte",
     "en": "just",
-    "beispiel": "Da kann man halt nichts machen.",
-    "beispielTr": "Yapacak bir şey yok işte.",
-    "beispielEn": "There's just nothing you can do."
+    "beispiel": "Kinder sind halt manchmal laut.",
+    "beispielTr": "Çocuklar işte bazen gürültülü olur.",
+    "beispielEn": "Kids are just loud sometimes."
   },
   {
     "id": 2040,
@@ -163,9 +163,9 @@
     "id": 1849,
     "tr": "durum",
     "en": "case",
-    "beispiel": "Was würden Sie in diesem Fall tun?",
-    "beispielTr": "Bu durumda siz ne yapardınız?",
-    "beispielEn": "What would you do in this case?"
+    "beispiel": "Im schlimmsten Fall verpassen wir den letzten Bus.",
+    "beispielTr": "En kötü durumda son otobüsü kaçırırız.",
+    "beispielEn": "In the worst case, we'll miss the last bus."
   },
   {
     "id": 1703,
@@ -179,33 +179,33 @@
     "id": 2069,
     "tr": "kapatmak",
     "en": "to shut down",
-    "beispiel": "Zum Schluss musst du den Computer herunterfahren.",
-    "beispielTr": "En son bilgisayarı kapatman gerekiyor.",
-    "beispielEn": "At the end you have to shut down the computer."
+    "beispiel": "Vergiss nicht, den Computer abends herunterzufahren.",
+    "beispielTr": "Akşamları bilgisayarı kapatmayı unutma.",
+    "beispielEn": "Don't forget to shut down the computer in the evening."
   },
   {
     "id": 1539,
     "tr": "hazır",
     "en": "ready",
-    "beispiel": "Ich bin jederzeit bereit, dir zu helfen.",
-    "beispielTr": "Sana yardım etmeye her an hazırım.",
-    "beispielEn": "I'm ready to help you any time."
+    "beispiel": "Die Koffer sind gepackt, wir sind bereit für die Reise.",
+    "beispielTr": "Bavullar toplandı, yolculuğa hazırız.",
+    "beispielEn": "The suitcases are packed, and we're ready for the trip."
   },
   {
     "id": 2711,
     "tr": "sağlamak",
     "en": "to ensure",
-    "beispiel": "Können Sie bitte dafür sorgen, dass die Heizung funktioniert?",
-    "beispielTr": "Kaloriferin çalışmasını sağlayabilir misiniz lütfen?",
-    "beispielEn": "Could you please make sure the heating works?"
+    "beispiel": "Die Trainerin sorgt dafür, dass niemand zu kurz kommt.",
+    "beispielTr": "Antrenör kimsenin geri planda kalmamasını sağlıyor.",
+    "beispielEn": "The coach makes sure nobody gets left out."
   },
   {
     "id": 3152,
     "tr": "oldukça",
     "en": "quite",
-    "beispiel": "Ich musste beim Arzt ziemlich lange warten.",
-    "beispielTr": "Doktorda oldukça uzun beklemek zorunda kaldım.",
-    "beispielEn": "I had to wait quite a long time at the doctor's."
+    "beispiel": "Die Wohnung ist schön, aber ziemlich laut.",
+    "beispielTr": "Daire güzel ama oldukça gürültülü.",
+    "beispielEn": "The apartment is nice but quite noisy."
   },
   {
     "id": 2134,
@@ -251,33 +251,33 @@
     "id": 1832,
     "tr": "yaklaşık",
     "en": "roughly",
-    "beispiel": "Von hier sind es etwa zwanzig Kilometer.",
-    "beispielTr": "Buradan yaklaşık yirmi kilometre var.",
-    "beispielEn": "It's roughly twenty kilometers from here."
+    "beispiel": "Die Reparatur dauert etwa eine Stunde.",
+    "beispielTr": "Tamir yaklaşık bir saat sürüyor.",
+    "beispielEn": "The repair takes roughly an hour."
   },
   {
     "id": 3074,
     "tr": "gerçek",
     "en": "truth",
-    "beispiel": "Sag mir bitte endlich die Wahrheit.",
-    "beispielTr": "Lütfen bana artık gerçeği söyle.",
-    "beispielEn": "Please tell me the truth at last."
+    "beispiel": "Früher oder später kommt die Wahrheit ans Licht.",
+    "beispielTr": "Er ya da geç gerçek ortaya çıkar.",
+    "beispielEn": "Sooner or later the truth comes out."
   },
   {
     "id": 1561,
     "tr": "kesinlikle",
     "en": "definitely",
-    "beispiel": "Das hat sie bestimmt nicht so gemeint.",
-    "beispielTr": "Bunu kesinlikle o anlamda söylemedi.",
-    "beispielEn": "She definitely didn't mean it that way."
+    "beispiel": "Keine Sorge, der Bus kommt bestimmt gleich.",
+    "beispielTr": "Merak etme, otobüs kesin birazdan gelir.",
+    "beispielEn": "Don't worry, the bus will definitely be here soon."
   },
   {
     "id": 2654,
     "tr": "kusur",
     "en": "fault",
-    "beispiel": "Es ist nicht meine Schuld, dass das nicht geklappt hat.",
-    "beispielTr": "Bu işin yürümemesi benim kusurum değil.",
-    "beispielEn": "It's not my fault that this didn't work out."
+    "beispiel": "Die Schuld für den Streit liegt bei uns beiden.",
+    "beispielTr": "Kavgada ikimizin de kusuru var.",
+    "beispielEn": "We're both at fault for the argument."
   },
   {
     "id": 2655,
@@ -299,25 +299,25 @@
     "id": 1814,
     "tr": "ciddi",
     "en": "serious",
-    "beispiel": "Der starke Verkehr ist ein ernstes Problem.",
-    "beispielTr": "Yoğun trafik ciddi bir sorun.",
-    "beispielEn": "Heavy traffic is a serious problem."
+    "beispiel": "Ich meine das ganz ernst, glaub mir!",
+    "beispielTr": "Bunu tamamen ciddi söylüyorum, inan bana!",
+    "beispielEn": "I'm completely serious about that, believe me!"
   },
   {
     "id": 1690,
     "tr": "az önce",
     "en": "just now",
-    "beispiel": "Ich bin eben erst angekommen.",
-    "beispielTr": "Daha az önce geldim.",
-    "beispielEn": "I just arrived a moment ago."
+    "beispiel": "Deine Mutter hat eben angerufen, du sollst zurückrufen.",
+    "beispielTr": "Annen az önce aradı, onu geri araman gerekiyor.",
+    "beispielEn": "Your mom just called, and she wants you to call back."
   },
   {
     "id": 3075,
     "tr": "-ken",
     "en": "while",
-    "beispiel": "Während ich arbeite, höre ich oft Musik.",
-    "beispielTr": "Çalışırken sık sık müzik dinlerim.",
-    "beispielEn": "While I work, I often listen to music."
+    "beispiel": "Während die Kinder schlafen, räume ich die Küche auf.",
+    "beispielTr": "Çocuklar uyurken ben mutfağı topluyorum.",
+    "beispielEn": "While the kids are sleeping, I tidy up the kitchen."
   },
   {
     "id": 1625,
@@ -339,17 +339,17 @@
     "id": 2884,
     "tr": "tip",
     "en": "guy",
-    "beispiel": "Mein neuer Nachbar ist ein netter Typ.",
-    "beispielTr": "Yeni komşum iyi bir tip.",
-    "beispielEn": "My new neighbor is a nice guy."
+    "beispiel": "Der neue Kollege ist ein ziemlich lustiger Typ.",
+    "beispielTr": "Yeni iş arkadaşı oldukça komik bir tip.",
+    "beispielEn": "The new coworker is a pretty funny guy."
   },
   {
     "id": 1851,
     "tr": "şayet",
     "en": "if",
-    "beispiel": "Falls es regnet, machen wir kein Picknick.",
-    "beispielTr": "Şayet yağmur yağarsa piknik yapmayız.",
-    "beispielEn": "If it rains, we won't have a picnic."
+    "beispiel": "Ruf mich an, falls du den Weg nicht findest.",
+    "beispielTr": "Yolu bulamazsan beni ara.",
+    "beispielEn": "Call me if you can't find the way."
   },
   {
     "id": 1595,
@@ -363,9 +363,9 @@
     "id": 2836,
     "tr": "parça",
     "en": "part",
-    "beispiel": "Dieses Teil müssen wir erst bestellen.",
-    "beispielTr": "Bu parçayı önce sipariş etmemiz gerekiyor.",
-    "beispielEn": "We have to order this part first."
+    "beispiel": "Beim Aufbau des Regals ist ein kleines Teil übrig geblieben.",
+    "beispielTr": "Rafı kurarken küçük bir parça arta kaldı.",
+    "beispielEn": "One small part was left over when we assembled the shelf."
   },
   {
     "id": 2712,
@@ -379,9 +379,9 @@
     "id": 1598,
     "tr": "kan",
     "en": "blood",
-    "beispiel": "Der Verletzte hat viel Blut verloren.",
-    "beispielTr": "Yaralı çok kan kaybetti.",
-    "beispielEn": "The injured man lost a lot of blood."
+    "beispiel": "Beim Hausarzt hat man mir heute Blut abgenommen.",
+    "beispielTr": "Bugün aile hekiminde kan aldılar.",
+    "beispielEn": "They took some blood at my doctor's office today."
   },
   {
     "id": 1701,

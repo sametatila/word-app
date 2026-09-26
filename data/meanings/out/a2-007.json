@@ -3,9 +3,9 @@
     "id": 1179,
     "tr": "şemsiye",
     "en": "umbrella",
-    "beispiel": "Nimm den Schirm mit, es regnet.",
-    "beispielTr": "Şemsiyeyi yanına al, yağmur yağıyor.",
-    "beispielEn": "Take the umbrella with you, it's raining."
+    "beispiel": "Draußen regnet es in Strömen, hast du einen Schirm dabei?",
+    "beispielTr": "Dışarıda bardaktan boşanırcasına yağmur yağıyor, yanında şemsiye var mı?",
+    "beispielEn": "It's pouring outside, do you have an umbrella with you?"
   },
   {
     "id": 1128,
@@ -19,33 +19,33 @@
     "id": 1097,
     "tr": "moda",
     "en": "fashion",
-    "beispiel": "Wie findest du die neue Mode?",
-    "beispielTr": "Yeni modayı nasıl buluyorsun?",
-    "beispielEn": "What do you think of the new fashion?"
+    "beispiel": "Meine Oma interessiert sich überhaupt nicht für Mode.",
+    "beispielTr": "Babaannemin modaya hiç ilgisi yok.",
+    "beispielEn": "My grandma isn't interested in fashion at all."
   },
   {
     "id": 1194,
     "tr": "sabun",
     "en": "soap",
-    "beispiel": "Hier gibt es keine Seife mehr.",
-    "beispielTr": "Burada hiç sabun kalmamış.",
-    "beispielEn": "There's no soap left here."
+    "beispiel": "Diese Seife riecht nach Lavendel.",
+    "beispielTr": "Bu sabun lavanta kokuyor.",
+    "beispielEn": "This soap smells like lavender."
   },
   {
     "id": 1017,
     "tr": "başkent",
     "en": "capital",
-    "beispiel": "Berlin ist die Hauptstadt von Deutschland.",
-    "beispielTr": "Berlin, Almanya'nın başkentidir.",
-    "beispielEn": "Berlin is the capital of Germany."
+    "beispiel": "Wien ist die Hauptstadt von Österreich.",
+    "beispielTr": "Viyana Avusturya'nın başkentidir.",
+    "beispielEn": "Vienna is the capital of Austria."
   },
   {
     "id": 1025,
     "tr": "üretmek",
     "en": "to produce",
-    "beispiel": "In unserer Firma stellen wir Möbel her.",
-    "beispielTr": "Firmamızda mobilya üretiyoruz.",
-    "beispielEn": "We produce furniture at our company."
+    "beispiel": "Diese Firma stellt Spielzeug aus Holz her.",
+    "beispielTr": "Bu şirket ahşap oyuncak üretiyor.",
+    "beispielEn": "This company produces wooden toys."
   },
   {
     "id": 1091,
@@ -91,17 +91,17 @@
     "id": 888,
     "tr": "fırında pişirmek",
     "en": "to bake",
-    "beispiel": "Wenn du kommst, backe ich einen Kuchen.",
-    "beispielTr": "Sen gelirsen bir kek pişiririm.",
-    "beispielEn": "If you come, I'll bake a cake."
+    "beispiel": "Am Wochenende backen die Kinder Plätzchen mit Oma.",
+    "beispielTr": "Hafta sonu çocuklar büyükanneyle kurabiye pişiriyor.",
+    "beispielEn": "On the weekend the kids bake cookies with Grandma."
   },
   {
     "id": 1085,
     "tr": "ilaç",
     "en": "medication",
-    "beispiel": "Nehmen Sie dieses Medikament dreimal pro Tag!",
-    "beispielTr": "Bu ilacı günde üç kez alın!",
-    "beispielEn": "Take this medication three times a day!"
+    "beispiel": "Dieses Medikament macht leider sehr müde.",
+    "beispielTr": "Bu ilaç maalesef çok uyku yapıyor.",
+    "beispielEn": "Unfortunately, this medication makes you very tired."
   },
   {
     "id": 1070,
@@ -115,9 +115,9 @@
     "id": 1177,
     "tr": "makas",
     "en": "scissors",
-    "beispiel": "Die Schere schneidet nicht gut.",
-    "beispielTr": "Makas iyi kesmiyor.",
-    "beispielEn": "The scissors don't cut well."
+    "beispiel": "Mit der Schere schneidet sie das Bild aus.",
+    "beispielTr": "Resmi makasla kesip çıkarıyor.",
+    "beispielEn": "She cuts out the picture with the scissors."
   },
   {
     "id": 1012,
@@ -131,25 +131,25 @@
     "id": 917,
     "tr": "kızartmak",
     "en": "to fry",
-    "beispiel": "Der Fisch brät schon in der Pfanne.",
-    "beispielTr": "Balık çoktan tavada kızarıyor.",
-    "beispielEn": "The fish is already frying in the pan."
+    "beispiel": "Ich brate die Kartoffeln mit etwas Butter.",
+    "beispielTr": "Patatesleri biraz tereyağıyla kızartıyorum.",
+    "beispielEn": "I'm frying the potatoes in a little butter."
   },
   {
     "id": 1282,
     "tr": "farklı",
     "en": "different",
-    "beispiel": "Unsere beiden Kinder sind sehr verschieden.",
-    "beispielTr": "İki çocuğumuz birbirinden çok farklı.",
-    "beispielEn": "Our two children are very different."
+    "beispiel": "Im Laden gibt es Tee in vielen verschiedenen Sorten.",
+    "beispielTr": "Dükkanda birçok farklı çeşit çay var.",
+    "beispielEn": "The store has tea in lots of different varieties."
   },
   {
     "id": 885,
     "tr": "sergi",
     "en": "exhibition",
-    "beispiel": "Gehen wir morgen zusammen in die Ausstellung?",
-    "beispielTr": "Yarın birlikte sergiye gidelim mi?",
-    "beispielEn": "Shall we go to the exhibition together tomorrow?"
+    "beispiel": "Die Ausstellung über Ägypten ist noch bis März offen.",
+    "beispielTr": "Mısır sergisi marta kadar açık.",
+    "beispielEn": "The exhibition on Egypt is open until March."
   },
   {
     "id": 978,
@@ -171,9 +171,9 @@
     "id": 899,
     "tr": "danışmanlık yapmak",
     "en": "to advise",
-    "beispiel": "Unsere Sekretärin berät Sie gern, wenn Sie Fragen haben.",
-    "beispielTr": "Sorularınız olursa sekreterimiz size seve seve danışmanlık yapar.",
-    "beispielEn": "Our secretary will gladly advise you if you have questions."
+    "beispiel": "In der Apotheke hat man mich gut beraten.",
+    "beispielTr": "Eczanede bana iyi tavsiyeler verdiler.",
+    "beispielEn": "They gave me good advice at the pharmacy."
   },
   {
     "id": 912,
@@ -187,41 +187,41 @@
     "id": 1043,
     "tr": "takvim",
     "en": "calendar",
-    "beispiel": "Ich schreibe alle Termine in meinen Kalender.",
-    "beispielTr": "Bütün randevularımı takvimime yazıyorum.",
-    "beispielEn": "I write all my appointments in my calendar."
+    "beispiel": "In der Küche hängt ein Kalender mit Katzenfotos.",
+    "beispielTr": "Mutfakta kedi fotoğraflı bir takvim asılı.",
+    "beispielEn": "There's a calendar with cat photos hanging in the kitchen."
   },
   {
     "id": 1264,
     "tr": "kalacak yer",
     "en": "accommodation",
-    "beispiel": "Ich suche noch eine Unterkunft in Basel.",
-    "beispielTr": "Basel'de hâlâ kalacak yer arıyorum.",
-    "beispielEn": "I'm still looking for accommodation in Basel."
+    "beispiel": "Unsere Unterkunft war einfach, aber sehr sauber.",
+    "beispielTr": "Kaldığımız yer sade ama çok temizdi.",
+    "beispielEn": "Our accommodation was simple but very clean."
   },
   {
     "id": 1010,
     "tr": "grip",
     "en": "flu",
-    "beispiel": "Ich habe eine Grippe und kann nicht kommen.",
-    "beispielTr": "Grip oldum ve gelemiyorum.",
-    "beispielEn": "I have the flu and can't come."
+    "beispiel": "Die halbe Klasse liegt mit Grippe im Bett.",
+    "beispielTr": "Sınıfın yarısı gripten yatıyor.",
+    "beispielEn": "Half the class is in bed with the flu."
   },
   {
     "id": 949,
     "tr": "alışveriş merkezi",
     "en": "shopping mall",
-    "beispiel": "Kommst du morgen mit ins Einkaufszentrum?",
-    "beispielTr": "Yarın benimle alışveriş merkezine gelir misin?",
-    "beispielEn": "Are you coming to the shopping mall with me tomorrow?"
+    "beispiel": "Das neue Einkaufszentrum hat sogar ein Kino.",
+    "beispielTr": "Yeni alışveriş merkezinde sinema bile var.",
+    "beispielEn": "The new shopping mall even has a movie theater."
   },
   {
     "id": 1219,
     "tr": "burs",
     "en": "scholarship",
-    "beispiel": "Wenn ich ein gutes Zeugnis habe, bekomme ich ein Stipendium.",
-    "beispielTr": "Karnem iyi olursa burs alacağım.",
-    "beispielEn": "If I have a good report card, I'll get a scholarship."
+    "beispiel": "Mit dem Stipendium kann Mia ein Jahr in Spanien studieren.",
+    "beispielTr": "Mia bu bursla bir yıl İspanya'da okuyabilir.",
+    "beispielEn": "With the scholarship, Mia can study in Spain for a year."
   },
   {
     "id": 1127,
@@ -251,33 +251,33 @@
     "id": 1280,
     "tr": "seyahate çıkmak",
     "en": "to go on a trip",
-    "beispiel": "Verreist ihr in den Ferien?",
-    "beispielTr": "Tatilde seyahate çıkıyor musunuz?",
-    "beispielEn": "Are you going on a trip during school vacation?"
+    "beispiel": "Über Ostern verreisen unsere Nachbarn nach Italien.",
+    "beispielTr": "Komşularımız Paskalya'da İtalya'ya seyahate çıkıyor.",
+    "beispielEn": "Our neighbors are taking a trip to Italy over Easter."
   },
   {
     "id": 1149,
     "tr": "belediye binası",
     "en": "town hall",
-    "beispiel": "Das Formular bekommen Sie im Rathaus.",
-    "beispielTr": "Formu belediye binasından alabilirsiniz.",
-    "beispielEn": "You can get the form at the town hall."
+    "beispiel": "Vor dem Rathaus steht ein großer Weihnachtsbaum.",
+    "beispielTr": "Belediye binasının önünde büyük bir Noel ağacı duruyor.",
+    "beispielEn": "There's a big Christmas tree in front of the town hall."
   },
   {
     "id": 933,
     "tr": "dosya",
     "en": "file",
-    "beispiel": "Wo hast du die Datei gespeichert?",
-    "beispielTr": "Dosyayı nereye kaydettin?",
-    "beispielEn": "Where did you save the file?"
+    "beispiel": "Die Datei ist zu groß für eine E-Mail.",
+    "beispielTr": "Dosya e-posta için çok büyük.",
+    "beispielEn": "The file is too big for an email."
   },
   {
     "id": 1116,
     "tr": "not",
     "en": "note",
-    "beispiel": "Schreib mir bitte eine kurze Notiz.",
-    "beispielTr": "Bana kısa bir not yaz lütfen.",
-    "beispielEn": "Please write me a short note."
+    "beispiel": "Am Kühlschrank hängt eine Notiz von Mama.",
+    "beispielTr": "Buzdolabında annemden bir not asılı.",
+    "beispielEn": "There's a note from Mom on the fridge."
   },
   {
     "id": 1018,
@@ -291,33 +291,33 @@
     "id": 1326,
     "tr": "dergi",
     "en": "magazine",
-    "beispiel": "Diese Zeitschrift kauft Andrea jede Woche.",
-    "beispielTr": "Andrea bu dergiyi her hafta alıyor.",
-    "beispielEn": "Andrea buys this magazine every week."
+    "beispiel": "Beim Arzt lese ich im Wartezimmer eine Zeitschrift.",
+    "beispielTr": "Doktorda bekleme odasında dergi okuyorum.",
+    "beispielEn": "At the doctor's, I read a magazine in the waiting room."
   },
   {
     "id": 1237,
     "tr": "tenis",
     "en": "tennis",
-    "beispiel": "Steffi spielt sehr gut Tennis.",
-    "beispielTr": "Steffi çok iyi tenis oynuyor.",
-    "beispielEn": "Steffi plays tennis very well."
+    "beispiel": "Nach der Arbeit spiele ich mit meinem Bruder Tennis.",
+    "beispielTr": "İşten sonra kardeşimle tenis oynuyorum.",
+    "beispielEn": "After work I play tennis with my brother."
   },
   {
     "id": 1061,
     "tr": "kavşak",
     "en": "intersection",
-    "beispiel": "Fahren Sie an der nächsten Kreuzung rechts.",
-    "beispielTr": "Bir sonraki kavşaktan sağa dönün.",
-    "beispielEn": "Turn right at the next intersection."
+    "beispiel": "An dieser Kreuzung passieren oft Unfälle.",
+    "beispielTr": "Bu kavşakta sık sık kaza oluyor.",
+    "beispielEn": "Accidents often happen at this intersection."
   },
   {
     "id": 1080,
     "tr": "telesekreter",
     "en": "voicemail",
-    "beispiel": "Ich habe dir auf die Mailbox gesprochen.",
-    "beispielTr": "Telesekreterine mesaj bıraktım.",
-    "beispielEn": "I left you a message on your voicemail."
+    "beispiel": "Hast du schon deine Mailbox abgehört?",
+    "beispielTr": "Telesekreterini dinledin mi?",
+    "beispielEn": "Have you checked your voicemail yet?"
   },
   {
     "id": 1004,
@@ -331,9 +331,9 @@
     "id": 1291,
     "tr": "evvelsi gün",
     "en": "the day before yesterday",
-    "beispiel": "Er hat mich vorgestern angerufen.",
-    "beispielTr": "Beni evvelsi gün aradı.",
-    "beispielEn": "He called me the day before yesterday."
+    "beispiel": "Vorgestern war ich mit Lisa im Schwimmbad.",
+    "beispielTr": "Evvelsi gün Lisa ile havuzdaydım.",
+    "beispielEn": "The day before yesterday I was at the pool with Lisa."
   },
   {
     "id": 1068,
@@ -355,9 +355,9 @@
     "id": 950,
     "tr": "paketlemek",
     "en": "to wrap up",
-    "beispiel": "Soll ich Ihnen das als Geschenk einpacken?",
-    "beispielTr": "Bunu size hediye paketi yapayım mı?",
-    "beispielEn": "Shall I wrap this up as a gift for you?"
+    "beispiel": "Die Kinder packen die Geschenke für Oma in buntes Papier ein.",
+    "beispielTr": "Çocuklar büyükannenin hediyelerini renkli kâğıda sarıyor.",
+    "beispielEn": "The kids are wrapping Grandma's presents in colorful paper."
   },
   {
     "id": 1259,
@@ -371,17 +371,17 @@
     "id": 1255,
     "tr": "tercüme etmek",
     "en": "to translate",
-    "beispiel": "Können Sie mir den Brief bitte übersetzen?",
-    "beispielTr": "Mektubu bana çevirebilir misiniz lütfen?",
-    "beispielEn": "Could you translate the letter for me, please?"
+    "beispiel": "Meine Tochter übersetzt für ihre Oma die E-Mails.",
+    "beispielTr": "Kızım babaannesi için e-postaları tercüme ediyor.",
+    "beispielEn": "My daughter translates the emails for her grandma."
   },
   {
     "id": 1034,
     "tr": "enstrüman",
     "en": "instrument",
-    "beispiel": "Spielen Sie auch ein Instrument?",
-    "beispielTr": "Siz de bir enstrüman çalıyor musunuz?",
-    "beispielEn": "Do you play an instrument too?"
+    "beispiel": "Welches Instrument lernt dein Sohn in der Musikschule?",
+    "beispielTr": "Oğlun müzik okulunda hangi enstrümanı öğreniyor?",
+    "beispielEn": "Which instrument is your son learning at music school?"
   },
   {
     "id": 879,

@@ -29,8 +29,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "fırıncı",
-   "currentBeispiel": "Mein Vater ist Bäcker und steht jeden Morgen um drei Uhr auf.",
-   "currentBeispielTr": "Babam fırıncı ve her sabah saat üçte kalkıyor."
+   "currentBeispiel": "Mein Vater ist Bäcker und steht jeden Morgen um vier auf.",
+   "currentBeispielTr": "Babam fırıncı ve her sabah dörtte kalkıyor."
   },
   {
    "id": 7641,
@@ -63,7 +63,7 @@
    "formen": "-",
    "currentTr": "tesisatçı",
    "currentBeispiel": "Der Klempner repariert morgen unsere Dusche.",
-   "currentBeispielTr": "Tesisatçı yarın duşumuzu tamir ediyor."
+   "currentBeispielTr": "Tesisatçı yarın duşumuzu tamir edecek."
   },
   {
    "id": 7644,
@@ -82,8 +82,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "bahçıvan",
-   "currentBeispiel": "Der Gärtner arbeitet im Sommer oft von früh bis spät.",
-   "currentBeispielTr": "Bahçıvan yazın çoğu zaman sabahtan akşama kadar çalışır."
+   "currentBeispiel": "Der Gärtner arbeitet im Sommer von früh bis spät.",
+   "currentBeispielTr": "Bahçıvan yazın sabahtan akşama kadar çalışıyor."
   },
   {
    "id": 7646,
@@ -92,8 +92,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "otobüs şoförü",
-   "currentBeispiel": "Der Busfahrer hat mir gesagt, wo ich aussteigen muss.",
-   "currentBeispielTr": "Otobüs şoförü bana nerede inmem gerektiğini söyledi."
+   "currentBeispiel": "Der Busfahrer hat mir gesagt, dass ich hier aussteigen muss.",
+   "currentBeispielTr": "Otobüs şoförü bana burada inmem gerektiğini söyledi."
   },
   {
    "id": 7647,
@@ -123,7 +123,7 @@
    "formen": "¨-e",
    "currentTr": "diş hekimi, dişçi",
    "currentBeispiel": "Ich habe am Montag einen Termin beim Zahnarzt.",
-   "currentBeispielTr": "Pazartesi günü diş hekiminde bir randevum var."
+   "currentBeispielTr": "Pazartesi diş hekiminde randevum var."
   },
   {
    "id": 7650,
@@ -132,8 +132,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "veteriner",
-   "currentBeispiel": "Unsere Katze ist krank, wir gehen zum Tierarzt.",
-   "currentBeispielTr": "Kedimiz hasta, veterinere gidiyoruz."
+   "currentBeispiel": "Unsere Katze ist krank und muss zum Tierarzt.",
+   "currentBeispielTr": "Kedimiz hasta ve veterinere gitmesi gerekiyor."
   },
   {
    "id": 7651,
@@ -152,8 +152,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "postacı",
-   "currentBeispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
-   "currentBeispielTr": "Postacı paketleri genellikle öğleden önce getiriyor.",
+   "currentBeispiel": "Der Postbote bringt die Pakete am Vormittag.",
+   "currentBeispielTr": "Postacı paketleri öğleden önce getiriyor.",
    "overlapping": [
     "der Briefträger (B1)",
     "der Pöstler (B1)"
@@ -186,8 +186,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "duvarcı",
-   "currentBeispiel": "Als Maurer muss man den ganzen Tag schwer arbeiten.",
-   "currentBeispielTr": "Duvarcı olarak bütün gün ağır çalışmak gerekiyor."
+   "currentBeispiel": "Der Maurer hat die Wand in zwei Tagen gebaut.",
+   "currentBeispielTr": "Duvarcı duvarı iki günde ördü."
   },
   {
    "id": 7656,
@@ -206,8 +206,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "anaokulu öğretmeni, eğitmen",
-   "currentBeispiel": "Im Kindergarten arbeiten drei Erzieher und zwei Erzieherinnen.",
-   "currentBeispielTr": "Anaokulunda üç erkek ve iki kadın anaokulu öğretmeni çalışıyor."
+   "currentBeispiel": "Der Erzieher spielt mit den Kindern draußen.",
+   "currentBeispielTr": "Anaokulu öğretmeni çocuklarla dışarıda oynuyor."
   },
   {
    "id": 7658,
@@ -216,8 +216,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "pilot",
-   "currentBeispiel": "Der Pilot hat uns gesagt, dass wir pünktlich landen.",
-   "currentBeispielTr": "Pilot bize zamanında ineceğimizi söyledi."
+   "currentBeispiel": "Der Pilot begrüßt die Passagiere im Flugzeug.",
+   "currentBeispielTr": "Pilot uçaktaki yolcuları selamlıyor."
   },
   {
    "id": 7659,
@@ -236,8 +236,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "şube müdürü",
-   "currentBeispiel": "Der Filialleiter hat mir am Freitag frei gegeben.",
-   "currentBeispielTr": "Şube müdürü bana cuma günü izin verdi."
+   "currentBeispiel": "Unser Filialleiter ist erst seit einem Monat hier.",
+   "currentBeispielTr": "Şube müdürümüz sadece bir aydır burada."
   },
   {
    "id": 7661,
@@ -290,7 +290,7 @@
    "formen": "-e",
    "currentTr": "yazı masası, çalışma masası",
    "currentBeispiel": "Auf meinem Schreibtisch liegen zu viele Papiere.",
-   "currentBeispielTr": "Çalışma masamın üstünde çok fazla kâğıt duruyor."
+   "currentBeispielTr": "Çalışma masamın üstünde çok fazla kâğıt var."
   },
   {
    "id": 7666,
@@ -299,8 +299,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "çalışma odası",
-   "currentBeispiel": "Mein Mann arbeitet oft im Arbeitszimmer zu Hause.",
-   "currentBeispielTr": "Kocam sık sık evdeki çalışma odasında çalışıyor."
+   "currentBeispiel": "Mein Mann arbeitet oft in seinem Arbeitszimmer.",
+   "currentBeispielTr": "Kocam sık sık çalışma odasında çalışıyor."
   },
   {
    "id": 7667,
@@ -330,7 +330,7 @@
    "formen": "¨-e",
    "currentTr": "bloknot, not defteri",
    "currentBeispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
-   "currentBeispielTr": "Telefon numarasını not bloknotuma yazıyorum."
+   "currentBeispielTr": "Telefon numarasını not defterime yazıyorum."
   },
   {
    "id": 7670,
@@ -349,8 +349,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "kasap dükkânı",
-   "currentBeispiel": "Meine Tante arbeitet in einer Metzgerei am Markt.",
-   "currentBeispielTr": "Teyzem pazardaki bir kasap dükkânında çalışıyor."
+   "currentBeispiel": "In der Metzgerei kaufe ich immer frisches Fleisch.",
+   "currentBeispielTr": "Kasap dükkânından hep taze et alırım."
   },
   {
    "id": 7672,
@@ -360,7 +360,7 @@
    "formen": "-s",
    "currentTr": "kuaför salonu",
    "currentBeispiel": "Der Friseursalon ist montags immer geschlossen.",
-   "currentBeispielTr": "Kuaför salonu pazartesileri her zaman kapalı."
+   "currentBeispielTr": "Kuaför salonu pazartesileri hep kapalı."
   },
   {
    "id": 7673,
@@ -369,8 +369,8 @@
    "niveau": "A2",
    "formen": "-praxen",
    "currentTr": "muayenehane",
-   "currentBeispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
-   "currentBeispielTr": "Bir muayenehanede sekreter olarak çalışıyor.",
+   "currentBeispiel": "In der Arztpraxis warten heute viele Patienten.",
+   "currentBeispielTr": "Muayenehanede bugün birçok hasta bekliyor.",
    "overlapping": [
     "die Praxis (A1)",
     "die Ordination (B1)"
@@ -384,7 +384,7 @@
    "formen": "-n",
    "currentTr": "öğle molası",
    "currentBeispiel": "In der Mittagspause esse ich meistens in der Kantine.",
-   "currentBeispielTr": "Öğle molasında çoğunlukla yemekhanede yemek yiyorum."
+   "currentBeispielTr": "Öğle molasında genellikle yemekhanede yemek yerim."
   },
   {
    "id": 7675,
@@ -394,7 +394,7 @@
    "formen": "-n",
    "currentTr": "kahve molası",
    "currentBeispiel": "Wir machen um halb vier eine kurze Kaffeepause.",
-   "currentBeispielTr": "Üç buçukta kısa bir kahve molası veriyoruz."
+   "currentBeispielTr": "Saat üç buçukta kısa bir kahve molası veriyoruz."
   },
   {
    "id": 7676,
@@ -463,7 +463,7 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "kazanç, gelir",
-   "currentBeispiel": "Der Verdienst ist klein, aber die Arbeit macht Spaß.",
+   "currentBeispiel": "Der Verdienst ist niedrig, aber die Arbeit macht Spaß.",
    "currentBeispielTr": "Kazanç az, ama iş keyifli.",
    "overlapping": [
     "der Gewinn (B1)"
@@ -477,7 +477,7 @@
    "formen": "-se",
    "currentTr": "prim, bonus",
    "currentBeispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus.",
-   "currentBeispielTr": "Aralıkta bütün çalışanlar bir prim alıyor.",
+   "currentBeispielTr": "Aralıkta bütün çalışanlar prim alıyor.",
    "overlapping": [
     "die Prämie (B2)"
    ]
@@ -489,8 +489,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "yılbaşı ikramiyesi",
-   "currentBeispiel": "Von meinem Weihnachtsgeld kaufe ich eine neue Waschmaschine.",
-   "currentBeispielTr": "Yılbaşı ikramiyemle yeni bir çamaşır makinesi alıyorum."
+   "currentBeispiel": "Von meinem Weihnachtsgeld kaufe ich eine Waschmaschine.",
+   "currentBeispielTr": "Yılbaşı ikramiyemle bir çamaşır makinesi alıyorum."
   },
   {
    "id": 7685,
@@ -509,8 +509,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "iş arkadaşı",
-   "currentBeispiel": "Mein Arbeitskollege hilft mir immer bei schweren Aufgaben.",
-   "currentBeispielTr": "İş arkadaşım zor görevlerde bana hep yardım ediyor.",
+   "currentBeispiel": "Mein Arbeitskollege hilft mir bei schweren Aufgaben.",
+   "currentBeispielTr": "İş arkadaşım zor işlerde bana yardım ediyor.",
    "overlapping": [
     "der Kollege (A1)"
    ]

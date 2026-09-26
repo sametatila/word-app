@@ -3,9 +3,9 @@
     "id": 2229,
     "tr": "elektrik santrali",
     "en": "power plant",
-    "beispiel": "Die Menschen protestieren gegen das neue Kraftwerk.",
-    "beispielTr": "İnsanlar yeni elektrik santralini protesto ediyor.",
-    "beispielEn": "People are protesting against the new power plant."
+    "beispiel": "Das alte Kraftwerk am Fluss wird bald abgerissen.",
+    "beispielTr": "Nehir kenarındaki eski santral yakında yıkılacak.",
+    "beispielEn": "The old power plant by the river will be torn down soon."
   },
   {
     "id": 3026,
@@ -27,9 +27,9 @@
     "id": 2590,
     "tr": "çiğ",
     "en": "raw",
-    "beispiel": "Das Fleisch ist innen noch roh.",
-    "beispielTr": "Etin içi hâlâ çiğ.",
-    "beispielEn": "The meat is still raw inside."
+    "beispiel": "Roher Fisch ist in Japan ganz normal.",
+    "beispielTr": "Japonya'da çiğ balık gayet olağan.",
+    "beispielEn": "Raw fish is completely normal in Japan."
   },
   {
     "id": 2153,
@@ -67,25 +67,25 @@
     "id": 2498,
     "tr": "mantar",
     "en": "mushroom",
-    "beispiel": "Im Herbst sammeln wir im Wald Pilze.",
-    "beispielTr": "Sonbaharda ormanda mantar toplarız.",
-    "beispielEn": "In autumn we pick mushrooms in the forest."
+    "beispiel": "Manche Pilze sind giftig, pass also auf.",
+    "beispielTr": "Bazı mantarlar zehirli, o yüzden dikkat et.",
+    "beispielEn": "Some mushrooms are poisonous, so be careful."
   },
   {
     "id": 1367,
     "tr": "bulaşık yıkamak",
     "en": "to wash the dishes",
-    "beispiel": "Ich muss noch das Geschirr abwaschen.",
-    "beispielTr": "Bir de bulaşıkları yıkamam lazım.",
-    "beispielEn": "I still have to wash the dishes."
+    "beispiel": "Wer kocht, muss heute nicht abwaschen.",
+    "beispielTr": "Bugün yemeği yapan bulaşık yıkamayacak.",
+    "beispielEn": "Whoever cooks doesn't have to wash the dishes today."
   },
   {
     "id": 1366,
     "tr": "aşağı doğru",
     "en": "downward",
-    "beispiel": "Von dort führt der Weg abwärts ins Tal.",
-    "beispielTr": "Oradan yol aşağı doğru vadiye iniyor.",
-    "beispielEn": "From there the path leads downward into the valley."
+    "beispiel": "Mit dem Fahrrad ging es schnell abwärts zum See.",
+    "beispielTr": "Bisikletle göle doğru hızla aşağı indik.",
+    "beispielEn": "On our bikes, we raced downhill to the lake."
   },
   {
     "id": 2094,
@@ -107,41 +107,41 @@
     "id": 2279,
     "tr": "çırak",
     "en": "apprentice",
-    "beispiel": "Als Lehrling verdient man nicht sehr viel Geld.",
-    "beispielTr": "Çırakken insan pek fazla para kazanmıyor.",
-    "beispielEn": "As an apprentice you don't earn much money."
+    "beispiel": "Der neue Lehrling fängt am Montag in der Bäckerei an.",
+    "beispielTr": "Yeni çırak pazartesi fırında işe başlıyor.",
+    "beispielEn": "The new apprentice starts at the bakery on Monday."
   },
   {
     "id": 2946,
     "tr": "belge",
     "en": "certificate",
-    "beispiel": "Wenn wir das Spiel gewinnen, bekommen wir eine Urkunde.",
-    "beispielTr": "Maçı kazanırsak bir sertifika alacağız.",
-    "beispielEn": "If we win the game, we'll get a certificate."
+    "beispiel": "Nach dem Schwimmkurs bekam jedes Kind eine Urkunde.",
+    "beispielTr": "Yüzme kursundan sonra her çocuk bir belge aldı.",
+    "beispielEn": "After the swimming course, every child got a certificate."
   },
   {
     "id": 2157,
     "tr": "bozmak",
     "en": "to break",
-    "beispiel": "Wer hat die Lampe kaputtgemacht?",
-    "beispielTr": "Lambayı kim bozdu?",
-    "beispielEn": "Who broke the lamp?"
+    "beispiel": "Der Hund hat mein Ladekabel kaputtgemacht.",
+    "beispielTr": "Köpek şarj kablomu bozdu.",
+    "beispielEn": "The dog broke my charging cable."
   },
   {
     "id": 2261,
     "tr": "tarım",
     "en": "agriculture",
-    "beispiel": "Auf dem Land arbeiten die meisten Leute in der Landwirtschaft.",
-    "beispielTr": "Kırsalda insanların çoğu tarımda çalışıyor.",
-    "beispielEn": "In the countryside most people work in agriculture."
+    "beispiel": "Ohne Regen hat die Landwirtschaft dieses Jahr große Probleme.",
+    "beispielTr": "Yağmur olmayınca tarım bu yıl büyük sorunlar yaşıyor.",
+    "beispielEn": "Without rain, agriculture is having big problems this year."
   },
   {
     "id": 2938,
     "tr": "yasaklanmış",
     "en": "prohibited",
-    "beispiel": "Es ist untersagt, hier zu rauchen.",
-    "beispielTr": "Burada sigara içmek yasaktır.",
-    "beispielEn": "Smoking is prohibited here."
+    "beispiel": "Das Baden im See ist wegen der Algen untersagt.",
+    "beispielTr": "Göle girmek yosunlar yüzünden yasak.",
+    "beispielEn": "Swimming in the lake is prohibited because of the algae."
   },
   {
     "id": 1547,
@@ -211,17 +211,17 @@
     "id": 3010,
     "tr": "kaçırmak",
     "en": "to miss",
-    "beispiel": "Tut mir leid, ich habe die Anmeldefrist versäumt.",
-    "beispielTr": "Üzgünüm, kayıt süresini kaçırdım.",
-    "beispielEn": "I'm sorry, I missed the registration deadline."
+    "beispiel": "Wegen der Grippe habe ich zwei Wochen Unterricht versäumt.",
+    "beispielTr": "Grip yüzünden iki hafta ders kaçırdım.",
+    "beispielEn": "Because of the flu I missed two weeks of classes."
   },
   {
     "id": 1911,
     "tr": "fotoğrafçılık",
     "en": "photography",
-    "beispiel": "Ich interessiere mich schon lange für Fotografie.",
-    "beispielTr": "Uzun zamandır fotoğrafçılığa ilgi duyuyorum.",
-    "beispielEn": "I've been interested in photography for a long time."
+    "beispiel": "Seit der Rente widmet sich mein Vater der Fotografie.",
+    "beispielTr": "Babam emekli olduğundan beri kendini fotoğrafçılığa verdi.",
+    "beispielEn": "Since retiring, my father has devoted himself to photography."
   },
   {
     "id": 2986,
@@ -267,17 +267,17 @@
     "id": 1830,
     "tr": "sirke",
     "en": "vinegar",
-    "beispiel": "Am Salat fehlt noch etwas Essig.",
-    "beispielTr": "Salatada biraz sirke eksik.",
-    "beispielEn": "The salad needs a bit more vinegar."
+    "beispiel": "Für die Soße nehme ich Öl, Essig und etwas Senf.",
+    "beispielTr": "Sos için yağ, sirke ve biraz hardal kullanıyorum.",
+    "beispielEn": "For the dressing, I use oil, vinegar, and a little mustard."
   },
   {
     "id": 3126,
     "tr": "sözlük",
     "en": "dictionary",
-    "beispiel": "Ich muss das Wort im Wörterbuch nachschlagen.",
-    "beispielTr": "Bu kelimeye sözlükten bakmam lazım.",
-    "beispielEn": "I have to look up the word in the dictionary."
+    "beispiel": "Im Unterricht dürfen wir kein Wörterbuch benutzen.",
+    "beispielTr": "Derste sözlük kullanmamıza izin yok.",
+    "beispielEn": "We're not allowed to use a dictionary in class."
   },
   {
     "id": 2823,
@@ -307,9 +307,9 @@
     "id": 2843,
     "tr": "ajanda",
     "en": "planner",
-    "beispiel": "Hast du unser Treffen schon in deinen Terminkalender eingetragen?",
-    "beispielTr": "Buluşmamızı ajandana yazdın mı?",
-    "beispielEn": "Have you already put our meeting in your planner?"
+    "beispiel": "Mein Terminkalender ist diese Woche leider komplett voll.",
+    "beispielTr": "Ajandam bu hafta maalesef tamamen dolu.",
+    "beispielEn": "Unfortunately my planner is completely full this week."
   },
   {
     "id": 2786,
@@ -339,33 +339,33 @@
     "id": 2750,
     "tr": "istatistik",
     "en": "statistics",
-    "beispiel": "Die Statistik zeigt, dass jeder Zweite ein Fahrrad besitzt.",
-    "beispielTr": "İstatistik, her iki kişiden birinin bisikleti olduğunu gösteriyor.",
-    "beispielEn": "The statistics show that every second person owns a bicycle."
+    "beispiel": "Laut Statistik regnet es hier im November am meisten.",
+    "beispielTr": "İstatistiğe göre burada en çok kasımda yağmur yağıyor.",
+    "beispielEn": "According to statistics, it rains the most here in November."
   },
   {
     "id": 1515,
     "tr": "gerekçe",
     "en": "justification",
-    "beispiel": "Die Miete wurde ohne Begründung erhöht.",
-    "beispielTr": "Kira, hiçbir gerekçe gösterilmeden artırıldı.",
-    "beispielEn": "The rent was raised without any justification."
+    "beispiel": "Für seine Entscheidung hat er keine Begründung genannt.",
+    "beispielTr": "Kararı için hiçbir gerekçe göstermedi.",
+    "beispielEn": "He gave no justification for his decision."
   },
   {
     "id": 2838,
     "tr": "katılım",
     "en": "participation",
-    "beispiel": "Die Teilnahme am Gewinnspiel ist kostenlos.",
-    "beispielTr": "Çekilişe katılım ücretsiz.",
-    "beispielEn": "Participation in the contest is free."
+    "beispiel": "Für die Teilnahme an der Exkursion braucht man eine Anmeldung.",
+    "beispielTr": "Geziye katılım için kayıt gerekiyor.",
+    "beispielEn": "You need to register to take part in the field trip."
   },
   {
     "id": 2790,
     "tr": "grev yapmak",
     "en": "to strike",
-    "beispiel": "Die Arbeiter streiken für höhere Löhne.",
-    "beispielTr": "İşçiler daha yüksek ücret için grev yapıyor.",
-    "beispielEn": "The workers are striking for higher wages."
+    "beispiel": "Weil die Piloten streiken, fallen heute viele Flüge aus.",
+    "beispielTr": "Pilotlar grev yaptığı için bugün birçok uçuş iptal.",
+    "beispielEn": "Because the pilots are on strike, many flights are canceled today."
   },
   {
     "id": 2861,
@@ -379,9 +379,9 @@
     "id": 1382,
     "tr": "alfabe",
     "en": "alphabet",
-    "beispiel": "Wie viele Buchstaben hat das Alphabet in Ihrer Sprache?",
-    "beispielTr": "Sizin dilinizde alfabede kaç harf var?",
-    "beispielEn": "How many letters does the alphabet have in your language?"
+    "beispiel": "Meine Tochter kann schon das ganze Alphabet singen.",
+    "beispielTr": "Kızım bütün alfabeyi şarkıyla söyleyebiliyor artık.",
+    "beispielEn": "My daughter can already sing the whole alphabet."
   },
   {
     "id": 1664,
@@ -395,8 +395,8 @@
     "id": 1349,
     "tr": "kopya çekmek",
     "en": "to copy",
-    "beispiel": "Er hat die Hausaufgaben von mir abgeschrieben.",
-    "beispielTr": "Ödevi benden kopya çekti.",
-    "beispielEn": "He copied the homework from me."
+    "beispiel": "Der Lehrer hat gemerkt, dass Paul beim Test abgeschrieben hat.",
+    "beispielTr": "Öğretmen Paul'ün sınavda kopya çektiğini fark etti.",
+    "beispielEn": "The teacher noticed that Paul copied on the test."
   }
 ]

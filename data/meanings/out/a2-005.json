@@ -3,9 +3,9 @@
     "id": 1170,
     "tr": "toplamak",
     "en": "to collect",
-    "beispiel": "Im Herbst sammeln wir im Wald bunte Blätter.",
-    "beispielTr": "Sonbaharda ormanda rengârenk yapraklar topluyoruz.",
-    "beispielEn": "In autumn we collect colorful leaves in the forest."
+    "beispiel": "Mein kleiner Bruder sammelt Briefmarken aus aller Welt.",
+    "beispielTr": "Küçük kardeşim dünyanın her yerinden pul topluyor.",
+    "beispielEn": "My little brother collects stamps from all over the world."
   },
   {
     "id": 1240,
@@ -51,9 +51,9 @@
     "id": 907,
     "tr": "geçmek",
     "en": "to pass",
-    "beispiel": "Ich habe die Prüfung endlich bestanden.",
-    "beispielTr": "Sınavı sonunda geçtim.",
-    "beispielEn": "I finally passed the exam."
+    "beispiel": "Mein Bruder hat die Fahrprüfung beim zweiten Mal bestanden.",
+    "beispielTr": "Ağabeyim ehliyet sınavını ikinci denemede geçti.",
+    "beispielEn": "My brother passed his driving test on the second try."
   },
   {
     "id": 1016,
@@ -171,25 +171,25 @@
     "id": 1236,
     "tr": "tabak",
     "en": "plate",
-    "beispiel": "Stell die Teller bitte auf den Tisch!",
-    "beispielTr": "Tabakları lütfen masaya koy!",
-    "beispielEn": "Please put the plates on the table!"
+    "beispiel": "Beim Abwaschen ist mir ein Teller runtergefallen.",
+    "beispielTr": "Bulaşık yıkarken elimden bir tabak düştü.",
+    "beispielEn": "I dropped a plate while doing the dishes."
   },
   {
     "id": 1302,
     "tr": "çamaşır",
     "en": "laundry",
-    "beispiel": "Ich muss heute noch die Wäsche waschen.",
-    "beispielTr": "Bugün çamaşır yıkamam gerekiyor.",
-    "beispielEn": "I still have to do the laundry today."
+    "beispiel": "Nach dem Regen ist die Wäsche wieder nass.",
+    "beispielTr": "Yağmurdan sonra çamaşırlar yine ıslak.",
+    "beispielEn": "After the rain, the laundry is wet again."
   },
   {
     "id": 904,
     "tr": "tarif etmek",
     "en": "to describe",
-    "beispiel": "Kannst du mir den Weg zum Bahnhof beschreiben?",
-    "beispielTr": "Bana gara giden yolu tarif edebilir misin?",
-    "beispielEn": "Can you describe the way to the station for me?"
+    "beispiel": "Kannst du mir dein neues Zimmer beschreiben?",
+    "beispielTr": "Yeni odanı bana tarif edebilir misin?",
+    "beispielEn": "Can you describe your new room to me?"
   },
   {
     "id": 1117,
@@ -251,17 +251,17 @@
     "id": 1310,
     "tr": "yumuşak",
     "en": "soft",
-    "beispiel": "Das Bett im Hotel war sehr weich.",
-    "beispielTr": "Oteldeki yatak çok yumuşaktı.",
-    "beispielEn": "The bed in the hotel was very soft."
+    "beispiel": "Das Fell von unserem Kaninchen ist ganz weich.",
+    "beispielTr": "Tavşanımızın tüyleri yumuşacık.",
+    "beispielEn": "Our rabbit's fur is really soft."
   },
   {
     "id": 1054,
     "tr": "konser",
     "en": "concert",
-    "beispiel": "Für das Konzert am Samstag gibt es noch Karten.",
-    "beispielTr": "Cumartesi günkü konser için hâlâ bilet var.",
-    "beispielEn": "There are still tickets for the concert on Saturday."
+    "beispiel": "Das Konzert im Park war kostenlos.",
+    "beispielTr": "Parktaki konser ücretsizdi.",
+    "beispielEn": "The concert in the park was free."
   },
   {
     "id": 1073,
@@ -299,9 +299,9 @@
     "id": 1183,
     "tr": "kirli",
     "en": "dirty",
-    "beispiel": "Das Handtuch im Bad ist schmutzig.",
-    "beispielTr": "Banyodaki havlu kirli.",
-    "beispielEn": "The towel in the bathroom is dirty."
+    "beispiel": "Die schmutzigen Teller stehen noch in der Spüle.",
+    "beispielTr": "Kirli tabaklar hâlâ lavaboda duruyor.",
+    "beispielEn": "The dirty plates are still sitting in the sink."
   },
   {
     "id": 1217,
@@ -331,9 +331,9 @@
     "id": 1246,
     "tr": "antrenman yapmak",
     "en": "to train",
-    "beispiel": "Wir trainieren zweimal pro Woche im Verein.",
-    "beispielTr": "Kulüpte haftada iki kez antrenman yapıyoruz.",
-    "beispielEn": "We train twice a week at the club."
+    "beispiel": "Für den Marathon trainiert Sven jeden Tag.",
+    "beispielTr": "Sven maraton için her gün antrenman yapıyor.",
+    "beispielEn": "Sven is training every day for the marathon."
   },
   {
     "id": 1049,
@@ -363,17 +363,17 @@
     "id": 1121,
     "tr": "çevrimiçi",
     "en": "online",
-    "beispiel": "Ich bin heute Abend wieder online.",
-    "beispielTr": "Bu akşam yine çevrimiçi olacağım.",
-    "beispielEn": "I will be online again tonight."
+    "beispiel": "Die Kinokarten kann man auch online kaufen.",
+    "beispielTr": "Sinema biletleri çevrimiçi de alınabiliyor.",
+    "beispielEn": "You can also buy movie tickets online."
   },
   {
     "id": 1218,
     "tr": "kalem",
     "en": "pen",
-    "beispiel": "Kannst du mir bitte einen Stift geben?",
-    "beispielTr": "Bana bir kalem verir misin lütfen?",
-    "beispielEn": "Can you give me a pen, please?"
+    "beispiel": "Mein Stift schreibt nicht mehr, hast du einen anderen?",
+    "beispielTr": "Kalemim artık yazmıyor, sende başka var mı?",
+    "beispielEn": "My pen isn't working anymore, do you have another one?"
   },
   {
     "id": 1038,
@@ -387,9 +387,9 @@
     "id": 1333,
     "tr": "sirk",
     "en": "circus",
-    "beispiel": "Am Samstag gehen wir mit den Kindern in den Zirkus.",
-    "beispielTr": "Cumartesi çocuklarla sirke gidiyoruz.",
-    "beispielEn": "On Saturday we are going to the circus with the kids."
+    "beispiel": "Der Clown im Zirkus war total lustig.",
+    "beispielTr": "Sirkteki palyaço çok komikti.",
+    "beispielEn": "The clown at the circus was really funny."
   },
   {
     "id": 1160,

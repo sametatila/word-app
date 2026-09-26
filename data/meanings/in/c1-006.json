@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Allegorien",
    "currentTr": "alegori",
-   "currentBeispiel": "Die Höhle steht als Allegorie für die menschliche Unwissenheit.",
-   "currentBeispielTr": "Mağara, insanın cehaletinin alegorisi olarak duruyor."
+   "currentBeispiel": "Das Gemälde zeigt eine Allegorie der Gerechtigkeit.",
+   "currentBeispielTr": "Tablo, adaletin alegorisini gösteriyor."
   },
   {
    "id": 3620,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Topoi",
    "currentTr": "edebi motif, ortak tema",
-   "currentBeispiel": "Der Topos der vergänglichen Schönheit durchzieht die Lyrik.",
-   "currentBeispielTr": "Geçici güzellik motifi şiirin tamamına yayılıyor."
+   "currentBeispiel": "Ihre Doktorarbeit untersucht den Topos der treuen Ehefrau.",
+   "currentBeispielTr": "Doktora tezi, sadık eş motifini inceliyor."
   },
   {
    "id": 3626,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "metafizik",
-   "currentBeispiel": "Die Metaphysik fragt nach dem Wesen der Wirklichkeit selbst.",
-   "currentBeispielTr": "Metafizik, gerçekliğin bizzat özünü sorgular."
+   "currentBeispiel": "Im dritten Semester belegte er ein Seminar zur Metaphysik.",
+   "currentBeispielTr": "Üçüncü dönemde metafizik semineri aldı."
   },
   {
    "id": 3627,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "nihilizm",
-   "currentBeispiel": "Der Nihilismus leugnet die Existenz objektiver Werte.",
-   "currentBeispielTr": "Nihilizm, nesnel değerlerin varlığını reddeder."
+   "currentBeispiel": "Nach dem Tod seiner Frau verfiel er dem Nihilismus.",
+   "currentBeispielTr": "Karısının ölümünden sonra nihilizme saplandı."
   },
   {
    "id": 3628,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "varoluşçuluk",
-   "currentBeispiel": "Der Existenzialismus betont die radikale Freiheit des Individuums.",
-   "currentBeispielTr": "Varoluşçuluk, bireyin köklü özgürlüğünü vurgular."
+   "currentBeispiel": "Im Studium hat sie sich intensiv mit dem Existenzialismus beschäftigt.",
+   "currentBeispielTr": "Üniversitede varoluşçulukla yoğun biçimde ilgilendi."
   },
   {
    "id": 3629,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Dialektiken",
    "currentTr": "diyalektik (yöntem, öğreti)",
-   "currentBeispiel": "Hegels Dialektik beruht auf These, Antithese und Synthese.",
-   "currentBeispielTr": "Hegel'in diyalektiği tez, antitez ve senteze dayanır."
+   "currentBeispiel": "Der Professor erklärte Hegels Dialektik an einem Beispiel.",
+   "currentBeispielTr": "Profesör, Hegel'in diyalektiğini bir örnekle açıkladı."
   },
   {
    "id": 3630,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "Erkenntnistheorien",
    "currentTr": "bilgi kuramı, epistemoloji",
-   "currentBeispiel": "Die Erkenntnistheorie untersucht die Grenzen menschlichen Wissens.",
-   "currentBeispielTr": "Bilgi kuramı, insan bilgisinin sınırlarını araştırır."
+   "currentBeispiel": "Er schreibt seine Masterarbeit über Kants Erkenntnistheorie.",
+   "currentBeispielTr": "Yüksek lisans tezini Kant'ın bilgi kuramı üzerine yazıyor."
   },
   {
    "id": 3632,
@@ -80,7 +80,7 @@
    "formen": "Polemiken",
    "currentTr": "polemik, çatışmalı tartışma",
    "currentBeispiel": "Seine Polemik gegen die Kritiker war scharf und unversöhnlich.",
-   "currentBeispielTr": "Eleştirmenlere yönelik polemiği sert ve uzlaşmazdı."
+   "currentBeispielTr": "Eleştirmenlere yönelttiği polemik sert ve uzlaşmazdı."
   },
   {
    "id": 3633,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Aphorismen",
    "currentTr": "özdeyiş, aforizma",
-   "currentBeispiel": "Nietzsches Aphorismen bestechen durch ihre sprachliche Prägnanz.",
-   "currentBeispielTr": "Nietzsche'nin aforizmaları dildeki yoğunluklarıyla etkiler."
+   "currentBeispiel": "Über seinem Schreibtisch hängt ein Aphorismus von Nietzsche.",
+   "currentBeispielTr": "Yazı masasının üstünde Nietzsche'den bir özdeyiş asılı."
   },
   {
    "id": 3634,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "Konnotationen",
    "currentTr": "yan anlam, çağrışım",
-   "currentBeispiel": "Das Wort trägt in diesem Kontext eine negative Konnotation.",
-   "currentBeispielTr": "Bu bağlamda kelime olumsuz bir yan anlam taşıyor.",
+   "currentBeispiel": "Der Begriff Heimat hat für viele eine positive Konnotation.",
+   "currentBeispielTr": "Heimat kelimesi çoğu kişi için olumlu bir yan anlam taşıyor.",
    "overlapping": [
     "die Nebenbedeutung (C1)"
    ]
@@ -122,8 +122,8 @@
    "niveau": "C1",
    "formen": "Denotationen",
    "currentTr": "düz anlam",
-   "currentBeispiel": "Die Denotation eines Wortes unterscheidet sich von der Konnotation.",
-   "currentBeispielTr": "Bir kelimenin düz anlamı yan anlamından farklıdır."
+   "currentBeispiel": "Wörterbücher geben nur die Denotation eines Wortes an.",
+   "currentBeispielTr": "Sözlükler bir kelimenin yalnızca düz anlamını verir."
   },
   {
    "id": 3637,
@@ -142,8 +142,8 @@
    "niveau": "C1",
    "formen": "Zäsuren",
    "currentTr": "dönüm noktası, kesinti",
-   "currentBeispiel": "Der Krieg markierte eine tiefe Zäsur in der Kulturgeschichte.",
-   "currentBeispielTr": "Savaş, kültür tarihinde derin bir kırılma noktası oldu.",
+   "currentBeispiel": "Der Mauerfall war eine tiefe Zäsur für das Land.",
+   "currentBeispielTr": "Duvarın yıkılması ülke için derin bir kırılmaydı.",
    "overlapping": [
     "der Wendepunkt (B2)"
    ]
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "Umbrüche",
    "currentTr": "köklü değişim, altüst oluş",
-   "currentBeispiel": "Der gesellschaftliche Umbruch spiegelte sich in der Kunst wider.",
-   "currentBeispielTr": "Toplumsal altüst oluş sanata da yansıdı."
+   "currentBeispiel": "Die Firma steckt mitten in einem großen Umbruch.",
+   "currentBeispielTr": "Şirket, köklü bir değişimin tam ortasında."
   },
   {
    "id": 3645,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "zamanın ruhu",
-   "currentBeispiel": "Der Roman fängt den Zeitgeist der Jahrhundertwende meisterhaft ein.",
-   "currentBeispielTr": "Roman, yüzyıl dönümünün ruhunu ustalıkla yakalıyor."
+   "currentBeispiel": "Die Serie trifft den Zeitgeist der neunziger Jahre.",
+   "currentBeispielTr": "Dizi, doksanlı yılların ruhunu tam yakalıyor."
   },
   {
    "id": 3646,
@@ -175,8 +175,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "kültürel miras",
-   "currentBeispiel": "Die Altstadt gehört zum immateriellen Kulturerbe der Region.",
-   "currentBeispielTr": "Eski şehir, bölgenin kültürel mirasının bir parçası."
+   "currentBeispiel": "Die Altstadt gehört zum Kulturerbe der ganzen Region.",
+   "currentBeispielTr": "Eski şehir, tüm bölgenin kültürel mirasının bir parçası."
   },
   {
    "id": 3651,
@@ -229,7 +229,7 @@
    "formen": "rezipiert, hat rezipiert",
    "currentTr": "algılamak, alımlamak (bir eseri)",
    "currentBeispiel": "Das Publikum rezipiert das Werk auf ganz unterschiedliche Weise.",
-   "currentBeispielTr": "Seyirciler eseri çok farklı biçimlerde algılıyor.",
+   "currentBeispielTr": "İzleyiciler eseri çok farklı biçimlerde alımlıyor.",
    "overlapping": [
     "wahrnehmen (B2)",
     "auffassen (C1)"
@@ -253,7 +253,7 @@
    "formen": "transzendiert, hat transzendiert",
    "currentTr": "aşmak, ötesine geçmek",
    "currentBeispiel": "Die Kunst versucht, die Grenzen der Sprache zu transzendieren.",
-   "currentBeispielTr": "Sanat, dilin sınırlarını aşmaya çalışır.",
+   "currentBeispielTr": "Sanat, dilin sınırlarının ötesine geçmeye çalışır.",
    "overlapping": [
     "übertreffen (B2)",
     "überschreiten (B2)",
@@ -277,8 +277,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ikircikli, çelişik duygular taşıyan",
-   "currentBeispiel": "Seine Haltung gegenüber der Moderne bleibt zutiefst ambivalent.",
-   "currentBeispielTr": "Moderniteye karşı tutumu son derece çelişkili."
+   "currentBeispiel": "Sie steht dem Umzug ambivalent gegenüber.",
+   "currentBeispielTr": "Taşınma konusunda ikircikli bir tutumu var."
   },
   {
    "id": 3663,
@@ -287,8 +287,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çağ açan, çığır açıcı",
-   "currentBeispiel": "Der Roman gilt als epochales Werk der Weltliteratur.",
-   "currentBeispielTr": "Roman, dünya edebiyatının çığır açan eserlerinden sayılıyor."
+   "currentBeispiel": "Die Entdeckung des Penizillins war ein epochaler Fortschritt.",
+   "currentBeispielTr": "Penisilinin keşfi çığır açan bir ilerlemeydi."
   },
   {
    "id": 3664,
@@ -298,7 +298,7 @@
    "formen": "",
    "currentTr": "avangart, öncü (üslup)",
    "currentBeispiel": "Die avantgardistische Malerei brach mit allen bisherigen Regeln.",
-   "currentBeispielTr": "Avangard resim, o güne dek geçerli tüm kuralları yıktı.",
+   "currentBeispielTr": "Avangart resim, o güne dek geçerli tüm kuralları yıktı.",
    "overlapping": [
     "die Avantgarde (C1)"
    ]
@@ -310,8 +310,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "diyalektik, diyalektiğe dayalı",
-   "currentBeispiel": "Hegel entwickelt seine Theorie in einer dialektischen Argumentation.",
-   "currentBeispielTr": "Hegel, kuramını diyalektik bir akıl yürütmeyle geliştirir."
+   "currentBeispiel": "Ihre Argumentation ist streng dialektisch aufgebaut.",
+   "currentBeispielTr": "Akıl yürütmesi baştan sona diyalektik biçimde kurulmuş."
   },
   {
    "id": 3667,
@@ -320,8 +320,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "varoluşsal",
-   "currentBeispiel": "Der Protagonist erlebt eine existenzielle Krise nach dem Verlust.",
-   "currentBeispielTr": "Başkahraman, kayıptan sonra varoluşsal bir kriz yaşıyor."
+   "currentBeispiel": "Nach der Kündigung steckte er in einer existenziellen Krise.",
+   "currentBeispielTr": "İşten çıkarıldıktan sonra varoluşsal bir krize girdi."
   },
   {
    "id": 3668,
@@ -331,7 +331,7 @@
    "formen": "",
    "currentTr": "parça parça, eksik",
    "currentBeispiel": "Das Manuskript ist nur fragmentarisch überliefert worden.",
-   "currentBeispielTr": "El yazması günümüze yalnızca parça parça ulaşabildi."
+   "currentBeispielTr": "El yazması günümüze yalnızca parça parça ulaştı."
   },
   {
    "id": 3669,
@@ -340,8 +340,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tefekküre dayalı, derin düşünceli",
-   "currentBeispiel": "Der Dichter pflegt einen kontemplativen Blick auf die Welt.",
-   "currentBeispielTr": "Şair, dünyaya derin düşünceye dalan bir gözle bakıyor."
+   "currentBeispiel": "Im Kloster führt sie ein kontemplatives Leben.",
+   "currentBeispielTr": "Manastırda derin düşüncelere adanmış bir hayat sürüyor."
   },
   {
    "id": 3671,
@@ -350,8 +350,8 @@
    "niveau": "C1",
    "formen": "zeichnet sich ab, hat sich abgezeichnet",
    "currentTr": "belirmek, ortaya çıkmak",
-   "currentBeispiel": "Ein Wandel in der Politik zeichnet sich langsam ab.",
-   "currentBeispielTr": "Siyasette bir değişim yavaş yavaş belirmeye başlıyor."
+   "currentBeispiel": "Am Horizont zeichnet sich ein Gewitter ab.",
+   "currentBeispielTr": "Ufukta bir fırtına beliriyor."
   },
   {
    "id": 3672,
@@ -361,7 +361,7 @@
    "formen": "häuft sich, hat sich gehäuft",
    "currentTr": "artmak, çoğalmak",
    "currentBeispiel": "In den letzten Wochen haben sich die Beschwerden gehäuft.",
-   "currentBeispielTr": "Son haftalarda şikâyetler iyice arttı.",
+   "currentBeispielTr": "Son haftalarda şikâyetler iyice çoğaldı.",
    "overlapping": [
     "zulegen (B2)"
    ]
@@ -374,7 +374,7 @@
    "formen": "erübrigt sich, hat sich erübrigt",
    "currentTr": "gereksiz olmak",
    "currentBeispiel": "Nach der Absage erübrigt sich jede weitere Diskussion.",
-   "currentBeispielTr": "Ret cevabından sonra daha fazla tartışmaya gerek kalmadı."
+   "currentBeispielTr": "Ret cevabından sonra her türlü tartışma gereksiz kaldı."
   },
   {
    "id": 3676,
@@ -383,8 +383,8 @@
    "niveau": "C1",
    "formen": "nimmt vorweg, hat vorweggenommen",
    "currentTr": "önceden dile getirmek, öne almak",
-   "currentBeispiel": "Der Autor nimmt im Vorwort die Kritik vorweg.",
-   "currentBeispielTr": "Yazar, önsözde gelecek eleştirileri önceden karşılıyor."
+   "currentBeispiel": "Ich will das Ergebnis nicht vorwegnehmen.",
+   "currentBeispielTr": "Sonucu şimdiden söylemek istemiyorum."
   },
   {
    "id": 3677,
@@ -406,8 +406,8 @@
    "niveau": "C1",
    "formen": "verkennt, hat verkannt",
    "currentTr": "yanlış değerlendirmek",
-   "currentBeispiel": "Man sollte die Gefahr nicht verkennen.",
-   "currentBeispielTr": "Tehlikeyi hafife almamak gerekir."
+   "currentBeispiel": "Die Jury hat sein Talent völlig verkannt.",
+   "currentBeispielTr": "Jüri, yeteneğini tamamen yanlış değerlendirdi."
   },
   {
    "id": 3679,
@@ -492,7 +492,7 @@
    "formen": "hebt sich ab, hat sich abgehoben",
    "currentTr": "farklılaşmak, öne çıkmak",
    "currentBeispiel": "Das Produkt hebt sich deutlich von der Konkurrenz ab.",
-   "currentBeispielTr": "Ürün, rakiplerinden belirgin biçimde ayrışıyor."
+   "currentBeispielTr": "Ürün, rakiplerinden açıkça öne çıkıyor."
   },
   {
    "id": 3691,
@@ -511,8 +511,8 @@
    "niveau": "C1",
    "formen": "bemängelt, hat bemängelt",
    "currentTr": "eleştirmek, kusur bulmak",
-   "currentBeispiel": "Kritiker bemängeln die fehlende Transparenz des Verfahrens.",
-   "currentBeispielTr": "Eleştirmenler, sürecin şeffaf olmayışına kusur buluyor.",
+   "currentBeispiel": "Die Prüfer bemängeln die fehlende Dokumentation.",
+   "currentBeispielTr": "Denetçiler, belgelerin eksik olmasını kusur sayıyor.",
    "overlapping": [
     "kritisieren (B1)"
    ]
@@ -537,8 +537,8 @@
    "niveau": "C1",
    "formen": "präzisiert, hat präzisiert",
    "currentTr": "netleştirmek, kesinleştirmek",
-   "currentBeispiel": "Bitte präzisieren Sie Ihre Aussage etwas genauer.",
-   "currentBeispielTr": "Lütfen ifadenizi biraz daha netleştirin."
+   "currentBeispiel": "Bitte präzisieren Sie Ihre Angaben zum Unfall.",
+   "currentBeispielTr": "Lütfen kazayla ilgili bilgilerinizi netleştirin."
   },
   {
    "id": 3695,
@@ -548,7 +548,7 @@
    "formen": "zahlt sich aus, hat sich ausgezahlt",
    "currentTr": "karşılığını vermek, işe yaramak",
    "currentBeispiel": "Die harte Arbeit hat sich am Ende ausgezahlt.",
-   "currentBeispielTr": "Sıkı çalışma sonunda karşılığını verdi.",
+   "currentBeispielTr": "Sıkı çalışma sonunda meyvesini verdi.",
    "overlapping": [
     "sich revanchieren (C1)",
     "honorieren (C1)"

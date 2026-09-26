@@ -50,7 +50,7 @@
    "formen": "führt zurück, hat zurückgeführt",
    "currentTr": "bir şeye bağlamak, dayandırmak",
    "currentBeispiel": "Der Erfolg lässt sich auf harte Arbeit zurückführen.",
-   "currentBeispielTr": "Bu başarı sıkı çalışmaya bağlanabilir."
+   "currentBeispielTr": "Bu başarı sıkı çalışmaya dayandırılabilir."
   },
   {
    "id": 3772,
@@ -59,8 +59,8 @@
    "niveau": "B2",
    "formen": "trägt bei, hat beigetragen",
    "currentTr": "katkıda bulunmak",
-   "currentBeispiel": "Jeder kann zum Klimaschutz beitragen.",
-   "currentBeispielTr": "Herkes iklimin korunmasına katkıda bulunabilir.",
+   "currentBeispiel": "Freiwillige Helfer haben zu diesem Erfolg beigetragen.",
+   "currentBeispielTr": "Gönüllüler bu başarıya katkıda bulundu.",
    "overlapping": [
     "mitwirken (B2)"
    ]
@@ -72,8 +72,8 @@
    "niveau": "B2",
    "formen": "setzt sich durch, hat sich durchgesetzt",
    "currentTr": "kendini kabul ettirmek, üstün gelmek",
-   "currentBeispiel": "Die neue Technik hat sich schnell durchgesetzt.",
-   "currentBeispielTr": "Yeni teknoloji kısa sürede kendini kabul ettirdi."
+   "currentBeispiel": "Gegen ihre älteren Brüder setzt sie sich immer durch.",
+   "currentBeispielTr": "Ağabeylerine karşı her zaman kendini kabul ettirir."
   },
   {
    "id": 3774,
@@ -82,8 +82,8 @@
    "niveau": "B2",
    "formen": "setzt sich auseinander, hat sich auseinandergesetzt",
    "currentTr": "bir konuyla uğraşmak, ele almak",
-   "currentBeispiel": "Die Schüler setzen sich mit dem Thema Migration auseinander.",
-   "currentBeispielTr": "Öğrenciler göç konusunu derinlemesine ele alıyor."
+   "currentBeispiel": "Wir müssen uns intensiv mit diesem Problem auseinandersetzen.",
+   "currentBeispielTr": "Bu sorunu enine boyuna ele almamız gerekiyor."
   },
   {
    "id": 3779,
@@ -108,7 +108,7 @@
    "formen": "besteht, hat bestanden",
    "currentTr": "oluşmak, meydana gelmek",
    "currentBeispiel": "Das Team besteht aus zehn Mitgliedern.",
-   "currentBeispielTr": "Takım on üyeden oluşuyor.",
+   "currentBeispielTr": "Takım on kişiden oluşuyor.",
    "overlapping": [
     "entstehen (B1)",
     "sich herausbilden (C1)"
@@ -131,8 +131,8 @@
    "niveau": "B2",
    "formen": "bezieht sich, hat sich bezogen",
    "currentTr": "atıfta bulunmak, ilgili olmak",
-   "currentBeispiel": "Diese Frage bezieht sich auf den letzten Abschnitt.",
-   "currentBeispielTr": "Bu soru son bölümle ilgili.",
+   "currentBeispiel": "Der Autor bezieht sich auf eine ältere Studie.",
+   "currentBeispielTr": "Yazar daha eski bir çalışmaya atıfta bulunuyor.",
    "overlapping": [
     "verweisen (C1)"
    ]
@@ -145,7 +145,7 @@
    "formen": "orientiert sich, hat sich orientiert",
    "currentTr": "örnek almak, yön belirlemek",
    "currentBeispiel": "Junge Designer orientieren sich oft an bekannten Vorbildern.",
-   "currentBeispielTr": "Genç tasarımcılar çoğu zaman tanınmış örnekleri kendine rehber alıyor."
+   "currentBeispielTr": "Genç tasarımcılar çoğu zaman tanınmış isimleri örnek alır."
   },
   {
    "id": 3790,
@@ -154,8 +154,8 @@
    "niveau": "B2",
    "formen": "richtet sich, hat sich gerichtet",
    "currentTr": "uymak, göre hareket etmek",
-   "currentBeispiel": "Der Preis richtet sich nach der Nachfrage.",
-   "currentBeispielTr": "Fiyat, talebe göre belirleniyor.",
+   "currentBeispiel": "Wir richten uns ganz nach euren Wünschen.",
+   "currentBeispielTr": "Tamamen sizin isteklerinize göre hareket ediyoruz.",
    "overlapping": [
     "passen (A2)",
     "einhalten (B2)"
@@ -182,7 +182,7 @@
    "formen": "neigt, hat geneigt",
    "currentTr": "eğiliminde olmak",
    "currentBeispiel": "Er neigt dazu, kleine Probleme zu übertreiben.",
-   "currentBeispielTr": "Küçük sorunları abartma eğiliminde."
+   "currentBeispielTr": "Küçük sorunları abartma eğilimindedir."
   },
   {
    "id": 3796,
@@ -215,7 +215,7 @@
    "formen": "entscheidet sich, hat sich entschieden",
    "currentTr": "karar vermek, seçmek",
    "currentBeispiel": "Wir haben uns für die günstigere Variante entschieden.",
-   "currentBeispielTr": "Daha uygun fiyatlı seçenekte karar kıldık.",
+   "currentBeispielTr": "Daha ucuz olan seçenekte karar kıldık.",
    "overlapping": [
     "beschließen (B1)",
     "entscheiden (B1)",
@@ -273,7 +273,7 @@
    "formen": "Sprachprüfungen",
    "currentTr": "dil sınavı",
    "currentBeispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
-   "currentBeispielTr": "Dil sınavını geçmeden üniversiteye kayıt mümkün değil."
+   "currentBeispielTr": "Dil sınavını geçmeden üniversiteye kayıt yapılamıyor."
   },
   {
    "id": 3839,
@@ -313,7 +313,7 @@
    "formen": "Wiederholungsprüfungen",
    "currentTr": "bütünleme sınavı",
    "currentBeispiel": "Wer durchfällt, kann an der Wiederholungsprüfung teilnehmen.",
-   "currentBeispielTr": "Kalan öğrenciler bütünleme sınavına girebilir."
+   "currentBeispielTr": "Sınavda kalan öğrenci bütünleme sınavına girebilir."
   },
   {
    "id": 3846,
@@ -323,7 +323,7 @@
    "formen": "Prüfungsausschüsse",
    "currentTr": "sınav kurulu",
    "currentBeispiel": "Der Prüfungsausschuss entscheidet über die Anerkennung.",
-   "currentBeispielTr": "Denklik konusunda sınav kurulu karar verir."
+   "currentBeispielTr": "Derslerin denkliğine sınav kurulu karar verir."
   },
   {
    "id": 3847,
@@ -333,7 +333,7 @@
    "formen": "Immatrikulationen",
    "currentTr": "üniversiteye kayıt",
    "currentBeispiel": "Die Immatrikulation muss bis Ende September erfolgen.",
-   "currentBeispielTr": "Üniversite kaydının eylül sonuna kadar yapılması gerekiyor."
+   "currentBeispielTr": "Üniversiteye kaydın eylül sonuna kadar yapılması gerekiyor."
   },
   {
    "id": 3848,
@@ -342,8 +342,8 @@
    "niveau": "B2",
    "formen": "Exmatrikulationen",
    "currentTr": "üniversite kaydını sildirme",
-   "currentBeispiel": "Nach dem Abschluss folgt die Exmatrikulation.",
-   "currentBeispielTr": "Mezuniyetin ardından üniversite kaydı silinir."
+   "currentBeispiel": "Nach dem Abschluss erfolgt die Exmatrikulation automatisch.",
+   "currentBeispielTr": "Mezuniyetin ardından üniversite kaydı kendiliğinden siliniyor."
   },
   {
    "id": 3852,
@@ -413,7 +413,7 @@
    "formen": "Abmeldungen",
    "currentTr": "kayıt sildirme, çıkış bildirimi",
    "currentBeispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
-   "currentBeispielTr": "Taşınma durumunda çıkış bildirimi yapmak zorunlu."
+   "currentBeispielTr": "Taşınırken çıkış bildirimi yapmak zorunlu."
   },
   {
    "id": 3864,
@@ -439,7 +439,7 @@
    "formen": "verständigt sich, hat sich verständigt",
    "currentTr": "anlaşmak, iletişim kurmak",
    "currentBeispiel": "Wir konnten uns notfalls auf Englisch verständigen.",
-   "currentBeispielTr": "Gerektiğinde İngilizce anlaşabildik.",
+   "currentBeispielTr": "Gerektiğinde İngilizce iletişim kurabildik.",
    "overlapping": [
     "sich einigen (B1)"
    ]
@@ -452,7 +452,7 @@
    "formen": "dolmetscht, hat gedolmetscht",
    "currentTr": "sözlü çevirmek, tercümanlık yapmak",
    "currentBeispiel": "Er hat beim Termin für die Familie gedolmetscht.",
-   "currentBeispielTr": "Randevuda aile için tercümanlık yaptı."
+   "currentBeispielTr": "Randevuda ailesi için tercümanlık yaptı."
   },
   {
    "id": 3871,
@@ -462,7 +462,7 @@
    "formen": "eignet sich an, hat sich angeeignet",
    "currentTr": "edinmek, öğrenmek",
    "currentBeispiel": "Innerhalb eines Jahres hat sie sich die Sprache angeeignet.",
-   "currentBeispielTr": "Bir yıl içinde dili öğrenip kendine mal etti.",
+   "currentBeispielTr": "Bir yıl içinde dili edindi.",
    "overlapping": [
     "anschaffen (B1)"
    ]
@@ -475,7 +475,7 @@
    "formen": "bildet sich fort, hat sich fortgebildet",
    "currentTr": "kendini geliştirmek",
    "currentBeispiel": "Lehrer müssen sich regelmäßig fortbilden.",
-   "currentBeispielTr": "Öğretmenlerin düzenli olarak kendilerini geliştirmeleri gerekiyor.",
+   "currentBeispielTr": "Öğretmenlerin düzenli olarak kendini geliştirmesi gerekiyor.",
    "overlapping": [
     "sich verbessern (B1)"
    ]

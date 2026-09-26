@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "destek, arka çıkma",
    "currentBeispiel": "In der Krise fand sie großen Rückhalt in ihrer Familie.",
-   "currentBeispielTr": "Kriz döneminde ailesinde büyük destek buldu.",
+   "currentBeispielTr": "Kriz döneminde ailesi ona arka çıktı.",
    "overlapping": [
     "die Förderung (B1)",
     "die Unterstützung (B1)"
@@ -24,7 +24,7 @@
    "formen": "Zuwendungen",
    "currentTr": "ilgi, şefkat, yakınlık gösterme",
    "currentBeispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben.",
-   "currentBeispielTr": "Yaşlı insanlar birçok yakınının sandığından daha fazla ilgiye ihtiyaç duyar.",
+   "currentBeispielTr": "Yaşlılar birçok yakınının sandığından daha fazla yakın ilgiye ihtiyaç duyar.",
    "overlapping": [
     "das Interesse (A2)"
    ]
@@ -47,7 +47,7 @@
    "formen": "",
    "currentTr": "hayranlık",
    "currentBeispiel": "Der Junge blickte mit Bewunderung zu seinem älteren Bruder auf.",
-   "currentBeispielTr": "Çocuk ağabeyine hayranlıkla bakıyordu."
+   "currentBeispielTr": "Çocuk ağabeyine hayranlıkla baktı."
   },
   {
    "id": 4547,
@@ -67,7 +67,7 @@
    "formen": "Wendepunkte",
    "currentTr": "dönüm noktası",
    "currentBeispiel": "Die Geburt des ersten Kindes war ein Wendepunkt in ihrem Leben.",
-   "currentBeispielTr": "İlk çocuğun doğumu hayatlarında bir dönüm noktasıydı.",
+   "currentBeispielTr": "İlk çocuğun doğumu hayatında bir dönüm noktası oldu.",
    "overlapping": [
     "die Zäsur (C1)"
    ]
@@ -100,7 +100,7 @@
    "formen": "Vertrauensbrüche",
    "currentTr": "güveni kötüye kullanma, güven ihlali",
    "currentBeispiel": "Für sie war die Lüge ein unverzeihlicher Vertrauensbruch.",
-   "currentBeispielTr": "Onun için bu yalan affedilmez bir güven ihlaliydi."
+   "currentBeispielTr": "Ona göre bu yalan affedilmez bir güven ihlaliydi."
   },
   {
    "id": 4552,
@@ -120,7 +120,7 @@
    "formen": "",
    "currentTr": "kendine hâkim olma, öz denetim",
    "currentBeispiel": "Es kostete ihn viel Selbstbeherrschung, ruhig zu bleiben.",
-   "currentBeispielTr": "Sakin kalmak ona epey bir kendine hâkim olmaya mal oldu."
+   "currentBeispielTr": "Sakin kalabilmek için epey kendine hâkim olması gerekti."
   },
   {
    "id": 4554,
@@ -140,7 +140,7 @@
    "formen": "",
    "currentTr": "bağlılık, yakınlık hissi",
    "currentBeispiel": "Trotz der Entfernung blieb eine tiefe Verbundenheit zwischen ihnen.",
-   "currentBeispielTr": "Aradaki mesafeye rağmen aralarında derin bir bağlılık kaldı."
+   "currentBeispielTr": "Mesafeye rağmen aralarında derin bir bağlılık kaldı."
   },
   {
    "id": 4556,
@@ -150,7 +150,7 @@
    "formen": "",
    "currentTr": "umut, iyimserlik, geleceğe güven",
    "currentBeispiel": "Trotz der Diagnose hat er seine Zuversicht nicht verloren.",
-   "currentBeispielTr": "Teşhise rağmen umudunu yitirmedi.",
+   "currentBeispielTr": "Teşhise rağmen iyimserliğini yitirmedi.",
    "overlapping": [
     "die Hoffnung (B1)"
    ]
@@ -193,7 +193,7 @@
    "formen": "hat getröstet",
    "currentTr": "teselli etmek, avutmak",
    "currentBeispiel": "Sie tröstete ihre Freundin nach der schmerzhaften Trennung.",
-   "currentBeispielTr": "Acı verici ayrılıktan sonra arkadaşını teselli etti."
+   "currentBeispielTr": "Acı ayrılıktan sonra arkadaşını teselli etti."
   },
   {
    "id": 4561,
@@ -216,7 +216,7 @@
    "formen": "hat misstraut",
    "currentTr": "güvenmemek, kuşku duymak",
    "currentBeispiel": "Nach dem Vorfall misstraute er allen Nachbarn.",
-   "currentBeispielTr": "Olaydan sonra bütün komşularına karşı güvenini yitirdi."
+   "currentBeispielTr": "Olaydan sonra bütün komşularına güvenmez oldu."
   },
   {
    "id": 4563,
@@ -225,7 +225,7 @@
    "niveau": "B2",
    "formen": "hat bereut",
    "currentTr": "pişman olmak",
-   "currentBeispiel": "Sie bereut es, damals so hart mit ihrem Sohn gewesen zu sein.",
+   "currentBeispiel": "Sie bereut es, damals so hart zu ihrem Sohn gewesen zu sein.",
    "currentBeispielTr": "O zamanlar oğluna bu kadar sert davrandığına pişman."
   },
   {
@@ -246,7 +246,7 @@
    "formen": "hat sich angepasst",
    "currentTr": "uyum sağlamak, ayak uydurmak",
    "currentBeispiel": "Nicht jeder will sich den Erwartungen der Gruppe anpassen.",
-   "currentBeispielTr": "Herkes grubun beklentilerine ayak uydurmak istemiyor.",
+   "currentBeispielTr": "Herkes grubun beklentilerine uyum sağlamak istemez.",
    "overlapping": [
     "sich integrieren (B2)"
    ]
@@ -272,7 +272,7 @@
    "formen": "hat ausgehalten",
    "currentTr": "dayanmak, katlanmak",
    "currentBeispiel": "Diese ständigen Vorwürfe hält auf Dauer niemand aus.",
-   "currentBeispielTr": "Bu sürekli suçlamalara uzun vadede kimse dayanamaz.",
+   "currentBeispielTr": "Bu sürekli suçlamalara uzun vadede kimse katlanamaz.",
    "overlapping": [
     "beruhen (B2)",
     "durchhalten (B2)",
@@ -287,7 +287,7 @@
    "formen": "hat gespendet",
    "currentTr": "bağışlamak, bağışta bulunmak",
    "currentBeispiel": "Die Gemeinde spendete für die Betreuung obdachloser Familien.",
-   "currentBeispielTr": "Belediye halkı evsiz ailelerin bakımı için bağışta bulundu."
+   "currentBeispielTr": "Cemaat evsiz ailelerin bakımı için bağış yaptı."
   },
   {
    "id": 4569,
@@ -297,7 +297,7 @@
    "formen": "hat geschlichtet",
    "currentTr": "arabuluculuk etmek, uzlaştırmak",
    "currentBeispiel": "Die Großmutter schlichtete den Streit zwischen den Geschwistern.",
-   "currentBeispielTr": "Büyükanne kardeşler arasındaki kavgayı yatıştırdı."
+   "currentBeispielTr": "Büyükanne kardeşler arasındaki kavgada arabuluculuk yaptı."
   },
   {
    "id": 4570,
@@ -365,7 +365,7 @@
    "formen": "hat ermahnt",
    "currentTr": "uyarmak, ikaz etmek",
    "currentBeispiel": "Die Erzieherin ermahnte die Kinder mehrmals zur Rücksicht.",
-   "currentBeispielTr": "Öğretmen çocukları birkaç kez saygılı olmaları için uyardı.",
+   "currentBeispielTr": "Öğretmen çocukları birkaç kez saygılı olmaları için ikaz etti.",
    "overlapping": [
     "warnen (B1)"
    ]
@@ -378,7 +378,7 @@
    "formen": "hat sich zurückgezogen",
    "currentTr": "geri çekilmek, kendi kabuğuna çekilmek",
    "currentBeispiel": "Seit dem Verlust zieht er sich immer mehr von Freunden zurück.",
-   "currentBeispielTr": "Kaybından beri arkadaşlarından giderek daha çok uzaklaşıyor."
+   "currentBeispielTr": "Kaybından beri arkadaş çevresinden giderek daha çok çekiliyor."
   },
   {
    "id": 4577,
@@ -388,7 +388,7 @@
    "formen": "hat mitgefühlt",
    "currentTr": "birinin duygularını paylaşmak, halinden anlamak",
    "currentBeispiel": "Als Therapeutin kann sie mit ihren Klienten wirklich mitfühlen.",
-   "currentBeispielTr": "Terapist olarak danışanlarıyla gerçekten duygudaşlık kurabiliyor."
+   "currentBeispielTr": "Terapist olarak danışanlarıyla gerçekten empati kurabiliyor."
   },
   {
    "id": 4578,
@@ -464,7 +464,7 @@
    "formen": "",
    "currentTr": "sosyal, insan içini seven, hoşsohbet",
    "currentBeispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig.",
-   "currentBeispielTr": "Kocası daha sessiz, o ise oldukça sokulgan biri.",
+   "currentBeispielTr": "Kocası daha sessiz, o ise oldukça sokulgan.",
    "overlapping": [
     "sozial (B1)"
    ]
@@ -507,7 +507,7 @@
    "formen": "Impfungen",
    "currentTr": "aşı, aşılama",
    "currentBeispiel": "Die Impfung gegen Grippe wird älteren Menschen dringend empfohlen.",
-   "currentBeispielTr": "Grip aşısı yaşlılara özellikle tavsiye ediliyor.",
+   "currentBeispielTr": "Grip aşısı yaşlılara önemle tavsiye ediliyor.",
    "overlapping": [
     "der Impfstoff (A2)"
    ]
@@ -520,7 +520,7 @@
    "formen": "Zuzahlungen",
    "currentTr": "katkı payı, ek ödeme",
    "currentBeispiel": "Für dieses Medikament fällt eine Zuzahlung von fünf Euro an.",
-   "currentBeispielTr": "Bu ilaç için beş euroluk bir katkı payı ödeniyor.",
+   "currentBeispielTr": "Bu ilaç için beş avro katkı payı ödeniyor.",
    "overlapping": [
     "der Beitrag (B1)"
    ]
@@ -533,7 +533,7 @@
    "formen": "Rehabilitationen",
    "currentTr": "rehabilitasyon, iyileştirme süreci",
    "currentBeispiel": "Nach der Operation beginnt eine mehrwöchige Rehabilitation am Meer.",
-   "currentBeispielTr": "Ameliyattan sonra deniz kenarında haftalar süren bir rehabilitasyon başlıyor."
+   "currentBeispielTr": "Ameliyattan sonra deniz kenarında haftalarca sürecek bir rehabilitasyon başlıyor."
   },
   {
    "id": 4592,
@@ -542,8 +542,8 @@
    "niveau": "B2",
    "formen": "Depressionen",
    "currentTr": "depresyon",
-   "currentBeispiel": "Eine Depression ist eine ernste Krankheit und keine Schwäche.",
-   "currentBeispielTr": "Depresyon ciddi bir hastalıktır, bir zayıflık değil."
+   "currentBeispiel": "Seit dem Umzug kämpft er mit einer schweren Depression.",
+   "currentBeispielTr": "Taşınmadan beri ağır bir depresyonla boğuşuyor."
   },
   {
    "id": 4593,

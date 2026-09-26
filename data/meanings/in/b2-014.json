@@ -10,7 +10,7 @@
    "formen": "Registraturen",
    "currentTr": "arşiv birimi, kayıt bürosu",
    "currentBeispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
-   "currentBeispielTr": "Eski dosyalar yıllardır alt kattaki arşiv biriminde duruyor."
+   "currentBeispielTr": "Eski dosyalar yıllardır aşağıdaki arşiv biriminde duruyor."
   },
   {
    "id": 4294,
@@ -40,7 +40,7 @@
    "formen": "Rundschreiben",
    "currentTr": "genelge, sirküler",
    "currentBeispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten.",
-   "currentBeispielTr": "Son genelgede yeni çalışma saatleri ele alınıyordu.",
+   "currentBeispielTr": "Son genelgenin konusu yeni çalışma saatleriydi.",
    "overlapping": [
     "der Erlass (C1)"
    ]
@@ -53,7 +53,7 @@
    "formen": "Aktennotizen",
    "currentTr": "dosya notu, not tutanağı",
    "currentBeispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst.",
-   "currentBeispielTr": "Bu telefon görüşmesi için kısa bir dosya notu hazırladım."
+   "currentBeispielTr": "Bu telefon görüşmesi için kısa bir dosya notu yazdım."
   },
   {
    "id": 4298,
@@ -63,7 +63,7 @@
    "formen": "Zuarbeiten",
    "currentTr": "hazırlık katkısı, destek çalışması",
    "currentBeispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig.",
-   "currentBeispielTr": "Uzmanlık birimlerinin katkısı olmadan rapor bitmez."
+   "currentBeispielTr": "Uzman birimlerin ön çalışması olmadan rapor bitmez."
   },
   {
    "id": 4299,
@@ -73,7 +73,7 @@
    "formen": "Absprachen",
    "currentTr": "anlaşma, mutabakat, kararlaştırma",
    "currentBeispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin.",
-   "currentBeispielTr": "Müşteriyle görüşerek teslim tarihini erteliyoruz.",
+   "currentBeispielTr": "Müşteriyle mutabakat sağlayıp teslim tarihini erteliyoruz.",
    "overlapping": [
     "die Verständigung (B2)",
     "die Vereinbarung (A2)"
@@ -87,7 +87,7 @@
    "formen": "",
    "currentTr": "harekete geçme gereği, müdahale ihtiyacı",
    "currentBeispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf.",
-   "currentBeispielTr": "Teslim sürelerinde acilen harekete geçilmesi gerektiğini görüyoruz."
+   "currentBeispielTr": "Teslim sürelerinde acil harekete geçme gereği görüyoruz."
   },
   {
    "id": 4301,
@@ -166,8 +166,8 @@
    "niveau": "B2",
    "formen": "Geschäftsprozesse",
    "currentTr": "iş süreci",
-   "currentBeispiel": "Alle Geschäftsprozesse werden derzeit auf Papierverzicht geprüft.",
-   "currentBeispielTr": "Tüm iş süreçleri şu anda kâğıtsız çalışma açısından inceleniyor."
+   "currentBeispiel": "Wir wollen unsere Geschäftsprozesse endlich digitalisieren.",
+   "currentBeispielTr": "İş süreçlerimizi artık dijitalleştirmek istiyoruz."
   },
   {
    "id": 4309,
@@ -187,7 +187,7 @@
    "formen": "Stellvertretungen",
    "currentTr": "vekâlet, yerine bakma",
    "currentBeispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
-   "currentBeispielTr": "İzindeyken yerime Kern Hanım bakacak."
+   "currentBeispielTr": "İzindeyken vekâleti Kern Hanım üstleniyor."
   },
   {
    "id": 4311,
@@ -197,7 +197,7 @@
    "formen": "Aufgabenverteilungen",
    "currentTr": "görev dağılımı",
    "currentBeispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen.",
-   "currentBeispielTr": "Ekipteki görev dağılımı üzerine bazı tartışmalar oldu."
+   "currentBeispielTr": "Ekipteki görev dağılımı üzerine epey tartışma çıktı."
   },
   {
    "id": 4312,
@@ -216,8 +216,8 @@
    "niveau": "B2",
    "formen": "Vorgaben",
    "currentTr": "şart, belirlenen ölçüt, hedef",
-   "currentBeispiel": "Die zeitlichen Vorgaben der Zentrale sind kaum zu schaffen.",
-   "currentBeispielTr": "Merkezin koyduğu zaman hedeflerini tutturmak neredeyse imkânsız.",
+   "currentBeispiel": "An die Vorgaben der Zentrale müssen sich alle halten.",
+   "currentBeispielTr": "Merkezin koyduğu şartlara herkesin uyması gerekiyor.",
    "overlapping": [
     "die Bedingung (B1)",
     "die Klausel (C1)"
@@ -287,7 +287,7 @@
    "formen": "Rückmeldungen",
    "currentTr": "geri bildirim, dönüş",
    "currentBeispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf.",
-   "currentBeispielTr": "Hâlâ satın alma biriminden dönüş bekliyorum."
+   "currentBeispielTr": "Hâlâ satın alma biriminden geri bildirim bekliyorum."
   },
   {
    "id": 4320,
@@ -342,8 +342,8 @@
    "niveau": "B2",
    "formen": "Vorbehalte",
    "currentTr": "çekince, şerh",
-   "currentBeispiel": "Wir stimmen dem Angebot unter Vorbehalt der Prüfung zu.",
-   "currentBeispielTr": "Teklifi inceleme şartı çekincesiyle kabul ediyoruz."
+   "currentBeispiel": "Gegen den neuen Plan hatte niemand ernsthafte Vorbehalte.",
+   "currentBeispielTr": "Yeni plana kimsenin ciddi bir çekincesi yoktu."
   },
   {
    "id": 4325,
@@ -352,8 +352,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "iş yoğunluğu, kapasite kullanımı",
-   "currentBeispiel": "Die Auslastung des Teams liegt seit Wochen bei hundert Prozent.",
-   "currentBeispielTr": "Ekibin iş yoğunluğu haftalardır yüzde yüz seviyesinde."
+   "currentBeispiel": "Die Auslastung der Maschinen liegt bei achtzig Prozent.",
+   "currentBeispielTr": "Makinelerin kapasite kullanımı yüzde seksen seviyesinde."
   },
   {
    "id": 4326,
@@ -383,7 +383,7 @@
    "formen": "hat einberufen",
    "currentTr": "toplantıya çağırmak, toplamak",
    "currentBeispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen.",
-   "currentBeispielTr": "İşçi temsilciliği cuma günü için bir toplantı çağrısı yaptı."
+   "currentBeispielTr": "İşçi temsilciliği cuma günü için toplantı çağrısı yaptı."
   },
   {
    "id": 4329,
@@ -416,7 +416,7 @@
    "formen": "hat terminiert",
    "currentTr": "tarih belirlemek, zamana bağlamak",
    "currentBeispiel": "Die Abnahme ist auf den zweiten Mai terminiert.",
-   "currentBeispielTr": "Kabul işlemi iki mayıs tarihine ayarlandı."
+   "currentBeispielTr": "Kabul işlemi için 2 Mayıs tarihi belirlendi."
   },
   {
    "id": 4332,
@@ -452,7 +452,7 @@
    "formen": "hat weitergeleitet",
    "currentTr": "iletmek, yönlendirmek",
    "currentBeispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet.",
-   "currentBeispielTr": "Talebini ilgili birime ilettim.",
+   "currentBeispielTr": "Talebini ilgili uzman birime ilettim.",
    "overlapping": [
     "ausrichten (B1)",
     "mitteilen (B1)",
@@ -477,7 +477,7 @@
    "formen": "hat abgesegnet",
    "currentTr": "onaylamak, imzasını vermek",
    "currentBeispiel": "Die Leitung muss das Konzept noch absegnen.",
-   "currentBeispielTr": "Yönetimin konsepti henüz onaylaması gerekiyor.",
+   "currentBeispielTr": "Konsepti bir de yönetimin onaylaması gerekiyor.",
    "overlapping": [
     "bestätigen (A2)",
     "genehmigen (B1)",
@@ -494,7 +494,7 @@
    "formen": "hat nachgehakt",
    "currentTr": "üstelemek, üzerine gitmek",
    "currentBeispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach.",
-   "currentBeispielTr": "Kimse cevap vermezse yarın bir daha üstüne düşerim."
+   "currentBeispielTr": "Kimse cevap vermezse yarın bir daha üstelerim."
   },
   {
    "id": 4338,
@@ -504,7 +504,7 @@
    "formen": "hat nachgefasst",
    "currentTr": "takibini yapmak, tekrar sormak",
    "currentBeispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen.",
-   "currentBeispielTr": "Müşteride önümüzdeki hafta nazikçe takibini yapmalıyız."
+   "currentBeispielTr": "Müşteriyi önümüzdeki hafta nazikçe takip etmeliyiz."
   },
   {
    "id": 4339,
@@ -514,7 +514,7 @@
    "formen": "hat angemahnt",
    "currentTr": "ihtar etmek, hatırlatarak istemek",
    "currentBeispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt.",
-   "currentBeispielTr": "Merkez, eksik raporları çoktan iki kez ihtar etti.",
+   "currentBeispielTr": "Merkez, eksik raporlar için şimdiden iki kez ihtarda bulundu.",
    "overlapping": [
     "mahnen (B2)"
    ]
@@ -542,7 +542,7 @@
    "formen": "hat aufgeschoben",
    "currentTr": "ertelemek, sonraya bırakmak",
    "currentBeispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf.",
-   "currentBeispielTr": "Hoşuna gitmeyen işleri cumaya kadar ertelemeyi seviyor.",
+   "currentBeispielTr": "Sevmediği işleri cumaya bırakmayı seviyor.",
    "overlapping": [
     "verschieben (A2)"
    ]

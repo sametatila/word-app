@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "ist nachgerückt",
    "currentTr": "yerini almak üzere gelmek, ardından gelmek",
-   "currentBeispiel": "Für jeden Rentner rücken heute deutlich weniger Junge nach.",
-   "currentBeispielTr": "Bugün her emeklinin yerine belirgin biçimde daha az genç geliyor."
+   "currentBeispiel": "Ein Bewerber sagte ab, deshalb rückte ich nach.",
+   "currentBeispielTr": "Bir aday vazgeçti, bu yüzden onun yerine ben geçtim."
   },
   {
    "id": 6054,
@@ -20,7 +20,7 @@
    "formen": "ist vergreist",
    "currentTr": "nüfusça yaşlanmak, ihtiyarlamak",
    "currentBeispiel": "Ganze Landkreise vergreisen, während die Städte weiter wachsen.",
-   "currentBeispielTr": "Kentler büyümeye devam ederken koca ilçeler ihtiyarlıyor."
+   "currentBeispielTr": "Şehirler büyümeye devam ederken koca ilçeler yaşlanıyor."
   },
   {
    "id": 6055,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "demografik, nüfusla ilgili",
-   "currentBeispiel": "Der demografische Wandel wirkt langsam, aber er ist unerbittlich.",
-   "currentBeispielTr": "Demografik dönüşüm yavaş işler, ama acımasızdır."
+   "currentBeispiel": "Der demografische Wandel trifft unser Dorf besonders hart.",
+   "currentBeispielTr": "Demografik değişim köyümüzü özellikle sert vuruyor."
   },
   {
    "id": 6056,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çok çocuklu",
-   "currentBeispiel": "Kinderreiche Familien tragen ein überdurchschnittliches Armutsrisiko.",
-   "currentBeispielTr": "Çok çocuklu aileler ortalamanın üstünde bir yoksulluk riski taşıyor."
+   "currentBeispiel": "Kinderreiche Familien finden bei uns kaum eine Wohnung.",
+   "currentBeispielTr": "Çok çocuklu aileler burada zor ev buluyor."
   },
   {
    "id": 6057,
@@ -50,7 +50,7 @@
    "formen": "",
    "currentTr": "yapısal olarak zayıf, geri kalmış",
    "currentBeispiel": "In strukturschwachen Regionen fehlt es an Ärzten und Busverbindungen.",
-   "currentBeispielTr": "Yapısal olarak zayıf bölgelerde doktor ve otobüs bağlantısı yok."
+   "currentBeispielTr": "Yapısal olarak zayıf bölgelerde doktor ve otobüs seferi eksik."
   },
   {
    "id": 6058,
@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "bu ülkede, bizde",
    "currentBeispiel": "Hierzulande wird die Debatte fast ausschließlich über die Rente geführt.",
-   "currentBeispielTr": "Bu ülkede tartışma neredeyse yalnızca emeklilik üzerinden yürütülüyor."
+   "currentBeispielTr": "Bu ülkede tartışma neredeyse yalnızca emeklilik üzerinden yürüyor."
   },
   {
    "id": 6059,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "öngörülebilir, yakın gelecekte beklenen",
-   "currentBeispiel": "In absehbarer Zeit wird jede dritte Person über sechzig sein.",
-   "currentBeispielTr": "Öngörülebilir bir süre içinde her üç kişiden biri altmış yaşın üstünde olacak."
+   "currentBeispiel": "Ein Ende der Bauarbeiten ist noch nicht absehbar.",
+   "currentBeispielTr": "İnşaat çalışmalarının sonu henüz öngörülemiyor."
   },
   {
    "id": 6060,
@@ -80,7 +80,7 @@
    "formen": "",
    "currentTr": "birçok yerde",
    "currentBeispiel": "Vielerorts stehen ganze Straßenzüge seit Jahren leer.",
-   "currentBeispielTr": "Birçok yerde tüm sokaklar yıllardır boş duruyor."
+   "currentBeispielTr": "Birçok yerde koca sokaklar yıllardır boş duruyor."
   },
   {
    "id": 6061,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "uzun vadeli, uzun vadede",
-   "currentBeispiel": "Langfristig entscheidet nicht die Geburtenrate, sondern die Produktivität.",
-   "currentBeispielTr": "Uzun vadede belirleyici olan doğum oranı değil, verimliliktir."
+   "currentBeispiel": "Sie hat einen langfristigen Vertrag unterschrieben.",
+   "currentBeispielTr": "Uzun vadeli bir sözleşme imzaladı."
   },
   {
    "id": 6062,
@@ -110,7 +110,7 @@
    "formen": "Neutralitäten",
    "currentTr": "tarafsızlık",
    "currentBeispiel": "Die Schweiz beruft sich bei solchen Konflikten auf ihre Neutralität.",
-   "currentBeispielTr": "İsviçre bu tür çatışmalarda tarafsızlığına dayanır."
+   "currentBeispielTr": "İsviçre böyle çatışmalarda tarafsızlığını öne sürüyor."
   },
   {
    "id": 6064,
@@ -120,7 +120,7 @@
    "formen": "Souveränitäten",
    "currentTr": "egemenlik",
    "currentBeispiel": "Der Einmarsch verletzte die Souveränität des Nachbarstaates.",
-   "currentBeispielTr": "Askeri giriş komşu devletin egemenliğini ihlal etti."
+   "currentBeispielTr": "İşgal komşu devletin egemenliğini ihlal etti."
   },
   {
    "id": 6065,
@@ -130,7 +130,7 @@
    "formen": "",
    "currentTr": "uluslararası hukuk, devletler hukuku",
    "currentBeispiel": "Nach geltendem Völkerrecht ist ein solcher Angriff unzulässig.",
-   "currentBeispielTr": "Yürürlükteki uluslararası hukuka göre böyle bir saldırı kabul edilemez."
+   "currentBeispielTr": "Yürürlükteki uluslararası hukuka göre böyle bir saldırı yasaktır."
   },
   {
    "id": 6066,
@@ -140,7 +140,7 @@
    "formen": "Deeskalationen",
    "currentTr": "gerilimin azaltılması, yatıştırma",
    "currentBeispiel": "Beide Seiten signalisierten erstmals Interesse an einer Deeskalation.",
-   "currentBeispielTr": "İki taraf da ilk kez gerilimi azaltmaya ilgi gösterdi."
+   "currentBeispielTr": "İki taraf da ilk kez gerilimi azaltmaya istekli göründü."
   },
   {
    "id": 6067,
@@ -150,7 +150,7 @@
    "formen": "Konfliktparteien",
    "currentTr": "çatışmanın tarafı, ihtilaf tarafı",
    "currentBeispiel": "Alle Konfliktparteien wurden an den Verhandlungsort geladen.",
-   "currentBeispielTr": "Çatışmanın bütün tarafları görüşme yerine davet edildi."
+   "currentBeispielTr": "Çatışmanın bütün tarafları görüşme yerine çağrıldı."
   },
   {
    "id": 6068,
@@ -170,7 +170,7 @@
    "formen": "Kriegsverbrechen",
    "currentTr": "savaş suçu",
    "currentBeispiel": "Die Kommission dokumentierte mutmaßliche Kriegsverbrechen in der Region.",
-   "currentBeispielTr": "Komisyon bölgedeki iddia edilen savaş suçlarını belgeledi."
+   "currentBeispielTr": "Komisyon bölgede işlendiği iddia edilen savaş suçlarını belgeledi."
   },
   {
    "id": 6070,
@@ -190,7 +190,7 @@
    "formen": "",
    "currentTr": "koruma sorumluluğu",
    "currentBeispiel": "Kritiker sehen in der Schutzverantwortung einen Vorwand für Interventionen.",
-   "currentBeispielTr": "Eleştirmenler koruma sorumluluğunu müdahaleler için bir bahane olarak görüyor."
+   "currentBeispielTr": "Eleştirmenler koruma sorumluluğunu müdahale için bahane olarak görüyor."
   },
   {
    "id": 6072,
@@ -200,7 +200,7 @@
    "formen": "Konfrontationen",
    "currentTr": "karşı karşıya gelme, çatışma",
    "currentBeispiel": "Die Rhetorik der Regierung steuert offen auf Konfrontation zu.",
-   "currentBeispielTr": "Hükümetin söylemi açıkça çatışmaya doğru gidiyor."
+   "currentBeispielTr": "Hükümetin söylemi açıkça karşı karşıya gelmeye doğru gidiyor."
   },
   {
    "id": 6073,
@@ -210,7 +210,7 @@
    "formen": "Annäherungen",
    "currentTr": "yakınlaşma",
    "currentBeispiel": "Nach Jahren der Feindschaft kam es zu einer vorsichtigen Annäherung.",
-   "currentBeispielTr": "Yıllarca süren düşmanlıktan sonra temkinli bir yakınlaşma yaşandı."
+   "currentBeispielTr": "Yıllar süren düşmanlıktan sonra temkinli bir yakınlaşma oldu."
   },
   {
    "id": 6074,
@@ -230,7 +230,7 @@
    "formen": "Unterhändler",
    "currentTr": "müzakereci, görüşme temsilcisi",
    "currentBeispiel": "Die Unterhändler beider Lager trafen sich an einem geheimen Ort.",
-   "currentBeispielTr": "İki kampın müzakerecileri gizli bir yerde buluştu."
+   "currentBeispielTr": "İki tarafın müzakerecileri gizli bir yerde buluştu."
   },
   {
    "id": 6076,
@@ -239,8 +239,8 @@
    "niveau": "C1",
    "formen": "Schiedssprüche",
    "currentTr": "hakem kararı, tahkim kararı",
-   "currentBeispiel": "Der Schiedsspruch ist für beide Staaten bindend.",
-   "currentBeispielTr": "Hakem kararı her iki devlet için de bağlayıcıdır."
+   "currentBeispiel": "Beide Seiten akzeptierten den Schiedsspruch ohne Widerspruch.",
+   "currentBeispielTr": "İki taraf da hakem kararını itirazsız kabul etti."
   },
   {
    "id": 6077,
@@ -250,7 +250,7 @@
    "formen": "Resolutionen",
    "currentTr": "karar (uluslararası kuruluş), karar metni",
    "currentBeispiel": "Der Sicherheitsrat verabschiedete die Resolution mit knapper Mehrheit.",
-   "currentBeispielTr": "Güvenlik Konseyi kararı kıl payı çoğunlukla kabul etti.",
+   "currentBeispielTr": "Güvenlik Konseyi karar metnini kıl payı çoğunlukla kabul etti.",
    "overlapping": [
     "die Entscheidung (B1)",
     "das Urteil (B1)"
@@ -314,7 +314,7 @@
    "formen": "Gegenmaßnahmen",
    "currentTr": "karşı önlem",
    "currentBeispiel": "Als Gegenmaßnahme wurden die Handelsvergünstigungen sofort ausgesetzt.",
-   "currentBeispielTr": "Karşı önlem olarak ticaret ayrıcalıkları derhal askıya alındı."
+   "currentBeispielTr": "Karşı önlem olarak ticaret ayrıcalıkları hemen askıya alındı."
   },
   {
    "id": 6084,
@@ -344,7 +344,7 @@
    "formen": "Provokationen",
    "currentTr": "provokasyon, kışkırtma",
    "currentBeispiel": "Das Manöver an der Grenze wurde als gezielte Provokation gewertet.",
-   "currentBeispielTr": "Sınırdaki tatbikat kasıtlı bir provokasyon olarak değerlendirildi."
+   "currentBeispielTr": "Sınırdaki tatbikat kasıtlı bir kışkırtma olarak değerlendirildi."
   },
   {
    "id": 6087,
@@ -363,8 +363,8 @@
    "niveau": "C1",
    "formen": "Vertreibungen",
    "currentTr": "sürgün, yerinden etme",
-   "currentBeispiel": "Die massenhafte Vertreibung der Bevölkerung erfüllt den Tatbestand eines Verbrechens.",
-   "currentBeispielTr": "Halkın kitlesel olarak yerinden edilmesi bir suç unsuru oluşturuyor.",
+   "currentBeispiel": "Die Vertreibung der Familien begann noch vor Sonnenaufgang.",
+   "currentBeispielTr": "Ailelerin yerinden edilmesi daha gün doğmadan başladı.",
    "overlapping": [
     "der Trieb (B2)"
    ]
@@ -397,7 +397,7 @@
    "formen": "Einflusssphären",
    "currentTr": "nüfuz alanı, etki alanı",
    "currentBeispiel": "Beide Großmächte betrachten die Region als ihre Einflusssphäre.",
-   "currentBeispielTr": "Her iki büyük güç de bölgeyi kendi nüfuz alanı sayıyor."
+   "currentBeispielTr": "İki büyük güç de bölgeyi kendi nüfuz alanı sayıyor."
   },
   {
    "id": 6092,
@@ -407,7 +407,7 @@
    "formen": "Bedrohungslagen",
    "currentTr": "tehdit durumu",
    "currentBeispiel": "Der Geheimdienst bewertet die Bedrohungslage derzeit als erhöht.",
-   "currentBeispielTr": "İstihbarat servisi tehdit durumunu şu anda yükselmiş olarak değerlendiriyor."
+   "currentBeispielTr": "İstihbarat şu anda tehdit durumunu yükselmiş olarak değerlendiriyor."
   },
   {
    "id": 6093,
@@ -427,7 +427,7 @@
    "formen": "Truppenabzüge",
    "currentTr": "askerlerin çekilmesi",
    "currentBeispiel": "Der vollständige Truppenabzug soll bis zum Jahresende erfolgen.",
-   "currentBeispielTr": "Askerlerin tamamen çekilmesi yıl sonuna kadar gerçekleşecek."
+   "currentBeispielTr": "Birliklerin tamamen çekilmesi yıl sonuna kadar tamamlanacak."
   },
   {
    "id": 6095,
@@ -437,7 +437,7 @@
    "formen": "Pufferzonen",
    "currentTr": "tampon bölge",
    "currentBeispiel": "Zwischen den Fronten wurde eine entmilitarisierte Pufferzone eingerichtet.",
-   "currentBeispielTr": "Cepheler arasında askerden arındırılmış bir tampon bölge oluşturuldu."
+   "currentBeispielTr": "Cepheler arasında askerden arındırılmış bir tampon bölge kuruldu."
   },
   {
    "id": 6096,
@@ -457,7 +457,7 @@
    "formen": "Annexionen",
    "currentTr": "ilhak",
    "currentBeispiel": "Die Annexion der Halbinsel wurde international nicht anerkannt.",
-   "currentBeispielTr": "Yarımadanın ilhakı uluslararası düzeyde tanınmadı."
+   "currentBeispielTr": "Yarımadanın ilhakı uluslararası alanda tanınmadı."
   },
   {
    "id": 6098,
@@ -467,7 +467,7 @@
    "formen": "Gebietsansprüche",
    "currentTr": "toprak talebi, toprak iddiası",
    "currentBeispiel": "Historische Karten dienen beiden Seiten zur Begründung ihrer Gebietsansprüche.",
-   "currentBeispielTr": "Tarihî haritalar iki tarafa da toprak taleplerini gerekçelendirmek için hizmet ediyor."
+   "currentBeispielTr": "Tarihî haritalar iki tarafın da toprak taleplerine dayanak oluyor."
   },
   {
    "id": 6099,
@@ -487,7 +487,7 @@
    "formen": "",
    "currentTr": "içişlerine karışmama",
    "currentBeispiel": "Der Grundsatz der Nichteinmischung wird in der Praxis oft umgangen.",
-   "currentBeispielTr": "İçişlerine karışmama ilkesi pratikte sıkça delinir."
+   "currentBeispielTr": "Karışmama ilkesi uygulamada sık sık deliniyor."
   },
   {
    "id": 6101,
@@ -507,7 +507,7 @@
    "formen": "",
    "currentTr": "müzakere yönetimi, görüşmelerin yürütülmesi",
    "currentBeispiel": "Seine geschickte Verhandlungsführung rettete das Abkommen in letzter Minute.",
-   "currentBeispielTr": "Onun ustaca müzakere yönetimi anlaşmayı son dakikada kurtardı."
+   "currentBeispielTr": "Ustaca müzakere yönetimi anlaşmayı son dakikada kurtardı."
   }
  ]
 }

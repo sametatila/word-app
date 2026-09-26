@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "önem, konuyla ilgililik",
    "currentBeispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
-   "currentBeispielTr": "Çalışmanın uygulamadaki önemi tartışmasız.",
+   "currentBeispielTr": "Çalışmanın uygulama açısından önemi tartışmasız.",
    "overlapping": [
     "die Tragweite (C1)"
    ]
@@ -32,8 +32,8 @@
    "niveau": "C1",
    "formen": "verkörpert, hat verkörpert",
    "currentTr": "somutlaştırmak, temsil etmek",
-   "currentBeispiel": "Die Figur verkörpert das Ideal des tragischen Helden.",
-   "currentBeispielTr": "Karakter, trajik kahraman idealini temsil ediyor.",
+   "currentBeispiel": "Der Gründer verkörpert für viele den amerikanischen Traum.",
+   "currentBeispielTr": "Kurucu, çoğu kişi için Amerikan rüyasını temsil ediyor.",
    "overlapping": [
     "konkretisieren (C1)"
    ]
@@ -65,8 +65,8 @@
    "niveau": "C1",
    "formen": "Relikte",
    "currentTr": "kalıntı, geçmişten kalma şey",
-   "currentBeispiel": "Das Gedicht wirkt wie ein Relikt aus vergangenen Zeiten.",
-   "currentBeispielTr": "Şiir, geçmiş zamanlardan kalma bir kalıntı gibi duruyor.",
+   "currentBeispiel": "Das alte Telefon ist ein Relikt aus den Achtzigern.",
+   "currentBeispielTr": "Eski telefon, seksenlerden kalma bir kalıntı.",
    "overlapping": [
     "der Rückstand (B2)"
    ]
@@ -78,8 +78,8 @@
    "niveau": "C1",
    "formen": "wägt ab, hat abgewogen",
    "currentTr": "tartmak, kıyaslamak",
-   "currentBeispiel": "Man muss Vor- und Nachteile sorgfältig abwägen.",
-   "currentBeispielTr": "Artıları ve eksileri dikkatle tartmak gerekir.",
+   "currentBeispiel": "Sie wägt jedes Angebot mehrere Tage lang ab.",
+   "currentBeispielTr": "Her teklifi günlerce ölçüp biçiyor.",
    "overlapping": [
     "wiegen (B1)"
    ]
@@ -92,7 +92,7 @@
    "formen": "Revisionen",
    "currentTr": "temyiz",
    "currentBeispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
-   "currentBeispielTr": "Temyiz başvurusu Federal Yargıtay'ca kabul edildi."
+   "currentBeispielTr": "Temyiz, Federal Yargıtay tarafından kabul edildi."
   },
   {
    "id": 4001,
@@ -102,7 +102,7 @@
    "formen": "beutet aus, hat ausgebeutet",
    "currentTr": "sömürmek",
    "currentBeispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
-   "currentBeispielTr": "Şirketler, yoksul ülkelerin kaynaklarını acımasızca sömürüyor."
+   "currentBeispielTr": "Şirketler yoksul ülkelerin kaynaklarını acımasızca sömürüyor."
   },
   {
    "id": 3482,
@@ -111,8 +111,8 @@
    "niveau": "C1",
    "formen": "Herangehensweisen",
    "currentTr": "yaklaşım, yöntem",
-   "currentBeispiel": "Seine Herangehensweise unterscheidet sich grundlegend von der üblichen.",
-   "currentBeispielTr": "Yaklaşımı, alışılmış olandan temelden farklı.",
+   "currentBeispiel": "Ihre Herangehensweise an das Problem hat mich überzeugt.",
+   "currentBeispielTr": "Soruna yaklaşımı beni ikna etti.",
    "overlapping": [
     "die Näherung (C1)"
    ]
@@ -125,7 +125,7 @@
    "formen": "Zumutungen",
    "currentTr": "kabul edilemez şey, eziyet",
    "currentBeispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
-   "currentBeispielTr": "Uzun bekleme süresini düpedüz bir haksızlık olarak gördü."
+   "currentBeispielTr": "Uzun bekleme süresini tam bir eziyet olarak gördü."
   },
   {
    "id": 3689,
@@ -135,7 +135,7 @@
    "formen": "räumt ein, hat eingeräumt",
    "currentTr": "kabul etmek, itiraf etmek",
    "currentBeispiel": "Der Minister räumte Fehler in der Planung ein.",
-   "currentBeispielTr": "Bakan, planlamada hatalar olduğunu kabul etti.",
+   "currentBeispielTr": "Bakan, planlamadaki hataları kabul etti.",
    "overlapping": [
     "akzeptieren (B1)",
     "annehmen (B1)",
@@ -153,7 +153,7 @@
    "formen": "Fragmente",
    "currentTr": "parça, kalıntı metin",
    "currentBeispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
-   "currentBeispielTr": "Antik oyundan geriye yalnızca bir parça kaldı.",
+   "currentBeispielTr": "Antik oyundan geriye yalnızca bir parça kalmış.",
    "overlapping": [
     "das Stück (A1)",
     "der Teil (A1)",
@@ -167,8 +167,8 @@
    "niveau": "C1",
    "formen": "untermauert, hat untermauert",
    "currentTr": "desteklemek, temellendirmek",
-   "currentBeispiel": "Zahlreiche Studien untermauern diese Annahme.",
-   "currentBeispielTr": "Sayısız çalışma bu varsayımı destekliyor.",
+   "currentBeispiel": "Er untermauerte seine Kritik mit konkreten Zahlen.",
+   "currentBeispielTr": "Eleştirisini somut rakamlarla destekledi.",
    "overlapping": [
     "fördern (B1)",
     "unterstützen (B1)",
@@ -213,8 +213,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "erdemli",
-   "currentBeispiel": "In ihren Reden gibt sie sich gerne besonders tugendhaft.",
-   "currentBeispielTr": "Konuşmalarında kendini özellikle erdemli göstermeyi seviyor."
+   "currentBeispiel": "In ihren Reden gibt sie sich besonders tugendhaft.",
+   "currentBeispielTr": "Konuşmalarında kendini özellikle erdemli gösteriyor."
   },
   {
    "id": 3943,
@@ -223,8 +223,8 @@
    "niveau": "C1",
    "formen": "Interessenkonflikte",
    "currentTr": "çıkar çatışması",
-   "currentBeispiel": "Ein möglicher Interessenkonflikt wurde offen angesprochen.",
-   "currentBeispielTr": "Olası bir çıkar çatışması açıkça dile getirildi."
+   "currentBeispiel": "Der Berater verschwieg einen offensichtlichen Interessenkonflikt.",
+   "currentBeispielTr": "Danışman, apaçık bir çıkar çatışmasını gizledi."
   },
   {
    "id": 3471,
@@ -233,8 +233,8 @@
    "niveau": "C1",
    "formen": "Kontroversen",
    "currentTr": "tartışma, ihtilaf",
-   "currentBeispiel": "Die Kontroverse um die Studie hält bis heute an.",
-   "currentBeispielTr": "Çalışma etrafındaki tartışma bugün hâlâ sürüyor.",
+   "currentBeispiel": "Die Kontroverse zwischen den beiden Autoren dauert seit Jahren.",
+   "currentBeispielTr": "İki yazar arasındaki polemik yıllardır sürüyor.",
    "overlapping": [
     "die Diskussion (B1)",
     "die Debatte (B2)",
@@ -249,7 +249,7 @@
    "formen": "",
    "currentTr": "zarar sınırlama",
    "currentBeispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
-   "currentBeispielTr": "Skandaldan sonra şirket yalnızca zararı sınırlamaya çalıştı."
+   "currentBeispielTr": "Skandaldan sonra şirket sadece hasar kontrolü yaptı."
   },
   {
    "id": 3465,
@@ -259,7 +259,7 @@
    "formen": "Auswertungen",
    "currentTr": "değerlendirme, analiz",
    "currentBeispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
-   "currentBeispielTr": "İstatistiksel değerlendirme birkaç hafta sürdü.",
+   "currentBeispielTr": "İstatistiksel analiz birkaç hafta sürdü.",
    "overlapping": [
     "die Einschätzung (B2)",
     "die Bewertung (B2)",
@@ -275,8 +275,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "eskimeyen, çağlar üstü",
-   "currentBeispiel": "Die Themen des Dramas wirken erstaunlich zeitlos und aktuell.",
-   "currentBeispielTr": "Oyunun temaları şaşırtıcı ölçüde zamansız ve güncel."
+   "currentBeispiel": "Das Design des Stuhls ist völlig zeitlos.",
+   "currentBeispielTr": "Sandalyenin tasarımı hiç eskimiyor."
   },
   {
    "id": 3551,
@@ -285,7 +285,7 @@
    "niveau": "C1",
    "formen": "ficht an, hat angefochten",
    "currentTr": "itiraz etmek, iptalini istemek",
-   "currentBeispiel": "Der Kläger focht den Bescheid vor Gericht an.",
+   "currentBeispiel": "Der Kläger hat den Bescheid vor Gericht angefochten.",
    "currentBeispielTr": "Davacı, karara mahkemede itiraz etti.",
    "overlapping": [
     "widersprechen (B1)",
@@ -299,8 +299,8 @@
    "niveau": "C1",
    "formen": "reflektiert, hat reflektiert",
    "currentTr": "üzerine düşünmek, yansıtmak",
-   "currentBeispiel": "Der Essay reflektiert kritisch über die Rolle der Kunst.",
-   "currentBeispielTr": "Deneme, sanatın rolü üzerine eleştirel bir bakışla düşünüyor."
+   "currentBeispiel": "Nach dem Streit reflektierte sie ihr eigenes Verhalten.",
+   "currentBeispielTr": "Kavgadan sonra kendi davranışı üzerine düşündü."
   },
   {
    "id": 4016,
@@ -309,8 +309,8 @@
    "niveau": "C1",
    "formen": "verdeutlicht, hat verdeutlicht",
    "currentTr": "açıkça göstermek, örnekle anlaşılır kılmak",
-   "currentBeispiel": "Das Beispiel verdeutlicht die Problematik sehr gut.",
-   "currentBeispielTr": "Örnek, sorunu çok iyi ortaya koyuyor."
+   "currentBeispiel": "Die Grafik verdeutlicht den Rückgang der Geburtenrate.",
+   "currentBeispielTr": "Grafik, doğum oranındaki düşüşü açıkça gösteriyor."
   },
   {
    "id": 3717,
@@ -320,7 +320,7 @@
    "formen": "",
    "currentTr": "anlaşılır, mantıklı",
    "currentBeispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
-   "currentBeispielTr": "Koşullar düşünülünce kararı gayet anlaşılır.",
+   "currentBeispielTr": "Koşullar göz önüne alınınca kararı gayet makul.",
    "overlapping": [
     "verständlich (B1)"
    ]
@@ -332,8 +332,8 @@
    "niveau": "C1",
    "formen": "eskaliert, ist eskaliert",
    "currentTr": "tırmanmak, şiddetlenmek",
-   "currentBeispiel": "Der Konflikt zwischen den Abteilungen ist eskaliert.",
-   "currentBeispielTr": "Bölümler arasındaki çatışma iyice tırmandı.",
+   "currentBeispiel": "Der Streit zwischen den Nachbarn ist völlig eskaliert.",
+   "currentBeispielTr": "Komşular arasındaki kavga tamamen çığırından çıktı.",
    "overlapping": [
     "klettern (B1)",
     "besteigen (B2)"
@@ -346,8 +346,8 @@
    "niveau": "C1",
    "formen": "Vermerke",
    "currentTr": "not, şerh",
-   "currentBeispiel": "Der Sachbearbeiter fügte dem Vorgang einen Vermerk hinzu.",
-   "currentBeispielTr": "Memur, dosyaya bir not ekledi.",
+   "currentBeispiel": "Der Sachbearbeiter fügte der Akte einen Vermerk hinzu.",
+   "currentBeispielTr": "Memur, dosyaya bir şerh düştü.",
    "overlapping": [
     "die Note (A1)",
     "die Notiz (A2)",
@@ -371,8 +371,8 @@
    "niveau": "C1",
    "formen": "Parodien",
    "currentTr": "parodi",
-   "currentBeispiel": "Die Parodie übertreibt den pathetischen Stil des Originals.",
-   "currentBeispielTr": "Parodi, orijinalin abartılı duygusal üslubunu iyice uç noktaya taşıyor."
+   "currentBeispiel": "Seine Parodie auf den Chef brachte alle zum Lachen.",
+   "currentBeispielTr": "Patronun parodisi herkesi güldürdü."
   },
   {
    "id": 3556,
@@ -381,8 +381,8 @@
    "niveau": "C1",
    "formen": "Vollzüge",
    "currentTr": "uygulama, icra",
-   "currentBeispiel": "Der Vollzug der Maßnahme obliegt der Kommune.",
-   "currentBeispielTr": "Önlemin uygulanması belediyenin görevidir.",
+   "currentBeispiel": "Der Vollzug des Urteils wurde vorläufig ausgesetzt.",
+   "currentBeispielTr": "Hükmün infazı geçici olarak durduruldu.",
    "overlapping": [
     "die Anwendung (B2)",
     "die App (A2)"
@@ -396,7 +396,7 @@
    "formen": "",
    "currentTr": "büyük ölçüde, hemen hemen",
    "currentBeispiel": "Die Fachwelt stimmt der These weitgehend zu.",
-   "currentBeispielTr": "Bilim çevresi teze büyük ölçüde katılıyor.",
+   "currentBeispielTr": "Uzmanlar teze büyük ölçüde katılıyor.",
    "overlapping": [
     "größtenteils (A2)"
    ]
@@ -408,8 +408,8 @@
    "niveau": "C1",
    "formen": "Instanzen",
    "currentTr": "merci, derece",
-   "currentBeispiel": "Der Fall durchlief mehrere Instanzen.",
-   "currentBeispielTr": "Dava birden çok yargı derecesinden geçti."
+   "currentBeispiel": "Für solche Fragen ist er die höchste Instanz.",
+   "currentBeispielTr": "Bu tür sorularda en yüksek merci odur."
   },
   {
    "id": 4008,
@@ -418,8 +418,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kendini haklı gören, kibirli",
-   "currentBeispiel": "Sein selbstgerechter Ton stieß bei vielen Zuhörern auf Ablehnung.",
-   "currentBeispielTr": "Kendini haklı gören ses tonu birçok dinleyicide tepki uyandırdı."
+   "currentBeispiel": "Sein selbstgerechter Ton stieß bei vielen auf Ablehnung.",
+   "currentBeispielTr": "Kendini haklı gören ses tonu birçok kişide tepki uyandırdı."
   },
   {
    "id": 3463,
@@ -428,8 +428,8 @@
    "niveau": "C1",
    "formen": "Argumentationen",
    "currentTr": "argümantasyon, gerekçelendirme",
-   "currentBeispiel": "Ihre Argumentation überzeugte selbst die Kritiker.",
-   "currentBeispielTr": "Gerekçelendirmesi eleştirmenleri bile ikna etti."
+   "currentBeispiel": "Ihre Argumentation überzeugte selbst die schärfsten Kritiker.",
+   "currentBeispielTr": "Argümantasyonu en sert eleştirmenleri bile ikna etti."
   },
   {
    "id": 4005,
@@ -438,8 +438,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ahlaken kınanacak, kabul edilemez",
-   "currentBeispiel": "Solche Manipulationen sind ethisch schlicht verwerflich.",
-   "currentBeispielTr": "Bu tür manipülasyonlar etik açıdan düpedüz kabul edilemez."
+   "currentBeispiel": "Sein Verhalten gegenüber den Angestellten war verwerflich.",
+   "currentBeispielTr": "Çalışanlara karşı davranışı kınanacak bir şeydi."
   },
   {
    "id": 3718,
@@ -462,7 +462,7 @@
    "formen": "verharrt, hat verharrt",
    "currentTr": "sabit kalmak, bir durumda kalmak",
    "currentBeispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
-   "currentBeispielTr": "Fiyatlar aylardır yüksek seviyede sabit duruyor."
+   "currentBeispielTr": "Fiyatlar aylardır yüksek seviyede sabit kalıyor."
   },
   {
    "id": 4004,
@@ -471,8 +471,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "endişe verici, kaygı uyandırıcı",
-   "currentBeispiel": "Der Vertrauensverlust in die Presse ist eine bedenkliche Entwicklung.",
-   "currentBeispielTr": "Basına duyulan güvenin azalması endişe verici bir gelişme."
+   "currentBeispiel": "Die Blutwerte des Patienten sind wirklich bedenklich.",
+   "currentBeispielTr": "Hastanın kan değerleri gerçekten endişe verici."
   },
   {
    "id": 3603,
@@ -481,8 +481,8 @@
    "niveau": "C1",
    "formen": "Ästhetiken",
    "currentTr": "estetik",
-   "currentBeispiel": "Die Ästhetik des Romans wurde von Kritikern kontrovers diskutiert.",
-   "currentBeispielTr": "Romanın estetiği eleştirmenler arasında hararetle tartışıldı."
+   "currentBeispiel": "Die Ästhetik dieses Gebäudes überzeugt mich nicht.",
+   "currentBeispielTr": "Bu binanın estetiği beni ikna etmiyor."
   },
   {
    "id": 3543,
@@ -511,8 +511,8 @@
    "niveau": "C1",
    "formen": "bevormundet, hat bevormundet",
    "currentTr": "adına karar vermek, vesayetçi davranmak",
-   "currentBeispiel": "Viele fühlen sich durch ständige Ratschläge bevormundet.",
-   "currentBeispielTr": "Birçok kişi sürekli verilen akıllarla vesayet altına alındığını hissediyor."
+   "currentBeispiel": "Meine Eltern bevormunden mich noch immer.",
+   "currentBeispielTr": "Ailem hâlâ benim adıma karar veriyor."
   },
   {
    "id": 3662,
@@ -521,8 +521,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tartışmalı",
-   "currentBeispiel": "Die Ausstellung wurde in der Presse äußerst kontrovers diskutiert.",
-   "currentBeispielTr": "Sergi basında son derece tartışmalı biçimde ele alındı.",
+   "currentBeispiel": "Der Vorschlag bleibt in der Partei kontrovers.",
+   "currentBeispielTr": "Öneri parti içinde hâlâ tartışmalı.",
    "overlapping": [
     "umstritten (B2)",
     "strittig (C1)"
@@ -535,8 +535,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kaçınılmaz",
-   "currentBeispiel": "Eine Reform ist mittlerweile unumgänglich geworden.",
-   "currentBeispielTr": "Reform artık kaçınılmaz hâle geldi."
+   "currentBeispiel": "Eine Reform des Systems ist unumgänglich geworden.",
+   "currentBeispielTr": "Sistemin reformu artık kaçınılmaz hâle geldi."
   },
   {
    "id": 3494,
@@ -545,8 +545,8 @@
    "niveau": "C1",
    "formen": "Konsistenzen",
    "currentTr": "tutarlılık, uyumluluk",
-   "currentBeispiel": "Die Konsistenz der Argumentation überzeugt die Leserschaft.",
-   "currentBeispielTr": "Gerekçelendirmenin tutarlılığı okuru ikna ediyor.",
+   "currentBeispiel": "Der Studie fehlt es an innerer Konsistenz.",
+   "currentBeispielTr": "Çalışmada iç tutarlılık eksik.",
    "overlapping": [
     "die Kohärenz (C1)",
     "die Stringenz (C1)"
@@ -559,8 +559,8 @@
    "niveau": "C1",
    "formen": "Defizite",
    "currentTr": "açık, defisit",
-   "currentBeispiel": "Das Haushaltsdefizit stieg trotz der Sparmaßnahmen weiter an.",
-   "currentBeispielTr": "Bütçe açığı, tasarruf önlemlerine rağmen artmaya devam etti.",
+   "currentBeispiel": "Das Defizit im Staatshaushalt wächst weiter.",
+   "currentBeispielTr": "Devlet bütçesindeki açık büyümeye devam ediyor.",
    "overlapping": [
     "offen (A1)",
     "geöffnet (A1)",
@@ -575,7 +575,7 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ağır, ciddi",
-   "currentBeispiel": "Der Vorfall hatte schwerwiegende Konsequenzen für alle Beteiligten.",
+   "currentBeispiel": "Der Vorfall hatte schwerwiegende Folgen für alle Beteiligten.",
    "currentBeispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",
    "overlapping": [
     "träge (B2)"

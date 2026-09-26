@@ -10,7 +10,7 @@
    "formen": "Wirbelsäulen",
    "currentTr": "omurga",
    "currentBeispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
-   "currentBeispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok yorar."
+   "currentBeispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok zorlar."
   },
   {
    "id": 4745,
@@ -113,7 +113,7 @@
    "formen": "Nickerchen",
    "currentTr": "kısa uyku, şekerleme",
    "currentBeispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
-   "currentBeispielTr": "Öğle yemeğinden sonraki kısa bir şekerleme insanı şaşırtıcı derecede diriltir."
+   "currentBeispielTr": "Öğle yemeğinden sonra kısa bir şekerleme insanı şaşırtıcı derecede açar."
   },
   {
    "id": 4755,
@@ -133,7 +133,7 @@
    "formen": "Überlastungen",
    "currentTr": "aşırı yüklenme, aşırı zorlanma",
    "currentBeispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
-   "currentBeispielTr": "Dizdeki ağrılar aşırı zorlanmanın klasik bir sonucu.",
+   "currentBeispielTr": "Dizdeki ağrılar aşırı yüklenmenin klasik bir sonucudur.",
    "overlapping": [
     "die Überforderung (B2)"
    ]
@@ -166,7 +166,7 @@
    "formen": "Zerrungen",
    "currentTr": "kas zorlanması, incinme",
    "currentBeispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
-   "currentBeispielTr": "Isınmadan hemen kas zorlanması yaşarsın."
+   "currentBeispielTr": "Isınmadan insan kolayca kas zorlanması yaşar."
   },
   {
    "id": 4760,
@@ -176,7 +176,7 @@
    "formen": "Prellungen",
    "currentTr": "berelenme, ezik",
    "currentBeispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
-   "currentBeispielTr": "Düşme neyse ki sadece bir berelenmeyle atlatıldı."
+   "currentBeispielTr": "Düşüş neyse ki sadece bir berelenmeyle bitti."
   },
   {
    "id": 4761,
@@ -200,7 +200,7 @@
    "formen": "Auszeiten",
    "currentTr": "mola, ara verme",
    "currentBeispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
-   "currentBeispielTr": "Stresli yılın ardından kendine uzunca bir mola verdi.",
+   "currentBeispielTr": "Stresli yılın ardından kendine uzunca bir ara verdi.",
    "overlapping": [
     "die Pause (A1)"
    ]
@@ -213,7 +213,7 @@
    "formen": "Achtsamkeiten",
    "currentTr": "farkındalık, dikkatli olma",
    "currentBeispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
-   "currentBeispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken fark edersin."
+   "currentBeispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken anlarsın."
   },
   {
    "id": 4764,
@@ -223,7 +223,7 @@
    "formen": "Körperhaltungen",
    "currentTr": "duruş, vücut duruşu",
    "currentBeispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
-   "currentBeispielTr": "Ekran başındaki kötü duruş çoğu zaman boyun ağrısına yol açar."
+   "currentBeispielTr": "Ekran başındaki kötü vücut duruşu çoğu zaman boyun ağrısına yol açar."
   },
   {
    "id": 4765,
@@ -283,7 +283,7 @@
    "formen": "hat gedehnt",
    "currentTr": "germe hareketi yapmak, esnemek (spor)",
    "currentBeispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
-   "currentBeispielTr": "Koşudan sonra iyice germe hareketi yapmalısın."
+   "currentBeispielTr": "Koşudan sonra iyice esneme yapmalısın."
   },
   {
    "id": 4771,
@@ -303,7 +303,7 @@
    "formen": "ist ermüdet",
    "currentTr": "yorulmak, yormak",
    "currentBeispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
-   "currentBeispielTr": "Işık çok zayıf olduğunda gözler çabuk yorulur."
+   "currentBeispielTr": "Işık çok zayıfsa gözler çabuk yorulur."
   },
   {
    "id": 4773,
@@ -313,7 +313,7 @@
    "formen": "hat abgewöhnt",
    "currentTr": "bir alışkanlığı bırakmak",
    "currentBeispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
-   "currentBeispielTr": "Geç saatte atıştırma alışkanlığını zorlukla bıraktım."
+   "currentBeispielTr": "Geç saatte atıştırma alışkanlığımı zorlukla bıraktım."
   },
   {
    "id": 4774,
@@ -346,8 +346,8 @@
    "niveau": "B2",
    "formen": "hat verkrampft",
    "currentTr": "kasılmak, kramp girmek",
-   "currentBeispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft.",
-   "currentBeispielTr": "Yüzerken birden baldırına kramp girdi."
+   "currentBeispiel": "Beim Schwimmen hat sich seine Wade plötzlich verkrampft.",
+   "currentBeispielTr": "Yüzerken baldırı birden kasıldı."
   },
   {
    "id": 4777,
@@ -404,7 +404,7 @@
    "formen": "hat aufgerafft",
    "currentTr": "kendini toparlayıp harekete geçmek",
    "currentBeispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
-   "currentBeispielTr": "Akşamları kendimi zar zor spora ikna edebiliyorum."
+   "currentBeispielTr": "Akşamları kendimi zor toparlayıp spora gidiyorum."
   },
   {
    "id": 4782,
@@ -429,7 +429,7 @@
    "formen": "hat umgestellt",
    "currentTr": "değiştirmek, düzenini değiştirmek",
    "currentBeispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
-   "currentBeispielTr": "Teşhisten sonra beslenmesini tamamen değiştirdi.",
+   "currentBeispielTr": "Teşhisten sonra beslenmesini baştan sona yeniden düzenledi.",
    "overlapping": [
     "ändern (A2)",
     "wechseln (A2)",
@@ -480,7 +480,7 @@
    "formen": "hat angekurbelt",
    "currentTr": "hızlandırmak, canlandırmak",
    "currentBeispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
-   "currentBeispielTr": "Sabah soğuk duş dolaşımı canlandırır.",
+   "currentBeispielTr": "Sabahları soğuk bir duş kan dolaşımını canlandırır.",
    "overlapping": [
     "beschleunigen (B2)"
    ]
@@ -503,7 +503,7 @@
    "formen": "",
    "currentTr": "dinlenmiş, dinç",
    "currentBeispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
-   "currentBeispielTr": "Tatilden sonra nihayet yeniden dinç görünüyordu."
+   "currentBeispielTr": "Tatilden sonra nihayet yeniden dinlenmiş görünüyordu."
   },
   {
    "id": 4790,

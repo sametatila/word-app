@@ -10,7 +10,7 @@
    "formen": "hat geprobt",
    "currentTr": "prova yapmak, çalışmak",
    "currentBeispiel": "Das Ensemble probt jeden Abend bis kurz vor Mitternacht.",
-   "currentBeispielTr": "Topluluk her akşam gece yarısına az kala kadar prova yapıyor."
+   "currentBeispielTr": "Topluluk her akşam gece yarısına az kala prova yapıyor."
   },
   {
    "id": 4896,
@@ -42,8 +42,8 @@
    "niveau": "B2",
    "formen": "hat gestaltet",
    "currentTr": "biçimlendirmek, tasarlamak, düzenlemek",
-   "currentBeispiel": "Die Studierenden gestalteten das Programm des Festivals selbst.",
-   "currentBeispielTr": "Öğrenciler festivalin programını kendileri düzenledi.",
+   "currentBeispiel": "Sie hat das Plakat für das Konzert selbst gestaltet.",
+   "currentBeispielTr": "Konser afişini kendisi tasarladı.",
    "overlapping": [
     "prägen (B2)"
    ]
@@ -102,8 +102,8 @@
    "niveau": "B2",
    "formen": "hat ausgeübt",
    "currentTr": "yapmak, icra etmek, uygulamak",
-   "currentBeispiel": "Diesen Sport übt er schon seit seiner Schulzeit aus.",
-   "currentBeispielTr": "Bu sporu okul yıllarından beri yapıyor.",
+   "currentBeispiel": "Die Eltern üben großen Druck auf ihre Kinder aus.",
+   "currentBeispielTr": "Anne babalar çocukları üzerinde büyük baskı uyguluyor.",
    "overlapping": [
     "machen (A1)",
     "tun (A1)",
@@ -141,8 +141,8 @@
    "niveau": "B2",
    "formen": "hat moderiert",
    "currentTr": "sunuculuk yapmak, yönetmek",
-   "currentBeispiel": "Sie moderiert seit fünf Jahren eine Sendung über junge Musik.",
-   "currentBeispielTr": "Beş yıldır genç müzik üzerine bir program sunuyor."
+   "currentBeispiel": "Sie moderiert seit fünf Jahren eine Talkshow im Radio.",
+   "currentBeispielTr": "Beş yıldır radyoda bir söyleşi programı sunuyor."
   },
   {
    "id": 4907,
@@ -151,8 +151,8 @@
    "niveau": "B2",
    "formen": "hat mitgerissen",
    "currentTr": "coşturmak, sürüklemek",
-   "currentBeispiel": "Der Schlusschor riss selbst die skeptischen Zuhörer mit.",
-   "currentBeispielTr": "Final korosu şüpheci dinleyicileri bile coşturdu."
+   "currentBeispiel": "Der Schlusschor reißt selbst skeptische Zuhörer mit.",
+   "currentBeispielTr": "Final korosu şüpheci dinleyicileri bile coşturuyor."
   },
   {
    "id": 4908,
@@ -162,7 +162,7 @@
    "formen": "hat fasziniert",
    "currentTr": "büyülemek, hayran bırakmak",
    "currentBeispiel": "Alte Handschriften faszinieren ihn mehr als jedes moderne Werk.",
-   "currentBeispielTr": "Eski el yazmaları onu her modern eserden daha çok büyülüyor."
+   "currentBeispielTr": "Eski el yazmaları onu modern eserlerden çok daha fazla büyülüyor."
   },
   {
    "id": 4909,
@@ -172,7 +172,7 @@
    "formen": "hat beeindruckt",
    "currentTr": "etkilemek, hayranlık uyandırmak",
    "currentBeispiel": "Die Lichtinstallation im Innenhof hat mich wirklich beeindruckt.",
-   "currentBeispielTr": "İç avludaki ışık yerleştirmesi beni gerçekten etkiledi.",
+   "currentBeispielTr": "İç avludaki ışık yerleştirmesi beni gerçekten hayran bıraktı.",
    "overlapping": [
     "beeinflussen (B1)",
     "sich auswirken (B2)"
@@ -208,8 +208,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "sanatsal, sanata ilişkin",
-   "currentBeispiel": "Die künstlerische Leitung des Hauses wechselt zur neuen Spielzeit.",
-   "currentBeispielTr": "Kurumun sanat yönetmenliği yeni sezonda değişiyor."
+   "currentBeispiel": "Das Theater genießt große künstlerische Freiheit.",
+   "currentBeispielTr": "Tiyatro büyük bir sanatsal özgürlüğe sahip."
   },
   {
    "id": 4913,
@@ -242,7 +242,7 @@
    "formen": "",
    "currentTr": "çeşitli, renkli, monotonluktan uzak",
    "currentBeispiel": "Das Ferienprogramm für Kinder ist in diesem Jahr sehr abwechslungsreich.",
-   "currentBeispielTr": "Çocuklar için tatil programı bu yıl çok çeşitli.",
+   "currentBeispielTr": "Çocuklar için hazırlanan tatil programı bu yıl çok çeşitli.",
    "overlapping": [
     "vielfältig (B2)"
    ]
@@ -288,7 +288,7 @@
    "formen": "",
    "currentTr": "biletleri tükenmiş, tükenmiş (ürün)",
    "currentBeispiel": "Beide Konzerte waren schon nach wenigen Stunden ausverkauft.",
-   "currentBeispielTr": "Her iki konserin de biletleri birkaç saat içinde tükendi."
+   "currentBeispielTr": "Her iki konserin biletleri birkaç saat içinde tükendi."
   },
   {
    "id": 4920,
@@ -297,8 +297,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kendi başına, kendi bildiğince (rehbersiz)",
-   "currentBeispiel": "Statt einer Führung erkundeten sie die Stadt auf eigene Faust.",
-   "currentBeispielTr": "Rehberli tur yerine şehri kendi başlarına gezdiler."
+   "currentBeispiel": "Sie hat die Reise auf eigene Faust organisiert.",
+   "currentBeispielTr": "Geziyi kendi başına organize etti."
   },
   {
    "id": 4921,
@@ -317,8 +317,8 @@
    "niveau": "B2",
    "formen": "Redaktionen",
    "currentTr": "yazı işleri, redaksiyon",
-   "currentBeispiel": "Die Redaktion entscheidet morgen über den Aufmacher der Titelseite.",
-   "currentBeispielTr": "Yazı işleri yarın manşet haberi konusunda karar verecek."
+   "currentBeispiel": "Die Redaktion entscheidet morgen über die Titelgeschichte.",
+   "currentBeispielTr": "Yazı işleri yarın kapak haberine karar verecek."
   },
   {
    "id": 4923,
@@ -401,7 +401,7 @@
    "formen": "Zielgruppen",
    "currentTr": "hedef kitle",
    "currentBeispiel": "Die Werbung spricht vor allem eine junge Zielgruppe an.",
-   "currentBeispielTr": "Reklam her şeyden önce genç bir hedef kitleye sesleniyor."
+   "currentBeispielTr": "Reklam özellikle genç bir hedef kitleye sesleniyor."
   },
   {
    "id": 4931,
@@ -453,8 +453,8 @@
    "niveau": "B2",
    "formen": "Rubriken",
    "currentTr": "bölüm, köşe, kategori",
-   "currentBeispiel": "Den Artikel finden Sie in der Rubrik Wirtschaft.",
-   "currentBeispielTr": "Yazıyı ekonomi bölümünde bulabilirsiniz.",
+   "currentBeispiel": "Auf der Startseite gibt es eine neue Rubrik für Podcasts.",
+   "currentBeispielTr": "Ana sayfada podcastler için yeni bir kategori var.",
    "overlapping": [
     "der Abschnitt (B1)",
     "die Abteilung (B1)",
@@ -506,8 +506,8 @@
    "niveau": "B2",
    "formen": "Mitteilungen",
    "currentTr": "bildiri, duyuru",
-   "currentBeispiel": "In einer kurzen Mitteilung wies das Ministerium die Vorwürfe zurück.",
-   "currentBeispielTr": "Bakanlık kısa bir bildiride suçlamaları reddetti.",
+   "currentBeispiel": "Die Schule verschickte eine Mitteilung an alle Eltern.",
+   "currentBeispielTr": "Okul tüm velilere bir bildirim gönderdi.",
    "overlapping": [
     "das Manifest (C1)"
    ]
@@ -550,7 +550,7 @@
    "formen": "Gegendarstellungen",
    "currentTr": "cevap hakkı yazısı, karşı açıklama",
    "currentBeispiel": "Der Politiker verlangte eine Gegendarstellung auf derselben Seite.",
-   "currentBeispielTr": "Siyasetçi aynı sayfada bir karşı açıklama yayımlanmasını talep etti."
+   "currentBeispielTr": "Siyasetçi aynı sayfada bir karşı açıklama istedi."
   },
   {
    "id": 4944,

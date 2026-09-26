@@ -59,9 +59,9 @@
     "id": 3029,
     "tr": "akraba",
     "en": "related",
-    "beispiel": "Sind Sie mit Frau Meyer verwandt?",
-    "beispielTr": "Bayan Meyer'le akraba mısınız?",
-    "beispielEn": "Are you related to Mrs. Meyer?"
+    "beispiel": "Wir haben denselben Nachnamen, sind aber nicht verwandt.",
+    "beispielTr": "Soyadımız aynı ama akraba değiliz.",
+    "beispielEn": "We have the same last name, but we're not related."
   },
   {
     "id": 1784,
@@ -91,9 +91,9 @@
     "id": 2497,
     "tr": "hap",
     "en": "pill",
-    "beispiel": "Der Arzt hat mir neue Pillen verschrieben.",
-    "beispielTr": "Doktor bana yeni haplar yazdı.",
-    "beispielEn": "The doctor prescribed me new pills."
+    "beispiel": "Diese Pille muss man vor dem Essen schlucken.",
+    "beispielTr": "Bu hapı yemekten önce yutmak gerekiyor.",
+    "beispielEn": "You have to swallow this pill before eating."
   },
   {
     "id": 1874,
@@ -123,9 +123,9 @@
     "id": 2596,
     "tr": "geriye doğru",
     "en": "backward",
-    "beispiel": "Ich bin rückwärts aus der Garage gefahren.",
-    "beispielTr": "Garajdan geri geri çıktım.",
-    "beispielEn": "I backed out of the garage."
+    "beispiel": "Kannst du das Alphabet rückwärts aufsagen?",
+    "beispielTr": "Alfabeyi tersten sayabilir misin?",
+    "beispielEn": "Can you recite the alphabet backward?"
   },
   {
     "id": 1975,
@@ -155,25 +155,25 @@
     "id": 1481,
     "tr": "seçenek",
     "en": "selection",
-    "beispiel": "Das Geschäft hat eine große Auswahl an Schuhen.",
-    "beispielTr": "Mağazada geniş bir ayakkabı seçeneği var.",
-    "beispielEn": "The store has a large selection of shoes."
+    "beispiel": "Beim Frühstücksbuffet gab es eine riesige Auswahl an Käse.",
+    "beispielTr": "Açık büfe kahvaltıda çok büyük bir peynir seçeneği vardı.",
+    "beispielEn": "The breakfast buffet had a huge selection of cheeses."
   },
   {
     "id": 1558,
     "tr": "toplantı",
     "en": "meeting",
-    "beispiel": "Herr Schmidt ist noch in einer Besprechung.",
-    "beispielTr": "Schmidt Bey hâlâ toplantıda.",
-    "beispielEn": "Mr. Schmidt is still in a meeting."
+    "beispiel": "Die Besprechung am Montag dauert nur eine halbe Stunde.",
+    "beispielTr": "Pazartesiki toplantı yalnızca yarım saat sürecek.",
+    "beispielEn": "Monday's meeting will only last half an hour."
   },
   {
     "id": 1674,
     "tr": "gök gürültüsü",
     "en": "thunder",
-    "beispiel": "Der Donner kam erst lange nach dem Blitz.",
-    "beispielTr": "Gök gürültüsü şimşekten epey sonra geldi.",
-    "beispielEn": "The thunder came long after the lightning."
+    "beispiel": "Unser Hund versteckt sich bei jedem Donner unter dem Bett.",
+    "beispielTr": "Köpeğimiz her gök gürültüsünde yatağın altına saklanıyor.",
+    "beispielEn": "Our dog hides under the bed every time it thunders."
   },
   {
     "id": 1906,
@@ -219,9 +219,9 @@
     "id": 2099,
     "tr": "öksürük",
     "en": "cough",
-    "beispiel": "Haben Sie ein Medikament gegen Husten?",
-    "beispielTr": "Öksürüğe karşı bir ilacınız var mı?",
-    "beispielEn": "Do you have a medicine for a cough?"
+    "beispiel": "Der Husten ist nach einer Woche endlich weg.",
+    "beispielTr": "Öksürük bir hafta sonra nihayet geçti.",
+    "beispielEn": "The cough is finally gone after a week."
   },
   {
     "id": 3133,
@@ -283,9 +283,9 @@
     "id": 2818,
     "tr": "benzin istasyonu",
     "en": "gas station",
-    "beispiel": "Wo ist hier die nächste Tankstelle?",
-    "beispielTr": "Buralarda en yakın benzin istasyonu nerede?",
-    "beispielEn": "Where is the nearest gas station around here?"
+    "beispiel": "An der Tankstelle an der Autobahn ist Benzin besonders teuer.",
+    "beispielTr": "Otoyoldaki benzin istasyonunda benzin özellikle pahalı.",
+    "beispielEn": "Gas is especially expensive at the gas station on the highway."
   },
   {
     "id": 1973,
@@ -307,9 +307,9 @@
     "id": 2381,
     "tr": "madeni para",
     "en": "coin",
-    "beispiel": "Der Automat nimmt nur Münzen.",
-    "beispielTr": "Otomat sadece madeni para kabul ediyor.",
-    "beispielEn": "The machine only takes coins."
+    "beispiel": "Meine Tochter sammelt alte Münzen aus aller Welt.",
+    "beispielTr": "Kızım dünyanın her yerinden eski madeni paralar biriktiriyor.",
+    "beispielEn": "My daughter collects old coins from all over the world."
   },
   {
     "id": 2605,

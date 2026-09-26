@@ -11,9 +11,9 @@
     "id": 990,
     "tr": "korkunç",
     "en": "terrible",
-    "beispiel": "Ich habe furchtbare Kopfschmerzen.",
-    "beispielTr": "Korkunç bir baş ağrım var.",
-    "beispielEn": "I have a terrible headache."
+    "beispiel": "Gestern hatten wir ein furchtbares Gewitter.",
+    "beispielTr": "Dün korkunç bir fırtına vardı.",
+    "beispielEn": "We had a terrible thunderstorm yesterday."
   },
   {
     "id": 939,
@@ -35,9 +35,9 @@
     "id": 1092,
     "tr": "bıçak",
     "en": "knife",
-    "beispiel": "Dieses Messer schneidet nicht gut.",
-    "beispielTr": "Bu bıçak iyi kesmiyor.",
-    "beispielEn": "This knife doesn't cut well."
+    "beispiel": "Schneid das Brot bitte mit dem großen Messer.",
+    "beispielTr": "Ekmeği lütfen büyük bıçakla kes.",
+    "beispielEn": "Please cut the bread with the big knife."
   },
   {
     "id": 1006,
@@ -67,25 +67,25 @@
     "id": 1192,
     "tr": "zor",
     "en": "difficult",
-    "beispiel": "Die Prüfung war nicht schwierig.",
-    "beispielTr": "Sınav zor değildi.",
-    "beispielEn": "The exam wasn't difficult."
+    "beispiel": "Es ist schwierig, in der Stadt einen Parkplatz zu finden.",
+    "beispielTr": "Şehirde park yeri bulmak zor.",
+    "beispielEn": "It's difficult to find a parking spot in the city."
   },
   {
     "id": 969,
     "tr": "muhteşem",
     "en": "fantastic",
-    "beispiel": "Dein neues Kleid sieht fantastisch aus!",
-    "beispielTr": "Yeni elbisen muhteşem görünüyor!",
-    "beispielEn": "Your new dress looks fantastic!"
+    "beispiel": "Vom Turm hat man einen fantastischen Blick auf die Berge.",
+    "beispielTr": "Kuleden dağlara muhteşem bir manzara var.",
+    "beispielEn": "From the tower you have a fantastic view of the mountains."
   },
   {
     "id": 889,
     "tr": "inşa etmek",
     "en": "to build",
-    "beispiel": "Unsere Nachbarn bauen ein neues Haus.",
-    "beispielTr": "Komşularımız yeni bir ev inşa ediyor.",
-    "beispielEn": "Our neighbors are building a new house."
+    "beispiel": "Im Sommer bauen wir mit den Kindern eine Sandburg.",
+    "beispielTr": "Yazın çocuklarla kumdan kale yapıyoruz.",
+    "beispielEn": "In the summer we build a sandcastle with the kids."
   },
   {
     "id": 1014,
@@ -99,33 +99,33 @@
     "id": 1265,
     "tr": "bir şeyler yapmak",
     "en": "to do something",
-    "beispiel": "Wollen wir heute Abend etwas unternehmen?",
-    "beispielTr": "Bu akşam bir şeyler yapalım mı?",
-    "beispielEn": "Shall we do something tonight?"
+    "beispiel": "Was habt ihr am Wochenende unternommen?",
+    "beispielTr": "Hafta sonu neler yaptınız?",
+    "beispielEn": "What did you guys do over the weekend?"
   },
   {
     "id": 894,
     "tr": "bitirmek",
     "en": "to finish",
-    "beispiel": "Du musst deine Ausbildung auf jeden Fall beenden.",
-    "beispielTr": "Meslek eğitimini kesinlikle bitirmelisin.",
-    "beispielEn": "You have to finish your training no matter what."
+    "beispiel": "Wir beenden das Treffen heute pünktlich um fünf.",
+    "beispielTr": "Toplantıyı bugün tam beşte bitiriyoruz.",
+    "beispielEn": "We're finishing the meeting today right at five."
   },
   {
     "id": 1193,
     "tr": "deniz",
     "en": "sea",
-    "beispiel": "Die See ist heute sehr ruhig.",
-    "beispielTr": "Deniz bugün çok sakin.",
-    "beispielEn": "The sea is very calm today."
+    "beispiel": "Die Fischer fahren früh am Morgen auf die See hinaus.",
+    "beispielTr": "Balıkçılar sabahın erken saatinde denize açılıyor.",
+    "beispielEn": "The fishermen head out to sea early in the morning."
   },
   {
     "id": 1266,
     "tr": "fark",
     "en": "difference",
-    "beispiel": "Was ist der Unterschied zwischen diesen beiden Kursen?",
-    "beispielTr": "Bu iki kurs arasındaki fark ne?",
-    "beispielEn": "What is the difference between these two courses?"
+    "beispiel": "Die Zwillinge sehen gleich aus, ich sehe keinen Unterschied.",
+    "beispielTr": "İkizler tıpatıp aynı, hiçbir fark göremiyorum.",
+    "beispielEn": "The twins look the same, I can't see any difference."
   },
   {
     "id": 1036,
@@ -179,9 +179,9 @@
     "id": 1182,
     "tr": "şato",
     "en": "castle",
-    "beispiel": "Wir haben am Sonntag ein Schloss besichtigt.",
-    "beispielTr": "Pazar günü bir şato gezdik.",
-    "beispielEn": "We visited a castle on Sunday."
+    "beispiel": "Auf dem Berg über der Stadt steht ein altes Schloss.",
+    "beispielTr": "Şehrin üstündeki tepede eski bir şato var.",
+    "beispielEn": "There's an old castle on the hill above the town."
   },
   {
     "id": 1164,
@@ -195,25 +195,25 @@
     "id": 925,
     "tr": "kulüp",
     "en": "club",
-    "beispiel": "Gibt es hier einen Club mit guter Musik?",
-    "beispielTr": "Buralarda müziği iyi bir kulüp var mı?",
-    "beispielEn": "Is there a club with good music here?"
+    "beispiel": "Tim spielt seit Jahren Tennis in einem Club.",
+    "beispielTr": "Tim yıllardır bir kulüpte tenis oynuyor.",
+    "beispielEn": "Tim has been playing tennis at a club for years."
   },
   {
     "id": 1297,
     "tr": "ileri",
     "en": "forward",
-    "beispiel": "Fahren Sie bitte noch ein Stück vorwärts!",
-    "beispielTr": "Lütfen biraz daha ileri gidin!",
-    "beispielEn": "Please pull forward a little more!"
+    "beispiel": "In der Schlange ging es kaum vorwärts.",
+    "beispielTr": "Kuyrukta neredeyse hiç ilerlenmiyordu.",
+    "beispielEn": "The line was barely moving forward."
   },
   {
     "id": 958,
     "tr": "deneyim",
     "en": "experience",
-    "beispiel": "Ich habe zehn Jahre Erfahrung in diesem Beruf.",
-    "beispielTr": "Bu meslekte on yıllık deneyimim var.",
-    "beispielEn": "I have ten years of experience in this job."
+    "beispiel": "Mit dieser Erfahrung findest du bestimmt schnell eine Stelle.",
+    "beispielTr": "Bu deneyimle kesin çabucak iş bulursun.",
+    "beispielEn": "With that experience, you'll surely find a job quickly."
   },
   {
     "id": 938,
@@ -227,17 +227,17 @@
     "id": 1221,
     "tr": "rahatsız etmek",
     "en": "to disturb",
-    "beispiel": "Darf ich Sie kurz stören?",
-    "beispielTr": "Sizi bir dakika rahatsız edebilir miyim?",
-    "beispielEn": "May I disturb you for a moment?"
+    "beispiel": "Die laute Musik von oben stört mich beim Lernen.",
+    "beispielTr": "Üst kattan gelen yüksek müzik ders çalışırken beni rahatsız ediyor.",
+    "beispielEn": "The loud music from upstairs bothers me while I'm studying."
   },
   {
     "id": 1031,
     "tr": "pantolon",
     "en": "pants",
-    "beispiel": "Diese Hose ist mir zu eng.",
-    "beispielTr": "Bu pantolon bana çok dar geliyor.",
-    "beispielEn": "These pants are too tight for me."
+    "beispiel": "Für die Hochzeit kauft Ben eine schwarze Hose.",
+    "beispielTr": "Ben düğün için siyah bir pantolon alıyor.",
+    "beispielEn": "Ben is buying black pants for the wedding."
   },
   {
     "id": 1107,
@@ -251,9 +251,9 @@
     "id": 981,
     "tr": "uçuş",
     "en": "flight",
-    "beispiel": "Ich möchte einen Flug nach Kanada buchen.",
-    "beispielTr": "Kanada'ya bir uçuş rezervasyonu yapmak istiyorum.",
-    "beispielEn": "I'd like to book a flight to Canada."
+    "beispiel": "Der Flug nach Rom hat zwei Stunden Verspätung.",
+    "beispielTr": "Roma uçuşu iki saat rötarlı.",
+    "beispielEn": "The flight to Rome is two hours late."
   },
   {
     "id": 1323,
@@ -267,25 +267,25 @@
     "id": 1154,
     "tr": "sıra",
     "en": "row",
-    "beispiel": "Wir sitzen in der dritten Reihe.",
-    "beispielTr": "Üçüncü sırada oturuyoruz.",
-    "beispielEn": "We're sitting in the third row."
+    "beispiel": "Die Kinder stehen in einer Reihe vor der Tür.",
+    "beispielTr": "Çocuklar kapının önünde sıraya girmiş.",
+    "beispielEn": "The kids are standing in a row in front of the door."
   },
   {
     "id": 1286,
     "tr": "kuş",
     "en": "bird",
-    "beispiel": "Morgens singen die Vögel sehr laut.",
-    "beispielTr": "Sabahları kuşlar çok yüksek sesle ötüyor.",
-    "beispielEn": "In the morning the birds sing very loudly."
+    "beispiel": "Im Winter füttern wir die Vögel im Garten.",
+    "beispielTr": "Kışın bahçedeki kuşları besliyoruz.",
+    "beispielEn": "In winter we feed the birds in the garden."
   },
   {
     "id": 1285,
     "tr": "sözleşme",
     "en": "contract",
-    "beispiel": "Ich muss den Vertrag noch unterschreiben.",
-    "beispielTr": "Sözleşmeyi daha imzalamam gerekiyor.",
-    "beispielEn": "I still have to sign the contract."
+    "beispiel": "Der Vertrag für die Wohnung läuft zwei Jahre.",
+    "beispielTr": "Ev sözleşmesi iki yıllık.",
+    "beispielEn": "The lease on the apartment runs for two years."
   },
   {
     "id": 1050,
@@ -315,17 +315,17 @@
     "id": 1090,
     "tr": "aklında tutmak",
     "en": "to memorize",
-    "beispiel": "Ich kann mir keine Zahlen merken.",
-    "beispielTr": "Sayıları aklımda tutamıyorum.",
-    "beispielEn": "I can't memorize numbers."
+    "beispiel": "Neue Wörter merke ich mir am besten mit Bildern.",
+    "beispielTr": "Yeni kelimeleri en iyi resimlerle aklımda tutuyorum.",
+    "beispielEn": "I memorize new words best with pictures."
   },
   {
     "id": 1256,
     "tr": "çeviri",
     "en": "translation",
-    "beispiel": "Ich brauche eine Übersetzung von meinem Zeugnis.",
-    "beispielTr": "Karnemin çevirisine ihtiyacım var.",
-    "beispielEn": "I need a translation of my school report."
+    "beispiel": "Die Übersetzung im Menü war ziemlich lustig.",
+    "beispielTr": "Menüdeki çeviri epey komikti.",
+    "beispielEn": "The translation on the menu was pretty funny."
   },
   {
     "id": 1067,
@@ -347,17 +347,17 @@
     "id": 870,
     "tr": "takım elbise",
     "en": "suit",
-    "beispiel": "Mein Mann kauft sich einen neuen Anzug.",
-    "beispielTr": "Eşim kendine yeni bir takım elbise alıyor.",
-    "beispielEn": "My husband is buying himself a new suit."
+    "beispiel": "Zur Hochzeit trägt Paul einen dunkelblauen Anzug.",
+    "beispielTr": "Paul düğünde lacivert bir takım elbise giyiyor.",
+    "beispielEn": "Paul is wearing a navy suit to the wedding."
   },
   {
     "id": 941,
     "tr": "karanlık",
     "en": "dark",
-    "beispiel": "Um sechs Uhr ist es schon dunkel.",
-    "beispielTr": "Saat altıda hava çoktan karanlık oluyor.",
-    "beispielEn": "At six o'clock it's already dark."
+    "beispiel": "Das Zimmer ist ohne Fenster ziemlich dunkel.",
+    "beispielTr": "Oda penceresiz olduğu için epey karanlık.",
+    "beispielEn": "Without a window the room is pretty dark."
   },
   {
     "id": 1053,
@@ -371,25 +371,25 @@
     "id": 1144,
     "tr": "program",
     "en": "program",
-    "beispiel": "Dieses Programm im Radio interessiert mich nicht.",
-    "beispielTr": "Radyodaki bu program ilgimi çekmiyor.",
-    "beispielEn": "This program on the radio doesn't interest me."
+    "beispiel": "Das Programm für die Klassenfahrt ist schon fertig.",
+    "beispielTr": "Okul gezisinin programı hazır bile.",
+    "beispielEn": "The program for the class trip is already done."
   },
   {
     "id": 1226,
     "tr": "sandalye",
     "en": "chair",
-    "beispiel": "Da hinten ist noch ein Stuhl frei.",
-    "beispielTr": "Arkada bir sandalye daha boş.",
-    "beispielEn": "There's still a free chair in the back."
+    "beispiel": "Die Katze schläft am liebsten auf meinem Stuhl.",
+    "beispielTr": "Kedi en çok benim sandalyemde uyumayı seviyor.",
+    "beispielEn": "The cat likes sleeping on my chair best."
   },
   {
     "id": 878,
     "tr": "dışarı çıkmak",
     "en": "to go out",
-    "beispiel": "Gehen wir am Freitag zusammen aus?",
-    "beispielTr": "Cuma günü birlikte dışarı çıkalım mı?",
-    "beispielEn": "Shall we go out together on Friday?"
+    "beispiel": "Seit dem Baby gehen wir kaum noch aus.",
+    "beispielTr": "Bebek olduğundan beri pek dışarı çıkmıyoruz.",
+    "beispielEn": "Since the baby came, we hardly go out anymore."
   },
   {
     "id": 1300,

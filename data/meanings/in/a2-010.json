@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "yapış yapış, yapışkan",
    "currentBeispiel": "Der Tisch ist noch klebrig vom Saft.",
-   "currentBeispielTr": "Masa meyve suyundan hâlâ yapış yapış."
+   "currentBeispielTr": "Masa meyve suyundan hâlâ yapışkan."
   },
   {
    "id": 7439,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "parlak",
    "currentBeispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
-   "currentBeispielTr": "Temizlikten sonra yer gerçekten parlak."
+   "currentBeispielTr": "Temizlikten sonra zemin gerçekten parlak."
   },
   {
    "id": 7441,
@@ -39,8 +39,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "mat",
-   "currentBeispiel": "Wir haben die Wände in einem matten Weiß gestrichen.",
-   "currentBeispielTr": "Duvarları mat bir beyaza boyadık."
+   "currentBeispiel": "Wir haben die Wände matt gestrichen.",
+   "currentBeispielTr": "Duvarları mat boyadık."
   },
   {
    "id": 7442,
@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "metalik, madensi",
    "currentBeispiel": "Das Wasser hier schmeckt etwas metallisch.",
-   "currentBeispielTr": "Buradaki su biraz metalik tadıyor."
+   "currentBeispielTr": "Buradaki suyun tadı biraz metalik."
   },
   {
    "id": 7444,
@@ -79,8 +79,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "açık mavi",
-   "currentBeispiel": "Sie trägt ein hellblaues Hemd.",
-   "currentBeispielTr": "Açık mavi bir gömlek giyiyor."
+   "currentBeispiel": "Er trägt heute ein hellblaues Hemd.",
+   "currentBeispielTr": "Bugün açık mavi bir gömlek giyiyor."
   },
   {
    "id": 7446,
@@ -90,7 +90,7 @@
    "formen": "",
    "currentTr": "koyu mavi, lacivert",
    "currentBeispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
-   "currentBeispielTr": "Bavul lacivert ve oldukça büyük."
+   "currentBeispielTr": "Bavul koyu mavi ve oldukça büyük."
   },
   {
    "id": 7447,
@@ -100,7 +100,7 @@
    "formen": "",
    "currentTr": "mavimsi",
    "currentBeispiel": "Am Abend wird der Schnee bläulich.",
-   "currentBeispielTr": "Akşamları kar mavimsi oluyor."
+   "currentBeispielTr": "Akşam kar mavimsi oluyor."
   },
   {
    "id": 7448,
@@ -150,7 +150,7 @@
    "formen": "",
    "currentTr": "tek renkli, düz renk",
    "currentBeispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
-   "currentBeispielTr": "Ofis için tek renkli gömlekler almayı tercih ediyorum."
+   "currentBeispielTr": "Ofis için tek renkli gömlekler tercih ediyorum."
   },
   {
    "id": 7453,
@@ -189,7 +189,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "hasarlı, zarar görmüş",
-   "currentBeispiel": "Das Paket kam beschädigt bei mir an.",
+   "currentBeispiel": "Das Paket ist beschädigt bei mir angekommen.",
    "currentBeispielTr": "Paket bana hasarlı ulaştı."
   },
   {
@@ -199,7 +199,7 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kırık, kırılmış",
-   "currentBeispiel": "Im Karton lagen zwei zerbrochene Teller.",
+   "currentBeispiel": "Im Karton waren zwei zerbrochene Teller.",
    "currentBeispielTr": "Kutunun içinde iki kırık tabak vardı."
   },
   {
@@ -279,7 +279,7 @@
    "formen": "",
    "currentTr": "sağlam, dayanıklı",
    "currentBeispiel": "Das Regal ist stabil und trägt viele Bücher.",
-   "currentBeispielTr": "Raf sağlam ve çok kitap taşıyor.",
+   "currentBeispielTr": "Raf dayanıklı ve çok kitap taşıyor.",
    "overlapping": [
     "fest (B1)",
     "tragfähig (C1)",
@@ -294,8 +294,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "dolu, doldurulmuş",
-   "currentBeispiel": "Auf dem Tisch stand eine mit Wasser gefüllte Flasche.",
-   "currentBeispielTr": "Masanın üstünde suyla dolu bir şişe duruyordu.",
+   "currentBeispiel": "Auf dem Tisch steht eine mit Wasser gefüllte Flasche.",
+   "currentBeispielTr": "Masanın üstünde suyla doldurulmuş bir şişe duruyor.",
    "overlapping": [
     "besetzt (A1)",
     "voll (A2)",
@@ -330,7 +330,7 @@
    "formen": "",
    "currentTr": "kirli, pis",
    "currentBeispiel": "Deine Schuhe sind ganz dreckig.",
-   "currentBeispielTr": "Ayakkabıların resmen kirli.",
+   "currentBeispielTr": "Ayakkabıların resmen pis.",
    "overlapping": [
     "schmutzig (A2)"
    ]
@@ -353,7 +353,7 @@
    "formen": "",
    "currentTr": "küflü",
    "currentBeispiel": "Das Brot ist nach einer Woche schimmelig.",
-   "currentBeispielTr": "Ekmek bir hafta sonra küflü."
+   "currentBeispielTr": "Ekmek bir hafta sonra küflü oluyor."
   },
   {
    "id": 7471,
@@ -372,8 +372,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kaliteli, zarif",
-   "currentBeispiel": "Das Restaurant hat edle Möbel aus dunklem Holz.",
-   "currentBeispielTr": "Restoranda koyu ahşaptan kaliteli mobilyalar var.",
+   "currentBeispiel": "Der Ring sieht edel und teuer aus.",
+   "currentBeispielTr": "Yüzük kaliteli ve pahalı görünüyor.",
    "overlapping": [
     "hochwertig (B2)"
    ]
@@ -385,8 +385,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sade, gösterişsiz",
-   "currentBeispiel": "Ich mag Zimmer, die schlicht eingerichtet sind.",
-   "currentBeispielTr": "Sade döşenmiş odaları severim."
+   "currentBeispiel": "Das Zimmer ist schlicht und sehr gemütlich.",
+   "currentBeispielTr": "Oda sade ve çok rahat."
   },
   {
    "id": 7474,
@@ -506,7 +506,7 @@
    "formen": "",
    "currentTr": "kapalı (hava), bulutlu",
    "currentBeispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
-   "currentBeispielTr": "Bugün gökyüzü bütün gün kapalı kalacak.",
+   "currentBeispielTr": "Bugün gökyüzü bütün gün bulutlu kalacak.",
    "overlapping": [
     "geschlossen (A1)"
    ]
@@ -519,7 +519,7 @@
    "formen": "",
    "currentTr": "cereyanlı, esintili",
    "currentBeispiel": "Im Treppenhaus ist es immer zugig.",
-   "currentBeispielTr": "Merdiven boşluğu her zaman cereyanlıdır."
+   "currentBeispielTr": "Merdiven boşluğu her zaman cereyanlı olur."
   },
   {
    "id": 7487,

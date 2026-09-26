@@ -23,7 +23,7 @@
    "formen": "Umsatzsteuern",
    "currentTr": "KDV, satış vergisi",
    "currentBeispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
-   "currentBeispielTr": "Faturada KDV ayrıca gösterilmiştir."
+   "currentBeispielTr": "Faturada KDV ayrı olarak gösterilmiş."
   },
   {
    "id": 5598,
@@ -33,7 +33,7 @@
    "formen": "Existenzgründungen",
    "currentTr": "iş kurma, girişim kurma",
    "currentBeispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei.",
-   "currentBeispielTr": "Şehir, gençlere iş kurma konusunda ücretsiz danışmanlık veriyor."
+   "currentBeispielTr": "Belediye gençlere iş kurma konusunda ücretsiz danışmanlık veriyor."
   },
   {
    "id": 5599,
@@ -43,7 +43,7 @@
    "formen": "Beteiligungen",
    "currentTr": "hisse, pay, katılım",
    "currentBeispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
-   "currentBeispielTr": "Yatırımcının şirkette yüzde yirmi beş payı var."
+   "currentBeispielTr": "Yatırımcı yüzde yirmi beş pay sahibi."
   },
   {
    "id": 5600,
@@ -63,7 +63,7 @@
    "formen": "",
    "currentTr": "fiyatlandırma, fiyat politikası",
    "currentBeispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche.",
-   "currentBeispielTr": "Sağlayıcının saldırgan fiyatlandırması bütün sektörü rahatsız ediyor.",
+   "currentBeispielTr": "Sağlayıcının agresif fiyatlandırması bütün sektörü rahatsız ediyor.",
    "overlapping": [
     "die Bepreisung (C1)"
    ]
@@ -86,7 +86,7 @@
    "formen": "",
    "currentTr": "kalite güvencesi, kalite kontrol",
    "currentBeispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft.",
-   "currentBeispielTr": "Kalite güvencesinde her onuncu parça ayrıntılı olarak denetleniyor."
+   "currentBeispielTr": "Kalite güvencesinde her onuncu parça titizlikle kontrol ediliyor."
   },
   {
    "id": 5604,
@@ -96,7 +96,7 @@
    "formen": "",
    "currentTr": "verimlilik, etkinlik",
    "currentBeispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen.",
-   "currentBeispielTr": "Yeni makinelerin bütün üretimin verimliliğini artırması bekleniyor.",
+   "currentBeispielTr": "Yeni makinelerin bütün üretimin verimliliğini artırması amaçlanıyor.",
    "overlapping": [
     "die Produktivität (C1)"
    ]
@@ -109,7 +109,7 @@
    "formen": "Sanierungen",
    "currentTr": "mali yeniden yapılandırma, ıslah",
    "currentBeispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre.",
-   "currentBeispielTr": "Şirketin yeniden yapılandırılması neredeyse üç yıl sürdü."
+   "currentBeispielTr": "Şirketin mali iyileştirmesi neredeyse üç yıl sürdü."
   },
   {
    "id": 5606,
@@ -119,7 +119,7 @@
    "formen": "Gewerbe",
    "currentTr": "ticari işletme, esnaflık, meslek",
    "currentBeispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital.",
-   "currentBeispielTr": "Ticari işletme açan kişinin başlangıçta az sermayeye ihtiyacı olur."
+   "currentBeispielTr": "Ticari işletme açan kişi başlangıçta az sermayeye ihtiyaç duyar."
   },
   {
    "id": 5607,
@@ -169,7 +169,7 @@
    "formen": "hat erzielt",
    "currentTr": "elde etmek, sağlamak",
    "currentBeispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen.",
-   "currentBeispielTr": "Firma yeni modelle yüksek satış rakamlarına ulaştı.",
+   "currentBeispielTr": "Firma yeni modelle yüksek satış rakamları elde etti.",
    "overlapping": [
     "erwirken (C1)"
    ]
@@ -182,7 +182,7 @@
    "formen": "hat konkurriert",
    "currentTr": "rekabet etmek, yarışmak",
    "currentBeispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren.",
-   "currentBeispielTr": "Küçük dükkânlar büyük zincirlerle zor rekabet ediyor."
+   "currentBeispielTr": "Küçük dükkânlar büyük zincirlerle neredeyse hiç rekabet edemiyor."
   },
   {
    "id": 5613,
@@ -212,7 +212,7 @@
    "formen": "hat floriert",
    "currentTr": "iyi gitmek, gelişmek",
    "currentBeispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen.",
-   "currentBeispielTr": "Krize rağmen ikinci el araç ticareti iyi gidiyor."
+   "currentBeispielTr": "Krize rağmen ikinci el araba ticareti iyi gidiyor."
   },
   {
    "id": 5616,
@@ -245,7 +245,7 @@
    "formen": "",
    "currentTr": "ekonomik, iktisadi, verimli",
    "currentBeispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
-   "currentBeispielTr": "İşletmenin durumu ekonomik açıdan son derece gergin."
+   "currentBeispielTr": "İşletmenin ekonomik durumu son derece sıkıntılı."
   },
   {
    "id": 5619,
@@ -265,7 +265,7 @@
    "formen": "",
    "currentTr": "gerileyen, azalan",
    "currentBeispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig.",
-   "currentBeispielTr": "Yurt dışından gelen siparişler aylardır geriliyor."
+   "currentBeispielTr": "Yurt dışından gelen siparişler aylardır azalıyor."
   },
   {
    "id": 5621,
@@ -285,7 +285,7 @@
    "formen": "",
    "currentTr": "standart olarak, seri üretimde bulunan",
    "currentBeispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut.",
-   "currentBeispielTr": "Navigasyon sistemi bu modelde standart olarak takılı geliyor.",
+   "currentBeispielTr": "Bu modelde navigasyon sistemi standart olarak takılı geliyor.",
    "overlapping": [
     "standardmäßig (B2)"
    ]
@@ -321,7 +321,7 @@
    "formen": "",
    "currentTr": "alt kira, alt kiracılık",
    "currentBeispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie.",
-   "currentBeispielTr": "Bir ailenin yanındaki bir odada alt kiracı olarak yaşıyor."
+   "currentBeispielTr": "Bir ailenin yanındaki odada alt kiracı olarak kalıyor."
   },
   {
    "id": 5626,
@@ -341,7 +341,7 @@
    "formen": "Mietpreisbremsen",
    "currentTr": "kira artış freni, kira tavanı düzenlemesi",
    "currentBeispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen.",
-   "currentBeispielTr": "Kira freni, büyük şehirlerdeki kira artışını yavaşlatmayı amaçlıyor."
+   "currentBeispielTr": "Kira freni, büyük şehirlerde kira artışını yavaşlatmayı amaçlıyor."
   },
   {
    "id": 5628,
@@ -351,7 +351,7 @@
    "formen": "Hausverwaltungen",
    "currentTr": "bina yönetimi, apartman yönetimi",
    "currentBeispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden.",
-   "currentBeispielTr": "Bina yönetimi haftalardır şikayetlerimize yanıt vermiyor."
+   "currentBeispielTr": "Bina yönetimi haftalardır şikâyetlerimize yanıt vermiyor."
   },
   {
    "id": 5629,
@@ -431,7 +431,7 @@
    "formen": "Leerstände",
    "currentTr": "boş durma, boş kalma (konut, dükkân)",
    "currentBeispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu.",
-   "currentBeispielTr": "Eski şehirde boş duran dükkanların sayısı artıyor."
+   "currentBeispielTr": "Eski şehirde boş kalan dükkânların sayısı artıyor."
   },
   {
    "id": 5637,
@@ -524,7 +524,7 @@
    "formen": "",
    "currentTr": "kentsel gelişim, şehir planlaması",
    "currentBeispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz.",
-   "currentBeispielTr": "Kentsel gelişim bundan böyle iklim korumasına daha çok yönelecek."
+   "currentBeispielTr": "Kentsel gelişim bundan sonra daha çok iklim korumasına yönelecek."
   }
  ]
 }

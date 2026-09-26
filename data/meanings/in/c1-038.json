@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Bezugsrahmen",
    "currentTr": "referans çerçevesi, bağlam çerçevesi",
-   "currentBeispiel": "Ohne gemeinsamen Bezugsrahmen reden die beiden Seiten aneinander vorbei.",
-   "currentBeispielTr": "Ortak bir referans çerçevesi olmadan iki taraf birbirini anlamıyor."
+   "currentBeispiel": "Ohne gemeinsamen Bezugsrahmen reden Ärzte und Patienten aneinander vorbei.",
+   "currentBeispielTr": "Ortak bir referans çerçevesi olmadan doktorlarla hastalar birbirini anlamıyor."
   },
   {
    "id": 7104,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Sprecherabsichten",
    "currentTr": "konuşurun niyeti",
-   "currentBeispiel": "Der Satz ist nur verständlich, wenn man die Sprecherabsicht mitdenkt.",
-   "currentBeispielTr": "Cümle ancak konuşurun niyeti hesaba katılırsa anlaşılır."
+   "currentBeispiel": "Der Richter fragte nach der Sprecherabsicht hinter der Bemerkung.",
+   "currentBeispielTr": "Hâkim, sözün ardındaki konuşanın niyetini sordu."
   },
   {
    "id": 7105,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "hat entsprochen",
    "currentTr": "karşılık gelmek, uygun düşmek",
-   "currentBeispiel": "Kein türkisches Wort entspricht diesem Begriff vollständig.",
-   "currentBeispielTr": "Hiçbir Türkçe kelime bu kavrama tam olarak karşılık gelmiyor."
+   "currentBeispiel": "Diese Summe entspricht ungefähr einem Monatsgehalt.",
+   "currentBeispielTr": "Bu tutar aşağı yukarı bir aylık maaşa karşılık geliyor."
   },
   {
    "id": 7106,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "ist abgewichen",
    "currentTr": "sapmak, ayrılmak",
-   "currentBeispiel": "Die Fassung weicht an mehreren Stellen deutlich vom Original ab.",
-   "currentBeispielTr": "Bu sürüm birkaç yerde özgün metinden belirgin biçimde ayrılıyor.",
+   "currentBeispiel": "Der Pilot weicht wegen des Gewitters vom Kurs ab.",
+   "currentBeispielTr": "Pilot fırtına yüzünden rotadan sapıyor.",
    "overlapping": [
     "ausweichen (B2)"
    ]
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "hat verkürzt",
    "currentTr": "kısaltmak, indirgemek",
-   "currentBeispiel": "Die Schlagzeile verkürzt das Argument bis zur Unkenntlichkeit.",
-   "currentBeispielTr": "Manşet, savı tanınmayacak kadar indirgiyor."
+   "currentBeispiel": "Die neue Bahnstrecke verkürzt die Fahrt um zwanzig Minuten.",
+   "currentBeispielTr": "Yeni demiryolu hattı yolculuğu yirmi dakika kısaltıyor."
   },
   {
    "id": 7108,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "hat gleichgesetzt",
    "currentTr": "bir tutmak, aynı saymak",
-   "currentBeispiel": "Man darf Verstehen nicht einfach mit Zustimmung gleichsetzen.",
-   "currentBeispielTr": "Anlamayı öylece onaylamayla bir tutmamak gerekir."
+   "currentBeispiel": "Viele setzen ein teures Auto mit Erfolg gleich.",
+   "currentBeispielTr": "Çoğu kişi pahalı bir arabayı başarıyla bir tutuyor."
   },
   {
    "id": 7109,
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "hat mitgeschwungen",
    "currentTr": "arka planda hissedilmek, birlikte çağrışmak",
-   "currentBeispiel": "In dem harmlosen Wort schwingt hier ein leiser Vorwurf mit.",
-   "currentBeispielTr": "Bu masum kelimede hafif bir sitem de hissediliyor."
+   "currentBeispiel": "In ihrem Lob schwingt ein leiser Spott mit.",
+   "currentBeispielTr": "Övgüsünde hafif bir alay da seziliyor."
   },
   {
    "id": 7110,
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "hat versinnbildlicht",
    "currentTr": "simgelemek, temsil etmek",
-   "currentBeispiel": "Das Bild vom Netz versinnbildlicht die Verflechtung der Bedeutungen.",
-   "currentBeispielTr": "Ağ imgesi, anlamların iç içe geçişini simgeliyor."
+   "currentBeispiel": "Der leere Stuhl versinnbildlicht den verschwundenen Journalisten.",
+   "currentBeispielTr": "Boş sandalye kaybolan gazeteciyi simgeliyor."
   },
   {
    "id": 7111,
@@ -92,8 +92,8 @@
    "niveau": "C1",
    "formen": "hat besagt",
    "currentTr": "anlamına gelmek, demek olmak",
-   "currentBeispiel": "Die Regel besagt lediglich, dass der Kontext den Vorrang hat.",
-   "currentBeispielTr": "Kural yalnızca bağlamın öncelikli olduğu anlamına geliyor.",
+   "currentBeispiel": "Das Schild besagt, dass hier nicht geparkt werden darf.",
+   "currentBeispielTr": "Tabela burada park edilemeyeceğini belirtiyor.",
    "overlapping": [
     "bedeuten (A1)"
    ]
@@ -105,8 +105,8 @@
    "niveau": "C1",
    "formen": "hat verwässert",
    "currentTr": "sulandırmak, içeriğini boşaltmak",
-   "currentBeispiel": "Der inflationäre Gebrauch hat den Begriff völlig verwässert.",
-   "currentBeispielTr": "Aşırı kullanım bu kavramı tamamen sulandırdı."
+   "currentBeispiel": "Die Lobby hat das Gesetz im Ausschuss völlig verwässert.",
+   "currentBeispielTr": "Lobi, yasayı komisyonda tamamen sulandırdı."
   },
   {
    "id": 7113,
@@ -115,8 +115,8 @@
    "niveau": "C1",
    "formen": "hat entstellt",
    "currentTr": "çarpıtmak, tahrif etmek",
-   "currentBeispiel": "Ein einziges weggelassenes Wort kann den Sinn völlig entstellen.",
-   "currentBeispielTr": "Atlanan tek bir kelime anlamı tümüyle çarpıtabilir.",
+   "currentBeispiel": "Die Zeitung hat sein Zitat völlig entstellt.",
+   "currentBeispielTr": "Gazete onun sözünü tamamen çarpıttı.",
    "overlapping": [
     "verzerren (C1)"
    ]
@@ -128,8 +128,8 @@
    "niveau": "C1",
    "formen": "hat benannt",
    "currentTr": "adlandırmak, açıkça belirtmek",
-   "currentBeispiel": "Erst wenn wir das Phänomen benennen, können wir darüber streiten.",
-   "currentBeispielTr": "Olguyu ancak adlandırdığımızda üzerinde tartışabiliriz.",
+   "currentBeispiel": "Die Forscher benennen die neue Art nach ihrem Entdecker.",
+   "currentBeispielTr": "Araştırmacılar yeni türü onu keşfedenin adıyla adlandırıyor.",
    "overlapping": [
     "nennen (A2)"
    ]
@@ -142,7 +142,7 @@
    "formen": "hat aufgefasst",
    "currentTr": "algılamak, yorumlamak",
    "currentBeispiel": "Sie hat die Bemerkung als versteckte Kritik aufgefasst.",
-   "currentBeispielTr": "Bu sözü örtük bir eleştiri olarak algıladı.",
+   "currentBeispielTr": "Bu sözü örtük bir eleştiri olarak yorumladı.",
    "overlapping": [
     "wahrnehmen (B2)",
     "rezipieren (C1)"
@@ -156,7 +156,7 @@
    "formen": "",
    "currentTr": "açık, açıkça belirtilmiş",
    "currentBeispiel": "Der Vertrag nennt diese Pflicht explizit im dritten Absatz.",
-   "currentBeispielTr": "Sözleşme bu yükümlülüğü üçüncü paragrafta açıkça anıyor.",
+   "currentBeispielTr": "Sözleşme bu yükümlülüğü üçüncü paragrafta açıkça belirtiyor.",
    "overlapping": [
     "offen (A1)",
     "geöffnet (A1)",
@@ -182,7 +182,7 @@
    "formen": "",
    "currentTr": "deyimsel, dile özgü",
    "currentBeispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch.",
-   "currentBeispielTr": "Çeviri doğru ama dilin doğal kullanımına uymuyor."
+   "currentBeispielTr": "Çeviri doğru ama kulağa deyimsel gelmiyor."
   },
   {
    "id": 7119,
@@ -191,8 +191,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bağlama bağlı",
-   "currentBeispiel": "Die Bedeutung solcher Partikeln ist stark kontextabhängig.",
-   "currentBeispielTr": "Bu tür ilgeçlerin anlamı büyük ölçüde bağlama bağlıdır."
+   "currentBeispiel": "Ob der Witz ankommt, ist stark kontextabhängig.",
+   "currentBeispielTr": "Şakanın tutup tutmaması büyük ölçüde bağlama bağlı."
   },
   {
    "id": 7120,
@@ -201,8 +201,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "aşağılayıcı, olumsuz anlam yüklü",
-   "currentBeispiel": "In diesem Zusammenhang wird das Wort eindeutig abwertend gebraucht.",
-   "currentBeispielTr": "Bu bağlamda kelime açıkça aşağılayıcı biçimde kullanılıyor.",
+   "currentBeispiel": "Er sprach abwertend über die neuen Nachbarn.",
+   "currentBeispielTr": "Yeni komşulardan aşağılayıcı bir tonda söz etti.",
    "overlapping": [
     "abschätzig (C1)"
    ]
@@ -214,8 +214,8 @@
    "niveau": "C1",
    "formen": "Schichten",
    "currentTr": "toplumsal katman, sınıf",
-   "currentBeispiel": "Kinder aus bildungsfernen Schichten erreichen seltener das Gymnasium.",
-   "currentBeispielTr": "Eğitimden uzak katmanların çocukları liseye daha seyrek ulaşıyor."
+   "currentBeispiel": "Kinder aus ärmeren Schichten schaffen seltener das Abitur.",
+   "currentBeispielTr": "Yoksul katmanların çocukları liseyi daha seyrek bitiriyor."
   },
   {
    "id": 7122,
@@ -224,8 +224,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "diaspora",
-   "currentBeispiel": "Die Diaspora hält den Kontakt zur Heimat über soziale Netzwerke aufrecht.",
-   "currentBeispielTr": "Diaspora anavatanla bağını sosyal ağlar üzerinden sürdürüyor."
+   "currentBeispiel": "Die armenische Diaspora sammelt Geld für den Wiederaufbau.",
+   "currentBeispielTr": "Ermeni diasporası yeniden inşa için para topluyor."
   },
   {
    "id": 7123,
@@ -234,8 +234,8 @@
    "niveau": "C1",
    "formen": "Aufstiege",
    "currentTr": "yükselme, sınıf atlama",
-   "currentBeispiel": "Der soziale Aufstieg gelingt in Deutschland seltener als früher.",
-   "currentBeispielTr": "Toplumsal yükselme Almanya'da eskisine göre daha seyrek gerçekleşiyor."
+   "currentBeispiel": "Sein Aufstieg vom Praktikanten zum Abteilungsleiter dauerte drei Jahre.",
+   "currentBeispielTr": "Stajyerlikten bölüm müdürlüğüne yükselmesi üç yıl sürdü."
   },
   {
    "id": 7124,
@@ -244,8 +244,8 @@
    "niveau": "C1",
    "formen": "Leitkulturen",
    "currentTr": "başat kültür, referans kültür",
-   "currentBeispiel": "Der Begriff Leitkultur wird in der Debatte höchst unterschiedlich verwendet.",
-   "currentBeispielTr": "Başat kültür kavramı tartışmada son derece farklı biçimlerde kullanılıyor."
+   "currentBeispiel": "Im Wahlkampf sprach die Partei ständig von deutscher Leitkultur.",
+   "currentBeispielTr": "Parti seçim kampanyasında sürekli Alman başat kültüründen söz etti."
   },
   {
    "id": 7125,
@@ -254,8 +254,8 @@
    "niveau": "C1",
    "formen": "Benachteiligungen",
    "currentTr": "dezavantaj, mağduriyet",
-   "currentBeispiel": "Strukturelle Benachteiligung lässt sich statistisch inzwischen klar belegen.",
-   "currentBeispielTr": "Yapısal dezavantaj artık istatistiksel olarak açıkça kanıtlanabiliyor.",
+   "currentBeispiel": "Frauen klagen in dieser Branche über systematische Benachteiligung.",
+   "currentBeispielTr": "Kadınlar bu sektörde sistematik mağduriyetten yakınıyor.",
    "overlapping": [
     "der Nachteil (B1)"
    ]
@@ -267,8 +267,8 @@
    "niveau": "C1",
    "formen": "Binnenmigrationen",
    "currentTr": "iç göç",
-   "currentBeispiel": "Die Binnenmigration vom Osten in den Westen hat sich deutlich abgeschwächt.",
-   "currentBeispielTr": "Doğudan batıya iç göç belirgin biçimde zayıfladı.",
+   "currentBeispiel": "Die Binnenmigration in die Großstädte hält seit Jahren an.",
+   "currentBeispielTr": "Büyükşehirlere iç göç yıllardır sürüyor.",
    "overlapping": [
     "die Binnenwanderung (C1)"
    ]
@@ -280,8 +280,8 @@
    "niveau": "C1",
    "formen": "Fremdenfeindlichkeiten",
    "currentTr": "yabancı düşmanlığı",
-   "currentBeispiel": "Offene Fremdenfeindlichkeit äußert sich häufig erst in Krisenzeiten.",
-   "currentBeispielTr": "Açık yabancı düşmanlığı çoğu kez ancak kriz dönemlerinde dışa vurur."
+   "currentBeispiel": "Nach dem Anschlag nahm die Fremdenfeindlichkeit im Ort zu.",
+   "currentBeispielTr": "Saldırıdan sonra kasabada yabancı düşmanlığı arttı."
   },
   {
    "id": 7128,
@@ -290,8 +290,8 @@
    "niveau": "C1",
    "formen": "Rassismen",
    "currentTr": "ırkçılık",
-   "currentBeispiel": "Rassismus zeigt sich oft in beiläufigen Bemerkungen im Alltag.",
-   "currentBeispielTr": "Irkçılık çoğu zaman gündelik hayattaki laf arasındaki söylemlerde belirir."
+   "currentBeispiel": "Nach dem Spiel sprach der Torwart offen über Rassismus.",
+   "currentBeispielTr": "Maçtan sonra kaleci ırkçılık hakkında açıkça konuştu."
   },
   {
    "id": 7129,
@@ -300,8 +300,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çoğulculuk",
-   "currentBeispiel": "Weltanschaulicher Pluralismus gilt als Kennzeichen moderner Gesellschaften.",
-   "currentBeispielTr": "Dünya görüşü çoğulculuğu modern toplumların bir işareti sayılır."
+   "currentBeispiel": "Die Verfassung schützt den religiösen Pluralismus ausdrücklich.",
+   "currentBeispielTr": "Anayasa dinsel çoğulculuğu açıkça koruyor."
   },
   {
    "id": 7130,
@@ -310,8 +310,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "değerlerin dönüşümü",
-   "currentBeispiel": "Der Wertewandel zeigt sich besonders deutlich im Verhältnis zur Arbeit.",
-   "currentBeispielTr": "Değerlerin dönüşümü en açık biçimde işe bakışta görülüyor."
+   "currentBeispiel": "Der Wertewandel zeigt sich deutlich im Verhältnis zur Arbeit.",
+   "currentBeispielTr": "Değerlerin dönüşümü işe bakışta açıkça görülüyor."
   },
   {
    "id": 7131,
@@ -320,8 +320,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "prekarya, güvencesiz çalışanlar kesimi",
-   "currentBeispiel": "Das neue Prekariat besteht längst nicht mehr nur aus Ungelernten.",
-   "currentBeispielTr": "Yeni güvencesizler kesimi artık yalnızca vasıfsızlardan oluşmuyor."
+   "currentBeispiel": "Viele Lieferfahrer gehören längst zum neuen Prekariat.",
+   "currentBeispielTr": "Pek çok kurye çoktan yeni prekaryanın bir parçası."
   },
   {
    "id": 7132,
@@ -330,8 +330,8 @@
    "niveau": "C1",
    "formen": "Armutsrisiken",
    "currentTr": "yoksulluk riski",
-   "currentBeispiel": "Alleinerziehende tragen ein weit überdurchschnittliches Armutsrisiko.",
-   "currentBeispielTr": "Tek başına çocuk büyütenler ortalamanın çok üstünde bir yoksulluk riski taşıyor."
+   "currentBeispiel": "Alleinerziehende tragen ein deutlich höheres Armutsrisiko.",
+   "currentBeispielTr": "Tek başına çocuk büyütenler belirgin biçimde daha yüksek bir yoksulluk riski taşıyor."
   },
   {
    "id": 7133,
@@ -340,8 +340,8 @@
    "niveau": "C1",
    "formen": "Durchlässigkeiten",
    "currentTr": "geçirgenlik, geçişkenlik",
-   "currentBeispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als offiziell behauptet.",
-   "currentBeispielTr": "Eğitim sisteminin geçirgenliği resmen iddia edilenden daha düşük."
+   "currentBeispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als behauptet.",
+   "currentBeispielTr": "Eğitim sisteminin geçirgenliği iddia edilenden daha düşük."
   },
   {
    "id": 7134,
@@ -350,8 +350,8 @@
    "niveau": "C1",
    "formen": "Eliten",
    "currentTr": "seçkinler, elit",
-   "currentBeispiel": "Die politischen Eliten rekrutieren sich noch immer aus wenigen Familien.",
-   "currentBeispielTr": "Siyasi seçkinler hâlâ birkaç aileden devşiriliyor."
+   "currentBeispiel": "Die politische Elite kommt noch immer aus wenigen Familien.",
+   "currentBeispielTr": "Siyasi seçkinler hâlâ birkaç aileden geliyor."
   },
   {
    "id": 7135,
@@ -360,7 +360,7 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "burjuvazi, kentsoylu sınıf",
-   "currentBeispiel": "Das städtische Bürgertum verlor im vergangenen Jahrhundert an Einfluss.",
+   "currentBeispiel": "Das städtische Bürgertum verlor im letzten Jahrhundert an Einfluss.",
    "currentBeispielTr": "Kentli burjuvazi geçen yüzyılda etkisini yitirdi."
   },
   {
@@ -371,7 +371,7 @@
    "formen": "Klassengesellschaften",
    "currentTr": "sınıflı toplum",
    "currentBeispiel": "Manche Forscher sprechen von der Rückkehr der Klassengesellschaft.",
-   "currentBeispielTr": "Bazı araştırmacılar sınıflı toplumun geri dönüşünden söz ediyor."
+   "currentBeispielTr": "Bazı araştırmacılar sınıflı toplumun geri döndüğünü söylüyor."
   },
   {
    "id": 7137,
@@ -380,8 +380,8 @@
    "niveau": "C1",
    "formen": "Enklaven",
    "currentTr": "enklav, kapalı yerleşim adası",
-   "currentBeispiel": "Wohlhabende Enklaven schotten sich immer stärker vom Umland ab.",
-   "currentBeispielTr": "Varlıklı enklavlar çevrelerinden giderek daha çok kopuyor."
+   "currentBeispiel": "Hinter dem hohen Zaun liegt eine wohlhabende Enklave.",
+   "currentBeispielTr": "Yüksek çitin arkasında varlıklı bir enklav uzanıyor."
   },
   {
    "id": 7138,
@@ -390,8 +390,8 @@
    "niveau": "C1",
    "formen": "Klüfte",
    "currentTr": "uçurum, derin ayrım",
-   "currentBeispiel": "Zwischen Stadt und Land öffnet sich eine wachsende soziale Kluft.",
-   "currentBeispielTr": "Şehirle kır arasında büyüyen bir toplumsal uçurum açılıyor."
+   "currentBeispiel": "Zwischen Stadt und Land öffnet sich eine wachsende Kluft.",
+   "currentBeispielTr": "Şehirle kır arasında büyüyen bir uçurum açılıyor."
   },
   {
    "id": 7139,
@@ -400,8 +400,8 @@
    "niveau": "C1",
    "formen": "Polarisierungen",
    "currentTr": "kutuplaşma",
-   "currentBeispiel": "Die Polarisierung der Debatte erschwert jede sachliche Verständigung.",
-   "currentBeispielTr": "Tartışmanın kutuplaşması her türlü nesnel anlaşmayı zorlaştırıyor."
+   "currentBeispiel": "Die Polarisierung im Netz macht sachliche Gespräche fast unmöglich.",
+   "currentBeispielTr": "İnternetteki kutuplaşma nesnel konuşmayı neredeyse imkânsız kılıyor."
   },
   {
    "id": 7140,
@@ -411,7 +411,7 @@
    "formen": "Ressentiments",
    "currentTr": "gizli husumet, hınç",
    "currentBeispiel": "Wirtschaftliche Unsicherheit nährt Ressentiments gegenüber Neuankömmlingen.",
-   "currentBeispielTr": "Ekonomik güvensizlik yeni gelenlere karşı hıncı besliyor."
+   "currentBeispielTr": "Ekonomik güvensizlik yeni gelenlere karşı hınç besliyor."
   },
   {
    "id": 7141,
@@ -420,8 +420,8 @@
    "niveau": "C1",
    "formen": "hat ausgegrenzt",
    "currentTr": "dışlamak, ötekileştirmek",
-   "currentBeispiel": "Wer den Dialekt nicht beherrscht, wird schnell subtil ausgegrenzt.",
-   "currentBeispielTr": "Yerel ağzı bilmeyen kişi çabucak ince yollardan dışlanır.",
+   "currentBeispiel": "Die Klasse grenzt den neuen Schüler systematisch aus.",
+   "currentBeispielTr": "Sınıf yeni öğrenciyi sistemli biçimde dışlıyor.",
    "overlapping": [
     "ächten (C1)"
    ]
@@ -433,8 +433,8 @@
    "niveau": "C1",
    "formen": "hat eingegliedert",
    "currentTr": "bünyesine katmak, kaynaştırmak",
-   "currentBeispiel": "Der Betrieb hat die neuen Kollegen erstaunlich rasch eingegliedert.",
-   "currentBeispielTr": "İşletme yeni meslektaşları şaşırtıcı ölçüde çabuk bünyesine kattı."
+   "currentBeispiel": "Der Betrieb hat die neuen Kollegen schnell eingegliedert.",
+   "currentBeispielTr": "İşletme yeni çalışanları çabucak bünyesine kattı."
   },
   {
    "id": 7143,
@@ -443,8 +443,8 @@
    "niveau": "C1",
    "formen": "hat bevorzugt",
    "currentTr": "tercih etmek, kayırmak",
-   "currentBeispiel": "Personalabteilungen bevorzugen bei gleicher Qualifikation oft vertraute Namen.",
-   "currentBeispielTr": "İnsan kaynakları birimleri aynı nitelikte çoğu kez tanıdık isimleri kayırıyor.",
+   "currentBeispiel": "Viele Kunden bevorzugen inzwischen regionale Produkte.",
+   "currentBeispielTr": "Pek çok müşteri artık yöresel ürünleri tercih ediyor.",
    "overlapping": [
     "vorziehen (A2)"
    ]
@@ -456,8 +456,8 @@
    "niveau": "C1",
    "formen": "hat vererbt",
    "currentTr": "miras bırakmak, aktarmak",
-   "currentBeispiel": "Bildungschancen werden in Deutschland noch immer weitgehend vererbt.",
-   "currentBeispielTr": "Eğitim fırsatları Almanya'da hâlâ büyük ölçüde miras yoluyla aktarılıyor."
+   "currentBeispiel": "Meine Großmutter hat mir ihr altes Klavier vererbt.",
+   "currentBeispielTr": "Büyükannem bana eski piyanosunu miras bıraktı."
   },
   {
    "id": 7145,
@@ -476,8 +476,8 @@
    "niveau": "C1",
    "formen": "hat sich eingelebt",
    "currentTr": "alışmak, yeni yere uyum sağlamak",
-   "currentBeispiel": "Die Familie hat sich im neuen Viertel überraschend schnell eingelebt.",
-   "currentBeispielTr": "Aile yeni mahallesine şaşırtıcı derecede çabuk alıştı.",
+   "currentBeispiel": "Die Familie hat sich im neuen Viertel schnell eingelebt.",
+   "currentBeispielTr": "Aile yeni mahallesine çabucak alıştı.",
    "overlapping": [
     "gewöhnen (B1)",
     "sich gewöhnen an (B2)"
@@ -490,8 +490,8 @@
    "niveau": "C1",
    "formen": "hat sich niedergelassen",
    "currentTr": "yerleşmek, kalıcı olarak oturmak",
-   "currentBeispiel": "Viele Rückkehrer lassen sich bewusst in ihrer alten Heimatstadt nieder.",
-   "currentBeispielTr": "Pek çok geri dönen, bilinçli olarak eski memleket şehrine yerleşiyor.",
+   "currentBeispiel": "Die Ärztin hat sich in einem kleinen Dorf niedergelassen.",
+   "currentBeispielTr": "Kadın doktor küçük bir köye yerleşti.",
    "overlapping": [
     "sich einbürgern (C1)",
     "sich verfestigen (C1)"
@@ -504,8 +504,8 @@
    "niveau": "C1",
    "formen": "hat entwurzelt",
    "currentTr": "kökünden koparmak, yurdundan etmek",
-   "currentBeispiel": "Der Krieg hat eine ganze Generation entwurzelt und über Kontinente verstreut.",
-   "currentBeispielTr": "Savaş koca bir kuşağı kökünden kopardı ve kıtalara dağıttı."
+   "currentBeispiel": "Der Krieg hat eine ganze Generation entwurzelt.",
+   "currentBeispielTr": "Savaş koca bir kuşağı kökünden kopardı."
   },
   {
    "id": 7149,
@@ -514,8 +514,8 @@
    "niveau": "C1",
    "formen": "hat pauschalisiert",
    "currentTr": "toptan genelleme yapmak, toptancılık yapmak",
-   "currentBeispiel": "Wer so pauschalisiert, verkennt die Vielschichtigkeit des Phänomens.",
-   "currentBeispielTr": "Bu şekilde toptancılık yapan, olgunun çok katmanlılığını gözden kaçırır."
+   "currentBeispiel": "Der Kommentar pauschalisiert und beleidigt eine ganze Gruppe.",
+   "currentBeispielTr": "Yorum genelleme yapıyor ve koca bir grubu aşağılıyor."
   },
   {
    "id": 7150,
@@ -524,8 +524,8 @@
    "niveau": "C1",
    "formen": "hat erschwert",
    "currentTr": "zorlaştırmak, güçleştirmek",
-   "currentBeispiel": "Bürokratische Hürden erschweren den Zugang zum Arbeitsmarkt zusätzlich.",
-   "currentBeispielTr": "Bürokratik engeller iş piyasasına erişimi ayrıca zorlaştırıyor."
+   "currentBeispiel": "Der starke Schnee erschwert die Rettungsarbeiten erheblich.",
+   "currentBeispielTr": "Yoğun kar, kurtarma çalışmalarını hayli zorlaştırıyor."
   },
   {
    "id": 7151,
@@ -534,8 +534,8 @@
    "niveau": "C1",
    "formen": "ist zusammengewachsen",
    "currentTr": "kaynaşmak, birbiriyle bütünleşmek",
-   "currentBeispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten wirklich zusammengewachsen.",
-   "currentBeispielTr": "İki semt ancak onlarca yıl sonra gerçekten kaynaştı.",
+   "currentBeispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten zusammengewachsen.",
+   "currentBeispielTr": "İki semt ancak onlarca yıl sonra kaynaştı.",
    "overlapping": [
     "verschmelzen (C1)"
    ]
@@ -547,8 +547,8 @@
    "niveau": "C1",
    "formen": "ist erodiert",
    "currentTr": "aşınmak, yıpranmak",
-   "currentBeispiel": "Das Vertrauen in die Institutionen ist über Jahre langsam erodiert.",
-   "currentBeispielTr": "Kurumlara duyulan güven yıllar içinde yavaşça aşındı.",
+   "currentBeispiel": "Das Vertrauen in die Polizei ist langsam erodiert.",
+   "currentBeispielTr": "Polise duyulan güven yavaş yavaş aşındı.",
    "overlapping": [
     "sich abnutzen (B2)"
    ]

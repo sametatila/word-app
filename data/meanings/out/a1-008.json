@@ -27,9 +27,9 @@
     "id": 32,
     "tr": "kol",
     "en": "arm",
-    "beispiel": "Mein Freund hat sich den Arm gebrochen.",
-    "beispielTr": "Arkadaşım kolunu kırdı.",
-    "beispielEn": "My friend broke his arm."
+    "beispiel": "Das Baby schläft auf meinem Arm.",
+    "beispielTr": "Bebek kolumda uyuyor.",
+    "beispielEn": "The baby is sleeping in my arms."
   },
   {
     "id": 600,
@@ -51,25 +51,25 @@
     "id": 227,
     "tr": "umarım",
     "en": "hopefully",
-    "beispiel": "Hoffentlich kommt er mit.",
-    "beispielTr": "Umarım o da gelir.",
-    "beispielEn": "Hopefully he will come along."
+    "beispiel": "Hoffentlich finden wir noch einen Parkplatz.",
+    "beispielTr": "Umarım hâlâ bir park yeri buluruz.",
+    "beispielEn": "Hopefully we can still find a parking spot."
   },
   {
     "id": 440,
     "tr": "dans etmek",
     "en": "to dance",
-    "beispiel": "Leider kann er nicht gut tanzen.",
-    "beispielTr": "Maalesef iyi dans edemiyor.",
-    "beispielEn": "Unfortunately he cannot dance well."
+    "beispiel": "Meine Eltern tanzen jeden Donnerstag Salsa.",
+    "beispielTr": "Annemle babam her perşembe salsa yapıyor.",
+    "beispielEn": "My parents dance salsa every Thursday."
   },
   {
     "id": 517,
     "tr": "muhteşem",
     "en": "wonderful",
-    "beispiel": "Das Essen schmeckt wunderbar.",
-    "beispielTr": "Yemek harika olmuş.",
-    "beispielEn": "The food tastes wonderful."
+    "beispiel": "Der Sonnenuntergang am See war wunderbar.",
+    "beispielTr": "Göldeki gün batımı muhteşemdi.",
+    "beispielEn": "The sunset at the lake was wonderful."
   },
   {
     "id": 383,
@@ -107,9 +107,9 @@
     "id": 160,
     "tr": "fotoğraf",
     "en": "photo",
-    "beispiel": "Auf dem Foto bin ich mit meinem Hund.",
-    "beispielTr": "Fotoğrafta köpeğimle birlikteyim.",
-    "beispielEn": "In the photo I am with my dog."
+    "beispiel": "Kannst du ein Foto von uns machen?",
+    "beispielTr": "Bizim bir fotoğrafımızı çekebilir misin?",
+    "beispielEn": "Can you take a picture of us?"
   },
   {
     "id": 252,
@@ -123,9 +123,9 @@
     "id": 527,
     "tr": "tren",
     "en": "train",
-    "beispiel": "Ich fahre gern mit dem Zug.",
-    "beispielTr": "Trenle yolculuk etmeyi severim.",
-    "beispielEn": "I like traveling by train."
+    "beispiel": "Der Zug nach Hamburg ist heute sehr voll.",
+    "beispielTr": "Hamburg treni bugün çok kalabalık.",
+    "beispielEn": "The train to Hamburg is very crowded today."
   },
   {
     "id": 331,
@@ -139,25 +139,25 @@
     "id": 87,
     "tr": "mektup",
     "en": "letter",
-    "beispiel": "Sie bekommt immer viele Briefe.",
-    "beispielTr": "Ona hep çok mektup gelir.",
-    "beispielEn": "She always gets a lot of letters."
+    "beispiel": "Heute schreibt kaum noch jemand einen Brief.",
+    "beispielTr": "Bugün artık neredeyse kimse mektup yazmıyor.",
+    "beispielEn": "Hardly anyone writes a letter anymore these days."
   },
   {
     "id": 578,
     "tr": "tanınmış",
     "en": "well-known",
-    "beispiel": "Picasso ist sehr bekannt.",
-    "beispielTr": "Picasso çok tanınmış biri.",
-    "beispielEn": "Picasso is very well-known."
+    "beispiel": "Die Stadt ist für ihren Käse bekannt.",
+    "beispielTr": "Şehir peyniriyle tanınır.",
+    "beispielEn": "The town is well-known for its cheese."
   },
   {
     "id": 576,
     "tr": "örnek",
     "en": "example",
-    "beispiel": "Kannst du mir ein Beispiel sagen?",
-    "beispielTr": "Bana bir örnek verebilir misin?",
-    "beispielEn": "Can you give me an example?"
+    "beispiel": "Die Lehrerin schreibt ein Beispiel an die Tafel.",
+    "beispielTr": "Öğretmen tahtaya bir örnek yazıyor.",
+    "beispielEn": "The teacher writes an example on the board."
   },
   {
     "id": 841,
@@ -187,9 +187,9 @@
     "id": 191,
     "tr": "hediye",
     "en": "gift",
-    "beispiel": "Hier ist ein Geschenk für dich.",
-    "beispielTr": "Bu senin için bir hediye.",
-    "beispielEn": "Here is a gift for you."
+    "beispiel": "Das Geschenk für Mama verstecke ich im Schrank.",
+    "beispielTr": "Annemin hediyesini dolaba saklıyorum.",
+    "beispielEn": "I'm hiding Mom's gift in the closet."
   },
   {
     "id": 572,
@@ -203,17 +203,17 @@
     "id": 441,
     "tr": "çanta",
     "en": "bag",
-    "beispiel": "Die Tasche ist sehr schwer.",
-    "beispielTr": "Çanta çok ağır.",
-    "beispielEn": "The bag is very heavy."
+    "beispiel": "Wo ist meine rote Tasche?",
+    "beispielTr": "Kırmızı çantam nerede?",
+    "beispielEn": "Where's my red bag?"
   },
   {
     "id": 231,
     "tr": "açlık",
     "en": "hunger",
-    "beispiel": "Ich habe großen Hunger.",
-    "beispielTr": "Çok acıktım.",
-    "beispielEn": "I am very hungry."
+    "beispiel": "Nach der Schule haben die Kinder immer Hunger.",
+    "beispielTr": "Okuldan sonra çocuklar hep acıkıyor.",
+    "beispielEn": "The kids are always hungry after school."
   },
   {
     "id": 758,
@@ -251,9 +251,9 @@
     "id": 247,
     "tr": "genç",
     "en": "young",
-    "beispiel": "Meine Eltern sind noch jung.",
-    "beispielTr": "Annemle babam daha genç.",
-    "beispielEn": "My parents are still young."
+    "beispiel": "Der neue Lehrer ist noch sehr jung.",
+    "beispielTr": "Yeni öğretmen daha çok genç.",
+    "beispielEn": "The new teacher is still very young."
   },
   {
     "id": 47,
@@ -275,25 +275,25 @@
     "id": 178,
     "tr": "doğmuş",
     "en": "born",
-    "beispiel": "Ich bin in Zagreb geboren.",
-    "beispielTr": "Zagreb'de doğdum.",
-    "beispielEn": "I was born in Zagreb."
+    "beispiel": "Meine Tochter ist im Juli geboren.",
+    "beispielTr": "Kızım temmuzda doğdu.",
+    "beispielEn": "My daughter was born in July."
   },
   {
     "id": 179,
     "tr": "doğum günü",
     "en": "birthday",
-    "beispiel": "Heute ist mein Geburtstag.",
-    "beispielTr": "Bugün benim doğum günüm.",
-    "beispielEn": "Today is my birthday."
+    "beispiel": "Zu meinem Geburtstag kommen zwanzig Gäste.",
+    "beispielTr": "Doğum günüme yirmi misafir geliyor.",
+    "beispielEn": "Twenty guests are coming to my birthday."
   },
   {
     "id": 455,
     "tr": "üzgün",
     "en": "sad",
-    "beispiel": "Ich bin oft traurig.",
-    "beispielTr": "Sık sık üzgün oluyorum.",
-    "beispielEn": "I am often sad."
+    "beispiel": "Nach dem Abschied war das Kind lange traurig.",
+    "beispielTr": "Vedalaştıktan sonra çocuk uzun süre üzgündü.",
+    "beispielEn": "The child was sad for a long time after the goodbye."
   },
   {
     "id": 21,
@@ -339,17 +339,17 @@
     "id": 571,
     "tr": "banka",
     "en": "bank",
-    "beispiel": "Die Bank schließt heute um vier Uhr.",
-    "beispielTr": "Banka bugün saat dörtte kapanıyor.",
-    "beispielEn": "The bank closes at four o'clock today."
+    "beispiel": "Ich muss heute noch Geld von der Bank holen.",
+    "beispielTr": "Bugün bankadan para çekmem lazım.",
+    "beispielEn": "I still need to get money from the bank today."
   },
   {
     "id": 95,
     "tr": "bilgisayar",
     "en": "computer",
-    "beispiel": "Mein Computer ist schon alt.",
-    "beispielTr": "Bilgisayarım artık eski.",
-    "beispielEn": "My computer is quite old now."
+    "beispiel": "Am Computer schreibe ich meine Hausaufgaben.",
+    "beispielTr": "Ödevlerimi bilgisayarda yazıyorum.",
+    "beispielEn": "I write my homework on the computer."
   },
   {
     "id": 174,
@@ -371,9 +371,9 @@
     "id": 305,
     "tr": "istek",
     "en": "desire",
-    "beispiel": "Ich habe heute keine Lust.",
-    "beispielTr": "Bugün hiç canım istemiyor.",
-    "beispielEn": "I don't feel like it today."
+    "beispiel": "Heute habe ich Lust auf einen langen Spaziergang.",
+    "beispielTr": "Bugün canım uzun bir yürüyüş yapmak istiyor.",
+    "beispielEn": "Today I feel like taking a long walk."
   },
   {
     "id": 662,

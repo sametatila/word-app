@@ -9,8 +9,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "sağlam, sıkı, kesin",
-   "currentBeispiel": "1. Mein Kollege glaubt fest daran, dass er die neue Stelle bekommt. 2. Als wir nach Hause kamen, haben die Kinder schon ",
-   "currentBeispielTr": "1. İş arkadaşım yeni işi alacağına yürekten inanıyor. 2. Eve geldiğimizde çocuklar çoktan derin uykudaydı.",
+   "currentBeispiel": "Der Knoten ist so fest, dass ich ihn nicht öffnen kann.",
+   "currentBeispielTr": "Düğüm o kadar sıkı ki açamıyorum.",
    "overlapping": [
     "tragfähig (C1)",
     "stichhaltig (C1)",
@@ -25,8 +25,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "hemen hemen hiç, neredeyse hiç, zar zor",
-   "currentBeispiel": "1. Ich kann Sie kaum verstehen. Bitte sprechen Sie lauter. 2. Es hat letzte Woche kaum geregnet. 3. Die Fahrt hat nicht ",
-   "currentBeispielTr": "1. Sizi zar zor duyuyorum; lütfen daha yüksek sesle konuşun. 2. Geçen hafta neredeyse hiç yağmur yağmadı."
+   "currentBeispiel": "Der Koffer ist so schwer, ich kann ihn kaum tragen.",
+   "currentBeispielTr": "Bavul o kadar ağır ki zar zor taşıyorum."
   },
   {
    "id": 2557,
@@ -35,8 +35,8 @@
    "niveau": "B1",
    "formen": "-n",
    "currentTr": "konuşma, nutuk",
-   "currentBeispiel": "Der Präsident hat eine Rede gehalten.",
-   "currentBeispielTr": "Cumhurbaşkanı bir konuşma yaptı.",
+   "currentBeispiel": "Bei der Hochzeit hielt der Bruder der Braut eine lustige Rede.",
+   "currentBeispielTr": "Düğünde gelinin abisi komik bir konuşma yaptı.",
    "overlapping": [
     "der Vortrag (B1)",
     "die Ansprache (B2)"
@@ -49,8 +49,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "aksine, tersine",
-   "currentBeispiel": "Unser Besuch kommt nicht heute, sondern morgen.",
-   "currentBeispielTr": "Misafirlerimiz bugün değil, yarın geliyor."
+   "currentBeispiel": "Wir fahren nicht heute, sondern morgen.",
+   "currentBeispielTr": "Bugün değil, yarın yola çıkıyoruz."
   },
   {
    "id": 2583,
@@ -59,8 +59,8 @@
    "niveau": "B1",
    "formen": "rettet, rettete, hat gerettet",
    "currentTr": "kurtarmak",
-   "currentBeispiel": "Der Arzt konnte das Kind noch retten.",
-   "currentBeispielTr": "Doktor çocuğu kurtarmayı başardı.",
+   "currentBeispiel": "Die Feuerwehr konnte alle Bewohner rechtzeitig retten.",
+   "currentBeispielTr": "İtfaiye bütün sakinleri zamanında kurtarabildi.",
    "overlapping": [
     "bergen (B2)"
    ]
@@ -72,8 +72,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "buraya",
-   "currentBeispiel": "Ich komme oft hierher. In diesem Café gibt es guten Kuchen.",
-   "currentBeispielTr": "Buraya sık gelirim; bu kafenin keki güzeldir.",
+   "currentBeispiel": "Komm bitte mal kurz hierher!",
+   "currentBeispielTr": "Lütfen bir saniye buraya gel!",
    "overlapping": [
     "her (A2)"
    ]
@@ -85,8 +85,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "çoktan, şimdiden, bile",
-   "currentBeispiel": "Bitte melde dich bei Frau Kaiser. Sie hat bereits dreimal angerufen.",
-   "currentBeispielTr": "Lütfen Kaiser Hanım'ı ara; şimdiden üç kez aradı.",
+   "currentBeispiel": "Als wir ankamen, war der Film bereits zu Ende.",
+   "currentBeispielTr": "Vardığımızda film çoktan bitmişti.",
    "overlapping": [
     "schon (A1)",
     "längst (B1)"
@@ -99,8 +99,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "yine de, buna rağmen",
-   "currentBeispiel": "Es war ziemlich kalt. Trotzdem bin ich schwimmen gegangen.",
-   "currentBeispielTr": "Hava epey soğuktu. Yine de yüzmeye gittim.",
+   "currentBeispiel": "Es regnete, trotzdem gingen wir spazieren.",
+   "currentBeispielTr": "Yağmur yağıyordu, yine de yürüyüşe çıktık.",
    "overlapping": [
     "gleichwohl (C1)",
     "nichtsdestotrotz (C1)",
@@ -115,8 +115,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "eylem, davranış",
-   "currentBeispiel": "Dieser Mensch hat mit vielen guten Taten geholfen.",
-   "currentBeispielTr": "Bu insan birçok iyilik yaparak yardım etti."
+   "currentBeispiel": "Für diese Tat wurde er hart bestraft.",
+   "currentBeispielTr": "Bu eylem yüzünden ağır bir ceza aldı."
   },
   {
    "id": 2209,
@@ -125,8 +125,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "kral",
-   "currentBeispiel": "Der spanische König ist in Deutschland zu Besuch.",
-   "currentBeispielTr": "İspanya Kralı, Almanya'yı ziyaret ediyor."
+   "currentBeispiel": "Der König hat das neue Gesetz unterschrieben.",
+   "currentBeispielTr": "Kral yeni yasayı imzaladı."
   },
   {
    "id": 1641,
@@ -135,8 +135,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "ondan sonra",
-   "currentBeispiel": "Zuerst gehen wir einkaufen, danach grillen wir auf unserem Balkon.",
-   "currentBeispielTr": "Önce alışverişe gidiyoruz, ondan sonra balkonumuzda mangal yapacağız."
+   "currentBeispiel": "Zuerst gehen wir einkaufen, danach kochen wir zusammen.",
+   "currentBeispielTr": "Önce alışverişe gideceğiz, ondan sonra birlikte yemek yapacağız."
   },
   {
    "id": 1654,
@@ -145,8 +145,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "bu yüzden",
-   "currentBeispiel": "Ich habe falsch geparkt. Deswegen habe ich einen Strafzettel bekommen.",
-   "currentBeispielTr": "Yanlış park etmişim; bu yüzden ceza makbuzu aldım.",
+   "currentBeispiel": "Ich hatte keine Zeit, deswegen habe ich nicht angerufen.",
+   "currentBeispielTr": "Zamanım yoktu, bu yüzden aramadım.",
    "overlapping": [
     "deshalb (A1)",
     "daher (B1)",
@@ -160,8 +160,8 @@
    "niveau": "B1",
    "formen": "erinnert, erinnerte, hat erinnert",
    "currentTr": "hatırlatmak, hatırlamak",
-   "currentBeispiel": "1. Bitte, erinnern Sie mich noch einmal an den Termin 2. Ich erinnere mich noch genau an Francescos Vater.",
-   "currentBeispielTr": "Lütfen randevuyu bana bir kez daha hatırlatın."
+   "currentBeispiel": "Das Lied erinnert mich an unseren Urlaub in Italien.",
+   "currentBeispielTr": "Bu şarkı bana İtalya tatilimizi hatırlatıyor."
   },
   {
    "id": 3046,
@@ -170,8 +170,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "tamamen, tamamıyla",
-   "currentBeispiel": "Das halte ich für völlig ausgeschlossen.",
-   "currentBeispielTr": "Bunu tamamen imkânsız görüyorum.",
+   "currentBeispiel": "Nach dem Marathon war ich völlig erschöpft.",
+   "currentBeispielTr": "Maratondan sonra tamamen bitkindim.",
    "overlapping": [
     "total (A2)",
     "komplett (B1)",
@@ -185,8 +185,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "hava",
-   "currentBeispiel": "1. Oh, hier ist aber schlechte Luft. 2. Die Seeluft tut mir gut. 3. Bitte mach das Fenster auf. Ich brauche frische Luft",
-   "currentBeispielTr": "1. Of, buranın havası çok kötü. 2. Deniz havası bana iyi geliyor. 3. Lütfen pencereyi aç, temiz havaya ihtiyacım var.",
+   "currentBeispiel": "Mach bitte das Fenster auf, ich brauche frische Luft.",
+   "currentBeispielTr": "Lütfen pencereyi aç, temiz havaya ihtiyacım var.",
    "overlapping": [
     "das Wetter (A1)",
     "die Stimmung (B1)"
@@ -199,8 +199,8 @@
    "niveau": "B1",
    "formen": "zieht, zog, hat/ist gezogen",
    "currentTr": "çekmek; taşınmak",
-   "currentBeispiel": "1. Sie müssen ziehen, nicht drücken. 2. Wir sind vor drei Wochen nach Hamburg gezogen. 3. Machen Sie bitte die Tür zu, e",
-   "currentBeispielTr": "1. Çekmeniz gerekiyor, itmeniz değil. 2. Üç hafta önce Hamburg'a taşındık. 3. Lütfen kapıyı kapatın.",
+   "currentBeispiel": "Sie müssen an der Tür ziehen, nicht drücken.",
+   "currentBeispielTr": "Kapıyı itmeniz değil, çekmeniz gerekiyor.",
    "overlapping": [
     "abschleppen (A2)"
    ]
@@ -212,8 +212,8 @@
    "niveau": "B1",
    "formen": "verschwindet, verschwand, ist verschwunden",
    "currentTr": "kaybolmak, ortadan kaybolmak",
-   "currentBeispiel": "Mein Ausweis ist verschwunden. Hast du ihn vielleicht gesehen?",
-   "currentBeispielTr": "Kimliğim kayboldu. Görmüş olabilir misin?"
+   "currentBeispiel": "In dieser Wohnung verschwinden meine Schlüssel ständig.",
+   "currentBeispielTr": "Bu evde anahtarlarım sürekli kayboluyor."
   },
   {
    "id": 3187,
@@ -222,8 +222,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "gerçi, her ne kadar; (und zwar) hem de, şöyle ki",
-   "currentBeispiel": "1. Diese Schuhe sind zwar teuer, aber gut. 2. Ich kriege jetzt doch eine Woche Urlaub, und zwar nächsten Monat.",
-   "currentBeispielTr": "1. Bu ayakkabılar gerçi pahalı ama kaliteli. 2. Sonunda bir hafta izin alabiliyorum, hem de gelecek ay.",
+   "currentBeispiel": "Ich habe zwar wenig Zeit, aber ich helfe dir gern.",
+   "currentBeispielTr": "Gerçi pek vaktim yok ama sana seve seve yardım ederim.",
    "overlapping": [
     "freilich (C1)"
    ]
@@ -235,8 +235,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "değerinde",
-   "currentBeispiel": "Das Auto ist vielleicht noch 1000 Euro wert.",
-   "currentBeispielTr": "Araba belki hâlâ 1000 euro eder."
+   "currentBeispiel": "Das alte Auto ist vielleicht noch tausend Euro wert.",
+   "currentBeispielTr": "Eski araba belki hâlâ bin avro eder."
   },
   {
    "id": 3096,
@@ -245,8 +245,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "değer",
-   "currentBeispiel": "1. Das Haus hat einen Wert von ca. 1 Mio. Euro. 2. Es hat ja doch keinen Wert. 3. Auf Ihr Urteil lege ich großen Wert.",
-   "currentBeispielTr": "1. Evin değeri yaklaşık 1 milyon euro. 2. Zaten bir faydası yok. 3. Sizin görüşünüze çok değer veriyorum."
+   "currentBeispiel": "Der Wert dieser Wohnung ist stark gestiegen.",
+   "currentBeispielTr": "Bu dairenin değeri epey arttı."
   },
   {
    "id": 2447,
@@ -255,8 +255,8 @@
    "niveau": "B1",
    "formen": "-",
    "currentTr": "amca, dayı",
-   "currentBeispiel": "Nächste Woche fahre ich zu meinem Onkel nach Berlin.",
-   "currentBeispielTr": "Gelecek hafta Berlin'e amcamın yanına gidiyorum."
+   "currentBeispiel": "Nächste Woche besuche ich meinen Onkel in Berlin.",
+   "currentBeispielTr": "Gelecek hafta Berlin'de amcamı ziyaret edeceğim."
   },
   {
    "id": 3072,
@@ -265,8 +265,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "seçim",
-   "currentBeispiel": "1. Sie haben die Wahl: mit Vollpension oder Halbpension? 2. Die nächste Wahl ist im Herbst.",
-   "currentBeispielTr": "1. Seçim sizin: tam pansiyon mu, yarım pansiyon mu? 2. Bir sonraki seçim sonbaharda.",
+   "currentBeispiel": "Sie haben die Wahl zwischen zwei Angeboten.",
+   "currentBeispielTr": "İki teklif arasında seçim yapabilirsiniz.",
    "overlapping": [
     "die Auswahl (B1)"
    ]
@@ -278,8 +278,8 @@
    "niveau": "B1",
    "formen": "vertraut, vertraute, hat vertraut",
    "currentTr": "güvenmek",
-   "currentBeispiel": "Ich kenne dich gut. Ich vertraue dir.",
-   "currentBeispielTr": "Seni iyi tanıyorum; sana güveniyorum."
+   "currentBeispiel": "Du kannst mir vertrauen, ich sage nichts weiter.",
+   "currentBeispielTr": "Bana güvenebilirsin, kimseye bir şey söylemem."
   },
   {
    "id": 3023,
@@ -288,8 +288,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "güven",
-   "currentBeispiel": "Ich habe Vertrauen zu Ihnen.",
-   "currentBeispielTr": "Size güvenim tam."
+   "currentBeispiel": "Nach dieser Lüge habe ich das Vertrauen verloren.",
+   "currentBeispielTr": "Bu yalandan sonra güvenimi kaybettim."
   },
   {
    "id": 2389,
@@ -298,8 +298,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "-dikten sonra",
-   "currentBeispiel": "Nachdem wir gegessen hatten, sind wir spazieren gegangen.",
-   "currentBeispielTr": "Yemek yedikten sonra yürüyüşe çıktık."
+   "currentBeispiel": "Nachdem der Film zu Ende war, gingen alle nach Hause.",
+   "currentBeispielTr": "Film bittikten sonra herkes eve gitti."
   },
   {
    "id": 1962,
@@ -308,8 +308,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "duygu, his",
-   "currentBeispiel": "Ich glaube, ich schaffe die Prüfung. Ich habe ein gutes Gefühl.",
-   "currentBeispielTr": "Sınavı geçeceğime inanıyorum; içimde iyi bir his var.",
+   "currentBeispiel": "Sie konnte ihre Gefühle nicht mehr verstecken.",
+   "currentBeispielTr": "Duygularını artık saklayamıyordu.",
    "overlapping": [
     "die Emotion (C1)"
    ]
@@ -321,8 +321,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "ilgilenen, ilgi duyan",
-   "currentBeispiel": "Mein Nachbar zieht nächsten Monat aus. Sind Sie noch an der Wohnung interessiert?",
-   "currentBeispielTr": "Komşum gelecek ay taşınıyor. Daireyle hâlâ ilgileniyor musunuz?"
+   "currentBeispiel": "Mein Sohn ist sehr an Dinosauriern interessiert.",
+   "currentBeispielTr": "Oğlum dinozorlarla çok ilgileniyor."
   },
   {
    "id": 1976,
@@ -331,8 +331,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "aynen, tıpkı",
-   "currentBeispiel": "Katarina sieht genauso aus wie ihre Schwester.",
-   "currentBeispielTr": "Katarina tıpkı kız kardeşi gibi görünüyor."
+   "currentBeispiel": "Mein Bruder isst genauso gern Pizza wie ich.",
+   "currentBeispielTr": "Kardeşim de tıpkı benim gibi pizzayı çok sever."
   },
   {
    "id": 3163,
@@ -341,8 +341,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "gelecek",
-   "currentBeispiel": "1. Du musst mehr für die Schule lernen. Denk an die Zukunft. 2. In Zukunft werde ich vorsichtiger sein.",
-   "currentBeispielTr": "1. Okul için daha çok çalışmalısın. Geleceğini düşün. 2. Gelecekte daha dikkatli olacağım.",
+   "currentBeispiel": "Niemand weiß, was die Zukunft bringt.",
+   "currentBeispielTr": "Geleceğin ne getireceğini kimse bilmiyor.",
    "overlapping": [
     "nächste (A1)"
    ]
@@ -354,8 +354,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "toprak, dünya",
-   "currentBeispiel": "1. Die Pflanzen brauchen neue Erde. 2. Mein Sohn hat das Glas auf die Erde fallen lassen.",
-   "currentBeispielTr": "Bitkilerin yeni toprağa ihtiyacı var."
+   "currentBeispiel": "Die Erde dreht sich um die Sonne.",
+   "currentBeispielTr": "Dünya Güneş'in etrafında döner."
   },
   {
    "id": 1700,
@@ -364,8 +364,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "daha erken; daha çok, ziyade",
-   "currentBeispiel": "1. Ich stehe meist eher auf als mein Mann. 2. Michael sieht gerne Serien, ich mag eher Krimis.",
-   "currentBeispielTr": "Genellikle eşimden daha erken kalkarım."
+   "currentBeispiel": "Ich trinke eher Tee als Kaffee.",
+   "currentBeispielTr": "Ben kahveden çok çay içerim."
   },
   {
    "id": 1961,
@@ -374,8 +374,8 @@
    "niveau": "B1",
    "formen": "-se",
    "currentTr": "hapishane",
-   "currentBeispiel": "Er wurde zu fünf Jahren Gefängnis verurteilt.",
-   "currentBeispielTr": "Beş yıl hapse mahkûm edildi."
+   "currentBeispiel": "Der Dieb musste für zwei Jahre ins Gefängnis.",
+   "currentBeispielTr": "Hırsız iki yıllığına hapse girmek zorunda kaldı."
   },
   {
    "id": 2451,
@@ -384,8 +384,8 @@
    "niveau": "B1",
    "formen": "-",
    "currentTr": "kurban",
-   "currentBeispiel": "Bei der Schiffskatastrophe gab es viele Opfer.",
-   "currentBeispielTr": "Gemi felaketinde çok sayıda kurban vardı."
+   "currentBeispiel": "Bei dem Unfall gab es zum Glück keine Opfer.",
+   "currentBeispielTr": "Neyse ki kazada ölen ya da yaralanan olmadı."
   },
   {
    "id": 2649,
@@ -394,8 +394,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "yazı, mektup",
-   "currentBeispiel": "- Haben Sie mein Schreiben vom 3. März erhalten?",
-   "currentBeispielTr": "3 Mart tarihli yazımı aldınız mı?",
+   "currentBeispiel": "Haben Sie mein Schreiben vom dritten März erhalten?",
+   "currentBeispielTr": "Üç Mart tarihli yazımı aldınız mı?",
    "overlapping": [
     "die Schrift (B1)"
    ]
@@ -407,8 +407,8 @@
    "niveau": "B1",
    "formen": "-e",
    "currentTr": "deneme, girişim, deney",
-   "currentBeispiel": "1. In der Forschung werden viele Versuche gemacht. 2. Mein Versuch, etwas zu ändern, blieb ohne Erfolg.",
-   "currentBeispielTr": "1. Araştırmalarda birçok deney yapılıyor. 2. Bir şeyleri değiştirme girişimim sonuçsuz kaldı."
+   "currentBeispiel": "Beim zweiten Versuch hat es endlich geklappt.",
+   "currentBeispielTr": "İkinci denemede sonunda işe yaradı."
   },
   {
    "id": 2703,
@@ -417,8 +417,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "-er -mez, hemen",
-   "currentBeispiel": "Sobald ich den Termin weiß, gebe ich Ihnen Bescheid.",
-   "currentBeispielTr": "Randevuyu öğrenir öğrenmez size haber veririm."
+   "currentBeispiel": "Sobald es aufhört zu regnen, gehen wir los.",
+   "currentBeispielTr": "Yağmur durur durmaz yola çıkıyoruz."
   },
   {
    "id": 2180,
@@ -427,8 +427,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "harika, süper",
-   "currentBeispiel": "Ich finde unseren Lehrer klasse.",
-   "currentBeispielTr": "Öğretmenimizi harika buluyorum.",
+   "currentBeispiel": "Ich finde unseren neuen Lehrer wirklich klasse.",
+   "currentBeispielTr": "Yeni öğretmenimizi gerçekten şahane buluyorum.",
    "overlapping": [
     "toll (A1)",
     "wunderbar (A1)",
@@ -444,8 +444,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "anlam, mantık (bir şeyin amacı)",
-   "currentBeispiel": "Es hat keinen Sinn, noch ein Spiel zu beginnen. Es ist schon spät.",
-   "currentBeispielTr": "Bir oyuna daha başlamanın anlamı yok. Saat geç oldu.",
+   "currentBeispiel": "Es hat keinen Sinn, jetzt noch zu diskutieren.",
+   "currentBeispielTr": "Şimdi tartışmanın bir anlamı yok.",
    "overlapping": [
     "die Bedeutung (B1)"
    ]
@@ -457,8 +457,8 @@
    "niveau": "B1",
    "formen": "erfährt, erfuhr, hat erfahren",
    "currentTr": "öğrenmek",
-   "currentBeispiel": "Wann erfahren wir das Ergebnis der Prüfung?",
-   "currentBeispielTr": "Sınav sonucunu ne zaman öğreneceğiz?",
+   "currentBeispiel": "Aus der Zeitung hat Ben von der Schließung der Fabrik erfahren.",
+   "currentBeispielTr": "Ben fabrikanın kapanacağını gazeteden öğrendi.",
    "overlapping": [
     "lernen (A1)",
     "erlernen (B2)",
@@ -472,8 +472,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "gururlu",
-   "currentBeispiel": "Ich bin stolz auf dich. Das hast du sehr gut gemacht.",
-   "currentBeispielTr": "Seninle gurur duyuyorum. Bunu çok iyi yaptın."
+   "currentBeispiel": "Meine Eltern sind stolz auf mich.",
+   "currentBeispielTr": "Ailem benimle gurur duyuyor."
   },
   {
    "id": 2707,
@@ -482,8 +482,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "-dığı sürece",
-   "currentBeispiel": "Solange Sie Fieber haben, dürfen Sie auf keinen Fall arbeiten gehen.",
-   "currentBeispielTr": "Ateşiniz olduğu sürece kesinlikle işe gitmemelisiniz."
+   "currentBeispiel": "Solange Sie Fieber haben, dürfen Sie nicht arbeiten.",
+   "currentBeispielTr": "Ateşiniz olduğu sürece çalışmamalısınız."
   },
   {
    "id": 1928,
@@ -492,8 +492,8 @@
    "niveau": "B1",
    "formen": "fühlt, fühlte, hat gefühlt",
    "currentTr": "hissetmek",
-   "currentBeispiel": "1. Wie fühlen Sie sich? - Danke, ich fühle mich wohl. 2. Fühl mal, ob das Wasser nicht zu heiß ist.",
-   "currentBeispielTr": "1. Kendinizi nasıl hissediyorsunuz? – Teşekkürler, iyiyim. 2. Bir dokun bakalım, su çok sıcak değil mi?",
+   "currentBeispiel": "Nach dem Urlaub fühle ich mich viel besser.",
+   "currentBeispielTr": "Tatilden sonra kendimi çok daha iyi hissediyorum.",
    "overlapping": [
     "spüren (B1)",
     "empfinden (B2)"
@@ -506,8 +506,8 @@
    "niveau": "B1",
    "formen": "¨-",
    "currentTr": "zemin, toprak",
-   "currentBeispiel": "1. Die Bücher lagen alle auf dem Boden. 2. Auf diesem Boden wächst Gemüse besonders gut.",
-   "currentBeispielTr": "Kitapların hepsi yerde duruyordu."
+   "currentBeispiel": "Das Baby sitzt auf dem Boden und spielt mit Klötzen.",
+   "currentBeispielTr": "Bebek yerde oturmuş, tahta bloklarla oynuyor."
   },
   {
    "id": 2775,
@@ -516,8 +516,8 @@
    "niveau": "B1",
    "formen": "-n",
    "currentTr": "ses",
-   "currentBeispiel": "Ich habe dich sofort an der Stimme erkannt.",
-   "currentBeispielTr": "Seni sesinden hemen tanıdım."
+   "currentBeispiel": "Nach dem Konzert war seine Stimme ganz heiser.",
+   "currentBeispielTr": "Konserden sonra sesi iyice kısılmıştı."
   },
   {
    "id": 2772,
@@ -526,8 +526,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "sessiz, sakin",
-   "currentBeispiel": "1. Sei doch mal einen Moment still! 2. Maria kann nicht still sitzen.",
-   "currentBeispielTr": "1. Bir dakika sessiz olsana! 2. Maria yerinde rahat duramıyor.",
+   "currentBeispiel": "Im Wald war es ganz still.",
+   "currentBeispielTr": "Ormanda ortalık tamamen sessizdi.",
    "overlapping": [
     "leise (A1)",
     "stumm (B1)"
@@ -540,8 +540,8 @@
    "niveau": "B1",
    "formen": "-en",
    "currentTr": "güvenlik",
-   "currentBeispiel": "Sicherheit ist für mich sehr wichtig.",
-   "currentBeispielTr": "Güvenlik benim için çok önemli."
+   "currentBeispiel": "Die Sicherheit der Kinder ist uns besonders wichtig.",
+   "currentBeispielTr": "Çocukların güvenliği bizim için çok önemli."
   },
   {
    "id": 2149,
@@ -550,8 +550,8 @@
    "niveau": "B1",
    "formen": "kämpft, kämpfte, hat gekämpft",
    "currentTr": "mücadele etmek, savaşmak",
-   "currentBeispiel": "Die Frauen kämpfen für mehr Rechte.",
-   "currentBeispielTr": "Kadınlar daha fazla hak için mücadele ediyor.",
+   "currentBeispiel": "Die Frauen kämpfen seit Jahren für gleiche Rechte.",
+   "currentBeispielTr": "Kadınlar yıllardır eşit haklar için mücadele ediyor.",
    "overlapping": [
     "bekämpfen (B2)"
    ]
@@ -563,8 +563,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "eşya, şey",
-   "currentBeispiel": "Was hast du mit meinen Sachen gemacht? – Ich habe dein ganzes Zeug in dein Zimmer getan.",
-   "currentBeispielTr": "Eşyalarımı ne yaptın? – Bütün eşyanı odana koydum."
+   "currentBeispiel": "Räum bitte dein ganzes Zeug aus dem Flur!",
+   "currentBeispielTr": "Lütfen bütün eşyanı koridordan kaldır!"
   },
   {
    "id": 2926,
@@ -573,8 +573,8 @@
    "niveau": "B1",
    "formen": "",
    "currentTr": "inanılmaz",
-   "currentBeispiel": "Es ist unglaublich. Schon wieder so ein Unglück.",
-   "currentBeispielTr": "İnanılır gibi değil. Yine böyle bir felaket."
+   "currentBeispiel": "Es ist unglaublich, wie schnell die Zeit vergeht.",
+   "currentBeispielTr": "Zamanın ne kadar çabuk geçtiği inanılmaz."
   },
   {
    "id": 1929,
@@ -583,8 +583,8 @@
    "niveau": "B1",
    "formen": "führt, führte, hat geführt",
    "currentTr": "yönetmek, götürmek, yol göstermek",
-   "currentBeispiel": "1. Der Lehrer führt seine Schüler durch das Museum. 2. Frau Meyer führt den Betrieb schon seit zehn Jahren. 3. Nach 20 M",
-   "currentBeispielTr": "1. Öğretmen, öğrencilerini müzede gezdiriyor. 2. Meyer Hanım işletmeyi on yıldır yönetiyor.",
+   "currentBeispiel": "Eine erfahrene Kollegin führt das neue Team.",
+   "currentBeispielTr": "Yeni ekibi deneyimli bir iş arkadaşı yönetiyor.",
    "overlapping": [
     "leiten (B1)",
     "regieren (B2)"

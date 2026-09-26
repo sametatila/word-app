@@ -10,7 +10,7 @@
    "formen": "hat sich orientiert",
    "currentTr": "yön bulmak, kendine yön vermek",
    "currentBeispiel": "Ohne Handy konnte er sich in der Altstadt kaum orientieren.",
-   "currentBeispielTr": "Telefon olmadan tarihi merkezde yön bulmakta zorlandı."
+   "currentBeispielTr": "Telefon olmadan tarihi merkezde neredeyse hiç yön bulamadı."
   },
   {
    "id": 5296,
@@ -50,7 +50,7 @@
    "formen": "hat eingeschränkt",
    "currentTr": "sınırlamak, kısıtlamak",
    "currentBeispiel": "Die Stadt will die Zahl der Ferienwohnungen deutlich einschränken.",
-   "currentBeispielTr": "Şehir tatil dairelerinin sayısını belirgin biçimde sınırlamak istiyor.",
+   "currentBeispielTr": "Şehir tatil dairelerinin sayısını belirgin biçimde kısıtlamak istiyor.",
    "overlapping": [
     "beschränken (B1)",
     "eingrenzen (C1)",
@@ -80,7 +80,7 @@
    "formen": "hat verzollt",
    "currentTr": "gümrük vergisini ödemek, gümrükten geçirmek",
    "currentBeispiel": "Diese Waren müssen Sie bei der Einreise verzollen.",
-   "currentBeispielTr": "Bu malları ülkeye girişte gümrükte beyan etmeniz gerekiyor."
+   "currentBeispielTr": "Bu mallar için girişte gümrük vergisi ödemeniz gerekiyor."
   },
   {
    "id": 5302,
@@ -90,7 +90,7 @@
    "formen": "hat abgeholzt",
    "currentTr": "ormanı kesmek, ağaçları yok etmek",
    "currentBeispiel": "Für die neue Hotelanlage wurde ein ganzer Hang abgeholzt.",
-   "currentBeispielTr": "Yeni otel tesisi için koca bir yamaçtaki ağaçlar kesildi."
+   "currentBeispielTr": "Yeni otel tesisi için koca bir yamacın ağaçları kesildi."
   },
   {
    "id": 5303,
@@ -110,7 +110,7 @@
    "formen": "ist abgeklungen",
    "currentTr": "hafiflemek, yatışmak",
    "currentBeispiel": "Erst am Nachmittag ist der Sturm allmählich abgeklungen.",
-   "currentBeispielTr": "Fırtına ancak öğleden sonra yavaş yavaş dindi."
+   "currentBeispielTr": "Fırtına ancak öğleden sonra yavaş yavaş yatıştı."
   },
   {
    "id": 5305,
@@ -119,8 +119,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ücra, uzak, sapa",
-   "currentBeispiel": "Das Gehöft liegt abgelegen und ist nur über einen Feldweg erreichbar.",
-   "currentBeispielTr": "Çiftlik ücra bir yerde ve oraya ancak toprak yoldan ulaşılıyor."
+   "currentBeispiel": "Das Ferienhaus liegt abgelegen und ist nur über einen Feldweg erreichbar.",
+   "currentBeispielTr": "Tatil evi ücra bir yerde ve oraya yalnızca toprak yoldan ulaşılıyor."
   },
   {
    "id": 5306,
@@ -130,7 +130,7 @@
    "formen": "",
    "currentTr": "el değmemiş, bozulmamış",
    "currentBeispiel": "Im Norden gibt es noch weitgehend unberührte Küstenabschnitte.",
-   "currentBeispielTr": "Kuzeyde büyük ölçüde el değmemiş kıyı kesimleri hâlâ var."
+   "currentBeispielTr": "Kuzeyde hâlâ büyük ölçüde el değmemiş kıyı kesimleri var."
   },
   {
    "id": 5307,
@@ -140,7 +140,7 @@
    "formen": "",
    "currentTr": "pitoresk, resim gibi",
    "currentBeispiel": "Das malerische Dorf zieht jedes Wochenende Hunderte Besucher an.",
-   "currentBeispielTr": "Resim gibi köy her hafta sonu yüzlerce ziyaretçi çekiyor."
+   "currentBeispielTr": "Resim gibi köye her hafta sonu yüzlerce ziyaretçi geliyor."
   },
   {
    "id": 5308,
@@ -170,7 +170,7 @@
    "formen": "",
    "currentTr": "geçit vermez, yolu bozuk",
    "currentBeispiel": "Das Gelände ist unwegsam und für Kinderwagen völlig ungeeignet.",
-   "currentBeispielTr": "Arazi geçit vermez durumda ve bebek arabası için hiç uygun değil."
+   "currentBeispielTr": "Arazi geçit vermez ve bebek arabası için hiç uygun değil."
   },
   {
    "id": 5311,
@@ -213,7 +213,7 @@
    "formen": "Rauchmelder",
    "currentTr": "duman dedektörü, duman alarmı",
    "currentBeispiel": "In jedem Schlafzimmer muss ein funktionierender Rauchmelder angebracht sein.",
-   "currentBeispielTr": "Her yatak odasında çalışır durumda bir duman dedektörü bulunmak zorunda."
+   "currentBeispielTr": "Her yatak odasında çalışır durumda bir duman dedektörü bulunmalı."
   },
   {
    "id": 5315,
@@ -243,7 +243,7 @@
    "formen": "Fluchtwege",
    "currentTr": "kaçış yolu, tahliye yolu",
    "currentBeispiel": "Die Fluchtwege dürfen unter keinen Umständen zugestellt werden.",
-   "currentBeispielTr": "Kaçış yolları hiçbir koşulda kapatılmamalı."
+   "currentBeispielTr": "Kaçış yollarının önü hiçbir koşulda kapatılmamalı."
   },
   {
    "id": 5318,
@@ -273,7 +273,7 @@
    "formen": "Unfallstellen",
    "currentTr": "kaza yeri, kaza mahalli",
    "currentBeispiel": "Die Polizei sperrte die Unfallstelle für mehrere Stunden ab.",
-   "currentBeispielTr": "Polis kaza yerini saatlerce trafiğe kapattı."
+   "currentBeispielTr": "Polis kaza yerini birkaç saat boyunca kapattı."
   },
   {
    "id": 5321,
@@ -306,7 +306,7 @@
    "formen": "Verbrechen",
    "currentTr": "suç, ağır suç",
    "currentBeispiel": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt.",
-   "currentBeispielTr": "Suç, yıllar süren soruşturmaya rağmen aydınlatılamadı.",
+   "currentBeispielTr": "Suç, yıllar süren soruşturmalara rağmen aydınlatılamadı.",
    "overlapping": [
     "die Schuld (B1)",
     "die Straftat (B2)"
@@ -340,7 +340,7 @@
    "formen": "Einsatzkräfte",
    "currentTr": "görevli ekip elemanı, müdahale ekibi",
    "currentBeispiel": "Über zweihundert Einsatzkräfte waren die ganze Nacht im Einsatz.",
-   "currentBeispielTr": "İki yüzden fazla görevli bütün gece sahada çalıştı."
+   "currentBeispielTr": "İki yüzden fazla müdahale görevlisi bütün gece sahadaydı."
   },
   {
    "id": 5327,
@@ -373,7 +373,7 @@
    "formen": "",
    "currentTr": "dolandırıcılık, sahtekârlık",
    "currentBeispiel": "Der Angeklagte wurde wegen Betrugs in mehreren Fällen verurteilt.",
-   "currentBeispielTr": "Sanık birden fazla dolandırıcılık vakasından mahkûm edildi."
+   "currentBeispielTr": "Sanık birden fazla dolandırıcılık suçundan mahkûm edildi."
   },
   {
    "id": 5330,
@@ -382,8 +382,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "gasp, soygun",
-   "currentBeispiel": "Der Raub auf die Tankstelle dauerte kaum zwei Minuten.",
-   "currentBeispielTr": "Benzin istasyonuna yapılan soygun ancak iki dakika sürdü."
+   "currentBeispiel": "Nach dem Raub flüchteten die Täter in einem Auto.",
+   "currentBeispielTr": "Soygunun ardından failler bir arabayla kaçtı."
   },
   {
    "id": 5331,
@@ -433,7 +433,7 @@
    "formen": "Polizeireviere",
    "currentTr": "polis karakolu",
    "currentBeispiel": "Sie musste ihre Aussage auf dem Polizeirevier noch einmal wiederholen.",
-   "currentBeispielTr": "İfadesini karakolda bir kez daha tekrarlamak zorunda kaldı."
+   "currentBeispielTr": "İfadesini polis karakolunda bir kez daha tekrarlamak zorunda kaldı."
   },
   {
    "id": 5336,
@@ -443,7 +443,7 @@
    "formen": "",
    "currentTr": "caydırıcılık, caydırma",
    "currentBeispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung.",
-   "currentBeispielTr": "Birçok uzmana göre ağır cezalar pek caydırıcı olmuyor."
+   "currentBeispielTr": "Birçok uzmana göre ağır cezaların caydırıcılığı neredeyse yok."
   },
   {
    "id": 5337,
@@ -486,7 +486,7 @@
    "formen": "Warnmeldungen",
    "currentTr": "uyarı bildirimi, uyarı mesajı",
    "currentBeispiel": "Die Warnmeldung erreichte alle Handys in der Region gleichzeitig.",
-   "currentBeispielTr": "Uyarı bildirimi bölgedeki bütün telefonlara aynı anda ulaştı."
+   "currentBeispielTr": "Uyarı mesajı bölgedeki bütün telefonlara aynı anda ulaştı."
   },
   {
    "id": 5341,
@@ -516,7 +516,7 @@
    "formen": "Vergiftungen",
    "currentTr": "zehirlenme",
    "currentBeispiel": "Die Kinder wurden mit einer leichten Vergiftung ins Krankenhaus gebracht.",
-   "currentBeispielTr": "Çocuklar hafif zehirlenmeyle hastaneye kaldırıldı."
+   "currentBeispielTr": "Çocuklar hafif bir zehirlenmeyle hastaneye kaldırıldı."
   },
   {
    "id": 5344,

@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "ist abgerutscht",
    "currentTr": "düşmek, aşağı kaymak",
-   "currentBeispiel": "Ohne Betreuung rutschen viele Jugendliche in kriminelle Gruppen ab.",
-   "currentBeispielTr": "Rehberlik olmadan birçok genç suç gruplarına kayıyor.",
+   "currentBeispiel": "Beim Abstieg rutschte er auf dem nassen Fels ab.",
+   "currentBeispielTr": "İnişte ıslak kayanın üstünde ayağı kaydı.",
    "overlapping": [
     "fallen (A2)",
     "stürzen (B1)"
@@ -23,8 +23,8 @@
    "niveau": "C1",
    "formen": "hat untergebracht",
    "currentTr": "yerleştirmek, barındırmak",
-   "currentBeispiel": "Junge Gefangene werden getrennt von Erwachsenen untergebracht.",
-   "currentBeispielTr": "Genç mahkûmlar yetişkinlerden ayrı olarak barındırılıyor.",
+   "currentBeispiel": "Die Stadt bringt die Flüchtlinge in einer Turnhalle unter.",
+   "currentBeispielTr": "Kent, mültecileri bir spor salonunda barındırıyor.",
    "overlapping": [
     "ansiedeln (C1)",
     "aufstellen (A2)",
@@ -39,7 +39,7 @@
    "formen": "hat verbüßt",
    "currentTr": "cezasını çekmek, hapis yatmak",
    "currentBeispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
-   "currentBeispielTr": "Cezasının üçte ikisini çekti ve ardından serbest kaldı."
+   "currentBeispielTr": "Cezasının üçte ikisini çekti ve sonra serbest kaldı."
   },
   {
    "id": 6456,
@@ -48,8 +48,8 @@
    "niveau": "C1",
    "formen": "hat bewacht",
    "currentTr": "korumak, gözetim altında tutmak, nöbet tutmak",
-   "currentBeispiel": "Nachts bewachen nur wenige Beamte den gesamten Trakt.",
-   "currentBeispielTr": "Geceleri tüm koğuş bloğunu yalnızca birkaç görevli gözetliyor.",
+   "currentBeispiel": "Zwei Polizisten bewachen den Eingang zum Gericht.",
+   "currentBeispielTr": "İki polis adliyenin girişinde nöbet tutuyor.",
    "overlapping": [
     "schützen (B1)",
     "beschützen (B2)",
@@ -63,8 +63,8 @@
    "niveau": "C1",
    "formen": "hat isoliert",
    "currentTr": "tecrit etmek, yalıtmak",
-   "currentBeispiel": "Wer Gefangene isoliert, zerstört genau die Bindungen, die sie halten.",
-   "currentBeispielTr": "Mahkûmları tecrit eden, onları ayakta tutan bağları yok eder."
+   "currentBeispiel": "Die Anstalt isolierte den Häftling nach dem Vorfall.",
+   "currentBeispielTr": "Kurum, olaydan sonra mahkûmu tecrit etti."
   },
   {
    "id": 6458,
@@ -83,8 +83,8 @@
    "niveau": "C1",
    "formen": "hat deeskaliert",
    "currentTr": "gerginliği azaltmak, yatıştırmak",
-   "currentBeispiel": "Geschulte Beamte deeskalieren Konflikte, bevor Gewalt entsteht.",
-   "currentBeispielTr": "Eğitimli görevliler, şiddet doğmadan önce çatışmaları yatıştırıyor."
+   "currentBeispiel": "Der Beamte deeskalierte die Lage mit ruhiger Stimme.",
+   "currentBeispielTr": "Görevli, sakin sesiyle ortamı yatıştırdı."
   },
   {
    "id": 6460,
@@ -93,8 +93,8 @@
    "niveau": "C1",
    "formen": "hat abgeschottet",
    "currentTr": "dış dünyaya kapatmak, yalıtmak",
-   "currentBeispiel": "Die Anstalt schottet ihre Insassen fast vollständig von außen ab.",
-   "currentBeispielTr": "Kurum, mahkûmlarını dış dünyadan neredeyse tümüyle kopartıyor."
+   "currentBeispiel": "Nach dem Skandal schottete sich die Familie völlig ab.",
+   "currentBeispielTr": "Skandaldan sonra aile kendini tamamen dışa kapattı."
   },
   {
    "id": 6461,
@@ -103,8 +103,8 @@
    "niveau": "C1",
    "formen": "hat rehabilitiert",
    "currentTr": "topluma yeniden kazandırmak, itibarını iade etmek",
-   "currentBeispiel": "Der Staat sollte Straffällige nicht nur bestrafen, sondern auch rehabilitieren.",
-   "currentBeispielTr": "Devlet suç işleyenleri yalnızca cezalandırmakla kalmayıp topluma da kazandırmalı."
+   "currentBeispiel": "Das Programm rehabilitiert junge Täter durch Arbeit und Therapie.",
+   "currentBeispielTr": "Program genç suçluları iş ve terapiyle rehabilite ediyor."
   },
   {
    "id": 6462,
@@ -113,8 +113,8 @@
    "niveau": "C1",
    "formen": "ist entgleist",
    "currentTr": "kontrolden çıkmak, çığırından çıkmak",
-   "currentBeispiel": "Die Auseinandersetzung entgleiste innerhalb weniger Minuten völlig.",
-   "currentBeispielTr": "Tartışma birkaç dakika içinde tamamen çığırından çıktı.",
+   "currentBeispiel": "Der Zug entgleiste kurz vor dem Bahnhof.",
+   "currentBeispielTr": "Tren istasyona az kala raydan çıktı.",
    "overlapping": [
     "ausufern (C1)"
    ]
@@ -126,8 +126,8 @@
    "niveau": "C1",
    "formen": "hat schikaniert",
    "currentTr": "eziyet etmek, kasten zorluk çıkarmak",
-   "currentBeispiel": "Mitgefangene schikanierten ihn systematisch wegen seines Delikts.",
-   "currentBeispielTr": "Diğer mahkûmlar işlediği suç yüzünden ona sistemli biçimde eziyet ettiler."
+   "currentBeispiel": "Der Chef schikanierte sie mit ständigen Sonderaufgaben.",
+   "currentBeispielTr": "Patron, sürekli ek görevlerle ona eziyet etti."
   },
   {
    "id": 6464,
@@ -136,8 +136,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "suç işlemiş, suça bulaşmış",
-   "currentBeispiel": "Die meisten straffällig gewordenen Jugendlichen bleiben nicht dauerhaft auffällig.",
-   "currentBeispielTr": "Suça bulaşmış gençlerin çoğu kalıcı olarak sorunlu kalmıyor."
+   "currentBeispiel": "Er wurde mit sechzehn zum ersten Mal straffällig.",
+   "currentBeispielTr": "On altı yaşında ilk kez suç işledi."
   },
   {
    "id": 6465,
@@ -146,8 +146,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tekrar suç işleyen, nüksetmiş",
-   "currentBeispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig.",
-   "currentBeispielTr": "Tahliye edilenlerin neredeyse yarısı üç yıl içinde yeniden suç işliyor."
+   "currentBeispiel": "Nach der Entlassung wurde er schnell wieder rückfällig.",
+   "currentBeispielTr": "Tahliyeden sonra kısa sürede yeniden suç işledi."
   },
   {
    "id": 6466,
@@ -156,8 +156,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şiddete eğilimli",
-   "currentBeispiel": "Nur eine kleine, gewaltbereite Minderheit prägt das öffentliche Bild.",
-   "currentBeispielTr": "Kamusal imgeyi yalnızca küçük ve şiddete eğilimli bir azınlık belirliyor."
+   "currentBeispiel": "Ein paar gewaltbereite Fans stürmten auf das Spielfeld.",
+   "currentBeispielTr": "Şiddete eğilimli birkaç taraftar sahaya daldı."
   },
   {
    "id": 6467,
@@ -166,8 +166,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sabıkalı",
-   "currentBeispiel": "Wer vorbestraft ist, findet auf dem Arbeitsmarkt kaum eine Chance.",
-   "currentBeispielTr": "Sabıkalı olan kişi iş piyasasında neredeyse hiç şans bulamıyor."
+   "currentBeispiel": "Er ist vorbestraft und findet deshalb keine Wohnung.",
+   "currentBeispielTr": "Sabıkalı olduğu için kendine ev bulamıyor."
   },
   {
    "id": 6468,
@@ -176,8 +176,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çevre kaynaklı",
-   "currentBeispiel": "Solche Konflikte sind eher milieubedingt als persönlich verschuldet.",
-   "currentBeispielTr": "Bu tür çatışmalar kişisel kusurdan çok çevre kaynaklıdır."
+   "currentBeispiel": "Ihre Schwierigkeiten in der Schule sind vor allem milieubedingt.",
+   "currentBeispielTr": "Okuldaki zorlukları her şeyden çok çevre kaynaklı."
   },
   {
    "id": 6469,
@@ -186,8 +186,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "suça yol açan",
-   "currentBeispiel": "Beengter Wohnraum und Armut wirken zusammen kriminogen.",
-   "currentBeispielTr": "Dar konut koşulları ve yoksulluk birlikte suça yol açıcı etki yapar."
+   "currentBeispiel": "Die Studie nennt Armut den stärksten kriminogenen Faktor.",
+   "currentBeispielTr": "Araştırma, yoksulluğu suça yol açan en güçlü etken sayıyor."
   },
   {
    "id": 6470,
@@ -196,8 +196,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "zorla, cebren",
-   "currentBeispiel": "Niemand darf zwangsweise an einer Therapie teilnehmen müssen.",
-   "currentBeispielTr": "Hiç kimse bir terapiye zorla katılmak zorunda bırakılamaz."
+   "currentBeispiel": "Der Patient wurde zwangsweise in die Klinik eingewiesen.",
+   "currentBeispielTr": "Hasta zorla kliniğe yatırıldı."
   },
   {
    "id": 6471,
@@ -206,8 +206,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "önleyici",
-   "currentBeispiel": "Sozialarbeit in Brennpunkten wirkt präventiv und spart langfristig Kosten.",
-   "currentBeispielTr": "Sorunlu bölgelerdeki sosyal hizmet önleyici etki yapar ve uzun vadede maliyet düşürür."
+   "currentBeispiel": "Die Schule bietet präventive Kurse gegen Mobbing an.",
+   "currentBeispielTr": "Okul, zorbalığa karşı önleyici kurslar sunuyor."
   },
   {
    "id": 6472,
@@ -217,7 +217,7 @@
    "formen": "Bühnenbilder",
    "currentTr": "sahne tasarımı, dekor",
    "currentBeispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
-   "currentBeispielTr": "Yalın dekor, dikkati bütünüyle dile yöneltiyor."
+   "currentBeispielTr": "Yalın sahne dekoru dikkati bütünüyle dile yöneltiyor."
   },
   {
    "id": 6473,
@@ -226,8 +226,8 @@
    "niveau": "C1",
    "formen": "Uraufführungen",
    "currentTr": "dünya prömiyeri, ilk gösterim",
-   "currentBeispiel": "Die Uraufführung wurde vom Publikum zwiespältig aufgenommen.",
-   "currentBeispielTr": "İlk gösterim seyirci tarafından ikircikli biçimde karşılandı."
+   "currentBeispiel": "Die Uraufführung der Oper findet in Hamburg statt.",
+   "currentBeispielTr": "Operanın dünya prömiyeri Hamburg'da yapılacak."
   },
   {
    "id": 6474,
@@ -247,7 +247,7 @@
    "formen": "Kunstkritiken",
    "currentTr": "sanat eleştirisi",
    "currentBeispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
-   "currentBeispielTr": "Sanat eleştirisi onun erken dönem işlerini uzun süre görmezden geldi."
+   "currentBeispielTr": "Sanat eleştirisi onun ilk dönem işlerini uzun süre gözden kaçırdı."
   },
   {
    "id": 6476,
@@ -306,8 +306,8 @@
    "niveau": "C1",
    "formen": "Kunstgriffe",
    "currentTr": "ustaca çözüm, kurnaz numara",
-   "currentBeispiel": "Mit einem einfachen Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
-   "currentBeispielTr": "Yönetmen basit bir hileyle ana karakteri ikiye katlıyor."
+   "currentBeispiel": "Mit einem raffinierten Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
+   "currentBeispielTr": "Yönetmen, ustaca bir numarayla ana karakteri ikiye katlıyor."
   },
   {
    "id": 6482,
@@ -337,7 +337,7 @@
    "formen": "Lesarten",
    "currentTr": "okuma biçimi, yorum",
    "currentBeispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
-   "currentBeispielTr": "Oyunun bu okuması cüretkâr ama inandırıcı."
+   "currentBeispielTr": "Oyunun bu okuma biçimi cüretkâr ama inandırıcı."
   },
   {
    "id": 6485,
@@ -356,8 +356,8 @@
    "niveau": "C1",
    "formen": "Autorschaften",
    "currentTr": "yazarlık, eser sahipliği",
-   "currentBeispiel": "Bei kollektiven Projekten verschwimmt die Frage der Autorschaft.",
-   "currentBeispielTr": "Kolektif projelerde eser sahipliği sorusu bulanıklaşıyor."
+   "currentBeispiel": "Die Autorschaft des Textes ist bis heute umstritten.",
+   "currentBeispielTr": "Metnin yazarlığı bugüne dek tartışmalı kaldı."
   },
   {
    "id": 6487,
@@ -380,7 +380,7 @@
    "formen": "Verfremdungen",
    "currentTr": "yabancılaştırma",
    "currentBeispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen.",
-   "currentBeispielTr": "Yabancılaştırma, seyircinin rahatça özdeşleşmesini engelliyor."
+   "currentBeispielTr": "Yabancılaştırma, seyircinin rahatça duygudaşlık kurmasını engelliyor."
   },
   {
    "id": 6489,
@@ -389,8 +389,8 @@
    "niveau": "C1",
    "formen": "Tabubrüche",
    "currentTr": "tabuyu yıkma, tabu ihlali",
-   "currentBeispiel": "Der Tabubruch allein macht noch keine gute Kunst.",
-   "currentBeispielTr": "Yalnızca tabu yıkmak henüz iyi sanat yapmaz."
+   "currentBeispiel": "Sein letzter Film lebt allein vom Tabubruch.",
+   "currentBeispielTr": "Son filmi yalnızca tabu ihlalinden besleniyor."
   },
   {
    "id": 6490,
@@ -409,8 +409,8 @@
    "niveau": "C1",
    "formen": "Geschmacksurteile",
    "currentTr": "beğeni yargısı",
-   "currentBeispiel": "Ein Geschmacksurteil lässt sich selten zwingend begründen.",
-   "currentBeispielTr": "Bir beğeni yargısı nadiren zorunlu biçimde gerekçelendirilebilir."
+   "currentBeispiel": "Über sein Geschmacksurteil stritten die beiden den ganzen Abend.",
+   "currentBeispielTr": "Beğeni yargısı yüzünden ikisi bütün akşam tartıştı."
   },
   {
    "id": 6492,
@@ -430,7 +430,7 @@
    "formen": "Mäzene",
    "currentTr": "sanat hamisi, mesen",
    "currentBeispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
-   "currentBeispielTr": "Özel hamiler olmasaydı koleksiyon hiç oluşmazdı."
+   "currentBeispielTr": "Özel sanat hamileri olmasa koleksiyon hiç oluşmazdı."
   },
   {
    "id": 6494,
@@ -440,7 +440,7 @@
    "formen": "Kulturbetriebe",
    "currentTr": "kültür sektörü, sanat camiası",
    "currentBeispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
-   "currentBeispielTr": "Kültür camiasında ilişkiler çoğu zaman yetenekten daha çok sayılır."
+   "currentBeispielTr": "Kültür camiasında ilişkiler çoğu zaman yetenekten daha önemlidir."
   },
   {
    "id": 6495,
@@ -480,7 +480,7 @@
    "formen": "",
    "currentTr": "anıt koruma, tarihi eser bakımı",
    "currentBeispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
-   "currentBeispielTr": "Anıtlar kurulu cephenin değiştirilmesini yasakladı."
+   "currentBeispielTr": "Anıt koruma kurulu cephenin değiştirilmesini yasakladı."
   },
   {
    "id": 6499,
@@ -490,7 +490,7 @@
    "formen": "Dissonanzen",
    "currentTr": "uyumsuzluk, disonans",
    "currentBeispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
-   "currentBeispielTr": "Sondaki çözülmemiş disonans birçok dinleyiciyi rahatsız ediyor."
+   "currentBeispielTr": "Sondaki çözülmemiş uyumsuzluk birçok dinleyiciyi rahatsız ediyor."
   },
   {
    "id": 6500,
@@ -500,7 +500,7 @@
    "formen": "Partituren",
    "currentTr": "partisyon, nota metni",
    "currentBeispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme.",
-   "currentBeispielTr": "Şef partisyonu en ufak ara sese kadar biliyor."
+   "currentBeispielTr": "Şef partisyonu en küçük ara sese kadar biliyor."
   },
   {
    "id": 6501,

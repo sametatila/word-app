@@ -23,7 +23,7 @@
    "formen": "",
    "currentTr": "fahiş fiyatlı, aşırı pahalı",
    "currentBeispiel": "Die Ersatzteile des Herstellers sind im Vergleich deutlich überteuert.",
-   "currentBeispielTr": "Üreticinin yedek parçaları kıyaslandığında bariz şekilde fahiş fiyatlı."
+   "currentBeispielTr": "Üreticinin yedek parçaları diğerlerine kıyasla bariz şekilde fahiş fiyatlı."
   },
   {
    "id": 4847,
@@ -33,7 +33,7 @@
    "formen": "",
    "currentTr": "makul, katlanılabilir",
    "currentBeispiel": "Eine Wartezeit von zehn Wochen ist dem Kunden nicht zumutbar.",
-   "currentBeispielTr": "On haftalık bir bekleme süresi müşteriden beklenemez.",
+   "currentBeispielTr": "On haftalık bir bekleme süresi müşteri için katlanılabilir değil.",
    "overlapping": [
     "vernünftig (B1)",
     "einleuchtend (C1)"
@@ -47,7 +47,7 @@
    "formen": "",
    "currentTr": "usulüne uygun (kullanım)",
    "currentBeispiel": "Die Garantie gilt nur bei sachgemäßer Nutzung des Geräts.",
-   "currentBeispielTr": "Garanti yalnızca cihazın usulüne uygun kullanımında geçerlidir.",
+   "currentBeispielTr": "Garanti yalnızca cihazın usulüne uygun kullanımında geçerli.",
    "overlapping": [
     "fachgerecht (B2)",
     "ordnungsgemäß (B2)"
@@ -113,7 +113,7 @@
    "formen": "Besetzungen",
    "currentTr": "oyuncu kadrosu, kadro",
    "currentBeispiel": "Mit dieser Besetzung hat das Theater einen echten Erfolg gelandet.",
-   "currentBeispielTr": "Bu kadroyla tiyatro gerçek bir başarı yakaladı."
+   "currentBeispielTr": "Bu oyuncu kadrosuyla tiyatro gerçek bir başarı yakaladı."
   },
   {
    "id": 4854,
@@ -206,7 +206,7 @@
    "formen": "Exponate",
    "currentTr": "sergi eseri, sergilenen parça",
    "currentBeispiel": "Das wertvollste Exponat wird nur hinter Glas gezeigt.",
-   "currentBeispielTr": "En değerli sergi parçası yalnızca cam arkasında gösteriliyor."
+   "currentBeispielTr": "En değerli sergi eseri yalnızca cam arkasında gösteriliyor."
   },
   {
    "id": 4863,
@@ -236,7 +236,7 @@
    "formen": "Spielpläne",
    "currentTr": "oyun programı, repertuvar",
    "currentBeispiel": "Der neue Spielplan der Oper erscheint immer im Juni.",
-   "currentBeispielTr": "Operanın yeni oyun programı her zaman haziranda yayımlanır."
+   "currentBeispielTr": "Operanın yeni oyun programı her yıl haziranda çıkar."
   },
   {
    "id": 4866,
@@ -256,7 +256,7 @@
    "formen": "Dirigenten",
    "currentTr": "orkestra şefi",
    "currentBeispiel": "Der Dirigent hob den Taktstock und der Saal wurde still.",
-   "currentBeispielTr": "Şef bagetini kaldırdı ve salon sessizleşti."
+   "currentBeispielTr": "Orkestra şefi bagetini kaldırdı ve salon sessizleşti."
   },
   {
    "id": 4868,
@@ -266,7 +266,7 @@
    "formen": "Melodien",
    "currentTr": "ezgi, melodi",
    "currentBeispiel": "Diese Melodie geht mir seit gestern nicht mehr aus dem Kopf.",
-   "currentBeispielTr": "Bu ezgi dünden beri aklımdan çıkmıyor."
+   "currentBeispielTr": "Bu melodi dünden beri aklımdan çıkmıyor."
   },
   {
    "id": 4869,
@@ -296,7 +296,7 @@
    "formen": "Theaterstücke",
    "currentTr": "tiyatro oyunu",
    "currentBeispiel": "Das Theaterstück behandelt den Alltag einer Familie nach dem Krieg.",
-   "currentBeispielTr": "Oyun, savaş sonrası bir ailenin gündelik hayatını ele alıyor."
+   "currentBeispielTr": "Tiyatro oyunu, savaş sonrası bir ailenin gündelik hayatını anlatıyor."
   },
   {
    "id": 4872,
@@ -325,8 +325,8 @@
    "niveau": "B2",
    "formen": "Meisterschaften",
    "currentTr": "şampiyona, şampiyonluk",
-   "currentBeispiel": "Nach zwölf Jahren hat der Klub endlich wieder die Meisterschaft geholt.",
-   "currentBeispielTr": "Kulüp on iki yıl sonra nihayet yeniden şampiyonluğu kazandı."
+   "currentBeispiel": "Die Meisterschaft findet nächstes Jahr in Norwegen statt.",
+   "currentBeispielTr": "Şampiyona gelecek yıl Norveç'te yapılacak."
   },
   {
    "id": 4875,
@@ -336,7 +336,7 @@
    "formen": "Niederlagen",
    "currentTr": "yenilgi, mağlubiyet",
    "currentBeispiel": "Die knappe Niederlage im Halbfinale hat alle sehr enttäuscht.",
-   "currentBeispielTr": "Yarı finaldeki farksız yenilgi herkesi çok hayal kırıklığına uğrattı."
+   "currentBeispielTr": "Yarı finaldeki kıl payı yenilgi herkesi hayal kırıklığına uğrattı."
   },
   {
    "id": 4876,
@@ -356,7 +356,7 @@
    "formen": "",
    "currentTr": "profesyonel spor, yüksek performans sporu",
    "currentBeispiel": "Im Leistungssport entscheiden oft nur wenige Hundertstelsekunden.",
-   "currentBeispielTr": "Profesyonel sporda çoğu zaman saliseler belirleyici olur."
+   "currentBeispielTr": "Performans sporunda çoğu zaman yalnızca saliseler belirleyici olur."
   },
   {
    "id": 4878,
@@ -419,7 +419,7 @@
    "formen": "Trachten",
    "currentTr": "yöresel kıyafet, geleneksel giysi",
    "currentBeispiel": "Beim Umzug trugen viele Teilnehmer die Tracht ihrer Großeltern.",
-   "currentBeispielTr": "Geçit töreninde katılımcıların çoğu dedelerinin yöresel kıyafetini giydi."
+   "currentBeispielTr": "Geçit töreninde birçok katılımcı dedelerinin yöresel kıyafetini giydi."
   },
   {
    "id": 4884,
@@ -429,7 +429,7 @@
    "formen": "Reiseziele",
    "currentTr": "gidilecek yer, seyahat hedefi",
    "currentBeispiel": "Als Reiseziel wählten sie diesmal eine kleine Insel im Norden.",
-   "currentBeispielTr": "Gidecekleri yer olarak bu kez kuzeyde küçük bir ada seçtiler."
+   "currentBeispielTr": "Gidilecek yer olarak bu kez kuzeyde küçük bir ada seçtiler."
   },
   {
    "id": 4885,
@@ -439,7 +439,7 @@
    "formen": "Wanderwege",
    "currentTr": "yürüyüş parkuru, doğa yolu",
    "currentBeispiel": "Der markierte Wanderweg führt am Fluss entlang bis zur Mühle.",
-   "currentBeispielTr": "İşaretli yürüyüş parkuru nehir boyunca değirmene kadar gidiyor."
+   "currentBeispielTr": "İşaretli yürüyüş yolu nehir boyunca değirmene kadar gidiyor."
   },
   {
    "id": 4886,
@@ -449,7 +449,7 @@
    "formen": "Dokumentarfilme",
    "currentTr": "belgesel",
    "currentBeispiel": "Der Dokumentarfilm zeigt das Leben in einem abgelegenen Bergdorf.",
-   "currentBeispielTr": "Belgesel, ücra bir dağ köyündeki yaşamı gösteriyor."
+   "currentBeispielTr": "Belgesel, ücra bir dağ köyündeki yaşamı anlatıyor."
   },
   {
    "id": 4887,
@@ -459,7 +459,7 @@
    "formen": "Untertitel",
    "currentTr": "altyazı",
    "currentBeispiel": "Den Film schauen wir lieber im Original mit deutschen Untertiteln.",
-   "currentBeispielTr": "Filmi tercihen orijinal dilinde Almanca altyazıyla izliyoruz."
+   "currentBeispielTr": "Filmi orijinal dilinde Almanca altyazıyla izlemeyi tercih ediyoruz."
   },
   {
    "id": 4888,
@@ -479,7 +479,7 @@
    "formen": "Auszeichnungen",
    "currentTr": "ödül, nişan",
    "currentBeispiel": "Für ihr Lebenswerk erhielt sie eine besondere Auszeichnung.",
-   "currentBeispielTr": "Yaşam boyu eserleri için özel bir ödül aldı."
+   "currentBeispielTr": "Yaşam boyu başarısı için özel bir ödül aldı."
   },
   {
    "id": 4890,
@@ -499,7 +499,7 @@
    "formen": "Einschaltquoten",
    "currentTr": "izlenme oranı, reyting",
    "currentBeispiel": "Die Einschaltquote der Sportsendung ist am Sonntagabend am höchsten.",
-   "currentBeispielTr": "Spor programının izlenme oranı pazar akşamı en yüksek seviyede."
+   "currentBeispielTr": "Spor programının izlenme oranı pazar akşamları en yüksek."
   },
   {
    "id": 4892,
@@ -519,7 +519,7 @@
    "formen": "Leidenschaften",
    "currentTr": "tutku, ihtiras",
    "currentBeispiel": "Das Klettern ist für ihn keine Pflicht, sondern eine Leidenschaft.",
-   "currentBeispielTr": "Tırmanış onun için bir zorunluluk değil, bir tutku."
+   "currentBeispielTr": "Tırmanmak onun için bir zorunluluk değil, bir tutku."
   },
   {
    "id": 4894,

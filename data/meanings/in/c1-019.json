@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kuşku, şüphecilik",
-   "currentBeispiel": "Gegenüber solchen Prognosen ist eine gesunde Skepsis angebracht.",
-   "currentBeispielTr": "Bu tür öngörülere karşı sağlıklı bir kuşku yerinde olur.",
+   "currentBeispiel": "Die Anleger reagierten auf die Zahlen mit offener Skepsis.",
+   "currentBeispielTr": "Yatırımcılar rakamlara açık bir kuşkuyla tepki verdi.",
    "overlapping": [
     "der Argwohn (C1)"
    ]
@@ -23,7 +23,7 @@
    "formen": "Einseitigkeiten",
    "currentTr": "tek yanlılık, taraflılık",
    "currentBeispiel": "Man warf dem Bericht Einseitigkeit bei der Auswahl der Quellen vor.",
-   "currentBeispielTr": "Rapor, kaynak seçiminde tek yanlı olmakla suçlandı."
+   "currentBeispielTr": "Rapor kaynak seçiminde tek yanlılıkla suçlandı."
   },
   {
    "id": 6155,
@@ -33,7 +33,7 @@
    "formen": "",
    "currentTr": "nesnellik, konuya bağlı kalma",
    "currentBeispiel": "Bei aller Leidenschaft sollten wir die Sachlichkeit nicht verlieren.",
-   "currentBeispielTr": "Bunca tutkuya rağmen nesnelliği kaybetmemeliyiz.",
+   "currentBeispielTr": "Bunca tutkuya rağmen nesnelliği elden bırakmamalıyız.",
    "overlapping": [
     "die Objektivität (B2)"
    ]
@@ -46,7 +46,7 @@
    "formen": "Andeutungen",
    "currentTr": "ima, üstü kapalı söz",
    "currentBeispiel": "Statt klarer Kritik blieb es bei vagen Andeutungen.",
-   "currentBeispielTr": "Açık eleştiri yerine iş belirsiz imalarda kaldı.",
+   "currentBeispielTr": "Açık eleştiri yerine ortada yalnızca belirsiz imalar kaldı.",
    "overlapping": [
     "die Anspielung (C1)"
    ]
@@ -59,7 +59,7 @@
    "formen": "",
    "currentTr": "ironi, alaycılık",
    "currentBeispiel": "Die Ironie seiner Bemerkung entging der Hälfte des Publikums.",
-   "currentBeispielTr": "Sözündeki ironiyi izleyicilerin yarısı fark etmedi."
+   "currentBeispielTr": "Sözündeki ironiyi seyircilerin yarısı fark etmedi."
   },
   {
    "id": 6158,
@@ -69,7 +69,7 @@
    "formen": "",
    "currentTr": "tutarlılık, mantıksal bütünlük",
    "currentBeispiel": "Der Aufsatz besticht durch Stringenz und eine klare Gliederung.",
-   "currentBeispielTr": "Makale tutarlılığı ve net kurgusuyla etkiliyor.",
+   "currentBeispielTr": "Makale mantıksal tutarlılığı ve net kurgusuyla etkiliyor.",
    "overlapping": [
     "die Kohärenz (C1)",
     "die Konsistenz (C1)"
@@ -93,7 +93,7 @@
    "formen": "Redundanzen",
    "currentTr": "gereksiz tekrar, fazlalık",
    "currentBeispiel": "Der Text gewinnt deutlich, wenn man die zahlreichen Redundanzen streicht.",
-   "currentBeispielTr": "Sayısız gereksiz tekrar çıkarılırsa metin belirgin biçimde kazanır."
+   "currentBeispielTr": "Sayısız gereksiz tekrarı çıkarırsan metin çok daha iyi olur."
   },
   {
    "id": 6161,
@@ -146,7 +146,7 @@
    "formen": "Suggestivfragen",
    "currentTr": "yönlendirici soru",
    "currentBeispiel": "Mit dieser Suggestivfrage lenkte der Journalist das ganze Gespräch.",
-   "currentBeispielTr": "Bu yönlendirici soruyla gazeteci bütün söyleşiyi yönlendirdi."
+   "currentBeispielTr": "Gazeteci bu yönlendirici soruyla bütün söyleşiyi istediği yere çekti."
   },
   {
    "id": 6166,
@@ -166,7 +166,7 @@
    "formen": "Binsenweisheiten",
    "currentTr": "herkesin bildiği gerçek, aşikâr şey",
    "currentBeispiel": "Dass Bildung wichtig ist, gilt inzwischen als Binsenweisheit.",
-   "currentBeispielTr": "Eğitimin önemli olduğu artık herkesin bildiği bir şey sayılıyor."
+   "currentBeispielTr": "Eğitimin önemli olduğu artık herkesin bildiği bir gerçek."
   },
   {
    "id": 6168,
@@ -176,7 +176,7 @@
    "formen": "hat zugestanden",
    "currentTr": "kabul etmek, hakkını teslim etmek",
    "currentBeispiel": "Man muss ihm zugestehen, dass seine Zahlen korrekt sind.",
-   "currentBeispielTr": "Rakamlarının doğru olduğunu ona teslim etmek gerekir.",
+   "currentBeispielTr": "Rakamlarının doğru olduğu konusunda hakkını teslim etmek gerekir.",
    "overlapping": [
     "akzeptieren (B1)",
     "annehmen (B1)",
@@ -194,7 +194,7 @@
    "formen": "hat gefolgert",
    "currentTr": "sonuç çıkarmak, çıkarımda bulunmak",
    "currentBeispiel": "Daraus folgerte der Autor voreilig einen kausalen Zusammenhang.",
-   "currentBeispielTr": "Yazar bundan aceleyle nedensel bir bağ sonucunu çıkardı.",
+   "currentBeispielTr": "Yazar bundan aceleyle nedensel bir ilişki olduğu sonucunu çıkardı.",
    "overlapping": [
     "schlussfolgern (C1)"
    ]
@@ -207,7 +207,7 @@
    "formen": "hat bezweifelt",
    "currentTr": "kuşku duymak, şüphe etmek",
    "currentBeispiel": "Niemand bezweifelt die Fakten, wohl aber ihre Deutung.",
-   "currentBeispielTr": "Kimse olgulardan kuşku duymuyor, ama yorumlarından duyuyor."
+   "currentBeispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından duyuyor."
   },
   {
    "id": 6171,
@@ -240,7 +240,7 @@
    "formen": "hat vorgebracht",
    "currentTr": "ileri sürmek, dile getirmek",
    "currentBeispiel": "Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenken vorgebracht.",
-   "currentBeispielTr": "Bu öneriye karşı şimdiye dek kimse ciddi bir çekince ileri sürmedi."
+   "currentBeispielTr": "Bu öneriye karşı şimdiye dek kimse ciddi bir çekince dile getirmedi."
   },
   {
    "id": 6174,
@@ -260,7 +260,7 @@
    "formen": "hat entgegengehalten",
    "currentTr": "karşı olarak ileri sürmek, karşılık vermek",
    "currentBeispiel": "Dem hielt die Kritikerin eine ganze Reihe neuerer Studien entgegen.",
-   "currentBeispielTr": "Eleştirmen buna karşı bir dizi yeni çalışmayı ileri sürdü."
+   "currentBeispielTr": "Eleştirmen buna bir dizi yeni çalışmayla karşı çıktı."
   },
   {
    "id": 6176,
@@ -270,7 +270,7 @@
    "formen": "hat moniert",
    "currentTr": "kusur bulmak, eleştirmek",
    "currentBeispiel": "Mehrere Gutachter monierten die unklare Fragestellung der Arbeit.",
-   "currentBeispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusunu eleştirdi.",
+   "currentBeispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusuna kusur buldu.",
    "overlapping": [
     "beanstanden (B2)"
    ]
@@ -296,7 +296,7 @@
    "formen": "hat konzediert",
    "currentTr": "kabul etmek, teslim etmek",
    "currentBeispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
-   "currentBeispielTr": "Rakipleri bile ona belli bir düşünsel tutarlılığı teslim ediyor.",
+   "currentBeispielTr": "Rakipleri bile onda belli bir düşünsel tutarlılık olduğunu kabul ediyor.",
    "overlapping": [
     "akzeptieren (B1)",
     "annehmen (B1)",
@@ -314,7 +314,7 @@
    "formen": "hat revidiert",
    "currentTr": "gözden geçirmek, düzeltmek",
    "currentBeispiel": "Angesichts neuer Daten musste sie ihre These revidieren.",
-   "currentBeispielTr": "Yeni veriler karşısında tezini gözden geçirmek zorunda kaldı.",
+   "currentBeispielTr": "Yeni veriler karşısında tezini revize etmek zorunda kaldı.",
    "overlapping": [
     "sichten (C1)",
     "durchgehen (A2)"
@@ -338,7 +338,7 @@
    "formen": "",
    "currentTr": "ne var ki, oysa, bununla birlikte",
    "currentBeispiel": "Sein Einwand klang plausibel, entbehrte indes jeder empirischen Grundlage.",
-   "currentBeispielTr": "İtirazı makul geliyordu, ne var ki hiçbir ampirik temeli yoktu."
+   "currentBeispielTr": "İtirazı makul geliyordu, ne var ki hiçbir ampirik dayanağı yoktu."
   },
   {
    "id": 6182,
@@ -374,7 +374,7 @@
    "formen": "",
    "currentTr": "gerçi, ne var ki, elbette",
    "currentBeispiel": "Der Vergleich ist reizvoll, trägt freilich nur bedingt.",
-   "currentBeispielTr": "Karşılaştırma cazip, gerçi ancak sınırlı ölçüde geçerli.",
+   "currentBeispielTr": "Karşılaştırma ilgi çekici, gerçi ancak belli ölçüde geçerli.",
    "overlapping": [
     "zwar (B1)"
    ]
@@ -437,7 +437,7 @@
    "formen": "",
    "currentTr": "sağlam, tutarlı, geçerli",
    "currentBeispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
-   "currentBeispielTr": "Bu varsayım için şimdiye dek sağlam bir argüman yok.",
+   "currentBeispielTr": "Bu varsayım için şimdiye dek geçerli bir argüman yok.",
    "overlapping": [
     "fest (B1)",
     "tragfähig (C1)",
@@ -453,7 +453,7 @@
    "formen": "",
    "currentTr": "hiç kuşkusuz, şüphesiz",
    "currentBeispiel": "Sie war zweifelsohne die klügste Rednerin des Abends.",
-   "currentBeispielTr": "O, hiç kuşkusuz akşamın en zeki konuşmacısıydı."
+   "currentBeispielTr": "Kuşkusuz akşamın en zeki konuşmacısıydı."
   },
   {
    "id": 6191,
@@ -463,7 +463,7 @@
    "formen": "",
    "currentTr": "örtük, dolaylı, zımni",
    "currentBeispiel": "Diese Kritik war in seinem Vortrag nur implizit enthalten.",
-   "currentBeispielTr": "Bu eleştiri sunumunda yalnızca örtük biçimde yer alıyordu."
+   "currentBeispielTr": "Bu eleştiri sunumunda yalnızca örtük biçimde vardı."
   },
   {
    "id": 6192,
@@ -493,7 +493,7 @@
    "formen": "",
    "currentTr": "şebeke istikrarı",
    "currentBeispiel": "Bei schwankender Einspeisung wird die Netzstabilität zur eigentlichen Herausforderung.",
-   "currentBeispielTr": "Dalgalı besleme durumunda asıl zorluk şebeke istikrarı oluyor."
+   "currentBeispielTr": "Besleme dalgalanınca asıl zorluk şebeke istikrarı oluyor."
   },
   {
    "id": 6195,
@@ -513,7 +513,7 @@
    "formen": "Grundlasten",
    "currentTr": "baz yük, temel yük",
    "currentBeispiel": "Wer deckt künftig die Grundlast, wenn die alten Kraftwerke wegfallen?",
-   "currentBeispielTr": "Eski santraller devreden çıkarsa baz yükü bundan sonra kim karşılayacak?"
+   "currentBeispielTr": "Eski santraller devreden çıkınca baz yükü bundan sonra kim karşılayacak?"
   },
   {
    "id": 6197,
@@ -523,7 +523,7 @@
    "formen": "Spitzenlasten",
    "currentTr": "puant yük, tepe yük",
    "currentBeispiel": "An kalten Winterabenden erreicht die Spitzenlast regelmäßig kritische Werte.",
-   "currentBeispielTr": "Soğuk kış akşamlarında puant yük düzenli olarak kritik değerlere ulaşıyor."
+   "currentBeispielTr": "Soğuk kış akşamlarında puant yük düzenli olarak kritik değerlere çıkıyor."
   },
   {
    "id": 6198,
@@ -533,7 +533,7 @@
    "formen": "Einspeisungen",
    "currentTr": "şebekeye besleme, elektrik verme",
    "currentBeispiel": "Die Einspeisung aus privaten Anlagen hat sich binnen fünf Jahren verdoppelt.",
-   "currentBeispielTr": "Özel tesislerden şebekeye verilen elektrik beş yılda ikiye katlandı."
+   "currentBeispielTr": "Özel tesislerden şebekeye besleme beş yılda ikiye katlandı."
   },
   {
    "id": 6199,
@@ -552,8 +552,8 @@
    "niveau": "C1",
    "formen": "Stromausfälle",
    "currentTr": "elektrik kesintisi",
-   "currentBeispiel": "Ein großflächiger Stromausfall würde die Debatte über Reservekraftwerke sofort verändern.",
-   "currentBeispielTr": "Geniş çaplı bir elektrik kesintisi yedek santral tartışmasını anında değiştirirdi."
+   "currentBeispiel": "Nach dem Sturm gab es im ganzen Landkreis einen Stromausfall.",
+   "currentBeispielTr": "Fırtınadan sonra bütün ilçede elektrik kesintisi oldu."
   },
   {
    "id": 6201,
@@ -563,7 +563,7 @@
    "formen": "Kapazitätsreserven",
    "currentTr": "kapasite yedeği, yedek kapasite",
    "currentBeispiel": "Die Kapazitätsreserve wird nur in ausgewiesenen Notlagen überhaupt abgerufen.",
-   "currentBeispielTr": "Kapasite yedeği yalnızca tanımlanmış acil durumlarda devreye alınıyor."
+   "currentBeispielTr": "Yedek kapasite yalnızca tanımlı acil durumlarda devreye alınıyor."
   },
   {
    "id": 6202,
@@ -572,8 +572,8 @@
    "niveau": "C1",
    "formen": "Investitionszyklen",
    "currentTr": "yatırım döngüsü",
-   "currentBeispiel": "Im Energiesektor umfasst ein Investitionszyklus leicht drei Jahrzehnte.",
-   "currentBeispielTr": "Enerji sektöründe bir yatırım döngüsü rahatlıkla otuz yılı bulur."
+   "currentBeispiel": "Der Vorstand denkt in Investitionszyklen von dreißig Jahren.",
+   "currentBeispielTr": "Yönetim kurulu otuz yıllık yatırım döngüleriyle düşünüyor."
   }
  ]
 }

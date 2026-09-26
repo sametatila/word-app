@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "hat zurückgewiesen",
    "currentTr": "geri çevirmek, reddetmek",
-   "currentBeispiel": "Der Widerspruch wurde als unbegründet zurückgewiesen.",
-   "currentBeispielTr": "İtiraz dayanaksız bulunarak reddedildi.",
+   "currentBeispiel": "Die Behörde hat meinen Antrag ohne Begründung zurückgewiesen.",
+   "currentBeispielTr": "Kurum başvurumu gerekçe göstermeden geri çevirdi.",
    "overlapping": [
     "wegschicken (A2)"
    ]
@@ -22,8 +22,8 @@
    "niveau": "B2",
    "formen": "hat gewährt",
    "currentTr": "tanımak, sağlamak (hak, izin)",
-   "currentBeispiel": "Man hat der Familie vorläufigen Schutz gewährt.",
-   "currentBeispielTr": "Aileye geçici koruma tanındı.",
+   "currentBeispiel": "Die Bank gewährt uns einen Kredit zu günstigen Bedingungen.",
+   "currentBeispielTr": "Banka bize uygun koşullarda kredi sağlıyor.",
    "overlapping": [
     "kennen (A1)",
     "anerkennen (B1)",
@@ -37,8 +37,8 @@
    "niveau": "B2",
    "formen": "hat bescheinigt",
    "currentTr": "belgelemek, yazılı olarak onaylamak",
-   "currentBeispiel": "Der Kursträger bescheinigt dir die regelmäßige Teilnahme.",
-   "currentBeispielTr": "Kurs kurumu düzenli katılımını belgeliyor.",
+   "currentBeispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
+   "currentBeispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
    "overlapping": [
     "nachweisen (B2)",
     "dokumentieren (C1)"
@@ -51,8 +51,8 @@
    "niveau": "B2",
    "formen": "hat geduldet",
    "currentTr": "hoş görmek, geçici olarak izin vermek",
-   "currentBeispiel": "Sein Aufenthalt wird vorerst nur geduldet.",
-   "currentBeispielTr": "Ülkede kalışına şimdilik yalnızca göz yumuluyor."
+   "currentBeispiel": "Der Chef duldet keine Verspätungen in seinem Team.",
+   "currentBeispielTr": "Patron ekibinde hiçbir gecikmeye göz yummuyor."
   },
   {
    "id": 5049,
@@ -61,8 +61,8 @@
    "niveau": "B2",
    "formen": "hat vorgesprochen",
    "currentTr": "bizzat gitmek, kuruma başvurmak",
-   "currentBeispiel": "Sie sollen nächste Woche persönlich bei uns vorsprechen.",
-   "currentBeispielTr": "Gelecek hafta bizzat kurumumuza gelmeniz gerekiyor."
+   "currentBeispiel": "Sie müssen nächste Woche bei der Ausländerbehörde vorsprechen.",
+   "currentBeispielTr": "Gelecek hafta yabancılar dairesine bizzat gitmeniz gerekiyor."
   },
   {
    "id": 5050,
@@ -71,8 +71,8 @@
    "niveau": "B2",
    "formen": "hat ausgesetzt",
    "currentTr": "askıya almak, durdurmak",
-   "currentBeispiel": "Das Gericht hat die Abschiebung vorerst ausgesetzt.",
-   "currentBeispielTr": "Mahkeme sınır dışı işlemini şimdilik durdurdu."
+   "currentBeispiel": "Das Gericht hat das Verfahren vorerst ausgesetzt.",
+   "currentBeispielTr": "Mahkeme davayı şimdilik askıya aldı."
   },
   {
    "id": 5051,
@@ -81,8 +81,8 @@
    "niveau": "B2",
    "formen": "hat versagt",
    "currentTr": "esirgemek, vermemek; başarısız olmak",
-   "currentBeispiel": "Die Zustimmung wurde ihm ohne nähere Begründung versagt.",
-   "currentBeispielTr": "Onay ona ayrıntılı bir gerekçe olmadan verilmedi.",
+   "currentBeispiel": "Im entscheidenden Spiel hat unser bester Stürmer völlig versagt.",
+   "currentBeispielTr": "Belirleyici maçta en iyi forvetimiz tamamen başarısız oldu.",
    "overlapping": [
     "vorenthalten (C1)"
    ]
@@ -94,8 +94,8 @@
    "niveau": "B2",
    "formen": "hat umgeschrieben",
    "currentTr": "(belgeyi) değiştirmek, yenisine çevirmek; başka ada geçirmek",
-   "currentBeispiel": "Den ausländischen Führerschein kann man hier umschreiben lassen.",
-   "currentBeispielTr": "Yabancı ehliyeti burada çevirtip yenisine dönüştürebilirsin.",
+   "currentBeispiel": "Ich habe den ganzen Absatz noch einmal umgeschrieben.",
+   "currentBeispielTr": "Bütün paragrafı bir kez daha yeniden yazdım.",
    "overlapping": [
     "ändern (A2)",
     "wechseln (A2)",
@@ -111,8 +111,8 @@
    "niveau": "B2",
    "formen": "hat beigefügt",
    "currentTr": "eklemek, iliştirmek",
-   "currentBeispiel": "Bitte fügen Sie dem Schreiben eine Kopie des Passes bei.",
-   "currentBeispielTr": "Lütfen yazıya pasaportun bir kopyasını ekleyin."
+   "currentBeispiel": "Bitte fügen Sie Ihrer Bewerbung ein aktuelles Foto bei.",
+   "currentBeispielTr": "Lütfen başvurunuza güncel bir fotoğraf ekleyin."
   },
   {
    "id": 5054,
@@ -121,8 +121,8 @@
    "niveau": "B2",
    "formen": "hat abgestammt",
    "currentTr": "soyundan gelmek, kökeni olmak",
-   "currentBeispiel": "Wer von deutschen Eltern abstammt, erwirbt die Staatsbürgerschaft automatisch.",
-   "currentBeispielTr": "Alman anne babadan gelen kişi vatandaşlığı kendiliğinden kazanır."
+   "currentBeispiel": "Er stammt von einer alten Bauernfamilie ab.",
+   "currentBeispielTr": "Eski bir çiftçi ailesinin soyundan geliyor."
   },
   {
    "id": 5055,
@@ -131,8 +131,8 @@
    "niveau": "B2",
    "formen": "ist eingereist",
    "currentTr": "ülkeye girmek",
-   "currentBeispiel": "Mit diesem Dokument darfst du mehrmals einreisen.",
-   "currentBeispielTr": "Bu belgeyle ülkeye birden çok kez girebilirsin."
+   "currentBeispiel": "Mit diesem Visum darfst du zweimal einreisen.",
+   "currentBeispielTr": "Bu vizeyle ülkeye iki kez girebilirsin."
   },
   {
    "id": 5056,
@@ -141,8 +141,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "hukuka uygun, yasal",
-   "currentBeispiel": "Sie hält sich seit sieben Jahren rechtmäßig im Land auf.",
-   "currentBeispielTr": "Yedi yıldır ülkede yasal olarak bulunuyor."
+   "currentBeispiel": "Sie lebt seit sieben Jahren rechtmäßig in Deutschland.",
+   "currentBeispielTr": "Yedi yıldır Almanya'da yasal olarak yaşıyor."
   },
   {
    "id": 5057,
@@ -151,8 +151,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "izinsiz, yasak olan",
-   "currentBeispiel": "Die unerlaubte Beschäftigung kann ein hohes Bußgeld kosten.",
-   "currentBeispielTr": "İzinsiz çalıştırma yüksek bir para cezasına yol açabilir."
+   "currentBeispiel": "Er hat das Gebäude unerlaubt betreten.",
+   "currentBeispielTr": "Binaya izinsiz girdi."
   },
   {
    "id": 5058,
@@ -161,8 +161,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "vatansız",
-   "currentBeispiel": "Nach dem Verlust des Passes war er jahrelang staatenlos.",
-   "currentBeispielTr": "Pasaportunu kaybettikten sonra yıllarca vatansız kaldı."
+   "currentBeispiel": "Nach dem Zerfall des Landes wurden viele Menschen staatenlos.",
+   "currentBeispielTr": "Ülkenin dağılmasından sonra birçok insan vatansız kaldı."
   },
   {
    "id": 5059,
@@ -171,8 +171,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "vizeye tabi",
-   "currentBeispiel": "Für dieses Land sind wir weiterhin visumpflichtig.",
-   "currentBeispielTr": "Bu ülke için hâlâ vizeye tabiyiz."
+   "currentBeispiel": "Für dieses Land sind wir leider immer noch visumpflichtig.",
+   "currentBeispielTr": "Bu ülke için ne yazık ki hâlâ vizeye tabiyiz."
   },
   {
    "id": 5060,
@@ -181,8 +181,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "usulüne uygun, düzgün biçimde",
-   "currentBeispiel": "Der Wohnsitz war von Anfang an ordnungsgemäß gemeldet.",
-   "currentBeispielTr": "İkametgâh en başından beri usulüne uygun bildirilmişti.",
+   "currentBeispiel": "Der Antrag wurde ordnungsgemäß bei der Behörde eingereicht.",
+   "currentBeispielTr": "Başvuru, kurallara uygun biçimde kuruma verildi.",
    "overlapping": [
     "fachgerecht (B2)",
     "sachgemäß (B2)"
@@ -195,8 +195,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "gerektiğinde, duruma göre",
-   "currentBeispiel": "Weitere Papiere fordern wir gegebenenfalls schriftlich bei Ihnen an.",
-   "currentBeispielTr": "Gerekirse başka evrakları sizden yazılı olarak isteriz."
+   "currentBeispiel": "Weitere Unterlagen fordern wir gegebenenfalls schriftlich an.",
+   "currentBeispielTr": "Duruma göre başka evrakları sizden yazılı olarak isteriz."
   },
   {
    "id": 5062,
@@ -205,8 +205,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "çok dilli",
-   "currentBeispiel": "Die Beratung wird mehrsprachig angeboten, unter anderem auf Türkisch.",
-   "currentBeispielTr": "Danışmanlık çok dilli sunuluyor, bu arada Türkçe olarak da."
+   "currentBeispiel": "Die Kinder wachsen in unserer Familie mehrsprachig auf.",
+   "currentBeispielTr": "Çocuklar ailemizde çok dilli büyüyor."
   },
   {
    "id": 5063,
@@ -215,8 +215,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "geçici olarak, kısa süreli",
-   "currentBeispiel": "Er darf vorübergehend bei seiner Schwester wohnen.",
-   "currentBeispielTr": "Geçici olarak kız kardeşinin yanında kalabilir."
+   "currentBeispiel": "Die Straße ist wegen der Bauarbeiten vorübergehend gesperrt.",
+   "currentBeispielTr": "Yol, inşaat çalışmaları yüzünden geçici olarak kapalı."
   },
   {
    "id": 5064,
@@ -225,8 +225,8 @@
    "niveau": "B2",
    "formen": "Niederschläge",
    "currentTr": "yağış",
-   "currentBeispiel": "Im Süden wird in den nächsten Tagen kräftiger Niederschlag erwartet.",
-   "currentBeispielTr": "Güneyde önümüzdeki günlerde kuvvetli yağış bekleniyor."
+   "currentBeispiel": "Im Süden wird für morgen kräftiger Niederschlag erwartet.",
+   "currentBeispielTr": "Güneyde yarın için kuvvetli yağış bekleniyor."
   },
   {
    "id": 5065,
@@ -235,8 +235,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "dolu",
-   "currentBeispiel": "Der Hagel hat die jungen Pflanzen im Beet völlig zerschlagen.",
-   "currentBeispielTr": "Dolu, tarhtaki genç bitkileri tamamen ezip geçti.",
+   "currentBeispiel": "Der Hagel hat gestern die ganze Ernte zerstört.",
+   "currentBeispielTr": "Dolu dün bütün ürünü mahvetti.",
    "overlapping": [
     "besetzt (A1)",
     "voll (A2)",
@@ -250,8 +250,8 @@
    "niveau": "B2",
    "formen": "Fröste",
    "currentTr": "don, ayaz",
-   "currentBeispiel": "Nach dem späten Frost trugen die Obstbäume kaum Früchte.",
-   "currentBeispielTr": "Geç gelen dondan sonra meyve ağaçları neredeyse hiç ürün vermedi."
+   "currentBeispiel": "Der späte Frost hat die Obstblüte stark geschädigt.",
+   "currentBeispielTr": "Geç gelen don meyve çiçeklerine ağır zarar verdi."
   },
   {
    "id": 5067,
@@ -260,8 +260,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "karların erimesi, ılık hava",
-   "currentBeispiel": "Das plötzliche Tauwetter ließ die Bäche im Tal anschwellen.",
-   "currentBeispielTr": "Ani ılık hava, vadideki dereleri kabarttı."
+   "currentBeispiel": "Nach dem Tauwetter standen die Wiesen unter Wasser.",
+   "currentBeispielTr": "Karlar eridikten sonra çayırlar suyla kaplandı."
   },
   {
    "id": 5068,
@@ -270,8 +270,8 @@
    "niveau": "B2",
    "formen": "Windstöße",
    "currentTr": "ani rüzgâr, rüzgâr hamlesi",
-   "currentBeispiel": "Ein heftiger Windstoß riss den Sonnenschirm von der Terrasse.",
-   "currentBeispielTr": "Şiddetli bir rüzgâr, şemsiyeyi terastan söküp aldı."
+   "currentBeispiel": "Ein heftiger Windstoß riss den Sonnenschirm um.",
+   "currentBeispielTr": "Şiddetli bir rüzgâr hamlesi güneş şemsiyesini devirdi."
   },
   {
    "id": 5069,
@@ -281,7 +281,7 @@
    "formen": "",
    "currentTr": "nem, hava nemi",
    "currentBeispiel": "Bei hoher Luftfeuchtigkeit wirkt die Hitze noch drückender.",
-   "currentBeispielTr": "Nem yüksek olduğunda sıcak daha da bunaltıcı hissettiriyor."
+   "currentBeispielTr": "Nem yüksek olduğunda sıcak daha da bunaltıcı geliyor."
   },
   {
    "id": 5070,
@@ -290,8 +290,8 @@
    "niveau": "B2",
    "formen": "Temperaturschwankungen",
    "currentTr": "sıcaklık değişimi, ısı oynaması",
-   "currentBeispiel": "Starke Temperaturschwankungen setzen den empfindlichen Wurzeln zu.",
-   "currentBeispielTr": "Sert sıcaklık değişimleri hassas köklere zarar veriyor."
+   "currentBeispiel": "Die starken Temperaturschwankungen machen den Pflanzen zu schaffen.",
+   "currentBeispielTr": "Sert sıcaklık değişimleri bitkileri epey zorluyor."
   },
   {
    "id": 5071,
@@ -300,8 +300,8 @@
    "niveau": "B2",
    "formen": "Unwetter",
    "currentTr": "fırtına, sağanaklı kötü hava",
-   "currentBeispiel": "Das Unwetter legte am Abend den halben Bahnverkehr lahm.",
-   "currentBeispielTr": "Fırtına akşam saatlerinde demir yolu trafiğinin yarısını felç etti.",
+   "currentBeispiel": "Das Unwetter hat am Abend viele Bäume entwurzelt.",
+   "currentBeispielTr": "Şiddetli fırtına akşam birçok ağacı kökünden söktü.",
    "overlapping": [
     "der Sturm (B1)"
    ]
@@ -313,8 +313,8 @@
    "niveau": "B2",
    "formen": "Überschwemmungen",
    "currentTr": "sel, su baskını",
-   "currentBeispiel": "Nach tagelangem Regen kam es im Tal zu schweren Überschwemmungen.",
-   "currentBeispielTr": "Günlerce süren yağmurdan sonra vadide ağır su baskınları yaşandı."
+   "currentBeispiel": "Nach tagelangem Regen kam es zu schweren Überschwemmungen.",
+   "currentBeispielTr": "Günlerce süren yağmurdan sonra ağır seller yaşandı."
   },
   {
    "id": 5073,
@@ -323,8 +323,8 @@
    "niveau": "B2",
    "formen": "Hochwasser",
    "currentTr": "taşkın, yüksek su seviyesi",
-   "currentBeispiel": "Die Gemeinde hat entlang des Flusses Schutzwälle gegen Hochwasser gebaut.",
-   "currentBeispielTr": "Belediye, nehir boyunca taşkına karşı koruma setleri yaptı."
+   "currentBeispiel": "Die Stadt hat am Fluss Mauern gegen Hochwasser gebaut.",
+   "currentBeispielTr": "Şehir, nehir kenarına taşkına karşı duvarlar yaptı."
   },
   {
    "id": 5074,
@@ -333,8 +333,8 @@
    "niveau": "B2",
    "formen": "Lawinen",
    "currentTr": "çığ",
-   "currentBeispiel": "Wegen der Lawinengefahr blieb der Wanderweg den ganzen Winter gesperrt.",
-   "currentBeispielTr": "Çığ tehlikesi nedeniyle yürüyüş yolu bütün kış kapalı kaldı."
+   "currentBeispiel": "Nach dem starken Schneefall ging eine große Lawine ab.",
+   "currentBeispielTr": "Yoğun kar yağışından sonra büyük bir çığ düştü."
   },
   {
    "id": 5075,
@@ -343,8 +343,8 @@
    "niveau": "B2",
    "formen": "Hitzewellen",
    "currentTr": "sıcak hava dalgası",
-   "currentBeispiel": "Die dritte Hitzewelle des Sommers trocknete die Felder völlig aus.",
-   "currentBeispielTr": "Yazın üçüncü sıcak hava dalgası tarlaları tamamen kuruttu."
+   "currentBeispiel": "Die Hitzewelle hielt in diesem Sommer drei Wochen an.",
+   "currentBeispielTr": "Sıcak hava dalgası bu yaz üç hafta sürdü."
   },
   {
    "id": 5076,
@@ -353,8 +353,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "hava basıncı",
-   "currentBeispiel": "Ein rasch fallender Luftdruck kündigt meist schlechtes Wetter an.",
-   "currentBeispielTr": "Hızla düşen hava basıncı çoğunlukla kötü havanın habercisidir."
+   "currentBeispiel": "Ein fallender Luftdruck kündigt meist schlechtes Wetter an.",
+   "currentBeispielTr": "Düşen hava basıncı çoğunlukla kötü havanın habercisidir."
   },
   {
    "id": 5077,
@@ -363,8 +363,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "bulutluluk",
-   "currentBeispiel": "Am Nachmittag nimmt die Bewölkung von Westen her deutlich zu.",
-   "currentBeispielTr": "Öğleden sonra bulutluluk batıdan itibaren belirgin şekilde artacak."
+   "currentBeispiel": "Am Nachmittag nimmt die Bewölkung von Westen her zu.",
+   "currentBeispielTr": "Öğleden sonra bulutluluk batıdan itibaren artıyor."
   },
   {
    "id": 5078,
@@ -373,8 +373,8 @@
    "niveau": "B2",
    "formen": "Schneedecken",
    "currentTr": "kar örtüsü",
-   "currentBeispiel": "Unter der dicken Schneedecke überstehen die Stauden den Winter gut.",
-   "currentBeispielTr": "Kalın kar örtüsünün altında çok yıllık bitkiler kışı rahat atlatıyor."
+   "currentBeispiel": "Unter der dicken Schneedecke überstehen die Pflanzen den Winter.",
+   "currentBeispielTr": "Kalın kar örtüsünün altında bitkiler kışı atlatıyor."
   },
   {
    "id": 5079,
@@ -383,8 +383,8 @@
    "niveau": "B2",
    "formen": "Erdrutsche",
    "currentTr": "heyelan, toprak kayması",
-   "currentBeispiel": "Ein Erdrutsch verschüttete nach dem Dauerregen die Straße ins Dorf.",
-   "currentBeispielTr": "Sürekli yağıştan sonra bir heyelan köye giden yolu kapattı."
+   "currentBeispiel": "Ein Erdrutsch hat die Straße ins Dorf verschüttet.",
+   "currentBeispielTr": "Bir heyelan köye giden yolu kapattı."
   },
   {
    "id": 5080,
@@ -393,8 +393,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "küresel ısınma",
-   "currentBeispiel": "Die Erderwärmung verschiebt die Blütezeit vieler heimischer Pflanzen.",
-   "currentBeispielTr": "Küresel ısınma birçok yerli bitkinin çiçeklenme zamanını kaydırıyor."
+   "currentBeispiel": "Die Erderwärmung lässt die Gletscher schneller schmelzen.",
+   "currentBeispielTr": "Küresel ısınma buzulların daha hızlı erimesine yol açıyor."
   },
   {
    "id": 5081,
@@ -403,8 +403,8 @@
    "niveau": "B2",
    "formen": "Klimazonen",
    "currentTr": "iklim kuşağı",
-   "currentBeispiel": "Diese Palmenart wächst nur in tropischen Klimazonen im Freiland.",
-   "currentBeispielTr": "Bu palmiye türü açık havada yalnızca tropik iklim kuşaklarında yetişir."
+   "currentBeispiel": "Diese Pflanze wächst nur in tropischen Klimazonen.",
+   "currentBeispielTr": "Bu bitki yalnızca tropik iklim kuşaklarında yetişir."
   },
   {
    "id": 5082,
@@ -413,8 +413,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kuraklık, kuruluk",
-   "currentBeispiel": "Die anhaltende Trockenheit zwingt die Bauern zu strenger Wasserplanung.",
-   "currentBeispielTr": "Süregelen kuraklık çiftçileri sıkı bir su planlamasına zorluyor."
+   "currentBeispiel": "Die anhaltende Trockenheit hat die Ernte stark verringert.",
+   "currentBeispielTr": "Süregelen kuraklık hasadı büyük ölçüde azalttı."
   },
   {
    "id": 5083,
@@ -423,8 +423,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "alacakaranlık, tan/akşam vakti",
-   "currentBeispiel": "In der Dämmerung kommen die Rehe an den Waldrand heraus.",
-   "currentBeispielTr": "Alacakaranlıkta karacalar orman kenarına kadar çıkıyor."
+   "currentBeispiel": "In der Dämmerung kommen die Rehe auf die Wiese.",
+   "currentBeispielTr": "Alacakaranlıkta karacalar çayıra çıkıyor."
   },
   {
    "id": 5084,
@@ -433,8 +433,8 @@
    "niveau": "B2",
    "formen": "Nadelwälder",
    "currentTr": "iğne yapraklı orman",
-   "currentBeispiel": "Der dichte Nadelwald reicht bis an den Rand des Moores.",
-   "currentBeispielTr": "Sık iğne yapraklı orman bataklığın kenarına kadar uzanıyor."
+   "currentBeispiel": "Der dichte Nadelwald reicht bis an den See.",
+   "currentBeispielTr": "Sık iğne yapraklı orman göle kadar uzanıyor."
   },
   {
    "id": 5085,
@@ -443,8 +443,8 @@
    "niveau": "B2",
    "formen": "Lichtungen",
    "currentTr": "orman açıklığı, kayran",
-   "currentBeispiel": "Auf der Lichtung machten wir Rast und beobachteten die Vögel.",
-   "currentBeispielTr": "Orman açıklığında mola verip kuşları izledik."
+   "currentBeispiel": "Auf der Lichtung haben wir Rast gemacht.",
+   "currentBeispielTr": "Orman açıklığında mola verdik."
   },
   {
    "id": 5086,
@@ -453,8 +453,8 @@
    "niveau": "B2",
    "formen": "Waldränder",
    "currentTr": "orman kenarı",
-   "currentBeispiel": "Am Waldrand wachsen Sträucher, die vielen Insekten Nahrung bieten.",
-   "currentBeispielTr": "Orman kenarında birçok böceğe besin sağlayan çalılar yetişiyor."
+   "currentBeispiel": "Am Waldrand blühen im Frühling viele wilde Blumen.",
+   "currentBeispielTr": "Orman kenarında ilkbaharda birçok yabani çiçek açıyor."
   },
   {
    "id": 5087,
@@ -473,8 +473,8 @@
    "niveau": "B2",
    "formen": "Moore",
    "currentTr": "bataklık, turbalık",
-   "currentBeispiel": "Ein intaktes Moor speichert erstaunlich große Mengen an Kohlenstoff.",
-   "currentBeispielTr": "Bozulmamış bir turbalık şaşırtıcı miktarda karbon depolar."
+   "currentBeispiel": "Ein intaktes Moor speichert große Mengen Kohlenstoff.",
+   "currentBeispielTr": "Bozulmamış bir bataklık büyük miktarda karbon depolar."
   },
   {
    "id": 5089,
@@ -483,7 +483,7 @@
    "niveau": "B2",
    "formen": "Äcker",
    "currentTr": "tarla, ekili arazi",
-   "currentBeispiel": "Nach der Ernte lag der Acker mehrere Wochen brach.",
+   "currentBeispiel": "Nach der Ernte lag der Acker wochenlang brach.",
    "currentBeispielTr": "Hasattan sonra tarla haftalarca boş kaldı.",
    "overlapping": [
     "das Feld (B1)"
@@ -496,8 +496,8 @@
    "niveau": "B2",
    "formen": "Knospen",
    "currentTr": "tomurcuk",
-   "currentBeispiel": "An den Zweigen zeigen sich die ersten Knospen des Frühlings.",
-   "currentBeispielTr": "Dallarda ilkbaharın ilk tomurcukları görünmeye başladı."
+   "currentBeispiel": "An den Zweigen zeigen sich die ersten Knospen.",
+   "currentBeispielTr": "Dallarda ilk tomurcuklar görünmeye başladı."
   },
   {
    "id": 5091,
@@ -506,8 +506,8 @@
    "niveau": "B2",
    "formen": "Triebe",
    "currentTr": "sürgün, filiz",
-   "currentBeispiel": "Die jungen Triebe sollte man erst nach dem letzten Frost schneiden.",
-   "currentBeispielTr": "Genç sürgünleri ancak son dondan sonra budamak gerekir.",
+   "currentBeispiel": "Die jungen Triebe schneidet man erst nach dem Frost.",
+   "currentBeispielTr": "Genç filizler ancak dondan sonra budanır.",
    "overlapping": [
     "die Vertreibung (C1)"
    ]
@@ -519,8 +519,8 @@
    "niveau": "B2",
    "formen": "Rinden",
    "currentTr": "ağaç kabuğu",
-   "currentBeispiel": "An der rissigen Rinde erkennt man das Alter der Eiche.",
-   "currentBeispielTr": "Çatlamış kabuğundan meşenin yaşı anlaşılıyor."
+   "currentBeispiel": "An der rissigen Rinde erkennt man die alte Eiche.",
+   "currentBeispielTr": "Çatlamış ağaç kabuğundan yaşlı meşeyi tanırsın."
   },
   {
    "id": 5093,
@@ -539,8 +539,8 @@
    "niveau": "B2",
    "formen": "Sträucher",
    "currentTr": "çalı",
-   "currentBeispiel": "Der Strauch vor dem Fenster trägt im Herbst rote Beeren.",
-   "currentBeispielTr": "Pencerenin önündeki çalı sonbaharda kırmızı meyveler veriyor."
+   "currentBeispiel": "Vor dem Fenster trägt der Strauch rote Beeren.",
+   "currentBeispielTr": "Pencerenin önündeki çalı kırmızı meyveler veriyor."
   }
  ]
 }

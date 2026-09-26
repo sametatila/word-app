@@ -10,7 +10,7 @@
    "formen": "vereinnahmt, hat vereinnahmt",
    "currentTr": "kendine mal etmek, sahiplenmek",
    "currentBeispiel": "Die Partei versucht, das Thema politisch zu vereinnahmen.",
-   "currentBeispielTr": "Parti, konuyu siyaseten sahiplenmeye çalışıyor."
+   "currentBeispielTr": "Parti konuyu siyasi olarak kendine mal etmeye çalışıyor."
   },
   {
    "id": 3699,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "schlägt sich nieder, hat sich niedergeschlagen",
    "currentTr": "yansımak, etkisini göstermek",
-   "currentBeispiel": "Die Krise schlägt sich in sinkenden Umsätzen nieder.",
-   "currentBeispielTr": "Kriz, düşen cirolara yansıyor."
+   "currentBeispiel": "Der Preisanstieg hat sich deutlich in den Umsätzen niedergeschlagen.",
+   "currentBeispielTr": "Fiyat artışı cirolara belirgin biçimde yansıdı."
   },
   {
    "id": 3701,
@@ -30,7 +30,7 @@
    "formen": "Beweggründe",
    "currentTr": "sebep, güdü, saik",
    "currentBeispiel": "Seine wahren Beweggründe blieben lange im Dunkeln.",
-   "currentBeispielTr": "Gerçek saikleri uzun süre karanlıkta kaldı.",
+   "currentBeispielTr": "Gerçek güdüleri uzun süre karanlıkta kaldı.",
    "overlapping": [
     "der Grund (B1)"
    ]
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "Missstände",
    "currentTr": "aksaklık, kötü durum",
-   "currentBeispiel": "Die Reportage deckt gravierende Missstände im System auf.",
-   "currentBeispielTr": "Haber dosyası, sistemdeki vahim aksaklıkları ortaya çıkarıyor."
+   "currentBeispiel": "Der Bericht deckt schwere Missstände in der Pflege auf.",
+   "currentBeispielTr": "Rapor, bakım sektöründeki ağır aksaklıkları ortaya çıkarıyor."
   },
   {
    "id": 3706,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "Tücken",
    "currentTr": "sinsi zorluk, gizli sorun",
-   "currentBeispiel": "Die Software hat einige technische Tücken.",
-   "currentBeispielTr": "Yazılımın bazı sinsi teknik zorlukları var."
+   "currentBeispiel": "Das neue Buchungssystem hat seine ganz eigenen Tücken.",
+   "currentBeispielTr": "Yeni rezervasyon sisteminin kendine has cilveleri var."
   },
   {
    "id": 3710,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "Tragfähigkeiten",
    "currentTr": "sağlamlık, taşıma gücü",
-   "currentBeispiel": "Die Tragfähigkeit des Konzepts ist noch fraglich.",
-   "currentBeispielTr": "Konseptin sürdürülebilirliği hâlâ tartışmalı.",
+   "currentBeispiel": "Die Tragfähigkeit der Brücke reicht für den Schwertransport nicht.",
+   "currentBeispielTr": "Köprünün taşıma kapasitesi ağır nakliye için yetmiyor.",
    "overlapping": [
     "die Robustheit (C1)"
    ]
@@ -75,8 +75,8 @@
    "niveau": "C1",
    "formen": "Unzulänglichkeiten",
    "currentTr": "yetersizlik, eksiklik",
-   "currentBeispiel": "Die Unzulänglichkeiten des Plans wurden schnell sichtbar.",
-   "currentBeispielTr": "Planın yetersizlikleri çabucak görünür oldu."
+   "currentBeispiel": "Beim ersten Test zeigten sich die Unzulänglichkeiten der App.",
+   "currentBeispielTr": "İlk testte uygulamanın yetersizlikleri ortaya çıktı."
   },
   {
    "id": 3713,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tartışmasız",
-   "currentBeispiel": "Der Erfolg der Maßnahme ist keineswegs unumstritten.",
-   "currentBeispielTr": "Önlemin başarısı hiç de tartışmasız değil.",
+   "currentBeispiel": "Seine Position als Kapitän ist im Team unumstritten.",
+   "currentBeispielTr": "Takımdaki kaptanlığı tartışmasız kabul ediliyor.",
    "overlapping": [
     "unbestritten (C1)"
    ]
@@ -112,8 +112,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çok katmanlı, karmaşık",
-   "currentBeispiel": "Das Thema ist weitaus vielschichtiger, als es zunächst scheint.",
-   "currentBeispielTr": "Konu ilk bakışta göründüğünden çok daha katmanlı."
+   "currentBeispiel": "Die Ursachen des Konflikts sind vielschichtiger als gedacht.",
+   "currentBeispielTr": "Çatışmanın nedenleri sanıldığından daha katmanlı."
   },
   {
    "id": 3720,
@@ -123,7 +123,7 @@
    "formen": "",
    "currentTr": "hassas, patlayıcı nitelikte",
    "currentBeispiel": "Das Dokument enthält politisch brisante Details.",
-   "currentBeispielTr": "Belge, siyaseten son derece hassas ayrıntılar içeriyor.",
+   "currentBeispielTr": "Belge, siyaseten hassas ayrıntılar içeriyor.",
    "overlapping": [
     "anfällig (B2)",
     "heikel (C1)"
@@ -149,8 +149,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "güvencesiz, istikrarsız",
-   "currentBeispiel": "Viele Freiberufler leben in einer prekären finanziellen Lage.",
-   "currentBeispielTr": "Birçok serbest çalışan, mali açıdan güç bir durumda yaşıyor."
+   "currentBeispiel": "Viele Freiberufler leben in prekären Verhältnissen.",
+   "currentBeispielTr": "Birçok serbest çalışan güvencesiz koşullarda yaşıyor."
   },
   {
    "id": 3728,
@@ -170,7 +170,7 @@
    "formen": "",
    "currentTr": "buna rağmen",
    "currentBeispiel": "Die Warnungen waren deutlich, dessenungeachtet handelte niemand.",
-   "currentBeispielTr": "Uyarılar gayet açıktı; buna rağmen kimse harekete geçmedi."
+   "currentBeispielTr": "Uyarılar açıktı, buna rağmen kimse harekete geçmedi."
   },
   {
    "id": 3731,
@@ -210,7 +210,7 @@
    "formen": "",
    "currentTr": "pazara nüfuz etme",
    "currentBeispiel": "Die Marktdurchdringung in Asien verlief schleppender als erwartet.",
-   "currentBeispielTr": "Asya pazarına nüfuz etme beklenenden yavaş ilerledi."
+   "currentBeispielTr": "Asya pazarına nüfuz etmek beklenenden yavaş ilerledi."
   },
   {
    "id": 3886,
@@ -239,8 +239,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geleceğe yönelik, öncü",
-   "currentBeispiel": "Das Unternehmen verfolgt einen zukunftsweisenden Ansatz.",
-   "currentBeispielTr": "Şirket geleceğe yön veren bir yaklaşım izliyor."
+   "currentBeispiel": "Die Stadt setzt auf ein zukunftsweisendes Verkehrskonzept.",
+   "currentBeispielTr": "Şehir, geleceğe yön veren bir ulaşım konseptini benimsiyor."
   },
   {
    "id": 3891,
@@ -250,7 +250,7 @@
    "formen": "Weichenstellungen",
    "currentTr": "yön belirleyici karar",
    "currentBeispiel": "Diese Weichenstellung entscheidet über die nächsten zehn Jahre.",
-   "currentBeispielTr": "Bu karar, önümüzdeki on yılın yönünü belirleyecek."
+   "currentBeispielTr": "Bu karar, önümüzdeki on yılın yönünü belirliyor."
   },
   {
    "id": 3892,
@@ -260,7 +260,7 @@
    "formen": "Kerngeschäfte",
    "currentTr": "asıl iş kolu, çekirdek iş",
    "currentBeispiel": "Das Unternehmen konzentriert sich wieder auf sein Kerngeschäft.",
-   "currentBeispielTr": "Şirket yeniden asıl iş koluna odaklanıyor."
+   "currentBeispielTr": "Şirket yeniden ana iş koluna odaklanıyor."
   },
   {
    "id": 3894,
@@ -280,7 +280,7 @@
    "formen": "Verhandlungsmassen",
    "currentTr": "pazarlık kozu, pazarlıkta verilecek şey",
    "currentBeispiel": "Der Bonus diente als zusätzliche Verhandlungsmasse.",
-   "currentBeispielTr": "İkramiye, pazarlıkta ek koz olarak kullanıldı."
+   "currentBeispielTr": "İkramiye, ek bir pazarlık kozu işlevi gördü."
   },
   {
    "id": 3899,
@@ -320,7 +320,7 @@
    "formen": "Ausfallrisiken",
    "currentTr": "temerrüt riski",
    "currentBeispiel": "Die Bank bewertet das Ausfallrisiko des Kreditnehmers neu.",
-   "currentBeispielTr": "Banka, kredi alanın temerrüt riskini yeniden değerlendiriyor."
+   "currentBeispielTr": "Banka, borçlunun temerrüt riskini yeniden değerlendiriyor."
   },
   {
    "id": 3904,
@@ -339,8 +339,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hesaplanamaz, öngörülemez",
-   "currentBeispiel": "Die politischen Entwicklungen machen das Geschäft unkalkulierbar.",
-   "currentBeispielTr": "Siyasi gelişmeler işi öngörülemez hâle getiriyor."
+   "currentBeispiel": "Politische Krisen machen die Lieferkosten unkalkulierbar.",
+   "currentBeispielTr": "Siyasi krizler nakliye maliyetlerini öngörülemez kılıyor."
   },
   {
    "id": 3906,
@@ -369,8 +369,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kaynak tasarrufu",
-   "currentBeispiel": "Ressourcenschonung gehört inzwischen zur Unternehmensstrategie.",
-   "currentBeispielTr": "Kaynak tasarrufu artık şirket stratejisinin bir parçası."
+   "currentBeispiel": "Die neue Anlage dient vor allem der Ressourcenschonung.",
+   "currentBeispielTr": "Yeni tesis, öncelikle kaynak tasarrufuna hizmet ediyor."
   },
   {
    "id": 3911,
@@ -380,7 +380,7 @@
    "formen": "",
    "currentTr": "iklim nötr, karbon nötr",
    "currentBeispiel": "Die Produktion soll bis 2035 klimaneutral werden.",
-   "currentBeispielTr": "Üretim 2035'e kadar iklim nötr olacak."
+   "currentBeispielTr": "Üretim 2035'e kadar iklim nötr hâle gelecek."
   },
   {
    "id": 3912,
@@ -429,8 +429,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "aşırı sömürü, talan",
-   "currentBeispiel": "Kritiker werfen dem Konzern Raubbau an natürlichen Ressourcen vor.",
-   "currentBeispielTr": "Eleştirmenler şirketi doğal kaynakları talan etmekle suçluyor."
+   "currentBeispiel": "Kritiker werfen dem Konzern Raubbau an den Wäldern vor.",
+   "currentBeispielTr": "Eleştirmenler şirketi ormanları aşırı sömürmekle suçluyor."
   },
   {
    "id": 3918,
@@ -449,8 +449,8 @@
    "niveau": "C1",
    "formen": "Automatisierungen",
    "currentTr": "otomasyon",
-   "currentBeispiel": "Durch Automatisierung sollen Produktionskosten gesenkt werden.",
-   "currentBeispielTr": "Otomasyonla üretim maliyetleri düşürülecek."
+   "currentBeispiel": "Durch Automatisierung sollen die Produktionskosten sinken.",
+   "currentBeispielTr": "Otomasyonla üretim maliyetleri düşecek."
   },
   {
    "id": 3920,
@@ -480,7 +480,7 @@
    "formen": "Datenfluten",
    "currentTr": "veri seli, bilgi bombardımanı",
    "currentBeispiel": "Die Datenflut überfordert viele Abteilungen ohne geeignete Tools.",
-   "currentBeispielTr": "Uygun araçlar olmadan veri seli birçok bölümü aşıyor."
+   "currentBeispielTr": "Veri seli, uygun araçları olmayan birçok bölümü zorluyor."
   },
   {
    "id": 3923,
@@ -512,8 +512,8 @@
    "niveau": "C1",
    "formen": "Vernetzungen",
    "currentTr": "ağ oluşturma, bağlantılandırma",
-   "currentBeispiel": "Die zunehmende Vernetzung der Lieferketten birgt neue Risiken.",
-   "currentBeispielTr": "Tedarik zincirlerinin artan bağlantılılığı yeni riskler doğuruyor."
+   "currentBeispiel": "Die Vernetzung der Abteilungen verbessert den Informationsfluss.",
+   "currentBeispielTr": "Bölümler arasında ağ oluşturmak bilgi akışını iyileştiriyor."
   },
   {
    "id": 3926,
@@ -522,8 +522,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "siber suç",
-   "currentBeispiel": "Cyberkriminalität verursacht jährlich Milliardenschäden.",
-   "currentBeispielTr": "Siber suçlar her yıl milyarlarca zarara yol açıyor."
+   "currentBeispiel": "Cyberkriminalität verursacht jedes Jahr Schäden in Milliardenhöhe.",
+   "currentBeispielTr": "Siber suçlar her yıl milyarlarca avroluk zarara yol açıyor."
   }
  ]
 }

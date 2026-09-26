@@ -10,7 +10,7 @@
    "formen": "Stauden",
    "currentTr": "çok yıllık bitki",
    "currentBeispiel": "Diese Stauden blühen jedes Jahr wieder ohne großen Aufwand.",
-   "currentBeispielTr": "Bu çok yıllık bitkiler fazla uğraş gerektirmeden her yıl yeniden çiçek açıyor."
+   "currentBeispielTr": "Bu çok yıllık bitkiler her yıl fazla uğraş gerektirmeden yeniden çiçek açıyor."
   },
   {
    "id": 5096,
@@ -29,7 +29,7 @@
    "niveau": "B2",
    "formen": "Beete",
    "currentTr": "tarh, çiçek/sebze yatağı",
-   "currentBeispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter angelegt.",
+   "currentBeispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter gepflanzt.",
    "currentBeispielTr": "Arkadaki tarha bu yıl baharat bitkileri ektik."
   },
   {
@@ -40,7 +40,7 @@
    "formen": "Gewächshäuser",
    "currentTr": "sera",
    "currentBeispiel": "Im Gewächshaus reifen die Tomaten gut zwei Wochen früher.",
-   "currentBeispielTr": "Serada domatesler iki hafta kadar erken olgunlaşıyor."
+   "currentBeispielTr": "Serada domatesler iki hafta kadar daha erken olgunlaşıyor."
   },
   {
    "id": 5099,
@@ -90,7 +90,7 @@
    "formen": "Wildtiere",
    "currentTr": "yabani hayvan",
    "currentBeispiel": "Der neue Zaun soll Wildtiere von der Autobahn fernhalten.",
-   "currentBeispielTr": "Yeni çit, yabani hayvanları otoyoldan uzak tutmayı amaçlıyor."
+   "currentBeispielTr": "Yeni çit, yabani hayvanları otoyoldan uzak tutacak."
   },
   {
    "id": 5104,
@@ -140,7 +140,7 @@
    "formen": "ist gewelkt",
    "currentTr": "solmak, pörsümek",
    "currentBeispiel": "Ohne Wasser welken die Blätter schon nach zwei Tagen.",
-   "currentBeispielTr": "Susuz kalınca yapraklar iki gün içinde soluyor.",
+   "currentBeispielTr": "Susuz kalınca yapraklar daha iki günde soluyor.",
    "overlapping": [
     "verblassen (C1)"
    ]
@@ -153,7 +153,7 @@
    "formen": "ist verdorrt",
    "currentTr": "kuruyup kavrulmak",
    "currentBeispiel": "Der Rasen ist im heißen August völlig verdorrt.",
-   "currentBeispielTr": "Çimenlik, sıcak ağustos ayında tamamen kavruldu."
+   "currentBeispielTr": "Çimenler ağustos sıcağında tamamen kurudu."
   },
   {
    "id": 5110,
@@ -183,7 +183,7 @@
    "formen": "hat gejätet",
    "currentTr": "yabani ot ayıklamak",
    "currentBeispiel": "Nach dem Regen lässt sich das Unkraut leichter jäten.",
-   "currentBeispielTr": "Yağmurdan sonra yabani otları ayıklamak daha kolay oluyor."
+   "currentBeispielTr": "Yağmurdan sonra otları ayıklamak daha kolay oluyor."
   },
   {
    "id": 5113,
@@ -223,7 +223,7 @@
    "formen": "ist verwittert",
    "currentTr": "hava koşullarıyla aşınmak, yıpranmak",
    "currentBeispiel": "Der Zaun ist über die Jahre in Wind und Regen verwittert.",
-   "currentBeispielTr": "Çit, yıllar içinde rüzgâr ve yağmurda yıprandı."
+   "currentBeispielTr": "Çit yıllar içinde rüzgâr ve yağmurda aşındı."
   },
   {
    "id": 5117,
@@ -233,7 +233,7 @@
    "formen": "ist abgekühlt",
    "currentTr": "serinlemek, soğumak",
    "currentBeispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
-   "currentBeispielTr": "Sağanaktan sonra hava gözle görülür biçimde serinledi."
+   "currentBeispielTr": "Sağanaktan sonra hava hissedilir biçimde soğudu."
   },
   {
    "id": 5118,
@@ -263,7 +263,7 @@
    "formen": "hat überflutet",
    "currentTr": "su basmak, sular altında bırakmak",
    "currentBeispiel": "Der Bach hat nach der Schneeschmelze die Wiesen überflutet.",
-   "currentBeispielTr": "Kar erimesinden sonra dere çayırları sular altında bıraktı."
+   "currentBeispielTr": "Dere, kar erimesinden sonra çayırları sular altında bıraktı."
   },
   {
    "id": 5121,
@@ -273,7 +273,7 @@
    "formen": "ist versickert",
    "currentTr": "toprağa sızmak",
    "currentBeispiel": "Auf verdichtetem Boden versickert das Regenwasser nur langsam.",
-   "currentBeispielTr": "Sıkışmış toprakta yağmur suyu ancak yavaşça sızıyor."
+   "currentBeispielTr": "Sıkışmış toprakta yağmur suyu ancak yavaş yavaş sızıyor."
   },
   {
    "id": 5122,
@@ -283,7 +283,7 @@
    "formen": "hat bestäubt",
    "currentTr": "tozlaştırmak, döllemek",
    "currentBeispiel": "Wildbienen bestäuben viele Obstsorten zuverlässiger als Honigbienen.",
-   "currentBeispielTr": "Yabani arılar birçok meyve türünü bal arılarından daha güvenilir biçimde tozlaştırır."
+   "currentBeispielTr": "Yabani arılar birçok meyve türünü bal arılarından daha iyi tozlaştırır."
   },
   {
    "id": 5123,
@@ -337,7 +337,7 @@
    "formen": "hat gewuchert",
    "currentTr": "aşırı büyümek, her yeri sarmak",
    "currentBeispiel": "Die Minze wuchert im ganzen Garten und verdrängt andere Kräuter.",
-   "currentBeispielTr": "Nane bütün bahçeyi sarıyor ve diğer bitkileri boğuyor."
+   "currentBeispielTr": "Nane bütün bahçede aşırı büyüyüp diğer bitkileri bastırıyor."
   },
   {
    "id": 5128,
@@ -347,7 +347,7 @@
    "formen": "hat gerodet",
    "currentTr": "ağaçları kesip temizlemek",
    "currentBeispiel": "Für die neue Trasse wurde ein ganzer Streifen Wald gerodet.",
-   "currentBeispielTr": "Yeni güzergâh için ormanın bütün bir şeridi kesildi."
+   "currentBeispielTr": "Yeni güzergâh için ormanın bütün bir şeridi kesilip temizlendi."
   },
   {
    "id": 5129,
@@ -357,7 +357,7 @@
    "formen": "",
    "currentTr": "verimli, bereketli",
    "currentBeispiel": "Der Boden am Flussufer ist besonders fruchtbar und leicht zu bearbeiten.",
-   "currentBeispielTr": "Nehir kıyısındaki toprak özellikle verimli ve işlenmesi kolay."
+   "currentBeispielTr": "Nehir kıyısındaki toprak özellikle verimli ve işlemesi kolay."
   },
   {
    "id": 5130,
@@ -407,7 +407,7 @@
    "formen": "",
    "currentTr": "tür bakımından zengin",
    "currentBeispiel": "Eine artenreiche Wiese kommt ohne chemische Mittel gut zurecht.",
-   "currentBeispielTr": "Tür bakımından zengin bir çayır kimyasal maddeler olmadan da iyi idare eder."
+   "currentBeispielTr": "Tür bakımından zengin bir çayır kimyasal madde olmadan da idare eder."
   },
   {
    "id": 5135,
@@ -426,8 +426,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "mevsimsel, mevsime bağlı",
-   "currentBeispiel": "Der Wasserstand des Sees schwankt stark jahreszeitlich.",
-   "currentBeispielTr": "Gölün su seviyesi mevsimsel olarak çok değişiyor."
+   "currentBeispiel": "Der Wasserstand des Sees schwankt jahreszeitlich stark.",
+   "currentBeispielTr": "Gölün su seviyesi mevsimlere göre çok değişiyor."
   },
   {
    "id": 5137,
@@ -457,7 +457,7 @@
    "formen": "Stimmzettel",
    "currentTr": "oy pusulası",
    "currentBeispiel": "Er faltete den Stimmzettel und warf ihn in die Urne.",
-   "currentBeispielTr": "Oy pusulasını katlayıp sandığa attı."
+   "currentBeispielTr": "Oy pusulasını katladı ve sandığa attı."
   },
   {
    "id": 5140,

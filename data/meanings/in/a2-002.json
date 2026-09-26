@@ -9,8 +9,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "karşıda, öte tarafta",
-   "currentBeispiel": "Da drüben ist die Haltestelle.",
-   "currentBeispielTr": "Durak tam karşıda."
+   "currentBeispiel": "Drüben auf der anderen Seite gibt es einen Bäcker.",
+   "currentBeispielTr": "Karşıda, öbür tarafta bir fırın var."
   },
   {
    "id": 1159,
@@ -19,8 +19,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "geri kalan, kalan kısım, artık",
-   "currentBeispiel": "Hier sind 50 Euro. Den Rest gebe ich dir später. Es ist noch ein Rest Suppe da. Möchtest du noch?",
-   "currentBeispielTr": "İşte 50 euro. Kalanını sana sonra veririm. Biraz çorba kaldı. Daha ister misin?"
+   "currentBeispiel": "Den Rest vom Kuchen essen wir morgen.",
+   "currentBeispielTr": "Pastanın kalanını yarın yeriz."
   },
   {
    "id": 1055,
@@ -29,8 +29,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "vücut, beden",
-   "currentBeispiel": "Der Arzt sagt, ich muss etwas für meinen Körper tun, z. B. schwimmen oder Fahrrad fahren.",
-   "currentBeispielTr": "Doktor, vücudum için bir şeyler yapmam gerektiğini söylüyor; mesela yüzmek ya da bisiklete binmek."
+   "currentBeispiel": "Nach dem Sport tut mir der ganze Körper weh.",
+   "currentBeispielTr": "Spordan sonra bütün vücudum ağrıyor."
   },
   {
    "id": 1015,
@@ -39,8 +39,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sert",
-   "currentBeispiel": "Ich finde das Bett zu hart. Die Brötchen sind ja ganz hart.",
-   "currentBeispielTr": "Yatağı fazla sert buluyorum. Ekmekler iyice sertleşmiş.",
+   "currentBeispiel": "Das Brot von gestern ist schon ganz hart.",
+   "currentBeispielTr": "Dünkü ekmek iyice sertleşmiş.",
    "overlapping": [
     "streng (A2)",
     "drastisch (B2)",
@@ -55,8 +55,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "ayrıca, bunun yanında",
-   "currentBeispiel": "Vier Brötchen, möchten Sie außerdem noch etwas?",
-   "currentBeispielTr": "Dört sandviç ekmeği; başka bir şey ister misiniz?",
+   "currentBeispiel": "Das Auto ist alt und außerdem zu teuer.",
+   "currentBeispielTr": "Araba eski ve ayrıca çok pahalı.",
    "overlapping": [
     "extra (B1)",
     "zudem (A2)"
@@ -69,8 +69,8 @@
    "niveau": "A2",
    "formen": "ändert, hat geändert",
    "currentTr": "değiştirmek",
-   "currentBeispiel": "Das Wetter hat sich geändert. Wie kann ich mein Passwort ändern?",
-   "currentBeispielTr": "Hava değişti. Şifremi nasıl değiştirebilirim?",
+   "currentBeispiel": "Ich möchte meinen Termin ändern.",
+   "currentBeispielTr": "Randevumu değiştirmek istiyorum.",
    "overlapping": [
     "wechseln (A2)",
     "tauschen (B1)",
@@ -86,8 +86,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "en azından",
-   "currentBeispiel": "Ich habe keinen Hunger. - Ach, essen Sie wenigstens ein Stück Kuchen.",
-   "currentBeispielTr": "Aç değilim. - En azından bir dilim pasta yiyin.",
+   "currentBeispiel": "Iss wenigstens ein Stück Kuchen!",
+   "currentBeispielTr": "En azından bir dilim pasta ye!",
    "overlapping": [
     "zumindest (B1)"
    ]
@@ -99,8 +99,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "dikkatli, tedbirli (tehlikeye karşı)",
-   "currentBeispiel": "Sei vorsichtig! Du musst vorsichtig fahren, es ist neblig.",
-   "currentBeispielTr": "Dikkatli ol! Dikkatli sürmen gerekiyor, hava sisli.",
+   "currentBeispiel": "Fahr vorsichtig, es ist neblig!",
+   "currentBeispielTr": "Dikkatli sür, hava sisli!",
    "overlapping": [
     "aufmerksam (B1)"
    ]
@@ -112,8 +112,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "güçlü, kuvvetli, şiddetli",
-   "currentBeispiel": "Ich habe starke Kopfschmerzen. Es regnet stark. Der Kaffee ist sehr stark.",
-   "currentBeispielTr": "Şiddetli baş ağrım var. Şiddetli yağmur yağıyor. Kahve çok sert.",
+   "currentBeispiel": "Mein großer Bruder ist sehr stark.",
+   "currentBeispielTr": "Ağabeyim çok güçlü.",
    "overlapping": [
     "kräftig (B1)"
    ]
@@ -125,8 +125,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "kişi, şahıs",
-   "currentBeispiel": "Eintritt pro Person: 5 Euro.",
-   "currentBeispielTr": "Kişi başı giriş: 5 euro."
+   "currentBeispiel": "Der Eintritt kostet fünf Euro pro Person.",
+   "currentBeispielTr": "Giriş kişi başı beş avro."
   },
   {
    "id": 1181,
@@ -135,8 +135,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "kötü, ciddi",
-   "currentBeispiel": "Kein Problem, das ist nicht so schlimm.",
-   "currentBeispielTr": "Sorun değil, o kadar da kötü değil.",
+   "currentBeispiel": "Der Unfall war schlimm, aber niemand ist verletzt.",
+   "currentBeispielTr": "Kaza fenaydı ama kimse yaralanmadı.",
    "overlapping": [
     "schlecht (A1)"
    ]
@@ -148,8 +148,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "fikir, görüş, düşünce",
-   "currentBeispiel": "Meine Meinung zu dem Thema ist: … Was ist deine Meinung dazu? Ich habe meine Meinung geändert.",
-   "currentBeispielTr": "Bu konudaki görüşüm şu: … Senin bu konudaki fikrin ne? Fikrimi değiştirdim.",
+   "currentBeispiel": "Was ist deine Meinung dazu?",
+   "currentBeispielTr": "Bu konudaki görüşün ne?",
    "overlapping": [
     "die Ahnung (A1)",
     "die Idee (A1)",
@@ -163,8 +163,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "takım, ekip",
-   "currentBeispiel": "Ich arbeite gern in einem Team. Welches Fußballteam findest du am besten?",
-   "currentBeispielTr": "Ekip içinde çalışmayı severim. Sence en iyi futbol takımı hangisi?",
+   "currentBeispiel": "Unser Team hat das Projekt pünktlich fertig gemacht.",
+   "currentBeispielTr": "Ekibimiz projeyi zamanında bitirdi.",
    "overlapping": [
     "die Mannschaft (A2)"
    ]
@@ -176,8 +176,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "önce, daha önce",
-   "currentBeispiel": "Ich komme mit ins Café. Vorher muss ich aber noch zur Bank.",
-   "currentBeispielTr": "Ben de kafeye geliyorum. Ama önce bankaya uğramam gerekiyor.",
+   "currentBeispiel": "Ruf mich bitte vorher an!",
+   "currentBeispielTr": "Lütfen beni önceden ara!",
    "overlapping": [
     "zuerst (A1)",
     "zunächst (B1)"
@@ -190,8 +190,8 @@
    "niveau": "A2",
    "formen": "fällt, ist gefallen",
    "currentTr": "düşmek",
-   "currentBeispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
-   "currentBeispielTr": "Dikkat et, bardak masadan düşmek üzere.",
+   "currentBeispiel": "Vorsicht, das Glas ist vom Tisch gefallen!",
+   "currentBeispielTr": "Dikkat, bardak masadan düştü!",
    "overlapping": [
     "stürzen (B1)",
     "abrutschen (C1)"
@@ -204,8 +204,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "dışarı",
-   "currentBeispiel": "Möchtet ihr nicht rauskommen? Das Wetter ist so schön. Kannst du bitte den Müll rausbringen?",
-   "currentBeispielTr": "Dışarı çıkmak istemez misiniz? Hava çok güzel. Çöpü dışarı çıkarır mısın lütfen?",
+   "currentBeispiel": "Der Hund kommt aus dem Haus heraus.",
+   "currentBeispielTr": "Köpek evden dışarı çıkıyor.",
    "overlapping": [
     "raus (B1)"
    ]
@@ -217,8 +217,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "yakın yer, civar",
-   "currentBeispiel": "Die Post ist in der Nähe vom Bahnhof.",
-   "currentBeispielTr": "Postane garın yakınında."
+   "currentBeispiel": "Wohnt ihr in der Nähe von eurer Schule?",
+   "currentBeispielTr": "Okulunuzun yakınında mı oturuyorsunuz?"
   },
   {
    "id": 1135,
@@ -227,8 +227,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "aniden, birdenbire",
-   "currentBeispiel": "Plötzlich war das Licht aus.",
-   "currentBeispielTr": "Birden ışık söndü."
+   "currentBeispiel": "Mitten in der Nacht hat plötzlich das Telefon geklingelt.",
+   "currentBeispielTr": "Gecenin bir yarısı telefon aniden çaldı."
   },
   {
    "id": 996,
@@ -237,8 +237,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "tehlikeli",
-   "currentBeispiel": "Du darfst nicht bei Rot über die Straße gehen. Das ist gefährlich.",
-   "currentBeispielTr": "Kırmızı ışıkta karşıya geçmemelisin. Bu tehlikeli."
+   "currentBeispiel": "Diese Straße ist für Kinder sehr gefährlich.",
+   "currentBeispielTr": "Bu yol çocuklar için çok tehlikeli."
   },
   {
    "id": 1051,
@@ -247,8 +247,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "komik, garip, tuhaf",
-   "currentBeispiel": "Der Film war sehr komisch. Wir haben viel gelacht. Eine grüne Hose und gelbe Schuhe? Das sieht komisch aus. Das Essen sc",
-   "currentBeispielTr": "Film çok komikti. Çok güldük. Yeşil pantolonla sarı ayakkabı mı? Tuhaf görünüyor.",
+   "currentBeispiel": "Der neue Nachbar ist ein bisschen komisch.",
+   "currentBeispielTr": "Yeni komşu biraz tuhaf.",
    "overlapping": [
     "lustig (A1)"
    ]
@@ -260,8 +260,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "hayal, rüya",
-   "currentBeispiel": "Ich möchte eine eigene Firma, das ist mein Traum.",
-   "currentBeispielTr": "Kendi firmamı istiyorum; hayalim bu."
+   "currentBeispiel": "Heute Nacht hatte ich einen schönen Traum.",
+   "currentBeispielTr": "Bu gece güzel bir rüya gördüm."
   },
   {
    "id": 903,
@@ -270,8 +270,8 @@
    "niveau": "A2",
    "formen": "(bekommen/ geben/sagen)",
    "currentTr": "haber, bilgi",
-   "currentBeispiel": "Kann Lisa in Heidelberg studieren? - Sie weiß es noch nicht. Sie bekommt erst nächste Woche Bescheid. Kannst du mir bis ",
-   "currentBeispielTr": "Lisa Heidelberg'de okuyabilecek mi? - Henüz bilmiyor. Ancak gelecek hafta haber alacak.",
+   "currentBeispiel": "Sag mir bitte Bescheid, wenn du kommst.",
+   "currentBeispielTr": "Geleceksen bana haber ver lütfen.",
    "overlapping": [
     "die Nachricht (A1)",
     "die Meldung (B1)",
@@ -285,8 +285,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "hedef, amaç, varış noktası",
-   "currentBeispiel": "John läuft sehr schnell. Er war als erster am Ziel. Was ist dein Ziel im Leben?",
-   "currentBeispielTr": "John çok hızlı koşuyor. Hedefe ilk o vardı. Hayattaki amacın ne?"
+   "currentBeispiel": "Unser Ziel für dieses Jahr ist eine größere Wohnung.",
+   "currentBeispielTr": "Bu yılki hedefimiz daha büyük bir ev."
   },
   {
    "id": 1298,
@@ -295,8 +295,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "uyanık",
-   "currentBeispiel": "Bist du schon lange wach? Ich bin noch nicht ganz wach.",
-   "currentBeispielTr": "Uyanalı çok mu oldu? Ben daha tam uyanamadım."
+   "currentBeispiel": "Das Baby war die halbe Nacht wach.",
+   "currentBeispielTr": "Bebek gecenin yarısını uyanık geçirdi."
   },
   {
    "id": 873,
@@ -305,8 +305,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "fakir, yoksul",
-   "currentBeispiel": "Sie haben nicht viel Geld, sie sind arm.",
-   "currentBeispielTr": "Fazla paraları yok, fakirler."
+   "currentBeispiel": "Meine Familie war früher sehr arm.",
+   "currentBeispielTr": "Ailem eskiden çok fakirdi."
   },
   {
    "id": 869,
@@ -315,8 +315,8 @@
    "niveau": "A2",
    "formen": "sieht an, hat angesehen",
    "currentTr": "bakmak, izlemek, seyretmek",
-   "currentBeispiel": "Darf ich eure Urlaubsfotos ansehen? Ich sehe (mir) diese Sendung jeden Tag an.",
-   "currentBeispielTr": "Tatil fotoğraflarınıza bakabilir miyim? Bu programı her gün izliyorum.",
+   "currentBeispiel": "Wir sehen uns heute Abend einen Film an.",
+   "currentBeispielTr": "Bu akşam bir film izleyeceğiz.",
    "overlapping": [
     "betreuen (B1)",
     "gucken (B1)",
@@ -333,8 +333,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "sıcak",
-   "currentBeispiel": "Vorsicht, der Tee ist heiß! Mir ist heiß. Kannst du das Fenster öffnen?",
-   "currentBeispielTr": "Dikkat, çay sıcak! İçim sıcak bastı. Pencereyi açar mısın?",
+   "currentBeispiel": "Vorsicht, der Tee ist noch sehr heiß!",
+   "currentBeispielTr": "Dikkat, çay hâlâ çok sıcak!",
    "overlapping": [
     "warm (A1)",
     "die Hitze (B1)"
@@ -347,8 +347,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "mutlaka, kesinlikle",
-   "currentBeispiel": "Ich muss unbedingt mit dir sprechen.",
-   "currentBeispielTr": "Seninle mutlaka konuşmam gerekiyor."
+   "currentBeispiel": "Bei diesem Wetter brauchst du unbedingt einen Schirm.",
+   "currentBeispielTr": "Bu havada mutlaka şemsiyeye ihtiyacın var."
   },
   {
    "id": 1261,
@@ -357,8 +357,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "kaza",
-   "currentBeispiel": "Ich hatte gestern einen Unfall. Wie ist der Unfall passiert?",
-   "currentBeispielTr": "Dün bir kaza geçirdim. Kaza nasıl oldu?",
+   "currentBeispiel": "Gestern hatte ich einen kleinen Unfall.",
+   "currentBeispielTr": "Dün küçük bir kaza geçirdim.",
    "overlapping": [
     "das Unglück (B1)"
    ]
@@ -370,8 +370,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "derin",
-   "currentBeispiel": "Vorsicht, das Wasser ist tief!",
-   "currentBeispielTr": "Dikkat, su derin!"
+   "currentBeispiel": "Die Kinder dürfen nicht ins tiefe Becken springen.",
+   "currentBeispielTr": "Çocukların derin havuza atlaması yasak."
   },
   {
    "id": 1078,
@@ -380,8 +380,8 @@
    "niveau": "A2",
    "formen": "lügt, hat gelogen",
    "currentTr": "yalan söylemek",
-   "currentBeispiel": "Du sollst nicht lügen. Glaub ihm nicht, er lügt.",
-   "currentBeispielTr": "Yalan söylememelisin. Ona inanma, yalan söylüyor.",
+   "currentBeispiel": "Ich glaube, Tom hat schon wieder gelogen.",
+   "currentBeispielTr": "Bence Tom yine yalan söyledi.",
    "overlapping": [
     "anlügen (A2)"
    ]
@@ -393,8 +393,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "şaka, fıkra",
-   "currentBeispiel": "Wir haben Witze erzählt und viel gelacht.",
-   "currentBeispielTr": "Fıkralar anlattık ve çok güldük."
+   "currentBeispiel": "Das war doch nur ein Witz!",
+   "currentBeispielTr": "Sadece bir şakaydı!"
   },
   {
    "id": 1109,
@@ -403,8 +403,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "yanında, yanına",
-   "currentBeispiel": "Neben mir ist noch ein Platz frei. Die Apotheke ist neben der Post.",
-   "currentBeispielTr": "Yanımda bir yer daha boş. Eczane postanenin yanında.",
+   "currentBeispiel": "Im Kino saß ich neben einem sehr großen Mann.",
+   "currentBeispielTr": "Sinemada çok iri bir adamın yanında oturdum.",
    "overlapping": [
     "bei (A1)",
     "daneben (A1)",
@@ -418,8 +418,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "sırt",
-   "currentBeispiel": "Mein Rücken tut mir weh.",
-   "currentBeispielTr": "Sırtım ağrıyor."
+   "currentBeispiel": "Mit einem schweren Rucksack auf dem Rücken wandern wir los.",
+   "currentBeispielTr": "Sırtımızda ağır bir çantayla yürüyüşe koyuluyoruz."
   },
   {
    "id": 1187,
@@ -428,8 +428,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "korkunç, berbat",
-   "currentBeispiel": "Ich finde ihren Rock schrecklich. Er sieht furchtbar aus! Ich finde den Film schrecklich. Er macht mir Angst.",
-   "currentBeispielTr": "Eteğini berbat buluyorum. Korkunç görünüyor! Filmi korkunç buluyorum; beni korkutuyor.",
+   "currentBeispiel": "Der Sturm gestern war wirklich schrecklich.",
+   "currentBeispielTr": "Dünkü fırtına gerçekten korkunçtu.",
    "overlapping": [
     "furchtbar (A2)"
    ]
@@ -441,8 +441,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "ekşi; kızgın, sinirli",
-   "currentBeispiel": "Zitronen sind mir zu sauer. Was ist los? – Ich bin sauer. Ich muss am Wochenende zu Hause bleiben und darf nicht mit mei",
-   "currentBeispielTr": "Limonlar bana fazla ekşi geliyor. Ne oldu? – Kızgınım. Hafta sonu evde kalmam gerekiyor."
+   "currentBeispiel": "Die Milch ist sauer, wir müssen neue kaufen.",
+   "currentBeispielTr": "Süt ekşimiş, yenisini almamız lazım."
   },
   {
    "id": 963,
@@ -451,8 +451,8 @@
    "niveau": "A2",
    "formen": "erreicht, hat erreicht",
    "currentTr": "ulaşmak, yetişmek, varmak",
-   "currentBeispiel": "Wenn wir uns beeilen, erreichen wir noch den Zug um acht Uhr. Bis 18 Uhr können Sie mich im Büro erreichen.",
-   "currentBeispielTr": "Acele edersek saat sekizdeki trene hâlâ yetişiriz. Saat 18'e kadar bana ofisten ulaşabilirsiniz."
+   "currentBeispiel": "Sie können mich heute im Büro erreichen.",
+   "currentBeispielTr": "Bugün bana ofisten ulaşabilirsiniz."
   },
   {
    "id": 1048,
@@ -461,8 +461,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "kilise",
-   "currentBeispiel": "Diese Kirche ist fast 800 Jahre alt.",
-   "currentBeispielTr": "Bu kilise neredeyse 800 yıllık."
+   "currentBeispiel": "Die Glocken der Kirche läuten jeden Sonntag.",
+   "currentBeispielTr": "Kilisenin çanları her pazar çalıyor."
   },
   {
    "id": 1152,
@@ -471,8 +471,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "zengin",
-   "currentBeispiel": "Lotte ist reich. Sie hat sehr viel Geld.",
-   "currentBeispielTr": "Lotte zengin. Çok parası var."
+   "currentBeispiel": "Seine Familie ist sehr reich.",
+   "currentBeispielTr": "Ailesi çok zengin."
   },
   {
    "id": 1003,
@@ -481,8 +481,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "yemek",
-   "currentBeispiel": "Mein Lieblingsgericht ist Pizza.",
-   "currentBeispielTr": "En sevdiğim yemek pizza.",
+   "currentBeispiel": "In diesem Restaurant gibt es viele vegetarische Gerichte.",
+   "currentBeispielTr": "Bu restoranda çok sayıda vejetaryen yemek var.",
    "overlapping": [
     "essen (A1)",
     "das Essen (A1)",
@@ -497,8 +497,8 @@
    "niveau": "A2",
    "formen": "singt, hat gesungen",
    "currentTr": "şarkı söylemek",
-   "currentBeispiel": "1. Ich singe gern. 2. Ich kann heute nicht singen, ich bin erkältet.",
-   "currentBeispielTr": "Şarkı söylemeyi severim. Bugün şarkı söyleyemem, üşütmüşüm."
+   "currentBeispiel": "Meine Tochter singt gern im Chor.",
+   "currentBeispielTr": "Kızım koroda şarkı söylemeyi seviyor."
   },
   {
    "id": 1052,
@@ -507,8 +507,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "iletişim, bağlantı",
-   "currentBeispiel": "Ich habe wenig Kontakt zu meinen Kollegen. Bitte schicken Sie mir Ihre Kontaktdaten!",
-   "currentBeispielTr": "İş arkadaşlarımla pek iletişimim yok. Lütfen bana iletişim bilgilerinizi gönderin!",
+   "currentBeispiel": "Nach der Schule hatten wir leider keinen Kontakt mehr.",
+   "currentBeispielTr": "Okuldan sonra maalesef hiç irtibatımız kalmadı.",
    "overlapping": [
     "die Kommunikation (B1)"
    ]
@@ -520,8 +520,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "karşısında, karşı",
-   "currentBeispiel": "Die Post ist gegenüber vom Bahnhof. Die Hausnummer 84 ist gleich gegenüber.",
-   "currentBeispielTr": "Postane garın karşısında. 84 numaralı ev hemen karşıda.",
+   "currentBeispiel": "Die Bäckerei ist gegenüber vom Bahnhof.",
+   "currentBeispielTr": "Fırın garın karşısında.",
    "overlapping": [
     "angesichts (B2)"
    ]
@@ -533,8 +533,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "esprili, komik",
-   "currentBeispiel": "Warum lachst du? Ich finde das nicht witzig.",
-   "currentBeispielTr": "Neden gülüyorsun? Bunu komik bulmuyorum.",
+   "currentBeispiel": "Der neue Kollege ist wirklich witzig.",
+   "currentBeispielTr": "Yeni iş arkadaşı gerçekten çok komik.",
    "overlapping": [
     "humorvoll (A2)"
    ]
@@ -546,8 +546,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "ziyaret; misafir, konuk",
-   "currentBeispiel": "Wir bekommen am Wochenende Besuch. Ich mache einen Besuch im Krankenhaus.",
-   "currentBeispielTr": "Hafta sonu bize misafir gelecek. Hastanede bir ziyaret yapacağım."
+   "currentBeispiel": "Der Besuch im Museum hat mir gut gefallen.",
+   "currentBeispielTr": "Müze ziyareti çok hoşuma gitti."
   },
   {
    "id": 1172,
@@ -556,8 +556,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "temiz",
-   "currentBeispiel": "Bringen Sie mir bitte ein sauberes Glas!",
-   "currentBeispielTr": "Bana temiz bir bardak getirin lütfen!"
+   "currentBeispiel": "Ist die Wäsche auf dem Stuhl sauber?",
+   "currentBeispielTr": "Sandalyedeki çamaşırlar temiz mi?"
   },
   {
    "id": 1113,
@@ -566,8 +566,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "gergin, sinirli",
-   "currentBeispiel": "Bei Prüfungen bin ich immer sehr nervös.",
-   "currentBeispielTr": "Sınavlarda hep çok gergin olurum.",
+   "currentBeispiel": "Vor dem ersten Date war Lukas total nervös.",
+   "currentBeispielTr": "Lukas ilk buluşmadan önce çok gergindi.",
    "overlapping": [
     "angespannt (C1)"
    ]
@@ -579,8 +579,8 @@
    "niveau": "A2",
    "formen": "passt, hat gepasst",
    "currentTr": "uymak, uygun olmak",
-   "currentBeispiel": "Die Bluse passt mir nicht. Welches Wort passt? Wählen Sie.",
-   "currentBeispielTr": "Bluz üzerime olmuyor. Hangi kelime uyuyor? Seçin.",
+   "currentBeispiel": "Die Hose passt mir nicht mehr.",
+   "currentBeispielTr": "Pantolon artık bana uymuyor.",
    "overlapping": [
     "sich richten nach (B2)",
     "einhalten (B2)"
@@ -593,8 +593,8 @@
    "niveau": "A2",
    "formen": "teilt hat geteilt",
    "currentTr": "paylaşmak, bölmek",
-   "currentBeispiel": "Wollen wir die Pizza teilen? Mein Mann und ich teilen uns die Arbeit.",
-   "currentBeispielTr": "Pizzayı paylaşalım mı? Eşimle işi bölüşüyoruz.",
+   "currentBeispiel": "Die Geschwister teilen sich ein Zimmer.",
+   "currentBeispielTr": "Kardeşler bir odayı paylaşıyor.",
    "overlapping": [
     "posten (A2)"
    ]
@@ -606,8 +606,8 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "durum",
-   "currentBeispiel": "Ich bin in einer schwierigen Situation. Ich weiß nicht, was ich tun soll. Lesen Sie die Anzeigen und die Aufgaben 11-15.",
-   "currentBeispielTr": "Zor bir durumdayım. Ne yapacağımı bilmiyorum.",
+   "currentBeispiel": "Die Situation auf den Straßen ist nach dem Schnee chaotisch.",
+   "currentBeispielTr": "Kardan sonra yollarda durum karmakarışık.",
    "overlapping": [
     "der Fall (B1)",
     "der Zustand (B1)"

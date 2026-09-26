@@ -10,7 +10,7 @@
    "formen": "Fremdwörter",
    "currentTr": "yabancı kökenli kelime",
    "currentBeispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
-   "currentBeispielTr": "Bilgili görünmek için yabancı kökenli kelimeleri seve seve kullanıyor."
+   "currentBeispielTr": "Bilgili görünmek için yabancı kelimeleri bolca kullanıyor."
   },
   {
    "id": 5397,
@@ -20,7 +20,7 @@
    "formen": "Feststellungen",
    "currentTr": "tespit, saptama",
    "currentBeispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion.",
-   "currentBeispielTr": "Soğukkanlı tespiti hararetli tartışmayı sona erdirdi."
+   "currentBeispielTr": "Onun soğukkanlı tespiti hararetli tartışmayı bitirdi."
   },
   {
    "id": 5398,
@@ -30,7 +30,7 @@
    "formen": "Anmerkungen",
    "currentTr": "not, ek açıklama",
    "currentBeispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand.",
-   "currentBeispielTr": "Öğretmen kenara birkaç eleştirel not yazdı.",
+   "currentBeispielTr": "Öğretmen kenara birkaç eleştirel açıklama yazdı.",
    "overlapping": [
     "die Note (A1)",
     "die Notiz (A2)",
@@ -75,7 +75,7 @@
    "formen": "",
    "currentTr": "sahne heyecanı, sunum heyecanı",
    "currentBeispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber.",
-   "currentBeispielTr": "Her sunumdan önce korkunç bir sahne heyecanı yaşıyor."
+   "currentBeispielTr": "Her sunumdan önce müthiş bir sahne heyecanı yaşıyor."
   },
   {
    "id": 5403,
@@ -99,7 +99,7 @@
    "formen": "",
    "currentTr": "hazırcevaplık",
    "currentBeispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion.",
-   "currentBeispielTr": "Hazırcevaplığı onu zor tartışmada kurtardı."
+   "currentBeispielTr": "Hazırcevaplığı onu o zor tartışmada kurtardı."
   },
   {
    "id": 5405,
@@ -122,7 +122,7 @@
    "formen": "Moderationen",
    "currentTr": "moderatörlük, oturum yönetimi",
    "currentBeispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
-   "currentBeispielTr": "Oturumun yönetimini deneyimli bir gazeteci üstlendi."
+   "currentBeispielTr": "Oturumun moderatörlüğünü deneyimli bir gazeteci üstlendi."
   },
   {
    "id": 5407,
@@ -132,7 +132,7 @@
    "formen": "Redner",
    "currentTr": "konuşmacı, hatip",
    "currentBeispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
-   "currentBeispielTr": "Konuşmacı tek bir kâğıt olmadan doğaçlama konuştu."
+   "currentBeispielTr": "Konuşmacı tek bir kâğıda bakmadan doğaçlama konuştu."
   },
   {
    "id": 5408,
@@ -151,8 +151,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kanıt değeri, anlatım gücü",
-   "currentBeispiel": "Die Aussagekraft dieses Tests wird von Fachleuten bezweifelt.",
-   "currentBeispielTr": "Bu testin kanıt değeri uzmanlarca kuşkuyla karşılanıyor."
+   "currentBeispiel": "Dieses Foto hat eine enorme Aussagekraft.",
+   "currentBeispielTr": "Bu fotoğrafın ifade gücü çok yüksek."
   },
   {
    "id": 5410,
@@ -181,8 +181,8 @@
    "niveau": "B2",
    "formen": "Muttersprachler",
    "currentTr": "ana dili olarak konuşan kişi",
-   "currentBeispiel": "Selbst Muttersprachler machen bei diesem Fall häufig Fehler.",
-   "currentBeispielTr": "Bu hâlde ana dili konuşurları bile sık sık hata yapıyor."
+   "currentBeispiel": "Selbst Muttersprachler machen bei der Kommasetzung oft Fehler.",
+   "currentBeispielTr": "Ana dili olarak konuşanlar bile virgül kullanımında sık sık hata yapar."
   },
   {
    "id": 5413,
@@ -192,7 +192,7 @@
    "formen": "hat nachgefragt",
    "currentTr": "sorup öğrenmek, tekrar sormak",
    "currentBeispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen.",
-   "currentBeispielTr": "Bir şeyi anlamazsan hemen sorup öğrenmelisin."
+   "currentBeispielTr": "Bir şeyi anlamadığında hemen sorup öğrenmelisin."
   },
   {
    "id": 5414,
@@ -226,7 +226,7 @@
    "formen": "hat gezögert",
    "currentTr": "tereddüt etmek, duraksamak",
    "currentBeispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete.",
-   "currentBeispielTr": "Hassas soruyu yanıtlamadan önce kısaca duraksadı."
+   "currentBeispielTr": "Hassas soruyu yanıtlamadan önce biraz tereddüt etti."
   },
   {
    "id": 5417,
@@ -259,7 +259,7 @@
    "formen": "hat nachgeahmt",
    "currentTr": "taklit etmek",
    "currentBeispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach.",
-   "currentBeispielTr": "Çocuklar çevrelerinin telaffuzunu neredeyse kendiliğinden taklit eder.",
+   "currentBeispielTr": "Çocuklar çevrelerindeki telaffuzu neredeyse kendiliğinden taklit ediyor.",
    "overlapping": [
     "nachbilden (C1)",
     "nachmachen (A2)"
@@ -282,8 +282,8 @@
    "niveau": "B2",
    "formen": "hat dargelegt",
    "currentTr": "ortaya koymak, gerekçeli anlatmak",
-   "currentBeispiel": "In der Einleitung legt sie ihre Sicht der Dinge dar.",
-   "currentBeispielTr": "Girişte konuya bakışını ortaya koyuyor."
+   "currentBeispiel": "Sie möchte ihren Standpunkt in der Einleitung darlegen.",
+   "currentBeispielTr": "Kendi bakış açısını girişte ortaya koymak istiyor."
   },
   {
    "id": 5422,
@@ -337,7 +337,7 @@
    "formen": "",
    "currentTr": "aşina, tanıdık; yaygın, akıcı",
    "currentBeispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig.",
-   "currentBeispielTr": "Bu ifade iş hayatından bana epeyce aşina."
+   "currentBeispielTr": "Bu ifadeye iş hayatımdan epeyce aşinayım."
   },
   {
    "id": 5427,
@@ -347,7 +347,7 @@
    "formen": "",
    "currentTr": "duraklayarak, kesik kesik",
    "currentBeispiel": "Am Anfang las er noch stockend, später ganz flüssig.",
-   "currentBeispielTr": "Başlarda kesik kesik okuyordu, sonra tamamen akıcı hâle geldi."
+   "currentBeispielTr": "Başlarda kesik kesik okuyordu, sonra tamamen akıcıydı."
   },
   {
    "id": 5428,
@@ -377,7 +377,7 @@
    "formen": "",
    "currentTr": "isabetli, yerinde",
    "currentBeispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort.",
-   "currentBeispielTr": "Bu duygu için Almancada yerinde bir kelime yok."
+   "currentBeispielTr": "Bu duygu için Almancada isabetli bir kelime yok."
   },
   {
    "id": 5431,
@@ -387,7 +387,7 @@
    "formen": "",
    "currentTr": "veri güvenliği",
    "currentBeispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität.",
-   "currentBeispielTr": "Şirketimizde veri güvenliği en öncelikli konudur."
+   "currentBeispielTr": "Şirketimizde veri güvenliği en öncelikli konu."
   },
   {
    "id": 5432,
@@ -397,7 +397,7 @@
    "formen": "Benutzeroberflächen",
    "currentTr": "kullanıcı arayüzü",
    "currentBeispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte.",
-   "currentBeispielTr": "Yeni kullanıcı arayüzü eskisine göre çok daha derli toplu görünüyor."
+   "currentBeispielTr": "Yeni kullanıcı arayüzü eskisinden çok daha derli toplu görünüyor."
   },
   {
    "id": 5433,
@@ -421,7 +421,7 @@
    "formen": "Zugriffe",
    "currentTr": "erişim",
    "currentBeispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen.",
-   "currentBeispielTr": "Yetkisi olmayan hiç kimse gizli belgelere erişemez.",
+   "currentBeispielTr": "Yetki olmadan kimsenin gizli belgelere erişimi yok.",
    "overlapping": [
     "die Reichweite (B2)"
    ]
@@ -473,8 +473,8 @@
    "niveau": "B2",
    "formen": "Betriebssysteme",
    "currentTr": "işletim sistemi",
-   "currentBeispiel": "Das Betriebssystem wird heute Nacht auf die neueste Fassung gebracht.",
-   "currentBeispielTr": "İşletim sistemi bu gece en yeni sürüme geçirilecek."
+   "currentBeispiel": "Das Betriebssystem wird heute Nacht automatisch aktualisiert.",
+   "currentBeispielTr": "İşletim sistemi bu gece otomatik olarak güncellenecek."
   },
   {
    "id": 5440,
@@ -484,7 +484,7 @@
    "formen": "Quellcodes",
    "currentTr": "kaynak kod",
    "currentBeispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar.",
-   "currentBeispielTr": "Bu programın kaynak kodu herkese açık şekilde görülebiliyor."
+   "currentBeispielTr": "Bu programın kaynak kodunu herkes serbestçe görebiliyor."
   },
   {
    "id": 5441,

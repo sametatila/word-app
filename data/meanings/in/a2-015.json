@@ -50,7 +50,7 @@
    "formen": "-n",
    "currentTr": "iş seyahati",
    "currentBeispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
-   "currentBeispielTr": "Gelecek hafta babam Viyana'ya bir iş seyahati yapıyor."
+   "currentBeispielTr": "Babam gelecek hafta Viyana'ya iş seyahatine çıkıyor."
   },
   {
    "id": 7693,
@@ -60,7 +60,7 @@
    "formen": "-n",
    "currentTr": "görev seyahati, iş gezisi",
    "currentBeispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
-   "currentBeispielTr": "Şirket görev seyahatindeki oteli ödüyor."
+   "currentBeispielTr": "Şirket görev seyahatinde oteli ödüyor."
   },
   {
    "id": 7694,
@@ -100,7 +100,7 @@
    "formen": "(Sg.)",
    "currentTr": "iş kıyafeti",
    "currentBeispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
-   "currentBeispielTr": "İş kıyafetini şirketten alıyoruz."
+   "currentBeispielTr": "İş kıyafetini firmadan alıyoruz."
   },
   {
    "id": 7698,
@@ -160,7 +160,7 @@
    "formen": "-",
    "currentTr": "sınıf, derslik",
    "currentBeispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
-   "currentBeispielTr": "Sınıf aydınlık ve büyük pencereleri var.",
+   "currentBeispielTr": "Derslik aydınlık ve pencereleri büyük.",
    "overlapping": [
     "die Klasse (A1)"
    ]
@@ -223,7 +223,7 @@
    "formen": "¨-er",
    "currentTr": "ders, branş",
    "currentBeispiel": "Mein liebstes Schulfach ist Musik.",
-   "currentBeispielTr": "En sevdiğim ders müzik.",
+   "currentBeispielTr": "En sevdiğim okul dersi müzik.",
    "overlapping": [
     "das Fach (A1)",
     "der Unterricht (A1)"
@@ -236,8 +236,8 @@
    "niveau": "A2",
    "formen": "(Sg.)",
    "currentTr": "matematik",
-   "currentBeispiel": "In Mathematik habe ich eine Zwei bekommen.",
-   "currentBeispielTr": "Matematikten iki aldım."
+   "currentBeispiel": "In Mathematik habe ich eine gute Note bekommen.",
+   "currentBeispielTr": "Matematikten iyi bir not aldım."
   },
   {
    "id": 7711,
@@ -257,7 +257,7 @@
    "formen": "(Sg.)",
    "currentTr": "kimya",
    "currentBeispiel": "In Chemie machen wir heute ein Experiment.",
-   "currentBeispielTr": "Kimya dersinde bugün bir deney yapıyoruz."
+   "currentBeispielTr": "Kimya dersinde bugün deney yapıyoruz."
   },
   {
    "id": 7713,
@@ -291,7 +291,7 @@
    "formen": "-n",
    "currentTr": "kelime (yabancı dilde öğrenilen), sözcük",
    "currentBeispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
-   "currentBeispielTr": "Her gün yirmi yeni kelime öğreniyorum.",
+   "currentBeispielTr": "Her gün yirmi yeni sözcük öğreniyorum.",
    "overlapping": [
     "das Wort (A1)"
    ]
@@ -344,7 +344,7 @@
    "formen": "-n",
    "currentTr": "uygulamalı bilimler yüksekokulu",
    "currentBeispiel": "Sie studiert Informatik an einer Fachhochschule.",
-   "currentBeispielTr": "Bir uygulamalı bilimler yüksekokulunda bilgisayar bilimi okuyor."
+   "currentBeispielTr": "Bir uygulamalı bilimler yüksekokulunda bilişim okuyor."
   },
   {
    "id": 7721,
@@ -397,8 +397,8 @@
    "niveau": "A2",
    "formen": "bringt bei, hat beigebracht",
    "currentTr": "öğretmek",
-   "currentBeispiel": "Meine Oma hat mir das Lesen beigebracht.",
-   "currentBeispielTr": "Okumayı bana anneannem öğretti."
+   "currentBeispiel": "Mein Vater bringt mir das Schwimmen bei.",
+   "currentBeispielTr": "Babam bana yüzmeyi öğretiyor."
   },
   {
    "id": 7726,
@@ -511,7 +511,7 @@
    "formen": "hilft nach, hat nachgeholfen",
    "currentTr": "(derste) yardım etmek, takviye ders vermek",
    "currentBeispiel": "Meine Schwester hilft mir in Englisch nach.",
-   "currentBeispielTr": "Ablam İngilizce konusunda bana takviye ders veriyor.",
+   "currentBeispielTr": "Ablam bana İngilizceden takviye ders veriyor.",
    "overlapping": [
     "helfen (A1)",
     "mithelfen (A2)"
@@ -524,8 +524,8 @@
    "niveau": "A2",
    "formen": "macht nach, hat nachgemacht",
    "currentTr": "taklit etmek, aynısını yapmak",
-   "currentBeispiel": "Die Kinder machen alles nach, was der Lehrer zeigt.",
-   "currentBeispielTr": "Çocuklar öğretmenin gösterdiği her şeyi taklit ediyor.",
+   "currentBeispiel": "Mein Sohn macht seinen großen Bruder nach.",
+   "currentBeispielTr": "Oğlum ağabeyini taklit ediyor.",
    "overlapping": [
     "nachahmen (B2)",
     "nachbilden (C1)"

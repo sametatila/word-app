@@ -20,7 +20,7 @@
    "formen": "Haushaltspläne",
    "currentTr": "bütçe planı, bütçe",
    "currentBeispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr.",
-   "currentBeispielTr": "Belediye meclisi gelecek yılın bütçesini onaylıyor."
+   "currentBeispielTr": "Belediye meclisi gelecek yılın bütçe planını onaylıyor."
   },
   {
    "id": 4445,
@@ -30,7 +30,7 @@
    "formen": "Mahngebühren",
    "currentTr": "gecikme ihtar ücreti, ihtarname bedeli",
    "currentBeispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen.",
-   "currentBeispielTr": "Geç ödeyen kişi ihtar ücretiyle karşılaşmayı beklemeli."
+   "currentBeispielTr": "Geç ödeyen, gecikme ücretini göze almalı."
   },
   {
    "id": 4446,
@@ -60,7 +60,7 @@
    "formen": "Zahlungsverzüge",
    "currentTr": "ödeme gecikmesi, temerrüt",
    "currentBeispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
-   "currentBeispielTr": "Ödeme gecikmesi hâlinde şirket yasal yollara başvurma hakkını saklı tutuyor."
+   "currentBeispielTr": "Ödeme gecikmesinde şirket yasal yollara başvurma hakkını saklı tutuyor."
   },
   {
    "id": 4449,
@@ -70,7 +70,7 @@
    "formen": "Pfändungen",
    "currentTr": "haciz",
    "currentBeispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts.",
-   "currentBeispielTr": "Karardan sonra maaşına haciz konulma tehlikesiyle karşılaştı."
+   "currentBeispielTr": "Karardan sonra maaşına haciz gelme tehlikesi doğdu."
   },
   {
    "id": 4450,
@@ -90,7 +90,7 @@
    "formen": "Schuldner",
    "currentTr": "borçlu",
    "currentBeispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen.",
-   "currentBeispielTr": "Borçlu, kararlaştırılan taksitleri artık karşılayamadı.",
+   "currentBeispielTr": "Borçlu, kararlaştırılan taksitleri artık ödeyemez oldu.",
    "overlapping": [
     "schuldig (B1)"
    ]
@@ -113,7 +113,7 @@
    "formen": "Hypotheken",
    "currentTr": "ipotek",
    "currentBeispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
-   "currentBeispielTr": "Evin üzerinde hâlâ 200.000 euroluk bir ipotek var."
+   "currentBeispielTr": "Evin üzerinde hâlâ 200.000 avroluk bir ipotek var."
   },
   {
    "id": 4454,
@@ -163,7 +163,7 @@
    "formen": "Freibeträge",
    "currentTr": "vergiden muaf tutar, istisna tutarı",
    "currentBeispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert.",
-   "currentBeispielTr": "Bu istisna tutarına kadar sermaye gelirleri hiç vergilendirilmiyor."
+   "currentBeispielTr": "Bu muafiyet tutarına kadar sermaye gelirleri vergilendirilmiyor."
   },
   {
    "id": 4459,
@@ -193,7 +193,7 @@
    "formen": "Finanzämter",
    "currentTr": "vergi dairesi",
    "currentBeispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen.",
-   "currentBeispielTr": "Vergi dairesi, tebligata karşı yaptığı itirazı reddetti."
+   "currentBeispielTr": "Vergi dairesi, karara yaptığı itirazı reddetti."
   },
   {
    "id": 4462,
@@ -233,7 +233,7 @@
    "formen": "Selbstbeteiligungen",
    "currentTr": "muafiyet tutarı, katılım payı",
    "currentBeispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
-   "currentBeispielTr": "Bu tarifede hasar başına katılım payı 300 euro."
+   "currentBeispielTr": "Bu tarifede hasar başına katılım payı 300 avro."
   },
   {
    "id": 4466,
@@ -253,7 +253,7 @@
    "formen": "Rentenversicherungen",
    "currentTr": "emeklilik sigortası",
    "currentBeispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein.",
-   "currentBeispielTr": "Yasal emeklilik sigortasına her çalışan otomatik olarak katkı yapar."
+   "currentBeispielTr": "Yasal emeklilik sigortasına her çalışan otomatik olarak prim öder."
   },
   {
    "id": 4468,
@@ -262,8 +262,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "iş göremezlik, mesleğini yapamaz duruma gelme",
-   "currentBeispiel": "Gegen Berufsunfähigkeit sollte man sich möglichst früh versichern lassen.",
-   "currentBeispielTr": "İş göremezliğe karşı olabildiğince erken sigorta yaptırmak gerekir."
+   "currentBeispiel": "Gegen Berufsunfähigkeit sollte man sich früh versichern lassen.",
+   "currentBeispielTr": "İş göremezliğe karşı erken yaşta sigorta yaptırmak gerekir."
   },
   {
    "id": 4469,
@@ -273,7 +273,7 @@
    "formen": "",
    "currentTr": "emeklilik dönemi",
    "currentBeispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand.",
-   "currentBeispielTr": "Kırk yıllık çalışma hayatının ardından sonbaharda emekliye ayrılıyor."
+   "currentBeispielTr": "Kırk yıllık çalışma hayatının ardından sonbaharda emekli oluyor."
   },
   {
    "id": 4470,
@@ -283,7 +283,7 @@
    "formen": "Zuschüsse",
    "currentTr": "destek ödemesi, hibe",
    "currentBeispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
-   "currentBeispielTr": "Yeni kalorifer sistemi için devlet desteği veriliyor."
+   "currentBeispielTr": "Yeni kalorifer için devlet desteği veriliyor."
   },
   {
    "id": 4471,
@@ -317,7 +317,7 @@
    "formen": "Provisionen",
    "currentTr": "komisyon (ücret), aracılık ücreti",
    "currentBeispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
-   "currentBeispielTr": "Emlakçı satış bedelinin yüzde üçü oranında komisyon alıyor.",
+   "currentBeispielTr": "Emlakçı satış bedelinin yüzde üçü kadar komisyon alıyor.",
    "overlapping": [
     "der Ausschuss (C1)",
     "die Kommission (C1)"
@@ -331,7 +331,7 @@
    "formen": "",
    "currentTr": "sermaye, anapara",
    "currentBeispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital.",
-   "currentBeispielTr": "Şirket kurmak için ona basitçe gerekli sermaye eksik."
+   "currentBeispielTr": "Şirketi kurmak için gereken sermaye onda yok."
   },
   {
    "id": 4475,
@@ -341,7 +341,7 @@
    "formen": "Vermögen",
    "currentTr": "servet, varlık, mal varlığı",
    "currentBeispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt.",
-   "currentBeispielTr": "Serveti birden fazla yatırım aracına geniş biçimde dağıtılmış."
+   "currentBeispielTr": "Serveti birçok yatırım aracına geniş biçimde dağılmış."
   },
   {
    "id": 4476,
@@ -350,8 +350,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "likidite, nakit gücü",
-   "currentBeispiel": "Der Betrieb geriet trotz voller Auftragsbücher in Schwierigkeiten mit der Liquidität.",
-   "currentBeispielTr": "İşletme sipariş defteri dolu olmasına rağmen likidite sıkıntısına düştü."
+   "currentBeispiel": "Trotz voller Auftragsbücher fehlt dem Betrieb die Liquidität.",
+   "currentBeispielTr": "Sipariş defteri dolu olsa da işletmenin likiditesi yok."
   },
   {
    "id": 4477,
@@ -370,8 +370,8 @@
    "niveau": "B2",
    "formen": "Währungen",
    "currentTr": "para birimi",
-   "currentBeispiel": "Die Währung des Landes hat innerhalb weniger Wochen stark verloren.",
-   "currentBeispielTr": "Ülkenin para birimi birkaç hafta içinde ciddi biçimde değer kaybetti."
+   "currentBeispiel": "Die Währung des Landes verliert seit Monaten an Wert.",
+   "currentBeispielTr": "Ülkenin para birimi aylardır değer kaybediyor."
   },
   {
    "id": 4479,
@@ -381,7 +381,7 @@
    "formen": "Etats",
    "currentTr": "bütçe, ödenek",
    "currentBeispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt.",
-   "currentBeispielTr": "Kültür bütçesi bu yıl yeniden kısıldı."
+   "currentBeispielTr": "Kültür bütçesi bu yıl yine kısıldı."
   },
   {
    "id": 4480,
@@ -391,7 +391,7 @@
    "formen": "",
    "currentTr": "muhasebe, defter tutma",
    "currentBeispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger.",
-   "currentBeispielTr": "Düzgün bir muhasebe yıl sonunda çok dert azaltır."
+   "currentBeispielTr": "Düzgün bir muhasebe yıl sonunda insanı çok dertten kurtarır."
   },
   {
    "id": 4481,
@@ -464,7 +464,7 @@
    "formen": "hat beglichen",
    "currentTr": "ödemek, kapatmak",
    "currentBeispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
-   "currentBeispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar kapatın.",
+   "currentBeispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar ödeyin.",
    "overlapping": [
     "bezahlen (A1)",
     "zahlen (A1)",
@@ -479,7 +479,7 @@
    "formen": "hat entrichtet",
    "currentTr": "ödemek, yatırmak",
    "currentBeispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten.",
-   "currentBeispielTr": "Tapu kaydı için bir harç ödenmesi gerekiyor.",
+   "currentBeispielTr": "Tapu kaydı için bir harç yatırmak gerekiyor.",
    "overlapping": [
     "bezahlen (A1)",
     "zahlen (A1)",

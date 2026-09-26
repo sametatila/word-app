@@ -19,25 +19,25 @@
     "id": 1557,
     "tr": "görüşmek",
     "en": "to discuss",
-    "beispiel": "Wir müssen noch genau besprechen, wann wir losfahren und was wir mitnehmen.",
-    "beispielTr": "Ne zaman yola çıkacağımızı ve ne götüreceğimizi ayrıntılı görüşmemiz gerek.",
-    "beispielEn": "We still need to discuss exactly when we leave and what we take."
+    "beispiel": "Das Problem besprechen wir am besten morgen mit dem ganzen Team.",
+    "beispielTr": "Bu sorunu en iyisi yarın bütün ekiple konuşalım.",
+    "beispielEn": "We'd better discuss the problem with the whole team tomorrow."
   },
   {
     "id": 2392,
     "tr": "daha sonra",
     "en": "later",
-    "beispiel": "Ich rufe dich nachher noch mal an.",
-    "beispielTr": "Seni daha sonra tekrar ararım.",
-    "beispielEn": "I'll call you again later."
+    "beispiel": "Wir können nachher zusammen einkaufen gehen.",
+    "beispielTr": "Daha sonra birlikte alışverişe gidebiliriz.",
+    "beispielEn": "We can go shopping together later."
   },
   {
     "id": 1938,
     "tr": "vites",
     "en": "gear",
-    "beispiel": "Schalten Sie bitte in den dritten Gang.",
-    "beispielTr": "Lütfen üçüncü vitese geçin.",
-    "beispielEn": "Please shift into third gear."
+    "beispiel": "Am Berg musst du in einen kleineren Gang schalten.",
+    "beispielTr": "Yokuşta daha küçük bir vitese geçmen gerekiyor.",
+    "beispielEn": "On the hill, you need to shift into a lower gear."
   },
   {
     "id": 2761,
@@ -67,9 +67,9 @@
     "id": 1666,
     "tr": "müdür",
     "en": "director",
-    "beispiel": "Ich möchte gern mit dem Direktor sprechen.",
-    "beispielTr": "Müdürle görüşmek istiyorum.",
-    "beispielEn": "I'd like to speak with the director."
+    "beispiel": "Der neue Direktor des Museums kommt aus Wien.",
+    "beispielTr": "Müzenin yeni müdürü Viyanalı.",
+    "beispielEn": "The museum's new director is from Vienna."
   },
   {
     "id": 2160,
@@ -83,17 +83,17 @@
     "id": 1801,
     "tr": "anı",
     "en": "memory",
-    "beispiel": "An diese Zeit habe ich viele schöne Erinnerungen.",
-    "beispielTr": "O döneme dair çok güzel anılarım var.",
-    "beispielEn": "I have many fond memories of that time."
+    "beispiel": "Das alte Foto weckt bei mir eine lustige Erinnerung.",
+    "beispielTr": "Eski fotoğraf bana komik bir anıyı hatırlatıyor.",
+    "beispielEn": "The old photo brings back a funny memory for me."
   },
   {
     "id": 2308,
     "tr": "çözmek",
     "en": "to solve",
-    "beispiel": "Wir müssen dieses Problem gemeinsam lösen.",
-    "beispielTr": "Bu sorunu birlikte çözmemiz gerekiyor.",
-    "beispielEn": "We have to solve this problem together."
+    "beispiel": "Kannst du diese Matheaufgabe lösen?",
+    "beispielTr": "Bu matematik sorusunu çözebilir misin?",
+    "beispielEn": "Can you solve this math problem?"
   },
   {
     "id": 3190,
@@ -107,17 +107,17 @@
     "id": 1766,
     "tr": "işten çıkarmak",
     "en": "to fire",
-    "beispiel": "Die Firma hat letztes Jahr viele Mitarbeiter entlassen.",
-    "beispielTr": "Şirket geçen yıl birçok çalışanı işten çıkardı.",
-    "beispielEn": "The company fired many employees last year."
+    "beispiel": "Der Kellner wurde nach nur einer Woche entlassen.",
+    "beispielTr": "Garson sadece bir hafta sonra işten çıkarıldı.",
+    "beispielEn": "The waiter was fired after only a week."
   },
   {
     "id": 2812,
     "tr": "sahne",
     "en": "scene",
-    "beispiel": "In dieser Szene des Films stirbt der Held.",
-    "beispielTr": "Filmin bu sahnesinde kahraman ölüyor.",
-    "beispielEn": "The hero dies in this scene of the film."
+    "beispiel": "Über die letzte Szene haben alle im Kino gelacht.",
+    "beispielTr": "Sinemada herkes son sahneye güldü.",
+    "beispielEn": "Everyone in the theater laughed at the last scene."
   },
   {
     "id": 2494,
@@ -171,17 +171,17 @@
     "id": 2255,
     "tr": "öpücük",
     "en": "kiss",
-    "beispiel": "Gib der Mama einen Kuss!",
-    "beispielTr": "Annene bir öpücük ver!",
-    "beispielEn": "Give mommy a kiss!"
+    "beispiel": "Vor dem Schlafen bekommt Lina einen Kuss von Papa.",
+    "beispielTr": "Lina uyumadan önce babasından bir öpücük alıyor.",
+    "beispielEn": "Before bed, Lina gets a kiss from Dad."
   },
   {
     "id": 2985,
     "tr": "önlemek",
     "en": "to prevent",
-    "beispiel": "Wir konnten den Unfall leider nicht verhindern.",
-    "beispielTr": "Kazayı maalesef engelleyemedik.",
-    "beispielEn": "Unfortunately we couldn't prevent the accident."
+    "beispiel": "Eine Impfung kann viele Krankheiten verhindern.",
+    "beispielTr": "Aşı birçok hastalığı önleyebilir.",
+    "beispielEn": "A vaccination can prevent many diseases."
   },
   {
     "id": 1806,
@@ -211,9 +211,9 @@
     "id": 2676,
     "tr": "tabii ki",
     "en": "of course",
-    "beispiel": "Selbstverständlich sagen wir Ihnen sofort Bescheid.",
-    "beispielTr": "Tabii ki size hemen haber veririz.",
-    "beispielEn": "Of course we'll let you know right away."
+    "beispiel": "Die Getränke sind im Preis selbstverständlich inbegriffen.",
+    "beispielTr": "İçecekler tabii ki fiyata dâhil.",
+    "beispielEn": "The drinks are, of course, included in the price."
   },
   {
     "id": 2046,
@@ -235,33 +235,33 @@
     "id": 2656,
     "tr": "borçlar",
     "en": "debts",
-    "beispiel": "Jetzt habe ich alle meine Schulden bezahlt.",
-    "beispielTr": "Artık bütün borçlarımı ödedim.",
-    "beispielEn": "Now I've paid off all my debts."
+    "beispiel": "Wegen seiner Schulden musste er das Haus verkaufen.",
+    "beispielTr": "Borçları yüzünden evi satmak zorunda kaldı.",
+    "beispielEn": "Because of his debts, he had to sell the house."
   },
   {
     "id": 2019,
     "tr": "sınır",
     "en": "border",
-    "beispiel": "An der Grenze musst du deinen Ausweis zeigen.",
-    "beispielTr": "Sınırda kimliğini göstermen gerekiyor.",
-    "beispielEn": "You have to show your ID at the border."
+    "beispiel": "Unser Dorf liegt nur fünf Kilometer von der Grenze entfernt.",
+    "beispielTr": "Köyümüz sınıra yalnızca beş kilometre uzaklıkta.",
+    "beispielEn": "Our village is only five kilometers from the border."
   },
   {
     "id": 2475,
     "tr": "utanç verici",
     "en": "embarrassing",
-    "beispiel": "Das war eine wirklich peinliche Situation.",
-    "beispielTr": "Gerçekten utanç verici bir durumdu.",
-    "beispielEn": "That was a really embarrassing situation."
+    "beispiel": "Mir ist beim Vorstellungsgespräch etwas Peinliches passiert.",
+    "beispielTr": "İş görüşmesinde başıma utanç verici bir şey geldi.",
+    "beispielEn": "Something embarrassing happened to me at the job interview."
   },
   {
     "id": 1903,
     "tr": "şekil",
     "en": "shape",
-    "beispiel": "Diese Schuhe haben eine schöne Form.",
-    "beispielTr": "Bu ayakkabıların şekli güzel.",
-    "beispielEn": "These shoes have a nice shape."
+    "beispiel": "Die Wolke dort hat die Form eines Herzens.",
+    "beispielTr": "Oradaki bulut kalp şeklinde.",
+    "beispielEn": "That cloud over there has the shape of a heart."
   },
   {
     "id": 2917,
@@ -275,9 +275,9 @@
     "id": 2421,
     "tr": "hiçbir yerde",
     "en": "nowhere",
-    "beispiel": "Meine Schlüssel kann ich nirgendwo finden.",
-    "beispielTr": "Anahtarlarımı hiçbir yerde bulamıyorum.",
-    "beispielEn": "I can't find my keys anywhere."
+    "beispiel": "So eine schöne Aussicht habe ich nirgendwo sonst gesehen.",
+    "beispielTr": "Böyle güzel bir manzarayı başka hiçbir yerde görmedim.",
+    "beispielEn": "I've never seen such a beautiful view anywhere else."
   },
   {
     "id": 2374,
@@ -291,9 +291,9 @@
     "id": 1645,
     "tr": "veriler",
     "en": "data",
-    "beispiel": "Wir haben alle Ihre Daten im Computer.",
-    "beispielTr": "Bütün verileriniz bilgisayarımızda kayıtlı.",
-    "beispielEn": "We have all your data on the computer."
+    "beispiel": "Vor dem Update solltest du deine Daten sichern.",
+    "beispielTr": "Güncellemeden önce verilerini yedeklemelisin.",
+    "beispielEn": "You should back up your data before the update."
   },
   {
     "id": 2694,
@@ -307,17 +307,17 @@
     "id": 2613,
     "tr": "tok",
     "en": "full",
-    "beispiel": "Nein danke, ich bin schon satt.",
-    "beispielTr": "Hayır teşekkürler, karnım tok.",
-    "beispielEn": "No thanks, I'm already full."
+    "beispiel": "Von einem kleinen Salat werde ich nicht satt.",
+    "beispielTr": "Küçük bir salatayla doymam.",
+    "beispielEn": "A small salad won't fill me up."
   },
   {
     "id": 2043,
     "tr": "ticaret yapmak",
     "en": "to trade",
-    "beispiel": "Herr Huber handelt mit Obst und Gemüse.",
-    "beispielTr": "Huber Bey meyve ve sebze ticareti yapıyor.",
-    "beispielEn": "Mr. Huber trades in fruit and vegetables."
+    "beispiel": "Die Firma handelt seit Jahren mit Teppichen aus dem Iran.",
+    "beispielTr": "Firma yıllardır İran halısı ticareti yapıyor.",
+    "beispielEn": "The company has been trading in rugs from Iran for years."
   },
   {
     "id": 2666,
@@ -363,9 +363,9 @@
     "id": 2377,
     "tr": "zahmet",
     "en": "trouble",
-    "beispiel": "Vielen Dank für Ihre Mühe!",
-    "beispielTr": "Zahmetiniz için çok teşekkürler!",
-    "beispielEn": "Thank you very much for your trouble!"
+    "beispiel": "Er hat sich beim Kochen große Mühe gegeben.",
+    "beispielTr": "Yemek yaparken çok emek verdi.",
+    "beispielEn": "He put a lot of effort into cooking."
   },
   {
     "id": 2196,
@@ -395,8 +395,8 @@
     "id": 1518,
     "tr": "tedavi etmek",
     "en": "to treat",
-    "beispiel": "Welcher Arzt hat Sie bisher behandelt?",
-    "beispielTr": "Sizi şimdiye kadar hangi doktor tedavi etti?",
-    "beispielEn": "Which doctor has treated you so far?"
+    "beispiel": "Die Wunde wurde im Krankenhaus sofort behandelt.",
+    "beispielTr": "Yara hastanede hemen tedavi edildi.",
+    "beispielEn": "The wound was treated right away at the hospital."
   }
 ]

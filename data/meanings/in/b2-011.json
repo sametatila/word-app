@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kusurlu, eksik, yetersiz",
-   "currentBeispiel": "Die Dokumentation der Versuche war mangelhaft.",
-   "currentBeispielTr": "Deneylerin belgelenmesi kusurluydu."
+   "currentBeispiel": "Seine Vorbereitung auf die Prüfung war mangelhaft.",
+   "currentBeispielTr": "Sınava hazırlığı yetersizdi."
   },
   {
    "id": 4144,
@@ -19,8 +19,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "mükemmel, üstün, çok iyi",
-   "currentBeispiel": "Sie hat die Prüfung mit einem hervorragenden Ergebnis bestanden.",
-   "currentBeispielTr": "Sınavı mükemmel bir sonuçla geçti.",
+   "currentBeispiel": "Der Koch hat gestern ein hervorragendes Menü serviert.",
+   "currentBeispielTr": "Aşçı dün olağanüstü bir menü sundu.",
    "overlapping": [
     "ausgezeichnet (B1)",
     "perfekt (B1)"
@@ -43,8 +43,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "çeşitli, çok yönlü",
-   "currentBeispiel": "Die Ursachen des Problems sind vielfältig und schwer zu trennen.",
-   "currentBeispielTr": "Sorunun nedenleri çeşitli ve birbirinden ayrılması zor.",
+   "currentBeispiel": "Die Aufgaben in diesem Beruf sind sehr vielfältig.",
+   "currentBeispielTr": "Bu meslekteki görevler çok çeşitli.",
    "overlapping": [
     "abwechslungsreich (B2)"
    ]
@@ -80,8 +80,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "muazzam, çok büyük",
-   "currentBeispiel": "Der Aufwand für die Umstellung war enorm.",
-   "currentBeispielTr": "Geçiş için harcanan emek muazzamdı."
+   "currentBeispiel": "Der Aufwand für den Umzug war enorm.",
+   "currentBeispielTr": "Taşınma için harcanan emek muazzamdı."
   },
   {
    "id": 4150,
@@ -90,8 +90,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "cılız, kıt, yetersiz",
-   "currentBeispiel": "Die Ausbeute des Versuchs fiel ziemlich dürftig aus.",
-   "currentBeispielTr": "Deneyin verimi oldukça cılız çıktı."
+   "currentBeispiel": "Sein Referat war inhaltlich ziemlich dürftig.",
+   "currentBeispielTr": "Sunumu içerik bakımından oldukça cılızdı."
   },
   {
    "id": 4151,
@@ -133,8 +133,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "gözle görülür biçimde, gitgide",
-   "currentBeispiel": "Die Lage auf dem Wohnungsmarkt spitzt sich zusehends zu.",
-   "currentBeispielTr": "Konut piyasasındaki durum gitgide keskinleşiyor."
+   "currentBeispiel": "Der Kranke wurde zusehends schwächer.",
+   "currentBeispielTr": "Hasta gitgide zayıfladı."
   },
   {
    "id": 4155,
@@ -164,7 +164,7 @@
    "formen": "",
    "currentTr": "orantısız biçimde fazla, orantısız yüksek",
    "currentBeispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
-   "currentBeispielTr": "Genç aileler maliyetlerden orantısız biçimde fazla etkileniyor."
+   "currentBeispielTr": "Genç aileler maliyetlerden orantısız biçimde etkileniyor."
   },
   {
    "id": 4158,
@@ -174,7 +174,7 @@
    "formen": "",
    "currentTr": "belirleyici, tayin edici",
    "currentBeispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
-   "currentBeispielTr": "Karar için nihayetinde fiyat belirleyici oldu.",
+   "currentBeispielTr": "Kararda nihayetinde fiyat belirleyici oldu.",
    "overlapping": [
     "maßgeblich (B2)"
    ]
@@ -186,8 +186,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "eksik, boşluklarla dolu",
-   "currentBeispiel": "Die Angaben in der Akte sind an mehreren Stellen lückenhaft.",
-   "currentBeispielTr": "Dosyadaki bilgiler birçok yerde eksik."
+   "currentBeispiel": "Seine Kenntnisse in Mathematik sind ziemlich lückenhaft.",
+   "currentBeispielTr": "Matematik bilgisi epey eksik."
   },
   {
    "id": 4160,
@@ -196,7 +196,7 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kusursuz, sorunsuz",
-   "currentBeispiel": "Das Gerät funktionierte während der gesamten Prüfung einwandfrei.",
+   "currentBeispiel": "Das Gerät funktionierte während der ganzen Prüfung einwandfrei.",
    "currentBeispielTr": "Cihaz test boyunca kusursuz çalıştı."
   },
   {
@@ -206,8 +206,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "en iyi ihtimalle, olsa olsa",
-   "currentBeispiel": "Die Einsparung beträgt bestenfalls ein paar hundert Franken.",
-   "currentBeispielTr": "Tasarruf en iyi ihtimalle birkaç yüz frank tutar."
+   "currentBeispiel": "Das Konzert war bestenfalls durchschnittlich.",
+   "currentBeispielTr": "Konser en iyi ihtimalle vasattı."
   },
   {
    "id": 4162,
@@ -240,7 +240,7 @@
    "formen": "hat gesenkt",
    "currentTr": "düşürmek, indirmek",
    "currentBeispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
-   "currentBeispielTr": "Banka faizleri ikinci kez indirdi."
+   "currentBeispielTr": "Banka faizleri ikinci kez düşürdü."
   },
   {
    "id": 4165,
@@ -249,8 +249,8 @@
    "niveau": "B2",
    "formen": "ist geschrumpft",
    "currentTr": "küçülmek, daralmak",
-   "currentBeispiel": "Die Zahl der Mitglieder ist in zehn Jahren stark geschrumpft.",
-   "currentBeispielTr": "Üye sayısı on yılda büyük ölçüde azaldı."
+   "currentBeispiel": "Der Pullover ist beim Waschen stark geschrumpft.",
+   "currentBeispielTr": "Kazak yıkamada iyice küçüldü."
   },
   {
    "id": 4166,
@@ -282,8 +282,8 @@
    "niveau": "B2",
    "formen": "hat übertroffen",
    "currentTr": "aşmak, geçmek, geride bırakmak",
-   "currentBeispiel": "Das Ergebnis hat alle Erwartungen der Geschäftsleitung übertroffen.",
-   "currentBeispielTr": "Sonuç yönetimin bütün beklentilerini aştı.",
+   "currentBeispiel": "Ihre Leistung hat alle anderen im Team übertroffen.",
+   "currentBeispielTr": "Performansı takımdaki diğer herkesi geride bıraktı.",
    "overlapping": [
     "transzendieren (C1)",
     "überschreiten (B2)",
@@ -312,8 +312,8 @@
    "niveau": "B2",
    "formen": "hat eingestuft",
    "currentTr": "sınıflandırmak, derecelendirmek",
-   "currentBeispiel": "Der Fall wurde von der Behörde als dringend eingestuft.",
-   "currentBeispielTr": "Vaka kurum tarafından acil olarak sınıflandırıldı."
+   "currentBeispiel": "Die Behörde hat den Fall als dringend eingestuft.",
+   "currentBeispielTr": "Kurum vakayı acil olarak sınıflandırdı."
   },
   {
    "id": 4171,
@@ -333,7 +333,7 @@
    "formen": "hat beanstandet",
    "currentTr": "kusur bulmak, itiraz etmek",
    "currentBeispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
-   "currentBeispielTr": "Denetçi hesaptaki birkaç kalemi kusurlu buldu.",
+   "currentBeispielTr": "Denetçi hesaptaki birkaç kalemde kusur buldu.",
    "overlapping": [
     "monieren (C1)"
    ]
@@ -345,8 +345,8 @@
    "niveau": "B2",
    "formen": "hat sich verschlechtert",
    "currentTr": "kötüleşmek, fenalaşmak",
-   "currentBeispiel": "Der Zustand des Gebäudes hat sich rasch verschlechtert.",
-   "currentBeispielTr": "Binanın durumu hızla kötüleşti."
+   "currentBeispiel": "Der Zustand des Patienten hat sich über Nacht verschlechtert.",
+   "currentBeispielTr": "Hastanın durumu bir gecede kötüleşti."
   },
   {
    "id": 4174,
@@ -365,8 +365,8 @@
    "niveau": "B2",
    "formen": "hat halbiert",
    "currentTr": "yarıya indirmek, ikiye bölmek",
-   "currentBeispiel": "Die Firma will ihren Energieverbrauch bis 2030 halbieren.",
-   "currentBeispielTr": "Şirket enerji tüketimini 2030'a kadar yarıya indirmek istiyor."
+   "currentBeispiel": "Die Firma will ihren Stromverbrauch bis 2030 halbieren.",
+   "currentBeispielTr": "Şirket elektrik tüketimini 2030'a kadar yarıya indirmek istiyor."
   },
   {
    "id": 4176,
@@ -386,7 +386,7 @@
    "formen": "hat sich belaufen",
    "currentTr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
    "currentBeispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
-   "currentBeispielTr": "Zarar birkaç yüz bin frangı buluyor.",
+   "currentBeispielTr": "Zarar birkaç yüz bin franga ulaşıyor.",
    "overlapping": [
     "kosten (A1)",
     "greifen (B1)",
@@ -400,8 +400,8 @@
    "niveau": "B2",
    "formen": "hat betragen",
    "currentTr": "tutmak, etmek, olmak",
-   "currentBeispiel": "Die Wartezeit beträgt derzeit rund drei Wochen.",
-   "currentBeispielTr": "Bekleme süresi şu anda yaklaşık üç hafta.",
+   "currentBeispiel": "Die Rechnung beträgt insgesamt achtzig Franken.",
+   "currentBeispielTr": "Hesap toplam seksen frank tutuyor.",
    "overlapping": [
     "kosten (A1)",
     "greifen (B1)",
@@ -415,8 +415,8 @@
    "niveau": "B2",
    "formen": "hat gewichtet",
    "currentTr": "ağırlıklandırmak, önem derecesi vermek",
-   "currentBeispiel": "Die Prüfung gewichtet die schriftliche Leistung doppelt.",
-   "currentBeispielTr": "Sınav yazılı performansı iki kat ağırlıklı sayıyor."
+   "currentBeispiel": "Die Prüfung gewichtet den schriftlichen Teil doppelt.",
+   "currentBeispielTr": "Sınav yazılı bölüme iki kat ağırlık veriyor."
   },
   {
    "id": 4180,
@@ -425,8 +425,8 @@
    "niveau": "B2",
    "formen": "hat nachgelassen",
    "currentTr": "azalmak, hafiflemek, zayıflamak",
-   "currentBeispiel": "Gegen Abend ließ der Wind deutlich nach.",
-   "currentBeispielTr": "Akşama doğru rüzgâr belirgin biçimde hafifledi.",
+   "currentBeispiel": "Die Schmerzen haben nach der Spritze langsam nachgelassen.",
+   "currentBeispielTr": "Ağrılar iğneden sonra yavaş yavaş hafifledi.",
    "overlapping": [
     "zurückgehen (B2)"
    ]
@@ -438,8 +438,8 @@
    "niveau": "B2",
    "formen": "hat zugelegt",
    "currentTr": "artmak, artırmak, yükselmek",
-   "currentBeispiel": "Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.",
-   "currentBeispielTr": "Sağlayıcı kullanıcı sayılarında ciddi biçimde arttı.",
+   "currentBeispiel": "Die Zahl der Zuschauer hat zuletzt wieder zugelegt.",
+   "currentBeispielTr": "İzleyici sayısı son zamanlarda yeniden arttı.",
    "overlapping": [
     "sich häufen (C1)"
    ]
@@ -452,7 +452,7 @@
    "formen": "hat sich abgeschwächt",
    "currentTr": "zayıflamak, hız kesmek",
    "currentBeispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
-   "currentBeispielTr": "Büyüme yılın ikinci yarısında hız kesti."
+   "currentBeispielTr": "Büyüme yılın ikinci yarısında zayıfladı."
   },
   {
    "id": 4183,
@@ -461,8 +461,8 @@
    "niveau": "B2",
    "formen": "hat verstärkt",
    "currentTr": "güçlendirmek, artırmak, pekiştirmek",
-   "currentBeispiel": "Die Gemeinde will die Kontrollen an Wochenenden verstärken.",
-   "currentBeispielTr": "Belediye hafta sonları denetimleri artırmak istiyor.",
+   "currentBeispiel": "Die Mauer wurde mit Stahl verstärkt.",
+   "currentBeispielTr": "Duvar çelikle güçlendirildi.",
    "overlapping": [
     "stärken (B2)",
     "ertüchtigen (C1)"
@@ -476,7 +476,7 @@
    "formen": "hat ausgeweitet",
    "currentTr": "genişletmek, yaymak",
    "currentBeispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
-   "currentBeispielTr": "İşletme hizmetini üç kantona genişletti.",
+   "currentBeispielTr": "İşletme sunduğu hizmeti üç kantona genişletti.",
    "overlapping": [
     "erweitern (B2)",
     "ausbauen (B2)"
@@ -504,8 +504,8 @@
    "niveau": "B2",
    "formen": "hat ermittelt",
    "currentTr": "tespit etmek, belirlemek, saptamak",
-   "currentBeispiel": "Die Kommission ermittelte den Mittelwert aller eingegangenen Angebote.",
-   "currentBeispielTr": "Komisyon gelen bütün tekliflerin ortalamasını hesapladı.",
+   "currentBeispiel": "Die Polizei konnte den Halter des Wagens ermitteln.",
+   "currentBeispielTr": "Polis aracın sahibini belirleyebildi.",
    "overlapping": [
     "feststellen (B1)",
     "konstatieren (C1)"
@@ -519,7 +519,7 @@
    "formen": "hat aufgewertet",
    "currentTr": "değerini artırmak, itibarını yükseltmek",
    "currentBeispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
-   "currentBeispielTr": "Yeni istasyon bütün mahallenin değerini artırdı."
+   "currentBeispielTr": "Yeni tren istasyonu bütün mahallenin değerini artırdı."
   },
   {
    "id": 4188,
@@ -552,7 +552,7 @@
    "formen": "Rückgänge",
    "currentTr": "düşüş, gerileme",
    "currentBeispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
-   "currentBeispielTr": "Ziyaretçi sayılarındaki düşüş müzeyi kaygılandırıyor."
+   "currentBeispielTr": "Ziyaretçi sayısındaki düşüş müzeyi kaygılandırıyor."
   },
   {
    "id": 4191,
@@ -561,8 +561,8 @@
    "niveau": "B2",
    "formen": "Umfänge",
    "currentTr": "kapsam, hacim, boyut",
-   "currentBeispiel": "Der Umfang der Arbeiten war zu Beginn nicht absehbar.",
-   "currentBeispielTr": "İşlerin kapsamı başlangıçta öngörülemiyordu."
+   "currentBeispiel": "Der Umfang der Arbeiten war zu Beginn unklar.",
+   "currentBeispielTr": "İşlerin kapsamı başlangıçta belirsizdi."
   },
   {
    "id": 4192,
@@ -571,8 +571,8 @@
    "niveau": "B2",
    "formen": "Anteile",
    "currentTr": "pay, oran, hisse",
-   "currentBeispiel": "Der Anteil erneuerbarer Energien wächst seit Jahren.",
-   "currentBeispielTr": "Yenilenebilir enerjilerin payı yıllardır büyüyor."
+   "currentBeispiel": "Der Anteil der Frauen im Vorstand ist gestiegen.",
+   "currentBeispielTr": "Yönetim kurulundaki kadınların payı arttı."
   }
  ]
 }

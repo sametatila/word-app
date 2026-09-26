@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "hat stabilisiert",
    "currentTr": "stabil hâle getirmek, dengede tutmak",
-   "currentBeispiel": "Der Zustand des Patienten hat sich über Nacht stabilisiert.",
-   "currentBeispielTr": "Hastanın durumu gece boyunca dengelendi."
+   "currentBeispiel": "Die Regierung will die Preise mit Subventionen stabilisieren.",
+   "currentBeispielTr": "Hükümet fiyatları desteklerle dengelemek istiyor."
   },
   {
    "id": 4645,
@@ -73,7 +73,7 @@
    "formen": "hat vorgebeugt",
    "currentTr": "önlemek, önlem almak",
    "currentBeispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen.",
-   "currentBeispielTr": "Spor ve iyi beslenmeyle birçok hastalığın önüne geçilebilir.",
+   "currentBeispielTr": "Spor ve iyi beslenmeyle birçok hastalık önlenebilir.",
    "overlapping": [
     "verhindern (B1)",
     "abwenden (C1)"
@@ -96,8 +96,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "akut, ivedi",
-   "currentBeispiel": "Bei akuten Schmerzen hilft nur der Notdienst am Wochenende.",
-   "currentBeispielTr": "Akut ağrılarda hafta sonu sadece nöbetçi servis yardımcı olur."
+   "currentBeispiel": "Bei akuten Schmerzen solltest du sofort zum Arzt gehen.",
+   "currentBeispielTr": "Akut ağrılarda hemen doktora gitmelisin."
   },
   {
    "id": 4653,
@@ -116,8 +116,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yatarak tedavi ile ilgili",
-   "currentBeispiel": "Nach dem Sturz wurde sie zwei Wochen stationär aufgenommen.",
-   "currentBeispielTr": "Düşmeden sonra iki hafta yatarak tedaviye alındı."
+   "currentBeispiel": "Nach dem Sturz wurde sie zwei Wochen stationär behandelt.",
+   "currentBeispielTr": "Düşmeden sonra iki hafta hastanede yatarak tedavi gördü."
   },
   {
    "id": 4655,
@@ -136,8 +136,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ruhsal, psikolojik",
-   "currentBeispiel": "Psychisch war das letzte Jahr für die Familie sehr anstrengend.",
-   "currentBeispielTr": "Geçen yıl aile için ruhsal açıdan çok yorucuydu.",
+   "currentBeispiel": "Der Unfall hat ihn psychisch stark belastet.",
+   "currentBeispielTr": "Kaza onu psikolojik olarak çok yıprattı.",
    "overlapping": [
     "seelisch (B2)"
    ]
@@ -150,7 +150,7 @@
    "formen": "",
    "currentTr": "hassas, yatkın",
    "currentBeispiel": "Im Winter bin ich besonders anfällig für Erkältungen.",
-   "currentBeispielTr": "Kışın soğuk algınlığına karşı özellikle hassasım.",
+   "currentBeispielTr": "Kışın soğuk algınlığına özellikle yatkınım.",
    "overlapping": [
     "brisant (C1)",
     "heikel (C1)"
@@ -164,7 +164,7 @@
    "formen": "",
    "currentTr": "çalışamaz durumda, iş göremez",
    "currentBeispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig.",
-   "currentBeispielTr": "Doktor ona on gün iş göremez raporu yazdı."
+   "currentBeispielTr": "Doktor ona on gün iş göremez raporu verdi."
   },
   {
    "id": 4659,
@@ -173,8 +173,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "aç karnına, ayık",
-   "currentBeispiel": "Zur Blutabnahme müssen Sie morgen nüchtern erscheinen.",
-   "currentBeispielTr": "Kan alımı için yarın aç karnına gelmeniz gerekiyor."
+   "currentBeispiel": "Sie müssen morgen nüchtern zur Blutabnahme kommen.",
+   "currentBeispielTr": "Yarın kan alımına aç karnına gelmeniz gerekiyor."
   },
   {
    "id": 4660,
@@ -184,7 +184,7 @@
    "formen": "",
    "currentTr": "bulaşıcı, aktarılabilir",
    "currentBeispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
-   "currentBeispielTr": "Bu hastalık sadece doğrudan temasla bulaşabiliyor.",
+   "currentBeispielTr": "Bu hastalık sadece doğrudan temasla bulaşıyor.",
    "overlapping": [
     "ansteckend (A2)"
    ]
@@ -197,7 +197,7 @@
    "formen": "Fertigungen",
    "currentTr": "imalat, üretim",
    "currentBeispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb.",
-   "currentBeispielTr": "Üretim pazartesiden beri yeniden iki vardiyalı çalışıyor."
+   "currentBeispielTr": "İmalat pazartesiden beri yeniden iki vardiyalı çalışıyor."
   },
   {
    "id": 4662,
@@ -221,7 +221,7 @@
    "formen": "",
    "currentTr": "aşınma, yıpranma",
    "currentBeispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet.",
-   "currentBeispielTr": "Yataklardaki aşınma beklenenden belirgin biçimde fazla."
+   "currentBeispielTr": "Yataklardaki aşınma beklenenden belirgin şekilde fazla."
   },
   {
    "id": 4664,
@@ -244,7 +244,7 @@
    "formen": "Schweißnähte",
    "currentTr": "kaynak dikişi",
    "currentBeispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht.",
-   "currentBeispielTr": "Denetçi kaynak dikişinde ince bir çatlak buldu."
+   "currentBeispielTr": "Kontrolör kaynak dikişinde ince bir çatlak buldu."
   },
   {
    "id": 4666,
@@ -254,7 +254,7 @@
    "formen": "Schmierstoffe",
    "currentTr": "yağlayıcı madde, madeni yağ",
    "currentBeispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell.",
-   "currentBeispielTr": "Yüksek sıcaklıklarda bu yağlayıcı çok çabuk işlevini yitiriyor."
+   "currentBeispielTr": "Yüksek sıcaklıklarda bu yağlayıcı çok çabuk bozuluyor."
   },
   {
    "id": 4667,
@@ -274,7 +274,7 @@
    "formen": "Vorrichtungen",
    "currentTr": "tertibat, aparat",
    "currentBeispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen.",
-   "currentBeispielTr": "Bu aparat olmadan parçayı sıkıştırmak neredeyse imkânsız."
+   "currentBeispielTr": "Bu düzenek olmadan parçayı sıkıştırmak neredeyse imkânsız."
   },
   {
    "id": 4669,
@@ -284,7 +284,7 @@
    "formen": "Baugruppen",
    "currentTr": "modül, montaj grubu",
    "currentBeispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet.",
-   "currentBeispielTr": "Her modül montajdan önce ayrı ayrı test ediliyor."
+   "currentBeispielTr": "Her modül montajdan önce tek tek test ediliyor."
   },
   {
    "id": 4670,
@@ -294,7 +294,7 @@
    "formen": "Bauteile",
    "currentTr": "parça, bileşen",
    "currentBeispiel": "Das defekte Bauteil stammt aus einer älteren Serie.",
-   "currentBeispielTr": "Arızalı parça daha eski bir seriden geliyor.",
+   "currentBeispielTr": "Arızalı bileşen daha eski bir seriden geliyor.",
    "overlapping": [
     "das Stück (A1)",
     "der Teil (A1)",
@@ -309,7 +309,7 @@
    "formen": "Nacharbeiten",
    "currentTr": "düzeltme işi, yeniden işleme",
    "currentBeispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro.",
-   "currentBeispielTr": "Düzeltme işleri bize her ay birkaç bin euroya mal oluyor."
+   "currentBeispielTr": "Yeniden işleme bize her ay birkaç bin avroya mal oluyor."
   },
   {
    "id": 4672,
@@ -338,8 +338,8 @@
    "niveau": "B2",
    "formen": "Toleranzen",
    "currentTr": "tolerans, izin verilen sapma",
-   "currentBeispiel": "Die Toleranz liegt bei zwei Zehntelmillimetern, nicht mehr.",
-   "currentBeispielTr": "Tolerans iki onda bir milimetre, daha fazlası değil."
+   "currentBeispiel": "Diese Toleranz ist für unsere Maschinen viel zu eng.",
+   "currentBeispielTr": "Bu tolerans bizim makineler için fazla dar."
   },
   {
    "id": 4675,
@@ -375,7 +375,7 @@
    "formen": "Gabelstapler",
    "currentTr": "forklift",
    "currentBeispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
-   "currentBeispielTr": "Depoda forklifti yalnızca eğitimli personel kullanabilir."
+   "currentBeispielTr": "Atölyede forklifti yalnızca eğitimli personel kullanabilir."
   },
   {
    "id": 4678,
@@ -405,7 +405,7 @@
    "formen": "Durchlaufzeiten",
    "currentTr": "üretim süresi, geçiş süresi",
    "currentBeispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel.",
-   "currentBeispielTr": "Yeni yazılım sayesinde üretim süresi üçte bir azaldı."
+   "currentBeispielTr": "Yeni yazılımla üretim süresi üçte bir azaldı."
   },
   {
    "id": 4681,
@@ -425,7 +425,7 @@
    "formen": "",
    "currentTr": "korozyon, paslanma",
    "currentBeispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht.",
-   "currentBeispielTr": "Korozyona karşı ancak düzgün bir koruyucu tabaka işe yarar."
+   "currentBeispielTr": "Korozyona karşı ancak düzgün bir koruyucu katman işe yarar."
   },
   {
    "id": 4683,
@@ -445,7 +445,7 @@
    "formen": "Betriebsstätten",
    "currentTr": "işletme tesisi, üretim yeri",
    "currentBeispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland.",
-   "currentBeispielTr": "Şirketin Güney Almanya'da üç üretim tesisi var."
+   "currentBeispielTr": "Şirketin Güney Almanya'da üç işyeri var."
   },
   {
    "id": 4685,
@@ -455,7 +455,7 @@
    "formen": "Dichtungen",
    "currentTr": "conta, sızdırmazlık elemanı",
    "currentBeispiel": "Die poröse Dichtung war die Ursache für den Ölverlust.",
-   "currentBeispielTr": "Gözenekli conta yağ kaybının nedeniydi."
+   "currentBeispielTr": "Gözenekli conta yağ kaçağının nedeniydi."
   },
   {
    "id": 4686,
@@ -509,7 +509,7 @@
    "formen": "Prototypen",
    "currentTr": "prototip, ilk örnek",
    "currentBeispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt.",
-   "currentBeispielTr": "İlk prototip sonbaharda yönetime sunulacak."
+   "currentBeispielTr": "İlk prototip sonbaharda yönetime tanıtılacak."
   },
   {
    "id": 4691,
@@ -539,7 +539,7 @@
    "formen": "Stückzahlen",
    "currentTr": "adet, üretim adedi",
    "currentBeispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich.",
-   "currentBeispielTr": "Belli bir adedin üstünde parça başına fiyat belirgin şekilde düşüyor."
+   "currentBeispielTr": "Belli bir adetten sonra parça başına fiyat belirgin şekilde düşüyor."
   }
  ]
 }

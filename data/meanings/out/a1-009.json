@@ -3,41 +3,41 @@
     "id": 24,
     "tr": "cevap vermek",
     "en": "to answer",
-    "beispiel": "Warum antwortest du nicht?",
-    "beispielTr": "Neden cevap vermiyorsun?",
-    "beispielEn": "Why don't you answer?"
+    "beispiel": "Tom hat mir sofort auf die Nachricht geantwortet.",
+    "beispielTr": "Tom mesajıma hemen cevap verdi.",
+    "beispielEn": "Tom answered my message right away."
   },
   {
     "id": 380,
     "tr": "sağda",
     "en": "on the right",
-    "beispiel": "Hier rechts ist unsere Schule.",
-    "beispielTr": "Okulumuz burada sağda.",
-    "beispielEn": "Our school is here on the right."
+    "beispiel": "Die Toiletten sind rechts neben der Treppe.",
+    "beispielTr": "Tuvaletler merdivenin sağında.",
+    "beispielEn": "The restrooms are on the right next to the stairs."
   },
   {
     "id": 239,
     "tr": "ilginç",
     "en": "interesting",
-    "beispiel": "Das Buch ist interessant.",
-    "beispielTr": "Kitap ilginç.",
-    "beispielEn": "The book is interesting."
+    "beispiel": "Die Führung durch das Schloss war sehr interessant.",
+    "beispielTr": "Şatodaki rehberli tur çok ilginçti.",
+    "beispielEn": "The guided tour of the castle was very interesting."
   },
   {
     "id": 512,
     "tr": "yaşamak",
     "en": "to live",
-    "beispiel": "Ich wohne in München.",
-    "beispielTr": "Münih'te oturuyorum.",
-    "beispielEn": "I live in Munich."
+    "beispiel": "Meine Tante wohnt direkt am Meer.",
+    "beispielTr": "Teyzem denizin hemen kenarında oturuyor.",
+    "beispielEn": "My aunt lives right by the sea."
   },
   {
     "id": 253,
     "tr": "bozuk",
     "en": "broken",
-    "beispiel": "Das Radio ist kaputt.",
-    "beispielTr": "Radyo bozuk.",
-    "beispielEn": "The radio is broken."
+    "beispiel": "Die Klingel an unserer Tür ist seit Tagen kaputt.",
+    "beispielTr": "Kapımızın zili günlerdir bozuk.",
+    "beispielEn": "Our doorbell has been broken for days."
   },
   {
     "id": 158,
@@ -51,9 +51,9 @@
     "id": 444,
     "tr": "çay",
     "en": "tea",
-    "beispiel": "Am Abend trinken wir Tee.",
-    "beispielTr": "Akşamları çay içeriz.",
-    "beispielEn": "We drink tea in the evening."
+    "beispiel": "Meine Großmutter kocht den Tee immer sehr stark.",
+    "beispielTr": "Babaannem çayı hep çok koyu demler.",
+    "beispielEn": "My grandmother always makes the tea very strong."
   },
   {
     "id": 210,
@@ -67,41 +67,41 @@
     "id": 73,
     "tr": "ziyaret etmek",
     "en": "to visit",
-    "beispiel": "Im Sommer besuche ich dich.",
-    "beispielTr": "Yazın seni ziyaret ederim.",
-    "beispielEn": "I will visit you in the summer."
+    "beispiel": "Am Wochenende besuchen wir Oma im Dorf.",
+    "beispielTr": "Hafta sonu köyde büyükannemi ziyaret ediyoruz.",
+    "beispielEn": "This weekend we're visiting Grandma in the village."
   },
   {
     "id": 279,
     "tr": "mutfak",
     "en": "kitchen",
-    "beispiel": "Wir frühstücken in der Küche.",
-    "beispielTr": "Kahvaltıyı mutfakta yapıyoruz.",
-    "beispielEn": "We have breakfast in the kitchen."
+    "beispiel": "Unsere Küche ist klein, aber hell.",
+    "beispielTr": "Mutfağımız küçük ama aydınlık.",
+    "beispielEn": "Our kitchen is small, but bright."
   },
   {
     "id": 644,
     "tr": "kutlamak",
     "en": "to celebrate",
-    "beispiel": "Wir feiern heute meinen Geburtstag.",
-    "beispielTr": "Bugün doğum günümü kutluyoruz.",
-    "beispielEn": "We are celebrating my birthday today."
+    "beispiel": "Am Samstag feiern meine Eltern ihren Hochzeitstag.",
+    "beispielTr": "Cumartesi annemle babam evlilik yıl dönümlerini kutluyor.",
+    "beispielEn": "On Saturday my parents are celebrating their wedding anniversary."
   },
   {
     "id": 251,
     "tr": "kamera",
     "en": "camera",
-    "beispiel": "Ich habe eine neue Kamera gekauft.",
-    "beispielTr": "Yeni bir kamera aldım.",
-    "beispielEn": "I bought a new camera."
+    "beispiel": "Die Kamera von meinem Handy ist sehr gut.",
+    "beispielTr": "Telefonumun kamerası çok iyi.",
+    "beispielEn": "The camera on my phone is really good."
   },
   {
     "id": 6,
     "tr": "dikkat",
     "en": "attention",
-    "beispiel": "Achtung, der Zug fährt gleich ab.",
-    "beispielTr": "Dikkat, tren birazdan kalkıyor.",
-    "beispielEn": "Attention, the train is leaving shortly."
+    "beispiel": "Achtung, die Treppe ist nass!",
+    "beispielTr": "Dikkat, merdiven ıslak!",
+    "beispielEn": "Careful, the stairs are wet!"
   },
   {
     "id": 202,
@@ -115,9 +115,9 @@
     "id": 482,
     "tr": "orman",
     "en": "forest",
-    "beispiel": "In Thüringen gibt es sehr viel Wald.",
-    "beispielTr": "Thüringen'de çok orman var.",
-    "beispielEn": "There is a lot of forest in Thuringia."
+    "beispiel": "Mit dem Hund laufe ich jeden Morgen durch den Wald.",
+    "beispielTr": "Her sabah köpeğimle ormanda koşuyorum.",
+    "beispielEn": "I run through the forest with my dog every morning."
   },
   {
     "id": 196,
@@ -131,17 +131,17 @@
     "id": 269,
     "tr": "elbise",
     "en": "dress",
-    "beispiel": "Das Kleid ist sehr teuer.",
-    "beispielTr": "Elbise çok pahalı.",
-    "beispielEn": "The dress is very expensive."
+    "beispiel": "Für die Hochzeit kauft sie ein grünes Kleid.",
+    "beispielTr": "Düğün için yeşil bir elbise alıyor.",
+    "beispielEn": "She's buying a green dress for the wedding."
   },
   {
     "id": 574,
     "tr": "başlamak",
     "en": "to begin",
-    "beispiel": "Das Spiel beginnt um 15.30 Uhr.",
-    "beispielTr": "Maç saat 15.30'da başlıyor.",
-    "beispielEn": "The game begins at 3:30 p.m."
+    "beispiel": "Der Deutschkurs beginnt nächsten Montag.",
+    "beispielTr": "Almanca kursu gelecek pazartesi başlıyor.",
+    "beispielEn": "The German class starts next Monday."
   },
   {
     "id": 59,
@@ -155,9 +155,9 @@
     "id": 553,
     "tr": "görev",
     "en": "task",
-    "beispiel": "Das ist eine schwere Aufgabe.",
-    "beispielTr": "Bu zor bir görev.",
-    "beispielEn": "This is a difficult task."
+    "beispiel": "Die erste Aufgabe im Test war sehr leicht.",
+    "beispielTr": "Sınavdaki ilk soru çok kolaydı.",
+    "beispielEn": "The first task on the test was very easy."
   },
   {
     "id": 625,
@@ -171,25 +171,25 @@
     "id": 7,
     "tr": "adres",
     "en": "address",
-    "beispiel": "Ich weiß die Adresse nicht.",
-    "beispielTr": "Adresi bilmiyorum.",
-    "beispielEn": "I don't know the address."
+    "beispiel": "Schreib mir bitte deine neue Adresse auf.",
+    "beispielTr": "Lütfen yeni adresini bana yaz.",
+    "beispielEn": "Please write down your new address for me."
   },
   {
     "id": 64,
     "tr": "anlamına gelmek",
     "en": "to mean",
-    "beispiel": "Was bedeutet das Wort?",
-    "beispielTr": "Bu kelime ne anlama geliyor?",
-    "beispielEn": "What does this word mean?"
+    "beispiel": "Rot bedeutet hier Stopp.",
+    "beispielTr": "Burada kırmızı dur anlamına geliyor.",
+    "beispielEn": "Here red means stop."
   },
   {
     "id": 57,
     "tr": "top",
     "en": "ball",
-    "beispiel": "Wir spielen mit dem Ball.",
-    "beispielTr": "Topla oynuyoruz.",
-    "beispielEn": "We are playing with the ball."
+    "beispiel": "Der Hund bringt mir den Ball zurück.",
+    "beispielTr": "Köpek topu bana geri getiriyor.",
+    "beispielEn": "The dog brings the ball back to me."
   },
   {
     "id": 327,
@@ -203,17 +203,17 @@
     "id": 675,
     "tr": "grup",
     "en": "group",
-    "beispiel": "Die erste Gruppe beginnt um 16 Uhr.",
-    "beispielTr": "İlk grup saat 16'da başlıyor.",
-    "beispielEn": "The first group starts at 4 p.m."
+    "beispiel": "Wir machen die Übung in einer Gruppe.",
+    "beispielTr": "Alıştırmayı grup hâlinde yapıyoruz.",
+    "beispielEn": "We're doing the exercise in a group."
   },
   {
     "id": 123,
     "tr": "dondurma",
     "en": "ice cream",
-    "beispiel": "Ich möchte ein großes Eis.",
-    "beispielTr": "Büyük bir dondurma istiyorum.",
-    "beispielEn": "I would like a large ice cream."
+    "beispiel": "Im Sommer essen die Kinder jeden Tag Eis.",
+    "beispielTr": "Yazın çocuklar her gün dondurma yiyor.",
+    "beispielEn": "In the summer the kids eat ice cream every day."
   },
   {
     "id": 98,
@@ -227,17 +227,17 @@
     "id": 856,
     "tr": "memnun",
     "en": "satisfied",
-    "beispiel": "Ich bin mit der Wohnung zufrieden.",
-    "beispielTr": "Daireden memnunum.",
-    "beispielEn": "I am satisfied with the apartment."
+    "beispiel": "Der Lehrer ist mit meinem Test sehr zufrieden.",
+    "beispielTr": "Öğretmen sınavımdan çok memnun.",
+    "beispielEn": "The teacher is very satisfied with my test."
   },
   {
     "id": 780,
     "tr": "kapatmak",
     "en": "to close",
-    "beispiel": "Bitte schließen Sie die Tür.",
-    "beispielTr": "Lütfen kapıyı kapatın.",
-    "beispielEn": "Please close the door."
+    "beispiel": "Der Laden schließt heute schon um sechs.",
+    "beispielTr": "Dükkân bugün saat altıda kapanıyor.",
+    "beispielEn": "The store closes at six today."
   },
   {
     "id": 401,
@@ -251,17 +251,17 @@
     "id": 148,
     "tr": "televizyon izlemek",
     "en": "to watch TV",
-    "beispiel": "Siehst du viel fern?",
-    "beispielTr": "Çok televizyon izler misin?",
-    "beispielEn": "Do you watch a lot of TV?"
+    "beispiel": "Nach dem Abendessen sehen die Kinder eine Stunde fern.",
+    "beispielTr": "Akşam yemeğinden sonra çocuklar bir saat televizyon izliyor.",
+    "beispielEn": "After dinner the kids watch TV for an hour."
   },
   {
     "id": 149,
     "tr": "televizyon",
     "en": "television",
-    "beispiel": "Was gibt es heute im Fernsehen?",
-    "beispielTr": "Bugün televizyonda ne var?",
-    "beispielEn": "What is on television today?"
+    "beispiel": "Mein Opa sieht jeden Abend Nachrichten im Fernsehen.",
+    "beispielTr": "Dedem her akşam televizyonda haberleri izliyor.",
+    "beispielEn": "My grandpa watches the news on TV every evening."
   },
   {
     "id": 537,
@@ -275,9 +275,9 @@
     "id": 388,
     "tr": "yüzük",
     "en": "ring",
-    "beispiel": "Ich habe den Ring verloren.",
-    "beispielTr": "Yüzüğü kaybettim.",
-    "beispielEn": "I lost the ring."
+    "beispiel": "Der Ring ist ein Geschenk von meiner Großmutter.",
+    "beispielTr": "Bu yüzük babaannemden bir hediye.",
+    "beispielEn": "The ring is a gift from my grandmother."
   },
   {
     "id": 720,
@@ -299,17 +299,17 @@
     "id": 606,
     "tr": "sürmek",
     "en": "to last",
-    "beispiel": "Wie lange dauert der Film?",
-    "beispielTr": "Film ne kadar sürüyor?",
-    "beispielEn": "How long does the movie last?"
+    "beispiel": "Die Fahrt nach Hamburg dauert fast vier Stunden.",
+    "beispielTr": "Hamburg yolculuğu neredeyse dört saat sürüyor.",
+    "beispielEn": "The trip to Hamburg takes almost four hours."
   },
   {
     "id": 614,
     "tr": "köy",
     "en": "village",
-    "beispiel": "Meine Familie lebt in einem Dorf.",
-    "beispielTr": "Ailem bir köyde yaşıyor.",
-    "beispielEn": "My family lives in a village."
+    "beispiel": "Im Dorf gibt es nur einen kleinen Laden.",
+    "beispielTr": "Köyde yalnızca küçük bir dükkân var.",
+    "beispielEn": "There's only one small shop in the village."
   },
   {
     "id": 716,
@@ -323,9 +323,9 @@
     "id": 471,
     "tr": "para kazanmak",
     "en": "to earn",
-    "beispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
-    "beispielTr": "Tatilde biraz para kazanmak istiyorum.",
-    "beispielEn": "I want to earn some money during the vacation."
+    "beispiel": "Als Kellner verdient Jonas am Wochenende etwas Geld.",
+    "beispielTr": "Jonas hafta sonları garsonluk yaparak biraz para kazanıyor.",
+    "beispielEn": "Jonas earns some money on weekends as a waiter."
   },
   {
     "id": 359,
@@ -339,17 +339,17 @@
     "id": 155,
     "tr": "et",
     "en": "meat",
-    "beispiel": "Ich esse kein Fleisch.",
-    "beispielTr": "Et yemiyorum.",
-    "beispielEn": "I don't eat meat."
+    "beispiel": "Der Metzger verkauft auch Fleisch vom Bauernhof.",
+    "beispielTr": "Kasap çiftlikten gelen et de satıyor.",
+    "beispielEn": "The butcher also sells meat from the farm."
   },
   {
     "id": 523,
     "tr": "gazete",
     "en": "newspaper",
-    "beispiel": "Meine Mutter liest am Morgen die Zeitung.",
-    "beispielTr": "Annem sabahları gazete okur.",
-    "beispielEn": "My mother reads the newspaper in the morning."
+    "beispiel": "Opa liest die Zeitung immer beim Frühstück.",
+    "beispielTr": "Dedem gazeteyi hep kahvaltıda okur.",
+    "beispielEn": "Grandpa always reads the newspaper at breakfast."
   },
   {
     "id": 665,
@@ -379,17 +379,17 @@
     "id": 851,
     "tr": "rüzgâr",
     "en": "wind",
-    "beispiel": "Der Wind kommt aus Osten.",
-    "beispielTr": "Rüzgâr doğudan esiyor.",
-    "beispielEn": "The wind is coming from the east."
+    "beispiel": "Der Wind ist heute zu stark für das Fahrrad.",
+    "beispielTr": "Rüzgâr bugün bisiklet için fazla sert.",
+    "beispielEn": "The wind is too strong for biking today."
   },
   {
     "id": 92,
     "tr": "otobüs",
     "en": "bus",
-    "beispiel": "Sie fährt mit dem Bus.",
-    "beispielTr": "Otobüsle gidiyor.",
-    "beispielEn": "She goes by bus."
+    "beispiel": "Nachts fährt kein Bus in unser Dorf.",
+    "beispielTr": "Geceleri köyümüze otobüs gitmiyor.",
+    "beispielEn": "At night there's no bus to our village."
   },
   {
     "id": 371,

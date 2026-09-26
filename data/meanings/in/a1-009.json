@@ -9,8 +9,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "cevap vermek, yanıtlamak",
-   "currentBeispiel": "Warum antwortest du nicht?",
-   "currentBeispielTr": "Neden cevap vermiyorsun?"
+   "currentBeispiel": "Tom hat mir sofort auf die Nachricht geantwortet.",
+   "currentBeispielTr": "Tom mesajıma hemen cevap verdi."
   },
   {
    "id": 380,
@@ -19,8 +19,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "sağda, sağa",
-   "currentBeispiel": "Hier rechts ist unsere Schule.",
-   "currentBeispielTr": "Okulumuz burada sağda."
+   "currentBeispiel": "Die Toiletten sind rechts neben der Treppe.",
+   "currentBeispielTr": "Tuvaletler merdivenin sağında."
   },
   {
    "id": 239,
@@ -29,8 +29,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ilginç",
-   "currentBeispiel": "Das Buch ist interessant.",
-   "currentBeispielTr": "Kitap ilginç."
+   "currentBeispiel": "Die Führung durch das Schloss war sehr interessant.",
+   "currentBeispielTr": "Şatodaki rehberli tur çok ilginçti."
   },
   {
    "id": 512,
@@ -39,8 +39,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "oturmak, yaşamak, ikamet etmek",
-   "currentBeispiel": "Ich wohne in München.",
-   "currentBeispielTr": "Münih'te oturuyorum.",
+   "currentBeispiel": "Meine Tante wohnt direkt am Meer.",
+   "currentBeispielTr": "Teyzem denizin hemen kenarında oturuyor.",
    "overlapping": [
     "sitzen (A1)",
     "sich setzen (A2)",
@@ -54,8 +54,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "bozuk, kırık",
-   "currentBeispiel": "Das Radio ist kaputt.",
-   "currentBeispielTr": "Radyo bozuk."
+   "currentBeispiel": "Die Klingel an unserer Tür ist seit Tagen kaputt.",
+   "currentBeispielTr": "Kapımızın zili günlerdir bozuk."
   },
   {
    "id": 158,
@@ -64,8 +64,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "uçak",
-   "currentBeispiel": "Im Flugzeug hatte meine Mutter Angst.",
-   "currentBeispielTr": "Uçakta annem korktu."
+   "currentBeispiel": "Wir fliegen mit dem Flugzeug nach Berlin.",
+   "currentBeispielTr": "Berlin'e uçakla gidiyoruz."
   },
   {
    "id": 444,
@@ -74,8 +74,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "çay",
-   "currentBeispiel": "Am Abend trinken wir Tee.",
-   "currentBeispielTr": "Akşamları çay içeriz."
+   "currentBeispiel": "Meine Großmutter kocht den Tee immer sehr stark.",
+   "currentBeispielTr": "Babaannem çayı hep çok koyu demler."
   },
   {
    "id": 210,
@@ -84,8 +84,8 @@
    "niveau": "A1",
    "formen": "ä, -e",
    "currentTr": "boğaz, boyun",
-   "currentBeispiel": "Mein Hals tut so weh!",
-   "currentBeispielTr": "Boynum çok ağrıyor!",
+   "currentBeispiel": "Sie trägt eine Kette um den Hals.",
+   "currentBeispielTr": "Boynunda bir kolye var.",
    "overlapping": [
     "die Schlucht (B2)"
    ]
@@ -97,8 +97,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "ziyaret etmek",
-   "currentBeispiel": "Im Sommer besuche ich dich.",
-   "currentBeispielTr": "Yazın seni ziyaret ederim."
+   "currentBeispiel": "Am Wochenende besuchen wir Oma im Dorf.",
+   "currentBeispielTr": "Hafta sonu köyde büyükannemi ziyaret ediyoruz."
   },
   {
    "id": 279,
@@ -107,8 +107,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "mutfak",
-   "currentBeispiel": "Wir frühstücken in der Küche.",
-   "currentBeispielTr": "Kahvaltıyı mutfakta yapıyoruz."
+   "currentBeispiel": "Unsere Küche ist klein, aber hell.",
+   "currentBeispielTr": "Mutfağımız küçük ama aydınlık."
   },
   {
    "id": 644,
@@ -117,8 +117,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kutlamak",
-   "currentBeispiel": "Wir feiern heute meinen Geburtstag.",
-   "currentBeispielTr": "Bugün doğum günümü kutluyoruz."
+   "currentBeispiel": "Am Samstag feiern meine Eltern ihren Hochzeitstag.",
+   "currentBeispielTr": "Cumartesi annemle babam evlilik yıl dönümlerini kutluyor."
   },
   {
    "id": 251,
@@ -127,8 +127,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "kamera, fotoğraf makinesi",
-   "currentBeispiel": "Ich zeige dir meine neue Digitalkamera.",
-   "currentBeispielTr": "Sana yeni dijital fotoğraf makinemi göstereyim."
+   "currentBeispiel": "Die Kamera von meinem Handy ist sehr gut.",
+   "currentBeispielTr": "Telefonumun kamerası çok iyi."
   },
   {
    "id": 6,
@@ -137,8 +137,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "dikkat; saygı",
-   "currentBeispiel": "Achtung! Jetzt fängt es an.",
-   "currentBeispielTr": "Dikkat! Şimdi başlıyor.",
+   "currentBeispiel": "Achtung, die Treppe ist nass!",
+   "currentBeispielTr": "Dikkat, merdiven ıslak!",
    "overlapping": [
     "die Vorsicht (A1)",
     "die Aufmerksamkeit (B2)"
@@ -151,8 +151,8 @@
    "niveau": "A1",
    "formen": "ü, -e",
    "currentTr": "tebrik",
-   "currentBeispiel": "Herzlichen Glückwunsch!",
-   "currentBeispielTr": "Tebrikler!",
+   "currentBeispiel": "Herzlichen Glückwunsch zu deinem neuen Job!",
+   "currentBeispielTr": "Yeni işin için tebrikler!",
    "overlapping": [
     "die Gratulation (B1)"
    ]
@@ -164,8 +164,8 @@
    "niveau": "A1",
    "formen": "ä, -er",
    "currentTr": "orman",
-   "currentBeispiel": "In Thüringen gibt es sehr viel Wald.",
-   "currentBeispielTr": "Thüringen'de çok fazla orman var."
+   "currentBeispiel": "Mit dem Hund laufe ich jeden Morgen durch den Wald.",
+   "currentBeispielTr": "Her sabah köpeğimle ormanda koşuyorum."
   },
   {
    "id": 196,
@@ -174,8 +174,8 @@
    "niveau": "A1",
    "formen": "ä, -er",
    "currentTr": "bardak, cam",
-   "currentBeispiel": "Bitte ein Glas Cola.",
-   "currentBeispielTr": "Bir bardak kola lütfen."
+   "currentBeispiel": "Ich trinke ein Glas Wasser.",
+   "currentBeispielTr": "Bir bardak su içiyorum."
   },
   {
    "id": 269,
@@ -184,8 +184,8 @@
    "niveau": "A1",
    "formen": "-er",
    "currentTr": "elbise",
-   "currentBeispiel": "Das Kleid ist sehr teuer.",
-   "currentBeispielTr": "Elbise çok pahalı."
+   "currentBeispiel": "Für die Hochzeit kauft sie ein grünes Kleid.",
+   "currentBeispielTr": "Düğün için yeşil bir elbise alıyor."
   },
   {
    "id": 574,
@@ -194,8 +194,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "başlamak",
-   "currentBeispiel": "Das Spiel beginnt um 15.30 Uhr.",
-   "currentBeispielTr": "Maç 15.30'da başlıyor.",
+   "currentBeispiel": "Der Deutschkurs beginnt nächsten Montag.",
+   "currentBeispielTr": "Almanca kursu gelecek pazartesi başlıyor.",
    "overlapping": [
     "anfangen (A1)"
    ]
@@ -207,8 +207,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "müzik grubu",
-   "currentBeispiel": "Die Schülerband spielt heute um 9.",
-   "currentBeispielTr": "Okul grubu bugün saat 9'da çalıyor."
+   "currentBeispiel": "Meine Schwester singt in einer Band.",
+   "currentBeispielTr": "Kız kardeşim bir müzik grubunda şarkı söylüyor."
   },
   {
    "id": 553,
@@ -217,8 +217,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "görev, ödev",
-   "currentBeispiel": "Das ist eine schwere Aufgabe.",
-   "currentBeispielTr": "Bu zor bir görev.",
+   "currentBeispiel": "Die erste Aufgabe im Test war sehr leicht.",
+   "currentBeispielTr": "Sınavdaki ilk soru çok kolaydı.",
    "overlapping": [
     "die Pflicht (B1)"
    ]
@@ -230,8 +230,8 @@
    "niveau": "A1",
    "formen": "ä, er",
    "currentTr": "eş, koca",
-   "currentBeispiel": "Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.",
-   "currentBeispielTr": "Bu benim eşim.",
+   "currentBeispiel": "Mein Ehemann kocht sehr gern.",
+   "currentBeispielTr": "Kocam yemek yapmayı çok sever.",
    "overlapping": [
     "die Ehefrau (A1)"
    ]
@@ -243,8 +243,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "adres",
-   "currentBeispiel": "Ich weiß die Adresse nicht.",
-   "currentBeispielTr": "Adresi bilmiyorum."
+   "currentBeispiel": "Schreib mir bitte deine neue Adresse auf.",
+   "currentBeispielTr": "Lütfen yeni adresini bana yaz."
   },
   {
    "id": 64,
@@ -253,8 +253,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "anlamına gelmek",
-   "currentBeispiel": "Was bedeutet das Wort?",
-   "currentBeispielTr": "Bu kelime ne anlama geliyor?",
+   "currentBeispiel": "Rot bedeutet hier Stopp.",
+   "currentBeispielTr": "Burada kırmızı dur anlamına geliyor.",
    "overlapping": [
     "besagen (C1)"
    ]
@@ -266,8 +266,8 @@
    "niveau": "A1",
    "formen": "ä, -e",
    "currentTr": "top",
-   "currentBeispiel": "Wir spielen mit dem Ball.",
-   "currentBeispielTr": "Topla oynuyoruz."
+   "currentBeispiel": "Der Hund bringt mir den Ball zurück.",
+   "currentBeispielTr": "Köpek topu bana geri getiriyor."
   },
   {
    "id": 327,
@@ -276,8 +276,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "yanına almak, beraberinde götürmek",
-   "currentBeispiel": "Was nehmen wir zu der Party mit?",
-   "currentBeispielTr": "Partiye yanımızda ne götürelim?"
+   "currentBeispiel": "Ich nehme meinen Regenschirm mit.",
+   "currentBeispielTr": "Şemsiyemi yanıma alıyorum."
   },
   {
    "id": 675,
@@ -286,8 +286,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "grup",
-   "currentBeispiel": "Die erste Gruppe beginnt um 16 Uhr.",
-   "currentBeispielTr": "İlk grup saat 16'da başlıyor."
+   "currentBeispiel": "Wir machen die Übung in einer Gruppe.",
+   "currentBeispielTr": "Alıştırmayı grup hâlinde yapıyoruz."
   },
   {
    "id": 123,
@@ -296,8 +296,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "dondurma",
-   "currentBeispiel": "Ich möchte ein großes Eis.",
-   "currentBeispielTr": "Büyük boy bir dondurma istiyorum.",
+   "currentBeispiel": "Im Sommer essen die Kinder jeden Tag Eis.",
+   "currentBeispielTr": "Yazın çocuklar her gün dondurma yiyor.",
    "overlapping": [
     "die/das Glace/Glacé (B1)"
    ]
@@ -309,8 +309,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "teşekkür etmek",
-   "currentBeispiel": "Die CD ist wunderbar, ich danke dir.",
-   "currentBeispielTr": "CD harika, sana teşekkür ederim.",
+   "currentBeispiel": "Ich danke dir für deine Hilfe.",
+   "currentBeispielTr": "Yardımın için sana teşekkür ederim.",
    "overlapping": [
     "sich bedanken (B1)"
    ]
@@ -322,8 +322,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "memnun",
-   "currentBeispiel": "Ich bin mit der Wohnung zufrieden.",
-   "currentBeispielTr": "Daireden memnunum."
+   "currentBeispiel": "Der Lehrer ist mit meinem Test sehr zufrieden.",
+   "currentBeispielTr": "Öğretmen sınavımdan çok memnun."
   },
   {
    "id": 780,
@@ -332,8 +332,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kapatmak (kapı, dükkân)",
-   "currentBeispiel": "Bitte, schließen Sie die Tür.",
-   "currentBeispielTr": "Lütfen kapıyı kapatın.",
+   "currentBeispiel": "Der Laden schließt heute schon um sechs.",
+   "currentBeispielTr": "Dükkân bugün saat altıda kapanıyor.",
    "overlapping": [
     "zumachen (A1)"
    ]
@@ -345,8 +345,8 @@
    "niveau": "A1",
    "formen": "-en",
    "currentTr": "ağrı, acı",
-   "currentBeispiel": "Ich habe Bauchschmerzen.",
-   "currentBeispielTr": "Karnım ağrıyor."
+   "currentBeispiel": "Ich habe starke Schmerzen im Rücken.",
+   "currentBeispielTr": "Sırtımda şiddetli ağrılar var."
   },
   {
    "id": 148,
@@ -355,8 +355,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "televizyon izlemek",
-   "currentBeispiel": "Siehst du viel fern?",
-   "currentBeispielTr": "Çok televizyon izler misin?"
+   "currentBeispiel": "Nach dem Abendessen sehen die Kinder eine Stunde fern.",
+   "currentBeispielTr": "Akşam yemeğinden sonra çocuklar bir saat televizyon izliyor."
   },
   {
    "id": 149,
@@ -365,8 +365,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "televizyon (yayın, kurum)",
-   "currentBeispiel": "Was gibt es heute im Fernsehen?",
-   "currentBeispielTr": "Bugün televizyonda ne var?"
+   "currentBeispiel": "Mein Opa sieht jeden Abend Nachrichten im Fernsehen.",
+   "currentBeispielTr": "Dedem her akşam televizyonda haberleri izliyor."
   },
   {
    "id": 537,
@@ -375,8 +375,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "indirim, kampanya; teklif",
-   "currentBeispiel": "Heute sind Sportschuhe im Angebot.",
-   "currentBeispielTr": "Bugün spor ayakkabılar kampanyada.",
+   "currentBeispiel": "Das ist ein gutes Angebot.",
+   "currentBeispielTr": "Bu iyi bir teklif.",
    "overlapping": [
     "die Ermäßigung (A2)",
     "der Rabatt (B1)",
@@ -390,8 +390,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "yüzük",
-   "currentBeispiel": "Sie trägt viele Ringe.",
-   "currentBeispielTr": "Bir sürü yüzük takıyor."
+   "currentBeispiel": "Der Ring ist ein Geschenk von meiner Großmutter.",
+   "currentBeispielTr": "Bu yüzük babaannemden bir hediye."
   },
   {
    "id": 720,
@@ -400,8 +400,8 @@
    "niveau": "A1",
    "formen": "-er",
    "currentTr": "şarkı",
-   "currentBeispiel": "Welches ist dein Lieblingslied?",
-   "currentBeispielTr": "En sevdiğin şarkı hangisi?"
+   "currentBeispiel": "Dieses Lied gefällt mir sehr.",
+   "currentBeispielTr": "Bu şarkıyı çok seviyorum."
   },
   {
    "id": 238,
@@ -410,8 +410,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "ada",
-   "currentBeispiel": "Rügen ist eine Insel.",
-   "currentBeispielTr": "Rügen bir adadır."
+   "currentBeispiel": "Wir machen Urlaub auf einer Insel.",
+   "currentBeispielTr": "Bir adada tatil yapıyoruz."
   },
   {
    "id": 606,
@@ -420,8 +420,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "sürmek",
-   "currentBeispiel": "Wie lange dauert der Film?",
-   "currentBeispielTr": "Film ne kadar sürüyor?",
+   "currentBeispiel": "Die Fahrt nach Hamburg dauert fast vier Stunden.",
+   "currentBeispielTr": "Hamburg yolculuğu neredeyse dört saat sürüyor.",
    "overlapping": [
     "schmieren (A2)"
    ]
@@ -433,8 +433,8 @@
    "niveau": "A1",
    "formen": "-ö, er",
    "currentTr": "köy",
-   "currentBeispiel": "Meine Familie lebt in einem Dorf.",
-   "currentBeispielTr": "Ailem bir köyde yaşıyor."
+   "currentBeispiel": "Im Dorf gibt es nur einen kleinen Laden.",
+   "currentBeispielTr": "Köyde yalnızca küçük bir dükkân var."
   },
   {
    "id": 716,
@@ -443,8 +443,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "sessiz, sessizce",
-   "currentBeispiel": "Seid leise. Die anderen schlafen schon.",
-   "currentBeispielTr": "Sessiz olun. Diğerleri uyuyor.",
+   "currentBeispiel": "Die Kinder spielen heute ganz leise.",
+   "currentBeispielTr": "Çocuklar bugün çok sessiz oynuyor.",
    "overlapping": [
     "still (B1)",
     "stumm (B1)"
@@ -457,8 +457,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "kazanmak (para), hak etmek",
-   "currentBeispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
-   "currentBeispielTr": "Tatilde biraz para kazanmak istiyorum.",
+   "currentBeispiel": "Als Kellner verdient Jonas am Wochenende etwas Geld.",
+   "currentBeispielTr": "Jonas hafta sonları garsonluk yaparak biraz para kazanıyor.",
    "overlapping": [
     "siegen (B1)",
     "erwerben (B2)",
@@ -472,8 +472,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "park",
-   "currentBeispiel": "Wir gehen in den Park. .",
-   "currentBeispielTr": "Parka gidiyoruz."
+   "currentBeispiel": "Wir gehen jeden Sonntag in den Park.",
+   "currentBeispielTr": "Her pazar parka gideriz."
   },
   {
    "id": 155,
@@ -482,8 +482,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "et",
-   "currentBeispiel": "Ich esse kein Fleisch.",
-   "currentBeispielTr": "Et yemiyorum."
+   "currentBeispiel": "Der Metzger verkauft auch Fleisch vom Bauernhof.",
+   "currentBeispielTr": "Kasap çiftlikten gelen et de satıyor."
   },
   {
    "id": 523,
@@ -492,8 +492,8 @@
    "niveau": "A1",
    "formen": "-en",
    "currentTr": "gazete",
-   "currentBeispiel": "Meine Mutter liest am Morgen die Zeitung.",
-   "currentBeispielTr": "Annem sabahları gazete okur."
+   "currentBeispiel": "Opa liest die Zeitung immer beim Frühstück.",
+   "currentBeispielTr": "Dedem gazeteyi hep kahvaltıda okur."
   },
   {
    "id": 665,
@@ -502,8 +502,8 @@
    "niveau": "A1",
    "formen": "-e",
    "currentTr": "görüşme, konuşma",
-   "currentBeispiel": "Das Gespräch mit Frau Kunz ist um 14 Uhr.",
-   "currentBeispielTr": "Bayan Kunz'la görüşme saat 14'te."
+   "currentBeispiel": "Wir haben ein langes Gespräch geführt.",
+   "currentBeispielTr": "Uzun bir konuşma yaptık."
   },
   {
    "id": 809,
@@ -512,8 +512,8 @@
    "niveau": "A1",
    "formen": "-s",
    "currentTr": "taksi",
-   "currentBeispiel": "Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.",
-   "currentBeispielTr": "Bugün artık otobüs yok. Taksiyle gidiyor."
+   "currentBeispiel": "Wir fahren mit dem Taxi nach Hause.",
+   "currentBeispielTr": "Eve taksiyle gidiyoruz."
   },
   {
    "id": 410,
@@ -522,8 +522,8 @@
    "niveau": "A1",
    "formen": "-n",
    "currentTr": "göl",
-   "currentBeispiel": "Der See ist sehr groß./Wir wohnen am See./ Wir fahren zum Ammersee.",
-   "currentBeispielTr": "Göl çok büyük. / Göl kenarında oturuyoruz. / Ammersee gölüne gidiyoruz."
+   "currentBeispiel": "Im Sommer schwimmen wir im See.",
+   "currentBeispielTr": "Yazın gölde yüzeriz."
   },
   {
    "id": 851,
@@ -532,8 +532,8 @@
    "niveau": "A1",
    "formen": "",
    "currentTr": "rüzgar",
-   "currentBeispiel": "Der Wind kommt aus Osten.",
-   "currentBeispielTr": "Rüzgar doğudan esiyor."
+   "currentBeispiel": "Der Wind ist heute zu stark für das Fahrrad.",
+   "currentBeispielTr": "Rüzgâr bugün bisiklet için fazla sert."
   },
   {
    "id": 92,
@@ -542,8 +542,8 @@
    "niveau": "A1",
    "formen": "-se",
    "currentTr": "otobüs",
-   "currentBeispiel": "Sie fährt mit dem Bus.",
-   "currentBeispielTr": "Otobüsle gidiyor."
+   "currentBeispiel": "Nachts fährt kein Bus in unser Dorf.",
+   "currentBeispielTr": "Geceleri köyümüze otobüs gitmiyor."
   },
   {
    "id": 371,
@@ -552,8 +552,8 @@
    "niveau": "A1",
    "formen": "(Sg.)",
    "currentTr": "saçmalık",
-   "currentBeispiel": "Ich finde, das ist Quatsch!",
-   "currentBeispielTr": "Bence bu tam bir saçmalık!"
+   "currentBeispiel": "Das ist doch alles Quatsch!",
+   "currentBeispielTr": "Bunların hepsi saçmalık!"
   }
  ]
 }

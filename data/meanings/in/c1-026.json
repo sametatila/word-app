@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Repertoires",
    "currentTr": "repertuvar, dağarcık",
-   "currentBeispiel": "Das Repertoire des Hauses umfasst kaum zeitgenössische Stücke.",
-   "currentBeispielTr": "Kurumun repertuvarı neredeyse hiç çağdaş oyun içermiyor."
+   "currentBeispiel": "Der Pianist hat das Stück nicht im Repertoire.",
+   "currentBeispielTr": "Piyanistin repertuvarında bu parça yok."
   },
   {
    "id": 6504,
@@ -30,7 +30,7 @@
    "formen": "",
    "currentTr": "katarsis, arınma",
    "currentBeispiel": "Das Stück verweigert dem Publikum jede tröstliche Katharsis.",
-   "currentBeispielTr": "Oyun, seyirciye her türlü teselli edici katarsisi esirgiyor."
+   "currentBeispielTr": "Oyun seyirciye teselli edici bir katarsis yaşatmıyor."
   },
   {
    "id": 6506,
@@ -40,7 +40,7 @@
    "formen": "",
    "currentTr": "patos, coşkulu duygu yükü",
    "currentBeispiel": "Das Pathos der Schlussszene wirkt heute unfreiwillig komisch.",
-   "currentBeispielTr": "Final sahnesinin patosu bugün istemeden komik duruyor."
+   "currentBeispielTr": "Final sahnesindeki abartılı duygusallık bugün gülünç kaçıyor."
   },
   {
    "id": 6507,
@@ -50,7 +50,7 @@
    "formen": "Grotesken",
    "currentTr": "grotesk, gülünç-ürkütücü olan",
    "currentBeispiel": "Die Tragödie kippt im letzten Bild in eine Groteske.",
-   "currentBeispielTr": "Trajedi son tabloda groteske dönüşüyor."
+   "currentBeispielTr": "Trajedi son sahnede bir groteske dönüşüyor."
   },
   {
    "id": 6508,
@@ -60,7 +60,7 @@
    "formen": "Persiflagen",
    "currentTr": "alaycı taklit, hicivli öykünme",
    "currentBeispiel": "Der Film ist eine bissige Persiflage auf den Kunstbetrieb.",
-   "currentBeispielTr": "Film, sanat camiasına yönelik zehir zemberek bir taklit."
+   "currentBeispielTr": "Film, sanat dünyasının alaycı ve sert bir taklidi."
   },
   {
    "id": 6509,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "Abstraktionen",
    "currentTr": "soyutlama",
-   "currentBeispiel": "Der Weg zur Abstraktion vollzog sich bei ihm allmählich.",
-   "currentBeispielTr": "Soyutlamaya giden yol onda yavaş yavaş gerçekleşti."
+   "currentBeispiel": "Nach 1910 wandte sich der Maler ganz der Abstraktion zu.",
+   "currentBeispielTr": "Ressam 1910'dan sonra tamamen soyutlamaya yöneldi."
   },
   {
    "id": 6510,
@@ -79,8 +79,8 @@
    "niveau": "C1",
    "formen": "Hochkulturen",
    "currentTr": "yüksek kültür",
-   "currentBeispiel": "Die Trennung von Hochkultur und Unterhaltung erodiert zusehends.",
-   "currentBeispielTr": "Yüksek kültür ile eğlence arasındaki ayrım gözle görülür biçimde aşınıyor."
+   "currentBeispiel": "Sie verachtet Popmusik und schwärmt nur von Hochkultur.",
+   "currentBeispielTr": "Pop müziği küçümsüyor, sadece yüksek kültüre hayran."
   },
   {
    "id": 6511,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sanat özgürlüğü",
-   "currentBeispiel": "Die Kunstfreiheit endet dort nicht, wo jemand sich ärgert.",
-   "currentBeispielTr": "Sanat özgürlüğü, birileri sinirlendi diye sona ermez."
+   "currentBeispiel": "Das Gericht berief sich ausdrücklich auf die Kunstfreiheit.",
+   "currentBeispielTr": "Mahkeme açıkça sanat özgürlüğüne dayandı."
   },
   {
    "id": 6512,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "hat dargeboten",
    "currentTr": "sunmak, icra etmek",
-   "currentBeispiel": "Das Quartett bot die späten Streichquartette hinreißend dar.",
-   "currentBeispielTr": "Dörtlü, geç dönem yaylı kuartetlerini büyüleyici biçimde icra etti.",
+   "currentBeispiel": "Die Sängerin bot drei Lieder von Schubert dar.",
+   "currentBeispielTr": "Şarkıcı Schubert'ten üç şarkı icra etti.",
    "overlapping": [
     "anbieten (A1)",
     "bieten (B1)",
@@ -118,7 +118,7 @@
    "formen": "hat einstudiert",
    "currentTr": "çalışıp hazırlamak, prova ederek öğrenmek",
    "currentBeispiel": "Der Chor studiert das Requiem seit Monaten ein.",
-   "currentBeispielTr": "Koro aylardır requiem'i çalışıyor."
+   "currentBeispielTr": "Koro aylardır requiem'i prova ediyor."
   },
   {
    "id": 6514,
@@ -127,8 +127,8 @@
    "niveau": "C1",
    "formen": "hat entschlüsselt",
    "currentTr": "çözmek, deşifre etmek",
-   "currentBeispiel": "Die Symbolik des Altarbildes lässt sich kaum vollständig entschlüsseln.",
-   "currentBeispielTr": "Sunak resminin simgeciliği tam olarak çözülemiyor.",
+   "currentBeispiel": "Niemand konnte die Symbole auf dem Gemälde entschlüsseln.",
+   "currentBeispielTr": "Tablodaki simgeleri kimse deşifre edemedi.",
    "overlapping": [
     "lösen (B1)"
    ]
@@ -140,8 +140,8 @@
    "niveau": "C1",
    "formen": "hat nachempfunden",
    "currentTr": "kendini yerine koyup hissetmek, duygusunu paylaşmak",
-   "currentBeispiel": "Der Zuschauer soll die Verzweiflung der Figur nachempfinden.",
-   "currentBeispielTr": "Seyircinin karakterin çaresizliğini içinde duyması bekleniyor."
+   "currentBeispiel": "Ihren Schmerz kann ich sehr gut nachempfinden.",
+   "currentBeispielTr": "Kendimi onun yerine koyup acısını duyabiliyorum."
   },
   {
    "id": 6516,
@@ -150,8 +150,8 @@
    "niveau": "C1",
    "formen": "hat überhöht",
    "currentTr": "yüceltmek, abartarak büyütmek",
-   "currentBeispiel": "Die Regie überhöht den Alltag zum antiken Ritual.",
-   "currentBeispielTr": "Reji, gündelik olanı antik bir ritüele yüceltiyor.",
+   "currentBeispiel": "Der Film überhöht den Sportler zum Nationalhelden.",
+   "currentBeispielTr": "Film, sporcuyu abartarak ulusal kahraman mertebesine yüceltiyor.",
    "overlapping": [
     "glorifizieren (C1)"
    ]
@@ -163,8 +163,8 @@
    "niveau": "C1",
    "formen": "hat skizziert",
    "currentTr": "taslağını çizmek, ana hatlarıyla anlatmak",
-   "currentBeispiel": "Der Kurator skizzierte den Aufbau der Schau in wenigen Sätzen.",
-   "currentBeispielTr": "Küratör serginin kurgusunu birkaç cümleyle özetledi."
+   "currentBeispiel": "Der Architekt skizzierte den Entwurf auf einer Serviette.",
+   "currentBeispielTr": "Mimar tasarımın taslağını bir peçeteye çizdi."
   },
   {
    "id": 6518,
@@ -173,8 +173,8 @@
    "niveau": "C1",
    "formen": "hat vertont",
    "currentTr": "bestelemek, müziğe uyarlamak",
-   "currentBeispiel": "Er hat mehrere Gedichte der Romantik neu vertont.",
-   "currentBeispielTr": "Romantik dönemden birkaç şiiri yeniden besteledi."
+   "currentBeispiel": "Er hat mehrere Gedichte von Rilke neu vertont.",
+   "currentBeispielTr": "Rilke'nin birkaç şiirini yeniden besteledi."
   },
   {
    "id": 6519,
@@ -183,8 +183,8 @@
    "niveau": "C1",
    "formen": "hat rezitiert",
    "currentTr": "ezberden okumak, şiir okumak",
-   "currentBeispiel": "Die Schauspielerin rezitierte den Monolog ohne jedes Pathos.",
-   "currentBeispielTr": "Oyuncu tiradı hiçbir abartıya kaçmadan okudu."
+   "currentBeispiel": "Das Kind rezitierte das Gedicht ohne einen Fehler.",
+   "currentBeispielTr": "Çocuk şiiri tek hata yapmadan ezberden okudu."
   },
   {
    "id": 6520,
@@ -203,8 +203,8 @@
    "niveau": "C1",
    "formen": "hat versteigert",
    "currentTr": "açık artırmayla satmak",
-   "currentBeispiel": "Der Nachlass des Malers wird im Herbst versteigert.",
-   "currentBeispielTr": "Ressamın terekesi sonbaharda açık artırmayla satılacak."
+   "currentBeispiel": "Das Gemälde wurde für zwölf Millionen Euro versteigert.",
+   "currentBeispielTr": "Tablo on iki milyon avroya açık artırmayla satıldı."
   },
   {
    "id": 6522,
@@ -213,8 +213,8 @@
    "niveau": "C1",
    "formen": "hat provoziert",
    "currentTr": "kışkırtmak, tepki uyandırmak",
-   "currentBeispiel": "Die Installation provoziert bewusst den bürgerlichen Kunstgeschmack.",
-   "currentBeispielTr": "Yerleştirme, burjuva sanat beğenisini bilinçli olarak kışkırtıyor.",
+   "currentBeispiel": "Der Künstler will mit dieser Installation bewusst provozieren.",
+   "currentBeispielTr": "Sanatçı bu yerleştirmeyle bilinçli olarak provoke etmek istiyor.",
    "overlapping": [
     "aufwiegeln (C1)"
    ]
@@ -227,7 +227,7 @@
    "formen": "hat irritiert",
    "currentTr": "şaşırtmak, kafa karıştırmak",
    "currentBeispiel": "Der abrupte Stilwechsel irritierte selbst wohlwollende Kritiker.",
-   "currentBeispielTr": "Ani üslup değişimi iyi niyetli eleştirmenleri bile şaşırttı.",
+   "currentBeispielTr": "Ani üslup değişimi iyi niyetli eleştirmenlerin bile kafasını karıştırdı.",
    "overlapping": [
     "überraschen (B1)"
    ]
@@ -239,8 +239,8 @@
    "niveau": "C1",
    "formen": "hat ergriffen",
    "currentTr": "derinden etkilemek, sarsmak",
-   "currentBeispiel": "Die schlichte Schlussarie ergriff das ganze Haus.",
-   "currentBeispielTr": "Yalın final aryası bütün salonu derinden etkiledi."
+   "currentBeispiel": "Die schlichte Schlussarie ergreift das ganze Publikum.",
+   "currentBeispielTr": "Yalın final aryası bütün salonu derinden etkiliyor."
   },
   {
    "id": 6525,
@@ -249,8 +249,8 @@
    "niveau": "C1",
    "formen": "hat karikiert",
    "currentTr": "karikatürize etmek, abartarak alay etmek",
-   "currentBeispiel": "Die Aufführung karikiert den Kunstbetrieb bis zur Kenntlichkeit.",
-   "currentBeispielTr": "Gösteri, sanat camiasını tanınacak kadar karikatürize ediyor."
+   "currentBeispiel": "Der Zeichner karikiert den Kanzler als hilflosen Kapitän.",
+   "currentBeispielTr": "Çizer, şansölyeyi çaresiz bir kaptan olarak karikatürize ediyor."
   },
   {
    "id": 6526,
@@ -270,7 +270,7 @@
    "formen": "",
    "currentTr": "deneysel",
    "currentBeispiel": "Das Festival zeigt vor allem experimentelles Musiktheater.",
-   "currentBeispielTr": "Festival ağırlıklı olarak deneysel müzikli tiyatro gösteriyor."
+   "currentBeispielTr": "Festival ağırlıklı olarak deneysel müzik tiyatrosu gösteriyor."
   },
   {
    "id": 6528,
@@ -289,8 +289,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ince, sezdirmeden işleyen",
-   "currentBeispiel": "Die Kritik an der Institution ist hier sehr subtil formuliert.",
-   "currentBeispielTr": "Kuruma yönelik eleştiri burada çok ince biçimde dile getirilmiş.",
+   "currentBeispiel": "Ihre Anspielung war so subtil, dass niemand sie bemerkte.",
+   "currentBeispielTr": "Göndermesi o kadar incelikliydi ki kimse fark etmedi.",
    "overlapping": [
     "dünn (A2)",
     "schlank (B1)"
@@ -304,7 +304,7 @@
    "formen": "",
    "currentTr": "iki anlamlı, çift katmanlı",
    "currentBeispiel": "Der scheinbar harmlose Text ist zutiefst doppelbödig.",
-   "currentBeispielTr": "Görünüşte masum olan metin son derece çift katmanlı."
+   "currentBeispielTr": "Görünüşte masum olan metin son derece çift anlamlı."
   },
   {
    "id": 6531,
@@ -314,7 +314,7 @@
    "formen": "",
    "currentTr": "derin anlamlı, alt metinli",
    "currentBeispiel": "Ihr Humor ist leise und hintergründig statt laut.",
-   "currentBeispielTr": "Mizahı gürültülü değil, sessiz ve alt metinli."
+   "currentBeispielTr": "Mizahı gürültülü değil, sessiz ve derin anlamlı."
   },
   {
    "id": 6532,
@@ -324,7 +324,7 @@
    "formen": "",
    "currentTr": "görkemli, bol ve gösterişli",
    "currentBeispiel": "Die opulente Ausstattung erdrückt den schmalen Text.",
-   "currentBeispielTr": "Görkemli donanım, ince metni eziyor."
+   "currentBeispielTr": "Görkemli sahne tasarımı ince metni eziyor."
   },
   {
    "id": 6533,
@@ -333,8 +333,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "etkileyici, akılda kalıcı biçimde güçlü",
-   "currentBeispiel": "Der Dokumentarfilm schildert das Milieu eindringlich und ohne Kitsch.",
-   "currentBeispielTr": "Belgesel, o çevreyi çarpıcı ve kitsch'e kaçmadan anlatıyor."
+   "currentBeispiel": "Der Dokumentarfilm schildert das Elend eindringlich und ohne Kitsch.",
+   "currentBeispielTr": "Belgesel, sefaleti çarpıcı ve kitsch'e kaçmadan anlatıyor."
   },
   {
    "id": 6534,
@@ -343,8 +343,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "zor lokma, kolay tüketilmeyen",
-   "currentBeispiel": "Sein sperriges Spätwerk fand erst posthum Anerkennung.",
-   "currentBeispielTr": "Zorlu geç dönem yapıtları ancak ölümünden sonra kabul gördü."
+   "currentBeispiel": "Das Sofa ist zu sperrig für den engen Flur.",
+   "currentBeispielTr": "Kanepe dar koridor için fazla hantal."
   },
   {
    "id": 6535,
@@ -353,8 +353,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "seçkinci, elitist",
-   "currentBeispiel": "Dem Haus wird seit Langem ein elitäres Programm vorgeworfen.",
-   "currentBeispielTr": "Kuruma uzun süredir seçkinci bir program yürüttüğü eleştirisi yöneltiliyor."
+   "currentBeispiel": "Viele werfen dem Opernhaus ein elitäres Programm vor.",
+   "currentBeispielTr": "Çoğu kişi opera binasını seçkinci bir program yürütmekle suçluyor."
   },
   {
    "id": 6536,
@@ -384,7 +384,7 @@
    "formen": "Stilmittel",
    "currentTr": "üslup aracı, söz sanatı",
    "currentBeispiel": "Die Wiederholung ist hier ein bewusst eingesetztes Stilmittel.",
-   "currentBeispielTr": "Yineleme burada bilinçli olarak kullanılmış bir üslup aracıdır."
+   "currentBeispielTr": "Yineleme burada bilinçli kullanılmış bir üslup aracı."
   },
   {
    "id": 6539,
@@ -394,7 +394,7 @@
    "formen": "Metaphern",
    "currentTr": "metafor, eğretileme",
    "currentBeispiel": "Seine Metaphern wirken auf mich etwas abgenutzt.",
-   "currentBeispielTr": "Metaforları bana biraz aşınmış geliyor."
+   "currentBeispielTr": "Metaforları bana biraz eskimiş geliyor."
   },
   {
    "id": 6540,
@@ -403,8 +403,8 @@
    "niveau": "C1",
    "formen": "Gleichnisse",
    "currentTr": "kıssa, benzetme öyküsü",
-   "currentBeispiel": "Der Prediger erklärte den Gedanken anhand eines alten Gleichnisses.",
-   "currentBeispielTr": "Vaiz düşünceyi eski bir kıssayla açıkladı."
+   "currentBeispiel": "Der Pfarrer erklärte den Gedanken mit einem alten Gleichnis.",
+   "currentBeispielTr": "Papaz düşüncesini eski bir kıssayla açıkladı."
   },
   {
    "id": 6541,
@@ -413,8 +413,8 @@
    "niveau": "C1",
    "formen": "Nachworte",
    "currentTr": "sonsöz",
-   "currentBeispiel": "Im Nachwort beschreibt die Übersetzerin ihre wichtigsten Entscheidungen.",
-   "currentBeispielTr": "Sonsözde çevirmen en önemli tercihlerini anlatıyor."
+   "currentBeispiel": "Im Nachwort begründet die Übersetzerin ihre wichtigsten Entscheidungen.",
+   "currentBeispielTr": "Sonsözde çevirmen en önemli tercihlerini gerekçelendiriyor."
   },
   {
    "id": 6542,
@@ -423,8 +423,8 @@
    "niveau": "C1",
    "formen": "Fußnoten",
    "currentTr": "dipnot",
-   "currentBeispiel": "Die entscheidende Quelle versteckt sich in einer knappen Fußnote.",
-   "currentBeispielTr": "Belirleyici kaynak kısacık bir dipnotta gizli."
+   "currentBeispiel": "Die entscheidende Quelle steckt in einer winzigen Fußnote.",
+   "currentBeispielTr": "Belirleyici kaynak minicik bir dipnotta gizli."
   },
   {
    "id": 6543,
@@ -434,7 +434,7 @@
    "formen": "Manuskripte",
    "currentTr": "el yazması, (basılmamış) metin",
    "currentBeispiel": "Das Manuskript lag jahrzehntelang unbeachtet im Archiv.",
-   "currentBeispielTr": "Müsvedde onlarca yıl arşivde fark edilmeden durdu."
+   "currentBeispielTr": "El yazması onlarca yıl arşivde fark edilmeden durdu."
   },
   {
    "id": 6544,
@@ -443,8 +443,8 @@
    "niveau": "C1",
    "formen": "Urheber",
    "currentTr": "eser sahibi, yaratıcı",
-   "currentBeispiel": "Der Urheber des Textes blieb über Jahrzehnte unbekannt.",
-   "currentBeispielTr": "Metnin sahibi onlarca yıl boyunca bilinmedi."
+   "currentBeispiel": "Der Urheber muss der Nutzung seines Werkes zustimmen.",
+   "currentBeispielTr": "Eser sahibi, yapıtının kullanımına onay vermek zorundadır."
   },
   {
    "id": 6545,
@@ -453,8 +453,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "metnin tam ifadesi, lafız",
-   "currentBeispiel": "Der genaue Wortlaut des Briefes lässt sich nicht mehr feststellen.",
-   "currentBeispielTr": "Mektubun tam metni artık saptanamıyor."
+   "currentBeispiel": "Den genauen Wortlaut des Briefes kennt niemand mehr.",
+   "currentBeispielTr": "Mektubun tam metnini artık kimse bilmiyor."
   },
   {
    "id": 6546,
@@ -463,8 +463,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dil değişimi",
-   "currentBeispiel": "Sprachwandel vollzieht sich langsam und meist unbemerkt.",
-   "currentBeispielTr": "Dil değişimi yavaş ve çoğunlukla fark edilmeden gerçekleşir."
+   "currentBeispiel": "Meine Großmutter beklagt den rasanten Sprachwandel im Deutschen.",
+   "currentBeispielTr": "Büyükannem Almancadaki hızlı dil değişiminden yakınıyor."
   },
   {
    "id": 6547,
@@ -473,8 +473,8 @@
    "niveau": "C1",
    "formen": "Mundarten",
    "currentTr": "yöresel ağız, şive",
-   "currentBeispiel": "In seinen Gedichten mischt er Hochdeutsch und heimatliche Mundart.",
-   "currentBeispielTr": "Şiirlerinde standart Almancayla memleket şivesini harmanlıyor."
+   "currentBeispiel": "Zu Hause spricht er nur die heimatliche Mundart.",
+   "currentBeispielTr": "Evde yalnızca memleketinin yöresel ağzını konuşuyor."
   },
   {
    "id": 6548,
@@ -483,7 +483,7 @@
    "niveau": "C1",
    "formen": "Chroniken",
    "currentTr": "vakayiname, kronik",
-   "currentBeispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert zurück.",
+   "currentBeispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert.",
    "currentBeispielTr": "Manastırın vakayinamesi on ikinci yüzyıla kadar uzanıyor."
   },
   {
@@ -494,7 +494,7 @@
    "formen": "Nachrufe",
    "currentTr": "anma yazısı, ölüm yazısı",
    "currentBeispiel": "Der Nachruf würdigt vor allem ihre späten Gedichte.",
-   "currentBeispielTr": "Anma yazısı özellikle onun geç dönem şiirlerini öne çıkarıyor."
+   "currentBeispielTr": "Anma yazısı özellikle onun geç dönem şiirlerini övüyor."
   },
   {
    "id": 6550,
@@ -503,8 +503,8 @@
    "niveau": "C1",
    "formen": "Sprichwörter",
    "currentTr": "atasözü",
-   "currentBeispiel": "Das Sprichwort trifft die Lage besser als jede Erklärung.",
-   "currentBeispielTr": "Atasözü durumu her açıklamadan daha iyi anlatıyor."
+   "currentBeispiel": "Mein Vater antwortete nur mit einem alten Sprichwort.",
+   "currentBeispielTr": "Babam sadece eski bir atasözüyle cevap verdi."
   },
   {
    "id": 6551,
@@ -513,8 +513,8 @@
    "niveau": "C1",
    "formen": "Mehrdeutigkeiten",
    "currentTr": "çok anlamlılık, muğlaklık",
-   "currentBeispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritik lange beschäftigt.",
-   "currentBeispielTr": "Sonun çok anlamlılığı eleştirmenleri uzun süre meşgul etti."
+   "currentBeispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritiker lange beschäftigt.",
+   "currentBeispielTr": "Finalin çok anlamlılığı eleştirmenleri uzun süre meşgul etti."
   },
   {
    "id": 6552,
@@ -523,8 +523,8 @@
    "niveau": "C1",
    "formen": "Reime",
    "currentTr": "kafiye, uyak",
-   "currentBeispiel": "Der Dichter verzichtet in seinen späten Texten auf Reime.",
-   "currentBeispielTr": "Şair geç dönem metinlerinde kafiyeden vazgeçiyor."
+   "currentBeispiel": "In seinen späten Gedichten verzichtet er auf Reime.",
+   "currentBeispielTr": "Geç dönem şiirlerinde kafiyeden vazgeçiyor."
   }
  ]
 }

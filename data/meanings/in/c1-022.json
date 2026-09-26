@@ -10,7 +10,7 @@
    "formen": "hat überdauert",
    "currentTr": "ayakta kalmak, günümüze ulaşmak",
    "currentBeispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
-   "currentBeispielTr": "Yüzyıllara ancak birkaç el yazması dayanabildi."
+   "currentBeispielTr": "Yüzyıllar boyunca yalnızca birkaç el yazması ayakta kalabildi."
   },
   {
    "id": 6304,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "ist verblasst",
    "currentTr": "solmak, silikleşmek",
-   "currentBeispiel": "Mit dem Tod der Beteiligten verblasst auch die Erinnerung.",
-   "currentBeispielTr": "Olaya karışanların ölümüyle birlikte hatıra da siliniyor.",
+   "currentBeispiel": "Die Tinte auf dem Brief ist mit der Zeit verblasst.",
+   "currentBeispielTr": "Mektubun üzerindeki mürekkep zamanla silikleşti.",
    "overlapping": [
     "welken (B2)"
    ]
@@ -32,8 +32,8 @@
    "niveau": "C1",
    "formen": "hat angeknüpft",
    "currentTr": "bağlanmak, kaldığı yerden sürdürmek",
-   "currentBeispiel": "Die neue Regierung knüpfte bewusst an ältere Traditionen an.",
-   "currentBeispielTr": "Yeni hükûmet bilinçli olarak daha eski geleneklere bağlandı."
+   "currentBeispiel": "Der neue Trainer knüpft an die Erfolge seines Vorgängers an.",
+   "currentBeispielTr": "Yeni antrenör, selefinin başarılarını kaldığı yerden sürdürüyor."
   },
   {
    "id": 6306,
@@ -42,8 +42,8 @@
    "niveau": "C1",
    "formen": "hat umgedeutet",
    "currentTr": "başka anlama çekmek, yeniden yorumlamak",
-   "currentBeispiel": "Eine Niederlage wurde nachträglich zum heroischen Opfer umgedeutet.",
-   "currentBeispielTr": "Bir yenilgi sonradan kahramanca bir fedakârlığa dönüştürülerek yorumlandı."
+   "currentBeispiel": "Der Redner deutete die Niederlage in einen Erfolg um.",
+   "currentBeispielTr": "Konuşmacı yenilgiyi bir başarı olarak yeniden yorumladı."
   },
   {
    "id": 6307,
@@ -52,8 +52,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "belgelenmiş, kanıtlı",
-   "currentBeispiel": "Als historisch verbürgt gilt allein das Datum der Ankunft.",
-   "currentBeispielTr": "Tarihsel olarak kanıtlanmış sayılan tek şey varış tarihidir."
+   "currentBeispiel": "Der genaue Todestag des Dichters ist historisch verbürgt.",
+   "currentBeispielTr": "Şairin tam ölüm günü tarihsel olarak belgelenmiştir."
   },
   {
    "id": 6308,
@@ -62,8 +62,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sonuçları ağır, etkisi büyük",
-   "currentBeispiel": "Diese scheinbar kleine Entscheidung erwies sich als äußerst folgenreich.",
-   "currentBeispielTr": "Görünüşte küçük olan bu karar son derece ağır sonuçlar doğurdu."
+   "currentBeispiel": "Der Rücktritt des Ministers war folgenreicher als erwartet.",
+   "currentBeispielTr": "Bakanın istifasının sonuçları beklenenden ağır oldu."
   },
   {
    "id": 6309,
@@ -72,8 +72,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geriye dönüp bakıldığında",
-   "currentBeispiel": "Rückblickend erscheint der Konflikt fast unausweichlich gewesen zu sein.",
-   "currentBeispielTr": "Geriye dönüp bakıldığında çatışma neredeyse kaçınılmaz görünüyor."
+   "currentBeispiel": "Rückblickend war der Umzug die beste Entscheidung.",
+   "currentBeispielTr": "Geriye dönüp bakıldığında taşınmak en doğru karardı."
   },
   {
    "id": 6310,
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çelişkili, ikircikli",
-   "currentBeispiel": "Sein Nachruhm bleibt bis heute außerordentlich zwiespältig.",
-   "currentBeispielTr": "Ardında bıraktığı ün bugün hâlâ son derece ikircikli.",
+   "currentBeispiel": "Ihre Gefühle nach dem Wiedersehen waren sehr zwiespältig.",
+   "currentBeispielTr": "Kavuşmanın ardından duyguları çok ikircikliydi.",
    "overlapping": [
     "widersprüchlich (C1)"
    ]
@@ -96,7 +96,7 @@
    "formen": "",
    "currentTr": "acımasızca, hiç yumuşatmadan",
    "currentBeispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
-   "currentBeispielTr": "Rapor kurumların ihmallerini hiç yumuşatmadan adlandırıyor."
+   "currentBeispielTr": "Rapor, kurumların ihmallerini acımasızca ortaya koyuyor."
   },
   {
    "id": 6312,
@@ -105,8 +105,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dünya ticareti, küresel ticaret",
-   "currentBeispiel": "Der Welthandel hat sich seit den neunziger Jahren grundlegend verändert.",
-   "currentBeispielTr": "Dünya ticareti doksanlı yıllardan bu yana köklü biçimde değişti."
+   "currentBeispiel": "Die Blockade der Meerenge bremst den Welthandel spürbar.",
+   "currentBeispielTr": "Boğaz ablukası dünya ticaretini belirgin biçimde yavaşlatıyor."
   },
   {
    "id": 6313,
@@ -115,8 +115,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yoksullukla mücadele",
-   "currentBeispiel": "Bildung gilt als wirksamstes Instrument der langfristigen Armutsbekämpfung.",
-   "currentBeispielTr": "Eğitim, uzun vadeli yoksullukla mücadelenin en etkili aracı sayılıyor."
+   "currentBeispiel": "Das Ministerium kürzt die Mittel für die Armutsbekämpfung.",
+   "currentBeispielTr": "Bakanlık yoksullukla mücadeleye ayrılan kaynakları kısıyor."
   },
   {
    "id": 6314,
@@ -125,8 +125,8 @@
    "niveau": "C1",
    "formen": "Schwellenländer",
    "currentTr": "yükselen ekonomi, eşik ülke",
-   "currentBeispiel": "Mehrere Schwellenländer treten inzwischen selbstbewusst als Investoren auf.",
-   "currentBeispielTr": "Birçok yükselen ekonomi artık özgüvenli birer yatırımcı olarak sahneye çıkıyor."
+   "currentBeispiel": "Brasilien gilt seit Jahren als typisches Schwellenland.",
+   "currentBeispielTr": "Brezilya yıllardır tipik bir yükselen ekonomi olarak görülüyor."
   },
   {
    "id": 6315,
@@ -135,8 +135,8 @@
    "niveau": "C1",
    "formen": "Entwicklungsländer",
    "currentTr": "gelişmekte olan ülke",
-   "currentBeispiel": "Viele Entwicklungsländer tragen die Folgen einer Krise, die sie nicht verursacht haben.",
-   "currentBeispielTr": "Birçok gelişmekte olan ülke, kendi yol açmadığı bir krizin sonuçlarını taşıyor."
+   "currentBeispiel": "Der Impfstoff erreicht die Entwicklungsländer erst Monate später.",
+   "currentBeispielTr": "Aşı, gelişmekte olan ülkelere ancak aylar sonra ulaşıyor."
   },
   {
    "id": 6316,
@@ -145,8 +145,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "korumacılık, himayecilik",
-   "currentBeispiel": "Wachsender Protektionismus gefährdet die Exporte kleinerer Volkswirtschaften.",
-   "currentBeispielTr": "Artan korumacılık küçük ekonomilerin ihracatını tehlikeye atıyor."
+   "currentBeispiel": "Die neuen Strafzölle sind purer Protektionismus.",
+   "currentBeispielTr": "Yeni cezai gümrük vergileri düpedüz korumacılık."
   },
   {
    "id": 6317,
@@ -155,8 +155,8 @@
    "niveau": "C1",
    "formen": "Zollschranken",
    "currentTr": "gümrük engeli, tarife duvarı",
-   "currentBeispiel": "Hohe Zollschranken halten verarbeitete Produkte aus dem Süden vom Markt fern.",
-   "currentBeispielTr": "Yüksek gümrük engelleri güneyden gelen işlenmiş ürünleri pazardan uzak tutuyor."
+   "currentBeispiel": "Die Zollschranken fallen erst nach langen Verhandlungen.",
+   "currentBeispielTr": "Gümrük engelleri ancak uzun görüşmelerden sonra kalkıyor."
   },
   {
    "id": 6318,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çocuk işçiliği",
-   "currentBeispiel": "Kinderarbeit lässt sich nur bekämpfen, wenn Familien ein Auskommen haben.",
-   "currentBeispielTr": "Çocuk işçiliğiyle ancak ailelerin geçimi sağlandığında mücadele edilebilir."
+   "currentBeispiel": "In den Steinbrüchen ist Kinderarbeit noch immer üblich.",
+   "currentBeispielTr": "Taş ocaklarında çocuk işçiliği hâlâ yaygın."
   },
   {
    "id": 6319,
@@ -175,8 +175,8 @@
    "niveau": "C1",
    "formen": "Sorgfaltspflichten",
    "currentTr": "özen yükümlülüğü, durum tespiti yükümlülüğü",
-   "currentBeispiel": "Das Gesetz verpflichtet Konzerne zu einer Sorgfaltspflicht entlang ihrer Zulieferkette.",
-   "currentBeispielTr": "Yasa, şirketleri tedarik zinciri boyunca özen yükümlülüğüne tabi tutuyor."
+   "currentBeispiel": "Der Konzern hat seine Sorgfaltspflicht grob verletzt.",
+   "currentBeispielTr": "Şirket özen yükümlülüğünü ağır biçimde ihlal etti."
   },
   {
    "id": 6320,
@@ -185,8 +185,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kaynak tüketimi",
-   "currentBeispiel": "Der Ressourcenverbrauch der reichen Länder übersteigt jedes vertretbare Maß.",
-   "currentBeispielTr": "Zengin ülkelerin kaynak tüketimi savunulabilir her ölçüyü aşıyor."
+   "currentBeispiel": "Das Rechenzentrum senkt seinen Ressourcenverbrauch deutlich.",
+   "currentBeispielTr": "Veri merkezi kaynak tüketimini belirgin biçimde azaltıyor."
   },
   {
    "id": 6321,
@@ -195,8 +195,8 @@
    "niveau": "C1",
    "formen": "Schuldenerlasse",
    "currentTr": "borç silme, borç affı",
-   "currentBeispiel": "Ohne einen umfassenden Schuldenerlass bleibt jede Reform wirkungslos.",
-   "currentBeispielTr": "Kapsamlı bir borç affı olmadan her reform etkisiz kalır."
+   "currentBeispiel": "Die Gläubiger stimmten einem teilweisen Schuldenerlass zu.",
+   "currentBeispielTr": "Alacaklılar kısmi bir borç affına onay verdi."
   },
   {
    "id": 6322,
@@ -205,8 +205,8 @@
    "niveau": "C1",
    "formen": "Direktinvestitionen",
    "currentTr": "doğrudan yatırım",
-   "currentBeispiel": "Ausländische Direktinvestitionen fließen vor allem in den Bergbau.",
-   "currentBeispielTr": "Yabancı doğrudan yatırımlar öncelikle madenciliğe akıyor."
+   "currentBeispiel": "Chinesische Direktinvestitionen fließen vor allem in Häfen.",
+   "currentBeispielTr": "Çin'in doğrudan yatırımları özellikle limanlara akıyor."
   },
   {
    "id": 6323,
@@ -215,8 +215,8 @@
    "niveau": "C1",
    "formen": "Weltordnungen",
    "currentTr": "dünya düzeni",
-   "currentBeispiel": "Die alte Weltordnung verliert an Verbindlichkeit, eine neue zeichnet sich kaum ab.",
-   "currentBeispielTr": "Eski dünya düzeni bağlayıcılığını yitiriyor, yenisi ise henüz belirmiyor."
+   "currentBeispiel": "Nach dem Krieg entstand eine neue Weltordnung.",
+   "currentBeispielTr": "Savaştan sonra yeni bir dünya düzeni doğdu."
   },
   {
    "id": 6324,
@@ -225,8 +225,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "rekabet gücü",
-   "currentBeispiel": "Niedrige Löhne sichern kurzfristig die Wettbewerbsfähigkeit, aber keinen Wohlstand.",
-   "currentBeispielTr": "Düşük ücretler kısa vadede rekabet gücünü sağlar, ama refahı değil."
+   "currentBeispiel": "Die hohen Energiepreise schwächen die Wettbewerbsfähigkeit der Industrie.",
+   "currentBeispielTr": "Yüksek enerji fiyatları sanayinin rekabet gücünü zayıflatıyor."
   },
   {
    "id": 6325,
@@ -235,8 +235,8 @@
    "niveau": "C1",
    "formen": "Handelsdefizite",
    "currentTr": "ticaret açığı",
-   "currentBeispiel": "Das chronische Handelsdefizit zwingt das Land zu immer neuen Krediten.",
-   "currentBeispielTr": "Kronik ticaret açığı ülkeyi sürekli yeni kredilere zorluyor."
+   "currentBeispiel": "Das Handelsdefizit ist im letzten Quartal weiter gewachsen.",
+   "currentBeispielTr": "Ticaret açığı geçen çeyrekte daha da büyüdü."
   },
   {
    "id": 6326,
@@ -245,8 +245,8 @@
    "niveau": "C1",
    "formen": "Binnenmärkte",
    "currentTr": "iç pazar",
-   "currentBeispiel": "Ein funktionierender Binnenmarkt macht die Region weniger anfällig für Schocks.",
-   "currentBeispielTr": "İşleyen bir iç pazar bölgeyi şoklara karşı daha az kırılgan yapar."
+   "currentBeispiel": "Die Firma verkauft fast alles auf dem Binnenmarkt.",
+   "currentBeispielTr": "Şirket neredeyse her şeyi iç pazarda satıyor."
   },
   {
    "id": 6327,
@@ -255,8 +255,8 @@
    "niveau": "C1",
    "formen": "Migrationsbewegungen",
    "currentTr": "göç hareketi",
-   "currentBeispiel": "Klimawandel und Armut verstärken die Migrationsbewegungen innerhalb des Kontinents.",
-   "currentBeispielTr": "İklim değişikliği ve yoksulluk kıta içindeki göç hareketlerini güçlendiriyor."
+   "currentBeispiel": "Der Bürgerkrieg löste gewaltige Migrationsbewegungen aus.",
+   "currentBeispielTr": "İç savaş çok büyük göç hareketlerine yol açtı."
   },
   {
    "id": 6328,
@@ -265,8 +265,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kentleşme, şehirleşme",
-   "currentBeispiel": "Die rasante Urbanisierung überholt jede staatliche Planung.",
-   "currentBeispielTr": "Hızlı kentleşme her türlü devlet planlamasını geride bırakıyor."
+   "currentBeispiel": "Die rasante Urbanisierung überfordert die Wasserwerke der Stadt.",
+   "currentBeispielTr": "Hızlı kentleşme kentin su şebekesini zorluyor."
   },
   {
    "id": 6329,
@@ -275,8 +275,8 @@
    "niveau": "C1",
    "formen": "Hungersnöte",
    "currentTr": "kıtlık, açlık felaketi",
-   "currentBeispiel": "Die Hungersnot war keine Naturkatastrophe, sondern politisch verschuldet.",
-   "currentBeispielTr": "Kıtlık bir doğal afet değil, siyasi olarak yaratılmış bir felaketti.",
+   "currentBeispiel": "In der Region droht nach der Dürre eine Hungersnot.",
+   "currentBeispielTr": "Kuraklığın ardından bölgede kıtlık tehlikesi var.",
    "overlapping": [
     "die Knappheit (C1)"
    ]
@@ -288,8 +288,8 @@
    "niveau": "C1",
    "formen": "Technologietransfers",
    "currentTr": "teknoloji aktarımı",
-   "currentBeispiel": "Ohne Technologietransfer bleibt die Energiewende im Süden Theorie.",
-   "currentBeispielTr": "Teknoloji aktarımı olmadan güneydeki enerji dönüşümü teoride kalır."
+   "currentBeispiel": "Der Vertrag sieht einen Technologietransfer nach Vietnam vor.",
+   "currentBeispielTr": "Sözleşme Vietnam'a teknoloji aktarımı öngörüyor."
   },
   {
    "id": 6331,
@@ -298,8 +298,8 @@
    "niveau": "C1",
    "formen": "Interdependenzen",
    "currentTr": "karşılıklı bağımlılık",
-   "currentBeispiel": "Die Pandemie hat die Interdependenz der Volkswirtschaften schmerzhaft sichtbar gemacht.",
-   "currentBeispielTr": "Pandemi ekonomilerin karşılıklı bağımlılığını acı biçimde görünür kıldı."
+   "currentBeispiel": "Die Lieferkrise zeigte die Interdependenz beider Volkswirtschaften.",
+   "currentBeispielTr": "Tedarik krizi iki ekonominin karşılıklı bağımlılığını gösterdi."
   },
   {
    "id": 6332,
@@ -308,8 +308,8 @@
    "niveau": "C1",
    "formen": "Gütesiegel",
    "currentTr": "kalite etiketi, sertifika işareti",
-   "currentBeispiel": "Das Gütesiegel garantiert faire Preise, sagt aber nichts über Arbeitszeiten.",
-   "currentBeispielTr": "Kalite etiketi adil fiyat garantisi veriyor, ama çalışma saatleri hakkında bir şey söylemiyor."
+   "currentBeispiel": "Auf der Packung klebt ein Gütesiegel für fairen Handel.",
+   "currentBeispielTr": "Ambalajın üzerinde adil ticaret kalite etiketi var."
   },
   {
    "id": 6333,
@@ -318,8 +318,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kalkınma işbirliği",
-   "currentBeispiel": "Moderne Entwicklungszusammenarbeit versteht sich als Partnerschaft auf Augenhöhe.",
-   "currentBeispielTr": "Modern kalkınma işbirliği kendini eşitler arası bir ortaklık olarak görüyor."
+   "currentBeispiel": "Die Entwicklungszusammenarbeit mit Kenia läuft seit dreißig Jahren.",
+   "currentBeispielTr": "Kenya ile kalkınma işbirliği otuz yıldır sürüyor."
   },
   {
    "id": 6334,
@@ -328,8 +328,8 @@
    "niveau": "C1",
    "formen": "Nichtregierungsorganisationen",
    "currentTr": "sivil toplum kuruluşu",
-   "currentBeispiel": "Mehrere Nichtregierungsorganisationen haben den Bericht gemeinsam veröffentlicht.",
-   "currentBeispielTr": "Birkaç sivil toplum kuruluşu raporu birlikte yayımladı."
+   "currentBeispiel": "Eine Nichtregierungsorganisation betreut das Lager an der Grenze.",
+   "currentBeispielTr": "Sınırdaki kampa bir sivil toplum kuruluşu bakıyor."
   },
   {
    "id": 6335,
@@ -338,8 +338,8 @@
    "niveau": "C1",
    "formen": "Fluchtursachen",
    "currentTr": "göçe zorlayan neden, kaçış nedeni",
-   "currentBeispiel": "Wer Fluchtursachen bekämpfen will, muss über Handelspolitik reden.",
-   "currentBeispielTr": "Göçe zorlayan nedenlerle mücadele etmek isteyen, ticaret politikasını konuşmalı."
+   "currentBeispiel": "Die Ministerin will die Fluchtursachen vor Ort bekämpfen.",
+   "currentBeispielTr": "Bakan, göçe zorlayan nedenlerle yerinde mücadele etmek istiyor."
   },
   {
    "id": 6336,
@@ -348,8 +348,8 @@
    "niveau": "C1",
    "formen": "Wohlstandsgefälle",
    "currentTr": "refah uçurumu",
-   "currentBeispiel": "Das Wohlstandsgefälle innerhalb der Länder wächst schneller als zwischen ihnen.",
-   "currentBeispielTr": "Ülkelerin içindeki refah uçurumu, aralarındakinden daha hızlı büyüyor."
+   "currentBeispiel": "Zwischen Nord und Süd wächst das Wohlstandsgefälle weiter.",
+   "currentBeispielTr": "Kuzeyle güney arasındaki refah uçurumu büyümeyi sürdürüyor."
   },
   {
    "id": 6337,
@@ -358,8 +358,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "toprak gaspı",
-   "currentBeispiel": "Investoren betreiben Landraub, während die Behörden wegsehen.",
-   "currentBeispielTr": "Yatırımcılar toprak gaspı yaparken yetkililer görmezden geliyor.",
+   "currentBeispiel": "Die Bauern wehren sich gegen den Landraub der Konzerne.",
+   "currentBeispielTr": "Köylüler şirketlerin toprak gaspına karşı direniyor.",
    "overlapping": [
     "die Landnahme (C1)"
    ]
@@ -371,8 +371,8 @@
    "niveau": "C1",
    "formen": "Steueroasen",
    "currentTr": "vergi cenneti",
-   "currentBeispiel": "Über Steueroasen entziehen sich Konzerne ihrer Verantwortung gegenüber der Allgemeinheit.",
-   "currentBeispielTr": "Şirketler vergi cennetleri üzerinden topluma karşı sorumluluklarından kaçıyor."
+   "currentBeispiel": "Die Reederei verbucht ihre Gewinne in einer Steueroase.",
+   "currentBeispielTr": "Denizcilik şirketi kârlarını bir vergi cennetinde kaydediyor."
   },
   {
    "id": 6339,
@@ -381,8 +381,8 @@
    "niveau": "C1",
    "formen": "Gewinnverlagerungen",
    "currentTr": "kâr kaydırma",
-   "currentBeispiel": "Durch Gewinnverlagerung entgehen den Herkunftsländern Milliarden an Steuern.",
-   "currentBeispielTr": "Kâr kaydırma yüzünden köken ülkeler milyarlarca vergiden oluyor."
+   "currentBeispiel": "Die Prüfer stießen auf eine systematische Gewinnverlagerung.",
+   "currentBeispielTr": "Denetçiler sistemli bir kâr kaydırmayla karşılaştı."
   },
   {
    "id": 6340,
@@ -391,8 +391,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sermaye kaçışı",
-   "currentBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ins Ausland ein.",
-   "currentBeispielTr": "Seçimden sonra yurt dışına büyük bir sermaye kaçışı başladı."
+   "currentBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ein.",
+   "currentBeispielTr": "Seçimden sonra büyük bir sermaye kaçışı başladı."
   },
   {
    "id": 6341,
@@ -401,8 +401,8 @@
    "niveau": "C1",
    "formen": "hat angeglichen",
    "currentTr": "denkleştirmek, uyumlaştırmak",
-   "currentBeispiel": "Die Union will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
-   "currentBeispielTr": "Birlik, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
+   "currentBeispiel": "Die EU will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
+   "currentBeispielTr": "AB, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
    "overlapping": [
     "aufbringen (B2)"
    ]
@@ -415,7 +415,7 @@
    "formen": "hat boykottiert",
    "currentTr": "boykot etmek",
    "currentBeispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
-   "currentBeispielTr": "Birkaç devlet konferansı siyasi gerekçelerle boykot ediyor."
+   "currentBeispielTr": "Birkaç devlet konferansı siyasi nedenlerle boykot ediyor."
   },
   {
    "id": 6343,
@@ -425,7 +425,7 @@
    "formen": "hat sanktioniert",
    "currentTr": "yaptırım uygulamak, cezalandırmak",
    "currentBeispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
-   "currentBeispielTr": "Koşullara aykırılıklara şimdiye kadar neredeyse hiç yaptırım uygulanmıyor."
+   "currentBeispielTr": "Şartların ihlaline şimdiye dek neredeyse hiç yaptırım uygulanmıyor."
   },
   {
    "id": 6344,
@@ -434,8 +434,8 @@
    "niveau": "C1",
    "formen": "hat privatisiert",
    "currentTr": "özelleştirmek",
-   "currentBeispiel": "Die Wasserversorgung wurde privatisiert, und die Preise stiegen sofort.",
-   "currentBeispielTr": "Su hizmeti özelleştirildi ve fiyatlar hemen yükseldi."
+   "currentBeispiel": "Die Stadt hat ihre Wasserversorgung privatisiert.",
+   "currentBeispielTr": "Kent, su dağıtımını özelleştirdi."
   },
   {
    "id": 6345,
@@ -444,7 +444,7 @@
    "niveau": "C1",
    "formen": "hat verstaatlicht",
    "currentTr": "devletleştirmek, kamulaştırmak",
-   "currentBeispiel": "Die Regierung drohte damit, die Ölförderung zu verstaatlichen.",
+   "currentBeispiel": "Die Regierung drohte, die Ölförderung zu verstaatlichen.",
    "currentBeispielTr": "Hükümet petrol üretimini devletleştirmekle tehdit etti."
   },
   {
@@ -454,7 +454,7 @@
    "niveau": "C1",
    "formen": "ist zugutegekommen",
    "currentTr": "yararına olmak, işine yaramak",
-   "currentBeispiel": "Das Wachstum ist bislang nur einer schmalen Oberschicht zugutegekommen.",
+   "currentBeispiel": "Das Wachstum kam bislang nur einer schmalen Oberschicht zugute.",
    "currentBeispielTr": "Büyüme şimdiye dek yalnızca dar bir üst tabakanın yararına oldu."
   },
   {
@@ -464,8 +464,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sınır ötesi, sınır aşan",
-   "currentBeispiel": "Steuerflucht ist ein grenzüberschreitendes Problem und verlangt gemeinsame Antworten.",
-   "currentBeispielTr": "Vergi kaçışı sınır ötesi bir sorundur ve ortak yanıtlar gerektirir."
+   "currentBeispiel": "Die Polizei ermittelt grenzüberschreitend gegen die Bande.",
+   "currentBeispielTr": "Polis çeteye karşı sınır ötesi soruşturma yürütüyor."
   },
   {
    "id": 6348,
@@ -474,8 +474,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ikili, iki taraflı",
-   "currentBeispiel": "Die beiden Staaten regeln ihre Handelsbeziehungen bilateral.",
-   "currentBeispielTr": "İki devlet ticaret ilişkilerini ikili olarak düzenliyor."
+   "currentBeispiel": "Die beiden Länder regeln den Fischfang bilateral.",
+   "currentBeispielTr": "İki ülke balıkçılığı ikili olarak düzenliyor."
   },
   {
    "id": 6349,
@@ -485,7 +485,7 @@
    "formen": "",
    "currentTr": "eşit olmayan, eşitsiz",
    "currentBeispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
-   "currentBeispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış durumda."
+   "currentBeispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış."
   },
   {
    "id": 6350,
@@ -494,8 +494,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kamu yararına, kâr amacı gütmeyen",
-   "currentBeispiel": "Die Stiftung arbeitet gemeinnützig und legt ihre Finanzen offen.",
-   "currentBeispielTr": "Vakıf kamu yararına çalışıyor ve mali durumunu açıklıyor."
+   "currentBeispiel": "Der Verein ist als gemeinnützig anerkannt.",
+   "currentBeispielTr": "Dernek kamu yararına dernek olarak tanınıyor."
   },
   {
    "id": 6351,
@@ -514,8 +514,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hukuk devleti ilkesi, hukukun üstünlüğü",
-   "currentBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des gesamten Verfahrens infrage.",
-   "currentBeispielTr": "Reform, tüm sürecin hukuk devleti niteliğini tartışmaya açıyor."
+   "currentBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des Verfahrens infrage.",
+   "currentBeispielTr": "Reform, sürecin hukukun üstünlüğünü tartışmaya açıyor."
   }
  ]
 }

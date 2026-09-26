@@ -10,7 +10,7 @@
    "formen": "ermöglicht, hat ermöglicht",
    "currentTr": "mümkün kılmak, sağlamak",
    "currentBeispiel": "Das Stipendium ermöglicht ihr ein Studium im Ausland.",
-   "currentBeispielTr": "Burs, ona yurt dışında okuma imkânı sağlıyor."
+   "currentBeispielTr": "Burs ona yurt dışında okuma imkânı sağlıyor."
   },
   {
    "id": 3752,
@@ -19,8 +19,8 @@
    "niveau": "B2",
    "formen": "die Bedienungen",
    "currentTr": "servis, garson hizmeti",
-   "currentBeispiel": "Die Bedienung in diesem Café ist sehr freundlich.",
-   "currentBeispielTr": "Bu kafede servis çok güler yüzlü."
+   "currentBeispiel": "Für die freundliche Bedienung haben wir ein gutes Trinkgeld gegeben.",
+   "currentBeispielTr": "Güler yüzlü servis için iyi bir bahşiş bıraktık."
   },
   {
    "id": 3276,
@@ -39,8 +39,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kayıtsız, ilgisiz",
-   "currentBeispiel": "Ihm ist das Ergebnis der Wahl völlig gleichgültig.",
-   "currentBeispielTr": "Seçimin sonucu onun hiç umurunda değil."
+   "currentBeispiel": "Er zuckte nur mit den Schultern und blieb gleichgültig.",
+   "currentBeispielTr": "Sadece omuz silkti ve kayıtsız kaldı."
   },
   {
    "id": 3354,
@@ -50,7 +50,7 @@
    "formen": "",
    "currentTr": "haset, çekememezlik",
    "currentBeispiel": "Sein Erfolg weckte bei einigen Kollegen Neid.",
-   "currentBeispielTr": "Başarısı bazı meslektaşlarında haset uyandırdı."
+   "currentBeispielTr": "Başarısı bazı meslektaşlarında kıskançlık uyandırdı."
   },
   {
    "id": 3813,
@@ -60,7 +60,7 @@
    "formen": "erweitert, hat erweitert",
    "currentTr": "genişletmek",
    "currentBeispiel": "Das Unternehmen will sein Angebot deutlich erweitern.",
-   "currentBeispielTr": "Şirket, ürün yelpazesini ciddi biçimde genişletmek istiyor.",
+   "currentBeispielTr": "Şirket ürün yelpazesini ciddi biçimde genişletmek istiyor.",
    "overlapping": [
     "ausweiten (B2)",
     "ausbauen (B2)"
@@ -73,8 +73,8 @@
    "niveau": "B2",
    "formen": "Kreisläufe",
    "currentTr": "kan dolaşımı; döngü, devir",
-   "currentBeispiel": "Regelmäßiger Sport stärkt den Kreislauf.",
-   "currentBeispielTr": "Düzenli spor kan dolaşımını güçlendirir.",
+   "currentBeispiel": "Er steckt in einem Kreislauf aus Schulden und Krediten.",
+   "currentBeispielTr": "Borç ve kredi döngüsüne sıkışıp kalmış durumda.",
    "overlapping": [
     "die Durchblutung (B2)"
    ]
@@ -86,8 +86,8 @@
    "niveau": "B2",
    "formen": "weicht aus, ist ausgewichen",
    "currentTr": "sapmak, yoldan çekilmek (çarpmamak için)",
-   "currentBeispiel": "Der Radfahrer musste dem Fußgänger ausweichen.",
-   "currentBeispielTr": "Bisikletli, yayaya yol vermek için manevra yapmak zorunda kaldı.",
+   "currentBeispiel": "Er weicht solchen Fragen im Interview immer aus.",
+   "currentBeispielTr": "Röportajda bu tür sorulardan hep kaçınıyor.",
    "overlapping": [
     "abweichen (C1)"
    ]
@@ -99,8 +99,8 @@
    "niveau": "B2",
    "formen": "Zulassungen",
    "currentTr": "kabul, izin",
-   "currentBeispiel": "Die Zulassung zum Studiengang erfolgt nach Aktenlage.",
-   "currentBeispielTr": "Bölüme kabul, dosya üzerinden yapılıyor.",
+   "currentBeispiel": "Ohne gute Noten bekommst du keine Zulassung zum Studium.",
+   "currentBeispielTr": "İyi notların olmadan üniversiteye kabul alamazsın.",
    "overlapping": [
     "die Abnahme (B2)"
    ]
@@ -113,7 +113,7 @@
    "formen": "befördert, hat befördert",
    "currentTr": "terfi ettirmek",
    "currentBeispiel": "Nach fünf Jahren wurde sie endlich zur Abteilungsleiterin befördert.",
-   "currentBeispielTr": "Beş yılın sonunda nihayet bölüm müdürlüğüne terfi ettirildi."
+   "currentBeispielTr": "Beş yıl sonra nihayet bölüm müdürlüğüne terfi ettirildi."
   },
   {
    "id": 3777,
@@ -136,8 +136,8 @@
    "niveau": "B2",
    "formen": "die Erkenntnisse",
    "currentTr": "bulgu, kavrayış",
-   "currentBeispiel": "Neue Erkenntnisse verändern oft alte Theorien.",
-   "currentBeispielTr": "Yeni bulgular çoğu zaman eski teorileri değiştirir."
+   "currentBeispiel": "Die neuen Erkenntnisse der Studie überraschten die Forscher.",
+   "currentBeispielTr": "Araştırmanın yeni bulguları bilim insanlarını şaşırttı."
   },
   {
    "id": 3827,
@@ -159,8 +159,8 @@
    "niveau": "B2",
    "formen": "Vorlesungen",
    "currentTr": "üniversite dersi, ders",
-   "currentBeispiel": "Die Vorlesung beginnt pünktlich um acht Uhr.",
-   "currentBeispielTr": "Ders tam sekizde başlıyor."
+   "currentBeispiel": "In der Vorlesung habe ich kaum etwas verstanden.",
+   "currentBeispielTr": "Derste neredeyse hiçbir şey anlamadım."
   },
   {
    "id": 3370,
@@ -170,7 +170,7 @@
    "formen": "",
    "currentTr": "hırslı",
    "currentBeispiel": "Sie gilt als sehr ehrgeizige Studentin.",
-   "currentBeispielTr": "Çok hırslı bir öğrenci olarak tanınıyor."
+   "currentBeispielTr": "Çok hırslı bir öğrenci olarak biliniyor."
   },
   {
    "id": 3329,
@@ -180,7 +180,7 @@
    "formen": "",
    "currentTr": "iyileşme, şifa bulma",
    "currentBeispiel": "Der Arzt wünschte ihm eine schnelle Genesung.",
-   "currentBeispielTr": "Doktor ona acil şifalar diledi.",
+   "currentBeispielTr": "Doktor ona çabuk iyileşmesini diledi.",
    "overlapping": [
     "die Besserung (B1)",
     "die Heilung (B2)"
@@ -204,7 +204,7 @@
    "formen": "",
    "currentTr": "cömertlik",
    "currentBeispiel": "Ihre Großzügigkeit war in der ganzen Nachbarschaft bekannt.",
-   "currentBeispielTr": "Cömertliği bütün mahallede bilinirdi."
+   "currentBeispielTr": "Cömertliği bütün mahallede biliniyordu."
   },
   {
    "id": 3395,
@@ -237,7 +237,7 @@
    "formen": "",
    "currentTr": "bilinçaltı",
    "currentBeispiel": "Träume geben oft Einblick in unser Unterbewusstsein.",
-   "currentBeispielTr": "Rüyalar çoğu zaman bilinçaltımıza dair ipuçları verir."
+   "currentBeispielTr": "Rüyalar çoğu zaman bilinçaltımıza ışık tutar."
   },
   {
    "id": 3288,
@@ -257,7 +257,7 @@
    "formen": "",
    "currentTr": "yozlaşmış, rüşvetçi",
    "currentBeispiel": "Mehrere Beamte wurden als korrupt entlarvt.",
-   "currentBeispielTr": "Birçok memurun rüşvetçi olduğu ortaya çıkarıldı."
+   "currentBeispielTr": "Birkaç memurun yozlaşmış olduğu ortaya çıkarıldı."
   },
   {
    "id": 3291,
@@ -267,7 +267,7 @@
    "formen": "die Bündnisse",
    "currentTr": "ittifak",
    "currentBeispiel": "Die beiden Parteien schlossen ein Bündnis.",
-   "currentBeispielTr": "İki parti ittifak kurdu."
+   "currentBeispielTr": "İki parti bir ittifak kurdu."
   },
   {
    "id": 3828,
@@ -293,8 +293,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "nesnel, tarafsız",
-   "currentBeispiel": "Ein guter Nachrichtenbeitrag sollte möglichst objektiv sein.",
-   "currentBeispielTr": "İyi bir haber olabildiğince tarafsız olmalıdır.",
+   "currentBeispiel": "Als Richterin muss sie immer objektiv bleiben.",
+   "currentBeispielTr": "Hâkim olarak her zaman nesnel kalmak zorunda.",
    "overlapping": [
     "sachlich (B2)"
    ]
@@ -306,8 +306,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "bilimsel",
-   "currentBeispiel": "Die Ergebnisse wurden wissenschaftlich genau überprüft.",
-   "currentBeispielTr": "Sonuçlar bilimsel olarak titizlikle doğrulandı."
+   "currentBeispiel": "Diese Behauptung ist wissenschaftlich nicht bewiesen.",
+   "currentBeispielTr": "Bu iddia bilimsel olarak kanıtlanmış değil."
   },
   {
    "id": 3295,
@@ -327,7 +327,7 @@
    "formen": "die Organismen",
    "currentTr": "organizma",
    "currentBeispiel": "Manche Organismen überleben selbst in extremer Kälte.",
-   "currentBeispielTr": "Bazı organizmalar aşırı soğukta bile hayatta kalabiliyor."
+   "currentBeispielTr": "Bazı organizmalar aşırı soğukta bile hayatta kalır."
   },
   {
    "id": 3195,
@@ -360,7 +360,7 @@
    "formen": "Eigenschaften",
    "currentTr": "özellik, nitelik",
    "currentBeispiel": "Ehrlichkeit zählt zu seinen wichtigsten Eigenschaften.",
-   "currentBeispielTr": "Dürüstlük onun en önemli özelliklerinden biridir.",
+   "currentBeispielTr": "Dürüstlük, onun en önemli özelliklerinden biridir.",
    "overlapping": [
     "das Merkmal (C1)"
    ]
@@ -396,8 +396,8 @@
    "niveau": "B2",
    "formen": "Wahrnehmungen",
    "currentTr": "algı",
-   "currentBeispiel": "Die subjektive Wahrnehmung beeinflusst unser Urteilsvermögen.",
-   "currentBeispielTr": "Öznel algı, yargılama gücümüzü etkiler."
+   "currentBeispiel": "Nach dem Unfall war seine Wahrnehmung kurz gestört.",
+   "currentBeispielTr": "Kazadan sonra algısı kısa süre bozuldu."
   },
   {
    "id": 3832,
@@ -407,7 +407,7 @@
    "formen": "Stellungnahmen",
    "currentTr": "görüş bildirme, açıklama",
    "currentBeispiel": "Die Universität gab eine offizielle Stellungnahme ab.",
-   "currentBeispielTr": "Üniversite resmi bir açıklama yaptı."
+   "currentBeispielTr": "Üniversite resmî bir açıklama yaptı."
   },
   {
    "id": 3825,
@@ -417,7 +417,7 @@
    "formen": "die Auseinandersetzungen",
    "currentTr": "tartışma, çatışma",
    "currentBeispiel": "Es kam zu einer heftigen Auseinandersetzung zwischen den Nachbarn.",
-   "currentBeispielTr": "Komşular arasında şiddetli bir tartışma çıktı.",
+   "currentBeispielTr": "Komşular arasında sert bir tartışma çıktı.",
    "overlapping": [
     "die Diskussion (B1)",
     "die Debatte (B2)",
@@ -432,7 +432,7 @@
    "formen": "",
    "currentTr": "güvenilir, inandırıcı",
    "currentBeispiel": "Die Zeitung gilt allgemein als glaubwürdige Quelle.",
-   "currentBeispielTr": "Bu gazete genel olarak güvenilir bir kaynak sayılıyor.",
+   "currentBeispielTr": "Bu gazete genelde inandırıcı bir kaynak sayılıyor.",
    "overlapping": [
     "zuverlässig (B1)",
     "verlässlich (B2)"
@@ -446,7 +446,7 @@
    "formen": "",
    "currentTr": "inandırıcılık, güvenilirlik (söylenene inanma)",
    "currentBeispiel": "Die Glaubwürdigkeit der Presse steht zunehmend infrage.",
-   "currentBeispielTr": "Basının güvenilirliği giderek daha çok sorgulanıyor."
+   "currentBeispielTr": "Basının inandırıcılığı giderek daha çok sorgulanıyor."
   },
   {
    "id": 3300,
@@ -456,7 +456,7 @@
    "formen": "die Manipulationen",
    "currentTr": "manipülasyon",
    "currentBeispiel": "Die Manipulation der Wähler ist ein ernstes Problem.",
-   "currentBeispielTr": "Seçmenlerin manipüle edilmesi ciddi bir sorundur."
+   "currentBeispielTr": "Seçmenlerin manipülasyonu ciddi bir sorundur."
   },
   {
    "id": 3336,
@@ -466,7 +466,7 @@
    "formen": "Symptome",
    "currentTr": "belirti",
    "currentBeispiel": "Die ersten Symptome traten schon vor Tagen auf.",
-   "currentBeispielTr": "İlk belirtiler günler öncesinden ortaya çıkmıştı."
+   "currentBeispielTr": "İlk belirtiler günler önce ortaya çıkmıştı."
   },
   {
    "id": 3814,
@@ -476,7 +476,7 @@
    "formen": "verwirklicht, hat verwirklicht",
    "currentTr": "gerçekleştirmek",
    "currentBeispiel": "Er hat sich seinen Traum vom eigenen Café verwirklicht.",
-   "currentBeispielTr": "Kendi kafesini açma hayalini gerçekleştirdi.",
+   "currentBeispielTr": "Kendi kafesini açma hayalini hayata geçirdi.",
    "overlapping": [
     "realisieren (B1)",
     "durchführen (B2)"
@@ -515,8 +515,8 @@
    "niveau": "B2",
    "formen": "die Normen",
    "currentTr": "norm, kural",
-   "currentBeispiel": "Gesellschaftliche Normen ändern sich mit der Zeit.",
-   "currentBeispielTr": "Toplumsal normlar zamanla değişir."
+   "currentBeispiel": "Wer gegen soziale Normen verstößt, wird schnell ausgegrenzt.",
+   "currentBeispielTr": "Toplumsal normları çiğneyen biri çabuk dışlanır."
   },
   {
    "id": 3377,
@@ -526,7 +526,7 @@
    "formen": "",
    "currentTr": "dürtüsel, düşünmeden davranan",
    "currentBeispiel": "Seine impulsive Art führte oft zu Missverständnissen.",
-   "currentBeispielTr": "Dürtüsel tavırları sık sık yanlış anlaşılmalara yol açıyordu."
+   "currentBeispielTr": "Fevri tavırları sık sık yanlış anlaşılmalara yol açtı."
   },
   {
    "id": 3425,
@@ -536,7 +536,7 @@
    "formen": "die Dürren",
    "currentTr": "kuraklık (uzun süren, ürünü vuran)",
    "currentBeispiel": "Die anhaltende Dürre gefährdet die gesamte Ernte.",
-   "currentBeispielTr": "Süren kuraklık bütün hasadı tehlikeye atıyor."
+   "currentBeispielTr": "Süregelen kuraklık bütün hasadı tehlikeye atıyor."
   },
   {
    "id": 3872,
@@ -545,8 +545,8 @@
    "niveau": "B2",
    "formen": "erwirbt, hat erworben",
    "currentTr": "kazanmak, edinmek",
-   "currentBeispiel": "Im Kurs erwirbt man wichtige Grammatikkenntnisse.",
-   "currentBeispielTr": "Kursta önemli dil bilgisi kazanılıyor.",
+   "currentBeispiel": "Er hat sich diese Fähigkeiten in der Praxis erworben.",
+   "currentBeispielTr": "Bu becerileri iş üstünde edindi.",
    "overlapping": [
     "verdienen (A1)",
     "siegen (B1)",
@@ -560,8 +560,8 @@
    "niveau": "B2",
    "formen": "nimmt wahr, hat wahrgenommen",
    "currentTr": "algılamak, fark etmek",
-   "currentBeispiel": "Kinder nehmen Spannungen zwischen Eltern oft genau wahr.",
-   "currentBeispielTr": "Çocuklar, anne baba arasındaki gerginliği çoğu zaman çok iyi fark eder.",
+   "currentBeispiel": "Kinder nehmen Spannungen zwischen den Eltern genau wahr.",
+   "currentBeispielTr": "Çocuklar anne baba arasındaki gerginliği çok iyi algılar.",
    "overlapping": [
     "rezipieren (C1)",
     "auffassen (C1)"

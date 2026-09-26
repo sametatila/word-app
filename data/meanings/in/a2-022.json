@@ -24,7 +24,7 @@
    "formen": "-n",
    "currentTr": "olumlu cevap, kabul",
    "currentBeispiel": "Wir warten noch auf deine Zusage für die Hochzeit.",
-   "currentBeispielTr": "Düğün için hâlâ senin olumlu cevabını bekliyoruz."
+   "currentBeispielTr": "Düğün için hâlâ olumlu cevabını bekliyoruz."
   },
   {
    "id": 8040,
@@ -43,8 +43,8 @@
    "niveau": "A2",
    "formen": "spricht sich ab, hat sich abgesprochen",
    "currentTr": "sözleşmek, aralarında anlaşmak",
-   "currentBeispiel": "Wir müssen uns wegen des Termins noch absprechen.",
-   "currentBeispielTr": "Randevu konusunda henüz kendi aramızda anlaşmamız gerekiyor."
+   "currentBeispiel": "Wir müssen uns noch über den Termin absprechen.",
+   "currentBeispielTr": "Randevu konusunda anlaşmamız gerekiyor."
   },
   {
    "id": 8042,
@@ -67,8 +67,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "kayıt formu, başvuru formu",
-   "currentBeispiel": "Bitte füllen Sie das Anmeldeformular in Druckbuchstaben aus.",
-   "currentBeispielTr": "Lütfen kayıt formunu matbaa harfleriyle doldurun."
+   "currentBeispiel": "Bitte füllen Sie das Anmeldeformular aus.",
+   "currentBeispielTr": "Lütfen kayıt formunu doldurun."
   },
   {
    "id": 8044,
@@ -92,7 +92,7 @@
    "formen": "-e",
    "currentTr": "kompartıman",
    "currentBeispiel": "In unserem Abteil sitzen noch zwei Personen.",
-   "currentBeispielTr": "Bizim kompartımanımızda iki kişi daha oturuyor."
+   "currentBeispielTr": "Kompartımanımızda iki kişi daha oturuyor."
   },
   {
    "id": 8046,
@@ -141,7 +141,7 @@
    "niveau": "A2",
    "formen": "-en",
    "currentTr": "varış saati",
-   "currentBeispiel": "Weißt du die Ankunftszeit von dem Zug?",
+   "currentBeispiel": "Weißt du die Ankunftszeit vom Zug?",
    "currentBeispielTr": "Trenin varış saatini biliyor musun?"
   },
   {
@@ -151,8 +151,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "oturma yeri, koltuk",
-   "currentBeispiel": "Im Bus war kein Sitzplatz mehr frei.",
-   "currentBeispielTr": "Otobüste boş koltuk kalmamıştı."
+   "currentBeispiel": "Ich habe im Zug keinen Sitzplatz bekommen.",
+   "currentBeispielTr": "Trende oturacak yer bulamadım."
   },
   {
    "id": 8052,
@@ -172,7 +172,7 @@
    "formen": "-",
    "currentTr": "tren makinisti",
    "currentBeispiel": "Mein Onkel arbeitet als Lokführer.",
-   "currentBeispielTr": "Amcam tren makinisti olarak çalışıyor."
+   "currentBeispielTr": "Amcam makinist olarak çalışıyor."
   },
   {
    "id": 8054,
@@ -222,7 +222,7 @@
    "formen": "-s",
    "currentTr": "ara duraklama, aktarma molası",
    "currentBeispiel": "Wir haben einen Zwischenstopp in Wien.",
-   "currentBeispielTr": "Viyana'da bir ara duraklamamız var."
+   "currentBeispielTr": "Viyana'da bir ara durağımız var."
   },
   {
    "id": 8059,
@@ -271,8 +271,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "pasaport kontrolü",
-   "currentBeispiel": "An der Grenze gab es eine kurze Passkontrolle.",
-   "currentBeispielTr": "Sınırda kısa bir pasaport kontrolü oldu."
+   "currentBeispiel": "Die Passkontrolle am Flughafen hat lange gedauert.",
+   "currentBeispielTr": "Havaalanındaki pasaport kontrolü uzun sürdü."
   },
   {
    "id": 8064,
@@ -314,8 +314,8 @@
    "niveau": "A2",
    "formen": "¨-e",
    "currentTr": "kamp alanı",
-   "currentBeispiel": "Wir schlafen eine Woche auf dem Campingplatz.",
-   "currentBeispielTr": "Bir hafta kamp alanında uyuyoruz."
+   "currentBeispiel": "Wir bleiben eine Woche auf dem Campingplatz.",
+   "currentBeispielTr": "Bir hafta kamp alanında kalıyoruz."
   },
   {
    "id": 8068,
@@ -325,7 +325,7 @@
    "formen": "¨-e",
    "currentTr": "çadır yeri",
    "currentBeispiel": "Am See haben wir einen schönen Zeltplatz gefunden.",
-   "currentBeispielTr": "Gölün yanında güzel bir çadır yeri bulduk."
+   "currentBeispielTr": "Gölün kenarında güzel bir çadır yeri bulduk."
   },
   {
    "id": 8069,
@@ -345,7 +345,7 @@
    "formen": "-n",
    "currentTr": "gidiş yolculuğu, gidiş",
    "currentBeispiel": "Die Anreise mit dem Auto dauert fünf Stunden.",
-   "currentBeispielTr": "Arabayla gidiş beş saat sürüyor."
+   "currentBeispielTr": "Arabayla gidiş yolculuğu beş saat sürüyor."
   },
   {
    "id": 8071,
@@ -392,8 +392,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "harita",
-   "currentBeispiel": "Opa sucht den Weg lieber auf einer Landkarte.",
-   "currentBeispielTr": "Dedem yolu daha çok haritadan bulmayı seviyor."
+   "currentBeispiel": "Mein Opa sucht den Weg lieber auf der Landkarte.",
+   "currentBeispielTr": "Dedem yolu haritadan bulmayı tercih ediyor."
   },
   {
    "id": 8075,
@@ -402,8 +402,8 @@
    "niveau": "A2",
    "formen": "-",
    "currentTr": "yön levhası",
-   "currentBeispiel": "Am Wegweiser gehen wir nach links.",
-   "currentBeispielTr": "Yön levhasında sola gidiyoruz."
+   "currentBeispiel": "Der Wegweiser zeigt den Weg zum Bahnhof.",
+   "currentBeispielTr": "Yön levhası gara giden yolu gösteriyor."
   },
   {
    "id": 8076,

@@ -10,7 +10,7 @@
    "formen": "Vermögenswerte",
    "currentTr": "varlık, mal varlığı unsuru",
    "currentBeispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte.",
-   "currentBeispielTr": "Belirsiz zamanlarda yatırımcılar reel varlıklara sığınır."
+   "currentBeispielTr": "Belirsiz zamanlarda yatırımcılar reel varlıklara sığınıyor."
   },
   {
    "id": 7304,
@@ -30,7 +30,7 @@
    "formen": "Abschwünge",
    "currentTr": "gerileme, daralma dönemi",
    "currentBeispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart.",
-   "currentBeispielTr": "Daralma en ağır biçimde ihracata dayalı sanayiyi vurdu."
+   "currentBeispielTr": "Ekonomik daralma ihracata dayalı sanayiyi özellikle sert vurdu."
   },
   {
    "id": 7306,
@@ -50,7 +50,7 @@
    "formen": "Tarifabschlüsse",
    "currentTr": "toplu sözleşme anlaşması",
    "currentBeispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor.",
-   "currentBeispielTr": "Toplu sözleşme, iki aşamada ücret artışı öngörüyor."
+   "currentBeispielTr": "Toplu sözleşme iki aşamalı ücret artışı öngörüyor."
   },
   {
    "id": 7308,
@@ -60,7 +60,7 @@
    "formen": "Teuerungen",
    "currentTr": "hayat pahalılığı, fiyat artışı",
    "currentBeispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an.",
-   "currentBeispielTr": "Şu sıralar hayat pahalılığını başta kiralar ve gıda körüklüyor."
+   "currentBeispielTr": "Hayat pahalılığını şu sıralar başta kiralar ve gıda körüklüyor."
   },
   {
    "id": 7309,
@@ -83,7 +83,7 @@
    "formen": "hat gedämpft",
    "currentTr": "frenlemek, hafifletmek, yavaşlatmak",
    "currentBeispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte.",
-   "currentBeispielTr": "Yüksek faizler hanehalklarının tüketimini frenler."
+   "currentBeispielTr": "Yüksek faizler hanelerin tüketimini frenliyor."
   },
   {
    "id": 7311,
@@ -113,7 +113,7 @@
    "formen": "hat ausgeschüttet",
    "currentTr": "kâr dağıtmak, ödeme yapmak",
    "currentBeispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten.",
-   "currentBeispielTr": "Yönetim kurulu kârın daha büyük bir bölümünü dağıtmak istiyor."
+   "currentBeispielTr": "Yönetim kurulu kârın daha büyük bölümünü dağıtmak istiyor."
   },
   {
    "id": 7314,
@@ -123,7 +123,7 @@
    "formen": "hat verzerrt",
    "currentTr": "çarpıtmak, bozmak",
    "currentBeispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren.",
-   "currentBeispielTr": "Devlet müdahaleleri rekabeti önemli ölçüde bozabilir.",
+   "currentBeispielTr": "Devlet müdahaleleri rekabeti ciddi biçimde çarpıtabilir.",
    "overlapping": [
     "entstellen (C1)"
    ]
@@ -146,7 +146,7 @@
    "formen": "",
    "currentTr": "piyasa ekonomisine dayalı",
    "currentBeispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen.",
-   "currentBeispielTr": "O, sağlık alanında da piyasa ekonomisine dayalı çözümleri savunuyor."
+   "currentBeispielTr": "Sağlık alanında da piyasa ekonomisine dayalı çözümleri savunuyor."
   },
   {
    "id": 7317,
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "konjonktüre ters yönde, antisiklik",
-   "currentBeispiel": "Der Staat sollte antizyklisch investieren, also gerade in schlechten Zeiten.",
-   "currentBeispielTr": "Devlet konjonktüre ters yönde, yani tam da kötü zamanlarda yatırım yapmalı."
+   "currentBeispiel": "In der Krise investierte die Regierung bewusst antizyklisch.",
+   "currentBeispielTr": "Krizde hükümet bilinçli olarak konjonktür karşıtı yatırım yaptı."
   },
   {
    "id": 7319,
@@ -176,7 +176,7 @@
    "formen": "",
    "currentTr": "ödeme gücü olan, borcunu ödeyebilen",
    "currentBeispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite.",
-   "currentBeispielTr": "Bankadan büyük kredileri yalnızca ödeme gücü olan müşteriler alabiliyor."
+   "currentBeispielTr": "Bankadan büyük kredileri yalnızca ödeme gücü olan müşteriler alır."
   },
   {
    "id": 7320,
@@ -186,7 +186,7 @@
    "formen": "",
    "currentTr": "nominal, itibari",
    "currentBeispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
-   "currentBeispielTr": "Ücretler nominal olarak hissedilir biçimde arttı, ama reel olarak neredeyse hiç."
+   "currentBeispielTr": "Ücretler nominal olarak belirgin arttı, reel olarak neredeyse hiç."
   },
   {
    "id": 7321,
@@ -246,7 +246,7 @@
    "formen": "",
    "currentTr": "usulsüz davranış, kusurlu davranış",
    "currentBeispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt.",
-   "currentBeispielTr": "Satın almadaki sistematik usulsüz davranış yıllarca fark edilmedi."
+   "currentBeispielTr": "Satın almadaki sistematik usulsüzlük yıllarca fark edilmedi."
   },
   {
    "id": 7327,
@@ -276,7 +276,7 @@
    "formen": "Machtmissbräuche",
    "currentTr": "yetki kötüye kullanımı, güç suistimali",
    "currentBeispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung.",
-   "currentBeispielTr": "İnceleme, insan kaynaklarında yetki kötüye kullanımına dair açık işaretler ortaya koydu."
+   "currentBeispielTr": "İnceleme, insan kaynaklarında yetki suistimaline dair açık bulgular ortaya koydu."
   },
   {
    "id": 7330,
@@ -296,7 +296,7 @@
    "formen": "",
    "currentTr": "şeffaflık eksikliği, kapalılık",
    "currentBeispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich.",
-   "currentBeispielTr": "Para akışlarının şeffaf olmayışı her bağımsız denetimi hayli zorlaştırdı."
+   "currentBeispielTr": "Ödeme akışlarındaki şeffaflık eksikliği her bağımsız denetimi çok zorlaştırdı."
   },
   {
    "id": 7332,
@@ -306,7 +306,7 @@
    "formen": "Offenlegungen",
    "currentTr": "açıklama, ifşa etme, kamuya duyurma",
    "currentBeispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend.",
-   "currentBeispielTr": "Ek gelirlerin eksiksiz açıklanması artık zorunlu hâle geldi.",
+   "currentBeispielTr": "Ek gelirlerin eksiksiz beyanı artık zorunlu hâle geldi.",
    "overlapping": [
     "die Beschreibung (B1)",
     "die Erklärung (B1)"
@@ -320,7 +320,7 @@
    "formen": "Nachhaltigkeitsberichte",
    "currentTr": "sürdürülebilirlik raporu",
    "currentBeispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage.",
-   "currentBeispielTr": "Sürdürülebilirlik raporu doğrulanabilir bir temel olmadan etkileyici rakamlar veriyor."
+   "currentBeispielTr": "Sürdürülebilirlik raporu doğrulanabilir dayanağı olmayan etkileyici rakamlar veriyor."
   },
   {
    "id": 7334,
@@ -330,7 +330,7 @@
    "formen": "",
    "currentTr": "yeşil aklama, çevreci gösterme",
    "currentBeispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor.",
-   "currentBeispielTr": "Eleştirmenler holdingi, gerçek emisyon azaltımı olmadan salt yeşil aklama yapmakla suçluyor."
+   "currentBeispielTr": "Eleştirmenler holdingi gerçek emisyon azaltımı olmadan yeşil aklama yapmakla suçluyor."
   },
   {
    "id": 7335,
@@ -340,7 +340,7 @@
    "formen": "Etikettenschwindel",
    "currentTr": "etiket aldatmacası, göz boyama",
    "currentBeispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel.",
-   "currentBeispielTr": "İklim nötr olduğu söylenen ürün, düpedüz bir etiket aldatmacası çıktı."
+   "currentBeispielTr": "İklim nötr denilen ürün düpedüz bir etiket aldatmacası çıktı."
   },
   {
    "id": 7336,
@@ -350,7 +350,7 @@
    "formen": "",
    "currentTr": "çifte standart, ikiyüzlü ahlak",
    "currentBeispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral.",
-   "currentBeispielTr": "İnsan haklarından dem vurup tedarikçiyi sıkıştıran, çifte standart uyguluyordur."
+   "currentBeispielTr": "İnsan haklarından dem vurup tedarikçiyi ezen, çifte standart uygular."
   },
   {
    "id": 7337,
@@ -360,7 +360,7 @@
    "formen": "Reputationsrisiken",
    "currentTr": "itibar riski",
    "currentBeispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn.",
-   "currentBeispielTr": "Sonuçta itibar riski, beklenen kârdan daha ağır bastı."
+   "currentBeispielTr": "Sonunda itibar riski beklenen kârdan daha ağır bastı."
   },
   {
    "id": 7338,
@@ -370,7 +370,7 @@
    "formen": "Grauzonen",
    "currentTr": "gri alan, belirsiz alan",
    "currentBeispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone.",
-   "currentBeispielTr": "Bu tür hediyeler hukuki bir gri alanda geziniyor."
+   "currentBeispielTr": "Bu tür hediyeler hukuki bir gri alanda duruyor."
   },
   {
    "id": 7339,
@@ -380,7 +380,7 @@
    "formen": "",
    "currentTr": "sorumluluk bilinci",
    "currentBeispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen.",
-   "currentBeispielTr": "Kararlarının sonuçlarına dair hiçbir sorumluluk bilinci yoktu."
+   "currentBeispielTr": "Kararlarının sonuçlarına karşı hiç sorumluluk bilinci yoktu."
   },
   {
    "id": 7340,
@@ -390,7 +390,7 @@
    "formen": "Insidergeschäfte",
    "currentTr": "içeriden öğrenenlerin ticareti",
    "currentBeispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
-   "currentBeispielTr": "Denetim kurumu, devralma duyurusundan hemen önceki olası içeriden ticareti inceliyor."
+   "currentBeispielTr": "Denetim kurumu, devralma duyurusu öncesindeki olası içeriden ticareti inceliyor."
   },
   {
    "id": 7341,
@@ -420,7 +420,7 @@
    "formen": "",
    "currentTr": "kara para aklama",
    "currentBeispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich.",
-   "currentBeispielTr": "Banka kara para aklamaya karşı kontrollerini ciddi biçimde sıkılaştırdı."
+   "currentBeispielTr": "Banka kara para aklamaya karşı denetimlerini hayli sıkılaştırdı."
   },
   {
    "id": 7344,
@@ -430,7 +430,7 @@
    "formen": "Anspruchsgruppen",
    "currentTr": "paydaş, menfaat sahibi grup",
    "currentBeispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen.",
-   "currentBeispielTr": "Strateji, ilgili tüm paydaş gruplarının beklentilerini dikkate alıyor."
+   "currentBeispielTr": "Strateji, ilgili bütün paydaşların beklentilerini dikkate alıyor."
   },
   {
    "id": 7345,
@@ -440,7 +440,7 @@
    "formen": "Rechtfertigungen",
    "currentTr": "gerekçe, haklı çıkarma, mazeret",
    "currentBeispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte.",
-   "currentBeispielTr": "Rekabet baskısı, sahte denetim raporları için gerekçe olamaz.",
+   "currentBeispielTr": "Rekabet baskısı sahte denetim raporlarını haklı çıkarmaz.",
    "overlapping": [
     "die Begründung (B1)"
    ]
@@ -462,8 +462,8 @@
    "niveau": "C1",
    "formen": "Nebentätigkeiten",
    "currentTr": "yan iş, ek görev",
-   "currentBeispiel": "Jede bezahlte Nebentätigkeit muss der Compliance-Abteilung angezeigt werden.",
-   "currentBeispielTr": "Ücretli her yan iş uyum birimine bildirilmek zorundadır."
+   "currentBeispiel": "Jede bezahlte Nebentätigkeit muss dem Arbeitgeber gemeldet werden.",
+   "currentBeispielTr": "Ücretli her yan iş işverene bildirilmek zorundadır."
   },
   {
    "id": 7348,
@@ -473,7 +473,7 @@
    "formen": "Gegenleistungen",
    "currentTr": "karşılık, karşı edim",
    "currentBeispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet.",
-   "currentBeispielTr": "Bağış karşılığında görünüşe göre siyasi bir karşılık bekleniyordu.",
+   "currentBeispielTr": "Bağış için görünüşe göre siyasi bir karşılık bekleniyordu.",
    "overlapping": [
     "die Entgegnung (C1)"
    ]
@@ -486,7 +486,7 @@
    "formen": "Preisabsprachen",
    "currentTr": "fiyat anlaşması, danışıklı fiyatlandırma",
    "currentBeispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge.",
-   "currentBeispielTr": "Danışıklı fiyatlandırmalar tüketicilere yılda milyonlarca euroya mal oldu."
+   "currentBeispielTr": "Fiyat anlaşmaları tüketicilere yılda milyonlarca avroya mal oldu."
   },
   {
    "id": 7350,

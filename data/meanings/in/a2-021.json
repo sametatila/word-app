@@ -69,8 +69,8 @@
    "niveau": "A2",
    "formen": "ruft zurück, hat zurückgerufen",
    "currentTr": "geri aramak",
-   "currentBeispiel": "Ich rufe dich heute Abend zurück.",
-   "currentBeispielTr": "Seni bu akşam geri arayacağım."
+   "currentBeispiel": "Kannst du mich heute Abend zurückrufen?",
+   "currentBeispielTr": "Bu akşam beni geri arayabilir misin?"
   },
   {
    "id": 7995,
@@ -90,7 +90,7 @@
    "formen": "-s",
    "currentTr": "batarya, pil",
    "currentBeispiel": "Mein Akku ist fast leer.",
-   "currentBeispielTr": "Şarjım neredeyse bitti."
+   "currentBeispielTr": "Bataryam neredeyse bitti."
   },
   {
    "id": 7997,
@@ -149,8 +149,8 @@
    "niveau": "A2",
    "formen": "-s",
    "currentTr": "web kamerası",
-   "currentBeispiel": "Für das Videogespräch brauchst du eine Webcam.",
-   "currentBeispielTr": "Görüntülü görüşme için bir web kamerasına ihtiyacın var."
+   "currentBeispiel": "Für den Videoanruf brauchst du eine Webcam.",
+   "currentBeispielTr": "Görüntülü arama için bir web kamerasına ihtiyacın var."
   },
   {
    "id": 8003,
@@ -190,7 +190,7 @@
    "formen": "-s",
    "currentTr": "kablosuz internet, wifi",
    "currentBeispiel": "Gibt es hier im Café ein kostenloses WLAN?",
-   "currentBeispielTr": "Burada kafede ücretsiz kablosuz internet var mı?"
+   "currentBeispielTr": "Kafede ücretsiz kablosuz internet var mı?"
   },
   {
    "id": 8007,
@@ -276,8 +276,8 @@
    "niveau": "A2",
    "formen": "meldet sich ab, hat sich abgemeldet",
    "currentTr": "çıkış yapmak, kaydını sildirmek",
-   "currentBeispiel": "Vergiss nicht, dich am Computer abzumelden.",
-   "currentBeispielTr": "Bilgisayarda çıkış yapmayı unutma."
+   "currentBeispiel": "Bitte melde dich am Computer ab.",
+   "currentBeispielTr": "Lütfen bilgisayarda çıkış yap."
   },
   {
    "id": 8015,
@@ -340,7 +340,7 @@
    "formen": "-e",
    "currentTr": "konu (yazışmada)",
    "currentBeispiel": "Schreib bitte einen kurzen Betreff in die E-Mail.",
-   "currentBeispielTr": "Lütfen e-postaya kısa bir konu yaz.",
+   "currentBeispielTr": "Lütfen e-postaya kısa bir konu başlığı yaz.",
    "overlapping": [
     "das Thema (A1)"
    ]
@@ -362,8 +362,8 @@
    "niveau": "A2",
    "formen": "schickt ab, hat abgeschickt",
    "currentTr": "göndermek, yollamak",
-   "currentBeispiel": "Ich habe das Formular gestern abgeschickt.",
-   "currentBeispielTr": "Formu dün gönderdim.",
+   "currentBeispiel": "Ich schicke das Formular gleich ab.",
+   "currentBeispielTr": "Formu hemen yolluyorum.",
    "overlapping": [
     "schicken (A1)",
     "senden (B1)",
@@ -405,7 +405,7 @@
    "formen": "-",
    "currentTr": "küçük paket, koli",
    "currentBeispiel": "Für meine Schwester ist ein Päckchen gekommen.",
-   "currentBeispielTr": "Kız kardeşime bir küçük paket geldi."
+   "currentBeispielTr": "Kız kardeşime küçük bir paket geldi."
   },
   {
    "id": 8026,
@@ -415,7 +415,7 @@
    "formen": "-s",
    "currentTr": "posta ücreti",
    "currentBeispiel": "Das Porto für den Brief kostet einen Euro.",
-   "currentBeispielTr": "Mektubun posta ücreti bir euro tutuyor."
+   "currentBeispielTr": "Mektubun posta ücreti bir avro tutuyor."
   },
   {
    "id": 8027,
@@ -461,7 +461,7 @@
    "formen": "-",
    "currentTr": "gazete yazısı, gazete haberi",
    "currentBeispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant.",
-   "currentBeispielTr": "Şehrimiz hakkındaki gazete yazısı çok ilginçti."
+   "currentBeispielTr": "Şehrimizle ilgili gazete yazısı çok ilginçti."
   },
   {
    "id": 8031,
@@ -471,7 +471,7 @@
    "formen": "-en",
    "currentTr": "günlük gazete",
    "currentBeispiel": "Mein Vater liest jeden Morgen die Tageszeitung.",
-   "currentBeispielTr": "Babam her sabah günlük gazeteyi okur."
+   "currentBeispielTr": "Babam her sabah günlük gazete okur."
   },
   {
    "id": 8032,
@@ -481,7 +481,7 @@
    "formen": "-e",
    "currentTr": "televizyon programı (yayın akışı)",
    "currentBeispiel": "Heute ist das Fernsehprogramm wirklich langweilig.",
-   "currentBeispielTr": "Bugün televizyon programı gerçekten sıkıcı.",
+   "currentBeispielTr": "Bugün yayın akışı gerçekten sıkıcı.",
    "overlapping": [
     "die Fernsehsendung (A2)"
    ]
@@ -517,7 +517,7 @@
    "formen": "-s",
    "currentTr": "podcast",
    "currentBeispiel": "Beim Kochen höre ich gern einen Podcast.",
-   "currentBeispielTr": "Yemek yaparken severek bir podcast dinliyorum."
+   "currentBeispielTr": "Yemek yaparken podcast dinlemeyi severim."
   },
   {
    "id": 8036,
@@ -526,8 +526,8 @@
    "niveau": "A2",
    "formen": "-n",
    "currentTr": "ses seviyesi, ses yüksekliği",
-   "currentBeispiel": "Kannst du bitte die Lautstärke leiser machen?",
-   "currentBeispielTr": "Ses seviyesini biraz kısabilir misin?"
+   "currentBeispiel": "Kannst du bitte die Lautstärke leiser stellen?",
+   "currentBeispielTr": "Lütfen sesi biraz kısar mısın?"
   },
   {
    "id": 8037,

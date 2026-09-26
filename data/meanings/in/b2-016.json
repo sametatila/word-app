@@ -20,7 +20,7 @@
    "formen": "Molkereien",
    "currentTr": "mandıra, süt fabrikası",
    "currentBeispiel": "Die Molkerei holt die Milch jeden zweiten Tag vom Hof ab.",
-   "currentBeispielTr": "Mandıra sütü gün aşırı çiftlikten topluyor."
+   "currentBeispielTr": "Mandıra sütü gün aşırı çiftlikten alıyor."
   },
   {
    "id": 4395,
@@ -40,7 +40,7 @@
    "formen": "Kühlketten",
    "currentTr": "soğuk zincir",
    "currentBeispiel": "Wird die Kühlkette unterbrochen, ist die Ware nicht mehr sicher.",
-   "currentBeispielTr": "Soğuk zincir kırılırsa mal artık güvenli değildir."
+   "currentBeispielTr": "Soğuk zincir kırılırsa mal artık güvenli olmaz."
   },
   {
    "id": 4397,
@@ -50,7 +50,7 @@
    "formen": "Zusatzstoffe",
    "currentTr": "katkı maddesi",
    "currentBeispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus.",
-   "currentBeispielTr": "Ürün hiç yapay katkı maddesi içermiyor."
+   "currentBeispielTr": "Ürün hiçbir yapay katkı maddesi kullanmadan üretiliyor."
   },
   {
    "id": 4398,
@@ -70,7 +70,7 @@
    "formen": "Geschmacksverstärker",
    "currentTr": "tat arttırıcı, lezzet arttırıcı",
    "currentBeispiel": "In der Fertigsuppe stecken gleich mehrere Geschmacksverstärker.",
-   "currentBeispielTr": "Hazır çorbanın içinde birden fazla tat arttırıcı var."
+   "currentBeispielTr": "Hazır çorbanın içinde birden fazla lezzet artırıcı var."
   },
   {
    "id": 4400,
@@ -80,7 +80,7 @@
    "formen": "",
    "currentTr": "yetersiz beslenme",
    "currentBeispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung.",
-   "currentBeispielTr": "Zengin ülkelerde de yaşlılar yetersiz beslenmeden muzdarip."
+   "currentBeispielTr": "Zengin ülkelerde de yaşlılar yetersiz beslenme çekiyor."
   },
   {
    "id": 4401,
@@ -90,7 +90,7 @@
    "formen": "Unverträglichkeiten",
    "currentTr": "intolerans, tahammülsüzlük",
    "currentBeispiel": "Bei einer Unverträglichkeit muss man die Zutatenliste genau lesen.",
-   "currentBeispielTr": "İntolerans durumunda içindekiler listesini dikkatle okumak gerekir."
+   "currentBeispielTr": "İntolerans varsa içindekiler listesini dikkatle okumak gerekir."
   },
   {
    "id": 4402,
@@ -123,8 +123,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "tohumluk, tohum",
-   "currentBeispiel": "Das Saatgut stammt aus einer regionalen Vermehrung.",
-   "currentBeispielTr": "Tohumluk yöresel bir üretimden geliyor."
+   "currentBeispiel": "Der Bauer bestellt das Saatgut schon im Januar.",
+   "currentBeispielTr": "Çiftçi tohumluğu daha ocak ayında sipariş ediyor."
   },
   {
    "id": 4405,
@@ -133,8 +133,8 @@
    "niveau": "B2",
    "formen": "hat geschlachtet",
    "currentTr": "kesmek, boğazlamak",
-   "currentBeispiel": "Die Tiere werden erst in einem Betrieb weiter weg geschlachtet.",
-   "currentBeispielTr": "Hayvanlar ancak uzaktaki bir tesiste kesiliyor.",
+   "currentBeispiel": "Die Tiere werden auf dem Hof selbst geschlachtet.",
+   "currentBeispielTr": "Hayvanlar çiftliğin kendisinde kesiliyor.",
    "overlapping": [
     "sich schneiden (B1)",
     "unterbrechen (B1)",
@@ -151,8 +151,8 @@
    "niveau": "B2",
    "formen": "hat gemolken",
    "currentTr": "sağmak",
-   "currentBeispiel": "Heute werden die Kühe von einem Roboter gemolken.",
-   "currentBeispielTr": "Bugünlerde inekler bir robot tarafından sağılıyor."
+   "currentBeispiel": "Zweimal am Tag melkt der Bauer seine Kühe.",
+   "currentBeispielTr": "Çiftçi ineklerini günde iki kez sağıyor."
   },
   {
    "id": 4407,
@@ -162,7 +162,7 @@
    "formen": "hat verarbeitet",
    "currentTr": "işlemek, işleyip ürüne dönüştürmek",
    "currentBeispiel": "Der Hof verarbeitet die Milch selbst zu Käse und Joghurt.",
-   "currentBeispielTr": "Çiftlik sütü kendisi peynire ve yoğurda dönüştürüyor.",
+   "currentBeispielTr": "Çiftlik sütü kendisi işleyip peynir ve yoğurt yapıyor.",
    "overlapping": [
     "bewirtschaften (B2)",
     "durchnehmen (A2)"
@@ -176,7 +176,7 @@
    "formen": "hat konserviert",
    "currentTr": "muhafaza etmek, konserve yapmak",
    "currentBeispiel": "Früher konservierte man Gemüse vor allem mit Salz.",
-   "currentBeispielTr": "Eskiden sebze en çok tuzla muhafaza edilirdi."
+   "currentBeispielTr": "Eskiden sebzeler en çok tuzla muhafaza edilirdi."
   },
   {
    "id": 4409,
@@ -185,8 +185,8 @@
    "niveau": "B2",
    "formen": "ist verdorben",
    "currentTr": "bozulmak, çürümek",
-   "currentBeispiel": "Bei dieser Hitze verdirbt das Fleisch innerhalb weniger Stunden.",
-   "currentBeispielTr": "Bu sıcakta et birkaç saat içinde bozuluyor.",
+   "currentBeispiel": "Ohne Kühlung verderben Erdbeeren schon nach einem Tag.",
+   "currentBeispielTr": "Soğutulmadan çilekler bir gün içinde bozuluyor.",
    "overlapping": [
     "kaputtgehen (B1)"
    ]
@@ -212,7 +212,7 @@
    "formen": "hat beliefert",
    "currentTr": "mal sağlamak, tedarik etmek",
    "currentBeispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt.",
-   "currentBeispielTr": "İşletme şehirdeki birçok yemekhaneye mal sağlıyor."
+   "currentBeispielTr": "İşletme şehirdeki birkaç yemekhaneye mal sağlıyor."
   },
   {
    "id": 4412,
@@ -222,7 +222,7 @@
    "formen": "hat zertifiziert",
    "currentTr": "belgelendirmek, sertifikalandırmak",
    "currentBeispiel": "Der Hof ist seit drei Jahren als ökologischer Betrieb zertifiziert.",
-   "currentBeispielTr": "Çiftlik üç yıldır organik işletme olarak belgelendirilmiş durumda."
+   "currentBeispielTr": "Çiftlik üç yıldır organik işletme olarak belgelendirilmiş."
   },
   {
    "id": 4413,
@@ -242,7 +242,7 @@
    "formen": "hat bewirtschaftet",
    "currentTr": "işlemek, tarımını yapmak, idare etmek",
    "currentBeispiel": "Die Familie bewirtschaftet knapp vierzig Hektar Ackerland.",
-   "currentBeispielTr": "Aile kırk hektara yakın tarım arazisini işliyor.",
+   "currentBeispielTr": "Aile kırk hektara yakın tarlayı ekip biçiyor.",
    "overlapping": [
     "verarbeiten (B2)",
     "durchnehmen (A2)"
@@ -265,8 +265,8 @@
    "niveau": "B2",
    "formen": "hat gesät",
    "currentTr": "ekmek, tohum atmak",
-   "currentBeispiel": "Wer zu früh sät, riskiert Verluste durch späten Frost.",
-   "currentBeispielTr": "Çok erken eken, geç donlar yüzünden kayıp riskine giriyor.",
+   "currentBeispiel": "Wenn der Boden trocken genug ist, säen wir den Weizen.",
+   "currentBeispielTr": "Toprak yeterince kuruyunca buğdayı ekiyoruz.",
    "overlapping": [
     "das Brot (A1)"
    ]
@@ -289,7 +289,7 @@
    "formen": "hat gemästet",
    "currentTr": "besiye çekmek, semirtmek",
    "currentBeispiel": "Die Kälber werden nur wenige Monate lang gemästet.",
-   "currentBeispielTr": "Buzağılar yalnızca birkaç ay boyunca besiye çekiliyor."
+   "currentBeispielTr": "Buzağılar yalnızca birkaç ay besiye çekiliyor."
   },
   {
    "id": 4419,
@@ -299,7 +299,7 @@
    "formen": "ist gekeimt",
    "currentTr": "çimlenmek, filizlenmek",
    "currentBeispiel": "Die Kartoffeln haben im warmen Keller schon gekeimt.",
-   "currentBeispielTr": "Patatesler sıcak bodrumda çoktan filizlenmiş."
+   "currentBeispielTr": "Patatesler sıcak bodrumda çoktan çimlenmiş."
   },
   {
    "id": 4420,
@@ -308,8 +308,8 @@
    "niveau": "B2",
    "formen": "ist geschimmelt",
    "currentTr": "küflenmek",
-   "currentBeispiel": "Brot schimmelt in der Plastiktüte schneller als im Topf.",
-   "currentBeispielTr": "Ekmek plastik poşette kaptakinden daha çabuk küfleniyor."
+   "currentBeispiel": "Brot schimmelt in der Plastiktüte schneller als im Brotkasten.",
+   "currentBeispielTr": "Ekmek plastik poşette ekmek kutusundakinden daha çabuk küfleniyor."
   },
   {
    "id": 4421,
@@ -329,7 +329,7 @@
    "formen": "hat pasteurisiert",
    "currentTr": "pastörize etmek",
    "currentBeispiel": "Die Milch wird kurz erhitzt und damit pasteurisiert.",
-   "currentBeispielTr": "Süt kısaca ısıtılıyor ve böylece pastörize ediliyor."
+   "currentBeispielTr": "Süt kısa süre ısıtılıyor ve böylece pastörize ediliyor."
   },
   {
    "id": 4423,
@@ -339,7 +339,7 @@
    "formen": "hat abgefüllt",
    "currentTr": "doldurmak, şişelemek",
    "currentBeispiel": "Der Saft wird noch am selben Tag in Flaschen abgefüllt.",
-   "currentBeispielTr": "Meyve suyu aynı gün şişelere dolduruluyor.",
+   "currentBeispielTr": "Meyve suyu daha aynı gün şişelere dolduruluyor.",
    "overlapping": [
     "auffüllen (A2)",
     "einschenken (A2)",
@@ -367,7 +367,7 @@
    "formen": "hat gesättigt",
    "currentTr": "doyurmak, tok tutmak",
    "currentBeispiel": "Haferflocken sättigen länger als ein süßes Frühstück.",
-   "currentBeispielTr": "Yulaf ezmesi tatlı bir kahvaltıdan daha uzun süre tok tutuyor."
+   "currentBeispielTr": "Yulaf ezmesi tatlı bir kahvaltıdan daha uzun tok tutar."
   },
   {
    "id": 4426,
@@ -377,7 +377,7 @@
    "formen": "hat erwirtschaftet",
    "currentTr": "kazanmak, elde etmek",
    "currentBeispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen.",
-   "currentBeispielTr": "Çiftlik cirosunun büyük bölümünü çiftlik dükkânından elde ediyor.",
+   "currentBeispielTr": "Çiftlik cirosunun büyük bölümünü çiftlik dükkânında kazanıyor.",
    "overlapping": [
     "verdienen (A1)",
     "siegen (B1)",
@@ -402,7 +402,7 @@
    "formen": "",
    "currentTr": "geleneksel, klasik yöntemle yapılan",
    "currentBeispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger.",
-   "currentBeispielTr": "Geleneksel yöntemle yetiştirilen mal ortalamada belirgin şekilde daha ucuz.",
+   "currentBeispielTr": "Geleneksel yöntemle yetişen ürün ortalamada çok daha ucuz.",
    "overlapping": [
     "traditionell (B1)"
    ]
@@ -415,7 +415,7 @@
    "formen": "",
    "currentTr": "mevsimlik, mevsimine göre",
    "currentBeispiel": "Wer saisonal einkauft, spart Geld und schont das Klima.",
-   "currentBeispielTr": "Mevsimine göre alışveriş yapan hem para biriktirir hem iklimi korur."
+   "currentBeispielTr": "Mevsimine göre alışveriş yapan hem tasarruf eder hem iklimi korur."
   },
   {
    "id": 4430,
@@ -425,7 +425,7 @@
    "formen": "",
    "currentTr": "türüne uygun",
    "currentBeispiel": "Eine artgerechte Haltung braucht mehr Platz und mehr Personal.",
-   "currentBeispielTr": "Türüne uygun bir yetiştiricilik daha çok yer ve daha çok personel gerektirir."
+   "currentBeispielTr": "Türüne uygun bir yetiştiricilik daha çok yer ve personel ister."
   },
   {
    "id": 4431,
@@ -455,7 +455,7 @@
    "formen": "",
    "currentTr": "şeker içeren, şekerli",
    "currentBeispiel": "Zuckerhaltige Getränke sollen in Schulen künftig verschwinden.",
-   "currentBeispielTr": "Şeker içeren içecekler bundan böyle okullardan kaldırılacak."
+   "currentBeispielTr": "Şekerli içecekler bundan böyle okullardan kaldırılacak."
   },
   {
    "id": 4434,
@@ -465,7 +465,7 @@
    "formen": "",
    "currentTr": "acılaşmış, ekşimiş",
    "currentBeispiel": "Die Nüsse schmecken ranzig und gehören in den Müll.",
-   "currentBeispielTr": "Cevizlerin tadı acılaşmış, çöpe gitmeleri gerek."
+   "currentBeispielTr": "Cevizlerin tadı acımış, çöpe atılmaları gerek."
   },
   {
    "id": 4435,
@@ -485,7 +485,7 @@
    "formen": "Darlehen",
    "currentTr": "kredi, borç para",
    "currentBeispiel": "Die Bank hat uns ein zinsgünstiges Darlehen für den Hausbau gewährt.",
-   "currentBeispielTr": "Banka ev yapımı için bize düşük faizli bir kredi verdi.",
+   "currentBeispielTr": "Banka bize ev yapımı için düşük faizli bir kredi verdi.",
    "overlapping": [
     "der Kredit (A2)"
    ]
@@ -498,7 +498,7 @@
    "formen": "Ratenzahlungen",
    "currentTr": "taksitle ödeme, taksit",
    "currentBeispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an.",
-   "currentBeispielTr": "Taksitli ödemede yüzde sekiz ek maliyet doğuyor."
+   "currentBeispielTr": "Taksitle ödemede yüzde sekiz ek maliyet çıkıyor."
   },
   {
    "id": 4438,
@@ -508,7 +508,7 @@
    "formen": "Bürgschaften",
    "currentTr": "kefalet, kefillik",
    "currentBeispiel": "Ohne die Bürgschaft der Eltern hätte er keine Wohnung bekommen.",
-   "currentBeispielTr": "Ailesinin kefaleti olmasaydı bir daire bulamazdı."
+   "currentBeispielTr": "Ailesinin kefaleti olmasaydı daire bulamazdı."
   },
   {
    "id": 4439,
@@ -528,7 +528,7 @@
    "formen": "Lastschriften",
    "currentTr": "otomatik ödeme talimatı, hesaptan tahsilat",
    "currentBeispiel": "Die Miete wird jeden Monat per Lastschrift eingezogen.",
-   "currentBeispielTr": "Kira her ay otomatik ödeme talimatıyla tahsil ediliyor."
+   "currentBeispielTr": "Kira her ay otomatik ödemeyle hesaptan çekiliyor."
   },
   {
    "id": 4441,
@@ -547,8 +547,8 @@
    "niveau": "B2",
    "formen": "Guthaben",
    "currentTr": "alacak, hesapta kalan artı bakiye",
-   "currentBeispiel": "Nach der Rückerstattung besteht auf deinem Konto ein kleines Guthaben.",
-   "currentBeispielTr": "İade sonrasında hesabında küçük bir bakiye kaldı."
+   "currentBeispiel": "Auf der Karte ist noch ein Guthaben von zehn Euro.",
+   "currentBeispielTr": "Kartta hâlâ on avroluk bir bakiye var."
   }
  ]
 }

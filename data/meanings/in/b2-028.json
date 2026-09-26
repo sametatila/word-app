@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "güncel, o güne ait",
    "currentBeispiel": "Die App liefert tagesaktuelle Meldungen aus der ganzen Region.",
-   "currentBeispielTr": "Uygulama tüm bölgeden güncel haberler sunuyor.",
+   "currentBeispielTr": "Uygulama tüm bölgeden günü gününe haber veriyor.",
    "overlapping": [
     "aktuell (A2)"
    ]
@@ -23,7 +23,7 @@
    "formen": "Aufenthaltstitel",
    "currentTr": "oturum belgesi, ikamet izni",
    "currentBeispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
-   "currentBeispielTr": "Geçerli bir oturum belgen olmadan burada çalışamazsın."
+   "currentBeispielTr": "Geçerli bir oturma izni olmadan burada çalışamazsın."
   },
   {
    "id": 4997,
@@ -33,7 +33,7 @@
    "formen": "Niederlassungserlaubnisse",
    "currentTr": "süresiz oturum izni, yerleşim izni",
    "currentBeispiel": "Nach fünf Jahren kann sie eine Niederlassungserlaubnis bekommen.",
-   "currentBeispielTr": "Beş yılın ardından süresiz oturum izni alabilir."
+   "currentBeispielTr": "Beş yıl sonra süresiz oturma izni alabilir."
   },
   {
    "id": 4998,
@@ -73,7 +73,7 @@
    "formen": "Anerkennungen",
    "currentTr": "tanınma, denklik",
    "currentBeispiel": "Die Anerkennung ihres Diploms dauerte fast ein Jahr.",
-   "currentBeispielTr": "Diplomasının denkliği neredeyse bir yıl sürdü."
+   "currentBeispielTr": "Diplomasının tanınması neredeyse bir yıl sürdü."
   },
   {
    "id": 5002,
@@ -93,7 +93,7 @@
    "formen": "",
    "currentTr": "aile birleşimi",
    "currentBeispiel": "Beim Familiennachzug muss der Lebensunterhalt gesichert sein.",
-   "currentBeispielTr": "Aile birleşiminde geçimin güvence altında olması gerekir."
+   "currentBeispielTr": "Aile birleşiminde geçimin güvence altında olması gerekiyor."
   },
   {
    "id": 5004,
@@ -113,7 +113,7 @@
    "formen": "Sperrfristen",
    "currentTr": "yasak süresi",
    "currentBeispiel": "Nach der Ausweisung gilt eine Sperrfrist von drei Jahren.",
-   "currentBeispielTr": "Sınır dışı işleminden sonra üç yıllık bir giriş yasağı uygulanıyor."
+   "currentBeispielTr": "Sınır dışı edildikten sonra üç yıllık yasak süresi başlıyor."
   },
   {
    "id": 5006,
@@ -133,7 +133,7 @@
    "formen": "Führungszeugnisse",
    "currentTr": "adli sicil kaydı",
    "currentBeispiel": "Für die Einbürgerung wird ein aktuelles Führungszeugnis verlangt.",
-   "currentBeispielTr": "Vatandaşlık için güncel bir adli sicil kaydı isteniyor."
+   "currentBeispielTr": "Vatandaşlığa geçiş için güncel bir adli sicil kaydı isteniyor."
   },
   {
    "id": 5008,
@@ -143,7 +143,7 @@
    "formen": "",
    "currentTr": "geçim, geçimini sağlama",
    "currentBeispiel": "Sie muss ihren Lebensunterhalt ohne staatliche Hilfe bestreiten.",
-   "currentBeispielTr": "Geçimini devlet yardımı olmadan sağlaması gerekiyor."
+   "currentBeispielTr": "Geçimini devlet yardımı olmadan sağlamak zorunda."
   },
   {
    "id": 5009,
@@ -198,8 +198,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "katılım, pay alma",
-   "currentBeispiel": "Sprache ist der Schlüssel zur gesellschaftlichen Teilhabe.",
-   "currentBeispielTr": "Dil, toplumsal katılımın anahtarıdır.",
+   "currentBeispiel": "Der Verein kämpft für die Teilhabe behinderter Kinder am Sport.",
+   "currentBeispielTr": "Dernek, engelli çocukların spora katılımı için mücadele ediyor.",
    "overlapping": [
     "die Teilnahme (B1)",
     "die Partizipation (C1)"
@@ -213,7 +213,7 @@
    "formen": "Terminvergaben",
    "currentTr": "randevu verme, randevu dağıtımı",
    "currentBeispiel": "Die Terminvergabe läuft inzwischen nur noch online.",
-   "currentBeispielTr": "Randevu verme işlemi artık yalnızca internet üzerinden yürüyor."
+   "currentBeispielTr": "Randevu verme işlemi artık yalnızca internetten yürüyor."
   },
   {
    "id": 5015,
@@ -246,7 +246,7 @@
    "formen": "Bürgerbüros",
    "currentTr": "vatandaş hizmetleri bürosu",
    "currentBeispiel": "Im Bürgerbüro kannst du deine neue Adresse anmelden.",
-   "currentBeispielTr": "Vatandaş hizmetleri bürosunda yeni adresini kaydettirebilirsin."
+   "currentBeispielTr": "Yeni adresini vatandaş hizmetleri bürosunda kaydettirebilirsin."
   },
   {
    "id": 5018,
@@ -256,7 +256,7 @@
    "formen": "Zuzüge",
    "currentTr": "başka yerden gelip yerleşme, göç akını",
    "currentBeispiel": "Der starke Zuzug junger Familien verändert das Viertel spürbar.",
-   "currentBeispielTr": "Genç ailelerin yoğun akını mahalleyi gözle görülür biçimde değiştiriyor."
+   "currentBeispielTr": "Genç ailelerin akın akın gelip yerleşmesi mahalleyi belirgin biçimde değiştiriyor."
   },
   {
    "id": 5019,
@@ -266,7 +266,7 @@
    "formen": "Erwerbstätigkeiten",
    "currentTr": "gelir getiren çalışma, iş hayatı",
    "currentBeispiel": "Eine selbstständige Erwerbstätigkeit ist mit diesem Titel nicht gestattet.",
-   "currentBeispielTr": "Bu belgeyle serbest meslekte çalışmaya izin verilmiyor."
+   "currentBeispielTr": "Bu belgeyle serbest meslek olarak çalışmaya izin verilmiyor."
   },
   {
    "id": 5020,
@@ -286,7 +286,7 @@
    "formen": "Härtefälle",
    "currentTr": "istisnai durum, mağduriyet hâli",
    "currentBeispiel": "In einem Härtefall kann die Kommission eine Ausnahme empfehlen.",
-   "currentBeispielTr": "İstisnai bir durumda komisyon bir muafiyet önerebilir."
+   "currentBeispielTr": "Mağduriyet durumunda komisyon bir istisna önerebilir."
   },
   {
    "id": 5022,
@@ -296,7 +296,7 @@
    "formen": "",
    "currentTr": "dil becerileri, dil düzeyi",
    "currentBeispiel": "Ihre Sprachkenntnisse reichen für den Beruf längst aus.",
-   "currentBeispielTr": "Dil düzeyi bu meslek için çoktan yeterli."
+   "currentBeispielTr": "Dil becerileri bu meslek için çoktan yeterli."
   },
   {
    "id": 5023,
@@ -316,7 +316,7 @@
    "formen": "Beratungsstellen",
    "currentTr": "danışma merkezi",
    "currentBeispiel": "Die Beratungsstelle hilft kostenlos beim Ausfüllen der Formulare.",
-   "currentBeispielTr": "Danışma merkezi formların doldurulmasında ücretsiz yardım ediyor."
+   "currentBeispielTr": "Danışma merkezi formların doldurulmasına ücretsiz yardım ediyor."
   },
   {
    "id": 5025,
@@ -386,7 +386,7 @@
    "formen": "",
    "currentTr": "iş piyasasına erişim",
    "currentBeispiel": "Nach drei Monaten bekommen sie einen freien Arbeitsmarktzugang.",
-   "currentBeispielTr": "Üç ay sonra iş piyasasına serbest erişim hakkı elde ediyorlar."
+   "currentBeispielTr": "Üç ay sonra iş piyasasına serbest erişim hakkı kazanıyorlar."
   },
   {
    "id": 5032,
@@ -406,7 +406,7 @@
    "formen": "Auslandsvertretungen",
    "currentTr": "yurt dışı temsilciliği",
    "currentBeispiel": "Den Antrag stellt man bei der deutschen Auslandsvertretung im Heimatland.",
-   "currentBeispielTr": "Başvuru, kendi ülkendeki Alman temsilciliğine yapılıyor."
+   "currentBeispielTr": "Başvuru, kendi ülkendeki Alman dış temsilciliğine yapılıyor."
   },
   {
    "id": 5034,
@@ -435,8 +435,8 @@
    "niveau": "B2",
    "formen": "Notare",
    "currentTr": "noter",
-   "currentBeispiel": "Die Vollmacht muss ein Notar bestätigen.",
-   "currentBeispielTr": "Vekâletnameyi bir noterin onaylaması gerekiyor."
+   "currentBeispiel": "Den Kaufvertrag unterschreiben wir morgen beim Notar.",
+   "currentBeispielTr": "Satış sözleşmesini yarın noterde imzalıyoruz."
   },
   {
    "id": 5037,
@@ -509,8 +509,8 @@
    "niveau": "B2",
    "formen": "hat entzogen",
    "currentTr": "geri almak, elinden almak",
-   "currentBeispiel": "Bei falschen Angaben kann man ihm den Titel entziehen.",
-   "currentBeispielTr": "Yanlış beyanda bulunursa belgesi elinden alınabilir.",
+   "currentBeispiel": "Nach dem Unfall wurde ihm der Führerschein entzogen.",
+   "currentBeispielTr": "Kazadan sonra ehliyeti geri alındı.",
    "overlapping": [
     "aberkennen (C1)"
    ]

@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "die Ausverkäufe",
    "currentTr": "indirim, sezon sonu satışı",
-   "currentBeispiel": "Im Ausverkauf bekommt man oft sehr günstige Ware.",
-   "currentBeispielTr": "Tasfiye satışında çoğu zaman çok ucuza mal bulunur.",
+   "currentBeispiel": "Im Ausverkauf habe ich diese Jacke günstig bekommen.",
+   "currentBeispielTr": "Sezon sonu indiriminde bu ceketi ucuza aldım.",
    "overlapping": [
     "das Angebot (A1)",
     "die Ermäßigung (A2)",
@@ -24,8 +24,8 @@
    "niveau": "B2",
    "formen": "die Verschlüsselungen",
    "currentTr": "şifreleme",
-   "currentBeispiel": "Ohne Verschlüsselung sind persönliche Daten leicht angreifbar.",
-   "currentBeispielTr": "Şifreleme olmadan kişisel veriler kolayca saldırıya açık hâle gelir."
+   "currentBeispiel": "Ohne Verschlüsselung kann jeder unsere Nachrichten mitlesen.",
+   "currentBeispielTr": "Şifreleme olmadan mesajlarımızı herkes okuyabilir."
   },
   {
    "id": 3241,
@@ -34,8 +34,8 @@
    "niveau": "B2",
    "formen": "expandiert, hat expandiert",
    "currentTr": "genişlemek, büyümek",
-   "currentBeispiel": "Der Konzern expandiert seit Jahren erfolgreich auf internationale Märkte.",
-   "currentBeispielTr": "Şirket yıllardır uluslararası pazarlara başarıyla açılıyor."
+   "currentBeispiel": "Der Betrieb expandiert seit Jahren stetig.",
+   "currentBeispielTr": "İşletme yıllardır istikrarlı biçimde büyüyor."
   },
   {
    "id": 3371,
@@ -44,8 +44,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "inatçı, dediğim dedik",
-   "currentBeispiel": "Der eigensinnige Junge ließ sich nicht überzeugen.",
-   "currentBeispielTr": "Dediğim dedik çocuğu ikna etmek mümkün olmadı.",
+   "currentBeispiel": "Ihr eigensinniger Sohn hört auf keinen Rat.",
+   "currentBeispielTr": "Dik başlı oğlu kimsenin öğüdünü dinlemiyor.",
    "overlapping": [
     "verbissen (C1)",
     "stur (A2)"
@@ -58,8 +58,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "haber yapma, habercilik",
-   "currentBeispiel": "Die Berichterstattung über den Skandal war sehr ausführlich.",
-   "currentBeispielTr": "Skandalla ilgili haberler çok ayrıntılıydı."
+   "currentBeispiel": "Die Berichterstattung über den Prozess war einseitig.",
+   "currentBeispielTr": "Davayla ilgili habercilik tek yanlıydı."
   },
   {
    "id": 3269,
@@ -68,8 +68,8 @@
    "niveau": "B2",
    "formen": "die Diskriminierungen",
    "currentTr": "ayrımcılık",
-   "currentBeispiel": "Diskriminierung am Arbeitsplatz ist gesetzlich verboten.",
-   "currentBeispielTr": "İş yerinde ayrımcılık yasalarla yasaklanmıştır."
+   "currentBeispiel": "Sie wehrt sich gegen Diskriminierung am Arbeitsplatz.",
+   "currentBeispielTr": "İş yerindeki ayrımcılığa karşı mücadele ediyor."
   },
   {
    "id": 3338,
@@ -78,8 +78,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "metabolizma",
-   "currentBeispiel": "Ein aktiver Stoffwechsel hilft beim Abnehmen.",
-   "currentBeispielTr": "Hızlı bir metabolizma kilo vermeye yardımcı olur."
+   "currentBeispiel": "Nach dem Sport läuft mein Stoffwechsel auf Hochtouren.",
+   "currentBeispielTr": "Spordan sonra metabolizmam tam gaz çalışıyor."
   },
   {
    "id": 3776,
@@ -88,8 +88,8 @@
    "niveau": "B2",
    "formen": "bezieht ein, hat einbezogen",
    "currentTr": "dahil etmek, katmak",
-   "currentBeispiel": "Die Lehrerin bezieht alle Schüler in die Diskussion ein.",
-   "currentBeispielTr": "Öğretmen bütün öğrencileri tartışmaya dahil ediyor.",
+   "currentBeispiel": "Der Chef bezieht das ganze Team in die Entscheidung ein.",
+   "currentBeispielTr": "Patron bütün ekibi karara dâhil ediyor.",
    "overlapping": [
     "einbinden (C1)"
    ]
@@ -101,8 +101,8 @@
    "niveau": "B2",
    "formen": "die Steuererklärungen",
    "currentTr": "vergi beyannamesi",
-   "currentBeispiel": "Jedes Jahr im Mai gibt sie ihre Steuererklärung beim Finanzamt ab.",
-   "currentBeispielTr": "Her yıl mayısta vergi beyannamesini vergi dairesine veriyor."
+   "currentBeispiel": "Meine Steuererklärung muss bis Ende Juli fertig sein.",
+   "currentBeispielTr": "Vergi beyannamem temmuz sonuna kadar hazır olmalı."
   },
   {
    "id": 3210,
@@ -111,8 +111,8 @@
    "niveau": "B2",
    "formen": "die Konkurse",
    "currentTr": "iflas",
-   "currentBeispiel": "Nach dem Konkurs verloren über zweihundert Mitarbeiter ihre Stelle.",
-   "currentBeispielTr": "İflasın ardından iki yüzü aşkın çalışan işini kaybetti.",
+   "currentBeispiel": "Die Firma meldete nach zwei schlechten Jahren Konkurs an.",
+   "currentBeispielTr": "Şirket iki kötü yılın ardından iflasını açıkladı.",
    "overlapping": [
     "die Insolvenz (B2)"
    ]
@@ -124,8 +124,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "zorunlu, kaçınılmaz",
-   "currentBeispiel": "Ein Nachweis der Qualifikation ist zwingend erforderlich.",
-   "currentBeispielTr": "Yeterlilik belgesi mutlaka gerekli."
+   "currentBeispiel": "Für den Kurs ist eine Anmeldung zwingend.",
+   "currentBeispielTr": "Kursa katılmak için kayıt zorunlu."
   },
   {
    "id": 3423,
@@ -134,8 +134,8 @@
    "niveau": "B2",
    "formen": "die Lebensräume",
    "currentTr": "yaşam alanı, habitat",
-   "currentBeispiel": "Der Bau der Straße zerstört den Lebensraum vieler Tiere.",
-   "currentBeispielTr": "Yol inşaatı birçok hayvanın yaşam alanını yok ediyor."
+   "currentBeispiel": "Der Straßenbau zerstört den Lebensraum vieler Tiere.",
+   "currentBeispielTr": "Yol yapımı birçok hayvanın yaşam alanını yok ediyor."
   },
   {
    "id": 3244,
@@ -144,8 +144,8 @@
    "niveau": "B2",
    "formen": "haftet, hat gehaftet",
    "currentTr": "sorumlu olmak, yükümlü olmak (hukuken)",
-   "currentBeispiel": "Bei Fehlern in der Buchhaltung haftet der Geschäftsführer persönlich.",
-   "currentBeispielTr": "Muhasebedeki hatalardan genel müdür şahsen sorumludur."
+   "currentBeispiel": "Für Schäden am Mietwagen haftet der Fahrer selbst.",
+   "currentBeispielTr": "Kiralık arabadaki hasarlardan sürücünün kendisi sorumludur."
   },
   {
    "id": 3356,
@@ -154,8 +154,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "huzursuzluk",
-   "currentBeispiel": "Ein leises Unbehagen beschlich sie in der fremden Umgebung.",
-   "currentBeispielTr": "Yabancı ortamda içini hafif bir huzursuzluk kapladı."
+   "currentBeispiel": "Bei dem Gedanken an die Prüfung spürte er ein leises Unbehagen.",
+   "currentBeispielTr": "Sınavı düşününce içinde hafif bir huzursuzluk duydu."
   },
   {
    "id": 3303,
@@ -164,8 +164,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "sansür",
-   "currentBeispiel": "In manchen Ländern herrscht eine strenge Zensur.",
-   "currentBeispielTr": "Bazı ülkelerde sıkı bir sansür uygulanıyor."
+   "currentBeispiel": "In diesem Land unterliegen alle Zeitungen der Zensur.",
+   "currentBeispielTr": "Bu ülkede bütün gazeteler sansüre tabi."
   },
   {
    "id": 3352,
@@ -174,8 +174,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "sakinlik, soğukkanlılık",
-   "currentBeispiel": "Mit erstaunlicher Gelassenheit nahm sie die Kritik hin.",
-   "currentBeispielTr": "Eleştiriyi şaşırtıcı bir sükunetle karşıladı."
+   "currentBeispiel": "Sie nahm die Kritik mit erstaunlicher Gelassenheit hin.",
+   "currentBeispielTr": "Eleştiriyi şaşırtıcı bir soğukkanlılıkla karşıladı."
   },
   {
    "id": 3824,
@@ -184,8 +184,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "vazgeçilmez",
-   "currentBeispiel": "Gute Kommunikation ist in einem Team unentbehrlich.",
-   "currentBeispielTr": "İyi iletişim bir takımda vazgeçilmezdir.",
+   "currentBeispiel": "Für unser Team ist sie inzwischen unentbehrlich geworden.",
+   "currentBeispielTr": "Ekibimiz için artık vazgeçilmez biri oldu.",
    "overlapping": [
     "unabdingbar (C1)",
     "unerlässlich (C1)"
@@ -199,7 +199,7 @@
    "formen": "spannt aus, hat ausgespannt",
    "currentTr": "dinlenmek, mola vermek",
    "currentBeispiel": "Am Wochenende will ich einfach nur ausspannen.",
-   "currentBeispielTr": "Hafta sonu sadece dinlenmek istiyorum.",
+   "currentBeispielTr": "Hafta sonu sadece biraz kafa dinlemek istiyorum.",
    "overlapping": [
     "sich ausruhen (B1)",
     "sich erholen (B1)"
@@ -212,8 +212,8 @@
    "niveau": "B2",
    "formen": "die Inflationen",
    "currentTr": "enflasyon",
-   "currentBeispiel": "Wegen der hohen Inflation steigen die Lebenshaltungskosten stark.",
-   "currentBeispielTr": "Yüksek enflasyon yüzünden yaşam maliyetleri hızla artıyor."
+   "currentBeispiel": "Wegen der Inflation sind die Mieten stark gestiegen.",
+   "currentBeispielTr": "Enflasyon yüzünden kiralar çok arttı."
   },
   {
    "id": 3857,
@@ -222,8 +222,8 @@
    "niveau": "B2",
    "formen": "Anschreiben",
    "currentTr": "başvuru mektubu, ön yazı",
-   "currentBeispiel": "Im Anschreiben erklärt sie ihre Motivation ausführlich.",
-   "currentBeispielTr": "Ön yazıda motivasyonunu ayrıntılarıyla anlatıyor."
+   "currentBeispiel": "Dem Lebenslauf muss ein kurzes Anschreiben beiliegen.",
+   "currentBeispielTr": "Özgeçmişe kısa bir ön yazı eklenmeli."
   },
   {
    "id": 3873,
@@ -232,8 +232,8 @@
    "niveau": "B2",
    "formen": "vertieft, hat vertieft",
    "currentTr": "derinleştirmek, pekiştirmek",
-   "currentBeispiel": "Im Seminar vertiefen die Studierenden ihr Wissen.",
-   "currentBeispielTr": "Seminerde öğrenciler bilgilerini derinleştiriyor."
+   "currentBeispiel": "Nach dem Praktikum will sie ihre Kenntnisse vertiefen.",
+   "currentBeispielTr": "Stajdan sonra bilgisini derinleştirmek istiyor."
   },
   {
    "id": 3322,
@@ -242,8 +242,8 @@
    "niveau": "B2",
    "formen": "die Lehrpläne",
    "currentTr": "müfredat",
-   "currentBeispiel": "Der neue Lehrplan legt mehr Wert auf digitale Kompetenzen.",
-   "currentBeispielTr": "Yeni müfredat dijital becerilere daha çok ağırlık veriyor."
+   "currentBeispiel": "Der neue Lehrplan sieht mehr Informatik vor.",
+   "currentBeispielTr": "Yeni müfredat daha çok bilişim dersi içeriyor."
   },
   {
    "id": 3209,
@@ -252,8 +252,8 @@
    "niveau": "B2",
    "formen": "die Rezessionen",
    "currentTr": "durgunluk",
-   "currentBeispiel": "Viele Ökonomen erwarten für nächstes Jahr eine leichte Rezession.",
-   "currentBeispielTr": "Birçok ekonomist gelecek yıl için hafif bir durgunluk bekliyor.",
+   "currentBeispiel": "Die Wirtschaft steckt seit einem Jahr in der Rezession.",
+   "currentBeispielTr": "Ekonomi bir yıldır resesyonda.",
    "overlapping": [
     "die Stagnation (C1)"
    ]
@@ -265,8 +265,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kentsel",
-   "currentBeispiel": "Urbane Räume wachsen weltweit immer schneller.",
-   "currentBeispielTr": "Kentsel alanlar dünya genelinde giderek daha hızlı büyüyor.",
+   "currentBeispiel": "In urbanen Gebieten sind die Mieten deutlich höher.",
+   "currentBeispielTr": "Kentsel bölgelerde kiralar belirgin biçimde daha yüksek.",
    "overlapping": [
     "städtisch (B1)"
    ]
@@ -278,8 +278,8 @@
    "niveau": "B2",
    "formen": "die Wirtschaftskrisen",
    "currentTr": "ekonomik kriz",
-   "currentBeispiel": "Während der Wirtschaftskrise mussten viele Firmen Personal abbauen.",
-   "currentBeispielTr": "Ekonomik kriz sırasında birçok firma personel çıkarmak zorunda kaldı."
+   "currentBeispiel": "Während der Wirtschaftskrise verloren viele ihren Job.",
+   "currentBeispielTr": "Ekonomik kriz sırasında birçok kişi işini kaybetti."
   },
   {
    "id": 3831,
@@ -288,8 +288,8 @@
    "niveau": "B2",
    "formen": "Formulierungen",
    "currentTr": "ifade, dile getirme",
-   "currentBeispiel": "Die Formulierung des Satzes war missverständlich.",
-   "currentBeispielTr": "Cümlenin ifadesi yanlış anlamaya açıktı.",
+   "currentBeispiel": "Die Formulierung im Vertrag war absichtlich unklar.",
+   "currentBeispielTr": "Sözleşmedeki ifade biçimi bilerek belirsiz bırakılmıştı.",
    "overlapping": [
     "die Aussage (A1)",
     "der Ausdruck (B1)"
@@ -302,8 +302,8 @@
    "niveau": "B2",
    "formen": "wickelt ab, hat abgewickelt",
    "currentTr": "yürütmek, sonuçlandırmak",
-   "currentBeispiel": "Die Bank hat die Transaktion problemlos innerhalb eines Tages abgewickelt.",
-   "currentBeispielTr": "Banka işlemi bir gün içinde sorunsuz tamamladı.",
+   "currentBeispiel": "Die Bank hat die Überweisung in einem Tag abgewickelt.",
+   "currentBeispielTr": "Banka havaleyi bir günde sonuçlandırdı.",
    "overlapping": [
     "ausführen (B2)"
    ]
@@ -315,7 +315,7 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yazım kuralları, imla",
-   "currentBeispiel": "Die Rechtschreibung wird bei der Klausur bewertet.",
+   "currentBeispiel": "In der Klausur wird auch die Rechtschreibung bewertet.",
    "currentBeispielTr": "Sınavda imla da değerlendiriliyor."
   },
   {
@@ -325,8 +325,8 @@
    "niveau": "B2",
    "formen": "die Kundgebungen",
    "currentTr": "miting, gösteri",
-   "currentBeispiel": "Auf dem Marktplatz fand eine große Kundgebung statt.",
-   "currentBeispielTr": "Pazar meydanında büyük bir miting düzenlendi."
+   "currentBeispiel": "Am Samstag findet vor dem Rathaus eine Kundgebung statt.",
+   "currentBeispielTr": "Cumartesi belediye binasının önünde bir miting var."
   },
   {
    "id": 3266,
@@ -335,8 +335,8 @@
    "niveau": "B2",
    "formen": "die Vorurteile",
    "currentTr": "önyargı",
-   "currentBeispiel": "Viele Menschen haben Vorurteile gegenüber Fremden.",
-   "currentBeispielTr": "Birçok insanın yabancılara karşı önyargısı var."
+   "currentBeispiel": "Gegen Fremde haben viele Menschen immer noch Vorurteile.",
+   "currentBeispielTr": "Birçok insanın yabancılara karşı hâlâ önyargısı var."
   },
   {
    "id": 3446,
@@ -345,8 +345,8 @@
    "niveau": "B2",
    "formen": "die Fahrgäste",
    "currentTr": "yolcu",
-   "currentBeispiel": "Die Fahrgäste warteten geduldig auf den verspäteten Bus.",
-   "currentBeispielTr": "Yolcular geciken otobüsü sabırla bekledi.",
+   "currentBeispiel": "Die Fahrgäste stiegen an der nächsten Haltestelle aus.",
+   "currentBeispielTr": "Yolcular bir sonraki durakta indi.",
    "overlapping": [
     "der Passagier (B1)",
     "die Passagierin (B1)"
@@ -359,8 +359,8 @@
    "niveau": "B2",
    "formen": "Klausuren",
    "currentTr": "yazılı sınav",
-   "currentBeispiel": "Die Klausur dauert neunzig Minuten.",
-   "currentBeispielTr": "Yazılı sınav doksan dakika sürüyor."
+   "currentBeispiel": "Die Klausur in Mathe war überraschend schwer.",
+   "currentBeispielTr": "Matematik sınavı beklenmedik biçimde zordu."
   },
   {
    "id": 3313,
@@ -369,8 +369,8 @@
    "niveau": "B2",
    "formen": "schiebt ab, hat abgeschoben",
    "currentTr": "sınır dışı etmek",
-   "currentBeispiel": "Die Behörde plant, den abgelehnten Asylbewerber abzuschieben.",
-   "currentBeispielTr": "Kurum, başvurusu reddedilen sığınmacıyı sınır dışı etmeyi planlıyor."
+   "currentBeispiel": "Die Behörde schiebt den Mann nächste Woche ab.",
+   "currentBeispielTr": "Kurum adamı gelecek hafta sınır dışı ediyor."
   },
   {
    "id": 3282,
@@ -379,8 +379,8 @@
    "niveau": "B2",
    "formen": "die Koalitionen",
    "currentTr": "koalisyon",
-   "currentBeispiel": "Die Koalition einigte sich nach langen Verhandlungen.",
-   "currentBeispielTr": "Koalisyon uzun müzakerelerin ardından anlaşmaya vardı."
+   "currentBeispiel": "Die neue Koalition streitet schon über den Haushalt.",
+   "currentBeispielTr": "Yeni koalisyon şimdiden bütçe konusunda tartışıyor."
   },
   {
    "id": 3821,
@@ -389,8 +389,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "avantajlı, elverişli",
-   "currentBeispiel": "Das Angebot ist für beide Vertragsseiten sehr vorteilhaft.",
-   "currentBeispielTr": "Teklif, sözleşmenin iki tarafı için de çok avantajlı."
+   "currentBeispiel": "Für uns wäre ein früherer Termin vorteilhafter.",
+   "currentBeispielTr": "Bizim için daha erken bir randevu daha avantajlı olurdu."
   },
   {
    "id": 3760,
@@ -399,8 +399,8 @@
    "niveau": "B2",
    "formen": "storniert, hat storniert",
    "currentTr": "iptal etmek",
-   "currentBeispiel": "Wegen Krankheit musste ich die Reise stornieren.",
-   "currentBeispielTr": "Hastalık yüzünden seyahati iptal etmek zorunda kaldım.",
+   "currentBeispiel": "Ich musste den Flug wegen einer Erkältung stornieren.",
+   "currentBeispielTr": "Soğuk algınlığı yüzünden uçuşu iptal etmek zorunda kaldım.",
    "overlapping": [
     "absagen (B1)"
    ]
@@ -412,8 +412,8 @@
    "niveau": "B2",
    "formen": "die Hauptgänge",
    "currentTr": "ana yemek",
-   "currentBeispiel": "Der Hauptgang wird in zwanzig Minuten serviert.",
-   "currentBeispielTr": "Ana yemek yirmi dakika içinde servis edilecek.",
+   "currentBeispiel": "Als Hauptgang nehme ich den Fisch.",
+   "currentBeispielTr": "Ana yemek olarak balığı alıyorum.",
    "overlapping": [
     "das Hauptgericht (A2)"
    ]
@@ -425,8 +425,8 @@
    "niveau": "B2",
    "formen": "die Ökosysteme",
    "currentTr": "ekosistem",
-   "currentBeispiel": "Jeder Eingriff kann das gesamte Ökosystem stören.",
-   "currentBeispielTr": "Her müdahale bütün ekosistemi bozabilir."
+   "currentBeispiel": "Ein einziger Eingriff kann das ganze Ökosystem stören.",
+   "currentBeispielTr": "Tek bir müdahale bütün ekosistemi bozabilir."
   },
   {
    "id": 3251,
@@ -435,8 +435,8 @@
    "niveau": "B2",
    "formen": "schwankt, hat geschwankt",
    "currentTr": "dalgalanmak",
-   "currentBeispiel": "Der Ölpreis schwankt seit Monaten stark auf dem Weltmarkt.",
-   "currentBeispielTr": "Petrol fiyatı aylardır dünya piyasasında sert dalgalanıyor."
+   "currentBeispiel": "Die Preise für Strom schwanken von Monat zu Monat.",
+   "currentBeispielTr": "Elektrik fiyatları aydan aya dalgalanıyor."
   },
   {
    "id": 3453,
@@ -445,8 +445,8 @@
    "niveau": "B2",
    "formen": "nur Singular",
    "currentTr": "yaşam kalitesi",
-   "currentBeispiel": "Grünflächen verbessern die Lebensqualität in der Stadt.",
-   "currentBeispielTr": "Yeşil alanlar şehirdeki yaşam kalitesini yükseltir."
+   "currentBeispiel": "Mehr Grün im Viertel würde die Lebensqualität verbessern.",
+   "currentBeispielTr": "Mahallede daha çok yeşil alan yaşam kalitesini yükseltirdi."
   },
   {
    "id": 3260,
@@ -455,8 +455,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kazançlı, kârlı",
-   "currentBeispiel": "Er hat ein sehr lukratives Angebot von einer anderen Firma bekommen.",
-   "currentBeispielTr": "Başka bir firmadan çok kazançlı bir teklif aldı.",
+   "currentBeispiel": "Der Handel mit Ersatzteilen ist sehr lukrativ.",
+   "currentBeispielTr": "Yedek parça ticareti çok kazançlı.",
    "overlapping": [
     "einträglich (B2)"
    ]
@@ -468,8 +468,8 @@
    "niveau": "B2",
    "formen": "die Mindestlöhne",
    "currentTr": "asgari ücret",
-   "currentBeispiel": "Der gesetzliche Mindestlohn wurde zum Jahresanfang erhöht.",
-   "currentBeispielTr": "Yasal asgari ücret yıl başında artırıldı."
+   "currentBeispiel": "Der Mindestlohn steigt im Januar auf dreizehn Euro.",
+   "currentBeispielTr": "Asgari ücret ocakta on üç avroya çıkıyor."
   },
   {
    "id": 3363,
@@ -478,8 +478,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "inatçılık",
-   "currentBeispiel": "Seine Sturheit machte jede Diskussion schwierig.",
-   "currentBeispielTr": "İnatçılığı her tartışmayı zorlaştırıyordu."
+   "currentBeispiel": "Seine Sturheit macht jedes Gespräch schwierig.",
+   "currentBeispielTr": "İnatçılığı her konuşmayı zorlaştırıyor."
   },
   {
    "id": 3822,
@@ -488,8 +488,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "tartışmalı, ihtilaflı",
-   "currentBeispiel": "Das neue Gesetz ist in der Bevölkerung sehr umstritten.",
-   "currentBeispielTr": "Yeni yasa halk arasında çok tartışmalı.",
+   "currentBeispiel": "Der Bau der neuen Brücke ist in der Stadt umstritten.",
+   "currentBeispielTr": "Yeni köprünün yapımı şehirde tartışmalı.",
    "overlapping": [
     "kontrovers (C1)",
     "strittig (C1)"
@@ -502,8 +502,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "anlaşma, karşılıklı anlama",
-   "currentBeispiel": "Trotz der Sprachbarriere gelang die Verständigung gut.",
-   "currentBeispielTr": "Dil engeline rağmen gayet iyi anlaşabildik.",
+   "currentBeispiel": "Ohne gemeinsame Sprache war die Verständigung schwierig.",
+   "currentBeispielTr": "Ortak bir dil olmayınca anlaşabilmek zordu.",
    "overlapping": [
     "die Absprache (B2)",
     "die Vereinbarung (A2)"
@@ -516,8 +516,8 @@
    "niveau": "B2",
    "formen": "absolviert, hat absolviert",
    "currentTr": "tamamlamak, bitirmek",
-   "currentBeispiel": "Er hat ein sechsmonatiges Praktikum absolviert.",
-   "currentBeispielTr": "Altı aylık bir staj tamamladı.",
+   "currentBeispiel": "Sie hat ihr Studium in vier Jahren absolviert.",
+   "currentBeispielTr": "Üniversiteyi dört yılda bitirdi.",
    "overlapping": [
     "ergänzen (B1)"
    ]
@@ -529,8 +529,8 @@
    "niveau": "B2",
    "formen": "pendelt, ist gependelt",
    "currentTr": "işe gidip gelmek, mekik dokumak",
-   "currentBeispiel": "Sie pendelt jeden Tag eine Stunde zur Arbeit.",
-   "currentBeispielTr": "Her gün işe bir saatlik yoldan gidip geliyor."
+   "currentBeispiel": "Sie pendelt täglich eine Stunde nach Frankfurt.",
+   "currentBeispielTr": "Her gün bir saatlik yolla Frankfurt'a gidip geliyor."
   },
   {
    "id": 3270,
@@ -539,8 +539,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "birlik ve beraberlik, toplumsal bütünlük",
-   "currentBeispiel": "Der gesellschaftliche Zusammenhalt ist derzeit gefährdet.",
-   "currentBeispielTr": "Toplumsal birlik ve dayanışma şu sıralar tehlike altında."
+   "currentBeispiel": "In der Krise zeigte sich der Zusammenhalt im Dorf.",
+   "currentBeispielTr": "Kriz sırasında köydeki birlik ve beraberlik ortaya çıktı."
   },
   {
    "id": 3745,
@@ -549,8 +549,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ferah, geniş",
-   "currentBeispiel": "Die neue Wohnung ist wirklich sehr geräumig.",
-   "currentBeispielTr": "Yeni daire gerçekten çok ferah."
+   "currentBeispiel": "Die Küche ist hell und geräumig.",
+   "currentBeispielTr": "Mutfak aydınlık ve ferah."
   },
   {
    "id": 3205,
@@ -559,8 +559,8 @@
    "niveau": "B2",
    "formen": "die Geschäftsführungen",
    "currentTr": "şirket yönetimi",
-   "currentBeispiel": "Die Geschäftsführung plant, den Standort nächstes Jahr zu erweitern.",
-   "currentBeispielTr": "Şirket yönetimi gelecek yıl tesisi büyütmeyi planlıyor."
+   "currentBeispiel": "Die Geschäftsführung hat die Gehälter eingefroren.",
+   "currentBeispielTr": "Şirket yönetimi maaşları dondurdu."
   }
  ]
 }

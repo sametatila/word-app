@@ -9,8 +9,8 @@
    "niveau": "B2",
    "formen": "Ausnahmezustände",
    "currentTr": "olağanüstü hal",
-   "currentBeispiel": "Die Regierung rief für die betroffenen Provinzen den Ausnahmezustand aus.",
-   "currentBeispielTr": "Hükümet etkilenen illerde olağanüstü hal ilan etti."
+   "currentBeispiel": "Die Regierung rief für die Küstenregion den Ausnahmezustand aus.",
+   "currentBeispielTr": "Hükümet kıyı bölgesi için olağanüstü hal ilan etti."
   },
   {
    "id": 5346,
@@ -30,7 +30,7 @@
    "formen": "Krisenstäbe",
    "currentTr": "kriz masası, kriz merkezi",
    "currentBeispiel": "Der Krisenstab tagte bis spät in die Nacht im Rathaus.",
-   "currentBeispielTr": "Kriz masası gecenin geç saatlerine kadar belediye binasında toplandı."
+   "currentBeispielTr": "Kriz masası gecenin geç saatlerine kadar belediyede toplandı."
   },
   {
    "id": 5348,
@@ -60,7 +60,7 @@
    "formen": "Vernehmungen",
    "currentTr": "ifade alma, sorgu",
    "currentBeispiel": "Bei der Vernehmung verwickelte sich der Zeuge in Widersprüche.",
-   "currentBeispielTr": "Tanık ifade sırasında çelişkilere düştü."
+   "currentBeispielTr": "Tanık sorgu sırasında çelişkiye düştü."
   },
   {
    "id": 5351,
@@ -69,8 +69,8 @@
    "niveau": "B2",
    "formen": "hat geborgen",
    "currentTr": "kurtarmak, enkazdan çıkarmak",
-   "currentBeispiel": "Taucher konnten den Wagen erst am nächsten Tag bergen.",
-   "currentBeispielTr": "Dalgıçlar aracı ancak ertesi gün çıkarabildi.",
+   "currentBeispiel": "Die Feuerwehr konnte zwei Verletzte aus dem Wrack bergen.",
+   "currentBeispielTr": "İtfaiye enkazdan iki yaralı çıkarabildi.",
    "overlapping": [
     "retten (B1)"
    ]
@@ -92,8 +92,8 @@
    "niveau": "B2",
    "formen": "hat alarmiert",
    "currentTr": "haber vermek, alarma geçirmek",
-   "currentBeispiel": "Ein Passant alarmierte gegen Mitternacht die Rettungskräfte.",
-   "currentBeispielTr": "Bir yoldan geçen, gece yarısına doğru kurtarma ekiplerine haber verdi.",
+   "currentBeispiel": "Der laute Knall alarmierte die ganze Nachbarschaft.",
+   "currentBeispielTr": "Yüksek patlama sesi tüm mahalleyi alarma geçirdi.",
    "overlapping": [
     "ankündigen (B1)",
     "Bescheid sagen (B1)",
@@ -119,8 +119,8 @@
    "niveau": "B2",
    "formen": "hat verdächtigt",
    "currentTr": "şüphelenmek, zanlı görmek",
-   "currentBeispiel": "Man verdächtigte ihn zu Unrecht, die Papiere gefälscht zu haben.",
-   "currentBeispielTr": "Belgeleri sahte düzenlediği yönünde haksız yere şüpheli görüldü."
+   "currentBeispiel": "Die Kollegen verdächtigten zunächst den neuen Praktikanten.",
+   "currentBeispielTr": "Meslektaşlar önce yeni stajyerden şüphelendi."
   },
   {
    "id": 5357,
@@ -129,8 +129,8 @@
    "niveau": "B2",
    "formen": "hat beschlagnahmt",
    "currentTr": "el koymak, müsadere etmek",
-   "currentBeispiel": "Die Zollbeamten beschlagnahmten mehrere Kisten mit gefälschter Ware.",
-   "currentBeispielTr": "Gümrük memurları sahte mal dolu birkaç kasaya el koydu."
+   "currentBeispiel": "Der Zoll beschlagnahmte mehrere Kisten mit gefälschter Ware.",
+   "currentBeispielTr": "Gümrük sahte mal dolu birkaç kasaya el koydu."
   },
   {
    "id": 5358,
@@ -154,7 +154,7 @@
    "formen": "ist entkommen",
    "currentTr": "kaçmak, kurtulmak",
    "currentBeispiel": "Zwei der Täter konnten über den Hinterhof entkommen.",
-   "currentBeispielTr": "Faillerden ikisi arka avludan kaçmayı başardı.",
+   "currentBeispielTr": "Faillerden ikisi arka avludan kaçıp kurtuldu.",
    "overlapping": [
     "fliehen (B1)",
     "weglaufen (A2)"
@@ -167,8 +167,8 @@
    "niveau": "B2",
    "formen": "ist verunglückt",
    "currentTr": "kaza geçirmek, kazaya uğramak",
-   "currentBeispiel": "Bei dem Sturm sind mehrere Bergsteiger tödlich verunglückt.",
-   "currentBeispielTr": "Fırtınada birkaç dağcı ölümlü kaza geçirdi."
+   "currentBeispiel": "Auf dem Heimweg ist sie mit dem Rad verunglückt.",
+   "currentBeispielTr": "Eve dönerken bisikletiyle kaza geçirdi."
   },
   {
    "id": 5361,
@@ -177,8 +177,8 @@
    "niveau": "B2",
    "formen": "hat ausgelöst",
    "currentTr": "tetiklemek, yol açmak",
-   "currentBeispiel": "Ein defekter Toaster löste den Alarm im ganzen Haus aus.",
-   "currentBeispielTr": "Bozuk bir ekmek kızartma makinesi tüm binada alarmı tetikledi."
+   "currentBeispiel": "Ein defekter Toaster löste im ganzen Haus den Alarm aus.",
+   "currentBeispielTr": "Bozuk bir tost makinesi tüm binada alarmı tetikledi."
   },
   {
    "id": 5362,
@@ -187,8 +187,8 @@
    "niveau": "B2",
    "formen": "hat abgeriegelt",
    "currentTr": "çevresini kapatmak, abluka altına almak",
-   "currentBeispiel": "Die Polizei riegelte das gesamte Bahnhofsgelände weiträumig ab.",
-   "currentBeispielTr": "Polis tüm gar alanını geniş bir çevrede kapattı."
+   "currentBeispiel": "Die Polizei riegelte das gesamte Bahnhofsgelände ab.",
+   "currentBeispielTr": "Polis tüm gar alanını abluka altına aldı."
   },
   {
    "id": 5363,
@@ -197,8 +197,8 @@
    "niveau": "B2",
    "formen": "hat entschärft",
    "currentTr": "etkisiz hale getirmek, yumuşatmak",
-   "currentBeispiel": "Der Sprengkörper wurde noch vor Sonnenaufgang entschärft.",
-   "currentBeispielTr": "Patlayıcı düzenek güneş doğmadan etkisiz hale getirildi."
+   "currentBeispiel": "Die Bombe wurde noch vor Sonnenaufgang entschärft.",
+   "currentBeispielTr": "Bomba güneş doğmadan etkisiz hâle getirildi."
   },
   {
    "id": 5364,
@@ -208,7 +208,7 @@
    "formen": "hat verwüstet",
    "currentTr": "harap etmek, yerle bir etmek",
    "currentBeispiel": "Der Orkan verwüstete ganze Straßenzüge im Norden der Stadt.",
-   "currentBeispielTr": "Kasırga şehrin kuzeyinde koca sokakları harap etti."
+   "currentBeispielTr": "Kasırga şehrin kuzeyindeki koca sokakları harap etti."
   },
   {
    "id": 5365,
@@ -230,8 +230,8 @@
    "niveau": "B2",
    "formen": "hat verfolgt",
    "currentTr": "takip etmek, kovuşturmak",
-   "currentBeispiel": "Solche Delikte werden nur auf Antrag der Betroffenen verfolgt.",
-   "currentBeispielTr": "Bu tür suçlar yalnızca mağdurun şikâyeti üzerine kovuşturulur.",
+   "currentBeispiel": "Die Polizei verfolgte den Wagen bis zur Landesgrenze.",
+   "currentBeispielTr": "Polis aracı eyalet sınırına kadar takip etti.",
    "overlapping": [
     "folgen (B1)"
    ]
@@ -243,8 +243,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ihmalkâr, taksirli",
-   "currentBeispiel": "Er hat fahrlässig gehandelt und muss dafür einstehen.",
-   "currentBeispielTr": "İhmalkâr davrandı ve bunun sorumluluğunu üstlenmek zorunda."
+   "currentBeispiel": "Der Fahrer hat fahrlässig gehandelt und den Unfall verursacht.",
+   "currentBeispielTr": "Sürücü ihmalkâr davrandı ve kazaya sebep oldu."
   },
   {
    "id": 5368,
@@ -253,8 +253,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "kasten, kasıtlı",
-   "currentBeispiel": "Das Gericht sah die Tat als vorsätzlich begangen an.",
-   "currentBeispielTr": "Mahkeme fiilin kasten işlendiği kanaatine vardı.",
+   "currentBeispiel": "Der Richter hielt die Brandstiftung für vorsätzlich.",
+   "currentBeispielTr": "Hâkim kundaklamanın kasıtlı olduğu kanaatine vardı.",
    "overlapping": [
     "absichtlich (A2)"
    ]
@@ -277,7 +277,7 @@
    "formen": "",
    "currentTr": "yanıcı, tutuşabilir",
    "currentBeispiel": "Brennbare Flüssigkeiten gehören nicht in den Heizungskeller.",
-   "currentBeispielTr": "Yanıcı sıvıların kazan dairesinde yeri yoktur."
+   "currentBeispielTr": "Yanıcı sıvıların kazan dairesinde yeri yok."
   },
   {
    "id": 5371,
@@ -297,7 +297,7 @@
    "formen": "",
    "currentTr": "hemen, ivedilikle",
    "currentBeispiel": "Bitte verlassen Sie das Gebäude umgehend über den Hinterausgang.",
-   "currentBeispielTr": "Lütfen binayı hemen arka çıkıştan terk edin.",
+   "currentBeispielTr": "Lütfen binayı derhal arka çıkıştan terk edin.",
    "overlapping": [
     "gleich (A1)",
     "sofort (A1)"
@@ -310,8 +310,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yanlışlıkla, kazara",
-   "currentBeispiel": "Der Kollege hat versehentlich den falschen Hebel gezogen.",
-   "currentBeispielTr": "Meslektaşı yanlışlıkla yanlış kolu çekti."
+   "currentBeispiel": "Ich habe versehentlich deine Nachricht gelöscht.",
+   "currentBeispielTr": "Yanlışlıkla mesajını sildim."
   },
   {
    "id": 5374,
@@ -333,8 +333,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yara almamış, sapasağlam",
-   "currentBeispiel": "Alle Insassen kamen unversehrt aus dem zerstörten Fahrzeug.",
-   "currentBeispielTr": "Araçtaki herkes parçalanan araçtan yara almadan çıktı."
+   "currentBeispiel": "Der Fahrer kam bei dem Unfall unversehrt davon.",
+   "currentBeispielTr": "Sürücü kazadan yara almadan kurtuldu."
   },
   {
    "id": 5376,
@@ -344,7 +344,7 @@
    "formen": "Betonungen",
    "currentTr": "vurgu, vurgulama",
    "currentBeispiel": "Bei diesem Wort liegt die Betonung auf der zweiten Silbe.",
-   "currentBeispielTr": "Bu kelimede vurgu ikinci hecededir."
+   "currentBeispielTr": "Bu kelimede vurgu ikinci hecede."
   },
   {
    "id": 5377,
@@ -353,8 +353,8 @@
    "niveau": "B2",
    "formen": "Redewendungen",
    "currentTr": "deyim, kalıp ifade",
-   "currentBeispiel": "Diese Redewendung lässt sich kaum wörtlich ins Türkische übertragen.",
-   "currentBeispielTr": "Bu deyim Türkçeye neredeyse birebir aktarılamıyor."
+   "currentBeispiel": "Diese Redewendung lässt sich kaum wörtlich übersetzen.",
+   "currentBeispielTr": "Bu deyim neredeyse birebir çevrilemiyor."
   },
   {
    "id": 5378,
@@ -364,7 +364,7 @@
    "formen": "Wortschätze",
    "currentTr": "kelime hazinesi, sözcük dağarcığı",
    "currentBeispiel": "Ihr Wortschatz reicht inzwischen für anspruchsvolle Fachtexte aus.",
-   "currentBeispielTr": "Kelime hazinesi artık zorlu uzmanlık metinleri için yeterli."
+   "currentBeispielTr": "Kelime hazinesi artık zorlu uzmanlık metinlerine yetiyor."
   },
   {
    "id": 5379,
@@ -373,8 +373,8 @@
    "niveau": "B2",
    "formen": "Umgangssprachen",
    "currentTr": "günlük konuşma dili",
-   "currentBeispiel": "In der Umgangssprache wird der Genitiv häufig durch den Dativ ersetzt.",
-   "currentBeispielTr": "Günlük konuşma dilinde genitif sıklıkla datif ile değiştirilir."
+   "currentBeispiel": "In der Umgangssprache wird der Genitiv oft durch den Dativ ersetzt.",
+   "currentBeispielTr": "Günlük konuşma dilinde genitif sıklıkla datifle değiştirilir."
   },
   {
    "id": 5380,
@@ -383,8 +383,8 @@
    "niveau": "B2",
    "formen": "Fachsprachen",
    "currentTr": "uzmanlık dili, teknik dil",
-   "currentBeispiel": "Die medizinische Fachsprache bleibt für Laien oft völlig undurchschaubar.",
-   "currentBeispielTr": "Tıp dili, uzman olmayanlar için çoğu zaman tamamen anlaşılmaz kalıyor."
+   "currentBeispiel": "Die medizinische Fachsprache bleibt für Laien oft unverständlich.",
+   "currentBeispielTr": "Tıp dili uzman olmayanlar için çoğu zaman anlaşılmaz kalıyor."
   },
   {
    "id": 5381,
@@ -393,8 +393,8 @@
    "niveau": "B2",
    "formen": "Sprachgefühle",
    "currentTr": "dil sezgisi, dil duygusu",
-   "currentBeispiel": "Ohne ein gutes Sprachgefühl klingen selbst korrekte Sätze seltsam.",
-   "currentBeispielTr": "İyi bir dil sezgisi olmadan doğru cümleler bile tuhaf duyuluyor."
+   "currentBeispiel": "Ohne gutes Sprachgefühl klingen selbst korrekte Sätze seltsam.",
+   "currentBeispielTr": "İyi bir dil sezgisi olmadan doğru cümleler bile kulağa tuhaf gelir."
   },
   {
    "id": 5382,
@@ -403,8 +403,8 @@
    "niveau": "B2",
    "formen": "Sprachbarrieren",
    "currentTr": "dil engeli",
-   "currentBeispiel": "Die Sprachbarriere erschwerte die Zusammenarbeit im internationalen Team erheblich.",
-   "currentBeispielTr": "Dil engeli, uluslararası ekipteki iş birliğini hayli zorlaştırdı."
+   "currentBeispiel": "Die Sprachbarriere machte die Zusammenarbeit im Team schwierig.",
+   "currentBeispielTr": "Dil engeli ekipteki iş birliğini zorlaştırdı."
   },
   {
    "id": 5383,
@@ -413,8 +413,8 @@
    "niveau": "B2",
    "formen": "Sprachkurse",
    "currentTr": "dil kursu",
-   "currentBeispiel": "Der Sprachkurs findet zweimal wöchentlich am späten Abend statt.",
-   "currentBeispielTr": "Dil kursu haftada iki kez akşam geç saatte yapılıyor."
+   "currentBeispiel": "Der Sprachkurs findet zweimal wöchentlich am Abend statt.",
+   "currentBeispielTr": "Dil kursu haftada iki kez akşamları yapılıyor."
   },
   {
    "id": 5384,
@@ -441,7 +441,7 @@
    "formen": "Redebeiträge",
    "currentTr": "söz alma, (toplantıda) yapılan konuşma",
    "currentBeispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern.",
-   "currentBeispielTr": "Her konuşma katkısı en fazla üç dakika sürmeli."
+   "currentBeispielTr": "Her konuşma en fazla üç dakika sürmeli."
   },
   {
    "id": 5386,
@@ -460,8 +460,8 @@
    "niveau": "B2",
    "formen": "Höflichkeiten",
    "currentTr": "nezaket, kibarlık",
-   "currentBeispiel": "Aus reiner Höflichkeit hörte sie dem langen Vortrag bis zum Schluss zu.",
-   "currentBeispielTr": "Sırf nezaketen uzun konuşmayı sonuna kadar dinledi."
+   "currentBeispiel": "Aus reiner Höflichkeit hörte sie ihm bis zum Schluss zu.",
+   "currentBeispielTr": "Sırf nezaketen onu sonuna kadar dinledi."
   },
   {
    "id": 5388,
@@ -517,8 +517,8 @@
    "niveau": "B2",
    "formen": "Auslegungen",
    "currentTr": "yorumlama, (metin veya yasa) yorumu",
-   "currentBeispiel": "Die Auslegung des Satzes hängt stark vom Zusammenhang ab.",
-   "currentBeispielTr": "Cümlenin yorumu büyük ölçüde bağlama bağlı."
+   "currentBeispiel": "Die Auslegung des Paragrafen ist unter Juristen umstritten.",
+   "currentBeispielTr": "Bu maddenin yorumlanması hukukçular arasında tartışmalı."
   },
   {
    "id": 5393,
@@ -527,8 +527,8 @@
    "niveau": "B2",
    "formen": "Zwischenfragen",
    "currentTr": "araya sıkıştırılan soru, ara soru",
-   "currentBeispiel": "Zwischenfragen sind erlaubt, aber bitte erst nach dem zweiten Teil.",
-   "currentBeispielTr": "Ara sorular serbest, ama lütfen ikinci bölümden sonra."
+   "currentBeispiel": "Darf ich an dieser Stelle eine kurze Zwischenfrage stellen?",
+   "currentBeispielTr": "Bu noktada kısa bir ara soru sorabilir miyim?"
   },
   {
    "id": 5394,
@@ -537,8 +537,8 @@
    "niveau": "B2",
    "formen": "Stichwörter",
    "currentTr": "anahtar kelime, not başlığı",
-   "currentBeispiel": "Er hatte sich nur ein paar Stichwörter auf die Karte geschrieben.",
-   "currentBeispielTr": "Karta yalnızca birkaç anahtar kelime yazmıştı."
+   "currentBeispiel": "Er hatte sich nur ein paar Stichwörter notiert.",
+   "currentBeispielTr": "Yalnızca birkaç anahtar kelime not almıştı."
   },
   {
    "id": 5395,
@@ -548,7 +548,7 @@
    "formen": "Floskeln",
    "currentTr": "klişe söz, boş kalıp",
    "currentBeispiel": "Seine Rede bestand fast nur aus leeren Floskeln.",
-   "currentBeispielTr": "Konuşması neredeyse tamamen boş kalıp sözlerden ibaretti."
+   "currentBeispielTr": "Konuşması neredeyse tamamen içi boş klişelerden ibaretti."
   }
  ]
 }

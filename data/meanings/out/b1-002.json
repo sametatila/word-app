@@ -11,17 +11,17 @@
   "id": 2169,
   "tr": "zar zor",
   "en": "hardly",
-  "beispiel": "Ich kann dich kaum verstehen.",
-  "beispielTr": "Seni zar zor anlıyorum.",
-  "beispielEn": "I can hardly understand you."
+  "beispiel": "Der Koffer ist so schwer, ich kann ihn kaum tragen.",
+  "beispielTr": "Bavul o kadar ağır ki zar zor taşıyorum.",
+  "beispielEn": "The suitcase is so heavy I can hardly carry it."
  },
  {
   "id": 2557,
   "tr": "konuşma",
   "en": "speech",
-  "beispiel": "Der Präsident hat eine lange Rede gehalten.",
-  "beispielTr": "Cumhurbaşkanı uzun bir konuşma yaptı.",
-  "beispielEn": "The president gave a long speech."
+  "beispiel": "Bei der Hochzeit hielt der Bruder der Braut eine lustige Rede.",
+  "beispielTr": "Düğünde gelinin abisi komik bir konuşma yaptı.",
+  "beispielEn": "At the wedding, the bride's brother gave a funny speech."
  },
  {
   "id": 2710,
@@ -51,9 +51,9 @@
   "id": 1540,
   "tr": "çoktan",
   "en": "already",
-  "beispiel": "Frau Kaiser hat bereits dreimal angerufen.",
-  "beispielTr": "Kaiser Hanım şimdiden üç kez aradı.",
-  "beispielEn": "Ms. Kaiser has already called three times."
+  "beispiel": "Als wir ankamen, war der Film bereits zu Ende.",
+  "beispielTr": "Vardığımızda film çoktan bitmişti.",
+  "beispielEn": "When we arrived, the movie had already ended."
  },
  {
   "id": 2880,
@@ -99,17 +99,17 @@
   "id": 1800,
   "tr": "hatırlatmak",
   "en": "to remind",
-  "beispiel": "Bitte erinnern Sie mich noch einmal an den Termin.",
-  "beispielTr": "Lütfen randevuyu bana bir kez daha hatırlatın.",
-  "beispielEn": "Please remind me about the appointment once more."
+  "beispiel": "Das Lied erinnert mich an unseren Urlaub in Italien.",
+  "beispielTr": "Bu şarkı bana İtalya tatilimizi hatırlatıyor.",
+  "beispielEn": "This song reminds me of our vacation in Italy."
  },
  {
   "id": 3046,
   "tr": "tamamen",
   "en": "completely",
-  "beispiel": "Ich habe den Termin völlig vergessen.",
-  "beispielTr": "Randevuyu tamamen unutmuşum.",
-  "beispielEn": "I completely forgot the appointment."
+  "beispiel": "Nach dem Marathon war ich völlig erschöpft.",
+  "beispielTr": "Maratondan sonra tamamen bitkindim.",
+  "beispielEn": "After the marathon I was completely exhausted."
  },
  {
   "id": 2309,
@@ -139,9 +139,9 @@
   "id": 3187,
   "tr": "gerçi",
   "en": "admittedly",
-  "beispiel": "Diese Schuhe sind zwar teuer, aber sehr bequem.",
-  "beispielTr": "Bu ayakkabılar gerçi pahalı ama çok rahat.",
-  "beispielEn": "These shoes are admittedly expensive, but very comfortable."
+  "beispiel": "Ich habe zwar wenig Zeit, aber ich helfe dir gern.",
+  "beispielTr": "Gerçi pek vaktim yok ama sana seve seve yardım ederim.",
+  "beispielEn": "Admittedly I don't have much time, but I'm happy to help you."
  },
  {
   "id": 3095,
@@ -195,9 +195,9 @@
   "id": 2389,
   "tr": "-dikten sonra",
   "en": "after",
-  "beispiel": "Nachdem wir gegessen hatten, sind wir spazieren gegangen.",
-  "beispielTr": "Yemek yedikten sonra yürüyüşe çıktık.",
-  "beispielEn": "After we had eaten, we went for a walk."
+  "beispiel": "Nachdem der Film zu Ende war, gingen alle nach Hause.",
+  "beispielTr": "Film bittikten sonra herkes eve gitti.",
+  "beispielEn": "After the movie ended, everyone went home."
  },
  {
   "id": 1962,
@@ -211,25 +211,25 @@
   "id": 2127,
   "tr": "ilgilenen",
   "en": "interested",
-  "beispiel": "Sind Sie noch an der Wohnung interessiert?",
-  "beispielTr": "Daireyle hâlâ ilgileniyor musunuz?",
-  "beispielEn": "Are you still interested in the apartment?"
+  "beispiel": "Mein Sohn ist sehr an Dinosauriern interessiert.",
+  "beispielTr": "Oğlum dinozorlarla çok ilgileniyor.",
+  "beispielEn": "My son is very interested in dinosaurs."
  },
  {
   "id": 1976,
   "tr": "aynen",
   "en": "just like",
-  "beispiel": "Mein Bruder sieht genauso aus wie mein Vater.",
-  "beispielTr": "Kardeşim aynen babama benziyor.",
-  "beispielEn": "My brother looks just like my father."
+  "beispiel": "Mein Bruder isst genauso gern Pizza wie ich.",
+  "beispielTr": "Kardeşim de tıpkı benim gibi pizzayı çok sever.",
+  "beispielEn": "My brother likes pizza just as much as I do."
  },
  {
   "id": 3163,
   "tr": "gelecek",
   "en": "future",
-  "beispiel": "In Zukunft werde ich vorsichtiger sein.",
-  "beispielTr": "Gelecekte daha dikkatli olacağım.",
-  "beispielEn": "In the future I will be more careful."
+  "beispiel": "Niemand weiß, was die Zukunft bringt.",
+  "beispielTr": "Geleceğin ne getireceğini kimse bilmiyor.",
+  "beispielEn": "Nobody knows what the future will bring."
  },
  {
   "id": 1781,
@@ -251,9 +251,9 @@
   "id": 1961,
   "tr": "hapishane",
   "en": "prison",
-  "beispiel": "Er wurde zu fünf Jahren Gefängnis verurteilt.",
-  "beispielTr": "Beş yıl hapis cezasına çarptırıldı.",
-  "beispielEn": "He was sentenced to five years in prison."
+  "beispiel": "Der Dieb musste für zwei Jahre ins Gefängnis.",
+  "beispielTr": "Hırsız iki yıllığına hapse girmek zorunda kaldı.",
+  "beispielEn": "The thief had to go to prison for two years."
  },
  {
   "id": 2451,
@@ -283,9 +283,9 @@
   "id": 2703,
   "tr": "-ir -mez",
   "en": "as soon as",
-  "beispiel": "Sobald ich den Termin weiß, gebe ich Bescheid.",
-  "beispielTr": "Randevuyu öğrenir öğrenmez haber veririm.",
-  "beispielEn": "As soon as I know the date, I will let you know."
+  "beispiel": "Sobald es aufhört zu regnen, gehen wir los.",
+  "beispielTr": "Yağmur durur durmaz yola çıkıyoruz.",
+  "beispielEn": "As soon as it stops raining, we'll head out."
  },
  {
   "id": 2180,
@@ -307,9 +307,9 @@
   "id": 1786,
   "tr": "öğrenmek",
   "en": "to find out",
-  "beispiel": "Wann erfahren wir das Ergebnis der Prüfung?",
-  "beispielTr": "Sınav sonucunu ne zaman öğreneceğiz?",
-  "beispielEn": "When will we find out the result of the exam?"
+  "beispiel": "Aus der Zeitung hat Ben von der Schließung der Fabrik erfahren.",
+  "beispielTr": "Ben fabrikanın kapanacağını gazeteden öğrendi.",
+  "beispielEn": "Ben found out about the factory closing from the newspaper."
  },
  {
   "id": 2781,
@@ -339,17 +339,17 @@
   "id": 1599,
   "tr": "zemin",
   "en": "floor",
-  "beispiel": "Die Bücher lagen alle auf dem Boden.",
-  "beispielTr": "Kitapların hepsi yerde duruyordu.",
-  "beispielEn": "The books were all lying on the floor."
+  "beispiel": "Das Baby sitzt auf dem Boden und spielt mit Klötzen.",
+  "beispielTr": "Bebek yerde oturmuş, tahta bloklarla oynuyor.",
+  "beispielEn": "The baby is sitting on the floor playing with blocks."
  },
  {
   "id": 2775,
   "tr": "ses",
   "en": "voice",
-  "beispiel": "Ich habe dich sofort an der Stimme erkannt.",
-  "beispielTr": "Seni hemen sesinden tanıdım.",
-  "beispielEn": "I recognized you immediately by your voice."
+  "beispiel": "Nach dem Konzert war seine Stimme ganz heiser.",
+  "beispielTr": "Konserden sonra sesi iyice kısılmıştı.",
+  "beispielEn": "After the concert his voice was completely hoarse."
  },
  {
   "id": 2772,
@@ -395,8 +395,8 @@
   "id": 1929,
   "tr": "yönetmek",
   "en": "to lead",
-  "beispiel": "Frau Meyer führt den Betrieb seit zehn Jahren.",
-  "beispielTr": "Meyer Hanım işletmeyi on yıldır yönetiyor.",
-  "beispielEn": "Ms. Meyer has led the company for ten years."
+  "beispiel": "Eine erfahrene Kollegin führt das neue Team.",
+  "beispielTr": "Yeni ekibi deneyimli bir iş arkadaşı yönetiyor.",
+  "beispielEn": "An experienced colleague is leading the new team."
  }
 ]

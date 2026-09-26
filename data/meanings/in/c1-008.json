@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "personel gelişimi",
-   "currentBeispiel": "Die Personalentwicklung wurde in den letzten Jahren vernachlässigt.",
-   "currentBeispielTr": "Personel gelişimi son yıllarda ihmal edildi."
+   "currentBeispiel": "Unsere Abteilung investiert kaum in Personalentwicklung.",
+   "currentBeispielTr": "Bölümümüz personel gelişimine neredeyse hiç yatırım yapmıyor."
   },
   {
    "id": 3928,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "Fluktuationen",
    "currentTr": "personel devir hızı",
-   "currentBeispiel": "Die hohe Fluktuation im Vertrieb bereitet der Geschäftsführung Sorgen.",
-   "currentBeispielTr": "Satış bölümündeki yüksek personel devri yönetimi endişelendiriyor."
+   "currentBeispiel": "Im Callcenter ist die Fluktuation besonders hoch.",
+   "currentBeispielTr": "Çağrı merkezinde personel devri özellikle yüksek."
   },
   {
    "id": 3930,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çalışan bağlılığı",
-   "currentBeispiel": "Flexible Arbeitszeiten stärken die Mitarbeiterbindung.",
-   "currentBeispielTr": "Esnek çalışma saatleri çalışan bağlılığını güçlendiriyor."
+   "currentBeispiel": "Der Betriebskindergarten hat die Mitarbeiterbindung deutlich verbessert.",
+   "currentBeispielTr": "Şirket kreşi çalışan bağlılığını belirgin biçimde artırdı."
   },
   {
    "id": 3931,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "işyeri atmosferi",
-   "currentBeispiel": "Der Führungswechsel hat das Betriebsklima spürbar verbessert.",
-   "currentBeispielTr": "Yönetim değişikliği işyeri atmosferini gözle görülür biçimde iyileştirdi."
+   "currentBeispiel": "Seit dem Chefwechsel ist das Betriebsklima viel entspannter.",
+   "currentBeispielTr": "Patron değişikliğinden beri işyeri atmosferi çok daha rahat."
   },
   {
    "id": 3932,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "Weiterbildungsmaßnahmen",
    "currentTr": "hizmet içi eğitim programı, mesleki gelişim faaliyeti",
-   "currentBeispiel": "Neue Weiterbildungsmaßnahmen wurden für alle Abteilungen eingeführt.",
-   "currentBeispielTr": "Bütün bölümler için yeni mesleki gelişim programları başlatıldı."
+   "currentBeispiel": "Die Firma finanziert zwei Weiterbildungsmaßnahmen pro Jahr.",
+   "currentBeispielTr": "Şirket yılda iki hizmet içi eğitimi finanse ediyor."
   },
   {
    "id": 3933,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Führungsstile",
    "currentTr": "liderlik tarzı",
-   "currentBeispiel": "Ihr kooperativer Führungsstil kommt im Team gut an.",
-   "currentBeispielTr": "İş birliğine dayalı liderlik tarzı ekipte beğeniliyor."
+   "currentBeispiel": "Ihr autoritärer Führungsstil vertreibt die besten Mitarbeiter.",
+   "currentBeispielTr": "Otoriter liderlik tarzı en iyi çalışanları kaçırıyor."
   },
   {
    "id": 3934,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iş-yaşam dengesi",
-   "currentBeispiel": "Viele Bewerber legen heute großen Wert auf Work-Life-Balance.",
-   "currentBeispielTr": "Bugün birçok aday iş-yaşam dengesine büyük önem veriyor."
+   "currentBeispiel": "Wegen der Schichtarbeit leidet seine Work-Life-Balance.",
+   "currentBeispielTr": "Vardiyalı çalışma yüzünden iş-yaşam dengesi bozuluyor."
   },
   {
    "id": 3935,
@@ -79,8 +79,8 @@
    "niveau": "C1",
    "formen": "Umsatzeinbrüche",
    "currentTr": "ciroda ani düşüş, satışlarda çöküş",
-   "currentBeispiel": "Der plötzliche Umsatzeinbruch zwang das Unternehmen zum Sparkurs.",
-   "currentBeispielTr": "Ani satış düşüşü şirketi tasarrufa zorladı."
+   "currentBeispiel": "Der Umsatzeinbruch im Sommer kostete zwanzig Leute den Job.",
+   "currentBeispielTr": "Yazın yaşanan ciro düşüşü yirmi kişinin işine mal oldu."
   },
   {
    "id": 3936,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Effizienzsteigerungen",
    "currentTr": "verimlilik artışı",
-   "currentBeispiel": "Effizienzsteigerung ist das erklärte Ziel der neuen Strategie.",
-   "currentBeispielTr": "Verimlilik artışı, yeni stratejinin açık hedefi."
+   "currentBeispiel": "Die neue Software brachte eine spürbare Effizienzsteigerung.",
+   "currentBeispielTr": "Yeni yazılım gözle görülür bir verimlilik artışı sağladı."
   },
   {
    "id": 3937,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "Restrukturierungen",
    "currentTr": "yeniden yapılandırma",
-   "currentBeispiel": "Die geplante Restrukturierung betrifft mehrere Standorte.",
-   "currentBeispielTr": "Planlanan yeniden yapılandırma birden çok şubeyi etkiliyor."
+   "currentBeispiel": "Nach der Restrukturierung arbeiten hier nur noch zwölf Leute.",
+   "currentBeispielTr": "Yeniden yapılandırmadan sonra burada sadece on iki kişi çalışıyor."
   },
   {
    "id": 3939,
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "Insolvenzverfahren",
    "currentTr": "iflas süreci",
-   "currentBeispiel": "Gegen den Zulieferer wurde ein Insolvenzverfahren eröffnet.",
-   "currentBeispielTr": "Tedarikçi hakkında iflas süreci başlatıldı."
+   "currentBeispiel": "Gegen unseren Zulieferer läuft seit Mai ein Insolvenzverfahren.",
+   "currentBeispielTr": "Tedarikçimiz hakkında mayıstan beri bir iflas süreci yürüyor."
   },
   {
    "id": 3940,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "pazar doygunluğu",
-   "currentBeispiel": "Wegen der Marktsättigung sucht das Unternehmen neue Absatzmärkte.",
-   "currentBeispielTr": "Pazar doygunluğu yüzünden şirket yeni pazarlar arıyor."
+   "currentBeispiel": "Wegen der Marktsättigung verkaufen wir kaum noch Drucker.",
+   "currentBeispielTr": "Pazar doygunluğu yüzünden neredeyse hiç yazıcı satamıyoruz."
   },
   {
    "id": 3941,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "karlılık",
-   "currentBeispiel": "Die Rentabilität der Filialen wird jährlich überprüft.",
-   "currentBeispielTr": "Şubelerin kârlılığı her yıl gözden geçiriliyor."
+   "currentBeispiel": "Die Rentabilität der kleinen Filiale sinkt seit Jahren.",
+   "currentBeispielTr": "Küçük şubenin kârlılığı yıllardır düşüyor."
   },
   {
    "id": 3944,
@@ -139,8 +139,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "mevzuata uygunluk, uyum",
-   "currentBeispiel": "Compliance ist in regulierten Branchen unverzichtbar.",
-   "currentBeispielTr": "Düzenlemeye tabi sektörlerde mevzuata uyum vazgeçilmezdir."
+   "currentBeispiel": "Die Bank hat wegen mangelnder Compliance eine Strafe bekommen.",
+   "currentBeispielTr": "Banka, mevzuata uygunluk eksikliği yüzünden ceza aldı."
   },
   {
    "id": 3945,
@@ -149,8 +149,8 @@
    "niveau": "C1",
    "formen": "Massenmanipulationen",
    "currentTr": "kitle manipülasyonu",
-   "currentBeispiel": "Kritiker warnen vor der Massenmanipulation durch soziale Netzwerke.",
-   "currentBeispielTr": "Eleştirmenler, sosyal ağlar üzerinden kitle manipülasyonuna karşı uyarıyor."
+   "currentBeispiel": "Der Film zeigt Massenmanipulation durch Radio und Plakate.",
+   "currentBeispielTr": "Film, radyo ve afişler yoluyla kitle manipülasyonunu gösteriyor."
   },
   {
    "id": 3946,
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "Boulevardisierungen",
    "currentTr": "magazinleşme",
-   "currentBeispiel": "Die Boulevardisierung der Nachrichten schadet der seriösen Berichterstattung.",
-   "currentBeispielTr": "Haberlerin tabloidleşmesi ciddi habercilere zarar veriyor."
+   "currentBeispiel": "Die Boulevardisierung der Abendnachrichten ärgert viele Zuschauer.",
+   "currentBeispielTr": "Akşam haberlerinin magazinleşmesi birçok izleyiciyi rahatsız ediyor."
   },
   {
    "id": 3947,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "fikir manipülasyonu, kamuoyu yönlendirme",
-   "currentBeispiel": "Viele Leser durchschauen die plumpe Meinungsmache mancher Blätter nicht.",
-   "currentBeispielTr": "Birçok okur, bazı gazetelerin kaba kamuoyu yönlendirmesini fark etmiyor."
+   "currentBeispiel": "Bei dieser Zeitung riecht jede Schlagzeile nach Meinungsmache.",
+   "currentBeispielTr": "Bu gazetede her manşet kamuoyu yönlendirmesi kokuyor."
   },
   {
    "id": 3948,
@@ -179,8 +179,8 @@
    "niveau": "C1",
    "formen": "Skandalisierungen",
    "currentTr": "skandallaştırma",
-   "currentBeispiel": "Die Skandalisierung jeder Kleinigkeit lähmt den politischen Diskurs.",
-   "currentBeispielTr": "Her küçük şeyin skandallaştırılması siyasi tartışmayı felç ediyor."
+   "currentBeispiel": "Die Skandalisierung seines Urlaubsfotos war völlig übertrieben.",
+   "currentBeispielTr": "Tatil fotoğrafının skandallaştırılması tamamen abartılıydı."
   },
   {
    "id": 3949,
@@ -189,8 +189,8 @@
    "niveau": "C1",
    "formen": "Empörungswellen",
    "currentTr": "öfke dalgası",
-   "currentBeispiel": "Der Tweet löste eine Empörungswelle im Internet aus.",
-   "currentBeispielTr": "Tweet, internette bir öfke dalgası başlattı."
+   "currentBeispiel": "Sein Interview löste eine Empörungswelle auf Twitter aus.",
+   "currentBeispielTr": "Röportajı Twitter'da bir öfke dalgası başlattı."
   },
   {
    "id": 3950,
@@ -199,8 +199,8 @@
    "niveau": "C1",
    "formen": "Filterblasen",
    "currentTr": "filtre balonu",
-   "currentBeispiel": "In seiner Filterblase begegnet er kaum abweichenden Meinungen.",
-   "currentBeispielTr": "Kendi filtre balonunda farklı görüşlerle neredeyse hiç karşılaşmıyor."
+   "currentBeispiel": "In seiner Filterblase liest er nur eine Meinung.",
+   "currentBeispielTr": "Kendi filtre balonunda tek bir görüş okuyor."
   },
   {
    "id": 3951,
@@ -209,8 +209,8 @@
    "niveau": "C1",
    "formen": "Echokammern",
    "currentTr": "yankı odası",
-   "currentBeispiel": "Soziale Medien verstärken die Wirkung von Echokammern erheblich.",
-   "currentBeispielTr": "Sosyal medya, yankı odalarının etkisini ciddi biçimde güçlendiriyor."
+   "currentBeispiel": "Sein Forum ist längst eine reine Echokammer geworden.",
+   "currentBeispielTr": "Forumu çoktan tam bir yankı odasına dönüştü."
   },
   {
    "id": 3952,
@@ -219,8 +219,8 @@
    "niveau": "C1",
    "formen": "Desinformationen",
    "currentTr": "dezenformasyon, yanlış bilgilendirme",
-   "currentBeispiel": "Gezielte Desinformation untergräbt das Vertrauen in Institutionen.",
-   "currentBeispielTr": "Hedefli dezenformasyon kurumlara duyulan güveni aşındırıyor."
+   "currentBeispiel": "Vor der Wahl verbreiteten Bots gezielt Desinformation.",
+   "currentBeispielTr": "Seçim öncesinde botlar bilinçli olarak dezenformasyon yaydı."
   },
   {
    "id": 3953,
@@ -229,8 +229,8 @@
    "niveau": "C1",
    "formen": "Reizüberflutungen",
    "currentTr": "uyaran bombardımanı",
-   "currentBeispiel": "Die ständige Reizüberflutung durch Bildschirme erschöpft viele Menschen.",
-   "currentBeispielTr": "Ekranlardan gelen sürekli uyaran bombardımanı birçok insanı tüketiyor."
+   "currentBeispiel": "Im Einkaufszentrum leidet sie unter Reizüberflutung.",
+   "currentBeispielTr": "Alışveriş merkezinde uyaran bombardımanından bunalıyor."
   },
   {
    "id": 3954,
@@ -239,8 +239,8 @@
    "niveau": "C1",
    "formen": "Oberflächlichkeiten",
    "currentTr": "yüzeysellik",
-   "currentBeispiel": "Ihm wird vorgeworfen, mit Oberflächlichkeit über komplexe Themen zu urteilen.",
-   "currentBeispielTr": "Karmaşık konular hakkında yüzeysellikle hüküm vermekle suçlanıyor."
+   "currentBeispiel": "Die Oberflächlichkeit seiner Antworten hat mich enttäuscht.",
+   "currentBeispielTr": "Cevaplarının yüzeyselliği beni hayal kırıklığına uğrattı."
   },
   {
    "id": 3955,
@@ -249,8 +249,8 @@
    "niveau": "C1",
    "formen": "Selbstoptimierungen",
    "currentTr": "kendini sürekli geliştirme, öz-optimizasyon",
-   "currentBeispiel": "Der Druck zur ständigen Selbstoptimierung macht viele Menschen krank.",
-   "currentBeispielTr": "Sürekli kendini optimize etme baskısı birçok insanı hasta ediyor."
+   "currentBeispiel": "Seine Selbstoptimierung beginnt jeden Morgen um fünf Uhr.",
+   "currentBeispielTr": "Kendini optimize etmesi her sabah beşte başlıyor."
   },
   {
    "id": 3956,
@@ -259,8 +259,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "keyfilik, ilkesizlik",
-   "currentBeispiel": "Die moralische Beliebigkeit mancher Debatten verwässert klare Standpunkte.",
-   "currentBeispielTr": "Bazı tartışmalardaki ahlaki ilkesizlik net duruşları sulandırıyor.",
+   "currentBeispiel": "Die Beliebigkeit seiner Versprechen ärgert viele Wähler.",
+   "currentBeispielTr": "Vaatlerindeki ilkesizlik birçok seçmeni kızdırıyor.",
    "overlapping": [
     "die Willkür (C1)"
    ]
@@ -272,8 +272,8 @@
    "niveau": "C1",
    "formen": "Instrumentalisierungen",
    "currentTr": "araçsallaştırma",
-   "currentBeispiel": "Die Instrumentalisierung der Angst dient oft politischen Zwecken.",
-   "currentBeispielTr": "Korkunun araçsallaştırılması çoğu zaman siyasi amaçlara hizmet eder."
+   "currentBeispiel": "Die Instrumentalisierung des Unglücks durch die Partei empört viele.",
+   "currentBeispielTr": "Partinin felaketi araçsallaştırması birçok kişiyi öfkelendiriyor."
   },
   {
    "id": 3958,
@@ -282,8 +282,8 @@
    "niveau": "C1",
    "formen": "Bevormundungen",
    "currentTr": "vesayet altına alma",
-   "currentBeispiel": "Viele empfinden staatliche Vorschriften als Bevormundung.",
-   "currentBeispielTr": "Birçok kişi devlet kurallarını vesayet olarak görüyor."
+   "currentBeispiel": "Das Rauchverbot empfindet er als reine Bevormundung.",
+   "currentBeispielTr": "Sigara yasağını tam bir vesayet olarak görüyor."
   },
   {
    "id": 3959,
@@ -292,8 +292,8 @@
    "niveau": "C1",
    "formen": "Gängelungen",
    "currentTr": "sıkı denetim, güdüm altında tutma",
-   "currentBeispiel": "Er kritisiert die zunehmende Gängelung der Bürger durch Vorschriften.",
-   "currentBeispielTr": "Vatandaşların kurallarla giderek daha çok güdülmesini eleştiriyor."
+   "currentBeispiel": "Er beschwert sich über die ständige Gängelung durch Vorschriften.",
+   "currentBeispielTr": "Kuralların onu sürekli güdüm altında tutmasından şikâyet ediyor."
   },
   {
    "id": 3960,
@@ -302,8 +302,8 @@
    "niveau": "C1",
    "formen": "Entmündigungen",
    "currentTr": "ehliyetsiz kılma, iradesizleştirme",
-   "currentBeispiel": "Die schleichende Entmündigung des Individuums ist eine ethische Frage.",
-   "currentBeispielTr": "Bireyin sinsice iradesizleştirilmesi etik bir sorundur."
+   "currentBeispiel": "Sie erlebt die Kontrolle ihrer Kinder als Entmündigung.",
+   "currentBeispielTr": "Çocuklarının onu denetlemesini iradesizleştirme olarak görüyor."
   },
   {
    "id": 3961,
@@ -312,8 +312,8 @@
    "niveau": "C1",
    "formen": "Ambivalenzen",
    "currentTr": "ikirciklilik, çelişkili duygu",
-   "currentBeispiel": "Der technische Fortschritt löst bei ihr eine tiefe Ambivalenz aus.",
-   "currentBeispielTr": "Teknolojik ilerleme onda derin bir ikirciklilik uyandırıyor."
+   "currentBeispiel": "Vor dem Umzug spürt sie eine starke Ambivalenz.",
+   "currentBeispielTr": "Taşınmadan önce güçlü bir ikirciklilik hissediyor."
   },
   {
    "id": 3964,
@@ -322,8 +322,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "her şeyi yapabilirlik saplantısı",
-   "currentBeispiel": "Kritiker sprechen beim Geoengineering von einem gefährlichen Machbarkeitswahn.",
-   "currentBeispielTr": "Eleştirmenler, jeomühendislik için tehlikeli bir yapabilirlik saplantısından söz ediyor."
+   "currentBeispiel": "Sein Machbarkeitswahn hat das ganze Projekt ruiniert.",
+   "currentBeispielTr": "Yapılabilirlik saplantısı bütün projeyi mahvetti."
   },
   {
    "id": 3965,
@@ -332,8 +332,8 @@
    "niveau": "C1",
    "formen": "Kontrollverluste",
    "currentTr": "kontrol kaybı",
-   "currentBeispiel": "Viele fürchten einen völligen Kontrollverlust gegenüber der künstlichen Intelligenz.",
-   "currentBeispielTr": "Birçok kişi yapay zekâ karşısında tam bir kontrol kaybından korkuyor."
+   "currentBeispiel": "Beim Autofahren im Schnee fürchtet sie den Kontrollverlust.",
+   "currentBeispielTr": "Karda araba kullanırken kontrolü kaybetmekten korkuyor."
   },
   {
    "id": 3966,
@@ -342,8 +342,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "determinizm",
-   "currentBeispiel": "Der technologische Determinismus unterschätzt die Rolle menschlicher Entscheidungen.",
-   "currentBeispielTr": "Teknolojik determinizm, insan kararlarının rolünü hafife alıyor."
+   "currentBeispiel": "Der Professor lehnt jeden Determinismus in der Geschichte ab.",
+   "currentBeispielTr": "Profesör, tarihte her türlü determinizmi reddediyor."
   },
   {
    "id": 3967,
@@ -352,8 +352,8 @@
    "niveau": "C1",
    "formen": "Entmenschlichungen",
    "currentTr": "insanlıktan çıkarma",
-   "currentBeispiel": "Die Entmenschlichung durch reine Datenlogik beunruhigt viele Philosophen.",
-   "currentBeispielTr": "Salt veri mantığının yol açtığı insanlıktan çıkarma birçok filozofu kaygılandırıyor."
+   "currentBeispiel": "Die Sprache der Propaganda beginnt mit Entmenschlichung.",
+   "currentBeispielTr": "Propaganda dili insanlıktan çıkarmayla başlıyor."
   },
   {
    "id": 3968,
@@ -362,8 +362,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "veri açlığı",
-   "currentBeispiel": "Der Datenhunger der Konzerne kennt offenbar keine Grenzen.",
-   "currentBeispielTr": "Şirketlerin veri açlığı görünüşe göre sınır tanımıyor."
+   "currentBeispiel": "Der Datenhunger dieser App macht mich misstrauisch.",
+   "currentBeispielTr": "Bu uygulamanın veri açlığı beni kuşkulandırıyor."
   },
   {
    "id": 3969,
@@ -372,8 +372,8 @@
    "niveau": "C1",
    "formen": "Entgrenzungen",
    "currentTr": "sınırların ortadan kalkması",
-   "currentBeispiel": "Die digitale Entgrenzung von Arbeit und Freizeit belastet viele Beschäftigte.",
-   "currentBeispielTr": "İşle boş zaman arasındaki sınırların dijital olarak silinmesi birçok çalışanı yıpratıyor."
+   "currentBeispiel": "Das Homeoffice führt zur Entgrenzung von Arbeit und Freizeit.",
+   "currentBeispielTr": "Evden çalışma, işle boş zaman arasındaki sınırları siliyor."
   },
   {
    "id": 3970,
@@ -382,8 +382,8 @@
    "niveau": "C1",
    "formen": "Autonomien",
    "currentTr": "özerklik, bağımsızlık",
-   "currentBeispiel": "Die Autonomie des Einzelnen gerät durch algorithmische Empfehlungen unter Druck.",
-   "currentBeispielTr": "Bireyin özerkliği, algoritmik öneriler yüzünden baskı altında."
+   "currentBeispiel": "Im Heim verliert sie Stück für Stück ihre Autonomie.",
+   "currentBeispielTr": "Huzurevinde özerkliğini yavaş yavaş yitiriyor."
   },
   {
    "id": 3973,
@@ -392,8 +392,8 @@
    "niveau": "C1",
    "formen": "Menschenbilder",
    "currentTr": "insan anlayışı, insan tasavvuru",
-   "currentBeispiel": "Die Ethikkommission diskutiert das zugrunde liegende Menschenbild der KI-Forschung.",
-   "currentBeispielTr": "Etik kurulu, yapay zekâ araştırmalarının temelindeki insan anlayışını tartışıyor."
+   "currentBeispiel": "Hinter dem Gesetz steckt ein düsteres Menschenbild.",
+   "currentBeispielTr": "Bu yasanın arkasında karanlık bir insan anlayışı var."
   },
   {
    "id": 3974,
@@ -402,8 +402,8 @@
    "niveau": "C1",
    "formen": "Kipppunkte",
    "currentTr": "eşik noktası, kritik dönüm noktası",
-   "currentBeispiel": "Forscher warnen, dass mehrere Kipppunkte im Klimasystem nahe sind.",
-   "currentBeispielTr": "Araştırmacılar, iklim sistemindeki birçok eşik noktasının yakın olduğu uyarısında bulunuyor."
+   "currentBeispiel": "Das Grönlandeis hat seinen Kipppunkt womöglich schon überschritten.",
+   "currentBeispielTr": "Grönland buzulu devrilme noktasını belki de çoktan aştı."
   },
   {
    "id": 3975,
@@ -412,8 +412,8 @@
    "niveau": "C1",
    "formen": "Resilienzen",
    "currentTr": "dayanıklılık, direnç",
-   "currentBeispiel": "Die Resilienz städtischer Systeme gegenüber Extremwetter muss gestärkt werden.",
-   "currentBeispielTr": "Kent sistemlerinin aşırı hava olaylarına karşı direnci güçlendirilmeli.",
+   "currentBeispiel": "Nach der Flut zeigte das Dorf erstaunliche Resilienz.",
+   "currentBeispielTr": "Selden sonra köy şaşırtıcı bir toparlanma gücü gösterdi.",
    "overlapping": [
     "die Belastbarkeit (B2)",
     "die Ausdauer (B2)",
@@ -427,8 +427,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yetinme, tüketimi sınırlama",
-   "currentBeispiel": "Suffizienz statt Wachstum lautet die Forderung mancher Ökonomen.",
-   "currentBeispielTr": "Bazı iktisatçıların talebi büyüme değil, yeterlilik."
+   "currentBeispiel": "Die Stadt setzt beim Klimaschutz auch auf Suffizienz.",
+   "currentBeispielTr": "Şehir, iklim korumasında yetinmeye de bel bağlıyor."
   },
   {
    "id": 3977,
@@ -437,8 +437,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sonluluk, sınırlılık",
-   "currentBeispiel": "Die Endlichkeit der Ressourcen wird in der Wachstumsdebatte oft ausgeblendet.",
-   "currentBeispielTr": "Kaynakların sonluluğu büyüme tartışmalarında çoğu zaman göz ardı ediliyor."
+   "currentBeispiel": "Die Endlichkeit des Öls zwingt uns zum Umdenken.",
+   "currentBeispielTr": "Petrolün sonluluğu bizi yeniden düşünmeye zorluyor."
   },
   {
    "id": 3978,
@@ -447,8 +447,8 @@
    "niveau": "C1",
    "formen": "Generationenverträge",
    "currentTr": "nesiller arası sözleşme",
-   "currentBeispiel": "Der ökologische Generationenvertrag verpflichtet uns zu Verzicht.",
-   "currentBeispielTr": "Ekolojik nesiller sözleşmesi bizi feragat etmeye zorluyor."
+   "currentBeispiel": "Der Generationenvertrag der Rentenkasse gerät zunehmend ins Wanken.",
+   "currentBeispielTr": "Emeklilik sistemindeki kuşaklar arası sözleşme giderek sarsılıyor."
   },
   {
    "id": 3979,
@@ -457,8 +457,8 @@
    "niveau": "C1",
    "formen": "Zukunftsängste",
    "currentTr": "geleceğe dair kaygı",
-   "currentBeispiel": "Die Zukunftsangst junger Menschen angesichts der Klimakrise wächst spürbar.",
-   "currentBeispielTr": "İklim krizi karşısında gençlerin gelecek kaygısı gözle görülür biçimde büyüyor."
+   "currentBeispiel": "Ihre Zukunftsangst hält sie oft nachts wach.",
+   "currentBeispielTr": "Gelecek kaygısı onu geceleri sık sık uyanık tutuyor."
   },
   {
    "id": 3980,
@@ -467,8 +467,8 @@
    "niveau": "C1",
    "formen": "Wachstumszwänge",
    "currentTr": "büyüme zorunluluğu",
-   "currentBeispiel": "Der ständige Wachstumszwang der Wirtschaft steht im Widerspruch zum Klimaschutz.",
-   "currentBeispielTr": "Ekonominin sürekli büyüme zorunluluğu iklim korumasıyla çelişiyor."
+   "currentBeispiel": "Der Wachstumszwang treibt den Konzern in immer neue Märkte.",
+   "currentBeispielTr": "Büyüme zorunluluğu holdingi hep yeni pazarlara sürüklüyor."
   },
   {
    "id": 3981,
@@ -477,8 +477,8 @@
    "niveau": "C1",
    "formen": "Generationenkonflikte",
    "currentTr": "kuşak çatışması",
-   "currentBeispiel": "Der Generationenkonflikt um Klimapolitik prägt viele Familiendebatten.",
-   "currentBeispielTr": "İklim politikası üzerine kuşak çatışması birçok aile tartışmasına damga vuruyor."
+   "currentBeispiel": "Beim Abendessen bricht der alte Generationenkonflikt wieder aus.",
+   "currentBeispielTr": "Akşam yemeğinde eski kuşak çatışması yine patlak veriyor."
   },
   {
    "id": 3982,
@@ -487,8 +487,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "alarmcılık, abartılı kaygı yayma",
-   "currentBeispiel": "Manche werfen Klimaaktivisten unberechtigten Alarmismus vor.",
-   "currentBeispielTr": "Bazıları iklim aktivistlerini yersiz alarmcılıkla suçluyor."
+   "currentBeispiel": "Der Zeitung wird bei jedem Sturm Alarmismus vorgeworfen.",
+   "currentBeispielTr": "Gazete her fırtınada felaket tellallığıyla suçlanıyor."
   },
   {
    "id": 3983,
@@ -497,8 +497,8 @@
    "niveau": "C1",
    "formen": "verroht, ist verroht",
    "currentTr": "vahşileşmek, kabalaşmak",
-   "currentBeispiel": "Manche befürchten, die Debattenkultur verrohe zunehmend.",
-   "currentBeispielTr": "Bazıları tartışma kültürünün giderek kabalaşmasından endişe ediyor."
+   "currentBeispiel": "Der Ton in den Kommentarspalten verroht immer mehr.",
+   "currentBeispielTr": "Yorum bölümlerindeki üslup giderek kabalaşıyor."
   },
   {
    "id": 3984,
@@ -507,8 +507,8 @@
    "niveau": "C1",
    "formen": "instrumentalisiert, hat instrumentalisiert",
    "currentTr": "araçsallaştırmak",
-   "currentBeispiel": "Populisten instrumentalisieren die Angst der Menschen für ihre Zwecke.",
-   "currentBeispielTr": "Popülistler insanların korkusunu kendi amaçları için araçsallaştırıyor."
+   "currentBeispiel": "Der Trainer instrumentalisiert die Presse für seine Zwecke.",
+   "currentBeispielTr": "Antrenör basını kendi amaçları için araçsallaştırıyor."
   }
  ]
 }

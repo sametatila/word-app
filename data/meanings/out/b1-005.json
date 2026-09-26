@@ -3,9 +3,9 @@
     "id": 1992,
     "tr": "yasa",
     "en": "law",
-    "beispiel": "Das Parlament hat ein neues Gesetz beschlossen.",
-    "beispielTr": "Parlamento yeni bir yasa çıkardı.",
-    "beispielEn": "Parliament passed a new law."
+    "beispiel": "Nach dem Gesetz dürfen Jugendliche hier keinen Alkohol kaufen.",
+    "beispielTr": "Yasaya göre gençler burada alkol satın alamaz.",
+    "beispielEn": "By law, teenagers can't buy alcohol here."
   },
   {
     "id": 1974,
@@ -35,9 +35,9 @@
     "id": 2905,
     "tr": "geriye kalan",
     "en": "remaining",
-    "beispiel": "Ist noch etwas zu essen übrig?",
-    "beispielTr": "Yiyecek bir şey kaldı mı?",
-    "beispielEn": "Is there anything left to eat?"
+    "beispiel": "Vom Geburtstagskuchen sind noch drei Stücke übrig.",
+    "beispielTr": "Doğum günü pastasından üç dilim daha kaldı.",
+    "beispielEn": "There are still three pieces of birthday cake left."
   },
   {
     "id": 2740,
@@ -51,17 +51,17 @@
     "id": 2338,
     "tr": "bildirmek",
     "en": "to report",
-    "beispiel": "Den Unfall müssen Sie der Versicherung melden.",
-    "beispielTr": "Kazayı sigortaya bildirmeniz gerekiyor.",
-    "beispielEn": "You must report the accident to the insurance company."
+    "beispiel": "Ich habe den Diebstahl sofort bei der Polizei gemeldet.",
+    "beispielTr": "Hırsızlığı hemen polise bildirdim.",
+    "beispielEn": "I reported the theft to the police right away."
   },
   {
     "id": 3092,
     "tr": "atmak",
     "en": "to throw",
-    "beispiel": "Die Kinder haben Steine ins Wasser geworfen.",
-    "beispielTr": "Çocuklar suya taş attı.",
-    "beispielEn": "The children threw stones into the water."
+    "beispiel": "Wirf die alten Zeitungen bitte in die blaue Tonne.",
+    "beispielTr": "Eski gazeteleri lütfen mavi çöp kutusuna at.",
+    "beispielEn": "Please throw the old newspapers in the blue bin."
   },
   {
     "id": 1916,
@@ -75,33 +75,33 @@
     "id": 3033,
     "tr": "affetmek",
     "en": "to forgive",
-    "beispiel": "Das werde ich ihm nie verzeihen können.",
-    "beispielTr": "Bunu ona asla affedemeyeceğim.",
-    "beispielEn": "I will never be able to forgive him for that."
+    "beispiel": "Kannst du mir verzeihen, dass ich so laut geworden bin?",
+    "beispielTr": "Sesimi bu kadar yükselttiğim için beni affedebilir misin?",
+    "beispielEn": "Can you forgive me for raising my voice like that?"
   },
   {
     "id": 2582,
     "tr": "saygı",
     "en": "respect",
-    "beispiel": "Ich habe großen Respekt vor meinem Lehrer.",
-    "beispielTr": "Öğretmenime büyük saygı duyuyorum.",
-    "beispielEn": "I have great respect for my teacher."
+    "beispiel": "Im Team behandeln sich alle mit Respekt.",
+    "beispielTr": "Ekipte herkes birbirine saygıyla davranıyor.",
+    "beispielEn": "On the team, everyone treats each other with respect."
   },
   {
     "id": 2282,
     "tr": "gücü yetmek",
     "en": "to afford",
-    "beispiel": "So ein teures Auto kann ich mir nicht leisten.",
-    "beispielTr": "Böyle pahalı bir arabaya gücüm yetmez.",
-    "beispielEn": "I cannot afford such an expensive car."
+    "beispiel": "Diesen Sommer können wir uns keinen Urlaub leisten.",
+    "beispielTr": "Bu yaz tatile gidecek paramız yok.",
+    "beispielEn": "We can't afford a vacation this summer."
   },
   {
     "id": 2036,
     "tr": "yarı",
     "en": "half",
-    "beispiel": "Die Hälfte des Urlaubs ist schon vorbei.",
-    "beispielTr": "Tatilin yarısı çoktan geçti.",
-    "beispielEn": "Half of the vacation is already over."
+    "beispiel": "Die Hälfte der Gäste ist schon nach Hause gegangen.",
+    "beispielTr": "Misafirlerin yarısı çoktan eve gitti.",
+    "beispielEn": "Half the guests have already gone home."
   },
   {
     "id": 1680,
@@ -115,17 +115,17 @@
     "id": 1789,
     "tr": "başarı",
     "en": "success",
-    "beispiel": "Der Film war ein großer Erfolg.",
-    "beispielTr": "Film büyük bir başarıydı.",
-    "beispielEn": "The movie was a big success."
+    "beispiel": "Das Straßenfest war dieses Jahr ein voller Erfolg.",
+    "beispielTr": "Sokak şenliği bu yıl tam bir başarıydı.",
+    "beispielEn": "This year's street festival was a complete success."
   },
   {
     "id": 1556,
     "tr": "temin etmek",
     "en": "to get",
-    "beispiel": "Soll ich die Eintrittskarten besorgen?",
-    "beispielTr": "Giriş biletlerini ben mi temin edeyim?",
-    "beispielEn": "Should I get the entrance tickets?"
+    "beispiel": "Kannst du für heute Abend noch Brot besorgen?",
+    "beispielTr": "Bu akşam için ekmek alabilir misin?",
+    "beispielEn": "Can you get some bread for tonight?"
   },
   {
     "id": 3124,
@@ -139,9 +139,9 @@
     "id": 2776,
     "tr": "doğru olmak",
     "en": "to be correct",
-    "beispiel": "Meine Adresse stimmt nicht mehr.",
-    "beispielTr": "Adresim artık doğru değil.",
-    "beispielEn": "My address is no longer correct."
+    "beispiel": "Die Rechnung stimmt nicht, wir hatten nur zwei Getränke.",
+    "beispielTr": "Hesap doğru değil, sadece iki içecek almıştık.",
+    "beispielEn": "The bill isn't right, we only had two drinks."
   },
   {
     "id": 1541,
@@ -171,9 +171,9 @@
     "id": 2576,
     "tr": "koşmak",
     "en": "to run",
-    "beispiel": "Warum rennst du so schnell?",
-    "beispielTr": "Neden bu kadar hızlı koşuyorsun?",
-    "beispielEn": "Why are you running so fast?"
+    "beispiel": "Die Kinder rennen lachend über die Wiese.",
+    "beispielTr": "Çocuklar gülerek çimenlerin üzerinde koşuyor.",
+    "beispielEn": "The children are running across the meadow, laughing."
   },
   {
     "id": 1638,
@@ -187,9 +187,9 @@
     "id": 3158,
     "tr": "tesadüfen",
     "en": "by chance",
-    "beispiel": "Wir haben uns zufällig am Bahnhof getroffen.",
-    "beispielTr": "Garda tesadüfen karşılaştık.",
-    "beispielEn": "We met by chance at the train station."
+    "beispiel": "Ich habe das kleine Restaurant ganz zufällig im Internet gefunden.",
+    "beispielTr": "Küçük restoranı internette tamamen tesadüfen buldum.",
+    "beispielEn": "I found the little restaurant online purely by chance."
   },
   {
     "id": 2362,
@@ -203,9 +203,9 @@
     "id": 1738,
     "tr": "hemfikir",
     "en": "agreed",
-    "beispiel": "Bist du mit meinem Vorschlag einverstanden?",
-    "beispielTr": "Önerimle hemfikir misin?",
-    "beispielEn": "Do you agree with my proposal?"
+    "beispiel": "Meine Eltern sind mit der Reise nach Spanien einverstanden.",
+    "beispielTr": "Annemle babam İspanya gezisine razı.",
+    "beispielEn": "My parents are okay with the trip to Spain."
   },
   {
     "id": 2034,
@@ -243,9 +243,9 @@
     "id": 2932,
     "tr": "sohbet etmek",
     "en": "to chat",
-    "beispiel": "Wir haben uns lange über das Spiel unterhalten.",
-    "beispielTr": "Maç hakkında uzun uzun sohbet ettik.",
-    "beispielEn": "We chatted about the game for a long time."
+    "beispiel": "Im Zug habe ich mich lange mit einer Studentin unterhalten.",
+    "beispielTr": "Trende bir üniversite öğrencisiyle uzun uzun sohbet ettim.",
+    "beispielEn": "On the train I chatted with a student for a long time."
   },
   {
     "id": 2615,
@@ -331,41 +331,41 @@
     "id": 2982,
     "tr": "davranmak",
     "en": "to behave",
-    "beispiel": "Er hat sich uns gegenüber sehr merkwürdig verhalten.",
-    "beispielTr": "Bize karşı çok tuhaf davrandı.",
-    "beispielEn": "He behaved very strangely towards us."
+    "beispiel": "Im Notfall sollte man sich ruhig verhalten.",
+    "beispielTr": "Acil durumda sakin davranmak gerekir.",
+    "beispielEn": "In an emergency you should behave calmly."
   },
   {
     "id": 2983,
     "tr": "davranış",
     "en": "behavior",
-    "beispiel": "Ich bewundere dein Verhalten in dieser Situation.",
-    "beispielTr": "Bu durumdaki davranışına hayranım.",
-    "beispielEn": "I admire your behavior in this situation."
+    "beispiel": "Der Lehrer hat mit den Eltern über das Verhalten ihres Sohnes gesprochen.",
+    "beispielTr": "Öğretmen ailesiyle oğullarının davranışı hakkında konuştu.",
+    "beispielEn": "The teacher talked to the parents about their son's behavior."
   },
   {
     "id": 2301,
     "tr": "delik",
     "en": "hole",
-    "beispiel": "Deine Hose hat ein Loch am Knie.",
-    "beispielTr": "Pantolonunun dizinde delik var.",
-    "beispielEn": "Your pants have a hole at the knee."
+    "beispiel": "Der Hund hat ein tiefes Loch im Garten gegraben.",
+    "beispielTr": "Köpek bahçede derin bir çukur kazdı.",
+    "beispielEn": "The dog dug a deep hole in the yard."
   },
   {
     "id": 2873,
     "tr": "basmak",
     "en": "to step",
-    "beispiel": "Ich bin auf ein Stück Glas getreten.",
-    "beispielTr": "Bir cam parçasına bastım.",
-    "beispielEn": "I stepped on a piece of glass."
+    "beispiel": "Vorsicht, tritt nicht auf die frische Farbe!",
+    "beispielTr": "Dikkat, yaş boyaya basma!",
+    "beispielEn": "Careful, don't step on the wet paint!"
   },
   {
     "id": 2504,
     "tr": "polis memuru",
     "en": "policeman",
-    "beispiel": "Ein Polizist hat den Verkehr geregelt.",
-    "beispielTr": "Bir polis trafiği yönetti.",
-    "beispielEn": "A policeman directed the traffic."
+    "beispiel": "Ein Polizist hat mir den Weg zum Bahnhof gezeigt.",
+    "beispielTr": "Bir polis memuru bana istasyonun yolunu gösterdi.",
+    "beispielEn": "A police officer showed me the way to the station."
   },
   {
     "id": 1859,
@@ -387,16 +387,16 @@
     "id": 2443,
     "tr": "belli ki",
     "en": "apparently",
-    "beispiel": "Das Restaurant ist heute offenbar geschlossen.",
-    "beispielTr": "Restoran bugün belli ki kapalı.",
-    "beispielEn": "The restaurant is apparently closed today."
+    "beispiel": "Die Nachbarn sind offenbar in den Urlaub gefahren.",
+    "beispielTr": "Belli ki komşular tatile gitmiş.",
+    "beispielEn": "Apparently the neighbors have gone on vacation."
   },
   {
     "id": 1971,
     "tr": "fırsat",
     "en": "opportunity",
-    "beispiel": "Das Fest ist eine gute Gelegenheit, alte Freunde zu treffen.",
-    "beispielTr": "Bu kutlama, eski dostları görmek için iyi bir fırsat.",
-    "beispielEn": "The party is a good opportunity to meet old friends."
+    "beispiel": "Bei der nächsten Gelegenheit gebe ich dir das Buch zurück.",
+    "beispielTr": "İlk fırsatta kitabını geri veririm.",
+    "beispielEn": "I'll give you the book back at the next opportunity."
   }
 ]

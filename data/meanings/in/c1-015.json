@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Habilitationen",
    "currentTr": "doçentlik tezi, habilitasyon",
-   "currentBeispiel": "Die Habilitation gilt vielen als überholter Weg zur Professur.",
-   "currentBeispielTr": "Habilitasyon birçok kişiye göre profesörlüğe giden eskimiş bir yol."
+   "currentBeispiel": "Sie hat ihre Habilitation letztes Jahr abgeschlossen.",
+   "currentBeispielTr": "Doçentliğini geçen yıl tamamladı."
   },
   {
    "id": 5962,
@@ -100,7 +100,7 @@
    "formen": "Berufungsverfahren",
    "currentTr": "öğretim üyesi atama süreci",
    "currentBeispiel": "Das Berufungsverfahren zog sich über mehr als zwei Jahre hin.",
-   "currentBeispielTr": "Atama süreci iki yıldan fazla sürdü."
+   "currentBeispielTr": "Profesör atama süreci iki yıldan fazla sürdü."
   },
   {
    "id": 5963,
@@ -110,7 +110,7 @@
    "formen": "Lehrstühle",
    "currentTr": "kürsü, profesörlük kadrosu",
    "currentBeispiel": "Nach der Emeritierung blieb der Lehrstuhl zwei Semester unbesetzt.",
-   "currentBeispielTr": "Emeklilikten sonra kürsü iki dönem boş kaldı."
+   "currentBeispielTr": "Emekliliğin ardından kürsü iki dönem boş kaldı."
   },
   {
    "id": 5964,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "araştırma desteği, araştırma fonlaması",
-   "currentBeispiel": "Die Forschungsförderung richtet sich zunehmend an thematischen Schwerpunkten aus.",
-   "currentBeispielTr": "Araştırma desteği giderek tematik önceliklere göre şekilleniyor."
+   "currentBeispiel": "Ohne Forschungsförderung könnte das Labor nicht weiterarbeiten.",
+   "currentBeispielTr": "Araştırma desteği olmasa laboratuvar çalışmalarını sürdüremezdi."
   },
   {
    "id": 5966,
@@ -140,7 +140,7 @@
    "formen": "",
    "currentTr": "ödenek dağıtımı, fon tahsisi",
    "currentBeispiel": "Die Mittelvergabe erfolgt heute überwiegend nach Leistungskriterien.",
-   "currentBeispielTr": "Fon dağıtımı bugün ağırlıklı olarak performans ölçütlerine göre yapılıyor."
+   "currentBeispielTr": "Ödenek dağıtımı bugün ağırlıklı olarak performans ölçütlerine göre yapılıyor."
   },
   {
    "id": 5967,
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "Rechenschaftspflichten",
    "currentTr": "hesap verme yükümlülüğü",
-   "currentBeispiel": "Mehr Autonomie geht mit einer strengeren Rechenschaftspflicht einher.",
-   "currentBeispielTr": "Daha fazla özerklik, daha katı bir hesap verme yükümlülüğüyle birlikte gelir."
+   "currentBeispiel": "Die neue Satzung verschärft die Rechenschaftspflicht der Institutsleitung.",
+   "currentBeispielTr": "Yeni yönetmelik, enstitü yönetiminin hesap verme yükümlülüğünü ağırlaştırıyor."
   },
   {
    "id": 5969,
@@ -206,8 +206,8 @@
    "niveau": "C1",
    "formen": "Wissenstransfers",
    "currentTr": "bilgi aktarımı",
-   "currentBeispiel": "Der Wissenstransfer in die Wirtschaft gilt als dritte Aufgabe der Hochschulen.",
-   "currentBeispielTr": "Ekonomiye bilgi aktarımı üniversitelerin üçüncü görevi sayılıyor."
+   "currentBeispiel": "Das Institut fördert den Wissenstransfer in kleine Unternehmen.",
+   "currentBeispielTr": "Enstitü, küçük şirketlere bilgi aktarımını destekliyor."
   },
   {
    "id": 5973,
@@ -216,8 +216,8 @@
    "niveau": "C1",
    "formen": "Grundlagenforschungen",
    "currentTr": "temel araştırma",
-   "currentBeispiel": "Grundlagenforschung braucht Geduld und lässt sich schwer planen.",
-   "currentBeispielTr": "Temel araştırma sabır ister ve planlaması zordur."
+   "currentBeispiel": "Für Grundlagenforschung bleibt in diesem Programm kaum Geld übrig.",
+   "currentBeispielTr": "Bu programda temel araştırmaya neredeyse hiç para kalmıyor."
   },
   {
    "id": 5974,
@@ -236,8 +236,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bilim özgürlüğü",
-   "currentBeispiel": "Die Wissenschaftsfreiheit endet nicht dort, wo Ergebnisse unbequem werden.",
-   "currentBeispielTr": "Bilim özgürlüğü, sonuçlar rahatsız edici olduğu yerde bitmez."
+   "currentBeispiel": "Der Rektor berief sich in seiner Rede auf die Wissenschaftsfreiheit.",
+   "currentBeispielTr": "Rektör konuşmasında bilim özgürlüğüne atıfta bulundu."
   },
   {
    "id": 5976,
@@ -266,8 +266,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dürüstlük, doğruluk",
-   "currentBeispiel": "Wissenschaftliche Redlichkeit verlangt, auch Fehlschläge zu berichten.",
-   "currentBeispielTr": "Bilimsel dürüstlük, başarısızlıkların da bildirilmesini gerektirir.",
+   "currentBeispiel": "Er zweifelte öffentlich an der Redlichkeit seines Koautors.",
+   "currentBeispielTr": "Ortak yazarının dürüstlüğünden açıkça kuşku duydu.",
    "overlapping": [
     "die Integrität (C1)"
    ]
@@ -280,7 +280,7 @@
    "formen": "",
    "currentTr": "yeniden üretilebilirlik",
    "currentBeispiel": "Die mangelnde Reproduzierbarkeit vieler Studien beunruhigt die Fachwelt.",
-   "currentBeispielTr": "Birçok çalışmanın yinelenememesi bilim çevrelerini kaygılandırıyor."
+   "currentBeispielTr": "Birçok çalışmanın tekrarlanabilir olmaması bilim dünyasını kaygılandırıyor."
   },
   {
    "id": 5980,
@@ -289,8 +289,8 @@
    "niveau": "C1",
    "formen": "Erkenntnisinteressen",
    "currentTr": "araştırma amacı, bilme ilgisi",
-   "currentBeispiel": "Jede Untersuchung sollte ihr Erkenntnisinteresse offenlegen.",
-   "currentBeispielTr": "Her inceleme, hangi soruya yanıt aradığını açıkça belirtmelidir."
+   "currentBeispiel": "Im ersten Kapitel legt sie ihr Erkenntnisinteresse offen.",
+   "currentBeispielTr": "İlk bölümde araştırma amacını açıkça ortaya koyuyor."
   },
   {
    "id": 5981,
@@ -299,8 +299,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "beşerî sermaye",
-   "currentBeispiel": "Bildung wird in dieser Sichtweise als Investition in Humankapital verstanden.",
-   "currentBeispielTr": "Bu bakış açısında eğitim, beşerî sermayeye yapılan bir yatırım sayılır."
+   "currentBeispiel": "Der Bericht behandelt Beschäftigte nur als Humankapital.",
+   "currentBeispielTr": "Rapor, çalışanları yalnızca beşerî sermaye olarak ele alıyor."
   },
   {
    "id": 5982,
@@ -370,7 +370,7 @@
    "formen": "",
    "currentTr": "en iyileri seçme ilkesi",
    "currentBeispiel": "Das Verfahren soll eine faire Bestenauslese gewährleisten.",
-   "currentBeispielTr": "Bu yöntem, adil biçimde en iyilerin seçilmesini güvence altına almalı."
+   "currentBeispielTr": "Bu yöntem, en iyilerin adil biçimde seçilmesini güvence altına almalı."
   },
   {
    "id": 5989,
@@ -400,7 +400,7 @@
    "formen": "hat begutachtet",
    "currentTr": "hakemlik yapmak, incelemek",
    "currentBeispiel": "Zwei unabhängige Fachleute begutachten jeden eingereichten Antrag.",
-   "currentBeispielTr": "Sunulan her başvuruyu iki bağımsız uzman inceliyor."
+   "currentBeispielTr": "Sunulan her başvuruyu iki bağımsız uzman değerlendiriyor."
   },
   {
    "id": 5992,
@@ -410,7 +410,7 @@
    "formen": "hat benachteiligt",
    "currentTr": "dezavantajlı duruma düşürmek, mağdur etmek",
    "currentBeispiel": "Das frühe Auswahlverfahren benachteiligt Kinder ohne akademischen Hintergrund.",
-   "currentBeispielTr": "Erken yaşta yapılan eleme, akademik geçmişi olmayan çocukları dezavantajlı duruma düşürüyor."
+   "currentBeispielTr": "Erken eleme, akademik geçmişi olmayan çocukları dezavantajlı duruma düşürüyor."
   },
   {
    "id": 5993,
@@ -419,8 +419,8 @@
    "niveau": "C1",
    "formen": "hat ausdifferenziert",
    "currentTr": "farklılaştırmak, alt dallara ayırmak",
-   "currentBeispiel": "Das Fach hat sich in den letzten Jahrzehnten stark ausdifferenziert.",
-   "currentBeispielTr": "Bu alan son on yıllarda büyük ölçüde alt dallara ayrıldı."
+   "currentBeispiel": "Die Hochschule hat ihr Studienangebot stark ausdifferenziert.",
+   "currentBeispielTr": "Üniversite, ders programını çok sayıda alt dala ayırdı."
   },
   {
    "id": 5994,
@@ -430,7 +430,7 @@
    "formen": "hat entfristet",
    "currentTr": "kadroyu süresiz hale getirmek",
    "currentBeispiel": "Nach acht Jahren wurde ihre Stelle endlich entfristet.",
-   "currentBeispielTr": "Sekiz yılın ardından kadrosu nihayet süresiz hale getirildi."
+   "currentBeispielTr": "Sekiz yılın ardından nihayet kadroya geçirildi."
   },
   {
    "id": 5995,
@@ -440,7 +440,7 @@
    "formen": "hat legitimiert",
    "currentTr": "meşrulaştırmak, haklı çıkarmak",
    "currentBeispiel": "Mit dem Verweis auf Exzellenz legitimiert man ungleiche Mittelverteilung.",
-   "currentBeispielTr": "Mükemmeliyete atıf yapılarak eşitsiz kaynak dağılımı meşrulaştırılıyor."
+   "currentBeispielTr": "Mükemmeliyete atıf yaparak eşitsiz kaynak dağılımı meşrulaştırılıyor."
   },
   {
    "id": 5996,
@@ -470,7 +470,7 @@
    "formen": "hat ausgeschöpft",
    "currentTr": "sonuna kadar kullanmak, tüketmek",
    "currentBeispiel": "Das Land schöpft sein Bildungspotenzial bei Weitem nicht aus.",
-   "currentBeispielTr": "Ülke eğitim potansiyelini hiç de sonuna kadar kullanmıyor."
+   "currentBeispielTr": "Ülke eğitim potansiyelini sonuna kadar kullanmaktan çok uzak."
   },
   {
    "id": 5999,
@@ -480,7 +480,7 @@
    "formen": "hat zugewiesen",
    "currentTr": "tahsis etmek, ayırmak",
    "currentBeispiel": "Den Fakultäten werden die Stellen nach einem festen Schlüssel zugewiesen.",
-   "currentBeispielTr": "Fakültelere kadrolar belirli bir anahtara göre tahsis ediliyor."
+   "currentBeispielTr": "Kadrolar fakültelere sabit bir formüle göre tahsis ediliyor."
   },
   {
    "id": 6000,
@@ -499,8 +499,8 @@
    "niveau": "C1",
    "formen": "hat zugeschrieben",
    "currentTr": "atfetmek, yüklemek",
-   "currentBeispiel": "Den Lehrkräften wird eine Verantwortung zugeschrieben, die sie kaum tragen können.",
-   "currentBeispielTr": "Öğretmenlere, taşımalarının güç olduğu bir sorumluluk atfediliyor.",
+   "currentBeispiel": "Die schlechten Ergebnisse werden allein den Lehrkräften zugeschrieben.",
+   "currentBeispielTr": "Kötü sonuçlar yalnızca öğretmenlere atfediliyor.",
    "overlapping": [
     "zurechnen (C1)"
    ]

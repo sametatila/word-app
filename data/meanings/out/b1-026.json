@@ -27,9 +27,9 @@
     "id": 2217,
     "tr": "kopyalamak",
     "en": "to copy",
-    "beispiel": "Kannst du mir diesen Artikel kopieren?",
-    "beispielTr": "Bu makaleyi benim için kopyalayabilir misin?",
-    "beispielEn": "Can you copy this article for me?"
+    "beispiel": "Kopier dir die Adresse einfach aus meiner Nachricht.",
+    "beispielTr": "Adresi mesajımdan kopyalayıver.",
+    "beispielEn": "Just copy the address from my message."
   },
   {
     "id": 1536,
@@ -43,9 +43,9 @@
     "id": 2534,
     "tr": "indirim",
     "en": "discount",
-    "beispiel": "Sie bekommen zehn Prozent Rabatt.",
-    "beispielTr": "Yüzde on indirim alıyorsunuz.",
-    "beispielEn": "You get a ten percent discount."
+    "beispiel": "Studenten bekommen im Museum einen Rabatt.",
+    "beispielTr": "Öğrencilere müzede indirim yapılıyor.",
+    "beispielEn": "Students get a discount at the museum."
   },
   {
     "id": 2954,
@@ -99,9 +99,9 @@
     "id": 2975,
     "tr": "boşuna",
     "en": "in vain",
-    "beispiel": "Ich habe vergeblich versucht, dich anzurufen.",
-    "beispielTr": "Boşuna seni aramaya çalıştım.",
-    "beispielEn": "I tried in vain to call you."
+    "beispiel": "Wir haben vergeblich auf den letzten Bus gewartet.",
+    "beispielTr": "Son otobüsü boşuna bekledik.",
+    "beispielEn": "We waited for the last bus in vain."
   },
   {
     "id": 1770,
@@ -131,9 +131,9 @@
     "id": 2872,
     "tr": "merdiven boşluğu",
     "en": "stairwell",
-    "beispiel": "Im Treppenhaus ist kein Licht.",
-    "beispielTr": "Merdiven boşluğunda ışık yok.",
-    "beispielEn": "There's no light in the stairwell."
+    "beispiel": "Die Nachbarn stellen ihre Fahrräder immer ins Treppenhaus.",
+    "beispielTr": "Komşular bisikletlerini hep merdiven boşluğuna koyuyor.",
+    "beispielEn": "The neighbors always leave their bikes in the stairwell."
   },
   {
     "id": 1604,
@@ -155,9 +155,9 @@
     "id": 2759,
     "tr": "fiş",
     "en": "plug",
-    "beispiel": "Der Stecker passt nicht in diese Steckdose.",
-    "beispielTr": "Fiş bu prize uymuyor.",
-    "beispielEn": "The plug doesn't fit in this outlet."
+    "beispiel": "Zieh bitte den Stecker, bevor du den Toaster sauber machst.",
+    "beispielTr": "Tost makinesini temizlemeden önce lütfen fişini çek.",
+    "beispielEn": "Please pull the plug before you clean the toaster."
   },
   {
     "id": 1468,
@@ -171,25 +171,25 @@
     "id": 2211,
     "tr": "konsolosluk",
     "en": "consulate",
-    "beispiel": "Ein Visum bekommst du auch im Konsulat.",
-    "beispielTr": "Vizeyi konsolosluktan da alabilirsin.",
-    "beispielEn": "You can also get a visa at the consulate."
+    "beispiel": "Für den neuen Pass musst du zum Konsulat gehen.",
+    "beispielTr": "Yeni pasaport için konsolosluğa gitmen gerekiyor.",
+    "beispielEn": "You have to go to the consulate for the new passport."
   },
   {
     "id": 2581,
     "tr": "rezervasyon",
     "en": "reservation",
-    "beispiel": "Was kostet eine Reservierung?",
-    "beispielTr": "Rezervasyon ne kadar?",
-    "beispielEn": "How much does a reservation cost?"
+    "beispiel": "Leider finde ich unsere Reservierung für heute Abend nicht.",
+    "beispielTr": "Maalesef bu akşamki rezervasyonumuzu bulamıyorum.",
+    "beispielEn": "Unfortunately, I can't find our reservation for tonight."
   },
   {
     "id": 3135,
     "tr": "ödeme",
     "en": "payment",
-    "beispiel": "Bitte geben Sie bei der Zahlung die Rechnungsnummer an.",
-    "beispielTr": "Ödeme yaparken lütfen fatura numarasını belirtin.",
-    "beispielEn": "Please state the invoice number with your payment."
+    "beispiel": "Die Zahlung ist innerhalb von zwei Wochen fällig.",
+    "beispielTr": "Ödemenin iki hafta içinde yapılması gerekiyor.",
+    "beispielEn": "Payment is due within two weeks."
   },
   {
     "id": 1446,
@@ -203,9 +203,9 @@
     "id": 1586,
     "tr": "biyoloji",
     "en": "biology",
-    "beispiel": "Meine Freundin studiert Biologie.",
-    "beispielTr": "Kız arkadaşım biyoloji okuyor.",
-    "beispielEn": "My girlfriend studies biology."
+    "beispiel": "In Biologie lernen wir gerade viel über Pflanzen.",
+    "beispielTr": "Biyolojide şu an bitkiler hakkında çok şey öğreniyoruz.",
+    "beispielEn": "In biology we're learning a lot about plants right now."
   },
   {
     "id": 2989,
@@ -235,9 +235,9 @@
     "id": 2636,
     "tr": "ince",
     "en": "slim",
-    "beispiel": "In diesem Kleid wirkst du sehr schlank.",
-    "beispielTr": "Bu elbiseyle çok ince görünüyorsun.",
-    "beispielEn": "You look very slim in this dress."
+    "beispiel": "Die Vase hat einen langen, schlanken Hals.",
+    "beispielTr": "Vazonun uzun ve ince bir boynu var.",
+    "beispielEn": "The vase has a long, slender neck."
   },
   {
     "id": 1596,
@@ -275,9 +275,9 @@
     "id": 1699,
     "tr": "evli çift",
     "en": "married couple",
-    "beispiel": "Das Ehepaar unter uns hat zwei Kinder.",
-    "beispielTr": "Alt katımızdaki evli çiftin iki çocuğu var.",
-    "beispielEn": "The married couple below us has two children."
+    "beispiel": "Ein älteres Ehepaar hat uns nach dem Weg gefragt.",
+    "beispielTr": "Yaşlıca bir evli çift bize yol sordu.",
+    "beispielEn": "An older married couple asked us for directions."
   },
   {
     "id": 2789,
@@ -307,9 +307,9 @@
     "id": 2154,
     "tr": "yemekhane",
     "en": "cafeteria",
-    "beispiel": "In unserer Kantine kann man günstig essen.",
-    "beispielTr": "Yemekhanemizde ucuza yemek yenebiliyor.",
-    "beispielEn": "You can eat cheaply in our cafeteria."
+    "beispiel": "Mittags essen die meisten Kollegen in der Kantine.",
+    "beispielTr": "İş arkadaşlarının çoğu öğlenleri yemekhanede yiyor.",
+    "beispielEn": "At lunchtime, most of my coworkers eat in the cafeteria."
   },
   {
     "id": 2979,
@@ -323,9 +323,9 @@
     "id": 1579,
     "tr": "başvurmak",
     "en": "to apply",
-    "beispiel": "Ich habe mich um diese Stelle beworben.",
-    "beispielTr": "Bu pozisyona başvurdum.",
-    "beispielEn": "I applied for this position."
+    "beispiel": "Meine Schwester bewirbt sich an drei Universitäten.",
+    "beispielTr": "Kız kardeşim üç üniversiteye başvuruyor.",
+    "beispielEn": "My sister is applying to three universities."
   },
   {
     "id": 1435,
@@ -355,9 +355,9 @@
     "id": 1893,
     "tr": "flüt",
     "en": "flute",
-    "beispiel": "Sie spielt sehr schön Flöte.",
-    "beispielTr": "Çok güzel flüt çalıyor.",
-    "beispielEn": "She plays the flute beautifully."
+    "beispiel": "Mein Sohn übt jeden Abend auf seiner neuen Flöte.",
+    "beispielTr": "Oğlum her akşam yeni flütüyle çalışıyor.",
+    "beispielEn": "My son practices on his new flute every evening."
   },
   {
     "id": 2342,
@@ -371,9 +371,9 @@
     "id": 1919,
     "tr": "üşümek",
     "en": "to be cold",
-    "beispiel": "Wenn Sie frieren, mache ich das Fenster zu.",
-    "beispielTr": "Üşüyorsanız pencereyi kapatırım.",
-    "beispielEn": "If you're cold, I'll close the window."
+    "beispiel": "Ohne Handschuhe friere ich sofort an den Händen.",
+    "beispielTr": "Eldivensiz ellerim hemen üşüyor.",
+    "beispielEn": "Without gloves, my hands get cold right away."
   },
   {
     "id": 1977,
@@ -395,8 +395,8 @@
     "id": 3144,
     "tr": "kamp yapmak",
     "en": "to camp",
-    "beispiel": "Ich habe noch nie gezeltet.",
-    "beispielTr": "Daha hiç kamp yapmadım.",
-    "beispielEn": "I have never camped before."
+    "beispiel": "Im Sommer zelten wir gern direkt am Meer.",
+    "beispielTr": "Yazın deniz kenarında kamp yapmayı seviyoruz.",
+    "beispielEn": "In summer we like to camp right by the sea."
   }
 ]

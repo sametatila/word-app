@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "Notfallpläne",
    "currentTr": "acil durum planı",
-   "currentBeispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat.",
-   "currentBeispielTr": "Kimsenin prova etmediği bir acil durum planının pek faydası olmaz."
+   "currentBeispiel": "Die Schule hat ihren Notfallplan gestern zum ersten Mal geprobt.",
+   "currentBeispielTr": "Okul acil durum planını dün ilk kez prova etti."
   },
   {
    "id": 7404,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "atalet, değişime direnç",
-   "currentBeispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform.",
-   "currentBeispielTr": "Kurumların değişime direnci, ilan edilen her reformu yavaşlatıyor."
+   "currentBeispiel": "Das Beharrungsvermögen der Verwaltung hat unseren Antrag zwei Jahre aufgehalten.",
+   "currentBeispielTr": "İdarenin ataleti başvurumuzu iki yıl geciktirdi."
   },
   {
    "id": 7405,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "Erschütterungen",
    "currentTr": "sarsıntı, sarsılma",
-   "currentBeispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten.",
-   "currentBeispielTr": "Yatırımcı güveni ağır bir sarsıntı geçirdi."
+   "currentBeispiel": "Die Sprengung verursachte deutliche Erschütterungen in den Nachbarhäusern.",
+   "currentBeispielTr": "Patlatma, komşu evlerde belirgin sarsıntılara yol açtı."
   },
   {
    "id": 7406,
@@ -39,8 +39,8 @@
    "niveau": "C1",
    "formen": "Verwerfungen",
    "currentTr": "çarpıklık, kırılma, dengesizlik",
-   "currentBeispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen.",
-   "currentBeispielTr": "Ekonominin dönüşümü, bütün bölgelerde toplumsal kırılmalara yol açıyor."
+   "currentBeispiel": "Die Schließung des Werks löste tiefe soziale Verwerfungen aus.",
+   "currentBeispielTr": "Fabrikanın kapanması derin toplumsal çalkantılara yol açtı."
   },
   {
    "id": 7407,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "riskten kaçınma eğilimi",
-   "currentBeispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden.",
-   "currentBeispielTr": "Aşırı riskten kaçınma, kendisi ciddi bir riske dönüşebilir."
+   "currentBeispiel": "Aus Risikoscheu hat die Bank den Kredit am Ende abgelehnt.",
+   "currentBeispielTr": "Riskten kaçınma yüzünden banka krediyi sonunda reddetti."
   },
   {
    "id": 7408,
@@ -59,8 +59,8 @@
    "niveau": "C1",
    "formen": "Erwartungshaltungen",
    "currentTr": "beklenti, beklenti içinde olma",
-   "currentBeispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute.",
-   "currentBeispielTr": "Kamuoyunun beklentisi uzmanların tahminlerini etkiliyor."
+   "currentBeispiel": "Die Erwartungshaltung der Eltern setzt die Lehrerin stark unter Druck.",
+   "currentBeispielTr": "Velilerin beklentisi öğretmeni ciddi bir baskı altına sokuyor."
   },
   {
    "id": 7409,
@@ -69,8 +69,8 @@
    "niveau": "C1",
    "formen": "Leitbilder",
    "currentTr": "ideal model, yol gösterici ilke",
-   "currentBeispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk.",
-   "currentBeispielTr": "İnandırıcı bir ideal model olmadan her reform yarım kalır."
+   "currentBeispiel": "Die Stadt hat ihr Leitbild für die Verkehrswende endlich beschlossen.",
+   "currentBeispielTr": "Şehir, ulaşım dönüşümü için yol gösterici ilkesini nihayet kabul etti."
   },
   {
    "id": 7410,
@@ -89,8 +89,8 @@
    "niveau": "C1",
    "formen": "Langzeitfolgen",
    "currentTr": "uzun vadeli sonuç",
-   "currentBeispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig.",
-   "currentBeispielTr": "Bu müdahalenin uzun vadeli sonuçları hakkında şimdiye dek az şey biliniyor."
+   "currentBeispiel": "Über die Langzeitfolgen des Unfalls wissen die Ärzte noch wenig.",
+   "currentBeispielTr": "Kazanın uzun vadeli sonuçları hakkında doktorlar henüz az şey biliyor."
   },
   {
    "id": 7412,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "Vorkehrungen",
    "currentTr": "önlem, tedbir",
-   "currentBeispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen.",
-   "currentBeispielTr": "Belediye, olası kriz için kapsamlı önlemler aldı."
+   "currentBeispiel": "Vor dem Sturm hat die Gemeinde alle nötigen Vorkehrungen getroffen.",
+   "currentBeispielTr": "Fırtınadan önce belediye gerekli bütün önlemleri aldı."
   },
   {
    "id": 7413,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "Kurskorrekturen",
    "currentTr": "rota düzeltmesi, yön değişikliği",
-   "currentBeispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung.",
-   "currentBeispielTr": "Erken bir rota düzeltmesi, geç kalmış kurtarmadan daha ucuza gelirdi."
+   "currentBeispiel": "Nach den schlechten Zahlen war eine schnelle Kurskorrektur unvermeidlich.",
+   "currentBeispielTr": "Kötü rakamlardan sonra hızlı bir rota düzeltmesi kaçınılmazdı."
   },
   {
    "id": 7415,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "Erblasten",
    "currentTr": "geçmişten devralınan yük, miras kalan sorun",
-   "currentBeispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast.",
-   "currentBeispielTr": "Gelecek hükûmet ağır bir mali yükü devralıyor."
+   "currentBeispiel": "Die neue Regierung übernimmt eine schwere finanzielle Erblast.",
+   "currentBeispielTr": "Yeni hükûmet, geçmişten kalan ağır bir mali yükü devralıyor."
   },
   {
    "id": 7416,
@@ -139,8 +139,8 @@
    "niveau": "C1",
    "formen": "hat antizipiert",
    "currentTr": "önceden sezmek, öngörmek",
-   "currentBeispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen.",
-   "currentBeispielTr": "İyi planlama, direnci sonradan yakınmak yerine önceden sezer."
+   "currentBeispiel": "Der Verband hat die Kritik antizipiert und sofort reagiert.",
+   "currentBeispielTr": "Federasyon eleştiriyi önceden sezdi ve hemen tepki verdi."
   },
   {
    "id": 7417,
@@ -149,7 +149,7 @@
    "niveau": "C1",
    "formen": "hat ausgelotet",
    "currentTr": "yoklamak, sınırlarını araştırmak",
-   "currentBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind.",
+   "currentBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch durchsetzbar sind.",
    "currentBeispielTr": "Komisyon, hangi tedbirlerin siyaseten uygulanabilir olduğunu yokluyor."
   },
   {
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "hat durchgespielt",
    "currentTr": "baştan sona düşünmek, senaryolarını denemek",
-   "currentBeispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt.",
-   "currentBeispielTr": "Kriz masasında akla gelebilecek bütün seyirler birer kez denendi."
+   "currentBeispiel": "Im Krisenstab haben wir alle denkbaren Verläufe einmal durchgespielt.",
+   "currentBeispielTr": "Kriz masasında olası bütün gidişatları bir kez baştan sona denedik."
   },
   {
    "id": 7419,
@@ -179,8 +179,8 @@
    "niveau": "C1",
    "formen": "ist umgeschlagen",
    "currentTr": "birdenbire tersine dönmek, aniden değişmek",
-   "currentBeispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen.",
-   "currentBeispielTr": "Başlangıçtaki coşku hızla hayal kırıklığına dönüştü."
+   "currentBeispiel": "Die Stimmung im Saal ist nach der Rede umgeschlagen.",
+   "currentBeispielTr": "Salondaki hava konuşmadan sonra tersine döndü."
   },
   {
    "id": 7421,
@@ -189,8 +189,8 @@
    "niveau": "C1",
    "formen": "hat einkalkuliert",
    "currentTr": "hesaba katmak, göz önünde bulundurmak",
-   "currentBeispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert.",
-   "currentBeispielTr": "Bu zaman planında aksaklıklar şimdiden hesaba katılmış."
+   "currentBeispiel": "Verspätungen sind in unserem Zeitplan bereits einkalkuliert.",
+   "currentBeispielTr": "Gecikmeler zaman planımızda şimdiden hesaba katılmış."
   },
   {
    "id": 7422,
@@ -199,8 +199,8 @@
    "niveau": "C1",
    "formen": "hat herbeigeführt",
    "currentTr": "sağlamak, gerçekleştirmek, yol açmak",
-   "currentBeispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt.",
-   "currentBeispielTr": "Durum devrilmeden önce bir karara varılmalı.",
+   "currentBeispiel": "Der Beschluss hat einen Wandel in der ganzen Branche herbeigeführt.",
+   "currentBeispielTr": "Bu karar bütün sektörde bir değişime yol açtı.",
    "overlapping": [
     "bereitstellen (C1)"
    ]
@@ -212,8 +212,8 @@
    "niveau": "C1",
    "formen": "hat veranschlagt",
    "currentTr": "öngörmek, tahmini olarak belirlemek",
-   "currentBeispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht.",
-   "currentBeispielTr": "Dönüşüm için beş yıl öngörülmüş, gerçekçisi sekiz.",
+   "currentBeispiel": "Die Stadt hat für die Brücke zwölf Millionen Euro veranschlagt.",
+   "currentBeispielTr": "Şehir, köprü için on iki milyon avro öngördü.",
    "overlapping": [
     "prognostizieren (C1)"
    ]
@@ -235,8 +235,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kestirilemez, öngörülemez",
-   "currentBeispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite.",
-   "currentBeispielTr": "Bir çekilmenin kapsamı kestirilemez sonuçları olurdu."
+   "currentBeispiel": "Die Kosten des Umbaus sind derzeit noch unabsehbar.",
+   "currentBeispielTr": "Tadilatın maliyeti şu an için hâlâ kestirilemez."
   },
   {
    "id": 7426,
@@ -245,8 +245,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ileriyi gören, öngörülü",
-   "currentBeispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr.",
-   "currentBeispielTr": "Öngörülü davranmak bugün para götürür, yarın çok daha fazlasını kazandırır."
+   "currentBeispiel": "Wer vorausschauend fährt, bremst seltener und spart Sprit.",
+   "currentBeispielTr": "Öngörülü araç kullanan daha seyrek fren yapar ve yakıt tasarrufu sağlar."
   },
   {
    "id": 7427,
@@ -256,7 +256,7 @@
    "formen": "",
    "currentTr": "varsayımsal, farazi",
    "currentBeispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung.",
-   "currentBeispielTr": "Bu rakamlar tamamen varsayımsal, ölçümün yerini tutmaz."
+   "currentBeispielTr": "Bu rakamlar tamamen varsayımsal ve ölçümün yerini tutmaz."
   },
   {
    "id": 7428,
@@ -265,8 +265,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "sinsi, yavaş yavaş ilerleyen",
-   "currentBeispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf.",
-   "currentBeispielTr": "Güvenin sinsice aşınması ilk başta neredeyse fark edilmiyor."
+   "currentBeispiel": "Die schleichende Inflation frisst unsere Ersparnisse seit Jahren auf.",
+   "currentBeispielTr": "Sinsi enflasyon yıllardır birikimimizi yiyip bitiriyor."
   },
   {
    "id": 7429,
@@ -276,7 +276,7 @@
    "formen": "",
    "currentTr": "vahim, uğursuz sonuçlara yol açan",
    "currentBeispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll.",
-   "currentBeispielTr": "İlk haftalardaki tereddüt vahim sonuçlar doğurdu."
+   "currentBeispielTr": "İlk haftalardaki tereddüdün vahim olduğu sonradan ortaya çıktı."
   }
  ]
 }

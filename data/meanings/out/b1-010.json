@@ -3,9 +3,9 @@
   "id": 2010,
   "tr": "aynı anda",
   "en": "at the same time",
-  "beispiel": "Ich kann nicht alles gleichzeitig machen.",
-  "beispielTr": "Her şeyi aynı anda yapamam.",
-  "beispielEn": "I can't do everything at the same time."
+  "beispiel": "Die beiden Läufer kamen gleichzeitig ins Ziel.",
+  "beispielTr": "İki koşucu bitiş çizgisine aynı anda vardı.",
+  "beispielEn": "The two runners crossed the finish line at the same time."
  },
  {
   "id": 2097,
@@ -27,9 +27,9 @@
   "id": 2942,
   "tr": "desteklemek",
   "en": "to support",
-  "beispiel": "Sie unterstützen mich, wo sie nur können.",
-  "beispielTr": "Ellerinden geldiğince beni destekliyorlar.",
-  "beispielEn": "They support me wherever they can."
+  "beispiel": "Viele Nachbarn unterstützen das alte Ehepaar beim Einkaufen.",
+  "beispielTr": "Birçok komşu yaşlı çifte alışverişte destek oluyor.",
+  "beispielEn": "Many neighbors support the elderly couple with their shopping."
  },
  {
   "id": 2556,
@@ -59,9 +59,9 @@
   "id": 2101,
   "tr": "kulübe",
   "en": "hut",
-  "beispiel": "Wir übernachten in der Hütte auf dem Berg.",
-  "beispielTr": "Dağdaki kulübede geceleyeceğiz.",
-  "beispielEn": "We are spending the night in the hut on the mountain."
+  "beispiel": "Im Wald steht eine alte Hütte aus Stein.",
+  "beispielTr": "Ormanda taştan eski bir kulübe var.",
+  "beispielEn": "There's an old stone hut in the woods."
  },
  {
   "id": 2603,
@@ -91,17 +91,17 @@
   "id": 2023,
   "tr": "kurmak",
   "en": "to found",
-  "beispiel": "Frau Bauer hat eine eigene Firma gegründet.",
-  "beispielTr": "Bauer Hanım kendi şirketini kurdu.",
-  "beispielEn": "Ms. Bauer founded her own company."
+  "beispiel": "Vor zehn Jahren haben drei Freundinnen den Chor gegründet.",
+  "beispielTr": "Koroyu on yıl önce üç arkadaş kurdu.",
+  "beispielEn": "Three friends founded the choir ten years ago."
  },
  {
   "id": 2415,
   "tr": "meraklı",
   "en": "curious",
-  "beispiel": "Die Nachbarn sind ziemlich neugierig.",
-  "beispielTr": "Komşular epey meraklı.",
-  "beispielEn": "The neighbors are quite curious."
+  "beispiel": "Die Kinder waren neugierig auf das große Paket.",
+  "beispielTr": "Çocuklar büyük paketi çok merak ediyordu.",
+  "beispielEn": "The kids were curious about the big package."
  },
  {
   "id": 2286,
@@ -115,17 +115,17 @@
   "id": 1461,
   "tr": "birbirinden ayrı",
   "en": "apart",
-  "beispiel": "Wir wohnen nicht weit auseinander.",
-  "beispielTr": "Birbirimizden uzak oturmuyoruz.",
-  "beispielEn": "We don't live far apart."
+  "beispiel": "Die beiden Dörfer liegen fünf Kilometer auseinander.",
+  "beispielTr": "İki köy birbirinden beş kilometre uzakta.",
+  "beispielEn": "The two villages are five kilometers apart."
  },
  {
   "id": 1915,
   "tr": "yemek",
   "en": "to eat",
-  "beispiel": "Hat der Hund schon etwas zu fressen bekommen?",
-  "beispielTr": "Köpeğe yiyecek bir şey verildi mi?",
-  "beispielEn": "Has the dog had something to eat yet?"
+  "beispiel": "Unsere Katze frisst am liebsten Fisch.",
+  "beispielTr": "Kedimiz en çok balık yemeyi sever.",
+  "beispielEn": "Our cat likes eating fish best."
  },
  {
   "id": 2780,
@@ -139,17 +139,17 @@
   "id": 3040,
   "tr": "virüs",
   "en": "virus",
-  "beispiel": "Ich habe mal wieder einen Virus auf meinem Computer.",
-  "beispielTr": "Bilgisayarıma yine virüs bulaştı.",
-  "beispielEn": "I've got a virus on my computer again."
+  "beispiel": "Gegen diesen Virus gibt es noch kein Medikament.",
+  "beispielTr": "Bu virüse karşı henüz bir ilaç yok.",
+  "beispielEn": "There's no medicine against this virus yet."
  },
  {
   "id": 3004,
   "tr": "mantıklı",
   "en": "sensible",
-  "beispiel": "Das ist ein ganz vernünftiger Vorschlag.",
-  "beispielTr": "Bu gayet mantıklı bir öneri.",
-  "beispielEn": "That is a perfectly sensible suggestion."
+  "beispiel": "Bei diesem Sturm wäre es vernünftig, zu Hause zu bleiben.",
+  "beispielTr": "Bu fırtınada evde kalmak mantıklı olur.",
+  "beispielEn": "In this storm it would be sensible to stay home."
  },
  {
   "id": 2018,
@@ -171,9 +171,9 @@
   "id": 2360,
   "tr": "üye",
   "en": "member",
-  "beispiel": "Für Mitglieder ist der Eintritt zum Konzert gratis.",
-  "beispielTr": "Üyeler için konsere giriş ücretsiz.",
-  "beispielEn": "Admission to the concert is free for members."
+  "beispiel": "Seit drei Jahren ist Tom Mitglied im Schachclub.",
+  "beispielTr": "Tom üç yıldır satranç kulübünün üyesi.",
+  "beispielEn": "Tom has been a member of the chess club for three years."
  },
  {
   "id": 1864,
@@ -203,17 +203,17 @@
   "id": 2273,
   "tr": "lezzetli",
   "en": "delicious",
-  "beispiel": "Das Essen war sehr lecker.",
-  "beispielTr": "Yemek çok lezzetliydi.",
-  "beispielEn": "The food was really delicious."
+  "beispiel": "Die Suppe riecht so lecker, darf ich probieren?",
+  "beispielTr": "Çorba çok güzel kokuyor, tadına bakabilir miyim?",
+  "beispielEn": "The soup smells so delicious, can I have a taste?"
  },
  {
   "id": 2190,
   "tr": "klinik",
   "en": "clinic",
-  "beispiel": "Ich muss in die Klinik, um meinen kranken Onkel zu besuchen.",
-  "beispielTr": "Hasta amcamı ziyaret etmek için kliniğe gitmem gerekiyor.",
-  "beispielEn": "I have to go to the clinic to visit my sick uncle."
+  "beispiel": "Nach dem Unfall wurde sie in eine Klinik gebracht.",
+  "beispielTr": "Kazadan sonra bir kliniğe götürüldü.",
+  "beispielEn": "After the accident, she was taken to a clinic."
  },
  {
   "id": 1659,
@@ -227,17 +227,17 @@
   "id": 1507,
   "tr": "bulunmak",
   "en": "to be located",
-  "beispiel": "Das Bord-Bistro befindet sich in der Mitte des Zuges.",
-  "beispielTr": "Yemekli vagon trenin ortasında bulunuyor.",
-  "beispielEn": "The on-board bistro is in the middle of the train."
+  "beispiel": "Die Toiletten befinden sich im ersten Stock.",
+  "beispielTr": "Tuvaletler birinci katta bulunuyor.",
+  "beispielEn": "The restrooms are located on the second floor."
  },
  {
   "id": 1621,
   "tr": "vatandaş",
   "en": "citizen",
-  "beispiel": "EU-Bürgerinnen und Bürger können überall in Europa arbeiten.",
-  "beispielTr": "AB vatandaşları Avrupa'nın her yerinde çalışabilir.",
-  "beispielEn": "EU citizens can work anywhere in Europe."
+  "beispiel": "Viele Bürger haben gegen die neue Straße protestiert.",
+  "beispielTr": "Birçok vatandaş yeni yolu protesto etti.",
+  "beispielEn": "Many citizens protested against the new road."
  },
  {
   "id": 2041,
@@ -251,9 +251,9 @@
   "id": 2501,
   "tr": "siyaset",
   "en": "politics",
-  "beispiel": "Ich interessiere mich nicht für Politik.",
-  "beispielTr": "Siyasetle hiç ilgilenmiyorum.",
-  "beispielEn": "I'm not interested in politics."
+  "beispiel": "Beim Abendessen sprechen wir lieber nicht über Politik.",
+  "beispielTr": "Akşam yemeğinde siyaset konuşmasak daha iyi.",
+  "beispielEn": "We'd better not talk about politics at dinner."
  },
  {
   "id": 2132,
@@ -267,25 +267,25 @@
   "id": 2234,
   "tr": "ambulans",
   "en": "ambulance",
-  "beispiel": "Wir mussten sofort einen Krankenwagen rufen.",
-  "beispielTr": "Hemen bir ambulans çağırmak zorunda kaldık.",
-  "beispielEn": "We had to call an ambulance right away."
+  "beispiel": "Der Krankenwagen kam schon nach zehn Minuten.",
+  "beispielTr": "Ambulans daha on dakikada geldi.",
+  "beispielEn": "The ambulance arrived after just ten minutes."
  },
  {
   "id": 1761,
   "tr": "kaldırmak",
   "en": "to remove",
-  "beispiel": "Der Müll muss dringend entfernt werden.",
-  "beispielTr": "Çöpün acilen kaldırılması gerekiyor.",
-  "beispielEn": "The garbage needs to be removed urgently."
+  "beispiel": "Mit diesem Mittel kann man Flecken leicht entfernen.",
+  "beispielTr": "Bu ürünle lekeler kolayca çıkarılabiliyor.",
+  "beispielEn": "You can easily remove stains with this product."
  },
  {
   "id": 1790,
   "tr": "başarılı",
   "en": "successful",
-  "beispiel": "Mein Großvater war ein erfolgreicher Geschäftsmann.",
-  "beispielTr": "Büyükbabam başarılı bir iş adamıydı.",
-  "beispielEn": "My grandfather was a successful businessman."
+  "beispiel": "Nach einem erfolgreichen Jahr bekommt das Team einen Ausflug.",
+  "beispielTr": "Başarılı bir yılın ardından ekip bir geziye gidiyor.",
+  "beispielEn": "After a successful year, the team gets a trip."
  },
  {
   "id": 2285,
@@ -307,9 +307,9 @@
   "id": 2167,
   "tr": "satın alma",
   "en": "purchase",
-  "beispiel": "Der neue Esstisch war ein guter Kauf.",
-  "beispielTr": "Yeni yemek masası iyi bir alışveriş oldu.",
-  "beispielEn": "The new dining table was a good purchase."
+  "beispiel": "Vor dem Kauf eines Autos solltest du eine Probefahrt machen.",
+  "beispielTr": "Araba satın almadan önce bir deneme sürüşü yapmalısın.",
+  "beispielEn": "Before buying a car, you should take a test drive."
  },
  {
   "id": 3093,
@@ -323,9 +323,9 @@
   "id": 1753,
   "tr": "karşılamak",
   "en": "to welcome",
-  "beispiel": "Die Gäste wurden sehr herzlich empfangen.",
-  "beispielTr": "Konuklar çok içten karşılandı.",
-  "beispielEn": "The guests were welcomed very warmly."
+  "beispiel": "Am Flughafen hat uns die ganze Familie empfangen.",
+  "beispielTr": "Havalimanında bizi bütün aile karşıladı.",
+  "beispielEn": "The whole family welcomed us at the airport."
  },
  {
   "id": 3188,
@@ -347,25 +347,25 @@
   "id": 2090,
   "tr": "ahşap",
   "en": "wood",
-  "beispiel": "Möchten Sie ein Regal aus Holz oder aus Metall?",
-  "beispielTr": "Ahşap mı yoksa metal raf mı istersiniz?",
-  "beispielEn": "Would you like a shelf made of wood or metal?"
+  "beispiel": "Das Spielzeug ist ganz aus Holz.",
+  "beispielTr": "Oyuncak tamamen ahşap.",
+  "beispielEn": "The toy is made entirely of wood."
  },
  {
   "id": 2627,
   "tr": "boşanma",
   "en": "divorce",
-  "beispiel": "Wann war die Scheidung?",
-  "beispielTr": "Boşanma ne zamandı?",
-  "beispielEn": "When was the divorce?"
+  "beispiel": "Die Scheidung war für die Kinder nicht leicht.",
+  "beispielTr": "Boşanma çocuklar için kolay olmadı.",
+  "beispielEn": "The divorce wasn't easy for the children."
  },
  {
   "id": 1493,
   "tr": "sakal",
   "en": "beard",
-  "beispiel": "John trägt jetzt einen Bart.",
-  "beispielTr": "John artık sakallı.",
-  "beispielEn": "John has a beard now."
+  "beispiel": "Mein Vater hat sich im Urlaub einen Bart wachsen lassen.",
+  "beispielTr": "Babam tatilde sakal bıraktı.",
+  "beispielEn": "My dad grew a beard on vacation."
  },
  {
   "id": 1511,
@@ -379,9 +379,9 @@
   "id": 2715,
   "tr": "kadarıyla",
   "en": "as far as",
-  "beispiel": "Soviel ich weiß, hat dieses Restaurant heute Ruhetag.",
-  "beispielTr": "Bildiğim kadarıyla bu restoran bugün kapalı.",
-  "beispielEn": "As far as I know, this restaurant is closed today."
+  "beispiel": "Soviel ich gehört habe, zieht Anna nach Berlin.",
+  "beispielTr": "Duyduğum kadarıyla Anna Berlin'e taşınıyor.",
+  "beispielEn": "As far as I've heard, Anna is moving to Berlin."
  },
  {
   "id": 2777,

@@ -10,7 +10,7 @@
    "formen": "hat aufgebracht",
    "currentTr": "denkleştirmek, parayı bulmak",
    "currentBeispiel": "Die nötige Summe konnte die Familie nicht rechtzeitig aufbringen.",
-   "currentBeispielTr": "Aile gerekli meblağı zamanında denkleştiremedi.",
+   "currentBeispielTr": "Aile gerekli parayı zamanında denkleştiremedi.",
    "overlapping": [
     "angleichen (C1)"
    ]
@@ -49,8 +49,8 @@
    "niveau": "B2",
    "formen": "hat einbehalten",
    "currentTr": "kesmek, alıkoymak",
-   "currentBeispiel": "Der Arbeitgeber behält die Steuern direkt vom Lohn ein.",
-   "currentBeispielTr": "İşveren vergileri doğrudan maaştan kesiyor.",
+   "currentBeispiel": "Die Kaution darf der Vermieter nicht einfach einbehalten.",
+   "currentBeispielTr": "Ev sahibi depozitoyu öylece alıkoyamaz.",
    "overlapping": [
     "sich schneiden (B1)",
     "unterbrechen (B1)",
@@ -81,7 +81,7 @@
    "formen": "hat zurückgelegt",
    "currentTr": "kenara koymak, biriktirmek",
    "currentBeispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück.",
-   "currentBeispielTr": "Her ay acil durumlar için yüz euro kenara koyuyor."
+   "currentBeispielTr": "Her ay acil durumlar için yüz avro biriktiriyor."
   },
   {
    "id": 4499,
@@ -144,7 +144,7 @@
    "formen": "",
    "currentTr": "üç ayda bir, üç aylık",
    "currentBeispiel": "Der Beitrag kann monatlich oder vierteljährlich gezahlt werden.",
-   "currentBeispielTr": "Aidat aylık ya da üç aylık olarak ödenebilir."
+   "currentBeispielTr": "Aidat aylık ya da üç ayda bir ödenebilir."
   },
   {
    "id": 4504,
@@ -154,7 +154,7 @@
    "formen": "",
    "currentTr": "faizsiz",
    "currentBeispiel": "Der Betrieb gewährte ihr ein zinsloses Darlehen über zwei Jahre.",
-   "currentBeispielTr": "İşletme ona iki yıllık faizsiz bir kredi verdi."
+   "currentBeispielTr": "İşletme ona iki yıllığına faizsiz bir kredi verdi."
   },
   {
    "id": 4505,
@@ -164,7 +164,7 @@
    "formen": "",
    "currentTr": "karşılıksız, teminatsız",
    "currentBeispiel": "Ein ungedeckter Scheck kann teure Folgen für den Aussteller haben.",
-   "currentBeispielTr": "Karşılıksız çekin, düzenleyeni için pahalı sonuçları olabilir."
+   "currentBeispielTr": "Karşılıksız bir çekin, düzenleyeni için pahalı sonuçları olabilir."
   },
   {
    "id": 4506,
@@ -174,7 +174,7 @@
    "formen": "",
    "currentTr": "masraflı, pahalıya mal olan",
    "currentBeispiel": "Der Rechtsstreit erwies sich als überraschend kostspielig.",
-   "currentBeispielTr": "Hukuki mücadele beklenmedik ölçüde masraflı çıktı."
+   "currentBeispielTr": "Dava beklenmedik ölçüde masraflı çıktı."
   },
   {
    "id": 4507,
@@ -194,7 +194,7 @@
    "formen": "",
    "currentTr": "oransal, pay oranında",
    "currentBeispiel": "Die Heizkosten werden anteilig nach Wohnfläche auf alle umgelegt.",
-   "currentBeispielTr": "Isıtma giderleri konut alanına göre orantılı olarak herkese dağıtılıyor."
+   "currentBeispielTr": "Isıtma giderleri konut alanına göre orantılı olarak paylaştırılıyor."
   },
   {
    "id": 4509,
@@ -214,7 +214,7 @@
    "formen": "",
    "currentTr": "erken, vadesinden önce",
    "currentBeispiel": "Wer den Kredit vorzeitig ablöst, muss eine Entschädigung zahlen.",
-   "currentBeispielTr": "Krediyi vadesinden önce kapatan bir tazminat ödemek zorunda.",
+   "currentBeispielTr": "Krediyi vaktinden önce kapatanlar tazminat ödemek zorunda.",
    "overlapping": [
     "früh (A1)"
    ]
@@ -227,7 +227,7 @@
    "formen": "",
    "currentTr": "güven duygusu, huzur, sıcak yuva hissi",
    "currentBeispiel": "Kinder brauchen vor allem Geborgenheit in den ersten Lebensjahren.",
-   "currentBeispielTr": "Çocukların ilk yıllarda en çok ihtiyaç duyduğu şey güven duygusudur."
+   "currentBeispielTr": "Çocuklar ilk yıllarda en çok güven duygusuna ihtiyaç duyar."
   },
   {
    "id": 4512,
@@ -277,7 +277,7 @@
    "formen": "Selbstwertgefühle",
    "currentTr": "özsaygı, benlik saygısı",
    "currentBeispiel": "Ständige Kritik kann das Selbstwertgefühl eines Kindes zerstören.",
-   "currentBeispielTr": "Sürekli eleştiri bir çocuğun öz değer duygusunu yıkabilir."
+   "currentBeispielTr": "Sürekli eleştiri bir çocuğun özsaygısını yıkabilir."
   },
   {
    "id": 4517,
@@ -320,8 +320,8 @@
    "niveau": "B2",
    "formen": "Veranlagungen",
    "currentTr": "yatkınlık, doğuştan gelen özellik",
-   "currentBeispiel": "Ob Ängstlichkeit vererbt wird oder nicht, hängt auch von der Veranlagung ab.",
-   "currentBeispielTr": "Kaygılı olmanın kalıtsal olup olmadığı yatkınlıkla da ilgilidir."
+   "currentBeispiel": "Eine erbliche Veranlagung erhöht das Risiko für diese Krankheit.",
+   "currentBeispielTr": "Kalıtsal bir yatkınlık bu hastalık riskini artırıyor."
   },
   {
    "id": 4521,
@@ -355,7 +355,7 @@
    "formen": "Schuldgefühle",
    "currentTr": "suçluluk duygusu",
    "currentBeispiel": "Nach der Trennung plagten sie starke Schuldgefühle.",
-   "currentBeispielTr": "Ayrılıktan sonra onu güçlü suçluluk duyguları rahatsız etti."
+   "currentBeispielTr": "Ayrılıktan sonra güçlü suçluluk duyguları onu rahat bırakmadı."
   },
   {
    "id": 4524,
@@ -384,8 +384,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "aidiyet, mensubiyet",
-   "currentBeispiel": "Das Gefühl der Zugehörigkeit ist für die Integration entscheidend.",
-   "currentBeispielTr": "Aidiyet duygusu uyum sürecinde belirleyicidir."
+   "currentBeispiel": "Im Verein spürte sie zum ersten Mal echte Zugehörigkeit.",
+   "currentBeispielTr": "Dernekte ilk kez gerçek bir aidiyet hissetti."
   },
   {
    "id": 4527,
@@ -455,7 +455,7 @@
    "formen": "Erziehungsstile",
    "currentTr": "çocuk yetiştirme tarzı, terbiye anlayışı",
    "currentBeispiel": "Die Eltern streiten oft über den richtigen Erziehungsstil.",
-   "currentBeispielTr": "Anne baba sık sık doğru çocuk yetiştirme tarzı üzerine tartışıyor."
+   "currentBeispielTr": "Anne baba doğru çocuk yetiştirme tarzı konusunda sık sık tartışıyor."
   },
   {
    "id": 4534,
@@ -495,7 +495,7 @@
    "formen": "",
    "currentTr": "velayet",
    "currentBeispiel": "Nach der Scheidung stritten beide Eltern um das Sorgerecht.",
-   "currentBeispielTr": "Boşanmadan sonra iki taraf da velayet için mücadele etti."
+   "currentBeispielTr": "Boşanmadan sonra anne baba velayet için mücadele etti."
   },
   {
    "id": 4538,
@@ -505,7 +505,7 @@
    "formen": "",
    "currentTr": "nafaka, geçim masrafı",
    "currentBeispiel": "Der Vater zahlt monatlich Unterhalt für seine beiden Kinder.",
-   "currentBeispielTr": "Baba iki çocuğu için aylık nafaka ödüyor."
+   "currentBeispielTr": "Baba iki çocuğu için her ay nafaka ödüyor."
   },
   {
    "id": 4539,
@@ -545,7 +545,7 @@
    "formen": "",
    "currentTr": "aşırı yüklenme, altından kalkamama",
    "currentBeispiel": "Viele junge Eltern klagen über ständige Überforderung im Alltag.",
-   "currentBeispielTr": "Birçok genç ebeveyn günlük hayatta sürekli yükün altında ezildiğinden yakınıyor.",
+   "currentBeispielTr": "Birçok genç ebeveyn gündelik hayatın altından kalkamamaktan yakınıyor.",
    "overlapping": [
     "die Überlastung (B2)"
    ]

@@ -3,9 +3,9 @@
     "id": 1613,
     "tr": "küçük ekmek",
     "en": "Swiss word for bread roll",
-    "beispiel": "Ich hole schnell ein paar Brötli zum Frühstück.",
-    "beispielTr": "Kahvaltı için hemen birkaç küçük ekmek alıyorum.",
-    "beispielEn": "I'll quickly grab a few rolls for breakfast."
+    "beispiel": "Die Brötli vom Bäcker sind noch ganz warm.",
+    "beispielTr": "Fırından alınan küçük ekmekler hâlâ sıcacık.",
+    "beispielEn": "The rolls from the bakery are still warm."
   },
   {
     "id": 1628,
@@ -19,17 +19,17 @@
     "id": 1629,
     "tr": "kadın kuaför",
     "en": "Swiss word for female hairdresser",
-    "beispiel": "Meine Tochter möchte Coiffeuse werden.",
-    "beispielTr": "Kızım kuaför olmak istiyor.",
-    "beispielEn": "My daughter wants to become a hairdresser."
+    "beispiel": "Die Coiffeuse hat mir die Haare zu kurz geschnitten.",
+    "beispielTr": "Kuaför hanım saçımı fazla kısa kesti.",
+    "beispielEn": "The hairdresser cut my hair too short."
   },
   {
     "id": 1633,
     "tr": "zarf",
     "en": "envelope",
-    "beispiel": "Ich hätte gern 50 Couverts und Briefmarken dazu.",
-    "beispielTr": "50 zarf ve yanına da pul istiyorum.",
-    "beispielEn": "I'd like 50 envelopes and some stamps too."
+    "beispiel": "Leg das Geld für Oma einfach in ein Couvert.",
+    "beispielTr": "Babaannemin parasını bir zarfa koyuver.",
+    "beispielEn": "Just put the money for Grandma in an envelope."
   },
   {
     "id": 1668,
@@ -51,9 +51,9 @@
     "id": 1693,
     "tr": "sağlık kartı",
     "en": "health insurance card",
-    "beispiel": "Haben Sie Ihre e-card dabei?",
-    "beispielTr": "Sağlık kartınız yanınızda mı?",
-    "beispielEn": "Do you have your health insurance card with you?"
+    "beispiel": "Ohne e-card muss ich beim Arzt länger warten.",
+    "beispielTr": "Sağlık kartım olmadan doktorda daha uzun beklemem gerekiyor.",
+    "beispielEn": "Without my health insurance card, I have to wait longer at the doctor's."
   },
   {
     "id": 1694,
@@ -75,25 +75,25 @@
     "id": 1697,
     "tr": "köşeli",
     "en": "angular",
-    "beispiel": "Ich möchte einen eckigen Tisch, keinen runden.",
-    "beispielTr": "Yuvarlak değil, köşeli bir masa istiyorum.",
-    "beispielEn": "I want a square table, not a round one."
+    "beispiel": "Die Kinder zeichnen runde und eckige Formen.",
+    "beispielTr": "Çocuklar yuvarlak ve köşeli şekiller çiziyor.",
+    "beispielEn": "The children are drawing round and angular shapes."
   },
   {
     "id": 1702,
     "tr": "kendi",
     "en": "own",
-    "beispiel": "Fast jedes Kind hat hier ein eigenes Zimmer.",
-    "beispielTr": "Burada neredeyse her çocuğun kendi odası var.",
-    "beispielEn": "Almost every child here has their own room."
+    "beispiel": "Seit Mai hat Paul endlich eine eigene Wohnung.",
+    "beispielTr": "Paul'ün mayıstan beri nihayet kendi evi var.",
+    "beispielEn": "Since May, Paul has finally had his own apartment."
   },
   {
     "id": 1722,
     "tr": "tek tip",
     "en": "uniform",
-    "beispiel": "Die Schüler dieser Schule tragen einheitliche Kleidung.",
-    "beispielTr": "Bu okulun öğrencileri tek tip kıyafet giyiyor.",
-    "beispielEn": "The students at this school wear uniform clothing."
+    "beispiel": "Alle Fenster im Haus sollen einheitlich weiß sein.",
+    "beispielTr": "Evdeki bütün pencereler tek tip beyaz olmalı.",
+    "beispielEn": "All the windows in the house should be uniformly white."
   },
   {
     "id": 1740,
@@ -123,25 +123,25 @@
     "id": 1778,
     "tr": "ya ... ya da",
     "en": "either ... or",
-    "beispiel": "Nur einer kann gewinnen, entweder du oder ich.",
-    "beispielTr": "Yalnızca biri kazanabilir, ya sen ya ben.",
-    "beispielEn": "Only one can win, either you or me."
+    "beispiel": "Zum Abendessen gibt es entweder Nudeln oder Reis.",
+    "beispielTr": "Akşam yemeğinde ya makarna ya da pilav var.",
+    "beispielEn": "For dinner there's either pasta or rice."
   },
   {
     "id": 1782,
     "tr": "patates",
     "en": "Austrian word for potato",
-    "beispiel": "Kann ich bitte noch Erdäpfel bekommen?",
-    "beispielTr": "Biraz daha patates alabilir miyim?",
-    "beispielEn": "Could I have some more potatoes, please?"
+    "beispiel": "Zum Schnitzel gibt es bei uns immer Erdäpfel.",
+    "beispielTr": "Bizde şnitzelin yanında hep patates olur.",
+    "beispielEn": "At our house, schnitzel always comes with potatoes."
   },
   {
     "id": 1823,
     "tr": "ilk",
     "en": "first",
-    "beispiel": "Ich war zum ersten Mal allein im Urlaub.",
-    "beispielTr": "İlk kez tek başıma tatildeydim.",
-    "beispielEn": "I was on vacation alone for the first time."
+    "beispiel": "Das war mein erster Flug ohne meine Eltern.",
+    "beispielTr": "Bu, ailem olmadan ilk uçuşumdu.",
+    "beispielEn": "That was my first flight without my parents."
   },
   {
     "id": 1841,
@@ -155,9 +155,9 @@
     "id": 1856,
     "tr": "kıyma",
     "en": "minced meat",
-    "beispiel": "Geben Sie mir bitte ein Kilo Faschiertes.",
-    "beispielTr": "Bana bir kilo kıyma verin lütfen.",
-    "beispielEn": "Please give me a kilo of minced meat."
+    "beispiel": "Für die Laibchen brauche ich ein halbes Kilo Faschiertes.",
+    "beispielTr": "Köfteler için yarım kilo kıymaya ihtiyacım var.",
+    "beispielEn": "I need half a kilo of ground meat for the patties."
   },
   {
     "id": 1857,
@@ -179,9 +179,9 @@
     "id": 1861,
     "tr": "koltuk",
     "en": "Austrian and Swiss word for armchair",
-    "beispiel": "Ich hätte gern einen bequemen Fauteuil.",
-    "beispielTr": "Rahat bir koltuk istiyorum.",
-    "beispielEn": "I'd like a comfortable armchair."
+    "beispiel": "Opa sitzt abends gern im Fauteuil und liest Zeitung.",
+    "beispielTr": "Dedem akşamları koltukta oturup gazete okumayı sever.",
+    "beispielEn": "Grandpa likes to sit in the armchair in the evening and read the paper."
   },
   {
     "id": 1871,
@@ -195,17 +195,17 @@
     "id": 1873,
     "tr": "kesin olmak",
     "en": "to be settled",
-    "beispiel": "Der Termin steht seit Langem fest.",
-    "beispielTr": "Tarih uzun zamandır kesin.",
-    "beispielEn": "The date has been settled for a long time."
+    "beispiel": "Wer die Reise bezahlt, steht noch nicht fest.",
+    "beispielTr": "Yolculuğu kimin ödeyeceği henüz kesin değil.",
+    "beispielEn": "It isn't settled yet who's paying for the trip."
   },
   {
     "id": 1886,
     "tr": "kasap",
     "en": "Austrian word for butcher",
-    "beispiel": "Dieser Fleischhauer macht sehr gute Wurst.",
-    "beispielTr": "Bu kasap çok iyi sosis yapıyor.",
-    "beispielEn": "This butcher makes very good sausage."
+    "beispiel": "Am Samstag hole ich beim Fleischhauer ein Schnitzel.",
+    "beispielTr": "Cumartesi kasaptan bir şnitzel alacağım.",
+    "beispielEn": "On Saturday I'll pick up a schnitzel at the butcher's."
   },
   {
     "id": 1887,
@@ -219,41 +219,41 @@
     "id": 1905,
     "tr": "mesleki eğitim",
     "en": "further training",
-    "beispiel": "Die Fortbildung, die ich machen will, ist sehr teuer.",
-    "beispielTr": "Almak istediğim mesleki eğitim çok pahalı.",
-    "beispielEn": "The further training I want to do is very expensive."
+    "beispiel": "Nächsten Monat besucht unser Team eine Fortbildung zum Datenschutz.",
+    "beispielTr": "Ekibimiz gelecek ay veri koruma üzerine bir mesleki eğitime katılıyor.",
+    "beispielEn": "Next month our team is attending a training course on data protection."
   },
   {
     "id": 1913,
     "tr": "açık havada",
     "en": "outdoors",
-    "beispiel": "Wir wollen heute im Freien übernachten.",
-    "beispielTr": "Bu gece açık havada kalmak istiyoruz.",
-    "beispielEn": "We want to spend the night outdoors."
+    "beispiel": "Bei schönem Wetter essen wir im Freien.",
+    "beispielTr": "Hava güzel olunca açık havada yemek yiyoruz.",
+    "beispielEn": "When the weather's nice, we eat outdoors."
   },
   {
     "id": 1930,
     "tr": "ehliyet",
     "en": "Swiss word for driver's license",
-    "beispiel": "Hast du einen Führerausweis?",
-    "beispielTr": "Ehliyetin var mı?",
-    "beispielEn": "Do you have a driver's license?"
+    "beispiel": "Mit achtzehn hat Nico endlich den Führerausweis gemacht.",
+    "beispielTr": "Nico on sekiz yaşında nihayet ehliyetini aldı.",
+    "beispielEn": "Nico finally got his driver's license at eighteen."
   },
   {
     "id": 1935,
     "tr": "yaya bölgesi",
     "en": "pedestrian zone",
-    "beispiel": "Wir treffen uns in der Fußgängerzone.",
-    "beispielTr": "Yaya bölgesinde buluşuyoruz.",
-    "beispielEn": "We're meeting in the pedestrian zone."
+    "beispiel": "In der Fußgängerzone gibt es samstags einen kleinen Markt.",
+    "beispielTr": "Yaya bölgesinde cumartesileri küçük bir pazar kuruluyor.",
+    "beispielEn": "There's a small market in the pedestrian zone on Saturdays."
   },
   {
     "id": 1945,
     "tr": "lokanta",
     "en": "restaurant",
-    "beispiel": "Ich arbeite seit einem Monat in einer Gaststätte.",
-    "beispielTr": "Bir aydır bir lokantada çalışıyorum.",
-    "beispielEn": "I've been working at a restaurant for a month."
+    "beispiel": "Im Dorf gibt es nur noch eine Gaststätte.",
+    "beispielTr": "Köyde artık yalnızca bir lokanta kaldı.",
+    "beispielEn": "There's only one restaurant left in the village."
   },
   {
     "id": 1950,
@@ -267,33 +267,33 @@
     "id": 1960,
     "tr": "katlanmak",
     "en": "to put up with",
-    "beispiel": "So etwas würde ich mir nicht gefallen lassen.",
-    "beispielTr": "Ben olsam böyle bir şeye katlanmazdım.",
-    "beispielEn": "I wouldn't put up with something like that."
+    "beispiel": "Diesen Ton lasse ich mir von dir nicht gefallen!",
+    "beispielTr": "Bu ses tonuna senden katlanmam!",
+    "beispielEn": "I won't put up with that tone from you!"
   },
   {
     "id": 1969,
     "tr": "kaldırım",
     "en": "southern German word for sidewalk",
-    "beispiel": "Das Fahrradfahren auf dem Gehsteig ist nicht erlaubt.",
-    "beispielTr": "Kaldırımda bisiklet sürmek yasak.",
-    "beispielEn": "Riding a bike on the sidewalk is not allowed."
+    "beispiel": "Im Winter muss jeder Hausbesitzer den Gehsteig räumen.",
+    "beispielTr": "Kışın her ev sahibi kaldırımdaki karı temizlemek zorunda.",
+    "beispielEn": "In winter, every homeowner has to clear the sidewalk."
   },
   {
     "id": 1984,
     "tr": "bütün",
     "en": "entire",
-    "beispiel": "Ich habe meine gesamten Bücher verschenkt.",
-    "beispielTr": "Bütün kitaplarımı hediye ettim.",
-    "beispielEn": "I gave away all my books."
+    "beispiel": "Die gesamte Klasse hat den Test bestanden.",
+    "beispielTr": "Bütün sınıf sınavı geçti.",
+    "beispielEn": "The entire class passed the test."
   },
   {
     "id": 1990,
     "tr": "hız sınırı",
     "en": "speed limit",
-    "beispiel": "Bitte beachten Sie die Geschwindigkeitsbeschränkungen.",
-    "beispielTr": "Lütfen hız sınırlarına uyun.",
-    "beispielEn": "Please observe the speed limits."
+    "beispiel": "Auf dieser Autobahn gibt es keine Geschwindigkeitsbeschränkung.",
+    "beispielTr": "Bu otoyolda hız sınırı yok.",
+    "beispielEn": "There's no speed limit on this highway."
   },
   {
     "id": 2006,
@@ -307,17 +307,17 @@
     "id": 2020,
     "tr": "mangal yapmak",
     "en": "to grill in Swiss German",
-    "beispiel": "Heute wollen wir im Garten grillieren.",
-    "beispielTr": "Bugün bahçede mangal yapmak istiyoruz.",
-    "beispielEn": "Today we want to grill in the garden."
+    "beispiel": "Am Samstag grillieren wir mit den Nachbarn am See.",
+    "beispielTr": "Cumartesi komşularla gölün kenarında mangal yapıyoruz.",
+    "beispielEn": "On Saturday we're grilling with the neighbors by the lake."
   },
   {
     "id": 2022,
     "tr": "büyük",
     "en": "grand",
-    "beispiel": "Meine Großeltern wohnen auf dem Land.",
-    "beispielTr": "Büyükannemle büyükbabam köyde oturuyor.",
-    "beispielEn": "My grandparents live in the countryside."
+    "beispiel": "Am Wochenende besuchen wir unsere Großeltern auf dem Land.",
+    "beispielTr": "Hafta sonu köydeki büyükannemle büyükbabamı ziyaret ediyoruz.",
+    "beispielEn": "This weekend we're visiting our grandparents in the country."
   },
   {
     "id": 2030,
@@ -331,9 +331,9 @@
     "id": 2032,
     "tr": "dolu yağmak",
     "en": "to hail",
-    "beispiel": "Bei Gewitter kann es auch hageln.",
-    "beispielTr": "Fırtınada dolu da yağabilir.",
-    "beispielEn": "It can also hail during a thunderstorm."
+    "beispiel": "Gestern Abend hat es plötzlich stark gehagelt.",
+    "beispielTr": "Dün akşam aniden şiddetli dolu yağdı.",
+    "beispielEn": "Last night it suddenly hailed hard."
   },
   {
     "id": 2037,
@@ -347,17 +347,17 @@
     "id": 2039,
     "tr": "dayanıklı",
     "en": "long-lasting",
-    "beispiel": "Diese Tomaten sind mindestens zwei Wochen haltbar.",
-    "beispielTr": "Bu domatesler en az iki hafta dayanır.",
-    "beispielEn": "These tomatoes keep for at least two weeks."
+    "beispiel": "Die Schuhe waren teuer, aber sehr haltbar.",
+    "beispielTr": "Ayakkabılar pahalıydı ama çok dayanıklıydı.",
+    "beispielEn": "The shoes were expensive, but they lasted a long time."
   },
   {
     "id": 2061,
     "tr": "piliç",
     "en": "Austrian word for chicken",
-    "beispiel": "Zum Mittagessen gibt es Hendl mit Reis.",
-    "beispielTr": "Öğle yemeğinde pilavlı piliç var.",
-    "beispielEn": "For lunch there's chicken with rice."
+    "beispiel": "Auf dem Volksfest essen wir immer ein halbes Hendl.",
+    "beispielTr": "Panayırda hep yarım piliç yeriz.",
+    "beispielEn": "At the fair, we always eat half a chicken."
   },
   {
     "id": 2068,
@@ -379,9 +379,9 @@
     "id": 2075,
     "tr": "aşağı atmak",
     "en": "to throw down",
-    "beispiel": "Kannst du mir bitte den Schlüssel runterwerfen?",
-    "beispielTr": "Anahtarı bana aşağı atar mısın?",
-    "beispielEn": "Can you throw the key down to me?"
+    "beispiel": "Kannst du mir den Ball vom Dach runterwerfen?",
+    "beispielTr": "Topu damdan bana atabilir misin?",
+    "beispielEn": "Can you throw the ball down to me from the roof?"
   },
   {
     "id": 2093,

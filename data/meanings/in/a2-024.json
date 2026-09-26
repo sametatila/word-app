@@ -10,7 +10,7 @@
    "formen": "fällt, hat gefällt",
    "currentTr": "kesmek (ağaç), devirmek",
    "currentBeispiel": "Im Winter haben sie den kranken Baum gefällt.",
-   "currentBeispielTr": "Kışın hasta ağacı kestiler.",
+   "currentBeispielTr": "Kışın hasta ağacı devirdiler.",
    "overlapping": [
     "sich schneiden (B1)",
     "unterbrechen (B1)",
@@ -70,8 +70,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "canlı, yaşayan",
-   "currentBeispiel": "Abends ist die Innenstadt sehr lebendig.",
-   "currentBeispielTr": "Akşamları şehir merkezi çok canlı."
+   "currentBeispiel": "Der Fisch im Eimer ist noch lebendig.",
+   "currentBeispielTr": "Kovadaki balık hâlâ canlı."
   },
   {
    "id": 8145,
@@ -80,8 +80,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "serbest, izin verilen",
-   "currentBeispiel": "Hier ist das Parken nur eine Stunde erlaubt.",
-   "currentBeispielTr": "Burada park etmeye sadece bir saat izin var."
+   "currentBeispiel": "Hier ist Parken nur eine Stunde erlaubt.",
+   "currentBeispielTr": "Burada park etmek sadece bir saat serbest."
   },
   {
    "id": 8146,
@@ -91,7 +91,7 @@
    "formen": "",
    "currentTr": "uysal, evcil",
    "currentBeispiel": "Die Ziegen auf dem Bauernhof sind ganz zahm.",
-   "currentBeispielTr": "Çiftlikteki keçiler tamamen uysal."
+   "currentBeispielTr": "Çiftlikteki keçiler çok uysal."
   },
   {
    "id": 8147,
@@ -100,8 +100,8 @@
    "niveau": "A2",
    "formen": "",
    "currentTr": "şiddetli, sert",
-   "currentBeispiel": "Gestern hat es den ganzen Tag heftig geregnet.",
-   "currentBeispielTr": "Dün bütün gün şiddetli yağmur yağdı."
+   "currentBeispiel": "Gestern hatten wir einen heftigen Sturm.",
+   "currentBeispielTr": "Dün şiddetli bir fırtına vardı."
   },
   {
    "id": 8148,
@@ -121,7 +121,7 @@
    "formen": "",
    "currentTr": "hareketli, kalabalık",
    "currentBeispiel": "Die Straße vor dem Bahnhof ist immer belebt.",
-   "currentBeispielTr": "İstasyonun önündeki cadde her zaman hareketli.",
+   "currentBeispielTr": "İstasyonun önündeki cadde hep hareketli.",
    "overlapping": [
     "mobil (B1)",
     "lebhaft (A2)"
@@ -158,7 +158,7 @@
    "formen": "",
    "currentTr": "yenilebilir",
    "currentBeispiel": "Nicht jeder Pilz im Wald ist essbar.",
-   "currentBeispielTr": "Ormandaki her mantar yenilebilir değildir."
+   "currentBeispielTr": "Ormandaki her mantar yenilebilir değil."
   },
   {
    "id": 8153,
@@ -201,7 +201,7 @@
    "formen": "",
    "currentTr": "ürkek, çekingen",
    "currentBeispiel": "Rehe sind sehr scheu und laufen schnell weg.",
-   "currentBeispielTr": "Karacalar çok ürkektir ve hızla kaçarlar."
+   "currentBeispielTr": "Karacalar çok ürkektir ve hemen kaçar."
   },
   {
    "id": 8157,
@@ -211,7 +211,7 @@
    "formen": "",
    "currentTr": "kirlenmiş, kirli",
    "currentBeispiel": "Der Fluss ist an dieser Stelle stark verschmutzt.",
-   "currentBeispielTr": "Nehir bu noktada ağır şekilde kirlenmiş."
+   "currentBeispielTr": "Nehir bu noktada çok kirlenmiş."
   },
   {
    "id": 8158,
@@ -244,7 +244,7 @@
    "formen": "",
    "currentTr": "hakkı olan, yetkili",
    "currentBeispiel": "Nur Anwohner sind berechtigt, hier zu parken.",
-   "currentBeispielTr": "Sadece mahalle sakinleri burada park etmeye yetkilidir."
+   "currentBeispielTr": "Sadece mahalle sakinleri burada park etmeye yetkili."
   },
   {
    "id": 8161,
@@ -253,8 +253,8 @@
    "niveau": "A2",
    "formen": "glättet, hat geglättet",
    "currentTr": "düzeltmek, düzleştirmek",
-   "currentBeispiel": "Vor dem Essen glätte ich die Tischdecke mit der Hand.",
-   "currentBeispielTr": "Yemekten önce masa örtüsünü elimle düzeltiyorum.",
+   "currentBeispiel": "Vor dem Essen glätte ich die Tischdecke.",
+   "currentBeispielTr": "Yemekten önce masa örtüsünü düzleştiriyorum.",
    "overlapping": [
     "korrigieren (B1)",
     "nachbessern (B2)",
@@ -268,8 +268,8 @@
    "niveau": "A2",
    "formen": "staubt ab, hat abgestaubt",
    "currentTr": "tozunu almak",
-   "currentBeispiel": "Am Wochenende staube ich die Regale im Wohnzimmer ab.",
-   "currentBeispielTr": "Hafta sonu oturma odasındaki rafların tozunu alıyorum."
+   "currentBeispiel": "Am Samstag staube ich die Regale ab.",
+   "currentBeispielTr": "Cumartesi günü rafların tozunu alıyorum."
   },
   {
    "id": 8163,
@@ -278,8 +278,8 @@
    "niveau": "A2",
    "formen": "schrubbt, hat geschrubbt",
    "currentTr": "ovalamak, fırçalayarak temizlemek",
-   "currentBeispiel": "Ich schrubbe den Boden im Bad mit einer harten Bürste.",
-   "currentBeispielTr": "Banyodaki zemini sert bir fırçayla ovalıyorum."
+   "currentBeispiel": "Ich schrubbe den Boden im Bad mit einer Bürste.",
+   "currentBeispielTr": "Banyodaki zemini bir fırçayla ovalıyorum."
   },
   {
    "id": 8164,
@@ -288,8 +288,8 @@
    "niveau": "A2",
    "formen": "wischt auf, hat aufgewischt",
    "currentTr": "(dökülen şeyi) silmek, paspaslamak",
-   "currentBeispiel": "Das Kind hat Milch verschüttet, ich wische sie schnell auf.",
-   "currentBeispielTr": "Çocuk süt döktü, ben de hemen siliyorum.",
+   "currentBeispiel": "Nach dem Kochen wische ich den Boden auf.",
+   "currentBeispielTr": "Yemek yaptıktan sonra yeri paspaslıyorum.",
    "overlapping": [
     "löschen (B1)",
     "abwischen (A2)",
@@ -314,7 +314,7 @@
    "formen": "räumt aus, hat ausgeräumt",
    "currentTr": "boşaltmak, içindekileri çıkarmak",
    "currentBeispiel": "Nach dem Frühstück räume ich die Spülmaschine aus.",
-   "currentBeispielTr": "Kahvaltıdan sonra bulaşık makinesini boşaltıyorum.",
+   "currentBeispielTr": "Kahvaltıdan sonra bulaşık makinesinin içini boşaltıyorum.",
    "overlapping": [
     "räumen (B2)",
     "ausleeren (A2)",
@@ -358,8 +358,8 @@
    "niveau": "A2",
    "formen": "rührt um, hat umgerührt",
    "currentTr": "karıştırmak (kaşıkla, çorbayı)",
-   "currentBeispiel": "Ich rühre die Suppe mit einem Löffel langsam um.",
-   "currentBeispielTr": "Çorbayı bir kaşıkla yavaşça karıştırıyorum."
+   "currentBeispiel": "Ich rühre die Suppe mit einem Löffel um.",
+   "currentBeispielTr": "Çorbayı bir kaşıkla karıştırıyorum."
   },
   {
    "id": 8170,
@@ -368,8 +368,8 @@
    "niveau": "A2",
    "formen": "röstet, hat geröstet",
    "currentTr": "kızartmak (yağsız: ekmek, kahve), kavurmak",
-   "currentBeispiel": "Ich röste das Brot in der Pfanne, bis es braun ist.",
-   "currentBeispielTr": "Ekmeği tavada kahverengi olana kadar kızartıyorum."
+   "currentBeispiel": "Ich röste die Nüsse kurz in der Pfanne.",
+   "currentBeispielTr": "Fındıkları tavada kısa süre kavuruyorum."
   },
   {
    "id": 8171,
@@ -378,8 +378,8 @@
    "niveau": "A2",
    "formen": "isst auf, hat aufgegessen",
    "currentTr": "hepsini yemek, tabağını bitirmek",
-   "currentBeispiel": "Mein Sohn isst seinen Teller zum Glück immer ganz auf.",
-   "currentBeispielTr": "Oğlum neyse ki tabağını hep tamamen bitiriyor."
+   "currentBeispiel": "Mein Sohn isst seinen Teller immer ganz auf.",
+   "currentBeispielTr": "Oğlum tabağını hep tamamen bitiriyor."
   },
   {
    "id": 8172,
@@ -388,8 +388,8 @@
    "niveau": "A2",
    "formen": "hackt, hat gehackt",
    "currentTr": "doğramak, kıymak",
-   "currentBeispiel": "Für die Soße hacke ich die Zwiebeln ganz klein.",
-   "currentBeispielTr": "Sos için soğanları çok ince doğruyorum."
+   "currentBeispiel": "Für die Soße hacke ich die Zwiebeln klein.",
+   "currentBeispielTr": "Sos için soğanları ince doğruyorum."
   },
   {
    "id": 8173,
@@ -399,7 +399,7 @@
    "formen": "reibt, hat gerieben",
    "currentTr": "rendelemek, ovmak",
    "currentBeispiel": "Für die Nudeln reibe ich noch etwas Käse.",
-   "currentBeispielTr": "Makarna için biraz daha peynir rendeliyorum."
+   "currentBeispielTr": "Makarna için biraz peynir rendeliyorum."
   },
   {
    "id": 8174,
@@ -408,8 +408,8 @@
    "niveau": "A2",
    "formen": "knetet, hat geknetet",
    "currentTr": "yoğurmak",
-   "currentBeispiel": "Für das Brot knete ich den Teig mit den Händen.",
-   "currentBeispielTr": "Ekmek için hamuru ellerimle yoğuruyorum."
+   "currentBeispiel": "Für das Brot knete ich den Teig lange.",
+   "currentBeispielTr": "Ekmek için hamuru uzun uzun yoğuruyorum."
   },
   {
    "id": 8175,
@@ -431,8 +431,8 @@
    "niveau": "A2",
    "formen": "taut auf, hat aufgetaut",
    "currentTr": "buzunu çözmek, çözülmek",
-   "currentBeispiel": "Ich taue das Fleisch über Nacht im Kühlschrank auf.",
-   "currentBeispielTr": "Eti gece boyunca buzdolabında çözdürüyorum."
+   "currentBeispiel": "Ich taue das Fleisch im Kühlschrank auf.",
+   "currentBeispielTr": "Etin buzunu buzdolabında çözüyorum."
   },
   {
    "id": 8177,
@@ -441,8 +441,8 @@
    "niveau": "A2",
    "formen": "friert ein, hat eingefroren",
    "currentTr": "dondurmak, derin dondurucuya koymak",
-   "currentBeispiel": "Wir frieren das restliche Brot für später ein.",
-   "currentBeispielTr": "Kalan ekmeği sonrası için donduruyoruz."
+   "currentBeispiel": "Wir frieren das restliche Brot ein.",
+   "currentBeispielTr": "Kalan ekmeği donduruyoruz."
   },
   {
    "id": 8178,
@@ -451,8 +451,8 @@
    "niveau": "A2",
    "formen": "weicht ein, hat eingeweicht",
    "currentTr": "suda bekletmek, ıslatmak",
-   "currentBeispiel": "Die Bohnen weiche ich über Nacht in kaltem Wasser ein.",
-   "currentBeispielTr": "Fasulyeyi gece boyunca soğuk suda bekletiyorum."
+   "currentBeispiel": "Die Bohnen weiche ich über Nacht ein.",
+   "currentBeispielTr": "Fasulyeyi gece boyunca suda bekletiyorum."
   },
   {
    "id": 8179,
@@ -461,8 +461,8 @@
    "niveau": "A2",
    "formen": "setzt auf, hat aufgesetzt",
    "currentTr": "(su, kahve) ocağa koymak, takmak",
-   "currentBeispiel": "Ich setze schnell Wasser für den Tee auf.",
-   "currentBeispielTr": "Çay için hemen su koyuyorum."
+   "currentBeispiel": "Draußen setze ich immer eine Mütze auf.",
+   "currentBeispielTr": "Dışarıda hep bere takıyorum."
   },
   {
    "id": 8180,
@@ -471,8 +471,8 @@
    "niveau": "A2",
    "formen": "spült ab, hat abgespült",
    "currentTr": "bulaşık yıkamak, durulamak",
-   "currentBeispiel": "Nach dem Abendessen spüle ich das Geschirr von Hand ab.",
-   "currentBeispielTr": "Akşam yemeğinden sonra bulaşıkları elde yıkıyorum.",
+   "currentBeispiel": "Nach dem Essen spüle ich das Geschirr ab.",
+   "currentBeispielTr": "Yemekten sonra bulaşıkları yıkıyorum.",
    "overlapping": [
     "abwaschen (B1)"
    ]
@@ -510,8 +510,8 @@
    "niveau": "A2",
    "formen": "stopft, hat gestopft",
    "currentTr": "yamamak (çorap), tıkmak",
-   "currentBeispiel": "Meine Oma stopft die Löcher in meinen Socken.",
-   "currentBeispielTr": "Babaannem çoraplarımdaki delikleri yamıyor.",
+   "currentBeispiel": "Er stopft die Wäsche in den Koffer.",
+   "currentBeispielTr": "Çamaşırları bavula tıkıyor.",
    "overlapping": [
     "flicken (A2)"
    ]
@@ -523,8 +523,8 @@
    "niveau": "A2",
    "formen": "trinkt aus, hat ausgetrunken",
    "currentTr": "içip bitirmek",
-   "currentBeispiel": "Trink bitte deinen Kaffee aus, wir müssen gleich los.",
-   "currentBeispielTr": "Lütfen kahveni bitir, birazdan çıkmamız gerek."
+   "currentBeispiel": "Trink bitte deinen Kaffee aus, wir müssen los.",
+   "currentBeispielTr": "Lütfen kahveni bitir, hemen çıkmamız gerek."
   },
   {
    "id": 8185,
@@ -553,8 +553,8 @@
    "niveau": "A2",
    "formen": "ölt, hat geölt",
    "currentTr": "yağlamak",
-   "currentBeispiel": "Einmal im Jahr ölen wir die Türen in der Wohnung.",
-   "currentBeispielTr": "Yılda bir kez evdeki kapıları yağlıyoruz."
+   "currentBeispiel": "Einmal im Jahr ölen wir die Türen.",
+   "currentBeispielTr": "Yılda bir kez kapıları yağlıyoruz."
   },
   {
    "id": 8188,
@@ -563,8 +563,8 @@
    "niveau": "A2",
    "formen": "schmiert, hat geschmiert",
    "currentTr": "sürmek (tereyağı vb.), yağlamak",
-   "currentBeispiel": "Morgens schmiere ich Butter und Marmelade auf mein Brot.",
-   "currentBeispielTr": "Sabahları ekmeğime tereyağı ve reçel sürüyorum.",
+   "currentBeispiel": "Morgens schmiere ich Butter auf mein Brot.",
+   "currentBeispielTr": "Sabahları ekmeğime tereyağı sürüyorum.",
    "overlapping": [
     "dauern (A1)"
    ]

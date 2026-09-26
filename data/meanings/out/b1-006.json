@@ -35,17 +35,17 @@
   "id": 2431,
   "tr": "yararlanmak",
   "en": "to make use of",
-  "beispiel": "Ich möchte das schöne Wetter nutzen und spazieren gehen.",
-  "beispielTr": "Güzel havadan yararlanıp yürüyüşe çıkmak istiyorum.",
-  "beispielEn": "I want to make use of the nice weather and go for a walk."
+  "beispiel": "Viele Studenten nutzen die Bibliothek zum Lernen.",
+  "beispielTr": "Birçok öğrenci ders çalışmak için kütüphaneden yararlanıyor.",
+  "beispielEn": "Many students use the library to study."
  },
  {
   "id": 3131,
   "tr": "dilemek",
   "en": "to wish for",
-  "beispiel": "Was wünschst du dir zum Geburtstag?",
-  "beispielTr": "Doğum günün için ne istiyorsun?",
-  "beispielEn": "What do you wish for on your birthday?"
+  "beispiel": "Meine Tochter wünscht sich einen Hund zu Weihnachten.",
+  "beispielTr": "Kızım Noel için bir köpek istiyor.",
+  "beispielEn": "My daughter is wishing for a dog for Christmas."
  },
  {
   "id": 2961,
@@ -59,9 +59,9 @@
   "id": 2100,
   "tr": "şapka",
   "en": "hat",
-  "beispiel": "Sie sollten im Sommer nicht ohne Hut in die Sonne gehen.",
-  "beispielTr": "Yazın güneşe şapkasız çıkmamalısınız.",
-  "beispielEn": "You shouldn't go into the sun without a hat in summer."
+  "beispiel": "Opa trägt beim Spazierengehen immer einen grauen Hut.",
+  "beispielTr": "Dedem yürüyüşe çıkarken hep gri bir şapka takar.",
+  "beispielEn": "Grandpa always wears a gray hat when he goes for a walk."
  },
  {
   "id": 2258,
@@ -99,17 +99,17 @@
   "id": 2450,
   "tr": "ameliyat",
   "en": "surgery",
-  "beispiel": "Seit der Operation kann ich mein Knie kaum bewegen.",
-  "beispielTr": "Ameliyattan beri dizimi zor oynatıyorum.",
-  "beispielEn": "Since the surgery I can hardly move my knee."
+  "beispiel": "Vor der Operation darf man nichts essen.",
+  "beispielTr": "Ameliyattan önce hiçbir şey yenmez.",
+  "beispielEn": "You're not allowed to eat anything before surgery."
  },
  {
   "id": 1635,
   "tr": "çatı",
   "en": "roof",
-  "beispiel": "Wir müssen das Dach reparieren lassen.",
-  "beispielTr": "Çatıyı tamir ettirmemiz gerekiyor.",
-  "beispielEn": "We have to get the roof repaired."
+  "beispiel": "Auf dem Dach sitzen zwei Tauben in der Sonne.",
+  "beispielTr": "Çatıda iki güvercin güneşleniyor.",
+  "beispielEn": "Two pigeons are sitting in the sun on the roof."
  },
  {
   "id": 1897,
@@ -123,9 +123,9 @@
   "id": 1642,
   "tr": "minnettar",
   "en": "grateful",
-  "beispiel": "Ich bin Ihnen sehr dankbar für Ihre Hilfe.",
-  "beispielTr": "Yardımınız için size çok minnettarım.",
-  "beispielEn": "I am very grateful for your help."
+  "beispiel": "Nach der Operation war sie für jeden Besuch dankbar.",
+  "beispielTr": "Ameliyattan sonra her ziyarete minnettardı.",
+  "beispielEn": "After the operation, she was grateful for every visit."
  },
  {
   "id": 2386,
@@ -147,9 +147,9 @@
   "id": 1677,
   "tr": "oraya",
   "en": "there",
-  "beispiel": "Deine Tasche kannst du dorthin stellen.",
-  "beispielTr": "Çantanı oraya koyabilirsin.",
-  "beispielEn": "You can put your bag over there."
+  "beispiel": "Das Café am Hafen ist toll, wir gehen oft dorthin.",
+  "beispielTr": "Limandaki kafe harika, oraya sık gidiyoruz.",
+  "beispielEn": "The café by the harbor is great, and we go there a lot."
  },
  {
   "id": 2892,
@@ -179,9 +179,9 @@
   "id": 2589,
   "tr": "risk",
   "en": "risk",
-  "beispiel": "Das Risiko ist mir einfach zu hoch.",
-  "beispielTr": "Risk bana göre fazla yüksek.",
-  "beispielEn": "The risk is simply too high for me."
+  "beispiel": "Beim Klettern ohne Seil geht man ein großes Risiko ein.",
+  "beispielTr": "İpsiz tırmanışta büyük bir risk alırsın.",
+  "beispielEn": "Climbing without a rope means taking a big risk."
  },
  {
   "id": 2059,
@@ -235,9 +235,9 @@
   "id": 2077,
   "tr": "geride bırakmak",
   "en": "to leave behind",
-  "beispiel": "Möchten Sie eine Nachricht hinterlassen?",
-  "beispielTr": "Mesaj bırakmak ister misiniz?",
-  "beispielEn": "Would you like to leave a message?"
+  "beispiel": "Der Sturm hat im Garten ein großes Chaos hinterlassen.",
+  "beispielTr": "Fırtına bahçede büyük bir karmaşa bıraktı.",
+  "beispielEn": "The storm left a big mess in the garden."
  },
  {
   "id": 1997,
@@ -251,9 +251,9 @@
   "id": 2764,
   "tr": "taş",
   "en": "stone",
-  "beispiel": "Die Kinder werfen Steine ins Wasser.",
-  "beispielTr": "Çocuklar suya taş atıyor.",
-  "beispielEn": "The children are throwing stones into the water."
+  "beispiel": "Im Garten liegt ein großer Stein, den niemand bewegen kann.",
+  "beispielTr": "Bahçede kimsenin yerinden oynatamadığı büyük bir taş var.",
+  "beispielEn": "There's a big stone in the garden that nobody can move."
  },
  {
   "id": 1436,
@@ -299,9 +299,9 @@
   "id": 2254,
   "tr": "öpmek",
   "en": "to kiss",
-  "beispiel": "Er nahm sie in die Arme und küsste sie.",
-  "beispielTr": "Onu kollarına alıp öptü.",
-  "beispielEn": "He took her in his arms and kissed her."
+  "beispiel": "Zum Abschied küsst die Mutter ihr Kind auf die Stirn.",
+  "beispielTr": "Anne vedalaşırken çocuğunu alnından öpüyor.",
+  "beispielEn": "To say goodbye, the mother kisses her child on the forehead."
  },
  {
   "id": 2265,
@@ -371,9 +371,9 @@
   "id": 1847,
   "tr": "adil",
   "en": "fair",
-  "beispiel": "Ich finde, unsere Mannschaft hat sehr fair gespielt.",
-  "beispielTr": "Bence takımımız çok adil oynadı.",
-  "beispielEn": "I think our team played very fairly."
+  "beispiel": "Das finde ich nicht fair, du hast mehr bekommen!",
+  "beispielTr": "Bence bu adil değil, sen daha fazla aldın!",
+  "beispielEn": "I don't think that's fair, you got more!"
  },
  {
   "id": 2671,
@@ -395,8 +395,8 @@
   "id": 1371,
   "tr": "benzer",
   "en": "similar",
-  "beispiel": "Emilia ist in einer ganz ähnlichen Situation.",
-  "beispielTr": "Emilia çok benzer bir durumda.",
-  "beispielEn": "Emilia is in a very similar situation."
+  "beispiel": "Unsere Hobbys sind sehr ähnlich, deshalb verstehen wir uns gut.",
+  "beispielTr": "Hobilerimiz çok benzer, o yüzden iyi anlaşıyoruz.",
+  "beispielEn": "Our hobbies are very similar, so we get along well."
  }
 ]

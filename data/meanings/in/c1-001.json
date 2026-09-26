@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "yine de, buna rağmen",
    "currentBeispiel": "Es regnete stark, dennoch ging sie spazieren.",
-   "currentBeispielTr": "Şiddetli yağmura rağmen yürüyüşe çıktı.",
+   "currentBeispielTr": "Şiddetli yağmur yağıyordu, yine de yürüyüşe çıktı.",
    "overlapping": [
     "trotzdem (B1)",
     "gleichwohl (C1)",
@@ -25,8 +25,8 @@
    "niveau": "C1",
    "formen": "Anklagen",
    "currentTr": "suçlama, kamu davası",
-   "currentBeispiel": "Die Staatsanwaltschaft erhob Anklage wegen Untreue.",
-   "currentBeispielTr": "Savcılık, güveni kötüye kullanmaktan iddianame düzenledi.",
+   "currentBeispiel": "Die Staatsanwaltschaft erhob Anklage gegen den ehemaligen Bürgermeister.",
+   "currentBeispielTr": "Savcılık, eski belediye başkanı hakkında iddianame düzenledi.",
    "overlapping": [
     "der Vorwurf (B1)"
    ]
@@ -38,8 +38,8 @@
    "niveau": "C1",
    "formen": "Verfügungen",
    "currentTr": "emir, idari karar",
-   "currentBeispiel": "Die Verfügung des Amtes wurde umgehend vollzogen.",
-   "currentBeispielTr": "Dairenin kararı derhâl uygulandı."
+   "currentBeispiel": "Gegen die Verfügung des Amtes legte er Einspruch ein.",
+   "currentBeispielTr": "İdarenin talimatına karşı itiraz etti."
   },
   {
    "id": 3613,
@@ -48,8 +48,8 @@
    "niveau": "C1",
    "formen": "Tragödien",
    "currentTr": "trajedi",
-   "currentBeispiel": "Die griechische Tragödie behandelt das Schicksal des Menschen.",
-   "currentBeispielTr": "Antik Yunan trajedisi insanın kaderini işler."
+   "currentBeispiel": "Wir haben gestern Abend eine Tragödie von Sophokles gesehen.",
+   "currentBeispielTr": "Dün akşam Sofokles'in bir trajedisini izledik."
   },
   {
    "id": 3612,
@@ -58,8 +58,8 @@
    "niveau": "C1",
    "formen": "Dramen",
    "currentTr": "dram, tiyatro oyunu",
-   "currentBeispiel": "Das Drama thematisiert den inneren Konflikt des Protagonisten.",
-   "currentBeispielTr": "Oyun, başkahramanın iç çatışmasını konu alıyor."
+   "currentBeispiel": "In der elften Klasse lesen wir ein Drama von Schiller.",
+   "currentBeispielTr": "On birinci sınıfta Schiller'den bir dram okuyoruz."
   },
   {
    "id": 3535,
@@ -68,8 +68,8 @@
    "niveau": "C1",
    "formen": "Klagen",
    "currentTr": "dava",
-   "currentBeispiel": "Die Klage wurde vom Landgericht als unbegründet abgewiesen.",
-   "currentBeispielTr": "Dava, eyalet mahkemesince dayanaksız bulunarak reddedildi.",
+   "currentBeispiel": "Die Klage gegen den Vermieter hatte vor Gericht Erfolg.",
+   "currentBeispielTr": "Ev sahibine açılan dava mahkemede kazanıldı.",
    "overlapping": [
     "der Prozess (B1)",
     "das Verfahren (B2)"
@@ -82,8 +82,8 @@
    "niveau": "C1",
    "formen": "Strategien",
    "currentTr": "strateji",
-   "currentBeispiel": "Die Geschäftsführung hat eine neue Strategie entwickelt.",
-   "currentBeispielTr": "Yönetim yeni bir strateji geliştirdi."
+   "currentBeispiel": "Der Trainer änderte in der Halbzeit die Strategie.",
+   "currentBeispielTr": "Antrenör devre arasında stratejiyi değiştirdi."
   },
   {
    "id": 3547,
@@ -92,8 +92,8 @@
    "niveau": "C1",
    "formen": "Bestimmungen",
    "currentTr": "hüküm, düzenleme",
-   "currentBeispiel": "Die gesetzliche Bestimmung trat rückwirkend in Kraft.",
-   "currentBeispielTr": "Yasal düzenleme geriye dönük olarak yürürlüğe girdi."
+   "currentBeispiel": "Diese Bestimmung gilt nicht für Verträge aus dem Vorjahr.",
+   "currentBeispielTr": "Bu hüküm, geçen yılki sözleşmeler için geçerli değil."
   },
   {
    "id": 3474,
@@ -102,8 +102,8 @@
    "niveau": "C1",
    "formen": "Annahmen",
    "currentTr": "varsayım, kabul",
-   "currentBeispiel": "Die Annahme erwies sich im Nachhinein als falsch.",
-   "currentBeispielTr": "Varsayımın sonradan yanlış olduğu ortaya çıktı."
+   "currentBeispiel": "Seine Annahme, der Zug sei pünktlich, war leider falsch.",
+   "currentBeispielTr": "Trenin dakik olacağı varsayımı ne yazık ki yanlış çıktı."
   },
   {
    "id": 3536,
@@ -113,7 +113,7 @@
    "formen": "Berufungen",
    "currentTr": "istinaf",
    "currentBeispiel": "Der Anwalt legte gegen das Urteil Berufung ein.",
-   "currentBeispielTr": "Avukat karara karşı istinafa başvurdu."
+   "currentBeispielTr": "Avukat, karara karşı istinafa başvurdu."
   },
   {
    "id": 3523,
@@ -122,8 +122,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "asla, kesinlikle değil",
-   "currentBeispiel": "Die Ergebnisse sind keineswegs eindeutig zu interpretieren.",
-   "currentBeispielTr": "Sonuçlar kesinlikle tek bir biçimde yorumlanamaz.",
+   "currentBeispiel": "Das Essen war teuer, aber keineswegs gut.",
+   "currentBeispielTr": "Yemek pahalıydı ama hiç de iyi değildi.",
    "overlapping": [
     "nie (A1)",
     "mitnichten (C1)"
@@ -136,7 +136,7 @@
    "niveau": "C1",
    "formen": "Sackgassen",
    "currentTr": "çıkmaz",
-   "currentBeispiel": "Die Verhandlungen gerieten in eine Sackgasse.",
+   "currentBeispiel": "Die Verhandlungen sind in eine Sackgasse geraten.",
    "currentBeispielTr": "Müzakereler çıkmaza girdi."
   },
   {
@@ -146,8 +146,8 @@
    "niveau": "C1",
    "formen": "Verbände",
    "currentTr": "birlik, meslek örgütü",
-   "currentBeispiel": "Der Verband vertritt die Interessen der gesamten Branche.",
-   "currentBeispielTr": "Birlik, bütün sektörün çıkarlarını temsil ediyor."
+   "currentBeispiel": "Der Verband der Bäcker fordert niedrigere Energiepreise.",
+   "currentBeispielTr": "Fırıncılar birliği daha düşük enerji fiyatları istiyor."
   },
   {
    "id": 3730,
@@ -156,8 +156,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "eğer, şu şartla ki",
-   "currentBeispiel": "Sofern nichts dazwischenkommt, beginnt das Projekt pünktlich.",
-   "currentBeispielTr": "Araya bir şey girmezse proje zamanında başlayacak.",
+   "currentBeispiel": "Sofern es nicht regnet, grillen wir im Garten.",
+   "currentBeispielTr": "Şayet yağmur yağmazsa bahçede mangal yaparız.",
    "overlapping": [
     "wenn (A2)",
     "falls (B1)"
@@ -170,8 +170,8 @@
    "niveau": "C1",
    "formen": "Aufsichten",
    "currentTr": "denetim",
-   "currentBeispiel": "Die Aufsicht über die Banken liegt bei der Behörde.",
-   "currentBeispielTr": "Bankaların denetimi bu kuruma aittir."
+   "currentBeispiel": "Die Kinder dürfen nur unter Aufsicht ins Wasser.",
+   "currentBeispielTr": "Çocuklar suya ancak gözetim altında girebilir."
   },
   {
    "id": 3593,
@@ -180,8 +180,8 @@
    "niveau": "C1",
    "formen": "Ministerien",
    "currentTr": "bakanlık",
-   "currentBeispiel": "Das Ministerium erarbeitete einen umstrittenen neuen Gesetzentwurf.",
-   "currentBeispielTr": "Bakanlık, tartışmalı yeni bir kanun tasarısı hazırladı."
+   "currentBeispiel": "Das Ministerium hat den Antrag bereits genehmigt.",
+   "currentBeispielTr": "Bakanlık başvuruyu çoktan onayladı."
   },
   {
    "id": 3479,
@@ -190,8 +190,8 @@
    "niveau": "C1",
    "formen": "Perspektiven",
    "currentTr": "bakış açısı, perspektif",
-   "currentBeispiel": "Die Studie eröffnet eine neue Perspektive auf das Thema.",
-   "currentBeispielTr": "Çalışma konuya yeni bir bakış açısı getiriyor.",
+   "currentBeispiel": "Aus meiner Perspektive war die Kritik völlig berechtigt.",
+   "currentBeispielTr": "Benim bakış açımdan eleştiri tamamen haklıydı.",
    "overlapping": [
     "der Standpunkt (B1)",
     "der Blickwinkel (C1)",
@@ -205,8 +205,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "daha doğrusu, aksine",
-   "currentBeispiel": "Es geht nicht um Zustimmung, vielmehr um kritische Auseinandersetzung.",
-   "currentBeispielTr": "Mesele onaylamak değil; aksine, eleştirel biçimde tartışmak."
+   "currentBeispiel": "Er ist nicht faul, vielmehr völlig überfordert.",
+   "currentBeispielTr": "Tembel değil, aksine tamamen bunalmış durumda."
   },
   {
    "id": 3644,
@@ -215,8 +215,8 @@
    "niveau": "C1",
    "formen": "Mythen",
    "currentTr": "mit, efsane",
-   "currentBeispiel": "Der Mythos von Prometheus fasziniert bis heute die Menschheit.",
-   "currentBeispielTr": "Prometheus miti insanlığı bugün bile büyülüyor."
+   "currentBeispiel": "Der Mythos von Prometheus wird bis heute erzählt.",
+   "currentBeispielTr": "Prometheus efsanesi bugün hâlâ anlatılıyor."
   },
   {
    "id": 3594,
@@ -225,8 +225,8 @@
    "niveau": "C1",
    "formen": "Ausschüsse",
    "currentTr": "komisyon, kurul",
-   "currentBeispiel": "Der Ausschuss berät derzeit über den Gesetzesvorschlag.",
-   "currentBeispielTr": "Komisyon şu sıralar yasa önerisini görüşüyor.",
+   "currentBeispiel": "Der Ausschuss tagt am Dienstag im kleinen Sitzungssaal.",
+   "currentBeispielTr": "Komisyon salı günü küçük toplantı salonunda toplanıyor.",
    "overlapping": [
     "die Kommission (C1)",
     "die Provision (B2)"
@@ -239,7 +239,7 @@
    "niveau": "C1",
    "formen": "Kommissionen",
    "currentTr": "komisyon",
-   "currentBeispiel": "Die Kommission legte ihren Abschlussbericht dem Parlament vor.",
+   "currentBeispiel": "Die Kommission legte dem Parlament ihren Abschlussbericht vor.",
    "currentBeispielTr": "Komisyon nihai raporunu meclise sundu.",
    "overlapping": [
     "der Ausschuss (C1)",
@@ -253,8 +253,8 @@
    "niveau": "C1",
    "formen": "Komödien",
    "currentTr": "komedi",
-   "currentBeispiel": "Die Komödie entlarvt gesellschaftliche Missstände mit feinem Humor.",
-   "currentBeispielTr": "Komedi, toplumsal aksaklıkları ince bir mizahla gözler önüne seriyor."
+   "currentBeispiel": "Am Samstag läuft im Theater eine neue Komödie.",
+   "currentBeispielTr": "Cumartesi günü tiyatroda yeni bir komedi oynuyor."
   },
   {
    "id": 3709,
@@ -263,8 +263,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "görünüş, izlenim",
-   "currentBeispiel": "Allem Anschein nach wird das Projekt verschoben.",
-   "currentBeispielTr": "Görünüşe bakılırsa proje ertelenecek."
+   "currentBeispiel": "Allem Anschein nach hat er die Wohnung längst verkauft.",
+   "currentBeispielTr": "Görünüşe göre daireyi çoktan satmış."
   },
   {
    "id": 4044,
@@ -273,8 +273,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "bir bakıma, adeta",
-   "currentBeispiel": "Er ist gewissermaßen der geistige Gründer des Projekts.",
-   "currentBeispielTr": "O, bir bakıma projenin fikir babası."
+   "currentBeispiel": "Er ist gewissermaßen der Gründer dieses kleinen Vereins.",
+   "currentBeispielTr": "O, bir bakıma bu küçük derneğin kurucusu."
   },
   {
    "id": 3538,
@@ -283,8 +283,8 @@
    "niveau": "C1",
    "formen": "Beschlüsse",
    "currentTr": "karar (mahkeme, kurul)",
-   "currentBeispiel": "Der Beschluss des Gerichts ist sofort vollstreckbar.",
-   "currentBeispielTr": "Mahkemenin kararı derhâl icra edilebilir."
+   "currentBeispiel": "Der Vorstand fasste den Beschluss einstimmig.",
+   "currentBeispielTr": "Yönetim kurulu kararı oybirliğiyle aldı."
   },
   {
    "id": 3624,
@@ -293,8 +293,8 @@
    "niveau": "C1",
    "formen": "–",
    "currentTr": "Aydınlanma",
-   "currentBeispiel": "Die Aufklärung stellte die Vernunft über religiöse Autorität.",
-   "currentBeispielTr": "Aydınlanma, aklı dini otoritenin üzerine koydu."
+   "currentBeispiel": "Kant gilt als wichtigster Denker der Aufklärung.",
+   "currentBeispielTr": "Kant, Aydınlanma'nın en önemli düşünürü sayılır."
   },
   {
    "id": 3572,
@@ -303,8 +303,8 @@
    "niveau": "C1",
    "formen": "reicht ein, hat eingereicht",
    "currentTr": "sunmak, ibraz etmek",
-   "currentBeispiel": "Die Unterlagen sind vollständig und fristgerecht einzureichen.",
-   "currentBeispielTr": "Belgeler eksiksiz ve süresi içinde sunulmalıdır.",
+   "currentBeispiel": "Ich habe meinen Antrag gestern online eingereicht.",
+   "currentBeispielTr": "Başvurumu dün internet üzerinden sundum.",
    "overlapping": [
     "anbieten (A1)",
     "bieten (B1)",
@@ -321,8 +321,8 @@
    "niveau": "C1",
    "formen": "übermittelt, hat übermittelt",
    "currentTr": "iletmek",
-   "currentBeispiel": "Die Daten wurden elektronisch an das Amt übermittelt.",
-   "currentBeispielTr": "Veriler daireye elektronik ortamda iletildi.",
+   "currentBeispiel": "Die Klinik hat die Befunde an den Hausarzt übermittelt.",
+   "currentBeispielTr": "Klinik, tahlil sonuçlarını aile hekimine iletti.",
    "overlapping": [
     "ausrichten (B1)",
     "mitteilen (B1)",
@@ -336,8 +336,8 @@
    "niveau": "C1",
    "formen": "Gutachten",
    "currentTr": "bilirkişi raporu",
-   "currentBeispiel": "Das Gutachten bestätigte die Fahrlässigkeit des Angeklagten.",
-   "currentBeispielTr": "Bilirkişi raporu, sanığın ihmalini doğruladı."
+   "currentBeispiel": "Der Richter ordnete ein Gutachten zum Wert des Hauses an.",
+   "currentBeispielTr": "Hâkim, evin değeri için bilirkişi raporu istedi."
   },
   {
    "id": 3505,
@@ -346,8 +346,8 @@
    "niveau": "C1",
    "formen": "belegt, hat belegt",
    "currentTr": "kanıtlamak, belgelemek",
-   "currentBeispiel": "Die Ergebnisse belegen den vermuteten Zusammenhang eindeutig.",
-   "currentBeispielTr": "Sonuçlar, varsayılan bağlantıyı açıkça kanıtlıyor.",
+   "currentBeispiel": "Neue Zahlen belegen den Rückgang der Arbeitslosigkeit.",
+   "currentBeispielTr": "Yeni rakamlar işsizlikteki düşüşü kanıtlıyor.",
    "overlapping": [
     "beweisen (B1)"
    ]
@@ -359,8 +359,8 @@
    "niveau": "C1",
    "formen": "Sündenböcke",
    "currentTr": "günah keçisi",
-   "currentBeispiel": "Migranten dienen manchen Populisten als bequemer Sündenbock.",
-   "currentBeispielTr": "Göçmenler, bazı popülistler için kullanışlı bir günah keçisi."
+   "currentBeispiel": "Der Torwart wurde nach der Niederlage zum Sündenbock.",
+   "currentBeispielTr": "Kaleci, yenilginin ardından günah keçisi ilan edildi."
   },
   {
    "id": 4020,
@@ -369,8 +369,8 @@
    "niveau": "C1",
    "formen": "veranlasst, hat veranlasst",
    "currentTr": "-e sebep olmak, talimat vermek",
-   "currentBeispiel": "Der Vorfall veranlasste eine gründliche Untersuchung.",
-   "currentBeispielTr": "Olay, kapsamlı bir soruşturma başlatılmasına yol açtı."
+   "currentBeispiel": "Der Vorfall veranlasste eine gründliche Untersuchung des Betriebs.",
+   "currentBeispielTr": "Olay, işletmede kapsamlı bir soruşturmaya yol açtı."
   },
   {
    "id": 4032,
@@ -379,8 +379,8 @@
    "niveau": "C1",
    "formen": "vollzieht nach, hat nachvollzogen",
    "currentTr": "anlamak, izini sürmek",
-   "currentBeispiel": "Ich kann seine Entscheidung nur schwer nachvollziehen.",
-   "currentBeispielTr": "Kararını anlamakta epey zorlanıyorum.",
+   "currentBeispiel": "Ich kann seine Entscheidung wirklich nicht nachvollziehen.",
+   "currentBeispielTr": "Onun kararını gerçekten anlayamıyorum.",
    "overlapping": [
     "verstehen (A1)",
     "kapieren (A2)"
@@ -393,8 +393,8 @@
    "niveau": "C1",
    "formen": "Übernahmen",
    "currentTr": "devralma, satın alma",
-   "currentBeispiel": "Die feindliche Übernahme konnte in letzter Minute abgewehrt werden.",
-   "currentBeispielTr": "Düşmanca devralma girişimi son dakikada püskürtüldü."
+   "currentBeispiel": "Die Übernahme des Konkurrenten kostete das Unternehmen Millionen.",
+   "currentBeispielTr": "Rakip firmanın devralınması şirkete milyonlara mal oldu."
   },
   {
    "id": 3469,
@@ -403,8 +403,8 @@
    "niveau": "C1",
    "formen": "Widersprüche",
    "currentTr": "çelişki, itiraz",
-   "currentBeispiel": "Die Ergebnisse stehen im Widerspruch zur bisherigen Theorie.",
-   "currentBeispielTr": "Sonuçlar, bugüne kadarki teoriyle çelişiyor."
+   "currentBeispiel": "Seine Aussage steht im Widerspruch zum Bericht der Polizei.",
+   "currentBeispielTr": "İfadesi, polisin raporuyla çelişki içinde."
   },
   {
    "id": 4030,
@@ -413,8 +413,8 @@
    "niveau": "C1",
    "formen": "streitet ab, hat abgestritten",
    "currentTr": "inkar etmek, yadsımak",
-   "currentBeispiel": "Der Zeuge stritt jede Beteiligung entschieden ab.",
-   "currentBeispielTr": "Tanık, her türlü ilgisini kesin bir dille inkâr etti."
+   "currentBeispiel": "Der Fahrer hat jede Schuld an dem Unfall abgestritten.",
+   "currentBeispielTr": "Sürücü, kazadaki her türlü kusuru inkâr etti."
   },
   {
    "id": 4034,
@@ -423,8 +423,8 @@
    "niveau": "C1",
    "formen": "wendet ab, hat abgewendet",
    "currentTr": "önlemek, savuşturmak",
-   "currentBeispiel": "Die Regierung konnte die drohende Krise gerade noch abwenden.",
-   "currentBeispielTr": "Hükümet, yaklaşan krizi son anda önleyebildi.",
+   "currentBeispiel": "Die Feuerwehr konnte eine Katastrophe im letzten Moment abwenden.",
+   "currentBeispielTr": "İtfaiye, bir felaketi son anda önleyebildi.",
    "overlapping": [
     "verhindern (B1)",
     "vorbeugen (B2)"
@@ -437,8 +437,8 @@
    "niveau": "C1",
    "formen": "Institutionen",
    "currentTr": "kurum",
-   "currentBeispiel": "Die Institution genießt in der Bevölkerung nach wie vor hohes Vertrauen.",
-   "currentBeispielTr": "Kurum, halk nezdinde hâlâ yüksek bir güven görüyor."
+   "currentBeispiel": "Viele Bürger verlieren das Vertrauen in staatliche Institutionen.",
+   "currentBeispielTr": "Pek çok vatandaş devlet kurumlarına olan güvenini yitiriyor."
   },
   {
    "id": 3464,
@@ -447,8 +447,8 @@
    "niveau": "C1",
    "formen": "Schlussfolgerungen",
    "currentTr": "sonuç çıkarma, çıkarım",
-   "currentBeispiel": "Aus den Daten lässt sich keine eindeutige Schlussfolgerung ziehen.",
-   "currentBeispielTr": "Verilerden net bir çıkarım yapılamıyor."
+   "currentBeispiel": "Aus diesen Zahlen zog er eine voreilige Schlussfolgerung.",
+   "currentBeispielTr": "Bu rakamlardan aceleci bir çıkarım yaptı."
   },
   {
    "id": 3544,
@@ -457,8 +457,8 @@
    "niveau": "C1",
    "formen": "Vollmachten",
    "currentTr": "vekalet, vekaletname",
-   "currentBeispiel": "Er erteilte seinem Anwalt eine umfassende Vollmacht.",
-   "currentBeispielTr": "Avukatına geniş kapsamlı bir vekaletname verdi.",
+   "currentBeispiel": "Ohne Vollmacht darf die Bank kein Geld auszahlen.",
+   "currentBeispielTr": "Vekaletname olmadan banka para ödeyemez.",
    "overlapping": [
     "die Vertretung (B1)"
    ]
@@ -470,8 +470,8 @@
    "niveau": "C1",
    "formen": "Thesen",
    "currentTr": "tez, sav",
-   "currentBeispiel": "Der Autor vertritt in seiner Arbeit eine gewagte These.",
-   "currentBeispielTr": "Yazar, çalışmasında cesur bir tez savunuyor."
+   "currentBeispiel": "Der Autor verteidigt seine These mit vielen Beispielen.",
+   "currentBeispielTr": "Yazar, tezini birçok örnekle savunuyor."
   },
   {
    "id": 3670,
@@ -480,8 +480,8 @@
    "niveau": "C1",
    "formen": "erwägt, hat erwogen",
    "currentTr": "düşünmek, göz önünde bulundurmak",
-   "currentBeispiel": "Wir sollten erwägen, den Vertrag frühzeitig zu kündigen.",
-   "currentBeispielTr": "Sözleşmeyi erken feshetmeyi düşünmeliyiz.",
+   "currentBeispiel": "Wir erwägen, den Vertrag früher zu kündigen.",
+   "currentBeispielTr": "Sözleşmeyi daha erken feshetmeyi düşünüyoruz.",
    "overlapping": [
     "denken (A1)",
     "nachdenken (B1)",
@@ -495,8 +495,8 @@
    "niveau": "C1",
    "formen": "rekrutiert, hat rekrutiert",
    "currentTr": "işe almak",
-   "currentBeispiel": "Das Unternehmen rekrutiert verstärkt im Ausland.",
-   "currentBeispielTr": "Şirket ağırlıklı olarak yurt dışından eleman alıyor.",
+   "currentBeispiel": "Die Firma rekrutiert ihre Ingenieure vor allem im Ausland.",
+   "currentBeispielTr": "Şirket, mühendislerini ağırlıklı olarak yurt dışından işe alıyor.",
    "overlapping": [
     "einstellen (B1)"
    ]
@@ -508,8 +508,8 @@
    "niveau": "C1",
    "formen": "entlarvt, hat entlarvt",
    "currentTr": "maskesini düşürmek, ifşa etmek",
-   "currentBeispiel": "Die Recherche entlarvte das Unternehmen als Umweltsünder.",
-   "currentBeispielTr": "Araştırma, şirketin çevre düşmanı yüzünü ortaya çıkardı."
+   "currentBeispiel": "Ein Video entlarvte den Betrüger vor der ganzen Stadt.",
+   "currentBeispielTr": "Bir video, dolandırıcının maskesini bütün şehrin önünde düşürdü."
   },
   {
    "id": 3524,
@@ -518,8 +518,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "hele ki, özellikle de (çünkü)",
-   "currentBeispiel": "Die Studie überzeugt, zumal sie auf einer großen Stichprobe beruht.",
-   "currentBeispielTr": "Çalışma ikna edici, hele büyük bir örnekleme dayandığı düşünülürse."
+   "currentBeispiel": "Wir bleiben zu Hause, zumal es stark schneit.",
+   "currentBeispielTr": "Evde kalıyoruz, hele ki böyle kar yağarken."
   },
   {
    "id": 3707,
@@ -528,8 +528,8 @@
    "niveau": "C1",
    "formen": "Spielräume",
    "currentTr": "manevra alanı, esneklik",
-   "currentBeispiel": "Der Verhandlungsführer hat wenig finanziellen Spielraum.",
-   "currentBeispielTr": "Müzakereciye mali açıdan pek manevra alanı kalmıyor."
+   "currentBeispiel": "Beim Preis haben wir leider keinen Spielraum mehr.",
+   "currentBeispielTr": "Fiyat konusunda ne yazık ki manevra alanımız kalmadı."
   },
   {
    "id": 3623,
@@ -538,8 +538,8 @@
    "niveau": "C1",
    "formen": "Kontexte",
    "currentTr": "bağlam",
-   "currentBeispiel": "Ohne den historischen Kontext bleibt das Gedicht unverständlich.",
-   "currentBeispielTr": "Tarihsel bağlam olmadan bu şiir anlaşılmaz kalır.",
+   "currentBeispiel": "Du hast meinen Satz aus dem Kontext gerissen.",
+   "currentBeispielTr": "Cümlemi bağlamından kopardın.",
    "overlapping": [
     "der Sinnzusammenhang (C1)"
    ]
@@ -551,8 +551,8 @@
    "niveau": "C1",
    "formen": "gewährleistet, hat gewährleistet",
    "currentTr": "garanti etmek, güvence altına almak",
-   "currentBeispiel": "Der Staat muss die Sicherheit der Bürger gewährleisten.",
-   "currentBeispielTr": "Devlet, vatandaşların güvenliğini güvence altına almak zorunda.",
+   "currentBeispiel": "Zwei Notärzte gewährleisten die medizinische Versorgung beim Festival.",
+   "currentBeispielTr": "İki acil doktoru, festivalde tıbbi bakımı güvence altına alıyor.",
    "overlapping": [
     "garantieren (B1)"
    ]
@@ -564,8 +564,8 @@
    "niveau": "C1",
    "formen": "Anhaltspunkte",
    "currentTr": "ipucu, dayanak noktası",
-   "currentBeispiel": "Es gibt keinen Anhaltspunkt für diese Vermutung.",
-   "currentBeispielTr": "Bu tahmini destekleyecek hiçbir ipucu yok.",
+   "currentBeispiel": "Die Polizei fand keinen Anhaltspunkt für einen Einbruch.",
+   "currentBeispielTr": "Polis, hırsızlığa dair hiçbir ipucu bulamadı.",
    "overlapping": [
     "der Hinweis (B1)"
    ]
@@ -577,8 +577,8 @@
    "niveau": "C1",
    "formen": "hinterfragt, hat hinterfragt",
    "currentTr": "sorgulamak",
-   "currentBeispiel": "Man sollte etablierte Theorien immer wieder kritisch hinterfragen.",
-   "currentBeispielTr": "Yerleşik teoriler sürekli eleştirel biçimde sorgulanmalı.",
+   "currentBeispiel": "Warum hinterfragst du jede meiner Entscheidungen?",
+   "currentBeispielTr": "Neden her kararımı sorguluyorsun?",
    "overlapping": [
     "abrufen (B2)"
    ]

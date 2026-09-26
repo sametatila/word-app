@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "hat durchleuchtet",
    "currentTr": "didik didik incelemek, mercek altına almak",
-   "currentBeispiel": "Eine externe Kanzlei durchleuchtete sämtliche Beraterverträge der letzten Jahre.",
-   "currentBeispielTr": "Dışarıdan bir hukuk bürosu son yılların bütün danışmanlık sözleşmelerini mercek altına aldı."
+   "currentBeispiel": "Die Prüfer durchleuchteten alle Konten der Stiftung.",
+   "currentBeispielTr": "Denetçiler vakfın bütün hesaplarını mercek altına aldı."
   },
   {
    "id": 7354,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "hat geschädigt",
    "currentTr": "zarar vermek, zedelemek",
-   "currentBeispiel": "Der Skandal hat das Ansehen der ganzen Branche nachhaltig geschädigt.",
-   "currentBeispielTr": "Skandal, tüm sektörün itibarına kalıcı biçimde zarar verdi.",
+   "currentBeispiel": "Die Kartellabsprachen haben Tausende Kunden geschädigt.",
+   "currentBeispielTr": "Kartel anlaşmaları binlerce müşteriyi zarara uğrattı.",
    "overlapping": [
     "beschädigen (B1)",
     "schaden (B1)"
@@ -33,8 +33,8 @@
    "niveau": "C1",
    "formen": "hat gebilligt",
    "currentTr": "onaylamak, hoş görmek, uygun bulmak",
-   "currentBeispiel": "Der Aufsichtsrat billigte die fragwürdige Praxis über Jahre stillschweigend.",
-   "currentBeispielTr": "Denetim kurulu bu kuşkulu uygulamayı yıllarca sessizce onayladı.",
+   "currentBeispiel": "Die Mehrheit billigte den Vorschlag ohne große Debatte.",
+   "currentBeispielTr": "Çoğunluk öneriyi büyük bir tartışma olmadan uygun buldu.",
    "overlapping": [
     "bestätigen (A2)",
     "genehmigen (B1)",
@@ -50,8 +50,8 @@
    "niveau": "C1",
    "formen": "hat unterschlagen",
    "currentTr": "zimmetine geçirmek, gizlemek",
-   "currentBeispiel": "Der Kassenwart hat über Jahre erhebliche Summen unterschlagen.",
-   "currentBeispielTr": "Sayman yıllar boyunca hatırı sayılır tutarları zimmetine geçirdi."
+   "currentBeispiel": "Der Kassenwart hat über Jahre Spendengelder unterschlagen.",
+   "currentBeispielTr": "Sayman yıllar boyunca bağış paralarını zimmetine geçirdi."
   },
   {
    "id": 7357,
@@ -60,8 +60,8 @@
    "niveau": "C1",
    "formen": "hat vorgetäuscht",
    "currentTr": "-mış gibi göstermek, numara yapmak",
-   "currentBeispiel": "Mit geschönten Kennzahlen täuschte die Firma wirtschaftliche Stabilität vor.",
-   "currentBeispielTr": "Şirket, allanıp pullanmış rakamlarla ekonomik istikrar varmış gibi gösterdi."
+   "currentBeispiel": "Er täuschte eine Verletzung vor, um nicht zu spielen.",
+   "currentBeispielTr": "Oynamamak için sakatlık numarası yaptı."
   },
   {
    "id": 7358,
@@ -80,8 +80,8 @@
    "niveau": "C1",
    "formen": "hat auferlegt",
    "currentTr": "yüklemek, dayatmak, zorunlu kılmak",
-   "currentBeispiel": "Das Gericht erlegte dem Konzern umfangreiche Berichtspflichten auf.",
-   "currentBeispielTr": "Mahkeme, holdinge kapsamlı raporlama yükümlülükleri yükledi.",
+   "currentBeispiel": "Das Gericht erlegte ihm die Kosten des Verfahrens auf.",
+   "currentBeispielTr": "Mahkeme dava masraflarını ona yükledi.",
    "overlapping": [
     "hochladen (B1)",
     "verladen (B2)",
@@ -95,8 +95,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "dürüst, lekesiz, güvenilir",
-   "currentBeispiel": "Man hielt sie für eine integre und unbestechliche Vorgesetzte.",
-   "currentBeispielTr": "Onu dürüst ve rüşvete kapalı bir amir olarak görüyorlardı.",
+   "currentBeispiel": "Im ganzen Ministerium hält man sie für integer.",
+   "currentBeispielTr": "Bakanlığın tamamında onu dürüst biri sayıyorlar.",
    "overlapping": [
     "ehrlich (B1)",
     "anständig (A2)"
@@ -109,8 +109,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "haksız, dürüst olmayan",
-   "currentBeispiel": "Irreführende Umweltversprechen gelten als unlauterer Wettbewerb.",
-   "currentBeispielTr": "Yanıltıcı çevre vaatleri haksız rekabet sayılıyor."
+   "currentBeispiel": "Der Konkurrent klagte wegen unlauteren Wettbewerbs.",
+   "currentBeispielTr": "Rakip firma haksız rekabet nedeniyle dava açtı."
   },
   {
    "id": 7362,
@@ -119,8 +119,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "savunulabilir, kabul edilebilir",
-   "currentBeispiel": "Ethisch vertretbar ist diese Preisgestaltung auf Dauer nicht.",
-   "currentBeispielTr": "Bu fiyatlandırma uzun vadede etik olarak savunulabilir değil."
+   "currentBeispiel": "Sein Vorgehen war unter diesen Umständen durchaus vertretbar.",
+   "currentBeispielTr": "Bu koşullar altında yaptığı gayet savunulabilirdi."
   },
   {
    "id": 7363,
@@ -129,8 +129,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "etik, ahlaki",
-   "currentBeispiel": "Die Entscheidung wirft grundlegende ethische Fragen auf.",
-   "currentBeispielTr": "Bu karar temel etik sorular doğuruyor."
+   "currentBeispiel": "Der Betriebsrat hält die Überwachung für ethisch bedenklich.",
+   "currentBeispielTr": "İşçi temsilciliği bu gözetimi etik açıdan sakıncalı buluyor."
   },
   {
    "id": 7364,
@@ -152,8 +152,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iyi niyetli, saf",
-   "currentBeispiel": "Viele Anleger vertrauten gutgläubig auf die testierten Zahlen.",
-   "currentBeispielTr": "Birçok yatırımcı iyi niyetle onaylanmış rakamlara güvendi.",
+   "currentBeispiel": "Viele Anleger vertrauten gutgläubig auf die geprüften Zahlen.",
+   "currentBeispielTr": "Birçok yatırımcı iyi niyetle denetlenmiş rakamlara güvendi.",
    "overlapping": [
     "wohlwollend (C1)"
    ]
@@ -165,8 +165,8 @@
    "niveau": "C1",
    "formen": "Genauigkeiten",
    "currentTr": "kesinlik, hassasiyet, doğruluk",
-   "currentBeispiel": "Die Genauigkeit der Messgeräte begrenzt die möglichen Schlüsse.",
-   "currentBeispielTr": "Ölçüm cihazlarının hassasiyeti çıkarılabilecek sonuçları sınırlıyor."
+   "currentBeispiel": "Die Genauigkeit der Messung hängt vom Gerät ab.",
+   "currentBeispielTr": "Ölçümün kesinliği kullanılan cihaza bağlı."
   },
   {
    "id": 7367,
@@ -175,8 +175,8 @@
    "niveau": "C1",
    "formen": "Näherungen",
    "currentTr": "yaklaşım, yaklaşık değer",
-   "currentBeispiel": "Das Modell liefert nur eine grobe Näherung an die Wirklichkeit.",
-   "currentBeispielTr": "Model gerçekliğe yalnızca kaba bir yaklaşıklık sunuyor.",
+   "currentBeispiel": "Das Modell liefert nur eine grobe Näherung.",
+   "currentBeispielTr": "Model yalnızca kaba bir yaklaşık değer veriyor.",
    "overlapping": [
     "die Herangehensweise (C1)"
    ]
@@ -188,8 +188,8 @@
    "niveau": "C1",
    "formen": "Beweisführungen",
    "currentTr": "kanıtlama, ispat yöntemi",
-   "currentBeispiel": "Seine Beweisführung wirkt elegant, hält der Prüfung aber nicht stand.",
-   "currentBeispielTr": "Kanıtlaması zarif görünüyor ama incelemeye dayanmıyor."
+   "currentBeispiel": "Seine Beweisführung überzeugte die Gutachter nicht.",
+   "currentBeispielTr": "Kanıtlaması hakemleri ikna etmedi."
   },
   {
    "id": 7369,
@@ -198,8 +198,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tekrarlanabilirlik",
-   "currentBeispiel": "Die Wiederholbarkeit von Experimenten gilt als Kern wissenschaftlicher Arbeit.",
-   "currentBeispielTr": "Deneylerin tekrarlanabilirliği bilimsel çalışmanın özü sayılır."
+   "currentBeispiel": "Die Wiederholbarkeit des Versuchs konnte niemand belegen.",
+   "currentBeispielTr": "Deneyin tekrarlanabilirliğini kimse gösteremedi."
   },
   {
    "id": 7370,
@@ -208,8 +208,8 @@
    "niveau": "C1",
    "formen": "Fehlerquellen",
    "currentTr": "hata kaynağı",
-   "currentBeispiel": "Mögliche Fehlerquellen werden im letzten Abschnitt offen benannt.",
-   "currentBeispielTr": "Olası hata kaynakları son bölümde açıkça sıralanıyor."
+   "currentBeispiel": "Die größte Fehlerquelle war die ungenaue Zeitmessung.",
+   "currentBeispielTr": "En büyük hata kaynağı kesin olmayan zaman ölçümüydü."
   },
   {
    "id": 7371,
@@ -218,8 +218,8 @@
    "niveau": "C1",
    "formen": "Sichtweisen",
    "currentTr": "bakış açısı, görüş",
-   "currentBeispiel": "Seine Sichtweise setzte sich erst Jahrzehnte später durch.",
-   "currentBeispielTr": "Onun bakış açısı ancak onlarca yıl sonra kabul gördü.",
+   "currentBeispiel": "Nach ein paar Jahren änderte sich seine Sichtweise.",
+   "currentBeispielTr": "Birkaç yıl sonra bakış açısı değişti.",
    "overlapping": [
     "der Standpunkt (B1)",
     "die Perspektive (C1)",
@@ -233,8 +233,8 @@
    "niveau": "C1",
    "formen": "Denkschulen",
    "currentTr": "düşünce okulu, ekol",
-   "currentBeispiel": "Beide Denkschulen streiten seit Langem über denselben Grundbegriff.",
-   "currentBeispielTr": "İki düşünce okulu uzun zamandır aynı temel kavram üzerinde tartışıyor."
+   "currentBeispiel": "Beide Denkschulen berufen sich auf denselben Klassiker.",
+   "currentBeispielTr": "Her iki düşünce okulu da aynı klasik esere dayanıyor."
   },
   {
    "id": 7373,
@@ -243,8 +243,8 @@
    "niveau": "C1",
    "formen": "Anwendungsbezüge",
    "currentTr": "uygulamayla bağ, pratiğe dönüklük",
-   "currentBeispiel": "Dem Projekt fehlt bislang jeder erkennbare Anwendungsbezug.",
-   "currentBeispielTr": "Projenin şimdiye dek uygulamayla görünür bir bağı yok.",
+   "currentBeispiel": "Der Arbeit fehlt bislang jeder erkennbare Anwendungsbezug.",
+   "currentBeispielTr": "Çalışmanın şimdiye dek uygulamayla görünür bir bağlantısı yok.",
    "overlapping": [
     "der Praxisbezug (B2)"
    ]
@@ -257,7 +257,7 @@
    "formen": "Erkenntnisgewinne",
    "currentTr": "bilgi kazanımı, yeni bilgi",
    "currentBeispiel": "Der Erkenntnisgewinn rechtfertigt den enormen Aufwand kaum.",
-   "currentBeispielTr": "Elde edilen bilgi kazanımı bu muazzam emeği pek karşılamıyor."
+   "currentBeispielTr": "Elde edilen bilgi kazanımı bu büyük emeği pek karşılamıyor."
   },
   {
    "id": 7375,
@@ -266,8 +266,8 @@
    "niveau": "C1",
    "formen": "Aufsätze",
    "currentTr": "makale, deneme",
-   "currentBeispiel": "Ihr Aufsatz gilt inzwischen als Standardtext des Fachs.",
-   "currentBeispielTr": "Makalesi artık alanın temel metinlerinden sayılıyor.",
+   "currentBeispiel": "Ihr Aufsatz erschien in einer angesehenen Fachzeitschrift.",
+   "currentBeispielTr": "Makalesi saygın bir uzmanlık dergisinde yayımlandı.",
    "overlapping": [
     "der Artikel (A1)"
    ]
@@ -279,8 +279,8 @@
    "niveau": "C1",
    "formen": "Literaturverzeichnisse",
    "currentTr": "kaynakça",
-   "currentBeispiel": "Das Literaturverzeichnis umfasst über dreihundert einzelne Titel.",
-   "currentBeispielTr": "Kaynakça üç yüzden fazla ayrı eser içeriyor."
+   "currentBeispiel": "Im Literaturverzeichnis fehlen mehrere zitierte Werke.",
+   "currentBeispielTr": "Kaynakçada alıntılanan birkaç eser eksik."
   },
   {
    "id": 7377,
@@ -289,8 +289,8 @@
    "niveau": "C1",
    "formen": "Begutachtungen",
    "currentTr": "değerlendirme, hakem incelemesi",
-   "currentBeispiel": "Die anonyme Begutachtung durch Fachleute dauerte mehrere Monate.",
-   "currentBeispielTr": "Uzmanlarca yapılan anonim değerlendirme birkaç ay sürdü.",
+   "currentBeispiel": "Die Begutachtung des Schadens dauerte mehrere Wochen.",
+   "currentBeispielTr": "Hasarın bilirkişi incelemesi haftalarca sürdü.",
    "overlapping": [
     "die Auswertung (C1)",
     "die Einschätzung (B2)",
@@ -306,8 +306,8 @@
    "niveau": "C1",
    "formen": "Fachkollegen",
    "currentTr": "meslektaş, alandan meslektaş",
-   "currentBeispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in einem eigenen Versuch.",
-   "currentBeispielTr": "İki meslektaş sonuçları kendi deneyleriyle doğruladı."
+   "currentBeispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in eigenen Versuchen.",
+   "currentBeispielTr": "İki meslektaş sonuçları kendi deneylerinde doğruladı."
   },
   {
    "id": 7379,
@@ -317,7 +317,7 @@
    "formen": "Fachgebiete",
    "currentTr": "uzmanlık alanı, disiplin",
    "currentBeispiel": "In ihrem Fachgebiet gilt sie als führende Stimme.",
-   "currentBeispielTr": "Kendi uzmanlık alanında öncü bir ses sayılıyor."
+   "currentBeispielTr": "Kendi uzmanlık alanında öncü bir isim sayılıyor."
   },
   {
    "id": 7380,
@@ -326,8 +326,8 @@
    "niveau": "C1",
    "formen": "Antragstellungen",
    "currentTr": "başvuru yapma, başvuru süreci",
-   "currentBeispiel": "Die Antragstellung kostet oft mehr Zeit als die eigentliche Arbeit.",
-   "currentBeispielTr": "Başvuru süreci çoğu zaman asıl işten daha çok vakit alıyor."
+   "currentBeispiel": "Die Antragstellung kostet mehr Zeit als die Forschung selbst.",
+   "currentBeispielTr": "Başvuru yapmak asıl araştırmadan daha çok vakit alıyor."
   },
   {
    "id": 7381,
@@ -336,8 +336,8 @@
    "niveau": "C1",
    "formen": "Tagungen",
    "currentTr": "konferans, bilimsel toplantı",
-   "currentBeispiel": "Auf der Tagung stellte sie erste vorläufige Ergebnisse vor.",
-   "currentBeispielTr": "Konferansta ilk geçici sonuçlarını sundu.",
+   "currentBeispiel": "Auf der Tagung hielt sie den Eröffnungsvortrag.",
+   "currentBeispielTr": "Bilimsel toplantıda açılış konuşmasını o yaptı.",
    "overlapping": [
     "die Konferenz (B1)"
    ]
@@ -349,8 +349,8 @@
    "niveau": "C1",
    "formen": "Fachdebatten",
    "currentTr": "alan içi tartışma, uzmanlık tartışması",
-   "currentBeispiel": "Die Fachdebatte über diesen Begriff dauert nun schon Jahrzehnte.",
-   "currentBeispielTr": "Bu kavram üzerine alan içi tartışma onlarca yıldır sürüyor."
+   "currentBeispiel": "Die Fachdebatte über den Mindestlohn wird immer schärfer.",
+   "currentBeispielTr": "Asgari ücret üzerine alan içi tartışma giderek sertleşiyor."
   },
   {
    "id": 7383,
@@ -369,8 +369,8 @@
    "niveau": "C1",
    "formen": "Lehrmeinungen",
    "currentTr": "yerleşik görüş, hâkim öğreti",
-   "currentBeispiel": "Die herrschende Lehrmeinung geriet durch neue Funde ins Wanken.",
-   "currentBeispielTr": "Hâkim görüş yeni buluntularla sarsıldı."
+   "currentBeispiel": "Diese Lehrmeinung hält sich in den Lehrbüchern hartnäckig.",
+   "currentBeispielTr": "Bu yerleşik görüş ders kitaplarında inatla varlığını sürdürüyor."
   },
   {
    "id": 7385,
@@ -379,8 +379,8 @@
    "niveau": "C1",
    "formen": "hat gestützt",
    "currentTr": "desteklemek, dayanak oluşturmak",
-   "currentBeispiel": "Die neuen Funde stützen die These nur teilweise.",
-   "currentBeispielTr": "Yeni buluntular tezi ancak kısmen destekliyor.",
+   "currentBeispiel": "Die neuen Funde stützen diese These nur teilweise.",
+   "currentBeispielTr": "Yeni buluntular bu tezi ancak kısmen destekliyor.",
    "overlapping": [
     "fördern (B1)",
     "unterstützen (B1)",
@@ -396,7 +396,7 @@
    "formen": "hat erprobt",
    "currentTr": "denemek, sınamak",
    "currentBeispiel": "Das Verfahren wurde zunächst an kleinen Gruppen erprobt.",
-   "currentBeispielTr": "Yöntem önce küçük gruplar üzerinde denendi.",
+   "currentBeispielTr": "Yöntem önce küçük gruplarda sınandı.",
    "overlapping": [
     "probieren (A2)",
     "versuchen (A2)",
@@ -411,8 +411,8 @@
    "niveau": "C1",
    "formen": "hat aufgezeigt",
    "currentTr": "göstermek, ortaya koymak",
-   "currentBeispiel": "Die Untersuchung zeigt deutliche Lücken im bisherigen Wissen auf.",
-   "currentBeispielTr": "İnceleme mevcut bilgideki belirgin boşlukları ortaya koyuyor.",
+   "currentBeispiel": "Die Studie zeigt deutliche Lücken im Wissen auf.",
+   "currentBeispielTr": "Çalışma bilgideki belirgin boşlukları ortaya koyuyor.",
    "overlapping": [
     "zeigen (A1)",
     "vormachen (A2)",
@@ -426,8 +426,8 @@
    "niveau": "C1",
    "formen": "hat promoviert",
    "currentTr": "doktora yapmak",
-   "currentBeispiel": "Sie promovierte mit einer Arbeit über frühneuzeitliche Briefe.",
-   "currentBeispielTr": "Erken modern dönem mektupları üzerine bir çalışmayla doktora yaptı."
+   "currentBeispiel": "Sie promovierte über mittelalterliche Handschriften in Freiburg.",
+   "currentBeispielTr": "Freiburg'da ortaçağ el yazmaları üzerine doktora yaptı."
   },
   {
    "id": 7389,
@@ -436,8 +436,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "yol gösterici, çığır açıcı",
-   "currentBeispiel": "Der Aufsatz gilt heute als wegweisend für die gesamte Disziplin.",
-   "currentBeispielTr": "Makale bugün tüm disiplin için çığır açıcı sayılıyor."
+   "currentBeispiel": "Ihre frühe Studie zur Zellteilung war wegweisend.",
+   "currentBeispielTr": "Hücre bölünmesi üzerine erken çalışması çığır açıcıydı."
   },
   {
    "id": 7390,
@@ -446,7 +446,7 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "tartışmalı, ihtilaflı",
-   "currentBeispiel": "Ob der Effekt überhaupt existiert, bleibt weiterhin strittig.",
+   "currentBeispiel": "Ob der Effekt existiert, bleibt weiterhin strittig.",
    "currentBeispielTr": "Etkinin var olup olmadığı hâlâ tartışmalı.",
    "overlapping": [
     "kontrovers (C1)",
@@ -460,8 +460,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "çok anlamlı, muğlak",
-   "currentBeispiel": "Der Begriff wird in der Literatur auffallend mehrdeutig verwendet.",
-   "currentBeispielTr": "Kavram literatürde dikkat çekici biçimde muğlak kullanılıyor."
+   "currentBeispiel": "Der Begriff wird in der Literatur oft mehrdeutig verwendet.",
+   "currentBeispielTr": "Kavram literatürde çoğu zaman çok anlamlı kullanılıyor."
   },
   {
    "id": 7392,
@@ -470,8 +470,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "geri dönülmezlik, tersine çevrilemezlik",
-   "currentBeispiel": "Die Unumkehrbarkeit dieser Entwicklung macht rasches Handeln nötig.",
-   "currentBeispielTr": "Bu gelişmenin geri dönülmez oluşu hızlı davranmayı gerektiriyor."
+   "currentBeispiel": "Die Unumkehrbarkeit dieser Entscheidung schreckt viele ab.",
+   "currentBeispielTr": "Bu kararın geri dönülmezliği çoğu kişiyi caydırıyor."
   },
   {
    "id": 7393,
@@ -480,8 +480,8 @@
    "niveau": "C1",
    "formen": "Eintrittswahrscheinlichkeiten",
    "currentTr": "gerçekleşme olasılığı",
-   "currentBeispiel": "Die Eintrittswahrscheinlichkeit des Ereignisses lässt sich kaum seriös angeben.",
-   "currentBeispielTr": "Olayın gerçekleşme olasılığı ciddi biçimde neredeyse belirtilemiyor."
+   "currentBeispiel": "Die Versicherung schätzt die Eintrittswahrscheinlichkeit des Schadens.",
+   "currentBeispielTr": "Sigorta şirketi hasarın gerçekleşme olasılığını hesaplıyor."
   },
   {
    "id": 7394,
@@ -490,8 +490,8 @@
    "niveau": "C1",
    "formen": "Gefahrenpotenziale",
    "currentTr": "tehlike potansiyeli, risk barındırma",
-   "currentBeispiel": "Fachleute streiten über das Gefahrenpotenzial der neuen Technologie.",
-   "currentBeispielTr": "Uzmanlar yeni teknolojinin tehlike potansiyeli konusunda tartışıyor."
+   "currentBeispiel": "Fachleute streiten über das Gefahrenpotenzial dieser Technik.",
+   "currentBeispielTr": "Uzmanlar bu tekniğin tehlike potansiyelini tartışıyor."
   },
   {
    "id": 7395,
@@ -500,8 +500,8 @@
    "niveau": "C1",
    "formen": "Frühwarnsysteme",
    "currentTr": "erken uyarı sistemi",
-   "currentBeispiel": "Ein gutes Frühwarnsystem meldet Auffälligkeiten, bevor der Schaden entsteht.",
-   "currentBeispielTr": "İyi bir erken uyarı sistemi, zarar oluşmadan önce anormallikleri bildirir."
+   "currentBeispiel": "Das Frühwarnsystem meldete die Flutwelle rechtzeitig.",
+   "currentBeispielTr": "Erken uyarı sistemi sel dalgasını zamanında bildirdi."
   },
   {
    "id": 7396,
@@ -510,8 +510,8 @@
    "niveau": "C1",
    "formen": "Ungewissheiten",
    "currentTr": "belirsizlik, bilinmezlik",
-   "currentBeispiel": "Planung unter Ungewissheit verlangt Demut gegenüber den eigenen Zahlen.",
-   "currentBeispielTr": "Bilinmezlik altında planlama, kendi rakamlarına karşı alçakgönüllülük ister.",
+   "currentBeispiel": "Die Ungewissheit über den Ausgang zermürbte die Familie.",
+   "currentBeispielTr": "Sonucun bilinmezliği aileyi yıprattı.",
    "overlapping": [
     "die Unsicherheit (C1)"
    ]
@@ -523,8 +523,8 @@
    "niveau": "C1",
    "formen": "Zeithorizonte",
    "currentTr": "zaman ufku, öngörü süresi",
-   "currentBeispiel": "Jenseits eines Zeithorizonts von zwanzig Jahren wird jede Aussage vage.",
-   "currentBeispielTr": "Yirmi yıllık bir zaman ufkunun ötesinde her ifade muğlaklaşıyor."
+   "currentBeispiel": "Der Zeithorizont dieser Planung reicht über Jahrzehnte.",
+   "currentBeispielTr": "Bu planlamanın zaman ufku onlarca yıla uzanıyor."
   },
   {
    "id": 7398,
@@ -533,8 +533,8 @@
    "niveau": "C1",
    "formen": "Datenlagen",
    "currentTr": "veri durumu, eldeki veriler",
-   "currentBeispiel": "Bei dieser dünnen Datenlage sind belastbare Aussagen kaum möglich.",
-   "currentBeispielTr": "Bu zayıf veri durumunda güvenilir yargılar neredeyse imkânsız."
+   "currentBeispiel": "Bei dieser dünnen Datenlage sind klare Aussagen unmöglich.",
+   "currentBeispielTr": "Bu zayıf veri durumunda net yargılara varmak imkânsız."
   },
   {
    "id": 7399,
@@ -543,8 +543,8 @@
    "niveau": "C1",
    "formen": "Richtwerte",
    "currentTr": "referans değer, yönlendirici değer",
-   "currentBeispiel": "Der genannte Richtwert ist eine Orientierung, keine verbindliche Vorgabe.",
-   "currentBeispielTr": "Belirtilen referans değer bir yön göstergesidir, bağlayıcı bir kural değil."
+   "currentBeispiel": "Der Richtwert für Feinstaub wird oft überschritten.",
+   "currentBeispielTr": "İnce toz için referans değer sık sık aşılıyor."
   },
   {
    "id": 7400,
@@ -553,8 +553,8 @@
    "niveau": "C1",
    "formen": "Folgenabschätzungen",
    "currentTr": "etki değerlendirmesi, sonuç analizi",
-   "currentBeispiel": "Vor der Einführung wurde eine ausführliche Folgenabschätzung vorgelegt.",
-   "currentBeispielTr": "Uygulamaya geçmeden önce ayrıntılı bir etki değerlendirmesi sunuldu."
+   "currentBeispiel": "Vor der Einführung wurde eine Folgenabschätzung vorgelegt.",
+   "currentBeispielTr": "Uygulamaya geçilmeden önce bir etki değerlendirmesi sunuldu."
   },
   {
    "id": 7401,
@@ -563,8 +563,8 @@
    "niveau": "C1",
    "formen": "Kollateralschäden",
    "currentTr": "yan hasar, dolaylı zarar",
-   "currentBeispiel": "Die Kollateralschäden dieser Sparpolitik zeigen sich erst Jahre später.",
-   "currentBeispielTr": "Bu tasarruf politikasının yan hasarları ancak yıllar sonra görünüyor."
+   "currentBeispiel": "Die Kollateralschäden der Sparpolitik zeigen sich erst später.",
+   "currentBeispielTr": "Tasarruf politikasının yan hasarları ancak sonra ortaya çıkıyor."
   },
   {
    "id": 7402,
@@ -573,8 +573,8 @@
    "niveau": "C1",
    "formen": "Verwundbarkeiten",
    "currentTr": "kırılganlık, zarar görebilirlik",
-   "currentBeispiel": "Die Pandemie hat die Verwundbarkeit globaler Lieferketten offengelegt.",
-   "currentBeispielTr": "Salgın, küresel tedarik zincirlerinin kırılganlığını gözler önüne serdi."
+   "currentBeispiel": "Die Pandemie legte die Verwundbarkeit der Lieferketten offen.",
+   "currentBeispielTr": "Salgın, tedarik zincirlerinin kırılganlığını gözler önüne serdi."
   }
  ]
 }

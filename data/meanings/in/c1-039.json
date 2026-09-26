@@ -9,8 +9,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "eğitimden uzak",
-   "currentBeispiel": "Der Begriff bildungsfern gilt vielen Fachleuten selbst als abwertend.",
-   "currentBeispielTr": "Eğitimden uzak nitelemesi pek çok uzmana göre kendisi aşağılayıcıdır."
+   "currentBeispiel": "Das Programm erreicht bildungsferne Familien bisher kaum.",
+   "currentBeispielTr": "Program şimdiye kadar eğitimden uzak ailelere pek ulaşamadı."
   },
   {
    "id": 7154,
@@ -19,8 +19,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "etnik",
-   "currentBeispiel": "Die Statistik erfasst keine ethnisch definierten Kategorien.",
-   "currentBeispielTr": "İstatistik etnik olarak tanımlanmış kategorileri kaydetmiyor."
+   "currentBeispiel": "Die Polizei erfasst die ethnische Herkunft der Opfer nicht.",
+   "currentBeispielTr": "Polis, mağdurların etnik kökenini kaydetmiyor."
   },
   {
    "id": 7155,
@@ -29,8 +29,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "türdeş olmayan, çeşitli",
-   "currentBeispiel": "Die Schülerschaft ist heute weit heterogener als vor dreißig Jahren.",
-   "currentBeispielTr": "Öğrenci kitlesi bugün otuz yıl öncesine göre çok daha çeşitli."
+   "currentBeispiel": "Die Klasse ist sprachlich sehr heterogen.",
+   "currentBeispielTr": "Sınıf, dil bakımından çok heterojen."
   },
   {
    "id": 7156,
@@ -40,7 +40,7 @@
    "formen": "",
    "currentTr": "yerleşik",
    "currentBeispiel": "Nach Jahren des Pendelns ist die Familie endlich sesshaft geworden.",
-   "currentBeispielTr": "Yıllarca gidip gelmenin ardından aile nihayet yerleşik hâle geldi."
+   "currentBeispielTr": "Yıllarca gidip geldikten sonra aile nihayet yerleşik hâle geldi."
   },
   {
    "id": 7157,
@@ -49,8 +49,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "her ne kadar, -e rağmen",
-   "currentBeispiel": "Obgleich die Zahlen sinken, hält sich die Angst hartnäckig.",
-   "currentBeispielTr": "Rakamlar düşmesine rağmen korku inatla varlığını sürdürüyor.",
+   "currentBeispiel": "Obgleich er kaum Deutsch spricht, hat er den Job bekommen.",
+   "currentBeispielTr": "Her ne kadar Almancayı zar zor konuşsa da işi aldı.",
    "overlapping": [
     "wenngleich (C1)"
    ]
@@ -63,7 +63,7 @@
    "formen": "Erhebungen",
    "currentTr": "veri toplama, anket çalışması, araştırma",
    "currentBeispiel": "Die Erhebung wurde in vier Bundesländern gleichzeitig durchgeführt.",
-   "currentBeispielTr": "Veri toplama çalışması dört eyalette eşzamanlı olarak yürütüldü.",
+   "currentBeispielTr": "Veri toplama çalışması dört eyalette aynı anda yürütüldü.",
    "overlapping": [
     "die Datenerhebung (C1)"
    ]
@@ -86,7 +86,7 @@
    "formen": "Streuungen",
    "currentTr": "dağılım genişliği, saçılım",
    "currentBeispiel": "Die Streuung der Einzelwerte ist deutlich größer als erwartet.",
-   "currentBeispielTr": "Tekil değerlerin saçılımı beklenenden belirgin biçimde daha büyük."
+   "currentBeispielTr": "Tekil değerlerin yayılımı beklenenden belirgin biçimde daha büyük."
   },
   {
    "id": 7161,
@@ -96,7 +96,7 @@
    "formen": "Schätzungen",
    "currentTr": "tahmin, kestirim",
    "currentBeispiel": "Vorsichtige Schätzungen gehen von etwa zwölf Prozent aus.",
-   "currentBeispielTr": "İhtiyatlı tahminler yaklaşık yüzde on iki civarında bir oran öngörüyor.",
+   "currentBeispielTr": "Temkinli tahminler yaklaşık yüzde on ikiden söz ediyor.",
    "overlapping": [
     "die Vermutung (B2)"
    ]
@@ -108,8 +108,8 @@
    "niveau": "C1",
    "formen": "Prognosen",
    "currentTr": "öngörü, tahmin",
-   "currentBeispiel": "Die Prognose beruht auf Daten der vergangenen zehn Jahre.",
-   "currentBeispielTr": "Öngörü, geçmiş on yılın verilerine dayanıyor."
+   "currentBeispiel": "Die Prognose für das nächste Quartal fiel deutlich schlechter aus.",
+   "currentBeispielTr": "Gelecek çeyreğe ilişkin öngörü belirgin biçimde daha kötü çıktı."
   },
   {
    "id": 7163,
@@ -131,8 +131,8 @@
    "niveau": "C1",
    "formen": "Ausprägungen",
    "currentTr": "alabileceği değer, düzey, görünüm biçimi",
-   "currentBeispiel": "Das Merkmal kann drei verschiedene Ausprägungen annehmen.",
-   "currentBeispielTr": "Bu özellik üç farklı düzeyde ortaya çıkabilir."
+   "currentBeispiel": "Die Krankheit tritt bei Kindern in milderer Ausprägung auf.",
+   "currentBeispielTr": "Hastalık çocuklarda daha hafif bir biçimde ortaya çıkıyor."
   },
   {
    "id": 7165,
@@ -142,7 +142,7 @@
    "formen": "Datensätze",
    "currentTr": "veri seti, veri kaydı",
    "currentBeispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert.",
-   "currentBeispielTr": "Eksik veri kayıtları analizden önce ayıklandı."
+   "currentBeispielTr": "Eksik veri setleri analizden önce ayıklandı."
   },
   {
    "id": 7166,
@@ -164,8 +164,8 @@
    "niveau": "C1",
    "formen": "Wahrscheinlichkeiten",
    "currentTr": "olasılık, ihtimal",
-   "currentBeispiel": "Die Wahrscheinlichkeit eines Zufallsbefunds liegt unter fünf Prozent.",
-   "currentBeispielTr": "Rastlantısal bir bulgu olma olasılığı yüzde beşin altında."
+   "currentBeispiel": "Die Wahrscheinlichkeit für Regen liegt heute bei achtzig Prozent.",
+   "currentBeispielTr": "Bugün yağmur olasılığı yüzde seksen."
   },
   {
    "id": 7168,
@@ -175,7 +175,7 @@
    "formen": "Häufigkeiten",
    "currentTr": "sıklık, frekans",
    "currentBeispiel": "Die Häufigkeit solcher Fälle hat sich seit 2010 verdoppelt.",
-   "currentBeispielTr": "Bu tür vakaların sıklığı 2010'dan bu yana iki katına çıktı."
+   "currentBeispielTr": "Bu tür vakaların sıklığı 2010'dan beri iki katına çıktı."
   },
   {
    "id": 7169,
@@ -184,8 +184,8 @@
    "niveau": "C1",
    "formen": "Verteilungen",
    "currentTr": "dağılım",
-   "currentBeispiel": "Die Verteilung der Einkommen ist stark nach rechts verschoben.",
-   "currentBeispielTr": "Gelirlerin dağılımı belirgin biçimde sağa kaymış durumda."
+   "currentBeispiel": "Die Verteilung der Einkommen ist in diesem Land sehr ungleich.",
+   "currentBeispielTr": "Bu ülkede gelirlerin dağılımı çok eşitsiz."
   },
   {
    "id": 7170,
@@ -205,7 +205,7 @@
    "formen": "Ausreißer",
    "currentTr": "aykırı değer, uç değer",
    "currentBeispiel": "Ein einzelner Ausreißer verschiebt den Durchschnitt spürbar nach oben.",
-   "currentBeispielTr": "Tek bir aykırı değer ortalamayı hissedilir biçimde yukarı çekiyor."
+   "currentBeispielTr": "Tek bir aykırı değer ortalamayı gözle görülür biçimde yukarı çekiyor."
   },
   {
    "id": 7172,
@@ -214,8 +214,8 @@
    "niveau": "C1",
    "formen": "Grundgesamtheiten",
    "currentTr": "evren, ana kütle",
-   "currentBeispiel": "Die Stichprobe bildet die Grundgesamtheit nur unzureichend ab.",
-   "currentBeispielTr": "Örneklem, evreni yeterince temsil etmiyor."
+   "currentBeispiel": "Die Grundgesamtheit umfasst alle Haushalte in Bayern.",
+   "currentBeispielTr": "Ana kütle, Bavyera'daki bütün haneleri kapsıyor."
   },
   {
    "id": 7173,
@@ -224,8 +224,8 @@
    "niveau": "C1",
    "formen": "Gültigkeiten",
    "currentTr": "geçerlilik",
-   "currentBeispiel": "Die Gültigkeit des Verfahrens wurde in mehreren Studien geprüft.",
-   "currentBeispielTr": "Yöntemin geçerliliği birçok çalışmada sınandı."
+   "currentBeispiel": "Die Gültigkeit des Führerscheins läuft nächsten Monat ab.",
+   "currentBeispielTr": "Ehliyetin geçerliliği önümüzdeki ay sona eriyor."
   },
   {
    "id": 7174,
@@ -234,8 +234,8 @@
    "niveau": "C1",
    "formen": "Schwellenwerte",
    "currentTr": "eşik değer",
-   "currentBeispiel": "Erst oberhalb dieses Schwellenwerts gilt der Effekt als bedeutsam.",
-   "currentBeispielTr": "Etki ancak bu eşik değerin üstünde anlamlı sayılıyor."
+   "currentBeispiel": "Sobald der Schwellenwert überschritten wird, schlägt der Sensor Alarm.",
+   "currentBeispielTr": "Eşik değer aşılır aşılmaz sensör alarm veriyor."
   },
   {
    "id": 7175,
@@ -245,7 +245,7 @@
    "formen": "Bezugsgrößen",
    "currentTr": "referans büyüklük, karşılaştırma ölçütü",
    "currentBeispiel": "Ohne klare Bezugsgröße bleibt die Prozentangabe wenig aussagekräftig.",
-   "currentBeispielTr": "Net bir referans büyüklük olmadan yüzde bilgisi pek bir şey ifade etmiyor."
+   "currentBeispielTr": "Net bir referans büyüklük olmadan yüzde bilgisi pek bir şey söylemiyor."
   },
   {
    "id": 7176,
@@ -255,7 +255,7 @@
    "formen": "Versuchsanordnungen",
    "currentTr": "deney düzeneği, deney tasarımı",
    "currentBeispiel": "Die Versuchsanordnung erlaubt keine eindeutige Aussage über die Ursache.",
-   "currentBeispielTr": "Deney tasarımı, neden hakkında kesin bir yargıya izin vermiyor."
+   "currentBeispielTr": "Deney düzeneği, nedene ilişkin kesin bir yargıya izin vermiyor."
   },
   {
    "id": 7177,
@@ -264,8 +264,8 @@
    "niveau": "C1",
    "formen": "Längsschnittstudien",
    "currentTr": "boylamsal çalışma, uzunlamasına araştırma",
-   "currentBeispiel": "Eine Längsschnittstudie begleitet dieselben Personen über viele Jahre.",
-   "currentBeispielTr": "Boylamsal bir çalışma aynı kişileri uzun yıllar boyunca izler."
+   "currentBeispiel": "Die Längsschnittstudie begleitet die Kinder bis zum Schulabschluss.",
+   "currentBeispielTr": "Boylamsal çalışma, çocukları okulu bitirene kadar izliyor."
   },
   {
    "id": 7178,
@@ -285,7 +285,7 @@
    "formen": "Störgrößen",
    "currentTr": "karıştırıcı etken, gürültü faktörü",
    "currentBeispiel": "Mögliche Störgrößen wurden im Modell statistisch herausgerechnet.",
-   "currentBeispielTr": "Olası karıştırıcı etkenler modelde istatistiksel olarak arındırıldı."
+   "currentBeispielTr": "Olası karıştırıcı etkenler modelde istatistiksel olarak ayıklandı."
   },
   {
    "id": 7180,
@@ -295,7 +295,7 @@
    "formen": "Einflussgrößen",
    "currentTr": "etkileyen değişken, belirleyici etken",
    "currentBeispiel": "Das Einkommen erweist sich als stärkste Einflussgröße im Modell.",
-   "currentBeispielTr": "Gelir, modeldeki en güçlü etken olarak öne çıkıyor."
+   "currentBeispielTr": "Gelir, modeldeki en güçlü belirleyici etken olarak öne çıkıyor."
   },
   {
    "id": 7181,
@@ -318,7 +318,7 @@
    "formen": "Parameter",
    "currentTr": "parametre, ayar değeri",
    "currentBeispiel": "Schon kleine Änderungen der Parameter verändern das Ergebnis erheblich.",
-   "currentBeispielTr": "Parametrelerdeki küçük değişiklikler bile sonucu önemli ölçüde değiştiriyor."
+   "currentBeispielTr": "Parametrelerdeki küçük değişiklikler bile sonucu epeyce değiştiriyor."
   },
   {
    "id": 7183,
@@ -350,8 +350,8 @@
    "niveau": "C1",
    "formen": "Unsicherheiten",
    "currentTr": "belirsizlik, kesinsizlik",
-   "currentBeispiel": "Die verbleibenden Unsicherheiten sollten offen benannt werden.",
-   "currentBeispielTr": "Geriye kalan belirsizlikler açıkça dile getirilmeli.",
+   "currentBeispiel": "Wegen der wirtschaftlichen Unsicherheit verschiebt die Firma alle Neueinstellungen.",
+   "currentBeispielTr": "Ekonomik belirsizlik yüzünden şirket bütün yeni işe alımları erteliyor.",
    "overlapping": [
     "die Ungewissheit (C1)"
    ]
@@ -377,7 +377,7 @@
    "formen": "Rückschlüsse",
    "currentTr": "çıkarım, sonuç çıkarma",
    "currentBeispiel": "Aus einer einzigen Erhebung lassen sich kaum Rückschlüsse ziehen.",
-   "currentBeispielTr": "Tek bir araştırmadan pek çıkarım yapılamaz."
+   "currentBeispielTr": "Tek bir veri toplama çalışmasından pek çıkarım yapılamaz."
   },
   {
    "id": 7188,
@@ -397,7 +397,7 @@
    "formen": "Vorgehensweisen",
    "currentTr": "izlenen yöntem, yaklaşım",
    "currentBeispiel": "Die gewählte Vorgehensweise wird im Anhang ausführlich dokumentiert.",
-   "currentBeispielTr": "Seçilen yöntem ekte ayrıntılı olarak belgeleniyor."
+   "currentBeispielTr": "Seçilen yol ekte ayrıntılı olarak belgeleniyor."
   },
   {
    "id": 7190,
@@ -407,7 +407,7 @@
    "formen": "Signifikanzniveaus",
    "currentTr": "anlamlılık düzeyi",
    "currentBeispiel": "Der Effekt bleibt auf dem üblichen Signifikanzniveau nachweisbar.",
-   "currentBeispielTr": "Etki, alışılmış anlamlılık düzeyinde saptanabilir kalıyor."
+   "currentBeispielTr": "Etki, olağan anlamlılık düzeyinde hâlâ saptanabiliyor."
   },
   {
    "id": 7191,
@@ -417,7 +417,7 @@
    "formen": "Normierungen",
    "currentTr": "standartlaştırma, normalleştirme",
    "currentBeispiel": "Ohne Normierung sind die Werte der beiden Skalen nicht vergleichbar.",
-   "currentBeispielTr": "Normlaştırma olmadan iki ölçeğin değerleri karşılaştırılabilir değil.",
+   "currentBeispielTr": "Normalleştirme olmadan iki ölçeğin değerleri karşılaştırılamaz.",
    "overlapping": [
     "die Standardisierung (C1)"
    ]
@@ -440,7 +440,7 @@
    "formen": "hat extrapoliert",
    "currentTr": "eğilimi ileriye taşımak, ekstrapolasyon yapmak",
    "currentBeispiel": "Man sollte den Trend nicht unbesehen in die Zukunft extrapolieren.",
-   "currentBeispielTr": "Eğilim sorgusuzca geleceğe taşınmamalı."
+   "currentBeispielTr": "Bu eğilime bakıp körü körüne geleceğe ekstrapolasyon yapılmamalı."
   },
   {
    "id": 7194,
@@ -470,7 +470,7 @@
    "formen": "hat unterschätzt",
    "currentTr": "hafife almak, olduğundan az tahmin etmek",
    "currentBeispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt.",
-   "currentBeispielTr": "Eski modeller gelişmenin hızını belirgin biçimde olduğundan az tahmin etti."
+   "currentBeispielTr": "Eski modeller gelişmenin hızını iyice hafife aldı."
   },
   {
    "id": 7197,
@@ -480,7 +480,7 @@
    "formen": "hat gegenübergestellt",
    "currentTr": "karşı karşıya koymak, karşılaştırmak",
    "currentBeispiel": "Die Tabelle stellt die Werte beider Erhebungsjahre gegenüber.",
-   "currentBeispielTr": "Tablo, iki araştırma yılının değerlerini karşılaştırmalı olarak veriyor."
+   "currentBeispielTr": "Tablo, iki araştırma yılının değerlerini karşı karşıya koyuyor."
   },
   {
    "id": 7198,
@@ -510,7 +510,7 @@
    "formen": "hat operationalisiert",
    "currentTr": "ölçülebilir hale getirmek, işlevsel tanıma dökmek",
    "currentBeispiel": "Wie man Lebensqualität operationalisiert, bleibt umstritten.",
-   "currentBeispielTr": "Yaşam kalitesinin nasıl ölçülebilir kılınacağı tartışmalı kalıyor."
+   "currentBeispielTr": "Yaşam kalitesinin nasıl ölçülebilir kılınacağı tartışmalı."
   },
   {
    "id": 7201,
@@ -533,7 +533,7 @@
    "formen": "hat abgebildet",
    "currentTr": "yansıtmak, temsil etmek",
    "currentBeispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab.",
-   "currentBeispielTr": "Endeks, gerçek yükü ancak eksik biçimde yansıtıyor.",
+   "currentBeispielTr": "Endeks, gerçek yükü ancak eksik biçimde temsil ediyor.",
    "overlapping": [
     "widerspiegeln (C1)"
    ]

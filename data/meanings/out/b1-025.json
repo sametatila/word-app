@@ -19,17 +19,17 @@
     "id": 1606,
     "tr": "fren",
     "en": "brake",
-    "beispiel": "Du musst unbedingt die Bremsen kontrollieren lassen.",
-    "beispielTr": "Frenleri mutlaka kontrol ettirmelisin.",
-    "beispielEn": "You really have to get the brakes checked."
+    "beispiel": "Der Fahrer hat zu spät auf die Bremse getreten.",
+    "beispielTr": "Sürücü frene çok geç bastı.",
+    "beispielEn": "The driver hit the brake too late."
   },
   {
     "id": 1828,
     "tr": "yetiştirmek",
     "en": "to raise",
-    "beispiel": "Kinder zu erziehen ist nicht immer leicht.",
-    "beispielTr": "Çocuk yetiştirmek her zaman kolay değil.",
-    "beispielEn": "Raising children is not always easy."
+    "beispiel": "Meine Großmutter hat sechs Kinder allein erzogen.",
+    "beispielTr": "Büyükannem altı çocuğu tek başına yetiştirdi.",
+    "beispielEn": "My grandmother raised six children on her own."
   },
   {
     "id": 1514,
@@ -43,9 +43,9 @@
     "id": 1447,
     "tr": "eritmek",
     "en": "to dissolve",
-    "beispiel": "Die Tablette bitte in Wasser auflösen.",
-    "beispielTr": "Tableti lütfen suda eritin.",
-    "beispielEn": "Please dissolve the tablet in water."
+    "beispiel": "Salz löst sich in warmem Wasser schneller auf.",
+    "beispielTr": "Tuz ılık suda daha hızlı erir.",
+    "beispielEn": "Salt dissolves faster in warm water."
   },
   {
     "id": 2306,
@@ -75,9 +75,9 @@
     "id": 2851,
     "tr": "klavyede yazmak",
     "en": "to type",
-    "beispiel": "Wie schnell kannst du tippen?",
-    "beispielTr": "Ne kadar hızlı yazabiliyorsun?",
-    "beispielEn": "How fast can you type?"
+    "beispiel": "Meine Oma tippt ihre Nachrichten nur mit einem Finger.",
+    "beispielTr": "Babaannem mesajlarını tek parmakla yazıyor.",
+    "beispielEn": "My grandma types her messages with just one finger."
   },
   {
     "id": 2183,
@@ -99,17 +99,17 @@
     "id": 2142,
     "tr": "kadın gazeteci",
     "en": "female journalist",
-    "beispiel": "Meine Tochter möchte Journalistin werden.",
-    "beispielTr": "Kızım gazeteci olmak istiyor.",
-    "beispielEn": "My daughter wants to become a journalist."
+    "beispiel": "Die Journalistin hat den Bürgermeister interviewt.",
+    "beispielTr": "Kadın gazeteci belediye başkanıyla röportaj yaptı.",
+    "beispielEn": "The journalist interviewed the mayor."
   },
   {
     "id": 2680,
     "tr": "seminer",
     "en": "seminar",
-    "beispiel": "Ich möchte dieses Seminar unbedingt besuchen.",
-    "beispielTr": "Bu seminere mutlaka katılmak istiyorum.",
-    "beispielEn": "I definitely want to attend this seminar."
+    "beispiel": "Im Seminar diskutieren wir jede Woche einen Text.",
+    "beispielTr": "Seminerde her hafta bir metni tartışıyoruz.",
+    "beispielEn": "In the seminar, we discuss a text every week."
   },
   {
     "id": 1480,
@@ -147,9 +147,9 @@
     "id": 1811,
     "tr": "kolaylaştırmak",
     "en": "to make easier",
-    "beispiel": "Das Internet erleichtert mir die Arbeit sehr.",
-    "beispielTr": "İnternet işimi çok kolaylaştırıyor.",
-    "beispielEn": "The internet makes my work much easier."
+    "beispiel": "Eine Liste erleichtert den Einkauf am Wochenende.",
+    "beispielTr": "Bir liste hafta sonu alışverişini kolaylaştırıyor.",
+    "beispielEn": "A list makes weekend shopping easier."
   },
   {
     "id": 2326,
@@ -171,9 +171,9 @@
     "id": 3184,
     "tr": "malzemeler",
     "en": "ingredients",
-    "beispiel": "Welche Zutaten braucht man für diesen Kuchen?",
-    "beispielTr": "Bu kek için hangi malzemeler gerekiyor?",
-    "beispielEn": "What ingredients do you need for this cake?"
+    "beispiel": "Alle Zutaten für die Suppe kommen aus unserem Garten.",
+    "beispielTr": "Çorbanın bütün malzemeleri bizim bahçeden.",
+    "beispielEn": "All the ingredients for the soup come from our garden."
   },
   {
     "id": 1881,
@@ -187,33 +187,33 @@
     "id": 3167,
     "tr": "kibrit",
     "en": "Austrian word for match",
-    "beispiel": "Ich hätte gern eine Schachtel Zünder.",
-    "beispielTr": "Bir kutu kibrit istiyorum.",
-    "beispielEn": "I'd like a box of matches."
+    "beispiel": "Ich brauche Zünder, um die Kerzen anzuzünden.",
+    "beispielTr": "Mumları yakmak için kibrit lazım.",
+    "beispielEn": "I need matches to light the candles."
   },
   {
     "id": 2222,
     "tr": "koridor",
     "en": "corridor",
-    "beispiel": "Wir warten draußen im Korridor.",
-    "beispielTr": "Dışarıda koridorda bekliyoruz.",
-    "beispielEn": "We're waiting outside in the corridor."
+    "beispiel": "Die Toiletten sind am Ende des Korridors links.",
+    "beispielTr": "Tuvaletler koridorun sonunda solda.",
+    "beispielEn": "The restrooms are at the end of the corridor on the left."
   },
   {
     "id": 2704,
     "tr": "çorap",
     "en": "sock",
-    "beispiel": "Im Winter brauche ich warme Socken.",
-    "beispielTr": "Kışın kalın çoraplara ihtiyacım oluyor.",
-    "beispielEn": "In winter I need warm socks."
+    "beispiel": "In der Waschmaschine verschwindet immer eine Socke.",
+    "beispielTr": "Çamaşır makinesinde hep bir çorap kayboluyor.",
+    "beispielEn": "A sock always disappears in the washing machine."
   },
   {
     "id": 1463,
     "tr": "iptal olmak",
     "en": "to be canceled",
-    "beispiel": "Nächste Woche fällt der Kurs aus.",
-    "beispielTr": "Gelecek hafta kurs iptal edildi.",
-    "beispielEn": "The course is canceled next week."
+    "beispiel": "Wegen Schnee sind heute viele Flüge ausgefallen.",
+    "beispielTr": "Kar yüzünden bugün birçok uçuş iptal oldu.",
+    "beispielEn": "Many flights were canceled today because of snow."
   },
   {
     "id": 2499,
@@ -227,9 +227,9 @@
     "id": 2507,
     "tr": "cüzdan",
     "en": "wallet",
-    "beispiel": "Ich habe nur Kleingeld in meinem Portemonnaie.",
-    "beispielTr": "Cüzdanımda sadece bozuk para var.",
-    "beispielEn": "I only have coins in my wallet."
+    "beispiel": "Im Bus hat jemand mein Portemonnaie gestohlen.",
+    "beispielTr": "Otobüste biri cüzdanımı çaldı.",
+    "beispielEn": "Someone stole my wallet on the bus."
   },
   {
     "id": 2817,
@@ -243,9 +243,9 @@
     "id": 1537,
     "tr": "hesaplamak",
     "en": "to calculate",
-    "beispiel": "Die Kosten für die Fahrt müssen erst berechnet werden.",
-    "beispielTr": "Yol masrafının önce hesaplanması gerekiyor.",
-    "beispielEn": "The cost of the trip has to be calculated first."
+    "beispiel": "Die App berechnet, wie viele Kalorien du verbrauchst.",
+    "beispielTr": "Uygulama kaç kalori yaktığını hesaplıyor.",
+    "beispielEn": "The app calculates how many calories you burn."
   },
   {
     "id": 3108,
@@ -259,17 +259,17 @@
     "id": 2488,
     "tr": "karabiber",
     "en": "pepper",
-    "beispiel": "Bringen Sie uns bitte Pfeffer und Salz.",
-    "beispielTr": "Bize karabiber ve tuz getirin lütfen.",
-    "beispielEn": "Please bring us pepper and salt."
+    "beispiel": "Die Soße braucht noch etwas Pfeffer.",
+    "beispielTr": "Sosa biraz daha karabiber lazım.",
+    "beispielEn": "The sauce needs a bit more pepper."
   },
   {
     "id": 2753,
     "tr": "trafik sıkışıklığı",
     "en": "traffic jam",
-    "beispiel": "Wir standen eine Stunde im Stau.",
-    "beispielTr": "Bir saat trafikte kaldık.",
-    "beispielEn": "We were stuck in traffic for an hour."
+    "beispiel": "Wegen des Staus kam Paul zu spät zum Vorstellungsgespräch.",
+    "beispielTr": "Trafik sıkışıklığı yüzünden Paul iş görüşmesine geç kaldı.",
+    "beispielEn": "Because of the traffic jam, Paul was late for his job interview."
   },
   {
     "id": 2005,
@@ -283,17 +283,17 @@
     "id": 2348,
     "tr": "kasap",
     "en": "butcher",
-    "beispiel": "Dieser Metzger hat sehr gute Wurst.",
-    "beispielTr": "Bu kasabın sosisleri çok iyi.",
-    "beispielEn": "This butcher has really good sausage."
+    "beispiel": "Beim Metzger kaufe ich das Hackfleisch für heute Abend.",
+    "beispielTr": "Bu akşamki kıymayı kasaptan alıyorum.",
+    "beispielEn": "I'm buying the ground meat for tonight at the butcher's."
   },
   {
     "id": 1658,
     "tr": "diyalog",
     "en": "dialogue",
-    "beispiel": "Sie hören jetzt einen kurzen Dialog.",
-    "beispielTr": "Şimdi kısa bir diyalog dinleyeceksiniz.",
-    "beispielEn": "You will now hear a short dialogue."
+    "beispiel": "Der Dialog zwischen den beiden Figuren ist sehr witzig.",
+    "beispielTr": "İki karakter arasındaki diyalog çok esprili.",
+    "beispielEn": "The dialogue between the two characters is very witty."
   },
   {
     "id": 2733,
@@ -307,49 +307,49 @@
     "id": 1499,
     "tr": "başvurmak",
     "en": "to apply for",
-    "beispiel": "Hast du schon einen neuen Pass beantragt?",
-    "beispielTr": "Yeni pasaport için başvurdun mu?",
-    "beispielEn": "Have you already applied for a new passport?"
+    "beispiel": "Für das Studium im Ausland muss Lara ein Visum beantragen.",
+    "beispielTr": "Lara yurt dışında okumak için vizeye başvurmalı.",
+    "beispielEn": "Lara has to apply for a visa to study abroad."
   },
   {
     "id": 2525,
     "tr": "protesto",
     "en": "protest",
-    "beispiel": "Alle Proteste haben nichts genützt.",
-    "beispielTr": "Bütün protestolar işe yaramadı.",
-    "beispielEn": "None of the protests did any good."
+    "beispiel": "Nach lauten Protesten wurde das Schwimmbad nicht geschlossen.",
+    "beispielTr": "Yüksek sesli protestolardan sonra yüzme havuzu kapatılmadı.",
+    "beispielEn": "After loud protests, the swimming pool wasn't closed."
   },
   {
     "id": 2465,
     "tr": "arıza",
     "en": "breakdown",
-    "beispiel": "Kurz vor München hatten wir eine Panne.",
-    "beispielTr": "Münih'e az kala arabamız arıza yaptı.",
-    "beispielEn": "We had a breakdown just before Munich."
+    "beispiel": "Wegen einer Panne stand der Bus mitten auf der Brücke.",
+    "beispielTr": "Otobüs bir arıza yüzünden köprünün ortasında kaldı.",
+    "beispielEn": "Because of a breakdown, the bus was stuck in the middle of the bridge."
   },
   {
     "id": 1340,
     "tr": "dönmek",
     "en": "to turn",
-    "beispiel": "An der nächsten Kreuzung müssen Sie links abbiegen.",
-    "beispielTr": "Bir sonraki kavşaktan sola dönmeniz gerekiyor.",
-    "beispielEn": "At the next intersection you have to turn left."
+    "beispiel": "Nach der Bäckerei biegst du rechts in die Schulstraße ab.",
+    "beispielTr": "Fırından sonra sağa, Okul Sokağı'na dönüyorsun.",
+    "beispielEn": "After the bakery, you turn right onto School Street."
   },
   {
     "id": 2205,
     "tr": "uzlaşma",
     "en": "compromise",
-    "beispiel": "Wir müssen endlich einen Kompromiss finden.",
-    "beispielTr": "Sonunda bir uzlaşma bulmamız gerekiyor.",
-    "beispielEn": "We finally have to find a compromise."
+    "beispiel": "Nach langer Diskussion haben wir uns auf einen Kompromiss geeinigt.",
+    "beispielTr": "Uzun bir tartışmadan sonra bir uzlaşmaya vardık.",
+    "beispielEn": "After a long discussion, we agreed on a compromise."
   },
   {
     "id": 2108,
     "tr": "sanayi",
     "en": "industry",
-    "beispiel": "In dieser Gegend gibt es viel Industrie.",
-    "beispielTr": "Bu bölgede çok sanayi var.",
-    "beispielEn": "There is a lot of industry in this area."
+    "beispiel": "Die Industrie braucht dringend mehr Fachkräfte.",
+    "beispielTr": "Sanayinin acilen daha fazla nitelikli çalışana ihtiyacı var.",
+    "beispielEn": "Industry urgently needs more skilled workers."
   },
   {
     "id": 2042,
@@ -363,9 +363,9 @@
     "id": 1478,
     "tr": "sergilemek",
     "en": "to exhibit",
-    "beispiel": "Im Schaufenster sind Winterschuhe ausgestellt.",
-    "beispielTr": "Vitrinde kışlık ayakkabılar sergileniyor.",
-    "beispielEn": "Winter shoes are on display in the window."
+    "beispiel": "Das Museum stellt Bilder von jungen Künstlern aus.",
+    "beispielTr": "Müze genç sanatçıların resimlerini sergiliyor.",
+    "beispielEn": "The museum exhibits paintings by young artists."
   },
   {
     "id": 2487,
@@ -387,9 +387,9 @@
     "id": 2185,
     "tr": "iklim",
     "en": "climate",
-    "beispiel": "Alle sagen, dass sich das Klima ändert.",
-    "beispielTr": "Herkes iklimin değiştiğini söylüyor.",
-    "beispielEn": "Everyone says that the climate is changing."
+    "beispiel": "Im Süden des Landes ist das Klima viel milder.",
+    "beispielTr": "Ülkenin güneyinde iklim çok daha ılıman.",
+    "beispielEn": "In the south of the country, the climate is much milder."
   },
   {
     "id": 2876,

@@ -3,17 +3,17 @@
     "id": 2660,
     "tr": "kase",
     "en": "bowl",
-    "beispiel": "Gibst du mir bitte eine Schüssel für den Salat?",
-    "beispielTr": "Salata için bana bir kase verir misin?",
-    "beispielEn": "Could you pass me a bowl for the salad?"
+    "beispiel": "Die Katze hat ihre Schüssel mit Wasser umgestoßen.",
+    "beispielTr": "Kedi su kasesini devirdi.",
+    "beispielEn": "The cat knocked over her water bowl."
   },
   {
     "id": 2102,
     "tr": "ideal",
     "en": "ideal",
-    "beispiel": "Eine Wohnung mit Garten wäre für uns ideal.",
-    "beispielTr": "Bahçeli bir daire bizim için ideal olurdu.",
-    "beispielEn": "An apartment with a garden would be ideal for us."
+    "beispiel": "Das Wetter ist heute ideal für einen Ausflug.",
+    "beispielTr": "Hava bugün gezi için ideal.",
+    "beispielEn": "The weather today is ideal for an outing."
   },
   {
     "id": 2008,
@@ -27,9 +27,9 @@
     "id": 3097,
     "tr": "değersiz",
     "en": "worthless",
-    "beispiel": "Diese alten Geldscheine sind heute völlig wertlos.",
-    "beispielTr": "Bu eski banknotlar bugün tamamen değersiz.",
-    "beispielEn": "These old banknotes are completely worthless today."
+    "beispiel": "Der Ring sieht teuer aus, ist aber wertlos.",
+    "beispielTr": "Yüzük pahalı görünüyor ama değersiz.",
+    "beispielEn": "The ring looks expensive but is worthless."
   },
   {
     "id": 2413,
@@ -51,17 +51,17 @@
     "id": 2713,
     "tr": "sos",
     "en": "sauce",
-    "beispiel": "Gibst du mir bitte mal die Soße?",
-    "beispielTr": "Sosu uzatır mısın lütfen?",
-    "beispielEn": "Could you pass me the sauce?"
+    "beispiel": "Diese Soße schmeckt mir zu scharf.",
+    "beispielTr": "Bu sos bana fazla acı geliyor.",
+    "beispielEn": "This sauce is too spicy for me."
   },
   {
     "id": 1829,
     "tr": "terbiye",
     "en": "upbringing",
-    "beispiel": "Heute kümmern sich auch viele Väter um die Erziehung der Kinder.",
-    "beispielTr": "Bugün birçok baba da çocukların eğitimiyle ilgileniyor.",
-    "beispielEn": "Today many fathers also take care of the children's upbringing."
+    "beispiel": "In Fragen der Erziehung sind sich die Eltern selten einig.",
+    "beispielTr": "Anne ve baba çocuk terbiyesi konusunda nadiren anlaşıyor.",
+    "beispielEn": "The parents rarely agree on questions of upbringing."
   },
   {
     "id": 2120,
@@ -83,9 +83,9 @@
     "id": 1883,
     "tr": "düz",
     "en": "flat",
-    "beispiel": "Für die Arbeit brauche ich flache Schuhe.",
-    "beispielTr": "İş için düz ayakkabılara ihtiyacım var.",
-    "beispielEn": "I need flat shoes for work."
+    "beispiel": "Von hier bis zur Küste ist das Land ganz flach.",
+    "beispielTr": "Buradan sahile kadar arazi dümdüz.",
+    "beispielEn": "From here to the coast, the land is completely flat."
   },
   {
     "id": 1709,
@@ -115,17 +115,17 @@
     "id": 2442,
     "tr": "yayımlamak",
     "en": "to publish",
-    "beispiel": "Das Buch wurde gestern veröffentlicht.",
-    "beispielTr": "Kitap dün yayımlandı.",
-    "beispielEn": "The book was published yesterday."
+    "beispiel": "Die Band veröffentlicht im Herbst ein neues Album.",
+    "beispielTr": "Grup sonbaharda yeni bir albüm yayımlıyor.",
+    "beispielEn": "The band is releasing a new album in the fall."
   },
   {
     "id": 2565,
     "tr": "bölge",
     "en": "region",
-    "beispiel": "In dieser Region sind die Mieten sehr hoch.",
-    "beispielTr": "Bu bölgede kiralar çok yüksek.",
-    "beispielEn": "Rents are very high in this region."
+    "beispiel": "Der Wein kommt aus einer sonnigen Region im Süden.",
+    "beispielTr": "Şarap güneyde güneşli bir bölgeden geliyor.",
+    "beispielEn": "The wine comes from a sunny region in the south."
   },
   {
     "id": 1937,
@@ -187,9 +187,9 @@
     "id": 1850,
     "tr": "vadesi gelmiş",
     "en": "due",
-    "beispiel": "Die Rechnung ist Ende des Monats fällig.",
-    "beispielTr": "Faturanın vadesi ay sonunda doluyor.",
-    "beispielEn": "The bill is due at the end of the month."
+    "beispiel": "Nächste Woche ist die zweite Rate für das Sofa fällig.",
+    "beispielTr": "Kanepenin ikinci taksitinin vadesi gelecek hafta doluyor.",
+    "beispielEn": "The second installment for the sofa is due next week."
   },
   {
     "id": 2194,
@@ -203,9 +203,9 @@
     "id": 1777,
     "tr": "hayal kırıklığı",
     "en": "disappointment",
-    "beispiel": "Das Endspiel war eine große Enttäuschung.",
-    "beispielTr": "Final maçı büyük bir hayal kırıklığıydı.",
-    "beispielEn": "The final was a big disappointment."
+    "beispiel": "Zu ihrer Enttäuschung hat niemand an ihren Geburtstag gedacht.",
+    "beispielTr": "Kimsenin doğum gününü hatırlamaması onu hayal kırıklığına uğrattı.",
+    "beispielEn": "To her disappointment, nobody remembered her birthday."
   },
   {
     "id": 2881,
@@ -235,9 +235,9 @@
     "id": 1728,
     "tr": "döşemek",
     "en": "to furnish",
-    "beispiel": "Ich habe meine Wohnung selbst eingerichtet.",
-    "beispielTr": "Evimi kendim döşedim.",
-    "beispielEn": "I furnished my apartment myself."
+    "beispiel": "Das Kinderzimmer haben wir ganz in Blau eingerichtet.",
+    "beispielTr": "Çocuk odasını baştan sona maviyle döşedik.",
+    "beispielEn": "We furnished the kids' room all in blue."
   },
   {
     "id": 1739,
@@ -259,9 +259,9 @@
     "id": 1731,
     "tr": "açmak",
     "en": "to turn on",
-    "beispiel": "Können Sie bitte die Heizung einschalten?",
-    "beispielTr": "Kaloriferi açar mısınız lütfen?",
-    "beispielEn": "Could you turn on the heating?"
+    "beispiel": "Schalte bitte den Fernseher ein, das Spiel fängt an.",
+    "beispielTr": "Televizyonu açar mısın, maç başlıyor.",
+    "beispielEn": "Please turn on the TV, the game is starting."
   },
   {
     "id": 2591,
@@ -291,17 +291,17 @@
     "id": 2949,
     "tr": "başlangıçta",
     "en": "originally",
-    "beispiel": "Ursprünglich wollte ich in einem Restaurant arbeiten.",
-    "beispielTr": "Aslında bir restoranda çalışmak istiyordum.",
-    "beispielEn": "Originally I wanted to work in a restaurant."
+    "beispiel": "Ursprünglich kommt die Kartoffel aus Südamerika.",
+    "beispielTr": "Patates aslında Güney Amerika'dan geliyor.",
+    "beispielEn": "The potato originally comes from South America."
   },
   {
     "id": 1670,
     "tr": "mesafe",
     "en": "distance",
-    "beispiel": "Unsere Firma transportiert Waren über große Distanzen.",
-    "beispielTr": "Şirketimiz malları uzun mesafelere taşıyor.",
-    "beispielEn": "Our company transports goods over long distances."
+    "beispiel": "Beim Joggen laufe ich meistens eine Distanz von fünf Kilometern.",
+    "beispielTr": "Koşuya çıktığımda çoğunlukla beş kilometrelik bir mesafe koşarım.",
+    "beispielEn": "When I jog, I usually run a distance of five kilometers."
   },
   {
     "id": 1755,
@@ -315,9 +315,9 @@
     "id": 2299,
     "tr": "edebiyat",
     "en": "literature",
-    "beispiel": "Ich interessiere mich für moderne Literatur.",
-    "beispielTr": "Modern edebiyata ilgi duyuyorum.",
-    "beispielEn": "I'm interested in modern literature."
+    "beispiel": "Sie studiert Literatur und schreibt selbst Gedichte.",
+    "beispielTr": "Edebiyat okuyor ve kendisi de şiir yazıyor.",
+    "beispielEn": "She studies literature and writes poems herself."
   },
   {
     "id": 2532,
@@ -339,9 +339,9 @@
     "id": 1414,
     "tr": "çalışan",
     "en": "employee",
-    "beispiel": "Björn ist Angestellter in einem Reisebüro.",
-    "beispielTr": "Björn bir seyahat acentesinde çalışıyor.",
-    "beispielEn": "Björn is an employee at a travel agency."
+    "beispiel": "Alle Angestellten bekommen im Dezember einen Bonus.",
+    "beispielTr": "Bütün çalışanlar aralıkta prim alıyor.",
+    "beispielEn": "All the employees get a bonus in December."
   },
   {
     "id": 1415,
@@ -363,32 +363,32 @@
     "id": 2517,
     "tr": "üretmek",
     "en": "to produce",
-    "beispiel": "Unsere Firma produziert Feuerzeuge.",
-    "beispielTr": "Şirketimiz çakmak üretiyor.",
-    "beispielEn": "Our company produces lighters."
+    "beispiel": "Der Bauernhof produziert eigenen Honig.",
+    "beispielTr": "Çiftlik kendi balını üretiyor.",
+    "beispielEn": "The farm produces its own honey."
   },
   {
     "id": 1891,
     "tr": "akmak",
     "en": "to flow",
-    "beispiel": "Dieser Fluss fließt in die Nordsee.",
-    "beispielTr": "Bu nehir Kuzey Denizi'ne dökülüyor.",
-    "beispielEn": "This river flows into the North Sea."
+    "beispiel": "Nach dem Gewitter fließt das Wasser über die Straße.",
+    "beispielTr": "Fırtınadan sonra su yolun üstünden akıyor.",
+    "beispielEn": "After the storm, the water flows across the street."
   },
   {
     "id": 1941,
     "tr": "garanti",
     "en": "guarantee",
-    "beispiel": "Auf die Waschmaschine haben Sie ein Jahr Garantie.",
-    "beispielTr": "Çamaşır makinesinin bir yıl garantisi var.",
-    "beispielEn": "The washing machine comes with a one-year guarantee."
+    "beispiel": "Leider ist die Garantie für mein Handy abgelaufen.",
+    "beispielTr": "Maalesef telefonumun garantisi bitti.",
+    "beispielEn": "Unfortunately, the warranty on my phone has expired."
   },
   {
     "id": 2401,
     "tr": "dikiş dikmek",
     "en": "to sew",
-    "beispiel": "Meine Mutter näht ihre Kleider selbst.",
-    "beispielTr": "Annem elbiselerini kendisi dikiyor.",
-    "beispielEn": "My mother sews her own clothes."
+    "beispiel": "Kannst du mir den Knopf wieder an die Jacke nähen?",
+    "beispielTr": "Düğmeyi ceketime tekrar diker misin?",
+    "beispielEn": "Can you sew the button back on my jacket?"
   }
 ]

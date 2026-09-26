@@ -35,17 +35,17 @@
     "id": 479,
     "tr": "ad",
     "en": "first name",
-    "beispiel": "Mein Vorname ist Thomas.",
-    "beispielTr": "Benim adım Thomas.",
-    "beispielEn": "My first name is Thomas."
+    "beispiel": "Den Vornamen von meiner Nachbarin kenne ich nicht.",
+    "beispielTr": "Komşumun adını bilmiyorum.",
+    "beispielEn": "I don't know my neighbor's first name."
   },
   {
     "id": 22,
     "tr": "telesekreter",
     "en": "answering machine",
-    "beispiel": "Ich habe drei Nachrichten auf dem Anrufbeantworter.",
-    "beispielTr": "Telesekreterde üç mesajım var.",
-    "beispielEn": "I have three messages on the answering machine."
+    "beispiel": "Sprich bitte auf den Anrufbeantworter, ich rufe zurück.",
+    "beispielTr": "Lütfen telesekretere mesaj bırak, seni geri ararım.",
+    "beispielEn": "Please leave a message on the answering machine, and I'll call back."
   },
   {
     "id": 529,
@@ -59,9 +59,9 @@
     "id": 369,
     "tr": "kazak",
     "en": "sweater",
-    "beispiel": "Du brauchst keinen Pullover, es ist warm.",
-    "beispielTr": "Kazağa ihtiyacın yok, hava sıcak.",
-    "beispielEn": "You don't need a sweater, it's warm."
+    "beispiel": "Dieser blaue Pullover ist mir zu groß.",
+    "beispielTr": "Bu mavi kazak bana fazla büyük.",
+    "beispielEn": "This blue sweater is too big for me."
   },
   {
     "id": 573,
@@ -75,17 +75,17 @@
     "id": 699,
     "tr": "anaokulu",
     "en": "kindergarten",
-    "beispiel": "Die kleine Laura geht schon in den Kindergarten.",
-    "beispielTr": "Küçük Laura artık anaokuluna gidiyor.",
-    "beispielEn": "Little Laura already goes to kindergarten."
+    "beispiel": "Der Kindergarten macht um vier Uhr zu.",
+    "beispielTr": "Anaokulu saat dörtte kapanıyor.",
+    "beispielEn": "The kindergarten closes at four o'clock."
   },
   {
     "id": 671,
     "tr": "mangal yapmak",
     "en": "to grill",
-    "beispiel": "Heute grillen wir im Garten.",
-    "beispielTr": "Bugün bahçede mangal yapıyoruz.",
-    "beispielEn": "We're grilling in the garden today."
+    "beispiel": "Am Sonntag grillen wir mit Freunden am See.",
+    "beispielTr": "Pazar günü arkadaşlarla gölün kenarında mangal yapıyoruz.",
+    "beispielEn": "On Sunday we're grilling with friends by the lake."
   },
   {
     "id": 586,
@@ -99,17 +99,17 @@
     "id": 552,
     "tr": "iş yeri",
     "en": "workplace",
-    "beispiel": "An meinem Arbeitsplatz fehlt ein Drucker.",
-    "beispielTr": "İş yerimde bir yazıcı eksik.",
-    "beispielEn": "There is no printer at my workplace."
+    "beispiel": "Mein Arbeitsplatz ist nur zehn Minuten von zu Hause entfernt.",
+    "beispielTr": "İş yerim evden sadece on dakika uzakta.",
+    "beispielEn": "My workplace is only ten minutes from home."
   },
   {
     "id": 619,
     "tr": "anons",
     "en": "announcement",
-    "beispiel": "Ich habe die Durchsage nicht verstanden.",
-    "beispielTr": "Anonsu anlamadım.",
-    "beispielEn": "I didn't understand the announcement."
+    "beispiel": "Am Bahnhof kommt gerade eine Durchsage für unseren Zug.",
+    "beispielTr": "İstasyonda şu an trenimizle ilgili bir anons yapılıyor.",
+    "beispielEn": "There's an announcement for our train at the station right now."
   },
   {
     "id": 205,
@@ -131,25 +131,25 @@
     "id": 204,
     "tr": "büyükanne ve büyükbaba",
     "en": "grandparents",
-    "beispiel": "Meine Großeltern wohnen nicht bei uns.",
-    "beispielTr": "Büyükannemle büyükbabam bizimle oturmuyor.",
-    "beispielEn": "My grandparents don't live with us."
+    "beispiel": "In den Ferien fahren wir zu den Großeltern aufs Land.",
+    "beispielTr": "Tatilde köydeki büyükannemle büyükbabamın yanına gidiyoruz.",
+    "beispielEn": "During the holidays we go to our grandparents in the country."
   },
   {
     "id": 696,
     "tr": "genç",
     "en": "teenager",
-    "beispiel": "Viele Jugendliche kaufen gern ein.",
-    "beispielTr": "Birçok genç alışveriş yapmayı sever.",
-    "beispielEn": "Many teenagers like to go shopping."
+    "beispiel": "Im Jugendzentrum treffen sich viele Jugendliche am Abend.",
+    "beispielTr": "Gençlik merkezinde akşamları birçok genç buluşuyor.",
+    "beispielEn": "Lots of teenagers meet up at the youth center in the evening."
   },
   {
     "id": 548,
     "tr": "aktarma",
     "en": "connection",
-    "beispiel": "In Mannheim haben Sie Anschluss nach Saarbrücken.",
-    "beispielTr": "Mannheim'da Saarbrücken'e aktarmanız var.",
-    "beispielEn": "You have a connection to Saarbrücken in Mannheim."
+    "beispiel": "Wegen der Verspätung haben wir den Anschluss verpasst.",
+    "beispielTr": "Rötar yüzünden aktarmayı kaçırdık.",
+    "beispielEn": "Because of the delay, we missed our connection."
   },
   {
     "id": 693,
@@ -163,25 +163,25 @@
     "id": 85,
     "tr": "bluz",
     "en": "blouse",
-    "beispiel": "Ich möchte eine rote Bluse.",
-    "beispielTr": "Kırmızı bir bluz istiyorum.",
-    "beispielEn": "I'd like a red blouse."
+    "beispiel": "Zur Hochzeit trägt sie eine weiße Bluse aus Seide.",
+    "beispielTr": "Düğüne beyaz ipek bir bluz giyiyor.",
+    "beispielEn": "She's wearing a white silk blouse to the wedding."
   },
   {
     "id": 589,
     "tr": "acı",
     "en": "bitter",
-    "beispiel": "Der Kaffee schmeckt bitter.",
-    "beispielTr": "Kahvenin tadı acı.",
-    "beispielEn": "The coffee tastes bitter."
+    "beispiel": "Diese Schokolade ist mir zu bitter.",
+    "beispielTr": "Bu çikolata bana fazla acı.",
+    "beispielEn": "This chocolate is too bitter for me."
   },
   {
     "id": 93,
     "tr": "CD",
     "en": "CD",
-    "beispiel": "Wir können ihm eine CD schenken.",
-    "beispielTr": "Ona bir CD hediye edebiliriz.",
-    "beispielEn": "We can give him a CD."
+    "beispiel": "Im Auto hören wir immer die gleiche CD.",
+    "beispielTr": "Arabada hep aynı CD'yi dinliyoruz.",
+    "beispielEn": "In the car we always listen to the same CD."
   },
   {
     "id": 667,
@@ -211,9 +211,9 @@
     "id": 532,
     "tr": "yola çıkış",
     "en": "departure",
-    "beispiel": "Vor der Abfahrt rufe ich dich an.",
-    "beispielTr": "Yola çıkmadan önce seni ararım.",
-    "beispielEn": "I'll call you before we set off."
+    "beispiel": "Kurz vor der Abfahrt kauft Tom noch einen Kaffee.",
+    "beispielTr": "Tom kalkıştan hemen önce bir kahve daha alıyor.",
+    "beispielEn": "Right before departure, Tom buys another coffee."
   },
   {
     "id": 682,
@@ -227,17 +227,17 @@
     "id": 769,
     "tr": "tamir",
     "en": "repair",
-    "beispiel": "Die Reparatur ist sehr teuer.",
-    "beispielTr": "Tamir çok pahalı.",
-    "beispielEn": "The repair is very expensive."
+    "beispiel": "Die Reparatur von meinem Handy dauert drei Tage.",
+    "beispielTr": "Telefonumun tamiri üç gün sürüyor.",
+    "beispielEn": "Fixing my phone takes three days."
   },
   {
     "id": 556,
     "tr": "doldurmak",
     "en": "to fill out",
-    "beispiel": "Füllen Sie bitte dieses Formular aus.",
-    "beispielTr": "Lütfen bu formu doldurun.",
-    "beispielEn": "Please fill out this form."
+    "beispiel": "Beim Arzt muss ich zuerst einen Fragebogen ausfüllen.",
+    "beispielTr": "Doktorda önce bir anket formu doldurmam gerekiyor.",
+    "beispielEn": "At the doctor's office, I have to fill out a questionnaire first."
   },
   {
     "id": 250,
@@ -251,9 +251,9 @@
     "id": 317,
     "tr": "reçel",
     "en": "jam",
-    "beispiel": "Ich esse Brot mit Marmelade.",
-    "beispielTr": "Reçelli ekmek yiyorum.",
-    "beispielEn": "I'm eating bread with jam."
+    "beispiel": "Meine Oma macht jeden Sommer Marmelade aus Kirschen.",
+    "beispielTr": "Anneannem her yaz vişneden reçel yapar.",
+    "beispielEn": "My grandma makes cherry jam every summer."
   },
   {
     "id": 651,
@@ -267,9 +267,9 @@
     "id": 652,
     "tr": "form",
     "en": "form",
-    "beispiel": "Sie müssen dieses Formular ausfüllen.",
-    "beispielTr": "Bu formu doldurmanız gerekiyor.",
-    "beispielEn": "You have to fill out this form."
+    "beispiel": "Das Formular gibt es auch online.",
+    "beispielTr": "Form internette de var.",
+    "beispielEn": "The form is also available online."
   },
   {
     "id": 558,
@@ -323,9 +323,9 @@
     "id": 439,
     "tr": "sempatik",
     "en": "likeable",
-    "beispiel": "Ich finde ihn sehr sympathisch.",
-    "beispielTr": "Onu çok sempatik buluyorum.",
-    "beispielEn": "I find him very likeable."
+    "beispiel": "Die Ärztin war freundlich und sehr sympathisch.",
+    "beispielTr": "Doktor nazik ve çok sempatikti.",
+    "beispielEn": "The doctor was friendly and very likeable."
   },
   {
     "id": 770,
@@ -339,17 +339,17 @@
     "id": 756,
     "tr": "staj",
     "en": "internship",
-    "beispiel": "Ich mache ein Praktikum bei Siemens.",
-    "beispielTr": "Siemens'te staj yapıyorum.",
-    "beispielEn": "I'm doing an internship at Siemens."
+    "beispiel": "Mein Sohn macht im Sommer ein Praktikum in einem Krankenhaus.",
+    "beispielTr": "Oğlum yazın bir hastanede staj yapıyor.",
+    "beispielEn": "My son is doing an internship at a hospital this summer."
   },
   {
     "id": 567,
     "tr": "fırın",
     "en": "bakery",
-    "beispiel": "Ich gehe schnell zur Bäckerei.",
-    "beispielTr": "Hemen fırına gidiyorum.",
-    "beispielEn": "I'm quickly going to the bakery."
+    "beispiel": "Die Bäckerei an der Ecke öffnet schon um sechs.",
+    "beispielTr": "Köşedeki fırın sabah altıda açılıyor.",
+    "beispielEn": "The bakery on the corner opens at six."
   },
   {
     "id": 547,
@@ -379,17 +379,17 @@
     "id": 366,
     "tr": "poster",
     "en": "poster",
-    "beispiel": "In meinem Zimmer hängen viele Poster.",
-    "beispielTr": "Odamda bir sürü poster var.",
-    "beispielEn": "There are a lot of posters in my room."
+    "beispiel": "Mein Bruder hat ein Poster von seiner Band gekauft.",
+    "beispielTr": "Ağabeyim sevdiği grubun bir posterini aldı.",
+    "beispielEn": "My brother bought a poster of his favorite band."
   },
   {
     "id": 426,
     "tr": "oyun parkı",
     "en": "playground",
-    "beispiel": "Die Kinder spielen auf dem Spielplatz.",
-    "beispielTr": "Çocuklar oyun parkında oynuyor.",
-    "beispielEn": "The children are playing at the playground."
+    "beispiel": "Der neue Spielplatz hat eine lange Rutsche.",
+    "beispielTr": "Yeni oyun parkında uzun bir kaydırak var.",
+    "beispielEn": "The new playground has a long slide."
   },
   {
     "id": 632,

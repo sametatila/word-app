@@ -123,17 +123,17 @@
   "id": 1954,
   "tr": "doğum",
   "en": "birth",
-  "beispiel": "Wir gratulieren euch herzlich zur Geburt eurer Tochter!",
-  "beispielTr": "Kızınızın doğumunu içtenlikle kutlarız!",
-  "beispielEn": "Congratulations on the birth of your daughter!"
+  "beispiel": "Nach der Geburt blieb Julia drei Tage im Krankenhaus.",
+  "beispielTr": "Julia doğumdan sonra üç gün hastanede kaldı.",
+  "beispielEn": "After the birth, Julia stayed in the hospital for three days."
  },
  {
   "id": 1648,
   "tr": "battaniye",
   "en": "blanket",
-  "beispiel": "Kannst du mir bitte noch eine Decke bringen?",
-  "beispielTr": "Bana bir battaniye daha getirebilir misin?",
-  "beispielEn": "Could you bring me another blanket, please?"
+  "beispiel": "Auf dem Sofa liegt eine warme Decke aus Wolle.",
+  "beispielTr": "Kanepenin üstünde yünden sıcak bir battaniye duruyor.",
+  "beispielEn": "There's a warm wool blanket on the couch."
  },
  {
   "id": 2728,
@@ -171,17 +171,17 @@
   "id": 2015,
   "tr": "çimen",
   "en": "grass",
-  "beispiel": "Wir lagen den ganzen Nachmittag im Gras.",
-  "beispielTr": "Bütün öğleden sonra çimenlerde uzandık.",
-  "beispielEn": "We lay in the grass all afternoon."
+  "beispiel": "Nach dem Regen ist das Gras noch nass.",
+  "beispielTr": "Yağmurdan sonra çimen hâlâ ıslak.",
+  "beispielEn": "The grass is still wet after the rain."
  },
  {
   "id": 2749,
   "tr": "istasyon",
   "en": "station",
-  "beispiel": "Sie müssen an der nächsten Station aussteigen.",
-  "beispielTr": "Bir sonraki istasyonda inmeniz gerekiyor.",
-  "beispielEn": "You have to get off at the next station."
+  "beispiel": "Bis zum Museum sind es nur drei Stationen mit der U-Bahn.",
+  "beispielTr": "Müzeye metroyla sadece üç istasyon var.",
+  "beispielEn": "The museum is only three stations away by subway."
  },
  {
   "id": 2078,
@@ -211,9 +211,9 @@
   "id": 2427,
   "tr": "acil durum",
   "en": "emergency",
-  "beispiel": "Im Notfall rufen Sie bitte diese Nummer an.",
-  "beispielTr": "Acil durumda lütfen bu numarayı arayın.",
-  "beispielEn": "In an emergency, please call this number."
+  "beispiel": "Der Arzt musste wegen eines Notfalls früher gehen.",
+  "beispielTr": "Doktor bir acil durum yüzünden erken çıkmak zorunda kaldı.",
+  "beispielEn": "The doctor had to leave early because of an emergency."
  },
  {
   "id": 2630,
@@ -235,17 +235,17 @@
   "id": 2794,
   "tr": "elektrik",
   "en": "electricity",
-  "beispiel": "Wie kann man im Haushalt Strom sparen?",
-  "beispielTr": "Evde elektrikten nasıl tasarruf edilir?",
-  "beispielEn": "How can you save electricity at home?"
+  "beispiel": "Seit dem Gewitter haben wir im ganzen Haus keinen Strom.",
+  "beispielTr": "Fırtınadan beri bütün evde elektrik yok.",
+  "beispielEn": "Since the thunderstorm we've had no electricity in the whole house."
  },
  {
   "id": 2816,
   "tr": "yetenek",
   "en": "talent",
-  "beispiel": "Sie hat ein großes Talent für Musik.",
-  "beispielTr": "Müziğe karşı büyük bir yeteneği var.",
-  "beispielEn": "She has a great talent for music."
+  "beispiel": "Mein Bruder hat leider überhaupt kein Talent zum Kochen.",
+  "beispielTr": "Kardeşimin maalesef yemek yapmaya hiç yeteneği yok.",
+  "beispielEn": "Unfortunately my brother has no talent at all for cooking."
  },
  {
   "id": 2868,
@@ -267,9 +267,9 @@
   "id": 2825,
   "tr": "fail",
   "en": "perpetrator",
-  "beispiel": "Die Polizei hat den Täter endlich gefasst.",
-  "beispielTr": "Polis faili sonunda yakaladı.",
-  "beispielEn": "The police finally caught the perpetrator."
+  "beispiel": "Die Zeugen konnten den Täter nicht genau beschreiben.",
+  "beispielTr": "Tanıklar faili tam olarak tarif edemedi.",
+  "beispielEn": "The witnesses couldn't describe the perpetrator precisely."
  },
  {
   "id": 1660,
@@ -283,9 +283,9 @@
   "id": 2444,
   "tr": "resmî",
   "en": "official",
-  "beispiel": "Sie bekommen von uns eine offizielle Einladung.",
-  "beispielTr": "Bizden resmî bir davetiye alacaksınız.",
-  "beispielEn": "You will receive an official invitation from us."
+  "beispiel": "Morgen stellt die Stadt den neuen Bürgermeister offiziell vor.",
+  "beispielTr": "Belediye yarın yeni başkanı resmî olarak tanıtıyor.",
+  "beispielEn": "Tomorrow the city will officially introduce the new mayor."
  },
  {
   "id": 1661,
@@ -355,9 +355,9 @@
   "id": 3112,
   "tr": "etki etmek",
   "en": "to take effect",
-  "beispiel": "Die Tabletten haben leider nicht gewirkt.",
-  "beispielTr": "Haplar maalesef etki etmedi.",
-  "beispielEn": "Unfortunately the pills did not take effect."
+  "beispiel": "Das Schmerzmittel wirkt erst nach einer halben Stunde.",
+  "beispielTr": "Ağrı kesici ancak yarım saat sonra etki ediyor.",
+  "beispielEn": "The painkiller only takes effect after half an hour."
  },
  {
   "id": 2747,
@@ -395,8 +395,8 @@
   "id": 3100,
   "tr": "bahse girmek",
   "en": "to bet",
-  "beispiel": "Wir haben gewettet, dass sie wieder zu spät kommt.",
-  "beispielTr": "Yine geç kalacağına bahse girdik.",
-  "beispielEn": "We bet that she would be late again."
+  "beispiel": "Ich wette mit dir, dass unser Team heute gewinnt.",
+  "beispielTr": "Seninle bahse girerim, takımımız bugün kazanacak.",
+  "beispielEn": "I bet you our team wins today."
  }
 ]

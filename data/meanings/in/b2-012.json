@@ -10,7 +10,7 @@
    "formen": "Schwankungen",
    "currentTr": "dalgalanma, oynaklık",
    "currentBeispiel": "Starke Schwankungen der Preise erschweren die Planung.",
-   "currentBeispielTr": "Fiyatlardaki güçlü dalgalanmalar planlamayı zorlaştırıyor."
+   "currentBeispielTr": "Fiyatlardaki büyük dalgalanmalar planlamayı zorlaştırıyor."
   },
   {
    "id": 4194,
@@ -63,8 +63,8 @@
    "niveau": "B2",
    "formen": "Spannen",
    "currentTr": "aralık, fark, marj",
-   "currentBeispiel": "Die Spanne zwischen den Angeboten war überraschend groß.",
-   "currentBeispielTr": "Teklifler arasındaki fark şaşırtıcı derecede büyüktü."
+   "currentBeispiel": "Die Preise liegen in einer Spanne von zehn bis zwanzig Euro.",
+   "currentBeispielTr": "Fiyatlar on ile yirmi avro aralığında."
   },
   {
    "id": 4199,
@@ -97,7 +97,7 @@
    "formen": "Obergrenzen",
    "currentTr": "üst sınır, tavan",
    "currentBeispiel": "Für die Beiträge gilt eine gesetzliche Obergrenze.",
-   "currentBeispielTr": "Katkı payları için yasal bir üst sınır geçerli."
+   "currentBeispielTr": "Katkı payları için yasal bir üst sınır var."
   },
   {
    "id": 4202,
@@ -107,7 +107,7 @@
    "formen": "Einbußen",
    "currentTr": "kayıp, zarar",
    "currentBeispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
-   "currentBeispielTr": "Fırtına hasatta önemli kayıplara yol açtı.",
+   "currentBeispielTr": "Fırtına hasatta ciddi kayıplara yol açtı.",
    "overlapping": [
     "weg (A2)",
     "der Verlust (B1)"
@@ -141,7 +141,7 @@
    "formen": "Lehrgänge",
    "currentTr": "kurs, eğitim programı",
    "currentBeispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
-   "currentBeispielTr": "Kurs altı hafta sürüyor ve bir sınavla sona eriyor.",
+   "currentBeispielTr": "Kurs altı hafta sürüyor ve bir sınavla bitiyor.",
    "overlapping": [
     "der Kurs (A1)"
    ]
@@ -164,7 +164,7 @@
    "formen": "Studienplätze",
    "currentTr": "üniversitede öğrenim yeri, kayıt hakkı",
    "currentBeispiel": "Er hat endlich einen Studienplatz für Medizin bekommen.",
-   "currentBeispielTr": "Sonunda tıp okumak için bir kontenjan hakkı kazandı."
+   "currentBeispielTr": "Sonunda tıp bölümünde bir yer kazandı."
   },
   {
    "id": 4208,
@@ -194,7 +194,7 @@
    "formen": "Bildungswege",
    "currentTr": "eğitim yolu, öğrenim süreci",
    "currentBeispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
-   "currentBeispielTr": "İkinci eğitim yolu çalışanlara da açıktır."
+   "currentBeispielTr": "İkinci eğitim yolu çalışanlara da açık."
   },
   {
    "id": 4211,
@@ -204,7 +204,7 @@
    "formen": "Schulabschlüsse",
    "currentTr": "okul diploması, mezuniyet derecesi",
    "currentBeispiel": "Ohne Schulabschluss ist die Suche nach einer Lehrstelle schwierig.",
-   "currentBeispielTr": "Diploma olmadan çıraklık yeri aramak zordur."
+   "currentBeispielTr": "Okul diploması olmadan çıraklık yeri aramak zordur."
   },
   {
    "id": 4212,
@@ -214,7 +214,7 @@
    "formen": "Fachrichtungen",
    "currentTr": "bölüm, uzmanlık alanı",
    "currentBeispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
-   "currentBeispielTr": "İki dönem sonra bölümünü değiştirdi.",
+   "currentBeispielTr": "İki dönem sonra okuduğu alanı değiştirdi.",
    "overlapping": [
     "der Abschnitt (B1)",
     "die Abteilung (B1)",
@@ -239,8 +239,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "üniversiteye giriş yeterliliği",
-   "currentBeispiel": "Die allgemeine Hochschulreife berechtigt zum Studium an jeder Universität.",
-   "currentBeispielTr": "Genel üniversite yeterliliği her üniversitede okuma hakkı verir."
+   "currentBeispiel": "Ohne Hochschulreife wird er an keiner Uni angenommen.",
+   "currentBeispielTr": "Üniversiteye giriş yeterliliği olmadan onu hiçbir üniversite kabul etmez."
   },
   {
    "id": 4215,
@@ -250,7 +250,7 @@
    "formen": "",
    "currentTr": "uygulamayla bağ, pratiğe dönüklük",
    "currentBeispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
-   "currentBeispielTr": "Birçok lisans programında gerçek bir uygulama bağı eksik.",
+   "currentBeispielTr": "Birçok bölümde gerçek bir uygulama bağı yok.",
    "overlapping": [
     "der Anwendungsbezug (C1)"
    ]
@@ -299,7 +299,7 @@
    "formen": "Gliederungen",
    "currentTr": "plan, ana hatlar, bölümlendirme",
    "currentBeispiel": "Der Professor bemängelte die unklare Gliederung der Arbeit.",
-   "currentBeispielTr": "Profesör çalışmanın belirsiz planını eleştirdi.",
+   "currentBeispielTr": "Profesör çalışmanın ana hatlarını belirsiz buldu.",
    "overlapping": [
     "der Plan (A1)"
    ]
@@ -332,7 +332,7 @@
    "formen": "Anmeldefristen",
    "currentTr": "kayıt süresi, başvuru süresi",
    "currentBeispiel": "Die Anmeldefrist für das Wintersemester läuft am Freitag ab.",
-   "currentBeispielTr": "Kış dönemi başvuru süresi cuma günü doluyor."
+   "currentBeispielTr": "Kış dönemi kayıt süresi cuma günü doluyor."
   },
   {
    "id": 4223,
@@ -362,7 +362,7 @@
    "formen": "Durchschnittsnoten",
    "currentTr": "not ortalaması",
    "currentBeispiel": "Seine Durchschnittsnote reichte für den gewünschten Studiengang nicht.",
-   "currentBeispielTr": "Not ortalaması istediği bölüm için yeterli olmadı."
+   "currentBeispielTr": "Not ortalaması istediği bölüm için yetmedi."
   },
   {
    "id": 4226,
@@ -405,7 +405,7 @@
    "formen": "Meisterprüfungen",
    "currentTr": "ustalık sınavı",
    "currentBeispiel": "Nach der Meisterprüfung darf er selbst Lehrlinge ausbilden.",
-   "currentBeispielTr": "Ustalık sınavından sonra kendisi çırak yetiştirebilir."
+   "currentBeispielTr": "Ustalık sınavından sonra kendi çıraklarını yetiştirebilir."
   },
   {
    "id": 4230,
@@ -415,7 +415,7 @@
    "formen": "Umschulungen",
    "currentTr": "meslek değiştirme eğitimi",
    "currentBeispiel": "Das Arbeitsamt finanziert ihm eine Umschulung zum Pfleger.",
-   "currentBeispielTr": "İş kurumu ona bakıcılığa geçiş eğitimini finanse ediyor."
+   "currentBeispielTr": "İş kurumu ona bakıcılık için meslek değiştirme eğitimini finanse ediyor."
   },
   {
    "id": 4231,
@@ -454,8 +454,8 @@
    "niveau": "B2",
    "formen": "Fernstudien",
    "currentTr": "uzaktan eğitim",
-   "currentBeispiel": "Ein Fernstudium verlangt viel Disziplin und gute Zeiteinteilung.",
-   "currentBeispielTr": "Uzaktan eğitim çok disiplin ve iyi bir zaman planlaması ister."
+   "currentBeispiel": "Neben dem Job macht sie ein Fernstudium in Informatik.",
+   "currentBeispielTr": "İşinin yanı sıra bilişim alanında uzaktan eğitim görüyor."
   },
   {
    "id": 4235,
@@ -475,7 +475,7 @@
    "formen": "Fehlzeiten",
    "currentTr": "devamsızlık süresi",
    "currentBeispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
-   "currentBeispielTr": "Çok fazla devamsızlık yüzünden sınava alınmadı."
+   "currentBeispielTr": "Aşırı devamsızlık yüzünden sınava alınmadı."
   },
   {
    "id": 4237,
@@ -494,8 +494,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "yetişkin eğitimi",
-   "currentBeispiel": "Die Erwachsenenbildung gewinnt in alternden Gesellschaften an Bedeutung.",
-   "currentBeispielTr": "Yaşlanan toplumlarda yetişkin eğitimi önem kazanıyor."
+   "currentBeispiel": "Sie unterrichtet seit zehn Jahren in der Erwachsenenbildung.",
+   "currentBeispielTr": "On yıldır yetişkin eğitiminde ders veriyor."
   },
   {
    "id": 4239,
@@ -541,8 +541,8 @@
    "niveau": "B2",
    "formen": "Schwerpunkte",
    "currentTr": "ağırlık noktası, odak",
-   "currentBeispiel": "Im Master wählte sie den Schwerpunkt Umweltrecht.",
-   "currentBeispielTr": "Yüksek lisansta çevre hukuku odağını seçti."
+   "currentBeispiel": "Der Schwerpunkt seiner Arbeit liegt auf erneuerbaren Energien.",
+   "currentBeispielTr": "Çalışmasının odağında yenilenebilir enerjiler var."
   }
  ]
 }

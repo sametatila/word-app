@@ -10,7 +10,7 @@
    "formen": "",
    "currentTr": "özgüven",
    "currentBeispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
-   "currentBeispielTr": "Artan özgüveniyle seyircinin karşısına çıktı.",
+   "currentBeispielTr": "Artan bir özgüvenle seyircinin karşısına çıktı.",
    "overlapping": [
     "das Selbstbewusstsein (B2)",
     "das Selbstvertrauen (B2)"
@@ -24,7 +24,7 @@
    "formen": "Empfindlichkeiten",
    "currentTr": "hassasiyet, alınganlık",
    "currentBeispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
-   "currentBeispielTr": "Eleştiriye karşı alınganlığı beni şaşırttı."
+   "currentBeispielTr": "Eleştiriye karşı hassasiyeti beni şaşırttı."
   },
   {
    "id": 3368,
@@ -34,7 +34,7 @@
    "formen": "Charakterzüge",
    "currentTr": "karakter özelliği",
    "currentBeispiel": "Neugier ist ein typischer Charakterzug von ihm.",
-   "currentBeispielTr": "Merak onun tipik bir karakter özelliğidir.",
+   "currentBeispielTr": "Merak, onun tipik bir karakter özelliğidir.",
    "overlapping": [
     "der Wesenszug (C1)"
    ]
@@ -47,7 +47,7 @@
    "formen": "",
    "currentTr": "uzaklaşma, yabancılaşma",
    "currentBeispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
-   "currentBeispielTr": "Anne babayla oğul arasındaki uzaklaşma giderek büyüdü."
+   "currentBeispielTr": "Anne babayla oğul arasındaki yabancılaşma giderek arttı."
   },
   {
    "id": 3382,
@@ -67,7 +67,7 @@
    "formen": "entfremdet sich, hat sich entfremdet",
    "currentTr": "yabancılaşmak, uzaklaşmak",
    "currentBeispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
-   "currentBeispielTr": "Arkadaşlar yıllar içinde birbirinden uzaklaştı."
+   "currentBeispielTr": "Arkadaşlar yıllar içinde birbirine yabancılaştı."
   },
   {
    "id": 3384,
@@ -77,7 +77,7 @@
    "formen": "setzt sich auseinander, hat sich auseinandergesetzt",
    "currentTr": "ele almak, kafa yormak",
    "currentBeispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
-   "currentBeispielTr": "Bu çatışmayla enine boyuna yüzleşmek zorunda kaldı.",
+   "currentBeispielTr": "Bu çatışma üzerine uzun uzun kafa yormak zorunda kaldı.",
    "overlapping": [
     "aufgreifen (B2)"
    ]
@@ -90,7 +90,7 @@
    "formen": "Prägungen",
    "currentTr": "biçimlenme, şekillenme (erken etkilerle)",
    "currentBeispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
-   "currentBeispielTr": "Erken çocukluktaki biçimlenme, sonraki davranışları etkiler."
+   "currentBeispielTr": "Erken çocukluktaki şekillenme sonraki davranışları etkiliyor."
   },
   {
    "id": 3390,
@@ -99,8 +99,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "başa çıkma, üstesinden gelme",
-   "currentBeispiel": "Die Bewältigung von Stress erfordert bestimmte Strategien.",
-   "currentBeispielTr": "Stresle başa çıkmak belirli stratejiler gerektirir."
+   "currentBeispiel": "Die Bewältigung der Krise hat uns viel Kraft gekostet.",
+   "currentBeispielTr": "Krizle başa çıkmak bizi çok yordu."
   },
   {
    "id": 3398,
@@ -144,7 +144,7 @@
    "formen": "automatisiert, hat automatisiert",
    "currentTr": "otomatikleştirmek",
    "currentBeispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
-   "currentBeispielTr": "Fabrika, üretimini tamamen otomatikleştirmek istiyor."
+   "currentBeispielTr": "Fabrika üretimini tamamen otomatikleştirmek istiyor."
   },
   {
    "id": 3407,
@@ -154,7 +154,7 @@
    "formen": "vernetzt, hat vernetzt",
    "currentTr": "ağa bağlamak, bağlantılandırmak",
    "currentBeispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
-   "currentBeispielTr": "Akıllı cihazlar günümüzde kolayca birbirine bağlanabiliyor."
+   "currentBeispielTr": "Akıllı cihazlar günümüzde kolayca ağa bağlanabiliyor."
   },
   {
    "id": 3408,
@@ -187,7 +187,7 @@
    "formen": "nur Singular",
    "currentTr": "sera etkisi",
    "currentBeispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
-   "currentBeispielTr": "Sera etkisi küresel ısınmayı şiddetlendiriyor."
+   "currentBeispielTr": "Sera etkisi küresel ısınmayı güçlendiriyor."
   },
   {
    "id": 3412,
@@ -197,7 +197,7 @@
    "formen": "die Emissionen",
    "currentTr": "emisyon, salım",
    "currentBeispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
-   "currentBeispielTr": "Şehir, trafik kaynaklı emisyonları ciddi ölçüde azaltmak istiyor."
+   "currentBeispielTr": "Şehir, trafikten kaynaklanan emisyonları belirgin ölçüde azaltmak istiyor."
   },
   {
    "id": 3416,
@@ -207,7 +207,7 @@
    "formen": "",
    "currentTr": "yenilenebilir",
    "currentBeispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
-   "currentBeispielTr": "Elektriğin giderek daha büyük bölümü yenilenebilir enerjiden geliyor.",
+   "currentBeispielTr": "Elektriğin giderek daha büyük kısmı yenilenebilir enerjiden geliyor.",
    "overlapping": [
     "regenerativ (C1)"
    ]
@@ -230,7 +230,7 @@
    "formen": "nur Singular",
    "currentTr": "karbondioksit salımı",
    "currentBeispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
-   "currentBeispielTr": "Sanayinin karbondioksit salımı ancak yavaş yavaş düşüyor."
+   "currentBeispielTr": "Sanayinin karbon salımı ancak yavaş yavaş düşüyor."
   },
   {
    "id": 3419,
@@ -250,7 +250,7 @@
    "formen": "nur Singular",
    "currentTr": "rüzgar enerjisi",
    "currentBeispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
-   "currentBeispielTr": "Bölge büyük ölçüde rüzgar ve güneş enerjisine yöneliyor."
+   "currentBeispielTr": "Bölge ağırlıklı olarak rüzgâr enerjisine ve güneş panellerine yöneliyor."
   },
   {
    "id": 3421,
@@ -260,7 +260,7 @@
    "formen": "nur Singular",
    "currentTr": "tür çeşitliliği, biyoçeşitlilik",
    "currentBeispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
-   "currentBeispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırır."
+   "currentBeispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırıyor."
   },
   {
    "id": 3426,
@@ -270,7 +270,7 @@
    "formen": "nur Singular",
    "currentTr": "permafrost, sürekli donmuş toprak",
    "currentBeispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
-   "currentBeispielTr": "Çözülen permafrost, tehlikeli metan gazı açığa çıkarıyor."
+   "currentBeispielTr": "Çözülen permafrost tehlikeli metan gazını açığa çıkarıyor."
   },
   {
    "id": 3429,
@@ -300,7 +300,7 @@
    "formen": "nur Singular",
    "currentTr": "trafik çöküşü, trafik kilitlenmesi",
    "currentBeispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
-   "currentBeispielTr": "Kaza, trafiğin tamamen kilitlenmesine yol açtı."
+   "currentBeispielTr": "Kaza, trafiğin tamamen felç olmasına yol açtı."
   },
   {
    "id": 3441,
@@ -320,7 +320,7 @@
    "formen": "die Ladestationen",
    "currentTr": "şarj istasyonu",
    "currentBeispiel": "An dieser Ladestation kann man E-Autos aufladen.",
-   "currentBeispielTr": "Bu istasyonda elektrikli arabalar şarj edilebiliyor.",
+   "currentBeispielTr": "Bu şarj istasyonunda elektrikli arabalar şarj edilebiliyor.",
    "overlapping": [
     "die Ladesäule (B2)"
    ]
@@ -332,8 +332,8 @@
    "niveau": "B2",
    "formen": "nur Singular",
    "currentTr": "trafik yoğunluğu",
-   "currentBeispiel": "Die Verkehrsdichte nimmt zur Rushhour deutlich zu.",
-   "currentBeispielTr": "Trafik yoğunluğu zirve saatlerde belirgin biçimde artıyor.",
+   "currentBeispiel": "Die Verkehrsdichte nimmt zur Hauptverkehrszeit deutlich zu.",
+   "currentBeispielTr": "Trafik yoğunluğu yoğun saatlerde belirgin biçimde artıyor.",
    "overlapping": [
     "das Verkehrsaufkommen (B2)"
    ]
@@ -389,7 +389,7 @@
    "formen": "die Ballungsräume",
    "currentTr": "yoğun nüfuslu bölge, metropol alanı",
    "currentBeispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
-   "currentBeispielTr": "Metropol alanında milyonlarca insan dar bir alanda yaşıyor."
+   "currentBeispielTr": "Metropol bölgesinde milyonlarca insan dar bir alanda yaşıyor."
   },
   {
    "id": 3455,
@@ -419,7 +419,7 @@
    "formen": "nur Singular",
    "currentTr": "konut sıkıntısı",
    "currentBeispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
-   "currentBeispielTr": "Konut sıkıntısı birçok metropolde derinleşiyor."
+   "currentBeispielTr": "Konut sıkıntısı birçok metropolde daha da ağırlaşıyor."
   },
   {
    "id": 3458,
@@ -429,7 +429,7 @@
    "formen": "saniert, hat saniert",
    "currentTr": "yenilemek, restore etmek",
    "currentBeispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
-   "currentBeispielTr": "Şehir, eski binaları enerji verimliliği açısından yeniletiyor.",
+   "currentBeispielTr": "Şehir, eski binaları enerji açısından elden geçirtiyor.",
    "overlapping": [
     "renovieren (A2)"
    ]
@@ -442,7 +442,7 @@
    "formen": "die Grünflächen",
    "currentTr": "yeşil alan",
    "currentBeispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
-   "currentBeispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi hedefleniyor."
+   "currentBeispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi bekleniyor."
   },
   {
    "id": 3733,
@@ -461,8 +461,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "zaman darlığı",
-   "currentBeispiel": "Wegen Zeitmangel schaffe ich das heute nicht.",
-   "currentBeispielTr": "Zaman darlığından bunu bugün yetiştiremem."
+   "currentBeispiel": "Aus Zeitmangel schaffe ich das heute nicht.",
+   "currentBeispielTr": "Zaman darlığından bunu bugün yetiştiremeyeceğim."
   },
   {
    "id": 3738,
@@ -486,7 +486,7 @@
    "formen": "die Wohngemeinschaften",
    "currentTr": "paylaşımlı ev, öğrenci evi",
    "currentBeispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
-   "currentBeispielTr": "İki yıldır paylaşımlı bir evde oturuyor."
+   "currentBeispielTr": "İki yıldır paylaşımlı bir evde yaşıyor."
   },
   {
    "id": 3747,
@@ -519,7 +519,7 @@
    "formen": "",
    "currentTr": "tuzlu, baharatlı (tatlının zıddı)",
    "currentBeispiel": "Ich esse lieber herzhafte als süße Speisen.",
-   "currentBeispielTr": "Tatlıdan çok tuzlu yiyecekleri tercih ederim.",
+   "currentBeispielTr": "Tatlı yiyeceklerdense tuzlu olanları tercih ederim.",
    "overlapping": [
     "salzig (B1)"
    ]
@@ -532,7 +532,7 @@
    "formen": "die Buchungen",
    "currentTr": "rezervasyon (işlemi)",
    "currentBeispiel": "Die Buchung des Hotels war ganz unkompliziert.",
-   "currentBeispielTr": "Otel rezervasyonu hiç zahmetsizdi.",
+   "currentBeispielTr": "Otel rezervasyonu gayet kolay oldu.",
    "overlapping": [
     "die Reservierung (B1)"
    ]

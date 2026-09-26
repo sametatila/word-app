@@ -10,7 +10,7 @@
    "formen": "die Insolvenzen",
    "currentTr": "iflas",
    "currentBeispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
-   "currentBeispielTr": "Yüksek borçları yüzünden şirket iflas başvurusunda bulunmak zorunda kaldı.",
+   "currentBeispielTr": "Yüksek borçlar yüzünden şirket iflas başvurusu yapmak zorunda kaldı.",
    "overlapping": [
     "der Konkurs (B2)"
    ]
@@ -23,7 +23,7 @@
    "formen": "die Innovationen",
    "currentTr": "yenilik, inovasyon",
    "currentBeispiel": "Die Firma investiert stark in technologische Innovation.",
-   "currentBeispielTr": "Firma teknolojik inovasyona büyük yatırım yapıyor.",
+   "currentBeispielTr": "Şirket teknolojik yeniliğe büyük yatırım yapıyor.",
    "overlapping": [
     "die Neuerung (B2)"
    ]
@@ -35,8 +35,8 @@
    "niveau": "B2",
    "formen": "die Moleküle",
    "currentTr": "molekül",
-   "currentBeispiel": "Das Molekül besteht aus mehreren Atomen.",
-   "currentBeispielTr": "Molekül birden fazla atomdan oluşur."
+   "currentBeispiel": "Die Forscher haben das Molekül künstlich hergestellt.",
+   "currentBeispielTr": "Araştırmacılar molekülü yapay olarak üretti."
   },
   {
    "id": 3237,
@@ -56,7 +56,7 @@
    "formen": "",
    "currentTr": "nesnellik, objektiflik",
    "currentBeispiel": "Die Objektivität der Presse wird häufig angezweifelt.",
-   "currentBeispielTr": "Basının tarafsızlığından sık sık şüphe ediliyor.",
+   "currentBeispielTr": "Basının nesnelliği sık sık sorgulanıyor.",
    "overlapping": [
     "die Sachlichkeit (C1)"
    ]
@@ -104,7 +104,7 @@
    "formen": "Sachbearbeiter",
    "currentTr": "memur, işlem görevlisi",
    "currentBeispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
-   "currentBeispielTr": "İlgili memur başvuruyu inceliyor.",
+   "currentBeispielTr": "İlgili işlem memuru başvuruyu inceliyor.",
    "overlapping": [
     "der Beamte (A1)",
     "der Angestellte (B1)",
@@ -146,7 +146,7 @@
    "formen": "die Schnittstellen",
    "currentTr": "arayüz",
    "currentBeispiel": "Die neue Schnittstelle verbindet beide Programme reibungslos.",
-   "currentBeispielTr": "Yeni arayüz iki programı sorunsuz birbirine bağlıyor."
+   "currentBeispielTr": "Yeni arayüz iki programı sorunsuz biçimde birbirine bağlıyor."
   },
   {
    "id": 3427,
@@ -188,8 +188,8 @@
    "niveau": "B2",
    "formen": "Verdrängungen",
    "currentTr": "bastırma",
-   "currentBeispiel": "Verdrängung ist ein bekannter Abwehrmechanismus der Psyche.",
-   "currentBeispielTr": "Bastırma, ruhun bilinen bir savunma mekanizmasıdır."
+   "currentBeispiel": "Die Verdrängung schlimmer Erinnerungen hilft nur kurzfristig.",
+   "currentBeispielTr": "Kötü anıları bastırmak yalnızca kısa vadede işe yarar."
   },
   {
    "id": 3236,
@@ -209,7 +209,7 @@
    "formen": "",
    "currentTr": "güvenilirlik (sözünde durma, işi aksatmama)",
    "currentBeispiel": "Seine Zuverlässigkeit machte ihn zum idealen Kollegen.",
-   "currentBeispielTr": "Güvenilirliği onu ideal bir çalışma arkadaşı yapıyordu."
+   "currentBeispielTr": "Güvenilirliği onu ideal bir iş arkadaşı yaptı."
   },
   {
    "id": 3817,
@@ -228,8 +228,8 @@
    "niveau": "B2",
    "formen": "fusioniert, ist fusioniert",
    "currentTr": "birleşmek (şirket)",
-   "currentBeispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
-   "currentBeispielTr": "İki banka geçen yıl birleşerek büyük bir kurum hâline geldi."
+   "currentBeispiel": "Die beiden Banken haben letztes Jahr zu einem großen Institut fusioniert.",
+   "currentBeispielTr": "İki banka geçen yıl birleşerek büyük bir kurum oldu."
   },
   {
    "id": 3302,
@@ -238,8 +238,8 @@
    "niveau": "B2",
    "formen": "",
    "currentTr": "ifade özgürlüğü",
-   "currentBeispiel": "Meinungsfreiheit ist ein grundlegendes Menschenrecht.",
-   "currentBeispielTr": "İfade özgürlüğü temel bir insan hakkıdır."
+   "currentBeispiel": "In diesem Land ist die Meinungsfreiheit stark eingeschränkt.",
+   "currentBeispielTr": "Bu ülkede ifade özgürlüğü ciddi biçimde kısıtlı."
   },
   {
    "id": 3750,
@@ -249,7 +249,7 @@
    "formen": "würzt, hat gewürzt",
    "currentTr": "baharatlamak",
    "currentBeispiel": "Sie würzt die Suppe gern mit frischem Ingwer.",
-   "currentBeispielTr": "Çorbayı taze zencefille tatlandırmayı seviyor."
+   "currentBeispielTr": "Çorbayı taze zencefille baharatlamayı seviyor."
   },
   {
    "id": 3325,
@@ -269,7 +269,7 @@
    "formen": "die Renditen",
    "currentTr": "getiri",
    "currentBeispiel": "Diese Aktie bringt eine höhere Rendite als das Sparkonto.",
-   "currentBeispielTr": "Bu hisse, tasarruf hesabından daha yüksek getiri sağlıyor."
+   "currentBeispielTr": "Bu hisse tasarruf hesabından daha yüksek getiri sağlıyor."
   },
   {
    "id": 3762,
@@ -339,7 +339,7 @@
    "formen": "die Wechselkurse",
    "currentTr": "döviz kuru",
    "currentBeispiel": "Der schwankende Wechselkurs erschwert die Planung im Auslandsgeschäft.",
-   "currentBeispielTr": "Dalgalanan döviz kuru, yurt dışı işlerinde planlamayı zorlaştırıyor."
+   "currentBeispielTr": "Dalgalanan döviz kuru yurt dışı işlerinde planlamayı zorlaştırıyor."
   },
   {
    "id": 3413,
@@ -359,7 +359,7 @@
    "formen": "optimiert, hat optimiert",
    "currentTr": "iyileştirmek",
    "currentBeispiel": "Die Abteilung soll die internen Arbeitsabläufe deutlich optimieren.",
-   "currentBeispielTr": "Bölümün iç iş akışlarını ciddi biçimde iyileştirmesi gerekiyor.",
+   "currentBeispielTr": "Bölümün iç iş akışlarını belirgin biçimde iyileştirmesi gerekiyor.",
    "overlapping": [
     "heilen (B2)"
    ]
@@ -372,7 +372,7 @@
    "formen": "die Abschiebungen",
    "currentTr": "sınır dışı etme",
    "currentBeispiel": "Die Abschiebung wurde vom Gericht vorerst gestoppt.",
-   "currentBeispielTr": "Sınır dışı işlemi mahkemece şimdilik durduruldu."
+   "currentBeispielTr": "Sınır dışı işlemi mahkeme tarafından şimdilik durduruldu."
   },
   {
    "id": 3279,
@@ -382,7 +382,7 @@
    "formen": "die Staatsoberhäupter",
    "currentTr": "devlet başkanı",
    "currentBeispiel": "Das Staatsoberhaupt hielt eine Rede zur Lage der Nation.",
-   "currentBeispielTr": "Devlet başkanı ülkenin durumuna ilişkin bir konuşma yaptı."
+   "currentBeispielTr": "Devlet başkanı ülkenin durumu üzerine bir konuşma yaptı."
   },
   {
    "id": 3448,
@@ -439,7 +439,7 @@
    "formen": "die Konjunkturen",
    "currentTr": "ekonomik konjonktür",
    "currentBeispiel": "Bei guter Konjunktur stellen viele Unternehmen neue Mitarbeiter ein.",
-   "currentBeispielTr": "Konjonktür iyi olduğunda birçok şirket yeni çalışan alıyor."
+   "currentBeispielTr": "Konjonktür iyiyken birçok şirket yeni çalışan alıyor."
   },
   {
    "id": 3201,
@@ -449,7 +449,7 @@
    "formen": "die Arbeitsmärkte",
    "currentTr": "iş piyasası",
    "currentBeispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
-   "currentBeispielTr": "BT uzmanları için iş piyasası şu sıralar oldukça hareketli."
+   "currentBeispielTr": "BT uzmanları için iş piyasası şu sıralar çok gergin."
   },
   {
    "id": 3211,
@@ -479,7 +479,7 @@
    "formen": "",
    "currentTr": "nitelikli işgücü eksikliği",
    "currentBeispiel": "Der Fachkräftemangel trifft besonders die Pflege- und IT-Branche.",
-   "currentBeispielTr": "Nitelikli işgücü eksikliği en çok bakım ve BT sektörünü vuruyor."
+   "currentBeispielTr": "Nitelikli eleman eksikliği en çok bakım ve BT sektörünü vuruyor."
   },
   {
    "id": 3217,
@@ -509,7 +509,7 @@
    "formen": "die Lieferketten",
    "currentTr": "tedarik zinciri",
    "currentBeispiel": "Die globale Lieferkette wurde durch die Krise stark unterbrochen.",
-   "currentBeispielTr": "Küresel tedarik zinciri kriz nedeniyle ciddi biçimde kesintiye uğradı."
+   "currentBeispielTr": "Küresel tedarik zinciri kriz yüzünden ciddi biçimde kesintiye uğradı."
   },
   {
    "id": 3222,
@@ -519,7 +519,7 @@
    "formen": "die Marktanteile",
    "currentTr": "pazar payı",
    "currentBeispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
-   "currentBeispielTr": "Şirket geçen yıl pazar payını belirgin şekilde artırdı."
+   "currentBeispielTr": "Şirketler grubu geçen yıl pazar payını belirgin biçimde artırdı."
   },
   {
    "id": 3223,

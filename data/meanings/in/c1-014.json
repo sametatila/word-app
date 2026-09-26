@@ -40,7 +40,7 @@
    "formen": "",
    "currentTr": "postmodernizm, postmodern dönem",
    "currentBeispiel": "In der Postmoderne kehrten Farbe und Ironie an die Fassaden zurück.",
-   "currentBeispielTr": "Postmodern dönemde renk ve ironi cephelere geri döndü."
+   "currentBeispielTr": "Postmodernizmle birlikte renk ve ironi cephelere geri döndü."
   },
   {
    "id": 5907,
@@ -60,7 +60,7 @@
    "formen": "",
    "currentTr": "mekânda vakit geçirme niteliği, yaşanabilirlik",
    "currentBeispiel": "Ohne Schatten und Bänke fehlt dem Platz jede Aufenthaltsqualität.",
-   "currentBeispielTr": "Gölge ve bank olmadan meydanda vakit geçirilebilecek hiçbir nitelik kalmıyor."
+   "currentBeispielTr": "Gölge ve bank olmadığı için meydanın hiçbir mekân kalitesi yok."
   },
   {
    "id": 5909,
@@ -70,7 +70,7 @@
    "formen": "",
    "currentTr": "engelsiz erişim, erişilebilirlik",
    "currentBeispiel": "Barrierefreiheit wurde beim Umbau des Bahnhofs endlich mitgedacht.",
-   "currentBeispielTr": "Gar yenilenirken engelsiz erişim nihayet hesaba katıldı."
+   "currentBeispielTr": "Gar yenilenirken erişilebilirlik nihayet hesaba katıldı."
   },
   {
    "id": 5910,
@@ -80,7 +80,7 @@
    "formen": "Moratorien",
    "currentTr": "moratoryum, geçici durdurma kararı",
    "currentBeispiel": "Der Stadtrat verhängte ein Moratorium für weitere Hochhäuser.",
-   "currentBeispielTr": "Belediye meclisi yeni gökdelenler için bir moratoryum ilan etti."
+   "currentBeispielTr": "Belediye meclisi yeni gökdelenler için moratoryum ilan etti."
   },
   {
    "id": 5911,
@@ -99,8 +99,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "kentlilik, kentsel nitelik",
-   "currentBeispiel": "Echte Urbanität entsteht nicht allein durch bauliche Dichte.",
-   "currentBeispielTr": "Gerçek kentlilik yalnızca yapısal yoğunlukla oluşmaz."
+   "currentBeispiel": "Dem neuen Viertel fehlt trotz vieler Cafés jede Urbanität.",
+   "currentBeispielTr": "Yeni mahallede bunca kafeye rağmen hiç kentlilik yok."
   },
   {
    "id": 5913,
@@ -130,7 +130,7 @@
    "formen": "Immobilienmärkte",
    "currentTr": "gayrimenkul piyasası",
    "currentBeispiel": "Der überhitzte Immobilienmarkt treibt selbst Gutverdienende aus der Stadt.",
-   "currentBeispielTr": "Aşırı ısınan gayrimenkul piyasası iyi kazananları bile şehirden çıkarıyor."
+   "currentBeispielTr": "Aşırı ısınan gayrimenkul piyasası iyi kazananları bile şehirden kaçırıyor."
   },
   {
    "id": 5916,
@@ -159,8 +159,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "iklime uyum",
-   "currentBeispiel": "Klimaanpassung heißt in der Stadt vor allem Entsiegeln und Begrünen.",
-   "currentBeispielTr": "Kentte iklime uyum, her şeyden önce betonu kaldırmak ve yeşillendirmek demek."
+   "currentBeispiel": "Für die Klimaanpassung pflanzt die Stadt tausend neue Bäume.",
+   "currentBeispielTr": "Şehir, iklime uyum için bin yeni ağaç dikiyor."
   },
   {
    "id": 5919,
@@ -169,8 +169,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "ulaşım dönüşümü",
-   "currentBeispiel": "Ohne Verkehrswende bleibt jede Klimastrategie der Stadt bloßes Papier.",
-   "currentBeispielTr": "Ulaşım dönüşümü olmadan şehrin her iklim stratejisi kâğıt üstünde kalır."
+   "currentBeispiel": "Die versprochene Verkehrswende scheitert bei uns an der Parkplatzfrage.",
+   "currentBeispielTr": "Vaat edilen ulaşım dönüşümü bizde otopark meselesine takılıyor."
   },
   {
    "id": 5920,
@@ -190,7 +190,7 @@
    "formen": "Umnutzungen",
    "currentTr": "yeniden işlevlendirme, işlev değişikliği",
    "currentBeispiel": "Die Umnutzung der Kirche zur Bibliothek stieß auf heftigen Widerstand.",
-   "currentBeispielTr": "Kilisenin kütüphane olarak yeniden işlevlendirilmesi sert bir direnişle karşılaştı."
+   "currentBeispielTr": "Kilisenin kütüphane olarak yeniden işlevlendirilmesi sert bir tepkiyle karşılandı."
   },
   {
    "id": 5922,
@@ -200,7 +200,7 @@
    "formen": "Konversionen",
    "currentTr": "sivil kullanıma dönüştürme, dönüşüm",
    "currentBeispiel": "Die Konversion der Kaserne dauert deutlich länger als geplant.",
-   "currentBeispielTr": "Kışlanın sivil kullanıma dönüştürülmesi planlanandan epey uzun sürüyor."
+   "currentBeispielTr": "Kışlanın dönüşümü planlanandan epey uzun sürüyor."
   },
   {
    "id": 5923,
@@ -210,7 +210,7 @@
    "formen": "Enteignungen",
    "currentTr": "kamulaştırma, istimlak",
    "currentBeispiel": "Eine Enteignung großer Wohnungskonzerne halten manche Juristen für zulässig.",
-   "currentBeispielTr": "Bazı hukukçular büyük konut şirketlerinin kamulaştırılmasını hukuken mümkün görüyor."
+   "currentBeispielTr": "Bazı hukukçular büyük konut şirketlerinin kamulaştırılmasını hukuka uygun buluyor."
   },
   {
    "id": 5924,
@@ -230,7 +230,7 @@
    "formen": "hat entworfen",
    "currentTr": "tasarlamak, taslağını çizmek",
    "currentBeispiel": "Sie entwarf das Rathaus als bewusst zurückhaltenden Baukörper.",
-   "currentBeispielTr": "Belediye binasını bilinçli olarak geri planda duran bir kütle olarak tasarladı.",
+   "currentBeispielTr": "Belediye binasını bilinçli biçimde geri planda duran bir kütle olarak tasarladı.",
    "overlapping": [
     "konzipieren (C1)"
    ]
@@ -256,7 +256,7 @@
    "formen": "hat restauriert",
    "currentTr": "restore etmek, aslına uygun onarmak",
    "currentBeispiel": "Die Stuckdecke wurde nach alten Fotografien restauriert.",
-   "currentBeispielTr": "Alçı tavan eski fotoğraflara dayanılarak restore edildi."
+   "currentBeispielTr": "Alçı tavan eski fotoğraflara bakılarak restore edildi."
   },
   {
    "id": 5928,
@@ -266,7 +266,7 @@
    "formen": "hat ausgewiesen",
    "currentTr": "(alan olarak) ilan etmek, tahsis etmek",
    "currentBeispiel": "Die Gemeinde hat das ganze Ufer als Schutzgebiet ausgewiesen.",
-   "currentBeispielTr": "Belediye kıyının tamamını koruma alanı olarak ilan etti.",
+   "currentBeispielTr": "Belediye kıyının tamamını koruma alanı ilan etti.",
    "overlapping": [
     "verkünden (C1)"
    ]
@@ -279,7 +279,7 @@
    "formen": "hat angesiedelt",
    "currentTr": "yerleştirmek, konumlandırmak",
    "currentBeispiel": "Im Erdgeschoss will die Stadt Gewerbe und Cafés ansiedeln.",
-   "currentBeispielTr": "Şehir, zemin katta ticari birimler ve kafeler yerleştirmek istiyor.",
+   "currentBeispielTr": "Şehir, zemin kata dükkânlar ve kafeler yerleştirmek istiyor.",
    "overlapping": [
     "unterbringen (C1)",
     "aufstellen (A2)",
@@ -304,7 +304,7 @@
    "formen": "hat akzentuiert",
    "currentTr": "vurgulamak, öne çıkarmak (biçim, tasarım yoluyla)",
    "currentBeispiel": "Ein roter Sockel akzentuiert den Eingang des Gebäudes.",
-   "currentBeispielTr": "Kırmızı bir kaide binanın girişini öne çıkarıyor.",
+   "currentBeispielTr": "Kırmızı bir kaide binanın girişini belirginleştiriyor.",
    "overlapping": [
     "hervorheben (C1)",
     "betonen (A2)"
@@ -354,7 +354,7 @@
    "formen": "ist verwahrlost",
    "currentTr": "bakımsız kalmak, kendi hâline terk edilmek",
    "currentBeispiel": "Die Anlage verwahrloste, seit die Stadt kein Geld mehr hatte.",
-   "currentBeispielTr": "Şehrin parası kalmadığından beri tesis bakımsızlığa terk edildi."
+   "currentBeispielTr": "Şehrin parası kalmadığından beri tesis bakımsız kaldı."
   },
   {
    "id": 5936,
@@ -363,8 +363,8 @@
    "niveau": "C1",
    "formen": "ist verfallen",
    "currentTr": "harabeye dönmek, çökmek",
-   "currentBeispiel": "Das Herrenhaus verfiel, bis ein Verein es endlich übernahm.",
-   "currentBeispielTr": "Konak, bir dernek nihayet devralana kadar harabeye döndü."
+   "currentBeispiel": "Das Herrenhaus verfällt, seit die Erben zerstritten sind.",
+   "currentBeispielTr": "Mirasçılar birbirine düştüğünden beri konak harabeye dönüyor."
   },
   {
    "id": 5937,
@@ -374,7 +374,7 @@
    "formen": "hat verortet",
    "currentTr": "konumlandırmak, bir yere oturtmak",
    "currentBeispiel": "Der Kritiker verortet den Bau zwischen Brutalismus und Klassizismus.",
-   "currentBeispielTr": "Eleştirmen yapıyı brütalizmle klasisizm arasında bir yere oturtuyor."
+   "currentBeispielTr": "Eleştirmen yapıyı brütalizmle klasisizm arasında konumlandırıyor."
   },
   {
    "id": 5938,
@@ -383,8 +383,8 @@
    "niveau": "C1",
    "formen": "hat dereguliert",
    "currentTr": "kuralsızlaştırmak, serbestleştirmek",
-   "currentBeispiel": "Wer den Wohnungsmarkt dereguliert, überlässt ihn allein der Rendite.",
-   "currentBeispielTr": "Konut piyasasını kuralsızlaştıran onu tümüyle getiri hesabına terk eder."
+   "currentBeispiel": "Die Regierung will den Mietmarkt weiter deregulieren.",
+   "currentBeispielTr": "Hükûmet kira piyasasını daha da serbestleştirmek istiyor."
   },
   {
    "id": 5939,
@@ -393,8 +393,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "şehircilik açısından, kentsel tasarıma ilişkin",
-   "currentBeispiel": "Städtebaulich ist der Entwurf schlüssiger als architektonisch.",
-   "currentBeispielTr": "Şehircilik açısından tasarım, mimari açıdan olduğundan daha tutarlı."
+   "currentBeispiel": "Der Turm passt städtebaulich überhaupt nicht an diese Ecke.",
+   "currentBeispielTr": "Kule şehircilik açısından bu köşeye hiç yakışmıyor."
   },
   {
    "id": 5940,
@@ -404,7 +404,7 @@
    "formen": "",
    "currentTr": "ölçek bakımından, ölçeğe uygun",
    "currentBeispiel": "Der Anbau ist maßstäblich viel zu groß für die enge Gasse.",
-   "currentBeispielTr": "Ek yapı, dar sokağın ölçeğine göre fazlasıyla büyük."
+   "currentBeispielTr": "Ek yapı, dar sokak için ölçek bakımından fazlasıyla büyük."
   },
   {
    "id": 5941,
@@ -414,7 +414,7 @@
    "formen": "",
    "currentTr": "küçük parçalı, ince dokulu",
    "currentBeispiel": "Die kleinteilige Erdgeschosszone macht die Straße lebendig.",
-   "currentBeispielTr": "Küçük birimlerden oluşan zemin kat dokusu sokağı canlı kılıyor."
+   "currentBeispielTr": "Küçük parçalı zemin kat dokusu sokağı canlı kılıyor."
   },
   {
    "id": 5942,
@@ -437,7 +437,7 @@
    "formen": "",
    "currentTr": "kimliksiz, karaktersiz",
    "currentBeispiel": "Zwischen Autobahn und Gewerbepark wirkt der Ort völlig gesichtslos.",
-   "currentBeispielTr": "Otoyolla sanayi parkı arasında kalan yer tamamen kimliksiz görünüyor."
+   "currentBeispielTr": "Otoyolla sanayi parkı arasındaki yer tamamen kimliksiz görünüyor."
   },
   {
    "id": 5944,
@@ -467,7 +467,7 @@
    "formen": "",
    "currentTr": "yaşanması güç, ıssız ve soğuk",
    "currentBeispiel": "Bei Wind wird der weite Vorplatz ausgesprochen unwirtlich.",
-   "currentBeispielTr": "Rüzgârlı havada geniş ön meydan iyice yaşanmaz hâle geliyor."
+   "currentBeispielTr": "Rüzgârlı havada geniş ön meydan iyice yaşanmaz oluyor."
   },
   {
    "id": 5947,
@@ -486,8 +486,8 @@
    "niveau": "C1",
    "formen": "",
    "currentTr": "eğitimde adalet, eğitim eşitliği",
-   "currentBeispiel": "Ohne gezielte Förderung bleibt Bildungsgerechtigkeit ein leeres Versprechen.",
-   "currentBeispielTr": "Hedefli destek olmadan eğitimde adalet boş bir vaat olarak kalır."
+   "currentBeispiel": "Für mehr Bildungsgerechtigkeit bekommen Brennpunktschulen zusätzliche Lehrer.",
+   "currentBeispielTr": "Eğitimde adalet için sorunlu okullara ek öğretmen veriliyor."
   },
   {
    "id": 5949,
@@ -497,7 +497,7 @@
    "formen": "Bildungsungleichheiten",
    "currentTr": "eğitim eşitsizliği",
    "currentBeispiel": "Die Studie belegt, dass die Bildungsungleichheit seit Jahren kaum abnimmt.",
-   "currentBeispielTr": "Araştırma, eğitim eşitsizliğinin yıllardır neredeyse hiç azalmadığını ortaya koyuyor."
+   "currentBeispielTr": "Araştırma, eğitim eşitsizliğinin yıllardır neredeyse hiç azalmadığını gösteriyor."
   },
   {
    "id": 5950,

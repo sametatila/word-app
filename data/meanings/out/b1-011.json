@@ -11,9 +11,9 @@
   "id": 2950,
   "tr": "hüküm",
   "en": "verdict",
-  "beispiel": "Das Urteil des Gerichts erscheint mir viel zu hart.",
-  "beispielTr": "Mahkemenin hükmü bana fazlasıyla sert geliyor.",
-  "beispielEn": "The court's verdict seems far too harsh to me."
+  "beispiel": "Der Angeklagte will gegen das Urteil Berufung einlegen.",
+  "beispielTr": "Sanık hükme itiraz etmek istiyor.",
+  "beispielEn": "The defendant wants to appeal the verdict."
  },
  {
   "id": 2997,
@@ -27,9 +27,9 @@
   "id": 2659,
   "tr": "omuz",
   "en": "shoulder",
-  "beispiel": "Ich habe Schmerzen in der rechten Schulter.",
-  "beispielTr": "Sağ omzum ağrıyor.",
-  "beispielEn": "I have pain in my right shoulder."
+  "beispiel": "Das Kind sitzt auf den Schultern seines Vaters.",
+  "beispielTr": "Çocuk babasının omuzlarında oturuyor.",
+  "beispielEn": "The child is sitting on his father's shoulders."
  },
  {
   "id": 3032,
@@ -43,9 +43,9 @@
   "id": 1875,
   "tr": "yağ",
   "en": "fat",
-  "beispiel": "Man sollte nicht so viel Fett essen.",
-  "beispielTr": "İnsan bu kadar çok yağ yememeli.",
-  "beispielEn": "One shouldn't eat so much fat."
+  "beispiel": "Brate die Zwiebeln in wenig Fett an.",
+  "beispielTr": "Soğanları az yağda kavur.",
+  "beispielEn": "Brown the onions in a little fat."
  },
  {
   "id": 1369,
@@ -59,17 +59,17 @@
   "id": 2000,
   "tr": "alışkın",
   "en": "used to",
-  "beispiel": "Ich bin gewohnt, früh ins Bett zu gehen.",
-  "beispielTr": "Erken yatmaya alışkınım.",
-  "beispielEn": "I am used to going to bed early."
+  "beispiel": "Nach Jahren in Spanien ist Clara die Hitze gewohnt.",
+  "beispielTr": "Clara İspanya'da geçen yıllardan sonra sıcağa alışkın.",
+  "beispielEn": "After years in Spain, Clara is used to the heat."
  },
  {
   "id": 1455,
   "tr": "uyanmak",
   "en": "to wake up",
-  "beispiel": "Von dem Lärm bin ich aufgewacht.",
-  "beispielTr": "Gürültüden uyandım.",
-  "beispielEn": "The noise woke me up."
+  "beispiel": "Am Wochenende wache ich oft erst um zehn auf.",
+  "beispielTr": "Hafta sonları çoğu zaman ancak onda uyanıyorum.",
+  "beispielEn": "On weekends I often don't wake up until ten."
  },
  {
   "id": 2929,
@@ -91,9 +91,9 @@
   "id": 3149,
   "tr": "tanık",
   "en": "witness",
-  "beispiel": "Die Polizei sucht noch Zeugen für den Unfall.",
-  "beispielTr": "Polis kaza için hâlâ tanık arıyor.",
-  "beispielEn": "The police are still looking for witnesses."
+  "beispiel": "Als Zeuge musste er vor Gericht aussagen.",
+  "beispielTr": "Tanık olarak mahkemede ifade vermesi gerekti.",
+  "beispielEn": "As a witness he had to testify in court."
  },
  {
   "id": 2548,
@@ -107,17 +107,17 @@
   "id": 2441,
   "tr": "kamuoyu",
   "en": "public",
-  "beispiel": "Von solchen Plänen erfährt die Öffentlichkeit nur selten.",
-  "beispielTr": "Kamuoyu böyle planları çok nadir öğrenir.",
-  "beispielEn": "The public rarely learns about such plans."
+  "beispiel": "Die Sängerin zeigt sich kaum noch in der Öffentlichkeit.",
+  "beispielTr": "Şarkıcı artık kamuoyu önüne pek çıkmıyor.",
+  "beispielEn": "The singer hardly ever appears in public anymore."
  },
  {
   "id": 2968,
   "tr": "suçlu",
   "en": "criminal",
-  "beispiel": "Die Polizei hat den Verbrecher gestern verhaftet.",
-  "beispielTr": "Polis suçluyu dün tutukladı.",
-  "beispielEn": "The police arrested the criminal yesterday."
+  "beispiel": "Der Verbrecher ist letzte Nacht aus dem Gefängnis geflohen.",
+  "beispielTr": "Suçlu dün gece hapisten kaçtı.",
+  "beispielEn": "The criminal escaped from prison last night."
  },
  {
   "id": 2957,
@@ -131,9 +131,9 @@
   "id": 1418,
   "tr": "başvuru",
   "en": "application",
-  "beispiel": "Haben Sie den Antrag für das Wohngeld schon ausgefüllt?",
-  "beispielTr": "Kira yardımı başvurusunu doldurdunuz mu?",
-  "beispielEn": "Have you already filled out the housing benefit application?"
+  "beispiel": "Mein Antrag auf einen neuen Pass liegt noch beim Amt.",
+  "beispielTr": "Yeni pasaport başvurum hâlâ dairede bekliyor.",
+  "beispielEn": "My application for a new passport is still at the office."
  },
  {
   "id": 2972,
@@ -195,17 +195,17 @@
   "id": 1538,
   "tr": "alan",
   "en": "area",
-  "beispiel": "In welchem Bereich möchten Sie später arbeiten?",
-  "beispielTr": "İleride hangi alanda çalışmak istiyorsunuz?",
-  "beispielEn": "Which area would you like to work in later?"
+  "beispiel": "Dieser Bereich des Parks ist nur für Hunde.",
+  "beispielTr": "Parkın bu alanı yalnızca köpekler için.",
+  "beispielEn": "This area of the park is only for dogs."
  },
  {
   "id": 2335,
   "tr": "bana uyar",
   "en": "fine by me",
-  "beispiel": "Meinetwegen kannst du heute das Auto haben.",
-  "beispielTr": "Bana uyar, arabayı bugün alabilirsin.",
-  "beispielEn": "Fine by me, you can have the car today."
+  "beispiel": "Meinetwegen können wir auch später essen.",
+  "beispielTr": "Bana uyar, daha sonra da yiyebiliriz.",
+  "beispielEn": "Fine by me, we can eat later too."
  },
  {
   "id": 1482,
@@ -219,9 +219,9 @@
   "id": 3038,
   "tr": "semt",
   "en": "neighborhood",
-  "beispiel": "Wir wohnen in einem sehr ruhigen Viertel.",
-  "beispielTr": "Çok sakin bir semtte oturuyoruz.",
-  "beispielEn": "We live in a very quiet neighborhood."
+  "beispiel": "In unserem Viertel gibt es viele kleine Cafés.",
+  "beispielTr": "Semtimizde bir sürü küçük kafe var.",
+  "beispielEn": "There are lots of little cafés in our neighborhood."
  },
  {
   "id": 2593,
@@ -235,9 +235,9 @@
   "id": 1793,
   "tr": "yerine getirmek",
   "en": "to fulfill",
-  "beispiel": "Sie müssen den Vertrag in allen Punkten erfüllen.",
-  "beispielTr": "Sözleşmeyi bütün maddeleriyle yerine getirmelisiniz.",
-  "beispielEn": "You must fulfill the contract in every respect."
+  "beispiel": "Mit der Reise nach Japan hat sich Opa einen Traum erfüllt.",
+  "beispielTr": "Dedem Japonya gezisiyle bir hayalini gerçeğe dönüştürdü.",
+  "beispielEn": "With the trip to Japan, Grandpa fulfilled a dream."
  },
  {
   "id": 1754,
@@ -387,9 +387,9 @@
   "id": 1838,
   "tr": "aşırı",
   "en": "extreme",
-  "beispiel": "Die Prüfung war extrem schwer.",
-  "beispielTr": "Sınav aşırı zordu.",
-  "beispielEn": "The exam was extremely difficult."
+  "beispiel": "Im August war es in der Stadt extrem heiß.",
+  "beispielTr": "Ağustosta şehir aşırı sıcaktı.",
+  "beispielEn": "In August it was extremely hot in the city."
  },
  {
   "id": 2754,

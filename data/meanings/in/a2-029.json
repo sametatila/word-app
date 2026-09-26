@@ -10,7 +10,7 @@
    "formen": "-",
    "currentTr": "alt kiracı, kiracının kiracısı",
    "currentBeispiel": "Wir suchen einen Untermieter für das kleine Zimmer.",
-   "currentBeispielTr": "Küçük oda için bir oda kiracısı arıyoruz."
+   "currentBeispielTr": "Küçük oda için bir alt kiracı arıyoruz."
   },
   {
    "id": 8391,
@@ -60,7 +60,7 @@
    "formen": "-e",
    "currentTr": "kitaplık",
    "currentBeispiel": "Das Bücherregal ist schon wieder voll.",
-   "currentBeispielTr": "Kitaplık yine dolmuş."
+   "currentBeispielTr": "Kitaplık yine doldu."
   },
   {
    "id": 8396,
@@ -119,8 +119,8 @@
    "niveau": "A2",
    "formen": "-e",
    "currentTr": "sehpa, orta sehpa",
-   "currentBeispiel": "Die Zeitung liegt auf dem Couchtisch.",
-   "currentBeispielTr": "Gazete sehpanın üstünde duruyor."
+   "currentBeispiel": "Stell die Tassen einfach auf den Couchtisch.",
+   "currentBeispielTr": "Fincanları sehpanın üstüne bırakıver."
   },
   {
    "id": 8402,

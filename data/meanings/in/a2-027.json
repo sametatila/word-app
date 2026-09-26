@@ -9,8 +9,8 @@
    "niveau": "A2",
    "formen": "quatscht, hat gequatscht",
    "currentTr": "laflamak, gevezelik etmek",
-   "currentBeispiel": "Die Kinder quatschen im Unterricht viel zu laut.",
-   "currentBeispielTr": "Çocuklar derste çok yüksek sesle laflıyor."
+   "currentBeispiel": "Wir haben gestern lange am Telefon gequatscht.",
+   "currentBeispielTr": "Dün telefonda uzun uzun lafladık."
   },
   {
    "id": 8291,
@@ -29,8 +29,8 @@
    "niveau": "A2",
    "formen": "benachrichtigt, hat benachrichtigt",
    "currentTr": "haber vermek, bilgilendirmek",
-   "currentBeispiel": "Der Arzt benachrichtigt uns, sobald das Ergebnis da ist.",
-   "currentBeispielTr": "Sonuç gelir gelmez doktor bize haber veriyor.",
+   "currentBeispiel": "Wir benachrichtigen dich, wenn das Paket da ist.",
+   "currentBeispielTr": "Paket gelince sana haber veririz.",
    "overlapping": [
     "ankündigen (B1)",
     "Bescheid sagen (B1)",
@@ -46,8 +46,8 @@
    "niveau": "A2",
    "formen": "findet heraus, hat herausgefunden",
    "currentTr": "öğrenmek, bulmak",
-   "currentBeispiel": "Ich finde morgen heraus, wie viel die Reparatur kostet.",
-   "currentBeispielTr": "Tamirin ne kadar tuttuğunu yarın öğreneceğim.",
+   "currentBeispiel": "Ich will herausfinden, wie viel die Reparatur kostet.",
+   "currentBeispielTr": "Tamirin ne kadar tuttuğunu öğrenmek istiyorum.",
    "overlapping": [
     "lernen (A1)",
     "erfahren (B1)",
@@ -71,8 +71,8 @@
    "niveau": "A2",
    "formen": "bedauert, hat bedauert",
    "currentTr": "üzülmek, pişman olmak",
-   "currentBeispiel": "Ich bedauere sehr, dass ich am Samstag nicht kommen kann.",
-   "currentBeispielTr": "Cumartesi gelemeyeceğim için çok üzülüyorum.",
+   "currentBeispiel": "Ich bedauere sehr, dass ich nicht kommen kann.",
+   "currentBeispielTr": "Gelemeyeceğim için çok üzgünüm.",
    "overlapping": [
     "leidtun (A2)"
    ]
@@ -127,8 +127,8 @@
    "niveau": "A2",
    "formen": "droht, hat gedroht",
    "currentTr": "tehdit etmek, gözdağı vermek",
-   "currentBeispiel": "Der Nachbar droht uns wegen des Lärms mit der Polizei.",
-   "currentBeispielTr": "Komşu gürültü yüzünden bizi polisle tehdit ediyor.",
+   "currentBeispiel": "Der Nachbar droht uns mit der Polizei.",
+   "currentBeispielTr": "Komşu bizi polisle tehdit ediyor.",
    "overlapping": [
     "bedrohen (B2)"
    ]
@@ -140,8 +140,8 @@
    "niveau": "A2",
    "formen": "wirft vor, hat vorgeworfen",
    "currentTr": "suçlamak, başa kakmak",
-   "currentBeispiel": "Er wirft mir jeden Tag meine Unordnung vor.",
-   "currentBeispielTr": "Her gün dağınıklığımı başıma kakıyor."
+   "currentBeispiel": "Meine Eltern werfen mir meine Faulheit vor.",
+   "currentBeispielTr": "Ailem tembelliğim yüzünden beni suçluyor."
   },
   {
    "id": 8302,
@@ -174,8 +174,8 @@
    "niveau": "A2",
    "formen": "schreibt zurück, hat zurückgeschrieben",
    "currentTr": "cevap yazmak",
-   "currentBeispiel": "Mein Bruder schreibt mir nie zurück.",
-   "currentBeispielTr": "Kardeşim bana hiç cevap yazmıyor."
+   "currentBeispiel": "Kannst du mir bitte heute zurückschreiben?",
+   "currentBeispielTr": "Bugün bana cevap yazabilir misin?"
   },
   {
    "id": 8305,
@@ -194,8 +194,8 @@
    "niveau": "A2",
    "formen": "bleibt dran, ist drangeblieben",
    "currentTr": "hatta kalmak, beklemede kalmak",
-   "currentBeispiel": "Bleiben Sie bitte kurz dran, ich frage nach.",
-   "currentBeispielTr": "Lütfen kısa bir süre hatta kalın, sorup geleyim."
+   "currentBeispiel": "Können Sie bitte einen Moment dranbleiben?",
+   "currentBeispielTr": "Bir dakika hatta kalabilir misiniz?"
   },
   {
    "id": 8307,
@@ -204,8 +204,8 @@
    "niveau": "A2",
    "formen": "lacht aus, hat ausgelacht",
    "currentTr": "alay etmek, birine gülmek",
-   "currentBeispiel": "Keiner lacht dich hier wegen deiner Fehler aus.",
-   "currentBeispielTr": "Burada kimse hataların yüzünden sana gülmüyor."
+   "currentBeispiel": "Niemand lacht dich wegen deiner Fehler aus.",
+   "currentBeispielTr": "Hataların yüzünden kimse seninle alay etmiyor."
   },
   {
    "id": 8308,
@@ -224,8 +224,8 @@
    "niveau": "A2",
    "formen": "redet aus, hat ausgeredet",
    "currentTr": "sözünü bitirmek, lafını tamamlamak",
-   "currentBeispiel": "Ich rede zuerst aus, dann bist du dran.",
-   "currentBeispielTr": "Önce ben sözümü bitireyim, sonra sıra sende."
+   "currentBeispiel": "Lass mich bitte in Ruhe ausreden.",
+   "currentBeispielTr": "Lütfen sözümü rahatça bitirmeme izin ver."
   },
   {
    "id": 8310,
@@ -234,8 +234,8 @@
    "niveau": "A2",
    "formen": "drückt sich aus, hat sich ausgedrückt",
    "currentTr": "kendini ifade etmek",
-   "currentBeispiel": "Auf Deutsch drücke ich mich noch sehr langsam aus.",
-   "currentBeispielTr": "Almanca kendimi hâlâ çok yavaş ifade ediyorum."
+   "currentBeispiel": "Auf Deutsch drücke ich mich noch langsam aus.",
+   "currentBeispielTr": "Almanca kendimi hâlâ yavaş ifade ediyorum."
   },
   {
    "id": 8311,
@@ -298,7 +298,7 @@
    "formen": "verschickt, hat verschickt",
    "currentTr": "göndermek, yollamak",
    "currentBeispiel": "Ich verschicke die Einladungen morgen früh.",
-   "currentBeispielTr": "Davetiyeleri yarın sabah gönderiyorum.",
+   "currentBeispielTr": "Davetiyeleri yarın sabah yolluyorum.",
    "overlapping": [
     "schicken (A1)",
     "senden (B1)",
@@ -315,7 +315,7 @@
    "formen": "schickt zu, hat zugeschickt",
    "currentTr": "göndermek, postayla yollamak",
    "currentBeispiel": "Die Firma schickt mir den Vertrag heute zu.",
-   "currentBeispielTr": "Firma sözleşmeyi bugün bana yolluyor.",
+   "currentBeispielTr": "Firma sözleşmeyi bugün bana gönderiyor.",
    "overlapping": [
     "schicken (A1)",
     "senden (B1)",
@@ -332,7 +332,7 @@
    "formen": "führt vor, hat vorgeführt",
    "currentTr": "göstermek, tanıtmak",
    "currentBeispiel": "Der Verkäufer führt uns das neue Handy vor.",
-   "currentBeispielTr": "Satıcı bize yeni telefonu gösteriyor.",
+   "currentBeispielTr": "Satıcı bize yeni telefonu tanıtıyor.",
    "overlapping": [
     "zeigen (A1)",
     "aufzeigen (C1)",
@@ -346,8 +346,8 @@
    "niveau": "A2",
    "formen": "bekommt mit, hat mitbekommen",
    "currentTr": "fark etmek, kulak misafiri olmak",
-   "currentBeispiel": "Bekommst du das Gespräch am Nebentisch mit?",
-   "currentBeispielTr": "Yan masadaki konuşmayı duyuyor musun?",
+   "currentBeispiel": "Ich habe den Fehler gar nicht mitbekommen.",
+   "currentBeispielTr": "Hatayı hiç fark etmedim.",
    "overlapping": [
     "merken (A2)",
     "bemerken (B1)"
@@ -412,8 +412,8 @@
    "niveau": "A2",
    "formen": "traut sich, hat sich getraut",
    "currentTr": "cesaret etmek, göze almak",
-   "currentBeispiel": "Sie traut sich nicht, den Chef nach Urlaub zu fragen.",
-   "currentBeispielTr": "Patrondan izin istemeye cesaret edemiyor."
+   "currentBeispiel": "Sie traut sich nicht, den Chef zu fragen.",
+   "currentBeispielTr": "Patrona sormaya cesaret edemiyor."
   },
   {
    "id": 8325,
@@ -473,8 +473,8 @@
    "niveau": "A2",
    "formen": "befürchtet, hat befürchtet",
    "currentTr": "endişe etmek, korkmak",
-   "currentBeispiel": "Ich befürchte, dass wir zu spät zum Bahnhof kommen.",
-   "currentBeispielTr": "Gara çok geç varacağımızdan endişe ediyorum."
+   "currentBeispiel": "Ich befürchte, dass wir zu spät kommen.",
+   "currentBeispielTr": "Geç kalacağımızdan endişe ediyorum."
   },
   {
    "id": 8330,
@@ -503,8 +503,8 @@
    "niveau": "A2",
    "formen": "flirtet, hat geflirtet",
    "currentTr": "flört etmek",
-   "currentBeispiel": "Auf der Party flirtet er mit allen Gästen.",
-   "currentBeispielTr": "Partide bütün misafirlerle flört ediyor."
+   "currentBeispiel": "Auf der Party flirtet er mit allen.",
+   "currentBeispielTr": "Partide herkesle flört ediyor."
   },
   {
    "id": 8333,
@@ -513,8 +513,8 @@
    "niveau": "A2",
    "formen": "vertraut an, hat anvertraut",
    "currentTr": "içini dökmek, emanet etmek",
-   "currentBeispiel": "Sie vertraut mir ihr größtes Problem an.",
-   "currentBeispielTr": "En büyük sorununu bana açıyor."
+   "currentBeispiel": "Ich vertraue dir meinen Schlüssel an.",
+   "currentBeispielTr": "Anahtarımı sana emanet ediyorum."
   },
   {
    "id": 8334,
@@ -524,7 +524,7 @@
    "formen": "nickt, hat genickt",
    "currentTr": "başıyla onaylamak, baş sallamak",
    "currentBeispiel": "Sie nickt nur und sagt kein Wort.",
-   "currentBeispielTr": "Sadece başıyla onaylıyor ve tek kelime etmiyor."
+   "currentBeispielTr": "Sadece başını sallıyor ve tek kelime etmiyor."
   },
   {
    "id": 8335,
@@ -553,8 +553,8 @@
    "niveau": "A2",
    "formen": "meckert, hat gemeckert",
    "currentTr": "söylenmek, dırdır etmek",
-   "currentBeispiel": "Mein Kollege meckert über jedes Essen in der Kantine.",
-   "currentBeispielTr": "İş arkadaşım kantindeki her yemek için söyleniyor."
+   "currentBeispiel": "Mein Kollege meckert über jedes Essen.",
+   "currentBeispielTr": "İş arkadaşım her yemek için söyleniyor."
   },
   {
    "id": 8338,
@@ -564,7 +564,7 @@
    "formen": "jammert, hat gejammert",
    "currentTr": "sızlanmak, yakınmak",
    "currentBeispiel": "Er jammert den ganzen Tag über die Hitze.",
-   "currentBeispielTr": "Bütün gün sıcaktan yakınıyor."
+   "currentBeispielTr": "Bütün gün sıcaktan sızlanıyor."
   },
   {
    "id": 8339,
@@ -573,8 +573,8 @@
    "niveau": "A2",
    "formen": "beklagt sich, hat sich beklagt",
    "currentTr": "şikâyet etmek, yakınmak",
-   "currentBeispiel": "Die Gäste beklagen sich über den Lärm im Hotel.",
-   "currentBeispielTr": "Misafirler oteldeki gürültüden şikâyet ediyor.",
+   "currentBeispiel": "Die Gäste beklagen sich über den Lärm.",
+   "currentBeispielTr": "Misafirler gürültüden şikâyet ediyor.",
    "overlapping": [
     "reklamieren (B2)"
    ]

@@ -3,41 +3,41 @@
     "id": 897,
     "tr": "sevilen",
     "en": "popular",
-    "beispiel": "Fußball ist bei vielen Menschen beliebt.",
-    "beispielTr": "Futbol birçok insan arasında seviliyor.",
-    "beispielEn": "Soccer is popular with many people."
+    "beispiel": "Nach dem Film war der Schauspieler plötzlich sehr beliebt.",
+    "beispielTr": "Filmden sonra oyuncu birden çok sevilen biri oldu.",
+    "beispielEn": "After the movie, the actor suddenly became very popular."
   },
   {
     "id": 1082,
     "tr": "resim yapmak",
     "en": "to paint",
-    "beispiel": "Mein Sohn kann sehr gut malen.",
-    "beispielTr": "Oğlum çok güzel resim yapıyor.",
-    "beispielEn": "My son can paint very well."
+    "beispiel": "Am Wochenende malt mein Opa Bilder vom Meer.",
+    "beispielTr": "Dedem hafta sonları denizin resmini yapıyor.",
+    "beispielEn": "On weekends my grandpa paints pictures of the sea."
   },
   {
     "id": 1274,
     "tr": "trafik",
     "en": "traffic",
-    "beispiel": "Morgens gibt es hier immer viel Verkehr.",
-    "beispielTr": "Sabahları burada hep yoğun trafik olur.",
-    "beispielEn": "There is always a lot of traffic here in the mornings."
+    "beispiel": "Am Sonntagmorgen ist auf der Autobahn kaum Verkehr.",
+    "beispielTr": "Pazar sabahı otoyolda neredeyse hiç trafik yok.",
+    "beispielEn": "On Sunday mornings there's hardly any traffic on the highway."
   },
   {
     "id": 1150,
     "tr": "hesaplamak",
     "en": "to calculate",
-    "beispiel": "Sarah kann sehr gut rechnen.",
-    "beispielTr": "Sarah çok iyi hesap yapıyor.",
-    "beispielEn": "Sarah is very good at math."
+    "beispiel": "Mein Vater rechnet jeden Monat unsere Ausgaben aus.",
+    "beispielTr": "Babam her ay masraflarımızı hesaplıyor.",
+    "beispielEn": "My dad calculates our expenses every month."
   },
   {
     "id": 1064,
     "tr": "kültür",
     "en": "culture",
-    "beispiel": "Jana interessiert sich sehr für andere Kulturen.",
-    "beispielTr": "Jana başka kültürlerle çok ilgileniyor.",
-    "beispielEn": "Jana is very interested in other cultures."
+    "beispiel": "In Japan habe ich viel über die Kultur gelernt.",
+    "beispielTr": "Japonya'da kültür hakkında çok şey öğrendim.",
+    "beispielEn": "In Japan I learned a lot about the culture."
   },
   {
     "id": 1140,
@@ -51,65 +51,65 @@
     "id": 871,
     "tr": "aygıt",
     "en": "device",
-    "beispiel": "Was machen wir mit deinem alten Apparat?",
-    "beispielTr": "Eski aygıtını ne yapacağız?",
-    "beispielEn": "What are we going to do with your old device?"
+    "beispiel": "Dieser Apparat macht auch Kaffee mit Milch.",
+    "beispielTr": "Bu aygıt sütlü kahve de yapıyor.",
+    "beispielEn": "This machine also makes coffee with milk."
   },
   {
     "id": 1147,
     "tr": "temizlemek",
     "en": "to clean",
-    "beispiel": "Ich muss heute noch das Bad putzen.",
-    "beispielTr": "Bugün banyoyu temizlemem gerekiyor.",
-    "beispielEn": "I still have to clean the bathroom today."
+    "beispiel": "Samstags putzt Jonas die Fenster in seiner Wohnung.",
+    "beispielTr": "Jonas cumartesileri evinin camlarını siliyor.",
+    "beispielEn": "Jonas cleans the windows in his apartment on Saturdays."
   },
   {
     "id": 1281,
     "tr": "ertelemek",
     "en": "to postpone",
-    "beispiel": "Leider muss ich den Termin verschieben.",
-    "beispielTr": "Maalesef randevuyu ertelemem gerekiyor.",
-    "beispielEn": "Unfortunately I have to postpone the appointment."
+    "beispiel": "Wegen des Gewitters verschieben wir das Grillfest auf morgen.",
+    "beispielTr": "Fırtına yüzünden mangal partisini yarına erteliyoruz.",
+    "beispielEn": "Because of the storm, we're postponing the barbecue until tomorrow."
   },
   {
     "id": 1283,
     "tr": "gecikme",
     "en": "delay",
-    "beispiel": "Unser Zug hat leider 15 Minuten Verspätung.",
-    "beispielTr": "Trenimiz maalesef 15 dakika gecikmeli.",
-    "beispielEn": "Our train unfortunately has a 15-minute delay."
+    "beispiel": "Wegen Nebel hatte das Flugzeug eine Stunde Verspätung.",
+    "beispielTr": "Sis yüzünden uçak bir saat gecikti.",
+    "beispielEn": "Because of fog, the plane was an hour late."
   },
   {
     "id": 1327,
     "tr": "çadır",
     "en": "tent",
-    "beispiel": "Im Sommer schlafen wir manchmal im Zelt.",
-    "beispielTr": "Yazın bazen çadırda uyuyoruz.",
-    "beispielEn": "In summer we sometimes sleep in a tent."
+    "beispiel": "Es hat die ganze Nacht auf unser Zelt geregnet.",
+    "beispielTr": "Bütün gece çadırımızın üstüne yağmur yağdı.",
+    "beispielEn": "It rained on our tent all night."
   },
   {
     "id": 1084,
     "tr": "takım",
     "en": "team",
-    "beispiel": "Unsere Mannschaft hat das Spiel gewonnen.",
-    "beispielTr": "Takımımız maçı kazandı.",
-    "beispielEn": "Our team won the game."
+    "beispiel": "Die Mannschaft trainiert dreimal pro Woche.",
+    "beispielTr": "Takım haftada üç kez antrenman yapıyor.",
+    "beispielEn": "The team practices three times a week."
   },
   {
     "id": 1104,
     "tr": "komşu",
     "en": "neighbor",
-    "beispiel": "Die neuen Nachbarn sind sehr nett.",
-    "beispielTr": "Yeni komşular çok cana yakın.",
-    "beispielEn": "The new neighbors are very nice."
+    "beispiel": "Unser Nachbar gießt im Urlaub unsere Blumen.",
+    "beispielTr": "Tatildeyken komşumuz çiçeklerimizi suluyor.",
+    "beispielEn": "Our neighbor waters our flowers while we're on vacation."
   },
   {
     "id": 877,
     "tr": "harcamak",
     "en": "to spend",
-    "beispiel": "Agata gibt viel Geld für Bücher aus.",
-    "beispielTr": "Agata kitaplara çok para harcıyor.",
-    "beispielEn": "Agata spends a lot of money on books."
+    "beispiel": "Im Urlaub haben wir zu viel Geld ausgegeben.",
+    "beispielTr": "Tatilde çok fazla para harcadık.",
+    "beispielEn": "We spent too much money on vacation."
   },
   {
     "id": 1328,
@@ -123,25 +123,25 @@
     "id": 1035,
     "tr": "zeki",
     "en": "intelligent",
-    "beispiel": "Einstein war sehr intelligent.",
-    "beispielTr": "Einstein çok zekiydi.",
-    "beispielEn": "Einstein was very intelligent."
+    "beispiel": "Unser Hund ist klein, aber sehr intelligent.",
+    "beispielTr": "Köpeğimiz küçük ama çok zeki.",
+    "beispielEn": "Our dog is small but very intelligent."
   },
   {
     "id": 1207,
     "tr": "yürüyüş",
     "en": "walk",
-    "beispiel": "Abends mache ich immer einen Spaziergang.",
-    "beispielTr": "Akşamları hep yürüyüşe çıkarım.",
-    "beispielEn": "In the evenings I always go for a walk."
+    "beispiel": "Nach dem Regen machen wir einen Spaziergang durch den Wald.",
+    "beispielTr": "Yağmurdan sonra ormanda yürüyüşe çıkıyoruz.",
+    "beispielEn": "After the rain, we're going for a walk in the woods."
   },
   {
     "id": 1329,
     "tr": "not kâğıdı",
     "en": "slip of paper",
-    "beispiel": "Schreiben Sie bitte Ihre Telefonnummer auf den Zettel.",
-    "beispielTr": "Telefon numaranızı lütfen şu kâğıda yazın.",
-    "beispielEn": "Please write your phone number on the slip of paper."
+    "beispiel": "Auf dem Zettel steht, was wir einkaufen müssen.",
+    "beispielTr": "Ne almamız gerektiği not kâğıdında yazıyor.",
+    "beispielEn": "The slip of paper says what we need to buy."
   },
   {
     "id": 971,
@@ -163,9 +163,9 @@
     "id": 1318,
     "tr": "yarışma",
     "en": "competition",
-    "beispiel": "Mein Sohn hat bei einem Wettbewerb gewonnen.",
-    "beispielTr": "Oğlum bir yarışma kazandı.",
-    "beispielEn": "My son won a competition."
+    "beispiel": "Bei dem Wettbewerb malen Kinder Bilder von ihrer Stadt.",
+    "beispielTr": "Yarışmada çocuklar şehirlerinin resimlerini yapıyor.",
+    "beispielEn": "In the competition, kids paint pictures of their town."
   },
   {
     "id": 913,
@@ -179,25 +179,25 @@
     "id": 942,
     "tr": "ince",
     "en": "thin",
-    "beispiel": "Das Buch ist sehr dünn.",
-    "beispielTr": "Kitap çok ince.",
-    "beispielEn": "The book is very thin."
+    "beispiel": "Im Winter ist die Jacke viel zu dünn.",
+    "beispielTr": "Kışın bu ceket fazlasıyla ince kalıyor.",
+    "beispielEn": "In winter the jacket is way too thin."
   },
   {
     "id": 999,
     "tr": "maaş",
     "en": "salary",
-    "beispiel": "Sie ist mit ihrem Gehalt zufrieden.",
-    "beispielTr": "Maaşından memnun.",
-    "beispielEn": "She is happy with her salary."
+    "beispiel": "Im neuen Job verdient Paul ein besseres Gehalt.",
+    "beispielTr": "Paul yeni işinde daha iyi maaş alıyor.",
+    "beispielEn": "Paul earns a better salary at his new job."
   },
   {
     "id": 1009,
     "tr": "gitar",
     "en": "guitar",
-    "beispiel": "Er kann sehr gut Gitarre spielen.",
-    "beispielTr": "Çok iyi gitar çalabiliyor.",
-    "beispielEn": "He can play the guitar very well."
+    "beispiel": "Zum Geburtstag hat Lena eine Gitarre bekommen.",
+    "beispielTr": "Lena doğum gününde bir gitar aldı.",
+    "beispielEn": "Lena got a guitar for her birthday."
   },
   {
     "id": 1197,
@@ -211,33 +211,33 @@
     "id": 1335,
     "tr": "hayvanat bahçesi",
     "en": "zoo",
-    "beispiel": "Am Sonntag gehen wir in den Zoo.",
-    "beispielTr": "Pazar günü hayvanat bahçesine gidiyoruz.",
-    "beispielEn": "On Sunday we are going to the zoo."
+    "beispiel": "Im Zoo haben wir zwei kleine Elefanten gesehen.",
+    "beispielTr": "Hayvanat bahçesinde iki küçük fil gördük.",
+    "beispielEn": "We saw two little elephants at the zoo."
   },
   {
     "id": 861,
     "tr": "aktif",
     "en": "active",
-    "beispiel": "Peter ist sehr aktiv und macht viel Sport.",
-    "beispielTr": "Peter çok aktif ve bol bol spor yapıyor.",
-    "beispielEn": "Peter is very active and does a lot of sports."
+    "beispiel": "Meine Oma ist mit achtzig noch sehr aktiv.",
+    "beispielTr": "Büyükannem seksen yaşında hâlâ çok aktif.",
+    "beispielEn": "My grandma is still very active at eighty."
   },
   {
     "id": 1060,
     "tr": "kredi",
     "en": "loan",
-    "beispiel": "Ich brauche einen Kredit von der Bank.",
-    "beispielTr": "Bankadan krediye ihtiyacım var.",
-    "beispielEn": "I need a loan from the bank."
+    "beispiel": "Für das Auto haben wir einen Kredit aufgenommen.",
+    "beispielTr": "Araba için kredi çektik.",
+    "beispielEn": "We took out a loan for the car."
   },
   {
     "id": 1013,
     "tr": "havlu",
     "en": "towel",
-    "beispiel": "Gibst du mir bitte ein frisches Handtuch?",
-    "beispielTr": "Bana temiz bir havlu verir misin?",
-    "beispielEn": "Will you give me a clean towel?"
+    "beispiel": "Vergiss dein Handtuch nicht, wir gehen ins Schwimmbad!",
+    "beispielTr": "Havlunu unutma, havuza gidiyoruz!",
+    "beispielEn": "Don't forget your towel, we're going to the pool!"
   },
   {
     "id": 1103,
@@ -251,9 +251,9 @@
     "id": 884,
     "tr": "telaffuz etmek",
     "en": "to pronounce",
-    "beispiel": "Wie spricht man dieses Wort aus?",
-    "beispielTr": "Bu kelime nasıl telaffuz edilir?",
-    "beispielEn": "How do you pronounce this word?"
+    "beispiel": "Viele Leute können meinen Namen nicht richtig aussprechen.",
+    "beispielTr": "Birçok kişi adımı doğru telaffuz edemiyor.",
+    "beispielEn": "A lot of people can't pronounce my name correctly."
   },
   {
     "id": 887,
@@ -307,33 +307,33 @@
     "id": 1205,
     "tr": "sürükleyici",
     "en": "exciting",
-    "beispiel": "Ich finde den Film sehr spannend.",
-    "beispielTr": "Filmi çok sürükleyici buluyorum.",
-    "beispielEn": "I find the movie very gripping."
+    "beispiel": "Tim liest gerade ein spannendes Buch über Piraten.",
+    "beispielTr": "Tim şu sıralar korsanlar hakkında sürükleyici bir kitap okuyor.",
+    "beispielEn": "Tim is reading an exciting book about pirates right now."
   },
   {
     "id": 1130,
     "tr": "şifre",
     "en": "password",
-    "beispiel": "Ich habe mein Passwort vergessen.",
-    "beispielTr": "Şifremi unuttum.",
-    "beispielEn": "I forgot my password."
+    "beispiel": "Das Passwort für das WLAN steht auf dem Router.",
+    "beispielTr": "Wi-Fi şifresi modemin üstünde yazıyor.",
+    "beispielEn": "The Wi-Fi password is on the router."
   },
   {
     "id": 1032,
     "tr": "öksürmek",
     "en": "to cough",
-    "beispiel": "Sie hustet seit zwei Tagen.",
-    "beispielTr": "İki gündür öksürüyor.",
-    "beispielEn": "She has been coughing for two days."
+    "beispiel": "Im Kino hat ein Mann die ganze Zeit gehustet.",
+    "beispielTr": "Sinemada bir adam sürekli öksürdü.",
+    "beispielEn": "At the movies, a man coughed the whole time."
   },
   {
     "id": 953,
     "tr": "yeni eve taşınmak",
     "en": "to move in",
-    "beispiel": "Wann können wir in die Wohnung einziehen?",
-    "beispielTr": "Daireye ne zaman taşınabiliriz?",
-    "beispielEn": "When can we move into the apartment?"
+    "beispiel": "Meine Schwester zieht nächsten Monat bei ihrem Freund ein.",
+    "beispielTr": "Kız kardeşim gelecek ay erkek arkadaşının evine taşınıyor.",
+    "beispielEn": "My sister is moving in with her boyfriend next month."
   },
   {
     "id": 1143,
@@ -347,9 +347,9 @@
     "id": 1231,
     "tr": "tahta",
     "en": "board",
-    "beispiel": "Der Lehrer schreibt das Wort an die Tafel.",
-    "beispielTr": "Öğretmen kelimeyi tahtaya yazıyor.",
-    "beispielEn": "The teacher writes the word on the board."
+    "beispiel": "Auf der Tafel am Eingang stehen die Öffnungszeiten.",
+    "beispielTr": "Açılış saatleri girişteki tahtada yazıyor.",
+    "beispielEn": "The opening hours are on the board at the entrance."
   },
   {
     "id": 1122,
@@ -363,9 +363,9 @@
     "id": 1242,
     "tr": "pasta",
     "en": "cake",
-    "beispiel": "Zum Geburtstag backe ich dir eine Torte.",
-    "beispielTr": "Doğum gününde sana pasta yapacağım.",
-    "beispielEn": "I will bake you a cake for your birthday."
+    "beispiel": "Die Torte mit Erdbeeren war sofort weg.",
+    "beispielTr": "Çilekli pasta hemen bitti.",
+    "beispielEn": "The strawberry cake was gone right away."
   },
   {
     "id": 1066,
@@ -379,17 +379,17 @@
     "id": 1148,
     "tr": "kalite",
     "en": "quality",
-    "beispiel": "Dieser Fernseher hat eine gute Qualität.",
-    "beispielTr": "Bu televizyonun kalitesi iyi.",
-    "beispielEn": "This television is of good quality."
+    "beispiel": "Die Schuhe sind teuer, aber die Qualität ist super.",
+    "beispielTr": "Ayakkabılar pahalı ama kalitesi süper.",
+    "beispielEn": "The shoes are expensive, but the quality is great."
   },
   {
     "id": 1235,
     "tr": "katılmak",
     "en": "to participate",
-    "beispiel": "Ich möchte am Tanzkurs teilnehmen.",
-    "beispielTr": "Dans kursuna katılmak istiyorum.",
-    "beispielEn": "I want to take part in the dance class."
+    "beispiel": "An der Stadtführung haben zwanzig Leute teilgenommen.",
+    "beispielTr": "Şehir turuna yirmi kişi katıldı.",
+    "beispielEn": "Twenty people took part in the city tour."
   },
   {
     "id": 1076,
