@@ -163,6 +163,7 @@ jobs:
           npm run check:key-families
           npm run check:no-paper-word
           npm run check:no-erdi
+          npm run check:published-examples
           npm run check:radius
           npm run check:type
           npm run check:hit
