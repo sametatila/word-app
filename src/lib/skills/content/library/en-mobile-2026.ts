@@ -59,7 +59,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
-    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Cinema. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
+    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
     "questions": [
       {
         "text": "What time does the film start?",
@@ -1091,7 +1091,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Miller\nDate: Tuesday, 14 October\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, 14 October\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
         "text": "What time is Elif's appointment?",
@@ -1134,7 +1134,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Dr. Miller is in room ___.",
+        "text": "Dr. Moore is in room ___.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -4716,27 +4716,26 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "otopark"
       },
       {
-        "de": "post",
+        "de": "mail",
         "tr": "posta"
       },
       {
         "de": "busy",
         "tr": "yoğun"
       },
-        { "de": "mill", "tr": "değirmen" },
     ],
     "minutes": 5,
-    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - 12 March\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Mill Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From 1 April we are going to send all bills by email. Please give us your email address before 25 March. Email is faster and cheaper than post.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
+    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - 12 March\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Birch Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From 1 April we are going to send all bills by email. Please give us your email address before 25 March. Email is faster and cheaper than regular mail.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
     "questions": [
       {
         "text": "Where is the Housing Office now?",
         "options": [
-          "On Mill Road",
+          "On Birch Road",
           "At 4 King Street",
           "Inside the library"
         ],
         "answer": 1,
-        "explain": "Yazıda \"Since Monday we have worked at 4 King Street, next to the library\" diyor. Ofis kütüphanenin içinde değil, yanındadır; Mill Road'daki eski ofis kapandı."
+        "explain": "Yazıda \"Since Monday we have worked at 4 King Street, next to the library\" diyor. Ofis kütüphanenin içinde değil, yanındadır; Birch Road'daki eski ofis kapandı."
       },
       {
         "text": "The office is open on Sunday.",

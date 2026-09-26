@@ -235,7 +235,7 @@ export const enA2P12: SkillExercise[] = [
         sample:
           "Hi everyone! On Saturday night there will be lots of shooting stars in the sky, and I want to watch them " +
           "from Bell Hill, twenty minutes out of town. Would you like to come with us? We're meeting at the bus stop " +
-          "on Mill Road at ten, and my brother can take four people in his car. Bring a blanket and warm clothes, " +
+          "on Birch Road at ten, and my brother can take four people in his car. Bring a blanket and warm clothes, " +
           "because it gets very cold on the hill after midnight. Please don't use your phone lights: if the sky is " +
           "dark, you see more stars. If it's cloudy, we'll go on Sunday instead. Tell me by Friday, please! Deniz",
       },

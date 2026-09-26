@@ -211,7 +211,7 @@ export const enB2P17: SkillExercise[] = [
     genre: "email",
     intro: "Ekibine bir e-posta yazıyorsun: önce iki cümle kur, sonra dört günlük hafta denemesini ölçütleri ve riskleriyle öner.",
     gloss: [
-      { de: "rota", tr: "nöbet çizelgesi" },
+      { de: "rotation", tr: "nöbet çizelgesi" },
       { de: "target", tr: "hedef" },
       { de: "urgent", tr: "acil" },
       { de: "to deliver", tr: "teslim etmek" },
@@ -257,7 +257,7 @@ export const enB2P17: SkillExercise[] = [
           "Hi all, I'd like to propose a twelve-week trial of a four-day week for our team, " +
           "starting in March, and I'd like your views before I take it to the directors. " +
           "In practical terms, this would mean working Monday to Thursday, with the same pay and " +
-          "the same targets. Fridays would be covered by a rota, so that one person is always " +
+          "the same targets. Fridays would be covered by a rotation, so that one person is always " +
           "available for urgent requests. " +
           "We would measure success by three things: projects delivered on time, client " +
           "satisfaction scores and sick days. I'd also like everyone to fill in a short survey at " +

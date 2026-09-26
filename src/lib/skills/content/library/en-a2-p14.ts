@@ -63,7 +63,7 @@ export const enA2P14: SkillExercise[] = [
           { de: "Four stars out of five.", tr: "Beşte dört yıldız." },
         ],
         sample:
-          "We stayed at Pine Lake Camping for two nights in August with our two children. What we liked most was the " +
+          "We stayed at Pine Lake Campground for two nights in August with our two children. What we liked most was the " +
           "lake: the water was clean and warm, and there was a small beach only fifty meters from our tent. The toilets " +
           "and showers were clean, and everybody was friendly. The only problem was the shop. It closed at six, and " +
           "after that there was nothing to buy anywhere near the campsite. Also, the internet only worked next to the " +

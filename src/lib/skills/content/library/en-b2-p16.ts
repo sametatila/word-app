@@ -212,7 +212,7 @@ export const enB2P16: SkillExercise[] = [
       { de: "on behalf of", tr: "adına" },
       { de: "drying area", tr: "çamaşır kurutma alanı" },
       { de: "washing line", tr: "çamaşır ipi" },
-      { de: "water butt", tr: "yağmur suyu deposu" },
+      { de: "rain barrel", tr: "yağmur suyu deposu" },
       { de: "volunteer", tr: "gönüllü" },
       { de: "to raise", tr: "para toplamak" },
       { de: "committee", tr: "kurul" },
@@ -252,12 +252,12 @@ export const enB2P16: SkillExercise[] = [
           { de: "We would therefore ask you to …", tr: "Bu nedenle sizden … rica ediyoruz", en: "" },
         ],
         sample:
-          "Dear Ms Carlisle, we are writing on behalf of the residents of Linden Court to propose " +
+          "Dear Ms Carlisle, we are writing on behalf of the residents of Linden Place to propose " +
           "a new use for the drying area behind blocks C and D. " +
           "At present, the space is fenced off, the washing lines have been broken for years, and " +
           "it is used mainly for storing old furniture. It's time somebody took responsibility " +
           "for it. " +
-          "What we propose is a shared garden with eight raised beds, two benches and a water butt. " +
+          "What we propose is a shared garden with eight raised beds, two benches and a rain barrel. " +
           "The beds would be built by volunteers, and the materials would cost around nine hundred " +
           "pounds, most of which we have already raised. " +
           "We recognize that residents who still dry clothes outside would lose that space, so we " +
@@ -266,7 +266,7 @@ export const enB2P16: SkillExercise[] = [
           "keys, the watering and any complaints. " +
           "We would therefore ask you to allow a one-year trial from April, after which the " +
           "committee would report back to you and to all residents. " +
-          "Yours sincerely, the Linden Court garden group",
+          "Yours sincerely, the Linden Place garden group",
       },
     ],
   },

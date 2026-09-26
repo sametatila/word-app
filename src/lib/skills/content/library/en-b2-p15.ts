@@ -256,7 +256,7 @@ export const enB2P15: SkillExercise[] = [
           { de: "If I have not heard from you by …, I will …", tr: "… tarihine kadar sizden haber alamazsam … yapacağım", en: "" },
         ],
         sample:
-          "Dear Customer Services, I am writing to complain about being charged twice after " +
+          "Dear Customer Service, I am writing to complain about being charged twice after " +
           "canceling my membership, and to ask for both payments to be refunded. " +
           "I canceled my subscription on 3 March by email, as your terms require, and received an " +
           "automatic reply confirming that my request had arrived. My notice period was one month, " +

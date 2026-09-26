@@ -114,7 +114,6 @@ export const enB1P19: SkillExercise[] = [
     gloss: [
       { de: "campsite", tr: "kamp alanı" },
       { de: "tent", tr: "çadır" },
-      { de: "pitch", tr: "çadır yeri" },
       { de: "lead", tr: "tasma" },
       { de: "barn", tr: "ambar" },
       { de: "speaker", tr: "hoparlör" },
@@ -123,8 +122,8 @@ export const enB1P19: SkillExercise[] = [
     minutes: 6,
     segments: [
       { text: "Hello and welcome to Brook Farm Campsite. Before you put your tents up, here are the few rules we actually care about." },
-      { text: "You're allowed to light a barbecue, but only on the stone areas next to each pitch, never on the grass. The grass stayed brown for a year after one fire." },
-      { text: "Dogs are allowed, but they're supposed to be on a lead everywhere except the field behind the barn. There are sheep next door, and the farmer is not a patient man." },
+      { text: "You're allowed to light a barbecue, but only on the stone areas next to each campsite, never on the grass. The grass stayed brown for a year after one fire." },
+      { text: "Dogs are allowed, but they're supposed to be on a leash everywhere except the field behind the barn. There are sheep next door, and the farmer is not a patient man." },
       { text: "Quiet time starts at half past ten. You're not supposed to play music after that, and yes, that includes the small speakers people think we can't hear." },
       { text: "Cars aren't allowed on the field after nine at night, because children are running around in the dark. Please use the parking lot by the gate." },
       { text: "The showers are free, but the hot water runs out at about eight in the morning, so early swimmers have the advantage." },
@@ -135,12 +134,12 @@ export const enB1P19: SkillExercise[] = [
       {
         text: "Where are barbecues allowed?",
         options: [
-          "on the stone areas next to each pitch",
+          "on the stone areas next to each campsite",
           "anywhere on the grass near the tents",
           "only in the parking lot by the gate",
         ],
         answer: 0,
-        explain: "„only on the stone areas next to each pitch, never on the grass“.",
+        explain: "„only on the stone areas next to each campsite, never on the grass“.",
       },
       {
         text: "When are cars not allowed on the field?",

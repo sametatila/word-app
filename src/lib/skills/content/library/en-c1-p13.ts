@@ -221,7 +221,7 @@ export const enC1P13: SkillExercise[] = [
     intro: "Bir hastane servisinin sorumlususun; saatlerin geri alındığı gece, gece ekibi bir saat fazla çalışacak. Önce iki cümle kur, sonra ekibe açık ve adil bir e-posta yaz.",
     gloss: [
       { de: "night rate", tr: "gece ücreti" },
-      { de: "rota", tr: "nöbet çizelgesi" },
+      { de: "schedule", tr: "nöbet çizelgesi" },
       { de: "dose", tr: "doz" },
       { de: "chart", tr: "hasta çizelgesi" },
       { de: "shift lead", tr: "vardiya sorumlusu" },
@@ -268,13 +268,13 @@ export const enC1P13: SkillExercise[] = [
           "affects only the Saturday night shift, but for those of you on it, the night will be nine hours long " +
           "instead of eight: at three o'clock the time becomes two again, and you will work that hour twice.\n\n" +
           "You will be paid for the full nine hours at the night rate. If you would rather take the hour as time " +
-          "off, tell me by Thursday and I will add it to the November rota. Nobody has to decide on the night " +
+          "off, tell me by Thursday and I will add it to the November schedule. Nobody has to decide on the night " +
           "itself.\n\n" +
           "Please take particular care with medication. Any dose due between two and three will come round twice " +
           "on the clock, and it must only be given once. Even if you have worked this change before, check the " +
           "chart against the real time since the last dose, not the time on the wall. The pharmacy has marked " +
           "the affected charts in yellow.\n\n" +
-          "Even experienced nurses find the extra hour long, so the break rota includes a second break at about " +
+          "Even experienced nurses find the extra hour long, so the break schedule includes a second break at about " +
           "four. Please take it.\n\n" +
           "If anything is unclear, ask me or the shift lead before Saturday rather than during it.\n\n" +
           "Thanks,\nRuth",

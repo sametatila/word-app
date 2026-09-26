@@ -32,7 +32,7 @@ export const enB2P3: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "BEFORE YOU HAVE WORK DONE ON YOUR FLAT\n\n" +
+      "BEFORE YOU HAVE WORK DONE ON YOUR APARTMENT\n\n" +
       "Most disputes about building work do not start with bad work. They " +
       "start with two people who each believed something different and never " +
       "wrote it down.\n\n" +

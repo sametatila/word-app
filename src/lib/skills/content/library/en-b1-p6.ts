@@ -244,7 +244,7 @@ export const enB1P6: SkillExercise[] = [
           { de: "Instead of closing it, the council could …", tr: "Kapatmak yerine meclis … yapabilir", en: "" },
         ],
         sample:
-          "The council is considering closing the branch on Mill Road, and I think that would be " +
+          "The council is considering closing the branch on Birch Road, and I think that would be " +
           "a mistake. In my view, the main argument is not the books at all. " +
           "It is the printer, the free computers and the quiet room, which are used every day by " +
           "people who have none of these things at home. " +

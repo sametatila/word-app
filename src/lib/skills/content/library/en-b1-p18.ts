@@ -105,7 +105,7 @@ export const enB1P18: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "listening",
-    title: "Why Is There Always a Line on Mill Lane?",
+    title: "Why Is There Always a Line on Birch Lane?",
     genre: "report",
     intro: "Yerel bir radyo haberi: yeni bir fırının önünde her sabah kuyruk var; fırıncı, bir müşteri ve komşular ne diyor.",
     gloss: [
@@ -119,7 +119,7 @@ export const enB1P18: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Presenter", text: "If you've walked down Mill Lane before eight in the morning, you've seen it: a line of thirty people outside a bakery that only opened in March. We went to find out why." },
+      { speaker: "Presenter", text: "If you've walked down Birch Lane before eight in the morning, you've seen it: a line of thirty people outside a bakery that only opened in March. We went to find out why." },
       { speaker: "Mr Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
       { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the line. I've made two friends there." },
       { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the line blocks its entrance, and a neighbor has complained about the noise at half past six." },
@@ -227,7 +227,7 @@ export const enB1P18: SkillExercise[] = [
           { de: "I'd give it … because …", tr: "… veririm çünkü …", en: "" },
         ],
         sample:
-          "We booked the two-hour seal trip from Harbor Street for a Saturday in August. Tickets " +
+          "We booked the two-hour seal trip from Bridge Street for a Saturday in August. Tickets " +
           "were twenty-two pounds for adults and twelve for children, which felt fair for what you " +
           "get. The boat is small, with room for about twenty people, and the captain talks the " +
           "whole time, mostly about the seals and sometimes about his dog. " +

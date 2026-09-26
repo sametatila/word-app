@@ -147,7 +147,7 @@ export const enC1P17: SkillExercise[] = [
       { speaker: "Ms Crowe", text: "That's close to what we had, minus the staff. The problem is people. We have two adults on the playground for two hundred children." },
       { speaker: "Ms Crowe", text: "And those two are also dealing with lost coats, arguments about soccer and the line for the toilets. A tree needs someone whose only job, for twenty minutes, is the tree." },
       { speaker: "Mr Pajari", text: "Parents could help. When it comes to supervising a tree, you don't need a teaching qualification." },
-      { speaker: "Ms Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rota first." },
+      { speaker: "Ms Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rotation first." },
       { speaker: "Mr Pajari", text: "Six. I'll have a list by Friday." },
     ],
     questions: [
@@ -188,7 +188,7 @@ export const enC1P17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many parents must Mr Pajari find for the rota?",
+        text: "How many parents must Mr Pajari find for the rotation?",
         options: [],
         answer: 0,
         accept: ["six", "6"],
@@ -270,7 +270,7 @@ export const enC1P17: SkillExercise[] = [
           "themselves rather than being told about it. That kind of independence is hard to teach any other way.\n\n" +
           "We would not object to strict conditions. We propose that climbing be allowed on the lower branches only, " +
           "one class at a time, and only when a trained parent volunteer is present. Parents are committed to " +
-          "providing that supervision: six of us have already agreed to a weekly rota.\n\n" +
+          "providing that supervision: six of us have already agreed to a weekly schedule.\n\n" +
           "We would welcome the chance to run this as a trial for one term and to report back to you at its end, " +
           "including any injuries, however minor.\n\n" +
           "Yours faithfully,\nJuha Pajari",

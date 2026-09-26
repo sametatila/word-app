@@ -24,7 +24,7 @@ export const enB2P19: SkillExercise[] = [
     gloss: [
       { de: "tenant", tr: "kiracı" },
       { de: "minority", tr: "azınlık" },
-      { de: "tenancy agreement", tr: "kira sözleşmesi" },
+      { de: "lease", tr: "kira sözleşmesi" },
       { de: "consent", tr: "onay" },
       { de: "refusal", tr: "ret" },
       { de: "to challenge", tr: "itiraz etmek" },
@@ -41,7 +41,7 @@ export const enB2P19: SkillExercise[] = [
       "More than half of renters say they would like a pet, but only a small minority have one. " +
       "The gap is not mainly about money or space. In most cases it is about permission, and " +
       "about how the request is made.\n\n" +
-      "Start by reading your tenancy agreement. Some agreements ban pets completely; many more " +
+      "Start by reading your lease. Some agreements ban pets completely; many more " +
       "say that pets are allowed “with the landlord's written consent”. That phrase matters. " +
       "It means the landlord must actually consider your request, and in several countries a " +
       "refusal without a reasonable explanation can be challenged.\n\n" +
@@ -253,10 +253,10 @@ export const enB2P19: SkillExercise[] = [
         ],
         sample:
           "Dear Mr Price, I am writing to ask for your written consent to keep a cat in the apartment " +
-          "at 14 Mill Lane, as my tenancy agreement requires. " +
+          "at 14 Birch Lane, as my lease requires. " +
           "To give you a clear picture, the cat is a nine-year-old female who has lived indoors " +
           "all her life. She is neutered, vaccinated and very calm, and she currently lives with " +
-          "my mother, who is moving into a care home. " +
+          "my mother, who is moving into a nursing home. " +
           "To reduce any risk, I would be willing to pay an additional deposit of two hundred " +
           "pounds and to have the carpets professionally cleaned when I leave. I would also take " +
           "out insurance that covers damage caused by pets, and I would take full responsibility " +

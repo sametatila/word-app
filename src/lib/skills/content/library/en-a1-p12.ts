@@ -19,7 +19,7 @@ export const enA1P12: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "reading",
-    title: "Pine Lake Camping",
+    title: "Pine Lake Campground",
     genre: "info",
     intro: "Göl kenarındaki bir kamp alanının misafirlere verdiği bilgi yazısını okuyacaksın: ofis, dükkân, duşlar, yüzme ve sessizlik saatleri.",
     gloss: [
@@ -33,7 +33,7 @@ export const enA1P12: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "PINE LAKE CAMPING — INFORMATION\n\n" +
+      "PINE LAKE CAMPGROUND — INFORMATION\n\n" +
       "Welcome! Here is some information for your stay.\n\n" +
       "The office is open every day from eight to seven. After seven, please call 0172 55 60 90.\n\n" +
       "Our small shop sells bread, milk, fruit and ice. The fresh bread is ready at half past seven.\n\n" +
@@ -57,7 +57,7 @@ export const enA1P12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You can buy fruit at the camping shop.",
+        text: "You can buy fruit at the campground store.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Our small shop sells bread, milk, fruit and ice.“",
@@ -93,7 +93,7 @@ export const enA1P12: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "listening",
-    title: "Checking In at the Blue Bay",
+    title: "Checking In at the Blue Sky",
     genre: "dialogue",
     intro: "Ela bir otele varıyor ve resepsiyonda giriş yapıyor; oda, kahvaltı, internet ve çantası için ne öğrendiğini dinle.",
     gloss: [
@@ -106,7 +106,7 @@ export const enA1P12: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Receptionist", text: "Good evening, welcome to the Blue Bay Hotel." },
+      { speaker: "Receptionist", text: "Good evening, welcome to the Blue Sky Hotel." },
       { speaker: "Ela", text: "Hello. I have a room for one night. My name is Ela Kaya." },
       { speaker: "Receptionist", text: "Yes, a single room with a shower. Can I see your passport, please?" },
       { speaker: "Ela", text: "Here you are." },

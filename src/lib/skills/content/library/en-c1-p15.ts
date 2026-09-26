@@ -45,7 +45,7 @@ export const enC1P15: SkillExercise[] = [
       "old railroad land, the brochure promised “private homes, shared lives”. Five years later, residents " +
       "describe something both smaller and more durable than the brochure imagined.\n\n" +
       "Each household has its own apartment, kitchen and front door. What is shared is a large dining room, " +
-      "a workshop, a guest room and a laundry, together with a meal cooked by a rota of residents three " +
+      "a workshop, a guest room and a laundry, together with a meal cooked by a rotation of residents three " +
       "evenings a week. The apartments are about fifteen percent smaller than comparable ones nearby, and the " +
       "shared rooms are supposed to make up the difference.\n\n" +
       "Whether they do depends on whom you ask. The more a household uses the common rooms, the less it " +
@@ -221,7 +221,7 @@ export const enC1P15: SkillExercise[] = [
     intro: "Ortak bir konut projesine taşınmayı düşünen bir arkadaşına yazıyorsun: önce iki cümle kur, sonra dürüst ve dengeli bir e-posta yaz.",
     gloss: [
       { de: "spacious", tr: "ferah" },
-      { de: "rota", tr: "nöbet çizelgesi" },
+      { de: "schedule", tr: "nöbet çizelgesi" },
       { de: "to tolerate", tr: "katlanmak" },
       { de: "privacy", tr: "mahremiyet" },
       { de: "compromise", tr: "uzlaşma" },
@@ -272,7 +272,7 @@ export const enC1P15: SkillExercise[] = [
           "every decision about a doormat needs a vote. If you are somebody who wants a problem solved by " +
           "Friday, you will find it far more frustrating than I do.\n\n" +
           "It works best for people who actually want the shared life and not just the lower rent. " +
-          "Before you sign anything, ask them two questions: how often does the cooking rota fail, and what " +
+          "Before you sign anything, ask them two questions: how often does the cooking schedule fail, and what " +
           "happened the last time two residents seriously disagreed? The answers will tell you more than the " +
           "brochure.\n\n" +
           "Come for a meal first and see for yourself. Thursday is my turn to cook, so I can promise it will be " +

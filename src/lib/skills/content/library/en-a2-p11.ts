@@ -123,7 +123,7 @@ export const enA2P11: SkillExercise[] = [
     minutes: 5,
     segments: [
       { text: "Good morning, ladies and gentlemen, and welcome on board the Blue Star ferry to Castle Island." },
-      { text: "The trip takes one hour and forty minutes. We stop once, at Green Bay, where some passengers get off." },
+      { text: "The trip takes one hour and forty minutes. We stop once, at Green Point, where some passengers get off." },
       { text: "Please keep your bags with you or put them in the room behind the café. Do not leave them on the stairs." },
       { text: "Children must stay with an adult when they are outside on the top floor of the ship. The floor can be wet." },
       { text: "Today there is some wind, so the front of the ship moves more than usual. If you feel sick, sit in the middle." },
@@ -133,9 +133,9 @@ export const enA2P11: SkillExercise[] = [
     questions: [
       {
         text: "Where is the ferry going?",
-        options: ["to Green Bay only", "back to the city", "to Castle Island"],
+        options: ["to Green Point only", "back to the city", "to Castle Island"],
         answer: 2,
-        explain: "„Welcome on board the Blue Star ferry to Castle Island.“ Green Bay yalnız ara durak.",
+        explain: "„Welcome on board the Blue Star ferry to Castle Island.“ Green Point yalnız ara durak.",
       },
       {
         text: "Where can passengers leave their bags?",

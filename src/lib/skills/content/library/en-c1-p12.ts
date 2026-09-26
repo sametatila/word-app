@@ -23,7 +23,7 @@ export const enC1P12: SkillExercise[] = [
     intro: "Gönüllü bir dağ kurtarma ekibinin yıllık raporundan bir bölüm: rakamlar, ayrılanlar ve gelecek yıl için öneri.",
     gloss: [
       { de: "call-out", tr: "kurtarma çağrısı" },
-      { de: "rota", tr: "nöbet çizelgesi" },
+      { de: "schedule", tr: "nöbet çizelgesi" },
       { de: "to recruit", tr: "işe almak" },
       { de: "misleading", tr: "yanıltıcı" },
       { de: "commitment", tr: "yükümlülük" },
@@ -44,7 +44,7 @@ export const enC1P12: SkillExercise[] = [
       "with fewer active members than at any point in the last decade. That combination is not " +
       "necessarily a crisis, but it is not something we can ignore for another year either.\n\n" +
       "We recruited fourteen new volunteers in the spring. By December, six of them were no longer " +
-      "on the rota. Not all of those who left did so for the same reason, and it would be misleading " +
+      "on the schedule. Not all of those who left did so for the same reason, and it would be misleading " +
       "to describe them as a single group. Two moved away. Two told us, honestly, that the training " +
       "commitment was more than they had understood when they signed up. The remaining two left " +
       "without giving a reason, and we have not asked, which is something we intend to change.\n\n" +
@@ -219,7 +219,7 @@ export const enC1P12: SkillExercise[] = [
     intro: "Gönüllü bir ekibin koordinatörü olarak herkese yazıyorsun: önce iki cümle kur, sonra neyin değişip neyin değişmediğini açıkça söyleyen bir e-posta yaz.",
     gloss: [
       { de: "to recruit", tr: "işe almak" },
-      { de: "rota", tr: "nöbet çizelgesi" },
+      { de: "schedule", tr: "nöbet çizelgesi" },
       { de: "mentor", tr: "rehber" },
       { de: "to pair", tr: "eşleştirmek" },
       { de: "unpaid", tr: "ödenmemiş" },

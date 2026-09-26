@@ -30,7 +30,7 @@ export const enB2P14: SkillExercise[] = [
       { de: "evenly", tr: "eşit biçimde" },
       { de: "compulsory", tr: "zorunlu" },
       { de: "persistent", tr: "süregelen" },
-      { de: "pushchair", tr: "puset" },
+      { de: "stroller", tr: "puset" },
       { de: "bay", tr: "park yeri" },
       { de: "nuisance", tr: "rahatsızlık" },
       { de: "permanent", tr: "kalıcı" },
@@ -55,7 +55,7 @@ export const enB2P14: SkillExercise[] = [
       "before a first ride, and lower speeds in the center after eleven.\n\n" +
       "The most persistent complaint was not about speed at all. It was about parking. Because " +
       "scooters could be left anywhere, they were left everywhere, and wheelchair users and " +
-      "people with pushchairs reported being blocked on their own streets. Since September, " +
+      "people with strollers reported being blocked on their own streets. Since September, " +
       "riders have had to end their trip in a marked bay, and complaints have fallen by more " +
       "than half.\n\n" +
       "The council must now decide whether to make the scheme permanent. The honest lesson of " +
@@ -81,7 +81,7 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Complaints fell after riders had to park in marked bays.",
+        text: "Complaints fell after riders had to park in marked spaces.",
         options: ["True", "False"],
         answer: 0,
         explain: "Eylülden beri işaretli alanda park zorunlu ve şikâyetler yarıdan fazla azaldı.",
@@ -220,22 +220,22 @@ export const enB2P14: SkillExercise[] = [
       { de: "to leave out", tr: "dışarıda bırakmak" },
       { de: "wheelchair", tr: "tekerlekli sandalye" },
       { de: "occasion", tr: "sefer" },
-      { de: "pushchair", tr: "puset" },
+      { de: "stroller", tr: "puset" },
     ],
     minutes: 14,
     tasks: [
       {
         kind: "build",
         tr: "Yeni park alanları sayesinde şikâyetler yarıdan fazla azaldı.",
-        answer: "Due to the new parking bays, complaints have fallen by more than half.",
-        alternatives: ["Complaints have fallen by more than half due to the new parking bays."],
+        answer: "Due to the new parking spaces, complaints have fallen by more than half.",
+        alternatives: ["Complaints have fallen by more than half due to the new parking spaces."],
         hint: "„due to“ arkasından isim öbeği gelir, özne ve fiil gelmez.",
       },
       {
         kind: "build",
         tr: "Köşede kaldırım o kadar dardı ki puset geçemiyordu.",
-        answer: "At the corner the sidewalk was so narrow that a pushchair could not get past.",
-        alternatives: ["The sidewalk was so narrow at the corner that a pushchair could not get past."],
+        answer: "At the corner the sidewalk was so narrow that a stroller could not get past.",
+        alternatives: ["The sidewalk was so narrow at the corner that a stroller could not get past."],
         hint: "so + sıfat + that; isim öbeğiyle „such a … that“ kullanılır.",
       },
       {
@@ -264,10 +264,10 @@ export const enB2P14: SkillExercise[] = [
           "As someone who uses a wheelchair, I spent most of last spring planning routes around " +
           "scooters that had been left across dropped kerbs. On one occasion the sidewalk outside " +
           "my building was so crowded that I had to go into the road. " +
-          "The improvement since September is real, and it is largely due to the parking bays, " +
+          "The improvement since September is real, and it is largely due to the parking spaces, " +
           "not to riders becoming more considerate. When there is somewhere obvious to leave a " +
           "scooter, people use it; when there isn't, they don't. " +
-          "The council should therefore make the bays a condition of any permanent scheme, " +
+          "The council should therefore make the spaces a condition of any permanent scheme, " +
           "check them every week, and ask disabled residents where they ought to go, rather than " +
           "deciding for us. A few lines of paint have done more for my street than a year of " +
           "apologies. Yours faithfully, A. Lindqvist",
@@ -312,7 +312,7 @@ export const enB2P14: SkillExercise[] = [
         "scooters useless. It makes them a transport option rather than a climate policy, " +
         "and they should be judged as one. " +
         "The cost is mostly carried by people who never ride them: wheelchair users, parents " +
-        "with pushchairs, older people who are nervous of anything silent and fast on a " +
+        "with strollers, older people who are nervous of anything silent and fast on a " +
         "sidewalk. Owing to the way the first schemes were designed, those people paid for " +
         "other people's convenience. " +
         "My condition would be that no scooter can end a trip outside a marked bay. It's a " +

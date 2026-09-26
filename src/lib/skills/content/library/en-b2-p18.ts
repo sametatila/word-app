@@ -30,7 +30,7 @@ export const enB2P18: SkillExercise[] = [
       { de: "to withdraw", tr: "para çekmek" },
       { de: "till", tr: "yazar kasa" },
       { de: "to pay in", tr: "yatırmak" },
-      { de: "building society", tr: "tasarruf kurumu" },
+      { de: "credit union", tr: "tasarruf kurumu" },
       { de: "deposit", tr: "para yatırma" },
       { de: "necessity", tr: "zorunluluk" },
       { de: "coin", tr: "bozuk para" },
@@ -45,7 +45,7 @@ export const enB2P18: SkillExercise[] = [
       "Every morning between eight and ten, a line forms that has nothing to do with groceries. " +
       "Pensioners withdraw their weekly money at the till. A plumber pays in yesterday's takings. " +
       "The school's parent association drops off the coins from the summer fair, because neither " +
-      "the bank nor the building society will accept a deposit that small any more without an " +
+      "the bank nor the credit union will accept a deposit that small any more without an " +
       "appointment in the city.\n\n" +
       "Mr Okonjo does not make money from any of this. Each withdrawal earns him a few cents from " +
       "the card company, and handling cash costs him far more than that in time and insurance. " +
