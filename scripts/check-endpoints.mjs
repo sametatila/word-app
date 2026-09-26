@@ -4,9 +4,9 @@
  * NEDEN VAR: bir uç yazılıp istemciye hiç bağlanmadığında kimse fark etmiyor.
  * Derleme geçiyor, lint geçiyor, tipler tutuyor; uç sessizce çürüyor ve
  * yaptığı iş HİÇ yapılmıyor. Bu depoda ölçüldüğünde iki gerçek örnek çıktı:
- * `/api/plan` (istemcisi bir parite turunda kaldırıldı) ve
- * `/api/premium/consume` (tur başına kotayı sayan tek yer; çağıran olmadığı
- * için sayaç hiç artmıyor).
+ * `/api/plan` (istemcisi bir parite turunda kaldırılmıştı; uç 2026-09-26'da
+ * silindi) ve `/api/premium/consume` (tur başına kotayı sayan tek yer; çağıran
+ * olmadığı için sayaç hiç artmıyordu).
  *
  * Kural: `src/app/api/**\/route.ts` altındaki her uç ya web/mobil kaynağında
  * çağrılıyor olacak ya da aşağıdaki listede SEBEBİYLE yazılı olacak. Liste
@@ -24,9 +24,8 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 /**
  * Çağıranı REPODA OLMAYAN uçlar — sebebiyle.
  *
- * İlk beşi dışarıdan çağrılıyor (bizim kodumuz onları çağırmaz, çağırmamalı).
- * Son ikisi gerçekten çağıransız ve ikisi de belgelenmiş durumda; kalıcı
- * olarak atılıp atılmayacakları ürün kararı.
+ * Çoğu dışarıdan çağrılıyor (bizim kodumuz onları çağırmaz, çağırmamalı):
+ * mağaza, Apple, systemd timer'ları.
  */
 const ALLOW = {
   "/api/auth/apple/notifications": "Apple sunucudan sunucuya bildirim gönderiyor; bizim kodumuz çağırmaz",
@@ -34,7 +33,6 @@ const ALLOW = {
   "/api/cron/streak-alert": "systemd timer (lernomi-cron-streak, saatlik 17-21 UTC)",
   "/api/cron/summary": "systemd timer",
   "/api/cron/weekly-reminder": "systemd timer (lernomi-cron-weekly, pazar 15-19 UTC)",
-  "/api/plan": "istemcisi parite turunda kaldırıldı (web-parity §7); e2e `buildPlan`i doğrudan deniyor",
   "/api/premium/consume": "tur başına kotayı sayan uç, çağıranı yok (web-parity §11.24)",
   "/api/cron/assess": "systemd timer (lernomi-cron-assess, her gün 04:15 UTC)",
   "/api/cron/alerts": "systemd timer (lernomi-cron-alerts, 10 dakikada bir) — uyarı motoru",

@@ -45,7 +45,7 @@ Yollar `src/` altında.
 |---|---|---|
 | Dilbilgisi tabloları (cheatsheet), dönüştürme drilleri (WP-11), kural parçacıkları (WP-73) | 3bbae3a4 | Patika'da ünitenin konuşmalarından türetilen dilbilgisi adımı (`lib/immersion/grammar.ts`) |
 | Altı sekmeli `/skills` beceri merkezi (WP-63) | a6eeb239 | Patika; `/skills` sonra kütüphane olarak geri geldi (WP-90) |
-| Plan kartı / "Bugünkü plan" (WP-60) | 9d2c9311, e558b37e, dosya 0c001fb6 | Öğren merkezi; sıradaki ders Patika kartında |
+| Plan kartı / "Bugünkü plan" (WP-60) | 9d2c9311, e558b37e, dosya 0c001fb6; `/api/plan` ve `lib/plan` 2026-09-26 | Öğren merkezi; sıradaki ders Patika kartında |
 | Haftalık kullanım sınavı ve `/api/weekly` (WP-42) | dd8cea71 | Haftalık quiz (`/api/quiz`, `lib/weekly-quiz`); `/learn/weekly` adresi ve `exams` satırı korundu |
 | Dört adımlı web onboarding (WP-65) | c3cf81bd | Mobilin beş ekranı |
 | Koç balonu ve turdaki maskot (WP-66) | 25a4e1df | Koçun cümlesi kaldı (`CoachLine`); Erdi yalnız günlük tur kutusunda |
@@ -64,5 +64,5 @@ Yollar `src/` altında.
 - **Gerçek ses kaydı yok.** Dinleme `segments[].audio` alanı hiçbir içerikte dolu değil; ses sunucu TTS'inden.
 - **Telaffuz.** Fonem düzeyi (faz 2) isteğe bağlı. Azure telaffuz puanı bağlı değil; bağlanacaksa önce gerçek kayıtla kalibrasyon. Puanlı konuşmada (WP-22) telaffuz ortalaması yok.
 - **Bilerek yapılmadı:** WP-14 A/B bayrağı, WP-41 rozetleri, WP-42 görev (quest) bağlantısı.
-- **Temizlik kararı bekleyen ölü kod.** `/api/plan` ve `lib/plan.ts` hiçbir yerden çağrılmıyor (`lib/weekly.ts` yalnız ona hizmet ediyor). `scripts/report-learning.ts` sözlükte artık olmayan olayları sorguluyor: `speak_self` (10. bölüm), `drill_finish` ve `drill` (11. bölüm, satır 225–240); satır 256 da ölü `drill`/`cheatsheet` ekran anahtarlarını sayıyor.
+- **`lib/weekly.ts`.** `weeklyStatus` artık yalnız e2e'de sınanıyor ve `parity-check` dosyayı okuyor; uygulamada çağıranı yok. Silinecekse iki kapı birlikte değişir.
 - **iOS monolog.** Mobil monologun `listenOnce` döngüsü iOS cihazında doğrulanmadı.

@@ -308,8 +308,6 @@ export function cleanKind(kind: unknown): string | null {
  *   mail_sent                 doğrulama postası kapısının bekçisi (lib/alerts
  *                             "SMTP reddediyor" uyarısı)
  *   client_error              hata ayıklama/güvenlik; içeriği yok, ekran adı
- *   session_done              KULLANICIYA gösterilen günlük plan bunu sayıyor
- *                             (lib/plan): yazılmazsa "bugünkü turun" hiç bitmez
  *   placement_finish          gelişim ekranının "başlangıç seviyen" satırı
  *                             (lib/growth) buradan okunuyor
  *
@@ -317,7 +315,7 @@ export function cleanKind(kind: unknown): string | null {
  * sayaçlar…) opt-out'ta hiç yazılmıyor. Yeni bir olayı buraya eklemek
  * politikada "zorunlu kayıt" demek: gerekçesi yanına yazılır.
  */
-const OPERATIONAL = new Set<EventName>(["push_sent", "push_deliver", "mail_sent", "client_error", "session_done", "placement_finish"]);
+const OPERATIONAL = new Set<EventName>(["push_sent", "push_deliver", "mail_sent", "client_error", "placement_finish"]);
 
 /**
  * GÜNDE BİR KEZ SAYILAN OLAYLAR — tekillik SUNUCUDA (hukuk denetimi LEG-10).

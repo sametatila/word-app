@@ -70,7 +70,6 @@ import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash, deleteAssessment, listAssessments, queueAssessment, runAssessQueue } from "../src/lib/assess";
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/conversations/offline-chat";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
-import { buildPlan } from "../src/lib/plan";
 import { CANDO } from "../src/lib/cando";
 import { candoForExercise, candoForConversation } from "../src/lib/cando-map";
 import { candoSummary } from "../src/lib/cando-progress";
@@ -1952,22 +1951,6 @@ async function main() {
   const [fsRv] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, fsPool[0].id))).orderBy(desc(reviews.id)).limit(1);
   check("serbest cümle cevabı kalitesiyle kaydediliyor", fsRv?.game === "free_sentence" && fsRv?.quality === 4);
 
-  console.log("\n34) Bugünkü plan (WP-60)");
-  await reset();
-  const planProfile = await ensureProfile(USER, "E2E");
-  let plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
-  check("plan tur + konuşma + beceri öğeleri", plan.items.some((i) => i.id === "review") && plan.items.some((i) => i.id === "conversation") && plan.items.some((i) => i.id === "skill"), plan.items.map((i) => i.id).join(","));
-  check("hiçbiri yapılmadı, süre > 0", plan.items.every((i) => !i.done) && plan.minutes > 0 && !plan.complete);
-  check("zayıf nokta yok (hata yok)", !plan.items.some((i) => i.id === "weak"));
-  const planWords = await db.select().from(words).where(isNotNull(words.artikel)).limit(5);
-  await submitAnswers(USER, planWords.map((w) => ({ wordId: w.id, game: "artikel" as const, correct: false, latencyMs: 2000, errorType: "article" as const, detail: "die" })), monday, 20);
-  await track(USER, "session_done", monday, 3);
-  plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
-  const weak = plan.items.find((i) => i.id === "weak");
-  check("5 artikel hatası → zayıf nokta öğesi, Artikel Yarışı", weak?.href === "/learn/game?game=artikel" && weak.title.includes("artikel"), weak?.title);
-  check("tur bugün tamamlandı işareti (session_done)", plan.items.find((i) => i.id === "review")?.done === true);
-  check("zayıf nokta öğesi bugün 5 artikel cevabıyla yapıldı sayılıyor", weak?.done === true);
-
   console.log("\n35) Yazma değerlendirme kuyruğu ve arşiv (WP-30)");
   await db.delete(assessments).where(eq(assessments.userId, USER));
   const qReq = { kind: "writing" as const, level: "A2" as const, lang: "de" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-u01-w1" };
@@ -2053,8 +2036,6 @@ async function main() {
   await db.insert(exams).values({ userId: USER, kind: "weekly", week: monday, level: "A1", score: 70, correct: 7, total: 10, answers: [] });
   ws = await weeklyStatus(USER, monday);
   check("yazılan satır okunuyor", ws.done && ws.score === 70 && ws.total === 10);
-  const planW = await buildPlan(USER, monday, "de", "A1", 20);
-  check("plan kartında haftalık quiz öğesi (yapıldı)", planW.items.some((i) => i.id === "weekly" && i.done));
 
   console.log("\n39) Beceri yetkinlik modeli (WP-50)");
   const nowP = new Date();
@@ -2076,8 +2057,6 @@ async function main() {
   const pf = await proficiencyFor(USER, "de", "A1");
   check("okuma A1 ustalaştı, diğerleri ölçülmedi", pf.proficiency.reading.A1?.band === "mastered" && pf.proficiency.listening.A1 === undefined);
   check("sıradaki adım okuma değil, ölçülmemiş bir beceri", pf.next !== null && pf.next.skill !== "reading" && pf.next.reason.includes("ölçülmedi"), pf.next?.reason);
-  const planP = await buildPlan(USER, monday, "de", "A1", 20);
-  check("plan beceri öğesi yetkinlikten geliyor", planP.items.some((i) => i.id === "skill" && i.detail.includes("ölçülmedi")));
 
   console.log("\n40) Hata analitiği ve hedefli tekrar (WP-51)");
   await reset();
@@ -2124,8 +2103,6 @@ async function main() {
   const sm = gr.summary;
   check("özet: 50 cevap, yazma 65, kullanım 80, en çok hata artikel", sm.answers === 50 && sm.writing.to === 65 && sm.usage === 80 && sm.topError?.type === "article", sm.text);
   check("özet metni tek satır Türkçe", sm.text.startsWith("Geçen hafta:") && sm.text.includes("kullanım 80"));
-  const planS = await buildPlan(USER, today41, "de", "A2", 20);
-  check("plan özet satırı taşıyor", typeof planS.summary === "string" && planS.summary!.includes("50 cevap"));
 
   console.log("\n42) Seviye ve modül sınavı v3 (WP-41)");
   await reset();

@@ -77,7 +77,8 @@ async function main() {
   check("kapalıyken açılış da yazılmıyor", (await count(U, "app_open")) === 2);
   await track(U, "session_done", DAY, 10);
   await track(U, "mail_sent", DAY, 1, "verify:ok");
-  check("kapalıyken işletimsel olay yazılıyor (session_done, mail_sent)", (await count(U, "session_done")) === 1 && (await count(U, "mail_sent")) === 1);
+  check("kapalıyken ürün olayı session_done yazılmıyor", (await count(U, "session_done")) === 0);
+  check("kapalıyken işletimsel olay yazılıyor (mail_sent)", (await count(U, "mail_sent")) === 1);
   await track("test-prefs-no-profile", "nav", DAY, 1);
   check("profilsiz kullanıcıda ürün olayı yazılıyor", (await count("test-prefs-no-profile", "nav")) === 1);
   await db.delete(events).where(eq(events.userId, "test-prefs-no-profile"));

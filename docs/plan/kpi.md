@@ -100,7 +100,7 @@ from first f group by 1 order by 1;
 ### İlkeler
 - **Kapalı sözlük.** Olay adı `EVENT_NAMES`ten (`src/lib/events.ts`), `kind` `[a-z0-9_:-]{1,32}`, salt rakam reddedilir. Öğrenci metni olaya yazılmaz; içerik `assessments`ta, olayda yalnız puan.
 - **Ekran anahtarı yol değil** (`src/lib/screens.ts`): home, learn, weekly, immersion, premium, conversations, conversation, conversation_scored, skills, skill, words, profile, settings, badges, writings, exam, placement, other. Gezinme değişse de geçmiş veri kırılmaz.
-- **Analitik kapalıysa yazılmaz.** Tercih hesapta (`profiles.analytics_opt_out`); `track` her yazmada bakar. Kapalıyken yalnız hizmet için zorunlu olaylar yazılır: push_sent, push_deliver, mail_sent, client_error, session_done, placement_finish.
+- **Analitik kapalıysa yazılmaz.** Tercih hesapta (`profiles.analytics_opt_out`); `track` her yazmada bakar. Kapalıyken yalnız hizmet için zorunlu olaylar yazılır: push_sent, push_deliver, mail_sent, client_error, placement_finish.
 - **Hesap silinince silinir.** Kullanıcının olayları `src/lib/account/purge.ts` ile gider. Onun dışında olaylar için süre sınırlı silme yok.
 - **Ölçüm akışı bozmaz.** İstemci beklemez; sunucu hata fırlatmaz.
 - **Yazılmayan olay test hatası.** `npm run test:events`: sözlükte olmayan ad, bozuk `kind`, yazan yeri olmayan olay düşürür.
