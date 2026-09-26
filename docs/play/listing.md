@@ -71,16 +71,14 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 
 | Vitrin | Arayüz dili | İlk açılışta sunulan kurs | Seviye | Konuşma | Beceri alıştırması | Deneme sınavı |
 |---|---|---|---|---|---|---|
-| tr-TR | Türkçe | Almanca | A1–C1 | 580 (A1 100 · A2 100 · B1 180 · B2 100 · C1 100) | 995 | 60 (seviye başına 12) |
-| tr-TR | Türkçe | İngilizce | A1–C1 | 500 (seviye başına 100) | 939 | 60 (seviye başına 12) |
-| en-US | İngilizce | Almanca | A1–C1 | 580 | 995 | 60 |
-| de-DE | Almanca | İngilizce | A1–C1 | 500 | 939 | 60 |
+| tr-TR | Türkçe | Almanca | A1–C1 | 580 (A1 100 · A2 100 · B1 180 · B2 100 · C1 100) | 1.370 | 60 (seviye başına 12) |
+| tr-TR | Türkçe | İngilizce | A1–C1 | 500 (seviye başına 100) | 1.250 | 60 (seviye başına 12) |
+| en-US | İngilizce | Almanca | A1–C1 | 580 | 1.370 | 60 |
+| de-DE | Almanca | İngilizce | A1–C1 | 500 | 1.250 | 60 |
 
 - **Kaynaklar.** Konuşmalar `mobile/src/data/conversations/{de,en}-{a1..c1}.json` (web:
-  `src/lib/conversations/content/`); beceri alıştırmaları `mobile/src/data/skills/exercises.json` ve
-  `exercises-en.json` (okuma, dinleme, yazma Patika'ya bağlı; kütüphanede beş beceri: okuma,
-  dinleme, yazma, konuşma, dil bilgisi); deneme sınavları `mobile/src/data/exams/papers.json`
-  ve `papers-en.json` (web: `src/lib/mock-exams/{de,en}/`). Her deneme sınavında dört bölüm var: okuma,
+  `src/lib/conversations/content/`); beceri alıştırmaları `src/lib/skills/content/` (uygulamaya içerik hattıyla, `skills/` paketleri) (okuma, dinleme, yazma Patika'ya bağlı; kütüphanede beş beceri: okuma,
+  dinleme, yazma, konuşma, dil bilgisi); deneme sınavları `src/lib/mock-exams/{de,en}/` (uygulamaya içerik hattıyla, kilitli `papers/` paketleri). Her deneme sınavında dört bölüm var: okuma,
   dinleme, yazma, konuşma. Her iki kursun her Konuşma adımında bir sohbet sahnesi var.
 - **Anadil katmanı da ölçüldü.** İngilizce ve Almanca arayüzde içerik "hep-ya-hiç" kuralıyla
   çevriliyor: tek dize eksikse o konuşma Türkçe kalır (`mobile/src/lib/nativeContent.ts`).
@@ -109,17 +107,12 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
   yıllık, otomatik yenilenen abonelik olduğunu ve fiyatın satın almadan önce gösterildiğini
   söylüyor.
 
-Ölçümü yeniden almak (salt okuma):
+Ölçümü yeniden almak (salt okuma). Deneme sınavları ve beceri alıştırmaları 2026-09-17'den beri
+uygulama paketinde değil, içerik hattından geliyor (`papers.json`, `exercises.json` yok); sayım
+canlı içerik sürümünden alınır. Her pakette `*` ve `index` adlı iki dizin kaydı var, sayılmaz:
 
 ```bash
-python3 - <<'PY'
-import json
-for c, sinav, alistirma in [("de", "papers.json", "exercises.json"), ("en", "papers-en.json", "exercises-en.json")]:
-    konusma = sum(len(json.load(open(f"mobile/src/data/conversations/{c}-{l}.json"))) for l in ["a1", "a2", "b1", "b2", "c1"])
-    print(c, "konuşma", konusma,
-          "alıştırma", len(json.load(open(f"mobile/src/data/skills/{alistirma}"))),
-          "deneme sınavı", len(json.load(open(f"mobile/src/data/exams/{sinav}"))))
-PY
+ssh lernomi "sudo -u postgres psql -d lernomi -c \"select split_part(ri.pack,'/',1) tur, split_part(split_part(ri.pack,'/',2),'-',1) kurs, count(*) filter (where ri.item not in ('*','index')) madde from content_release_items ri join content_releases r on r.version = ri.release where r.status = 'live' and split_part(ri.pack,'/',1) in ('conversations','skills','papers') group by 1,2 order by 1,2\""
 ```
 
 **Yazım kuralı.** Tam açıklamada paragraflar tek satır: Console'a yapıştırınca satır ortasında
