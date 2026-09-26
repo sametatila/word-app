@@ -333,7 +333,7 @@ export const c1U20: SkillExercise[] = [
     segments: [
       { speaker: "Leiterin", text: "Wir schreiben heute keine Prognose. Wir entwerfen ein Szenario und schauen rückblickend darauf." },
       { speaker: "Teilnehmer", text: "Wo ist der Unterschied?" },
-      { speaker: "Leiterin", text: "Eine Prognose behauptet etwas über die Zukunft. Ein Szenario fragt: Stellte man sich vor, es gäbe im Jahr 2050 keine privaten Autos in Städten — welche Schritte lägen dann dazwischen?" },
+      { speaker: "Leiterin", text: "Eine Prognose behauptet etwas über die Zukunft. Ein Szenario fragt: Man stelle sich vor, es gäbe im Jahr 2050 keine privaten Autos in Städten — welche Schritte lägen dann dazwischen?" },
       { speaker: "Teilnehmerin", text: "Und der Entwurf soll dann was zeigen?" },
       { speaker: "Leiterin", text: "Wo er scheitert. Alles andere ist Werbung." },
       { speaker: "Teilnehmerin", text: "Das klingt utopisch." },
@@ -363,11 +363,11 @@ export const c1U20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ man sich vor, es gäbe im Jahr 2050 keine privaten Autos in Städten.",
+        text: "Man ___ sich vor, es gäbe im Jahr 2050 keine privaten Autos in Städten.",
         options: [],
         answer: 0,
-        accept: ["Stellte"],
-        explain: "Bağlaçsız irreal koşul, Konjunktiv II ile: Stellte man sich vor …",
+        accept: ["stelle"],
+        explain: "Bir tasarım kurarken Konjunktiv I: Man stelle sich vor, es gäbe …",
       },
       {
         text: "Was folgert die Leiterin aus dem Problem mit 2040?",
@@ -400,7 +400,7 @@ export const c1U20: SkillExercise[] = [
     unit: 20,
     title: "Ayır, sonra itiraz et",
     genre: "grammar",
-    intro: "Davon zu unterscheiden ist …, insofern, zulasten, Stellte man sich vor.",
+    intro: "Davon zu unterscheiden ist …, insofern, zulasten, Man stelle sich vor.",
     gloss: [
       { de: "insofern", tr: "bu bakımdan", en: "in that respect" },
       { de: "abgrenzen", tr: "sınırını çizmek", en: "to delimit" },

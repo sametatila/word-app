@@ -11,7 +11,7 @@ import type { SkillExercise } from "../types";
  *           Geld auf den Kopf hauen, jeden Cent umdrehen, die Kosten im Griff
  *           haben · den Ton angeben, nach jemandes Pfeife tanzen, Musik in
  *           meinen Ohren, die erste Geige spielen, der Ohrwurm, den richtigen
- *           Ton treffen, das ist eine andere Melodie, jemandem einen Sturm
+ *           Ton treffen, jemandem den Marsch blasen, jemandem einen Sturm
  *           entfachen · die Falle, sinngemäß, die Entsprechung, verwechseln,
  *           missverständlich, der falsche Freund, wörtlich nehmen, seinen Senf
  *           dazugeben · der Alltag, einstreuen, dosiert, unauffällig, der
