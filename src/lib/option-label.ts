@@ -27,9 +27,9 @@ export type GlossWord = {
   tr: string;
   en: string | null;
   /**
-   * Almanca karşılık. Bugün veritabanında YOK; de→en paritesi için üretilecek
-   * (bkz. `docs/plan/native-language.md`). Alan şimdiden burada, çünkü çözücü
-   * onsuz yazılırsa her çağıran yerinde ayrıca düşünmek zorunda kalır.
+   * Almanca karşılık (`words.de_gloss`); İngilizce kursta de→en paritesi için
+   * dolu (bkz. `docs/plan/native-language.md`). Karşılık yoksa çözücü `null`
+   * döner, Türkçeye düşmez.
    */
   deGloss?: string | null;
 };

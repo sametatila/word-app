@@ -1,29 +1,19 @@
 # Arşivlenmiş Nomi klipleri
 
-Bu dizin **yayına girmiyor**: ne mobil ikiliye (metro yalnız `require` edilen
-varlığı paketliyor) ne web deploy'una (`public/` dışında). Klipler silinmedi,
-buraya alındı — üretim hattı tek seferlikti ve yeniden üretmek pahalı.
+Bu dizin yayına girmez: metro yalnız `require` edilen klibi paketler, web yalnız `public/` altını yayınlar.
+Klipler silinmedi, çünkü üretim hattı tek seferlikti.
 
-Sebep: **animasyon 2026-09-18'den beri yalnız Öğren sekmesinin günlük turunda**
-(Samet'in kararı; gerekçe `mobile/src/ui/Mascot.tsx` ve
-`src/components/mascot.tsx` dosya başlarında). Turun dışında kalan yüzeyler
-maskot çizmediği için bu kipleri kimse istemiyor.
+Nomi yalnız Öğren ekranındaki günlük tur kutusunda durur (25a4e1df; gerekçe `mobile/src/ui/Mascot.tsx`
+ve `src/components/mascot.tsx` başında). Aşağıdaki kliplerin çağıranı kalmadı.
 
-| Klip | Eskiden nerede çiziliyordu |
+| Klip | Eskiden nerede |
 |---|---|
-| `sleep.webp` | Öğren kahramanı (serisi kırık dönen kullanıcı), web bildirim izni kartı |
-| `think.webp` | Sınav girişleri, seviye testi, "bu oyuna kelime yok", deneme puanlaması |
-| `wave.webp` | Ana sayfa kahramanı, kurs tanıtımı, oturum süresi bitti ekranı, kutlama pop'u |
-
-Mobil ve web kopyaları bayt bayt aynıydı, o yüzden arşivde tek kopya var.
-`wave` kutlama pop'unun rastgele kümesinde de duruyordu; küme web'in kümesiyle
-hizalandı (`celebrate` + `happy` + `thumbsup`) ve klip de arşive geldi.
+| `sleep`, `think`, `wave` | Öğren kahramanı, sınav girişleri, ana sayfa kahramanı ve benzeri yüzeyler |
+| `walk-left`, `walk-right`, `stroll-left`, `stroll-right`, `peek`, `peek-mirror`, `pull-left`, `pull-right` | Günlük tur içi: ortam yürüyüşü, cevap şeridini çekme |
 
 ## Geri getirmek
 
-1. Dosyayı ilgili yere kopyala: mobil `mobile/src/assets/mascot/`,
-   web `public/anim/`.
-2. Kip haritasına satırı ekle: mobil `ui/Mascot.tsx` `CLIP`,
-   web `components/mascot.tsx` `Mood` + `CLIP`.
-3. Yalnız günlük tur ağacından çağır — `check:parity` "maskot yalnız günlük
-   turda" kuralı başka bir yüzeyden çağrılırsa kırılır.
+1. Dosyayı kopyala: mobil `mobile/src/assets/mascot/`, web `public/anim/`.
+2. Kip haritasına ekle: mobil `ui/Mascot.tsx` `CLIP`, web `components/mascot.tsx` `Mood` + `CLIP`.
+3. `check:parity` iki kuralı kırılır ve güncellenmelidir: "maskot yalniz gunluk tur kutusunda"
+   (Nomi'yi çizen dosya listesi) ve "arsivlenen klipler yayinda degil" (`sleep`, `think`, `wave`).

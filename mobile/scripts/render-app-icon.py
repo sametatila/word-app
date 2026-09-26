@@ -25,12 +25,11 @@ iOS kuralları burada karşılanıyor:
     ham 1024 dosyası App Store Connect'te maskesiz de görülebiliyor: temizleniyor.
 
 Neden 18 giriş / 13 dosya, tek 1024'lük "universal" giriş değil: Xcode 14+ tek boyutlu
-ikonu kabul ediyor ve daha az bakım ister; ama bu makinede Xcode yok, hiçbir şey
-derlenemiyor (bkz. docs/plan/ios-parity.md §0). Klasik küme her Xcode sürümünde
-çalışıyor, dosyaların hepsi burada ölçülüp doğrulanabiliyor ve Contents.json'ın bugünkü
-beyanını bozmuyor. iPad @1x girişleri iOS 15.1 tabanında hiçbir cihazda görünmüyor
-(1x iPad'ler iOS 15 almıyor) ama Xcode şablonunun kanonik kümesi bu; Mac'te
-doğrulayamadığımız bir bilinmezi ucuza kapatmak için duruyorlar.
+ikonu kabul ediyor ve daha az bakım ister; ama küme Xcode'suz bir makinede yazıldı.
+Klasik küme her Xcode sürümünde çalışıyor, dosyaların hepsi burada ölçülüp
+doğrulanabiliyor ve Contents.json'ın bugünkü beyanını bozmuyor. iPad @1x girişleri
+iOS 15.1 tabanında hiçbir cihazda görünmüyor (1x iPad'ler iOS 15 almıyor) ama Xcode
+şablonunun kanonik kümesi bu; bir bilinmezi ucuza kapatmak için duruyorlar.
 
 Gerekli: Pillow.
 """

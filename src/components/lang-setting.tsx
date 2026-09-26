@@ -60,9 +60,8 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
   /*
     YALNIZ HAZIR ÇİFTİ OLAN DİLLER. Bir dili seçtirip ardından "öğrenilecek dil"
     listesini boş bırakmak, kullanıcıyı kurssuz bir uygulamada bırakmak olurdu.
-    Bugün bu liste tek elemanlı (Türkçe) ve seçici hiç çizilmiyor; İngilizce ve
-    Almanca pariteleri tamamlandığında kendiliğinden geri geliyor
-    (`PAIR_READY`, bkz. docs/plan/native-language.md).
+    Liste `PAIR_READY`den geliyor; bugün üç anadil (Türkçe, İngilizce, Almanca)
+    açık (bkz. docs/plan/native-language.md).
   */
   const offered = offeredNativeLangs();
   const chips = (

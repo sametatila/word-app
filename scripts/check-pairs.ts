@@ -39,8 +39,8 @@ import {
  * artık gerçekten ÖLÇÜLÜYOR: Almanca sütunları (`de_gloss`, `beispiel_de`)
  * 0046 ile geldi ve o güne kadar bu betik Almanca anadilli her çifti koşulsuz
  * "0%" sayıyordu — yani ölçüm değil, bir yer tutucuydu. Beceri ve konuşma
- * metinleri ayrı fazlar (bkz. `docs/plan/native-language.md`) ve henüz
- * ölçülebilir bir alan taşımıyorlar — o katmanlar geldiğinde buraya eklenecek.
+ * katmanları burada değil, ayrı `-native` kapılarıyla ölçülüyor
+ * (bkz. `docs/plan/native-language.md` › Kapılar).
  *
  * ÜRETİM VERİTABANINDA OKUMA YAPAR, yazmaz. Adres kısıtı yok: bu bir denetim.
  */

@@ -8,7 +8,7 @@
  * autolinking o modülü Android derlemesine sokar — paketin android/build.gradle'ı
  * AGP 7 ve `com.facebook.react:react-native:+` ile kurulu, yani çalışan Android
  * derlemesini bozma ihtimali olan, ürüne hiç girmeyecek bir kod. iOS paritesi
- * Android'e dokunmadan yapılır (bkz. docs/plan/ios-parity.md §2.3).
+ * Android'e dokunmadan yapılır (bkz. docs/plan/ios-parity.md §2).
  *
  * JS tarafı bundan etkilenmez: paket Android'de de içeri alınabilir, yerel modül
  * bulunmadığı için `appleAuth.isSupported` false döner (lib/appleAuth.ts zaten

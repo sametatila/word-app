@@ -1,473 +1,128 @@
-# iOS paritesi — envanter ve çalışma planı (2026-09-04)
+# iOS paritesi
 
-> ## Durum: kod tarafında parite kapandı (ölçüm 2026-09-09)
->
-> Aşağıdaki envanter 4 Eylül'ün fotoğrafıdır ve **büyük bölümü artık geçersiz**.
-> Bugün ölçülenler:
->
-> | Ne | 4 Eylül | 9 Eylül (ölçüm) |
-> |---|---|---|
-> | Native yöntem sayısı | Android 18 · iOS 10 | **Android 20 · iOS 20** — küme birebir aynı; iOS'ta ayrıca `ensureMicPermission` (Android'de karşılığı JS'teki `PermissionsAndroid`) |
-> | Xcode projesi (P1–P8) | sekiz açık | `npm run ios:check` **8/8 geçiyor** — pbxproj bütünlüğü, `.strings` sözlükleri, dil beyanı, Swift/ObjC sözdizimi, cihaz ailesi |
-> | Bundle kimliği | `org.reactjs.native.example…` | `app.lernomi.ios` |
-> | Sürüm | Android 1.0.11/13, iOS 1.0/1 | **dörtlü tek kaynaktan**: `package.json` → `version.ts` + `build.gradle` + `pbxproj`, hepsi 1.0.0 (1) |
-> | Uygulama ikonu (R1) | tek PNG yok | 18 giriş, 13 PNG — denetim geçiyor |
-> | Açılış ekranı (R2) | "Powered by React Native" | markalı; storyboard'daki tek "React Native" geçişi kaldırıldığını anlatan yorum |
-> | Gizlilik manifesti (C1) | boş dizi | `NSPrivacyCollectedDataTypes` dolu |
-> | Apple ile Giriş (C3) | yok | `M/src/lib/appleAuth.ts` + sunucu sağlayıcısı; `LinkedAccounts` iOS'ta sunuyor |
-> | CI (O2) | yok | `.github/workflows/checks.yml` + `ios-build.yml` |
->
-> **Kodda kalan tek fark yok.** Açık kalanlar kod değil, hesap/kimlik ve cihaz işi:
->
-> 1. ~~**Google iOS istemcisi** (C4)~~ → **kapandı**: iOS OAuth istemcisi açıldı,
->    `googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki ters şema dolu.
-> 2. ~~**RevenueCat anahtarları** (C6)~~ → **kapandı**: `billingConfig.ts`te iki
->    platformun anahtarı dolu, sunucuda `REVENUECAT_*` dolu (2026-09-23).
-> 3. ~~**`LEGAL_PLATFORMS.ios = false`**~~ → **açıldı** (2026-09-14, `LEGAL_VERSION` 1.1):
->    gizlilik politikası, şartlar ve destek sayfası iOS'u **gönderimden önce** kapsıyor,
->    çünkü App Review üçünü de incelemede okuyor. §6'daki kapılar artık bayrağın değil
->    **yayının** kapıları; gerekçe `src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda.
-> 4. **Cihaz koşusu** (Şerit S) — `docs/plan/ios-device-runbook.md`. Mac'te derleme
->    2026-09-22'den beri yapılıyor (Mac mini); TestFlight'ta build 2-4 var.
->
-> Aşağısı tarihsel kayıt olarak duruyor: hangi eksiğin neden kapatıldığı ve
-> şeritlerin nasıl bölündüğü oradan okunur.
+iOS'un Android'e göre ne durumda olduğunu, yayın kapılarını ve iOS'a özgü üç ürün
+kararını tutar. Cihazda sınanacakların sıralı listesi `docs/plan/ios-device-runbook.md`'de,
+mağaza tarafı `docs/appstore/README.md`'de. `M/` = `mobile/`.
 
-Android tarafı yayına hazır (`com.lernomi.learn`; sürümün tek kaynağı `M/src/version.ts`);
-iOS tarafı React Native şablonundan büyük ölçüde çıkmamış durumda. Bu belge iki şeyi
-yapar: **(1)** Android'de olup iOS'ta olmayan her şeyin envanterini kanıtıyla çıkarır,
-**(2)** işi birbirine çarpmayan şeritlere böler ki birden fazla agent aynı anda
-çalışabilsin.
+Kod tarafında parite kapalı: iki platformda 20 ortak native yöntem, 10 ortak olay;
+sürüm tek kaynaktan (`package.json` → `version.ts` + `build.gradle` + `pbxproj`).
+Açık kalanlar kod değil, cihaz işi.
 
-İlgili belgeler: `docs/appstore/README.md` (mağaza tarafı), `docs/play/` (Android
-karşılığı), `docs/plan/walk-stt.md` (yürüyüş modu tasarımı).
-
----
-
-## 0. Kısıt (TARİHSEL, 2026-09-22'de kalktı): o makinede iOS derlenemiyordu
-
-> 2026-09-22'de geliştirme Linux'tan Mac mini'ye taşındı: Xcode, `pod install`,
-> simülatör ve TestFlight yüklemesi artık yerelde. Aşağısı planın yazıldığı günün
-> kısıtını anlatıyor; "derlenmemiş kod" notları o dönemden.
-
-Geliştirme makinesi Linux'tu. macOS ve Xcode yoktu, `pod install` çalıştırılamıyordu, Swift
-derlenmiyordu, simülatör/cihaz yoktu. Bu planın **tüm şeritleri "derlenmemiş kod" üretti.**
-
-Sonuçları:
-
-- Hiçbir agent "çalışıyor", "doğrulandı", "test edildi" demeyecek. Commit mesajında ve
-  belgede `DOĞRULANMADI` notu zorunlu (`f63db79` bunu böyle yaptı, örnek alınacak).
-- Her şerit kendi işinin **cihazda sınanacak maddelerini** yazar; bunlar §5'te tek listede
-  toplanır ve Mac'e geçildiğinde tek seferde koşulur.
-- Derleme hataları kaçınılmaz. Şerit S (§3) bunu bir iş kalemi olarak üstlenir; diğer
-  şeritler "ilk derlemede tutar" varsayımıyla çalışmaz.
-
----
-
-## 1. Envanter
-
-Kanıt sütunundaki yollar depo köküne göredir. `M/` = `mobile/`.
+## 1. Durum
 
 > ### YENİDEN ÖLÇÜM — 2026-09-12
 >
-> Aşağıdaki tablolar **2026-09-04 anlık görüntüsü** ve büyük bölümü artık
-> geçersiz: şeritler koşuldu. Envanter bugün satır satır yeniden ölçüldü
-> (`ios:check`, `release:check`, `check:16kb`, `check:parity` §290–294 ve elle
-> okuma). Bu blok **bugünkü** durumu söylüyor; tablolar tarihsel kayıt olarak
-> duruyor.
+> Bu blok `check:parity` §295 kapısına bağlı: aşağıdaki iddiaları kod ölçüyor. Bir
+> madde değişirse (ör. UI test hedefi pbxproj'a girerse) kapı kırmızı verir ve blok
+> güncellenir. Başlık ve tarih kapının aradığı metindir, değiştirilmez.
 >
-> **Kapandı** (ne kapattığıyla):
+> **Kapandı:**
 >
 > | # | Bugünkü durum |
 > |---|---|
-> | P1 | `LernomiSpeech.swift` + `.m` pbxproj'da; `ios:check` 28 dosya başvurusu sayıyor |
+> | P1 | `LernomiSpeech.swift` + `.m` pbxproj'da |
 > | P2 | `import React` ilk satırlarda |
-> | P3 | `tr/en/de.lproj` bağlı, `CFBundleLocalizations` var; `ios:check` "dil beyanı ↔ .lproj: de, en, tr" |
+> | P3 | `tr/en/de.lproj` bağlı, `CFBundleLocalizations` var |
 > | P4 | `PRODUCT_BUNDLE_IDENTIFIER = app.lernomi.ios` |
-> | P5 | Sürüm dörtlüsü 1.0.0 (2) — `release:check` package.json / version.ts / build.gradle / pbxproj'ü birlikte doğruluyor |
-> | P6 | `DEVELOPMENT_TEAM` dolu; `ios-archive.sh` var (O1 de kapandı) |
-> | P7 | Şemanın `<Testables>` listesi boş; `NomiTests` artığı yok |
-> | §1.2 | **Native parite tamam:** iki tarafta 20 ortak yöntem, 10 ortak olay. `check:parity` §290 listeleri karşılaştırıyor, tek taraflı iki yöntem sebebiyle belgeli (`addListener`/`removeListeners` RN kalıbı, `ensureMicPermission` Android'de JS'te) |
-> | R1 | AppIcon 13 PNG (`ios:check` 18 giriş / 13 PNG) |
-> | R2 | Açılış ekranı markalı: `LaunchBackground` #FA7C13 + 160pt ikon; "Powered by React Native" yok. §292 rengi Android ve web ile birlikte ölçüyor |
-> | R3 | `WindowBackground` açık #FBF7F2 / koyu #17120E; `AppDelegate` hem pencereyi hem kök görünümü boyuyor (§292) |
-> | R4 | 13 SFX mp3'ü `ios/Lernomi/sfx/` altında ve pbxproj'a kayıtlı; §292 üç yeri birden ölçüyor |
+> | P5 | Sürüm tek kaynaktan; `npm run version:check` ayrışmayı yakalıyor |
+> | P6 | `DEVELOPMENT_TEAM` dolu; arşiv betiği `M/scripts/ios-archive.sh` (O1) |
+> | P7 | Şemada `NomiTests` artığı yok |
+> | P8 | `Podfile.lock` depoda |
+> | Native | 20 ortak yöntem, 10 ortak olay; `check:parity` §290 karşılaştırıyor. Tek taraflı yöntemler belgeli (`addListener`/`removeListeners` RN kalıbı, `ensureMicPermission` Android'de JS'te) |
+> | R1 | AppIcon 18 giriş / 13 PNG |
+> | R2 | Açılış ekranı markalı: `LaunchBackground` #FA7C13 + ikon, yazı yok (§292) |
+> | R3 | `WindowBackground` açık #FBF7F2 / koyu #17120E; `AppDelegate` pencereyi ve kök görünümü boyuyor (§292) |
+> | R4 | SFX mp3'leri `ios/Lernomi/sfx/` altında, pbxproj'a tek tek dosya olarak kayıtlı (§292) |
 > | C1 | `NSPrivacyCollectedDataTypes` dolu |
 > | C2 | `ITSAppUsesNonExemptEncryption = false` |
-> | C3 | Apple ile Giriş: `PROVIDERS` listesinde ilk sırada, yetki dosyasında `applesignin`, `appleAuth.ts` cihaz kapısıyla |
-> | C4 | Google iOS istemcisi AÇIK (`ios:check` doğruluyor), `CFBundleURLTypes` var |
-> | C5 | `LEGAL_PLATFORMS.ios = true` — **2026-09-14**, `LEGAL_VERSION` 1.1 + changelog kaydı. Metinler iOS'u incelemeden önce kapsamak zorunda olduğu için yayın gününe bırakılmadı; 1.1 kaydı "yayımlandı" demiyor |
+> | C3 | Apple ile Giriş: `PROVIDERS`ta, yetki dosyasında `applesignin`, `M/src/lib/appleAuth.ts` |
+> | C4 | Google iOS istemcisi açık (`ios:check` doğruluyor), `CFBundleURLTypes` var |
+> | C5 | `LEGAL_PLATFORMS.ios = true` (2026-09-14, `LEGAL_VERSION` 1.1). App Review gizlilik politikasını, şartları ve destek sayfasını gönderimde okuduğu için yayın gününe bırakılmadı; gerekçe `src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda |
+> | C6 | RevenueCat anahtarları iki platformda dolu (`M/src/lib/billingConfig.ts`), sunucuda `REVENUECAT_*` dolu |
 > | E1 | Abonelik metinleri platforma göre: `premiumstate.manage_ios`, `paywall.renew_cancel_appstore`, `deleteaccount.subscription_cancel_appstore` |
-> | E2 | `track("app_open", …, "${Platform.OS}:standalone")` — platform artık sabit değil |
-> | E3 | Güncelleme şeridi kaldırıldı (`useUpdate.ts` yok) |
-> | E4 | `M/README.md` gerçek belge |
-> | O1 | `ios-archive.sh` var |
-> | O2 | `.github/workflows/`: `checks.yml`, `ios-build.yml` |
-> | P8 | `Podfile.lock` depoda (2026-09-22, Mac mini'de ilk `pod install`) |
+> | E2 | `app_open` olayı `${Platform.OS}:standalone` yazıyor |
+> | E3 | APK güncelleme şeridi yok (`useUpdate.ts` silindi, geri gelmemeli) |
+> | E4 | `M/README.md` gerçek kurulum belgesi |
+> | O2 | CI: `.github/workflows/checks.yml` + `ios-build.yml` |
 >
-> **Açık kalanlar:**
+> **Açık:**
 >
-> | # | Durum | Kimin |
-> |---|---|---|
-> | C6 | RevenueCat anahtarları boş — **iki platformda da**; iOS'ta ayrıca IAP yetkisi + App Store Connect ürünleri gerekiyor | Samet |
-> | — | `LernomiUITests.swift` diskte var ama pbxproj'da **yok** (`grep -c LernomiUITests` = 0); eklemek için `scripts/ios-add-uitest-target.rb` yazılmış | Mac'te |
-> | §5 | Cihazda sınanacaklar listesi — Mac gerektiriyor (Şerit S) | Mac'te |
->
-> Yani iOS'un **kod ve kaynak tarafı bitmiş** görünüyor; kalan her şey ya Mac
-> gerektiriyor ya mağaza/hesap işi. Bu blok da bayatlayabilir: bir sonraki
-> ölçüm tarihini ve neyi ölçtüğünü yazsın.
+> | # | Durum |
+> |---|---|
+> | UI test | `LernomiUITests.swift` diskte, pbxproj'da yok. CI hedefi koşu anında ekliyor (`M/scripts/ios-add-uitest-target.rb`, `ios-build.yml`) |
+> | Cihaz | Runbook koşusu. Mac mini'de derleniyor, TestFlight'ta build 8 var; kayıtlı cihaz koşusu yok |
 
-### 1.1 Proje bağlantısı — kod var, derlemeye girmiyor (ENGEL)
+## 2. Kapsam sınırı
 
-Bu bölüm diğer her şeyin önündedir: aşağıdakiler düzelmeden iOS'ta native modül
-**hiç yüklenmez**, dolayısıyla yürüyüş modu, STT, ekran-kapalı TTS ve SFX'in tamamı
-sessizce yoktur.
+iOS paritesi Android'e dokunmadan yapılır: parite iOS'u Android'e getirmek demek, ortada
+buluşmak değil. Bu yüzden Apple girişi paketinin Android otomatik bağlanması kapalı
+(`M/react-native.config.js`).
 
-| # | Eksik | Kanıt | Etki |
-|---|---|---|---|
-| P1 | `LernomiSpeech.swift` ve `LernomiSpeech.m` `project.pbxproj`'da **hiç geçmiyor** — ne `PBXGroup`'ta ne `PBXSourcesBuildPhase`'de | `M/ios/Lernomi.xcodeproj/project.pbxproj` — Sources fazında yalnız `AppDelegate.swift` | `NativeModules.LernomiSpeech` `undefined`; `M/src/lib/stt.ts` baştan sona boşa düşer |
-| P2 | `LernomiSpeech.swift` `import React` demiyor ama `RCTEventEmitter`'dan türüyor | `M/ios/Lernomi/LernomiSpeech.swift:1-4`, `:16` | P1 çözülür çözülmez derleme hatası |
-| P3 | `tr/en/de.lproj/InfoPlist.strings` hedefe bağlı değil; `knownRegions` yalnız şablon değerini taşıyor, `CFBundleLocalizations` yok | `project.pbxproj:141`, `M/ios/Lernomi/Info.plist` | İzin diyalogları her cihazda Türkçe kalır; App Store dil listesi boş görünür |
-| P4 | `PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)` | `project.pbxproj:274,303` | Yükleme reddedilir. Android karşılığı `com.lernomi.learn` |
-| P5 | `MARKETING_VERSION = 1.0`, `CURRENT_PROJECT_VERSION = 1` | `project.pbxproj:260,268` | Android 1.0.11 / 13. `M/src/version.ts` sürümü "build.gradle ile elle eşitlenir" diyor; iOS üçüncü bir kaynak olarak sarkıyor |
-| P6 | `DEVELOPMENT_TEAM` / `CODE_SIGN_STYLE` yok; `CODE_SIGN_IDENTITY` şablonun "iPhone Developer" değeri | `project.pbxproj:341,414` | Arşiv alınamaz, TestFlight'a çıkılamaz |
-| P7 | Scheme olmayan bir test hedefini gösteriyor: `NomiTests.xctest` (eski marka adı) | `M/ios/.../xcschemes/Lernomi.xcscheme:36` | Şemadan test koşulamaz; eski ad artığı (Nomi döneminden kalma) |
-| P8 | ~~`Podfile.lock` depoda yok~~ **Kapandı 2026-09-22** | `git ls-files mobile/ios` | Android `gradle-wrapper.jar` + `gradlew`'u sabitliyor; iOS'ta pod çözümü her makinede değişebilir |
+## 3. Otomatik denetimler
 
-### 1.2 Native modül parite açığı
+| Katman | Ne ölçer |
+|---|---|
+| `npm run ios:check` (`M/scripts/check-ios.py`, CI'da) | pbxproj bütünlüğü, sürüm, ikon ölçüleri, `.strings` sözlükleri, dil beyanı, Swift/ObjC sözdizimi, Google iOS istemcisi |
+| `ios-build.yml` (her push, macOS) | Derleme; iPhone SE ve iPad'de üç dil × iki tema kare (`M/scripts/ios-screenshots.sh`); XCUITest ile onboarding akışı (`M/scripts/ios-flow-screenshots.sh`) |
+| `check:parity` §290–295 | Native sözleşme, marka kaynakları, yürüyüş modu olayları, bu belgenin §1 bloğu |
 
-Android `LernomiSpeechModule.kt` 18 yöntem sunuyor, iOS `LernomiSpeech.m` 10'unu.
-JS sözleşmesi (`M/src/lib/stt.ts:18-40`) 18'ini de tanımlıyor.
+## 4. Cihaz koşusu
 
-| Yöntem / olay | Android | iOS | JS'te ne oluyor | Etki |
-|---|---|---|---|---|
-| `start` / `stop` / `cancel` / `destroy` / `isAvailable` / `setKeepAwake` / `startRecording` / `stopRecording` | var | var | — | parite tamam |
-| `startWalkService` / `stopWalkService` | FGS (mikrofon tipli) | ses oturumu | — | `f63db79` ile geldi, cihazda denenmedi |
-| `hasMicrophone` | var | **yok** | `stt.ts:71` — `Native?.hasMicrophone()` opsiyonel **çağrı değil**; modül yüklü ama yöntem yoksa `TypeError` | **P1 çözülünce `useMicrophone` çöker.** Sıra bağımlılığı: P1 ile B1 aynı anda gitmeli |
-| `uploadStt` | var | **yok** | `stt.ts:203` — try/catch yutar, `null` döner | Ekran-kapalı/cepte yürüyüş: ses kaydediliyor, **hiçbir yere gitmiyor**. Mod sessizce hiç cevap duymuyor |
-| `httpGet` | var | **yok** | `stt.ts:212` — guard'lı, `null` | Ekran-kapalı "devam edelim mi" turu `/api/session`'a ulaşamaz |
-| `playTtsUrl` / `stopTts` | var | **yok** | `stt.ts:151` — try/catch yutar | Ekran kapalıyken hiç konuşmuyor (WebView köprüsü zaten askıya alınmış olur) |
-| `playSfx` | var (AudioTrack ton sentezi) | **yok** | `sfx.ts:59` — opsiyonel çağrı, sessiz | Ekran-kapalı ses efektleri yok |
-| `delay` | var (native Handler) | **yok** | `stt.ts:162` — `setTimeout`'a düşer | Arka planda ses oturumu açıkken JS zamanlayıcısı çalışmalı; **cihazda doğrulanacak** |
-| `setApiBase` | var (native HTTP allowlist) | **yok** | `stt.ts:45` — opsiyonel, sessiz | `uploadStt`/`httpGet` gelene kadar konusuz; onlarla birlikte gelmeli, yoksa çerez rastgele hosta gidebilir |
-| `startScreenWatch` / `stopScreenWatch` + `LernomiScreenOff` / `LernomiScreenOn` | var | **yok** | `stt.ts:180-184` — guard'lı; `supportedEvents` bu adları içermiyor, listener hiç tetiklenmez | **En büyük işlevsel açık:** `screenOffRef` hep `false` kalır → `WalkModeScreen.tsx:212` Azure yolunu hiç seçmez → ekran-kapalı mod P1 çözülse bile erişilemez |
-| `LernomiWalkStop` olayı (bildirimden "Durdur") | var (FGS bildirimi) | **yok** | `stt.ts:174` — listener sessiz | iOS'ta kalıcı bildirim yok. Ürün kararı gerekir: kilit ekranı denetimi (Now Playing) mı, farkı kabul mü |
+`docs/plan/ios-device-runbook.md`: yalnız cihazda öğrenilenler (mikrofon, konuşma tanıma,
+arka plan sesi, kilit ekranı, haptik, satın alma). Bir adım geçmezse ona bağlı olanlar
+"ölçülemedi" yazılır, "başarısız" değil.
 
-iOS'ta `isAvailable` yerel kodu onurlandırıyor, Android'de yoksayıyor — bu **bilinçli**
-ve iki tarafta da yorumlanmış (`LernomiSpeechModule.kt` `isAvailable` docblock'u).
+## 5. Mağaza
 
-### 1.3 Kaynaklar ve marka
+Mağaza kaydı, inceleme notu ve gizlilik etiketleri: `docs/appstore/README.md`,
+`docs/appstore/connect.md`.
 
-| # | Eksik | Kanıt | Etki |
-|---|---|---|---|
-| R1 | Uygulama ikonu: `AppIcon.appiconset/Contents.json` 9 boyut beyan ediyor, **tek PNG yok** | `M/ios/Lernomi/Images.xcassets/AppIcon.appiconset/` | App Store doğrulaması geçmez; cihazda boş ikon. Android'de 5 yoğunluk + adaptive + monochrome tam |
-| R2 | `LaunchScreen.storyboard` hâlâ RN şablonu: "Lernomi" + **"Powered by React Native"** yazısı, sistem zemini | `M/ios/Lernomi/LaunchScreen.storyboard` | Android'de markalı açılış var: turuncu `#FA7C13` + launcher ikonu (`values/styles.xml` `Theme.Lernomi.Splash`) |
-| R3 | Gece/gündüz pencere zemini yok | Android: `values/colors.xml` `window_bg #FBF7F2`, `values-night/colors.xml` `#17120E` | iOS'ta koyu temada açılışta beyaz flaş |
-| R4 | SFX yedek mp3'leri iOS paketinde yok | Android `res/raw/*.mp3` (6 dosya); `M/scripts/render-sfx.py:29` yalnız `res/raw`'a yazıyor; `M/src/lib/sfx.ts:31` iOS'ta `"${name}.mp3"` arıyor | `react-native-sound` yedek yolu iOS'ta **kalıcı ölü**. Köprü hazır değilken (açılış, çevrimdışı) hiç ses yok |
-| R5 | Bildirim küçük ikonu | Android `drawable/ic_notification.xml` (Nomi silüeti) | iOS uygulama ikonunu kullanır — **eksik değil**, ama R1 çözülmeden bildirim de ikonsuz |
+## 6. Yayın kapıları ve kararlar
 
-### 1.4 Mağaza ve uyum
-
-| # | Eksik | Kanıt | Etki |
-|---|---|---|---|
-| C1 | `PrivacyInfo.xcprivacy` içinde `NSPrivacyCollectedDataTypes` **boş dizi** | `M/ios/Lernomi/PrivacyInfo.xcprivacy` | `docs/appstore/README.md` e-posta, ad, kullanıcı içeriği, kullanıcı kimliği, kullanım verisi ve satın alma geçmişini beyan ediyor. Manifest ile beyan **çelişiyor** |
-| C2 | `ITSAppUsesNonExemptEncryption` yok | `M/ios/Lernomi/Info.plist` | Her yüklemede App Store Connect soruyor; otomasyon takılır |
-| C3 | **Apple ile Giriş yok** | `M/src/screens/AuthScreen.tsx:29` — `PROVIDERS` yalnız Google | Guidelines 4.8: üçüncü taraf girişi sunan uygulama Apple ile Giriş sunmak zorunda. **Yayın engeli**, ürün işi |
-| C4 | Google ile Giriş iOS'ta kurulmamış | `M/src/lib/googleAuth.ts:21` yalnız `webClientId` veriyor; Info.plist'te `CFBundleURLTypes` (ters client id) yok | iOS'ta Google girişi çalışmaz |
-| C5 | `LEGAL_PLATFORMS.ios = false` | `src/lib/legal.ts:161` | Bilinçli. Açılırken `LEGAL_VERSION` artacak + `LEGAL_CHANGELOG` kaydı düşecek (dosyanın kendi notu) |
-| C6 | RevenueCat iOS anahtarı boş | `M/src/lib/billingConfig.ts:18` | Android anahtarı da boş — ortak eksik. iOS'ta ayrıca In-App Purchase yetkisi + App Store Connect ürünleri gerekir |
-| C7 | Uygulama içi hesap silme | `M/src/screens/DeleteAccountScreen.tsx` **var** | 5.1.1(v) karşılanıyor; metni E1'e bağlı |
-
-### 1.5 Kullanıcıya görünen metin ve platform davranışı
-
-| # | Eksik | Kanıt | Etki |
-|---|---|---|---|
-| E1 | Abonelik metinleri "Google Play" diyor, üç dilde de | `M/src/i18n/{tr,en,de}.ts` — `deleteaccount.google_play_uzerinden_abonelik_ald`, `paywall.otomatik_yenilenir_play_iptal` | iOS'ta yanlış mağazaya yönlendirir. Apple'ın yolu: Ayarlar › Apple Hesabı › Abonelikler |
-| E2 | Analitikte platform sabit yazılı: `"android:standalone"` | `M/App.tsx:37` | iOS açılışları Android sayılır; §4 hunisi bozulur |
-| E3 | Güncelleme şeridi GitHub'dan **APK** öneriyor | `M/src/lib/useUpdate.ts:11,34`; `M/src/screens/LearnScreen.tsx:68` | iOS'ta anlamsız ve Guidelines 2.5.2 riski (mağaza dışı dağıtım). Platforma göre kapatılmalı |
-| E4 | `M/README.md` hâlâ RN şablonu | `M/README.md:1` | Android/iOS kurulum farkları hiçbir yerde yazılı değil |
-
-### 1.6 Süreç
-
-| # | Eksik | Kanıt |
-|---|---|---|
-| O1 | iOS imza/arşiv betiği yok | Android'de `M/scripts/gen-release-keystore.sh` var |
-| O2 | CI yok (iki platformda da) | `.github/workflows` yok |
-
----
-
-## 2. Çok-agent çalışma kuralları
-
-### 2.1 Dosya sahipliği (ZORUNLU)
-
-Bazı dosyalara **birden çok şerit dokunmak ister**. Bunlar tek sahibe kilitlenir; başka
-bir şerit değişiklik istiyorsa dosyayı kendisi düzenlemez, **sahibine tarif eder**.
-
-| Kilitli dosya | Sahip şerit | Neden |
-|---|---|---|
-| `M/ios/Lernomi.xcodeproj/project.pbxproj` | **P** | Tek satırlık iki değişiklik bile birleştirilemez çakışma üretir; UUID'ler elle tutulmalı |
-| `M/ios/Lernomi/Info.plist` | **P** | Beş şerit anahtar eklemek istiyor (arka plan, URL şeması, dil listesi, şifreleme beyanı) |
-| `M/ios/Lernomi/LernomiSpeech.swift` + `.m` | **N** | İkisi tek sözleşme; ayrı ellerden gelen yöntemler `supportedEvents` ve oturum durumunu bozar |
-| `M/src/i18n/{tr,en,de}.ts` | **T** | Üçü aynı anda ve aynı sırada değişmeli |
-| `docs/appstore/README.md` | **D** | Tek anlatı; her şerit kendi maddesini D'ye verir |
-| `src/lib/legal.ts` | **D** | Bayrak + sürüm + changelog birlikte değişir |
-
-Kilitli olmayan her dosyada şeritler serbesttir.
-
-### 2.2 Commit kuralı
-
-- Konu başına ayrı commit, Türkçe mesaj.
-- Gövdede **`DOĞRULANMADI:`** satırı — neyin derlenmediği/denenmediği açıkça yazılır.
-- Emoji yok. Değişken, dosya ve anahtar adları İngilizce; Türkçe yalnız arayüz metni ve yorumda.
-- Claude push etmez; push Samet'te (AGENTS.md).
-
-### 2.3 Kapsam sınırı
-
-Şeritler **Android'e dokunmaz**. Android çalışıyor; parite iOS'u Android'e getirmek
-demek, ortada buluşmak değil. Tek istisna R4 (`render-sfx.py` iOS çıktısı eklenir —
-katkı, mevcut `res/raw` yazımı değişmez).
-
----
-
-## 3. Şeritler
-
-Her şerit bağımsız bir agent. "Dokunduğu" listesi dışına çıkmaz.
-
-### Şerit P — Xcode projesi (ÖNCE, tek başına)
-
-Diğer her şey buna dayanır; **paralel değil, ilk sırada koşar.**
-
-- **Kapsam:** P1–P8.
-- **Dokunduğu:** `project.pbxproj`, `Info.plist`, `Lernomi.xcscheme`, `Podfile`.
-- **İş:**
-  1. `LernomiSpeech.swift` + `.m`'yi gruba ve Sources fazına ekle (P1).
-  2. `tr/en/de.lproj/InfoPlist.strings`'i hedefe bağla; `knownRegions` + `CFBundleLocalizations = [tr, en, de]` (P3). Android karşılığı `res/xml/locales_config.xml`.
-  3. Bundle kimliği `app.lernomi.ios` (docs/appstore önerisi), `PRODUCT_NAME` sabit (P4).
-  4. `MARKETING_VERSION` / `CURRENT_PROJECT_VERSION` — Android ve `M/src/version.ts` ile AYNI değer (P5). Sayı buraya yazılmaz: yazılırsa ilk sürüm artışında bu satır yanlış talimata dönüşür. Üç kaynağın elle eşitlendiğini `version.ts` yorumuna ekle.
-  5. `CODE_SIGN_STYLE`, `DEVELOPMENT_TEAM` yer tutucusu; gerçek takım kimliği repoya girmez (P6).
-  6. Scheme'deki `NomiTests.xctest` referansını kaldır (P7).
-  7. `ITSAppUsesNonExemptEncryption = false` (C2) — HTTPS dışında şifreleme yok.
-  8. `Podfile.lock` sonradan Mac'te üretilir; `.gitignore`'a **girmeyecek**, izlenecek (P8) — not düş.
-- **Bitti ölçütü:** `project.pbxproj` diff'i okunabilir; her yeni UUID tekil; Info.plist'teki her yeni anahtarın yanında neden yorumu.
-- **Şeritlere açtığı kapı:** N, R, G aynı anda başlayabilir; ama hedefe **dosya ekleme** gerektiren her şey (ikon, mp3) P'nin ikinci geçişini bekler (§4).
-
-### Şerit N — Native modül paritesi
-
-- **Kapsam:** 1.2'deki tüm eksikler.
-- **Dokunduğu:** `M/ios/Lernomi/LernomiSpeech.swift`, `LernomiSpeech.m`.
-- **İş, öncelik sırasıyla:**
-  1. **`import React`** (P2) — ilk satır, yoksa hiçbiri derlenmez.
-  2. **`hasMicrophone`** — P1 ile birlikte gitmezse `useMicrophone` çöker. iOS'ta `AVAudioSession.availableInputs` ile sor; sorulamıyorsa `true`.
-  3. **`startScreenWatch` / `stopScreenWatch`** + `LernomiScreenOff` / `LernomiScreenOn` olayları, `supportedEvents`'e eklenerek. iOS'ta güç tuşu için genel API yok; karşılık `UIApplication.didEnterBackgroundNotification` / `willEnterForegroundNotification` (ve `protectedDataWillBecomeUnavailable`). **Bu bir eşdeğer, birebir değil** — davranış farkı yorumda yazılacak. Bu olmadan ekran-kapalı mod iOS'ta hiç seçilmez.
-  4. **`uploadStt`** — `URLSession` ile multipart POST, çerez `HTTPCookieStorage.shared`'dan. Android karşılığı `LernomiSpeechModule.kt` `uploadStt`; alan adları birebir aynı (`language`, `mode=walk`, `expected`, `audio`).
-  5. **`setApiBase` + host allowlist** — 4 ve 6 ile **aynı commit'te**. Android'deki `allowedUrl` kuralı: yalnız `https`, yalnız API hostu. Çerez başka hosta gitmemeli.
-  6. **`httpGet`** — sade GET, çerezli, 200 ise gövde.
-  7. **`playTtsUrl` / `stopTts`** — `/api/tts` MP3'ünü indirip `AVAudioPlayer` ile çal; yürüyüş ses oturumu açıkken çalışmalı.
-  8. **`playSfx`** — Android `AVAudioTrack` ton sentezinin karşılığı. Nota tablosu `M/src/lib/sfxNotes.ts` ile **birebir** (tek kaynak orası; Android tablosu `render-sfx.py --kotlin` çıktısı, iOS için aynı üreticiye Swift çıktısı eklenmesi yeğdir).
-  9. **`delay`** — arka planda duran `setTimeout` yerine native. Android'de `Handler`; iOS'ta `DispatchQueue.main.asyncAfter`. Ses oturumu açıkken JS zamanlayıcısının da çalışması beklenir; yine de parite için eklenir.
-  10. `LernomiWalkStop` — **ürün kararı gerektiriyor**, kod yazmadan §6'ya not düş.
-- **JS'e dokunulmaz.** `M/src/lib/stt.ts` sözleşmesi zaten 18 yöntemi tanımlıyor; iOS ona uyacak.
-- **Bitti ölçütü:** `.m` dosyasındaki `RCT_EXTERN_METHOD` listesi `stt.ts:18-40` tipiyle satır satır örtüşüyor; `supportedEvents` 9 olayı sayıyor.
-
-### Şerit R — Marka kaynakları
-
-- **Kapsam:** R1–R4.
-- **Dokunduğu:** `M/ios/Lernomi/Images.xcassets/**`, `M/ios/Lernomi/LaunchScreen.storyboard`, yeni `M/ios/Lernomi/sfx/*.mp3`, `M/scripts/render-sfx.py` (yalnız ekleme).
-- **İş:**
-  1. AppIcon PNG'leri — kaynak Android'in `mipmap-xxxhdpi/ic_launcher_foreground.png` + `#FA7C13` zemini. iOS'ta şeffaflık ve yuvarlatma **yasak**: 1024×1024 opak tek dosya (modern asset katalog) ya da beyan edilen 9 boyut.
-  2. LaunchScreen — "Powered by React Native" gider; Android açılışının aynısı: turuncu zemin + ortada ikon. Storyboard yerine `UILaunchScreen` sözlüğü daha az bakım ister, P ile kararlaştır.
-  3. Renk kümesi (light/dark) — `#FBF7F2` / `#17120E`, Android `window_bg` ile aynı değerler.
-  4. `render-sfx.py`'a iOS çıktı yolu ekle; 6 mp3'ü üret. Dosya adları uzantılı kalır (`sfx.ts:31` iOS'ta `.mp3` arıyor).
-- **P'ye teslim:** üretilen mp3'lerin ve varsa yeni storyboard/asset dosyalarının hedefe eklenmesi P'nin ikinci geçişi.
-
-### Şerit T — Platforma göre metin ve davranış
-
-- **Kapsam:** E1–E3.
-- **Dokunduğu:** `M/src/i18n/{tr,en,de}.ts`, `M/App.tsx`, `M/src/lib/useUpdate.ts`, `M/src/screens/LearnScreen.tsx`, `M/src/screens/PaywallScreen.tsx`, `M/src/screens/DeleteAccountScreen.tsx`.
-- **İş:**
-  1. Mağazaya bağlı iki metni platforma göre ayır. Anahtar adları İngilizce ve simetrik olsun (ör. `paywall.renew_cancel_play` / `paywall.renew_cancel_appstore`); üç sözlüğe de aynı sırada girer.
-  2. `App.tsx:37` — `"android:standalone"` yerine `Platform.OS` ile üretilen değer. Sunucu tarafındaki `kind` ayrıştırmasını bozmadığını `src/` içinde doğrula.
-  3. `useUpdate` — iOS'ta hiç çağrılmasın (APK önerisi Guidelines 2.5.2 riski). `LearnScreen`'deki şerit platform kontrollü.
-- **Bitti ölçütü:** `npm run i18n:check` (`M/scripts/i18n-scan.js`) temiz; üç sözlükte anahtar kümesi ve sıra aynı.
-
-### Şerit G — Google ile Giriş (iOS)
-
-- **Kapsam:** C4.
-- **Dokunduğu:** `M/src/lib/googleAuth.ts`; Info.plist değişikliğini **P'ye tarif eder**.
-- **İş:** `GoogleSignin.configure`'a `iosClientId` ekle; Google Cloud'da iOS OAuth istemcisi
-  aç; ters client id'yi `CFBundleURLTypes` olarak P'ye ver. `webClientId` **değişmez** —
-  sunucudaki `GOOGLE_CLIENT_ID` ona bakıyor, `googleAuth.ts` docblock'unda yazılı.
-  `docs/play/console.md`'nin iOS karşılığını `docs/appstore/`'a D üzerinden yazdır.
-
-### Şerit A — Apple ile Giriş
-
-En büyük ve en çok yeri kesen şerit; **yayın engeli** (C3). Kendi başına bir agent.
-
-- **Dokunduğu:** sunucu tarafı `src/lib/auth.ts` (better-auth sağlayıcı) ve `/api/config`;
-  mobil `M/src/screens/AuthScreen.tsx`, yeni `M/src/lib/appleAuth.ts`, `M/package.json`;
-  yetki (capability) ve entitlements değişikliğini **P'ye tarif eder**; env üçlüsünü
-  (`.env.example` / yerel `.env` / sunucu `.env`) AGENTS.md'nin senkron kuralına göre ekler.
-- **Not:** `AuthScreen.tsx:26` bugün "sunucuda açılmadığı için listede yok" diyor —
-  aynı desen izlenir: `/api/config` `providers.apple` dönene kadar düğme çizilmez.
-  Böylece Android'de hiçbir şey değişmez.
-- **Bağımlılık:** başka şeride bağlı değil, en uzun süreni olduğu için **en erken başlar**.
-
-### Şerit D — Uyum, gizlilik ve belgeler
-
-- **Kapsam:** C1, C5, E4, O1, O2 ve tüm şeritlerin belge maddeleri.
-- **Dokunduğu:** `M/ios/Lernomi/PrivacyInfo.xcprivacy`, `docs/appstore/README.md`,
-  `src/lib/legal.ts`, `M/README.md`, `M/scripts/` (iOS arşiv betiği).
-- **İş:**
-  1. `NSPrivacyCollectedDataTypes`'ı `docs/appstore/README.md`'deki tabloyla **birebir** doldur. İkisi ayrışırsa inceleme takılır.
-  2. `M/README.md`'yi şablondan çıkar: Android ve iOS kurulumu, üç sürüm kaynağının elle eşitlenmesi, `patch-package` notu.
-  3. iOS arşiv/imza betiği (O1) — `gen-release-keystore.sh` üslubunda, sır repoya girmez.
-  4. `LEGAL_PLATFORMS.ios` **bu planda açılmaz**; §6'daki kapılar geçilince, `LEGAL_VERSION` + changelog ile birlikte açılır.
-- **Diğer şeritlerden girdi alır:** her şerit bitince D'ye bir paragraf verir (ne yapıldı, ne doğrulanmadı, cihazda ne sınanacak).
-
-### Şerit S — Mac'te derleme ve cihaz doğrulaması (SONDA)
-
-- **Ön koşul:** macOS + Xcode + Apple Developer hesabı.
-- **İş:** `pod install`, derleme hatalarını kapat, `Podfile.lock`'u commit et, §5 listesini
-  koş, sonuçları D'ye ver.
-- **Bu şerit koşulana kadar hiçbir iOS iddiası "doğrulandı" sayılmaz.**
-
----
-
-## 4. Sıra ve bağımlılıklar
-
-```
-                    ┌─────────────────────────────────────────┐
-  A (Apple giriş) ──┤ en uzun; en erken başlar, sonda buluşur │
-                    └─────────────────────────────────────────┘
-
-  P (1. geçiş: pbxproj + Info.plist)
-        │
-        ├──> N (native yöntemler)      ─┐
-        ├──> R (ikon, splash, mp3)     ─┤
-        ├──> T (platform metinleri)    ─┼──> P (2. geçiş: yeni dosyaları hedefe ekle)
-        ├──> G (Google iOS istemcisi)  ─┤            │
-        └──> D (gizlilik, belge)       ─┘            └──> S (Mac: derle, cihazda sına)
-```
-
-Kritik iki kural:
-
-1. **P1 ve N2 (`hasMicrophone`) aynı anda inmeli.** P1 tek başına inerse modül yüklenir,
-   eksik yöntem `TypeError` atar ve `useMicrophone` her açılışta çöker — yani proje
-   bağlantısını düzeltmek, düzeltmeden önceki durumdan daha kötü bir uygulama üretir.
-2. **N4 (`uploadStt`), N5 (`setApiBase`) ve N6 (`httpGet`) tek commit.** Allowlist'siz
-   native HTTP, oturum çerezini JS'ten gelen herhangi bir adrese gönderir.
-
----
-
-## 5. Cihazda sınanacaklar (Mac gerektirir)
-
-Bu bölüm **`docs/plan/ios-device-runbook.md`'ye taşındı.**
-
-Burada 17 madde vardı ama sırasız: üç şerit üç ayrı zamanda ekledi ve maddeler
-birbirine bağlı — uygulama açılmadan yürüyüş modu denenemez, entitlements gerçek bir
-hesaba bağlanmadan Apple girişi denenemez, kilit ekranına bakmak için önce turun
-başlaması gerekir. Runbook aynı maddeleri on faza dizip her birine "önce / yap / geçti /
-geçmezse" alanları veriyor; sonundaki eşleme tablosu buradaki 17 maddenin hepsini
-karşılığıyla gösteriyor.
-
-Ayrım da orada korunuyor: bir adım geçmezse ona bağlı olanlar **"ölçülemedi"** yazılır,
-"başarısız" değil. İkisi karışırsa var olmayan bir kusur kovalanır.
-
-Arada bir katman daha var: **CI'daki simülatör**. `.github/workflows/ios-build.yml`
-her push'ta uygulamayı iPhone SE ve iPad'de açıp üç dilde ve iki temada kare alıyor
-(`scripts/ios-screenshots.sh`), ayrıca XCUITest'le onboarding'i tıklayarak geçip akışın
-karelerini çıkarıyor (`scripts/ios-flow-screenshots.sh`). Düzen, renk, koyu tema, metin
-uzunluğu ve akışın kendisi artık cihaz beklemeden görülüyor; kareler artifact olarak
-iniyor. Cihazda kalanlar mikrofon, konuşma tanıma, arka planda ses, kilit ekranı
-denetimi, haptik ve satın alma.
-
-Statik tarafta karşılığı `mobile/scripts/check-ios.py` (`npm run ios:check`, CI'da
-`checks.yml`): pbxproj bütünlüğü, sürüm üçlüsü, ikon ölçüleri, `.strings` sözlükleri,
-dil beyanı ve Swift/ObjC sözdizimi. Cihaz gerektirmeyen her şey oraya ait — runbook
-yalnız cihazda öğrenilebilecekleri taşır.
-
----
-
-## 6. Yayın kapıları
-
-iOS **yayını** ancak şunların **hepsi** bitince yapılır. Bu liste eskiden
-`LEGAL_PLATFORMS.ios` bayrağının kapısıydı; bayrak 2026-09-14'te ayrıca açıldı, çünkü
-App Review gizlilik politikasını, şartları ve destek sayfasını gönderimde okuyor ve
-yalnız Android'i sayan bir metin iOS uygulamasının metni sayılmıyor (gerekçe
-`src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda).
+iOS yayını şunların hepsi bitince yapılır:
 
 | Kapı | Kaynak |
 |---|---|
 | Apple Developer hesabı + gerçek bundle kimliği | P4, P6 |
-| Apple ile Giriş çalışıyor | Şerit A / C3 |
-| Uygulama içi hesap silme iOS'ta doğrulandı | §5.12 |
-| Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor | C1 |
+| Apple ile Giriş cihazda çalışıyor | C3, runbook 5.3 |
+| Uygulama içi hesap silme iOS'ta doğrulandı | runbook 5.4 |
+| Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor | C1, runbook 9.4 |
 | Uygulama ikonu ve açılış ekranı markalı | R1, R2 |
-| §5'in tamamı cihazda koşuldu | Şerit S |
-| ~~`LEGAL_VERSION` artırıldı + changelog kaydı düşüldü~~ → **1.1, 2026-09-14** | `src/lib/legal/index.ts` |
+| Runbook'un tamamı cihazda koşuldu | runbook |
+| Hukuki metinler iOS'u kapsıyor | C5 |
 
-Açık ürün kararları:
+### Karar 1: `LernomiWalkStop` karşılığı kilit ekranı Now Playing (2026-09-04)
 
-- **`LernomiWalkStop` karşılığı — KARAR VERİLDİ (2026-09-04): kilit ekranı Now Playing
-  denetimi.** Android'de kalıcı bildirimde "Durdur" var; iOS'ta karşılığı
-  `MPNowPlayingInfoCenter` + `MPRemoteCommandCenter`. Üç sebep:
+Android'de kalıcı bildirimde "Durdur" var; iOS'ta karşılığı `MPNowPlayingInfoCenter` +
+`MPRemoteCommandCenter`. Gerekçe:
 
-  1. Ekran kapalı kullanım kesin olacak ve bugün turu bırakmanın tek yolu tur sonundaki
-     "devam edelim mi" sorusunu beklemek — 3-4 dakika. Telefon cepteyken bu, kullanıcıyı
-     kilidi açıp uygulamaya dönmeye zorluyor.
-  2. JS sözleşmesi hazır ve iOS'ta boşta: `stt.ts:174` `onWalkStop` abone,
-     `WalkModeScreen.tsx:499` mikrofonu kapatıp biriken cevapları yazıyor ve tur özetini
-     gösteriyor. Yani tur ortasında durdurmak veri kaybettirmiyor ve JS DEĞİŞMİYOR —
-     `startWalkService`'te olduğu gibi.
-  3. İnceleme: `docs/appstore/README.md` arka plan mikrofonunu en büyük risk sayıyor ve
-     App Review Information'a "kilit ekranında sürdüğü görünür, durdurulabilir"
-     yazılmasını şart koşuyor. Now Playing bunu iddia olmaktan çıkarıp görünür kılıyor.
-     `UIBackgroundModes: audio` tutup Now Playing yayımlamamak incelemede dikkat çeken
-     bir kalıp.
+1. Cepteki telefonda turu bırakmanın başka yolu tur sonundaki soruyu beklemek (3-4 dk).
+2. JS sözleşmesi hazırdı: `stt.ts` `onWalkStop` → `WalkModeScreen` mikrofonu kapatıp
+   cevapları yazıyor, tur özetini gösteriyor. JS değişmedi, veri kaybı yok.
+3. App Review arka plan mikrofonunda "sürdüğü görünür, durdurulabilir" diye sorar;
+   Now Playing bunu görünür kılar. `UIBackgroundModes: audio` tutup Now Playing
+   yayımlamamak incelemede dikkat çeker.
 
-  Yan kazanç: kulaklık/AirPods düğmesi de aynı yolla turu durduruyor — yürürken
-  Android'in bildirim düğmesinden daha erişilebilir.
+Yan kazanç: kulaklık düğmesi de turu durdurur. Bilinen sınır: başlık metni cihaz dilinden
+gelir (`Localizable.strings`), uygulama içi dil farklıysa ayrışır; Android'de de aynı.
 
-  Bilinen sınır: başlık metni Android'de `res/values-*/strings.xml`'den, yani CİHAZ
-  dilinden geliyor; kullanıcının uygulama içi dil seçimi farklıysa ikisi ayrışır. iOS
-  karşılığı aynı deseni izleyecek (`Localizable.strings`). Sözleşmeyi JS'ten metin
-  geçirecek şekilde değiştirmek ikisini de düzeltir ama Android'e dokunmayı gerektirir;
-  bu şeritlerin kapsamı dışında, ayrı iş.
-- **Ekran-kapalı modun maliyeti — KARAR VERİLDİ, fark bilerek kabul edildi
-  (2026-09-12).** İki platform farklı olayı ölçüyor: Android `ACTION_SCREEN_OFF`
-  (yalnız güç tuşu), iOS `didEnterBackgroundNotification` +
-  `protectedDataWillBecomeUnavailableNotification` (uygulama değiştirme, gelen çağrı
-  ve kilit). Yani iOS'ta bildirime dokunmak `useAzure`'u açıyor (ücretli yol) ve
-  çalışan tanımayı kesiyor; ön plana dönünce geri geliyor, dolayısıyla maliyet
-  kesinti başına — oturum boyu değil.
+### Karar 2: ekran kapalı modun maliyeti, fark bilerek kabul edildi (2026-09-12)
 
-  Gerekçe `LernomiSpeech.swift`in kendi yorumunda yazılı ve özü şu: sorulan soru
-  "ekran kapalı mı" **değil**, "hangi tanıyıcı güvenilir" — uygulama arka plandayken
-  yerel `SFSpeechRecognizer` zaten güvenilmez, yani ücretli yola geçmek doğru
-  davranış. İkinci fark (kullanıcı telefonu açıp başka uygulamada kalırsa Android
-  `ScreenOn` derdi, iOS demez) aynı sebeple doğru: uygulama hâlâ arka planda.
+Android `ACTION_SCREEN_OFF` (yalnız güç tuşu), iOS `didEnterBackgroundNotification` +
+`protectedDataWillBecomeUnavailableNotification` (uygulama değiştirme, gelen çağrı, kilit)
+dinliyor. iOS'ta bildirime dokunmak ücretli yolu (`useAzure`) açıyor; maliyet oturum boyu
+değil kesinti başına. Sorulan soru "ekran kapalı mı" değil, "hangi tanıyıcı güvenilir":
+arka plandaki uygulamada yerel `SFSpeechRecognizer` güvenilmez. Gerekçe
+`LernomiSpeech.swift` yorumunda; sözleşme `check:parity` §294'te kilitli. Ölçümle
+gözden geçirilir: runbook 7.1.
 
-  Sözleşme artık `check:parity` §294'te kilitli — olayın hangi sistem
-  bildirimlerinden yayıldığı, geçiş başına bir kez yayıldığı (iOS'ta iki bildirim
-  peş peşe gelebiliyor) ve ücretli yolun tetiğinin o bayrak olduğu ölçülüyor. Bu
-  üçünden biri değişirse fatura da sessizce değişirdi.
+### Karar 3: Apple ile Giriş'te nonce yok, engel değil
 
-- **Apple ile Giriş'te nonce yok — ölçüldü, engel değil.** `appleAuth.ts` nonce
-  göndermiyor: kütüphane ham nonce'u SHA-256'layıp Apple'a özeti yolluyor ama JS'e
-  ham değeri döndürüyor, better-auth ise düz karşılaştırıyor; tutması için Mac'te
-  denenmesi gereken bir kripto adımı gerekiyor.
-
-  Kalan risk ölçüldü, kabul edilebilir bulundu. Zincir:
-  `src/lib/auth/server.ts:41` sağlayıcıyı yalnız `APPLE_BUNDLE_ID` doluyken
-  kaydediyor, dolayısıyla `appBundleIdentifier` boş kalamıyor;
-  `better-auth/dist/social-providers/index.mjs:60-75` token'ı Apple JWKS imzası,
-  `iss` ve `aud = appBundleIdentifier` ile doğruluyor. Nonce'un kapattığı asıl
-  saldırı — başka bir uygulama için üretilmiş token'ı buraya oynatmak — `aud`
-  ile zaten kapalı. `jose` ayrıca `exp`'i doğruluyor; Apple'ın id token'ı ~10
-  dakika yaşadığı için gerçek oynatma penceresini `maxTokenAge: "1h"` değil `exp`
-  belirliyor, yani sıkılaştırılacak bir ayar yok.
-
-  Geriye kalan: Lernomi için üretilmiş TAZE bir token'ı o pencerede ele geçirmiş
-  birinin oynatması — cihaz/uygulama ele geçirilmesi ya da TLS kırılması gerekir
-  (`NSAllowsArbitraryLoads=false`). Nonce Şerit S'de, cihazda denenerek açılır;
-  tarif `mobile/src/lib/appleAuth.ts` docblock'unda yazılı.
+`appleAuth.ts` nonce göndermiyor: kütüphane Apple'a nonce'un SHA-256 özetini yolluyor, JS'e
+ham değeri veriyor, better-auth düz karşılaştırıyor. Nonce'un kapattığı asıl saldırı (başka
+uygulamanın token'ını oynatmak) `aud` ile zaten kapalı: sağlayıcı yalnız `APPLE_BUNDLE_ID`
+doluyken kaydediliyor (`src/lib/auth/server.ts`) ve better-auth token'ı Apple JWKS imzası,
+`iss` ve `aud = appBundleIdentifier` ile doğruluyor. Oynatma penceresini Apple token'ının
+`exp`'i (~10 dk) belirliyor. Kalan risk taze token'ın ele geçirilmesi; cihaz ya da TLS
+kırılması ister (`NSAllowsArbitraryLoads=false`). Nonce cihazda denenerek açılabilir;
+tarif `M/src/lib/appleAuth.ts` docblock'unda.
