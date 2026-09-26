@@ -7,6 +7,10 @@
  * anadil sözlükleri Amerikan'a çevrildi; bu kapı artık İngiliz biçimini
  * yakalıyor (önceki sürüm tersini yapıyordu).
  *
+ * 2026-09-26: içerik üç turda sözcük seçimi bakımından da Amerikan'a çevrildi
+ * (flat, holiday, shop, queue… bağlama göre); liste o turlardan tartışmasız
+ * olanlarla genişletildi.
+ *
  * Liste KAPALI ve dar: yalnız Amerikan karşılığı tartışmasız olanlar.
  * `flat`, `holiday`, `queue`, `lift`, `football` bağlama göre değiştiği için
  * DIŞARIDA (düz yüzey, resmî tatil, kaldırmak…). İngiliz/Amerikan farkını
@@ -45,6 +49,27 @@ const UK = [
   [/\bmaths\b/gi, "math"],
   [/\bfortnight\b/gi, "two weeks"],
   [/\bat (the )?weekends?\b/gi, "on (the) weekend(s)"],
+  // 2026-09-26 sözcük seçimi turlarından: bağlamdan bağımsız İngiliz biçimleri
+  [/\b(pyjamas|aluminium|jewellery|marvellous|woollen|cosy|yoghurts?|aeroplanes?)\b/gi, "pajamas/aluminum/jewelry…"],
+  [/\bsceptic(s|al|ism)?\b/gi, "skeptic…"],
+  [/\bcounsell(ing|or|ors)\b/gi, "counseling…"],
+  [/\bstraight away\b/gi, "right away"],
+  [/\bYours (sincerely|faithfully)\b/gi, "Sincerely"],
+  [/\bchemist's\b/gi, "pharmacy"],
+  [/\bshop assistants?\b/gi, "salesclerk"],
+  [/\bcash desks?\b/gi, "checkout / register"],
+  [/\bopening hours\b/gi, "(business) hours"],
+  [/\b(pay|price) rises?\b/gi, "raise / price increase"],
+  [/\brucksacks?\b/gi, "backpack"],
+  [/\bcanteens?\b/gi, "cafeteria"],
+  [/\bnapp(y|ies)\b/gi, "diaper"],
+  [/\bpushchairs?\b/gi, "stroller"],
+  [/\bsat ?nav\b/gi, "GPS"],
+  [/\bzebra crossings?\b/gi, "crosswalk"],
+  [/\bflatmates?\b/gi, "roommate"],
+  [/\bholidaymakers?\b/gi, "vacationer"],
+  [/\b(in|to) hospital\b/gi, "in/to the hospital"],
+  [/\bfill(ed|ing|s)? in (a|the|this|your) form\b/gi, "fill out"],
 ];
 
 /** Metindeki İngiliz yazımlarını `«bulunan» → önerilen` biçiminde döndürür. */
