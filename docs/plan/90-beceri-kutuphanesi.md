@@ -1,159 +1,63 @@
-# Beceriler kütüphanesi — serbest çalışma yüzeyi (2026-09-08)
+# Beceriler kütüphanesi — serbest çalışma (WP-90)
 
-**Ne.** Patika öğrenciyi bir sıraya sokar (ünite → konuşma → yuva). Beceriler artık
-onun yanındaki **kütüphane**: öğrenci CEFR seviyesini ve becerisini kendi seçer,
-istediği kadar yalnız okuma ya da yalnız dil bilgisi çalışır, her egzersizde
-geri bildirim alır, bitirince "sıradaki"yi görür. İki kurs (Almanca, İngilizce;
-anadil Türkçe), beş beceri (okuma, dinleme, yazma, konuşma, dil bilgisi), beş
-seviye (A1–C1). Web, Android ve iOS aynı içeriği aynı biçimde oynatır.
+**Ne.** Patika öğrenciyi bir sıraya sokar (ünite → konuşma → yuva). Beceriler onun yanındaki
+kütüphane: öğrenci seviyeyi ve beceriyi kendi seçer, her egzersizde geri bildirim alır, bitirince
+"sıradaki"yi görür. İki kurs (Almanca, İngilizce) × beş seviye (A1–C1) × beş beceri (okuma,
+dinleme, yazma, konuşma, dil bilgisi) × 20 = **1.000 egzersiz** (her kursta 500). Dört anadil
+çiftinde oynanır: tr→de, tr→en, en→de, de→en. Web, Android ve iOS aynı içeriği oynatır.
 
-**Neden ayrı.** Beceriler'in eski kendi egzersizleri ünite dosyalarının sonunda
-duruyordu; Patika üretici havuzu liste sırasıyla tükettiği için bunlar geç
-ünitelerin boş yuvalarına akıyordu, ayrıca kalitesi yetersiz bulunup
-2026-09-07'de silindi. Yeni içerik `src/lib/skills/content/library/` altında,
-`unit` alanı OLMADAN yaşıyor; `immersion/build.ts` bu havuza hiç bakmıyor
-(`pathMetas`), Beceriler yalnız bunları gösteriyor (`libraryMetas`; mobilde
-`listOwnSkillMeta`).
+**Neden ayrı.** Kütüphane egzersizlerinde `unit` alanı yok. Patika yalnız `unit` taşıyanları
+kullanır (`pathMetas`, `lib/immersion/build.ts` `loadTrack`); Beceriler yalnız taşımayanları
+gösterir (`libraryMetas`). Aksi hâlde kütüphane Patika'nın boş yuvalarına akardı.
 
 ## Yapı
 
 | Katman | Nerede | Not |
 |---|---|---|
-| Tip | `src/lib/skills/types.ts` | `SkillId` + `"grammar"`, `GrammarExercise` (focus, explanation[], questions[]), `isLibraryExercise`, `targetLangOf` |
-| İçerik | `content/library/<kurs>-<seviye>.ts` → `library/index.ts` → `bundled.ts` | Kimlik `<kurs>-<seviye>-lib-<r|l|w|s|g><n>`; `en-mobile-2026.ts` mobilden taşınan 64 İngilizce egzersiz |
-| Web hub | `src/app/(app)/skills/page.tsx` | Beş bölüm, puan rozeti, sıradaki önerisi, seviye-tamam kartı |
-| Web oynatıcı | `immersion/skill/[id]/page.tsx` + `components/skills/{grammar,speaking,monologue}-player.tsx` | `PlayerFrame` bağlamı: hedef dil, geri, sıradaki |
-| Mobil hub | `mobile/src/screens/SkillsScreen.tsx` | Aynı beş bölüm, cihazdaki tamamlama kümesiyle işaret ve öneri |
-| Mobil oynatıcı | `mobile/src/screens/ItemScreen.tsx` + `mobile/src/game/skillLibrary.tsx` | Dil bilgisi anlatımı, söyleyiş drilli (cihaz tanıyıcısı + `spokenMatches`), monolog (`listenOnce` döngüsü → `/api/assess`) |
-| Doğrulama | `npm run test:content -- skills`, `npm run check:libvocab -- <kurs> <seviye>`, `npm run audit:skills` | Kütüphane kimliği/kurs/seviye/beceri tutarlılığı, dil bilgisi kuralları, havuz dışı oranı |
-| Döküm | `npm run dump:skills` ve `npm run dump:skills -- en` | Mobil paketler web bundle'ından; İngilizce paket artık elle yazılmıyor |
+| Tip | `src/lib/skills/types.ts` | `GrammarExercise`, `isLibraryExercise`, `targetLangOf` |
+| İçerik | `src/lib/skills/content/library/<kurs>-<seviye>[-pN].ts` → `library/index.ts` → `bundled.ts` | Kimlik `<kurs>-<seviye>-lib-<r\|l\|w\|s\|g><n>`; `en-mobile-2026.ts` mobilden taşınan İngilizce egzersizler |
+| Sunum | Web `skill_exercises` tablosundan; mobil içerik teslim hattından (paket `skills/<kurs>-<seviye>`, `content:publish`) | Tablo her deploy sonunda `db:seed:skills` ile tazelenir (`deploy.sh`); içerik uygulama sürümü beklemez |
+| Web | `src/app/(app)/skills/page.tsx` + `components/skills/skill-browser.tsx`; oynatıcı `immersion/skill/[id]` | Beş beceri karosu (ad, n/20, ilerleme), seçili becerinin listesi, "bitenleri gizle" |
+| Mobil | `mobile/src/screens/SkillsScreen.tsx`, `ItemScreen.tsx`, `game/skillLibrary.tsx`, `game/skillQuiz.tsx` | Söyleyiş drilli cihaz tanıyıcısıyla; monolog `listenOnce` döngüsü → `/api/assess` |
+| Ses | Sunucu TTS (`/api/tts`) | Dinlemede konuşmacı başına ayrı ses (`lib/tts/speakers`, mobil aynası); gerçek kayıt (`segments[].audio`) yok |
+| Doğrulama | `npm run test:content -- skills`, `check:libvocab -- <kurs> <seviye>`, `audit:skills`, `report:library` | Çeviri kapıları: `check:skills-native`, `check:native-de`, `check:skills-task`, `check:skills-task-de` |
 
-Hedef dil bilgisi `course` alanından türer: İngilizce kursta `de` alanı İngilizce
-metin taşır (tarihsel ad), oynatıcılar sesi/tanıyıcıyı/rubriği `targetLangOf`
-ile seçer; `/api/assess` `lang` alanını okur (önceden tip taşıyordu, rota
-düşürüyordu).
+Hedef dil `course` alanından türer: İngilizce kursta `de` alanı İngilizce metin taşır (tarihsel ad);
+oynatıcılar sesi, tanıyıcıyı ve rubriği `targetLangOf` ile seçer; `/api/assess` `lang` alanını okur.
 
-## İçerik kuralları (özet; şartname `data/content/SPEC.md` ve yazar brifi)
+## İçerik kuralları
 
-- **Kopya yok.** Patika konuşmaları, ünite egzersizleri ve deneme sınavlarıyla aynı
-  sahne/konu/metin yok; konu yakın olabilir, metin özgün.
-- **Havuza riayet.** Metin seviyenin ve alt seviyelerin havuz katmanında kalır;
-  hedef A1/A2 ≤ %10, B1 ≤ %15, B2/C1 ≤ %20 dışarıda (`check:libvocab`).
-- **Geri bildirim her yerde.** Her soruda `explain`; yazma ve monologda rubrik
-  (`/api/assess`); söyleyiş drillinde `confusions` (Türkçe konuşanın bilinen sapması).
-- **Seviyeye göre biçim.** Konuşma A1–A2 söyleyiş drilli, B1–C1 monolog. Dil
-  bilgisi her seviyede bir kural: anlatım (Türkçeyle karşıtlık) + 8–10 soru.
-- **Mobil sınırı.** Yazma görevleri yalnız `build` ve `free` (mobil bu ikisini
-  oynatıyor); soru türleri mcq/truefalse/gapfill/short_answer/dictation/order.
+Şartname `data/content/SPEC.md`.
 
-## Durum
+- **Kopya yok.** Patika konuşmaları, ünite egzersizleri ve deneme sınavlarıyla aynı sahne/metin yok.
+  `report:library` sekiz kelimelik pencerelerle kopya denetler.
+- **Havuza riayet.** Metin seviyenin ve alt seviyelerin kelime havuzunda kalır; havuz dışı hedef
+  A1/A2 ≤ %10, B1 ≤ %15, B2/C1 ≤ %20 (`check:libvocab`, rapor; kapı değil).
+- **Seviyeler arası tekrar yok.** Dil bilgisi odağı SPEC tablosunda hangi seviyedeyse orada kalır;
+  daha derin bir katman (Futur I → Futur II) serbest. Yeni parti yazılırken öteki seviyelerin
+  odakları, monolog soruları ve sahneleri de karşılaştırılır.
+- **Geri bildirim her yerde.** Her soruda `explain`; yazma ve monologda rubrik (`/api/assess`);
+  söyleyiş drillinde `confusions`.
+- **Seviyeye göre biçim.** Konuşma A1–A2 söyleyiş drilli, B1–C1 monolog. Dil bilgisi: anlatım
+  (Türkçeyle karşıtlık) + 8–10 soru.
+- **Soru kökü tek dilde.** Hedef dildeki kökte Türkçe ipucu olmaz (öteki anadile sızar); öğrenciye
+  görünen metinde iç numara ("parti 8'de gördün") olmaz.
+- **Yazma görevleri** `build`, `free`, `reply`, `form`, `rewrite`, `summary`; mobil `reply` ve
+  `summary`yi serbest yazma kartıyla oynatır.
 
-| Parti | Kapsam | Durum |
-|---|---|---|
-| 1 (2026-09-08/09) | Kurs × seviye × beceri başına 1 egzersiz = 50 | yazıldı, doğrulandı |
-| 2–5 | Hücre başına 5 | yazıldı |
-| 6–10 (2026-09-21) | Hücre başına 10 | yazıldı; çeviriler dört hatta |
-| **11–20 (2026-09-25)** | **Hücre başına 20** — iki kurs × beş seviye × beş beceri, 466 yeni egzersiz (kütüphane 470 → 936) | **yazıldı, dört paritede çözülüyor** |
-
-### Parti 11–20 (2026-09-25)
-
-- **İçerik.** Kurs × seviye başına bir yazar, on parti. İngilizce A1/A2'de okuma,
-  dinleme ve yazma mobil partisi yüzünden zaten ondan fazlaydı; oradaki partiler
-  yalnız eksik becerileri taşıyor. Her hücre tam 20.
-- **Seviyeler arası denetim — KONUŞMA.** Paralel yazarlar kendi seviyelerinde tekrar
-  yapmadı ama birbirlerinin dil bilgisi odağını, monolog sorusunu ve sahnesini
-  tekrarladı (Almanca B1↔B2↔C1'de üç konu üç seviyede birden; İngilizce B2↔C1'de
-  dört odak). Yazımdan sonra bütün seviyelerin 20'şer odağı, monolog sorusu ve
-  sahnesi tek tabloda karşılaştırıldı; 46 egzersiz yeniden yazıldı. Kural: konu,
-  SPEC'in dil bilgisi tablosunda hangi seviyedeyse orada kalır; açıkça daha derin
-  bir katman (Futur I → Futur II) serbest. Yeni partide ÖTEKİ seviyelere de bakılır.
-- **Karışık kök.** Hedef dildeki soru kökünde Türkçe ipucu („(bile)“, „(-arak)“)
-  çeviri hattına görünmüyor ve öteki anadilde Türkçe sızıyor; 11 kök hedef dile
-  alındı. Öğrenciye görünen metinde iç numara („parti 8'de gördün“) da yasak.
-- **Çeviri.** prose 2.029 · prose-de 1.682 · task 2.393 · task-de 2.265 dize.
-  `check:skills-native` ve `check:native-de` yeni egzersizlerin hepsini çözüyor.
-  İki kapı tırnak içindeki Türkçeyi hedef dil kanıtı sanıyordu (Unicode sözcük
-  sınırı, `ç`); düzeltildi ve sınıf değiştiren 30 açıklığın hepsinin Türkçe
-  olduğu ölçüldü.
-- **Ekran.** Seviye başına 100 satır olunca beş bölüm alt alta kaldırıldı: beş beceri
-  karosu (ad, n/20, ilerleme çubuğu) + seçili becerinin listesi + „bitenleri gizle“.
-  Web `components/skills/skill-browser.tsx`, mobil `SkillsScreen`; mobilde yeni
-  uygulama sürümüyle iner, içerik ise sürümsüz (DB + içerik paketi).
-
-Parti 1 doğrulaması (2026-09-09 kalite kontrolü): `test:content -- skills`
-kütüphane kimlikleri için sıfır hata ve sıfır uyarı; `audit:skills` 984
-egzersizde 513 bulgu, hiçbiri kütüphaneden; havuz dışı kelime oranı
-DE %1,0–2,0 · EN %0,5–3,4 (hedefler %10/15/20).
-
-Pedagojik ölçüm `npm run report:library` ile alınıyor ve şunları basıyor:
-kapsam matrisi, egzersiz başına madde/süre/sözlükçe, tanıma-üretim dengesi,
-gerekçe doluluğu, doğru şık konumu ve uzunluğu, metin uzunluğunun seviye
-hedefine uyumu, seviyeler arası tırmanma, yapabilirlik etiketi ve **kopya
-denetimi** (sekiz kelimelik pencerelerin Patika, konuşma ve deneme sınavı
-havuzuyla karşılaştırılması).
-
-Kontrolde düzeltilenler: iki dinleme metni seviye hedefinin altındaydı
-(DE B2 170→213, DE C1 217→252 kelime), bir okuma bir kelime uzundu
-(EN A2 181→179), bir dinleme sorusunda doğru şık ötekilerden belirgin uzundu
-(okumadan seçilebilirdi). Kopya denetimi üç egzersizde bir-iki pencere
-buldu; üçü de formül cümle ("Guten Tag, was kann ich für Sie tun?",
-"Sehr geehrte Damen und Herren") ve eşiğin altında.
-
-### Parti 1 içeriği
-
-| Seviye | Almanca (okuma · dinleme · yazma · konuşma · dil bilgisi) | İngilizce |
-|---|---|---|
-| A1 | Kayıp kedi ilanı · postane · kartpostal · ei/ie · Akkusativ | Okul gezisi mektubu · kayıp eşya · nineye kart · „th“ · present simple |
-| A2 | Tamir kafesi · dil değişimi · hobi daveti · iki „ch“ · Perfekt | Barınak günlüğü · bisiklet kulübü · alışkanlık değişimi · -ed sesleri · past simple |
-| B1 | Hobi bahçesi · orman gezisi · gönüllülük başvurusu · evden çalışma monoloğu · yan cümle | Yüzme öğrenmek · ev değişimi · köpek kararı · evden ayrılma monoloğu · present perfect |
-| B2 | Depozito raporu · şikâyet yönetimi · kuruma itiraz · dört günlük hafta · Passiv | Yıldızlı puanlama · terfi mi işe alım mı · şikâyet yanıtı · bahşiş · conditionals |
-| C1 | İstatistik denemesi · arşiv söyleşisi · jüri gerekçesi · çeviri araçları · Nominalstil | Kamusal alan denemesi · ses tasarımı · okur mektubu · çalışan izleme · inversion |
-
-Konu seçimi Patika konuşmalarının, ünite egzersizlerinin ve deneme sınavlarının
-dışından yapıldı (`scratchpad/avoid/*` listeleriyle karşılaştırılarak).
-
-## Sınavların yeri (2026-09-09)
-
-Kütüphane gelince Beceriler'in kimliği netleşti ve altındaki sınav listesinin
-oraya ait olmadığı görüldü. O liste bir tasarım kararı değildi: `/exam/*`
-rotaları çalışıyordu, web'de onlara giden hiçbir bağlantı yoktu ve alt gezinme
-bilerek üç sekmede tutuluyor — kapı en yakın boş duvara açılmıştı.
+## Sınavların yeri
 
 | Sekme | İçindekiler |
 |---|---|
-| Öğren | deneme sınavları · haftalık sınav · **seviye sınavı** |
-| Patika | konuşmalar · ünite quizi · ünite quizi · **modül sınavları** |
+| Öğren | deneme sınavları · haftalık quiz |
+| Patika | konuşmalar · ünite egzersizleri · ünite quizi · modül sınavları · seviye sınavı |
 | Beceriler | yalnız serbest çalışma kütüphanesi |
 
-Modül sınavı Patika'da çünkü soruları modülün kendi konuşmalarından üretiliyor ve
-konuşmalar geçilmemişse motor sınavı "deneme" sayıyor; ön koşulu orada olan bir
-şeyin girişi başka sekmede duruyordu. Seviye sınavı beş bölüm ve 45 dakika,
-yani ünite ölçeğinde değil.
-
-Mobilde ikisi de **hiçbir yerden açılmıyordu**: `ExamScreen` aylardır kayıtlı
-ama çağıran yoktu. Artık iki platform da aynı yerden açıyor. Mobilin modül
-listesi için `/api/exam`'e `?level=…` ucu eklendi (web listeyi sunucu
-bileşeninde doğrudan plandan kuruyor).
+Modül sınavı Patika'da, çünkü soruları modülün konuşmalarından üretilir ve konuşmalar geçilmemişse
+sınav "deneme" sayılır. Web `components/immersion/immersion-hub.tsx`, mobil `PathScreen`
+(`ExamScreen`i açar). Mobil modül listesi `/api/exam?level=…`den gelir.
 
 ## Açık noktalar
 
-- **Üretim tohumu — YAPILDI (2026-09-09).** `db:seed:skills` sunucuda koşuldu;
-  canlıda 984 egzersiz (50 kütüphane, 89 İngilizce) ve `db:verify` kaynakla
-  birebir. Sıra önemli: önce deploy, sonra tohum. Ters yapılırsa eski kod
-  dil bilgisi ve konuşma egzersizlerini listeler ama açamaz.
-- **Mobil sürüm.** Mobil içerik derlemeye gömülü; kütüphane telefonlara ancak
-  yeni bir uygulama sürümüyle iner. Web'de bugünden görünüyor.
-- **Uyarı bütçesi.** Mobilden taşınan 64 İngilizce egzersiz doğrulayıcının
-  "çoktan seçmeli olmayan soru < 2" etiketini 42 → 48'e çıkardı; `--baseline`
-  ile bilinçli kabul edildi (o içerik daha önce doğrulayıcının dışındaydı).
-  O egzersizlerin her birine ikinci bir yazılı soru eklemek ayrı bir iş.
-- **Ölçüm betikleri.** `check:libvocab` İngilizce için düzensiz fiil ve
-  kısaltma tablosu taşıyor (yoksa "went", "didn't" seviye dışı sayılıyordu);
-  `audit:skills` artık kurs önekli kimlikleri tanıyor (`de-a2-lib-g1`,
-  `en-a1-r1`) — eskiden 114 egzersize yanlış "seviye uyuşmuyor" diyordu.
-- **Diğer pariteler.** Almanca-İngilizce ve İngilizce-Almanca anadil çiftleri
-  için `intro`/`explain` gibi Türkçe alanların çevirisi gerekecek; tip bugün
-  tek anadil taşıyor.
-- **Ses.** Dinleme cihaz sentezi/tarayıcı sentezi; gerçek kayıt (`segments[].audio`)
-  yok. Monolog mobilde cihaz tanıyıcısıyla parça parça transkript; iOS'ta
-  `listenOnce` döngüsünün davranışı cihazda doğrulanmalı.
+- iOS'ta monolog `listenOnce` döngüsü cihazda doğrulanmadı.
+- Dinleme için gerçek insan kaydı yok; ses TTS.

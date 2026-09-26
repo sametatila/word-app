@@ -1,4 +1,4 @@
-# Kendi karakter seslerine geçiş — envanter, üretim süresi, sunum (2026-09-19)
+# Kendi karakter sesleri (Defne, Aras) — durum, envanter, sunum
 
 ## DURUM — kelime katmanı (2026-09-23)
 
@@ -10,7 +10,7 @@ seçilemez. Günlük tur, pratik ve yürüyüş modunun kelime katmanı canlıda
 |---|---|
 | Ses kimlikleri | dil önekli: `de-DE-Defne`, `en-US-Aras`, `tr-TR-Defne`… (`lib/tts/voices` `OWN_VOICES`, mobil aynası). Eski Katja/Conrad/Jenny/Guy tercihi cinsiyetine göre çevrilir (`resolveVoice`), DB göçü yok. Zürih: Leni/Jan kalır. |
 | Kelime isteği | istemci `k=w` ekler (web `speakWord`/`prefetchWord`/`SpeakButton word`, mobil `speakTarget(…, { word: true })`); uç tabloda bulamazsa 404 (`no_own_audio`, günlüğe `[tts-own]`). |
-| Kelime dışı içerik | konuşma, beceri, dinleme, okuma, sohbet henüz üretilmedi: karakter sesi Edge karşılığıyla (Defne→Katja/Jenny/Emel, Aras→Conrad/Guy/Ahmet); konuşma/dinleme sabit sesi `conversationVoice` Katja/Jenny/Leni. |
+| Kelime dışı içerik | konuşma, beceri, dinleme, okuma, sohbet henüz üretilmedi: karakter sesi Edge karşılığıyla (Defne→Katja/Jenny/Emel, Aras→Conrad/Guy/Ahmet); konuşma/dinleme sabit sesi `conversationVoice` Katja/Jenny/Leni; çok konuşmacılı diyalogda konuşmacı başına kadro sesi (`lib/tts/speakers`). |
 | Yürüyüş modu | hedef kelime seçilen karakter; anlam karakterin ANADİL sesi (`glossVoice`); anlatım cümleleri Emel/Jenny/Katja. |
 | Kutular | cümle dizmede her kutu AYRI üretilmiş kayıt (cümleden kesme değil: yanlış dizilince ezgi saçmalardı); metin `tileSpeech` (kenar noktalaması atılır). |
 | Sunucu | `TTS_OWN_DIR` (`/opt/lernomi/tts-own`: `tts-map.json` + `m4a/`). **Yayın anahtarı**: boşsa kelimeler Edge karşılığıyla, doluysa düşüşsüz. Tablo dakikada bir tazelenir; cevap `max-age=86400` + ETag (nginx aynı başlığa uyar, boşaltma gerekmez). |
@@ -46,65 +46,24 @@ daha gerekir ya da perde kaydırma kalır.
 Hız kademeleri (`slow`, `listen`, `listen-slow`) yeniden üretilmez: yayın anında zaman germe
 (ffmpeg `atempo` / rubberband), GPU maliyeti sıfır, depolama ×4.
 
-## 2. Bugünkü hattın hızı (RTX 4060 Laptop 8 GB, ölçüm 2026-09-19)
+## 2–3. Üretim hızı (tts-test, ölçüm 2026-09-19)
 
-| | Ölçülen | Bileşenler |
-|---|---|---|
-| Cümle (3–4 sn ses) | 24 sn duvar saati, RTF ≈ 5,7 | üretim 2×3,8 sn · Whisper large-v3-turbo CPU 2×8 sn · UTMOS/master ~2 sn |
-| Konuşma (8–11 parça) | 116 sn / konuşma, RTF ≈ 8,6 | parça başına aynı sabit maliyet, parçalar 1,4 sn |
-| Take sayısı | ortalama 2,05 | MIN_TAKES=2 belirliyor |
-
-**Duvar saatinin ~%70'i CPU'daki kontrol**, GPU o sırada boş. Üretimin kendisi RTF ≈ 1.
-
-Bu hızla, tek ses için: katman 1 ≈ 240 sa (10 gün), katman 2 ≈ 300 sa. Dört ses ile aylar. Kabul edilemez.
-
-## 3. Kalite kaybı olmadan hızlandırma
-
-**Uygulandı ve ölçüldü (2026-09-19, tts-test/ornekler.py):** ikinci take GPU'da üretilirken birincisi puanlanıyor;
-UTMOS önce, Whisper yalnız ilk kabul edilene kadar; Almanca/İngilizce kontrolü Whisper `small` (130 gerçek take'te
-büyük modelle DE/EN'de 60/60 aynı karar; Türkçede 5/70 fazladan red, hiç yanlış kabul yok → Türkçe büyük modelde
-kaldı); iki iş aynı anda (birinin Whisper süresi ötekinin üretim süresi; üçüncü iş kazandırmıyor, GPU dolu).
-Sonuç: 11 parçalık konuşma ~250 sn → ~63 sn, parça başına ≈5,5 sn. Bir sesin kelime katmanı ≈ 60 sa, konuşma katmanı
-≈ 72 sa (4060). Kalite ayarları (20 adım, 2 take, referans+bağlam) değişmedi.
-
-| Adım | Kazanç | Kalite etkisi |
-|---|---|---|
-| Kontrolü üretimle ÖRTÜŞTÜR: take 2 üretilirken take 1 Whisper'da (iki iş parçacığı, mevcut worker'lar) | duvar saati ≈ max(GPU, CPU) → ~2× | yok |
-| Whisper `small` (kontrol dosyası artık 14 sn bağlam taşıyor; ölçüm: 8 sn → 2 sn, «abfährt»'ı büyük modelden daha doğru yazdı). Kısa kelime kontrolünde büyük model kalabilir | CPU maliyeti 4× düşer | doğrulanmalı: 200 klipte iki modelin kararı karşılaştırılır |
-| Önce UTMOS (0,3 sn), Whisper yalnız en iyi take'e; geçmezse sıradaki | Whisper çağrısı yarıya | yok |
-| Kelimeler için tek take + eşik (UTMOS ≥ 4,0 ise ikinci take yok) | %30 | küçük; yalnız katman 1'de |
-| Hedef: cümle ≈ 8–9 sn (RTF ≈ 2,2), kelime ≈ 6–7 sn | ~3× | |
-
-Yapılmayacaklar: adım sayısını düşürmek (10 → 20 kazancı ölçüldü), take'i teke indirmek (seed farkı ±1 MOS),
-VoxCPM'de toplu üretim (API'de yok), ikinci model kopyası (8 GB'a sığmıyor).
-
-**Toplu üretim için kiralık GPU.** Aynı üç worker Docker'a alınır; RTX 4090 bu iş için 4060'ın 2–2,5 katı,
-Vast/RunPod'da ~0,4–0,7 $/sa. Optimize hatla tek sesin katman 1+2'si ≈ 195 sa 4060 ≈ 80–90 sa 4090 ≈
-**35–60 $ / ses**; 8 GPU paralel bir günde biter. Yerel 4060 geliştirme ve artımlı içerik için kalır.
+Hat RTX 4060 Laptop'ta: take puanlaması üretimle örtüştürüldü, UTMOS önce, DE/EN kontrolü Whisper `small`
+(Türkçe büyük modelde kaldı); kalite ayarları (20 adım, 2 take, referans + bağlam) değişmedi. Sonuç:
+parça başına ≈ 5,5 sn; bir sesin kelime katmanı ≈ 60 sa, konuşma katmanı ≈ 72 sa. Toplu üretim için
+kiralık RTX 4090 (4060'ın 2–2,5 katı) ≈ 35–60 $ / ses.
 
 ## 4. Sunucuda sunum — GPU yok, her şey statik
 
-Envanter sonlu ve önceden üretiliyor; canlıda sentez YOK. Ölçek = CDN.
+Canlıda sentez yok; dosyalar önceden üretilir.
 
-- **Anahtar**: bugünkü `/api/tts?v&t&r&p` sözleşmesi aynen kalır → sunucu `sha256(v|r|p|clean(t))` ile
-  dosyayı bulur, varsa `Cache-Control: immutable, 1 yıl` ile verir; yoksa bugünkü zincir (Edge→Azure).
-  İstemci (web, Android/iOS köprüsü) **değişmez**. nginx önbelleği aynen çalışır.
-- **Depolama**: 4 ses × 104 sa, AAC 48 kb/s mono ≈ 9 GB. VPS diski yeter; büyürse Cloudflare R2
-  (çıkış ücreti yok) + Cloudflare CDN (DNS zaten orada).
-- **Biçim**: `.m4a` (AAC-LC 48 kb/s mono) — Safari/iOS, Chrome, Android hepsinde `<audio>` ile çalar.
-  Opus daha küçük ama iOS'ta güvenilir değil. Kaynak WAV'lar arşivde kalır, kodlama yayın adımı.
-- **Yayın**: `content:publish` gibi bir `tts:publish` — tts-test'ten manifest (anahtar → dosya, puanlar,
-  uyarılar) + dosyalar rsync. Kalite kapısı: Whisper + fonem kontrolü geçmeyen klip yayına girmez, listeye düşer.
-- **Mobil çevrimdışı**: kurs paketleri mevcut içerik teslim hattıyla (`/api/content/i/<hash>`) — kelime
-  katmanı ses paketi olarak indirilebilir (de kursu tek ses ≈ 21 sa ≈ 450 MB; A1–A2 alt kümesi ≈ 100 MB).
-- **Yetki**: statik dosyanın maliyeti yok; sentez kapısı (oturum, günlük tavan) yalnız üretilmemiş
-  metinde kalır.
-- **Önbellek boşaltma**: bir sesin karşılığı değişince (yeni referans) o sesin dizini ve nginx önbelleği.
-
-## 5. Sıra
-
-1. Hattı optimize et (örtüştürme, küçük Whisper doğrulaması, UTMOS-önce) ve RTF'yi ölç.
-2. Katman 1'i (kelimeler, A1→C1 sırasıyla) dört karakterle üret; fonem kontrolü + dinleme raporu.
-3. `/api/tts` içinde statik dosya yolu; ilk ses canlıya (bir kadın bir erkek, de kursu).
-4. Katman 2 (konuşmalar), sonra 3; kadro için +2 karakter.
-5. Kiralık GPU ile toplu üretim, yerel GPU artımlı.
+- **Tablo:** tts-test `yayin.py` her klibi içerik özetiyle adlandırıp `tts-map.json` yazar:
+  `"<karakter>|<dil>|<temiz metin>" → "<karakter>/<ad>.m4a"`. Sunucu `TTS_OWN_DIR` altında tabloyu ve
+  `m4a/` dizinini bulur (`src/lib/tts/own.ts`); tablo dakikada bir tazelenir, yeniden başlatma gerekmez.
+- **Sözleşme:** `/api/tts` adresi aynı kalır. `TTS_OWN_DIR` doluyken kelime isteğinde (`k=w`) tabloda yoksa **düşüş yok**, 404
+  (`no_own_audio`). Kelime dışı karakter sesi istekleri Edge karşılığına gider.
+- **Önbellek:** cevap `public, max-age=86400` + ETag (ad içerik özeti), `immutable` değil: yeniden
+  üretilen kayıt en geç bir günde yayılır. nginx aynı başlığa uyar, boşaltma gerekmez.
+- **Biçim:** `.m4a` (AAC-LC 48 kb/s mono) — Safari/iOS, Chrome ve Android'de çalar. Yalnız normal hız
+  ve orta perde üretildi; kelime katmanında yavaş ya da perdeli istek yok.
+- **Depolama:** 4 ses × ~104 sa ≈ 9 GB; VPS diski yeter, büyürse Cloudflare R2.

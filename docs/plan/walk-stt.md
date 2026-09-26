@@ -1,321 +1,47 @@
-# Yürürken modu — ses tanıma kararı ve ölçümleri
+# Yürüyüş modu — ses tanıma kararı
 
-Tarih: 2026-08-27. Şikâyet: "Ekran açıkken Web Speech yerine Deepgram'a gidiyor; sunucu ne
-desem anlamıyor, olmayan kelimelerle cevap veriyor." Sahibin üç şartı: (1) Azure'a giden ses
-doğruluktan ödün vermeden en aza insin, (2) ekran açıkken **asla** Azure kullanılmasın,
-(3) tur sürerken ekran kapanırsa geçiş doğru yakalansın.
+Sahibin şartları: (1) Azure'a giden ses doğruluktan ödün vermeden en aza insin, (2) ekran açıkken
+**asla** Azure kullanılmasın, (3) ekran kapanınca durum dürüstçe söylensin.
 
-## Teşhis (kod ve veri)
+## Karar
 
-- `walk-player.tsx`'te iki boş dinlemeden sonra tarayıcı tanıyıcısı **oturum boyunca**
-  bırakılıp sunucuya geçiliyordu (`BROWSER_GIVE_UP = 2`, sessizlik tavanı 4 sn). Düşünme
-  süresi 4 saniyeyi aşan iki cevap yetiyordu. Tanıyıcının hata kodu yutuluyordu.
-- Sunucu STT tek kelimelik ceplik kliplerde uyduruyordu ve uydurma metin **yanlış cevap**
-  sayılıyordu (Groq/Mistral güven vermediği için eşik çalışmıyordu). `ai_usage`, sahibin
-  telefonundan: Groq 21 klipte ~6 doğru (`der Großvater → "Wolfsfatter"`, `raten → "Per
-  Geschenk."`), Deepgram 20'de 9 doğru + 8 boş; 27 Ağustos'ta 5'te 1 (`der Kühlschrank →
-  "Kulsag"`).
-- Süresi dolan dinleme kaydı ve isteği iptal etmiyordu: aynı saniyede iki STT çağrısı.
-- `walk_end` 60 günde hiç yazılmamıştı (çıkış geri hareketiyle oluyor).
+| Platform · durum | Tanıyıcı | Kod |
+|---|---|---|
+| Web, ekran açık | tarayıcının kendi tanıyıcısı (Web Speech); vazgeçme yok, boş dinleme "duyamadım" | `components/walk-player.tsx`, `use-listen.ts` |
+| Web, "Cebe koy" | aynı tanıyıcı: ekran karartılır ama açık kalır (`darken`: siyah katman + tam ekran + ekran kilidi) | `walk-player.tsx` |
+| Web, tanıyıcı yok ya da oturumda öldü | kayıt + `/api/stt` (`default` zincir, Azure yok) | `pocket-mic.ts` `recordAnswerClip` + `transcribe` |
+| Web, ekran gerçekten kapandı | tur durur, sebebi sesle söylenir (kilitli ekranda mikrofon alınamıyor) | `walk-player.tsx` |
+| Mobil, ekran açık | cihazın native tanıyıcısı (ücretsiz) | `mobile/src/lib/stt.ts` `listenOnce` |
+| Mobil, cep / ekran kapalı | native 16 kHz mono WAV kayıt → `/api/stt` `mode=walk`, POST native tarafta | `mobile/src/lib/stt.ts` |
 
-## Platform gerçekleri (Android Chrome)
+Web'in ekran-kapalı cep yolu (sürekli kayıt, sessiz döngü, halka tampon, `lib/vad`) 2026-09-17'de
+kaldırıldı: cihaz testinde (HyperOS) sistem ekran kapanınca mikrofonu susturuyordu.
 
-| Gerçek | Kaynak |
+## Sunucu zinciri (`lib/chat-providers.ts` `sttProviders`)
+
+| Kip | Sıra |
 |---|---|
-| Sayfa gizlenince Web Speech **Android'e özel** `abort()` ile iptal ediliyor | Blink `speech_recognition.cc`, `PageVisibilityChanged` |
-| `start(MediaStreamTrack)`, `available()`, `install()`, `processLocally`: Chrome Android'de **yok** | MDN browser-compat-data (`chrome_android: false`; masaüstü 135/139) |
-| Android 12+'da Chrome, `com.google.android.tts` (cihaz üstü Google tanıyıcı) kullanıyor | Chromium `SpeechRecognitionImpl.java` |
-| Eşzamanlı kayıtta yalnız "üstteki UI" ses alır; gizlilik-hassas kaynak her zaman kazanır | developer.android.com "Sharing audio input" |
+| `default` (ekranlı yollar: söyleyiş drilli, telaffuz, sınav) | Groq → Cloudflare → Speechmatics → Deepgram |
+| `walk` (yalnız mobil cep yolu) | Azure → Deepgram → Groq → Cloudflare → Speechmatics |
 
-Sonuç: cepte Web Speech'in tek yolu sayfayı görünür tutmak. Gerçek ekran kapalıda yol
-kayıt + sunucu; sunucunun "Web Speech kalitesine" yaklaşması gerekiyordu.
+- Azure yalnız `walk`ta listeye girer; `STT_ORDER` onu ekranlı yollara sokamaz.
+- Azure aylık tavanı `AZURE_STT_MONTHLY_SECONDS` (boş = 16.200 sn = 4,5 sa; F0 kotası 5 sa).
+- `/api/stt`: deneme sınavı kâğıdı sunulmayan her istek premium kapısından geçer; `mode` yalnız sırayı seçer, yetkiyi değil.
+- Mistral ses zincirinde yok (sağlayıcı girdiyi 30 gün saklıyor).
 
-## Azure Speech F0 (hesap 2026-08-27'de açıldı, bölge `germanywestcentral`)
+## Neden bu sıra
+- Whisper tabanlılar kısa, başı kesik ceplik klipte **uyduruyor** ("der Großvater" → "Wolfsfatter");
+  uydurma metin yanlış cevap sayılıyordu.
+- Deepgram aynı klipte uydurmuyor, boş dönüyor: güvenli yedek.
+- Azure F0: düz tanımada 15/15 doğru, sessizlikte uydurma yok, saniye başı ücret.
+- İstemci güven eşiği 0,4 (`pocket-mic.ts` `MIN_CONFIDENCE`).
 
-Önceki "Azure yok" kararının sebebi ilke değil hesap açılamamasıymış (tenant hatası);
-çözüldü. Google Cloud STT ile kıyas: Google 60 dk/ay ve **her istek 15 sn'ye yuvarlanıyor**
-(≈ 240 klip/ay ≈ 11 yürüyüş); Azure F0 5 saat/ay, saniye başı, telaffuz puanı dâhil.
-
-Duman testi ve 15 kelimelik TTS matrisi (`Katja`, bir kısmı `Conrad`):
-
-- Düz STT: 15/15 doğru, güven 0,85–0,95, ~400 ms; kısa sözde NBest **tek aday**.
-- Sessizlik: uydurma yok (`RecognitionStatus` boş/`Omission`, güven 0). Yanlış dilde çöp
-  0,21 güven.
-- Telaffuz puanı karışan çiftleri ayırıyor: Küche 82 ↔ Kuchen→Küche 28; schön 100 ↔ schon
-  54; Stadt 82 ↔ Staat 43; Weg 96 ↔ Weck 52. **Ama** temiz TTS "Katze" kelime 44
-  "Mispronunciation", "Kühlschrank" 59 (Katja) / hatasız (Conrad): kelime puanı 44–100
-  dalgalı, WP-20'nin ≥80 eşiği kalibre edilmeden kullanılamaz. Karar düz STT'den; PA yalnız
-  "neresi zayıf" ipucu (drill/sınav işi).
-- Fonem: konum başına skor geliyor (schon→schön: 67/**10**/34, 2. ses = ö), sembol **boş**
-  (IPA/SAPI ikisinde de). Hedefin ses dizisini biz bildiğimiz için konumdan ipucu
-  üretilebilir. PA modunda `Lexical` referansı yansıtıyor → ne söylendiği için düz çağrı
-  ayrı gerekiyor.
-
-## Kırpma ölçümü (`lib/vad`)
-
-6 sn'lik üretim benzeri pencere (1,5 sn sessizlik + kelime + 2,5 sn, −38 dBFS gürültü):
-
-| kelime | pencere | kırpılmış | gönderilen |
-|---|---|---|---|
-| die Katze | 0,88 | 0,90 | 5,6 s → 1,1 s |
-| der Weg | 0,88 (temizde "der" 0,63) | 0,92 | 5,5 s → 0,9 s |
-| der Kühlschrank | 0,85 | 0,85 | 5,9 s → 1,3 s |
-| mindestens | 0,89 | 0,95 | 5,8 s → 1,3 s |
-| der Großvater | 0,85 | 0,90 | 5,9 s → 1,4 s |
-
-Toplam 34,4 → 6,9 s (%80). Sessiz pencere hiç gönderilmiyor. Kota: ~27 s/yürüyüş → 5 saat
-≈ **660 yürüyüş/ay** (eskiden ~110 s/yürüyüş → 163).
-
-## Uygulanan tasarım (commit'ler 2026-08-27)
-
-1. `lib/stt.ts`, `chat-providers.ts`: `SttMode` — `walk` (gizli sayfa): Azure → Deepgram →
-   Whisper'lar; `default`: değişmedi, Azure yok. Aylık Azure saniyesi `ai_usage`'dan, 4,5 sa
-   tavan (`AZURE_STT_MONTHLY_SECONDS`).
-2. `pocket-mic.ts` + `lib/vad.ts`: PCM üstünde konuşma bölgesi, yalnız o parça gidiyor,
-   sessizde istek yok; kesilemeyen ama sesli pencere bütünüyle gidiyor (yanlış ret yanlış
-   kabulden kötü). Zincir kipi görünürlükten seçiliyor; iptal edilebilir kayıt/istek.
-3. `walk-player.tsx`, `use-listen.ts`: görünürken yalnız tanıyıcı (vazgeçme yok, sessizlik
-   7 sn, yalnız ölü kodlarda bırakma ve sesle bildirme; o hâlde bile `default` kip);
-   dinlemede kapanma → soru tekrar okunup cep yolu; açılınca süren kayıt bekleniyor;
-   `walk_listen`/`walk_switch`; `?diag=1`; unmount'ta `walk_end`.
-4. `test:walk` senaryoları: `visible-only` (ekran açık, sunucuya sıfır istek), `switch`
-   (kapan → kayıt gider, aç → bir daha gitmez, tur sürer); `test:vad`.
-
-## v2 (aynı gün): tutulan mikrofon tanıyıcıyı öldürüyor
-
-İlk sürüm deploy edildi; sahip "ekran açıkken sürekli duyamadım, TTS oyunlardaki gibi değil,
-mikrofon açıldı işareti bazen gelmiyor" dedi. `walk_listen` verisi (17:00–17:02, iki deneme):
-
-```
-17:00:25 browser:end   17:00:39 browser:end   17:00:53 browser:end   → walk_end 3
-17:01:30 browser:end   17:01:44 browser:end   17:01:58 browser:end   → walk_end 3
-```
-
-Altı dinlemenin altısı `end`: tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan
-kapanıyor. Aynı kod sahte tanıyıcıyla (`demo-u`, test koşumu) `browser:ok`. Konuşmalarla tek
-fark: yürüyüş oturum başında mikrofon akışını tutuyordu (parçaları kapalı). Android eşzamanlı
-kayıt kuralı — sesi üstteki uygulama alır, öteki sessizlik — tanıyıcı servisini sağır
-bırakıyor; aynı akış Bluetooth'ta çıkışı SCO'ya düşürüp okumayı bozuyor (TTS şikâyeti).
-Okumanın diğer yarısı: yürüyüş ses-öğesi zincirini, oyunlar boşluksuz WebAudio yolunu
-kullanıyordu.
-
-Karar: **ekranda kip konuşmayla birebir aynı** (mikrofon tutulmaz, sessiz döngü çalmaz, okuma
-oyunların yolundan, işaret konuşmanın işareti). Cep yolu **"Cebe koy"** ile: mikrofon ve sessiz
-döngü dokunuşun içinde kuruluyor (mikrofon kilitli ekranda istenemiyor — tek izinli an bu),
-ekran kapanınca kayıt; ekran açıkken cepte kipinde dinlenmiyor (30 sn'de kapanmazsa ekran
-kipi), ekran açılınca kendiliğinden ekran kipi. Ekran kipinde ekran kapanırsa tur durup
-çaresini söylüyor. Bedeli: otomatik geçiş yok — platform kısıtıyla (kilitli ekranda mikrofon)
-cihaz kısıtı (tutulan mikrofon tanıyıcıyı öldürüyor) birlikte başka çıkış bırakmıyor.
-
-Bulunan ikinci hata: düğmeden doğrudan `say` çağırmak döngünün okumasını iptal edip döngüyü 30
-sn'lik tavana kadar asıyordu (harness: 1,3 → 31,3 sn); duyuruyu döngü kendi sırasında okuyor.
-
-## v3 (aynı gün): kilitli ekranda klip WAV'a çevrilemiyordu
-
-v2 deploy edildi; "Cebe koy → ekranı kapat → hiçbirini duymadı." `ai_usage`/`walk_listen`:
-
-```
-azure ok  "die Verfügung"→"die verrü" 0.50   (ekran daha açıkken, WAV gitti)
-azure/deepgram/groq/cloudflare/speechmatics/mistral ERR 400  ×3 tur
-  azure: "desteklenmeyen biçim audio/webm;codecs=opus"
-  ötekiler: "corrupted / could not decode / invalid audio"
-walk_listen: stt:silent ×3 (bir tur), stt:network ×3 (öbür tur)
-```
-
-Kök neden: `transcribe` klibi `decodePcm` ile WAV'a çeviriyor; `new AudioContext()`
-kilitli ekranda **suspended** başlıyor ve o bağlamda `decodeAudioData` çözmüyor. Ekran
-kapanır kapanmaz her klip ham webm gidiyor; Azure webm almıyor, halka-tampon dilimi
-ötekilerde bozuk sayılıyor. Ekran açıkken çözülen tek klip (`die Verfügung`) duyulmuştu.
-
-Düzeltme: `decodePcm` baştan sona **OfflineAudioContext** ile (donanıma bağlı değil, render
-güdümlü; kilitli ekranda çözer). Ayrıca gözlem: `silent` (çözüldü, konuşma yok) ile `decode`
-(çözülemedi) ayrı sebepler; `silent`te klibin tepe-dB'si de kaydediliyor (`walk_listen` kind,
-`?diag=1` satırı) — gerçekten sessiz mi yoksa VAD mi kaçırdı, gerçek veride ayrılsın. TTS:
-okuma yolu artık kipe değil GÖRÜNÜRLÜĞE bağlı — cepte kipinde ekran açıkken de oyunların
-boşluksuz WebAudio yolu (armed'ken erken ses-öğesine geçmiyor).
-
-> Uyarı: OfflineAudioContext'in kilitli ekranda çözdüğü en iyi bahis ama gerçek cihazda
-> doğrulanmadı. Deploy sonrası `walk_listen`'da hâlâ `stt:decode` görülürse Plan B: cevap
-> başına tek `MediaRecorder` (oneShotClip) ile geçerli webm üretip Deepgram'a göndermek
-> (kalkış gecikmeli ama çözülebilir dosya).
-
-## v4 (aynı gün): client decode kilitli ekranda imkânsız — webm + Deepgram
-
-v3 (OfflineAudioContext) de sahada düştü: `walk_listen` hâlâ `stt:decode` ×N, `ai_usage`'da
-karşılık YOK (istek hiç gitmedi — client çözemedi). Yani `OfflineAudioContext.startRendering`
-de kilitli ekranda ilerlemiyor; ekran AÇIKKEN çözülen klipler (`die richtung` 0.89) Azure'a
-gidip duyuldu, kapalıyken hiçbiri. **Sonuç: istemcide ses çözme/WAV'a çevirme kilitli ekranda
-yapılamaz — o yol tamamen bırakıldı.**
-
-Yeni tasarım: cep yolu her cevap için stream'den TEK `MediaRecorder` açıp parçaları baştan
-sona kesintisiz birleştiriyor (`recordFreshClip`) — **geçerli webm/opus**. Sunucu ham çözüyor;
-istemcide decode/VAD yok. Zincir `walk`: **Deepgram önde** (webm native, başı-kesikte
-uydurmuyor, boş dönüyor), sonra Groq/Cloudflare/Speechmatics/Mistral. Azure kısa-ses ucu webm
-almadığı için (yalnız WAV/OGG) STT zincirinden çıktı — yalnız TTS yedeği kaldı; `azure()`
-adaptörü ve kota emniyeti kodda duruyor ama seçilmiyor (ileride telaffuz kartı WAV verirse).
-
-Bedeller: (1) ön-pay yok — kalkış gecikmesi küçük (stream açık, yalnız kaydedici taze) ama
-kelimenin ilk ~50 ms'i kaçabilir; Deepgram başı hafif kesikte çözer, çok kesikse boş döner
-("duyamadım", ceza yok). (2) VAD kırpma yok — klip 1–4 sn Deepgram'a gider (kredi bol);
-konuşma bitişi yine bayt boyutundan (kilitli ekranda çalışan tek ölçüt). (3) Azure'un
-dürüstlük/güven avantajı gitti ama Deepgram de dürüst (ölçüldü: başı-kesik → boş).
-
-Ayrıca: ekran açık turlar arası ~0,55 sn nefes ("aşırı hızlı" geçiş). Ve bir kullanıcı
-(Samet) yürürken modunda idx=19'da yarım turda takılıp resume loop'una girmişti — üretimde
-yalnız o `session_state` satırı silindi (kalıcı ilerleme user_words/reviews'te durdu).
-
-## v5 (aynı gün): geçerli webm sessizdi — ekran kapalıyken yeni kayıt başlamıyor
-
-v4 webm geçerliliğini çözdü (Deepgram artık 400 değil **200 ok**) ama klip SESSİZ:
-`walk_listen` `deepgram:empty` ×N, `ai_usage`'da `deepgram ok heard="" conf=0`. Bitiş algısı
-hiç konuşma bulamadı (maxMs'e kadar). Yani cepte kipinde ekran kapalıyken mikrofon ses
-vermiyordu. Sebep: `recordFreshClip` her cevap için ekran KAPALIYKEN taze `MediaRecorder`
-başlatıyordu; Android arka planda yeni `AudioRecord`'u sessiz geçiyor. Kanıt: v1–v3'ün sürekli
-kaydedicisi (ekran açıkken başlamış) ekran kapalıyken SESLİ klip veriyordu (400'ler "bozuk
-format"tı, "ses yok" değil) — fark, kaydın ne zaman başladığı.
-
-Düzeltme (`recordAnswerClip`): kaydedici "Cebe koy" anında (ekran açık) başlatılıp AÇIK
-tutuluyor; her cevap ondan kesiliyor. Geçerlilik için geriye yürüme YOK — cevap başında tampon
-sıfırlanıp başlık + ardışık küme(ler) kesintisiz gidiyor. Böylece iki gerçek birleşti: sürekli
-kaydedici (arka planda ses) + kesintisiz kesme (geçerli webm). Konuşma bitişi yine bayt
-boyutundan (kilitli ekranda çalışan tek ölçüt).
-
-## v6 — CİHAZ TESTİ: kök neden HyperOS, kodla aşılamaz (2026-08-28)
-
-Kullanıcının telefonuna adb (wireless) ile bağlanıp bizzat test edildi. Cihaz: **Xiaomi Redmi
-Note 13 Pro+ (2312FPCA6G, emerald), Android 16, HyperOS 3.0, Chrome 151**, PWA WebAPK olarak
-yüklü. Gerçek test (Cebe koy → ekran kapat → konuş): cep yolu ÇALIŞTI (`armed`, `browser:aborted`
-geçişi, 3× kayıt), ama 3 klibin de 5 sağlayıcıya gidip hepsi **400** verdi (`stt:network`,
-boş/bozuk klip). Sebep logcat'te, ekran kapalı olduğu SÜRECE 12 kez tekrar:
-
-```
-whetstone.activity: notifyMuteAudioInNeed uid is 10180 (Chrome), mScreenOnOff = false, status 0
-AwareResourceControl: noteMuteAudioInNeed uid=10180 status=0 mCloundAudioEnable=true
-```
-
-**HyperOS'un güç yöneticisi (`whetstone` / `AwareResourceControl`), ekran kapanır kapanmaz
-(`mScreenOnOff=false`) Chrome'u (uid 10180) sistem düzeyinde susturuyor** — mikrofon ve arka
-plan sesi. Ayrıca `appops` `RECORD_AUDIO` UID modu **`foreground`** (arka planda mikrofon yok),
-appops ile `allow` yapmak bile UID modunu değiştirmedi. İki katman birden: Android'in
-mikrofon-foreground zorlaması + HyperOS'un Aware audio mute'u.
-
-**Sonuç: PWA'da ekran kapalıyken mikrofon bu cihazda kodla ÇALIŞTIRILAMAZ.** recordFreshClip →
-recordAnswerClip → webm/Deepgram zincirinin hepsi doğruydu ama hepsinin altında ses fiziksel
-olarak kesiliyordu; v1–v5'in sırayla düşme sebebi buydu. Bu, en baştaki platform notunun
-(README: "ekran kapalıyken arka planda konuşma tanıma yok") HyperOS'ta daha da sert hâli.
-
-Çözüm yolları (hiçbiri kodla "ekran kapalı"yı çözmez):
-1. **Ekranı KAPATMA — karanlık ama açık ekran (cep kilidi).** HyperOS mute yalnız
-   `mScreenOnOff=false`'ta tetikleniyor; ekran açıksa yok. Ekranı simsiyah + wake lock ile
-   açık tutup Web Speech'i (ekran açık kipi, kaliteli) cepte kullanmak — tek garantili yol.
-   Ekran kilidiyle (Screen Wake Lock) ekran açık kalır; güç tuşuna basılmazsa mute yok.
-2. **HyperOS ayarı (garanti değil):** Lernomi/Chrome → pil "Kısıtlama yok"; Geliştirici
-   seçenekleri → "MIUI optimizasyonu"nu kapat (`whetstone`/Aware gevşeyebilir). Kullanıcıya
-   bağlı, taşınabilir değil.
-3. Kabul: cep yolu yalnız mikrofonu kesmeyen cihazlarda (stok Android, bazı OEM'ler) çalışır;
-   HyperOS/MIUI'de ekran kapalı desteklenmez, ekran açık kipi kullanılır.
-
-Sahibin kararı (2026-08-28): "bu hep vardı, sonra düzeltilebilir" — cep yolu ekran-kapalı
-şimdilik açık bırakıldı. Ekran açık kipi kusursuz çalışıyor.
-
-## v7 — "Karanlık ama açık ekran" (cep kilidi) uygulandı, cihazda denenecek
-
-Sahibin isteğiyle 1. çözüm kuruldu. "Cebe koy · ekranı karart" düğmesi (`darken`): ekranın
-üstüne tam ekran siyah bir katman koyuyor (`screenDark`), tüm dokunmaları yutuyor (cepte
-kazara basılmasın), çıkış için 1,2 sn'de üç dokunuş. Wake lock tur başında zaten alınıyor;
-ekran teknik olarak AÇIK kalıyor (`mScreenOnOff=true`) → HyperOS'un ekran-kapanınca-sustur
-davranışına hiç girilmiyor → tarayıcının kendi tanıyıcısı (ekrandaki kusursuz yol) cepte de
-çalışıyor. Kayıt/sunucu (arm) yolu bu modda KULLANILMIYOR — ekran açık, Web Speech yeter.
-
-Düğme yalnız tanıyıcı olan tarayıcıda çıkıyor (sunucu STT şartı kalktı). Güç tuşuyla gerçek
-kapatma yine "tur durur, çaresini söyler" (o an mikrofon susar). Eski arm/recordAnswerClip/
-cep-kayıt kodu ölü kaldı (silinmedi; stok Android gibi mikrofonu kesmeyen cihazlar için
-ileride, ya da temizlik commit'inde).
-
-> Cihazda doğrulanacak: "Cebe koy · ekranı karart" → cebe koy → konuş → tanıyor mu.
-> logcat'te ekran açık kaldığı sürece `notifyMuteAudioInNeed ... mScreenOnOff=false` GÖRÜNMEMELİ
-> (ekran açık); `walk_listen` `browser:ok` gelmeli. `test:walk`ın cep-kayıt senaryoları
-> (`switch`/`ok`) bu değişiklikle eskidi — karart moduna göre güncellenecek (ayrı iş).
-
-## v8 — sayaç, gecikmeli ses, teslim, noktalama (2026-08-28)
-
-Cihaz testinden sonra sahibin sıraladığı dört kusur; hepsi kod tarafı, ses yolu değişmedi.
-
-1. **"20 soracak ama 15'te bitiyor."** Ekran tur kuyruğu bir kelimeyi birden çok OYUNDA
-   kullanıyor (scramble/cloze/listen ayrı beceri); yürüyüşte hepsi "Almancasını söyle"ye
-   iniyor ve aynı kelime tekrar geliyordu. Eskiden döngü çalışırken atlanıyordu (`askedIds`
-   `continue`) → sayaç 20 der, 15'te biter. Artık YÜKLEMEDE benzersizleştiriliyor
-   (`walkQueue`, walk-player.tsx): sayaç baştan doğru ("1/15"). Turlar arası tekrar zaten
-   SUNUCUDA `?skip=` ile eleniyor (`fetchSession`), o yüzden `askedIds.add` duruyor ama
-   çalışma-anı atlaması kalktı.
-
-2. **Bitir'e basınca gecikmeli ses.** "Devam edelim mi?" okuması ağ yolundayken Bitir'e
-   basılıp ana ekrana dönülüyor, sonra ses ORADA çalıyordu. Kök neden: her `speakSegments`
-   yeni bir jeton alıyor, yani eski `stopSpeaking`'in jeton artışı SONRAKİ `say`i durdurmuyor.
-   `say` artık `ended.current` iken hiç başlamıyor + `askContinue` ikinci denemeye `ended`
-   iken geçmiyor.
-
-3. **"bilmiyorum/bilemedim" anlaşılmıyor.** Tanıyıcı de-DE kipinde; Türkçe teslim ifadesi
-   Almancaya bozuluyor. Gerçek çift-dil ikinci bir tanıyıcı ister (yapıyı bozar, sahibin şartı
-   "bozmazsa"). Yapıyı bozmadan yapılan: `parseSkip` artık TÜM n-best'i tarıyor (ilk tahmin
-   bozuksa alt tahminde Türkçesi durabiliyor) ve teslim de dinlemeyi erken kapatıyor. Kalan
-   boşluk veri işi: `?diag=1` ham metni gösteriyor, gerçek de-DE biçimleri gelince tam
-   eklenecek. Spekülatif Almanca parça EKLENMEDİ (gerçek cevaba yanlış-teslim riski).
-
-4. **"der Punkt diyorum, 'da' duyuyor" + sayılar.** Almanca tanıyıcı sözlü noktalama ADINI
-   simgeye çeviriyor ("Punkt"→"."), simge de `normalize`'de siliniyordu → "der Punkt" (nokta,
-   B1 sözlük kelimesi id 2528) hiç eşleşmiyordu. `expandPunctuationWords` simgeyi geri sözcüğe
-   açıyor, `spokenMatches`'te YALNIZ tam-eşleşme olarak ek okuma (asıl okuma önce; "Hund."→
-   "hund punkt" içinde "punkt" geçip yanlış doğru saymasın diye tam-eşleşme şart). Sayılar
-   zaten `foldNumbers` ile iki yönlü katlı (yalın sayı sözlük kelimesi yok; test:numbers).
-   Not: saf akustik yanılma ("da", hiçbir alternatifte simge/kelime yoksa) kodla çözülemez.
-
-Testler: `test:numbers`e noktalama vakaları eklendi. tsc + build yeşil.
-
-## v9 — sunucu-tarafı temiz kuyruk + sıra + Almanca teslim (2026-08-28)
-
-Sahip "en baştan tek oyuna odaklan mantığıyla kurgula" dedi. Kök neden ikiliydi:
-yürüyüş **karışık SRS oturumunu** çekiyordu (tanıtım+üretim+assist+eşleştirme → "10 yeni
-kelime = 30 tur"), ÜSTELİK normal oturumla **aynı `session_state` satırını** paylaşıp
-birbirini eziyordu (eski resume-loop bugu da buydu). Dört düzeltme:
-
-1. **Sunucu kuyruğu (`buildWalk`, session.ts + `?walk=1`).** Yürüyüşe özel, tek oyunlu
-   (`speak`), TAM `ROUNDS_PER_SESSION` (20), kelime başına tek tur, tekrar tabanı + arada
-   `WALK_NEW=3` yeni kelime (her biri intro+speak çifti). Aşım yok, atlama yok, kopya yok.
-   Saf diziliş `composeWalk` olarak ayrıldı → `npm run test:walkqueue` (tam-boyut/aşım/
-   yeni-kullanıcı/ince/sınır). Yeni `speak` Round tipi eklendi (types.ts) — sıfır blast
-   radius (GameSwitch onu render etmiyor, yalnız yürüyüş üretip tüketiyor).
-2. **İzole durum.** `buildWalk` `session_state`'e HİÇ dokunmuyor; client artık `progress`
-   GÖNDERMİYOR (yollasa `/api/answers` → `saveSessionProgress` normal turu ezerdi). Cevapsız
-   adım (intro) hiçbir şey yollamıyor. SRS `/api/answers` ile yürüyor; cevaplanan kelime
-   ileri gittiği için sonraki yürüyüşte gelmiyor, aynı yürüyüşte `?skip=` tutuyor. Client
-   `walkQueue` benzersizleştirmesi silindi (sunucu zaten temiz).
-3. **Sıra düzeltmesi.** "Cebe koy, başla"da cep anonsu artık SIRADAKİ kelimeden ÖNCE
-   (`pocketPreroll` + döngü başı), eskiden `announce` bir sonraki `hearOnce`'ta yani
-   kelimeden SONRA okunuyordu ("önce kelime, sonra cebe konuldu" bug'ı).
-4. **Almanca teslim (sahip kararı).** de-DE tanıyıcı Türkçe "bilmiyorum"u yakalayamıyor
-   (Türkçe→Almanca fonem çöpü, öngörülemez). Sahip "sadece Almanca kelime" seçti: `parseSkipDe`
-   ("weiter", "weiß nicht", "keine Ahnung"). Teslim yalnız cevap hedefe UYMADIĞINDA aranıyor
-   (hedef "weiter" olsa bile doğru cevap teslim sayılmasın). Girişte bir kez "Bilmediğinde
-   'weiter' de" okunuyor. Türkçe `parseSkip` kaldırıldı.
-
-tsc + build + test:walkqueue + test:numbers yeşil. Deploy sahipte.
+## Teslim
+Cevabı bilmeyen "weiter", "weiß nicht" ya da "keine Ahnung" der (`parseSkipDe`, `lib/voice-intent.ts`,
+mobil `voiceMatch.ts`); yalnız cevap hedefe uymadığında aranır. Girişte bir kez okunur.
 
 ## Açık kalanlar
-- Küçük UX: 3. duyulmamada tur durunca son "duyamadım" anonsu, durma anonsuyla çakışıp
-  kesiliyor (stopAll okumayı iptal ediyor). Sahibin notu; ertelendi.
-- recordAnswerClip mikrofonu KESMEYEN bir cihazda (stok Android) doğrulanmadı; teoride doğru.
-- Deepgram kredisi biterse Groq'a düşer; `report:providers` ile izlenmeli.
-- Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilecek.
-- 2026-09-17: ölü cep yolu kaldırıldı — `arm`/`toPocket` (mikrofon + sürekli kayıt +
-  sessiz döngü/MediaSession + ekranın kapanmasını bekleme), halka tampon (`recordClip`,
-  `oneShotClip`, `deactivateMic`), `lib/vad` + `test:vad`, `walk_capture` olayı ve
-  `test:walk`ın ekranı kapatan senaryoları. Kalan: "Cebe koy" = karartma (`darken`, ekran
-  açık, tarayıcı tanıyıcısı); kayıt + `/api/stt` yolu (`recordAnswerClip` + `transcribe`)
-  YALNIZ tanıyıcısı olmayan ya da oturumda tanıyıcısı ölen tarayıcı için. Premium ve rıza
-  kapısının sesli söylenmesi o yolda duruyor: `/api/stt` sınav bağlamı olmayan her isteği
-  premium kapısına sokuyor.
-- Cepte de Web Speech istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş; ekran
-  kipinde ekran kilidi zaten ekranı açık tutuyor, ekranı kapatmadan cebe koymak bugün çalışır.
-- Bluetooth'ta cepte kipinin okuması SCO yüzünden telefon kalitesinde olabilir; girişi telefon
-  mikrofonuna sabitlemek bunu çözer ama kumaş arkasından dinler — sahibin tercihi.
+- 3. duyulmamada tur dururken son "duyamadım" anonsu durma anonsuyla çakışıyor (ertelendi).
+- `recordAnswerClip` mikrofonu kesmeyen stok Android'de doğrulanmadı.
+- Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilmedi.
+- Bluetooth'ta cepte okuma SCO yüzünden telefon kalitesine düşebilir.

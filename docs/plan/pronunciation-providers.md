@@ -1,115 +1,73 @@
-# Telaffuz puanlama — sağlayıcı taraması ve karar (WP-20)
+# Telaffuz ve STT sağlayıcıları (WP-20)
 
-Tarih: 2026-08-26. Kısıt (o gün): **Azure yok**. Amaç: ücretsiz ya da kalıcı geniş katmanlı,
-Almanca destekli, kelime (ve mümkünse fonem) düzeyinde telaffuz geri bildirimi.
+## Karar
+Almanca için fonem düzeyinde puan veren **ücretsiz** bir API yok (Speechace Almanca desteklemiyor,
+SpeechSuper aylık 20 $ taban, ELSA ücretli). Bu yüzden:
 
-> **Güncelleme (2026-08-27):** Azure hesabı açıldı (F0, `germanywestcentral`). Azure'un
-> telaffuz puanı Almanca'da karışan çiftleri ayırıyor ama temiz seste bile kelime puanı 44–100
-> dalgalanıyor ve fonem sembolleri boş dönüyor; WP-20'ye bağlanmadan önce gerçek kayıtlarla
-> kalibrasyon şart. Ölçümler `walk-stt.md`'de. Aşağıdaki faz 1 kararı (Groq + kendi puanlama)
-> ekranlı yollarda yürürlükte; Azure yalnız yürürken modunun ekran kapalı yolunda.
+1. **Kelime düzeyi puan, kendi hesabımız.** STT transkripti (kelime zaman damgalı) hedef cümleyle
+   hizalanır (`lib/sentence-match`): kelime doğru/yakın/eksik, akıcılık süre ve duraklamadan,
+   `confusions` ile ses ipucu. `overall = 0,6·kelime + 0,25·bütünlük + 0,15·akıcılık`, geçme ≥ 80
+   (`lib/pronounce.ts`, `PASS_SCORE`). Kart bunun "anlaşıldı mı" ölçüsü olduğunu, fonem notu
+   olmadığını söyler.
+2. **Fonem düzeyi (faz 2, isteğe bağlı):** `facebook/wav2vec2-xlsr-53-espeak-cv-ft` bir Hugging Face
+   Space'te + espeak-ng hizalaması. Yapılmadı.
+3. **Azure telaffuz puanı** karışan çiftleri ayırıyor (schön 100 ↔ schon 54) ama temiz TTS'te bile
+   kelime puanı 44–100 dalgalanıyor ve fonem sembolü boş dönüyor. Bağlı değil; bağlanacaksa önce gerçek
+   kayıtla kalibrasyon. Azure bugün yalnız yürüyüş modunun cep yolunda STT (bkz. `walk-stt.md`).
 
-## Özet karar
+## Zincirler (`lib/chat-providers.ts` `sttProviders`, `lib/stt.ts`)
 
-Almanca için **fonem düzeyinde puan veren ve gerçekten ücretsiz** bir API yok: Speechace Almanca
-desteklemiyor; SpeechSuper Almanca destekliyor ama aylık 20 $ taban; ELSA ücretli. Bu yüzden:
+| Kip | Sıra | Kullanan |
+|---|---|---|
+| `default` | Groq → Cloudflare Workers AI → Speechmatics → Deepgram | `/api/pronounce`, `/api/stt` ekranlı yollar |
+| `walk` | Azure → Deepgram → Groq → Cloudflare → Speechmatics | mobil cep yolu |
 
-1. **Şimdi (WP-20 faz 1): Groq Whisper (large-v3-turbo) + kendi kelime puanlama.**
-   Ücretsiz katman günde 28 800 saniye ses (= 8 saat/gün), saatte 7 200 sn, 2 000 istek/gün;
-   kelime zaman damgaları veriyor. Anahtar zaten `.env`'de (`GROQ_API_KEY`). Puan: hedef cümle ↔
-   transkript kelime hizalaması (WP-10 `matchSentence`) → kelime başına doğru/yanlış/eksik, süre ve
-   duraklamalardan akıcılık, `confusions` ile ses ipucu. Kelime ısı haritası buradan çıkar.
-2. **Yedekler:** Cloudflare Workers AI Whisper (10 000 neuron/gün ≈ 214 dk/gün, kalıcı), Speechmatics
-   (8 saat/ay, kalıcı); tek seferlik krediler: Gladia 50 € (≈ 80 saat), Deepgram 200 $ (≈ 430 saat).
-   Kota ölçümü: `docs/plan/stt-capacity.md` (`npm run report:stt`).
-3. **İsteğe bağlı (faz 2, fonem düzeyi, ücretsiz ama mühendislik ister):** açık kaynak
-   `facebook/wav2vec2-xlsr-53-espeak-cv-ft` (çok dilli fonem tanıma, Almanca dâhil) ücretsiz bir
-   Hugging Face Space'te (CPU) çalıştırılır; hedef cümle espeak-ng ile fonemlere çevrilir, tanınan
-   fonem dizisiyle hizalanır (GOP benzeri) → fonem/kelime puanı. Tahmini iş: 3–4 gün; gecikme
-   CPU'da 15 sn ses için ~3–6 sn; Space uykuya girince ilk istek ~1 dk.
+Her sağlayıcı çağrısı 8 sn tavanlı; 429'da hemen sıradakine geçilir. Her deneme `ai_usage`a yazılır;
+ses saklanmaz. Mistral ses zincirinden çıkarıldı (girdiyi 30 gün saklıyor). Kota modeli:
+`stt-capacity.md` (`npm run report:stt`).
 
-Tarayıcı `SpeechRecognition` (mevcut) her durumda son yedek: ücretsiz, sınırsız, yalnız tanındı/tanınmadı.
+## Env
 
-## Karşılaştırma tablosu
+| Env | Ne |
+|---|---|
+| `GROQ_API_KEY` | birincil hat |
+| `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_AI_TOKEN` | ikinci hat (Workers AI, "Read" jetonu) |
+| `SPEECHMATICS_API_KEY`, `DEEPGRAM_API_KEY` | isteğe bağlı yedekler |
+| `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION` | yalnız `walk`; ayrıca TTS yedeği |
+| `AZURE_STT_MONTHLY_SECONDS` | Azure aylık tavanı, boş = 16.200 sn |
+| `GROQ_STT_MODEL`, `CLOUDFLARE_STT_MODEL`, `DEEPGRAM_STT_MODEL`, `SPEECHMATICS_URL` | varsayılanı değiştirmek için |
+| `STT_ORDER` | sırayı ezer, ör. `"cloudflare,groq"`; Azure'u ekranlı yola sokamaz |
 
-| Sağlayıcı | Ne verir | Almanca | Ücretsiz katman | Kalıcı mı | Notlar |
-| --- | --- | --- | --- | --- | --- |
-| **Groq Whisper large-v3(-turbo)** | transkript + kelime zaman damgası | ✓ | 20 RPM, 2 000 istek/gün, 7 200 sn/saat, 28 800 sn/gün | ✓ (aylık sıfırlanan değil, günlük) | fonem yok; kelime puanı bizde. Anahtar var. |
-| Gladia | transkript + kelime güveni/zaman | ✓ | **50 € tek seferlik kredi (≈ 80 saat)** — aylık ücretsiz plan YOK (pricing sayfası, 2026-08) | ✗ yenilenmez | sonrası ~0,61 $/saat; eşzamanlılık 25 async |
-| Speechmatics | transkript + kelime güveni | ✓ | 480 dk/ay, 2 eşzamanlı gerçek zamanlı, kart yok | ✓ | sonrası ücretli |
-| Cloudflare Workers AI (Whisper) | transkript (+zaman) | ✓ | 10 000 neuron/gün (tüm modellerle ortak) | ✓ | Worker gerekir; Vercel'den çağrılabilir |
-| Deepgram Nova | transkript + kelime güveni/zaman | ✓ | 200 $ kredi, süresiz, kart yok | ✗ (tek seferlik) | ~430 saat; `/api/stt` zaten destekliyor |
-| Google Cloud STT | transkript + kelime güveni | ✓ | 60 dk/ay (+300 $ 90 gün) | ✓ ama küçük | fonem yok |
-| Mistral Voxtral | transkript | ✓ | ücretsiz katman belirsiz (0,003 $/dk) | — | açık ağırlık; kendi sunucun gerekir |
-| Hugging Face Inference Providers | model çağrısı | ✓ | 0,10 $/ay kredi | ✓ ama işe yaramaz küçük | Space kendin barındırırsan ücretsiz CPU |
-| AssemblyAI | transkript + güven | ✓ | 50 $ kredi (tek seferlik) | ✗ | fonem yok |
-| Speechace | **fonem + akıcılık + tonlama** | ✗ (EN/FR/ES) | plan başına deneme; 40 $/ay'dan | ✗ | Almanca yok — eleniyor |
-| SpeechSuper | **fonem + kelime + akıcılık + ritim** | ✓ | deneme anahtarı (miktar belirtilmiyor); 20 $/ay taban, 0,006 $/cümle | ✗ | Almanca için tek "hazır" fonem API'si, ücretli |
-| ELSA API | fonem | kısıtlı | yok (19,99 $/ay uygulama) | ✗ | eleniyor |
-| Azure Speech | fonem + prosodi | ✓ | F0 5 saat/ay | ✓ | **sahibin kararıyla dışarıda** |
-
-## Uygulama durumu (2026-08-26) ve env değerleri
-
-Faz 1 kodda: `src/lib/stt.ts` (zincir), `src/app/api/pronounce/route.ts`, `src/lib/pronounce.ts` (puan),
-`src/lib/pronounce-client.ts` (paralel kayıt, WAV), `src/components/feedback/pronounce-card.tsx`;
-söyleyiş oynatıcısı (`speaking-player.tsx`) puanı tanıyıcı kararının altına ekler ve tur puanı
-olarak `user_skills.last_score`'a yazar; `pronounce` olayı (kind = egzersiz). Uçtan uca test:
-TTS klibi → Groq → puan 100, ~300 ms; eksik yarım cümle → 52.
-
-| Env | Zorunlu | Nereden |
-| --- | --- | --- |
-| `GROQ_API_KEY` | ✓ | var |
-| `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_AI_TOKEN` | ✓ (ikinci hat) | Cloudflare dash → Account ID; My Profile → API Tokens → "Workers AI" şablonu (Read) |
-| `SPEECHMATICS_API_KEY` | isteğe bağlı | portal.speechmatics.com (8 sa/ay) |
-| `DEEPGRAM_API_KEY`, `MISTRAL_API_KEY` | isteğe bağlı | mevcut destek, krediyle |
-| `CLOUDFLARE_STT_MODEL`, `GROQ_STT_MODEL`, `SPEECHMATICS_URL` | hayır | varsayılanları değiştirmek için |
-
-Bilinen sınır: ASR dil modeli yakın sesteşleri "düzeltir" (Staat → Stadt); telaffuz hatası kelime
-düzeyinde ancak farklı bir kelimeye düştüğünde yakalanır. Fonem düzeyi faz 2.
-
-### Sağlayıcı testi (2026-08-26, gerçek anahtarlarla, TTS klibi "Ich wohne in der Stadt.")
-
-| Hat | Transkript | Kelime zamanı | Gecikme | Not |
-| --- | --- | --- | --- | --- |
-| Groq whisper-large-v3-turbo | ✓ | ✓ | 180–350 ms | birincil |
-| Cloudflare whisper-large-v3-turbo | ✓ | ✗ (akıcılık toplam süreden) | 0,8–2,2 s | Groq 401/429'da otomatik devraldı (kayıtta görüldü) |
-| Speechmatics enhanced | ✓ (noktalamasız) | ✓ | 2–3,2 s | iş oluştur + yoklama |
-| Deepgram nova-3 | ✓ (küçük harf) | ✓ | 0,35–1,2 s | kredi |
-
-Tek sağlayıcıyı denemek ya da sırayı ezmek: `STT_ORDER="cloudflare,groq"`.
-
-## Mimari (faz 1)
+## Azure hesabı
+- Speech kaynağı **F0**, bölge **`germanywestcentral`**. F0: ayda 5 saat STT, eşzamanlı 1 istek,
+  kota dolunca fatura çıkmaz, istek reddedilir.
+- Azure Cost Management'ta **1 € eşikli bütçe uyarısı** kurulu olmalı.
+- Anahtar doğrulama (200 = tamam, 401 = anahtar ya da bölge yanlış, 403 = kaynak kapalı/kota):
 
 ```
-istemci: kayıt (pocket-mic, 16 kHz, ≤15 sn)
-  → POST /api/pronounce { audio, target, level }
-  → sunucu: Groq audio/transcriptions (response_format=verbose_json, timestamp_granularities=word, language=de)
-     yedek sırası: Cloudflare Workers AI → Speechmatics → Deepgram/Gladia kredisi → tarayıcı transkripti (istemci gönderir)
-  → puanlama (saf, lib/pronounce.ts):
-       words[]: hedef kelime ↔ tanınan kelime (fold: umlaut/büyük-küçük), Levenshtein ≤1 "yakın",
-                eksik/fazla/yer değiştirmiş; confusions tablosuyla ses ipucu
-       fluency: konuşma süresi / beklenen (hece sayısı × ~0,2 sn), 0,5 sn üstü duraklama sayısı
-       completeness: tanınan hedef kelime oranı
-       overall = 0,6·kelime + 0,25·bütünlük + 0,15·akıcılık (0–100)
-  → assessments (kind: speaking, hash 24 s önbellek, günlük kota) + `pronounce` olayı
-UI: hedef cümle kelime ısı haritası (yeşil/sarı/kırmızı), kelimeye dokun → TTS + kendi kaydı;
-    ≥80 geçer, altı "tekrar dene" (2 deneme sonra "devam"); `judge: "self"` egzersizlerde kapalı.
+curl -s -o /dev/null -w "%{http_code}\n" -X POST \
+  "https://germanywestcentral.api.cognitive.microsoft.com/sts/v1.0/issueToken" \
+  -H "Ocp-Apim-Subscription-Key: $AZURE_SPEECH_KEY" -H "Content-Length: 0"
 ```
 
-Kota koruması: istemci kaydı ≤15 sn keser; sunucu kullanıcı başına günde 60 istek (assess ile aynı
-kota tablosu); 429/kota aşımında tarayıcı transkriptine düşer, kart "yaklaşık" der.
+## Bilinen sınır
+ASR dil modeli yakın sesteşleri "düzeltir" (Staat → Stadt): telaffuz hatası ancak başka bir kelimeye
+düştüğünde yakalanır.
 
-## Kaynaklar
+## Kotalar ve kaynaklar (2026-08)
 
-- Groq ücretsiz katman sınırları (Whisper): https://www.free-model.com/models/groq/whisper-large-v3-turbo/ · https://www.grizzlypeaksoftware.com/articles/p/groq-api-free-tier-limits-in-2026-what-you-actually-get-uwysd6mb · https://console.groq.com/docs/model/whisper-large-v3
-- Gladia 50 € tek seferlik kredi (aylık ücretsiz plan yok): https://www.gladia.io/pricing
-- Speechmatics 480 dk/ay: https://www.speechmatics.com/pricing · https://getpulsesignal.com/pricing/speechmatics
-- Cloudflare Workers AI 10 000 neuron/gün, Whisper: https://developers.cloudflare.com/workers-ai/models/whisper-large-v3-turbo/ · https://pricepertoken.com/endpoints/cloudflare/free
-- Deepgram 200 $ kredi: https://costbench.com/software/ai-transcription-apis/deepgram/free-plan/ · https://texttolab.com/blog/deepgram-pricing
-- Google STT 60 dk/ay: https://diyai.io/ai-tools/speech-to-text/google-cloud-speech-to-text-pricing/
-- Hugging Face Inference kredisi: https://klymentiev.com/blog/huggingface-inference-api · https://huggingface.co/docs/inference-providers/index
-- Fonem modeli: https://huggingface.co/facebook/wav2vec2-xlsr-53-espeak-cv-ft · GOP/wav2vec2 yaklaşımı: https://ar5iv.labs.arxiv.org/html/2311.07037
-- Speechace planlar ve diller: https://www.speechace.com/api-plans/
-- SpeechSuper fiyat ve Almanca: https://www.speechsuper.com/pricing.html · https://www.speechsuper.com/demo/german/index.html
-- Mistral Voxtral fiyat: https://mistral.ai/news/voxtral-transcribe-2/
-- Azure (referans, dışarıda): https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-services-quotas-and-limits
+| Sağlayıcı | Ücretsiz katman |
+|---|---|
+| Groq Whisper large-v3-turbo | 20 istek/dk, 2.000 istek/gün, 7.200 sn/saat, 28.800 sn/gün |
+| Cloudflare Workers AI Whisper | 10.000 neuron/gün (≈ 214 dk) |
+| Speechmatics | 480 dk/ay |
+| Deepgram | 200 $ tek seferlik kredi |
+| Gladia (zincirde yok) | 50 € tek seferlik kredi (≈ 80 saat) |
+| Azure Speech F0 | 5 saat/ay |
+
+- Groq: https://console.groq.com/docs/model/whisper-large-v3
+- Cloudflare: https://developers.cloudflare.com/workers-ai/models/whisper-large-v3-turbo/
+- Speechmatics: https://www.speechmatics.com/pricing · Gladia: https://www.gladia.io/pricing
+- Azure: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-services-quotas-and-limits
+- SpeechSuper: https://www.speechsuper.com/pricing.html · Speechace: https://www.speechace.com/api-plans/
+- Fonem modeli: https://huggingface.co/facebook/wav2vec2-xlsr-53-espeak-cv-ft

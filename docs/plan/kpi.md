@@ -1,40 +1,36 @@
-# Öğrenme KPI'ları (WP-00)
+# Öğrenme KPI'ları ve takip katmanı
 
-"Daha iyi öğreniyorlar mı?" sorusunun ölçülebilir hâli. Her KPI için: tanım, kaynak, hesap SQL'i, hedef. Hepsini `npm run report:learning [hafta]` haftalık tablo olarak basar (`scripts/report-learning.ts`); SQL burada betikle **aynı** tutulur — biri değişirse öteki de.
+"Daha iyi öğreniyorlar mı?" sorusunun ölçülebilir hâli. `npm run report:learning [hafta]`
+(`scripts/report-learning.ts`) sekiz KPI'yı haftalık basar; aşağıdaki SQL betikle **aynı**
+tutulur, biri değişirse öteki de. Betik aynı sorguları son N hafta süzgeciyle koşar.
 
-Haftalar Pazartesi başlar (`date_trunc('week', …)`). Sayılar hem olay hem kişi olarak verilir; yedi kişilik bir uygulamada oran tek başına yanıltıcıdır.
+Haftalar Pazartesi başlar (`date_trunc('week', …)`). Sayılar hem olay hem kişi olarak verilir;
+az kullanıcıda oran tek başına yanıltır.
 
 ## Veri kaynakları
 
-Tam envanter ve davranış olayları (ekran, süre, konuşma adımı, bildirim hunisi…): `docs/plan/80-tracking.md` (WP-80). Sözlük doğrulaması `npm run test:events`.
-
-| Kaynak | Ne taşır | Notlar |
+| Kaynak | Ne taşır | Not |
 |---|---|---|
-| `events` | ürün ve öğrenme olayları; `name` kapalı liste, `kind` kısa etiket, `value` sayı | serbest metin yok (bkz. `src/lib/events.ts`) |
-| `reviews` | her kelime cevabı: oyun, doğru/yanlış, gecikme, kalite, **hata tipi** (WP-02: `error_type`) | tur turu ölçüm buradan; `session_round` olayı bu yüzden yazılmıyor — aynı satırı iki tabloya yazmak sorguyu değil yalnız hacmi büyütürdü |
-| `daily_stats` | gün başına cevap, doğru, yeni kelime, XP, saniye | aktiflik ve tutunma |
+| `events` | ürün ve öğrenme olayları; `name` kapalı liste, `kind` kısa etiket, `value` sayı | serbest metin yok (`src/lib/events.ts`) |
+| `reviews` | her kelime cevabı: oyun, doğru/yanlış, gecikme, kalite, `error_type`, `detail` | tur ölçümü buradan; `session_round` bu yüzden yazılmıyor |
+| `daily_stats` | gün başına cevap, doğru, yeni kelime, XP, saniye | aktiflik, tutunma |
 | `user_conversations` | konuşma başına en iyi doğru, toplam, sohbet bitti mi, deneme | konuşma geçme, sohbet |
-| `user_skills` | egzersiz başına en iyi doğru/toplam, son puan (WP-01) | beceri yetkinlik hammaddesi |
-| `assessments` | AI değerlendirme sonuçları (WP-03) | yazma/konuşma puan trendi |
-
-Gizlilik: `events`'e hiçbir zaman öğrenci metni yazılmaz; yazma/konuşma içeriği yalnız `assessments`'ta durur ve KPI'lara **puan** olarak girer.
+| `user_skills` | egzersiz başına en iyi doğru/toplam, son puan | beceri yetkinliği |
+| `assessments` | AI değerlendirme sonuçları | yazma/konuşma puanı; öğrenci metni yalnız burada |
 
 ## KPI'lar
 
 ### 1. Haftalık aktif öğrenen (WAU)
-**Tanım.** O hafta en az bir cevap vermiş ya da konuşma/egzersiz bitirmiş kullanıcı sayısı.
-**Kaynak.** `daily_stats` (reviews > 0 veya xp > 0).
+O hafta en az bir cevap vermiş ya da XP kazanmış kişi. Hedef: artan; kayıtlıların ≥ %40'ı.
 ```sql
 select date_trunc('week', day)::date as week, count(distinct user_id) as wau
-from daily_stats
-where (reviews > 0 or xp > 0) and day >= current_date - 7 * :weeks
-group by 1 order by 1;
+from daily_stats where reviews > 0 or xp > 0 group by 1 order by 1;
 ```
-**Hedef.** Artan; kayıtlı kullanıcının ≥ %40'ı.
 
 ### 2. Üretim oranı
-**Tanım.** *(26 Ağu düzeltmesi: payda TUR sayar — tanıtım kartı hariç, eşleştirme turu beş cevap yazsa da 1 tur (0,2 ağırlık); eski tanım cevap sayıyordu ve pay yarı yarıya düşük görünüyordu.)* Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, sohbet). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
-**Kaynak.** `events.production_attempt` + `reviews.game`.
+Üretim turu / bütün turlar. Üretim = `PRODUCTION_GAMES` (`lib/ladder.ts`: typing, scramble, order,
+translate, speak) + `production_attempt` olayları. Tanıma turu sayılır: tanıtım kartı 0, eşleştirme
+turu beş cevap yazsa da 1 tur (0,2 ağırlık). Hedef ≥ %40. Oyun listesi `lib/ladder.ts` ile aynı tutulur.
 ```sql
 with p as (
   select date_trunc('week', day)::date as week, count(*) as n
@@ -42,72 +38,50 @@ with p as (
 r as (
   select date_trunc('week', created_at)::date as week,
          count(*) filter (where game in ('typing','scramble','order','translate','speak')) as prod,
-         count(*) filter (where game not in ('typing','scramble','order','translate','speak')) as recog
+         round(sum(case when game = 'match' then 0.2 when game = 'intro' then 0
+                        when game in ('typing','scramble','order','translate','speak') then 0 else 1 end)) as recog
   from reviews group by 1)
 select coalesce(p.week, r.week) as week,
-       coalesce(p.n,0) + coalesce(r.prod,0) as production, coalesce(r.recog,0) as recognition,
-       round(100.0 * (coalesce(p.n,0) + coalesce(r.prod,0)) / nullif(coalesce(p.n,0) + coalesce(r.prod,0) + coalesce(r.recog,0), 0)) as production_pct
+       coalesce(p.n,0) + coalesce(r.prod,0) as production, coalesce(r.recog,0) as recognition
 from p full join r on p.week = r.week order by 1;
 ```
-**Hedef.** ≥ %40 (WP-14 merdiveni); Faz 3 sonunda ≥ %45. Oyun listesi `lib/ladder.ts` ile aynı tutulur.
 
-### 3. Kullanım sınavı skoru
-**Tanım.** Haftalık kullanım sınavının (WP-42) ortalama puanı ve giren kişi sayısı. Seviye/modül sınavları ayrı satırda.
-**Kaynak.** `events.exam_finish` (`kind = '<tür>:<seviye>'`, `value = puan`).
+### 3. Sınav skorları
+`exam_finish` (`kind = '<tür>:<seviye>'`, `value` = puan). Tür `usage` = haftalık quiz (`/api/quiz`),
+öbürleri seviye/modül sınavı (`lib/exam.ts`). Hedef: haftalık quiz ortalaması ≥ 70.
 ```sql
-select date_trunc('week', day)::date as week,
-       split_part(kind, ':', 1) as exam, round(avg(value)) as avg_score,
-       count(*) as exams, count(distinct user_id) as people
+select date_trunc('week', day)::date as week, split_part(kind, ':', 1) as exam,
+       round(avg(value)) as avg_score, count(*) as exams, count(distinct user_id) as people
 from events where name = 'exam_finish' group by 1, 2 order by 1, 2;
 ```
-**Hedef.** Kullanım sınavı ortalaması ≥ 70; 4 haftada kişi başına artış.
 
-### 4. Beceri yetkinlik değişimi
-**Tanım.** Beceri × seviye başına haftalık ortalama egzersiz puanı (0–100) ve önceki haftaya göre fark. WP-50 modeli gelene kadar ham ortalama.
-**Kaynak.** `events.skill_finish` (`kind = '<beceri>:<seviye>'`, `value = puan`). Kalıcı en iyi puanlar `user_skills`'ta.
+### 4. Beceri puanları
+`skill_finish` (`kind = '<beceri>:<seviye>'`). Hedef: aktif seviyede her beceride 8 haftada ≥ +10.
 ```sql
 select date_trunc('week', day)::date as week, kind as skill_level,
        round(avg(value)) as avg_score, count(*) as finishes, count(distinct user_id) as people
 from events where name = 'skill_finish' group by 1, 2 order by 1, 2;
 ```
-**Hedef.** Aktif seviyede her beceri için 8 haftada ≥ +10 puan.
 
-### 5. Konuşma geçme oranı
-**Tanım.** O hafta çalışılan konuşmalardan geçilenlerin oranı. Geçme = sohbet bitti **ve** doğru/toplam ≥ 0,7 (`src/lib/conversations/progress.ts`).
-**Kaynak.** `user_conversations` (`last_at` haftası).
+### 5–6. Konuşma geçme ve sohbet tamamlama
+Geçme = sohbet bitti ve doğru/toplam ≥ 0,7 (`lib/conversations/progress.ts`). Hedef: geçme %60–80,
+sohbet tamamlama ≥ %85 (sağlayıcı kapalıyken de).
 ```sql
-select date_trunc('week', last_at)::date as week,
-       count(*) as conversations,
+select date_trunc('week', last_at)::date as week, count(*) as conversations,
        count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) as passed,
-       round(100.0 * count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) / count(*)) as pass_pct,
-       count(distinct user_id) as people
+       count(*) filter (where chat_done) as chat_done, count(distinct user_id) as people
 from user_conversations group by 1 order by 1;
 ```
-**Hedef.** %60–80 (çok yüksekse konuşma kolay, çok düşükse akış kırık).
-
-### 6. Sohbet tamamlama oranı
-**Tanım.** Çalışılan konuşmalarda sohbetin bitirilme oranı; AI ve senaryolu (WP-04) ayrımı `events.production_attempt kind='chat'` ile.
-**Kaynak.** `user_conversations.chat_done`.
-```sql
-select date_trunc('week', last_at)::date as week,
-       count(*) as conversations, count(*) filter (where chat_done) as chat_done,
-       round(100.0 * count(*) filter (where chat_done) / count(*)) as done_pct
-from user_conversations group by 1 order by 1;
-```
-**Hedef.** ≥ %85 (sağlayıcı kapalıyken de — WP-04).
 
 ### 7. Hata tipi dağılımı
-**Tanım.** Yanlış cevapların hata tipine göre haftalık dağılımı (WP-02 taksonomisi).
-**Kaynak.** `events.error_recorded` (`kind = ErrorType`). Kelime bazında ayrıntı `reviews.error_type`.
+`error_recorded` (`kind` = hata tipi). Hedef: toplam hata/cevap %25–40 bandında.
 ```sql
 select date_trunc('week', day)::date as week, kind as error_type, count(*) as n
 from events where name = 'error_recorded' group by 1, 2 order by 1, 3 desc;
 ```
-**Hedef.** Tek bir tipin payı 4 hafta üst üste düşmüyorsa hedefli tekrar (WP-51) devreye girer; toplam hata/cevap oranı %25–40 bandında (SRS zorluk ayarı).
 
-### 8. Tutunma (7 / 30 gün)
-**Tanım.** İlk aktif haftası W olan kullanıcıların, W+1 ve W+4 haftasında yeniden aktif olma oranı (kohort).
-**Kaynak.** `daily_stats`.
+### 8. Tutunma (1 ve 4 hafta)
+İlk aktif haftası W olanların W+1 ve W+4'te geri gelme oranı. Hedef %50 / %30.
 ```sql
 with first as (
   select user_id, date_trunc('week', min(day))::date as cohort
@@ -120,17 +94,46 @@ select f.cohort, count(*) as users,
        count(*) filter (where exists (select 1 from active a where a.user_id = f.user_id and a.week = f.cohort + 28)) as back_w4
 from first f group by 1 order by 1;
 ```
-**Hedef.** 7 gün ≥ %50, 30 gün ≥ %30.
 
-## Olay sözlüğü (öğrenme)
+## Takip katmanı
 
-| Olay | `kind` | `value` | Kim yazar |
-|---|---|---|---|
-| `production_attempt` | translate / transform / free_sentence / writing_free / speaking_drill / chat | puan 0–100 | üretim görevleri (WP-10/11/12/21/30), sohbet bitişi (WP-04) |
-| `exam_start` / `exam_finish` | `<tür>:<seviye>` (level, module, usage, placement) | finish: puan 0–100 | sınavlar (WP-40/41/42) |
-| `placement_finish` | bulunan seviye | puan 0–100 | WP-40 |
-| `error_recorded` | ErrorType | 1 | sunucu, `submitAnswers` (WP-02) |
-| `feedback_why_opened` | ErrorType | 0 | "neden?" bileşeni (WP-13/61) |
-| `skill_finish` | `<beceri>:<seviye>` | puan 0–100 | `player-shell` (WP-01) |
+### İlkeler
+- **Kapalı sözlük.** Olay adı `EVENT_NAMES`ten (`src/lib/events.ts`), `kind` `[a-z0-9_:-]{1,32}`, salt rakam reddedilir. Öğrenci metni olaya yazılmaz; içerik `assessments`ta, olayda yalnız puan.
+- **Ekran anahtarı yol değil** (`src/lib/screens.ts`): home, learn, weekly, immersion, premium, conversations, conversation, conversation_scored, skills, skill, words, profile, settings, badges, writings, exam, placement, other. Gezinme değişse de geçmiş veri kırılmaz.
+- **Analitik kapalıysa yazılmaz.** Tercih hesapta (`profiles.analytics_opt_out`); `track` her yazmada bakar. Kapalıyken yalnız hizmet için zorunlu olaylar yazılır: push_sent, push_deliver, mail_sent, client_error, session_done, placement_finish.
+- **Hesap silinince silinir.** Kullanıcının olayları `src/lib/account/purge.ts` ile gider. Onun dışında olaylar için süre sınırlı silme yok.
+- **Ölçüm akışı bozmaz.** İstemci beklemez; sunucu hata fırlatmaz.
+- **Yazılmayan olay test hatası.** `npm run test:events`: sözlükte olmayan ad, bozuk `kind`, yazan yeri olmayan olay düşürür.
 
-Kullanılmayan ad: `session_round` — `reviews` zaten oyun, doğruluk ve gecikmeyi satır satır tutuyor; aynı bilgiyi `events`'e ikinci kez yazmak yalnız hacim üretirdi. Bir gün istemcide kaydedilmeyen turlar (deneme oyunları) ölçülmek istenirse bu ad hazır.
+### Olay envanteri (72 olay)
+
+| Grup | Olaylar |
+|---|---|
+| Tur ve oyun | session_start, session_resume, stage_done, session_done, session_stop, challenge_play, boss_play, boss_clear, quest_claim, achievement_unlock, share |
+| Yürüyüş | walk_start, walk_end, walk_listen, walk_switch |
+| Öğrenme sonucu | production_attempt, exam_start, exam_finish, mock_exam_start, mock_exam_finish, placement_finish, error_recorded, feedback_why_opened, skill_finish, pronounce, srs_weight, conversation_start, conversation_step, conversation_finish |
+| Ekran ve davranış | page_view, time_spent, nav, panel_open, app_open, client_error, coach_show, tts_play, tts_fallback, search, setting_change, sound_toggle |
+| Onboarding ve misafir | onboarding_step, first_practice, first_practice_done, onboarding_existing_account, guest_start, guest_nudge, guest_upgrade |
+| Bildirim, posta, davet | notif_prime, push_optin, push_sent, push_deliver, push_open, mail_sent, install_prompt, invite_open |
+| Premium | paywall_view, premium_gate, store_redirect, purchase_start, purchase_done, trial_code_claim |
+| Sosyal | friend_request, friend_accept, reaction_send, nudge_send, quest_invite, quest_complete, feed_view, block_user, social_settings, league_up |
+
+Her olayın `kind`/`value` anlamı `events.ts`te yanında yazılı. Bilerek ölçülmeyen: `session_round`
+(`reviews` aynı satırı taşıyor), arama metni, tıklama ısı haritası, oturum kaydı. AI/STT sağlığı
+olay değil `ai_usage` tablosunda.
+
+### Raporlar
+
+| Komut | Ne basar |
+|---|---|
+| `npm run report:learning [hafta]` | 8 KPI + konuşma adımları, söyleyiş, tur türleri, öğrenme yüzeylerinde süre, AI/STT sağlığı |
+| `npm run report:events [gün]` | tur hunisi, ekranlar, katlı bölümler, onboarding, cihaz, bildirim hunisi, ayarlar |
+| `npm run report:stt` | STT kota modeli (`stt-capacity.md`) |
+| `npm run report:all` | üçü art arda |
+
+### Bakım
+1. Yeni ekran → `screens.ts`e anahtar.
+2. Yeni katlı bölüm → düğmeye `data-panel="…"`; `telemetry.tsx` kendiliğinden sayar.
+3. Yeni olay → `events.ts`e yorumuyla, yazan yer, gerekiyorsa rapora satır; `test:events` yeşil.
+4. Ekran ya da sekme adı değişirse olay adı değişmez; eşleme raporda yapılır.
+5. Analitik kapalıyken de yazılması gereken olay `OPERATIONAL` listesine gerekçesiyle girer; bu gizlilik politikasında "zorunlu kayıt" demektir.
