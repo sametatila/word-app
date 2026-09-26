@@ -928,5 +928,20 @@
   "tr": "Elimdeki kanıtla bunu ispatlayabilirim ve bu benim hakkım.",
   "kind": "say.tr",
   "de": "Mit den Belegen, die ich habe, kann ich es beweisen, und das ist mein Recht."
+ },
+ {
+  "tr": "ödemeye",
+  "kind": "say.tr",
+  "de": "die Zahlung heißt"
+ },
+ {
+  "tr": "Dosya ya da klasör için",
+  "kind": "say.tr",
+  "de": "Für Ordner oder Mappe"
+ },
+ {
+  "tr": "sunduğun kanıta",
+  "kind": "say.tr",
+  "de": "der Nachweis, den du vorlegst, heißt"
  }
 ]

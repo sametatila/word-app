@@ -5776,7 +5776,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız aktarmakla çarpıtmayı ayırıyor. Tekrar et:"
+      "text": "Son kalıbımız aktarmakla çarpıtmayı ayırıyor. Bir sözü çarpıtarak değiştirmeye, yani tahrif etmeye"
+     },
+     {
+      "lang": "en",
+      "text": "falsify"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Tekrar et:"
      },
      {
       "lang": "en",
@@ -7215,7 +7223,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız içselleştirmeyle geçersiz kılmayı ayırıyor. Tekrar et:"
+      "text": "İkinci kalıbımız içselleştirmeyle geçersiz kılmayı ayırıyor. Bir kuralı hükümsüz bırakmaya, yani geçersiz kılmaya"
+     },
+     {
+      "lang": "en",
+      "text": "invalidate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Tekrar et:"
      },
      {
       "lang": "en",

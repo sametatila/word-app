@@ -2019,7 +2019,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle:"
+      "text": "Şimdi daha uzun bir süre:"
+     },
+     {
+      "lang": "en",
+      "text": "year"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"yıl\" demek. \"Bir yıl önce\" için lütfen söyle:"
      },
      {
       "lang": "en",
@@ -23039,7 +23047,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz taşınmanın kendisi."
+      "text": "İlk kelimemiz taşınmanın kendisi:"
+     },
+     {
+      "lang": "en",
+      "text": "move"
+     },
+     {
+      "lang": "tr",
+      "text": "Taşınmak ya da taşınma demek."
      },
      {
       "lang": "en",
@@ -23047,7 +23063,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yeni bir eve yerleşmek demek. Lütfen sen de söyle:"
+      "text": "ise yeni bir eve yerleşmek demek. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -57806,6 +57822,14 @@
      {
       "lang": "tr",
       "text": "— bence, ben şöyle düşünüyorum. Arkasına düz bir cümle koyarsın, o kadar."
+     },
+     {
+      "lang": "en",
+      "text": "think"
+     },
+     {
+      "lang": "tr",
+      "text": "tek başına \"düşünmek\" demek."
      }
     ]
    },

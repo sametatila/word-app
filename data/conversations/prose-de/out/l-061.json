@@ -45,7 +45,6 @@
  { "tr": "Bir şey daha: İngilizcede bu eşyalardan bahsederken önlerine genellikle", "kind": "say.tr", "de": "Und noch etwas: im Englischen steht vor diesen Dingen meistens" },
  { "tr": "Bu üç soruyla her danışmada işini görürsün. Şimdi görevliyle konuşalım.", "kind": "say.tr", "de": "Mit diesen drei Fragen kommst du an jeder Information durch. Jetzt zum Schalter." },
  { "tr": "Bu, otelde en çok işine yarayacak cümle. Lütfen benimle birlikte söyle:", "kind": "say.tr", "de": "Das ist der nützlichste Satz im Hotel. Bitte sag ihn zusammen mit mir:" },
- { "tr": "Burada 'do' ya da 'does' kullanmıyoruz; can zaten soruyu kendi kuruyor.", "kind": "say.tr", "de": "Hier nehmen wir kein „do“ oder „does“; can baut die Frage selbst." },
  { "tr": "Çok iyiydin. Şimdi kısa bir konuşma yapalım, günün nasıl geçiyor anlat.", "kind": "say.tr", "de": "Du warst sehr gut. Machen wir ein kurzes Gespräch, erzähl deinen Tag." },
  { "tr": "Çoktan yedim. Günlük konuşmada I have yerine kısaltma kullanırız: I've.", "kind": "say.tr", "de": "Ich habe schon gegessen. Im Alltag kürzen wir I have zu I've." },
  { "tr": "dedin, kibarca istemek için Could I have kalıbını kullandın, kahvaltıyı", "kind": "say.tr", "de": "gesagt, für die höfliche Bitte Could I have genommen, nach dem Frühstück mit" },
@@ -145,5 +144,8 @@
  { "tr": "Buradaki don't, do not'ın kısası. Günlük konuşmada hep kısası kullanılır.", "kind": "say.tr", "de": "Das don't ist die Kurzform von do not. Im Alltag immer die kurze Form." },
  { "tr": "Can you da olur ama could daha resmîdir. Sonuna please koyarsan tamamdır.", "kind": "say.tr", "de": "Can you geht auch, aber could ist förmlicher. Mit please am Ende ist es perfekt." },
  { "tr": "demek yanlış değil ama biraz sert duyulur. Kuaförde, kafede, dükkânda hep", "kind": "say.tr", "de": "zu sagen ist nicht falsch, klingt aber hart. Beim Friseur, im Café, im Laden sagst du immer" },
- { "tr": "Dikkat: İngilizcede tek bir şeyden söz ederken önüne küçük bir a koyarız.", "kind": "say.tr", "de": "Achtung: bei einer einzelnen Sache kommt im Englischen ein kleines a davor." }
+ { "tr": "Dikkat: İngilizcede tek bir şeyden söz ederken önüne küçük bir a koyarız.", "kind": "say.tr", "de": "Achtung: bei einer einzelnen Sache kommt im Englischen ein kleines a davor." },
+ { "tr": "Burada 'do' ya da 'does' kullanmıyoruz; can zaten soruyu kendi kuruyor. Cümledeki", "kind": "say.tr", "de": "Hier nehmen wir kein „do“ oder „does“; can baut die Frage selbst. Das Wort" },
+ { "tr": "'yardım etmek' demek.", "kind": "say.tr", "de": "im Satz heißt „helfen“." },
+ { "tr": "tek başına \"düşünmek\" demek.", "kind": "say.tr", "de": "allein heißt „denken“." }
 ]

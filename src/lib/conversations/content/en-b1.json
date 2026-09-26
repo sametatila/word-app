@@ -9779,7 +9779,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bağlaçların yanında üç kelime de işine yarayacak:"
+      "text": "Bağlaçların yanında dört kelime de işine yarayacak:"
      },
      {
       "lang": "en",
@@ -9803,7 +9803,15 @@
      },
      {
       "lang": "tr",
-      "text": "ise neden olmak."
+      "text": "neden olmak,"
+     },
+     {
+      "lang": "en",
+      "text": "explain"
+     },
+     {
+      "lang": "tr",
+      "text": "ise açıklamak."
      }
     ]
    },
@@ -11509,6 +11517,14 @@
      {
       "lang": "en",
       "text": "material"
+     },
+     {
+      "lang": "tr",
+      "text": "üstündeki etiket için"
+     },
+     {
+      "lang": "en",
+      "text": "label"
      },
      {
       "lang": "tr",
@@ -15159,6 +15175,14 @@
      {
       "lang": "en",
       "text": "plot"
+     },
+     {
+      "lang": "tr",
+      "text": "romana"
+     },
+     {
+      "lang": "en",
+      "text": "novel"
      },
      {
       "lang": "tr",
@@ -19348,6 +19372,14 @@
      },
      {
       "lang": "tr",
+      "text": "soyadına"
+     },
+     {
+      "lang": "en",
+      "text": "last name"
+     },
+     {
+      "lang": "tr",
       "text": "istenen bilgilere ise"
      },
      {
@@ -21352,6 +21384,14 @@
      },
      {
       "lang": "tr",
+      "text": "ödemeye"
+     },
+     {
+      "lang": "en",
+      "text": "payment"
+     },
+     {
+      "lang": "tr",
       "text": "yıllık olan için ise"
      },
      {
@@ -22763,7 +22803,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
+      "text": "Dosya ya da klasör için"
+     },
+     {
+      "lang": "en",
+      "text": "folder"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
      },
      {
       "lang": "en",
@@ -23080,6 +23128,14 @@
      {
       "lang": "en",
       "text": "prove"
+     },
+     {
+      "lang": "tr",
+      "text": "sunduğun kanıta"
+     },
+     {
+      "lang": "en",
+      "text": "evidence"
      },
      {
       "lang": "tr",
@@ -23561,6 +23617,14 @@
      {
       "lang": "en",
       "text": "break"
+     },
+     {
+      "lang": "tr",
+      "text": "odaklanmaya"
+     },
+     {
+      "lang": "en",
+      "text": "concentrate"
      },
      {
       "lang": "tr",
@@ -24585,6 +24649,14 @@
      {
       "lang": "en",
       "text": "habit"
+     },
+     {
+      "lang": "tr",
+      "text": "dikkatini topladığın odağa"
+     },
+     {
+      "lang": "en",
+      "text": "focus"
      },
      {
       "lang": "tr",
@@ -26287,7 +26359,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
+      "text": "Sunmak için"
+     },
+     {
+      "lang": "en",
+      "text": "present"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
      },
      {
       "lang": "en",
@@ -27654,7 +27734,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu söyle:"
+      "text": "Hazır için"
+     },
+     {
+      "lang": "en",
+      "text": "ready"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
      },
      {
       "lang": "en",

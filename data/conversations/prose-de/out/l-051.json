@@ -120,7 +120,6 @@
  { "tr": "Yani 'then' hep cümle başında olmak zorunda değil.", "kind": "say.tr", "de": "Also muss „then“ nicht immer am Satzanfang stehen." },
  { "tr": "Yani \"işe bisikletle gidiyorum\". Lütfen tekrar et:", "kind": "say.tr", "de": "Also „ich fahre mit dem Rad zur Arbeit“. Bitte wiederhole:" },
  { "tr": "yani fazladan demek. Kiralamada ek ücret sorarken:", "kind": "say.tr", "de": ", heißt zusätzlich. Bei der Miete fragst du nach Zusatzkosten so:" },
- { "tr": "Yeni bir eve yerleşmek demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "Heißt in eine neue Wohnung einziehen. Bitte sag du auch:" },
  { "tr": "Yeni bir odadan ilk kez söz ederken a kullanırsın.", "kind": "say.tr", "de": "Wenn ein Zimmer zum ersten Mal vorkommt, nimmst du a." },
  { "tr": "Yürüyerek gidiyorsan araç yok, o yüzden by de yok.", "kind": "say.tr", "de": "Zu Fuß gibt es kein Fahrzeug, also auch kein by." },
  { "tr": "— değiştirmek demek. Lütfen benimle birlikte söyle:", "kind": "say.tr", "de": "— heißt ändern, wechseln. Bitte sag es zusammen mit mir:" },
@@ -143,5 +142,8 @@
  { "tr": "Bir kadın öğretmenden söz edelim. Lütfen tekrar et:", "kind": "say.tr", "de": "Sprechen wir von einer Lehrerin. Bitte wiederhole:" },
  { "tr": "Bir kahve istiyorum, lütfen. Lütfen tamamını söyle:", "kind": "say.tr", "de": "Ich möchte einen Kaffee, bitte. Bitte sag das Ganze:" },
  { "tr": "Bir örnek yapalım: fırın okulun yanında. Lütfen de:", "kind": "say.tr", "de": "Machen wir ein Beispiel: die Bäckerei ist neben der Schule. Bitte sag:" },
- { "tr": "Bir şeyin var olduğunu söyleyen kalıbı çalışacağız:", "kind": "say.tr", "de": "Wir üben die Wendung, die sagt, dass es etwas gibt:" }
+ { "tr": "Bir şeyin var olduğunu söyleyen kalıbı çalışacağız:", "kind": "say.tr", "de": "Wir üben die Wendung, die sagt, dass es etwas gibt:" },
+ { "tr": "İlk kelimemiz taşınmanın kendisi:", "kind": "say.tr", "de": "Unser erstes Wort ist der Umzug selbst:" },
+ { "tr": "Taşınmak ya da taşınma demek.", "kind": "say.tr", "de": "Heißt umziehen oder Umzug." },
+ { "tr": "ise yeni bir eve yerleşmek demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "dagegen heißt in eine neue Wohnung einziehen. Bitte sag du auch:" }
 ]

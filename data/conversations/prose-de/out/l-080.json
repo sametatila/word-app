@@ -525,11 +525,6 @@
   "de": "Für versprechen"
  },
  {
-  "tr": "ise neden olmak.",
-  "kind": "say.tr",
-  "de": "dagegen heißt verursachen."
- },
- {
   "tr": "kurs. Tekrar et:",
   "kind": "say.tr",
   "de": "Kurs. Sprich nach:"
@@ -810,11 +805,6 @@
   "de": "Jetzt bist du dran: Ich komme, es sei denn, es regnet."
  },
  {
-  "tr": "Bağlaçların yanında üç kelime de işine yarayacak:",
-  "kind": "say.tr",
-  "de": "Neben den Konnektoren helfen dir drei Wörter:"
- },
- {
   "tr": "Bir olayın ne zamana kadar süreceğini söylerken",
   "kind": "say.tr",
   "de": "Wenn du sagst, bis wann etwas dauert, wird"
@@ -1043,5 +1033,25 @@
   "tr": "Tarif etmenin İngilizcedeki en kısa yolu yan cümle: ismin arkasına bir cümle ekliyorsun ve o cümle hangisi olduğunu söylüyor. Hazır mısın?",
   "kind": "say.tr",
   "de": "Der kürzeste Weg zu beschreiben ist im Englischen der Nebensatz: du hängst hinter das Nomen einen Satz, und der sagt, welches gemeint ist. Bist du bereit?"
+ },
+ {
+  "tr": "Bağlaçların yanında dört kelime de işine yarayacak:",
+  "kind": "say.tr",
+  "de": "Neben den Konnektoren helfen dir vier Wörter:"
+ },
+ {
+  "tr": "neden olmak,",
+  "kind": "say.tr",
+  "de": "verursachen,"
+ },
+ {
+  "tr": "ise açıklamak.",
+  "kind": "say.tr",
+  "de": "erklären."
+ },
+ {
+  "tr": "üstündeki etiket için",
+  "kind": "say.tr",
+  "de": "für das Etikett daran"
  }
 ]

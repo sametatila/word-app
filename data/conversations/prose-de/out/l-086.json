@@ -913,5 +913,15 @@
   "tr": "Sınav kuralları ile hazırlık öğütleri farklı kalıplarla söylenir; karıştırmak öğrenciyi yanlış yönlendirir. Hazır mısın?",
   "kind": "say.tr",
   "de": "Prüfungsregeln und Vorbereitungstipps werden mit verschiedenen Wendungen gesagt; sie zu verwechseln führt Lernende in die Irre. Bist du bereit?"
+ },
+ {
+  "tr": "odaklanmaya",
+  "kind": "say.tr",
+  "de": "sich konzentrieren heißt"
+ },
+ {
+  "tr": "dikkatini topladığın odağa",
+  "kind": "say.tr",
+  "de": "der Fokus, auf den du dich konzentrierst, heißt"
  }
 ]

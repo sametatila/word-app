@@ -76,7 +76,6 @@
  { "tr": "Şimdi bir kelime: office. Ofis demek. Lütfen office de.", "kind": "say.tr", "de": "Jetzt ein Wort: office. Heißt Büro. Bitte sag office." },
  { "tr": "Şimdi bunları gerçek bir mağaza konuşmasında deneyelim.", "kind": "say.tr", "de": "Probieren wir das jetzt in einem echten Ladengespräch." },
  { "tr": "Şimdi bunu bir cümlede kullanalım. Su derin demek için:", "kind": "say.tr", "de": "Setzen wir es in einen Satz. Um zu sagen, das Wasser ist tief:" },
- { "tr": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle:", "kind": "say.tr", "de": "Jetzt eine längere Spanne. „Vor einem Jahr“. Bitte sag:" },
  { "tr": "Şimdi dünkü cümleyi sen söyle: 'Dün iki bölüm izledim.'", "kind": "say.tr", "de": "Jetzt sag du den Satz von gestern: „Gestern sah ich zwei Folgen.“" },
  { "tr": "Şimdi fiyat soralım. İngilizcede 'ne kadar' demek için", "kind": "say.tr", "de": "Jetzt der Preis. Für „wie viel“ im Englischen" },
  { "tr": "Şimdi hepsini baştan sona bir dinle. Kafeye giriyorsun:", "kind": "say.tr", "de": "Jetzt hör alles von vorn. Du gehst ins Café:" },
@@ -144,5 +143,7 @@
  { "tr": "İşte en önemli kalıp. Gişedeki görevliye şöyle dersin:", "kind": "say.tr", "de": "Das ist die wichtigste Wendung. Am Schalter sagst du so:" },
  { "tr": "Bu da anlaşılır, ama doğal olan birincisi.", "kind": "say.tr", "de": "Das versteht man auch, aber natürlich ist das erste." },
  { "tr": "İzin isterken sebep söylemek çok önemli. Sebep kelimesi:", "kind": "say.tr", "de": "Beim Bitten um freie Tage zählt der Grund. Das Wort Grund:" },
- { "tr": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek", "kind": "say.tr", "de": "Die größte Regel der Bibliothek ist die Stille. Leise heißt" }
+ { "tr": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek", "kind": "say.tr", "de": "Die größte Regel der Bibliothek ist die Stille. Leise heißt" },
+ { "tr": "Şimdi daha uzun bir süre:", "kind": "say.tr", "de": "Jetzt eine längere Spanne:" },
+ { "tr": "Türkçesi \"yıl\" demek. \"Bir yıl önce\" için lütfen söyle:", "kind": "say.tr", "de": "Auf Deutsch heißt es „Jahr“. Für „vor einem Jahr“ sag bitte:" }
 ]

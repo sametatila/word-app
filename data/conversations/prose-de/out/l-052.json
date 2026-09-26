@@ -59,7 +59,6 @@
  { "tr": "Şimdi bugünün asıl işine geçiyoruz: tavsiye vermek.", "kind": "say.tr", "de": "Jetzt zur eigentlichen Aufgabe: Rat geben." },
  { "tr": "Şimdi bunu bir cümlede duyalım. \"Domatesler taze.\":", "kind": "say.tr", "de": "Hören wir es im Satz. „Die Tomaten sind frisch.“:" },
  { "tr": "Şimdi bunu sen söyle. İstersen kendi ismini kullan.", "kind": "say.tr", "de": "Jetzt sag du das. Nimm ruhig deinen eigenen Namen." },
- { "tr": "Şimdi günün bölümleri. Üçüncü edatımız geliyor: in.", "kind": "say.tr", "de": "Jetzt die Tageszeiten. Unsere dritte Präposition: in." },
  { "tr": "Şimdi nasıl ödeyeceğini söyleyeceksin. İki yol var:", "kind": "say.tr", "de": "Jetzt sagst du, wie du zahlst. Es gibt zwei Wege:" },
  { "tr": "Şimdi nereli olduğunu söyleyelim. Anahtar kelimemiz", "kind": "say.tr", "de": "Jetzt sagen wir, woher du kommst. Unser Schlüsselwort" },
  { "tr": "Şimdi sen kur: 'Bence daha sonra karar vermeliyiz.'", "kind": "say.tr", "de": "Jetzt bildest du: „Ich finde, wir sollten später entscheiden.“" },
@@ -146,5 +145,7 @@
  { "tr": "Şimdi ilk kalıbımız. Birini tanıtırken şöyle dersin:", "kind": "say.tr", "de": "Jetzt unsere erste Wendung. Beim Vorstellen sagst du so:" },
  { "tr": "Şimdi ilk kalıbımız. Nereye gittiğini söylemek için:", "kind": "say.tr", "de": "Jetzt unsere erste Wendung. Um zu sagen, wohin du gefahren bist:" },
  { "tr": "Şimdi kahvaltıyı sor. Türkçesi: Kahvaltı saat kaçta?", "kind": "say.tr", "de": "Jetzt frag nach dem Frühstück. Auf Deutsch: Wann gibt es Frühstück?" },
- { "tr": "Şimdi sıra sende. Şoföre söyle: Havaalanına, lütfen.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag dem Fahrer: Zum Flughafen, bitte." }
+ { "tr": "Şimdi sıra sende. Şoföre söyle: Havaalanına, lütfen.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag dem Fahrer: Zum Flughafen, bitte." },
+ { "tr": "Şimdi günün bölümleri. \"Sabah\" demek:", "kind": "say.tr", "de": "Jetzt die Tageszeiten. „Morgen“ heißt:" },
+ { "tr": "Üçüncü edatımız geliyor: in.", "kind": "say.tr", "de": "Unsere dritte Präposition: in." }
 ]

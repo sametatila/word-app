@@ -375,7 +375,6 @@
  { "tr": "Paradigma neyin nedensellik sayılacağına karar veriyor.", "kind": "say.tr", "de": "Das Paradigma entscheidet, was als Kausalität gilt." },
  { "tr": "Şimdi sıra sende: Kabul, az zaman var, gerçi biraz var.", "kind": "say.tr", "de": "Jetzt bist du dran: Zugegeben, es ist wenig Zeit, wenn auch etwas." },
  { "tr": "Bir kural, bir vakanın somutlaştırdığını soyutlayabilir.", "kind": "say.tr", "de": "Eine Regel kann abstrahieren, was ein Fall verkörpert." },
- { "tr": "Son kalıbımız aktarmakla çarpıtmayı ayırıyor. Tekrar et:", "kind": "say.tr", "de": "Unsere letzte Wendung trennt Wiedergeben und Verzerren. Wiederhole:" },
  { "tr": "Bir kelimeyi kendine mal etmek onu olumsuz etkileyebilir.", "kind": "say.tr", "de": "Ein Wort zu vereinnahmen kann es beeinträchtigen." },
  { "tr": "İkinci kalıbımız beklentiyle gerçeği ayırıyor. Tekrar et:", "kind": "say.tr", "de": "Unsere zweite Wendung trennt Erwartung und Wirklichkeit. Wiederhole:" },
  { "tr": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:", "kind": "say.tr", "de": "Unsere zweite Wendung trennt Behauptung und Annahme. Wiederhole:" },
@@ -419,7 +418,6 @@
  { "tr": "Son kalıbımız dil düzeyi değişince adın değiştiğini gösteriyor. Tekrar et:", "kind": "say.tr", "de": "Unsere letzte Wendung zeigt, dass sich mit dem Register der Name ändert. Wiederhole:" },
  { "tr": "Merhaba! Bugün bir savın ağırlığını cümle içinde taşımayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, das Gewicht einer These im Satz zu verschieben." },
  { "tr": "Merhaba! Bugün uzun bir savı paragraf düzeyinde bağlamayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, eine lange These auf Absatzebene zu binden." },
- { "tr": "İkinci kalıbımız içselleştirmeyle geçersiz kılmayı ayırıyor. Tekrar et:", "kind": "say.tr", "de": "Unsere zweite Wendung trennt Verinnerlichen und Entkräften. Wiederhole:" },
  { "tr": "Merhaba! Bugün ağır bir suçlamanın gücünü kiple ayarlamayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, die Stärke eines schweren Vorwurfs mit dem Modalverb einzustellen." },
  { "tr": "Doğru dil düzeyini seçmek itirazı yumuşatmak değildir; duyulmasını sağlamaktır.", "kind": "say.tr", "de": "Das richtige Register zu wählen heißt nicht, den Einwand zu mildern, sondern dafür zu sorgen, dass er gehört wird." },
  { "tr": "Bir tane daha: Böyle bir kural her şeyi sorunsallaştırma eğiliminde olur.", "kind": "say.tr", "de": "Noch eins: Eine solche Regel neigt dazu, alles zu problematisieren." },
@@ -454,5 +452,7 @@
  { "tr": "Aynı sav farklı bir yerde durunca farklı bir sav olur; tartışmada bu kaydırma bir hile değil bir vurgu seçimidir. Hazır mısın?", "kind": "say.tr", "de": "Dieselbe These an anderer Stelle ist eine andere These; in der Debatte ist diese Verschiebung kein Trick, sondern eine Wahl der Betonung. Bist du bereit?" },
  { "tr": "Bağ koparsa sav yanlış olmaz, GÖRÜNMEZ olur; okur her paragrafı ayrı bir metin gibi okur ve hiçbirini hatırlamaz. Hazır mısın?", "kind": "say.tr", "de": "Reißt die Bindung, wird die These nicht falsch, sondern UNSICHTBAR; die Leserin liest jeden Absatz wie einen eigenen Text und behält keinen. Bist du bereit?" },
  { "tr": "C1'in kendi tehlikesi burada: dil inceldikçe kesinlik kolayca küçümsemeye dönüşüyor. Ödün sözleri bunu engelliyor. Hazır mısın?", "kind": "say.tr", "de": "Hier liegt die eigene Gefahr von C1: je feiner die Sprache, desto leichter wird Genauigkeit zu Geringschätzung. Die Zugeständniswörter halten das auf. Bist du bereit?" },
- { "tr": "Bu kalıplar hazır kutulardır; hazır kutu yalnız sözü değil düşünceyi de taşır, o yüzden hangisini açtığını bilmen gerekiyor. Hazır mısın?", "kind": "say.tr", "de": "Diese Wendungen sind fertige Schachteln; eine fertige Schachtel trägt nicht nur das Wort, sondern auch den Gedanken, darum musst du wissen, welche du öffnest. Bist du bereit?" }
+ { "tr": "Bu kalıplar hazır kutulardır; hazır kutu yalnız sözü değil düşünceyi de taşır, o yüzden hangisini açtığını bilmen gerekiyor. Hazır mısın?", "kind": "say.tr", "de": "Diese Wendungen sind fertige Schachteln; eine fertige Schachtel trägt nicht nur das Wort, sondern auch den Gedanken, darum musst du wissen, welche du öffnest. Bist du bereit?" },
+ { "tr": "Son kalıbımız aktarmakla çarpıtmayı ayırıyor. Bir sözü çarpıtarak değiştirmeye, yani tahrif etmeye", "kind": "say.tr", "de": "Unsere letzte Wendung trennt Wiedergeben und Verzerren. Eine Aussage verzerrend verändern, also verfälschen, heißt" },
+ { "tr": "İkinci kalıbımız içselleştirmeyle geçersiz kılmayı ayırıyor. Bir kuralı hükümsüz bırakmaya, yani geçersiz kılmaya", "kind": "say.tr", "de": "Unsere zweite Wendung trennt Verinnerlichen und Entkräften. Eine Regel außer Kraft setzen, also entkräften, heißt" }
 ]

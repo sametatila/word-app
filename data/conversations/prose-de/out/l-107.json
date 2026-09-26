@@ -334,7 +334,6 @@
  { "tr": "Şimdi sıra sende: Temmuza kadar mektupları arşivlemiş olacağız.", "kind": "say.tr", "de": "Jetzt bist du dran: Bis Juli werden wir die Briefe archiviert haben." },
  { "tr": "Düşünmeden hızlı yapılmış demek. İlk kalıbımız da bu. Tekrar et:", "kind": "say.tr", "de": "Das heißt ohne Nachdenken schnell gemacht. Das ist auch unsere erste Wendung. Wiederhole:" },
  { "tr": "Bazı sahneler seyirciyi kendinden geçiriyor ve herkesi büyülüyor.", "kind": "say.tr", "de": "Manche Szenen reißen das Publikum mit und faszinieren alle." },
- { "tr": "Bir karşılaşmayı kaybetmek demek. İlk kalıbımız da bu. Tekrar et:", "kind": "say.tr", "de": "Das heißt ein Spiel zu verlieren. Das ist auch unsere erste Wendung. Wiederhole:" },
  { "tr": "Şimdi sıra sende: Bir galibiyet hiç böyle bir infiale yol açmadı.", "kind": "say.tr", "de": "Jetzt bist du dran: Nie hat ein Sieg solche Empörung ausgelöst." },
  { "tr": "Son kalıbımız bir tarihe kadar verilmiş kararı söylüyor. Tekrar et:", "kind": "say.tr", "de": "Unsere letzte Wendung nennt die bis dahin getroffene Entscheidung. Wiederhole:" },
  { "tr": "Şimdi sen kur: Dansı yorumlayışı ünlü olan amcam önce dans ediyor.", "kind": "say.tr", "de": "Jetzt du: Mein Onkel, dessen Deutung des Tanzes berühmt ist, tanzt zuerst." },
@@ -347,7 +346,6 @@
  { "tr": "Resmin üzerine yapıldığı gergin bez demek. İlk kalıbımız da bu. Tekrar et:", "kind": "say.tr", "de": "Das heißt das gespannte Tuch, auf dem gemalt wird. Das ist auch unsere erste Wendung. Wiederhole:" },
  { "tr": "Bir yörenin topluca kutladığı şenlik demek.", "kind": "say.tr", "de": "Das heißt das Fest, das eine Gegend gemeinsam feiert." },
  { "tr": "Şimdi sen kur: Ancak gösteriden sonra geri kalanı tezahüratla destekliyorlar.", "kind": "say.tr", "de": "Jetzt du: Erst nach der Vorstellung feuern sie die Übrigen an." },
- { "tr": "Bir şeyi sözle ya da resimle canlandırmak demek. İlk kalıbımız da bu. Tekrar et:", "kind": "say.tr", "de": "Das heißt etwas mit Worten oder mit Farbe zu vergegenwärtigen. Das ist auch unsere erste Wendung. Wiederhole:" },
  { "tr": "Bu cümleler yapıtı yargılamaz, onu sınar; farkı sonuç yarısı kuruyor. Hazır mısın?", "kind": "say.tr", "de": "Diese Sätze verurteilen das Werk nicht, sie prüfen es; den Unterschied macht die Folgehälfte. Bist du bereit?" },
  { "tr": "Her şey tartıldığında final belki de zayıf, özellikle de açılış güçlüyken.", "kind": "say.tr", "de": "Alles in allem ist das Ende wohl eher schwach, zumal der Anfang stark war." },
  { "tr": "ise bir eksik tespitidir. Eleştiride bu ayrım yapıtı konuşmayı sağlar, yapanı değil.", "kind": "say.tr", "de": "stellt dagegen einen Mangel fest. In der Kritik sorgt dieser Unterschied dafür, dass über das Werk gesprochen wird und nicht über die Person." },
@@ -378,5 +376,8 @@
  { "tr": "Merhaba! Bugün bir gösteriyi sonradan değerlendirmeyi öğreneceğiz: final nasıldı, eksiklik görülmüş müydü, ne fark edilmeliydi.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, eine Vorstellung im Nachhinein zu beurteilen: wie das Ende war, ob der Mangel gesehen wurde, was hätte bemerkt werden müssen." },
  { "tr": "Merhaba! Bugün bir gecenin ilkini duyurmayı öğreneceğiz: yenilgi ne yaptı, taraftar nadiren ne yapar, ne zaman tezahürat başlar.", "kind": "say.tr", "de": "Hallo! Heute lernen wir anzukündigen, was es an einem Abend zum ersten Mal gab: was die Niederlage tat, was ein Fan selten tut, wann der Jubel beginnt." },
  { "tr": "Merhaba! Bugün beğenmediğini konuşmayı bitirmeden söylemeyi öğreneceğiz: bu bir karşı görüş mü, karşı argüman ikna edici mi, final nasıl.", "kind": "say.tr", "de": "Hallo! Heute lernen wir zu sagen, dass etwas nicht gefiel, ohne das Gespräch zu beenden: ist das eine Gegenmeinung, ist das Gegenargument überzeugend, wie ist das Ende." },
- { "tr": "Merhaba! Bugün bir sanatçının hayatını zincir hâlinde anlatmayı öğreneceğiz: ne izlendikten sonra, ne yıllarca yapıldıktan sonra, ne isteyerek.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, das Leben einer Künstlerin als Kette zu erzählen: was nach dem Zusehen, was nach jahrelangem Tun, was im Wollen geschah." }
+ { "tr": "Merhaba! Bugün bir sanatçının hayatını zincir hâlinde anlatmayı öğreneceğiz: ne izlendikten sonra, ne yıllarca yapıldıktan sonra, ne isteyerek.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, das Leben einer Künstlerin als Kette zu erzählen: was nach dem Zusehen, was nach jahrelangem Tun, was im Wollen geschah." },
+ { "tr": "yapıtın doğduğu koşullara, yani bağlama ise", "kind": "say.tr", "de": "und die Umstände, in denen ein Werk entsteht, also der Zusammenhang, heißen" },
+ { "tr": "Bir karşılaşmayı kaybetmek demek. Büyük bir toplu öfkeye, yani infiale ise", "kind": "say.tr", "de": "Das heißt ein Spiel zu verlieren. Große gemeinsame Empörung dagegen heißt" },
+ { "tr": "Bir şeyi sözle ya da resimle canlandırmak demek. Büyüklüğüyle göz dolduran, görkemli olana ise", "kind": "say.tr", "de": "Das heißt etwas mit Worten oder mit Farbe zu vergegenwärtigen. Was durch seine Größe beeindruckt, also prächtig ist, heißt" }
 ]

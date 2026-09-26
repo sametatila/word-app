@@ -828,5 +828,15 @@
   "tr": "Merhaba! Bugün çevrimiçi kursu konuşmayı öğreneceğiz: ders ne zaman yükleniyor, video indirilebiliyor mu, modül ne zaman açılıyor.",
   "kind": "say.tr",
   "de": "Hallo! Heute sprechen wir über den Onlinekurs: wann die Lektion hochgeladen wird, ob das Video heruntergeladen werden kann, wann das Modul freigeschaltet wird."
+ },
+ {
+  "tr": "Sunmak için",
+  "kind": "say.tr",
+  "de": "Für präsentieren"
+ },
+ {
+  "tr": "Hazır için",
+  "kind": "say.tr",
+  "de": "Für bereit"
  }
 ]

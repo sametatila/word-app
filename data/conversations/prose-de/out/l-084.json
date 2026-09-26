@@ -853,5 +853,10 @@
   "tr": "Formların üstündeki küçük yazılar hep aynı üç kalıpla kurulur ve bu üçünü karıştırmak formun reddedilmesine yol açar. Hazır mısın?",
   "kind": "say.tr",
   "de": "Das Kleingedruckte auf Formularen steht immer in denselben drei Wendungen, und sie zu verwechseln führt zur Ablehnung des Formulars. Bist du bereit?"
+ },
+ {
+  "tr": "soyadına",
+  "kind": "say.tr",
+  "de": "der Nachname heißt"
  }
 ]

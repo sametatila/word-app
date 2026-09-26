@@ -1018,5 +1018,10 @@
   "tr": "Bir odada beş kişi varsa hepsinin adı 'the man' ya da 'the woman'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
   "kind": "say.tr",
   "de": "Sind fünf Leute im Raum, heißen alle „the man“ oder „the woman“; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
+ },
+ {
+  "tr": "romana",
+  "kind": "say.tr",
+  "de": "der Roman heißt"
  }
 ]

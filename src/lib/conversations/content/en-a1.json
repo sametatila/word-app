@@ -856,7 +856,15 @@
      },
      {
       "lang": "tr",
-      "text": "sensin. Lütfen tekrar et:"
+      "text": "sensin. Tek başına"
+     },
+     {
+      "lang": "en",
+      "text": "you"
+     },
+     {
+      "lang": "tr",
+      "text": "\"sen\" ya da \"siz\" demek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -20889,7 +20897,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi günün bölümleri. Üçüncü edatımız geliyor: in."
+      "text": "Şimdi günün bölümleri. \"Sabah\" demek:"
+     },
+     {
+      "lang": "en",
+      "text": "morning"
+     },
+     {
+      "lang": "tr",
+      "text": "Üçüncü edatımız geliyor: in."
      },
      {
       "lang": "en",
@@ -43014,7 +43030,15 @@
      },
      {
       "lang": "tr",
-      "text": "Burada 'do' ya da 'does' kullanmıyoruz; can zaten soruyu kendi kuruyor."
+      "text": "Burada 'do' ya da 'does' kullanmıyoruz; can zaten soruyu kendi kuruyor. Cümledeki"
+     },
+     {
+      "lang": "en",
+      "text": "help"
+     },
+     {
+      "lang": "tr",
+      "text": "'yardım etmek' demek."
      }
     ]
    },

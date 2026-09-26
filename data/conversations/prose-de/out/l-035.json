@@ -67,7 +67,6 @@
  { "tr": "please, fiyat sormak için", "kind": "say.tr", "de": "please, um nach dem Preis zu fragen" },
  { "tr": "Sayabildiğin şeylerde ise", "kind": "say.tr", "de": "Bei zählbaren Dingen dagegen" },
  { "tr": "Sekizde kahvaltı yaparım.", "kind": "say.tr", "de": "Um acht frühstücke ich." },
- { "tr": "sensin. Lütfen tekrar et:", "kind": "say.tr", "de": "bist du. Bitte wiederhole:" },
  { "tr": "Sıradaki oda yatak odası.", "kind": "say.tr", "de": "Das nächste Zimmer ist das Schlafzimmer." },
  { "tr": "Soru demek. Sen de söyle:", "kind": "say.tr", "de": "Heißt Frage. Sag du auch:" },
  { "tr": "Soru hâli çok kullanışlı:", "kind": "say.tr", "de": "Die Frageform ist sehr nützlich:" },
@@ -144,5 +143,7 @@
  { "tr": "Lütfen sen de söyle: rule.", "kind": "say.tr", "de": "Bitte sag du auch: rule." },
  { "tr": "Lütfen sen de söyle: tour.", "kind": "say.tr", "de": "Bitte sag du auch: tour." },
  { "tr": "Lütfen sen de söyle: went.", "kind": "say.tr", "de": "Bitte sag du auch: went." },
- { "tr": "Mümkün demek. Kalıp şöyle:", "kind": "say.tr", "de": "Heißt möglich. Die Wendung so:" }
+ { "tr": "Mümkün demek. Kalıp şöyle:", "kind": "say.tr", "de": "Heißt möglich. Die Wendung so:" },
+ { "tr": "sensin. Tek başına", "kind": "say.tr", "de": "bist du. Allein heißt" },
+ { "tr": "\"sen\" ya da \"siz\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "„du“ oder „Sie“. Bitte wiederhole:" }
 ]
