@@ -40,7 +40,7 @@ export const a1U22: SkillExercise[] = [
     gloss: [
       { de: "die Apotheke", tr: "eczane", en: "pharmacy" },
       { de: "das Rezept", tr: "reçete", en: "prescription" },
-      { de: "die Tablette", tr: "hap", en: "tablet" },
+      { de: "die Tablette", tr: "hap", en: "pill" },
       { de: "die Drogerie", tr: "kozmetik marketi", en: "drugstore", note: "ilaç satmaz" },
       { de: "der Freitag", tr: "cuma", en: "Friday" },
     ],

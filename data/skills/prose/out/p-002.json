@@ -217,7 +217,7 @@
  {
   "tr": "Apartman görevlisine bırakılmış bir not.",
   "kind": "intro",
-  "en": "A note left for the caretaker."
+  "en": "A note left for the janitor."
  },
  {
   "tr": "Apartman görevlisiyle telefon konuşması.",
@@ -347,7 +347,7 @@
  {
   "tr": "Bir şehir broşürü. Nereleri gezebilirsin?",
   "kind": "intro",
-  "en": "A city leaflet. Where can you visit?"
+  "en": "A city brochure. Where can you visit?"
  },
  {
   "tr": "Bunu ancak konuşarak ayırt edebiliyorsun.",
@@ -477,7 +477,7 @@
  {
   "tr": "Bir mağazanın indirim ilanını okuyacaksın.",
   "kind": "intro",
-  "en": "You are going to read a shop's sale advert."
+  "en": "You are going to read a store's sale ad."
  },
  {
   "tr": "Bir müşteri fiyatı beğenmiyor. Ne yapıyor?",

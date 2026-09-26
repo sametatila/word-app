@@ -27,7 +27,7 @@
  {
   "tr": "Postanede mektup ve paket. Hangi fiyat neye ait?",
   "kind": "intro",
-  "en": "A letter and a parcel at the post office. Which price belongs to what?"
+  "en": "A letter and a package at the post office. Which price belongs to what?"
  },
  {
   "tr": "„You shouldn't smoke.“ — en kısa öğüt, tek fiille.",
@@ -47,7 +47,7 @@
  {
   "tr": "Önce mektup, sonra pul, sonra paket, en son toplam.",
   "kind": "explain",
-  "en": "First the letter, then the stamp, then the parcel, last the total."
+  "en": "First the letter, then the stamp, then the package, last the total."
  },
  {
   "tr": "Önce genel soru, sonra iş, sonra yer, en son ulaşım.",
@@ -77,7 +77,7 @@
  {
   "tr": "„Then it is two euros.“ — bir euro pul, dokuz euro paket.",
   "kind": "explain",
-  "en": "„Then it is two euros.“ — one euro is the stamp, nine the parcel."
+  "en": "„Then it is two euros.“ — one euro is the stamp, nine the package."
  },
  {
   "tr": "Geçmişte „olmak“ fiili. „was“ ve „were“ art arda geçiyor.",

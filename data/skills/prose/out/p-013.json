@@ -132,7 +132,7 @@
  {
   "tr": "Bir mağazanın kapısına astığı iade ve değişim duyurusunu okuyacaksın.",
   "kind": "intro",
-  "en": "You are going to read the returns and exchanges notice on a shop door."
+  "en": "You are going to read the returns and exchanges notice on a store door."
  },
  {
   "tr": "Bir öğrenci bir sonraki seviye için ne yapması gerektiğini konuşuyor.",
@@ -492,7 +492,7 @@
  {
   "tr": "Posta kutusundaki kargo kartı. Paket nerede, ne zamana kadar alınmalı?",
   "kind": "intro",
-  "en": "The parcel card in the letterbox. Where is the parcel, and by when must it be collected?"
+  "en": "The package slip in the mailbox. Where is the package, and by when must it be collected?"
  },
  {
   "tr": "sofern yalnız koşul bildirir; wenn'den dar ve resmî metnin tercihidir.",
@@ -562,7 +562,7 @@
  {
   "tr": "„eine Tube Creme für etwa vier Wochen“. On gün, bir paket hapın süresi.",
   "kind": "explain",
-  "en": "„eine Tube Creme für etwa vier Wochen“. Ten days is how long a pack of tablets lasts."
+  "en": "„eine Tube Creme für etwa vier Wochen“. Ten days is how long a pack of pills lasts."
  },
  {
   "tr": "„fahren“ yön bildirir; çoğulda Akkusativ artikeli die'dir, cümle doğru.",

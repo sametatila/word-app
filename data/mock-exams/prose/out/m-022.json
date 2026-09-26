@@ -110,7 +110,7 @@
  { "tr": "Ret cevabı tarih ve pozisyon numarasıyla belirtildi mi?", "kind": "rubric.criteria", "en": "Was the rejection named with its date and the position number?" },
  { "tr": "Soru içeriğe ilişkin mi ve gerçekten cevaplanabilir mi?", "kind": "rubric.criteria", "en": "Is the question about the content and can it really be answered?" },
  { "tr": "Sorun tanımlanabilir mi (ne zamandan beri, hangi bina)?", "kind": "rubric.criteria", "en": "Can the problem be identified (since when, which building)?" },
- { "tr": "Yer en az bir kez tam olarak söylendi mi? (kat, bodrum)", "kind": "rubric.criteria", "en": "Was the place named exactly at least once? (floor, cellar)" },
+ { "tr": "Yer en az bir kez tam olarak söylendi mi? (kat, bodrum)", "kind": "rubric.criteria", "en": "Was the place named exactly at least once? (floor, basement)" },
  { "tr": "Beğeni somut mu (ne beğenildi), yoksa genel bir övgü mü?", "kind": "rubric.criteria", "en": "Is the praise concrete (what was liked), or just general?" },
  { "tr": "Belirsiz sonuçla çalışma yolu somut olarak anlatıldı mı?", "kind": "rubric.criteria", "en": "Was the way of working with an uncertain result described concretely?" },
  { "tr": "Beş içerik noktası işlendi mi ve yapı işitilebiliyor mu?", "kind": "rubric.criteria", "en": "Were the five content points dealt with and can the structure be heard?" },

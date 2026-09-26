@@ -103,7 +103,7 @@ export const b1U28: SkillExercise[] = [
     gloss: [
       { de: "der Rabatt", tr: "indirim", en: "discount" },
       { de: "der Anbieter", tr: "satıcı firma", en: "provider" },
-      { de: "das Schaufenster", tr: "vitrin", en: "shop window" },
+      { de: "das Schaufenster", tr: "vitrin", en: "store window" },
       { de: "der Durchschnitt", tr: "ortalama", en: "average" },
       { de: "wertlos", tr: "değersiz", en: "worthless" },
       { de: "das Schild", tr: "tabela", en: "sign" },

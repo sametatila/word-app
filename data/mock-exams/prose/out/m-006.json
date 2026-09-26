@@ -126,7 +126,7 @@
  { "tr": "«Restaurant» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Restaurant»." },
  { "tr": "«Wochenende» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Wochenende»." },
  { "tr": "Bir yer öner ve nedenini söyle.", "kind": "exchange.hint", "en": "Propose a place and say why." },
- { "tr": "Koliyi teslim almasını rica et.", "kind": "exchange.hint", "en": "Ask them to take the parcel in." },
+ { "tr": "Koliyi teslim almasını rica et.", "kind": "exchange.hint", "en": "Ask them to take the package in." },
  { "tr": "Kötü havada ne yaptığını söyle.", "kind": "exchange.hint", "en": "Say what you do in bad weather." },
  { "tr": "Nasıl yapıldığını kısaca anlat.", "kind": "exchange.hint", "en": "Describe briefly how it is done." },
  { "tr": "Pencereyi açmak için izin iste.", "kind": "exchange.hint", "en": "Ask permission to open the window." },

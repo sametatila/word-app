@@ -78,7 +78,7 @@
  },
  {
   "conversation": "de-b1-umtausch",
-  "sceneEn": "You have gone back to the shop to exchange something you bought two weeks ago. You give your reason, show the receipt and say clearly what you want.",
+  "sceneEn": "You have gone back to the store to exchange something you bought two weeks ago. You give your reason, show the receipt and say clearly what you want.",
   "partnerEn": "a salesperson who sticks to the rules but looks for a solution",
   "openingEn": "Hello! What can I do for you — would you like to exchange something?",
   "goalEn": "The reason for the return has been given, the receipt has been shown and an exchange or a refund has been agreed."
@@ -99,7 +99,7 @@
  },
  {
   "conversation": "de-b1-kleidung-kaufen",
-  "sceneEn": "You are trying clothes on in a shop. You talk about the size, the fabric and the price, describing what you are after with adjectives in front of the noun.",
+  "sceneEn": "You are trying clothes on in a store. You talk about the size, the fabric and the price, describing what you are after with adjectives in front of the noun.",
   "partnerEn": "an eager salesperson who wants you to try everything on",
   "openingEn": "Can I help you? Are you looking for anything in particular?",
   "goalEn": "The item you wanted has been described with adjectives, tried on, and it has been decided whether to buy it."
@@ -107,9 +107,9 @@
  {
   "conversation": "de-b1-material-waehlen",
   "sceneEn": "You are in a hardware store and you do not know the name of the part you want. You describe what it is made of, what it does and where it goes.",
-  "partnerEn": "a patient shopkeeper who listens and tries to find the right part",
+  "partnerEn": "a patient store owner who listens and tries to find the right part",
   "openingEn": "What are you looking for? Just describe it — what do you need it for?",
-  "goalEn": "The part has been described by its material and its function and the shopkeeper has found the right one."
+  "goalEn": "The part has been described by its material and its function and the store owner has found the right one."
  },
  {
   "conversation": "de-b1-wirtschaft-reden",

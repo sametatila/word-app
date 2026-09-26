@@ -325,7 +325,7 @@ Gelernt habe ich noch etwas: Wenn ich eine Aufgabe genau beschreibe, meldet sich
 
 Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einlasse.`,
               gloss: [
-                { de: "der Elternabend", tr: "veli toplantısı", en: "parents' evening" },
+                { de: "der Elternabend", tr: "veli toplantısı", en: "parent-teacher meeting" },
                 { de: "sich beschweren", tr: "şikâyet etmek", en: "to complain" },
               ],
             },

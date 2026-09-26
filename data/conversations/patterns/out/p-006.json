@@ -1,7 +1,7 @@
 [
  { "conversation": "de-a1-apotheke", "de": "dreimal täglich", "en": "means three times a day" },
  { "conversation": "de-a1-apotheke", "de": "Haben Sie ein Rezept?", "en": "asks whether you have a prescription" },
- { "conversation": "de-a1-krank-melden", "de": "Ich bin krank.", "en": "says that you are ill" },
+ { "conversation": "de-a1-krank-melden", "de": "Ich bin krank.", "en": "says that you are sick" },
  { "conversation": "de-a1-krank-melden", "de": "Ich komme heute nicht.", "en": "says that you cannot come" },
  { "conversation": "de-a1-krank-melden", "de": "Gute Besserung!", "en": "means 'get well soon'" },
  { "conversation": "de-a1-imperativ-du", "de": "Trink viel Wasser!", "en": "tells them to drink plenty of water" },

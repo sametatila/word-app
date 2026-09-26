@@ -22,7 +22,7 @@ export const deB1P7: SkillExercise[] = [
     gloss: [
       { de: "die Hausaufgabe", tr: "ev ödevi", en: "homework" },
       { de: "abschaffen", tr: "kaldırmak", en: "to abolish" },
-      { de: "der Elternabend", tr: "veli toplantısı", en: "parents' evening" },
+      { de: "der Elternabend", tr: "veli toplantısı", en: "parent-teacher meeting" },
       { de: "die Betreuung", tr: "destek", en: "supervision" },
       { de: "benachteiligt", tr: "dezavantajlı", en: "disadvantaged" },
       { de: "der Widerstand", tr: "direniş", en: "resistance" },

@@ -80,7 +80,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       minWords: 90,
       phrases: [
         { de: "Es wurde beschlossen, dass …", tr: "…-mesine karar verildi", en: "It was decided that …" },
-        { de: "Frau X merkte an, … sei …", tr: "Bayan X, …-in … olduğunu belirtti", en: "Ms X remarked that … was …" },
+        { de: "Frau X merkte an, … sei …", tr: "Bayan X, …-in … olduğunu belirtti", en: "Ms. X remarked that … was …" },
         { de: "Die Frage … ist noch zu klären.", tr: "… sorusunun netleşmesi gerekiyor", en: "The question of … still needs to be clarified." },
         { de: "infolge der Verzögerung", tr: "gecikme sonucunda", en: "as a result of the delay" },
         { de: "Nächste Sitzung: …", tr: "Bir sonraki toplantı: …", en: "Next meeting: …" },
@@ -485,7 +485,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       { de: "Je …, desto …", tr: "değer ve fiyat orantısı" },
     ],
     canDo: [
-      { de: "Ich kann ein Buch oder einen Film differenziert vorstellen.", tr: "Bir kitabı ya da filmi incelikli biçimde tanıtabiliyorum.", en: "I can present a book or film in a nuanced way." },
+      { de: "Ich kann ein Buch oder einen Film differenziert vorstellen.", tr: "Bir kitabı ya da filmi incelikli biçimde tanıtabiliyorum.", en: "I can present a book or movie in a nuanced way." },
       { de: "Ich kann zwei Aussagen in einem Relativsatz verbinden.", tr: "İki ifadeyi tek ilgi cümlesinde birleştirebiliyorum.", en: "I can combine two statements in one relative clause." },
       { de: "Ich kann eine Aufführung begründet bewerten.", tr: "Bir gösteriyi gerekçelendirerek değerlendirebiliyorum.", en: "I can evaluate a performance with reasons." },
       { de: "Ich kann erklären, wie ein Werk auf mich wirkt.", tr: "Bir eserin bana nasıl etki ettiğini açıklayabiliyorum.", en: "I can explain how a work affects me." },
@@ -715,7 +715,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann einen formellen Brief korrekt aufbauen.", tr: "Resmî bir mektubu doğru biçimde kurabiliyorum.", en: "I can structure a formal letter correctly." },
-      { de: "Ich kann eine höfliche Anfrage stellen und nachfassen.", tr: "Kibar bir bilgi talebi yazıp takibini yapabiliyorum.", en: "I can make a polite enquiry and follow it up." },
+      { de: "Ich kann eine höfliche Anfrage stellen und nachfassen.", tr: "Kibar bir bilgi talebi yazıp takibini yapabiliyorum.", en: "I can make a polite inquiry and follow it up." },
       { de: "Ich kann Angebote vergleichen und meine Wahl begründen.", tr: "Teklifleri kıyaslayıp seçimimi gerekçelendirebiliyorum.", en: "I can compare offers and justify my choice." },
       { de: "Ich kann im Vorstellungsgespräch eigene Fragen stellen.", tr: "İş görüşmesinde kendi sorularımı sorabiliyorum.", en: "I can ask my own questions in a job interview." },
       { de: "Ich kann einen Vortrag mit Fazit und Ausblick abschließen.", tr: "Bir sunumu sonuç ve ileriye bakışla kapatabiliyorum.", en: "I can close a presentation with a conclusion and outlook." },

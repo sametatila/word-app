@@ -24,7 +24,7 @@ export const deA1P10: SkillExercise[] = [
       { de: "die Tonne", tr: "çöp kutusu", en: "trash can" },
       { de: "das Papier", tr: "kâğıt", en: "paper" },
       { de: "die Flasche", tr: "şişe", en: "bottle" },
-      { de: "der Keller", tr: "bodrum", en: "cellar" },
+      { de: "der Keller", tr: "bodrum", en: "basement" },
       { de: "sauber", tr: "temiz", en: "clean" },
     ],
     minutes: 4,

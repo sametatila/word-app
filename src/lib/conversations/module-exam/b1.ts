@@ -377,7 +377,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Ich bitte darum, dass …", tr: "…-mesini rica ediyorum", en: "I request that …" },
         { de: "fristgerecht", tr: "süresi içinde", en: "within the deadline" },
         { de: "in der Anlage", tr: "ekte", en: "enclosed" },
-        { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely" },
+        { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       ],
       sample:
         "Sehr geehrte Damen und Herren,\n\nhiermit widerspreche ich Ihrem Bescheid vom 14. April, mit dem mein Antrag auf Verlängerung der Aufenthaltserlaubnis abgelehnt wurde.\n\nDer Einkommensnachweis wurde meiner Ansicht nach fristgerecht eingereicht: Ich habe ihn am 3. April persönlich abgegeben. Eine Kopie mit dem Eingangsstempel füge ich in der Anlage bei.\n\nIch bitte darum, dass der Antrag erneut geprüft wird. Für eine kurze Bestätigung, dass mein Widerspruch eingegangen ist, wäre ich dankbar.\n\nMit freundlichen Grüßen\nLeyla Aydin",
@@ -477,7 +477,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann Vor- und Nachteile gegenüberstellen.", tr: "Artıları ve eksileri karşı karşıya koyabiliyorum.", en: "I can weigh advantages against disadvantages." },
       { de: "Ich kann höflich widersprechen, ohne unhöflich zu wirken.", tr: "Kaba görünmeden kibarca karşı çıkabiliyorum.", en: "I can disagree politely without sounding rude." },
       { de: "Ich kann eine Behauptung hinterfragen.", tr: "Bir iddiayı sorgulayabiliyorum.", en: "I can question a claim." },
-      { de: "Ich kann einen Film oder ein Buch bewerten.", tr: "Bir filmi ya da kitabı değerlendirebiliyorum.", en: "I can review a film or a book." },
+      { de: "Ich kann einen Film oder ein Buch bewerten.", tr: "Bir filmi ya da kitabı değerlendirebiliyorum.", en: "I can review a movie or a book." },
     ],
     listening: {
       title: "Sonntags einkaufen?",
@@ -901,7 +901,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Am … habe ich … bestellt.", tr: "… tarihinde … sipariş ettim", en: "On … I ordered …" },
         { de: "Geliefert wurde jedoch …", tr: "Ama … teslim edildi", en: "However, … was delivered" },
         { de: "Ich bitte Sie, … zu …", tr: "Sizden … rica ediyorum", en: "I ask you to …" },
-        { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely" },
+        { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
       ],
       sample:
         "Sehr geehrte Damen und Herren,\n\nam 12. April habe ich bei Ihnen eine Jacke in Größe 38 bestellt. Geliefert wurde jedoch ein anderes Modell in Größe 44.\n\nDie Jacke wurde am 18. April zurückgeschickt; den Beleg lege ich bei. Eine Bestätigung habe ich bisher nicht erhalten.\n\nIch bitte Sie, den Betrag von 79 Euro auf mein Konto zu überweisen. Wenn das bestellte Modell in Größe 38 wieder lieferbar ist, nehme ich es auch gern statt des Geldes; in dem Fall sagen Sie mir bitte kurz Bescheid.\n\nÜber eine Antwort bis Ende des Monats würde ich mich freuen.\n\nMit freundlichen Grüßen\nAli Demir",
@@ -1292,7 +1292,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann einen Abend planen und vorschlagen.", tr: "Bir akşam planlayıp öneri sunabiliyorum.", en: "I can plan and suggest an evening." },
       { de: "Ich kann über ein Spiel oder Konzert berichten.", tr: "Bir maçı ya da konseri anlatabiliyorum.", en: "I can report on a match or concert." },
-      { de: "Ich kann über ein Buch oder einen Film sprechen.", tr: "Bir kitabı ya da filmi konuşabiliyorum.", en: "I can talk about a book or a film." },
+      { de: "Ich kann über ein Buch oder einen Film sprechen.", tr: "Bir kitabı ya da filmi konuşabiliyorum.", en: "I can talk about a book or a movie." },
       { de: "Ich kann eine Absage höflich formulieren.", tr: "Kibarca olumsuz cevap verebiliyorum.", en: "I can phrase a refusal politely." },
       { de: "Ich kann meinen B1-Weg zusammenfassen.", tr: "B1 yolumu özetleyebiliyorum.", en: "I can sum up my B1 journey." },
     ],

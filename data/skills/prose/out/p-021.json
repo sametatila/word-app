@@ -105,9 +105,9 @@
   "en": "You are going to write a blog post about a job most people never see; first form two sentences, then the post."
  },
  {
-  "tr": "Doktor 'Take one tablet three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap.",
+  "tr": "Doktor 'Take one pill three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap.",
   "kind": "explain",
-  "en": "The doctor says 'Take one tablet three times a day, after meals.'; one tablet three times a day, so three."
+  "en": "The doctor says 'Take one pill three times a day, after meals.'; one pill three times a day, so three."
  },
  {
   "tr": "Haber ve rapor dilinin ayırt edici biçimi: söyleneni aktarırken doğruluğuna kefil olmadan bildirmek.",
@@ -287,7 +287,7 @@
  {
   "tr": "„ist geschlossen“ dükkânın DURUMUNU söyler; „wird geschlossen“ kapatma işini, üçüncüsü etken cümledir.",
   "kind": "explain",
-  "en": "„ist geschlossen“ states the shop's STATE; „wird geschlossen“ the act of closing, and the third is an active sentence."
+  "en": "„ist geschlossen“ states the store's STATE; „wird geschlossen“ the act of closing, and the third is an active sentence."
  },
  {
   "tr": "„losgehen“ hem ayrılabilen hem yer değiştiren bir fiil: ortacı „losgegangen“ ve yardımcı fiili „sein“.",
@@ -677,7 +677,7 @@
  {
   "tr": "Bir müşteri ikinci el dükkânına kıyafet getiriyor: neler alınıyor, karşılığında ne veriliyor, ne gerekiyor.",
   "kind": "intro",
-  "en": "A customer brings clothes to a second-hand shop: what is taken, what is given in return, what is needed."
+  "en": "A customer brings clothes to a second-hand store: what is taken, what is given in return, what is needed."
  },
  {
   "tr": "Duyuruda \"Swimming for beginners - Saturday, 11 a.m.\" yazıyor. Pazar günü ders değil, arkadaş getirme günü.",
@@ -697,7 +697,7 @@
  {
   "tr": "Mobilya mağazasında kapanış anonsunu dinleyeceksin: indirim, restoran saati, kaybolan çocuk ve teslim alma.",
   "kind": "intro",
-  "en": "You are going to hear the closing announcement in a furniture shop: the discount, the restaurant hours, a lost child and the collection point."
+  "en": "You are going to hear the closing announcement in a furniture store: the discount, the restaurant hours, a lost child and the collection point."
  },
  {
   "tr": "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",

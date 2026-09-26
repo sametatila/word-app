@@ -27,7 +27,7 @@
  {
   "tr": "Bir kafenin kapıya astığı iş ilanını ve altına bırakılan başvuru notunu okuyacaksın.",
   "kind": "intro",
-  "en": "You are going to read the job advert on a café door and the note of application left under it."
+  "en": "You are going to read the job ad on a café door and the note of application left under it."
  },
  {
   "tr": "Bir servis atölyesinin kış öncesi kontrol listesi. Kısa yazılmış: fail hiç geçmiyor.",
@@ -207,7 +207,7 @@
  {
   "tr": "Bir dükkâna internette puan vereceksin; önce iki cümle kur, sonra kısa bir yorum yaz.",
   "kind": "intro",
-  "en": "You are going to rate a shop online; first form two sentences, then write a short review."
+  "en": "You are going to rate a store online; first form two sentences, then write a short review."
  },
  {
   "tr": "Bir kaza ihbarı. Almanya'da acil çağrının sırası dörttür — dördüncüsü en çok atlanan.",
@@ -277,7 +277,7 @@
  {
   "tr": "Önce iki cümle kur, sonra bir gönüllülük ilanına yarı resmî bir e-postayla cevap ver.",
   "kind": "intro",
-  "en": "First form two sentences, then reply to a volunteering advert with a semi-formal email."
+  "en": "First form two sentences, then reply to a volunteering ad with a semi-formal email."
  },
  {
   "tr": "Son paragraf bunu açıkça söylüyor: „ein Zustand, der jeden Tag neu hergestellt wird“.",
@@ -687,7 +687,7 @@
  {
   "tr": "„Es ist kein staatlicher Feiertag.“ Bazı şehirlerde dükkânlar kapalı, bazılarında değil.",
   "kind": "explain",
-  "en": "„Es ist kein staatlicher Feiertag.“ In some towns the shops are shut, in others not."
+  "en": "„Es ist kein staatlicher Feiertag.“ In some towns the stores are closed, in others not."
  },
  {
   "tr": "„gern“ düzensizdir: gern → lieber → am liebsten. „als“ olduğu için orta basamak gerekir.",
@@ -727,6 +727,6 @@
  {
   "tr": "Bir mağazada müşterinin ceket için beden, renk ve fiyat sorduğu konuşmayı dinleyeceksin.",
   "kind": "intro",
-  "en": "You are going to hear a customer in a shop asking about the size, color and price of a jacket."
+  "en": "You are going to hear a customer in a store asking about the size, color and price of a jacket."
  }
 ]

@@ -26,7 +26,7 @@ export const deB1P14: SkillExercise[] = [
       { de: "das Sonnensegel", tr: "gölgelik", en: "shade sail" },
       { de: "übernehmen", tr: "üstlenmek", en: "to cover" },
       { de: "messen", tr: "ölçmek", en: "to measure" },
-      { de: "der Hausmeister", tr: "okul görevlisi", en: "caretaker" },
+      { de: "der Hausmeister", tr: "okul görevlisi", en: "janitor" },
     ],
     minutes: 6,
     text:

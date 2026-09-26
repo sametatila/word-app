@@ -50,7 +50,7 @@
  },
  {
   "conversation": "de-a1-verlaufen",
-  "sceneEn": "You have realized you are lost and gone into a shop to ask for help. Explain your situation, say where you want to go, listen to the directions and repeat them to be sure.",
+  "sceneEn": "You have realized you are lost and gone into a store to ask for help. Explain your situation, say where you want to go, listen to the directions and repeat them to be sure.",
   "partnerEn": "a patient store owner who gives directions calmly",
   "openingEn": "You look puzzled. Are you looking for a particular street?",
   "goalEn": "The right way has been described and you have confirmed you understood it by repeating it back."

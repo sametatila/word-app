@@ -62,7 +62,7 @@ Am Wochenende fahre ich weg. Bitte kommen Sie heute oder morgen.
 Viele Grüße
 Ilse Radtke, Wohnung 4`,
               gloss: [
-                { de: "das Paket", tr: "koli", en: "parcel" },
+                { de: "das Paket", tr: "koli", en: "package" },
                 { de: "annehmen", tr: "teslim almak", en: "to accept" },
                 { de: "der Flur", tr: "koridor", en: "hallway" },
               ],

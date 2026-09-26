@@ -23,7 +23,7 @@
  { "conversation": "de-a1-lieblingsessen", "de": "Ich esse lieber …", "en": "used to say which of two you prefer" },
  { "conversation": "de-a1-supermarkt", "de": "Ich brauche …", "en": "used to say what you need" },
  { "conversation": "de-a1-supermarkt", "de": "Wo finde ich …?", "en": "used to ask where something is" },
- { "conversation": "de-a1-supermarkt", "de": "Haben Sie …?", "en": "used to ask whether a shop has something" },
+ { "conversation": "de-a1-supermarkt", "de": "Haben Sie …?", "en": "used to ask whether a store has something" },
  { "conversation": "de-a1-mengen", "de": "ein Kilo …", "en": "used to give a quantity in kilos" },
  { "conversation": "de-a1-mengen", "de": "zwei Flaschen …", "en": "used to give a quantity in bottles" },
  { "conversation": "de-a1-mengen", "de": "drei Stück …", "en": "used to give a quantity in pieces" },

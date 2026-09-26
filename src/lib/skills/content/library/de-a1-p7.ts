@@ -198,7 +198,7 @@ export const deA1P7: SkillExercise[] = [
         minWords: 30,
         phrases: [
           { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım,", en: "Dear Ms. …," },
-          { de: "Mein Sohn ist krank.", tr: "Oğlum hasta.", en: "My son is ill." },
+          { de: "Mein Sohn ist krank.", tr: "Oğlum hasta.", en: "My son is sick." },
           { de: "Er kann heute nicht kommen.", tr: "Bugün gelemiyor.", en: "He cannot come today." },
           { de: "Er bleibt zwei Tage zu Hause.", tr: "İki gün evde kalıyor.", en: "He is staying at home for two days." },
           { de: "Vielen Dank für Ihr Verständnis.", tr: "Anlayışınız için teşekkürler.", en: "Thank you for your understanding." },

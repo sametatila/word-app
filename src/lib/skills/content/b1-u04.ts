@@ -107,7 +107,7 @@ export const b1U04: SkillExercise[] = [
       { de: "sich beschweren", tr: "şikâyet etmek", en: "to complain" },
       { de: "der Ärger", tr: "sıkıntı / dert", en: "trouble" },
       { de: "aufmerksam", tr: "dikkatli", en: "considerate" },
-      { de: "der Hausmeister", tr: "kapıcı", en: "caretaker" },
+      { de: "der Hausmeister", tr: "kapıcı", en: "janitor" },
       { de: "die Notiz", tr: "not", en: "note" },
       { de: "böse", tr: "kızgın", en: "angry" },
     ],

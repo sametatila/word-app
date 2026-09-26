@@ -213,7 +213,7 @@ export const deC1P16: SkillExercise[] = [
       { de: "die Station", tr: "servis", en: "unit" },
       { de: "die Entlassung", tr: "taburcu", en: "discharge" },
       { de: "überfordert", tr: "bunalmış", en: "overwhelmed" },
-      { de: "das Merkblatt", tr: "bilgi broşürü", en: "information leaflet" },
+      { de: "das Merkblatt", tr: "bilgi broşürü", en: "information pamphlet" },
       { de: "die Nachsorge", tr: "tedavi sonrası bakım", en: "aftercare" },
     ],
     minutes: 16,
@@ -334,7 +334,7 @@ export const deC1P16: SkillExercise[] = [
       { de: "raten", tr: "tavsiye etmek", en: "to advise" },
       { de: "die Nachsorge", tr: "tedavi sonrası bakım", en: "aftercare" },
       { de: "die Alternative", tr: "alternatif", en: "alternative" },
-      { de: "das Merkblatt", tr: "bilgi broşürü", en: "information leaflet" },
+      { de: "das Merkblatt", tr: "bilgi broşürü", en: "information pamphlet" },
     ],
     minutes: 12,
     explanation: [

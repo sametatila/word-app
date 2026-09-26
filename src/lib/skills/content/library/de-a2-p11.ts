@@ -178,7 +178,7 @@ export const deA2P11: SkillExercise[] = [
     genre: "email",
     intro: "Şirketin yemekhanesi çalışanlardan görüş istiyor: önce iki cümle kur, sonra yemekhane ekibine kısa bir öneri e-postası yaz.",
     gloss: [
-      { de: "die Kantine", tr: "yemekhane", en: "canteen" },
+      { de: "die Kantine", tr: "yemekhane", en: "cafeteria" },
       { de: "die Portion", tr: "porsiyon", en: "portion" },
       { de: "die Schicht", tr: "vardiya", en: "shift" },
       { de: "der Vorschlag", tr: "öneri", en: "suggestion" },

@@ -33,7 +33,7 @@
  { "tr": "Bir sakınca gerçekten adlandırıldı mı? (Yalnız \"aber es ist schwer\" yetmez.)", "kind": "rubric.criteria", "en": "Was a drawback really named? (Only \"aber es ist schwer\" is not enough.)" },
  { "tr": "Gezi tarih ya da yerle belirtildi mi, yoksa yalnız `der Ausflug` mu denildi?", "kind": "rubric.criteria", "en": "Was the outing named with a date or a place, or was it only called `der Ausflug`?" },
  { "tr": "Görüş açıkça belirtildi mi, yoksa iki taraf da anlatılıp karar verilmedi mi?", "kind": "rubric.criteria", "en": "Was an opinion stated clearly, or were both sides set out without a decision?" },
- { "tr": "Karşı tarafın itirazına gerçekten karşılık verildi mi? (yemekhane gürültülü)", "kind": "rubric.criteria", "en": "Was the other side's objection really answered? (the canteen is noisy)" },
+ { "tr": "Karşı tarafın itirazına gerçekten karşılık verildi mi? (yemekhane gürültülü)", "kind": "rubric.criteria", "en": "Was the other side's objection really answered? (the cafeteria is noisy)" },
  { "tr": "Karşılaştırma yapıları kullanıldı mı? (dafür, dagegen, umgekehrt, überwiegt)", "kind": "rubric.criteria", "en": "Were comparative structures used? (dafür, dagegen, umgekehrt, überwiegt)" },
  { "tr": "Metin bağlaçlarla örülmüş mü? (zum einen … zum anderen, natürlich, folglich)", "kind": "rubric.criteria", "en": "Is the text woven together with connectives? (zum einen … zum anderen, natürlich, folglich)" },
  { "tr": "Rica kibar bir kalıpla kuruldu mu? (Kannst du … / Darf ich … / Können Sie …)", "kind": "rubric.criteria", "en": "Was the request made with a polite formula? (Kannst du … / Darf ich … / Können Sie …)" },

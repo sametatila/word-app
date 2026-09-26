@@ -47,7 +47,7 @@
  {
   "tr": "Bir mağazada bozuk bir kulaklığı iade etmeye çalışan müşteri ile görevli arasındaki konuşmayı dinleyeceksin.",
   "kind": "intro",
-  "en": "You are going to hear a conversation between a customer trying to return faulty headphones and the assistant in a shop."
+  "en": "You are going to hear a conversation between a customer trying to return faulty headphones and the salesclerk in a store."
  },
  {
   "tr": "Fikrini değiştirdiğin bir konuyu anlatan kısa bir deneme yazacaksın; önce iki cümle kur, sonra denemeyi yaz.",
@@ -107,7 +107,7 @@
  {
   "tr": "Bir iş ilanına kısa ve kibar bir başvuru e-postası yazmayı, deneyimini ve uygunluğunu anlatmayı çalışacaksın.",
   "kind": "intro",
-  "en": "You will practice writing a short, courteous application email for a job advert and describing your experience and fit."
+  "en": "You will practice writing a short, courteous application email for a job ad and describing your experience and fit."
  },
  {
   "tr": "Bir sesli kitap seslendiricisiyle söyleşi okuyacaksın: tonu ne belirliyor, hangi küçük kelimeler işi taşıyor.",
@@ -182,7 +182,7 @@
  {
   "tr": "İlanda 'The apartment is on Green Street, near the train station.' yazıyor. Yani daire tren istasyonunun yakınında.",
   "kind": "explain",
-  "en": "The advert says 'The apartment is on Green Street, near the train station.' So the apartment is near the train station."
+  "en": "The ad says 'The apartment is on Green Street, near the train station.' So the apartment is near the train station."
  },
  {
   "tr": "İyelik kelimesinin kökü sahibini, eki ise sahip olunan ismin cinsini gösterir; aynı kutu sıfat ekini de belirler.",
@@ -352,7 +352,7 @@
  {
   "tr": "Notun başında \"I am at work until six o'clock\" yazıyor. Yedi dükkânın kapanma saati, sekiz de Tom'un geliş saati.",
   "kind": "explain",
-  "en": "The note begins \"I am at work until six o'clock\". Seven is when the shop closes and eight when Tom arrives."
+  "en": "The note begins \"I am at work until six o'clock\". Seven is when the store closes and eight when Tom arrives."
  },
  {
   "tr": "Puanlama sistemlerinin neden işe yaramaz hale geldiğini anlatan bir yorum yazısı: sorun yıldızlarda mı, bizde mi?",
@@ -392,7 +392,7 @@
  {
   "tr": "Bir marketin sessiz saat uygulamasını anlatan bilgi yazısını okuyacaksın: ne değişiyor, kimin için, nasıl başladı.",
   "kind": "intro",
-  "en": "You are going to read an information text about a shop's quiet hour: what changes, who for, and how it started."
+  "en": "You are going to read an information text about a store's quiet hour: what changes, who for, and how it started."
  },
  {
   "tr": "Bir podcast bölümünde zaman takasına dayalı bir mahalle ağı anlatılıyor: nasıl işliyor, ne işe yarıyor, sorunu ne.",
@@ -412,7 +412,7 @@
  {
   "tr": "Hasta birine söylenmesi BEKLENEN kalıptır; söylememek soğukluk sayılır. Türkçedeki „geçmiş olsun“un tam karşılığı.",
   "kind": "explain",
-  "en": "It is the phrase EXPECTED when somebody is ill; not saying it counts as cold. The exact equivalent of the Turkish phrase for 'get well soon'."
+  "en": "It is the phrase EXPECTED when somebody is sick; not saying it counts as cold. The exact equivalent of the Turkish phrase for 'get well soon'."
  },
  {
   "tr": "İki iş arkadaşı ayrılan bir meslektaşları için hazırlık yapıyor: ne alınacak, ne kadar toplanacak, kim ne yapacak.",
@@ -472,12 +472,12 @@
  {
   "tr": "İlanın sonunda \"leave a note in the blue box near the door\" deniyor; not kapının yanındaki mavi kutuya bırakılıyor.",
   "kind": "explain",
-  "en": "At the end of the advert it says \"leave a note in the blue box near the door\"; the note goes in the blue box by the door."
+  "en": "At the end of the ad it says \"leave a note in the blue box near the door\"; the note goes in the blue box by the door."
  },
  {
   "tr": "Radyoda kısa bir deneme dinleyeceksin: bir kolinin en pahalı iki kilometresi ve bunun kimin için ne anlama geldiği.",
   "kind": "intro",
-  "en": "You are going to hear a short essay on the radio: the most expensive two kilometers of a parcel, and what that means for whom."
+  "en": "You are going to hear a short essay on the radio: the most expensive two kilometers of a package, and what that means for whom."
  },
  {
   "tr": "since + başlangıç noktası, durum sürüyor → present perfect: has lived. Türkçedeki „yaşıyor“ seni „lives“e çekmesin.",
@@ -622,7 +622,7 @@
  {
   "tr": "Broşürde \"Free classes every Tuesday at 6 p.m. in Room 4\" yazıyor. Cumartesi 10.00 ise sadece yemek atölyesinin saati.",
   "kind": "explain",
-  "en": "The leaflet says \"Free classes every Tuesday at 6 p.m. in Room 4\". Saturday at 10:00 is only the cooking workshop."
+  "en": "The flyer says \"Free classes every Tuesday at 6 p.m. in Room 4\". Saturday at 10:00 is only the cooking workshop."
  },
  {
   "tr": "İnternette gerçek ad zorunluluğu tartışmasını ele alan bir köşe yazısı okuyacaksın: kanıt ne diyor, bedeli kim ödüyor.",

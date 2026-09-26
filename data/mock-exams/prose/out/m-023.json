@@ -114,7 +114,7 @@
  { "tr": "Karşı öneri uygulanabilir ve ölçülebilir mi (kaç tarh, hangi düzen)?", "kind": "rubric.criteria", "en": "Is the counter-proposal practicable and measurable (how many beds, which arrangement)?" },
  { "tr": "Kullanım somut mu (ne yapıldı, kaç delik), yoksa genel bir cümle mi?", "kind": "rubric.criteria", "en": "Is the use concrete (what was done, how many holes), or a general sentence?" },
  { "tr": "Metin bir e-postanın biçimini taşıyor mu (hitap, paragraflar, veda)?", "kind": "rubric.criteria", "en": "Does the text have the form of an email (greeting, paragraphs, closing)?" },
- { "tr": "Sorun açık mı — kargonun ulaştığı ama paranın gelmediği yazılmış mı?", "kind": "rubric.criteria", "en": "Is the problem clear — is it written that the parcel arrived but the money did not?" },
+ { "tr": "Sorun açık mı — kargonun ulaştığı ama paranın gelmediği yazılmış mı?", "kind": "rubric.criteria", "en": "Is the problem clear — is it written that the package arrived but the money did not?" },
  { "tr": "Atkı en az iki özellikle tarif edildi mi? (renk, boy, nerede kaldığı)", "kind": "rubric.criteria", "en": "Was the scarf described with at least two details? (color, length, where it was left)" },
  { "tr": "Cümleler bağlaçlarla bağlandı mı, yoksa arka arkaya kısa cümleler mi?", "kind": "rubric.criteria", "en": "Were the sentences joined with connectives, or are they short sentences in a row?" },
  { "tr": "Geçmiş zaman kullanılabildi mi? (hat angefangen, waren, habe gedacht)", "kind": "rubric.criteria", "en": "Could the past tense be used? (hat angefangen, waren, habe gedacht)" },

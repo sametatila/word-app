@@ -22,7 +22,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "war und hatte", tr: "Präteritum'un iki temel fiili" },
     ],
     canDo: [
-      { de: "Ich kann von meinem letzten Urlaub erzählen.", tr: "Son tatilimi anlatabiliyorum.", en: "I can talk about my last holiday." },
+      { de: "Ich kann von meinem letzten Urlaub erzählen.", tr: "Son tatilimi anlatabiliyorum.", en: "I can talk about my last vacation." },
       { de: "Ich kann unregelmäßige Partizipien richtig benutzen.", tr: "Kural dışı ortaçları doğru kullanabiliyorum.", en: "I can use irregular participles correctly." },
       { de: "Ich kann erzählen, was an einem Tag schiefgegangen ist.", tr: "Bir günde neyin ters gittiğini anlatabiliyorum.", en: "I can say what went wrong on a particular day." },
       { de: "Ich kann mit „war“ und „hatte“ über früher sprechen.", tr: "„war“ ve „hatte“ ile geçmişten bahsedebiliyorum.", en: "I can talk about the past with „war“ and „hatte“." },
@@ -313,7 +313,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann mich am Arbeitsplatz vorstellen.", tr: "İş yerinde kendimi tanıtabiliyorum.", en: "I can introduce myself at work." },
       { de: "Ich kann einen Grund nennen.", tr: "Bir sebep söyleyebiliyorum.", en: "I can give a reason." },
       { de: "Ich kann in einem Meeting einen Vorschlag machen.", tr: "Toplantıda öneri sunabiliyorum.", en: "I can make a suggestion in a meeting." },
-      { de: "Ich kann Urlaub beantragen.", tr: "İzin talebinde bulunabiliyorum.", en: "I can request holiday." },
+      { de: "Ich kann Urlaub beantragen.", tr: "İzin talebinde bulunabiliyorum.", en: "I can request time off." },
       { de: "Ich kann sagen, was ich will und was ich denke.", tr: "Ne istediğimi ve ne düşündüğümü söyleyebiliyorum.", en: "I can say what I want and what I think." },
     ],
     listening: {
@@ -358,7 +358,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 45,
       phrases: [
-        { de: "Ich möchte gern Urlaub beantragen.", tr: "İzin talebinde bulunmak istiyorum.", en: "I would like to request holiday." },
+        { de: "Ich möchte gern Urlaub beantragen.", tr: "İzin talebinde bulunmak istiyorum.", en: "I would like to request time off." },
         { de: "vom … bis zum …", tr: "…'den …'e kadar", en: "from … to …" },
         { de: "…, weil …", tr: "…, çünkü …", en: "…, because …" },
         { de: "Ich denke, dass …", tr: "… olduğunu düşünüyorum", en: "I think that …" },
@@ -671,7 +671,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann mich auf dem Amt anmelden.", tr: "Nüfus dairesinde kayıt yaptırabiliyorum.", en: "I can register at the citizens' office." },
-      { de: "Ich kann ein Formular verstehen und ausfüllen.", tr: "Bir formu anlayıp doldurabiliyorum.", en: "I can understand and fill in a form." },
+      { de: "Ich kann ein Formular verstehen und ausfüllen.", tr: "Bir formu anlayıp doldurabiliyorum.", en: "I can understand and fill out a form." },
       { de: "Ich kann nach Unterlagen und Fristen fragen.", tr: "Gereken belgeleri ve son tarihleri sorabiliyorum.", en: "I can ask about documents and deadlines." },
       { de: "Ich kann über meine Pläne sprechen.", tr: "Planlarımdan bahsedebiliyorum.", en: "I can talk about my plans." },
       { de: "Ich kann sagen, was ich hier gelernt habe.", tr: "Burada ne öğrendiğimi söyleyebiliyorum.", en: "I can say what I have learned here." },

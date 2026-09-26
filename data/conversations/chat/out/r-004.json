@@ -57,7 +57,7 @@
  },
  {
   "conversation": "de-a1-muessen",
-  "sceneEn": "A friend of yours is ill but still wants to go to work. Say what they ought to do and talk them into seeing a doctor.",
+  "sceneEn": "A friend of yours is sick but still wants to go to work. Say what they ought to do and talk them into seeing a doctor.",
   "partnerEn": "a stubborn friend who complains constantly but comes around in the end",
   "openingEn": "I feel awful, but I have to work today. Is that a problem?",
   "goalEn": "Your friend has been talked out of going to work today and into seeing a doctor."

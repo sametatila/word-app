@@ -250,18 +250,18 @@
  {
   "id": 1364,
   "tr": "kapıcı",
-  "en": "Swiss word for caretaker",
+  "en": "Swiss word for janitor",
   "beispiel": "Der Abwart repariert im Keller die kaputte Waschmaschine.",
   "beispielTr": "Kapıcı bodrumda bozuk çamaşır makinesini tamir ediyor.",
-  "beispielEn": "The caretaker is fixing the broken washing machine in the basement."
+  "beispielEn": "The janitor is fixing the broken washing machine in the basement."
  },
  {
   "id": 1365,
   "tr": "kadın kapıcı",
-  "en": "female caretaker",
+  "en": "female janitor",
   "beispiel": "Die Abwartin hat den Hausflur frisch geputzt.",
   "beispielTr": "Kadın kapıcı bina koridorunu yeni temizledi.",
-  "beispielEn": "The caretaker has just cleaned the hallway."
+  "beispielEn": "The janitor has just cleaned the hallway."
  },
  {
   "id": 1377,

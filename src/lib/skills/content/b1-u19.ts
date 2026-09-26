@@ -103,7 +103,7 @@ export const b1U19: SkillExercise[] = [
     gloss: [
       { de: "die Ernährung", tr: "beslenme", en: "nutrition" },
       { de: "verzichten", tr: "vazgeçmek", en: "to do without" },
-      { de: "die Kantine", tr: "yemekhane", en: "canteen" },
+      { de: "die Kantine", tr: "yemekhane", en: "cafeteria" },
       { de: "die Portion", tr: "porsiyon", en: "portion" },
       { de: "satt", tr: "tok", en: "full" },
       { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },

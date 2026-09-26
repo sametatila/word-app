@@ -240,7 +240,7 @@ export const b1U27: SkillExercise[] = [
     intro: "Öğle yemeği alışkanlıkları. Kim nerede yiyor, neden?",
     minutes: 4,
     gloss: [
-      { de: "die Mensa", tr: "yemekhane", en: "canteen" },
+      { de: "die Mensa", tr: "yemekhane", en: "cafeteria" },
       { de: "der Imbiss", tr: "büfe", en: "snack bar" },
       { de: "die Semmel", tr: "sandviç ekmeği", en: "bread roll" },
       { de: "der Konsum", tr: "tüketim", en: "consumption" },

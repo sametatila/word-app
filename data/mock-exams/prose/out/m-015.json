@@ -89,7 +89,7 @@
  { "tr": "Karşı tarafın gerekçesini kabul et.", "kind": "rubric.points.tr", "en": "Acknowledge the other side's concern." },
  { "tr": "Kursu, numarasını ve dönemi belirt.", "kind": "rubric.points.tr", "en": "Name the course, the course number and the period." },
  { "tr": "Seferi, tarihi ve gecikmeyi belirt.", "kind": "rubric.points.tr", "en": "Name the service, the date and the delay." },
- { "tr": "Tableti ne için kullandığını söyle.", "kind": "rubric.points.tr", "en": "Say what you use the tablet for." },
+ { "tr": "Tableti ne için kullandığını söyle.", "kind": "rubric.points.tr", "en": "Say what you use the pill for." },
  { "tr": "Birlikte çalışmak için bir gün öner.", "kind": "rubric.points.tr", "en": "Suggest a day for studying together." },
  { "tr": "Devam eğitimi olup olmayacağını sor.", "kind": "rubric.points.tr", "en": "Ask whether there will be a follow-up course." },
  { "tr": "Etkilenen gruplara göre ayrım yapmak", "kind": "rubric.points.tr", "en": "distinguishing between the groups affected" },

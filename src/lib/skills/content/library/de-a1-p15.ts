@@ -95,7 +95,7 @@ export const deA1P15: SkillExercise[] = [
       { de: "schlimm", tr: "fena", en: "bad" },
       { de: "fressen", tr: "yemek", en: "to eat" },
       { de: "der Bauch", tr: "karın", en: "belly" },
-      { de: "die Tablette", tr: "hap", en: "tablet" },
+      { de: "die Tablette", tr: "hap", en: "pill" },
       { de: "das Futter", tr: "mama", en: "pet food" },
       { de: "zweimal", tr: "iki kez", en: "twice" },
     ],

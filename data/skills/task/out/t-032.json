@@ -42,7 +42,7 @@
   {
     "tr": "Bir satış ilanı yaz: neyi sattığını ve ne kadar süredir kullandığını söyle, durumunu dürüstçe anlat (iyi ve kötü yanlarıyla), fiyatı yaz ve nasıl ulaşılacağını belirt.",
     "kind": "free.prompt",
-    "en": "Write a for-sale advert: say what you are selling and how long you have used it, describe its condition honestly (the good and the bad), write the price and say how to get in touch."
+    "en": "Write a for-sale ad: say what you are selling and how long you have used it, describe its condition honestly (the good and the bad), write the price and say how to get in touch."
   },
   {
     "tr": "Apartman grubuna bir mesaj yaz: konuyu bir cümlede söyle, mevcut durumu kısaca anlat, somut öneriyi yaz, itirazı olabilecek komşuları düşün ve nasıl karar verileceğini söyle.",
@@ -67,7 +67,7 @@
   {
     "tr": "İlana kısa bir başvuru yaz: hangi ilana yazdığını söyle, kim olduğunu tanıt, hangi deneyimin olduğunu yaz, hangi günler müsait olduğunu belirt ve görüşmeye çağrılmayı istediğini söyle.",
     "kind": "free.prompt",
-    "en": "Write a short application to the advert: say which advert you are writing about, introduce yourself, write what experience you have, say which days you are free and say that you would like to be invited to an interview."
+    "en": "Write a short application to the ad: say which ad you are writing about, introduce yourself, write what experience you have, say which days you are free and say that you would like to be invited to an interview."
   },
   {
     "tr": "Mahalle forumuna kısa bir ilan yaz: kim olduğunu ve nerede oturduğunu söyle, neye ihtiyacın olduğunu ve ne yapacağını yaz, ne zaman geri vereceğini belirt ve nasıl ulaşılacağını söyle.",
@@ -232,7 +232,7 @@
   {
     "tr": "Hangi ilana başvurduğunu yaz",
     "kind": "free.checklist",
-    "en": "Write which advert you are applying to"
+    "en": "Write which ad you are applying to"
   },
   {
     "tr": "Kendini tanıt ve daireni yaz",
@@ -667,7 +667,7 @@
   {
     "tr": "İlanınızı internette gördüm.",
     "kind": "build.tr",
-    "en": "I saw your advert on the internet."
+    "en": "I saw your ad on the internet."
   },
   {
     "tr": "Yaklaşık iki yüz kişi geldi.",

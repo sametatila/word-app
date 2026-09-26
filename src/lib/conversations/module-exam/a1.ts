@@ -31,7 +31,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann fragen, wie jemand heißt und woher er kommt.", tr: "Birine adını ve nereli olduğunu sorabiliyorum.", en: "I can ask someone their name and where they are from." },
       { de: "Ich kann zwischen „du“ und „Sie“ wählen.", tr: "Senli mi kibar mı konuşacağıma karar verebiliyorum.", en: "I can choose between informal and formal address." },
       { de: "Ich kann meine Telefonnummer und mein Alter sagen.", tr: "Telefon numaramı ve yaşımı söyleyebiliyorum.", en: "I can give my phone number and my age." },
-      { de: "Ich kann meinen Namen buchstabieren und ein Formular ausfüllen.", tr: "Adımı harf harf söyleyip bir formu doldurabiliyorum.", en: "I can spell my name and fill in a form." },
+      { de: "Ich kann meinen Namen buchstabieren und ein Formular ausfüllen.", tr: "Adımı harf harf söyleyip bir formu doldurabiliyorum.", en: "I can spell my name and fill out a form." },
     ],
     listening: {
       title: "Der erste Kurstag",
@@ -461,7 +461,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       { de: "Miete und Nebenkosten", tr: "kira dili" },
     ],
     canDo: [
-      { de: "Ich kann meine Wohnung beschreiben.", tr: "Evimi tarif edebiliyorum.", en: "I can describe my flat." },
+      { de: "Ich kann meine Wohnung beschreiben.", tr: "Evimi tarif edebiliyorum.", en: "I can describe my apartment." },
       { de: "Ich kann sagen, wo etwas steht, liegt oder hängt.", tr: "Bir eşyanın nerede durduğunu söyleyebiliyorum.", en: "I can say where something stands, lies or hangs." },
       { de: "Ich kann mich bei den Nachbarn vorstellen.", tr: "Komşulara kendimi tanıtabiliyorum.", en: "I can introduce myself to the neighbors." },
       { de: "Ich kann einen Schaden melden.", tr: "Bir arızayı bildirebiliyorum.", en: "I can report a fault." },
@@ -509,7 +509,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 35,
       phrases: [
-        { de: "Die Wohnung hat …", tr: "Dairenin …'i var", en: "The flat has …" },
+        { de: "Die Wohnung hat …", tr: "Dairenin …'i var", en: "The apartment has …" },
         { de: "Es gibt auch …", tr: "Ayrıca … var", en: "There is also …" },
         { de: "… steht in der Ecke.", tr: "… köşede duruyor.", en: "… stands in the corner." },
         { de: "… hängt an der Wand.", tr: "… duvarda asılı.", en: "… hangs on the wall." },
@@ -654,7 +654,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 30,
       phrases: [
-        { de: "Ich bin krank.", tr: "Hastayım.", en: "I am ill." },
+        { de: "Ich bin krank.", tr: "Hastayım.", en: "I am sick." },
         { de: "Ich kann heute leider nicht kommen.", tr: "Bugün maalesef gelemiyorum.", en: "Unfortunately I can't come today." },
         { de: "Ich habe Fieber.", tr: "Ateşim var.", en: "I have a fever." },
         { de: "Ich muss zum Arzt gehen.", tr: "Doktora gitmem gerekiyor.", en: "I have to go to the doctor." },
