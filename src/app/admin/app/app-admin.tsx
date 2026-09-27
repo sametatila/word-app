@@ -5,7 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import type { AppControl } from "@/lib/app-control-shared";
 import type { AppAdminData } from "@/lib/admin-app";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Badge, BTN, DataTable, Field, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE, when as fmtWhen } from "../_ui/ui";
+import { AdminPage, Badge, BTN, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, Notice, PageHeader, Panel, TONE, when as fmtWhen } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 /**
@@ -217,7 +217,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
           <div key={l} className="space-y-2 rounded-tile border p-3" style={{ borderColor: "var(--border)" }}>
             <div className="text-strong">{LANG_TR[l]}</div>
             <input value={text[l].title} maxLength={60} placeholder="Başlık (60)" aria-label={`${LANG_TR[l]} başlık`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], title: e.target.value } }))} className={FIELD} style={FIELD_STYLE} />
-            <textarea value={text[l].body} maxLength={180} rows={3} placeholder="Metin (180)" aria-label={`${LANG_TR[l]} metin`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], body: e.target.value } }))} className="w-full min-w-0 rounded-tile border px-3 py-2 text-body" style={FIELD_STYLE} />
+            <textarea value={text[l].body} maxLength={180} rows={3} placeholder="Metin (180)" aria-label={`${LANG_TR[l]} metin`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], body: e.target.value } }))} className={FIELD_AREA} style={FIELD_STYLE} />
           </div>
         ))}
       </div>

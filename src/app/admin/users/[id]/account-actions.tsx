@@ -101,7 +101,7 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
               </div>
             </>
           ) : done === "suspended" ? (
-            <p role="status" style={{ color: TONE.bad }}>Askıya alındı; açık oturumlar kapatıldı (en geç 1 dakikada etkili).</p>
+            <Notice tone="bad" role="status">Askıya alındı; açık oturumlar kapatıldı (en geç 1 dakikada etkili).</Notice>
           ) : (
             <>
               <p className="muted">Hesap yeni oturum açamaz, açık oturumları kapanır. Veri silinmez; geri alınabilir.</p>
