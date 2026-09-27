@@ -173,12 +173,5 @@ export function ReactionGlyph({ kind, size = 16, colors, color }: { kind: Reacti
   }
 }
 
-/** Tek satır ilerleme çubuğu (Günün görevleri ile aynı ölçü). */
-export function Bar({ pct, tint, height = 6 }: { pct: number; tint: string; height?: number }) {
-  const { colors } = useTheme();
-  return (
-    <View style={{ height, borderRadius: height / 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
-      <View style={{ height: "100%", width: `${Math.max(3, Math.min(100, pct))}%`, backgroundColor: tint, borderRadius: height / 2 }} />
-    </View>
-  );
-}
+/** İlerleme çubuğu artık `ui/Bar`da (iki boy: inline 6, hero 10). */
+export { Bar } from "../ui/Bar";

@@ -8,6 +8,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { RadioDot } from "../ui/RadioDot";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { Card } from "../ui/Card";
 import { SectionTitle } from "../social/common";
@@ -445,7 +446,7 @@ export function PaywallScreen() {
           <View style={{ gap: spacing.md }}>
             {[0, 1].map((i) => (
               <View key={i} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: colors.border, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                <SkeletonTile size={24} radius={12} />
+                <SkeletonTile size={ds(22)} radius={radii.pill} />
                 <View style={{ flex: 1 }}>
                   <SkeletonLine variant="h3" width="45%" />
                   <SkeletonLine variant="caption" width="65%" />
@@ -461,9 +462,7 @@ export function PaywallScreen() {
               const tr = freeTrialOf(p, trialOk);
               return (
                 <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                  <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                    {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
-                  </View>
+                  <RadioDot selected={active} />
                   <View style={{ flex: 1 }}>
                     <Text variant="h3">{planLabel(p)}</Text>
                     <Text variant="caption" color={colors.textMuted}>{tr ? t("paywall.first_free", { duration: tr }) : t("paywall.cancel_anytime")}</Text>

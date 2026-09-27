@@ -16,6 +16,7 @@ import { TwoFactor } from "../ui/TwoFactor";
 import { ActiveSessions } from "../ui/ActiveSessions";
 import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
+import { RadioDot } from "../ui/RadioDot";
 import { ChevronRightIcon } from "../ui/icons";
 import { ScreenHeader } from "../social/common";
 import { useAuth } from "../lib/AuthContext";
@@ -28,7 +29,7 @@ import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, resolveVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
-import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode } from "../theme";
+import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode, ds } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
 import { hasMicConsent, revokeMicConsent } from "../lib/micConsent";
@@ -320,7 +321,7 @@ export function SettingsScreen() {
                       <SkeletonLine variant="bodyStrong" width="42%" />
                       <SkeletonLine variant="caption" width="64%" />
                     </View>
-                    <SkeletonTile size={22} radius={11} />
+                    <SkeletonTile size={ds(22)} radius={radii.pill} />
                   </View>
                 ))
               : courseOptions(uiLang, course).map((c, i) => {
@@ -336,9 +337,7 @@ export function SettingsScreen() {
                     <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
                     <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
                   </View>
-                  <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                    {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
-                  </View>
+                  <RadioDot selected={active} />
                 </PressableScale>
               );
             })}

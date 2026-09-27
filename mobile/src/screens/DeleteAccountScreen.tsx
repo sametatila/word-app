@@ -9,8 +9,8 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { Checkbox } from "../ui/Checkbox";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
@@ -240,12 +240,9 @@ export function DeleteAccountScreen() {
               <Skeleton height={48} radius={radii.md} style={{ marginTop: spacing.lg }} />
             )}
 
-            <PressableScale onPress={() => setAgree((a) => !a)} accessibilityRole="checkbox" accessibilityState={{ checked: agree }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, marginTop: spacing.sm }}>
-              <View style={{ width: 26, height: 26, borderRadius: radii.sm, borderWidth: 2, borderColor: agree ? colors.danger : colors.border, backgroundColor: agree ? colors.danger : "transparent", alignItems: "center", justifyContent: "center" }}>
-                {agree ? <CheckIcon color={colors.onFill} size={16} /> : null}
-              </View>
-              <Text variant="body" style={{ flex: 1 }}>{tx("deleteaccount.i_understand_my_data_will_be")}</Text>
-            </PressableScale>
+            <Checkbox checked={agree} onChange={setAgree} tone="danger" style={{ paddingVertical: spacing.md, marginTop: spacing.sm }}>
+              <Text variant="body">{tx("deleteaccount.i_understand_my_data_will_be")}</Text>
+            </Checkbox>
 
             {/* HATA DUYURULUYOR. Satır yerinde çıkıyor ve odak düğmede
                 kalıyordu: ekran okuyucu kullanan biri "parola yanlış" satırını

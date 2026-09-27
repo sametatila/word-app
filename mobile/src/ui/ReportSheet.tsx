@@ -3,6 +3,7 @@ import { t } from "../lib/i18n";
 import { View, Modal, Pressable } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
+import { RadioDot } from "./RadioDot";
 import { CheckIcon } from "./icons";
 import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "../lib/report";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
@@ -65,9 +66,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                         <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{r.label}</Text>
                         <Text variant="micro" color={colors.textMuted}>{r.sub}</Text>
                       </View>
-                      <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                        {active ? <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
-                      </View>
+                      <RadioDot selected={active} />
                     </PressableScale>
                   );
                 })}

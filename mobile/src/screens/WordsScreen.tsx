@@ -7,6 +7,7 @@ import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { Chip } from "../ui/Chip";
 import { AlertIcon, CardsIcon } from "../ui/icons";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { SpeakButton } from "../ui/SpeakButton";
@@ -144,24 +145,14 @@ export function WordsScreen() {
         />
         {/* Seviye şeridi — web listesindeki seviye süzgecinin karşılığı. */}
         <View style={{ flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" }}>
-          {LEVELS.map((lv) => {
-            const active = level === lv;
-            return (
-              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
-                <Text variant="caption" color={active ? colors.onFill : colors.textMuted}>{lv || t("words.filter_level")}</Text>
-              </PressableScale>
-            );
-          })}
+          {LEVELS.map((lv) => (
+            <Chip key={lv || "all"} variant="filter" tone="info" role="radio" active={level === lv} onPress={() => setLevel(lv)} label={lv || t("words.filter_level")} />
+          ))}
         </View>
         <View style={{ flexDirection: "row", gap: spacing.sm }}>
-          {FILTERS.map((f) => {
-            const active = filter === f.key;
-            return (
-              <PressableScale key={f.key || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
-                <Text variant="caption" color={active ? colors.onPrimary : colors.textMuted}>{t(f.label)}</Text>
-              </PressableScale>
-            );
-          })}
+          {FILTERS.map((f) => (
+            <Chip key={f.key || "all"} variant="filter" tone="primary" role="radio" active={filter === f.key} onPress={() => setFilter(f.key)} label={t(f.label)} />
+          ))}
         </View>
       </View>
 

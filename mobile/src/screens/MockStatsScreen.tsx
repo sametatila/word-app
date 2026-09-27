@@ -8,6 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatPercent } from "../lib/i18n";
 import { MOCK_PASS_PCT } from "../data/exams";
 import { Text } from "../ui/Text";
+import { Bar, BAR_HEIGHT } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronRightIcon, PodiumIcon, AlertIcon } from "../ui/icons";
@@ -114,7 +115,7 @@ export function MockStatsScreen() {
                     <SkeletonLine variant="body" width={110} />
                     <SkeletonLine variant="bodyStrong" width={44} />
                   </View>
-                  <SkeletonBar height={4} style={{ marginTop: spacing.xs }} />
+                  <SkeletonBar height={BAR_HEIGHT.inline} style={{ marginTop: spacing.xs }} />
                   <SkeletonLine variant="micro" width={130} style={{ marginTop: 2 }} />
                 </View>
               ))}
@@ -180,8 +181,8 @@ export function MockStatsScreen() {
                     <Text variant="body">{skillOf(s.skill)}</Text>
                     <Text variant="bodyStrong" color={s.pct >= MOCK_PASS_PCT ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
                   </View>
-                  <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: spacing.xs }}>
-                    <View style={{ height: 4, borderRadius: 2, width: `${s.pct}%`, backgroundColor: s.pct >= MOCK_PASS_PCT ? colors.success : colors.danger }} />
+                  <View style={{ marginTop: spacing.xs }}>
+                    <Bar pct={s.pct} tint={s.pct >= MOCK_PASS_PCT ? colors.success : colors.danger} />
                   </View>
                   <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>
                     {t("mockstats.attempts_best", { n: s.attempts, best: s.best })}

@@ -10,6 +10,7 @@ import { Card } from "../ui/Card";
 import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
+import { RadioDot } from "../ui/RadioDot";
 import { useTheme, spacing, radii } from "../theme";
 import { EmptyCard, Pill, ScreenHeader, SectionTitle } from "../social/common";
 import { AlertIcon } from "../ui/icons";
@@ -125,9 +126,7 @@ export function SocialSettingsScreen() {
                       <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{tx(v.label)}</Text>
                       <Text variant="caption" color={colors.textMuted}>{tx(v.sub)}</Text>
                     </View>
-                    <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                      {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
-                    </View>
+                    <RadioDot selected={active} />
                   </PressableScale>
                 );
               })}

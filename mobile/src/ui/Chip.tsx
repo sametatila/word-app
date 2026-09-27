@@ -23,6 +23,8 @@ export function Chip({
   onPress,
   badge,
   role,
+  variant = "select",
+  tone = "primary",
 }: {
   label: string;
   active: boolean;
@@ -44,8 +46,30 @@ export function Chip({
    * `aria-selected`, `role="tablist"` içinde (bkz. parity 258).
    */
   role?: "radio" | "tab";
+  /**
+   * `filter`: KELİME LİSTESİNİN SÜZGECİ — yukarıda anlatılan dolu hap.
+   * Seçiliyken `tone` rengiyle dolu, değilken `surface2`; kenarlık yok.
+   * Seçili durum yine `accessibilityState`ten de söyleniyor.
+   */
+  variant?: "select" | "filter";
+  /** Yalnız `filter`: dolgu rengi (seviye `info`, durum `primary`). */
+  tone?: "primary" | "info";
 }) {
   const { colors } = useTheme();
+  if (variant === "filter") {
+    const fill = tone === "info" ? colors.info : colors.primary;
+    const ink = tone === "info" ? colors.onFill : colors.onPrimary;
+    return (
+      <PressableScale
+        onPress={onPress}
+        accessibilityRole={role ?? "button"}
+        accessibilityState={{ selected: active }}
+        style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: active ? fill : colors.surface2 }}
+      >
+        <Text variant="caption" color={active ? ink : colors.textMuted}>{label}</Text>
+      </PressableScale>
+    );
+  }
   return (
     <PressableScale
       onPress={onPress}

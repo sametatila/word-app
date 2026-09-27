@@ -8,8 +8,11 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { AppleIcon, ArrowBackIcon, BoltIcon, ClockIcon, GoogleIcon, MailIcon, XIcon } from "../ui/icons";
-import { FlowNote } from "../ui/flow";
+import { AppleIcon, ArrowBackIcon, BoltIcon, ClockIcon, GoogleIcon, InboxIcon, MailIcon, UserPlusIcon, XIcon } from "../ui/icons";
+import { FlowNote, RuleRow } from "../ui/flow";
+import { Card } from "../ui/Card";
+import { Checkbox } from "../ui/Checkbox";
+import { textHeight } from "../ui/Skeleton";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
@@ -526,21 +529,10 @@ export function AuthScreen() {
               style={[input, { textAlign: "center", fontSize: 26, letterSpacing: 10 }]}
             />
 
-            <PressableScale
-              onPress={() => setTrustDevice(!trustDevice)}
-              accessibilityRole="checkbox"
-              accessibilityState={{ checked: trustDevice }}
-              accessibilityLabel={t("twofa.trust")}
-              style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: spacing.xs }}
-            >
-              <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 2, borderColor: trustDevice ? colors.primary : colors.border, backgroundColor: trustDevice ? colors.primary : "transparent", alignItems: "center", justifyContent: "center", marginTop: 2 }}>
-                {trustDevice && <Text variant="caption" color={colors.onPrimary}>✓</Text>}
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("twofa.trust")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</Text>
-              </View>
-            </PressableScale>
+            <Checkbox checked={trustDevice} onChange={setTrustDevice} accessibilityLabel={t("twofa.trust")}>
+              <Text variant="bodyStrong">{t("twofa.trust")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</Text>
+            </Checkbox>
 
             {resendSent && (
               <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
@@ -569,12 +561,12 @@ export function AuthScreen() {
           <View style={{ gap: spacing.md }}>
             {/* E-posta gelmediğinde kullanıcının tek başına deneyebileceği üç şey.
                 Web'deki ipucu kutusunun eşi (components/verify-email-notice). */}
-            <View style={{ backgroundColor: colors.surface2, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
+            <Card padded style={{ gap: spacing.md }}>
               <Text variant="bodyStrong">{t("verify.tips_title")}</Text>
-              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_spam")}</Text>
-              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_contacts")}</Text>
-              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_wrong_address")}</Text>
-            </View>
+              <RuleRow small rule={{ icon: InboxIcon, text: t("verify.tip_spam") }} />
+              <RuleRow small rule={{ icon: UserPlusIcon, text: t("verify.tip_contacts") }} />
+              <RuleRow small rule={{ icon: MailIcon, text: t("verify.tip_wrong_address") }} />
+            </Card>
 
             {resendSent && (
               <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
@@ -589,12 +581,17 @@ export function AuthScreen() {
               onPress={doResend}
               disabled={resendBusy || cooldown > 0}
               accessibilityLabel={t("verify.resend")}
-              accessibilityState={{ disabled: resendBusy || cooldown > 0 }}
+              accessibilityState={{ disabled: resendBusy || cooldown > 0, busy: resendBusy }}
               style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center" }}
             >
-              <Text variant="h3" color={colors.text}>
-                {resendBusy ? "..." : cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("verify.resend")}
-              </Text>
+              {/* Meşgulken yazı yerine dönen gösterge; düğme `disabled` kalıyor. */}
+              {resendBusy ? (
+                <ActivityIndicator color={colors.textMuted} style={{ height: textHeight("h3") }} />
+              ) : (
+                <Text variant="h3" color={colors.text}>
+                  {cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("verify.resend")}
+                </Text>
+              )}
             </PressableScale>
 
             {/* Doğrulama tarayıcıda bitiyor (uygulamanın derin bağlantısı henüz

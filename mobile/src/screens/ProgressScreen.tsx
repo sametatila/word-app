@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
+import { Bar, BAR_HEIGHT } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
@@ -273,9 +274,7 @@ export function ProgressScreen() {
                   <ChevronRightIcon color={colors.textFaint} size={18} />
                 </View>
               </View>
-              <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-                <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
-              </View>
+              <Bar pct={pct} tint={colors.success} size="hero" />
             </Card>
           </PressableScale>
         ) : (
@@ -284,7 +283,7 @@ export function ProgressScreen() {
               <SkeletonLine variant="bodyStrong" width={130} />
               <SkeletonLine variant="caption" width={62} />
             </View>
-            <SkeletonBar height={8} />
+            <SkeletonBar height={BAR_HEIGHT.hero} />
           </SkeletonCard>
         )}
 
@@ -321,9 +320,8 @@ export function ProgressScreen() {
                       eşleme (mint=A1, sky=A2, violet=B1, brand=B2, rose=C1) burada
                       kullanılmıyordu, beş seviye de yeşil çiziliyordu; web her
                       seviyeyi kendi rengiyle çiziyor (`progress-view`). */}
-                  <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.xs, flexDirection: "row" }}>
-                    <View style={{ width: `${mastPct}%`, backgroundColor: levelTint(lv.niveau, colors) }} />
-                    <View style={{ width: `${Math.max(0, seenPct - mastPct)}%`, backgroundColor: levelTint(lv.niveau, colors) + "66" }} />
+                  <View style={{ marginTop: spacing.xs }}>
+                    <Bar pct={mastPct} tint={levelTint(lv.niveau, colors)} extra={{ pct: Math.max(0, seenPct - mastPct), tint: levelTint(lv.niveau, colors) + "66" }} />
                   </View>
                 </View>
               );

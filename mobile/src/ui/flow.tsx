@@ -296,6 +296,23 @@ export function FlowNote({ icon, text, tone = "neutral" }: { icon?: React.ReactN
 export type CoverRule = { icon: (p: { color: string; size: number }) => React.ReactElement; text: string; tone?: "ok" | "bad" | null };
 
 /**
+ * İkonlu tek satır kural/ipucu — kapağın kural listesi ve kapak dışındaki
+ * ipucu listeleri (e-posta doğrulama) aynı satırı çiziyor. `small`: ikincil
+ * listede yazı caption.
+ */
+export function RuleRow({ rule: r, small = false }: { rule: CoverRule; small?: boolean }) {
+  const { colors } = useTheme();
+  return (
+    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md }}>
+      <View style={{ width: 28, height: 28, borderRadius: radii.sm, backgroundColor: r.tone === "ok" ? colors.successSoft : r.tone === "bad" ? colors.dangerSoft : colors.surface2, alignItems: "center", justifyContent: "center" }}>
+        <r.icon color={r.tone === "ok" ? colors.successText : r.tone === "bad" ? colors.dangerText : colors.textMuted} size={16} />
+      </View>
+      <Text variant={small ? "caption" : "body"} color={small ? colors.textMuted : undefined} style={{ flex: 1, paddingTop: 2 }}>{r.text}</Text>
+    </View>
+  );
+}
+
+/**
  * Kapak gövdesi — başlamadan önce: ne, ne kadar, hangi kuralla.
  * Kurallar ikonlu tek satırlar; düğmeler `FlowScreen`in dibinde.
  */
@@ -322,14 +339,7 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
       </View>
       {rules.length ? (
         <Card padded style={{ gap: spacing.md }}>
-          {rules.map((r, i) => (
-            <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md }}>
-              <View style={{ width: 28, height: 28, borderRadius: radii.sm, backgroundColor: r.tone === "ok" ? colors.successSoft : r.tone === "bad" ? colors.dangerSoft : colors.surface2, alignItems: "center", justifyContent: "center" }}>
-                <r.icon color={r.tone === "ok" ? colors.successText : r.tone === "bad" ? colors.dangerText : colors.textMuted} size={16} />
-              </View>
-              <Text variant="body" style={{ flex: 1, paddingTop: 2 }}>{r.text}</Text>
-            </View>
-          ))}
+          {rules.map((r, i) => <RuleRow key={i} rule={r} />)}
         </Card>
       ) : null}
       {note ? <Text variant="caption" color={colors.textMuted}>{note}</Text> : null}

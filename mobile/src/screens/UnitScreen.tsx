@@ -7,6 +7,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
+import { Bar } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
@@ -123,8 +124,8 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: (embedded ? 0 : insets.bottom) + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm, marginBottom: 6 }}>
-          <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
+        <View style={{ marginTop: spacing.sm, marginBottom: 6 }}>
+          <Bar pct={pct} tint={colors.success} size="hero" />
         </View>
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, total: counted.length })}</Text>
         <PathQuota level={level} />

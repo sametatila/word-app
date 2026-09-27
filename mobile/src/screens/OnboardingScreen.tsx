@@ -7,6 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { RadioDot } from "../ui/RadioDot";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
@@ -271,9 +272,7 @@ export function OnboardingScreen() {
               const active = chosen === o.key;
               return (
                 <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: chosen === o.key }} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: compactHeight ? spacing.md : spacing.lg }}>
-                  <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                    {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
-                  </View>
+                  <RadioDot selected={active} />
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{o.label}</Text>
                     {o.sub && <Text variant="caption" color={colors.textMuted}>{o.sub}</Text>}

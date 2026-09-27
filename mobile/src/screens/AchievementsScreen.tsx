@@ -3,6 +3,7 @@ import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
+import { Bar } from "../ui/Bar";
 import { CheckIcon, TrophyIcon } from "../ui/icons";
 import { AchievementIcon } from "../ui/achievementIcon";
 import { EmptyCard, ScreenHeader } from "../social/common";
@@ -179,7 +180,8 @@ export function AchievementsScreen() {
            sebep ve tekrar deneme. Çıplak bir cümle "ekran bozuk" gibi
            okunuyordu; web aynı yerde kupa simgeli kartı çiziyor
            (`achievement-wall`). */
-        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+        /* Kart üstte (Yapabildiklerim ve sosyal ekranlar gibi), ortada değil. */
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           <EmptyCard
             live="assertive"
             icon={TrophyIcon}
@@ -194,8 +196,8 @@ export function AchievementsScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* Kaçının açıldığı TEK BAKIŞTA: web duvarı bu şeridi baştan beri
             çiziyor, mobilde yalnız başlıktaki sayı vardı. */}
-        <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm }}>
-          <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.primary, borderRadius: 3 }} />
+        <View style={{ marginTop: spacing.sm }}>
+          <Bar pct={pct} tint={colors.primary} />
         </View>
         {/* Önce "sıradaki" (hepsi açıldıysa "son kazanılan"), sonra gruplar. */}
         <Section label={t(upcoming.length ? "skills.next" : "achievements.recent")} rows={lead} colors={colors} />

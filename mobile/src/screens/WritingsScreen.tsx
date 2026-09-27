@@ -160,7 +160,8 @@ export function WritingsScreen() {
         /* YÜKLENEMEDİ ile BOŞ AYRI ŞEY. İkisine de "henüz değerlendirilmiş
            yazın yok" yazılıyordu: ağı kopan kullanıcıya, yazdığı metinlerin
            yok olduğu söyleniyordu. */
-        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+        /* Kart üstte (Yapabildiklerim ve sosyal ekranlar gibi), ortada değil. */
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           {/*
             BOŞ HÂL BİR ÇIKIŞ YOLU VERİYOR. Eskiden tek cümle vardı ve
             kullanıcı "nereye gideceğim" sorusuyla baş başa kalıyordu; web
