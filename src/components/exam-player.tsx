@@ -32,7 +32,9 @@ import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
 import { CoachLine } from "@/components/coach-line";
 import { PronounceCard } from "@/components/feedback/pronounce-card";
-import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
+import { askPronounce } from "@/lib/pronounce-client";
+import { captureSpeech, type SpeechCapture } from "@/components/microphone";
+import { localeOf } from "@/components/skills/player-context";
 import type { PronounceScore } from "@/lib/pronounce";
 import { localDay } from "@/lib/day";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
@@ -153,12 +155,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const [spk, setSpk] = useState<"idle" | "rec" | "scoring" | "done" | "failed">("idle");
   const [spkResult, setSpkResult] = useState<PronounceScore | null>(null);
   const [spkTries, setSpkTries] = useState(0);
-  /* Söyleyiş maddesi izin verilmediği için puanlanmadı: klip gönderilmedi.
-     "Ses alınamadı, bir daha dene" demek yanlış teşhis olurdu — yeniden
-     denemek aynı cevabı alır. Madde yine 0 sayılıyor ve sınav sürüyor. */
-  const [spkConsent, setSpkConsent] = useState(false);
+  /* Tarayıcıda konuşma tanıyıcısı yok (Firefox): ses başka bir yola
+     gönderilmiyor. "Ses alınamadı, bir daha dene" demek yanlış teşhis olurdu —
+     yeniden denemek aynı sonucu verir. Madde 0 sayılıyor ve sınav sürüyor. */
+  const [spkUnsupported, setSpkUnsupported] = useState(false);
   const [showMisses, setShowMisses] = useState(false);
-  const capture = useRef<Capture | null>(null);
+  const capture = useRef<SpeechCapture | null>(null);
   const speakingScores = useRef<number[]>([]);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<ExamResult | null>(null);
@@ -567,26 +569,24 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         onConfirm={() => { setQuit(false); if (ayril.pending) ayril.leave(); else router.push("/immersion"); }}
         onCancel={() => { setQuit(false); ayril.stay(); }}
       />
-      <div className="flex items-center justify-between gap-3 text-caption">
-        <span>
-          {SECTION_WORD_TARGET[targetLangOf(course)]} {teil}/{list.length} · <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>
-        </span>
-        <span className="tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
+      {/* Sıra tur başlığındaki gibi (`session-player`): çıkış en solda,
+          çubuk, sağda süre. Karo ölçüsü Android'den (`ExamScreen`: 44 px,
+          simge 22); ortak bileşen `RoundExit` taşıyor. */}
+      <div className="flex items-center gap-3 text-caption">
+        <RoundExit onExit={() => setQuit(true)} labelKey="exam.quit_title" />
+        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
+          <div
+            className="brand-gradient h-full rounded-full transition-all"
+            style={{ width: `${Math.round((100 * doneItems) / Math.max(1, sectionCount(paper!, section)))}%` }}
+          />
+        </div>
+        <span className="shrink-0 tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
         </span>
-        {/* ÖLÇÜ ANDROID'DEN. Karo 32 px, simge 16 idi; Android'in yedi
-            kapatma karosu da 44 px ve simgesi 22 (`ExamScreen`). Dokunma
-            hedefi `hit-8` ile ölçüde geçiyordu ama GÖRÜNEN düğme küçüktü ve
-            aynı uygulamada üç farklı kapatma karosu vardı (32 / 36 / 44).
-            Ortak bileşen Android'in ölçüsünü taşıyor. */}
-        <RoundExit onExit={() => setQuit(true)} labelKey="exam.quit_title" />
       </div>
-      <div className="mt-1.5 h-1 overflow-hidden rounded-full surface-2">
-        <div
-          className="h-full rounded-full transition-all"
-          style={{ width: `${Math.round((100 * doneItems) / Math.max(1, sectionCount(paper!, section)))}%`, background: "var(--color-brand)" }}
-        />
-      </div>
+      <p className="mt-2 text-caption">
+        {SECTION_WORD_TARGET[targetLangOf(course)]} {teil}/{list.length} · <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>
+      </p>
     </div>
   );
 
@@ -610,7 +610,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             setPicked(i);
             setTimeout(() => onPick(i), 140);
           }}
-          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-correct" : ""}`}
+          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-picked" : ""}`}
         >
           {o}
         </button>
@@ -721,8 +721,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const last = idx + 1 >= paper!.sections.speaking.length;
     const startRec = async () => {
       if (spk !== "idle" && spk !== "failed") return;
-      const cap = await captureClip(SPEAK_MAX_MS);
-      if (!cap) return setSpk("failed");
+      /* Yalnız tarayıcının tanıyıcısı; ses sunucuya gitmiyor, puan dökümden. */
+      const cap = await captureSpeech(localeOf(targetLangOf(course)), SPEAK_MAX_MS);
+      if (cap === "unsupported" || cap === "denied") {
+        setSpkUnsupported(cap === "unsupported");
+        setSpkTries((n) => n + 1);
+        return setSpk("failed");
+      }
       capture.current = cap;
       setSpk("rec");
       setTimeout(() => void stopRec(), SPEAK_MAX_MS + 50);
@@ -732,8 +737,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       if (!cap) return;
       capture.current = null;
       setSpk("scoring");
-      const blob = await cap.stop();
-      const res = blob ? await askPronounce(blob, item.de, { exerciseId: item.id, examToken: keyToken.current ?? undefined, confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
+      const heard = await cap.stop();
+      // Tanıyıcı oturum içinde öldüyse boş döküm puanlanmıyor: arıza, sessizlik değil.
+      const res = heard.error && !heard.text
+        ? ({ ok: false, reason: "failed" } as const)
+        : await askPronounce(heard.text, item.de, { exerciseId: item.id, examToken: keyToken.current ?? undefined, confusions: item.confusions, language: targetLangOf(course) });
       if (res.ok) {
         speakingScores.current[idx] = res.score.overall;
         speakingScoreTokens.current[idx] = res.score.scoreToken ?? null;
@@ -741,7 +749,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         setSpkResult(res.score);
         setSpk("done");
       } else {
-        setSpkConsent(res.reason === "consent");
         setSpkTries((n) => n + 1);
         setSpk("failed");
       }
@@ -755,7 +762,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       setSpk("idle");
       setSpkResult(null);
       setSpkTries(0);
-      setSpkConsent(false);
+      setSpkUnsupported(false);
       if (!last) setIdx(idx + 1);
       else nextSection();
     };
@@ -794,18 +801,18 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
              düğmesine basan kullanıcı odağı düğmede tutuyor ve kutunun geldiğini
              ekran okuyucu söylemiyordu. Hata olduğu için `alert`. */
           <p role="alert" className="mt-4 rounded-panel px-3 py-2 text-body" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
-            {spkConsent
-              ? `${t("aiconsent.voice_without")} ${t("aiconsent.change_later")}`
+            {spkUnsupported
+              ? t("speechw.unsupported")
               : t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}
-        {spk === "failed" && spkTries < 2 && !spkConsent ? (
-          <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-body">
+        {spk === "failed" && spkTries < 2 && !spkUnsupported ? (
+          <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-4">
             {t("common.try_again")}
           </button>
         ) : null}
         {spk === "done" || spk === "failed" ? (
-          <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-3 text-body">
+          <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-4">
             {t(last ? "exam.finish_section" : "exam.next_sentence")}
           </button>
         ) : null}
@@ -834,7 +841,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       {writingResult ? (
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={writingText.trim()} result={writingResult} failure={writingFailure} reportRef={paper ? `exam:${paper.kind}:${paper.level}${paper.module != null ? `:${paper.module}` : ""}` : null} />
-          <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-body">
+          <button type="button" onClick={() => void finishNow()} className="btn btn-primary w-full px-5 py-4">
             {t("exam.finish_exam")}
           </button>
         </div>
@@ -857,7 +864,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
                üç dili var. Android aynı yerde `exam.write_text` kullanıyor. */
             placeholder={t("exam.write_text")}
             aria-label={t("exam.write_text")}
-            className="card mt-3 w-full resize-none px-4 py-3 text-body outline-none"
+            className="input mt-3 w-full resize-none"
           />
           <p className="muted mt-1 text-right text-caption tabular-nums">
             {t("exam.word_count", { n: examWords, min: w.task.minWords })}
@@ -875,7 +882,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             type="button"
             disabled={busy || examWords < MIN_ASSESS_WORDS}
             onClick={() => void evaluateWriting()}
-            className="btn btn-primary mt-2 w-full px-5 py-3 text-body disabled:opacity-60"
+            className="btn btn-primary mt-2 w-full px-5 py-4 disabled:opacity-60"
           >
             {t(busy ? "exam.evaluating" : "exam.submit_and_score")}
           </button>
@@ -1152,14 +1159,14 @@ function ProduceCard({
           /* Android: `exam.write_sentence`. */
           placeholder={t("exam.write_sentence")}
           aria-label={t("exam.write_sentence")}
-          className="card mt-3 w-full resize-none px-4 py-3 text-body outline-none"
+          className="input mt-3 w-full resize-none"
         />
       )}
 
       {item.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
         <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
       ) : null}
-      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-body disabled:opacity-60">
+      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-4 disabled:opacity-60">
         {t(index + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
       </button>
       <p className="muted mt-2 text-center text-caption">

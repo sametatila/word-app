@@ -278,7 +278,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
               aria-pressed={picked === pos}
               disabled={done}
               onClick={() => tap(pos)}
-              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-body ${picked === pos ? "option-correct" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
+              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-body ${picked === pos ? "option-picked" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
             >
               <span className="muted w-5 shrink-0 text-caption">{pos + 1}.</span>
               <span lang={lang}>{items[v]}</span>
@@ -287,7 +287,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
         ))}
       </ol>
       {!done ? (
-        <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 px-3.5 py-2 text-body">
+        <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 min-h-11 px-3.5 py-2 text-body">
           {t("skillquiz.check")}
         </button>
       ) : null}
