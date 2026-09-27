@@ -74,7 +74,7 @@ ASC salt okuma dökümünden güncellendi.
 | G2 | Integrity ısınması dokunuştan önce | ✅ | f49329eb: metin gerçeğe uyduruldu (ısınma bilerek ekranda) |
 | G3 | Politika §3 cihaz kimliği cümlesi | ✅ | f49329eb |
 | G4 | Pod manifestleri App Privacy etiketinden geniş | ✅ | 8768f0a4 (manifest); Connect formu 2026-09-27'de on türle yayımlandı: Other Diagnostic Data App Functionality + Analytics, Coarse Location App Functionality ve kimliğe bağlı; özet manifestle birebir (Samet) |
-| G5 | "Ses saklanmaz" altı sağlayıcıdan ikisi için kanıtlı | ◐ Samet | 22cab66e, 23bbd813: Mistral ses zincirinden çıktı. Kalan: Groq Console › Data Controls › Zero Data Retention |
+| G5 | "Ses saklanmaz" altı sağlayıcıdan ikisi için kanıtlı | ✅ | 22cab66e, 23bbd813: Mistral ses zincirinden çıktı. 2026-09-27: Groq Console › Data Controls › Global ZDR + Inference APIs ZDR açık (Batch, Fine-tuning kapandı; kullanılmıyor). Ses zincirindeki beş sağlayıcının hepsi artık saklamıyor ya da siliyor |
 | G6 | Mikrofon izin metni sunucuya gönderimi söylemiyor | ✅ | 86d7b3eb |
 | G7 | Veri güvenliğinde tutarsız işaretler | ⏳ Claude | CSV girilirken bilinçli seçim (G1 ile) |
 | G8 | Arama sorgusu URL'de, erişim günlüğünde | ✅ | Sunucuda nginx günlük maskesi (repo dışı) |

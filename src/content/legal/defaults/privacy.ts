@@ -37,7 +37,8 @@ import type { LegalDocDefault } from "./types";
  *     işleyenden sorumluya, modül 4) gerektiğini söyleyip imzalanınca.
  *   - §5 "Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden
  *     API şartlarıyla ve veri işleme sözleşmeleriyle çalışır" → TODO(Musa):
- *     DPA'ları hesapta kabul et, Mistral/Groq/Cerebras'ta eğitim ayarını kapat.
+ *     DPA'ları hesapta kabul et, Mistral/Cerebras'ta eğitim ayarını kapat
+ *     (Groq: Zero Data Retention açık, 2026-09-27; girdi/çıktı kaydedilmiyor).
  *   - §6 "hiçbiri veriyi kendi amaçları için kullanamaz" → DPA'larla birlikte.
  *
  * 1.7'DE DÜŞENLER (kavram kalktı, geri gelmeyecek): Samet↔Musa GDPR m.28 /

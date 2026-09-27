@@ -48,9 +48,10 @@ Console'daki kimlik ve iletişim `LEGAL_ENTITY`deki hizmet sağlayıcınınkidir
 
 - **Ses "geçici" koşullu.** Lernomi sunucusu sesi saklamıyor; Speechmatics işi transkriptten
   sonra siliniyor, Deepgram isteği `mip_opt_out=true` taşıyor (denetim LEG-3); Azure kısa ses ve
-  Cloudflare Workers AI belgelerine göre saklamıyor; Mistral ses almıyor. Groq arıza/kötüye
-  kullanım için 30 güne kadar kayıt tutabiliyor; Console › Data Controls › Zero Data Retention
-  açılınca tutmuyor (denetim G5, Samet). Koşullardan biri geri alınırsa "geçici" kalkar.
+  Cloudflare Workers AI belgelerine göre saklamıyor; Mistral ses almıyor. Groq'ta Zero Data
+  Retention açık (Global + Inference APIs, 2026-09-27; denetim G5): girdi ve çıktı kaydedilmiyor.
+  Zincir: önce Azure, o düşer ya da aylık tavanı dolarsa Deepgram, Groq, Cloudflare, Speechmatics
+  (`src/lib/chat-providers.ts` `sttProviders`). Koşullardan biri geri alınırsa "geçici" kalkar.
 - **Paylaşım izinle.** Metin dil modellerine, ses konuşma tanıma sağlayıcılarına ancak
   sağlayıcıları adıyla sayan ekranda izin verildikten sonra gidiyor; karar sunucuda
   (`user_consents`). Bu yüzden bu türler "isteğe bağlı".
