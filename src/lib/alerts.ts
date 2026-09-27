@@ -30,6 +30,7 @@ import { SITE_URL } from "@/lib/site";
  */
 
 import { suspectItems } from "@/lib/content/analytics";
+import { REASON_LABEL } from "@/lib/content-feedback-labels";
 
 export type Alert = { key: string; level: "kritik" | "uyari"; text: string };
 type State = Record<string, { since: string; lastSent: string; text: string; level: Alert["level"] }>;
@@ -183,6 +184,44 @@ export async function collectAlerts(): Promise<Alert[]> {
           (select count(*) from content_reports where status = 'open' and created_at < now() - interval '24 hours')::int content`);
       const n = num(r?.users) + num(r?.content);
       if (n > 0) alerts.push({ key: "reports", level: "uyari", text: `${n} şikâyet 24 saatten uzun süredir açık (mağaza kuralı hızlı işlenmesini bekliyor).` });
+    }),
+    guard("feedback", async () => {
+      /*
+        İÇERİK GERİ BİLDİRİMİ (docs/plan/content-feedback.md). İki tek seferlik
+        anahtar (`err` ailesi: hatırlatma ve "düzeldi" yok, bir gün tutuluyor):
+
+        err-reportnew:<son id>  ÖZET — bir önceki özetten bu yana gelen bildirimler.
+          Su çizgisi durumun kendisinde: son özetin anahtarındaki kimlik. Durumda
+          özet yoksa (ilk koşu ya da bir günden uzun sessizlik) son 24 saat;
+          anahtarlar bir gün tutulduğu için bu pencerede özetlenmemiş satır kalmıyor.
+          Panel (`collectAlerts` önbellekli) durumu yalnız OKUYOR.
+        err-reporthot:<grup>   SICAK HEDEF — bir hedef 24 saatte 3+ bildirim aldı ve
+          açık bildirimi var. Aynı grup bir gün içinde ikinci kez yazılmıyor.
+      */
+      const state = await loadState();
+      const seen = Math.max(0, ...Object.keys(state).filter((k) => k.startsWith("err-reportnew:")).map((k) => Number(k.slice(14)) || 0));
+      const fresh = await rows(sql`
+        select coalesce(r.group_key, 'legacy:' || r.kind || ':' || r.ref) g, count(*)::int n, max(r.id)::int last
+        from content_reports r
+        where ${seen > 0 ? sql`r.id > ${seen}` : sql`r.created_at >= now() - interval '24 hours'`}
+        group by 1 order by n desc, last desc`);
+      const total = fresh.reduce((a, r) => a + num(r.n), 0);
+      if (total > 0) {
+        const last = Math.max(...fresh.map((r) => num(r.last)));
+        const top = fresh.slice(0, 3).map((r) => `${String(r.g).slice(0, 60)} ×${num(r.n)}`).join(", ");
+        alerts.push({ key: `err-reportnew:${last}`, level: "uyari", text: `${total} yeni içerik bildirimi (${fresh.length} hedef): ${top}${fresh.length > 3 ? " …" : ""}` });
+      }
+      const hot = await rows(sql`
+        select coalesce(r.group_key, 'legacy:' || r.kind || ':' || r.ref) g, count(*)::int n,
+          mode() within group (order by r.reason) reason
+        from content_reports r
+        where r.created_at >= now() - interval '24 hours'
+        group by 1
+        having count(*) >= 3 and bool_or(r.status = 'open')
+        order by n desc limit 5`);
+      for (const r of hot) {
+        alerts.push({ key: `err-reporthot:${String(r.g)}`, level: "uyari", text: `Aynı hedef 24 saatte ${num(r.n)} kez bildirildi (en sık: ${REASON_LABEL[String(r.reason)] ?? String(r.reason)}): ${String(r.g).slice(0, 120)}` });
+      }
     }),
     guard("mail", async () => {
       const [r] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind like '%:fail' and created_at >= now() - interval '1 hour'`);

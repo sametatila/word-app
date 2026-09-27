@@ -1404,24 +1404,57 @@ export const socialNotifications = pgTable(
  * için "bildir" (Play üretken yapay zekâ politikası: uygulama içi bildirme yolu).
  * Bildirilen metin burada da saklanır: chat_logs 30 günde silinir, inceleme
  * ona bağlı kalmasın. Yaptırım yok; yönetim panosunda insan okur, `status` ile kapatır.
+ *
+ * ÖĞRENME İÇERİĞİ DE BURADA (2026-09-28, docs/plan/content-feedback.md): `kind =
+ * 'content'` her ekrandaki "Bildir" (kelime, alıştırma, sınav maddesi…). Yeni
+ * sütunların hepsi BOŞ OLABİLİR: eski istemcinin gövdesinde yoklar ve eski satırlar
+ * dokunulmadan kalıyor. Kullanıcı kimliği taşıyan yeni sütun YOK (silme ve misafir
+ * birleştirmesi yalnız `user_id`e bakıyor).
  */
 export const contentReports = pgTable(
   "content_reports",
   {
     id: serial("id").primaryKey(),
     userId: text("user_id").notNull(),
-    /** chat | assessment | user */
+    /** chat | assessment | content (eski satırlarda user) */
     kind: text("kind").notNull(),
-    /** chat: "<conversationId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
+    /** chat: "<conversationId>:<turn>" · assessment: kayıt kimliği · content: `${type}:${id}`(+`:${sub}`) */
     ref: text("ref").notNull(),
-    /** inappropriate | offensive | wrong | other */
+    /** yapay zekâ: inappropriate | offensive | wrong | other · içerik: wrong_answer | typo | translation | audio | unclear | technical | inappropriate | other */
     reason: text("reason").notNull(),
     content: text("content"),
     /** open | closed */
     status: text("status").notNull().default("open"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    /** Bildirimin yapıldığı ekran: round | practice | walk | path | skill | conversation | scored | exam | mock | quiz | placement | words | writings */
+    surface: text("surface"),
+    /** word | exercise | conversation | exam_item | mock_task | quiz_item | placement_item | assessment | chat_turn */
+    targetType: text("target_type"),
+    targetId: text("target_id"),
+    /** Soru sırası, tur, `module:<level>:<n>`… */
+    targetSub: text("target_sub"),
+    /** GameId (tur, pratik, yürüyüş). */
+    game: text("game"),
+    /** İçerik hattının paketi/maddesi (`content_flags` ile eşleşme); türetilemezse boş. */
+    pack: text("pack"),
+    item: text("item"),
+    /** Kullanıcının isteğe bağlı açıklaması (≤ 500), düz metin. */
+    detail: text("detail"),
+    /** ios | android | web */
+    platform: text("platform"),
+    appVersion: text("app_version"),
+    course: text("course"),
+    nativeLang: text("native_lang"),
+    contentVersion: integer("content_version"),
+    /** Gruplama anahtarı: `${targetType}:${targetId}` + varsa `:${targetSub}`. Eski satırlarda boş. */
+    groupKey: text("group_key"),
   },
-  (t) => [index("content_reports_status_idx").on(t.status, t.createdAt), index("content_reports_user_idx").on(t.userId, t.createdAt)],
+  (t) => [
+    index("content_reports_status_idx").on(t.status, t.createdAt),
+    index("content_reports_user_idx").on(t.userId, t.createdAt),
+    index("content_reports_group_idx").on(t.groupKey, t.createdAt),
+    index("content_reports_surface_idx").on(t.status, t.surface, t.createdAt),
+  ],
 );
 
 /**

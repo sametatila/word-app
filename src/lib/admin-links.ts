@@ -64,6 +64,10 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } };
     case "reports":
       return { panel: { path: "/admin/moderation", label: "Kullanıcılar › Moderasyon" } };
+    case "err-reportnew":
+      return { panel: { path: "/admin/moderation/content", label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi" } };
+    case "err-reporthot":
+      return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi (bu hedef)" } };
     case "mail":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };
     case "err":

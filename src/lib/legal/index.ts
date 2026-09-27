@@ -170,9 +170,20 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * Workers AI ve Speechmatics ses alıcılarından çıktı; Groq'ta sıfır veri saklama
  * açık (Samet). Yeni alıcı ya da yeni veri yok — yama basamağı. Ses rızası
  * sürümü 3.
+ *
+ * 1.8.6 (2026-09-28) "Bildir" her ekrandaki öğrenme içeriğine genişledi
+ * (docs/plan/content-feedback.md): gizlilik tablosundaki içerik bildirimi
+ * satırı artık yalnız uygunsuz yapay zekâ yanıtını değil içerik hatalarını da
+ * sayıyor, bildirimle birlikte saklanan isteğe bağlı açıklamayı ve teknik
+ * bağlamı (platform, uygulama sürümü, kurs, dil çifti, içerik sürümü) yazıyor;
+ * şartlar §5 düğmenin her yerde olduğunu söylüyor. YAMA BASAMAĞI, çünkü yeni
+ * alıcı yok, hukuki sebep (meşru menfaat) ve saklama (kapanıştan 1 yıl) aynı,
+ * bildirim gönüllü ve bağlamdaki veriler hizmetin zaten işlediği veriler
+ * (profildeki kurs ve dil, oturumdaki platform ve sürüm); var olan bir
+ * işlemenin anlatımı kapsamıyla eşitlendi.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-27";
-export const LEGAL_VERSION = "1.8.5";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-28";
+export const LEGAL_VERSION = "1.8.6";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -401,6 +412,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: var olan bildirim işlemesinin anlatımı kapsamıyla eşitlendi; yeni alıcı, sebep ya da süre yok. */
+    version: "1.8.6",
+    date: "2026-09-28",
+    changes: {
+      tr: [
+        "Bildirimler: \"Bildir\" düğmesi artık uygulamanın her yerindeki öğrenme içeriğinde de (kelimeler, alıştırmalar, sınav soruları, sesler) var. Gizlilik politikası içerik bildirimleriyle birlikte saklananları sayıyor: seçtiğin neden, isteğe bağlı açıklaman, içeriğin ekrandaki hâli ve teknik bağlam (platform, uygulama sürümü, kurs, dil çifti, içerik sürümü). Hukuki sebep ve saklama süresi (inceleme kapandıktan sonra 1 yıl) değişmedi; kullanım şartları §5 düğmenin kapsamını anlatıyor.",
+      ],
+      en: [
+        "Reports: the \"Report\" button is now also available on learning content across the app (words, exercises, exam questions, audio). The privacy policy lists what is stored with a content report: the reason you choose, your optional description, the content as it appeared on screen and technical context (platform, app version, course, language pair, content version). The legal basis and the retention period (1 year after the review closes) did not change; section 5 of the terms describes the button's scope.",
+      ],
+      de: [
+        "Meldungen: Die Schaltfläche \"Melden\" gibt es jetzt auch bei Lerninhalten in der gesamten App (Wörter, Übungen, Prüfungsfragen, Audio). Die Datenschutzerklärung nennt, was mit einer Inhaltsmeldung gespeichert wird: der von dir gewählte Grund, deine optionale Beschreibung, der Inhalt so, wie er auf dem Bildschirm erschien, und technischer Kontext (Plattform, App-Version, Kurs, Sprachpaar, Inhaltsversion). Rechtsgrundlage und Speicherdauer (1 Jahr nach Abschluss der Prüfung) haben sich nicht geändert; Abschnitt 5 der Nutzungsbedingungen beschreibt den Umfang der Schaltfläche.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: ses daha az yere ve daha az alıcıya gidiyor; yeni alıcı ya da veri yok. */
     version: "1.8.5",

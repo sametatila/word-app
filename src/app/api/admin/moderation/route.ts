@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
 import { adminGate, adminWriteGate, logAdminAction, type AdminWriter } from "@/lib/admin";
 import { sameOrigin } from "@/lib/auth/origin";
-import { closeReport, resetReportedName, type ModerationDecision, type ModerationTarget } from "@/lib/moderation-admin";
+import {
+  closeContentGroup,
+  closeReport,
+  disableContentGroup,
+  isGroupKey,
+  resetReportedName,
+  type ModerationDecision,
+  type ModerationTarget,
+} from "@/lib/moderation-admin";
 
 export const dynamic = "force-dynamic";
 
@@ -41,13 +49,14 @@ export async function POST(req: Request) {
   }
   const res = await handle(req, { ok: true, email });
   if (writer && res.status < 400) {
-    const target = [peek.userId, peek.refId, peek.doc, peek.id, peek.code].find((v) => typeof v === "string" || typeof v === "number");
+    const target = [peek.userId, peek.refId, peek.group, peek.doc, peek.id, peek.code].find((v) => typeof v === "string" || typeof v === "number");
     void logAdminAction(writer, `moderation.${action || "save"}`, target == null ? null : String(target), {
       ...(peek.locale ? { locale: peek.locale } : {}),
       ...(peek.days ? { days: peek.days } : {}),
       ...(peek.reason ? { reason: String(peek.reason).slice(0, 120) } : {}),
       ...(peek.note ? { note: String(peek.note).slice(0, 120) } : {}),
       ...(peek.audience ? { audience: peek.audience } : {}),
+      ...(peek.decision ? { decision: String(peek.decision).slice(0, 20) } : {}),
     });
   }
   return res;
@@ -74,6 +83,29 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
       return NextResponse.json({ ok: true });
     } catch (err) {
       console.error("[admin/moderation] reset_name", refId, err);
+      return NextResponse.json({ error: "failed" }, { status: 500 });
+    }
+  }
+
+  /* İÇERİK GERİ BİLDİRİMİ GRUBU (/admin/moderation/content): grubun bütün açık
+     bildirimleri tek kararla kapanıyor; "İçeriği kapat" maddeyi de yayından
+     kaldırıyor (`content_flags`, sebep `reported`). */
+  if (body.action === "close_group" || body.action === "disable_content") {
+    const group = body.group;
+    if (!isGroupKey(group)) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+    try {
+      if (body.action === "disable_content") {
+        const r = await disableContentGroup(group, gate.email, note);
+        if (r === "not_found") return NextResponse.json({ error: "not_found" }, { status: 404 });
+        if (r === "no_target") return NextResponse.json({ error: "no_target" }, { status: 409 });
+        return NextResponse.json({ ok: true });
+      }
+      const decision = String(body.decision ?? "") as ModerationDecision;
+      if (!DECISIONS.includes(decision)) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+      const r = await closeContentGroup(group, decision, gate.email, note);
+      return NextResponse.json({ ok: true, ...r });
+    } catch (err) {
+      console.error("[admin/moderation]", body.action, group, err);
       return NextResponse.json({ error: "failed" }, { status: 500 });
     }
   }

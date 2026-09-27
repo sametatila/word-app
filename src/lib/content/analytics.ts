@@ -1,5 +1,5 @@
 import "server-only";
-import { desc, eq, isNotNull, sql } from "drizzle-orm";
+import { and, desc, eq, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentReports, mockExamAttempts, weeklyQuizAttempts } from "@/lib/db/schema";
 import { mockPaperAt } from "@/lib/mock-exams/serve";
@@ -238,15 +238,26 @@ async function mockBuckets(buckets: Map<string, Bucket>): Promise<void> {
   }
 }
 
-/** Kullanıcı raporları — madde kimliği `ref` içinde geçiyorsa sayılıyor. */
+/**
+ * Kullanıcı raporları, KAPATMA HEDEFİNE göre: `"<pack>|<item>"` → açık rapor sayısı.
+ *
+ * Eskiden `ref` tam eşleşmesine bakılıyordu ve hiçbir rapor eşleşmiyordu: yapay
+ * zekâ bildiriminin ref'i "<konuşma>:<tur>", maddenin kimliği değil. Yeni
+ * bildirimler (`kind = 'content'`, docs/plan/content-feedback.md) paketi ve
+ * maddeyi sunucuda türetip yazıyor (`lib/content-feedback` `derivePackItem`),
+ * sayım o iki sütunla. Deneme sınavında madde KÂĞIT: kâğıdın bütün görevlerine
+ * gelen raporlar kâğıda sayılıyor (kapatma da kâğıdın tamamını gizliyor).
+ * Aynı hedefi birden çok kişinin bildirmesi birden çok rapor; aynı kişinin
+ * tekrarı zaten satır açmıyor (24 saat tekrar kilidi).
+ */
 async function reportCounts(): Promise<Map<string, number>> {
   const rows = await db
-    .select({ ref: contentReports.ref, n: sql<number>`count(*)::int` })
+    .select({ pack: contentReports.pack, item: contentReports.item, n: sql<number>`count(*)::int` })
     .from(contentReports)
-    .where(eq(contentReports.status, "open"))
-    .groupBy(contentReports.ref);
+    .where(and(eq(contentReports.status, "open"), isNotNull(contentReports.pack), isNotNull(contentReports.item)))
+    .groupBy(contentReports.pack, contentReports.item);
   const out = new Map<string, number>();
-  for (const r of rows) out.set(r.ref, Number(r.n));
+  for (const r of rows) out.set(`${r.pack}|${r.item}`, Number(r.n));
   return out;
 }
 
@@ -265,7 +276,7 @@ export async function suspectItems(limit = 40): Promise<SuspectItem[]> {
   const out: SuspectItem[] = [];
   for (const b of buckets.values()) {
     if (b.asked < MIN_ASKED) continue;
-    const reportCount = reports.get(b.item) ?? 0;
+    const reportCount = reports.get(`${b.pack}|${b.item}`) ?? 0;
     const verdict = classifyItem({
       asked: b.asked,
       correct: b.correct,

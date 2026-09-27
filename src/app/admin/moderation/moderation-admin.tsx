@@ -6,6 +6,7 @@ import type { ModerationData, ModerationDecision, ModerationTarget, ReportedPers
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, Badge, when as fmtWhen, BTN, Empty, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
+import { KIND_LABEL, REASON_LABEL } from "@/lib/content-feedback-labels";
 
 /**
  * Şikâyet kuyruğu görünümü.
@@ -23,13 +24,9 @@ const USER_REASON: Record<string, string> = {
   impersonation: "Taklit",
   other: "Diğer",
 };
-const CONTENT_REASON: Record<string, string> = {
-  inappropriate: "Uygunsuz",
-  offensive: "Saldırgan",
-  wrong: "Yanlış",
-  other: "Diğer",
-};
-const KIND: Record<string, string> = { chat: "Sohbet yanıtı", assessment: "Değerlendirme", user: "Kullanıcı" };
+/* Tür ve neden adları içerik geri bildirimiyle ortak (`lib/content-feedback`). */
+const CONTENT_REASON = REASON_LABEL;
+const KIND = KIND_LABEL;
 const ERROR_TR: Record<string, string> = {
   not_found: "Şikâyet bulunamadı.",
   not_ready: "Karar tablosu canlıda yok: önce drizzle/0059_moderation_actions.sql uygulanmalı.",
@@ -122,7 +119,8 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
       <PageHeader
         title="Moderasyon"
         description="Kullanıcı şikâyetleri ve yapay zekâ içerik bildirimleri. Otomatik yaptırım yok; karar burada."
-        meta={<>Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> içerik bildirimi</>}
+        meta={<>Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> yapay zekâ bildirimi · <b>{data.openContentFeedback}</b> içerik geri bildirimi</>}
+        actions={<a href="/admin/moderation/content" className={BTN.secondary}>İçerik geri bildirimi{data.openContentFeedback ? ` (${data.openContentFeedback})` : ""} →</a>}
       />
       {!data.ready ? <Notice tone="warn">Karar tablosu (moderation_actions) canlıda yok: kullanıcı şikâyetleri okunabiliyor ama kapatılamıyor.</Notice> : null}
       {msg ? <Notice tone="bad">{msg}</Notice> : null}
@@ -151,7 +149,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
         )}
       </Panel>
 
-      <Panel title="İçerik bildirimleri" hint="Yapay zekâ yanıtı ya da değerlendirme çıktısı için. Play üretken yapay zekâ politikası: insan inceler.">
+      <Panel title="Yapay zekâ bildirimleri" hint="Yapay zekâ yanıtı ya da değerlendirme çıktısı için, tek tek. Play üretken yapay zekâ politikası: insan inceler. Öğrenme içeriği bildirimleri hedefe göre gruplu olarak 'İçerik geri bildirimi' sayfasında.">
         {contentReports.length ? (
           <div className="space-y-3">
             {contentReports.map((r) => (
@@ -160,15 +158,18 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
                   <span className="text-strong">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
                   <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
                 </div>
-                <div className="muted mt-0.5 font-mono">{r.ref}</div>
+                <div className="muted mt-0.5 font-mono">
+                  <a href={`/admin/moderation/content/group?g=${encodeURIComponent(r.group)}`} className="underline-offset-2 hover:underline">{r.ref}</a>
+                </div>
                 <div className="muted mt-0.5">Bildiren: <Person p={r.reporter} /></div>
+                {r.detail ? <p className="mt-2 whitespace-pre-wrap break-words">Açıklama: {r.detail}</p> : null}
                 {r.content ? <p className="mt-2 whitespace-pre-wrap rounded-tile px-3 py-2 text-body" style={{ background: "var(--surface-2)" }}>{r.content}</p> : null}
                 <Actions note={notes[`content_report:${r.id}`] ?? ""} busy={busy === `content_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`content_report:${r.id}`]: v }))} onDecide={(a) => decide("content_report", r.id, a)} />
               </div>
             ))}
           </div>
         ) : (
-          <Empty>Açık içerik bildirimi yok.</Empty>
+          <Empty>Açık yapay zekâ bildirimi yok.</Empty>
         )}
       </Panel>
 
