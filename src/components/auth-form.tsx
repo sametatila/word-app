@@ -49,7 +49,9 @@ export function AuthForm({
   const params = useSearchParams();
   const nextParam = params.get("next");
   const next = nextParam && /^\/[a-z0-9\-\/]*$/i.test(nextParam) && !nextParam.startsWith("//") ? nextParam : "/learn";
-  const [mode, setMode] = useState<Mode>("signin");
+  /* Isınmadan (ilk kelimeler, örnek seviye testi) gelen `?mode=signup`:
+     o kullanıcının hesabı yok, kayıt formuyla açılıyor. */
+  const [mode, setMode] = useState<Mode>(params.get("mode") === "signup" ? "signup" : "signin");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
