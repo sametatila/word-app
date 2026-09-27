@@ -93,6 +93,7 @@ ASC salt okuma dökümünden güncellendi.
 | T7 | Hukuki sayfalarda lang="tr" | ✅ | 7aecb20f |
 | T8 | Tablet düzeni (IOS-6, Samet 2026-09-26: kolon genişlikleri, sarılan düğme/metin) | ◐ Claude | e6ab84e3: kolon tavanı 840 → 1120, ızgara 960dp'den dört sütun, istatistik ızgaraları dengeli, tek diyalog ölçüsü (440) ve uzun etikette düğmeler alt alta (web de, `check:parity`). Taranan: Android tablet yatay + dikey, iPad 13"/mini dikey ve iPad 13" yatay (XCUITest ile döndürülerek), 33 ekran; yerel sunucuyla. Kalan: oturum içi akışlarda (konuşma, sınav, yürüyüş) göz turu build 9'da |
 | T9 | İngilizce/Almanca arayüzde Türkçe içerik (Patika, görevler, başarımlar, Neler yapabilirim) | ◐ Claude | 74466b44: istemci `Accept-Language` gönderiyor; anadilsiz hesaplar (üretimde 40'ın 31'i) açılışta cihaz dilini hesaba yazıyor; onboarding anadili her zaman devrediyor. Ek 501b037a: dil değişince (girişte hesabın dili benimsenince ya da Ayarlar'dan) bütün ekranlar yeni dilde kuruluyor; önce sekmelerdeki ekranlar eski dilde kalıyordu. Yerelde doğrulandı (Android, iPad tr→en→de); kullanıcıya build 9 ile ulaşır |
+| T10 | Sign in with Apple anahtarı yenilendi | ✅ | 2026-09-27: eski anahtarın bir kısmı bir env karşılaştırma komutunda oturum çıktısına düştü (başka yere gitmedi). Samet eskisini iptal etti; yeni anahtar `MBQU337CN7` (`.secrets/apple/`, yerel ve sunucu `.env`), Apple token ucu iOS bundle ve Services ID için `invalid_grant` (imza kabul) |
 
 ### B — Belge kaymaları
 
