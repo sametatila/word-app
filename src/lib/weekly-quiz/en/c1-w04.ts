@@ -21,7 +21,7 @@ export const EN_C1_W04: QuizWeek = {
   level: "C1",
   no: 4,
   theme: "Technology and responsibility",
-  themeTr: "Teknik ve sorumluluk",
+  themeTr: "Teknoloji ve sorumluluk",
   canDo: ["C1.RD.4", "C1.LS.4", "C1.GR.4", "C1.WR.3"],
 
   stimuli: [
@@ -52,7 +52,7 @@ export const EN_C1_W04: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Host", text: "Mr. Novak, was this a technical failure or an organizational one?" },
-        { speaker: "Novak", text: "Technically it was trivial. Organisationally it was the real problem." },
+        { speaker: "Novak", text: "Technically it was trivial. Organizationally it was the real problem." },
         { speaker: "Host", text: "You will have to explain that." },
         { speaker: "Novak", text: "The test was planned. What was not settled was who would carry it out." },
         { speaker: "Host", text: "So a question of responsibility." },
@@ -118,13 +118,13 @@ export const EN_C1_W04: QuizWeek = {
       ref: "a1",
       stem: "How does Mr. Novak classify the failure?",
       options: [
-        "Technically trivial, organisationally serious",
+        "Technically trivial, organizationally serious",
         "Purely technical",
         "An unavoidable one-off",
         "The result of an attack",
       ],
       answer: 0,
-      why: "\"Technically it was trivial. Organisationally it was the real problem.\" İki cümle bir karşıtlık kuruyor ve ağırlık ikincisinde — `the real problem` bunu işaretliyor.",
+      why: "\"Technically it was trivial. Organizationally it was the real problem.\" İki cümle bir karşıtlık kuruyor ve ağırlık ikincisinde — `the real problem` bunu işaretliyor.",
       targets: ["listening.stance", "discourse.contrast"],
     },
     {
@@ -190,7 +190,7 @@ export const EN_C1_W04: QuizWeek = {
       stem: "The update ___ tested before it was installed.",
       options: ["should be", "should have", "should have been", "should been"],
       answer: 2,
-      why: "Geçmişte yapılmamış bir gerekliliği `should have been + Partizip` anlatır: test edilmeliydi ama edilmedi. `should be` şimdiki bir gerekliliktir ve olayın geçmişte kaldığını söylemez.",
+      why: "Geçmişte yapılmamış bir gerekliliği `should have been` + fiilin üçüncü hâli anlatır: test edilmeliydi ama edilmedi. `should be` şimdiki bir gerekliliktir ve olayın geçmişte kaldığını söylemez.",
       targets: ["modal.perfect", "passive.modal"],
       byNative: {
         tr: {

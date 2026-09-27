@@ -71,7 +71,7 @@ export const DE_A2_W01: QuizWeek = {
       stem: "Was hat Lena in Hamburg NICHT gemacht?",
       options: ["Sie hat Kuchen gegessen.", "Sie hat ihre Schwester besucht.", "Sie hat zu Hause gekocht.", "Sie hat einen Film gesehen."],
       answer: 3,
-      why: "Metin `wollten … gehen` diyor: `wollen`ın Präteritum'u bir niyeti bildirir, olayın gerçekleştiğini değil. Hemen ardından gelen `aber` planın bozulduğunu söylüyor. Niyet cümlesini olmuş bir olay gibi okumak bu sorunun tuzağı.",
+      why: "Metin `wollten … gehen` diyor: `wollen`in Präteritum'u bir niyeti bildirir, olayın gerçekleştiğini değil. Hemen ardından gelen `aber` planın bozulduğunu söylüyor. Niyet cümlesini olmuş bir olay gibi okumak bu sorunun tuzağı.",
       targets: ["lesen.detail", "praeteritum.modal"],
     },
     {

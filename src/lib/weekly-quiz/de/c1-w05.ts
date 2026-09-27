@@ -103,7 +103,7 @@ export const DE_C1_W05: QuizWeek = {
         "Die Stadt hätte keine Kosten mehr",
       ],
       answer: 0,
-      why: "\"Hätte man die Vorschläge geprüft, stünde heute ein tragfähigeres Modell zur Debatte.\" Bağlaçsız gerçek dışı koşul; ana cümle de Konjunktiv II ile kuruluyor ve olmamış bir bugünü anlatıyor.",
+      why: "\"Hätte man die Vorschläge der Verbände geprüft, stünde heute ein tragfähigeres Modell zur Debatte.\" Bağlaçsız gerçek dışı koşul; ana cümle de Konjunktiv II ile kuruluyor ve olmamış bir bugünü anlatıyor.",
       targets: ["konjunktiv2.irreal", "syntax.konditional-ohne-wenn"],
     },
 
@@ -127,7 +127,7 @@ export const DE_C1_W05: QuizWeek = {
       id: "de-c1-w05-l2",
       block: "listen",
       ref: "a1",
-      stem: "Worin besteht der Unterschied, auf den Frau Roth besteht?",
+      stem: "Worin besteht der Unterschied, auf dem Frau Roth beharrt?",
       options: [
         "Zwischen Form und Wirkung des Verfahrens",
         "Zwischen Stadt und Verbänden",

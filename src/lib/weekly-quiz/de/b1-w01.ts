@@ -278,7 +278,7 @@ export const DE_B1_W01: QuizWeek = {
             "Wenn ist meine Tochter älter, wir sprechen noch einmal darüber.",
           ],
           answer: 2,
-          why: "İngilizcede `When she is older, we will talk` iki cümlede de aynı sırayı koruyor. Almancada iki şey değişiyor: `wenn` fiili sona iter, ve yan cümle birinci konumu doldurduğu için ana cümlede fiil özneden ÖNCE gelir.",
+          why: "İngilizcede `When she is older, we will talk` iki cümlede de aynı sırayı koruyor. Almancada iki şey değişiyor: `wenn` fiili sona iter ve yan cümle birinci konumu doldurduğu için ana cümlede fiil özneden ÖNCE gelir.",
         },
       },
     },

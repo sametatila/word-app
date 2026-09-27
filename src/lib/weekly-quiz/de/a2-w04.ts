@@ -74,7 +74,7 @@ export const DE_A2_W04: QuizWeek = {
       stem: "Muss man schon im Service gearbeitet haben?",
       options: ["Ja, das ist notwendig.", "Ja, und man muss auch Englisch sprechen.", "Nein, aber man muss 40 Stunden arbeiten.", "Nein, das Café bildet neue Mitarbeiter aus."],
       answer: 3,
-      why: "`gut, aber nicht notwendig` bir şartı tercihe indiriyor: `aber`dan sonraki kısım belirleyici. İlanlarda cümlenin ilk yarısını okuyup şart sanmak sık hata. İngilizce de şart değil: `Wenn …, ist das super` bir artı olarak geçiyor.",
+      why: "`gut, aber nicht notwendig` bir şartı tercihe indiriyor: `aber`den sonraki kısım belirleyici. İlanlarda cümlenin ilk yarısını okuyup şart sanmak sık hata. İngilizce de şart değil: `Wenn …, ist das super` bir artı olarak geçiyor.",
       targets: ["lesen.detail", "konnektor.aber"],
     },
     {

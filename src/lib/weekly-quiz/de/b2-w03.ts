@@ -255,7 +255,7 @@ export const DE_B2_W03: QuizWeek = {
       stem: "Nach dem Abitur am ___ hat sie in Berlin Kunst studiert.",
       options: ["Fitnessstudio", "Gymnasium", "Turnhalle", "Sportverein"],
       answer: 1,
-      why: "Almanca `das Gymnasium` üniversiteye hazırlayan lise. Türkçe 'jimnastik' çağrışımı spor mekânlarına götürüyor. Cümledeki `Abitur` bir okul bitirme sınavı olduğunu gösteriyor.",
+      why: "Almanca `das Gymnasium` üniversiteye hazırlayan lise. Türkçe 'jimnastik' çağrışımı spor mekânlarına götürüyor. Cümledeki `Abitur` bir okul bitirme sınavı, yani boşluğa bir okul türü gelmeli.",
       targets: ["falschfreund.gymnasium"],
       byNative: {
         en: {

@@ -207,7 +207,7 @@ export const EN_B2_W01: QuizWeek = {
       stem: "We lost the client. Looking back, we ___ more carefully.",
       options: ["must have prepared", "should have prepared", "should prepare", "should prepared"],
       answer: 1,
-      why: "Geçmişte yapılmamış bir şey için eleştiri `should have` + fiilin üçüncü hâli ile kurulur. `must have prepared` bir çıkarım bildirir ('mutlaka hazırlanmışızdır'), eleştiri değil. Türkçe '-meliydik' zamanı ve gerekliliği tek yüklemde birleştirdiği için İngilizcede geçmişin `should`ya değil `have prepared`a yüklendiği gözden kaçıyor.",
+      why: "Geçmişte yapılmamış bir şey için eleştiri `should have` + fiilin üçüncü hâli ile kurulur. `must have prepared` bir çıkarım bildirir ('mutlaka hazırlanmışızdır'), eleştiri değil. Türkçe '-meliydik' zamanı ve gerekliliği tek yüklemde birleştirdiği için İngilizcede geçmişin `should`a değil `have prepared`a yüklendiği gözden kaçıyor.",
       targets: ["modal-perfect.should-have"],
       byNative: {
         de: {

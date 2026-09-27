@@ -203,7 +203,7 @@ export const DE_A2_W05: QuizWeek = {
       stem: "Für einen neuen Ausweis brauche ich ___ beim Bürgeramt.",
       options: ["ein Datum", "eine Uhrzeit", "einen Termin", "einen Plan"],
       answer: 2,
-      why: "Bir dairede, doktorda, kuaförde ayrılan saat `Termin`. Sözcük muayenehaneye özgü değil, resmî kurumda da aynı. `Datum` takvimdeki tarih, `Uhrzeit` saat bilgisi: ikisi de randevunun bir parçası, randevunun kendisi değil.",
+      why: "Resmî bir dairede, doktorda, kuaförde ayrılan saat `Termin`. Sözcük muayenehaneye özgü değil, resmî kurumda da aynı. `Datum` takvimdeki tarih, `Uhrzeit` saat bilgisi: ikisi de randevunun bir parçası, randevunun kendisi değil.",
       targets: ["nomen.termin"],
       byNative: {
         en: {

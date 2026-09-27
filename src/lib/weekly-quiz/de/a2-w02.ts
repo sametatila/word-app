@@ -89,7 +89,7 @@ export const DE_A2_W02: QuizWeek = {
       stem: "Sie haben Fieber. Was ist richtig?",
       options: ["Sie rufen zuerst in der Praxis an.", "Sie gehen direkt in die Praxis.", "Sie warten bis zum 15. August.", "Sie holen ein Rezept ab."],
       answer: 0,
-      why: "`nicht …, sondern …` yapısında geçerli olan, `sondern`dan sonraki kısımdır. Olumsuzlanan eylemi (`direkt in die Praxis`) talimat sanmak tipik okuma hatası.",
+      why: "`nicht …, sondern …` yapısında geçerli olan, `sondern`den sonraki kısımdır. Olumsuzlanan eylemi (`direkt in die Praxis`) talimat sanmak tipik okuma hatası.",
       targets: ["lesen.detail", "konnektor.sondern"],
     },
 
@@ -214,7 +214,7 @@ export const DE_A2_W02: QuizWeek = {
       stem: "Ich habe morgen um 10 Uhr ___ beim Zahnarzt.",
       options: ["einen Plan", "einen Termin", "ein Datum", "eine Zeit"],
       answer: 1,
-      why: "Doktor, kuaför ya da bir daire için ayrılan saat `Termin`dir. `Datum` yalnız takvimdeki tarih (15.08.), `Zeit` genel olarak zaman. 'Randevu' ile 'tarih' ayrı sözcükler ama 'gün vermek' düşüncesi `Datum`a çekiyor.",
+      why: "Doktor, kuaför ya da resmî daire için ayrılan saat `Termin`dir. `Datum` yalnız takvimdeki tarih (15.08.), `Zeit` genel olarak zaman. 'Randevu' ile 'tarih' ayrı sözcükler ama 'gün vermek' düşüncesi `Datum`a çekiyor.",
       targets: ["nomen.termin"],
       byNative: {
         en: {
@@ -252,7 +252,7 @@ export const DE_A2_W02: QuizWeek = {
         en: {
           options: ["habe", "bekomme", "werde", "wurde"],
           answer: 2,
-          why: "`bekommen` İngilizce `become` gibi görünür ama 'almak' demektir. 'Hastalanıyorum' (`I'm getting ill`) Almancada `ich werde krank`.",
+          why: "`bekommen` İngilizce `become` gibi görünür ama 'almak' demektir. 'Hastalanıyorum' (`I'm getting sick`) Almancada `ich werde krank`.",
         },
       },
     },

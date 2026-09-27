@@ -33,14 +33,14 @@ export const EN_C1_W02: QuizWeek = {
       title: "Working from home: who does it actually suit?",
       body:
         "The number of employees who work at least partly from home has risen sharply in a few years. " +
-        "Many firms now provide equipment that would recently have counted as a luxury.\n\n" +
+        "Many firms now provide equipment that until recently would have counted as a luxury.\n\n" +
         "The advantages are obvious: less traveling, more quiet, a freer arrangement of the day. " +
         "Yet the sums do not add up for everyone. Those who work from home accept that the line between " +
         "work and free time becomes blurred. And it is those who are rarely in the office who tend to be " +
         "overlooked when promotions are decided — an effect that is hard to measure but difficult to deny.\n\n" +
         "Unions therefore call for clear rules. Being reachable after hours, they argue, must remain voluntary; " +
         "otherwise flexibility simply turns into longer working hours.\n\n" +
-        "Employers reply that rigid rules are unworkable when clients sit in several time zones. " +
+        "Employers reply that rigid rules are unworkable when clients are spread across several time zones. " +
         "Both sides have a point — which is precisely why the question remains unsettled.",
     },
     {
@@ -54,7 +54,7 @@ export const EN_C1_W02: QuizWeek = {
         { speaker: "Director", text: "Not quite. Two fixed days in the office; the rest is up to you." },
         { speaker: "Kaya", text: "And what about people who live further away?" },
         { speaker: "Director", text: "Then we find a solution. Exceptions are possible, they just have to be justified." },
-        { speaker: "Kaya", text: "That sounds reasonable. What bothers me is that the decision was taken without us." },
+        { speaker: "Kaya", text: "That sounds reasonable. What bothers me is that the decision was made without us." },
         { speaker: "Director", text: "That is a fair point. Next time we will involve the team earlier." },
       ],
     },
@@ -132,11 +132,11 @@ export const EN_C1_W02: QuizWeek = {
       options: [
         "The number of office days",
         "The distance to the office",
-        "That the decision was taken without the team",
+        "That the decision was made without the team",
         "That exceptions must be justified",
       ],
       answer: 2,
-      why: "\"What bothers me is that the decision was taken without us.\" Yarık cümle itirazın hedefini tek noktaya kilitliyor: kuralın içeriği değil, kuruluş biçimi.",
+      why: "\"What bothers me is that the decision was made without us.\" Yarık cümle itirazın hedefini tek noktaya kilitliyor: kuralın içeriği değil, kuruluş biçimi.",
       targets: ["listening.stance", "syntax.cleft"],
     },
     {
@@ -175,10 +175,10 @@ export const EN_C1_W02: QuizWeek = {
     {
       id: "en-c1-w02-g2",
       block: "grammar",
-      stem: "Many firms provide equipment that ___ recently have counted as a luxury.",
+      stem: "Many firms provide equipment that until recently ___ have counted as a luxury.",
       options: ["would", "will", "should", "must"],
       answer: 0,
-      why: "`would have + Partizip` gerçek dışı bir geçmişi anlatır: yakın zamana kadar lüks SAYILIRDI. `will` gelecek, `should` gereklilik, `must` çıkarım bildirir ve hiçbiri bu karşı olguyu kurmaz.",
+      why: "`would have` + fiilin üçüncü hâli gerçek dışı bir geçmişi anlatır: yakın zamana kadar lüks SAYILIRDI. `will` gelecek, `should` gereklilik, `must` çıkarım bildirir ve hiçbiri bu karşı olguyu kurmaz.",
       targets: ["modal.perfect", "tense.unreal-past"],
     },
     {
@@ -192,7 +192,7 @@ export const EN_C1_W02: QuizWeek = {
         "There is the existence of a travel time reduction benefit.",
       ],
       answer: 2,
-      why: "İngilizce fiil yeğler; aynı içeriği isim zincirine çevirmek cümleyi ağırlaştırır ve okunurluğu düşürür. Üç seçenek de dil bilgisel olarak kurulabilir, ama İngilizcede yerleşik üslup fiille kurulanıdır.",
+      why: "İngilizce fiil yeğler; aynı içeriği isim zincirine çevirmek cümleyi ağırlaştırır ve okunurluğu düşürür. Öteki üç seçenek biçimce kurulabilse de İngilizcede yerleşik üslup fiille kurulanıdır.",
       targets: ["style.nominalisation", "register.formal"],
       byNative: {
         de: {
@@ -220,7 +220,7 @@ export const EN_C1_W02: QuizWeek = {
     {
       id: "en-c1-w02-g4",
       block: "grammar",
-      stem: "Rigid rules are unworkable ___ clients sit in several time zones.",
+      stem: "Rigid rules are unworkable ___ clients are spread across several time zones.",
       options: ["however", "when", "despite", "nevertheless"],
       answer: 1,
       why: "Boşluktan sonra tam bir cümle geliyor, yani bağlaç gerekiyor: `when`. `however` ve `nevertheless` zarftır ve cümleleri noktalama ile ayırır; `despite` ise isim ya da `-ing` ister.",

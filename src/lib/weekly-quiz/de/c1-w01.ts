@@ -35,7 +35,7 @@ export const DE_C1_W01: QuizWeek = {
       id: "t1",
       genre: "Kommentar",
       genreTr: "Köşe yazısı",
-      title: "Was eine Studie beweist — und was nicht",
+      title: "Was eine Studie beweist – und was nicht",
       body:
         "Eine neue Studie behauptet, kurze Pausen verbesserten die Konzentration deutlich. " +
         "Die Autoren erklärten, sie hätten über zwei Jahre hinweg mehr als tausend Mitarbeiter beobachtet. " +
@@ -45,7 +45,7 @@ export const DE_C1_W01: QuizWeek = {
         "Zum anderen beruht ein erheblicher Teil der Daten auf eigenen Angaben: " +
         "Die Teilnehmer gaben selbst an, wie konzentriert sie sich fühlten. Solche Angaben lassen sich kaum überprüfen.\n\n" +
         "Kritiker räumen ein, dass Pausen sinnvoll seien. Sie bezweifeln jedoch, dass der nachgewiesene " +
-        "Zusammenhang so stark sei wie behauptet — zumal andere Untersuchungen zu anderen Ergebnissen kommen.\n\n" +
+        "Zusammenhang so stark sei wie behauptet – zumal andere Untersuchungen zu anderen Ergebnissen kommen.\n\n" +
         "Wer eine Behauptung prüfen will, sollte deshalb nicht nur auf das Ergebnis schauen, sondern auch darauf, " +
         "wer die Untersuchung bezahlt hat und wie die Daten entstanden sind.",
     },
@@ -82,7 +82,7 @@ export const DE_C1_W01: QuizWeek = {
         "Pausen wirken sich negativ auf die Konzentration aus",
       ],
       answer: 2,
-      why: "Metin iki itiraz sıralıyor: kim finanse etti (`zum einen`) ve veriler nasıl toplandı (`zum anderen`). Sonucu yanlışlamıyor — DAYANAĞINI sorguluyor. Katılımcı sayısı metinde bin'den fazla diye geçiyor, yani itiraz orada değil.",
+      why: "Metin iki itiraz sıralıyor: kim finanse etti (`zum einen`) ve veriler nasıl toplandı (`zum anderen`). Sonucu yanlışlamıyor — DAYANAĞINI sorguluyor. Katılımcı sayısı metinde binden fazla diye geçiyor, yani itiraz orada değil.",
       targets: ["lesen.quellenkritik", "argumentation.einwand"],
     },
     {
@@ -213,7 +213,7 @@ export const DE_C1_W01: QuizWeek = {
     {
       id: "de-c1-w01-g4",
       block: "grammar",
-      stem: "Welcher Satz sagt dasselbe wie: „Die Überprüfung der Angaben ist kaum möglich.\"?",
+      stem: "Welcher Satz sagt dasselbe wie: „Die Überprüfung der Angaben ist kaum möglich.“?",
       options: [
         "Die Überprüfung hat kaum stattgefunden.",
         "Die Angaben überprüfen sich kaum.",

@@ -32,18 +32,18 @@ export const DE_C1_W02: QuizWeek = {
       id: "t1",
       genre: "Hintergrundartikel",
       genreTr: "Arka plan yazısı",
-      title: "Zu Hause arbeiten — für wen rechnet es sich?",
+      title: "Zu Hause arbeiten – für wen rechnet es sich?",
       body:
         "Die Zahl der Beschäftigten, die zumindest teilweise von zu Hause arbeiten, ist in wenigen Jahren stark gestiegen. " +
         "Viele Firmen stellen ihren Mitarbeitern inzwischen Technik zur Verfügung, die vor kurzem noch als Luxus galt.\n\n" +
         "Die Vorteile liegen auf der Hand: weniger Fahrzeit, mehr Ruhe, eine freiere Einteilung des Tages. " +
         "Doch die Rechnung geht nicht für alle auf. Wer zu Hause arbeitet, nimmt in Kauf, dass die Grenze " +
         "zwischen Arbeit und Freizeit unschärfer wird. Und wer selten im Büro ist, wird bei Beförderungen " +
-        "leicht übersehen — ein Effekt, der sich schwer messen, aber kaum bestreiten lässt.\n\n" +
+        "leicht übersehen – ein Effekt, der sich schwer messen, aber kaum bestreiten lässt.\n\n" +
         "Gewerkschaften fordern deshalb klare Regeln. Erreichbarkeit nach Feierabend müsse freiwillig bleiben, " +
         "sagen sie; andernfalls werde aus Flexibilität schlicht längere Arbeitszeit.\n\n" +
         "Arbeitgeber halten dagegen, starre Vorgaben seien bei Kunden in mehreren Zeitzonen nicht durchführbar. " +
-        "Beide Seiten haben recht — und genau deshalb ist die Frage bis heute ungelöst.",
+        "Beide Seiten haben recht – und genau deshalb ist die Frage bis heute ungelöst.",
     },
     {
       kind: "audio",
@@ -76,7 +76,7 @@ export const DE_C1_W02: QuizWeek = {
         "Sie dürfen ihren Tag nicht frei einteilen",
       ],
       answer: 1,
-      why: "\"Wer selten im Büro ist, wird bei Beförderungen leicht übersehen.\" Teknik ve serbest zaman düzeni metinde AVANTAJ olarak geçiyor; maaş hiç anılmıyor. Metnin verdiği bilgiyi tersine çevirmemek gerekiyor.",
+      why: "\"Wer selten im Büro ist, wird bei Beförderungen leicht übersehen.\" Teknik ve günün serbestçe düzenlenmesi metinde AVANTAJ olarak geçiyor; maaş hiç anılmıyor. Metnin verdiği bilgiyi tersine çevirmemek gerekiyor.",
       targets: ["lesen.detail", "argumentation.nachteil"],
     },
     {
@@ -106,7 +106,7 @@ export const DE_C1_W02: QuizWeek = {
         "Die Frage ist längst entschieden",
       ],
       answer: 0,
-      why: "\"Beide Seiten haben recht — und genau deshalb ist die Frage bis heute ungelöst.\" `genau deshalb` çözümsüzlüğün SEBEBİNİ iki tarafın da haklı olmasına bağlıyor; bu bir taraf tutma değil, bir teşhis.",
+      why: "\"Beide Seiten haben recht – und genau deshalb ist die Frage bis heute ungelöst.\" `genau deshalb` çözümsüzlüğün SEBEBİNİ iki tarafın da haklı olmasına bağlıyor; bu bir taraf tutma değil, bir teşhis.",
       targets: ["lesen.wertung", "konnektor.deshalb"],
     },
 

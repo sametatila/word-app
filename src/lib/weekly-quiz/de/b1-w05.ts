@@ -297,7 +297,7 @@ export const DE_B1_W05: QuizWeek = {
         en: {
           options: ["hätten", "haben", "hatten", "würden haben"],
           answer: 0,
-          why: "İngilizcede `If we had a heating that works` geçmiş zaman biçimiyle kuruluyor ve `hatten` birebir karşılık gibi görünüyor. Almancada `hatten` yalnız geçmiş zaman; varsayım umlautla ayrılıyor: `hätten`.",
+          why: "İngilizcede `If we had heating that worked` geçmiş zaman biçimiyle kuruluyor ve `hatten` birebir karşılık gibi görünüyor. Almancada `hatten` yalnız geçmiş zaman; varsayım umlautla ayrılıyor: `hätten`.",
         },
       },
     },

@@ -201,7 +201,7 @@ export const DE_B2_W01: QuizWeek = {
         en: {
           options: ["hatten", "hätten", "würden", "wären"],
           answer: 1,
-          why: "İngilizce `if we had got` → `hatten` (bildirme kipinde Plusquamperfekt) aktarımı; `had` birebir `hatten` diye çevriliyor. Almancada gerçek dışı geçmiş koşul tarafında da kip ister: `hätten`. İngilizce `would have`dan gelen `würden` ise koşul cümlesinde geçmişi karşılamaz.",
+          why: "İngilizce `if we had gotten` → `hatten` (bildirme kipinde Plusquamperfekt) aktarımı; `had` birebir `hatten` diye çevriliyor. Almancada gerçek dışı geçmiş koşul tarafında da kip ister: `hätten`. İngilizce `would have`dan gelen `würden` ise koşul cümlesinde geçmişi karşılamaz.",
         },
       },
     },

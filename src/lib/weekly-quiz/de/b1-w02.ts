@@ -164,7 +164,7 @@ export const DE_B1_W02: QuizWeek = {
         "gar nicht mehr",
       ],
       answer: 1,
-      why: "`auf Papier nicht mehr. Aber …`: olumsuzlanan yol elenmeli, doğru bilgi `Aber`dan sonra geliyor. `abonniert` gazeteyi düzenli okuduğunu gösteriyor; `nicht mehr`i bütün okumaya yaymak tuzak.",
+      why: "`auf Papier nicht mehr. Aber …`: olumsuzlanan yol elenmeli, doğru bilgi `Aber`den sonra geliyor. `abonniert` gazeteyi düzenli okuduğunu gösteriyor; `nicht mehr`i bütün okumaya yaymak tuzak.",
       targets: ["hoeren.detail"],
     },
 

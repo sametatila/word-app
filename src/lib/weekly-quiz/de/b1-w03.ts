@@ -135,7 +135,7 @@ export const DE_B1_W03: QuizWeek = {
         "etwas Neues lernen",
       ],
       answer: 1,
-      why: "Lukas `ich interessiere mich für Technik, aber …` diyor: teknik ilgisini söylüyor, `aber`dan sonra da istemediği şeyi. Olumsuzluğun cümlenin hangi yarısına ait olduğunu izlemek gerekiyor.",
+      why: "Lukas `ich interessiere mich für Technik, aber …` diyor: teknik ilgisini söylüyor, `aber`den sonra da istemediği şeyi. Olumsuzluğun cümlenin hangi yarısına ait olduğunu izlemek gerekiyor.",
       targets: ["hoeren.detail"],
     },
     {
@@ -165,7 +165,7 @@ export const DE_B1_W03: QuizWeek = {
         "Das Studium beginnt schon im Dezember.",
       ],
       answer: 2,
-      why: "Aralık ayı `die Frist für die Bewerbung` ile bağlı: son başvuru tarihi. Çalışmanın ya da okulun o ay başladığı söylenmiyor. Bir tarihi duyunca onun NEYİN tarihi olduğuna bakmak gerekiyor.",
+      why: "Aralık ayı `die Frist für die Bewerbung` ile bağlı: son başvuru tarihi. Üniversite eğitiminin o ay başladığı ya da Abitur'un o ay olduğu söylenmiyor. Bir tarihi duyunca onun NEYİN tarihi olduğuna bakmak gerekiyor.",
       targets: ["hoeren.detail"],
     },
 
@@ -281,7 +281,7 @@ export const DE_B1_W03: QuizWeek = {
             "Wenn ich wäre du, würde ich eine Ausbildung machen.",
           ],
           answer: 0,
-          why: "`If I were you, I would do an apprenticeship` üç yerde Almancaya uymuyor: `wenn` fiili sona iter, ana cümlede `würde` özneden önce gelir, ve `machen` nesnenin arkasına, en sona geçer.",
+          why: "`If I were you, I would do an apprenticeship` üç yerde Almancaya uymuyor: `wenn` fiili sona iter, ana cümlede `würde` özneden önce gelir ve `machen` nesnenin arkasına, en sona geçer.",
         },
       },
     },

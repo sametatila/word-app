@@ -52,7 +52,7 @@ export const EN_B1_W05: QuizWeek = {
         "In week four, we arrived at the room where the course usually took place and found a dance class there. " +
         "Nobody from the school said sorry.\n\n" +
         "When I complained, a man at the office said that the problems would be solved soon. They weren't. " +
-        "Two students left the course in the middle, and I don't blame them.\n\n" +
+        "Two students left the course halfway through, and I don't blame them.\n\n" +
         "Would I recommend it? If the school were better organized, I would give it five stars without thinking. " +
         "Although there were problems, I don't regret taking the course, because the teacher was worth it. " +
         "But if you need a reliable schedule, look somewhere else.",

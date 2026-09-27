@@ -189,7 +189,7 @@ export const DE_B2_W05: QuizWeek = {
     {
       id: "de-b2-w05-g2",
       block: "grammar",
-      stem: "Das Museum: „Die alten Übersetzungen waren an einigen Stellen fehlerhaft.“ → Das Museum teilte mit, die alten Übersetzungen ___ an einigen Stellen fehlerhaft.",
+      stem: "Das Museum: „Die alten Übersetzungen waren an einigen Stellen fehlerhaft.“ → Das Museum teilte mit, dass die alten Übersetzungen an einigen Stellen fehlerhaft ___.",
       options: ["seien", "gewesen seien", "waren", "wären gewesen"],
       answer: 1,
       why: "Asıl söz geçmişte (`waren`), aktarımda da geçmiş korunur: Konjunktiv I'in geçmişi `gewesen seien`. Türkçe 'hatalıymış' hem 'hatalı' hem 'hatalıydı' anlamına gelebildiği için aktarımda zaman ayrımı kayboluyor ve `seien` seçiliyor; `-miş`i Almanca geçmişle eşleyince de kipsiz `waren` kalıyor.",
@@ -300,7 +300,7 @@ export const DE_B2_W05: QuizWeek = {
       stem: "Für das Kulturhaus war der Plan des Investors reines ___, denn das Haus sollte abgerissen werden.",
       options: ["Geschenk", "Gift", "Glück", "Gewinn"],
       answer: 1,
-      why: "Mecazî anlamda bir şeye çok zarar veren şey `Gift`: 'zehir gibi'. `Geschenk` hediye, `Gewinn` kazanç; cümlenin ikinci yarısı (evin yıkılacak olması) olumsuz bir anlam istiyor. İngilizceden `gift` = hediye bilgisi `Geschenk`i doğru gösteriyor.",
+      why: "Mecazî anlamda bir şeye çok zarar veren şey `Gift`: 'zehir gibi'. `Geschenk` hediye, `Gewinn` kazanç; cümlenin ikinci yarısı (evin yıkılacak olması) olumsuz bir anlam istiyor. İngilizceden `gift` = hediye bilgisi `Geschenk`i doğru cevap gibi gösteriyor.",
       targets: ["falschfreund.gift"],
       byNative: {
         en: {

@@ -200,7 +200,7 @@ export const EN_A1_W04: QuizWeek = {
       stem: "I ___ in a small house in the city.",
       options: ["live", "stand", "go", "come"],
       answer: 0,
-      why: "`live` bir yerde ikamet etmek demek. `stand` ayakta durmak, `come` gelmek — üçü de bir yerle kurulabilir ama anlamları başka.",
+      why: "`live` bir yerde ikamet etmek demek. `stand` ayakta durmak, `go` gitmek, `come` gelmek — üçü de bir yerle kurulabilir ama anlamları başka.",
       targets: ["verb.live", "wordfield.home"],
     },
     {

@@ -125,7 +125,7 @@ export const EN_A1_W05: QuizWeek = {
       stem: "My friend ___ English at school.",
       options: ["learn", "learns", "learning", "is learn"],
       answer: 1,
-      why: "Üçüncü tekil öznede fiil `-s` alır: my friend learns. Kural W2, W3 ve W4'te üç ayrı biçimde geçti; burada dördüncü bağlamı.",
+      why: "Üçüncü tekil öznede fiil `-s` alır: my friend learns. Kural W1–W4'ün her birinde geçti; burada beşinci bağlamı.",
       targets: ["verb.3sg-s", "tense.present-simple"],
     },
     {

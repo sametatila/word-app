@@ -80,7 +80,7 @@ export const DE_A1_W01: QuizWeek = {
       stem: "Wer lebt in Wien?",
       options: ["Ihr Bruder", "Ihre Eltern", "Lena", "Ihre Freundin"],
       answer: 1,
-      why: "\"Mein Vater und meine Mutter leben in Wien\" — yani annesi ve babası. Metin kardeşinin nerede yaşadığını hiç söylemiyor; söylenmeyen bir şeyi çıkarım yapmadan işaretlemek gerekiyor.",
+      why: "\"Mein Vater und meine Mutter leben in Wien\" — yani annesi ve babası. Metin kardeşinin nerede yaşadığını hiç söylemiyor; söylenmeyen bir şeyi tahminle işaretlememek gerekiyor.",
       targets: ["lesen.detail", "wortfeld.familie"],
     },
     {
@@ -154,7 +154,7 @@ export const DE_A1_W01: QuizWeek = {
         "Treffe heute ich eine Freundin.",
       ],
       answer: 2,
-      why: "Almancada ana cümlede çekimli fiil HER ZAMAN ikinci sırada. Başa `heute` gelince o yeri o kapıyor ve özne fiilin arkasına geçiyor.",
+      why: "Almancada ana cümlede çekimli fiil HER ZAMAN ikinci sırada. Başa `heute` gelince birinci yeri o kapıyor ve özne fiilin arkasına geçiyor.",
       targets: ["wortstellung.v2"],
       byNative: {
         tr: {

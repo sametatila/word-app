@@ -76,7 +76,7 @@ export const EN_A2_W03: QuizWeek = {
         "Take a tram across the bridge.",
       ],
       answer: 1,
-      why: "`get on` binmek, `get off` inmek demek. Central Station binilen yer, Park Road inilen yer. İki durak aynı cümlede geçince fiili (`from` / `get off at`) okumadan durak adını eşlemek yanlış yeri seçtiriyor.",
+      why: "`get on` binmek, `get off` inmek demek. Central Station binilen yer, Park Road inilen yer. İki durak aynı cümlede geçince ifadeyi (`from` / `get off at`) okumadan durak adını eşlemek yanlış yeri seçtiriyor.",
       targets: ["reading.detail", "verb.get-on-off"],
     },
     {

@@ -70,7 +70,7 @@ export const DE_B2_W02: QuizWeek = {
         { speaker: "Moderator", text: "Das klingt einfach. Wann kann es eingesetzt werden?" },
         { speaker: "Dr. Nowak", text: "In kleinen Versuchen funktioniert es bereits. Bevor es in großen Anlagen genutzt werden kann, muss es allerdings noch drei bis vier Jahre getestet werden." },
         { speaker: "Moderator", text: "Was können unsere Hörerinnen und Hörer heute schon tun?" },
-        { speaker: "Dr. Nowak", text: "Alte Geräte zurückbringen, die meisten Geschäfte für Elektronik nehmen sie kostenlos an. Und vorher die Daten löschen, dann muss man sich auch keine Sorgen machen." },
+        { speaker: "Dr. Nowak", text: "Alte Geräte zurückbringen, die meisten Elektronikgeschäfte nehmen sie kostenlos an. Und vorher die Daten löschen, dann muss man sich auch keine Sorgen machen." },
       ],
     },
   ],

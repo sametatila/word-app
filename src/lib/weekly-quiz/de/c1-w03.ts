@@ -31,7 +31,7 @@ export const DE_C1_W03: QuizWeek = {
       id: "t1",
       genre: "Essay",
       genreTr: "Deneme",
-      title: "Wer zieht weg — und warum",
+      title: "Wer zieht weg – und warum",
       body:
         "Der im vergangenen Jahr veröffentlichte Bericht zur Binnenwanderung zeigt ein Bild, " +
         "das den gängigen Erwartungen widerspricht. Nicht die Großstädte wachsen am schnellsten, " +
@@ -120,7 +120,7 @@ export const DE_C1_W03: QuizWeek = {
       stem: "Wie bewertet Frau Özdemir das Wachstum?",
       options: [
         "Als reine Belastung",
-        "Als grundsätzlich positiv, aber problemerzeugend",
+        "Als grundsätzlich positiv, aber mit neuen Problemen verbunden",
         "Als vorübergehende Erscheinung",
         "Als Erfolg ihrer eigenen Politik",
       ],
@@ -163,7 +163,7 @@ export const DE_C1_W03: QuizWeek = {
     {
       id: "de-c1-w03-g1",
       block: "grammar",
-      stem: "Welche Formulierung entspricht: „der Bericht, der im vergangenen Jahr veröffentlicht wurde\"?",
+      stem: "Welche Formulierung entspricht: „der Bericht, der im vergangenen Jahr veröffentlicht wurde“?",
       options: [
         "der im vergangenen Jahr veröffentlichte Bericht",
         "der Bericht im vergangenen Jahr veröffentlicht",

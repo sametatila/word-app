@@ -40,7 +40,7 @@ export const DE_C1_W04: QuizWeek = {
         "Ob das aus Zeitdruck geschah oder weil niemand sich zuständig fühlte, ist bis heute unklar.\n\n" +
         "Fachleute weisen indes darauf hin, dass die eigentliche Schwäche tiefer liegt. " +
         "Ein System, dessen Ausfall Tausende betrifft, darf nicht von einer einzigen unbemerkten Änderung " +
-        "abhängig sein — zumal Warnungen davor seit Jahren vorliegen.\n\n" +
+        "abhängig sein – zumal Warnungen davor seit Jahren vorliegen.\n\n" +
         "Verantwortung lässt sich nicht an die Technik abgeben. Sie muss zugewiesen werden, " +
         "und zwar bevor etwas ausfällt.",
     },
@@ -84,7 +84,7 @@ export const DE_C1_W04: QuizWeek = {
       id: "de-c1-w04-r2",
       block: "read",
       ref: "t1",
-      stem: "Warum nennt der Text die Formulierung „es seien Fehler gemacht worden\" bemerkenswert?",
+      stem: "Warum nennt der Text die Formulierung „es seien Fehler gemacht worden“ bemerkenswert?",
       options: [
         "Weil sie grammatisch fehlerhaft gebildet worden ist",
         "Weil sie das Ereignis ohne Verantwortlichen schildert",

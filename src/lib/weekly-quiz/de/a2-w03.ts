@@ -103,7 +103,7 @@ export const DE_A2_W03: QuizWeek = {
       stem: "Von welchem Gleis fährt der Zug nach München heute?",
       options: ["von Gleis 5", "von Gleis 20", "von Gleis 7", "von Gleis 12"],
       answer: 2,
-      why: "Anons önce olağan peronu (5), sonra değişikliği (7) söylüyor ve ikisini `nicht …, sondern …` ile bağlıyor. Anonslarda ilk duyulan sayı çoğu zaman eski bilgi; `sondern`dan sonrası geçerli olan.",
+      why: "Anons önce olağan peronu (5), sonra değişikliği (7) söylüyor ve ikisini `nicht …, sondern …` ile bağlıyor. Anonslarda ilk duyulan sayı çoğu zaman eski bilgi; `sondern`den sonrası geçerli olan.",
       targets: ["hoeren.detail", "konnektor.sondern"],
     },
     {
@@ -123,7 +123,7 @@ export const DE_A2_W03: QuizWeek = {
       stem: "Wo ist der Schalter?",
       options: ["oben, neben dem Café", "unten, neben Gleis 7", "oben, links", "unten, gegenüber vom Café"],
       answer: 3,
-      why: "`gegenüber` karşısında, `neben` yanında demek. Tarifte `nach unten` ve `rechts` yönü veriyor, `gegenüber vom Café` hedefi. Konum edatını başka bir edatla değiştirmek insanı yanlış kapıya götürür.",
+      why: "`gegenüber` karşısında, `neben` yanında demek. Tarifte `nach unten` ve `rechts` yönü, `gegenüber vom Café` ise hedefi veriyor. Konum edatını başka bir edatla değiştirmek insanı yanlış kapıya götürür.",
       targets: ["hoeren.detail", "wortfeld.weg"],
     },
 

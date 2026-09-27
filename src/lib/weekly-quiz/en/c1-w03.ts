@@ -43,8 +43,8 @@ export const EN_C1_W03: QuizWeek = {
         "The consequences for the receiving towns are mixed. Revenues rise, which is welcome; " +
         "but schools, doctors and bus services are lacking. Investment in infrastructure regularly lags " +
         "behind the arrival of new residents.\n\n" +
-        "Should the trend continue, many small places will face a task for which they are prepared " +
-        "neither in staff nor in funding.",
+        "Should the trend continue, many small places will face a task for which they have " +
+        "neither the staff nor the funding.",
     },
     {
       kind: "audio",
@@ -104,7 +104,7 @@ export const EN_C1_W03: QuizWeek = {
       stem: "What does the final paragraph say about small towns?",
       options: [
         "They will certainly cope",
-        "They are prepared neither in staff nor in funding",
+        "They have neither the staff nor the funding",
         "They have staff but no money",
         "They refuse further arrivals",
       ],
@@ -120,7 +120,7 @@ export const EN_C1_W03: QuizWeek = {
       ref: "a1",
       stem: "How does Ms. Okonkwo assess the growth?",
       options: [
-        "As positive in principle, but problem-creating",
+        "As positive in principle, but also a source of problems",
         "As a burden only",
         "As a success of her own policy",
         "As temporary",
@@ -235,13 +235,13 @@ export const EN_C1_W03: QuizWeek = {
       stem: "They ___ been laughed at, had they said this earlier.",
       options: ["will have", "would have", "would", "had"],
       answer: 1,
-      why: "Geçmişe dönük gerçek dışı sonuç `would have + Partizip` ile kurulur. `would` tek başına şimdiye ya da geleceğe bakar; `had` koşul yarısında kullanılmış durumda ve iki yarıda da tekrar edilmez.",
+      why: "Geçmişe dönük gerçek dışı sonuç `would have` + fiilin üçüncü hâli ile kurulur. `would` tek başına şimdiye ya da geleceğe bakar; `had` koşul yarısında kullanılmış durumda ve iki yarıda da tekrar edilmez.",
       targets: ["modal.perfect", "conditional.unreal"],
     },
     {
       id: "en-c1-w03-g5",
       block: "grammar",
-      stem: "They are prepared ___ in staff ___ in funding.",
+      stem: "They have ___ the staff ___ the funding.",
       options: ["either … or", "both … and", "not only … but also", "neither … nor"],
       answer: 3,
       why: "Cümle bir eksikliği anlatıyor, yani iki şeyi birden dışlayan çift bağlaç gerekiyor. Ötekiler ekleme ya da seçenek kurar ve cümleyi olumluya çevirir.",

@@ -117,7 +117,7 @@ export const DE_A1_W02: QuizWeek = {
       stem: "Was macht Mia am Abend?",
       options: ["Sie arbeitet", "Sie ist zu Hause", "Sie fährt mit dem Bus", "Sie steht auf"],
       answer: 1,
-      why: "\"Am Abend bin ich zu Hause.\" Çalışmak sabaha ait, akşam değil.",
+      why: "\"Am Abend bin ich zu Hause.\" Çalışmak sabaha ait, akşama değil.",
       targets: ["hoeren.detail", "zeitangabe.tagesteil"],
     },
 
@@ -173,7 +173,7 @@ export const DE_A1_W02: QuizWeek = {
       stem: "___ Abend lese ich ein Buch.",
       options: ["Um", "An", "Am", "In"],
       answer: 2,
-      why: "Günün bölümleri `am` ile kurulur: am Abend, am Tag. Saat ise `um` ile: um 6 Uhr. `am` aslında `an dem`in kısası.",
+      why: "Günün bölümleri `am` ile kurulur: am Morgen, am Abend. Saat ise `um` ile: um 6 Uhr. `am` aslında `an dem`in kısası.",
       targets: ["praeposition.zeit"],
       byNative: {
         en: {

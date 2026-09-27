@@ -310,7 +310,7 @@ export const EN_B1_W02: QuizWeek = {
         de: {
           options: ["actually", "currently", "recently", "eventually"],
           answer: 0,
-          why: "`actually` = eigentlich, in Wirklichkeit; Almanca `aktuell` İngilizcede `currently`. Cümle bir karşıtlık kuruyor (`looked real, but …`), bir zaman değil.",
+          why: "`actually` = eigentlich, in Wirklichkeit; Almanca `aktuell` İngilizcede `currently`. Cümle bir karşıtlık kuruyor (`looked new, but …`), bir zaman değil.",
         },
       },
     },

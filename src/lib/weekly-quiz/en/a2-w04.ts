@@ -84,7 +84,7 @@ export const EN_A2_W04: QuizWeek = {
       stem: "How much does the job pay?",
       options: ["12 pounds a day", "40 pounds a week", "12 pounds an hour", "3 pounds an hour"],
       answer: 2,
-      why: "İlanda üç sayı var: 40 haftalık saat, 12 saatlik ücret, 3 çıkış saati. Bir sayıyı birimiyle birlikte okumak gerekiyor: `an hour` ücreti, `a week` süreyi, `pm` saati bildiriyor.",
+      why: "İlanda birkaç sayı var: 40 haftalık saat, 12 saatlik ücret, 3 çıkış saati. Bir sayıyı birimiyle birlikte okumak gerekiyor: `an hour` ücreti, `a week` süreyi, `pm` saati bildiriyor.",
       targets: ["reading.detail"],
     },
     {

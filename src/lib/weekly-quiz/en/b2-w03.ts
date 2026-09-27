@@ -84,7 +84,7 @@ export const EN_B2_W03: QuizWeek = {
         "She learned Greek at school when she was fourteen.",
       ],
       answer: 1,
-      why: "`had grown up speaking two languages at home` past perfect ile sırayı veriyor: Türkçe ve Rumca evde, İngilizce sonra, on dört yaşında. Metin `her third language` diyor. Ev dilleriyle romanın dilini karıştırmak ilk paragrafın sıralamasını kaçırmaktan geliyor; Türkçe yazılan ikinci kitap, ilki değil.",
+      why: "`had grown up speaking two languages at home` past perfect ile sırayı veriyor: Türkçe ve Yunanca evde, İngilizce sonra, on dört yaşında. Metin `her third language` diyor. Ev dilleriyle romanın dilini karıştırmak ilk paragrafın sıralamasını kaçırmaktan geliyor; Türkçe yazılan ikinci kitap, ilki değil.",
       targets: ["reading.detail", "tense.past-perfect"],
     },
     {

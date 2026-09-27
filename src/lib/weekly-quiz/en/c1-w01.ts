@@ -36,7 +36,7 @@ export const EN_C1_W01: QuizWeek = {
         "on closer reading, however, questions remain.\n\n" +
         "First, the research was funded by a company that sells software for planning breaks. " +
         "That does not make the findings false, but it does raise the question of how independent they are. " +
-        "Second, a considerable part of the data rests on self-report: participants said themselves how " +
+        "Second, a considerable part of the data rests on self-report: participants themselves said how " +
         "focused they felt. Such statements can hardly be checked.\n\n" +
         "Critics acknowledge that breaks are useful. What they doubt is the strength of the link, " +
         "which the authors present as firmly established. Rarely is a single study enough to settle a question, " +
