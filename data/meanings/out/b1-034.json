@@ -28,16 +28,16 @@
     "tr": "zarf",
     "en": "envelope",
     "beispiel": "Leg das Geld für Oma einfach in ein Couvert.",
-    "beispielTr": "Babaannemin parasını bir zarfa koyuver.",
+    "beispielTr": "Babaanneme verilecek parayı bir zarfa koyuver.",
     "beispielEn": "Just put the money for Grandma in an envelope."
   },
   {
     "id": 1668,
     "tr": "diskotek",
-    "en": "discotheque",
+    "en": "disco",
     "beispiel": "Am Wochenende waren wir in einer Diskothek.",
     "beispielTr": "Hafta sonu bir diskoteğe gittik.",
-    "beispielEn": "We went to a discotheque on the weekend."
+    "beispielEn": "We went to a disco on the weekend."
   },
   {
     "id": 1676,
@@ -372,7 +372,7 @@
     "tr": "bugünkü",
     "en": "today's",
     "beispiel": "Die heutigen Handys können fast alles.",
-    "beispielTr": "Bugünün telefonları neredeyse her şeyi yapabiliyor.",
+    "beispielTr": "Bugünkü telefonlar neredeyse her şeyi yapabiliyor.",
     "beispielEn": "Today's phones can do almost everything."
   },
   {

@@ -13,7 +13,7 @@
   "en": "monumentality",
   "beispiel": "Die Monumentalität des Baus wirkt heute eher einschüchternd als erhaben.",
   "beispielTr": "Yapının anıtsallığı bugün yüceden çok ürkütücü geliyor.",
-  "beispielEn": "The building's monumentality feels intimidating today rather than sublime."
+  "beispielEn": "Today the building's monumentality feels more intimidating than sublime."
  },
  {
   "id": 5905,
@@ -237,7 +237,7 @@
   "en": "to dominate",
   "beispiel": "Der Büroturm dominiert die Silhouette der ganzen Innenstadt.",
   "beispielTr": "Ofis kulesi bütün şehir merkezinin siluetine hâkim.",
-  "beispielEn": "The office tower dominates the skyline of the whole downtown."
+  "beispielEn": "The office tower dominates the entire downtown skyline."
  },
  {
   "id": 5933,
@@ -260,7 +260,7 @@
   "tr": "bakımsız kalmak",
   "en": "to fall into neglect",
   "beispiel": "Die Anlage verwahrloste, seit die Stadt kein Geld mehr hatte.",
-  "beispielTr": "Şehrin parası kalmadığından beri tesis bakımsız kaldı.",
+  "beispielTr": "Şehrin parası kalmayınca tesis bakımsız kaldı.",
   "beispielEn": "The grounds fell into neglect once the city ran out of money."
  },
  {
@@ -381,7 +381,7 @@
   "en": "upward mobility through education",
   "beispiel": "Für Kinder aus Arbeiterfamilien bleibt der Bildungsaufstieg die Ausnahme.",
   "beispielTr": "İşçi ailelerinin çocukları için eğitimle yükselmek hâlâ istisna.",
-  "beispielEn": "For children from working-class families, upward mobility through education stays rare."
+  "beispielEn": "For children from working-class families, upward mobility through education remains the exception."
  },
  {
   "id": 5951,

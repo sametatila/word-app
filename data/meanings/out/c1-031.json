@@ -108,7 +108,7 @@
   "tr": "salgılamak",
   "en": "to secrete",
   "beispiel": "Die Pflanze sondert bei Verletzung einen klebrigen Saft ab.",
-  "beispielTr": "Bitki yaralandığında yapışkan bir öz salgılıyor.",
+  "beispielTr": "Bitki yaralandığında yapışkan bir özsu salgılıyor.",
   "beispielEn": "When injured the plant secretes a sticky sap."
  },
  {
@@ -121,7 +121,7 @@
  },
  {
   "id": 6768,
-  "tr": "biriktirmek",
+  "tr": "tasarruf etmek",
   "en": "to deposit",
   "beispiel": "Der Fluss lagert an der Mündung feinen Sand ab.",
   "beispielTr": "Nehir, ağzında ince kum biriktiriyor.",
@@ -197,7 +197,7 @@
   "en": "to rotate",
   "beispiel": "Die Erde rotiert einmal am Tag um ihre Achse.",
   "beispielTr": "Dünya günde bir kez kendi ekseni etrafında dönüyor.",
-  "beispielEn": "The earth rotates around its axis once a day."
+  "beispielEn": "The Earth rotates on its axis once a day."
  },
  {
   "id": 6778,
@@ -380,7 +380,7 @@
   "tr": "popülasyon azalması",
   "en": "population decline",
   "beispiel": "Der starke Bestandsrückgang der Insekten alarmiert auch die Landwirte.",
-  "beispielTr": "Böceklerdeki güçlü popülasyon azalması çiftçileri de tedirgin ediyor.",
+  "beispielTr": "Böceklerdeki ciddi popülasyon azalması çiftçileri de tedirgin ediyor.",
   "beispielEn": "The sharp population decline of insects alarms farmers too."
  },
  {

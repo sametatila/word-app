@@ -25,7 +25,7 @@
   },
   {
     "id": 1150,
-    "tr": "hesaplamak",
+    "tr": "hesaba katmak",
     "en": "to calculate",
     "beispiel": "Mein Vater rechnet jeden Monat unsere Ausgaben aus.",
     "beispielTr": "Babam her ay masraflarımızı hesaplıyor.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 861,
-    "tr": "aktif",
+    "tr": "etken",
     "en": "active",
     "beispiel": "Meine Oma ist mit achtzig noch sehr aktiv.",
     "beispielTr": "Büyükannem seksen yaşında hâlâ çok aktif.",

@@ -53,11 +53,11 @@
     "en": "to recover",
     "beispiel": "Die Feuerwehr konnte zwei Verletzte aus dem Wrack bergen.",
     "beispielTr": "İtfaiye enkazdan iki yaralı çıkarabildi.",
-    "beispielEn": "The fire brigade was able to recover two injured people from the wreck."
+    "beispielEn": "The fire department was able to recover two injured people from the wreck."
   },
   {
     "id": 5352,
-    "tr": "tahliye etmek",
+    "tr": "ortadan kaldırmak",
     "en": "to evacuate",
     "beispiel": "Wegen der Bombe musste man das halbe Viertel evakuieren.",
     "beispielTr": "Bomba yüzünden mahallenin yarısını tahliye etmek gerekti.",
@@ -156,12 +156,12 @@
     "tr": "mücadele etmek",
     "en": "to combat",
     "beispiel": "Hundert Helfer bekämpften das Feuer bis zum Morgengrauen.",
-    "beispielTr": "Yüz kadar görevli şafağa kadar yangınla mücadele etti.",
+    "beispielTr": "Yüz görevli şafağa kadar yangınla mücadele etti.",
     "beispielEn": "A hundred helpers fought the fire until dawn."
   },
   {
     "id": 5366,
-    "tr": "peşine düşmek",
+    "tr": "gütmek",
     "en": "to pursue",
     "beispiel": "Die Polizei verfolgte den Wagen bis zur Landesgrenze.",
     "beispielTr": "Polis aracı eyalet sınırına kadar takip etti.",

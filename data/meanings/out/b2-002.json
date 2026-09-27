@@ -69,7 +69,7 @@
     "en": "admission",
     "beispiel": "Ohne gute Noten bekommst du keine Zulassung zum Studium.",
     "beispielTr": "İyi notların olmadan üniversiteye kabul alamazsın.",
-    "beispielEn": "Without good grades you won't get admission to university."
+    "beispielEn": "Without good grades you won't be admitted to college."
   },
   {
     "id": 3239,
@@ -124,7 +124,7 @@
     "tr": "iyileşme",
     "en": "recovery",
     "beispiel": "Der Arzt wünschte ihm eine schnelle Genesung.",
-    "beispielTr": "Doktor ona çabuk iyileşmesini diledi.",
+    "beispielTr": "Doktor onun çabuk iyileşmesini diledi.",
     "beispielEn": "The doctor wished him a quick recovery."
   },
   {
@@ -157,7 +157,7 @@
     "en": "merger",
     "beispiel": "Die Fusion der beiden Konzerne wurde gestern offiziell bestätigt.",
     "beispielTr": "İki büyük şirketin birleşmesi dün resmen doğrulandı.",
-    "beispielEn": "The merger of the two corporations was confirmed yesterday."
+    "beispielEn": "The merger of the two corporations was officially confirmed yesterday."
   },
   {
     "id": 3385,
@@ -333,7 +333,7 @@
     "en": "to realize",
     "beispiel": "Er hat sich seinen Traum vom eigenen Café verwirklicht.",
     "beispielTr": "Kendi kafesini açma hayalini hayata geçirdi.",
-    "beispielEn": "He has realized his dream of his own café."
+    "beispielEn": "He has realized his dream of opening his own café."
   },
   {
     "id": 3396,

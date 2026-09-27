@@ -229,7 +229,7 @@
     "en": "female nonsmoker",
     "beispiel": "Meine Schwester ist Nichtraucherin und macht viel Sport.",
     "beispielTr": "Kız kardeşim sigara içmez ve çok spor yapar.",
-    "beispielEn": "My sister is a nonsmoker and does a lot of sport."
+    "beispielEn": "My sister is a nonsmoker and plays a lot of sports."
   },
   {
     "id": 2425,
@@ -314,10 +314,10 @@
   {
     "id": 2479,
     "tr": "emekli",
-    "en": "pensioner",
+    "en": "retiree",
     "beispiel": "Mein Großvater ist seit fünf Jahren Pensionist.",
     "beispielTr": "Dedem beş yıldır emekli.",
-    "beispielEn": "My grandfather has been a pensioner for five years."
+    "beispielEn": "My grandfather has been retired for five years."
   },
   {
     "id": 2482,

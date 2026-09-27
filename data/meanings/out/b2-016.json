@@ -21,7 +21,7 @@
   "en": "storage",
   "beispiel": "Bei falscher Lagerung verlieren Äpfel schnell ihren Geschmack.",
   "beispielTr": "Yanlış depolamada elmalar tadını çabuk yitirir.",
-  "beispielEn": "With the wrong storage apples quickly lose their flavor."
+  "beispielEn": "If stored incorrectly, apples quickly lose their flavor."
  },
  {
   "id": 4396,
@@ -253,7 +253,7 @@
   "en": "to sort out",
   "beispiel": "Krumme Gurken werden schon im Betrieb aussortiert.",
   "beispielTr": "Eğri salatalıklar daha işletmede ayıklanıyor.",
-  "beispielEn": "Crooked cucumbers are sorted out at the plant already."
+  "beispielEn": "Crooked cucumbers are sorted out right at the plant."
  },
  {
   "id": 4425,
@@ -261,7 +261,7 @@
   "en": "to fill up",
   "beispiel": "Haferflocken sättigen länger als ein süßes Frühstück.",
   "beispielTr": "Yulaf ezmesi tatlı bir kahvaltıdan daha uzun tok tutar.",
-  "beispielEn": "Oatmeal fills you up longer than a sweet breakfast."
+  "beispielEn": "Oatmeal keeps you full longer than a sweet breakfast."
  },
  {
   "id": 4426,
@@ -277,7 +277,7 @@
   "en": "ecological",
   "beispiel": "Der Betrieb arbeitet seit der Umstellung vollständig ökologisch.",
   "beispielTr": "İşletme dönüşümden bu yana tamamen ekolojik çalışıyor.",
-  "beispielEn": "Since the switch the business works completely ecologically."
+  "beispielEn": "Since the switch, the business has operated completely ecologically."
  },
  {
   "id": 4428,
@@ -357,7 +357,7 @@
   "en": "installment payment",
   "beispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an.",
   "beispielTr": "Taksitle ödemede yüzde sekiz ek maliyet çıkıyor.",
-  "beispielEn": "With installment payment there are extra costs of eight percent."
+  "beispielEn": "With installment payments, there is an extra charge of eight percent."
  },
  {
   "id": 4438,

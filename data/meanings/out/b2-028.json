@@ -161,7 +161,7 @@
   },
   {
     "id": 5015,
-    "tr": "pasaport",
+    "tr": "uymak",
     "en": "passport",
     "beispiel": "Mein Reisepass läuft in drei Monaten ab.",
     "beispielTr": "Pasaportumun süresi üç ay sonra doluyor.",
@@ -253,7 +253,7 @@
     "en": "heritage language",
     "beispiel": "Viele Kinder verlieren ihre Herkunftssprache schon in der Grundschule.",
     "beispielTr": "Birçok çocuk köken dilini daha ilkokulda yitiriyor.",
-    "beispielEn": "Many children lose their heritage language already in elementary school."
+    "beispielEn": "Many children lose their heritage language as early as elementary school."
   },
   {
     "id": 5027,
@@ -381,7 +381,7 @@
     "en": "to process",
     "beispiel": "Mein Antrag wird seit sechs Wochen bearbeitet.",
     "beispielTr": "Başvurum altı haftadır işleme alınmış durumda.",
-    "beispielEn": "My application has been in process for six weeks."
+    "beispielEn": "My application has been under review for six weeks."
   },
   {
     "id": 5043,

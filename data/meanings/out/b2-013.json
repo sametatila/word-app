@@ -105,7 +105,7 @@
   },
   {
     "id": 4256,
-    "tr": "belgelemek",
+    "tr": "kanıtlamak",
     "en": "to prove",
     "beispiel": "Alle Bewerber müssen ihre Deutschkenntnisse durch ein Zertifikat nachweisen.",
     "beispielTr": "Bütün adaylar Almanca bilgilerini bir sertifikayla belgelemek zorunda.",
@@ -397,6 +397,6 @@
     "en": "filing",
     "beispiel": "Die digitale Ablage ist inzwischen übersichtlicher als der Aktenschrank.",
     "beispielTr": "Dijital dosyalama artık evrak dolabından daha düzenli.",
-    "beispielEn": "The digital filing is now tidier than the file cabinet."
+    "beispielEn": "Digital filing is now tidier than the file cabinet."
   }
 ]

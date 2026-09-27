@@ -293,7 +293,7 @@
     "en": "risk factor",
     "beispiel": "Schulabbruch zählt zu den stärksten Risikofaktoren im Jugendalter.",
     "beispielTr": "Okulu bırakmak, ergenlikteki en güçlü risk faktörlerinden biridir.",
-    "beispielEn": "Dropping out of school is a major risk factor in adolescence."
+    "beispielEn": "Dropping out of school is among the strongest risk factors in adolescence."
   },
   {
     "id": 6440,
@@ -349,14 +349,14 @@
     "en": "lack of prospects",
     "beispiel": "Im Dorf treibt die Perspektivlosigkeit viele junge Leute weg.",
     "beispielTr": "Köyde geleceksizlik pek çok genci göçe zorluyor.",
-    "beispielEn": "In the village a lack of prospects drives young people away."
+    "beispielEn": "In the village a lack of prospects drives many young people away."
   },
   {
     "id": 6447,
     "tr": "suç korkusu",
     "en": "fear of crime",
     "beispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko.",
-    "beispielTr": "Yaşlıların suç korkusu gerçek risklerinin çok üstünde.",
+    "beispielTr": "Yaşlıların suç korkusu gerçek risklerinin üstünde.",
     "beispielEn": "Older people's fear of crime exceeds their actual risk."
   },
   {

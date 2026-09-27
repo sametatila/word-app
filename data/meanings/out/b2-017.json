@@ -42,7 +42,7 @@
  {
   "id": 4448,
   "tr": "ödeme gecikmesi",
-  "en": "payment default",
+  "en": "late payment",
   "beispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
   "beispielTr": "Ödeme gecikmesinde şirket yasal yollara başvurma hakkını saklı tutuyor.",
   "beispielEn": "If payment is delayed, the company reserves the right to take legal action."
@@ -242,7 +242,7 @@
  {
   "id": 4473,
   "tr": "komisyon ücreti",
-  "en": "sales commission",
+  "en": "commission",
   "beispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
   "beispielTr": "Emlakçı satış bedelinin yüzde üçü kadar komisyon alıyor.",
   "beispielEn": "The agent gets a commission of three percent of the purchase price."
@@ -377,7 +377,7 @@
  },
  {
   "id": 4490,
-  "tr": "hesaplamak",
+  "tr": "hesaba katmak",
   "en": "to calculate",
   "beispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert.",
   "beispielTr": "İşletme fiyatları belli ki fazla dar hesaplamış.",

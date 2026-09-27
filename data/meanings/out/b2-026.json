@@ -45,7 +45,7 @@
     "en": "to explore",
     "beispiel": "Am ersten Tag erkundeten wir die Altstadt ganz ohne Karte.",
     "beispielTr": "İlk gün eski şehri hiç harita kullanmadan keşfettik.",
-    "beispielEn": "On the first day we explored the old town without any map."
+    "beispielEn": "On the first day we explored the old town without a map."
   },
   {
     "id": 4901,
@@ -396,7 +396,7 @@
     "tr": "yalan haber",
     "en": "false report",
     "beispiel": "Die Falschmeldung wurde tausendfach geteilt, bevor jemand widersprach.",
-    "beispielTr": "Yalan haber, biri itiraz etmeden önce binlerce kez paylaşıldı.",
-    "beispielEn": "The false report was shared thousands of times before anyone objected."
+    "beispielTr": "Yalan haber, biri yalanlamadan önce binlerce kez paylaşıldı.",
+    "beispielEn": "The false report was shared thousands of times before anyone refuted it."
   }
 ]

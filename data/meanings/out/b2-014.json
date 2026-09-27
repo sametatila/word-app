@@ -68,7 +68,7 @@
     "tr": "açıklığa kavuşturma ihtiyacı",
     "en": "need for clarification",
     "beispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf.",
-    "beispielTr": "Maliyetler konusunda hâlâ ciddi bir açıklığa kavuşturma ihtiyacı var.",
+    "beispielTr": "Maliyetler konusunda hâlâ açıklığa kavuşturulması gereken çok şey var.",
     "beispielEn": "There's still considerable need for clarification about the costs."
   },
   {
@@ -137,10 +137,10 @@
   },
   {
     "id": 4310,
-    "tr": "vekâlet",
+    "tr": "vekil",
     "en": "deputizing",
     "beispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
-    "beispielTr": "İzindeyken vekâleti Kern Hanım üstleniyor.",
+    "beispielTr": "Ben izindeyken vekâletimi Kern Hanım üstleniyor.",
     "beispielEn": "While I'm on vacation Ms. Kern is deputizing for me."
   },
   {

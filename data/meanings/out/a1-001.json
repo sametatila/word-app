@@ -10,7 +10,7 @@
   {
     "id": 416,
     "tr": "o; onlar",
-    "en": "she",
+    "en": "she; they",
     "beispiel": "Das ist Anna, sie wohnt in Köln.",
     "beispielTr": "Bu Anna, o Köln'de oturuyor.",
     "beispielEn": "This is Anna, she lives in Cologne."
@@ -297,7 +297,7 @@
   },
   {
     "id": 413,
-    "tr": "olmak",
+    "tr": "yer almak",
     "en": "to be",
     "beispiel": "Mein Bruder ist heute krank.",
     "beispielTr": "Kardeşim bugün hasta.",
@@ -370,7 +370,7 @@
   {
     "id": 334,
     "tr": "-e doğru; sonra",
-    "en": "to",
+    "en": "to; after",
     "beispiel": "Wir fliegen morgen nach Italien.",
     "beispielTr": "Yarın İtalya'ya uçuyoruz.",
     "beispielEn": "We're flying to Italy tomorrow."
@@ -393,7 +393,7 @@
   },
   {
     "id": 498,
-    "tr": "olmak",
+    "tr": "yer almak",
     "en": "to become",
     "beispiel": "Im Herbst werden die Blätter gelb und rot.",
     "beispielTr": "Sonbaharda yapraklar sarı ve kırmızı olur.",

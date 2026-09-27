@@ -125,7 +125,7 @@
   "en": "livestock farming",
   "beispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht.",
   "beispielTr": "Bu bölgede işletmelerin neredeyse yarısı hayvancılıkla geçiniyor.",
-  "beispielEn": "In this region almost every second farm lives off livestock."
+  "beispielEn": "In this region almost half of all farms make a living from livestock."
  },
  {
   "id": 4359,
@@ -277,7 +277,7 @@
   "en": "food waste",
   "beispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
   "beispielTr": "Gıda israfına karşı en çok evde iyi planlama yardımcı oluyor.",
-  "beispielEn": "Against food waste, better planning at home helps most of all."
+  "beispielEn": "Better planning at home is the best way to fight food waste."
  },
  {
   "id": 4378,
@@ -300,7 +300,7 @@
   "tr": "mühür",
   "en": "seal",
   "beispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
-  "beispielTr": "Yeşil damga tek başına hayvancılık hakkında bir şey söylemiyor.",
+  "beispielTr": "Yeşil mühür tek başına hayvanların nasıl yetiştirildiği hakkında bir şey söylemiyor.",
   "beispielEn": "The green seal alone says nothing about how the animals are kept."
  },
  {

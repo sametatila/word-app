@@ -157,7 +157,7 @@
     "en": "permit",
     "beispiel": "Ohne Genehmigung darf hier nicht gebaut werden.",
     "beispielTr": "Resmî izin olmadan burada inşaat yapılamaz.",
-    "beispielEn": "Without a permit nothing may be built here."
+    "beispielEn": "No construction is allowed here without a permit."
   },
   {
     "id": 3819,
@@ -181,7 +181,7 @@
     "en": "diagnosis",
     "beispiel": "Die Diagnose stand erst nach vielen Tests fest.",
     "beispielTr": "Teşhis ancak birçok testten sonra kesinleşti.",
-    "beispielEn": "The diagnosis was certain only after many tests."
+    "beispielEn": "The diagnosis was only confirmed after many tests."
   },
   {
     "id": 3350,
@@ -389,7 +389,7 @@
     "en": "burden",
     "beispiel": "Die ständige Belastung im Job machte ihn krank.",
     "beispielTr": "İşteki sürekli yük onu hasta etti.",
-    "beispielEn": "The constant burden at work made him ill."
+    "beispielEn": "The constant burden at work made him sick."
   },
   {
     "id": 3379,

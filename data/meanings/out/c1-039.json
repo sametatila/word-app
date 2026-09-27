@@ -101,7 +101,7 @@
     "en": "data set",
     "beispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert.",
     "beispielTr": "Eksik veri setleri analizden önce ayıklandı.",
-    "beispielEn": "Incomplete data sets were sorted out before the analysis."
+    "beispielEn": "Incomplete data sets were weeded out before the analysis."
   },
   {
     "id": 7166,
@@ -245,7 +245,7 @@
     "en": "indicator",
     "beispiel": "Die Arbeitslosenquote gilt als grober Indikator für die Wirtschaftslage.",
     "beispielTr": "İşsizlik oranı, ekonomik durumun kaba bir göstergesi sayılıyor.",
-    "beispielEn": "The unemployment rate counts as a rough indicator of the economy."
+    "beispielEn": "The unemployment rate is considered a rough indicator of the state of the economy."
   },
   {
     "id": 7184,
@@ -345,7 +345,7 @@
   },
   {
     "id": 7196,
-    "tr": "hafife almak",
+    "tr": "olduğundan düşük tahmin etmek",
     "en": "to underestimate",
     "beispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt.",
     "beispielTr": "Eski modeller gelişmenin hızını iyice hafife aldı.",

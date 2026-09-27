@@ -117,7 +117,7 @@
     "en": "truism",
     "beispiel": "Dass Bildung wichtig ist, gilt inzwischen als Binsenweisheit.",
     "beispielTr": "Eğitimin önemli olduğu artık herkesin bildiği bir gerçek.",
-    "beispielEn": "That education matters counts as a truism by now."
+    "beispielEn": "That education matters is now considered a truism."
   },
   {
     "id": 6168,
@@ -133,7 +133,7 @@
     "en": "to conclude",
     "beispiel": "Daraus folgerte der Autor voreilig einen kausalen Zusammenhang.",
     "beispielTr": "Yazar bundan aceleyle nedensel bir ilişki olduğu sonucunu çıkardı.",
-    "beispielEn": "From this the author hastily concluded a causal link."
+    "beispielEn": "From this the author hastily inferred a causal link."
   },
   {
     "id": 6170,
@@ -201,7 +201,7 @@
   },
   {
     "id": 6178,
-    "tr": "kabul etmek",
+    "tr": "onaylamak",
     "en": "to concede",
     "beispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
     "beispielTr": "Rakipleri bile onda belli bir düşünsel tutarlılık olduğunu kabul ediyor.",
@@ -229,7 +229,7 @@
     "en": "however",
     "beispiel": "Sein Einwand klang plausibel, entbehrte indes jeder empirischen Grundlage.",
     "beispielTr": "İtirazı makul geliyordu, ne var ki hiçbir ampirik dayanağı yoktu.",
-    "beispielEn": "His objection sounded plausible; however it had no empirical basis."
+    "beispielEn": "His objection sounded plausible; however, it had no empirical basis."
   },
   {
     "id": 6182,
@@ -237,7 +237,7 @@
     "en": "by contrast",
     "beispiel": "Die erste Studie bestätigt den Effekt, die zweite hingegen nicht.",
     "beispielTr": "İlk çalışma etkiyi doğruluyor, ikincisi ise doğrulamıyor.",
-    "beispielEn": "The first study confirms the effect; the second by contrast does not."
+    "beispielEn": "The first study confirms the effect; the second, by contrast, does not."
   },
   {
     "id": 6183,
@@ -253,7 +253,7 @@
     "en": "admittedly",
     "beispiel": "Der Vergleich ist reizvoll, trägt freilich nur bedingt.",
     "beispielTr": "Karşılaştırma ilgi çekici, gerçi ancak belli ölçüde geçerli.",
-    "beispielEn": "The comparison is appealing, admittedly it only goes so far."
+    "beispielEn": "The comparison is appealing, but admittedly it only goes so far."
   },
   {
     "id": 6185,
@@ -261,7 +261,7 @@
     "en": "although",
     "beispiel": "Seine Kritik ist berechtigt, wenngleich sie deutlich zu scharf ausfällt.",
     "beispielTr": "Eleştirisi yerinde, her ne kadar fazlasıyla sert olsa da.",
-    "beispielEn": "His criticism is justified, although it turns out far too harsh."
+    "beispielEn": "His criticism is justified, although it is far too harsh."
   },
   {
     "id": 6186,
@@ -292,8 +292,8 @@
     "tr": "sağlam",
     "en": "sound",
     "beispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
-    "beispielTr": "Bu varsayım için şimdiye dek geçerli bir argüman yok.",
-    "beispielEn": "So far there is no valid argument for this assumption."
+    "beispielTr": "Bu varsayım için şimdiye dek sağlam bir argüman yok.",
+    "beispielEn": "So far there is no sound argument for this assumption."
   },
   {
     "id": 6190,
@@ -333,7 +333,7 @@
     "en": "grid stability",
     "beispiel": "Bei schwankender Einspeisung wird die Netzstabilität zur eigentlichen Herausforderung.",
     "beispielTr": "Besleme dalgalanınca asıl zorluk şebeke istikrarı oluyor.",
-    "beispielEn": "With fluctuating feed-in grid stability becomes the real challenge."
+    "beispielEn": "With fluctuating feed-in, grid stability becomes the real challenge."
   },
   {
     "id": 6195,

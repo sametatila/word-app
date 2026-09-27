@@ -9,7 +9,7 @@
   },
   {
     "id": 3026,
-    "tr": "vekâlet",
+    "tr": "vekil",
     "en": "cover",
     "beispiel": "Während meines Urlaubs übernimmt eine Kollegin die Vertretung.",
     "beispielTr": "İzindeyken bir meslektaşım bana vekâlet edecek.",
@@ -209,7 +209,7 @@
   },
   {
     "id": 3010,
-    "tr": "kaçırmak",
+    "tr": "gizlice geçirmek",
     "en": "to miss",
     "beispiel": "Wegen der Grippe habe ich zwei Wochen Unterricht versäumt.",
     "beispielTr": "Grip yüzünden iki hafta ders kaçırdım.",
@@ -364,7 +364,7 @@
     "tr": "grev yapmak",
     "en": "to strike",
     "beispiel": "Weil die Piloten streiken, fallen heute viele Flüge aus.",
-    "beispielTr": "Pilotlar grev yaptığı için bugün birçok uçuş iptal.",
+    "beispielTr": "Pilotlar grev yaptığı için bugün birçok uçuş iptal edildi.",
     "beispielEn": "Because the pilots are on strike, many flights are canceled today."
   },
   {
@@ -397,6 +397,6 @@
     "en": "to copy",
     "beispiel": "Der Lehrer hat gemerkt, dass Paul beim Test abgeschrieben hat.",
     "beispielTr": "Öğretmen Paul'ün sınavda kopya çektiğini fark etti.",
-    "beispielEn": "The teacher noticed that Paul copied on the test."
+    "beispielEn": "The teacher noticed that Paul copied answers on the test."
   }
 ]

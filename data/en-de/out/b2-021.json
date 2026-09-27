@@ -13,7 +13,7 @@
  { "id": 204649, "beispielDe": "Jedes Jahr erkranken Tausende an dieser Infektion." },
  { "id": 204651, "beispielDe": "Er lebt seit seiner Jugend mit einer chronischen Krankheit." },
  { "id": 204652, "beispielDe": "Er kam mit akuten Brustschmerzen ins Krankenhaus." },
- { "id": 204653, "beispielDe": "Die meisten dieser Operationen werden heute ambulant gemacht." },
+ { "id": 204653, "beispielDe": "Die meisten dieser Operationen werden heute ambulant durchgeführt." },
  { "id": 204656, "beispielDe": "Schach verlangt große mentale Stärke." },
  { "id": 204657, "beispielDe": "Im Winter bin ich besonders anfällig für Erkältungen." },
  { "id": 204658, "beispielDe": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig." },
@@ -41,12 +41,12 @@
  { "id": 204692, "beispielDe": "Kürzere Rüstzeiten machen kleine Serien wieder rentabel." },
  { "id": 204694, "beispielDe": "Nach der Schulung sank die Fehlerquote unter ein Prozent." },
  { "id": 204695, "beispielDe": "Dieser Arbeitsgang lässt sich mit dem nächsten verbinden." },
- { "id": 204699, "beispielDe": "Ein Stromausfall stoppte die Produktion einen ganzen Tag." },
+ { "id": 204699, "beispielDe": "Ein Stromausfall legte die Produktion einen ganzen Tag lahm." },
  { "id": 204700, "beispielDe": "Die Gewährleistung läuft zwei Jahre ab Lieferdatum." },
  { "id": 204702, "beispielDe": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile verstreut." },
  { "id": 204704, "beispielDe": "Bevor Sie bohren, prüfen Sie bitte die Maße noch einmal." },
  { "id": 204706, "beispielDe": "Solche Beschläge wurden früher von Hand geschmiedet." },
  { "id": 204711, "beispielDe": "Die Schneide nutzt sich bei hartem Material schnell ab." },
- { "id": 204714, "beispielDe": "Das Blech wird vom Laser genau zugeschnitten." },
+ { "id": 204714, "beispielDe": "Das Blech wird per Laser genau zugeschnitten." },
  { "id": 204716, "beispielDe": "Der Stahl wird in einem heißen Ofen gehärtet." }
 ]

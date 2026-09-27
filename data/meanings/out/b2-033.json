@@ -92,7 +92,7 @@
   "tr": "tur operatörü",
   "en": "tour operator",
   "beispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
-  "beispielTr": "Tur operatörü uçuşun iptalini bize daha dün bildirdi.",
+  "beispielTr": "Tur operatörü uçuşun iptalini bize ancak dün bildirdi.",
   "beispielEn": "The tour operator informed us of the flight cancellation only yesterday."
  },
  {
@@ -125,7 +125,7 @@
   "en": "tour",
   "beispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
   "beispielTr": "Sicilya turumuzda on iki yeri gezdik.",
-  "beispielEn": "On our round trip through Sicily we visited twelve places."
+  "beispielEn": "On our tour of Sicily we visited twelve places."
  },
  {
   "id": 5261,

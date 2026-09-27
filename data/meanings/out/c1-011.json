@@ -324,7 +324,7 @@
     "tr": "kendini algılayış",
     "en": "self-conception",
     "beispiel": "Das Selbstverständnis der Zunft beruht auf jahrhundertealten Erzählungen.",
-    "beispielTr": "Loncanın kendini algılayışı asırlık anlatılara dayanıyor.",
+    "beispielTr": "Loncanın kendini algılayışı yüzyıllardır süregelen anlatılara dayanıyor.",
     "beispielEn": "The guild's self-conception rests on centuries-old stories."
   },
   {
@@ -349,7 +349,7 @@
     "en": "to hand down",
     "beispiel": "Diese Formeln werden mündlich tradiert und nie aufgeschrieben.",
     "beispielTr": "Bu formüller kuşaktan kuşağa sözlü aktarılır, hiç yazıya geçmez.",
-    "beispielEn": "These formulas are handed down orally and never written out."
+    "beispielEn": "These formulas are handed down orally and never written down."
   },
   {
     "id": 5797,
@@ -396,7 +396,7 @@
     "tr": "aforoz etmek",
     "en": "to ostracize",
     "beispiel": "Wer gegen das Schweigegebot verstieß, wurde von allen geächtet.",
-    "beispielTr": "Sessizlik kuralını çiğneyen herkes tarafından aforoz edildi.",
+    "beispielTr": "Sessizlik kuralını çiğneyen, herkes tarafından aforoz edildi.",
     "beispielEn": "Whoever broke the rule of silence was ostracized by everyone."
   }
 ]

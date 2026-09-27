@@ -145,7 +145,7 @@
  },
  {
   "id": 751,
-  "tr": "pasaport",
+  "tr": "uymak",
   "en": "passport",
   "beispiel": "Mein Pass läuft leider nächsten Monat ab.",
   "beispielTr": "Pasaportumun süresi ne yazık ki gelecek ay doluyor.",
@@ -353,7 +353,7 @@
  },
  {
   "id": 294,
-  "tr": "hafif",
+  "tr": "kolay",
   "en": "light",
   "beispiel": "Meine Tasche ist heute sehr leicht.",
   "beispielTr": "Çantam bugün çok hafif.",

@@ -77,7 +77,7 @@
     "en": "data minimization",
     "beispiel": "Die App speichert aus Datensparsamkeit keine Standortdaten.",
     "beispielTr": "Uygulama, veri minimizasyonu gereği konum verisi tutmuyor.",
-    "beispielEn": "For data minimization, the app stores no location data."
+    "beispielEn": "In the interest of data minimization, the app stores no location data."
   },
   {
     "id": 7213,
@@ -125,7 +125,7 @@
     "en": "training data",
     "beispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar.",
     "beispielTr": "Eğitim verilerinin nereden geldiği birçok sağlayıcıda belirsiz kalıyor.",
-    "beispielEn": "Where the training data come from stays unclear with many providers."
+    "beispielEn": "Where the training data come from remains unclear for many providers."
   },
   {
     "id": 7219,
@@ -173,7 +173,7 @@
     "en": "belief in progress",
     "beispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen.",
     "beispielTr": "Sarsılmamış bir ilerleme inancı, yan etkileri görmeyi engelliyor.",
-    "beispielEn": "An unbroken belief in progress blocks the view of the side effects."
+    "beispielEn": "An unbroken belief in progress blinds people to the side effects."
   },
   {
     "id": 7225,
@@ -253,7 +253,7 @@
     "en": "to log",
     "beispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert.",
     "beispielTr": "Veri tabanına yapılan her erişim eksiksiz biçimde kayda geçiriliyor.",
-    "beispielEn": "Every access to the database is logged without gaps."
+    "beispielEn": "Every access to the database is logged without exception."
   },
   {
     "id": 7235,
@@ -309,7 +309,7 @@
     "en": "error-prone",
     "beispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig.",
     "beispielTr": "Özellikle ender durumlarda tanıma işlemi hataya açık kalıyor.",
-    "beispielEn": "Especially in rare cases the recognition stays error-prone."
+    "beispielEn": "Especially in rare cases the recognition remains error-prone."
   },
   {
     "id": 7242,
@@ -325,7 +325,7 @@
     "en": "ubiquitous",
     "beispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
     "beispielTr": "Veri toplama gündelik hayatın çoktan her yerine sindi.",
-    "beispielEn": "The collection of data has long become ubiquitous in everyday life."
+    "beispielEn": "The collection of data has long since become ubiquitous in everyday life."
   },
   {
     "id": 7244,
@@ -381,7 +381,7 @@
     "en": "oversight body",
     "beispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
     "beispielTr": "Bağımsız bir denetim mercii olmadan her reform niyet beyanı olarak kalır.",
-    "beispielEn": "Without an independent oversight body every reform stays a declaration of intent."
+    "beispielEn": "Without an independent oversight body every reform remains a mere declaration of intent."
   },
   {
     "id": 7251,

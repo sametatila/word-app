@@ -9,8 +9,8 @@
  },
  {
   "id": 4494,
-  "tr": "kabul etmek",
-  "en": "to grant",
+  "tr": "onaylamak",
+  "en": "to approve",
   "beispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt.",
   "beispielTr": "Kurum, kira yardımı başvurusunu sonunda onayladı.",
   "beispielEn": "The authority finally approved the housing benefit application."
@@ -61,7 +61,7 @@
   "en": "to use up",
   "beispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf.",
   "beispielTr": "Yüksek ek giderler bütün maaşını yiyip bitiriyor.",
-  "beispielEn": "The high extra costs eat up his entire salary."
+  "beispielEn": "The high utility costs eat up his entire salary."
  },
  {
   "id": 4501,
@@ -76,7 +76,7 @@
   "tr": "geriye dönük",
   "en": "retroactive",
   "beispiel": "Die Erhöhung gilt rückwirkend ab dem ersten Januar.",
-  "beispielTr": "Zam bir Ocak'tan itibaren geriye dönük geçerli.",
+  "beispielTr": "Zam 1 Ocak'tan itibaren geriye dönük geçerli.",
   "beispielEn": "The increase applies retroactively from the first of January."
  },
  {
@@ -181,7 +181,7 @@
   "en": "appreciation",
   "beispiel": "Viele Pflegekräfte vermissen die Wertschätzung der Gesellschaft.",
   "beispielTr": "Birçok bakım görevlisi toplumun takdirini göremiyor.",
-  "beispielEn": "Many care workers miss society's appreciation."
+  "beispielEn": "Many care workers feel unappreciated by society."
  },
  {
   "id": 4516,
@@ -233,8 +233,8 @@
  },
  {
   "id": 4522,
-  "tr": "gazap",
-  "en": "wrath",
+  "tr": "öfke",
+  "en": "anger",
   "beispiel": "Sie ließ ihren Zorn an den falschen Menschen aus.",
   "beispielTr": "Öfkesini yanlış insanlardan çıkardı.",
   "beispielEn": "She took her anger out on the wrong people."
@@ -261,7 +261,7 @@
   "en": "exclusion",
   "beispiel": "Viele Jugendliche erleben Ausgrenzung schon in der Schule.",
   "beispielTr": "Birçok genç dışlanmayı daha okulda yaşıyor.",
-  "beispielEn": "Many young people experience exclusion already at school."
+  "beispielEn": "Many young people experience exclusion while still in school."
  },
  {
   "id": 4526,

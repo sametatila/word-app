@@ -268,7 +268,7 @@
     "tr": "kaynak gizliliği",
     "en": "source protection",
     "beispiel": "Ohne Quellenschutz spricht kaum ein Insider mit Journalisten.",
-    "beispielTr": "Kaynak gizliliği olmasa hiçbir içeriden kişi gazetecilerle konuşmaz.",
+    "beispielTr": "Kaynak gizliliği olmasa içeriden neredeyse kimse gazetecilerle konuşmaz.",
     "beispielEn": "Without source protection hardly any insider talks to journalists."
   },
   {
@@ -281,7 +281,7 @@
   },
   {
     "id": 6588,
-    "tr": "ifşa",
+    "tr": "açıklama",
     "en": "revelation",
     "beispiel": "Die Enthüllung kostete den Chefredakteur sein Amt.",
     "beispielTr": "İfşa, genel yayın yönetmeninin görevine mal oldu.",

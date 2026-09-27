@@ -149,7 +149,7 @@
   "en": "local resident",
   "beispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
   "beispielTr": "Mahalle sakinleri şantiyenin gürültüsünden şikâyetçi.",
-  "beispielEn": "The local residents are complaining about the noise from the building site."
+  "beispielEn": "The local residents are complaining about the noise from the construction site."
  },
  {
   "id": 5665,
@@ -292,7 +292,7 @@
   "tr": "engelsiz",
   "en": "accessible",
   "beispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
-  "beispielTr": "Tadilat binayı nihayet engelsiz hale getiriyor.",
+  "beispielTr": "Tadilat binayı nihayet engelsiz hâle getiriyor.",
   "beispielEn": "The renovation finally makes the building accessible."
  },
  {

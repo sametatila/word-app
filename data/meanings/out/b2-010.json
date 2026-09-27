@@ -33,7 +33,7 @@
  },
  {
   "id": 4097,
-  "tr": "izinli saymak",
+  "tr": "muaf tutmak",
   "en": "to give time off",
   "beispiel": "Für die Prüfung wurde sie eine Woche lang von der Arbeit freigestellt.",
   "beispielTr": "Sınav için bir hafta boyunca işten izinli sayıldı.",
@@ -81,10 +81,10 @@
  },
  {
   "id": 4103,
-  "tr": "işbirliği yapmak",
+  "tr": "iş birliği yapmak",
   "en": "to cooperate",
   "beispiel": "Die beiden Abteilungen kooperieren bei der Einführung der Software.",
-  "beispielTr": "İki bölüm yazılımın devreye alınmasında işbirliği yapıyor.",
+  "beispielTr": "İki bölüm yazılımın devreye alınmasında iş birliği yapıyor.",
   "beispielEn": "The two departments are cooperating on the rollout of the software."
  },
  {
@@ -108,8 +108,8 @@
   "tr": "koordine etmek",
   "en": "to coordinate",
   "beispiel": "Sie koordiniert die Termine zwischen Produktion und Vertrieb.",
-  "beispielTr": "Üretim ile satış arasındaki randevuları o koordine ediyor.",
-  "beispielEn": "She coordinates the appointments between production and sales."
+  "beispielTr": "Üretim ile satış arasındaki tarihleri o koordine ediyor.",
+  "beispielEn": "She coordinates the schedules between production and sales."
  },
  {
   "id": 4107,
@@ -164,7 +164,7 @@
   "tr": "ihlal etmek",
   "en": "to violate",
   "beispiel": "Wer gegen die Betriebsordnung verstößt, muss mit Konsequenzen rechnen.",
-  "beispielTr": "İşyeri yönetmeliğini ihlal eden, sonuçlarını göze almalıdır.",
+  "beispielTr": "İş yeri yönetmeliğini ihlal eden, sonuçlarını göze almalıdır.",
   "beispielEn": "Anyone who violates the company rules must expect consequences."
  },
  {
@@ -220,7 +220,7 @@
   "tr": "gayretli",
   "en": "dedicated",
   "beispiel": "Der Betriebsrat setzt sich engagiert für die jüngeren Kollegen ein.",
-  "beispielTr": "İşyeri kurulu genç meslektaşları için gayretle mücadele ediyor.",
+  "beispielTr": "İş yeri kurulu genç meslektaşları için gayretle mücadele ediyor.",
   "beispielEn": "The works council is a dedicated advocate for the younger colleagues."
  },
  {
@@ -241,10 +241,10 @@
  },
  {
   "id": 4123,
-  "tr": "iş sahibi",
+  "tr": "bir işte çalışan",
   "en": "gainfully employed",
   "beispiel": "In dieser Altersgruppe sind mehr als achtzig Prozent erwerbstätig.",
-  "beispielTr": "Bu yaş grubunda yüzde sekseni aşkın kişi iş sahibi.",
+  "beispielTr": "Bu yaş grubunda yüzde sekseni aşkın kişi bir işte çalışıyor.",
   "beispielEn": "In this age group more than eighty percent are in paid work."
  },
  {
@@ -324,7 +324,7 @@
   "tr": "sert",
   "en": "drastic",
   "beispiel": "Die Behörde hat die Gebühren drastisch angehoben.",
-  "beispielTr": "Kurum harçları çarpıcı biçimde yükseltti.",
+  "beispielTr": "Kurum harçları sert biçimde yükseltti.",
   "beispielEn": "The authority raised the fees drastically."
  },
  {

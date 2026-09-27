@@ -13,7 +13,7 @@
     "en": "farm succession",
     "beispiel": "Bei jedem zweiten Betrieb ist die Hofnachfolge völlig ungeklärt.",
     "beispielTr": "Her iki işletmeden birinde çiftliğin devri tamamen belirsiz.",
-    "beispielEn": "At every second farm the succession is completely unresolved."
+    "beispielEn": "At one farm in two, succession is completely unresolved."
   },
   {
     "id": 5705,
@@ -61,7 +61,7 @@
     "en": "traceability",
     "beispiel": "Die Rückverfolgbarkeit endet oft schon beim ersten Zwischenhändler.",
     "beispielTr": "İzlenebilirlik çoğu zaman daha ilk aracıda son buluyor.",
-    "beispielEn": "Traceability often ends already at the first middleman."
+    "beispielEn": "Traceability often ends as early as the first middleman."
   },
   {
     "id": 5711,
@@ -225,7 +225,7 @@
   },
   {
     "id": 5731,
-    "tr": "beyan etmek",
+    "tr": "kamuya açıklamak",
     "en": "to declare",
     "beispiel": "Der Hersteller muss die Herkunft der Rohstoffe vollständig deklarieren.",
     "beispielTr": "Üretici hammaddelerin kökenini eksiksiz beyan etmek zorunda.",

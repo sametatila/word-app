@@ -236,7 +236,7 @@
     "tr": "konjonktür döngüsü",
     "en": "business cycle",
     "beispiel": "Der aktuelle Konjunkturzyklus dauert bereits acht Jahre.",
-    "beispielTr": "Mevcut konjonktür döngüsü sekiz yıldır sürüyor bile.",
+    "beispielTr": "Mevcut konjonktür döngüsü şimdiden sekiz yıldır sürüyor.",
     "beispielEn": "The current business cycle has already lasted eight years."
   },
   {
@@ -285,7 +285,7 @@
     "en": "speculative bubble",
     "beispiel": "Die Spekulationsblase am Immobilienmarkt platzte im Herbst.",
     "beispielTr": "Konut piyasasındaki spekülasyon balonu sonbaharda patladı.",
-    "beispielEn": "The speculative bubble in the property market burst in the fall."
+    "beispielEn": "The speculative bubble in the housing market burst in the fall."
   },
   {
     "id": 7289,
@@ -340,7 +340,7 @@
     "tr": "dış ticaret dengesi",
     "en": "trade balance",
     "beispiel": "Das Land hat seit Jahren eine positive Handelsbilanz.",
-    "beispielTr": "Ülkenin yıllardır dış ticaret dengesi fazla veriyor.",
+    "beispielTr": "Ülkenin dış ticaret dengesi yıllardır fazla veriyor.",
     "beispielEn": "The country has had a positive trade balance for years."
   },
   {
@@ -389,7 +389,7 @@
     "en": "savings rate",
     "beispiel": "Die Sparquote der Haushalte ist auf zwölf Prozent gestiegen.",
     "beispielTr": "Hanehalklarının tasarruf oranı yüzde on ikiye çıktı.",
-    "beispielEn": "The households' savings rate has risen to twelve percent."
+    "beispielEn": "The household savings rate has risen to twelve percent."
   },
   {
     "id": 7302,

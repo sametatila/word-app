@@ -265,7 +265,7 @@
  },
  {
   "id": 8121,
-  "tr": "kimliğini göstermek",
+  "tr": "kimliğini belirlemek",
   "en": "to identify oneself",
   "beispiel": "Bei der Kontrolle musst du dich ausweisen.",
   "beispielTr": "Kontrolde kimliğini göstermek zorundasın.",
@@ -297,7 +297,7 @@
  },
  {
   "id": 8126,
-  "tr": "arama yapmak",
+  "tr": "arama",
   "en": "to search",
   "beispiel": "Die Polizei hat den ganzen Park durchsucht.",
   "beispielTr": "Polis bütün parkta arama yaptı.",

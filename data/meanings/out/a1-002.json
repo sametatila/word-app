@@ -89,7 +89,7 @@
   },
   {
     "id": 501,
-    "tr": "tekrar",
+    "tr": "ders çalışma",
     "en": "again",
     "beispiel": "Wir sehen uns morgen wieder.",
     "beispielTr": "Yarın tekrar görüşürüz.",
@@ -201,7 +201,7 @@
   },
   {
     "id": 508,
-    "tr": "bilmek",
+    "tr": "tanımak, bilmek",
     "en": "to know",
     "beispiel": "Ich weiß seine Telefonnummer nicht.",
     "beispielTr": "Telefon numarasını bilmiyorum.",

@@ -36,7 +36,7 @@
     "tr": "marjinal maliyet",
     "en": "marginal cost",
     "beispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten fast null sind.",
-    "beispielTr": "Rüzgâr enerjisi marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri devre dışı bırakıyor.",
+    "beispielTr": "Rüzgâr enerjisi, marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri devre dışı bırakıyor.",
     "beispielEn": "Wind power pushes expensive plants out because its marginal cost is almost zero."
   },
   {
@@ -165,7 +165,7 @@
     "en": "conflict of goals",
     "beispiel": "Zwischen Naturschutz und Netzausbau besteht ein kaum auflösbarer Zielkonflikt.",
     "beispielTr": "Doğa koruma ile şebeke genişletmesi arasında neredeyse çözülemez bir hedef çatışması var.",
-    "beispielEn": "There is a barely resolvable conflict of goals between conservation and grid expansion."
+    "beispielEn": "There is an almost irreconcilable conflict of goals between conservation and grid expansion."
   },
   {
     "id": 6224,
@@ -189,7 +189,7 @@
     "en": "unbundling",
     "beispiel": "Die Entflechtung von Netzbetrieb und Stromhandel war politisch hart umkämpft.",
     "beispielTr": "Şebeke işletmeciliği ile elektrik ticaretinin ayrıştırılması siyaseten çok tartışıldı.",
-    "beispielEn": "The unbundling of grid operation and electricity trading was politically hard fought."
+    "beispielEn": "The unbundling of grid operation and electricity trading was politically hard-fought."
   },
   {
     "id": 6227,

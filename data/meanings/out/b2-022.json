@@ -29,11 +29,11 @@
   "en": "acceptance",
   "beispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
   "beispielTr": "Müşteri kabulü önümüzdeki cuma yapılacak.",
-  "beispielEn": "The acceptance by the customer takes place next Friday."
+  "beispielEn": "Customer acceptance takes place next Friday."
  },
  {
   "id": 4698,
-  "tr": "reklamasyon",
+  "tr": "şikâyet",
   "en": "complaint",
   "beispiel": "Die Reklamation betraf eine ganze Lieferung fehlerhafter Teile.",
   "beispielTr": "Şikâyet, hatalı parçalardan oluşan bütün bir sevkiyatla ilgiliydi.",
@@ -269,7 +269,7 @@
   "en": "professional",
   "beispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
   "beispielTr": "Atık yağ tekniğine uygun şekilde imha edilmeli, öylece dökülmemeli.",
-  "beispielEn": "Waste oil must be disposed of professionally, not simply poured away."
+  "beispielEn": "Waste oil must be disposed of properly, not simply poured away."
  },
  {
   "id": 4728,

@@ -76,7 +76,7 @@
     "tr": "ayakta tedavi",
     "en": "outpatient",
     "beispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt.",
-    "beispielTr": "Bu ameliyatların çoğu bugün ayakta tedaviyle yapılıyor.",
+    "beispielTr": "Bu ameliyatların çoğu günümüzde ayakta tedaviyle yapılıyor.",
     "beispielEn": "Most of these operations are done on an outpatient basis today."
   },
   {
@@ -269,7 +269,7 @@
     "en": "forklift",
     "beispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
     "beispielTr": "Atölyede forklifti yalnızca eğitimli personel kullanabilir.",
-    "beispielEn": "Only trained staff may drive the forklift in the hall."
+    "beispielEn": "Only trained staff may drive the forklift on the shop floor."
   },
   {
     "id": 4678,
@@ -285,7 +285,7 @@
     "en": "early shift",
     "beispiel": "Meine Frühschicht beginnt schon um halb sechs.",
     "beispielTr": "Sabah vardiyam daha beş buçukta başlıyor.",
-    "beispielEn": "My early shift starts as early as half past five."
+    "beispielEn": "My early shift starts at 5:30 a.m."
   },
   {
     "id": 4680,

@@ -204,7 +204,7 @@
   "tr": "dalga boyu",
   "en": "wavelength",
   "beispiel": "Rotes Licht hat eine größere Wellenlänge als blaues.",
-  "beispielTr": "Kırmızı ışığın dalga boyu maviden daha büyüktür.",
+  "beispielTr": "Kırmızı ışığın dalga boyu mavi ışığınkinden daha uzundur.",
   "beispielEn": "Red light has a longer wavelength than blue light."
  },
  {
@@ -388,7 +388,7 @@
   "tr": "ortak yaşam",
   "en": "symbiosis",
   "beispiel": "Pilz und Alge leben in der Flechte in enger Symbiose.",
-  "beispielTr": "Likende mantar ve yosun sıkı bir ortak yaşam sürüyor.",
+  "beispielTr": "Likende mantar ve alg sıkı bir ortak yaşam sürüyor.",
   "beispielEn": "Fungus and alga live in close symbiosis in lichen."
  },
  {

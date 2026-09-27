@@ -17,7 +17,7 @@
   },
   {
     "id": 5047,
-    "tr": "belgelemek",
+    "tr": "kanıtlamak",
     "en": "to certify",
     "beispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
     "beispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
@@ -333,7 +333,7 @@
     "en": "edge of the forest",
     "beispiel": "Am Waldrand blühen im Frühling viele wilde Blumen.",
     "beispielTr": "Orman kenarında ilkbaharda birçok yabani çiçek açıyor.",
-    "beispielEn": "Many wild flowers bloom at the edge of the forest in spring."
+    "beispielEn": "Many wildflowers bloom at the edge of the forest in spring."
   },
   {
     "id": 5087,

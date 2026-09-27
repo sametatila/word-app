@@ -212,8 +212,8 @@
     "tr": "tür",
     "en": "genre",
     "beispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
-    "beispielTr": "Oyun, klasik türlerin sınırlarını zorluyor.",
-    "beispielEn": "The play bursts the limits of the classical genres."
+    "beispielTr": "Oyun, klasik türlerin sınırlarını aşıyor.",
+    "beispielEn": "The play breaks the boundaries of the classical genres."
   },
   {
     "id": 6480,
@@ -237,7 +237,7 @@
     "en": "virtuosity",
     "beispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
     "beispielTr": "Piyanodaki virtüözlüğü kimi zaman yorumu gölgeliyor.",
-    "beispielEn": "His virtuosity at the piano sometimes hides the interpretation."
+    "beispielEn": "His virtuosity at the piano sometimes overshadows the interpretation."
   },
   {
     "id": 6483,

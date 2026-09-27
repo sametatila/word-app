@@ -21,7 +21,7 @@
     "en": "upright",
     "beispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen.",
     "beispielTr": "Yazarken sandalyede dik oturmaya çalış.",
-    "beispielEn": "Try to sit up straight on the chair while typing."
+    "beispielEn": "Try to sit up straight in the chair while typing."
   },
   {
     "id": 4797,
@@ -29,7 +29,7 @@
     "en": "moderate",
     "beispiel": "Er trinkt Alkohol nur maßvoll und selten.",
     "beispielTr": "Alkolü sadece ölçülü ve nadiren içiyor.",
-    "beispielEn": "He only drinks alcohol in moderation and rarely."
+    "beispielEn": "He drinks alcohol only rarely and in moderation."
   },
   {
     "id": 4798,
@@ -45,7 +45,7 @@
     "en": "revocation",
     "beispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
     "beispielTr": "Cayma bildirimi on dört gün içinde yapılmalı.",
-    "beispielEn": "The revocation has to be declared within fourteen days."
+    "beispielEn": "Notice of revocation must be given within fourteen days."
   },
   {
     "id": 4800,
@@ -93,7 +93,7 @@
     "en": "arbitration board",
     "beispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
     "beispielTr": "Havayolu şirketiyle anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı oluyor.",
-    "beispielEn": "In a dispute with the airline an independent arbitration board helps."
+    "beispielEn": "In a dispute with the airline, an independent arbitration board can help."
   },
   {
     "id": 4806,
@@ -117,7 +117,7 @@
     "en": "shipping costs",
     "beispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
     "beispielTr": "Elli avroluk sipariş tutarından itibaren kargo ücreti alınmıyor.",
-    "beispielEn": "From an order value of fifty euros the shipping costs are waived."
+    "beispielEn": "Shipping costs are waived on orders of fifty euros or more."
   },
   {
     "id": 4809,
@@ -149,7 +149,7 @@
     "en": "customer retention",
     "beispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
     "beispielTr": "İndirim kampanyalarının asıl amacı uzun vadeli müşteri bağlılığı.",
-    "beispielEn": "Discount campaigns serve above all long-term customer retention."
+    "beispielEn": "Discount campaigns are mainly aimed at long-term customer retention."
   },
   {
     "id": 4814,
@@ -300,7 +300,7 @@
     "tr": "tavsiye etmemek",
     "en": "to advise against",
     "beispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
-    "beispielTr": "Danışman bize pahalı ek sigortayı tavsiye etmedi.",
+    "beispielTr": "Danışman pahalı ek sigortayı almamamızı tavsiye etti.",
     "beispielEn": "The advisor advised us against the expensive extra insurance."
   },
   {
@@ -349,7 +349,7 @@
     "en": "to assure",
     "beispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
     "beispielTr": "Satıcı bize üç gün içinde teslimat taahhüt etmişti.",
-    "beispielEn": "The seller had assured us delivery within three days."
+    "beispielEn": "The seller had assured us of delivery within three days."
   },
   {
     "id": 4839,
@@ -357,7 +357,7 @@
     "en": "to bill",
     "beispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
     "beispielTr": "Danışmanlık götürü değil, saat üzerinden faturalandırılıyor.",
-    "beispielEn": "The consulting is billed by the hour, not at a flat rate."
+    "beispielEn": "Consulting is billed by the hour, not at a flat rate."
   },
   {
     "id": 4840,
@@ -381,14 +381,14 @@
     "en": "chargeable",
     "beispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
     "beispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli oluyor.",
-    "beispielEn": "After the trial month the offer automatically becomes chargeable."
+    "beispielEn": "After the trial month, you are automatically charged for the offer."
   },
   {
     "id": 4843,
     "tr": "bağlayıcı olmayan",
     "en": "non-binding",
     "beispiel": "Das Angebot ist völlig unverbindlich und kostet nichts.",
-    "beispielTr": "Teklif tamamen bağlayıcı değil ve hiçbir ücreti yok.",
+    "beispielTr": "Teklif hiçbir şekilde bağlayıcı değil ve ücretsiz.",
     "beispielEn": "The offer is completely non-binding and costs nothing."
   },
   {

@@ -196,7 +196,7 @@
   "tr": "ihbar süresi",
   "en": "notice period",
   "beispiel": "Die Kündigungsfrist beträgt in meinem Fall drei Monate zum Quartalsende.",
-  "beispielTr": "Benim durumumda ihbar süresi çeyrek sonuna kadar üç ay.",
+  "beispielTr": "Benim durumumda ihbar süresi üç ay ve fesih ancak çeyrek sonunda geçerli oluyor.",
   "beispielEn": "In my case the notice period is three months to the end of the quarter."
  },
  {
@@ -305,10 +305,10 @@
  },
  {
   "id": 4081,
-  "tr": "işyeri emekliliği",
+  "tr": "iş yeri emekli aylığı",
   "en": "company pension",
   "beispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
-  "beispielTr": "Yasal emekli aylığının yanı sıra işyerinden de küçük bir emekli aylığı alıyor.",
+  "beispielTr": "Yasal emekli aylığının yanı sıra iş yerinden de küçük bir emekli aylığı alıyor.",
   "beispielEn": "Besides the state pension he gets a small company pension."
  },
  {
@@ -345,10 +345,10 @@
  },
  {
   "id": 4086,
-  "tr": "işyeri anlaşması",
+  "tr": "iş yeri anlaşması",
   "en": "works agreement",
   "beispiel": "Eine neue Betriebsvereinbarung regelt die Arbeit im Homeoffice.",
-  "beispielTr": "Yeni bir işyeri anlaşması evden çalışmayı düzenliyor.",
+  "beispielTr": "Yeni bir iş yeri anlaşması evden çalışmayı düzenliyor.",
   "beispielEn": "A new works agreement regulates working from home."
  },
  {

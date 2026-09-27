@@ -1,7 +1,7 @@
 [
   {
     "id": 8139,
-    "tr": "devirmek",
+    "tr": "durum",
     "en": "to fell",
     "beispiel": "Im Winter haben sie den kranken Baum gefällt.",
     "beispielTr": "Kışın hasta ağacı devirdiler.",
@@ -81,7 +81,7 @@
   },
   {
     "id": 8149,
-    "tr": "hareketli",
+    "tr": "canlandırmak",
     "en": "busy",
     "beispiel": "Die Straße vor dem Bahnhof ist immer belebt.",
     "beispielTr": "İstasyonun önündeki cadde hep hareketli.",

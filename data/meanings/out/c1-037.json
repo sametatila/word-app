@@ -205,7 +205,7 @@
     "en": "language level",
     "beispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene.",
     "beispielTr": "Konuşmacı sunumun ortasında dil düzeyini değiştirdi.",
-    "beispielEn": "The speaker switched language level in the middle of the talk."
+    "beispielEn": "The speaker switched to a different language level in the middle of the talk."
   },
   {
     "id": 7079,
@@ -236,7 +236,7 @@
     "tr": "kelime alanı",
     "en": "lexical field",
     "beispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung.",
-    "beispielTr": "Bütün bu fiiller algı kelime alanına ait.",
+    "beispielTr": "Bütün bu fiiller, algıya ilişkin kelime alanına aittir.",
     "beispielEn": "All these verbs belong to the lexical field of perception."
   },
   {
@@ -261,7 +261,7 @@
     "en": "gradation",
     "beispiel": "Die Jury arbeitet mit einer feinen Abstufung der Punkte.",
     "beispielTr": "Jüri, puanlarda ince bir derecelendirmeyle çalışıyor.",
-    "beispielEn": "The jury works with a fine gradation of the points."
+    "beispielEn": "The jury works with a fine gradation of points."
   },
   {
     "id": 7086,
@@ -325,7 +325,7 @@
     "en": "definition of terms",
     "beispiel": "Am Anfang der Studie steht eine sorgfältige Begriffsbestimmung.",
     "beispielTr": "Çalışmanın başında özenli bir kavram tanımı yer alıyor.",
-    "beispielEn": "A careful definition of terms stands at the beginning of the study."
+    "beispielEn": "The study begins with a careful definition of terms."
   },
   {
     "id": 7094,
@@ -381,7 +381,7 @@
     "en": "trivialization",
     "beispiel": "Solche Ausdrücke dienen der Verharmlosung eines ernsten Sachverhalts.",
     "beispielTr": "Bu tür ifadeler ciddi bir durumu önemsizleştirmeye yarıyor.",
-    "beispielEn": "Such expressions serve the trivialization of a serious matter."
+    "beispielEn": "Such expressions serve to trivialize a serious matter."
   },
   {
     "id": 7101,

@@ -157,7 +157,7 @@
     "en": "unique selling point",
     "beispiel": "Ohne klares Alleinstellungsmerkmal geht das Produkt im Markt unter.",
     "beispielTr": "Net bir ayırt edici özellik olmadan ürün pazarda kaybolur.",
-    "beispielEn": "Without a clear unique selling point the product gets lost."
+    "beispielEn": "Without a clear unique selling point the product gets lost in the market."
   },
   {
     "id": 3889,
@@ -210,10 +210,10 @@
   {
     "id": 3899,
     "tr": "arabuluculuk",
-    "en": "arbitration",
+    "en": "mediation",
     "beispiel": "Der Tarifstreit wurde durch eine Schlichtung beigelegt.",
     "beispielTr": "Toplu sözleşme anlaşmazlığı arabuluculukla çözüldü.",
-    "beispielEn": "The pay dispute was settled through arbitration."
+    "beispielEn": "The pay dispute was settled through mediation."
   },
   {
     "id": 3900,
@@ -301,7 +301,7 @@
     "en": "sustainability goal",
     "beispiel": "Die Nachhaltigkeitsziele wurden im Geschäftsbericht verankert.",
     "beispielTr": "Sürdürülebilirlik hedefleri faaliyet raporuna işlendi.",
-    "beispielEn": "The sustainability goals were anchored in the annual report."
+    "beispielEn": "The sustainability goals were incorporated into the annual report."
   },
   {
     "id": 3914,

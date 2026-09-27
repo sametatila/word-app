@@ -213,7 +213,7 @@
     "en": "field of expertise",
     "beispiel": "In ihrem Fachgebiet gilt sie als führende Stimme.",
     "beispielTr": "Kendi uzmanlık alanında öncü bir isim sayılıyor.",
-    "beispielEn": "In her field of expertise she counts as a leading voice."
+    "beispielEn": "In her field of expertise she is considered a leading voice."
   },
   {
     "id": 7380,
@@ -237,7 +237,7 @@
     "en": "expert debate",
     "beispiel": "Die Fachdebatte über den Mindestlohn wird immer schärfer.",
     "beispielTr": "Asgari ücret üzerine alan içi tartışma giderek sertleşiyor.",
-    "beispielEn": "The expert debate about the minimum wage keeps getting sharper."
+    "beispielEn": "The expert debate about the minimum wage is growing increasingly heated."
   },
   {
     "id": 7383,
@@ -249,7 +249,7 @@
   },
   {
     "id": 7384,
-    "tr": "yerleşik görüş",
+    "tr": "öğreti",
     "en": "prevailing doctrine",
     "beispiel": "Diese Lehrmeinung hält sich in den Lehrbüchern hartnäckig.",
     "beispielTr": "Bu yerleşik görüş ders kitaplarında inatla varlığını sürdürüyor.",
@@ -284,7 +284,7 @@
     "tr": "doktora yapmak",
     "en": "to earn a doctorate",
     "beispiel": "Sie promovierte über mittelalterliche Handschriften in Freiburg.",
-    "beispielTr": "Freiburg'da ortaçağ el yazmaları üzerine doktora yaptı.",
+    "beispielTr": "Freiburg'da Orta Çağ el yazmaları üzerine doktora yaptı.",
     "beispielEn": "She earned her doctorate in Freiburg on medieval manuscripts."
   },
   {

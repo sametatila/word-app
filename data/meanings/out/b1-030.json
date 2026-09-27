@@ -1,7 +1,7 @@
 [
  {
   "id": 1724,
-  "tr": "alışveriş",
+  "tr": "satın alma birimi",
   "en": "shopping",
   "beispiel": "Nach dem Einkauf tranken wir noch einen Kaffee.",
   "beispielTr": "Alışverişten sonra bir kahve içtik.",
@@ -42,10 +42,10 @@
  {
   "id": 3116,
   "tr": "kadın lokantacı",
-  "en": "landlady",
+  "en": "female innkeeper",
   "beispiel": "Die Wirtin hat uns einen Tisch am Fenster reserviert.",
   "beispielTr": "Kadın lokantacı bize pencere kenarında bir masa ayırdı.",
-  "beispielEn": "The landlady reserved a table by the window for us."
+  "beispielEn": "The innkeeper reserved a table by the window for us."
  },
  {
   "id": 1953,
@@ -125,7 +125,7 @@
   "en": "foodstuff",
   "beispiel": "In der Region fehlen Nahrungsmittel und sauberes Wasser.",
   "beispielTr": "Bölgede gıda ve temiz su eksik.",
-  "beispielEn": "In the region foodstuffs and clean water are lacking."
+  "beispielEn": "The region lacks food and clean water."
  },
  {
   "id": 2506,
@@ -308,7 +308,7 @@
   "tr": "ısıtmak",
   "en": "to heat",
   "beispiel": "Im Winter heizen wir mit Holz.",
-  "beispielTr": "Kışın odunla ısıtıyoruz.",
+  "beispielTr": "Kışın evi odunla ısıtıyoruz.",
   "beispielEn": "In winter we heat with wood."
  },
  {
@@ -389,7 +389,7 @@
   "en": "to package",
   "beispiel": "Die Gläser müssen gut verpackt werden.",
   "beispielTr": "Bardakların iyi paketlenmesi gerekiyor.",
-  "beispielEn": "The glasses have to be packaged well."
+  "beispielEn": "The glasses have to be packed well."
  },
  {
   "id": 2684,

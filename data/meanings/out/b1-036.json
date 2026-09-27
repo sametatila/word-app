@@ -85,7 +85,7 @@
     "en": "special offer",
     "beispiel": "Die Jacke war ein Sonderangebot und kostete zwanzig Euro.",
     "beispielTr": "Ceket indirimdeydi ve yirmi avro tuttu.",
-    "beispielEn": "The jacket was on special offer and cost twenty euros."
+    "beispielEn": "The jacket was on sale and cost twenty euros."
   },
   {
     "id": 2716,
@@ -161,7 +161,7 @@
   },
   {
     "id": 2799,
-    "tr": "erkek üniversite öğrencisi",
+    "tr": "üniversite öğrencileri",
     "en": "male student",
     "beispiel": "Der Studierende wohnt noch bei seinen Eltern.",
     "beispielTr": "Üniversite öğrencisi hâlâ ailesinin yanında yaşıyor.",
@@ -196,7 +196,7 @@
     "tr": "hayvan parkı",
     "en": "animal park",
     "beispiel": "Im Tierpark haben die Kinder zum ersten Mal Elche gesehen.",
-    "beispielTr": "Çocuklar hayvan parkında ilk kez geyik gördü.",
+    "beispielTr": "Çocuklar hayvan parkında ilk kez Kanada geyiği gördü.",
     "beispielEn": "At the animal park the kids saw moose for the first time."
   },
   {
@@ -245,7 +245,7 @@
     "en": "in order to",
     "beispiel": "Um gesund zu bleiben, musst du Sport machen.",
     "beispielTr": "Sağlıklı kalmak için spor yapman gerekir.",
-    "beispielEn": "You have to do sports in order to stay healthy."
+    "beispielEn": "You have to exercise in order to stay healthy."
   },
   {
     "id": 2919,
@@ -257,7 +257,7 @@
   },
   {
     "id": 2923,
-    "tr": "olumsuzluk öneki",
+    "tr": "olumsuzluk ön eki",
     "en": "un-",
     "beispiel": "Mit der Vorsilbe „un-“ wird ein Wort verneint.",
     "beispielTr": "„Un-“ ön ekiyle bir kelime olumsuz yapılır.",
@@ -341,7 +341,7 @@
     "en": "toothpaste",
     "beispiel": "Die Zahncreme ist fast leer, kauf bitte eine neue.",
     "beispielTr": "Diş macunu bitmek üzere, lütfen yenisini al.",
-    "beispielEn": "The toothpaste is almost empty, please buy a new one."
+    "beispielEn": "The toothpaste is almost gone, please buy a new tube."
   },
   {
     "id": 3140,

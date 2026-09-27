@@ -53,7 +53,7 @@
     "en": "to tax",
     "beispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen.",
     "beispielTr": "Sermaye gelirleri birçok ülkede emek gelirlerinden daha düşük vergilendiriliyor.",
-    "beispielEn": "In many countries capital gains are taxed lower than wages."
+    "beispielEn": "In many countries capital gains are taxed at lower rates than earned income."
   },
   {
     "id": 7310,
@@ -140,7 +140,7 @@
     "tr": "nominal",
     "en": "in nominal terms",
     "beispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
-    "beispielTr": "Ücretler nominal olarak belirgin arttı, reel olarak neredeyse hiç.",
+    "beispielTr": "Ücretler nominal olarak belirgin arttı, reel olarak ise neredeyse hiç artmadı.",
     "beispielEn": "Wages rose noticeably in nominal terms but hardly in real ones."
   },
   {
@@ -309,7 +309,7 @@
     "en": "accounting fraud",
     "beispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf.",
     "beispielTr": "Yıllardır süren bilanço tahrifatı ancak bir iç ihbarla ortaya çıktı.",
-    "beispielEn": "The years of accounting fraud came out only through an internal tip."
+    "beispielEn": "Years of accounting fraud came to light only through an internal tip."
   },
   {
     "id": 7342,

@@ -36,7 +36,7 @@
   "tr": "ambargo",
   "en": "embargo",
   "beispiel": "Das Embargo auf Rüstungsgüter gilt seit über zehn Jahren.",
-  "beispielTr": "Silah ürünlerine yönelik ambargo on yılı aşkın süredir geçerli.",
+  "beispielTr": "Silahlara yönelik ambargo on yılı aşkın süredir geçerli.",
   "beispielEn": "The embargo on arms has been in force for over ten years."
  },
  {
@@ -301,7 +301,7 @@
   "en": "facet",
   "beispiel": "Der Vortrag beleuchtete auch die weniger bekannten Facetten des Problems.",
   "beispielTr": "Sunum sorunun daha az bilinen boyutlarına da ışık tuttu.",
-  "beispielEn": "The talk also shed light on the lesser known facets of the problem."
+  "beispielEn": "The talk also shed light on the lesser-known facets of the problem."
  },
  {
   "id": 6141,
@@ -349,7 +349,7 @@
   "en": "fallacy",
   "beispiel": "Wer so argumentiert, unterliegt einem weit verbreiteten Trugschluss.",
   "beispielTr": "Böyle akıl yürüten çok yaygın bir yanılgıya düşüyor.",
-  "beispielEn": "Anyone who argues like that falls for a widespread fallacy."
+  "beispielEn": "Anyone who argues like that falls prey to a widespread fallacy."
  },
  {
   "id": 6147,

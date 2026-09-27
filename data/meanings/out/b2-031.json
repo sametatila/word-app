@@ -156,7 +156,7 @@
     "tr": "oy sayımı",
     "en": "vote count",
     "beispiel": "Die Auszählung der Briefwahlstimmen dauerte bis in die Nacht.",
-    "beispielTr": "Mektupla verilen oyların sayımı gece yarısına kadar sürdü.",
+    "beispielTr": "Mektupla verilen oyların sayımı gece geç saatlere kadar sürdü.",
     "beispielEn": "The count of the postal votes lasted into the night."
   },
   {
@@ -244,7 +244,7 @@
     "tr": "güvenoyu talebi",
     "en": "vote of confidence",
     "beispiel": "Der Kanzler stellte im Dezember überraschend die Vertrauensfrage.",
-    "beispielTr": "Başbakan aralık ayında beklenmedik biçimde güvenoyu istedi.",
+    "beispielTr": "Şansölye aralık ayında beklenmedik biçimde güvenoyu istedi.",
     "beispielEn": "The chancellor unexpectedly called a vote of confidence in December."
   },
   {
@@ -365,7 +365,7 @@
     "en": "to charge",
     "beispiel": "Die Gemeinde erhebt seit Januar eine Gebühr für Straßenreinigung.",
     "beispielTr": "Belediye ocak ayından beri sokak temizliği için ücret tahsil ediyor.",
-    "beispielEn": "The municipality has charged a fee for street cleaning since January."
+    "beispielEn": "The municipality has been charging a fee for street cleaning since January."
   },
   {
     "id": 5191,

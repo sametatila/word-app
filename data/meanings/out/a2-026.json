@@ -57,7 +57,7 @@
   },
   {
     "id": 8247,
-    "tr": "nakletmek",
+    "tr": "kaydırmak",
     "en": "to transport",
     "beispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
     "beispielTr": "Firma mobilyaları yeni eve naklediyor.",
@@ -121,7 +121,7 @@
   },
   {
     "id": 8255,
-    "tr": "yardıma gitmek",
+    "tr": "yardım etmek",
     "en": "to help out",
     "beispiel": "Am Samstag helfe ich im Laden aus.",
     "beispielTr": "Cumartesi günü dükkâna yardıma gidiyorum.",
@@ -321,7 +321,7 @@
   },
   {
     "id": 8280,
-    "tr": "toplamak",
+    "tr": "ortadan kaldırmak",
     "en": "to gather up",
     "beispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein.",
     "beispielTr": "Öğretmen defterleri dersin sonunda topluyor.",

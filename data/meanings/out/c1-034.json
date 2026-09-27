@@ -117,7 +117,7 @@
     "en": "flaw in reasoning",
     "beispiel": "In seiner Rechnung steckt ein einfacher Denkfehler.",
     "beispielTr": "Hesabında basit bir düşünme hatası var.",
-    "beispielEn": "There is a simple flaw in his reasoning."
+    "beispielEn": "His calculation contains a simple flaw in reasoning."
   },
   {
     "id": 6918,
@@ -137,7 +137,7 @@
   },
   {
     "id": 6920,
-    "tr": "kimlik",
+    "tr": "üyelik kartı",
     "en": "identity",
     "beispiel": "Der Betrüger gab sich mit falscher Identität als Polizist aus.",
     "beispielTr": "Dolandırıcı sahte kimlikle kendini polis olarak tanıttı.",
@@ -293,7 +293,7 @@
     "en": "affect",
     "beispiel": "Der Täter handelte im Affekt und nicht geplant.",
     "beispielTr": "Fail planlayarak değil, anlık bir duygu patlamasıyla hareket etti.",
-    "beispielEn": "The offender acted in the heat of the moment and not by plan."
+    "beispielEn": "The offender acted in the heat of the moment, not with premeditation."
   },
   {
     "id": 6940,

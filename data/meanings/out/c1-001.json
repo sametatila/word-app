@@ -69,7 +69,7 @@
     "en": "assumption",
     "beispiel": "Seine Annahme, der Zug sei pünktlich, war leider falsch.",
     "beispielTr": "Trenin dakik olacağı varsayımı ne yazık ki yanlış çıktı.",
-    "beispielEn": "His assumption that the train would be on time was wrong."
+    "beispielEn": "His assumption that the train would be on time was unfortunately wrong."
   },
   {
     "id": 3536,
@@ -156,7 +156,7 @@
     "tr": "komite",
     "en": "committee",
     "beispiel": "Der Ausschuss tagt am Dienstag im kleinen Sitzungssaal.",
-    "beispielTr": "Komisyon salı günü küçük toplantı salonunda toplanıyor.",
+    "beispielTr": "Komite salı günü küçük toplantı salonunda toplanıyor.",
     "beispielEn": "The committee meets on Tuesday in the small conference room."
   },
   {
@@ -197,7 +197,7 @@
     "en": "decision",
     "beispiel": "Der Vorstand fasste den Beschluss einstimmig.",
     "beispielTr": "Yönetim kurulu kararı oybirliğiyle aldı.",
-    "beispielEn": "The board took the decision unanimously."
+    "beispielEn": "The board made the decision unanimously."
   },
   {
     "id": 3624,
@@ -233,7 +233,7 @@
   },
   {
     "id": 3505,
-    "tr": "belgelemek",
+    "tr": "kanıtlamak",
     "en": "to substantiate",
     "beispiel": "Neue Zahlen belegen den Rückgang der Arbeitslosigkeit.",
     "beispielTr": "Yeni rakamlar işsizlikteki düşüşü kanıtlıyor.",
@@ -293,11 +293,11 @@
     "en": "to avert",
     "beispiel": "Die Feuerwehr konnte eine Katastrophe im letzten Moment abwenden.",
     "beispielTr": "İtfaiye, bir felaketi son anda önleyebildi.",
-    "beispielEn": "The fire brigade averted a disaster at the last moment."
+    "beispielEn": "The fire department averted a disaster at the last moment."
   },
   {
     "id": 3600,
-    "tr": "kurum",
+    "tr": "kurumlar",
     "en": "institution",
     "beispiel": "Viele Bürger verlieren das Vertrauen in staatliche Institutionen.",
     "beispielTr": "Pek çok vatandaş devlet kurumlarına olan güvenini yitiriyor.",
@@ -316,7 +316,7 @@
     "tr": "vekâletname",
     "en": "power of attorney",
     "beispiel": "Ohne Vollmacht darf die Bank kein Geld auszahlen.",
-    "beispielTr": "Vekaletname olmadan banka para ödeyemez.",
+    "beispielTr": "Vekâletname olmadan banka para ödeyemez.",
     "beispielEn": "Without a power of attorney the bank cannot pay out money."
   },
   {

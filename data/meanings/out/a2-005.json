@@ -1,7 +1,7 @@
 [
   {
     "id": 1170,
-    "tr": "toplamak",
+    "tr": "ortadan kaldırmak",
     "en": "to collect",
     "beispiel": "Mein kleiner Bruder sammelt Briefmarken aus aller Welt.",
     "beispielTr": "Küçük kardeşim dünyanın her yerinden pul topluyor.",
@@ -17,7 +17,7 @@
   },
   {
     "id": 1206,
-    "tr": "biriktirmek",
+    "tr": "tasarruf etmek",
     "en": "to save",
     "beispiel": "Ich spare für ein neues Fahrrad.",
     "beispielTr": "Yeni bir bisiklet için para biriktiriyorum.",
@@ -81,7 +81,7 @@
   },
   {
     "id": 1168,
-    "tr": "yuvarlak",
+    "tr": "tur",
     "en": "round",
     "beispiel": "Der Tisch in der Küche ist rund.",
     "beispielTr": "Mutfaktaki masa yuvarlak.",

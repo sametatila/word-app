@@ -25,7 +25,7 @@
   },
   {
     "id": 1794,
-    "tr": "tamamlamak",
+    "tr": "eklemek",
     "en": "to complete",
     "beispiel": "Kannst du die Einkaufsliste noch um Milch ergänzen?",
     "beispielTr": "Alışveriş listesine süt de ekleyebilir misin?",
@@ -257,7 +257,7 @@
   },
   {
     "id": 2470,
-    "tr": "pasif",
+    "tr": "edilgen",
     "en": "passive",
     "beispiel": "Mein Sohn ist im Unterricht sehr passiv.",
     "beispielTr": "Oğlum derste çok pasif kalıyor.",
@@ -386,10 +386,10 @@
   {
     "id": 2897,
     "tr": "başlık",
-    "en": "headline",
+    "en": "heading",
     "beispiel": "Die Schüler sollen für ihre Geschichte eine passende Überschrift finden.",
     "beispielTr": "Öğrenciler hikâyeleri için uygun bir başlık bulmalı.",
-    "beispielEn": "The students are supposed to find a fitting headline for their story."
+    "beispielEn": "The students are supposed to find a fitting title for their story."
   },
   {
     "id": 3051,

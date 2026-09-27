@@ -201,7 +201,7 @@
   },
   {
     "id": 6628,
-    "tr": "örtbas etmek",
+    "tr": "gizlemek",
     "en": "to cover up",
     "beispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
     "beispielTr": "Olaylar yıllarca kurum içinde örtbas edildi ve küçük gösterildi.",
@@ -225,11 +225,11 @@
   },
   {
     "id": 6631,
-    "tr": "beyan etmek",
+    "tr": "kamuya açıklamak",
     "en": "to disclose",
     "beispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
     "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır.",
-    "beispielEn": "Authors have to disclose possible conflicts of interest at the end."
+    "beispielEn": "Authors have to disclose possible conflicts of interest at the end of the text."
   },
   {
     "id": 6632,

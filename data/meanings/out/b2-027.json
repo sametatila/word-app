@@ -36,7 +36,7 @@
     "tr": "kullanıcı",
     "en": "user",
     "beispiel": "Viele Nutzer beschweren sich über die neue Datenschutzerklärung.",
-    "beispielTr": "Birçok kullanıcı yeni gizlilik sözleşmesinden şikâyetçi.",
+    "beispielTr": "Birçok kullanıcı yeni gizlilik politikasından şikâyetçi.",
     "beispielEn": "Many users are complaining about the new privacy policy."
   },
   {
@@ -60,7 +60,7 @@
     "tr": "panel",
     "en": "panel discussion",
     "beispiel": "Bei der Podiumsdiskussion saßen Vertreter aller Parteien auf der Bühne.",
-    "beispielTr": "Panelde sahnede bütün partilerin temsilcileri oturuyordu.",
+    "beispielTr": "Panelde bütün partilerin temsilcileri sahnede oturuyordu.",
     "beispielEn": "At the panel discussion, representatives of all parties sat on the stage."
   },
   {
@@ -85,7 +85,7 @@
     "en": "eye contact",
     "beispiel": "Halten Sie während des Vorstellungsgesprächs ruhig Blickkontakt.",
     "beispielTr": "İş görüşmesi sırasında rahatça göz teması kurun.",
-    "beispielEn": "Feel free to keep eye contact during the job interview."
+    "beispielEn": "Feel free to maintain eye contact during the job interview."
   },
   {
     "id": 4956,
@@ -173,7 +173,7 @@
     "en": "to spread",
     "beispiel": "Unbekannte verbreiteten das gefälschte Video über mehrere Kanäle.",
     "beispielTr": "Kimliği belirsiz kişiler sahte videoyu birkaç kanaldan yaydı.",
-    "beispielEn": "Unknown people spread the fake video through several channels."
+    "beispielEn": "Unknown individuals spread the fake video through several channels."
   },
   {
     "id": 4967,
