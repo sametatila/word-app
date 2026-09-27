@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
@@ -293,6 +293,8 @@ export function BossScreen() {
     return (
       <FlowScreen
         celebrate={won}
+        /* ÜST ÇUBUK (2026-09-27): her sonuçta solda kapat, alttaki "Patikaya dön"le aynı çıkış. */
+        top={<FlowTopBar onClose={exit} />}
         actions={<FlowActions primary={{ label: t("bossw.play_again"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}
       >
         <ResultHero

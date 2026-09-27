@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
@@ -329,6 +329,8 @@ export function ChallengeScreen() {
     return (
       <FlowScreen
         celebrate={isRecord}
+        /* ÜST ÇUBUK (2026-09-27): her sonuçta solda kapat, alttaki "Öğren'e dön"le aynı çıkış. */
+        top={<FlowTopBar onClose={exit} />}
         actions={<FlowActions primary={{ label: t("common.try_again"), onPress: start }} tertiary={{ label: t("common.back_to_learn"), onPress: exit }} />}
       >
         <ResultHero

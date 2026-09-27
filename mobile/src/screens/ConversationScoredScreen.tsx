@@ -431,7 +431,8 @@ export function ConversationScoredScreen() {
       */
       <FlowScreen
         celebrate={passed}
-        top={<FlowTopBar back onClose={() => nav.goBack()} />}
+        /* ÜST ÇUBUK (2026-09-27): sonuçta geri oku değil kapat (X); "Konuşmaya dön"le aynı çıkış. */
+        top={<FlowTopBar onClose={() => nav.goBack()} />}
         actions={<FlowActions primary={retryFirst ? retry : leave} tertiary={retryFirst ? leave : retry} />}
       >
         <ResultHero

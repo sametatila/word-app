@@ -1410,7 +1410,8 @@ function ResultView({
       key="result"
       /* Konfeti YALNIZ geçilen bölümde. */
       celebrate={graded && score.passed && !celebrated}
-      top={<FlowTopBar back onClose={onBack} />}
+      /* ÜST ÇUBUK (2026-09-27): sonuçta geri oku değil kapat (X); "Listeye dön"le aynı çıkış. */
+      top={<FlowTopBar onClose={onBack} />}
       actions={
         <FlowActions
           primary={{ label: t("mockexam.show_review"), onPress: () => { setCelebrated(true); setReview(true); } }}

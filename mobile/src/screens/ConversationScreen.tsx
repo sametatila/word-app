@@ -839,8 +839,12 @@ export function ConversationScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
       {/* Başlık + ilerleme */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
+        {/* SONUÇTA KAPAT (2026-09-27): özet bir sonuç ekranı, ona "geri"
+            dönülmez. Aynı yer, aynı karo; çarpı ve `common.close` (`FlowTopBar`
+            ölçüsü), eylem "Patika'ya dön"le aynı (`onBack` = `goBack`). Web
+            başlık satırı zaten çarpı çiziyor (`ConversationExit`). */}
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx(phase === "summary" ? "common.close" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          {phase === "summary" ? <XIcon color={colors.textMuted} size={22} /> : <ArrowBackIcon color={colors.text} size={24} />}
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{conversation.title}</Text>
