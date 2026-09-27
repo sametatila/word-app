@@ -290,7 +290,16 @@ function stripLineComment(line) {
 
 /** Bir satırdaki kullanıcıya görünebilecek metin adayları (dizgiler + JSX gövdesi). */
 function candidates(raw) {
-  const line = stripLineComment(raw);
+  /* SUNUCU GÜNLÜĞÜ ÇEVRİLMEZ. `console.error("[profil] … yazılamadı", err)`
+     yalnız işletmecinin gördüğü günlüğe gidiyor, hiçbir uç onu kullanıcıya
+     döndürmüyor. Sayılınca her yeni günlük satırı tabanı aşıp CI'ı
+     düşürüyordu (2026-09-27, `lib/session.ts`). Yalnız çağrının İLK
+     bağımsız değişkeni olan dizgi düşüyor; aynı satırdaki başka metin
+     (ör. `console.error(e); setMsg("…")`) yine taranıyor. */
+  const line = stripLineComment(raw).replace(
+    /\bconsole\.(?:error|warn|log|info|debug)\(\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`[^`]*`)/g,
+    "console.log(",
+  );
   const out = [];
   const strings = /"((?:[^"\\]|\\.)*)"|'((?:[^'\\]|\\.)*)'|`([^`]*)`/g;
   for (const m of line.matchAll(strings)) out.push(m[1] ?? m[2] ?? m[3] ?? "");
