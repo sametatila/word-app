@@ -460,7 +460,7 @@ export const c1U22: SkillExercise[] = [
           "Renate Hüsken, 41 yıl aynı kurumda, son 12 yıl arşiv sorumlusu. Cuma son günü.\n\n" +
           "· Yeni gelen herkese ilk hafta arşivi kendi gezdirirdi — kimse istemeden.\n" +
           "· 2019'daki su baskınında iki gece kalıp 600 klasörü kurtardı; bunu hiç anlatmadı, başkalarından duyuldu.\n" +
-          "· Sabahları 6:40'ta gelir, 7'de kahve makinesini çalıştırırdı.\n" +
+          "· Sabahları 6.40'ta gelir, 7'de kahve makinesini çalıştırırdı.\n" +
           "· Espri anlayışı kuru; en sevdiği cümle: „Das haben wir 1998 auch schon versucht.“\n" +
           "· SENİN GAFIN: İlk haftanda onu temizlik görevlisi sanıp arşive nasıl gidileceğini sormuştun. „Ich zeig's Ihnen“ deyip seni gezdirmiş, kim olduğunu bir hafta sonra öğrenmiştin.",
         checklist: [

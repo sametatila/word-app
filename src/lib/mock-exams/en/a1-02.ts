@@ -316,7 +316,7 @@ Sunday: from 9:00. No night bus.`,
               text: "You can mail a letter at 14:00.",
               answer: true,
               explain:
-                "İkinci çalışma aralığı «13:00 - 15:00»; saat 14:00 bu aralığın içinde. Levhada iki ayrı aralık var ve madde ikisini birden okumayı ölçüyor.",
+                "İkinci çalışma aralığı «13:00 - 15:00»; saat 14.00 bu aralığın içinde. Levhada iki ayrı aralık var ve madde ikisini birden okumayı ölçüyor.",
             },
             {
               kind: "bool",
@@ -336,7 +336,7 @@ Sunday: from 9:00. No night bus.`,
               text: "On Sunday the first bus goes at 9:00.",
               answer: true,
               explain:
-                "Son satır pazar için ayrı bir başlangıç veriyor: «Sunday: from 9:00». Haftanın öteki günleri 6:00'da başlıyor; madde istisna satırını bulmayı ölçüyor.",
+                "Son satır pazar için ayrı bir başlangıç veriyor: «Sunday: from 9:00». Haftanın öteki günleri 6.00'da başlıyor; madde istisna satırını bulmayı ölçüyor.",
             },
           ],
         },

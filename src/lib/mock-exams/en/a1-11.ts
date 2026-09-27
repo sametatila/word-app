@@ -94,7 +94,7 @@ Some medicine only with a paper from the doctor.`,
               text: "Noor must be there at 9:20.",
               answer: false,
               explain:
-                "İleti iki saati ayırıyor: randevu 9:20'de ama «Please come ten minutes before», yani 9:10'da orada olmak gerekiyor.",
+                "İleti iki saati ayırıyor: randevu 9.20'de ama «Please come ten minutes before», yani 9:10'da orada olmak gerekiyor.",
             },
             {
               kind: "bool",

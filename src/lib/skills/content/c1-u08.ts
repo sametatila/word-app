@@ -458,7 +458,7 @@ export const c1U08: SkillExercise[] = [
         stimulus:
           "KİŞİ: Frau Halbach, 31 yıl, okul sekreterliği.\n\n" +
           "BİLDİKLERİN:\n" +
-          "— Her sabah 6:40'ta gelir, kapıyı o açardı\n" +
+          "— Her sabah 6.40'ta gelir, kapıyı o açardı\n" +
           "— Öğrencilerin adlarını ezbere bilirdi, mezun olanları da\n" +
           "— Kayıp eşya dolabını kendi kurmuş, hâlâ onun sistemiyle işliyor\n" +
           "— Yeni öğretmenlere ilk haftada bir sayfalık \"gerçekten işe yarayan\" not verirdi\n" +

@@ -72,7 +72,7 @@ export const a1U24: SkillExercise[] = [
         answer: 0,
         accept: ["19"],
         explain:
-          "„um 19 Uhr“ — ve „kommt pünktlich“. Almanya'da davette saat CİDDİDİR: 19 Uhr, 19:30 değil.",
+          "„um 19 Uhr“ — ve „kommt pünktlich“. Almanya'da davette saat CİDDİDİR: 19 Uhr, 19.30 değil.",
       },
       {
         text: "Was sollen die Gäste mitbringen?",

@@ -118,7 +118,7 @@ export const EN_A2_W02: QuizWeek = {
       stem: "When is Mr. Kaya's appointment?",
       options: ["tomorrow at 9:00", "tomorrow at 4:15", "tomorrow at 3:45", "today at 4:15"],
       answer: 1,
-      why: "İlk önerilen saat (sabah) reddediliyor. `a quarter past four` 4'ü çeyrek geçe, yani 4:15; `a quarter to four` olsaydı 3:45 olurdu. Telefonda geçerli olan son onaylanan saattir.",
+      why: "İlk önerilen saat (sabah) reddediliyor. `a quarter past four` 4'ü çeyrek geçe, yani 4.15; `a quarter to four` olsaydı 3.45 olurdu. Telefonda geçerli olan son onaylanan saattir.",
       targets: ["listening.detail", "time.clock"],
     },
     {

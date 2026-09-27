@@ -455,12 +455,12 @@ export const c1U23: SkillExercise[] = [
           "Kriz toplantısının kararlarını iki metne dök. (A) Ekip için durum bildirimi: kademe, yetki, ara çözüm ve sınırı, bugün yapılmayacaklar. (B) Müşteri bildirimi: neyin çalıştığı, neyin çalışmadığı, bir sonraki bilgilendirme zamanı. Kural: ÇÖZÜM TARİHİ VERME, ve ara çözümü iki metinde de ara çözüm diye adlandır. Hazır blokları kullan.",
         stimulus:
           "TOPLANTI KARARLARI\n\n" +
-          "· Ödeme sağlayıcısı 8:40'tan beri erişilemiyor. Sipariş geçmiyor.\n" +
+          "· Ödeme sağlayıcısı 8.40'tan beri erişilemiyor. Sipariş geçmiyor.\n" +
           "· Eskalasyon kademesi 2. Acil durum planı yürürlükte; iletişim Frau Baum üzerinden.\n" +
           "· Ara çözüm: eski sağlayıcı devrede. Dakikada ~40 işleme kadar taşıyor, üstünde oynak.\n" +
           "· Açık sepetler saklanacak, müşterilere YARIN yazılacak.\n" +
           "· Bugün gözden kaçabilecek başka aksiyon alınmayacak.\n" +
-          "· Bir sonraki bilgilendirme: bugün 16:00.",
+          "· Bir sonraki bilgilendirme: bugün 16.00.",
         checklist: [
           "Çözüm tarihi verilmedi, bir sonraki bilgilendirme zamanı verildi mi?",
           "Ara çözüm iki metinde de ara çözüm olarak adlandırıldı mı?",
@@ -471,7 +471,7 @@ export const c1U23: SkillExercise[] = [
         phrases: [
           { de: "Wir haben umgehend Maßnahmen ergriffen.", tr: "derhal önlem aldık", en: "we have taken immediate measures" },
           { de: "Es handelt sich um eine Zwischenlösung.", tr: "bu bir ara çözümdür", en: "this is an interim solution" },
-          { de: "Wir informieren Sie erneut um 16:00 Uhr.", tr: "saat 16:00'da yeniden bilgilendireceğiz", en: "we will update you again at 4:00 p.m." },
+          { de: "Wir informieren Sie erneut um 16:00 Uhr.", tr: "saat 16.00'da yeniden bilgilendireceğiz", en: "we will update you again at 4:00 p.m." },
         ],
         sample:
           "A — INTERN\n\n" +

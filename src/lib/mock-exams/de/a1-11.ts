@@ -693,7 +693,7 @@ Ab 22 Uhr bitte leise sein.`,
               options: ["Bis 16:30 Uhr.", "Bis 17:30 Uhr.", "Bis Montag."],
               answer: 0,
               explain:
-                "\"Ich bin bis halb fünf da\" — yani 16:30. Pazartesi bir sonraki gün.",
+                "\"Ich bin bis halb fünf da\" — yani 16.30. Pazartesi bir sonraki gün.",
             },
             {
               kind: "mcq",

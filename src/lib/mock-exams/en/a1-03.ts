@@ -196,7 +196,7 @@ Write your name on the paper at the door.`,
               options: ["Green Market", "Late Night Shop", "Cooking Club"],
               answer: 1,
               explain:
-                "Gece dükkânı «to 1 at night» açık, yani gece bire kadar; 23:30 bu aralığın içinde. Pazar cumartesi 13'te kapanıyor, yemek kulübü ise akşam altıda başlayıp çabuk bitiyor.",
+                "Gece dükkânı «to 1 at night» açık, yani gece bire kadar; 23.30 bu aralığın içinde. Pazar cumartesi 13'te kapanıyor, yemek kulübü ise akşam altıda başlayıp çabuk bitiyor.",
             },
             {
               kind: "mcq",

@@ -100,7 +100,7 @@ export const a1U08: SkillExercise[] = [
         text: "Wann beginnt Lenas Tag?",
         options: ["um halb sieben", "um acht Uhr", "um halb acht"],
         answer: 0,
-        explain: "„Mein Tag beginnt um halb sieben.“ Yani 6:30 — „halb sieben“ SONRAKİ saati gösterir.",
+        explain: "„Mein Tag beginnt um halb sieben.“ Yani 6.30 — „halb sieben“ SONRAKİ saati gösterir.",
       },
       {
         text: "Was macht Lena zuerst?",
@@ -158,7 +158,7 @@ export const a1U08: SkillExercise[] = [
         text: "Wie spät ist es?",
         options: ["halb neun", "neun Uhr", "halb acht"],
         answer: 0,
-        explain: "„es ist halb neun“ — yani 8:30, dokuza yarım var.",
+        explain: "„es ist halb neun“ — yani 8.30, dokuza yarım var.",
       },
       {
         text: "Wann beginnt der Kurs?",

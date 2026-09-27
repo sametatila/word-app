@@ -181,7 +181,7 @@ export const a1U14: SkillExercise[] = [
         text: "Was kostet die Fahrkarte?",
         options: ["20 Euro", "14 Euro", "12 Euro"],
         answer: 0,
-        explain: "„20 Euro.“ 14:20 ise kalkış saati.",
+        explain: "„20 Euro.“ 14.20 ise kalkış saati.",
       },
           {
         kind: "gapfill",

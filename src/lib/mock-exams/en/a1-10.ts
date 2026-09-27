@@ -315,7 +315,7 @@ On Saturday: 12:00.`,
               text: "On Saturday the last pickup is at twelve.",
               answer: true,
               explain:
-                "Levha iki saat veriyor: normal günlerde 17:00, «On Saturday: 12:00». Cumartesi saati daha erken.",
+                "Levha iki saat veriyor: normal günlerde 17.00, «On Saturday: 12:00». Cumartesi saati daha erken.",
             },
           ],
         },

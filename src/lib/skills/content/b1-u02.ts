@@ -337,7 +337,7 @@ export const b1U02: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Esnek çalışma isteği formunu doldur.",
-        facts: "Çalışan: tam zamanlı; istediği başlangıç saati 07:00; gerekçe: çocuk; fazla mesai için istek: sonradan izin.",
+        facts: "Çalışan: tam zamanlı; istediği başlangıç saati 07.00; gerekçe: çocuk; fazla mesai için istek: sonradan izin.",
         fields: [
           { label: "Arbeitszeit jetzt", answer: "Vollzeit", accept: ["die Vollzeit", "Vollzeit mit festen Zeiten"] },
           { label: "Neuer Beginn", answer: "sieben Uhr", accept: ["7 Uhr", "um sieben", "07:00", "7:00", "um sieben Uhr", "um 7 Uhr"] },

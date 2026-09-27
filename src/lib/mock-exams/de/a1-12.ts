@@ -110,7 +110,7 @@ Ihre Fahrkarten gelten auch im Bus.`,
               text: "Teuta ist um 10:05 Uhr in Leipzig.",
               answer: true,
               explain:
-                "İki saat geçiyor: 9:12 Halle'deki saat, varış ise \"In Leipzig bin ich um 10:05 Uhr\".",
+                "İki saat geçiyor: 9.12 Halle'deki saat, varış ise \"In Leipzig bin ich um 10:05 Uhr\".",
             },
             {
               kind: "bool",

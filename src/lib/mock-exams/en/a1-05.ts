@@ -83,7 +83,7 @@ The last bus on Sunday is at 22:00.`,
               text: "Alma comes at twenty to seven in the evening.",
               answer: true,
               explain:
-                "İleti «My train arrives at 18:40» diyor. 18:40 akşam yediye yirmi kala demektir. A1'de yirmi dört saatlik yazımı günlük saate çevirmek ölçülen becerilerden biri.",
+                "İleti «My train arrives at 18:40» diyor. 18.40 akşam yediye yirmi kala demektir. A1'de yirmi dört saatlik yazımı günlük saate çevirmek ölçülen becerilerden biri.",
             },
             {
               kind: "bool",

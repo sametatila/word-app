@@ -404,7 +404,7 @@ export const c1U11: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İtfaiyenin verdiği bilgiye göre alarm 21:14'te gelmiş.",
+        tr: "İtfaiyenin verdiği bilgiye göre alarm 21.14'te gelmiş.",
         answer: "Laut Angaben der Feuerwehr sei der Alarm um 21:14 Uhr eingegangen",
         hint: "Kaynak belirtilince fiil aktarım kipine geçer.",
       },

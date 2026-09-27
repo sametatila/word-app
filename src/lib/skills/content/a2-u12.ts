@@ -124,7 +124,7 @@ export const a2U12: SkillExercise[] = [
         text: "Wie lange gibt es Mittagessen?",
         options: ["Von 11:30 bis 14:00", "Von 12:00 bis 16:30", "Den ganzen Tag"],
         answer: 0,
-        explain: "„Mittagessen gibt es von 11:30 bis 14:00 Uhr.“ 16:30 kahve molasının bitişi.",
+        explain: "„Mittagessen gibt es von 11:30 bis 14:00 Uhr.“ 16.30 kahve molasının bitişi.",
       },
       {
         kind: "gapfill",

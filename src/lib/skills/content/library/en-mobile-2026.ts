@@ -684,7 +684,7 @@ export const enMobile2026: SkillExercise[] = [
           "09:00"
         ],
         "answer": 1,
-        "explain": "\"From Central Station\" satırının ilk saati 07:30. 07:15 Green Park'tan kalkan ilk otobüstür."
+        "explain": "\"From Central Station\" satırının ilk saati 07.30. 07.15 Green Park'tan kalkan ilk otobüstür."
       },
       {
         "text": "Bus 12 runs on Sunday.",
@@ -1996,7 +1996,7 @@ export const enMobile2026: SkillExercise[] = [
           "At nine fifteen"
         ],
         "answer": 1,
-        "explain": "\"It's coming at ten forty, not ten twenty.\" deniyor. Yani eski saat 10:20 değil, yeni saat 10:40."
+        "explain": "\"It's coming at ten forty, not ten twenty.\" deniyor. Yani eski saat 10.20 değil, yeni saat 10.40."
       },
       {
         "text": "Where can passengers for Liverpool wait?",
@@ -4335,7 +4335,7 @@ export const enMobile2026: SkillExercise[] = [
           "17:00"
         ],
         "answer": 2,
-        "explain": "\"On Sundays it closes earlier, at 17:00\" cümlesi pazar günü kapanışı 17:00 olarak veriyor; 19:00 diğer günler için."
+        "explain": "\"On Sundays it closes earlier, at 17:00\" cümlesi pazar günü kapanışı 17.00 olarak veriyor; 19.00 diğer günler için."
       },
       {
         "text": "Who will answer questions on Saturday morning?",
@@ -4421,7 +4421,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 0,
-        "explain": "Programda 2. gün (cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye cumartesi sabahı gidiliyor."
+        "explain": "Programda 2. gün (cumartesi) 09.30'da \"Bus to the castle\" yazıyor, yani kaleye cumartesi sabahı gidiliyor."
       },
       {
         "text": "What time must everybody be back at the bus stop on Saturday?",
@@ -4948,7 +4948,7 @@ export const enMobile2026: SkillExercise[] = [
           "At 10:00"
         ],
         "answer": 0,
-        "explain": "Metinde \"Check-out: Monday, June 15, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı."
+        "explain": "Metinde \"Check-out: Monday, June 15, before 11:00\" yazıyor, yani odadan saat 11.00'den önce çıkılmalı."
       },
       {
         "text": "Breakfast is not in the total price. The guests must pay extra for it.",
@@ -5772,7 +5772,7 @@ export const enMobile2026: SkillExercise[] = [
           "5:40"
         ],
         "answer": 1,
-        "explain": "\"the new departure time is 3:35\" cümlesinden anlaşılıyor. 3:15 eski saat, 5:40 ise sonraki trenin saati."
+        "explain": "\"the new departure time is 3:35\" cümlesinden anlaşılıyor. 3.15 eski saat, 5.40 ise sonraki trenin saati."
       },
       {
         "text": "What does the announcement say about tickets?",

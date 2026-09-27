@@ -212,7 +212,7 @@ export const a2U18: SkillExercise[] = [
         text: "Wann fährt der nächste Anschluss?",
         options: ["Um 17:20", "Um 18:05", "Um 21:00"],
         answer: 1,
-        explain: "17:20 kaçıyor: „Aber um 18:05 fährt der nächste.“",
+        explain: "17.20 kaçıyor: „Aber um 18:05 fährt der nächste.“",
       },
       {
         kind: "dictation",

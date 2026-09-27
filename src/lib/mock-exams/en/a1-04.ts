@@ -110,7 +110,7 @@ In the night and on the weekend, call 112.`,
               text: "The bus goes back at half past eight.",
               answer: false,
               explain:
-                "8:30 gidiş saati: «The bus leaves the school at 8:30». Dönüş öğleden sonra dörtte. A1'de saat okumak ölçülüyor ama saatin hangi yöne ait olduğunu da görmek gerekiyor.",
+                "8.30 gidiş saati: «The bus leaves the school at 8:30». Dönüş öğleden sonra dörtte. A1'de saat okumak ölçülüyor ama saatin hangi yöne ait olduğunu da görmek gerekiyor.",
             },
             {
               kind: "bool",
@@ -648,7 +648,7 @@ Clara Weiss`,
               text: "You can swim in the small pool at ten past nine.",
               answer: true,
               explain:
-                "Küçük havuz «until half past nine» açık; 21:10 bu saatten önce. Büyük havuz dokuzda kapanıyor, madde küçük olanı soruyor.",
+                "Küçük havuz «until half past nine» açık; 21.10 bu saatten önce. Büyük havuz dokuzda kapanıyor, madde küçük olanı soruyor.",
             },
             {
               kind: "bool",

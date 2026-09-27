@@ -112,7 +112,7 @@ The Aydin family, apartment 3B`,
               text: "Dani's train comes before 4:30.",
               answer: true,
               explain:
-                "Metinde saat «4:15» olarak veriliyor ve 4:15, 4:30'dan öncedir. Metindeki ikinci sayı (4:50) tuzak: Dani onu \"not at 4:50\" diye açıkça eliyor. A1'de saat okumak ölçülen becerilerden biri, bu yüzden madde doğrudan saate dayanıyor.",
+                "Metinde saat «4:15» olarak veriliyor ve 4.15, 4.30'dan öncedir. Metindeki ikinci sayı (4:50) tuzak: Dani onu \"not at 4:50\" diye açıkça eliyor. A1'de saat okumak ölçülen becerilerden biri, bu yüzden madde doğrudan saate dayanıyor.",
             },
             {
               kind: "bool",
@@ -226,7 +226,7 @@ Bring a friend!`,
               options: ["City Library", "Sports Center", "Language Café"],
               answer: 1,
               explain:
-                "Havuz «7 a.m.»de açılıyor, yani 7:30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7:30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
+                "Havuz «7 a.m.»de açılıyor, yani 7.30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7:30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
             },
             {
               kind: "mcq",

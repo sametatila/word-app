@@ -449,7 +449,7 @@ export const c1U18: SkillExercise[] = [
           "Aşağıdaki olay notundan İKİ ayrı metin yaz. (A) Ekip kanalına kısa iç bildirim — eksiltili, teknik, özür yok. (B) Etkilenen müşterilere bildirim — tam cümleler, sorumluluk adlandırılmış, teknik ayrıntı yok, ne yapıldığı ve tekrar etmemesi için ne değiştiği açık. İkisinde de aynı olguları ver; uydurma bilgi ekleme, olanı da gizleme.",
         stimulus:
           "OLAY NOTU (ham)\n\n" +
-          "12.03., 09:12–13:04 (3 sa 52 dk). Node 3 kaynaklı kesinti.\n" +
+          "12.03., 09.12–13.04 (3 sa 52 dk). Node 3 kaynaklı kesinti.\n" +
           "Neden: cache servisinde bellek sızıntısı, üç haftadır birikiyormuş, izleme eşiği yanlış ayarlıymış.\n" +
           "Etki: ~2.000 kullanıcı giriş yapamadı. Veri kaybı YOK.\n" +
           "Yapılan: düzeltme yayınlandı, izleme eşiği düşürüldü, haftalık bellek raporu eklendi.\n" +
