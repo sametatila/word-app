@@ -8,8 +8,9 @@ import { SkeletonLine } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <LoadingRegion className="mx-auto w-full max-w-2xl space-y-4">
-      <div className="flex flex-col items-center gap-3 pt-4">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-4">
+      <div className="size-11 animate-pulse rounded-tile surface-2" />
+      <div className="flex flex-col items-center gap-3">
         <SkeletonLine variant="h1" width={240} />
         <SkeletonLine variant="caption" width={200} />
       </div>

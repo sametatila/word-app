@@ -71,7 +71,7 @@ export function ReportDialog({
       onClick={(e) => {
         if (e.target === ref.current) onClose();
       }}
-      className="card m-auto w-[min(27rem,calc(100vw-2rem))] p-5 backdrop:bg-black/55"
+      className="card m-auto w-[min(27.5rem,calc(100vw-2rem))] p-5 backdrop:bg-black/55"
       style={{ color: "var(--text)" }}
     >
       {state === "done" ? (
@@ -161,14 +161,14 @@ export function ReportDialog({
           ) : null}
 
           <div className="mt-4 flex gap-3">
-            <button type="button" onClick={onClose} className="btn flex-1 py-3" style={{ background: "var(--surface-2)", color: "var(--text)" }}>
+            <button type="button" onClick={onClose} className="btn flex-1 py-3.5" style={{ background: "var(--surface-2)", color: "var(--text)" }}>
               {t("common.discard")}
             </button>
             <button
               type="button"
               onClick={() => void submit()}
               disabled={!reason || state === "sending"}
-              className="btn btn-primary flex-1 py-3 disabled:opacity-60"
+              className="btn btn-primary flex-1 py-3.5 disabled:opacity-60"
             >
               {state === "sending" ? "…" : t("common.send")}
             </button>

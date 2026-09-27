@@ -11,6 +11,7 @@ import { localeOf } from "@/lib/i18n/dict";
 import { CrownIcon, CheckIcon } from "@/components/icons";
 import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
 import { PremiumStoreCta } from "@/components/premium-store-cta";
+import { BackButton } from "@/components/page-back";
 import type { StoreLinks, WebPlatform } from "@/lib/store-link";
 
 type Plans = { productMonthly: string; productYearly: string; trialDays: number };
@@ -147,8 +148,12 @@ export function PremiumPaywall({
   };
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 pb-12 pt-6">
-      <header className="flex flex-col items-center text-center">
+    /* Yan dolgu kabuktan (`AppShell` main `px-4`); burada ikinci kez yok. */
+    <div className="mx-auto w-full max-w-3xl pb-12">
+      {/* Alt sekmede olmayan ekran: geri yolu öteki yığın ekranlarıyla aynı
+          kare düğme, ortalı kapağın üstünde solda. */}
+      <BackButton fallback="/profile" />
+      <header className="mt-2 flex flex-col items-center text-center">
         <div
           className="flex h-20 w-20 items-center justify-center rounded-card on-fill"
           style={{ background: "var(--color-brand)", boxShadow: "0 12px 24px -10px var(--color-brand)" }}
@@ -279,11 +284,11 @@ function PlanCard({
 }) {
   return (
     <div
-      className="rounded-panel border p-4 text-center"
+      className="card card-flat p-4 text-center"
       style={
         highlight
           ? { borderColor: "var(--color-brand)", background: "color-mix(in srgb, var(--color-brand-500) 8%, transparent)" }
-          : { borderColor: "var(--border)", background: "var(--surface)" }
+          : undefined
       }
     >
       <p className="muted text-caption tracking-wide">{label}</p>
@@ -306,9 +311,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="mt-6">
       <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">{title}</h2>
-      <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        {children}
-      </div>
+      <div className="card p-4">{children}</div>
     </section>
   );
 }
