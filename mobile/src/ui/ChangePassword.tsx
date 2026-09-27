@@ -3,6 +3,7 @@ import { View, TextInput } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
+import { PrimaryButton } from "./PrimaryButton";
 import { changePassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
@@ -148,15 +149,10 @@ export function ChangePassword({ colors }: { colors: Palette }) {
       ) : null}
 
       <View style={{ flexDirection: "row", gap: spacing.sm }}>
-        <PressableScale
-          onPress={kaydet} accessibilityRole="button" accessibilityLabel={t("changepw.save")}
-          style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }}
-        >
-          <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? t("changepw.saving") : t("changepw.save")}</Text>
-        </PressableScale>
+        <PrimaryButton size="md" label={busy ? t("changepw.saving") : t("changepw.save")} onPress={() => void kaydet()} busy={busy} style={{ flex: 1 }} />
         <PressableScale
           onPress={kapat} accessibilityRole="button" accessibilityLabel={t("changepw.cancel")}
-          style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, paddingHorizontal: spacing.lg, alignItems: "center" }}
+          style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.md, paddingHorizontal: spacing.lg, alignItems: "center", justifyContent: "center" }}
         >
           <Text variant="bodyStrong" color={colors.text}>{t("changepw.cancel")}</Text>
         </PressableScale>

@@ -3,6 +3,7 @@ import { View, TextInput } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
+import { PrimaryButton } from "./PrimaryButton";
 import { disableTwoFactor, enableTwoFactor, getTwoFactorEnabled } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { spacing, radii, type Palette } from "../theme";
@@ -109,21 +110,12 @@ export function TwoFactor({ colors }: { colors: Palette }) {
         </View>
       ) : null}
       <View style={{ flexDirection: "row", gap: spacing.sm }}>
-        <PressableScale
-          onPress={kaydet}
-          accessibilityRole="button"
-          accessibilityLabel={t(enabled ? "twofa.disable" : "twofa.enable")}
-          style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }}
-        >
-          <Text variant="bodyStrong" color={colors.onPrimary}>
-            {busy ? "..." : t(enabled ? "twofa.disable" : "twofa.enable")}
-          </Text>
-        </PressableScale>
+        <PrimaryButton size="md" label={t(enabled ? "twofa.disable" : "twofa.enable")} onPress={() => void kaydet()} busy={busy} style={{ flex: 1 }} />
         <PressableScale
           onPress={kapat}
           accessibilityRole="button"
           accessibilityLabel={t("changepw.cancel")}
-          style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 14, alignItems: "center" }}
+          style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, alignItems: "center", justifyContent: "center" }}
         >
           <Text variant="bodyStrong" color={colors.text}>{t("changepw.cancel")}</Text>
         </PressableScale>

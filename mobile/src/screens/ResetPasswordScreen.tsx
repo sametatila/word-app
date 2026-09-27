@@ -8,6 +8,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { PrimaryButton } from "../ui/PrimaryButton";
+import { FlowTopBar, FlowActions, FlowNote, StateBody } from "../ui/flow";
 import { BoltIcon } from "../ui/icons";
 import { resetPassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
@@ -61,41 +63,38 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
     setDone(true);
   }
 
+  const tile = (
+    <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+      <BoltIcon color={colors.onPrimary} size={38} />
+    </View>
+  );
+
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
+      {/* Kapat, "Girişe dön" ile aynı yere: öteki akış ekranları gibi üstte bir çıkış. */}
+      <View style={{ paddingHorizontal: spacing.lg }}>
+        <FlowTopBar onClose={toAuth} />
+      </View>
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets
-        contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: insets.top + spacing.xxl, paddingBottom: insets.bottom + spacing.xxl }}
+        contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
         keyboardShouldPersistTaps="handled"
       >
-        <View style={{ alignItems: "center", marginBottom: spacing.xl }}>
-          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <BoltIcon color={colors.onPrimary} size={38} />
-          </View>
-          <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("resetpw.title")}</Text>
-        </View>
-
         {!token ? (
           <View style={{ gap: spacing.md }}>
-            <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-              <Text variant="caption" color={colors.dangerText}>{t("resetpw.invalid")}</Text>
-            </View>
-            <PressableScale onPress={toAuth} accessibilityRole="button" accessibilityLabel={t("auth.back_to_sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{t("auth.back_to_sign_in")}</Text>
-            </PressableScale>
+            <StateBody icon={tile} title={t("resetpw.title")} body={t("resetpw.invalid")} alert />
+            <FlowActions primary={{ label: t("auth.back_to_sign_in"), onPress: toAuth }} />
           </View>
         ) : done ? (
           <View style={{ gap: spacing.md }}>
-            <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg }}>
-              <Text variant="bodyStrong" color={colors.successText}>{t("resetpw.done")}</Text>
-            </View>
-            <PressableScale onPress={toAuth} accessibilityRole="button" accessibilityLabel={t("auth.sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{t("auth.sign_in")}</Text>
-            </PressableScale>
+            <StateBody icon={tile} title={t("resetpw.title")} body={t("resetpw.done")} />
+            <FlowActions primary={{ label: t("auth.sign_in"), onPress: toAuth }} />
           </View>
         ) : (
           <View style={{ gap: spacing.md }}>
+            <View style={{ alignItems: "center", marginBottom: spacing.md }}>
+              {tile}
+              <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("resetpw.title")}</Text>
+            </View>
             {/* Yeni parola ipucu — bkz. `screens/AuthScreen` içindeki not. */}
             {/* Dönüş tuşu zinciri — bkz. `ui/ChangePassword`. Webde iki alan
                 bir `<form>` içinde: ilkinde Enter da gönderiyor. */}
@@ -110,7 +109,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
               ref={tekrarRef}
               autoComplete="new-password" textContentType="newPassword"
               value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
-              onSubmitEditing={() => { if (!busy) void kaydet(); }}
+              onSubmitEditing={() => { if (!busy && !problem) void kaydet(); }}
               placeholder={t("changepw.again")}
               accessibilityLabel={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}
             />
@@ -130,16 +129,13 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
               </Text>
             )}
 
-            {error && (
-              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-                <Text variant="caption" color={colors.dangerText}>{error}</Text>
+            {error ? (
+              <View accessibilityLiveRegion="polite">
+                <FlowNote tone="bad" text={error} />
               </View>
-            )}
+            ) : null}
 
-            <PressableScale onPress={kaydet} accessibilityRole="button" accessibilityLabel={t("resetpw.save")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{busy ? "…" : t("resetpw.save")}</Text>
-            </PressableScale>
+            <PrimaryButton label={t("resetpw.save")} onPress={() => void kaydet()} busy={busy} disabled={!!problem} style={{ marginTop: spacing.sm }} />
 
             <PressableScale onPress={toAuth} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.back_to_sign_in")}</Text>

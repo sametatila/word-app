@@ -10,6 +10,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { AppleIcon, ArrowBackIcon, BoltIcon, ClockIcon, GoogleIcon, MailIcon, XIcon } from "../ui/icons";
 import { FlowNote } from "../ui/flow";
+import { PrimaryButton } from "../ui/PrimaryButton";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
@@ -405,7 +406,7 @@ export function AuthScreen() {
             burada "Hesapsız devam et"i yok, yoksa ekranda kalakalıyordu. */}
         {view === "options" && guestUpgrade && (
           <PressableScale accessibilityLabel={t("common.close")} hitSlop={4} onPress={() => { if (nav.canGoBack()) nav.goBack(); else nav.reset({ index: 0, routes: [{ name: "Tabs" }] }); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <XIcon color={colors.text} size={22} />
+            <XIcon color={colors.textMuted} size={22} />
           </PressableScale>
         )}
         {(view === "email" || view === "verify" || view === "twofactor") && (
@@ -479,9 +480,7 @@ export function AuthScreen() {
             )}
 
             {error && (
-              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-                <Text variant="caption" color={colors.dangerText}>{error}</Text>
-              </View>
+              <View accessibilityLiveRegion="assertive"><FlowNote tone="bad" text={error} /></View>
             )}
           </View>
         ) : view === "forgot" ? (
@@ -495,11 +494,9 @@ export function AuthScreen() {
               <>
                 <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")}
                 accessibilityLabel={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
-                {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
+                {error && (<View accessibilityLiveRegion="assertive"><FlowNote tone="bad" text={error} /></View>)}
                 {captchaOn && <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />}
-                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-                  <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
-                </PressableScale>
+                <PrimaryButton label={t("auth.send_reset_link")} onPress={() => void doReset()} disabled={captchaBlocked} busy={resetBusy} style={{ marginTop: spacing.sm }} />
               </>
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
@@ -551,18 +548,10 @@ export function AuthScreen() {
               </View>
             )}
             {error && (
-              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-                <Text variant="caption" color={colors.dangerText}>{error}</Text>
-              </View>
+              <View accessibilityLiveRegion="assertive"><FlowNote tone="bad" text={error} /></View>
             )}
 
-            <PressableScale
-              onPress={doVerifyCode}
-              accessibilityLabel={t("twofa.verify")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}
-            >
-              <Text variant="h3" color={colors.onPrimary}>{codeBusy ? "..." : t("twofa.verify")}</Text>
-            </PressableScale>
+            <PrimaryButton label={t("twofa.verify")} onPress={() => void doVerifyCode()} busy={codeBusy} />
 
             <PressableScale
               onPress={resendCode}
@@ -593,9 +582,7 @@ export function AuthScreen() {
               </View>
             )}
             {error && (
-              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-                <Text variant="caption" color={colors.dangerText}>{error}</Text>
-              </View>
+              <View accessibilityLiveRegion="assertive"><FlowNote tone="bad" text={error} /></View>
             )}
 
             <PressableScale
@@ -614,13 +601,7 @@ export function AuthScreen() {
                 yok); kullanıcı dönüp kendi parolasıyla giriyor. Kip bilerek
                 "signin"e çekiliyor — bu ekrana kayıt kipinden gelinmiş olabilir
                 ve parola alanı da temizleniyor. */}
-            <PressableScale
-              onPress={() => { setMode("signin"); setPassword(""); setView("email"); setError(null); }}
-              accessibilityLabel={t("verify.verified_sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}
-            >
-              <Text variant="h3" color={colors.onPrimary}>{t("verify.verified_sign_in")}</Text>
-            </PressableScale>
+            <PrimaryButton label={t("verify.verified_sign_in")} onPress={() => { setMode("signin"); setPassword(""); setView("email"); setError(null); }} />
           </View>
         ) : (
           <View style={{ gap: spacing.md }}>
@@ -673,15 +654,11 @@ export function AuthScreen() {
             )}
 
             {error && (
-              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
-                <Text variant="caption" color={colors.dangerText}>{error}</Text>
-              </View>
+              <View accessibilityLiveRegion="assertive"><FlowNote tone="bad" text={error} /></View>
             )}
 
             {captchaOn && <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />}
-            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
-            </PressableScale>
+            <PrimaryButton label={mode === "signin" ? t("auth.sign_in") : t("auth.create_account")} onPress={() => void submit()} disabled={captchaBlocked} busy={busy} style={{ marginTop: spacing.sm }} />
 
             {mode === "signin" && (
               <PressableScale onPress={() => { setView("forgot"); setError(null); setResetSent(false); }} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
