@@ -104,13 +104,12 @@ export function FirstPractice() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 py-6">
       <div className="mb-5 flex items-center gap-3">
-        <div className="h-2 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+        {/* Çubuk tur oyuncusununkiyle aynı (`session-player`): surface-2 oluk,
+            marka gradyanı dolgu. */}
+        <div className="h-2 flex-1 overflow-hidden rounded-full surface-2">
           <div
-            className="h-full rounded-full transition-[width] duration-300"
-            style={{
-              width: `${((idx + (seen ? 1 : 0)) / words.length) * 100}%`,
-              background: "var(--color-brand-500)",
-            }}
+            className="brand-gradient h-full rounded-full transition-[width] duration-300"
+            style={{ width: `${((idx + (seen ? 1 : 0)) / words.length) * 100}%` }}
           />
         </div>
         <span className="muted text-caption tabular-nums">

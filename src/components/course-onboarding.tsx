@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { defaultVoice } from "@/lib/tts/voices";
 import { AlertIcon, LogoMark } from "@/components/icons";
+import { FlowNote } from "@/components/flow";
 import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { hasFirstWords } from "@/lib/first-words";
@@ -346,7 +347,7 @@ export function CourseOnboarding({
             transition={{ duration: 0.2 }}
           >
             <div>
-              <h1 className="text-h3">{step.title}</h1>
+              <h1 className="text-h1 text-balance short:text-h2">{step.title}</h1>
               <p className="muted mt-1 text-body leading-relaxed">{step.subtitle}</p>
             </div>
 
@@ -414,12 +415,9 @@ export function CourseOnboarding({
             ) : null}
 
             {error ? (
-              <p
-                className="mt-4 flex items-center gap-2 rounded-panel px-3 py-2 text-body"
-                style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}
-              >
-                <AlertIcon size={16} /> {error}
-              </p>
+              <div role="alert" className="mt-4">
+                <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={error} />
+              </div>
             ) : null}
           </motion.div>
         </AnimatePresence>
@@ -436,7 +434,7 @@ export function CourseOnboarding({
         style={{ background: "var(--bg)" }}
       >
         {i > 0 ? (
-          <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-3 text-body">
+          <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-4">
             {t("common.back")}
           </button>
         ) : null}

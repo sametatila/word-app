@@ -79,7 +79,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
   // sebebi söyleniyor (onboarding bu seçeneği zaten göstermiyor).
   if (!total) {
     return (
-      <FlowColumn>
+      <FlowColumn className="px-4 py-6">
         <StateBody title={t("placement.no_demo")} />
         <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
       </FlowColumn>
@@ -116,7 +116,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
             zemin. Burada `btn-ghost` ve 20 px simge vardı — aynı uygulamada
             dördüncü bir kapatma karosu ölçüsü. */}
         <RoundExit onExit={leave} labelKey="common.close" />
-        <div className="h-2.5 flex-1 overflow-hidden rounded-full surface-2">
+        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <motion.div
             className="brand-gradient h-full rounded-full"
             animate={{ width: `${Math.round((index / total) * 100)}%` }}
