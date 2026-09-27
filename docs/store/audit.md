@@ -47,7 +47,7 @@ ASC salt okuma dökümünden güncellendi.
 | S6 | Misafir paywall'ında Geri yükle yok | ✅ | 6f795209 |
 | S7 | Web/Android Apple jetonu iptalinde client_id | ✅ | 10ec4ac5 (bundle, olmazsa Services ID; `test:apple`) |
 | S8 | Android'de Apple kullanıcısı silmede yeniden giremiyor | ✅ | 351767e2 |
-| S9 | Abonelik açıklamaları geniş vaat | ◐ Samet | Play iki üründe girildi (977973eb). ASC 2026-09-26'da hâlâ eski ("All exams…"); metin `docs/store/README.md`, girişi Samet'in onayıyla API'den |
+| S9 | Abonelik açıklamaları geniş vaat | ✅ | Play iki üründe (977973eb); ASC iki üründe tr/en-US/de-DE 2026-09-27'de girildi, altısı geri okundu (Samet çalıştırdı). Metin `docs/store/README.md` |
 | S10 | Android promo kodu kutusu: ücretsiz dağıtım teyidi | ⏳ Samet | Kodlar satılmıyorsa sorun yok; teyit bekleniyor (AND-6) |
 | S11 | Play'de "24 saat önce iptal" cümlesi | ✅ | 5e5310a2 |
 | S12 | Web'de GB/CH ziyaretçisi USD görüyor | ✅ | b80ad229 |

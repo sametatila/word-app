@@ -269,8 +269,8 @@ seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yaz�
 | Play faydalar (40) | Cepte yürüyüş (ekran kapalı) · Tüm deneme sınavları · Seri beklemeden Konuşma ve Yazma | Pocket Walking (screen off) · Every mock exam · Speaking & Writing, no streak wait | Taschen-Gehmodus (Bildschirm aus) · Alle Probeprüfungen · Sprechen & Schreiben ohne Serie |
 | Play açıklama (80) | Cepte yürüyüş, tüm deneme sınavları, seri beklemeden Konuşma ve Yazma adımları | Pocket Walking, every mock exam, every Speaking and Writing step, no streak wait | Taschen-Gehmodus, alle Probeprüfungen, alle Sprechen- und Schreiben-Schritte |
 
-Play iki üründe girildi ve geri okundu (2026-09-25). ASC'de 2026-09-26'da hâlâ eski metin
-("All exams…"); giriş Samet'in onayıyla API'den (denetim S9).
+Play iki üründe girildi ve geri okundu (2026-09-25). ASC iki üründe üç dilde girildi ve geri
+okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 
 **Açık:** ekran görüntüleri, öne çıkan grafik ve video tasarımdan sonra (denetim M3).
 
