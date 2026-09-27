@@ -2012,7 +2012,7 @@ export const deA1B02: Conversation[] = [
         "Bir kurumda görevli sana hızlı hızlı yönlendirme yapıyor ve yarısını anlamıyorsun. Anlamadığını söyle, yavaşlatmasını iste ve yanlış anladığı bir şeyi düzelt.",
       partner: "aceleci ama iyi niyetli bir görevli",
       opening: "Sie brauchen das Formular A und dann Zimmer zwölf, klar?",
-      openingTr: "A formu lazım, sonra on ikinci odaya gideceksiniz, tamam mı?",
+      openingTr: "A formu lazım, sonra on iki numaralı odaya gideceksiniz, tamam mı?",
       goal: "Anlaşılmayan yer tekrar edilmiş, yanlış anlaşılan bilgi düzeltilmiş ve ne yapman gerektiği netleşmiş olur.",
       minTurns: 7,
     },
@@ -2187,7 +2187,7 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Wir feiern zusammen" },
       },
       {
-        say: [tr("Bir üretim daha: 'Annemler kutlamaya geliyor.' nasıl dersin?")],
+        say: [tr("Bir üretim daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
           target: "Meine Eltern kommen zum Fest",

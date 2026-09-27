@@ -33,7 +33,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "I can describe my career and my experience.", tr: "Kariyerimi ve deneyimimi anlatabiliyorum.", en: "I can describe my career and my experience." },
       { de: "I can write a cover letter and mention my strengths.", tr: "Niyet mektubu yazıp güçlü yanlarımı söyleyebiliyorum.", en: "I can write a cover letter and mention my strengths." },
-      { de: "I can answer the usual questions in an interview.", tr: "Mülakatta sıradan soruları cevaplayabiliyorum.", en: "I can answer the usual questions in an interview." },
+      { de: "I can answer the usual questions in an interview.", tr: "Mülakatta sık sorulan soruları cevaplayabiliyorum.", en: "I can answer the usual questions in an interview." },
       { de: "I can report what my manager said in an appraisal.", tr: "Değerlendirmede şefimin söylediklerini aktarabiliyorum.", en: "I can report what my manager said in an appraisal." },
       { de: "I can resign politely and hand over my work.", tr: "Nazikçe istifa edip işimi devredebiliyorum.", en: "I can resign politely and hand over my work." },
     ],
@@ -354,7 +354,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Which document is missing?", tr: "Hangi belge eksik?", options: ["The proof of address", "The passport", "The signature", "The application form"], answer: 0 },
         { de: "What must the applicant bring tomorrow?", tr: "Başvuru sahibi yarın ne getirmeli?", options: ["The original document", "Another copy", "A new form", "A fee"], answer: 0 },
-        { de: "How long can the applicant appeal?", tr: "Başvuru sahibi ne kadar süre içinde itiraz edebilir?", options: ["Within four weeks", "Within one week", "Until the card is issued", "Only on the fourteenth"], answer: 0 },
+        { de: "How long does the applicant have to appeal?", tr: "Başvuru sahibi ne kadar süre içinde itiraz edebilir?", options: ["Within four weeks", "Within one week", "Until the card is issued", "Only on the fourteenth"], answer: 0 },
       ],
     },
     reading: {
@@ -669,7 +669,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Tasarruf için öğüt veriyorsun.", de: "If you turned off the faucet while washing, you would save a lot of water.", tr: "Yıkarken musluğu kapatsan çok su tasarruf edersin." },
+      { situation: "Tasarruf için öğüt veriyorsun.", de: "If you turned off the faucet while washing, you would save a lot of water.", tr: "Yıkarken musluğu kapatsan sudan çok tasarruf edersin." },
       { situation: "Şehrin nasıl değiştiğini anlatıyorsun.", de: "The town has changed a lot since they built the bridge in 2015.", tr: "2015'te köprüyü yaptıklarından beri şehir çok değişti." },
     ],
     writing: {

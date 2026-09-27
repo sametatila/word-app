@@ -431,7 +431,7 @@ export const deB2B02: Conversation[] = [
       { de: "Können wir das unter Nachbarn klären?", tr: "dostane çözüm arar" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün komşuyla anlaşmazlık var ve Almanya'da bunun bir kuralı var: yönetime ya da belediyeye gitmeden önce doğrudan konuşulur. Bu deneme dilde de görünür. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün komşuyla anlaşmazlık var ve Almanya'da bunun bir kuralı var: yönetime ya da belediyeye gitmeden önce doğrudan konuşulur. Bu tutum dile de yansır. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Anahtar cümle koşullu olandır: 'siz de kabul ederseniz'. Karşı tarafa itiraz hakkı bırakır ve konuşmayı resmî şikâyetten uzak tutar. Önce kelimeler.")] },
       word("İlk", { de: "die Nachbarschaft", tr: "komşuluk" }),
       word("İkinci", { de: "die Lärmbelästigung", tr: "gürültü rahatsızlığı" }),

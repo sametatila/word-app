@@ -2,7 +2,7 @@
  { "conversation": "de-c1-krisenkommunikation", "de": "Maßnahmen wurden eingeleitet.", "en": "reports an action with no agent" },
  { "conversation": "de-c1-verhandlung-c1", "de": "… zur Sprache bringen", "en": "to raise a subject" },
  { "conversation": "de-c1-verhandlung-c1", "de": "… in Kauf nehmen", "en": "to accept a risk" },
- { "conversation": "de-c1-fuehrung", "de": "Ich würde anregen, … zu …", "en": "turns steering into a suggestion" },
+ { "conversation": "de-c1-fuehrung", "de": "Ich würde anregen, … zu …", "en": "turns an instruction into a suggestion" },
  { "conversation": "de-c1-fuehrung", "de": "Es empfiehlt sich, … zu …", "en": "impersonal advice" },
  { "conversation": "de-c1-buerojargon", "de": "Im Nachgang zu …", "en": "as a follow-up to" },
  { "conversation": "de-c1-buerojargon", "de": "etwas mit jemandem abstimmen", "en": "to agree on something with someone" },

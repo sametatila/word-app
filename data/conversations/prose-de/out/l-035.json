@@ -20,7 +20,7 @@
  { "tr": "Bunu birlikte söyleyelim:", "kind": "say.tr", "de": "Sagen wir das zusammen:" },
  { "tr": "Burada musluk suyu temiz.", "kind": "say.tr", "de": "Hier ist das Leitungswasser sauber." },
  { "tr": "Cümlede şöyle kullanılır:", "kind": "say.tr", "de": "Im Satz wird es so verwendet:" },
- { "tr": "dâhil mi diye sormak için", "kind": "say.tr", "de": "um zu fragen, ob es dabei ist" },
+ { "tr": "dâhil mi diye sormak için", "kind": "say.tr", "de": "um zu fragen, ob es inbegriffen ist" },
  { "tr": "deme, bu yanlış. Doğrusu:", "kind": "say.tr", "de": "sag nicht, das ist falsch. Richtig:" },
  { "tr": "demen yeter. Hatta sadece", "kind": "say.tr", "de": "zu sagen reicht. Sogar nur" },
  { "tr": "denir. Yani bilgi masası.", "kind": "say.tr", "de": "sagt man. Also der Infoschalter." },
@@ -40,7 +40,7 @@
  { "tr": "Görevli bagajını soruyor:", "kind": "say.tr", "de": "Der Mitarbeiter fragt nach deinem Gepäck:" },
  { "tr": "Güvenli demek. Sen söyle:", "kind": "say.tr", "de": "Heißt sicher. Sag du:" },
  { "tr": "İki küçük not. Birincisi:", "kind": "say.tr", "de": "Zwei kleine Anmerkungen. Die erste:" },
- { "tr": "İkinci kelime baş ağrısı:", "kind": "say.tr", "de": "Zweites Wort Kopfschmerzen:" },
+ { "tr": "İkinci kelime baş ağrısı:", "kind": "say.tr", "de": "Das zweite Wort ist Kopfschmerzen:" },
  { "tr": "İkinci kelimemiz domates:", "kind": "say.tr", "de": "Unser zweites Wort ist Tomate:" },
  { "tr": "ile daha ucuzunu istedin,", "kind": "say.tr", "de": "— damit hast du etwas Billigeres verlangt," },
  { "tr": "ile fiilin arasına girer.", "kind": "say.tr", "de": "und dem Verb." },
@@ -61,7 +61,7 @@
  { "tr": "Lütfen tekrar et: ticket.", "kind": "say.tr", "de": "Bitte wiederhole: ticket." },
  { "tr": "Mesela istasyonu soralım:", "kind": "say.tr", "de": "Fragen wir zum Beispiel nach dem Bahnhof:" },
  { "tr": "Mesela parkta koşuyorsan:", "kind": "say.tr", "de": "Wenn du zum Beispiel im Park läufst:" },
- { "tr": "O otobüse binmek zorunda:", "kind": "say.tr", "de": "Sie muss den Bus nehmen:" },
+ { "tr": "O, otobüse binmek zorunda:", "kind": "say.tr", "de": "Sie muss den Bus nehmen:" },
  { "tr": "Ödemek demek. Ben öderim:", "kind": "say.tr", "de": "Heißt zahlen. Ich zahle:" },
  { "tr": "Özetleyelim: tek şey için", "kind": "say.tr", "de": "Fassen wir zusammen: für eine Sache" },
  { "tr": "please, fiyat sormak için", "kind": "say.tr", "de": "please, um nach dem Preis zu fragen" },
@@ -145,5 +145,7 @@
  { "tr": "Lütfen sen de söyle: went.", "kind": "say.tr", "de": "Bitte sag du auch: went." },
  { "tr": "Mümkün demek. Kalıp şöyle:", "kind": "say.tr", "de": "Heißt möglich. Die Wendung so:" },
  { "tr": "sensin. Tek başına", "kind": "say.tr", "de": "bist du. Allein heißt" },
- { "tr": "\"sen\" ya da \"siz\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "„du“ oder „Sie“. Bitte wiederhole:" }
+ { "tr": "\"sen\" ya da \"siz\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "„du“ oder „Sie“. Bitte wiederhole:" },
+ { "tr": "gazap", "kind": "vocab.tr", "de": "der Zorn" },
+ { "tr": "hafif", "kind": "vocab.tr", "de": "leicht" }
 ]

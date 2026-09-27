@@ -71,24 +71,24 @@
  },
  {
   "conversation": "de-c1-daumen",
-  "sceneEn": "A friend has an important exam or interview tomorrow. Support them, listen to their worry, tell them their plan is sound and ask whether there is something they want to talk through in private. Use idioms in measure.",
+  "sceneEn": "A friend has an important exam or interview tomorrow. Support them, listen to their worry, tell them their plan is sound and ask whether there is something they want to talk through in private. Use idioms in moderation.",
   "partnerEn": "a nervous friend who lacks confidence but wants to talk",
   "openingEn": "I think I'm going to make a mess of it tomorrow. Tell me honestly — does my plan actually hold water?",
   "goalEn": "The worry has been heard, an honest verdict has been given on the plan and support has been offered with something concrete."
  },
  {
   "conversation": "de-c1-tomaten",
-  "sceneEn": "You are making a joint decision (a vacation, a move, a purchase). Say which points matter to you and which you do not mind about; accept putting up with one thing unwillingly and reach a conclusion.",
+  "sceneEn": "You are making a joint decision (a vacation, a move, a purchase). Say which points matter to you and which you do not mind about; agree to put up with one thing you would rather not and reach a conclusion.",
   "partnerEn": "a friend who finds fault in every detail and does not decide easily",
   "openingEn": "Well, honestly, it isn't all the same to me. You go first: what really matters to you?",
   "goalEn": "The points that matter and those that do not have been separated, one concession has been made and a joint decision has been reached."
  },
  {
   "conversation": "de-c1-tiere-idiome",
-  "sceneEn": "You are telling a friend about a narrow escape: what happened, why you were lucky, whose word you trusted and what you would do differently. Use idioms where they fit.",
+  "sceneEn": "You are telling a friend about a narrow escape: what happened, why you were lucky, whose word you trusted and what you would do next time. Use idioms where they fit.",
   "partnerEn": "a friend listening keenly and asking for detail",
   "openingEn": "Tell me from the beginning — and were you really just lucky, or was it skill?",
-  "goalEn": "The event has been told from the beginning, luck and skill have been told apart and what you would do again has been said."
+  "goalEn": "The event has been told from the beginning, luck and skill have been told apart and what you would do next time has been said."
  },
  {
   "conversation": "de-c1-wetter-idiome",
@@ -120,7 +120,7 @@
  },
  {
   "conversation": "de-c1-musik-idiome",
-  "sceneEn": "You are trying to work out who really carries weight in a team you have just joined. Ask a colleague: who sets the tone, how decisions are made, how you can find your place. Use idioms in measure.",
+  "sceneEn": "You are trying to work out who really carries weight in a team you have just joined. Ask a colleague: who sets the tone, how decisions are made, how you can find your place. Use idioms in moderation.",
   "partnerEn": "a plain-spoken but diplomatic colleague who knows the team well",
   "openingEn": "You're new, so I'll tell you right away: on paper the management decides. And in reality? Have a guess.",
   "goalEn": "The real balance of power in the team has been learned and a concrete piece of advice on finding your place has been taken away."
@@ -134,10 +134,10 @@
  },
  {
   "conversation": "de-c1-idiome-alltag",
-  "sceneEn": "You are telling a friend about a busy day. Use idioms in measure: three or four at most, each fitting its context. If the other person says you are overdoing it, adjust.",
+  "sceneEn": "You are telling a friend about a busy day. Use idioms in moderation: three or four at most, each fitting its context. If the other person says you are overdoing it, adjust.",
   "partnerEn": "a friend who knows you well and teases you when you overdo it",
   "openingEn": "Tell me, how was your day? And please, no book of proverbs — just say it as it was.",
-  "goalEn": "The day has been described, the idioms have been used in measure and the other person has said it sounded natural."
+  "goalEn": "The day has been described, the idioms have been used in moderation and the other person has said it sounded natural."
  },
  {
   "conversation": "de-c1-konjunktiv1",

@@ -686,7 +686,7 @@ export const deA1B10: Conversation[] = [
           statement: "Der Termin ist am zehn Uhr.",
           answer: false,
           why: [
-            tr("Saatlerle gün edatı kullanılmaz, saatin kendi edatı vardır. Doğrusu"),
+            tr("Saatlerle gün edatı kullanılmaz, saatin kendi edatı vardır. Doğrusu:"),
             de("Der Termin ist um zehn Uhr."),
           ],
         },
@@ -1122,7 +1122,7 @@ export const deA1B10: Conversation[] = [
           statement: "Ich habe gestern gekauft ein Buch.",
           answer: false,
           why: [
-            tr("Geçmiş biçim cümlenin en sonunda olmalı, ortasında değil. Doğrusu"),
+            tr("Geçmiş biçim cümlenin en sonunda olmalı, ortasında değil. Doğrusu:"),
             de("Ich habe gestern ein Buch gekauft."),
           ],
         },
@@ -1533,7 +1533,7 @@ export const deA1B10: Conversation[] = [
           statement: "Zuerst ich bin aufgestanden.",
           answer: false,
           why: [
-            tr("Sıralama kelimesi başta olduğu için özne yardımcı fiilin arkasına geçmeli. Doğrusu"),
+            tr("Sıralama kelimesi başta olduğu için özne yardımcı fiilin arkasına geçmeli. Doğrusu:"),
             de("Zuerst bin ich aufgestanden."),
           ],
         },
@@ -1936,13 +1936,13 @@ export const deA1B10: Conversation[] = [
       {
         say: [
           tr(
-            "Şimdi tarih. Türkçede 'bir mayıs' dersin, sayıyı olduğu gibi söylersin. Almancada ise gün sayısı sıra sayısına dönüşür: birinci, ikinci, üçüncü. Ayrıca gün için kullandığımız edat başa gelir.",
+            "Şimdi tarih. Türkçede 'bir Mayıs' dersin, sayıyı olduğu gibi söylersin. Almancada ise gün sayısı sıra sayısına dönüşür: birinci, ikinci, üçüncü. Ayrıca gün için kullandığımız edat başa gelir.",
           ),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Doğum günüm bir mayısta.' Almancası:"),
+          tr("Örnek: 'Doğum günüm bir Mayıs'ta.' Almancası:"),
           de("Mein Geburtstag ist am ersten Mai."),
           tr("Lütfen"),
           de("Mein Geburtstag ist am ersten Mai"),
@@ -1951,7 +1951,7 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Mein Geburtstag ist am ersten Mai" },
       },
       {
-        say: [tr("Şimdi sen: 'Doğum günüm üç haziranda.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Doğum günüm üç Haziran'da.' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Mein Geburtstag ist am dritten Juni",

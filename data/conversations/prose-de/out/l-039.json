@@ -100,7 +100,7 @@
  { "tr": "zor demek. Daha zor demek için:", "kind": "say.tr", "de": "heißt schwierig. Um schwieriger zu sagen:" },
  { "tr": "— zaman kaybı. Kelimenin kendisi", "kind": "say.tr", "de": "— Zeitverschwendung. Das Wort selbst ist" },
  { "tr": ", genel olarak \"ne zaman\" derken", "kind": "say.tr", "de": ", und allgemein, wenn du „wann“ meinst" },
- { "tr": ", ve henüz yapılmamış işler için", "kind": "say.tr", "de": ", und für noch nicht Erledigtes" },
+ { "tr": "ve henüz yapılmamış işler için", "kind": "say.tr", "de": ", und für noch nicht Erledigtes" },
  { "tr": ". \"Paylaşmak\" demek. Söyleyelim:", "kind": "say.tr", "de": ". Heißt „teilen“. Sagen wir es:" },
  { "tr": "\"Beni duyabiliyor musun?\" demek.", "kind": "say.tr", "de": "„Kannst du mich hören?“ heißt das." },
  { "tr": "\"biraz, az\" demek. Lütfen söyle:", "kind": "say.tr", "de": "„ein bisschen, wenig“ heißt das. Bitte sag:" },
@@ -145,5 +145,6 @@
  { "tr": "İlk kelimemiz ilaç. İngilizcesi:", "kind": "say.tr", "de": "Unser erstes Wort ist Medikament. Auf Englisch:" },
  { "tr": "İlk kelimemiz umut. İngilizcesi:", "kind": "say.tr", "de": "Unser erstes Wort ist Hoffnung. Auf Englisch:" },
  { "tr": "izlemek demek. Lütfen tekrar et:", "kind": "say.tr", "de": "heißt schauen. Bitte wiederhole:" },
- { "tr": "karşılanıyor mu diye sormak için", "kind": "say.tr", "de": "um zu fragen, ob sie das übernimmt" }
+ { "tr": "karşılanıyor mu diye sormak için", "kind": "say.tr", "de": "um zu fragen, ob sie das übernimmt" },
+ { "tr": "fırtına", "kind": "vocab.tr", "de": "der Sturm" }
 ]

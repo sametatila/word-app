@@ -62,7 +62,7 @@
  {
   "tr": "oraya gitmeyi düşünen, ayrıntı soran bir arkadaş",
   "kind": "partner",
-  "de": "eine Freundin, die hinfahren will und nach Details fragt"
+  "de": "eine Freundin, die überlegt hinzufahren und nach Details fragt"
  },
  {
   "tr": "kalabalıkta kimi gösterdiğini bir türlü bulamayan bir arkadaş",
@@ -310,7 +310,7 @@
   "de": "vergleicht zwei Dinge direkt"
  },
  {
-  "tr": "işlemi kim yaptığını söylemeden anlatır",
+  "tr": "işlemi kimin yaptığını söylemeden anlatır",
   "kind": "pattern.tr",
   "de": "erzählt den Vorgang, ohne zu sagen, wer ihn ausführt"
  },
@@ -325,7 +325,7 @@
   "de": "Falsch. Im Passiv braucht es die dritte Form des Verbs:"
  },
  {
-  "tr": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer eki gelmez:",
+  "tr": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer ifadesi gelmez:",
   "kind": "why.tr",
   "de": "Falsch. Dieses Pronomen trägt „dort“ schon in sich; am Ende kommt keine zweite Ortsangabe:"
  },
@@ -600,9 +600,9 @@
   "de": "und spannend heißt"
  },
  {
-  "tr": "sakin ve huzurluysa ise",
+  "tr": "sakin ve huzurluysa",
   "kind": "say.tr",
-  "de": "und wenn es ruhig und friedlich ist"
+  "de": "wenn es ruhig und friedlich ist"
  },
  {
   "tr": "Bozulan bir şeyi onarmak",
@@ -690,9 +690,9 @@
   "de": "Die Landschaft vom Hügel aus ist schön."
  },
  {
-  "tr": "iki tepe arasındaki düzlüğe ise",
+  "tr": "iki tepe arasındaki alçak yere ise",
   "kind": "say.tr",
-  "de": "und die Ebene zwischen zwei Hügeln heißt"
+  "de": "und die Senke zwischen zwei Hügeln heißt"
  },
  {
   "tr": "yüksek ama dağ olmayan yere ise",
@@ -700,7 +700,7 @@
   "de": "und eine Erhebung, die kein Berg ist, heißt"
  },
  {
-  "tr": "Bu daha ucuz ama kalitesi düşük.",
+  "tr": "Bu daha ucuz ama kalitesi daha düşük.",
   "kind": "say.tr",
   "de": "Dieses ist billiger, aber die Qualität ist niedriger."
  },
@@ -762,7 +762,7 @@
  {
   "tr": "Takmak ve giymek için tek bir fiil var:",
   "kind": "say.tr",
-  "de": "Für anziehen und tragen gibt es ein einziges Verb:"
+  "de": "Ob Kleidung oder Brille: Fürs Tragen gibt es ein einziges Verb:"
  },
  {
   "tr": "İlk saat sıkıcı ama sonu heyecan verici.",
@@ -932,7 +932,7 @@
  {
   "tr": "denir. İkisi ayrı şeylerdir ve İngilizcede karıştırılmaz.",
   "kind": "say.tr",
-  "de": "auf Englisch. Das sind zwei verschiedene Dinge und werden im Englischen nicht vermischt."
+  "de": "auf Englisch. Das sind zwei verschiedene Dinge, die im Englischen nicht vermischt werden."
  },
  {
   "tr": "İkinci kalıbımız yeri özelliğiyle tanımlıyor. Turist için",

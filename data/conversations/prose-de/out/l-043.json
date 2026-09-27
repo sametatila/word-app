@@ -13,7 +13,7 @@
  { "tr": "Bu sabunu kullanıyorum. Sen de söyle.", "kind": "say.tr", "de": "Ich benutze diese Seife. Sag du auch." },
  { "tr": "Bu soruya genelde şu cevabı duyarsın:", "kind": "say.tr", "de": "Auf diese Frage hörst du meist diese Antwort:" },
  { "tr": "bulaşık yıkamak. Bir de yardım etmek:", "kind": "say.tr", "de": "abwaschen. Und dazu helfen:" },
- { "tr": "Bununla çok güzel bir teklif kurulur:", "kind": "say.tr", "de": "Damit baut man einen sehr schönen Vorschlag:" },
+ { "tr": "Bununla çok güzel bir teklif kurulur:", "kind": "say.tr", "de": "Damit macht man einen sehr schönen Vorschlag:" },
  { "tr": "burada 'bile, çoktan' anlamı katıyor.", "kind": "say.tr", "de": "gibt hier die Bedeutung „schon“." },
  { "tr": "Burada take almak, ilacı içmek demek.", "kind": "say.tr", "de": "Take heißt hier nehmen, das Medikament einnehmen." },
  { "tr": "Cevabın hazır olsun: Yes, here it is.", "kind": "say.tr", "de": "Halt die Antwort bereit: Yes, here it is." },
@@ -30,7 +30,7 @@
  { "tr": "Doktor sana bunu sorar. Sorusu şudur:", "kind": "say.tr", "de": "Der Arzt fragt dich das. Die Frage lautet:" },
  { "tr": "En çok kullanacağın olanı söyleyelim:", "kind": "say.tr", "de": "Sagen wir die, die du am meisten brauchst:" },
  { "tr": "Ev eşyalı mı, boş mu? Bunun kelimesi:", "kind": "say.tr", "de": "Ist die Wohnung möbliert oder leer? Das Wort dafür:" },
- { "tr": "Evet, sigorta dâhil, ama yakıt değil.", "kind": "say.tr", "de": "Ja, die Versicherung ist dabei, aber das Benzin nicht." },
+ { "tr": "Evet, sigorta dâhil, ama yakıt değil.", "kind": "say.tr", "de": "Ja, die Versicherung ist inbegriffen, aber das Benzin nicht." },
  { "tr": "gelir ve yine 'use' deriz. Tekrar et:", "kind": "say.tr", "de": ", und wir sagen wieder „use“. Wiederhole:" },
  { "tr": "Hastasın ve bunu söylemek istiyorsun:", "kind": "say.tr", "de": "Du bist krank und willst das sagen:" },
  { "tr": "Hekimin sana en çok soracağı soru şu:", "kind": "say.tr", "de": "Die häufigste Frage beim Arzt ist die:" },
@@ -62,7 +62,7 @@
  { "tr": "Sen de sor bakalım. Peynir yer misin?", "kind": "say.tr", "de": "Frag du auch mal. Isst du Käse?" },
  { "tr": "Sen sor bakalım: Bu ne kadar tutuyor?", "kind": "say.tr", "de": "Frag du mal: Was kostet das?" },
  { "tr": "Sen sor: \"Yemek yapmayı sever misin?\"", "kind": "say.tr", "de": "Frag du: „Kochst du gern?“" },
- { "tr": "Sıra sende: 'Sola dön.' nasıl dersin?", "kind": "say.tr", "de": "Du bist dran: wie sagst du „Bieg links ab“?" },
+ { "tr": "Sıra sende: 'Sola dön.' nasıl dersin?", "kind": "say.tr", "de": "Du bist dran: Wie sagst du „Bieg links ab“?" },
  { "tr": "Sipariş vermeye hazır mısınız, demek.", "kind": "say.tr", "de": "Gemeint ist die Frage, ob Sie bereit sind zu bestellen." },
  { "tr": "Son kelimemiz, 'yine, tekrar' anlamında:", "kind": "say.tr", "de": "Unser letztes Wort, im Sinne von „wieder, nochmal“:" },
  { "tr": "Şimdi buna bir ekleyelim: bir mutfak.", "kind": "say.tr", "de": "Jetzt setzen wir ein a davor: eine Küche." },
@@ -144,5 +144,9 @@
  { "tr": "kelimesi \"iki kat, çift\" anlamı taşır.", "kind": "say.tr", "de": "die Bedeutung „doppelt, zweifach“." },
  { "tr": "Kulağını sınayalım. Şu cümle doğru mu?", "kind": "say.tr", "de": "Testen wir dein Ohr. Stimmt dieser Satz?" },
  { "tr": "Kültür notu: İngilizce konuşanlar için", "kind": "say.tr", "de": "Kulturhinweis: für Englischsprachige" },
- { "tr": "Mavi ceket, siyah olandan daha pahalı.", "kind": "say.tr", "de": "Die blaue Jacke ist teurer als die schwarze." }
+ { "tr": "Mavi ceket, siyah olandan daha pahalı.", "kind": "say.tr", "de": "Die blaue Jacke ist teurer als die schwarze." },
+ { "tr": "süregelen", "kind": "vocab.tr", "de": "chronisch" },
+ { "tr": "uzaklaşma", "kind": "vocab.tr", "de": "die Entfremdung" },
+ { "tr": "yazdırmak", "kind": "vocab.tr", "de": "drucken" },
+ { "tr": "belgelemek", "kind": "vocab.tr", "de": "beglaubigen" }
 ]

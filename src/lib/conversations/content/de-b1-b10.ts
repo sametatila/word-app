@@ -6,7 +6,7 @@ import { de, tr, type Conversation, type LectureStep, type Segment } from "../ty
  * Seviyenin son modülü bilinçli olarak GERÇEK OLMAYANI konuşuyor: olsaydı,
  * olsa, keşke olsaydı. Sebebi hem dilbilgisel hem insani. Dilbilgisel olan
  * şu — dilek kipi B1'in en son ve en zor yapısıdır ve üç ayrı işi vardır:
- * kibarlık (daha önce geçti), gerçekdışı koşul ve geçmişe dair pişmanlık.
+ * kibarlık (daha önce geçti), gerçek dışı koşul ve geçmişe dair pişmanlık.
  * Modül son ikisini üstleniyor.
  *
  * İnsani olan sebep daha önemli. Bir dili "biliyorum" diyebilmek için hava
@@ -39,7 +39,7 @@ export const deB1B10: Conversation[] = [
     level: "B1",
     course: "de",
     title: "Wenn ich reich wäre",
-    titleTr: "Gerçekdışı koşul",
+    titleTr: "Gerçek dışı koşul",
     summary: "Gerçek olmayan bir koşulu wäre ve hätte ile kurmayı öğretir.",
     minutes: 10,
     focusId: "Konjunktiv-II-irreal",
@@ -54,7 +54,7 @@ export const deB1B10: Conversation[] = [
       { de: "das Vergnügen", tr: "keyif" },
     ],
     patterns: [
-      { de: "Wenn ich reich wäre, würde ich …", tr: "gerçekdışı koşul" },
+      { de: "Wenn ich reich wäre, würde ich …", tr: "gerçek dışı koşul" },
       { de: "Was wäre, wenn …?", tr: "olasılık sorusu" },
     ],
     lecture: [
@@ -72,13 +72,13 @@ export const deB1B10: Conversation[] = [
       { say: [tr("Örnek:"), de("Wenn ich reich wäre, würde ich ein Haus am Meer kaufen."), tr("Lütfen tekrar et:"), de("Wenn ich reich wäre, würde ich ein Haus am Meer kaufen")], expect: repeat("Wenn ich reich wäre, würde ich ein Haus am Meer kaufen") },
       { say: [tr("Sıra sende: 'Daha çok vaktim olsa daha çok okurdum.'")], expect: produce("Wenn ich mehr Zeit hätte, würde ich mehr lesen", [tr("Koşulda sahip olmanın dilek kipi, ana cümlede mastar sonda:"), de("Wenn ich mehr Zeit hätte, würde ich mehr lesen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Servetimin yarısını bağışlardım.'")], expect: produce("Ich würde die Hälfte meines Vermögens spenden", [tr("Dilek kipiyle ana cümle; mastar en sonda:"), de("Ich würde die Hälfte meines Vermögens spenden."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha, soru sor: 'Ne olurdu, yarın işi bıraksaydım?'")], expect: produce("Was wäre, wenn ich morgen kündigen würde", [tr("Soru başta, koşul yan cümlesi arkadan:"), de("Was wäre, wenn ich morgen kündigen würde?"), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Wenn ich reich bin, würde ich eine Insel kaufen."), tr("cümlesi doğru mu?")], expect: truefalse("Wenn ich reich bin, würde ich eine Insel kaufen.", false, [tr("Gerçekdışı koşulda yan cümle de dilek kipine girer:"), de("Wenn ich reich wäre, würde ich eine Insel kaufen.")]) },
+      { say: [tr("Bir tane daha, soru sor: 'Yarın işten ayrılsam ne olurdu?'")], expect: produce("Was wäre, wenn ich morgen kündigen würde", [tr("Soru başta, koşul yan cümlesi arkadan:"), de("Was wäre, wenn ich morgen kündigen würde?"), tr("Tekrar dene.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Wenn ich reich bin, würde ich eine Insel kaufen."), tr("cümlesi doğru mu?")], expect: truefalse("Wenn ich reich bin, würde ich eine Insel kaufen.", false, [tr("Gerçek dışı koşulda yan cümle de dilek kipine girer:"), de("Wenn ich reich wäre, würde ich eine Insel kaufen.")]) },
       { say: [tr("Son: 'Dertsiz bir hayat sıkıcı olurdu.'")], expect: produce("Ein sorgenfreies Leben wäre langweilig", [tr("Dilek kipi tek başına da kullanılır:"), de("Ein sorgenfreies Leben wäre langweilig."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir arkadaşınla oyun oynayacaksın: zengin olsanız ne yapardınız.")] },
     ],
     chat: {
-      scene: "Bir arkadaşınla 'ya olsaydı' oyunu oynuyorsunuz: zengin olsan ne yapardın, nerede yaşardın, neyi değiştirmezdin. Cevaplarını gerçekdışı koşul cümleleriyle kur.",
+      scene: "Bir arkadaşınla 'ya olsaydı' oyunu oynuyorsunuz: zengin olsan ne yapardın, nerede yaşardın, neyi değiştirmezdin. Cevaplarını gerçek dışı koşul cümleleriyle kur.",
       partner: "hayal kurmayı seven, sorular üreten bir arkadaş",
       opening: "Stell dir vor, du gewinnst morgen eine Million. Was würdest du als Erstes machen?",
       openingTr: "Düşün ki yarın bir milyon kazandın. İlk ne yapardın?",
@@ -112,7 +112,7 @@ export const deB1B10: Conversation[] = [
       { de: "Am liebsten würde ich …", tr: "en çok isteneni söyler" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Dün olmayan bir dünyayı kurduk. Bugün bir adım daha: olmasını istediğin ama olmayan şey. Türkçede 'keşke' diyoruz. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Geçen derste olmayan bir dünyayı kurduk. Bugün bir adım daha: olmasını istediğin ama olmayan şey. Türkçede 'keşke' diyoruz. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bunun için tek bir fiil biçimi yeter ve o biçim geçmiş gibi görünür ama geçmişi anlatmaz. Dilek anlatır. Önce kelimeler.")] },
       word("İlk", { de: "reichen", tr: "yetmek" }),
       word("İkinci", { de: "sich wünschen", tr: "dilemek" }),
@@ -135,7 +135,7 @@ export const deB1B10: Conversation[] = [
       scene: "Bir arkadaşınla dileklerinizi paylaşıyorsunuz: üç dilek hakkın olsa ne isterdin, hangi dileğin hâlâ gerçekleşmedi. Cevaplarını dilek kipiyle kur.",
       partner: "kendi dileklerini de anlatan, samimi bir arkadaş",
       opening: "Wenn du drei Wünsche frei hättest — aber ehrlich, keine Millionen: Was wären deine drei?",
-      openingTr: "Üç dilek hakkın olsa — ama dürüstçe, milyonlar olmadan: Üçü ne olurdu?",
+      openingTr: "Üç dilek hakkın olsa — ama dürüstçe, milyonlar olmadan: Üç dileğin ne olurdu?",
       goal: "Üç dilek söylenmiş ve hangisinin hâlâ gerçekleşmediği anlatılmış olur.",
       minTurns: 8,
     },
@@ -233,7 +233,7 @@ export const deB1B10: Conversation[] = [
       { say: [tr("Kalıbımız:"), de("Selbst wenn es schiefgeht, …"), tr("Yan cümle başta, ana cümle fiille başlıyor. Anlamı: olsa bile.")] },
       { say: [tr("Örnek:"), de("Selbst wenn es schiefgeht, lerne ich etwas daraus."), tr("Tekrar et:"), de("Selbst wenn es schiefgeht, lerne ich etwas daraus")], expect: repeat("Selbst wenn es schiefgeht, lerne ich etwas daraus") },
       { say: [tr("Sıra sende: 'Ya işe alınmazsam?'")], expect: produce("Was ist, wenn ich die Stelle nicht bekomme", [tr("Soru başta, koşul yan cümlesi arkadan ve fiil sonda:"), de("Was ist, wenn ich die Stelle nicht bekomme?"), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi: 'Belirsizlik bana zor geliyor.'")], expect: produce("Die Ungewissheit fällt mir schwer", [tr("Bu kalıpta zorlanan kişi yönelme hâliyle gösterilir:"), de("Die Ungewissheit fällt mir schwer."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Belirsizlik bana zor geliyor.'")], expect: produce("Die Ungewissheit macht mir zu schaffen", [tr("Bu kalıpta zorlanan kişi yönelme hâliyle gösterilir:"), de("Die Ungewissheit macht mir zu schaffen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bunun üstesinden geleceğime eminim.'")], expect: produce("Ich bin sicher, dass ich das bewältige", [tr("Yan cümlede fiil en sona gider:"), de("Ich bin sicher, dass ich das bewältige."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Selbst wenn es geht schief, mache ich weiter."), tr("cümlesi doğru mu?")], expect: truefalse("Selbst wenn es geht schief, mache ich weiter.", false, [tr("Yan cümlede çekimli fiil en sona gider:"), de("Selbst wenn es schiefgeht, mache ich weiter.")]) },
       { say: [tr("Son: 'Genel olarak umutluyum.'")], expect: produce("Insgesamt bin ich zuversichtlich", [tr("Tümleç başta, fiil ikinci sırada:"), de("Insgesamt bin ich zuversichtlich."), tr("Tekrar dene.")]) },
@@ -491,7 +491,7 @@ export const deB1B10: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Sondan bir önceki Konuşma adımı ve konusu büyük: hayat hayali. Bunu anlatmanın kalıbı, edatı sabit bir fiille kurulan mastar öbeği. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Hayali söylemek kolay, adımlara bölmek zordur. İkisini de kuracağız — çünkü ikincisi olmadan ilki bir cümle olarak kalıyor. Önce kelimeler.")] },
+      { say: [tr("Hayali söylemek kolay, adımlara bölmek zordur. İkisini de kuracağız — çünkü ikincisi olmadan ilki yalnızca bir cümle olarak kalıyor. Önce kelimeler.")] },
       word("İlk", { de: "der Zweifel", tr: "kuşku" }),
       word("İkinci", { de: "starten", tr: "başlamak" }),
       word("Üçüncü", { de: "der Schritt", tr: "adım" }),
@@ -554,7 +554,7 @@ export const deB1B10: Conversation[] = [
       word("Altıncı", { de: "ungefähr", tr: "yaklaşık" }),
       word("Yedinci", { de: "schauen", tr: "bakmak" }),
       word("Son", { de: "der Bericht", tr: "rapor" }),
-      { say: [tr("Kalıbımız:"), de("Ohne Deutsch hätte ich …"), tr("Bir koşul yan cümlesi kurmadan da gerçekdışı anlatılabilir: tümleç bunu tek başına yapıyor.")] },
+      { say: [tr("Kalıbımız:"), de("Ohne Deutsch hätte ich …"), tr("Bir koşul yan cümlesi kurmadan da gerçek dışı anlatılabilir: tümleç bunu tek başına yapıyor.")] },
       { say: [tr("Örnek:"), de("Ohne Deutsch hätte ich diesen Job nie bekommen."), tr("Tekrar et:"), de("Ohne Deutsch hätte ich diesen Job nie bekommen")], expect: repeat("Ohne Deutsch hätte ich diesen Job nie bekommen") },
       { say: [tr("Sıra sende: 'Bu kurs olmasaydı hâlâ susuyor olurdum.'")], expect: produce("Ohne diesen Kurs würde ich immer noch schweigen", [tr("Tümleç başta, dilek kipi ikinci sırada, mastar sonda:"), de("Ohne diesen Kurs würde ich immer noch schweigen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Pes etmediğim için gurur duyuyorum.'")], expect: produce("Ich bin stolz darauf, dass ich nicht aufgegeben habe", [tr("Edat baştaki kelimede saklı, yan cümlede fiil sonda:"), de("Ich bin stolz darauf, dass ich nicht aufgegeben habe."), tr("Tekrar dene.")]) },

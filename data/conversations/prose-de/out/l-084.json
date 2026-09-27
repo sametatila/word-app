@@ -102,7 +102,7 @@
  {
   "tr": "Büyükelçilikteki görüşmeden yeni çıktın ve bir arkadaşın ne olduğunu soruyor. Görevlinin ne söylediğini, senden ne istediğini ve ne sorduğunu aktar.",
   "kind": "scene",
-  "de": "Du kommst gerade aus dem Gespräch in der Botschaft und ein Freund fragt, was war. Gib weiter, was der Mitarbeiter gesagt, von dir verlangt und gefragt hat."
+  "de": "Du kommst gerade aus dem Gespräch in der Botschaft und ein Freund fragt, was los war. Gib weiter, was der Mitarbeiter gesagt, von dir verlangt und gefragt hat."
  },
  {
   "tr": "Bir görevliyle birlikte resmî bir formu dolduruyorsun. Hangi bölümün zorunlu olduğunu sor, anlamadığın bir ayrıntıyı sor ve imzayı nereye atacağını öğren.",
@@ -322,7 +322,7 @@
  {
   "tr": "Doğru. Varsayılan bir durum anlatılıyor: şu anda daha fazla ödemiyorum, o yüzden koşul geçmiş biçimde ve sonuç would ile.",
   "kind": "why.tr",
-  "de": "Richtig. Hier wird eine angenommene Lage erzählt: ich zahle im Moment nicht mehr, deshalb steht die Bedingung in der Vergangenheit und die Folge mit would."
+  "de": "Richtig. Hier wird eine angenommene Lage erzählt: ich zahle im Moment keinen höheren Beitrag, deshalb steht die Bedingung in der Vergangenheit und die Folge mit would."
  },
  {
   "tr": "Zorunluluk kalıbı. Soyadı için",
@@ -627,7 +627,7 @@
  {
   "tr": "İzin belgem olup olmadığını sordular.",
   "kind": "say.tr",
-  "de": "Sie haben gefragt, ob ich eine Erlaubnis hatte."
+  "de": "Sie haben gefragt, ob ich eine Erlaubnis hätte."
  },
  {
   "tr": "Kart belediye tarafından düzenleniyor.",
@@ -767,7 +767,7 @@
  {
   "tr": "Bir tane daha: Fotoğrafları getirip getirmediğimi sordu.",
   "kind": "say.tr",
-  "de": "Noch eins: Er hat gefragt, ob ich die Fotos mitgebracht hatte."
+  "de": "Noch eins: Er hat gefragt, ob ich die Fotos mitgebracht hätte."
  },
  {
   "tr": "Şimdi sıra sende: Soyadını büyük harfle yazmak zorundasın.",
@@ -847,7 +847,7 @@
  {
   "tr": "Resmî dilin en belirgin özelliği şu: işi kimin yaptığı neredeyse hiç yazılmaz. Bu bir kibarlık değil, kural. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das deutlichste Merkmal der Amtssprache: wer die Arbeit tut, steht fast nie da. Das ist keine Höflichkeit, sondern Regel. Bist du bereit?"
+  "de": "Das deutlichste Merkmal der Amtssprache: wer die Arbeit tut, steht fast nie da. Das ist keine Höflichkeit, sondern eine Regel. Bist du bereit?"
  },
  {
   "tr": "Formların üstündeki küçük yazılar hep aynı üç kalıpla kurulur ve bu üçünü karıştırmak formun reddedilmesine yol açar. Hazır mısın?",

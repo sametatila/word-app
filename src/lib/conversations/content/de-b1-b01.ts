@@ -95,7 +95,7 @@ export const deB1B01: Conversation[] = [
           tr("İlk kalıbımız:"),
           de("weil"),
           tr(
-            "'çünkü' demek. Ama dikkat: 'weil' ile başlayan yan cümlede fiil cümlenin SONUNA gider. Türkçedeki gibi ortada kalmaz.",
+            "'çünkü' demek. Ama dikkat: 'weil' ile başlayan yan cümlede fiil cümlenin SONUNA gider. Ana cümledeki gibi ikinci sırada kalmaz.",
           ),
         ],
       },
@@ -134,7 +134,7 @@ export const deB1B01: Conversation[] = [
           tr("İkinci kalıbımız:"),
           de("seit"),
           tr(
-            "'…'den beri' demek ve her zaman Dativ alır: seit einem Jahr, seit drei Jahren. Türkçeden farkı şu: Almanca hâlâ süren işler için şimdiki zaman kullanır.",
+            "'…'den beri' demek ve her zaman Dativ alır: seit einem Jahr, seit drei Jahren. Tıpkı Türkçedeki gibi, hâlâ süren işler için şimdiki zaman kullanılır.",
           ),
         ],
       },

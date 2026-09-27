@@ -2,94 +2,12 @@
  "packet": "e-007",
  "words": [
   {
-   "tr": "Having read the personnel file, …",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Participle clauses"
-   ],
-   "ctx": [
-    "B2.8 Money and career"
-   ]
-  },
-  {
-   "tr": "Komitenin … tanımasını öneriyoruz",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "We move that the committee grant …"
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "Müzakerede itirazını ayırıyorsun.",
-   "kind": "speaking.situation",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B2.2 Claims and complaints · konuşma"
-   ]
-  },
-  {
-   "tr": "Neyi yemediğimi söyleyebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can say what I don't eat."
-   ],
-   "ctx": [
-    "A1.3 Food and drink"
-   ]
-  },
-  {
-   "tr": "Otobüsü beklerken yağmur başladı.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "I was waiting for the bus when it started to rain."
-   ],
-   "ctx": [
-    "A2.1 What happened? · Onur"
-   ]
-  },
-  {
-   "tr": "Öğretmeninin ne söylediğini aktar",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B1.6 Learning and progress · yazma"
-   ]
-  },
-  {
-   "tr": "ölçülü söyleyerek fazlasını demek",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Understatement"
-   ],
-   "ctx": [
-    "C1.1 Register and tone"
-   ]
-  },
-  {
-   "tr": "Somut bir talebi ya da sonucu yaz",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B2.6 Society and the economy · yazma"
-   ]
-  },
-  {
    "tr": "Temkinli bir sonuç bildiriyorsun.",
    "kind": "speaking.situation",
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.5 Science and method · konuşma"
+    "B2.5 Science and technology · konuşma"
    ]
   },
   {
@@ -102,7 +20,7 @@
    ]
   },
   {
-   "tr": "Yazara göre fiyatı ne sürüklüyor?",
+   "tr": "Yazara göre fiyatı ne belirliyor?",
    "kind": "question",
    "n": 1,
    "de": [
@@ -146,7 +64,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.5 Science and method · yazma"
+    "B2.5 Science and technology · yazma"
    ]
   },
   {
@@ -157,7 +75,7 @@
     "I'd like to book a room for … nights."
    ],
    "ctx": [
-    "A2.7 Travelling · yazma kalıbı"
+    "A2.7 Traveling · yazma kalıbı"
    ]
   },
   {
@@ -196,7 +114,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What was wrong in the report of 12 May?"
+    "What was wrong in the report of May 12?"
    ],
    "ctx": [
     "B2.4 Media and reported speech · okuma sorusu"
@@ -248,7 +166,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "Moreover, I would need a sick note."
+    "Moreover, I would need a doctor's note."
    ],
    "ctx": [
     "B1.8 The health system · yazma kalıbı"
@@ -297,7 +215,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.5 Science and method · konuşma"
+    "B2.5 Science and technology · konuşma"
    ]
   },
   {
@@ -335,24 +253,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.3 Process and passive · yazma"
-   ]
-  },
-  {
-   "tr": "Bir yetişkin günde kaç kez alıyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "How many times a day does an adult take a tablet?"
-   ],
-   "ctx": [
-    "A1.9 Health and the body · okuma sorusu"
-   ],
-   "options": [
-    "One time",
-    "Two times",
-    "Three times",
-    "Every hour"
+    "B2.3 The passive in all its forms · yazma"
    ]
   },
   {
@@ -363,7 +264,7 @@
     "Could you send someone today?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · yazma kalıbı"
+    "A2.4 Home and neighborhood · yazma kalıbı"
    ]
   },
   {
@@ -451,7 +352,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · yazma"
+    "A2.7 Traveling · yazma"
    ]
   },
   {
@@ -471,7 +372,7 @@
     "Third conditional"
    ],
    "ctx": [
-    "B2.8 Money and career"
+    "B2.8 Money and career strategy"
    ]
   },
   {
@@ -516,7 +417,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can introduce myself to the neighbours."
+    "I can introduce myself to the neighbors."
    ],
    "ctx": [
     "A1.7 Home and living"
@@ -527,7 +428,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "Albeit time-honoured, the reading leaves out …"
+    "Although time-honored, the reading leaves out …"
    ],
    "ctx": [
     "C1.4 Literature and interpretation · yazma kalıbı"
@@ -582,7 +483,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Hi Tom, are you free at the weekend?"
+    "Hi Tom, are you free on the weekend?"
    ],
    "ctx": [
     "A1.4 My day · Sara"
@@ -628,7 +529,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can criticise through understatement."
+    "I can criticize through understatement."
    ],
    "ctx": [
     "C1.1 Register and tone"
@@ -660,17 +561,6 @@
     "It was never published",
     "It is the old research",
     "The author wrote it alone"
-   ]
-  },
-  {
-   "tr": "We request that the office lodge …",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Subjunctive in petitions"
-   ],
-   "ctx": [
-    "C1.3 Legal and contract language"
    ]
   },
   {
@@ -707,7 +597,7 @@
     "Since …, I decided to …"
    ],
    "ctx": [
-    "B1.3 Reason and result · yazma kalıbı"
+    "B1.3 Linking ideas · yazma kalıbı"
    ]
   },
   {
@@ -733,6 +623,17 @@
    ]
   },
   {
+   "tr": "90. Dümdüz gidin, sonra sola dönün.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "90. Go straight ahead, then turn left."
+   ],
+   "ctx": [
+    "A1.6 In town · Clerk"
+   ]
+  },
+  {
    "tr": "advocates / affirms / misrepresents",
    "kind": "focus",
    "n": 1,
@@ -740,7 +641,7 @@
     "Reporting verbs and evaluation"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice"
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -787,7 +688,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can ask about size, colour and price."
+    "I can ask about size, color and price."
    ],
    "ctx": [
     "A1.5 Shopping"
@@ -809,7 +710,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can recommend a series or a film."
+    "I can recommend a series or a movie."
    ],
    "ctx": [
     "A2.9 Media and technology"
@@ -890,7 +791,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can ask the price and pay the bill."
+    "I can ask the price and pay the check."
    ],
    "ctx": [
     "A1.3 Food and drink"
@@ -905,34 +806,6 @@
    ],
    "ctx": [
     "A2.5 Working life · Manager"
-   ]
-  },
-  {
-   "tr": "Hasta röntgenden önce ne yapmamalı?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What must the patient not do before the scan?"
-   ],
-   "ctx": [
-    "B1.8 The health system · okuma sorusu"
-   ],
-   "options": [
-    "Eat for six hours",
-    "Drink water",
-    "Take the usual pills",
-    "Fill in the form"
-   ]
-  },
-  {
-   "tr": "Her şey bir arada sonuç … görünüyor",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "On balance the result seems to be …"
-   ],
-   "ctx": [
-    "B2.5 Science and method · yazma kalıbı"
    ]
   },
   {
@@ -1021,7 +894,7 @@
     "I can suggest what to visit."
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -1029,7 +902,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What was on this space before the car park?"
+    "What was on this space before the parking lot?"
    ],
    "ctx": [
     "B1.9 The city and the environment · dinleme sorusu"
@@ -1103,10 +976,27 @@
     "A1.8 Free time · okuma sorusu"
    ],
    "options": [
-    "Yes, in the cinema",
+    "Yes, at the movies",
     "Yes, but later",
     "No, there is no park day",
     "Yes, at the pool"
+   ]
+  },
+  {
+   "tr": "Yazara göre kimse neyi inkâr etmez?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "According to the author, what would nobody deny?"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · dinleme sorusu"
+   ],
+   "options": [
+    "Paper is expensive",
+    "Tablets are the only answer",
+    "The survey is wrong",
+    "Students read less at home"
    ]
   },
   {
@@ -1117,7 +1007,7 @@
     "What ended the writer's self-image?"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · okuma sorusu"
+    "C1.10 Evidence, judgment and choice · okuma sorusu"
    ],
    "options": [
     "A mild question from a second reader",
@@ -1138,9 +1028,20 @@
    ],
    "options": [
     "The green space",
-    "The enforcement of the law",
+    "The new school",
     "The residential blocks",
     "The measurement"
+   ]
+  },
+  {
+   "tr": "yol tarifi verme: Go straight ahead",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Imperatives"
+   ],
+   "ctx": [
+    "A1.6 In town"
    ]
   },
   {
@@ -1158,7 +1059,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.2 Claims and complaints · yazma"
+    "B2.2 Negotiating and complaining · yazma"
    ]
   },
   {
@@ -1169,7 +1070,7 @@
     "Thank you for your reply of …"
    ],
    "ctx": [
-    "B2.8 Money and career · yazma kalıbı"
+    "B2.8 Money and career strategy · yazma kalıbı"
    ]
   },
   {
@@ -1191,7 +1092,7 @@
     "I request a written reply by …"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · yazma kalıbı"
+    "B2.2 Negotiating and complaining · yazma kalıbı"
    ]
   },
   {
@@ -1249,6 +1150,17 @@
    ]
   },
   {
+   "tr": "Beni geri arayabilir misiniz lütfen?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Could you call me back, please?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
+   ]
+  },
+  {
    "tr": "Binanın kurallarını anlayabiliyorum.",
    "kind": "cando",
    "n": 1,
@@ -1256,7 +1168,7 @@
     "I can understand the rules of the building."
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -1313,7 +1225,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "I look forward to your response. Yours sincerely,"
+    "I look forward to your response. Sincerely,"
    ],
    "ctx": [
     "B1.5 Offices and applications · yazma kalıbı"
@@ -1388,6 +1300,17 @@
    ]
   },
   {
+   "tr": "Hayır. Bugün saat dörtte doktor boş.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "No. Today at four o'clock the doctor is free."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · Receptionist"
+   ]
+  },
+  {
    "tr": "İki seçeneği karşılaştır („whereas“)",
    "kind": "writing.checklist",
    "n": 1,
@@ -1404,7 +1327,7 @@
     "Good afternoon, can I help you?"
    ],
    "ctx": [
-    "A1.5 Shopping · Shop assistant"
+    "A1.5 Shopping · Clerk"
    ]
   },
   {
@@ -1424,7 +1347,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · konuşma"
+    "C1.10 Evidence, judgment and choice · konuşma"
    ]
   },
   {
@@ -1447,15 +1370,6 @@
    ],
    "ctx": [
     "B2.4 Media and reported speech"
-   ]
-  },
-  {
-   "tr": "Ne yiyip içtiğini soran bir soru sor",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A1.3 Food and drink · yazma"
    ]
   },
   {
@@ -1492,6 +1406,17 @@
    ]
   },
   {
+   "tr": "Önceki işverenim bana referans verdi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My previous employer gave me a reference."
+   ],
+   "ctx": [
+    "B1.1 My career so far · yazma kalıbı"
+   ]
+  },
+  {
    "tr": "postulates / refutes / substantiates",
    "kind": "focus",
    "n": 1,
@@ -1519,7 +1444,7 @@
     "Could you confirm the reservation?"
    ],
    "ctx": [
-    "A2.7 Travelling · yazma kalıbı"
+    "A2.7 Traveling · yazma kalıbı"
    ]
   },
   {
@@ -1544,10 +1469,10 @@
    "kind": "focus",
    "n": 1,
    "de": [
-    "Nominalisation"
+    "Nominalization"
    ],
    "ctx": [
-    "B2.8 Money and career"
+    "B2.8 Money and career strategy"
    ]
   },
   {
@@ -1698,13 +1623,106 @@
     "When were the more accurate measurements taken?"
    ],
    "ctx": [
-    "B2.5 Science and method · okuma sorusu"
+    "B2.5 Science and technology · okuma sorusu"
    ],
    "options": [
     "After the automation was introduced",
     "In January",
     "Before the catalyst was added",
     "After the software failed"
+   ]
+  },
+  {
+   "tr": "Deniz aradığında müşteri ne yapmıştı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What had the client done by the time Deniz called?"
+   ],
+   "ctx": [
+    "B1.3 Linking ideas · dinleme sorusu"
+   ],
+   "options": [
+    "They had noticed the problem",
+    "They had canceled the order",
+    "They had paid the bill",
+    "They had written a letter"
+   ]
+  },
+  {
+   "tr": "Eleştirmen konuşmayı nasıl kapatıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How does the critic close the conversation?"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · dinleme sorusu"
+   ],
+   "options": [
+    "With moderation: worth seeing but not timeless",
+    "By calling the play a failure",
+    "By agreeing with the jury",
+    "By refusing to judge"
+   ]
+  },
+  {
+   "tr": "Geçmiş olsun. Yarın saat on uygun mu?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I'm sorry. Is tomorrow at ten o'clock good for you?"
+   ],
+   "ctx": [
+    "A1.9 Health and the body · Receptionist"
+   ]
+  },
+  {
+   "tr": "Görüşümü gerekçeyle söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give my opinion and support it with a reason."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Hangi gün ve saatin sana uyduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.3 At the doctor's · yazma"
+   ]
+  },
+  {
+   "tr": "Hastanın ağrısı ne zamandan beri var?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How long has the patient had the pain?"
+   ],
+   "ctx": [
+    "B1.8 The health system · dinleme sorusu"
+   ],
+   "options": [
+    "Since March",
+    "Since Monday",
+    "For a week",
+    "Since April"
+   ]
+  },
+  {
+   "tr": "Hayır, tren rötarlı değil. Zamanında.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "No, the train is not late. It is on time."
+   ],
+   "ctx": [
+    "A1.6 In town · Clerk"
    ]
   }
  ]

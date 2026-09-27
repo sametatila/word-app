@@ -653,7 +653,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Receptionist", de: "Dr. Weber's office, good morning.", tr: "Doktor Weber'in muayenehanesi, günaydın." },
         { speaker: "Patient", de: "Good morning. I need an appointment. I have a headache and my ear hurts.", tr: "Günaydın. Randevuya ihtiyacım var. Başım ağrıyor ve kulağım acıyor." },
         { speaker: "Receptionist", de: "I'm sorry. Is tomorrow at ten o'clock good for you?", tr: "Geçmiş olsun. Yarın saat on uygun mu?" },
-        { speaker: "Patient", de: "Tomorrow I must work. Do I have to wait a long time?", tr: "Yarın çalışmam gerekiyor. Uzun beklemem gerekir mi?" },
+        { speaker: "Patient", de: "I have to work tomorrow. Do I have to wait a long time?", tr: "Yarın çalışmam gerekiyor. Uzun beklemem gerekir mi?" },
         { speaker: "Receptionist", de: "No. Today at four o'clock the doctor is free.", tr: "Hayır. Bugün saat dörtte doktor boş." },
         { speaker: "Patient", de: "Good. Do I have to pay?", tr: "Güzel. Ödeme yapmam gerekiyor mu?" },
         { speaker: "Receptionist", de: "No, but please be there at four.", tr: "Hayır, ama lütfen dörtte orada olun." },
@@ -670,7 +670,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       genre: "Bilgi metni",
       text: "Medicine for a headache\n\nAdults: one tablet, three times a day, after food.\nChildren: do not take this medicine.\nDo not take more than five tablets a day.\nWith 39 degrees: call the doctor.\n\nTake the tablet with a glass of water.\nKeep the medicine in a dark and cold place.",
       questions: [
-        { de: "How many times a day does an adult take a tablet?", tr: "Bir yetişkin günde kaç kez alıyor?", options: ["One time", "Two times", "Three times", "Every hour"], answer: 2 },
+        { de: "How many times a day does an adult take a tablet?", tr: "Bir yetişkin günde kaç kez tablet alıyor?", options: ["One time", "Two times", "Three times", "Every hour"], answer: 2 },
         { de: "What must you do with 39 degrees?", tr: "39 derecede ne yapmalı?", options: ["Take more tablets", "Call the doctor", "Only drink water", "Wait a week"], answer: 1 },
       ],
     },

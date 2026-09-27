@@ -145,7 +145,5 @@
  { "tr": "son", "kind": "vocab.tr", "de": "Ende" },
  { "tr": "son / nihai", "kind": "vocab.tr", "de": "letzte / endgültig" },
  { "tr": "üye", "kind": "vocab.tr", "de": "Mitglied" },
- { "tr": "yaş", "kind": "vocab.tr", "de": "Alter" },
- { "tr": "yol", "kind": "vocab.tr", "de": "Weg" },
  { "tr": "zor", "kind": "vocab.tr", "de": "schwierig" }
 ]

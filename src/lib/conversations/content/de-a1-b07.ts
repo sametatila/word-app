@@ -1324,7 +1324,7 @@ export const deA1B07: Conversation[] = [
           de("warm"),
           tr("denir, aidat hariç olana"),
           de("kalt"),
-          tr("denir. Sıcaklıkla ilgisi yok; ısınma giderinin fiyata dâhil olup olmadığını anlatıyor."),
+          tr("denir. Havanın sıcaklığıyla ilgisi yok; ısınma dâhil ek giderlerin fiyata girip girmediğini anlatıyor."),
         ],
       },
       {
@@ -1589,7 +1589,7 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Buzdolabını yarın topluyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Buzdolabını yarın düzenliyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Ich räume den Kühlschrank morgen auf",

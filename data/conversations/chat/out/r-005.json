@@ -8,10 +8,10 @@
  },
  {
   "conversation": "de-a2-perfekt-unregel",
-  "sceneEn": "You are talking about last night with a friend. You lost something, and then something unexpected happened. Use today's irregular participles as you tell it.",
+  "sceneEn": "You are talking about last night with a friend. You lost something, and then something unexpected happened. Use the irregular participles from today's lesson as you tell it.",
   "partnerEn": "a friend who listens with interest",
   "openingEn": "And? What did you do last night?",
-  "goalEn": "Two things that happened last night have been told with irregular participles, and your friend has said something about their own evening."
+  "goalEn": "Two things that happened last night have been described with irregular participles, and your friend has said something about their own evening."
  },
  {
   "conversation": "de-a2-perfekt-trennbar",
@@ -22,10 +22,10 @@
  },
  {
   "conversation": "de-a2-gestern-abend",
-  "sceneEn": "You have run into a friend on the way home from work and they are asking about last night. Tell at least three things in order: what you did first, what happened next, what you did last.",
+  "sceneEn": "You have run into a friend on the way home from work and they are asking about last night. Describe at least three things in order: what you did first, what happened next, what you did last.",
   "partnerEn": "a friend who is always out in the evenings",
   "openingEn": "Tell me, what did you do last night?",
-  "goalEn": "At least three things from last night have been told in the right order, and your friend has put their own evening in order too."
+  "goalEn": "At least three things from last night have been described in the right order, and your friend has put their own evening in order too."
  },
  {
   "conversation": "de-a2-montagmorgen",
@@ -52,7 +52,7 @@
   "conversation": "de-a2-erste-mal",
   "sceneEn": "You are sitting with a friend and they ask about something you did for the first time in your life. Tell what happened in order and say how you felt at the time.",
   "partnerEn": "a friend who loves listening to stories",
-  "openingEn": "Tell me: what do you still remember when you think of your first concert or your first exam?",
+  "openingEn": "Tell me: what do you still remember when you think back to something you did for the first time?",
   "goalEn": "A first experience has been told with both the events and the feeling, and your friend has spoken about their own first time."
  },
  {

@@ -107,7 +107,7 @@
  {
   "tr": "Laboratuvarda bir işlemi ilk kez yapan birine yönergeyi anlatıyorsun. Önce biteni, sebebi ve edilgeni kısa cümlelerle bağla.",
   "kind": "scene",
-  "de": "Du erklärst im Labor jemandem, der einen Vorgang zum ersten Mal macht, die Anleitung. Binde das früher Beendete, den Grund und das Passiv in kurzen Sätzen an."
+  "de": "Du erklärst im Labor jemandem, der einen Vorgang zum ersten Mal macht, die Anleitung. Verbinde das früher Beendete, den Grund und das Passiv in kurzen Sätzen."
  },
  {
   "tr": "Bir çalışmanın kurgusunu meslektaşına anlatıyorsun. Neyin tekrarlandığını, ölçümlerin ne durumda olduğunu ve grubun neden yetersiz sayıldığını aktarım kalıbıyla ver.",
@@ -415,7 +415,7 @@
   "de": "Die abgegebene Energie heißt"
  },
  {
-  "tr": "Yaşayan tek varlığa",
+  "tr": "Tek bir canlı varlığa",
   "kind": "say.tr",
   "de": "Das einzelne lebende Wesen heißt"
  },
@@ -777,7 +777,7 @@
  {
   "tr": "Şimdi sen kur: Ilık olduğu için örnek renk değiştirdi.",
   "kind": "say.tr",
-  "de": "Jetzt du: Weil sie warm war, hat die Probe die Farbe gewechselt."
+  "de": "Jetzt du: Weil sie lauwarm war, hat die Probe die Farbe gewechselt."
  },
  {
   "tr": "Şimdi sıra sende: Mayısa kadar değerler ölçülmüş olacak.",

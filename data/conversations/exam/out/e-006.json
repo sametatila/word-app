@@ -148,5 +148,5 @@
  { "tr": "Bir arkadaşına tavsiye veriyorsun.", "kind": "speaking.situation", "en": "You are giving a friend advice." },
  { "tr": "Bir çalışan şefinden izin istiyor.", "kind": "listening.situation", "en": "An employee is asking the boss for time off." },
  { "tr": "Bir tarih ya da zaman aralığı öner", "kind": "writing.checklist", "en": "Propose a date or a window of time" },
- { "tr": "Bir yetişkin günde kaç kez alıyor?", "kind": "question", "en": "How many times a day does an adult take one?" }
+ { "tr": "Bir yetişkin günde kaç kez alıyor?", "kind": "question", "en": "How many times a day does an adult take it?" }
 ]

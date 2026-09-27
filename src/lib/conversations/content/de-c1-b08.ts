@@ -60,7 +60,7 @@ export const deC1B08: Conversation[] = [
       { de: "Er tut so, als ob nichts geschehen wäre.", tr: "bağlaçlı: fiil sonda" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Yeni modül: toplumsal tartışma. Ve ilk araç, gerçek olmayanı işaretleyen yapı. B2'de girmiştin; burada iki biçimini birden kuracaksın. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Yeni modül: toplumsal tartışma. Ve ilk araç, gerçek olmayanı işaretleyen yapı. B2'de görmüştün; burada iki biçimini birden kuracaksın. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İki biçim var ve dizilimleri farklı:"), de("als ob nichts geschehen wäre"), tr("— fiil sonda;"), de("als wäre nichts geschehen"), tr("— fiil hemen bağlacın arkasında. İkisi de doğru, ikincisi daha edebî.")] },
       { say: [tr("Ortak nokta: ikisinde de dilek kipi zorunlu, çünkü söylenen gerçek değil. Önce kelimeler.")] },
       word("İlk", { de: "verdrängen", tr: "bastırmak" }),
@@ -164,7 +164,7 @@ export const deC1B08: Conversation[] = [
     ],
     patterns: [
       { de: "Angenommen, …", tr: "diyelim ki" },
-      { de: "Gesetzt den Fall, …", tr: "durum şu olsa" },
+      { de: "Gesetzt den Fall, …", tr: "farz edelim ki" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün bir düşünce deneyi kuracağız. Tartışmada en güçlü hamlelerden biri: karşı tarafın iddiasını bir an için kabul edip sonucuna bakmak. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -286,7 +286,7 @@ export const deC1B08: Conversation[] = [
       { say: [tr("Örnek:"), de("Die Verantwortung des Einzelnen wird oft überschätzt."), tr("Tekrar et:"), de("Die Verantwortung des Einzelnen wird oft überschätzt")], expect: repeat("Die Verantwortung des Einzelnen wird oft überschätzt") },
       { say: [tr("Sıra sende: 'Sistemik sebepler daha ağır basıyor.'")], expect: produce("Systemische Ursachen wiegen schwerer", [tr("Belirteçsiz çoğulda sıfat -e ekini alır:"), de("Systemische Ursachen wiegen schwerer."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Burada bir hedef çatışması var.'")], expect: produce("Hier liegt ein Zielkonflikt vor", [tr("Yer zarfı başta; ayrılabilen önek sonda:"), de("Hier liegt ein Zielkonflikt vor."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Sorumluluğun bireye kaydırılması kolaycılıktır.'")], expect: produce("Die Verlagerung der Verantwortung auf den Einzelnen ist bequem", [tr("İki tamlama ve bir edat öbeği; edat belirtme hâli ister:"), de("Die Verlagerung der Verantwortung auf den Einzelnen ist bequem."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Sorumluluğun bireye kaydırılması kolaycılıktır.'")], expect: produce("Die Verlagerung der Verantwortung auf den Einzelnen ist bequem", [tr("Bir tamlama ve bir edat öbeği; edat belirtme hâli ister:"), de("Die Verlagerung der Verantwortung auf den Einzelnen ist bequem."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Verantwortung des Einzelne wird oft überschätzt."), tr("cümlesi doğru mu?")], expect: truefalse("Die Verantwortung des Einzelne wird oft überschätzt.", false, [tr("İsimleşmiş sıfat tamlama hâlinde -n ekini alır:"), de("Die Verantwortung des Einzelnen wird oft überschätzt.")]) },
       { say: [tr("Son bir soru: 'Buna kim sebep oluyor?'")], expect: produce("Wer verursacht das", [tr("Soru zamiri özne, fiil ikinci sırada:"), de("Wer verursacht das?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette sorumluluğun nerede olduğunu tartışacaksın.")] },
@@ -347,7 +347,7 @@ export const deC1B08: Conversation[] = [
     chat: {
       scene: "Bir veli toplantısında eğitim sistemini tartışıyorsunuz. Geçmişte neyin ihmal edildiğini irreal koşullarla söyle, bugün ne yapılabileceğini ayır, karşı tarafın itirazını kabul et ve somut bir öneri bırak.",
       partner: "sistemin iyi olduğunu savunan, geçmişe bakmayı gereksiz bulan bir veli",
-      opening: "Was hätte, hätte — was bringt uns das? Sagen Sie mir lieber, was wir jetzt tun sollen.",
+      opening: "Hätte, hätte, Fahrradkette — was bringt uns das? Sagen Sie mir lieber, was wir jetzt tun sollen.",
       openingTr: "Olsaydı, yapsaydı — bunun bize ne faydası var? Bana asıl şimdi ne yapmamız gerektiğini söyleyin.",
       goal: "Geçmişteki ihmal irreal koşullarla söylenmiş, bugün yapılabilecek olan ayrılmış ve somut bir öneri bırakılmış olur.",
       minTurns: 9,
@@ -454,7 +454,7 @@ export const deC1B08: Conversation[] = [
       scene: "Farklı kuşaktan biriyle emeklilik ve katkı yükünü tartışıyorsunuz. Kimin aleyhine ne olduğunu söyle, karşı tarafın haklı yanını kabul et, yine de kendi noktanı koru ve adil bir ölçüt önerin.",
       partner: "kendi kuşağının hakkını savunan, rakamları bilen bir tanıdık",
       opening: "Wir haben vierzig Jahre eingezahlt. Wollen Sie uns das jetzt streitig machen?",
-      openingTr: "Kırk yıl katkı ödedik. Şimdi bunu bize tartışma konusu mu yapacaksınız?",
+      openingTr: "Kırk yıl katkı ödedik. Şimdi bunu bize çok mu göreceksiniz?",
       goal: "Kimin aleyhine ne olduğu söylenmiş, karşı tarafın haklı yanı kabul edilmiş ve adil bir ölçüt önerilmiş olur.",
       minTurns: 9,
     },
@@ -507,7 +507,7 @@ export const deC1B08: Conversation[] = [
       scene: "Bir tartışmada birinin sözü tepki topladı. İfade özgürlüğü ile aşağılamayı ayır, hangi noktada karşı tarafın haklı olduğunu söyle, sınırı nereye çektiğini gerekçelendir ve ortak bir ölçüt arayın.",
       partner: "her eleştiriyi sansür sayan, sınır fikrine karşı çıkan bir tartışmacı",
       opening: "Man wird ja wohl noch alles sagen dürfen. Oder wollen Sie jetzt auch noch Vorschriften machen?",
-      openingTr: "İnsan herhâlde hâlâ her şeyi söyleyebilir. Yoksa siz de mi kural koyacaksınız?",
+      openingTr: "İnsan herhâlde hâlâ her şeyi söyleyebilir. Yoksa şimdi bir de kural mı koyacaksınız?",
       goal: "İfade özgürlüğü ile aşağılama ayrılmış, karşı tarafın haklı olduğu nokta söylenmiş ve ortak bir ölçüt aranmış olur.",
       minTurns: 9,
     },

@@ -26,7 +26,7 @@
  { "conversation": "de-c1-improvisation", "de": "Wir behelfen uns mit …", "en": "making do with an interim solution" },
  { "conversation": "de-c1-vermittlung", "de": "Das lässt sich nicht wörtlich übersetzen.", "en": "it cannot be translated literally" },
  { "conversation": "de-c1-vermittlung", "de": "Gemeint ist Folgendes: …", "en": "explains what is meant" },
- { "conversation": "de-c1-grosse-rede", "de": "Eine gute Rede spannt einen Bogen.", "en": "a good speech spans an arc" },
+ { "conversation": "de-c1-grosse-rede", "de": "Eine gute Rede spannt einen Bogen.", "en": "a good speech has a clear arc" },
  { "conversation": "de-c1-grosse-rede", "de": "Der letzte Satz sollte nachhallen.", "en": "the last sentence should resonate" },
  { "conversation": "de-c1-verhandlungsfinale", "de": "Unser letztes Wort wäre …", "en": "a final offer, softly put" },
  { "conversation": "de-c1-verhandlungsfinale", "de": "Kämen Sie uns entgegen, könnten wir …", "en": "a conditional close" },

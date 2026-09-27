@@ -134,7 +134,7 @@
  },
  {
   "conversation": "de-b2-kompromiss",
-  "sceneEn": "Two sides have got stuck on a joint project: you will not move on the date, they will not move on the budget. Say where you think they are right, state your own limit, offer a concession and agree a shared solution.",
+  "sceneEn": "Two sides have gotten stuck on a joint project: you will not move on the date, they will not move on the budget. Say where you think they are right, state your own limit, offer a concession and agree a shared solution.",
   "partnerEn": "a project partner with fair grounds who is open to compromise",
   "openingEn": "We're going around in circles. Tell me honestly: where can you really not give way?",
   "goalEn": "Both sides' limits have been stated, a concession has been offered and a solution both sides accept has been agreed."
@@ -148,7 +148,7 @@
  },
  {
   "conversation": "de-b2-vertrag-kuendigen",
-  "sceneEn": "You have called a gym's customer line and you want to cancel your membership. Give notice, state the date, answer the offers to keep you firmly and ask for written confirmation.",
+  "sceneEn": "You have called a gym's customer line and you want to cancel your membership. Give notice, state the date, firmly turn down the offers to keep you and ask for written confirmation.",
   "partnerEn": "a customer advisor offering a discount and a freeze to keep you",
   "openingEn": "It's a shame you want to leave. May I ask what the reason is? Perhaps we can find a solution.",
   "goalEn": "Notice has been given, the date has been made clear, the offers to keep you have been declined and written confirmation has been promised."

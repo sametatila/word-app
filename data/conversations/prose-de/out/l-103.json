@@ -567,7 +567,7 @@
  {
   "tr": "birbirini tutmayan iki söze ise",
   "kind": "say.tr",
-  "de": "und zwei Aussagen, die einander nicht stützen, heißen"
+  "de": "und wenn zwei Aussagen nicht zusammenpassen, heißt das"
  },
  {
   "tr": "Şimdi bir iddiayı sınayacaksın.",
@@ -882,7 +882,7 @@
  {
   "tr": "Haberciliğin en zor sorusu budur ve farkı sonuç yarısı kuruyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das ist die schwerste Frage des Journalismus, und den Unterschied baut die Folgehälfte. Bist du bereit?"
+  "de": "Das ist die schwerste Frage des Journalismus, und den Unterschied macht die Folgehälfte. Bist du bereit?"
  },
  {
   "tr": "ise bugüne taşır. Haberde ikincisi daha ağırdır, çünkü zararın hâlâ sürdüğünü söyler.",
@@ -907,7 +907,7 @@
  {
   "tr": "Duyurunun ağırlığını kelime değil yapı taşıyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das Gewicht der Ankündigung trägt nicht das Wort, sondern der Bau: steht ein negatives Adverb am Anfang, kippt der Satz. Bist du bereit?"
+  "de": "Das Gewicht der Ankündigung trägt nicht das Wort, sondern der Bau: steht ein negatives Adverb am Anfang, wird der Satz umgestellt. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün bir iddiayı sınamayı öğreneceğiz: veri nereden geldi, yöntem yayımlandı mı, tahmin tutuyor mu.",
@@ -942,6 +942,6 @@
  {
   "tr": "Merhaba! Bugün yayımlanmamış bir haberin sonuçlarını konuşmayı öğreneceğiz: bassalardı ne olurdu, bugün ne farklı olurdu.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir, über die Folgen einer nicht veröffentlichten Meldung zu sprechen: was wäre gewesen, was wäre heute anders."
+  "de": "Hallo! Heute lernen wir, über die Folgen einer nicht veröffentlichten Meldung zu sprechen: was gewesen wäre, wenn sie es gedruckt hätten, was heute anders wäre."
  }
 ]

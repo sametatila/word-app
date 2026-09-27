@@ -45,7 +45,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Frau Neuhaus", de: "Bei allem Respekt, dem kann ich nicht zustimmen. Ich hätte da einen Einwand: Wir haben die Zahlen von März zugrunde gelegt, nicht die aktuellen.", tr: "Tüm saygımla, buna katılamıyorum. Bir itirazım var: Mart rakamlarını esas aldık, güncel olanları değil." },
         { speaker: "Herr Wolf", de: "Das ist ein berechtigter Punkt. Dann würde ich anregen, die Entscheidung um eine Woche zu vertagen.", tr: "Bu haklı bir nokta. O hâlde kararı bir hafta ertelemeyi önerirdim." },
         { speaker: "Vorsitzende", de: "Vertagen kommt nicht in Frage. Der Vertrag tritt am Ersten in Kraft — dieses Risiko nehmen wir nicht in Kauf.", tr: "Erteleme söz konusu değil. Sözleşme ayın birinde yürürlüğe giriyor — bu riski göze almıyoruz." },
-        { speaker: "Frau Neuhaus", de: "Dann schlage ich vor: Wir entscheiden heute, aber unter Vorbehalt der neuen Zahlen.", tr: "O hâlde şunu öneriyorum: Bugün karar veriyoruz ama yeni rakamlar kaydıyla." },
+        { speaker: "Frau Neuhaus", de: "Dann schlage ich vor: Wir entscheiden heute, aber unter Vorbehalt der neuen Zahlen.", tr: "O hâlde şunu öneriyorum: Bugün karar veriyoruz ama yeni rakamlar gelince gözden geçirmek kaydıyla." },
         { speaker: "Vorsitzende", de: "Damit kann ich leben. Halten wir das so fest.", tr: "Bununla yaşayabilirim. Bunu böyle kayda geçirelim." },
       ],
       questions: [
@@ -157,7 +157,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 110,
       phrases: [
-        { de: "Sag mal, hast du es schon gehört?", tr: "Söylesene, duydun mu?", en: "Say, have you heard already?" },
+        { de: "Sag mal, hast du es schon gehört?", tr: "Söylesene, duydun mu?", en: "Hey, have you heard yet?" },
         { de: "Das hättest du mir doch früher sagen können.", tr: "Bunu bana daha önce söyleyebilirdin.", en: "You could have told me earlier." },
         { de: "Da ist eben nichts zu machen.", tr: "Yapılacak bir şey yok işte.", en: "There is simply nothing to be done." },
         { de: "Das wird schon.", tr: "Düzelir, yoluna girer.", en: "It will be all right." },
@@ -193,7 +193,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir sunum bitti ve soru turu başlıyor.",
       turns: [
         { speaker: "Referentin", de: "Kurz, klar, überzeugend — so wollte ich es halten. Gestatten Sie mir noch einen Satz zum Schluss, dann übernehmen Sie.", tr: "Kısa, net, ikna edici — böyle tutmak istedim. Kapanışta bir cümle daha söylememe izin verin, sonra söz sizde." },
-        { speaker: "Zuhörer", de: "Ihre Zahlen kenne ich anders. Arbeiten Sie da mit einer geschönten Auswahl?", tr: "Sizin rakamlarınızı ben başka biliyorum. Süslenmiş bir seçkiyle mi çalışıyorsunuz?" },
+        { speaker: "Zuhörer", de: "Ihre Zahlen kenne ich anders. Arbeiten Sie da mit einer geschönten Auswahl?", tr: "Ben bu rakamları farklı biliyorum. Süslenmiş bir seçkiyle mi çalışıyorsunuz?" },
         { speaker: "Referentin", de: "Gut, dass Sie das ansprechen. Ihre Frage greife ich gern auf — der Unterschied liegt im Zeitraum, nicht in der Auswahl.", tr: "Bunu dile getirmeniz iyi oldu. Sorunuzu memnuniyetle ele alıyorum — fark seçkide değil, dönemde." },
         { speaker: "Zuhörer", de: "Zugegeben, das erklärt einiges. Dennoch halte ich die Schlussfolgerung für zu weitreichend.", tr: "Kabul, bu bazı şeyleri açıklıyor. Yine de vardığınız sonucu fazla ileri buluyorum." },
         { speaker: "Referentin", de: "So sehr ich den Einwand verstehe, so wenig teile ich ihn. Selten habe ich Daten gesehen, die so eindeutig in eine Richtung zeigen.", tr: "İtirazınızı ne kadar anlasam da ona katılmıyorum. Bu kadar açıkça tek yöne işaret eden veriyi nadiren gördüm." },
@@ -370,7 +370,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Duyduğunu tarafsız aktarıyorsun.", de: "Der Sprecher sagte, die Entscheidung sei noch nicht gefallen.", tr: "Sözcü kararın henüz verilmediğini söyledi." },
-      { situation: "Kanıt eksiğini belirtiyorsun.", de: "Der Studie zufolge sei der Effekt groß — belegt ist das damit noch nicht.", tr: "Araştırmaya göre etki büyükmüş — ama bu onu kanıtlamaz." },
+      { situation: "Kanıt eksiğini belirtiyorsun.", de: "Der Studie zufolge sei der Effekt groß — belegt ist das damit noch nicht.", tr: "Araştırmaya göre etki büyükmüş — ama bu henüz kanıtlanmış değil." },
     ],
     writing: {
       prompt: "Bir haberi ya da araştırmayı kaynak eleştirisiyle birlikte özetleyen kısa bir metin yaz.",
@@ -421,7 +421,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Mieterin", de: "Die Heizung fällt seit November aus. Ich habe den Mangel dreimal schriftlich angezeigt.", tr: "Kalorifer kasımdan beri arızalı. Arızayı üç kez yazılı bildirdim." },
         { speaker: "Vermieter", de: "Das ist doch eine Kleinigkeit. Der Handwerker kommt, wenn er Zeit hat.", tr: "Küçücük bir şey bu. Usta vakti olunca gelir." },
-        { speaker: "Mieterin", de: "Wenngleich ich Ihre Lage verstehe, sind Sie damit in Verzug geraten. Für die Beseitigung setze ich eine Frist bis zum Fünfzehnten.", tr: "Durumunuzu anlasam da bununla temerrüde düştünüz. Giderme için ayın on beşine kadar süre veriyorum." },
+        { speaker: "Mieterin", de: "Wenngleich ich Ihre Lage verstehe, sind Sie damit in Verzug geraten. Für die Beseitigung setze ich eine Frist bis zum Fünfzehnten.", tr: "Durumunuzu anlasam da bununla temerrüde düştünüz. Arızanın giderilmesi için ayın on beşine kadar süre veriyorum." },
         { speaker: "Vermieter", de: "Und wenn das nicht klappt?", tr: "Peki olmazsa?" },
         { speaker: "Mieterin", de: "Dann erhebe ich Anspruch auf eine Mietminderung. Der Anwalt sagte, das sei bei einem Ausfall dieser Dauer rechtens.", tr: "O zaman kira indirimi talep ederim. Avukat, bu süredeki bir arızada bunun hukuka uygun olduğunu söyledi." },
         { speaker: "Vermieter", de: "Ich behalte mir vor, das prüfen zu lassen. Aber gut — bis zum Fünfzehnten ist es erledigt.", tr: "Bunu inceletme hakkımı saklı tutuyorum. Ama peki — ayın on beşine kadar halledilir." },
@@ -467,7 +467,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Ich bitte um eine schriftliche Bestätigung.", tr: "Yazılı teyit rica ediyorum.", en: "I request written confirmation." },
       ],
       sample:
-        "Betreff: Einspruch gegen den Bescheid vom 3. Juni (Az. 2024-1187)\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich fristwahrend Einspruch gegen den oben genannten Bescheid ein.\n\nWenngleich ich nachvollziehe, dass die Berechnung nach dem üblichen Schema erfolgt ist, halte ich das Ergebnis gleichwohl für unzutreffend. Nach meinen Unterlagen wurde der Zeitraum von März bis Mai doppelt berücksichtigt; im Falle einer Doppelanrechnung ergibt sich ein deutlich abweichender Betrag.\n\nIch erhebe daher Anspruch auf eine Korrektur des Bescheids und werde diesen Anspruch, sofern erforderlich, weiter geltend machen. Die vollständige Begründung nebst Belegen reiche ich bis zum 30. Juni nach.\n\nIch bitte Sie um eine kurze schriftliche Bestätigung des Eingangs.\n\nMit freundlichen Grüßen\nB. Şimşek",
+        "Betreff: Einspruch gegen den Bescheid vom 3. Juni (Az. 2024-1187)\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich fristwahrend Einspruch gegen den oben genannten Bescheid ein.\n\nWenngleich ich nachvollziehe, dass die Berechnung nach dem üblichen Schema erfolgt ist, halte ich das Ergebnis gleichwohl für unzutreffend. Nach meinen Unterlagen wurde der Zeitraum von März bis Mai doppelt berücksichtigt; im Falle einer bereinigten Berechnung ergibt sich ein deutlich abweichender Betrag.\n\nIch erhebe daher Anspruch auf eine Korrektur des Bescheids und werde diesen Anspruch, sofern erforderlich, weiter geltend machen. Die vollständige Begründung nebst Belegen reiche ich bis zum 30. Juni nach.\n\nIch bitte Sie um eine kurze schriftliche Bestätigung des Eingangs.\n\nMit freundlichen Grüßen\nB. Şimşek",
     },
   },
   {
@@ -576,7 +576,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Frau Kern", de: "Beides zugleich. Ungeachtet der individuellen Beiträge wiegen systemische Ursachen schwerer.", tr: "İkisi aynı anda. Bireysel katkılara bakılmaksızın sistemik sebepler daha ağır basıyor." },
         { speaker: "Herr Adam", de: "Das klingt, als wäre der Einzelne machtlos. So kommen wir nie weiter.", tr: "Bu, sanki birey güçsüzmüş gibi geliyor. Böyle asla ilerleyemeyiz." },
         { speaker: "Frau Kern", de: "Davon zu unterscheiden ist die Verlagerung der Verantwortung. Nichtsdestotrotz gebe ich Ihnen recht: Ohne Einzelne passiert nichts.", tr: "Bundan ayrılması gereken şey sorumluluğun kaydırılması. Yine de size hak veriyorum: Bireyler olmadan hiçbir şey olmaz." },
-        { speaker: "Herr Adam", de: "Angenommen, alle änderten ihr Verhalten — wäre das Problem dann gelöst?", tr: "Diyelim ki herkes davranışını değiştirse — sorun o zaman çözülür müydü?" },
+        { speaker: "Herr Adam", de: "Angenommen, alle änderten ihr Verhalten — wäre das Problem dann gelöst?", tr: "Diyelim ki herkes davranışını değiştirse — sorun o zaman çözülür mü?" },
         { speaker: "Frau Kern", de: "Hätte man vor zwanzig Jahren umgesteuert, stünden wir heute anders da. Heute reicht Verhalten allein nicht mehr.", tr: "Yirmi yıl önce rota değiştirilseydi bugün başka yerde olurduk. Bugün davranış tek başına yetmiyor." },
         { speaker: "Moderator", de: "Halten wir fest: Zielkonflikt anerkannt, Verantwortung geteilt. Vielen Dank Ihnen beiden.", tr: "Kayda geçirelim: Hedef çatışması kabul edildi, sorumluluk paylaşıldı. İkinize de teşekkürler." },
       ],
@@ -650,9 +650,9 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Jan", de: "Na, das lief ja super heute.", tr: "Ee, bugün her şey harika gitti." },
         { speaker: "Elif", de: "Das war jetzt ironisch, oder? Sag es ruhig direkt.", tr: "Bu ironikti, değil mi? Rahatça doğrudan söyle." },
-        { speaker: "Jan", de: "Ehrlich? Der Anfang war nicht schlecht. Beim zweiten Teil ist noch Luft nach oben.", tr: "Dürüst mü? Giriş fena değildi. İkinci bölümde daha iyi olabilirdi." },
+        { speaker: "Jan", de: "Ehrlich? Der Anfang war nicht schlecht. Beim zweiten Teil ist noch Luft nach oben.", tr: "Dürüst olayım mı? Giriş fena değildi. İkinci bölümde daha iyi olabilirdi." },
         { speaker: "Elif", de: "„Nicht schlecht“ heißt bei dir also gut, und „Luft nach oben“ heißt: es reicht nicht.", tr: "Yani sende „fena değil“ iyi demek, „Luft nach oben“ ise yetmiyor demek." },
-        { speaker: "Jan", de: "Genau. Alle Achtung übrigens für die Ruhe bei den Zwischenrufen — das war souverän.", tr: "Aynen. Bu arada laf atmalar sırasındaki sakinliğine helal olsun — çok hâkimdin." },
+        { speaker: "Jan", de: "Genau. Alle Achtung übrigens für die Ruhe bei den Zwischenrufen — das war souverän.", tr: "Aynen. Bu arada laf atmalar sırasındaki sakinliğine helal olsun — duruma tamamen hâkimdin." },
         { speaker: "Elif", de: "Danke. Und der Spruch über meine Folien? Der ist nicht gut angekommen.", tr: "Teşekkürler. Peki slaytlarım hakkındaki laf? O iyi karşılanmadı." },
         { speaker: "Jan", de: "Stimmt, das war auf deine Kosten. Ich nehme das zurück.", tr: "Doğru, o espri senin üzerinden yapılmıştı. Sözümü geri alıyorum." },
       ],
@@ -691,7 +691,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "„Nicht schlecht“ ist hier ein Lob.", tr: "„Fena değil“ burada bir övgüdür.", en: "\"Not bad\" is praise here." },
         { de: "Da ist noch Luft nach oben.", tr: "Daha iyi olabilirdi.", en: "There is still room for improvement." },
         { de: "Kritik ist direkt, Lob ist sparsam.", tr: "Eleştiri doğrudan yapılır, övgü az verilir.", en: "Criticism is direct, praise is sparing." },
-        { de: "Ich bleibe lieber beim Sie.", tr: "Ben „siz“ demeye devam etmeyi tercih ederim.", en: "I would rather stay with the formal form." },
+        { de: "Ich bleibe lieber beim Sie.", tr: "Ben „siz“ demeye devam etmeyi tercih ederim.", en: "I would rather stick with the formal 'Sie'." },
         { de: "Anders, nicht falsch.", tr: "Farklı, yanlış değil.", en: "Different, not wrong." },
       ],
       sample:

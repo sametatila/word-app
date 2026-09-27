@@ -2,101 +2,6 @@
  "packet": "e-005",
  "words": [
   {
-   "tr": "Bir hayalini anlatıyorsun.",
-   "kind": "speaking.situation",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B1.10 Feelings and dreams · konuşma"
-   ]
-  },
-  {
-   "tr": "Bir kişiyi kısaca tarif et",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A1.2 Family and people · yazma"
-   ]
-  },
-  {
-   "tr": "Bir müşteri ceket bakıyor.",
-   "kind": "listening.situation",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A1.5 Shopping · dinleme"
-   ]
-  },
-  {
-   "tr": "Bir sonraki buluşmayı öner",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A2.8 Celebrations and people · yazma"
-   ]
-  },
-  {
-   "tr": "Birine öğüt verebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can give someone advice."
-   ],
-   "ctx": [
-    "A1.9 Health and the body"
-   ]
-  },
-  {
-   "tr": "Birini davet edebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can invite someone."
-   ],
-   "ctx": [
-    "A1.8 Free time"
-   ]
-  },
-  {
-   "tr": "Bulgu neden genellenemedi?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "Why could the finding not be generalized?"
-   ],
-   "ctx": [
-    "B2.5 Science and method · okuma sorusu"
-   ],
-   "options": [
-    "The sample was small",
-    "The reaction was too slow",
-    "The cohorts were mixed",
-    "The entry was lost"
-   ]
-  },
-  {
-   "tr": "Bulguyu bir cümlede bildir",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B2.5 Science and method · yazma"
-   ]
-  },
-  {
-   "tr": "By December we will have …",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Future perfect"
-   ],
-   "ctx": [
-    "B2.8 Money and career"
-   ]
-  },
-  {
    "tr": "Daha erken bir şey var mı?",
    "kind": "phrase",
    "n": 1,
@@ -115,7 +20,7 @@
     "Comparatives"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -123,7 +28,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What do you need for a change?"
+    "What do you need to change the clothes?"
    ],
    "ctx": [
     "A1.5 Shopping · okuma sorusu"
@@ -143,7 +48,7 @@
     "The experiment was carried out on …"
    ],
    "ctx": [
-    "B2.5 Science and method · yazma kalıbı"
+    "B2.5 Science and technology · yazma kalıbı"
    ]
   },
   {
@@ -218,7 +123,7 @@
     "It is claimed that … / What we contest is …"
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
    ]
   },
   {
@@ -288,6 +193,23 @@
    ]
   },
   {
+   "tr": "Kişi nasıl ödemek istiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How does the person want to pay?"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · dinleme sorusu"
+   ],
+   "options": [
+    "By card",
+    "In cash",
+    "By check",
+    "Together"
+   ]
+  },
+  {
    "tr": "kutlama ve dilek kalıpları",
    "kind": "focus",
    "n": 1,
@@ -308,23 +230,12 @@
    ]
   },
   {
-   "tr": "Nasıl biri, neye benziyor?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "What does she look like?"
-   ],
-   "ctx": [
-    "A1.2 Family and people · Lena"
-   ]
-  },
-  {
    "tr": "Ne zaman evde olduğunu yaz",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.4 Home and neighbourhood · yazma"
+    "A2.4 Home and neighborhood · yazma"
    ]
   },
   {
@@ -360,7 +271,7 @@
    "options": [
     "He fell down on the street",
     "He fell down at home",
-    "He was playing football",
+    "He was playing soccer",
     "He was carrying a box"
    ]
   },
@@ -372,7 +283,7 @@
     "I can check in at a hotel."
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -381,7 +292,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · yazma"
+    "A2.7 Traveling · yazma"
    ]
   },
   {
@@ -400,10 +311,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Money and career"
+    "Money and career strategy"
    ],
    "ctx": [
-    "B2.8 Money and career"
+    "B2.8 Money and career strategy"
    ]
   },
   {
@@ -414,24 +325,13 @@
     "How many nights is the reservation for?"
    ],
    "ctx": [
-    "A2.7 Travelling · dinleme sorusu"
+    "A2.7 Traveling · dinleme sorusu"
    ],
    "options": [
     "Two nights",
     "Three nights",
     "Seven nights",
     "One night"
-   ]
-  },
-  {
-   "tr": "sayılabilen ve sayılamayan",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "some / any"
-   ],
-   "ctx": [
-    "A1.3 Food and drink"
    ]
   },
   {
@@ -461,7 +361,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Single or return?"
+    "One-way or round-trip?"
    ],
    "ctx": [
     "A1.6 In town · Clerk"
@@ -486,7 +386,7 @@
     "Cleft sentences"
    ],
    "ctx": [
-    "B2.8 Money and career"
+    "B2.8 Money and career strategy"
    ]
   },
   {
@@ -591,7 +491,7 @@
     "What matters most to me is …"
    ],
    "ctx": [
-    "B2.8 Money and career · yazma kalıbı"
+    "B2.8 Money and career strategy · yazma kalıbı"
    ]
   },
   {
@@ -613,7 +513,7 @@
     "How many times has the device been repaired?"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · okuma sorusu"
+    "B2.2 Negotiating and complaining · okuma sorusu"
    ],
    "options": [
     "Three times",
@@ -627,7 +527,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "How long has the flat been empty?"
+    "How long has the apartment been empty?"
    ],
    "ctx": [
     "B1.2 Renting and moving · dinleme sorusu"
@@ -651,7 +551,7 @@
    ],
    "options": [
     "By bus",
-    "By train",
+    "By car",
     "By taxi",
     "By bike"
    ]
@@ -674,28 +574,11 @@
    ]
   },
   {
-   "tr": "Elif şimdi nerede oturuyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "Where does Elif live now?"
-   ],
-   "ctx": [
-    "A1.1 Nice to meet you · dinleme sorusu"
-   ],
-   "options": [
-    "In Izmir",
-    "In London",
-    "In Manchester",
-    "In Turkey"
-   ]
-  },
-  {
    "tr": "Gidiş dönüş bilet kaç para?",
    "kind": "question",
    "n": 1,
    "de": [
-    "How much is a return ticket?"
+    "How much is a round-trip ticket?"
    ],
    "ctx": [
     "A1.6 In town · dinleme sorusu"
@@ -705,15 +588,6 @@
     "48",
     "20",
     "10"
-   ]
-  },
-  {
-   "tr": "Hangi araçla geleceğini yaz",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A1.6 In town · yazma"
    ]
   },
   {
@@ -749,7 +623,7 @@
    "options": [
     "An ID and the letter",
     "The x-ray and a sample",
-    "A sick note",
+    "A doctor's note",
     "Only the painkiller"
    ]
   },
@@ -811,14 +685,14 @@
    ]
   },
   {
-   "tr": "neyin dahil olduğunu sormak",
+   "tr": "neyin dâhil olduğunu sormak",
    "kind": "focus",
    "n": 1,
    "de": [
     "Does the price include …?"
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -868,7 +742,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does the last sentence criticise?"
+    "What does the last sentence criticize?"
    ],
    "ctx": [
     "C1.9 Money and the forecast · okuma sorusu"
@@ -921,11 +795,22 @@
    ]
   },
   {
+   "tr": "Tarif etmek ve karar vermek",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Describing and deciding"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
    "tr": "the filing of the enclosure",
    "kind": "focus",
    "n": 1,
    "de": [
-    "Nominalisation"
+    "Nominalization"
    ],
    "ctx": [
     "B2.10 Formal correspondence"
@@ -950,7 +835,7 @@
     "What does the writer demand?"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · okuma sorusu"
+    "B2.2 Negotiating and complaining · okuma sorusu"
    ],
    "options": [
     "A replacement and the reimbursement of the costs",
@@ -964,13 +849,13 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "Why did the writer enrol in the course?"
+    "Why did the writer enroll in the course?"
    ],
    "ctx": [
-    "B1.3 Reason and result · okuma sorusu"
+    "B1.3 Linking ideas · okuma sorusu"
    ],
    "options": [
-    "In order to practise English for work",
+    "In order to practice English for work",
     "Because the course was free",
     "Because a friend asked",
     "In order to change jobs"
@@ -984,18 +869,7 @@
     "I will try again as long as …"
    ],
    "ctx": [
-    "B1.3 Reason and result · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "…-i görsem de plan … kalıyor",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "Much as I see …, the plan stays …"
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · yazma kalıbı"
+    "B1.3 Linking ideas · yazma kalıbı"
    ]
   },
   {
@@ -1006,7 +880,7 @@
     "It is recommended that … be verified."
    ],
    "ctx": [
-    "B2.3 Process and passive · yazma kalıbı"
+    "B2.3 The passive in all its forms · yazma kalıbı"
    ]
   },
   {
@@ -1017,18 +891,7 @@
     "Could I have a room with …, please?"
    ],
    "ctx": [
-    "A2.7 Travelling · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "„species-appropriate indeed“",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Understatement about practice"
-   ],
-   "ctx": [
-    "C1.7 Land, food and the soil"
+    "A2.7 Traveling · yazma kalıbı"
    ]
   },
   {
@@ -1056,7 +919,7 @@
     "The fault was noticed at … on …"
    ],
    "ctx": [
-    "B2.3 Process and passive · yazma kalıbı"
+    "B2.3 The passive in all its forms · yazma kalıbı"
    ]
   },
   {
@@ -1076,7 +939,7 @@
     "What happens if a fault appears?"
    ],
    "ctx": [
-    "B2.3 Process and passive · okuma sorusu"
+    "B2.3 The passive in all its forms · okuma sorusu"
    ],
    "options": [
     "The trial is stopped and the parameter is verified",
@@ -1118,7 +981,7 @@
    "options": [
     "He didn't get a job he had wanted",
     "He lost a friend",
-    "He is ill",
+    "He is sick",
     "He moved to another city"
    ]
   },
@@ -1178,7 +1041,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can ask for a medicine at the chemist's."
+    "I can ask for a medicine at the pharmacy."
    ],
    "ctx": [
     "A1.9 Health and the body"
@@ -1229,7 +1092,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · yazma"
+    "A2.7 Traveling · yazma"
    ]
   },
   {
@@ -1273,7 +1136,7 @@
     "The outage must have been caused by …"
    ],
    "ctx": [
-    "B2.3 Process and passive · yazma kalıbı"
+    "B2.3 The passive in all its forms · yazma kalıbı"
    ]
   },
   {
@@ -1285,6 +1148,23 @@
    ],
    "ctx": [
     "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "Kişi neyi önceden halletmiş?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has the visitor already done?"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · dinleme sorusu"
+   ],
+   "options": [
+    "Made a copy",
+    "Filled out the form",
+    "Paid the fine",
+    "Called the office"
    ]
   },
   {
@@ -1304,7 +1184,7 @@
     "Who cleans the stairs?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · okuma sorusu"
+    "A2.4 Home and neighborhood · okuma sorusu"
    ],
    "options": [
     "The residents",
@@ -1336,6 +1216,23 @@
    ]
   },
   {
+   "tr": "Sara daha önce neyi denemiş?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has Sara already done?"
+   ],
+   "ctx": [
+    "A2.9 Media and technology · dinleme sorusu"
+   ],
+   "options": [
+    "She has updated the program",
+    "She has restarted the computer",
+    "She has called the store",
+    "She has bought a new camera"
+   ]
+  },
+  {
    "tr": "Selin ne zaman başlayabilir?",
    "kind": "question",
    "n": 1,
@@ -1353,6 +1250,17 @@
    ]
   },
   {
+   "tr": "Sözleşmeni okumak: beş madde",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Reading your contract: five clauses"
+   ],
+   "ctx": [
+    "B2.8 Money and career strategy"
+   ]
+  },
+  {
    "tr": "Temsilci neye itiraz ediyor?",
    "kind": "question",
    "n": 1,
@@ -1360,7 +1268,7 @@
     "What does the representative contest?"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · dinleme sorusu"
+    "B2.2 Negotiating and complaining · dinleme sorusu"
    ],
    "options": [
     "The liability for the damages",
@@ -1394,10 +1302,10 @@
    "kind": "focus",
    "n": 1,
    "de": [
-    "Nominalisation"
+    "Nominalization"
    ],
    "ctx": [
-    "B2.3 Process and passive"
+    "B2.3 The passive in all its forms"
    ]
   },
   {
@@ -1408,7 +1316,7 @@
     "When is the glue applied?"
    ],
    "ctx": [
-    "B2.3 Process and passive · okuma sorusu"
+    "B2.3 The passive in all its forms · okuma sorusu"
    ],
    "options": [
     "After the gauge has been read",
@@ -1439,7 +1347,7 @@
    "kind": "speaking",
    "n": 1,
    "de": [
-    "You should sleep and take a lot of water."
+    "You should sleep and drink a lot of water."
    ],
    "ctx": [
     "A1.9 Health and the body · konuşma"
@@ -1454,6 +1362,23 @@
    ],
    "ctx": [
     "B1.8 The health system"
+   ]
+  },
+  {
+   "tr": "Yazı form hakkında ne diyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the letter say about the form?"
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · okuma sorusu"
+   ],
+   "options": [
+    "A new form is not necessary",
+    "A new form must be filled out",
+    "The form was not received",
+    "The form must be signed again"
    ]
   },
   {
@@ -1486,7 +1411,7 @@
     "The maintenance of … is carried out twice."
    ],
    "ctx": [
-    "B2.3 Process and passive · yazma kalıbı"
+    "B2.3 The passive in all its forms · yazma kalıbı"
    ]
   },
   {
@@ -1511,7 +1436,7 @@
     "B1.4 Describing and deciding · okuma sorusu"
    ],
    "options": [
-    "There is no lift",
+    "There is no elevator",
     "The desk is faulty",
     "The seller is away",
     "The drawers are heavy to open"
@@ -1598,7 +1523,7 @@
     "The preparation of the handover takes …"
    ],
    "ctx": [
-    "B2.8 Money and career · yazma kalıbı"
+    "B2.8 Money and career strategy · yazma kalıbı"
    ]
   },
   {
@@ -1699,7 +1624,7 @@
     "Inversion: Nowhere is it written …"
    ],
    "ctx": [
-    "B2.3 Process and passive"
+    "B2.3 The passive in all its forms"
    ]
   },
   {
@@ -1765,6 +1690,133 @@
    "de": [],
    "ctx": [
     "C1.6 Work and the bargaining table · yazma"
+   ]
+  },
+  {
+   "tr": "Son paragraftaki eleştiri ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the criticism in the last paragraph?"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · okuma sorusu"
+   ],
+   "options": [
+    "Neither text quotes anyone from the district",
+    "The vocabulary is too simple",
+    "The committee never met",
+    "The figures were invented"
+   ]
+  },
+  {
+   "tr": "Tahminin kesinliğini işaretle",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma"
+   ]
+  },
+  {
+   "tr": "Tartışmanın söylemediği şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the debate leaves unsaid is …"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Temsilcinin çizdiği ayrım ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the difference the agent draws?"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · dinleme sorusu"
+   ],
+   "options": [
+    "An allegation and a proof belong to different files",
+    "Fraud and embezzlement are the same",
+    "The regulator decides both",
+    "Neither can be disclosed"
+   ]
+  },
+  {
+   "tr": "the automation of the process",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Nominalization"
+   ],
+   "ctx": [
+    "B2.5 Science and technology"
+   ]
+  },
+  {
+   "tr": "the measurement of inequality",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Nominalization"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Tren hangi perondan kalkıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Which platform does the train leave from?"
+   ],
+   "ctx": [
+    "A1.6 In town · dinleme sorusu"
+   ],
+   "options": [
+    "Platform one",
+    "Platform two",
+    "Platform three",
+    "Platform ten"
+   ]
+  },
+  {
+   "tr": "Yanlış kutu neden gönderildi?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why was the wrong box sent?"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · dinleme sorusu"
+   ],
+   "options": [
+    "The labels were swapped",
+    "The customer wrote the wrong number",
+    "The price had changed",
+    "The delivery was late"
+   ]
+  },
+  {
+   "tr": "Yazarın kızı için ne değişti?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has changed for the writer's daughter?"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · okuma sorusu"
+   ],
+   "options": [
+    "She has not lost a file since September",
+    "She writes on paper again",
+    "She reads less at home",
+    "She forgets her tablet"
    ]
   }
  ]

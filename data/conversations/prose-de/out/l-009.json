@@ -31,7 +31,7 @@
  { "tr": "gerekir: How much are these?", "kind": "why.tr", "de": "braucht man: How much are these?" },
  { "tr": "Partide yediğin şey pastadır:", "kind": "why.tr", "de": "Was man auf der Party isst, ist Kuchen:" },
  { "tr": "sesi kısmak demek. Sesi açmak", "kind": "why.tr", "de": "bedeutet leiser machen. Lauter machen ist" },
- { "tr": "her zaman sona gider. Doğrusu:", "kind": "why.tr", "de": "steht immer am Ende. Richtig:" },
+ { "tr": "nesneden sonra, cümlenin sonuna gider. Doğrusu:", "kind": "why.tr", "de": "steht nach dem Objekt, am Satzende. Richtig:" },
  { "tr": "başlangıç noktası içindir:", "kind": "why.tr", "de": "für den Anfangspunkt da:" },
  { "tr": "sadece uzun sıfatlarda, mesela", "kind": "why.tr", "de": "nur bei langen Adjektiven, etwa" },
  { "tr": "Hayır, yanlış. Cümlenin başında", "kind": "why.tr", "de": "Nein, falsch. Wenn am Satzanfang" },
@@ -65,7 +65,7 @@
  { "tr": "Yanlış, çünkü yardımcı fiil eksik. Doğrusu", "kind": "why.tr", "de": "Falsch, denn das Hilfsverb fehlt. Richtig ist" },
  { "tr": "Yanlış. Renk isimden sonra gelmez. Doğrusu", "kind": "why.tr", "de": "Falsch. Die Farbe steht nicht nach dem Nomen. Richtig ist" },
  { "tr": "Elma sayılabilir, o yüzden how many olmalı:", "kind": "why.tr", "de": "Äpfel sind zählbar, deshalb muss es how many heißen:" },
- { "tr": "Kapalıysa gezemezsin. Doğrusu şöyle olurdu:", "kind": "why.tr", "de": "Wenn geschlossen ist, kannst du nicht hineingehen. Richtig wäre es so:" },
+ { "tr": "Kapalıysa gezemezsin. Doğrusu şöyle olurdu:", "kind": "why.tr", "de": "Wenn es geschlossen ist, kannst du es nicht besichtigen. Richtig wäre es so:" },
  { "tr": "sesli harfle başladığı için önüne \"a\" değil", "kind": "why.tr", "de": "beginnt mit einem Vokal, deshalb nicht „a“, sondern" },
  { "tr": "sözcüğünden sonra fiilin üçüncü hâli gelir, burada filled.", "kind": "why.tr", "de": "— nach diesem Wort kommt die dritte Form des Verbs, hier filled." },
  { "tr": "Big kısa bir sıfat, o yüzden the most almaz.", "kind": "why.tr", "de": "Big ist ein kurzes Adjektiv und nimmt deshalb kein the most." },
@@ -115,6 +115,6 @@
  { "tr": "Yanlış. You ile is kullanılmaz. Doğrusu: You are a student.", "kind": "why.tr", "de": "Falsch. Bei You wird is nicht verwendet. Richtig: You are a student." },
  { "tr": "ise belgenin aslıdır. Memur çoğu zaman ikisini birden ister.", "kind": "why.tr", "de": "dagegen ist das Original des Dokuments. Der Beamte will meist beides." },
  { "tr": "olmalı. 'too many' sadece sayılabilen çoğullarla kullanılır.", "kind": "why.tr", "de": "muss es heißen. „too many“ steht nur bei zählbaren Pluralformen." },
- { "tr": "Yanlış. like'dan sonra fiil ya -ing alır ya da to ile gelir:", "kind": "why.tr", "de": "Falsch. Nach like bekommt das Verb entweder -ing oder kommt mit to:" },
+ { "tr": "Yanlış. like'tan sonra fiil ya -ing alır ya da to ile gelir:", "kind": "why.tr", "de": "Falsch. Nach like bekommt das Verb entweder -ing oder kommt mit to:" },
  { "tr": "geçerli demek, yani süresi dolmamış. Süresi dolmuş belge için", "kind": "why.tr", "de": "bedeutet gültig, also nicht abgelaufen. Für ein abgelaufenes Dokument" }
 ]

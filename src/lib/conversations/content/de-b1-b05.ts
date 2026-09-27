@@ -166,7 +166,7 @@ export const deB1B05: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün en çok işine yarayacak yerdeyiz: yabancılar dairesi. Orada duyacağın hemen her cümle edilgen ve aynı üç kalıptan çıkıyor. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Amacımız iki yönlü: memurun söylediğini anlamak ve kendi sorunu doğru sormak. İkincisi çoğu zaman daha önemli. Önce kelimeler.")] },
+      { say: [tr("Amacımız iki yönlü: memurun söylediğini anlamak ve kendi sorularını doğru sormak. İkincisi çoğu zaman daha önemli. Önce kelimeler.")] },
       word("İlk", { de: "benötigen", tr: "ihtiyaç duymak" }),
       word("İkinci", { de: "ablaufen", tr: "süresi dolmak" }),
       word("Üçüncü", { de: "das Visum", tr: "vize" }),
@@ -181,7 +181,7 @@ export const deB1B05: Conversation[] = [
       { say: [tr("Şimdi kendi durumunu söyle: 'Oturma iznim mayısta doluyor.'")], expect: produce("Meine Aufenthaltserlaubnis läuft im Mai ab", [tr("Ayrılabilen fiilin öneki en sona:"), de("Meine Aufenthaltserlaubnis läuft im Mai ab."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha, bu kez modal fiille: 'Pasaport ibraz edilmeli.'")], expect: produce("Der Pass muss vorgelegt werden", [tr("Modal çekimli, ortaç ve werden en sonda:"), de("Der Pass muss vorgelegt werden."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Unterlagen wird geprüft."), tr("cümlesi doğru mu?")], expect: truefalse("Die Unterlagen wird geprüft.", false, [tr("Özne çoğul, yardımcı fiil de çoğul olmalı:"), de("Die Unterlagen werden geprüft.")]) },
-      { say: [tr("Son: 'Başvuru dört hafta içinde işleme alınır.'")], expect: produce("Der Antrag wird in vier Wochen bearbeitet", [tr("Süre ortada, ortaç sonda:"), de("Der Antrag wird in vier Wochen bearbeitet."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Başvuru dört hafta içinde işleme alınır.'")], expect: produce("Der Antrag wird innerhalb von vier Wochen bearbeitet", [tr("Süre ortada, ortaç sonda:"), de("Der Antrag wird innerhalb von vier Wochen bearbeitet."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir memurla oturma izni uzatmayı konuşacaksın: neyin gerektiğini sor, kendi durumunu anlat.")] },
     ],
     chat: {

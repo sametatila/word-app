@@ -60,7 +60,7 @@ export const deC1B06: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Yeni modül: hukuk dili. Ve burada bir şey değişiyor — bir maddeyi yanlış anlamak dil bilgisi hatası değil, para kaybı. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Sözleşme dili neredeyse tamamen isimleşmiştir ve tamlama hâli her yerdedir. Eksik bir ek, cümleyi çözemez hâle getirir. Önce kelimeler.")] },
+      { say: [tr("Sözleşme dili neredeyse tamamen isimleşmiştir ve tamlama hâli her yerdedir. Eksik bir ek, cümleyi çözülemez hâle getirir. Önce kelimeler.")] },
       word("İlk", { de: "vorbehaltlich", tr: "…-in kaydıyla" }),
       word("İkinci", { de: "der Verzug", tr: "temerrüt / gecikme" }),
       word("Üçüncü", { de: "die Klausel", tr: "madde" }),
@@ -176,7 +176,7 @@ export const deC1B06: Conversation[] = [
       word("Yedinci", { de: "der Rechtsstreit", tr: "hukuki anlaşmazlık" }),
       word("Son", { de: "der Mietvertrag", tr: "kira sözleşmesi" }),
       { say: [tr("Örnek:"), de("Ich erhebe Anspruch auf eine Mietminderung."), tr("Tekrar et:"), de("Ich erhebe Anspruch auf eine Mietminderung")], expect: repeat("Ich erhebe Anspruch auf eine Mietminderung") },
-      { say: [tr("Sıra sende: 'Arızanın giderilmesi için süre veriyorum.'")], expect: produce("Für die Beseitigung setze ich eine Frist", [tr("Tümleç başta; fiil ikinci sırada:"), de("Für die Beseitigung setze ich eine Frist."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Arızanın giderilmesi için süre veriyorum.'")], expect: produce("Für die Beseitigung des Mangels setze ich eine Frist", [tr("Tümleç başta; fiil ikinci sırada:"), de("Für die Beseitigung des Mangels setze ich eine Frist."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Haklarımı ileri süreceğim.'")], expect: produce("Meine Rechte werde ich geltend machen", [tr("Nesne öne alınmış; öbek mastar hâlinde sonda:"), de("Meine Rechte werde ich geltend machen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Kira indirimi talep ediyorum.'")], expect: produce("Ich fordere eine Mietminderung", [tr("Belirtisiz dişil belirtme hâlinde:"), de("Ich fordere eine Mietminderung."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Der Vermieter ist in Verzug geraten."), tr("cümlesi doğru mu?")], expect: truefalse("Der Vermieter ist in Verzug geraten.", true, [tr("Doğru. Öbek belirteçsiz, geraten fiili sein ile çekilmiş ve ortaç cümlenin sonunda.")]) },

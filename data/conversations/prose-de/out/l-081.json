@@ -345,7 +345,7 @@
   "de": "gibt die Reihenfolge zweier Ereignisse in einem Satz"
  },
  {
-  "tr": "kim yaptığını söylemeden olayı anlatır",
+  "tr": "kimin yaptığını söylemeden olayı anlatır",
   "kind": "pattern.tr",
   "de": "erzählt das Ereignis, ohne zu sagen, wer es getan hat"
  },
@@ -580,9 +580,9 @@
   "de": "und eine kurze Notiz zum Erinnern heißt"
  },
  {
-  "tr": "Toplantının kendisine",
+  "tr": "Toplantıdaki görüşmeye",
   "kind": "say.tr",
-  "de": "Die Besprechung selbst heißt"
+  "de": "Die Besprechung in der Sitzung heißt"
  },
  {
   "tr": "olayı gören kişiye ise",
@@ -772,7 +772,7 @@
  {
   "tr": "kurallara sıkı sıkıya bağlı olan için ise",
   "kind": "say.tr",
-  "de": "und für das, was streng an den Regeln hängt"
+  "de": "und für das, was sich streng an die Regeln hält"
  },
  {
   "tr": "Şimdi bir arkadaşına o günü anlatacaksın.",

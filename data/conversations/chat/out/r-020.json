@@ -113,10 +113,10 @@
  },
  {
   "conversation": "de-c1-ja-mal",
-  "sceneEn": "You have run into someone in the street you have not seen for a long time. Show your surprise, ask them to tell you something, give your own news and arrange something to meet again.",
+  "sceneEn": "You have run into someone in the street you have not seen for a long time. Show your surprise, ask them to tell you something, give your own news and arrange to meet again.",
   "partnerEn": "an old acquaintance who is delighted to see you and has a lot to tell",
   "openingEn": "I don't believe it — is that really you? How long has it been now?",
-  "goalEn": "News has been exchanged both ways and something concrete has been arranged to meet again."
+  "goalEn": "News has been exchanged both ways and a concrete plan to meet again has been made."
  },
  {
   "conversation": "de-c1-eben-halt",
@@ -141,10 +141,10 @@
  },
  {
   "conversation": "de-c1-partikel-streit",
-  "sceneEn": "You are waiting on a piece of work and the other side keeps putting it off. Show your impatience in measure, give a warning, acknowledge that you are pressing them and agree on a deadline.",
+  "sceneEn": "You are waiting on a piece of work and the other side keeps putting it off. Show your impatience with restraint, give a warning, acknowledge that you are pressing them and agree on a deadline.",
   "partnerEn": "someone who keeps putting it off and always has an excuse ready",
   "openingEn": "I know, I know — I'm on it. Does it really have to be today?",
-  "goalEn": "Impatience has been shown in measure, a warning has been given and a binding deadline has been agreed on."
+  "goalEn": "Impatience has been shown with restraint, a warning has been given and a binding deadline has been agreed on."
  },
  {
   "conversation": "de-c1-untertreibung",

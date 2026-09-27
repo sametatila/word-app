@@ -85,7 +85,7 @@
  },
  {
   "conversation": "de-a2-podcast",
-  "sceneEn": "You are recommending a podcast you listen to. Describe what it is about, say why it is useful and ask what they are interested in.",
+  "sceneEn": "You are recommending to a friend a podcast you listen to. Describe what it is about, say why it is useful and ask what they are interested in.",
   "partnerEn": "a friend looking for something to listen to on the way",
   "openingEn": "I need something for my commute. Do you listen to podcasts at all?",
   "goalEn": "A podcast has been recommended, its subject and its value have been described and your friend's interests have been found out."

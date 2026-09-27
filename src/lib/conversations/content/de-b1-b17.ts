@@ -439,7 +439,7 @@ export const deB1B17: Conversation[] = [
       word("Son", { de: "die Begründung", tr: "gerekçe" }),
       { say: [tr("İlk kalıbımız sınırlamayı anlatıyor. Kimin sınırladığı söylenmiyor; kural kendini söylüyor.")] },
       { say: [tr("Örnek:"), de("Der Zugang wird auf zehn Personen beschränkt."), tr("Tekrar et:"), de("Der Zugang wird auf zehn Personen beschränkt")], expect: repeat("Der Zugang wird auf zehn Personen beschränkt") },
-      { say: [tr("Sıra sende: 'Girişler engellenmez.'")], expect: produce("Die Eingänge werden nicht behindert", [tr("Çoğul özne, çoğul yardımcı fiil:"), de("Die Eingänge werden nicht behindert."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Ziyaretçiler engellenmez.'")], expect: produce("Die Besucher werden nicht behindert", [tr("Çoğul özne, çoğul yardımcı fiil:"), de("Die Besucher werden nicht behindert."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız neyin gerektiğini söylüyor: bir sıfat yüklem konumunda, o yüzden çekilmiyor.")] },
       { say: [tr("Şimdi: 'Yazılı bir gerekçe gerekli.'")], expect: produce("Eine schriftliche Begründung ist erforderlich", [tr("Öznede sıfat çekiliyor, yüklemdeki sıfat çekilmiyor:"), de("Eine schriftliche Begründung ist erforderlich."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Halle ist nur begrenzt zugänglich."), tr("cümlesi doğru mu?")], expect: truefalse("Die Halle ist nur begrenzt zugänglich.", true, [tr("Doğru. Buradaki iki sözcük de yüklem konumunda, o yüzden ikisi de çekilmiyor.")]) },

@@ -1,8 +1,8 @@
 [
  {
-  "tr": "Sürecin kaydı",
+  "tr": "Yüzeyin işlenmesi",
   "kind": "titleTr",
-  "de": "Das Protokoll des Vorgangs"
+  "de": "Die Bearbeitung der Oberfläche"
  },
  {
   "tr": "Tamamlandığında",
@@ -225,11 +225,6 @@
   "de": "Bauteil"
  },
  {
-  "tr": "uzunluk",
-  "kind": "vocab.tr",
-  "de": "Länge"
- },
- {
   "tr": "doğruluk",
   "kind": "vocab.tr",
   "de": "Genauigkeit"
@@ -278,11 +273,6 @@
   "tr": "algılayıcı",
   "kind": "vocab.tr",
   "de": "Sensor"
- },
- {
-  "tr": "belgelemek",
-  "kind": "vocab.tr",
-  "de": "bescheinigen"
  },
  {
   "tr": "kanıtla desteklemek",
@@ -650,7 +640,7 @@
   "de": "Feld und Fußnote stimmen nicht überein."
  },
  {
-  "tr": "İkinci bir kontrol gerekliliği açık.",
+  "tr": "İkinci bir kontrolün gerekliliği açık.",
   "kind": "say.tr",
   "de": "Das Erfordernis einer zweiten Prüfung ist klar."
  },
@@ -775,7 +765,7 @@
   "de": "Einen Teil geben sie preis, einen Teil verbergen sie."
  },
  {
-  "tr": "Bir tane daha: Üçüncü bir deney gerekliliği açık.",
+  "tr": "Bir tane daha: Üçüncü bir deneyin gerekliliği açık.",
   "kind": "say.tr",
   "de": "Noch eins: Das Erfordernis eines dritten Versuchs ist klar."
  },
@@ -915,7 +905,7 @@
   "de": "Hallo! Heute lernen wir, eine Anleitung kurz zu schreiben: was zuerst gemacht wurde, warum es so war, was danach kam."
  },
  {
-  "tr": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kim değil ne olduğunu göstermesi gerekir.",
+  "tr": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kimin yaptığını değil neyin yapıldığını göstermesi gerekir.",
   "kind": "say.tr",
   "de": "geschrieben. Im Vorgangsprotokoll ist das keine Stilfrage; die Aufzeichnung soll nicht das Wer, sondern das Was zeigen."
  },

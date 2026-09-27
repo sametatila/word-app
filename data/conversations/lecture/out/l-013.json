@@ -76,7 +76,7 @@
  { "tr": "Zarf ortada; belirtisiz nötr isim:", "en": "The adverb in the middle; an indefinite neuter noun:" },
  { "tr": "zu mastarın önüne: fit zu bleiben:", "en": "zu goes before the infinitive: fit zu bleiben:" },
  { "tr": "'Çiçekleri suluyorum' demek. Lütfen", "en": "It means 'I am watering the flowers'. Please say" },
- { "tr": "'Evin kaç odası var?' demek. Lütfen", "en": "It means 'How many rooms does the apartment have?'. Please say" },
+ { "tr": "'Evin kaç odası var?' demek. Lütfen", "en": "It means 'How many rooms does the apartment have?' Please say" },
  { "tr": "'weil'den sonra fiil en sona gider:", "en": "after weil the verb goes right to the end:" },
  { "tr": "Asıl fiil çekilmeden en sona gider:", "en": "The main verb goes to the end unconjugated:" },
  { "tr": "Ayrılmayan fiilin ortacı ge- almaz:", "en": "The participle of an inseparable verb takes no ge-:" },
@@ -135,9 +135,9 @@
  { "tr": "Sıra sende: 'Bu bakımdan haklısın.'", "en": "Your turn: 'You are right on that count.'" },
  { "tr": "Sıra sende: 'Bu tek umut ışığıydı.'", "en": "Your turn: 'That was the one ray of hope.'" },
  { "tr": "Sıra sende: 'Eski fırın kapatıldı.'", "en": "Your turn: 'The old bakery was closed down.'" },
- { "tr": "Sıra sende: 'Girişler engellenmez.'", "en": "Your turn: 'The entrances are not blocked.'" },
+ { "tr": "Sıra sende: 'Ziyaretçiler engellenmez.'", "en": "Your turn: 'Visitors are not obstructed.'" },
  { "tr": "Sıra sende: 'Görmeden satın almam.'", "en": "Your turn: 'I will not buy it unseen.'" },
- { "tr": "Sıra sende: 'Müzik üstlenilebilir.'", "en": "Your turn: 'The music can be taken on.'" },
+ { "tr": "Sıra sende: 'Müzik üstlenilebilir.'", "en": "Your turn: 'The music can be taken care of.'" },
  { "tr": "Sıra sende: 'Zamanlama her şeydir.'", "en": "Your turn: 'Timing is everything.'" },
  { "tr": "Son bir soru: 'Güncel durum nedir?'", "en": "One last question: 'What is the current status?'" },
  { "tr": "Son bir soru: 'Hangi basamaktayız?'", "en": "One last question: 'What escalation level are we at?'" },
@@ -148,5 +148,5 @@
  { "tr": "Son: 'Hazır olursan yardım ederim.'", "en": "Last: 'If you are ready I will help.'" },
  { "tr": "Son: 'Hazırcevaplık öğrenilebilir.'", "en": "Last: 'Quick wit can be learned.'" },
  { "tr": "Son: 'Karar yazısı dün gönderildi.'", "en": "Last: 'The decision letter was sent yesterday.'" },
- { "tr": "Son: 'Katılım ancak birlikte olur.'", "en": "Last: 'Participation only happens together.'" }
+ { "tr": "Son: 'Katılım ancak birlikte olur.'", "en": "Last: 'Participation is only possible together.'" }
 ]

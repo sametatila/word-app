@@ -62,7 +62,7 @@
  {
   "tr": "Anladım galiba, anladım mı?",
   "kind": "openingTr",
-  "de": "Ich glaube, ich folge dir — tue ich das?"
+  "de": "Ich glaube, ich habe es verstanden – oder doch nicht?"
  },
  {
   "tr": "Sözlük bu işi bitirmiyor mu?",
@@ -85,12 +85,12 @@
   "de": "Sie müssen sich nur anpassen, oder?"
  },
  {
-  "tr": "Bizde buna böyle deniyor, olmaz mı?",
+  "tr": "Bizde buna böyle denir, değil mi?",
   "kind": "openingTr",
-  "de": "Bei uns heißt das eben so, geht das nicht?"
+  "de": "Bei uns heißt das eben so, oder?"
  },
  {
-  "tr": "Rakamlar zaten konuşuyor, değil mi?",
+  "tr": "Rakamlar ortada, değil mi?",
   "kind": "openingTr",
   "de": "Die Zahlen sprechen doch für sich, oder?"
  },
@@ -165,7 +165,7 @@
   "de": "Lehrt die festen Wortverbindungen des Redens über Migration; das Wort für die Zahl und das Wort für den Menschen sind nicht dasselbe."
  },
  {
-  "tr": "Uyum tartışmasında kabul edip karşı çıkmayı öğretir; ödün vermeden söylenen karşı çıkış tartışmayı kapatıyor.",
+  "tr": "Uyum tartışmasında kabul edip karşı çıkmayı öğretir; ödün vermeden söylenen karşı çıkış tartışmayı kapatır.",
   "kind": "summary",
   "de": "Lehrt, in der Integrationsdebatte zuzugeben und zu widersprechen; ein Widerspruch ohne Zugeständnis beendet das Gespräch."
  },
@@ -860,7 +860,7 @@
   "de": "Um Zahl und Recht zu trennen, werden zwei Passivformen verwendet:"
  },
  {
-  "tr": "Aynı şeyi iki kurumun ağzında söylemek için iki yer adı yeter:",
+  "tr": "Aynı şeyi iki kurumun ağzında söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um dasselbe im Mund zweier Institutionen zu sagen, genügen zwei Ortsangaben:"
  },
@@ -915,9 +915,9 @@
   "de": "gemeinsames Modalverb"
  },
  {
-  "tr": "araya çekince",
+  "tr": "araya sıkıştırma",
   "kind": "say.tr",
-  "de": "Vorbehalt dazwischen"
+  "de": "Einschub dazwischen"
  },
  {
   "tr": "bir yargıdır,",
@@ -1127,7 +1127,7 @@
  {
   "tr": "Birini yerinden yurdundan etmeye",
   "kind": "say.tr",
-  "de": "Jemanden von Heim und Boden zu vertreiben heißt"
+  "de": "Jemanden von Haus und Hof zu vertreiben heißt"
  },
  {
   "tr": "Kuşaklar arasındaki anlaşmazlığa",
@@ -1312,7 +1312,7 @@
  {
   "tr": "Şimdi aidiyeti eksilterek anlatacaksın.",
   "kind": "say.tr",
-  "de": "Jetzt erzählst du Zugehörigkeit mit Auslassung."
+  "de": "Jetzt erzählst du mit Auslassung von Zugehörigkeit."
  },
  {
   "tr": "sanat ve edebiyatın seçkin katmanına ise",
@@ -1392,7 +1392,7 @@
  {
   "tr": "İnsanın kendine ve çevresine uzak düşmesine",
   "kind": "say.tr",
-  "de": "Dass ein Mensch sich selbst und seiner Umgebung fern wird, heißt"
+  "de": "Dass ein Mensch sich selbst und seiner Umgebung fremd wird, heißt"
  },
  {
   "tr": "sözcüğün içinde durduğu anlam çevresine ise",
@@ -1532,7 +1532,7 @@
  {
   "tr": "Eşdizim seçmek konuyu seçmektir: tablo mu, insan mı.",
   "kind": "say.tr",
-  "de": "Die Wortverbindung zu wählen heißt das Thema zu wählen: Statistik oder Mensch."
+  "de": "Die Wortverbindung zu wählen heißt, das Thema zu wählen: Statistik oder Mensch."
  },
  {
   "tr": "Bir toplulukta kimin önde geldiğini belirleyen düzene",
@@ -1567,7 +1567,7 @@
  {
   "tr": "Yüksek kültür bir üsluptur, başat kültür bir iddiadır.",
   "kind": "say.tr",
-  "de": "Hochkultur ist ein Register, Leitkultur ein Anspruch."
+  "de": "Hochkultur ist ein Stil, Leitkultur ein Anspruch."
  },
  {
   "tr": "Şimdi bugünün kuralı. Aktarma fiili yetkiyi de gösterir:",
@@ -1627,7 +1627,7 @@
  {
   "tr": "Şimdi aynı topluluğu iki kurumun ağzından adlandıracaksın.",
   "kind": "say.tr",
-  "de": "Jetzt benennst du dieselbe Gruppe im Mund zweier Institutionen."
+  "de": "Jetzt benennst du dieselbe Gruppe aus dem Mund zweier Institutionen."
  },
  {
   "tr": "Şimdi sen kur: Harçlar olmasaydı sınıflı toplum silinirdi.",
@@ -1707,7 +1707,7 @@
  {
   "tr": "Bir tane daha: Yüksek kültür bir üsluptur, kanon bir iddiadır.",
   "kind": "say.tr",
-  "de": "Noch eins: Hochkultur ist ein Register, der Kanon ein Anspruch."
+  "de": "Noch eins: Hochkultur ist ein Stil, der Kanon ein Anspruch."
  },
  {
   "tr": "Dilin zamanla dönüşmesi demek.",
@@ -1855,9 +1855,9 @@
   "de": "Das heißt, dass die Familie durch Migration gekommen ist."
  },
  {
-  "tr": "ise bir tabloyu. İkisini aynı cümlede kullanmak insanı sayıya indirir.",
+  "tr": "ise bir tabloyu. İkisini karıştırmak insanı sayıya indirir.",
   "kind": "say.tr",
-  "de": "dagegen eine Statistik. Beide im selben Satz zu benutzen macht aus dem Menschen eine Zahl."
+  "de": "dagegen eine Statistik. Beide zu verwechseln macht aus dem Menschen eine Zahl."
  },
  {
   "tr": "Melezlik işareti olsa da, uyum yeteneği yalnız bir taraftan isteniyor.",
@@ -1882,7 +1882,7 @@
  {
   "tr": "Şimdi sıra sende: Dışlamanın yaptığı şey bir marjinal grup yaratmak.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Was die Ausschließung tut, ist eine Randgruppe zu schaffen."
+  "de": "Jetzt bist du dran: Was die Ausgrenzung tut, ist eine Randgruppe zu schaffen."
  },
  {
   "tr": "Tartışmayı sürdürmek isteyen, karşısındakine haklı olduğu yeri bırakır.",
@@ -2082,7 +2082,7 @@
  {
   "tr": "dediğinde düşen fiili yalnız içeriden biri tamamlar. Bu yüzden eksiltme hem bir kısaltma hem de bir kapıdır.",
   "kind": "say.tr",
-  "de": "– sagst du das, ergänzt nur jemand von innen das weggelassene Verb. Darum ist die Auslassung zugleich eine Kürzung und eine Tür."
+  "de": "– sagst du das, ergänzt nur jemand, der dazugehört, das weggelassene Verb. Darum ist die Auslassung zugleich eine Kürzung und eine Tür."
  },
  {
   "tr": "dediğinde karşındaki savunmayı bırakır ve asıl cümleyi duyar. Ödünsüz karşı çıkış ise haklı olsa bile duyulmaz.",

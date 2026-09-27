@@ -422,7 +422,7 @@
  {
   "tr": "Su temini iki saat kesiliyor.",
   "kind": "say.tr",
-  "de": "Die Wasserversorgung steht zwei Stunden still."
+  "de": "Die Wasserversorgung wird zwei Stunden lang unterbrochen."
  },
  {
   "tr": "Hayvan ve ekin bakılan yere",
@@ -575,7 +575,7 @@
   "de": "Jetzt erzählst du, wie es hier früher war."
  },
  {
-  "tr": "çevresi kara ile çevrili durgun suya ise",
+  "tr": "dört yanı karayla çevrili durgun suya ise",
   "kind": "say.tr",
   "de": "und das ruhige Wasser, das von Land umgeben ist, heißt"
  },
@@ -597,7 +597,7 @@
  {
   "tr": "Dilekçeyi imzalayıp imzalamadığımızı sordu.",
   "kind": "say.tr",
-  "de": "Sie hat gefragt, ob wir die Petition unterschrieben hatten."
+  "de": "Sie hat gefragt, ob wir die Petition unterschrieben haben."
  },
  {
   "tr": "Şimdi gidiş geliş kurallarını anlatacaksın.",
@@ -627,12 +627,12 @@
  {
   "tr": "Bir tane daha: Afişi görüp görmediğimizi sordu.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie hat gefragt, ob wir das Plakat gesehen hatten."
+  "de": "Noch eins: Sie hat gefragt, ob wir das Plakat gesehen haben."
  },
  {
-  "tr": "Şehri yöneten seçilmiş kişi demek. Boş yere ise",
+  "tr": "Şehri yöneten seçilmiş kişi demek. Boş alana ise",
   "kind": "say.tr",
-  "de": "Das heißt die gewählte Person, die die Stadt führt. Und der freie Platz heißt"
+  "de": "Das heißt die gewählte Person, die die Stadt führt. Und die freie Fläche heißt"
  },
  {
   "tr": "Şimdi bugünün kuralı. Değişiklikten ÖNCE olan iş",
@@ -662,7 +662,7 @@
  {
   "tr": "Şimdi sıra sende: Gölü temizlemeye karar verdiler.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Sie haben entschieden, den See zu reinigen."
+  "de": "Jetzt bist du dran: Sie haben beschlossen, den See zu reinigen."
  },
  {
   "tr": "Bir tane daha: Oylamadan önce ağaçları kesmişlerdi.",

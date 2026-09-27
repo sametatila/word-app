@@ -102,7 +102,7 @@
  { "tr": "der rote Faden / eine Brücke schlagen", "kind": "focus", "en": "der rote Faden / eine Brücke schlagen" },
  { "tr": "Evet, 15 Mayıs'ta. Uzatmak istiyorum.", "kind": "turn", "en": "Yes, on May 15. I would like to extend it." },
  { "tr": "fiili isme çevirmek: nach der Prüfung", "kind": "focus", "en": "turning the verb into a noun: nach der Prüfung" },
- { "tr": "Geç geleceğim, çünkü trafikte kaldım.", "kind": "speaking", "en": "I will be late, because I am stuck in traffic." },
+ { "tr": "Geç geleceğim, çünkü trafikte kaldım.", "kind": "speaking", "en": "I will be late because I am stuck in traffic." },
  { "tr": "İş görüşmesinde kendini anlatıyorsun.", "kind": "speaking.situation", "en": "You are describing yourself in a job interview." },
  { "tr": "İtirazını gerekçelendir (…, jedoch …)", "kind": "writing.checklist", "en": "Give reasons for your objection (…, jedoch …)" },
  { "tr": "Lisa neden sadece dört gün çalışıyor?", "kind": "question", "en": "Why does Lisa work only four days?" },

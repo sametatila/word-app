@@ -2,117 +2,14 @@
  "packet": "e-014",
  "words": [
   {
-   "tr": "Kısmen katılıyorum. Ancak bugün yayımlanan araştırma başka bir sayı gösteriyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "I agree partly. However, the survey that was published today shows a different figure."
-   ],
-   "ctx": [
-    "B1.7 Opinion and debate · Researcher"
-   ]
-  },
-  {
-   "tr": "Kurtarma paketinin ardında kimsenin fiyatlamadığı bir spekülatif balon duruyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Behind the bailout package stands a speculative bubble that nobody priced in."
-   ],
-   "ctx": [
-    "C1.9 Money and the forecast · Agent"
-   ]
-  },
-  {
-   "tr": "Öneriyi geri dönülemez diye adlandırdınız. Meslektaşınız tam tersini savunuyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "You called the proposal irreversible. Your colleague postulates the opposite."
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · Presenter"
-   ]
-  },
-  {
-   "tr": "„an impulsive colleague is not the same as an unforgiving one“ ne demek istiyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What is the point of „an impulsive colleague is not the same as an unforgiving one“?"
-   ],
-   "ctx": [
-    "B2.9 Relationships and psychology · okuma sorusu"
-   ],
-   "options": [
-    "It separates a habit from an intention",
-    "It blames the colleague",
-    "It excuses the exclusion",
-    "It describes two teams"
-   ]
-  },
-  {
-   "tr": "Başka bir şey çıkmazsa aşamanın iki hafta ertelendiğini kayda geçirebilir miyiz?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Can we record that the milestone is moved by two weeks, provided nothing else comes up?"
-   ],
-   "ctx": [
-    "B2.1 Professional communication · Moderator"
-   ]
-  },
-  {
-   "tr": "Bir gazete yazısına okur mektubu yaz: görüşünü söyle ve karşı görüşe de yer ver.",
-   "kind": "writing.prompt",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B1.7 Opinion and debate · yazma"
-   ]
-  },
-  {
-   "tr": "Broşürde salım azaltımı, çalışmada karbondan arınma. Plan ikisini de kullanıyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "In the brochure it is emission reduction; in the study it is decarbonization. The plan uses both."
-   ],
-   "ctx": [
-    "C1.8 Climate and the city · Chair"
-   ]
-  },
-  {
-   "tr": "Gazetenin savunduğu şey hesap verebilirlik; yanlılık başından beri orada olmalı.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "What the paper argues is accountability; the bias must have been there from the start."
-   ],
-   "ctx": [
-    "B2.4 Media and reported speech · Reporter"
-   ]
-  },
-  {
-   "tr": "İhtiyat ilkesi koruma sorumluluğunun imar planından önce gelmesini gerektiriyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "The precautionary principle demands that the responsibility to protect be prior to the zoning plan."
-   ],
-   "ctx": [
-    "C1.8 Climate and the city · Planner"
-   ]
-  },
-  {
    "tr": "Malların 4 Martta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "It is claimed that the goods were dispatched on 4 March. Our file says 10 March."
+    "It is claimed that the goods were dispatched on March 4. Our file says March 10."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Representative"
+    "B2.2 Negotiating and complaining · Representative"
    ]
   },
   {
@@ -134,18 +31,7 @@
     "It is reported that the sensor was calibrated in May. The entry in the manual says nothing."
    ],
    "ctx": [
-    "B2.3 Process and passive · Engineer"
-   ]
-  },
-  {
-   "tr": "Ara raporu okuduktan sonra bunu kabul ediyorum. Ekin dosyalanması onunda kayıtlı.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Having read the interim report, I accept that. The filing of the enclosure is recorded on the tenth."
-   ],
-   "ctx": [
-    "B2.10 Formal correspondence · Officer"
+    "B2.3 The passive in all its forms · Engineer"
    ]
   },
   {
@@ -164,7 +50,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Good. I would arguably make clear one last point: the right of return remains contractual."
+    "Good. I would like to make one last point clear: the right of return remains contractual."
    ],
    "ctx": [
     "B2.10 Formal correspondence · Agent"
@@ -200,29 +86,18 @@
     "Agreed. Having read the provision again, I think the deviation was within the guideline."
    ],
    "ctx": [
-    "B2.3 Process and passive · Manager"
+    "B2.3 The passive in all its forms · Manager"
    ]
   },
   {
-   "tr": "O hâlde eksiği sayalım: diaspora miras dilini koruyor, gettolaşma ise sessizliği.",
+   "tr": "Konuşma öğretmenin telaffuzunun düzeldiğini söyledi. Hatalara rağmen düzeyin iyi.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Then let us count what is missing: the diaspora keeps the heritage language; the enclave, the silence."
+    "Your speaking teacher told me that your pronunciation had improved. Despite the mistakes, the level is good."
    ],
    "ctx": [
-    "C1.5 Belonging and its words · Researcher"
-   ]
-  },
-  {
-   "tr": "Sıcak bir not ile kuru bir not aynı şeyi söyler; kaydı tek başına hitap belirler.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "A cordial note and a matter-of-fact note say the same thing; the salutation alone sets the register."
-   ],
-   "ctx": [
-    "C1.1 Register and tone · Ms. Neuhaus"
+    "B1.6 Learning and progress · Tutor"
    ]
   },
   {
@@ -237,6 +112,28 @@
    ]
   },
   {
+   "tr": "Yüksek kültür bir üslup; başat kültür bir iddia. Sokağın kendisinde ikisi de yok.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "High culture is a register; dominant culture is a claim. The street itself has neither."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · Officer"
+   ]
+  },
+  {
+   "tr": "Ailenin bir fotoğrafı nasıl olur? Kuzenime düğününde bir tane verdiler, çok sevdi.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "How about a photograph of the family? My cousin got one for her wedding and she loved it."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · Jonas"
+   ]
+  },
+  {
    "tr": "Birebir alıntılandığında ikinci satır sitem gibi okunuyor. Ağırlığı sona koyardım.",
    "kind": "turn",
    "n": 1,
@@ -245,6 +142,17 @@
    ],
    "ctx": [
     "C1.1 Register and tone · Mr. Wolf"
+   ]
+  },
+  {
+   "tr": "Genel olarak bakıldığında sonuç geçici sayılabilir ve ikinci bir deneme gerekiyor.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "On balance the result is arguably provisional and a second trial is required."
+   ],
+   "ctx": [
+    "B2.5 Science and technology · konuşma"
    ]
   },
   {
@@ -270,7 +178,7 @@
    ]
   },
   {
-   "tr": "Topluluğun provasını izlemiş olarak son gecenin görkemli bir betimini bekliyordum.",
+   "tr": "Topluluğun provasını izlediğim için son gecenin görkemli bir betimini bekliyordum.",
    "kind": "turn",
    "n": 1,
    "de": [
@@ -285,10 +193,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "A stylistic device is a choice; a stylistic break is a mistake. I could not always tell them apart."
+    "A stylistic device is a choice; a break in style is a mistake. I could not always tell them apart."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Author"
+    "C1.10 Evidence, judgment and choice · Author"
    ]
   },
   {
@@ -297,7 +205,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.3 Process and passive · yazma"
+    "B2.3 The passive in all its forms · yazma"
    ]
   },
   {
@@ -319,7 +227,7 @@
     "One advocates a claim; another merely affirms it. I think I affirmed for a whole term."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Author"
+    "C1.10 Evidence, judgment and choice · Author"
    ]
   },
   {
@@ -343,14 +251,34 @@
    ]
   },
   {
-   "tr": "Yüksek kültür bir kayıt; kılavuz kültür bir iddia. Sokağın kendisinde ikisi de yok.",
+   "tr": "Örnekte enfeksiyon yok. Ancak nisanda çekilen röntgen eklemde bir sorun gösteriyor.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "High culture is a register; guiding culture is a claim. The street itself has neither."
+    "The sample shows no infection. However, the x-ray that was taken in April shows a problem in the joint."
    ],
    "ctx": [
-    "C1.5 Belonging and its words · Officer"
+    "B1.8 The health system · Doctor"
+   ]
+  },
+  {
+   "tr": "Yönetmen odayı betimlemiş olsaydı eser ikna edici olurdu, hele başlangıç güçlüyken.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "If the director had portrayed the room, the work would have been convincing, especially since the start was strong."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · Critic"
+   ]
+  },
+  {
+   "tr": "Bir arkadaşına bir uygulamanın nasıl kullanıldığını adım adım anlatan bir mesaj yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.9 Media and technology · yazma"
    ]
   },
   {
@@ -361,22 +289,11 @@
     "It is reported that the experiment was repeated twice. The cohort is thought to have been too small."
    ],
    "ctx": [
-    "B2.5 Science and method · Researcher"
+    "B2.5 Science and technology · Researcher"
    ]
   },
   {
-   "tr": "Görünüşe göre jüri sürüklenmiş. Her şey bir arada, yorum tartışmalı biçimde tekdüze.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Apparently the jury was carried away. On balance the interpretation is arguably monotonous."
-   ],
-   "ctx": [
-    "B2.7 Culture and the arts · Visitor"
-   ]
-  },
-  {
-   "tr": "Konut sıkıntısının bu ilçede en ağır olduğu söyleniyor. Fiyatı burada ne sürüklüyor?",
+   "tr": "Konut sıkıntısının bu ilçede en ağır olduğu söyleniyor. Fiyatı burada ne belirliyor?",
    "kind": "turn",
    "n": 1,
    "de": [
@@ -387,17 +304,6 @@
    ]
   },
   {
-   "tr": "O hâlde iki koşulu yazıya geçireceğim, böylece işçi temsilciliği kuralına da uyarız.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Then I will put the two conditions in writing, and we can comply with the works council rule."
-   ],
-   "ctx": [
-    "B2.8 Money and career · Colleague"
-   ]
-  },
-  {
    "tr": "O maddeyi kontrol etmeden imzalamış olamazlar. Faizsiz bir plan istememiz gerekirdi.",
    "kind": "turn",
    "n": 1,
@@ -405,7 +311,7 @@
     "They can't have signed that clause without a check. We should have asked for an interest-free plan."
    ],
    "ctx": [
-    "B2.8 Money and career · Manager"
+    "B2.8 Money and career strategy · Manager"
    ]
   },
   {
@@ -416,7 +322,7 @@
     "Having read the personnel file, I can see the case. The budget plan, however, is fixed until December."
    ],
    "ctx": [
-    "B2.8 Money and career · Manager"
+    "B2.8 Money and career strategy · Manager"
    ]
   },
   {
@@ -431,6 +337,17 @@
    ]
   },
   {
+   "tr": "Bu haklı bir eleştiri, kabul ediyorum. Haftamı planlama şeklimi şimdiden değiştirdim.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "That is fair, and I accept it. I have already changed how I plan my week."
+   ],
+   "ctx": [
+    "B1.1 My career so far · Selin"
+   ]
+  },
+  {
    "tr": "Eşitlik ilkesi insan onurunun pazarlık konusu değil dokunulmaz olmasını gerektiriyor.",
    "kind": "speaking",
    "n": 1,
@@ -439,17 +356,6 @@
    ],
    "ctx": [
     "C1.5 Belonging and its words · konuşma"
-   ]
-  },
-  {
-   "tr": "Görünüşe göre bu iddia makul ama her şey bir arada, rakam tartışmalı biçimde kuşkulu.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Apparently the claim is plausible, but on balance the figure is arguably questionable."
-   ],
-   "ctx": [
-    "B2.6 Society and the economy · Researcher"
    ]
   },
   {
@@ -464,6 +370,17 @@
    ]
   },
   {
+   "tr": "Ara raporu okuduktan sonra bunu kabul ediyorum. Ekin dosyalanması ayın onunda kayıtlı.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Having read the interim report, I accept that. The filing of the enclosure is recorded on the tenth."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · Officer"
+   ]
+  },
+  {
    "tr": "Basın bülteninde gerileme, sizin modelinizde durgunluk. Piyasa hangi sözcüğü okuyacak?",
    "kind": "turn",
    "n": 1,
@@ -475,17 +392,6 @@
    ]
   },
   {
-   "tr": "Biz ona yabancılık desek de bu ötekilik — derste pek adlandırılmayan bir fark olsa da.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Much as we call it strangeness, it is otherness — albeit a difference the class rarely names."
-   ],
-   "ctx": [
-    "C1.4 Literature and interpretation · konuşma"
-   ]
-  },
-  {
    "tr": "Böyle bir örüntü hiç bu kadar erken çıkmadı. İkinci denemeden önce nadiren soru doğar.",
    "kind": "turn",
    "n": 1,
@@ -493,7 +399,18 @@
     "Never has such a pattern emerged so early. Rarely does a question arise before the second trial."
    ],
    "ctx": [
-    "B2.5 Science and method · Lecturer"
+    "B2.5 Science and technology · Lecturer"
+   ]
+  },
+  {
+   "tr": "Doğrusu öyle. Bilirkişi raporunu ne kadar olumlu bulsak da idari kararı adlandırmıyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Granted. Much as we welcome the expert report, it does not name the administrative decision."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · Visitor"
    ]
   },
   {
@@ -508,6 +425,17 @@
    ]
   },
   {
+   "tr": "İnsancıl, tabii. Toprak erozyonu bir sonraki kota kararlaşmadan o tarlayı tüketebilir.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Humane indeed. Soil erosion may well deplete that field before the next quota is agreed."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · Researcher"
+   ]
+  },
+  {
    "tr": "Konut sıkıntısıyla karşılaşan birçok aile taşındı. Eşitsizliğin ölçümü orada başlıyor.",
    "kind": "turn",
    "n": 1,
@@ -516,6 +444,17 @@
    ],
    "ctx": [
     "B2.6 Society and the economy · Official"
+   ]
+  },
+  {
+   "tr": "O hâlde eksiği sayalım: diaspora miras dilini koruyor, kapalı topluluk ise sessizliği.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Then let us count what is missing: the diaspora keeps the heritage language; the enclave, the silence."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · Researcher"
    ]
   },
   {
@@ -534,32 +473,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "That is fair. The profitability is expected to fall, so a raise was refused for operational reasons."
+    "That is fair. Profitability is expected to fall, so a raise was refused for operational reasons."
    ],
    "ctx": [
-    "B2.8 Money and career · Manager"
-   ]
-  },
-  {
-   "tr": "Pürüzü görsem de plan uygulanabilir kalıyor — doğrusu umduğumuzdan az manevra alanıyla.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Much as I see the snag, the plan stays viable — granted, with less leeway than we hoped."
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · konuşma"
-   ]
-  },
-  {
-   "tr": "Pürüzü görsem de plan uygulanabilir kalıyor. Bu tartışmanın yaptığı şey kutuplaştırmak.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Much as I see the snag, the plan stays viable. What the debate does is polarize."
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · Author"
+    "B2.8 Money and career strategy · Manager"
    ]
   },
   {
@@ -585,14 +502,25 @@
    ]
   },
   {
-   "tr": "O hâlde yarın bir düzeltme yayımlanıyor. Böyle bir olay daha önce hiç duruşmaya gitmedi.",
+   "tr": "O hâlde yarın bir düzeltme yayımlanacak. Böyle bir olay daha önce hiç duruşmaya gitmedi.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Then a correction is published tomorrow. Never before has such a case reached the hearing."
+    "Then a correction will be published tomorrow. Never before has such a case reached the hearing."
    ],
    "ctx": [
     "B2.4 Media and reported speech · Editor"
+   ]
+  },
+  {
+   "tr": "Sıcak bir not ile kuru bir not aynı şeyi söyler; dil düzeyini tek başına hitap belirler.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "A cordial note and a matter-of-fact note say the same thing; the salutation alone sets the register."
+   ],
+   "ctx": [
+    "C1.1 Register and tone · Ms. Neuhaus"
    ]
   },
   {
@@ -614,7 +542,7 @@
     "Someone should have lowered the pressure before the trial. Being loaded first, the crate stayed in the workshop."
    ],
    "ctx": [
-    "B2.3 Process and passive · Manager"
+    "B2.3 The passive in all its forms · Manager"
    ]
   },
   {
@@ -633,10 +561,21 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "What the council calls land consolidation, the neighbour calls land speculation. Both are accurate."
+    "What the council calls land consolidation, the neighbor calls land speculation. Both are accurate."
    ],
    "ctx": [
     "C1.7 Land, food and the soil · Planner"
+   ]
+  },
+  {
+   "tr": "Görünüşe göre jüri kendini kaptırmış. Genel olarak bakıldığında yorum tekdüze sayılabilir.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Apparently the jury was carried away. On balance the interpretation is arguably monotonous."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · Visitor"
    ]
   },
   {
@@ -651,23 +590,14 @@
    ]
   },
   {
-   "tr": "Türüne uygun, tabii. Toprak erozyonu bir sonraki kota kararlaşmadan o tarlayı tüketebilir.",
+   "tr": "Birimi ne kadar ayırmak istesek de iş kurum içinde kalıyor. Bunu cuma yönetime taşıyacağım.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Species-appropriate indeed. Soil erosion may well deplete that field before the next quota is agreed."
+    "Much as we would like to spin off the unit, the work stays in-house. I will take that to the board on Friday."
    ],
    "ctx": [
-    "C1.7 Land, food and the soil · Researcher"
-   ]
-  },
-  {
-   "tr": "Bir arkadaşına bir uygulamayı ya da bir işi nasıl yapacağını adım adım yazan bir mesaj yaz.",
-   "kind": "writing.prompt",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "A2.9 Media and technology · yazma"
+    "C1.6 Work and the bargaining table · Manager"
    ]
   },
   {
@@ -682,17 +612,6 @@
    ]
   },
   {
-   "tr": "Kayda geçti. Ölçek açısından ince dokulu bir mahalle erişilebilirliğe daha iyi hizmet eder.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Noted. In terms of scale, a fine-grained quarter would tend to serve accessibility better."
-   ],
-   "ctx": [
-    "C1.8 Climate and the city · Chair"
-   ]
-  },
-  {
    "tr": "İkinci kontrolün isteğe bağlı olduğu hiçbir yerde yazmıyor. Bu kılavuz, benim görüşüm değil.",
    "kind": "turn",
    "n": 1,
@@ -700,18 +619,29 @@
     "Nowhere is it written that a second check is optional. That is the guideline, not my opinion."
    ],
    "ctx": [
-    "B2.3 Process and passive · Engineer"
+    "B2.3 The passive in all its forms · Engineer"
    ]
   },
   {
-   "tr": "Yazınız göz önüne alınırsa, konu çözülmüş görünüyor. Marta kadar kalan tutar ödenmiş olacak.",
+   "tr": "Pürüzü kabul etsem de plan uygulanabilir kalıyor — doğrusu umduğumuzdan az manevra alanıyla.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "Much as I acknowledge the snag, the plan stays viable — granted, with less leeway than we hoped."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · konuşma"
+   ]
+  },
+  {
+   "tr": "Pürüzü kabul etsem de plan uygulanabilir kalıyor. Bu tartışmanın yaptığı şey kutuplaştırmak.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "In view of your letter, it seems to be settled. By March the remaining amount will have been paid."
+    "Much as I acknowledge the snag, the plan stays viable. What the debate does is polarize."
    ],
    "ctx": [
-    "B2.10 Formal correspondence · Officer"
+    "C1.2 Dissent without rupture · Author"
    ]
   },
   {
@@ -733,7 +663,29 @@
     "To misrepresent a study is a distortion, not a truism. You never did that, and it matters."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Tutor"
+    "C1.10 Evidence, judgment and choice · Tutor"
+   ]
+  },
+  {
+   "tr": "Görünüşe göre bu iddia makul ama genel olarak bakıldığında rakam kuşku uyandırıyor denebilir.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Apparently the claim is plausible, but on balance the figure is arguably questionable."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · Researcher"
+   ]
+  },
+  {
+   "tr": "Ona ne kadar yabancılık demeyi sevsek de aslında bu ötekilik — ve bu fark okumanın tamamıdır.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Much as we like to call it strangeness, it is really otherness — and the difference is the whole reading."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation · Critic"
    ]
   },
   {
@@ -752,21 +704,21 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "The square was revitalized; the neighbours, less so. We have no gentrification here — we densify and refurbish."
+    "The square was revitalized; the neighbors, less so. We have no gentrification here — we densify and refurbish."
    ],
    "ctx": [
     "C1.8 Climate and the city · Resident"
    ]
   },
   {
-   "tr": "O hâlde yazıya geçirin. Toplu sözleşme özerkliği görüşmelerin serbest yürütülmesini gerektirir.",
+   "tr": "Özünde evet. Genel olarak bakıldığında hâlâ değiştirebileceğimiz kısım belki de sözcük seçimi.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Then put it in writing. The collective bargaining autonomy demands that the conduct of negotiations be free."
+    "In essence, yes. On balance the choice of words is arguably the part we can still change."
    ],
    "ctx": [
-    "C1.6 Work and the bargaining table · Manager"
+    "B2.9 Relationships and psychology · Colleague"
    ]
   },
   {
@@ -774,10 +726,21 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Albeit a symbol of purity, the artifact bears a stigma. To call the text ideological is not to read it."
+    "Although a symbol of purity, the artifact bears a stigma. To call the text ideological is not to read it."
    ],
    "ctx": [
     "C1.4 Literature and interpretation · Author"
+   ]
+  },
+  {
+   "tr": "Yazınız göz önüne alınırsa, konu çözülmüş görünüyor. Ay sonuna kadar kalan tutar ödenmiş olacak.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "In view of your letter, it seems to be settled. By the end of the month the remaining amount will have been paid."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · Officer"
    ]
   },
   {
@@ -785,21 +748,21 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Behind the demarcation line stands xenophobia, and behind the word „influx“ stands a counted number."
+    "Behind the demarcation line stands xenophobia, and behind the word “influx” stands a counted number."
    ],
    "ctx": [
     "C1.5 Belonging and its words · Researcher"
    ]
   },
   {
-   "tr": "Her şey bir arada, sonuç tartışmalı biçimde geçici. Hazirana kadar salımlar yeniden ölçülmüş olacak.",
+   "tr": "Genel olarak bakıldığında sonuç geçici sayılabilir. Hazirana kadar salımlar yeniden ölçülmüş olacak.",
    "kind": "turn",
    "n": 1,
    "de": [
     "On balance the result is arguably provisional. By June the emissions will have been measured again."
    ],
    "ctx": [
-    "B2.5 Science and method · Lecturer"
+    "B2.5 Science and technology · Lecturer"
    ]
   },
   {
@@ -847,6 +810,17 @@
    ]
   },
   {
+   "tr": "Kayda geçti. Ölçek açısından ince dokulu bir mahalle erişilebilirliğe muhtemelen daha iyi hizmet ederdi.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Noted. In terms of scale, a fine-grained quarter would tend to serve accessibility better."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · Chair"
+   ]
+  },
+  {
    "tr": "Ölçülü bir cevap, doğrusu. Geri dönülemezlik gerçek olduğunda tutarlı bir plan yetmez — artık biliyorsun.",
    "kind": "turn",
    "n": 1,
@@ -854,7 +828,7 @@
     "Measured indeed, that answer. Where irreversibility is real, a coherent plan is not enough — and you know it now."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Tutor"
+    "C1.10 Evidence, judgment and choice · Tutor"
    ]
   },
   {
@@ -869,14 +843,14 @@
    ]
   },
   {
-   "tr": "Tarımsal ekolojiyi övsek de tek ürün şehri besliyor. Gıda egemenliği reformun yerel olmasını gerektiriyor.",
-   "kind": "turn",
+   "tr": "Ona ne kadar yabancılık demeyi sevsek de aslında bu ötekilik — derste pek adlandırılmayan bir fark olsa da.",
+   "kind": "speaking",
    "n": 1,
    "de": [
-    "Much as we praise agroecology, the monoculture feeds the city. Food sovereignty demands that the reform be local."
+    "Much as we like to call it strangeness, it is really otherness — albeit a difference the class rarely names."
    ],
    "ctx": [
-    "C1.7 Land, food and the soil · Planner"
+    "C1.4 Literature and interpretation · konuşma"
    ]
   },
   {
@@ -887,18 +861,18 @@
     "A self-image may well outlive self-knowledge. Mine did, until the second reader asked why."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Author"
+    "C1.10 Evidence, judgment and choice · Author"
    ]
   },
   {
-   "tr": "Savın kuruluşunun yaptığı şey bir akıl hatasını gizlemek. Yerleşik öğretinin ardında bir düşünce okulu duruyor.",
+   "tr": "O hâlde yazıya geçirin. Toplu sözleşme hakkı, görüşmelerin devlet müdahalesi olmadan yürütülmesini gerektirir.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "What the line of argument does is hide a flaw in reasoning. Behind the prevailing doctrine stands a school of thought."
+    "Then put it in writing. Collective bargaining rights demand that the conduct of negotiations be free from state interference."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · Tutor"
+    "C1.6 Work and the bargaining table · Manager"
    ]
   },
   {
@@ -935,7 +909,29 @@
    ]
   },
   {
-   "tr": "Yatırım döngüsü tasarruf oranı düşmeden dönebilir. Baştan aşağı yeşil o izahname — temerrüt riskinde ise biraz ince.",
+   "tr": "Savın kuruluşunun yaptığı şey bir akıl yürütme hatasını gizlemek. Yerleşik öğretinin ardında bir düşünce okulu duruyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "What the line of argument does is hide a flaw in reasoning. Behind the prevailing doctrine stands a school of thought."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgment and choice · Tutor"
+   ]
+  },
+  {
+   "tr": "Tarımsal ekolojiyi övsek de tek ürün şehri besliyor. Gıda egemenliği reformun yerel olarak kararlaştırılmasını gerektiriyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Much as we praise agroecology, the monoculture feeds the city. Food sovereignty demands that the reform be decided locally."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · Planner"
+   ]
+  },
+  {
+   "tr": "Yatırım döngüsü tasarruf oranı düşmeden dönebilir. Baştan aşağı yeşil o izahname — temerrüt riski konusunda ise oldukça zayıf.",
    "kind": "turn",
    "n": 1,
    "de": [
@@ -950,7 +946,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Albeit a sign of hybridity, adaptability is asked of one side only. The principle of equality demands that human dignity be untouchable."
+    "Although a sign of hybridity, adaptability is asked of one side only. The principle of equality demands that human dignity be untouchable."
    ],
    "ctx": [
     "C1.5 Belonging and its words · Officer"

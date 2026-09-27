@@ -1839,7 +1839,7 @@
      },
      {
       "lang": "en",
-      "text": "If we implement late, we escalate."
+      "text": "If we implement it late, we escalate."
      },
      {
       "lang": "tr",
@@ -1848,7 +1848,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "If we implement late, we escalate."
+     "target": "If we implement it late, we escalate."
     }
    },
    {
@@ -2173,7 +2173,7 @@
      },
      {
       "lang": "tr",
-      "text": "yazılır. Tutanakta bu tercih üslup değil kural; kaydın kim değil ne olduğunu göstermesi gerekir."
+      "text": "yazılır. Tutanakta bu tercih üslup değil kural; kaydın kimin yaptığını değil neyin yapıldığını göstermesi gerekir."
      }
     ]
    },
@@ -3477,7 +3477,7 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede vurgu sesle değil YAPIYLA yapılır: cümle ikiye bölünür ve önemli parça başa taşınır. Hazır mısın?"
+      "text": "İngilizcede vurgu yalnız sesle değil YAPIYLA da yapılır: cümle ikiye bölünür ve önemli parça başa taşınır. Hazır mısın?"
      }
     ],
     "expect": {
@@ -4227,10 +4227,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Not only did he speak, he also answered.",
+     "target": "Not only did he speak, he also answered questions.",
      "accept": [
       "Not only did he speak, he also replied.",
-      "Not only did he talk, he also answered."
+      "Not only did he talk, he also answered questions."
      ],
      "hint": [
       {
@@ -4247,7 +4247,7 @@
       },
       {
        "lang": "en",
-       "text": "Not only did he speak, he also answered."
+       "text": "Not only did he speak, he also answered questions."
       },
       {
        "lang": "tr",
@@ -6206,7 +6206,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bugün bağlarız ya da geri çekiliriz."
+      "text": "Bugün çözüme bağlarız ya da geri çekiliriz."
      }
     ],
     "expect": {
@@ -9151,7 +9151,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
+       "text": "Doğru. which is why virgülden sonra geliyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -10839,7 +10839,7 @@
   "course": "en",
   "icon": "pen",
   "title": "The treatment of the surface",
-  "titleTr": "Sürecin kaydı",
+  "titleTr": "Yüzeyin işlenmesi",
   "summary": "Süreç kaydını yazmayı öğretir; fiil isme dönünce kayıt kişiden çıkar ve işleme odaklanır.",
   "minutes": 11,
   "focusId": "Nominalisation and formal register",
@@ -10995,7 +10995,7 @@
      },
      {
       "lang": "tr",
-      "text": "İkinci bir kontrol gerekliliği açık."
+      "text": "İkinci bir kontrolün gerekliliği açık."
      }
     ],
     "expect": {
@@ -11023,7 +11023,7 @@
      },
      {
       "lang": "tr",
-      "text": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kim değil ne olduğunu göstermesi gerekir."
+      "text": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kimin yaptığını değil neyin yapıldığını göstermesi gerekir."
      }
     ]
    },
@@ -11258,7 +11258,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Üçüncü bir deney gerekliliği açık."
+      "text": "Bir tane daha: Üçüncü bir deneyin gerekliliği açık."
      }
     ],
     "expect": {
@@ -15588,7 +15588,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
+       "text": "Doğru. which is why virgülden sonra geliyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -20164,7 +20164,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yaşayan tek varlığa"
+      "text": "Tek bir canlı varlığa"
      },
      {
       "lang": "en",
@@ -23145,7 +23145,7 @@
      },
      {
       "lang": "tr",
-      "text": "Veri kıt ama metin sık."
+      "text": "Veri kıt ama metin yoğun."
      }
     ],
     "expect": {
@@ -25840,7 +25840,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Borç parayla ödenen bedele"
+      "text": "Borç para için ödenen bedelin oranına"
      },
      {
       "lang": "en",
@@ -26413,7 +26413,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yeşil alanını yitiren semt artık tamamen kentsel görünüyor."
+      "text": "Yeşil alanını yitiren semt artık kentsel görünüyor."
      }
     ],
     "expect": {
@@ -27468,7 +27468,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki partinin birlikte kurduğu iktidara"
+      "text": "Birden çok partinin birlikte kurduğu iktidara"
      },
      {
       "lang": "en",
@@ -28702,7 +28702,7 @@
   "chat": {
    "scene": "Bir yıl önce çıkan bir düzenleme yürümedi ve nedenini bir panelde konuşuyorsun. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin yapılmadığını kişiyi değil metni konuşarak söyle.",
    "partner": "sorumluyu tek bir memurda arayan bir panel konuşmacısı",
-   "opening": "So who signed this off?",
+   "opening": "So who signed off on this?",
    "openingTr": "Peki bunu kim onayladı?",
    "goal": "Bir çıkarımı, bir reddi ve bir eksiği üç ayrı kiple söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
@@ -29590,7 +29590,7 @@
      },
      {
       "lang": "tr",
-      "text": "Veri zayıf; yine de hiç de işe yaramaz değil."
+      "text": "Veri zayıf; yine de hiç de işe yaramaz sayılmaz."
      }
     ],
     "expect": {
@@ -36456,7 +36456,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yetenek testi aranan nitelikleri izliyor."
+      "text": "Yetenek testi aranan niteliklere dayanıyor."
      }
     ],
     "expect": {
@@ -37613,7 +37613,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün bir borç takvimini anlatmayı öğreneceğiz: aralığa kadar ne bitmiş olacak, gelecek ay neyi izliyor olacağız."
+      "text": "Merhaba! Bugün bir borç takvimini anlatmayı öğreneceğiz: aralığa kadar ne bitmiş olacak, gelecek ay neye hazırlanıyor olacağız."
      },
      {
       "lang": "tr",
@@ -38424,7 +38424,7 @@
      },
      {
       "lang": "tr",
-      "text": "Denetim vergi kaçırma buldu ve bu masraflı oldu."
+      "text": "Denetimde vergi kaçırma tespit edildi ve bu masraflı oldu."
      }
     ],
     "expect": {
@@ -43296,7 +43296,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karşındakinin yerine geçebilmeye"
+      "text": "Kendini karşındakinin yerine koyabilmeye"
      },
      {
       "lang": "en",
@@ -43580,7 +43580,7 @@
   ],
   "patterns": [
    {
-    "de": "If we had talked, the custody would have been shared.",
+    "de": "If we had talked, custody would have been shared.",
     "tr": "sonucu geçmişte bırakır"
    },
    {
@@ -43624,12 +43624,12 @@
      },
      {
       "lang": "en",
-      "text": "If we had talked, the custody would have been shared."
+      "text": "If we had talked, custody would have been shared."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "If we had talked, the custody would have been shared."
+     "target": "If we had talked, custody would have been shared."
     }
    },
    {
@@ -43748,7 +43748,7 @@
      "target": "If we had talked, the house would have been sold.",
      "accept": [
       "If we had talked, the apartment would have been sold.",
-      "If we had talked, the custody would have been shared."
+      "If we had talked, custody would have been shared."
      ],
      "hint": [
       {
@@ -45966,7 +45966,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Eksik olan şey açık bir plan."
+      "text": "Bir tane daha: Eksik olan şey net bir plan."
      }
     ],
     "expect": {
@@ -47816,7 +47816,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kanunun tanıdığı istemeye"
+      "text": "Kanunun tanıdığı talep hakkına"
      },
      {
       "lang": "en",
@@ -47926,16 +47926,16 @@
      },
      {
       "lang": "en",
-      "text": "The contractual note is legally binding."
+      "text": "The contractual obligation is legally binding."
      },
      {
       "lang": "tr",
-      "text": "Sözleşmeye dayalı not hukuken bağlayıcı."
+      "text": "Sözleşmeye dayalı yükümlülük hukuken bağlayıcı."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The contractual note is legally binding."
+     "target": "The contractual obligation is legally binding."
     }
    },
    {
@@ -48399,7 +48399,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir belgeyi paraya çevirmeye"
+      "text": "Bir kuponu ya da alacağı karşılığında kullanmaya"
      },
      {
       "lang": "en",
@@ -48769,12 +48769,12 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Paket gelseydi sipariş verirdik."
+      "text": "Şimdi sıra sende: İndirim geçerli olsaydı sipariş verirdik."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "If the package had arrived, we would have ordered.",
+     "target": "If the discount had applied, we would have ordered.",
      "accept": [
       "If the voucher had arrived, we would have ordered."
      ],
@@ -48793,7 +48793,7 @@
       },
       {
        "lang": "en",
-       "text": "If the package had arrived, we would have ordered."
+       "text": "If the discount had applied, we would have ordered."
       },
       {
        "lang": "tr",
@@ -48873,14 +48873,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Mektup açık olsaydı ücret bugün daha düşük olurdu."
+      "text": "Şimdi sen kur: Sözleşme açık olsaydı ücret bugün daha düşük olurdu."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "If the letter had been clear, the fee would be lower now.",
+     "target": "If the contract had been clear, the fee would be lower now.",
      "accept": [
-      "If the note had been clear, the fee would be lower now.",
+      "If the agreement had been clear, the fee would be lower now.",
       "If the rate plan had been clear, the base fee would be lower now."
      ],
      "hint": [
@@ -48898,7 +48898,7 @@
       },
       {
        "lang": "en",
-       "text": "If the letter had been clear, the fee would be lower now."
+       "text": "If the contract had been clear, the fee would be lower now."
       },
       {
        "lang": "tr",

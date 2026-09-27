@@ -41,7 +41,7 @@ export const deA2B02: Conversation[] = [
     patterns: [
       { de: "Am Anfang war alles fremd.", tr: "gelişin ilk günlerini anlatır" },
       { de: "Ich hatte keine …", tr: "başlangıçta neyin eksik olduğunu söyler" },
-      { de: "Heute komme ich gut aus.", tr: "bugünkü durumu özetler" },
+      { de: "Heute komme ich mit allen gut aus.", tr: "bugünkü durumu özetler" },
     ],
     lecture: [
       {
@@ -192,7 +192,7 @@ export const deA2B02: Conversation[] = [
       {
         say: [
           tr("Üçüncü kalıbımız bugünü özetliyor:"),
-          de("Heute komme ich gut aus."),
+          de("Heute komme ich mit allen gut aus."),
           tr("Ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşüyor."),
         ],
       },
@@ -1447,7 +1447,7 @@ export const deA2B02: Conversation[] = [
       partner: "seni yıllar sonra gören eski bir arkadaş",
       opening: "Mensch, so lange nicht gesehen! Was hat sich bei dir verändert?",
       openingTr: "Vay, ne zamandır görüşmüyoruz! Sende neler değişti?",
-      goal: "En az iki değişim anlatılmış, biri bilerek yapılmış biri kendiliğinden olmuş olarak ayrılmış ve arkadaşın da kendi değişimini söylemiş olur.",
+      goal: "En az iki değişim anlatılmış, biri bilerek yapılmış, biri kendiliğinden olmuş olarak ayrılmış ve arkadaşın da kendi değişimini söylemiş olur.",
       minTurns: 8,
     },
   },
@@ -1687,7 +1687,7 @@ export const deA2B02: Conversation[] = [
       {
         say: [
           tr(
-            "Duyguyu söylerken Almancada ilginç bir şey oluyor: utanan kişi öznenin değil, yönelme hâlinin içinde duruyor. Türkçedeki 'bana çok utanç verdi' ile aynı mantık. Bugün onu bir kuralsız fiille ve bir dönüşlü fiille birlikte çalışacağız. Önce sekiz kelime.",
+            "Duyguyu söylerken Almancada ilginç bir şey oluyor: utanan kişi özne olarak değil, yönelme hâlinde duruyor. Türkçedeki 'bana çok utanç verdi' ile aynı mantık. Bugün onu bir kuralsız fiille ve bir dönüşlü fiille birlikte çalışacağız. Önce sekiz kelime.",
           ),
         ],
       },
@@ -1980,7 +1980,7 @@ export const deA2B02: Conversation[] = [
           tr("İlk kalıbımız emeği anlatıyor:"),
           de("Ich habe lange … trainiert."),
           tr(
-            "Yabancı kökenli ve sonu belirli bir heceyle biten fiiller ortacın hecesini almaz; sonu değişmeden kalır.",
+            "Yabancı kökenli ve sonu belirli bir heceyle biten fiiller ortacın hecesini almaz; ortaç düz kurulur.",
           ),
         ],
       },

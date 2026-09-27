@@ -552,7 +552,7 @@ export const deA2B05: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Geç kalacağım, çünkü işe gidiş yolum çok uzun.' Almancası:"),
+          tr("Örnek: 'Geç kalacağım, çünkü işe gidiş yolum uzun.' Almancası:"),
           de("Ich komme später, denn mein Arbeitsweg ist lang."),
           tr("Lütfen"),
           de("Ich komme später, denn mein Arbeitsweg ist lang"),
@@ -749,7 +749,7 @@ export const deA2B05: Conversation[] = [
           tr("İlk kalıbımız:"),
           de("Darf ich Ihnen … vorstellen?"),
           tr(
-            "İzin fiiliyle açılan kibar bir soru. Kendisine tanıtılan kişi yönelme hâlinde ve fiilden hemen sonra duruyor.",
+            "İzin fiiliyle açılan kibar bir soru. Kendisine tanıtılan kişi yönelme hâlinde ve özneden hemen sonra duruyor.",
           ),
         ],
       },
@@ -1456,7 +1456,7 @@ export const deA2B05: Conversation[] = [
       {
         say: [
           tr(
-            "Bugün izin istiyoruz. Almanya'da izin sözlü konuşulur ama yazılı olarak da verilir; ikisinin dili biraz farklıdır. Hazır mısın?",
+            "Bugün izin istiyoruz. Almanya'da izin sözlü konuşulur ama yazılı olarak da istenir; ikisinin dili biraz farklıdır. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1620,7 +1620,7 @@ export const deA2B05: Conversation[] = [
       scene:
         "Yaz için izin almak istiyorsun ama o dönem ekipte iş yoğun. Yöneticine tarihini söyle, kaç gün istediğini belirt ve yokluğunda ne yapılacağına dair bir öneri getir.",
       partner: "izin çizelgesine bakan bir yönetici",
-      opening: "Sie wollten wegen Urlaub sprechen? Wann hätten Sie denn frei?",
+      opening: "Sie wollten wegen Urlaub sprechen? Wann hätten Sie denn gern frei?",
       openingTr: "İzin için görüşmek istemiştiniz? Ne zaman izinli olmak isterdiniz?",
       goal: "İzin tarihi ve süresi söylenmiş, bir engel konuşulmuş ve sonunda bir tarihte anlaşılmış olur.",
       minTurns: 8,

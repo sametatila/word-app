@@ -397,7 +397,7 @@ export const deB1B13: Conversation[] = [
       scene: "Geçen hafta sonu dağda yürüyüşe çıktın ve hava bozdu. Bir arkadaşına ne olduğunu sırayla anlatıyorsun.",
       partner: "doğa yürüyüşünü seven, ayrıntı soran bir arkadaş",
       opening: "Ich habe gehört, ihr wart im Gebirge. Wie war es denn — habt ihr Glück mit dem Wetter gehabt?",
-      openingTr: "Duydum ki dağdaymışsınız. Nasıldı — havada şansınız yaver gitti mi?",
+      openingTr: "Duydum ki dağdaymışsınız. Nasıldı — hava konusunda şansınız yaver gitti mi?",
       goal: "Yürüyüşün başı, hava değişimi ve dönüş sırayla anlatılmış olur.",
       minTurns: 8,
     },
@@ -549,7 +549,7 @@ export const deB1B13: Conversation[] = [
       { say: [tr("İkinci kalıbımız o ana kadar olmayanı anlatıyor. Anlatıya bir dönüm noktası koyar.")] },
       { say: [tr("Şimdi: 'O zamana kadar okyanusu hiç görmemiştim.'")], expect: produce("Bis dahin hatte ich den Ozean nie gesehen", [tr("Zarf başta, yardımcı fiil ikinci sırada, ortaç sonda:"), de("Bis dahin hatte ich den Ozean nie gesehen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Nachdem wir angekommen waren, gingen wir zum Hafen."), tr("cümlesi doğru mu?")], expect: truefalse("Nachdem wir angekommen waren, gingen wir zum Hafen.", true, [tr("Doğru. Önce olan iş bir basamak geride, ana cümle normal geçmişte ve fiille başlıyor.")]) },
-      { say: [tr("Son: 'Fotoğrafçı gittikten sonra ayı çektim.'")], expect: produce("Nachdem der Fotograf gegangen war, fotografierte ich den Mond", [tr("Yer değiştirme fiili eski geçmişte başka bir yardımcı fiil alıyor:"), de("Nachdem der Fotograf gegangen war, fotografierte ich den Mond."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Fotoğrafçı gittikten sonra ayın fotoğrafını çektim.'")], expect: produce("Nachdem der Fotograf gegangen war, fotografierte ich den Mond", [tr("Yer değiştirme fiili eski geçmişte başka bir yardımcı fiil alıyor:"), de("Nachdem der Fotograf gegangen war, fotografierte ich den Mond."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi yolculuğunu bir arkadaşına anlatacaksın: önce ne oldu, ondan önce ne olmuştu.")] },
     ],
     chat: {

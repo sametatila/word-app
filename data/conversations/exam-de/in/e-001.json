@@ -19,7 +19,7 @@
    "de": [],
    "ctx": [
     "A1.8 Free time · okuma türü",
-    "A2.4 Home and neighbourhood · okuma türü",
+    "A2.4 Home and neighborhood · okuma türü",
     "B1.9 The city and the environment · okuma türü"
    ]
   },
@@ -35,20 +35,6 @@
     "C1.2 Dissent without rupture",
     "C1.2 Dissent without rupture · okuma türü",
     "C1.9 Money and the forecast"
-   ]
-  },
-  {
-   "tr": "Gazete yorumu",
-   "kind": "reading.title",
-   "n": 4,
-   "de": [
-    "Who pays for the shortage?",
-    "Revitalized, and for whom?"
-   ],
-   "ctx": [
-    "B2.6 Society and the economy",
-    "B2.6 Society and the economy · okuma türü",
-    "C1.8 Climate and the city"
    ]
   },
   {
@@ -76,6 +62,19 @@
    ]
   },
   {
+   "tr": "Gazete yorumu",
+   "kind": "reading.genre",
+   "n": 3,
+   "de": [
+    "Revitalized, and for whom?"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · okuma türü",
+    "C1.8 Climate and the city",
+    "C1.8 Climate and the city · okuma türü"
+   ]
+  },
+  {
    "tr": "Doktora şikâyetini anlatıyorsun.",
    "kind": "speaking.situation",
    "n": 3,
@@ -93,7 +92,7 @@
    "de": [],
    "ctx": [
     "A1.7 Home and living · konuşma",
-    "A2.4 Home and neighbourhood · konuşma",
+    "A2.4 Home and neighborhood · konuşma",
     "B1.2 Renting and moving · konuşma"
    ]
   },
@@ -167,7 +166,7 @@
    "kind": "focus",
    "n": 2,
    "de": [
-    "Shall we …? / Would you like to …?",
+    "Do you want to …? / Would you like to …?",
     "Would you like to come?"
    ],
    "ctx": [
@@ -207,8 +206,8 @@
     "Why I signed up — and what I would change"
    ],
    "ctx": [
-    "B1.3 Reason and result",
-    "B1.3 Reason and result · okuma türü"
+    "B1.3 Linking ideas",
+    "B1.3 Linking ideas · okuma türü"
    ]
   },
   {
@@ -218,7 +217,7 @@
    "de": [],
    "ctx": [
     "B1.2 Renting and moving · okuma türü",
-    "B2.2 Claims and complaints · okuma türü"
+    "B2.2 Negotiating and complaining · okuma türü"
    ]
   },
   {
@@ -229,8 +228,8 @@
     "Summary of the study"
    ],
    "ctx": [
-    "B2.5 Science and method",
-    "B2.5 Science and method · okuma türü"
+    "B2.5 Science and technology",
+    "B2.5 Science and technology · okuma türü"
    ]
   },
   {
@@ -238,7 +237,7 @@
    "kind": "reading.title",
    "n": 2,
    "de": [
-    "Report on the reorganisation — section 4"
+    "Report on the reorganization — section 4"
    ],
    "ctx": [
     "C1.6 Work and the bargaining table",
@@ -263,7 +262,7 @@
    "n": 2,
    "de": [],
    "ctx": [
-    "B2.8 Money and career · okuma türü",
+    "B2.8 Money and career strategy · okuma türü",
     "B2.9 Relationships and psychology · okuma türü"
    ]
   },
@@ -297,8 +296,8 @@
     "What the case still leaves to choose"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice",
-    "C1.10 Evidence, judgement and choice · okuma türü"
+    "C1.10 Evidence, judgment and choice",
+    "C1.10 Evidence, judgment and choice · okuma türü"
    ]
   },
   {
@@ -334,8 +333,8 @@
     "Your reservation"
    ],
    "ctx": [
-    "A2.7 Travelling",
-    "A2.7 Travelling · okuma türü"
+    "A2.7 Traveling",
+    "A2.7 Traveling · okuma türü"
    ]
   },
   {
@@ -344,7 +343,7 @@
    "n": 2,
    "de": [],
    "ctx": [
-    "A2.4 Home and neighbourhood · yazma",
+    "A2.4 Home and neighborhood · yazma",
     "A2.6 Shopping and services · yazma"
    ]
   },
@@ -368,7 +367,7 @@
     "With reference to your letter of …"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · yazma kalıbı",
+    "B2.2 Negotiating and complaining · yazma kalıbı",
     "B2.10 Formal correspondence · yazma kalıbı"
    ]
   },
@@ -389,7 +388,7 @@
    "de": [],
    "ctx": [
     "B2.7 Culture and the arts · yazma",
-    "C1.10 Evidence, judgement and choice · yazma"
+    "C1.10 Evidence, judgment and choice · yazma"
    ]
   },
   {
@@ -490,6 +489,19 @@
    ]
   },
   {
+   "tr": "Doktor Weber'in muayenehanesi, günaydın.",
+   "kind": "turn",
+   "n": 2,
+   "de": [
+    "Dr. Weber's office, good morning.",
+    "Doctor Weber's office, good morning."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · Receptionist",
+    "A2.3 At the doctor's · Assistant"
+   ]
+  },
+  {
    "tr": "İtiraz ettiğimiz şey tarih değil, zararın sorumluluğu.",
    "kind": "turn",
    "n": 2,
@@ -497,8 +509,8 @@
     "What we contest is not the date but the liability for the damages."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Representative",
-    "B2.2 Claims and complaints · konuşma"
+    "B2.2 Negotiating and complaining · Representative",
+    "B2.2 Negotiating and complaining · konuşma"
    ]
   },
   {
@@ -509,16 +521,16 @@
     "If the sample had been larger, we would have generalized the finding."
    ],
    "ctx": [
-    "B2.5 Science and method · Researcher",
-    "B2.5 Science and method · konuşma"
+    "B2.5 Science and technology · Researcher",
+    "B2.5 Science and technology · konuşma"
    ]
   },
   {
-   "tr": "Haber yayınlanmadan önce kaynağı kontrol etmemiz gerekirdi.",
+   "tr": "Haber yayımlanmadan önce kaynağı kontrol etmemiz gerekirdi.",
    "kind": "turn",
    "n": 2,
    "de": [
-    "We should have checked the attribution before the story was broadcast."
+    "We should have checked the attribution before the story was published."
    ],
    "ctx": [
     "B2.4 Media and reported speech · Editor",
@@ -586,6 +598,17 @@
    ]
   },
   {
+   "tr": "…'danım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm from …"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
    "tr": "Akşam …",
    "kind": "phrase",
    "n": 1,
@@ -601,10 +624,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Travelling"
+    "Traveling"
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -643,7 +666,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "I haven't got a …"
+    "I don't have a …"
    ],
    "ctx": [
     "A1.2 Family and people · yazma kalıbı"
@@ -661,28 +684,11 @@
    ]
   },
   {
-   "tr": "Kodu ne?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What is the code?"
-   ],
-   "ctx": [
-    "A1.1 Nice to meet you · okuma sorusu"
-   ],
-   "options": [
-    "M1 4BT",
-    "0161 496 0311",
-    "12 Green Road",
-    "28"
-   ]
-  },
-  {
    "tr": "Mağazada",
    "kind": "listening.title",
    "n": 1,
    "de": [
-    "In the shop"
+    "At the store"
    ],
    "ctx": [
     "A1.5 Shopping"
@@ -726,7 +732,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "I'm ill."
+    "I'm sick."
    ],
    "ctx": [
     "A1.9 Health and the body · yazma kalıbı"
@@ -778,8 +784,19 @@
    "options": [
     "The window",
     "The lamp in the kitchen",
-    "The tap",
-    "The lift"
+    "The faucet",
+    "The elevator"
+   ]
+  },
+  {
+   "tr": "Nesi var?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "What is the problem with it?"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · Clerk"
    ]
   },
   {
@@ -991,7 +1008,7 @@
    "options": [
     "Elif",
     "Yilmaz",
-    "Manchester",
+    "Boston",
     "Teacher"
    ]
   },
@@ -1058,7 +1075,7 @@
     "Therefore, …"
    ],
    "ctx": [
-    "B1.3 Reason and result · yazma kalıbı"
+    "B1.3 Linking ideas · yazma kalıbı"
    ]
   },
   {
@@ -1113,7 +1130,7 @@
     "Hotel check-in"
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -1154,7 +1171,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "I have got a …"
+    "I have a …"
    ],
    "ctx": [
     "A1.2 Family and people · yazma kalıbı"
@@ -1176,7 +1193,7 @@
    "kind": "listening.title",
    "n": 1,
    "de": [
-    "The viewing"
+    "The showing"
    ],
    "ctx": [
     "B1.2 Renting and moving"
@@ -1216,9 +1233,9 @@
    ],
    "options": [
     "From Italy",
-    "From Turkey",
-    "From England",
-    "From Manchester"
+    "From Türkiye",
+    "From America",
+    "From Boston"
    ]
   },
   {
@@ -1306,7 +1323,7 @@
     "Where is the hotel?"
    ],
    "ctx": [
-    "A2.7 Travelling · okuma sorusu"
+    "A2.7 Traveling · okuma sorusu"
    ],
    "options": [
     "At the train station",
@@ -1323,7 +1340,7 @@
     "How about …-ing?"
    ],
    "ctx": [
-    "A2.7 Travelling"
+    "A2.7 Traveling"
    ]
   },
   {
@@ -1453,10 +1470,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Home and neighbourhood"
+    "Home and neighborhood"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -1504,23 +1521,6 @@
    ]
   },
   {
-   "tr": "Odada ne yok?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What is not in the room?"
-   ],
-   "ctx": [
-    "A2.7 Travelling · dinleme sorusu"
-   ],
-   "options": [
-    "Towels",
-    "A key",
-    "Breakfast",
-    "A bathroom"
-   ]
-  },
-  {
    "tr": "Öte yandan, …",
    "kind": "phrase",
    "n": 1,
@@ -1551,17 +1551,6 @@
    ],
    "ctx": [
     "A1.3 Food and drink · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "… ülkesindenim",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "I'm from …"
-   ],
-   "ctx": [
-    "A1.1 Nice to meet you · yazma kalıbı"
    ]
   },
   {
@@ -1605,7 +1594,7 @@
     "in order to / so that"
    ],
    "ctx": [
-    "B1.3 Reason and result"
+    "B1.3 Linking ideas"
    ]
   },
   {
@@ -1627,7 +1616,7 @@
     "What size are you?"
    ],
    "ctx": [
-    "A1.5 Shopping · Shop assistant"
+    "A1.5 Shopping · Clerk"
    ]
   },
   {
@@ -1638,7 +1627,7 @@
     "Rules for the building"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -1661,17 +1650,6 @@
    ],
    "ctx": [
     "A1.2 Family and people"
-   ]
-  },
-  {
-   "tr": "Danışma köşesi",
-   "kind": "reading.title",
-   "n": 1,
-   "de": [
-    "When nobody says it out loud"
-   ],
-   "ctx": [
-    "B2.9 Relationships and psychology"
    ]
   },
   {
@@ -1702,6 +1680,17 @@
    "n": 1,
    "de": [
     "My life story"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "Hiç gittin mi?",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Have you ever been there?"
    ],
    "ctx": [
     "A2.2 My story, then and now"

@@ -4,7 +4,7 @@
   "sceneEn": "You have just moved into your apartment building and you meet a neighbor on the stairs. Introduce yourself: say your name, where you are from and where you live.",
   "partnerEn": "a curious but polite neighbor",
   "openingEn": "Hello! You're new here, aren't you? What's your name?",
-  "goalEn": "Your neighbor has learned your name, where you are from and which floor you live on, and you have both said you are pleased to meet."
+  "goalEn": "Your neighbor has learned your name, where you are from and which floor you live on, and you have both said you are pleased to meet each other."
  },
  {
   "conversation": "de-a1-wie-gehts",
@@ -43,10 +43,10 @@
  },
  {
   "conversation": "de-a1-alphabet",
-  "sceneEn": "You are getting a library card. The assistant will ask for your first name and surname: say them, spell them, and ask how a word is written when you need to.",
+  "sceneEn": "You are getting a library card. The assistant will ask for your first name and last name: say them, spell them, and ask how a word is written when you need to.",
   "partnerEn": "a calm and meticulous librarian",
-  "openingEn": "Hello! I need your first name and your surname. Can you spell that?",
-  "goalEn": "Your first name and surname have been written down letter by letter, and you have been told when the card will be ready."
+  "openingEn": "Hello! I need your first name and your last name. Can you spell that?",
+  "goalEn": "Your first name and last name have been written down letter by letter, and you have been told when the card will be ready."
  },
  {
   "conversation": "de-a1-beruf",
@@ -115,7 +115,7 @@
   "conversation": "de-a1-aussehen",
   "sceneEn": "A friend is talking about someone they have just met and you want to know what they look like. Ask about their height, their hair and whether they wear glasses.",
   "partnerEn": "a friend who loves telling a story and exaggerates a little",
-  "openingEn": "I have a new colleague, he's very tall. What does your best friend look like?",
+  "openingEn": "I have a new friend, he's very tall. What does your best friend look like?",
   "goalEn": "The person's height, hair and glasses have been described, well enough for you to pick them out in a crowd."
  },
  {

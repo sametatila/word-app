@@ -30,7 +30,7 @@
  { "tr": "Şu cümleyi tekrar et. O işteydi:", "kind": "say.tr", "de": "Wiederhole diesen Satz. Sie war bei der Arbeit:" },
  { "tr": "Toparlayalım. Araçlar için \"by\":", "kind": "say.tr", "de": "Fassen wir zusammen. Für Verkehrsmittel „by“:" },
  { "tr": "Toparlayalım. Dükkânlar: bakery,", "kind": "say.tr", "de": "Fassen wir zusammen. Läden: bakery," },
- { "tr": "Türkçesi 'korkmuş' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „ängstlich“. Bitte" },
+ { "tr": "Türkçesi 'korkmuş' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „verängstigt“. Bitte" },
  { "tr": "Türkçesi 'önermek' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „vorschlagen“. Bitte" },
  { "tr": "Türkçesi 'stresli' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „gestresst“. Bitte" },
  { "tr": "Türkçesi 'taşımak' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „tragen“. Bitte" },
@@ -46,7 +46,7 @@
  { "tr": "Yani pili şarj et. Sen de söyle:", "kind": "say.tr", "de": "Also lade den Akku. Sag du auch:" },
  { "tr": "Yani: Bunu iade etmek istiyorum.", "kind": "say.tr", "de": "Also: Ich möchte das zurückgeben." },
  { "tr": "Yani: Fiş alabilir miyim lütfen?", "kind": "say.tr", "de": "Also: Könnte ich bitte einen Beleg haben?" },
- { "tr": "Yani: mahallem güvenli ve sakin.", "kind": "say.tr", "de": "Also: mein Viertel ist sicher und ruhig." },
+ { "tr": "Yani: mahallem güvenli ve sakin.", "kind": "say.tr", "de": "Also: Mein Viertel ist sicher und ruhig." },
  { "tr": "Yemek bitti, sıra ödemeye geldi.", "kind": "say.tr", "de": "Das Essen ist zu Ende, jetzt wird bezahlt." },
  { "tr": "Yurt dışında çalışmayı umuyorum.", "kind": "say.tr", "de": "Ich hoffe, im Ausland zu arbeiten." },
  { "tr": "-s zaten doesn't'ın içinde saklı.", "kind": "say.tr", "de": "Das -s steckt schon in doesn't drin." },
@@ -64,7 +64,7 @@
  { "tr": "Aynı kalıp şehir için de çalışır:", "kind": "say.tr", "de": "Dieselbe Wendung gilt auch für die Stadt:" },
  { "tr": "Benim komşum demek. Sen de söyle.", "kind": "say.tr", "de": "Heißt mein Nachbar. Sag du auch." },
  { "tr": "Bilet demek. Gişede şöyle dersin:", "kind": "say.tr", "de": "Heißt Karte. Am Schalter sagst du:" },
- { "tr": "Bir şey içmek ister misin. Söyle.", "kind": "say.tr", "de": "Möchtest du etwas trinken? Sag es." },
+ { "tr": "\"Bir şey içmek ister misin?\" demek. Söyle.", "kind": "say.tr", "de": "Möchtest du etwas trinken? Sag es." },
  { "tr": "Bittiyse already, bitmediyse yet.", "kind": "say.tr", "de": "Erledigt: already, noch nicht: yet." },
  { "tr": "Bu da doğru, ama günlük konuşmada", "kind": "say.tr", "de": "Das stimmt auch, aber im Alltag ist" },
  { "tr": "Bu senin için. Umarım beğenirsin.", "kind": "say.tr", "de": "Das ist für dich. Ich hoffe, es gefällt dir." },
@@ -145,5 +145,7 @@
  { "tr": "Yani 'Nerede oturuyorsun?' Burada", "kind": "say.tr", "de": "Also „Wo wohnst du?“ Hier" },
  { "tr": "Yani affedersiniz, bakar mısınız.", "kind": "say.tr", "de": "Also entschuldigen Sie, kommen Sie bitte kurz." },
  { "tr": "Yani ben de. Peki karşındaki sana", "kind": "say.tr", "de": "Also ich auch. Und wenn dein Gegenüber dir" },
- { "tr": "Yani on dakika. Ya da daha uzunu:", "kind": "say.tr", "de": "Also zehn Minuten. Oder etwas länger:" }
+ { "tr": "Yani on dakika. Ya da daha uzunu:", "kind": "say.tr", "de": "Also zehn Minuten. Oder etwas länger:" },
+ { "tr": "uzunluk", "kind": "vocab.tr", "de": "die Länge" },
+ { "tr": "vekâlet", "kind": "vocab.tr", "de": "die Stellvertretung" }
 ]

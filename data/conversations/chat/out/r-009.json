@@ -4,7 +4,7 @@
   "sceneEn": "You are at a job interview at a company. Say why you applied with 'weil' and how long you have been working or studying with 'seit'; talk about your strengths.",
   "partnerEn": "an HR specialist, professional but warm",
   "openingEn": "Hello, glad you could come! Tell me: why are you applying to us?",
-  "goalEn": "Why you applied, your experience and your strengths have been described, and the interviewer has said how the process goes on."
+  "goalEn": "Why you applied, your experience and your strengths have been described, and the interviewer has said how the process will continue."
  },
  {
   "conversation": "de-b1-lebenslauf",

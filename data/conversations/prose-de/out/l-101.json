@@ -67,7 +67,7 @@
  {
   "tr": "bütün kaydın değiştiğini sanan, ayrıntıyı soran bir meslektaş",
   "kind": "partner",
-  "de": "eine Kollegin, die glaubt, die ganze Aufzeichnung sei geändert, und nach Einzelheiten fragt"
+  "de": "eine Kollegin, die glaubt, die ganze Aufzeichnung sei geändert worden, und nach Einzelheiten fragt"
  },
  {
   "tr": "çözümlemeyi yeniden yapmak isteyen, nedeni merak eden bir meslektaş",
@@ -532,7 +532,7 @@
  {
   "tr": "Hizmetin durduğu süreye",
   "kind": "say.tr",
-  "de": "Die Zeit, in der der Dienst steht, heißt"
+  "de": "Die Zeit, in der der Dienst stillsteht, heißt"
  },
  {
   "tr": "işin yapıldığı yere ise",
@@ -952,7 +952,7 @@
  {
   "tr": "ise sınırlı bir bakış demektir. Üçü de yanlış çıkarsa seni yalancı duruma düşürmez.",
   "kind": "say.tr",
-  "de": "heißt eine begrenzte Sicht. Erweist sich eines der drei als falsch, stehst du nicht als Lügner da."
+  "de": "heißt eine begrenzte Sicht. Selbst wenn sich alle drei als falsch erweisen, stehst du nicht als Lügner da."
  },
  {
   "tr": "Şimdi bugünün kuralı. Edilgen çıkarım yumuşatıcıyla birleşince iddia olmaktan çıkar:",
@@ -987,7 +987,7 @@
  {
   "tr": "Bilimsel yazıda bu cümleler suçlama değil sınama aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im wissenschaftlichen Text sind diese Sätze keine Schuldzuweisung, sondern ein Mittel der Prüfung; den Unterschied baut die Folgehälfte. Bist du bereit?"
+  "de": "Im wissenschaftlichen Text sind diese Sätze keine Schuldzuweisung, sondern ein Mittel der Prüfung; den Unterschied macht die Folgehälfte. Bist du bereit?"
  },
  {
   "tr": "Edilgen bir kayıtta «değiştirildi» demek yetmez; hangi parçanın değiştiğini yarık cümle ayırır. Hazır mısın?",
@@ -1002,7 +1002,7 @@
  {
   "tr": "Bu itirazın gücü kelimelerden değil yapıdan geliyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Kraft dieses Einwands kommt nicht von den Wörtern, sondern vom Bau: steht ein negatives Adverb am Anfang, kippt der Satz. Bist du bereit?"
+  "de": "Die Kraft dieses Einwands kommt nicht von den Wörtern, sondern vom Bau: steht ein negatives Adverb am Anfang, wird der Satz umgestellt. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün bir arızanın geçmişini çözmeyi öğreneceğiz: ne olmuş olmalı, ne olmuş olamaz, ne yapılmalıydı.",
@@ -1022,6 +1022,16 @@
  {
   "tr": "Merhaba! Bugün bir çözümlemenin kaçırılan yolunu konuşmayı öğreneceğiz: bilinseydi ne olurdu, bugün ne farklı olurdu.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir, über den verpassten Weg einer Auswertung zu sprechen: was wäre gewesen, was wäre heute anders."
+  "de": "Hallo! Heute lernen wir, über den verpassten Weg einer Auswertung zu sprechen: was gewesen wäre, wenn man es gewusst hätte, was heute anders wäre."
+ },
+ {
+  "tr": "Pek alçakgönüllü sayılmaz, öyle mi?",
+  "kind": "say.tr",
+  "de": "Nicht gerade bescheiden, oder?"
+ },
+ {
+  "tr": "Tazminatın küçük olduğu söyleniyor.",
+  "kind": "say.tr",
+  "de": "Der Schadenersatz soll gering sein."
  }
 ]

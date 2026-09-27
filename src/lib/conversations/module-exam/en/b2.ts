@@ -61,7 +61,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Minutes of the project meeting",
       titleTr: "Proje toplantısı tutanağı",
       genre: "Tutanak",
-      text: "MINUTES OF THE PROJECT MEETING\n14 May, 9:30, remote\n\n1 — Status of the findings\nMr Adler reported that the draft had been completed in the previous week. The late assignment of the second check is said to be the reason for the delay; accordingly, the team had to adjust the outline twice.\n\n2 — Scheduling\nIt was decided that the milestone will be moved by two weeks. Ms. Renner noted that the stakeholders are to be informed by Friday. The memo will be circulated by the project office.\n\n3 — Open points\nThe question of the capacity for June remains to be clarified. Provided that no reply arrives before the next meeting, the priority will be set by the project office.\n\nNext meeting: May 28, 9:30. Minutes: L. Sander",
+      text: "MINUTES OF THE PROJECT MEETING\nMay 14, 9:30, remote\n\n1 — Status of the findings\nMr. Adler reported that the draft had been completed in the previous week. The late assignment of the second check is said to be the reason for the delay; accordingly, the team had to adjust the outline twice.\n\n2 — Scheduling\nIt was decided that the milestone will be moved by two weeks. Ms. Renner noted that the stakeholders are to be informed by Friday. The memo will be circulated by the project office.\n\n3 — Open points\nThe question of the capacity for June remains to be clarified. Provided that no reply arrives before the next meeting, the priority will be set by the project office.\n\nNext meeting: May 28, 9:30. Minutes: L. Sander",
       questions: [
         { de: "Why did the team have to adjust the outline twice?", tr: "Ekip taslağı neden iki kez düzeltmek zorunda kaldı?", options: ["Because the second check was assigned late", "Because the client canceled", "Because the draft was lost", "Because the office changed"], answer: 0 },
         { de: "What happens if no reply arrives before the next meeting?", tr: "Bir sonraki toplantıya kadar cevap gelmezse ne olur?", options: ["The project office sets the priority", "The point is closed", "The meeting is moved", "The stakeholders decide"], answer: 0 },
@@ -90,7 +90,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "Next meeting: …", tr: "Bir sonraki toplantı: …", en: "Next meeting: …" },
       ],
       sample:
-        "MINUTES OF THE TEAM MEETING\n3 June, 10:00\n\n1 — Status\nMs Yilmaz reported that the first part had been finished on time. The late delivery is said to be the reason why the second part has now been moved by one week.\n\n2 — Decisions\nIt was decided that the new date is June 20. Mr. Brandt noted that the client is to be informed this week; the memo will be circulated by the office.\n\n3 — Open points\nThe question of the capacity for July remains to be clarified. Provided that nobody replies by Friday, the priority will be set by the project office.\n\nNext meeting: June 17, 10:00.",
+        "MINUTES OF THE TEAM MEETING\nJune 3, 10:00\n\n1 — Status\nMs. Yilmaz reported that the first part had been finished on time. The late delivery is said to be the reason why the second part has now been moved by one week.\n\n2 — Decisions\nIt was decided that the new date is June 20. Mr. Brandt noted that the client is to be informed this week; the memo will be circulated by the office.\n\n3 — Open points\nThe question of the capacity for July remains to be clarified. Provided that nobody replies by Friday, the priority will be set by the project office.\n\nNext meeting: June 17, 10:00.",
     },
   },
 
@@ -203,7 +203,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Manager", de: "Someone should have lowered the pressure before the trial. Being loaded first, the crate stayed in the workshop.", tr: "Denemeden önce basıncın düşürülmesi gerekirdi. İlk yüklendiği için sandık atölyede kaldı." },
         { speaker: "Engineer", de: "Nowhere is it written that a second check is optional. That is the guideline, not my opinion.", tr: "İkinci kontrolün isteğe bağlı olduğu hiçbir yerde yazmıyor. Bu kılavuz, benim görüşüm değil." },
         { speaker: "Manager", de: "Agreed. Having read the provision again, I think the deviation was within the guideline.", tr: "Katılıyorum. Hükmü yeniden okuyunca sapmanın kılavuz içinde olduğunu düşünüyorum." },
-        { speaker: "Engineer", de: "By Friday the pilot will have been finished, and the report will be written by the workshop.", tr: "Cumaya kadar pilot bitmiş olacak, rapor da atölye tarafından yazılıyor." },
+        { speaker: "Engineer", de: "By Friday the pilot will have been finished, and the report will be written by the workshop.", tr: "Cumaya kadar pilot bitmiş olacak, rapor da atölye tarafından yazılacak." },
         { speaker: "Manager", de: "Apparently the whole outage lasted roughly two hours; hence the loss is modest.", tr: "Görünüşe göre kesinti kabaca iki saat sürmüş; dolayısıyla zarar ölçülü." },
       ],
       questions: [
@@ -277,11 +277,11 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Editor", de: "The figures are said to show a fall in circulation. Where does the number come from?", tr: "Rakamların tirajda düşüş gösterdiği söyleniyor. Sayı nereden geliyor?" },
         { speaker: "Reporter", de: "From a database. Having read the editorial, I asked the publisher for the methodology.", tr: "Bir veri tabanından. Başyazıyı okuyunca yayıncıdan yöntemi istedim." },
         { speaker: "Researcher", de: "It seems to have been taken from a projection, not from a survey. That is a contradiction.", tr: "Bir anketten değil, bir tahminden alınmış görünüyor. Bu bir çelişki." },
-        { speaker: "Editor", de: "We should have checked the attribution before the story was published.", tr: "Haber yayınlanmadan önce kaynağı kontrol etmemiz gerekirdi." },
+        { speaker: "Editor", de: "We should have checked the attribution before the story was published.", tr: "Haber yayımlanmadan önce kaynağı kontrol etmemiz gerekirdi." },
         { speaker: "Reporter", de: "What the paper argues for is accountability; the bias must have been there from the start.", tr: "Gazetenin savunduğu şey hesap verebilirlik; yanlılık başından beri orada olmalı." },
         { speaker: "Researcher", de: "Apparently the intern paraphrased the quotation. The consent for the name was never given.", tr: "Görünüşe göre stajyer alıntıyı kendi sözcükleriyle yazmış. Ad için rıza hiç alınmamış." },
-        { speaker: "Editor", de: "Then a correction will be published tomorrow. Never before has such a case reached the hearing.", tr: "O hâlde yarın bir düzeltme yayımlanıyor. Böyle bir olay daha önce hiç duruşmaya gitmedi." },
-        { speaker: "Reporter", de: "By Friday the correction will have been printed, and the relevance of the story will be reviewed.", tr: "Cumaya kadar düzeltme basılmış olacak, haberin önemi de gözden geçiriliyor." },
+        { speaker: "Editor", de: "Then a correction will be published tomorrow. Never before has such a case reached the hearing.", tr: "O hâlde yarın bir düzeltme yayımlanacak. Böyle bir olay daha önce hiç duruşmaya gitmedi." },
+        { speaker: "Reporter", de: "By Friday the correction will have been printed, and the relevance of the story will be reviewed.", tr: "Cumaya kadar düzeltme basılmış olacak, haberin önemi de gözden geçirilecek." },
       ],
       questions: [
         { de: "Where does the number seem to come from?", tr: "Sayı nereden geliyor gibi görünüyor?", options: ["From a projection", "From a measurement", "From the publisher's letter", "From the intern's own notes"], answer: 0 },
@@ -302,7 +302,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Bir iddiayı kaynağına bağlıyorsun.", de: "The figures are said to show a fall, but the source is a projection.", tr: "Rakamların düşüş gösterdiği söyleniyor ama kaynak bir tahmin." },
-      { situation: "Kendi kurumunun eksiğini kabul ediyorsun.", de: "We should have checked the attribution before the story was published.", tr: "Haber yayınlanmadan önce kaynağı kontrol etmemiz gerekirdi." },
+      { situation: "Kendi kurumunun eksiğini kabul ediyorsun.", de: "We should have checked the attribution before the story was published.", tr: "Haber yayımlanmadan önce kaynağı kontrol etmemiz gerekirdi." },
     ],
     writing: {
       prompt: "Bir haberin kısa basın özetini yaz: olguyu iddiadan ayır.",
@@ -419,7 +419,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "I can read a report about inequality and name its measure.", tr: "Eşitsizlik raporunu okuyup ölçüsünü adlandırabiliyorum.", en: "I can read a report about inequality and name its measure." },
-      { de: "I can explain what drives a price.", tr: "Bir fiyatı neyin sürüklediğini açıklayabiliyorum.", en: "I can explain what drives a price." },
+      { de: "I can explain what drives a price.", tr: "Bir fiyatı neyin belirlediğini açıklayabiliyorum.", en: "I can explain what drives a price." },
       { de: "I can describe who is affected by a measure.", tr: "Bir tedbirden kimin etkilendiğini anlatabiliyorum.", en: "I can describe who is affected by a measure." },
       { de: "I can discuss a draft law and its enforcement.", tr: "Bir kanun tasarısını ve uygulanmasını tartışabiliyorum.", en: "I can discuss a draft law and its enforcement." },
       { de: "I can speak about a group without a generalization.", tr: "Bir kesim hakkında genelleme yapmadan konuşabiliyorum.", en: "I can speak about a group without a generalization." },
@@ -429,8 +429,8 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Kiralar ve yeni kanun",
       situation: "Bir radyo tartışmasında iki uzman konut sorununu konuşuyor.",
       turns: [
-        { speaker: "Presenter", de: "The housing shortage is said to be worst in this district. What drives the price here?", tr: "Konut sıkıntısının bu ilçede en ağır olduğu söyleniyor. Fiyatı burada ne sürüklüyor?" },
-        { speaker: "Researcher", de: "What drives the price is not inflation alone; it was the interest rate that changed first.", tr: "Fiyatı sürükleyen tek şey enflasyon değil; ilk değişen faiz oranı oldu." },
+        { speaker: "Presenter", de: "The housing shortage is said to be worst in this district. What drives the price here?", tr: "Konut sıkıntısının bu ilçede en ağır olduğu söyleniyor. Fiyatı burada ne belirliyor?" },
+        { speaker: "Researcher", de: "What drives the price is not inflation alone; it was the interest rate that changed first.", tr: "Fiyatı belirleyen tek şey enflasyon değil; ilk değişen faiz oranı oldu." },
         { speaker: "Official", de: "Facing a housing shortage, many families moved out. The measurement of inequality begins there.", tr: "Konut sıkıntısıyla karşılaşan birçok aile taşındı. Eşitsizliğin ölçümü orada başlıyor." },
         { speaker: "Researcher", de: "Built quickly, the new residential area is already overcrowded and the green space was never funded.", tr: "Hızla inşa edilen yeni yerleşim alanı zaten aşırı kalabalık ve yeşil alan hiç fonlanmadı." },
         { speaker: "Official", de: "The draft law must have been unclear; they can't have read the regulation before the vote.", tr: "Kanun tasarısı belirsiz olmalı; oylamadan önce düzenlemeyi okumuş olamazlar." },
@@ -450,14 +450,14 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       genre: "Gazete yorumu",
       text: "WHO PAYS FOR THE SHORTAGE?\n\nRents are said to be rising because of inflation. What drives the price, however, is the interest rate: it was the rate that changed first, and the housing shortage followed.\n\nFacing that shortage, families with a modest income left the district. Built quickly, the new residential area is overcrowded and the promised green space has not been funded. The measurement of inequality begins with this kind of move, not with the national budget.\n\nNever has voter turnout in the ward been so low. Admittedly the connection is questionable; a single election proves nothing. Nonetheless, the claim that nobody noticed is by no means plausible: the law was discussed twice.\n\nWe should have funded enforcement rather than the campaign. In a sense, the price of the shortage is being paid by the group that was named in every speech and consulted in none.",
       questions: [
-        { de: "What does the writer say drives the price?", tr: "Yazara göre fiyatı ne sürüklüyor?", options: ["The interest rate", "Inflation alone", "The national budget", "The election campaign"], answer: 0 },
+        { de: "What does the writer say drives the price?", tr: "Yazara göre fiyatı ne belirliyor?", options: ["The interest rate", "Inflation alone", "The national budget", "The election campaign"], answer: 0 },
         { de: "What has not been funded?", tr: "Fonlanmayan şey ne?", options: ["The promised green space", "The new residential area", "The draft law", "The measurement"], answer: 0 },
         { de: "What is the point of the last line?", tr: "Son cümlenin vurgusu ne?", options: ["The affected group was talked about but never asked", "The group refused to vote", "The speeches were too long", "The shortage is over"], answer: 0 },
       ],
     },
     speaking: [
-      { situation: "Bir fiyat hareketini açıklıyorsun.", de: "What drives the price is not inflation alone but the interest rate.", tr: "Fiyatı sürükleyen tek şey enflasyon değil, faiz oranı." },
-      { situation: "Bir iddiayı ölçülü tartıyorsun.", de: "Apparently the claim is plausible, but on balance the figure is questionable.", tr: "Görünüşe göre iddia makul ama her şey bir arada rakam kuşkulu." },
+      { situation: "Bir fiyat hareketini açıklıyorsun.", de: "What drives the price is not inflation alone but the interest rate.", tr: "Fiyatı belirleyen tek şey enflasyon değil, faiz oranı." },
+      { situation: "Bir iddiayı ölçülü tartıyorsun.", de: "Apparently the claim is plausible, but on balance the figure is questionable.", tr: "Görünüşe göre iddia makul ama genel olarak bakıldığında rakam kuşkulu." },
     ],
     writing: {
       prompt: "Bir gazete yorumuna cevap yazısı yaz.",
@@ -472,7 +472,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       minWords: 90,
       phrases: [
         { de: "In your piece of … it is claimed that …", tr: "… tarihli yazınızda … iddia ediliyor", en: "In your piece of … it is claimed that …" },
-        { de: "What drives … is …", tr: "…-i sürükleyen şey …", en: "What drives … is …" },
+        { de: "What drives … is …", tr: "…-i belirleyen şey …", en: "What drives … is …" },
         { de: "The measurement of … begins with …", tr: "…-in ölçümü … ile başlıyor", en: "The measurement of … begins with …" },
         { de: "Admittedly …; nonetheless, …", tr: "Doğrusu …; yine de …", en: "Admittedly …; nonetheless, …" },
         { de: "We should have funded … rather than …", tr: "…-i değil …-i fonlamamız gerekirdi", en: "We should have funded … rather than …" },
@@ -496,7 +496,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       { de: "Tact: opposing view / counterargument", tr: "beğenmediğini incelikle söylemek" },
     ],
     canDo: [
-      { de: "I can read a catalog entry and name what it claims.", tr: "Bir katalog künyesini okuyup neyi savunduğunu adlandırabiliyorum.", en: "I can read a catalog entry and name what it claims." },
+      { de: "I can read a catalog entry and name what it claims.", tr: "Bir katalog metnini okuyup neyi savunduğunu adlandırabiliyorum.", en: "I can read a catalog entry and name what it claims." },
       { de: "I can say what a play or a film actually does.", tr: "Bir oyunun ya da filmin ne yaptığını söyleyebiliyorum.", en: "I can say what a play or a film actually does." },
       { de: "I can describe a performance and its shortcomings.", tr: "Bir temsili ve eksiklerini anlatabiliyorum.", en: "I can describe a performance and its shortcomings." },
       { de: "I can disagree with a review with tact.", tr: "Bir eleştiriye incelikle karşı çıkabiliyorum.", en: "I can disagree with a review with tact." },
@@ -510,7 +510,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Visitor", de: "What the play does is name the cost of the era. The context was clear from the first scene.", tr: "Oyunun yaptığı şey o dönemin bedelini adlandırmak. Bağlam ilk sahneden belliydi." },
         { speaker: "Critic", de: "In that respect I agree. The ending, however, must have been hasty.", tr: "Bu açıdan katılıyorum. Ancak final aceleye getirilmiş olmalı." },
         { speaker: "Visitor", de: "Having watched the company rehearse, I expected a grand depiction of the last night.", tr: "Topluluğun provasını izlediğim için son gecenin görkemli bir betimini bekliyordum." },
-        { speaker: "Critic", de: "If she had portrayed the room, the work would have been convincing, especially since the start was strong.", tr: "Odayı betimlemiş olsaydı eser ikna edici olurdu, hele başlangıç güçlüyken." },
+        { speaker: "Critic", de: "If the director had portrayed the room, the work would have been convincing, especially since the start was strong.", tr: "Yönetmen odayı betimlemiş olsaydı eser ikna edici olurdu, hele başlangıç güçlüyken." },
         { speaker: "Visitor", de: "That is an opposing view, and a fair one. They can't have missed the shortcoming themselves.", tr: "Bu karşı bir görüş ve haklı bir görüş. Eksiği kendileri de kaçırmış olamaz." },
         { speaker: "Critic", de: "Never has a premiere in this hall caused such applause and such doubt at once.", tr: "Bu salonda bir prömiyer hiç aynı anda bu kadar alkış ve bu kadar kuşku toplamadı." },
         { speaker: "Visitor", de: "Apparently the jury was carried away. On balance the interpretation is arguably monotonous.", tr: "Görünüşe göre jüri kendini kaptırmış. Genel olarak bakıldığında yorum tekdüze sayılabilir." },
@@ -591,7 +591,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Manager", de: "They can't have signed that clause without a check. We should have asked for an interest-free plan.", tr: "O maddeyi kontrol etmeden imzalamış olamazlar. Faizsiz bir plan istememiz gerekirdi." },
         { speaker: "Colleague", de: "Then let us talk about flextime. A permanent position matters more to me than a bonus.", tr: "O hâlde esnek çalışmayı konuşalım. Kalıcı kadro benim için ikramiyeden önemli." },
         { speaker: "Manager", de: "By December we will have decided on the fixed-term contracts.", tr: "Aralığa kadar belirli süreli sözleşmelere karar vermiş olacağız." },
-        { speaker: "Colleague", de: "Then I will put the two conditions in writing, and we can comply with the union rule.", tr: "O hâlde iki koşulu yazıya geçireceğim, böylece işçi temsilciliği kuralına da uyarız." },
+        { speaker: "Colleague", de: "Then I will put the two conditions in writing, and we can comply with the union rule.", tr: "O hâlde iki koşulu yazıya geçireceğim, böylece sendika kuralına da uyarız." },
       ],
       questions: [
         { de: "What decides a career, according to the colleague?", tr: "Meslektaşa göre kariyeri ne belirliyor?", options: ["The chance of promotion", "The hourly wage", "The bonus", "The notice period"], answer: 0 },
@@ -741,10 +741,10 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Officer", de: "The case file is said to be complete. What caused the delay in March?", tr: "Dosyanın tamamlandığı söyleniyor. Martta gecikmeye ne yol açtı?" },
         { speaker: "Agent", de: "What caused the delay was a scheduling conflict, not the missing enclosure.", tr: "Gecikmeye yol açan şey bir takvim çakışmasıydı, eksik ek değil." },
-        { speaker: "Officer", de: "Having read the interim report, I accept that. The filing of the enclosure is recorded on the tenth.", tr: "Ara raporu okuduktan sonra bunu kabul ediyorum. Ekin dosyalanması onunda kayıtlı." },
+        { speaker: "Officer", de: "Having read the interim report, I accept that. The filing of the enclosure is recorded on the tenth.", tr: "Ara raporu okuduktan sonra bunu kabul ediyorum. Ekin dosyalanması ayın onunda kayıtlı." },
         { speaker: "Agent", de: "It was the deadline extension that saved the project. We should have asked for it earlier.", tr: "Projeyi kurtaran şey süre uzatımıydı. Daha önce istememiz gerekirdi." },
         { speaker: "Officer", de: "Never has an answer come so promptly from your side; that is noted in the file.", tr: "Sizin taraftan bir cevap hiç bu kadar çabuk gelmedi; bu dosyaya not düşüldü." },
-        { speaker: "Agent", de: "Then the supplementary agreement will be signed this week, provided that the price adjustment stands.", tr: "O hâlde ek sözleşme bu hafta imzalanıyor, fiyat düzeltmesi geçerli kalırsa." },
+        { speaker: "Agent", de: "Then the supplementary agreement will be signed this week, provided that the price adjustment stands.", tr: "O hâlde fiyat düzeltmesi geçerli kalırsa ek sözleşme bu hafta imzalanacak." },
         { speaker: "Officer", de: "In view of your letter, it seems to be settled. By the end of the month the remaining amount will have been paid.", tr: "Yazınız göz önüne alınırsa, konu çözülmüş görünüyor. Ay sonuna kadar kalan tutar ödenmiş olacak." },
         { speaker: "Agent", de: "Good. I would like to make one last point clear: the right of return remains contractual.", tr: "Güzel. Son bir noktayı netleştirmek isterim: iade hakkı sözleşmeye bağlı kalıyor." },
       ],

@@ -88,7 +88,7 @@
   "sceneEn": "In a meeting you disagree with a colleague's proposal. First show that you have understood them, then put your reservation in soft forms, and suggest a compromise at the end.",
   "partnerEn": "a reasonable colleague who is attached to their proposal",
   "openingEn": "I suggest we push the project back by three months. How do you see it?",
-  "goalEn": "The other side has been shown to be understood, the reservation has been put and a compromise has been suggested."
+  "goalEn": "You have shown that you understand the other side, voiced your reservation and suggested a compromise."
  },
  {
   "conversation": "de-b1-medienkonsum",
@@ -108,7 +108,7 @@
   "conversation": "de-b1-serienabend",
   "sceneEn": "You and a friend are arguing about the finale of the series you watched: what you liked, what you liked it in spite of, what ending you would have expected. Build clauses of contrast and expectation.",
   "partnerEn": "a friend who loved the finale and is trying to win you over",
-  "openingEn": "Well I thought the finale was superb. But you made such a face — what didn't you like?",
+  "openingEn": "Well, I thought the finale was superb. But you made such a face — what didn't you like?",
   "goalEn": "What you liked and disliked about the finale has been said and the ending you expected has been described."
  },
  {
@@ -172,6 +172,6 @@
   "sceneEn": "You are discussing your back pain with a physiotherapist: when it starts, how you sit during the day, what they recommend. Discuss the advice in the subjunctive.",
   "partnerEn": "a physiotherapist who gives practical advice and gets you moving",
   "openingEn": "Show me how you sit at your desk. When does it hurt most?",
-  "goalEn": "When the pain started and how you sit have been described, and a concrete suggestion has been taken away."
+  "goalEn": "When the pain started and how you sit have been described, and you have come away with a concrete suggestion."
  }
 ]

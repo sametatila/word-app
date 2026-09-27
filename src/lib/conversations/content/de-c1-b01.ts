@@ -74,7 +74,7 @@ export const deC1B01: Conversation[] = [
       { say: [tr("Örnek:"), de("Wir haben eine Entscheidung getroffen."), tr("Tekrar et:"), de("Wir haben eine Entscheidung getroffen")], expect: repeat("Wir haben eine Entscheidung getroffen") },
       { say: [tr("Sıra sende: 'Bu seçenek bizim için söz konusu değil.'")], expect: produce("Diese Option kommt für uns nicht in Frage", [tr("Öbek belirteçsizdir; olumsuzluk öbekten önce:"), de("Diese Option kommt für uns nicht in Frage."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Her zaman hizmetinizdeyim.'")], expect: produce("Ich stehe Ihnen jederzeit zur Verfügung", [tr("Kişi yönelme hâlinde, öbek sonda:"), de("Ich stehe Ihnen jederzeit zur Verfügung."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Bunu ciddi biçimde göz önüne alıyoruz.'")], expect: produce("Wir ziehen das ernsthaft in Betracht", [tr("Nesne özneden hemen sonra, öbek en sonda:"), de("Wir ziehen das ernsthaft in Betracht."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Bunu ciddi biçimde göz önüne alıyoruz.'")], expect: produce("Wir ziehen das ernsthaft in Betracht", [tr("Nesne çekimli fiilden hemen sonra, öbek en sonda:"), de("Wir ziehen das ernsthaft in Betracht."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Diese Option kommt für uns nicht in die Frage."), tr("cümlesi doğru mu?")], expect: truefalse("Diese Option kommt für uns nicht in die Frage.", false, [tr("Bu öbek belirteç almaz; eklenen belirteç kalıbı bozar:"), de("Diese Option kommt für uns nicht in Frage.")]) },
       { say: [tr("Son: 'Kararın kapsamı henüz net değil.'")], expect: produce("Die Tragweite der Entscheidung ist noch unklar", [tr("İki isim tamlamayla bağlanıyor:"), de("Die Tragweite der Entscheidung ist noch unklar."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir yönetim toplantısında karar süreci yürüteceksin.")] },
@@ -114,7 +114,7 @@ export const deC1B01: Conversation[] = [
       { de: "… in Anspruch nehmen", tr: "haktan yararlanmak" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Dün öbeklerin mantığını kurduk; bugün en çok işine yarayacak beşini ezberleyeceğiz. Bunlar resmî yazışmada neredeyse zorunlu. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Geçen derste öbeklerin mantığını kurduk; bugün en çok işine yarayacak beşini ezberleyeceğiz. Bunlar resmî yazışmada neredeyse zorunlu. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Dikkat: öbeğin fiili çekilir, ismi asla değişmez. Yani 'in Anspruch nehmen' öbeğinde yalnız nehmen çekilir. Önce kelimeler.")] },
       word("İlk", { de: "in Anspruch nehmen", tr: "yararlanmak" }),
       word("İkinci", { de: "zum Ausdruck bringen", tr: "dile getirmek" }),
@@ -274,7 +274,7 @@ export const deC1B01: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün kötü haberi kurum adına vereceğiz. Bu dilin iki işi var: sorumluluğu kabul etmek ve paniği büyütmemek. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bunu isimleşme ve edilgen birlikte yapıyor: 'önlem aldık' değil, 'önlemler başlatıldı'. Kim yaptığı silinince olay kurumsallaşır. Önce kelimeler.")] },
+      { say: [tr("Bunu isimleşme ve edilgen birlikte yapıyor: 'önlem aldık' değil, 'önlemler başlatıldı'. Kimin yaptığı silinince olay kurumsallaşır. Önce kelimeler.")] },
       word("İlk", { de: "bedauern", tr: "üzüntü duymak" }),
       word("İkinci", { de: "einleiten", tr: "başlatmak" }),
       word("Üçüncü", { de: "die Aufarbeitung", tr: "inceleme" }),

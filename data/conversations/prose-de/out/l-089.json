@@ -22,7 +22,7 @@
  {
   "tr": "Geleceği tartışmak",
   "kind": "titleTr",
-  "de": "Über die Zukunft streiten"
+  "de": "Über die Zukunft diskutieren"
  },
  {
   "tr": "Birini ikna etmeyi öğretir; ikna fiilleri kendi ardılını seçer, kimi -ing kimi to ister.",
@@ -92,7 +92,7 @@
  {
   "tr": "Sence gelecek yıl daha iyi olacak mı?",
   "kind": "openingTr",
-  "de": "Glaubst du, nächstes Jahr wird besser?"
+  "de": "Glaubst du, das nächste Jahr wird besser?"
  },
  {
   "tr": "Bir yerde işe yaradığını okudum. Neden sordun?",
@@ -102,7 +102,7 @@
  {
   "tr": "Bir arkadaşını ortak bir planı değiştirmeye ikna etmeye çalışıyorsun. Gerekçeni söyle, onun itirazını karşıla ve bir rica ile bitir.",
   "kind": "scene",
-  "de": "Du versuchst, einen Freund zu überreden, einen gemeinsamen Plan zu ändern. Sag deinen Grund, begegne seinem Einwand und schließ mit einer Bitte."
+  "de": "Du versuchst, einen Freund zu überreden, einen gemeinsamen Plan zu ändern. Nenn deinen Grund, begegne seinem Einwand und schließ mit einer Bitte."
  },
  {
   "tr": "Bir arkadaşın geç geldiği için tartışmanın başını kaçırdı. Ona sen konuşmadan önce nelerin olduğunu ve kararın ne zaman alındığını anlat.",
@@ -120,9 +120,9 @@
   "de": "Du besprichst mit einem Freund, wie das nächste Jahr wird. Sag eine Vermutung, eine Erwartung mit Anzeichen und einen fest vereinbarten Plan."
  },
  {
-  "tr": "Bir arkadaşınla kimsenin tam bilmediği bir olayı konuşuyorsunuz. Bir çıkarımına emin ol, bir ihtimali tamamen kapat ve bir üçüncüsüne sadece ihtimal ver.",
+  "tr": "Bir arkadaşınla kimsenin tam bilmediği bir olayı konuşuyorsunuz. Bir çıkarımından emin ol, bir ihtimali tamamen kapat ve bir üçüncüsüne sadece ihtimal ver.",
   "kind": "scene",
-  "de": "Du besprichst mit einem Freund ein Ereignis, das niemand genau kennt. Sei dir bei einem Schluss sicher, schließ eine Möglichkeit ganz aus und gib einer dritten nur eine Chance."
+  "de": "Du besprichst mit einem Freund ein Ereignis, das niemand genau kennt. Sei dir bei einem Schluss sicher, schließ eine Möglichkeit ganz aus und halte eine dritte nur für möglich."
  },
  {
   "tr": "Üç kesinlik derecesini üç ayrı kiple söylediysen konuşma başarılı sayılır.",
@@ -587,7 +587,7 @@
  {
   "tr": "ihtimal veriyorsan",
   "kind": "say.tr",
-  "de": "gibst du ihm nur eine Chance, sagst du"
+  "de": "hältst du es nur für möglich, sagst du"
  },
  {
   "tr": "imkânsız görüyorsan",
@@ -687,7 +687,7 @@
  {
   "tr": "Sorunu daha önce duymuştum.",
   "kind": "say.tr",
-  "de": "Ich hatte früher von dem Problem gehört."
+  "de": "Ich hatte schon vorher von dem Problem gehört."
  },
  {
   "tr": "Araştırmadaki rakamlar eski.",
@@ -712,7 +712,7 @@
  {
   "tr": "Şakaya gelmeyen bir hâl için",
   "kind": "say.tr",
-  "de": "Für einen Zustand, der keinen Spaß versteht, –"
+  "de": "Für einen Zustand, mit dem nicht zu spaßen ist, –"
  },
  {
   "tr": "bir şeyin önemli olmasına ise",
@@ -747,7 +747,7 @@
  {
   "tr": "Cuma günü toplumu tartışıyoruz.",
   "kind": "say.tr",
-  "de": "Am Freitag besprechen wir die Gesellschaft."
+  "de": "Am Freitag diskutieren wir über die Gesellschaft."
  },
  {
   "tr": "Herkesin alıntıladığı anket bu.",
@@ -847,7 +847,7 @@
  {
   "tr": "Bazı masraflar düşerken bazıları büyüyor.",
   "kind": "say.tr",
-  "de": "Manche Kosten fallen, während andere wachsen."
+  "de": "Manche Kosten sinken, während andere wachsen."
  },
  {
   "tr": "denir ve bu fiil tartışmanın sert ucudur.",
@@ -1022,7 +1022,7 @@
  {
   "tr": "denir; kanıt değildir, bu yüzden ihtimal kipiyle söylenir.",
   "kind": "say.tr",
-  "de": "auf Englisch, und weil es kein Beweis ist, steht es im Modalverb der Möglichkeit."
+  "de": "auf Englisch, und weil es kein Beweis ist, steht es mit dem Modalverb der Möglichkeit."
  },
  {
   "tr": "Şimdi bir arkadaşınla ne olmuş olabileceğini konuşacaksın.",
@@ -1112,7 +1112,7 @@
  {
   "tr": "Merhaba! Bugün tahmin yürütmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, neye sadece ihtimal veriyorsun.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir zu mutmaßen: wobei du sicher bist, was du für unmöglich hältst, wem du nur eine Möglichkeit gibst."
+  "de": "Hallo! Heute lernen wir zu mutmaßen: wobei du sicher bist, was du für unmöglich hältst, was du nur für möglich hältst."
  },
  {
   "tr": "İngilizcede bu üç şey aynı gelecek değil; hangisini seçtiğin karşıdakine ne kadar dayanağın olduğunu söylüyor. Hazır mısın?",

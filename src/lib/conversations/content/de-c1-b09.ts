@@ -343,7 +343,7 @@ export const deC1B09: Conversation[] = [
     chat: {
       scene: "Yeni bir iş ortamındasın ve biri sana 'sen' demeyi teklif ediyor. Teklife karşılık ver, ortamın teamülünü sor, kendi tercihini kibarca söyle ve ilişkiyi rahat bırak.",
       partner: "samimi bir ortam kurmak isteyen, teklifi doğal bulan bir meslektaş",
-      opening: "Wir siezen uns hier eigentlich nicht. Wollen wir beim Du bleiben?",
+      opening: "Wir siezen uns hier eigentlich nicht. Wollen wir uns einfach duzen?",
       openingTr: "Burada aslında siz diye konuşmuyoruz. Senli konuşalım mı?",
       goal: "Teklife karşılık verilmiş, ortamın teamülü öğrenilmiş ve kendi tercihin kibarca söylenmiş olur.",
       minTurns: 8,
@@ -495,7 +495,7 @@ export const deC1B09: Conversation[] = [
       { say: [tr("Sıra sende: 'Zamanlama her şeydir.'")], expect: produce("Timing ist alles", [tr("Kısa ve kalıplaşmış cümle:"), de("Timing ist alles."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Kendine gülebilmek bir olgunluk işaretidir.'")], expect: produce("Selbstironie ist ein Zeichen von Reife", [tr("Belirteçsiz özne; edat yönelme hâlinde:"), de("Selbstironie ist ein Zeichen von Reife."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Kuru espri hemen anlaşılmaz.'")], expect: produce("Trockener Humor erschließt sich nicht sofort", [tr("Belirteçsiz eril; sıfat -er ekini alır; dönüşlü fiil:"), de("Trockener Humor erschließt sich nicht sofort."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Der deutsche Humor wird unterschätzt."), tr("cümlesi doğru mu?")], expect: truefalse("Der deutsche Humor wird unterschätzt.", true, [tr("Doğru. Şimdiki zaman edilgeni kurulmuş, belirtili eril özne sıfatı -e ekiyle almış ve ortaç sonda duruyor.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Der deutsche Humor wird unterschätzt."), tr("cümlesi doğru mu?")], expect: truefalse("Der deutsche Humor wird unterschätzt.", true, [tr("Doğru. Şimdiki zaman edilgeni kurulmuş, belirtili eril öznede sıfat -e ekini almış ve ortaç sonda duruyor.")]) },
       { say: [tr("Son: 'Alman mizahı hafife alınıyor.'")], expect: produce("Der deutsche Humor wird unterschätzt", [tr("Edilgen; ortaç sonda:"), de("Der deutsche Humor wird unterschätzt."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette mizah anlayışlarını karşılaştıracaksın.")] },
     ],

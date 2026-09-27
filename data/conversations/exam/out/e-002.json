@@ -56,7 +56,7 @@
  { "tr": "İki dil arasında", "kind": "reading.title", "en": "Between two languages" },
  { "tr": "İptal olan akşam", "kind": "listening.title", "en": "The canceled evening" },
  { "tr": "Karmaşık yapılar", "kind": "plan.title", "en": "Complex structures" },
- { "tr": "Kesin yorucuydu.", "kind": "turn", "en": "That must have been tiring." },
+ { "tr": "Kesin yorucu olmuştur.", "kind": "turn", "en": "That must have been tiring." },
  { "tr": "Komşu toplantısı", "kind": "listening.title", "en": "The neighborhood meeting" },
  { "tr": "Koruyucu muayene", "kind": "reading.title", "en": "Preventive check-ups" },
  { "tr": "Maç iptal edildi", "kind": "listening.title", "en": "The game was called off" },

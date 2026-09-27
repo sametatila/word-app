@@ -126,7 +126,7 @@
  { "tr": "„sich kümmern um“, „leiden an“", "kind": "focus", "en": "“sich kümmern um”, “leiden an”" },
  { "tr": "Ahmet'in erkek kardeşi var mı?", "kind": "question", "en": "Does Ahmet have a brother?" },
  { "tr": "Arkadaşına tavsiye veriyorsun.", "kind": "speaking.situation", "en": "You are giving a friend advice." },
- { "tr": "Arkadaşına ne zaman müsait olduğunu soruyorsun.", "kind": "speaking.situation", "en": "You ask a friend when they are free." },
+ { "tr": "Arkadaşına ne zaman müsait olduğunu soruyorsun.", "kind": "speaking.situation", "en": "You are asking a friend when they are free." },
  { "tr": "Başlangıcı bugünle karşılaştır", "kind": "writing.checklist", "en": "Compare the beginning with today" },
  { "tr": "belirsiz sözlerle ilgi cümlesi", "kind": "focus", "en": "a relative clause with indefinite words" },
  { "tr": "belirtileri ayrıntılı anlatmak", "kind": "focus", "en": "describing the symptoms in detail" },

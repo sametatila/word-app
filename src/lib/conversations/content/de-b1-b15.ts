@@ -178,7 +178,7 @@ export const deB1B15: Conversation[] = [
       { say: [tr("İkinci kalıbımız süreyi soruyor. Burada da soru sözcüğü öbeği bağlaç oluyor.")] },
       { say: [tr("Şimdi: 'Ne kadar süreceğini bilmiyorum.'")], expect: produce("Ich weiß nicht, wie lange es dauert", [tr("Soru sözcüğü öbeği bağlaç, fiil sonda:"), de("Ich weiß nicht, wie lange es dauert."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich frage mich, weshalb funktioniert das Netz nicht."), tr("cümlesi doğru mu?")], expect: truefalse("Ich frage mich, weshalb funktioniert das Netz nicht.", false, [tr("Dolaylı soruda çekimli fiil cümlenin sonuna gider:"), de("Ich frage mich, weshalb das Netz nicht funktioniert.")]) },
-      { say: [tr("Son: 'Normalde bağlantının ne kadar sürdüğünü sorabilir miyim?'")], expect: produce("Darf ich fragen, wie lange die Verbindung normalerweise dauert", [tr("Kibar giriş, bağlaç ve sonda fiil:"), de("Darf ich fragen, wie lange die Verbindung normalerweise dauert?"), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Böyle bir arızanın normalde ne kadar sürdüğünü sorabilir miyim?'")], expect: produce("Darf ich fragen, wie lange so eine Störung normalerweise dauert", [tr("Kibar giriş, bağlaç ve sonda fiil:"), de("Darf ich fragen, wie lange so eine Störung normalerweise dauert?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi sağlayıcıyı arayacak ve arızayı soracaksın.")] },
     ],
     chat: {
@@ -389,7 +389,7 @@ export const deB1B15: Conversation[] = [
       { say: [tr("Sıra sende: 'Bu, her şeyi açıklayan çizim.'")], expect: produce("Das ist die Zeichnung, die alles erklärt", [tr("Dişil adda ilgi zamiri de dişil, fiil sonda:"), de("Das ist die Zeichnung, die alles erklärt."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız görseldeki bir ögeyi tanımlıyor. Nötr adda zamir de nötr olur.")] },
       { say: [tr("Şimdi: 'Yukarıda duran sembol tehlikeyi gösteriyor.'")], expect: produce("Das Symbol, das oben steht, zeigt die Gefahr", [tr("İlgi cümlesi araya giriyor, ana cümlenin fiili ondan sonra:"), de("Das Symbol, das oben steht, zeigt die Gefahr."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Das ist die Abbildung, das die Zahlen zeigt."), tr("cümlesi doğru mu?")], expect: truefalse("Das ist die Abbildung, das die Zahlen zeigt.", false, [tr("İlgi zamiri tanımlanan adın cinsiyetine uyar, nesnesine değil:"), de("Das ist die Abbildung, die die Zahlen zeigt.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Das ist die Abbildung, das die Zahlen zeigt."), tr("cümlesi doğru mu?")], expect: truefalse("Das ist die Abbildung, das die Zahlen zeigt.", false, [tr("İlgi zamiri tanımlanan adın cinsiyetine uyar; buradaki ad dişil:"), de("Das ist die Abbildung, die die Zahlen zeigt.")]) },
       { say: [tr("Son: 'Son satırdaki çarpıyı büyütebilir misiniz?'")], expect: produce("Können Sie das Kreuz in der letzten Zeile vergrößern", [tr("Modal fiil başta, mastar sonda:"), de("Können Sie das Kreuz in der letzten Zeile vergrößern?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi bir toplantıda görseli anlatacaksın.")] },
     ],

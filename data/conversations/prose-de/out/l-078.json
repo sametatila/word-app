@@ -72,7 +72,7 @@
  {
   "tr": "daha önce ev paylaşmamış, her şeyi soran yeni ev arkadaşın",
   "kind": "partner",
-  "de": "dein neuer Mitbewohner, der noch nie geteilt hat und alles fragt"
+  "de": "dein neuer Mitbewohner, der noch nie eine Wohnung geteilt hat und alles fragt"
  },
  {
   "tr": "Cumartesi kamyonet kaçta geliyor?",
@@ -325,7 +325,7 @@
   "de": "fragt, wann ein Vorgang stattfindet"
  },
  {
-  "tr": "kim yaptığını söylemeden kuralı anlatır",
+  "tr": "kimin yaptığını söylemeden kuralı anlatır",
   "kind": "pattern.tr",
   "de": "nennt die Regel, ohne zu sagen, wer sie ausführt"
  },
@@ -615,7 +615,7 @@
   "de": "Fassen wir zusammen: laufende Suche"
  },
  {
-  "tr": "Bir çizelgede anlaşmalıyız.",
+  "tr": "Bir çizelge üzerinde anlaşmalıyız.",
   "kind": "say.tr",
   "de": "Wir sollten uns auf einen Putzplan einigen."
  },
@@ -757,7 +757,7 @@
  {
   "tr": "denir; bu kelime ilanların dilidir.",
   "kind": "say.tr",
-  "de": "auf Englisch; das Wort ist die Sprache der Anzeigen."
+  "de": "auf Englisch; das Wort gehört zur Sprache der Anzeigen."
  },
  {
   "tr": "İkinci kalıbımız zamirsiz. Tekrar et:",

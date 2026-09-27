@@ -497,7 +497,7 @@
  {
   "tr": "Bir kusuru üstlenen açıklamaya",
   "kind": "say.tr",
-  "de": "Die Erklärung, die einen Fehler übernimmt, heißt"
+  "de": "Die Erklärung, die die Verantwortung für einen Fehler übernimmt, heißt"
  },
  {
   "tr": "Hesabı bir hafta donduruyoruz.",
@@ -642,7 +642,7 @@
  {
   "tr": "aynı olayın bir kişiden çıkan anlatısına ise",
   "kind": "say.tr",
-  "de": "und die Erzählung desselben Vorfalls aus einem Mund heißt"
+  "de": "und die Erzählung desselben Vorfalls aus dem Mund einer Person heißt"
  },
  {
   "tr": "Şimdi kaçırılmış bir anlaşmayı konuşacaksın.",
@@ -677,7 +677,7 @@
  {
   "tr": "Şimdi sen kur: Ancak son tarihte cevap verdiler.",
   "kind": "say.tr",
-  "de": "Jetzt du: Erst zum Termin haben sie geantwortet."
+  "de": "Jetzt du: Erst am Stichtag haben sie geantwortet."
  },
  {
   "tr": "Pazartesi durdurulan hizmet çarşamba yeniden başlatıldı.",
@@ -867,7 +867,7 @@
  {
   "tr": "Sertliği kelime değil YAPI taşıyor: olumsuz zarf başa gelince cümle devriliyor ve ton yükseliyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Schärfe trägt nicht das Wort, sondern der BAU: steht ein negatives Adverb am Anfang, kippt der Satz und der Ton steigt. Bist du bereit?"
+  "de": "Die Schärfe trägt nicht das Wort, sondern der BAU: Steht ein negatives Adverb am Anfang, kippt der Satz und der Ton steigt. Bist du bereit?"
  },
  {
   "tr": "Hatırlatma mektubunun sertliği tarihten değil biçimden geliyor: bitmiş olacak demek, olmazsa sonucu var demektir. Hazır mısın?",

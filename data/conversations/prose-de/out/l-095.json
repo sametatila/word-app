@@ -310,7 +310,7 @@
   "de": "setzt nach dem Verb des Fortsetzens die Form auf -ing"
  },
  {
-  "tr": "yapılanı kim yaptığını söylemeden anlatır",
+  "tr": "yapılanı kimin yaptığını söylemeden anlatır",
   "kind": "pattern.tr",
   "de": "erzählt das Getane, ohne zu sagen, wer es getan hat"
  },
@@ -682,7 +682,7 @@
  {
   "tr": "Onun sesini duyup duymadığımı sordular.",
   "kind": "say.tr",
-  "de": "Sie haben gefragt, ob ich seine Stimme gehört hatte."
+  "de": "Sie haben gefragt, ob ich seine Stimme gehört hätte."
  },
  {
   "tr": "Şimdi sıra sende: Mektup özenle yazıldı.",
@@ -752,7 +752,7 @@
  {
   "tr": "Bir tane daha: Onu görüp görmediğimi sordular.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie haben gefragt, ob ich sie gesehen hatte."
+  "de": "Noch eins: Sie haben gefragt, ob ich sie gesehen hätte."
  },
  {
   "tr": "Bununla tek başına yüzleşmek zorunda değilsin.",
@@ -777,7 +777,7 @@
  {
   "tr": "Cömert bir davranış sessiz bir kahraman yaratır.",
   "kind": "say.tr",
-  "de": "Eine großzügige Tat macht einen stillen Helden."
+  "de": "Eine großzügige Tat macht jemanden zum stillen Helden."
  },
  {
   "tr": "İkinci kalıbımız kaçınmayı anlatıyor. Tekrar et:",
@@ -792,7 +792,7 @@
  {
   "tr": "Bir tane daha: O gün gerektiği gibi hatırlanmalı.",
   "kind": "say.tr",
-  "de": "Noch eins: An diesen Tag muss richtig erinnert werden."
+  "de": "Noch eins: An diesen Tag muss gebührend erinnert werden."
  },
  {
   "tr": "ister; kaçınmayı ve sürdürmeyi anlatan fiiller ise",

@@ -488,7 +488,7 @@ export const deA1B05: Conversation[] = [
       scene:
         "Bir mağazada beğendiğin bir ceketi denemek istiyorsun. Bedenini söyle, denemek için izin iste, kabinin yerini sor ve sonunda üstüne olup olmadığını anlat.",
       partner: "aceleci ama yardımcı olmaya çalışan bir satış görevlisi",
-      opening: "Die Jacke ist gerade neu gekommen. Welche Größe haben Sie?",
+      opening: "Die Jacke ist gerade neu reingekommen. Welche Größe haben Sie?",
       openingTr: "Ceket daha yeni geldi. Hangi bedeni giyiyorsunuz?",
       goal: "Beden bulunmuş, kabinde denenmiş ve üstüne olup olmadığı söylenmiş olur.",
       minTurns: 7,
@@ -1327,7 +1327,7 @@ export const deA1B05: Conversation[] = [
         say: [
           tr("Görevli hemen sebebini soracak. Sebep genelde tek cümledir:"),
           de("Es ist zu eng."),
-          tr("Yani 'Çok dar'. Aynı biçimde"),
+          tr("Yani 'Fazla dar'. Aynı biçimde"),
           de("Es ist zu weit."),
           tr("ya da"),
           de("Es ist zu groß."),
@@ -1376,7 +1376,7 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Nein, leider nicht" },
       },
       {
-        say: [tr("Bir tane daha: 'Bu çok bol.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Bu fazla bol.' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Das ist zu weit",
@@ -2125,12 +2125,12 @@ export const deA1B05: Conversation[] = [
       {
         say: [
           tr("Sepetine son bir şey daha ekleyelim:"),
-          de("Ich brauche auch ein Taschentuch."),
+          de("Ich brauche auch Taschentücher."),
           tr("Yani 'Bir de kâğıt mendile ihtiyacım var'. Lütfen"),
-          de("Ich brauche auch ein Taschentuch"),
+          de("Ich brauche auch Taschentücher"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich brauche auch ein Taschentuch" },
+        expect: { kind: "repeat", target: "Ich brauche auch Taschentücher" },
       },
       {
         say: [

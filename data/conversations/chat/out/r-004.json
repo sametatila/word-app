@@ -4,7 +4,7 @@
   "sceneEn": "You have met your neighbor at the entrance to the building. Talk about the weather, say what you are doing today, and ask about their plans too.",
   "partnerEn": "a chatty neighbor who walks the dog every morning",
   "openingEn": "Good morning! Nice weather today, isn't it?",
-  "goalEn": "A short conversation about the weather has been had and you have both learned the other's plans for the day."
+  "goalEn": "You have had a short chat about the weather and both learned the other's plans for the day."
  },
  {
   "conversation": "de-a1-park",
@@ -148,10 +148,10 @@
  },
  {
   "conversation": "de-a1-gestern",
-  "sceneEn": "You are talking about yesterday with a friend. Tell your day in order: what you did first, where you went next, what happened in the evening.",
+  "sceneEn": "You are talking about yesterday with a friend. Go through your day in order: what you did first, where you went next, what happened in the evening.",
   "partnerEn": "a friend who wants to tell you about their day too",
   "openingEn": "How was your day yesterday? What did you do first?",
-  "goalEn": "Yesterday morning, afternoon and evening have been told in order."
+  "goalEn": "Yesterday morning, afternoon and evening have been described in order."
  },
  {
   "conversation": "de-a1-wochenende-bericht",

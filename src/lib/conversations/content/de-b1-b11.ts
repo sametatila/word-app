@@ -62,7 +62,7 @@ export const deB1B11: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün bir tarif okuyacağız. Tarifler tuhaf bir dille yazılır: kimse 'ben yaparım' demez, her şey kendiliğinden oluyormuş gibi anlatılır. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bunun adı edilgen çatı. Türkçede '-ilir, -ir' ekiyle olur: karıştırılır, eklenir. Almancada yardımcı bir fiil ve ortaç ile kurulur. Önce mutfağın kelimeleri.")] },
+      { say: [tr("Bunun adı edilgen çatı. Türkçede '-il, -in' ekleriyle olur: karıştırılır, eklenir. Almancada yardımcı bir fiil ve ortaç ile kurulur. Önce mutfağın kelimeleri.")] },
       word("İlk", { de: "die Zutaten", tr: "malzemeler" }, "genelde çoğul kullanılır"),
       word("İkinci", { de: "das Mehl", tr: "un" }),
       word("Üçüncü", { de: "das Fett", tr: "yağ" }),
@@ -166,7 +166,7 @@ export const deB1B11: Conversation[] = [
     ],
     patterns: [
       { de: "… ist frischer als …", tr: "iki şeyi karşılaştırır" },
-      { de: "am günstigsten", tr: "en üstün derecesini söyler" },
+      { de: "am günstigsten", tr: "en üstünlük derecesini söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün pazardayız ve seçim yapacağız. Seçim yapmak karşılaştırmak demek: hangisi daha taze, hangisi daha ucuz. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -395,7 +395,7 @@ export const deB1B11: Conversation[] = [
       { say: [tr("Örnek:"), de("Ich habe vor, den Rest morgen zu essen."), tr("Tekrar et:"), de("Ich habe vor, den Rest morgen zu essen")], expect: repeat("Ich habe vor, den Rest morgen zu essen") },
       { say: [tr("Sıra sende: 'Artan yemeği dondurmayı planlıyorum.'")], expect: produce("Ich habe vor, das übrige Essen einzufrieren", [tr("Ayrılabilen fiilde edat ile önek birleşir ve mastar sona gider:"), de("Ich habe vor, das übrige Essen einzufrieren."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız tavsiye veriyor: bir sıfat artı mastar öbeği. Kişisiz bir yapı, o yüzden kimseyi suçlamıyor.")] },
-      { say: [tr("Şimdi: 'Eti çiğ saklamamak daha iyi.'")], expect: produce("Es ist besser, das Fleisch nicht roh zu lagern", [tr("Olumsuzluk mastardan önce, mastar en sonda:"), de("Es ist besser, das Fleisch nicht roh zu lagern."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Çiğ eti uzun süre saklamamak daha iyi.'")], expect: produce("Es ist besser, rohes Fleisch nicht lange zu lagern", [tr("Olumsuzluk mastardan önce, mastar en sonda:"), de("Es ist besser, rohes Fleisch nicht lange zu lagern."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich habe vor, morgen den Kuchen zu backen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich habe vor, morgen den Kuchen zu backen.", true, [tr("Doğru. Mastar öbeğinde nesne mastardan önce geliyor, mastar en sonda.")]) },
       { say: [tr("Son: 'Sosu bir kaseye dökmek daha kolay.'")], expect: produce("Es ist einfacher, die Soße in eine Schüssel zu gießen", [tr("Sıfat artı mastar öbeği, mastar sonda:"), de("Es ist einfacher, die Soße in eine Schüssel zu gießen."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi bir ev arkadaşınla artan yemekleri ne yapacağınızı konuşacaksın.")] },
@@ -565,7 +565,7 @@ export const deB1B11: Conversation[] = [
       scene: "Güzel bir yemeğin sonundasın ve kalkman gerekiyor. Teşekkür ediyor, yardım teklif ediyor, bir sonraki buluşmayı ayarlayıp veda ediyorsun.",
       partner: "seni bırakmak istemeyen, sıcak bir ev sahibi",
       opening: "Schon so spät? Bleib doch noch ein bisschen — es gibt gleich noch Kaffee.",
-      openingTr: "Bu kadar geç mi oldu? Biraz daha kal — birazdan kahve de var.",
+      openingTr: "Bu kadar geç mi oldu? Biraz daha kal — birazdan kahve de gelecek.",
       goal: "Teşekkür edilmiş, yardım teklif edilmiş, bir sonraki buluşma kararlaştırılmış ve veda edilmiş olur.",
       minTurns: 9,
     },

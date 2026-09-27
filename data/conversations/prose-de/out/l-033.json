@@ -144,5 +144,7 @@
  { "tr": "ekliyorsun: '… nerede?'", "kind": "say.tr", "de": "fügst du an: „… wo?“" },
  { "tr": "Fikrini değiştirdiysen:", "kind": "say.tr", "de": "Wenn du deine Meinung geändert hast:" },
  { "tr": "gelince anlamı değişir:", "kind": "say.tr", "de": "ändert sich die Bedeutung:" },
- { "tr": "Hastayım. Sen de söyle.", "kind": "say.tr", "de": "Ich bin krank. Sag du auch." }
+ { "tr": "Hastayım. Sen de söyle.", "kind": "say.tr", "de": "Ich bin krank. Sag du auch." },
+ { "tr": "toplamak", "kind": "vocab.tr", "de": "sammeln" },
+ { "tr": "kabul etmek", "kind": "vocab.tr", "de": "akzeptieren" }
 ]

@@ -589,7 +589,7 @@ export const deA1B08: Conversation[] = [
       },
       {
         say: [
-          tr("Bazı sporlara ise 'yapmak' değil 'gitmek' fiiliyle gidilir:"),
+          tr("Bazı sporlar için ise 'yapmak' değil 'gitmek' fiili kullanılır:"),
           de("Ich gehe joggen."),
           tr(
             "Yani 'Koşuya gidiyorum'. İki fiil yan yana duruyor ve ikincisi yalın hâlde sonda kalıyor. Yüzmek için de aynısı geçerli:",

@@ -91,7 +91,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["wohne", "straße", "strasse", "zentrum", "nähe", "naehe", "stadt"], "Sehr gut. Kennen Sie schon jemanden im Team?", "Çok iyi. Ekipten tanıdığınız biri var mı?", "t5", []),
     ], { say: "Wo wohnen Sie?", sayTr: "Nerede oturuyorsunuz?", example: "Ich wohne in der Bahnhofstraße." }),
     t("t5", "Kennen Sie schon jemanden im Team?", "Ekipten tanıdığınız var mı?", "Evet/hayır de: Ja, ich kenne … / Nein, noch nicht", [
-      r(["ja", "nein", "kenne", "noch", "niemand", "frau", "herr", "kollege", "kollegin"], "Das kommt schnell. Ihre erste Aufgabe heute: Können Sie die Post sortieren?", "O çabuk olur. Bugünkü ilk işiniz: Postayı ayırabilir misiniz?", "t6", []),
+      r(["ja", "nein", "kenne", "noch", "niemand", "frau", "herr", "kollege", "kollegin"], "Das geht schnell. Ihre erste Aufgabe heute: Können Sie die Post sortieren?", "O çabuk olur. Bugünkü ilk işiniz: Postayı ayırabilir misiniz?", "t6", []),
     ], { say: "Kennen Sie jemanden hier — ja oder nein?", sayTr: "Burada tanıdığınız var mı — evet mi hayır mı?", example: "Nein, noch nicht." }),
     t("t6", "Können Sie heute die Post sortieren?", "Bugün postayı ayırabilir misiniz?", "Kabul et: Ja, gern / Natürlich", [
       r(["ja", "gern", "gerne", "natürlich", "natuerlich", "klar", "kann", "mache"], "Wunderbar. Dann viel Erfolg am ersten Tag — und fragen Sie mich jederzeit!", "Harika. O zaman ilk gününüzde başarılar — ve istediğiniz zaman bana sorun!", undefined, []),
@@ -181,7 +181,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["straße", "strasse", "weg", "platz", "schreibt", "buchstabiere", "wohne", "man"], "Habe ich. Möchten Sie die Karte heute abholen oder soll ich sie schicken?", "Aldım. Kartı bugün almak ister misiniz, yoksa göndereyim mi?", "t6", ["Wie schreibt man das?"]),
     ], { say: "Buchstabieren Sie bitte Ihre Straße.", sayTr: "Sokağınızı harf harf söyleyin lütfen.", example: "Man schreibt: L-I-N-D-E-N-S-T-R-A-S-S-E." }),
     t("t6", "Möchten Sie die Karte heute abholen oder soll ich sie schicken?", "Kartı bugün mü alırsınız, göndereyim mi?", "Birini seç: abholen / schicken", [
-      r(["abholen", "hole", "schicken", "post", "heute", "selbst", "komme"], "Gut. Buchstabieren Sie bitte noch einmal Ihren Vornamen.", "Peki. Adınızı bir kez daha harfler misiniz?", "t7", []),
+      r(["abholen", "hole", "schicken", "post", "heute", "selbst", "komme"], "Gut. Buchstabieren Sie bitte noch einmal Ihren Vornamen.", "Peki. Adınızı bir kez daha harf harf söyler misiniz?", "t7", []),
     ], { say: "Abholen oder schicken?", sayTr: "Gelip almak mı, göndermek mi?", example: "Ich hole sie ab." }),
     t("t7", "Buchstabieren Sie bitte noch einmal Ihren Vornamen.", "Adınızı bir kez daha harf harf söyleyin lütfen.", "Adını harf harf söyle", [
       r(["vorname", "heiße", "heisse", "buchstabiere", "name", "schreibt"], "Perfekt, alles richtig. Ihre Karte ist am Freitag fertig — viel Spaß beim Lesen!", "Mükemmel, hepsi doğru. Kartınız cuma hazır — iyi okumalar!", undefined, ["Buchstabieren Sie bitte.", "Mein Nachname ist …"]),

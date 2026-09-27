@@ -307,7 +307,7 @@
  {
   "tr": "Doğru. Kimin yüklediği söylenmiyor ve platform dilinde bu olağan; önemli olan dersin yüklenmiş olması.",
   "kind": "why.tr",
-  "de": "Richtig. Wer hochlädt, wird nicht genannt, und in der Sprache der Plattform ist das normal; wichtig ist, dass die Lektion oben ist."
+  "de": "Richtig. Wer hochlädt, wird nicht genannt, und in der Sprache der Plattform ist das normal; wichtig ist, dass die Lektion hochgeladen ist."
  },
  {
   "tr": "Doğru. Asıl cümle present perfect'ti ve aktarılınca bir basamak geriye gitti; aktarımda olağan olan bu.",
@@ -512,7 +512,7 @@
  {
   "tr": "Erişim bir kodla veriliyor.",
   "kind": "say.tr",
-  "de": "Der Zugang wird mit einem Code gegeben."
+  "de": "Der Zugang wird per Code gewährt."
  },
  {
   "tr": "Kendini zorlayabilme gücüne",
@@ -537,7 +537,7 @@
  {
   "tr": "Böldüğümüz görev daha kolaydı.",
   "kind": "say.tr",
-  "de": "Die Aufgabe, die wir geteilt haben, war leichter."
+  "de": "Die Aufgabe, die wir aufgeteilt haben, war leichter."
  },
  {
   "tr": "denir ve çoğunlukla çoğul kullanılır.",
@@ -627,7 +627,7 @@
  {
   "tr": "Geri bildirimi anlayıp anlamadığımı sordu.",
   "kind": "say.tr",
-  "de": "Sie hat gefragt, ob ich die Rückmeldung verstanden hatte."
+  "de": "Sie hat gefragt, ob ich die Rückmeldung verstanden hätte."
  },
  {
   "tr": "denir; hem fiil hem isim olarak kullanılır.",
@@ -652,12 +652,12 @@
  {
   "tr": "Şimdi sen kur: İş zor. Ancak sonuç buna değer.",
   "kind": "say.tr",
-  "de": "Jetzt du: Die Arbeit ist hart. Jedoch lohnt sich das Ergebnis."
+  "de": "Jetzt du: Die Arbeit ist hart. Jedoch ist das Ergebnis es wert."
  },
  {
   "tr": "Şimdi sıra sende: Yazımın geliştiğini söyledi.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Er hat gesagt, dass sich mein Schreiben verbessert hatte."
+  "de": "Jetzt bist du dran: Er hat gesagt, dass sich mein Schreiben verbessert habe."
  },
  {
   "tr": "Şimdi sen kur: Bana onu tekrar okumamı söyledi.",
@@ -687,7 +687,7 @@
  {
   "tr": "Bir tane daha: Görevi bitirip bitirmediğimi sordu.",
   "kind": "say.tr",
-  "de": "Noch eins: Er hat gefragt, ob ich die Aufgabe beendet hatte."
+  "de": "Noch eins: Er hat gefragt, ob ich die Aufgabe beendet hätte."
  },
  {
   "tr": "İleri düzey demek. İlk kalıbımız da bu. Tekrar et:",

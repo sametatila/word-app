@@ -78,7 +78,7 @@ export const deC1B03: Conversation[] = [
       scene: "Bir konferans çıkışında dinlediğiniz konuşmayı değerlendiriyorsunuz. Etkileyici bulduğun ve bulmadığın yerleri vurgulu cümlelerle söyle, sebebini açıkla ve karşı tarafın itirazına karşılık ver.",
       partner: "konuşmayı sıradan bulmuş, gerekçe isteyen bir dinleyici",
       opening: "Ehrlich gesagt fand ich es überschätzt. Was genau hat Sie daran denn beeindruckt?",
-      openingTr: "Açıkçası abartıldığını düşündüm. Sizi tam olarak neyi etkiledi peki?",
+      openingTr: "Açıkçası abartıldığını düşündüm. Sizi tam olarak ne etkiledi peki?",
       goal: "Etkileyici bulunan ve bulunmayan yönler gerekçeleriyle söylenmiş ve iki taraf ortak bir değerlendirmeye varmış olur.",
       minTurns: 8,
     },

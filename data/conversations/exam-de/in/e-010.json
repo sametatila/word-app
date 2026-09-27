@@ -2,139 +2,6 @@
  "packet": "e-010",
  "words": [
   {
-   "tr": "Pazartesiden beri sessizsin. Bir şey mi oldu?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "You have been quiet since Monday. Has something happened?"
-   ],
-   "ctx": [
-    "B1.10 Feelings and dreams · Ela"
-   ]
-  },
-  {
-   "tr": "Süre tanıyan resmî bir şikâyet yazabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can write a formal complaint with a deadline."
-   ],
-   "ctx": [
-    "B2.2 Claims and complaints"
-   ]
-  },
-  {
-   "tr": "Şehir ile kır yaşamını karşılaştırabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can compare city life and life in the country."
-   ],
-   "ctx": [
-    "B1.9 The city and the environment"
-   ]
-  },
-  {
-   "tr": "Tanık ifadesini doğru fiille aktarabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can report testimony with the right verb."
-   ],
-   "ctx": [
-    "C1.3 Legal and contract language"
-   ]
-  },
-  {
-   "tr": "Türkiyeliyim. Şimdi Manchester'da oturuyorum.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "I'm from Turkey. Now I live in Manchester."
-   ],
-   "ctx": [
-    "A1.1 Nice to meet you · Elif"
-   ]
-  },
-  {
-   "tr": "Y-I-L-M-A-Z. Pasaportum 2030'a kadar geçerli.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Y-I-L-M-A-Z. My passport is valid until 2030."
-   ],
-   "ctx": [
-    "A2.10 Offices and official business · Visitor"
-   ]
-  },
-  {
-   "tr": "Yazar karşılama kültürü hakkında ne saptıyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What does the writer note about the welcoming culture?"
-   ],
-   "ctx": [
-    "C1.5 Belonging and its words · okuma sorusu"
-   ],
-   "options": [
-    "It appears only in the title",
-    "It was funded twice",
-    "It replaced the adaptation course",
-    "It is a legal term"
-   ]
-  },
-  {
-   "tr": "Yönetim özeti ile görüşmelerin ortak yanı ne?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What do the management summary and the interviews have in common?"
-   ],
-   "ctx": [
-    "C1.6 Work and the bargaining table · okuma sorusu"
-   ],
-   "options": [
-    "They rest on the same two figures",
-    "They use the same word for the change",
-    "They were written by one author",
-    "They quote section 2"
-   ]
-  },
-  {
-   "tr": "Zararı rakamla belirtip iade isteyebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can quantify a loss and ask to be reimbursed."
-   ],
-   "ctx": [
-    "B2.2 Claims and complaints"
-   ]
-  },
-  {
-   "tr": "Affedersiniz, bu gömleğin büyük bedeni var mı?",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Excuse me, do you have this shirt in a big size?"
-   ],
-   "ctx": [
-    "A1.5 Shopping · konuşma"
-   ]
-  },
-  {
-   "tr": "Belediye aleyhte oy vermedikçe afiş basılıyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Unless the council votes against it, the poster is printed."
-   ],
-   "ctx": [
-    "B1.9 The city and the environment · Chair"
-   ]
-  },
-  {
    "tr": "Belediyeye mahallen için bir öneri yazısı yaz.",
    "kind": "writing.prompt",
    "n": 1,
@@ -240,7 +107,18 @@
     "I therefore decline … and demand …"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · yazma kalıbı"
+    "B2.2 Negotiating and complaining · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Çiçek de diksek oyun alanı daha iyi görünürdü.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "If we planted flowers as well, the playground would look better."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · Resident"
    ]
   },
   {
@@ -264,11 +142,11 @@
    ]
   },
   {
-   "tr": "Geçen hafta bir kargo sipariş ettim. Geldi mi?",
+   "tr": "Geçen hafta bir kitap sipariş ettim. Geldi mi?",
    "kind": "speaking",
    "n": 1,
    "de": [
-    "I ordered a package last week. Has it arrived yet?"
+    "I ordered a book last week. Has it arrived yet?"
    ],
    "ctx": [
     "A2.6 Shopping and services · konuşma"
@@ -279,27 +157,10 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can organise a task with a partner in a group."
+    "I can organize a task with a partner in a group."
    ],
    "ctx": [
     "B1.6 Learning and progress"
-   ]
-  },
-  {
-   "tr": "Hangi durumda sabah dilimi sözü vermeyecekler?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "When will they not promise a morning slot?"
-   ],
-   "ctx": [
-    "B1.3 Reason and result · dinleme sorusu"
-   ],
-   "options": [
-    "Unless the journey is short",
-    "Unless the client pays more",
-    "If the train stops again",
-    "As long as the driver agrees"
    ]
   },
   {
@@ -338,7 +199,7 @@
     "I can speak about myself without self-deception."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice"
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -360,7 +221,7 @@
     "I can negotiate conditions in writing."
    ],
    "ctx": [
-    "B2.8 Money and career"
+    "B2.8 Money and career strategy"
    ]
   },
   {
@@ -368,21 +229,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Hi Ben! Would you like to go to the cinema on Friday?"
+    "Hi Ben! Would you like to go to the movies on Friday?"
    ],
    "ctx": [
     "A1.8 Free time · Lea"
-   ]
-  },
-  {
-   "tr": "Mülakatta sıradan soruları cevaplayabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can answer the usual questions in an interview."
-   ],
-   "ctx": [
-    "B1.1 My career so far"
    ]
   },
   {
@@ -399,21 +249,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Unfortunately! The wedding is in a garden and there is music and dancing."
+    "What a pity! The wedding is in a garden and there is music and dancing."
    ],
    "ctx": [
     "A2.8 Celebrations and people · Nuray"
-   ]
-  },
-  {
-   "tr": "O hâlde yarın dokuzda gelin. Bu kadar acil mi?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Then come tomorrow at nine. Is that urgent enough?"
-   ],
-   "ctx": [
-    "A2.3 At the doctor's · Assistant"
    ]
   },
   {
@@ -443,10 +282,27 @@
    "kind": "focus",
    "n": 1,
    "de": [
-    "Nominalisation"
+    "Nominalization"
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
+   ]
+  },
+  {
+   "tr": "Sabah teslimi sözünü hangi durumda verecekler?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "When will they promise a morning delivery?"
+   ],
+   "ctx": [
+    "B1.3 Linking ideas · dinleme sorusu"
+   ],
+   "options": [
+    "Only if the journey is short",
+    "Only if the client pays more",
+    "If the train stops again",
+    "As long as the driver agrees"
    ]
   },
   {
@@ -540,6 +396,17 @@
    ]
   },
   {
+   "tr": "Affedersiniz, New York treni ne zaman kalkıyor?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Excuse me, when does the train to New York leave?"
+   ],
+   "ctx": [
+    "A1.6 In town · Passenger"
+   ]
+  },
+  {
    "tr": "Aile hekimine kaydolup belgeleri sorabiliyorum.",
    "kind": "cando",
    "n": 1,
@@ -551,7 +418,25 @@
    ]
   },
   {
-   "tr": "Bir eşitlik talebini resmî kayıtta söylüyorsun.",
+   "tr": "Arkadaşına ne zaman müsait olduğunu soruyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.4 My day · konuşma"
+   ]
+  },
+  {
+   "tr": "Aynı kararı iki ayrı dil düzeyinde söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.1 Register and tone · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir eşitlik talebini resmî üslupta söylüyorsun.",
    "kind": "speaking.situation",
    "n": 1,
    "de": [],
@@ -589,25 +474,23 @@
    ]
   },
   {
-   "tr": "Cuma bir gün izin alabilir miyim? Randevum var.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Could I take a day off on Friday? I have an appointment."
-   ],
-   "ctx": [
-    "A2.5 Working life · konuşma"
-   ]
-  },
-  {
-   "tr": "Çok nazik bir fikir. Yardımın için teşekkürler!",
+   "tr": "Çok güzel bir fikir. Yardımın için teşekkürler!",
    "kind": "turn",
    "n": 1,
    "de": [
-    "That is a kind idea. Thank you for your help!"
+    "That's a great idea. Thank you for your help!"
    ],
    "ctx": [
     "A2.8 Celebrations and people · Nuray"
+   ]
+  },
+  {
+   "tr": "En az iki yön ver (straight ahead, left, right)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.6 In town · yazma"
    ]
   },
   {
@@ -637,7 +520,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can agree on the chores with my flatmates."
+    "I can agree on the chores with my roommates."
    ],
    "ctx": [
     "B1.2 Renting and moving"
@@ -698,7 +581,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "The precautionary principle demands that … be prior."
+    "The precautionary principle demands that … be given priority."
    ],
    "ctx": [
     "C1.8 Climate and the city · yazma kalıbı"
@@ -760,6 +643,28 @@
    ]
   },
   {
+   "tr": "İnsancıl, tabii — kim ölçmüş, rapor söylemiyor.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "Humane indeed — and measured by whom, the report does not say."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · konuşma"
+   ]
+  },
+  {
+   "tr": "Kayıt yaptırmak istiyorum. Sıra numarası aldım.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "I'd like to register, please. I have already taken a number."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · konuşma"
+   ]
+  },
+  {
    "tr": "Ne zaman olduğunu yaz (last week, two days ago)",
    "kind": "writing.checklist",
    "n": 1,
@@ -804,7 +709,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can ask for a sick note and explain my absence."
+    "I can ask for a doctor's note and explain my absence."
    ],
    "ctx": [
     "B1.8 The health system"
@@ -827,13 +732,22 @@
     "Which clause decides your planning, according to the guide?"
    ],
    "ctx": [
-    "B2.8 Money and career · okuma sorusu"
+    "B2.8 Money and career strategy · okuma sorusu"
    ],
    "options": [
     "The contract term",
     "The payment clause",
     "The insurance clause",
     "The time-off clause"
+   ]
+  },
+  {
+   "tr": "Savını bir cümlede söyle ve dil düzeyini belirt",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.10 Evidence, judgment and choice · yazma"
    ]
   },
   {
@@ -875,7 +789,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · konuşma"
+    "C1.10 Evidence, judgment and choice · konuşma"
    ]
   },
   {
@@ -883,7 +797,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „Thoroughly green, that document“ suggest?"
+    "What does “Thoroughly green, that document” suggest?"
    ],
    "ctx": [
     "C1.9 Money and the forecast · dinleme sorusu"
@@ -915,6 +829,23 @@
    ],
    "ctx": [
     "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Bayan Neuhaus'a göre dil düzeyini ne belirliyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What, according to Ms. Neuhaus, sets the register?"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · dinleme sorusu"
+   ],
+   "options": [
+    "The salutation alone",
+    "The length of the note",
+    "The figure in the second line",
+    "The name of the sender"
    ]
   },
   {
@@ -950,7 +881,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · dinleme"
+    "A2.7 Traveling · dinleme"
    ]
   },
   {
@@ -1013,7 +944,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "I'm afraid I can't on Friday. I play football with my team."
+    "I'm afraid I can't on Friday. I play soccer with my team."
    ],
    "ctx": [
     "A1.8 Free time · Ben"
@@ -1024,7 +955,7 @@
    "kind": "speaking",
    "n": 1,
    "de": [
-    "On Saturday I went to the cinema and on Sunday I slept a long time."
+    "On Saturday I went to the movies and on Sunday I slept a long time."
    ],
    "ctx": [
     "A1.10 Keeping in touch · konuşma"
@@ -1098,7 +1029,7 @@
     "Good evening. A double room for three nights, is that right?"
    ],
    "ctx": [
-    "A2.7 Travelling · Receptionist"
+    "A2.7 Traveling · Receptionist"
    ]
   },
   {
@@ -1116,17 +1047,6 @@
     "Bora had been late",
     "The team wanted a second interview",
     "The letter was a mistake"
-   ]
-  },
-  {
-   "tr": "my, your, his, her ekini doğru kullanabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can use my, your, his and her correctly."
-   ],
-   "ctx": [
-    "A1.2 Family and people"
    ]
   },
   {
@@ -1150,6 +1070,17 @@
    ]
   },
   {
+   "tr": "Önce çantamı kaybettim, sonra merdivende düştüm.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "First I lost my bag, then I fell down on the stairs."
+   ],
+   "ctx": [
+    "A2.1 What happened? · konuşma"
+   ]
+  },
+  {
    "tr": "Özette … olarak, görüşmelerde … olarak görünüyor",
    "kind": "phrase",
    "n": 1,
@@ -1161,14 +1092,25 @@
    ]
   },
   {
+   "tr": "Peki başvuru reddedilirse itiraz edebilir miyim?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "And if the application were rejected, could I appeal?"
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · Visitor"
+   ]
+  },
+  {
    "tr": "Rehber neden „ikinci maddeyi iki kez oku“ diyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Why does the guide say „read clause two twice“?"
+    "Why does the guide say “read clause two twice”?"
    ],
    "ctx": [
-    "B2.8 Money and career · okuma sorusu"
+    "B2.8 Money and career strategy · okuma sorusu"
    ],
    "options": [
     "Because it is the hardest to change later",
@@ -1239,14 +1181,14 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „Measured indeed, that answer“ do here?"
+    "What does “Measured indeed, that answer” do here?"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · dinleme sorusu"
+    "C1.10 Evidence, judgment and choice · dinleme sorusu"
    ],
    "options": [
     "It praises with restraint rather than flattery",
-    "It criticises the answer",
+    "It asks for a longer answer",
     "It repeats the question",
     "It closes the file"
    ]
@@ -1256,7 +1198,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „the figure is arguably questionable“ do?"
+    "What does “the figure is arguably questionable” do?"
    ],
    "ctx": [
     "B2.6 Society and the economy · dinleme sorusu"
@@ -1276,7 +1218,18 @@
     "I can set a condition with unless and as long as."
    ],
    "ctx": [
-    "B1.3 Reason and result"
+    "B1.3 Linking ideas"
+   ]
+  },
+  {
+   "tr": "Aynı savı üç ayrı dil düzeyinde söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can make the same claim in three registers."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -1291,7 +1244,7 @@
    ]
   },
   {
-   "tr": "Bir eşitlik talebini resmî kayıtta kurabiliyorum.",
+   "tr": "Bir eşitlik talebini resmî üslupta kurabiliyorum.",
    "kind": "cando",
    "n": 1,
    "de": [
@@ -1302,7 +1255,7 @@
    ]
   },
   {
-   "tr": "Bir fiyatı neyin sürüklediğini açıklayabiliyorum.",
+   "tr": "Bir fiyatı neyin belirlediğini açıklayabiliyorum.",
    "kind": "cando",
    "n": 1,
    "de": [
@@ -1318,7 +1271,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B1.3 Reason and result · konuşma"
+    "B1.3 Linking ideas · konuşma"
    ]
   },
   {
@@ -1358,7 +1311,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · yazma"
+    "A2.7 Traveling · yazma"
    ]
   },
   {
@@ -1395,7 +1348,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can criticise a practice through understatement."
+    "I can criticize a practice through understatement."
    ],
    "ctx": [
     "C1.7 Land, food and the soil"
@@ -1433,17 +1386,6 @@
    ]
   },
   {
-   "tr": "Çiçek de dikseydik oyun alanı daha iyi görünürdü.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "If we planted flowers as well, the playground would look better."
-   ],
-   "ctx": [
-    "B1.9 The city and the environment · Resident"
-   ]
-  },
-  {
    "tr": "Ev sahibine bir arızayı nazikçe bildirebiliyorum.",
    "kind": "cando",
    "n": 1,
@@ -1451,7 +1393,7 @@
     "I can report a problem to the landlord politely."
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -1468,7 +1410,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can ask about the past: where, who, how long."
+    "I can ask about the past: where, who with, how long."
    ],
    "ctx": [
     "A2.1 What happened?"
@@ -1479,7 +1421,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "No, I haven't got a brother. But we have a dog!"
+    "No, I don't have a brother. But we have a dog!"
    ],
    "ctx": [
     "A1.2 Family and people · Ahmet"
@@ -1501,7 +1443,7 @@
    "kind": "cando",
    "n": 1,
    "de": [
-    "I can phone work and say that I am ill."
+    "I can phone work and say that I am sick."
    ],
    "ctx": [
     "A1.9 Health and the body"
@@ -1519,14 +1461,14 @@
    ]
   },
   {
-   "tr": "Kimlerin olduğunu ve olmadığını söyleyebiliyorum.",
-   "kind": "cando",
+   "tr": "Komite bugün kabul etse ağaçlar ekimde dikilirdi.",
+   "kind": "turn",
    "n": 1,
    "de": [
-    "I can say who I have and who I don't have."
+    "The trees would be planted in October, if the committee agreed today."
    ],
    "ctx": [
-    "A1.2 Family and people"
+    "B1.9 The city and the environment · Planner"
    ]
   },
   {
@@ -1535,7 +1477,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.2 Claims and complaints · yazma"
+    "B2.2 Negotiating and complaining · yazma"
    ]
   },
   {
@@ -1543,7 +1485,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "This is the flat that I mentioned on the phone. It has been empty since April."
+    "This is the apartment that I mentioned on the phone. It has been empty since April."
    ],
    "ctx": [
     "B1.2 Renting and moving · Agent"
@@ -1565,7 +1507,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does the form „is said to be the reason“ show?"
+    "What does the form “is said to be the reason” show?"
    ],
    "ctx": [
     "B2.1 Professional communication · okuma sorusu"
@@ -1600,15 +1542,6 @@
    ]
   },
   {
-   "tr": "Bir akıl hatasını ya da sıralama hatasını kabul et",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "C1.10 Evidence, judgement and choice · yazma"
-   ]
-  },
-  {
    "tr": "Bir hüküm geçersiz olursa öteki hükümlere ne olur?",
    "kind": "question",
    "n": 1,
@@ -1635,23 +1568,12 @@
    ]
   },
   {
-   "tr": "Bir plana duruşmanın kaydında itiraz edebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can object to a plan in the register of the hearing."
-   ],
-   "ctx": [
-    "C1.8 Climate and the city"
-   ]
-  },
-  {
    "tr": "Bir süre tanı ve süre dolarsa ne yapacağını bildir",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.2 Claims and complaints · yazma"
+    "B2.2 Negotiating and complaining · yazma"
    ]
   },
   {
@@ -1663,6 +1585,76 @@
    ],
    "ctx": [
     "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Birini başkası tanıyacak kadar tarif edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a person so that others recognize them."
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "Gündem daha önce gönderilirse tarihi kabul ederim.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "I will accept the date as long as the agenda is sent earlier."
+   ],
+   "ctx": [
+    "B1.3 Linking ideas · konuşma"
+   ]
+  },
+  {
+   "tr": "Hükmü aktarma fiilinin kendisinde taşıyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can carry a verdict in the reporting verb itself."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "İddia, onay ve çarpıtmayı aktarma fiilleriyle ayır",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.10 Evidence, judgment and choice · yazma"
+   ]
+  },
+  {
+   "tr": "Karara itiraz etmek istiyorum, çünkü kanıt elimde.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "I would like to appeal against the decision, because I have the evidence here."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · konuşma"
+   ]
+  },
+  {
+   "tr": "Meslektaşa göre yetki devrinin ardında ne duruyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What stands behind the delegation, according to the colleague?"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table · dinleme sorusu"
+   ],
+   "options": [
+    "The authority to give orders",
+    "The bargaining autonomy",
+    "The apprenticeship contract",
+    "The board"
    ]
   }
  ]

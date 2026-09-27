@@ -52,7 +52,7 @@ export const deA2B06: Conversation[] = [
       {
         say: [
           tr(
-            "İki adım var. Birincisi sıfatın sonuna gelen ek; kısa sıfatların çoğunda ortadaki sesli harf de değişir. İkincisi karşılaştırma kelimesi: Türkçedeki '-den' ekinin yerini tutar ve iki şeyin arasında durur. Bugün o kelimeyi de sözlükçeye alıyoruz. Önce sekiz kelime.",
+            "İki adım var. Birincisi sıfatın sonuna gelen ek; bazı kısa sıfatlarda ortadaki sesli harf de değişir. İkincisi karşılaştırma kelimesi: Türkçedeki '-den' ekinin yerini tutar ve iki şeyin arasında durur. Bugün o kelimeyi de sözlükçeye alıyoruz. Önce sekiz kelime.",
           ),
         ],
       },
@@ -138,7 +138,7 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Şimdi eki duy. Sıfatın sonuna bir hece geliyor ve kısa sıfatlarda sesli harf değişiyor:"),
+          tr("Şimdi eki duy. Sıfatın sonuna bir hece geliyor ve bazı kısa sıfatlarda sesli harf değişiyor:"),
           de("stark – stärker, schwach – schwächer, groß – größer, alt – älter"),
         ],
       },
@@ -555,7 +555,7 @@ export const deA2B06: Conversation[] = [
         say: [
           tr("İlk kalıbımız:"),
           de("Entweder der Rock oder der Anzug."),
-          tr("İki seçenek yan yana. Her iki isim de yalın hâlde duruyor, çünkü ikisi de özne."),
+          tr("İki seçenek yan yana. Cümlede fiil olmadığı için iki isim de yalın hâlde duruyor."),
         ],
       },
       {
@@ -667,7 +667,7 @@ export const deA2B06: Conversation[] = [
       {
         say: [
           tr(
-            "Türkçede sıfat hiç değişmez: yeşil ceket, yeşil gömlek, yeşil ayakkabı. Almancada ise sıfat ismin cinsine göre sonuna bir harf alır. Bugün en kolay hâlini çalışıyoruz: belirsiz artikelden sonra. Sekiz renk ve desen sıfatıyla aynı kuralı sekiz kez göreceksin. Önce kelimeler.",
+            "Türkçede sıfat hiç değişmez: yeşil ceket, yeşil gömlek, yeşil ayakkabı. Almancada ise sıfat ismin cinsine göre sonuna bir ek alır. Bugün en kolay hâlini çalışıyoruz: belirsiz artikelden sonra. Sekiz renk ve desen sıfatıyla aynı kuralı sekiz kez göreceksin. Önce kelimeler.",
           ),
         ],
       },
@@ -874,7 +874,7 @@ export const deA2B06: Conversation[] = [
       {
         say: [
           tr(
-            "Kuaförde istekler hep karşılaştırma biçimiyle söylenir, çünkü bir ölçü değil bir yön belirtirsin: mevcut hâlinden daha kısa. Bir de kişiye yapılan bir işi anlatırken kişi yönelme hâline giriyor; bunu modül 3'te de görmüştün. Önce sekiz kelime.",
+            "Kuaförde istekler hep karşılaştırma biçimiyle söylenir, çünkü bir ölçü değil bir yön belirtirsin: mevcut hâlinden daha kısa. Bir de kişiye yapılan bir işi anlatırken kişi yönelme hâline giriyor; bunu Modül 3'te de görmüştün. Önce sekiz kelime.",
           ),
         ],
       },

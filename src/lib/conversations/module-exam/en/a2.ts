@@ -303,7 +303,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "I am at home until …", tr: "…-e kadar evdeyim", en: "I am at home until …" },
       ],
       sample:
-        "Dear Mr. Vogt,\n\nSorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cabinet and the damage is getting worse. The heating hasn't worked since Monday, either.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
+        "Dear Mr. Vogt,\n\nSorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cabinet and the damage is getting worse. Also, the heating hasn't worked since Monday.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
     },
   },
 
@@ -423,7 +423,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Two offers for your phone",
       titleTr: "İki telefon teklifi",
       genre: "Karşılaştırma tablosu",
-      text: "TWO OFFERS — WHICH ONE IS BETTER FOR YOU?\n\nOFFER A\nMonthly payment: 15\nData: 5 GB\nContract: 24 months\nYou can cancel after 24 months.\n\nOFFER B\nMonthly payment: 22\nData: 20 GB\nContract: 12 months\nYou can cancel every month.\n\nOffer A is cheaper than Offer B, but you get more data with Offer B.\n\nIs there a discount? Yes: students pay only ten every month with both offers.",
+      text: "TWO OFFERS — WHICH ONE IS BETTER FOR YOU?\n\nOFFER A\nMonthly payment: 15\nData: 5 GB\nContract: 24 months\nYou can cancel after 24 months.\n\nOFFER B\nMonthly payment: 22\nData: 20 GB\nContract: 12 months\nYou can cancel after 12 months.\n\nOffer A is cheaper than Offer B, but you get more data with Offer B.\n\nIs there a discount? Yes: students pay only ten every month with both offers.",
       questions: [
         { de: "Which offer is cheaper?", tr: "Hangi teklif daha ucuz?", options: ["Offer A", "Offer B", "Both are the same", "The text doesn't say"], answer: 0 },
         { de: "What is the advantage of Offer B?", tr: "B teklifinin avantajı ne?", options: ["More data", "A longer contract", "A free phone", "No payment"], answer: 0 },

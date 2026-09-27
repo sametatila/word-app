@@ -237,7 +237,7 @@ export const deA1B04: Conversation[] = [
           statement: "Mein Tag beginnen um sieben.",
           answer: false,
           why: [
-            tr("Fiil burada kişiye göre değişmeli. Öznemiz 'benim günüm' olduğu için doğrusu"),
+            tr("Fiil burada özneye göre değişmeli. Özne 'mein Tag' üçüncü tekil kişi olduğu için doğrusu:"),
             de("Mein Tag beginnt um sieben."),
           ],
         },
@@ -438,7 +438,7 @@ export const deA1B04: Conversation[] = [
           kind: "produce",
           target: "Es ist halb vier",
           hint: [
-            tr("Üç buçuk için dörde yarım kaldığını söylüyorsun:"),
+            tr("Üç buçuk için dörde yarım saat kaldığını söylüyorsun:"),
             de("Es ist halb vier."),
             tr("Tekrar dene."),
           ],
@@ -981,7 +981,7 @@ export const deA1B04: Conversation[] = [
       {
         say: [
           tr(
-            "Bugün Almancanın belkemiği olan kuralı öğreneceğiz. Bir kere oturunca cümlelerinin yarısı kendiliğinden düzelir. Hazır mısın?",
+            "Bugün Almancanın bel kemiği olan kuralı öğreneceğiz. Bir kere oturunca cümlelerinin yarısı kendiliğinden düzelir. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1159,7 +1159,7 @@ export const deA1B04: Conversation[] = [
           statement: "Heute ich lerne Deutsch.",
           answer: false,
           why: [
-            tr("Başta zaman ifadesi varken özne fiilin arkasına geçmeli. Doğrusu"),
+            tr("Başta zaman ifadesi varken özne fiilin arkasına geçmeli. Doğrusu:"),
             de("Heute lerne ich Deutsch."),
           ],
         },
@@ -1350,7 +1350,7 @@ export const deA1B04: Conversation[] = [
           kind: "produce",
           target: "Dann ziehe ich mich schnell an",
           hint: [
-            tr("Hızlı kelimesi ortada kalır, ayrılan parça en sonda:"),
+            tr("'Hızlı' kelimesi ortada kalır, ayrılan parça en sonda:"),
             de("Dann ziehe ich mich schnell an."),
             tr("Tekrar dene."),
           ],
@@ -2036,7 +2036,7 @@ export const deA1B04: Conversation[] = [
           kind: "produce",
           target: "Vielleicht mache ich einen Ausflug",
           hint: [
-            tr("Belki kelimesi başta olduğu için fiil hemen arkasından gelir:"),
+            tr("'Belki' kelimesi başta olduğu için fiil hemen arkasından gelir:"),
             de("Vielleicht mache ich einen Ausflug."),
             tr("Tekrar dene."),
           ],
@@ -2075,7 +2075,7 @@ export const deA1B04: Conversation[] = [
           statement: "Am Sonntag ich schlafe aus.",
           answer: false,
           why: [
-            tr("Gün başta olduğu için özne fiilin arkasına geçmeli. Doğrusu"),
+            tr("Gün başta olduğu için özne fiilin arkasına geçmeli. Doğrusu:"),
             de("Am Sonntag schlafe ich aus."),
           ],
         },
@@ -2090,7 +2090,7 @@ export const deA1B04: Conversation[] = [
     ],
     chat: {
       scene:
-        "Cuma akşamı bir arkadaşınla hafta sonunu konuşuyorsunuz. Hangi gün ne yapacağını anlat; kesin olmayan planlar için belki kelimesini kullan.",
+        "Cuma akşamı bir arkadaşınla hafta sonunu konuşuyorsunuz. Hangi gün ne yapacağını anlat; kesin olmayan planlar için 'belki' kelimesini kullan.",
       partner: "hafta sonu planı yapmayı seven bir arkadaş",
       opening: "Hast du schon Pläne für das Wochenende?",
       openingTr: "Hafta sonu için planın var mı?",

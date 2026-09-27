@@ -25,7 +25,7 @@
  { "tr": "Şimdi tam cümleyi söyle. Ben evdeydim:", "kind": "say.tr", "de": "Jetzt sag den ganzen Satz. Ich war zu Hause:" },
  { "tr": "Şu üç cümle de otelde çok işine yarar.", "kind": "say.tr", "de": "Diese drei Sätze nützen dir im Hotel sehr." },
  { "tr": "Tamircinin sık verdiği cevap da şudur:", "kind": "say.tr", "de": "Die häufige Antwort der Werkstatt ist die:" },
- { "tr": "Tarifin nerede olacağını söylemek için", "kind": "say.tr", "de": "Um den Ort der Anweisung zu nennen, sagen wir" },
+ { "tr": "Nerede döneceğini söylemek için", "kind": "say.tr", "de": "Um zu sagen, wo du abbiegen musst" },
  { "tr": "Tek bir yer ağrıyorsa fiile 's' gelir:", "kind": "say.tr", "de": "Tut eine einzelne Stelle weh, bekommt das Verb ein „s“:" },
  { "tr": "Telefonum hazır mı? Ve teslim alırken:", "kind": "say.tr", "de": "Ist mein Handy fertig? Und beim Abholen:" },
  { "tr": "Türkçesi 'dümdüz, doğru' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „geradeaus“. Bitte" },
@@ -78,7 +78,7 @@
  { "tr": "Daire hâlâ boşta mı, onu da sormalısın:", "kind": "say.tr", "de": "Ob die Wohnung noch frei ist, musst du auch fragen:" },
  { "tr": "dedikten sonra fiilin yalın hâli gelir.", "kind": "say.tr", "de": "— danach kommt das Verb in der Grundform." },
  { "tr": "Deneyelim. Şunu söyle: Yorgun değildim.", "kind": "say.tr", "de": "Probieren wir es. Sag das: Ich war nicht müde." },
- { "tr": "deriz. Tam cümle: kirayı her ay öderim.", "kind": "say.tr", "de": "sagen wir. Ganzer Satz: ich zahle die Miete jeden Monat." },
+ { "tr": "deriz. Tam cümle: kirayı her ay öderim.", "kind": "say.tr", "de": "sagen wir. Ganzer Satz: Ich zahle die Miete jeden Monat." },
  { "tr": "Duydun mu? Dört kelime, koca bir sabah.", "kind": "say.tr", "de": "Hast du gehört? Vier Wörter, ein ganzer Morgen." },
  { "tr": "Eczanede en çok istenen şeylerden biri.", "kind": "say.tr", "de": "Eines der meistverlangten Dinge in der Apotheke." },
  { "tr": "eklersen \"Hadi birlikte gidelim.\" olur:", "kind": "say.tr", "de": "anhängst, wird „Gehen wir zusammen.“ daraus:" },
@@ -145,5 +145,8 @@
  { "tr": "Yarın çalışmayacağım. Lütfen tekrar et.", "kind": "say.tr", "de": "Morgen werde ich nicht arbeiten. Bitte wiederhole." },
  { "tr": "yatak demek. Kısacık bir kelime, kolay.", "kind": "say.tr", "de": "heißt Bett. Ein ganz kurzes Wort, leicht." },
  { "tr": "— neredeyse. Tam değil ama çok yakın. Ve", "kind": "say.tr", "de": "— fast. Nicht ganz, aber sehr nah dran. Und" },
- { "tr": "— önce yer, sonra 'is'. Şimdi tekrar et:", "kind": "say.tr", "de": "— erst der Ort, dann „is“. Jetzt wiederhole:" }
+ { "tr": "— önce yer, sonra 'is'. Şimdi tekrar et:", "kind": "say.tr", "de": "— erst der Ort, dann „is“. Jetzt wiederhole:" },
+ { "tr": "paketlemek", "kind": "vocab.tr", "de": "einpacken" },
+ { "tr": "beyan etmek", "kind": "vocab.tr", "de": "angeben" },
+ { "tr": "biriktirmek", "kind": "vocab.tr", "de": "sammeln" }
 ]

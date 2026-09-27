@@ -513,7 +513,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Es gibt auch …", tr: "Ayrıca … var", en: "There is also …" },
         { de: "… steht in der Ecke.", tr: "… köşede duruyor.", en: "… stands in the corner." },
         { de: "… hängt an der Wand.", tr: "… duvarda asılı.", en: "… hangs on the wall." },
-        { de: "Die Miete kostet …", tr: "Kira … tutuyor", en: "The rent costs …" },
+        { de: "Die Miete kostet …", tr: "Kira … tutuyor", en: "The rent is …" },
       ],
       sample:
         "Hallo Selin, ich habe eine neue Wohnung! Sie hat zwei Zimmer, eine Küche und ein Bad. Die Wohnung ist hell und ruhig. Es gibt auch einen Balkon. Mein Sofa steht im Wohnzimmer und ein großes Bild hängt an der Wand. Die Miete kostet 620 Euro plus Nebenkosten. Die Nachbarn sind sehr nett. Kommst du am Samstag?",

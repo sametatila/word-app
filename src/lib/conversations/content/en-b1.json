@@ -109,7 +109,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir. Deneyim demek ve sayılamaz bir isimdir: 'a experience' denmez,"
+      "text": "denir. Deneyim demek ve bu anlamda sayılamaz bir isimdir: 'an experience' denmez,"
      },
      {
       "lang": "en",
@@ -774,7 +774,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:"
+       "text": "Yanlış. İki olaydan yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:"
       },
       {
        "lang": "en",
@@ -1522,7 +1522,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün iş görüşmesinin dilini öğreneceğiz: neyi söylemek zorundasın, neyi söylemek zorunda değilsin, ne yapsan iyi olur."
+      "text": "Merhaba! Bugün iş görüşmesinin dilini öğreneceğiz: neyi yapmak zorundasın, neyi yapmak zorunda değilsin, ne yapsan iyi olur."
      },
      {
       "lang": "tr",
@@ -1740,7 +1740,11 @@
       "lang": "en",
       "text": "What salary do you expect?"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What salary do you expect?"
+    }
    },
    {
     "say": [
@@ -1750,16 +1754,16 @@
      },
      {
       "lang": "en",
-      "text": "You don't have to expect an answer today."
+      "text": "You don't have to give us an answer today."
      },
      {
       "lang": "tr",
-      "text": "Bugün cevap beklemek zorunda değilsin."
+      "text": "Bugün bize cevap vermek zorunda değilsin."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You don't have to expect an answer today."
+     "target": "You don't have to give us an answer today."
     }
    },
    {
@@ -1804,7 +1808,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile söylenir. Görüşmenin klasik sorusu ise zayıf yönündür:"
+      "text": "ile söylenir. Görüşmenin klasik sorusu ise zayıf yönünle ilgilidir:"
      },
      {
       "lang": "en",
@@ -1978,7 +1982,7 @@
     "tr": "geçmişte yapılan işi by ile anlatır"
    },
    {
-    "de": "When is the induction arranged?",
+    "de": "When is the induction scheduled?",
     "tr": "bir şeyin ne zaman ayarlandığını sorar"
    }
   ],
@@ -2309,16 +2313,16 @@
      },
      {
       "lang": "en",
-      "text": "When is the induction arranged?"
+      "text": "When is the induction scheduled?"
      },
      {
       "lang": "tr",
-      "text": "Oryantasyon ne zamana ayarlandı?"
+      "text": "Oryantasyon ne zamana planlandı?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "When is the induction arranged?"
+     "target": "When is the induction scheduled?"
     }
    },
    {
@@ -3501,7 +3505,7 @@
      },
      {
       "lang": "tr",
-      "text": "kullanılabilir. Yan cümle ismin HEMEN arkasına gelir, sonuna değil."
+      "text": "kullanılabilir. Yan cümle ismin HEMEN arkasına gelir, cümlenin sonuna değil."
      }
     ]
    },
@@ -3830,7 +3834,7 @@
      },
      {
       "lang": "tr",
-      "text": "nesne durumunda düşebilir. Şimdi yeni bir iş arkadaşına takımı tanıtacaksın."
+      "text": "nesne durumunda zamir düşebilir. Şimdi yeni bir iş arkadaşına takımı tanıtacaksın."
      }
     ]
    }
@@ -5771,7 +5775,7 @@
   "patterns": [
    {
     "de": "The deposit is paid before you move in.",
-    "tr": "kim yaptığını söylemeden kuralı anlatır"
+    "tr": "kimin yaptığını söylemeden kuralı anlatır"
    },
    {
     "de": "The lease was signed last week.",
@@ -7027,7 +7031,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir çizelgede anlaşmalıyız."
+      "text": "Bir çizelge üzerinde anlaşmalıyız."
      }
     ],
     "expect": {
@@ -8323,7 +8327,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu bağlaç isim alıyor ve burada ardından gelen bir isim; cümle gelseydi başka bağlaç gerekirdi."
+       "text": "Doğru. Bu bağlaç isim alıyor ve burada ardından gerçekten bir isim geliyor; cümle gelseydi başka bağlaç gerekirdi."
       }
      ]
     }
@@ -8364,7 +8368,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu kadar geç rahatsız ettiği için özür diledi."
+      "text": "Bizi bu kadar geç saatte rahatsız ettiği için özür diledi."
      }
     ],
     "expect": {
@@ -8784,7 +8788,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:"
+       "text": "Yanlış. İki olaydan yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:"
       },
       {
        "lang": "en",
@@ -9376,7 +9380,7 @@
      },
      {
       "lang": "tr",
-      "text": "deriz; gürültünün kendisi 'noise' bir isimdir, bu ise sıfat."
+      "text": "deriz; bu bir sıfattır. Gürültünün kendisi ise 'noise', yani bir isimdir."
      }
     ]
    },
@@ -12358,7 +12362,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toplantının kendisine"
+      "text": "Toplantıdaki görüşmeye"
      },
      {
       "lang": "en",
@@ -12776,7 +12780,7 @@
   "patterns": [
    {
     "de": "The report was published last week.",
-    "tr": "kim yaptığını söylemeden olayı anlatır"
+    "tr": "kimin yaptığını söylemeden olayı anlatır"
    },
    {
     "de": "A decision was announced by the city council.",
@@ -14685,7 +14689,7 @@
      },
      {
       "lang": "tr",
-      "text": "iki tepe arasındaki düzlüğe ise"
+      "text": "iki tepe arasındaki alçak yere ise"
      },
      {
       "lang": "en",
@@ -14813,7 +14817,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer eki gelmez:"
+       "text": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer ifadesi gelmez:"
       },
       {
        "lang": "en",
@@ -14834,7 +14838,7 @@
      },
      {
       "lang": "tr",
-      "text": "sakin ve huzurluysa ise"
+      "text": "sakin ve huzurluysa"
      },
      {
       "lang": "en",
@@ -15679,7 +15683,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bu daha ucuz ama kalitesi düşük."
+      "text": "Bu daha ucuz ama kalitesi daha düşük."
      }
     ],
     "expect": {
@@ -16029,7 +16033,7 @@
   "patterns": [
    {
     "de": "The device is switched on here.",
-    "tr": "işlemi kim yaptığını söylemeden anlatır"
+    "tr": "işlemi kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "The settings are changed on the screen.",
@@ -16694,7 +16698,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir ve bu kelimenin p harfi okunmaz. Siparişe ise"
+      "text": "denir ve bu kelimenin p harfi okunmaz. Siparişin karşılığı da şu:"
      },
      {
       "lang": "en",
@@ -17546,7 +17550,7 @@
      },
      {
       "lang": "tr",
-      "text": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise yerine can't dersin."
+      "text": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise onun yerine can't dersin."
      },
      {
       "lang": "en",
@@ -17751,7 +17755,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir ve yönergelerin en sık geçen kelimesidir."
+      "text": "denir ve yönergelerde en sık geçen kelimelerden biridir."
      }
     ]
    },
@@ -18852,7 +18856,7 @@
   "patterns": [
    {
     "de": "The form is stamped at the desk.",
-    "tr": "işlemi kim yaptığını söylemeden anlatır"
+    "tr": "işlemi kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "My application was processed last week.",
@@ -22662,7 +22666,7 @@
      },
      {
       "lang": "tr",
-      "text": "kişiler için. Yan cümle ismin hemen arkasına gelir, sonuna değil."
+      "text": "kişiler için. Yan cümle ismin hemen arkasına gelir, cümlenin sonuna değil."
      }
     ]
    },
@@ -26653,7 +26657,7 @@
   "patterns": [
    {
     "de": "The lesson is uploaded every Monday.",
-    "tr": "işlemi kim yaptığını söylemeden anlatır"
+    "tr": "işlemi kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "The video can be downloaded for offline use.",
@@ -28519,7 +28523,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Katılmamak"
+      "text": "Katılmamaya"
      },
      {
       "lang": "en",
@@ -29414,7 +29418,7 @@
   "patterns": [
    {
     "de": "The article was published this morning.",
-    "tr": "haberi kim yaptığını söylemeden anlatır"
+    "tr": "haberi kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "The story is being shared everywhere.",
@@ -31259,7 +31263,7 @@
    }
   ],
   "chat": {
-   "scene": "Bir arkadaşınla kimsenin tam bilmediği bir olayı konuşuyorsunuz. Bir çıkarımına emin ol, bir ihtimali tamamen kapat ve bir üçüncüsüne sadece ihtimal ver.",
+   "scene": "Bir arkadaşınla kimsenin tam bilmediği bir olayı konuşuyorsunuz. Bir çıkarımından emin ol, bir ihtimali tamamen kapat ve bir üçüncüsüne sadece ihtimal ver.",
    "partner": "olayı senden farklı yorumlayan bir arkadaş",
    "opening": "So what do you think really happened?",
    "openingTr": "Peki sence gerçekte ne oldu?",
@@ -31734,7 +31738,7 @@
   "chat": {
    "scene": "Bir arkadaşın sana bir bilgi aktardı ve sen kaynağını öğrenmek istiyorsun. Kimin yazdığını, hangi çalışma olduğunu ve nerede çıktığını sor.",
    "partner": "bilgiyi aktaran ama kaynağını tam hatırlamayan bir arkadaş",
-   "opening": "I read somewhere that it works. Why?",
+   "opening": "I read somewhere that it works. Why do you ask?",
    "openingTr": "Bir yerde işe yaradığını okudum. Neden sordun?",
    "goal": "Kişiyi, çalışmayı ve yeri üç ayrı ilgi cümlesiyle sorduysan konuşma başarılı sayılır.",
    "minTurns": 7
@@ -31990,7 +31994,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:"
+       "text": "Yanlış. İki olaydan yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:"
       },
       {
        "lang": "en",
@@ -33297,7 +33301,7 @@
      },
      {
       "lang": "en",
-      "text": "The cough gets worse and my throat is sore."
+      "text": "The cough is getting worse and my throat is sore."
      },
      {
       "lang": "tr",
@@ -33306,7 +33310,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The cough gets worse and my throat is sore."
+     "target": "The cough is getting worse and my throat is sore."
     }
    },
    {
@@ -34152,7 +34156,7 @@
   "patterns": [
    {
     "de": "The tablet is taken twice a day.",
-    "tr": "yapılan işi kim yaptığını söylemeden anlatır"
+    "tr": "yapılan işi kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "The medicine was prescribed by a doctor.",
@@ -36620,7 +36624,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kalbin attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:"
+      "text": "Kalp attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:"
      },
      {
       "lang": "en",
@@ -36841,16 +36845,16 @@
      },
      {
       "lang": "en",
-      "text": "The lung sounded clear."
+      "text": "The lungs sounded clear."
      },
      {
       "lang": "tr",
-      "text": "Akciğer temiz duyuldu."
+      "text": "Akciğer sesleri temizdi."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The lung sounded clear."
+     "target": "The lungs sounded clear."
     }
    },
    {
@@ -36923,7 +36927,7 @@
      },
      {
       "lang": "en",
-      "text": "It is only a muscle and the skin is warm."
+      "text": "It is only a muscle problem, and the skin is warm."
      },
      {
       "lang": "tr",
@@ -36932,7 +36936,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "It is only a muscle and the skin is warm."
+     "target": "It is only a muscle problem, and the skin is warm."
     }
    },
    {
@@ -37102,7 +37106,7 @@
    },
    {
     "de": "Take the leave now; otherwise you lose it.",
-    "tr": "yapılmazsa olacağı söyler"
+    "tr": "yapılmazsa ne olacağını söyler"
    },
    {
     "de": "Besides the note, they want a date.",
@@ -37300,7 +37304,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Bu bağlaç yapılmazsa olacağı söylüyor ve iki yarı da tam bir cümle."
+       "text": "Doğru. Bu bağlaç yapılmazsa ne olacağını söylüyor ve iki yarı da tam bir cümle."
       }
      ]
     }
@@ -37341,7 +37345,7 @@
      },
      {
       "lang": "tr",
-      "text": "Rapordan ayrıca bir tarih de istiyorlar."
+      "text": "Raporun yanı sıra bir tarih de istiyorlar."
      }
     ],
     "expect": {
@@ -37373,7 +37377,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Formdan ayrıca bir tarih de istiyorlar."
+      "text": "Şimdi sen kur: Formun yanı sıra bir tarih de istiyorlar."
      }
     ],
     "expect": {
@@ -39232,7 +39236,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yılın dörde bölünen bölümüne"
+      "text": "Yılın dört bölümünden her birine"
      },
      {
       "lang": "en",
@@ -40728,7 +40732,7 @@
      },
      {
       "lang": "en",
-      "text": "The supply stops for two hours."
+      "text": "The water supply stops for two hours."
      },
      {
       "lang": "tr",
@@ -40737,7 +40741,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The supply stops for two hours."
+     "target": "The water supply stops for two hours."
     }
    },
    {
@@ -41007,7 +41011,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şehri yöneten seçilmiş kişi demek. Boş yere ise"
+      "text": "Şehri yöneten seçilmiş kişi demek. Boş alana ise"
      },
      {
       "lang": "en",
@@ -41580,7 +41584,7 @@
      },
      {
       "lang": "tr",
-      "text": "çevresi kara ile çevrili durgun suya ise"
+      "text": "dört yanı karayla çevrili durgun suya ise"
      },
      {
       "lang": "en",
@@ -42445,7 +42449,7 @@
      },
      {
       "lang": "tr",
-      "text": "His o gittiğinde başladı."
+      "text": "Bu his, o gittiğinde başladı."
      }
     ],
     "expect": {
@@ -44147,7 +44151,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir avutma sözü öğütten çok işe yarar."
+      "text": "Bir teselli sözü öğütten çok işe yarar."
      }
     ],
     "expect": {
@@ -46296,7 +46300,7 @@
   "patterns": [
    {
     "de": "The gift was chosen with care.",
-    "tr": "yapılanı kim yaptığını söylemeden anlatır"
+    "tr": "yapılanı kimin yaptığını söylemeden anlatır"
    },
    {
     "de": "Her work is appreciated by everyone.",
@@ -46606,7 +46610,7 @@
      },
      {
       "lang": "en",
-      "text": "The example was set without a word."
+      "text": "An example was set without a word."
      },
      {
       "lang": "tr",
@@ -46615,7 +46619,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The example was set without a word."
+     "target": "An example was set without a word."
     }
    },
    {
@@ -47033,7 +47037,7 @@
      },
      {
       "lang": "en",
-      "text": "A good teacher can guide you, not follow you."
+      "text": "A good teacher should guide you, not follow you."
      },
      {
       "lang": "tr",
@@ -47042,7 +47046,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A good teacher can guide you, not follow you."
+     "target": "A good teacher should guide you, not follow you."
     }
    },
    {
@@ -47115,7 +47119,7 @@
      },
      {
       "lang": "en",
-      "text": "She is my model, so I want to develop my skills."
+      "text": "She is my role model, so I want to develop my skills."
      },
      {
       "lang": "tr",
@@ -47124,7 +47128,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "She is my model, so I want to develop my skills."
+     "target": "She is my role model, so I want to develop my skills."
     }
    },
    {

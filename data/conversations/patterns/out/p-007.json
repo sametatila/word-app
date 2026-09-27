@@ -24,7 +24,7 @@
  { "conversation": "de-a2-tolle-nachricht", "de": "Wir haben … bekommen.", "en": "reports news that you received" },
  { "conversation": "de-a2-lebensweg", "de": "Am Anfang war alles fremd.", "en": "describes the first days after arriving" },
  { "conversation": "de-a2-lebensweg", "de": "Ich hatte keine …", "en": "says what you were missing at the start" },
- { "conversation": "de-a2-lebensweg", "de": "Heute komme ich gut aus.", "en": "sums up how things are today" },
+ { "conversation": "de-a2-lebensweg", "de": "Heute komme ich mit allen gut aus.", "en": "sums up how things are today" },
  { "conversation": "de-a2-wollte-konnte", "de": "Ich wollte … werden.", "en": "says what you wanted to become as a child" },
  { "conversation": "de-a2-wollte-konnte", "de": "Ich konnte nicht …", "en": "says what you could not do in the past" },
  { "conversation": "de-a2-wollte-konnte", "de": "Ich musste …", "en": "says what you had to do" },

@@ -350,7 +350,7 @@
   "de": "Die Entschuldigung heißt"
  },
  {
-  "tr": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise yerine can't dersin.",
+  "tr": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise onun yerine can't dersin.",
   "kind": "say.tr",
   "de": "verbietet; in Anleitungen wird es nicht abgekürzt, im Alltag sagst du stattdessen can't."
  },
@@ -607,7 +607,7 @@
  {
   "tr": "Karar verip vermediğimi sordular.",
   "kind": "say.tr",
-  "de": "Sie haben gefragt, ob ich mich entschieden hatte."
+  "de": "Sie haben gefragt, ob ich mich entschieden hätte."
  },
  {
   "tr": "randevuların yazıldığı deftere ise",
@@ -617,7 +617,7 @@
  {
   "tr": "Rezervasyonu iptal edebilir miyim?",
   "kind": "say.tr",
-  "de": "Kann ich die Buchung absagen?"
+  "de": "Kann ich die Buchung stornieren?"
  },
  {
   "tr": "Son kalıbımız uyarıyor. Tekrar et:",
@@ -730,9 +730,9 @@
   "de": "Jetzt du: Ich hatte es schon bezahlt."
  },
  {
-  "tr": "denir ve yönergelerin en sık geçen kelimesidir.",
+  "tr": "denir ve yönergelerde en sık geçen kelimelerden biridir.",
   "kind": "say.tr",
-  "de": "auf Englisch und ist das häufigste Wort in Anweisungen."
+  "de": "auf Englisch und ist eines der häufigsten Wörter in Anweisungen."
  },
  {
   "tr": "Son kalıbımız kibarca çözüm istiyor. Tekrar et:",
@@ -755,9 +755,9 @@
   "de": "Noch eins: Du solltest vermeiden, es draußen zu benutzen."
  },
  {
-  "tr": "denir ve bu kelimenin p harfi okunmaz. Siparişe ise",
+  "tr": "denir ve bu kelimenin p harfi okunmaz. Siparişin karşılığı da şu:",
   "kind": "say.tr",
-  "de": "auf Englisch, und der Buchstabe p wird nicht gesprochen. Und die Bestellung heißt"
+  "de": "auf Englisch, und der Buchstabe p wird nicht gesprochen. Und die Bestellung heißt so:"
  },
  {
   "tr": "Bir tane daha: Lütfen yenisini gönderebilir misiniz?",
@@ -792,7 +792,7 @@
  {
   "tr": "Bir tane daha: Maliyeti göz önüne alıp almadığımı sordu.",
   "kind": "say.tr",
-  "de": "Noch eins: Er hat gefragt, ob ich die Kosten berücksichtigt hatte."
+  "de": "Noch eins: Er hat gefragt, ob ich die Kosten berücksichtigt hätte."
  },
  {
   "tr": "Bir tane daha: Biz vardığımızda odaları değiştirmişlerdi.",

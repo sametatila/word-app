@@ -79,7 +79,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Aynı kararı iki ayrı dil düzeyinde söylüyorsun.", de: "Formally: the request is declined. Between us: I wouldn't say no to a second look.", tr: "Resmî hâli: talep reddedildi. Aramızda: ikinci bir bakışa itirazım olmaz." },
-      { situation: "Ölçülü bir ifadeyle eleştiriyorsun.", de: "Not exactly a convincing draft, and hardly the tone we agreed on.", tr: "İkna edici bir taslak sayılmaz, hem üzerinde anlaştığımız ton da değil." },
+      { situation: "Ölçülü bir ifadeyle eleştiriyorsun.", de: "Not exactly a convincing draft, and hardly the tone we agreed on.", tr: "İkna edici bir taslak sayılmaz, üstelik üzerinde anlaştığımız ton da değil." },
     ],
     writing: {
       prompt: "Bir aksaklık hakkında kurumsal bir açıklama yaz.",
@@ -205,7 +205,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Zamanaşımı dolmadan",
       situation: "Bir başvuru sahibi ile bir görevli itiraz süresini konuşuyor.",
       turns: [
-        { speaker: "Officer", de: "The notice of right to appeal was served on April 3. The filing deadline is one month.", tr: "İtiraz hakkı bildirimi 3 Nisanda tebliğ edildi. Kesin süre bir ay işliyor." },
+        { speaker: "Officer", de: "The notice of right to appeal was served on April 3. The filing deadline is one month.", tr: "İtiraz hakkı bildirimi 3 Nisan'da tebliğ edildi. Kesin süre bir ay işliyor." },
         { speaker: "Visitor", de: "Then we request that the office register the appeal before the limitation period ends.", tr: "O hâlde zamanaşımı dolmadan idarenin itirazı kaydetmesini talep ediyoruz." },
         { speaker: "Officer", de: "It can be lodged, albeit only with a power of attorney. Without it the appeal is inadmissible.", tr: "Kaydedilebilir, ama yalnızca vekâletnameyle. Onsuz itiraz kabul edilemez." },
         { speaker: "Visitor", de: "The witness stated that the file had been complete; the office merely alleged the opposite.", tr: "Tanık dosyanın tam olduğunu ifade etti; idare ise tersini yalnızca iddia etti." },
@@ -400,7 +400,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "What one calls …, another calls …", tr: "Birinin … dediğine öteki … diyor", en: "What one calls …, another calls …" },
         { de: "Behind the word … stands a counted figure.", tr: "… sözcüğünün ardında sayılmış bir rakam duruyor", en: "Behind the word … stands a counted figure." },
-        { de: "Although well-founded, the model is addressed to one side.", tr: "Temelli olsa da model tek tarafa sesleniyor", en: "Although well-founded, the model is addressed to one side." },
+        { de: "Although well-founded, the model is addressed to one side.", tr: "Sağlam temelli olsa da model tek tarafa sesleniyor", en: "Although well-founded, the model is addressed to one side." },
         { de: "The principle of equality demands that … be …", tr: "Eşitlik ilkesi …-in … olmasını gerektiriyor", en: "The principle of equality demands that … be …" },
         { de: "What the debate leaves unsaid is …", tr: "Tartışmanın söylemediği şey …", en: "What the debate leaves unsaid is …" },
       ],
@@ -513,7 +513,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Presenter", de: "In the plan it is land consumption; in the village it is an arable field. Which term will you use?", tr: "Planda arazi tüketimi, köyde ekilebilir tarla. Hangi terimi kullanacaksınız?" },
         { speaker: "Planner", de: "What the council calls land consolidation, the neighbor calls land speculation. Both are accurate.", tr: "Belediyenin arazi toplulaştırması dediğine komşu arazi spekülasyonu diyor. İkisi de doğru." },
-        { speaker: "Researcher", de: "Behind the rural exodus stands a failed farm succession, not a shortage of land.", tr: "Kırdan göçün ardında başarısız bir devir duruyor, arazi kıtlığı değil." },
+        { speaker: "Researcher", de: "Behind the rural exodus stands a failed farm succession, not a shortage of land.", tr: "Kırdan göçün ardında başarısız bir çiftlik devri duruyor, arazi kıtlığı değil." },
         { speaker: "Planner", de: "Much as we praise agroecology, the monoculture feeds the city. Food sovereignty demands that the reform be decided locally.", tr: "Tarımsal ekolojiyi övsek de tek ürün şehri besliyor. Gıda egemenliği reformun yerel olarak kararlaştırılmasını gerektiriyor." },
         { speaker: "Researcher", de: "The method, albeit soil-conserving, does not restore soil fertility in one generation.", tr: "Yöntem toprağı korusa da bir kuşakta verimliliği geri getirmiyor." },
         { speaker: "Presenter", de: "And the label? The report says the housing is humane.", tr: "Etiket peki? Rapor barındırmanın insancıl olduğunu söylüyor." },
@@ -670,7 +670,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Researcher", de: "The regulator demands that the disclosure be complete. Were it not for the lack of transparency, no reporting office would be needed.", tr: "Düzenleyici açıklamanın eksiksiz olmasını talep ediyor. Şeffaflık eksikliği olmasaydı ihbar birimine gerek kalmazdı." },
         { speaker: "Agent", de: "One party alleges accounting fraud; another proves an embezzlement of a different year. That is not the same file.", tr: "Bir taraf muhasebe hilesi iddia ediyor, öteki başka bir yılın zimmetini kanıtlıyor. Bu aynı dosya değil." },
         { speaker: "Host", de: "So how certain is the forecast?", tr: "Peki tahmin ne kadar kesin?" },
-        { speaker: "Researcher", de: "The investment cycle may well turn before the savings rate falls. Thoroughly green, that document — and rather thin on the default risk.", tr: "Yatırım döngüsü tasarruf oranı düşmeden dönebilir. Baştan aşağı yeşil o izahname — temerrüt riskinde ise biraz ince." },
+        { speaker: "Researcher", de: "The investment cycle may well turn before the savings rate falls. Thoroughly green, that document — and rather thin on the default risk.", tr: "Yatırım döngüsü tasarruf oranı düşmeden dönebilir. Baştan aşağı yeşil o izahname — temerrüt riski konusunda ise oldukça zayıf." },
       ],
       questions: [
         { de: "What stands behind the bailout package, according to the agent?", tr: "Temsilciye göre kurtarma paketinin ardında ne duruyor?", options: ["A speculative bubble nobody priced in", "A trade deficit", "The reporting office", "A monetary decision"], answer: 0 },
@@ -742,7 +742,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Tutor", de: "In the essay it is rhetoric; in the pamphlet, pathos. You have used both this year.", tr: "Denemede retorik, bildiride patos. Bu yıl ikisini de kullandın." },
         { speaker: "Author", de: "A stylistic device is a choice; a break in style is a mistake. I could not always tell them apart.", tr: "Üslup aracı bir seçim; üslup kırılması bir hata. İkisini her zaman ayırt edemedim." },
-        { speaker: "Tutor", de: "What the line of argument does is hide a flaw in reasoning. Behind the prevailing doctrine stands a school of thought.", tr: "Savın kuruluşunun yaptığı şey bir akıl hatasını gizlemek. Yerleşik öğretinin ardında bir düşünce okulu duruyor." },
+        { speaker: "Tutor", de: "What the line of argument does is hide a flaw in reasoning. Behind the prevailing doctrine stands a school of thought.", tr: "Savın kuruluşunun yaptığı şey bir akıl yürütme hatasını gizlemek. Yerleşik öğretinin ardında bir düşünce okulu duruyor." },
         { speaker: "Author", de: "One advocates a claim; another merely affirms it. I think I affirmed for a whole term.", tr: "Biri bir savı savunur; öteki yalnızca onaylar. Sanırım bir dönem boyunca onayladım." },
         { speaker: "Tutor", de: "To misrepresent a study is a distortion, not a truism. You never did that, and it matters.", tr: "Bir çalışmayı yanlış aktarmak bir çarpıtmadır, bedahet değil. Bunu hiç yapmadın ve bu önemli." },
         { speaker: "Author", de: "A self-image may well outlive self-knowledge. Mine did, until the second reader asked why.", tr: "Bir benlik imgesi kendini bilmekten uzun yaşayabilir. Benimki yaşadı, ikinci okur „neden“ diye sorana kadar." },
@@ -773,7 +773,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       prompt: "Kursu kapatan kişisel bir deneme yaz: kanıt, yargı ve seçim.",
       checklist: [
         "Savını bir cümlede söyle ve dil düzeyini belirt",
-        "Bir akıl hatasını ya da sıralama hatasını kabul et",
+        "Bir akıl yürütme hatasını ya da sıralama hatasını kabul et",
         "İddia, onay ve çarpıtmayı aktarma fiilleriyle ayır",
         "Kendin hakkında kip nüansıyla konuş („may well“, „might have“)",
         "Ölçülü bir yargıyla kapat",

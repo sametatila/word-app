@@ -8,7 +8,7 @@
  },
  {
   "conversation": "de-a2-superlativ",
-  "sceneEn": "You are walking around a shopping center with a friend. Argue about which store is the cheapest and which is the best, and ask whether there is a sale on.",
+  "sceneEn": "You are walking around a shopping center with a friend. Discuss which store is the cheapest and which is the best, and ask whether there is a sale on.",
   "partnerEn": "a friend who knows every store and loves comparing prices",
   "openingEn": "Where should we go first? Where's the best value?",
   "goalEn": "At least three options have been compared in the superlative and it has been decided where to go."
@@ -22,7 +22,7 @@
  },
  {
   "conversation": "de-a2-adjektiv-ein",
-  "sceneEn": "You are looking for a garment in a particular color and pattern. Describe what you are after, give your verdict on what you are shown, and ask for another color or pattern.",
+  "sceneEn": "You are in a store looking for a garment in a particular color and pattern. Describe what you are after, give your verdict on what you are shown, and ask for another color or pattern.",
   "partnerEn": "a salesperson bringing different options off the shelves",
   "openingEn": "Hello! Are you looking for anything in particular?",
   "goalEn": "The color and pattern you wanted have been described, at least two options have been judged and one has been chosen."
@@ -108,7 +108,7 @@
   "conversation": "de-a2-ausflug",
   "sceneEn": "You are planning a trip for Sunday but the weather is uncertain. Suggest two separate plans: what you will do if it is fine and what if it is not.",
   "partnerEn": "a friend who wants a plan for every eventuality",
-  "openingEn": "We were going to get out on Sunday. What should we do if it rains?",
+  "openingEn": "We were planning to get outdoors on Sunday. What should we do if it rains?",
   "goalEn": "Two conditional plans have been made, tickets or costs have been discussed and a meeting time has been settled."
  },
  {
@@ -141,7 +141,7 @@
  },
  {
   "conversation": "de-a2-geburtstag",
-  "sceneEn": "It is a colleague's birthday. Wish them well, ask where the celebration will be, and give the date of your own birthday.",
+  "sceneEn": "It is a colleague's birthday. Wish them a happy birthday, ask where the celebration will be, and give the date of your own birthday.",
   "partnerEn": "a colleague who has brought a cake into the office for their birthday",
   "openingEn": "Come on, have a slice of cake! Is it your birthday soon as well?",
   "goalEn": "Birthday wishes have been given, the place and time of the celebration have been discussed and your own date has been said with an ordinal number."

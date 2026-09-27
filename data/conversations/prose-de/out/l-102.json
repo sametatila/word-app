@@ -47,7 +47,7 @@
  {
   "tr": "Yanlış çıkan bir haberi değerlendirmeyi öğretir: eminsen must have, imkânsız görüyorsan can't have, atlanmışsa should have.",
   "kind": "summary",
-  "de": "Vermittelt, wie man eine falsch gewordene Meldung bewertet: sicher must have, unmöglich can't have, versäumt should have."
+  "de": "Vermittelt, wie man eine Meldung bewertet, die sich als falsch erwiesen hat: sicher must have, unmöglich can't have, versäumt should have."
  },
  {
   "tr": "başlığı olduğu gibi doğru kabul eden bir arkadaş",
@@ -102,7 +102,7 @@
  {
   "tr": "Günün basın özetini sözlü olarak veriyorsun. Ne okuduğunu, neyin neden az yer aldığını ve neyin hızla büyüdüğünü kısa cümlelerle bağla.",
   "kind": "scene",
-  "de": "Du gibst den Pressespiegel des Tages mündlich. Binde in kurzen Sätzen an, was du gelesen hast, was warum wenig Platz bekam und was schnell gewachsen ist."
+  "de": "Du gibst den Pressespiegel des Tages mündlich. Verbinde in kurzen Sätzen, was du gelesen hast, was warum wenig Platz bekam und was schnell gewachsen ist."
  },
  {
   "tr": "Bir gazetenin bir konudaki savını arkadaşına özetliyorsun. Savın bütününü, belirleyici gördüğün parçayı ve eksik bıraktığı yanı ayrı ayrı söyle.",
@@ -317,7 +317,7 @@
  {
   "tr": "hesap verebilirlik",
   "kind": "vocab.tr",
-  "de": "Rechenschaft"
+  "de": "Rechenschaftspflicht"
  },
  {
   "tr": "başka sözcüklerle anlatmak",
@@ -567,7 +567,7 @@
  {
   "tr": "Kamuoyunu sarsan yolsuzluk haberine",
   "kind": "say.tr",
-  "de": "Die Meldung über Missbrauch, die die Öffentlichkeit erschüttert, heißt"
+  "de": "Die Meldung über Korruption, die die Öffentlichkeit erschüttert, heißt"
  },
  {
   "tr": "Oylamayı belirleyen şey ekonomiydi.",
@@ -707,7 +707,7 @@
  {
   "tr": "Şimdi yanlış çıkan bir haberi değerlendireceksin.",
   "kind": "say.tr",
-  "de": "Jetzt bewertest du eine falsch gewordene Meldung."
+  "de": "Jetzt bewertest du eine Meldung, die sich als falsch erwiesen hat."
  },
  {
   "tr": "Bir tane daha: Yazdığımız editör hızlı cevap verdi.",
@@ -887,6 +887,6 @@
  {
   "tr": "Merhaba! Bugün yanlış çıkan bir haberi değerlendirmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne atlandı.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir, eine falsch gewordene Meldung zu bewerten: wobei du sicher bist, was du ausschließt, was übersehen wurde."
+  "de": "Hallo! Heute lernen wir, eine Meldung zu bewerten, die sich als falsch erwiesen hat: wobei du sicher bist, was du ausschließt, was übersehen wurde."
  }
 ]

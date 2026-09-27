@@ -880,7 +880,7 @@ export const deA1B06: Conversation[] = [
       scene:
         "Peronda bekliyorsun ve tren hâlâ gelmedi. Yanındaki yolcuya durumu sor, ne kadar gecikme olduğunu konuş ve ne yapacağını anlat.",
       partner: "gecikmelere alışmış, hafif alaycı bir yolcu",
-      opening: "Schon wieder zehn Minuten später. Warten Sie auch auf den Zug nach Köln?",
+      opening: "Schon wieder zehn Minuten Verspätung. Warten Sie auch auf den Zug nach Köln?",
       openingTr: "Yine on dakika gecikme. Siz de Köln trenini mi bekliyorsunuz?",
       goal: "Gecikmenin ne kadar olduğu öğrenilmiş ve bekleyip beklemeyeceğin kararlaşmış olur.",
       minTurns: 6,
@@ -1128,7 +1128,7 @@ export const deA1B06: Conversation[] = [
 ],
     patterns: [
       { de: "Ist das weit?", tr: "bir yerin uzak olup olmadığını sorarken kullanılır" },
-      { de: "Das ist fünf Minuten zu Fuß.", tr: "mesafeyi dakikayla söylerken kullanılır" },
+      { de: "Das sind fünf Minuten zu Fuß.", tr: "mesafeyi dakikayla söylerken kullanılır" },
       { de: "Das Museum ist in der Nähe.", tr: "bir yerin yakında olduğunu söylerken kullanılır" },
     ],
     lecture: [
@@ -1245,21 +1245,21 @@ export const deA1B06: Conversation[] = [
       {
         say: [
           tr("Cevap neredeyse hep dakikayla gelir:"),
-          de("Das ist fünf Minuten zu Fuß."),
+          de("Das sind fünf Minuten zu Fuß."),
           tr("Lütfen"),
-          de("Das ist fünf Minuten zu Fuß"),
+          de("Das sind fünf Minuten zu Fuß"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Das ist fünf Minuten zu Fuß" },
+        expect: { kind: "repeat", target: "Das sind fünf Minuten zu Fuß" },
       },
       {
         say: [tr("Sıra sende: 'Yürüyerek on dakika.'")],
         expect: {
           kind: "produce",
-          target: "Das ist zehn Minuten zu Fuß",
+          target: "Das sind zehn Minuten zu Fuß",
           hint: [
             tr("Süre ortada, yürümek en sonda kalır:"),
-            de("Das ist zehn Minuten zu Fuß."),
+            de("Das sind zehn Minuten zu Fuß."),
             tr("Tekrar dene."),
           ],
         },

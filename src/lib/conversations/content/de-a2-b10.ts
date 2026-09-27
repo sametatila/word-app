@@ -817,7 +817,7 @@ export const deA2B10: Conversation[] = [
       scene:
         "Kütüphaneye üye olmak istiyorsun. Ne gerektiğini sor, kaç kitap ve ne kadar süre alabileceğini öğren ve bir kitap ara.",
       partner: "kütüphanenin kurallarını anlatan bir görevli",
-      opening: "Guten Tag! Möchten Sie einen Ausweis beantragen?",
+      opening: "Guten Tag! Möchten Sie einen Bibliotheksausweis beantragen?",
       openingTr: "İyi günler! Üyelik kartı çıkartmak ister misiniz?",
       goal: "Üyelik şartları ve ödünç süresi öğrenilmiş, bir kitap aranmış ve bir kural teyit edilmiş olur.",
       minTurns: 8,
@@ -851,7 +851,7 @@ export const deA2B10: Conversation[] = [
       {
         say: [
           tr(
-            "Bugün halk eğitim merkezine kayıt oluyoruz. Almanya'da bu kurumlar ucuzdur ve dil, müzik, spor her şey vardır. Hazır mısın?",
+            "Bugün halk eğitim merkezine kayıt oluyoruz. Almanya'da bu kurumlar ucuzdur ve dilden müziğe, spora kadar her alanda kurs vardır. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },

@@ -72,7 +72,7 @@
  {
   "tr": "küs olduğu kişiyi hâlâ önemseyen ama adım atmakta zorlanan bir arkadaş",
   "kind": "partner",
-  "de": "eine Freundin, der die Person immer noch wichtig ist, die aber den ersten Schritt kaum schafft"
+  "de": "eine Freundin, der die Person, mit der sie zerstritten ist, immer noch wichtig ist, die aber den ersten Schritt kaum schafft"
  },
  {
   "tr": "Seni en son ne etkiledi?",
@@ -500,7 +500,7 @@
   "de": "Das Verlangen ist alt, aber die Sehnsucht ist neu."
  },
  {
-  "tr": "His o gittiğinde başladı.",
+  "tr": "Bu his, o gittiğinde başladı.",
   "kind": "say.tr",
   "de": "Das Gefühl fing an, als sie ging."
  },
@@ -557,7 +557,7 @@
  {
   "tr": "O kızgındı ve ben korkmuştum.",
   "kind": "say.tr",
-  "de": "Er war wütend und ich war ängstlich."
+  "de": "Er war wütend und ich hatte Angst."
  },
  {
   "tr": "Sırrı yıllarca saklamışlardı.",
@@ -597,7 +597,7 @@
  {
   "tr": "Ona teşekkür etmezsen kırılacak.",
   "kind": "say.tr",
-  "de": "Wenn du ihr nicht dankst, wird sie verletzt sein."
+  "de": "Wenn du ihr nicht dankst, wird sie gekränkt sein."
  },
  {
   "tr": "Sesi yumuşaktı ama soru derindi.",
@@ -632,7 +632,7 @@
  {
   "tr": "Keşke başka türlü olsaydı duygusuna",
   "kind": "say.tr",
-  "de": "Das Gefühl, es wäre besser anders gewesen, heißt"
+  "de": "Das Gefühl, es wäre doch anders gekommen, heißt"
  },
  {
   "tr": "Bir tane daha: Beklediğim oda boştu.",
@@ -650,7 +650,7 @@
   "de": "Mein einziges Bedauern ist, dass ich mich daran erinnere."
  },
  {
-  "tr": "Bir avutma sözü öğütten çok işe yarar.",
+  "tr": "Bir teselli sözü öğütten çok işe yarar.",
   "kind": "say.tr",
   "de": "Ein tröstendes Wort hilft mehr als ein Rat."
  },
@@ -782,7 +782,7 @@
  {
   "tr": "Şimdi sıra sende: Bir gün o planın peşinden gideceğim.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Eines Tages werde ich diesem Plan folgen."
+  "de": "Jetzt bist du dran: Eines Tages werde ich diesen Plan verfolgen."
  },
  {
   "tr": "Son kalıbımız ayarlanmış bir adımı söylüyor. Tekrar et:",
@@ -817,7 +817,7 @@
  {
   "tr": "Uykuda görülen ya da uyanıkken kurulan hayal demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt, was man im Schlaf sieht oder wach träumt. Das ist auch unsere erste Wendung. Sprich nach:"
+  "de": "Das heißt, was man im Schlaf sieht oder wach träumt. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
   "tr": "Şimdi bugünün kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve",

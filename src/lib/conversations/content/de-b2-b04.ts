@@ -58,7 +58,7 @@ export const deB2B04: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Yeni modül: medya. İlk ders manşetler ve manşetlerin garip bir özelliği var — çoğunda fiil yoktur. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Sebebi yer değil, ton: fiil olmayınca cümle olgu gibi durur, kimsenin yaptığı bir şey gibi değil. Manşet okumak bu yüzden dikkat ister. Önce kelimeler.")] },
+      { say: [tr("Sebebi yer darlığı değil, ton: fiil olmayınca cümle olgu gibi durur, kimsenin yaptığı bir şey gibi değil. Manşet okumak bu yüzden dikkat ister. Önce kelimeler.")] },
       word("İlk", { de: "die Schlagzeile", tr: "manşet" }),
       word("İkinci", { de: "die Titelseite", tr: "birinci sayfa" }),
       word("Üçüncü", { de: "die Boulevardzeitung", tr: "bulvar gazetesi" }, "Manşetiyle satan, abartıya yatkın gazete."),
@@ -350,7 +350,7 @@ export const deB2B04: Conversation[] = [
       scene: "Bir arkadaşına dün izlediğin belgeseli anlatıyorsun: neyi gösteriyor, hangi sahne seni sarstı, filmin eksiği ne ve kime önerirsin.",
       partner: "belgesel izlemeyi sevmeyen, ikna edilmesi gereken bir arkadaş",
       opening: "Eine Doku? Ehrlich gesagt schlafe ich bei sowas meistens ein. Was war denn daran so besonders?",
-      openingTr: "Belgesel mi? Açıkçası ben öylelerinde genelde uyuyakalırım. Bunun özel yanı neydi?",
+      openingTr: "Belgesel mi? Açıkçası ben öyle şeylerde genelde uyuyakalırım. Bunun özel yanı neydi?",
       goal: "Belgeselin konusu, en etkileyici sahnesi ve eksiği anlatılmış; arkadaşın izleyip izlemeyeceğine karar vermiş olur.",
       minTurns: 8,
     },

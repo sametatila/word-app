@@ -1,7 +1,7 @@
 [
  {
   "conversation": "de-a1-weg",
-  "sceneEn": "You are out in the street in a strange city and looking for the train station. Ask a passer-by politely, listen to the directions, and ask again about the part you did not follow.",
+  "sceneEn": "You are out in the street in an unfamiliar city and looking for the train station. Ask a passer-by politely, listen to the directions, and ask again about the part you did not follow.",
   "partnerEn": "an elderly man in no hurry who enjoys giving directions",
   "openingEn": "You look lost. Can I help you?",
   "goalEn": "The way to the station has been described and the part you missed has been repeated until it was clear."
@@ -94,7 +94,7 @@
   "conversation": "de-a1-nachbarn",
   "sceneEn": "You have just moved in and knocked on your neighbor's door. Introduce yourself, say you have just moved in, and have a short conversation.",
   "partnerEn": "a warm neighbor who has lived in the building for years",
-  "openingEn": "Hello! You must be the new neighbors, aren't you?",
+  "openingEn": "Hello! You must be the new neighbors, right?",
   "goalEn": "You have introduced yourselves to each other and closed your first short chat with a goodbye."
  },
  {
@@ -156,7 +156,7 @@
  {
   "conversation": "de-a1-sport",
   "sceneEn": "You have come to look around a gym and the person at the desk is asking questions. Say what sports you play and how often, and ask about the gym's hours.",
-  "partnerEn": "a gym adviser who is trying to sell a membership but is sincere",
+  "partnerEn": "a gym advisor who is trying to sell a membership but is sincere",
   "openingEn": "Welcome! Do you play any sports regularly at the moment?",
   "goalEn": "What sports you play has been discussed and the hours and the membership have been made clear."
  },

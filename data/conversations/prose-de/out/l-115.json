@@ -150,7 +150,7 @@
   "de": "Einen langen Essay zusammenhalten"
  },
  {
-  "tr": "Uzun bir metni bağlayan geri göndermeleri öğretir; okur ipini kaybederse sav değil metin çöker.",
+  "tr": "Uzun bir metni bağlayan geri göndermeleri öğretir; okur ipin ucunu kaçırırsa sav değil metin çöker.",
   "kind": "summary",
   "de": "Lehrt die Rückverweise, die einen langen Text zusammenhalten; verliert die Leserin den Faden, bricht nicht die These zusammen, sondern der Text."
  },
@@ -245,7 +245,7 @@
   "de": "Du führst ein Gespräch, in dem eine schwierige Frage steht. Benenne das Straffen, das Ausweichen und das Erstarren mit festen Wortverbindungen und sag offen, was du getan hast."
  },
  {
-  "tr": "Uzun bir denemeyi sözlü olarak özetliyorsun ve dinleyenin ipi kaybetmemesi gerekiyor. Yukarı, aşağı ve geri gönderme adreslerini kullanarak üç bölümü birbirine bağla.",
+  "tr": "Uzun bir denemeyi sözlü olarak özetliyorsun ve dinleyenin ipin ucunu kaçırmaması gerekiyor. Yukarı, aşağı ve geri gönderme adreslerini kullanarak üç bölümü birbirine bağla.",
   "kind": "scene",
   "de": "Du fasst einen langen Essay mündlich zusammen, und die Zuhörerin darf den Faden nicht verlieren. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
  },
@@ -470,11 +470,6 @@
   "de": "Stigma"
  },
  {
-  "tr": "gazap",
-  "kind": "vocab.tr",
-  "de": "Zorn"
- },
- {
   "tr": "kanon",
   "kind": "vocab.tr",
   "de": "Kanon"
@@ -608,11 +603,6 @@
   "tr": "metafizik",
   "kind": "vocab.tr",
   "de": "Metaphysik"
- },
- {
-  "tr": "uzaklaşma",
-  "kind": "vocab.tr",
-  "de": "Entfremdung"
  },
  {
   "tr": "uzun öykü",
@@ -778,11 +768,6 @@
   "tr": "derin düşünceli",
   "kind": "vocab.tr",
   "de": "nachdenklich"
- },
- {
-  "tr": "kesin bir dille",
-  "kind": "vocab.tr",
-  "de": "nachdrücklich"
  },
  {
   "tr": "bağlama oturtmak",
@@ -1182,7 +1167,7 @@
  {
   "tr": "Şimdi sıra sende: Günlük konuşma dilinde aynı kelime başka düşüyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: In der Umgangssprache fällt dasselbe Wort anders."
+  "de": "Jetzt bist du dran: In der Umgangssprache wirkt dasselbe Wort anders."
  },
  {
   "tr": "Tam yerine oturan söze",
@@ -1322,12 +1307,12 @@
  {
   "tr": "Bir soruyu dolanıp geçmeye",
   "kind": "say.tr",
-  "de": "Um eine Frage herumzugehen heißt"
+  "de": "Eine Frage zu umschiffen heißt"
  },
  {
   "tr": "Konuyu iki kez atlatıyorlar.",
   "kind": "say.tr",
-  "de": "Sie umgehen den Punkt zweimal."
+  "de": "Sie umgehen das Thema zweimal."
  },
  {
   "tr": "Kalıp yalnız söylediğini değil, saklamak istediğini de taşır.",
@@ -1392,7 +1377,7 @@
  {
   "tr": "Edebî motifi biliyoruz, kanonu tartışıyoruz.",
   "kind": "say.tr",
-  "de": "Den Topos kennen wir, den Kanon bestreiten wir."
+  "de": "Den Topos kennen wir, über den Kanon streiten wir."
  },
  {
   "tr": "Şimdi bugünün kuralı. Anlatıda başa alınan şey bir bakış açısıdır:",
@@ -1457,12 +1442,12 @@
  {
   "tr": "Bir tane daha: Kanonu biliyoruz, edebî motifi tartışıyoruz.",
   "kind": "say.tr",
-  "de": "Noch eins: Den Kanon kennen wir, den Topos bestreiten wir."
+  "de": "Noch eins: Den Kanon kennen wir, über den Topos streiten wir."
  },
  {
   "tr": "Şimdi bir anlatıyı bakış açısıyla anlatacaksın.",
   "kind": "say.tr",
-  "de": "Jetzt erzählst du eine Erzählung mit einem Blickpunkt."
+  "de": "Jetzt erzählst du eine Geschichte aus einem bestimmten Blickpunkt."
  },
  {
   "tr": "Merhaba! Bugün bir metnin okumasını aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
@@ -1562,7 +1547,7 @@
  {
   "tr": "Baskın görüş ayakta.",
   "kind": "say.tr",
-  "de": "Die vorherrschende Ansicht steht."
+  "de": "Die vorherrschende Ansicht hat Bestand."
  },
  {
   "tr": "Bir okumayı adlandırmak onu çürütmez; çürütmek için okumak gerekir.",
@@ -1882,7 +1867,7 @@
  {
   "tr": "Şimdi bugünün kuralı. Ödün nerede durursa orada bir SES verir:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel von heute. Wo das Zugeständnis steht, gibt es dort einen KLANG:"
+  "de": "Jetzt die Regel von heute. Wo das Zugeständnis steht, bekommt es einen eigenen KLANG:"
  },
  {
   "tr": "başta itirazı hazırlar,",
@@ -1890,9 +1875,9 @@
   "de": "bereitet am Anfang den Einwand vor,"
  },
  {
-  "tr": "arada bir çekince gibi durur, başa çekildiğinde ise asıl cümleyi kuvvetlendirir. Üçü de aynı ödünü verir ve üçü ayrı ağırlıkta.",
+  "tr": "arada bir çekince gibi durur, Although ile başa çekilen ödün ise asıl cümleyi kuvvetlendirir. Üçü de aynı ödünü verir ve üçü ayrı ağırlıkta.",
   "kind": "say.tr",
-  "de": "steht in der Mitte wie ein Vorbehalt, an den Anfang gezogen verstärkt es den Hauptsatz. Alle drei geben dasselbe zu und alle drei wiegen anders."
+  "de": "steht in der Mitte wie ein Vorbehalt, das mit Although an den Anfang gezogene Zugeständnis dagegen verstärkt den Hauptsatz. Alle drei geben dasselbe zu und alle drei wiegen anders."
  },
  {
   "tr": "Şimdi sıra sende: Ona ne kadar mesafe demeyi sevsek de aslında ötekiliktir.",
@@ -2120,9 +2105,9 @@
   "de": "Jetzt die Regel von heute. Der Spott arbeitet mit Auslassung:"
  },
  {
-  "tr": "eksik bırakır ve dinleyen boşluğu kendi doldurur. Bu yüzden alaycı cümle savunulması en zor cümledir: söylenmemiş olanı kimse inkâr edemez.",
+  "tr": "eksik bırakır ve dinleyen boşluğu kendi doldurur. Bu yüzden alaycı cümle çürütülmesi en zor cümledir: söylenmemiş olanı kimse inkâr edemez.",
   "kind": "say.tr",
-  "de": "lässt etwas offen und die Zuhörerin füllt die Lücke selbst. Darum ist der spöttische Satz am schwersten zu verteidigen: was nicht gesagt wurde, kann niemand bestreiten."
+  "de": "lässt etwas offen und die Zuhörerin füllt die Lücke selbst. Darum ist der spöttische Satz am schwersten zu widerlegen: was nicht gesagt wurde, kann niemand bestreiten."
  },
  {
   "tr": "Şimdi sıra sende: Yemek doyurucuydu, karşılama pek değil.",
@@ -2175,14 +2160,14 @@
   "de": "Hallo! Heute lernen wir die Rückverweise, die einen langen Text zusammenhalten."
  },
  {
-  "tr": "Okur ipini kaybederse çöken şey sav değil metindir; sav hâlâ doğrudur ama kimse sonuna varamaz. Hazır mısın?",
+  "tr": "Okur ipin ucunu kaçırırsa çöken şey sav değil metindir; sav hâlâ doğrudur ama kimse sonuna varamaz. Hazır mısın?",
   "kind": "say.tr",
   "de": "Verliert die Leserin den Faden, bricht nicht die These zusammen, sondern der Text; die These stimmt weiter, aber niemand kommt bis zum Ende. Bist du bereit?"
  },
  {
   "tr": "Bir şeyin katman katman oluşu demek.",
   "kind": "say.tr",
-  "de": "Das heißt, dass etwas Schicht um Schicht ist."
+  "de": "Das heißt, dass etwas aus vielen Schichten besteht."
  },
  {
   "tr": "Bir şeye eğilimli olmaya",

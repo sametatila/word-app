@@ -92,7 +92,7 @@
  },
  {
   "conversation": "de-b2-interview",
-  "sceneEn": "You are doing a short interview with someone for a local paper. Ask the reason, press further on one answer, insist politely against an evasive answer and get their approval by summing up what they said in your own words.",
+  "sceneEn": "You are doing a short interview with someone for a local paper. Ask the reason, press further on one answer, politely stand firm when an answer is evasive and get their approval by summing up what they said in your own words.",
   "partnerEn": "a measured interviewee who avoids some questions",
   "openingEn": "Five minutes, I'm afraid that's all I have. So what's the occasion for your interview?",
   "goalEn": "The reason has been asked, one answer has been pressed further and what was said has been summed up and confirmed."
@@ -144,7 +144,7 @@
   "sceneEn": "You and an acquaintance are discussing a trend that has grown in recent years (screen time, rents, the cost of travel — whichever you choose). Describe what is rising, what is falling and what you have noticed yourself.",
   "partnerEn": "an acquaintance who is keen on figures and asks for examples",
   "openingEn": "Something's struck me lately: everything is getting more expensive, but nobody talks about the running costs. What do you observe?",
-  "goalEn": "The rising and falling trends have been described with examples and the two of you have met on a shared observation."
+  "goalEn": "The rising and falling trends have been described with examples and the two of you have agreed on a shared observation."
  },
  {
   "conversation": "de-b2-partizip-2",

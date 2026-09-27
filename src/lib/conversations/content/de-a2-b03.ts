@@ -1258,7 +1258,7 @@ export const deA2B03: Conversation[] = [
       {
         say: [
           tr(
-            "Resepsiyonun soruları hep soru kelimesiyle başlar ve bu tür sorularda fiil ikinci sırada durur. Bir soru kelimesi bir edatla birleşince önce edat, sonra soru kelimesi gelir; Türkçe konuşan için en şaşırtıcı kısmı bu. Önce sekiz kelime.",
+            "Resepsiyonun soruları çoğunlukla soru kelimesiyle başlar ve bu tür sorularda fiil ikinci sırada durur. Bir soru kelimesi bir edatla birleşince önce edat, sonra soru kelimesi gelir; Türkçe konuşan için en şaşırtıcı kısmı bu. Önce sekiz kelime.",
           ),
         ],
       },
@@ -1957,12 +1957,12 @@ export const deA2B03: Conversation[] = [
       {
         say: [
           tr("Örnek: 'Yılda bir kez kan tahlili yaptırmalı.' Almancası:"),
-          de("Man sollte einmal im Jahr eine Blutprobe machen."),
+          de("Man sollte einmal im Jahr eine Blutprobe nehmen lassen."),
           tr("Lütfen"),
-          de("Man sollte einmal im Jahr eine Blutprobe machen"),
+          de("Man sollte einmal im Jahr eine Blutprobe nehmen lassen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Man sollte einmal im Jahr eine Blutprobe machen" },
+        expect: { kind: "repeat", target: "Man sollte einmal im Jahr eine Blutprobe nehmen lassen" },
       },
       {
         say: [tr("Sıra sende: 'Kan şekerini kontrol etmeli.' nasıl dersin?")],

@@ -165,7 +165,7 @@ export const deC1B05: Conversation[] = [
       { de: "Daraus ergibt sich …", tr: "sonuç çıkarır" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün akademik dil. Kuralı tek cümlede söylenebilir: yazan kişi cümleden çıkar, bulgu öne geçer. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün akademik dil. Kural tek cümlede söylenebilir: yazan kişi cümleden çıkar, bulgu öne geçer. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("'Bence etki küçük' yerine 'etkinin küçük olduğu söylenebilir' denir. Bu, B2'de öğrendiğin kurum dilinin bilimsel akrabası. Önce kelimeler.")] },
       word("İlk", { de: "sich ergeben", tr: "doğmak, çıkmak" }),
       word("İkinci", { de: "die Berücksichtigung", tr: "dikkate alma" }),

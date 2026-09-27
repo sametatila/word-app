@@ -409,7 +409,7 @@ export const deA2B04: Conversation[] = [
         },
       },
       {
-        say: [tr("Şimdi kayıp eşya masasındasın ve eşyaların sahibini arıyorsunuz.")],
+        say: [tr("Şimdi sınıfta unutulan eşyaların sahibini öğretmenle birlikte arıyorsunuz.")],
       },
     ],
     chat: {
@@ -807,7 +807,7 @@ export const deA2B04: Conversation[] = [
           answer: false,
           why: [
             tr(
-              "Tablo duvara doğru hareket ediyor, o yüzden edat belirtme hâlini getirmeli; yazılan biçim 'duvarda asılıyken asıyorum' anlamına gelir. Doğrusu:",
+              "Tablo duvara doğru hareket ediyor, o yüzden edat belirtme hâlini getirmeli; yazılan biçim hareketi değil, yerde durmayı anlatır. Doğrusu:",
             ),
             de("Ich hänge das Bild an die Wand."),
           ],
@@ -1974,7 +1974,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Im Flur ist die Glühbirne kaputt",
-          accept: ["Die Glühbirne im Flur ist kaputt"],
+          accept: ["Die Glühbirne im Flur ist kaputt", "Im Flur ist die Glühbirne defekt", "Die Glühbirne im Flur ist defekt"],
           hint: [
             tr("Yer ifadesi başta olunca özne fiilin arkasına düşer:"),
             de("Im Flur ist die Glühbirne kaputt."),

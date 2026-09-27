@@ -375,7 +375,7 @@ export const deB1B18: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Hava ve arazi konuşacağız. Bu konunun dili karşılaştırmadır: daha soğuk, daha dik, gittikçe daha kötü. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Artan değişim için sıfatın karşılaştırma biçimi bir zarfla tekrarlanır; orantı için ikili bağlaç kullanılır. Önce kelimeler.")] },
+      { say: [tr("Artan değişim için sıfatın karşılaştırma biçiminden önce bir zarf gelir; orantı için ikili bağlaç kullanılır. Önce kelimeler.")] },
       word("İlk", { de: "der Donner", tr: "gök gürültüsü" }),
       word("İkinci", { de: "donnern", tr: "gök gürlemek" }),
       word("Üçüncü", { de: "frieren", tr: "üşümek" }),
@@ -450,7 +450,7 @@ export const deB1B18: Conversation[] = [
       scene: "Bir doğa parkındasın ve gördüğün hayvanları arkadaşına tarif ediyorsun: hangisi neyle besleniyor, hangisi tehlikeli.",
       partner: "hayvanlardan biraz çekinen ama merak eden bir arkadaş",
       opening: "Was ist das denn da hinten? Ist das gefährlich?",
-      openingTr: "Arkadaki de ne? Tehlikeli mi?",
+      openingTr: "Şu arkadaki ne öyle? Tehlikeli mi?",
       goal: "En az iki hayvan ilgi cümlesiyle tanımlanmış ve neyle beslendikleri söylenmiş olur.",
       minTurns: 8,
     },
@@ -555,7 +555,7 @@ export const deB1B18: Conversation[] = [
     chat: {
       scene: "B1'i bitirdin. Öğretmeninle son bir değerlendirme yapıyorsun: neyi başardın, neyi hâlâ zor buluyorsun, bundan sonra ne yapacaksın.",
       partner: "seni yüz seksen ders boyunca izlemiş, gurur duyan bir öğretmen",
-      opening: "Das war die letzte Stunde auf B1. Sagen Sie mir ehrlich — was können Sie heute, was Sie am Anfang nicht konnten?",
+      opening: "Das war die letzte Stunde im B1-Kurs. Sagen Sie mir ehrlich — was können Sie heute, was Sie am Anfang nicht konnten?",
       openingTr: "Bu B1'in son dersiydi. Bana dürüstçe söyleyin — bugün başlangıçta yapamadığınız neyi yapabiliyorsunuz?",
       goal: "Kazanımlar ve kalan zorluklar dengeli biçimde söylenmiş ve bir sonraki hedef belirlenmiş olur.",
       minTurns: 9,

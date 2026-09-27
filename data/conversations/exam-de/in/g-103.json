@@ -343,7 +343,7 @@
    ]
   },
   {
-   "tr": "Temelli olsa da model tek tarafa sesleniyor",
+   "tr": "Sağlam temelli olsa da model tek tarafa sesleniyor",
    "kind": "phrase",
    "n": 1,
    "de": [
@@ -750,7 +750,7 @@
    ]
   },
   {
-   "tr": "Mülakatta sıradan soruları cevaplayabiliyorum.",
+   "tr": "Mülakatta sık sorulan soruları cevaplayabiliyorum.",
    "kind": "cando",
    "n": 1,
    "de": [
@@ -1135,7 +1135,7 @@
    ]
   },
   {
-   "tr": "Bir fiyatı neyin sürüklediğini açıklayabiliyorum.",
+   "tr": "Bir fiyatı neyin belirlediğini açıklayabiliyorum.",
    "kind": "cando",
    "n": 1,
    "de": [

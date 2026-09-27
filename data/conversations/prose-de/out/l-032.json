@@ -147,5 +147,8 @@
  { "tr": "Üçüncüsü süre sorusu:", "kind": "say.tr", "de": "Das dritte ist die Dauerfrage:" },
  { "tr": "var, ve tam saatlerde", "kind": "say.tr", "de": "steht, und bei vollen Stunden" },
  { "tr": "ve arkasından mutlaka", "kind": "say.tr", "de": ", und danach kommt unbedingt" },
- { "tr": "Ya da daha da kısası:", "kind": "say.tr", "de": "Oder noch kürzer:" }
+ { "tr": "Ya da daha da kısası:", "kind": "say.tr", "de": "Oder noch kürzer:" },
+ { "tr": "güvenmek", "kind": "vocab.tr", "de": "vertrauen" },
+ { "tr": "kaçırmak", "kind": "vocab.tr", "de": "verpassen" },
+ { "tr": "pasaport", "kind": "vocab.tr", "de": "der Reisepass" }
 ]

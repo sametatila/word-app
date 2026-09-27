@@ -207,7 +207,7 @@
  {
   "tr": "Bir tarlanın imara açılmasını önce planın, sonra köyün diliyle anlatıyorsun. İki adı da kur ve her adın hangi izni getirdiğini söyle.",
   "kind": "scene",
-  "de": "Du beschreibst die Bebauung eines Ackers erst in der Sprache des Plans, dann in der des Dorfes. Bilde beide Namen und sag, welche Erlaubnis jeder Name mitbringt."
+  "de": "Du beschreibst die Ausweisung eines Ackers als Bauland erst in der Sprache des Plans, dann in der des Dorfes. Bilde beide Namen und sag, welche Erlaubnis jeder Name mitbringt."
  },
  {
   "tr": "Bir çiftçiyle tarım yöntemi tartışıyorsun ve onun sayılarını yok saymak istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
@@ -755,7 +755,7 @@
   "de": "Um in der zweiten Hälfte das Objekt voranzustellen, wird ein Komma verwendet:"
  },
  {
-  "tr": "Aynı toprağı iki dil düzeyinde söylemek için iki yer adı yeter:",
+  "tr": "Aynı toprağı iki dil düzeyinde söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um denselben Boden in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -1627,7 +1627,7 @@
  {
   "tr": "Tarım toprağının yapıya gitmesi demek.",
   "kind": "say.tr",
-  "de": "Das heißt, dass Ackerboden in Bebauung übergeht."
+  "de": "Das heißt, dass Ackerboden bebaut wird."
  },
  {
   "tr": "Meclisin arazi toplulaştırması dediğine komşu arazi spekülasyonu diyor.",
@@ -1692,7 +1692,7 @@
  {
   "tr": "Üst toprağın su ve rüzgârla gitmesi demek.",
   "kind": "say.tr",
-  "de": "Das heißt, dass der Oberboden mit Wasser und Wind fortgeht."
+  "de": "Das heißt, dass der Oberboden von Wasser und Wind abgetragen wird."
  },
  {
   "tr": "Şimdi bugünün kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:",
@@ -1757,7 +1757,7 @@
  {
   "tr": "ise onu koruma altına alır. Plan hangi adı yazarsa o toprak öyle muamele görür.",
   "kind": "say.tr",
-  "de": "dagegen stellt ihn unter Schutz. Welchen Namen der Plan schreibt, so wird der Boden behandelt."
+  "de": "dagegen stellt ihn unter Schutz. Wie der Plan den Boden nennt, so wird er behandelt."
  },
  {
   "tr": "Merhaba! Bugün etiket iddialarını aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
@@ -1840,14 +1840,14 @@
   "de": "Bilde du jetzt: Der Plan, wenn auch bodenschonend, bringt die Bodenfruchtbarkeit nicht zurück."
  },
  {
-  "tr": "ise bir hanenin gelirini anlatır. İkisini aynı cümlede kullanmak çiftçiyi borsa kalemi yapar.",
+  "tr": "ise bir hanenin gelirini anlatır. İkisini birbirinin yerine kullanmak çiftçiyi borsa kalemi yapar.",
   "kind": "say.tr",
-  "de": "dagegen beschreibt das Einkommen eines Haushalts. Beide im selben Satz zu benutzen macht aus der Bäuerin einen Börsenposten."
+  "de": "dagegen beschreibt das Einkommen eines Haushalts. Beide gegeneinander auszutauschen macht aus der Bäuerin einen Börsenposten."
  },
  {
-  "tr": "ise olayı bir yere yerleştirir ve kimseyi anmaz. İkinci cümle daha kibar ve daha az doğrudur.",
+  "tr": "ise olayı bir yere yerleştirir ve kimseyi anmaz. İkinci cümle daha kibar ve daha az doğrudandır.",
   "kind": "say.tr",
-  "de": "dagegen setzt das Geschehen an einen Ort und nennt niemanden. Der zweite Satz ist höflicher und weniger wahr."
+  "de": "dagegen setzt das Geschehen an einen Ort und nennt niemanden. Der zweite Satz ist höflicher und weniger direkt."
  },
  {
   "tr": "Kesin felaket cümlesi tartışmayı kapatıyor; kip ise karşındakini masada tutuyor. Hazır mısın?",

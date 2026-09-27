@@ -918,7 +918,7 @@ export const deA1B03: Conversation[] = [
           tr("Yemek bitti, ödeme zamanı. Kalıbımız:"),
           de("Ich möchte bezahlen."),
           tr(
-            "Burada iki fiil var ve dikkat: asıl fiil cümlenin en sonuna gidiyor, tıpkı Türkçedeki 'ödemek istiyorum' gibi.",
+            "Burada iki fiil var ve dikkat: asıl fiil cümlenin en sonuna gidiyor; Türkçedeki 'ödemek istiyorum' sırasının tam tersi.",
           ),
         ],
       },
@@ -1024,7 +1024,7 @@ export const deA1B03: Conversation[] = [
       {
         say: [
           tr(
-            "Bu kalıplar tanışma sohbetlerinin belkemiği: hem kendini anlatırsın hem karşındakini konuşturursun. Önce kelimeleri öğrenelim.",
+            "Bu kalıplar tanışma sohbetlerinin bel kemiği: hem kendini anlatırsın hem karşındakini konuşturursun. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -2228,7 +2228,7 @@ export const deA1B03: Conversation[] = [
       {
         say: [
           tr(
-            "Almanya'da sofrada yemeği övmek insanı çok mutlu eder; 'yeter' demeyi bilmek de en az onun kadar işe yarar. Önce kelimeleri öğrenelim.",
+            "Almanya'da sofrada yemeği övmek ev sahibini çok mutlu eder; 'yeter' demeyi bilmek de en az onun kadar işe yarar. Önce kelimeleri öğrenelim.",
           ),
         ],
       },

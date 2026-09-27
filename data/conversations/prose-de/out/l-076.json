@@ -380,7 +380,7 @@
   "de": "Fällt das Hilfsverb weg, wirkt der Satz aktiv und die Bedeutung kippt."
  },
  {
-  "tr": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:",
+  "tr": "Yanlış. İki olaydan yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:",
   "kind": "why.tr",
   "de": "Falsch. Von zwei Ereignissen wird nur das FRÜHERE zurückgesetzt; das spätere bleibt in der einfachen Vergangenheit:"
  },
@@ -730,7 +730,7 @@
   "de": "Unsere erste Wendung. Für die Kündigungsfrist"
  },
  {
-  "tr": "Oryantasyon ne zamana ayarlandı?",
+  "tr": "Oryantasyon ne zamana planlandı?",
   "kind": "say.tr",
   "de": "Wann ist die Einführung angesetzt?"
  },
@@ -785,9 +785,9 @@
   "de": "Der Kern des Lebenslaufs besteht aus zwei Dingen:"
  },
  {
-  "tr": "Bugün cevap beklemek zorunda değilsin.",
+  "tr": "Bugün bize cevap vermek zorunda değilsin.",
   "kind": "say.tr",
-  "de": "Du musst heute keine Antwort erwarten."
+  "de": "Du musst uns heute keine Antwort geben."
  },
  {
   "tr": "İş arkadaşım bana departmanı gösterdi.",
@@ -822,7 +822,7 @@
  {
   "tr": "ise başarmak, bir hedefe ulaşmak demek.",
   "kind": "say.tr",
-  "de": "dagegen heißt erreichen, ein Ziel schaffen."
+  "de": "dagegen heißt schaffen, ein Ziel erreichen."
  },
  {
   "tr": "Bir tane daha: Ekipman nerede tutuluyor?",
@@ -882,7 +882,7 @@
  {
   "tr": "Orada başlamadan önce diplomamı bitirmiştim.",
   "kind": "say.tr",
-  "de": "Bevor ich dort anfing, hatte ich meinen Abschluss beendet."
+  "de": "Bevor ich dort anfing, hatte ich meinen Abschluss gemacht."
  },
  {
   "tr": "Bir tane daha: Maaş sorusuna hazırlanmalısın.",
@@ -1005,7 +1005,7 @@
   "de": "Jetzt bist du dran: Ich muss zuerst meinen Vertrag beenden."
  },
  {
-  "tr": "ile söylenir. Görüşmenin klasik sorusu ise zayıf yönündür:",
+  "tr": "ile söylenir. Görüşmenin klasik sorusu ise zayıf yönünle ilgilidir:",
   "kind": "say.tr",
   "de": "gesagt. Und die klassische Frage im Gespräch ist die nach der Schwäche:"
  },
@@ -1090,9 +1090,9 @@
   "de": "Also „wird gegeben“, „wurde organisiert“. Wenn man sagen will, wer es tut, wird am Ende"
  },
  {
-  "tr": "denir. Deneyim demek ve sayılamaz bir isimdir: 'a experience' denmez,",
+  "tr": "denir. Deneyim demek ve bu anlamda sayılamaz bir isimdir: 'an experience' denmez,",
   "kind": "say.tr",
-  "de": "auf Englisch. Das heißt Erfahrung und ist unzählbar: „a experience“ sagt man nicht; man sagt,"
+  "de": "auf Englisch. Das heißt Erfahrung und ist in dieser Bedeutung unzählbar: „an experience“ sagt man nicht; man sagt,"
  },
  {
   "tr": "kullanılır ama dikkat: İngilizcede bu fiil çoğu zaman edilgen kurulur —",
@@ -1192,7 +1192,7 @@
  {
   "tr": "İşin püf noktası küçük: bazı fiillerden sonra -ing, bazılarından sonra to gelir ve mektubun tonu buna bağlı. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Der Kniff ist klein: nach manchen Verben steht -ing, nach anderen to, und der Ton des Schreibens hängt daran. Bist du bereit?"
+  "de": "Der Kniff ist klein: nach manchen Verben steht -ing, nach anderen to, und der Ton des Schreibens hängt davon ab. Bist du bereit?"
  },
  {
   "tr": "Bugünün asıl işi tek bir ayrım: bitmiş bir dönemle hâlâ süren bir deneyim İngilizcede farklı zamanla söylenir. Hazır mısın?",
@@ -1200,8 +1200,8 @@
   "de": "Die eigentliche Aufgabe von heute ist ein einziger Unterschied: ein abgeschlossener Abschnitt und eine laufende Erfahrung stehen im Englischen in verschiedenen Zeiten. Bist du bereit?"
  },
  {
-  "tr": "Merhaba! Bugün iş görüşmesinin dilini öğreneceğiz: neyi söylemek zorundasın, neyi söylemek zorunda değilsin, ne yapsan iyi olur.",
+  "tr": "Merhaba! Bugün iş görüşmesinin dilini öğreneceğiz: neyi yapmak zorundasın, neyi yapmak zorunda değilsin, ne yapsan iyi olur.",
   "kind": "say.tr",
-  "de": "Hallo! Heute lernen wir die Sprache des Vorstellungsgesprächs: was du sagen musst, was du nicht sagen musst und was du besser tust."
+  "de": "Hallo! Heute lernen wir die Sprache des Vorstellungsgesprächs: was du tun musst, was du nicht tun musst und was du besser tust."
  }
 ]

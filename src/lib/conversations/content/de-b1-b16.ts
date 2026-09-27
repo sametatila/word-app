@@ -131,7 +131,7 @@ export const deB1B16: Conversation[] = [
     chat: {
       scene: "Bir meslek danışmanıyla konuşuyorsun: çıraklık mı üniversite mi, hangi belgeler gerekiyor, neyin değdiğini düşünüyorsun.",
       partner: "iki yolu da tanıyan, karar vermeni kolaylaştırmaya çalışan bir danışman",
-      opening: "Sie sitzen zwischen zwei Wegen, richtig? Was zieht Sie denn mehr — Lehre oder Studium?",
+      opening: "Sie schwanken zwischen zwei Wegen, richtig? Was reizt Sie denn mehr — Lehre oder Studium?",
       openingTr: "İki yol arasında kaldınız, değil mi? Sizi daha çok hangisi çekiyor — çıraklık mı üniversite mi?",
       goal: "İki yol karşılaştırılmış, bir karar gerekçesiyle söylenmiş ve gereken belgeler öğrenilmiş olur.",
       minTurns: 8,

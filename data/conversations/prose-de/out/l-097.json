@@ -180,11 +180,6 @@
   "de": "Ausfall"
  },
  {
-  "tr": "kusur",
-  "kind": "vocab.tr",
-  "de": "Fehler"
- },
- {
   "tr": "niyet",
   "kind": "vocab.tr",
   "de": "Absicht"
@@ -552,7 +547,7 @@
  {
   "tr": "Olmadan olmayana",
   "kind": "say.tr",
-  "de": "Was ohne es nicht geht, heißt"
+  "de": "Das, ohne das es nicht geht, heißt"
  },
  {
   "tr": "emin bir çıkarım,",
@@ -1007,7 +1002,7 @@
  {
   "tr": "Sadece oturumu yönetmekle kalmadı, konuşma da yaptı.",
   "kind": "say.tr",
-  "de": "Sie hat nicht nur moderiert, sie hat auch gesprochen."
+  "de": "Sie hat nicht nur moderiert, sie hat auch eine Rede gehalten."
  },
  {
   "tr": "Şimdi bugünün kuralı. Bu bağlayıcılar iki iş yapıyor:",
@@ -1092,7 +1087,7 @@
  {
   "tr": "Şimdi sen kur: Sadece konuşmakla kalmadı, soruları da yanıtladı.",
   "kind": "say.tr",
-  "de": "Jetzt du: Er hat nicht nur gesprochen, er hat auch geantwortet."
+  "de": "Jetzt du: Er hat nicht nur gesprochen, er hat auch die Fragen beantwortet."
  },
  {
   "tr": "Olayların gidebileceği yol demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1122,7 +1117,7 @@
  {
   "tr": "İki biçim var ve farkları SONUÇ YARISINDA: biri geçmişte kalıyor, öteki bugüne uzanıyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Es gibt zwei Formen, und ihr Unterschied liegt in der FOLGEHÄLFTE: die eine bleibt in der Vergangenheit, die andere reicht bis heute. Bist du bereit?"
+  "de": "Es gibt zwei Formen, und ihr Unterschied liegt in der FOLGEHÄLFTE: Die eine bleibt in der Vergangenheit, die andere reicht bis heute. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün gerçekleşmemiş geçmişi konuşmayı öğreneceğiz: bilseydik ne olurdu, bugün ne farklı olurdu.",
@@ -1147,12 +1142,12 @@
  {
   "tr": "İş dilinde bu üç kip suçlamayı düzeltmeden ayırır: biri çıkarım, biri ret, biri eksik kalan iş. Hazır mısın?",
   "kind": "say.tr",
-  "de": "In der Geschäftssprache trennen diese drei Modalverben die Schuldfrage von der Korrektur: eines ist Schluss, eines Zurückweisung, eines eine offene Lücke. Bist du bereit?"
+  "de": "In der Geschäftssprache trennen diese drei Modalverben die Schuldfrage von der Korrektur: Eines ist Schluss, eines Zurückweisung, eines eine offene Lücke. Bist du bereit?"
  },
  {
-  "tr": "İngilizcede vurgu sesle değil YAPIYLA yapılır: cümle ikiye bölünür ve önemli parça başa taşınır. Hazır mısın?",
+  "tr": "İngilizcede vurgu yalnız sesle değil YAPIYLA da yapılır: cümle ikiye bölünür ve önemli parça başa taşınır. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Im Englischen wird die Betonung nicht über die Stimme, sondern über den BAU gemacht: der Satz wird geteilt und das wichtige Stück nach vorn geholt. Bist du bereit?"
+  "de": "Im Englischen wird die Betonung nicht nur über die Stimme, sondern auch über den BAU gemacht: Der Satz wird geteilt und das wichtige Stück nach vorn geholt. Bist du bereit?"
  },
  {
   "tr": "İş dilinde sert bir cümle kapıyı kapatıyor; aynı bilgi bu bağlayıcılarla verildiğinde kapı açık kalıyor. Hazır mısın?",
@@ -1162,7 +1157,7 @@
  {
   "tr": "Resmî açılışın belirgin bir işareti var: olumsuz zarf başa gelince özne ile yardımcı fiil yer değiştiriyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die formelle Eröffnung hat ein deutliches Zeichen: steht ein negatives Adverb am Anfang, tauschen Subjekt und Hilfsverb den Platz. Bist du bereit?"
+  "de": "Die formelle Eröffnung hat ein deutliches Zeichen: Steht ein negatives Adverb am Anfang, tauschen Subjekt und Hilfsverb den Platz. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün olan bitenin çözümlemesini öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne yapılmalıydı.",

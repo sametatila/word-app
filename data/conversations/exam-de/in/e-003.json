@@ -2,83 +2,6 @@
  "packet": "e-003",
  "words": [
   {
-   "tr": "Medya ve teknoloji",
-   "kind": "plan.title",
-   "n": 1,
-   "de": [
-    "Media and technology"
-   ],
-   "ctx": [
-    "A2.9 Media and technology"
-   ]
-  },
-  {
-   "tr": "Müzakere masasında",
-   "kind": "listening.title",
-   "n": 1,
-   "de": [
-    "At the bargaining table"
-   ],
-   "ctx": [
-    "C1.6 Work and the bargaining table"
-   ]
-  },
-  {
-   "tr": "ne kadar yol aldım",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Present perfect vs past simple"
-   ],
-   "ctx": [
-    "B1.6 Learning and progress"
-   ]
-  },
-  {
-   "tr": "Park günü programı",
-   "kind": "reading.title",
-   "n": 1,
-   "de": [
-    "Park day"
-   ],
-   "ctx": [
-    "A1.8 Free time"
-   ]
-  },
-  {
-   "tr": "Rakam …-den alındı",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "The figure was taken from …"
-   ],
-   "ctx": [
-    "B2.4 Media and reported speech · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "Resmî bilgi yazısı",
-   "kind": "reading.title",
-   "n": 1,
-   "de": [
-    "Residence permit — what you need"
-   ],
-   "ctx": [
-    "A2.10 Offices and official business"
-   ]
-  },
-  {
-   "tr": "Resmî cevap yazısı",
-   "kind": "reading.title",
-   "n": 1,
-   "de": [
-    "Answer to your complaint"
-   ],
-   "ctx": [
-    "B2.10 Formal correspondence"
-   ]
-  },
-  {
    "tr": "Saat …'de başlıyor",
    "kind": "phrase",
    "n": 1,
@@ -123,11 +46,22 @@
    ]
   },
   {
+   "tr": "Şikâyetinize cevap",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Answer to your complaint"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
    "tr": "yapılanı bildirmek",
    "kind": "focus",
    "n": 1,
    "de": [
-    "I have already filled in the form"
+    "I have already filled out the form"
    ],
    "ctx": [
     "A2.10 Offices and official business"
@@ -211,17 +145,6 @@
    ]
   },
   {
-   "tr": "aynı savın üç kaydı",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Register shift between stylistic levels"
-   ],
-   "ctx": [
-    "C1.10 Evidence, judgement and choice"
-   ]
-  },
-  {
    "tr": "Aynı sokağın üç adı",
    "kind": "listening.title",
    "n": 1,
@@ -240,7 +163,7 @@
     "What is the problem in the bathroom?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · dinleme sorusu"
+    "A2.4 Home and neighborhood · dinleme sorusu"
    ],
    "options": [
     "There is a leak",
@@ -391,7 +314,7 @@
     "The disputed account"
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
    ]
   },
   {
@@ -425,7 +348,7 @@
     "140",
     "620",
     "760",
-    "1 May"
+    "May 1"
    ]
   },
   {
@@ -461,7 +384,7 @@
    "kind": "focus",
    "n": 1,
    "de": [
-    "must / mustn't"
+    "must / must not"
    ],
    "ctx": [
     "A1.7 Home and living"
@@ -472,10 +395,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Claims and complaints"
+    "Negotiating and complaining"
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
    ]
   },
   {
@@ -569,6 +492,17 @@
    ]
   },
   {
+   "tr": "Üslup ve dil düzeyi",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Register and tone"
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
    "tr": "Yeşil alan komitesi",
    "kind": "listening.title",
    "n": 1,
@@ -602,7 +536,7 @@
    ]
   },
   {
-   "tr": "…-i sürükleyen şey …",
+   "tr": "…-i belirleyen şey …",
    "kind": "phrase",
    "n": 1,
    "de": [
@@ -661,7 +595,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "Ms X noted that …"
+    "Ms. X noted that …"
    ],
    "ctx": [
     "B2.1 Professional communication · yazma kalıbı"
@@ -762,6 +696,17 @@
    ]
   },
   {
+   "tr": "Hafta sonu buluşması",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Plans for the weekend"
+   ],
+   "ctx": [
+    "A1.4 My day"
+   ]
+  },
+  {
    "tr": "Hatırladığım bir gün",
    "kind": "reading.title",
    "n": 1,
@@ -809,7 +754,7 @@
     "B1.6 Learning and progress · dinleme sorusu"
    ],
    "options": [
-    "Revise every evening",
+    "Review every evening",
     "Repeat the module",
     "Write a new plan with the tutor",
     "Stop the course"
@@ -829,7 +774,7 @@
     "Only in cash",
     "By card or in cash",
     "Only by card",
-    "With a cheque"
+    "By check"
    ]
   },
   {
@@ -886,7 +831,7 @@
     "How do I get to the hotel?"
    ],
    "ctx": [
-    "A2.7 Travelling · yazma kalıbı"
+    "A2.7 Traveling · yazma kalıbı"
    ]
   },
   {
@@ -947,7 +892,7 @@
     "Sorry to bother you, but …"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · yazma kalıbı"
+    "A2.4 Home and neighborhood · yazma kalıbı"
    ]
   },
   {
@@ -966,7 +911,7 @@
    "kind": "listening.title",
    "n": 1,
    "de": [
-    "Shall we go to the cinema?"
+    "Do you want to go to the movies?"
    ],
    "ctx": [
     "A1.8 Free time"
@@ -989,7 +934,7 @@
     "The automation of the process …"
    ],
    "ctx": [
-    "B2.5 Science and method · yazma kalıbı"
+    "B2.5 Science and technology · yazma kalıbı"
    ]
   },
   {
@@ -1028,7 +973,7 @@
     "Yes, the fitting room is there."
    ],
    "ctx": [
-    "A1.5 Shopping · Shop assistant"
+    "A1.5 Shopping · Clerk"
    ]
   },
   {
@@ -1039,7 +984,7 @@
     "Why the delivery was late"
    ],
    "ctx": [
-    "B1.3 Reason and result"
+    "B1.3 Linking ideas"
    ]
   },
   {
@@ -1112,7 +1057,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B1.3 Reason and result · konuşma"
+    "B1.3 Linking ideas · konuşma"
    ]
   },
   {
@@ -1156,7 +1101,7 @@
     "In the essay it was …; in the report, …"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+    "C1.10 Evidence, judgment and choice · yazma kalıbı"
    ]
   },
   {
@@ -1297,8 +1242,8 @@
     "A2.5 Working life · okuma sorusu"
    ],
    "options": [
-    "On 15 March",
-    "On 1 April",
+    "On March 15",
+    "On April 1",
     "Next year",
     "Immediately"
    ]
@@ -1308,10 +1253,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Evidence, judgement and choice"
+    "Evidence, judgment and choice"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice"
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -1381,7 +1326,7 @@
     "Could you …, please?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood"
+    "A2.4 Home and neighborhood"
    ]
   },
   {
@@ -1420,7 +1365,7 @@
     "Fronting in building an argument"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice"
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -1431,7 +1376,7 @@
     "The last supervision"
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice"
+    "C1.10 Evidence, judgment and choice"
    ]
   },
   {
@@ -1475,11 +1420,11 @@
     "Why was the delivery late?"
    ],
    "ctx": [
-    "B1.3 Reason and result · dinleme sorusu"
+    "B1.3 Linking ideas · dinleme sorusu"
    ],
    "options": [
     "The train stopped for two hours",
-    "The driver was ill",
+    "The driver was sick",
     "The client changed the day",
     "The order was wrong"
    ]
@@ -1503,12 +1448,12 @@
     "Why was the raise refused?"
    ],
    "ctx": [
-    "B2.8 Money and career · dinleme sorusu"
+    "B2.8 Money and career strategy · dinleme sorusu"
    ],
    "options": [
     "For operational reasons",
     "Because the file was missing",
-    "Because of the works council",
+    "Because of the union",
     "Because the contract ended"
    ]
   },
@@ -1521,6 +1466,17 @@
    ],
    "ctx": [
     "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'e kadar otobüsle git",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Take the bus to …"
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
    ]
   },
   {
@@ -1568,6 +1524,17 @@
    ]
   },
   {
+   "tr": "Belediye ağaç dikse, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If the city planted trees, …"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · yazma kalıbı"
+   ]
+  },
+  {
    "tr": "Bilgisayarım çok yavaş",
    "kind": "listening.title",
    "n": 1,
@@ -1597,7 +1564,7 @@
     "If the budget had allowed it, …"
    ],
    "ctx": [
-    "B2.8 Money and career · yazma kalıbı"
+    "B2.8 Money and career strategy · yazma kalıbı"
    ]
   },
   {
@@ -1739,7 +1706,7 @@
     "A2.8 Celebrations and people · dinleme sorusu"
    ],
    "options": [
-    "He is ill",
+    "He is sick",
     "He is away this week",
     "He doesn't like weddings",
     "He has no present"
@@ -1752,23 +1719,6 @@
    "de": [],
    "ctx": [
     "A1.7 Home and living · yazma"
-   ]
-  },
-  {
-   "tr": "Kişi neyi zaten yaptı?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What has the visitor already done?"
-   ],
-   "ctx": [
-    "A2.10 Offices and official business · dinleme sorusu"
-   ],
-   "options": [
-    "Made a copy",
-    "Filled in the form",
-    "Paid the fine",
-    "Called the office"
    ]
   },
   {
@@ -1789,6 +1739,54 @@
    "de": [],
    "ctx": [
     "A1.6 In town · yazma"
+   ]
+  },
+  {
+   "tr": "Neyi fark ettiğini yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.9 Relationships and psychology · yazma"
+   ]
+  },
+  {
+   "tr": "Peki buradaki kız kim?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "And who is the girl here?"
+   ],
+   "ctx": [
+    "A1.2 Family and people · Lena"
+   ]
+  },
+  {
+   "tr": "renk, beden, „too big“",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Adjectives"
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "Sara şimdi ne yapmalı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What should Sara do now?"
+   ],
+   "ctx": [
+    "A2.9 Media and technology · dinleme sorusu"
+   ],
+   "options": [
+    "Update the program",
+    "Press the button again",
+    "Use the phone",
+    "Wait for one hour"
    ]
   }
  ]

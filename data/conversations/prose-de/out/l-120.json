@@ -7,7 +7,7 @@
  {
   "tr": "her tahmini söz sayan, «yani kazanacağız» diyen bir müşteri",
   "kind": "partner",
-  "de": "ein Kunde, der jede Prognose für ein Versprechen hält und sagt „wir verdienen also“"
+  "de": "ein Kunde, der jede Prognose für ein Versprechen hält und sagt „wir machen also Gewinn“"
  },
  {
   "tr": "rakamı tek doğru sayan, «sayı sayıdır» diyen bir iş arkadaşı",
@@ -72,7 +72,7 @@
  {
   "tr": "Yani kazanacağız, öyle mi?",
   "kind": "openingTr",
-  "de": "Wir verdienen also, ja?"
+  "de": "Wir machen also Gewinn, ja?"
  },
  {
   "tr": "Başka ne yapabilirlerdi ki?",
@@ -95,7 +95,7 @@
   "de": "Bei uns im Markt geht das auch, oder?"
  },
  {
-  "tr": "Bu kadar para gitti, şimdi bırakamayız değil mi?",
+  "tr": "Bu kadar para gitti, şimdi bırakamayız, değil mi?",
   "kind": "openingTr",
   "de": "So viel Geld ist weg, jetzt können wir nicht aufhören, oder?"
  },
@@ -745,7 +745,7 @@
   "de": "Um Zahl und Erzählung zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı rakamı iki dil düzeyinde söylemek için iki yer adı yeter:",
+  "tr": "Aynı rakamı iki dil düzeyinde söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um dieselbe Zahl in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -837,7 +837,7 @@
  {
   "tr": "Parayla ilgili olana",
   "kind": "say.tr",
-  "de": "Was das Geld betrifft, heißt"
+  "de": "Was sich auf Geld bezieht, heißt"
  },
  {
   "tr": "İznin alınma sürecine",
@@ -912,7 +912,7 @@
  {
   "tr": "Borcun ödenmeme ihtimaline",
   "kind": "say.tr",
-  "de": "Die Möglichkeit, dass die Schuld nicht bezahlt wird, heißt"
+  "de": "Die Möglichkeit, dass die Schulden nicht bezahlt werden, heißt"
  },
  {
   "tr": "Pazarın artık büyümemesine",
@@ -987,7 +987,7 @@
  {
   "tr": "Borcunu vadesinde ödeyebilmeye",
   "kind": "say.tr",
-  "de": "Seine Schuld zum Termin zahlen zu können heißt"
+  "de": "Seine Schulden fristgerecht zahlen zu können heißt"
  },
  {
   "tr": "İhbarın yapıldığı resmî birime",
@@ -1000,14 +1000,14 @@
   "de": "Das Modalverb lässt sie eine Analyse bleiben."
  },
  {
-  "tr": "Para arzı parasal bir sorudur.",
+  "tr": "Para arzı parasal bir meseledir.",
   "kind": "say.tr",
   "de": "Die Geldmenge ist eine monetäre Frage."
  },
  {
   "tr": "risk almaya istekli olmaya ise",
   "kind": "say.tr",
-  "de": "und bereit zu sein, Risiko zu nehmen, heißt"
+  "de": "und bereit zu sein, Risiken einzugehen, heißt"
  },
  {
   "tr": "Riskten kaçınma kışın artıyor.",
@@ -1162,7 +1162,7 @@
  {
   "tr": "borcunu taşıyamayacak durumda olana ise",
   "kind": "say.tr",
-  "de": "und wer seine Schuld nicht mehr tragen kann, heißt"
+  "de": "und wer seine Schulden nicht mehr tragen kann, heißt"
  },
  {
   "tr": "büyüdükçe birim maliyetin düşmesine ise",
@@ -1252,7 +1252,7 @@
  {
   "tr": "İşin kim tarafından ve nasıl işletileceğine",
   "kind": "say.tr",
-  "de": "Wer den Betrieb wie führt, heißt"
+  "de": "Wer den Betrieb führt und wie, heißt"
  },
  {
   "tr": "Şimdi aynı rakamı iki dil düzeyinde anlatacaksın.",
@@ -1287,7 +1287,7 @@
  {
   "tr": "batan kurumu kurtarmak için ayrılan paraya ise",
   "kind": "say.tr",
-  "de": "und das Geld, das zur Rettung eines fallenden Hauses bereitsteht, heißt"
+  "de": "und das Geld, das zur Rettung eines wankenden Instituts bereitsteht, heißt"
  },
  {
   "tr": "Hedef çatışması kaldı, külfetli ifade kalmadı.",
@@ -1337,7 +1337,7 @@
  {
   "tr": "içeriden öğrenilen bilgiyle alım satım yapmaya ise",
   "kind": "say.tr",
-  "de": "und mit Wissen von innen zu handeln heißt"
+  "de": "und mit internem Wissen zu kaufen und zu verkaufen heißt"
  },
  {
   "tr": "Şimdi sen kur: Burada iltimas yok, kayırma ağı var.",
@@ -1382,7 +1382,7 @@
  {
   "tr": "bir kurumun çöküşünün bütün sistemi tehdit etmesine ise",
   "kind": "say.tr",
-  "de": "und dass der Fall eines Hauses das ganze System bedroht, heißt"
+  "de": "und dass der Zusammenbruch eines Instituts das ganze System bedroht, heißt"
  },
  {
   "tr": "İkinci kalıbımız tahmini duyurudan ayırıyor. Tekrar et:",
@@ -1472,7 +1472,7 @@
  {
   "tr": "Şimdi bugünün kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel von heute. Im Finanzvorwurf ist das Verb ein RECHTSANSPRUCH:"
+  "de": "Jetzt die Regel von heute. Im Finanzvorwurf ist das Verb eine RECHTLICHE BEHAUPTUNG:"
  },
  {
   "tr": "Şimdi bugünün kuralı. Strateji raporunda adres bir PAZAR taşır:",
@@ -1512,7 +1512,7 @@
  {
   "tr": "Kip, tahmini bir söz olmaktan çıkarıp bir analiz hâline getirir.",
   "kind": "say.tr",
-  "de": "Das Modalverb macht aus der Prognose statt eines Versprechens eine Analyse."
+  "de": "Das Modalverb macht die Prognose von einem Versprechen zu einer Analyse."
  },
  {
   "tr": "Sistemik riski sigortalıyoruz, ticaret açığını sigortalamıyoruz.",
@@ -1602,12 +1602,12 @@
  {
   "tr": "Şimdi bugünün kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel von heute. Im Krisensatz stiftet das Vorangestellte die verantwortliche Seite:"
+  "de": "Jetzt die Regel von heute. Im Krisensatz legt das Vorangestellte die verantwortliche Seite fest:"
  },
  {
   "tr": "Şimdi bugünün kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel von heute. Der Spott im Unternehmen wird mit dem eigenen Wort der Aussage gebaut:"
+  "de": "Jetzt die Regel von heute. Der Spott über das Unternehmen wird mit dem eigenen Wort der Aussage gebaut:"
  },
  {
   "tr": "Defterleri kasten yanlış tutmak demek.",
@@ -1672,7 +1672,7 @@
  {
   "tr": "Her ifşacının, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar.",
   "kind": "say.tr",
-  "de": "Sie verlangen, dass jede Hinweisgeberin gehört werde, bevor das Fehlverhalten begraben wird."
+  "de": "Sie verlangen, dass jede Hinweisgeberin gehört werde, bevor das Fehlverhalten vertuscht wird."
  },
  {
   "tr": "Şimdi bugünün kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:",
@@ -1822,7 +1822,7 @@
  {
   "tr": "Bir tane daha: Her bildirimin, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie verlangen, dass jede Meldung gehört werde, bevor das Fehlverhalten begraben wird."
+  "de": "Noch eins: Sie verlangen, dass jede Meldung gehört werde, bevor das Fehlverhalten vertuscht wird."
  },
  {
   "tr": "Ödeme gücü olan bir şirket yine de temerrüt riski taşıyabilir ve risk iştahını yitirebilir.",
@@ -1885,9 +1885,9 @@
   "de": "Die Wahl des Namens bestimmt auch, wer verantwortlich ist: eine vorübergehende Welle oder eine strukturelle Stagnation. Bist du bereit?"
  },
  {
-  "tr": "İddia etmekle kanıtlamak arasındaki fark fiilde duruyor; yanlış fiil bir insanı hükümsüz mahkûm eder. Hazır mısın?",
+  "tr": "İddia etmekle kanıtlamak arasındaki fark fiilde duruyor; yanlış fiil bir insanı yargılanmadan mahkûm eder. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Der Unterschied zwischen Behaupten und Beweisen steht im Verb; ein falsches Verb verurteilt einen Menschen ohne Urteil. Bist du bereit?"
+  "de": "Der Unterschied zwischen Behaupten und Beweisen steht im Verb; ein falsches Verb verurteilt einen Menschen ohne Prozess. Bist du bereit?"
  },
  {
   "tr": "dediğinde karşındaki senin mekanizmayı bildiğini anlar. Aracı tümden reddeden cümle, teknik bir masada hiç duyulmaz.",

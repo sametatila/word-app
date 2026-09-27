@@ -95,7 +95,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann erzählen, wie ich hierhergekommen bin.", tr: "Buraya nasıl geldiğimi anlatabiliyorum.", en: "I can explain how I came here." },
-      { de: "Ich kann sagen, was ich als Kind wollte, konnte oder musste.", tr: "Çocukken ne istediğimi, neyi yapabildiğimi ya da zorunda olduğumu söyleyebiliyorum.", en: "I can say what I wanted, could or had to do as a child." },
+      { de: "Ich kann sagen, was ich als Kind wollte, konnte oder musste.", tr: "Çocukken ne istediğimi, neyi yapabildiğimi ya da neyi yapmak zorunda olduğumu söyleyebiliyorum.", en: "I can say what I wanted, could or had to do as a child." },
       { de: "Ich kann über Zeiträume sprechen: seit, vor, nach.", tr: "seit, vor ve nach ile zaman dilimlerinden bahsedebiliyorum.", en: "I can talk about periods of time." },
       { de: "Ich kann Reflexivverben benutzen.", tr: "Dönüşlü fiilleri kullanabiliyorum.", en: "I can use reflexive verbs." },
       { de: "Ich kann sagen, was sich verändert hat.", tr: "Neyin değiştiğini anlatabiliyorum.", en: "I can say what has changed." },
@@ -181,7 +181,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Apotheker", de: "Haben Sie auch Fieber?", tr: "Ateşiniz de var mı?" },
         { speaker: "Kundin", de: "Nein, aber ich fühle mich sehr schlapp und ich huste.", tr: "Hayır ama çok halsiz hissediyorum ve öksürüyorum." },
         { speaker: "Apotheker", de: "Dann nehmen Sie diesen Saft. Dreimal täglich einen Löffel.", tr: "O zaman bu şurubu alın. Günde üç kez bir kaşık." },
-        { speaker: "Kundin", de: "Gibt es Nebenwirkungen? Ich darf keinen Alkohol nehmen.", tr: "Yan etkisi var mı? Alkol alamıyorum." },
+        { speaker: "Kundin", de: "Gibt es Nebenwirkungen? Ich darf keinen Alkohol trinken.", tr: "Yan etkisi var mı? Alkol alamıyorum." },
         { speaker: "Apotheker", de: "Kein Problem, der Saft ist ohne Alkohol. Sie sollen aber viel trinken und sich ausruhen.", tr: "Sorun değil, şurup alkolsüz. Ama bol sıvı alıp dinlenmelisiniz." },
       ],
       questions: [
@@ -306,7 +306,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     focus: [
       { de: "Nebensatz mit weil", tr: "sebep — fiil sona gider" },
       { de: "Hauptsatz mit denn", tr: "sebep — dizilim değişmez" },
-      { de: "dass-Satz", tr: "„…olduğunu düşünüyorum“" },
+      { de: "dass-Satz", tr: "„… olduğunu düşünüyorum“" },
       { de: "wollen", tr: "niyet bildirmek" },
     ],
     canDo: [
@@ -521,7 +521,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     titleTr: "Kutlamalar ve ilişkiler",
     focus: [
       { de: "Ordinalzahlen und Datum", tr: "am dritten Mai" },
-      { de: "dass-Satz", tr: "„…olduğunu umuyorum“" },
+      { de: "dass-Satz", tr: "„… olduğunu umuyorum“" },
       { de: "Dativ: ihm, ihr, uns", tr: "kime hediye edildiği" },
       { de: "Absage mit weil", tr: "sebep bildirerek reddetmek" },
     ],
@@ -613,7 +613,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Mona", de: "Wann passiert das genau?", tr: "Tam olarak ne zaman oluyor?" },
         { speaker: "Ali", de: "Immer wenn ich das Videoprogramm öffne. Danach geht nichts mehr.", tr: "Ne zaman video programını açsam. Sonrasında hiçbir şey çalışmıyor." },
         { speaker: "Mona", de: "Hast du vorher gespeichert?", tr: "Öncesinde kaydetmiş miydin?" },
-        { speaker: "Ali", de: "Zum Glück ja. Aber ich warte schon seit einer Woche auf eine Antwort vom Support.", tr: "İyi ki evet. Ama bir haftadır destekten cevap bekliyorum." },
+        { speaker: "Ali", de: "Zum Glück ja. Aber ich warte schon seit einer Woche auf eine Antwort vom Support.", tr: "Neyse ki evet. Ama bir haftadır destekten cevap bekliyorum." },
         { speaker: "Mona", de: "Starte den Computer neu und mach ein Update. Das hilft meistens.", tr: "Bilgisayarı yeniden başlat ve güncelleme yap. Genelde işe yarar." },
       ],
       questions: [
@@ -723,7 +723,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Ich habe die … Prüfung bestanden.", tr: "… sınavını geçtim.", en: "I passed the … exam." },
         { de: "…, weil ich … will.", tr: "…, çünkü … istiyorum", en: "…, because I want to …" },
         { de: "Welche Unterlagen brauche ich?", tr: "Hangi belgeler gerekiyor?", en: "Which documents do I need?" },
-        { de: "Gibt es noch freie Plätze?", tr: "Boş yer var mı?", en: "Are there still places available?" },
+        { de: "Gibt es noch freie Plätze?", tr: "Boş yer var mı?", en: "Are there still spots available?" },
       ],
       sample:
         "Sehr geehrte Damen und Herren,\n\nich interessiere mich für den B1-Kurs ab September. Ich habe im Juni die A2-Prüfung bestanden und ich möchte weitermachen, weil ich hier eine Ausbildung anfangen will. Können Sie mir bitte sagen, welche Unterlagen ich für die Anmeldung brauche? Ich möchte auch wissen, ob es noch freie Plätze gibt und ob man den Kurs in zwei Raten bezahlen kann. Nächste Woche komme ich auch persönlich vorbei.\n\nVielen Dank und freundliche Grüße\nElif Yilmaz",

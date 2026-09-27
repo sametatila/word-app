@@ -108,7 +108,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann eine formelle Beschwerde schriftlich formulieren.", tr: "Resmî bir şikâyeti yazılı olarak kurabiliyorum.", en: "I can write a formal complaint." },
       { de: "Ich kann einen Anspruch begründen und beziffern.", tr: "Bir hak talebini gerekçelendirip rakamla belirtebiliyorum.", en: "I can justify and quantify a claim." },
       { de: "Ich kann in einem Konflikt deeskalierend sprechen.", tr: "Bir çatışmada gerilimi düşüren biçimde konuşabiliyorum.", en: "I can speak in a de-escalating way during a conflict." },
-      { de: "Ich kann Kritik wertschätzend und konkret äußern.", tr: "Eleştiriyi takdir edici ve somut biçimde dile getirebiliyorum.", en: "I can give criticism appreciatively and concretely." },
+      { de: "Ich kann Kritik wertschätzend und konkret äußern.", tr: "Eleştiriyi takdir edici ve somut biçimde dile getirebiliyorum.", en: "I can give criticism respectfully and concretely." },
     ],
     listening: {
       title: "Das Preisgespräch",
@@ -193,7 +193,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Meister", de: "Ich war unter dem Wagen. Die Bremsen sind zu erneuern, das lässt sich nicht mehr aufschieben.", tr: "Aracın altına baktım. Frenlerin yenilenmesi gerekiyor, bu artık ertelenemez." },
         { speaker: "Kundin", de: "Und der Rest? Lässt sich das Fahrzeug noch fahren, bis ich Urlaub habe?", tr: "Peki gerisi? İzne çıkana kadar araç hâlâ sürülebilir mi?" },
-        { speaker: "Meister", de: "Fahren ja, aber der Verschleiß ist deutlich sichtbar. Die Inspektion ist ohnehin fällig.", tr: "Sürülür, ama aşınma açıkça görünüyor. Zaten bakımın vadesi gelmiş." },
+        { speaker: "Meister", de: "Fahren ja, aber der Verschleiß ist deutlich sichtbar. Die Inspektion ist ohnehin fällig.", tr: "Sürülür, ama aşınma açıkça görünüyor. Zaten bakım zamanı gelmiş." },
         { speaker: "Kundin", de: "Ist der Ölwechsel eigentlich schon gemacht worden?", tr: "Yağ değişimi yapıldı mı acaba?" },
         { speaker: "Meister", de: "Ja, der ist im Frühjahr gemacht worden. Das Öl muss also nicht gewechselt werden.", tr: "Evet, ilkbaharda yapıldı. Yani yağın değiştirilmesi gerekmiyor." },
         { speaker: "Kundin", de: "Gut. Dann bitte nur die Bremsen. Wann kann der Termin vereinbart werden?", tr: "Güzel. O hâlde sadece frenler lütfen. Randevu ne zaman ayarlanabilir?" },
@@ -350,7 +350,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Journalistin", de: "Wann dürfte die Serienreife erreicht werden?", tr: "Yöntem muhtemelen ne zaman seri üretime hazır olur?" },
         { speaker: "Dr. Weiß", de: "Das bleibt abzuwarten. Ich wäre da eher vorsichtig — drei bis fünf Jahre dürften realistisch sein.", tr: "Bu görülecek. Ben burada daha temkinli olurdum — üç ila beş yıl gerçekçi olsa gerek." },
         { speaker: "Journalistin", de: "Die steigenden Energiekosten sprechen ja für Sie.", tr: "Artan enerji maliyetleri sizin lehinize." },
-        { speaker: "Dr. Weiß", de: "Genau. Und die laufenden Kosten sinken deutlich, sobald die Anlage einmal steht.", tr: "Aynen. Tesis bir kez kurulduğunda süregelen maliyetler de belirgin biçimde düşüyor." },
+        { speaker: "Dr. Weiß", de: "Genau. Und die laufenden Kosten sinken deutlich, sobald die Anlage einmal steht.", tr: "Aynen. Tesis bir kez kurulduğunda işletme maliyetleri de belirgin biçimde düşüyor." },
       ],
       questions: [
         { de: "Wodurch wird Energie gespart?", tr: "Enerji nasıl tasarruf ediliyor?", options: ["Durch kürzere Arbeitszeiten", "Durch die Verarbeitung bei niedriger Temperatur", "Durch weniger Personal", "Durch neue Maschinen"], answer: 1 },
@@ -424,7 +424,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Beyza", de: "Je zentraler die Wohnung ist, desto teurer ist die Miete — das war schon immer so. Aufgrund der Zuzüge ist es nur schlimmer geworden.", tr: "Daire ne kadar merkezîyse kira o kadar pahalı — bu hep böyleydi. Gelen göç yüzünden sadece daha da kötüleşti." },
         { speaker: "Jonas", de: "Auf dem Land gibt es Leerstand, aber dort fehlt die Infrastruktur. Ohne Auto geht gar nichts.", tr: "Kırsalda boş konut var ama orada altyapı yok. Arabasız hiçbir şey olmuyor." },
         { speaker: "Beyza", de: "Genau da liegt der Punkt: Je besser die Infrastruktur ist, desto weniger Menschen wandern ab.", tr: "İşte mesele tam orada: Altyapı ne kadar iyiyse o kadar az insan göç eder." },
-        { speaker: "Jonas", de: "Trotz des Leerstands zieht also kaum jemand hin. Und neu gebaut wird zu wenig.", tr: "Yani boş konuta rağmen neredeyse kimse taşınmıyor. Ve çok az yeni yapı yapılıyor." },
+        { speaker: "Jonas", de: "Trotz des Leerstands zieht also kaum jemand hin. Und neu gebaut wird zu wenig.", tr: "Yani boş konuta rağmen neredeyse kimse taşınmıyor. Üstelik çok az yeni konut yapılıyor." },
         { speaker: "Beyza", de: "Sowohl die Städte als auch die Dörfer müssten etwas tun. Weder Warten noch Klagen hilft.", tr: "Hem şehirler hem köyler bir şey yapmalı. Ne beklemek ne yakınmak fayda eder." },
         { speaker: "Jonas", de: "Dann schaue ich mir am Wochenende doch mal den Ort mit der neuen Bahnanbindung an.", tr: "O hâlde hafta sonu yeni tren bağlantısı olan yere bir bakayım." },
       ],
@@ -659,7 +659,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Wie hat Nora Kais Verhalten empfunden?", tr: "Nora, Kai'nin davranışını nasıl algıladı?", options: ["Als hätte er sie bloßstellen wollen", "Als hätte er sie gelobt", "Als wäre er gar nicht da gewesen", "Als hätte er geschwiegen"], answer: 0 },
-        { de: "Was sagt Kai über seine Absicht?", tr: "Kai niyeti hakkında ne söylüyor?", options: ["Er wollte sie kritisieren", "Er wollte den Punkt klären, nicht sie", "Er wollte das Gespräch beenden", "Er erinnert sich nicht"], answer: 1 },
+        { de: "Was sagt Kai über seine Absicht?", tr: "Kai niyeti hakkında ne söylüyor?", options: ["Er wollte sie kritisieren", "Er wollte den Punkt klären, nicht sie angreifen", "Er wollte das Gespräch beenden", "Er erinnert sich nicht"], answer: 1 },
         { de: "Worauf einigen sich beide für das nächste Mal?", tr: "İkisi bir dahaki sefer için ne üzerinde anlaşıyor?", options: ["Nicht mehr zu streiten", "Ich-Botschaften und nicht unterbrechen", "Alles schriftlich zu klären", "Eine dritte Person zu holen"], answer: 1 },
       ],
     },
@@ -768,7 +768,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "Bezug nehmend auf Ihr Angebot vom …", tr: "… tarihli teklifinize atıfla", en: "With reference to your offer of …" },
         { de: "Könnten Sie uns mitteilen, ob …?", tr: "…-ıp olmadığını bildirebilir misiniz?", en: "Could you let us know whether …?" },
-        { de: "Als Anlage erhalten Sie ….", tr: "Ekte … bulacaksınız", en: "Please find … attached." },
+        { de: "Als Anlage erhalten Sie …", tr: "Ekte … bulacaksınız", en: "Please find … attached." },
         { de: "Für eine zeitnahe Auskunft wären wir dankbar.", tr: "Kısa sürede bilgi verirseniz minnettar oluruz.", en: "We would be grateful for a prompt reply." },
         { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
       ],

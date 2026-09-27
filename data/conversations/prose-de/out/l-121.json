@@ -232,7 +232,7 @@
  {
   "tr": "Kursun sonunda bir arkadaşına neyi öğrendiğini anlatıyorsun ve bunu kural listesi gibi söylemek istemiyorsun. Üç cümlede birer öğe düşür ve öğrendiklerinden hangisinin seçim olduğunu söyle.",
   "kind": "scene",
-  "de": "Am Ende des Kurses erzählst du einer Freundin, was du gelernt hast, und willst es nicht als Regelliste sagen. Lass in drei Sätzen je ein Glied weg und sag, welches des Gelernten eine Wahl ist."
+  "de": "Am Ende des Kurses erzählst du einer Freundin, was du gelernt hast, und willst es nicht als Regelliste sagen. Lass in drei Sätzen je ein Glied weg und sag, welcher Teil des Gelernten eine Wahl ist."
  },
  {
   "tr": "Karşılaştırmayı, kuralı ve seçimi üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
@@ -262,7 +262,7 @@
  {
   "tr": "Üç cümlede birer öğe düşürdüysen ve öğrendiklerinden hangisinin seçim olduğunu söylediysen konuşma başarılı sayılır.",
   "kind": "goal",
-  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und gesagt hast, welches des Gelernten eine Wahl ist."
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und gesagt hast, welcher Teil des Gelernten eine Wahl ist."
  },
  {
   "tr": "Doğru. Ödün başa çekilmiş ve sınır ondan sonra açıkça söylenmiş.",
@@ -550,11 +550,6 @@
   "de": "Näherungswert"
  },
  {
-  "tr": "yerleşik görüş",
-  "kind": "vocab.tr",
-  "de": "herrschende Lehre"
- },
- {
   "tr": "doğasında olmak",
   "kind": "vocab.tr",
   "de": "innewohnen"
@@ -740,7 +735,7 @@
   "de": "Um Wahl und Fehler zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı aracı iki dil düzeyinde söylemek için iki yer adı yeter:",
+  "tr": "Aynı aracı iki dil düzeyinde söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um dasselbe Mittel in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -1022,7 +1017,7 @@
  {
   "tr": "Kip yanılmaya yer bırakıyor.",
   "kind": "say.tr",
-  "de": "Das Modalverb lässt Raum zum Irrtum."
+  "de": "Das Modalverb lässt Raum für Irrtum."
  },
  {
   "tr": "Ödün düşünmeyi açık tutuyor.",
@@ -1122,7 +1117,7 @@
  {
   "tr": "Ötekilerden çok uzak düşen ölçüme",
   "kind": "say.tr",
-  "de": "Die Messung, die weit von den anderen abfällt, heißt"
+  "de": "Die Messung, die weit von den anderen abweicht, heißt"
  },
  {
   "tr": "Bilgi kazanımı gerçekleşmeyebilir.",
@@ -1232,7 +1227,7 @@
  {
   "tr": "sanatçının kendi işine karışılmamasına ise",
   "kind": "say.tr",
-  "de": "und dass niemand der Künstlerin in ihr Werk redet, heißt"
+  "de": "und dass niemand der Künstlerin in ihr Werk hineinredet, heißt"
  },
  {
   "tr": "söylenmesine gerek olmayan apaçık söze ise",

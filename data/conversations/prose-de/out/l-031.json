@@ -96,7 +96,7 @@
  { "tr": "Fiyatı sormak için:", "kind": "say.tr", "de": "Um nach dem Preis zu fragen:" },
  { "tr": "İkisini karıştırma:", "kind": "say.tr", "de": "Verwechsle die beiden nicht:" },
  { "tr": "ile yer soruyorsun,", "kind": "say.tr", "de": "— damit fragst du nach dem Ort," },
- { "tr": "ile. Hatayı üstlen:", "kind": "say.tr", "de": "— übernimm den Fehler:" },
+ { "tr": "ile. Hatayı üstlen:", "kind": "say.tr", "de": "— gib den Fehler zu:" },
  { "tr": "İlk kelimemiz kira.", "kind": "say.tr", "de": "Unser erstes Wort ist Miete." },
  { "tr": "İlk kelimemiz must.", "kind": "say.tr", "de": "Unser erstes Wort ist must." },
  { "tr": "Karar veremiyorsan:", "kind": "say.tr", "de": "Wenn du dich nicht entscheiden kannst:" },
@@ -135,7 +135,7 @@
  { "tr": "ve olumsuz yapmayı:", "kind": "say.tr", "de": "und zu verneinen:" },
  { "tr": "ve saat vermek için", "kind": "say.tr", "de": "und um die Uhrzeit zu nennen" },
  { "tr": "Ya da cümle içinde:", "kind": "say.tr", "de": "Oder im Satz:" },
- { "tr": "yakıştığını söyler,", "kind": "say.tr", "de": "sagt, dass es steht," },
+ { "tr": "yakıştığını söyler,", "kind": "say.tr", "de": "sagt, dass es dir steht," },
  { "tr": "Yani 'uzun sürmez'.", "kind": "say.tr", "de": "Also „es dauert nicht lange“." },
  { "tr": "Yani \"Üye misiniz?\"", "kind": "say.tr", "de": "Also „Sind Sie Mitglied?“" },
  { "tr": "yani su. Sen de de:", "kind": "say.tr", "de": "also Wasser. Sag du auch:" },
@@ -146,7 +146,7 @@
  { "tr": ", birden fazla elma:", "kind": "say.tr", "de": ", mehrere Äpfel:" },
  { "tr": ", ondan sonrası için", "kind": "say.tr", "de": ", für das danach" },
  { "tr": ", pazartesiden beri.", "kind": "say.tr", "de": ", seit Montag." },
- { "tr": ". Kendini tanıtırken", "kind": "say.tr", "de": ". Beim Vorstellen deiner selbst" },
+ { "tr": ". Kendini tanıtırken", "kind": "say.tr", "de": ". Wenn du dich vorstellst" },
  { "tr": ". Randevu için \"at\":", "kind": "say.tr", "de": ". Für den Termin „at“:" },
  { "tr": ". Ve iki can simidi:", "kind": "say.tr", "de": ". Und zwei Rettungsringe:" }
 ]

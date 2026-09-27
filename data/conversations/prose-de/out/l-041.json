@@ -11,7 +11,7 @@
  { "tr": ". Şimdi bir arkadaşınla konuşalım.", "kind": "say.tr", "de": ". Jetzt reden wir mit einem Freund." },
  { "tr": "\"Eczane bankanın karşısında.\" Bak,", "kind": "say.tr", "de": "„Die Apotheke ist gegenüber der Bank.“ Schau," },
  { "tr": "Almaya karar verdin. Ödemek fiili:", "kind": "say.tr", "de": "Du hast dich zum Kauf entschieden. Das Verb bezahlen:" },
- { "tr": "ama kelime sesli harfle başlıyorsa a yerine an deriz. Bu yüzden", "kind": "say.tr", "de": "aber wenn das Wort mit einem Vokal beginnt, sagen wir an statt a. Deshalb" },
+ { "tr": ". Ama kelime sesli harfle başlıyorsa a yerine an deriz. Bu yüzden", "kind": "say.tr", "de": "aber wenn das Wort mit einem Vokal beginnt, sagen wir an statt a. Deshalb" },
  { "tr": "Ama kelime sesli harfle başlıyorsa", "kind": "say.tr", "de": "Aber wenn das Wort mit einem Vokal beginnt" },
  { "tr": "Arkasına aradığın yeri koyuyorsun.", "kind": "say.tr", "de": "Dahinter setzt du den Ort, den du suchst." },
  { "tr": "Ayakkabılarını çıkarman gerekiyor.", "kind": "say.tr", "de": "Du musst deine Schuhe ausziehen." },
@@ -57,7 +57,7 @@
  { "tr": "Kısa bir özet. Sorunu bildirirken:", "kind": "say.tr", "de": "Eine kurze Zusammenfassung. Beim Melden des Problems:" },
  { "tr": "koyuyorsun, fiil yine -ing alıyor.", "kind": "say.tr", "de": "setzt du davor, das Verb bekommt wieder -ing." },
  { "tr": "Mektup demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "Heißt Brief. Bitte sag du auch:" },
- { "tr": "O bir kız evlada sahip demek için:", "kind": "say.tr", "de": "Um zu sagen, sie hat eine Tochter:" },
+ { "tr": "Onun bir kızı var demek için:", "kind": "say.tr", "de": "Um zu sagen, sie hat eine Tochter:" },
  { "tr": "Olumsuz cevap genelde şöyle gelir:", "kind": "say.tr", "de": "Die Absage kommt meistens so:" },
  { "tr": "olur, yani daha ucuz. Aynı mantık:", "kind": "say.tr", "de": ", also billiger. Dieselbe Logik:" },
  { "tr": "olur. Ardından sebebini söylersin:", "kind": "say.tr", "de": ". Danach sagst du den Grund:" },
@@ -88,7 +88,7 @@
  { "tr": "What ne demek, Where nerede demek,", "kind": "say.tr", "de": "What heißt was, Where heißt wo," },
  { "tr": "Yani \"bir şey söyleyebilir miyim?\"", "kind": "say.tr", "de": "Also „kann ich etwas sagen?“" },
  { "tr": "Yani çalışmıyor. Lütfen tekrar et.", "kind": "say.tr", "de": "Also es funktioniert nicht. Bitte wiederhole." },
- { "tr": "Yani doğum günü. Lütfen sen de de:", "kind": "say.tr", "de": "Also Geburtstag. Bitte sag du auch:" },
+ { "tr": "Yani doğum günü. Lütfen sen de söyle:", "kind": "say.tr", "de": "Also Geburtstag. Bitte sag du auch:" },
  { "tr": "Yani isimden önce, sıfattan sonra.", "kind": "say.tr", "de": "Also vor dem Substantiv, nach dem Adjektiv." },
  { "tr": "Yani Tom uzun boylu ve kısa saçlı.", "kind": "say.tr", "de": "Also Tom ist groß und hat kurze Haare." },
  { "tr": "Yani, bir yıldır burada çalışıyor.", "kind": "say.tr", "de": "Also, sie arbeitet seit einem Jahr hier." },
@@ -143,5 +143,6 @@
  { "tr": "İzlemek demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "Heißt schauen. Bitte sag du auch:" },
  { "tr": "Kaç gece kalacaksın? Gece kelimesi:", "kind": "say.tr", "de": "Wie viele Nächte bleibst du? Das Wort Nacht:" },
  { "tr": "kullandık. Tek bir domates olsaydı:", "kind": "say.tr", "de": "haben wir genommen. Wäre es eine einzige Tomate:" },
- { "tr": "Kural bu kadar basit: a coffee, ama", "kind": "say.tr", "de": "So einfach ist die Regel: a coffee, aber" }
+ { "tr": "Kural bu kadar basit: a coffee, ama", "kind": "say.tr", "de": "So einfach ist die Regel: a coffee, aber" },
+ { "tr": "rahatsız", "kind": "vocab.tr", "de": "krank" }
 ]

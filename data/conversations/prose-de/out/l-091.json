@@ -107,7 +107,7 @@
  {
   "tr": "Hastalandın ve iş yerine raporunu bildiriyorsun. Ne gönderdiğini, ne zamana kadar gönderilmesi gerektiğini ve başka ne istendiğini yazılı dille anlat.",
   "kind": "scene",
-  "de": "Du bist krank geworden und meldest das am Arbeitsplatz. Erklär in schriftlicher Sprache, was du geschickt hast, bis wann es geschickt werden muss und was sonst noch verlangt wird."
+  "de": "Du bist krank geworden und meldest das am Arbeitsplatz. Erklär schriftlich, was du geschickt hast, bis wann es geschickt werden muss und was sonst noch verlangt wird."
  },
  {
   "tr": "Yarın küçük bir işlem için hastaneye yatıyorsun ve hemşire programı anlatıyor. Ne yapılacağını sor, ne kadar kalacağını söyle ve ziyaret saatini ayarla.",
@@ -190,11 +190,6 @@
   "de": "sonst"
  },
  {
-  "tr": "ayrıca",
-  "kind": "vocab.tr",
-  "de": "außerdem"
- },
- {
   "tr": "basınç",
   "kind": "vocab.tr",
   "de": "Druck"
@@ -228,11 +223,6 @@
   "tr": "iyileşme",
   "kind": "vocab.tr",
   "de": "Genesung"
- },
- {
-  "tr": "rahatsız",
-  "kind": "vocab.tr",
-  "de": "erkrankt"
  },
  {
   "tr": "başka yol",
@@ -320,7 +310,7 @@
   "de": "nennt eine feststehende Information über die Zukunft"
  },
  {
-  "tr": "yapılmazsa olacağı söyler",
+  "tr": "yapılmazsa ne olacağını söyler",
   "kind": "pattern.tr",
   "de": "sagt, was passiert, wenn es nicht gemacht wird"
  },
@@ -370,7 +360,7 @@
   "de": "Richtig. Nach dem Verb des Aufhörens bleibt das zweite Verb in der"
  },
  {
-  "tr": "Doğru. Bu bağlaç yapılmazsa olacağı söylüyor ve iki yarı da tam bir cümle.",
+  "tr": "Doğru. Bu bağlaç yapılmazsa ne olacağını söylüyor ve iki yarı da tam bir cümle.",
   "kind": "why.tr",
   "de": "Richtig. Dieser Konnektor sagt, was passiert, wenn es nicht gemacht wird, und beide Hälften sind vollständige Sätze."
  },
@@ -530,9 +520,9 @@
   "de": "und das Organ, das atmet, heißt"
  },
  {
-  "tr": "Akciğer temiz duyuldu.",
+  "tr": "Akciğer sesleri temizdi.",
   "kind": "say.tr",
-  "de": "Die Lunge klang frei."
+  "de": "Die Lungengeräusche waren unauffällig."
  },
  {
   "tr": "Birini görmeye gitmeye",
@@ -785,7 +775,7 @@
   "de": "Ich rauche weniger als letztes Jahr."
  },
  {
-  "tr": "Rapordan ayrıca bir tarih de istiyorlar.",
+  "tr": "Raporun yanı sıra bir tarih de istiyorlar.",
   "kind": "say.tr",
   "de": "Außer der Bescheinigung wollen sie auch ein Datum."
  },
@@ -892,7 +882,7 @@
  {
   "tr": "Şimdi sıra sende: Bana bakan uzman hekim nazikti.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Der Facharzt, der mich gesehen hat, war freundlich."
+  "de": "Jetzt bist du dran: Der Facharzt, der mich behandelt hat, war freundlich."
  },
  {
   "tr": "Bir tane daha: Ablam yarın akşam ziyarete geliyor.",
@@ -922,7 +912,7 @@
  {
   "tr": "Şimdi sıra sende: Tedaviyi değiştirmeye karar verdim.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Ich habe entschieden, die Behandlung zu ändern."
+  "de": "Jetzt bist du dran: Ich habe mich entschieden, die Behandlung zu ändern."
  },
  {
   "tr": "Senin yerinde olsam kalbi bir daha kontrol ettirirdim.",
@@ -930,7 +920,7 @@
   "de": "An deiner Stelle würde ich das Herz noch einmal prüfen lassen."
  },
  {
-  "tr": "Şimdi sen kur: Formdan ayrıca bir tarih de istiyorlar.",
+  "tr": "Şimdi sen kur: Formun yanı sıra bir tarih de istiyorlar.",
   "kind": "say.tr",
   "de": "Jetzt du: Außer dem Formular wollen sie auch ein Datum."
  },
@@ -990,7 +980,7 @@
   "de": "Das heißt einen Kranken zu einer anderen Ärztin schicken. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
-  "tr": "Kalbin attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:",
+  "tr": "Kalp attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
   "de": "Das heißt der Schlag, den man bei jedem Herzschlag in der Ader spürt. Das ist auch unsere erste Wendung. Wiederhole:"
  },

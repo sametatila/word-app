@@ -221,7 +221,7 @@ export const deB2B01: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün tutanak yazacağız ve orada tuhaf bir fiil biçimi var: söyleneni aktarırken fiil değişir. Buna dolaylı aktarım kipi diyoruz. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Sebebi şu: tutanağı yazan kişi söylenene katılmıyor da, karşı da çıkmıyor. Sadece aktarıyor. Fiilin değişmesi bu mesafeyi kuruyor. Önce kelimeler.")] },
+      { say: [tr("Sebebi şu: tutanağı yazan kişi söylenene ne katılıyor ne de karşı çıkıyor. Sadece aktarıyor. Fiilin değişmesi bu mesafeyi kuruyor. Önce kelimeler.")] },
       word("İlk", { de: "das Protokoll", tr: "tutanak" }),
       word("İkinci", { de: "die Feststellung", tr: "tespit" }, "Tutanakta 'şu tespit edildi' diye geçer."),
       word("Üçüncü", { de: "die Anmerkung", tr: "ek açıklama" }),
@@ -506,7 +506,7 @@ export const deB2B01: Conversation[] = [
       { say: [tr("Şimdi: 'Evden çalışırken ulaşılabilir olmanız gerekiyor.'")], expect: produce("Beim Arbeiten von zu Hause müssen Sie erreichbar sein", [tr("İsimleşmiş mastar tümleç olarak başta, fiil ikinci sırada:"), de("Beim Arbeiten von zu Hause müssen Sie erreichbar sein."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Yönerge yıl sonuna kadar geçerli.'")], expect: produce("Die Richtlinie gilt bis zum Jahresende", [tr("Kısa ve resmî bir cümle:"), de("Die Richtlinie gilt bis zum Jahresende."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Beim Arbeiten von zu Hause man muss erreichbar sein."), tr("cümlesi doğru mu?")], expect: truefalse("Beim Arbeiten von zu Hause man muss erreichbar sein.", false, [tr("Cümle bir tümleçle başlayınca çekimli fiil ikinci sıraya gelir:"), de("Beim Arbeiten von zu Hause muss man erreichbar sein.")]) },
-      { say: [tr("Son: 'Bunu şefinle görüştükten sonra karara bağlarız.'")], expect: produce("Nach der Absprache mit deinem Chef entscheiden wir das", [tr("Koşul isim öbeğinde, fiil ikinci sırada:"), de("Nach der Absprache mit deinem Chef entscheiden wir das."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Bunu şefinle görüştükten sonra karara bağlarız.'")], expect: produce("Nach Absprache mit deinem Chef entscheiden wir das", [tr("Koşul isim öbeğinde, fiil ikinci sırada:"), de("Nach Absprache mit deinem Chef entscheiden wir das."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette insan kaynaklarıyla uzaktan çalışma düzenini konuşacaksın: kaç gün, hangi koşulla, hangi kural.")] },
     ],
     chat: {
@@ -559,7 +559,7 @@ export const deB2B01: Conversation[] = [
       { say: [tr("Sıra sende: 'Deneyimim sayesinde bu konuyu üstlenebilirim.'")], expect: produce("Aufgrund meiner Erfahrung kann ich dieses Thema übernehmen", [tr("Tümleç başta, modal fiil ikinci sırada, mastar sonda:"), de("Aufgrund meiner Erfahrung kann ich dieses Thema übernehmen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Molada birkaç kişiyle tanıştım.'")], expect: produce("Während der Pause habe ich einige Leute kennengelernt", [tr("Süre bildiren edat tamlayan hâli ister; ortaç sonda:"), de("Während der Pause habe ich einige Leute kennengelernt."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu, bağlantı kurmak için iyi bir fırsat.'")], expect: produce("Das ist eine gute Gelegenheit, sich zu vernetzen", [tr("İsim artı mastar öbeği; dönüşlü fiil zu ile:"), de("Das ist eine gute Gelegenheit, sich zu vernetzen."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Wegen dem Regen ist der Empfang ausgefallen."), tr("cümlesi doğru mu?")], expect: truefalse("Wegen dem Regen ist der Empfang ausgefallen.", false, [tr("Bu edat resmî dilde tamlayan hâli ister:"), de("Wegen des Regens ist der Empfang ausgefallen.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Wegen dem Regen ist der Empfang ausgefallen."), tr("cümlesi doğru mu?")], expect: truefalse("Wegen dem Regen ist der Empfang ausgefallen.", false, [tr("Günlük konuşmada duyulsa da resmî dilde bu edat tamlayan hâli ister:"), de("Wegen des Regens ist der Empfang ausgefallen.")]) },
       { say: [tr("Son: 'Yoğun programa rağmen konuşmacıyla konuştum.'")], expect: produce("Trotz des vollen Programms habe ich mit dem Redner gesprochen", [tr("Tümleç başta, yardımcı fiil ikinci, ortaç sonda:"), de("Trotz des vollen Programms habe ich mit dem Redner gesprochen."), tr("Tekrar dene.")]) },
       { say: [tr("Modülü bitirdin. Sohbette bir konferansta tanışacaksın: kendini tanıt, ne üzerine çalıştığını anlat ve bağlantı kur.")] },
     ],

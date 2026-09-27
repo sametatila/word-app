@@ -415,9 +415,9 @@
   "de": "nennt im Passiv, was bis dahin fertig ist"
  },
  {
-  "tr": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor.",
+  "tr": "Doğru. which is why virgülden sonra geliyor ve cümlenin tamamına bağlanıyor.",
   "kind": "why.tr",
-  "de": "Richtig. which is why steht am Satzende und bezieht sich auf den ganzen Satz."
+  "de": "Richtig. which is why steht nach dem Komma und bezieht sich auf den ganzen Satz."
  },
  {
   "tr": "Doğru. Her iki yarının öznesi de aynı kişi; özne değişseydi bu öbek kurulamazdı.",
@@ -1105,7 +1105,7 @@
   "de": "Hallo! Heute lernen wir die Protokollsprache: was zugewiesen wurde, wer widersprochen hat, wie es geschlossen wurde."
  },
  {
-  "tr": "yazılır. Tutanakta bu tercih üslup değil kural; kaydın kim değil ne olduğunu göstermesi gerekir.",
+  "tr": "yazılır. Tutanakta bu tercih üslup değil kural; kaydın kimin yaptığını değil neyin yapıldığını göstermesi gerekir.",
   "kind": "say.tr",
   "de": "geschrieben. Im Protokoll ist das keine Stilfrage, sondern Regel; die Aufzeichnung soll nicht das Wer, sondern das Was zeigen."
  },
@@ -1117,17 +1117,17 @@
  {
   "tr": "Plan dilinin tamamı bu iki biçimden çıkıyor ve ikisini karıştırmak takvimi yanlış okutuyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die ganze Sprache der Planung kommt aus diesen zwei Formen, und sie zu verwechseln lässt den Zeitplan falsch lesen. Bist du bereit?"
+  "de": "Die ganze Sprache der Planung kommt aus diesen zwei Formen, und wer sie verwechselt, liest den Zeitplan falsch. Bist du bereit?"
  },
  {
   "tr": "Devir notu kısa olmak zorunda ve bunu sağlayan yapı ortaç öbeği: iki cümleyi tek cümleye indiriyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Eine Übergabenotiz muss kurz sein, und das schafft die Partizipialkonstruktion: sie macht aus zwei Sätzen einen. Bist du bereit?"
+  "de": "Eine Übergabenotiz muss kurz sein, und das schafft die Partizipialkonstruktion: Sie macht aus zwei Sätzen einen. Bist du bereit?"
  },
  {
   "tr": "Tutanak dilinin sırrı fiili isme çevirmek: cümle kısalıyor, kişi geri çekiliyor, olay kayda geçiyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das Geheimnis der Protokollsprache ist, das Verb zum Nomen zu machen: der Satz wird kürzer, die Person tritt zurück, das Geschehen geht zu Protokoll. Bist du bereit?"
+  "de": "Das Geheimnis der Protokollsprache ist, das Verb zum Nomen zu machen: Der Satz wird kürzer, die Person tritt zurück, das Geschehen geht zu Protokoll. Bist du bereit?"
  },
  {
   "tr": "Merhaba! Bugün kaynağı belirsiz bilgiyi aktarmayı öğreneceğiz: kimin söylediğini söylemeden ne söylendiğini vermek.",
@@ -1147,6 +1147,6 @@
  {
   "tr": "Bu kalıp iş dilinde bir kaçamak değil bir dürüstlük aracı: elinde kanıt yokken iddiayı kendine mal etmeden aktarıyorsun. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Diese Wendung ist in der Geschäftssprache keine Ausflucht, sondern ein Mittel der Ehrlichkeit: ohne Beleg gibst du die Behauptung weiter, ohne sie dir zuzuschreiben. Bist du bereit?"
+  "de": "Diese Wendung ist in der Geschäftssprache keine Ausflucht, sondern ein Mittel der Ehrlichkeit: Ohne Beleg gibst du die Behauptung weiter, ohne sie dir zuzuschreiben. Bist du bereit?"
  }
 ]

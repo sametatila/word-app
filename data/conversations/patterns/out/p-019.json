@@ -13,7 +13,7 @@
  { "conversation": "de-b2-verhandeln", "de": "Wir könnten uns … vorstellen.", "en": "puts the offer forward as a suggestion" },
  { "conversation": "de-b2-verhandeln", "de": "Kämen Sie uns bei … entgegen?", "en": "asks the other side to meet you halfway" },
  { "conversation": "de-b2-beschwerde-formell", "de": "Bezug nehmend auf …", "en": "refers back to a letter" },
- { "conversation": "de-b2-beschwerde-formell", "de": "Ich sehe mich gezwungen, … zu …", "en": "states an obligation at a distance" },
+ { "conversation": "de-b2-beschwerde-formell", "de": "Ich sehe mich gezwungen, … zu …", "en": "states an obligation in a formal, distanced way" },
  { "conversation": "de-b2-hotline", "de": "Das Problem lässt sich …", "en": "says that the problem can be solved" },
  { "conversation": "de-b2-hotline", "de": "Es ist zu klären, ob/wo …", "en": "says what needs clarifying" },
  { "conversation": "de-b2-schadenersatz", "de": "wegen / infolge + Genitiv", "en": "states a formal reason" },

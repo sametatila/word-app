@@ -2,92 +2,6 @@
  "packet": "e-013",
  "words": [
   {
-   "tr": "Bir tarım panelinde iki konuşmacı toprak kullanımını tartışıyor.",
-   "kind": "listening.situation",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "C1.7 Land, food and the soil · dinleme"
-   ]
-  },
-  {
-   "tr": "Bu hiç iyi değil. Bana borunun fotoğrafını gönderebilir misiniz?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "That's not good. Could you send me a photo of the pipe?"
-   ],
-   "ctx": [
-    "A2.4 Home and neighbourhood · Manager"
-   ]
-  },
-  {
-   "tr": "Cömert bir okuma sayılmaz, değil mi? Rakamlara doktrin demezdim.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Not exactly a generous reading, is it? I wouldn't call the figures a doctrine."
-   ],
-   "ctx": [
-    "C1.2 Dissent without rupture · Researcher"
-   ]
-  },
-  {
-   "tr": "Daha cesur olsam yine başvururdum. Ama aynı cevaptan korkuyorum.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "If I were braver, I would apply again. But I am afraid of the same answer."
-   ],
-   "ctx": [
-    "B1.10 Feelings and dreams · Bora"
-   ]
-  },
-  {
-   "tr": "Eski olamaz: rakamlar martta toplandı. Yazar bana böyle söyledi.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "It can't be the old one: the figures were collected in March. The author told me so."
-   ],
-   "ctx": [
-    "B1.7 Opinion and debate · Researcher"
-   ]
-  },
-  {
-   "tr": "Etiket peki? Rapor barındırmanın türüne uygun olduğunu söylüyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "And the label? The report says the housing is species-appropriate."
-   ],
-   "ctx": [
-    "C1.7 Land, food and the soil · Presenter"
-   ]
-  },
-  {
-   "tr": "Gecikmeye neyin yol açtığını kişiyi suçlamadan söyleyebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can say what caused a delay without blaming a person."
-   ],
-   "ctx": [
-    "B2.10 Formal correspondence"
-   ]
-  },
-  {
-   "tr": "Güvensizliği kastetmekten çok empati kurmayı başaramamış olmalı.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "He must have failed to empathise rather than intended the distrust."
-   ],
-   "ctx": [
-    "B2.9 Relationships and psychology · konuşma"
-   ]
-  },
-  {
    "tr": "Hatayı görüyorum. Etiketler gece ekibi tarafından karıştırılmış.",
    "kind": "turn",
    "n": 1,
@@ -117,6 +31,26 @@
    ]
   },
   {
+   "tr": "Kullanılan dil düzeyinde gerilemeyi durgunluktan ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a downturn from a stagnation in the register used."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Olayı failsiz bir dille bildir („the interruption is regretted“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.1 Register and tone · yazma"
+   ]
+  },
+  {
    "tr": "Ona bir mesaj gönderebilir misiniz? Ders hakkında bir sorum var.",
    "kind": "turn",
    "n": 1,
@@ -125,17 +59,6 @@
    ],
    "ctx": [
     "A1.10 Keeping in touch · Mrs. Aydin"
-   ]
-  },
-  {
-   "tr": "Ölçümden değil, bir tahminden alınmış görünüyor. Bu bir çelişki.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "It seems to have been taken from a projection, not from a survey. That is a contradiction."
-   ],
-   "ctx": [
-    "B2.4 Media and reported speech · Researcher"
    ]
   },
   {
@@ -187,33 +110,16 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „Not exactly a generous reading, is it?“ do in this exchange?"
+    "What does “Not exactly a generous reading, is it?” do in this exchange?"
    ],
    "ctx": [
     "C1.2 Dissent without rupture · dinleme sorusu"
    ],
    "options": [
-    "It criticises through irony without an open attack",
+    "It criticizes through irony without an open attack",
     "It accepts the reading",
     "It asks a factual question",
     "It ends the debate"
-   ]
-  },
-  {
-   "tr": "„The square was revitalized; the neighbours, less so“ ne yapıyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What does „The square was revitalized; the neighbours, less so“ do?"
-   ],
-   "ctx": [
-    "C1.8 Climate and the city · dinleme sorusu"
-   ],
-   "options": [
-    "It names displacement through understatement",
-    "It praises the renewal",
-    "It reports a measurement",
-    "It asks for a new plan"
    ]
   },
   {
@@ -225,17 +131,6 @@
    ],
    "ctx": [
     "B1.8 The health system · konuşma"
-   ]
-  },
-  {
-   "tr": "Bir katalog künyesini okuyup neyi savunduğunu adlandırabiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can read a catalogue entry and name what it claims."
-   ],
-   "ctx": [
-    "B2.7 Culture and the arts"
    ]
   },
   {
@@ -263,7 +158,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "He must have failed to empathise rather than intended the distrust."
+    "He must have failed to empathize rather than intended the distrust."
    ],
    "ctx": [
     "B2.9 Relationships and psychology · Mediator"
@@ -274,7 +169,7 @@
    "kind": "speaking",
    "n": 1,
    "de": [
-    "We request that the office lodge the appeal before the cut-off period expires."
+    "We request that the office register the appeal before the filing deadline passes."
    ],
    "ctx": [
     "C1.3 Legal and contract language · konuşma"
@@ -331,6 +226,23 @@
    ],
    "ctx": [
     "C1.7 Land, food and the soil · Researcher"
+   ]
+  },
+  {
+   "tr": "„which, however, admits less than it appears to“ ne demek istiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the point of “which, however, admits less than it appears to”?"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · okuma sorusu"
+   ],
+   "options": [
+    "The correction looks bigger than it is",
+    "The correction is too long",
+    "The correction repeats the claim",
+    "The correction was published late"
    ]
   },
   {
@@ -403,6 +315,17 @@
    ]
   },
   {
+   "tr": "Dil düzeyi gerektirdiğinde bir sözcüğü söylemeden bırakabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can leave a word out where the register asks for it."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
    "tr": "Gecikmeye yol açan şey bir takvim çakışmasıydı, eksik belge değil.",
    "kind": "speaking",
    "n": 1,
@@ -419,7 +342,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.3 Process and passive · yazma"
+    "B2.3 The passive in all its forms · yazma"
    ]
   },
   {
@@ -442,15 +365,6 @@
    ],
    "ctx": [
     "B1.6 Learning and progress · Student"
-   ]
-  },
-  {
-   "tr": "Olayı failsiz bir kayıtla bildir („the interruption is regretted“)",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "C1.1 Register and tone · yazma"
    ]
   },
   {
@@ -487,10 +401,10 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „It is reported that the last outage was caused …“ show?"
+    "What does “It is reported that the last outage was caused …” show?"
    ],
    "ctx": [
-    "B2.3 Process and passive · okuma sorusu"
+    "B2.3 The passive in all its forms · okuma sorusu"
    ],
    "options": [
     "An account whose source is not named",
@@ -504,10 +418,10 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What does „Nowhere is it written that a second check is optional“ do?"
+    "What does “Nowhere is it written that a second check is optional” do?"
    ],
    "ctx": [
-    "B2.3 Process and passive · dinleme sorusu"
+    "B2.3 The passive in all its forms · dinleme sorusu"
    ],
    "options": [
     "It appeals to a written rule and rejects the excuse",
@@ -535,7 +449,7 @@
     "I can state a claim and say what exactly I contest."
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
    ]
   },
   {
@@ -585,7 +499,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Since March. It was worse after the holiday, so I came on Monday."
+    "Since March. It got worse after my vacation, so I came on Monday."
    ],
    "ctx": [
     "B1.8 The health system · Patient"
@@ -631,6 +545,17 @@
    ],
    "ctx": [
     "B1.2 Renting and moving · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir anketten değil, bir tahminden alınmış görünüyor. Bu bir çelişki.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "It seems to have been taken from a projection, not from a survey. That is a contradiction."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · Researcher"
    ]
   },
   {
@@ -680,7 +605,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "Why does the officer insist on the difference between „stated“ and „alleged“?"
+    "Why does the officer insist on the difference between “stated” and “alleged”?"
    ],
    "ctx": [
     "C1.3 Legal and contract language · dinleme sorusu"
@@ -693,12 +618,23 @@
    ]
   },
   {
+   "tr": "Onu nerede okudunuz? Dergideki yazı eski araştırmayla ilgili olmalı.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Where did you read that? The magazine article must be about the old research."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · Author"
+   ]
+  },
+  {
    "tr": "Önceki yazışmaya atıfla başla („with reference to your letter of …“)",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
    "ctx": [
-    "B2.2 Claims and complaints · yazma"
+    "B2.2 Negotiating and complaining · yazma"
    ]
   },
   {
@@ -717,21 +653,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "We should have acknowledged your letter earlier, and I apologise for that."
+    "We should have acknowledged your letter earlier, and I apologize for that."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Representative"
-   ]
-  },
-  {
-   "tr": "Bakayım. Başvurunuz 14 Nisanda işleme alındı ama adres belgesi eksik.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Let me check. Your application was processed on 14 April, but the proof of address is missing."
-   ],
-   "ctx": [
-    "B1.5 Offices and applications · Officer"
+    "B2.2 Negotiating and complaining · Representative"
    ]
   },
   {
@@ -750,6 +675,15 @@
    "de": [],
    "ctx": [
     "C1.1 Register and tone · dinleme"
+   ]
+  },
+  {
+   "tr": "Bugünkü durumu edilgen yapıyla anlat („the trash cans are emptied …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.9 The city and the environment · yazma"
    ]
   },
   {
@@ -779,7 +713,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Luckily, it wasn't serious. I stayed there for one hour, and a neighbour helped me at home."
+    "Luckily, it wasn't serious. I stayed there for one hour, and a neighbor helped me at home."
    ],
    "ctx": [
     "A2.1 What happened? · Onur"
@@ -794,6 +728,17 @@
    ],
    "ctx": [
     "B2.1 Professional communication · Mr. Adler"
+   ]
+  },
+  {
+   "tr": "Bakayım. Başvurunuz 14 Nisan'da işleme alındı ama adres belgesi eksik.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Let me check. Your application was processed on April 14, but the proof of address is missing."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · Officer"
    ]
   },
   {
@@ -835,6 +780,17 @@
    ]
   },
   {
+   "tr": "Görünüşe göre iddia makul ama genel olarak bakıldığında rakam kuşkulu.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "Apparently the claim is plausible, but on balance the figure is questionable."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · konuşma"
+   ]
+  },
+  {
    "tr": "Haklı bir nokta. Öte yandan kâğıdın pahalı olduğunu kimse inkâr etmez.",
    "kind": "turn",
    "n": 1,
@@ -846,51 +802,18 @@
    ]
   },
   {
-   "tr": "Her şey bir arada sonuç geçici sayılır ve ikinci bir deneme gerekiyor.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "On balance the result is arguably provisional and a second trial is required."
-   ],
-   "ctx": [
-    "B2.5 Science and method · konuşma"
-   ]
-  },
-  {
-   "tr": "Kırdan göçün ardında başarısız bir devir duruyor, arazi kıtlığı değil.",
+   "tr": "Cumaya kadar pilot bitmiş olacak, rapor da atölye tarafından yazılacak.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Behind the rural exodus stands a failed farm succession, not a shortage of land."
+    "By Friday the pilot will have been finished, and the report will be written by the workshop."
    ],
    "ctx": [
-    "C1.7 Land, food and the soil · Researcher"
+    "B2.3 The passive in all its forms · Engineer"
    ]
   },
   {
-   "tr": "Cumaya kadar pilot bitmiş olacak, rapor da atölye tarafından yazılıyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "By Friday the pilot will have been finished, and the report is written by the workshop."
-   ],
-   "ctx": [
-    "B2.3 Process and passive · Engineer"
-   ]
-  },
-  {
-   "tr": "En güçlü yanım müşterilerle çalışmak. Yeni beceriler de ilgimi çekiyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "My greatest strength is working with customers. I am also interested in new skills."
-   ],
-   "ctx": [
-    "A2.5 Working life · Selin"
-   ]
-  },
-  {
-   "tr": "Fiyatı sürükleyen tek şey enflasyon değil; ilk değişen faiz oranı oldu.",
+   "tr": "Fiyatı belirleyen tek şey enflasyon değil; ilk değişen faiz oranı oldu.",
    "kind": "turn",
    "n": 1,
    "de": [
@@ -901,6 +824,17 @@
    ]
   },
   {
+   "tr": "Görünüşe göre kesinti kabaca iki saat sürmüş; dolayısıyla zarar ölçülü.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Apparently the whole outage lasted roughly two hours; hence the loss is modest."
+   ],
+   "ctx": [
+    "B2.3 The passive in all its forms · Manager"
+   ]
+  },
+  {
    "tr": "İkinci gecikmeyi hiçbir koşulda kabul etmeyiz; yine de tarihte esneğiz.",
    "kind": "speaking",
    "n": 1,
@@ -908,18 +842,7 @@
     "Under no circumstances will we accept a second delay; nevertheless, we are flexible on the date."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · konuşma"
-   ]
-  },
-  {
-   "tr": "İkna edici bir taslak sayılmaz, hem üzerinde anlaştığımız ton da değil.",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Not exactly a convincing draft, and hardly the tone we agreed on."
-   ],
-   "ctx": [
-    "C1.1 Register and tone · konuşma"
+    "B2.2 Negotiating and complaining · konuşma"
    ]
   },
   {
@@ -927,7 +850,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "Why does the writer mention „the one sentence the author never wrote“?"
+    "Why does the writer mention “the one sentence the author never wrote”?"
    ],
    "ctx": [
     "C1.4 Literature and interpretation · okuma sorusu"
@@ -946,17 +869,6 @@
    "de": [],
    "ctx": [
     "C1.1 Register and tone · yazma"
-   ]
-  },
-  {
-   "tr": "Biz ona yabancılık desek de bu ötekilik — ve bu fark okumanın tamamıdır.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Much as we call it strangeness, it is otherness — and the difference is the whole reading."
-   ],
-   "ctx": [
-    "C1.4 Literature and interpretation · Critic"
    ]
   },
   {
@@ -982,17 +894,6 @@
    ]
   },
   {
-   "tr": "Örnekte enfeksiyon yok. Ancak nisanda çekilen röntgen eklemi gösteriyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "The sample shows no infection. However, the x-ray that was taken in April shows the joint."
-   ],
-   "ctx": [
-    "B1.8 The health system · Doctor"
-   ]
-  },
-  {
    "tr": "Verimlilik kazancı ile işin yoğunlaşması arasındaki farkı duyabiliyorum.",
    "kind": "cando",
    "n": 1,
@@ -1001,28 +902,6 @@
    ],
    "ctx": [
     "C1.6 Work and the bargaining table"
-   ]
-  },
-  {
-   "tr": "Ailenin bir fotoğrafı nasıl olur? Kuzenim kendisininkiyle çok gururlandı.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "How about a photograph of the family? My cousin was very proud of hers."
-   ],
-   "ctx": [
-    "A2.8 Celebrations and people · Jonas"
-   ]
-  },
-  {
-   "tr": "Ben daha ölçülü söylerdim: eğlenceli, görülmeye değer ama zamansız değil.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "I would put it with more moderation: entertaining, worth seeing, but not timeless."
-   ],
-   "ctx": [
-    "B2.7 Culture and the arts · Critic"
    ]
   },
   {
@@ -1043,6 +922,17 @@
    ],
    "ctx": [
     "B1.9 The city and the environment · Planner"
+   ]
+  },
+  {
+   "tr": "Bir yerde ne zamandan beri oturduğumu ya da çalıştığımı söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how long I have lived or worked somewhere."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
    ]
   },
   {
@@ -1092,7 +982,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Then we request that the office lodge the appeal before the limitation period ends."
+    "Then we request that the office register the appeal before the limitation period ends."
    ],
    "ctx": [
     "C1.3 Legal and contract language · Visitor"
@@ -1136,7 +1026,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What is the point of „Said emphatically, an empty phrase sounds like a claim“?"
+    "What is the point of “Said emphatically, an empty phrase sounds like a claim”?"
    ],
    "ctx": [
     "C1.4 Literature and interpretation · dinleme sorusu"
@@ -1153,7 +1043,7 @@
    "kind": "speaking",
    "n": 1,
    "de": [
-    "What the council calls land consolidation, the neighbour calls land speculation."
+    "What the council calls land consolidation, the neighbor calls land speculation."
    ],
    "ctx": [
     "C1.7 Land, food and the soil · konuşma"
@@ -1165,29 +1055,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "B1.3 Reason and result · yazma"
-   ]
-  },
-  {
-   "tr": "Birimi ayırsak da iş kurum içinde kalıyor. Bunu cuma yönetime taşıyacağım.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Much as we spin off the unit, the work stays in-house. I will take that to the board on Friday."
-   ],
-   "ctx": [
-    "C1.6 Work and the bargaining table · Manager"
-   ]
-  },
-  {
-   "tr": "İtiraz hakkı bildirimi 3 Nisanda tebliğ edildi. Kesin süre bir ay işliyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "The notice of appeal rights was served on 3 April. The cut-off period runs for one month."
-   ],
-   "ctx": [
-    "C1.3 Legal and contract language · Officer"
+    "B1.3 Linking ideas · yazma"
    ]
   },
   {
@@ -1198,7 +1066,7 @@
     "The heating hasn't worked since Monday. Could you send someone today?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · konuşma"
+    "A2.4 Home and neighborhood · konuşma"
    ]
   },
   {
@@ -1220,7 +1088,7 @@
     "You must have misread the clause; the threshold applies only above ten thousand."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Supplier"
+    "B2.2 Negotiating and complaining · Supplier"
    ]
   },
   {
@@ -1235,6 +1103,28 @@
    ]
   },
   {
+   "tr": "O hâlde fiyat düzeltmesi geçerli kalırsa ek sözleşme bu hafta imzalanacak.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Then the supplementary agreement will be signed this week, provided that the price adjustment stands."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · Agent"
+   ]
+  },
+  {
+   "tr": "O hâlde iki koşulu yazıya geçireceğim, böylece sendika kuralına da uyarız.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Then I will put the two conditions in writing, and we can comply with the union rule."
+   ],
+   "ctx": [
+    "B2.8 Money and career strategy · Colleague"
+   ]
+  },
+  {
    "tr": "O hâlde teslim etmeden önce son paragrafı iki kez kontrol etmeni öneririm.",
    "kind": "turn",
    "n": 1,
@@ -1246,18 +1136,7 @@
    ]
   },
   {
-   "tr": "Odayı betimlemiş olsaydı eser ikna edici olurdu, hele başlangıç güçlüyken.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "If she had portrayed the room, the work would have been convincing, especially since the start was strong."
-   ],
-   "ctx": [
-    "B2.7 Culture and the arts · Critic"
-   ]
-  },
-  {
-   "tr": "Savunuyor ama temellendirmiyor. Doğrusu az bir manevra alanı var, olsa da.",
+   "tr": "Savunuyor ama temellendirmiyor. Doğrusu manevra alanı az, ama yine de var.",
    "kind": "turn",
    "n": 1,
    "de": [
@@ -1301,11 +1180,11 @@
    ]
   },
   {
-   "tr": "Cumaya kadar düzeltme basılmış olacak, haberin önemi de gözden geçiriliyor.",
+   "tr": "Cumaya kadar düzeltme basılmış olacak, haberin önemi de gözden geçirilecek.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "By Friday the correction will have been printed, and the relevance of the story is reviewed."
+    "By Friday the correction will have been printed, and the relevance of the story will be reviewed."
    ],
    "ctx": [
     "B2.4 Media and reported speech · Reporter"
@@ -1323,6 +1202,28 @@
    ]
   },
   {
+   "tr": "İkna edici bir taslak sayılmaz, üstelik üzerinde anlaştığımız ton da değil.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "Not exactly a convincing draft, and hardly the tone we agreed on."
+   ],
+   "ctx": [
+    "C1.1 Register and tone · konuşma"
+   ]
+  },
+  {
+   "tr": "İtiraz hakkı bildirimi 3 Nisan'da tebliğ edildi. Kesin süre bir ay işliyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "The notice of right to appeal was served on April 3. The filing deadline is one month."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · Officer"
+   ]
+  },
+  {
    "tr": "Makul bir okuma gibi görünüyor. Görünüşe göre ilk kontrol biraz yüzeyseldi.",
    "kind": "turn",
    "n": 1,
@@ -1330,18 +1231,7 @@
     "It seems to be a sensible reading. Apparently the first check was rather superficial."
    ],
    "ctx": [
-    "B2.5 Science and method · Researcher"
-   ]
-  },
-  {
-   "tr": "O hâlde ek sözleşme bu hafta imzalanıyor, fiyat düzeltmesi geçerli kalırsa.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Then the supplementary agreement is signed this week, provided that the price adjustment stands."
-   ],
-   "ctx": [
-    "B2.10 Formal correspondence · Agent"
+    "B2.5 Science and technology · Researcher"
    ]
   },
   {
@@ -1356,6 +1246,17 @@
    ]
   },
   {
+   "tr": "Ona ne kadar kültürlenme demeyi sevsek de gittikleri kursun adı uyum kursu.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Much as we like to call it acculturation, the course they attend is called an integration course."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · Presenter"
+   ]
+  },
+  {
    "tr": "Sorumluluk sigortası son projeyi kapsasaydı bütün tutarı kurtarmış olurduk.",
    "kind": "turn",
    "n": 1,
@@ -1363,7 +1264,7 @@
     "If the liability insurance had covered the last project, we would have saved the whole sum."
    ],
    "ctx": [
-    "B2.8 Money and career · Colleague"
+    "B2.8 Money and career strategy · Colleague"
    ]
   },
   {
@@ -1415,7 +1316,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "Why does the text say „the necessary measures were initiated“ instead of „we acted“?"
+    "Why does the text say “the necessary measures were initiated” instead of “we acted”?"
    ],
    "ctx": [
     "C1.1 Register and tone · okuma sorusu"
@@ -1468,18 +1369,7 @@
     "A self-image may well outlive self-knowledge; mine did for a whole year."
    ],
    "ctx": [
-    "C1.10 Evidence, judgement and choice · konuşma"
-   ]
-  },
-  {
-   "tr": "Bu dürüst bir eleştiri, kabul ediyorum. Haftamı planlama şeklimi değiştirdim.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "That is honest and I accept it. I have already changed how I plan my week."
-   ],
-   "ctx": [
-    "B1.1 My career so far · Selin"
+    "C1.10 Evidence, judgment and choice · konuşma"
    ]
   },
   {
@@ -1490,7 +1380,7 @@
     "The team must have neglected one step; the software, which was updated in May, failed once."
    ],
    "ctx": [
-    "B2.5 Science and method · Lecturer"
+    "B2.5 Science and technology · Lecturer"
    ]
   },
   {
@@ -1501,18 +1391,18 @@
     "Then the reimbursement of the transport cost is our concession. I will confirm it in writing."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Supplier"
+    "B2.2 Negotiating and complaining · Supplier"
    ]
   },
   {
-   "tr": "Doğrusu öyle. Bilirkişi raporu bize yardım etse de idari işlemi adlandırmıyor.",
+   "tr": "Eski olamaz: rakamlar martta toplandı. Araştırmanın yazarı bana böyle söyledi.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Granted. Much as the expert report helps us, it does not name the administrative act."
+    "It can't be the old one: the figures were collected in March. The survey's author told me so."
    ],
    "ctx": [
-    "C1.3 Legal and contract language · Visitor"
+    "B1.7 Opinion and debate · Researcher"
    ]
   },
   {
@@ -1523,7 +1413,7 @@
     "Yes, and the measurements remain stable. What the study determines is the limit, not the cause."
    ],
    "ctx": [
-    "B2.5 Science and method · Researcher"
+    "B2.5 Science and technology · Researcher"
    ]
   },
   {
@@ -1534,18 +1424,7 @@
     "The delay is said to be minimal. Admittedly, our position was rather rigid last month."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Supplier"
-   ]
-  },
-  {
-   "tr": "Güzel. Görünüşe göre kesinti kabaca iki saat sürmüş; dolayısıyla zarar ölçülü.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Apparently the whole outage lasted roughly two hours; hence the loss is modest."
-   ],
-   "ctx": [
-    "B2.3 Process and passive · Manager"
+    "B2.2 Negotiating and complaining · Supplier"
    ]
   },
   {
@@ -1557,6 +1436,17 @@
    ],
    "ctx": [
     "C1.8 Climate and the city · Planner"
+   ]
+  },
+  {
+   "tr": "Kırdan göçün ardında başarısız bir çiftlik devri duruyor, arazi kıtlığı değil.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Behind the rural exodus stands a failed farm succession, not a shortage of land."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · Researcher"
    ]
   },
   {
@@ -1578,18 +1468,7 @@
     "Then let us talk about flextime. A permanent position matters more to me than a bonus."
    ],
    "ctx": [
-    "B2.8 Money and career · Colleague"
-   ]
-  },
-  {
-   "tr": "Özünde evet. Her şey bir arada, hâlâ değiştirebileceğimiz kısım sözcük seçimi.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "In essence, yes. On balance the choice of words is arguably the part we can still change."
-   ],
-   "ctx": [
-    "B2.9 Relationships and psychology · Colleague"
+    "B2.8 Money and career strategy · Colleague"
    ]
   },
   {
@@ -1642,7 +1521,132 @@
     "Under no circumstances will we accept a second delay. Nevertheless, we are flexible on the date."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · Representative"
+    "B2.2 Negotiating and complaining · Representative"
+   ]
+  },
+  {
+   "tr": "Kısmen katılıyorum. Ancak bugün yayımlanan araştırma başka bir sayı gösteriyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I agree partly. However, the survey that was published today shows a different figure."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · Researcher"
+   ]
+  },
+  {
+   "tr": "Kurtarma paketinin ardında kimsenin fiyatlamadığı bir spekülatif balon duruyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Behind the bailout package stands a speculative bubble that nobody priced in."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · Agent"
+   ]
+  },
+  {
+   "tr": "Öneriyi geri dönülemez diye adlandırdınız. Meslektaşınız tam tersini savunuyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "You called the proposal irreversible. Your colleague postulates the opposite."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · Presenter"
+   ]
+  },
+  {
+   "tr": "„an impulsive colleague is not the same as an unforgiving one“ ne demek istiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the point of “an impulsive colleague is not the same as an unforgiving one”?"
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · okuma sorusu"
+   ],
+   "options": [
+    "It separates a hasty reaction from lasting ill will",
+    "It blames the colleague",
+    "It excuses the exclusion",
+    "It describes two teams"
+   ]
+  },
+  {
+   "tr": "Başka bir şey çıkmazsa aşamanın iki hafta ertelendiğini kayda geçirebilir miyiz?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Can we record that the milestone is moved by two weeks, provided nothing else comes up?"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · Moderator"
+   ]
+  },
+  {
+   "tr": "Ben daha ölçülü söylerdim: eğlenceli, görülmeye değer ama kalıcı bir eser değil.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I would put it more moderately: entertaining, worth seeing, but not timeless."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · Critic"
+   ]
+  },
+  {
+   "tr": "Bir gazete yazısına okur mektubu yaz: görüşünü söyle ve karşı görüşe de yer ver.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.7 Opinion and debate · yazma"
+   ]
+  },
+  {
+   "tr": "Broşürde salım azaltımı, çalışmada karbondan arınma. Plan ikisini de kullanıyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "In the brochure it is emission reduction; in the study it is decarbonization. The plan uses both."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · Chair"
+   ]
+  },
+  {
+   "tr": "En güçlü yanım müşterilerle çalışmak. Yeni beceriler öğrenmek de ilgimi çekiyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "My greatest strength is working with customers. I am also interested in learning new skills."
+   ],
+   "ctx": [
+    "A2.5 Working life · Selin"
+   ]
+  },
+  {
+   "tr": "Gazetenin savunduğu şey hesap verebilirlik; yanlılık başından beri orada olmalı.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "What the paper argues for is accountability; the bias must have been there from the start."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · Reporter"
+   ]
+  },
+  {
+   "tr": "İhtiyat ilkesi koruma sorumluluğunun imar planından önce gelmesini gerektiriyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "The precautionary principle demands that the responsibility to protect be given priority over the zoning plan."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · Planner"
    ]
   }
  ]

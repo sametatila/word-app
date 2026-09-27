@@ -22,7 +22,7 @@
  {
   "tr": "her fazla mesaiyi kişisel tercih sayan, «kimse zorlamıyor ki» diyen biri",
   "kind": "partner",
-  "de": "jemand, der jede Überstunde für eine persönliche Wahl hält und sagt „es zwingt doch niemand“"
+  "de": "jemand, der jede Überstunde für eine persönliche Wahl hält und sagt „es zwingt einen doch niemand“"
  },
  {
   "tr": "esnekliği tamamen bir özgürlük sayan, «kimse kimseyi zorlamıyor» diyen biri",
@@ -805,7 +805,7 @@
   "de": "Um Methode und Programm zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı kararı iki dil düzeyinde söylemek için iki yer adı yeter:",
+  "tr": "Aynı kararı iki dil düzeyinde söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um dieselbe Entscheidung in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -945,9 +945,9 @@
   "de": "Das Modalverb rührt den Willen nicht an."
  },
  {
-  "tr": "bu hakka uyma hâline ise",
+  "tr": "bu yetkiye boyun eğme hâline ise",
   "kind": "say.tr",
-  "de": "und sich diesem Recht zu fügen heißt"
+  "de": "und sich dieser Befugnis zu beugen heißt"
  },
  {
   "tr": "Kusuru eşdizim dağıtıyor.",
@@ -1027,7 +1027,7 @@
  {
   "tr": "Eksik yarı hiç vadedilmemişti.",
   "kind": "say.tr",
-  "de": "Die fehlende Hälfte war nie versprochen."
+  "de": "Die fehlende Hälfte war nie versprochen worden."
  },
  {
   "tr": "gördüğün örüntüye güvendiğini,",
@@ -1152,7 +1152,7 @@
  {
   "tr": "Aynı sürede daha çok iş yapılmasına",
   "kind": "say.tr",
-  "de": "Dass in derselben Zeit mehr Arbeit anfällt, heißt"
+  "de": "Dass in derselben Zeit mehr Arbeit erledigt wird, heißt"
  },
  {
   "tr": "Çalışabilecek ama çalışmayan kesime",
@@ -1177,7 +1177,7 @@
  {
   "tr": "günlük işleyişten sorumlu olmaya ise",
   "kind": "say.tr",
-  "de": "und für den täglichen Betrieb zu haften heißt"
+  "de": "und für den täglichen Betrieb verantwortlich zu sein heißt"
  },
  {
   "tr": "Her şeyin yarışa göre düzenlenmesine",
@@ -1837,7 +1837,7 @@
  {
   "tr": "Şimdi bugünün kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:",
   "kind": "say.tr",
-  "de": "Jetzt die Regel von heute. In der Flexibilitätsdebatte ist das Zugeständnis kein Nachgeben, sondern ein EINTRITT:"
+  "de": "Jetzt die Regel von heute. In der Flexibilitätsdebatte ist das Zugeständnis kein Nachgeben, sondern ein EINSTIEG:"
  },
  {
   "tr": "Şimdi sıra sende: Biri bölünmeyi perdeliyor, öteki meslek ahlakını baltalıyor.",

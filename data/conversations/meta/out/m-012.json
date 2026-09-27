@@ -10,7 +10,7 @@
  { "conversation": "de-c1-meinungsfreiheit", "titleEn": "Freedom of expression", "summaryEn": "Teaches you to define the limits with the language of reference that draws distinctions." },
  { "conversation": "de-c1-zukunftsvision", "titleEn": "A vision of the future", "summaryEn": "Teaches you to design a future that has not been built, in the unreal mood." },
  { "conversation": "de-c1-ironie", "titleEn": "Hearing irony", "summaryEn": "Teaches you to recognize the sentences where what is said is the opposite of what is meant." },
- { "conversation": "de-c1-sarkasmus-grenze", "titleEn": "Humor at the limit", "summaryEn": "Teaches you to notice where a joke turns into a hurt, and to take it back." },
+ { "conversation": "de-c1-sarkasmus-grenze", "titleEn": "Humor at the limit", "summaryEn": "Teaches you to notice where a joke starts to hurt, and to take it back." },
  { "conversation": "de-c1-wortspiele", "titleEn": "Wordplay", "summaryEn": "Teaches you to spot wordplay on double meanings and to see the limit of translation." },
  { "conversation": "de-c1-regionale-kultur", "titleEn": "Regional stereotypes", "summaryEn": "Teaches you to talk about regional stereotypes with a wink and without a sweeping judgment." },
  { "conversation": "de-c1-dialekte-hoeren", "titleEn": "Awareness of dialect", "summaryEn": "Teaches you a way of listening that aims to understand regional differences." },
@@ -27,6 +27,6 @@
  { "conversation": "de-c1-pruefungssimulation", "titleEn": "A mock exam", "summaryEn": "Teaches you to discuss the exam format and the grading criteria in academic language." },
  { "conversation": "de-c1-mentoring-c1", "titleEn": "Advice to a new learner", "summaryEn": "Teaches you to pass on your own path through learning to someone else." },
  { "conversation": "de-c1-zweisprachig-leben", "titleEn": "A bilingual identity", "summaryEn": "Teaches you to describe being bilingual through unreal comparisons." },
- { "conversation": "de-c1-sprachwandel", "titleEn": "How language changes", "summaryEn": "Teaches you to discuss language change apart from the rhetoric of decline." },
+ { "conversation": "de-c1-sprachwandel", "titleEn": "How language changes", "summaryEn": "Teaches you to discuss language change without the rhetoric of decline." },
  { "conversation": "de-c1-finale", "titleEn": "The C1 finale", "summaryEn": "Teaches you to weigh the road traveled in metaphors, and closes the level." }
 ]

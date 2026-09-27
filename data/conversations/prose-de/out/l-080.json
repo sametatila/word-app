@@ -62,7 +62,7 @@
  {
   "tr": "seni doğru kura yerleştirmeye çalışan bir kurs danışmanı",
   "kind": "partner",
-  "de": "eine Beraterin, die dich in den richtigen Kurs setzen will"
+  "de": "eine Beraterin, die dich in den richtigen Kurs einstufen will"
  },
  {
   "tr": "elinde çok sayıda çanta olan, ayrıntı isteyen bir görevli",
@@ -342,7 +342,7 @@
  {
   "tr": "Doğru. Bağlaç kendi olumsuzluğunu taşıdığı için cümlede ikinci bir olumsuz yok; anlam 'fiyat değişmezse kabul ederim'.",
   "kind": "why.tr",
-  "de": "Richtig. Der Konnektor trägt die Verneinung selbst, deshalb steht keine zweite im Satz; es heißt „wenn der Preis gleich bleibt, nehme ich an“."
+  "de": "Richtig. Der Konnektor trägt die Verneinung selbst, deshalb steht keine zweite im Satz; es heißt „wenn der Preis gleich bleibt, nehme ich das Angebot an“."
  },
  {
   "tr": "Açıklamak için",
@@ -682,7 +682,7 @@
  {
   "tr": "Fiyat değişmedikçe kabul edeceğim.",
   "kind": "say.tr",
-  "de": "Ich nehme an, es sei denn, der Preis ändert sich."
+  "de": "Ich nehme das Angebot an, es sei denn, der Preis ändert sich."
  },
  {
   "tr": "Onu bulan adam numarasını bıraktı.",
@@ -837,7 +837,7 @@
  {
   "tr": "Olay olmayabilir de; sen yine de hazırlık yaparsın.",
   "kind": "say.tr",
-  "de": "Es kann auch nicht passieren; du triffst trotzdem eine Vorbereitung."
+  "de": "Vielleicht passiert es gar nicht; du sorgst trotzdem vor."
  },
  {
   "tr": "Son kalıbımız tarifedeki saati söylüyor. Tekrar et:",
@@ -917,7 +917,7 @@
  {
   "tr": "Şimdi sen kur: Bana erken söylediğin sürece yardım edeceğim.",
   "kind": "say.tr",
-  "de": "Jetzt du: Ich helfe, solange du es mir früh sagst."
+  "de": "Jetzt du: Ich helfe dir, solange du es mir früh sagst."
  },
  {
   "tr": "denir; bu kelime yolun tamamını anlatır, tek bir bileti değil.",

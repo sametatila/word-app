@@ -944,7 +944,7 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr(
-            "Selam! Bugün eczanedeyiz. Asıl işimiz konuşmak değil anlamak: eczacının söylediği talimatı kaçırırsan ilacı yanlış kullanırsın. Hazır mısın?",
+            "Selam! Bugün eczanedeyiz. Asıl işimiz konuşmak değil, anlamak: eczacının söylediği talimatı kaçırırsan ilacı yanlış kullanırsın. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1394,7 +1394,7 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr(
-            "Kuralı çok kısa: karşındaki için çektiğin fiilden sonundaki iki harfi at, özneyi de söyleme. Kalan şey emir olur. Türkçede de emir fiilin en yalın hâlidir, bu yüzden mantık sana yabancı gelmeyecek. Önce kelimeleri öğrenelim.",
+            "Kural çok kısa: karşındaki için çektiğin fiilden sonundaki iki harfi at, özneyi de söyleme. Kalan şey emir olur. Türkçede de emir fiilin en yalın hâlidir, bu yüzden mantık sana yabancı gelmeyecek. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -2038,7 +2038,7 @@ export const deA1B09: Conversation[] = [
       partner: "biraz sert konuşan ama iyi niyetli bir doktor",
       opening: "Sie sind oft müde, sagen Sie. Was essen Sie jeden Tag?",
       openingTr: "Sık sık yorgun olduğunuzu söylüyorsunuz. Her gün ne yiyorsunuz?",
-      goal: "Alışkanlıkların anlatılmış ve doktorun önerdiği bir değişikliği kabul etmiş olursun.",
+      goal: "Alışkanlıklarını anlatmış ve doktorun önerdiği bir değişikliği kabul etmiş olursun.",
       minTurns: 6,
     },
   },

@@ -37,7 +37,7 @@
  {
   "tr": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
   "kind": "partner",
-  "de": "ein Beamter, der jede Umweltthese für gefühlig hält und sagt „das ist deine Meinung“"
+  "de": "ein Beamter, der jede Umweltthese für emotional hält und sagt „das ist deine Meinung“"
  },
  {
   "tr": "her ölçütü kendi sokağına uygulayan, «bizim sokakta da olur mu» diyen bir komşu",
@@ -187,7 +187,7 @@
  {
   "tr": "Model sonucunu aktarırken kipin koyduğu mesafeyi öğretir; belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar.",
   "kind": "summary",
-  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben eines Modellergebnisses setzt; die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig."
+  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben eines Modellergebnisses setzt; die Unsicherheit zu nennen schwächt das Modell nicht, sondern macht es glaubwürdig."
  },
  {
   "tr": "Uzun bir şehircilik raporunu bağlayan adresleri öğretir; ölçek değişince aynı ölçüt başka sonuç verdiği için bağ zorunlu.",
@@ -445,11 +445,6 @@
   "de": "abmildern"
  },
  {
-  "tr": "tayin etmek",
-  "kind": "vocab.tr",
-  "de": "ausweisen"
- },
- {
   "tr": "aşırı sömürü",
   "kind": "vocab.tr",
   "de": "Übernutzung"
@@ -515,7 +510,7 @@
   "de": "Klimaneutralität"
  },
  {
-  "tr": "ince ayrıntılı",
+  "tr": "ince dokulu",
   "kind": "vocab.tr",
   "de": "kleinteilig"
  },
@@ -605,7 +600,7 @@
   "de": "Sekundärrohstoff"
  },
  {
-  "tr": "kiralık mülkiyet",
+  "tr": "üst hakkı",
   "kind": "vocab.tr",
   "de": "Erbpacht"
  },
@@ -775,7 +770,7 @@
   "de": "Um Ziel und Etikett zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı hedefi iki dil düzeyinde söylemek için iki yer adı yeter:",
+  "tr": "Aynı hedefi iki dil düzeyinde söylemek için iki yer öbeği yeter:",
   "kind": "hint.tr",
   "de": "Um dasselbe Ziel in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -815,7 +810,7 @@
   "de": "danach"
  },
  {
-  "tr": "bazı senaryo",
+  "tr": "bazı senaryolar",
   "kind": "say.tr",
   "de": "einige Szenarien"
  },
@@ -847,7 +842,7 @@
  {
   "tr": "Isıya ilişkin olana",
   "kind": "say.tr",
-  "de": "Was die Wärme betrifft, heißt"
+  "de": "Was sich auf Wärme bezieht, heißt"
  },
  {
   "tr": "Modeli kip koruyor.",
@@ -870,9 +865,9 @@
   "de": "Fassen wir zusammen: Wiedergabe"
  },
  {
-  "tr": "suyu geçirmeyene ise",
+  "tr": "suyu itene ise",
   "kind": "say.tr",
-  "de": "und was kein Wasser durchlässt, heißt"
+  "de": "und was Wasser abweist, heißt"
  },
  {
   "tr": "Ölçek cümleye aittir.",
@@ -897,7 +892,7 @@
  {
   "tr": "az kaynak harcayana ise",
   "kind": "say.tr",
-  "de": "und was wenig Mittel verbraucht, heißt"
+  "de": "und was wenig Ressourcen verbraucht, heißt"
  },
  {
   "tr": "Çözülüp toprağa karışmaya",
@@ -932,7 +927,7 @@
  {
   "tr": "Yapımın resmen kesilmesine",
   "kind": "say.tr",
-  "de": "Der amtliche Abbruch des Bauens heißt"
+  "de": "Die amtliche Unterbrechung der Bauarbeiten heißt"
  },
  {
   "tr": "atıktan madde çıkarmaya ise",
@@ -1000,9 +995,9 @@
   "de": "Boden, der das ganze Jahr gefroren bleibt, heißt"
  },
  {
-  "tr": "Yol, su ve hattın kurulmasına",
+  "tr": "Yol, su ve enerji hatlarının kurulmasına",
   "kind": "say.tr",
-  "de": "Der Bau von Straße, Wasser und Leitung heißt"
+  "de": "Der Bau von Straßen, Wasser- und Stromleitungen heißt"
  },
  {
   "tr": "bir maddeyi dışarı vermeye ise",
@@ -1032,7 +1027,7 @@
  {
   "tr": "kaynağın bir gün biteceğine ise",
   "kind": "say.tr",
-  "de": "und dass die Quelle eines Tages endet, heißt"
+  "de": "und dass die Ressourcen eines Tages erschöpft sind, heißt"
  },
  {
   "tr": "Küçük parçalardan oluşan dokuya",
@@ -1072,7 +1067,7 @@
  {
   "tr": "Kaynağın gelecek için korunmasına",
   "kind": "say.tr",
-  "de": "Die Quelle für die Zukunft zu bewahren heißt"
+  "de": "Die Ressourcen für die Zukunft zu bewahren heißt"
  },
  {
   "tr": "Alanın uzmanlarının yazdığı yayına",
@@ -1082,17 +1077,17 @@
  {
   "tr": "Atığı yeniden üretime sokan düzene",
   "kind": "say.tr",
-  "de": "Die Ordnung, die Abfall zurück in die Herstellung führt, heißt"
+  "de": "Die Wirtschaftsweise, die Abfall in die Herstellung zurückführt, heißt"
  },
  {
   "tr": "Elektrikle çalışan taşıma düzenine",
   "kind": "say.tr",
-  "de": "Die Verkehrsordnung, die mit Strom fährt, heißt"
+  "de": "Der Verkehr, der mit Strom fährt, heißt"
  },
  {
   "tr": "kaynağın ne kadar harcandığına ise",
   "kind": "say.tr",
-  "de": "und wie viel Mittel verbraucht werden, heißt"
+  "de": "und wie viele Ressourcen verbraucht werden, heißt"
  },
  {
   "tr": "Maddenin yeniden üretime girmesine",
@@ -1100,9 +1095,9 @@
   "de": "Dass der Stoff wieder in die Herstellung geht, heißt"
  },
  {
-  "tr": "mülkün kira ile kullanılmasına ise",
+  "tr": "arsanın üzerine yapı kurmak için uzun süreli kiralanmasına ise",
   "kind": "say.tr",
-  "de": "und die Nutzung von Eigentum gegen Zins heißt"
+  "de": "und die langfristige Pacht eines Grundstücks, um darauf zu bauen, heißt"
  },
  {
   "tr": "Sürekli inip çıkan, kararsız olana",
@@ -1152,7 +1147,7 @@
  {
   "tr": "bir sonucu su katıp zayıflatmaya ise",
   "kind": "say.tr",
-  "de": "und ein Ergebnis durch Zusätze zu schwächen heißt"
+  "de": "und ein Ergebnis mit Wasser zu strecken und so zu schwächen heißt"
  },
  {
   "tr": "Bir yeri doğal hâline geri getirmeye",
@@ -1425,7 +1420,7 @@
   "de": "Das Artensterben zählen wir, den Permafrost nicht."
  },
  {
-  "tr": "Adayı tayin ediyorlar ve buna kiralık mülkiyet diyorlar.",
+  "tr": "Adayı belirliyorlar ve buna üst hakkı diyorlar.",
   "kind": "say.tr",
   "de": "Sie weisen den Block aus und nennen es Erbpacht."
  },
@@ -1640,9 +1635,9 @@
   "de": "Bilde du jetzt: Ohne den Wald hätte das Dorf keine Allmende zu teilen."
  },
  {
-  "tr": "Belirsizliği söyleyen model, bir kez şaşırdığında güvenini kaybetmez.",
+  "tr": "Belirsizliği söyleyen model, bir kez yanıldığında güvenini kaybetmez.",
   "kind": "say.tr",
-  "de": "Ein Modell, das die Unsicherheit nennt, verliert sein Vertrauen nicht, wenn es sich einmal irrt."
+  "de": "Ein Modell, das die Unsicherheit nennt, verliert das Vertrauen nicht, wenn es sich einmal irrt."
  },
  {
   "tr": "Her ekosistem hizmetinin kamulaştırmadan önce sayılmasını istiyorlar.",
@@ -1835,7 +1830,7 @@
   "de": "Noch eins: Wenn auch der Grenzen bewusst, braucht die Kreislaufwirtschaft dennoch Wachstum."
  },
  {
-  "tr": "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet ediyor.",
+  "tr": "Ölçek bakımından ince dokulu bir mahalle erişilebilirliğe daha iyi hizmet ediyor.",
   "kind": "say.tr",
   "de": "Maßstäblich dient ein kleinteiliges Viertel der Erreichbarkeit besser."
  },
@@ -1847,7 +1842,7 @@
  {
   "tr": "Bir kaynağın taşıyamayacağı kadar kullanılması demek.",
   "kind": "say.tr",
-  "de": "Das heißt, eine Quelle stärker zu nutzen, als sie tragen kann."
+  "de": "Das heißt, eine Ressource stärker zu nutzen, als sie verkraftet."
  },
  {
   "tr": "O kullanım amacı değişikliği, belirtildiği gibi, yalnız şehircilik açısından işliyor.",
@@ -1912,7 +1907,7 @@
  {
   "tr": "Kimin parasıyla ölçüldüğü de aktarmanın parçası; bunu söylemek suçlama değil, kaynak bilgisidir. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Mit wessen Geld gemessen wurde, gehört zur Wiedergabe; das zu sagen ist kein Vorwurf, sondern Quellenkunde. Bist du bereit?"
+  "de": "Mit wessen Geld gemessen wurde, gehört zur Wiedergabe; das zu sagen ist kein Vorwurf, sondern eine Quellenangabe. Bist du bereit?"
  },
  {
   "tr": "dediğinde karşındaki seni rakamları gören biri sayar. Büyümeyi tümden reddeden cümle, haklı olsa bile masadan düşer.",
@@ -1937,12 +1932,12 @@
  {
   "tr": "Süreci başa almak kimseyi suçlamıyor, faili başa almak suçluyor; ikisi de doğru cümle ve ikisi ayrı siyaset. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Den Vorgang voranzustellen beschuldigt niemanden, die handelnde Person voranzustellen schon; beide Sätze sind richtig und beide sind eine andere Politik. Bist du bereit?"
+  "de": "Den Vorgang voranzustellen beschuldigt niemanden, die handelnde Person voranzustellen schon; beide Sätze sind richtig, aber jeder steht für eine andere Politik. Bist du bereit?"
  },
  {
   "tr": "Belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar; kesin konuşan model ilk sapmada güvenini kaybeder. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig; ein Modell, das ohne Vorbehalt spricht, verliert beim ersten Abweichen sein Vertrauen. Bist du bereit?"
+  "de": "Die Unsicherheit zu nennen schwächt das Modell nicht, sondern macht es glaubwürdig; ein Modell, das ohne Vorbehalt spricht, verliert beim ersten Abweichen das Vertrauen. Bist du bereit?"
  },
  {
   "tr": "Önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değil; ikisini karıştıran cümle atığı meşrulaştırır. Hazır mısın?",

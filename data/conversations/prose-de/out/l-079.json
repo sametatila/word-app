@@ -97,7 +97,7 @@
  {
   "tr": "Mahalleye yeni taşınan biri sana burayı soruyor. Nerede ne olduğunu anlat, neyin değdiğini söyle ve neden burada kaldığını açıkla.",
   "kind": "scene",
-  "de": "Jemand, der neu ins Viertel gezogen ist, fragt dich danach. Erzähl, wo was ist, sag, was sich lohnt, und erklär, warum du hier bleibst."
+  "de": "Jemand, der neu ins Viertel gezogen ist, fragt dich nach der Gegend. Erzähl, wo was ist, sag, was sich lohnt, und erklär, warum du hier bleibst."
  },
  {
   "tr": "Üst komşun geceleri çok gürültü yapıyor ve kapısını çaldın. Rahatsızlığını suçlamadan anlat, çekince bağlaçlarıyla yumuşat ve bir çözüm öner.",
@@ -275,9 +275,9 @@
   "de": "Falsch. Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
  },
  {
-  "tr": "Doğru. Bu bağlaç isim alıyor ve burada ardından gelen bir isim; cümle gelseydi başka bağlaç gerekirdi.",
+  "tr": "Doğru. Bu bağlaç isim alıyor ve burada ardından gerçekten bir isim geliyor; cümle gelseydi başka bağlaç gerekirdi.",
   "kind": "why.tr",
-  "de": "Richtig. Dieser Konnektor nimmt ein Nomen, und hier folgt eines; käme ein Satz, bräuchte man einen anderen."
+  "de": "Richtig. Dieser Konnektor nimmt ein Nomen, und hier folgt tatsächlich eines; käme ein Satz, bräuchte man einen anderen."
  },
  {
   "tr": "Kibar öneri kalıbı:",
@@ -665,7 +665,7 @@
   "de": "Unsere erste Wendung nennt die Annahme. Sprich nach:"
  },
  {
-  "tr": "Bu kadar geç rahatsız ettiği için özür diledi.",
+  "tr": "Bizi bu kadar geç saatte rahatsız ettiği için özür diledi.",
   "kind": "say.tr",
   "de": "Er hat sich entschuldigt, dass er uns so spät gestört hat."
  },
@@ -760,9 +760,9 @@
   "de": "sagen wir. Bau das: Vor der Abnahme hatte ich die Wohnung geräumt."
  },
  {
-  "tr": "deriz; gürültünün kendisi 'noise' bir isimdir, bu ise sıfat.",
+  "tr": "deriz; bu bir sıfattır. Gürültünün kendisi ise 'noise', yani bir isimdir.",
   "kind": "say.tr",
-  "de": "sagen wir; der Lärm selbst, „noise“, ist ein Nomen, dieses hier ist ein Adjektiv."
+  "de": "sagen wir; das ist ein Adjektiv. Der Lärm selbst dagegen heißt „noise“, ist also ein Nomen."
  },
  {
   "tr": "İkinci kalıbımız sonra olanı anlatıyor. Geri vermek için",

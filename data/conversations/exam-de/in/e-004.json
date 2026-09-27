@@ -2,71 +2,6 @@
  "packet": "e-004",
  "words": [
   {
-   "tr": "Neyi fark ettiğini yaz",
-   "kind": "writing.checklist",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B2.9 Relationships and psychology · yazma"
-   ]
-  },
-  {
-   "tr": "Peki buradaki kız kim?",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "And who is the girl here?"
-   ],
-   "ctx": [
-    "A1.2 Family and people · Lena"
-   ]
-  },
-  {
-   "tr": "renk, beden, „too big“",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Adjectives"
-   ],
-   "ctx": [
-    "A1.5 Shopping"
-   ]
-  },
-  {
-   "tr": "Sara neyi zaten yaptı?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What has Sara already done?"
-   ],
-   "ctx": [
-    "A2.9 Media and technology · dinleme sorusu"
-   ],
-   "options": [
-    "She has updated the program",
-    "She has restarted the computer",
-    "She has called the shop",
-    "She has bought a new camera"
-   ]
-  },
-  {
-   "tr": "Sara şimdi ne yapmalı?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What should Sara do now?"
-   ],
-   "ctx": [
-    "A2.9 Media and technology · dinleme sorusu"
-   ],
-   "options": [
-    "Update the program",
-    "Press the button again",
-    "Use the phone",
-    "Wait for one hour"
-   ]
-  },
-  {
    "tr": "Selin işinde ne yaptı?",
    "kind": "question",
    "n": 1,
@@ -77,7 +12,7 @@
     "A2.5 Working life · dinleme sorusu"
    ],
    "options": [
-    "She organised projects",
+    "She organized projects",
     "She answered the phone",
     "She was a teacher",
     "She worked alone"
@@ -95,7 +30,7 @@
    ],
    "options": [
     "That the committee grant a second hearing",
-    "That the vote be cancelled",
+    "That the vote be canceled",
     "That the figures be published",
     "That the deadline be moved"
    ]
@@ -108,7 +43,7 @@
     "Formal complaint and final deadline"
    ],
    "ctx": [
-    "B2.2 Claims and complaints"
+    "B2.2 Negotiating and complaining"
    ]
   },
   {
@@ -141,11 +76,11 @@
     "What is the supplier's concession?"
    ],
    "ctx": [
-    "B2.2 Claims and complaints · dinleme sorusu"
+    "B2.2 Negotiating and complaining · dinleme sorusu"
    ],
    "options": [
     "Reimbursing the transport cost",
-    "Cancelling the invoice",
+    "Canceling the invoice",
     "Changing the threshold",
     "Paying the damages in full"
    ]
@@ -288,7 +223,7 @@
    "options": [
     "Take more tablets",
     "Call the doctor",
-    "Only take water",
+    "Only drink water",
     "Wait a week"
    ]
   },
@@ -368,17 +303,6 @@
    ]
   },
   {
-   "tr": "Doktor Weber, günaydın.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Doctor Weber, good morning."
-   ],
-   "ctx": [
-    "A1.9 Health and the body · Receptionist"
-   ]
-  },
-  {
    "tr": "Düzeltme ve okur cevabı",
    "kind": "reading.title",
    "n": 1,
@@ -394,10 +318,10 @@
    "kind": "plan.title",
    "n": 1,
    "de": [
-    "Process and passive"
+    "The passive in all its forms"
    ],
    "ctx": [
-    "B2.3 Process and passive"
+    "B2.3 The passive in all its forms"
    ]
   },
   {
@@ -494,17 +418,6 @@
     "At seven",
     "At four",
     "At five"
-   ]
-  },
-  {
-   "tr": "izin ve ricada bulunmak",
-   "kind": "focus",
-   "n": 1,
-   "de": [
-    "Can I …?"
-   ],
-   "ctx": [
-    "A1.5 Shopping"
    ]
   },
   {
@@ -729,6 +642,17 @@
    ]
   },
   {
+   "tr": "aynı savın üç dil düzeyi",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift between stylistic levels"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgment and choice"
+   ]
+  },
+  {
    "tr": "Ben vardığımda … olmuştu",
    "kind": "phrase",
    "n": 1,
@@ -736,7 +660,7 @@
     "By the time I arrived, … had …"
    ],
    "ctx": [
-    "B1.3 Reason and result · yazma kalıbı"
+    "B1.3 Linking ideas · yazma kalıbı"
    ]
   },
   {
@@ -756,18 +680,7 @@
     "The device has been repaired … times."
    ],
    "ctx": [
-    "B2.2 Claims and complaints · yazma kalıbı"
-   ]
-  },
-  {
-   "tr": "Çorba dört, pilav sekiz.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "The soup is four and the rice is eight."
-   ],
-   "ctx": [
-    "A1.3 Food and drink · Waiter"
+    "B2.2 Negotiating and complaining · yazma kalıbı"
    ]
   },
   {
@@ -794,7 +707,7 @@
    "options": [
     "He arrived in London",
     "He visited the museum",
-    "He travelled home",
+    "He traveled home",
     "He stayed at the hotel"
    ]
   },
@@ -840,17 +753,6 @@
    ],
    "ctx": [
     "C1.4 Literature and interpretation"
-   ]
-  },
-  {
-   "tr": "Hafta sonu için sözleşme",
-   "kind": "listening.title",
-   "n": 1,
-   "de": [
-    "A time at the weekend"
-   ],
-   "ctx": [
-    "A1.4 My day"
    ]
   },
   {
@@ -988,7 +890,7 @@
    "n": 1,
    "de": [],
    "ctx": [
-    "A2.7 Travelling · konuşma"
+    "A2.7 Traveling · konuşma"
    ]
   },
   {
@@ -1100,7 +1002,7 @@
    "kind": "phrase",
    "n": 1,
    "de": [
-    "At the moment the rubbish is collected …"
+    "At the moment the trash is collected …"
    ],
    "ctx": [
     "B1.9 The city and the environment · yazma kalıbı"
@@ -1131,7 +1033,7 @@
     "The milestone is moved by two weeks",
     "The project is stopped",
     "The team is made larger",
-    "The memo is cancelled"
+    "The memo is canceled"
    ]
   },
   {
@@ -1267,21 +1169,10 @@
     "A1.10 Keeping in touch · dinleme sorusu"
    ],
    "options": [
-    "She is ill",
+    "She is sick",
     "She has a question about the class",
     "She wants a ticket",
     "She is at home"
-   ]
-  },
-  {
-   "tr": "Belediye ağaç dikseydi, …",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "If the council planted trees, …"
-   ],
-   "ctx": [
-    "B1.9 The city and the environment · yazma kalıbı"
    ]
   },
   {
@@ -1307,8 +1198,8 @@
    ],
    "options": [
     "He is busy at work",
-    "He plays football",
-    "He is ill",
+    "He plays soccer",
+    "He is sick",
     "He doesn't like movies"
    ]
   },
@@ -1357,6 +1248,23 @@
    ]
   },
   {
+   "tr": "Elif şimdi hangi şehirde?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Which city is Elif in now?"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · dinleme sorusu"
+   ],
+   "options": [
+    "In Izmir",
+    "In London",
+    "In Boston",
+    "In Türkiye"
+   ]
+  },
+  {
    "tr": "En az üç aile üyesini yaz",
    "kind": "writing.checklist",
    "n": 1,
@@ -1370,7 +1278,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Have you got a brother too?"
+    "Do you have a brother too?"
    ],
    "ctx": [
     "A1.2 Family and people · Lena"
@@ -1405,14 +1313,14 @@
    ]
   },
   {
-   "tr": "Fiyata kahvaltı dahil mi?",
+   "tr": "Fiyata kahvaltı dâhil mi?",
    "kind": "phrase",
    "n": 1,
    "de": [
     "Does the price include breakfast?"
    ],
    "ctx": [
-    "A2.7 Travelling · yazma kalıbı"
+    "A2.7 Traveling · yazma kalıbı"
    ]
   },
   {
@@ -1423,7 +1331,7 @@
     "Passive voice in reports"
    ],
    "ctx": [
-    "B1.3 Reason and result"
+    "B1.3 Linking ideas"
    ]
   },
   {
@@ -1493,14 +1401,14 @@
    ]
   },
   {
-   "tr": "Kahvaltı fiyata dahil mi?",
+   "tr": "Kahvaltı fiyata dâhil mi?",
    "kind": "question",
    "n": 1,
    "de": [
     "Is breakfast included in the price?"
    ],
    "ctx": [
-    "A2.7 Travelling · dinleme sorusu"
+    "A2.7 Traveling · dinleme sorusu"
    ],
    "options": [
     "Yes, it is",
@@ -1514,7 +1422,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "What colour does the person want?"
+    "What color does the person want?"
    ],
    "ctx": [
     "A1.5 Shopping · dinleme sorusu"
@@ -1576,10 +1484,10 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "Since when is there a leak?"
+    "How long has there been a leak?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · Manager"
+    "A2.4 Home and neighborhood · Manager"
    ]
   },
   {
@@ -1627,7 +1535,7 @@
     "Past perfect"
    ],
    "ctx": [
-    "B1.3 Reason and result"
+    "B1.3 Linking ideas"
    ]
   },
   {
@@ -1716,10 +1624,10 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "When does the mechanic come?"
+    "When does the repairman come?"
    ],
    "ctx": [
-    "A2.4 Home and neighbourhood · dinleme sorusu"
+    "A2.4 Home and neighborhood · dinleme sorusu"
    ],
    "options": [
     "Today at eight",
@@ -1744,7 +1652,7 @@
    "kind": "turn",
    "n": 1,
    "de": [
-    "She is tall and she has got long hair."
+    "She is tall and she has long hair."
    ],
    "ctx": [
     "A1.2 Family and people · Ahmet"
@@ -1809,6 +1717,92 @@
    ],
    "ctx": [
     "A2.10 Offices and official business · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir hayalini anlatıyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.10 Feelings and dreams · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir kişiyi kısaca tarif et",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.2 Family and people · yazma"
+   ]
+  },
+  {
+   "tr": "Bir sonraki buluşmayı öner",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma"
+   ]
+  },
+  {
+   "tr": "Birine öğüt verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give someone advice."
+   ],
+   "ctx": [
+    "A1.9 Health and the body"
+   ]
+  },
+  {
+   "tr": "Birini davet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can invite someone."
+   ],
+   "ctx": [
+    "A1.8 Free time"
+   ]
+  },
+  {
+   "tr": "Bulgu neden genellenemedi?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why could the finding not be generalized?"
+   ],
+   "ctx": [
+    "B2.5 Science and technology · okuma sorusu"
+   ],
+   "options": [
+    "The sample was small",
+    "The reaction was too slow",
+    "The cohorts were mixed",
+    "The entry was lost"
+   ]
+  },
+  {
+   "tr": "Bulguyu bir cümlede bildir",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.5 Science and technology · yazma"
+   ]
+  },
+  {
+   "tr": "By December we will have …",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Future perfect"
+   ],
+   "ctx": [
+    "B2.8 Money and career strategy"
    ]
   }
  ]

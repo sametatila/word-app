@@ -1,7 +1,6 @@
 [
  { "tr": "Üçüncü kelime:", "kind": "say.tr", "de": "Drittes Wort:" },
  { "tr": "Hazırsan başlıyoruz.", "kind": "say.tr", "de": "Wenn du bereit bist, fangen wir an." },
- { "tr": "Hazırsan başlıyoruz. Hazır mısın?", "kind": "say.tr", "de": "Wenn du bereit bist, fangen wir an. Bist du bereit?" },
  { "tr": "Örnek:", "kind": "say.tr", "de": "Beispiel:" },
  { "tr": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?", "kind": "say.tr", "de": "Eine kleine Kontrolle. Ist dieser englische Satz richtig oder falsch?" },
  { "tr": "Dördüncü kelime:", "kind": "say.tr", "de": "Viertes Wort:" },
@@ -42,7 +41,6 @@
  { "tr": "Küçük bir not:", "kind": "say.tr", "de": "Eine kleine Anmerkung:" },
  { "tr": "Şunu tekrar et:", "kind": "say.tr", "de": "Wiederhole das:" },
  { "tr": "Tekrar et lütfen:", "kind": "say.tr", "de": "Wiederhole bitte:" },
- { "tr": "Hazırsan başlayalım. Hazır mısın?", "kind": "say.tr", "de": "Wenn du bereit bist, legen wir los. Bist du bereit?" },
  { "tr": "Kulaklığın hazırsa başlayalım. Hazır mısın?", "kind": "say.tr", "de": "Wenn dein Kopfhörer bereit ist, legen wir los. Bist du bereit?" },
  { "tr": "Küçük bir kontrol. Şu İngilizce cümle doğru mu?", "kind": "say.tr", "de": "Eine kleine Kontrolle. Ist dieser englische Satz richtig?" },
  { "tr": "Şimdi küçük bir kontrol. Şu cümle doğru mu, yanlış mı?", "kind": "say.tr", "de": "Jetzt eine kleine Kontrolle. Ist dieser Satz richtig oder falsch?" },

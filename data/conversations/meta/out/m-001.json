@@ -1,6 +1,6 @@
 [
  { "conversation": "de-a1-hallo", "titleEn": "Introductions", "summaryEn": "Teaches you to say your name, where you are from and where you live." },
- { "conversation": "de-a1-wie-gehts", "titleEn": "Asking how someone is", "summaryEn": "Teaches you to ask how someone is, say how you are and put the question back." },
+ { "conversation": "de-a1-wie-gehts", "titleEn": "Asking how someone is", "summaryEn": "Teaches you to ask how someone is, say how you are and ask the question in return." },
  { "conversation": "de-a1-du-oder-sie", "titleEn": "du or Sie", "summaryEn": "Teaches you who to address informally, who formally, and how the verb changes." },
  { "conversation": "de-a1-woher", "titleEn": "Where are you from", "summaryEn": "Teaches you to use question words to ask where someone is from, where they live and what something is." },
  { "conversation": "de-a1-sprachen", "titleEn": "Languages", "summaryEn": "Teaches you to ask about languages with the verb first and say which ones you speak." },

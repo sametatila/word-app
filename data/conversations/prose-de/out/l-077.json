@@ -112,7 +112,7 @@
  {
   "tr": "Yöneticine istifa ettiğini söylüyorsun. Kararını bağlaçlarla yumuşatarak anlat, devir teslim için bir plan öner ve minnettarlığını belirt.",
   "kind": "scene",
-  "de": "Du sagst deiner Chefin, dass du kündigst. Erkläre deine Entscheidung mit weichen Konnektoren, schlag einen Plan für die Übergabe vor und sag, wofür du dankbar bist."
+  "de": "Du sagst deiner Chefin, dass du kündigst. Erkläre deine Entscheidung und federe sie mit Konnektoren ab, schlag einen Plan für die Übergabe vor und sag, wofür du dankbar bist."
  },
  {
   "tr": "Takıma yeni katılan biri sana kimin ne yaptığını soruyor. Yöneticiyi, amiri ve stajyeri tanıt, kimin neyle ilgilendiğini yan cümlelerle anlat.",
@@ -122,7 +122,7 @@
  {
   "tr": "Bir iş arkadaşınla haftanın programını konuşuyorsun. Hangi toplantının ne zaman olduğunu söyle, bir işi ertelemeyi öner ve teslim tarihi için söz ver.",
   "kind": "scene",
-  "de": "Du besprichst mit einem Kollegen die Woche. Sag, welcher Termin wann ist, schlag vor, etwas zu verschieben, und gib ein Versprechen für die Frist."
+  "de": "Du besprichst mit einem Kollegen die Woche. Sag, welcher Termin wann ist, schlag vor, etwas zu verschieben, und versprich, die Frist einzuhalten."
  },
  {
   "tr": "En az üç kişiyi yan cümleyle tanıttıysan ve birinin nasıl biri olduğunu anlattıysan konuşma başarılı sayılır.",
@@ -482,7 +482,7 @@
  {
   "tr": "Aktarılan soruda soru sırası kurulmaz:",
   "kind": "hint.tr",
-  "de": "In der wiedergegebenen Frage steht keine Fragestellung:"
+  "de": "In der wiedergegebenen Frage gilt nicht die Wortstellung einer Frage:"
  },
  {
   "tr": "Bu bağlaçtan sonra tam bir cümle gelir:",
@@ -852,7 +852,7 @@
  {
   "tr": "Hedefi her ay gözden geçiriyoruz.",
   "kind": "say.tr",
-  "de": "Wir sehen das Ziel jeden Monat durch."
+  "de": "Wir gehen das Ziel jeden Monat durch."
  },
  {
   "tr": "İlerlememin iyi olduğunu söyledi.",
@@ -1115,7 +1115,7 @@
   "de": "Noch eins, diesmal ohne Pronomen: Die E-Mail, die ich geschickt habe, war zu lang."
  },
  {
-  "tr": "kullanılabilir. Yan cümle ismin HEMEN arkasına gelir, sonuna değil.",
+  "tr": "kullanılabilir. Yan cümle ismin HEMEN arkasına gelir, cümlenin sonuna değil.",
   "kind": "say.tr",
   "de": "benutzt werden. Der Nebensatz kommt DIREKT hinter das Nomen, nicht ans Satzende."
  },
@@ -1130,9 +1130,9 @@
   "de": "Unser dritter Konnektor nimmt ein Nomen und kann am Anfang wie am Ende des Satzes stehen."
  },
  {
-  "tr": "nesne durumunda düşebilir. Şimdi yeni bir iş arkadaşına takımı tanıtacaksın.",
+  "tr": "nesne durumunda zamir düşebilir. Şimdi yeni bir iş arkadaşına takımı tanıtacaksın.",
   "kind": "say.tr",
-  "de": "als Objekt darf es wegfallen. Jetzt stellst du einer neuen Kollegin das Team vor."
+  "de": "als Objekt darf das Pronomen wegfallen. Jetzt stellst du einer neuen Kollegin das Team vor."
  },
  {
   "tr": "Şimdi bugünün kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:",
@@ -1227,6 +1227,6 @@
  {
   "tr": "Bu konuşmanın zor yanı dilbilgisi değil ton: kötü bir şey söylerken bile köprüyü atmamak. O işi bağlaçlar yapıyor. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Das Schwere daran ist nicht die Grammatik, sondern der Ton: auch bei einer schlechten Nachricht keine Brücke abbrechen. Das machen die Konnektoren. Bist du bereit?"
+  "de": "Das Schwere daran ist nicht die Grammatik, sondern der Ton: auch bei einer schlechten Nachricht keine Brücken abbrechen. Das machen die Konnektoren. Bist du bereit?"
  }
 ]

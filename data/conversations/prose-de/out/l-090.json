@@ -215,11 +215,6 @@
   "de": "Husten"
  },
  {
-  "tr": "süregelen",
-  "kind": "vocab.tr",
-  "de": "chronisch"
- },
- {
   "tr": "acil durum",
   "kind": "vocab.tr",
   "de": "Notfall"
@@ -315,7 +310,7 @@
   "de": "nennt eine schon vorher erledigte Handlung"
  },
  {
-  "tr": "yapılan işi kim yaptığını söylemeden anlatır",
+  "tr": "yapılan işi kimin yaptığını söylemeden anlatır",
   "kind": "pattern.tr",
   "de": "erzählt die Handlung, ohne zu sagen, wer sie gemacht hat"
  },
@@ -577,7 +572,7 @@
  {
   "tr": "Beklemeye gelmeyen durumlara",
   "kind": "say.tr",
-  "de": "Lagen, die nicht warten können, heißen"
+  "de": "Situationen, die nicht warten können, heißen"
  },
  {
   "tr": "Bir seferde alınacak miktara",
@@ -647,7 +642,7 @@
  {
   "tr": "Alerjim olup olmadığını sordular.",
   "kind": "say.tr",
-  "de": "Sie haben gefragt, ob ich eine Allergie hatte."
+  "de": "Sie haben gefragt, ob ich eine Allergie habe."
  },
  {
   "tr": "Boğazdan gelen sesli rahatsızlığa",
@@ -807,7 +802,7 @@
  {
   "tr": "Bir tane daha: Hapı alıp almadığımı sordular.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie haben gefragt, ob ich die Tablette genommen hatte."
+  "de": "Noch eins: Sie haben gefragt, ob ich die Tablette genommen habe."
  },
  {
   "tr": "Önce bir hemşireye görünmek zorunda değilsin.",

@@ -11,7 +11,7 @@
  { "conversation": "de-b1-passiv-vergangen", "de": "Der Antrag wurde abgelehnt.", "en": "past passive: wurde plus Partizip II" },
  { "conversation": "de-b1-passiv-vergangen", "de": "Die Unterlagen wurden geprüft.", "en": "wurden in the plural" },
  { "conversation": "de-b1-auslaenderbehoerde", "de": "Der Antrag wird bearbeitet.", "en": "who does the work is not said" },
- { "conversation": "de-b1-auslaenderbehoerde", "de": "Es werden … benötigt.", "en": "'is required' in official language" },
+ { "conversation": "de-b1-auslaenderbehoerde", "de": "Es werden … benötigt.", "en": "'… are required' in official language" },
  { "conversation": "de-b1-widerspruch", "de": "Ich bitte darum, dass …", "en": "a formal request; the verb goes to the end" },
  { "conversation": "de-b1-widerspruch", "de": "Hiermit widerspreche ich …", "en": "the opening sentence of an appeal" },
  { "conversation": "de-b1-fuehrerschein", "de": "Die Prüfung wird abgelegt.", "en": "passive in official procedure language" },

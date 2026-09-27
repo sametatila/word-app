@@ -210,11 +210,6 @@
   "de": "Vorort"
  },
  {
-  "tr": "fırtına",
-  "kind": "vocab.tr",
-  "de": "Sturm"
- },
- {
   "tr": "kirlilik",
   "kind": "vocab.tr",
   "de": "Verschmutzung"
@@ -492,12 +487,12 @@
  {
   "tr": "Renkli açan bitki parçasına",
   "kind": "say.tr",
-  "de": "Der bunt aufgehende Teil der Pflanze heißt"
+  "de": "Der Teil der Pflanze, der bunt aufblüht, heißt"
  },
  {
-  "tr": "Yılın dörde bölünen bölümüne",
+  "tr": "Yılın dört bölümünden her birine",
   "kind": "say.tr",
-  "de": "Der Abschnitt, in den das Jahr viermal geteilt wird, heißt"
+  "de": "Einer der vier Abschnitte, in die das Jahr geteilt wird, heißt"
  },
  {
   "tr": "İki yakayı birleştiren yapıya",
@@ -762,7 +757,7 @@
  {
   "tr": "Şişenin yapıldığı saydam madde demek. Bir araya getirmeye ise",
   "kind": "say.tr",
-  "de": "Das heißt der durchsichtige Stoff, aus dem Flaschen sind. Und zusammenbringen heißt"
+  "de": "Das heißt der durchsichtige Stoff, aus dem man Flaschen macht. Und zusammenbringen heißt"
  },
  {
   "tr": "Şehirden küçük yerleşim demek. İlk kalıbımız da bu. Tekrar et:",
@@ -807,7 +802,7 @@
  {
   "tr": "Bir bölgenin uzun yıllara yayılan hava düzeni demek. İlk kalıbımız da bu. Tekrar et:",
   "kind": "say.tr",
-  "de": "Das heißt die Wetterordnung einer Gegend über lange Jahre. Das ist auch unsere erste Wendung. Wiederhole:"
+  "de": "Das heißt das typische Wetter einer Gegend über viele Jahre. Das ist auch unsere erste Wendung. Wiederhole:"
  },
  {
   "tr": "ile üçüncü hâline girer; kuralı koyan kurum söylenmez çünkü kim olduğu herkesçe bilinir.",
@@ -877,6 +872,6 @@
  {
   "tr": "Tasarruf konuşmasının tamamı şarta bağlı cümlelerden kuruluyor, çünkü her tasarruf bir davranışın karşılığı. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Ein Gespräch über das Sparen besteht ganz aus Bedingungssätzen, denn jede Ersparnis ist die Antwort auf ein Verhalten. Bist du bereit?"
+  "de": "Ein Gespräch über das Sparen besteht ganz aus Bedingungssätzen, denn jede Ersparnis ist die Folge eines Verhaltens. Bist du bereit?"
  }
 ]

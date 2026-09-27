@@ -744,12 +744,12 @@ export const deB1B02: Conversation[] = [
       {
         say: [
           tr("İkinci kalıbımız tutum sorar:"),
-          de("Wie stehst du zu Besuch am Wochenende?"),
+          de("Wie stehst du zu Gästen am Wochenende?"),
           tr("'Hafta sonu misafir konusunda ne düşünüyorsun?' demek. Lütfen"),
-          de("Wie stehst du zu Besuch am Wochenende"),
+          de("Wie stehst du zu Gästen am Wochenende"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Wie stehst du zu Besuch am Wochenende" },
+        expect: { kind: "repeat", target: "Wie stehst du zu Gästen am Wochenende" },
       },
       {
         say: [tr("Şimdi sen: 'Bir temizlik çizelgesinde anlaşabiliriz.' demek için ne dersin?")],

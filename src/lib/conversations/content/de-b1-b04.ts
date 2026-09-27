@@ -132,7 +132,7 @@ export const deB1B04: Conversation[] = [
     chat: {
       scene: "Bir arkadaşın akşam için film arıyor. Beğendiğin filmleri ve dizileri 'den/die/das' ile kurulmuş ilgi cümleleriyle öner ve neden sevdiğini söyle.",
       partner: "seçici ama meraklı bir arkadaş",
-      opening: "Ich brauche einen Film für heute Abend. Was hast du zuletzt gesehen, das sich wirklich gelohnt hat?",
+      opening: "Ich brauche einen Film für heute Abend. Hast du in letzter Zeit etwas gesehen, das sich wirklich gelohnt hat?",
       openingTr: "Bu akşam için bir filme ihtiyacım var. Son zamanlarda izlediğin, gerçekten değen bir şey var mı?",
       goal: "En az iki yapım önerilmiş ve arkadaşın akşam ne izleyeceğine karar vermiş olur.",
       minTurns: 8,
@@ -230,7 +230,7 @@ export const deB1B04: Conversation[] = [
       word("Son", { de: "öffentlich", tr: "halka açık" }),
       { say: [tr("Kalıbımız:"), de("Die Stadt, in der ich lebe"), tr("Türkçede edat yok, ek var: 'yaşadığım şehir'. Almancada edat görünür ve en başa geçer.")] },
       { say: [tr("Örnek:"), de("Die Stadt, in der ich lebe, ist nicht groß."), tr("Tekrar et:"), de("Die Stadt, in der ich lebe, ist nicht groß")], expect: repeat("Die Stadt, in der ich lebe, ist nicht groß") },
-      { say: [tr("Sıra sende: 'Büyüdüğüm semt bugün bambaşka.'")], expect: produce("Der Bezirk, in dem ich aufgewachsen bin, ist heute anders", [tr("Semt eril, yer bildiriyor → in dem:"), de("Der Bezirk, in dem ich aufgewachsen bin, ist heute anders."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Büyüdüğüm semt bugün bambaşka.'")], expect: produce("Der Bezirk, in dem ich aufgewachsen bin, ist heute ganz anders", [tr("Semt eril, yer bildiriyor → in dem:"), de("Der Bezirk, in dem ich aufgewachsen bin, ist heute ganz anders."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Birlikte çalıştığım meslektaş taşındı.'")], expect: produce("Der Kollege, mit dem ich arbeite, ist umgezogen", [de("mit"), tr("her zaman yönelme ister:"), de("Der Kollege, mit dem ich arbeite, ist umgezogen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Hakkında konuştuğumuz konu önemliydi.'")], expect: produce("Das Thema, über das wir gesprochen haben, war wichtig", [de("über"), tr("burada belirtme ister ve konu nötr:"), de("Das Thema, über das wir gesprochen haben, war wichtig."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Stadt, in die ich wohne, ist klein."), tr("cümlesi doğru mu?")], expect: truefalse("Die Stadt, in die ich wohne, ist klein.", false, [de("wohnen"), tr("hareket değil yer bildirir, yani yönelme:"), de("Die Stadt, in der ich wohne, ist klein.")]) },

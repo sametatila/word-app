@@ -112,7 +112,7 @@
  {
   "tr": "Yazdığın resmî mektubu bir arkadaşın okudu ve fikrini söylüyor. Mektubun amacını, neden yazdığını ve nasıl kapattığını anlat; onun önerilerini de dinle.",
   "kind": "scene",
-  "de": "Eine Freundin hat deinen amtlichen Brief gelesen und sagt ihre Meinung. Erklär den Zweck, warum du geschrieben hast und wie du geschlossen hast; hör dir ihre Vorschläge an."
+  "de": "Eine Freundin hat deinen amtlichen Brief gelesen und sagt ihre Meinung. Erklär den Zweck des Briefes, warum du ihn geschrieben hast und wie du ihn beendet hast; hör dir ihre Vorschläge an."
  },
  {
   "tr": "Resmî bir yerde uzun süre beklemek zorunda kaldın ve bir arkadaşın nasıl geçtiğini soruyor. Olayları sırayla anlat: neyi önceden yapmıştın, sonra ne oldu.",
@@ -228,11 +228,6 @@
   "tr": "kanıtlamak",
   "kind": "vocab.tr",
   "de": "beweisen"
- },
- {
-  "tr": "beyan etmek",
-  "kind": "vocab.tr",
-  "de": "angeben"
  },
  {
   "tr": "ısrar etmek",
@@ -845,7 +840,7 @@
   "de": "Jetzt bist du dran: Obwohl ich das Formular geschickt habe, hat sich nichts geändert."
  },
  {
-  "tr": "kişiler için. Yan cümle ismin hemen arkasına gelir, sonuna değil.",
+  "tr": "kişiler için. Yan cümle ismin hemen arkasına gelir, cümlenin sonuna değil.",
   "kind": "say.tr",
   "de": "für Personen. Der Nebensatz kommt direkt hinter das Nomen, nicht ans Satzende."
  },
