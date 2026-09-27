@@ -253,7 +253,7 @@ export function ProfileForm({
                     setVoice(v);
                     void patch({ course: c.id, voice: v }, () => track("setting_change", 0, "course"));
                   }}
-                  className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
+                  className={`option px-3 py-3 text-left ${course === c.id ? "option-picked" : ""}`}
                 >
                   <span className="block text-strong">{courseName(c.id, lang)}</span>
                   <span className="muted block text-caption">{courseSub(c.id, lang)}</span>
@@ -288,7 +288,7 @@ export function ProfileForm({
                   aria-checked={level === l.id}
                   onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
                   className={`option px-1 py-2.5 text-strong ${
-                    level === l.id ? "option-correct" : ""
+                    level === l.id ? "option-picked" : ""
                   }`}
                   /* SEVİYE AÇIKLAMASI erişilebilir adda. Beş çip iki
                      karakterlik etiketler ("A1".."C1") ve açıklama yalnız
