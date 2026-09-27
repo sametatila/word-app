@@ -45,8 +45,7 @@ export function InviteLanding({
 
       <Link
         href={next}
-        className="mt-7 w-full rounded-panel px-5 py-3 text-strong on-fill"
-        style={{ background: "var(--color-brand)" }}
+        className="btn btn-primary mt-7 w-full px-5 py-4"
       >
         {inviter ? t.cta : t.browse}
       </Link>

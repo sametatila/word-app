@@ -95,8 +95,7 @@ export function TrialLanding({ valid, invalid, t }: { valid?: Valid; invalid?: {
           {valid.androidAppUrl && (
             <a
               href={valid.androidAppUrl}
-              className="mt-3 block w-full rounded-panel px-5 py-3 text-center text-strong on-fill"
-              style={{ background: "var(--color-brand)" }}
+              className="btn btn-primary mt-3 w-full px-5 py-4"
             >
               {t.androidOpen}
             </a>
@@ -104,8 +103,7 @@ export function TrialLanding({ valid, invalid, t }: { valid?: Valid; invalid?: {
           {valid.playUrl ? (
             <a
               href={valid.playUrl}
-              className="mt-3 block w-full rounded-panel border px-5 py-3 text-center text-strong"
-              style={{ borderColor: "var(--border)" }}
+              className="btn btn-ghost mt-3 w-full px-5 py-4"
             >
               {t.androidPlay}
             </a>
@@ -125,15 +123,13 @@ export function TrialLanding({ valid, invalid, t }: { valid?: Valid; invalid?: {
                   Apple'da teklif kodu plana bağlı, sonradan değiştirilemez. */}
               <a
                 href={valid.iosMonthlyHref}
-                className="mt-3 block w-full rounded-panel px-5 py-3 text-center text-strong on-fill"
-                style={{ background: "var(--color-brand)" }}
+                className="btn btn-primary mt-3 w-full px-5 py-4"
               >
                 {t.iosMonthly}
               </a>
               <a
                 href={valid.iosYearlyHref}
-                className="mt-3 block w-full rounded-panel border px-5 py-3 text-center text-strong"
-                style={{ borderColor: "var(--border)" }}
+                className="btn btn-ghost mt-3 w-full px-5 py-4"
               >
                 {t.iosYearly}
               </a>
@@ -168,8 +164,7 @@ function CodeBox({ code, label, copy, copied }: { code: string; label: string; c
             /* pano izni yoksa kod ekranda, elle seçilebilir */
           }
         }}
-        className="rounded-panel border px-3 py-2 text-caption"
-        style={{ borderColor: "var(--border)" }}
+        className="btn btn-ghost px-3 py-2 text-caption"
         aria-live="polite"
       >
         {done ? copied : copy}
