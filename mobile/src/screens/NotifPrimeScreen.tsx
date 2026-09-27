@@ -3,6 +3,7 @@ import { t as tx } from "../lib/i18n";
 import { Platform, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RadioDot } from "../ui/RadioDot";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { FlowScreen, FlowActions } from "../ui/flow";
@@ -154,6 +155,8 @@ export function NotifPrimeScreen() {
             const on = time === t.value;
             return (
               <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${t.value}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
+                {/* Tekli seçimin işareti uygulamanın her yerinde aynı nokta (`ui/RadioDot`). */}
+                <View style={{ marginBottom: spacing.xs }}><RadioDot selected={on} /></View>
                 <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{t.label}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t.value}</Text>
               </PressableScale>
