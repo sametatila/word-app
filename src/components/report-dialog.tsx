@@ -139,13 +139,14 @@ export function ReportDialog({
                       aria-hidden
                       className="flex shrink-0 items-center justify-center rounded-full"
                       style={{
-                        width: 20,
-                        height: 20,
+                        /* Ölçü mobil `ui/RadioDot` ile aynı: halka 22, nokta 10. */
+                        width: 22,
+                        height: 22,
                         border: `2px solid ${active ? "var(--color-brand)" : "var(--border)"}`,
                       }}
                     >
                       {active ? (
-                        <span className="block rounded-full" style={{ width: 9, height: 9, background: "var(--color-brand)" }} />
+                        <span className="block rounded-full" style={{ width: 10, height: 10, background: "var(--color-brand)" }} />
                       ) : null}
                     </span>
                   </button>

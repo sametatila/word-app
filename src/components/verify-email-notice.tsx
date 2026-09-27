@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AuthNotice, AuthShell } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
-import { InfoIcon } from "@/components/icons";
+import { ChevronRightIcon, InfoIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
 const RESEND_COOLDOWN = 60;
@@ -75,11 +75,16 @@ export function VerifyEmailNotice({
           <span className="mt-0.5 shrink-0 text-[color:var(--color-brand)]">
             <InfoIcon size={16} />
           </span>
-          <div className="muted space-y-1">
+          <div className="muted min-w-0 flex-1">
             <p>{t("verify.tips_title")}</p>
-            <p>· {t("verify.tip_spam")}</p>
-            <p>· {t("verify.tip_contacts")}</p>
-            <p>· {t("verify.tip_wrong_address")}</p>
+            <ul className="mt-1 flex flex-col gap-1">
+              {[t("verify.tip_spam"), t("verify.tip_contacts"), t("verify.tip_wrong_address")].map((tip) => (
+                <li key={tip} className="flex items-start gap-1.5">
+                  <ChevronRightIcon size={14} className="mt-1 shrink-0" />
+                  <span className="min-w-0">{tip}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

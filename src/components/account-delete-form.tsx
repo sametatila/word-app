@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { forgetDeviceStorage } from "@/components/session-keeper";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
+import { Checkbox } from "@/components/checkbox";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { authApi } from "@/lib/auth/api";
 import { useT } from "@/lib/i18n/client";
@@ -170,10 +171,9 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
           <p className="muted text-body">{t("deleteaccount.you_signed_in_with_google_so_no")}</p>
         )}
 
-        <label className="flex items-start gap-2 text-body">
-          <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-1" />
-          <span>{t("deleteaccount.i_understand_my_data_will_be")}</span>
-        </label>
+        <Checkbox tone="danger" checked={agree} onChange={setAgree}>
+          {t("deleteaccount.i_understand_my_data_will_be")}
+        </Checkbox>
 
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 

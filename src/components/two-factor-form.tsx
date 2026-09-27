@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
+import { Checkbox } from "@/components/checkbox";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
@@ -130,18 +131,10 @@ export function TwoFactorForm() {
             className={`${authInputClass} text-center text-h1 tracking-[0.4em]`}
           />
 
-          <label className="flex items-start gap-2 text-body">
-            <input
-              type="checkbox"
-              checked={trust}
-              onChange={(e) => setTrust(e.target.checked)}
-              className="mt-1"
-            />
-            <span>
-              {t("twofa.trust")}
-              <span className="muted block text-caption leading-snug">{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</span>
-            </span>
-          </label>
+          <Checkbox checked={trust} onChange={setTrust}>
+            <span className="text-strong">{t("twofa.trust")}</span>
+            <span className="muted block text-caption leading-snug">{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</span>
+          </Checkbox>
 
           {note ? <AuthNotice tone="success">{note}</AuthNotice> : null}
           {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
