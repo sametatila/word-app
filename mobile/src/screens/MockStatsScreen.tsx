@@ -10,8 +10,8 @@ import { MOCK_PASS_PCT } from "../data/exams";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, PodiumIcon, AlertIcon } from "../ui/icons";
-import { EmptyCard } from "../social/common";
+import { ChevronRightIcon, PodiumIcon, AlertIcon } from "../ui/icons";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { FlowNote } from "../ui/flow";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
@@ -87,12 +87,7 @@ export function MockStatsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{t("mockstats.title")}</Text>
-      </View>
+      <ScreenHeader title={t("mockstats.title")} />
 
       <ScrollView
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
@@ -178,7 +173,7 @@ export function MockStatsScreen() {
             {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
 
             <Card padded style={{ marginBottom: spacing.md }}>
-              <Text variant="micro" color={colors.textMuted}>{t("mockstats.by_skill")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("mockstats.by_skill")}</Text>
               {data.bySkill.map((s) => (
                 <View key={s.skill} style={{ marginTop: spacing.sm }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
@@ -196,7 +191,7 @@ export function MockStatsScreen() {
             </Card>
 
             <Card padded style={{ marginBottom: spacing.md }}>
-              <Text variant="micro" color={colors.textMuted}>{t("mockstats.by_level")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("mockstats.by_level")}</Text>
               {data.byLevel.map((l) => (
                 <View key={l.level} style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
                   <Text variant="body">{l.level}</Text>
@@ -206,7 +201,7 @@ export function MockStatsScreen() {
             </Card>
 
             <Card padded>
-              <Text variant="micro" color={colors.textMuted}>{t("mockstats.recent")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("mockstats.recent")}</Text>
               {data.recent.map((r) => (
                 <View key={r.id} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                   <View style={{ flex: 1 }}>
@@ -235,7 +230,7 @@ function Running({
 }) {
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
-      <Text variant="micro" color={colors.textMuted}>{t("mockstats.running")}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("mockstats.running")}</Text>
       {data.running.map((r) => (
         <PressableScale
           key={r.id}

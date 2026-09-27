@@ -7,14 +7,13 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { PressableScale } from "../ui/PressableScale";
-import { AlertIcon, ArrowBackIcon, CheckIcon } from "../ui/icons";
+import { AlertIcon, CheckIcon } from "../ui/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
-import { useTheme, spacing, radii, type Palette } from "../theme";
+import { useTheme, spacing, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
-import { EmptyCard } from "../social/common";
+import { EmptyCard, ScreenHeader, SectionTitle } from "../social/common";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 /**
@@ -94,12 +93,7 @@ export function CandoScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{t("cando.what_i_can_do")}</Text>
-      </View>
+      <ScreenHeader title={t("cando.what_i_can_do")} />
       {phase === "loading" ? (
         // İçeriğin şekli: seviye özeti kartı + iki grup listesi (spinner değil).
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -171,7 +165,8 @@ export function CandoScreen() {
           Duyuru da eklendi: ekranı kaplayan bir hata metni canlı bölge
           değilse TalkBack kullanan biri hiçbir şey duymuyor.
         */
-        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+        /* Boş dalla aynı yerleşim: kart üstte (sosyal ekranlar gibi), ortada değil. */
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           {/* Kabuk EL YAPIMI DEĞİL: aynı ekranın boş dalı `EmptyCard` çiziyor,
               hata dalı ise kendi başlığını ve düğmesini kuruyordu — iki hâl
               yan yana iki farklı kabukta duruyordu. Web de aynı yerde
@@ -199,7 +194,7 @@ export function CandoScreen() {
           </Text>
 
           {/* seviye özeti */}
-          <Card style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
+          <Card style={{ marginTop: spacing.sm }}>
             {LEVELS.filter((lv) => data?.byLevel?.[lv]?.total).map((lv) => {
               const b = data!.byLevel[lv]; const pct = b.total ? Math.round((b.proven / b.total) * 100) : 0;
               return (
@@ -217,8 +212,8 @@ export function CandoScreen() {
           </Card>
           <CardGrid>
           {LEVELS.filter((lv) => byLevel[lv]?.length).map((lv) => (
-            <View key={lv} style={{ marginBottom: spacing.lg }}>
-              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.xs, marginLeft: spacing.xs }}>{lv}</Text>
+            <View key={lv}>
+              <SectionTitle title={lv} />
               <Card padded>
                 {byLevel[lv].map((it, i) => (
                   <View key={it.cando.id}>

@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
+import { ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
 import { MyAvatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -24,6 +24,7 @@ import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { HeaderButton, ScreenHeader } from "../social/common";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
   return (
@@ -58,15 +59,7 @@ export function ProfileScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* başlık */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2" style={{ flex: 1 }}>{t("profile.profile")}</Text>
-        <PressableScale accessibilityLabel={t("settings.settings")} hitSlop={4} onPress={() => nav.navigate("Settings")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <SettingsIcon color={colors.text} size={22} />
-        </PressableScale>
-      </View>
+      <ScreenHeader title={t("profile.profile")} right={<HeaderButton icon={SettingsIcon} label={t("settings.settings")} onPress={() => nav.navigate("Settings")} />} />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* kimlik kartı */}

@@ -8,8 +8,9 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
-import { EmptyCard } from "../social/common";
+import { ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
+import { EmptyCard, ScreenHeader } from "../social/common";
+import { PrimaryButton } from "../ui/PrimaryButton";
 import { FlowNote } from "../ui/flow";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { mockCopy, whenText } from "../lib/unlock";
@@ -139,19 +140,20 @@ export function MockExamsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2" style={{ flex: 1 }}>{t("mockexams.title")}</Text>
-        <PressableScale
-          onPress={() => nav.navigate("MockStats")}
-          accessibilityLabel={t("mockexams.stats")}
-          style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.surface2 }}
-        >
-          <Text variant="micro" color={colors.textMuted}>{t("mockexams.stats")}</Text>
-        </PressableScale>
-      </View>
+      <ScreenHeader
+        title={t("mockexams.title")}
+        right={
+          /* Web karşılığı `btn btn-ghost h-11` + caption: 44'lük hedef, küçük
+             hap değil (eskisi ~31 dp'ydi, dokunma alt sınırının altında). */
+          <PressableScale
+            onPress={() => nav.navigate("MockStats")}
+            accessibilityLabel={t("mockstats.title")}
+            style={{ height: 44, justifyContent: "center", paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}
+          >
+            <Text variant="caption" color={colors.text}>{t("mockstats.title")}</Text>
+          </PressableScale>
+        }
+      />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
@@ -322,9 +324,7 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{hint}</Text>
       ) : null}
       {locked && showPlans ? (
-        <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: spacing.md, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("unlock.premium_now")}</Text>
-        </PressableScale>
+        <PrimaryButton size="md" label={t("unlock.premium_now")} onPress={onPlans} style={{ marginTop: spacing.md }} />
       ) : null}
     </Card>
   );

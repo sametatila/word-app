@@ -2,12 +2,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
-import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, CheckIcon, TrophyIcon } from "../ui/icons";
+import { CheckIcon, TrophyIcon } from "../ui/icons";
 import { AchievementIcon } from "../ui/achievementIcon";
-import { EmptyCard } from "../social/common";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -90,7 +88,6 @@ export function AchievementsScreen() {
   const { colors } = useTheme();
   const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [board, setBoard] = useState<Board | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
@@ -159,15 +156,10 @@ export function AchievementsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" variant="h2">{t("achievements.achievements")}</Text>
-          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: formatNumber(earned), total: formatNumber(total) })}</Text> : null}
-        </View>
-      </View>
+      <ScreenHeader
+        title={t("achievements.achievements")}
+        subtitle={phase === "ready" ? t("achievements.earned_count", { n: formatNumber(earned), total: formatNumber(total) }) : undefined}
+      />
 
       {phase === "loading" ? (
         // Ortalanmış spinner yerine tahtanın kendi iskeleti: içerik gelince

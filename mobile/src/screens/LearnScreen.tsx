@@ -200,7 +200,7 @@ export function LearnScreen() {
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       {mic || exams ? (
         <>
-          <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
+          <Text accessibilityRole="header" variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
             {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={fillOf("accent")} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
             {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={fillOf("streak")} icon={ExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
@@ -209,7 +209,7 @@ export function LearnScreen() {
       ) : null}
 
       {/* diğer öğrenme yolları */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
+      <Text accessibilityRole="header" variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
       <CardGrid>
         <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
         <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />

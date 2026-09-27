@@ -16,7 +16,8 @@ import { TwoFactor } from "../ui/TwoFactor";
 import { ActiveSessions } from "../ui/ActiveSessions";
 import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
+import { ChevronRightIcon } from "../ui/icons";
+import { ScreenHeader } from "../social/common";
 import { useAuth } from "../lib/AuthContext";
 import { PROFILE_DEFAULTS, PROFILE_LIMITS } from "../lib/profileDefaults";
 import { useMe } from "../lib/useMe";
@@ -307,12 +308,7 @@ export function SettingsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{t("settings.settings")}</Text>
-      </View>
+      <ScreenHeader title={t("settings.settings")} />
 
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Group title={t("settings.group_learning")} colors={colors}>

@@ -109,7 +109,9 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     <View style={{ flex: 1, backgroundColor: embedded ? "transparent" : colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: (embedded ? 0 : insets.top) + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         {!embedded && (
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          /* `ScreenHeader` üst satırı (ünite künyesi) taşımıyor; geri düğmesi
+             onun davranışıyla aynı: yığın boşsa sekmelere dön. */
+          <PressableScale hitSlop={4} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}

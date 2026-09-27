@@ -10,13 +10,13 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "../ui/icons";
+import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "../ui/icons";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthPanel } from "../ui/GrowthPanel";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
-import { EmptyCard } from "../social/common";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft, ds } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
@@ -161,12 +161,7 @@ export function ProgressScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{t("progress.progress")}</Text>
-      </View>
+      <ScreenHeader title={t("progress.progress")} />
 
       {/*
         OKUMA PATLADIYSA İSKELET DEĞİL HATA.
@@ -311,7 +306,7 @@ export function ProgressScreen() {
         */}
         {me?.levels?.length ? (
           <Card padded style={{ marginBottom: spacing.lg }}>
-            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("progress.by_level").toLocaleUpperCase(dateLocale())}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm, letterSpacing: 1 }}>{t("progress.by_level").toLocaleUpperCase(dateLocale())}</Text>
             {me.levels.map((lv) => {
               const seenPct = lv.total ? Math.round((100 * lv.seen) / lv.total) : 0;
               const mastPct = lv.total ? Math.round((100 * lv.mastered) / lv.total) : 0;
@@ -346,7 +341,7 @@ export function ProgressScreen() {
 
         {me ? (
           <Card padded style={{ marginBottom: spacing.lg, gap: spacing.xs }}>
-            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 2 }}>{t("progress.review_queue").toLocaleUpperCase(dateLocale())}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 2, letterSpacing: 1 }}>{t("progress.review_queue").toLocaleUpperCase(dateLocale())}</Text>
             <Text variant="caption" color={colors.text}>{t("progress.due_now", { n: me.dueCount ?? 0 })}</Text>
             <Text variant="caption" color={colors.textMuted}>{t("progress.upcoming", { n: me.upcoming ?? 0 })}</Text>
             {me.leeches ? <Text variant="caption" color={colors.dangerText}>{t("progress.leeches", { n: me.leeches })}</Text> : null}

@@ -8,13 +8,14 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, KeyboardIcon, PuzzleIcon, TagIcon, CardsIcon, SortIcon, TranslateIcon, StackIcon, ArrowRightIcon } from "../ui/icons";
+import { BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, KeyboardIcon, PuzzleIcon, TagIcon, CardsIcon, SortIcon, TranslateIcon, StackIcon, ArrowRightIcon } from "../ui/icons";
 import { Skeleton } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette, fillOf, ds } from "../theme";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
+import { ScreenHeader, SectionTitle } from "../social/common";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
 /*
@@ -54,19 +55,11 @@ export function PracticeScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" variant="h2">{t("practice.practice")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{t("practice.practice_one_game_with_your_own")}</Text>
-        </View>
-      </View>
+      <ScreenHeader title={t("practice.practice")} subtitle={t("practice.practice_one_game_with_your_own")} />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* Karışık taze tur */}
-        <PressableScale onPress={() => nav.navigate("Game", {})} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
+        <PressableScale onPress={() => nav.navigate("Game", {})} style={{ marginTop: spacing.sm }}>
           <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
               <View style={{ width: 46, height: 46, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
@@ -81,7 +74,7 @@ export function PracticeScreen() {
           </View>
         </PressableScale>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.single_game")}</Text>
+        <SectionTitle title={t("practice.single_game")} />
         {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
             sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
         <CardGrid columns={gridColumns} stretch>
