@@ -117,7 +117,7 @@ export function ImmersionQuizPlayer({
           </StateBody>
         </FlowColumn>
       ) : score === null ? (
-        <QuestionList key={round} questions={questions} onAllAnswered={bitir} />
+        <QuestionList key={round} questions={questions} onAllAnswered={bitir} report={{ exerciseId: itemId, surface: "path" }} />
       ) : (
         /*
           SONUÇ ŞABLONU (components/flow): band → üç sayı → düğmeler. Geçemeyen

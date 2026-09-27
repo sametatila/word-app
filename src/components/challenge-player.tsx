@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
@@ -375,6 +376,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 Android'de de vardı (`ChallengeScreen`). */}
             {t("challenge.seconds", { n: formatDecimal(left, lang) })}
           </motion.span>
+          {/* İçerik bildirimi: meydan okuma kelime turlarından kurulu (pratik yüzeyi). */}
+          <ReportFlag variant="tile" surface="practice" target={roundTarget(round)} content={() => snapshot({ challenge: true, round })} />
         </div>
 
         <div className="h-2 w-full overflow-hidden rounded-full surface-2">

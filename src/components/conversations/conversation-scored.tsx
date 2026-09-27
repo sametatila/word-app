@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import Link from "next/link";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
@@ -439,8 +440,18 @@ export function ConversationScored({
         <span className="muted">
           {t("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}
         </span>
-        <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
-          {mm}:{ss}
+        <span className="flex items-center gap-1">
+          <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
+            {mm}:{ss}
+          </span>
+          {/* İçerik bildirimi: sahne ve yazılı açılış (yapay zekâ yanıtları
+              altlarındaki "Bildir" ile ayrı gidiyor). Hedef konuşma + kullanıcı tur sayısı. */}
+          <ReportFlag
+            className="-mr-2"
+            surface="scored"
+            target={{ type: "conversation", id: conversation.id, sub: String(userTurns) }}
+            content={() => snapshot({ scene: conversation.chat.scene, opening: turns[0]?.content })}
+          />
         </span>
       </div>
       <AiNotice variant="character" className="mt-3" />

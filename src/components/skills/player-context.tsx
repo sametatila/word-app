@@ -45,6 +45,15 @@ export function usePlayerFrame(): PlayerFrameValue {
   return useContext(PlayerFrameContext);
 }
 
+/**
+ * İçerik bildiriminin yüzeyi: aynı oynatıcıya Patika'dan da Beceriler'den de
+ * giriliyor ve dönüş adresi hangisinden gelindiğini zaten söylüyor
+ * (`immersion/skill/[id]` `backHref`).
+ */
+export function useReportSurface(): "path" | "skill" {
+  return usePlayerFrame().backHref.startsWith("/skills") ? "skill" : "path";
+}
+
 /** Egzersizin hedef dili — `lang` işareti, sentez ve tanıyıcı dili için. */
 export function useTargetLang(): TargetLang {
   return useContext(PlayerFrameContext).lang;

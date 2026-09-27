@@ -2,7 +2,16 @@
 
 import { useEffect, useRef, useState, useId } from "react";
 import { CheckIcon } from "@/components/icons";
-import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "@/lib/report";
+import { useCourse } from "@/components/app-shell";
+import {
+  reasonsFor,
+  sendReport,
+  REPORT_DETAIL_MAX,
+  type ReportKind,
+  type ReportReason,
+  type ReportSurface,
+  type ReportTarget,
+} from "@/lib/report";
 import { useT, useLang } from "@/lib/i18n/client";
 
 /**
@@ -14,12 +23,21 @@ import { useT, useLang } from "@/lib/i18n/client";
  * GÖNDERDİKTEN SONRA KENDİ KAPANMIYOR, önce teşekkür ediyor. Bildirim bir
  * yaptırım değil bir kayıt; kullanıcının merak ettiği tek şey "gitti mi".
  * Kart hemen kapansaydı cevap yalnızca yokluk olurdu.
+ *
+ * İÇERİK TÜRÜ (`kind="content"`): öğrenme içeriğindeki sorun (kelime, soru,
+ * sınav maddesi). Sebep listesi ayrı (cevap anahtarı, yazım, çeviri, ses, …),
+ * isteğe bağlı bir ayrıntı alanı var ve gövde yapısal hedef + yüzey + bağlam
+ * taşıyor (`docs/plan/content-feedback.md`). Aynı hedef 24 saat içinde ikinci
+ * kez bildirilirse sunucu `duplicate` diyor ve teşekkür yerine
+ * `report.already` görünüyor.
  */
 export function ReportDialog({
   open,
   kind,
   refId,
   content,
+  surface,
+  target,
   onClose,
 }: {
   open: boolean;
@@ -28,10 +46,16 @@ export function ReportDialog({
   refId: string;
   /** Bildirilen metnin kendisi — panoda okunacak olan bu. */
   content: string;
+  /** Yalnız `content` türünde: bildirimin geldiği ekran. */
+  surface?: ReportSurface;
+  /** Yalnız `content` türünde: bildirilen öğenin kalıcı kimliği. */
+  target?: ReportTarget;
   onClose: () => void;
 }) {
   const t = useT();
   const lang = useLang();
+  const course = useCourse();
+  const isContent = kind === "content";
   /* DİYALOĞUN ADI. `<dialog>` açıldığında ekran okuyucu "diyalog" diyor ama
      ADINI söylemiyordu: kutunun ne sorduğu yalnız içeriği okunmaya
      başlayınca anlaşılıyordu. Başlık zaten ekranda; `aria-labelledby` onu
@@ -41,6 +65,8 @@ export function ReportDialog({
   const ref = useRef<HTMLDialogElement>(null);
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [detail, setDetail] = useState("");
+  const [duplicate, setDuplicate] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -51,13 +77,23 @@ export function ReportDialog({
     if (open) {
       setReason(null);
       setState("idle");
+      setDetail("");
+      setDuplicate(false);
     }
   }, [open]);
 
   async function submit() {
     if (!reason || state === "sending") return;
     setState("sending");
-    setState((await sendReport(kind, refId, reason, content)) ? "done" : "error");
+    const res = await sendReport(
+      kind,
+      refId,
+      reason,
+      content,
+      isContent ? { surface, target, detail, context: { course, nativeLang: lang } } : undefined,
+    );
+    setDuplicate(res === "duplicate");
+    setState(res === "error" ? "error" : "done");
   }
 
   return (
@@ -88,15 +124,15 @@ export function ReportDialog({
             <CheckIcon size={26} />
           </span>
           <p className="text-h3">{t("reportsheet.reported")}</p>
-          <p className="muted text-caption">{t("reportsheet.thanks_we_ll_look_into_it")}</p>
+          <p className="muted text-caption">{t(duplicate ? "report.already" : "reportsheet.thanks_we_ll_look_into_it")}</p>
           <button type="button" onClick={onClose} className="btn btn-ghost mt-2 px-5 py-2.5">
             {t("common.close")}
           </button>
         </div>
       ) : (
         <>
-          <h2 id={basligId} className="text-h2">{t("reportsheet.report_this_content")}</h2>
-          <p className="muted mt-1 text-caption">{t("reportsheet.if_ai_reply_felt_inappropriate")}</p>
+          <h2 id={basligId} className="text-h2">{t(isContent ? "reportsheet.content_title" : "reportsheet.report_this_content")}</h2>
+          <p className="muted mt-1 text-caption">{t(isContent ? "reportsheet.content_lead" : "reportsheet.if_ai_reply_felt_inappropriate")}</p>
 
           {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR. `aria-pressed` bir AÇ/KAPA
               düğmesi anlatıyor: ekran okuyucu "düğme, basılı" diyor ve
@@ -133,7 +169,7 @@ export function ReportDialog({
                       <span className="block text-strong" style={active ? { color: "var(--color-brand)" } : undefined}>
                         {r.label}
                       </span>
-                      <span className="muted block text-caption">{r.sub}</span>
+                      {r.sub ? <span className="muted block text-caption">{r.sub}</span> : null}
                     </span>
                     <span
                       aria-hidden
@@ -155,6 +191,25 @@ export function ReportDialog({
             })}
           </ul>
 
+          {/* AYRINTI İSTEĞE BAĞLI ve yalnız içerikte: "cevap anahtarı yanlış"
+              tek başına çoğu zaman yetiyor, ama "hangi şık doğruydu" gibi bir
+              not panelde işi yarıya indiriyor. Düz metin; sınır sunucuyla aynı. */}
+          {isContent ? (
+            <label className="mt-3 block">
+              <span className="muted block text-caption">{t("reportsheet.detail_label")}</span>
+              <textarea
+                value={detail}
+                onChange={(e) => setDetail(e.target.value.slice(0, REPORT_DETAIL_MAX))}
+                maxLength={REPORT_DETAIL_MAX}
+                rows={3}
+                /* Ayrıntı öğrencinin kendi dilinde, cümle: baş harf büyüsün. */
+                autoCapitalize="sentences"
+                placeholder={t("reportsheet.detail_placeholder")}
+                className="option mt-1 w-full px-3.5 py-3 text-body leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
+              />
+            </label>
+          ) : null}
+
           {state === "error" ? (
             <p role="alert" className="mt-2 text-caption" style={{ color: "var(--color-rose)" }}>
               {t("reportsheet.couldn_t_send_try_again")}
@@ -171,7 +226,7 @@ export function ReportDialog({
               disabled={!reason || state === "sending"}
               className="btn btn-primary flex-1 py-3.5 disabled:opacity-60"
             >
-              {state === "sending" ? "…" : t("common.send")}
+              {state === "sending" ? "…" : t(isContent ? "reportsheet.send" : "common.send")}
             </button>
           </div>
         </>

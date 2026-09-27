@@ -1,5 +1,7 @@
 "use client";
 
+import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
+import type { ReportTarget } from "@/lib/report";
 import { apiFetch } from "@/lib/api-fetch";
 import { BOSS_SECONDS } from "@/lib/conversations/boss-const";
 import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
@@ -104,7 +106,23 @@ type Miss = {
   given?: string;
   /** Gerekçe — hüküm maddelerinde konuşmanın kendi açıklaması. */
   why?: string;
+  /** İçerik bildiriminin hedefi — dökümde her maddenin bayrağı bunu kullanıyor. */
+  target?: ReportTarget;
 };
+
+/**
+ * İçerik bildirimi: kâğıdın kimliği (`sub`) — `module:<seviye>:<n>` ya da
+ * `level:<seviye>` (sözleşme: `docs/plan/content-feedback.md`).
+ */
+function paperSub(p: ExamPaper | null): string | undefined {
+  if (!p) return undefined;
+  return p.kind === "module" ? `module:${p.level}:${p.module ?? 0}` : `level:${p.level}`;
+}
+
+/** Sınav maddesinin hedefi. Okuma/dinlemede soru sırası kimliğe ekleniyor (`<madde>:<n>`). */
+function examTarget(p: ExamPaper | null, id: string): ReportTarget {
+  return { type: "exam_item", id, sub: paperSub(p) };
+}
 
 function sectionCount(p: ExamPaper, id: ExamSectionId): number {
   const s = p.sections;
@@ -300,7 +318,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   function onVocabDone(round: Round, results: GameResult[]) {
     for (const r of results) {
       if (r.correct) score.current.vocab.correct++;
-      else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t, lang), answer: wordAnswer(round) });
+      else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t, lang), answer: wordAnswer(round), target: roundTarget(round) });
       vocabAnswers.current.push({ ...r, game: round.game });
     }
     if (idx + 1 < paper!.sections.vocab.length) setIdx(idx + 1);
@@ -314,7 +332,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     if (correct) score.current.grammar.correct++;
     // Kör modda nesnel döküm finish'te review'dan kurulur (kâğıtta cevap yok).
     else if (!BLIND && g.kind === "cell")
-      misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[g.answer], given: g.options[chosen] });
+      misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[g.answer], given: g.options[chosen], target: examTarget(paper, g.id) });
     else if (!BLIND && g.kind === "judge")
       misses.current.push({
         section: "grammar",
@@ -322,6 +340,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         answer: t(g.answer ? "common.correct" : "common.wrong"),
         given: t(chosen === 0 ? "common.correct" : "common.wrong"),
         why: g.why.map((s) => s.text).join(" "),
+        target: examTarget(paper, g.id),
       });
     setPicked(null);
     if (idx + 1 < paper!.sections.grammar.length) setIdx(idx + 1);
@@ -337,7 +356,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     // Sınavda sıra hatası doğru sayılmaz: ölçülen şey tam olarak sıra.
     const correct = m.verdict === "exact" || m.verdict === "spelling";
     if (correct) score.current.produce.correct++;
-    else if (!BLIND) misses.current.push({ section: "produce", prompt: item.prompt, answer: item.de, given: answer });
+    else if (!BLIND) misses.current.push({ section: "produce", prompt: item.prompt, answer: item.de, given: answer, target: examTarget(paper, item.id) });
     setTyped("");
     setChunks([]);
     if (idx + 1 < paper!.sections.produce.length) setIdx(idx + 1);
@@ -350,7 +369,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const q = item.questions[qIdx];
     (responses.current[kind][idx] ??= [])[qIdx] = chosen;
     if (chosen === q.answer) score.current[kind].correct++;
-    else if (!BLIND) misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given: q.options[chosen] });
+    else if (!BLIND) misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given: q.options[chosen], target: examTarget(paper, `${item.id}:${qIdx + 1}`) });
     setPicked(null);
     if (qIdx + 1 < item.questions.length) setQIdx(qIdx + 1);
     else if (idx + 1 < list.length) {
@@ -373,10 +392,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       const chosen = responses.current.grammar[i];
       if (g.kind === "cell" && key.kind === "cell") {
         if (chosen === key.answer) return;
-        misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[key.answer], given: typeof chosen === "number" ? g.options[chosen] : "—" });
+        misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[key.answer], given: typeof chosen === "number" ? g.options[chosen] : "—", target: examTarget(p, g.id) });
       } else if (g.kind === "judge" && key.kind === "judge") {
         if (chosen === (key.answer ? 0 : 1)) return;
-        misses.current.push({ section: "grammar", prompt: g.statement, answer: t(key.answer ? "common.correct" : "common.wrong"), given: t(chosen === 0 ? "common.correct" : "common.wrong"), why: g.why.map((s) => s.text).join(" ") });
+        misses.current.push({ section: "grammar", prompt: g.statement, answer: t(key.answer ? "common.correct" : "common.wrong"), given: t(chosen === 0 ? "common.correct" : "common.wrong"), why: g.why.map((s) => s.text).join(" "), target: examTarget(p, g.id) });
       }
     });
     (["reading", "listening"] as const).forEach((kind) => {
@@ -386,7 +405,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           if (correct === undefined) return;
           const chosen = responses.current[kind][ti]?.[qi];
           if (chosen === correct) return;
-          misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[correct], given: typeof chosen === "number" ? q.options[chosen] : "—" });
+          misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[correct], given: typeof chosen === "number" ? q.options[chosen] : "—", target: examTarget(p, `${item.id}:${qi + 1}`) });
         });
       });
     });
@@ -396,7 +415,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       const given = responses.current.produce[i] ?? "";
       const m = matchSentence(given, de, [], targetLangOf(course));
       if (m.verdict === "exact" || m.verdict === "spelling") return;
-      misses.current.push({ section: "produce", prompt: item.prompt, answer: de, given });
+      misses.current.push({ section: "produce", prompt: item.prompt, answer: de, given, target: examTarget(p, item.id) });
     });
   }
 
@@ -552,6 +571,35 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   }
 
   const doneItems = section === "reading" || section === "listening" ? qIdx : idx;
+  /* İÇERİK BİLDİRİMİ: ekrandaki maddenin hedefi ve anlık görüntüsü. Kelime
+     bölümü kelime hedefi taşıyor (tur ile aynı gruba düşsün); öteki
+     bölümler sınav maddesi + kâğıt kimliği. */
+  const current = (() => {
+    const s = paper!.sections;
+    if (section === "vocab") {
+      const r = s.vocab[idx];
+      return r ? { target: roundTarget(r), data: { section, round: r } } : null;
+    }
+    if (section === "grammar") {
+      const g = s.grammar[idx];
+      return g ? { target: examTarget(paper, g.id), data: { section, item: g, picked } } : null;
+    }
+    if (section === "produce") {
+      const it = s.produce[idx];
+      return it ? { target: examTarget(paper, it.id), data: { section, prompt: it.prompt, answer: it.de, mode: it.mode, typed } } : null;
+    }
+    if (section === "reading" || section === "listening") {
+      const it = s[section][idx];
+      const q = it?.questions[qIdx];
+      return it && q ? { target: examTarget(paper, `${it.id}:${qIdx + 1}`), data: { section, title: it.title, question: q, picked } } : null;
+    }
+    if (section === "speaking") {
+      const it = s.speaking[idx];
+      return it ? { target: examTarget(paper, it.id), data: { section, de: it.de, tr: it.tr, situation: it.situation } } : null;
+    }
+    const w = s.writing[0];
+    return w ? { target: examTarget(paper, w.id), data: { section, task: w.task } } : null;
+  })();
   const header = (
     <div className="mb-3">
       {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar kapana
@@ -584,6 +632,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <span className="shrink-0 tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
         </span>
+        <ReportFlag variant="tile" surface="exam" target={current?.target} content={() => snapshot(current?.data ?? {})} />
       </div>
       <p className="mt-2 text-caption">
         {SECTION_WORD_TARGET[targetLangOf(course)]} {teil}/{list.length} · <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>
@@ -759,7 +808,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       // Teknik arıza iki denemede de sürdüyse madde 0 sayılır ama sınav durmaz.
       if (spk === "failed" && speakingScores.current[idx] === undefined) speakingScores.current[idx] = 0;
       if (!speakingScores.current[idx] || speakingScores.current[idx] < 60)
-        misses.current.push({ section: "speaking", prompt: item.situation ?? t("exam.pronunciation"), answer: item.de });
+        misses.current.push({ section: "speaking", prompt: item.situation ?? t("exam.pronunciation"), answer: item.de, target: examTarget(paper, item.id) });
       setSpk("idle");
       setSpkResult(null);
       setSpkTries(0);
@@ -1298,9 +1347,18 @@ function Result({
             <ul className="space-y-2.5">
               {misses.map((m, i) => (
                 <li key={i} className="border-t pt-2 text-body" style={{ borderColor: "var(--hairline)" }}>
-                  <p className="muted text-caption">
-                    <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
-                  </p>
+                  <div className="flex items-start gap-2">
+                    <p className="muted min-w-0 flex-1 text-caption">
+                      <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
+                    </p>
+                    {/* Dökümde de bildirilebiliyor: cevap anahtarı hatası çoğu zaman burada fark ediliyor. */}
+                    <ReportFlag
+                      className="-mr-2 -mt-2"
+                      surface="exam"
+                      target={m.target}
+                      content={() => snapshot({ section: m.section, prompt: m.prompt, answer: m.answer, given: m.given, review: true })}
+                    />
+                  </div>
                   <p className="mt-0.5">{m.prompt}</p>
                   <p className="mt-1 font-semibold" lang={course} style={{ color: "var(--color-mint)" }}>
                     {m.answer}

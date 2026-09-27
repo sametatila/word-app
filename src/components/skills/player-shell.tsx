@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
@@ -12,7 +13,7 @@ import { RoundExit } from "@/components/round-exit";
 import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
 import { isSkillDone, RUBRIC_PASS_PCT, scoreBand, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
-import { usePlayerFrame } from "./player-context";
+import { usePlayerFrame, useReportSurface } from "./player-context";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatPercent } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
@@ -115,6 +116,7 @@ export function PlayerShell({
 }) {
   const t = useT();
   const frame = usePlayerFrame();
+  const surface = useReportSurface();
   const back = backHref ?? frame.backHref;
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -138,6 +140,15 @@ export function PlayerShell({
           </div>
           <h1 className="truncate text-h3">{exercise.title}</h1>
         </div>
+        {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge);
+            tek tek sorular kendi kartlarında ayrıca bayrak taşıyor (`quiz`). */}
+        <ReportFlag
+          variant="tile"
+          className="ml-auto"
+          surface={surface}
+          target={{ type: "exercise", id: exercise.id }}
+          content={() => snapshot({ title: exercise.title, skill: exercise.skill, level: exercise.level })}
+        />
       </div>
       <ShellExercise.Provider value={exercise}>{children}</ShellExercise.Provider>
     </div>

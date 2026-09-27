@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 import { askAiConsentUpfront, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
@@ -778,7 +779,16 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
   // okunmuyor. Öteki biçimlerde metin tek satır olduğu için etkisi yok.
   return (
     <div className="card p-4">
-      <p className="whitespace-pre-line text-strong leading-relaxed" lang={course}>{item.no}. {item.text}</p>
+      <div className="flex items-start gap-2">
+        <p className="min-w-0 flex-1 whitespace-pre-line text-strong leading-relaxed" lang={course}>{item.no}. {item.text}</p>
+        {/* İçerik bildirimi: görev + madde no. Anlık görüntüde öğrencinin o anki cevabı da var. */}
+        <ReportFlag
+          className="-mr-2 -mt-1.5"
+          surface="mock"
+          target={{ type: "mock_task", id: task.id, sub: String(item.no) }}
+          content={() => snapshot({ item, given: value })}
+        />
+      </div>
       {item.kind === "gap" && item.cue ? (
         <p className="mt-2 text-strong tracking-wide" lang={course} style={{ color: "var(--color-brand)" }}>{item.cue}</p>
       ) : null}
@@ -1305,7 +1315,7 @@ function Result({
                       >
                         {ok ? <CheckIcon className="size-3.5" /> : <XIcon className="size-3.5" />}
                       </span>
-                      <div className="min-w-0">
+                      <div className="min-w-0 flex-1">
                         <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
                         {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                         {it.kind === "gap" && it.cue ? (
@@ -1321,6 +1331,13 @@ function Result({
                         </p>
                         <p className="muted mt-1 text-body leading-relaxed">{it.explain}</p>
                       </div>
+                      {/* Dökümde de bildirilebiliyor: yanlış anahtar çoğu zaman burada fark ediliyor. */}
+                      <ReportFlag
+                        className="-mr-2 -mt-1.5"
+                        surface="mock"
+                        target={{ type: "mock_task", id: task.id, sub: String(it.no) }}
+                        content={() => snapshot({ item: it, given: s?.given, expected: s?.expected ?? expected(it, task), review: true })}
+                      />
                     </div>
                   );
                 })

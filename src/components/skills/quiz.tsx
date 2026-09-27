@@ -1,11 +1,13 @@
 "use client";
 
+import { ReportFlag, snapshot } from "@/components/report-flag";
+import type { ReportSurface } from "@/lib/report";
 import { useId, useState } from "react";
 import { foldCompare, currentTargetLang } from "@/components/games/types";
 import type { TargetLang } from "@/lib/courses";
 import { foldContractions } from "@/lib/contractions";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
-import { useTargetLang } from "./player-context";
+import { useReportSurface, useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
 import { GlossEntry } from "./gloss-entry";
@@ -28,11 +30,19 @@ import { vibrate } from "@/lib/fx";
 export function QuestionList({
   questions,
   onAllAnswered,
+  report,
 }: {
   questions: SkillQuestion[];
   onAllAnswered: (correct: number) => void;
+  /**
+   * İçerik bildirimi: soru kartının bayrağı hedefi buradan kuruyor
+   * (`exercise` + `sub` = soru sırası, 1'den). Verilmezse bayrak yok.
+   * Yüzey verilmezse oynatıcı çerçevesinden (Patika / Beceriler).
+   */
+  report?: { exerciseId: string; surface?: ReportSurface };
 }) {
   const t = useT();
+  const frameSurface = useReportSurface();
   /** Soru başına sonuç: null = cevaplanmadı; true/false = doğru/yanlış. */
   const [results, setResults] = useState<(boolean | null)[]>(() => questions.map(() => null));
 
@@ -55,10 +65,22 @@ export function QuestionList({
         const wasCorrect = results[qi] === true;
         return (
           <section key={qi} className="card p-4">
-            <p className="text-strong leading-relaxed">
-              <span className="muted mr-1.5">{qi + 1}.</span>
-              {q.text}
-            </p>
+            <div className="flex items-start gap-2">
+              <p className="min-w-0 flex-1 text-strong leading-relaxed">
+                <span className="muted mr-1.5">{qi + 1}.</span>
+                {q.text}
+              </p>
+              {report ? (
+                <ReportFlag
+                  className="-mr-2 -mt-1.5"
+                  surface={report.surface ?? frameSurface}
+                  target={{ type: "exercise", id: report.exerciseId, sub: String(qi + 1) }}
+                  content={() =>
+                    snapshot({ kind, text: q.text, options: q.options, answer: q.answer, accept: q.accept, items: q.items, result: results[qi] })
+                  }
+                />
+              ) : null}
+            </div>
             {kind === "order" ? (
               <OrderInput q={q} done={done} onSettle={(ok) => settle(qi, ok)} />
             ) : kind === "gapfill" || kind === "short_answer" || kind === "dictation" ? (

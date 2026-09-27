@@ -17,6 +17,7 @@ import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { reducedMotion } from "@/lib/fx";
+import { ReportFlag, snapshot } from "@/components/report-flag";
 
 export type WordRow = {
   id: number;
@@ -370,10 +371,18 @@ export function WordList({
                   >
                     <div className="flex items-center gap-2">
                       <SpeakButton word text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
-                      <span className="muted">
+                      <span className="muted flex-1">
                         {typLabel(r.typ, r.tr, lang)}
                         {note ? ` · ${note}` : ""}
                       </span>
+                      {/* İçerik bildirimi: açılan kelime kartının sağ ucunda. */}
+                      <ReportFlag
+                        surface="words"
+                        target={{ type: "word", id: String(r.id) }}
+                        content={() =>
+                          snapshot({ de: r.de, artikel: r.artikel, meaning: meaning?.text, sub: meaning?.sub, formen: r.formen, example, exampleGloss: exampleGloss?.text })
+                        }
+                      />
                     </div>
                     {example ? (
                       <>

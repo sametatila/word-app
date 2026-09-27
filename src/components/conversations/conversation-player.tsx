@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { apiFetch, CHAT_TIMEOUT_MS } from "@/lib/api-fetch";
@@ -1248,6 +1249,17 @@ function ConversationPlayerBody({
         <div className="min-w-0 flex-1">
           <Steps phase={phase} />
         </div>
+        {/* İÇERİK BİLDİRİMİ yalnız yazılı adımlarda (ders): sohbet yanıtları
+            yapay zekâ çıktısı ve kendi "Bildir" bağlantılarını taşıyor. Hedef
+            konuşma + adım sırası (1'den). */}
+        {phase === "lecture" ? (
+          <ReportFlag
+            variant="tile"
+            surface="conversation"
+            target={{ type: "conversation", id: conversation.id, sub: String(stepIndex + 1) }}
+            content={() => snapshot({ step: conversation.lecture[stepIndex] })}
+          />
+        ) : null}
       </div>
 
       {phase === "lecture" ? (

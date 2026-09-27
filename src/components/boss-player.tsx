@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
@@ -369,6 +370,8 @@ export function BossPlayer({
               yazıyor ve ikinci bir anahtar aynı metnin ikinci kopyası olurdu. */}
           {t("challenge.seconds", { n: formatDecimal(left, lang) })}
         </motion.span>
+        {/* İçerik bildirimi: patron turları kelime turları; hedef kelime + oyun. */}
+        <ReportFlag variant="tile" surface="exam" target={roundTarget(round)} content={() => snapshot({ boss: true, round })} />
       </div>
       <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div

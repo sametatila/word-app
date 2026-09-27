@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, selectedVoice, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
@@ -307,7 +308,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
   const [session, setSession] = useState<SessionPayload | null>(null);
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("speaking");
-  const [prompt, setPrompt] = useState<{ tr: string; de: string } | null>(null);
+  /* `id` ve `game`: içerik bildirimi bayrağının hedefi (ekrandaki kelime). */
+  const [prompt, setPrompt] = useState<{ tr: string; de: string; id: number; game: string } | null>(null);
   const [verdict, setVerdict] = useState<"correct" | "wrong" | "unheard" | "skip" | null>(null);
   /** Şu an sorulan şey bir kelime değil, "devam edelim mi?" onayı. */
   const [asking, setAsking] = useState(false);
@@ -919,7 +921,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
 
           // Yeni kelime: sorulmuyor, tanıtılıyor. Ekranda da öyle çalışıyor.
           if (round.game === "intro") {
-            setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target });
+            setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target, id: word.id, game: round.game });
             setVerdict(null);
             setPhase("speaking");
             await say([
@@ -945,7 +947,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           // kelime ikinci kez gelmesin.
           askedIds.current.add(word.id);
 
-          setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target });
+          setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target, id: word.id, game: round.game });
           setVerdict(null);
 
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
@@ -1628,6 +1630,12 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           <span className="muted tabular-nums">
             {t("common.n_correct", { correct: tally.correct, total: tally.total })}
           </span>
+          {/* İçerik bildirimi: ekrandaki kelime (yürüyüş sesli; ses sorunu da buradan). */}
+          <ReportFlag
+            surface="walk"
+            target={prompt ? { type: "word", id: String(prompt.id), game: prompt.game } : null}
+            content={() => snapshot({ de: prompt?.de, gloss: prompt?.tr, heard: heardText || undefined, verdict })}
+          />
         </span>
       </div>
 

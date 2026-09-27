@@ -83,6 +83,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
       <QuestionList
         key={round}
         questions={exercise.questions}
+        report={{ exerciseId: exercise.id }}
         onAllAnswered={(c) => {
           setCorrect(c);
           void finish(c);

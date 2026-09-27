@@ -183,7 +183,10 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
                   </button>
                   {details ? (
                     <div className="mt-2">
-                      <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
+                      {/* Yapay zekâ değerlendirmesi bildirilebilir (Play üretken yapay zekâ
+                          politikası): öteki anlık değerlendirmelerle aynı biçim,
+                          "word:<kelime>" (bkz. `lib/report` türler). */}
+                      <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} reportRef={`word:${word.id}`} />
                     </div>
                   ) : null}
                 </div>

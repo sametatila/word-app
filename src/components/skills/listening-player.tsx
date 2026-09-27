@@ -322,6 +322,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       <QuestionList
         key={round}
         questions={exercise.questions}
+        report={{ exerciseId: exercise.id }}
         onAllAnswered={(c) => {
           setCorrect(c);
           stop();
