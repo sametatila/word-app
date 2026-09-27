@@ -24,7 +24,7 @@ export default async function LeaderboardPage() {
       {/* ALT BAŞLIK: hangi haftaya bakıldığı yazıyor. Android başlığın altında
           söylüyor (`LeaderboardScreen`); webde tablo "bu hafta" mı yoksa
           birikmiş toplam mı belli değildi. */}
-      <PageBack fallback="/profile" title={t("lb.weekly")} subtitle={t("leaderboard.this_week")} />
+      <PageBack fallback="/profile" title={t("leaderboard.leaderboard")} subtitle={t("leaderboard.this_week")} />
       <LeaderboardTabs />
     </div>
   );

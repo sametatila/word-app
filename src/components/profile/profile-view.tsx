@@ -19,7 +19,7 @@ import {
   ChevronRightIcon,
   CrownIcon,
   HandshakeIcon,
-  MailIcon,
+  InboxIcon,
   PodiumIcon,
   ShareIcon,
   TrophyIcon,
@@ -173,7 +173,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <MenuRow href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="flame" label={t("profile.achievements")} />
         <MenuRow href="/leaderboard" icon={<PodiumIcon size={20} />} tone="sky" label={t("profile.weekly_leaderboard")} />
         <MenuRow href="/friends" icon={<HandshakeIcon size={20} />} tone="mint" label={t("profile.friends")} />
-        <MenuRow href="/inbox" icon={<MailIcon size={20} />} tone="flame" label={t("profile.inbox")} />
+        <MenuRow href="/inbox" icon={<InboxIcon size={20} />} tone="flame" label={t("profile.inbox")} />
         <InviteRow last />
       </nav>
 
