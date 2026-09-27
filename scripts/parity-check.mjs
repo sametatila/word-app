@@ -13278,8 +13278,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* Ortak bilesen Android'in SAYILARINI tasiyor mu. */
     const re = sil(read("src/components/round-exit.tsx"));
-    const ex = sil(read("mobile/src/screens/ExamScreen.tsx"));
-    const mx = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    /* Ekran ortak üst çubuğu kullanıyorsa karo bileşenin kendisinde (`ui/flow`). */
+    const karoKaynak = (y) => (/<Flow(?:TopBar|Progress)[\s/>]/.test(read(y)) ? "mobile/src/ui/flow.tsx" : y);
+    const ex = sil(read(karoKaynak("mobile/src/screens/ExamScreen.tsx")));
+    const mx = sil(read(karoKaynak("mobile/src/screens/MockExamScreen.tsx")));
     sameList(
       "kapatma karosunun olculeri",
       [
@@ -13772,7 +13774,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* `FlowTopBar` kullanan ekranda cikis karosu ortak bilesende: isaret orada
        aranir. Ham isaretlemeyi kopyalamak yerine bileseni kullanmak dogru yon. */
     const mobilCikis = (yol) => {
-      const kaynak = /<FlowTopBar[\s/>]/.test(read(yol)) ? "mobile/src/ui/flow.tsx" : yol;
+      const kaynak = /<Flow(?:TopBar|Progress)[\s/>]/.test(read(yol)) ? "mobile/src/ui/flow.tsx" : yol;
       return adliCikis(sil(read(kaynak)), "accessibilityLabel") ? "var" : "YOK";
     };
 
@@ -13855,7 +13857,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        cikis karosunu elle cizmeyi birakip ortak ust cubuga gecti; olcu ayni
        olcu, yalnizca isaretin durdugu dosya degisti. Ham isaretlemeyi
        kopyalamak yerine bileseni kullanmak DOGRU yon, kural onu cezalandirmamali. */
-    const cikisKaynak = (y) => (/<FlowTopBar[\s/>]/.test(read(y)) ? "mobile/src/ui/flow.tsx" : y);
+    const cikisKaynak = (y) => (/<Flow(?:TopBar|Progress)[\s/>]/.test(read(y)) ? "mobile/src/ui/flow.tsx" : y);
     const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"].map(cikisKaynak);
     sameList(
       "cikis karosunun olcusu",

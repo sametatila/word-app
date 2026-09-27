@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { t, formatPercent, dateLocale } from "../lib/i18n";
-import { ScrollView, View } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ExamIcon, LockIcon, CalendarIcon, AlertIcon, CheckIcon, SpeakerIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
 import { fetchQuiz, submitQuiz, type Quiz, type QuizBlock, type QuizClientItem, type QuizScore, type QuizStimulus } from "../game/weekly";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
@@ -182,45 +182,33 @@ export function WeeklyScreen() {
     const item = quiz.items[idx];
     const stim = item.ref ? quiz.stimuli.find((s) => s.id === item.ref) : null;
     return (
-      <FlowScreen
-        top={
-          <FlowTopBar
-            onClose={close}
-            title={t(BLOCK_KEY[item.block])}
-            right={<Text variant="caption" color={colors.textMuted}>{`${idx + 1}/${quiz.items.length}`}</Text>}
-          />
-        }
-      >
-        <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: spacing.md }}>
-          <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.primary, width: `${((idx + 1) / quiz.items.length) * 100}%` }} />
+      <FlowScreen top={<FlowProgress onClose={close} value={(idx + 1) / quiz.items.length} count={`${idx + 1}/${quiz.items.length}`} />}>
+        {/* Blok adı oyun turundaki oyun adının yerinde: çubuğun altında, ortada. */}
+        <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", textTransform: "uppercase", letterSpacing: 1 }}>{t(BLOCK_KEY[item.block])}</Text>
+        {stim ? <Stim stim={stim} colors={colors} /> : null}
+
+        <Text variant="h3">{item.stem}</Text>
+
+        <View style={{ gap: spacing.sm }}>
+          {item.options.map((o, i) => (
+            <PressableScale
+              key={i}
+              onPress={() => choose(item, i)}
+              accessibilityRole="button"
+              accessibilityLabel={o}
+              style={{
+                borderRadius: radii.lg,
+                borderWidth: 1,
+                borderColor: colors.border,
+                backgroundColor: colors.surface,
+                paddingHorizontal: spacing.lg,
+                paddingVertical: spacing.md,
+              }}
+            >
+              <Text variant="body">{o}</Text>
+            </PressableScale>
+          ))}
         </View>
-
-        <ScrollView contentContainerStyle={{ gap: spacing.md, paddingBottom: spacing.xl }} showsVerticalScrollIndicator={false}>
-          {stim ? <Stim stim={stim} colors={colors} /> : null}
-
-          <Text variant="h3">{item.stem}</Text>
-
-          <View style={{ gap: spacing.sm }}>
-            {item.options.map((o, i) => (
-              <PressableScale
-                key={i}
-                onPress={() => choose(item, i)}
-                accessibilityRole="button"
-                accessibilityLabel={o}
-                style={{
-                  borderRadius: radii.lg,
-                  borderWidth: 1,
-                  borderColor: colors.border,
-                  backgroundColor: colors.surface,
-                  paddingHorizontal: spacing.lg,
-                  paddingVertical: spacing.md,
-                }}
-              >
-                <Text variant="body">{o}</Text>
-              </PressableScale>
-            ))}
-          </View>
-        </ScrollView>
       </FlowScreen>
     );
   }

@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon, PauseIcon } from "../ui/icons";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
@@ -959,33 +959,32 @@ export function WalkModeScreen() {
   const canPause = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging";
 
   const topBar = (withProgress: boolean) => (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
-      <PressableScale hitSlop={4} onPress={onBackPress} accessibilityLabel={tx("walkmode.exit_walk_mode")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <XIcon color={colors.textMuted} size={22} />
-      </PressableScale>
+    <View style={{ paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
       {withProgress ? (
-        <>
-          <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
-            <View style={{ height: "100%", width: `${Math.round((speakStep / Math.max(1, speakTotal)) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
-          </View>
-          <Text variant="bodyStrong" color={colors.textMuted}>{speakStep}/{speakTotal}</Text>
-          {/* DURAKLAT — çıkışın (X) karşılığı, aynı ölçüde ve aynı çubukta.
-              Yürürken ekrana bakılmadan basılıyor, o yüzden 44 px ve kenarda.
-              Duraklamışken bu düğme çizilmiyor: orada asıl eylem "Devam et" ve
-              o, ekranın altındaki büyük düğme (bkz. phase === "paused"). */}
-          {canPause ? (
-            <PressableScale
-              hitSlop={4}
-              onPress={pauseWalk}
-              accessibilityLabel={tx("walkmode.pause")}
-              style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
-            >
-              <PauseIcon color={colors.textMuted} size={20} />
-            </PressableScale>
-          ) : null}
-        </>
+        <FlowProgress
+          onClose={onBackPress}
+          closeLabel={tx("walkmode.exit_walk_mode")}
+          value={speakStep / Math.max(1, speakTotal)}
+          count={<>
+            <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${speakStep}/${speakTotal}`}</Text>
+            {/* DURAKLAT — çıkışın (X) karşılığı, aynı ölçüde ve aynı çubukta.
+                Yürürken ekrana bakılmadan basılıyor, o yüzden 44 px ve kenarda.
+                Duraklamışken bu düğme çizilmiyor: orada asıl eylem "Devam et" ve
+                o, ekranın altındaki büyük düğme (bkz. phase === "paused"). */}
+            {canPause ? (
+              <PressableScale
+                hitSlop={4}
+                onPress={pauseWalk}
+                accessibilityLabel={tx("walkmode.pause")}
+                style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
+              >
+                <PauseIcon color={colors.textMuted} size={20} />
+              </PressableScale>
+            ) : null}
+          </>}
+        />
       ) : (
-        <View style={{ flex: 1 }} />
+        <FlowTopBar onClose={onBackPress} closeLabel={tx("walkmode.exit_walk_mode")} />
       )}
     </View>
   );

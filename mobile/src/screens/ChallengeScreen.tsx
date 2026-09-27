@@ -6,10 +6,10 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
-import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
+import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { sfx } from "../lib/sfx";
@@ -260,12 +260,15 @@ export function ChallengeScreen() {
   const exit = () => nav.goBack();
   const page = { flex: 1, backgroundColor: colors.bg } as const;
 
+  /* Oyun turuyla aynı iskelet: bekleme de turun kendi düzeninde duruyor.
+     BEKLEME KENDINI DUYURUYOR (web `role="status" aria-busy`): iskeletin
+     kabuğu canlı bölge ve adı "hazırlanıyor". */
   if (phase === "loading") {
-    /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip
-       "hazirlaniyor" yaziyor ama canli bolge degildi: TalkBack kullanan biri
-       dugmeye basip hicbir sey duymuyordu. Webde karsiligi
-       `role="status" aria-busy`. */
-    return <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={[page, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("challenge.preparing")}</Text></View>;
+    return (
+      <View accessible accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("challenge.preparing")} style={{ flex: 1 }}>
+        <RoundSkeleton />
+      </View>
+    );
   }
 
   if (phase === "error") {
@@ -366,23 +369,21 @@ export function ChallengeScreen() {
         </Animated.View>
       ) : null}
 
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={exit} accessibilityLabel={t("common.go_back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <XIcon color={colors.textMuted} size={22} />
-        </PressableScale>
+      {/* Oyun turunun satırı; çubuk kalan SÜREYİ gösteriyor. */}
+      <FlowProgress
+        onClose={exit}
+        value={pct / 100}
+        tint={urgent ? colors.danger : colors.streak}
+        extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
+        count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.streakText} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
+      />
+
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm, marginBottom: spacing.md }}>
         <View style={{ borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: colors.primarySoft }}>
           <Text variant="micro" color={colors.onPrimarySoft} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t(TIER_KEYS[tier] ?? TIER_KEYS[1])}</Text>
         </View>
         <Text variant="bodyStrong">{score} {t("common.points")}</Text>
         <View style={{ flex: 1 }} />
-        <Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.streakText}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>
-      </View>
-
-      <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
-        <View style={{ height: "100%", width: `${pct}%`, backgroundColor: urgent ? colors.danger : colors.streak, borderRadius: 3 }} />
-      </View>
-
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 6, marginBottom: spacing.md }}>
         {combo >= 2 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
             <SparkIcon color={colors.accentText} size={13} />
@@ -391,7 +392,6 @@ export function ChallengeScreen() {
         ) : (
           <Text variant="micro" color={colors.textMuted}>{t("challenge.build_streak")}</Text>
         )}
-        <Text variant="micro" color={colors.textMuted}>{index + 1}/{data!.rounds.length}</Text>
       </View>
 
       <RoundView key={round?.id ?? index} round={round} onDone={onDone} />

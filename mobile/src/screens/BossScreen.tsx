@@ -6,16 +6,16 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
-import { PressableScale } from "../ui/PressableScale";
-import { TrophyIcon, RepeatIcon, XIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
+import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
-import { useTheme, spacing, radii } from "../theme";
+import { useTheme, spacing } from "../theme";
 
 /**
  * MODÜL PATRONU — web `components/boss-player` karşılığı.
@@ -221,12 +221,15 @@ export function BossScreen() {
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
   const exit = () => nav.goBack();
 
+  /* Oyun turuyla aynı iskelet: bekleme de turun kendi düzeninde duruyor.
+     BEKLEME KENDINI DUYURUYOR (web `role="status" aria-busy`): iskeletin
+     kabuğu canlı bölge ve adı "hazırlanıyor". */
   if (phase === "loading") {
-    /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip
-       "hazirlaniyor" yaziyor ama canli bolge degildi: TalkBack kullanan biri
-       dugmeye basip hicbir sey duymuyordu. Webde karsiligi
-       `role="status" aria-busy`. */
-    return <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={[pad, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("exam.preparing")}</Text></View>;
+    return (
+      <View accessible accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("exam.preparing")} style={{ flex: 1 }}>
+        <RoundSkeleton />
+      </View>
+    );
   }
 
   if (phase === "error") {
@@ -317,17 +320,15 @@ export function BossScreen() {
   const pct = Math.min(100, (left / data!.maxSeconds) * 100);
   return (
     <View style={pad}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={exit} accessibilityLabel={t("common.go_back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <XIcon color={colors.textMuted} size={22} />
-        </PressableScale>
-        <Text variant="bodyStrong" color={colors.textMuted}>{`${index + 1} / ${data!.rounds.length}`}</Text>
-        <View style={{ flex: 1 }} />
-        <Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>
-      </View>
-      <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: spacing.lg }}>
-        <View style={{ height: "100%", width: `${pct}%`, backgroundColor: urgent ? colors.danger : colors.primary, borderRadius: 3 }} />
-      </View>
+      {/* Çubuk kalan SÜREYİ gösteriyor (soru sayısı sayacın yanında). */}
+      <FlowProgress
+        onClose={exit}
+        value={pct / 100}
+        tint={urgent ? colors.danger : colors.primary}
+        style={{ marginBottom: spacing.xl }}
+        extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
+        count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
+      />
       <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
     </View>
   );

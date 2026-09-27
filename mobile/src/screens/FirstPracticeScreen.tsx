@@ -3,7 +3,6 @@ import { t, currentLang } from "../lib/i18n";
 import { currentCourseId } from "../lib/courses";
 import { firstWordsFor, type FirstWord } from "../data/firstWords";
 import { View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
@@ -13,7 +12,9 @@ import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { Card } from "../ui/Card";
+import { FlowScreen, FlowActions, FlowProgress } from "../ui/flow";
+import { useTheme, spacing, radii } from "../theme";
 
 /**
  * Hesap açmadan önce kısa bir ISINMA — "Sıfırdan" ve "Seviyeni seç" yolları
@@ -25,7 +26,6 @@ const withArtikel = (w: FirstWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de
 
 export function FirstPracticeScreen() {
   const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "FirstPractice">>();
   const level = params?.level ?? "A1";
@@ -64,16 +64,20 @@ export function FirstPracticeScreen() {
     setIdx((n) => n + 1);
   }
 
+  const label = t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word");
+  /* Çıkış yok (web `first-practice` gibi): ısınma giriş duvarına akan tek yol. */
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <View style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-          <View style={{ height: "100%", width: `${((idx + (seen ? 1 : 0)) / words.length) * 100}%`, borderRadius: 4, backgroundColor: colors.primary }} />
+    <FlowScreen
+      center
+      top={<FlowProgress value={(idx + (seen ? 1 : 0)) / words.length} count={`${idx + 1}/${words.length}`} />}
+      actions={
+        <View style={{ gap: spacing.md }}>
+          <FlowActions primary={{ label, onPress: primary, icon: seen && last ? <CheckIcon color={colors.onPrimary} size={20} /> : undefined }} />
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("firstpractice.save_note")}</Text>
         </View>
-        <Text variant="caption" color={colors.textMuted}>{idx + 1}/{words.length}</Text>
-      </View>
-
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg }}>
+      }
+    >
+      <View style={{ alignItems: "center", gap: spacing.lg }}>
         <Text variant="caption" color={colors.primaryText} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
@@ -82,23 +86,15 @@ export function FirstPracticeScreen() {
         </PressableScale>
 
         {seen ? (
-          <View style={{ alignItems: "center", gap: 6, marginTop: spacing.sm }}>
+          <View style={{ alignItems: "center", gap: 6, marginTop: spacing.sm, alignSelf: "stretch" }}>
             <Text variant="h2" color={colors.text}>{w.tr}</Text>
-            <View style={{ backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border, borderRadius: radii.lg, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, alignItems: "center", marginTop: spacing.xs }}>
-              <Text variant="bodyStrong">{w.ex}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{w.exTr}</Text>
-            </View>
+            <Card padded style={{ alignItems: "center", marginTop: spacing.xs, alignSelf: "stretch" }}>
+              <Text variant="bodyStrong" style={{ textAlign: "center" }}>{w.ex}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{w.exTr}</Text>
+            </Card>
           </View>
         ) : null}
       </View>
-
-      <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.primary, 10)]}>
-        {seen && last && <CheckIcon color={colors.onPrimary} size={20} />}
-        <Text variant="h3" color={colors.onPrimary}>{t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")}</Text>
-      </PressableScale>
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-        {t("firstpractice.save_note")}
-      </Text>
-    </View>
+    </FlowScreen>
   );
 }

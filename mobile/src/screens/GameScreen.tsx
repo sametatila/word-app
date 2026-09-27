@@ -1,7 +1,7 @@
 import { glossOf } from "../game/gloss";
 import React, { useEffect, useRef, useState } from "react";
 import { t, dateLocale, formatPercent } from "../lib/i18n";
-import { View } from "react-native";
+import { Switch, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -9,7 +9,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
 import { CoachLine } from "../ui/CoachLine";
@@ -24,6 +24,7 @@ import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, type Palette, soft } from "../theme";
 import { onTint } from "../theme/colors";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { HeaderButton } from "../social/common";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
 /* AYNI DURUMUN TEK ADI. Bu ekran "play" yazıyordu, web karşılığı ve mobilin
@@ -507,9 +508,7 @@ function GameRound() {
           <FlowTopBar
             onClose={() => nav.goBack()}
             right={total > 0 ? (
-              <PressableScale accessibilityLabel={t("common.share")} hitSlop={4} onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-                <ShareIcon color={colors.text} size={20} />
-              </PressableScale>
+              <HeaderButton icon={ShareIcon} label={t("common.share")} onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} />
             ) : null}
           />
         }
@@ -577,6 +576,17 @@ function GameRound() {
   }
 
   // play
+  /* Bu turdaki kelime yeni mi tekrar mı: webde sayacın yanında bir çip
+     var, mobilde hiç yoktu. Öğrenci "bunu ilk kez mi görüyorum" diye
+     sormuyor artık. */
+  const playRound = rounds[idx];
+  const playWords = playRound?.words?.length ? playRound.words : playRound?.word ? [playRound.word] : [];
+  const chipTone = playWords.every((w) => w.isNew) ? colors.primary : colors.streak;
+  const newChip = playWords.length ? (
+    <View style={{ backgroundColor: soft(chipTone), borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 }}>
+      <Text variant="micro" color={onTint(chipTone, colors)}>{t(playWords.every((w) => w.isNew) ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
+    </View>
+  ) : null;
   return (
     <View style={pad}>
       {/* ÇIKIŞ + İLERLEME AYNI SATIRDA.
@@ -587,29 +597,17 @@ function GameRound() {
           çubuk kıpırdamıyordu. Rozet kalkınca düğme o satırda tek başına
           kaldı ve altındaki ilerleme satırıyla arasında boşuna bir kat vardı.
           Webde de aynı satır (`session-player`). */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.quit_round")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-        <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
-          <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
-        </View>
-        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
-        {/* Bu turdaki kelime yeni mi tekrar mı: webde sayacın yanında bir çip
-            var, mobilde hiç yoktu. Öğrenci "bunu ilk kez mi görüyorum" diye
-            sormuyor artık. */}
-        {(() => {
-          const r = rounds[idx];
-          const ws = r?.words?.length ? r.words : r?.word ? [r.word] : [];
-          if (!ws.length) return null;
-          const isNew = ws.every((w) => w.isNew);
-          const tone = isNew ? colors.primary : colors.streak;
-          return (
-            <View style={{ backgroundColor: soft(tone), borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 }}>
-              <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
-            </View>
-          );
-        })()}
-        <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
-      </View>
+      <FlowProgress
+        onClose={back.ask}
+        closeLabel={t("game.quit_round")}
+        value={idx / rounds.length}
+        count={`${idx + 1}/${rounds.length}`}
+        style={{ marginBottom: spacing.xl }}
+        extra={<>
+          {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
+          {newChip}
+        </>}
+      />
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { game: gameLabel })}</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
       <ConfirmDialog
@@ -692,9 +690,16 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
             <Text variant="bodyStrong">{t("wager.next_stage")}</Text>
             <Text variant="caption" color={colors.textMuted}>{t("wager.rules")}</Text>
           </View>
-          <View style={{ width: 40, height: 22, borderRadius: 11, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
-            <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
-          </View>
+          {/* Ayarlar'daki anahtarın aynısı; satırın kendisi "switch" rolünde,
+              anahtar okuyucuya ikinci kez okunmasın diye gizli. */}
+          <Switch
+            value={bet}
+            onValueChange={(v) => { setBet(v); haptic("tap"); }}
+            trackColor={{ true: colors.streak, false: colors.surface2 }}
+            thumbColor="#fff"
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+          />
         </View>
         {bet ? (
           <View style={{ gap: 6, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>

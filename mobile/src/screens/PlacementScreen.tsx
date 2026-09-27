@@ -8,9 +8,9 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, CheckIcon, QuizIcon, UserPlusIcon, AlertIcon } from "../ui/icons";
+import { SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, CheckIcon, QuizIcon, UserPlusIcon, AlertIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
@@ -474,17 +474,15 @@ export function PlacementScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        {/* Simge tek başına: ekran okuyucu için adı olmalı - öteki ekranların
-            kapatma düğmeleri baştan beri `common.close` taşıyor. */}
-        <PressableScale hitSlop={4} onPress={started && !done ? back.ask : leave} accessibilityLabel={t(started && !done ? "plc.quit_title" : "common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <XIcon color={colors.textMuted} size={22} />
-        </PressableScale>
-        <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
-          <View style={{ height: "100%", width: `${total ? Math.round((Math.min(idx, total) / total) * 100) : 0}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
-        </View>
-        <Text variant="bodyStrong" color={colors.textMuted}>{Math.min(idx + (done ? 0 : 1), total)}/{total}</Text>
-      </View>
+      {/* Simge tek başına: ekran okuyucu için adı olmalı - öteki ekranların
+          kapatma düğmeleri baştan beri `common.close` taşıyor. */}
+      <FlowProgress
+        onClose={started && !done ? back.ask : leave}
+        closeLabel={t(started && !done ? "plc.quit_title" : "common.close")}
+        value={total ? Math.min(idx, total) / total : 0}
+        count={`${Math.min(idx + (done ? 0 : 1), total)}/${total}`}
+        style={{ marginBottom: spacing.xl }}
+      />
 
       {!done ? (
         <>
