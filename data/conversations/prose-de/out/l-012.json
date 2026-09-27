@@ -145,7 +145,7 @@
  { "tr": "bir şeye izin olup olmadığını sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du fragst, ob etwas erlaubt ist" },
  { "tr": "bir şeyi yapmayı sevmediğini söylerken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du sagst, dass du etwas nicht gern machst" },
  { "tr": "bir şeyin kime ait olduğunu söyler: benim / senin", "kind": "pattern.tr", "de": "sagt, wem etwas gehört: meins / deins" },
- { "tr": "bir şeyin nasıl harflendiğini sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du fragst, wie sich etwas schreibt" },
+ { "tr": "bir şeyin nasıl yazıldığını sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du fragst, wie sich etwas schreibt" },
  { "tr": "bir şeyin var olup olmadığını sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du fragst, ob etwas vorhanden ist" },
  { "tr": "bir şeyin yeterli olmadığını söylerken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du sagst, dass etwas nicht reicht" },
  { "tr": "bir yabancıdan kibarca yardım isterken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du einen Fremden höflich um Hilfe bittest" }

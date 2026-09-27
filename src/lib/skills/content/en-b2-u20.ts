@@ -423,7 +423,7 @@ export const enB2U20: SkillExercise[] = [
         kind: "build",
         tr: "Gelecek ay vade tarihine hazırlanıyor olacağız.",
         answer: "Next month we will be preparing for the due date.",
-        hint: "Katlama yok; sürerli biçim.",
+        hint: "Katlama yok; sürekli biçim.",
       },
       {
         kind: "build",

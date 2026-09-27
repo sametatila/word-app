@@ -8,13 +8,14 @@ import { decideAiConsent } from "@/lib/ai-consent-client";
  * Mobilde bu ekran Play'in "belirgin açıklama ve rıza" kuralı yüzünden var:
  * ses ekran kapalıyken de kaydedilip sunucuya ve konuşma tanıma
  * sağlayıcılarına gittiği için sistem izin diyaloğundan AYRI, uygulama içi
- * bir açıklama ve olumlu onay gerekiyor. Web'de böyle bir mağaza kuralı yok
- * ama TOPLANAN VERİ AYNI: web de sesi `/api/stt`e gönderiyor. Kullanıcıya
- * telefonda söylenen şeyin tarayıcıda söylenmemesi için sebep yok.
+ * bir açıklama ve olumlu onay gerekiyor.
  *
- * Onay cihazda tutuluyor (hesaba yazılmıyor, mobilde de öyle) ve Ayarlar'dan
- * geri alınabiliyor — geri alınca ekran yeniden geliyor. Anahtardaki sürüm,
- * açıklama metni anlamlı değişirse artırılır ve onay yeniden sorulur.
+ * WEB ARTIK ONAY İSTEMİYOR (2026-09-27): ekran açıkken ses sunucuya
+ * gönderilmiyor, web yürüyüş modu ve bütün konuşma ekranları yalnız
+ * tarayıcının kendi tanıyıcısını kullanıyor. Açıklama ekranı ve yeni onay
+ * yazımı kalktı. Burada kalan, daha önce bu tarayıcıda verilmiş onayı
+ * Ayarlar'dan GERİ ALMAK (`revokeMicConsent`): sunucudaki `ai_voice` rızası
+ * mobilin ekran kapalı yürüyüşü için hâlâ anlamlı.
  */
 /*
   v2 (2026-09-14): açıklama artık sesin gidebileceği sağlayıcıları ADIYLA

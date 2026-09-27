@@ -23,7 +23,7 @@
  *
  *   ai_text   yazdığın ve söylediğin METİN → dil modeli (değerlendirme, rol
  *             yapma, sınav geri bildirimi)
- *   ai_voice  SES KAYDI → konuşma tanıma (ekran kapalı yürüyüş, telaffuz puanı)
+ *   ai_voice  SES KAYDI → konuşma tanıma (yalnız mobilde ekran kapalı yürüyüş)
  *
  * SÜRÜM. Alıcı listesi değişirse rıza verildiği metin artık doğru değildir;
  * sürüm artar ve eski sürümle verilmiş rıza "outdated" sayılıp yeniden sorulur.
@@ -37,8 +37,10 @@ export type AiConsentPurpose = (typeof AI_CONSENT_PURPOSES)[number];
 /** Yürürlükteki metin sürümü — rıza bu sayı ve üstüyle verilmişse geçerli. */
 export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
   ai_text: 1,
-  /* 2 (2026-09-25): Mistral AI ses alıcılarından çıktı (denetim G5). */
-  ai_voice: 2,
+  /* 2 (2026-09-25): Mistral AI ses alıcılarından çıktı (denetim G5).
+     3 (2026-09-27): Cloudflare Workers AI ve Speechmatics çıktı; ses yalnız
+     ekran kapalı yürüyüşte sunucuya gidiyor. */
+  ai_voice: 3,
 };
 
 /**
@@ -47,7 +49,7 @@ export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
  */
 export const AI_CONSENT_FINGERPRINT: Record<AiConsentPurpose, string> = {
   ai_text: "Cerebras|Groq|Mistral AI",
-  ai_voice: "Cloudflare Workers AI|Deepgram|Groq|Microsoft Azure Speech|Speechmatics",
+  ai_voice: "Deepgram|Groq|Microsoft Azure Speech",
 };
 
 /** Uçların rıza yokken döndürdüğü hata kodu (403 gövdesinde `error`). */

@@ -380,7 +380,7 @@ export const enB1U16: SkillExercise[] = [
         kind: "build",
         tr: "Haber her yerde paylaşılıyor.",
         answer: "The story is being shared everywhere.",
-        hint: "Şu anda sürüyor: edilgenin sürerli biçimi.",
+        hint: "Şu anda sürüyor: edilgenin sürekli biçimi.",
       },
       {
         kind: "build",

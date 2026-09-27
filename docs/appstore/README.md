@@ -70,9 +70,10 @@ manifestle birebir. Form API'de yok; manifest değişirse Connect'te elle günce
 Notlar:
 
 - **Ses.** Apple "toplanıyor" derken cihazdan çıkıp saklanmayı kastediyor. Ses sunucuda
-  saklanmıyor; Speechmatics işi tanımadan sonra siliniyor, Deepgram'da `mip_opt_out` açık,
-  Mistral ses zincirinde yok (`src/lib/stt.ts`; denetim LEG-3, G5). Groq'ta sıfır saklama
-  (Zero Data Retention) 2026-09-27'den beri açık (G5 kapandı). Bu koşullardan biri geri alınırsa satır "Evet"e döner. Tanınan
+  saklanmıyor ve sunucuya yalnız mobilde ekran kapalı yürüyüşte gidiyor (2026-09-27; ekran açıkken
+  cihazın/tarayıcının tanıyıcısı). Zincir Azure → Deepgram → Groq: Azure kısa ses saklamıyor,
+  Deepgram'da `mip_opt_out` açık, Groq'ta sıfır saklama (Zero Data Retention) açık; Mistral,
+  Cloudflare Workers AI ve Speechmatics ses zincirinde yok (`src/lib/stt.ts`; denetim LEG-3, G5, G9). Bu koşullardan biri geri alınırsa satır "Evet"e döner. Tanınan
   **metin** saklanıyor ve User Content olarak beyanlı.
 - **Device ID.** Uzak bildirim jetonu cihaz başına saklanıyor (`device_tokens`). Apple'ın
   örnekleri IDFA/IDFV olsa da Play'in tanımı Firebase kimliğini açıkça bu kutuya koyduğu için iki

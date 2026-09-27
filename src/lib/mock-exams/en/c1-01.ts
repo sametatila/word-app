@@ -970,7 +970,7 @@ The most valuable material has come from the {{14}} visits.`,
               text: "Gap 13",
               accept: ["half"],
               explain:
-                "«I would record half as many and choose them deliberately» — yarısı kadar kayıt, ama seçilerek. Konuşmacının kendi hatasından çıkardığı ders sayıyı değil seçimi önceliklemek.",
+                "«I would record half as many and choose them deliberately» — yarısı kadar kayıt, ama seçilerek. Konuşmacının kendi hatasından çıkardığı ders sayıya değil seçime öncelik vermek.",
             },
             {
               kind: "gap",

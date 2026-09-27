@@ -60,7 +60,7 @@
  { "tr": "Bu üçlü neredeyse her durumda işini görür.", "kind": "say.tr", "de": "Dieses Trio hilft dir fast in jeder Lage." },
  { "tr": "Bunu deneyebilir miyim diye izin isterken:", "kind": "say.tr", "de": "Wenn du fragst, ob du es anprobieren darfst:" },
  { "tr": "Burada walk isim oluyor ve önüne a alıyor.", "kind": "say.tr", "de": "Hier wird walk ein Substantiv und bekommt ein a davor." },
- { "tr": "Cevabın evetse ve iş çoktan bittiyse araya", "kind": "say.tr", "de": "Ist die Antwort ja und die Sache schon erledigt, setzen wir dazwischen" },
+ { "tr": "Cevabın evet ise ve iş çoktan bittiyse araya", "kind": "say.tr", "de": "Ist die Antwort ja und die Sache schon erledigt, setzen wir dazwischen" },
  { "tr": "da denir, ikisi de doğru. Formu doldurmak:", "kind": "say.tr", "de": "sagt man auch, beides ist richtig. Das Formular ausfüllen:" },
  { "tr": "de. Yani 'Patronum beni ekibe tanıştırdı.'", "kind": "say.tr", "de": "sagen. Also „Mein Chef hat mich dem Team vorgestellt.“" },
  { "tr": "Değilim demek istersen araya not koyarsın:", "kind": "say.tr", "de": "Willst du bin nicht sagen, setzt du not dazwischen:" },

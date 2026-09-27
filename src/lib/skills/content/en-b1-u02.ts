@@ -431,7 +431,7 @@ export const enB1U02: SkillExercise[] = [
         kind: "build",
         tr: "Cuma günü müşteriyle görüşüyorum.",
         answer: "I am seeing the client on Friday.",
-        hint: "Ayarlanmış gelecek, şimdiki zamanın sürerli biçimiyle anlatılıyor.",
+        hint: "Ayarlanmış gelecek, şimdiki zamanın sürekli biçimiyle anlatılıyor.",
       },
       {
         kind: "build",

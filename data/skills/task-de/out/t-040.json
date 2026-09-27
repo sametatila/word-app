@@ -25,7 +25,7 @@
   "de": "„which is“ fällt weg; „which keeps“ nicht; „whose“ nicht; im auswählenden Teilsatz geht es gar nicht."
  },
  {
-  "tr": "Durum fiili sürerli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
+  "tr": "Durum fiili sürekli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
   "kind": "form.facts",
   "de": "Ein Zustandsverb nimmt in der Verlaufsform kein „-ing“; im Partizip schon; das Partizip hat keine eigene Zeitstufe; es holt sie aus dem Hauptsatz."
  },
@@ -260,7 +260,7 @@
   "de": "Die Partikel „on“ bleibt beim Verb; nur das Hilfsverb rückt nach vorn."
  },
  {
-  "tr": "Ortaç sürerli zaman değil; durum fiili burada „-ing“ alabiliyor.",
+  "tr": "Ortaç sürekli zaman değil; durum fiili burada „-ing“ alabiliyor.",
   "kind": "build.hint",
   "de": "Das Partizip ist keine Verlaufsform; ein Zustandsverb kann hier „-ing“ nehmen."
  },

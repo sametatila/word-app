@@ -2023,11 +2023,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir kurula resmî bir istek iletiyorsun. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle kur ve dil düzeyini düşürme.",
+   "scene": "Bir kurula resmî bir istek iletiyorsun. İsteği, «olmasaydı» anlamını ve yasağı kalıplaşmış biçimlerle kur ve dil düzeyini düşürme.",
    "partner": "bu biçimleri eskimiş bulan, «kimse böyle konuşmuyor» diyen bir meslektaş",
    "opening": "Nobody talks like that anymore, do they?",
    "openingTr": "Artık kimse böyle konuşmuyor, değil mi?",
-   "goal": "İsteği, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -3613,7 +3613,7 @@
    },
    {
     "de": "It might have been expected to stay precarious.",
-    "tr": "beklenirdi ama olmadıyı söyler"
+    "tr": "«beklenirdi ama olmadı» anlamını söyler"
    },
    {
     "de": "The risk would tend to be incalculable.",
@@ -3680,7 +3680,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız beklenirdi ama olmadıyı söylüyor. Tekrar et:"
+      "text": "İkinci kalıbımız «beklenirdi ama olmadı» anlamını söylüyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -3890,7 +3890,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Beklenirdi ama olmadıyı söylemek için"
+       "text": "«Beklenirdi ama olmadı» anlamını söylemek için"
       },
       {
        "lang": "en",
@@ -4613,7 +4613,7 @@
    },
    {
     "de": "arbitrariness",
-    "tr": "keyfilik"
+    "tr": "keyfîlik"
    },
    {
     "de": "profound",
@@ -4887,7 +4887,7 @@
      },
      {
       "lang": "tr",
-      "text": "Külfet keyfilik gibi görünüyor."
+      "text": "Külfet keyfîlik gibi görünüyor."
      }
     ],
     "expect": {
@@ -8114,7 +8114,7 @@
    },
    {
     "de": "Were it not for the rule of law, cohesion would fail.",
-    "tr": "olmasaydıyı kurumsal metinde kurar"
+    "tr": "«olmasaydı» anlamını kurumsal metinde kurar"
    },
    {
     "de": "They ask that no member abstain.",
@@ -8189,7 +8189,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı kurumsal metinde kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını kurumsal metinde kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -8383,7 +8383,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı kurumsal metinde kurmak için"
+       "text": "«Olmasaydı» anlamını kurumsal metinde kurmak için"
       },
       {
        "lang": "en",
@@ -8556,11 +8556,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir kurula önerge sunuyorsun. Öneriyi, olmasaydıyı ve yasağı kalıplaşmış biçimlerle kur ve metni kişisel bir istekten çıkar.",
+   "scene": "Bir kurula önerge sunuyorsun. Öneriyi, «olmasaydı» anlamını ve yasağı kalıplaşmış biçimlerle kur ve metni kişisel bir istekten çıkar.",
    "partner": "önergeyi senin kişisel talebin sayan, «bunu sen mi istiyorsun» diyen bir kurul üyesi",
    "opening": "Is this what you personally want?",
    "openingTr": "Bu senin kişisel isteğin mi?",
-   "goal": "Öneriyi, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "Öneriyi, «olmasaydı» anlamını ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -10118,7 +10118,7 @@
    },
    {
     "de": "Were it not for the limitation period, the claim would stand.",
-    "tr": "olmasaydıyı hukuk metninde kurar"
+    "tr": "«olmasaydı» anlamını hukuk metninde kurar"
    },
    {
     "de": "They ask that no evidence be ruled inadmissible without a hearing.",
@@ -10185,7 +10185,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı hukuk metninde kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını hukuk metninde kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -10383,7 +10383,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı hukuk metninde kurmak için"
+       "text": "«Olmasaydı» anlamını hukuk metninde kurmak için"
       },
       {
        "lang": "en",
@@ -10556,11 +10556,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir kuruma dilekçe yazıyorsun ve biçimi tutturman gerekiyor. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle kur.",
+   "scene": "Bir kuruma dilekçe yazıyorsun ve biçimi tutturman gerekiyor. İsteği, «olmasaydı» anlamını ve yasağı kalıplaşmış biçimlerle kur.",
    "partner": "dilekçeyi kendi cümleleriyle sadeleştirmek isteyen bir tanıdık",
    "opening": "Can't you just write it plainly?",
    "openingTr": "Bunu sade yazamaz mısın?",
-   "goal": "İsteği, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -17211,7 +17211,7 @@
    },
    {
     "de": "Were it not for metaphysics, epistemology would be simpler.",
-    "tr": "olmasaydıyı kuramsal metinde kurar"
+    "tr": "«olmasaydı» anlamını kuramsal metinde kurar"
    },
    {
     "de": "They ask that no claim be paradoxical.",
@@ -17286,7 +17286,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı kuramsal metinde kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını kuramsal metinde kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -17484,7 +17484,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı kuramsal metinde kurmak için"
+       "text": "«Olmasaydı» anlamını kuramsal metinde kurmak için"
       },
       {
        "lang": "en",
@@ -17649,11 +17649,11 @@
    }
   ],
   "chat": {
-   "scene": "Klasik bir felsefe metnindeki savı kendi cümlelerinle kuruyorsun. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle söyle ve savı kişiden ayır.",
+   "scene": "Klasik bir felsefe metnindeki savı kendi cümlelerinle kuruyorsun. İsteği, «olmasaydı» anlamını ve yasağı kalıplaşmış biçimlerle söyle ve savı kişiden ayır.",
    "partner": "bu biçimleri süs sayan, «neden böyle konuşuyorsun» diyen bir arkadaş",
    "opening": "Why talk like a textbook?",
    "openingTr": "Neden ders kitabı gibi konuşuyorsun?",
-   "goal": "İsteği, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -21075,7 +21075,7 @@
    },
    {
     "de": "Were it not for educational inequality, class society would fade.",
-    "tr": "olmasaydıyı toplumsal savda kurar"
+    "tr": "«olmasaydı» anlamını toplumsal savda kurar"
    },
    {
     "de": "They ask that every participation model give tenants a vote.",
@@ -21182,7 +21182,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı toplumsal savda kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını toplumsal savda kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -21360,7 +21360,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı toplumsal savda kurmak için"
+       "text": "«Olmasaydı» anlamını toplumsal savda kurmak için"
       },
       {
        "lang": "en",
@@ -21489,11 +21489,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her savı kişisel görüş sayan, «bu senin fikrin» diyen biri",
    "opening": "That's just your opinion, right?",
    "openingTr": "Bu senin fikrin, değil mi?",
-   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -25893,7 +25893,7 @@
    },
    {
     "de": "Were it not for consensus building, no code of conduct would hold.",
-    "tr": "olmasaydıyı masada kurar"
+    "tr": "«olmasaydı» anlamını masada kurar"
    },
    {
     "de": "The union representative asks that the firm make every apprenticeship contract permanent.",
@@ -26000,7 +26000,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı masada kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını masada kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -26190,7 +26190,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı masada kurmak için"
+       "text": "«Olmasaydı» anlamını masada kurmak için"
       },
       {
        "lang": "en",
@@ -26310,11 +26310,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve talebi kalıplaşmış biçimlerle kur.",
+   "scene": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her talebi kişiselleştiren, «sen istiyorsun demek ki» diyen bir işveren temsilcisi",
    "opening": "So this is what you personally want?",
    "openingTr": "Yani bu senin kişisel isteğin mi?",
-   "goal": "İsteği, olmasaydıyı ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -30690,7 +30690,7 @@
    },
    {
     "de": "Were it not for the agricultural subsidy, the agricultural transition would stall.",
-    "tr": "olmasaydıyı tarım savında kurar"
+    "tr": "«olmasaydı» anlamını tarım savında kurar"
    },
    {
     "de": "They ask that every supplier meet a sustainability standard.",
@@ -30797,7 +30797,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı tarım savında kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını tarım savında kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -30991,7 +30991,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı tarım savında kurmak için"
+       "text": "«Olmasaydı» anlamını tarım savında kurmak için"
       },
       {
        "lang": "en",
@@ -31112,11 +31112,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her savı çıkar sayan, «senin tarlan için istiyorsun» diyen biri",
    "opening": "You want this for your own field, don't you?",
    "openingTr": "Bunu kendi tarlan için istiyorsun, değil mi?",
-   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -35488,7 +35488,7 @@
    },
    {
     "de": "Were it not for its natural capital, the village would have no commons to share.",
-    "tr": "olmasaydıyı çevre savında kurar"
+    "tr": "«olmasaydı» anlamını çevre savında kurar"
    },
    {
     "de": "They ask that every ecosystem service be counted before the expropriation.",
@@ -35595,7 +35595,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı çevre savında kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını çevre savında kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -35785,7 +35785,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı çevre savında kurmak için"
+       "text": "«Olmasaydı» anlamını çevre savında kurmak için"
       },
       {
        "lang": "en",
@@ -35906,11 +35906,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
    "opening": "That's your personal view, isn't it?",
    "openingTr": "Bu senin kişisel görüşün, değil mi?",
-   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -40294,7 +40294,7 @@
    },
    {
     "de": "Were it not for the lack of transparency, no reporting office would be needed.",
-    "tr": "olmasaydıyı denetim savında kurar"
+    "tr": "«olmasaydı» anlamını denetim savında kurar"
    },
    {
     "de": "They ask that every whistleblower be heard before the misconduct is buried.",
@@ -40401,7 +40401,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı denetim savında kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını denetim savında kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -40591,7 +40591,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı denetim savında kurmak için"
+       "text": "«Olmasaydı» anlamını denetim savında kurmak için"
       },
       {
        "lang": "en",
@@ -40712,11 +40712,11 @@
    }
   ],
   "chat": {
-   "scene": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her bildirimi kişisel husumet sayan, «kime kızgınsın» diyen bir yönetici",
    "opening": "Who are you angry with here?",
    "openingTr": "Burada kime kızgınsın?",
-   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -45112,7 +45112,7 @@
    },
    {
     "de": "Were it not for freedom of information, the public would never see these files.",
-    "tr": "olmasaydıyı hak savında kurar"
+    "tr": "«olmasaydı» anlamını hak savında kurar"
    },
    {
     "de": "They ask that freedom of contract be tested by judicial review.",
@@ -45211,7 +45211,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız olmasaydıyı hak savında kuruyor. Tekrar et:"
+      "text": "İkinci kalıbımız «olmasaydı» anlamını hak savında kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -45405,7 +45405,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Olmasaydıyı hak savında kurmak için"
+       "text": "«Olmasaydı» anlamını hak savında kurmak için"
       },
       {
        "lang": "en",
@@ -45526,11 +45526,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
    "partner": "her hak savını çıkar sayan, «size mi lazım bu» diyen biri",
    "opening": "You need this for yourselves, don't you?",
    "openingTr": "Bu size lazım, değil mi?",
-   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },

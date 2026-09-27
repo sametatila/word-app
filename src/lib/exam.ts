@@ -3,7 +3,7 @@ import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
 import { exams, userConversations, userSkills, words } from "@/lib/db/schema";
-import { chatConfigured, sttProviders } from "@/lib/chat-providers";
+import { chatConfigured } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { conversationsForLevel } from "@/lib/conversations";
 import { MODULE_SIZE } from "@/lib/conversations/modules";
@@ -311,9 +311,10 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   }
 
   // Konuşma: modülün durumunda söylenecek cümleler; seviyede ses çalışması
-  // cümleleri. STT yoksa bölüm kâğıda konmaz — ölçülemeyen bölüm sorulmaz.
+  // cümleleri. Sunucu STT'sine bağlı DEĞİL (2026-09-27): cümleyi cihazın ya da
+  // tarayıcının tanıyıcısı yazıya çeviriyor, puan `/api/pronounce`ta metinden.
   const speaking: SpeakingItem[] = [];
-  if (sttProviders().length) {
+  {
     if (plan) {
       speaking.push(...plan.speaking.slice(0, c.speaking).map((s, i) => ({ id: `s:${plan.code}:${i}`, de: s.de, tr: s.tr, situation: s.situation })));
     } else {

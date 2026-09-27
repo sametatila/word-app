@@ -10,7 +10,7 @@
   "de": "Ela erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist im Haus?"
  },
  {
-  "tr": "Yaşı, fiyatı ve harflemeyi yazarak çalış. Sonunda kurs formunu doldur.",
+  "tr": "Yaşı, fiyatı ve harf harf söylemeyi yazarak çalış. Sonunda kurs formunu doldur.",
   "kind": "intro",
   "de": "Übe schriftlich Alter, Preis und Buchstabieren. Am Ende füllst du das Kursformular aus."
  },
@@ -80,7 +80,7 @@
   "de": "„My birthday is in June.“ — vor dem Monatsnamen steht „in“."
  },
  {
-  "tr": "„A, N, A. It is easy!“ — harfleme harfleri tek tek söylemektir.",
+  "tr": "„A, N, A. It is easy!“ — burada ad harf harf söyleniyor.",
   "kind": "explain",
   "de": "„A, N, A. It is easy!“ — buchstabieren heißt, die Buchstaben einzeln zu nennen."
  },
@@ -318,11 +318,6 @@
   "tr": "öğrenmek",
   "kind": "gloss.tr",
   "de": "lernen"
- },
- {
-  "tr": "harflemek",
-  "kind": "gloss.tr",
-  "de": "buchstabieren"
  },
  {
   "tr": "bu benim …",

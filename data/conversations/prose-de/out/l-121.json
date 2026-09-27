@@ -220,7 +220,7 @@
   "de": "Du erzählst einem Freund von der Kühle in einer Sitzung und willst niemanden offen beschuldigen. Kritisiere in drei Sätzen mit Auslassung und frag, was die Zuhörerin ergänzt hat."
  },
  {
-  "tr": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du widersprichst der Einschränkung einer Freiheit und willst das nicht wie die Forderung deiner eigenen Gruppe aussehen lassen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
  },
@@ -315,7 +315,7 @@
   "de": "sagt dasselbe Mittel in zwei Registern"
  },
  {
-  "tr": "olmasaydıyı hak savında kurar",
+  "tr": "«olmasaydı» anlamını hak savında kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht in der Rechtsthese"
  },
@@ -720,7 +720,7 @@
   "de": "Um Verzerrung und Gemeinplatz zu trennen –"
  },
  {
-  "tr": "Olmasaydıyı hak savında kurmak için",
+  "tr": "«Olmasaydı» anlamını hak savında kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht in der Rechtsthese zu bauen –"
  },
@@ -1480,7 +1480,7 @@
   "de": "Noch eins: Ein Stilmittel ist eine Wahl, ein Versehen ein Fehler."
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı hak savında kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını hak savında kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Rechtsthese. Sprich nach:"
  },

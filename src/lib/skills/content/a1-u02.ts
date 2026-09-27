@@ -172,7 +172,7 @@ export const a1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Berger"],
-        explain: "Kadın B-E-R-G-E-R diye harfliyor: Berger.",
+        explain: "Kadın B-E-R-G-E-R diye harf harf söylüyor: Berger.",
       },
       {
         text: "Wie viele Buchstaben hat der Nachname?",

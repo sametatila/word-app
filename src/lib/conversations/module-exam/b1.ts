@@ -861,7 +861,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Kundin", de: "Guten Tag. Meine EC-Karte ist weg. Ich möchte wissen, ob ich sie sperren lassen muss.", tr: "İyi günler. Kartım kayboldu. Bloke ettirmem gerekiyor mu, öğrenmek istiyorum." },
         { speaker: "Berater", de: "Ja, unbedingt. Wurde damit schon etwas abgehoben?", tr: "Evet, mutlaka. Onunla para çekilmiş mi?" },
         { speaker: "Kundin", de: "Ich glaube nicht. Gestern wurde nur die Miete überwiesen, das war ich selbst.", tr: "Sanmıyorum. Dün sadece kira havale edildi, onu ben yaptım." },
-        { speaker: "Berater", de: "Gut. Die neue Karte kommt in fünf Tagen. Bargeld können Sie bis dahin am Schalter holen.", tr: "İyi. Yeni kart beş günde gelir. O zamana kadar nakiti gişeden alabilirsiniz." },
+        { speaker: "Berater", de: "Gut. Die neue Karte kommt in fünf Tagen. Bargeld können Sie bis dahin am Schalter holen.", tr: "İyi. Yeni kart beş günde gelir. O zamana kadar nakdi gişeden alabilirsiniz." },
         { speaker: "Kundin", de: "Kostet die neue Karte etwas?", tr: "Yeni kart ücretli mi?" },
         { speaker: "Berater", de: "Die erste ist kostenlos, die zweite im Jahr kostet zehn Euro.", tr: "İlki ücretsiz, yıl içinde ikincisi on euro." },
         { speaker: "Kundin", de: "Und die Zinsen auf dem Sparkonto — sind die höher als letztes Jahr?", tr: "Peki tasarruf hesabındaki faiz — geçen yıldan yüksek mi?" },

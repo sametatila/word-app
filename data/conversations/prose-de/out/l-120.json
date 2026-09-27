@@ -230,7 +230,7 @@
   "de": "Du fasst ein Strategiepapier mündlich zusammen, und die Zuhörerin überträgt die Maßstäbe auf ihren eigenen Markt. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
  },
  {
-  "tr": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du willst in deiner Firma eine Unregelmäßigkeit melden und die Forderung nicht in deinem Namen, sondern im Namen eines Maßstabs sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
  },
@@ -320,7 +320,7 @@
   "de": "sagt dieselbe Zahl in zwei Registern"
  },
  {
-  "tr": "olmasaydıyı denetim savında kurar",
+  "tr": "«olmasaydı» anlamını denetim savında kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht in der Aufsichtsthese"
  },
@@ -735,7 +735,7 @@
   "de": "Um das Zugeständnis voranzustellen und den Preis zu nennen –"
  },
  {
-  "tr": "Olmasaydıyı denetim savında kurmak için",
+  "tr": "«Olmasaydı» anlamını denetim savında kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht in der Aufsichtsthese zu bauen –"
  },
@@ -1500,7 +1500,7 @@
   "de": "Jetzt bist du dran: In der Pressemitteilung ein Rückgang, im Modell Stagnation."
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı denetim savında kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını denetim savında kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Aufsichtsthese. Sprich nach:"
  },

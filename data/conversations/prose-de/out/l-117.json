@@ -210,7 +210,7 @@
   "de": "Du bist in einer Debatte über Einstellungen und willst Menschen nicht wie einen Vorrat beschreiben. Benenne den Mangel, die Wartenden und die Ausbildung mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve talebi kalıplaşmış biçimlerle kur.",
+  "tr": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du bist in einer Tarifverhandlung und willst deine Forderung nicht als persönlichen Wunsch sagen. Bilde die Forderung, das Wäre-nicht und das Verlangen in festen Formen."
  },
@@ -255,7 +255,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die die Ordnung, die verborgene Befugnis und uns voranstellen."
  },
  {
-  "tr": "İsteği, olmasaydıyı ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+  "tr": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du die Forderung, das Wäre-nicht und das Verlangen in drei festen Formen gebaut hast."
  },
@@ -335,7 +335,7 @@
   "de": "trennt Ankündigung und Zählung"
  },
  {
-  "tr": "olmasaydıyı masada kurar",
+  "tr": "«olmasaydı» anlamını masada kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht am Tisch"
  },
@@ -775,7 +775,7 @@
   "de": "Um zwei Benennungen zu trennen –"
  },
  {
-  "tr": "Olmasaydıyı masada kurmak için",
+  "tr": "«Olmasaydı» anlamını masada kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht am Tisch zu bauen –"
  },
@@ -1470,7 +1470,7 @@
   "de": "Unsere zweite Wendung trennt Ankündigung und Zählung. Sprich nach:"
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı masada kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını masada kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht am Tisch. Sprich nach:"
  },

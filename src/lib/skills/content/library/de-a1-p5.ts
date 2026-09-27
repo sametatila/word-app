@@ -25,7 +25,7 @@ export const deA1P5: SkillExercise[] = [
       { de: "die Wäsche", tr: "çamaşır", en: "laundry" },
       { de: "das Waschmittel", tr: "deterjan", en: "detergent" },
       { de: "das Fach", tr: "göz", en: "compartment" },
-      { de: "die Münze", tr: "madeni para", en: "coin" },
+      { de: "die Münze", tr: "madenî para", en: "coin" },
       { de: "der Trockner", tr: "kurutma makinesi", en: "dryer" },
     ],
     minutes: 4,
@@ -59,7 +59,7 @@ export const deA1P5: SkillExercise[] = [
         text: "Man kann mit Karte bezahlen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Der Automat nimmt nur Münzen.“ — yalnız madeni para.",
+        explain: "„Der Automat nimmt nur Münzen.“ — yalnız madenî para.",
       },
       {
         kind: "gapfill",

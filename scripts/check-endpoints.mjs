@@ -125,7 +125,6 @@ const WEB_ONLY_METHOD = {
   "DELETE /api/push/subscribe": "TARAYICI push aboneligi; mobil FCM (/api/push/device)",
   "PUT /api/push/subscribe": "TARAYICI push aboneligi",
   "POST /api/push/subscribe": "TARAYICI push aboneligi",
-  "POST /api/stt": "mobil ayni ucu NATIVE cagiriyor (Kotlin uploadStt) - JS kaynaginda gorunmez",
   "POST /api/session": "tur ORTASI ilerleme damgasi; mobil ilerlemeyi cevaplarla birlikte /api/answers'a yaziyor",
   "POST /api/pronounce": "telaffuz puani - karar bekliyor (web-parity 11.139)",
   "GET /api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor",
@@ -186,9 +185,14 @@ const MOBIL_ONLY = {
   "/api/content/pointer": "icerik gostergesi; web `lib/content/read` `pointer`i sunucuda cagiriyor",
   "/api/content/manifest": "paket deltasi; webin cihaz onbellegi yok, icerigi dogrudan okuyor",
   "/api/content/i": "icerik govdesi; web `lib/content/read` `readItem` ile dogrudan okuyor",
+  /* 2026-09-27 (Samet): ekran acikken ses sunucuya gitmiyor. Web bu uca
+     gelmiyor (tarayicinin tanıyıcısı); uc yalniz mobilde ekran kapali yuruyus. */
+  "/api/stt": "sunucu ses tanimasi YALNIZ mobilde ekran kapali yuruyus (`mode=walk`); web tarayicinin tanıyıcısını kullaniyor, ekran acikken ses gondermiyor",
 };
 
 const MOBIL_ONLY_METHOD = {
+  "POST /api/stt": "ekran kapali yuruyusun sesi (native uploadStt); web ekran acikken ses gondermiyor",
+  "GET /api/stt": "cep yolunun saglayici bilgisi; web'de cepte yuruyus yok",
   "POST /api/account/apple-code": "native Apple kod takasi",
   "DELETE /api/account/guest": "misafir verisini silme (yalniz mobil misafir modu)",
   "POST /api/account/guest/claim": "misafiri hesaba birlestirme (yalniz mobil misafir modu)",

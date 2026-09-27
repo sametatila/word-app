@@ -76,7 +76,7 @@
  { "tr": "Şimdi ilanı bir daha dinle. Bu sefer beş kelimeyi de yakalayacaksın.", "kind": "say.tr", "de": "Jetzt hör die Anzeige noch einmal. Diesmal fängst du alle fünf Wörter." },
  { "tr": "Şimdi mutfağa geçiyoruz. Arkadaşına yemeği birlikte pişirmeyi anlat.", "kind": "say.tr", "de": "Jetzt in die Küche. Erzähl deiner Freundin, wie ihr zusammen kocht." },
  { "tr": "Şimdi sen kur. \"Çok isterdim ama gelemem\" cümlesini İngilizce söyle.", "kind": "say.tr", "de": "Jetzt bildest du. Sag „Ich würde gern, aber ich kann nicht“ auf Englisch." },
- { "tr": "Şimdi sen sor: 'Adını nasıl harfliyorsun?' İngilizcede nasıl dersin?", "kind": "say.tr", "de": "Jetzt fragst du: „Wie buchstabierst du deinen Namen?“ Wie heißt das?" },
+ { "tr": "Şimdi sen sor: 'Adını nasıl yazıyorsun?' İngilizcede nasıl dersin?", "kind": "say.tr", "de": "Jetzt fragst du: „Wie buchstabierst du deinen Namen?“ Wie heißt das?" },
  { "tr": "Şimdi sıra sende. Sana Türkçesini söylüyorum, sen İngilizcesini kur.", "kind": "say.tr", "de": "Jetzt bist du dran. Ich sage es dir auf Deutsch, du bildest es auf Englisch." },
  { "tr": "Türkçesi boş, serbest demek. İkisini birleştirince boş zaman oluyor:", "kind": "say.tr", "de": "Heißt frei, unbelegt. Zusammen ergibt es die Freizeit:" },
  { "tr": "Yani 'Bir kız kardeşim var.' Tek kişiden söz ederken önüne küçük bir", "kind": "say.tr", "de": "Also „Ich habe eine Schwester.“ Bei einer Person setzen wir ein kleines" },

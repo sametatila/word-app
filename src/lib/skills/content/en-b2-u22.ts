@@ -480,7 +480,7 @@ export const enB2U22: SkillExercise[] = [
         kind: "build",
         tr: "Gelecek yıl bir güvenlik duygusu inşa ediyor olacağız.",
         answer: "Next year we will be building a sense of security.",
-        hint: "İşin içinde olmak: sürerli biçim.",
+        hint: "İşin içinde olmak: sürekli biçim.",
       },
     ],
   },

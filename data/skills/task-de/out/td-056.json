@@ -42,7 +42,7 @@
  { "tr": "„strong“ üç sessizle başlar: s-t-r. „student“ ise s-t-y. Zor olan kümeyi yavaş başlayıp hızlandır.", "kind": "drill.hint", "de": "„strong“ beginnt mit s-t-r, „student“ mit s-t-j. Fang bei der schweren Gruppe langsam an und werde schneller." },
  { "tr": "İki ekte de tek bir ş sesi vardır.", "kind": "drill.fix", "de": "Beide Endungen haben nur ein einziges sch." },
  { "tr": "Ek soru her zaman kısaltmayla kurulur.", "kind": "drill.fix", "de": "Das Frageanhängsel wird immer mit der Kurzform gebaut." },
- { "tr": "Kelimeyi harfleyerek okuma; gh sessizdir.", "kind": "drill.fix", "de": "Lies das Wort nicht Buchstabe für Buchstabe; gh ist stumm." },
+ { "tr": "Kelimeyi harf harf okuma; gh sessizdir.", "kind": "drill.fix", "de": "Lies das Wort nicht Buchstabe für Buchstabe; gh ist stumm." },
  { "tr": "Ton düz kalırsa teklif emir gibi duyulur.", "kind": "drill.fix", "de": "Bleibt der Ton flach, klingt das Angebot wie ein Befehl." },
  { "tr": "Bu biçimde soru işaretini yalnız ses taşır.", "kind": "drill.fix", "de": "In dieser Form trägt allein die Stimme das Fragezeichen." },
  { "tr": "İki l aynı; fark yalnız ünlünün uzunluğunda.", "kind": "drill.fix", "de": "Beide l sind gleich; der Unterschied liegt nur in der Vokallänge." },

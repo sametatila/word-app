@@ -9,7 +9,7 @@ Sahibin şartları: (1) Azure'a giden ses doğruluktan ödün vermeden en aza in
 |---|---|---|
 | Web, ekran açık | tarayıcının kendi tanıyıcısı (Web Speech); vazgeçme yok, boş dinleme "duyamadım" | `components/walk-player.tsx`, `use-listen.ts` |
 | Web, "Cebe koy" | aynı tanıyıcı: ekran karartılır ama açık kalır (`darken`: siyah katman + tam ekran + ekran kilidi) | `walk-player.tsx` |
-| Web, tanıyıcı yok ya da oturumda öldü | kayıt + `/api/stt` (`default` zincir, Azure yok) | `pocket-mic.ts` `recordAnswerClip` + `transcribe` |
+| Web, tanıyıcı yok ya da oturumda öldü | mod açılmıyor / duruyor, sebebi söyleniyor; sunucuya ses yedeği YOK (2026-09-27) | `walk-player.tsx` |
 | Web, ekran gerçekten kapandı | tur durur, sebebi sesle söylenir (kilitli ekranda mikrofon alınamıyor) | `walk-player.tsx` |
 | Mobil, ekran açık | cihazın native tanıyıcısı (ücretsiz) | `mobile/src/lib/stt.ts` `listenOnce` |
 | Mobil, cep / ekran kapalı | native 16 kHz mono WAV kayıt → `/api/stt` `mode=walk`, POST native tarafta | `mobile/src/lib/stt.ts` |
@@ -19,15 +19,13 @@ kaldırıldı: cihaz testinde (HyperOS) sistem ekran kapanınca mikrofonu sustur
 
 ## Sunucu zinciri (`lib/chat-providers.ts` `sttProviders`)
 
-| Kip | Sıra |
-|---|---|
-| `default` (ekranlı yollar: söyleyiş drilli, telaffuz, sınav) | Groq → Cloudflare → Speechmatics → Deepgram |
-| `walk` (yalnız mobil cep yolu) | Azure → Deepgram → Groq → Cloudflare → Speechmatics |
+Tek zincir: **Azure → Deepgram → Groq**, yalnız mobil cep / ekran kapalı yolu. Ekran açıkken ses
+hiçbir yüzeyde sunucuya gitmiyor (Samet, 2026-09-27); `/api/stt` `mode=walk` taşımayan isteği 400
+ile reddediyor.
 
-- Azure yalnız `walk`ta listeye girer; `STT_ORDER` onu ekranlı yollara sokamaz.
+- Cloudflare Workers AI, Speechmatics ve Mistral ses zincirinden kalıcı olarak çıktı.
 - Azure aylık tavanı `AZURE_STT_MONTHLY_SECONDS` (boş = 16.200 sn = 4,5 sa; F0 kotası 5 sa).
-- `/api/stt`: deneme sınavı kâğıdı sunulmayan her istek premium kapısından geçer; `mode` yalnız sırayı seçer, yetkiyi değil.
-- Mistral ses zincirinde yok (sağlayıcı girdiyi 30 gün saklıyor).
+- `/api/stt`: her istek premium kapısından geçer (deneme sınavı yolu kalktı; web sınav konuşması tarayıcı tanıyıcısıyla).
 
 ## Neden bu sıra
 - Whisper tabanlılar kısa, başı kesik ceplik klipte **uyduruyor** ("der Großvater" → "Wolfsfatter");

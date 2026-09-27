@@ -21,7 +21,7 @@
  { "tr": "Aracın altına baktım. Frenlerin yenilenmesi gerekiyor, bu artık ertelenemez.", "kind": "turn", "en": "I have been under the car. The brakes need to be replaced, that can no longer be put off." },
  { "tr": "Burada temkinli olurdum. Bir yandan pratik, öte yandan biri çalışıyor demek.", "kind": "turn", "en": "I would be careful there. On the one hand it is convenient, on the other hand it means someone is working." },
  { "tr": "Hem şehirler hem köyler bir şey yapmalı. Ne beklemek ne yakınmak fayda eder.", "kind": "turn", "en": "Both the cities and the villages would have to do something. Neither waiting nor complaining helps." },
- { "tr": "İyi. Yeni kart beş günde gelir. O zamana kadar nakiti gişeden alabilirsiniz.", "kind": "turn", "en": "Good. The new card comes in five days. Until then you can get cash at the counter." },
+ { "tr": "İyi. Yeni kart beş günde gelir. O zamana kadar nakdi gişeden alabilirsiniz.", "kind": "turn", "en": "Good. The new card comes in five days. Until then you can get cash at the counter." },
  { "tr": "Kendi hikâyeni anlat: nereden geldin, ne zaman, başta ne zordu, şimdi nasıl.", "kind": "writing.prompt", "en": "Tell your own story: where you came from, when, what was hard at first, how it is now." },
  { "tr": "Kesinlikle. Rahatsız edici sorular sorarak etki ediyor — hoşa giderek değil.", "kind": "turn", "en": "Exactly. It works by asking uncomfortable questions — not by pleasing." },
  { "tr": "Bizim tarafımızdan bu kadar. Şimdi sıra sizde — başka neyi bilmek istersiniz?", "kind": "turn", "en": "That is it from our side. Now it is your turn — what else would you like to know?" },

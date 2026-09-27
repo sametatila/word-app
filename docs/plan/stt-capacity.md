@@ -1,5 +1,7 @@
 # STT kota ölçümü — Groq · Cloudflare · Gladia (WP-20)
 
+> **Tarihsel (2026-09-27):** ses artık yalnız mobilde ekran kapalı yürüyüşte sunucuya gidiyor ve zincir Azure → Deepgram → Groq; Cloudflare ve Speechmatics çıktı. Güncel durum `pronunciation-providers.md` ve `walk-stt.md`.
+
 Ölçüm: 2026-08-26 · üretim verisi, son 30 gün · `npm run report:stt` ile yenilenir.
 
 ## Gözlenen kullanım (son 30 gün)

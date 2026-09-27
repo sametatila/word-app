@@ -31,7 +31,7 @@ Console'daki kimlik ve iletişim `LEGAL_ENTITY`deki hizmet sağlayıcınınkidir
 | Kişisel bilgi › E-posta adresi | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, güvenlik (doğrulama, parola sıfırlama) |
 | Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
-| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram) | Evet (aşağıya bak) | İsteğe bağlı (ekran kapalı yürüyüş; uygulama içi açık rıza) | Uygulama işlevi (konuşma tanıma) |
+| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Deepgram, Groq) | Evet (aşağıya bak) | İsteğe bağlı (ekran kapalı yürüyüş; uygulama içi açık rıza) | Uygulama işlevi (konuşma tanıma) |
 | Mesajlar › Diğer uygulama içi mesajlar (yazma görevleri, sohbet, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı (uygulama içi açık rıza) | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar) | Uygulama işlevi, analitik, kişiselleştirme |
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, bildirimler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi, kişiselleştirme, güvenlik (moderasyon) |
@@ -46,12 +46,13 @@ Console'daki kimlik ve iletişim `LEGAL_ENTITY`deki hizmet sağlayıcınınkidir
 
 ## Notlar
 
-- **Ses "geçici" koşullu.** Lernomi sunucusu sesi saklamıyor; Speechmatics işi transkriptten
-  sonra siliniyor, Deepgram isteği `mip_opt_out=true` taşıyor (denetim LEG-3); Azure kısa ses ve
-  Cloudflare Workers AI belgelerine göre saklamıyor; Mistral ses almıyor. Groq'ta Zero Data
-  Retention açık (Global + Inference APIs, 2026-09-27; denetim G5): girdi ve çıktı kaydedilmiyor.
-  Zincir: önce Azure, o düşer ya da aylık tavanı dolarsa Deepgram, Groq, Cloudflare, Speechmatics
-  (`src/lib/chat-providers.ts` `sttProviders`). Koşullardan biri geri alınırsa "geçici" kalkar.
+- **Ses "geçici" koşullu.** Ses sunucuya yalnız Android'de ekran kapalı yürüyüşte gidiyor; ekran
+  açıkken cihazın kendi tanıyıcısı çalışıyor (2026-09-27, denetim G9). Lernomi sunucusu sesi
+  saklamıyor. Zincir: önce Azure (kısa ses, belgelerine göre saklamıyor), o düşer ya da aylık
+  tavanı dolarsa Deepgram (`mip_opt_out=true`, denetim LEG-3), sonra Groq (Zero Data Retention,
+  Global + Inference APIs, 2026-09-27; denetim G5) — `src/lib/chat-providers.ts` `sttProviders`.
+  Mistral, Cloudflare Workers AI ve Speechmatics ses almıyor. Koşullardan biri geri alınırsa
+  "geçici" kalkar.
 - **Paylaşım izinle.** Metin dil modellerine, ses konuşma tanıma sağlayıcılarına ancak
   sağlayıcıları adıyla sayan ekranda izin verildikten sonra gidiyor; karar sunucuda
   (`user_consents`). Bu yüzden bu türler "isteğe bağlı".

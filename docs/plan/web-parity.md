@@ -38,7 +38,7 @@ görünmesi bu tek eşleşmedeki kontrastın önüne geçti.
 | Konu | Durum (2026-09-26 kodda doğrulandı) | Karar |
 |---|---|---|
 | §11.7 Beceri kütüphanesi | Web her tür için ayrı oynatıcı (`src/components/skills/*-player.tsx`); mobil tek ekran `ItemScreen` + `game/skillQuiz.tsx`, `game/skillLibrary.tsx`. Kapanış kartı eşitlendi (XP, seri, çevrimdışı notu, tekrar notu). Eksik: web kapanış kartındaki "Sıradaki egzersiz" bağlantısı mobilde yok. | ürün kararı |
-| §11.139 Konuşma puanı | Seviye sınavının konuşma bölümünde web klibi `/api/pronounce`a gönderip söyleyişi puanlıyor (ağ yoksa madde 0); mobil cihaz tanıyıcısının metnini `spokenMatches` ile eşliyor. Mobil sonuç ekranı ne ölçtüğünü yazıyor. Kayıt: `scripts/check-endpoints.mjs` `WEB_ONLY_METHOD` / `WEB_ONLY`. | Samet |
+| §11.139 Konuşma puanı | Seviye sınavının konuşma bölümünde web tarayıcı tanıyıcısının metnini `/api/pronounce`a gönderip söyleyişi puanlıyor (ses gitmiyor; ağ yoksa madde 0); mobil cihaz tanıyıcısının metnini `spokenMatches` ile eşliyor. Mobil sonuç ekranı ne ölçtüğünü yazıyor. Kayıt: `scripts/check-endpoints.mjs` `WEB_ONLY_METHOD` / `WEB_ONLY`. | Samet |
 | §11.458 Hatırlatma ayarı | Mobil `loadPrefs` yerel kararı her açılışta `syncPrefs` ile sunucuya yazıyor; web yalnız sunucuya yazıyor. Webde değiştirilen saat mobil açılınca geri alınır. Doğru çözüm "son değişen kazanır" ve değişiklik zamanı için yeni kolon ister. | Samet |
 
 §11.16 (maskot `think`/`wow` klipleri) kapandı: maskot iki platformda da yalnız Öğren

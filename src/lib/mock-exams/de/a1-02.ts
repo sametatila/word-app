@@ -320,7 +320,7 @@ funktionieren hier nicht.`,
               text: "Sie können mit einem Zehn-Euro-Schein bezahlen.",
               answer: false,
               explain:
-                "Otomat yalnız madeni para (`Münzen`) alıyor; kâğıt para (`Scheine`) ve kart çalışmıyor. 10 euro bir banknottur.",
+                "Otomat yalnız madenî para (`Münzen`) alıyor; kâğıt para (`Scheine`) ve kart çalışmıyor. 10 euro bir banknottur.",
             },
           ],
         },

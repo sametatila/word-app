@@ -186,7 +186,7 @@ export const deB1B15: Conversation[] = [
       partner: "hazır cümlelerle konuşan ama zorlayınca bilgi veren bir çağrı merkezi görevlisi",
       opening: "Danke für Ihren Anruf. Um welche Adresse geht es denn?",
       openingTr: "Aradığınız için teşekkürler. Hangi adres için arıyorsunuz?",
-      goal: "Arızanın sebebi, tahmini süresi ve ücret iadesi konusu öğrenilmiş olur.",
+      goal: "Arızanın sebebi, tahminî süresi ve ücret iadesi konusu öğrenilmiş olur.",
       minTurns: 9,
     },
   },

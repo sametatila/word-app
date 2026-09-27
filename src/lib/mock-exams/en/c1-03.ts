@@ -516,7 +516,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
 
 {{34}}`,
               gloss: [
-                { de: "an audit office", tr: "sayıştay", en: "der Rechnungshof" },
+                { de: "an audit office", tr: "Sayıştay", en: "der Rechnungshof" },
                 { de: "a defect", tr: "kusur, arıza", en: "der Mangel" },
                 { de: "negotiable", tr: "pazarlığa açık", en: "verhandelbar" },
               ],

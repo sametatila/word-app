@@ -377,5 +377,6 @@
  {"head": "surprising", "tr": "şaşırtıcı", "de": "überraschend"},
  {"head": "a code", "tr": "şifre", "de": "der Code"},
  {"head": "pretty", "tr": "şirin", "de": "hübsch"},
- {"head": "You shouldn't …", "tr": "… memelisin", "de": "du solltest nicht …"}
+ {"head": "You shouldn't …", "tr": "… memelisin", "de": "du solltest nicht …"},
+ {"head": "continuous", "tr": "sürekli", "de": "Verlaufsform"}
 ]

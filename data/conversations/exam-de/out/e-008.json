@@ -127,7 +127,7 @@
  { "tr": "Bir adlandırma tartışması üzerine ölçülü bir yorum yaz.", "kind": "writing.prompt", "de": "Schreib einen abgewogenen Kommentar zu einer Benennungsdebatte." },
  { "tr": "Bir arkadaşına hafta sonunu anlatan kısa bir mesaj yaz.", "kind": "writing.prompt", "de": "Schreib einer Freundin eine kurze Nachricht über dein Wochenende." },
  { "tr": "Bir kursa başvuran ve düzeyini anlatan bir e-posta yaz.", "kind": "writing.prompt", "de": "Schreib eine E-Mail, in der du dich für einen Kurs bewirbst und dein Niveau nennst." },
- { "tr": "Bir mentörlük görüşmesinde bütün yol değerlendiriliyor.", "kind": "listening.situation", "de": "In einem Mentoringgespräch wird der ganze Weg bewertet." },
+ { "tr": "Bir mentorluk görüşmesinde bütün yol değerlendiriliyor.", "kind": "listening.situation", "de": "In einem Mentoringgespräch wird der ganze Weg bewertet." },
  { "tr": "Bir müşteri yanlış gelen siparişi telefonla bildiriyor.", "kind": "listening.situation", "de": "Eine Kundin meldet telefonisch eine falsche Lieferung." },
  { "tr": "Bir ürünü beğendiğini ama pahalı bulduğunu söylüyorsun.", "kind": "speaking.situation", "de": "Du sagst, dass dir etwas gefällt, du es aber zu teuer findest." },
  { "tr": "Bu adil. Yeni kuralı anlatmak için müşteriye yazacağım.", "kind": "turn", "de": "Das ist fair. Ich schreibe der Kundschaft, um die neue Regel zu erklären." },

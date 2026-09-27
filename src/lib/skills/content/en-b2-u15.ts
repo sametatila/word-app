@@ -316,7 +316,7 @@ export const enB2U15: SkillExercise[] = [
     gloss: [
       { de: "sentence", tr: "cümle" },
       { de: "either", tr: "ikisinden biri" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "a forecast", tr: "öngörü" },
       { de: "a forecaster", tr: "öngören kişi" },
       { de: "quoted back", tr: "geri alıntılanan" },

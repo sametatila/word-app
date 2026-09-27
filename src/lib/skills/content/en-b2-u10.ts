@@ -197,7 +197,7 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Katalogun sırası: doğru sıraya koy.",
+        text: "Kataloğun sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -318,7 +318,7 @@ export const enB2U10: SkillExercise[] = [
     gloss: [
       { de: "verb", tr: "fiil" },
       { de: "sentence", tr: "cümle" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "passive", tr: "edilgen" },
       { de: "a schedule", tr: "takvim" },
       { de: "a state", tr: "durum" },

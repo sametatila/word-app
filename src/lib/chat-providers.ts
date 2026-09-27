@@ -74,9 +74,9 @@ type ProviderConfig = {
   /**
    * Konuşmayı yazıya çeviren uç ve modeli.
    *
-   * Üçün ikisinde var (Mistral, Groq). OpenAI uyumlu biçim aynı: çok parçalı
-   * gövde (`file` + `model`), `{baseUrl}/audio/transcriptions` adresi.
-   * Cerebras'ta bu uç olmadığı için alan boş kalıyor ve zincir onu atlıyor.
+   * Yalnız Groq'ta dolu: ses zincirindeki tek OpenAI biçimli sağlayıcı
+   * (`{baseUrl}/audio/transcriptions`). Mistral'ın ses modeli 2026-09-27'de
+   * katalogdan da çıktı (ses zincirinden kalıcı çıkış, Samet).
    */
   sttModel?: string;
   sttEnvModel?: string;
@@ -91,8 +91,6 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     envModel: "MISTRAL_MODEL",
     defaultModel: "mistral-medium-latest",
     freeTier: "50 istek/dk · 1B token/ay",
-    sttModel: "voxtral-mini-latest",
-    sttEnvModel: "MISTRAL_STT_MODEL",
   },
   groq: {
     // Ölçüm: en hızlısı (~191ms ilk parça) ama 12K token/dk — bir sohbet turu
@@ -547,111 +545,52 @@ export function chatConfigured(): boolean {
  */
 export type SttProvider = {
   name: string;
-  dialect: "openai" | "deepgram" | "cloudflare" | "speechmatics" | "azure";
+  dialect: "openai" | "deepgram" | "azure";
   baseUrl: string;
   key: string;
   model: string;
 };
 
 /**
- * Zincirin hangi iş için kurulduğu.
+ * Konuşmayı yazıya çeviren sağlayıcılar, sırayla — YALNIZ ekran kapalı yürüyüş.
  *
- *   default — söyleyiş drilleri, telaffuz puanı, sınav: ekran açık, Groq önde.
- *   walk    — yürürken modunun EKRAN KAPALI yolu: Azure önde.
+ * SUNUCUYA SES YALNIZ EKRAN KAPALIYKEN GELİYOR (Samet, 2026-09-27). Ekran
+ * açıkken her yüzey cihazın ya da tarayıcının kendi tanıyıcısını kullanıyor:
+ * mobilde native tanıyıcı, web'de Web Speech API; tanıyıcısı olmayan tarayıcıda
+ * özellik açılmıyor, sunucuya ses yedeği yok. Eskiden web'in telaffuz puanı,
+ * deneme sınavı konuşması ve tanıyıcısız tarayıcıdaki yürüyüş sesi buraya
+ * geliyordu ("default" kip, Groq önde); o kip kaldırıldı.
  *
- * Azure yalnız `walk`ta listeye giriyor ve bu bir sıralama tercihi değil,
- * kota kuralı: F0 katmanı ayda 5 saat veriyor ve ekran açıkken tarayıcının
- * kendi tanıyıcısı bedava. Azure'u ekranlı yollara açmak, cepte çalışan tek
- * dürüst tanıyıcının kotasını ekranda harcamak olurdu (sahibin şartı).
+ * Sıra sabit: Azure → Deepgram → Groq.
+ *   1. Azure kısa ses (F0, ayda 5 saat): mobil modülün 16 kHz mono WAV'ını
+ *      doğrudan alıyor; öncelikli sağlayıcı. Aylık tavanı dolarsa o ay atlanıyor
+ *      (bkz. lib/stt `azureBudgetOk`).
+ *   2. Deepgram: başı kesik seste uydurmuyor, boş dönüyor (ölçüldü) — güvenli yedek.
+ *   3. Groq Whisper: son yedek; Zero Data Retention açık (2026-09-27).
+ * Cloudflare Workers AI, Speechmatics ve Mistral ses zincirinden KALICI olarak
+ * çıktı (2026-09-27, Samet; Mistral zaten 2026-09-25'te, denetim G5). Geri
+ * eklemek alıcılar tablosunu (lib/legal PROCESSORS), ses rızası sürümünü
+ * (ai-consent-shared) ve iki mağaza beyanını birlikte değiştirmek demek.
+ *
+ * STT_ORDER="deepgram,azure" gibi bir liste bu üçünün sırasını ezer ve
+ * listede olmayanı dışarıda bırakır (bir hattı geçici olarak denemek ya da
+ * kaldırmak için); listede olmayan bir sağlayıcıyı ekleyemez.
  */
-export type SttMode = "default" | "walk";
-
-/**
- * Konuşmayı yazıya çevirebilen sağlayıcılar, sırayla.
- *
- * Sohbet zinciriyle aynı mantık ama ayrı bir liste: her sağlayıcının bu ucu
- * yok ve olanların sırası da farklı olmalı. Groq önde, çünkü ücretsiz katmanı
- * bu iş için ölçüsüz geniş (günde 2.000 istek · 28.800 saniye ses) ve gecikme
- * burada her şeyden önemli — kullanıcı cevabını söyledikten sonra beklediği
- * her saniye yürüyüşün ritmini bozuyor.
- *
- * `walk` kipinde sıra değişiyor (bkz. `SttMode`).
- */
-export function sttProviders(mode: SttMode = "default"): SttProvider[] {
+export function sttProviders(): SttProvider[] {
   const out: SttProvider[] = [];
-  /*
-    Sıra kota ölçümünden (docs/plan/stt-capacity.md, 2026-08):
-      1. Groq — ücretsiz 28 800 sn/gün, hızlı, kelime zaman damgası verir;
-         darboğazı dakikada 20 istek → 429'da hemen sonraki hat.
-      2. Cloudflare Workers AI — 10 000 neuron/gün (~214 dk), dakika sınırı
-         yok: tepe dakikanın ikinci hattı. REST ile, Worker gerekmez.
-      3. Speechmatics — 8 saat/ay, kelime güveni ve zamanı.
-      4. Deepgram — tek seferlik kredi; boş dönmesi "uydurmasından" iyi
-         (önceki ölçüm), o yüzden hâlâ zincirde.
-      5. Mistral Voxtral — son çare.
-    Eski "Deepgram önce" kararı kredisi bitince anlamsızlaşıyor; Groq'un
-    uydurma sorunu klibin BAŞI kesilince çıkıyordu ve o, kayıt tarafında
-    çözüldü (pocket-mic halka tampon + WAV).
-  */
-  const groq = process.env[CATALOG.groq.envKey];
-  if (groq && CATALOG.groq.sttModel) {
-    out.push({ name: "groq", dialect: "openai", baseUrl: CATALOG.groq.baseUrl, key: groq, model: (CATALOG.groq.sttEnvModel && process.env[CATALOG.groq.sttEnvModel]) || CATALOG.groq.sttModel });
-  }
-  const cfAccount = process.env.CLOUDFLARE_ACCOUNT_ID;
-  const cfToken = process.env.CLOUDFLARE_AI_TOKEN;
-  if (cfAccount && cfToken) {
-    out.push({
-      name: "cloudflare",
-      dialect: "cloudflare",
-      baseUrl: `https://api.cloudflare.com/client/v4/accounts/${cfAccount}`,
-      key: cfToken,
-      model: process.env.CLOUDFLARE_STT_MODEL || "@cf/openai/whisper-large-v3-turbo",
-    });
-  }
-  const smKey = process.env.SPEECHMATICS_API_KEY;
-  if (smKey) {
-    out.push({ name: "speechmatics", dialect: "speechmatics", baseUrl: process.env.SPEECHMATICS_URL || "https://asr.api.speechmatics.com", key: smKey, model: "enhanced" });
+  const azKey = process.env.AZURE_SPEECH_KEY;
+  const azRegion = process.env.AZURE_SPEECH_REGION;
+  if (azKey && azRegion) {
+    out.push({ name: "azure", dialect: "azure", baseUrl: `https://${azRegion}.stt.speech.microsoft.com`, key: azKey, model: "short-audio" });
   }
   const dgKey = process.env.DEEPGRAM_API_KEY;
   if (dgKey) {
     out.push({ name: "deepgram", dialect: "deepgram", baseUrl: "https://api.deepgram.com/v1/listen", key: dgKey, model: process.env.DEEPGRAM_STT_MODEL || "nova-3" });
   }
-  /*
-    MİSTRAL SES ZİNCİRİNDE YOK (2026-09-25, denetim G5). Mistral API girdiyi
-    kötüye kullanım izlemesi için 30 gün saklıyor; sıfır saklama yalnız Scale
-    planında. Oysa ses beyanlarımız (App Store "Audio: hayır", Play "geçici")
-    sağlayıcıda kalıcı ses olmamasına dayanıyor. Son yedekti; çıkması zinciri
-    düşürmüyor. Katalogdaki `sttModel` ve `MISTRAL_STT_MODEL` bilerek duruyor:
-    geri eklenecekse önce sıfır saklama, sonra alıcılar tablosu ve ses rızası
-    sürümü (lib/legal PROCESSORS, ai-consent-shared).
-  */
-  if (mode === "walk") {
-    /*
-      Ekran-kapalı/cep yolu (mobil native): modül 16 kHz mono WAV yolluyor
-      (AudioRecord → WAV). Azure'un kısa-ses REST ucu WAV'ı KABUL EDİYOR — eski
-      "webm almıyor, o yüzden zincirde yok" gerekçesi web'in webm yoluna aitti,
-      native WAV yoluna değil. Bu yüzden Azure burada listeye EKLENİR (yalnız
-      walk; ekranlı yollara girmez) ve deneme olarak ÖNE alınır.
-
-      Sıra: Azure (deneme) → Deepgram (başı-kesik seste uydurmaz, boş döner —
-      ölçüldü, güvenli yedek) → Whisper tabanlılar (Groq/Cloudflare;
-      uydurma eğilimi: "der Großvater" → "Wolfsfatter"). STT_ORDER ile ezilebilir.
-    */
-    const azKey = process.env.AZURE_SPEECH_KEY;
-    const azRegion = process.env.AZURE_SPEECH_REGION;
-    if (azKey && azRegion) {
-      out.push({ name: "azure", dialect: "azure", baseUrl: `https://${azRegion}.stt.speech.microsoft.com`, key: azKey, model: "short-audio" });
-    }
-    const rank = (p: SttProvider) => (p.name === "azure" ? 0 : p.name === "deepgram" ? 1 : p.name === "groq" ? 2 : p.name === "cloudflare" ? 3 : 4);
-    out.sort((a, b) => rank(a) - rank(b));
+  const groq = process.env[CATALOG.groq.envKey];
+  if (groq && CATALOG.groq.sttModel) {
+    out.push({ name: "groq", dialect: "openai", baseUrl: CATALOG.groq.baseUrl, key: groq, model: (CATALOG.groq.sttEnvModel && process.env[CATALOG.groq.sttEnvModel]) || CATALOG.groq.sttModel });
   }
-  /*
-    STT_ORDER="cloudflare,groq" gibi bir liste sırayı ezer ve listede olmayanı
-    dışarıda bırakır — bir sağlayıcıyı tek başına denemek ya da kotası dolan
-    hattı geçici olarak sondan kaldırmak için (CHAT_PROVIDER'ın STT karşılığı).
-    Azure listeye yalnız `walk` kipinde girdiği için STT_ORDER onu ekranlı
-    yollara sokamaz.
-  */
   const order = (process.env.STT_ORDER ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
   if (order.length) {
     const picked = order.map((n) => out.find((p) => p.name === n)).filter((p): p is SttProvider => Boolean(p));

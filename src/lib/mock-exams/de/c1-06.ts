@@ -344,7 +344,7 @@ Ob die Klinik heute besser vorbereitet ist, lässt sich schwer sagen. Zeller for
               ],
               answer: 0,
               explain:
-                "2021'den beri iki tutanakta \"zu prüfen\" olarak duran kartlama üç hafta içinde yapılmış.",
+                "2021'den beri iki tutanakta \"zu prüfen\" olarak duran haritalama üç hafta içinde yapılmış.",
             },
             {
               kind: "mcq",

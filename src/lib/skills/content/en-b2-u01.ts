@@ -320,7 +320,7 @@ export const enB2U01: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "stand", tr: "durmak" },
       { de: "activity", tr: "etkinlik" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "mixing", tr: "karıştırmak" },
       { de: "sounding", tr: "kulağa gelmek" },
       { de: "control", tr: "denetlemek" },

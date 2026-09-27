@@ -33,7 +33,7 @@
  { "tr": "kibarca değişim isterken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du höflich um Umtausch bittest" },
  { "tr": "saate çeyrek kala derken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du Viertel vor sagst" },
  { "tr": "siparişin ne zaman geleceğini sorar", "kind": "pattern.tr", "de": "fragt, wann die Bestellung kommt" },
- { "tr": "adını söyleyip harflerken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du deinen Namen nennst und buchstabierst" },
+ { "tr": "adını söyleyip harf harf tekrarlarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du deinen Namen nennst und buchstabierst" },
  { "tr": "bir şeyi nazikçe isterken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du freundlich um etwas bittest" },
  { "tr": "bir şeyin yerini sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du fragst, wo etwas ist" },
  { "tr": "bir yerin yolunu sorarken kullanılır", "kind": "pattern.tr", "de": "wird verwendet, wenn du nach dem Weg zu einem Ort fragst" },

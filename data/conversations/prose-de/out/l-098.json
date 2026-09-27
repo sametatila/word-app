@@ -350,7 +350,7 @@
   "de": "wählt das einzelne Stück des Einwands"
  },
  {
-  "tr": "asıl kabul edilemezi başa alır",
+  "tr": "asıl kabul edilemez olanı başa alır",
   "kind": "pattern.tr",
   "de": "holt das eigentlich Inakzeptable nach vorn"
  },
@@ -430,7 +430,7 @@
   "de": "Um den ganzen Einwand an den Anfang zu bringen –"
  },
  {
-  "tr": "Asıl kabul edilemezi başa almak için",
+  "tr": "Asıl kabul edilemez olanı başa almak için",
   "kind": "hint.tr",
   "de": "Um das eigentlich Inakzeptable nach vorn zu holen –"
  },
@@ -465,7 +465,7 @@
   "de": "Haftung"
  },
  {
-  "tr": "bir reddir,",
+  "tr": "bir rettir,",
   "kind": "say.tr",
   "de": "ist eine Zurückweisung,"
  },

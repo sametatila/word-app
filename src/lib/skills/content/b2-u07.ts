@@ -125,7 +125,7 @@ export const b2U07: SkillExercise[] = [
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "innere", tr: "iç", en: "internal" },
       { de: "außen", tr: "dıştan", en: "on the outside" },
-      { de: "historisch", tr: "tarihi", en: "historical" },
+      { de: "historisch", tr: "tarihî", en: "historical" },
       { de: "innen", tr: "içte", en: "on the inside" },
       { de: "erteilen", tr: "vermek", en: "to grant" },
       { de: "der Anbau", tr: "ek bina", en: "extension" },

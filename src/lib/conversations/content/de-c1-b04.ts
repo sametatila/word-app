@@ -15,7 +15,7 @@ import { de, tr, type Conversation, type LectureStep, type Segment } from "../ty
  * eder ve yine de yanlış konuşur.
  *
  * 039 bilerek Türkçe konuşana ayrıldı: kelimesi kelimesine çevrilen deyimin
- * neden çökdüğü ve doğru karşılığın nasıl aranacağı. 040 ise dozu öğretiyor —
+ * neden çöktüğü ve doğru karşılığın nasıl aranacağı. 040 ise dozu öğretiyor —
  * bir konuşmaya sıkıştırılan on deyim, hiç deyim kullanmamaktan daha kötü.
  *
  * Adım dengesi: her derste 5 kelime tekrarı + 4 üretim + 1 doğru/yanlış.
@@ -376,7 +376,7 @@ export const deC1B04: Conversation[] = [
       { de: "auf Heller und Pfennig", tr: "tam tamına" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün para. Bu deyimlerden biri iki eski madeni paranın adını taşıyor ama hâlâ günlük dilde. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün para. Bu deyimlerden biri iki eski madenî paranın adını taşıyor ama hâlâ günlük dilde. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir tanesi özellikle işine yarayacak: parasının kıt olduğunu söylemenin kibar yolu. Türkçede 'sıkışığım' deriz; Almancanın kendi kalıbı var. Önce kelimeler.")] },
       word("İlk", { de: "Geld zum Fenster hinauswerfen", tr: "parayı çöpe atmak" }),
       word("İkinci", { de: "tief in die Tasche greifen", tr: "cebinden çok para çıkarmak" }),
@@ -482,7 +482,7 @@ export const deC1B04: Conversation[] = [
       { de: "Dafür gibt es eine Entsprechung.", tr: "karşılığı vardır" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün modülün en faydalı konusu: deyimi Türkçeden Almancaya taşımanın neden çökdüğü. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün modülün en faydalı konusu: deyimi Türkçeden Almancaya taşımanın neden çöktüğü. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Kural şu: deyim kelimeden değil RESİMDEN oluşur ve resimler dilden dile değişir. Doğru yöntem karşılığı ARAMAK, çevirmek değil. Önce kelimeler.")] },
       word("İlk", { de: "die Falle", tr: "tuzak" }),
       word("İkinci", { de: "sinngemäß", tr: "anlamca" }),

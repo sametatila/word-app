@@ -45,7 +45,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Bunu bana kızım öğretti.",
         hint: "„daughter“ = DA-dır, „taught“ = TAT. Aynı uzun, açık a, aynı susan gh; „daughter“da t yumuşar ve sonda r söylenir.",
         confusions: [
-          { heard: [], fix: "Kelimeyi harfleyerek okuma; gh sessizdir.", expected: "daughter" },
+          { heard: [], fix: "Kelimeyi harf harf okuma; gh sessizdir.", expected: "daughter" },
         ],
       },
       {

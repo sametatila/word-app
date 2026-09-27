@@ -220,7 +220,7 @@
   "de": "Du bist in einer Debatte über den Milchpreis und willst die Bäuerin nicht wie einen Börsenposten beschreiben. Benenne die Börse, den Haushalt und den Direktverkauf mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du bist auf einer agrarpolitischen Sitzung und willst deine These nicht wie den Vorteil deines eigenen Hofes aussehen lassen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
  },
@@ -315,7 +315,7 @@
   "de": "holt in der zweiten Hälfte das Objekt nach vorn"
  },
  {
-  "tr": "olmasaydıyı tarım savında kurar",
+  "tr": "«olmasaydı» anlamını tarım savında kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht in der Agrarthese"
  },
@@ -730,7 +730,7 @@
   "de": "Nachhaltigkeitsstandard"
  },
  {
-  "tr": "Olmasaydıyı tarım savında kurmak için",
+  "tr": "«Olmasaydı» anlamını tarım savında kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht in der Agrarthese zu bauen –"
  },
@@ -1515,7 +1515,7 @@
   "de": "Unsere zweite Wendung holt in der zweiten Hälfte das Objekt nach vorn. Sprich nach:"
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı tarım savında kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını tarım savında kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Agrarthese. Sprich nach:"
  },

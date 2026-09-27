@@ -164,7 +164,7 @@ export const enA1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["A, N, A", "ANA", "A N A"],
-        explain: "„A, N, A. It is easy!“ — harfleme harfleri tek tek söylemektir.",
+        explain: "„A, N, A. It is easy!“ — burada ad harf harf söyleniyor.",
       },
     ],
   },
@@ -328,11 +328,11 @@ export const enA1U02: SkillExercise[] = [
     unit: 2,
     title: "Numbers and spelling",
     genre: "profile",
-    intro: "Yaşı, fiyatı ve harflemeyi yazarak çalış. Sonunda kurs formunu doldur.",
+    intro: "Yaşı, fiyatı ve harf harf söylemeyi yazarak çalış. Sonunda kurs formunu doldur.",
     gloss: [
       { de: "years old", tr: "yaşında" },
       { de: "How much is it?", tr: "bu ne kadar" },
-      { de: "spell", tr: "harflemek" },
+      { de: "spell", tr: "harf harf söylemek" },
     ],
     minutes: 6,
     tasks: [

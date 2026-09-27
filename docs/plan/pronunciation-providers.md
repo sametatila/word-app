@@ -4,8 +4,10 @@
 Almanca için fonem düzeyinde puan veren **ücretsiz** bir API yok (Speechace Almanca desteklemiyor,
 SpeechSuper aylık 20 $ taban, ELSA ücretli). Bu yüzden:
 
-1. **Kelime düzeyi puan, kendi hesabımız.** STT transkripti (kelime zaman damgalı) hedef cümleyle
-   hizalanır (`lib/sentence-match`): kelime doğru/yakın/eksik, akıcılık süre ve duraklamadan,
+1. **Kelime düzeyi puan, kendi hesabımız.** Tarayıcının tanıdığı metin (Web Speech API; 2026-09-27'den
+   beri ses sunucuya gitmiyor, `/api/pronounce` yalnız metin alıyor) hedef cümleyle hizalanır
+   (`lib/sentence-match`): kelime doğru/yakın/eksik; tarayıcı zaman damgası vermediği için akıcılık
+   ve hız boş (`hasWordTiming: false`),
    `confusions` ile ses ipucu. `overall = 0,6·kelime + 0,25·bütünlük + 0,15·akıcılık`, geçme ≥ 80
    (`lib/pronounce.ts`, `PASS_SCORE`). Kart bunun "anlaşıldı mı" ölçüsü olduğunu, fonem notu
    olmadığını söyler.
@@ -13,30 +15,29 @@ SpeechSuper aylık 20 $ taban, ELSA ücretli). Bu yüzden:
    Space'te + espeak-ng hizalaması. Yapılmadı.
 3. **Azure telaffuz puanı** karışan çiftleri ayırıyor (schön 100 ↔ schon 54) ama temiz TTS'te bile
    kelime puanı 44–100 dalgalanıyor ve fonem sembolü boş dönüyor. Bağlı değil; bağlanacaksa önce gerçek
-   kayıtla kalibrasyon. Azure bugün yalnız yürüyüş modunun cep yolunda STT (bkz. `walk-stt.md`).
+   kayıtla kalibrasyon. Azure bugün yalnız mobilde ekran kapalı yürüyüşte STT (bkz. `walk-stt.md`).
 
 ## Zincirler (`lib/chat-providers.ts` `sttProviders`, `lib/stt.ts`)
 
-| Kip | Sıra | Kullanan |
-|---|---|---|
-| `default` | Groq → Cloudflare Workers AI → Speechmatics → Deepgram | `/api/pronounce`, `/api/stt` ekranlı yollar |
-| `walk` | Azure → Deepgram → Groq → Cloudflare → Speechmatics | mobil cep yolu |
+Tek zincir, yalnız mobilde ekran kapalı yürüyüş (`/api/stt`, `mode=walk` zorunlu; diğer istekler
+400 `screen_on_uses_device`): **Azure → Deepgram → Groq**. Ekran açıkken ses hiçbir yüzeyde sunucuya
+gitmiyor (Samet, 2026-09-27): mobil native tanıyıcı, web Web Speech API; tanıyıcısı olmayan tarayıcıda
+sesli özellik açılmıyor.
 
 Her sağlayıcı çağrısı 8 sn tavanlı; 429'da hemen sıradakine geçilir. Her deneme `ai_usage`a yazılır;
-ses saklanmaz. Mistral ses zincirinden çıkarıldı (girdiyi 30 gün saklıyor). Kota modeli:
-`stt-capacity.md` (`npm run report:stt`).
+ses saklanmaz. Mistral (2026-09-25), Cloudflare Workers AI ve Speechmatics (2026-09-27) ses
+zincirinden kalıcı olarak çıktı. Kota modeli: `stt-capacity.md` (tarihsel).
 
 ## Env
 
 | Env | Ne |
 |---|---|
-| `GROQ_API_KEY` | birincil hat |
-| `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_AI_TOKEN` | ikinci hat (Workers AI, "Read" jetonu) |
-| `SPEECHMATICS_API_KEY`, `DEEPGRAM_API_KEY` | isteğe bağlı yedekler |
-| `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION` | yalnız `walk`; ayrıca TTS yedeği |
+| `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION` | birincil hat; ayrıca TTS yedeği |
 | `AZURE_STT_MONTHLY_SECONDS` | Azure aylık tavanı, boş = 16.200 sn |
-| `GROQ_STT_MODEL`, `CLOUDFLARE_STT_MODEL`, `DEEPGRAM_STT_MODEL`, `SPEECHMATICS_URL` | varsayılanı değiştirmek için |
-| `STT_ORDER` | sırayı ezer, ör. `"cloudflare,groq"`; Azure'u ekranlı yola sokamaz |
+| `DEEPGRAM_API_KEY` | ikinci hat |
+| `GROQ_API_KEY` | üçüncü hat (Zero Data Retention açık) |
+| `GROQ_STT_MODEL`, `DEEPGRAM_STT_MODEL` | varsayılanı değiştirmek için |
+| `STT_ORDER` | üçünün sırasını ezer, ör. `"deepgram,azure"`; listede olmayanı ekleyemez |
 
 ## Azure hesabı
 - Speech kaynağı **F0**, bölge **`germanywestcentral`**. F0: ayda 5 saat STT, eşzamanlı 1 istek,

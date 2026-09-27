@@ -738,7 +738,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
     listening: {
       title: "The last supervision",
       titleTr: "Son danışma görüşmesi",
-      situation: "Bir mentörlük görüşmesinde bütün yol değerlendiriliyor.",
+      situation: "Bir mentorluk görüşmesinde bütün yol değerlendiriliyor.",
       turns: [
         { speaker: "Tutor", de: "In the essay it is rhetoric; in the pamphlet, pathos. You have used both this year.", tr: "Denemede retorik, bildiride patos. Bu yıl ikisini de kullandın." },
         { speaker: "Author", de: "A stylistic device is a choice; a break in style is a mistake. I could not always tell them apart.", tr: "Üslup aracı bir seçim; üslup kırılması bir hata. İkisini her zaman ayırt edemedim." },

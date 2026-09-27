@@ -40,7 +40,7 @@
  { "tr": "Yani 'ayl' gibi duyulur. Tam cümlemiz:", "kind": "say.tr", "de": "Also klingt es wie „ail“. Unser ganzer Satz:" },
  { "tr": "Yani 'Cumartesi arkadaşımla buluştum.'", "kind": "say.tr", "de": "Also „Am Samstag habe ich meinen Freund getroffen.“" },
  { "tr": "Yani \"Türkiyeliyim\". Lütfen tekrar et:", "kind": "say.tr", "de": "Also „ich komme aus der Türkei“. Bitte wiederhole:" },
- { "tr": "Yani ad, soyad, doğum tarihi ve adres.", "kind": "say.tr", "de": "Also Vorname, Nachname, Geburtsdatum und Adresse." },
+ { "tr": "Yani ad, soyadı, doğum tarihi ve adres.", "kind": "say.tr", "de": "Also Vorname, Nachname, Geburtsdatum und Adresse." },
  { "tr": "Yani annem için. Önce for, sonra kişi.", "kind": "say.tr", "de": "Also für meine Mutter. Erst for, dann die Person." },
  { "tr": "yani biniş kartı denir. Söyle bakalım:", "kind": "say.tr", "de": "also Bordkarte heißt das. Sag mal:" },
  { "tr": "yani hazır. Şu cevapları duyabilirsin:", "kind": "say.tr", "de": "also fertig. Diese Antworten kannst du hören:" },

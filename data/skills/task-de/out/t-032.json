@@ -190,7 +190,7 @@
   "de": "Es dauert an: „since“ mit present perfect. Deutsch nimmt das Präsens."
  },
  {
-  "tr": "Şu anda sürüyor: edilgenin sürerli biçimi.",
+  "tr": "Şu anda sürüyor: edilgenin sürekli biçimi.",
   "kind": "build.hint",
   "de": "Es läuft gerade: die Verlaufsform des Passivs. Deutsch kennt diese Unterscheidung nicht."
  },

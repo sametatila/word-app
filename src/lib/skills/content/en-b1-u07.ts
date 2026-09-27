@@ -371,7 +371,7 @@ export const enB1U07: SkillExercise[] = [
         kind: "build",
         tr: "Dava soruşturuluyor.",
         answer: "The case is being investigated.",
-        hint: "Şu anda sürüyor: edilgenin sürerli biçimi. „is investigated“ düzenli olanı söylerdi.",
+        hint: "Şu anda sürüyor: edilgenin sürekli biçimi. „is investigated“ düzenli olanı söylerdi.",
       },
       {
         kind: "build",

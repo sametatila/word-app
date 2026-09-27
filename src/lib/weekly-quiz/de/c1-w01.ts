@@ -262,7 +262,7 @@ export const DE_C1_W01: QuizWeek = {
       stem: "Der ___ zwischen Pausen und Konzentration ist schwächer als behauptet.",
       options: ["Zusammenhang", "Unterschied", "Vergleich", "Wechsel"],
       answer: 0,
-      why: "`Zusammenhang` iki şey arasındaki BAĞ demek ve `schwach/stark` ile ölçülür. `Unterschied` farktır ve `groß/klein` ile ölçülür; cümledeki sıfat hangi ismin aranadığını söylüyor.",
+      why: "`Zusammenhang` iki şey arasındaki BAĞ demek ve `schwach/stark` ile ölçülür. `Unterschied` farktır ve `groß/klein` ile ölçülür; cümledeki sıfat hangi ismin arandığını söylüyor.",
       targets: ["wortfeld.argumentation", "kollokation.zusammenhang"],
     },
     {

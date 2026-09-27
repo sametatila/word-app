@@ -245,7 +245,7 @@
   "de": "Du beschreibst den Umbau in deinem Viertel, indem du den Unterschied zwischen der Sprache der Stadt und dem Gesehenen zeigst. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Stadt selbst."
  },
  {
-  "tr": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du verteidigst gegen eine Bauentscheidung die Umweltpflicht und willst das nicht wie eine persönliche Meinung sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
  },
@@ -345,7 +345,7 @@
   "de": "bindet zwei Wortverbindungen in einem Satz"
  },
  {
-  "tr": "olmasaydıyı çevre savında kurar",
+  "tr": "«olmasaydı» anlamını çevre savında kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht in der Umweltthese"
  },
@@ -760,7 +760,7 @@
   "de": "Um die Maßstabsangabe voranzustellen –"
  },
  {
-  "tr": "Olmasaydıyı çevre savında kurmak için",
+  "tr": "«Olmasaydı» anlamını çevre savında kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht in der Umweltthese zu bauen –"
  },
@@ -1520,7 +1520,7 @@
   "de": "Die Pressemitteilung behauptet offen, was die Fachzeitschrift bloß andeutet."
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı çevre savında kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını çevre savında kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Umweltthese. Sprich nach:"
  },

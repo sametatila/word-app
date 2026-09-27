@@ -4000,8 +4000,8 @@
   "course": "en",
   "icon": "question",
   "title": "Spelling",
-  "titleTr": "Harfleme",
-  "summary": "Adını İngilizce harflemeyi ve karşındakinden bir şeyi harflemesini istemeyi öğretir.",
+  "titleTr": "Harf harf söyleme",
+  "summary": "Adını İngilizce harf harf söylemeyi ve karşındakinden bir şeyi harf harf söylemesini istemeyi öğretir.",
   "minutes": 8,
   "focusId": "Introductions",
   "vocab": [
@@ -4011,7 +4011,7 @@
    },
    {
     "de": "spell",
-    "tr": "harflemek"
+    "tr": "harf harf söylemek"
    },
    {
     "de": "write",
@@ -4041,11 +4041,11 @@
   "patterns": [
    {
     "de": "How do you spell it?",
-    "tr": "bir şeyin nasıl harflendiğini sorarken kullanılır"
+    "tr": "bir şeyin nasıl yazıldığını sorarken kullanılır"
    },
    {
     "de": "My name is Emre. E, M, R, E.",
-    "tr": "adını söyleyip harflerken kullanılır"
+    "tr": "adını söyleyip harf harf tekrarlarken kullanılır"
    },
    {
     "de": "Can you say that again, please?",
@@ -4057,7 +4057,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün İngilizcede adını harflemeyi ve karşındakine 'bu nasıl yazılıyor?' diye sormayı öğreneceğiz. Başlamaya hazır mısın?"
+      "text": "Merhaba! Bugün İngilizcede adını harf harf söylemeyi ve karşındakine 'bu nasıl yazılıyor?' diye sormayı öğreneceğiz. Başlamaya hazır mısın?"
      }
     ],
     "expect": {
@@ -4068,7 +4068,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu konu çok işine yarayacak. Otelde, havalimanında, telefonda adını söylediğinde karşındaki çoğu zaman anlamaz ve 'harfle' der. Önce beş kelime öğrenelim."
+      "text": "Bu konu çok işine yarayacak. Otelde, havalimanında, telefonda adını söylediğinde karşındaki çoğu zaman anlamaz ve 'harf harf söyle' der. Önce beş kelime öğrenelim."
      }
     ]
    },
@@ -4112,7 +4112,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi 'harflemek' demek; yani bir kelimeyi harf harf söylemek. Lütfen"
+      "text": "Türkçesi 'harf harf söylemek' demek; yani bir kelimenin harflerini tek tek söylemek. Lütfen"
      },
      {
       "lang": "en",
@@ -4256,7 +4256,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani 'Bu nasıl harfleniyor?' Dikkat et, soruda"
+      "text": "Yani 'Bu nasıl yazılıyor?' Dikkat et, soruda"
      },
      {
       "lang": "en",
@@ -4372,7 +4372,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende harflemeye geldi. Önce adını söyler, sonra harflersin:"
+      "text": "Şimdi sıra sende. Önce adını söyler, sonra harf harf söylersin:"
      },
      {
       "lang": "en",
@@ -4396,7 +4396,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen sor: 'Adını nasıl harfliyorsun?' İngilizcede nasıl dersin?"
+      "text": "Şimdi sen sor: 'Adını nasıl yazıyorsun?' İngilizcede nasıl dersin?"
      }
     ],
     "expect": {
@@ -4450,7 +4450,7 @@
      },
      {
       "lang": "tr",
-      "text": "der. Mesela Anna adı şöyle harflenir:"
+      "text": "der. Mesela Anna adı şöyle harf harf söylenir:"
      },
      {
       "lang": "en",
@@ -4462,7 +4462,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karşındaki çok hızlı harfledi ve yetişemedin. 'Tekrar söyleyebilir misin, lütfen?' demek istiyorsun. Nasıl dersin?"
+      "text": "Karşındaki harfleri çok hızlı söyledi ve yetişemedin. 'Tekrar söyleyebilir misin, lütfen?' demek istiyorsun. Nasıl dersin?"
      }
     ],
     "expect": {
@@ -4542,7 +4542,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harfleme yine anlaşılmadı; en garanti yol yazdırmak. 'Onu yazabilir misin, lütfen?' nasıl dersin?"
+      "text": "Harf harf söyleyince de anlaşılmadı; en garanti yol yazdırmak. 'Onu yazabilir misin, lütfen?' nasıl dersin?"
      }
     ],
     "expect": {
@@ -4641,7 +4641,7 @@
      },
      {
       "lang": "tr",
-      "text": ", harflemek"
+      "text": ", harf harf söylemek"
      },
      {
       "lang": "en",
@@ -4665,17 +4665,17 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi bir otelin resepsiyonundasın: görevli adını yazacak. Adını söyle ve harfle."
+      "text": "Şimdi bir otelin resepsiyonundasın: görevli adını yazacak. Adını söyle ve harf harf tekrarla."
      }
     ]
    }
   ],
   "chat": {
-   "scene": "Bir otelin resepsiyonundasın; görevli adını deftere yazacak ama duyduğundan emin değil. Adını söyle, sonra harfle; anlamazsan tekrar etmesini ya da yazmasını iste.",
+   "scene": "Bir otelin resepsiyonundasın; görevli adını deftere yazacak ama duyduğundan emin değil. Adını söyle, sonra harf harf tekrarla; anlamazsan tekrar etmesini ya da yazmasını iste.",
    "partner": "Nazik bir otel resepsiyon görevlisi",
    "opening": "Hello! Can I have your name, please?",
    "openingTr": "Merhaba! Adınızı alabilir miyim, lütfen?",
-   "goal": "Adını söyleyip harflemiş, gerektiğinde tekrar etmesini ya da yazmasını rica etmiş olursun.",
+   "goal": "Adını söyleyip harf harf tekrarlamış, gerektiğinde tekrar etmesini ya da yazmasını rica etmiş olursun.",
    "minTurns": 7
   }
  },
@@ -14067,7 +14067,7 @@
    },
    {
     "de": "coin",
-    "tr": "madeni para"
+    "tr": "madenî para"
    },
    {
     "de": "newspaper",
@@ -14420,7 +14420,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: madeni para. Lütfen tekrar et:"
+      "text": "Türkçesi: madenî para. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -30855,7 +30855,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şüphelendiğinde kendine şunu sor: bunu tek tek sayabilir miyim? Cevap evetse many tarafındasın."
+      "text": "Şüphelendiğinde kendine şunu sor: bunu tek tek sayabilir miyim? Cevap evet ise many tarafındasın."
      }
     ]
    },

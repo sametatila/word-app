@@ -1,21 +1,15 @@
 import "server-only";
-import { sttProviders, type SttMode, type SttProvider } from "@/lib/chat-providers";
+import { sttProviders, type SttProvider } from "@/lib/chat-providers";
 import { recordAiUsage } from "@/lib/ai-usage";
 
 /**
- * Konuşmayı yazıya çevirme — tek zincir, iki uç (WP-20).
+ * Konuşmayı yazıya çevirme — yalnız ekran kapalı yürüyüş (mobil, `/api/stt`).
  *
- * `/api/stt` (yürüyüş modu, tek kelime) ve `/api/pronounce` (telaffuz puanı,
- * kelime zaman damgalı) aynı sağlayıcı zincirini kullanır: Groq → Cloudflare
- * Workers AI → Speechmatics → Deepgram (Mistral 2026-09-25'te çıktı, denetim G5;
- * yürüyüş kipinde Azure öne geçer, `chat-providers`). Sıra kota ölçümünden
- * (`docs/plan/stt-capacity.md`): Groq'un darboğazı dakikada 20 istek, o
- * yüzden 429'da hemen bir sonrakine geçilir; Cloudflare günlük süreyle
- * sınırlı ama dakika sınırı yok — tepe dakikanın ikinci hattı.
- *
- * Yürürken modunun ekran kapalı yolu (`mode: "walk"`) başka bir sıra kullanır:
- * Azure → Deepgram → Whisper'lar. Orada ölçüt hız değil dürüstlük — bkz.
- * chat-providers `SttMode`. Azure'un aylık F0 kotası burada korunuyor.
+ * Sunucuya ses yalnız ekran kapalıyken geliyor (Samet, 2026-09-27): ekran
+ * açıkken mobil cihazın, web tarayıcının kendi tanıyıcısını kullanıyor.
+ * `/api/pronounce` artık ses almıyor, tarayıcının metnini puanlıyor. Zincir
+ * Azure → Deepgram → Groq (bkz. chat-providers `sttProviders`); Azure'un
+ * aylık F0 kotası burada korunuyor.
  *
  * Her deneme `ai_usage`'a yazılır (başarısızlar dâhil): kotaya ne kadar
  * yaklaşıldığı ancak buradan görülür. Ses saklanmaz.
@@ -24,11 +18,9 @@ export type SttWord = { word: string; start: number; end: number };
 
 export type SttResult = {
   text: string;
-  /** Kelime zaman damgaları — yalnız veren sağlayıcılarda ve istenince. */
-  words?: SttWord[];
   /** Klip süresi (sn) — sağlayıcı bildirdiyse, yoksa boyuttan tahmin. */
   duration: number;
-  /** Tanıyıcının kendi güveni (0–1) — Deepgram/Speechmatics. */
+  /** Tanıyıcının kendi güveni (0–1) — Azure/Deepgram. */
   confidence?: number;
   provider: string;
   model: string;
@@ -36,13 +28,9 @@ export type SttResult = {
 
 export type SttOptions = {
   language?: string;
-  /** Kelime zaman damgası iste (telaffuz puanı için). */
-  words?: boolean;
   /** Muhasebe için: kim, ne bekleniyordu. */
   userId: string;
   expected?: string;
-  /** Zincir kipi — yürürken modunun cep yolu `walk` (Azure önde). */
-  mode?: SttMode;
 };
 
 export function sttConfigured(): boolean {
@@ -94,7 +82,7 @@ export class SttError extends Error {
  * öbürü bazen çözüyor (ölçüldü: aynı klip Groq'ta 400, Deepgram'da metin).
  */
 export async function transcribe(file: File, opts: SttOptions): Promise<SttResult> {
-  let providers = sttProviders(opts.mode ?? "default");
+  let providers = sttProviders();
   if (providers.some((p) => p.name === "azure") && !(await azureBudgetOk())) {
     providers = providers.filter((p) => p.name !== "azure");
   }
@@ -106,7 +94,7 @@ export async function transcribe(file: File, opts: SttOptions): Promise<SttResul
   for (const provider of providers) {
     const startedAt = Date.now();
     try {
-      const out = await callProvider(provider, file, language, Boolean(opts.words));
+      const out = await callProvider(provider, file, language);
       recordAiUsage(opts.userId, {
         kind: "stt",
         provider: provider.name,
@@ -146,16 +134,12 @@ function httpError(status: number, detail: string): Error & { status: number } {
   return e;
 }
 
-async function callProvider(p: SttProvider, file: File, language: string, words: boolean): Promise<Raw> {
+async function callProvider(p: SttProvider, file: File, language: string): Promise<Raw> {
   switch (p.dialect) {
     case "openai":
-      return openaiStyle(p, file, language, words);
+      return openaiStyle(p, file, language);
     case "deepgram":
       return deepgram(p, file, language);
-    case "cloudflare":
-      return cloudflare(p, file, language);
-    case "speechmatics":
-      return speechmatics(p, file, language);
     case "azure":
       return azure(p, file, language);
   }
@@ -164,7 +148,7 @@ async function callProvider(p: SttProvider, file: File, language: string, words:
 /**
  * Azure Speech, kısa-ses REST ucu (≤ 60 sn; WAV 16 kHz mono ya da OGG/Opus).
  *
- * Yürürken modunun cep yolunda ana hat (bkz. chat-providers `SttMode`).
+ * Ekran kapalı yürüyüşün ana hattı (bkz. chat-providers `sttProviders`).
  * `format=detailed` NBest listesini ve her adayın güvenini veriyor; sessizlikte
  * uydurmak yerine `InitialSilenceTimeout`/`NoMatch` dönüyor. O hâller boş
  * metin ve sıfır güven olarak geçiyor, HATA değil: hata sayılsa zincir
@@ -245,20 +229,18 @@ async function azureBudgetOk(): Promise<boolean> {
   return ok;
 }
 
-/** Groq / Mistral: OpenAI biçimi. Groq kelime zaman damgası verir (verbose_json). */
-async function openaiStyle(p: SttProvider, file: File, language: string, words: boolean): Promise<Raw> {
+/** Groq: OpenAI biçimi. */
+async function openaiStyle(p: SttProvider, file: File, language: string): Promise<Raw> {
   const body = new FormData();
   body.append("file", file, `clip.${ext(file)}`);
   body.append("model", p.model);
   body.append("language", language);
   body.append("temperature", "0");
-  const wantWords = words && p.name === "groq";
-  body.append("response_format", wantWords ? "verbose_json" : "json");
-  if (wantWords) body.append("timestamp_granularities[]", "word");
+  body.append("response_format", "json");
   const res = await sttFetch(`${p.baseUrl}/audio/transcriptions`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
   if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
-  const data = (await res.json()) as { text?: string; duration?: number; words?: { word: string; start: number; end: number }[] };
-  return { text: (data.text ?? "").trim(), duration: data.duration, words: data.words?.map((w) => ({ word: w.word, start: w.start, end: w.end })) };
+  const data = (await res.json()) as { text?: string; duration?: number };
+  return { text: (data.text ?? "").trim(), duration: data.duration };
 }
 
 async function deepgram(p: SttProvider, file: File, language: string): Promise<Raw> {
@@ -274,75 +256,8 @@ async function deepgram(p: SttProvider, file: File, language: string): Promise<R
   if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
   const data = (await res.json()) as {
     metadata?: { duration?: number };
-    results?: { channels?: { alternatives?: { transcript?: string; confidence?: number; words?: { word: string; start: number; end: number }[] }[] }[] };
+    results?: { channels?: { alternatives?: { transcript?: string; confidence?: number }[] }[] };
   };
   const best = data.results?.channels?.[0]?.alternatives?.[0];
-  return { text: (best?.transcript ?? "").trim(), confidence: best?.confidence, duration: data.metadata?.duration, words: best?.words };
-}
-
-/**
- * Cloudflare Workers AI — REST, Worker gerekmez. Ses base64 gövdede.
- * Kelime zaman damgası yok; segment (VTT) var, telaffuz için yeterli değil.
- */
-async function cloudflare(p: SttProvider, file: File, language: string): Promise<Raw> {
-  const audio = Buffer.from(await file.arrayBuffer()).toString("base64");
-  const res = await sttFetch(`${p.baseUrl}/ai/run/${p.model}`, {
-    method: "POST",
-    headers: { authorization: `Bearer ${p.key}`, "content-type": "application/json" },
-    body: JSON.stringify({ audio, language, task: "transcribe", vad_filter: true }),
-  });
-  if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
-  const data = (await res.json()) as { success?: boolean; result?: { text?: string; segments?: { start: number; end: number; text: string }[]; transcription_info?: { duration?: number } }; errors?: { message: string }[] };
-  if (data.success === false) throw httpError(502, data.errors?.map((e) => e.message).join("; ") ?? "cloudflare error");
-  const segs = data.result?.segments ?? [];
-  return { text: (data.result?.text ?? "").trim(), duration: data.result?.transcription_info?.duration ?? segs[segs.length - 1]?.end };
-}
-
-/**
- * Speechmatics toplu API: iş oluştur → sonucu yokla (kısa klipte 1–3 sn).
- * json-v2 kelime başına zaman ve güven verir.
- */
-async function speechmatics(p: SttProvider, file: File, language: string): Promise<Raw> {
-  const body = new FormData();
-  body.append("data_file", file, `clip.${ext(file)}`);
-  body.append("config", JSON.stringify({ type: "transcription", transcription_config: { language, operating_point: "enhanced" } }));
-  const create = await sttFetch(`${p.baseUrl}/v2/jobs`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
-  if (!create.ok) throw httpError(create.status, await create.text().catch(() => ""));
-  const { id } = (await create.json()) as { id: string };
-  try {
-    return await speechmaticsPoll(p, id);
-  } finally {
-    /* İŞ SİLİNİYOR. Toplu API işi, sesiyle ve transkriptiyle birlikte iş
-       geçmişinde tutuyor (SaaS varsayılanı günlerce); gizlilik §4 "ses
-       sağlayıcıda saklanmaz" diyor (hukuk denetimi LEG-4). Sonuç okunduktan,
-       hata ya da zaman aşımından sonra da silinir; `force=true` hâlâ koşan
-       işi de durdurup siler. Beklenmiyor (kullanıcı cevabı gecikmesin) ve
-       başarısızlığı yalnız günlüğe düşüyor: silme, tanımayı bozmamalı. */
-    void fetch(`${p.baseUrl}/v2/jobs/${encodeURIComponent(id)}?force=true`, {
-      method: "DELETE",
-      headers: { authorization: `Bearer ${p.key}` },
-      signal: AbortSignal.timeout(PROVIDER_TIMEOUT_MS),
-    })
-      .then((r) => { if (!r.ok && r.status !== 404) console.error("[stt:speechmatics] job delete failed", id, r.status); })
-      .catch((err) => console.error("[stt:speechmatics] job delete failed", id, err instanceof Error ? err.message : err));
-  }
-}
-
-async function speechmaticsPoll(p: SttProvider, id: string): Promise<Raw> {
-  const deadline = Date.now() + 12_000;
-  while (Date.now() < deadline) {
-    await new Promise((r) => setTimeout(r, 700));
-    const st = await sttFetch(`${p.baseUrl}/v2/jobs/${id}`, { headers: { authorization: `Bearer ${p.key}` } });
-    if (!st.ok) throw httpError(st.status, await st.text().catch(() => ""));
-    const job = (await st.json()) as { job?: { status?: string; duration?: number } };
-    if (job.job?.status === "rejected") throw httpError(400, "speechmatics rejected");
-    if (job.job?.status !== "done") continue;
-    const tr = await sttFetch(`${p.baseUrl}/v2/jobs/${id}/transcript?format=json-v2`, { headers: { authorization: `Bearer ${p.key}` } });
-    if (!tr.ok) throw httpError(tr.status, await tr.text().catch(() => ""));
-    const data = (await tr.json()) as { results?: { type: string; start_time: number; end_time: number; alternatives?: { content: string; confidence?: number }[] }[] };
-    const words = (data.results ?? []).filter((r) => r.type === "word").map((r) => ({ word: r.alternatives?.[0]?.content ?? "", start: r.start_time, end: r.end_time, confidence: r.alternatives?.[0]?.confidence ?? 1 }));
-    const conf = words.length ? words.reduce((s, w) => s + w.confidence, 0) / words.length : undefined;
-    return { text: words.map((w) => w.word).join(" ").trim(), words: words.map(({ word, start, end }) => ({ word, start, end })), confidence: conf, duration: job.job?.duration };
-  }
-  throw httpError(504, "speechmatics timeout");
+  return { text: (best?.transcript ?? "").trim(), confidence: best?.confidence, duration: data.metadata?.duration };
 }

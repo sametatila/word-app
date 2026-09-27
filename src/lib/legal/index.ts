@@ -162,9 +162,17 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * modeli (denetim G5: Mistral API girdiyi 30 gün saklıyor). Yeni alıcı ya da yeni
  * veri yok, bir alıcıya giden veri azaldı — yama basamağı. Ses rızası sürümü 2
  * (liste değişti; yürüyüşteki izin bir kez yeniden soruluyor).
+ *
+ * 1.8.5 (2026-09-27) işleme DARALDI: ekran açıkken hiçbir yüzeyde ses sunucuya
+ * gitmiyor (web'in telaffuz puanı, deneme sınavı konuşması ve tanıyıcısız
+ * tarayıcıdaki yürüyüşü artık tarayıcının tanıyıcısını kullanıyor, sunucuya
+ * yalnız metin gidiyor); ses yalnız mobilde ekran kapalı yürüyüşte. Cloudflare
+ * Workers AI ve Speechmatics ses alıcılarından çıktı; Groq'ta sıfır veri saklama
+ * açık (Samet). Yeni alıcı ya da yeni veri yok — yama basamağı. Ses rızası
+ * sürümü 3.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
-export const LEGAL_VERSION = "1.8.4";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-27";
+export const LEGAL_VERSION = "1.8.5";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -393,6 +401,25 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: ses daha az yere ve daha az alıcıya gidiyor; yeni alıcı ya da veri yok. */
+    version: "1.8.5",
+    date: "2026-09-27",
+    changes: {
+      tr: [
+        "Ses kaydı: ekran açıkken ses hiçbir yerde Lernomi sunucusuna gönderilmiyor. Web'de telaffuz puanı ve sınavlardaki sesli cevaplar artık tarayıcının kendi konuşma tanımasıyla yazıya çevriliyor; sunucuya yalnız tanınan metin gidiyor. Ses sunucuya yalnız mobil uygulamada ekran kapalı yürüyüş modunda gidiyor.",
+        "Alıcılar: Cloudflare Workers AI ve Speechmatics artık ses kaydı almıyor. Konuşma tanıma sağlayıcıları Microsoft Azure, Deepgram ve Groq; Groq'ta sıfır veri saklama açık. Liste değiştiği için ses izni bir kez yeniden soruluyor.",
+      ],
+      en: [
+        "Audio: while the screen is on, audio is not sent to the Lernomi server anywhere. On the web, pronunciation scores and spoken answers in exams are now transcribed by the browser's own speech recognition; only the recognized text reaches the server. Audio reaches the server only in walk mode in the mobile app with the screen off.",
+        "Recipients: Cloudflare Workers AI and Speechmatics no longer receive audio recordings. The speech recognition providers are Microsoft Azure, Deepgram and Groq; zero data retention is on at Groq. Because the list changed, the audio permission is asked once more.",
+      ],
+      de: [
+        "Audio: Bei eingeschaltetem Bildschirm wird nirgends Audio an den Lernomi-Server gesendet. Im Web werden die Aussprachebewertung und gesprochene Antworten in Prüfungen jetzt von der Spracherkennung des Browsers verschriftlicht; an den Server gelangt nur der erkannte Text. Audio erreicht den Server nur im Gehmodus der mobilen App bei ausgeschaltetem Bildschirm.",
+        "Empfänger: Cloudflare Workers AI und Speechmatics erhalten keine Audioaufnahmen mehr. Die Spracherkennungsanbieter sind Microsoft Azure, Deepgram und Groq; bei Groq ist die Nullspeicherung aktiv. Da sich die Liste geändert hat, wird die Audio-Einwilligung einmal erneut abgefragt.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: bir alıcıya giden veri azaldı; yeni alıcı ya da veri yok. */
     version: "1.8.4",
@@ -793,7 +820,6 @@ const PROCESSOR_NAMES = {
 const PURPOSES = {
   sttTts: { tr: "Konuşma tanıma ve seslendirme", en: "Speech recognition and speech synthesis", de: "Spracherkennung und Sprachausgabe" },
   sttWhisperLlm: { tr: "Konuşma tanıma (Whisper) ve dil modeli", en: "Speech recognition (Whisper) and language model", de: "Spracherkennung (Whisper) und Sprachmodell" },
-  sttWhisper: { tr: "Konuşma tanıma (Whisper)", en: "Speech recognition (Whisper)", de: "Spracherkennung (Whisper)" },
   stt: { tr: "Konuşma tanıma", en: "Speech recognition", de: "Spracherkennung" },
   llm: { tr: "Dil modeli", en: "Language model", de: "Sprachmodell" },
   googleSignIn: { tr: "Google ile giriş", en: "Sign-in with Google", de: "Anmeldung mit Google" },
@@ -875,7 +901,6 @@ const DATA_KINDS = {
 const REGIONS = {
   eu: { tr: "AB", en: "EU", de: "EU" },
   us: { tr: "ABD", en: "USA", de: "USA" },
-  uk: { tr: "Birleşik Krallık", en: "United Kingdom", de: "Vereinigtes Königreich" },
   globalNetwork: { tr: "Küresel ağ", en: "Global network", de: "Globales Netz" },
   usGlobal: {
     tr: "ABD / küresel (bölge garantisi yok)",
@@ -920,11 +945,6 @@ const SAFEGUARDS = {
     de: "Der Anbieter ist für seinen eigenen Dienst selbst verantwortlich; die Übermittlung ist für den von dir gewählten Dienst erforderlich",
   },
   euAdequacy: { tr: "AB içi (yeterlilik)", en: "Within the EU (adequacy)", de: "Innerhalb der EU (Angemessenheit)" },
-  ukAdequacy: {
-    tr: "Birleşik Krallık için yeterlilik kararı",
-    en: "Adequacy decision for the United Kingdom",
-    de: "Angemessenheitsbeschluss für das Vereinigte Königreich",
-  },
   /*
     Edge sesli okuma ucu tüketici ürünü: sözleşmesi, bölge garantisi ve veri
     işleme koşulu yok. Satırın dürüst yazılabilmesinin tek sebebi gönderilen
@@ -1042,8 +1062,6 @@ export const PROCESSORS: Processor[] = [
   { name: "edgeTts", purpose: "tts", data: "ttsText", region: "usGlobal", safeguard: "none", when: "tts" },
   { name: "Microsoft Azure Speech", purpose: "sttTts", data: "audioAndTtsText", region: "eu", safeguard: "euAdequacy", when: "walkAndTts" },
   { name: "Groq", purpose: "sttWhisperLlm", data: "audioAndTexts", region: "us", safeguard: "scc" },
-  { name: "Cloudflare Workers AI", purpose: "sttWhisper", data: "audio", region: "globalNetwork", safeguard: "scc" },
-  { name: "Speechmatics", purpose: "stt", data: "audio", region: "uk", safeguard: "ukAdequacy" },
   { name: "Deepgram", purpose: "stt", data: "audio", region: "us", safeguard: "scc" },
   /* Ses almıyor (2026-09-25, G5): yalnız dil modeli. */
   { name: "Mistral AI", purpose: "llm", data: "texts", region: "eu", safeguard: "euAdequacy" },

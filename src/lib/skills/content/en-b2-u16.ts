@@ -25,8 +25,8 @@ import type { SkillExercise } from "../types";
  *           Praised for years, the actor stayed modest. ·
  *           Wanting a new role, she left the company.
  *
- * Ünitenin tek öğretme noktası ORTAÇ SÜRERLİ ZAMAN DEĞİL. „I am wanting“
- * yanlış, çünkü „want“ bir durum fiili ve sürerli zaman almıyor; ama
+ * Ünitenin tek öğretme noktası ORTAÇ SÜREKLİ ZAMAN DEĞİL. „I am wanting“
+ * yanlış, çünkü „want“ bir durum fiili ve sürekli zaman almıyor; ama
  * „Wanting a new role, she left“ doğru, çünkü ortaç bir zaman değil.
  * Ortacın kendi zamanı yok; zamanını da öznesini de ana cümleden alıyor,
  * ve baştaki „-ing“ „she is leaving“deki „-ing“den başka bir iş görüyor.
@@ -49,7 +49,7 @@ export const enB2U16: SkillExercise[] = [
       { de: "unit", tr: "ünite" },
       { de: "exists", tr: "var" },
       { de: "sentence", tr: "cümle" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "a state", tr: "durum" },
       { de: "a participle", tr: "ortaç" },
       { de: "a tense", tr: "zaman kipi" },
@@ -426,7 +426,7 @@ export const enB2U16: SkillExercise[] = [
         kind: "build",
         tr: "Yeni bir rol istediği için topluluktan ayrıldı.",
         answer: "Wanting a new role, she left the company.",
-        hint: "Ortaç sürerli zaman değil; durum fiili burada „-ing“ alabiliyor.",
+        hint: "Ortaç sürekli zaman değil; durum fiili burada „-ing“ alabiliyor.",
       },
       {
         kind: "build",
@@ -449,7 +449,7 @@ export const enB2U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Ortaç kartını doldur.",
-        facts: "Durum fiili sürerli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
+        facts: "Durum fiili sürekli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
         fields: [
           { label: "Continuous", answer: "no", accept: ["not allowed"] },
           { label: "Participle", answer: "yes", accept: ["allowed"] },

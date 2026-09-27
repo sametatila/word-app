@@ -48,7 +48,7 @@ export const enB1U21: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "the tone", tr: "ton" },
       { de: "visible", tr: "görünür" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "whole", tr: "bütün" },
       { de: "backwards", tr: "tersine" },
       { de: "certain", tr: "kesin" },

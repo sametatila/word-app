@@ -912,7 +912,7 @@ Einwendungen schriftlich bis {{10}}.`,
               ],
               answer: 0,
               explain:
-                "Kendi tarafına da uyguluyor: kartlama okumadan tür sayısı konuşan meslektaşları var — \"Der Vorwurf lässt sich in beide Richtungen erheben.\"",
+                "Kendi tarafına da uyguluyor: haritalama okumadan tür sayısı konuşan meslektaşları var — \"Der Vorwurf lässt sich in beide Richtungen erheben.\"",
             },
             {
               kind: "mcq",

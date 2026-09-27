@@ -130,7 +130,7 @@ export const b2U11: SkillExercise[] = [
       { de: "also", tr: "yani", en: "so" },
       { de: "die Messung", tr: "ölçüm", en: "measurement" },
       { de: "vernünftig", tr: "mantıklı", en: "sensible" },
-      { de: "zentral", tr: "merkezi", en: "central" },
+      { de: "zentral", tr: "merkezî", en: "central" },
       { de: "innerhalb", tr: "içinde", en: "within" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "das Fazit", tr: "sonuç", en: "conclusion" },
@@ -182,7 +182,7 @@ export const b2U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["schätzungsweise"],
-        explain: "schätzungsweise sayının kesin değil tahmini olduğunu işaretler.",
+        explain: "schätzungsweise sayının kesin değil tahminî olduğunu işaretler.",
       },
       {
         text: "Die Studie ist eine Meinungsumfrage.",

@@ -27,7 +27,7 @@ export const enA1P13: SkillExercise[] = [
       { de: "basement", tr: "bodrum" },
       { de: "washing machine", tr: "çamaşır makinesi" },
       { de: "dryer", tr: "kurutma makinesi" },
-      { de: "coin", tr: "madeni para" },
+      { de: "coin", tr: "madenî para" },
       { de: "clothes", tr: "giysi" },
       { de: "wash", tr: "yıkama" },
     ],

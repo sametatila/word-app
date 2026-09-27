@@ -133,7 +133,7 @@ function RevenueCard({ r, days }: { r: Revenue; days: number }) {
         {r.byProduct.length ? `  ·  ${r.byProduct.map((p) => `${p.product} ${usd(p.grossUsd)}`).join(", ")}` : ""}
         {rc ? `  ·  RevenueCat 28g gelir ${rc.revenue28dUsd != null ? usd(rc.revenue28dUsd) : "?"}, yeni müşteri ${rc.newCustomers28d ?? "?"}` : ""}
         {rcError ? <span style={{ color: TONE.warn }}>  ·  {rcError}</span> : null}
-        {!r.revenuecat && !rcError ? "  ·  RevenueCat API anahtarı yok (resmi MRR kapalı)" : ""}
+        {!r.revenuecat && !rcError ? "  ·  RevenueCat API anahtarı yok (resmî MRR kapalı)" : ""}
       </p>
     </Panel>
   );

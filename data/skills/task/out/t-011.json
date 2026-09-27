@@ -14,7 +14,7 @@
  { "tr": "Bir soru sordun mu ve resmî bir kapanışla bitirdin mi?", "kind": "reply.checklist", "en": "Did you ask a question and finish with a formal closing?" },
  { "tr": "En az bir gönderme sözcüğü ve bir ara açıklama var mı?", "kind": "reply.checklist", "en": "Is there at least one reference word and one aside?" },
  { "tr": "İç bildirim eksiltili ve olgusal mı, özür içermiyor mu?", "kind": "reply.checklist", "en": "Is the internal notice elliptical and factual, with no apology in it?" },
- { "tr": "Ödeme ihtirazi kayıtla mı sürdürülüyor, tehdit var mı?", "kind": "reply.checklist", "en": "Is the payment being continued under reservation, with no threat?" },
+ { "tr": "Ödeme ihtirazî kayıtla mı sürdürülüyor, tehdit var mı?", "kind": "reply.checklist", "en": "Is the payment being continued under reservation, with no threat?" },
  { "tr": "Tanışma yerini ve zamanını yazdın mı („vor … Jahren“)?", "kind": "reply.checklist", "en": "Did you write where and when you met („vor … Jahren“)?" },
  { "tr": "Telefonu ne zaman eline aldığını wenn ile anlattın mı?", "kind": "reply.checklist", "en": "Did you describe with wenn when you pick up your phone?" },
  { "tr": "Kartın ne zamana kadar geçerli olduğunu teyit ettin mi?", "kind": "reply.checklist", "en": "Did you confirm how long the card is valid?" },

@@ -225,7 +225,7 @@
   "de": "Du erzählst einer Freundin eine Nachricht über Migration und willst den Menschen nicht auf eine Zahl reduzieren. Benenne den Menschen, die Statistik und das Recht mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
   "kind": "scene",
   "de": "Du baust eine These über Gleichheit und willst sie nicht als deinen Wunsch, sondern als Maßstab sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
  },
@@ -255,7 +255,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du den Menschen, die Statistik und das Recht mit drei verschiedenen Wortverbindungen benannt hast."
  },
  {
-  "tr": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+  "tr": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du die Forderung, das Wäre-nicht und die Bedingung in drei festen Formen gebaut hast."
  },
@@ -380,7 +380,7 @@
   "de": "holt zwei Objekte nach vorn und teilt den Satz"
  },
  {
-  "tr": "olmasaydıyı toplumsal savda kurar",
+  "tr": "«olmasaydı» anlamını toplumsal savda kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht in der sozialen These"
  },
@@ -845,7 +845,7 @@
   "de": "Um zwei Wiedergaben einander gegenüberzustellen –"
  },
  {
-  "tr": "Olmasaydıyı toplumsal savda kurmak için",
+  "tr": "«Olmasaydı» anlamını toplumsal savda kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht in der sozialen These zu bauen –"
  },
@@ -1740,7 +1740,7 @@
   "de": "Noch eins: Eine Überlieferung ehrwürdig zu nennen heißt nicht, ihr zu folgen."
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı toplumsal savda kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını toplumsal savda kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der sozialen These. Sprich nach:"
  },

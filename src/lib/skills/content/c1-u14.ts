@@ -435,14 +435,14 @@ export const c1U14: SkillExercise[] = [
       { de: "in Verzug geraten", tr: "temerrüde düşmek", en: "to fall into default" },
       { de: "die Mietminderung", tr: "kira indirimi", en: "rent reduction" },
       { de: "geltend machen", tr: "ileri sürmek", en: "to assert" },
-      { de: "unter Vorbehalt", tr: "ihtirazi kayıtla", en: "under reservation" },
+      { de: "unter Vorbehalt", tr: "ihtirazî kayıtla", en: "under reservation" },
     ],
     minutes: 12,
     tasks: [
       {
         kind: "reply",
         prompt:
-          "Aşağıdaki duruma dayanarak kiraya verene resmî bir ayıp bildirimi yaz. Sırayı tut: ayıbı tarihiyle ve somut olarak tarif et, gidermek için makul bir süre belirle, sürenin geçmesi hâlinde ne olacağını bildir, ve ödemeyi ihtirazi kayıtla sürdüreceğini söyle. Tehdit dili kullanma; sonucu hukuki bir sonuç olarak yaz.",
+          "Aşağıdaki duruma dayanarak kiraya verene resmî bir ayıp bildirimi yaz. Sırayı tut: ayıbı tarihiyle ve somut olarak tarif et, gidermek için makul bir süre belirle, sürenin geçmesi hâlinde ne olacağını bildir, ve ödemeyi ihtirazî kayıtla sürdüreceğini söyle. Tehdit dili kullanma; sonucu hukuki bir sonuç olarak yaz.",
         stimulus:
           "DURUM\n\n" +
           "— Daire: Lindenstraße 8, 3. kat, kira 940 € + 180 € yan gider\n" +
@@ -455,13 +455,13 @@ export const c1U14: SkillExercise[] = [
           "Ayıp tarih ve ayrıntıyla tarif edildi mi?",
           "Makul bir süre belirlendi mi?",
           "Sürenin geçmesinin sonucu hukuki dille yazıldı mı?",
-          "Ödeme ihtirazi kayıtla mı sürdürülüyor, tehdit var mı?",
+          "Ödeme ihtirazî kayıtla mı sürdürülüyor, tehdit var mı?",
         ],
         minWords: 90,
         phrases: [
           { de: "Hiermit zeige ich folgenden Mangel an: …", tr: "işbu yazıyla şu ayıbı bildiriyorum", en: "I hereby report the following defect" },
           { de: "Ich setze Ihnen eine Frist bis zum …", tr: "size …-e kadar süre veriyorum", en: "I set you a deadline until …" },
-          { de: "Die Miete zahle ich weiterhin unter Vorbehalt.", tr: "kirayı ihtirazi kayıtla ödemeyi sürdürüyorum", en: "I continue to pay the rent under reservation" },
+          { de: "Die Miete zahle ich weiterhin unter Vorbehalt.", tr: "kirayı ihtirazî kayıtla ödemeyi sürdürüyorum", en: "I continue to pay the rent under reservation" },
         ],
         sample:
           "Sehr geehrte Frau Hartmann,\n\n" +

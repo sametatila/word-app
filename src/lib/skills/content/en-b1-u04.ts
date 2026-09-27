@@ -357,7 +357,7 @@ export const enB1U04: SkillExercise[] = [
         kind: "build",
         tr: "Kamyonet dokuzda geliyor.",
         answer: "The van is coming at nine.",
-        hint: "Ayarlanmış: saat belli ve karşı taraf da biliyor. Şimdiki zamanın sürerli biçimi.",
+        hint: "Ayarlanmış: saat belli ve karşı taraf da biliyor. Şimdiki zamanın sürekli biçimi.",
       },
       {
         kind: "build",

@@ -341,7 +341,7 @@ Reviews conclude that outcomes depend less on the number of hours than on whethe
               cue: "VISITED",
               accept: ["has been visited"],
               explain:
-                "Mart'tan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürerliğini gerektiriyor: «has been visited». Yalın geçmiş zamanın edilgeni (`was visited`) süreyi taşımaz.",
+                "Mart'tan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürekliliğini gerektiriyor: «has been visited». Yalın geçmiş zamanın edilgeni (`was visited`) süreyi taşımaz.",
             },
           ],
         },

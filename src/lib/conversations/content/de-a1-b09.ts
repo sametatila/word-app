@@ -1853,7 +1853,7 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr(
-            "Türkçede 'bol su içmeli' dersin ve kimin içmesi gerektiğini söylemene gerek kalmaz. Almancada özne asla boş bırakılmaz; herkesi anlatan küçük bir özne konur. O özneyi harfleme konuşmasında tanımıştın, bugün zorunluluk kalıbıyla birlikte kullanacağız. Önce kelimeleri öğrenelim.",
+            "Türkçede 'bol su içmeli' dersin ve kimin içmesi gerektiğini söylemene gerek kalmaz. Almancada özne asla boş bırakılmaz; herkesi anlatan küçük bir özne konur. O özneyi harf harf söyleme konuşmasında tanımıştın, bugün zorunluluk kalıbıyla birlikte kullanacağız. Önce kelimeleri öğrenelim.",
           ),
         ],
       },

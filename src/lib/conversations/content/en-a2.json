@@ -17611,7 +17611,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani ad, soyad, doğum tarihi ve adres."
+      "text": "Yani ad, soyadı, doğum tarihi ve adres."
      }
     ]
    },
@@ -18851,7 +18851,7 @@
      },
      {
       "lang": "tr",
-      "text": "dersin — süreç devam ediyor. Ama iş bittiyse, artık iyisen"
+      "text": "dersin — süreç devam ediyor. Ama iş bittiyse, artık iyiysen"
      },
      {
       "lang": "en",
@@ -23608,7 +23608,7 @@
    },
    {
     "de": "estimate",
-    "tr": "tahmini fiyat"
+    "tr": "tahminî fiyat"
    },
    {
     "de": "tomorrow",
@@ -23757,7 +23757,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi 'tahmini fiyat' demek; tamirci işe başlamadan önce verdiği rakama böyle der. Lütfen"
+      "text": "Türkçesi 'tahminî fiyat' demek; tamirci işe başlamadan önce verdiği rakama böyle der. Lütfen"
      },
      {
       "lang": "en",
@@ -24185,7 +24185,7 @@
    "partner": "işini bilen, biraz aceleci ama yardımsever bir tamirci",
    "opening": "Hello, this is Dave's Repairs. What seems to be the problem?",
    "openingTr": "Merhaba, Dave Tamir Servisi. Sorun nedir?",
-   "goal": "Arıza anlatılmış, gelinecek gün ve saat üzerinde anlaşılmış ve ücret ya da tahmini fiyat sorulmuş olur.",
+   "goal": "Arıza anlatılmış, gelinecek gün ve saat üzerinde anlaşılmış ve ücret ya da tahminî fiyat sorulmuş olur.",
    "minTurns": 7
   }
  },
@@ -47501,7 +47501,7 @@
      },
      {
       "lang": "tr",
-      "text": "Geçmişi anlatırken was ve were, düzenli fiillerde -ed, kural dışılarda wore, ate, went diyoruz. Deneyim için de I have been to."
+      "text": "Geçmişi anlatırken was ve were, düzenli fiillerde -ed, kural dışı fiillerde wore, ate, went diyoruz. Deneyim için de I have been to."
      },
      {
       "lang": "tr",
@@ -60903,7 +60903,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevabın evetse ve iş çoktan bittiyse araya"
+      "text": "Cevabın evet ise ve iş çoktan bittiyse araya"
      },
      {
       "lang": "en",

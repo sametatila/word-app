@@ -1448,17 +1448,17 @@ export const deA1B01: Conversation[] = [
     level: "A1",
     course: "de",
     title: "Wie schreibt man das?",
-    titleTr: "Harfleme",
+    titleTr: "Harf harf söyleme",
     summary:
-      "Adını harflemeyi ve bir kelimenin nasıl yazıldığını sormayı öğretir.",
+      "Adını harf harf söylemeyi ve bir kelimenin nasıl yazıldığını sormayı öğretir.",
     minutes: 8,
     focusId: "Vorstellung",
     vocab: [
       { de: "der Buchstabe", tr: "harf" },
-      { de: "buchstabieren", tr: "harflemek" },
+      { de: "buchstabieren", tr: "harf harf söylemek" },
       { de: "schreiben", tr: "yazmak" },
       { de: "der Vorname", tr: "ad" },
-      { de: "der Nachname", tr: "soyad" },
+      { de: "der Nachname", tr: "soyadı" },
       { de: "das Wort", tr: "kelime" },
       { de: "der Fehler", tr: "hata" },
       { de: "die Seite", tr: "sayfa" },
@@ -1466,13 +1466,13 @@ export const deA1B01: Conversation[] = [
     patterns: [
       { de: "Wie schreibt man das?", tr: "bir kelimenin nasıl yazıldığını sorar" },
       { de: "Mein Nachname ist …", tr: "soyadını söylerken kullanılır" },
-      { de: "Buchstabieren Sie bitte.", tr: "karşındakinden harflemesini ister" },
+      { de: "Buchstabieren Sie bitte.", tr: "karşındakinden harf harf söylemesini ister" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Selam! Bugün adını harflemeyi öğreneceğiz. Almanya'da bunu her yerde yapman istenir: bankada, doktorda, telefonda. Hazır mısın?",
+            "Selam! Bugün adını harf harf söylemeyi öğreneceğiz. Almanya'da bunu her yerde yapman istenir: bankada, doktorda, telefonda. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1480,7 +1480,7 @@ export const deA1B01: Conversation[] = [
       {
         say: [
           tr(
-            "Türkçe adlar Alman kulağına yabancı geldiği için harflemek günlük bir iş. Bir de Türkçede karşılığı olmayan küçük bir soru biçimi öğreneceğiz. Önce kelimeleri öğrenelim.",
+            "Türkçe adlar Alman kulağına yabancı geldiği için adını harf harf söylemek günlük bir iş. Bir de Türkçede karşılığı olmayan küçük bir soru biçimi öğreneceğiz. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -1498,7 +1498,7 @@ export const deA1B01: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("buchstabieren"),
-          tr("Türkçesi 'harflemek' demek. Lütfen"),
+          tr("Türkçesi 'harf harf söylemek' demek. Lütfen"),
           de("buchstabieren"),
           tr("de."),
         ],
@@ -1528,7 +1528,7 @@ export const deA1B01: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("der Nachname"),
-          tr("Türkçesi 'soyad' demek. Lütfen"),
+          tr("Türkçesi 'soyadı' demek. Lütfen"),
           de("der Nachname"),
           tr("de."),
         ],
@@ -1620,7 +1620,7 @@ export const deA1B01: Conversation[] = [
           kind: "produce",
           target: "Mein Nachname ist Yilmaz",
           hint: [
-            tr("Ad için bir kelime, soyad için başka bir kelime vardı:"),
+            tr("Ad için bir kelime, soyadı için başka bir kelime vardı:"),
             de("Mein Nachname ist Yilmaz."),
             tr("Tekrar dene."),
           ],
@@ -1630,7 +1630,7 @@ export const deA1B01: Conversation[] = [
         say: [
           tr("Üçüncü kalıp karşı taraftan gelecek:"),
           de("Buchstabieren Sie bitte."),
-          tr("Yani 'Harfleyin lütfen.' Bunu duyduğunda adını harf harf söyleyeceksin."),
+          tr("Yani 'Harf harf söyleyin lütfen.' Bunu duyduğunda adını harf harf söyleyeceksin."),
         ],
       },
       {
@@ -1659,17 +1659,17 @@ export const deA1B01: Conversation[] = [
       {
         say: [
           tr(
-            "Artık adını harfleyebilir ve bir kelimenin yazılışını sorabilirsin. Şimdi bir kütüphanede üyelik kartı çıkarıyorsun.",
+            "Artık adını harf harf söyleyebilir ve bir kelimenin yazılışını sorabilirsin. Şimdi bir kütüphanede üyelik kartı çıkarıyorsun.",
           ),
         ],
       },
     ],
     chat: {
       scene:
-        "Bir kütüphanede üyelik kartı çıkarıyorsun. Görevli adını ve soyadını soracak: söyle, harfle ve gerektiğinde bir kelimenin nasıl yazıldığını sor.",
+        "Bir kütüphanede üyelik kartı çıkarıyorsun. Görevli adını ve soyadını soracak: söyle, harf harf tekrarla ve gerektiğinde bir kelimenin nasıl yazıldığını sor.",
       partner: "sakin ve titiz bir kütüphane görevlisi",
       opening: "Guten Tag! Ich brauche Ihren Vornamen und Ihren Nachnamen. Können Sie das buchstabieren?",
-      openingTr: "İyi günler! Adınıza ve soyadınıza ihtiyacım var. Harfleyebilir misiniz?",
+      openingTr: "İyi günler! Adınıza ve soyadınıza ihtiyacım var. Harf harf söyleyebilir misiniz?",
       goal: "Adın ve soyadın harf harf doğru yazılmış, kartın ne zaman hazır olacağı söylenmiş olur.",
       minTurns: 7,
     },

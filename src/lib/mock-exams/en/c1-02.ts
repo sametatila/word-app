@@ -609,7 +609,7 @@ None of this shows that the original project was misconceived. It shows that the
               text: "Gap 34",
               answer: "c",
               explain:
-                "Önceki paragraf «the only reliable way to transmit it is to expose learners to a very large number of cases, which is expensive and slow» diyor; (c) bu maruziyeti kısaltma denemelerini ve neden sınırlı kaldığını anlatıyor. (d) dönemin görüntü çözünürlüğünden söz ediyor ve metnin hiçbir yerinde cihaz kalitesi tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
+                "Önceki paragraf «the only reliable way to transmit it is to expose learners to a very large number of cases, which is expensive and slow» diyor; (c) bu maruz bırakma sürecini kısaltma denemelerini ve neden sınırlı kaldığını anlatıyor. (d) dönemin görüntü çözünürlüğünden söz ediyor ve metnin hiçbir yerinde cihaz kalitesi tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
             },
           ],
         },

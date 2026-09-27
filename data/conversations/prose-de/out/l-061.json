@@ -130,7 +130,7 @@
  { "tr": "Şimdi sıra sende. \"Kendimi yorgun hissediyorum\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde „Ich fühle mich müde“ auf Englisch." },
  { "tr": "Tam tersini istersen, yani herkes kendi hesabını ödeyecekse şunu dersin:", "kind": "say.tr", "de": "Willst du das Gegenteil, also jeder zahlt für sich, sagst du das:" },
  { "tr": "Türkçedeki 'evet, öyle' gibi. Cümlenin tamamını tekrar etmene gerek yok.", "kind": "say.tr", "de": "Wie das deutsche „ja, genau“. Den ganzen Satz musst du nicht wiederholen." },
- { "tr": "Türkçesi 'harflemek' demek; yani bir kelimeyi harf harf söylemek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „buchstabieren“; ein Wort Buchstabe für Buchstabe. Bitte" },
+ { "tr": "Türkçesi 'harf harf söylemek' demek; yani bir kelimenin harflerini tek tek söylemek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „buchstabieren“; ein Wort Buchstabe für Buchstabe. Bitte" },
  { "tr": "Türkçesi 'yazmak' demek. Baştaki w okunmaz, sadece 'rayt' dersin. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „schreiben“. Das w am Anfang ist stumm, nur „rait“. Bitte" },
  { "tr": "Türkçesi vücut ateşi demek. Ateşin varsa şöyle dersin. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch heißt es Fieber. Hast du Fieber, sagst du so. Bitte wiederhole:" },
  { "tr": "Yani \"pop müziği tercih ederim.\" Rock için de aynı: I prefer rock music.", "kind": "say.tr", "de": "Also „ich ziehe Popmusik vor.“ Für Rock genauso: I prefer rock music." },

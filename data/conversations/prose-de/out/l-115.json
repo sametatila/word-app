@@ -220,7 +220,7 @@
   "de": "Du erzählst von einem Familientreffen und willst deine Kritik nicht offen aussprechen. Kritisiere in drei Sätzen mit Auslassung und frag, was die Zuhörerin ergänzt hat."
  },
  {
-  "tr": "Klasik bir felsefe metnindeki savı kendi cümlelerinle kuruyorsun. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle söyle ve savı kişiden ayır.",
+  "tr": "Klasik bir felsefe metnindeki savı kendi cümlelerinle kuruyorsun. İsteği, «olmasaydı» anlamını ve yasağı kalıplaşmış biçimlerle söyle ve savı kişiden ayır.",
   "kind": "scene",
   "de": "Du formulierst die These eines klassischen philosophischen Textes mit eigenen Sätzen. Sag die Forderung, das Wäre-nicht und das Verbot in festen Formen und trenne die These von der Person."
  },
@@ -435,7 +435,7 @@
   "de": "markiert die vertretbare Lesart"
  },
  {
-  "tr": "olmasaydıyı kuramsal metinde kurar",
+  "tr": "«olmasaydı» anlamını kuramsal metinde kurar",
   "kind": "pattern.tr",
   "de": "baut das Wäre-nicht im theoretischen Text"
  },
@@ -965,7 +965,7 @@
   "de": "Um zwei Handlungen unter dasselbe Modalverb zu stellen"
  },
  {
-  "tr": "Olmasaydıyı kuramsal metinde kurmak için",
+  "tr": "«Olmasaydı» anlamını kuramsal metinde kurmak için",
   "kind": "hint.tr",
   "de": "Um das Wäre-nicht im theoretischen Text zu bauen –"
  },
@@ -1615,7 +1615,7 @@
   "de": "und der Zweig, der fragt, wie Wissen möglich ist, heißt"
  },
  {
-  "tr": "İkinci kalıbımız olmasaydıyı kuramsal metinde kuruyor. Tekrar et:",
+  "tr": "İkinci kalıbımız «olmasaydı» anlamını kuramsal metinde kuruyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung baut das Wäre-nicht im theoretischen Text. Sprich nach:"
  },

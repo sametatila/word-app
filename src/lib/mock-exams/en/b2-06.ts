@@ -1060,7 +1060,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Speaker 6",
               answer: "d",
               explain:
-                "Konuşmacı kendi uygulamasını değiştirmiş: ilana kiranın yanına tahmini işletme maliyetini koyuyor ve gelen sorular değişmiş. «I should have started years ago» bunu pekiştiriyor.",
+                "Konuşmacı kendi uygulamasını değiştirmiş: ilana kiranın yanına tahminî işletme maliyetini koyuyor ve gelen sorular değişmiş. «I should have started years ago» bunu pekiştiriyor.",
             },
           ],
         },

@@ -22,7 +22,7 @@ export const enB1P10: SkillExercise[] = [
     gloss: [
       { de: "bill", tr: "fatura" },
       { de: "meter", tr: "sayaç" },
-      { de: "estimate", tr: "tahmini hesap" },
+      { de: "estimate", tr: "tahminî hesap" },
       { de: "installment", tr: "taksit" },
       { de: "to owe", tr: "borçlu olmak" },
       { de: "account", tr: "hesap" },

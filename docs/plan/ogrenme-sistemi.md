@@ -18,7 +18,7 @@ sözlüğü `kpi.md`de; Beceriler kütüphanesi `90-beceri-kutuphanesi.md`de; Pa
 | 12 | Serbest cümle | `components/games/free-sentence-game.tsx` |
 | 13, 61 | "Neden" satırı ve fark vurgusu | `lib/why.ts`, `components/feedback/*`, `/demo-feedback` (canlıda yalnız admin) |
 | 14 | Tanımadan üretime merdiven | `lib/ladder.ts` (`PRODUCTION_GAMES`) |
-| 20 | Telaffuz puanı (kelime düzeyi) | `lib/stt.ts`, `/api/pronounce`, `lib/pronounce.ts`, `lib/pronounce-client.ts` (bkz. `pronunciation-providers.md`) |
+| 20 | Telaffuz puanı (kelime düzeyi) | `/api/pronounce` (tarayıcı tanıyıcısının metni, ses yok), `lib/pronounce.ts`, `lib/pronounce-client.ts` (bkz. `pronunciation-providers.md`) |
 | 21 | Monolog görevi | `components/skills/monologue-player.tsx` |
 | 22 | Puanlı konuşma (sınav kipi) | `/conversations/[id]/scored`, `components/conversations/conversation-scored.tsx` |
 | 23 | Açık diyalog (LLM + senaryo yedeği) | `lib/dialogue.ts`, `lib/conversations/chat.ts` (`dialoguePrompt`) |

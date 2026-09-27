@@ -102,7 +102,7 @@
  { "tr": "Yasak için", "kind": "say.tr", "de": "Fürs Verbot" },
  { "tr": "yıl demek.", "kind": "say.tr", "de": "heißt Jahr." },
  { "tr": "yok, çünkü", "kind": "say.tr", "de": "fehlt, denn" },
- { "tr": ", harflemek", "kind": "say.tr", "de": ", buchstabieren" },
+ { "tr": ", harf harf söylemek", "kind": "say.tr", "de": ", buchstabieren" },
  { "tr": ", küçük ise", "kind": "say.tr", "de": ", klein dagegen" },
  { "tr": ", süre için", "kind": "say.tr", "de": ", für die Dauer" },
  { "tr": "'daha iyi',", "kind": "say.tr", "de": "„besser“," },

@@ -322,7 +322,7 @@ export const enB2U17: SkillExercise[] = [
       { de: "verbs", tr: "fiiller" },
       { de: "infinitive", tr: "mastar" },
       { de: "sentences", tr: "cümleler" },
-      { de: "continuous", tr: "sürerli" },
+      { de: "continuous", tr: "sürekli" },
       { de: "a state", tr: "durum" },
       { de: "a promise", tr: "söz" },
       { de: "stacked", tr: "üst üste" },
@@ -380,7 +380,7 @@ export const enB2U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Next month we will be waiting for approval.", "Next month we will be waiting for approval"],
-        explain: "İşin içinde olmak: sürerli biçim, denetimimizde olmayan iş.",
+        explain: "İşin içinde olmak: sürekli biçim, denetimimizde olmayan iş.",
       },
       {
         kind: "short_answer",

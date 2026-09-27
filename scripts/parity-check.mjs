@@ -1965,7 +1965,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * sozdu; kaynak `lib/quotas` olunca ad artik tek degere isaret ediyor.
    * Yani belirsizligin bir kismi tesaduf degil, tek kaynagin eksikligiydi.
    */
-  const BELIRSIZ = ["DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "MIN_CONFIDENCE", "PAGE_SIZE", "PASS_RATIO"];
+  /* `MIN_CONFIDENCE` 2026-09-27'de listeden çıktı: web tarafındaki sahibi
+     `pocket-mic` (tanıyıcısız tarayıcının sunucu yedeği) silindi. */
+  const BELIRSIZ = ["DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "PAGE_SIZE", "PASS_RATIO"];
   /* Dizge tarafinin belirsizleri: iki ayri "kapat" anahtari ve iki saglayicinin
      jeton adresi. Genel adlar (KEY, PREFIX) zaten GENERIC'te. */
   const BELIRSIZ_DIZGE = ["DISMISS_KEY", "TOKEN_URL"];
@@ -3410,7 +3412,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Web mikrofon ipuclarini bir sarmalayicidan caliyor (`walkCue`), cunku
      ekran kapaliyken WebAudio askiya aliniyor; sarmalayici da sayiliyor. */
   const cW = cagrilan(["src/components", "src/lib"], /(?:play|walkCue|pocketWalkCue)\(\s*(?:[a-zA-Z]+ \? )?"([a-z]+)"(?: : "([a-z]+)")?/g);
-  sameSet("calinan ses ipuclari", [...cM].sort(), [...cW].sort());
+  /* YALNIZ MOBILDE CALINAN: `premium` ipucu cepte (ekran kapali) yuruyusun
+     premium kapisinda caliyor. 2026-09-27'den beri ekran acikken ses sunucuya
+     gitmiyor ve web'de cepte yuruyus yok (kilitli ekranda mikrofon alinamiyor);
+     web'in bu ipucunu calacagi yol kalmadi. */
+  const YALNIZ_MOBIL_IPUCU = new Set(["premium"]);
+  sameSet("calinan ses ipuclari", [...cM].filter((x) => !YALNIZ_MOBIL_IPUCU.has(x)).sort(), [...cW].sort());
 }
 
 /* ── 84. geri bildirim TEK cagriyla veriliyor mu ──────────────────────────
@@ -4408,7 +4415,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ];
   const mob = kilitTurleri(MOB);
   const web = kilitTurleri(WEB);
-  sameList("premium kilidi olcumu", mob, web);
+  /* `pocket_walk` YALNIZ MOBILDE: web'de cepte yuruyus yok (2026-09-27'den beri
+     tanıyıcısız tarayıcının sunucu yedegi de yok), olculecek kilit kalmadi. */
+  sameList("premium kilidi olcumu", mob.filter((x) => x !== "pocket_walk"), web);
 
   const sessiz = [...suskun(MOB), ...suskun(WEB)].map((p) => p.split("/").pop());
   sameList("premium kilidi: reddeden her yuzey", sessiz.length ? sessiz : ["yok"], ["yok"], "susan yuzey", "beklenen");
@@ -4435,27 +4444,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
 }
 
-/* ── 120b. STT kapisi ISTEMCININ BEYANINA bagli olmamali ──────────────────
+/* ── 120b. Sunucuya ses YALNIZ ekran kapali yuruyuste ──────────────────────
  *
- * Cepte yuruyus kapisi bir donem yalniz govdede `mode=walk` geldiginde
- * calisiyordu: alani gondermeyen bir istemci kapiyi hic calistirmadan sunucu
- * STT'sine ulasiyordu (denetim 2026-09-16, bulgu 3). Karar artik BAGLAMDAN
- * turuyor — calisan ve kullaniciya ait bir deneme kagidinin kimligi.
+ * Samet'in karari (2026-09-27): ekran acikken hicbir yuzeyde ses sunucuya
+ * gitmiyor. `/api/stt` `mode=walk` tasimayan istegi 400 ile reddediyor (iki
+ * mobil modul bu alani her yuklemede gonderiyor) ve kabul ettigi her istek
+ * premium kapisindan geciyor; web istemcisi uca hic gelmiyor, `/api/pronounce`
+ * ses degil tarayicinin metnini aliyor. Onceki kural (kapi deneme sinavi
+ * baglamindan) bu yolla birlikte kalkti.
  *
- * Bu kural gerilemeyi tutuyor: kapi `mode`a geri baglanirsa ya da sinav
- * baglami dogrulanmadan kabul edilirse duser. */
+ * Bu kural gerilemeyi tutuyor: walk olmayan istek kabul edilirse, kapi bir
+ * kosula baglanirsa ya da web yeniden sunucuya ses gonderirse duser. */
 {
   const stt = read("src/app/api/stt/route.ts");
-  const player = read("src/components/mock-exam-player.tsx");
+  const pron = read("src/app/api/pronounce/route.ts");
+  const webSes = ["src/components/mock-exam-player.tsx", "src/components/walk-player.tsx", "src/lib/pronounce-client.ts", "src/components/exam-player.tsx", "src/components/skills/speaking-player.tsx"]
+    .filter((f) => /\/api\/stt|formData\(\)[\s\S]{0,80}audio|append\("audio"/.test(read(f)));
   sameList(
-    "stt kapisi istemcinin beyanina bagli degil",
+    "sunucuya ses yalniz ekran kapali yuruyuste",
     [
-      "kapi mode'a bagli=" + (/if \(mode === "walk"\)[\s\S]{0,200}canPocketWalk/.test(stt) ? "EVET" : "hayir"),
-      "baglam dogrulaniyor=" + (/isRunningMockAttempt[\s\S]*?eq\(mockExamAttempts\.userId, userId\)[\s\S]*?eq\(mockExamAttempts\.state, "running"\)/.test(stt) ? "evet" : "HAYIR"),
-      "varsayilan kapali=" + (/if \(!examOk\) \{[\s\S]{0,400}canPocketWalk/.test(stt) ? "evet" : "HAYIR"),
-      "sinav baglamini gonderiyor=" + (/form\.append\("exam"/.test(player) ? "evet" : "HAYIR"),
+      "walk olmayan reddediliyor=" + (/if \(!walk\) return NextResponse\.json\(\{ error: "screen_on_uses_device" \}/.test(stt) ? "evet" : "HAYIR"),
+      "premium kapisi kosulsuz=" + (/if \(!walk\)[\s\S]{0,120}\n\s*const gate = await canPocketWalk\(userId\);/.test(stt) ? "evet" : "HAYIR"),
+      "pronounce ses almiyor=" + (/formData|transcribe\(/.test(pron) ? "HAYIR" : "evet"),
+      "web sunucuya ses gondermiyor=" + (webSes.length ? "HAYIR: " + webSes.join(",") : "evet"),
     ],
-    ["kapi mode'a bagli=hayir", "baglam dogrulaniyor=evet", "varsayilan kapali=evet", "sinav baglamini gonderiyor=evet"],
+    ["walk olmayan reddediliyor=evet", "premium kapisi kosulsuz=evet", "pronounce ses almiyor=evet", "web sunucuya ses gondermiyor=evet"],
     "bulunan",
     "beklenen",
   );
@@ -18187,7 +18200,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * `/api/stt`e kendisi gonderiyor (RN `fetch` arka planda takiliyor). Yani
    * sozlesme uc yerde birden yazili: ucun de ayni olmasi gerekiyor.
    *
-   *   sunucu  `form.get("audio"|"language"|"expected"|"mode")` (+ web-ozel `exam`)
+   *   sunucu  `form.get("audio"|"language"|"expected"|"mode")`
    *   Kotlin  multipart alan adlari + kayit bicimi
    *   Swift   multipart alan adlari + kayit bicimi
    *
@@ -18205,15 +18218,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const kt = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
     const sw = read("mobile/ios/Lernomi/LernomiSpeech.swift");
     const sunucuAlan = [...uc.matchAll(/form\.get\("(\w+)"\)/g)].map((m) => m[1]).sort();
-    /* `exam` BILEREK YALNIZ SUNUCUDA VE WEBDE. Premium kapisi istemcinin
-       `mode` beyanina degil, sunucuda dogrulanabilen bir baglama bakiyor:
-       calisan bir deneme sinavi kaydinin kimligi. O kaydi yalnizca WEB
-       deneme sinavi konusma bolumu (`mock-exam-player.tsx`) aciyor. Native
-       taraf sadece yuruyus yolunu kullaniyor, deneme sinavi acmiyor - alan
-       onlarda YOK ve olmamali. Geri kalan dort alan uc tarafta da ayni.
-       Ayrica alanin sunucudan kaybolmasi da kusur: o zaman deneme sinavinin
-       konusma bolumu premium kapisina takilir. */
-    const SUNUCUYA_OZEL = new Set(["exam"]);
+    /* `exam` alani 2026-09-27'de kalkti: web deneme sinavi konusmasi artik
+       tarayicinin tanıyıcısını kullaniyor ve uca gelmiyor. Uc tarafta da ayni
+       dort alan var; sunucuya ozel alan olmamali. */
+    const SUNUCUYA_OZEL = new Set([]);
     const ortakAlan = sunucuAlan.filter((a) => !SUNUCUYA_OZEL.has(a));
     const webAlan = sunucuAlan.filter((a) => SUNUCUYA_OZEL.has(a));
     /* Multipart alan adlari: `name=\"x\"` (kacisli tirnak, iki dilde de oyle). */
@@ -18240,7 +18248,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ],
       [
         "sunucu ortak alan=audio+expected+language+mode",
-        "sunucu web alani=exam",
+        "sunucu web alani=YOK",
         "kotlin alan=audio+expected+language+mode",
         "swift alan=audio+expected+language+mode",
         "kotlin kayit orani=16000",
