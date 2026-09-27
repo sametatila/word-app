@@ -7,6 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { PrimaryButton } from "../ui/PrimaryButton";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs, clearOnboardingPrefs } from "../lib/onboardingPrefs";
@@ -133,6 +134,7 @@ export function OnboardingScreen() {
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
   const [pickedLevel, setPickedLevel] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
   const allSteps = steps(choices.course ?? DEFAULT_COURSE_ID);
   const step = allSteps[i];
 
@@ -215,7 +217,10 @@ export function OnboardingScreen() {
     nav.reset({ index: 0, routes: [{ name: "Auth" }] });
   }
 
-  function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }
+  function next() {
+    if (last) { setSaving(true); void finish().finally(() => setSaving(false)); }
+    else if (canNext) setI((n) => n + 1);
+  }
   // Android geri tuşu: adım geri (ilk adımda sistem davranışı — uygulamadan çıkar).
   useFocusEffect(
     useCallback(() => {
@@ -298,9 +303,22 @@ export function OnboardingScreen() {
         )}
       </ScrollView>
 
-      <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
-        <Text variant="h3" color={canNext ? colors.onPrimary : colors.textFaint}>{t("common.continue_2")}</Text>
-      </PressableScale>
+      {/* GERİ, DEVAM'IN YANINDA (web `course-onboarding` ile aynı). Adım geri
+          yalnız Android geri tuşundaydı; iPhone'da yanlış seçimi düzeltmenin
+          yolu yoktu. İlk adımda geri yok: gidilecek önceki adım yok. */}
+      <View style={{ flexDirection: "row", gap: spacing.sm }}>
+        {i > 0 ? (
+          <PressableScale
+            onPress={() => setI((n) => n - 1)}
+            disabled={saving}
+            accessibilityRole="button"
+            style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, alignItems: "center", justifyContent: "center" }}
+          >
+            <Text variant="bodyStrong" color={colors.text}>{t("common.back")}</Text>
+          </PressableScale>
+        ) : null}
+        <PrimaryButton label={t("common.continue_2")} onPress={next} disabled={!canNext} busy={saving} style={{ flex: 1 }} />
+      </View>
 
       {/* Kayıtlı kullanıcının çıkışı — her adımda duruyor: soruların hangisinde
           "bu bana sorulmamalı" dediği baştan belli değil. */}
