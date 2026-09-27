@@ -4,7 +4,7 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import type { AnalysisRow, MockItemRow } from "@/lib/admin-content";
-import { BTN, DataTable, Notice, Panel, TONE, type Tone } from "../_ui/ui";
+import { AdminTabs, BTN, DataTable, Notice, Panel, TONE, type Tone } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 /**
@@ -96,16 +96,7 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
       title="Madde analizi"
       hint={`En düşük başarıdan başlayarak; en az ${minAnswers} kişinin çalıştığı maddeler. Çok düşük oran çoğunlukla maddenin kusurudur (yanlış anahtar, belirsiz soru). Kapatmak geri alınabilir; kapalı maddeler ve sürümler: /admin/content — düzeltme git'te yapılıp yayınlanır.`}
     >
-      {/* Sekmeler — seçili olan `aria-selected` ile de söyleniyor (bkz. parity 258). */}
-      <div role="tablist" aria-label="Madde türü" className="-mx-1 mb-3 flex gap-1 overflow-x-auto border-b px-1" style={{ borderColor: "var(--border)" }}>
-        {TABS.map((t) => (
-          <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
-            className="-mb-px h-9 shrink-0 border-b-2 px-3 text-caption whitespace-nowrap"
-            style={tab === t ? { borderColor: "var(--color-brand)", color: "var(--text)" } : { borderColor: "transparent", color: "var(--text-muted)" }}>
-            {t}
-          </button>
-        ))}
-      </div>
+      <AdminTabs label="Madde türü" className="mb-3" items={TABS.map((t) => [t, t] as const)} value={tab} onChange={setTab} />
       {msg ? <div className="mb-3"><Notice tone={msg.tone}>{msg.text}</Notice></div> : null}
 
       {tab === "Konuşmalar" ? <DataTable head={unitHead} rows={unitRows(conversations)} empty="Analiz için yeterli konuşma sonucu yok." /> : null}

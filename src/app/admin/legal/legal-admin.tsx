@@ -6,7 +6,7 @@ import { LEGAL_LOCALES, type LegalLocale } from "@/lib/legal";
 import type { ConfigProcessor, LegalConfig } from "@/lib/legal/shape";
 import { LegalStyles, renderLegalBody } from "@/lib/legal/markdown";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Badge, BTN, DANGER, Field, FIELD, FIELD_AREA, FIELD_STYLE, Notice, PageHeader, Panel } from "../_ui/ui";
+import { AdminPage, AdminTabs, Badge, BTN, DANGER, Field, FIELD, FIELD_AREA, FIELD_STYLE, Notice, PageHeader, Panel, Segmented } from "../_ui/ui";
 
 /**
  * Hukuki metin ve bilgi yönetimi.
@@ -105,27 +105,18 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
       />
 
       {/* Sekmeler — seçili olan yalnız kalın yazıdan okunuyordu (bkz. parity 258). */}
-      <div role="tablist" aria-label="Bölümler" className="-mx-1 flex gap-1 overflow-x-auto border-b px-1" style={{ borderColor: "var(--border)" }}>
-        {([
+      <AdminTabs
+        label="Bölümler"
+        items={[
           ["docs", "Belgeler"],
           ["identity", "Kimlik"],
           ["version", "Sürüm ve geçmiş"],
           ["processors", "Alıcılar"],
           ["platform", "Platform ve sınırlar"],
-        ] as const).map(([k, label]) => (
-          <button
-            key={k}
-            type="button"
-            role="tab"
-            aria-selected={tab === k}
-            onClick={() => setTab(k)}
-            className="-mb-px h-10 shrink-0 border-b-2 px-3 text-strong whitespace-nowrap"
-            style={tab === k ? { borderColor: "var(--color-brand)", color: "var(--text)" } : { borderColor: "transparent", color: "var(--text-muted)" }}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+        ] as const}
+        value={tab}
+        onChange={setTab}
+      />
 
       {msg ? <Notice tone={msgBad ? "bad" : "ok"}>{msg}</Notice> : null}
 
@@ -285,21 +276,13 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
   return (
     <Panel>
       <div className="flex flex-wrap items-center gap-3">
-        <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
-        {(Object.keys(DOC_LABEL) as (keyof Docs)[]).map((d) => (
-          <button key={d} type="button" aria-pressed={doc === d} onClick={() => setDoc(d)} className="inline-flex h-8 items-center rounded-chip px-3 text-caption" style={doc === d ? SEG_ON : SEG_OFF}>
-            {DOC_LABEL[d]}
-          </button>
-        ))}
-        </div>
-        <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
-        {LEGAL_LOCALES.map((l) => (
-          <button key={l} type="button" aria-pressed={locale === l} onClick={() => setLocale(l)} className="inline-flex h-8 items-center rounded-chip px-3 text-caption" style={locale === l ? SEG_ON : SEG_OFF}>
-            {LOC_LABEL[l]}
-            {docs[doc][l].overridden ? " ●" : ""}
-          </button>
-        ))}
-        </div>
+        <Segmented label="Belge" items={(Object.keys(DOC_LABEL) as (keyof Docs)[]).map((d) => [d, DOC_LABEL[d]] as const)} value={doc} onChange={setDoc} />
+        <Segmented
+          label="Dil"
+          items={LEGAL_LOCALES.map((l) => [l, `${LOC_LABEL[l]}${docs[doc][l].overridden ? " ●" : ""}`] as const)}
+          value={locale}
+          onChange={setLocale}
+        />
       </div>
       <p className="muted mt-2 text-caption">
         {cur.overridden
@@ -326,7 +309,7 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
           onChange={(e) => patch({ body: e.target.value })}
           aria-label="Gövde (markdown)"
           spellCheck={false}
-          className="w-full rounded-tile border p-3 font-mono text-caption leading-relaxed"
+          className={`${FIELD_AREA} font-mono text-caption leading-relaxed`}
           style={{ ...FIELD_STYLE, minHeight: "32rem" }}
         />
         {preview ? (
@@ -357,8 +340,6 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
   );
 }
 
-const SEG_ON = { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" };
-const SEG_OFF = { color: "var(--text-muted)" };
 
 /* ── küçük parçalar ─────────────────────────────────────────────────────── */
 

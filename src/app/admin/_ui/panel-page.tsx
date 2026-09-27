@@ -1,7 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import type { QueryIssue } from "@/lib/admin-query";
-import { AdminPage, BTN, Notice, PageHeader } from "./ui";
+import { AdminPage, BTN, Notice, PageHeader, Segmented } from "./ui";
 import { PANEL_RANGES } from "../_data-shared";
 
 /**
@@ -37,19 +36,12 @@ export function PanelPage({ title, description, href, at, issues, days, children
         actions={
           <>
             {days ? (
-              <div role="group" aria-label="Tarih aralığı" className="inline-flex gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
-                {PANEL_RANGES.map((d) => (
-                  <Link
-                    key={d}
-                    href={q(d)}
-                    aria-current={days === d ? "page" : undefined}
-                    className="inline-flex h-8 items-center rounded-chip px-3 text-caption"
-                    style={days === d ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" } : { color: "var(--text-muted)" }}
-                  >
-                    {d} gün
-                  </Link>
-                ))}
-              </div>
+              <Segmented
+                label="Tarih aralığı"
+                items={PANEL_RANGES.map((d) => [String(d), `${d} gün`] as const)}
+                value={String(days)}
+                href={(d) => q(Number(d))}
+              />
             ) : null}
             <a href={q(days, true)} className={BTN.secondary}>Tazele</a>
           </>

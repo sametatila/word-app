@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { adminGate } from "@/lib/admin";
 import { listUsers, parseUsersQuery, USERS_PAGE_SIZE, type UsersQuery } from "@/lib/admin-users";
-import { AdminDenied, AdminPage, Badge, BTN, DataTable, FIELD, FIELD_STYLE, Notice, PageHeader, Panel } from "../_ui/ui";
+import { AdminDenied, AdminPage, Badge, BTN, DataTable, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, Segmented } from "../_ui/ui";
 
 export const metadata: Metadata = { title: "Kullanıcılar" };
 export const dynamic = "force-dynamic";
@@ -26,25 +26,6 @@ function href(q: UsersQuery, patch: Partial<UsersQuery>): string {
   if (n.page > 1) p.set("sayfa", String(n.page));
   const s = p.toString();
   return `/admin/users${s ? `?${s}` : ""}`;
-}
-
-/** Bağlantılı seçim grubu: süzgeç ve sıralama. Seçili olan `aria-current` taşıyor. */
-function Segment({ items, current, to }: { items: [string, string][]; current: string; to: (k: string) => string }) {
-  return (
-    <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
-      {items.map(([k, label]) => (
-        <Link
-          key={k}
-          href={to(k)}
-          aria-current={current === k ? "page" : undefined}
-          className="inline-flex h-8 items-center rounded-chip px-3 text-caption"
-          style={current === k ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" } : { color: "var(--text-muted)" }}
-        >
-          {label}
-        </Link>
-      ))}
-    </div>
-  );
 }
 
 export default async function AdminUsersPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
@@ -72,9 +53,9 @@ export default async function AdminUsersPage({ searchParams }: { searchParams: P
           {query.q ? <Link href={href(query, { q: "", page: 1 })} className={BTN.secondary}>Temizle</Link> : null}
         </form>
         <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <Segment items={KINDS} current={query.kind} to={(k) => href(query, { kind: k as UsersQuery["kind"], page: 1 })} />
+          <Segmented label="Süzgeç" items={KINDS} value={query.kind} href={(k) => href(query, { kind: k, page: 1 })} />
           <span className="muted text-caption">Sırala</span>
-          <Segment items={SORTS} current={query.sort} to={(k) => href(query, { sort: k as UsersQuery["sort"], page: 1 })} />
+          <Segmented label="Sırala" items={SORTS} value={query.sort} href={(k) => href(query, { sort: k, page: 1 })} />
         </div>
       </Panel>
 

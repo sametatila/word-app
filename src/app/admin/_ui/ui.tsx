@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 
 /**
@@ -16,6 +17,8 @@ import type { CSSProperties, ReactNode } from "react";
  *   DataTable    tablo
  *   BarList      yatay çubuk listesi
  *   KeyValue     alan: değer ızgarası
+ *   AdminTabs    sekme şeridi (alt çizgili)
+ *   Segmented    bölmeli seçim (aralık, süzgeç, sıralama, belge/dil)
  *   Empty        boş durum
  *   BTN / FIELD  düğme ve giriş alanı sınıfları
  *
@@ -225,6 +228,68 @@ export function Field({ label, children, className = "" }: { label: string; chil
       <span className="muted">{label}</span>
       {children}
     </label>
+  );
+}
+
+/**
+ * Sekme şeridi. Seçili sekme `aria-selected` ile de söyleniyor, yalnız
+ * renkle değil (bkz. parity 258).
+ */
+export function AdminTabs<K extends string>({ items, value, onChange, label, className = "" }: {
+  items: readonly (readonly [K, ReactNode])[];
+  value: K;
+  onChange: (k: K) => void;
+  label: string;
+  className?: string;
+}) {
+  return (
+    <div role="tablist" aria-label={label} className={`-mx-1 flex gap-1 overflow-x-auto border-b px-1 ${className}`} style={{ borderColor: "var(--border)" }}>
+      {items.map(([k, text]) => (
+        <button
+          key={k}
+          type="button"
+          role="tab"
+          aria-selected={value === k}
+          onClick={() => onChange(k)}
+          className="-mb-px h-9 shrink-0 border-b-2 px-3 text-caption whitespace-nowrap"
+          style={value === k ? { borderColor: "var(--color-brand)", color: "var(--text)" } : { borderColor: "transparent", color: "var(--text-muted)" }}
+        >
+          {text}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+const SEG_ON: CSSProperties = { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" };
+const SEG_OFF: CSSProperties = { color: "var(--text-muted)" };
+const SEG_ITEM = "inline-flex h-8 items-center rounded-chip px-3 text-caption";
+
+/**
+ * Bölmeli seçim. `href` verilirse bağlantılar (adres değişiyor, seçili olan
+ * `aria-current="page"`), `onChange` verilirse düğmeler (`aria-pressed`).
+ */
+export function Segmented<K extends string>({ items, value, onChange, href, label }: {
+  items: readonly (readonly [K, ReactNode])[];
+  value: K;
+  onChange?: (k: K) => void;
+  href?: (k: K) => string;
+  label?: string;
+}) {
+  return (
+    <div role="group" aria-label={label} className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
+      {items.map(([k, text]) =>
+        href ? (
+          <Link key={k} href={href(k)} aria-current={value === k ? "page" : undefined} className={SEG_ITEM} style={value === k ? SEG_ON : SEG_OFF}>
+            {text}
+          </Link>
+        ) : (
+          <button key={k} type="button" aria-pressed={value === k} onClick={() => onChange?.(k)} className={SEG_ITEM} style={value === k ? SEG_ON : SEG_OFF}>
+            {text}
+          </button>
+        ),
+      )}
+    </div>
   );
 }
 

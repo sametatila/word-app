@@ -314,8 +314,8 @@ function CodesSection({
             readOnly
             aria-label="Üretilen kodlar"
             rows={Math.min(10, made.length + 1)}
-            className="w-full rounded-tile p-2 font-mono text-caption"
-            style={{ background: "var(--surface)" }}
+            className={`${FIELD_AREA} font-mono text-caption`}
+            style={{ ...FIELD_STYLE, background: "var(--surface)" }}
             value={made.map((c) => `${c}\t${origin}/premium?code=${c}`).join("\n")}
           />
         </div>

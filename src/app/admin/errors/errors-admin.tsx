@@ -5,7 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import type { ErrorGroup } from "@/lib/client-errors";
 import { EXTERNAL } from "@/lib/admin-links";
-import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, TONE, when } from "../_ui/ui";
+import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, Segmented, TONE, when } from "../_ui/ui";
 
 /**
  * Hata grupları: en son görülen önce. Her satır kapalı gelir; açınca yığın.
@@ -50,14 +50,7 @@ export function ErrorsAdmin({ groups, showAll, top, focus = null }: { groups: Er
         <Notice tone="warn">Uyarıdaki hata grubu bulunamadı (kayıt silinmiş olabilir). Bütün gruplar: <a className="underline" href="/admin/errors?all=1">/admin/errors?all=1</a></Notice>
       ) : null}
       {top}
-      <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
-        {["", "web", "android", "ios"].map((p) => (
-          <button key={p || "all"} type="button" aria-pressed={platform === p} onClick={() => setPlatform(p)} className="inline-flex h-8 items-center rounded-chip px-3 text-caption"
-            style={platform === p ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" } : { color: "var(--text-muted)" }}>
-            {p ? PLATFORM[p] : "Hepsi"}
-          </button>
-        ))}
-      </div>
+      <Segmented label="Platform" items={["", "web", "android", "ios"].map((p) => [p, p ? PLATFORM[p] : "Hepsi"] as const)} value={platform} onChange={setPlatform} />
 
       <Panel flush>
         {list.length === 0 ? (
