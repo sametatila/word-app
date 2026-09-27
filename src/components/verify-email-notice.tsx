@@ -86,11 +86,15 @@ export function VerifyEmailNotice({
         {sent ? <AuthNotice tone="success">{t("verify.resent")}</AuthNotice> : null}
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 
+        <Link href="/login" className="btn btn-primary w-full px-5 py-4">
+          {t("verify.verified_sign_in")}
+        </Link>
+
         {email ? (
           <button
             onClick={() => void resend()}
             disabled={busy || cooldown > 0}
-            className="btn btn-ghost w-full px-5 py-3 disabled:opacity-60"
+            className="btn btn-ghost w-full px-5 py-4 disabled:opacity-60"
           >
             {busy
               ? t("authw.sending")
@@ -99,10 +103,6 @@ export function VerifyEmailNotice({
                 : t("verify.resend")}
           </button>
         ) : null}
-
-        <Link href="/login" className="btn btn-primary w-full px-5 py-4">
-          {t("verify.verified_sign_in")}
-        </Link>
       </div>
     </AuthShell>
   );

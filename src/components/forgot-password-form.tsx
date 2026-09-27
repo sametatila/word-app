@@ -61,7 +61,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
           <p className="muted text-body">
             {t("authw.reset_sent_note")}
           </p>
-          <button onClick={() => setSent(false)} className="btn btn-ghost w-full px-5 py-3">
+          <button onClick={() => setSent(false)} className="btn btn-ghost w-full px-5 py-4">
             {t("authw.try_another_address")}
           </button>
         </div>

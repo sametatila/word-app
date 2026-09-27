@@ -53,5 +53,7 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
   );
 }
 
-export const authInputClass =
-  "option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]";
+/* Metin alanı sınıfı `.input` (globals.css): odak halkası orada. Eskiden
+   `.option` (sınav şıkkı) idi: üzerine gelince kalkıyor, basınca büzülüyor
+   ve `outline-none` odak halkasını siliyordu. */
+export const authInputClass = "input w-full";

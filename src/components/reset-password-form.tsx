@@ -75,9 +75,14 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
       }
     >
       {done ? (
-        <AuthNotice tone="success">
-          {t("authw.password_updated")}
-        </AuthNotice>
+        <div className="space-y-3">
+          <AuthNotice tone="success">
+            {t("authw.password_updated")}
+          </AuthNotice>
+          <Link href="/login" className="btn btn-primary w-full px-5 py-4">
+            {t("auth.sign_in")}
+          </Link>
+        </div>
       ) : (
         <form onSubmit={submit} className="space-y-3">
           <input

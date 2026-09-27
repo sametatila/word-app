@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { authEnabled, getAccountUserId, googleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
+import { AuthShell } from "@/components/auth-shell";
 import { titleMeta } from "@/lib/page-meta";
 import { turnstileSiteKey } from "@/lib/auth/captcha";
 
@@ -15,16 +16,14 @@ export default async function LoginPage() {
   const t = await getT();
   if (!authEnabled) {
     return (
-      <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 p-6 text-center">
-        <h1 className="text-h2">{t("del.disabled")}</h1>
-        {/* Sebep TEKNİK ve kullanıcıya söylenmiyordu — "giriş sağlayıcısının
-            anahtarları tanımlı değil" cümlesi kurulumu yapan kişiye ait, giriş
-            yapmaya çalışan kişiye değil. */}
-        <p className="muted text-body">{t("del.disabled_sub")}</p>
-        <Link href="/learn" className="btn btn-primary px-5 py-3">
+      /* Sebep TEKNİK ve kullanıcıya söylenmiyordu — "giriş sağlayıcısının
+         anahtarları tanımlı değil" cümlesi kurulumu yapan kişiye ait, giriş
+         yapmaya çalışan kişiye değil. */
+      <AuthShell title={t("del.disabled")} subtitle={t("del.disabled_sub")}>
+        <Link href="/learn" className="btn btn-primary w-full px-5 py-4">
           {t("loginw.continue_demo")}
         </Link>
-      </div>
+      </AuthShell>
     );
   }
 
