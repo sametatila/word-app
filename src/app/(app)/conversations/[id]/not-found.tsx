@@ -26,7 +26,7 @@ export default async function ConversationNotFound() {
       <FlowColumn>
         <StateBody title={t("conversation.this_conversation_wasn_t_found")}>
           <FlowActions
-            primary={{ label: t("conversation.go_back"), href: "/conversations" }}
+            primary={{ label: t("conversation.go_back"), href: "/immersion" }}
           />
         </StateBody>
       </FlowColumn>
