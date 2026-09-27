@@ -19464,13 +19464,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const css = read("src/app/globals.css");
   const coz = (ad) => (css.match(new RegExp("--color-" + ad + ":\\s*(#[0-9a-fA-F]{6})")) ?? [])[1]?.toLowerCase() ?? "COZULMEDI";
   const mobRenk = silD(read("mobile/src/theme/colors.ts"));
-  const orange500 = ((mobRenk.match(/500: "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
   const govde = (mobRenk.match(/export const DIALOG_FILL = \{([^}]*)\}/) ?? ["", ""])[1];
   const mobYikici = ((govde.match(/destructive: "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
-  const mobNormal = /primary: orange\[500\]/.test(govde) ? orange500 : "FARKLI";
+  /* Normal onay 2026-09-27'den beri temayı izliyor: mobil `colors.primary`, web `--brand-fill`. */
+  const mobNormal = /: colors\.primary;/.test(silD(read("mobile/src/ui/ConfirmDialog.tsx"))) ? "tema birincili" : "FARKLI";
   const mobInk = ((mobRenk.match(/export const DIALOG_INK = "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
   const webDiy = silD(read("src/components/confirm-dialog.tsx"));
-  const webTon = (webDiy.match(/background: destructive \? "var\(--color-([\w-]+)\)" : "var\(--color-([\w-]+)\)"/) ?? []);
+  const webTon = (webDiy.match(/background: destructive \? "var\(--color-([\w-]+)\)" : "var\(--(brand-fill)\)"/) ?? []);
   /* Onay dugmesinin acilis etiketi - `onClick={onConfirm}`den baslayip
      etiketin sonuna kadar (depo yardimcisi `acilisSonu` suslu parantez
      derinligini takip ediyor, ilk `>`e bakan bir olcu prop icindeki `>`e
@@ -19483,11 +19483,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "yikici=" + mobYikici,
       "normal=" + mobNormal,
       "murekkep=" + mobInk,
-      "temadan bagimsiz=" + (/DIALOG_FILL\.destructive : DIALOG_FILL\.primary/.test(silD(read("mobile/src/ui/ConfirmDialog.tsx"))) ? "evet" : "HAYIR"),
+      "yikici temadan bagimsiz=" + (/destructive \? DIALOG_FILL\.destructive :/.test(silD(read("mobile/src/ui/ConfirmDialog.tsx"))) ? "evet" : "HAYIR"),
     ],
     [
       "yikici=" + coz(webTon[1] ?? "yok"),
-      "normal=" + coz(webTon[2] ?? "yok"),
+      "normal=" + (webTon[2] === "brand-fill" ? "tema birincili" : "FARKLI"),
       /* TAM METIN DESENI KIRILGANDI: `className="btn flex-1 py-3.5 text-white"`
          birebir aranıyordu ve butona baska bir siniftan (renkli golge
          `glow-tint-sm`) bir sey eklenince olcu "murekkep FARKLI" dedi -
@@ -19495,7 +19495,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          beyaz mi"; o yuzden dugmenin KENDI acilis etiketi cikariliyor ve
          sinif LISTESINDE `text-white` araniyor. */
       "murekkep=" + (/(?:^|\s)text-white(?:\s|")/.test(onayEtiketi) ? "#ffffff" : "FARKLI"),
-      "temadan bagimsiz=" + (webTon.length ? "evet" : "HAYIR"),
+      "yikici temadan bagimsiz=" + (webTon.length ? "evet" : "HAYIR"),
     ],
     "mobil",
     "web (cozulmus)",
@@ -21545,7 +21545,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "ekran basliginin olculeri",
     [
-      "aralik=" + (/gap: spacing\.md, paddingTop: insets\.top/.test(mobBaslik) ? "12" : "BASKA"),
+      /* `inset` seçeneği (tablet yan paneli, 2026-09-27) üst payı koşula bağladı. */
+      "aralik=" + (/gap: spacing\.md, paddingTop: (?:\(inset \? )?insets\.top/.test(mobBaslik) ? "12" : "BASKA"),
       "geri kutusu=44/" + (mobGeri?.[1] ?? "YOK") + "/" + (mobGeri?.[2] ?? "YOK"),
       "ok=" + ((mobBaslik.match(/ArrowBackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "baslik=h2",

@@ -89,10 +89,13 @@ export function ConfirmDialog({
           onClick={onConfirm}
           className="btn glow-tint-sm flex-1 py-3.5 text-white"
           /* Gölge düğmenin KENDİ rengiyle - Android `ConfirmDialog`
-             `softShadow(accent, 8)` ile aynı. */
+             `softShadow(accent, 8)` ile aynı. Normal onay birincil düğme gibi
+             temayı izliyor (`--brand-fill` + `--on-brand`); yıkıcı onay iki
+             temada da sabit gül + beyaz. */
           style={{
-            background: destructive ? "var(--color-rose-600)" : "var(--color-brand-500)",
-            "--tint-fill": destructive ? "var(--color-rose-600)" : "var(--color-brand-500)",
+            background: destructive ? "var(--color-rose-600)" : "var(--brand-fill)",
+            color: destructive ? undefined : "var(--on-brand)",
+            "--tint-fill": destructive ? "var(--color-rose-600)" : "var(--brand-fill)",
           } as React.CSSProperties}
         >
           {onay}

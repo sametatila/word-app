@@ -190,15 +190,15 @@ export const TIER_COLOR = {
  * `--color-brand-500`, yazı beyaz) ve rose-600 beyazla 6.07 veriyor. Değerler
  * oradan alındı; iki uygulamanın onay kutusu artık birebir aynı.
  *
- * Normal (yıkıcı olmayan) dolgu marka turuncusunun 500'ü ve beyaz yazıyla
- * 2.77 veriyor: bu, birincil düğmenin kabul edilmiş sapması (T-KARAR-1) —
- * zeminin markanın kendisi olması bir kimlik kararı ve web de aynı değeri
- * kullanıyor. Yıkıcı düğme o kararın KAPSAMINDA DEĞİL, orada zemin bir kimlik
- * değil bir uyarı.
+ * Normal (yıkıcı olmayan) onay burada DEĞİL (2026-09-27): uygulamanın her
+ * birincil düğmesi gibi temayı izliyor (`colors.primary` + `onPrimary`; web
+ * `--brand-fill` + `--on-brand`). Sabit turuncu + beyaz koyu temada 2.77
+ * veriyor ve diyalog o temada tek istisna kalıyordu. Yıkıcı düğme sabit
+ * kalıyor: orada zemin bir kimlik değil bir uyarı.
  */
-export const DIALOG_FILL = { primary: orange[500], destructive: "#b62e43" } as const;
+export const DIALOG_FILL = { destructive: "#b62e43" } as const;
 
-/** Onay düğmesinin yazısı iki temada da beyaz (yukarıdaki gerekçe). */
+/** Yıkıcı onay düğmesinin yazısı iki temada da beyaz (yukarıdaki gerekçe). */
 export const DIALOG_INK = "#ffffff";
 
 

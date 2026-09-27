@@ -39,10 +39,12 @@ export function ConfirmDialog({
   onDismiss?: () => void;
 }) {
   const { colors } = useTheme();
-  /* Dolgu TEMAYA DUYARLI DEĞİL ve `theme/colors` `DIALOG_FILL`den geliyor:
-     gerekçesi ve kontrast ölçümleri orada yazılı (koyu temada `colors.danger`
-     açık pembeye dönüyor ve beyaz yazıyla 2.06 veriyordu). */
-  const accent = destructive ? DIALOG_FILL.destructive : DIALOG_FILL.primary;
+  /* Normal onay uygulamanın birincil düğmesiyle aynı: temayı izliyor (koyu
+     temada açık turuncu + koyu yazı, 8.08). Yıkıcı onay TEMAYA DUYARLI DEĞİL
+     (`theme/colors` `DIALOG_FILL`, gerekçe orada: koyu temada `colors.danger`
+     açık pembeye dönüp beyazla 2.06 veriyordu). */
+  const accent = destructive ? DIALOG_FILL.destructive : colors.primary;
+  const ink = destructive ? DIALOG_INK : colors.onPrimary;
   const stacked = dialogActionsStacked(cancelLabel, confirmLabel);
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onDismiss ?? onCancel}>
@@ -75,7 +77,7 @@ export function ConfirmDialog({
               <Text variant="bodyStrong" color={colors.text}>{cancelLabel}</Text>
             </PressableScale>
             <PressableScale onPress={onConfirm} style={[{ flex: stacked ? undefined : 1, borderRadius: radii.lg, backgroundColor: accent, paddingVertical: 14, paddingHorizontal: spacing.md, alignItems: "center" }, softShadow(accent, 8)]}>
-              <Text variant="bodyStrong" color={DIALOG_INK}>{confirmLabel}</Text>
+              <Text variant="bodyStrong" color={ink}>{confirmLabel}</Text>
             </PressableScale>
           </View>
         </Pressable>
