@@ -103,7 +103,6 @@ export const social = {
   blocks: () => api<{ blocked: (PublicUser & { since: string })[] }>("/api/social/blocks"),
   block: (userId: string) => api<{ ok: true }>("/api/social/blocks", { method: "POST", body: j({ userId }) }),
   unblock: (userId: string) => api<{ ok: true }>("/api/social/blocks", { method: "DELETE", body: j({ userId }) }),
-  report: (userId: string, reason: string, detail?: string) => api<{ ok: true }>("/api/social/reports", { method: "POST", body: j({ userId, reason, detail }) }),
 };
 
 /** Sunucu hata kodu -> sözlük anahtarı. Kod bilinmiyorsa bağlantı hatası varsayılır. */

@@ -17,6 +17,7 @@ import { TwoStep } from "../_ui/two-step";
  */
 
 const USER_REASON: Record<string, string> = {
+  inappropriate: "Uygunsuz ad",
   spam: "Spam",
   abuse: "Taciz / hakaret",
   impersonation: "Taklit",

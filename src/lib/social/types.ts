@@ -49,7 +49,8 @@ export const NOTIFICATION_TYPES = [
 ] as const;
 export type NotificationType = (typeof NOTIFICATION_TYPES)[number];
 
-export const REPORT_REASONS = ["spam", "abuse", "impersonation", "other"] as const;
+/** Kullanıcı şikâyetinin TEK sebep listesi: profil ve lig tablosu, web ve mobil aynı listeyi gösteriyor. */
+export const REPORT_REASONS = ["inappropriate", "abuse", "spam", "impersonation", "other"] as const;
 export type ReportReason = (typeof REPORT_REASONS)[number];
 
 /** Seride kutlanan eşikler — akışa yalnız bunlar düşer, her gün değil. */

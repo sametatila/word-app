@@ -200,7 +200,6 @@ export const social = {
   blocks: () => call<{ blocked: (PublicUser & { since: string })[] }>("/api/social/blocks"),
   block: (userId: string) => call<{ ok: true }>("/api/social/blocks", { method: "POST", body: json({ userId }) }),
   unblock: (userId: string) => call<{ ok: true }>("/api/social/blocks", { method: "DELETE", body: json({ userId }) }),
-  report: (userId: string, reason: string, detail?: string) => call<{ ok: true }>("/api/social/reports", { method: "POST", body: json({ userId, reason, detail }) }),
 };
 
 /** "3 dk önce" — akış ve gelen kutusu için. */

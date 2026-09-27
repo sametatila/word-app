@@ -12,6 +12,7 @@ import { UserAction } from "./user-action";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf } from "@/lib/i18n/dict";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { ReportDialog } from "@/components/report-dialog";
 
 /**
  * Herkese açık profil. Sunucu görünürlüğü uygulayıp kırpılmış veriyi verir;
@@ -61,10 +62,6 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
       await social.block(u.userId);
       router.replace("/friends");
     }, t("user.blocked_done"));
-  }
-  async function report(reason: string) {
-    await act(() => social.report(u.userId, reason), t("user.report_done"));
-    setReporting(false);
   }
 
   return (
@@ -123,25 +120,15 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => setBlocking(true)}>
               {t("user.block")}
             </button>
-            <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => setReporting((r) => !r)}>
+            {/* ŞİKÂYET ORTAK DİYALOGDAN (lig tablosuyla aynı): sebep seçilip
+                ayrıca gönderiliyor. Eskiden sebep çipine tek dokunuş şikâyeti
+                onaysız yolluyordu. */}
+            <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => setReporting(true)}>
               {t("user.report")}
             </button>
-            {reporting ? (
-              <div className="flex w-full flex-wrap gap-1.5">
-                {[
-                  ["spam", "user.report_spam"],
-                  ["abuse", "user.report_abuse"],
-                  ["impersonation", "user.report_fake"],
-                  ["other", "report.something_else"],
-                ].map(([k, l]) => (
-                  <button key={k} className="chip px-3 py-1.5 text-caption" disabled={busy} onClick={() => void report(k)}>
-                    {t(l)}
-                  </button>
-                ))}
-              </div>
-            ) : null}
           </div>
         ) : null}
+        <ReportDialog open={reporting} kind="user" refId={u.userId} content={u.name ?? ""} onClose={() => setReporting(false)} />
         <ConfirmDialog
           open={blocking}
           title={t("user.block")}

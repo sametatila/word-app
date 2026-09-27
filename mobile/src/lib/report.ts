@@ -7,7 +7,7 @@ import { t } from "./i18n";
  * bildirebilmeli. Kayıt yönetim panosunda insan tarafından okunur.
  */
 export type ReportKind = "chat" | "assessment" | "user";
-export type ReportReason = "inappropriate" | "offensive" | "wrong" | "impersonation" | "other";
+export type ReportReason = "inappropriate" | "offensive" | "wrong" | "abuse" | "spam" | "impersonation" | "other";
 
 export type Reason = { key: ReportReason; label: string; sub: string };
 
@@ -26,7 +26,8 @@ function aiReasons(): Reason[] {
 function userReasons(): Reason[] {
   return [
     { key: "inappropriate", label: t("report.inappropriate_name"), sub: t("report.sexual_violent_or_illegal") },
-    { key: "offensive", label: t("report.insult_or_hate"), sub: t("report.degrading_or_discriminatory") },
+    { key: "abuse", label: t("report.insult_or_hate"), sub: t("report.degrading_or_discriminatory") },
+    { key: "spam", label: t("user.report_spam"), sub: t("report.spam_sub") },
     { key: "impersonation", label: t("report.impersonation"), sub: t("report.someone_else_s_name_or_brand") },
     { key: "other", label: t("report.something_else"), sub: t("report.none_of_above_fits") },
   ];
@@ -35,6 +36,11 @@ export function reasonsFor(kind: ReportKind): Reason[] { return kind === "user" 
 
 export async function sendReport(kind: ReportKind, ref: string, reason: ReportReason, content: string): Promise<boolean> {
   try {
+    /* Kullanıcı şikâyeti sosyal uca: tek kuyruk (`user_reports`), web `lib/report` ile aynı. */
+    if (kind === "user") {
+      await api("/api/social/reports", { method: "POST", body: JSON.stringify({ userId: ref, reason, detail: content.slice(0, 500) || undefined }) });
+      return true;
+    }
     await api("/api/reports", { method: "POST", body: JSON.stringify({ kind, ref, reason, content: content.slice(0, 4000) }) });
     return true;
   } catch {

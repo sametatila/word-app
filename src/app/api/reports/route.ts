@@ -5,6 +5,9 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
 import { contentReports } from "@/lib/db/schema";
+import { reportUser } from "@/lib/social/blocks";
+import { limited } from "@/lib/social/ratelimit";
+import type { ReportReason } from "@/lib/social/types";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +27,7 @@ export const dynamic = "force-dynamic";
  * Yaptırım otomatik değil: kayıt yönetim panosunda (lernomi.app/admin › Loglar) insan
  * okur. Günde kullanıcı başına 20 bildirim (kötüye kullanım sınırı).
  */
+/* "user" yalnız eski sürümler için: aşağıda `user_reports`a yönleniyor. */
 const KINDS = new Set(["chat", "assessment", "user"]);
 const REASONS = new Set(["inappropriate", "offensive", "wrong", "impersonation", "other"]);
 const DAILY_LIMIT = DAILY_QUOTAS.reports;
@@ -45,6 +49,24 @@ export async function POST(req: Request) {
   const ref = typeof body.ref === "string" ? body.ref.trim().slice(0, 120) : "";
   const content = typeof body.content === "string" ? body.content.trim().slice(0, MAX_CONTENT) : "";
   if (!kind || !reason || !ref) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+
+  /* KULLANICI ŞİKÂYETİ TEK KUYRUKTA (`user_reports`). Lig tablosunun bildirimi
+     buraya, profilinki `/api/social/reports`a gidiyordu: iki tablo, iki sebep
+     listesi, panelin kullanıcı sayfası yalnız birini sayıyordu. Yeni istemciler
+     doğrudan sosyal uca gidiyor; bu dal eski uygulama sürümleri için. */
+  if (kind === "user") {
+    if (ref === userId) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    const rl = await limited("report", userId);
+    if (!rl.ok) return NextResponse.json({ error: "quota" }, { status: 429 });
+    const eski: Record<string, ReportReason> = { inappropriate: "inappropriate", offensive: "abuse", impersonation: "impersonation", wrong: "other", other: "other" };
+    try {
+      await reportUser(userId, ref.slice(0, 64), eski[reason] ?? "other", content ? content.slice(0, 500) : null);
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error("[reports]", err);
+      return NextResponse.json({ error: "database" }, { status: 500 });
+    }
+  }
 
   try {
     const [row] = await db

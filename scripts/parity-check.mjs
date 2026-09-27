@@ -2492,25 +2492,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yerelsiz harf cevirisi", kacak.length ? kacak : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
-/* ── 52. kullanici sikayeti: sebepler sunucununkiyle ayni ────────────────
- * `/api/social/reports` dort sebep kabul ediyor (`REPORT_REASONS`) ve iki
- * yuzey de kendi listesini ELLE yaziyor. Mobil ucunu yaziyordu: sikayeti bu
- * uce girmeyen kullanicinin bildirebilecegi hicbir yol kalmiyordu ve eksik
- * bir sebep, o sikayetin hic gelmemesi demek. Kapi ucunu de sunucunun
- * listesiyle esliyor. */
+/* ── 52. kullanici sikayeti: tek kuyruk, sebepler sunucununkiyle ayni ─────
+ * Kullanici sikayeti iki yoldan iki tabloya dusuyordu (profil ->
+ * `user_reports`, lig tablosu -> `content_reports`), iki ayri sebep
+ * listesiyle. Simdi her yuzey ortak bildirim diyalogunu (`lib/report`)
+ * kullaniyor ve kullanici sikayeti `/api/social/reports`a gidiyor. Kapi iki
+ * istemcinin kullanici sebeplerini sunucunun `REPORT_REASONS`iyla esliyor ve
+ * kullanici dalinin sosyal uca gittigini denetliyor. */
 {
   const sunucu = (() => {
     const m = read("src/lib/social/types.ts").match(/REPORT_REASONS = \[([^\]]*)\]/);
     return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).sort() : ["bulunamadi"];
   })();
-  const mobil = [...read("mobile/src/screens/UserScreen.tsx").matchAll(/social\.report\(u\.userId,\s*"([^"]+)"\)/g)].map((m) => m[1]).sort();
-  const web = (() => {
-    const src = read("src/components/social/public-profile.tsx");
-    const blok = src.slice(src.indexOf('["spam"'), src.indexOf("].map((["));
-    return [...blok.matchAll(/\["([a-z]+)",/g)].map((m) => m[1]).sort();
-  })();
+  const mobilSrc = read("mobile/src/lib/report.ts");
+  const mobilBlok = mobilSrc.slice(mobilSrc.indexOf("function userReasons"), mobilSrc.indexOf("export function reasonsFor"));
+  const mobil = [...mobilBlok.matchAll(/key: "([a-z]+)"/g)].map((m) => m[1]).sort();
+  const webSrc = read("src/lib/report.ts");
+  const webBlok = webSrc.slice(webSrc.indexOf('kind === "user"'), webSrc.indexOf("]\n    : ["));
+  const web = [...webBlok.matchAll(/r\("([a-z]+)",/g)].map((m) => m[1]).sort();
   sameSet("sikayet sebepleri (mobil)", mobil, sunucu, "mobil", "sunucu");
   sameSet("sikayet sebepleri (web)", web, sunucu, "web", "sunucu");
+  const uc = (src) => (/if \(kind === "user"\)[\s\S]{0,400}\/api\/social\/reports/.test(src) ? "sosyal uc" : "BASKA UC");
+  sameList("kullanici sikayetinin gittigi uc", ["mobil=" + uc(mobilSrc), "web=" + uc(webSrc)], ["mobil=sosyal uc", "web=sosyal uc"], "bulunan", "beklenen");
 }
 
 /* ── 53. bildirim satiri nereye goturur ───────────────────────────────────

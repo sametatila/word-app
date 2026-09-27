@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
-import { Alert, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -15,6 +15,7 @@ import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { AlertIcon, FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { ReportSheet } from "../ui/ReportSheet";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import { useLayout } from "../lib/useLayout";
@@ -51,6 +52,7 @@ export function UserScreen() {
   const [busy, setBusy] = useState(false);
   const [more, setMore] = useState(false);
   const [confirmBlock, setConfirmBlock] = useState(false);
+  const [reporting, setReporting] = useState(false);
   // Hata kartındaki "tekrar dene" bu sayacı artırıp profili yeniden istiyor.
   const [attempt, setAttempt] = useState(0);
 
@@ -169,25 +171,17 @@ export function UserScreen() {
             {more ? (
               <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
                 <Pill label={t("user.block_2")} tone="danger" disabled={busy} onPress={() => setConfirmBlock(true)} />
-                {/* DÖRDÜNCÜ SEBEP. Sunucu dört sebep kabul ediyor
-                    (`REPORT_REASONS`: spam, abuse, impersonation, other) ve
-                    web dördünü de sunuyor; mobil üç tanesini yazıyordu. Şikayeti
-                    bu üçe girmeyen kullanıcının bildirebileceği hiçbir yol
-                    kalmıyordu - moderasyon yüzeyinde eksik bir sebep, o
-                    şikayetin hiç gelmemesi demek. */}
-                <Pill label={t("user.report")} tone="ghost" disabled={busy} onPress={() => Alert.alert(t("user.report_reason"), undefined, [
-                  { text: t("user.report_spam"), onPress: () => void act(() => social.report(u.userId, "spam"), t("user.report_done")) },
-                  { text: t("user.report_abuse"), onPress: () => void act(() => social.report(u.userId, "abuse"), t("user.report_done")) },
-                  { text: t("user.report_fake"), onPress: () => void act(() => social.report(u.userId, "impersonation"), t("user.report_done")) },
-                  { text: t("report.something_else"), onPress: () => void act(() => social.report(u.userId, "other"), t("user.report_done")) },
-                  { text: t("common.discard"), style: "cancel" },
-                ])} />
+                {/* ŞİKÂYET ORTAK SAYFADAN (lig tablosuyla ve webdeki diyalogla aynı
+                    sebepler): sebep seçilip ayrıca gönderiliyor. Eskiden sistem
+                    uyarı penceresiydi ve iki platformda iki ayrı liste vardı. */}
+                <Pill label={t("user.report")} tone="ghost" disabled={busy} onPress={() => setReporting(true)} />
               </View>
             ) : null}
           </View>
         ) : null}
       </ScrollView>
 
+      <ReportSheet visible={reporting} kind="user" refId={u.userId} content={u.name ?? ""} onClose={() => setReporting(false)} />
       <ConfirmDialog
         visible={confirmBlock}
         title={t("user.block")}

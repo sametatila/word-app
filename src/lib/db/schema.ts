@@ -1285,7 +1285,7 @@ export const userReports = pgTable(
     id: serial("id").primaryKey(),
     reporterId: text("reporter_id").notNull(),
     reportedId: text("reported_id").notNull(),
-    /** spam | abuse | impersonation | other */
+    /** inappropriate | abuse | spam | impersonation | other */
     reason: text("reason").notNull(),
     detail: text("detail"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),

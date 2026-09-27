@@ -21,7 +21,7 @@ import { apiFetch } from "@/lib/api-fetch";
  *   user        kullanıcı adı (sıralama) kullanıcı kimliği
  */
 export type ReportKind = "chat" | "assessment" | "user";
-export type ReportReason = "inappropriate" | "offensive" | "wrong" | "impersonation" | "other";
+export type ReportReason = "inappropriate" | "offensive" | "wrong" | "abuse" | "spam" | "impersonation" | "other";
 export type Reason = { key: ReportReason; label: string; sub: string };
 
 /**
@@ -37,7 +37,8 @@ export function reasonsFor(kind: ReportKind, lang: NativeLang): Reason[] {
   return kind === "user"
     ? [
         r("inappropriate", "report.inappropriate_name", "report.sexual_violent_or_illegal"),
-        r("offensive", "report.insult_or_hate", "report.degrading_or_discriminatory"),
+        r("abuse", "report.insult_or_hate", "report.degrading_or_discriminatory"),
+        r("spam", "user.report_spam", "report.spam_sub"),
         r("impersonation", "report.impersonation", "report.someone_else_s_name_or_brand"),
         r("other", "report.something_else", "report.none_of_above_fits"),
       ]
@@ -56,6 +57,17 @@ export async function sendReport(
   content: string,
 ): Promise<boolean> {
   try {
+    /* Kullanıcı şikâyeti sosyal uca: tek kuyruk (`user_reports`), kendini
+       bildirme engeli, hız sınırı ve karar bildirimi orada. Ad o anki hâliyle
+       not olarak gidiyor; kullanıcı adını sonra değiştirse de panel görür. */
+    if (kind === "user") {
+      const res = await apiFetch("/api/social/reports", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ userId: ref, reason, detail: content.slice(0, 500) || undefined }),
+      });
+      return res.ok;
+    }
     const res = await apiFetch("/api/reports", {
       method: "POST",
       headers: { "content-type": "application/json" },
