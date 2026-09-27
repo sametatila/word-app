@@ -9,6 +9,8 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
+import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
@@ -74,6 +76,8 @@ export function BossPlayer({
   const router = useRouter();
   const onExit = useCallback(() => router.push(onExitHref), [router, onExitHref]);
   const [status, setStatus] = useState<Status>("loading");
+  const [confirmExit, setConfirmExit] = useState(false);
+  const ayril = useLeaveGuard(status === "playing");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
   const [left, setLeft] = useState(0);
@@ -348,7 +352,7 @@ export function BossPlayer({
           tek çıkış tarayıcının geri düğmesiydi. Android'de aynı yerde 44 px'lik
           bir kapat karosu var (`BossScreen`) ve sıra sayacının solunda duruyor. */}
       <div className="mb-3 flex items-center gap-3 px-1">
-        <RoundExit onExit={onExit} />
+        <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
         <span className="text-strong tabular-nums">
           {index + 1} / {data!.rounds.length}
         </span>
@@ -376,6 +380,22 @@ export function BossPlayer({
       <FitBox>
         <GameSwitch round={round} onDone={(results) => handleDone(round, results)} />
       </FitBox>
+      {/* Süreli turdan çıkış ONAYLI (oyun turu gibi); uygulama içi bağlantı ve
+          yenileme de `useLeaveGuard` ile aynı diyalogdan geçiyor. */}
+      <ConfirmDialog
+        open={confirmExit || ayril.pending !== null}
+        title={t("game.quit_round_2")}
+        message={t("game.exit_message_timed")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => {
+          setConfirmExit(false);
+          if (ayril.pending) ayril.leave();
+          else onExit();
+        }}
+        onCancel={() => { setConfirmExit(false); ayril.stay(); }}
+      />
     </div>
   );
 }

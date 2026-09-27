@@ -360,6 +360,7 @@ export const tr: Record<string, string> = {
   "game.continue": "Devam et",
   "game.done_no_more": "Bugünlük bu kadar",
   "game.exit_message": "Cevapladıkların kaydedilir; kalan turlara sonra devam edersin.",
+  "game.exit_message_timed": "Cevapladıkların kaydedilir ama bu deneme sayılmaz; yeniden başlaman gerekir.",
   "game.sign_in_sign_up": "Giriş yap / Kayıt ol",
   "game.sign_in_to_study_your_own_words": "Giriş yapınca kendi kelimelerinle çalışırsın ve serin, XP'n, ilerlemen hesabına kaydedilir.",
   "game.sign_in_to_save_your_progress": "İlerlemeni kaydetmek için giriş yap",

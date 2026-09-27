@@ -16,6 +16,8 @@ import { sfx } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { bumpStats } from "../lib/statsSignal";
 import { reduceMotion } from "../lib/reduceMotion";
+import { useBackConfirm } from "../lib/useBackConfirm";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -258,6 +260,7 @@ export function ChallengeScreen() {
   }
 
   const exit = () => nav.goBack();
+  const back = useBackConfirm(phase === "playing");
   const page = { flex: 1, backgroundColor: colors.bg } as const;
 
   /* Oyun turuyla aynı iskelet: bekleme de turun kendi düzeninde duruyor.
@@ -371,7 +374,8 @@ export function ChallengeScreen() {
 
       {/* Oyun turunun satırı; çubuk kalan SÜREYİ gösteriyor. */}
       <FlowProgress
-        onClose={exit}
+        onClose={back.ask}
+        closeLabel={t("game.quit_round")}
         value={pct / 100}
         tint={urgent ? colors.danger : colors.streak}
         extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
@@ -395,6 +399,19 @@ export function ChallengeScreen() {
       </View>
 
       <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
+      {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
+          da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
+          akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}
+      <ConfirmDialog
+        visible={back.visible}
+        title={t("game.quit_round_2")}
+        message={t("game.exit_message_timed")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => { back.cancel(); exit(); }}
+        onCancel={back.cancel}
+      />
     </View>
   );
 }

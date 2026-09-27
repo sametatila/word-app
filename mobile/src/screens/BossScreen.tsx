@@ -13,6 +13,8 @@ import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { track } from "../lib/track";
+import { useBackConfirm } from "../lib/useBackConfirm";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { useTheme, spacing } from "../theme";
@@ -220,6 +222,7 @@ export function BossScreen() {
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
   const exit = () => nav.goBack();
+  const back = useBackConfirm(phase === "playing");
 
   /* Oyun turuyla aynı iskelet: bekleme de turun kendi düzeninde duruyor.
      BEKLEME KENDINI DUYURUYOR (web `role="status" aria-busy`): iskeletin
@@ -322,7 +325,8 @@ export function BossScreen() {
     <View style={pad}>
       {/* Çubuk kalan SÜREYİ gösteriyor (soru sayısı sayacın yanında). */}
       <FlowProgress
-        onClose={exit}
+        onClose={back.ask}
+        closeLabel={t("game.quit_round")}
         value={pct / 100}
         tint={urgent ? colors.danger : colors.primary}
         style={{ marginBottom: spacing.xl }}
@@ -330,6 +334,19 @@ export function BossScreen() {
         count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
       />
       <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
+      {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
+          da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
+          akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}
+      <ConfirmDialog
+        visible={back.visible}
+        title={t("game.quit_round_2")}
+        message={t("game.exit_message_timed")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => { back.cancel(); exit(); }}
+        onCancel={back.cancel}
+      />
     </View>
   );
 }

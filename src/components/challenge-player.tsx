@@ -8,6 +8,8 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
+import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { AchievementFlash, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { BoltIcon, CheckIcon, FlameIcon, SparkIcon, XIcon } from "@/components/icons";
@@ -62,6 +64,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   const t = useT();
   const lang = useLang();
   const [status, setStatus] = useState<Status>("loading");
+  const [confirmExit, setConfirmExit] = useState(false);
+  const ayril = useLeaveGuard(status === "playing");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -342,7 +346,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           kapat karosu var (`ChallengeScreen`). */}
       <div className="mb-3 shrink-0">
         <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
-          <RoundExit onExit={onExit} />
+          <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
           <span className="flex flex-1 items-center gap-2">
             <span
               className="rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
@@ -419,6 +423,22 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           </FitBox>
         </motion.div>
       </AnimatePresence>
+      {/* Süreli turdan çıkış ONAYLI (oyun turu gibi); uygulama içi bağlantı ve
+          yenileme de `useLeaveGuard` ile aynı diyalogdan geçiyor. */}
+      <ConfirmDialog
+        open={confirmExit || ayril.pending !== null}
+        title={t("game.quit_round_2")}
+        message={t("game.exit_message_timed")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => {
+          setConfirmExit(false);
+          if (ayril.pending) ayril.leave();
+          else onExit();
+        }}
+        onCancel={() => { setConfirmExit(false); ayril.stay(); }}
+      />
     </div>
   );
 }

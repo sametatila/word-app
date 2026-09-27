@@ -104,7 +104,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 
 export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParams }) {
   /*
-   * GERİ HAREKETİ BEŞ EKRANDA KAPALI — `gestureEnabled: false`.
+   * GERİ HAREKETİ YEDİ EKRANDA KAPALI — `gestureEnabled: false`.
    *
    * `useBackConfirm` yarım bırakılınca emek kaybı olan ekranlarda geri tuşunu
    * onaya bağlıyor ve bunu `BackHandler` ile yapıyor. `BackHandler` ANDROID'E
@@ -144,7 +144,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="MockStats" component={MockStatsScreen} />
       <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
-      <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Conversation" component={ConversationScreen} options={{ animation: "slide_from_bottom" }} />
@@ -162,7 +162,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Practice" component={PracticeScreen} />
       <Stack.Screen name="Cando" component={CandoScreen} />
       <Stack.Screen name="Writings" component={WritingsScreen} />

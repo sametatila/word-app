@@ -357,6 +357,7 @@ export const deBase: Record<string, string> = {
   "game.continue": "Weiter",
   "game.done_no_more": "Das war's für heute",
   "game.exit_message": "Deine Antworten werden gespeichert; die restlichen Runden kannst du später beenden.",
+  "game.exit_message_timed": "Deine Antworten werden gespeichert, aber dieser Versuch zählt nicht; du musst neu beginnen.",
   "game.sign_in_sign_up": "Anmelden / Registrieren",
   "game.sign_in_to_study_your_own_words": "Nach der Anmeldung lernst du mit deinen eigenen Wörtern und deine Serie, dein XP und dein Fortschritt werden im Konto gespeichert.",
   "game.sign_in_to_save_your_progress": "Melde dich an, um deinen Fortschritt zu speichern",
