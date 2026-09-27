@@ -8,6 +8,7 @@ import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { FlowNote } from "@/components/flow";
+import { EmptyCard } from "@/components/empty-card";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { CheckIcon, ChevronRightIcon, LockIcon } from "@/components/icons";
@@ -114,12 +115,7 @@ export function SkillBrowser({
               key={lv}
               href={`/skills?level=${lv}&skill=${current?.skill ?? skill}`}
               aria-current={active ? "page" : undefined}
-              className="pressable flex-1 rounded-tile py-2.5 text-center text-strong"
-              style={{
-                border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
-                background: active ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)" : "var(--surface)",
-                color: active ? "var(--color-brand)" : "var(--text-muted)",
-              }}
+              className={`chip flex-1 py-2.5 text-center text-strong ${active ? "chip-active" : ""}`}
             >
               {lv}
             </Link>
@@ -128,7 +124,7 @@ export function SkillBrowser({
       </nav>
 
       {!total ? (
-        <p className="card mb-4 p-4 text-body" style={{ color: "var(--text-muted)" }}>
+        <p className="card muted mb-4 p-4 text-body">
           {t("skills.this_course_has_no_reading")}
         </p>
       ) : null}
@@ -226,7 +222,7 @@ export function SkillBrowser({
               </div>
             ) : null}
             {rows.length ? (
-              <ul className="card divide-y px-4" style={{ borderColor: "var(--hairline)" }}>
+              <ul className="card divide-y divide-[color:var(--hairline)] px-4">
                 {rows.map((m) => (
                   <li key={m.id}>
                     <Row row={m} isNext={current.nextId === m.id} tint={tint} lang={lang} />
@@ -234,9 +230,12 @@ export function SkillBrowser({
                 ))}
               </ul>
             ) : (
-              <p className="card p-4 text-body" style={{ color: "var(--text-muted)" }}>
-                {t("skills.all_done_hidden", { n: finished })}
-              </p>
+              <EmptyCard
+                icon={CheckIcon}
+                tint="var(--color-mint)"
+                title={t("common.completed")}
+                text={t("skills.all_done_hidden", { n: finished })}
+              />
             )}
           </section>
         </>

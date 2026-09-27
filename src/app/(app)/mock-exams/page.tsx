@@ -165,12 +165,12 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       */}
       <section className="card flex items-center justify-between gap-4 p-4">
         <span>
-          <span className="muted block text-micro">{t("mockexams.level")}</span>
+          <span className="muted block text-micro uppercase tracking-eyebrow">{t("mockexams.level")}</span>
           <span className="block text-h1" style={{ color: "var(--color-brand)" }}>{level}</span>
         </span>
         {coverage !== null ? (
           <span className="text-right">
-            <span className="muted block text-micro">{t("mockexams.word_coverage")}</span>
+            <span className="muted block text-micro uppercase tracking-eyebrow">{t("mockexams.word_coverage")}</span>
             <span className="block text-h1">{formatPercent(coverage, lang)}</span>
           </span>
         ) : null}
@@ -185,11 +185,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                /skills'te `aria-current` tasiyor, Android'de
                `accessibilityState={{ selected }}` (bkz. MockExamsScreen). */
             aria-current={l === level ? "page" : undefined}
-            className="rounded-full px-3 py-1.5 text-strong"
-            style={{
-              background: l === level ? "var(--brand-soft)" : "var(--surface-2)",
-              color: l === level ? "var(--color-brand)" : undefined,
-            }}
+            className={`chip px-3 py-1.5 text-strong ${l === level ? "chip-active" : ""}`}
           >
             {l}
           </Link>
@@ -226,7 +222,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">
-          <p className="muted text-caption tracking-wide">{t("mockstats.running")}</p>
+          <p className="muted text-micro uppercase tracking-eyebrow">{t("mockstats.running")}</p>
           {running.filter((r) => mine(r.paperId)).map((r) => (
             <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-panel p-3" style={{ background: "var(--surface-2)" }}>
               <span className="text-strong">
@@ -241,7 +237,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {bySkill.size ? (
         <section className="card p-4">
-          <p className="muted text-caption tracking-wide">{t("mockstats.by_skill")}</p>
+          <p className="muted text-micro uppercase tracking-eyebrow">{t("mockstats.by_skill")}</p>
           {[...bySkill.entries()].map(([skill, v]) => {
             const avg = Math.round(v.sum / v.n);
             return (
@@ -266,9 +262,9 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           return (
           <section key={p.id} className="card p-4">
             <div className="flex items-center justify-between gap-3">
-              <p className="muted text-caption tracking-wide">{t("mockexams.mock_n", { n: p.no })}</p>
+              <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexams.mock_n", { n: p.no })}</p>
               {locked ? (
-                <span className="chip flex items-center gap-1 px-2 py-0.5 text-micro font-bold">
+                <span className="surface-2 muted flex items-center gap-1 rounded-chip px-1.5 py-0.5 text-micro">
                   <LockIcon className="size-3.5" /> {t("mockpack.locked")}
                 </span>
               ) : null}
@@ -292,13 +288,13 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                       const st = partState.get(`${p.id}:${part.skill}`);
                       if (!st) return null;
                       const running = st === "running";
-                      const tone = running
-                        ? "var(--color-flame)"
-                        : st.passed
-                          ? "var(--color-mint)"
-                          : "var(--color-rose)";
+                      // Rozet Beceriler satırındaki puan rozetiyle aynı: %14 tint + anlamsal jeton.
+                      const hue = running ? "flame" : st.passed ? "mint" : "rose";
                       return (
-                        <span className="chip ml-auto px-2 py-0.5 text-micro font-bold" style={{ color: tone }}>
+                        <span
+                          className="ml-auto shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
+                          style={{ background: `color-mix(in srgb, var(--color-${hue}-500) 14%, transparent)`, color: `var(--color-${hue})` }}
+                        >
                           {running ? t("mockexams.state_running") : t("mockexams.state_done", { pct: st.pct })}
                         </span>
                       );

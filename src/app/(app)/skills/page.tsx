@@ -185,12 +185,12 @@ export default async function SkillsPage({
           ) : allDone && nextLevel ? (
             <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center gap-3 p-4">
               <span className="min-w-0 flex-1">
-                <span className="block text-micro uppercase" style={{ color: "var(--color-mint)" }}>
+                <span className="block text-micro uppercase tracking-eyebrow" style={{ color: "var(--color-mint)" }}>
                   {t("skills.level_done")}
                 </span>
                 <span className="muted mt-0.5 block text-caption">{t("skills.level_done_body", { level, next: nextLevel })}</span>
               </span>
-              <ChevronRightIcon className="size-4 shrink-0" />
+              <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
             </Link>
           ) : null
         }
@@ -219,13 +219,13 @@ async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: S
         <Icon size={20} />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-micro uppercase" style={{ color: tint }}>
+        <span className="block text-micro uppercase tracking-eyebrow" style={{ color: tint }}>
           {t("skills.next")} · {t(SKILL_LABEL_KEYS[skill])}
         </span>
         <span className="block truncate text-strong">{meta.title}</span>
         <span className="muted line-clamp-2 block text-caption">{reason}</span>
       </span>
-      <ChevronRightIcon className="size-4 shrink-0" />
+      <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
     </Link>
   );
 }
