@@ -12277,10 +12277,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* MUTLAK: yonetici panosunun iki seridi de sekme. */
     /* Pano sekmeleri 2026-09-17'de menü gruplarına (bağlantı, `aria-current`)
        dönüştü; kalan sekme şeritleri hukuki metinler ve madde analizi. */
+    /* 2026-09-27: iki şerit de ortak `AdminTabs`i (`admin/_ui/ui`) kullanıyor;
+       roller orada, dosya ya kendisi taşıyor ya da `<AdminTabs` çağırıyor. */
     const YONETICI = ["src/app/admin/learning/learning-analysis.tsx", "src/app/admin/legal/legal-admin.tsx"];
+    const adminTabsSrc = sil(read("src/app/admin/_ui/ui.tsx"));
+    const adminTabsRollu = /export function AdminTabs[\s\S]*?role="tablist"[\s\S]*?role="tab"[\s\S]*?aria-selected=/.test(adminTabsSrc);
+    const sekmeRollu = (src) => (/role="tablist"/.test(src) && /role="tab"/.test(src)) || (adminTabsRollu && /<AdminTabs\b/.test(src));
     sameList(
       "yonetici seritleri sekme",
-      YONETICI.map((y) => y.split("/").pop() + "=" + (/role="tablist"/.test(sil(read(y))) && /role="tab"/.test(sil(read(y))) ? "sekme" : "ROL YOK")),
+      YONETICI.map((y) => y.split("/").pop() + "=" + (sekmeRollu(sil(read(y))) ? "sekme" : "ROL YOK")),
       YONETICI.map((y) => y.split("/").pop() + "=sekme"),
       "bulunan",
       "beklenen",
@@ -12452,7 +12457,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const src = sil(read(y));
       return /role="radio"/.test(src) && /aria-checked=/.test(src) ? "radyo" : "AC/KAPA";
     };
-    const mobRadyo = (y) => (/accessibilityRole="radio"/.test(sil(read(y))) ? "radyo" : "ROL YOK");
+    /* 2026-09-27: kelime suzgeci `ui/Chip` `role="radio"` ile (rolu Chip veriyor). */
+    const mobRadyo = (y) => (/accessibilityRole="radio"|<Chip\b[^>]*\brole="radio"/.test(sil(read(y))) ? "radyo" : "ROL YOK");
     sameList(
       "tek secimlik liste radyo grubu",
       RADYO.map(([ad, , m]) => ad + "=" + mobRadyo(m)),
@@ -19018,11 +19024,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const silN = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
   const m = silN(read("mobile/src/social/FriendPulse.tsx")).replace(/\s+/g, " ");
   const w = silN(read("src/components/social/friend-pulse.tsx")).replace(/\s+/g, " ");
-  const bar = silN(read("mobile/src/social/common.tsx"));
+  /* 2026-09-27: `Bar` social/common'dan ui/Bar'a tasindi ve iki boya indi
+     (`BAR_HEIGHT.inline` 6 / `hero` 10); nabiz varsayilani (inline) kullaniyor. */
+  const bar = silN(read("mobile/src/ui/Bar.tsx"));
   /* Cubugun yuksekligi ve tabani ORTAK bilesende (`Bar`), nabzin icinde degil:
      kapi oradan okuyor, kendi icine sayi yazmiyor. */
-  const barBoy = (bar.match(/export function Bar\(\{ pct, tint, height = (\d+) \}/) ?? [])[1] ?? "YOK";
-  const barTaban = (bar.match(/width: `\$\{Math\.max\((\d+), Math\.min\(100, pct\)\)\}%`/) ?? [])[1] ?? "YOK";
+  const barBoy = /size = "inline"/.test(bar) ? ((bar.match(/BAR_HEIGHT = \{ inline: (\d+),/) ?? [])[1] ?? "YOK") : "YOK";
+  const barTaban = (bar.match(/width: `\$\{Math\.max\((\d+), clamp\(pct\)\)\}%`/) ?? [])[1] ?? "YOK";
   sameList(
     "ortak gorev nabzinin olculeri",
     [
@@ -21132,12 +21140,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Rapor listesinin halkasi: kutu, kenarlik, nokta - uc sayi da ayni. */
   const mobRapor = silK(read("mobile/src/ui/ReportSheet.tsx"));
   const webRapor = silK(read("src/components/report-dialog.tsx"));
-  const mobHalka = mobRapor.match(/width: 20, height: 20, borderRadius: 10, borderWidth: (\d+)[\s\S]{0,200}?width: (\d+), height: \d+, borderRadius: \d+, backgroundColor/);
-  const webHalka = webRapor.match(/width: 20,\s*height: 20,\s*border: `(\d+)px[\s\S]{0,300}?width: (\d+), height: \d+, background/);
+  /* 2026-09-27: mobil halka artik ortak `ui/RadioDot` (halka ds(22), kenarlik 2,
+     nokta ds(10)); rapor sayfasi onu cagiriyorsa olcu oradan okunuyor. */
+  const mobDot = silK(read("mobile/src/ui/RadioDot.tsx"));
+  const mobHalka = /<RadioDot\b/.test(mobRapor)
+    ? [null, (mobDot.match(/const ring = ds\((\d+)\)/) ?? [])[1], (mobDot.match(/borderRadius: ring \/ 2, borderWidth: (\d+)/) ?? [])[1], (mobDot.match(/const dot = ds\((\d+)\)/) ?? [])[1]]
+    : (() => { const m = mobRapor.match(/width: (\d+), height: \d+, borderRadius: \d+, borderWidth: (\d+)[\s\S]{0,200}?width: (\d+), height: \d+, borderRadius: \d+, backgroundColor/); return m && [null, m[1], m[2], m[3]]; })();
+  const webHalka = webRapor.match(/width: (\d+),\s*height: \d+,\s*border: `(\d+)px[\s\S]{0,300}?width: (\d+), height: \d+, background/);
   sameList(
     "rapor listesinin radyo halkasi",
-    ["kutu=20 kenarlik=" + (mobHalka?.[1] ?? "YOK") + " nokta=" + (mobHalka?.[2] ?? "YOK")],
-    ["kutu=20 kenarlik=" + (webHalka?.[1] ?? "YOK") + " nokta=" + (webHalka?.[2] ?? "YOK")],
+    ["kutu=" + (mobHalka?.[1] ?? "YOK") + " kenarlik=" + (mobHalka?.[2] ?? "YOK") + " nokta=" + (mobHalka?.[3] ?? "YOK")],
+    ["kutu=" + (webHalka?.[1] ?? "YOK") + " kenarlik=" + (webHalka?.[2] ?? "YOK") + " nokta=" + (webHalka?.[3] ?? "YOK")],
     "mobil",
     "web",
   );
@@ -21359,12 +21372,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const koyuInfo = (css.match(/\.dark \.chip-filter\.chip-info\.chip-active \{([^}]*)\}/) ?? ["", ""])[1];
   const mobKelime = silS(read("mobile/src/screens/WordsScreen.tsx"));
   const webKelime = silS(read("src/components/word-list.tsx"));
+  /* 2026-09-27: hap artik elle cizilmiyor, `ui/Chip` `variant="filter"`
+     (`tone` seviye=info, durum=primary). Olcu Chip'in suzgec dalindan okunuyor,
+     ekrandan yalniz hangi satirin hangi tonu verdigi. */
+  const mobCipSrc = silS(read("mobile/src/ui/Chip.tsx"));
+  const suzgecBas = mobCipSrc.indexOf('if (variant === "filter")');
+  const mobSuzgec = suzgecBas >= 0 ? mobCipSrc.slice(suzgecBas, mobCipSrc.indexOf("</PressableScale>", suzgecBas)) : "";
+  const mobTon = (ton) => new RegExp('<Chip\\b[^>]*variant="filter" tone="' + ton + '"').test(mobKelime);
 
   sameList(
     "suzgec hapinin secili hali",
     [
-      "zemin=" + (/backgroundColor: active \? colors\.primary :/.test(mobKelime) ? "marka dolgusu" : "BASKA"),
-      "murekkep=" + (/color=\{active \? colors\.onPrimary/.test(mobKelime) ? "onPrimary" : "BASKA"),
+      "zemin=" + (mobTon("primary") && /fill = tone === "info" \? colors\.info : colors\.primary;/.test(mobSuzgec) && /backgroundColor: active \? fill :/.test(mobSuzgec) ? "marka dolgusu" : "BASKA"),
+      "murekkep=" + (mobTon("primary") && /ink = tone === "info" \? colors\.onFill : colors\.onPrimary;/.test(mobSuzgec) && /color=\{active \? ink/.test(mobSuzgec) ? "onPrimary" : "BASKA"),
       "golge=yok",
     ],
     [
@@ -21378,7 +21398,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "seviye suzgecinin rengi",
     [
-      "acik=" + (/backgroundColor: active \? colors\.info :/.test(mobKelime) ? "teal" : "BASKA"),
+      "acik=" + (mobTon("info") && /fill = tone === "info" \? colors\.info :/.test(mobSuzgec) ? "teal" : "BASKA"),
       "koyu=teal",
     ],
     [
@@ -21389,7 +21409,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "web",
   );
   /* Iki satirin dolgusu: mobilde 14/8 (iki yerde de), webde px-3.5 py-2. */
-  const mobDolgu = [...mobKelime.matchAll(/paddingHorizontal: 14, paddingVertical: spacing\.sm, borderRadius: radii\.pill/g)].length;
+  const mobDolgu = /paddingHorizontal: 14, paddingVertical: spacing\.sm, borderRadius: radii\.pill/.test(mobSuzgec) ? [...mobKelime.matchAll(/<Chip\b[^>]*variant="filter"/g)].length : 0;
   const webDolgu = [...webKelime.matchAll(/chip-filter[^`"]*px-3\.5 py-2/g)].length;
   sameList(
     "suzgec hapinin dolgusu",
