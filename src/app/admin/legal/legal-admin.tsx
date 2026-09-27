@@ -7,6 +7,7 @@ import type { ConfigProcessor, LegalConfig } from "@/lib/legal/shape";
 import { LegalStyles, renderLegalBody } from "@/lib/legal/markdown";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, AdminTabs, Badge, BTN, DANGER, Field, FIELD, FIELD_AREA, FIELD_STYLE, Notice, PageHeader, Panel, Segmented } from "../_ui/ui";
+import { Checkbox } from "@/components/checkbox";
 
 /**
  * Hukuki metin ve bilgi yönetimi.
@@ -203,12 +204,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
 
       {tab === "platform" ? (
         <Card title="Platform ve adil kullanım" note="iOS anahtarı açılınca metinlerin kapsam cümlesi değişiyor, Apple maddeleri basılıyor ve alıcılar tablosuna iki Apple satırı giriyor.">
-          <label className="flex items-center gap-2 text-body">
-            <input
-              type="checkbox"
-              checked={cfg.platforms.ios}
-              onChange={(e) => setCfg({ ...cfg, platforms: { ...cfg.platforms, ios: e.target.checked } })}
-            />
+          <Checkbox checked={cfg.platforms.ios} onChange={(v) => setCfg({ ...cfg, platforms: { ...cfg.platforms, ios: v } })}>
             <span>
               Metinler iOS uygulamasını da kapsıyor
               <span className="muted block text-caption">
@@ -216,7 +212,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
                 açıkken &quot;Apple ile giriş&quot; bir alıcı olarak beyan ediliyor.
               </span>
             </span>
-          </label>
+          </Checkbox>
           <h3 className="mt-5 text-strong">Adil kullanım tavanları (günlük)</h3>
           <p className="muted text-caption">Şartlarda {"{{fairUse:…}}"} belirteçleriyle geçiyor; koddaki gerçek kotalarla aynı olmalı.</p>
           <div className="mt-2 flex flex-wrap gap-3">
@@ -298,10 +294,9 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
 
       <div className="mt-4 flex items-center justify-between">
         <h3 className="text-strong">Gövde (markdown)</h3>
-        <label className="flex items-center gap-2 text-caption">
-          <input type="checkbox" checked={preview} onChange={(e) => setPreview(e.target.checked)} />
-          Önizleme
-        </label>
+        <Checkbox checked={preview} onChange={setPreview}>
+          <span className="text-caption">Önizleme</span>
+        </Checkbox>
       </div>
       <div className={`mt-2 grid gap-4 ${preview ? "md:grid-cols-2" : ""}`}>
         <textarea
@@ -380,10 +375,9 @@ function ProcessorRow({ p, onChange, onDelete }: { p: ConfigProcessor; onChange:
               ))}
             </div>
           ))}
-          <label className="flex items-center gap-2 text-caption">
-            <input type="checkbox" checked={Boolean(p.iosOnly)} onChange={(e) => onChange({ ...p, iosOnly: e.target.checked })} />
-            Yalnız iOS yayındayken bas
-          </label>
+          <Checkbox checked={Boolean(p.iosOnly)} onChange={(v) => onChange({ ...p, iosOnly: v })}>
+            <span className="text-caption">Yalnız iOS yayındayken bas</span>
+          </Checkbox>
         </div>
       ) : null}
     </div>

@@ -7,6 +7,7 @@ import type { AppAdminData } from "@/lib/admin-app";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, Badge, BTN, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, Notice, PageHeader, Panel, TONE, when as fmtWhen } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
+import { Checkbox } from "@/components/checkbox";
 
 /**
  * Uygulama işletimi görünümü — dört bölüm, yazma olanlar önce:
@@ -106,10 +107,9 @@ export function AppAdmin({
                 </Field>
               </div>
               {cfg.minBuild[p] > 0 ? <p style={{ color: TONE.bad }}>Zorunlu güncelleme ekranı görecek: {affected(p, cfg.minBuild[p])} kullanıcı</p> : null}
-              <label className="flex items-center gap-2">
-                <input type="checkbox" checked={cfg.store[p].live} onChange={(e) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], live: e.target.checked } } }))} />
-                <span>Mağazada yayında (web satın almayı buraya yönlendirir)</span>
-              </label>
+              <Checkbox checked={cfg.store[p].live} onChange={(v) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], live: v } } }))}>
+                Mağazada yayında (web satın almayı buraya yönlendirir)
+              </Checkbox>
               <Field label="Mağaza adresi">
                 <input aria-label={`${p} mağaza adresi`} value={cfg.store[p].url} onChange={(e) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], url: e.target.value } } }))} className={`${FIELD} font-mono text-caption`} style={FIELD_STYLE} />
               </Field>
@@ -245,10 +245,11 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
         <button type="button" disabled={busy} onClick={preview} className={BTN.secondary}>Kaç kişiye gider?</button>
         {counts ? <span>tr {counts.tr} · en {counts.en} · de {counts.de} → metni dolu dillerde <b>{reach}</b> kişi</span> : null}
       </div>
-      <label className="mt-3 flex items-start gap-2 text-caption">
-        <input type="checkbox" checked={service} onChange={(e) => setService(e.target.checked)} className="mt-0.5" />
-        <span>Bu bir <b>hizmet duyurusudur</b>; tanıtım, kampanya, indirim ya da uygulamaya geri çağırma içermez.</span>
-      </label>
+      <div className="mt-3 text-caption">
+        <Checkbox checked={service} onChange={setService}>
+          <span className="text-caption">Bu bir <b>hizmet duyurusudur</b>; tanıtım, kampanya, indirim ya da uygulamaya geri çağırma içermez.</span>
+        </Checkbox>
+      </div>
       <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3 text-caption" style={{ borderColor: "var(--hairline)" }}>
         <button type="button" disabled={busy} onClick={() => send(true)} className={BTN.secondary}>Kendime test gönder</button>
         {cooling ? (

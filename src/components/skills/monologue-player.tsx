@@ -14,6 +14,7 @@ import { DetailCard, StateBody } from "@/components/flow";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
+import { Checkbox } from "@/components/checkbox";
 
 type Phase = "prep" | "record" | "review" | "scoring" | "result";
 
@@ -354,14 +355,9 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
               <ul className="mt-2 space-y-1.5">
                 {mono.bulletsTr.map((b, i) => (
                   <li key={b}>
-                    <label className="flex items-center gap-2 text-body">
-                      <input
-                        type="checkbox"
-                        checked={checks[i]}
-                        onChange={(e) => setChecks(checks.map((c, j) => (j === i ? e.target.checked : c)))}
-                      />
+                    <Checkbox checked={checks[i]} onChange={(v) => setChecks(checks.map((c, j) => (j === i ? v : c)))}>
                       {b}
-                    </label>
+                    </Checkbox>
                   </li>
                 ))}
               </ul>
