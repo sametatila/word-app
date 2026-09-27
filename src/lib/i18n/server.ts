@@ -47,17 +47,47 @@ async function fromAcceptLanguage(): Promise<NativeLang | null> {
 }
 
 export async function getLang(): Promise<NativeLang> {
+  return (await requestLang()) ?? DEFAULT_NATIVE;
+}
+
+/**
+ * İsteğin GERÇEKTEN taşıdığı dil: çerez, yoksa Accept-Language; ikisi de
+ * yoksa `null` (varsayılana DÜŞMEZ).
+ *
+ * Profile anadil yazılacaksa (`ensureProfile`, `/api/me` geri doldurması)
+ * `getLang`in "tr" düşüşü kullanılamaz: sinyal yokken Türkçe yazmak, düzeltmek
+ * istediğimiz hatanın ta kendisi. İstek bağlamı dışında (zamanlanmış iş
+ * betiği, test) `headers()` fırlatır; o da `null`.
+ */
+export async function requestLang(): Promise<NativeLang | null> {
   try {
     const v = (await cookies()).get(LANG_COOKIE)?.value;
     if (isNativeLang(v)) return v;
   } catch {
-    /* çerez okunamıyorsa tarayıcıya, sonra varsayılana */
+    /* çerez okunamıyorsa tarayıcıya */
   }
-  return (await fromAcceptLanguage()) ?? DEFAULT_NATIVE;
+  return fromAcceptLanguage();
 }
 
 /** Sunucu bileşenleri için bağlanmış `t` — `const t = await getT()`. */
 export async function getT() {
   const lang = await getLang();
+  return (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
+}
+
+/**
+ * İÇERİĞİN dili: profilde anadil varsa O, yoksa istek dili.
+ *
+ * Uçlar iki ayrı kaynağa bakıyordu: sınav/profil `profile.nativeLang`,
+ * Patika gibi uçlar `getLang()` (çerez/Accept-Language). Mobilin arayüz dili
+ * ile hesabın anadili ayrıştığında aynı ekranın iki yarısı iki dilde
+ * geliyordu. Hesabın seçimi yetkili; istek dili yalnız o boşken.
+ */
+export async function contentLang(profileNative: string | null | undefined): Promise<NativeLang> {
+  return isNativeLang(profileNative) ? profileNative : getLang();
+}
+
+/** Verilen dile bağlanmış `t` — içerik diliyle aynı dilde yer tutucular için. */
+export function tFor(lang: NativeLang) {
   return (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
 }

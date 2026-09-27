@@ -179,7 +179,7 @@ export async function loadTrack(
   // mobil `listPathSkillMeta` aynı süzgeci zaten uyguluyor.
   const metas = pathMetas(await listExerciseMeta(course));
   const byLevel = metas.filter((m) => m.level === level);
-  return buildTrack({
+  const track = buildTrack({
     course,
     level,
     conversations,
@@ -189,4 +189,26 @@ export async function loadTrack(
     t,
     lang,
   });
+  if (!lang || lang === DEFAULT_NATIVE) return track;
+  /*
+    İÇERİK BAŞLIKLARI ANADİLDE. Konuşmanın alt başlığı (`titleTr`) ve Türkçe
+    yazılmış beceri başlıkları olduğu gibi gidiyordu: arayüzü İngilizce/Almanca
+    olan öğrenci Patika'da Türkçe satırlar görüyordu. Hedef dildeki başlıklar
+    (konuşmanın `title`ı, beceri başlıklarının çoğu) değişmiyor. Çözücü sunucu
+    modülü; bu dosya betiklerde de açıldığı için gecikmeli içe alınıyor.
+  */
+  const { nativeTitles } = await import("@/lib/conversations/native-server");
+  const titles = await nativeTitles(lang);
+  const byId = new Map(conversations.map((c) => [c.id, c]));
+  for (const unit of track.units) {
+    for (const item of unit.items) {
+      if (item.kind === "conversation" && item.ref) {
+        const c = byId.get(item.ref);
+        if (c) item.titleTr = titles.conversation(c);
+      } else if ((item.kind === "read" || item.kind === "listen" || item.kind === "write") && item.ref) {
+        item.title = titles.skill(item.title);
+      }
+    }
+  }
+  return track;
 }

@@ -440,12 +440,31 @@ export function dialoguePrompt(
   const tgt = targetLang(ex.course);
   const nat = nativeLang(native);
   const dialect = ex.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun; öğrenci Hochdeutsch cevap verirse düzeltme, sürdür." : tgt.dialect;
-  const targets = ex.targets.map((t) => `- ${t.de} — ${t.tr}`).join("\n");
+  /*
+    KALIBIN KARŞILIĞI ÖĞRENCİNİN DİLİNDE. `${t.de} — ${t.tr}` yazılıyordu: anadili
+    İngilizce/Almanca olan öğrencinin konuşmasında model Türkçe karşılığı görüp
+    yardımda onu aktarabiliyordu. Türkçe → `tr`, İngilizce → `en` (Almanca
+    kursta dolu); karşılık yoksa (anadili Almanca: İngilizce kursun kalıplarının
+    Almancası veride yok) yalnız kalıbın kendisi gidiyor — Türkçe değil.
+  */
+  const glossOf = (t: { tr: string; en?: string }): string | undefined =>
+    native === "tr" ? t.tr : native === "en" ? t.en?.trim() || undefined : undefined;
+  const targets = ex.targets
+    .map((t) => {
+      const g = glossOf(t);
+      return g ? `- ${t.de} — ${g}` : `- ${t.de}`;
+    })
+    .join("\n");
+  /* HEDEF ve SINIRLAR veride yalnız Türkçe ve modele TALİMAT (istemin geri
+     kalanı gibi); öğrenci görmüyor. Türkçe olmayan okurda model onları
+     aktarmasın diye ayrıca söyleniyor. */
+  const internal =
+    native === "tr" ? "" : `\n(HEDEF ve SINIRLAR sana verilen iç talimattır; öğrenciye aktarma, yardımı yalnız ${nat.name} yaz, asla Türkçe yazma.)`;
   return `Sen bir ${tgt.name} konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili ${nat.name}, seviyesi ${ex.level}. ${dialect}
 
 ROLÜN: ${theme.role}.
 SAHNE: ${ex.intro}
-HEDEF: ${theme.goal}${theme.limits ? `\nSINIRLAR: ${theme.limits}` : ""}
+HEDEF: ${theme.goal}${theme.limits ? `\nSINIRLAR: ${theme.limits}` : ""}${internal}
 
 ÖĞRENCİNİN KULLANMASI BEKLENEN KALIPLAR — konuşmayı bunların gerekeceği yere sür, ama kalıbı söyleme
 ${targets}

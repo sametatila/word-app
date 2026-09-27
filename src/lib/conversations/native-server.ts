@@ -7,6 +7,7 @@ import {
   resolveExercise,
   resolveMockPaper,
   mockKey,
+  isTurkishStem,
   type NativeDict,
   type ExamShape,
   type ExerciseShape,
@@ -32,7 +33,17 @@ import { packObject } from "@/lib/content/serve";
  * Yoksa özellik sessizce kapanıyor (konuşma Türkçe kalıyor) — çünkü eksik
  * sözlük yüzünden konuşma sayfasının açılmaması, çeviriden çok daha kötü.
  */
-let cache: NativeDict | null | undefined;
+let cache: NativeDict | undefined;
+let missAt = 0;
+
+/*
+  YOKLUK KALICI DEĞİL. Eskiden ilk çağrıda paket yoksa `null` süreç ömrü
+  boyunca önbellekte kalıyordu: deploy'da `content:publish` uygulama açıldıktan
+  SONRA koşuyor, yani o arada gelen tek bir istek süreci yeniden başlatılana
+  kadar herkese Türkçe içerik verdiriyordu. Yokluk artık yalnız bu süre kadar
+  hatırlanıyor, sonra yeniden deneniyor.
+*/
+const MISS_TTL_MS = 60_000;
 
 /**
  * SÖZLÜK YAYIN HATTINDAN — 4,9 MB statik içe alım kalktı.
@@ -46,11 +57,12 @@ let cache: NativeDict | null | undefined;
  */
 async function nativeDict(): Promise<NativeDict | null> {
   if (cache !== undefined) return cache;
+  if (missAt && Date.now() - missAt < MISS_TTL_MS) return null;
   const built = await packObject<unknown>("native/en");
   if (!built) {
     console.error("[native] sözlük yayında yok — `content:publish` çalıştırıldı mı?");
-    cache = null;
-    return cache;
+    missAt = Date.now();
+    return null;
   }
   cache = built as unknown as NativeDict;
   return cache;
@@ -67,15 +79,17 @@ async function nativeDict(): Promise<NativeDict | null> {
  * ikincisini açıyor. Tek dosyada birleştirmek her isteğe okunmayan yarıyı
  * bindirirdi.
  */
-let cacheDe: DeDict | null | undefined;
+let cacheDe: DeDict | undefined;
+let missDeAt = 0;
 
 async function deDict(): Promise<DeDict | null> {
   if (cacheDe !== undefined) return cacheDe;
+  if (missDeAt && Date.now() - missDeAt < MISS_TTL_MS) return null;
   const built = await packObject<unknown>("native/de");
   if (!built) {
     console.error("[native] Almanca sözlük yayında yok — `content:publish` çalıştırıldı mı?");
-    cacheDe = null;
-    return cacheDe;
+    missDeAt = Date.now();
+    return null;
   }
   cacheDe = built as unknown as DeDict;
   return cacheDe;
@@ -156,6 +170,40 @@ export async function nativeTitle(
   }
   const dict = await nativeDict();
   return dict?.meta[conversationId]?.title ?? null;
+}
+
+/**
+ * Konuşma ve beceri BAŞLIKLARINI ana dile çeviren eşleyiciler — liste
+ * yüzeyleri için (Patika, gelişim ekranı "sıradaki adım").
+ *
+ * `nativeTitle` ile aynı sözlükler ama tek açılışla: liste onlarca satır
+ * taşıyor ve satır başına sözlük beklemek gereksiz. Beceri başlığının
+ * çoğu hedef dilde ve DOKUNULMUYOR; yalnız Türkçe olanlar (`isTurkishStem`)
+ * görev sözlüğünden (`title` türü) çevriliyor — `resolveExercise`in başlık
+ * kuralının aynısı. Karşılık yoksa kaynak döner (liste satırını düşürmek
+ * içeriği gizlerdi).
+ */
+export async function nativeTitles(lang: NativeLang | null | undefined): Promise<{
+  conversation: (c: { id: string; titleTr: string }) => string;
+  skill: (title: string) => string;
+}> {
+  const same = { conversation: (c: { titleTr: string }) => c.titleTr, skill: (title: string) => title };
+  if (!lang || lang === DEFAULT_NATIVE) return same;
+  const SEP = "\u0000";
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return same;
+    return {
+      conversation: (c) => de.conversation[deKey("titleTr", c.titleTr)] ?? c.titleTr,
+      skill: (title) => (isTurkishStem(title) ? (de.task["title" + SEP + title] ?? title) : title),
+    };
+  }
+  const dict = await nativeDict();
+  if (!dict) return same;
+  return {
+    conversation: (c) => dict.meta[c.id]?.title ?? c.titleTr,
+    skill: (title) => (isTurkishStem(title) ? (dict.task["title" + SEP + title] ?? title) : title),
+  };
 }
 
 /**

@@ -9,13 +9,14 @@ import { conversationsForLevel } from "@/lib/conversations";
 import { MODULE_SIZE } from "@/lib/conversations/modules";
 import {
   moduleContent,
+  moduleProduce,
   taughtSense,
   conversationModuleCount,
   selfAnswering,
   type ProduceItem as ConversationProduceItem,
 } from "@/lib/conversations/module-content";
 import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/conversations/module-exam";
-import { localiseExam } from "@/lib/conversations/native-server";
+import { localiseExam, localiseExercise } from "@/lib/conversations/native-server";
 import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
@@ -38,7 +39,7 @@ import {
 } from "@/lib/exam-types";
 import type { CefrLevel, WritingTask, SkillExercise } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
-import { nativeOf } from "@/lib/courses";
+import { nativeOf, type NativeLang } from "@/lib/courses";
 
 /**
  * Modül ve seviye sınavı (plan WP-41, v3).
@@ -261,10 +262,12 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
 
   // Cümle kurma: konuşmaların üretim adımları. Seviye sınavında seviyenin bütün
   // modülleri havuz.
+  /* Yönergeler anadilde (`moduleProduce`): `content.produce` kaynak dilde,
+     yani Türkçe — İngilizce/Almanca okur Türkçe cümle kurmaya çağrılıyordu. */
   const produceSource: ConversationProduceItem[] = content
-    ? content.produce
+    ? await moduleProduce(course, level, module!, native)
     : (await conversationsForLevel(course, level)).filter((l) => l.course === course).length
-      ? await allModuleProduce(course, level)
+      ? await allModuleProduce(course, level, native)
       : [];
   const produce = produceItems(produceSource, seed, c.produce);
 
@@ -280,7 +283,13 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
    * kendisine bakıyor. Züritüütsch davranışı değişmiyor - onun bankası zaten
    * kendi kimliğiyle süzülüyordu.
    */
-  const bank = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course && e.level === level);
+  /* BANKA ANADİLDE. Egzersizler olduğu gibi alınıyordu: başlık, Türkçe soru
+     kökü/şıkkı ve yazma görevinin yönergesi/kontrol listesi İngilizce/Almanca
+     okura Türkçe geliyordu. Beceri sayfalarının çözücüsü (`localiseExercise`,
+     hep-ya-hiç) burada da koşuyor; kimlikler ve doğru şık dizini değişmiyor. */
+  const bank = await Promise.all(
+    BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course && e.level === level).map((e) => localiseExercise(e, native)),
+  );
   const pickTexts = (skill: "reading" | "listening"): TextItem[] => {
     const list = bank.filter((e) => e.skill === skill && examQuestions(e).length > 0);
     const ordered = [...seededShuffle(list.filter((e) => !done.has(e.id)), `${seed}|${skill}`), ...seededShuffle(list.filter((e) => done.has(e.id)), `${seed}|${skill}|used`)];
@@ -440,9 +449,9 @@ export function examCando(course: string, level: string, module: number | null):
  * bir işleve alındı: ifade içinde `await` ile kurulan `Array.from` okunaksız
  * ve tip çıkarımı da orada şaşıyor.
  */
-async function allModuleProduce(course: string, level: string): Promise<ConversationProduceItem[]> {
+async function allModuleProduce(course: string, level: string, native: NativeLang): Promise<ConversationProduceItem[]> {
   const n = await conversationModuleCount(course, level);
   const out: ConversationProduceItem[] = [];
-  for (let i = 0; i < n; i++) out.push(...(await moduleContent(course, level, i)).produce);
+  for (let i = 0; i < n; i++) out.push(...(await moduleProduce(course, level, i, native)));
   return out;
 }

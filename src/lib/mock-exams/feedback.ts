@@ -247,7 +247,7 @@ export async function mockFeedback(
     // İngilizce kurs ve İngilizce geri bildirim Amerikan (bkz. `EN_VARIETY`).
     const system = SYSTEM(dil, cevapDili) + (course === "en" ? "\n" + EN_VARIETY : "") + (lang === "en" ? "\n" + EN_FEEDBACK : "");
     const raw = await completeChat(system, [{ role: "user", content: user }], 900, report);
-    return parse(raw) ?? rulesFeedback(score, course);
+    return parse(raw) ?? rulesFeedback(score, course, lang);
   } catch {
     // Sağlayıcı hatası öğrencinin sonucunu görmesini engellememeli.
     return rulesFeedback(score, course, lang);

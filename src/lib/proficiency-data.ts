@@ -6,6 +6,7 @@ import { findConversation } from "@/lib/conversations";
 import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
 import { nextConversation } from "@/lib/conversations/progress";
+import { nativeTitles } from "@/lib/conversations/native-server";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { computeProficiency, DECAY_DAYS, PROFICIENCY_LABEL_KEYS, bandKey, weakestSkill, type Evidence, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -256,7 +257,9 @@ export async function nextStep(
     if (skill === "vocab") return { skill, label: name, reason, href: "/learn/game", title: translate(lang, "plan.word_round"), minutes: 6 };
     if (skill === "grammar") return { skill, label: name, reason, href: "/immersion", title: translate(lang, "proficiency.grammar_practice"), minutes: 5 };
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
-    if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
+    // Başlık Türkçe yazılmışsa anadile (Patika ile aynı kural, `nativeTitles`);
+    // hedef dildeki başlık olduğu gibi kalıyor.
+    if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: (await nativeTitles(lang)).skill(open.title), minutes: open.minutes };
   }
   const conversation = await nextConversation(userId, course, level);
   if (conversation)
@@ -274,9 +277,10 @@ export async function nextStep(
 /** Öneri sırası: dört beceri önce; kelime ve dilbilgisi zaten günlük turda çalışılıyor, en sona. */
 const PROFICIENCY_SKILLSORDERED: ProficiencySkill[] = ["reading", "listening", "writing", "speaking", "grammar", "vocab"];
 
-export async function proficiencyFor(userId: string, course: string, level: CefrLevel) {
+export async function proficiencyFor(userId: string, course: string, level: CefrLevel, lang: NativeLang = DEFAULT_NATIVE) {
   const evidence = await gatherEvidence(userId);
   const prof = computeProficiency(evidence);
-  const next = await nextStep(userId, course, level, prof);
+  // Öneri metinleri çağıranın dilinde (eskiden hep Türkçe gidiyordu).
+  const next = await nextStep(userId, course, level, prof, lang);
   return { proficiency: prof, next, evidenceCount: evidence.length, weakest: weakestSkill(prof, level) };
 }

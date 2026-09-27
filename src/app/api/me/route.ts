@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { recordClient } from "@/lib/app-control";
 import { CLIENT_HEADER } from "@/lib/app-control-shared";
 import { getUserInfo } from "@/lib/auth/server";
-import { ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
+import { backfillNativeLang, ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
 
 export const dynamic = "force-dynamic";
@@ -40,7 +40,10 @@ export async function GET() {
       `ensureProfile` adı yalnız BOŞSA yazıyor ve iki karakterden kısasını
       yok sayıyor, yani kullanıcının kendi seçtiği görünen adı ezmiyor.
     */
-    const profile = await ensureProfile(userId, who?.name ?? null);
+    /* ANADİL BOŞSA İSTEK DİLİNDEN DOLUYOR (bkz. `backfillNativeLang`): mobil
+       Accept-Language'ı arayüz diliyle gönderiyor. Yalnız kursla geçerli çift
+       kuruluyorsa yazılıyor; yanıt yazılan (kayıtlı) değeri taşır. */
+    const profile = await backfillNativeLang(await ensureProfile(userId, who?.name ?? null));
     const today = new Date().toISOString().slice(0, 10);
     // İlerleme okunamazsa özet yine döner: kimlik/seri/XP profilde, ilerlemeye bağlı değil.
     const progress = await getProgress(userId, today).catch(() => null);

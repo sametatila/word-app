@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { errorReport } from "@/lib/error-analytics";
-import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { contentLang } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 
@@ -13,8 +13,9 @@ export async function GET() {
   try {
     const profile = await ensureProfile(userId);
     // Etiketler SUNUCUDA çevriliyor ve dil PROFİLDEN okunuyor — çerezden değil:
-    // bu ucu mobil de çağırıyor ve orada web çerezimiz yok.
-    const lang = isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+    // bu ucu mobil de çağırıyor ve orada web çerezimiz yok. Profil boşsa istek
+    // dili (mobil Accept-Language'ı arayüz diliyle gönderiyor).
+    const lang = await contentLang(profile.nativeLang);
     return NextResponse.json(await errorReport(userId, profile.course, 30, lang), {
       headers: { "cache-control": "no-store" },
     });

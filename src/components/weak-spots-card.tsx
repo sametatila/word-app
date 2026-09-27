@@ -120,7 +120,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
                   {c.artikel ? `${c.artikel} ` : ""}
                   {c.de}
                 </strong>
-                <span className="muted"> = {c.tr}, </span>
+                <span className="muted"> = {c.gloss ?? c.tr}, </span>
                 <s className="opacity-70">{c.with}</s>
                 <span className="muted"> {tx("weak.not")}</span>
               </li>

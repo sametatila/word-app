@@ -17,7 +17,8 @@ import { PROFILE_LIMITS } from "@/lib/profile-limits";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
-import { nativeOf, type NativeLang } from "@/lib/courses";
+import { acceptsPair, nativeOf, type NativeLang } from "@/lib/courses";
+import { requestLang } from "@/lib/i18n/server";
 import { exampleGlossFor, glossFor, hasGloss, meaningParts, optionLabel, sharesMeaning, spokenGloss, withArtikel } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
 import type {
@@ -460,14 +461,62 @@ export async function ensureProfile(userId: string, name?: string | null) {
       .returning();
     return filled ?? existing;
   }
+  /*
+    ANADİL DOĞARKEN YAZILIYOR. Satır `native_lang` boş doğuyordu ve boş anadil
+    sunucunun her yerinde (bildirim, yapay zekâ geri bildirimi, tur, sınav)
+    Türkçeye düşüyor: arayüzü İngilizce/Almanca olan biri Türkçe içerik
+    alıyordu. İstek dili (çerez, yoksa Accept-Language) kursla geçerli bir
+    çift kuruyorsa yazılıyor; sinyal yoksa (zamanlanmış iş, betik) ya da çift
+    geçersizse boş kalıyor — kurs asla taşınmıyor.
+  */
+  const native = await requestLang().catch(() => null);
   const [created] = await db
     .insert(profiles)
-    .values({ userId, displayName: clean, termsVersion: LEGAL_VERSION, termsAcceptedAt: new Date() })
+    .values({
+      userId,
+      displayName: clean,
+      termsVersion: LEGAL_VERSION,
+      termsAcceptedAt: new Date(),
+      ...(native && acceptsPair(native, "de") ? { nativeLang: native } : {}),
+    })
     .onConflictDoNothing()
     .returning();
   if (created) return created;
   const [again] = await db.select().from(profiles).where(eq(profiles.userId, userId));
   return again;
+}
+
+/**
+ * Anadili BOŞ profile istek dilini yazar (geri doldurma).
+ *
+ * `native_lang` sonradan eklendi ve eski/uygulamadan açılmış hesaplarda boş;
+ * boş anadil sunucuda Türkçeye düşüyor. Mobil açılışta `/api/me`yi, web her
+ * sayfada uygulama yerleşimini çağırıyor: ikisi de bunu çağırıyor. Yalnız
+ * istek dili gerçekten varsa ve profildeki kursla geçerli bir çift kuruyorsa
+ * yazılıyor (kurs taşınmıyor); `WHERE native_lang IS NULL` koşulu, arada
+ * kullanıcının kendi seçtiği dili ezmemeyi garanti ediyor. Döndürülen profil
+ * yazılan değeri taşır.
+ */
+export async function backfillNativeLang<
+  P extends { userId: string; nativeLang: string | null; course: string } | undefined,
+>(profile: P): Promise<P> {
+  if (!profile || profile.nativeLang) return profile;
+  const native = await requestLang().catch(() => null);
+  if (!native || !acceptsPair(native, profile.course)) return profile;
+  try {
+    await db
+      .update(profiles)
+      .set({ nativeLang: native })
+      .where(and(eq(profiles.userId, profile.userId), sql`${profiles.nativeLang} is null`));
+    const [row] = await db
+      .select({ nativeLang: profiles.nativeLang })
+      .from(profiles)
+      .where(eq(profiles.userId, profile.userId));
+    return { ...profile, nativeLang: row?.nativeLang ?? profile.nativeLang };
+  } catch (err) {
+    console.error("[profile] anadil geri doldurulamadı", err);
+    return profile;
+  }
 }
 
 /**
@@ -982,6 +1031,10 @@ export async function loadSession(
       currentShape &&
       saved.day === today &&
       saved.course === profile.course &&
+      /* ANADİL DE TURUN PARÇASI: şıklar ve anlamlar kuruluş anındaki anadilde.
+         Dil değişince kayıtlı tur eski dilde geri geliyor, not verme de yeni
+         dile bakıyordu. Boş = sütundan önceki satır; o günlük kabul. */
+      (saved.nativeLang == null || saved.nativeLang === nativeOf(profile.nativeLang)) &&
       Array.isArray(rounds) &&
       saved.index < rounds.length
     ) {
@@ -1007,6 +1060,7 @@ export async function loadSession(
       userId,
       day: today,
       course: profile.course,
+      nativeLang: nativeOf(profile.nativeLang),
       rounds: built.rounds,
       index: 0,
       correct: 0,
@@ -1020,6 +1074,7 @@ export async function loadSession(
       set: {
         day: today,
         course: profile.course,
+        nativeLang: nativeOf(profile.nativeLang),
         rounds: built.rounds,
         index: 0,
         correct: 0,

@@ -10,7 +10,8 @@ import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { ensureProfile, termsUpdateFor } from "@/lib/session";
+import { clearSessionState, ensureProfile, termsUpdateFor } from "@/lib/session";
+import { contentLang } from "@/lib/i18n/server";
 import { LEGAL_VERSION } from "@/lib/legal";
 import { proficiencyFor } from "@/lib/proficiency-data";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -43,7 +44,7 @@ export async function GET(req: Request) {
       );
     }
     const level = (["A1", "A2", "B1", "B2", "C1"].includes(profile.level) ? profile.level : "A1") as CefrLevel;
-    const data = await proficiencyFor(userId, profile.course, level);
+    const data = await proficiencyFor(userId, profile.course, level, await contentLang(profile.nativeLang));
     return NextResponse.json({ level, ...data }, { headers: { "cache-control": "no-store" } });
   } catch (err) {
     console.error("[profile] yetkinlik", err);
@@ -162,8 +163,10 @@ export async function POST(req: Request) {
         reddetmek meşru bir dil değişikliğini engellerdi. Mobildeki
         `keepCourseValid` ile aynı davranış.
   */
+  let prevNative: string | null | undefined;
   if (patch.course || patch.nativeLang) {
     const current = await ensureProfile(userId);
+    prevNative = current?.nativeLang;
     const native = nativeOf(patch.nativeLang ?? current?.nativeLang);
     const course = String(patch.course ?? current?.course ?? "de");
     if (!acceptsPair(native, course)) {
@@ -210,6 +213,12 @@ export async function POST(req: Request) {
       .set(patch)
       .where(eq(profiles.userId, userId))
       .returning();
+    /* ANADİL DEĞİŞTİ → KAYITLI TUR ATILIYOR. Tur şıkları ve anlamları eski
+       dilde kurulmuştu; yarım tur yeni dilde baştan kuruluyor (`getSession`
+       de dil uyuşmazlığını bayat sayıyor, bu ikinci kilit). */
+    if (patch.nativeLang && nativeOf(prevNative) !== nativeOf(patch.nativeLang)) {
+      await clearSessionState(userId).catch((err) => console.error("[profile] tur silinemedi", err));
+    }
     return NextResponse.json(updated);
   } catch (err) {
     console.error("[profile]", err);

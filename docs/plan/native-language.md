@@ -41,6 +41,14 @@ Kurallar:
 - Sözlük build anında kurulur (`conversations:apply`: `vocab/triage.mjs` + `apply.mjs`).
   Türetilen `data/conversations/vocab/derived.json` commit edilmez; `apply.mjs` girdisi
   yoksa patlar.
+- **Anadil kaynağı:** içerik dili `profiles.native_lang`; boşsa istek dili (çerez, yoksa
+  Accept-Language; `contentLang`, `src/lib/i18n/server.ts`). Boş anadil yeni profilde
+  (`ensureProfile`) ve açılışta (`/api/me`, web `(app)/layout`) istek dilinden doldurulur
+  (`backfillNativeLang`): yalnız istek dili gerçekten varsa ve kursla geçerli çift kuruyorsa,
+  kurs taşınmaz. Toplu üretim geri doldurması YAPILMADI; kalan boşları görmek için (salt okuma):
+  `select course, count(*) from profiles where native_lang is null group by 1;`
+- Günlük tur (`session_state.native_lang`) kurulduğu anadile bağlı; dil değişince kayıtlı tur
+  bayat sayılır ve `/api/profile` dil değişiminde turu siler.
 
 ## Kapılar
 

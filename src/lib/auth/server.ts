@@ -1,6 +1,8 @@
 import "server-only";
 import { headers } from "next/headers";
-import { getLang } from "@/lib/i18n/server";
+import { contentLang } from "@/lib/i18n/server";
+import type { NativeLang } from "@/lib/i18n/dict";
+import { profiles } from "@/lib/db/schema";
 import { unstable_rethrow } from "next/navigation";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
@@ -28,6 +30,24 @@ import { setSessionCookie } from "better-auth/cookies";
 import { eq } from "drizzle-orm";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+
+/**
+ * Postanın dili: kullanıcının profilinde anadil varsa O, yoksa isteğin dili.
+ *
+ * Postalar hep `getLang()` (çerez / Accept-Language) ile yazılıyordu. Sıfırlama
+ * ve 2FA çoğu zaman başka bir cihazdan, başka dilde bir tarayıcıdan isteniyor:
+ * anadili İngilizce olan kullanıcıya Türkçe tarayıcıdan Türkçe posta
+ * gidiyordu. Kullanıcı bilindiğinde (hepsinde biliniyor) hesabın seçimi
+ * yetkili; profil henüz yoksa (kayıt anı) ya da okunamazsa istek dili.
+ */
+async function emailLang(userId: string): Promise<NativeLang> {
+  try {
+    const [row] = await db.select({ nativeLang: profiles.nativeLang }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
+    return await contentLang(row?.nativeLang);
+  } catch {
+    return contentLang(null);
+  }
+}
 import { guestAttestationMode, startGuestAttestation } from "@/lib/auth/play-integrity";
 import { CLIENT_HEADER } from "@/lib/app-control-shared";
 
@@ -215,7 +235,7 @@ export const auth = betterAuth({
      * "değişti mi değişmedi mi" belirsizliğinde bırakırdı.
      */
     onPasswordReset: async ({ user: u }) => {
-      const { subject, html, text } = passwordChangedEmail(`${BASE_URL}/forgot-password`, await getLang());
+      const { subject, html, text } = passwordChangedEmail(`${BASE_URL}/forgot-password`, await emailLang(u.id));
       await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "pw_changed" });
     },
     /**
@@ -229,14 +249,13 @@ export const auth = betterAuth({
      * SAHİBİNE durumu anlatan bir posta gider.
      */
     onExistingUserSignUp: async ({ user: u }) => {
-      const { subject, html, text } = accountExistsEmail(`${BASE_URL}/forgot-password`, await getLang());
+      const { subject, html, text } = accountExistsEmail(`${BASE_URL}/forgot-password`, await emailLang(u.id));
       await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "exists" });
     },
     sendResetPassword: async ({ user: u, url }) => {
-      // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
-      // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
-      // isteği çoğu zaman oturumsuz geliyor.
-      const { subject, html, text } = resetEmail(url, await getLang());
+      // Dil hesabın anadilinden (bkz. `emailLang`): istek oturumsuz gelse de
+      // kullanıcı burada biliniyor. Profil boşsa çerez / Accept-Language.
+      const { subject, html, text } = resetEmail(url, await emailLang(u.id));
       await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "reset" });
     },
   },
@@ -270,8 +289,9 @@ export const auth = betterAuth({
       }
     },
     sendVerificationEmail: async ({ user: u, url }) => {
-      // Kayıt anında profil henüz yok; dilin tek güvenilir kaynağı istek.
-      const { subject, html, text } = verificationEmail(url, await getLang());
+      // Kayıt anında profil henüz yok (istek dili); sonradan yeniden
+      // gönderilen doğrulamada profil varsa onun dili.
+      const { subject, html, text } = verificationEmail(url, await emailLang(u.id));
       await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "verify" });
     },
   },
@@ -629,7 +649,7 @@ export const auth = betterAuth({
         */
         storeOTP: "hashed",
         sendOTP: async ({ user, otp }) => {
-          const { subject, html, text } = twoFactorCodeEmail(otp, await getLang());
+          const { subject, html, text } = twoFactorCodeEmail(otp, await emailLang(user.id));
           await sendEmail(user.email, subject, html, text, { userId: user.id, kind: "twofa" });
         },
       },

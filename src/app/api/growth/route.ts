@@ -3,7 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { growthReport } from "@/lib/growth";
 import type { CefrLevel } from "@/lib/skills/types";
-import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { contentLang } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   try {
     const profile = await ensureProfile(userId);
     const level = (["A1", "A2", "B1", "B2", "C1"].includes(profile.level) ? profile.level : "A1") as CefrLevel;
-    return NextResponse.json(await growthReport(userId, profile.course ?? "de", level, day, isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE), {
+    return NextResponse.json(await growthReport(userId, profile.course ?? "de", level, day, await contentLang(profile.nativeLang)), {
       headers: { "cache-control": "no-store" },
     });
   } catch (err) {

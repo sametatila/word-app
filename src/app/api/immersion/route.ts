@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { getT, getLang } from "@/lib/i18n/server";
+import { contentLang, tFor } from "@/lib/i18n/server";
 import { loadTrack } from "@/lib/immersion/build";
 import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
@@ -22,8 +22,11 @@ export async function GET() {
     const profile = await ensureProfile(userId);
     const level = (LEVELS.includes(profile.level) ? profile.level : "A1") as CefrLevel;
     // Yer tutucu başlıklar (Dil bilgisi / Tekrar / Ünite quizi ve içeriği
-    // olmayan beceri yuvası) kullanıcının dilinde gitsin.
-    const track = await loadTrack(profile.course, level, await getT(), await getLang());
+    // olmayan beceri yuvası) kullanıcının dilinde gitsin. Dil HESABIN anadili
+    // (boşsa istek dili): sınav ve profil uçlarıyla aynı kaynak; yer tutucular
+    // ile içerik başlıkları da aynı dilde.
+    const lang = await contentLang(profile.nativeLang);
+    const track = await loadTrack(profile.course, level, tFor(lang), lang);
     const completion = await immersionCompletion(userId, profile.course);
     const state = buildTrackState(track, completion);
 

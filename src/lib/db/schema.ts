@@ -504,6 +504,9 @@ export const sessionState = pgTable("session_state", {
   userId: text("user_id").primaryKey(),
   day: date("day").notNull(), // kullanıcının yerel günü — ertesi gün tur yenilenir
   course: text("course").notNull().default("de"), // kurs değişirse tur da değişmeli
+  // Turun kurulduğu anadil: şıklar/anlamlar bu dilde. Anadil değişince kayıtlı
+  // tur bayat sayılır. Boş = sütundan önceki satır (o günün turu, kabul edilir).
+  nativeLang: text("native_lang"),
   rounds: jsonb("rounds").notNull(), // Round[] — tur kuyruğunun tamamı
   index: integer("index").notNull().default(0), // kaçıncı turda kalındı
   correct: integer("correct").notNull().default(0),

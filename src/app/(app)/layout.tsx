@@ -5,7 +5,7 @@ import { adminGate } from "@/lib/admin";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { getSessionRead, authEnabled } from "@/lib/auth/server";
-import { ensureProfile, termsUpdateFor } from "@/lib/session";
+import { backfillNativeLang, ensureProfile, termsUpdateFor } from "@/lib/session";
 import { AccountSync } from "@/components/account-sync";
 import { LangSync } from "@/components/lang-sync";
 
@@ -49,7 +49,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   let analyticsOptOut = false;
   let termsUpdate: { version: string } | null = null;
   try {
-    const profile = await ensureProfile(user.id, user.name);
+    // Anadili boş eski hesap: istek dilinden (çerez/tarayıcı) geri doldurulur.
+    const profile = await backfillNativeLang(await ensureProfile(user.id, user.name));
     streak = profile?.currentStreak ?? 0;
     xp = profile?.totalXp ?? 0;
     course = profile?.course ?? "de";

@@ -1,6 +1,6 @@
 import { LEVEL_ORDER, conversationsForLevel } from "./index";
 import { MODULE_SIZE, moduleTheme } from "./modules";
-import { DEFAULT_NATIVE } from "@/lib/courses";
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 import { foldSentence } from "@/lib/sentence-match";
 import type { Conversation, Segment } from "./types";
 
@@ -85,6 +85,22 @@ const LEAD_INS = [
   "Son bir tane:",
   "Son:",
   "Peki",
+  /* ÇEVRİLMİŞ YÖNERGELER. Anadili İngilizce/Almanca olan öğrencinin kâğıdı
+     çevrilmiş konuşmadan kuruluyor (`moduleProduce`); çerçeve orada da var.
+     Sıklığa göre ölçüldü (`data/conversations/lecture/out`, `prose-de/out`),
+     uzun olan önce. */
+  "Now your turn:",
+  "Now you say it:",
+  "Now you ask:",
+  "Now you:",
+  "Your turn:",
+  "Jetzt bist du dran:",
+  "Jetzt bildest du:",
+  "Jetzt fragst du:",
+  "Jetzt sag du:",
+  "Jetzt du:",
+  "Du bist dran:",
+  "Du bist dran.",
 ];
 
 /** Yönergenin sonuna eklenmiş konuşma ipuçları — sınavda kırpılır. */
@@ -103,7 +119,9 @@ const TAIL_OUTS = [
   "Lütfen deyin.",
 ];
 
-export function examStem(say: Segment[]): string {
+export function examStem(say: Segment[], native: NativeLang = DEFAULT_NATIVE): string {
+  // Büyük harf kuralı dile göre: "i" Türkçede "İ", İngilizcede "I".
+  const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
   let text = say
     .map((s) => (s.lang === "tr" ? s.text : s.text))
     .join(" ")
@@ -130,7 +148,7 @@ export function examStem(say: Segment[]): string {
   }
   // Çerçeve atılınca başta kalan bağlaç ya da sonda kalan noktalama.
   text = text.replace(/^[,;:–—-]\s*/, "").replace(/[,;:–—]\s*$/, "").trim();
-  return text.charAt(0).toLocaleUpperCase("tr-TR") + text.slice(1);
+  return text.charAt(0).toLocaleUpperCase(locale) + text.slice(1);
 }
 
 /**
@@ -257,6 +275,36 @@ export async function moduleContent(course: string, level: string, index: number
   return built;
 }
 
+const PRODUCE_CACHE = new Map<string, ProduceItem[]>();
+
+/**
+ * Modülün ÜRETİM maddeleri öğrencinin ANADİLİNDE — sınavın "cümle kur" bölümü.
+ *
+ * `moduleContent` kaynak dilde (Türkçe) kalıyor ve bu bilerek: kelime listesi
+ * `taughtSense` ile `words.tr` sütununa eşleniyor, çevrilmiş içerikte o eşleşme
+ * bozulurdu. Ama üretim maddesinin yönergesi EKRAN METNİ ve Türkçe geliyordu:
+ * anadili İngilizce/Almanca olan öğrenci "Bir kedim var." cümlesini kurmaya
+ * çağrılıyordu. Burada konuşmalar konuşma çözücüsüyle (`localiseConversation`,
+ * hep-ya-hiç) çevriliyor ve maddeler onlardan kuruluyor; kimlik, hedef cümle ve
+ * kabul listesi aynı (puanlama değişmiyor). Çözücü sunucu modülü, o yüzden
+ * gecikmeli içe alınıyor: bu dosya doğrulama betiklerinde de açılıyor.
+ */
+export async function moduleProduce(course: string, level: string, index: number, native: NativeLang): Promise<ProduceItem[]> {
+  if (native === DEFAULT_NATIVE) return (await moduleContent(course, level, index)).produce;
+  const key = `${course}|${level}|${index}|${native}`;
+  const hit = PRODUCE_CACHE.get(key);
+  if (hit) return hit;
+  const { localiseConversation } = await import("./native-server");
+  const source = await moduleConversations(course, level, index);
+  const localised = await Promise.all(source.map((c) => localiseConversation(c, native)));
+  // Çevrilemeyen konuşma kaynağıyla döner; o durumda önbelleğe yazılmıyor ki
+  // sözlük yayına girince bir sonraki istek çevrilmiş hâli alsın.
+  const complete = localised.every((c, i) => c !== source[i]);
+  const produce = buildModuleContent(course, level, index, localised, native).produce;
+  if (complete) PRODUCE_CACHE.set(key, produce);
+  return produce;
+}
+
 /**
  * MODÜL İÇERİĞİNİN SAF KURUCUSU — konuşmaları DIŞARIDAN alıyor.
  *
@@ -265,7 +313,13 @@ export async function moduleContent(course: string, level: string, index: number
  * (`module-content-source`). Kurucunun kendisi ikisini de tanımıyor — böylece
  * 8,5 MB'lık konuşma kaynağı sunucu derlemesine girmiyor.
  */
-export function buildModuleContent(course: string, level: string, index: number, conversations: Conversation[]): ModuleContent {
+export function buildModuleContent(
+  course: string,
+  level: string,
+  index: number,
+  conversations: Conversation[],
+  native: NativeLang = DEFAULT_NATIVE,
+): ModuleContent {
   const focus: string[] = [];
   const produce: ProduceItem[] = [];
   const judge: JudgeItem[] = [];
@@ -286,7 +340,7 @@ export function buildModuleContent(course: string, level: string, index: number,
           conversationId: conversation.id,
           conversationTitle: conversation.title,
           focusId: conversation.focusId,
-          prompt: examStem(step.say),
+          prompt: examStem(step.say, native),
           de: step.expect.target,
           accept: step.expect.accept ?? [],
         });

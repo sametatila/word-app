@@ -6,6 +6,7 @@ import { errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/li
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { weakRules } from "@/lib/conversations/progress";
 import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
+import { glossFor } from "@/lib/option-label";
 
 /**
  * Hata analitiği (plan WP-51) — "zayıf noktaların".
@@ -35,7 +36,10 @@ export type ConfusionPair = {
   wordId: number;
   de: string;
   artikel: string | null;
+  /** Türkçe karşılık — kurulu eski istemciler bunu okuyor, kalıyor. */
   tr: string;
+  /** Kelimenin ÖĞRENCİNİN ANADİLİNDEKİ karşılığı (Türkçe okurda `tr` ile aynı). */
+  gloss: string;
   /** Karıştırıldığı karşılık / yazılan. */
   with: string;
   n: number;
@@ -79,17 +83,36 @@ export async function errorReport(
       };
     });
 
+  /*
+    KARŞILIK ANADİLDE. Yalnız `words.tr` okunuyor ve cevap Türkçeyle
+    karşılaştırılıyordu: anadili İngilizce/Almanca olan öğrencinin seçtiği şık
+    (kendi dilinde) Türkçe karşılıkla hiç eşleşmediği için doğru cevabın aynısı
+    bile "karıştırma" sayılıyor, ekranda da Türkçe anlam görünüyordu. Karşılık
+    tur oyunlarıyla aynı çözücüden (`glossFor`); yeni alan `gloss`, `tr`
+    geriye uyum için duruyor.
+  */
   const conf = await db
-    .select({ wordId: reviews.wordId, detail: reviews.detail, n: sql<number>`count(*)::int`, de: words.de, artikel: words.artikel, tr: words.tr })
+    .select({
+      wordId: reviews.wordId,
+      detail: reviews.detail,
+      n: sql<number>`count(*)::int`,
+      de: words.de,
+      artikel: words.artikel,
+      tr: words.tr,
+      en: words.en,
+      deGloss: words.deGloss,
+    })
     .from(reviews)
     .innerJoin(words, eq(words.id, reviews.wordId))
     .where(and(eq(reviews.userId, userId), eq(reviews.correct, false), eq(reviews.errorType, "meaning"), isNotNull(reviews.detail), gte(reviews.createdAt, since)))
-    .groupBy(reviews.wordId, reviews.detail, words.de, words.artikel, words.tr)
+    .groupBy(reviews.wordId, reviews.detail, words.de, words.artikel, words.tr, words.en, words.deGloss)
     .orderBy(desc(sql`count(*)`))
     .limit(8);
+  const locale = lang === "tr" ? "tr-TR" : lang === "de" ? "de-DE" : "en-US";
   const confusions: ConfusionPair[] = conf
-    .filter((c) => c.detail && c.detail.toLocaleLowerCase("tr-TR") !== c.tr.toLocaleLowerCase("tr-TR"))
-    .map((c) => ({ wordId: c.wordId, de: c.de, artikel: c.artikel, tr: c.tr, with: c.detail!, n: c.n }));
+    .map((c) => ({ ...c, gloss: glossFor(c, lang)?.text ?? c.tr }))
+    .filter((c) => c.detail && c.detail.toLocaleLowerCase(locale) !== c.gloss.toLocaleLowerCase(locale))
+    .map((c) => ({ wordId: c.wordId, de: c.de, artikel: c.artikel, tr: c.tr, gloss: c.gloss, with: c.detail!, n: c.n }));
 
   let rules: string[] = [];
   try {
