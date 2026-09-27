@@ -13,7 +13,7 @@ import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
-import { FlowScreen, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
@@ -357,11 +357,11 @@ export function ItemScreen() {
   }
 
   if (!exercise && !packReady) {
-    return <FlowScreen><ContentLoadingBody /></FlowScreen>;
+    return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
   }
   if (!exercise) {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
+      <FlowScreen center top={<FlowTopBar back onClose={() => nav.goBack()} />} actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış. */}
         <StateBody alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
       </FlowScreen>
@@ -437,7 +437,7 @@ export function ItemScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -487,8 +487,11 @@ export function ItemScreen() {
         )}
 
         {finished && !isMono ? resultHead : null}
-        {finished ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
+        {/* Monologda düğmeler geri bildirimin altında, akışın içinde kalıyor. */}
+        {finished && isMono ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
       </KeyboardAwareScroll>
+      {/* Öteki sonuçlardaki gibi düğmeler altta sabit (`FlowScreen` düğme alanı ölçüsünde). */}
+      {finished && !isMono ? <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>{resultActions}</View> : null}
     </View>
   );
 }

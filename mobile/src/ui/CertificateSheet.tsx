@@ -3,13 +3,11 @@ import { Modal, View, ActivityIndicator } from "react-native";
 import { WebView } from "react-native-webview";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { t } from "../lib/i18n";
-import { Text } from "./Text";
-import { PressableScale } from "./PressableScale";
-import { LockIcon, XIcon } from "./icons";
-import { FlowNote } from "./flow";
+import { LockIcon } from "./icons";
+import { FlowActions, FlowNote, FlowTopBar, StateBody } from "./flow";
 import { useAuth } from "../lib/AuthContext";
 import { apiBase, fetchWithTimeout } from "../api/client";
-import { useTheme, spacing, radii } from "../theme";
+import { useTheme, spacing } from "../theme";
 import { ContentColumn } from "./ContentColumn";
 
 /**
@@ -33,6 +31,8 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
   const insets = useSafeAreaInsets();
   const [svg, setSvg] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
+  /* "Tekrar dene" bu sayacı artırıyor; yükleme etkisi yeniden koşuyor. */
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!visible) return;
@@ -47,7 +47,7 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
       })
       .catch(() => { if (alive) setFailed(true); });
     return () => { alive = false; };
-  }, [visible, examId]);
+  }, [visible, examId, attempt]);
 
   /* Kâğıt kabına sığsın ve koyu temada beyaz bir dikdörtgen olarak patlamasın
      diye kendi zeminiyle sarılıyor; `viewport` olmadan WebView SVG'yi gerçek
@@ -60,14 +60,12 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
     <Modal visible={visible} animationType="slide" statusBarTranslucent onRequestClose={onClose}>
       {/* Tam ekran sayfa: arka plandaki ekran erişilebilirlik ağacında
           kalmasın — bkz. `ConfirmDialog` içindeki not. */}
-      <View accessibilityViewIsModal style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
+      <View accessibilityViewIsModal accessibilityLabel={t("exam.open_certificate")} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
         {/* Modal gezginin DIŞINDA: ekranlarla aynı kolon burada elle veriliyor. */}
         <ContentColumn>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
-          <Text variant="h3" style={{ flex: 1 }}>{t("exam.open_certificate")}</Text>
-          <PressableScale hitSlop={4} onPress={onClose} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <XIcon color={colors.text} size={22} />
-          </PressableScale>
+        {/* Kapatma öteki ekranlardaki gibi solda (üst çubuk şablonu). */}
+        <View style={{ paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
+          <FlowTopBar onClose={onClose} title={t("exam.open_certificate")} />
         </View>
         {guest && !failed ? (
           <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
@@ -75,8 +73,11 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
           </View>
         ) : null}
         {failed ? (
-          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}>
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("exam.certificate_failed")}</Text>
+          <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
+            <View style={{ flex: 1, justifyContent: "center" }}>
+              <StateBody alert title={t("exam.certificate_failed")} />
+            </View>
+            <FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} />
           </View>
         ) : svg === null ? (
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>

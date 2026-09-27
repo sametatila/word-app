@@ -11,11 +11,12 @@ import { Card } from "../ui/Card";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
+import { PrimaryButton } from "../ui/PrimaryButton";
 import { CoachLine } from "../ui/CoachLine";
 import { assessmentRef } from "../ui/ReportLink";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
-import { XIcon, SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
+import { SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { NoHints } from "../game/noHints";
@@ -33,7 +34,7 @@ import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 
 /* ── sunucu sözleşmesi (src/lib/exam-types.ts ile aynı) ────────────────── */
 
@@ -372,19 +373,17 @@ export function ExamScreen() {
   /* Başlık çubuğu tek; iki yerde iki payla çiziliyor. Bölüm girişinde
      `FlowScreen` güvenli alanı kendisi veriyor, soru ekranında `header`
      veriyor. Çıkış onayı ve son iki dakikanın kırmızısı ikisinde de aynı. */
+  const inExam = phase === "run" || phase === "intro";
   const headerBar = (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-      <PressableScale hitSlop={4} onPress={phase === "run" || phase === "intro" ? back.ask : () => nav.goBack()} accessibilityLabel={t(phase === "run" || phase === "intro" ? "exam.quit_title" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <XIcon color={colors.textMuted} size={22} />
-      </PressableScale>
-      <View style={{ flex: 1 }}>
-        <Text variant="micro" color={colors.textMuted}>{examLabel}</Text>
-        {/* Son iki dakika KIRMIZI — web sayacı aynı eşikte renklendiriyor
-            (`exam-player`: `left < 120`). Androidde sayaç sonuna kadar aynı
-            renkteydi, yani "süre bitiyor" uyarısı hiç verilmiyordu. */}
-        <Text variant="h3" color={phase === "run" && left < 120 ? colors.dangerText : undefined}>{phase === "run" ? `${mm}:${ss}` : t("exam.title")}</Text>
-      </View>
-    </View>
+    <FlowTopBar
+      onClose={inExam ? back.ask : () => nav.goBack()}
+      closeLabel={inExam ? t("exam.quit_title") : undefined}
+      title={examLabel}
+      /* Son iki dakika KIRMIZI — web sayacı aynı eşikte renklendiriyor
+         (`exam-player`: `left < 120`). Androidde sayaç sonuna kadar aynı
+         renkteydi, yani "süre bitiyor" uyarısı hiç verilmiyordu. */
+      right={phase === "run" ? <Text variant="h3" color={left < 120 ? colors.dangerText : undefined} style={{ fontVariant: ["tabular-nums"] }}>{`${mm}:${ss}`}</Text> : null}
+    />
   );
   const header = (
     <View style={{ paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>{headerBar}</View>
@@ -1000,14 +999,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
         {it.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
           <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
         ) : null}
-        <PressableScale
-          disabled={!hazir}
-          onPress={() => onDone(ok, answer)}
-          style={{ backgroundColor: hazir ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={hazir ? colors.onPrimary : colors.textFaint}>
-            {t(idx + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
-          </Text>
-        </PressableScale>
+        <PrimaryButton size="md" disabled={!hazir} onPress={() => onDone(ok, answer)} label={t(idx + 1 === total ? "exam.finish_section" : "exam.answer_and_next")} />
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>
           {idx + 1} / {total} · {t("exam.answers_at_end")}
         </Text>
@@ -1098,12 +1090,10 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
           öğrenci son cevabını değiştirebiliyor (`answers` durumu) — şıklar
           artık gerçekten kilitlenmiyor, yukarıdaki nota bak. */}
       {allAnswered ? (
-        <PressableScale onPress={() => {
+        <PrimaryButton label={t("common.next")} onPress={() => {
           it.questions.forEach((q, i) => { const a = answers[i]; if (a !== null && a !== q.answer) onMiss(q, q.options[a]); });
           onDone(correctRef, it.questions.length);
-        }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
-        </PressableScale>
+        }} />
       ) : null}
     </KeyboardAwareScroll>
   );
@@ -1177,24 +1167,18 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         {phase === "rec" ? (
           <Text variant="bodyStrong" color={colors.primaryText} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
         ) : phase === "done" ? (
-          <PressableScale onPress={() => onDone(ok, ok ? 100 : 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
-          </PressableScale>
+          <PrimaryButton size="md" label={t("common.next")} onPress={() => onDone(ok, ok ? 100 : 0)} />
         ) : phase === "err" ? (
           <>
             {tries < 2 ? (
-              <PressableScale onPress={() => void listen()} style={{ borderRadius: radii.lg, paddingVertical: 14, alignItems: "center", borderWidth: 1.5, borderColor: colors.border }}>
+              <PressableScale onPress={() => void listen()} style={{ borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center", borderWidth: 1.5, borderColor: colors.border }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("common.try_again")}</Text>
               </PressableScale>
             ) : null}
-            <PressableScale onPress={() => onDone(false, 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
-            </PressableScale>
+            <PrimaryButton size="md" label={t("common.next")} onPress={() => onDone(false, 0)} />
           </>
         ) : (
-          <PressableScale onPress={() => void listen()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t("speak.record")}</Text>
-          </PressableScale>
+          <PrimaryButton size="md" label={t("speak.record")} onPress={() => void listen()} />
         )}
       </Card>
     </KeyboardAwareScroll>
@@ -1296,17 +1280,13 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
              bitince, ağ yokken. Tahmin varsa o, yoksa bölüm puansız gidiyor. */
           <>
             <Text variant="caption" color={colors.textMuted}>{gateNote}</Text>
-            <PressableScale onPress={() => onDone(score !== null && score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
-            </PressableScale>
+            <PrimaryButton size="md" label={t("item.finish")} onPress={() => onDone(score !== null && score >= 60, score)} />
           </>
         ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
             {detail ? <AssessmentCard answer={typed.trim()} result={detail} reportRef={assessmentRef(detailId, `exam:${w.id}`)} /> : null}
-            <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
-            </PressableScale>
+            <PrimaryButton size="md" label={t("item.finish")} onPress={() => onDone(score >= 60, score)} />
           </>
         ) : (
           <>
@@ -1318,12 +1298,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           {wordCount < MIN_ASSESS_WORDS ? (
             <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</Text>
           ) : null}
-          <PressableScale disabled={busy || wordCount < MIN_ASSESS_WORDS} onPress={() => void evaluate()}
-            style={{ backgroundColor: wordCount >= MIN_ASSESS_WORDS && !busy ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={wordCount >= MIN_ASSESS_WORDS && !busy ? colors.onPrimary : colors.textFaint}>
-              {busy ? t("exam.evaluating") : t("skillquiz.check")}
-            </Text>
-          </PressableScale>
+          <PrimaryButton size="md" disabled={wordCount < MIN_ASSESS_WORDS} busy={busy} onPress={() => void evaluate()} label={busy ? t("exam.evaluating") : t("skillquiz.check")} />
           </>
         )}
       </Card>

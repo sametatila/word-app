@@ -533,25 +533,18 @@ export function MockExamScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale
-          hitSlop={4}
-          onPress={() => setQuit(true)}
-          accessibilityLabel={t("common.back")}
-          style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
-        >
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>
-            {paper.level} · {t("mockexams.mock_n", { n: paper.no })}
-          </Text>
-          <Text accessibilityRole="header" variant="h3">{mockSkillLabel(paper.course, part.skill)}</Text>
-        </View>
-        <View style={{ alignItems: "flex-end" }}>
-          <Text variant="micro" color={colors.textMuted}>{t("mockexam.task_time")}</Text>
-          <Text variant="bodyStrong" color={left < 30 ? colors.dangerText : colors.text}>{mmss(left)}</Text>
-        </View>
+      {/* Turun içinden çıkış öteki turlardaki gibi X (çıkış onay soruyor). */}
+      <View style={{ paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        <FlowTopBar
+          onClose={() => setQuit(true)}
+          title={`${paper.level} · ${t("mockexams.mock_n", { n: paper.no })}`}
+          right={
+            <View style={{ alignItems: "flex-end" }}>
+              <Text variant="micro" color={colors.textMuted}>{t("mockexam.task_time")}</Text>
+              <Text variant="bodyStrong" color={left < 30 ? colors.dangerText : colors.text} style={{ fontVariant: ["tabular-nums"] }}>{mmss(left)}</Text>
+            </View>
+          }
+        />
       </View>
 
       <TaskBar part={part} ix={ix} colors={colors} />
@@ -562,6 +555,7 @@ export function MockExamScreen() {
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
+        <Text accessibilityRole="header" variant="h3" style={{ marginBottom: spacing.sm }}>{mockSkillLabel(paper.course, part.skill)}</Text>
         {/* Görevin üstündeki tek satırlık notlar şablonun `FlowNote`u:
             süre dolup geçilmesi bir UYARI (kayıp yok, kural işledi). */}
         {autoNext ? (
@@ -595,13 +589,10 @@ export function MockExamScreen() {
         />
       </KeyboardAwareScroll>
 
-      <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.sm, backgroundColor: colors.bg, borderTopWidth: 1, borderTopColor: colors.surface2 }}>
-        <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{t("mockexam.no_back")}</Text>
-        <Primary
-          colors={colors}
-          label={ix < part.tasks.length - 1 ? t("mockexam.next_task") : t("mockexam.submit")}
-          onPress={() => advance(false)}
-        />
+      {/* Altta sabit düğme — `FlowScreen`in düğme alanıyla aynı ölçüde. */}
+      <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md, gap: spacing.xs }}>
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("mockexam.no_back")}</Text>
+        <FlowActions primary={{ label: ix < part.tasks.length - 1 ? t("mockexam.next_task") : t("mockexam.submit"), onPress: () => advance(false) }} />
       </View>
 
       <ConfirmDialog
@@ -624,22 +615,6 @@ export function MockExamScreen() {
 }
 
 /* ── ortak parçalar ───────────────────────────────────────────────────────── */
-
-function Primary({ colors, label, onPress, disabled }: { colors: Palette; label: string; onPress: () => void; disabled?: boolean }) {
-  return (
-    <PressableScale
-      onPress={onPress}
-      disabled={disabled}
-      /* Renk TAKASI yok: devre dışı olmak tek bir sönüklükle anlatılıyor ve
-         onu `PressableScale` veriyor (bkz. oradaki not). Takas + sönüklük
-         üst üste binince düğme okunmaz hâle geliyordu, web de takas
-         yapmıyor. */
-      style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
-    >
-      <Text variant="bodyStrong" color={colors.onPrimary}>{label}</Text>
-    </PressableScale>
-  );
-}
 
 /** Görev şeridi: kaçıncı görevdeyiz, kaçı bitti. Geri dönüş yok, bu yüzden tıklanmıyor. */
 function TaskBar({ part, ix, colors }: { part: MockPart; ix: number; colors: Palette }) {

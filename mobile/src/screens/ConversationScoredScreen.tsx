@@ -8,7 +8,7 @@ import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
-import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
+import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
@@ -566,15 +566,22 @@ export function ConversationScoredScreen() {
           placeholder={listening ? tx("speak.listening") : asr ? tx("scored.speak_or_type") : tx("conversation.type_in", { lang: targetLangName() })}
           accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("scored.speak_or_type") : tx("conversation.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, maxHeight: ds(96), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
+          /* Kutu ve gönder düğmesi konuşma ekranının `TypedRow`uyla aynı biçim. */
+          style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }}
         />
-        <PressableScale
-          onPress={() => void send(draft)}
-          disabled={busy || !draft.trim()}
-          style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingHorizontal: spacing.md, paddingVertical: 13 }, softShadow(colors.primary, 8)]}
-        >
-          <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.send")}</Text>
-        </PressableScale>
+        {(() => {
+          const dolu = !busy && !!draft.trim();
+          return (
+            <PressableScale
+              accessibilityLabel={tx("common.send")}
+              onPress={() => void send(draft)}
+              disabled={!dolu}
+              style={[{ width: 48, height: 48, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}
+            >
+              <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
+            </PressableScale>
+          );
+        })()}
       </View>
     </View>
   );

@@ -15,7 +15,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
@@ -824,11 +824,11 @@ export function ConversationScreen() {
   }, [conversation]);
 
   if (!conversation && !packReady) {
-    return <FlowScreen><ContentLoadingBody /></FlowScreen>;
+    return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
   }
   if (!conversation) {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }} />}>
+      <FlowScreen center top={<FlowTopBar back onClose={() => nav.goBack()} />} actions={<FlowActions primary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `conversations/[id]/not-found`). */}
         <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
