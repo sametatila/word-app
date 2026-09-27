@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { t as tx } from "../lib/i18n";
 import { View, ScrollView, Switch } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { Chip } from "../ui/Chip";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BellIcon } from "../ui/icons";
+import { BellIcon } from "../ui/icons";
+import { PrimaryButton } from "../ui/PrimaryButton";
+import { ScreenHeader } from "../social/common";
 import {
   loadPrefs, enableDailyReminder, disableReminder,
   setStreakAlert, setWeeklyReminder,
@@ -27,10 +28,28 @@ const hhmmOf = (h: number) => `${String(h).padStart(2, "0")}:00`;
 const TIMES = REMINDER_HOURS.map(hhmmOf);
 
 
+/**
+ * Üç kategori TEK KARTTA, aralarında ince çizgi (Ayarlar'daki `Group` ile
+ * aynı kalıp). Her satır kendi kartındaydı: aynı ayar listesi Ayarlar'da tek
+ * kart, burada üç ayrı kart gibi duruyordu.
+ */
+function ToggleGroup({ colors, children }: { colors: Palette; children: React.ReactNode }) {
+  const items = React.Children.toArray(children).filter(Boolean);
+  return (
+    <Card padded>
+      {items.map((item, i) => (
+        <View key={i} style={i ? { marginTop: spacing.lg, paddingTop: spacing.lg, borderTopWidth: 1, borderTopColor: colors.hairline } : undefined}>
+          {item}
+        </View>
+      ))}
+    </Card>
+  );
+}
+
 /** Tek bir bildirim kategorisi — başlık + açıklama + aç/kapa; açıkken ek içerik. */
 function ToggleRow({ title, subtitle, value, onValueChange, colors, children }: { title: string; subtitle: string; value: boolean; onValueChange: (v: boolean) => void; colors: Palette; children?: React.ReactNode }) {
   return (
-    <Card padded style={{ marginBottom: spacing.md }}>
+    <View>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <View style={{ flex: 1, paddingRight: spacing.md }}>
           <Text variant="h3">{title}</Text>
@@ -41,14 +60,13 @@ function ToggleRow({ title, subtitle, value, onValueChange, colors, children }: 
         <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
       </View>
       {children}
-    </Card>
+    </View>
   );
 }
 
 export function NotificationsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
   const [dailyOn, setDailyOn] = useState(false);
   /* Başlangıç değeri yalnız ilk çizim için; gerçek saat `loadPrefs`ten
      geliyor (sunucunun kayıtlı saati — bkz. `ReminderPrefs.hour`). Sayı
@@ -120,12 +138,7 @@ export function NotificationsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{tx("notifications.notifications")}</Text>
-      </View>
+      <ScreenHeader title={tx("notifications.notifications")} />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.md, marginBottom: spacing.lg }}>
@@ -137,27 +150,27 @@ export function NotificationsScreen() {
         </View>
         {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<BellIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
 
-        <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
-          {dailyOn && (
-            <View style={{ marginTop: spacing.md }}>
-              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
-              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                {TIMES.map((t) => <Chip key={t} role="radio" label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
+        <ToggleGroup colors={colors}>
+          <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
+            {dailyOn && (
+              <View style={{ marginTop: spacing.md }}>
+                <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+                  {TIMES.map((t) => <Chip key={t} role="radio" label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
+                </View>
               </View>
-            </View>
-          )}
-        </ToggleRow>
+            )}
+          </ToggleRow>
 
-        <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
+          <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
 
-        <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
+          <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
+        </ToggleGroup>
 
-        {msg && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={denied ? colors.dangerText : colors.primaryText} style={{ marginTop: spacing.sm }}>{msg}</Text>}
+        {msg && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={denied ? colors.dangerText : colors.primaryText} style={{ marginTop: spacing.md }}>{msg}</Text>}
 
         {denied && (
-          <PressableScale onPress={openNotificationSettings} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{tx("notifications.open_notification_settings")}</Text>
-          </PressableScale>
+          <PrimaryButton size="md" label={tx("notifications.open_notification_settings")} onPress={() => void openNotificationSettings()} style={{ marginTop: spacing.md }} />
         )}
 
         {/* Geliştirici aracı: üretim derlemesinde yok (Play "test" kalıntısı saymasın). */}

@@ -11,8 +11,8 @@ import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { useTheme, spacing, radii } from "../theme";
-import type { Palette } from "../theme/colors";
-import { Pill, ScreenHeader } from "../social/common";
+import { EmptyCard, Pill, ScreenHeader, SectionTitle } from "../social/common";
+import { AlertIcon } from "../ui/icons";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 
@@ -23,11 +23,11 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
   { key: "private", label: "socialsettings.vis_private", sub: "socialsettings.vis_private_sub" },
 ];
 
-/** Ayarlar ekranındaki Section: caption büyük-harf başlık + kart. */
-function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+/** Bölüm: ortak `SectionTitle` (büyük harf, başlık rolü) + kart. */
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <View style={{ marginTop: spacing.xl }}>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, letterSpacing: 0.5 }}>{title}</Text>
+    <View>
+      <SectionTitle title={title} />
       <Card padded>{children}</Card>
     </View>
   );
@@ -44,12 +44,16 @@ export function SocialSettingsScreen() {
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
   const [blocked, setBlocked] = useState<(PublicUser & { since: string })[] | null>(null);
+  /* Açılış yüklemesi düşerse iskelet sonsuza dek dönüyor ve altında kırmızı
+     bir satır kalıyordu; artık hata kartı ve "Tekrar dene". */
+  const [loadErr, setLoadErr] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!user || user.guest) return;
-    social.me().then((m) => { setMe(m); setUsername(m.username); }).catch((e) => setMsg(errorText(e)));
+    social.me().then((m) => { setMe(m); setUsername(m.username); }).catch((e) => setLoadErr(errorText(e)));
     social.blocks().then((r) => setBlocked(r.blocked)).catch(() => setBlocked([]));
-  }, [user]);
+  }, [user, attempt]);
 
   async function save(patch: Record<string, unknown>, done = tx("settings.saved")) {
     if (busy) return;
@@ -80,11 +84,15 @@ export function SocialSettingsScreen() {
           <View style={{ marginTop: spacing.sm }}>
             <GuestAccountCard title={tx("guest.social_title")} text={tx("guest.social_body")} />
           </View>
+        ) : !me && loadErr ? (
+          <View style={{ marginTop: spacing.sm }}>
+            <EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={() => { setLoadErr(null); setAttempt((n) => n + 1); }} />
+          </View>
         ) : !me ? (
           // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
           <>
             {[0, 1, 2, 3].map((i) => (
-              <View key={i} style={{ marginTop: spacing.xl }}>
+              <View key={i} style={{ marginTop: spacing.lg }}>
                 <SkeletonLine variant="caption" width={116} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
                 <SkeletonCard padded>
                   <Skeleton height={48} radius={radii.md} />
@@ -95,7 +103,7 @@ export function SocialSettingsScreen() {
           </>
         ) : (
           <>
-            <Section title={tx("socialsettings.username")} colors={colors}>
+            <Section title={tx("socialsettings.username")}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
                 <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={SOCIAL_LIMITS.usernameMax} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")}
                 accessibilityLabel={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
@@ -108,7 +116,7 @@ export function SocialSettingsScreen() {
             {/* Gorunurluk gercek bir radyo grubu - yanindaki nokta da onu
                 ciziyor - ama rol bilgisi yoktu: secili satir yalnizca yazi
                 renginden ve noktadan okunuyordu. Webde `aria-pressed` var. */}
-            <Section title={tx("socialsettings.visibility")} colors={colors}>
+            <Section title={tx("socialsettings.visibility")}>
               {VIS.map((v, i) => {
                 const active = me.visibility === v.key;
                 return (
@@ -125,13 +133,13 @@ export function SocialSettingsScreen() {
               })}
             </Section>
 
-            <Section title={tx("socialsettings.permissions")} colors={colors}>
+            <Section title={tx("socialsettings.permissions")}>
               {toggle(tx("socialsettings.perm_requests"), tx("socialsettings.perm_requests_sub"), me.allowRequests, (v) => void save({ allowRequests: v }), true)}
               {toggle(tx("socialsettings.perm_suggest"), tx("socialsettings.perm_suggest_sub"), me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
               {toggle(tx("socialsettings.perm_activity"), tx("socialsettings.perm_activity_sub"), me.showActivity, (v) => void save({ showActivity: v }))}
             </Section>
 
-            <Section title={tx("socialsettings.blocked_title")} colors={colors}>
+            <Section title={tx("socialsettings.blocked_title")}>
               {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? blocked.map((b, i) => (
                 <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                   <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={36} />
