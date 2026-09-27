@@ -100,7 +100,7 @@ export function InstallPrompt() {
           exit={{ opacity: 0, y: 24 }}
           className="safe-bottom fixed inset-x-3 bottom-16 z-40 md:bottom-4 md:left-auto md:right-4 md:w-80"
         >
-          <div className="card flex items-start gap-3 p-3.5 shadow-lg">
+          <div className="card flex items-start gap-3 p-3.5 shadow-soft-lg">
             <LogoMark size={40} className="shrink-0" />
             <div className="min-w-0 flex-1">
               <p className="text-strong">{t("settings.add_to_home")}</p>

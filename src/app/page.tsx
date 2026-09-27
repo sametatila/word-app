@@ -228,7 +228,7 @@ export default async function Home() {
             <Reveal key={f.title} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="brand-gradient mb-4 h-1.5 w-10 rounded-full" />
-                <h3 className="font-bold">{t(f.title)}</h3>
+                <h3 className="text-h3">{t(f.title)}</h3>
                 <p className="muted mt-2 text-body leading-relaxed">{t(f.body)}</p>
               </div>
             </Reveal>
@@ -250,7 +250,7 @@ export default async function Home() {
                     <g.Icon size={22} />
                   </span>
                   <div>
-                    <h3 className="font-semibold">{t(g.name)}</h3>
+                    <h3 className="text-h3">{t(g.name)}</h3>
                     <p className="muted mt-1 text-body">{t(g.desc)}</p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default async function Home() {
               </p>
               <Link
                 href={startHref}
-                className="btn mt-6 bg-white px-7 py-3.5 text-h3 text-[color:var(--color-brand-600)]"
+                className="btn mt-6 bg-white px-7 py-4 text-h3 text-[color:var(--color-brand-600)]"
               >
                 {t("land.cta_button")}
               </Link>

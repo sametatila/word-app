@@ -117,14 +117,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
     : [platform];
 
   return (
-    <div
-      className="rounded-panel px-4 py-4"
-      style={
-        tone === "surface"
-          ? { background: "var(--surface)", border: "1px solid var(--border)" }
-          : undefined
-      }
-    >
+    <div className={tone === "surface" ? "card px-4 py-4" : "rounded-panel px-4 py-4"}>
       <div className="flex items-start gap-3">
         <LogoMark size={40} className="shrink-0" />
         <div className="min-w-0 flex-1">

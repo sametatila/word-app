@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import data from "@/content/oss-licenses.json";
+import { DocHeader } from "@/components/legal-shell";
 
 /**
  * Açık kaynak lisansları — mobil uygulamanın içindeki kütüphanelerin bildirimi
@@ -58,6 +59,9 @@ function Entry({ title, meta, text, url }: { title: string; meta?: string; text:
 export default function Page() {
   return (
     <div className="mx-auto w-full max-w-3xl px-5 py-10" lang="en">
+      {/* Hukuki sayfaların başlığı: logo + belge gezinmesi. Yoksa sayfanın
+          geri dönüş yolu yoktu. */}
+      <DocHeader locale="en" />
       <h1 className="text-display tracking-tight">Open source licenses</h1>
       <p className="muted mt-3 text-body leading-relaxed">
         The Lernomi app is built with the open source software and data listed below. Each entry shows its license; tap it to
