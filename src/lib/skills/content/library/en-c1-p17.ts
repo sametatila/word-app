@@ -139,7 +139,7 @@ export const enC1P17: SkillExercise[] = [
       { de: "conditional", tr: "koşullu" },
       { de: "to supervise", tr: "denetlemek" },
       { de: "qualification", tr: "nitelik" },
-      { de: "governor", tr: "okul yönetim kurulu üyesi" },
+      { de: "school board", tr: "okul yönetim kurulu" },
       { de: "climbing", tr: "tırmanmak" },
       { de: "reacted", tr: "tepki vermek" },
       { de: "rotation", tr: "nöbet çizelgesi" },
@@ -154,7 +154,7 @@ export const enC1P17: SkillExercise[] = [
       { speaker: "Ms. Crowe", text: "That's close to what we had, minus the staff. The problem is people. We have two adults on the playground for two hundred children." },
       { speaker: "Ms. Crowe", text: "And those two are also dealing with lost coats, arguments about soccer and the line for the bathroom. A tree needs someone whose only job, for twenty minutes, is the tree." },
       { speaker: "Mr. Pajari", text: "Parents could help. When it comes to supervising a tree, you don't need a teaching qualification." },
-      { speaker: "Ms. Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the governors in March, on one condition: you find six parents for a rotation first." },
+      { speaker: "Ms. Crowe", text: "You'd be surprised how few volunteer. But I'll put it to the school board in March, on one condition: you find six parents for a rotation first." },
       { speaker: "Mr. Pajari", text: "Six. I'll have a list by Friday." },
     ],
     questions: [
@@ -187,11 +187,11 @@ export const enC1P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ms. Crowe will put the idea to the governors in ___.",
+        text: "Ms. Crowe will put the idea to the school board in ___.",
         options: [],
         answer: 0,
         accept: ["March"],
-        explain: "„I'll put it to the governors in March, on one condition“.",
+        explain: "„I'll put it to the school board in March, on one condition“.",
       },
       {
         kind: "short_answer",
@@ -220,11 +220,12 @@ export const enC1P17: SkillExercise[] = [
     course: "en",
     level: "C1",
     skill: "writing",
-    title: "A Letter to the School Governors",
+    title: "A Letter to the School Board",
     genre: "formal",
     intro: "Okul yönetim kuruluna yazıyorsun: önce iki cümle kur, sonra bir yasağın koşullu olarak kaldırılmasını öneren resmî bir mektup yaz.",
     gloss: [
-      { de: "governor", tr: "okul yönetim kurulu üyesi" },
+      { de: "semester", tr: "dönem" },
+      { de: "school board", tr: "okul yönetim kurulu" },
       { de: "swing", tr: "salıncak" },
       { de: "reasonable", tr: "makul" },
       { de: "hazard", tr: "tehlike" },
@@ -271,9 +272,9 @@ export const enC1P17: SkillExercise[] = [
           { de: "We would welcome the chance to …", tr: "… fırsatını memnuniyetle karşılarız", en: "" },
         ],
         sample:
-          "Dear Governors,\n\n" +
+          "Dear Members of the School Board,\n\n" +
           "I am writing on behalf of a group of parents with regard to the ban on climbing the oak tree in the " +
-          "junior playground.\n\n" +
+          "lower-grade playground.\n\n" +
           "We fully understand the reasons for the decision. A child was hurt, parents raised concerns, and the " +
           "school has two adults supervising two hundred children at lunchtime. No reasonable person could ask the " +
           "staff to watch a tree as well as everything else.\n\n" +
@@ -283,7 +284,7 @@ export const enC1P17: SkillExercise[] = [
           "We would not object to strict conditions. We propose that climbing be allowed on the lower branches only, " +
           "one class at a time, and only when a trained parent volunteer is present. Parents are committed to " +
           "providing that supervision: six of us have already agreed to a weekly schedule.\n\n" +
-          "We would welcome the chance to run this as a trial for one term and to report back to you at its end, " +
+          "We would welcome the chance to run this as a trial for one semester and to report back to you at its end, " +
           "including any injuries, however minor.\n\n" +
           "Sincerely,\nJuha Pajari",
       },

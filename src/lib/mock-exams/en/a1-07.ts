@@ -174,7 +174,7 @@ All sizes.
 
 You can change a thing in thirty days with the paper.
 
-Coffee shop on the first floor.`,
+Coffee shop on the second floor.`,
             },
           ],
           items: [
@@ -282,7 +282,7 @@ Children under twelve: not alone at the desk.`,
               title: "CLOSED FOR ONE HOUR",
               body: `We open again at 14:00.
 
-The coffee shop on the first floor is open.
+The coffee shop on the second floor is open.
 
 Thank you!`,
             },
@@ -326,7 +326,7 @@ Thank you!`,
               text: "The coffee shop is open now.",
               answer: true,
               explain:
-                "Mağaza bir saat kapalı ama levha bir seçenek veriyor: «The coffee shop on the first floor is open». İki satırı birlikte okumak gerekiyor.",
+                "Mağaza bir saat kapalı ama levha bir seçenek veriyor: «The coffee shop on the second floor is open». İki satırı birlikte okumak gerekiyor.",
             },
           ],
         },
@@ -489,7 +489,7 @@ Eren`,
               situation: "Mağazada kabinler için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A note for all customers. The changing rooms on the first floor are closed today. Please use the rooms next to the shoes on the ground floor." },
+                { text: "A note for all customers. The changing rooms on the second floor are closed today. Please use the rooms next to the shoes on the first floor." },
               ],
             },
           ],
@@ -555,10 +555,10 @@ Eren`,
               no: 6,
               ref: "a6",
               text: "Where can people change clothes today?",
-              options: ["On the first floor", "Next to the shoes", "At home"],
+              options: ["On the second floor", "Next to the shoes", "At home"],
               answer: 1,
               explain:
-                "Anons yeri değiştiriyor: birinci kattaki kabinler kapalı, «Please use the rooms next to the shoes on the ground floor».",
+                "Anons yeri değiştiriyor: ikinci kattaki kabinler kapalı, «Please use the rooms next to the shoes on the first floor».",
             },
           ],
         },
@@ -578,7 +578,7 @@ Eren`,
               situation: "Mağaza müdürü iki değişiklik duyuruyor.",
               plays: 2,
               segments: [
-                { text: "Good afternoon. Two things. From Monday the store opens at eight in the morning, one hour earlier. The winter sale finishes on Saturday, so this is the last week. And a small thing: the elevator to the second floor does not work today; please use the stairs." },
+                { text: "Good afternoon. Two things. From Monday the store opens at eight in the morning, one hour earlier. The winter sale finishes on Saturday, so this is the last week. And a small thing: the elevator to the third floor does not work today; please use the stairs." },
               ],
             },
           ],
@@ -611,7 +611,7 @@ Eren`,
               text: "The elevator works today.",
               answer: false,
               explain:
-                "Anons tam tersini söylüyor: «the elevator to the second floor does not work today; please use the stairs».",
+                "Anons tam tersini söylüyor: «the elevator to the third floor does not work today; please use the stairs».",
             },
             {
               kind: "bool",

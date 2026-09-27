@@ -40,7 +40,7 @@ export const EN_A2_W02: QuizWeek = {
         "Please arrive a bit early and bring your passport and a list of the pills you are taking at the moment. " +
         "If you have a fever or a bad cough, please call us before you come. Do not come into the waiting room. " +
         "If you can't come, you have to cancel your appointment at least one day before. If you don't, you will have to pay 20 pounds. " +
-        "Dr. Patel's room is on the second floor. The elevator is next to the pharmacy on the ground floor.\n\n" +
+        "Dr. Patel's room is on the third floor. The elevator is next to the pharmacy on the first floor.\n\n" +
         "Best wishes,\nRiverside Health Center",
     },
     {
@@ -94,7 +94,7 @@ export const EN_A2_W02: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where is Dr. Patel's room?",
-      options: ["on the ground floor", "on the second floor", "next to the pharmacy", "next to the elevator"],
+      options: ["on the first floor", "on the third floor", "next to the pharmacy", "next to the elevator"],
       answer: 1,
       why: "Metin iki konum veriyor: muayenehanenin katı ve asansörün yeri. `next to the pharmacy` asansörü tarif ediyor. `The elevator is…` cümlesinin öznesini atlayınca konum yanlış şeye bağlanıyor.",
       targets: ["reading.detail"],

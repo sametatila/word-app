@@ -70,7 +70,7 @@ export const EN_B1_01: MockPaper = {
               genre: "Email to staff",
               genreTr: "Personele e-posta",
               title: "Building work",
-              body: `The elevator will be out of order from Monday to Wednesday. Colleagues who work on the fourth floor can use the meeting room on the ground floor instead of their office. Please move your things on Friday afternoon.`,
+              body: `The elevator will be out of order from Monday to Wednesday. Colleagues who work on the fifth floor can use the meeting room on the first floor instead of their office. Please move your things on Friday afternoon.`,
             },
             {
               kind: "text",
@@ -114,11 +114,11 @@ export const EN_B1_01: MockPaper = {
               id: "en-b1-01-l1-2",
               no: 2,
               ref: "m2",
-              text: "What should staff on the fourth floor do?",
-              options: ["Work from home for three days", "Take the stairs up to their own office on the fourth floor", "Use another room on the ground floor"],
+              text: "What should staff on the fifth floor do?",
+              options: ["Work from home for three days", "Take the stairs up to their own office on the fifth floor", "Use another room on the first floor"],
               answer: 2,
               explain:
-                "E-posta bir alternatif veriyor: «can use the meeting room on the ground floor instead of their office». Evden çalışmaktan hiç söz edilmiyor; merdiven de bir seçenek olarak sunulmuyor, tersine kat değiştirmeleri isteniyor.",
+                "E-posta bir alternatif veriyor: «can use the meeting room on the first floor instead of their office». Evden çalışmaktan hiç söz edilmiyor; merdiven de bir seçenek olarak sunulmuyor, tersine kat değiştirmeleri isteniyor.",
             },
             {
               kind: "mcq",

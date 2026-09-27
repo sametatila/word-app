@@ -20,7 +20,7 @@ export const enC1P11: SkillExercise[] = [
     skill: "reading",
     title: "The Library That Let People Talk",
     genre: "article",
-    intro: "Bir makale: sessizlik kuralını zemin katta kaldıran bir kütüphane ve dört yıl sonra ortaya çıkan tablo.",
+    intro: "Bir makale: sessizlik kuralını birinci katta kaldıran bir kütüphane ve dört yıl sonra ortaya çıkan tablo.",
     gloss: [
       { de: "petition", tr: "dilekçe" },
       { de: "loyal", tr: "sadık" },
@@ -44,7 +44,7 @@ export const enC1P11: SkillExercise[] = [
     minutes: 10,
     text:
       "The library that let people talk\n\n" +
-      "When the central library in Harwick removed the “Silence please” signs from its ground floor " +
+      "When the central library in Harwick removed the “Silence please” signs from its first floor " +
       "four years ago, it was widely assumed that the building would lose its most loyal users. " +
       "It is worth recalling how confident that prediction was. Letters to the local paper described " +
       "the decision as the end of the last quiet room in the city, and a petition against it collected " +
@@ -52,7 +52,7 @@ export const enC1P11: SkillExercise[] = [
       "What actually happened is more interesting than either side expected. " +
       "Visits rose by about a quarter in the first year, almost entirely among people under thirty, " +
       "many of whom had never held a library card. The quiet readers did not disappear; " +
-      "they moved upstairs, where the second floor was kept silent and, for the first time, " +
+      "they moved upstairs, where the third floor was kept silent and, for the first time, " +
       "properly enforced.\n\n" +
       "The staff I spoke to found it striking that complaints about noise fell rather than rose. " +
       "Their explanation is simple. Under the old rule, silence was expected everywhere and achieved " +
@@ -60,7 +60,7 @@ export const enC1P11: SkillExercise[] = [
       "each floor was for, and it became far easier to ask somebody to be quiet, because the request " +
       "now pointed to a clear agreement rather than to a general mood.\n\n" +
       "It would be a mistake to present this as a success without cost. Some older users say the " +
-      "ground floor now feels like a station concourse, and they no longer come in at all. " +
+      "first floor now feels like a station concourse, and they no longer come in at all. " +
       "The library has no record of how many of them there are, since nobody counts the people " +
       "who stop arriving.\n\n" +
       "I find it telling that the most useful change was not the noise itself but the map. " +
@@ -92,7 +92,7 @@ export const enC1P11: SkillExercise[] = [
         text: "The quiet readers stopped using the library altogether.",
         options: ["True", "False"],
         answer: 1,
-        explain: "Kaybolmadılar; sessizliğin gerçekten uygulandığı ikinci kata çıktılar.",
+        explain: "Kaybolmadılar; sessizliğin gerçekten uygulandığı üçüncü kata çıktılar.",
       },
       {
         kind: "gapfill",
@@ -107,8 +107,8 @@ export const enC1P11: SkillExercise[] = [
         text: "Where did the quiet readers move to?",
         options: [],
         answer: 0,
-        accept: ["upstairs", "the second floor", "to the second floor"],
-        explain: "„they moved upstairs, where the second floor was kept silent“.",
+        accept: ["upstairs", "the third floor", "to the third floor"],
+        explain: "„they moved upstairs, where the third floor was kept silent“.",
       },
       {
         text: "What does the writer consider the most useful change?",

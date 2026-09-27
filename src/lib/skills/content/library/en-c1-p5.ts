@@ -34,7 +34,8 @@ export const enC1P5: SkillExercise[] = [
       { de: "frame", tr: "gözlük çerçevesi" },
       { de: "pair", tr: "çift" },
       { de: "recommendation", tr: "öneri" },
-      { de: "student", tr: "okul öğrencisi" },
+      { de: "third grader", tr: "üçüncü sınıf öğrencisi" },
+      { de: "to pick … up", tr: "almak" },
       { de: "rise", tr: "yükselmek" },
       { de: "accurate", tr: "hatasız" },
     ],
@@ -42,55 +43,55 @@ export const enC1P5: SkillExercise[] = [
     text:
       "SCHOOL EYE TESTS AND GLASSES: THREE-YEAR REVIEW\n" +
       "Summary for the education committee\n\n" +
-      "Background. In the first year of the scheme, sight tests were offered in school to all students in year " +
-      "three, and glasses were provided free of charge where they were prescribed. The scheme was introduced " +
+      "Background. In the first year of the program, vision tests were offered in school to all third graders, " +
+      "and glasses were provided free of charge where they were prescribed. The program was introduced " +
       "after a survey found that a fifth of children who had failed a test at a routine appointment had never " +
-      "collected the prescription.\n\n" +
+      "filled the prescription.\n\n" +
       "Coverage. Over three years, four thousand one hundred and eighty children were tested, that is " +
-      "ninety-one percent of the year group; the remainder were absent or had opted out. Of those tested, " +
+      "ninety-one percent of all third graders; the remainder were absent or had opted out. Of those tested, " +
       "fourteen percent were prescribed glasses. In other words, roughly one child in seven left the hall with " +
       "a prescription that would otherwise have arrived, at best, several months later.\n\n" +
-      "Uptake. This is where the scheme differs from its predecessor. Under the old arrangement, glasses were " +
-      "prescribed and the family collected them; uptake was sixty-two percent. Under the current arrangement, " +
+      "Uptake. This is where the program differs from its predecessor. Under the old arrangement, glasses were " +
+      "prescribed and the family picked them up; uptake was sixty-two percent. Under the current arrangement, " +
       "the glasses are made and delivered to the school; uptake is ninety-six percent. The difference is not " +
-      "attitude. It is a journey to a store during business hours.\n\n" +
+      "attitude. It is a trip to a store during business hours.\n\n" +
       "Effects. Teacher-reported reading fluency improved in the treated group. The design does not, however, " +
       "allow us to say by how much, since there was no comparison class. Attendance did not change. We would " +
-      "therefore caution against the claim, made in one newspaper report, that the scheme has improved results; " +
+      "therefore caution against the claim, made in one newspaper report, that the program has improved results; " +
       "nothing here supports that.\n\n" +
-      "Costs. The scheme costs thirty-one euros per child tested, of which nineteen is the frames. A second " +
+      "Costs. The program costs thirty-one euros per child tested, of which nineteen is the frames. A second " +
       "pair, requested by forty percent of families, would add eleven euros. We recommend funding it, and not " +
       "primarily for convenience: children who break their only pair go without for an average of five weeks.\n\n" +
-      "Recommendation. Continue the scheme, extend it to year seven rather than to a second year group, and " +
+      "Recommendation. Continue the program, extend it to seventh grade rather than to any other grade, and " +
       "stop reporting uptake as a success measure. It is now high enough that it tells us nothing, whereas the " +
       "five-week gap tells us a great deal.",
     questions: [
       {
         text: "What does the report recommend?",
         options: [
-          "continuing the scheme and extending it to year seven",
-          "stopping the scheme after the third year",
+          "continuing the program and extending it to seventh grade",
+          "stopping the program after the third year",
           "returning to the previous arrangement",
         ],
         answer: 0,
-        explain: "„Continue the scheme, extend it to year seven rather than to a second year group …“",
+        explain: "„Continue the program, extend it to seventh grade rather than to any other grade …“",
       },
       {
         text: "Why did uptake rise?",
         options: [
           "The glasses are delivered to the school.",
           "The prescription is valid for a longer period.",
-          "The year group is tested twice instead of once.",
+          "The same grade is tested twice instead of once.",
         ],
         answer: 0,
-        explain: "„Under the current arrangement, the glasses are made and delivered to the school … It is a journey to a store during business hours.“",
+        explain: "„Under the current arrangement, the glasses are made and delivered to the school … It is a trip to a store during business hours.“",
       },
       {
         kind: "truefalse",
-        text: "The report confirms that the scheme has improved results.",
+        text: "The report confirms that the program has improved results.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„We would therefore caution against the claim … that the scheme has improved results; nothing here supports that.“",
+        explain: "„We would therefore caution against the claim … that the program has improved results; nothing here supports that.“",
       },
       {
         kind: "gapfill",

@@ -46,7 +46,7 @@ export const EN_A1_02: MockPaper = {
               title: "From: kemal@post.net",
               body: `Hi Sofia,
 
-Good news! I have an apartment on Green Street. It is on the third floor and it is very quiet.
+Good news! I have an apartment on Green Street. It is on the fourth floor and it is very quiet.
 
 The rent is 480 pounds a month. Water is in the price, but not electricity.
 
@@ -99,10 +99,10 @@ Anna (office)`,
               id: "en-a1-02-l1-2",
               no: 2,
               ref: "t1",
-              text: "The apartment is on the ground floor.",
+              text: "The apartment is on the first floor.",
               answer: false,
               explain:
-                "Daire üçüncü katta: «It is on the third floor». Asansör olmadığı için eşyaları merdivenden taşıyor; zemin kat olsaydı bu cümle anlamsız olurdu.",
+                "Daire dördüncü katta: «It is on the fourth floor». Asansör olmadığı için eşyaları merdivenden taşıyor; birinci kat olsaydı bu cümle anlamsız olurdu.",
             },
             {
               kind: "bool",
@@ -950,7 +950,7 @@ Omar`,
               { de: "one good and one bad thing", tr: "Bir iyi ve bir kötü yan" },
             ],
             sample:
-              "I live in Leeds. I have a small apartment on the second floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
+              "I live in Leeds. I have a small apartment on the third floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`There is / There are` kalıbı odaları anlatmak için kullanıldı mı?",

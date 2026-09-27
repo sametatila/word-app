@@ -46,7 +46,7 @@ export const EN_A1_12: MockPaper = {
 
 Welcome! Your first day is Monday.
 
-Please come at nine, not at eight. The office is on the second floor.
+Please come at nine, not at eight. The office is on the third floor.
 
 Ask for Mira at the desk. Bring your passport.
 
@@ -142,7 +142,7 @@ You cannot pay with money here.`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Office",
-              body: `Second floor. Open 8 to 18.
+              body: `Third floor. Open 8 to 18.
 
 Ask for Mira at the desk.
 
@@ -166,7 +166,7 @@ Card only, no cash.`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Training Room",
-              body: `First floor, room 5.
+              body: `Second floor, room 5.
 
 Computer course for new staff: Tuesday and Thursday at 10.
 
@@ -212,7 +212,7 @@ Please bring a pen.`,
               options: ["Office", "Cafeteria", "Training Room"],
               answer: 0,
               explain:
-                "Duyuru kişiyi ve yeri birlikte veriyor: «Ask for Mira at the desk», ofis ikinci katta.",
+                "Duyuru kişiyi ve yeri birlikte veriyor: «Ask for Mira at the desk», ofis üçüncü katta.",
             },
             {
               kind: "mcq",
@@ -262,7 +262,7 @@ Please wash your cup.`,
               title: "ELEVATOR",
               body: `Out of order.
 
-Please use the stairs. Room 5 is on the first floor.`,
+Please use the stairs. Room 5 is on the second floor.`,
             },
             {
               kind: "text",
@@ -416,7 +416,7 @@ Eyup`,
               situation: "Ofisten yeni çalışana ileti bırakılıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Eyup, this is Mira from the office. Your first day is Monday at nine. Come to the second floor and ask for me. Bring your passport." },
+                { text: "Hello Eyup, this is Mira from the office. Your first day is Monday at nine. Come to the third floor and ask for me. Bring your passport." },
               ],
             },
             {
@@ -428,7 +428,7 @@ Eyup`,
               plays: 2,
               segments: [
                 { speaker: "Clara", text: "Where is the cafeteria?" },
-                { speaker: "Ben", text: "Ground floor, next to the door." },
+                { speaker: "Ben", text: "First floor, next to the door." },
                 { speaker: "Clara", text: "Is it open now?" },
                 { speaker: "Ben", text: "From twelve. It is half past eleven." },
               ],
@@ -442,7 +442,7 @@ Eyup`,
               plays: 2,
               segments: [
                 { speaker: "Man", text: "I am new here. Where is room 5?" },
-                { speaker: "Woman", text: "First floor. The elevator is out of order, so please take the stairs." },
+                { speaker: "Woman", text: "Second floor. The elevator is out of order, so please take the stairs." },
               ],
             },
             {
@@ -642,7 +642,7 @@ Eyup`,
               plays: 2,
               segments: [
                 { speaker: "Woman", text: "Can I have a coffee?" },
-                { speaker: "Man", text: "The break room is on the second floor. It is free." },
+                { speaker: "Man", text: "The break room is on the third floor. It is free." },
                 { speaker: "Woman", text: "And the cup?" },
                 { speaker: "Man", text: "Please wash it after." },
               ],
@@ -669,7 +669,7 @@ Eyup`,
               situation: "Binada asansör için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The elevator is out of order today. Room 5 is on the first floor. If you cannot take the stairs, please tell Mira at the desk." },
+                { text: "The elevator is out of order today. Room 5 is on the second floor. If you cannot take the stairs, please tell Mira at the desk." },
               ],
             },
             {
@@ -914,7 +914,7 @@ Eyup`,
           exchange: [
             { who: "partner", de: "Now let's talk about work. Your first word is: office. Please ask me a question.", tr: "Şimdi işi konuşuyoruz. İlk sözcüğün: ofis. Bana bir soru sor." },
             { who: "you", hint: "«office» sözcüğüyle bir soru kur.", expect: "office sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "My office is on the second floor. Your next word is: colleague.", tr: "Ofisim ikinci katta. Sıradaki sözcüğün: iş arkadaşı." },
+            { who: "partner", de: "My office is on the third floor. Your next word is: colleague.", tr: "Ofisim üçüncü katta. Sıradaki sözcüğün: iş arkadaşı." },
             { who: "you", hint: "«colleague» için bir soru kur.", expect: "colleague sözcüğüyle bir soru kurmak", seconds: 25 },
             { who: "partner", de: "I work with four colleagues. Now a question for you: when do you have a break?", tr: "Dört iş arkadaşımla çalışıyorum. Şimdi sana bir soru: Molanı ne zaman veriyorsun?" },
             { who: "you", hint: "Bir saat söyleyerek cevapla.", expect: "bir saati tam bir cümleyle söylemek", seconds: 25 },
@@ -929,7 +929,7 @@ Eyup`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where is your office? — On the second floor. How many colleagues do you have? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the cafeteria.",
+              "Where is your office? — On the third floor. How many colleagues do you have? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the cafeteria.",
             criteria: [
               "«office» ve «colleague» için birer soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where is … / How many … / How much …)",
@@ -953,7 +953,7 @@ Eyup`,
             { who: "you", hint: "Adını söyle ve bugünün ilk günün olduğunu belirt.", expect: "kendini tanıtmak ve durumu tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Welcome! Mira is waiting for you.", tr: "Hoş geldin! Mira seni bekliyor." },
             { who: "you", hint: "Bir odanın nerede olduğunu sor.", expect: "yer sormak", seconds: 25 },
-            { who: "partner", de: "Room 5 is on the first floor. Anything else?", tr: "Beş numaralı oda birinci katta. Başka bir şey var mı?" },
+            { who: "partner", de: "Room 5 is on the second floor. Anything else?", tr: "Beş numaralı oda ikinci katta. Başka bir şey var mı?" },
             { who: "you", hint: "Molanın saatini kibarca sor.", expect: "kibarca saat sormak", seconds: 25 },
           ],
           items: [],

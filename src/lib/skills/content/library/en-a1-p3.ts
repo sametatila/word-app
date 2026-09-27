@@ -106,7 +106,7 @@ export const enA1P3: SkillExercise[] = [
     minutes: 4,
     segments: [
       { text: "Good afternoon, everyone. The museum closes in twenty minutes, at six o'clock." },
-      { text: "Please leave the rooms on the second floor now. That floor closes first." },
+      { text: "Please leave the rooms on the third floor now. That floor closes first." },
       { text: "The store is open until ten past six. Today all books are five euros." },
       { text: "Do not forget your coats and bags. The cloakroom closes at six." },
       { text: "Tomorrow we open at ten. The new room about old maps opens on Saturday." },
@@ -121,9 +121,9 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         text: "Which floor closes first?",
-        options: ["the second floor", "the first floor", "the ground floor"],
+        options: ["the third floor", "the second floor", "the first floor"],
         answer: 0,
-        explain: "„Please leave the rooms on the second floor now. That floor closes first.“",
+        explain: "„Please leave the rooms on the third floor now. That floor closes first.“",
       },
       {
         kind: "truefalse",

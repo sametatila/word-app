@@ -174,7 +174,7 @@ The Aydin family, apartment 3B`,
 
 Books in twelve languages. A free card for young people under 18.
 
-Quiet rooms for study on the first floor. No food and no drinks there.
+Quiet rooms for study on the second floor. No food and no drinks there.
 
 Free wifi for all readers.`,
             },
@@ -246,7 +246,7 @@ Bring a friend!`,
               options: ["City Library", "Sports Center", "Language Café"],
               answer: 0,
               explain:
-                "Kütüphanede \"Quiet rooms for study on the first floor\" var. Dil Kafe'nin işi konuşmak, spor merkezinin yanında bir kafe var; ikisi de sessiz çalışma yeri değil.",
+                "Kütüphanede \"Quiet rooms for study on the second floor\" var. Dil Kafe'nin işi konuşmak, spor merkezinin yanında bir kafe var; ikisi de sessiz çalışma yeri değil.",
             },
             {
               kind: "mcq",
@@ -752,7 +752,7 @@ Nuray`,
               plays: 2,
               segments: [
                 { speaker: "Tom", text: "Is the meeting in room 12?" },
-                { speaker: "Aisha", text: "It was room 12, but now it is in the big room on the ground floor." },
+                { speaker: "Aisha", text: "It was room 12, but now it is in the big room on the first floor." },
                 { speaker: "Tom", text: "Good, that room is bigger." },
               ],
             },
@@ -813,7 +813,7 @@ Nuray`,
               options: ["In room 12", "In the big room downstairs", "In Tom's office"],
               answer: 1,
               explain:
-                "Aisha oda değişikliğini söylüyor: eskiden 12 numaraydı, şimdi zemin kattaki büyük oda. `It was … but now it is …` yapısı değişikliği taşıyor; ilk yarısını duyup duran öğrenci 12 numarayı seçer.",
+                "Aisha oda değişikliğini söylüyor: eskiden 12 numaraydı, şimdi birinci kattaki büyük oda. `It was … but now it is …` yapısı değişikliği taşıyor; ilk yarısını duyup duran öğrenci 12 numarayı seçer.",
             },
             {
               kind: "mcq",
