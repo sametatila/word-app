@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeftIcon, XIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
@@ -76,5 +77,23 @@ export function RoundExit({
     >
       {ic}
     </button>
+  );
+}
+
+/**
+ * SONUÇ EKRANININ ÜST ÇUBUĞU (2026-09-27, ürün kararı; HIG/Material tam
+ * ekran akış kalıbı). Her sonuç ekranında çıkış turdakiyle AYNI yerde, aynı
+ * karoda: solda çarpı, adı `common.close`. Geri oku yok: bitmiş bir tura
+ * "geri" dönülmez. Basınca sonucun kendi çıkışı ne yapıyorsa o (alttaki
+ * "bitir/kapat" ya da çıkış bağlantısı); onay yok, tur bitti. Sağ yuva
+ * isteğe bağlı (ör. paylaş). Android karşılığı `FlowTopBar` (`ui/flow`).
+ */
+export function ResultTopBar({ onExit, href, right }: { onExit?: () => void; href?: string; right?: ReactNode }) {
+  return (
+    <div className="flex min-h-11 items-center gap-3">
+      <RoundExit onExit={onExit} href={href} labelKey="common.close" />
+      <div className="min-w-0 flex-1" />
+      {right}
+    </div>
   );
 }

@@ -11,7 +11,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportDialog } from "@/components/report-dialog";
 import { AiNotice } from "@/components/ai-notice";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureSpeech, recognitionCtor, type SpeechCapture } from "@/components/microphone";
 import { localeOf } from "@/components/skills/player-context";
@@ -1362,6 +1362,9 @@ function Result({
     <div ref={top} className="scroll-mt-4">
       {/* Konfeti YALNIZ geçilen bölümde. */}
       <FlowColumn celebrate={graded && score.passed && !celebrated}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): sonuçta geri oku
+            değil kapat (X); "Listeye dön"le aynı çıkış. */}
+        <ResultTopBar href="/mock-exams" />
         <ResultHero
           eyebrow={eyebrow}
           title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}

@@ -7,7 +7,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
-import { AlertIcon, ArrowLeftIcon } from "@/components/icons";
+import { AlertIcon } from "@/components/icons";
+import { RoundExit } from "@/components/round-exit";
 import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
 import { isSkillDone, RUBRIC_PASS_PCT, scoreBand, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
@@ -118,15 +119,11 @@ export function PlayerShell({
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="mb-5 flex items-center gap-3">
-        {/* 44 - `PageBack` ve Android'in ölçüsü; 36'da kalıyordu. */}
-        <Link
-          href={back}
-          aria-label={t("common.go_back")}
-          className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "var(--surface-2)", color: "var(--text)" }}
-        >
-          <ArrowLeftIcon size={24} />
-        </Link>
+        {/* KAPAT, GERİ OKU DEĞİL (2026-09-27): sonuç bu sayfanın dibine
+            ekleniyor ve sonuç ekranında çıkış solda çarpı, adı `common.close`
+            (ürün kuralı; Android `ItemScreen` başlığı baştan beri çarpı).
+            Ölçü ortak bileşenden (`RoundExit`). */}
+        <RoundExit href={back} labelKey="common.close" />
         <div className="min-w-0">
           <div className="flex items-center gap-2">
             <span

@@ -3,7 +3,7 @@
 import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
 import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
@@ -256,6 +256,8 @@ export function WeeklyPlayer() {
     const wrong = score.items.filter((i) => !i.correct);
     return (
       <FlowColumn celebrate={score.pct >= 90}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Öğren'e dön"le aynı çıkış. */}
+        <ResultTopBar href="/learn" />
         <ResultHero
           eyebrow={t("learn.weekly_quiz")}
           title={t(score.band)}

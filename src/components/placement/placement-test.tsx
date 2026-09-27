@@ -9,7 +9,7 @@ import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, Stack
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
@@ -294,6 +294,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     const skills = skillRows(answers.current, result.perSkill, t, lang);
     return (
       <FlowColumn>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, alttaki "Kapat"la aynı çıkış. */}
+        <ResultTopBar href="/profile" />
         <ResultHero
           eyebrow={t("placement.title")}
           title={t("placement.your_level", { level: shown })}

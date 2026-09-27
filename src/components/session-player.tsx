@@ -33,7 +33,7 @@ import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIco
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
@@ -1296,16 +1296,18 @@ function SummaryCard({
   */
   return (
     <FlowColumn celebrate={deserved}>
-      {/* PAYLAŞ İKİNCİL: mobilde üst çubuğun sağında. Düğme grubunun içinde
-          dururken "bitir"i aşağı itiyor ve ekranın asıl kararı (devam mı,
-          bitir mi) dört düğmeye bölünüyordu. */}
-      {total > 0 ? (
-        <div className="flex justify-end">
+      {/* ÜST ÇUBUK (mobil `FlowTopBar`): solda kapat, "bitir"le aynı çıkış.
+          PAYLAŞ İKİNCİL: sağ yuvada. Düğme grubunun içinde dururken "bitir"i
+          aşağı itiyor ve ekranın asıl kararı (devam mı, bitir mi) dört
+          düğmeye bölünüyordu. */}
+      <ResultTopBar
+        onExit={onFinish}
+        right={total > 0 ? (
           <div className="w-fit">
             <ShareResult marks={marks} total={total} accuracy={accuracy} streak={result?.currentStreak ?? 0} level={level} />
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      />
       <ResultHero
         eyebrow={onlyGame ? t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) }) : t("flow.round")}
         title={t(total ? (partial ? "summary.stopped" : "common.round_done") : "game.done_no_more")}

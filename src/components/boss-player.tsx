@@ -8,7 +8,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { CountUp } from "@/components/celebrate";
@@ -310,6 +310,8 @@ export function BossPlayer({
         duyuruyor (bkz. 11.337).
       */
       <FlowColumn celebrate={won}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Patikaya dön"le aynı çıkış. */}
+        <ResultTopBar onExit={onExit} />
         <ResultHero
           eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           title={t(won ? "boss.passed" : "boss.time_up")}

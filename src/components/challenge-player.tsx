@@ -7,7 +7,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { AchievementFlash, CountUp } from "@/components/celebrate";
@@ -311,6 +311,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         bu yüzden `quiet` değil. Bandın `role="status"`u sonucu duyuruyor.
       */
       <FlowColumn celebrate={isRecord}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Öğren'e dön"le aynı çıkış. */}
+        <ResultTopBar onExit={onExit} />
         <RecordChime fire={isRecord} />
         <ResultHero
           eyebrow={t("learn.survival")}

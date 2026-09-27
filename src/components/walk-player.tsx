@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, selectedVoice, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ConfirmDialog } from "@/components/confirm-dialog";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
@@ -1530,6 +1530,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
          sayısı aynı bilgi); kutlama eşiği eskisi gibi %60. Sonucu duyuran
          bandın kendi `role="status"`u (bkz. 11.337). */
       <FlowColumn celebrate={tally.total > 0 && donePct >= 60}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Bitir"le aynı çıkış. */}
+        <ResultTopBar onExit={leave} />
         <ResultHero
           eyebrow={t("learn.walk_mode")}
           title={t("walkmode.done_title")}

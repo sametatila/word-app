@@ -14,7 +14,7 @@ import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakGerm
 import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
@@ -475,6 +475,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
        durumu aynı bandla çiziyor (`ExamScreen` `offline`). */
     return (
       <FlowColumn>
+        <ResultTopBar href="/immersion" />
         <ResultHero eyebrow={title} title={t("exam.saved_offline")} figure={formatPercent(offline.pct, lang)} quiet />
         {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
             iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
@@ -1232,6 +1233,8 @@ function Result({
   return (
     /* KUTLAMA yalnız geçince (Android `FlowScreen celebrate`). */
     <FlowColumn celebrate={result.passed}>
+      {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Patikaya dön"le aynı çıkış. */}
+      <ResultTopBar href="/immersion" />
       <ResultHero
         eyebrow={title}
         title={result.passed ? t("exam.passed") : t("exam.not_passed")}

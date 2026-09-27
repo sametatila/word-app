@@ -22,6 +22,7 @@ import { recognitionCtor, requestMicrophone, type Recognition } from "@/componen
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
+import { ResultTopBar } from "@/components/round-exit";
 import { CoachLine } from "@/components/coach-line";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
@@ -375,6 +376,8 @@ export function ConversationScored({
         taşıyor, sonuç duyuruluyor. Konfeti yalnız geçince.
       */
       <FlowColumn celebrate={passed}>
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Konuşmaya dön"le aynı çıkış. */}
+        <ResultTopBar href={leave.href} />
         <ResultHero
           eyebrow={t("scored.title")}
           title={t(passed ? "exam.passed" : "exam.not_passed")}

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { RoundExit } from "@/components/round-exit";
+import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StateBody } from "@/components/flow";
 import { CheckIcon } from "@/components/icons";
 import { OptionMark } from "@/components/games/option-mark";
@@ -92,6 +92,8 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
   if (done) {
     return (
       <FlowColumn className="px-4 py-6">
+        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, alttaki "Kapat"la aynı çıkış. */}
+        <ResultTopBar onExit={leave} />
         <ResultHero
           eyebrow={t("placement.title")}
           title={t("placement.your_level", { level })}
