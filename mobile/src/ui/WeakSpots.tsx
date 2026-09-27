@@ -25,7 +25,9 @@ import { useTheme, spacing, radii } from "../theme";
  * verir ne motive eder (web de öyle).
  */
 type ErrorShare = { type: string; label: string; n: number; pct: number; href: string | null; gameLabel: string | null };
-type ConfusionPair = { wordId: number; de: string; artikel: string | null; tr: string; with: string; n: number };
+/* `gloss`: anlamın ANADİLDEKİ hâli (sunucu ekliyor). `tr` herkese Türkçe
+   basılıyordu; eski sunucu için yedek olarak duruyor. */
+type ConfusionPair = { wordId: number; de: string; artikel: string | null; tr: string; gloss?: string | null; with: string; n: number };
 type ErrorReport = { days: number; totalWrong: number; types: ErrorShare[]; confusions: ConfusionPair[]; weakRules: string[] };
 
 /** `/learn/game?game=artikel` → mobil tek-oyun pratiği. */
@@ -107,7 +109,7 @@ export function WeakSpots() {
             {report.confusions.slice(0, 5).map((c) => (
               <View key={`${c.wordId}-${c.with}`} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                 <Text variant="micro" color={colors.text}>
-                  {c.artikel ? `${c.artikel} ` : ""}{c.de} = {c.tr}, {c.with} {t("weak.not")}
+                  {c.artikel ? `${c.artikel} ` : ""}{c.de} = {c.gloss ?? c.tr}, {c.with} {t("weak.not")}
                 </Text>
               </View>
             ))}

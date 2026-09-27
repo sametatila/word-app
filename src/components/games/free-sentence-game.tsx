@@ -74,7 +74,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       kind: "sentence",
       level: level as AssessLevel,
       task: {
-        prompt: `Bu kelimelerle bir cümle kur: ${targets.map((t) => withArtikel(t)).join(", ")}`,
+        prompt: tx("assess.ai_build_sentence", { words: targets.map((x) => withArtikel(x)).join(", ") }),
         targets: targets.map((t) => t.de),
       },
       answer: { text: typed },

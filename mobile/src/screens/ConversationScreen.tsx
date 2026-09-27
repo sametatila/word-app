@@ -19,6 +19,7 @@ import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, Resu
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
+import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
@@ -163,14 +164,25 @@ export function ConversationScreen() {
   const convCopy = conversation ? tieredCopy(premiumStatus?.unlock?.levels[conversation.level]?.conversation, "conv") : null;
   useEffect(() => { if (convLocked) notePremiumGate("conversation"); }, [convLocked]);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
-  const [packReady, setPackReady] = useState(() => !!findConversation(params.id));
+  /* ANADİL SÖZLÜĞÜ de beklenir (en çok birkaç saniye, `waitNativeContent`):
+     inmeden açılan konuşma anadili İngilizce/Almanca olana Türkçe anlatım
+     gösteriyordu. Oynatıcı başladıktan sonra içerik DEĞİŞTİRİLMİYOR —
+     `conversation` değişince anlatım baştan kuruluyor. */
+  const [packReady, setPackReady] = useState(() => !!findConversation(params.id) && nativeContentReady());
   /* Paket inemediyse "konuşma bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = conversationLevelOf(params.id);
-    if (!level) { setConversation(findConversation(params.id)); setPackReady(true); return; }
     let dead = false;
-    void ensureConversations(level).then((ok) => {
+    if (!level) {
+      void waitNativeContent().then(() => {
+        if (dead) return;
+        setConversation(findConversation(params.id));
+        setPackReady(true);
+      });
+      return () => { dead = true; };
+    }
+    void Promise.all([ensureConversations(level), waitNativeContent()]).then(([ok]) => {
       if (dead) return;
       setConversation(findConversation(params.id));
       setPackFailed(!ok);

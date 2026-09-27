@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { t, formatPercent } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -19,6 +19,7 @@ import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
 import { mockSkillLabel, type MockLevel, type MockSkill } from "../data/exams";
 import { mockCatalogFor, type MockCatalogEntry } from "../content/mockCatalog";
+import { useNativeContentVersion } from "../lib/nativeContent";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
 import { fetchMockAccess, type MockAccess } from "../game/mockExam";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
@@ -80,14 +81,18 @@ export function MockExamsScreen() {
      yalnız künye GERÇEKTEN inip boş çıkınca yazıyor. */
   const [papers, setPapers] = useState<MockCatalogEntry[]>([]);
   const [catalog, setCatalog] = useState<"loading" | "ready" | "error">("loading");
+  /* Anadil sözlüğü sonradan inerse tema karşılıkları için liste yeniden okunuyor. */
+  const nativeVer = useNativeContentVersion();
+  const listed = useRef<string | null>(null);
   useEffect(() => {
     let dead = false;
-    setCatalog("loading");
+    /* Yalnız sözlük değiştiyse iskelet çizilmiyor: liste yerinde yenileniyor. */
+    if (listed.current !== level) setCatalog("loading");
     void mockCatalogFor(currentCourseId(), level as MockLevel)
-      .then((list) => { if (!dead) { setPapers(list); setCatalog("ready"); } })
+      .then((list) => { if (!dead) { listed.current = level; setPapers(list); setCatalog("ready"); } })
       .catch(() => { if (!dead) { setPapers([]); setCatalog("error"); } });
     return () => { dead = true; };
-  }, [level]);
+  }, [level, nativeVer]);
 
   /*
     Bölümlerin durumu: bitti mi, kaç aldın, yarım mı kaldı.

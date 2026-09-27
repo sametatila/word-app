@@ -94,9 +94,15 @@ function fillBlank(sentence: string | undefined, answer: string): string {
   return `${s} ${answer}`.replace(/\s+/g, " ").trim();
 }
 
-/** Örnek cümle bloğu — Almanca (italik) + Türkçe + (varsa) İngilizce. */
-function ExampleBlock({ de, tr, en, colors }: { de: string | null; tr: string | null; en: string | null; colors: Palette }) {
-  const d = firstExample(de), t = firstExample(tr), e = firstExample(en);
+/**
+ * Örnek cümle bloğu — hedef dil (italik) + ANADİLDEKİ karşılık (`exampleOf`).
+ * Türkçe ve İngilizce satır her kullanıcıya birlikte çiziliyordu: anadili
+ * İngilizce ya da Almanca olan Türkçe çeviriyi görüyordu. `WordsScreen`
+ * `ExampleLines` ile aynı okuma.
+ */
+function ExampleBlock({ de, tr, en, deNative, colors }: { de: string | null; tr: string | null; en: string | null; deNative: string | null; colors: Palette }) {
+  const g = exampleOf({ sentenceTr: firstExample(tr), sentenceEn: firstExample(en), sentenceDe: firstExample(deNative) });
+  const d = firstExample(de), t = g?.text ?? null, e = g?.sub ?? null;
   if (!d && !t && !e) return null;
   return (
     <View style={{ marginTop: spacing.sm }}>
@@ -869,7 +875,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       kind: "sentence" as const,
       level: round.level ?? word.niveau,
       task: {
-        prompt: `Bu kelimelerle bir cümle kur: ${targets.map((x) => withArtikel(x)).join(", ")}`,
+        prompt: tx("assess.ai_build_sentence", { words: targets.map((x) => withArtikel(x)).join(", ") }),
         targets: targets.map((x) => x.de),
       },
       /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye
@@ -1239,7 +1245,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="h3">{meaningLine(word)}</Text>
-          <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
+          <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} deNative={word.beispielDe ?? null} colors={colors} />
         </View>
       ) : null}
     </RoundShell>
@@ -1626,7 +1632,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
             body: JSON.stringify({
               kind: "sentence",
               level: round.word?.niveau || "A1",
-              task: { prompt: `Çevir: ${source}`, target: s.de },
+              task: { prompt: tx("assess.ai_translate", { source }), target: s.de },
               answer: { text: typed },
               /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve günlük
               kota o günün satırları sayılarak bulunuyor (bkz. api/assess `parseBody`).

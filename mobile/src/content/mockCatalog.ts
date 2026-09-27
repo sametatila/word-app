@@ -1,6 +1,6 @@
 import { ensurePack, getContentItem, listContentItems } from "./store";
 import { mockCourseOf, type MockCourse, type MockLevel, type MockSkill } from "../data/exams";
-import { nativeMockText, translatedCourse } from "../lib/nativeContent";
+import { nativeMockText, translatedCourse, waitNativeContent } from "../lib/nativeContent";
 import { currentCourseId, type CourseId } from "../lib/courses";
 
 /**
@@ -53,6 +53,9 @@ export async function mockCatalogFor(course: CourseId, level: MockLevel): Promis
     const entry = await getContentItem<MockCatalogEntry>(pack, id);
     if (entry) out.push(entry);
   }
+  /* Tema karşılığı anadil sözlüğünden: kısa süre bekleniyor, inmezse satır
+     kaynağıyla çiziliyor ve liste sözlük inince yeniden okunuyor. */
+  if (out.some((e) => e.course === translatedCourse())) await waitNativeContent();
   return out
     .sort((a, b) => a.no - b.no)
     .map((e) => (e.course === translatedCourse() ? { ...e, themeTr: nativeMockText("themeTr", e.themeTr) } : e));

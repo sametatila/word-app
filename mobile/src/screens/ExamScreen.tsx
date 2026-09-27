@@ -33,6 +33,7 @@ import { useAuth } from "../lib/AuthContext";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
+import { glossOf } from "../game/gloss";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 
@@ -680,10 +681,13 @@ export function ExamScreen() {
             {paper.cover.canDo.map((c, i) => (
               <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
                 <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
+                {/* Hedef dildeki cümle ve ANADİLDEKİ karşılığı — yalnız ikisi.
+                    Kâğıt çevrilince `tr` anadilin dizesi oluyor; `en` satırı da
+                    basıldığında anadili İngilizce olan aynı cümleyi iki kez,
+                    İngilizce kursta herkes hedef cümleyi iki kez görüyordu. */}
                 <View style={{ flex: 1 }}>
                   <Text variant="caption">{c.de}</Text>
-                  <Text variant="micro" color={colors.textMuted}>{c.tr}</Text>
-                  <Text variant="micro" color={colors.textFaint}>{c.en}</Text>
+                  {c.tr && c.tr !== c.de ? <Text variant="micro" color={colors.textMuted}>{c.tr}</Text> : null}
                 </View>
               </View>
             ))}
@@ -895,8 +899,10 @@ function SectionBody({
  * `game/session` `Round`); çeviri turunda sorulan cümlenin kendisi.
  */
 function wordPrompt(r: Round): string {
-  if (r.game === "translate" && r.sentence) return typeof r.sentence === "string" ? r.sentence : r.sentence.tr;
-  return r.word?.tr ?? t("exam.sec_vocab");
+  /* ANADİLDE: `sentence.tr` ve `word.tr` herkese Türkçe basılıyordu. */
+  if (r.game === "translate" && r.sentence) return typeof r.sentence === "string" ? r.sentence : (r.sentence.native ?? r.sentence.tr);
+  if (r.word) return glossOf(r.word).text || r.word.de;
+  return t("exam.sec_vocab");
 }
 function wordAnswer(r: Round): string {
   if (r.game === "translate" && r.sentence && typeof r.sentence !== "string") return r.sentence.de;
@@ -1214,7 +1220,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "writing", level,
-          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} kelime`] },
+          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, t("assess.ai_min_words", { n: w.task.minWords })] },
           answer: { text: typed.trim() },
           /* `day` YAZMA anahtarı (satır + günlük kota); gönderilmezse sunucunun
              UTC günü işliyor. Web `assess-client` baştan beri gönderiyor. */

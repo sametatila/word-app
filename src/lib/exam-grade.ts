@@ -2,6 +2,7 @@ import "server-only";
 import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { matchSentence } from "@/lib/sentence-match";
 import type { TargetLang } from "@/lib/courses";
+import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
 import type { ExamPaper } from "@/lib/exam-types";
 
 /**
@@ -50,7 +51,12 @@ export type ExamResponses = {
 export type SectionCount = { correct: number; total: number };
 
 /** Kâğıttan nesnel cevap anahtarını çıkarır (istemciye ASLA açık gitmez). */
-export function buildAnswerKey(paper: ExamPaper, lang: TargetLang): ObjectiveKey {
+export function buildAnswerKey(
+  paper: ExamPaper,
+  lang: TargetLang,
+  /** Yazma kısıtının dili — öğrencinin anadili; istemci de aynı dilde gönderiyor (`assess.ai_min_words`). */
+  native: NativeLang = DEFAULT_NATIVE,
+): ObjectiveKey {
   return {
     grammar: paper.sections.grammar.map((g) =>
       g.kind === "cell" ? { kind: "cell", answer: g.answer } : { kind: "judge", answer: g.answer },
@@ -65,7 +71,7 @@ export function buildAnswerKey(paper: ExamPaper, lang: TargetLang): ObjectiveKey
     writingTasks: paper.sections.writing.map((w) => ({
       id: w.id,
       prompt: w.task.prompt,
-      constraints: [...(w.task.checklist ?? []), `en az ${w.task.minWords} kelime`],
+      constraints: [...(w.task.checklist ?? []), translate(native, "assess.ai_min_words", { n: w.task.minWords })],
     })),
     speakingTargets: paper.sections.speaking.map((s) => ({ id: s.id, de: s.de })),
   };

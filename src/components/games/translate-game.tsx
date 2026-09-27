@@ -97,7 +97,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         {
           kind: "sentence",
           level: (word.niveau as "A1" | "A2" | "B1" | "B2" | "C1") || "A1",
-          task: { prompt: `Çevir: ${source}`, target: sentence.de },
+          task: { prompt: tx("assess.ai_translate", { source }), target: sentence.de },
           answer: { text: typed },
           /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
              Almanca rubriğinden geliyor (`assess-prompts` LEVEL_EXPECTATIONS).

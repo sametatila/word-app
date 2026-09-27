@@ -2034,7 +2034,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        fonksiyonundan basliyor; webin dosyasi zaten tek tur. */
     const bas = tam.indexOf("function TranslateRound");
     const src = bas < 0 ? tam : tam.slice(bas);
-    const istem = (src.match(/prompt:\s*(`[^`]*`)/) ?? [])[1];
+    /* Istem artik anadilde, sozluk anahtariyla (`assess.ai_translate`):
+       ham dizge ya da anahtar - ikisinden hangisiyse o karsilastiriliyor. */
+    const im = src.match(/prompt:\s*(?:(`[^`]*`)|\w+\(("[\w.]+"))/);
+    const istem = im ? (im[1] ?? im[2]) : undefined;
     /* Sayilar DOSYANIN TAMAMINDAN: sabitler modulun tepesinde, turun
        fonksiyonundan once duruyor - dilim onlari kesiyordu. */
     return [
@@ -2059,7 +2062,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return [
       "istem=" + (al(/prompt:\s*([\w.]+)/) ?? "yok"),
       "hedef=" + (al(/targets:\s*([\w.]+)\.map/) ?? "yok"),
-      "kisit=" + (al(/constraints:\s*\[(`[^`]*`)/) ?? "yok").replace(/\$\{[^}]*\}/g, "${}"),
+      /* Kisit satiri anadilde, anahtarla (`assess.ai_seconds`) ya da ham dizge. */
+      "kisit=" + (al(/constraints:\s*\[(`[^`]*`|\w+\("[\w.]+")/) ?? "yok").replace(/\$\{[^}]*\}/g, "${}").replace(/^\w+\(/, ""),
       "esik=" + (al(/overall\s*>=\s*(\d+)/) ?? al(/score\s*>=\s*(\d+)/) ?? "yok"),
     ];
   };
@@ -3789,7 +3793,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "istem modu=" + (/mode: "scored"|mode\b[^\n]*"scored"/.test(src) ? "var" : "yok"),
       "rubrik turu=" + (/kind: "chat"/.test(src) ? "var" : "yok"),
       "hedef kaliplar=" + (/targets: conversation\.patterns/.test(src) ? "var" : "yok"),
-      "kisitlar=" + (/constraints: \[`\$\{SCORED_TURNS\} tur`/.test(src) ? "var" : "yok"),
+      /* Kisitlar anadilde (`assess.ai_turns`, `assess.ai_no_help`) ya da eski ham dizge. */
+      "kisitlar=" + (/constraints: \[(`\$\{SCORED_TURNS\} tur`|\w+\("assess\.ai_turns", \{ n: SCORED_TURNS \}\))/.test(src) ? "var" : "yok"),
       "gun=" + (/day:/.test(solo) ? "var" : "yok"),
       "en iyi cumleler=" + (/scored\.best_sentences/.test(src) ? "var" : "yok"),
       "en sik hata=" + (/scored\.most_common/.test(src) ? "var" : "yok"),

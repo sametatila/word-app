@@ -1,6 +1,7 @@
 /// <reference types="node" />
 import { setLang } from "../src/lib/i18n";
-import { ensureNativeDict, nativeConversation, nativeExercise, translatedCourse } from "../src/lib/nativeContent";
+import { ensureNativeDict, nativeContentReady, nativeConversation, nativeExercise, onNativeContentChange, translatedCourse } from "../src/lib/nativeContent";
+import { ensurePack } from "../src/content/store";
 import de from "../src/data/conversations/de-a1.json";
 import en from "../src/data/conversations/en-a1.json";
 
@@ -76,4 +77,59 @@ test("Türkçe kullanan kaynağı olduğu gibi görüyor", async () => {
   expect(nativeConversation(enConversation)).toBe(enConversation);
   expect(nativeConversation(deConversation)).toBe(deConversation);
   expect(nativeExercise({ id: "yok", course: "en" })).toEqual({ id: "yok", course: "en" });
+});
+
+/*
+  SÖZLÜK İNİNCE HABER VERİLİYOR. Ekranlar sözlükten önce çizilebiliyor ve
+  eskiden sözlük inince hiçbir şey yeniden çizilmiyordu: kullanıcı ekranı
+  kapatıp açana dek Türkçe görüyordu.
+*/
+test("sözlük kurulunca aboneler haber alıyor", async () => {
+  await setLang("tr");
+  const seen = jest.fn();
+  const off = onNativeContentChange(seen);
+  await setLang("en");
+  expect(nativeContentReady()).toBe(false);
+  await ensureNativeDict();
+  expect(nativeContentReady()).toBe(true);
+  expect(seen).toHaveBeenCalled();
+  off();
+});
+
+/*
+  YARIŞ: İngilizce sözlük inerken Almancaya geçen kullanıcı eskiden süren
+  (İngilizce) indirmenin sözünü alıyordu; o söz dil değiştiği için hiçbir şey
+  kurmadan bitiyor ve Almanca sözlük hiç istenmiyordu.
+*/
+test("indirme sürerken dil değişirse yeni dilin sözlüğü iniyor", async () => {
+  await setLang("tr");
+  await setLang("en");
+  const first = ensureNativeDict();
+  await setLang("de");
+  await ensureNativeDict();
+  await first;
+  expect(nativeContentReady()).toBe(true);
+  expect(nativeConversation(enConversation).titleTr).not.toBe(enConversation.titleTr);
+});
+
+/* İNEMEYEN SÖZLÜK yeniden deneniyor — eskiden bir sonraki ön plana dönüşe kadar kimse denemiyordu. */
+test("inemeyen sözlük kendiliğinden yeniden deneniyor", async () => {
+  await setLang("tr");
+  jest.useFakeTimers();
+  try {
+    (ensurePack as jest.Mock).mockResolvedValueOnce(false);
+    await setLang("en");
+    await ensureNativeDict();
+    expect(nativeContentReady()).toBe(false);
+    /* Kimse çağırmadan: yalnız zamanlayıcı ilerliyor, haber abonelikten geliyor. */
+    const arrived = new Promise<void>((resolve) => {
+      const off = onNativeContentChange(() => { off(); resolve(); });
+    });
+    jest.advanceTimersByTime(10_000);
+    jest.useRealTimers();
+    await arrived;
+    expect(nativeContentReady()).toBe(true);
+  } finally {
+    jest.useRealTimers();
+  }
 });

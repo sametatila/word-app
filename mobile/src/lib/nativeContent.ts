@@ -39,6 +39,7 @@
  * (liste, oynatıcı, ilerleme) ve her seferinde 200 adımlık bir anlatımı
  * yeniden kurmak boşuna. Dil değişince önbellek tümden boşalıyor (en altta).
  */
+import { useEffect, useState } from "react";
 import { currentLang, onLangChange } from "./i18n";
 import {
   resolveConversation,
@@ -57,7 +58,86 @@ const PACK_DE = "native/de";
 let dict: NativeDict | null = null;
 let dictDe: DeDict | null = null;
 let loading: Promise<void> | null = null;
+/** Süren indirmenin DİLİ: dil değişince eski dilin sözü yeniye verilmesin. */
+let loadingFor: string | null = null;
 let loadedFor: string | null = null;
+
+/*
+  SÖZLÜK İNİNCE EKRANLAR HABER ALIYOR.
+
+  Sözlük açılışta arka planda iniyor ve ekranlar ondan önce çizilebiliyor:
+  anadili İngilizce ya da Almanca olan kullanıcı o an Türkçe kaynağı görüyor
+  ve eskiden sözlük inince HİÇBİR ŞEY yeniden çizilmiyordu — ekran kapanıp
+  açılana dek Türkçe kalıyordu. `version` her kurulumda (ve dil değişince)
+  artıyor; çeviri okuyan ekranlar `useNativeContentVersion()` ile abone.
+*/
+let version = 0;
+const listeners = new Set<() => void>();
+
+function bump(): void {
+  version++;
+  for (const fn of listeners) fn();
+}
+
+/** Sözlük kurulunca (ya da dil değişince) çağrılır; aboneliği bırakan işlev döner. */
+export function onNativeContentChange(fn: () => void): () => void {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+}
+
+/**
+ * Çeviri okuyan ekranın aboneliği: sözlük inince bileşeni yeniden çizer.
+ * Dönen sayı etki bağımlılığı olarak kullanılabilir (içeriği yeniden oku).
+ */
+export function useNativeContentVersion(): number {
+  const [value, setValue] = useState(version);
+  useEffect(() => {
+    setValue(version);
+    return onNativeContentChange(() => setValue(version));
+  }, []);
+  return value;
+}
+
+/** Çeviri hazır mı — Türkçe kullanan için hep hazır (çeviri yok). */
+export function nativeContentReady(): boolean {
+  const lang = currentLang();
+  if (lang !== "en" && lang !== "de") return true;
+  return loadedFor === lang;
+}
+
+/*
+  YENİDEN DENEME. İndirme düşerse (ağ yok, sunucu cevapsız) eskiden bir sonraki
+  ön plana dönüşe kadar kimse yeniden denemiyordu; ön plana dönüş de
+  `AppGate`in yarım dakikalık süzgecinden geçiyor. Artık artan aralıkla
+  (10 sn → 30 sn → 2 dk → 5 dk, orada sabit) kendisi deniyor; ön plana dönüş
+  yine `ensureNativeDict()` çağırıyor ve bekleyen denemeyi öne alıyor.
+*/
+const RETRY_MS = [10_000, 30_000, 120_000, 300_000];
+let retryTimer: ReturnType<typeof setTimeout> | null = null;
+let failures = 0;
+
+function clearRetry(): void {
+  if (retryTimer) clearTimeout(retryTimer);
+  retryTimer = null;
+}
+
+function scheduleRetry(): void {
+  clearRetry();
+  const wait = RETRY_MS[Math.min(failures, RETRY_MS.length - 1)];
+  failures++;
+  retryTimer = setTimeout(() => {
+    retryTimer = null;
+    void ensureNativeDict();
+  }, wait);
+  unref(retryTimer);
+}
+
+/* Zamanlayıcı süreci ayakta tutmasın (Node'da, yani testlerde; RN'de işlev yok). */
+function unref(timer: ReturnType<typeof setTimeout>): void {
+  (timer as unknown as { unref?: () => void }).unref?.();
+}
 
 /**
  * Paketi indirir ve belleğe kurar.
@@ -93,18 +173,59 @@ export function ensureNativeDict(): Promise<void> {
   const lang = currentLang();
   if (lang !== "en" && lang !== "de") return Promise.resolve();
   if (loadedFor === lang) return Promise.resolve();
-  if (loading) return loading;
-  loading = (async () => {
+  /* YALNIZ AYNI DİLİN SÖZÜ paylaşılıyor. Eskiden süren her indirme
+     döndürülüyordu: İngilizce inerken Almancaya geçen kullanıcı İngilizce
+     indirmenin sözünü alıyor, o da (dil değiştiği için) hiçbir şey kurmadan
+     bitiyordu — Almanca sözlük bir sonraki tetiğe kadar hiç istenmiyordu. */
+  if (loading && loadingFor === lang) return loading;
+  clearRetry();
+  const mine = (async () => {
     const loaded = await loadDict(lang === "en" ? PACK_EN : PACK_DE);
     if (currentLang() !== lang) return;
     if (lang === "en") dict = (loaded as NativeDict | null) ?? null;
     else dictDe = (loaded as DeDict | null) ?? null;
     loadedFor = loaded ? lang : null;
     cache.clear();
-  })().finally(() => {
-    loading = null;
+    if (loaded) {
+      failures = 0;
+      bump();
+    } else {
+      scheduleRetry();
+    }
+  })()
+    .catch(() => {
+      if (currentLang() === lang) scheduleRetry();
+    })
+    .finally(() => {
+      /* Arada başka dilin indirmesi başladıysa onun kaydı silinmiyor. */
+      if (loading === mine) {
+        loading = null;
+        loadingFor = null;
+      }
+    });
+  loading = mine;
+  loadingFor = lang;
+  return mine;
+}
+
+/**
+ * Çeviriyi en çok `maxMs` bekler — içerik ekranları ilk çizimden önce.
+ *
+ * Sözlük inmeden açılan ekran Türkçe kaynağı gösteriyordu; kısa bir yükleniyor
+ * hâli ondan iyi. Ama sınırsız beklemek, ağı olmayan kullanıcıyı içerikten
+ * tümden mahrum etmek olurdu: süre dolunca kaynak gösteriliyor ve sözlük
+ * sonradan inerse abonelik (`useNativeContentVersion`) ekranı çeviriyor.
+ */
+export function waitNativeContent(maxMs = 8_000): Promise<void> {
+  if (nativeContentReady()) return Promise.resolve();
+  return new Promise<void>((resolve) => {
+    const timer = setTimeout(resolve, maxMs);
+    unref(timer);
+    void ensureNativeDict().finally(() => {
+      clearTimeout(timer);
+      resolve();
+    });
   });
-  return loading;
 }
 
 function nativeDict(): NativeDict | null {
@@ -238,6 +359,9 @@ onLangChange(() => {
   dict = null;
   dictDe = null;
   loadedFor = null;
+  failures = 0;
+  clearRetry();
   clearNativeCache();
+  bump();
   void ensureNativeDict();
 });

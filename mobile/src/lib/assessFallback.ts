@@ -65,11 +65,11 @@ function fold(s: string): string {
     .trim();
 }
 
-/** "en az 40 kelime" gibi bir kısıttan sayıyı çeker. */
+/** "en az 40 kelime" gibi bir kısıttan sayıyı çeker — kısıt anadilde (`assess.ai_min_words`). */
 function minWordsFrom(constraints: string[] | undefined): number | null {
   for (const c of constraints ?? []) {
-    const m = c.match(/en az\s+(\d+)\s+kelime|mindestens\s+(\d+)\s+w[oö]rter/i);
-    if (m) return Number(m[1] ?? m[2]);
+    const m = c.match(/en az\s+(\d+)\s+kelime|mindestens\s+(\d+)\s+w[oö]rter|at least\s+(\d+)\s+words?/i);
+    if (m) return Number(m[1] ?? m[2] ?? m[3]);
   }
   return null;
 }

@@ -16,6 +16,7 @@ import { usePremiumStatus } from "../lib/premium";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
+import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/pathProgress";
@@ -250,14 +251,16 @@ export function ItemScreen() {
   const [exercise, setExercise] = useState(() => getExercise(params.id));
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`):
      elde egzersiz varsa hazır, yoksa indirme bitene kadar bekliyoruz. */
-  const [packReady, setPackReady] = useState(() => !!getExercise(params.id));
+  const [packReady, setPackReady] = useState(() => !!getExercise(params.id) && nativeContentReady());
   /* Paket inemediyse "açılamıyor" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = skillLevelOf(params.id);
     if (!level) { setPackReady(true); return; }
     let dead = false;
-    void ensureSkills(level).then((ok) => {
+    /* Anadil sözlüğü de kısa süre bekleniyor: inmeden açılan egzersiz anadili
+       İngilizce/Almanca olana Türkçe yönerge gösteriyordu (bkz. `waitNativeContent`). */
+    void Promise.all([ensureSkills(level), waitNativeContent()]).then(([ok]) => {
       if (dead) return;
       setExercise(getExercise(params.id));
       setPackFailed(!ok);

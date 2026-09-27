@@ -213,9 +213,9 @@ export function ConversationScored({
       kind: "chat",
       level: conversation.level as AssessLevel,
       task: {
-        prompt: `${conversation.chat.scene} (Sınav: ${conversation.chat.partner} ile konuşma)`,
+        prompt: t("assess.ai_scored_chat", { scene: conversation.chat.scene, partner: conversation.chat.partner }),
         targets: conversation.patterns.map((p) => p.de),
-        constraints: [`${SCORED_TURNS} tur`, "yardım yok"],
+        constraints: [t("assess.ai_turns", { n: SCORED_TURNS }), t("assess.ai_no_help")],
       },
       answer: { text: said.join("\n"), transcript: said },
       exerciseId: `${conversation.id}:scored`,

@@ -12,6 +12,7 @@ import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIco
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
+import { nativeContentReady, useNativeContentVersion, waitNativeContent } from "../lib/nativeContent";
 import { sendChat, parseReply, type ChatMsg } from "../game/chat";
 import { candoIdsForConversation } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
@@ -82,14 +83,15 @@ export function ConversationScoredScreen() {
   /* Konuşmanın seviye paketi inmemişse burada iniyor (bkz. `data/conversations`). */
   const [conversation, setConversation] = useState<Conversation | undefined>(() => findConversation(id) as Conversation | undefined);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
-  const [packReady, setPackReady] = useState(() => !!findConversation(id));
+  /* Anadil sözlüğü de kısa süre bekleniyor (bkz. ConversationScreen). */
+  const [packReady, setPackReady] = useState(() => !!findConversation(id) && nativeContentReady());
   /* Paket inemediyse "konuşma bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = conversationLevelOf(id);
     if (!level) { setPackReady(true); return; }
     let dead = false;
-    void ensureConversations(level).then((ok) => {
+    void Promise.all([ensureConversations(level), waitNativeContent()]).then(([ok]) => {
       if (dead) return;
       setConversation(findConversation(id) as Conversation | undefined);
       setPackFailed(!ok);
@@ -99,6 +101,13 @@ export function ConversationScoredScreen() {
   }, [id]);
 
   const [phase, setPhase] = useState<Phase>("intro");
+  /* Sözlük bekleme süresinden SONRA inerse giriş ekranı hâlâ açıkken çevrili
+     konuşmaya geçiliyor; konuşma başladıktan sonra içerik değişmiyor. */
+  const nativeVer = useNativeContentVersion();
+  useEffect(() => {
+    if (nativeVer && phase === "intro") setConversation(findConversation(id) as Conversation | undefined);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nativeVer]);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
@@ -161,9 +170,12 @@ export function ConversationScoredScreen() {
              dili süreç genelinde kurulu (`lib/courses`). */
           lang: currentTargetLang(),
           task: {
-            prompt: `${conversation.chat.scene} (Sınav: ${conversation.chat.partner} ile konuşma)`,
+            /* Görev metni kullanıcının ANADİLİNDE (sahne de anadilde); sabit
+               Türkçe ek, anadili İngilizce/Almanca olana Türkçe geri bildirim
+               çağırıyordu. */
+            prompt: tx("assess.ai_scored_chat", { scene: conversation.chat.scene, partner: conversation.chat.partner }),
             targets: conversation.patterns.map((p) => p.de),
-            constraints: [`${SCORED_TURNS} tur`, "yardım yok"],
+            constraints: [tx("assess.ai_turns", { n: SCORED_TURNS }), tx("assess.ai_no_help")],
           },
           answer: { text: said.join("\n"), transcript: said },
           exerciseId: `${conversation.id}:scored`,

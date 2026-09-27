@@ -410,7 +410,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       level: level as AssessLevel,
       // exerciseId: imzalı skor jetonu bu sınav maddesine bağlansın (F7).
       exerciseId: item.id,
-      task: { prompt: item.task.prompt, constraints: [...item.task.checklist, `en az ${item.task.minWords} kelime`] },
+      task: { prompt: item.task.prompt, constraints: [...item.task.checklist, t("assess.ai_min_words", { n: item.task.minWords })] },
       answer: { text },
       // Hedef dil: verilmezse uç Almancaya düşüyor (bkz. `api/assess`).
       lang: targetLangOf(course),
@@ -1343,10 +1343,9 @@ function Result({
                   <span className="block font-semibold" lang={course}>
                     {c.de}
                   </span>
-                  <span className="muted block text-caption">{c.tr}</span>
-                  <span className="muted block text-caption opacity-70" lang="en">
-                    {c.en}
-                  </span>
+                  {/* Anadildeki karşılık; hedef dille aynıysa (İngilizce kurs) tekrar edilmiyor.
+                      İngilizce satırı kalktı: Türkçe olmayan okurda da basılıyordu. Mobil `ExamScreen` ile aynı. */}
+                  {c.tr && c.tr !== c.de ? <span className="muted block text-caption">{c.tr}</span> : null}
                 </span>
               </li>
             ))}

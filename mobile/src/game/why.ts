@@ -15,17 +15,22 @@
  *     bugün hep `null` - alan gövdeler ayrışmasın diye duruyor.
  */
 import { t as tx, currentLang } from "../lib/i18n";
+import { glossOf } from "./gloss";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { pluralRuleOf, pluralOf, umlautStem } from "../lib/german";
 import { ruleFor } from "./whyRules";
 import { confusableHint } from "../lib/confusables";
 
-/** Açıklamanın anadildeki karşılığı - web `lib/option-label` `glossFor`. */
+/**
+ * Açıklamanın anadildeki karşılığı - web `lib/option-label` `glossFor`.
+ *
+ * Ortak yardımcıdan (`glossOf`) ve TÜRKÇEYE DÜŞMEDEN: karşılığı eksik kelimede
+ * anadili İngilizce/Almanca olana Türkçe anlam basılıyordu. Almanca anadilde
+ * Almanca karşılık yoksa İngilizcesi, o da yoksa kelimenin kendisi.
+ */
 function gloss(w: WhyWord): string {
-  const lang = currentLang();
-  if (lang === "en") return w.en || w.tr;
-  if (lang === "de") return w.deGloss || w.tr;
-  return w.tr;
+  const g = glossOf(w);
+  return g.text || g.sub || w.de;
 }
 
 /** Büyük harfe çevirirken kullanılan yerel ayar - web `lib/i18n/dict` `localeOf`. */

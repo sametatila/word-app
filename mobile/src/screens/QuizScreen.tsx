@@ -10,6 +10,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { ensureConversations } from "../data/conversations";
+import { waitNativeContent } from "../lib/nativeContent";
 import { unitQuestions } from "../data/authoredUnits";
 import { currentCourseId } from "../lib/courses";
 import { QuestionList } from "../game/skillQuiz";
@@ -52,7 +53,9 @@ export function QuizScreen() {
   useEffect(() => {
     let dead = false;
     setPackReady(false);
-    void ensureConversations(params.level).then((ok) => {
+    /* Sorular konuşmaların anadil yüzünden türüyor: sözlük de kısa süre
+       bekleniyor ki anadili İngilizce/Almanca olana Türkçe soru kurulmasın. */
+    void Promise.all([ensureConversations(params.level), waitNativeContent()]).then(([ok]) => {
       if (dead) return;
       setPackReady(true);
       setPackFailed(!ok);

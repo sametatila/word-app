@@ -157,7 +157,7 @@ export async function POST(req: Request) {
       await track(userId, "exam_start", day, 0, `${paper.kind}:${level}`);
       // F7: nesnel cevap anahtarını mühürleyip istemciye opak keyToken olarak
       // ver — finish'te sunucu bununla puanlar (istemci sayısına güvenmeden).
-      const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course)));
+      const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course), nativeOf(profile.nativeLang)));
       // Kör kâğıt (airtight): yeni istemci `blind:true` isteyince nesnel cevaplar
       // sıyrılır — cevaplar yalnız keyToken'da. Eski istemci bayrak göndermez →
       // tam kâğıt alır (geriye uyumlu, kendi sürümünde airtight olur).

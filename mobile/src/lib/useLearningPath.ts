@@ -6,6 +6,7 @@ import { useMe } from "./useMe";
 import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
 import { ensureConversations } from "../data/conversations";
+import { useNativeContentVersion } from "./nativeContent";
 import { getDoneItems } from "../game/pathProgress";
 import { useStatsBump } from "./statsSignal";
 
@@ -179,10 +180,13 @@ export function useLearningPath(): { data: LearningPath | null; loading: boolean
      `syncNativeLang`) ekran ODAKTAYKEN de tazelensin; odakta değilse zaten
      döndüğünde tazeleniyor, fazladan istek yok. */
   const bump = useStatsBump();
+  /* Anadil sözlüğü inince de: cihazda kurulan patika konuşma başlıklarını
+     çeviriden okuyor ve sözlükten önce kurulduysa Türkçe kalıyordu. */
+  const nativeVer = useNativeContentVersion();
   useFocusEffect(
     useCallback(() => {
-      if (user && bump >= 0) void refreshLearningPath(level);
-    }, [user, level, bump]),
+      if (user && bump >= 0 && nativeVer >= 0) void refreshLearningPath(level);
+    }, [user, level, bump, nativeVer]),
   );
 
   return { data: user ? state.data : null, loading: state.loading, source: user ? state.source : null };

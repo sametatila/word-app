@@ -107,7 +107,10 @@ export function AppGate() {
   };
 
   if (control.maintenance.enabled) {
-    const custom = control.maintenance.message[currentLang()] || control.maintenance.message.tr;
+    /* Kendi dilinde mesaj yoksa İngilizcesi; o da yoksa sözlüğün genel cümlesi.
+       Türkçeye düşmüyor: anadili Almanca olan Türkçe bakım notu okuyamaz. */
+    const msg = control.maintenance.message;
+    const custom = msg[currentLang()] || (currentLang() !== "tr" ? msg.en : "");
     return (
       <View style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}>
         <FlowScreen

@@ -387,7 +387,7 @@ function FreeTask({
       task: {
         prompt: task.prompt,
         targets: task.phrases.map((p) => p.de),
-        constraints: [...task.checklist, `en az ${task.minWords} kelime`],
+        constraints: [...task.checklist, t("assess.ai_min_words", { n: task.minWords })],
       },
       answer: { text: text.trim() },
       exerciseId,
@@ -653,7 +653,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
     const req: AssessRequest = {
       kind: "sentence",
       level: level as AssessLevel,
-      task: { prompt: task.prompt ?? `Bu kelimelerle bir cümle kur: ${task.words.map((w) => w.de).join(", ")}`, targets: task.words.map((w) => w.de) },
+      task: { prompt: task.prompt ?? t("assess.ai_build_sentence", { words: task.words.map((w) => w.de).join(", ") }), targets: task.words.map((w) => w.de) },
       answer: { text: typed },
       lang,
     };

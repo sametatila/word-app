@@ -179,7 +179,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       task: {
         prompt: mono.promptTr,
         targets: mono.targets.map((t) => t.de),
-        constraints: [`${mono.minSeconds}–${mono.maxSeconds} saniye`, ...(mono.rubricHint ? [mono.rubricHint] : [])],
+        constraints: [t("assess.ai_seconds", { min: mono.minSeconds, max: mono.maxSeconds }), ...(mono.rubricHint ? [mono.rubricHint] : [])],
       },
       answer: { text, transcript: [text] },
       exerciseId: exercise.id,
