@@ -606,7 +606,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
               text: "Notiz 6",
               accept: ["die Reinigung", "Reinigung", "Putzen", "Hausreinigung"],
               explain:
-                "İki uç veriliyor: acil çağrı sistemi neredeyse her zaman dahil, temizlik \"fast nie\".",
+                "İki uç veriliyor: acil çağrı sistemi neredeyse her zaman dâhil, temizlik \"fast nie\".",
             },
             {
               kind: "gap",

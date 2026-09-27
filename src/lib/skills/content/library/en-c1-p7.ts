@@ -147,7 +147,7 @@ export const enC1P7: SkillExercise[] = [
       { de: "bench", tr: "test tezgâhı" },
       { de: "independent", tr: "bağımsız" },
       { de: "uncertainty", tr: "belirsizlik" },
-      { de: "fold", tr: "dahil etmek" },
+      { de: "fold", tr: "dâhil etmek" },
       { de: "diagnosis", tr: "teşhis" },
       { de: "competent", tr: "yetkin" },
       { de: "intervention", tr: "müdahale" },

@@ -583,7 +583,7 @@ export const trWeb: Record<string, string> = {
   "del.k_backups": "Sunucu yedekleri",
   "del.k_backups_body": "Silinen veriler yedeklerden en geç {days} gün içinde düşer. Yedekler yalnız felaket kurtarma için kullanılır; silinen bir hesap yedekten geri yüklenmez.",
   "del.k_mail": "Yazışmalar",
-  "del.k_mail_body": "E-postayla gönderdiğin destek ve hak talepleri (e-postayla silme talebi dahil), talep kapandıktan sonra 2 yıl saklanır.",
+  "del.k_mail_body": "E-postayla gönderdiğin destek ve hak talepleri (e-postayla silme talebi dâhil), talep kapandıktan sonra 2 yıl saklanır.",
   "del.policy_note": "Hesap silme gizlilik politikasının 11. bölümünde, saklama süreleri 9. bölümünde de anlatılıyor.",
   "del.policy_link": "Gizlilik politikasını oku",
   "linked.credential_sub": "Kayıt olurken kullandığın yöntem",

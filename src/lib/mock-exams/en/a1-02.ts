@@ -92,7 +92,7 @@ Anna (office)`,
               text: "Kemal pays for the water every month.",
               answer: false,
               explain:
-                "E-postada «Water is in the price» yazıyor: su kiraya dahil, ayrıca ödenmiyor. Ayrı ödenen şey elektrik. Cümlenin iki yarısı iki farklı gider için, madde ikisini ayırmayı ölçüyor.",
+                "E-postada «Water is in the price» yazıyor: su kiraya dâhil, ayrıca ödenmiyor. Ayrı ödenen şey elektrik. Cümlenin iki yarısı iki farklı gider için, madde ikisini ayırmayı ölçüyor.",
             },
             {
               kind: "bool",

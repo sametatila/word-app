@@ -181,7 +181,7 @@ export const EN_B1_05: MockPaper = {
               text: "Iker has two weeks in the city and wants to speak the language every day.",
               answer: "e",
               explain:
-                "İlan bunu amaç olarak yazıyor: «Good for people who want to practice the language», üstelik bir ailenin evinde ve kahvaltı dahil. Daire takası (b) böyle bir günlük temas vaat etmiyor.",
+                "İlan bunu amaç olarak yazıyor: «Good for people who want to practice the language», üstelik bir ailenin evinde ve kahvaltı dâhil. Daire takası (b) böyle bir günlük temas vaat etmiyor.",
             },
             {
               kind: "match",
@@ -190,7 +190,7 @@ export const EN_B1_05: MockPaper = {
               text: "Freja will visit six museums in three days and does not have a car.",
               answer: "g",
               explain:
-                "İlan iki ihtiyacı birden karşılıyor: «Three days of buses and trams plus twelve museums». Altı müze on ikinin içinde ve toplu taşıma da dahil; havaalanı otobüsü ayrı ama Freja şehirde.",
+                "İlan iki ihtiyacı birden karşılıyor: «Three days of buses and trams plus twelve museums». Altı müze on ikinin içinde ve toplu taşıma da dâhil; havaalanı otobüsü ayrı ama Freja şehirde.",
             },
             {
               kind: "match",

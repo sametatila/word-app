@@ -645,7 +645,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               text: "Notiz 10",
               accept: ["einsehbar", "dauerhaft einsehbar", "öffentlich einsehbar", "sichtbar"],
               explain:
-                "Reddedilenler dahil bütün öneriler gerekçesiyle birlikte \"dauerhaft einsehbar\" kalıyor; ilk yılın eleştirisi seçime değil görünmezliğine yönelikmiş.",
+                "Reddedilenler dâhil bütün öneriler gerekçesiyle birlikte \"dauerhaft einsehbar\" kalıyor; ilk yılın eleştirisi seçime değil görünmezliğine yönelikmiş.",
             },
           ],
         },

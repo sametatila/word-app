@@ -326,7 +326,7 @@ export const enB2U24: SkillExercise[] = [
       { de: "relationship", tr: "ilişki" },
       { de: "either", tr: "ikisinden biri" },
       { de: "rewrote", tr: "yeniden yazdı" },
-      { de: "promptly", tr: "derhal" },
+      { de: "promptly", tr: "derhâl" },
       { de: "swiftly", tr: "çabucak" },
       { de: "a reminder", tr: "hatırlatma" },
       { de: "an ending", tr: "ek" },
@@ -464,7 +464,7 @@ export const enB2U24: SkillExercise[] = [
     genre: "opinion",
     intro: "Üç devrik cümle ve iki ortaç.",
     gloss: [
-      { de: "so promptly", tr: "bu kadar derhal" },
+      { de: "so promptly", tr: "bu kadar derhâl" },
       { de: "so swiftly", tr: "bu kadar çabuk" },
       { de: "a reminder", tr: "hatırlatma" },
       { de: "asked to follow up", tr: "geri dönüş istenince" },

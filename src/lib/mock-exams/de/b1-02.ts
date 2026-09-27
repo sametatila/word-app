@@ -547,7 +547,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
                 { de: "die Zimmerlautstärke", tr: "oda sesi düzeyi (komşuyu rahatsız etmeyen)", en: "moderate indoor volume" },
                 { de: "die Auflage", tr: "resmî şart", en: "official requirement" },
                 { de: "gestattet", tr: "izinli", en: "permitted" },
-                { de: "umgehend", tr: "derhal", en: "immediately" },
+                { de: "umgehend", tr: "derhâl", en: "immediately" },
               ],
             },
           ],

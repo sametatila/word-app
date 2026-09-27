@@ -186,7 +186,7 @@ export const deC1P19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eine Entlastung", "Entlastung", "eine Entlastung für alle"],
-        explain: "Zayıflara gösterilen bir özen değil, metni yazan uzmanlar dahil herkes için bir rahatlama.",
+        explain: "Zayıflara gösterilen bir özen değil, metni yazan uzmanlar dâhil herkes için bir rahatlama.",
       },
       {
         text: "Was wirft man der Forschung oft vor?",

@@ -198,7 +198,7 @@ export const EN_A2_W03: QuizWeek = {
         de: {
           options: ["Be not", "Don't be", "Not be", "Don't"],
           answer: 1,
-          why: "Almanca `Sei nicht zu spät!` → `Be not late` aktarımı. İngilizcede olumsuz emir her fiilde `Don't` ile başlar, `be` dahil.",
+          why: "Almanca `Sei nicht zu spät!` → `Be not late` aktarımı. İngilizcede olumsuz emir her fiilde `Don't` ile başlar, `be` dâhil.",
         },
       },
     },

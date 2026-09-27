@@ -647,7 +647,7 @@ Do the level test:       {{10}}`,
               text: "Gap 9",
               accept: ["400", "four hundred"],
               explain:
-                "Kurs ücreti «four hundred pounds» ve kitaplar dahil değil. Otuz pound kitapların ayrı bedeli; not kâğıdı kitapsız fiyatı istiyor.",
+                "Kurs ücreti «four hundred pounds» ve kitaplar dâhil değil. Otuz pound kitapların ayrı bedeli; not kâğıdı kitapsız fiyatı istiyor.",
             },
             {
               kind: "gap",

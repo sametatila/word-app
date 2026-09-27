@@ -37,7 +37,7 @@ export const enA2U16: SkillExercise[] = [
     unit: 16,
     title: "Booking a room",
     genre: "phone",
-    intro: "Telefonda oda ayırtılıyor. Fiyata ne dahil, ne değil?",
+    intro: "Telefonda oda ayırtılıyor. Fiyata ne dâhil, ne değil?",
     gloss: [
       { de: "parking", tr: "otopark" },
       { de: "promise", tr: "söz vermek" },
@@ -367,7 +367,7 @@ export const enA2U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Rezervasyon kartını doldur.",
-        facts: "Çift kişilik oda; iki gece; dört mayıstan; kahvaltı dahil; toplam yüz kırk euro.",
+        facts: "Çift kişilik oda; iki gece; dört mayıstan; kahvaltı dâhil; toplam yüz kırk euro.",
         fields: [
           { label: "Room", answer: "a double room", accept: ["double"] },
           { label: "Nights", answer: "two", accept: ["2"] },

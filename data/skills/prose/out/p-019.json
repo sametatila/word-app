@@ -420,7 +420,7 @@
   "en": "False. He says \"I can speak a little English, but I can't speak French\"; he does not speak French."
  },
  {
-  "tr": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dahil.",
+  "tr": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil.",
   "kind": "explain",
   "en": "False. The text says \"Total price: £240 (breakfast included)\", so breakfast is in the price."
  },

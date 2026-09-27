@@ -98,7 +98,7 @@ export const EN_A2_07: MockPaper = {
               options: ["Plates and glasses", "The first four hours", "The music"],
               answer: 0,
               explain:
-                "Duyurunun son cümlesi bunu söylüyor: «We do not have plates or glasses; bring your own». Dört saat altmış euroya dahil; müzik ise saatle sınırlı ama ücretle ilgili değil.",
+                "Duyurunun son cümlesi bunu söylüyor: «We do not have plates or glasses; bring your own». Dört saat altmış euroya dâhil; müzik ise saatle sınırlı ama ücretle ilgili değil.",
             },
             {
               kind: "mcq",

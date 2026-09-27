@@ -118,7 +118,7 @@ export const deB2P20: SkillExercise[] = [
     intro: "Radyo söyleşisi: iki yıl önce bahşişi kaldırıp fiyatları artıran bir lokanta sahibi neden bunu yaptığını ve kimin kazanıp kimin kaybettiğini anlatıyor.",
     gloss: [
       { de: "großzügig", tr: "cömert", en: "generous" },
-      { de: "enthalten", tr: "dahil", en: "included" },
+      { de: "enthalten", tr: "dâhil", en: "included" },
       { de: "die Weiterbildung", tr: "mesleki eğitim", en: "further training" },
       { de: "einverstanden", tr: "razı", en: "in agreement" },
       { de: "das Personal", tr: "personel", en: "staff" },

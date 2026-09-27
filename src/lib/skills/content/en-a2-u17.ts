@@ -96,7 +96,7 @@ export const enA2U17: SkillExercise[] = [
     unit: 17,
     title: "Renting a car",
     genre: "dialogue",
-    intro: "Araba kiralama. Yakıt dahil mi, sınır kaç?",
+    intro: "Araba kiralama. Yakıt dâhil mi, sınır kaç?",
     gloss: [
       { de: "full", tr: "dolu" },
       { de: "fill", tr: "doldurmak" },
@@ -373,7 +373,7 @@ export const enA2U17: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kiralama kartını doldur.",
-        facts: "Küçük araba; üç gün; doksan euro; yakıt dahil değil; iade cuma altıda.",
+        facts: "Küçük araba; üç gün; doksan euro; yakıt dâhil değil; iade cuma altıda.",
         fields: [
           { label: "Car", answer: "a small car", accept: ["small"] },
           { label: "Days", answer: "three", accept: ["3"] },

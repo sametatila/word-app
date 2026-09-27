@@ -151,7 +151,7 @@ export const deB1P4: SkillExercise[] = [
         text: "Wie lange dauert die Spende selbst?",
         options: ["acht bis zehn Minuten", "eine ganze Stunde", "eine halbe Stunde"],
         answer: 0,
-        explain: "„Die Spende selbst dauert acht bis zehn Minuten“ — bir saat ise her şey dahil süre.",
+        explain: "„Die Spende selbst dauert acht bis zehn Minuten“ — bir saat ise her şey dâhil süre.",
       },
       {
         kind: "truefalse",

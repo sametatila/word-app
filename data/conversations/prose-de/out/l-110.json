@@ -64,7 +64,7 @@
  { "tr": "dosyalamayı bir işleme çevirir", "kind": "pattern.tr", "de": "macht aus der Ablage einen Vorgang" },
  { "tr": "bir tarihe kadar kapanmış olanı söyler", "kind": "pattern.tr", "de": "nennt das bis dahin Abgeschlossene" },
  { "tr": "statü", "kind": "vocab.tr", "de": "Status" },
- { "tr": "derhal", "kind": "vocab.tr", "de": "umgehend" },
+ { "tr": "derhâl", "kind": "vocab.tr", "de": "umgehend" },
  { "tr": "şablon", "kind": "vocab.tr", "de": "Vorlage" },
  { "tr": "çabucak", "kind": "vocab.tr", "de": "rasch" },
  { "tr": "ücretli", "kind": "vocab.tr", "de": "kostenpflichtig" },

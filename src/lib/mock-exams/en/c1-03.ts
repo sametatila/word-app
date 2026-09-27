@@ -1017,7 +1017,7 @@ The council has eleven inspectors and needs {{14}}.`,
               options: ["It supports her position clearly", "It is too thin to settle the question", "It has been suppressed by two authorities", "It contradicts everything the panel has said"],
               answer: 1,
               explain:
-                "Karin kanıtın azlığını kabul ediyor: «Very little, and I would rather say so than pretend … That is not enough to conclude anything», üstelik kendisi dahil herkesin kendi lehine bir açıklaması olduğunu ekliyor.",
+                "Karin kanıtın azlığını kabul ediyor: «Very little, and I would rather say so than pretend … That is not enough to conclude anything», üstelik kendisi dâhil herkesin kendi lehine bir açıklaması olduğunu ekliyor.",
             },
             {
               kind: "mcq",

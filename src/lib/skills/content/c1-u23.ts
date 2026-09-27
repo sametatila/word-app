@@ -469,7 +469,7 @@ export const c1U23: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "Wir haben umgehend Maßnahmen ergriffen.", tr: "derhal önlem aldık", en: "we have taken immediate measures" },
+          { de: "Wir haben umgehend Maßnahmen ergriffen.", tr: "derhâl önlem aldık", en: "we have taken immediate measures" },
           { de: "Es handelt sich um eine Zwischenlösung.", tr: "bu bir ara çözümdür", en: "this is an interim solution" },
           { de: "Wir informieren Sie erneut um 16:00 Uhr.", tr: "saat 16.00'da yeniden bilgilendireceğiz", en: "we will update you again at 4:00 p.m." },
         ],

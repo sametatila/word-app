@@ -405,7 +405,7 @@ We will come back next year {{24}} the weather is good.`,
               text: "Gap 22",
               accept: ["in"],
               explain:
-                "`included in the price` sabit bir eşdizim. `included with` ya da `included at` doğal değildir; kahvaltının fiyata dahil olduğunu söylemenin kalıbı budur.",
+                "`included in the price` sabit bir eşdizim. `included with` ya da `included at` doğal değildir; kahvaltının fiyata dâhil olduğunu söylemenin kalıbı budur.",
             },
             {
               kind: "gap",

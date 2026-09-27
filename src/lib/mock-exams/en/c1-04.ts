@@ -1019,7 +1019,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               options: ["It supports her position clearly", "It is too thin to settle the question", "It has been withheld by two services", "It contradicts everything the panel has said"],
               answer: 1,
               explain:
-                "Yuki kanıtın azlığını kabul ediyor: «Very little, and I would rather say so than pretend … That is not enough to conclude anything», üstelik kendisi dahil herkesin kendi lehine bir açıklaması olduğunu ekliyor.",
+                "Yuki kanıtın azlığını kabul ediyor: «Very little, and I would rather say so than pretend … That is not enough to conclude anything», üstelik kendisi dâhil herkesin kendi lehine bir açıklaması olduğunu ekliyor.",
             },
             {
               kind: "mcq",

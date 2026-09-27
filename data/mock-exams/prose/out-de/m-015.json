@@ -7,7 +7,7 @@
  { "tr": "Anahtarın nerede olduğunu ya da sana nasıl ulaşabileceğini söyle.", "kind": "rubric.points.tr", "en": "Sag, wo der Schlüssel ist oder wie sie dich erreichen kann." },
  { "tr": "Birinin neden işe yaradığını, ötekinin neden yaramadığını açıkla.", "kind": "rubric.points.tr", "en": "Erkläre, warum das eine funktioniert hat und das andere nicht." },
  { "tr": "Wren'in ne getirmesi gerektiğini, ya da hiçbir şey getirmemesini söyle.", "kind": "rubric.points.tr", "en": "Sag, was Wren mitbringen soll oder dass sie nichts mitbringen muss." },
- { "tr": "Tam denetimin neyi ortaya çıkaracağını, istenmeyen sonuçlar dahil, değerlendir.", "kind": "rubric.points.tr", "en": "Bewerte, was eine vollständige Prüfung ans Licht bringen würde, unerwünschte Folgen eingeschlossen." },
+ { "tr": "Tam denetimin neyi ortaya çıkaracağını, istenmeyen sonuçlar dâhil, değerlendir.", "kind": "rubric.points.tr", "en": "Bewerte, was eine vollständige Prüfung ans Licht bringen würde, unerwünschte Folgen eingeschlossen." },
  { "tr": "Radyoda bir dinleyici konuşuyor.", "kind": "situation", "en": "Im Radio spricht ein Hörer." },
  { "tr": "Radyoda bir uzman dinleyici sorusunu yanıtlıyor.", "kind": "situation", "en": "Im Radio beantwortet ein Experte eine Hörerfrage." },
  { "tr": "Binada asansör için anons yapılıyor.", "kind": "situation", "en": "Im Haus gibt es eine Durchsage zum Aufzug." },

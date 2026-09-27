@@ -140,7 +140,7 @@ export const deA2P14: SkillExercise[] = [
         text: "Für einen Helm muss man extra bezahlen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„Ein Helm kostet zwei Euro extra“; kilit ise her zaman dahil.",
+        explain: "„Ein Helm kostet zwei Euro extra“; kilit ise her zaman dâhil.",
       },
       {
         kind: "gapfill",

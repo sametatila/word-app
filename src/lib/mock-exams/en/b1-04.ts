@@ -428,7 +428,7 @@ None of these questions makes a bad impression. An employer who cannot answer th
               options: ["calculated", "added", "included", "kept"],
               answer: 2,
               explain:
-                "`included in the salary` kalıbı bir şeyin ücrete dahil olduğunu söyler. `added` edat olarak `to` ister (`added to the salary`); `calculated` hesaplama işini, `kept` ise saklamayı anlatır ve ikisi de dahil olmayı bildirmez.",
+                "`included in the salary` kalıbı bir şeyin ücrete dâhil olduğunu söyler. `added` edat olarak `to` ister (`added to the salary`); `calculated` hesaplama işini, `kept` ise saklamayı anlatır ve ikisi de dâhil olmayı bildirmez.",
             },
             {
               kind: "mcq",

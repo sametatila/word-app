@@ -134,7 +134,7 @@ export const c1U01: SkillExercise[] = [
       { de: "einreichen", tr: "teslim etmek", en: "to submit" },
       { de: "die Bewilligung", tr: "resmî onay", en: "approval" },
       { de: "in Anspruch nehmen", tr: "yararlanmak / zaman almak", en: "to make use of" },
-      { de: "die Vollmacht", tr: "vekaletname", en: "power of attorney" },
+      { de: "die Vollmacht", tr: "vekâletname", en: "power of attorney" },
       { de: "Rücksicht nehmen", tr: "gözetmek", en: "to show consideration" },
       { de: "relativieren", tr: "görecelileştirmek", en: "to qualify" },
       { de: "verbindlich", tr: "bağlayıcı", en: "binding" },

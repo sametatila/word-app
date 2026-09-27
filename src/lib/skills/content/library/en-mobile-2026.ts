@@ -4957,7 +4957,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dahil."
+        "explain": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil."
       },
       {
         "text": "What must the guests do when they use the hotel parking lot?",
@@ -5561,7 +5561,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "include",
-        "tr": "içermek / dahil olmak"
+        "tr": "içermek / dâhil olmak"
       },
       {
         "de": "check-in",
@@ -5637,7 +5637,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Resepsiyonist \"It's 60 euros a night, and the price includes breakfast\" diyor; kahvaltı fiyata dahil."
+        "explain": "Yanlış. Resepsiyonist \"It's 60 euros a night, and the price includes breakfast\" diyor; kahvaltı fiyata dâhil."
       },
       {
         "text": "How much does parking cost?",

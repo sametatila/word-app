@@ -1369,7 +1369,7 @@ My own view is that the argument conceals a category error. The text, the marker
             minWords: 220,
             points: [
               { de: "Describe the present position precisely.", tr: "Bugünkü durumu kesin biçimde anlat." },
-              { de: "Assess what a full check would produce, including what is unwelcome.", tr: "Tam denetimin neyi ortaya çıkaracağını, istenmeyen sonuçlar dahil, değerlendir." },
+              { de: "Assess what a full check would produce, including what is unwelcome.", tr: "Tam denetimin neyi ortaya çıkaracağını, istenmeyen sonuçlar dâhil, değerlendir." },
               { de: "Recommend a course of action, including what you would not do.", tr: "Bir yol öner; neyi yapmayacağını da söyle." },
             ],
             sample: `Report: the site boundary markers

@@ -133,7 +133,7 @@ export const EN_A2_05: MockPaper = {
               options: ["Anything with alcohol in it", "The coffee at the end of the meal", "Water"],
               answer: 0,
               explain:
-                "İleti önce dahil olanları sayıyor («food, water and coffee»), sonra istisnayı veriyor: «Drinks with alcohol are not in the price». Su ve kahve fiyatın içinde.",
+                "İleti önce dâhil olanları sayıyor («food, water and coffee»), sonra istisnayı veriyor: «Drinks with alcohol are not in the price». Su ve kahve fiyatın içinde.",
             },
           ],
         },

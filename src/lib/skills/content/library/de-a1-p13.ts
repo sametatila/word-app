@@ -130,7 +130,7 @@ export const deA1P13: SkillExercise[] = [
         text: "Das Frühstück kostet extra.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„das Frühstück kostet nichts extra“ — kahvaltı fiyata dahil.",
+        explain: "„das Frühstück kostet nichts extra“ — kahvaltı fiyata dâhil.",
       },
       {
         kind: "gapfill",

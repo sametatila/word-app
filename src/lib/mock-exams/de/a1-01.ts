@@ -299,7 +299,7 @@ zahlen alle nur 3 €.`,
               text: "Sie dürfen im Lesesaal einen Kaffee trinken.",
               answer: false,
               explain:
-                "Levha \"Essen und Trinken bitte nur im Café im Erdgeschoss\" diyor: yeme-içme sadece zemin kattaki kafede. Okuma salonu buna dahil değil. Şişedeki su istisnası kahveyi kapsamıyor.",
+                "Levha \"Essen und Trinken bitte nur im Café im Erdgeschoss\" diyor: yeme-içme sadece zemin kattaki kafede. Okuma salonu buna dâhil değil. Şişedeki su istisnası kahveyi kapsamıyor.",
             },
             {
               kind: "bool",
