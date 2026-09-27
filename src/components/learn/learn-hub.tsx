@@ -87,18 +87,18 @@ export function LearnHub({ data }: { data: LearnHubData }) {
       <Link
         href="/learn/game"
         className="pressable relative mb-5 block overflow-hidden rounded-card glow-tint-lg"
-        style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
+        style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
       >
         {/* Kısa rozetler — kartın sağ üstünde. Bugün ne birikmiş, tek bakışta. */}
         {dueCount > 0 || newLeft > 0 ? (
           <div className="absolute right-3 top-3 z-10 flex gap-1.5">
             {dueCount > 0 ? (
-              <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
+              <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro">
                 <RefreshIcon size={13} /> {t("learn.due_count", { n: dueCount })}
               </span>
             ) : null}
             {newLeft > 0 ? (
-              <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
+              <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro">
                 <BoltIcon size={13} /> {t("learn.new_count", { n: newLeft })}
               </span>
             ) : null}
@@ -108,16 +108,16 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         <div className="flex items-end gap-3 p-5">
           <div className="min-w-0 flex-1">
             <div className="mb-2 flex items-center gap-2">
-              <span className="flex h-11 w-11 items-center justify-center rounded-tile bg-white/20 text-white">
+              <span className="flex h-11 w-11 items-center justify-center rounded-tile bg-white/20">
                 <BoltIcon size={22} />
               </span>
-              <span className="text-micro uppercase tracking-eyebrow text-white/80">{t("learn.daily_round")}</span>
+              <span className="text-micro uppercase tracking-eyebrow opacity-80">{t("learn.daily_round")}</span>
             </div>
-            <p className="text-h1 text-white">{t("learn.practice_your_words")}</p>
-<p className="mt-1 text-body text-white/90">{t("learn.daily_pitch")}</p>
+            <p className="text-h1">{t("learn.practice_your_words")}</p>
+<p className="mt-1 text-body opacity-90">{t("learn.daily_pitch")}</p>
             <span
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-strong"
-              style={{ color: "var(--color-brand)" }}
+              className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-strong"
+              style={{ background: "var(--on-brand)", color: "var(--color-brand)" }}
             >
               {t("common.start")} <ArrowRightIcon size={18} />
             </span>
@@ -141,16 +141,16 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         */}
         {hasToday && dailyGoal > 0 ? (
           <div className="px-5 pb-4">
-            <div className="mb-1.5 flex justify-between text-micro text-white/85">
+            <div className="mb-1.5 flex justify-between text-micro opacity-85">
               <span>{t("learn.daily_goal")}</span>
               <span className="tabular-nums">
                 {reviewsToday}/{dailyGoal}
               </span>
             </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-white/30">
+            <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "color-mix(in srgb, currentColor 30%, transparent)" }}>
               <div
-                className="h-full rounded-full bg-white transition-[width] duration-500"
-                style={{ width: `${Math.max(3, goalPct)}%` }}
+                className="h-full rounded-full transition-[width] duration-500"
+                style={{ width: `${Math.max(3, goalPct)}%`, background: "currentColor" }}
               />
             </div>
           </div>
@@ -181,7 +181,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           (acıyı dindiren). İkisi de kursa/cihaza bağlı; yoksa bölüm hiç yok. */}
       {data.canWalk || data.hasMockExams ? (
         <section className="mb-5 mt-2">
-          <h2 className="muted mb-3 text-h3">{t("learn.featured")}</h2>
+          <h2 className="mb-2 ml-1 text-h3">{t("learn.featured")}</h2>
           <div className="grid grid-cols-2 gap-3">
             {data.canWalk ? (
               <Wedge
@@ -206,7 +206,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
       ) : null}
 
       {/* DİĞER ÖĞRENME YOLLARI */}
-      <h2 className="muted mb-3 text-h3">{t("learn.more")}</h2>
+      <h2 className="mb-2 ml-1 text-h3">{t("learn.more")}</h2>
       {/* MİN DEĞERİ WEB'DE 360, MOBİLDE 380 ve bu bilerek: iki taraf da aynı
           şeyi istiyor (yer varsa iki sütun) ama ölçüyü farklı şeye karşı
           alıyor. Mobilde ölçü CİHAZ genişliği; web'de bu sayfa 48rem'de

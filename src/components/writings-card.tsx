@@ -38,7 +38,9 @@ const KIND_LABEL_KEYS: Record<string, string> = {
  * silme buradan. Bekleyen (kuyruktaki) kayıtlar "puanlanacak" diye görünür.
  * Açınca aynı değerlendirme kartı — geri bildirim dili her yerde aynı.
  */
-export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
+/* `hideHeader`: kendi sayfasında başlık ve alt satır zaten `PageBack`te; kart
+   aynısını ikinci kez yazmasın. */
+export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEmpty?: boolean; hideHeader?: boolean }) {
   const course = useCourse();
   const t = useT();
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
@@ -131,7 +133,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
         title={t("writings.my_writing")}
         text={t("writings.couldn_t_load_writings")}
         action={
-          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-body">
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-primary px-4 py-2 text-body">
             {t("common.try_again")}
           </button>
         }
@@ -141,9 +143,13 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
 
   return (
     <section id="writings" className="card p-5">
-      <h2 className="font-bold">{t("writings.my_writing")}</h2>
-      <p className="muted mt-1 text-caption">{t("writ.sub")}</p>
-      <AiNotice variant="output" className="mt-3" />
+      {hideHeader ? null : (
+        <>
+          <h2 className="text-strong">{t("writings.my_writing")}</h2>
+          <p className="muted mt-1 text-caption">{t("writ.sub")}</p>
+        </>
+      )}
+      <AiNotice variant="output" className={hideHeader ? "" : "mt-3"} />
       {/* Kayıtlar geniş ekranda sütunlara bölünüyor (mobil de öyle yapıyor).
           Sütunlara ayrılan bir listede yatay ayraç çizgisi anlamını yitirdiği
           için her kayıt kendi yüzeyine alındı; dar kapta tek sütun kalıyor. */}

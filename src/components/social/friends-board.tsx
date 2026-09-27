@@ -23,9 +23,10 @@ export function FriendsBoard() {
   const lang = useLang();
   const [board, setBoard] = useState<BoardView | null>(null);
   const [err, setErr] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     social.board().then(setBoard).catch(() => setErr(true));
-  }, []);
+  }, [attempt]);
   if (!board && !err) return <RowSkeleton rows={3} height={48} />;
   /*
    * AĞ HATASI "KİMSE YOK" DEĞİL.
@@ -43,6 +44,18 @@ export function FriendsBoard() {
         tint="var(--color-sky)"
         title={t("leaderboard.couldn_t_load_leaderboard")}
         text={t("social.err_offline")}
+        action={
+          <button
+            type="button"
+            onClick={() => {
+              setErr(false);
+              setAttempt((n) => n + 1);
+            }}
+            className="btn btn-primary px-4 py-2 text-body"
+          >
+            {t("common.try_again")}
+          </button>
+        }
       />
     );
   if (board.rows.length < 2) {
@@ -74,7 +87,7 @@ export function FriendsBoard() {
      */
     <section>
       <div className="mb-2 ml-1 flex items-baseline justify-between">
-        <h2 className="muted text-caption uppercase tracking-eyebrow">{t("friendsboard.among_friends_this_week")}</h2>
+        <h2 className="muted text-micro uppercase tracking-eyebrow">{t("friendsboard.among_friends_this_week")}</h2>
         <span className="muted text-caption">{board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })}</span>
       </div>
       <ol className="space-y-2">

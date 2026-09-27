@@ -57,8 +57,8 @@ export function WordProgress({
   return (
     <div className="space-y-4">
       {/* CEFR seviyeleri */}
-      <section className="card p-5">
-        <h2 className="mb-4 font-bold">{t("progress.by_level")}</h2>
+      <section className="card p-4">
+        <h2 className="mb-4 text-strong">{t("progress.by_level")}</h2>
         <div className="space-y-4">
           {levels.map((l, i) => {
             const pct = l.total ? (l.seen / l.total) * 100 : 0;
@@ -96,8 +96,8 @@ export function WordProgress({
         </p>
       </section>
 
-      <section className="card p-5">
-          <h2 className="mb-3 font-bold">{t("progress.review_queue")}</h2>
+      <section className="card p-4">
+          <h2 className="mb-3 text-strong">{t("progress.review_queue")}</h2>
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
             <div className="text-body">

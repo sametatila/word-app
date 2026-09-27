@@ -36,6 +36,7 @@ export function LeagueBoard() {
      düğmeydi, yani yazılmış bir yol hiç kullanılmıyordu. Android aynı satırda
      basılı tutunca aynı kartı açıyor. */
   const [report, setReport] = useState<LeagueRowView | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     social
@@ -45,7 +46,7 @@ export function LeagueBoard() {
         setResult(v.result);
       })
       .catch(() => setErr(true));
-  }, []);
+  }, [attempt]);
 
   const dismiss = useCallback(() => {
     setResult(null);
@@ -65,6 +66,18 @@ export function LeagueBoard() {
         tint="var(--color-sky)"
         title={t("leaderboard.couldn_t_load_leaderboard")}
         text={t("social.err_offline")}
+        action={
+          <button
+            type="button"
+            onClick={() => {
+              setErr(false);
+              setAttempt((n) => n + 1);
+            }}
+            className="btn btn-primary px-4 py-2 text-body"
+          >
+            {t("common.try_again")}
+          </button>
+        }
       />
     );
   /* İSKELET GERÇEK DÜZENİN ÖLÇÜSÜNDE. Eskiden altı düz blok çiziliyordu ve
@@ -103,7 +116,7 @@ export function LeagueBoard() {
       <section>
         <div className="mb-2 ml-1 flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <h2 className="muted truncate text-caption uppercase tracking-eyebrow">{t(tierKey(view.tier))}</h2>
+            <h2 className="muted truncate text-micro uppercase tracking-eyebrow">{t(tierKey(view.tier))}</h2>
             <p className="muted text-caption">{t("lbw.league_sub")}</p>
           </div>
           <span className="muted shrink-0 text-caption">
@@ -310,7 +323,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
         </p>
         <p className="muted text-caption">{t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp, lang) })}</p>
       </div>
-      <button className="btn btn-primary shrink-0 px-3.5 py-2 text-caption" onClick={onDismiss}>
+      <button type="button" className="btn btn-primary h-9 shrink-0 px-3 text-caption" onClick={onDismiss}>
         {t("league.result_go")}
       </button>
     </section>

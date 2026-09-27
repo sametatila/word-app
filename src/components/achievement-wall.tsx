@@ -146,7 +146,7 @@ export function AchievementWall() {
         title={t("achievements.achievements")}
         text={t("achievements.couldn_t_load_achievements")}
         action={
-          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-body">
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-primary px-4 py-2 text-body">
             {t("common.try_again")}
           </button>
         }
@@ -214,8 +214,8 @@ function Section({ label, rows, lang, t }: { label: string; rows: Row[]; lang: N
   return (
     /* Bolum araligi mobildeki `spacing.lg` (16): webde 20 yazilyydi. */
     <section className="mt-4">
-      {/* Büyük harfe çevirme YEREL: Türkçede "i" → "İ" (bkz. localeOf). */}
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{label.toLocaleUpperCase(localeOf(lang))}</p>
+      {/* Büyük harf CSS'te (`uppercase`); Türkçede "i" → "İ" için `lang` yerel (bkz. localeOf). */}
+      <p lang={localeOf(lang)} className="muted mb-2 ml-1 text-caption uppercase tracking-eyebrow">{label}</p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {rows.map((r) => (
           <AchievementCard key={r.id} row={r} lang={lang} t={t} />
