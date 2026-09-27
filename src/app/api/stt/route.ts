@@ -2,14 +2,11 @@ import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { sameOrigin } from "@/lib/auth/origin";
-import { sttProviders, type SttMode } from "@/lib/chat-providers";
+import { sttProviders } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
 import { canPocketWalk } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
 import { aiConsentGate } from "@/lib/ai-consent";
-import { and, eq } from "drizzle-orm";
-import { db } from "@/lib/db";
-import { mockExamAttempts } from "@/lib/db/schema";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -19,42 +16,22 @@ export const maxDuration = 30;
 
 /** Kabul edilen en büyük klip — bir kelimelik cevap birkaç yüz kilobayt. */
 const MAX_BYTES = 2_000_000;
-/** Kullanıcı başına günlük STT isteği (başarısızlar dâhil); pronounce'ın 120'si bunun içinde sayılır. */
+/** Kullanıcı başına günlük STT isteği (başarısızlar dâhil). */
 const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
 
 /**
- * Konuşmayı yazıya çevirme.
+ * Konuşmayı yazıya çevirme — YALNIZ ekran kapalı yürüyüş (mobil).
  *
- * Yürürken modu bunun için var. Tarayıcının kendi konuşma tanıyıcısı
- * (`SpeechRecognition`) yalnızca sayfa GÖRÜNÜRKEN çalışıyor: telefon
- * kilitlenince susuyor ve mod, asıl vaadi olan "telefon cepte kalabilir"i
- * yerine getiremiyor. `getUserMedia` akışı arka planda yaşıyor; ses
- * tarayıcıda kaydedilip buraya gönderiliyor.
+ * Sunucuya ses yalnız ekran kapalıyken gelir (Samet, 2026-09-27). Ekran
+ * açıkken her yüzey cihazın ya da tarayıcının kendi tanıyıcısını kullanıyor;
+ * web'in telaffuz, deneme sınavı konuşması ve tanıyıcısız tarayıcıdaki yürüyüş
+ * yolları buraya ses gönderiyordu, kaldırıldı. Uç `mode=walk` taşımayan her
+ * isteği 400 ile reddediyor: iki mobil modül (Android `LernomiSpeechModule`,
+ * iOS `LernomiSpeech`) bu alanı her yüklemede gönderiyor.
  *
- * Sağlayıcı zinciri ve muhasebe `lib/stt.ts`'te (WP-20 ile `/api/pronounce`
- * ile ortak). Ses saklanmıyor.
+ * Sağlayıcı zinciri (Azure → Deepgram → Groq) ve muhasebe `lib/stt.ts`'te.
+ * Ses saklanmıyor.
  */
-/**
- * Sunulan kimlik, BU kullanıcının ÇALIŞAN bir deneme sınavı kâğıdı mı.
- *
- * Doğrulama üç şeyi birden arıyor: satır var, sahibi bu kullanıcı, ve durumu
- * `running`. Yalnız kimliğin varlığına bakmak yetmezdi — başkasının ya da
- * bitmiş bir denemenin kimliği de bir dizgedir ve kapıyı açardı.
- */
-async function isRunningMockAttempt(userId: string, id: number): Promise<boolean> {
-  try {
-    const [row] = await db
-      .select({ id: mockExamAttempts.id })
-      .from(mockExamAttempts)
-      .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running")))
-      .limit(1);
-    return Boolean(row);
-  } catch {
-    /* Okunamıyorsa sınav sayılmıyor: karar KAPALI tarafa düşüyor. */
-    return false;
-  }
-}
-
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
@@ -75,22 +52,7 @@ export async function POST(req: Request) {
   let language = "de";
   /** Beklenen cevap — yalnızca kayda geçiyor, karara etki etmiyor. */
   let expected = "";
-  /**
-   * Zincir kipi. Yürürken modunun EKRAN KAPALI yolu `walk` gönderir ve yalnız
-   * o kipte Azure zincire girer (bkz. chat-providers `SttMode`). Ekran
-   * açıkken istemci bu uca hiç gelmiyor; gelse de `walk` demediği sürece
-   * Azure kotası harcanmıyor.
-   */
-  let mode: SttMode = "default";
-  /**
-   * Deneme sınavı bağlamı — YETKİNİN dayanağı.
-   *
-   * Konuşma bölümünde ses sunucuda yazıya çevriliyor ve o yol cepte yürüyüş
-   * değil; ayırt edici şey istemcinin beyanı değil, ÇALIŞAN BİR DENEME
-   * KAĞIDININ kimliği olmalı. Kimlik doğrulanamazsa istek cepte yürüyüş
-   * sayılıyor ve premium kapısına giriyor (aşağıda).
-   */
-  let examId: number | null = null;
+  let walk = false;
   try {
     const form = await req.formData();
     const f = form.get("audio");
@@ -99,56 +61,37 @@ export async function POST(req: Request) {
     if (typeof lang === "string" && /^[a-z]{2}$/.test(lang)) language = lang;
     const want = form.get("expected");
     if (typeof want === "string") expected = want.slice(0, 120);
-    if (form.get("mode") === "walk") mode = "walk";
-    const ex = form.get("exam");
-    if (typeof ex === "string" && /^\d{1,12}$/.test(ex)) examId = Number(ex);
+    walk = form.get("mode") === "walk";
   } catch {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
   /*
-    YETKİ KARARI İSTEMCİNİN BEYANINDAN ÇIKARILDI.
-
-    Eskiden premium kapısı yalnız gövdede `mode=walk` geldiğinde çalışıyordu:
-    alanı göndermeyen bir istemci kapıyı hiç çalıştırmadan sunucu STT'sine
-    ulaşıyordu. Dosyanın kendi ilkesiyle çelişiyordu — "kapı SUNUCUDA çünkü
-    istemcide duran bir kapı kapı değil" — çünkü kapının AÇILIP AÇILMAYACAĞINA
-    istemci karar veriyordu.
-
-    Artık karar bağlamdan: çalışan ve KULLANICIYA AİT bir deneme sınavı
-    kâğıdının kimliği sunulmuşsa sınav yolu, sunulmamışsa cepte yürüyüş.
-    Varsayılan kapalı tarafta; alanı düşürmek artık kapıyı atlatmıyor, kapıya
-    SOKUYOR.
-
-    `mode` yalnız SAĞLAYICI SIRASI için kaldı (ekran açıkken asla Azure);
-    yetkiyle ilgisi yok.
-
-    EKRAN AÇIK YÜRÜYÜŞ BURAYA HİÇ GELMİYOR: o yol cihazın/tarayıcının kendi
-    tanıyıcısını kullanıyor ve bize maliyeti yok — ücretsiz katmanda sınırsız
-    kalabilmesinin sebebi bu. Kilit özelliğin kendisinde değil, faturayı
-    üreten yolda.
+    EKRAN AÇIKKEN SES YOK. `walk` beyanı yetki değil, yol seçimi: taşımayan
+    istek (eski web istemcisi, elle atılmış istek) sunucu tanımasına hiç
+    girmiyor. Taşıyan istek aşağıdaki premium kapısından geçiyor; beyanı
+    eklemek kapıyı atlatmıyor, kapıya sokuyor.
   */
-  const examOk = examId !== null && (await isRunningMockAttempt(userId, examId));
-  if (!examOk) {
-    const gate = await canPocketWalk(userId);
-    if (!gate.allowed) {
-      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
-    }
-    /**
-     * Emniyet tavanı — KELİME başına.
-     *
-     * Premium'un yürüyüş tavanı TUR cinsinden duyuruluyor ve tur
-     * `/api/session?walk=1` isteğinde sayılıyor (`openWalkRound`). Buradaki
-     * kelime tavanı değiştirilmiş bir istemciye karşı ikinci kat: tur başına
-     * kuyruğun (20 kelime, `buildWalk`) iki katı — normal kullanıcı bunu görmez.
-     */
-    const cfg = await premiumConfig();
-    const ceiling = Math.max(cfg.fairUse.walkRoundsPerDay, 1) * 40;
-    if (!(await takeUsage(userId, "pocket_walk_words", "day", ceiling))) {
-      return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
-    }
+  if (!walk) return NextResponse.json({ error: "screen_on_uses_device" }, { status: 400 });
+
+  const gate = await canPocketWalk(userId);
+  if (!gate.allowed) {
+    return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+  }
+  /**
+   * Emniyet tavanı — KELİME başına.
+   *
+   * Premium'un yürüyüş tavanı TUR cinsinden duyuruluyor ve tur
+   * `/api/session?walk=1` isteğinde sayılıyor (`openWalkRound`). Buradaki
+   * kelime tavanı değiştirilmiş bir istemciye karşı ikinci kat: tur başına
+   * kuyruğun (20 kelime, `buildWalk`) iki katı — normal kullanıcı bunu görmez.
+   */
+  const cfg = await premiumConfig();
+  const ceiling = Math.max(cfg.fairUse.walkRoundsPerDay, 1) * 40;
+  if (!(await takeUsage(userId, "pocket_walk_words", "day", ceiling))) {
+    return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
   }
 
-  if (!sttProviders(mode).length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
+  if (!sttProviders().length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
 
@@ -164,7 +107,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "quota" }, { status: 429 });
   }
   try {
-    const out = await transcribe(file, { language, userId, expected, mode });
+    const out = await transcribe(file, { language, userId, expected });
     return NextResponse.json({ text: out.text, confidence: out.confidence, provider: out.provider, model: out.model });
   } catch (err) {
     if (err instanceof SttError) console.error("[api/stt] tüm sağlayıcılar düştü", err.failures.join(" · "));
@@ -176,15 +119,14 @@ export async function POST(req: Request) {
 /**
  * Arayüz, modu kurmadan önce bu ucun açık olup olmadığını soruyor.
  * `walk`: cep yolunun ilk sağlayıcısı — başlangıç ekranı "cepte çalışır"
- * sözünü buna göre veriyor.
+ * sözünü buna göre veriyor. `provider` eski istemciler için aynı değer.
  */
 export async function GET() {
   const providers = sttProviders();
-  const walk = sttProviders("walk");
   return NextResponse.json({
-    configured: providers.length > 0 || walk.length > 0,
+    configured: providers.length > 0,
     provider: providers[0]?.name ?? null,
-    walk: walk[0]?.name ?? null,
+    walk: providers[0]?.name ?? null,
   });
 }
 
