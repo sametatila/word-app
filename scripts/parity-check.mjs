@@ -21813,6 +21813,33 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   sameList("quiz yakinlik kurali", [m && m === w ? "ayni" : "farkli"], ["ayni"]);
 }
 
+/* ── ICERIK GERI BILDIRIMI: uc tarafta ayni sozluk ───────────────────────────
+ * Her ekrandaki "Bildir" (docs/plan/content-feedback.md) sunucu, web ve mobilde
+ * uc ayri listeden besleniyor. Sunucunun kabul etmedigi bir sebep ya da yuzey
+ * 400 doner ve kullanici "gonderilemedi" gorur; sira farki iki platformda
+ * farkli bir liste demek. Karsilastirilan: icerik sebepleri (SIRAYLA),
+ * yuzeyler ve hedef turleri (KUME), bayragin erisilebilirlik etiketi. */
+{
+  const sunucu = read("src/lib/content-feedback.ts");
+  const dizi = (ad) => [...((sunucu.match(new RegExp("export const " + ad + " = \\[([^\\]]*)\\]")) ?? [])[1] ?? "").matchAll(/"(\w+)"/g)].map((m) => m[1]);
+  const webR = read("src/lib/report.ts");
+  const mobR = read("mobile/src/lib/report.ts");
+  const govde = (src, bas) => { const i = src.indexOf(bas); return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i)); };
+  const webSebep = [...govde(webR, "function contentReasons").matchAll(/c\("(\w+)"/g)].map((m) => m[1]);
+  const mobSebep = [...govde(mobR, "function contentReasons").matchAll(/key: "(\w+)"/g)].map((m) => m[1]);
+  const birlik = (src, tip) => { const i = src.indexOf("export type " + tip + " ="); return i < 0 ? [] : [...src.slice(i, src.indexOf(";", i)).matchAll(/"(\w+)"/g)].map((m) => m[1]).sort(); };
+  const sebep = dizi("CONTENT_REASONS");
+  sameList("icerik bildirimi sebepleri (web)", webSebep, sebep, "web", "sunucu");
+  sameList("icerik bildirimi sebepleri (mobil)", mobSebep, sebep, "mobil", "sunucu");
+  sameList("icerik bildirimi yuzeyleri", [...birlik(webR, "ReportSurface"), "|", ...birlik(mobR, "ReportSurface")], [...dizi("SURFACES").sort(), "|", ...dizi("SURFACES").sort()], "web | mobil", "sunucu");
+  sameList("icerik bildirimi hedef turleri (mobil)", birlik(mobR, "ReportTargetType"), dizi("TARGET_TYPES").sort(), "mobil", "sunucu");
+  sameList(
+    "bildir bayragi erisilebilir adli",
+    ["web=" + (/report\.flag_a11y/.test(read("src/components/report-flag.tsx")) ? "var" : "yok"), "mobil=" + (/report\.flag_a11y/.test(read("mobile/src/ui/ReportFlag.tsx")) ? "var" : "yok")],
+    ["web=var", "mobil=var"],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

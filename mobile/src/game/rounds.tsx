@@ -285,6 +285,15 @@ const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
  */
 const KeyboardOpen = React.createContext(false);
 
+/**
+ * Turun cevabı dışarı — içerik bildirimi (`ui/ReportFlag`) anlık görüntüye
+ * doğru cevabı ve öğrencinin cevabını koyabilsin diye. Sonuç katmanı
+ * belirdiğinde bir kez çağrılıyor; turun akışını hiçbir şekilde etkilemiyor.
+ */
+export type RoundAnswerInfo = { correct: boolean; answer: string | null; you: string | null };
+const AnswerSink = React.createContext<((a: RoundAnswerInfo) => void) | null>(null);
+const tokensText = (k?: MarkedToken[] | null) => (k?.length ? k.map((x) => x.text).join(" ") : null);
+
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
   /*
     TUR KAPANIRKEN SES SUSUYOR. "Devam"a basıp bir sonraki tura geçildiğinde
@@ -389,6 +398,12 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
   const btnBg = tone === "bad" ? colors.primary : okFill;
   const btnInk = tone === "bad" ? colors.onPrimary : isDark ? colors.onFill : colors.onPrimary;
   const { height } = useWindowDimensions();
+  const sink = React.useContext(AnswerSink);
+  useEffect(() => {
+    sink?.({ correct: data.correct, answer: data.answer ?? tokensText(data.answerTokens), you: data.you ?? tokensText(data.youTokens) });
+    // Katman her tur bir kez beliriyor; cevap o anki hâliyle.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     /* SONUÇ DUYURULUYOR: renk, ikon ve maskot yalnız görene bir şey söylüyor
        (web `round-sheet` `role="status" aria-live="polite"`). */
@@ -1895,9 +1910,10 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
 
 /** Tur türüne göre doğru oynatıcıyı seçer. Klavye + alt-sabit aksiyon alanı her
  *  turun kendi RoundShell'inde yönetilir (edge-to-edge'de manuel klavye kaldırma). */
-export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
+export function RoundView({ round, onDone, onAnswer }: { round: Round; onDone: Done; onAnswer?: (a: RoundAnswerInfo, round: Round) => void }) {
   const { colors } = useTheme();
-  return pickRound(round, onDone, colors);
+  const sink = React.useCallback((a: RoundAnswerInfo) => onAnswer?.(a, round), [onAnswer, round]);
+  return <AnswerSink.Provider value={sink}>{pickRound(round, onDone, colors)}</AnswerSink.Provider>;
 }
 
 export { INTERACTIVE };

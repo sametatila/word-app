@@ -18,7 +18,10 @@ import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
-import { RoundView } from "../game/rounds";
+import { RoundView, type RoundAnswerInfo } from "../game/rounds";
+import { roundReport } from "../game/roundReport";
+import { ReportFlag } from "../ui/ReportFlag";
+import type { ContentReport } from "../lib/report";
 import { NoHints } from "../game/noHints";
 import { written } from "../game/skillQuiz";
 import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
@@ -109,7 +112,47 @@ type Paper = {
  * her cevap noktasında kaçanı biriktiriyor ve sonuçta doğru cevabıyla
  * birlikte gösteriyor.
  */
-type Miss = { section: SectionId; prompt: string; answer: string; given?: string; why?: string };
+type Miss = { section: SectionId; prompt: string; answer: string; given?: string; why?: string; /** Madde kimliği — sonuçtaki bildirim bayrağı için. */ id?: string };
+
+/** Sınav maddesinin `sub`u: hangi kâğıt (spec: `module:<level>:<n>` ya da `level:<level>`). */
+function examSub(paper: Paper): string {
+  return paper.kind === "module" ? `module:${paper.level}:${paper.module ?? ""}` : `level:${paper.level}`;
+}
+
+/**
+ * Bölümdeki maddenin içerik bildirimi — hedef `exam_item` (madde kimliği).
+ * Kelime turunda anlık görüntü tur paketinden (kelime, şıklar, cevaplar).
+ */
+function examItemReport(paper: Paper, section: SectionId, idx: number, answer: RoundAnswerInfo | null): ContentReport | null {
+  const sub = examSub(paper);
+  const at = <T,>(list: T[]) => list[idx] ?? null;
+  const pack = (id: string, snapshot: Record<string, unknown>): ContentReport => ({ surface: "exam", target: { type: "exam_item", id, sub }, snapshot: { section, ...snapshot } });
+  if (section === "vocab") {
+    const r = at(paper.sections.vocab);
+    return r ? pack(r.id, { ...(roundReport(r, "exam", answer).snapshot as Record<string, unknown>), wordId: r.word?.id }) : null;
+  }
+  if (section === "grammar") {
+    const it = at(paper.sections.grammar);
+    if (!it) return null;
+    return it.kind === "cell"
+      ? pack(it.id, { prompt: `${it.sheet} · ${it.label}`, options: it.options, correct: it.options[it.answer] })
+      : pack(it.id, { prompt: it.statement, correct: it.answer });
+  }
+  if (section === "produce") {
+    const it = at(paper.sections.produce);
+    return it ? pack(it.id, { prompt: it.prompt, correct: it.de, accept: it.accept }) : null;
+  }
+  if (section === "reading" || section === "listening") {
+    const it = at(paper.sections[section]);
+    return it ? pack(it.id, { title: it.title, questions: it.questions.map((q) => ({ q: q.text, options: q.options, correct: q.options[q.answer] })) }) : null;
+  }
+  if (section === "speaking") {
+    const it = at(paper.sections.speaking);
+    return it ? pack(it.id, { prompt: it.situation ?? null, target: it.de, meaning: it.tr }) : null;
+  }
+  const w = paper.sections.writing[0];
+  return w ? pack(w.id, { prompt: w.task.prompt }) : null;
+}
 
 /** Kapak — `GET /api/exam?level=..&module=..` ya da `&kind=level`. */
 type Cover = {
@@ -218,6 +261,9 @@ export function ExamScreen() {
   const [certOpen, setCertOpen] = useState(false);
   const [showMisses, setShowMisses] = useState(false);
   const misses = useRef<Miss[]>([]);
+  /* İçerik bildirimi: bölümde açık olan madde ve kelime turunun son cevapları. */
+  const [itemIdx, setItemIdx] = useState(0);
+  const vocabSeen = useRef(new Map<string, RoundAnswerInfo>());
   const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
@@ -651,7 +697,11 @@ export function ExamScreen() {
             </PressableScale>
             {showMisses ? misses.current.map((m, i) => (
               <View key={i} style={{ gap: spacing.xs, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>
-                <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
+                {/* Bayrak kaçan maddenin başlık satırında — soru ekranındakiyle aynı hedef. */}
+                <View style={{ flexDirection: "row", alignItems: "center", minHeight: 44 }}>
+                  <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
+                  {m.id && paper ? <ReportFlag style={{ marginRight: -spacing.sm }} report={{ surface: "exam", target: { type: "exam_item", id: m.id, sub: examSub(paper) }, snapshot: { section: m.section, prompt: m.prompt, correct: m.answer, you: m.given ?? null } }} /> : null}
+                </View>
                 <Text variant="body">{m.prompt}</Text>
                 <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
                 {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
@@ -739,10 +789,12 @@ export function ExamScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {header}
-      <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <Text variant="micro" color={colors.textMuted}>
+      {/* Bölüm satırı + maddenin bildirim bayrağı (sağda, her maddede aynı yer). */}
+      <View style={{ paddingHorizontal: spacing.lg, flexDirection: "row", alignItems: "center", minHeight: 44 }}>
+        <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>
           {secIdx + 1}/{list.length} · {sectionFace()[active]} · {t(SECTION_KEY[active])}
         </Text>
+        <ReportFlag style={{ marginRight: -spacing.sm }} report={() => examItemReport(paper, active, itemIdx, active === "vocab" ? vocabSeen.current.get(paper.sections.vocab[itemIdx]?.id ?? "") ?? null : null) ?? { surface: "exam", target: { type: "exam_item", id: active, sub: examSub(paper) }, snapshot: { section: active } }} />
       </View>
       <SectionBody
         key={active}
@@ -756,6 +808,8 @@ export function ExamScreen() {
         onTick={(c) => { score.current[active].correct = c; }}
         onVocabAnswer={(a) => vocabAnswers.current.push(a)}
         onDone={(c) => sectionDone(active, c)}
+        onIndex={setItemIdx}
+        onRoundAnswer={(a, r) => vocabSeen.current.set(r.id, a)}
       />
       {quitDialog}
     </View>
@@ -765,7 +819,7 @@ export function ExamScreen() {
 /* ─────────────────────────── bölümler ─────────────────────────── */
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss, onIndex, onRoundAnswer,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
   onDone: (correct: number) => void;
@@ -777,8 +831,12 @@ function SectionBody({
   onTick: (correct: number) => void;
   onSpeakScore: (p: number) => void;
   onWriteScore: (p: number) => void;
+  /** Açık maddenin sırası — üst satırdaki bildirim bayrağı için. */
+  onIndex: (idx: number) => void;
+  onRoundAnswer: (a: RoundAnswerInfo, r: Round) => void;
 }) {
   const [idx, setIdx] = useState(0);
+  useEffect(() => { onIndex(idx); }, [idx, onIndex]);
   const correctRef = useRef(0);
   const pad = { paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md };
 
@@ -800,6 +858,7 @@ function SectionBody({
         <RoundView
           key={r.id}
           round={r}
+          onAnswer={onRoundAnswer}
           onDone={(ok, extra) => {
             /* Sunucunun süzgeci `wordId`, `game` ve `correct` istiyor; ötekiler
                isteğe bağlı. "Bunu zaten biliyorum" (skip) yolunda cevap
@@ -819,7 +878,7 @@ function SectionBody({
                 });
               }
             }
-            if (!ok && !extra?.skip) onMiss({ section: "vocab", prompt: wordPrompt(r), answer: wordAnswer(r) });
+            if (!ok && !extra?.skip) onMiss({ section: "vocab", prompt: wordPrompt(r), answer: wordAnswer(r), id: r.id });
             advance(ok, paper.sections.vocab.length);
           }}
         />
@@ -840,7 +899,7 @@ function SectionBody({
             answerIdx={it.answer}
             colors={colors}
             onPick={(ok, pick) => {
-              if (!ok) onMiss({ section: "grammar", prompt: `${it.sheet} · ${it.label}`, answer: it.options[it.answer], given: it.options[pick] });
+              if (!ok) onMiss({ section: "grammar", prompt: `${it.sheet} · ${it.label}`, answer: it.options[it.answer], given: it.options[pick], id: it.id });
               advance(ok, paper.sections.grammar.length);
             }}
           />
@@ -852,7 +911,7 @@ function SectionBody({
             answerIdx={it.answer ? 0 : 1}
             colors={colors}
             onPick={(ok, pick) => {
-              if (!ok) onMiss({ section: "grammar", prompt: it.statement, answer: t(it.answer ? "common.true" : "common.false"), given: t(pick === 0 ? "common.true" : "common.false") });
+              if (!ok) onMiss({ section: "grammar", prompt: it.statement, answer: t(it.answer ? "common.true" : "common.false"), given: t(pick === 0 ? "common.true" : "common.false"), id: it.id });
               advance(ok, paper.sections.grammar.length);
             }}
           />
@@ -864,7 +923,7 @@ function SectionBody({
   if (id === "produce") {
     const it = paper.sections.produce[idx];
     return <Produce key={it.id} it={it} idx={idx} total={paper.sections.produce.length} colors={colors} pad={pad} onDone={(ok, given) => {
-      if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given });
+      if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given, id: it.id });
       advance(ok, paper.sections.produce.length);
     }} />;
   }
@@ -872,7 +931,7 @@ function SectionBody({
   if (id === "reading" || id === "listening") {
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
-      onMiss={(q, given) => onMiss({ section: id, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given })}
+      onMiss={(q, given) => onMiss({ section: id, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given, id: items[idx].id })}
       onDone={(c) => { correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
   }
 
@@ -880,7 +939,7 @@ function SectionBody({
     const it = paper.sections.speaking[idx];
     return <Speak key={it.id} it={it} colors={colors} pad={pad}
       onDone={(ok, score) => {
-        if (!ok) onMiss({ section: "speaking", prompt: it.situation ?? t("exam.pronunciation"), answer: it.de });
+        if (!ok) onMiss({ section: "speaking", prompt: it.situation ?? t("exam.pronunciation"), answer: it.de, id: it.id });
         onSpeakScore(score);
         advance(ok, paper.sections.speaking.length);
       }} />;

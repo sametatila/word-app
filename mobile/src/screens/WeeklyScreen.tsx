@@ -7,6 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ExamIcon, LockIcon, CalendarIcon, AlertIcon, CheckIcon, SpeakerIcon } from "../ui/icons";
+import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
 import { fetchQuiz, submitQuiz, type Quiz, type QuizBlock, type QuizClientItem, type QuizScore, type QuizStimulus } from "../game/weekly";
 import { ApiError } from "../api/client";
@@ -182,7 +183,8 @@ export function WeeklyScreen() {
     const item = quiz.items[idx];
     const stim = item.ref ? quiz.stimuli.find((s) => s.id === item.ref) : null;
     return (
-      <FlowScreen top={<FlowProgress onClose={close} value={(idx + 1) / quiz.items.length} count={`${idx + 1}/${quiz.items.length}`} />}>
+      <FlowScreen top={<FlowProgress onClose={close} value={(idx + 1) / quiz.items.length} count={`${idx + 1}/${quiz.items.length}`}
+        flag={<ReportFlag report={() => ({ surface: "quiz", target: { type: "quiz_item", id: item.id }, snapshot: { quiz: quiz.id, block: item.block, stem: item.stem, options: item.options, stimulus: item.ref ?? null } })} />} />}>
         {/* Blok adı oyun turundaki oyun adının yerinde: çubuğun altında, ortada. */}
         <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", textTransform: "uppercase", letterSpacing: 1 }}>{t(BLOCK_KEY[item.block])}</Text>
         {stim ? <Stim stim={stim} colors={colors} /> : null}
@@ -262,7 +264,11 @@ export function WeeklyScreen() {
             <View style={{ gap: spacing.md }}>
               {wrong.map((w) => (
                 <View key={w.itemId} style={{ gap: spacing.xs }}>
-                  <Text variant="micro" color={colors.textMuted}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
+                  {/* Bayrak maddenin başlık satırında — oynarken çubuktakiyle aynı hedef. */}
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
+                    <ReportFlag style={{ marginVertical: -12, marginRight: -12 }} report={() => ({ surface: "quiz", target: { type: "quiz_item", id: w.itemId }, snapshot: (() => { const q = quiz?.items.find((x) => x.id === w.itemId); return { block: w.block, stem: q?.stem ?? null, options: q?.options, correct: q?.options[w.answer] ?? w.answer, you: w.chosen == null ? null : q?.options[w.chosen] ?? w.chosen, why: w.why }; })() })} />
+                  </View>
                   <Text variant="body">{w.why}</Text>
                 </View>
               ))}

@@ -11,6 +11,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { ReportSheet } from "../ui/ReportSheet";
+import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
@@ -884,6 +885,19 @@ export function ConversationScreen() {
               </Text>
             )}
           </PressableScale>
+        ) : null}
+        {/* İÇERİK BİLDİRİMİ (senaryo, anlatım adımı). Yapay zekâ yanıtlarının
+            kendi "Bildir"i baloncuğun altında kalıyor; bu bayrak konuşmanın
+            yazılı içeriği için. `sub`: anlatımda adım sırası, sohbette tur. */}
+        {phase !== "summary" && !convLocked && resumeChecked && !resumeOffer ? (
+          <ReportFlag
+            style={{ marginLeft: -spacing.sm, marginRight: -spacing.sm }}
+            report={() => ({
+              surface: "conversation",
+              target: { type: "conversation", id: conversation.id, sub: phase === "lecture" ? `step:${cursor + 1}` : String(roleTurns) },
+              snapshot: phase === "lecture" && current ? { phase, step: current } : { phase, turns: roleTurns, scripted: !!offline, last: feed.slice(-2).map((b) => ("text" in b && b.text) || ("segments" in b && b.segments ? b.segments.map((g) => g.text).join(" ") : "")) },
+            })}
+          />
         ) : null}
       </View>
       {/* Sohbet boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir

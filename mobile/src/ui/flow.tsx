@@ -112,7 +112,7 @@ export function FlowTopBar({ onClose, back = false, title, right, closeLabel }: 
  * `value`: 0..1. `count`: sağdaki sayaç ("3/10") ya da kendi düğümü (süre).
  * `extra`: çubukla sayaç arasında küçük rozetler (kombo, yeni/tekrar çipi).
  */
-export function FlowProgress({ onClose, back = false, closeLabel, value, count, tint, extra, style }: {
+export function FlowProgress({ onClose, back = false, closeLabel, value, count, tint, extra, flag, style }: {
   onClose?: () => void;
   back?: boolean;
   closeLabel?: string;
@@ -120,6 +120,8 @@ export function FlowProgress({ onClose, back = false, closeLabel, value, count, 
   count?: React.ReactNode;
   tint?: string;
   extra?: React.ReactNode;
+  /** İçerik bildirim bayrağı (`ui/ReportFlag`) — satırın en sağında, her soru ekranında aynı yer. */
+  flag?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
 }) {
   const { colors } = useTheme();
@@ -136,6 +138,9 @@ export function FlowProgress({ onClose, back = false, closeLabel, value, count, 
       </View>
       {extra}
       {typeof count === "string" ? <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{count}</Text> : count}
+      {/* Bayrak 44pt dokunma alanıyla geliyor; satırın aralığını yarıya indiren
+          negatif pay onu sayaca yapıştırmadan sağ kenara oturtuyor. */}
+      {flag ? <View style={{ marginLeft: -spacing.sm, marginRight: -spacing.sm }}>{flag}</View> : null}
     </View>
   );
 }

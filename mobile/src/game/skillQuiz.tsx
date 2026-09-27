@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { todayStr } from "./session";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput } from "react-native";
@@ -25,6 +25,38 @@ import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learnin
 import { accountRequiredError, isAccountRequired } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
+import { ReportFlag } from "../ui/ReportFlag";
+import type { ReportSurface } from "../lib/report";
+
+/**
+ * Soruların içerik bildirimi — hangi alıştırma, hangi yüzey. Sağlayan ekran
+ * (beceri alıştırması, Patika quiz'i) sarıyor; sağlanmazsa bayrak çizilmiyor.
+ * Hedef `exercise` + `sub` = soru sırası (1'den), spec `content-feedback`.
+ */
+export const SkillReportContext = React.createContext<{ surface: ReportSurface; id: string } | null>(null);
+
+/**
+ * Soru/görev başlığı: sıra + metin, sağda bildirim bayrağı. Bayrak 44pt
+ * dokunma alanıyla geliyor; negatif pay satırın boyunu büyütmüyor.
+ */
+export function QuestionHead({ n, text, snapshot, colors, style }: { n: number; text: string; snapshot: () => Record<string, unknown>; colors: Palette; style?: object }) {
+  const ctx = useContext(SkillReportContext);
+  const title = (
+    <Text variant="bodyStrong" style={ctx ? { flex: 1 } : style}>
+      <Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{text}
+    </Text>
+  );
+  if (!ctx) return title;
+  return (
+    <View style={[{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }, style]}>
+      {title}
+      <ReportFlag
+        style={{ marginTop: -12, marginBottom: -12, marginRight: -12 }}
+        report={() => ({ surface: ctx.surface, target: { type: "exercise", id: ctx.id, sub: String(n) }, snapshot: { q: text, ...snapshot() } })}
+      />
+    </View>
+  );
+}
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -99,9 +131,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
         const ok = results[qi] === true;
         return (
           <Card key={qi} padded>
-            <Text variant="bodyStrong">
-              <Text variant="bodyStrong" color={colors.textMuted}>{qi + 1}. </Text>{q.text}
-            </Text>
+            <QuestionHead n={qi + 1} text={q.text} colors={colors} snapshot={() => ({ kind, options: q.options, correct: kind === "order" ? q.items : q.options?.[q.answer] ?? q.accept?.[0] ?? null, accept: q.accept, result: results[qi] })} />
             {kind === "order" ? (
               <OrderInput q={q} done={done} onSettle={(o) => settle(qi, o)} colors={colors} />
             ) : kind === "gapfill" || kind === "short_answer" || kind === "dictation" ? (
@@ -332,7 +362,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
   return (
     <Card padded>
       <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("writp.build_sentence")}</Text>
-      <Text variant="bodyStrong" style={{ marginTop: spacing.xs }}><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
+      <QuestionHead n={n} text={t.tr} colors={colors} style={{ marginTop: spacing.xs }} snapshot={() => ({ kind: "build", correct: t.answer, alternatives: t.alternatives, done })} />
       {fails > 0 && t.hint && phase === "editing" ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.hint")}: {t.hint}</Text>
       ) : null}
@@ -410,7 +440,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
   }
   return (
     <Card padded>
-      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
+      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "rewrite", source: t.source, correct: t.answer, alternatives: t.alternatives, done })} />
       <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
         <Text variant="body" color={colors.text}>{t.source}</Text>
       </View>
@@ -452,7 +482,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
   const filled = vals.every((v) => v.trim());
   return (
     <Card padded>
-      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
+      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "form", facts: t.facts ?? null, fields: t.fields.map((f) => ({ label: f.label, correct: f.answer })), done })} />
       {t.facts ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.text}>{t.facts}</Text>
@@ -595,7 +625,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
     <Card padded>
-      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
+      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "free", stimulus: t.stimulus ?? null, checklist: t.checklist, sample: t.sample })} />
       {t.stimulus ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.text}>{t.stimulus}</Text>

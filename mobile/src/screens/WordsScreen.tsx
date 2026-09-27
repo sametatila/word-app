@@ -11,6 +11,7 @@ import { Chip } from "../ui/Chip";
 import { AlertIcon, CardsIcon } from "../ui/icons";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { SpeakButton } from "../ui/SpeakButton";
+import { ReportFlag } from "../ui/ReportFlag";
 import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -266,8 +267,13 @@ export function WordsScreen() {
                   çevirisiyle gösteriyor; mobilde hiçbir yerde yoktu - kelime
                   listesi kelimeyi cümle içinde bir kez bile göstermiyordu. */}
               {isOpen ? (
-                <View style={{ borderTopWidth: 1, borderTopColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-                  <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
+                /* Kelimenin bildirim bayrağı açılan ayrıntıda: satırın kendisi
+                    (hoparlör, seviye, durum) dar ekranda zaten dolu. */
+                <View style={{ flexDirection: "row", alignItems: "flex-start", borderTopWidth: 1, borderTopColor: colors.hairline, paddingLeft: spacing.lg, paddingRight: spacing.xs, paddingVertical: 10 }}>
+                  <View style={{ flex: 1, paddingTop: 2 }}>
+                    <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
+                  </View>
+                  <ReportFlag style={{ marginVertical: -spacing.xs }} report={{ surface: "words", target: { type: "word", id: String(w.id) }, snapshot: { word: say, meaning: gloss.text, meaningSub: gloss.sub ?? null, grammar: grammarLine(w, w.tr), level: w.niveau, example: w.beispiel ?? null, exampleTr: w.beispielTr ?? null, exampleEn: w.beispielEn ?? null } }} />
                 </View>
               ) : null}
             </View>

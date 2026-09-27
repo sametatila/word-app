@@ -17,7 +17,8 @@ import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, Resu
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
-import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
+import { QuestionList, GlossPanel, WritingList, SkillReportContext, type WritingTask } from "../game/skillQuiz";
+import { ReportFlag } from "../ui/ReportFlag";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/pathProgress";
 import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
@@ -398,6 +399,8 @@ export function ItemScreen() {
   const passed = isMono ? perfect : isSkillDone(pct);
   const backLabel = t(fromSkills ? "item.back_to_skills" : "item.back_to_path");
   const skillKey = SKILL_KEY[exercise.skill];
+  /* İçerik bildirimi: Patika adımı mı, Beceriler kütüphanesi mi (aynı egzersiz biçimi). */
+  const reportAs = { surface: exercise.unit != null ? ("path" as const) : ("skill" as const), id: exercise.id };
 
   /*
     SONUÇ ŞABLONU (ui/flow): band → sayılar → notlar → [monolog geri bildirimi]
@@ -450,7 +453,11 @@ export function ItemScreen() {
             <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>
+        {/* Alıştırmanın bütünü (metin, ses, açıklama) için bayrak; tek tek
+            sorular kendi başlıklarında (`QuestionHead`). */}
+        <ReportFlag style={{ marginRight: -spacing.sm }} report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro } })} />
       </View>
+      <SkillReportContext.Provider value={reportAs}>
 
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>{exercise.intro}</Text>
@@ -493,6 +500,7 @@ export function ItemScreen() {
         {/* Monologda düğmeler geri bildirimin altında, akışın içinde kalıyor. */}
         {finished && isMono ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
       </KeyboardAwareScroll>
+      </SkillReportContext.Provider>
       {/* Öteki sonuçlardaki gibi düğmeler altta sabit (`FlowScreen` düğme alanı ölçüsünde). */}
       {finished && !isMono ? <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>{resultActions}</View> : null}
     </View>

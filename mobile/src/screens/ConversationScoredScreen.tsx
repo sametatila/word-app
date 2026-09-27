@@ -30,6 +30,7 @@ import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { AssessmentCard } from "../ui/AssessmentCard";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
+import { ReportFlag } from "../ui/ReportFlag";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -507,9 +508,15 @@ export function ConversationScoredScreen() {
 
   return (
     <View ref={rootRef} collapsable={false} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.md, paddingHorizontal: spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <Text variant="caption" color={colors.textMuted}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}</Text>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+        <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}</Text>
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
+        {/* İçerik bildirimi: senaryo ve yazılı açılış cümlesi (ilk balon).
+            Model yanıtlarının kendi "Bildir"i balonun altında. */}
+        <ReportFlag
+          style={{ marginVertical: -spacing.sm, marginRight: -spacing.sm }}
+          report={() => ({ surface: "scored", target: { type: "conversation", id: conversation.id, sub: String(userTurns) }, snapshot: { title: conversation.title, opener: turns[0]?.role === "assistant" ? turns[0].content : null } })}
+        />
       </View>
       <AiNotice variant="character" />
       <KeyboardAwareScroll

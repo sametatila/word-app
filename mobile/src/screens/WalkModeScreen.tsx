@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon, PauseIcon } from "../ui/icons";
+import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
@@ -967,6 +968,14 @@ export function WalkModeScreen() {
           onClose={onBackPress}
           closeLabel={tx("walkmode.exit_walk_mode")}
           value={speakStep / Math.max(1, speakTotal)}
+          /* Bildirim bayrağı: sayfa açılırken tur duraklıyor (ses ve mikrofon
+             sayfanın arkasında sürmesin); "Devam et" ile kalınan yerden. */
+          flag={curWord.id > 0 && !greeting && phase !== "paused" && phase !== "stopped" ? (
+            <ReportFlag
+              onOpen={canPause ? pauseWalk : undefined}
+              report={() => ({ surface: "walk", target: { type: "word", id: String(curWord.id), game: "walk" }, snapshot: { word: withArtikel(curWord), meaning: curGloss.text, meaningSub: curGloss.sub ?? null, heard: heard || null, verdict: verdict ?? null } })}
+            />
+          ) : null}
           count={<>
             <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${speakStep}/${speakTotal}`}</Text>
             {/* DURAKLAT — çıkışın (X) karşılığı, aynı ölçüde ve aynı çubukta.

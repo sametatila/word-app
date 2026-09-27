@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { todayStr } from "./session";
 import { View, TextInput } from "react-native";
 import { t, formatPercent } from "../lib/i18n";
@@ -23,6 +23,8 @@ import { spacing, radii, type Palette, ds } from "../theme";
 import type { Gloss } from "../data/skills";
 import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
+import { ReportFlag } from "../ui/ReportFlag";
+import { SkillReportContext } from "./skillQuiz";
 
 /**
  * Beceriler kütüphanesinin (2026-09) mobil oynatıcı parçaları: dil bilgisi
@@ -85,6 +87,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
   const [heard, setHeard] = useState<string>("");
   const [passed, setPassed] = useState(0);
   const [sttOk, setSttOk] = useState<boolean | null>(null);
+  const reportCtx = useContext(SkillReportContext);
   const task = tasks[idx];
   const last = idx + 1 >= tasks.length;
 
@@ -145,6 +148,13 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
           style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
           <SpeakerIcon color={colors.primaryText} size={18} />
         </PressableScale>
+        {/* Cümlenin bildirim bayrağı — hoparlörün yanında, soru başlıklarıyla aynı yer. */}
+        {reportCtx ? (
+          <ReportFlag
+            style={{ marginTop: -4, marginBottom: -4, marginRight: -12 }}
+            report={() => ({ surface: reportCtx.surface, target: { type: "exercise", id: reportCtx.id, sub: String(idx + 1) }, snapshot: { kind: "speak", target: task.de, meaning: task.tr, heard: heard || null, verdict } })}
+          />
+        ) : null}
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{task.tr}</Text>
       {task.hint ? (

@@ -9,6 +9,8 @@ import { Text } from "../ui/Text";
 import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
+import { useRoundReport } from "../game/roundReport";
+import { ReportFlag } from "../ui/ReportFlag";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
@@ -68,6 +70,8 @@ export function BossScreen() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [data, setData] = useState<BossPayload | null>(null);
   const [index, setIndex] = useState(0);
+  /* İçerik bildirimi: patron sınavı yüzeyi, hedef turun kelimesi; `sub` hangi modülün patronu. */
+  const flagReport = useRoundReport("exam", data ? `boss:${data.meta.level}:${data.meta.moduleIndex + 1}` : undefined);
   const [left, setLeft] = useState(0);
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [best, setBest] = useState<number | null>(null);
@@ -333,9 +337,10 @@ export function BossScreen() {
         tint={urgent ? colors.danger : colors.primary}
         style={{ marginBottom: spacing.xl }}
         extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
+        flag={round ? <ReportFlag report={flagReport.reportFor(round)} /> : null}
         count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
       />
-      <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
+      <RoundView key={round?.id ?? index} round={round} onDone={onDone} onAnswer={flagReport.onAnswer} />
       {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
           da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
           akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}

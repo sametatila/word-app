@@ -9,6 +9,8 @@ import { Text } from "../ui/Text";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
+import { useRoundReport } from "../game/roundReport";
+import { ReportFlag } from "../ui/ReportFlag";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
@@ -77,6 +79,8 @@ export function ChallengeScreen() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
+  /* İçerik bildirimi: meydan okuma kelime pratiği sayılıyor. */
+  const flagReport = useRoundReport("practice", "challenge");
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
@@ -381,6 +385,7 @@ export function ChallengeScreen() {
         value={pct / 100}
         tint={urgent ? colors.danger : colors.streak}
         extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
+        flag={round ? <ReportFlag report={flagReport.reportFor(round)} /> : null}
         count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.streakText} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
       />
 
@@ -400,7 +405,7 @@ export function ChallengeScreen() {
         )}
       </View>
 
-      <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
+      <RoundView key={round?.id ?? index} round={round} onDone={onDone} onAnswer={flagReport.onAnswer} />
       {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
           da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
           akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}

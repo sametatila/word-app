@@ -14,6 +14,8 @@ import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
 import { CoachLine } from "../ui/CoachLine";
 import { RoundView } from "../game/rounds";
+import { useRoundReport } from "../game/roundReport";
+import { ReportFlag } from "../ui/ReportFlag";
 import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult, type MissedWord } from "../game/session";
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
@@ -71,6 +73,8 @@ function GameRound() {
   const gameKey = onlyGame ? PRACTICE_GAMES.find((g) => g.game === onlyGame)?.label ?? null : null;
   const gameLabel = gameKey ? t(gameKey) : null;
   const [phase, setPhase] = useState<Phase>("loading");
+  /* İçerik bildirimi: tek oyunluk pratik ayrı yüzey, karışık tur "round". */
+  const flagReport = useRoundReport(onlyGame ? "practice" : "round");
   const [rounds, setRounds] = useState<Round[]>([]);
   /* Oturum meta bilgisi: başlıktaki seviye rozeti bundan besleniyor. */
   const [meta, setMeta] = useState<SessionMeta | null>(null);
@@ -603,13 +607,14 @@ function GameRound() {
         value={idx / rounds.length}
         count={`${idx + 1}/${rounds.length}`}
         style={{ marginBottom: spacing.xl }}
+        flag={playRound ? <ReportFlag report={flagReport.reportFor(playRound)} /> : null}
         extra={<>
           {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
           {newChip}
         </>}
       />
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { game: gameLabel })}</Text>}
-      <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
+      <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} onAnswer={flagReport.onAnswer} />
       <ConfirmDialog
         visible={back.visible}
         title={t("game.quit_round_2")}

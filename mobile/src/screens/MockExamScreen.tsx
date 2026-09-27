@@ -6,6 +6,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
+import { ReportFlag } from "../ui/ReportFlag";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -871,7 +872,14 @@ function ItemView({
   // için gövdeye karışmamalı.
   return (
     <Card padded style={{ marginBottom: spacing.sm }}>
-      <Text variant="bodyStrong">{item.no}. {item.text}</Text>
+      {/* Maddenin bildirim bayrağı başlık satırında (hedef görev + madde no). */}
+      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }}>
+        <Text variant="bodyStrong" style={{ flex: 1 }}>{item.no}. {item.text}</Text>
+        <ReportFlag
+          style={{ marginVertical: -12, marginRight: -12 }}
+          report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(item.no) }, snapshot: { prompt: task.prompt, item: item.text, kind: item.kind, options: item.kind === "mcq" ? item.options : item.kind === "match" ? (task.options ?? []).map((o) => `${o.key}) ${o.label}`) : undefined, you: value ?? null } })}
+        />
+      </View>
       {item.kind === "gap" && item.cue ? (
         <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
       ) : null}
@@ -1361,7 +1369,13 @@ function ResultView({
                         {ok ? <CheckIcon color={colors.successText} size={16} /> : <XIcon color={colors.dangerText} size={16} />}
                       </View>
                       <View style={{ flex: 1 }}>
-                        <Text variant="bodyStrong">{it.no}. {it.text}</Text>
+                        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }}>
+                          <Text variant="bodyStrong" style={{ flex: 1 }}>{it.no}. {it.text}</Text>
+                          <ReportFlag
+                            style={{ marginVertical: -12, marginRight: -12 }}
+                            report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(it.no) }, snapshot: { prompt: task.prompt, item: it.text, kind: it.kind, correct: scored?.expected ?? null, explain: scored?.explain ?? null, you: givenLabel, wasCorrect: ok } })}
+                          />
+                        </View>
                         {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                         {it.kind === "gap" && it.cue ? (
                           <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>

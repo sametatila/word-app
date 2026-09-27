@@ -13,7 +13,7 @@ import { ensureConversations } from "../data/conversations";
 import { waitNativeContent } from "../lib/nativeContent";
 import { unitQuestions } from "../data/authoredUnits";
 import { currentCourseId } from "../lib/courses";
-import { QuestionList } from "../game/skillQuiz";
+import { QuestionList, SkillReportContext } from "../game/skillQuiz";
 import { markItemDone, recordPathItem } from "../game/pathProgress";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii } from "../theme";
@@ -130,7 +130,9 @@ export function QuizScreen() {
             <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
           </View>
         ) : (
-          <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
+          <SkillReportContext.Provider value={{ surface: "path", id: params.itemId }}>
+            <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
+          </SkillReportContext.Provider>
         )}
 
         {finished && total > 0 ? (
