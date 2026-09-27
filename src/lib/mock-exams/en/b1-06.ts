@@ -861,7 +861,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               no: 13,
               ref: "b6",
               text: "What does Tuva admit?",
-              options: ["She did not play in the concert", "She was in the front row", "She is not a beginner any more"],
+              options: ["She did not play in the concert", "She was in the front row", "She is not a beginner anymore"],
               answer: 2,
               explain:
                 "Karşı taraf «Everybody does that at first» deyince Tuva düzeltiyor: «I have been doing it for four years». Yani bu artık acemilikle açıklanamaz.",

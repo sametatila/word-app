@@ -85,7 +85,7 @@
  { "tr": "Özetleyelim. Sırayı kurmak için: first, then,", "kind": "say.tr", "de": "Fassen wir zusammen. Für die Reihenfolge: first, then," },
  { "tr": "Pazartesi demek. Lütfen sen de söyle: Monday.", "kind": "say.tr", "de": "Heißt Montag. Bitte sag du auch: Monday." },
  { "tr": "Peki dosyanın içinde ne var? En sık geçenler:", "kind": "say.tr", "de": "Und was ist in der Mappe? Am häufigsten:" },
- { "tr": "Peki para geri istiyorsan? Para iadesi demek:", "kind": "say.tr", "de": "Und wenn du Geld zurück willst? Rückerstattung heißt:" },
+ { "tr": "Peki para geri istiyorsan? Para iadesi demek:", "kind": "say.tr", "de": "Und wenn du Geld zurückwillst? Rückerstattung heißt:" },
  { "tr": "Sen de kısaltarak söyle, çok daha doğal olur.", "kind": "say.tr", "de": "Sag es auch verkürzt, das klingt viel natürlicher." },
  { "tr": "Sen de kısaltmayı kullan, daha doğal duyulur.", "kind": "say.tr", "de": "Nimm auch die Kurzform, das klingt natürlicher." },
  { "tr": "Sıra sende: 'Meslektaşlarım çok yardımsever.'", "kind": "say.tr", "de": "Du bist dran: „Meine Kollegen sind sehr hilfsbereit.“" },

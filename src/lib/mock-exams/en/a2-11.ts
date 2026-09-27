@@ -199,7 +199,7 @@ Please take the bags home with you; there is no trash can here.`,
               kind: "match",
               id: "en-a2-11-l2-9",
               no: 9,
-              text: "Sora's old dog cannot walk far any more and she has no car.",
+              text: "Sora's old dog cannot walk far anymore and she has no car.",
               answer: "d",
               explain:
                 "İlan iki koşulu birden karşılıyor: «For old animals and for people without a car».",
@@ -563,7 +563,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               no: 3,
               ref: "a3",
               text: "What happens on Thursday?",
-              options: ["The cat comes home", "The tooth comes out", "The food changes for ever"],
+              options: ["The cat comes home", "The tooth comes out", "The food changes forever"],
               answer: 1,
               explain:
                 "Veteriner günü ve işi birlikte veriyor: «It is a tooth. We take it out on Thursday». Yumuşak yemek yalnız on gün.",

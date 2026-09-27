@@ -60,7 +60,7 @@ export const enC1P8: SkillExercise[] = [
       "There is a panel that describes the process in general terms, lists the number of " +
       "claims received and states that three have been resolved. It does not say how, " +
       "or what the museum argued in the two that were refused. " +
-      "Given the candour of everything before it, the omission is loud.\n\n" +
+      "Given the candor of everything before it, the omission is loud.\n\n" +
       "The curator has been quoted as saying that these matters are “subject to ongoing " +
       "legal processes”, which may well be true and is also what every institution says. " +
       "Having admitted so much, the Whitfield could afford to be specific here too. " +

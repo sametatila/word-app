@@ -220,7 +220,7 @@ export const EN_B1_07: MockPaper = {
               title: "Why I stopped after three years",
               body: `I gave three years to a food project and I left in February. People assume I got tired of the work. I did not. The work was the only part that made sense.
 
-What I could not do any more was the deciding. A shelf needed moving from one wall to the other. It took four meetings and eleven weeks. In the end the shelf was moved by two people on a Sunday, when nobody was there to stop them.
+What I could not do anymore was the deciding. A shelf needed moving from one wall to the other. It took four meetings and eleven weeks. In the end the shelf was moved by two people on a Sunday, when nobody was there to stop them.
 
 I am not saying the meetings were stupid, although that is what people expect me to say. Everybody in that room had been treated badly somewhere else, and a meeting is a promise that nobody will be ignored. But a promise like that has a price, and the price was paid in shelves.
 
@@ -248,7 +248,7 @@ I have started again somewhere smaller. There are four of us and there are no me
               ],
               answer: 2,
               explain:
-                "Yazı sebebi adlandırıp örnekliyor: «What I could not do any more was the deciding» ve bir rafın yerinin değişmesi «four meetings and eleven weeks» sürüyor. İş sevilen bölüm: «The work was the only part that made sense».",
+                "Yazı sebebi adlandırıp örnekliyor: «What I could not do anymore was the deciding» ve bir rafın yerinin değişmesi «four meetings and eleven weeks» sürüyor. İş sevilen bölüm: «The work was the only part that made sense».",
             },
             {
               kind: "mcq",
@@ -604,7 +604,7 @@ And if you are sick, tell somebody early. Nothing here depends {{30}} one person
               situation: "Bahçe grubuna kapanışta anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Before you all go: the garden tools are still in the green box, but the key has moved. It is not under the third stone any more. It hangs on a hook inside the shed door." },
+                { text: "Before you all go: the garden tools are still in the green box, but the key has moved. It is not under the third stone anymore. It hangs on a hook inside the shed door." },
               ],
             },
             {
@@ -690,7 +690,7 @@ And if you are sick, tell somebody early. Nothing here depends {{30}} one person
               options: ["A new box for the tools", "Where to find the key", "The time the garden closes"],
               answer: 1,
               explain:
-                "Anons yeri değiştiriyor: «It is not under the third stone any more. It hangs on a hook inside the shed door». Yeşil kutu aynı yerde.",
+                "Anons yeri değiştiriyor: «It is not under the third stone anymore. It hangs on a hook inside the shed door». Yeşil kutu aynı yerde.",
             },
             {
               kind: "mcq",

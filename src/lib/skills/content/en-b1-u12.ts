@@ -59,7 +59,7 @@ export const enB1U12: SkillExercise[] = [
       "I am writing with a request about my account. The reference is in the subject line and on every page of this letter.\n" +
       "Although I wrote twice, I received no reply. The first letter was sent on the third of March and the second on the twenty-first. Both went to this address and neither came back.\n" +
       "The request itself is one sentence: I would like the annual statement for last year, on paper, with a stamp.\n" +
-      "I have called four times. On each call I was told that the statement would be sent within ten working days, and on each call the ten days started again. I am not writing about the statement any more. I am writing because four people said the same thing and none of them wrote it down.\n" +
+      "I have called four times. On each call I was told that the statement would be sent within ten working days, and on each call the ten days started again. I am not writing about the statement anymore. I am writing because four people said the same thing and none of them wrote it down.\n" +
       "A copy of the first letter is attached, with the date on it.\n" +
       "If the statement cannot be issued, I would be grateful for one line saying so. A short no is better than a long silence.\n" +
       "I look forward to your reply at your earliest convenience.\n" +

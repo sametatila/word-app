@@ -122,7 +122,7 @@ export const enB2P19: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "listening",
-    title: "The Right Pet for a Apartment",
+    title: "The Right Pet for an Apartment",
     genre: "interview",
     intro: "Bir radyo söyleşisi: bir veteriner dairede yaşayan biri için hangi hayvanın uygun olduğunu ve nereden başlanacağını anlatıyor.",
     gloss: [

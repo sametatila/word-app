@@ -107,7 +107,7 @@
  { "tr": "r sesini sonraki kelimeye taşıma; Almancada bağlanma yoktur.", "kind": "drill.fix", "en": "Don't carry the r over into the next word; German does not link words." },
  { "tr": "tsch tek ç sesidir; pfl üçlüsünde p, f ve l sırayla duyulur.", "kind": "drill.fix", "en": "tsch is a single ch; in the group pfl the p, the f and the l are heard in turn." },
  { "tr": "-chen ekinden önceki d ayrı okunur: MEET-şın değil, MEET-hın.", "kind": "drill.fix", "en": "The d before the ending -chen is read separately: not MAYT-shin but MAYT-hyen, with the h of huge." },
- { "tr": "Noktasız u kalın okunur ve iki kelime de tanınmaz hâle gelir.", "kind": "drill.fix", "en": "Without the umlaut the u is a back vowel and both words become unrecognisable." },
+ { "tr": "Noktasız u kalın okunur ve iki kelime de tanınmaz hâle gelir.", "kind": "drill.fix", "en": "Without the umlaut the u is a back vowel and both words become unrecognizable." },
  { "tr": "tsch = ç; ts ile karıştırma, dil damağa daha geniş temas eder.", "kind": "drill.fix", "en": "tsch = the ch of church; do not confuse it with ts, the tongue touches the palate more broadly." },
  { "tr": "Karşıtlık iki sıfat arasında; vurgu onlara gider, özneye değil.", "kind": "drill.fix", "en": "The contrast is between the two adjectives; the stress goes to them, not to the subject." },
  { "tr": "Virgülde tam durma; ses biraz askıda kalır ve cümle devam eder.", "kind": "drill.fix", "en": "Do not stop completely at the comma; the voice stays a little in the air and the sentence goes on." },

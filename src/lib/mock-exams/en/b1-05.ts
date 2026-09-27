@@ -723,7 +723,7 @@ It is the second time this year {{30}} the date has moved.`,
               plays: 2,
               segments: [
                 { speaker: "Freja", text: "Are you renting the apartment out this summer?" },
-                { speaker: "Anouk", text: "Not any more." },
+                { speaker: "Anouk", text: "Not anymore." },
                 { speaker: "Freja", text: "Really? It paid for your vacation." },
                 { speaker: "Anouk", text: "It paid for my vacation and it cost me my neighbors. That is not a good exchange." },
               ],

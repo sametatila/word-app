@@ -359,7 +359,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               situation: "İki arkadaş bisiklet turunu planlıyor.",
               plays: 2,
               segments: [
-                { speaker: "Lars", text: "Sollen wir am Samstag radfahren?" },
+                { speaker: "Lars", text: "Sollen wir am Samstag Rad fahren?" },
                 { speaker: "Nina", text: "Am Samstag soll es regnen. Am Sonntag wird es trocken." },
                 { speaker: "Lars", text: "Dann fahren wir einen Tag später." },
               ],

@@ -252,7 +252,7 @@ export const enB1P6: SkillExercise[] = [
           "Secondly, the library is the only place in this part of town where you can sit for an " +
           "hour without buying something. " +
           "Some people say that the internet has replaced all of this and that almost nobody " +
-          "borrows books any more. That may be true for readers like me, who reserve everything " +
+          "borrows books anymore. That may be true for readers like me, who reserve everything " +
           "online, but the internet cannot replace a room. " +
           "Instead of closing it, the council could open the building for shorter hours and " +
           "spend the money it saves on a better app. The service most people never see is " +

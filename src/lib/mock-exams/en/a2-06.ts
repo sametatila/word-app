@@ -224,7 +224,7 @@ The first mistake was clothes. I had a good jacket and terrible shoes, and wet f
 
 The second thing was time. I walked in the evening and it was dark at four, so I moved the walk to my lunch hour. Nobody at work asked where I was.
 
-The hardest month was not January. It was March, when the weather was better and I did not have a reason to feel proud any more.
+The hardest month was not January. It was March, when the weather was better and I did not have a reason to feel proud anymore.
 
 Now I walk in the morning, before work. It is colder, but the street is empty and the day starts before the day starts.`,
               gloss: [
@@ -260,10 +260,10 @@ Now I walk in the morning, before work. It is colder, but the street is empty an
               id: "en-a2-06-l3-13",
               no: 13,
               text: "Why was March difficult?",
-              options: ["She was not proud of it any more", "The weather turned bad again that month", "She had no time at lunch"],
+              options: ["She was not proud of it anymore", "The weather turned bad again that month", "She had no time at lunch"],
               answer: 0,
               explain:
-                "Metin ayı ve sebebi birlikte veriyor: «It was March, when the weather was better and I did not have a reason to feel proud any more». Hava kötüleşmiyor, tersine düzeliyor.",
+                "Metin ayı ve sebebi birlikte veriyor: «It was March, when the weather was better and I did not have a reason to feel proud anymore». Hava kötüleşmiyor, tersine düzeliyor.",
             },
             {
               kind: "mcq",

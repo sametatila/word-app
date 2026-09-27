@@ -262,7 +262,7 @@
  {
   "tr": "Fiyat sorusunda çoğulsa „are“: how much ARE the apples, is değil.",
   "kind": "build.hint",
-  "de": "Geht der Preis um Mehreres, steht „are“: how much ARE the apples, nicht is."
+  "de": "Geht der Preis um mehreres, steht „are“: how much ARE the apples, nicht is."
  },
  {
   "tr": "„sometimes“ cümlenin başına da gelebilir; „always“ ve „never“ gelemez.",

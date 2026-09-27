@@ -48,7 +48,7 @@ export const a2U03: SkillExercise[] = [
       "Hallo Jan,\n\n" +
       "sorry, dass ich erst heute schreibe. Meine Woche war wirklich voll.\n\n" +
       "Am Montag hat unser großes Team-Meeting stattgefunden, und danach hatte ich drei Tage nur Termine. Jeder Arbeitstag ging bis nach sieben. Am Mittwoch habe ich es trotzdem geschafft, die Zahlen für das neue Projekt fertig zu machen.\n\n" +
-      "Die Liste mit den offenen Fragen habe ich noch nicht durchgegangen. Das mache ich am Montag, versprochen. Den Rest hat zum Glück Frau Öztürk übernommen.\n\n" +
+      "Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen. Das mache ich am Montag, versprochen. Den Rest hat zum Glück Frau Öztürk übernommen.\n\n" +
       "Wenigstens war das Wochenende ruhig. Ich habe zwei Tage lang gar nichts gemacht und viel geschlafen.\n\n" +
       "Bis Montag!\nClaudia",
     questions: [
@@ -70,7 +70,7 @@ export const a2U03: SkillExercise[] = [
         text: "Was hat Claudia noch nicht gemacht?",
         options: ["Die Zahlen fertig gemacht", "Die Liste durchgegangen", "Das Meeting vorbereitet"],
         answer: 1,
-        explain: "„Die Liste mit den offenen Fragen habe ich noch nicht durchgegangen.“ Rakamları çarşamba bitirmiş.",
+        explain: "„Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen.“ Rakamları çarşamba bitirmiş.",
       },
       {
         kind: "short_answer",

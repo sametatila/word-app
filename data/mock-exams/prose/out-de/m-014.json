@@ -142,7 +142,7 @@
  { "tr": "Hangi oda türünü tercih ettiğini söyle ve gerekçe ver.", "kind": "rubric.points.tr", "en": "Sag, welche Art von Zimmer du vorziehst, und gib eine Begründung." },
  { "tr": "On iki ay sonra neyin başarısızlık sayılacağını söyle.", "kind": "rubric.points.tr", "en": "Sag, was nach zwölf Monaten als Scheitern gelten würde." },
  { "tr": "Yapabileceğin tek bir somut şeyi gün ve saatiyle öner.", "kind": "rubric.points.tr", "en": "Schlage eine einzige konkrete Sache vor, mit Tag und Uhrzeit." },
- { "tr": "Genel yargıları düz iddia yerine koşullandırarak vermek", "kind": "rubric.points.tr", "en": "Allgemeine Urteile einschränken statt sie glatt zu behaupten" },
+ { "tr": "Genel yargıları düz iddia yerine koşullandırarak vermek", "kind": "rubric.points.tr", "en": "Allgemeine Urteile einschränken, statt sie glatt zu behaupten" },
  { "tr": "Sınırı nereye çekeceğini söyle ve zayıf yanını kabul et", "kind": "rubric.points.tr", "en": "Sag, wo du die Grenze ziehst, und räume eine Schwäche ein" },
  { "tr": "Arkadaşının hangi giysileri getirmesi gerektiğini söyle.", "kind": "rubric.points.tr", "en": "Sag, welche Kleidung dein Freund mitbringen soll." },
  { "tr": "Genel bir şikâyet değil, tek ve açık bir değişiklik iste.", "kind": "rubric.points.tr", "en": "Bitte um eine einzige klare Änderung, statt dich nur allgemein zu beschweren." },

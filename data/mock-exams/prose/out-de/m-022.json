@@ -127,7 +127,7 @@
  { "tr": "İki gün türü de gerçekten karşılaştırıldı mı?", "kind": "rubric.criteria", "en": "Wurden die beiden Arten von Tagen wirklich verglichen?" },
  { "tr": "İstek açıkça söylendi mi? (mektup mu koli mi)", "kind": "rubric.criteria", "en": "Wurde der Wunsch klar genannt? (Brief oder Paket)" },
  { "tr": "Kayıt kibar mı? Suçlayıcı bir dile kaymış mı?", "kind": "rubric.criteria", "en": "Ist das Register höflich? Ist es in eine anklagende Sprache gerutscht?" },
- { "tr": "Kayıt resmî mi? 140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Ist das Register förmlich? Liegt der Text zwischen 140–190 Wörtern?" },
+ { "tr": "Kayıt resmî mi? 140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Ist das Register förmlich? Liegt der Text zwischen 140 und 190 Wörtern?" },
  { "tr": "Kendi davranışındaki değişim kabul edildi mi?", "kind": "rubric.criteria", "en": "Wurde die Veränderung im eigenen Verhalten eingeräumt?" },
  { "tr": "Mevcut uygulama sayı ve tarihle mi anlatıldı?", "kind": "rubric.criteria", "en": "Wurde die heutige Praxis mit Zahl und Datum geschildert?" },
  { "tr": "Öfke değil, çözüm odaklı bir ton kurulmuş mu?", "kind": "rubric.criteria", "en": "Wurde ein lösungsorientierter statt zorniger Ton getroffen?" },

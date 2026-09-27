@@ -70,7 +70,7 @@ jemand hat mein Rad am Bahnhof geklaut. Ich komme morgen mit dem Bus.
 
 Der fährt aber nur alle zwanzig Minuten. Kannst du mich um Viertel nach sieben abholen?
 
-Ich weiß, dass du früh raus musst. Wenn es nicht geht, nehme ich den früheren Bus.`,
+Ich weiß, dass du früh rausmusst. Wenn es nicht geht, nehme ich den früheren Bus.`,
             },
             {
               kind: "text",

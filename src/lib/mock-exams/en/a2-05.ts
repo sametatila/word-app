@@ -220,7 +220,7 @@ export const EN_A2_05: MockPaper = {
               title: "I cooked the same meal every Monday",
               body: `Last winter I cooked the same meal every Monday for four weeks. My friends said it was a strange idea. They were wrong about the reason, and here is what happened.
 
-The meal was rice with vegetables and one egg. The first Monday it took me fifty minutes. The fourth Monday it took eighteen, because I did not think any more. My hands knew the order.
+The meal was rice with vegetables and one egg. The first Monday it took me fifty minutes. The fourth Monday it took eighteen, because I did not think anymore. My hands knew the order.
 
 The second thing was money. Four times the same shopping list is cheaper than four different ones, because nothing stays in the fridge and goes bad. I saved about nine euros in the month.
 
@@ -243,7 +243,7 @@ Now I do it with two meals, not one. It is less boring and it still works. My fr
               options: ["She bought better vegetables that week", "She did not have to think about it", "She cooked less food"],
               answer: 1,
               explain:
-                "Metin sebebi veriyor: «because I did not think any more. My hands knew the order». Miktar değişmiyor ve sebzelerin kalitesinden hiç söz edilmiyor.",
+                "Metin sebebi veriyor: «because I did not think anymore. My hands knew the order». Miktar değişmiyor ve sebzelerin kalitesinden hiç söz edilmiyor.",
             },
             {
               kind: "mcq",

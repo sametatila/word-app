@@ -66,7 +66,7 @@
  { "tr": "Kayıp çocuk anonsu.", "kind": "situation", "en": "An announcement about a lost child." },
  { "tr": "Kayıp eşya bulundu.", "kind": "situation", "en": "A lost item has been found." },
  { "tr": "Komşu paketi almış.", "kind": "situation", "en": "A neighbor has taken the package." },
- { "tr": "Pansiyon soruluyor.", "kind": "situation", "en": "Someone enquires about a guest house." },
+ { "tr": "Pansiyon soruluyor.", "kind": "situation", "en": "Someone inquires about a guest house." },
  { "tr": "Sıcak hava uyarısı.", "kind": "situation", "en": "A heat warning." },
  { "tr": "Yönetimden randevu.", "kind": "situation", "en": "An appointment from the management." },
  { "tr": "Başvuruda eksik var.", "kind": "situation", "en": "Something is missing from the application." },

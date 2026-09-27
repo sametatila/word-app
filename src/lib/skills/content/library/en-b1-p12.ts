@@ -332,7 +332,7 @@ export const enB1P12: SkillExercise[] = [
         examples: [
           { de: "When we arrived, the movie started.", tr: "Biz varınca film başladı.", note: "sırayla" },
           { de: "When we arrived, the movie had started.", tr: "Vardığımızda film başlamıştı.", note: "film daha önce" },
-          { de: "I got up, had a shower and left.", tr: "Kalktım, duş aldım ve çıktım.", note: "sıra belli → past simple yeter" },
+          { de: "I got up, took a shower and left.", tr: "Kalktım, duş aldım ve çıktım.", note: "sıra belli → past simple yeter" },
         ],
       },
       {
@@ -410,7 +410,7 @@ export const enB1P12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I got up, had a shower and left.“ — Bu cümle doğru mu?",
+        text: "„I got up, took a shower and left.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Olaylar anlatıldığı sırayla oluyor; past simple yeterli.",

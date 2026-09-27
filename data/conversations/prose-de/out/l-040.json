@@ -64,7 +64,7 @@
  { "tr": "Aynı kalıp şehir için de çalışır:", "kind": "say.tr", "de": "Dieselbe Wendung gilt auch für die Stadt:" },
  { "tr": "Benim komşum demek. Sen de söyle.", "kind": "say.tr", "de": "Heißt mein Nachbar. Sag du auch." },
  { "tr": "Bilet demek. Gişede şöyle dersin:", "kind": "say.tr", "de": "Heißt Karte. Am Schalter sagst du:" },
- { "tr": "Bir şey içmek ister misin. Söyle.", "kind": "say.tr", "de": "Möchtest du etwas trinken. Sag es." },
+ { "tr": "Bir şey içmek ister misin. Söyle.", "kind": "say.tr", "de": "Möchtest du etwas trinken? Sag es." },
  { "tr": "Bittiyse already, bitmediyse yet.", "kind": "say.tr", "de": "Erledigt: already, noch nicht: yet." },
  { "tr": "Bu da doğru, ama günlük konuşmada", "kind": "say.tr", "de": "Das stimmt auch, aber im Alltag ist" },
  { "tr": "Bu senin için. Umarım beğenirsin.", "kind": "say.tr", "de": "Das ist für dich. Ich hoffe, es gefällt dir." },

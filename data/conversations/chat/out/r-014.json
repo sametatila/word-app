@@ -164,14 +164,14 @@
   "conversation": "de-b1-reparieren-lassen",
   "sceneEn": "You have taken your broken device to a repair shop. You explain what happened, ask the price and decide whether repairing it or buying a new one makes more sense.",
   "partnerEn": "an honest repair technician who does not want to lose the job either",
-  "openingEn": "Let me have a look. How long has the device been acting up?",
+  "openingEn": "Let me take a look. How long has the device been acting up?",
   "goalEn": "The fault has been described, the price has been asked and a decision has been made with reasons between repair and replacement."
  },
  {
   "conversation": "de-b1-technik-diskussion",
   "sceneEn": "You and a friend are arguing about how technology has changed your lives: what it has made easier, what it has made harder, where dependence begins.",
   "partnerEn": "a friend who admits being very attached to technology but defends it",
-  "openingEn": "I can't manage without my phone any more — do you actually think that's a bad thing?",
+  "openingEn": "I can't manage without my phone anymore — do you actually think that's a bad thing?",
   "goalEn": "Both sides have been given on at least three points and a personal conclusion has been reached."
  }
 ]

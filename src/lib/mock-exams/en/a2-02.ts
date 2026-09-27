@@ -687,7 +687,7 @@ Bring:                  a warm {{10}}`,
               situation: "Bir mağazada anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A small brown dog is waiting at the information desk. If the dog is yours, please come to the ground floor now." },
+                { text: "A small brown dog is waiting at the information desk. If the dog is yours, please come to the first floor now." },
               ],
             },
             {
@@ -742,10 +742,10 @@ Bring:                  a warm {{10}}`,
               no: 12,
               ref: "c2",
               text: "Why is the announcement made?",
-              options: ["To sell something in the store", "To close the ground floor", "To find the owner of an animal"],
+              options: ["To sell something in the store", "To close the first floor", "To find the owner of an animal"],
               answer: 2,
               explain:
-                "Anons köpeği tarif edip «If the dog is yours, please come to the ground floor» diyor: sahibini arıyor. Zemin kat buluşma yeri, kapatılan bir bölüm değil.",
+                "Anons köpeği tarif edip «If the dog is yours, please come to the first floor» diyor: sahibini arıyor. Zemin kat buluşma yeri, kapatılan bir bölüm değil.",
             },
             {
               kind: "mcq",

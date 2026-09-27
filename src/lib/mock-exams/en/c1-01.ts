@@ -1093,7 +1093,7 @@ The most valuable material has come from the {{14}} visits.`,
                 "Because she has changed her position since publishing it",
                 "Because her view is often reported as opposition to access",
                 "Because the chair has misquoted her in the introduction",
-                "Because she disagrees with the other panellists",
+                "Because she disagrees with the other panelists",
               ],
               answer: 1,
               explain:
@@ -1453,7 +1453,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
               { de: "qualify general claims rather than assert them flatly", tr: "Genel yargıları düz iddia yerine koşullandırarak vermek" },
             ],
             sample:
-              "For years I assumed that a longer training course must be better than a short one. What changed my mind was not an argument but a comparison: two colleagues, one with a two weeks of training and one with three months, made the same mistakes in the same order. On the general question, I would say people are quick to revise on matters where nothing follows from being wrong and extremely slow where something does, which is not really a fact about intelligence. What would make me distrust a source is not a single error but the way it handles one: if a correction appears without an explanation of how the error arose, I read everything else differently.",
+              "For years I assumed that a longer training course must be better than a short one. What changed my mind was not an argument but a comparison: two colleagues, one with two weeks of training and one with three months, made the same mistakes in the same order. On the general question, I would say people are quick to revise on matters where nothing follows from being wrong and extremely slow where something does, which is not really a fact about intelligence. What would make me distrust a source is not a single error but the way it handles one: if a correction appears without an explanation of how the error arose, I read everything else differently.",
             criteria: [
               "Örnek somut mu ve fikir değişiminin sebebi adlandırıldı mı?",
               "Genel yargı koşullandırıldı mı? (I would say … where … and … where …)",

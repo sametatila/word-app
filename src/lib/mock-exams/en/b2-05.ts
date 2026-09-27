@@ -357,7 +357,7 @@ The most likely future is therefore an open one, with different sports drawing t
 
 The visible work is the smallest part. Two training sessions a week and eight meetings a year come to perhaps two hundred hours, which anybody can find. The invisible work is the rest: the forms, the insurance, which is checked by nobody until it matters, and the four hours spent finding out why a bill was wrong. Add the two evenings a month on the telephone to people who had promised something and then not done it.
 
-I kept a record for one year, because a friend asked me to. The total was six hundred and forty hours. At the minimum wage that is about nine thousand pounds of unpaid work, and the club's entire annual income was eleven thousand. Faced with those two numbers side by side, I did nothing for a two weeks. If I had known the figure in the first year, I would have asked for help long before I did.
+I kept a record for one year, because a friend asked me to. The total was six hundred and forty hours. At the minimum wage that is about nine thousand pounds of unpaid work, and the club's entire annual income was eleven thousand. Faced with those two numbers side by side, I did nothing for two weeks. If I had known the figure in the first year, I would have asked for help long before I did.
 
 I should be careful here, because the obvious conclusion is the wrong one. The answer is not that clubs should employ somebody, since almost none of them could afford it. Nor is it that volunteers should stop, which would close half the sport in this country within a season.
 

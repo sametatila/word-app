@@ -1113,7 +1113,7 @@ export const deA1B08: Conversation[] = [
       scene:
         "Bir arkadaşını arayıp bu akşam sinemaya davet ediyorsun. Teklifini yap, hangi filmi izleyeceğinizi konuş ve saati ve buluşma yerini kararlaştır.",
       partner: "her filme varım diyen, hevesli bir arkadaş",
-      opening: "Hey, schön dass du anrufst! Was gibt es?",
+      opening: "Hey, schön, dass du anrufst! Was gibt es?",
       openingTr: "Hey, aradığına sevindim! Ne var ne yok?",
       goal: "Film, saat ve buluşma yeri kesinleşmiş olur.",
       minTurns: 7,

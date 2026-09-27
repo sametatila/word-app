@@ -209,7 +209,7 @@ export const deA2P15: SkillExercise[] = [
         phrases: [
           { de: "Ich war am … mit … im Wald.", tr: "… günü … ile ormandaydım.", en: "I was in the forest with … on …" },
           { de: "Der Baum liegt zwischen … und …", tr: "Ağaç … ile … arasında yatıyor.", en: "The tree is lying between … and …" },
-          { de: "Man kommt nicht mehr vorbei.", tr: "Artık yanından geçilemiyor.", en: "You can't get past any more." },
+          { de: "Man kommt nicht mehr vorbei.", tr: "Artık yanından geçilemiyor.", en: "You can't get past anymore." },
           { de: "Das ist besonders für Kinder gefährlich.", tr: "Bu özellikle çocuklar için tehlikeli.", en: "This is especially dangerous for children." },
           { de: "Könnten Sie bitte bald …?", tr: "Lütfen yakında … yapabilir misiniz?", en: "Could you please … soon?" },
         ],

@@ -1032,7 +1032,7 @@ für eine Arbeit über die Schulen meiner Heimatstadt bitte ich um Einsicht in d
 
 {{1}} handelt es sich um Personalakten aus den Jahren 1935 bis 1945, die nach Ihrer Benutzungsordnung einer Schutzfrist unterliegen.
 
-{{2}} beantrage ich eine Verkürzung dieser Frist. Die betroffenen Personen sind sämtlich verstorben; Die Sterbedaten entnehmen Sie bitte der beigefügten Aufstellung.
+{{2}} beantrage ich eine Verkürzung dieser Frist. Die betroffenen Personen sind sämtlich verstorben; die Sterbedaten entnehmen Sie bitte der beigefügten Aufstellung.
 
 {{3}} übersende ich Ihnen eine Bestätigung meiner Hochschule sowie eine Erklärung zum Umgang mit personenbezogenen Angaben.
 

@@ -633,7 +633,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               situation: "Bir konuşmacı dikkat üstüne konuşuyor.",
               plays: 2,
               segments: [
-                { text: "People tell me they cannot concentrate any more and they blame the phone. I ask them one question: where is it now? Nine times out of ten it is on the table, face down, which they think is the same as away. It is in the room. That is what matters." },
+                { text: "People tell me they cannot concentrate anymore and they blame the phone. I ask them one question: where is it now? Nine times out of ten it is on the table, face down, which they think is the same as away. It is in the room. That is what matters." },
               ],
             },
             {
@@ -775,7 +775,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
                 { speaker: "Woman", text: "And?" },
                 { speaker: "Father", text: "My son says the first week was terrible and the fourth week was normal." },
                 { speaker: "Woman", text: "So it worked." },
-                { speaker: "Father", text: "He also says nobody talks about it any more, which is the part I did not expect." },
+                { speaker: "Father", text: "He also says nobody talks about it anymore, which is the part I did not expect." },
               ],
             },
             {
@@ -852,7 +852,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               options: ["The rule stopped being an issue", "The son is against the rule", "The school will change the rule again"],
               answer: 0,
               explain:
-                "Baba iki ölçüt veriyor: «the fourth week was normal» ve «nobody talks about it any more». Oğlunun karşı çıktığı söylenmiyor.",
+                "Baba iki ölçüt veriyor: «the fourth week was normal» ve «nobody talks about it anymore». Oğlunun karşı çıktığı söylenmiyor.",
             },
             {
               kind: "mcq",

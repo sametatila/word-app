@@ -213,7 +213,7 @@
   "en": "to establish",
   "beispiel": "Im Erdgeschoss will die Stadt Gewerbe und Cafés ansiedeln.",
   "beispielTr": "Şehir, zemin kata dükkânlar ve kafeler yerleştirmek istiyor.",
-  "beispielEn": "The city wants to bring stores and cafes to the ground floor."
+  "beispielEn": "The city wants to bring stores and cafes to the first floor."
  },
  {
   "id": 5930,
@@ -309,7 +309,7 @@
   "en": "fine-grained",
   "beispiel": "Die kleinteilige Erdgeschosszone macht die Straße lebendig.",
   "beispielTr": "Küçük parçalı zemin kat dokusu sokağı canlı kılıyor.",
-  "beispielEn": "The fine-grained ground floor zone makes the street lively."
+  "beispielEn": "The fine-grained street-level zone makes the street lively."
  },
  {
   "id": 5942,

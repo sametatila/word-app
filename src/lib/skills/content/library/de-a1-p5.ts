@@ -21,7 +21,7 @@ export const deA1P5: SkillExercise[] = [
     genre: "guide",
     intro: "Çamaşırhanenin duvarındaki kullanım talimatını okuyacaksın: hangi sırayla ne yapılıyor, ne kadar tutuyor.",
     gloss: [
-      { de: "der Waschsalon", tr: "çamaşırhane", en: "laundrette" },
+      { de: "der Waschsalon", tr: "çamaşırhane", en: "laundromat" },
       { de: "die Wäsche", tr: "çamaşır", en: "laundry" },
       { de: "das Waschmittel", tr: "deterjan", en: "detergent" },
       { de: "das Fach", tr: "göz", en: "compartment" },

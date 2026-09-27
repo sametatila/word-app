@@ -328,7 +328,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "In the evening …", tr: "Akşamları …", en: "In the evening …" },
       ],
       sample:
-        "My day begins at six in the morning. First I get up and I have a shower. Then I have breakfast and I have a tea. At half past seven I walk to the office. Work starts at eight and finishes at five. After that I sometimes visit the library. In the evening I watch television or I read. At midnight I go to bed.",
+        "My day begins at six in the morning. First I get up and I take a shower. Then I have breakfast and I have a tea. At half past seven I walk to the office. Work starts at eight and finishes at five. After that I sometimes visit the library. In the evening I watch television or I read. At midnight I go to bed.",
     },
   },
 

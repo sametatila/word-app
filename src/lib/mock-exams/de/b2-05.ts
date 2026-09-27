@@ -72,7 +72,7 @@ Wer behauptet, das System sei durchlässig, hat recht — es ist durchlässig f�
 
 Diese Nachhilfe kostet uns 180 Euro im Monat. Wir können das tragen, und trotzdem ärgert es mich. Eine Schule, die für ein befriedigendes Zeugnis privaten Zusatzunterricht voraussetzt, hat ihre Aufgabe an die Eltern zurückgegeben.
 
-Man antwortet mir gern, es gebe doch Förderangebote. Es gibt sie: dienstags in der siebten Stunde, freiwillig, geleitet von Lehrkräften, die schon sieben Stunden unterrichtet haben. Meine Tochter war dreimal dort und ist nicht wiedergegangen.
+Man antwortet mir gern, es gebe doch Förderangebote. Es gibt sie: dienstags in der siebten Stunde, freiwillig, geleitet von Lehrkräften, die schon sieben Stunden unterrichtet haben. Meine Tochter war dreimal dort und ist nicht wieder hingegangen.
 
 Ich fordere nichts Großes. Ich fordere, dass die Schule ehrlich sagt, was sie leisten kann. Dann können wir als Eltern entscheiden, statt monatelang zu glauben, es liege an unserem Kind.`,
               gloss: [

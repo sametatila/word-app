@@ -1121,7 +1121,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
               situation: "Altıncı konuşmacı hiçbir bütçede görünmeyen bir maliyeti anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The book appears in our accounts as a fee of six thousand euros. What appears nowhere is that the translator wrote to the author eleven times, read two earlier novels that will never be published here, and spent a two weeks on a glossary that the printer removed. Nobody has ever been asked to put a figure on that." },
+                { text: "The book appears in our accounts as a fee of six thousand euros. What appears nowhere is that the translator wrote to the author eleven times, read two earlier novels that will never be published here, and spent two weeks on a glossary that the printer removed. Nobody has ever been asked to put a figure on that." },
               ],
             },
             {

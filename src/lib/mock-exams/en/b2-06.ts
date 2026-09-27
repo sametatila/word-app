@@ -734,7 +734,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               no: 4,
               ref: "a4",
               text: "What does the speaker say about the question?",
-              options: ["It is too narrow to be useful", "It has a clear answer", "Nobody asks it often enough any more"],
+              options: ["It is too narrow to be useful", "It has a clear answer", "Nobody asks it often enough anymore"],
               answer: 0,
               explain:
                 "Konuşmacı soruyu kapsamı bakımından eleştiriyor: «the question is too small», ve iki farklı daire için iki farklı cevap veriyor. Soru haftada bir soruluyor, yani seyrek değil.",

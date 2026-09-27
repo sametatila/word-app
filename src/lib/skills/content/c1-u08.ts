@@ -242,7 +242,7 @@ export const c1U08: SkillExercise[] = [
       { speaker: "Robert", text: "Klar. Setzen wir uns nach hinten." },
       { speaker: "Ela", text: "Ich bewerbe mich intern. Morgen ist das Gespräch." },
       { speaker: "Robert", text: "Dann drücke ich dir die Daumen." },
-      { speaker: "Ela", text: "Danke. Ehrlich gesagt hätte ich lieber, dass du mir unter die Arme greifst als dass du sie drückst." },
+      { speaker: "Ela", text: "Danke. Ehrlich gesagt hätte ich lieber, dass du mir unter die Arme greifst, als dass du sie drückst." },
       { speaker: "Robert", text: "Verstanden. Was brauchst du?" },
       { speaker: "Ela", text: "Jemanden, der mein Konzept liest und sagt, ob es Hand und Fuß hat." },
       { speaker: "Robert", text: "Schick es mir heute Abend. Zwei Bedingungen: Ich sage dir ehrlich, was schwach ist, und du machst daraus keine Mücke einen Elefanten." },

@@ -362,7 +362,7 @@ The material was the correspondence of a regional office over thirty-one years: 
 
 The objection I hear most often is that I could not know what a historian in 2090 would want. That objection is correct and it is not an argument. Nobody can know. The alternative on offer was not omniscience; it was a different decision, which was to keep everything and catalog none of it. An uncataloged box is not a preserved record. It is a preserved object, and the two are confused constantly by people who have never tried to find anything.
 
-What I did get wrong was the writing. We recorded what we destroyed, in the sense that a line exists giving the series and its extent. We did not record why, and the why is the only part a future reader could have argued with. It would have cost a two weeks.
+What I did get wrong was the writing. We recorded what we destroyed, in the sense that a line exists giving the series and its extent. We did not record why, and the why is the only part a future reader could have argued with. It would have cost two weeks.
 
 I notice that the digital form of this problem is discussed as though it had been solved. It has not. On balance it is the harder version of the problem, not the easier one. Storage is cheap and finding is not, and a system that returns four million results has performed an appraisal without telling anybody its criteria. A committee, at least, can be asked.`,
               gloss: [
@@ -711,7 +711,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
                 { speaker: "Historian", text: "That is fair, although it makes my job sound more forensic than it is. I am reading what survives and I have three years in which to do it." },
                 { speaker: "Archivist", text: "Which is why I do not blame historians for the word. I blame the profession that produced the silence and then published a finding aid reading as though nothing had been touched." },
                 { speaker: "Historian", text: "Would a note have helped?" },
-                { speaker: "Archivist", text: "A note saying what was destroyed and why would have taken a two weeks in 1974, and it would be worth more to you now than the boxes." },
+                { speaker: "Archivist", text: "A note saying what was destroyed and why would have taken two weeks in 1974, and it would be worth more to you now than the boxes." },
               ],
             },
             {

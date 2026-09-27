@@ -1,7 +1,7 @@
 [
  { "id": "B1.RD.4", "de": "Ich kann eine kurze Geschichte oder einen persönlichen Bericht lesen und der Handlung folgen." },
  { "id": "B1.RD.5", "de": "Ich kann in einer Stellenanzeige die Bedingungen und die Schritte der Bewerbung verstehen." },
- { "id": "B1.WR.1", "de": "Ich kann einen Text von 80–120 Wörtern schreiben, in dem ich meine Meinung mit Gründen darlege." },
+ { "id": "B1.WR.1", "de": "Ich kann einen Text von 80 bis 120 Wörtern schreiben, in dem ich meine Meinung mit Gründen darlege." },
  { "id": "B1.WR.2", "de": "Ich kann eine offizielle E-Mail (Bewerbung, Anfrage, Beschwerde) schreiben." },
  { "id": "B1.WR.3", "de": "Ich kann ein Ereignis oder eine Erfahrung in zeitlicher Reihenfolge und mit Konnektoren erzählen." },
  { "id": "B1.WR.4", "de": "Ich kann in einem Forum einen Beitrag schreiben und auf die Meinung eines anderen antworten." },
@@ -28,7 +28,7 @@
  { "id": "B2.RD.3", "de": "Ich kann einen nicht fachlichen Artikel (Wissenschaft, Wirtschaft) mit Hauptgedanken und Belegen verstehen." },
  { "id": "B2.RD.4", "de": "Ich kann den Aufbau eines Essays (These, Begründung, Schluss) analysieren." },
  { "id": "B2.RD.5", "de": "Ich kann Informationen aus verschiedenen Quellen sammeln und vergleichen." },
- { "id": "B2.WR.1", "de": "Ich kann einen Text von 150–200 Wörtern schreiben, der Vor- und Nachteile eines Themas abwägt." },
+ { "id": "B2.WR.1", "de": "Ich kann einen Text von 150 bis 200 Wörtern schreiben, der Vor- und Nachteile eines Themas abwägt." },
  { "id": "B2.WR.2", "de": "Ich kann ein offizielles Beschwerde- oder Bewerbungsschreiben verfassen und begründen." },
  { "id": "B2.WR.3", "de": "Ich kann einen Text zusammenfassen und meine eigene Meinung ergänzen." },
  { "id": "B2.WR.4", "de": "Ich kann in einem Leserbrief oder Forumsbeitrag strukturiert auf eine Meinung antworten." },

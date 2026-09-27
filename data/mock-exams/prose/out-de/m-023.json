@@ -93,7 +93,7 @@
  { "tr": "Fark bir gerekçeyle mi açıklandı, yoksa yalnız anlatıldı mı?", "kind": "rubric.criteria", "en": "Wurde der Unterschied mit einer Begründung erklärt oder nur geschildert?" },
  { "tr": "Karşı tarafın kısıtı (hafta sonu çalışma) çözüme katıldı mı?", "kind": "rubric.criteria", "en": "Wurde die Auflage der Gegenseite (Arbeit am Wochenende) in die Lösung einbezogen?" },
  { "tr": "Kayıt resmî mi? Rapor dili kişisel bir e-postadan farklıdır.", "kind": "rubric.criteria", "en": "Ist das Register förmlich? Die Sprache eines Berichts unterscheidet sich von einer persönlichen E-Mail." },
- { "tr": "Öneri tek ve uygulanabilir mi? 140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Ist der Vorschlag einzeln und umsetzbar? Liegt der Text zwischen 140–190 Wörtern?" },
+ { "tr": "Öneri tek ve uygulanabilir mi? 140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Ist der Vorschlag einzeln und umsetzbar? Liegt der Text zwischen 140 und 190 Wörtern?" },
  { "tr": "Sayılar somut mu, yoksa 'daha iyi oldu' düzeyinde mi kalmış?", "kind": "rubric.criteria", "en": "Sind die Zahlen konkret oder blieb es bei 'es wurde besser'?" },
  { "tr": "Sıklık ifadeleri kullanıldı mı? (most evenings, once a week)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (most evenings, once a week)" },
  { "tr": "Sorular doğru kuruldu mu? (Where is … / What … / How much …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where is … / What … / How much …)" },

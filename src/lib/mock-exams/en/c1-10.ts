@@ -623,7 +623,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
             {
               key: "d",
               label: "d — Historian",
-              body: "I published a paper in 2011 arguing that the line followed a mediaeval parish boundary. I now think that is wrong, and the reason I thought it was the same reason three earlier writers thought it: the alternative explanation is undignified, and nobody wants a frontier that exists because two men did not want to climb a hill twice.",
+              body: "I published a paper in 2011 arguing that the line followed a medieval parish boundary. I now think that is wrong, and the reason I thought it was the same reason three earlier writers thought it: the alternative explanation is undignified, and nobody wants a frontier that exists because two men did not want to climb a hill twice.",
             },
           ],
           items: [
@@ -746,7 +746,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
                 { speaker: "Host", text: "You have written that your own paper was wrong." },
                 { speaker: "Man", text: "It was, and I would like to be precise about the kind of wrong. The evidence I cited exists. The inference does not follow from it, and I made it because the alternative was embarrassing." },
                 { speaker: "Host", text: "Embarrassing to whom?" },
-                { speaker: "Man", text: "To the subject. A frontier that follows a mediaeval parish is a serious object. A frontier that exists because two tired men did not want to walk up a hill a second time is a joke, and it is also what happened." },
+                { speaker: "Man", text: "To the subject. A frontier that follows a medieval parish is a serious object. A frontier that exists because two tired men did not want to walk up a hill a second time is a joke, and it is also what happened." },
                 { speaker: "Host", text: "Has the correction been taken up?" },
                 { speaker: "Man", text: "The 2011 paper is cited about four times a year. The correction has been cited twice in six years, and one of those was by me." },
               ],

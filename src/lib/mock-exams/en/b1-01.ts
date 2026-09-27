@@ -774,7 +774,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               situation: "İki ev arkadaşı bir kural üzerine konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Jo", text: "The washing machine is free every evening now, so we do not need the list any more." },
+                { speaker: "Jo", text: "The washing machine is free every evening now, so we do not need the list anymore." },
                 { speaker: "Sam", text: "I would keep it. In winter everybody washes at the same time and then we argue again." },
               ],
             },

@@ -249,7 +249,7 @@ Their main use is planning. A council that knows where the problem lies can act 
 
 The maps have also changed the public conversation. Residents who were once told that their street was not {{15}} loud can now point to a number.
 
-Critics argue that a map measures volume but not {{16}}: a busy road and a night club produce very different kinds of disturbance at the same level.
+Critics argue that a map measures volume but not {{16}}: a busy road and a nightclub produce very different kinds of disturbance at the same level.
 
 There is broad {{17}} that the maps are useful, and equally broad frustration that they are updated so rarely. In most cities the {{18}} of a new map takes three years, by which time the traffic has changed again.`,
             },
@@ -841,7 +841,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a talk about a city's night-time economy. Complete the sentences, questions 9 to 16, with a word or a short phrase. The talk plays twice.",
+            "You hear a talk about a city's nighttime economy. Complete the sentences, questions 9 to 16, with a word or a short phrase. The talk plays twice.",
           promptTr:
             "Bir şehrin gece ekonomisi üzerine sunum dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da kısa bir öbekle tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -854,7 +854,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. I want to give you the findings of our two-year study of the night-time economy, and I will try to avoid the usual slogans. First, the size: between eight in the evening and six in the morning, this city supports about eleven thousand jobs. That is more than construction. Second, and this is the number that changed our thinking, the largest single group is not bar staff but cleaners. Third, transport. Our surveys found that the biggest complaint is not safety, as everybody assumes, but simply the cost of getting home. A night bus was tried in 2019 and it failed, and it failed for a reason we now understand: it ran only on weekends, when the people who needed it worked mainly on weekdays. The new service runs every night. Fourth, a warning about noise. Complaints rose by forty percent after the pedestrian zone opened, and almost all of them come from one street. Finally, what we are asking the council for is not money but a license officer who works after midnight, because at the moment the rules are written for a city that closes at eleven.",
+                  text: "Good evening. I want to give you the findings of our two-year study of the nighttime economy, and I will try to avoid the usual slogans. First, the size: between eight in the evening and six in the morning, this city supports about eleven thousand jobs. That is more than construction. Second, and this is the number that changed our thinking, the largest single group is not bar staff but cleaners. Third, transport. Our surveys found that the biggest complaint is not safety, as everybody assumes, but simply the cost of getting home. A night bus was tried in 2019 and it failed, and it failed for a reason we now understand: it ran only on weekends, when the people who needed it worked mainly on weekdays. The new service runs every night. Fourth, a warning about noise. Complaints rose by forty percent after the pedestrian zone opened, and almost all of them come from one street. Finally, what we are asking the council for is not money but a license officer who works after midnight, because at the moment the rules are written for a city that closes at eleven.",
                 },
               ],
             },
@@ -863,10 +863,10 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               id: "n1",
               genre: "Sentence completion",
               genreTr: "Cümle tamamlama",
-              title: "Night-time economy — findings",
+              title: "Nighttime economy — findings",
               body: `The study lasted {{9}} years.
 
-The night-time economy supports about {{10}} jobs in the city.
+The nighttime economy supports about {{10}} jobs in the city.
 
 The largest single group of night workers is {{11}}.
 
@@ -1014,7 +1014,7 @@ The council is asked to provide a license officer who works after {{16}}.`,
               situation: "Üçüncü konuşmacı iş yerindeki bir değişiklikten söz ediyor.",
               plays: 2,
               segments: [
-                { text: "The idea was right. Announcing it on a Thursday and starting it on the Monday was not. We spent six weeks fixing things that a two weeks of preparation would have prevented." },
+                { text: "The idea was right. Announcing it on a Thursday and starting it on the Monday was not. We spent six weeks fixing things that two weeks of preparation would have prevented." },
               ],
             },
             {
@@ -1315,7 +1315,7 @@ This report describes the effects of the open-plan layout introduced in March an
 
 Positive effects
 
-New colleagues have settled in noticeably faster. Three people who joined in the spring said that they learned the names and the responsibilities of the team within a two weeks, which used to take much longer. Informal help is easier to ask for when the person is visible.
+New colleagues have settled in noticeably faster. Three people who joined in the spring said that they learned the names and the responsibilities of the team within two weeks, which used to take much longer. Informal help is easier to ask for when the person is visible.
 
 Problems
 

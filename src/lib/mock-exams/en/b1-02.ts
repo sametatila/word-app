@@ -187,7 +187,7 @@ export const EN_B1_02: MockPaper = {
               kind: "match",
               id: "en-b1-02-l2-9",
               no: 9,
-              text: "Lena has a large garden that she cannot look after any more, and she would like it to be used.",
+              text: "Lena has a large garden that she cannot look after anymore, and she would like it to be used.",
               answer: "e",
               explain:
                 "İlan iki tarafı eşleştiriyor: «People with a big garden and no time are matched with people who want to grow food». Lena tam birinci taraf. Sebze kutusu da yiyecekle ilgili ama bir satın alma hizmeti, bahçesi olan biri için değil.",

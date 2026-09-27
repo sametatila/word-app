@@ -294,7 +294,7 @@ export const enC1U20: SkillExercise[] = [
       { speaker: "Kaya", text: "Car-friendly, they said, and rather good against traffic gridlock." },
       { speaker: "Bilge", text: "The inserted clause again and the compliment at the end, and this time the compliment is a claim a whole century has tested." },
       { speaker: "Kaya", text: "What did the century find?" },
-      { speaker: "Bilge", text: "That a new lane fills in about four years and the junction moves one street along. Nobody disputes it any more and it is still being proposed every spring." },
+      { speaker: "Bilge", text: "That a new lane fills in about four years and the junction moves one street along. Nobody disputes it anymore and it is still being proposed every spring." },
     ],
     questions: [
       {

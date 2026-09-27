@@ -220,7 +220,7 @@ export const EN_A2_03: MockPaper = {
               title: "The apartment above the bakery",
               body: `Two years ago I moved into a small apartment above a bakery. My friends asked me one question again and again: is it not too noisy?
 
-The answer is yes and no. The bakers start at four in the morning, and for the first week I woke up every night. Then something strange happened: after ten days I did not hear them any more. Now the machines are part of the house for me.
+The answer is yes and no. The bakers start at four in the morning, and for the first week I woke up every night. Then something strange happened: after ten days I did not hear them anymore. Now the machines are part of the house for me.
 
 The apartment is smaller than my old one and it has no balcony. But the rent is a hundred pounds cheaper, and the bus stop is in front of the door.
 
@@ -251,7 +251,7 @@ There is one more thing, and it is better than a balcony. When I come home late,
               options: ["The noise stopped waking him", "The bakers began later", "He asked for an apartment with a balcony"],
               answer: 0,
               explain:
-                "Metin «after ten days I did not hear them any more» diyor: ses sürüyor, yazan alışıyor. Fırıncıların saati hiç değişmiyor; balkon isteği de yazıda yok, tersine balkonsuzluğun daha iyisini bulduğunu söylüyor.",
+                "Metin «after ten days I did not hear them anymore» diyor: ses sürüyor, yazan alışıyor. Fırıncıların saati hiç değişmiyor; balkon isteği de yazıda yok, tersine balkonsuzluğun daha iyisini bulduğunu söylüyor.",
             },
             {
               kind: "mcq",
@@ -822,7 +822,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "İkinci konuşmacı eski mahallesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I loved that street and I loved the apartment. But I sat in the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it any more." },
+                { text: "I loved that street and I loved the apartment. But I sat in the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it anymore." },
               ],
             },
             {

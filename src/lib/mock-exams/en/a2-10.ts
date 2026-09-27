@@ -716,7 +716,7 @@ Tell Bexi by:       {{10}}`,
               situation: "Bir dinleyici ikinci el mobilyayı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "I never buy furniture new any more, and it is not about money. A chair from 1960 is still a chair. A chair from last year has a leg that breaks in April." },
+                { text: "I never buy furniture new anymore, and it is not about money. A chair from 1960 is still a chair. A chair from last year has a leg that breaks in April." },
               ],
             },
             {

@@ -765,7 +765,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
                 { speaker: "Man", text: "You are out on Thursday afternoons now." },
                 { speaker: "Woman", text: "Every week since March." },
                 { speaker: "Man", text: "Does nobody mind?" },
-                { speaker: "Woman", text: "Somebody minded for about a two weeks. Then it became a fact about Thursday, like the meeting on Monday, and nobody has mentioned it since." },
+                { speaker: "Woman", text: "Somebody minded for about two weeks. Then it became a fact about Thursday, like the meeting on Monday, and nobody has mentioned it since." },
               ],
             },
             {
@@ -847,7 +847,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               options: ["The objection did not last", "Her manager still refuses", "She may have to stop it"],
               answer: 0,
               explain:
-                "Konuşmacı süreyi veriyor: «Somebody minded for about a two weeks», sonra durum sıradanlaşmış ve kimse bir daha söz etmemiş.",
+                "Konuşmacı süreyi veriyor: «Somebody minded for about two weeks», sonra durum sıradanlaşmış ve kimse bir daha söz etmemiş.",
             },
             {
               kind: "mcq",

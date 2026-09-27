@@ -124,7 +124,7 @@ export const b1U10: SkillExercise[] = [
       "Als ich neu in der Stadt war, habe ich mich hier einmal verlaufen. Nachdem " +
       "ich eine Stunde gesucht hatte, kam ich genau an diesen Platz. Seitdem gehöre " +
       "ich irgendwie dazu.\n\n" +
-      "Ich komme her, wenn ich mich nicht bewegen will und trotzdem raus muss. " +
+      "Ich komme her, wenn ich mich nicht bewegen will und trotzdem rausmuss. " +
       "Für die Umwelt ist es auch gut: ich fahre nie mit dem Auto, sondern gehe " +
       "immer zu Fuß.",
     questions: [

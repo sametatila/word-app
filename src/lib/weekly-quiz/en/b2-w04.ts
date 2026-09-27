@@ -35,7 +35,7 @@ export const EN_B2_W04: QuizWeek = {
       genreTr: "Yorum yazısı",
       title: "Nothing is really free",
       body:
-        "Free delivery, free returns: for many online shoppers, these promises have become so normal that they are hardly noticed any more. " +
+        "Free delivery, free returns: for many online shoppers, these promises have become so normal that they are hardly noticed anymore. " +
         "Yet someone always pays, and it is worth asking who.\n\n" +
         "A recent report, which was written for several consumer groups, suggests that the cost of returns has been rising steadily over the past five years. " +
         "Up to a third of all clothes bought online are said to be sent back, and many of these are never sold again. " +

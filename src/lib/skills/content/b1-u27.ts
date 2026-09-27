@@ -404,7 +404,7 @@ export const b1U27: SkillExercise[] = [
           "Auf einem Glas war außerdem ein Fleck. Das ist kein großes " +
           "Problem, aber zusammen mit dem Rest war der Abend ärgerlich, " +
           "und die Ausgabe war für uns nicht klein.\n\n" +
-          "Ich schreibe nicht, weil ich Geld zurück will. Ich schreibe, " +
+          "Ich schreibe nicht, weil ich Geld zurückwill. Ich schreibe, " +
           "weil wir gern wiederkommen würden und die Wirtin das vermutlich " +
           "auch möchte.\n\n" +
           "Mit freundlichen Grüßen\nSedef Aydın",

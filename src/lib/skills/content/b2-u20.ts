@@ -445,7 +445,7 @@ export const b2U20: SkillExercise[] = [
           "ENTSCHEIDUNGSNOTIZ — WECHSEL JA ODER NEIN\n\n" +
           "Die Frage: Bewerbe ich mich auf die Stelle in Kassel oder bleibe ich?\n\n" +
           "Was ich jetzt verliere. Obwohl die Stelle hier sicher ist und ich alle kenne, ist genau das der Punkt: Ich lerne seit zwei Jahren nichts Neues. Beim Wechsel verliere ich zwölf Jahre Vertrautheit, einen kurzen Weg und die Betriebsrente in ihrer jetzigen Form.\n\n" +
-          "Was ich später gewinne. Fachlich zwei Stufen, die es hier nicht gibt. Finanziell etwa neun Prozent mehr; die Lücke in der Altersvorsorge könnte ich damit endlich aufstocken statt sie jedes Jahr zu verschieben.\n\n" +
+          "Was ich später gewinne. Fachlich zwei Stufen, die es hier nicht gibt. Finanziell etwa neun Prozent mehr; die Lücke in der Altersvorsorge könnte ich damit endlich aufstocken, statt sie jedes Jahr zu verschieben.\n\n" +
           "Das größte Risiko. Während der ersten Monate wäre ich niemand — kein Ruf, keine Kontakte, keine Routine. Trotz der besseren Bezahlung könnte das anstrengender werden, als ich mir das heute ausmale. Und ich weiß nicht, ob mir das neue Team liegt.\n\n" +
           "Mein Stand heute. Ich bewerbe mich, ohne zu kündigen. Aus einer Stelle heraus verhandelt man besser, und ich muss die Entscheidung erst treffen, wenn ich ein Angebot habe. Bis dahin bleibe ich maßvoll optimistisch und sage niemandem etwas.",
       },

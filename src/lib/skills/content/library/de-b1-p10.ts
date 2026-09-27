@@ -44,7 +44,7 @@ export const deB1P10: SkillExercise[] = [
       "Was uns überrascht hat: Wir fahren seltener, aber die Fahrten sind besser vorbereitet. " +
       "Früher sind wir wegen einer einzigen Sache losgefahren, heute sammeln wir.\n\n" +
       "Für wen? Für Leute in der Stadt mit gutem Nahverkehr. " +
-      "Wer aufs Land fährt oder früh raus muss, wird schnell unzufrieden.",
+      "Wer aufs Land fährt oder früh rausmuss, wird schnell unzufrieden.",
     questions: [
       {
         text: "Wie viel hat das eigene Auto pro Jahr gekostet?",

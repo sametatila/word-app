@@ -38,7 +38,7 @@ export const b2U03: SkillExercise[] = [
       { de: "die Betriebsvereinbarung", tr: "işyeri anlaşması", en: "company agreement" },
       { de: "die Richtlinie", tr: "yönerge", en: "guideline" },
       { de: "die Vorgabe", tr: "belirlenen kural", en: "requirement" },
-      { de: "die Gleitzeit", tr: "esnek mesai", en: "flexitime" },
+      { de: "die Gleitzeit", tr: "esnek mesai", en: "flextime" },
       { de: "der Arbeitsablauf", tr: "iş akışı", en: "workflow" },
       { de: "koordinieren", tr: "koordine etmek", en: "to coordinate" },
       { de: "freistellen", tr: "izinli saymak", en: "to release from duty" },

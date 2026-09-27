@@ -116,7 +116,7 @@ Ich rate jungen Kolleginnen trotzdem zu, aber ich sage ihnen dazu, was sie aufge
 
 Gefragt werde ich immer nach der Zeit. Die stört mich weniger als erwartet; ich lese im Zug. Was mich stört, ist etwas anderes: Ich gehöre an beiden Orten nur halb dazu.
 
-Im Dorf bin ich der, der abends nicht da ist. In der Schule bin ich der, der um sechzehn Uhr weg muss. Beides ist berechtigt, und beides summiert sich.
+Im Dorf bin ich der, der abends nicht da ist. In der Schule bin ich der, der um sechzehn Uhr wegmuss. Beides ist berechtigt, und beides summiert sich.
 
 Ich rechne nicht damit, dass sich das löst. Ich rechne damit, dass ich es noch zehn Jahre mache und dann sehe.`,
               gloss: [
@@ -371,7 +371,7 @@ Was bleibt, ist eine unscheinbare Einsicht: Über das Bleiben entscheidet nicht,
 
 Ich bin dafür. Ich halte es aber für nötig zu sagen, was die Strecke nicht leistet, weil sie sonst an einer Erwartung scheitert, die sie nie erfüllen konnte.
 
-Sie wird die Abwanderung nicht stoppen. Wer mit neunzehn weggeht, geht nicht wegen der Verbindung, sondern weil er weg will. Das war vor der Streckenstilllegung nicht anders.
+Sie wird die Abwanderung nicht stoppen. Wer mit neunzehn weggeht, geht nicht wegen der Verbindung, sondern weil er wegwill. Das war vor der Streckenstilllegung nicht anders.
 
 Man wird einwenden, das sei eine Behauptung. Der Einwand trifft nur zur Hälfte: Wir haben die Vergleichsfälle. In zwei Nachbarkreisen wurden Strecken reaktiviert, und die Zahl der Fortzüge in der Altersgruppe unter fünfundzwanzig hat sich nicht bewegt.
 
@@ -417,7 +417,7 @@ Mein Vorschlag ist unbescheiden nur in einem Punkt: Wir sollten vorher aufschrei
               ],
               answer: 2,
               explain:
-                "\"Wer mit neunzehn weggeht, geht nicht wegen der Verbindung, sondern weil er weg will.\"",
+                "\"Wer mit neunzehn weggeht, geht nicht wegen der Verbindung, sondern weil er wegwill.\"",
             },
             {
               kind: "mcq",

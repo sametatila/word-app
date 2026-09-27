@@ -99,7 +99,7 @@
  { "tr": "Bir sunucu, incelemeye başkanlık etmiş Hale Turhan ile konuşuyor; Hale sunucunun kurduğu çerçeveyi kabul etmiyor.", "kind": "situation", "en": "Ein Moderator spricht mit Hale Turhan, die eine Überprüfung geleitet hat; Hale nimmt den Rahmen des Moderators nicht an." },
  { "tr": "Üç içerik noktasının üçü de işlendi mi?", "kind": "rubric.criteria", "en": "Sind alle drei Inhaltspunkte behandelt?" },
  { "tr": "220–260 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Liegt der Text zwischen 220 und 260 Wörtern?" },
- { "tr": "140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Liegt der Text zwischen 140–190 Wörtern?" },
+ { "tr": "140–190 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Liegt der Text zwischen 140 und 190 Wörtern?" },
  { "tr": "Karşı tarafın sözlerine gönderme yapıldı mı?", "kind": "rubric.criteria", "en": "Wurde auf das Gesagte der Gegenseite Bezug genommen?" },
  { "tr": "Tercih gerekçelendirildi mi?", "kind": "rubric.criteria", "en": "Wurde die Vorliebe begründet?" },
  { "tr": "Yaklaşık 100 kelime yazıldı mı?", "kind": "rubric.criteria", "en": "Wurden etwa 100 Wörter geschrieben?" },
