@@ -191,8 +191,9 @@ const MOBIL_ONLY = {
 };
 
 const MOBIL_ONLY_METHOD = {
-  "POST /api/stt": "ekran kapali yuruyusun sesi (native uploadStt); web ekran acikken ses gondermiyor",
-  "GET /api/stt": "cep yolunun saglayici bilgisi; web'de cepte yuruyus yok",
+  /* Mobil JS'te cagri `Native.uploadStt(url, …)`: yontem native tarafta (POST),
+     JS kaynaginda `method:` olmadigi icin GET gorunuyor. */
+  "GET /api/stt": "ekran kapali yuruyusun sesi native uploadStt ile POST gidiyor (JS'te yontemsiz, GET sayiliyor); web ekran acikken ses gondermiyor",
   "POST /api/account/apple-code": "native Apple kod takasi",
   "DELETE /api/account/guest": "misafir verisini silme (yalniz mobil misafir modu)",
   "POST /api/account/guest/claim": "misafiri hesaba birlestirme (yalniz mobil misafir modu)",
