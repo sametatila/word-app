@@ -10,16 +10,16 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
+import { ChevronRightIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
 import { MyAvatar } from "../ui/Avatar";
-import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
-import { useMe, formatXp } from "../lib/useMe";
+import { useMe } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
 import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
-import { useTheme, spacing, radii, softShadow, type Palette, soft, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
@@ -54,7 +54,6 @@ export function ProfileScreen() {
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   // Veri gelmeden rakam gösterilmez (uydurma "1.2k" yok): yükleniyor kartı var.
-  const xpLabel = me ? formatXp(me.xp) : "—";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -69,23 +68,8 @@ export function ProfileScreen() {
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{guest ? t("guest.subline") : user?.email ?? t("profile.not_signed_in")}</Text>
-          {/* Rozetler yüklenmeden de yerini tutar: sonradan belirince kimlik
-              kartı uzayıp altındaki her şeyi aşağı itmesin. */}
-          {meLoading ? (
-            <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-              <SkeletonPill width={104} height={textHeight("bodyStrong") + 12} />
-              <SkeletonPill width={96} height={textHeight("bodyStrong") + 12} />
-            </View>
-          ) : me ? (
-            <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
-                <FlameIcon color={colors.streakText} size={16} /><Text variant="bodyStrong" color={colors.streakText}>{t("profile.days", { n: me.streak })}</Text>
-              </View>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
-                <BoltIcon color={colors.primaryText} size={16} /><Text variant="bodyStrong" color={colors.primaryText}>{xpLabel} XP</Text>
-              </View>
-            </View>
-          ) : null}
+          {/* Seri ve XP burada YOK: hemen alttaki iki karo aynı sayıları
+              gösteriyordu. Kimlik kartı kimliğe (avatar, ad) ayrıldı. */}
         </Card>
 
         {/* Misafir: ilerlemenin hesapta durması için tek çağrı (bkz. ui/GuestAccountCard). */}

@@ -9593,21 +9593,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* XP rozetinin glifi profil ekranlarinda da ayni.
-     *
-     * IKI TARAF DA "YOK" VEREBILIYORDU: iki desen de uzun ve BICIME duyarli
-     * (prop sirasi, satir kaymasi). Ortak bir bicimlendirme gecisi ikisini
-     * birden bozsa iki taraf da "YOK" der, esit gorunur ve kapi yesil kalir.
-     * Bu yuzden glif ADI da bekleniyor: bugun `BoltIcon`. Glif bilerek
-     * degisirse bu satir da degisir. */
-    const xpGlif = (yol, desen) => (sil(read(yol)).match(desen) ?? [])[1] ?? "YOK";
+    /* Profil kimlik kartinda seri ve XP YOK (2026-09-27): hemen alttaki iki
+     * karo ayni sayilari gosteriyordu. Kart avatar ve ada ayrildi; rozet geri
+     * gelirse iki platformda da ayni sayi iki kez gorunur. */
     sameList(
-      "profil XP rozetinin glifi",
+      "profil kimlik kartinda seri ve XP yok",
       [
-        "mobil=" + xpGlif("mobile/src/screens/ProfileScreen.tsx", /<(\w+Icon) color=\{colors\.primaryText\} size=\{16\} \/><Text variant="bodyStrong" color=\{colors\.primaryText\}>\{xpLabel\}/),
-        "web=" + xpGlif("src/components/profile/profile-view.tsx", /<(\w+Icon) size=\{16\} \/> \{formatNumber\(stats\.xp, lang\)\} XP/),
+        "mobil=" + (/t\("profile\.days"/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "ROZET VAR" : "yok"),
+        "web=" + (/t\("profile\.days"/.test(sil(read("src/components/profile/profile-view.tsx"))) ? "ROZET VAR" : "yok"),
       ],
-      ["mobil=BoltIcon", "web=BoltIcon"],
+      ["mobil=yok", "web=yok"],
       "bulunan",
       "beklenen",
     );
@@ -18674,8 +18669,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList(
     "profil izgarasi uc halli",
-    [ucHal("izgara", "<StatTile value="), ucHal("rozetler", "<FlameIcon color={colors.streakText}")],
-    ["izgara=uc halli", "rozetler=uc halli"],
+    /* Kimlik kartindaki seri/XP rozetleri kalkti (2026-09-27); olcu yalniz izgarada. */
+    [ucHal("izgara", "<StatTile value=")],
+    ["izgara=uc halli"],
     "bulunan",
     "beklenen",
   );
@@ -19836,7 +19832,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return i < 0 ? "" : css.slice(i, css.indexOf("}", i));
   })();
   const DONUSEN = [
-    ["profil-seri", "src/components/profile/profile-view.tsx"],
+    /* "profil-seri" rozeti kimlik kartindan kalkti (2026-09-27). */
     ["tur-seridi", "src/components/session-player.tsx"],
     ["ortak-gorev", "src/components/quest-card.tsx"],
     ["lig-sonucu", "src/components/social/league-board.tsx"],
@@ -19849,7 +19845,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      sayiyordu - olcunun komsusunu olcmek. Her yuzey kendi ISARETIYLE
      araniyor. */
   const ISARET = {
-    "profil-seri": /className="tint-soft flex items-center gap-1\.5 rounded-full/,
     /* Cip bir flex satirin icine tasindi ve `shrink-0` aldi; isaret artik
        sinif SIRASINA degil `tint-soft`un varligina bakiyor - olculen sey
        zaten o. */

@@ -18,12 +18,10 @@ import {
   CheckIcon,
   ChevronRightIcon,
   CrownIcon,
-  FlameIcon,
   HandshakeIcon,
   MailIcon,
   PodiumIcon,
   ShareIcon,
-  BoltIcon,
   TrophyIcon,
   SettingsIcon,
 } from "@/components/icons";
@@ -106,32 +104,11 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         </Link>
         <p className="mt-3 text-h2">{stats.name}</p>
         {stats.email ? <p className="muted text-caption">{stats.email}</p> : null}
-        <div className="mt-3 flex gap-3">
-          <span
-            /* Yumuşak tint ORTAK sınıftan (`tint-soft`, %14 ve zemin ailenin
-               500'ü): burada wash takma adın kendisinden (600) ve %16 ile
-               kuruluyordu, yani aynı mürekkep 4.20 ölçüyordu (eşik 4.5).
-               Android'in aynı rozeti `soft(colors.streak)` kullanıyor. */
-            className="tint-soft flex items-center gap-1.5 rounded-full px-3 py-1.5 text-strong"
-            style={{ "--tint-fill": "var(--color-flame-500)", "--tint-ink": "var(--color-flame)" } as React.CSSProperties}
-          >
-            <FlameIcon size={16} /> {t("profile.days", { n: stats.streak })}
-          </span>
-          <span
-            className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-strong"
-            style={{
-              background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
-              color: "var(--color-brand)",
-            }}
-          >
-            {/* XP glifi Android ile aynı (`ProfileScreen` `BoltIcon`); burada
-                `SparkIcon` çiziliyordu. */}
-            <BoltIcon size={16} /> {formatNumber(stats.xp, lang)} XP
-          </span>
-        </div>
+        {/* Seri ve XP burada YOK: hemen alttaki iki karo aynı sayıları
+            gösteriyordu. Kimlik kartı kimliğe (avatar, ad) ayrıldı. */}
       </div>
 
-      {/* dört karo — mobildeki 2×2 ızgara */}
+      {/* iki karo — mobildeki ızgara */}
       <div className="mb-4 grid grid-cols-2 gap-3">
         {/*
           İKİ SAYI, DÖRT DEĞİL. Profil kimliktir, ölçüm tablosu değil: öğrenilen
