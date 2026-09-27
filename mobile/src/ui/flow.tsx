@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, type StyleProp, type ViewStyle } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { Card } from "./Card";
@@ -35,7 +35,7 @@ import { READABLE_TEXT_MAX } from "../lib/useLayout";
 
 /** `hint`: düğmenin altında ikinci, küçük satır (ör. "Kendini puanla" · "yardım yok, 5 tur"). */
 /** `tone: "destructive"` yalnız birincilde: geri alınamayan eylem (hesap silme). */
-export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string; tone?: "primary" | "destructive" };
+export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string; tone?: "primary" | "destructive"; a11yLabel?: string; a11yHint?: string };
 
 /** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
 export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null }) {
@@ -43,7 +43,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
   return (
     <View style={{ gap: spacing.sm }}>
       {primary ? (
-        <PrimaryButton label={primary.label} onPress={primary.onPress} disabled={primary.disabled} busy={primary.busy} icon={primary.icon} tone={primary.tone} />
+        <PrimaryButton label={primary.label} onPress={primary.onPress} disabled={primary.disabled} busy={primary.busy} icon={primary.icon} tone={primary.tone} accessibilityLabel={primary.a11yLabel} accessibilityHint={primary.a11yHint} />
       ) : null}
       {secondary ? (
         <PressableScale
@@ -63,7 +63,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
         </PressableScale>
       ) : null}
       {tertiary ? (
-        <PressableScale onPress={tertiary.onPress} disabled={tertiary.disabled} hitSlop={6} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
+        <PressableScale onPress={tertiary.onPress} disabled={tertiary.disabled} accessibilityLabel={tertiary.a11yLabel ?? tertiary.label} accessibilityHint={tertiary.a11yHint} hitSlop={6} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
           <Text variant="bodyStrong" color={colors.textMuted}>{tertiary.label}</Text>
         </PressableScale>
       ) : null}
@@ -71,23 +71,71 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
   );
 }
 
-/** Üst çubuk: kapat (X) ya da geri; sağda isteğe bağlı küçük içerik. */
-export function FlowTopBar({ onClose, back = false, title, right }: { onClose?: () => void; back?: boolean; title?: string; right?: React.ReactNode }) {
+/** Üst çubuğun sol düğmesi: kapat (X) ya da geri; ikon ile ad hep birbirini tutuyor. */
+function TopBarButton({ onPress, back, label }: { onPress: () => void; back: boolean; label?: string }) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale
+      hitSlop={4}
+      onPress={onPress}
+      accessibilityLabel={label ?? t(back ? "common.back" : "common.close")}
+      style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
+    >
+      {back ? <ArrowBackIcon color={colors.text} size={24} /> : <XIcon color={colors.textMuted} size={22} />}
+    </PressableScale>
+  );
+}
+
+/**
+ * Üst çubuk: kapat (X) ya da geri; sağda isteğe bağlı küçük içerik.
+ * `closeLabel`: X'in okunan adı daha özelse (ör. "Turdan çık").
+ */
+export function FlowTopBar({ onClose, back = false, title, right, closeLabel }: { onClose?: () => void; back?: boolean; title?: string; right?: React.ReactNode; closeLabel?: string }) {
   const { colors } = useTheme();
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44 }}>
-      {onClose ? (
-        <PressableScale
-          hitSlop={4}
-          onPress={onClose}
-          accessibilityLabel={t(back ? "common.back" : "common.close")}
-          style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
-        >
-          {back ? <ArrowBackIcon color={colors.text} size={24} /> : <XIcon color={colors.textMuted} size={22} />}
-        </PressableScale>
-      ) : null}
+      {onClose ? <TopBarButton onPress={onClose} back={back} label={closeLabel} /> : null}
       <View style={{ flex: 1 }}>{title ? <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{title}</Text> : null}</View>
       {right}
+    </View>
+  );
+}
+
+/**
+ * TUR İLERLEME SATIRI — çıkış (X) + çubuk + sayaç tek satırda.
+ *
+ * Oyun turunun satırı (`GameScreen`; `RoundSkeleton` aynı ölçüde). Patron,
+ * meydan okuma, seviye testi, haftalık sınav, yürüyüş ve quiz bu satırı elle
+ * kuruyordu: çubuk 6, 8 ya da 10 kalınlıkta, sayaç kimi yerde caption kimi
+ * yerde bodyStrong. Şimdi hepsi bu.
+ *
+ * `value`: 0..1. `count`: sağdaki sayaç ("3/10") ya da kendi düğümü (süre).
+ * `extra`: çubukla sayaç arasında küçük rozetler (kombo, yeni/tekrar çipi).
+ */
+export function FlowProgress({ onClose, back = false, closeLabel, value, count, tint, extra, style }: {
+  onClose?: () => void;
+  back?: boolean;
+  closeLabel?: string;
+  value: number;
+  count?: React.ReactNode;
+  tint?: string;
+  extra?: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+}) {
+  const { colors } = useTheme();
+  const pct = Math.round(Math.max(0, Math.min(1, value)) * 100);
+  return (
+    <View style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44 }, style]}>
+      {onClose ? <TopBarButton onPress={onClose} back={back} label={closeLabel} /> : null}
+      <View
+        accessibilityRole="progressbar"
+        accessibilityValue={{ min: 0, max: 100, now: pct }}
+        style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}
+      >
+        <View style={{ height: "100%", width: `${pct}%`, backgroundColor: tint ?? colors.primary, borderRadius: 5 }} />
+      </View>
+      {extra}
+      {typeof count === "string" ? <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{count}</Text> : count}
     </View>
   );
 }

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { t as tx } from "../lib/i18n";
 import { Platform, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { FlowScreen, FlowActions } from "../ui/flow";
 import { BellIcon, FlameIcon } from "../ui/icons";
 import { enableDailyReminder, markNotifPrimed } from "../lib/notifications";
 import { track } from "../lib/track";
@@ -50,7 +50,6 @@ function times(): { label: string; value: string }[] {
 
 export function NotifPrimeScreen() {
   const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [time, setTime] = useState(hhmm(PRIME_HOURS.evening));
   const [busy, setBusy] = useState(false);
@@ -110,9 +109,34 @@ export function NotifPrimeScreen() {
     toApp();
   }
 
+  /* KAYAN GÖVDE: büyük yazı boyunda ya da 320×533'te sabit ortalanmış kutu
+     başlığı ve saat çiplerini kırpıyordu. Düğmeler `FlowScreen`in dibinde sabit. */
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg }}>
+    <FlowScreen
+      center
+      actions={
+        <View>
+          {/* Reddedilen izin, düğmenin HEMEN ÜSTÜNDE: kullanıcı basınca ne olduğunu
+              aynı yerde görüyor. Metin `NotificationsScreen`dekiyle aynı anahtar. */}
+          {denied ? (
+            <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>
+              {tx("notifications.permission_off")}
+            </Text>
+          ) : null}
+          <FlowActions
+            primary={{
+              label: tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.remind_me_once_day"),
+              onPress: () => void enable(),
+              busy,
+              a11yLabel: tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.turn_on_daily_reminder"),
+              a11yHint: SINGLE_BUTTON ? tx("notifprime.turn_on_daily_reminder") : undefined,
+            }}
+            tertiary={SINGLE_BUTTON ? null : { label: tx("notifprime.maybe_later"), onPress: () => void skip(), a11yLabel: tx("notifprime.not_now") }}
+          />
+        </View>
+      }
+    >
+      <View style={{ alignItems: "center", gap: spacing.lg, paddingVertical: spacing.lg }}>
         <View style={[{ width: ds(88), height: ds(88), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
           <BellIcon color={colors.onPrimary} size={44} />
         </View>
@@ -137,22 +161,6 @@ export function NotifPrimeScreen() {
           })}
         </View>
       </View>
-
-      {/* Reddedilen izin, düğmenin HEMEN ÜSTÜNDE: kullanıcı basınca ne olduğunu
-          aynı yerde görüyor. Metin `NotificationsScreen`dekiyle aynı anahtar. */}
-      {denied ? (
-        <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>
-          {tx("notifications.permission_off")}
-        </Text>
-      ) : null}
-      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.turn_on_daily_reminder")} accessibilityHint={SINGLE_BUTTON ? tx("notifprime.turn_on_daily_reminder") : undefined} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-        <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.remind_me_once_day")}</Text>
-      </PressableScale>
-      {SINGLE_BUTTON ? null : (
-        <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: spacing.xs }}>
-          <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>
-        </PressableScale>
-      )}
-    </View>
+    </FlowScreen>
   );
 }

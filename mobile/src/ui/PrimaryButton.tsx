@@ -28,6 +28,8 @@ export function PrimaryButton({
   tone = "primary",
   size = "lg",
   style,
+  accessibilityLabel,
+  accessibilityHint,
 }: {
   label: string;
   onPress: () => void;
@@ -37,6 +39,9 @@ export function PrimaryButton({
   tone?: "primary" | "destructive";
   size?: "lg" | "md";
   style?: StyleProp<ViewStyle>;
+  /** Görünen yazıdan farklı okunması gerektiğinde (ör. "Devam" → "Günlük hatırlatmayı aç"). */
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 }) {
   const { colors } = useTheme();
   const fill = tone === "destructive" ? colors.danger : colors.primary;
@@ -45,7 +50,8 @@ export function PrimaryButton({
     <PressableScale
       onPress={onPress}
       disabled={disabled || busy}
-      accessibilityLabel={label}
+      accessibilityLabel={accessibilityLabel ?? label}
+      accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled: disabled || busy, busy }}
       style={[
         {
