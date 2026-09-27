@@ -38,7 +38,7 @@ export const a2U10: SkillExercise[] = [
       { de: "ausleihen", tr: "ödünç almak", en: "to borrow" },
       { de: "der Staubsauger", tr: "elektrikli süpürge", en: "vacuum cleaner" },
       { de: "der Schraubenzieher", tr: "tornavida", en: "screwdriver" },
-      { de: "aushelfen", tr: "yardıma gitmek", en: "to help out" },
+      { de: "aushelfen", tr: "yardım etmek", en: "to help out" },
       { de: "die Türklingel", tr: "kapı zili", en: "doorbell" },
       { de: "die Werkstatt", tr: "tamirhane", en: "workshop" },
       { de: "natürlich", tr: "elbette", en: "of course" },
@@ -51,7 +51,7 @@ export const a2U10: SkillExercise[] = [
       "Kim, Wohnung 2b\n\n" +
       "— — — — —\n\n" +
       "Hallo Kim, willkommen im Haus!\n\n" +
-      "Einen Staubsauger kannst du bei mir holen, ich bin fast immer ab 18 Uhr da. Wenn du Werkzeug brauchst: ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort.\n\n" +
+      "Einen Staubsauger kannst du bei mir holen, ich bin fast immer ab 18 Uhr da. Wenn du Werkzeug brauchst: Ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort.\n\n" +
       "Und wenn beim Umzug etwas schwer ist, sag Bescheid — ich helfe dir gern aus.\n\n" +
       "Ahmet, Wohnung 1a",
     questions: [

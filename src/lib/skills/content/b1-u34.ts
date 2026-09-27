@@ -119,11 +119,11 @@ export const b1U34: SkillExercise[] = [
       "Tante nicht, und sie war seine Lieblingstochter.\n\n" +
       "Meine Generation fragt anders. Wir fragen direkt, manchmal zu " +
       "direkt. Mein Cousin hat einmal ein Video gemacht, in dem er meinen " +
-      "Onkel eine Stunde lang gefragt hat. Der Onkel hat mitgemacht — " +
+      "Onkel eine Stunde lang befragt hat. Der Onkel hat mitgemacht — " +
       "und danach eine Woche nicht angerufen.\n\n" +
       "Nach dem Tod meines Großvaters haben wir Briefe gefunden. Darin " +
       "stand mehr als in achtzig Jahren Gespräch. Vielleicht ist das " +
-      "die Antwort: manche Dinge sagt man nicht, indem man redet.",
+      "die Antwort: Manche Dinge sagt man nicht, indem man redet.",
     questions: [
       {
         text: "Worüber hat der Großvater nie geredet?",
@@ -145,7 +145,7 @@ export const b1U34: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Mein Cousin hat ein Video gemacht, in dem er meinen ___ gefragt hat.",
+        text: "Mein Cousin hat ein Video gemacht, in dem er meinen ___ befragt hat.",
         options: [],
         answer: 0,
         accept: ["Onkel"],
@@ -314,7 +314,7 @@ export const b1U34: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kendine çok yükleyerek hiçbir şey kazanmazsın.",
+        tr: "Kendine fazla yüklenerek hiçbir şey kazanmazsın.",
         answer: "Du gewinnst nichts, indem du dir zu viel vornimmst.",
         hint: "Yine indem yan cümlesi.",
       },

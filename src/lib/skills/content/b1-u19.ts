@@ -44,7 +44,7 @@ export const b1U19: SkillExercise[] = [
     ],
     text:
       "Nehmen Sie die Pille zweimal am Tag ein, morgens und abends, mit etwas " +
-      "Wasser. Die Dosis für Erwachsene ist eine Pille pro Mal. Nehmen Sie " +
+      "Wasser. Die Dosis für Erwachsene ist eine Pille pro Einnahme. Nehmen Sie " +
       "niemals zwei auf einmal, auch wenn Sie eine vergessen haben.\n\n" +
       "Tragen Sie die Salbe dünn auf und waschen Sie danach die Hände. " +
       "Die Salbe ist harmlos, aber sie gehört nicht in die Augen.\n\n" +
@@ -202,7 +202,7 @@ export const b1U19: SkillExercise[] = [
         explain: "„Stellen Sie den Bildschirm höher. Das ist der erste Schritt.“",
       },
       {
-        text: "Was empfiehlt die Fachkraft: Ruhe oder Bewegung?",
+        text: "Was empfiehlt der Arzt: Ruhe oder Bewegung?",
         options: ["Ruhe", "Bewegung", "Beides gleich viel"],
         answer: 1,
         explain: "„Bewegen. Liegen hilft nur am Anfang …“",
@@ -377,7 +377,7 @@ export const b1U19: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Sağlığın için değiştirdiğin bir alışkanlığı anlat: eskiden nasıldı, neyi neden değiştirdin, ilk hafta nasıl geçti, ve şimdi ne fark ediyorsun. En az iki yan cümlede kipli fiil kullan (weil … kann / muss / will).",
+        prompt: "Sağlığın için değiştirdiğin bir alışkanlığı anlat: eskiden nasıldı, neyi neden değiştirdin, ilk hafta nasıl geçti ve şimdi ne fark ediyorsun. En az iki yan cümlede kipli fiil kullan (weil … kann / muss / will).",
         checklist: [
           "Eski durum anlatılmış mı?",
           "Değişiklik somut mu?",
@@ -400,7 +400,7 @@ export const b1U19: SkillExercise[] = [
           "habe ich vermutlich zwei Kilo, aber darum ging es nie. Meine Laune " +
           "ist besser, und ich wache morgens nicht mehr erschöpft auf.",
         phrases: [
-          { de: "Früher habe ich …, heute …", tr: "Eskiden … , şimdi …", en: "I used to …, today …" },
+          { de: "Früher habe ich …, heute …", tr: "Eskiden …, şimdi …", en: "I used to …, today …" },
           { de: "…, weil ich sonst … kann.", tr: "… çünkü yoksa … -amıyorum.", en: "…, because otherwise I can't …" },
           { de: "Darum ging es nie.", tr: "Mesele o değildi.", en: "That was never the point." },
         ],
@@ -410,7 +410,7 @@ export const b1U19: SkillExercise[] = [
         prompt: "Yan cümledeki fiil sırasını düzelt.",
         source: "Ich gehe früh ins Bett, weil ich muss früh aufstehen.",
         answer: "Ich gehe früh ins Bett, weil ich früh aufstehen muss.",
-        why: "Türkçede yan cümlede de her şey sonda toplanır ama sıra terstir ('kalkmam gerektiği için' — önce asıl eylem, sonra gereklilik). Almancada aynı mantık geçerlidir ve bu yüzden aslında kolaydır: yan cümlede önce ASIL fiil (aufstehen), EN SONDA kipli fiil (muss). Hata, ana cümledeki 'muss ich früh aufstehen' sırasının yan cümleye taşınmasından çıkıyor.",
+        why: "Türkçede yan cümlede de her şey sonda toplanır ve sıra aynıdır ('kalkmam gerektiği için' — önce asıl eylem, sonra gereklilik). Almancada aynı mantık geçerlidir ve bu yüzden aslında kolaydır: yan cümlede önce ASIL fiil (aufstehen), EN SONDA kipli fiil (muss). Hata, ana cümledeki 'muss ich früh aufstehen' sırasının yan cümleye taşınmasından çıkıyor.",
       },
     ],
   },

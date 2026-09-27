@@ -31,7 +31,7 @@ export const enB1P17: SkillExercise[] = [
       { de: "mountain rescue", tr: "dağ kurtarma" },
       { de: "sky", tr: "gökyüzü" },
       { de: "stones", tr: "taş" },
-      { de: "at the top", tr: "en üstte" },
+      { de: "at the top", tr: "zirvede" },
     ],
     minutes: 6,
     text:
@@ -122,7 +122,7 @@ export const enB1P17: SkillExercise[] = [
       { de: "counter", tr: "gişe" },
       { de: "led", tr: "yönetti" },
       { de: "retired", tr: "emekli oldu" },
-      { de: "hoped", tr: "umut etmek" },
+      { de: "hoped", tr: "umdu" },
     ],
     minutes: 6,
     segments: [

@@ -386,7 +386,7 @@ export const b1U43: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Katıldığın (ya da katılmak istediğin) bir gönüllü işi anlat: ne, nerede, ne zamandan beri, ne işe yarıyor, ne işe yaramadı, ve başkalarına ne dersin. En az iki 'ohne … zu' cümlesi kullan.",
+        prompt: "Katıldığın (ya da katılmak istediğin) bir gönüllü işi anlat: ne, nerede, ne zamandan beri, ne işe yarıyor, ne işe yaramadı ve başkalarına ne dersin. En az iki 'ohne … zu' cümlesi kullan.",
         checklist: [
           "İş somut anlatılmış mı?",
           "Süre ve yer verilmiş mi?",

@@ -249,7 +249,7 @@ export const enC1P7: SkillExercise[] = [
         tr: "Üretici ne derse desin, tamiri üç yıl sonra mümkün olmayacak.",
         answer: "Whatever the manufacturer says, repair will not be possible after three years.",
         alternatives: ["No matter what the manufacturer says, repair will not be possible after three years."],
-        hint: "„whatever“ ve „no matter what“ ödün bildirir ve cümle başında durur.",
+        hint: "„whatever“ ve „no matter what“ ödün bildirir ve genellikle cümle başında durur.",
       },
       {
         kind: "free",
@@ -267,7 +267,7 @@ export const enC1P7: SkillExercise[] = [
           { de: "On the two things that matter to me — … and … — it performs well.", tr: "Benim için önemli iki şeyde — … ve … — iyi.", en: "" },
           { de: "The caveat is not about performance but about …", tr: "Çekince başarımla değil … ile ilgili", en: "" },
           { de: "I would recommend it provided that …", tr: "… olduğu sürece tavsiye ederim", en: "" },
-          { de: "Four stars, with the fifth withheld for …", tr: "Dört yıldız; beşinciyi … için ayırıyorum", en: "" },
+          { de: "Four stars, with the fifth withheld for …", tr: "Dört yıldız; beşinciyi … yüzünden vermiyorum", en: "" },
         ],
         sample:
           "After fourteen months of daily use, I can say more about this device than the reviews " +
@@ -313,7 +313,7 @@ export const enC1P7: SkillExercise[] = [
         "Uygulanabilir bir kural öner",
       ],
       targets: [
-        { de: "The decision should rest with …, and not because …", tr: "Karar …'de olmalı, hem de … olduğu için değil" },
+        { de: "The decision should rest with …, and not because …", tr: "Karar …'de olmalı; ama … olduğu için değil" },
         { de: "The best case for the other position is …", tr: "Karşı konumun en iyi gerekçesi …" },
         { de: "Where that argument stops working is …", tr: "O argümanın işlemeyi bıraktığı yer …" },
         { de: "A rule I could actually defend is …", tr: "Gerçekten savunabileceğim bir kural …" },
@@ -369,7 +369,7 @@ export const enC1P7: SkillExercise[] = [
         examples: [
           { de: "I'd recommend it provided that the battery can be replaced.", tr: "Pil değiştirilebildiği sürece tavsiye ederim.", note: "zorunlu koşul" },
           { de: "As long as the reason is published, I have no objection.", tr: "Gerekçe yayımlandığı sürece itirazım yok.", note: "konuşma dili" },
-          { de: "Parts will be sold to anyone, provided they hold a trade account.", tr: "Ticari hesabı olan herkese parça satılır.", note: "„that“ düşebilir" },
+          { de: "Parts will be sold to anyone, provided they hold a trade account.", tr: "Ticari hesabı olması koşuluyla herkese parça satılır.", note: "„that“ düşebilir" },
         ],
       },
       {

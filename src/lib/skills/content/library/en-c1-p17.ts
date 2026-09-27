@@ -380,7 +380,7 @@ export const enC1P17: SkillExercise[] = [
         examples: [
           { de: "The principal agreed to review the ban.", tr: "Müdür yasağı gözden geçirmeyi kabul etti.", note: "mastar: agree to do" },
           { de: "Most children prefer climbing to watching.", tr: "Çoğu çocuk izlemektense tırmanmayı tercih eder.", note: "prefer X to Y" },
-          { de: "I'd prefer to wait until March.", tr: "Marta kadar beklemeyi tercih ederim.", note: "would prefer to + yalın" },
+          { de: "I'd prefer to wait until March.", tr: "marta kadar beklemeyi tercih ederim.", note: "would prefer to + yalın" },
         ],
       },
     ],

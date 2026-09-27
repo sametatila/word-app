@@ -59,7 +59,7 @@ export const a2U17: SkillExercise[] = [
         text: "Wie ist das Wetter am Freitagmorgen?",
         options: ["Sonnig", "Neblig", "Stürmisch"],
         answer: 1,
-        explain: "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğleden sonra çıkıyor.",
+        explain: "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğlen çıkıyor.",
       },
       {
         kind: "gapfill",
@@ -292,7 +292,7 @@ export const a2U17: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 17,
-    title: "Yarın, koşulsa, eskiden",
+    title: "Yarın, koşul, eskiden",
     genre: "grammar",
     intro: "Üç ayrı zaman: gelecek werden, koşul wenn, geçmiş war.",
     gloss: [
@@ -376,7 +376,7 @@ export const a2U17: SkillExercise[] = [
           "Hallo Kerem,\n\n" +
           "schön, dass du Sonntag frei hast!\n\n" +
           "Wenn die Sonne am Nachmittag kommt, gehen wir in den Zoo — bei 16 Grad läuft man gut, und die Eintrittskarte kostet nur zwölf Euro. Der Freizeitpark ist mir mit 29 Euro wirklich zu teuer.\n\n" +
-          "Wenn es doch bewölkt bleibt oder regnet, mache ich lieber die Stadtführung. Die ist drinnen und dauert nur eine Stunde.\n\n" +
+          "Wenn es doch bewölkt bleibt oder regnet, mache ich lieber die Stadtführung. Die geht zum Teil durchs Schloss und dauert nur eine Stunde.\n\n" +
           "Passt dir elf Uhr am Hauptbahnhof? Danach können wir noch durch die Altstadt bummeln.\n\n" +
           "Hast du deinen Studentenausweis noch? Damit wird es billiger.\n\nBis Sonntag, Ayla",
       },

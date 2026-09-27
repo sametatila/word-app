@@ -34,7 +34,7 @@ export const a2U14: SkillExercise[] = [
       { de: "hellblau", tr: "açık mavi", en: "light blue" },
       { de: "dunkelblau", tr: "koyu mavi", en: "dark blue" },
       { de: "gestreift", tr: "çizgili", en: "striped" },
-      { de: "kariert", tr: "kareli", en: "checked" },
+      { de: "kariert", tr: "kareli", en: "checkered" },
       { de: "einfarbig", tr: "tek renkli", en: "plain" },
       { de: "bunt", tr: "rengârenk", en: "colorful" },
       { de: "der Anzug", tr: "takım elbise", en: "suit" },
@@ -117,7 +117,7 @@ export const a2U14: SkillExercise[] = [
       "Sie können Ware innerhalb von 14 Tagen zurückgeben. Bringen Sie bitte immer den Kassenzettel mit; ohne ihn ist eine Rückgabe leider nicht möglich.\n\n" +
       "Ist ein Artikel fehlerhaft, beschädigt oder zerbrochen bei Ihnen angekommen, tauschen wir ihn sofort um. In diesem Fall gilt die Frist von 14 Tagen nicht.\n\n" +
       "Nicht zurücknehmen können wir Ware, die schon abgenutzt ist. Ein Pullover, den Sie zwei Monate getragen haben, ist kein Reklamationsfall.\n\n" +
-      "Wenn Sie mit einer Entscheidung nicht einverstanden sind, sprechen Sie bitte mit unserem Filialleiter. Wir wissen: niemand steht gern verärgert an der Kasse.",
+      "Wenn Sie mit einer Entscheidung nicht einverstanden sind, sprechen Sie bitte mit unserem Filialleiter. Wir wissen: Niemand steht gern verärgert an der Kasse.",
     questions: [
       {
         text: "Wie lange kann man Ware zurückgeben?",
@@ -179,7 +179,7 @@ export const a2U14: SkillExercise[] = [
       { speaker: "Herr Adam", text: "Ja, bitte etwas kürzer. Aber nicht zu kurz — im letzten Salon war es fast eine Glatze." },
       { speaker: "Friseurin", text: "Verstehe. Zwei Zentimeter, dann sieht es noch gepflegt aus." },
       { speaker: "Herr Adam", text: "Perfekt. Nehmen Sie die Schere oder die Maschine?" },
-      { speaker: "Friseurin", text: "Nur die Schere, das wird weicher. Möchten Sie danach föhnen?" },
+      { speaker: "Friseurin", text: "Nur die Schere, das wird weicher. Möchten Sie danach noch etwas?" },
       { speaker: "Herr Adam", text: "Können Sie mir die Haare föhnen? Ich mache das zu Hause nie richtig." },
       { speaker: "Friseurin", text: "Gern. Ich bürste sie vorher gut durch, dann werden sie auch glänzender." },
       { speaker: "Herr Adam", text: "Und kämmen Sie sie bitte nach links, nicht nach rechts." },
@@ -336,7 +336,7 @@ export const a2U14: SkillExercise[] = [
       { de: "die Rückgabe", tr: "iade", en: "return" },
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
       { de: "zerbrochen", tr: "kırık", en: "broken" },
-      { de: "die Reklamation", tr: "reklamasyon", en: "complaint" },
+      { de: "die Reklamation", tr: "şikâyet", en: "complaint" },
       { de: "natürlich", tr: "elbette", en: "of course" },
       { de: "innerhalb", tr: "içinde", en: "within" },
       { de: "tauschen", tr: "takas etmek", en: "to swap" },

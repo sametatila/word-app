@@ -33,7 +33,7 @@ export const enB2P13: SkillExercise[] = [
       { de: "to rely on", tr: "güvenmek" },
       { de: "to impose", tr: "dayatmak" },
       { de: "to justify", tr: "gerekçelendirmek" },
-      { de: "teenagers", tr: "ergen" },
+      { de: "teenagers", tr: "ergenler" },
       { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 8,
@@ -219,7 +219,7 @@ export const enB2P13: SkillExercise[] = [
       { de: "to summarize", tr: "özetlemek" },
       { de: "recommendation", tr: "öneri" },
       { de: "active", tr: "hareketli" },
-      { de: "relied", tr: "güvenmek" },
+      { de: "to rely on", tr: "bel bağlamak" },
     ],
     minutes: 14,
     tasks: [
@@ -269,8 +269,8 @@ export const enB2P13: SkillExercise[] = [
           "their children rather than from the school. " +
           "It is worth noting that students are still allowed to use laptops in lessons, and " +
           "teachers report that some habits have simply moved there. " +
-          "We therefore recommend that the rules for laptops are reviewed before spring, and that " +
-          "parents are invited to a meeting before any further change is made.",
+          "We therefore recommend that the rules for laptops be reviewed before spring, and that " +
+          "parents be invited to a meeting before any further change is made.",
       },
     ],
   },

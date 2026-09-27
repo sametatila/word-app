@@ -37,7 +37,7 @@ export const deA1P10: SkillExercise[] = [
       "Flaschen aus Glas gehören nicht in die Tonne. Der Container steht vor dem Supermarkt.\n\n" +
       "Die blaue Tonne wird am Dienstag geleert, die gelbe am Freitag. " +
       "Bitte stellen Sie die Tonnen am Abend vorher an die Straße.\n\n" +
-      "Alte Möbel und Elektro bitte nicht in den Keller stellen. Fragen? Herr Peters, Wohnung 2.",
+      "Alte Möbel und Elektrogeräte bitte nicht in den Keller stellen. Fragen? Herr Peters, Wohnung 2.",
     questions: [
       {
         text: "Was kommt in die braune Tonne?",
@@ -56,7 +56,7 @@ export const deA1P10: SkillExercise[] = [
         text: "Alte Möbel darf man in den Keller stellen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Alte Möbel und Elektro bitte nicht in den Keller stellen.“",
+        explain: "„Alte Möbel und Elektrogeräte bitte nicht in den Keller stellen.“",
       },
       {
         kind: "gapfill",
@@ -64,7 +64,7 @@ export const deA1P10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Freitag"],
-        explain: "„die blaue Tonne wird am Dienstag geleert, die gelbe am Freitag“.",
+        explain: "„Die blaue Tonne wird am Dienstag geleert, die gelbe am Freitag“.",
       },
       {
         kind: "short_answer",
@@ -184,7 +184,7 @@ export const deA1P10: SkillExercise[] = [
         tr: "Ekim ayında taşınabilirim.",
         answer: "Im Oktober kann ich einziehen.",
         alternatives: ["Ich kann im Oktober einziehen."],
-        hint: "„einziehen“ ayrılır ama modal fiille birlikte mastar hâlinde sonda kalır.",
+        hint: "„einziehen“ ayrılabilen bir fiildir ama modal fiille ayrılmaz; mastar hâlinde sonda kalır.",
       },
       {
         kind: "free",

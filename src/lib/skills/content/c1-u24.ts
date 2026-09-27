@@ -155,7 +155,7 @@ export const c1U24: SkillExercise[] = [
       "EIN GEDANKE, NICHT SIEBEN\n\n" +
       "Die häufigste Schwäche einer Rede ist nicht schlechte Sprache, sondern zu viel Inhalt. Wer sieben Punkte mitbringt, hinterlässt keinen.\n\n" +
       "Eine gute Rede spannt einen Bogen: Sie beginnt bei etwas Konkretem, führt zu einem Gedanken und kommt am Ende dorthin zurück, wo sie angefangen hat. Der Zuhörer merkt den Bogen nicht, er spürt nur, dass die Rede zu Ende ist, bevor der Redner es sagt.\n\n" +
-      "Der Anfang entscheidet über die ersten dreißig Sekunden. „Ich freue mich, heute hier zu sein“ ist kein Anfang, sondern eine Räusperung. Eine Szene, eine Zahl oder eine Frage packt zu; die Begrüßung kann danach kommen.\n\n" +
+      "Der Anfang entscheidet über die ersten dreißig Sekunden. „Ich freue mich, heute hier zu sein“ ist kein Anfang, sondern ein Räuspern. Eine Szene, eine Zahl oder eine Frage packt zu; die Begrüßung kann danach kommen.\n\n" +
       "In der Mitte gilt die Regel der Konkretheit. Ein Beispiel trägt weiter als drei Behauptungen, und ein einziger Name — eine Kollegin, ein Kunde, ein Abend im November — bleibt hängen, wo Zahlen abfließen.\n\n" +
       "Der Höhepunkt gehört nicht ans Ende, sondern kurz davor. Er ist die Stelle, an der ein Gedanke durchdringt und der Raum still wird; danach braucht es nur noch wenige Sätze.\n\n" +
       "Kürze ist dabei die unterschätzte Tugend. Eine kurze Rede stiftet mehr Aufmerksamkeit als eine vollständige, und niemand hat je eine Rede kritisiert, weil sie zu früh vorbei war.\n\n" +

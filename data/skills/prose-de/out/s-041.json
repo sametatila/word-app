@@ -7,7 +7,7 @@
  {
   "tr": "İki koşul ve iki kural. Hangisi gerçek?",
   "kind": "intro",
-  "de": "Zwei Bedingungen und zwei Regeln. Welche ist echt?"
+  "de": "Zwei Bedingungen und zwei Regeln. Welche ist real?"
  },
  {
   "tr": "Edilgen ve aktarma. Fail nerede duruyor?",
@@ -1013,5 +1013,20 @@
   "tr": "öyleymiş gibi yapıyor",
   "kind": "gloss.tr",
   "de": "tut so als ob"
+ },
+ {
+  "tr": "önden",
+  "kind": "gloss.tr",
+  "de": "voraus"
+ },
+ {
+  "tr": "vites",
+  "kind": "gloss.tr",
+  "de": "der Gang"
+ },
+ {
+  "tr": "ayrıca",
+  "kind": "gloss.tr",
+  "de": "außerdem"
  }
 ]

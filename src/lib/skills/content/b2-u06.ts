@@ -393,7 +393,7 @@ export const b2U06: SkillExercise[] = [
     unit: 6,
     title: "Der Wochenbericht",
     genre: "report",
-    intro: "Kısa bir haftalık durum raporu yaz: ne yapıldı, ne yapılmalı, ne şu an hangi durumda?",
+    intro: "Kısa bir haftalık durum raporu yaz: ne yapıldı, ne yapılmalı, şu an durum ne?",
     gloss: [
       { de: "der Arbeitsgang", tr: "iş adımı", en: "operation" },
       { de: "die Abnahme", tr: "kabul", en: "acceptance" },

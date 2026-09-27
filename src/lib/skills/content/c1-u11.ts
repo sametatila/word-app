@@ -238,7 +238,7 @@ export const c1U11: SkillExercise[] = [
       { de: "die Aussage", tr: "ifade", en: "statement" },
       { de: "also", tr: "yani", en: "so" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "ergänzen", tr: "tamamlamak", en: "to complete" },
+      { de: "ergänzen", tr: "eklemek", en: "to add" },
     ],
     minutes: 5,
     segments: [
@@ -439,7 +439,7 @@ export const c1U11: SkillExercise[] = [
       { de: "einordnen", tr: "yerine oturtmak", en: "to contextualize" },
       { de: "vorliegen", tr: "mevcut olmak", en: "to be available" },
       { de: "daraufhin", tr: "bunun üzerine", en: "thereupon" },
-      { de: "der Einkauf", tr: "alışveriş", en: "shopping" },
+      { de: "der Einkauf", tr: "satın alma birimi", en: "purchasing" },
       { de: "folgend", tr: "aşağıdaki", en: "following" },
       { de: "widersprüchlich", tr: "çelişkili", en: "contradictory" },
       { de: "die Unterschrift", tr: "imza", en: "signature" },

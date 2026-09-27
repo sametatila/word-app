@@ -37,11 +37,11 @@ export const b1U39: SkillExercise[] = [
     unit: 39,
     title: "Wer hilft bei Problemen im Betrieb?",
     genre: "info",
-    intro: "İşyerinde sorun çıkarsa kime gidilir? Üç adres.",
+    intro: "İşyerinde sorun çıkarsa kime gidilir, ne yapılır?",
     minutes: 5,
     gloss: [
       { de: "der Betriebsrat", tr: "işyeri kurulu", en: "works council" },
-      { de: "die Gewerkschaft", tr: "sendika", en: "trade union" },
+      { de: "die Gewerkschaft", tr: "sendika", en: "labor union" },
       { de: "die Entlassung", tr: "işten çıkarma", en: "dismissal" },
       { de: "der Angestellte", tr: "çalışan", en: "employee" },
       { de: "die Tätigkeit", tr: "faaliyet / iş", en: "activity" },
@@ -51,8 +51,8 @@ export const b1U39: SkillExercise[] = [
       "Wenn es im Betrieb Streit gibt, geht ein Angestellter zuerst zum " +
       "Betriebsrat. Das kostet nichts und bleibt intern.\n\n" +
       "Der Betriebsrat ist selbst aus dem Betrieb: ein Kollege oder eine " +
-      "Kollegin, gewählt für vier Jahre. Er darf bei einer Entlassung " +
-      "gehört werden und kennt die Tätigkeit, um die es geht. " +
+      "Kollegin, gewählt für vier Jahre. Bei einer Entlassung muss er " +
+      "vorher gefragt werden und kennt die Tätigkeit, um die es geht. " +
       "Das ist ein Vorteil, den ein Anwalt von außen nicht hat.\n\n" +
       "Die Gewerkschaft kommt danach. Sie ist nicht im Betrieb, sondern " +
       "größer, und sie hilft vor allem, wenn viele dasselbe Problem haben. " +
@@ -125,7 +125,7 @@ export const b1U39: SkillExercise[] = [
       "wenig. Sagen Sie danach, wofür Sie die Antwort brauchen.\n\n" +
       "Fragen Sie ruhig nach, wenn Sie etwas nicht verstanden haben. " +
       "Fachleute vergessen oft, dass ein Wort für sie normal ist und " +
-      "für andere nicht. Das ist keine Unhöflichkeit, sondern ein Dienst.\n\n" +
+      "für andere nicht. Das ist keine Unhöflichkeit, sondern eine Hilfe für beide Seiten.\n\n" +
       "Und glauben Sie nicht alles, nur weil jemand an einem Institut " +
       "arbeitet. Fragen Sie, woher die Zahl kommt. Gute Forschung hält " +
       "diese Frage aus; schlechte nicht.",
@@ -311,7 +311,7 @@ export const b1U39: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bu firmada üç yıldır çalışanım.",
+        tr: "Üç yıldır bu firmanın çalışanıyım.",
         answer: "Ich bin seit drei Jahren Angestellter in dieser Firma.",
         alternatives: ["Ich bin seit drei Jahren Angestellte in dieser Firma."],
         hint: "Artikelsiz kullanımda da sıfat çekimi geçerli.",
@@ -324,7 +324,7 @@ export const b1U39: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Çalışma iznim mayısta doluyor, sonrasında yeni bir istihdam olmazsa işsizlik var.",
+        tr: "Çalışma iznimin süresi mayısta doluyor; yeni bir istihdam olmazsa sonrasında işsizlik tehlikesi var.",
         answer: "Meine Arbeitserlaubnis läuft im Mai ab, danach droht Arbeitslosigkeit ohne neue Beschäftigung.",
         hint: "Ayrılabilen fiil: önek sonda.",
       },
@@ -344,7 +344,7 @@ export const b1U39: SkillExercise[] = [
         prompt: "Sıfattan türeyen ismin biçimini düzelt.",
         source: "Ich bin ein Angestellte und mein Bruder ist auch ein Angestellte.",
         answer: "Ich bin ein Angestellter und mein Bruder ist auch ein Angestellter.",
-        why: "Türkçede isim hiç değişmez, o yüzden Almancada da tek biçim kullanılıyor. Ama Angestellte(r), Verwandte(r), Jugendliche(r), Deutsche(r) sıfattan türemiştir ve SIFAT gibi çekilir: der Angestellte, ein Angestellter, die Angestellte, eine Angestellte. Ünite 34'ün zayıf erilleri (der Neffe) ayrı bir sınıftı — bunlar hep -n alır, bunlar ise artikele göre değişir.",
+        why: "Türkçede isim hiç değişmez, o yüzden Almancada da tek biçim kullanılıyor. Ama Angestellte(r), Verwandte(r), Jugendliche(r), Deutsche(r) sıfattan türemiştir ve SIFAT gibi çekilir: der Angestellte, ein Angestellter, die Angestellte, eine Angestellte. Ünite 34'ün zayıf erilleri (der Neffe) ayrı bir sınıftı — onlar hep -n alır, bunlar ise artikele göre değişir.",
       },
     ],
   },
@@ -406,7 +406,7 @@ export const b1U39: SkillExercise[] = [
           "Mit freundlichen Grüßen\nNuri Öz",
         phrases: [
           { de: "Ich schlage vor, dass …", tr: "… önerisinde bulunuyorum.", en: "I suggest that …" },
-          { de: "Dafür sprechen zwei Gründe.", tr: "Bunun iki gerekçesi var.", en: "Two reasons speak for it." },
+          { de: "Dafür sprechen zwei Gründe.", tr: "Bunun iki gerekçesi var.", en: "There are two reasons for this." },
           { de: "Ein Risiko will ich nicht verschweigen.", tr: "Bir riski saklamak istemem.", en: "There is one risk I don't want to hide." },
         ],
       },

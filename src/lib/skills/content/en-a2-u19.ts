@@ -47,7 +47,7 @@ export const enA2U19: SkillExercise[] = [
       "I have been to three weddings this year, and the last one was the best.\n" +
       "The wedding was in a garden, not in a hall. Thirty guests, four tables, and a tree with roses on it.\n" +
       "The bride wore a long white dress and her mother cried before the first word. Her father did not cry. He photographed everything and said nothing for two hours.\n" +
-      "My friend wore a blue suit and new shoes. After an hour the shoes came off. After two hours everybody took the shoes off and we danced on the grass.\n" +
+      "My friend wore a blue suit and new shoes. After an hour the shoes came off. After two hours everybody took their shoes off and we danced on the grass.\n" +
       "At eleven the music stopped and the guests sat down. Then the bride's grandmother told a story about her wedding in 1962. Rain, twelve guests, and no photographs.\n" +
       "She said: The garden is nice. But the people are the wedding.",
     questions: [
@@ -107,7 +107,7 @@ export const enA2U19: SkillExercise[] = [
     text:
       "Nil: Congratulations on your new job! When do you start?\n" +
       "Deniz: Thank you! On the first of October. I still can't believe it.\n" +
-      "Nil: I can. You worked for it two years.\n" +
+      "Nil: I can. You worked for it for two years.\n" +
       "Deniz: And your exam? Good luck with your exam on Friday!\n" +
       "Nil: Thanks. I'm not ready. Three chapters and two days.\n" +
       "Deniz: You said the same thing last year and you got the best result in the class.\n" +
@@ -330,7 +330,7 @@ export const enA2U19: SkillExercise[] = [
     unit: 19,
     title: "Congratulations on your new job!",
     genre: "personal",
-    intro: "Dört kutlama kalıbı, dört ayrı edat. Hiçbiri tahmin edilemez.",
+    intro: "Kutlama ve özür kalıpları: üçü ayrı edat alıyor, biri hiç almıyor. Hiçbiri tahmin edilemez.",
     gloss: [
       { de: "Congratulations on", tr: "için tebrikler" },
       { de: "Good luck with", tr: "için bol şans" },
@@ -367,7 +367,7 @@ export const enA2U19: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kutlama kartını doldur.",
-        facts: "Yeni iş için tebrik; başlangıç bir ekim; cuma sınav var; bol şans dileniyor.",
+        facts: "Yeni iş için tebrik; başlangıç 1 Ekim; cuma sınav var; bol şans dileniyor.",
         fields: [
           { label: "Congratulations", answer: "on your new job", accept: ["the new job"] },
           { label: "Start", answer: "the first of October", accept: ["October 1", "October first", "October 1st", "October"] },

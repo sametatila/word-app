@@ -383,7 +383,7 @@ export const b2U24: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Depoyu kaybettikten sonra bölümü bir arada tuttu.",
+        tr: "Depoyu kaybetmemizin ardından bölümü o bir arada tuttu.",
         answer: "Nachdem wir das Lager verloren hatten, hat sie die Abteilung zusammengehalten",
         alternatives: ["Sie hat die Abteilung zusammengehalten, nachdem wir das Lager verloren hatten"],
         hint: "nachdem yan cümlesi Plusquamperfekt ister, ana cümle Perfekt.",
@@ -420,7 +420,7 @@ export const b2U24: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "İki kapanıştan birini yaz. A: Bir sunumun son iki dakikası — özet en fazla üç madde, sonra ileriye bakış -ne, ne zaman, kim- ve sonda salona sorulan somut soru. B: Ayrılan ya da emekli olan bir meslektaş için kısa veda konuşması — bir anıyla başla, sonra somut olarak neye hayran olduğunu söyle, sonda kapıyı açık bırak. Hangisini seçersen seç: yeni bilgi ekleme, tarih ve isimleri somut ver. B'yi seçersen en az bir nachdem cümlesi kur ve zaman kademesini doğru yap.",
+          "İki kapanıştan birini yaz. A: Bir sunumun son iki dakikası — özet en fazla üç madde, sonra ileriye bakış (ne, ne zaman, kim) ve sonda salona sorulan somut soru. B: Ayrılan ya da emekli olan bir meslektaş için kısa veda konuşması — bir anıyla başla, sonra somut olarak neye hayran olduğunu söyle, sonda kapıyı açık bırak. Hangisini seçersen seç: yeni bilgi ekleme, tarih ve isimleri somut ver. B'yi seçersen en az bir nachdem cümlesi kur ve zaman kademesini doğru yap.",
         checklist: [
           "Hangi kapanış türü olduğu metinden anlaşılıyor mu?",
           "Özet ya da anı en fazla üç noktaya sığdırılmış mı?",

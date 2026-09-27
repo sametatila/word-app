@@ -205,12 +205,12 @@ export const enA1P2: SkillExercise[] = [
           { de: "It happened on …", tr: "… günü oldu." },
           { de: "How much does it cost?", tr: "Ne kadar tutar?" },
           { de: "How long does it take?", tr: "Ne kadar sürer?" },
-          { de: "You can call me on …", tr: "Beni … numaradan arayabilirsiniz." },
+          { de: "You can call me at …", tr: "Beni … numaradan arayabilirsiniz." },
         ],
         sample:
           "Hello, my phone fell on the street on Saturday and now the screen is broken. It is a Nova 5, two years old. " +
           "The phone works, but I cannot see the top of the screen. How much does the repair cost and how long does it take? " +
-          "Can I come on Friday afternoon? You can call me on 0176 44 21 03. Thank you! Aylin Karaca",
+          "Can I come on Friday afternoon? You can call me at 0176 44 21 03. Thank you! Aylin Karaca",
       },
     ],
   },

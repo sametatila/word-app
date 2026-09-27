@@ -21,7 +21,7 @@ export const enB2P9: SkillExercise[] = [
     gloss: [
       { de: "attendance", tr: "devam" },
       { de: "junior", tr: "yeni çalışan" },
-      { de: "commute", tr: "yol" },
+      { de: "commute", tr: "işe gidiş geliş" },
       { de: "mandate", tr: "zorunluluk" },
       { de: "to overlap", tr: "çakışmak" },
       { de: "reliable", tr: "güvenilir" },
@@ -34,7 +34,7 @@ export const enB2P9: SkillExercise[] = [
       "so most people are in the building on the same days they were before, " +
       "just with a longer commute on two extra days.\n\n" +
       "s.marchetti: That's the whole problem with counting days. What matters is overlap, " +
-      "not attendance. My team agreed two fixed afternoons together and nobody checks the rest. " +
+      "not attendance. My team agreed on two fixed afternoons together and nobody checks the rest. " +
       "As soon as we did that, the meetings that used to spread over the week collapsed " +
       "into those two afternoons.\n\n" +
       "jw_taylor: Would that survive a manager who didn't trust you?\n\n" +
@@ -77,11 +77,11 @@ export const enB2P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "s.marchetti's team agreed ___ fixed afternoons together.",
+        text: "s.marchetti's team agreed on ___ fixed afternoons together.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„My team agreed two fixed afternoons together“.",
+        explain: "„My team agreed on two fixed afternoons together“.",
       },
       {
         kind: "short_answer",
@@ -227,7 +227,7 @@ export const enB2P9: SkillExercise[] = [
         tr: "Sabit öğleden sonralarda anlaşır anlaşmaz toplantılar kısaldı.",
         answer: "As soon as we agreed on fixed afternoons, the meetings got shorter.",
         alternatives: ["The meetings got shorter as soon as we agreed on fixed afternoons."],
-        hint: "„as soon as“ arkasından geçmiş zaman gelir; gelecek için present kullanılır.",
+        hint: "Geçmiş bir olayda „as soon as“ arkasından geçmiş zaman gelir; gelecek için present kullanılır.",
       },
       {
         kind: "build",

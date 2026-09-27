@@ -103,7 +103,7 @@ export const a1U14: SkillExercise[] = [
         text: "Wie viel Verspätung hat der Zug nach Hamburg?",
         options: ["20 Minuten", "10 Minuten", "keine"],
         answer: 0,
-        explain: "„hat 20 Minuten Verspätung“ — 14:20 yerine 14:40.",
+        explain: "„hat 20 Minuten Verspätung“ — 14.20 yerine 14.40.",
       },
       {
         text: "Welcher Zug ist pünktlich?",

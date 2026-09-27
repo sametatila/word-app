@@ -51,7 +51,7 @@ export const b1U21: SkillExercise[] = [
     ],
     text:
       "Im Hof stehen vier Tonnen. Wer den Abfall richtig sortiert, hilft mehr, " +
-      "als er denkt: falsch sortierter Müll wird am Ende oft ganz " +
+      "als er denkt: Falsch sortierter Müll wird am Ende oft ganz " +
       "verbrannt.\n\n" +
       "Die blaue Tonne ist für Papier, die gelbe für Verpackungen, die braune " +
       "für Reste aus der Küche. Alles andere kommt in die graue Tonne. " +
@@ -388,7 +388,7 @@ export const b1U21: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Çevre için değiştirdiğin bir alışkanlığı anlat: eskiden ne yapıyordun, şimdi ne yapıyorsun, bu değişiklik ne kadar zor oldu, ve başkalarına ne önerirsin. En az iki 'statt … zu' cümlesi kullan.",
+        prompt: "Çevre için değiştirdiğin bir alışkanlığı anlat: eskiden ne yapıyordun, şimdi ne yapıyorsun, bu değişiklik ne kadar zor oldu ve başkalarına ne önerirsin. En az iki 'statt … zu' cümlesi kullan.",
         checklist: [
           "Eski alışkanlık anlatılmış mı?",
           "Yeni davranış somut mu?",

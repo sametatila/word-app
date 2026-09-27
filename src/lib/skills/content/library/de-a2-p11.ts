@@ -240,7 +240,7 @@ export const deA2P11: SkillExercise[] = [
     skill: "speaking",
     title: "ng und nk",
     genre: "pronounce",
-    intro: "„ng“ tek bir genizden sestir ve arkasından g duyulmaz; „nk“ ise aynı sesin arkasına açık bir k ekler. Altı cümlede ikisini ayır.",
+    intro: "„ng“ genizden gelen tek bir sestir ve arkasından g duyulmaz; „nk“ ise aynı sesin arkasına açık bir k ekler. Altı cümlede ikisini ayır.",
     gloss: [
       { de: "der Enkel", tr: "torun", en: "grandchild" },
       { de: "der Engel", tr: "melek", en: "angel" },

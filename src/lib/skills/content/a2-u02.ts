@@ -75,7 +75,7 @@ export const a2U02: SkillExercise[] = [
         text: "Um wie viel Uhr ist er aufgewacht?",
         options: [],
         answer: 0,
-        accept: ["um Viertel nach acht", "Viertel nach acht", "8 Uhr 15"],
+        accept: ["um Viertel nach acht", "Viertel nach acht", "8:15", "um 8:15", "8 Uhr 15"],
         explain: "„Ich bin um Viertel nach acht aufgewacht — eine Stunde zu spät.“",
       },
       {
@@ -109,7 +109,7 @@ export const a2U02: SkillExercise[] = [
     text:
       "Wie hat eine normale Familie vor fünfzig Jahren gelebt? Wir haben mit Frau Bergmann gesprochen. Sie ist 78 Jahre alt.\n\n" +
       "„Damals war alles anders“, sagt sie. „Wir hatten keinen Wagen. Mein Mann ist jahrelang mit dem Rad zur Arbeit gefahren, bei jedem Wetter. Und wir hatten nur einen Fernseher im ganzen Haus. Am Abend haben alle zusammen im Wohnzimmer gesessen.“\n\n" +
-      "Heute ist das Gegenteil normal: viele Familien haben zwei Autos, und jeder hat einen eigenen Bildschirm. Die Wohnungen sind moderner, aber die Möbel von damals findet Frau Bergmann gar nicht altmodisch.\n\n" +
+      "Heute ist das Gegenteil normal: Viele Familien haben zwei Autos, und jeder hat einen eigenen Bildschirm. Die Wohnungen sind moderner, aber die Möbel von damals findet Frau Bergmann gar nicht altmodisch.\n\n" +
       "„Die Zeiten sind verschieden“, sagt sie. „Nicht besser, nicht schlechter. Einfach anders.“",
     questions: [
       {

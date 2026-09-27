@@ -49,7 +49,7 @@ export const b1U25: SkillExercise[] = [
       "und beim nächsten Mal ist alles wieder da.\n\n" +
       "Der erste Schritt ist der schwerste: sagen, dass etwas offen ist. " +
       "Nicht mit einem Vorwurf beginnen. „Du hast nie Zeit“ macht die Tür " +
-      "zu; „mir hat gefehlt, dass wir reden“ lässt sie offen.\n\n" +
+      "zu; „Mir hat gefehlt, dass wir reden“ lässt sie offen.\n\n" +
       "Zweitens: nur eine Sache pro Gespräch. Wer drei alte Geschichten " +
       "gleichzeitig klären will, klärt keine. Und drittens: fair bleiben, " +
       "auch wenn man schuldig ist. Respekt ist keine Belohnung für gutes " +
@@ -117,7 +117,7 @@ export const b1U25: SkillExercise[] = [
       "Ich bin vor elf Jahren hierhergekommen. Am Anfang habe ich jede Woche " +
       "gerechnet, wie lange es noch dauert, bis ich wieder dorthin fahren " +
       "kann.\n\n" +
-      "Das Heimweh war damals einfach: ich habe einen Ort vermisst. Heute ist " +
+      "Das Heimweh war damals einfach: Ich habe einen Ort vermisst. Heute ist " +
       "es nicht mehr so einfach. Wenn ich dort bin, vermisse ich nach zehn Tagen " +
       "meine Küche hier. Wenn ich hier bin, fehlt mir der Lärm dort.\n\n" +
       "Die Entfernung ist nicht das Problem. Drei Stunden im Flugzeug sind " +

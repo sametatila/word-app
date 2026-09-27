@@ -119,7 +119,7 @@ export const a2U21: SkillExercise[] = [
       { de: "herausfinden", tr: "öğrenmek / ortaya çıkarmak", en: "to find out" },
       { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
       { de: "heraus", tr: "dışarı", en: "out" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "lang", tr: "uzun", en: "long" },
       { de: "aller", tr: "hepsinden", en: "of all" },
     ],
     minutes: 4,
@@ -189,7 +189,7 @@ export const a2U21: SkillExercise[] = [
       { de: "irgendwie", tr: "bir şekilde", en: "somehow" },
       { de: "vormittags", tr: "öğleden önce", en: "in the morning" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to suit" },
     ],
     minutes: 3,
     segments: [

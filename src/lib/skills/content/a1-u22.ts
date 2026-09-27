@@ -218,7 +218,7 @@ export const a1U22: SkillExercise[] = [
     title: "Der Notruf: 112",
     genre: "phone",
     intro:
-      "Bir kaza ihbarı. Almanya'da acil çağrının sırası dörttür — dördüncüsü en çok atlanan.",
+      "Bir kaza ihbarı. Almanya'da acil çağrı dört adımdan oluşur; en çok atlanan, dördüncüsüdür.",
     gloss: [
       { de: "der Unfall", tr: "kaza", en: "accident" },
       { de: "die Hilfe", tr: "yardım", en: "help" },

@@ -145,7 +145,7 @@ export const deA1: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Herr Demir sorar: ödeme cümlesini duyduğun gibi yaz.",
+        text: "Herr Demir soruyor: ödeme cümlesini duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Kann ich mit Karte bezahlen?", "Kann ich mit Karte bezahlen"],
@@ -238,7 +238,7 @@ export const deA1: SkillExercise[] = [
       {
         de: "Die Miete ist nicht billig.",
         tr: "Kira ucuz değil.",
-        hint: "„Miete“ = Mİİ-te, uzun i. „billig“ sonu „-iç“ okunur.",
+        hint: "„Miete“ = Mİİ-te, uzun i. „billig“ sonu yumuşak ch ile „-ih“ okunur.",
         confusions: [{ heard: ["Mitte", "mit"], fix: "„ie“ uzun i: Miite. Kısa söylersen „Mitte“ (orta) olur.", expected: "Miete" }],
       },
       {

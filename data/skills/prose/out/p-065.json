@@ -92,7 +92,7 @@
  {
   "tr": "İki oda, iki çerçeve, taşınabilirlik; en sonda sayı ile öykü.",
   "kind": "explain",
-  "en": "Two rooms, two frames, the moving; a number and a story last."
+  "en": "Two rooms, two frames, portability; a number and a story last."
  },
  {
   "tr": "Aynı alan iki bölümde iki ad taşıyor. Gönderme neyi kurtarıyor?",
@@ -100,9 +100,9 @@
   "en": "The same area carries two names in two chapters. What does the pointer save?"
  },
  {
-  "tr": "Aynı satırda fiilden iki isim. İkisi neden aynı yolla yapılmamış?",
+  "tr": "Aynı satırda fiilden iki isim, ikisi de aynı yolla yapılmış. Öteki yol neden seçilmemiş?",
   "kind": "intro",
-  "en": "Two nouns out of verbs in one line. Why were they not made the same way?"
+  "en": "Two nouns out of verbs in one line, both made the same way. Why was the other way not chosen?"
  },
  {
   "tr": "Cümlenin sonundaki edatın ardında hiçbir şey yok. Nesnesi nerede?",
@@ -120,7 +120,7 @@
   "en": "A regulator that demands and a misconduct that is buried. Why does the order matter?"
  },
  {
-  "tr": "Fiil başta, bağlaç yok; ortak alanın neden yapıldığını adlandırıyor.",
+  "tr": "Fiil başta, bağlaç yok; ortak alanın neyden yapıldığını adlandırıyor.",
   "kind": "explain",
   "en": "The verb first, no conjunction; it names what the commons is made of."
  },

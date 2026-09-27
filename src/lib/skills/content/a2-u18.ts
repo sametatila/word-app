@@ -56,7 +56,7 @@ export const a2U18: SkillExercise[] = [
       "Ich kaufe meiner Schwester lieber etwas Kleines aus einem normalen Geschäft: eine Kette vom Markt, Kosmetik aus der Apotheke, eine Packung Kaffee. Handlich, nicht schwer, und man benutzt es.\n\n" +
       "Meinem Vater bringe ich meistens etwas zu essen mit. Das ist nicht originell, aber es kommt immer gut an.\n\n" +
       "Ein Tipp noch: Auf dem Markt zahlen Sie besser bar und passend. Die Händler haben oft kein Wechselgeld, und ein großer Geldschein macht schnell schlechte Laune.\n\n" +
-      "Und wenn Sie wirklich nicht wissen, was typisch für diese Stadt ist: fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.",
+      "Und wenn Sie wirklich nicht wissen, was typisch für diese Stadt ist: Fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.",
     questions: [
       {
         text: "Was hält der Text von Bechern als Andenken?",
@@ -94,7 +94,7 @@ export const a2U18: SkillExercise[] = [
         text: "Der Text empfiehlt, im Andenkenladen nach Tipps zu fragen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“",
+        explain: "Yanlış: „Fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“",
       },
     ],
   },
@@ -118,7 +118,7 @@ export const a2U18: SkillExercise[] = [
     minutes: 4,
     text:
       "LIEBE FAMILIE, LIEBE FREUNDE,\n\n" +
-      "unsere Zwillinge werden sechs! Am dritten Mai feiern wir das — und weil der dritte ein Mittwoch ist, veranstalten wir die Feier am Samstag, dem sechsten Mai.\n\n" +
+      "unsere Zwillinge werden sechs! Am dritten Mai haben sie Geburtstag — und weil der dritte ein Mittwoch ist, veranstalten wir die Feier am Samstag, dem sechsten Mai.\n\n" +
       "Wann: 15 Uhr, bei uns im Garten (Lindenweg 8).\n" +
       "Was: Kaffee, Torte und später Würstchen vom Grill.\n\n" +
       "Bitte nichts Festliches anziehen — die Kinder spielen im Garten, und am Ende sind alle schmutzig.\n\n" +
@@ -134,7 +134,7 @@ export const a2U18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Am ___ Mai feiern wir das.",
+        text: "Am ___ Mai haben sie Geburtstag.",
         options: [],
         answer: 0,
         accept: ["dritten"],
@@ -189,7 +189,7 @@ export const a2U18: SkillExercise[] = [
       { speaker: "Frau Genç", text: "Und wann bin ich dann zu Hause?" },
       { speaker: "Schaffner", text: "Kurz nach neun. Sie fahren ja bis zur Endstation, oder?" },
       { speaker: "Frau Genç", text: "Ja, bis Kassel. Ich bin gestern schon zwei Stunden zu spät eingetroffen." },
-      { speaker: "Schaffner", text: "Das tut mir leid. Heben Sie den Fahrschein auf, damit bekommen Sie Geld zurück." },
+      { speaker: "Schaffner", text: "Das tut mir leid. Heben Sie den Fahrschein auf. Damit bekommen Sie Geld zurück." },
       { speaker: "Frau Genç", text: "Gut zu wissen. Ist das Abteil hinten noch frei? Hier ist es sehr laut." },
       { speaker: "Schaffner", text: "Ja, gehen Sie ruhig nach hinten." },
     ],
@@ -220,7 +220,7 @@ export const a2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Heben Sie den Fahrschein auf, damit bekommen Sie Geld zurück.",
+          "Heben Sie den Fahrschein auf. Damit bekommen Sie Geld zurück.",
         ],
         explain: "Gecikme parasını almak için bilet gerekiyor — pratik bir bilgi.",
       },
@@ -243,7 +243,7 @@ export const a2U18: SkillExercise[] = [
       { de: "organisieren", tr: "organize etmek", en: "to organize" },
       { de: "leihen", tr: "ödünç vermek", en: "to lend" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "rechnen", tr: "hesaba katmak", en: "to expect" },
     ],
     minutes: 3,
     segments: [

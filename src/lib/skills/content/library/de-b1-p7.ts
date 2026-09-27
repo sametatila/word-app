@@ -348,7 +348,7 @@ export const deB1P7: SkillExercise[] = [
         explain: "Anlatı geçmişi: düzenli fiil çoğul birinci kişide -ten alır.",
       },
       {
-        text: "Welche Form ist Präteritum von „fahren“ (er)?",
+        text: "Welche Form ist das Präteritum von „fahren“ (er)?",
         options: ["fahrte", "fuhr", "gefahren"],
         answer: 1,
         explain: "„fahren“ düzensizdir: kök ünlüsü değişir ve üçüncü tekil kişi eksizdir.",

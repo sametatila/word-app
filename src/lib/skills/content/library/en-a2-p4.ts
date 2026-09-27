@@ -114,7 +114,7 @@ export const enA2P4: SkillExercise[] = [
       { speaker: "Bruno", text: "Already? I thought he was leaving in July." },
       { speaker: "Ana", text: "No, he found an apartment there faster than he expected. So we have two weeks." },
       { speaker: "Bruno", text: "Okay. Are we doing a present or just a card?" },
-      { speaker: "Ana", text: "Both, I think. I asked around: most people want to give something for the garden. He talks about that balcony all the time." },
+      { speaker: "Ana", text: "Both, I think. I asked around: most people want to give something for his balcony. He talks about that balcony all the time." },
       { speaker: "Bruno", text: "Good idea. How much do we collect?" },
       { speaker: "Ana", text: "Five euros from everybody. There are nineteen of us, so that is enough for the big pots and some soil." },
       { speaker: "Bruno", text: "I can buy them on Saturday. My car is bigger than yours." },
@@ -277,7 +277,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Dinle! Kapıda biri var.",
         hint: "„listen“ ortadaki t okunmaz: Lİ-sın. Aynısı „castle“ ve „often“ için de olur.",
         confusions: [
-          { heard: [], fix: "st- birleşiminde t düşer: lisın.", expected: "Listen" },
+          { heard: [], fix: "-sten ve -stle sonlarında t düşer: lisın.", expected: "Listen" },
         ],
       },
       {
@@ -370,7 +370,7 @@ export const enA2P4: SkillExercise[] = [
         text: "She gave me a lot of ___.",
         options: ["advice", "advices", "an advice"],
         answer: 0,
-        explain: "„advice“ sayılamaz: çoğul olmaz ve artikel almaz.",
+        explain: "„advice“ sayılamaz: çoğul olmaz ve önüne a / an gelmez.",
       },
       {
         kind: "gapfill",

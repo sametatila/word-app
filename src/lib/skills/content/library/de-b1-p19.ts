@@ -27,7 +27,7 @@ export const deB1P19: SkillExercise[] = [
       { de: "betreffen", tr: "ilgilendirmek", en: "to concern" },
       { de: "die Unterschrift", tr: "imza", en: "signature" },
       { de: "erreichen", tr: "elde etmek", en: "to achieve" },
-      { de: "ernst", tr: "ciddi", en: "seriously" },
+      { de: "ernst", tr: "ciddi", en: "serious" },
     ],
     minutes: 6,
     text:
@@ -114,7 +114,7 @@ export const deB1P19: SkillExercise[] = [
     intro: "Gençlik merkezinin ekibi ve bir genç konuşuyor: merkez cumartesi akşamları açılabilir mi, hangi koşullarla.",
     gloss: [
       { de: "die Tankstelle", tr: "benzin istasyonu", en: "gas station" },
-      { de: "die Fachkraft", tr: "nitelikli eleman", en: "qualified member of staff" },
+      { de: "die Fachkraft", tr: "nitelikli eleman", en: "qualified staff member" },
       { de: "aufschließen", tr: "kilidi açmak", en: "to unlock" },
       { de: "übernehmen", tr: "üstlenmek", en: "to take on" },
       { de: "das Recht", tr: "hak", en: "right" },
@@ -316,7 +316,7 @@ export const deB1P19: SkillExercise[] = [
       { de: "der Bekannte", tr: "tanıdık", en: "acquaintance" },
       { de: "der Kranke", tr: "hasta", en: "patient" },
       { de: "neu", tr: "yeni", en: "new" },
-      { de: "besonders", tr: "özel", en: "special" },
+      { de: "besondere", tr: "özel", en: "special" },
     ],
     minutes: 9,
     explanation: [
@@ -377,7 +377,7 @@ export const deB1P19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Im Fernsehen kommt heute nichts ___. (besonders)",
+        text: "Im Fernsehen kommt heute nichts ___. (besondere)",
         options: [],
         answer: 0,
         accept: ["Besonderes"],

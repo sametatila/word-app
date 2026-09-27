@@ -37,14 +37,14 @@ export const enA2U01: SkillExercise[] = [
     genre: "story",
     intro: "Kaybolan bir telefonun hikâyesi. Ne zaman ne oldu, sırasıyla takip et.",
     gloss: [
-      { de: "got in", tr: "bindi" },
+      { de: "got on", tr: "bindi" },
       { de: "fell asleep", tr: "uyuyakaldı" },
       { de: "hold", tr: "tutmak" },
     ],
     minutes: 5,
     text:
       "Last week I lost my phone on the bus. It was a bad day.\n\n" +
-      "I was waiting for the bus in the rain. When the bus came, I was holding my bag in one hand and my phone in the other. I got in, I sat down and I fell asleep.\n\n" +
+      "I was waiting for the bus in the rain. When the bus came, I was holding my bag in one hand and my phone in the other. I got on, I sat down and I fell asleep.\n\n" +
       "Two stops later I woke up suddenly and I ran out. The phone was on the seat.\n\n" +
       "I went back to the bus station the day before yesterday. A woman there was very kind. \"Somebody brought a phone yesterday,\" she said. And it was my phone!\n\n" +
       "I bought a small bag for the phone. Now I always put it in the bag. I don't want to lose it again.",
@@ -66,7 +66,7 @@ export const enA2U01: SkillExercise[] = [
         text: "The writer bought a small bag for the phone.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I bought a small bag for the phone.“ — telefonu bulundu, yenisini almadı.",
+        explain: "„I bought a small bag for the phone.“ — telefonunu buldu, yenisini almadı.",
       },
       {
         kind: "gapfill",
@@ -185,7 +185,7 @@ export const enA2U01: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What happened yesterday? You called me four times!" },
+      { speaker: "Nil", text: "What happened yesterday? I called you four times!" },
       { speaker: "Can", text: "Sorry! While I was cooking, the phone rang and I answered." },
       { speaker: "Nil", text: "And?" },
       { speaker: "Can", text: "It was my brother. While we were talking, the rice was burning." },

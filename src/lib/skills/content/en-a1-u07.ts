@@ -37,14 +37,14 @@ export const enA1U07: SkillExercise[] = [
       { de: "drink", tr: "içmek" },
       { de: "big", tr: "büyük" },
       { de: "prefer … to …", tr: "… yerine …'i tercih etmek" },
-      { de: "In a sale", tr: "indirimde" },
+      { de: "on sale", tr: "indirimde" },
       { de: "hate", tr: "nefret etmek" },
     ],
     minutes: 4,
     text:
       "I love food. I cook every day, and I like eating with my family.\n\n" +
       "The food I love most is pizza with meat and onion. I don't like sweet food — I hate very sweet cakes! My sister prefers rice. She says rice is cheap and easy.\n\n" +
-      "At the market I buy meat, onions and rice. The meat is expensive: nine euros a kilo. In a sale it is cheaper.\n\n" +
+      "At the market I buy meat, onions and rice. The meat is expensive: nine euros a kilo. When it is on sale, it is cheaper.\n\n" +
       "I prefer tea to coffee. In the morning I drink a big cup of tea with milk. My father drinks only water. He says: \"Don't cook with wine!\"",
     questions: [
       {
@@ -106,7 +106,7 @@ export const enA1U07: SkillExercise[] = [
       "Ayla: Two kilos of tomatoes, please. Are they fresh?\n" +
       "Seller: Very fresh. They are from a farm near the city.\n" +
       "Ayla: How much is it?\n" +
-      "Seller: Four euros. Tomatoes are cheap this week — it's a sale.\n" +
+      "Seller: Four euros. Tomatoes are cheap this week — they're on sale.\n" +
       "Ayla: Good. And the meat? I'd like five hundred grams.\n" +
       "Seller: The meat is eighteen euros a kilo, so nine euros.\n" +
       "Ayla: Nine euros! That's too expensive for me.\n" +
@@ -133,7 +133,7 @@ export const enA1U07: SkillExercise[] = [
         text: "The tomatoes are expensive this week.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Tomatoes are cheap this week — it's a sale.“ — pahalı olan et.",
+        explain: "„Tomatoes are cheap this week — they're on sale.“ — pahalı olan et.",
       },
       {
         kind: "gapfill",
@@ -198,7 +198,7 @@ export const enA1U07: SkillExercise[] = [
       { speaker: "Ali", text: "And the rice? Is it ready?" },
       { speaker: "Nil", text: "Not yet. Ten more minutes. Then it is ready." },
       { speaker: "Ali", text: "Would you like some tea?" },
-      { speaker: "Nil", text: "Yes, please. But not too hot — I drink warm tea, it is better for me." },
+      { speaker: "Nil", text: "Yes, please. But not too hot — I drink warm tea — it is better for me." },
     ],
     questions: [
       {
@@ -242,7 +242,7 @@ export const enA1U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["tea", "warm tea", "some tea"],
-        explain: "„Yes, please. But not too hot — I drink warm tea, it is better for me.“",
+        explain: "„Yes, please. But not too hot — I drink warm tea — it is better for me.“",
       },
     ],
   },

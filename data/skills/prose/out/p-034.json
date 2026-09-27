@@ -5,9 +5,9 @@
   "en": "„And I'll send you a message every day!“"
  },
  {
-  "tr": "„A man is on the ground. He doesn't move.“",
+  "tr": "„A man is on the ground. He isn't moving.“",
   "kind": "explain",
-  "en": "„A man is on the ground. He doesn't move.“"
+  "en": "„A man is on the ground. He isn't moving.“"
  },
  {
   "tr": "„July is good. I'll write you the address.“",
@@ -20,9 +20,9 @@
   "en": "At the dentist's. When does it hurt, and what is the cause?"
  },
  {
-  "tr": "„No, I didn't finish. I have two hours today.“",
+  "tr": "„No, I didn't finish. I have two more hours today.“",
   "kind": "explain",
-  "en": "„No, I didn't finish. I have two hours today.“"
+  "en": "„No, I didn't finish. I have two more hours today.“"
  },
  {
   "tr": "Postanede mektup ve paket. Hangi fiyat neye ait?",
@@ -112,7 +112,7 @@
  {
   "tr": "Önce davet, sonra ret, sonra erteleme, en son buluşma yeri.",
   "kind": "explain",
-  "en": "First the invitation, then the refusal, then the delay, last the meeting place."
+  "en": "First the invitation, then the refusal, then putting it off, last the meeting place."
  },
  {
   "tr": "„Yesterday I was at home all day.“ — İrlanda geçen haftaydı.",
@@ -217,7 +217,7 @@
  {
   "tr": "„Twenty minutes a day is good.“ — üç, yürüme koşma yüzmenin sayısı.",
   "kind": "explain",
-  "en": "„Twenty minutes a day is good.“ — three is the number of walking, running and swimming."
+  "en": "„Twenty minutes a day is good.“ — three is the number of activities: walking, running and swimming."
  },
  {
   "tr": "„Yes, full. Books and a plastic box.“ — kâğıt ve fotoğraf mektupta.",
@@ -270,7 +270,7 @@
   "en": "Write sentences for the phone. On the phone you introduce yourself with „this is“."
  },
  {
-  "tr": "„Can I speak to Mr. Demir, please?“ — „speak to“ birine konuşmak demek.",
+  "tr": "„Can I speak to Mr. Demir, please?“ — „speak to“ biriyle konuşmak demek.",
   "kind": "explain",
   "en": "„Can I speak to Mr. Demir, please?“ — „speak to“ means to talk to somebody."
  },

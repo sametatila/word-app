@@ -12,7 +12,7 @@
  {
   "tr": "Bekleme salonunda iki saat. Sıra nasıl işliyor?",
   "kind": "intro",
-  "de": "Zwei Stunden im Wartesaal. Wie läuft die Schlange?"
+  "de": "Zwei Stunden im Wartesaal. Wie funktioniert die Warteschlange?"
  },
  {
   "tr": "Kayıt işleminin dili. Cümleler neden hep edilgen?",
@@ -428,5 +428,20 @@
   "tr": "o da … değil",
   "kind": "gloss.tr",
   "de": "auch nicht"
+ },
+ {
+  "tr": "ödenmemiş",
+  "kind": "gloss.tr",
+  "de": "unbezahlt"
+ },
+ {
+  "tr": "en sonunda",
+  "kind": "gloss.tr",
+  "de": "schließlich"
+ },
+ {
+  "tr": "biriktirmek",
+  "kind": "gloss.tr",
+  "de": "sparen"
  }
 ]

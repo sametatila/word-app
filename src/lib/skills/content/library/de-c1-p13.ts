@@ -24,7 +24,7 @@ export const deC1P13: SkillExercise[] = [
       { de: "die Rückgabe", tr: "iade", en: "return" },
       { de: "das Inventarbuch", tr: "envanter defteri", en: "inventory register" },
       { de: "der Vermerk", tr: "şerh", en: "note" },
-      { de: "nachweisen", tr: "belgelemek", en: "to prove" },
+      { de: "nachweisen", tr: "kanıtlamak", en: "to prove" },
       { de: "die Provenienz", tr: "menşe", en: "provenance" },
       { de: "lückenhaft", tr: "eksik", en: "incomplete" },
     ],
@@ -212,7 +212,7 @@ export const deC1P13: SkillExercise[] = [
       { de: "die Schenkung", tr: "bağış", en: "donation" },
       { de: "die Wahrscheinlichkeit", tr: "olasılık", en: "probability" },
       { de: "empfehlen", tr: "tavsiye etmek", en: "to recommend" },
-      { de: "offenlegen", tr: "beyan etmek", en: "to disclose" },
+      { de: "offenlegen", tr: "kamuya açıklamak", en: "to disclose" },
     ],
     minutes: 16,
     tasks: [

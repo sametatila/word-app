@@ -49,7 +49,7 @@ export const b1U26: SkillExercise[] = [
       "Zutaten für vier Personen: drei Zwiebeln, zwei Karotten, zweihundert " +
       "Gramm Mehl, etwas Fett, Essig, Salz und Pfeffer.\n\n" +
       "Stellen Sie zuerst eine große Schüssel auf den Tisch. In dieser " +
-      "Schüssel mischen Sie das Mehl mit dem Wasser. Die Schüssel steht " +
+      "Schüssel mischen Sie das Mehl mit etwas Wasser. Die Schüssel steht " +
       "dann zwanzig Minuten auf dem Tisch, damit der Teig ruht.\n\n" +
       "In der Zeit schneiden Sie die Zwiebeln und die Karotten klein. " +
       "Legen Sie das Gemüse in die Pfanne, nicht in den Topf — es soll " +

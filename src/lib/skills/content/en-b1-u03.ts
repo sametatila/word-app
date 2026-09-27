@@ -261,7 +261,7 @@ export const enB1U03: SkillExercise[] = [
     genre: "dialogue",
     intro: "Beş daire, hiç imza yok. Neden?",
     gloss: [
-      { de: "payslips", tr: "maaş bordroları" },
+      { de: "pay stubs", tr: "maaş bordroları" },
       { de: "the moment to leave", tr: "çekip gitme anı" },
       { de: "That is different from", tr: "şundan farklı" },
     ],
@@ -275,7 +275,7 @@ export const enB1U03: SkillExercise[] = [
       { speaker: "Nil", text: "Not everybody does. Two is normal in this city." },
       { speaker: "Mert", text: "He also said that the ad was old and the rent had changed." },
       { speaker: "Nil", text: "That is the moment to leave. An ad is a price." },
-      { speaker: "Mert", text: "The agency told me to send my last three payslips before the showing." },
+      { speaker: "Mert", text: "The agency told me to send my last three pay stubs before the showing." },
       { speaker: "Nil", text: "Before? After a showing, yes. Before, no." },
       { speaker: "Mert", text: "I asked if that was normal. She said it was." },
       { speaker: "Nil", text: "She said it was. That is different from: it is." },
@@ -291,9 +291,9 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         text: "What did the agency ask for before the showing?",
-        options: ["three payslips", "a deposit", "a signature"],
+        options: ["three pay stubs", "a deposit", "a signature"],
         answer: 0,
-        explain: "„The agency told me to send my last three payslips before the showing.“",
+        explain: "„The agency told me to send my last three pay stubs before the showing.“",
       },
       {
         kind: "truefalse",
@@ -376,7 +376,7 @@ export const enB1U03: SkillExercise[] = [
         prompt: "Değerlendirme kartını doldur.",
         facts: "Gelişme gerçek; dışarıdan görünmüyor; üç satır yazılacak; yeni hedef tarihli.",
         fields: [
-          { label: "Progress", answer: "good", accept: ["it is good"] },
+          { label: "Progress", answer: "real", accept: ["it is real", "good"] },
           { label: "Problem", answer: "nobody can see it", accept: ["nobody sees it"] },
           { label: "Task", answer: "three lines", accept: ["3 lines"] },
           { label: "New target", answer: "with a date", accept: ["smaller", "it has a date"] },

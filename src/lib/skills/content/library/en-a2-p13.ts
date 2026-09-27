@@ -185,7 +185,7 @@ export const enA2P13: SkillExercise[] = [
     intro: "Bu akşam çocuklarına bir bakıcı bakacak; önce iki cümle kur, sonra ona masaya bırakacağın notu yaz.",
     gloss: [
       { de: "babysitter", tr: "bebek bakıcısı" },
-      { de: "allowed", tr: "izinli" },
+      { de: "allowed", tr: "izin verilmiş" },
       { de: "bowl", tr: "kase" },
       { de: "reach", tr: "ulaşmak" },
     ],
@@ -228,7 +228,7 @@ export const enA2P13: SkillExercise[] = [
           "minutes. Mert doesn't eat tomatoes, so give him the blue bowl. After dinner they are allowed to watch one " +
           "movie, but not on the tablets. They can wash and dress themselves, but please check their teeth. They have to " +
           "be in bed by half past eight. Duru always asks for one more story, and one is enough. If there is a problem, " +
-          "call me on 0532 118 40 27. If you can't reach me, call Mrs. Hale in apartment four. We'll be back at eleven. Thanks! Aylin",
+          "call me at 0532 118 40 27. If you can't reach me, call Mrs. Hale in apartment four. We'll be back at eleven. Thanks! Aylin",
       },
     ],
   },

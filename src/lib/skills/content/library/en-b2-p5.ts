@@ -29,7 +29,7 @@ export const enB2P5: SkillExercise[] = [
       { de: "skip", tr: "atlamak" },
       { de: "buyer", tr: "alıcı" },
       { de: "contain", tr: "içermek" },
-      { de: "total", tr: "toplam tutar" },
+      { de: "total", tr: "toplam" },
     ],
     minutes: 9,
     text:
@@ -53,7 +53,7 @@ export const enB2P5: SkillExercise[] = [
       "volunteers who come are the same six people who never take a break. We propose to skip both months and " +
       "to use one of them for sorting instead.\n\n" +
       "What we still cannot answer. We do not know what happens to the clothes after they leave the hall. " +
-      "The buyer refuses to tell us, and we have not yet decided whether to insist or to change buyer.",
+      "The buyer refuses to tell us, and we have not yet decided whether to insist or to change buyers.",
     questions: [
       {
         text: "What does the report recommend?",
@@ -136,7 +136,7 @@ export const enB2P5: SkillExercise[] = [
     minutes: 9,
     segments: [
       { speaker: "Chair", text: "Our question tonight is not how to find volunteers. It is why they leave. Three people who know. Sena, you coordinate two hundred of them." },
-      { speaker: "Sena", text: "And I have stopped asking people to stay. I now ask them to tell me when they are going, four weeks earlier. Almost nobody used to do that, because leaving felt like failing." },
+      { speaker: "Sena", text: "And I have stopped asking people to stay. I now ask them to tell me when they are going, four weeks in advance. Almost nobody used to do that, because leaving felt like failing." },
       { speaker: "Chair", text: "Ilias, you left after six years." },
       { speaker: "Ilias", text: "I did, and I want to be honest: I did not stop because of the work. I stopped because I could not find a way to do less. It was all or nothing, and at some point nothing was easier." },
       { speaker: "Sena", text: "That is the sentence I hear most often, and it is the one thing we can actually fix." },
@@ -175,7 +175,7 @@ export const enB2P5: SkillExercise[] = [
         text: "Sena now asks volunteers to announce their departure in advance.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I now ask them to tell me when they are going, four weeks earlier.“",
+        explain: "„I now ask them to tell me when they are going, four weeks in advance.“",
       },
       {
         kind: "short_answer",

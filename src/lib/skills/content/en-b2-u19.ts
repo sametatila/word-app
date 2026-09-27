@@ -299,7 +299,7 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does a column with two grammars get?",
+        text: "What happens to a column with two grammars?",
         options: [],
         answer: 0,
         accept: ["misread", "it is misread", "somebody misreads it"],

@@ -45,7 +45,7 @@ export const b1U23: SkillExercise[] = [
     ],
     text:
       "Am Samstag haben etwa dreitausend Menschen dafür protestiert, dass das alte " +
-      "Bad bleibt. Der Protest war friedlich: niemand hat geschrien, " +
+      "Bad bleibt. Der Protest war friedlich: Niemand hat geschrien, " +
       "und um sechs war alles vorbei.\n\n" +
       "Die Forderung ist einfach. Das Bad soll bleiben, bis ein neues fertig " +
       "ist. Wer sich dafür einsetzt, sagt: Ein Viertel ohne Bad verliert " +
@@ -67,7 +67,7 @@ export const b1U23: SkillExercise[] = [
         text: "Wie war der Protest?",
         options: ["Laut", "Friedlich", "Kurz und wütend"],
         answer: 1,
-        explain: "„Der Protest war friedlich: niemand hat geschrien …“",
+        explain: "„Der Protest war friedlich: Niemand hat geschrien …“",
       },
       {
         text: "Wann wird jetzt neu beraten?",
@@ -318,7 +318,7 @@ export const b1U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Daha çok yerimiz olsaydı onu kendimizde tutardık.",
+        tr: "Daha çok yerimiz olsa onu kendimiz tutardık.",
         answer: "Wenn wir mehr Platz hätten, würden wir ihn selbst behalten.",
         hint: "Şimdiki gerçek dışı: hätten … würden.",
       },
@@ -375,7 +375,7 @@ export const b1U23: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir dileğini yaz: ne dilersin, neden, gerçekleşse hayatında ne değişirdi, ve şimdi bunun için ne yapabilirsin. En az üç Konjunktiv II cümlesi kullan ve en az birinde wäre ya da hätte geçsin.",
+        prompt: "Bir dileğini yaz: ne dilersin, neden, gerçekleşse hayatında ne değişirdi ve şimdi bunun için ne yapabilirsin. En az üç Konjunktiv II cümlesi kullan ve en az birinde wäre ya da hätte geçsin.",
         checklist: [
           "Dilek net söylenmiş mi?",
           "Sebep verilmiş mi?",
@@ -397,7 +397,7 @@ export const b1U23: SkillExercise[] = [
           "und die Antwort kenne ich sonst nie.",
         phrases: [
           { de: "Ich wünsche mir …", tr: "… diliyorum.", en: "I wish for …" },
-          { de: "Wenn ich … könnte, hätte ich …", tr: "… -abilseydim, … olurdu.", en: "If I could …, I would have …" },
+          { de: "Wenn ich … könnte, hätte ich …", tr: "… -abilsem, … olurdu.", en: "If I could …, I would have …" },
           { de: "Hätte ich das früher gemacht, …", tr: "Bunu daha önce yapsaydım …", en: "Had I done that earlier, …" },
         ],
       },

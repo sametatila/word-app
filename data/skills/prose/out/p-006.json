@@ -40,7 +40,7 @@
   "en": "A dialect learned later sounds like an imitation when spoken."
  },
  {
-  "tr": "Suçlama içeriyor: hastalığı öne sürdüğü ima ediliyor.",
+  "tr": "Suçlama içeriyor: hastalığı bahane ettiği ima ediliyor.",
   "kind": "explain",
   "en": "It carries an accusation: the illness is implied to be a pretext."
  },
@@ -610,7 +610,7 @@
   "en": "Whatever its origins in marketing, what the term does is another question."
  },
  {
-  "tr": "Kursa kayıt yaz: hangi kurs, hangi indirim, hangi soru?",
+  "tr": "Kursa kaydolmak için yaz: hangi kurs, hangi indirim, hangi soru?",
   "kind": "intro",
   "en": "Write to sign up for a course: which course, which discount, which question?"
  },

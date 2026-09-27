@@ -91,7 +91,7 @@ export const c1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Der Text sagt, Team Bs Pitch habe „gezündet“. Was schränkt diese Aussage sofort ein?",
+        text: "Der Text sagt, der Pitch von Team B habe „gezündet“. Was schränkt diese Aussage sofort ein?",
         options: [],
         answer: 0,
         accept: [

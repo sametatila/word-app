@@ -44,7 +44,7 @@ export const enA1U23: SkillExercise[] = [
       "Do you want to be healthy? It is simple.\n\n" +
       "You should eat fruit every day: an apple, a banana, an orange. A salad with chicken is good for dinner too.\n\n" +
       "You shouldn't smoke. And you shouldn't eat a big dinner at ten in the evening.\n\n" +
-      "Should I do exercise? Yes! Twenty minutes a day is good. You can walk, run or swim — all three are exercise.\n\n" +
+      "Should I exercise? Yes! Twenty minutes a day is good. You can walk, run or swim — all three are exercise.\n\n" +
       "Is weight a problem? Then you should drink more water and eat less sugar. But be careful: a fast change is not healthy. Slow is better.",
     questions: [
       {
@@ -113,9 +113,9 @@ export const enA1U23: SkillExercise[] = [
       "Kaan: Maybe. I eat ice cream every evening.\n" +
       "Dentist: Then you should eat less ice cream. And you should come every year.\n" +
       "Kaan: I know. This is my first visit in four years.\n" +
-      "Dentist: Four years! Today I clean the tooth. Come again in one week.\n" +
-      "Kaan: Does it hurt today?\n" +
-      "Dentist: A little. But after that you feel better.",
+      "Dentist: Four years! Today I'm going to clean the tooth. Come again in one week.\n" +
+      "Kaan: Is it going to hurt?\n" +
+      "Dentist: A little. But after that you'll feel better.",
     questions: [
       {
         text: "What is the problem?",
@@ -153,7 +153,7 @@ export const enA1U23: SkillExercise[] = [
           "What is the problem?",
           "I have a toothache.",
           "Does it hurt with cold water?",
-          "Today I clean the tooth.",
+          "Today I'm going to clean the tooth.",
         ],
         explain: "Önce soru, sonra şikâyet, sonra ayrıntı, en son tedavi.",
       },
@@ -232,7 +232,7 @@ export const enA1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Can I speak to Mr. Demir, please?", "Can I speak to Mr. Demir please?"],
-        explain: "„Can I speak to Mr. Demir, please?“ — „speak to“ birine konuşmak demek.",
+        explain: "„Can I speak to Mr. Demir, please?“ — „speak to“ biriyle konuşmak demek.",
       },
       {
         kind: "short_answer",

@@ -27,7 +27,7 @@
  {
   "tr": "Bir cümlede kaç katman var? Sayarak dinle.",
   "kind": "intro",
-  "de": "Wie viele Schichten stecken in einem Satz? Hör mit und zähl."
+  "de": "Wie viele Schichten stecken in einem Satz? Hör zu und zähl mit."
  },
  {
   "tr": "Aynı hareket iki dilde var. Peki aynı katta mı?",
@@ -37,7 +37,7 @@
  {
   "tr": "Üç ayrı büyüklükte delik ve iki ayrı başlangıç.",
   "kind": "intro",
-  "de": "Drei Löcher von je anderer Größe und zwei verschiedene Satzanfänge."
+  "de": "Drei unterschiedlich große Löcher und zwei verschiedene Satzanfänge."
  },
  {
   "tr": "Bir belgeyi bir arada tutan sözcükler hangileri?",
@@ -80,14 +80,14 @@
   "de": "Ein Anhang aus zwei Wörtern, drei Entscheidungen. Was legt er offen?"
  },
  {
-  "tr": "Bir metni aktarırken hangi fiili seçtiğin bir kuram seçmektir.",
+  "tr": "Bir metni aktarırken fiil seçmek, bir kuram seçmektir.",
   "kind": "intro",
   "de": "Welches Verb du bei der Wiedergabe eines Textes wählst, ist die Wahl einer Theorie."
  },
  {
   "tr": "Bir derste üç ayrı büyüklükte delik. Hangisini hangi dil kapatıyor?",
   "kind": "intro",
-  "de": "In einer Lektion drei Löcher von je anderer Größe. Welches schließt welche Sprache?"
+  "de": "In einer Lektion drei unterschiedlich große Löcher. Welches schließt welche Sprache?"
  },
  {
   "tr": "Yer başta, özne sonda.",
@@ -115,9 +115,9 @@
   "de": "Verb, Objekt, Prädikat; ganz am Ende das gemeinsame Maß."
  },
  {
-  "tr": "İki belge, iki katman: iddia ile varsayım.",
+  "tr": "Bir çerçeve, bir okuma: iddia ile varsayım.",
   "kind": "explain",
-  "de": "Zwei Dokumente, zwei Schichten: Behauptung und Annahme."
+  "de": "Ein Rahmen, eine Lesart: Behauptung und Annahme."
  },
  {
   "tr": "İkinci yarıda fiil yok; virgül onu tutuyor.",
@@ -400,9 +400,9 @@
   "de": "weggeworfen"
  },
  {
-  "tr": "düşüyor",
+  "tr": "karşılanıyor",
   "kind": "gloss.tr",
-  "de": "landet"
+  "de": "kommt an"
  },
  {
   "tr": "geçişli",
@@ -632,7 +632,7 @@
  {
   "tr": "yan cümle",
   "kind": "gloss.tr",
-  "de": "Nebensatz"
+  "de": "der Nebensatz"
  },
  {
   "tr": "yineliyor",
@@ -895,7 +895,7 @@
   "de": "der zweite Absatz"
  },
  {
-  "tr": "kesin bir dille",
+  "tr": "üstüne basa basa",
   "kind": "gloss.tr",
   "de": "nachdrücklich"
  },

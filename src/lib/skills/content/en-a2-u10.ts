@@ -45,7 +45,7 @@ export const enA2U10: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Ela: Hello, is that the repair service?\n" +
+      "Ela: Hello, is this the repair service?\n" +
       "Mechanic: Yes. What is the problem?\n" +
       "Ela: My washing machine isn't working. It starts and then it stops after two minutes.\n" +
       "Mechanic: Since when?\n" +
@@ -121,7 +121,7 @@ export const enA2U10: SkillExercise[] = [
       "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your apartment.\n" +
       "Bikes are forbidden in the hallway. There is a room for them next to the front door.\n" +
       "The attic is open from April to October. From November it is closed, because the roof is old.\n" +
-      "If something is broken, tell the janitor or write to the landlord. Please don't repair it.\n" +
+      "If something is broken, tell the janitor or write to the landlord. Please don't repair it yourself.\n" +
       "Thank you — a quiet building is a good building.",
     questions: [
       {
@@ -190,7 +190,7 @@ export const enA2U10: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "How long does it take to the park?",
+        text: "How long does it take to get to the park?",
         options: ["ten minutes on foot", "twenty minutes by bus", "four minutes"],
         answer: 0,
         explain: "„From my front door it takes ten minutes on foot.“ — yirmi dakika sinema için.",
@@ -301,7 +301,7 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How often has Sena been to the bakery this week?",
+        text: "How many times has Sena been to the bakery this week?",
         options: [],
         answer: 0,
         accept: ["three times", "four times", "3 times", "4 times"],
@@ -332,6 +332,7 @@ export const enA2U10: SkillExercise[] = [
         kind: "build",
         tr: "Çöpü akşam sekizden önce çöp kutusuna koymalısın.",
         answer: "You have to put the trash in the garbage can before eight.",
+        alternatives: ["You have to put the trash in the trash can before eight."],
         hint: "„have to“ dışarıdan gelen zorunluluk: kural böyle diyor.",
       },
       {

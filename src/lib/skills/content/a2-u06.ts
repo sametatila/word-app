@@ -33,7 +33,7 @@ export const a2U06: SkillExercise[] = [
     genre: "info",
     intro: "Muayenehanenin bekleme odasındaki bilgi yazısı. Ne zaman gelinir, ne getirilir?",
     gloss: [
-      { de: "die Sprechstunde", tr: "muayene saati", en: "consultation hours" },
+      { de: "die Sprechstunde", tr: "muayene saati", en: "office hours" },
       { de: "die Behandlung", tr: "tedavi", en: "treatment" },
       { de: "untersuchen", tr: "muayene etmek", en: "to examine" },
       { de: "das Medikament", tr: "ilaç", en: "medicine" },
@@ -50,7 +50,7 @@ export const a2U06: SkillExercise[] = [
       "Unsere Sprechstunde ist von Montag bis Freitag von 8 bis 12 Uhr. Am Dienstag und Donnerstag sind wir zusätzlich von 15 bis 18 Uhr für Sie da. Am Mittwochnachmittag bleibt die Praxis geschlossen.\n\n" +
       "Bitte bringen Sie zu jedem Termin Ihre Karte mit. Wenn Sie schon Medikamente nehmen, schreiben Sie die Namen bitte auf einen Zettel.\n\n" +
       "Wer stark hustet oder Fieber hat, meldet sich bitte am Empfang und wartet im kleinen Raum links. So schützen wir andere Patienten.\n\n" +
-      "Vor einer Behandlung untersuchen wir Sie immer zuerst. Seien Sie bitte vorsichtig mit Informationen aus dem Internet: nicht jede Krankheit sieht gleich aus.",
+      "Vor einer Behandlung untersuchen wir Sie immer zuerst. Seien Sie bitte vorsichtig mit Informationen aus dem Internet: Nicht jede Krankheit sieht gleich aus.",
     questions: [
       {
         text: "Wann ist die Praxis am Nachmittag offen?",
@@ -110,7 +110,7 @@ export const a2U06: SkillExercise[] = [
     minutes: 4,
     text:
       "Nicht gegen alles braucht man ein Medikament. Viele alte Hausmittel helfen wirklich — und man hat sie meistens zu Hause.\n\n" +
-      "Gegen Halsschmerzen hilft warmer Tee mit Zitrone. Wichtig: der Tee soll nicht zu heiß sein, sondern lauwarm, sonst tut er dem Hals nur weh. Man nimmt einen Löffel Honig und rührt ihn langsam ein.\n\n" +
+      "Gegen Halsschmerzen hilft warmer Tee mit Zitrone. Wichtig: Der Tee soll nicht zu heiß sein, sondern lauwarm, sonst tut er dem Hals nur weh. Man nimmt einen Löffel Honig und rührt ihn langsam ein.\n\n" +
       "Bei einer Erkältung ist Vitamin C ein gutes Mittel. Eine Orange am Tag reicht schon.\n\n" +
       "Und ein Tipp von meiner Großmutter: warme Socken. Sie hat immer gesagt, kalte Füße machen krank. Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.",
     questions: [
@@ -190,7 +190,7 @@ export const a2U06: SkillExercise[] = [
         text: "Mir ist ___.",
         options: [],
         answer: 0,
-        accept: ["schwindlig"],
+        accept: ["übel", "schwindlig"],
         explain: "Bu belirtide kişi özne olmaz, yönelme hâlinde durur: „Mir ist schwindlig“, „Ich bin schwindlig“ değil.",
       },
       {
@@ -346,8 +346,8 @@ export const a2U06: SkillExercise[] = [
         minWords: 40,
         phrases: [
           { de: "Wie fühlst du dich heute?", tr: "bugün kendini nasıl hissediyorsun", en: "how do you feel today" },
-          { de: "Du solltest viel trinken.", tr: "çok su içsen iyi olur", en: "you should drink a lot" },
-          { de: "Das hilft gegen Halsschmerzen.", tr: "bu boğaz ağrısına iyi gelir", en: "that helps against a sore throat" },
+          { de: "Du solltest viel trinken.", tr: "çok su içsen iyi olur", en: "you should drink plenty of fluids" },
+          { de: "Das hilft gegen Halsschmerzen.", tr: "bu boğaz ağrısına iyi gelir", en: "that helps with a sore throat" },
         ],
         sample:
           "Hey Mert,\n\ndas klingt nicht gut. Wie fühlst du dich heute?\n\nIch habe zwei Tipps für dich. Du solltest viel trinken, am besten lauwarmen Tee mit Zitrone und einem Löffel Honig. Das hilft wirklich gegen eine Erkältung. Und iss eine Orange am Tag, Vitamin C ist auch ein gutes Mittel.\n\nWenn es morgen nicht besser ist, ruf bitte die Praxis an. Die Sprechstunde ist von acht bis zwölf.\n\nGute Besserung!\nLea",

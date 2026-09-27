@@ -225,7 +225,7 @@ export const b2U09: SkillExercise[] = [
       { speaker: "Ines", text: "Und dann?" },
       { speaker: "Deniz", text: "Dann sagte er, er wolle dem Verfahren nicht vorgreifen. Wortwörtlich." },
       { speaker: "Ines", text: "Kannst du ihn so zitieren?" },
-      { speaker: "Deniz", text: "Ja, ich habe die Aufnahme. Was ich nicht kann, ist daraus eine Nachricht machen." },
+      { speaker: "Deniz", text: "Ja, ich habe die Aufnahme. Was ich nicht kann, ist, daraus eine Nachricht zu machen." },
       { speaker: "Ines", text: "Was war überhaupt der Anlass? Warum jetzt?" },
       { speaker: "Deniz", text: "Der Haushalt kommt nächste Woche in den Rat. Deshalb dieser Termin." },
       { speaker: "Ines", text: "Dann befragen wir am besten jemanden aus dem Rat." },

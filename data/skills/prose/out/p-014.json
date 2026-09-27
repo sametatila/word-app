@@ -197,7 +197,7 @@
  {
   "tr": "Bir tren istasyonunda peron değişikliğini bildiren anonsu dinleyeceksin.",
   "kind": "intro",
-  "en": "You are going to hear an announcement about a platform change at a railway station."
+  "en": "You are going to hear an announcement about a platform change at a train station."
  },
  {
   "tr": "Bu tek kelime, tarihi yanlış hesaplasan bile ne kastettiğini belli eder.",
@@ -240,9 +240,9 @@
   "en": "Emma introduces herself. Listen: what is her name, where is she from, where does she live?"
  },
  {
-  "tr": "Festivalden dönen iki kişi konuşuyor. Adlaştırılmış ifadelere dikkat et.",
+  "tr": "Şenlikten dönen Ozan, Tine'a anlatıyor. Adlaştırılmış ifadelere dikkat et.",
   "kind": "intro",
-  "en": "Two people talk on the way back from a festival. Watch the nominalized expressions."
+  "en": "Ozan tells Tine about the festival on the way back. Watch the nominalized expressions."
  },
  {
   "tr": "Geçmişteki bir olasılık doğru biçimde kurulmuş: might have + üçüncü hâl.",
@@ -432,7 +432,7 @@
  {
   "tr": "Bir belediyenin resmî duyurusu. Aynı bilgi günlük dilde nasıl söylenirdi?",
   "kind": "intro",
-  "en": "An official council notice. How would the same information be said in everyday language?"
+  "en": "An official city notice. How would the same information be said in everyday language?"
  },
  {
   "tr": "Bir çalışmayı değerlendir: överken şişirme, eleştirirken kişiselleştirme.",
@@ -497,7 +497,7 @@
  {
   "tr": "Maaş görüşmesi. Rakam nasıl söyleniyor, geri adım nasıl açık bırakılıyor?",
   "kind": "intro",
-  "en": "A pay review. How is the figure named, how is room to move left open?"
+  "en": "A salary negotiation. How is the figure named, how is room to move left open?"
  },
  {
   "tr": "Maaş konuşuluyor. Dinle: aday ne kadar istiyor, firma ne diyor, sonuç ne?",
@@ -672,7 +672,7 @@
  {
   "tr": "Bir tren istasyonunda peron ve gecikme bilgisi veren anonsu dinleyeceksin.",
   "kind": "intro",
-  "en": "You are going to hear an announcement giving the platform and the delay at a railway station."
+  "en": "You are going to hear an announcement giving the platform and the delay at a train station."
  },
  {
   "tr": "Biri iyi bir teklifi reddetmiş. Sebebi ile buna rağmen yaptığını ayırt et.",

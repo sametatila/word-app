@@ -53,7 +53,7 @@ export const enC1U15: SkillExercise[] = [
     genre: "info",
     intro: "Hiçbir şey silinmemiş ve yine de kimse yok. Fail nereye gitti?",
     gloss: [
-      { de: "either", tr: "ikisinden biri" },
+      { de: "either", tr: "ikisinde de" },
       { de: "object", tr: "nesne" },
       { de: "passive", tr: "edilgen" },
       { de: "noun", tr: "isim" },
@@ -89,14 +89,14 @@ export const enC1U15: SkillExercise[] = [
       { de: "considered", tr: "dikkate alınmış" },
       { de: "disappears", tr: "kayboluyor" },
       { de: "an adverb", tr: "belirteç" },
-      { de: "double duty", tr: "iki katlı iş" },
+      { de: "double duty", tr: "çifte görev" },
       { de: "a promise", tr: "söz" },
     ],
     minutes: 12,
     text:
       "The pension level fell; the full retirement age did not. Two clauses, two numbers, and nobody in either of them.\n" +
       "Look at the verb. „Fell“ has a subject and no object, and the level is the thing that changed rather than the thing that did the changing. Nothing was deleted to arrive at that sentence: there is no passive, no missing agent waiting to be put back, no abstract noun standing in for a ministry. The verb has simply been used in the reading where it needs nobody.\n" +
-      "English lets almost any verb of change do this. A price drops, a rate rises, a standard slips, a figure improves, a department closes. Every one of them also has a version with somebody in front of it — they dropped the price, we improved the figure — and the two versions are the same word.\n" +
+      "English lets almost any verb of change do this. A price drops, a rate rises, a standard slips, a figure improves, a department closes. Most of them also have a version with somebody in front of it — they dropped the price, we improved the figure — and the two versions are the same word.\n" +
       "That is the third and quietest way this level has met of writing a decision with nobody in it. The passive deletes an agent and leaves a hole a careful reader can find. An abstract subject puts a noun where a person was, and the noun is at least visible. This one leaves no trace at all, because nothing was removed: the sentence is complete, ordinary and short, and there is no place in it where a name is missing.\n" +
       "German marks the difference in the word itself. Where English uses one verb in two readings, German usually keeps two verbs — one for the thing that changes and one for the person who changes it — built from the same root with a different ending. So a German reader learns from the verb which of the two sentences they are in, before the subject has been considered at all.\n" +
       "That is the measurement of this unit. In English the agent disappears inside the verb; in German the verb says which reading is in hand.\n" +
@@ -164,7 +164,7 @@ export const enC1U15: SkillExercise[] = [
     genre: "opinion",
     intro: "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
     gloss: [
-      { de: "failure", tr: "kusur" },
+      { de: "failure", tr: "başarısızlık" },
       { de: "none", tr: "hiçbiri" },
       { de: "easiest", tr: "en kolay" },
       { de: "halves", tr: "yarılar" },

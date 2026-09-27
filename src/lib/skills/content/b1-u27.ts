@@ -104,7 +104,7 @@ export const b1U27: SkillExercise[] = [
     intro: "Lokantada bir sorun nasıl söylenir? Ne işe yarar, ne yaramaz?",
     minutes: 5,
     gloss: [
-      { de: "der Wirt", tr: "işletmeci", en: "landlord" },
+      { de: "der Wirt", tr: "işletmeci", en: "restaurant owner" },
       { de: "die Gaststätte", tr: "lokanta", en: "restaurant" },
       { de: "der Fleck", tr: "leke", en: "stain" },
       { de: "salzig", tr: "tuzlu", en: "salty" },
@@ -126,7 +126,7 @@ export const b1U27: SkillExercise[] = [
       "hilft niemandem. „Die Suppe ist kalt“ oder „auf dem Glas ist ein " +
       "Fleck“ kann der Wirt sofort lösen.\n\n" +
       "Am besten bleiben Sie ruhig und sprechen leise. Die Wirtin steht " +
-      "meistens auf Ihrer Seite: eine Gaststätte lebt von Leuten, die " +
+      "meistens auf Ihrer Seite: Eine Gaststätte lebt von Leuten, die " +
       "wiederkommen. Wenn etwas übrig bleibt, fragen Sie ruhig nach einer " +
       "Büchse — das ist hier normal geworden.",
     questions: [

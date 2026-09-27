@@ -116,7 +116,7 @@ export const deB1P8: SkillExercise[] = [
       { de: "die Kita", tr: "kreş", en: "daycare center" },
       { de: "einverstanden", tr: "hemfikir", en: "in agreement" },
       { de: "der Kompromiss", tr: "uzlaşma", en: "compromise" },
-      { de: "protokollieren", tr: "tutanağa geçirmek", en: "to minute" },
+      { de: "protokollieren", tr: "tutanağa geçirmek", en: "to take minutes" },
     ],
     minutes: 6,
     segments: [
@@ -330,7 +330,7 @@ export const deB1P8: SkillExercise[] = [
       },
       {
         heading: "İnsan için edat + zamir",
-        tr: "Nesne bir KİŞİ ise bu biçimler kullanılmaz. Soru „edat + wen/wem“, işaret ise „edat + zamir“ olur: „Auf wen wartest du?“ — „Auf ihn.“ Bu ayrım Almancada zorunludur ve Türkçede karşılığı yoktur.",
+        tr: "Nesne bir KİŞİ ise bu biçimler kullanılmaz. Soru „edat + wen/wem“, işaret ise „edat + zamir“ olur: „Auf wen wartest du?“ — „Auf ihn.“ Bu ayrım Almancada zorunludur; Türkçe soruda „kim/ne“ diye ayırır ama işarette ikisine de „onu“ der.",
         examples: [
           { de: "Auf wen wartest du? — Auf meinen Bruder.", tr: "Kimi bekliyorsun? — Kardeşimi.", note: "kişi → auf wen" },
           { de: "An wen denkst du? — An sie.", tr: "Kimi düşünüyorsun? — Onu.", note: "kişi → an sie" },

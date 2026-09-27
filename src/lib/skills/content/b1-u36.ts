@@ -39,7 +39,7 @@ export const b1U36: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "anschließen", tr: "bağlamak", en: "to connect" },
-      { de: "die Steckdose", tr: "priz", en: "socket" },
+      { de: "die Steckdose", tr: "priz", en: "outlet" },
       { de: "einschalten", tr: "açmak", en: "to switch on" },
       { de: "der Lautsprecher", tr: "hoparlör", en: "loudspeaker" },
       { de: "die Anleitung", tr: "kılavuz", en: "manual" },
@@ -126,7 +126,7 @@ export const b1U36: SkillExercise[] = [
       "Schalten Sie den Rechner aus und fragen Sie jemanden, der sich " +
       "auskennt. Die Kosten sind bei einem Fachbetrieb hoch, aber sie sind " +
       "kleiner als der Verlust von zehn Jahren Fotos.\n\n" +
-      "Und danach: sichern Sie regelmäßig. Nicht einmal im Jahr, sondern " +
+      "Und danach: Sichern Sie regelmäßig. Nicht einmal im Jahr, sondern " +
       "automatisch. Wer seine Daten von Hand sichert, sichert sie nach " +
       "drei Monaten nicht mehr.",
     questions: [
@@ -180,7 +180,7 @@ export const b1U36: SkillExercise[] = [
       { de: "die Störung", tr: "arıza", en: "fault" },
       { de: "unterbrechen", tr: "kesmek", en: "to interrupt" },
       { de: "verbinden", tr: "bağlamak", en: "to connect" },
-      { de: "weshalb", tr: "bu yüzden / neden", en: "which is why" },
+      { de: "weshalb", tr: "bu yüzden / neden", en: "why / which is why" },
       { de: "normal", tr: "normal", en: "normal" },
     ],
     segments: [
@@ -408,7 +408,7 @@ export const b1U36: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Çoğul-only isimlerin fiilini düzelt.",
+        prompt: "Yalnız çoğul kullanılan isimlerin fiilini düzelt.",
         source: "Das Daten ist weg und die Kosten ist hoch.",
         answer: "Die Daten sind weg und die Kosten sind hoch.",
         why: "Türkçede 'veri' ve 'masraf' tekildir ve çoğul eki isteğe bağlıdır, o yüzden Almancada tekil artikel ve tekil fiil seçiliyor. Almancada bu isimler YALNIZ çoğuldur: die Daten, die Kosten, die Leute, die Eltern, die Ferien. Tekil biçimleri yoktur — artikel de fiil de çoğul olmak zorunda.",

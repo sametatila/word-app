@@ -303,7 +303,7 @@ export const a1U05: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sana tebrikler diliyorum.",
+        tr: "Seni tebrik ediyorum.",
         answer: "Ich gratuliere dir",
         hint: "„gratulieren“ Dativ ister: gratuliere dir / Ihnen — „dich“ değil.",
       },

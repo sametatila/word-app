@@ -56,7 +56,7 @@ export const b1U18: SkillExercise[] = [
       "streng. Ich habe mir die Erklärung am Eingang geben lassen, sonst hätte " +
       "ich die Reihenfolge nicht verstanden.\n\n" +
       "Wer wenig Zeit hat, geht direkt in den zweiten Raum. Wer mehr will, " +
-      "sollte vorne anfangen: der Weg vom kalten zum warmen Bild ist der " +
+      "sollte vorne anfangen: Der Weg vom kalten zum warmen Bild ist der " +
       "eigentliche Inhalt dieser Ausstellung.",
     questions: [
       {
@@ -195,7 +195,7 @@ export const b1U18: SkillExercise[] = [
       { speaker: "Frau Keller", text: "Wegen der neuen Linien ist das Problem also kleiner geworden." },
       { speaker: "Herr Brandt", text: "Aber nicht weg. Wir können nur feststellen, dass es besser ist. Ihr Argument gilt also nur zum Teil." },
       { speaker: "Moderatorin", text: "Darf ich kurz zusammenfassen? Beide Seiten sehen einen Fortschritt." },
-      { speaker: "Moderatorin", text: "Einverstanden. Damit schließen wir diesen Punkt." },
+      { speaker: "Moderatorin", text: "Sind alle einverstanden? Dann schließen wir diesen Punkt." },
     ],
     questions: [
       {
@@ -389,7 +389,7 @@ export const b1U18: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir konuda kısa bir tartışma katkısı yaz: konuyu bir cümlede söyle, iki argüman getir (erstens / zweitens), karşı tarafın bir argümanına cevap ver, ve sonunda özetle. En az bir 'weil' ve bir 'wegen' cümlesi kullan.",
+        prompt: "Bir konuda kısa bir tartışma katkısı yaz: konuyu bir cümlede söyle, iki argüman getir (erstens / zweitens), karşı tarafın bir argümanına cevap ver ve sonunda özetle. En az bir 'weil' ve bir 'wegen' cümlesi kullan.",
         checklist: [
           "Konu tek cümlede söylenmiş mi?",
           "İki argüman sırayla verilmiş mi?",

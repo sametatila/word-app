@@ -56,9 +56,9 @@ export const c1U10: SkillExercise[] = [
       "Wer „den Ton angibt“, bestimmt nicht, was gespielt wird, sondern in welcher Höhe alle einsetzen. Das Bild sagt also: Diese Person legt nicht den Inhalt fest, sondern den Rahmen. Wer dagegen „nach jemandes Pfeife tanzt“, hat weder das eine noch das andere.\n\n" +
       "„Die erste Geige spielen“ liegt dazwischen. Die erste Geige führt, aber sie dirigiert nicht — sie ist die sichtbarste Stimme, nicht die entscheidende. Wer den Unterschied kennt, kann in einem Satz sagen, wie eine Abteilung wirklich funktioniert.\n\n" +
       "Bei den Geldbildern zeigt sich eine andere Feinheit: Sie bewerten. „Das Geld auf den Kopf hauen“ ist nie neutral; „jeden Cent umdrehen“ auch nicht, aber in die andere Richtung. Wer sachlich bleiben will, sagt „die Kosten im Griff haben“ — das einzige Bild dieser Familie, das ohne Urteil auskommt.\n\n" +
-      "Aus der Musikfamilie stammt der Ohrwurm — ein Bild ohne jede Wertung, das im Deutschen so fest sitzt, dass niemand mehr an Musik denkt.\n\n" +
+      "Aus der Musikfamilie stammt der Ohrwurm — ein Bild ohne jede Wertung, das im Deutschen so fest sitzt, dass niemand mehr an einen Wurm denkt.\n\n" +
       "Die Musikfamilie kann noch mehr. „Das ist Musik in meinen Ohren“ nimmt eine Nachricht an, ohne sie zu bewerten, und „den richtigen Ton treffen“ lobt eine Form, ohne den Inhalt zu berühren — beides Sätze, die man auch einem Vorgesetzten sagen kann.\n\n" +
-      "Deshalb sind Geldbilder in Protokollen heikel und Musikbilder erstaunlich brauchbar. „Wer gibt hier eigentlich den Ton an?“ ist eine Frage nach Zuständigkeit, gestellt in vier Wörtern — und dabei so höflich, dass niemand sie abwehren kann.",
+      "Deshalb sind Geldbilder in Protokollen heikel und Musikbilder erstaunlich brauchbar. „Wer gibt hier eigentlich den Ton an?“ ist eine Frage nach Zuständigkeit, gestellt in einem einzigen Satz — und dabei so höflich, dass niemand sie abwehren kann.",
     questions: [
       {
         text: "Was bedeutet „den Ton angeben“ laut Text genau?",
@@ -98,7 +98,7 @@ export const c1U10: SkillExercise[] = [
           "es ist eine Frage nach Zuständigkeit, aber so höflich, dass niemand sie abwehren kann",
           "sie fragt nach Zuständigkeit ohne anzugreifen",
         ],
-        explain: "Dört kelimede yetki sorusu — ve reddedilemeyecek kadar kibar.",
+        explain: "Tek cümlede yetki sorusu — ve reddedilemeyecek kadar kibar.",
       },
       {
         text: "Der Text hält Geldbilder in Protokollen für heikel.",
@@ -133,7 +133,7 @@ export const c1U10: SkillExercise[] = [
       { de: "heil", tr: "sağlam", en: "intact" },
       { de: "alltäglich", tr: "gündelik", en: "everyday" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay", en: "easy" },
       { de: "formulieren", tr: "ifade etmek", en: "to phrase" },
     ],
     minutes: 7,
@@ -404,7 +404,7 @@ export const c1U10: SkillExercise[] = [
           "Mit der alten Lösung hatten wir die Kosten nicht im Griff",
           "Die alte Lösung hat die Kosten nicht im Griff gehalten.",
         ],
-        why: "İki cümle aynı olguyu bildiriyor ama birincisi kararı verenleri de yargılıyor. Toplantıda o kişiler oturuyorsa deyim tartışmayı olgudan kişiye kaydırır — C1'de deyim seçimi bir nezaket değil, strateji sorusudur.",
+        why: "İki cümle aynı olguyu bildiriyor ama birincisi kararı verenleri de yargılıyor. Toplantıda o kişiler oturuyorsa deyim tartışmayı olgudan kişiye kaydırır — C1'de deyim seçimi bir nezaket değil, strateji meselesidir.",
       },
     ],
   },
@@ -424,7 +424,7 @@ export const c1U10: SkillExercise[] = [
       { de: "veranschlagen", tr: "öngörmek", en: "to estimate" },
       { de: "finanziell", tr: "mali", en: "financial" },
       { de: "der Vertrieb", tr: "satış bölümü", en: "sales department" },
-      { de: "der Start", tr: "start", en: "start" },
+      { de: "der Start", tr: "başlangıç", en: "start" },
     ],
     minutes: 12,
     tasks: [
@@ -444,7 +444,7 @@ export const c1U10: SkillExercise[] = [
         minWords: 80,
         phrases: [
           { de: "Das Projekt ist im letzten Quartal ins Wasser gefallen.", tr: "proje geçen çeyrekte suya düştü", en: "the project fell through last quarter" },
-          { de: "Die Zuständigkeit war zu keinem Zeitpunkt schriftlich geregelt.", tr: "yetki hiçbir aşamada yazılı değildi", en: "responsibility was never set down in writing" },
+          { de: "Die Zuständigkeit war zu keinem Zeitpunkt schriftlich geregelt.", tr: "yetki hiçbir aşamada yazılı olarak belirlenmemişti", en: "responsibility was never set down in writing" },
           { de: "Wir haben die Kosten nicht im Griff gehabt.", tr: "maliyeti kontrol altında tutamadık", en: "we did not have the costs under control" },
         ],
         sample:

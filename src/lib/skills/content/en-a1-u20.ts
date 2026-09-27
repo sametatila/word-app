@@ -105,7 +105,7 @@ export const enA1U20: SkillExercise[] = [
       "Nil: Tomorrow? I'm afraid I can't. I'm busy.\n" +
       "Ali: And later, at seven?\n" +
       "Nil: Sorry, I'm busy today and tomorrow. Maybe next time.\n" +
-      "Ali: No problem. What do you do?\n" +
+      "Ali: No problem. What are you doing?\n" +
       "Nil: I work, and in the evening I watch a series. Every evening!\n" +
       "Ali: Which channel?\n" +
       "Nil: It is not on a channel. I watch it on the computer.\n" +

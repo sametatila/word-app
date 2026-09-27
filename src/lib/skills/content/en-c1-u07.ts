@@ -289,7 +289,7 @@ export const enC1U07: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Nilay", text: "What the union secured is worker representation on the board. That opening tells you the sentence is about to name one thing and only one." },
-      { speaker: "Emre", text: "The word after the clause again." },
+      { speaker: "Emre", text: "The word after the clause again?" },
       { speaker: "Nilay", text: "The word after the clause again. „Is“ arrives and the shape is closed. If a subject arrived there instead, you would be in a different sentence, with the object fronted." },
       { speaker: "Emre", text: "And the bulletin opens differently." },
       { speaker: "Nilay", text: "Into the dispute comes a warning strike. The place comes first and the subject arrives last, which is how an announcement puts a new thing on the stage." },
@@ -372,7 +372,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "liability", tr: "sorumluluk" },
       { de: "politeness", tr: "nezaket" },
       { de: "a court", tr: "mahkeme" },
-      { de: "survives", tr: "sağ kalıyor" },
+      { de: "survives", tr: "geriye kalıyor" },
       { de: "an expectation", tr: "beklenti" },
       { de: "nobody", tr: "hiç kimse" },
       { de: "a habit", tr: "alışkanlık" },

@@ -130,9 +130,9 @@
   "de": "„And I'll send you a message every day!“"
  },
  {
-  "tr": "„A man is on the ground. He doesn't move.“",
+  "tr": "„A man is on the ground. He isn't moving.“",
   "kind": "explain",
-  "de": "„A man is on the ground. He doesn't move.“"
+  "de": "„A man is on the ground. He isn't moving.“"
  },
  {
   "tr": "„No, I didn't finish it. I'm going to do it tonight.“",
@@ -145,9 +145,9 @@
   "de": "„July is good. I'll write you the address.“"
  },
  {
-  "tr": "„No, I didn't finish. I have two hours today.“",
+  "tr": "„No, I didn't finish. I have two more hours today.“",
   "kind": "explain",
-  "de": "„No, I didn't finish. I have two hours today.“"
+  "de": "„No, I didn't finish. I have two more hours today.“"
  },
  {
   "tr": "„You shouldn't smoke.“ — en kısa öğüt, tek fiille.",
@@ -252,7 +252,7 @@
  {
   "tr": "„I went to the mountains with two friends.“ — büyükanne pazar günü.",
   "kind": "explain",
-  "de": "„I went to the mountains with two friends.“ — die Großmutter kommt am Sonntag."
+  "de": "„I went to the mountains with two friends.“ — die Großmutter gehört zum Sonntag."
  },
  {
   "tr": "„Twenty minutes a day is good.“ — üç, yürüme koşma yüzmenin sayısı.",
@@ -290,7 +290,7 @@
   "de": "„I went to a farm near the mountains.“ — die Eltern besucht Nil."
  },
  {
-  "tr": "„Can I speak to Mr. Demir, please?“ — „speak to“ birine konuşmak demek.",
+  "tr": "„Can I speak to Mr. Demir, please?“ — „speak to“ biriyle konuşmak demek.",
   "kind": "explain",
   "de": "„Can I speak to Mr. Demir, please?“ — „speak to“ heißt, mit jemandem zu sprechen."
  },
@@ -332,7 +332,7 @@
  {
   "tr": "„I have a headache. Can I have some medicine, please?“ — su ilacı içmek için.",
   "kind": "explain",
-  "de": "„I have a headache. Can I have some medicine, please?“ — das Wasser ist zum Einnehmen."
+  "de": "„I have a headache. Can I have some medicine, please?“ — das Wasser ist zum Einnehmen des Medikaments."
  },
  {
   "tr": "„Good! At seven, in the café next to the park.“ — iki saat, cevabın gecikmesi.",
@@ -388,11 +388,6 @@
   "tr": "haber",
   "kind": "gloss.tr",
   "de": "Nachricht"
- },
- {
-  "tr": "hafif",
-  "kind": "gloss.tr",
-  "de": "leicht"
  },
  {
   "tr": "kendi",
@@ -607,7 +602,7 @@
  {
   "tr": "kusura bakma seni duyamıyorum",
   "kind": "gloss.tr",
-  "de": "entschuldigung, ich höre dich nicht"
+  "de": "Entschuldigung, ich höre dich nicht"
  },
  {
   "tr": "biraz ilaç alabilir miyim lütfen",

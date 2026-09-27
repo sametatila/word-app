@@ -71,7 +71,7 @@ export const deC1P18: SkillExercise[] = [
           "mit kürzeren Leihfristen",
         ],
         answer: 1,
-        explain: "Ceza getirilmedi; her ödünç işlemi artık bir gün önce kısa bir mesajla hatırlatılıyor.",
+        explain: "Ceza getirilmedi; artık her iadeden bir gün önce kısa bir hatırlatma gönderiliyor.",
       },
       {
         kind: "truefalse",

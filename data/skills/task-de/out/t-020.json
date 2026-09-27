@@ -197,7 +197,7 @@
  {
   "tr": "„anymore“ olumsuzla birlikte ve cümlenin sonunda.",
   "kind": "build.hint",
-  "de": "„anymore“ steht mit der Verneinung und am Satzende — anders als deutsch „nicht mehr“ mitten im Satz."
+  "de": "„anymore“ steht mit der Verneinung und am Satzende — hier wie deutsch „nicht mehr“."
  },
  {
   "tr": "Hâlâ sürüyor: „have had“. Süre olduğu için „for“.",
@@ -290,9 +290,9 @@
   "de": "„important“ ist lang: es verlangt „more“. „importanter“ gibt es nicht — Achtung, das Deutsche hängt auch hier „-er“ an: wichtiger."
  },
  {
-  "tr": "Hekimin ilk sorusu. „had“ iki kez geçiyor gibi görünüyor ama biri yardımcı.",
+  "tr": "Hekimin ilk sorusu. „have“ ile „had“ aynı fiilden: „have“ yardımcı, „had“ asıl fiil.",
   "kind": "build.hint",
-  "de": "Die erste Frage des Arztes. „had“ scheint zweimal dazustehen, aber eines davon ist das Hilfsverb."
+  "de": "Die erste Frage des Arztes. „have“ und „had“ sind dasselbe Verb: „have“ ist das Hilfsverb, „had“ das Vollverb."
  },
  {
   "tr": "SÜRE olduğu için „for“. Türkçe şimdiki zaman diyor, İngilizce „have lived“.",

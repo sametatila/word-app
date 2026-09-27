@@ -93,7 +93,7 @@ export const deC1P12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie funktioniert die Regel laut Text eher als zum Schutz der Musik?",
+        text: "Als was funktioniert die Regel laut Text eigentlich, wenn nicht als Schutz der Musik?",
         options: [],
         answer: 0,
         accept: ["als Erkennungszeichen", "Erkennungszeichen", "als Zeichen der Zugehörigkeit"],
@@ -120,7 +120,7 @@ export const deC1P12: SkillExercise[] = [
     skill: "listening",
     title: "Gespräch: Der Saal und seine Regeln",
     genre: "interview",
-    intro: "Bir radyo söyleşisi: bir orkestra şefi salon kurallarını üç sezondur gevşeten konser dizisini ve bunun bedelini anlatıyor.",
+    intro: "Bir radyo söyleşisi: bir orkestra şefi, salon kurallarını üç sezondur gevşeten konser dizisini ve bunun bedelini anlatıyor.",
     gloss: [
       { de: "die Dirigentin", tr: "orkestra şefi", en: "conductor" },
       { de: "lockern", tr: "gevşetmek", en: "to relax" },
@@ -242,9 +242,9 @@ export const deC1P12: SkillExercise[] = [
         minWords: 150,
         phrases: [
           { de: "Vielen Dank, dass Sie uns so offen schreiben.", tr: "Bize bu kadar açık yazdığınız için teşekkür ederiz.", en: "Thank you for writing to us so openly." },
-          { de: "Ihren Zeilen entnehme ich, dass es Ihnen um … geht.", tr: "Satırlarınızdan meselenin … olduğunu anlıyorum.", en: "I gather from your lines that your concern is …" },
+          { de: "Ihren Zeilen entnehme ich, dass es Ihnen um … geht.", tr: "Satırlarınızdan meselenin … olduğunu anlıyorum.", en: "I gather from your letter that your concern is …" },
           { de: "In einem Punkt haben Sie ohne Einschränkung recht: …", tr: "Bir noktada kayıtsız şartsız haklısınız: …", en: "On one point you are entirely right: …" },
-          { de: "Dass wir dennoch daran festhalten, hat einen Grund: …", tr: "Buna rağmen bunda ısrar etmemizin bir nedeni var: …", en: "That we are nevertheless sticking to it has a reason: …" },
+          { de: "Dass wir dennoch daran festhalten, hat einen Grund: …", tr: "Buna rağmen bunda ısrar etmemizin bir nedeni var: …", en: "There is a reason why we are nevertheless sticking to it: …" },
           { de: "Als kleinen Ausgleich möchten wir Ihnen … anbieten.", tr: "Küçük bir telafi olarak size … sunmak isteriz.", en: "As a small compensation we would like to offer you …" },
         ],
         sample:
@@ -332,7 +332,7 @@ export const deC1P12: SkillExercise[] = [
       { de: "die Pause", tr: "ara", en: "pause" },
       { de: "der Schlussakkord", tr: "son akor", en: "final chord" },
       { de: "die Anmerkung", tr: "ek açıklama", en: "remark" },
-      { de: "gestattet", tr: "izinli", en: "permitted" },
+      { de: "gestattet", tr: "izin verilen", en: "permitted" },
       { de: "die Aufnahme", tr: "kayıt", en: "recording" },
     ],
     minutes: 12,

@@ -74,7 +74,7 @@ export const deC1P15: SkillExercise[] = [
           "Die Uhrzeiten werden falsch notiert.",
         ],
         answer: 0,
-        explain: "Nadir türler olduğundan çok bildiriliyor: ağaçkakan sanılan kuş bazen bir sıvacı kuşu.",
+        explain: "Nadir türler olduğundan çok bildiriliyor: yalıçapkını sanılan kuş bazen bir mavi baştankara.",
       },
       {
         kind: "truefalse",

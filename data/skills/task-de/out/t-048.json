@@ -37,10 +37,10 @@
  {
   "tr": "Yağış düştü; hasat düşmedi.",
   "kind": "build.tr",
-  "de": "Der Niederschlag fiel; die Ernte nicht."
+  "de": "Der Niederschlag ging zurück; die Ernte nicht."
  },
  {
-  "tr": "Planda arazi tüketimi, köyde ekili bir arazi.",
+  "tr": "Planda arazi tüketimi, köyde ekilebilir bir tarla.",
   "kind": "build.tr",
   "de": "Im Plan ist es Flächenverbrauch, im Dorf ein Acker."
  },
@@ -135,7 +135,7 @@
   "de": "So sehr wir die Agrarökologie loben, die Monokultur ernährt die Stadt."
  },
  {
-  "tr": "Yöntem, toprağı koruyan olsa da, toprak verimliliğini onarmıyor.",
+  "tr": "Yöntem, toprağı korusa da, toprak verimliliğini onarmıyor.",
   "kind": "build.tr",
   "de": "Die Methode stellt, wenn auch bodenschonend, die Bodenfruchtbarkeit nicht wieder her."
  },
@@ -235,9 +235,9 @@
   "de": "Die zweite Hälfte leiht sich Adjektiv und Verb."
  },
  {
-  "tr": "Yine bir duruş fiili, bu kez baştaki yuvada.",
+  "tr": "Yine bir duruş fiili; bu kez baştaki yuvayı bir yer almış.",
   "kind": "build.hint",
-  "de": "Wieder ein Haltungsverb, diesmal an der vorderen Stelle."
+  "de": "Wieder ein Haltungsverb; diesmal besetzt eine Ortsangabe die vordere Stelle."
  },
  {
   "tr": "„As noted earlier“ daha önceki bir sayfa hakkında bir söz.",

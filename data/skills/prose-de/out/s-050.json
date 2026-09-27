@@ -77,7 +77,7 @@
  {
   "tr": "Ödün vermenin üç aracı. Hangisi hiçbir şey bırakmıyor?",
   "kind": "intro",
-  "de": "Drei Mittel der Einräumung. Welches gibt gar nichts her?"
+  "de": "Drei Mittel der Einräumung. Welches räumt gar nichts ein?"
  },
  {
   "tr": "Üç bağlayıcı. Hangisi geriye tek bir şeye işaret ediyor?",
@@ -112,7 +112,7 @@
  {
   "tr": "Edilgen ortaç: aktarma bağlamı değiştiriyor.",
   "kind": "explain",
-  "de": "Passives Partizip: die Wiedergabe verändert den Zusammenhang."
+  "de": "Passives Partizip: Die Wiedergabe verändert den Zusammenhang."
  },
  {
   "tr": "Üç yargı, yansız olan, bedeli, en sonda sonuç.",
@@ -122,7 +122,7 @@
  {
   "tr": "Yerleşmiş eşleşme: parçaları değiştirilemiyor.",
   "kind": "explain",
-  "de": "Feste Fügung: ihre Teile lassen sich nicht austauschen."
+  "de": "Feste Fügung: Ihre Teile lassen sich nicht austauschen."
  },
  {
   "tr": "İki talep, bir varsayım, en sonda ikisinin adı.",
@@ -250,19 +250,14 @@
   "de": "das Letztere"
  },
  {
-  "tr": "belgelemek",
-  "kind": "gloss.tr",
-  "de": "belegen"
- },
- {
   "tr": "manevra alanı",
   "kind": "gloss.tr",
   "de": "Spielraum"
  },
  {
-  "tr": "aldı",
+  "tr": "seçti",
   "kind": "gloss.tr",
-  "de": "griff auf"
+  "de": "wählte"
  },
  {
   "tr": "ilke",
@@ -828,5 +823,10 @@
   "tr": "geriye işaret ediyor",
   "kind": "gloss.tr",
   "de": "zeigt zurück"
+ },
+ {
+  "tr": "hesaplamak",
+  "kind": "gloss.tr",
+  "de": "berechnen"
  }
 ]

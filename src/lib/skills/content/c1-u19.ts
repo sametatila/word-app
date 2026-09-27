@@ -67,7 +67,7 @@ export const c1U19: SkillExercise[] = [
       "DER SATZ, DER NICHTS BEHAUPTET\n\n" +
       "„Angenommen, Sie haben recht — was folgt daraus?“\n\n" +
       "Dieser Satz gibt nichts zu und nimmt nichts zurück. Er stellt eine Behauptung für die Dauer eines Gedankengangs auf und schaut, wohin sie führt.\n\n" +
-      "In deutschen Diskussionen ist das ein anerkanntes Verfahren, kein rhetorischer Trick. Wer „angenommen“ sagt, signalisiert: Ich prüfe Ihre Position von innen, nicht von außen. Und wer daraufhin sagt „Sie geben mir also recht“, hat die Konstruktion nicht verstanden — was sich beim Gegenüber schnell herumspricht.\n\n" +
+      "In deutschen Diskussionen ist das ein anerkanntes Verfahren, kein rhetorischer Trick. Wer „angenommen“ sagt, signalisiert: Ich prüfe Ihre Position von innen, nicht von außen. Und wer daraufhin sagt „Sie geben mir also recht“, hat die Konstruktion nicht verstanden — was dem Gegenüber schnell auffällt.\n\n" +
       "Die Formen unterscheiden sich im Gewicht. „Angenommen, …“ ist alltäglich und leicht. „Gesetzt den Fall, …“ ist formeller und klingt nach Prüfung. „Man stelle sich vor, …“ ruft ein Bild auf und wirkt rhetorisch. „Wenn man einmal unterstellt, dass …“ ist am vorsichtigsten und markiert am deutlichsten, dass hier nichts behauptet wird.\n\n" +
       "Wichtig ist dabei, dass die Annahme nicht zutreffen muss. Sie muss nur klar genug sein, damit man sieht, was aus ihr folgt.\n\n" +
       "Der eigentliche Nutzen zeigt sich, wenn man voreingenommen ist. Man kann eine Position, die man ablehnt, entweder bekämpfen oder durchrechnen. Bekämpfen ist schneller; durchrechnen bringt oft zutage, dass sie an einer bestimmten Stelle bricht — und diese Stelle zu benennen ist ein stärkeres Argument als jede Ablehnung.\n\n" +
@@ -183,7 +183,7 @@ export const c1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Verlagerung"],
-        explain: "Sorumluluk bireye kayınca çerçeve sorusu gözden düşüyor.",
+        explain: "Sorumluluk bireye kayınca çerçeve sorusu gözden kayboluyor.",
       },
       {
         text: "Welchen Gegenschluss nennt der Text ebenfalls falsch?",
@@ -402,7 +402,7 @@ export const c1U19: SkillExercise[] = [
         kind: "build",
         tr: "Diyelim ki haklısınız — bundan ne çıkar?",
         answer: "Angenommen, Sie haben recht — was folgt daraus",
-        hint: "Angenommen'dan sonra normal ana cümle sırası gelir.",
+        hint: "Angenommen'den sonra normal ana cümle sırası gelir.",
       },
       {
         kind: "build",
@@ -412,7 +412,7 @@ export const c1U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu beklentiyi ne kadar anlasam da o kadar sık gerçeğin yanından geçiyor.",
+        tr: "Bu beklentiyi ne kadar anlasam da sık sık gerçeği ıskalıyor.",
         answer: "So sehr ich diese Erwartung verstehe, so oft geht sie an der Wirklichkeit vorbei",
         hint: "So sehr …, so oft …: ilk yarıda fiil yan cümledeki gibi sona gider, ikinci yarıda so oft'un hemen ardından gelir.",
       },
@@ -425,7 +425,7 @@ export const c1U19: SkillExercise[] = [
           "Angenommen, Sie haben recht — was folgt daraus",
           "Gesetzt den Fall, Sie haben recht: Was folgt daraus?",
         ],
-        why: "Varsayım yapısının bütün değeri hiçbir şey iddia etmemesinde. Sonuna „also gebe ich Ihnen recht“ eklendiğinde yapı kendini iptal ediyor ve konuşan hem konumunu bırakmış hem de aracı kaybetmiş oluyor.",
+        why: "Varsayım yapısının bütün değeri hiçbir şey iddia etmemesinde. Sonuna „dann gebe ich Ihnen also recht“ eklendiğinde yapı kendini iptal ediyor ve konuşan hem konumunu bırakmış hem de aracı kaybetmiş oluyor.",
       },
     ],
   },
@@ -449,7 +449,7 @@ export const c1U19: SkillExercise[] = [
       { de: "schließen", tr: "kapatmak", en: "to close" },
       { de: "einzige", tr: "tek", en: "only" },
       { de: "der Anwohner", tr: "mahalle sakini", en: "local resident" },
-      { de: "verlagern", tr: "nakletmek", en: "to relocate" },
+      { de: "verlagern", tr: "kaydırmak", en: "to shift" },
       { de: "die Lebensqualität", tr: "yaşam kalitesi", en: "quality of life" },
       { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
     ],

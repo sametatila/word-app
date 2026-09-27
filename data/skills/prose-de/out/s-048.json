@@ -102,7 +102,7 @@
  {
   "tr": "Çıkarım: kanıt tek bir okuma bırakıyor.",
   "kind": "explain",
-  "de": "Ein Schluss: der Beleg lässt nur eine Lesart."
+  "de": "Ein Schluss: Der Beleg lässt nur eine Lesart."
  },
  {
   "tr": "„„She is said to feel distrust“ cannot.“",
@@ -112,7 +112,7 @@
  {
   "tr": "Sayı üstüne çekince: bir tane bile fazla.",
   "kind": "explain",
-  "de": "Eine Absicherung auf einer Zahl: schon eine ist zu viel."
+  "de": "Eine Absicherung auf einer Zahl: Schon eine ist zu viel."
  },
  {
   "tr": "Yarık cümle bir adayı listeden çıkarıyor.",
@@ -543,5 +543,15 @@
   "tr": "işe almak istedikleri için",
   "kind": "gloss.tr",
   "de": "weil sie schnell einstellen wollten"
+ },
+ {
+  "tr": "daha dost",
+  "kind": "gloss.tr",
+  "de": "freundlicher"
+ },
+ {
+  "tr": "hareketli",
+  "kind": "gloss.tr",
+  "de": "lebhaft"
  }
 ]

@@ -21,8 +21,8 @@ export const deB1P3: SkillExercise[] = [
     intro: "Kapıda kalanlara yönelik bir tüketici rehberini okuyacaksın: telefonda ne sorulmalı, neye dikkat edilmeli, fatura fahişse ne yapılmalı.",
     gloss: [
       { de: "zufallen", tr: "kapanıvermek", en: "to slam shut" },
-      { de: "unseriös", tr: "güvenilmez", en: "dodgy" },
-      { de: "die Anfahrt", tr: "yol ücreti", en: "call-out travel" },
+      { de: "unseriös", tr: "güvenilmez", en: "shady" },
+      { de: "die Anfahrt", tr: "yol ücreti", en: "travel charge" },
       { de: "der Zuschlag", tr: "ek ücret", en: "surcharge" },
       { de: "auflegen", tr: "telefonu kapatmak", en: "to hang up" },
       { de: "aufbohren", tr: "delerek açmak", en: "to drill open" },
@@ -232,7 +232,7 @@ export const deB1P3: SkillExercise[] = [
           { de: "Ich würde es jedem empfehlen, der …", tr: "… olan herkese tavsiye ederdim", en: "I'd recommend it to anyone who …" },
         ],
         sample:
-          "Angefangen hat es mit einer Kiste. Als Jugendliche habe ich oft Briefe geschrieben, aber mit dem ersten Handy habe ich damit aufgehört, weil Nachrichten schneller waren. Vor drei Jahren habe ich darin vierzig Briefe von meiner Großmutter " +
+          "Angefangen hat es mit einer Kiste. Als Jugendliche habe ich oft Briefe geschrieben, aber mit dem ersten Handy habe ich damit aufgehört, weil Nachrichten schneller waren. Vor drei Jahren habe ich in dieser Kiste vierzig Briefe von meiner Großmutter " +
           "gefunden, an einem Abend gelesen und danach zwei Wochen an nichts anderes gedacht. Von mir würde niemand " +
           "so eine Kiste finden: Alles, was ich schreibe, liegt in Chatverläufen, die niemand aufhebt. " +
           "Seitdem schreibe ich jeden Monat einen Brief mit der Hand. Es dauert eine Stunde, und das ist der Punkt. " +

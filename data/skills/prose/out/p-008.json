@@ -187,7 +187,7 @@
  {
   "tr": "„Hin und zurück nach Bremen … 20,00 Euro“. 12 Euro tek yön.",
   "kind": "explain",
-  "en": "„Hin und zurück nach Bremen … 20,00 Euro“. 12 Euro is the single fare."
+  "en": "„Hin und zurück nach Bremen … 20,00 Euro“. 12 euros is the one-way fare."
  },
  {
   "tr": "„however“ cümlenin ortasında iki virgül arasında durabilir.",
@@ -265,9 +265,9 @@
   "en": "A job ad. Who is wanted, what is offered, how do you apply?"
  },
  {
-  "tr": "Bir kadın telefonda adını harf harf söylüyor. Dinle ve yaz.",
+  "tr": "Bir kadın telefonda soyadını harf harf söylüyor. Dinle ve yaz.",
   "kind": "intro",
-  "en": "A woman spells her name out on the phone. Listen and write it down."
+  "en": "A woman spells her last name out on the phone. Listen and write it down."
  },
  {
   "tr": "Bir karnaval anlatılıyor. Ne kadar sürüyor, kim ne giyiyor?",
@@ -322,7 +322,7 @@
  {
   "tr": "Eczanede standart kapanış — hastaya bunu söylemek beklenir.",
   "kind": "explain",
-  "en": "The standard closing at a pharmacy — a patient expects to hear it."
+  "en": "The standard closing at a pharmacy — it is what you are expected to say to the patient."
  },
  {
   "tr": "Geçmişte gerçek dışı koşul; „wenn“ düşünce fiil başa geçer.",
@@ -472,7 +472,7 @@
  {
   "tr": "„Etwa vierzig Minuten.“ Bir saat, bugünkü toplam yol süresi.",
   "kind": "explain",
-  "en": "„Etwa vierzig Minuten.“ An hour is today's total traveling time."
+  "en": "„Etwa vierzig Minuten.“ An hour is today's total travel time."
  },
  {
   "tr": "„Eventuell schaue ich mir A und B beide an.“ — belki, olası.",
@@ -692,7 +692,7 @@
  {
   "tr": "Mahalleni anlat. 'çok' ve 'az' sayılabilirliğe göre çekilir.",
   "kind": "intro",
-  "en": "Describe your neighborhood. 'much' and 'few' follow countability."
+  "en": "Describe your neighborhood. 'much/many' and 'little/few' follow countability."
  },
  {
   "tr": "Müzakere tutanağı. Kim taviz verdi, kim vermiş gibi göründü?",

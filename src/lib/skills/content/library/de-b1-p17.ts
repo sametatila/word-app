@@ -22,8 +22,8 @@ export const deB1P17: SkillExercise[] = [
     genre: "article",
     intro: "Bir terzi dükkânını anlatan yerel yazı: müşteriler bugün ne getiriyor, fiyatlar nasıl, dükkân sahibini ne düşündürüyor.",
     gloss: [
-      { de: "kürzen", tr: "kısaltmak", en: "to take up" },
-      { de: "der Reißverschluss", tr: "fermuar", en: "zip" },
+      { de: "kürzen", tr: "kısaltmak", en: "to shorten" },
+      { de: "der Reißverschluss", tr: "fermuar", en: "zipper" },
       { de: "flicken", tr: "yamamak", en: "to patch" },
       { de: "umnähen", tr: "yeniden dikmek", en: "to alter" },
       { de: "die Nachfrage", tr: "talep", en: "demand" },
@@ -335,7 +335,7 @@ export const deB1P17: SkillExercise[] = [
         examples: [
           { de: "Ich habe mein Fahrrad reparieren lassen.", tr: "Bisikletimi tamir ettirdim.", note: "gelassen değil" },
           { de: "Wir haben die Küche streichen lassen.", tr: "Mutfağı boyattık.", note: "iki mastar sonda" },
-          { de: "Hast du dir die Haare schneiden lassen?", tr: "Saçlarını mı kestirdin?", note: "soru: hast başta" },
+          { de: "Hast du dir die Haare schneiden lassen?", tr: "Saçlarını kestirdin mi?", note: "soru: hast başta" },
         ],
       },
     ],

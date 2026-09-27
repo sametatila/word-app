@@ -32,7 +32,7 @@
  {
   "tr": "Geçmiş hakkında sorular. Her soru başka bir şeyi öğreniyor.",
   "kind": "intro",
-  "de": "Fragen über die Vergangenheit. Jede Frage erfährt etwas anderes."
+  "de": "Fragen über die Vergangenheit. Mit jeder Frage erfährt man etwas anderes."
  },
  {
   "tr": "Bir kazayı anlat ve geçmişi sor. Sonunda kaza formunu doldur.",
@@ -72,7 +72,7 @@
  {
   "tr": "Deneyim sor ve anlat. Son görev „been“ ile „gone“ arasındaki farkı ölçüyor.",
   "kind": "intro",
-  "de": "Frage nach Erfahrungen und erzähle davon. Die letzte Aufgabe misst den Unterschied zwischen „been“ und „gone“."
+  "de": "Frage nach Erfahrungen und erzähle davon. Die letzte Aufgabe prüft den Unterschied zwischen „been“ und „gone“."
  },
  {
   "tr": "İki kişi dün ne yaptıklarını konuşuyor. Hangi iş sürüyordu, hangisi bir andı?",
@@ -132,7 +132,7 @@
  {
   "tr": "„I have been to Italy twice.“ — „been“ gidip döndüğünü söylüyor.",
   "kind": "explain",
-  "de": "„I have been to Italy twice.“ — „been“ sagt, dass er hin und zurück war."
+  "de": "„I have been to Italy twice.“ — „been“ sagt, dass er dort war und zurückgekommen ist."
  },
  {
   "tr": "„Because my father was the coach!“ — sevmediğini iki kez söylüyor.",
@@ -212,12 +212,12 @@
  {
   "tr": "„Ninety-two! And he was still working.“ — Ela yetmiş diye tahmin ediyor.",
   "kind": "explain",
-  "de": "„Ninety-two! And he was still working.“ — Ela rät auf siebzig."
+  "de": "„Ninety-two! And he was still working.“ — Ela tippt auf siebzig."
  },
  {
-  "tr": "„I bought a small bag for the phone.“ — telefonu bulundu, yenisini almadı.",
+  "tr": "„I bought a small bag for the phone.“ — telefonunu buldu, yenisini almadı.",
   "kind": "explain",
-  "de": "„I bought a small bag for the phone.“ — das Handy wurde gefunden, ein neues kaufte er nicht."
+  "de": "„I bought a small bag for the phone.“ — er hat sein Handy gefunden, ein neues kaufte er nicht."
  },
  {
   "tr": "„My father has gone to Germany — he is away this week.“ — yani hâlâ orada.",

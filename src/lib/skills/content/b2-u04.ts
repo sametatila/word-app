@@ -114,7 +114,7 @@ export const b2U04: SkillExercise[] = [
     gloss: [
       { de: "nachgeben", tr: "geri adım atmak", en: "to give in" },
       { de: "einvernehmlich", tr: "karşılıklı rızayla", en: "by mutual consent" },
-      { de: "die Schlichtungsstelle", tr: "uzlaştırma kurulu", en: "arbitration board" },
+      { de: "die Schlichtungsstelle", tr: "uzlaştırma kurulu", en: "conciliation board" },
       { de: "der Streitfall", tr: "uyuşmazlık", en: "dispute" },
       { de: "die Zusatzvereinbarung", tr: "ek anlaşma", en: "supplementary agreement" },
       { de: "verpflichten", tr: "yükümlü kılmak", en: "to oblige" },
@@ -433,7 +433,7 @@ export const b2U04: SkillExercise[] = [
         minWords: 80,
         sample:
           "Sehr geehrter Herr Yildirim,\n\n" +
-          "Ihre Wut kann ich gut verstehen. Acht Tage ohne Anschluss kann man niemandem zumuten, und drei zugesagte Rückrufe ohne Rückruf machen es nicht besser.\n\n" +
+          "Ihre Wut kann ich gut verstehen. Acht Tage ohne Anschluss kann man niemandem zumuten, und drei zugesagte Rückrufe, von denen keiner kam, machen es nicht besser.\n\n" +
           "Ich habe den Vorgang gerade geprüft. Der Termin am Montag ist bei uns nie eingetragen worden; die Zusage aus dem Telefonat ist im System nicht angekommen. Das ist ein Fehler auf unserer Seite, und ich bestreite ihn nicht.\n\n" +
           "Wäre es hilfreich, wenn ich Ihnen morgen um neun Uhr einen festen Termin gebe, mit Namen des Technikers? Ich rufe Sie um acht selbst an, damit Sie nicht umsonst warten. Die Grundgebühr für die acht Tage wird Ihnen ohne Antrag erstattet; die Rückerstattung erscheint auf der nächsten Rechnung.\n\n" +
           "Wenn Ihnen ein anderer Tag lieber ist, sagen Sie mir bitte kurz Bescheid.\n\n" +

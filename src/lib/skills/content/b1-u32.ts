@@ -55,7 +55,7 @@ export const b1U32: SkillExercise[] = [
       "Wenn Sie nur zwei Tage bleiben, lohnt sich eine Rundfahrt mehr als " +
       "ein festes Quartier. Man schläft dann in einer anderen Region als " +
       "am ersten Abend und sieht mehr.\n\n" +
-      "Ein letzter Hinweis: buchen Sie in zwei Wochen, nicht später. " +
+      "Ein letzter Hinweis: Buchen Sie spätestens in zwei Wochen. " +
       "Die günstigen Zimmer sind dann weg, und was übrig bleibt, kostet " +
       "wieder zweimal so viel.",
     questions: [
@@ -127,7 +127,7 @@ export const b1U32: SkillExercise[] = [
       "einem Vorort nicht glücklich.\n\n" +
       "Eine Rückkehr in die alte Region planen wir nicht. Aber ich verstehe " +
       "jeden, der bleibt: " +
-      "der Wohnort ist keine Frage von richtig und falsch, sondern davon, " +
+      "Der Wohnort ist keine Frage von richtig und falsch, sondern davon, " +
       "was einem am Abend fehlt.",
     questions: [
       {
@@ -401,7 +401,7 @@ export const b1U32: SkillExercise[] = [
           "wollten wir bleiben.\n\n" +
           "Was fehlen wird, ist die Auswahl am Abend. Dort schließt der " +
           "letzte Laden um acht. Freunde dort sagen aber: Nach zwei Wochen " +
-          "in der Region ist das ganz normal. Das Quartier ist ruhig und die ganze Zone gehört zur Region.\n\n" +
+          "in der Region ist das ganz normal. Das Quartier ist ruhig, und der Vorort liegt noch in derselben Zone wie die Stadt.\n\n" +
           "Der neue Wohnsitz steht unten. Kommt uns besuchen, am besten " +
           "im Sommer, wenn man auf dem Hügel sitzen kann.",
         phrases: [

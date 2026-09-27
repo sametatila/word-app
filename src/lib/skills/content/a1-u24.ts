@@ -51,7 +51,7 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Freunde,\n\nhier ist meine Einladung: Am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
+      "Liebe Freunde,\n\nhier ist meine Einladung: Am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Eure Partner und Partnerinnen können auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
     questions: [
       {
         text: "Womit beginnt die Einladung?",
@@ -85,7 +85,7 @@ export const a1U24: SkillExercise[] = [
         text: "Darf man den Partner mitbringen?",
         options: ["Ja", "Nein", "Nur mit Anruf"],
         answer: 0,
-        explain: "„Dein Partner oder deine Partnerin kann auch kommen.“",
+        explain: "„Eure Partner und Partnerinnen können auch kommen.“",
       },
       {
         text: "Bis wann sollen die Gäste antworten?",
@@ -365,7 +365,7 @@ export const a1U24: SkillExercise[] = [
           { de: "Ich bin zu Hause geblieben.", tr: "Evde kaldım.", en: "I stayed home." },
         ],
         sample:
-          "Hallo zusammen,\n\nam Samstag bin ich in die Stadt gefahren. Da habe ich einen Pullover gekauft — er war nicht teuer.\n\nAm Abend bin ich mit Tom ins Kino gegangen. Wir haben einen Film gesehen. Der Film war wirklich gut.\n\nAm Sonntag bin ich zu Hause geblieben. Ich habe nur Musik gehört.\n\nUnd ihr? Was habt ihr am Wochenende gemacht? Erzählt mir!",
+          "Hallo zusammen,\n\nam Samstag bin ich in die Stadt gefahren. Da habe ich einen Pullover gekauft — er war nicht teuer.\n\nAm Abend bin ich mit Tom ins Kino gegangen. Wir haben einen Film gesehen. Der Film war wirklich gut.\n\nAm Sonntag bin ich zu Hause geblieben. Ich habe nur Musik gehört.\n\nUnd ihr? Was habt ihr am Wochenende gemacht? Erzählt mal!",
       },
     ],
   },

@@ -60,7 +60,7 @@ export const b1U40: SkillExercise[] = [
       "Die dritte Frage ist die wichtigste, und viele Kandidaten bemühen " +
       "sich, nicht darauf zu antworten. Das fällt auf.\n\n" +
       "Fragen Sie am Ende selbst etwas. Nicht zum Gehalt, sondern zur " +
-      "Arbeit: wie sieht ein normaler Tag aus, wer war vorher auf der " +
+      "Arbeit: Wie sieht ein normaler Tag aus, wer war vorher auf der " +
       "Stelle. Antworten darauf sagen mehr als jede Anzeige.",
     questions: [
       {
@@ -120,7 +120,7 @@ export const b1U40: SkillExercise[] = [
     ],
     text:
       "Eine Umfrage hat achthundert Angestellte gefragt. Die Studie zeigt: " +
-      "insgesamt sind " +
+      "Insgesamt sind " +
       "die meisten Angestellten zufrieden — aber nicht aus den Gründen, " +
       "die man erwartet.\n\n" +
       "Das Gehalt steht erst an vierter Stelle. Wichtiger sind: eine " +
@@ -129,8 +129,8 @@ export const b1U40: SkillExercise[] = [
       "Interessant ist auch, was unzufrieden macht. Nicht die " +
       "anstrengende Arbeit — die meisten Arbeiter nennen sie sogar " +
       "angenehm, wenn sie körperlich ist und ein Ende hat. Unzufrieden " +
-      "macht die Langeweile: wer sich häufig langweilt, geht früher.\n\n" +
-      "Die Studie enthält eine Zahl, die uns überrascht hat: bei den " +
+      "macht die Langeweile: Wer sich häufig langweilt, geht früher.\n\n" +
+      "Die Studie enthält eine Zahl, die uns überrascht hat: Bei den " +
       "unter Dreißigjährigen ist der Wunsch nach mehr Geld am geringsten. " +
       "Sie wollen etwas anderes, und wer sie halten will, sollte danach " +
       "fragen.",
@@ -151,7 +151,7 @@ export const b1U40: SkillExercise[] = [
         text: "Was macht laut Studie unzufrieden?",
         options: ["Anstrengende Arbeit", "Die Langeweile", "Das Team"],
         answer: 1,
-        explain: "„Unzufrieden macht die Langeweile: wer sich häufig langweilt, geht früher.“",
+        explain: "„Unzufrieden macht die Langeweile: Wer sich häufig langweilt, geht früher.“",
       },
       {
         kind: "gapfill",
@@ -390,7 +390,7 @@ export const b1U40: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Küçük bir anketi raporla (gerçek ya da düşünülmüş): kaç kişiye soruldu, en sık verilen üç yanıt, şaşırtan bir sonuç, ve bundan çıkan öneri. En az üç 'die meisten / viele / einige' cümlesi kullan.",
+        prompt: "Küçük bir anketi raporla (gerçek ya da düşünülmüş): kaç kişiye soruldu, en sık verilen üç yanıt, şaşırtan bir sonuç ve bundan çıkan öneri. En az üç 'die meisten / viele / einige' cümlesi kullan.",
         checklist: [
           "Katılımcı sayısı verilmiş mi?",
           "En az üç yanıt sıralanmış mı?",
@@ -423,7 +423,7 @@ export const b1U40: SkillExercise[] = [
         prompt: "Çoğul uyumunu düzelt.",
         source: "Die meisten Angestellte ist zufrieden und viele Kollege sagt dasselbe.",
         answer: "Die meisten Angestellten sind zufrieden und viele Kollegen sagen dasselbe.",
-        why: "Türkçede 'çoğu' ve 'birçok' ismi TEKİL bırakır ('çoğu çalışan memnun'), o yüzden Almancada da tekil biçim kullanılıyor. Almancada bu belirteçler çoğul ister ve üç yerde birden işaretlenir: isim çoğul olur (Angestellten, Kollegen), sıfat -en alır, ve fiil de çoğul çekilir (sind, sagen).",
+        why: "Türkçede 'çoğu' ve 'birçok' ismi TEKİL bırakır ('çoğu çalışan memnun'), o yüzden Almancada da tekil biçim kullanılıyor. Almancada bu belirteçler çoğul ister ve üç yerde birden işaretlenir: isim çoğul olur (Angestellten, Kollegen), sıfat -en alır ve fiil de çoğul çekilir (sind, sagen).",
       },
     ],
   },

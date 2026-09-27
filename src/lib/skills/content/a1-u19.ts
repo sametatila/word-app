@@ -42,7 +42,7 @@ export const a1U19: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "SPORTVEREIN BREMEN\n\nFußball: Wir suchen Spieler für unsere Mannschaft. Wir üben zweimal pro Woche — am Dienstag und am Samstag, immer um 18 Uhr.\n\nBasketball: montags um 19 Uhr. Auch für alle!\n\nTennis spielen: am Sonntag, 10 bis 12 Uhr. Bitte einen Ball mitbringen.\n\nJoggen: Jeden Morgen um 7 Uhr am Marktplatz. Kostenlos, auch bei Regen!\n\nDas Fitnessstudio im Haus ist von 8 bis 22 Uhr auf. Für Mitglieder kostenlos.\n\nWollen Sie mitmachen? Kommen Sie einfach!",
+      "SPORTVEREIN BREMEN\n\nFußball: Wir suchen Spieler für unsere Mannschaft. Wir üben zweimal pro Woche — am Dienstag und am Samstag, immer um 18 Uhr.\n\nBasketball: montags um 19 Uhr. Für alle!\n\nTennis spielen: am Sonntag, 10 bis 12 Uhr. Bitte einen Ball mitbringen.\n\nJoggen: Jeden Morgen um 7 Uhr am Marktplatz. Kostenlos, auch bei Regen!\n\nDas Fitnessstudio im Haus ist von 8 bis 22 Uhr auf. Für Mitglieder kostenlos.\n\nWollen Sie mitmachen? Kommen Sie einfach!",
     questions: [
       {
         text: "Wie oft übt die Fußballmannschaft?",
@@ -327,7 +327,7 @@ export const a1U19: SkillExercise[] = [
           "Yapamadığın ya da sevmediğin bir şey yazdın mı?",
         ],
         phrases: [
-          { de: "Ich mache … Sport.", tr: "… spor yaparım.", en: "I play … sports." },
+          { de: "Ich mache … Sport.", tr: "… spor yaparım.", en: "I play sports …" },
           { de: "Ich höre gern …", tr: "… dinlemeyi severim", en: "I like listening to …" },
           { de: "Bei Regen bleibe ich zu Hause.", tr: "Yağmurda evde kalırım.", en: "When it rains I stay home." },
         ],

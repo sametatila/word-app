@@ -122,7 +122,7 @@ export const b2U05: SkillExercise[] = [
       { de: "untersagen", tr: "men etmek", en: "to prohibit" },
       { de: "rücksichtsvoll", tr: "düşünceli", en: "considerate" },
       { de: "sowie", tr: "ve ayrıca", en: "as well as" },
-      { de: "aller", tr: "hepsinden", en: "of all" },
+      { de: "aller", tr: "tümünün", en: "of all" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "abmahnen", tr: "yazılı uyarı vermek", en: "to give a written warning" },
       { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },
@@ -354,7 +354,7 @@ export const b2U05: SkillExercise[] = [
         kind: "build",
         tr: "Sözleşmeyi süresine uygun olarak en yakın tarihte feshediyorum.",
         answer: "Ich kündige den Vertrag fristgerecht zum nächstmöglichen Termin",
-        hint: "Kalıplaşmış zaman ifadesi zum ile; zarf fiilden hemen sonra.",
+        hint: "Kalıplaşmış zaman ifadesi zum ile; zarf nesneden sonra gelir.",
       },
       {
         kind: "build",
@@ -418,7 +418,7 @@ export const b2U05: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Hiermit kündige ich … fristgerecht zum …", tr: "işbu yazıyla …-i süresine uygun olarak … tarihine feshediyorum", en: "I hereby terminate … effective …" },
+          { de: "Hiermit kündige ich … fristgerecht zum …", tr: "işbu yazıyla …-i süresine uygun olarak … tarihi itibarıyla feshediyorum", en: "I hereby terminate … effective …" },
           { de: "Ich bitte um eine schriftliche Bestätigung.", tr: "yazılı bir onay rica ediyorum", en: "I request written confirmation" },
           { de: "Meine Einwilligung in Werbung widerrufe ich.", tr: "reklam için verdiğim rızayı geri çekiyorum", en: "I withdraw my consent to advertising" },
         ],

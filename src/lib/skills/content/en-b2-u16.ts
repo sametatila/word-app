@@ -334,7 +334,7 @@ export const enB2U16: SkillExercise[] = [
       { de: "per", tr: "başına" },
       { de: "plain", tr: "yalın" },
       { de: "bare", tr: "yalın" },
-      { de: "a construction", tr: "kuruluş" },
+      { de: "a construction", tr: "yapı" },
       { de: "soften", tr: "yumuşatmak" },
       { de: "missed", tr: "gözden kaçan" },
       { de: "the other way around", tr: "tam tersi" },

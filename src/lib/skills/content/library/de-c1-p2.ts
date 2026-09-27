@@ -209,7 +209,7 @@ export const deC1P2: SkillExercise[] = [
     intro: "Ekibin için geriye dönük bir değerlendirme notu yazacaksın; önce iki cümle kur, sonra notu yaz.",
     gloss: [
       { de: "die Nachbetrachtung", tr: "geriye dönük değerlendirme", en: "retrospective" },
-      { de: "die Abwägung", tr: "tartma", en: "weighing up" },
+      { de: "die Abwägung", tr: "tartıp biçme", en: "weighing of options" },
       { de: "leichtfertig", tr: "hafife alarak", en: "carelessly" },
       { de: "die Zuständigkeit", tr: "sorumluluk alanı", en: "responsibility" },
     ],

@@ -369,7 +369,7 @@ export const deA2P18: SkillExercise[] = [
       },
       {
         heading: "Çoğulda welche",
-        tr: "ein'in çoğulu yoktur. Çoğul ya da sayılamayan bir şey için „biraz, birkaç tane“ anlamında welche kullanılır. Olumsuzu keine'dir.",
+        tr: "ein'in çoğulu yoktur. Çoğul ya da sayılamayan bir şey için „biraz, birkaç tane“ anlamında welche kullanılır. Çoğulda olumsuzu keine'dir.",
         examples: [
           { de: "Brauchst du Eier? — Nein, ich habe noch welche.", tr: "Yumurta lazım mı? — Hayır, daha var.", note: "çoğul: welche" },
           { de: "Möchtest du Milch? — Danke, ich habe noch welche.", tr: "Süt ister misin? — Sağ ol, daha var.", note: "sayılamayan: welche" },

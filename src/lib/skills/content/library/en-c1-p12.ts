@@ -234,7 +234,7 @@ export const enC1P12: SkillExercise[] = [
       { de: "schedule", tr: "nöbet çizelgesi" },
       { de: "mentor", tr: "rehber" },
       { de: "to pair", tr: "eşleştirmek" },
-      { de: "unpaid", tr: "ödenmemiş" },
+      { de: "unpaid", tr: "karşılıksız" },
       { de: "commitment", tr: "yükümlülük" },
       { de: "discover", tr: "fark etmek" },
     ],

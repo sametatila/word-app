@@ -40,7 +40,7 @@ export const b1U33: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "der Notfall", tr: "acil durum", en: "emergency" },
-      { de: "die Feuerwehr", tr: "itfaiye", en: "fire brigade" },
+      { de: "die Feuerwehr", tr: "itfaiye", en: "fire department" },
       { de: "der Alarm", tr: "alarm", en: "alarm" },
       { de: "der Transport", tr: "nakil", en: "transport" },
       { de: "der Sitz", tr: "koltuk", en: "seat" },
@@ -54,7 +54,7 @@ export const b1U33: SkillExercise[] = [
       "Die Feuerwehr braucht den Ort, bevor sie irgendetwas anderes " +
       "braucht. Alles Weitere kann man am Telefon klären.\n\n" +
       "Der Transport ist schon unterwegs, aber bleiben Sie am Apparat, bis " +
-      "die Stelle auflegt. Wer sofort auflegt, " +
+      "die Leitstelle auflegt. Wer sofort auflegt, " +
       "kostet Zeit: oft kommt eine Rückfrage, und der Alarm läuft ohnehin " +
       "schon.\n\n" +
       "Wenn jemand nicht mehr aus dem Sitz im Auto kommt, ziehen Sie ihn nicht " +
@@ -62,7 +62,7 @@ export const b1U33: SkillExercise[] = [
       "Transport macht es schlimmer. Öffnen Sie nur die Tür und reden Sie " +
       "mit ihm.\n\n" +
       "Als ich das zum ersten Mal erlebt habe, war ich völlig hilflos. " +
-      "Heute weiß ich: man muss nichts können. Man muss nur bleiben und " +
+      "Heute weiß ich: Man muss nichts können. Man muss nur bleiben und " +
       "den Ort sagen.",
     questions: [
       {
@@ -73,9 +73,9 @@ export const b1U33: SkillExercise[] = [
       },
       {
         text: "Wie lange soll man am Telefon bleiben?",
-        options: ["Bis die Stelle auflegt", "Zwei Minuten", "Bis die Feuerwehr da ist"],
+        options: ["Bis die Leitstelle auflegt", "Zwei Minuten", "Bis die Feuerwehr da ist"],
         answer: 0,
-        explain: "„Bleiben Sie am Apparat, bis die Stelle auflegt.“",
+        explain: "„Bleiben Sie am Apparat, bis die Leitstelle auflegt.“",
       },
       {
         text: "Was soll man bei jemandem im Auto NICHT tun?",
@@ -97,7 +97,7 @@ export const b1U33: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["nichts", "man muss nichts können", "nur bleiben"],
-        explain: "„Heute weiß ich: man muss nichts können.“",
+        explain: "„Heute weiß ich: Man muss nichts können.“",
       },
     ],
   },
@@ -126,7 +126,7 @@ export const b1U33: SkillExercise[] = [
       "oder wenn sie nach zwei Tagen rot und warm wird. Das sind die " +
       "Zeichen einer Infektion, und die wartet nicht.\n\n" +
       "Wenn Sie sich den Finger gebrochen haben, merken Sie es meistens " +
-      "sofort: die Stelle schwillt an, und Sie können ihn nicht bewegen. " +
+      "sofort: Die Stelle schwillt an, und Sie können ihn nicht bewegen. " +
       "Bei einem Muskel ist es anders — da tut es erst am nächsten Tag " +
       "richtig weh.\n\n" +
       "Ein Schmerzmittel hilft, aber es ändert nichts an der Ursache. " +

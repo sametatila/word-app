@@ -329,7 +329,7 @@ export const a1U16: SkillExercise[] = [
           { de: "Es gibt …", tr: "… var", en: "There is …" },
         ],
         sample:
-          "Hallo!\n\nMeine Wohnung hat drei Zimmer: ein Wohnzimmer, ein Schlafzimmer und eine Küche. Das Bad ist klein, aber es gibt eine Dusche.\n\nDie Wohnung ist hell und ruhig. Im Wohnzimmer gibt es große Fenster.\n\nDas Sofa steht in der Ecke und der Tisch steht in der Mitte. An der Wand hängt ein Bild.\n\nWir wohnen im 3. Stock und es gibt keinen Aufzug — jeden Tag die Treppe!",
+          "Hallo!\n\nMeine Wohnung hat drei Zimmer: ein Wohnzimmer und zwei Schlafzimmer. Die Küche ist neu. Das Bad ist klein, aber es gibt eine Dusche.\n\nDie Wohnung ist hell und ruhig. Im Wohnzimmer gibt es große Fenster.\n\nDas Sofa steht in der Ecke und der Tisch steht in der Mitte. An der Wand hängt ein Bild.\n\nWir wohnen im 3. Stock und es gibt keinen Aufzug — jeden Tag die Treppe!",
       },
     ],
   },

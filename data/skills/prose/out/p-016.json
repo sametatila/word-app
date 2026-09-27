@@ -175,9 +175,9 @@
   "en": "„Wir sind ein kleines Team von acht Mitarbeitern.“ Twenty is the length of the interview in minutes."
  },
  {
-  "tr": "„Woran haben Sie da besonders gedacht?“ — ima görünür oluyor, suçlama olmadan.",
+  "tr": "„Woran haben Sie da besonders gedacht?“ — çift anlam görünür oluyor, suçlama olmadan.",
   "kind": "explain",
-  "en": "„Woran haben Sie da besonders gedacht?“ — the implication is made visible without an accusation."
+  "en": "„Woran haben Sie da besonders gedacht?“ — the double meaning is made visible without an accusation."
  },
  {
   "tr": "Bir başvuru süreci. Ne zaman 'wurde', ne zaman 'war' kullanıldığına dikkat et.",
@@ -317,7 +317,7 @@
  {
   "tr": "„Anmeldung bis Freitag im Büro oder am Telefon“ — e-posta ya da bahçe geçmiyor.",
   "kind": "explain",
-  "en": "„Anmeldung bis Freitag im Büro oder am Telefon“ — email and the garden do not count."
+  "en": "„Anmeldung bis Freitag im Büro oder am Telefon“ — email and the garden are not mentioned."
  },
  {
   "tr": "„Beim Abgeben weint man einen Tag.“ — „bei“ + adlaştırma bir zaman öbeği kurar.",
@@ -330,7 +330,7 @@
   "en": "„Das ist richtig. Dem ist entgegenzuhalten, dass …“ — a concession plus a limit."
  },
  {
-  "tr": "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda anlaşılan tarihler.",
+  "tr": "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda üzerinde anlaşılan tarihler.",
   "kind": "explain",
   "en": "„Ich habe noch zwölf Urlaubstage.“ Eight and fifteen are the dates finally agreed."
  },
@@ -462,7 +462,7 @@
  {
   "tr": "Maaş görüşmesi iste ve gerekçeni önceden yaz — rakamı söyle ama kapıyı kapatma.",
   "kind": "intro",
-  "en": "Ask for a pay review and write your case beforehand — name the figure but leave the door open."
+  "en": "Ask for a salary review and write your case beforehand — name the figure but leave the door open."
  },
  {
   "tr": "Metnin ilk cümlesi \"I get up at half past six\" diyor. Saat yedi kahvaltı saati.",
@@ -580,9 +580,9 @@
   "en": "„Am Anfang hatte ich Angst um meine Kunden.“ — „haben“ becomes hatte in the Präteritum."
  },
  {
-  "tr": "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğleden sonra çıkıyor.",
+  "tr": "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğlen çıkıyor.",
   "kind": "explain",
-  "en": "„Am Morgen ist es neblig, besonders in den Tälern.“ The sun comes out in the afternoon."
+  "en": "„Am Morgen ist es neblig, besonders in den Tälern.“ The sun comes out at noon."
  },
  {
   "tr": "„Die Erstberatung ist kostenlos.“ — ücret ancak sözleşme incelemesinde başlıyor.",

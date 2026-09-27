@@ -52,11 +52,11 @@ export const b1U20: SkillExercise[] = [
       "Arbeit oder in der Familie kann zu einer Krise führen, und eine Krise " +
       "ist keine Schwäche.\n\n" +
       "Die erste Möglichkeit ist eine Beratung. Das ist noch keine Therapie: " +
-      "man spricht einmal, kostenlos, und entscheidet danach selbst. " +
+      "Man spricht einmal, kostenlos, und entscheidet danach selbst. " +
       "Viele merken schon dabei, dass es nicht nur ihnen so geht.\n\n" +
       "Warten Sie nicht, bis nichts mehr geht. Zumindest ein Gespräch " +
       "kostet nichts. Und wenn Sie jemanden kennen, dem es schlecht geht: " +
-      "fragen Sie einfach nach. Das reicht öfter, als man denkt.",
+      "Fragen Sie einfach nach. Das reicht öfter, als man denkt.",
     questions: [
       {
         text: "Was ist laut Text die entscheidende Frage?",
@@ -74,7 +74,7 @@ export const b1U20: SkillExercise[] = [
         text: "Was kostet eine Beratung?",
         options: ["Nichts", "Zwanzig Euro", "Das kommt darauf an"],
         answer: 0,
-        explain: "„… man spricht einmal, kostenlos, und entscheidet danach selbst.“",
+        explain: "„Man spricht einmal, kostenlos, und entscheidet danach selbst.“",
       },
       {
         kind: "gapfill",
@@ -90,7 +90,7 @@ export const b1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["nachfragen", "einfach nachfragen", "fragen"],
-        explain: "„… fragen Sie einfach nach.“",
+        explain: "„Fragen Sie einfach nach.“",
       },
     ],
   },
@@ -120,7 +120,7 @@ export const b1U20: SkillExercise[] = [
       "wir dann drei Stunden warten, weil zwei schwerere Fälle vor uns kamen. " +
       "Das war richtig so, auch wenn es lang war.\n\n" +
       "Der Verdacht war, dass der Knochen kaputt ist. Nach dem Bild wussten " +
-      "wir: er ist heil, es ist nur eine schwere Verletzung. Sie durfte nach " +
+      "wir: Er ist heil, es ist nur eine schwere Verletzung. Sie durfte nach " +
       "Hause, mit einer Salbe und der Anweisung, den Arm ruhig zu halten.\n\n" +
       "Seit einer Woche geht es ihr besser. Sie kann den Arm wieder heben, " +
       "zumindest langsam. Ich habe gelernt: Bei einem Sturz wählt man den " +
@@ -142,7 +142,7 @@ export const b1U20: SkillExercise[] = [
         text: "Was war das Ergebnis?",
         options: ["Der Knochen war kaputt", "Nur eine schwere Verletzung", "Nichts"],
         answer: 1,
-        explain: "„… er ist heil, es ist nur eine schwere Verletzung.“",
+        explain: "„Er ist heil, es ist nur eine schwere Verletzung.“",
       },
       {
         kind: "gapfill",
@@ -376,7 +376,7 @@ export const b1U20: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Hastanede yatan bir tanıdığına mesaj yaz: geçmiş olsun dile, neden ziyarete gelemediğini anlat (geçmişte kipli fiille), ne getirmek istediğini söyle, ne zaman geleceğini öner, ve neşelendirici bir cümleyle bitir.",
+        prompt: "Hastanede yatan bir tanıdığına mesaj yaz: geçmiş olsun dile, neden ziyarete gelemediğini anlat (geçmişte kipli fiille), ne getirmek istediğini söyle, ne zaman geleceğini öner ve neşelendirici bir cümleyle bitir.",
         checklist: [
           "Geçmiş olsun dileği var mı?",
           "Gelememe sebebi geçmiş kipli fiille anlatılmış mı?",

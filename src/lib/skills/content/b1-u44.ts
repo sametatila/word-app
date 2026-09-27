@@ -38,7 +38,7 @@ export const b1U44: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "der Karneval", tr: "karnaval", en: "carnival" },
-      { de: "die Garderobe", tr: "vestiyer / kıyafet", en: "cloakroom" },
+      { de: "die Garderobe", tr: "vestiyer / kıyafet", en: "coat check" },
       { de: "anhaben", tr: "üzerinde olmak", en: "to have on" },
       { de: "sich amüsieren", tr: "eğlenmek", en: "to enjoy oneself" },
       { de: "grüßen", tr: "selamlamak", en: "to greet" },
@@ -51,7 +51,7 @@ export const b1U44: SkillExercise[] = [
       "In der Garderobe hängen zweihundert Mäntel, und niemand findet " +
       "am Ende den richtigen. Das gehört dazu.\n\n" +
       "Man grüßt hier auch Leute, die man nicht kennt. Wer das seltsam " +
-      "findet, hat den Punkt verpasst: drei Tage lang ist das ganze Dorf " +
+      "findet, hat den Punkt verpasst: Drei Tage lang ist das ganze Dorf " +
       "eine Gruppe, danach wieder nicht.\n\n" +
       "Am dritten Abend sind alle müde. Um zehn ist es schon fast leer, " +
       "obwohl es sonst bis zwei geht. Wir haben uns trotzdem gut " +
@@ -105,7 +105,7 @@ export const b1U44: SkillExercise[] = [
     gloss: [
       { de: "der Sieger", tr: "galip", en: "winner" },
       { de: "der Gegner", tr: "rakip", en: "opponent" },
-      { de: "unentschieden", tr: "berabere", en: "drawn" },
+      { de: "unentschieden", tr: "berabere", en: "tied" },
       { de: "das Tor", tr: "gol / kale", en: "goal" },
       { de: "der Rekord", tr: "rekor", en: "record" },
       { de: "also", tr: "yani", en: "so" },
@@ -118,7 +118,7 @@ export const b1U44: SkillExercise[] = [
       "danach unzufrieden.\n\n" +
       "Unsere Mannschaft spielte eine Stunde lang sehr gut. Das erste " +
       "Tor fiel schon nach zwölf Minuten. Danach wurde es schwerer: " +
-      "der Gegner war kräftiger und lief mehr.\n\n" +
+      "Der Gegner war kräftiger und lief mehr.\n\n" +
       "Im Stadion waren viertausend Zuschauer, ein Rekord für diesen " +
       "Verein. Der Trainer sagte danach, das Publikum habe die " +
       "Mannschaft zwanzig Minuten lang getragen.\n\n" +
@@ -377,7 +377,7 @@ export const b1U44: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir kutlama ya da doğa günü planla: ne, nerede, ne zaman ve ne kadar sürecek, kim ne getiriyor, ve neyin ters gidebileceği. En az iki süre bildirimi (edatsız Akkusativ) ve en az bir 'erst' ya da 'schon' kullan.",
+        prompt: "Bir kutlama ya da doğa günü planla: ne, nerede, ne zaman ve ne kadar sürecek, kim ne getiriyor ve neyin ters gidebileceği. En az iki süre bildirimi (edatsız Akkusativ) ve en az bir 'erst' ya da 'schon' kullan.",
         checklist: [
           "Etkinlik ve yer net mi?",
           "Zaman ve süre verilmiş mi?",
@@ -389,7 +389,7 @@ export const b1U44: SkillExercise[] = [
         sample:
           "Wir feiern am Samstag im Hof hinter dem Haus. Es geht um vier " +
           "los und dauert wahrscheinlich den ganzen Abend.\n\n" +
-          "Beim Fasching vergnügen sich alle, und am Ende gehen alle vergnügt nach Hause. Jeder bringt etwas mit: Aylin den Salat, ich das Brot, Nuri die " +
+          "Wie beim Fasching wollen wir uns einfach vergnügen, und am Ende sollen alle vergnügt nach Hause gehen. Jeder bringt etwas mit: Aylin den Salat, ich das Brot, Nuri die " +
           "Getränke. Musik machen wir selbst, zwei Stunden lang, dann " +
           "reicht es auch den Nachbarn.\n\n" +
           "Ein Risiko gibt es: das Wetter. Wenn es regnet, gehen wir nach " +

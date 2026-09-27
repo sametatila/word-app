@@ -318,7 +318,7 @@ export const enB2U12: SkillExercise[] = [
     unit: 12,
     title: "It must have failed",
     genre: "monologue",
-    intro: "Üç kip, üç iş. Hangisi birinci tekil şahısta?",
+    intro: "Üç kip, üç iş. Hangisi birinci şahısta?",
     gloss: [
       { de: "log", tr: "kayıt" },
       { de: "sentence", tr: "cümle" },
@@ -333,7 +333,7 @@ export const enB2U12: SkillExercise[] = [
       { de: "a review", tr: "gözden geçirme" },
       { de: "an incident note", tr: "olay notu" },
       { de: "contradicted", tr: "yalanlanmış" },
-      { de: "the first person", tr: "birinci tekil" },
+      { de: "the first person", tr: "birinci şahıs" },
       { de: "rules out", tr: "dışarıda bırakıyor" },
       { de: "a run", tr: "koşum" },
     ],

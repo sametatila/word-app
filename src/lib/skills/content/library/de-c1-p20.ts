@@ -243,7 +243,7 @@ export const deC1P20: SkillExercise[] = [
         phrases: [
           { de: "Unter der Buchungsnummer … hatte ich … gebucht.", tr: "… numaralı rezervasyonla … ayırtmıştım.", en: "Under booking number … I had booked …" },
           { de: "Der Zug fiel ersatzlos aus, sodass …", tr: "Tren yerine başka bir sefer konmadan iptal edildi, bu yüzden …", en: "The train was canceled without replacement, so that …" },
-          { de: "Dadurch sind mir folgende Kosten entstanden: …", tr: "Bu yüzden şu masraflarım oldu: …", en: "This caused me the following costs: …" },
+          { de: "Dadurch sind mir folgende Kosten entstanden: …", tr: "Bu yüzden şu masraflarım oldu: …", en: "As a result, I incurred the following costs: …" },
           { de: "Gemäß den Fahrgastrechten steht mir … zu.", tr: "Yolcu haklarına göre … hakkım var.", en: "Under passenger rights I am entitled to …" },
           { de: "Ich bitte Sie, den Betrag bis zum … zu erstatten.", tr: "Tutarı … tarihine kadar geri ödemenizi rica ediyorum.", en: "I ask you to refund the amount by …" },
         ],

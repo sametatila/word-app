@@ -31,7 +31,7 @@ export const enB2P10: SkillExercise[] = [
       { de: "eventually", tr: "en sonunda" },
       { de: "harmful", tr: "zararlı" },
       { de: "compete", tr: "rekabet etmek" },
-      { de: "organizations", tr: "kurum" },
+      { de: "organizations", tr: "kurumlar" },
     ],
     minutes: 8,
     text:
@@ -66,7 +66,7 @@ export const enB2P10: SkillExercise[] = [
           "Research shows it works best.",
         ],
         answer: 0,
-        explain: "Görünür, programlanabilir ve bir isim listesi üretir.",
+        explain: "Görünür, planlanabilir ve bir isim listesi üretir.",
       },
       {
         text: "What is the first question the guide recommends?",
@@ -127,7 +127,7 @@ export const enB2P10: SkillExercise[] = [
       { de: "deadline", tr: "son tarih" },
       { de: "wording", tr: "ifade biçimi" },
       { de: "visible", tr: "görünür" },
-      { de: "lead", tr: "liderlik etmek" },
+      { de: "lead to", tr: "yol açmak" },
       { de: "lawyer", tr: "avukat" },
     ],
     minutes: 8,

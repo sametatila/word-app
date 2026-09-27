@@ -56,7 +56,7 @@ export const enB1U10: SkillExercise[] = [
       "The box arrived on Tuesday. I opened it on Wednesday evening, after work, and I did not spot the mistake. The label was right. The number on the label was right. Everything inside was wrong.\n" +
       "Then I spotted the mistake, on Thursday morning, when I needed the small tool and found a large one. Two orders had been swapped in the warehouse on Monday, which means the wrong box had been on its way to me before I had even paid.\n" +
       "By the time I called, they had corrected it. Somebody in the warehouse had found the second box on Wednesday and had sent it on the same afternoon. Nobody told me, because the system sends one message per order and that message had already gone.\n" +
-      "So the real confusion was not the box. It was four days in which two people were sorting the same problem and neither knew about the other.\n" +
+      "So the real confusion was not the box. It was four days in which two people were sorting out the same problem and neither knew about the other.\n" +
       "I do not blame anybody for the swap. I blame the message that was sent once and could not be sent again.",
     questions: [
       {
@@ -307,7 +307,7 @@ export const enB1U10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The second button is for the ___.",
+        text: "The second button is for ___.",
         options: [],
         answer: 0,
         accept: ["safety"],

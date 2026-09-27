@@ -94,7 +94,7 @@ export const a1U08: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mein Tag beginnt um halb sieben. Das ist früh, aber ich bin immer müde am Morgen.\n\nZuerst trinke ich einen Kaffee. Dann esse ich ein Brötchen mit Butter.\n\nUm acht Uhr beginnt meine Arbeit. Ich arbeite acht Stunden.\n\nAm Abend koche ich zusammen mit meiner Familie. Wir essen um halb acht.\n\nIn der Nacht schlafe ich sieben Stunden.",
+      "Mein Tag beginnt um halb sieben. Das ist früh und am Morgen bin ich immer müde.\n\nZuerst trinke ich einen Kaffee. Dann esse ich ein Brötchen mit Butter.\n\nUm acht Uhr beginnt meine Arbeit. Ich arbeite acht Stunden.\n\nAm Abend koche ich zusammen mit meiner Familie. Wir essen um halb acht.\n\nIn der Nacht schlafe ich sieben Stunden.",
     questions: [
       {
         text: "Wann beginnt Lenas Tag?",
@@ -120,7 +120,7 @@ export const a1U08: SkillExercise[] = [
         text: "Wann isst die Familie am Abend?",
         options: ["um halb acht", "um acht Uhr", "um halb sieben"],
         answer: 0,
-        explain: "„Wir essen um halb acht.“ — 19:30.",
+        explain: "„Wir essen um halb acht.“ — 19.30.",
       },
           {
         kind: "gapfill",

@@ -181,13 +181,13 @@ export const b1U06: SkillExercise[] = [
     questions: [
       {
         text: "Warum will die erste Person einen Teil übernehmen?",
-        options: ["Damit die andere früher gehen kann", "Weil sie Zeit hat", "Weil sie mehr verdient"],
+        options: ["Damit die andere Person früher gehen kann", "Weil sie Zeit hat", "Weil sie mehr verdient"],
         answer: 0,
         explain: "„Gib mir einen Teil davon, damit du heute früher gehen kannst.“",
       },
       {
         text: "Was ist die Gegenleistung?",
-        options: ["Ein Essen", "Nächste Woche ist die andere dran", "Nichts"],
+        options: ["Ein Essen", "Nächste Woche ist die andere Person dran", "Nichts"],
         answer: 1,
         explain: "„Dafür bist du nächste Woche dran.“",
       },

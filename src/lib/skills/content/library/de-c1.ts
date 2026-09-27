@@ -121,7 +121,7 @@ export const deC1: SkillExercise[] = [
     intro: "Bir arşiv yöneticisiyle söyleşi: neyin saklandığına kim karar veriyor ve bu kararın bedeli ne.",
     gloss: [
       { de: "der Bestand", tr: "koleksiyon", en: "holdings" },
-      { de: "die Erschließung", tr: "tanımlama", en: "cataloguing" },
+      { de: "die Erschließung", tr: "tanımlama", en: "cataloging" },
       { de: "kassieren", tr: "ayıklamak", en: "to weed out" },
       { de: "der Nachlass", tr: "kişisel arşiv", en: "personal papers" },
       { de: "unwiederbringlich", tr: "geri getirilemez", en: "irretrievable" },
@@ -252,7 +252,7 @@ export const deC1: SkillExercise[] = [
         minWords: 120,
         phrases: [
           { de: "Maßgeblich war für die Jury, dass …", tr: "Jüri için belirleyici olan …", en: "What was decisive for the jury was that …" },
-          { de: "Die Arbeit überzeugt vor allem durch …", tr: "Çalışma özellikle … ile ikna ediyor", en: "The work convinces above all through …" },
+          { de: "Die Arbeit überzeugt vor allem durch …", tr: "Çalışma özellikle … ile ikna ediyor", en: "The work is convincing above all because of …" },
           { de: "Das schmälert nicht …", tr: "Bu, … değerini azaltmaz", en: "That does not diminish …" },
           { de: "Ausschlaggebend war schließlich …", tr: "Sonuçta belirleyici olan …", en: "In the end the deciding factor was …" },
           { de: "Die Jury spricht den Preis … zu.", tr: "Jüri ödülü …'ya verir.", en: "The jury awards the prize to …" },

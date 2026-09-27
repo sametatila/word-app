@@ -30,7 +30,7 @@ export const enB1P15: SkillExercise[] = [
       { de: "deal", tr: "anlaşma" },
       { de: "location", tr: "konum" },
       { de: "to trust", tr: "güvenmek" },
-      { de: "washing", tr: "çamaşır" },
+      { de: "laundry", tr: "çamaşır" },
     ],
     minutes: 6,
     text:
@@ -46,8 +46,8 @@ export const enB1P15: SkillExercise[] = [
       "LEO, 15: The deal is fair, mostly. What I don't like is when Mom tells me to put on a coat " +
       "in front of my friends. I'd like her to trust me with small things first, like when I eat " +
       "or when I go to bed, because those are easier to get right. My parents also make me do " +
-      "my own washing now. I didn't want that, but I understand it.\n\n" +
-      "HANNAH: He's right about the coat. I've stopped doing that. The washing stays.",
+      "my own laundry now. I didn't want that, but I understand it.\n\n" +
+      "HANNAH: He's right about the coat. I've stopped doing that. The laundry stays.",
     questions: [
       {
         text: "What did Leo want his parents to let him do?",
@@ -85,8 +85,8 @@ export const enB1P15: SkillExercise[] = [
         text: "What do Leo's parents make him do now?",
         options: [],
         answer: 0,
-        accept: ["his own washing", "do his own washing", "the washing", "do the washing", "his washing"],
-        explain: "„My parents also make me do my own washing now.“",
+        accept: ["his own laundry", "do his own laundry", "the laundry", "do the laundry", "his laundry", "his own washing", "do his own washing"],
+        explain: "„My parents also make me do my own laundry now.“",
       },
       {
         text: "What has Hannah stopped doing?",
@@ -130,7 +130,7 @@ export const enB1P15: SkillExercise[] = [
       { text: "We do want them to try one activity they have never done before. For most it's climbing or sailing. Nobody has to like it, but everybody tries once." },
       { text: "At night we let the older groups stay up until ten. The younger ones are in bed by nine, and yes, they complain about that every single year." },
       { text: "If your child gets homesick, please don't ask us to send them home on the first night. It nearly always passes by Tuesday." },
-      { text: "Please pack old clothes, a flashlight and a water bottle with their name on it. We'd rather you didn't send candy, because the ants find them before the children do." },
+      { text: "Please pack old clothes, a flashlight and a water bottle with their name on it. We'd rather you didn't send candy, because the ants find it before the children do." },
       { text: "We'll send you a short message every evening, so there's no need to call the office unless it's urgent." },
     ],
     questions: [
@@ -166,8 +166,8 @@ export const enB1P15: SkillExercise[] = [
         text: "Why shouldn't parents send candy?",
         options: [],
         answer: 0,
-        accept: ["the ants find them", "because of the ants", "ants", "because the ants find them", "the ants"],
-        explain: "„the ants find them before the children do“.",
+        accept: ["the ants find it", "because of the ants", "ants", "because the ants find it", "the ants"],
+        explain: "„the ants find it before the children do“.",
       },
       {
         text: "What does the camp ask parents not to do on the first night?",

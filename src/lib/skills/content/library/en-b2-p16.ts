@@ -18,7 +18,7 @@ export const enB2P16: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "reading",
-    title: "The Parking lot That Became a Garden",
+    title: "The Parking Lot That Became a Garden",
     genre: "interview",
     intro: "Bir söyleşi: bir apartman otoparkını sebze bahçesine çeviren kişi nasıl başladığını, kimin karşı çıktığını ve neyin zor olduğunu anlatıyor.",
     gloss: [
@@ -216,7 +216,7 @@ export const enB2P16: SkillExercise[] = [
     gloss: [
       { de: "on behalf of", tr: "adına" },
       { de: "drying area", tr: "çamaşır kurutma alanı" },
-      { de: "washing line", tr: "çamaşır ipi" },
+      { de: "clothesline", tr: "çamaşır ipi" },
       { de: "rain barrel", tr: "yağmur suyu deposu" },
       { de: "volunteer", tr: "gönüllü" },
       { de: "to raise", tr: "para toplamak" },
@@ -263,7 +263,7 @@ export const enB2P16: SkillExercise[] = [
         sample:
           "Dear Ms. Carlisle, we are writing on behalf of the residents of Linden Place to propose " +
           "a new use for the drying area behind blocks C and D. " +
-          "At present, the space is fenced off, the washing lines have been broken for years, and " +
+          "At present, the space is fenced off, the clotheslines have been broken for years, and " +
           "it is used mainly for storing old furniture. It's time somebody took responsibility " +
           "for it. " +
           "What we propose is a shared garden with eight raised beds, two benches and a rain barrel. " +

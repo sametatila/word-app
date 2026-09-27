@@ -41,9 +41,9 @@ export const enA2: SkillExercise[] = [
       "On my first day I was nervous. Marta, who has worked there for nine years, showed me everything: where the food is, " +
       "how much water each bowl needs, and which dogs you can walk alone.\n\n" +
       "The work is not romantic. I clean cages, I wash blankets and I carry heavy bags. But then there is the other part. " +
-      "Two weeks ago I walked a small brown dog called Rocky. He was scared of everything - cars, bikes, even plastic bags. " +
+      "Two weeks ago I walked a small brown dog called Rocky. He was scared of everything — cars, bikes, even plastic bags. " +
       "Last Saturday a bus stopped next to us and he did not run away. That felt better than any thank-you.\n\n" +
-      "Two dogs found a new owner last month. One of them was Rocky's friend, so now Rocky is alone again. I know this is " +
+      "Two dogs found new owners last month. One of them was Rocky's friend, so now Rocky is alone again. I know this is " +
       "good news, but I was sad for a day.\n\n" +
       "If you have three free hours a week, go and ask them. They always need people.",
     questions: [
@@ -130,7 +130,7 @@ export const enA2: SkillExercise[] = [
       { speaker: "Nadir", text: "The slow one, please. Where do you meet?" },
       { speaker: "Priya", text: "At the old bridge. We start at nine, so please come ten minutes earlier. We always leave on time." },
       { speaker: "Nadir", text: "And what do I need to bring?" },
-      { speaker: "Priya", text: "A helmet - that is our only rule - some water and a small pump. And please check your brakes at home." },
+      { speaker: "Priya", text: "A helmet — that is our only rule — some water and a small pump. And please check your brakes at home." },
       { speaker: "Nadir", text: "Is the route difficult?" },
       { speaker: "Priya", text: "It is flat for twenty kilometers and then there is one hill. Last Sunday it rained and we stopped after an hour, but this week the weather looks good." },
       { speaker: "Nadir", text: "Perfect. See you at the bridge on Sunday." },
@@ -166,7 +166,7 @@ export const enA2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["a helmet", "helmet", "wear a helmet", "you need a helmet"],
-        explain: "„A helmet - that is our only rule.“ Su ve pompa öneri, kural değil.",
+        explain: "„A helmet — that is our only rule.“ Su ve pompa öneri, kural değil.",
       },
       {
         kind: "dictation",

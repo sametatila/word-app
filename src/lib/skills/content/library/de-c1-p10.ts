@@ -123,7 +123,7 @@ export const deC1P10: SkillExercise[] = [
       { de: "die Meldestelle", tr: "bildirim birimi", en: "reporting office" },
       { de: "die Vertraulichkeit", tr: "gizlilik", en: "confidentiality" },
       { de: "die Frist", tr: "süre", en: "deadline" },
-      { de: "die Rückmeldung", tr: "geri bildirim", en: "acknowledgment" },
+      { de: "die Rückmeldung", tr: "geri bildirim", en: "feedback" },
       { de: "nachweislich", tr: "kanıtlanabilir biçimde", en: "demonstrably" },
     ],
     minutes: 10,

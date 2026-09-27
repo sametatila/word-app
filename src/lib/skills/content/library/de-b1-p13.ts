@@ -224,7 +224,7 @@ export const deB1P13: SkillExercise[] = [
           { de: "Bei mir war es so, dass …", tr: "Bende durum şöyleydi: …", en: "In my case it was like this: …" },
           { de: "Ich würde dir raten, zuerst …", tr: "Sana önce … yapmanı tavsiye ederim", en: "I would advise you to first …" },
           { de: "Unterschätze aber nicht, dass …", tr: "Ama … olduğunu hafife alma", en: "But don't underestimate that …" },
-          { de: "Du bist nicht zu alt, sondern …", tr: "Yaşlı değilsin, aksine …", en: "You are not too old, but rather …" },
+          { de: "Du bist nicht zu alt, sondern …", tr: "Fazla yaşlı değilsin, aksine …", en: "You are not too old, but rather …" },
         ],
         sample:
           "Hallo Sabine,\n\nich kann dich gut verstehen, denn ich habe mit 47 eine Umschulung zur " +

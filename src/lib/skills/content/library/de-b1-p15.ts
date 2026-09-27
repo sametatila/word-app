@@ -23,7 +23,7 @@ export const deB1P15: SkillExercise[] = [
     genre: "guide",
     intro: "Bir rehber metin: tescilli bir dernek kurmak için neler yapılmalı, sıra nasıl, işler en çok nerede takılıyor.",
     gloss: [
-      { de: "die Satzung", tr: "tüzük", en: "statutes" },
+      { de: "die Satzung", tr: "tüzük", en: "bylaws" },
       { de: "der Zweck", tr: "amaç", en: "purpose" },
       { de: "festlegen", tr: "belirlemek", en: "to set" },
       { de: "das Protokoll", tr: "tutanak", en: "minutes" },

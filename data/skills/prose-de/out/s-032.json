@@ -17,12 +17,12 @@
  {
   "tr": "Yeni bir dizi. Kaç bölüm izlendi, konusu ne?",
   "kind": "intro",
-  "de": "Eine neue Serie. Wie viele Folgen sind gesehen, worum geht es?"
+  "de": "Eine neue Serie. Wie viele Folgen wurden gesehen, worum geht es?"
  },
  {
-  "tr": "Dört sözcüğün işi. Neden kâğıt, neden ayrıntı?",
+  "tr": "Beş sözcüğün işi. Neden kâğıt, neden ayrıntı?",
   "kind": "intro",
-  "de": "Was vier Wörter bewirken. Warum auf Papier, warum mit Detail?"
+  "de": "Was fünf Wörter bewirken. Warum auf Papier, warum mit Detail?"
  },
  {
   "tr": "Partide ilk konuşma. Kim kimi nereden tanıyor?",
@@ -57,7 +57,7 @@
  {
   "tr": "On üç yaşında bir hesap sorusu. Dört cevap, tek karar.",
   "kind": "intro",
-  "de": "Ein Konto mit dreizehn: die Frage. Vier Antworten, eine Entscheidung."
+  "de": "Die Frage nach einem Konto mit dreizehn. Vier Antworten, eine Entscheidung."
  },
  {
   "tr": "Üç sık soru, üç kısa cevap. Hangisi hangi sorunu çözüyor?",
@@ -65,9 +65,9 @@
   "de": "Drei häufige Fragen, drei kurze Antworten. Welche löst welches Problem?"
  },
  {
-  "tr": "Dört kutlama kalıbı, dört ayrı edat. Hiçbiri tahmin edilemez.",
+  "tr": "Kutlama ve özür kalıpları: üçü ayrı edat alıyor, biri hiç almıyor. Hiçbiri tahmin edilemez.",
   "kind": "intro",
-  "de": "Vier Glückwunschformeln, vier verschiedene Präpositionen. Keine lässt sich erraten."
+  "de": "Glückwunsch- und Entschuldigungsformeln: Drei nehmen verschiedene Präpositionen, eine nimmt gar keine. Keine lässt sich erraten."
  },
  {
   "tr": "Özür ve deneyim cümleleri. „about“ iki kalıbı birden taşıyor.",
@@ -433,5 +433,15 @@
   "tr": "arkadaşlığın ne olduğu",
   "kind": "gloss.tr",
   "de": "was Freundschaft ist"
+ },
+ {
+  "tr": "hafif",
+  "kind": "gloss.tr",
+  "de": "leicht"
+ },
+ {
+  "tr": "tartma",
+  "kind": "gloss.tr",
+  "de": "die Abwägung"
  }
 ]

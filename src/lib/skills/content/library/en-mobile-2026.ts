@@ -450,7 +450,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "kahvaltı"
       },
       {
-        "de": "lesson",
+        "de": "subject",
         "tr": "ders"
       },
       {
@@ -469,7 +469,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "math", "tr": "matematik" },
     ],
     "minutes": 4,
-    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favorite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have a math exam!",
+    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nClasses start at eight. My favorite subject is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have a math exam!",
     "questions": [
       {
         "text": "What time does the writer get up?",
@@ -503,7 +503,7 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "What does the writer have tomorrow?",
         "options": [
-          "A science lesson",
+          "A science class",
           "A math exam",
           "A movie"
         ],
@@ -523,14 +523,14 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What is the writer's favorite lesson?",
+        "text": "What is the writer's favorite subject?",
         "options": [],
         "answer": 0,
         "accept": [
           "science",
-          "the science lesson"
+          "the science class"
         ],
-        "explain": "\"My favorite lesson is science, because our teacher is funny.\""
+        "explain": "\"My favorite subject is science, because our teacher is funny.\""
       }
     ]
   },
@@ -780,7 +780,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna at 07700 900412 after 6 p.m. You can also send a message.",
     "questions": [
       {
         "text": "Where is the apartment?",
@@ -819,7 +819,7 @@ export const enMobile2026: SkillExercise[] = [
           "In the morning"
         ],
         "answer": 1,
-        "explain": "İlanın sonunda 'Call Anna on 07700 900412 after 6 p.m.' yazıyor. Arama saati akşam 6'dan sonrası."
+        "explain": "İlanın sonunda 'Call Anna at 07700 900412 after 6 p.m.' yazıyor. Arama saati akşam 6'dan sonrası."
       },
       {
         "kind": "gapfill",
@@ -985,7 +985,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "NEW MEMBERS WELCOME!\n\nDo you want to be fit and healthy? Come to Green Park Sports Club!\n\nWe are open every day, from 7 a.m. to 10 p.m.\nThere is a big swimming pool, a new gym and two tennis courts.\n\nClasses this month:\nYoga - Monday and Wednesday, 6 p.m., with Elif\nBasketball - Tuesday, 8 p.m., with Marco\nSwimming for beginners - Saturday, 11 a.m.\n\nMembership is 40 euros a month. Students pay only 25 euros.\nYou can bring a friend on Sunday. It is free!\n\nOur cafe is next to the gym. You can have a coffee after your class.\n\nCall us on 555 34 12 or visit our website.",
+    "text": "NEW MEMBERS WELCOME!\n\nDo you want to be fit and healthy? Come to Green Park Sports Club!\n\nWe are open every day, from 7 a.m. to 10 p.m.\nThere is a big swimming pool, a new gym and two tennis courts.\n\nClasses this month:\nYoga - Monday and Wednesday, 6 p.m., with Elif\nBasketball - Tuesday, 8 p.m., with Marco\nSwimming for beginners - Saturday, 11 a.m.\n\nMembership is 40 euros a month. Students pay only 25 euros.\nYou can bring a friend on Sunday. It is free!\n\nOur cafe is next to the gym. You can have a coffee after your class.\n\nCall us at 555 34 12 or visit our website.",
     "questions": [
       {
         "text": "What time does the club close?",
@@ -1091,7 +1091,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have a cough, so drink hot water with lemon.\nAre you feeling bad? Call us at 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
         "text": "What time is Elif's appointment?",
@@ -1996,7 +1996,7 @@ export const enMobile2026: SkillExercise[] = [
           "At nine fifteen"
         ],
         "answer": 1,
-        "explain": "\"It's coming at ten forty, not ten twenty.\" deniyor. Yani eski saat 10.20 değil, yeni saat 10.40."
+        "explain": "\"It's coming at ten forty, not ten twenty.\" deniyor. Yani eski saat 10.20, yeni saat 10.40."
       },
       {
         "text": "Where can passengers for Liverpool wait?",
@@ -2988,7 +2988,7 @@ export const enMobile2026: SkillExercise[] = [
           "I'm going to the movies on Saturday.",
           "I am going to the movies on Saturday."
         ],
-        "hint": "Planlanmış yakın bir plan için present continuous kullanılır: I'm going. Gün adları büyük harfle yazılır: Saturday."
+        "hint": "Yakın gelecekteki bir plan için present continuous kullanılır: I'm going. Gün adları büyük harfle yazılır: Saturday."
       },
       {
         "kind": "build",
@@ -3300,7 +3300,7 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A1",
     "skill": "writing",
-    "title": "My Ordinary Day",
+    "title": "My Typical Day",
     "genre": "blog",
     "intro": "Sıradan bir gününü anlatmak için saatleri, sıklık sözcüklerini ve geniş zamanı çalışacaksın.",
     "gloss": [
@@ -3795,7 +3795,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 5,
-    "text": "Elif, 10:14\nHi Kerem! How was your weekend? I called you on Saturday but you never answered.\n\nKerem, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family traveled together.\n\nElif, 10:22\nWow, a wedding! Did you dance?\n\nKerem, 10:25\nOf course. The music was louder than last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nElif, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbors.\n\nKerem, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nElif, 10:31\nHave you finished your report yet?\n\nKerem, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nElif, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
+    "text": "Elif, 10:14\nHi Kerem! How was your weekend? I called you on Saturday but you never answered.\n\nKerem, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family traveled together.\n\nElif, 10:22\nWow, a wedding! Did you dance?\n\nKerem, 10:25\nOf course. The music was louder than at last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nElif, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbors.\n\nKerem, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nElif, 10:31\nHave you finished your report yet?\n\nKerem, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nElif, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
     "questions": [
       {
         "text": "Why didn't Kerem answer the phone on Saturday?",
@@ -4103,7 +4103,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
-    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
+    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz at 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
     "questions": [
       {
         "text": "How much is the rent every month?",
@@ -4431,7 +4431,7 @@ export const enMobile2026: SkillExercise[] = [
           "Before 20:00"
         ],
         "answer": 1,
-        "explain": "Metinde \"You must be back at the bus stop before 16:00\" diyor. 13:00 serbest zamanın başlangıcı."
+        "explain": "Metinde \"You must be back at the bus stop before 16:00\" diyor. 13.00 serbest zamanın başlangıcı."
       },
       {
         "text": "Who is going to play the guitar on Saturday evening?",
@@ -5959,7 +5959,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "listening",
     "title": "A Wedding Invitation",
     "genre": "phone",
-    "intro": "Bir arkadaşının düğüne davet ettiği sesli mesajı dinleyeceksin.",
+    "intro": "Merve'nin, arkadaşı Elif'i düğüne davet ettiği sesli mesajı dinleyeceksin.",
     "gloss": [
       {
         "de": "wedding",
@@ -6859,7 +6859,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "to leak",
-        "tr": "su akıtmak"
+        "tr": "su sızdırmak"
       }
     ],
     "minutes": 8,
@@ -7183,7 +7183,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "writing",
     "title": "A Postcard from Rome",
     "genre": "personal",
-    "intro": "Bu egzersizde gezideyken yazılan bir kartpostalı çalışacaksın: nereye vardığını, neler yaptığını ve yarın ne yapacağını anlatmayı.",
+    "intro": "Bu egzersizde gezideyken kartpostal yazmayı çalışacaksın: nereye vardığını, neler yaptığını ve yarın ne yapacağını anlatacaksın.",
     "gloss": [
       {
         "de": "arrive",
@@ -7482,7 +7482,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "free",
-        "prompt": "Belediyeye resmî bir e-posta yaz: yeni adresini kaydettirmek için randevu iste. Şu üçüne değin: (1) kim olduğun ve neden randevu istediğin, (2) hangi gün ve saatlerde gelebileceğin, (3) yanına hangi belgeleri getirmen gerektiğini sorman. Resmî selamlama ve kapanışla bitir.",
+        "prompt": "Belediyeye resmî bir e-posta yaz: yeni adresini kaydettirmek için randevu iste. Şu üçüne değin: (1) kim olduğun ve neden randevu istediğin, (2) hangi gün ve saatlerde gelebileceğin, (3) yanına hangi belgeleri getirmen gerektiği sorusu. Resmî bir selamlamayla başla, resmî bir kapanışla bitir.",
         "checklist": [
           "Resmî bir selamlama ve kapanış cümlesi kullandın mı?",
           "Randevuyu neden istediğini açıkça yazdın mı?",

@@ -25,8 +25,8 @@ export const enB1P11: SkillExercise[] = [
       { de: "floor", tr: "kat" },
       { de: "to carry", tr: "taşımak" },
       { de: "comic", tr: "çizgi roman" },
-      { de: "fire service", tr: "itfaiye" },
-      { de: "to pass round", tr: "dağıtmak" },
+      { de: "fire department", tr: "itfaiye" },
+      { de: "to pass around", tr: "dağıtmak" },
       { de: "trumpet", tr: "trompet" },
       { de: "to complain", tr: "şikâyet etmek" },
       { de: "top floor", tr: "en üst kat" },
@@ -37,11 +37,11 @@ export const enB1P11: SkillExercise[] = [
       "Last Thursday evening the elevator in our building stopped between the fourth and fifth floors. " +
       "There were six of us inside, and until that evening I knew exactly one of them by name.\n\n" +
       "When it happened, everyone was doing something different. Mrs. Okafor was carrying two bags " +
-      "of shopping. A young man from the top floor was talking on the phone, and a girl of about " +
+      "of groceries. A young man from the top floor was talking on the phone, and a girl of about " +
       "ten was reading a comic. I was checking my messages and not paying attention to anything.\n\n" +
       "For the first five minutes nobody said a word. Then the lights went off, the girl started " +
       "laughing, and after that it was impossible to stay silent. The man on the phone told the " +
-      "fire service where we were. Mrs. Okafor opened one of her bags and passed round a packet " +
+      "fire department where we were. Mrs. Okafor opened one of her bags and passed around a package " +
       "of cookies.\n\n" +
       "By the time the engineer arrived, we knew a lot about each other. The young man was " +
       "studying to be a nurse. The girl's father turned out to be the man who plays the trumpet " +
@@ -63,7 +63,7 @@ export const enB1P11: SkillExercise[] = [
       },
       {
         text: "What was the writer doing when the elevator stopped?",
-        options: ["checking messages", "carrying shopping", "talking on the phone"],
+        options: ["checking messages", "carrying groceries", "talking on the phone"],
         answer: 0,
         explain: "„I was checking my messages and not paying attention to anything.“",
       },
@@ -84,11 +84,11 @@ export const enB1P11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who told the fire service where they were?",
+        text: "Who told the fire department where they were?",
         options: [],
         answer: 0,
         accept: ["the man on the phone", "the young man", "the man from the top floor", "a young man", "the young man from the top floor"],
-        explain: "„The man on the phone told the fire service where we were.“",
+        explain: "„The man on the phone told the fire department where we were.“",
       },
       {
         text: "What happened on Saturday?",
@@ -199,7 +199,7 @@ export const enB1P11: SkillExercise[] = [
       { de: "van", tr: "kamyonet" },
       { de: "to reverse", tr: "geri geri gitmek" },
       { de: "sign", tr: "tabela" },
-      { de: "number plate", tr: "plaka" },
+      { de: "license plate", tr: "plaka" },
       { de: "bent", tr: "bükülmüş" },
       { de: "hit", tr: "çarptı" },
     ],
@@ -215,8 +215,8 @@ export const enB1P11: SkillExercise[] = [
       {
         kind: "build",
         tr: "Karşıdaki durakta otobüs bekliyordum.",
-        answer: "I was waiting for the bus at the stop opposite.",
-        alternatives: ["At the stop opposite I was waiting for the bus."],
+        answer: "I was waiting for the bus at the stop across the street.",
+        alternatives: ["At the stop across the street I was waiting for the bus."],
         hint: "Olay anındaki durumun: was + -ing; „wait“ fiili „for“ ister.",
       },
       {
@@ -247,7 +247,7 @@ export const enB1P11: SkillExercise[] = [
           "As far as I could see, the window did not break, but the sign is badly bent. " +
           "The driver got out, looked at it for a moment and then drove away. I'm not completely " +
           "sure whether he saw me. The van had a blue logo on the side, and I remember the first " +
-          "three letters of the number plate: KTR. " +
+          "three letters of the license plate: KTR. " +
           "If it helps, I'm happy to speak to the police or to your insurance company. " +
           "Best wishes, Deniz Aksoy",
       },

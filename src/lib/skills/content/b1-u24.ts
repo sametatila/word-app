@@ -325,7 +325,7 @@ export const b1U24: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Geri dönüş kartını doldur.",
+        prompt: "Geriye bakış kartını doldur.",
         facts: "Kişi: Sedef Aydın; kaçırılan: yurt dışında bir yıl; ne zaman: 6 yıl önce; sebep: annesi hastaydı; bugün: bilinçli seçim olarak görüyor.",
         fields: [
           { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },

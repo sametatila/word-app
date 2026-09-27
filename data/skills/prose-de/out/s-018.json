@@ -7,7 +7,7 @@
  {
   "tr": "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
   "kind": "intro",
-  "de": "Ela erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist im Haus?"
+  "de": "Ela erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist zu Hause?"
  },
  {
   "tr": "Yaşı, fiyatı ve harf harf söylemeyi yazarak çalış. Sonunda kurs formunu doldur.",
@@ -82,12 +82,12 @@
  {
   "tr": "„A, N, A. It is easy!“ — burada ad harf harf söyleniyor.",
   "kind": "explain",
-  "de": "„A, N, A. It is easy!“ — buchstabieren heißt, die Buchstaben einzeln zu nennen."
+  "de": "„A, N, A. It is easy!“ — hier wird der Name buchstabiert."
  },
  {
-  "tr": "„My mother makes a big cake.“ Baba keke adı yazıyor, yapan anne.",
+  "tr": "„My mother makes a big cake.“ Baba pastaya adı yazıyor, yapan anne.",
   "kind": "explain",
-  "de": "„My mother makes a big cake.“ Der Vater schreibt den Namen auf den Kuchen, gebacken hat ihn die Mutter."
+  "de": "„My mother makes a big cake.“ Der Vater schreibt den Namen auf die Torte, gebacken hat sie die Mutter."
  },
  {
   "tr": "„he is one year old“ — bir tane olduğu için „year“ tekil kalıyor.",
@@ -220,14 +220,14 @@
   "de": "„Last name: Yalin.“ — Deniz ist der Vorname, Bremen die Stadt. Im Formular hat jede Zeile ihre eigene Beschriftung."
  },
  {
-  "tr": "Önce gün, sonra kek, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
+  "tr": "Önce gün, sonra pasta, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
   "kind": "explain",
-  "de": "Zuerst der Tag, dann der Kuchen, dann die Gäste, zuletzt der Glückwunsch. Die Erzählung läuft immer in dieser Reihenfolge."
+  "de": "Zuerst der Tag, dann die Torte, dann die Gäste, zuletzt die Feier. Die Erzählung läuft immer in dieser Reihenfolge."
  },
  {
   "tr": "„I speak a little English.“ — „a little“ tek parça ve „English“ büyük harfle yazılır.",
   "kind": "explain",
-  "de": "„I speak a little English.“ — „a little“ ist ein Stück und „English“ wird großgeschrieben."
+  "de": "„I speak a little English.“ — „a little“ gehört zusammen und „English“ wird großgeschrieben."
  },
  {
   "tr": "„I do not speak English, but I understand many words.“ — anlamak ile konuşmak ayrı iki şey.",
@@ -252,7 +252,7 @@
  {
   "tr": "yemek",
   "kind": "gloss.tr",
-  "de": "Mahlzeit"
+  "de": "Essen"
  },
  {
   "tr": "onun adı …",
@@ -262,7 +262,7 @@
  {
   "tr": "ad",
   "kind": "gloss.tr",
-  "de": "Vorname"
+  "de": "Name"
  },
  {
   "tr": "ev",
@@ -357,7 +357,7 @@
  {
   "tr": "doğum günün kutlu olsun",
   "kind": "gloss.tr",
-  "de": "herzlichen Glückwunsch"
+  "de": "herzlichen Glückwunsch zum Geburtstag"
  },
  {
   "tr": "İngilizce konuşuyor musun",

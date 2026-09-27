@@ -156,7 +156,7 @@ export const b1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Nachdem"],
-        explain: "Önce olan olayı geriye alan bağlaç: „nachdem“ + Plusquamperfekt.",
+        explain: "Önce olan olayı bildiren bağlaç: „nachdem“ + Plusquamperfekt.",
       },
       {
         kind: "short_answer",
@@ -311,7 +311,7 @@ export const b1U02: SkillExercise[] = [
       { de: "der Antrag", tr: "dilekçe / başvuru", en: "application" },
       { de: "flexibel", tr: "esnek", en: "flexible" },
       { de: "die Überstunde", tr: "fazla mesai", en: "overtime" },
-      { de: "die Erholung", tr: "dinlenme", en: "recovery" },
+      { de: "die Erholung", tr: "dinlenme", en: "rest" },
       { de: "gelten", tr: "geçerli olmak", en: "to be valid" },
     ],
     tasks: [
@@ -402,7 +402,7 @@ export const b1U02: SkillExercise[] = [
           "Enttäuschung, aber ich verstehe, dass Sie sehr viele Bewerbungen hatten.\n\n" +
           "Ich würde gern wissen, wo ich mich noch verbessern kann. Wenn Sie mir dazu " +
           "kurz etwas schreiben könnten, wäre ich Ihnen sehr dankbar.\n\n" +
-          "Falls Sie später wieder eine Stelle haben, würde ich mich über eine " +
+          "Falls Sie später wieder eine Stelle frei haben, würde ich mich über eine " +
           "Nachricht freuen. Ich melde mich in sechs Monaten noch einmal, denn " +
           "meine Hoffnung ist, dass der nächste Versuch klappt.\n\n" +
           "Mit freundlichen Grüßen\nSelin Aydin",

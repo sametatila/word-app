@@ -45,7 +45,7 @@
   "de": "Ana, die die Ausschreibung unterschrieb, ist die Direktorin."
  },
  {
-  "tr": "Hüküm hükümsüz olsaydı dururduk.",
+  "tr": "Madde hükümsüz olsaydı dururduk.",
   "kind": "build.tr",
   "de": "Wäre die Klausel nichtig gewesen, hätten wir aufgehört."
  },
@@ -130,7 +130,7 @@
   "de": "Die Behandlung der Oberfläche dauerte zwei Stunden."
  },
  {
-  "tr": "Cuma gününe kadar siparişi yürütmüş olacağız.",
+  "tr": "Cuma gününe kadar siparişi yerine getirmiş olacağız.",
   "kind": "build.tr",
   "de": "Bis Freitag werden wir den Auftrag ausgeführt haben."
  },

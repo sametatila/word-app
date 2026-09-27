@@ -24,7 +24,7 @@ export const enB1P16: SkillExercise[] = [
       { de: "fox", tr: "tilki" },
       { de: "shed", tr: "kulübe" },
       { de: "to scream", tr: "çığlık atmak" },
-      { de: "council", tr: "belediye" },
+      { de: "city", tr: "belediye" },
       { de: "fascinated", tr: "büyülenmiş" },
       { de: "trash", tr: "çöp" },
       { de: "to get rid of", tr: "kurtulmak" },
@@ -39,13 +39,13 @@ export const enB1P16: SkillExercise[] = [
       "about at the bus stop.\n\n" +
       "Mrs. Patel at number 11 is afraid of them. Not because they are dangerous, she says, but " +
       "because they scream at night, and the first time she heard it she thought someone was being " +
-      "attacked. She has complained to the council twice.\n\n" +
+      "attacked. She has complained to the city twice.\n\n" +
       "Her neighbor, Tom Reilly, is the opposite. He is fascinated by the foxes and has put a small " +
       "camera in his backyard. He is proud of his videos, which show the young ones playing with " +
       "a tennis ball at three in the morning. More than two hundred people follow his page.\n\n" +
       "Most residents are somewhere in the middle. They are tired of finding their trash bags " +
       "torn open, but they are not interested in getting rid of the animals.\n\n" +
-      "The council's answer is simple, and not very popular. Foxes are not pests in law, so it " +
+      "The city's answer is simple, and not very popular. Legally, foxes are not pests, so it " +
       "will not remove them. Instead it has asked people to buy trash cans with lids that lock, and to " +
       "stop feeding the animals. That last request is aimed at one person, and everybody on " +
       "Elm Street knows who it is.",
@@ -68,7 +68,7 @@ export const enB1P16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Tom Reilly wants the council to remove the foxes.",
+        text: "Tom Reilly wants the city to remove the foxes.",
         options: ["True", "False"],
         answer: 1,
         explain: "Tam tersi: tilkilere hayran, bahçesine kamera koymuş ve videolarıyla gurur duyuyor.",
@@ -90,7 +90,7 @@ export const enB1P16: SkillExercise[] = [
         explain: "„They are tired of finding their trash bags torn open“.",
       },
       {
-        text: "What has the council asked people to do?",
+        text: "What has the city asked people to do?",
         options: [
           "catch the foxes themselves",
           "buy trash cans with lids that lock",
@@ -126,7 +126,7 @@ export const enB1P16: SkillExercise[] = [
     minutes: 6,
     segments: [
       { text: "Every spring our phone line is full of calls about baby birds, so here is the short version of what we tell people." },
-      { text: "First, look at the bird. If it has feathers and is hopping about on the ground, it is almost certainly fine. It has left the nest on purpose, and its parents are nearby." },
+      { text: "First, look at the bird. If it has feathers and is hopping around on the ground, it is almost certainly fine. It has left the nest on purpose, and its parents are nearby." },
       { text: "The parents are very good at hiding. You may watch for an hour and see nothing, but they are waiting for you to go away." },
       { text: "So the best thing you can do is keep cats and dogs inside for a day or two. That is all." },
       { text: "If the bird has no feathers, it has fallen out of the nest too early. If you can see the nest and reach it safely, put the bird back." },

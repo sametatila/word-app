@@ -67,7 +67,7 @@ export const c1U20: SkillExercise[] = [
       "Die brauchbare Frage lautet anders: Wem wird die Verantwortung zugerechnet? Zurechnung ist keine Entdeckung, sondern eine Entscheidung. Eine Rechtsordnung braucht eine Instanz, die man ansprechen, verklagen, zur Änderung zwingen kann. Bei einem fehlerhaften Bremssystem fragt niemand, ob das Steuergerät Schuld empfindet.\n\n" +
       "Dass ein System Verstehen simuliert, ändert daran nichts. Die Simulation ist gut genug, um Menschen zu täuschen, und genau deshalb ist die Frage nach der Zurechnung dringender geworden, nicht schwieriger.\n\n" +
       "Damit verschiebt sich die Debatte von der Maschine zu den Menschen um sie herum. Wer hat das System eingesetzt, für welchen Zweck, mit welchen Daten, und wer hätte die Intervention auslösen können, als es schiefging?\n\n" +
-      "Auch das Gegenteil führt in die Irre: Ein System ist nicht skrupellos, weil es ohne Skrupel rechnet. Skrupel hat, wer sie haben könnte.\n\n" +
+      "Auch das Gegenteil führt in die Irre: Ein System ist nicht skrupellos, weil es ohne Skrupel rechnet. Skrupellos kann nur sein, wer Skrupel haben könnte.\n\n" +
       "Zwei Ausweichbewegungen kehren regelmäßig wieder. Die erste: „Das war der Algorithmus.“ Sie macht ein Werkzeug zum Täter und den Betreiber zum Zuschauer. Die zweite ist umgekehrt und ebenso bequem: „Am Ende entscheidet immer ein Mensch.“ Das stimmt formal und beschreibt selten die Praxis — wer dreihundert Vorschläge am Tag bestätigt, entscheidet nicht, er unterschreibt.\n\n" +
       "Wer haftbar ist, lässt sich regeln. Ob eine Maschine etwas empfindet, lässt sich nicht klären — und muss es für diese Frage auch nicht.",
     questions: [
@@ -157,12 +157,12 @@ export const c1U20: SkillExercise[] = [
     minutes: 8,
     text:
       "DREI DINGE, DIE OFT VERWECHSELT WERDEN\n\n" +
-      "Artikel 5 des Grundgesetzes schützt die Meinungsfreiheit. Er schützt sie ausdrücklich auch dann, wenn die Meinung falsch, scharf oder unbequem ist. Er endet an den „allgemeinen Gesetzen“ — und hierbei beginnt die Arbeit des Abgrenzens.\n\n" +
+      "Artikel 5 des Grundgesetzes schützt die Meinungsfreiheit. Er schützt sie auch dann, wenn die Meinung abwegig, scharf oder unbequem ist. Er endet an den „allgemeinen Gesetzen“ — und hierbei beginnt die Arbeit des Abgrenzens.\n\n" +
       "Erstens: Meinung und Tatsachenbehauptung. Eine Meinung ist eine Bewertung und kann nicht wahr oder falsch sein. Eine Tatsachenbehauptung kann es. „Dieses Restaurant ist schlecht“ ist geschützt; „In dieser Küche wurden Ratten gefunden“ ist es nur, wenn es stimmt. Davon zu unterscheiden ist die bewusste Falschbehauptung über eine Person — die Verleumdung —, die kein Meinungsäußerungsproblem ist, sondern eine Straftat.\n\n" +
       "Zweitens: Kritik und Herabwürdigung. Scharfe Kritik an Handlungen ist weit geschützt, auch polemische. Die Grenze verläuft dort, wo nicht mehr eine Sache angegriffen wird, sondern die Person als Person entwertet wird. Insofern ist die viel zitierte Formel „Man wird ja wohl noch sagen dürfen“ meist richtig — nur betrifft sie einen anderen Fall als den, in dem sie vorgebracht wird.\n\n" +
       "Drittens, und am häufigsten verwechselt: Staat und Plattform. Grundrechte binden zuerst den Staat. Wenn ein privates Netzwerk einen Beitrag löscht, ist das rechtlich keine Zensur im Sinne des Artikels 5 — Zensur meint dort staatliche Vorabkontrolle. Man kann die Löschpraxis privater Anbieter für falsch halten und darüber streiten; nur ist es ein Streit über Marktmacht und Hausrecht, nicht über Unterdrückung durch den Staat.\n\n" +
       "Eine vierte Grenze verläuft dort, wo aus Meinung Propaganda wird — also dort, wo nicht mehr für eine Auffassung geworben, sondern planmäßig getäuscht wird. Der Übergang ist fließend und deshalb der schwierigste der vier.\n\n" +
-      "Die drei Unterscheidungen ändern nichts an der Schärfe der Debatte. Sie sorgen nur dafür, dass die Beteiligten über dieselbe Sache streiten.",
+      "Diese Unterscheidungen ändern nichts an der Schärfe der Debatte. Sie sorgen nur dafür, dass die Beteiligten über dieselbe Sache streiten.",
     questions: [
       {
         text: "Worin unterscheiden sich Meinung und Tatsachenbehauptung?",
@@ -206,7 +206,7 @@ export const c1U20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was leisten die drei Unterscheidungen laut Schluss?",
+        text: "Was leisten die Unterscheidungen laut Schluss?",
         options: [],
         answer: 0,
         accept: [
@@ -251,22 +251,22 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Jan", text: "Bei dir waren es drei Beitragszahler pro Rentner. Bei mir werden es unter zwei sein. Das ist kein Gefühl, das ist Arithmetik." },
       { speaker: "Vater", text: "Nichtsdestotrotz funktioniert das System seit siebzig Jahren. Es wurde mehrfach umgebaut und hat jedes Mal gehalten." },
       { speaker: "Jan", text: "Umgebaut heißt: zulasten der Jüngeren. Höhere Beiträge, späterer Renteneintritt." },
-      { speaker: "Vater", text: "Und zulasten der Älteren: Das Niveau ist gesunken. Meine Rente ist real niedriger als die deines Großvaters, gemessen am Durchschnittslohn." },
+      { speaker: "Vater", text: "Und zulasten der Älteren: Das Niveau ist gesunken. Gemessen am Durchschnittslohn ist meine Rente niedriger als die deines Großvaters." },
       { speaker: "Jan", text: "Das wusste ich nicht." },
       { speaker: "Vater", text: "Es steht in jedem Rentenbericht. Nur liest es keiner, weil beide Seiten lieber sagen, die andere sei egoistisch." },
       { speaker: "Jan", text: "Was wäre denn ehrlich?" },
       { speaker: "Vater", text: "Dass eine Umverteilung ansteht und jemand sie tragen muss. Solidarisch heißt nicht, dass es niemanden trifft — es heißt, dass wir entscheiden, wen und wie viel." },
-      { speaker: "Jan", text: "Kollektiv entscheiden heißt am Ende: jemand zahlt und jemand nicht." },
+      { speaker: "Jan", text: "Kollektiv entscheiden heißt am Ende: Jemand zahlt und jemand nicht." },
       { speaker: "Vater", text: "So ist es. Nur steht dann wenigstens fest, wer." },
       { speaker: "Jan", text: "Und wer entscheidet das?" },
-      { speaker: "Vater", text: "Ihr. Ihr seid mehr Wähler als wir es in zwanzig Jahren sein werden. Das ist der Teil, den meine Generation ungern ausspricht." },
+      { speaker: "Vater", text: "Ihr. Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden. Das ist der Teil, den meine Generation ungern ausspricht." },
     ],
     questions: [
       {
         text: "Welches Argument bringt der Vater gegen Jans Vorwurf?",
         options: [
           "Dass die Arithmetik falsch ist",
-          "Dass auch die Älteren getragen haben: das Rentenniveau ist real gesunken",
+          "Dass auch die Älteren getragen haben: das Rentenniveau ist gesunken",
           "Dass Jan zu jung sei",
         ],
         answer: 1,
@@ -296,8 +296,8 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Ihr seid mehr Wähler als wir es in zwanzig Jahren sein werden.",
-          "Ihr seid mehr Wähler als wir es in zwanzig Jahren sein werden",
+          "Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden.",
+          "Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden",
         ],
         explain: "Karar gücü zamanla yer değiştiriyor.",
       },
@@ -325,7 +325,7 @@ export const c1U20: SkillExercise[] = [
       { de: "also", tr: "yani", en: "so" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "präzisieren", tr: "netleştirmek", en: "to specify" },
-      { de: "belebt", tr: "hareketli", en: "busy" },
+      { de: "beleben", tr: "canlandırmak", en: "to revitalize" },
       { de: "die Fantasie/Phantasie", tr: "hayal gücü", en: "imagination" },
       { de: "folgern", tr: "sonuç çıkarmak", en: "to conclude" },
     ],

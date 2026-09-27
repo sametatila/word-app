@@ -412,10 +412,10 @@ export const b1U01: SkillExercise[] = [
           "Über ein Gespräch würde ich mich sehr freuen.\n\n" +
           "Mit freundlichen Grüßen\nLeyla Kaya",
         phrases: [
-          { de: "Ich bewerbe mich auf die Stelle als …", tr: "… pozisyonuna başvuruyorum", en: "I am applying for the position as …" },
+          { de: "Ich bewerbe mich auf die Stelle als …", tr: "… pozisyonuna başvuruyorum", en: "I am applying for the position of …" },
           { de: "Seit … arbeite ich …", tr: "…'den beri … çalışıyorum", en: "I have been working … since …" },
           { de: "Ich bin begeistert von …", tr: "… beni heyecanlandırıyor", en: "I am enthusiastic about …" },
-          { de: "Über ein Gespräch würde ich mich sehr freuen.", tr: "Bir görüşmeye çok sevinirim.", en: "I would be very happy to have an interview." },
+          { de: "Über ein Gespräch würde ich mich sehr freuen.", tr: "Sizinle görüşme fırsatı bulursam çok sevinirim.", en: "I would be very happy to have an interview." },
         ],
       },
       {

@@ -7,7 +7,7 @@
  {
   "tr": "Kütüphane kartı formunu Ela için doldur.",
   "kind": "form.prompt",
-  "de": "Fülle das Formular für die Bibliothekskarte für Ela aus."
+  "de": "Fülle für Ela das Formular für die Bibliothekskarte aus."
  },
  {
   "tr": "Emre Kaya; 22 yaşında; öğretmen; Bremen'de yaşıyor.",
@@ -177,7 +177,7 @@
  {
   "tr": "Fiil „be“ değilse soru „do“ ile başlar: Do you …? Fiilin kendisi değişmez.",
   "kind": "build.hint",
-  "de": "Ist das Verb nicht „be“, beginnt die Frage mit „do“: Do you …? Diesen Hilfsverb-Trick kennt das Deutsche nicht, das Verb selbst bleibt unverändert."
+  "de": "Ist das Verb nicht „be“, beginnt die Frage mit „do“: Do you …? Diesen Hilfsverb-Trick kennt das Deutsche nicht; das Verb selbst bleibt unverändert."
  },
  {
   "tr": "Fiyat sorusu „how much“ ile. Yaş sorusunda „how old“ vardı — ikisi karışmasın.",
@@ -192,7 +192,7 @@
  {
   "tr": "Kemal erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
   "kind": "build.hint",
-  "de": "Kemal ist männlich, deshalb „his“. Bei einer Frau wäre es „her name“ — wie deutsch sein und ihr richtet sich das nach dem BESITZER."
+  "de": "Kemal ist männlich, deshalb „his“. Bei einer Frau wäre es „her name“ — wie bei deutsch „sein“ und „ihr“ richtet es sich nach dem BESITZER."
  },
  {
   "tr": "Konuşmacıların sırası: doğru sıraya koy.",

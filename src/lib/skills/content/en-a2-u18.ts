@@ -49,7 +49,7 @@ export const enA2U18: SkillExercise[] = [
       "Clerk: Six! Then look here. These postcards are two euros and this jewelry is four.\n" +
       "Nil: The jewelry is nice. Is it from here?\n" +
       "Clerk: From this street, yes. A woman makes it in the house opposite.\n" +
-      "Nil: Then I take four of them. And two postcards for my parents.\n" +
+      "Nil: Then I'll take four of them. And two postcards for my parents.\n" +
       "Clerk: Your parents get postcards and your friends get jewelry?\n" +
       "Nil: My parents want postcards. They put them on the door.\n" +
       "Clerk: Then they are right. Could I wrap them as a gift?\n" +
@@ -155,7 +155,7 @@ export const enA2U18: SkillExercise[] = [
         items: [
           "We arrived on Friday evening.",
           "Saturday was amazing.",
-          "On Sunday we made a picnic.",
+          "On Sunday we had a picnic.",
           "Would you like to go next year?",
         ],
         explain: "Üç gün sırayla, en sonda gelecek yılın sorusu.",
@@ -417,7 +417,7 @@ export const enA2U18: SkillExercise[] = [
         kind: "build",
         tr: "Daha ucuz bir şeyiniz var mı?",
         answer: "Do you have anything cheaper?",
-        hint: "Soruda „anything“; sıfat isimden SONRA geliyor.",
+        hint: "Soruda „anything“; sıfat „anything“ten SONRA geliyor.",
       },
       {
         kind: "build",

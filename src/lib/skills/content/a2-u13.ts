@@ -231,8 +231,8 @@ export const a2U13: SkillExercise[] = [
       { de: "der Stammkunde", tr: "sürekli müşteri", en: "regular customer" },
       { de: "reduziert", tr: "indirimli", en: "reduced" },
       { de: "die Qualität", tr: "kalite", en: "quality" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "gefallen", tr: "hoşuna gitmek", en: "to please" },
+      { de: "lang", tr: "uzun", en: "long" },
     ],
     minutes: 3,
     segments: [

@@ -254,11 +254,11 @@ export const deA1P3: SkillExercise[] = [
         ],
       },
       {
-        de: "Der Wagen ist von Viktor.",
-        tr: "Araba Viktor'un.",
-        hint: "„Wagen“ = VAA-gen; „von“ ve „Viktor“ f ile başlar.",
+        de: "Der Wagen ist von Volker.",
+        tr: "Araba Volker'in.",
+        hint: "„Wagen“ = VAA-gen; „von“ ve „Volker“ f ile başlar.",
         confusions: [
-          { heard: ["Der Vagen ist won", "fon Wiktor"], fix: "„W“ hep v, „V“ hep f: VAA-gen fon FİK-tor.", expected: "von Viktor" },
+          { heard: ["Der Vagen ist won", "fon Wolker"], fix: "„W“ hep v, „V“ hep f: VAA-gen fon FOL-ker.", expected: "von Volker" },
         ],
       },
       {

@@ -107,7 +107,7 @@ export const enA1U25: SkillExercise[] = [
       "Ela: What did you do yesterday?\n" +
       "Can: I worked in the morning and I played tennis in the afternoon.\n" +
       "Ela: Did you finish the work?\n" +
-      "Can: No, I didn't finish. I have two hours today.\n" +
+      "Can: No, I didn't finish. I have two more hours today.\n" +
       "Ela: And the tennis? Did you win?\n" +
       "Can: No! My friend played very well. I didn't win, but it was good.\n" +
       "Ela: Where did you play?\n" +
@@ -135,7 +135,7 @@ export const enA1U25: SkillExercise[] = [
         text: "Can finished the work.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„No, I didn't finish. I have two hours today.“",
+        explain: "„No, I didn't finish. I have two more hours today.“",
       },
       {
         kind: "gapfill",

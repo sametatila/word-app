@@ -92,7 +92,7 @@
  {
   "tr": "Toplumsallaşma sıra düzenini erginlenmeden önce kurabilir.",
   "kind": "build.tr",
-  "de": "Die Sozialisation setzt die Hackordnung vielleicht schon vor der Initiation."
+  "de": "Die Sozialisation legt die Hackordnung vielleicht schon vor der Initiation fest."
  },
  {
   "tr": "Örf ve âdet hukukuna saygıdeğer demek ona uymak değildir.",
@@ -115,7 +115,7 @@
   "de": "So gern wir es Akkulturation nennen, sie meinen Assimilation."
  },
  {
-  "tr": "Dik başlı bir çocuk, dediler, ve epey meraklı.",
+  "tr": "Dik başlı bir çocuk, dediler, epey de meraklı.",
   "kind": "build.tr",
   "de": "Ein eigensinniges Kind, sagten sie, und ziemlich wissbegierig."
  },
@@ -130,7 +130,7 @@
   "de": "Der Gleichheitsgrundsatz verlangt, dass die Menschenwürde für alle unantastbar sei, nicht nur für einige."
  },
  {
-  "tr": "Burada hiç yabancılaşmayız; uzaklaşmayı sonradan adlandırırız.",
+  "tr": "Burada hiç yabancılaşmayız; yabancılaşmayı sonradan adlandırırız.",
   "kind": "build.tr",
   "de": "Wir entfremden uns hier nie; wir benennen die Entfremdung nur später."
  },
@@ -302,7 +302,7 @@
  {
   "tr": "Zaman sözcüğü özne diye okunamaz; bu yüzden güvenli.",
   "kind": "build.hint",
-  "de": "Ein Zeitwort kann nicht als Subjekt gelesen werden; darum ist es sicher."
+  "de": "Eine Zeitangabe kann nicht als Subjekt gelesen werden; darum ist es sicher."
  },
  {
   "tr": "Bir satırda iki özne, aradaki boşlukta bütün tartışma.",

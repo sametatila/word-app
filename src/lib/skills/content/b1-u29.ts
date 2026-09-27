@@ -39,8 +39,8 @@ export const b1U29: SkillExercise[] = [
     intro: "Bir hesap açılıyor. Ne gerekiyor, ne ücretli?",
     minutes: 5,
     gloss: [
-      { de: "das Girokonto", tr: "vadesiz hesap", en: "current account" },
-      { de: "der Geldautomat", tr: "bankamatik", en: "cash machine" },
+      { de: "das Girokonto", tr: "vadesiz hesap", en: "checking account" },
+      { de: "der Geldautomat", tr: "bankamatik", en: "ATM" },
       { de: "abheben", tr: "para çekmek", en: "to withdraw" },
       { de: "das Bargeld", tr: "nakit", en: "cash" },
       { de: "die Einzahlung", tr: "para yatırma", en: "deposit" },

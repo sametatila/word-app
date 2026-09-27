@@ -283,7 +283,7 @@ export const c1U07: SkillExercise[] = [
           "Sie sitzen heute in einem Saal, den es vor drei Jahren noch nicht gab.",
           "Sie sitzen heute in einem Saal, den es vor drei Jahren noch nicht gab",
         ],
-        explain: "İlgi cümlesi durumu tek hamlede kuruyor; uzun bir önhikâyeye gerek kalmıyor.",
+        explain: "İlgi cümlesi durumu tek hamlede kuruyor; uzun bir ön hikâyeye gerek kalmıyor.",
       },
     ],
   },
@@ -327,7 +327,7 @@ export const c1U07: SkillExercise[] = [
         text: "Wie pariert Frau Alp die erste Spitze?",
         options: [
           "Sie ignoriert sie.",
-          "Sie greift sie auf und dreht sie in ein Kompliment an den Kollegen.",
+          "Sie greift sie auf und macht daraus ein Kompliment an den Kollegen.",
           "Sie kontert mit einer eigenen Spitze.",
         ],
         answer: 1,

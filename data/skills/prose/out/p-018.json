@@ -172,7 +172,7 @@
  {
   "tr": "„Sie sitzen daneben, Sie halten das Werkzeug“ — ziyaretçi işin içinde, seyirci değil.",
   "kind": "explain",
-  "en": "„Sie sitzen daneben, Sie halten das Werkzeug“ — the visitor is in it, not watching."
+  "en": "„Sie sitzen daneben, Sie halten das Werkzeug“ — the visitor is involved, not a spectator."
  },
  {
   "tr": "„verlangt, dass jemand die Daten prüfen kann“ — en güçlü iddia, en yüksek kanıt yükü.",
@@ -180,7 +180,7 @@
   "en": "„verlangt, dass jemand die Daten prüfen kann“ — the strongest claim, the heaviest burden of proof."
  },
  {
-  "tr": "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgu kendisi bir zayıflık işareti.",
+  "tr": "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgunun kendisi bir zayıflık işareti.",
   "kind": "explain",
   "en": "„Wer sicher ist, sagt es meist ohne dieses Wort.“ The emphasis is itself a sign of weakness."
  },
@@ -210,9 +210,9 @@
   "en": "You are going to rate a store online; first form two sentences, then write a short review."
  },
  {
-  "tr": "Bir kaza ihbarı. Almanya'da acil çağrının sırası dörttür — dördüncüsü en çok atlanan.",
+  "tr": "Bir kaza ihbarı. Almanya'da acil çağrı dört adımdan oluşur; en çok atlanan, dördüncüsüdür.",
   "kind": "intro",
-  "en": "Reporting an accident. In Germany the emergency call has four parts — the fourth is the one most often missed."
+  "en": "Reporting an accident. In Germany an emergency call has four steps; the one most often missed is the fourth."
  },
  {
   "tr": "Bir kurumun kullanıcılarına gönderdiği bilgilendirme. Neyin yasak olduğuna dikkat et.",
@@ -265,9 +265,9 @@
   "en": "The relative clause comes after the noun and its verb stays last: Das ist der Mann, der wartet."
  },
  {
-  "tr": "Kısa bir haftalık durum raporu yaz: ne yapıldı, ne yapılmalı, ne şu an hangi durumda?",
+  "tr": "Kısa bir haftalık durum raporu yaz: ne yapıldı, ne yapılmalı, şu an durum ne?",
   "kind": "intro",
-  "en": "Write a short weekly status report: what was done, what has to be done, what stands where now?"
+  "en": "Write a short weekly status report: what was done, what has to be done, what is the situation now?"
  },
  {
   "tr": "Ms. Clark \"We have twelve cooks here\" diyerek mutfakta on iki aşçı olduğunu söylüyor.",
@@ -295,9 +295,9 @@
   "en": "Verbs of foreign origin in -ieren take no ge- in the Perfekt: reserviert, nicht gereserviert."
  },
  {
-  "tr": "Yanlış: „fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“",
+  "tr": "Yanlış: „Fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“",
   "kind": "explain",
-  "en": "False: „fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“"
+  "en": "False: „Fragen Sie im Café. Da bekommen Sie bessere Antworten als im Andenkenladen.“"
  },
  {
   "tr": "Yanlış: „Im Deutschen ist ein klares 'nein' nicht unfreundlich, sondern zeitsparend.“",
@@ -315,14 +315,14 @@
   "en": "Piled-up hedges make a claim unreadable; one hedge per claim is enough."
  },
  {
-  "tr": "„ansehen“ ayrılabilen bir fiil; ortacın hecesi ön ekle kökün arasına girer: angesehen.",
+  "tr": "„ansehen“ ayrılabilen bir fiil; ortacın „ge“ hecesi ön ekle kökün arasına girer: angesehen.",
   "kind": "explain",
-  "en": "„ansehen“ is a separable verb; the participle syllable goes between the prefix and the stem: angesehen."
+  "en": "„ansehen“ is a separable verb; the participle syllable „ge“ goes between the prefix and the stem: angesehen."
  },
  {
   "tr": "„Auch ein Verband kann sauber erheben.“ Çıkar durumu şüphe değil, dikkat gerektiriyor.",
   "kind": "explain",
-  "en": "„Auch ein Verband kann sauber erheben.“ An interest is not a reason to doubt but to look closely."
+  "en": "„Auch ein Verband kann sauber erheben.“ A vested interest calls not for suspicion but for close attention."
  },
  {
   "tr": "„Freitag um halb elf oder Montag um sechzehn Uhr“ — on altı, öğleden sonra dört demek.",
@@ -340,9 +340,9 @@
   "en": "„It is who is expected to walk.“ — the cleft moves the question from the technology to the sharing out."
  },
  {
-  "tr": "„Since then, I have been to the pool twice a week.“ — dördüncü paragrafın ilk cümlesi.",
+  "tr": "„Since then, I have gone to the pool twice a week.“ — dördüncü paragrafın ilk cümlesi.",
   "kind": "explain",
-  "en": "„Since then, I have been to the pool twice a week.“ — the first sentence of the fourth paragraph."
+  "en": "„Since then, I have gone to the pool twice a week.“ — the first sentence of the fourth paragraph."
  },
  {
   "tr": "„ten years“ bir süre → for. since yalnız başlangıç noktasıyla kullanılır (since 2015).",
@@ -372,7 +372,7 @@
  {
   "tr": "Bilet dün alınmış, yani plan önceden var; doğal biçim „I am going to visit my sister“.",
   "kind": "explain",
-  "en": "The ticket was bought yesterday, so the plan exists; the natural form is „I am going to visit my sister“."
+  "en": "The ticket was bought yesterday, so the plan already exists; the natural form is „I am going to visit my sister“."
  },
  {
   "tr": "Bir buçuk dakikaya kadar konuşacaksın: iki tarafı da tart, sonra kendi konumunu söyle.",
@@ -397,7 +397,7 @@
  {
   "tr": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Emre \"A new pair, please.\" diyor.",
   "kind": "explain",
-  "en": "\"A new pair, please.\" — that is what Emre answers when asked money back or new headphones."
+  "en": "\"A new pair, please.\" — that is what Emre answers when asked whether he wants his money back or new headphones."
  },
  {
   "tr": "Güven üzerine kısa bir yazı. Hangi fiillerin ardından 'dem/denen' geldiğine dikkat et.",
@@ -480,7 +480,7 @@
   "en": "Silence is felt differently on each side; knowing that makes a pause usable."
  },
  {
-  "tr": "Son cevabı bu iki şeyi istiyor ve gerekçesini de veriyor: yılda iki yüz bin ziyaretçi.",
+  "tr": "Son cevabında bu iki şeyi istiyor ve gerekçesini de veriyor: yılda iki yüz bin ziyaretçi.",
   "kind": "explain",
   "en": "His last answer asks for these two things and gives the reason: two hundred thousand visitors a year."
  },
@@ -617,7 +617,7 @@
  {
   "tr": "İkisi de ifadeyi bugüne hapsediyor; yarın başka çıkarsa açıklama yanlış olmuş sayılmaz.",
   "kind": "explain",
-  "en": "Both of them tie the statement to today; if something else emerges tomorrow the statement is not made wrong."
+  "en": "Both of them tie the statement to today; if something else emerges tomorrow the statement does not count as wrong."
  },
  {
   "tr": "Karışık koşul: geçmişteki neden past perfect ile, bugünkü sonuç „would be“ ile verilir.",
@@ -627,7 +627,7 @@
  {
   "tr": "Karşılaştırma biçiminden sonra als gelir; A2 boyunca en çok karışan ayrıntılardan biri.",
   "kind": "explain",
-  "en": "als follows a comparative; one of the details most often muddled through A2."
+  "en": "als follows a comparative; one of the details most often mixed up throughout A2."
  },
  {
   "tr": "Sunum sonrası soru turunu yöneten biri, iyi cevabın sorudan önce başladığını anlatıyor.",

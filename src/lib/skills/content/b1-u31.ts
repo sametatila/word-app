@@ -42,7 +42,7 @@ export const b1U31: SkillExercise[] = [
       { de: "das Billett", tr: "bilet", en: "ticket" },
       { de: "der Perron", tr: "peron", en: "platform" },
       { de: "der Aufenthalt", tr: "mola / bekleme", en: "stopover" },
-      { de: "die Rückfahrt", tr: "dönüş", en: "return journey" },
+      { de: "die Rückfahrt", tr: "dönüş", en: "return trip" },
       { de: "beste", tr: "en iyi", en: "best" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
@@ -112,7 +112,7 @@ export const b1U31: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "die Vorfahrt", tr: "geçiş üstünlüğü", en: "right of way" },
-      { de: "die Fahrbahn", tr: "yol / şerit", en: "carriageway" },
+      { de: "die Fahrbahn", tr: "yol / şerit", en: "roadway" },
       { de: "der Gehsteig", tr: "kaldırım", en: "sidewalk" },
       { de: "die Einbahnstraße", tr: "tek yön", en: "one-way street" },
       { de: "überqueren", tr: "karşıdan karşıya geçmek", en: "to cross" },
@@ -120,9 +120,9 @@ export const b1U31: SkillExercise[] = [
       { de: "die Breite", tr: "genişlik", en: "width" },
     ],
     text:
-      "Die wichtigste Regel steht auf keinem Schild: wer unsicher ist, " +
+      "Die wichtigste Regel steht auf keinem Schild: Wer unsicher ist, " +
       "fährt langsam. Alles andere kann man lernen.\n\n" +
-      "Ohne Schild gilt rechts vor links. Das heißt: das Fahrzeug von " +
+      "Ohne Schild gilt rechts vor links. Das heißt: Das Fahrzeug von " +
       "rechts hat Vorfahrt, auch wenn die andere Straße breiter aussieht. " +
       "In einer Einbahnstraße fährt trotzdem manchmal ein Radfahrer " +
       "in die andere Richtung — das ist oft erlaubt und steht klein am Schild.\n\n" +
@@ -137,7 +137,7 @@ export const b1U31: SkillExercise[] = [
         text: "Was ist die wichtigste Regel?",
         options: ["Rechts vor links", "Wer unsicher ist, fährt langsam", "Immer bremsen"],
         answer: 1,
-        explain: "„Die wichtigste Regel steht auf keinem Schild: wer unsicher ist, fährt langsam.“",
+        explain: "„Die wichtigste Regel steht auf keinem Schild: Wer unsicher ist, fährt langsam.“",
       },
       {
         text: "Wer hat ohne Schild Vorfahrt?",

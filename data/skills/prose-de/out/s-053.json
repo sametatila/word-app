@@ -7,7 +7,7 @@
  {
   "tr": "Azı söylemek ve okumanın çekincesi.",
   "kind": "intro",
-  "de": "Weniger sagen, und die Vorsicht einer Lesart."
+  "de": "Weniger sagen und die Vorsicht einer Lesart."
  },
  {
   "tr": "Genel özne ve öne alınan soyut isim.",
@@ -137,7 +137,7 @@
  {
   "tr": "İki belge: biri açıkça iddia ediyor, öteki yalnızca işaret ediyor.",
   "kind": "explain",
-  "de": "Zwei Dokumente: das eine behauptet offen, das andere deutet bloß an."
+  "de": "Zwei Dokumente: Das eine behauptet offen, das andere deutet bloß an."
  },
  {
   "tr": "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
@@ -250,7 +250,7 @@
   "de": "die Flut"
  },
  {
-  "tr": "yaş",
+  "tr": "eskilik",
   "kind": "gloss.tr",
   "de": "das Alter"
  },
@@ -290,11 +290,6 @@
   "de": "das Budget"
  },
  {
-  "tr": "gazap",
-  "kind": "gloss.tr",
-  "de": "der Zorn"
- },
- {
   "tr": "konuk",
   "kind": "gloss.tr",
   "de": "der Gast"
@@ -303,11 +298,6 @@
   "tr": "levha",
   "kind": "gloss.tr",
   "de": "die Tafel"
- },
- {
-  "tr": "önden",
-  "kind": "gloss.tr",
-  "de": "von vorn"
  },
  {
   "tr": "simge",
@@ -595,7 +585,7 @@
   "de": "eine Seite"
  },
  {
-  "tr": "uzaklaşma",
+  "tr": "yabancılaşma",
   "kind": "gloss.tr",
   "de": "die Entfremdung"
  },
@@ -643,6 +633,11 @@
   "tr": "eksik harf",
   "kind": "gloss.tr",
   "de": "der fehlende Buchstabe"
+ },
+ {
+  "tr": "yalın biçim",
+  "kind": "gloss.tr",
+  "de": "die Grundform"
  },
  {
   "tr": "karşılıklı",
@@ -797,7 +792,7 @@
  {
   "tr": "zaman sözcüğü",
   "kind": "gloss.tr",
-  "de": "ein Zeitwort"
+  "de": "ein Zeitausdruck"
  },
  {
   "tr": "erken açılıyor",
@@ -878,5 +873,10 @@
   "tr": "araya sokulmuş cümlecik",
   "kind": "gloss.tr",
   "de": "ein eingeschobener Satz"
+ },
+ {
+  "tr": "arama yapmak",
+  "kind": "gloss.tr",
+  "de": "suchen"
  }
 ]

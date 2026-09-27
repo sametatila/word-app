@@ -55,7 +55,7 @@ export const enB2P4: SkillExercise[] = [
       "owner before last, and the current owner just sees a room that looks fine.\n\n" +
       "What can't you tell?\n" +
       "Anything behind a finished wall, and anything that only happens in certain weather. If a leak needs wind " +
-      "from the north-west, and there has been no wind from the north-west since March, I cannot see it. " +
+      "from the northwest, and there has been no wind from the northwest since March, I cannot see it. " +
       "I write that in the report, and people rarely read that line.",
     questions: [
       {
@@ -67,7 +67,7 @@ export const enB2P4: SkillExercise[] = [
       {
         text: "What does a mark with a clean edge suggest?",
         options: [
-          "It has dried and got wet several times.",
+          "It has dried and gotten wet several times.",
           "It comes from a gutter that was blocked last winter.",
           "It is fresh, because fresh damp is dark and cold.",
         ],
@@ -98,14 +98,14 @@ export const enB2P4: SkillExercise[] = [
         explain: "„Anything behind a finished wall, and anything that only happens in certain weather.“",
       },
       {
-        text: "Why does she mention wind from the north-west?",
+        text: "Why does she mention wind from the northwest?",
         options: [
           "Some faults only appear in certain weather.",
           "The house is facing the wrong way.",
           "Storms damage roofs more than walls.",
         ],
         answer: 0,
-        explain: "„If a leak needs wind from the north-west, and there has been no wind … since March, I cannot see it.“",
+        explain: "„If a leak needs wind from the northwest, and there has been no wind … since March, I cannot see it.“",
       },
     ],
   },
@@ -257,7 +257,7 @@ export const enB2P4: SkillExercise[] = [
           "Failed delivery, Tuesday the fourth, order 8812\n\n" +
           "What is certain: the package left our warehouse at seven fifty on Tuesday morning, it was scanned at " +
           "the depot at nine twenty, and it was scanned back into the depot at four fifteen with the note " +
-          "“customer not at home”. The customer was at home from twelve onwards and has a camera at the door.\n\n" +
+          "“customer not at home”. The customer was at home from twelve on and has a camera at the door.\n\n" +
           "The most likely explanation is that the package stayed on the van and was never taken to the door. " +
           "The camera has no recording of anybody in our uniform, and the driver's own log shows twenty-two " +
           "stops in the last ninety minutes of the shift, which is roughly double the usual number.\n\n" +
@@ -406,7 +406,7 @@ export const enB2P4: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He ___ (can't / ring) the bell; we were both in the kitchen.",
+        text: "He ___ (can't / ring) the bell; we were by the door the whole time.",
         options: [],
         answer: 0,
         accept: ["can't have rung", "cannot have rung"],

@@ -46,7 +46,7 @@ export const a2U20: SkillExercise[] = [
     text:
       "KOMPLIMENTE — ABER RICHTIG\n\n" +
       "In Deutschland macht man weniger Komplimente als in vielen anderen Ländern. Das heißt nicht, dass niemand etwas Nettes denkt — man sagt es nur seltener.\n\n" +
-      "Am einfachsten sind Komplimente über Kleidung. „Das steht dir gut!“ funktioniert fast immer. Auch „Die Jacke ist schön schlicht“ oder „Der Mantel ist wirklich edel“ hört jeder gern. Bei „modisch“ und „lässig“ muss man vorsichtig sein: nicht jeder will lässig aussehen.\n\n" +
+      "Am einfachsten sind Komplimente über Kleidung. „Das steht dir gut!“ funktioniert fast immer. Auch „Die Jacke ist schön schlicht“ oder „Der Mantel ist wirklich edel“ hört jeder gern. Bei „modisch“ und „lässig“ muss man vorsichtig sein: Nicht jeder will lässig aussehen.\n\n" +
       "Vorsicht bei Komplimenten über das Aussehen. „Du siehst heute attraktiv aus“ klingt unter Kollegen schnell zu persönlich. Besser ist etwas über die Arbeit: „Du bist wirklich talentiert“ oder „Ich finde dich sehr humorvoll“. Das freut die Leute und ist nie unangenehm.\n\n" +
       "Und wenn Sie selbst ein Kompliment bekommen? Sagen Sie einfach „Danke“. Viele antworten „Ach, das ist alt“ oder „Die Hose passt mir sowieso nicht mehr“. Das ist bescheiden, aber der andere weiß dann nicht, was er noch sagen soll.",
     questions: [
@@ -79,7 +79,7 @@ export const a2U20: SkillExercise[] = [
         explain: "„Sagen Sie einfach ‚Danke‘.“ Fazla mütevazı cevap karşıdakini zor durumda bırakıyor.",
       },
       {
-        text: "Der Text findet „Ach, das ist alt“ eine gute Antwort.",
+        text: "Der Text hält „Ach, das ist alt“ für eine gute Antwort.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: mütevazı ama „der andere weiß dann nicht, was er noch sagen soll“.",
@@ -209,7 +209,7 @@ export const a2U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["vorgeworfen"],
-        explain: "Sara'yı asıl kıran bağırmak değil, bu suçlama.",
+        explain: "Sara'yı yalnız bağırmak değil, bu suçlama da kırmış.",
       },
       {
         text: "Warum war Timo so gereizt?",

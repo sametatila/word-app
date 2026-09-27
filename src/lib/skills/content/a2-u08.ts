@@ -45,7 +45,7 @@ export const a2U08: SkillExercise[] = [
     minutes: 4,
     text:
       "Viele Menschen sagen: Ich kann abends einfach nicht abschalten. Sie liegen im Bett, aber der Kopf arbeitet weiter.\n\n" +
-      "Der Grund ist meistens nicht die Arbeit allein. Wer den ganzen Tag gestresst war und dann noch zwei Stunden auf das Handy schaut, bleibt unruhig. Das Gehirn braucht ein Signal: jetzt ist Schluss.\n\n" +
+      "Der Grund ist meistens nicht die Arbeit allein. Wer den ganzen Tag gestresst war und dann noch zwei Stunden auf das Handy schaut, bleibt unruhig. Das Gehirn braucht ein Signal: Jetzt ist Schluss.\n\n" +
       "Was hilft? Nichts Kompliziertes. Ein kurzer Spaziergang nach dem Essen. Zehn Minuten ohne Bildschirm vor dem Schlafen. Und am Wochenende sollte man sich wirklich ausschlafen, nicht nur später aufstehen und dann hektisch werden.\n\n" +
       "Eine Massage ist schön, aber sie löst das Problem nicht. Wer sich jeden Abend fünf Minuten Zeit nimmt, entspannt sich mehr als jemand, der einmal im Monat zur Massage geht.",
     questions: [

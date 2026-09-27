@@ -48,7 +48,7 @@ export const a2U23: SkillExercise[] = [
       { de: "das Bürgeramt", tr: "nüfus dairesi", en: "citizens' registration office" },
       { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
       { de: "der Personalausweis", tr: "kimlik kartı", en: "ID card" },
-      { de: "ausgefüllt", tr: "doldurulmuş", en: "filled" },
+      { de: "ausgefüllt", tr: "doldurulmuş", en: "filled out" },
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "aufheben", tr: "saklamak", en: "to keep" },
     ],
@@ -275,7 +275,7 @@ export const a2U23: SkillExercise[] = [
       { speaker: "Frau Yıldız", text: "Oh. Welche denn?" },
       { speaker: "Beamter", text: "Die Hausnummer bei der alten Adresse, und hier unten die Unterschrift." },
       { speaker: "Frau Yıldız", text: "Entschuldigung. Haben Sie einen Stift?" },
-      { speaker: "Beamter", text: "Bitte, hier. Und schreiben Sie die Hausnummer leserlich — die letzte Zahl konnte ich nicht zuordnen — eine Eins oder eine Sieben?" },
+      { speaker: "Beamter", text: "Bitte, hier. Und schreiben Sie die Hausnummer leserlich — die letzte Zahl konnte ich nicht zuordnen: Ist das eine Eins oder eine Sieben?" },
       { speaker: "Frau Yıldız", text: "Ist es besser, wenn ich in Druckbuchstaben schreibe?" },
       { speaker: "Beamter", text: "Viel besser. Bei Zahlen hilft das am meisten." },
       { speaker: "Frau Yıldız", text: "So. Und das Datum hier oben — ist das richtig?" },
@@ -384,9 +384,9 @@ export const a2U23: SkillExercise[] = [
       { de: "das Anmeldeformular", tr: "kayıt formu", en: "registration form" },
       { de: "die Meldebescheinigung", tr: "ikamet belgesi", en: "registration certificate" },
       { de: "sich ausweisen", tr: "kimlik göstermek", en: "to show ID" },
-      { de: "gefüllt", tr: "doldurulmuş", en: "filled" },
+      { de: "ausgefüllt", tr: "doldurulmuş", en: "filled out" },
       { de: "der Pass", tr: "pasaport", en: "passport" },
-      { de: "voraus", tr: "önden", en: "ahead" },
+      { de: "im Voraus", tr: "önceden", en: "in advance" },
       { de: "das Bürgeramt", tr: "nüfus dairesi", en: "citizens' registration office" },
       { de: "die Abmeldung", tr: "çıkış bildirimi", en: "deregistration" },
     ],
@@ -421,7 +421,7 @@ export const a2U23: SkillExercise[] = [
           "ich möchte mich anmelden. Ich bin am 3. Juni in die Lindenstraße 12 umgezogen und wohne jetzt in Ihrem Bezirk.\n\n" +
           "Mein Name ist Deniz Aydın, geboren am 14. März 1994.\n\n" +
           "Möglich wäre bei mir Donnerstag, der 19. Juni, am späten Nachmittag, oder Freitag, der 20. Juni, am Vormittag.\n\n" +
-          "Eine Frage noch: Was muss ich mitbringen? Das Anmeldeformular habe ich von Ihrer Website schon ausgefüllt. Reicht mein Pass, oder brauchen Sie auch die Bestätigung des Vermieters?\n\n" +
+          "Eine Frage noch: Was muss ich mitbringen? Das Anmeldeformular habe ich schon von Ihrer Website heruntergeladen und ausgefüllt. Reicht mein Pass, oder brauchen Sie auch die Bestätigung des Vermieters?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
           "Mit freundlichen Grüßen\nDeniz Aydın",
       },

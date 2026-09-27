@@ -50,9 +50,9 @@
   "en": "„gut“ is irregular: gut → besser → am besten."
  },
  {
-  "tr": "„meine Mutter ist Ärztin“ — baba ise Lehrer.",
+  "tr": "„Meine Mutter ist Ärztin“ — baba ise Lehrer.",
   "kind": "explain",
-  "en": "„meine Mutter ist Ärztin“ — the father is a Lehrer."
+  "en": "„Meine Mutter ist Ärztin“ — the father, on the other hand, is a Lehrer."
  },
  {
   "tr": "„möchten“ ich biçiminde -e alır: ich möchte.",
@@ -545,9 +545,9 @@
   "en": "A formal imperative: the verb first, the pronoun straight after."
  },
  {
-  "tr": "Sara'yı asıl kıran bağırmak değil, bu suçlama.",
+  "tr": "Sara'yı yalnız bağırmak değil, bu suçlama da kırmış.",
   "kind": "explain",
-  "en": "What really hurt Sara was not the shouting but this accusation."
+  "en": "It was not only the shouting that hurt Sara; this accusation did too."
  },
  {
   "tr": "Sıra: özne + had + nesne + üçüncü hâl + zaman.",
@@ -698,5 +698,10 @@
   "tr": "Dil bozuluyor mu? Tarih başka bir şey söylüyor.",
   "kind": "intro",
   "en": "Is the language decaying? History says otherwise."
+ },
+ {
+  "tr": "„Yes, I'm going to buy two tickets.“",
+  "kind": "explain",
+  "en": "„Yes, I'm going to buy two tickets.“"
  }
 ]

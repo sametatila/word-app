@@ -134,11 +134,11 @@ export const c1U09: SkillExercise[] = [
     intro: "Hava ve renk deyimleri: hangisi ofiste durur, hangisi hukuki sorun?",
     gloss: [
       { de: "dicke Luft", tr: "gergin hava", en: "a tense atmosphere" },
-      { de: "der Sturm im Wasserglas", tr: "bardakta fırtına", en: "a storm in a teacup" },
+      { de: "der Sturm im Wasserglas", tr: "bardakta fırtına", en: "a tempest in a teapot" },
       { de: "das Eis brechen", tr: "buzları eritmek", en: "to break the ice" },
       { de: "grünes Licht geben", tr: "yeşil ışık yakmak", en: "to give the green light" },
       { de: "schwarzfahren", tr: "kaçak binmek", en: "to travel without a ticket" },
-      { de: "blaumachen", tr: "işi asmak", en: "to skive off" },
+      { de: "blaumachen", tr: "işi asmak", en: "to skip work" },
       { de: "eine weiße Weste haben", tr: "sicili temiz olmak", en: "to have a clean record" },
       { de: "das Gelbe vom Ei", tr: "işin en iyisi", en: "the best of the bunch" },
       { de: "die Sitzung", tr: "oturum", en: "session" },
@@ -157,7 +157,7 @@ export const c1U09: SkillExercise[] = [
     text:
       "WETTER UND FARBEN IM BÜRO\n\n" +
       "Zwei Bildfelder tauchen im Arbeitsalltag ständig auf, und beide muss man verschieden dosieren.\n\n" +
-      "Die Wetterbilder beschreiben Stimmung. „Bei uns herrscht dicke Luft“ sagt in drei Wörtern, wofür eine Personalabteilung eine Seite braucht. „Ein Sturm im Wasserglas“ ordnet einen Konflikt ein, ohne ihn zu leugnen. Und „das Eis brechen“ beschreibt eine Handlung, die jeder kennt und niemand benennen kann.\n\n" +
+      "Die Wetterbilder beschreiben Stimmung. „Bei uns herrscht dicke Luft“ sagt in fünf Wörtern, wofür eine Personalabteilung eine Seite braucht. „Ein Sturm im Wasserglas“ ordnet einen Konflikt ein, ohne ihn zu leugnen. Und „das Eis brechen“ beschreibt eine Handlung, die jeder kennt und niemand benennen kann.\n\n" +
       "Diese Bilder sind gefahrlos. Sie beschreiben Zustände, nicht Personen — und deshalb hält sie jede Sitzung aus.\n\n" +
       "Bei den Farben liegt es anders. „Grünes Licht geben“ ist neutral und in jedem Protokoll zulässig. „Nicht das Gelbe vom Ei“ ist eine milde Kritik an einer Sache. Doch zwei Wendungen aus derselben Familie bezeichnen Rechtsverstöße: „blaumachen“ heißt unentschuldigt fehlen, „schwarzfahren“ ohne Fahrschein fahren.\n\n" +
       "Wer sie scherzhaft über Kollegen verwendet, sollte wissen, was er sagt. „Der hat wohl blaugemacht“ klingt beiläufig und behauptet einen Vertragsbruch. Auch „keine weiße Weste haben“ ist keine Neckerei, sondern der Vorwurf einer Verfehlung.\n\n" +
@@ -237,7 +237,7 @@ export const c1U09: SkillExercise[] = [
       { de: "aus dem Rennen sein", tr: "yarış dışı kalmak", en: "to be out of the running" },
       { de: "lehrreich", tr: "öğretici", en: "instructive" },
       { de: "niedrig", tr: "düşük", en: "low" },
-      { de: "hingehen", tr: "oraya gitmek", en: "to go there" },
+      { de: "hingehören", tr: "ait olmak", en: "to belong" },
     ],
     minutes: 5,
     segments: [
@@ -439,7 +439,7 @@ export const c1U09: SkillExercise[] = [
     intro: "Deyim kullan ama yerinde: durumu tarif et, kişiyi suçlama.",
     gloss: [
       { de: "dicke Luft", tr: "gergin hava", en: "tense atmosphere" },
-      { de: "der Sturm im Wasserglas", tr: "bardakta fırtına", en: "a storm in a teacup" },
+      { de: "der Sturm im Wasserglas", tr: "bardakta fırtına", en: "a tempest in a teapot" },
       { de: "das Eis brechen", tr: "buzları eritmek", en: "to break the ice" },
       { de: "im Trüben fischen", tr: "bulanık suda balık avlamak", en: "to fish in troubled waters" },
       { de: "der Lichtblick", tr: "umut ışığı", en: "ray of hope" },
@@ -469,8 +469,8 @@ export const c1U09: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Zwischen den Teams herrscht seit Wochen dicke Luft.", tr: "ekipler arasında haftalardır gergin bir hava var", en: "there has been a tense atmosphere between the teams" },
-          { de: "Das ist kein Sturm im Wasserglas.", tr: "bu bardakta fırtına değil", en: "this is not a storm in a teacup" },
+          { de: "Zwischen den Teams herrscht seit Wochen dicke Luft.", tr: "ekipler arasında haftalardır gergin bir hava var", en: "there has been a tense atmosphere between the teams for weeks" },
+          { de: "Das ist kein Sturm im Wasserglas.", tr: "bu bardakta fırtına değil", en: "this is not a tempest in a teapot" },
           { de: "Solange die Zuständigkeit unklar ist, fischen alle im Trüben.", tr: "yetki belirsiz kaldıkça herkes bulanık suda balık avlıyor", en: "as long as responsibility is unclear, everyone is fishing in troubled waters" },
         ],
         sample:

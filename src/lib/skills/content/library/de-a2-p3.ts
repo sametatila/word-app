@@ -24,7 +24,7 @@ export const deA2P3: SkillExercise[] = [
       { de: "das Lebensmittel", tr: "gıda", en: "food item" },
       { de: "ärgern", tr: "sinirlendirmek", en: "to annoy" },
       { de: "einfrieren", tr: "dondurmak", en: "to freeze" },
-      { de: "sparen", tr: "biriktirmek", en: "to save" },
+      { de: "sparen", tr: "tasarruf etmek", en: "to save" },
       { de: "das Ergebnis", tr: "sonuç", en: "result" },
     ],
     minutes: 5,

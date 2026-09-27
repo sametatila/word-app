@@ -339,7 +339,7 @@ export const enB2U05: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Görkem", text: "By Friday we will have executed the order. That is a sentence about a point and not a stretch: stand in Friday, look back, and the order is done." },
+      { speaker: "Görkem", text: "By Friday we will have executed the order. That is a sentence about a point and not a stretch: stand on Friday, look back, and the order is done." },
       { speaker: "Görkem", text: "This time next week we will be checking the bond. That one puts us inside the work instead of after it, and it is the honest form when a thing takes days rather than minutes." },
       { speaker: "Görkem", text: "The detailed reply will have been sent by then. Passive and future perfect together, and the order is fixed: will, have, been, third form." },
       { speaker: "Görkem", text: "I use the first in a cover letter and the second in the schedule, and the difference is credibility rather than grammar." },
@@ -463,7 +463,7 @@ export const enB2U05: SkillExercise[] = [
       { de: "having reviewed", tr: "inceledikten sonra" },
       { de: "being prompt", tr: "hızlı davranarak" },
       { de: "suspended", tr: "durdurulan" },
-      { de: "will have executed", tr: "yürütmüş olacak" },
+      { de: "will have executed", tr: "yerine getirmiş olacak" },
     ],
     minutes: 9,
     tasks: [
@@ -487,7 +487,7 @@ export const enB2U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Cuma gününe kadar siparişi yürütmüş olacağız.",
+        tr: "Cuma gününe kadar siparişi yerine getirmiş olacağız.",
         answer: "By Friday we will have executed the order.",
         hint: "Gelecekte bir tarihten geriye bakış.",
       },

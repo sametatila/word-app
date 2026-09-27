@@ -112,7 +112,7 @@ export const b2U22: SkillExercise[] = [
     genre: "essay",
     intro: "Tartışma kültürü üzerine bir yazı. İki tarafı birden anan cümlelere dikkat et.",
     gloss: [
-      { de: "der Zorn", tr: "gazap", en: "wrath" },
+      { de: "der Zorn", tr: "öfke", en: "wrath" },
       { de: "der Neid", tr: "haset", en: "envy" },
       { de: "die Reue", tr: "pişmanlık", en: "remorse" },
       { de: "die Ablehnung", tr: "reddetme", en: "rejection" },
@@ -135,7 +135,7 @@ export const b2U22: SkillExercise[] = [
       "Die erste Regel ist alt und wird trotzdem ständig gebrochen: Man streitet über eine Sache, nicht über die Person. „Du hast den Termin vergessen“ ist ein Streit. „Du bist unzuverlässig“ ist ein Urteil, und ein Urteil klingt wie Ablehnung der ganzen Person — dagegen kann man sich nur verteidigen, nicht einigen.\n\n" +
       "Die zweite Regel betrifft den Zeitpunkt. Zorn ist kein guter Ratgeber, aber Warten auch nicht: Wer drei Wochen sammelt, bringt am Ende nicht ein Thema, sondern zwölf. Weder das sofortige Losbrechen noch das monatelange Schweigen führt irgendwohin. Am besten funktioniert der nächste ruhige Moment.\n\n" +
       "Einerseits braucht ein Streit Klarheit, andererseits einen Ausgang. Wer nur recht behalten will, gewinnt vielleicht das Gespräch und verliert die Beziehung. Deshalb gehört zu einem fairen Streit die Frage, was der andere jetzt braucht — nicht als Höflichkeitsfloskel, sondern als echte Frage.\n\n" +
-      "Manches ist allerdings kein Streit, sondern ein Vertrauensbruch. Da hilft keine Technik. Dort geht es um Reue und darum, ob eine Versöhnung überhaupt gewollt ist. Freundschaften zerstreiten sich selten wegen eines Konflikts; sie zerstreiten sich, weil danach niemand den ersten Schritt macht.\n\n" +
+      "Manches ist allerdings kein Streit, sondern ein Vertrauensbruch. Da hilft keine Technik. Dort geht es um Reue und darum, ob eine Versöhnung überhaupt gewollt ist. Freunde zerstreiten sich selten wegen eines Konflikts; sie zerstreiten sich, weil danach niemand den ersten Schritt macht.\n\n" +
       "Und Neid? Er ist in Streitigkeiten häufiger, als zugegeben wird. Wer ihn bei sich bemerkt, muss ihn nicht aussprechen — aber er sollte sich selbst ermahnen, bevor er ein Sachargument sucht, das eigentlich keines ist.",
     questions: [
       {
@@ -161,7 +161,7 @@ export const b2U22: SkillExercise[] = [
         explain: "„Am besten funktioniert der nächste ruhige Moment.“",
       },
       {
-        text: "Warum zerstreiten sich Freundschaften laut Text?",
+        text: "Warum zerstreiten sich Freunde laut Text?",
         options: [
           "wegen eines Konflikts",
           "weil danach niemand den ersten Schritt macht",
@@ -387,7 +387,7 @@ export const b2U22: SkillExercise[] = [
           "Wie würdest du dich an ihrer Stelle fühlen",
           "Wie geht es dir damit?",
         ],
-        why: "Teselli cümlesi konuşanın rahatlamasına yarar, dinleyenin değil; üstelik geleceğe dair bir vaat verir ve o vaadi tutamaz. Konjunktiv II ile kurulan soru ise karşı tarafı kendi durumunun içine davet eder - Türkçedeki 'onun yerinde olsan' kalıbıyla aynı işi görür ve orada da kip değişir.",
+        why: "Teselli cümlesi konuşanın rahatlamasına yarar, dinleyenin değil; üstelik geleceğe dair bir vaat verir ve o vaadi tutamaz. Konjunktiv II ile kurulan soru ise karşı tarafı kendi durumunun içine davet eder; Türkçedeki 'onun yerinde olsan' kalıbıyla aynı işi görür ve orada da kip değişir.",
       },
     ],
   },
@@ -411,12 +411,12 @@ export const b2U22: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Zor bir dönemden geçen birine mesaj yaz: iş kaybı, hastalık, bir ayrılık, taşınma. Şu sırayı tut: neyi duyduğun, o kişinin durumunu nasıl gördüğün, kendini onun yerine koyduğunda ne hissettiğin ve somut bir teklif. Boş teselliden kaçın - 'bestimmt wird alles gut' yazma. En az bir kez An deiner Stelle ya da Wie würdest du dich fühlen kalıbını kullan ve teklifi somut yap: gün, saat, iş.",
+          "Zor bir dönemden geçen birine mesaj yaz: iş kaybı, hastalık, bir ayrılık, taşınma. Şu sırayı tut: neyi duyduğun, o kişinin durumunu nasıl gördüğün, kendini onun yerine koyduğunda ne hissettiğin ve somut bir teklif. Boş teselliden kaçın: 'bestimmt wird alles gut' yazma. En az bir kez An deiner Stelle ya da Wie würdest du dich fühlen kalıbını kullan ve teklifi somut yap: gün, saat, iş.",
         checklist: [
           "Boş teselli cümlesinden kaçınıldı mı?",
           "En az bir Konjunktiv II kalıbı var mı?",
           "Karşı tarafın hissi ciddiye alınmış mı?",
-          "Teklif somut mu - gün, saat ya da belirli bir iş?",
+          "Teklif somut mu (gün, saat ya da belirli bir iş)?",
         ],
         minWords: 80,
         phrases: [

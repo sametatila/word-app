@@ -465,7 +465,7 @@ export const c1U25: SkillExercise[] = [
         ],
         minWords: 180,
         phrases: [
-          { de: "An deiner Stelle würde ich …", tr: "senin yerinde olsam …", en: "in your place I would …" },
+          { de: "An deiner Stelle würde ich …", tr: "senin yerinde olsam …", en: "if I were you, I'd …" },
           { de: "Was mir geholfen hat, war …", tr: "bana yardımı dokunan şey … oldu", en: "what helped me was …" },
           { de: "Rückschläge sagen nichts über das Ende.", tr: "aksilikler sonu hakkında bir şey söylemez", en: "setbacks say nothing about the outcome" },
         ],

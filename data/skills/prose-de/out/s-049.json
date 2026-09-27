@@ -225,9 +225,9 @@
   "de": "„a closed conditional about somebody else's reliability is read as blame…“"
  },
  {
-  "tr": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“",
+  "tr": "„Two limits. Only after „be“, and never with a single adjective on its own.“",
   "kind": "explain",
-  "de": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“"
+  "de": "„Two limits. Only after „be“, and never with a single adjective on its own.“"
  },
  {
   "tr": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“",
@@ -460,11 +460,6 @@
   "de": "beschuldigen"
  },
  {
-  "tr": "varsaydı",
-  "kind": "gloss.tr",
-  "de": "nahm an"
- },
- {
   "tr": "yürütmek",
   "kind": "gloss.tr",
   "de": "durchführen"
@@ -480,9 +475,9 @@
   "de": "stützt sich auf"
  },
  {
-  "tr": "dolaşarak",
+  "tr": "bir türlü fırsat bulamadı",
   "kind": "gloss.tr",
-  "de": "herum"
+  "de": "kam nie dazu"
  },
  {
   "tr": "dosyalama",
@@ -725,7 +720,7 @@
   "de": "eine dritte Möglichkeit"
  },
  {
-  "tr": "bu kadar derhâl",
+  "tr": "bu kadar tez",
   "kind": "gloss.tr",
   "de": "so prompt"
  },
@@ -838,5 +833,10 @@
   "tr": "düşürdüler",
   "kind": "gloss.tr",
   "de": "senkten"
+ },
+ {
+  "tr": "süregelen",
+  "kind": "gloss.tr",
+  "de": "anhaltend"
  }
 ]

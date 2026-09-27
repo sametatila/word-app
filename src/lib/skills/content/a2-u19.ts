@@ -36,7 +36,7 @@ export const a2U19: SkillExercise[] = [
     genre: "article",
     intro: "Yıl boyunca hangi kutlamalar var, hangisi resmî tatil?",
     gloss: [
-      { de: "das Fest", tr: "bayram / kutlama", en: "festival" },
+      { de: "das Fest", tr: "bayram / kutlama", en: "celebration" },
       { de: "staatlich", tr: "devlete ait / resmî", en: "official, state" },
       { de: "der Weihnachtsbaum", tr: "yılbaşı ağacı", en: "Christmas tree" },
       { de: "schmücken", tr: "süslemek", en: "to decorate" },
@@ -241,7 +241,7 @@ export const a2U19: SkillExercise[] = [
       { de: "stattdessen", tr: "onun yerine", en: "instead" },
       { de: "enttäuscht", tr: "hayal kırıklığına uğramış", en: "disappointed" },
       { de: "zusammenkommen", tr: "bir araya gelmek", en: "to get together" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to suit" },
     ],
     minutes: 3,
     segments: [
@@ -251,7 +251,7 @@ export const a2U19: SkillExercise[] = [
       { speaker: "Marie", text: "Schade! Ich bin ehrlich gesagt ein bisschen enttäuscht." },
       { speaker: "Deniz", text: "Das verstehe ich, und es tut mir wirklich leid. Ich bedauere das sehr." },
       { speaker: "Marie", text: "Kannst du wenigstens später kommen? Wir sitzen sicher bis elf." },
-      { speaker: "Deniz", text: "Ich bin erst um halb elf fertig, und dann komme ich noch eine Stunde mit dem Bus." },
+      { speaker: "Deniz", text: "Ich bin erst um halb elf fertig, und dann fahre ich noch eine Stunde mit dem Bus." },
       { speaker: "Marie", text: "Verstehe. Dann lassen wir es." },
       { speaker: "Deniz", text: "Können wir es noch mal versuchen? Nächsten Samstag habe ich frei." },
       { speaker: "Marie", text: "Nächsten Samstag passt. Dann kommen wir eben stattdessen bei mir zusammen." },
@@ -279,7 +279,7 @@ export const a2U19: SkillExercise[] = [
           "Marie will das nicht.",
         ],
         answer: 1,
-        explain: "„Ich bin erst um halb elf fertig, und dann komme ich noch eine Stunde mit dem Bus.“",
+        explain: "„Ich bin erst um halb elf fertig, und dann fahre ich noch eine Stunde mit dem Bus.“",
       },
       {
         kind: "dictation",

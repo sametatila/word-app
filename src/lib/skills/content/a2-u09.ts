@@ -117,7 +117,7 @@ export const a2U09: SkillExercise[] = [
       "Wir wohnen seit zwei Jahren hier, etwas außerhalb vom Zentrum. Am Anfang fand ich das schade, heute bin ich froh darüber.\n\n" +
       "Alles Wichtige ist zu Fuß erreichbar. Der Bäcker ist direkt nebenan, und drüben auf der anderen Straßenseite gibt es einen kleinen Supermarkt. Die Bushaltestelle liegt fünf Minuten weiter; von dort fährt man in zwölf Minuten ins Zentrum.\n\n" +
       "Es gibt sogar eine Abkürzung durch den Park. Abends nehme ich sie nicht, weil dort keine Lampen stehen.\n\n" +
-      "Ein Vorteil hier draußen: man kann fast immer vor dem Haus parken. Im Zentrum sucht man dafür eine halbe Stunde. Nur der Bürgersteig ist an einer Stelle sehr eng — mit Kinderwagen wird es dort schwierig.",
+      "Ein Vorteil hier draußen: Man kann fast immer vor dem Haus parken. Im Zentrum sucht man dafür eine halbe Stunde. Nur der Bürgersteig ist an einer Stelle sehr eng — mit Kinderwagen wird es dort schwierig.",
     questions: [
       {
         text: "Wo liegt die Wohnung?",

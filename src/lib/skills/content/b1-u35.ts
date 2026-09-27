@@ -37,8 +37,8 @@ export const b1U35: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "die Betreuung", tr: "bakım", en: "care" },
-      { de: "der Pfleger", tr: "bakıcı", en: "carer" },
-      { de: "das Altenheim", tr: "huzurevi", en: "care home" },
+      { de: "der Pfleger", tr: "bakıcı", en: "caregiver" },
+      { de: "das Altenheim", tr: "huzurevi", en: "nursing home" },
       { de: "die Badewanne", tr: "küvet", en: "bathtub" },
       { de: "der Halt", tr: "tutamak / destek", en: "support" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
@@ -122,14 +122,14 @@ export const b1U35: SkillExercise[] = [
       "Am schwersten war nicht der Körper, sondern das Verstecken. Als Raucher " +
       "habe ich mich ständig versteckt — vor den Kindern, vor den Kollegen, am " +
       "Ende vor mir selbst. Ein Suchtmittel macht dich nicht zum Opfer, aber " +
-      "es macht, dass du nicht mehr ehrlich bist.\n\n" +
+      "es sorgt dafür, dass du nicht mehr ehrlich bist.\n\n" +
       "Heute bin ich Nichtraucher und rede nicht darüber, wenn mich niemand " +
       "fragt. Wer aufhören will, hört nicht auf, weil ihm jemand eine Rede " +
       "hält.",
     questions: [
       {
         text: "Wie oft hat die Person aufgehört?",
-        options: ["Einmal", "Viermal, beim fünften Mal hat es geklappt", "Nie"],
+        options: ["Einmal", "Viermal, beim vierten Mal hat es geklappt", "Nie"],
         answer: 1,
         explain: "„Ich habe viermal mit dem Rauchen aufgehört … Beim vierten Mal hat es geklappt …“",
       },
@@ -376,7 +376,7 @@ export const b1U35: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Evde bakım için bir plan yaz: kim için, hangi işler zor, kim ne zaman yardım edecek, hangi küçük değişiklikler gerekiyor, ve aile içinde ne konuşulmalı. En az üç isimleşmiş mastar kullan (das Aufstehen, beim Anziehen, zum Waschen).",
+        prompt: "Evde bakım için bir plan yaz: kim için, hangi işler zor, kim ne zaman yardım edecek, hangi küçük değişiklikler gerekiyor ve aile içinde ne konuşulmalı. En az üç isimleşmiş mastar kullan (das Aufstehen, beim Anziehen, zum Waschen).",
         checklist: [
           "Kim için olduğu söylenmiş mi?",
           "Zor olan işler somut mu?",
@@ -390,7 +390,7 @@ export const b1U35: SkillExercise[] = [
           "und nicht ins Altenheim will.\n\n" +
           "Schwierig sind vor allem das Aufstehen am Morgen und das Waschen. " +
           "Beim Anziehen geht es noch, wenn die Sachen bereitliegen. " +
-          "Das Kochen macht sie selber und will das auch behalten.\n\n" +
+          "Das Kochen macht sie selber, und das soll auch so bleiben.\n\n" +
           "Ein Betreuer kommt ab Mai zwei Stunden am Morgen. Er hilft beim " +
           "Waschen und lässt eine Liste für den Tag da. Am Wochenende " +
           "kommen wir, meine Schwester und ich, abwechselnd.\n\n" +
@@ -401,7 +401,7 @@ export const b1U35: SkillExercise[] = [
         phrases: [
           { de: "Schwierig sind das Aufstehen und das Waschen.", tr: "Zor olan kalkmak ve yıkanmak.", en: "Getting up and washing are difficult." },
           { de: "Er hilft beim Anziehen.", tr: "Giyinmede yardım ediyor.", en: "He helps with getting dressed." },
-          { de: "Wir kommen abwechselnd.", tr: "Dönüşümlü geliyoruz.", en: "We come in turns." },
+          { de: "Wir kommen abwechselnd.", tr: "Dönüşümlü geliyoruz.", en: "We take turns coming." },
         ],
       },
       {

@@ -254,7 +254,7 @@ export const enA2U05: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "I have three hopes for the next five years. They are not dreams — they are goals." },
+      { speaker: "Nil", text: "I have three hopes for the next five years. Two are goals, and one is a dream." },
       { speaker: "Nil", text: "First, I hope to finish my studies. I have studied for three years and I have two more." },
       { speaker: "Nil", text: "Second, I'd like to work abroad for one year. Not longer: my family is here." },
       { speaker: "Nil", text: "Third, my dream is to open a small store. Books and coffee — the two best things." },

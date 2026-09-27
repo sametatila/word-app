@@ -12,12 +12,12 @@
  {
   "tr": "Geç kalan bir hediye. Kaç ayda alınıyor?",
   "kind": "intro",
-  "en": "A present that came late. How many months did the buying take?"
+  "en": "A late present. How many months did it take to buy it?"
  },
  {
-  "tr": "„Then I come at five. I don't like extra.“",
+  "tr": "„Then I'll come at five. I don't like paying extra.“",
   "kind": "explain",
-  "en": "„Then I come at five. I don't like extra.“"
+  "en": "„Then I'll come at five. I don't like paying extra.“"
  },
  {
   "tr": "Altı hediye, yirmi euro. Kime ne alınıyor?",
@@ -192,7 +192,7 @@
  {
   "tr": "„In the store at the station.“ — haritayı satan dükkân, adamın kendisi değil.",
   "kind": "explain",
-  "en": "„In the store at the station.“ — the map is in the store, not with the man."
+  "en": "„In the store at the station.“ — the store sells the map, not the man himself."
  },
  {
   "tr": "„Does the price include breakfast? — Yes, from seven to ten.“ Otopark ayrı ücret.",

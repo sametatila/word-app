@@ -7,7 +7,7 @@ import type { SkillExercise } from "../../types";
  *
  * Parti 7 iş ve otomasyon hattı: bir blog yazısı, iki meslektaş arasında
  * konuşma, bir iş arkadaşına yazılan mektup. Dil bilgisi geçmişteki
- * gerçekdışı koşul — Konjunktiv II'nin geçmiş biçimi.
+ * gerçek dışı koşul — Konjunktiv II'nin geçmiş biçimi.
  */
 export const deB2P7: SkillExercise[] = [
   // ─────────────────────────── OKUMA ───────────────────────────
@@ -207,7 +207,7 @@ export const deB2P7: SkillExercise[] = [
         tr: "O zaman kabul etseydim bugün başka bir şehirde olurdum.",
         answer: "Hätte ich damals zugesagt, wäre ich heute in einer anderen Stadt.",
         alternatives: ["Wenn ich damals zugesagt hätte, wäre ich heute in einer anderen Stadt."],
-        hint: "Geçmişteki gerçekdışı koşul: „hätte … zugesagt“ + bugüne bakan sonuç „wäre“.",
+        hint: "Geçmişteki gerçek dışı koşul: „hätte … zugesagt“ + bugüne bakan sonuç „wäre“.",
       },
       {
         kind: "build",
@@ -231,7 +231,7 @@ export const deB2P7: SkillExercise[] = [
           { de: "Es ist lange her, dass wir …", tr: "… üzerinden uzun zaman geçti", en: "It has been a long time since we …" },
           { de: "Inzwischen hat sich einiges verändert: …", tr: "Bu arada bazı şeyler değişti: …", en: "In the meantime, a few things have changed: …" },
           { de: "Im Nachhinein hätte ich wohl …", tr: "Sonradan bakınca herhâlde … yapardım", en: "In hindsight I would probably have …" },
-          { de: "Mich würde interessieren, wie du …", tr: "Senin … nasıl … merak ederdim", en: "I would be interested to know how you …" },
+          { de: "Mich würde interessieren, wie du …", tr: "… nasıl …diğini merak ediyorum", en: "I would be interested to know how you …" },
           { de: "Für einen Rat wäre ich dir dankbar.", tr: "Bir tavsiyen olursa minnettar olurum.", en: "I would be grateful for any advice." },
         ],
         sample:
@@ -306,7 +306,7 @@ export const deB2P7: SkillExercise[] = [
     title: "Hätte ich das gewusst …",
     genre: "grammar",
     intro: "Olmamış bir geçmişi konuşmak için ayrı bir biçim var; kuruluşu ve sık yapılan hatası burada.",
-    focus: "Konjunktiv II der Vergangenheit ve gerçekdışı koşul",
+    focus: "Konjunktiv II der Vergangenheit ve gerçek dışı koşul",
     gloss: [
       { de: "anrufen", tr: "telefon etmek", en: "to call" },
       { de: "zusagen", tr: "kabul etmek", en: "to accept" },
@@ -326,7 +326,7 @@ export const deB2P7: SkillExercise[] = [
         ],
       },
       {
-        heading: "Gerçekdışı koşul: iki yan",
+        heading: "Gerçek dışı koşul: iki yan",
         tr: "Koşul da sonuç da geçmişteyse iki yanda da geçmiş biçim gelir. „wenn“ atılabilir; o zaman yan cümle FİİLLE başlar ve virgülden sonra ana cümle gelir. Bu, yazıda çok kullanılan zarif bir biçimdir.",
         examples: [
           { de: "Wenn ich das gewusst hätte, hätte ich abgesagt.", tr: "Bunu bilseydim iptal ederdim.", note: "iki yan da geçmiş" },
@@ -412,7 +412,7 @@ export const deB2P7: SkillExercise[] = [
         text: "„Wenn ich das wusste, hätte ich abgesagt.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Gösterge kipindeki „wusste“ gerçekdışı koşul kuramaz; geçmişte olmamış bir koşul için tek biçim „gewusst hätte“dir.",
+        explain: "Gösterge kipindeki „wusste“ gerçek dışı koşul kuramaz; geçmişte olmamış bir koşul için tek biçim „gewusst hätte“dir.",
       },
       {
         kind: "truefalse",

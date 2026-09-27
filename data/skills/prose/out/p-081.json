@@ -1,7 +1,7 @@
 [
  { "tr": "Özne eksik; hava için it gerekir: „It's cold today.“", "kind": "explain", "en": "The subject is missing; the weather needs it: „It's cold today.“" },
  { "tr": "Sevilen şey bir eylem (oynamak); fiile gern eklenir.", "kind": "explain", "en": "What he likes is an action (playing); gern is added to the verb." },
- { "tr": "Sistem, itirazın yöneltilebileceği kimseyi sunmuyor.", "kind": "explain", "en": "The system offers nobody an objection can be addressed to." },
+ { "tr": "Sistem, itirazın yöneltilebileceği kimseyi sunmuyor.", "kind": "explain", "en": "The system offers no one to whom an objection could be addressed." },
  { "tr": "Tünelin bir ucundan girip öbüründen çıkmak: through.", "kind": "explain", "en": "Going in at one end of the tunnel and out at the other: through." },
  { "tr": "Varıştan önce olan kalkış past perfect ile söylenir.", "kind": "explain", "en": "The departure, which came before the arrival, is told with the past perfect." },
  { "tr": "-ieren fiillerinin ortacı ge- almaz, -iert ile biter.", "kind": "explain", "en": "The participle of -ieren verbs takes no ge- and ends in -iert." },
@@ -54,7 +54,7 @@
  { "tr": "Bankanın önünden geçip devam etmek: past; cümle doğru.", "kind": "explain", "en": "Going past the front of the bank and on: past; the sentence is correct." },
  { "tr": "Başa alınan yüklem üçüncü hâldir: „Gone are the days“.", "kind": "explain", "en": "The fronted predicate is the past participle: „Gone are the days“." },
  { "tr": "Birden çok çift varsa pair çoğul olur: three pairs of.", "kind": "explain", "en": "If there is more than one pair, pair becomes plural: three pairs of." },
- { "tr": "Borç danışmanlıkları ücretsiz ve gizli yardım veriyor.", "kind": "explain", "en": "Debt advice services give free and confidential help." },
+ { "tr": "Borç danışmanlıkları ücretsiz ve gizli yardım veriyor.", "kind": "explain", "en": "Debt counseling services give free and confidential help." },
  { "tr": "das Messer nötr; tek başına kalınca eins. Cevap doğru.", "kind": "explain", "en": "das Messer is neuter; standing alone it becomes eins. The answer is correct." },
  { "tr": "Geçmişteki bir ana kadar süren eylem: had been + -ing.", "kind": "explain", "en": "An action lasting up to a moment in the past: had been + -ing." },
  { "tr": "İki haftada bir kutu, ilk üç ay yüzde yirmi indirimli.", "kind": "explain", "en": "A box every two weeks, twenty percent off for the first three months." },

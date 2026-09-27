@@ -125,8 +125,8 @@ export const enA2U15: SkillExercise[] = [
       "Can: How long will it take?\n" +
       "Clerk: Ten days. The technical service is not here — it is two hours away.\n" +
       "Can: Ten days without a phone.\n" +
-      "Clerk: We have old ones here for that week. Not a good one, but it calls.\n" +
-      "Can: I take it. The cheap one with the big buttons?\n" +
+      "Clerk: We have old ones here for those ten days. Not a good one, but it makes calls.\n" +
+      "Can: I'll take it. The cheap one with the big buttons?\n" +
       "Clerk: That one. Everybody says the same thing after two days: it is the best phone in the store.",
     questions: [
       {
@@ -146,7 +146,7 @@ export const enA2U15: SkillExercise[] = [
         text: "Can gets no phone for those ten days.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„We have old ones here for that week. Not a good one, but it calls.“",
+        explain: "„We have old ones here for those ten days. Not a good one, but it makes calls.“",
       },
       {
         kind: "gapfill",
@@ -165,7 +165,7 @@ export const enA2U15: SkillExercise[] = [
           "I bought this here two weeks ago.",
           "Do you have the receipt?",
           "We replace it free.",
-          "We have old ones here for that week.",
+          "We have old ones here for those ten days.",
         ],
         explain: "Önce sorun, sonra fiş, sonra karar, en son ödünç telefon.",
       },
@@ -419,7 +419,7 @@ export const enA2U15: SkillExercise[] = [
         kind: "build",
         tr: "Onu değiştirebilir misiniz, lütfen?",
         answer: "Could you replace it, please?",
-        hint: "„replace“ yerine yenisini koymak demek; „change“ başka iş görür.",
+        hint: "„replace“, eskisinin yerine yenisini koymak demek; „change“ başka iş görür.",
       },
       {
         kind: "build",

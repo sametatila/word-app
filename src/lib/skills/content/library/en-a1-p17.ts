@@ -158,7 +158,7 @@ export const enA1P17: SkillExercise[] = [
     explanation: [
       {
         heading: "play: topla ve karşılıklı oynanan oyunlar",
-        tr: "Topla ya da raketle, karşılıklı oynanan oyunlar „play“ ile söylenir: play soccer, play tennis. Oyunun adından önce „the“ konmaz: „play the tennis“ yanlıştır.",
+        tr: "Topla ya da raketle, karşılıklı oynanan oyunlar „play“ ile söylenir: play soccer, play tennis; kâğıt ve masa oyunları da öyle: play cards. Oyunun adından önce „the“ konmaz: „play the tennis“ yanlıştır.",
         examples: [
           { de: "We play soccer on Sundays.", tr: "Pazar günleri futbol oynarız." },
           { de: "Do you play tennis?", tr: "Tenis oynar mısın?" },

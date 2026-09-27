@@ -32,7 +32,7 @@ export const enC1: SkillExercise[] = [
       { de: "individual", tr: "bireysel" },
       { de: "intend", tr: "niyetinde olmak" },
       { de: "furniture", tr: "mobilya" },
-      { de: "uncomfortable", tr: "rahatsız" },
+      { de: "uncomfortable", tr: "rahatsız edici" },
       { de: "object", tr: "nesne" },
       { de: "bench", tr: "bank" },
       { de: "involve", tr: "işin içine katmak" },
@@ -56,8 +56,8 @@ export const enC1: SkillExercise[] = [
       "defend a policy that was never written down, because a bench is not a policy. It is furniture.\n\n" +
       "This is what makes the practice so difficult to argue with. A rule can be challenged, published, voted on, " +
       "reversed. A shape cannot. If the sloped surface makes sitting uncomfortable after ten minutes, whom exactly " +
-      "do you write to? Every individual object has a plausible explanation - drainage, maintenance, the flow of " +
-      "passengers - and it is only when you see forty of them together that the pattern becomes an argument.\n\n" +
+      "do you write to? Every individual object has a plausible explanation — drainage, maintenance, the flow of " +
+      "passengers — and it is only when you see forty of them together that the pattern becomes an argument.\n\n" +
       "I should be careful here, because the opposite position is not absurd. Stations are not shelters, and staff " +
       "who are told to manage a waiting hall at two in the morning are not the villains of this story; they have been " +
       "handed a social problem in the form of a cleaning schedule. What I object to is not that a choice was made. " +
@@ -69,7 +69,7 @@ export const enC1: SkillExercise[] = [
       {
         text: "What is the writer's central objection?",
         options: [
-          "Not that a decision was taken, but that it was taken without being stated.",
+          "Not that a decision was made, but that it was made without being stated.",
           "That armrests make benches uncomfortable for older passengers.",
           "That stations should be used as shelters at night.",
         ],
@@ -141,13 +141,13 @@ export const enC1: SkillExercise[] = [
       { de: "rise", tr: "yükselmek" },
       { de: "generation", tr: "kuşak" },
       { de: "engineer", tr: "mühendis" },
-      { de: "trouble", tr: "sıkıntı" },
+      { de: "trouble", tr: "rahatsız etmek" },
       { de: "attractive", tr: "çekici" },
       { de: "tension", tr: "gerilim" },
       { de: "constantly", tr: "sürekli" },
       { de: "engine", tr: "motor" },
       { de: "unstable", tr: "istikrarsız" },
-      { de: "uncomfortable", tr: "rahatsız" },
+      { de: "uncomfortable", tr: "rahatsız edici" },
       { de: "vary", tr: "değişmek" },
       { de: "familiar", tr: "aşina" },
       { de: "imitate", tr: "taklit etmek" },
@@ -250,7 +250,7 @@ export const enC1: SkillExercise[] = [
       { de: "wording", tr: "ifade biçimi" },
       { de: "accountable", tr: "hesap verebilir" },
       { de: "specific", tr: "somut" },
-      { de: "trouble", tr: "sıkıntı" },
+      { de: "trouble", tr: "rahatsız etmek" },
       { de: "affect", tr: "etkilemek" },
       { de: "necessarily", tr: "zorunlu olarak" },
       { de: "warmth", tr: "sıcaklık" },
@@ -281,7 +281,7 @@ export const enC1: SkillExercise[] = [
           "From „The apology economy“, this month's issue:\n\n" +
           "„Companies have finally learned to apologize. Where a decade ago a corporate statement was a wall of legal " +
           "language, today it is human, specific and fast. Whatever else the last ten years have taught us, they have " +
-          "taught organizations to say sorry properly - and that is progress worth naming.“",
+          "taught organizations to say sorry properly — and that is progress worth naming.“",
         checklist: [
           "Yazarın haklı olduğu noktayı kabul et",
           "İtirazını en az iki gerekçeyle kur",
@@ -297,7 +297,7 @@ export const enC1: SkillExercise[] = [
           { de: "None of this is an argument for …", tr: "Bunların hiçbiri … için bir gerekçe değil" },
         ],
         sample:
-          "Sir,\n\n" +
+          "To the Editor:\n\n" +
           "Your correspondent is right that corporate statements have changed. The wall of legal language has gone, " +
           "and what replaced it is quicker, plainer and easier to read. On the surface, that is progress.\n\n" +
           "What the piece does not address is what the new form is for. An apology that arrives within four hours and " +
@@ -352,7 +352,7 @@ export const enC1: SkillExercise[] = [
         "What that misses, however, is what these tools can actually measure. They count keystrokes, active windows " +
         "and idle minutes, none of which is work. The most valuable half hour in my week is usually spent staring at " +
         "a problem before writing a single line, and any system that scores me would record that as absence. " +
-        "Measure the wrong thing precisely enough and people will optimize for it - not because they are cynical, " +
+        "Measure the wrong thing precisely enough and people will optimize for it — not because they are cynical, " +
         "but because they would like to keep their jobs.\n\n" +
         "So I would draw the line at the level of the individual. Aggregate patterns across a department, published " +
         "openly and used to change workload, seem defensible to me. A dashboard showing one person's minute-by-minute " +
@@ -404,7 +404,7 @@ export const enC1: SkillExercise[] = [
         heading: "Ne zaman kullanılmaz",
         tr: "Devrik yapı her cümlede kullanılırsa metin yapmacık olur; bir paragrafta bir kez yeter. Ayrıca soru değildir: sonuna soru işareti konmaz ve „do“ yalnız yardımcı fiil yoksa eklenir.",
         examples: [
-          { de: "Never have I seen a clearer example.", tr: "Daha net bir örnek görmemiştim.", note: "have zaten var, do eklenmez" },
+          { de: "Never have I seen a clearer example.", tr: "Hiç bu kadar net bir örnek görmedim.", note: "have zaten var, do eklenmez" },
           { de: "Only later did we understand the reason.", tr: "Nedenini ancak sonra anladık.", note: "yardımcı fiil yok, did eklendi" },
         ],
       },
@@ -427,7 +427,7 @@ export const enC1: SkillExercise[] = [
         explain: "Sıra: sınırlayıcı öğe + yardımcı fiil + özne + yalın fiil.",
       },
       {
-        text: "„It was the silence that surprised everyone.“ - What does this structure do?",
+        text: "„It was the silence that surprised everyone.“ — What does this structure do?",
         options: [
           "It puts the emphasis on the silence.",
           "It turns the sentence into a question.",
@@ -470,14 +470,14 @@ export const enC1: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Not only he was late, but he forgot the files.“ - Is this sentence correct?",
+        text: "„Not only he was late, but he forgot the files.“ — Is this sentence correct?",
         options: ["True", "False"],
         answer: 1,
         explain: "Devrik yapı eksik: „Not only was he late, but he also forgot the files.“",
       },
       {
         kind: "truefalse",
-        text: "„What surprised the committee was the tone of the letter.“ - Is this sentence correct?",
+        text: "„What surprised the committee was the tone of the letter.“ — Is this sentence correct?",
         options: ["True", "False"],
         answer: 0,
         explain: "Doğru bir cleft: „What …“ öbeği özne, „was“ yüklem, vurgu „the tone“ üzerinde.",

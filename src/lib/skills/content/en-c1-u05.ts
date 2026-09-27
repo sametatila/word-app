@@ -66,7 +66,7 @@ export const enC1U05: SkillExercise[] = [
       { de: "empirical", tr: "ampirik" },
       { de: "the cloth", tr: "kumaş" },
       { de: "hidden", tr: "gizli" },
-      { de: "a construction", tr: "kuruluş" },
+      { de: "a construction", tr: "yapı" },
       { de: "fails", tr: "tutmuyor" },
     ],
     minutes: 12,
@@ -155,7 +155,7 @@ export const enC1U05: SkillExercise[] = [
       { de: "rivals", tr: "rakipler" },
       { de: "count", tr: "saymak" },
       { de: "a paragraph break", tr: "paragraf arası" },
-      { de: "survived", tr: "sağ kalmış" },
+      { de: "survived", tr: "ayakta kalmış" },
     ],
     minutes: 11,
     text:

@@ -27,7 +27,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "to renew", tr: "süre uzatmak" },
       { de: "quiet", tr: "sessiz" },
       { de: "judge", tr: "değerlendirmek" },
-      { de: "search", tr: "arama yapmak" },
+      { de: "search", tr: "arama" },
       { de: "log", tr: "oturumu kapatmak" },
       { de: "pick", tr: "gidip almak" },
       { de: "enter", tr: "girmek" },
@@ -113,7 +113,7 @@ export const enB1P6: SkillExercise[] = [
     skill: "listening",
     title: "The Book Somebody Else Wants",
     genre: "dialogue",
-    intro: "Kütüphane masasında bir sorun çözülüyor: gecikmiş bir kitap, bir bekleyen ve bir ceza.",
+    intro: "Kütüphane masasında bir sorun çözülüyor: uzatılamayan bir kitap, bekleme listesi ve eski bir ceza.",
     gloss: [
       { de: "to return", tr: "iade etmek" },
       { de: "fine", tr: "ceza" },

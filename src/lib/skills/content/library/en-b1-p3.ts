@@ -131,7 +131,7 @@ export const enB1P3: SkillExercise[] = [
       { text: "Good evening, and thank you for coming. In the next twenty minutes I will show you what happens to the water between the ground and your kitchen." },
       { text: "The first surprise is the distance. Our water is not taken from the river you can see from here. It is pumped from a layer of sand about forty meters below us." },
       { text: "That sand is already a filter. Water that goes in at the top of the hill is not used for about nine years." },
-      { text: "In the works, four things are done. First, the water is aerated: it falls through the air so that iron comes out of it." },
+      { text: "At the plant, four things are done. First, the water is aerated: it falls through the air so that iron comes out of it." },
       { text: "Second, it is filtered through sand again. Third, in dry summers a small amount of chlorine is added. And fourth, it is tested, every day, in that room behind me." },
       { text: "We take fifty samples a week. Nothing is sent out before it has been checked twice by two different people." },
       { text: "And the last thing, because I am always asked: no, the water is not made softer here. That is done in your house, or not at all." },
@@ -142,7 +142,7 @@ export const enB1P3: SkillExercise[] = [
         text: "Where does the water come from?",
         options: [
           "from sand deep under the ground",
-          "from the river near the works",
+          "from the river near the plant",
           "from a lake up in the hills",
         ],
         answer: 0,
@@ -156,7 +156,7 @@ export const enB1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The water is checked more than once before it leaves the works.",
+        text: "The water is checked more than once before it leaves the plant.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Nothing is sent out before it has been checked twice by two different people.“",
@@ -178,7 +178,7 @@ export const enB1P3: SkillExercise[] = [
         explain: "„We take fifty samples a week.“ — sıklık için „a week“ kullanılır.",
       },
       {
-        text: "What is NOT done at the works?",
+        text: "What is NOT done at the plant?",
         options: [
           "making the water softer",
           "adding chlorine in dry summers",
@@ -247,7 +247,7 @@ export const enB1P3: SkillExercise[] = [
           "The surprise was who comes down at three o'clock. Not the loud guests; they sleep. It is people who " +
           "cannot sleep, and they want to talk to somebody who is not their family. I was never trained for that " +
           "part, and it was the part I did most. The hard part was the second day off: the first day you sleep, " +
-          "and on the second you are awake at four in the morning in an apartment where nothing is open. " +
+          "and on the second you are awake at four in the morning in a town where nothing is open. " +
           "Would I do it again? Yes, but not in winter.",
       },
     ],
@@ -274,7 +274,7 @@ export const enB1P3: SkillExercise[] = [
         "Bir şart koy ve nedenini açıkla",
       ],
       targets: [
-        { de: "I think they should, but not in the way …", tr: "Bence gerekir, ama … biçimde değil" },
+        { de: "I think they should, but not in the way …", tr: "Bence gerekir ama … biçimde değil" },
         { de: "The strongest argument is …", tr: "En güçlü gerekçe …" },
         { de: "Against this, people say …", tr: "Buna karşı şu söyleniyor: …" },
         { de: "My only condition is …", tr: "Tek şartım …" },

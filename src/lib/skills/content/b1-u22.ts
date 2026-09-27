@@ -106,7 +106,7 @@ export const b1U22: SkillExercise[] = [
     intro: "Bir mahallenin geçmişi ve bugünü. Ne arttı, ne azaldı?",
     minutes: 5,
     gloss: [
-      { de: "das Viertel", tr: "mahalle", en: "quarter" },
+      { de: "das Viertel", tr: "mahalle", en: "neighborhood" },
       { de: "der Bewohner", tr: "sakin", en: "resident" },
       { de: "sich verändern", tr: "değişmek", en: "to change" },
       { de: "die Vergangenheit", tr: "geçmiş", en: "past" },
@@ -379,7 +379,7 @@ export const b1U22: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Yaşadığın ya da bildiğin bir mahalleyi anlat: eskiden nasıldı, ne değişti, ne iyileşti, ne kötüleşti, ve geleceği için ne düşünüyorsun. En az iki 'viel/viele' ve bir 'wenig/wenige' kullan.",
+        prompt: "Yaşadığın ya da bildiğin bir mahalleyi anlat: eskiden nasıldı, ne değişti, ne iyileşti, ne kötüleşti ve geleceği için ne düşünüyorsun. En az iki 'viel/viele' ve bir 'wenig/wenige' kullan.",
         checklist: [
           "Geçmiş durumu anlatılmış mı?",
           "En az iki somut değişiklik var mı?",

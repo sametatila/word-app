@@ -50,7 +50,7 @@ export const enB2U22: SkillExercise[] = [
       { de: "impossible", tr: "olanaksız" },
       { de: "positive", tr: "olumlu" },
       { de: "verb", tr: "fiil" },
-      { de: "round", tr: "dolaşarak" },
+      { de: "never got around to", tr: "bir türlü fırsat bulamadı" },
       { de: "verdict", tr: "hüküm" },
       { de: "a conclusion", tr: "çıkarım" },
       { de: "the negative", tr: "olumsuz" },
@@ -65,7 +65,7 @@ export const enB2U22: SkillExercise[] = [
       "He must have failed to empathize. Look at what is not in that sentence: there is no „not“ anywhere, and yet it says something negative about him.\n" +
       "The reason is a gap in the modal system. „Must have“ is a conclusion drawn from evidence, and its negative is „can't have“ — but „can't have“ is very strong. It says the thing is impossible.\n" +
       "Often what a writer means is weaker than that: not „it is impossible that he understood“ but „I think he did not“. English has no modal for that, so it leaves the modal positive and moves the negative into the main verb.\n" +
-      "„Failed to“ is the usual word for it. So are „forgot to“, „missed“, „left out“ and „never got round to“. Each of them carries a negative inside a positive sentence, and the modal in front stays as it was.\n" +
+      "„Failed to“ is the usual word for it. So are „forgot to“, „missed“, „left out“ and „never got around to“. Each of them carries a negative inside a positive sentence, and the modal in front stays as it was.\n" +
       "They can't have been unforgiving. That is the strong negative, and it is right here because the evidence is strong: they wrote twice and offered to meet.\n" +
       "We should have been more open-minded. The third form again, about us rather than about them, and it is the sentence people remember from a note like this.\n" +
       "There is a cost to the softer version and it is worth knowing. „Must have failed to“ sounds like a description and „can't have“ sounds like a verdict, and a reader who wants to blame somebody will quote the first one as if it were the second.",
@@ -250,7 +250,7 @@ export const enB2U22: SkillExercise[] = [
       { speaker: "Barkın", text: "And the third?" },
       { speaker: "İnci", text: "My colleague, whose manner is composed, asked once. „Whose“ carries possession and nothing can be deleted, which is the rule from a few units ago and it has not moved." },
       { speaker: "Barkın", text: "So the deletion has two limits." },
-      { speaker: "İnci", text: "Two limits. Only after „be“, and only when what follows is a noun phrase." },
+      { speaker: "İnci", text: "Two limits. Only after „be“, and never with a single adjective on its own." },
     ],
     questions: [
       {
@@ -294,7 +294,7 @@ export const enB2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2", "two limits"],
-        explain: "„Two limits. Only after „be“, and only when what follows is a noun phrase.“",
+        explain: "„Two limits. Only after „be“, and never with a single adjective on its own.“",
       },
     ],
   },

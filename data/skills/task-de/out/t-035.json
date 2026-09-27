@@ -20,7 +20,7 @@
   "de": "Die Prognose wird sich ändern; die Beteiligten sind bereit; die Ergebnisse sind klar; die Quelle wird nicht genannt."
  },
  {
-  "tr": "Olumsuz zarf devirir; yardımcı fiil yoksa „do“ gelir; başka öğe devirmez; bir konuşmada bir tane yeter.",
+  "tr": "Olumsuz zarf sırayı devirir; yardımcı fiil yoksa „do“ gelir; başka öğe sırayı devirmez; bir konuşmada bir tane yeter.",
   "kind": "form.facts",
   "de": "Ein verneinendes Adverb stellt um; fehlt ein Hilfsverb, kommt „do“; andere Glieder stellen nichts um; eines pro Rede genügt."
  },
@@ -72,7 +72,7 @@
  {
   "tr": "Birinin uyarı vermesi gerekirdi.",
   "kind": "build.tr",
-  "de": "Jemand hätte Alarm geben sollen."
+  "de": "Jemand hätte eine Warnung aussprechen sollen."
  },
  {
   "tr": "Öngörünün değişeceği söyleniyor.",
@@ -100,7 +100,7 @@
   "de": "Was ich hervorheben will, sind die Kosten."
  },
  {
-  "tr": "Tazminatın küçük olduğu söyleniyor.",
+  "tr": "Tazminatın düşük olduğu söyleniyor.",
   "kind": "build.tr",
   "de": "Der Schadenersatz soll gering sein."
  },
@@ -112,7 +112,7 @@
  {
   "tr": "Bulguların açık olduğu bildiriliyor.",
   "kind": "build.tr",
-  "de": "Die Ergebnisse werden als klar gemeldet."
+  "de": "Berichten zufolge sind die Ergebnisse klar."
  },
  {
   "tr": "Paydaşların hazır olduğu düşünülüyor.",
@@ -137,7 +137,7 @@
  {
   "tr": "Böylesi bir memnuniyeti nadiren yaşadım.",
   "kind": "build.tr",
-  "de": "Selten habe ich eine solche Freude gehabt."
+  "de": "Selten habe ich eine solche Zufriedenheit empfunden."
  },
  {
   "tr": "Bütün hafta gelmediği için iç yazıyı kaçırdı.",

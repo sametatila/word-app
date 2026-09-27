@@ -25,9 +25,9 @@
   "de": "Die Lektion montags um sechs; das Video ist herunterladbar; neues Modul nach zwei Wochen; Zugang ein Jahr."
  },
  {
-  "tr": "Başvuru dokuz nisanda reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
+  "tr": "Başvuru 9 Nisan'da reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
   "kind": "form.facts",
-  "de": "Der Antrag wurde am neunten April abgelehnt; Grund ein fehlendes Papier; das Original am einundzwanzigsten gebracht; es besteht ein Recht auf Überprüfung."
+  "de": "Der Antrag wurde am 9. April abgelehnt; Grund ein fehlendes Papier; das Original am einundzwanzigsten gebracht; es besteht ein Recht auf Überprüfung."
  },
  {
   "tr": "Dokuzda mola vereceğim.",
@@ -152,7 +152,7 @@
  {
   "tr": "İleri düzey zor olmasına rağmen onu istiyorum.",
   "kind": "build.tr",
-  "de": "Obwohl die Oberstufe schwer ist, will ich sie."
+  "de": "Obwohl das fortgeschrittene Niveau schwer ist, will ich es."
  },
  {
   "tr": "Ondan keyif almayı bırakmadıkça bırakmayacaksın.",
@@ -185,9 +185,9 @@
   "de": "„must“ kommt aus der Regel selbst; keine Ausnahme."
  },
  {
-  "tr": "„try“ burada MASTAR alıyor: denemek anlamında.",
+  "tr": "„try“ burada MASTAR alıyor: çabalamak anlamında („try + -ing“ ise deneyip bakmak).",
   "kind": "build.hint",
-  "de": "„try“ nimmt hier den INFINITIV: im Sinne von versuchen."
+  "de": "„try“ nimmt hier den INFINITIV: im Sinne von sich bemühen („try + -ing“ heißt dagegen ausprobieren)."
  },
  {
   "tr": "Burada mastarı bir İSİM alıyor: „the right to“.",
@@ -210,7 +210,7 @@
   "de": "Passiv und ohne Zeitangabe: das System lädt hoch, jede Woche so."
  },
  {
-  "tr": "Nesne konumundaki bağlaç düşmüş; „that“ eklenebilirdi.",
+  "tr": "Nesne konumundaki ilgi adılı düşmüş; „that“ eklenebilirdi.",
   "kind": "build.hint",
   "de": "Das Relativpronomen in der Objektstellung ist weggefallen; „that“ wäre möglich. Im Deutschen geht das nie."
  },
@@ -240,9 +240,9 @@
   "de": "Die Ja-Nein-Frage mit „if“; auch „understood“ rückt zurück."
  },
  {
-  "tr": "„decide“ MASTAR alıyor; „appeal“ kendi edatını taşıyor: against.",
+  "tr": "„decide“ MASTAR alıyor; „appeal“ ise Amerikan İngilizcesinde edatsız, doğrudan nesne alıyor.",
   "kind": "build.hint",
-  "de": "„decide“ nimmt den INFINITIV; „appeal“ trägt seine eigene Präposition: against."
+  "de": "„decide“ nimmt den INFINITIV; „appeal“ nimmt im amerikanischen Englisch ohne Präposition direkt ein Objekt."
  },
  {
   "tr": "„however“ yeni bir cümle başlatıyor ve kendi virgülüyle geliyor.",

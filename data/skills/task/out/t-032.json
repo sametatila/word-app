@@ -17,7 +17,7 @@
   {
     "tr": "Muayenehaneye kısa bir e-posta yaz: kim olduğunu ve randevunun ne zaman olduğunu söyle, neden gelemediğini yaz, yeni bir tarih iste ve kibarca bitir.",
     "kind": "free.prompt",
-    "en": "Write a short email to the practice: say who you are and when your appointment is, write why you cannot come, ask for a new date and end politely."
+    "en": "Write a short email to the doctor's office: say who you are and when your appointment is, write why you cannot come, ask for a new date and end politely."
   },
   {
     "tr": "Kısa bir deneme yaz: yaygın açıklamayı tanıt, onu sorgula, kendi açıklamanı kur ve bir gözleme dayandır, karşı okumaya yer ver ve sonucu bir cümleyle bağla.",
@@ -47,7 +47,7 @@
   {
     "tr": "Apartman grubuna bir mesaj yaz: konuyu bir cümlede söyle, mevcut durumu kısaca anlat, somut öneriyi yaz, itirazı olabilecek komşuları düşün ve nasıl karar verileceğini söyle.",
     "kind": "free.prompt",
-    "en": "Write a message to the building's group: say the matter in one sentence, describe the present situation briefly, write the concrete proposal, think of the neighbors who might object and say how the decision will be made."
+    "en": "Write a message to the building's group chat: say the matter in one sentence, describe the present situation briefly, write the concrete proposal, think of the neighbors who might object and say how the decision will be made."
   },
   {
     "tr": "Apartman yönetimine bir metin yaz: kim olduğunu ve hangi dairede oturduğunu söyle, sorunun ne olduğunu ve ne zaman olduğunu anlat, şimdiye kadar ne yaptığını yaz ve bir çözüm öner.",
@@ -87,7 +87,7 @@
   {
     "tr": "Okul yönetimine bir mektup yaz: kim olduğunu ve hangi sınıfla ilgili yazdığını söyle, önerini açıkça anlat, iki gerekçe ver, olası bir itirazı öngörüp cevapla ve somut bir sonraki adım öner.",
     "kind": "free.prompt",
-    "en": "Write a letter to the school management: say who you are and which class you are writing about, set out your proposal clearly, give two reasons, anticipate a possible objection and answer it, and propose a concrete next step."
+    "en": "Write a letter to the school administration: say who you are and which class you are writing about, set out your proposal clearly, give two reasons, anticipate a possible objection and answer it, and propose a concrete next step."
   },
   {
     "tr": "Eski bir iş arkadaşına mektup yaz: kendi durumundaki değişikliği anlat, geriye dönüp baktığında neyi farklı yapardın söyle, karşındakinin durumunu sor, somut bir tavsiye iste ve buluşma öner.",
@@ -130,9 +130,9 @@
     "en": "Write a formal objection to a plan: say which document and which deadline you are referring to, name the part of the plan you accept, gather your objection into a single point and give reasons for it, build the possible counter-argument yourself and answer it, and end with a concrete request."
   },
   {
-    "tr": "Görevi devralan kişiye mektup yaz: neyi devrettiğini kısaca söyle, işin yazılmamış üç kuralını adlandır ve nereden geldiklerini açıkla, hangisine uymamanı tavsiye ettiğini yaz, kendi yanılgılarından birini kabul et ve yardım önerisiyle bitir.",
+    "tr": "Görevi devralan kişiye mektup yaz: neyi devrettiğini kısaca söyle, işin yazılmamış üç kuralını adlandır ve nereden geldiklerini açıkla, hangisine uymamasını tavsiye ettiğini yaz, kendi yanılgılarından birini kabul et ve yardım önerisiyle bitir.",
     "kind": "free.prompt",
-    "en": "Write a letter to the person taking over from you: say briefly what you are handing over, name three unwritten rules of the job and explain where they come from, write which one you advise not following, admit one of your own mistakes and end by offering help."
+    "en": "Write a letter to the person taking over from you: say briefly what you are handing over, name three unwritten rules of the job and explain where they come from, write which one you advise them not to follow, admit one of your own mistakes and end by offering help."
   },
   {
     "tr": "Kendini tanıt",
@@ -687,7 +687,7 @@
   {
     "tr": "İki yıl bir çiçekçide çalıştım.",
     "kind": "build.tr",
-    "en": "I worked in a florist's for two years."
+    "en": "I worked at a flower shop for two years."
   },
   {
     "tr": "Kurum tabloyu kamuoyuna açıyor.",

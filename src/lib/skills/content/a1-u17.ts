@@ -39,7 +39,7 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "HAUSORDNUNG\n\n1. Von 22 bis 7 Uhr bitte leise sein. Man darf nicht laut sein.\n\n2. Der Müll kommt in den Keller. Bitte machen Sie den Müll nicht in den Flur.\n\n3. Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.\n\n4. Die Waschmaschine im Keller: von 8 bis 20 Uhr. Bitte danach sauber machen.\n\n5. Sie haben den Schlüssel für den Keller und für die Treppe. Bitte nicht an Bekannte!\n\nEine Frage? Der Vermieter wohnt im Haus, Wohnung 1.",
+      "HAUSORDNUNG\n\n1. Von 22 bis 7 Uhr bitte leise sein. Man darf nicht laut sein.\n\n2. Der Müll kommt in den Keller. Bitte stellen Sie den Müll nicht in den Flur.\n\n3. Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.\n\n4. Die Waschmaschine im Keller: von 8 bis 20 Uhr. Bitte danach sauber machen.\n\n5. Sie haben einen Schlüssel für den Keller und für den Eingang. Bitte geben Sie ihn nicht an Bekannte weiter!\n\nEine Frage? Der Vermieter wohnt im Haus, Wohnung 1.",
     questions: [
       {
         text: "Wann muss man leise sein?",
@@ -100,7 +100,7 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Frau Kaya,\n\nhier die Informationen zur Miete:\n\nDie Miete kostet 550 Euro kalt. Und 100 Euro Nebenkosten. Zusammen sind das 650 Euro warm.\n\n„Kalt“ heißt: nur die Wohnung. „Warm“ heißt: mit Nebenkosten — mit Wasser und Müll.\n\nBitte überweisen Sie die Miete jeden Monat bis zum 3.\n\nDie Waschmaschine im Keller ist frei, das ist in den Nebenkosten.\n\nHaben Sie eine Frage? Ich wohne im Haus.\n\nViele Grüße\nHerr Weber (Vermieter)",
+      "Liebe Frau Kaya,\n\nhier die Informationen zur Miete:\n\nDie Miete kostet 550 Euro kalt. Und 100 Euro Nebenkosten. Zusammen sind das 650 Euro warm.\n\n„Kalt“ heißt: nur die Wohnung. „Warm“ heißt: mit Nebenkosten — mit Wasser und Müll.\n\nBitte überweisen Sie die Miete jeden Monat bis zum 3.\n\nDie Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.\n\nHaben Sie eine Frage? Ich wohne im Haus.\n\nViele Grüße\nHerr Weber (Vermieter)",
     questions: [
       {
         text: "Was kostet die Miete warm?",
@@ -126,7 +126,7 @@ export const a1U17: SkillExercise[] = [
         text: "Richtig oder falsch? Die Waschmaschine kostet mehr Geld.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Die Waschmaschine im Keller ist frei, das ist in den Nebenkosten.“",
+        explain: "Yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
       },
           {
         kind: "gapfill",
@@ -307,7 +307,7 @@ export const a1U17: SkillExercise[] = [
       { de: "der Umzug", tr: "taşınma", en: "move" },
       { de: "packen", tr: "paketlemek", en: "to pack" },
       { de: "umziehen", tr: "taşınmak", en: "to move" },
-      { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
+      { de: "aufräumen", tr: "toplamak", en: "to tidy up" },
     ],
     minutes: 7,
     tasks: [

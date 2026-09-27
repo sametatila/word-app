@@ -116,7 +116,7 @@ export const enA1U22: SkillExercise[] = [
       "Mr. Kaya: Good. And drink more water.\n" +
       "Deniz: I'll be better tomorrow, I think.\n" +
       "Mr. Kaya: Don't come tomorrow. Come on Thursday. Call me tomorrow and tell me.\n" +
-      "Deniz: Thank you. I call you with my cell phone.\n" +
+      "Deniz: Thank you. I'll call you on my cell phone.\n" +
       "Mr. Kaya: Get better soon!",
     questions: [
       {
@@ -265,7 +265,7 @@ export const enA1U22: SkillExercise[] = [
     segments: [
       { speaker: "Woman", text: "Help! I need help!" },
       { speaker: "Man", text: "What is the problem?" },
-      { speaker: "Woman", text: "A man is on the ground. He doesn't move." },
+      { speaker: "Woman", text: "A man is on the ground. He isn't moving." },
       { speaker: "Man", text: "Call an ambulance! The number is nine one one." },
       { speaker: "Woman", text: "I'm calling now. My cell phone is here." },
       { speaker: "Man", text: "Good. Don't move him! That is dangerous." },
@@ -274,14 +274,14 @@ export const enA1U22: SkillExercise[] = [
       { speaker: "Woman", text: "A child is crying. That is his son, I think." },
       { speaker: "Man", text: "Come here, little one. Everything is OK." },
       { speaker: "Woman", text: "The ambulance is coming. I can hear it." },
-      { speaker: "Man", text: "Good. Then we wait here." },
+      { speaker: "Man", text: "Good. Then let's wait here." },
     ],
     questions: [
       {
         text: "What is the problem?",
         options: ["a man is on the ground", "a child is crying", "it is dark"],
         answer: 0,
-        explain: "„A man is on the ground. He doesn't move.“",
+        explain: "„A man is on the ground. He isn't moving.“",
       },
       {
         text: "What is the number for the ambulance?",

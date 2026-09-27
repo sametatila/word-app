@@ -237,7 +237,7 @@ export const enB2U11: SkillExercise[] = [
       { de: "an abstract", tr: "özet" },
       { de: "on purpose", tr: "bilerek" },
       { de: "in pairs", tr: "çiftler hâlinde" },
-      { de: "tempting", tr: "ayartıcı" },
+      { de: "tempting", tr: "cazip" },
       { de: "dated", tr: "tarihlenmiş" },
       { de: "nowhere", tr: "hiçbir yer" },
       { de: "the acknowledgments", tr: "teşekkür bölümü" },

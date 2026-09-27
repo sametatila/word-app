@@ -282,7 +282,7 @@ export const enC1P13: SkillExercise[] = [
           "off, tell me by Thursday and I will add it to the November schedule. Nobody has to decide on the night " +
           "itself.\n\n" +
           "Please take particular care with medication. Any dose due between two and three will come around twice " +
-          "on the clock, and it must only be given once. Even if you have worked this change before, check the " +
+          "on the clock, and it must be given only once. Even if you have worked this change before, check the " +
           "chart against the real time since the last dose, not the time on the wall. The pharmacy has marked " +
           "the affected charts in yellow.\n\n" +
           "Even experienced nurses find the extra hour long, so the break schedule includes a second break at about " +

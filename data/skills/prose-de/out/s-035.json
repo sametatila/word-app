@@ -17,7 +17,7 @@
  {
   "tr": "Üç kural değil, üç gerekçe. Hangisi neden var?",
   "kind": "intro",
-  "de": "Keine drei Regeln, drei Gründe. Warum gibt es welchen?"
+  "de": "Nicht drei Regeln, sondern drei Gründe. Warum gibt es welchen?"
  },
  {
   "tr": "Çıkış kontrolü. Depozito neden tam geri geliyor?",
@@ -77,7 +77,7 @@
  {
   "tr": "Üç ödün sözcüğü. Hangisi cümle, hangisi isim, hangisi yeni cümle istiyor?",
   "kind": "intro",
-  "de": "Drei Wörter für den Einwand. Welches verlangt einen Satz, welches ein Nomen, welches einen Neuanfang?"
+  "de": "Drei Wörter für die Einräumung. Welches verlangt einen Satz, welches ein Nomen, welches einen Neuanfang?"
  },
  {
   "tr": "Üç gelecek, üç anlam. Hangisi ayarlanmış, hangisi plan, hangisi o anki karar?",
@@ -448,5 +448,15 @@
   "tr": "kendi konuşmalarım",
   "kind": "gloss.tr",
   "de": "meine eigenen Telefonate"
+ },
+ {
+  "tr": "pasif",
+  "kind": "gloss.tr",
+  "de": "passiv"
+ },
+ {
+  "tr": "fırtına",
+  "kind": "gloss.tr",
+  "de": "der Sturm"
  }
 ]

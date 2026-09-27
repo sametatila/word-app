@@ -93,7 +93,7 @@ export const a1U11: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich trage gern Jeans und ein weißes T-Shirt. Kleider trage ich nie — sie passen mir nicht.\n\nTom: Meine Kleidung ist immer schwarz! Schwarze Hose, schwarzer Pullover, schwarze Schuhe. Für meine Freunde ist das zu viel Schwarz.\n\nElif: Ich mag Farben: rot, blau, alles. Aber teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Hemd für 9 Euro ist billig und gut!",
+      "Mia: Ich trage gern Jeans und ein weißes T-Shirt. Kleider trage ich nie — sie passen mir nicht.\n\nTom: Meine Kleidung ist immer schwarz! Schwarze Hose, schwarzer Pullover, schwarze Schuhe. Für meine Freunde ist das zu viel Schwarz.\n\nElif: Ich mag Farben: Rot, Blau, alles. Aber teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Hemd für 9 Euro ist billig und gut!",
     questions: [
       {
         text: "Was trägt Mia gern?",
@@ -309,7 +309,7 @@ export const a1U11: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bu bana çok pahalı.",
+        tr: "Bu bana fazla pahalı.",
         answer: "Das ist zu teuer für mich",
         hint: "„zu“ + sıfat = fazla: zu teuer, zu kurz, zu klein. „sehr teuer“ ise sadece „çok pahalı“ demek.",
       },
@@ -327,7 +327,7 @@ export const a1U11: SkillExercise[] = [
         phrases: [
           { de: "Ich trage gern …", tr: "… giymeyi severim", en: "I like wearing …" },
           { de: "in Blau / in Rot", tr: "mavi / kırmızı olanı", en: "in blue / in red" },
-          { de: "Das ist zu teuer.", tr: "Bu çok pahalı.", en: "That's too expensive." },
+          { de: "Das ist zu teuer.", tr: "Bu fazla pahalı.", en: "That's too expensive." },
         ],
         sample:
           "Hallo!\n\nIch trage gern Jeans und ein Hemd. Meine Lieblingsfarben sind Blau und Weiß. Ein schwarzes T-Shirt habe ich auch.\n\nKleider trage ich nie — sie passen mir nicht.\n\nTeure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Pullover für 19 Euro — das ist günstig!\n\nUnd ihr? Welche Farben tragt ihr gern?",

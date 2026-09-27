@@ -257,7 +257,7 @@ export const enA2U20: SkillExercise[] = [
     unit: 20,
     title: "Saying thank you",
     genre: "monologue",
-    intro: "Dört sözcüğün işi. Neden kâğıt, neden ayrıntı?",
+    intro: "Beş sözcüğün işi. Neden kâğıt, neden ayrıntı?",
     gloss: [
       { de: "that person", tr: "o kişi" },
       { de: "half", tr: "yarısı" },
@@ -266,7 +266,7 @@ export const enA2U20: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "Thank you for your help. Four words, and most people never say them at work." },
+      { speaker: "Nil", text: "Thank you for your help. Five words, and most people never say them at work." },
       { speaker: "Nil", text: "Last month a colleague stayed two hours after five for my report. I wrote a note the next morning." },
       { speaker: "Nil", text: "Not an email. A note, on paper, on the desk. It took four minutes." },
       { speaker: "Nil", text: "Three weeks later that person helped me again, before I asked." },

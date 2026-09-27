@@ -52,7 +52,7 @@ export const b1U05: SkillExercise[] = [
       "Sie haben das Recht, die Abrechnung genau zu prüfen. Fragen Sie nach den Zahlen, " +
       "bevor Sie zahlen. Wenn ein Grund fehlt oder eine Zahl falsch ist, schreiben Sie " +
       "sofort. Die Frist dafür ist zwölf Monate.\n\n" +
-      "Trotzdem lohnt sich Ruhe: meistens ist es kein Fehler. Meistens war der Winter einfach kalt. " +
+      "Trotzdem lohnt sich Ruhe: Meistens ist es kein Fehler, oft war der Winter einfach kalt. " +
       "Bestimmt hilft ein kurzes Gespräch mehr als ein böser Brief.",
     questions: [
       {
@@ -65,7 +65,7 @@ export const b1U05: SkillExercise[] = [
         text: "Wonach wird meistens gerechnet?",
         options: ["Nach der Fläche", "Nach der Etage", "Nach dem Alter"],
         answer: 0,
-        explain: "„Meistens zählt die Fläche: wer mehr Quadratmeter hat, zahlt mehr.“",
+        explain: "„Meistens zählt die Fläche: Wer mehr Quadratmeter hat, zahlt mehr.“",
       },
       {
         text: "Was ist Ihr Recht als Mieter?",
@@ -74,7 +74,7 @@ export const b1U05: SkillExercise[] = [
         explain: "„Sie haben das Recht, die Abrechnung genau zu prüfen.“",
       },
       {
-        text: "Wie lang ist die Frist für eine Antwort?",
+        text: "Wie lang ist die Frist, wenn eine Zahl falsch ist?",
         options: ["Drei Monate", "Sechs Monate", "Zwölf Monate"],
         answer: 2,
         explain: "„Die Frist dafür ist zwölf Monate.“",
@@ -124,7 +124,7 @@ export const b1U05: SkillExercise[] = [
       "Antwort 2: Ich sehe das anders. Möbliert ist bequem, aber die Miete ist höher. " +
       "Solange du bleibst, zahlst du jeden Monat für Sachen, die dir nicht gehören. " +
       "Bevor ich das mache, kaufe ich lieber gebraucht. Sobald ich wieder ausziehe, " +
-      "verkaufe ich alles zurück. Schließlich ist ein Spiegel oder eine Kerze kein " +
+      "verkaufe ich alles wieder. Schließlich ist ein Spiegel oder eine Kerze kein " +
       "Grund für dreihundert Euro mehr im Monat.\n\n" +
       "Antwort 3: Beide haben recht. Es hängt davon ab, wie viel Zeit du hast.",
     questions: [
@@ -141,10 +141,10 @@ export const b1U05: SkillExercise[] = [
         explain: "„Trotzdem solltest du genau schauen, in welchem Zustand die Möbel sind.“",
       },
       {
-        text: "Was macht Antwort 2 lieber?",
+        text: "Was macht die Person in Antwort 2 lieber?",
         options: ["Möbliert mieten", "Gebraucht kaufen und später verkaufen", "Gar nichts kaufen"],
         answer: 1,
-        explain: "„… kaufe ich lieber gebraucht. Sobald ich wieder ausziehe, verkaufe ich alles zurück.“",
+        explain: "„… kaufe ich lieber gebraucht. Sobald ich wieder ausziehe, verkaufe ich alles wieder.“",
       },
       {
         text: "Was sagt Antwort 3?",
@@ -154,7 +154,7 @@ export const b1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ ich wieder ausziehe, verkaufe ich alles zurück.",
+        text: "___ ich wieder ausziehe, verkaufe ich alles wieder.",
         options: [],
         answer: 0,
         accept: ["Sobald"],
@@ -184,7 +184,7 @@ export const b1U05: SkillExercise[] = [
       { de: "die Kiste", tr: "sandık / koli", en: "box" },
       { de: "erledigen", tr: "halletmek", en: "to get done" },
       { de: "solange", tr: "-dığı sürece", en: "as long as" },
-      { de: "schließlich", tr: "en sonunda", en: "finally" },
+      { de: "schließlich", tr: "sonuçta", en: "after all" },
       { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
@@ -241,7 +241,7 @@ export const b1U05: SkillExercise[] = [
     unit: 5,
     title: "Ein Zimmer zur Untermiete",
     genre: "dialogue",
-    intro: "Kısa dönem bir oda gösteriliyor. Dinle: ne var, ne yok, ne kadar süre?",
+    intro: "Kısa dönemlik bir oda gösteriliyor. Dinle: ne var, ne yok, ne kadar süre?",
     minutes: 4,
     gloss: [
       { de: "möbliert", tr: "eşyalı", en: "furnished" },
@@ -331,7 +331,7 @@ export const b1U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sebep açıklanana kadar ödemeyle bekliyorum.",
+        tr: "Sebep açıklanmadığı sürece ödemeyi bekletiyorum.",
         answer: "Ich warte mit der Zahlung, solange der Grund nicht erklärt ist.",
         alternatives: ["Solange der Grund nicht erklärt ist, warte ich mit der Zahlung."],
         hint: "„solange“ yan cümle kurar; fiil sona gider.",
@@ -353,7 +353,7 @@ export const b1U05: SkillExercise[] = [
         prompt: "İyelik yapısını düzelt.",
         source: "Die Summe von die Kosten ist zu hoch.",
         answer: "Die Summe der Kosten ist zu hoch.",
-        why: "Türkçedeki '-in hâli' Almancada Genitiv ile kurulur: 'von die Kosten' değil, 'der Kosten'.",
+        why: "Türkçedeki tamlayan eki (-in) Almancada Genitiv ile karşılanır: 'von die Kosten' değil, 'der Kosten'.",
       },
     ],
   },
@@ -393,7 +393,7 @@ export const b1U05: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Odanı beş ay için devretmek istiyorsun. Bir ilan yaz: odanın büyüklüğü ve döşemesi, hangi tarihler arası boş, kira ve giderler, ev arkadaşları hakkında bir cümle, ve kimin uygun olduğu.",
+        prompt: "Odanı beş ay için devretmek istiyorsun. Bir ilan yaz: odanın büyüklüğü ve döşemesi, hangi tarihler arası boş, kira ve giderler, ev arkadaşları hakkında bir cümle ve kimin uygun olduğu.",
         checklist: [
           "Oda ve döşeme somut anlatılmış mı (en az üç eşya)?",
           "Tarih aralığı net mi?",
@@ -417,7 +417,7 @@ export const b1U05: SkillExercise[] = [
         phrases: [
           { de: "frei von … bis …", tr: "…'den …'e kadar boş", en: "available from … to …" },
           { de: "Die Miete ist …, zusätzlich …", tr: "Kira …, ayrıca …", en: "The rent is …, in addition …" },
-          { de: "Melde dich einfach.", tr: "Sadece haber ver.", en: "Just get in touch." },
+          { de: "Melde dich einfach.", tr: "Haber vermen yeterli.", en: "Just get in touch." },
         ],
       },
       {

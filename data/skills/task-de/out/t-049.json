@@ -132,7 +132,7 @@
  {
   "tr": "Her ifşacının, usulsüzlük gömülmeden önce dinlenmesini istiyorlar.",
   "kind": "build.tr",
-  "de": "Sie verlangen, dass jeder Hinweisgeber angehört werde, bevor das Fehlverhalten zugeschüttet ist."
+  "de": "Sie verlangen, dass jeder Hinweisgeber angehört werde, bevor das Fehlverhalten vertuscht ist."
  },
  {
   "tr": "Şeffaflık eksikliği olmasa hiçbir bildirim birimine gerek olmazdı.",
@@ -230,9 +230,9 @@
   "de": "Im Zugeständnis am Anfang steckt eine ganze Phrase."
  },
  {
-  "tr": "Biri kâğıt hakkında, öteki dünya hakkında.",
+  "tr": "Biri makale hakkında, öteki dünya hakkında.",
   "kind": "build.hint",
-  "de": "Das eine handelt vom Papier, das andere von der Welt."
+  "de": "Das eine handelt vom Artikel, das andere von der Welt."
  },
  {
   "tr": "Çerçeve iddiadan önce boyutu adlandırıyor.",

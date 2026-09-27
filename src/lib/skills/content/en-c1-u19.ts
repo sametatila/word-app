@@ -71,7 +71,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "another way", tr: "başka bir yol" },
       { de: "subjectless", tr: "öznesiz" },
       { de: "the active", tr: "etken" },
-      { de: "word for word", tr: "sözcüğü sözcüğüne" },
+      { de: "word-for-word", tr: "sözcüğü sözcüğüne" },
       { de: "a translator", tr: "çevirmen" },
       { de: "technical", tr: "teknik" },
       { de: "gone", tr: "gitmiş" },
@@ -88,7 +88,7 @@ export const enC1U19: SkillExercise[] = [
       "It is the preposition of „pay for something“, and the something has become the subject. English can do this: it takes the object of a preposition, promotes it to the front of the sentence, and leaves the preposition standing where it was with nothing left to govern.\n" +
       "The list is long and it is everyday. This has to be dealt with. The money must be accounted for. She is well looked after. The claim was relied on for ten years. Every one of them is a passive built on a preposition rather than on a verb, and the preposition is left stranded at the end.\n" +
       "Now the measurement, and this is one of the few places in the course where the answer is simply that the other language cannot. German has no version of this at all. A German passive can promote the direct object and nothing else; the object of a preposition stays where it is, the preposition stays in front of it, and the sentence has to be built another way — with a subjectless passive, or with a different verb, or by naming somebody and going back to the active.\n" +
-      "So „longevity is paid for“ has no word for word equivalent, and a translator meets that fact in the first paragraph of almost any technical text.\n" +
+      "So „longevity is paid for“ has no word-for-word equivalent, and a translator meets that fact in the first paragraph of almost any technical text.\n" +
       "It is worth knowing for a second reason. This shape is the main way English writes a sentence about a thing that was done to something without saying who did it. „The risk was accounted for.“ By whom, on what date, in which model: all of it gone, and the sentence is short, ordinary and completely natural.\n" +
       "Which puts it beside the three shapes this level has already collected for the same job. Here is a fourth, and it is the one a reader is least likely to stop on, because the thing at the front is the thing the paragraph was about anyway.\n" +
       "Waste prevention is not the same as a closed loop. One more line to close the lesson: the first is a decision not to make the thing, and the second is a plan for what to do with it afterward. A report that offers the second as an answer to the first has changed the question.",
@@ -107,10 +107,10 @@ export const enC1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Longevity is paid for“ has no word for word equivalent.",
+        text: "„Longevity is paid for“ has no word-for-word equivalent.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„has no word for word equivalent…“",
+        explain: "„has no word-for-word equivalent…“",
       },
       {
         kind: "gapfill",
@@ -188,7 +188,7 @@ export const enC1U19: SkillExercise[] = [
       "The decoupling, albeit real, does not deliver sufficiency. „Albeit real“ is the concession and it is a large one: the curve has flattened, the measurement is good, and the argument that nothing has changed is no longer available.\n" +
       "What the sentence then denies is that the change is enough. A curve that has flattened is still a curve that rises, and the word „sufficiency“ names a limit rather than a direction.\n" +
       "Although aware of finiteness, the circular economy still needs growth. Here the concession at the front has a whole phrase inside it, and the claim behind it is the one that costs friends.\n" +
-      "A loop needs energy to run. Collection, sorting, cleaning, repair and transportation are all work, and work is paid in wages that come out of the same place the pensions do. A circle drawn on a page has no cost in it; a circle running in a city has four of them.\n" +
+      "A loop needs energy to run. Collection, sorting, cleaning, repair and transportation are all work, and work is paid in wages that come out of the same place the pensions do. A circle drawn on a page has no cost in it; a circle running in a city has five of them.\n" +
       "So the useful shape for a paragraph on this subject is the one this lesson keeps repeating: a concession large enough to be quoted by the other side, and then one claim.\n" +
       "The hard part is not the writing. It is being willing to put the strongest version of the other argument in your own paragraph, and most papers on this subject do not.",
     questions: [
@@ -209,7 +209,7 @@ export const enC1U19: SkillExercise[] = [
         text: "A circle drawn on a page has the same costs as one running in a city.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„A circle drawn on a page has no cost in it; a circle running in a city has four of them.“",
+        explain: "„A circle drawn on a page has no cost in it; a circle running in a city has five of them.“",
       },
       {
         kind: "gapfill",
@@ -230,7 +230,7 @@ export const enC1U19: SkillExercise[] = [
           "Although aware of finiteness, the circular economy still needs growth.",
           "A concession large enough to be quoted, and then one claim.",
         ],
-        explain: "İki doğru, büyük bir taviz, dört maliyet; en sonda biçim.",
+        explain: "İki doğru, büyük bir taviz, beş maliyet; en sonda biçim.",
       },
       {
         kind: "short_answer",
@@ -406,7 +406,7 @@ export const enC1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Were it not for its natural capital, the village would have no commons to share.", "Were it not for its natural capital, the village would have no commons to share"],
-        explain: "Fiil başta, bağlaç yok; ortak alanın neden yapıldığını adlandırıyor.",
+        explain: "Fiil başta, bağlaç yok; ortak alanın neyden yapıldığını adlandırıyor.",
       },
       {
         kind: "short_answer",
@@ -534,7 +534,7 @@ export const enC1U19: SkillExercise[] = [
         kind: "build",
         tr: "Bir bulguyu seyreltmek ona oynak demek değildir.",
         answer: "To dilute a finding is not to call it volatile.",
-        hint: "Biri kâğıt hakkında, öteki dünya hakkında.",
+        hint: "Biri makale hakkında, öteki dünya hakkında.",
       },
     ],
   },

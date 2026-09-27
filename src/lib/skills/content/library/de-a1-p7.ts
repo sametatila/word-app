@@ -163,8 +163,8 @@ export const deA1P7: SkillExercise[] = [
     genre: "letter",
     intro: "Çocuğun okula gelemiyor: önce iki cümle kur, sonra öğretmene kısa bir mazeret notu yaz.",
     gloss: [
-      { de: "die Entschuldigung", tr: "mazeret notu", en: "note of excuse" },
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "die Entschuldigung", tr: "mazeret notu", en: "excuse note" },
+      { de: "krank", tr: "hasta", en: "sick" },
       { de: "der Unterricht", tr: "ders", en: "lesson" },
       { de: "die Klasse", tr: "sınıf", en: "class" },
       { de: "unterschreiben", tr: "imzalamak", en: "to sign" },

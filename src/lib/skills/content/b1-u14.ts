@@ -49,7 +49,7 @@ export const b1U14: SkillExercise[] = [
       "Wochen, jeden Tag vier Stunden. Der Abendkurs dauert sechs Monate, " +
       "zweimal pro Woche.\n\n" +
       "Das Tempo im Intensivkurs ist deutlich höher als im Abendkurs. Wer arbeitet, " +
-      "schafft das meistens nicht. Der Abendkurs ist dafür nicht so schnell wie " +
+      "schafft das meistens nicht. Der Abendkurs ist zwar nicht so schnell wie " +
       "der Intensivkurs, aber man hat Zeit, alles noch einmal zu lesen.\n\n" +
       "Beide Kurse werden von ausgebildeten Lehrerinnen unterrichtet, und beide " +
       "benutzen dasselbe Buch. Der Unterschied ist nicht der Inhalt, sondern das " +
@@ -158,7 +158,7 @@ export const b1U14: SkillExercise[] = [
         text: "Warum hat sie langsamer geschrieben?",
         options: [],
         answer: 0,
-        accept: ["wegen der Schrift", "für die Schrift", "damit man es lesen kann"],
+        accept: ["wegen der Schrift", "für die Schrift", "damit man es lesen kann", "damit man die Schrift gut lesen kann"],
         explain: "„… habe ich langsamer geschrieben als sonst, damit man die Schrift gut lesen kann.“",
       },
     ],
@@ -404,7 +404,7 @@ export const b1U14: SkillExercise[] = [
         phrases: [
           { de: "Ich möchte mich über … erkundigen.", tr: "… hakkında bilgi almak istiyorum.", en: "I would like to inquire about …" },
           { de: "Ich würde gern wissen, ob …", tr: "… olup olmadığını bilmek isterdim.", en: "I would like to know whether …" },
-          { de: "Über eine kurze Auskunft wäre ich dankbar.", tr: "Kısa bir bilgi için minnettar olurum.", en: "I would be grateful for brief information." },
+          { de: "Über eine kurze Auskunft wäre ich dankbar.", tr: "Kısa bir bilgi için minnettar olurum.", en: "I would be grateful for a brief reply." },
         ],
       },
       {

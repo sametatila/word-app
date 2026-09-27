@@ -146,7 +146,7 @@ export const enB2U03: SkillExercise[] = [
       { de: "either", tr: "ikisinden biri" },
       { de: "contains", tr: "içeriyor" },
       { de: "sentences", tr: "cümleler" },
-      { de: "row", tr: "sıra" },
+      { de: "in a row", tr: "art arda" },
       { de: "none", tr: "hiçbiri" },
       { de: "plain", tr: "yalın" },
       { de: "distance", tr: "mesafe" },
@@ -448,7 +448,7 @@ export const enB2U03: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Açılış kartını doldur.",
-        facts: "Olumsuz zarf devirir; yardımcı fiil yoksa „do“ gelir; başka öğe devirmez; bir konuşmada bir tane yeter.",
+        facts: "Olumsuz zarf sırayı devirir; yardımcı fiil yoksa „do“ gelir; başka öğe sırayı devirmez; bir konuşmada bir tane yeter.",
         fields: [
           { label: "Rarely", answer: "have I had", accept: ["such a pleasure"] },
           { label: "Not only", answer: "did she moderate", accept: ["she also spoke"] },
@@ -501,7 +501,7 @@ export const enB2U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Tazminatın küçük olduğu söyleniyor.",
+        tr: "Tazminatın düşük olduğu söyleniyor.",
         answer: "The damages are said to be small.",
         hint: "Kısa yol: özne öne çıkıyor, geriye mastar kalıyor.",
       },

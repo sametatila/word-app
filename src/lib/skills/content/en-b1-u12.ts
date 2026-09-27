@@ -214,7 +214,7 @@ export const enB1U12: SkillExercise[] = [
       { speaker: "Ela", text: "The end of the month. If you send it late, the payment is the same but the questions are different." },
       { speaker: "Can", text: "What do you do with the receipts?" },
       { speaker: "Ela", text: "One envelope a year, with the year on the front. I learned that from my father and it is the only system I have kept." },
-      { speaker: "Can", text: "Then I start tonight." },
+      { speaker: "Can", text: "Then I will start tonight." },
       { speaker: "Ela", text: "Start with the envelope. The form takes an hour; the looking takes the rest of your life." },
     ],
     questions: [

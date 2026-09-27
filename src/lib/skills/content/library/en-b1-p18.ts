@@ -39,7 +39,7 @@ export const enB1P18: SkillExercise[] = [
       "Everyone told me not to go to Inchmore in January. The ferry only runs twice a week in " +
       "winter, the island's one café closes in October, and there are more sheep than people. " +
       "I went anyway, and it was the best week I've had in years.\n\n" +
-      "The island is so small that you can walk round it in four hours. On my first morning I did " +
+      "The island is so small that you can walk around it in four hours. On my first morning I did " +
       "exactly that, and I met two people, both of whom stopped to ask if I was lost. By the end " +
       "of the week everyone knew my name, and several people knew what I'd had for dinner.\n\n" +
       "The weather was a surprise. I had expected such terrible storms that I would be stuck " +
@@ -76,11 +76,11 @@ export const enB1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "You can walk round the island in ___ hours.",
+        text: "You can walk around the island in ___ hours.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„you can walk round it in four hours“.",
+        explain: "„you can walk around it in four hours“.",
       },
       {
         kind: "short_answer",

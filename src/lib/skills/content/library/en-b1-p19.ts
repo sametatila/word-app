@@ -39,7 +39,7 @@ export const enB1P19: SkillExercise[] = [
       "doctors. Nobody had written anything about the rules that are never written down, and " +
       "those were the ones I kept breaking.\n\n" +
       "The first one was the trash cans. I put mine out on a Tuesday morning, and by the afternoon there " +
-      "was a polite note on my door. In our street you are only allowed to put trash cans out after six " +
+      "was a polite note on my door. On our street you are only allowed to put trash cans out after six " +
       "on the evening before collection. Nobody fined me. The note was worse.\n\n" +
       "The second was a barbecue. A colleague invited me, so I arrived with nothing, the way I " +
       "would at home. Everybody else had brought something: meat, salad, drinks. You are supposed " +
@@ -59,7 +59,7 @@ export const enB1P19: SkillExercise[] = [
         explain: "„I had read everything about visas, bank accounts and doctors.“",
       },
       {
-        text: "When are people allowed to put trash cans out in the writer's street?",
+        text: "When are people allowed to put trash cans out on the writer's street?",
         options: [
           "after six on the evening before collection",
           "early on the morning of collection",
@@ -116,7 +116,7 @@ export const enB1P19: SkillExercise[] = [
     gloss: [
       { de: "campsite", tr: "kamp alanı" },
       { de: "tent", tr: "çadır" },
-      { de: "lead", tr: "tasma" },
+      { de: "leash", tr: "tasma" },
       { de: "barn", tr: "ambar" },
       { de: "speaker", tr: "hoparlör" },
       { de: "advantage", tr: "avantaj" },
@@ -132,7 +132,7 @@ export const enB1P19: SkillExercise[] = [
       { text: "Dogs are allowed, but they're supposed to be on a leash everywhere except the field behind the barn. There are sheep next door, and the farmer is not a patient man." },
       { text: "Quiet time starts at half past ten. You're not supposed to play music after that, and yes, that includes the small speakers people think we can't hear." },
       { text: "Cars aren't allowed on the field after nine at night, because children are running around in the dark. Please use the parking lot by the gate." },
-      { text: "The showers are free, but the hot water runs out at about eight in the morning, so early swimmers have the advantage." },
+      { text: "The showers are free, but the hot water runs out at about eight in the morning, so early risers have the advantage." },
       { text: "Finally, the river. You're allowed to swim in it, but nobody is watching, and after rain it gets fast very quickly. If the water is brown, stay out." },
       { text: "If you have any problems, the office is open from eight till six, and my number is on the board outside." },
     ],
@@ -155,7 +155,7 @@ export const enB1P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Dogs can be off the lead in the field behind the barn.",
+        text: "Dogs can be off the leash in the field behind the barn.",
         options: ["True", "False"],
         answer: 0,
         explain: "Tasma her yerde bekleniyor, ambarın arkasındaki tarla hariç.",

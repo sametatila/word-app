@@ -78,7 +78,7 @@ export const enA1U12: SkillExercise[] = [
         text: "Whose birthday is it?",
         options: [],
         answer: 0,
-        accept: ["the mother's", "his mother's", "my mother's"],
+        accept: ["the mother's", "his mother's", "her mother's", "my mother's"],
         explain: "„Tomorrow is my mother's birthday.“ — iyelik „-'s“ ile.",
       },
     ],
@@ -408,7 +408,7 @@ export const enA1U12: SkillExercise[] = [
         kind: "build",
         tr: "Bu annem için bir hediye.",
         answer: "It's a gift for my mother.",
-        alternatives: ["It is a gift for my mother."],
+        alternatives: ["It is a gift for my mother.", "This is a gift for my mother."],
         hint: "Kime olduğu „for“ ile: a gift for my mother, for her birthday.",
       },
       {

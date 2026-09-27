@@ -26,7 +26,7 @@ export const enB1P8: SkillExercise[] = [
       { de: "puncture", tr: "patlak lastik" },
       { de: "employer", tr: "işveren" },
       { de: "lazy", tr: "tembel" },
-      { de: "annoyed", tr: "sinirlenmek" },
+      { de: "annoyed", tr: "sinirli" },
     ],
     minutes: 6,
     text:
@@ -62,7 +62,7 @@ export const enB1P8: SkillExercise[] = [
         text: "What made the difference for tom_w?",
         options: ["getting fitter", "changing the route", "buying a better bike"],
         answer: 1,
-        explain: "„it was the route“ — parktan geçen yol yedi dakika uzun ama stressiz.",
+        explain: "„it was the route“ — parktan geçen yol yedi dakika daha uzun ama stressiz.",
       },
       {
         kind: "truefalse",
@@ -209,7 +209,7 @@ export const enB1P8: SkillExercise[] = [
       { de: "gear", tr: "vites" },
       { de: "chain", tr: "zincir" },
       { de: "slip", tr: "yerinden kaymak" },
-      { de: "gears", tr: "vites" },
+      { de: "gears", tr: "vitesler" },
     ],
     minutes: 12,
     tasks: [
@@ -276,7 +276,7 @@ export const enB1P8: SkillExercise[] = [
     minutes: 6,
     monologue: {
       promptTr:
-        "„Herkes işe bisikletle gitmeli“ deniyor. Bu gerçekçi mi? Görüşünü söyle, hangi koşullar gerektiğini anlat, kimin için işlemediğini söyle ve bir öneride bulun.",
+        "„Herkes işe bisikletle gitmeli“ deniyor. Bu gerçekçi mi? Görüşünü söyle, hangi koşulların gerektiğini anlat, kimin için işlemediğini söyle ve bir öneride bulun.",
       bulletsTr: [
         "Görüşünü tek cümleyle söyle",
         "Hangi koşulların gerektiğini anlat",

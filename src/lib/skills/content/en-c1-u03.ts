@@ -426,11 +426,11 @@ export const enC1U03: SkillExercise[] = [
         kind: "build",
         tr: "Daha az küçümseyici bir tona hayır demezdim.",
         answer: "I wouldn't say no to a less patronizing tone.",
-        hint: "İki olumsuz bir rica ediyor.",
+        hint: "İki olumsuz bir rica kuruyor.",
       },
       {
         kind: "build",
-        tr: "Pek alçakgönüllü sayılmaz, öyle mi?",
+        tr: "Pek alçakgönüllü sayılmaz, değil mi?",
         answer: "Hardly modest, is it?",
         hint: "„hardly“ kendi olumsuzunu taşıyor; ikinci „not“ olmaz.",
       },

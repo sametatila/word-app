@@ -161,7 +161,7 @@ export const enB2U23: SkillExercise[] = [
     minutes: 9,
     text:
       "The case file is said to be complete. The legal basis is expected to change. The proceedings are thought to have started. Three sentences from the same page and three different amounts of evidence behind them.\n" +
-      "„Is said to be complete“ means somebody has said it. In a file that is a weak sentence, because a file either has every document in it or it does not, and somebody could go and look.\n" +
+      "„Is said to be complete“ means somebody has said it. In a file, that is a weak sentence, because a file either has every document in it or it does not, and somebody could go and look.\n" +
       "„Is expected to change“ points forward and rests on something: an amendment that has been published, or a date in a calendar. The sentence does not give it, and a reader who wants the ground has to ask.\n" +
       "„Are thought to have started“ is a view that is held, and the infinitive is looking backwards: the starting already happened and somebody has decided so since.\n" +
       "The test has not changed in five units. Put a name in front of the verb and see whether the sentence survives. „The clerk says the case file is complete“ can be checked in a morning.\n" +

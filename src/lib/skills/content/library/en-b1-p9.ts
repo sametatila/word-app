@@ -130,7 +130,7 @@ export const enB1P9: SkillExercise[] = [
       { speaker: "Presenter", text: "On an average day, just under a third of the hot food served is thrown away. Vegetables make up most of it." },
       { speaker: "Ms. Aldridge", text: "Our first idea was that children don't like vegetables. The weighing showed something else. They eat them on Mondays and leave them on Fridays." },
       { speaker: "Presenter", text: "The difference is the schedule. On Fridays lunch is twenty minutes earlier and the break is five minutes shorter." },
-      { speaker: "Ms. Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can eat fastest without." },
+      { speaker: "Ms. Aldridge", text: "If you have eighteen minutes to line up, eat and get outside, the first thing you give up is the part of the plate you can most easily do without." },
       { speaker: "Presenter", text: "Two of the schools have now made Friday lunch the same length as the other days. Waste there has come down by about a fifth." },
       { speaker: "Presenter", text: "The third school could not change the schedule and tried smaller portions with free seconds instead. That worked almost as well and cost nothing." },
       { speaker: "Ms. Aldridge", text: "What I'd say to other schools is this: weigh it first. We spent two years talking about taste when the problem was the clock." },
@@ -311,7 +311,7 @@ export const enB1P9: SkillExercise[] = [
     skill: "grammar",
     title: "turn it off, look after it",
     genre: "grammar",
-    intro: "Fiil ile küçük bir sözcük birleşince anlam değişir; ve nesnenin nereye gideceği fiile göre belirlenir.",
+    intro: "Fiil ile küçük bir sözcük birleşince anlam değişir; nesnenin nereye gideceği de fiile göre belirlenir.",
     focus: "Phrasal verbs: ayrılabilen ve ayrılamayan biçimler",
     gloss: [
       { de: "to turn off", tr: "kapatmak" },
@@ -341,7 +341,7 @@ export const enB1P9: SkillExercise[] = [
       },
       {
         heading: "Anlam parçadan çıkarılamaz",
-        tr: "Bu fiillerin anlamı çoğu zaman parçalarından anlaşılmaz: „give up“ vazgeçmek, „put off“ ertelemek, „take after“ birine benzemek. Aynı fiil farklı parçayla bambaşka anlam alır: „look after“ bakmak, „look for“ aramak, „look up“ (bir bilgiyi) bakmak.",
+        tr: "Bu fiillerin anlamı çoğu zaman parçalarından anlaşılmaz: „give up“ vazgeçmek, „put off“ ertelemek, „take after“ birine benzemek. Aynı fiil farklı parçayla bambaşka anlam alır: „look after“ bakmak, „look for“ aramak, „look up“ (bir bilgiye) bakmak.",
         examples: [
           { de: "Don't give up now.", tr: "Şimdi vazgeçme.", note: "give up = vazgeçmek" },
           { de: "They put the meeting off.", tr: "Toplantıyı ertelediler.", note: "put off = ertelemek" },

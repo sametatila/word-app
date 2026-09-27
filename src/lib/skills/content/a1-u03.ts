@@ -36,7 +36,7 @@ export const a1U03: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo! Ich heiße Lena und ich bin zwanzig Jahre alt. Ich wohne in Bremen.\n\nDas ist meine Familie. Meine Mutter heißt Petra, die Ehefrau von Jonas. Beide arbeiten: meine Mutter ist Ärztin und mein Vater ist Lehrer.\n\nIch habe zwei Geschwister. Mein Bruder heißt Max. Er ist zehn Jahre alt — noch ein Junge. Meine Schwester heißt Nora und sie ist ein Baby.\n\nMeine Großeltern wohnen nicht in Bremen. Sie kommen aus Polen und sprechen ein bisschen Deutsch. Sie sind nicht mehr jung.",
+      "Hallo! Ich heiße Lena und ich bin zwanzig Jahre alt. Ich wohne in Bremen.\n\nDas ist meine Familie. Meine Mutter heißt Petra und mein Vater heißt Jonas. Beide arbeiten: Meine Mutter ist Ärztin und mein Vater ist Lehrer.\n\nIch habe zwei Geschwister. Mein Bruder heißt Max. Er ist zehn Jahre alt — noch ein Junge. Meine Schwester heißt Nora und sie ist ein Baby.\n\nMeine Großeltern wohnen nicht in Bremen. Sie kommen aus Polen und sprechen ein bisschen Deutsch. Sie sind nicht mehr jung.",
     questions: [
       {
         text: "Wie alt ist Lena?",
@@ -48,7 +48,7 @@ export const a1U03: SkillExercise[] = [
         text: "Was ist Lenas Mutter von Beruf?",
         options: ["Ärztin", "Lehrerin", "Verkäuferin"],
         answer: 0,
-        explain: "„meine Mutter ist Ärztin“ — baba ise Lehrer.",
+        explain: "„Meine Mutter ist Ärztin“ — baba ise Lehrer.",
       },
       {
         text: "Richtig oder falsch? Lena hat einen Bruder und eine Schwester.",
@@ -342,7 +342,7 @@ export const a1U03: SkillExercise[] = [
           { de: "Meine Eltern wohnen in …", tr: "Annemle babam …'da oturuyor.", en: "My parents live in …" },
         ],
         sample:
-          "Hallo zusammen!\n\nIch heiße Yusuf und ich bin 25 Jahre alt. Ich bin in Ankara geboren.\n\nDas ist meine Familie: meine Mutter heißt Ayşe und mein Vater heißt Kemal. Beide arbeiten in einer Firma.\n\nIch habe eine Schwester. Sie ist zehn Jahre alt. Meine Großeltern wohnen auch in Ankara.\n\nUnd ihr? Habt ihr Geschwister?\nYusuf",
+          "Hallo zusammen!\n\nIch heiße Yusuf und ich bin 25 Jahre alt. Ich bin in Ankara geboren.\n\nDas ist meine Familie: Meine Mutter heißt Ayşe und mein Vater heißt Kemal. Beide arbeiten in einer Firma.\n\nIch habe eine Schwester. Sie ist zehn Jahre alt. Meine Großeltern wohnen auch in Ankara.\n\nUnd ihr? Habt ihr Geschwister?\nYusuf",
       },
     ],
   },

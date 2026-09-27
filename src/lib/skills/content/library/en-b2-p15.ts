@@ -115,7 +115,7 @@ export const enB2P15: SkillExercise[] = [
           "canceling by phone only",
         ],
         answer: 0,
-        explain: "Telefondaki kişi politikadan sorumlu değil; nazik ve net olana yardım etmesi daha olası.",
+        explain: "Telefondaki kişi çoğu zaman politikadan sorumlu değil; nazik ve net olana yardım etmesi daha olası.",
       },
     ],
   },
@@ -165,7 +165,7 @@ export const enB2P15: SkillExercise[] = [
           "The price has gone up.",
         ],
         answer: 0,
-        explain: "Yemekten memnun; ama sekizden önce eve gelmedikleri için üçte birini atıyorlar.",
+        explain: "Yemekten memnun; ama sekizden önce eve nadiren geldikleri için üçte birini atıyorlar.",
       },
       {
         text: "What does the agent offer him?",

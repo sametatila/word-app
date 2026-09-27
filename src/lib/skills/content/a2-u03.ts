@@ -34,7 +34,7 @@ export const a2U03: SkillExercise[] = [
     gloss: [
       { de: "voll", tr: "dolu", en: "full" },
       { de: "schaffen", tr: "yetiştirmek", en: "to manage" },
-      { de: "der Arbeitstag", tr: "iş günü", en: "working day" },
+      { de: "der Arbeitstag", tr: "iş günü", en: "workday" },
       { de: "stattfinden", tr: "gerçekleşmek", en: "to take place" },
       { de: "durchgehen", tr: "gözden geçirmek", en: "to go through" },
       { de: "der Rest", tr: "kalan", en: "the rest" },
@@ -114,7 +114,7 @@ export const a2U03: SkillExercise[] = [
       "Vor sechs Jahren bin ich nach Deutschland gekommen. Ich war 24 und hatte keine Deutschkenntnisse — kein einziges Wort.\n\n" +
       "Am Anfang war alles fremd. Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt, und die Landschaft war ganz anders als zu Hause. Am schwersten war aber nicht das Wetter, sondern die Sprache. Ich konnte mich einfach nicht ausdrücken. Für jedes Formular brauchte ich eine Übersetzung.\n\n" +
       "Nach einem Jahr Kurs ging es besser. Heute komme ich mit meinen Nachbarn gut aus, und die Stadt ist mir vertraut geworden. Manches in der Kultur verstehe ich immer noch nicht, aber das ist okay.\n\n" +
-      "Wenn mich jemand fragt, sage ich: der erste Winter war hart, der Rest war Arbeit.",
+      "Wenn mich jemand fragt, sage ich: Der erste Winter war hart, der Rest war Arbeit.",
     questions: [
       {
         text: "Wie alt war der Autor bei der Ankunft?",

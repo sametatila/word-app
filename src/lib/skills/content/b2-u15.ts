@@ -66,7 +66,7 @@ export const b2U15: SkillExercise[] = [
       "Auf der Gehaltsabrechnung stehen zwei Blöcke, die gern verwechselt werden. Steuern werden vom Staat erhoben und finanzieren den Haushalt: Schulen, Straßen, Gerichte, Verwaltung. Sozialabgaben sind etwas anderes — sie gehen nicht in den Haushalt, sondern in die Versicherungen für Rente, Gesundheit, Pflege und Arbeitslosigkeit. Wer über „die Steuerlast“ spricht und dabei beides zusammenzählt, redet über eine Zahl, die es so nicht gibt.\n\n" +
       "Wohin fließt das Geld? Der größte Einzelposten im Bundeshaushalt ist seit Jahren die Rente; sie wird zu einem erheblichen Teil aus Steuermitteln bezuschusst, weil die Beiträge allein nicht reichen. Straßen und Schienen werden ebenfalls aus dem Haushalt finanziert, Schulen dagegen fast vollständig von Ländern und Kommunen.\n\n" +
       "Was passiert bei einer Steuererhöhung? Nicht unbedingt das, was man erwartet. Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert und weil ein Teil der Wirtschaft grenznah ist. Umgekehrt gilt dasselbe: Wenn Sätze gesenkt werden, bricht selten so viel weg, wie zunächst gerechnet wird.\n\n" +
-      "Und wenn gekürzt wird? Nicht unbedingt bei den Sozialleistungen, obwohl darüber am lautesten gestritten wird. Gekürzt wird fast immer dort, wo es kurzfristig am wenigsten weh tut: bei Investitionen. Eine nicht sanierte Brücke fällt in diesem Jahr niemandem auf. In zwölf Jahren kostet sie das Dreifache.\n\n" +
+      "Und wenn gekürzt wird? Nicht unbedingt bei den Sozialleistungen, obwohl darüber am lautesten gestritten wird. Gekürzt wird fast immer dort, wo es kurzfristig am wenigsten wehtut: bei Investitionen. Eine nicht sanierte Brücke fällt in diesem Jahr niemandem auf. In zwölf Jahren kostet sie das Dreifache.\n\n" +
       "Ein praktischer Hinweis zum Schluss: Wer eine Steuererklärung abgibt, bekommt im Schnitt eine vierstellige Summe zurück. Viele geben trotzdem keine ab — nicht aus Überzeugung, sondern weil das Formular abschreckt.",
     questions: [
       {
@@ -103,7 +103,7 @@ export const b2U15: SkillExercise[] = [
           "bei der Verwaltung",
         ],
         answer: 1,
-        explain: "„Gekürzt wird fast immer dort, wo es kurzfristig am wenigsten weh tut: bei Investitionen.“",
+        explain: "„Gekürzt wird fast immer dort, wo es kurzfristig am wenigsten wehtut: bei Investitionen.“",
       },
       {
         text: "Eine höhere Steuer bringt automatisch mehr Geld ein.",
@@ -189,7 +189,7 @@ export const b2U15: SkillExercise[] = [
         text: "Die eigentliche Frage lautet laut Text „Stadt oder Land“.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Die Frage lautet also selten 'Stadt oder Land', sondern 'angebunden oder nicht'.“",
+        explain: "Yanlış: „Die Frage lautet also selten ‚Stadt oder Land‘, sondern ‚angebunden oder nicht‘.“",
       },
     ],
   },

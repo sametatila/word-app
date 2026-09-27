@@ -7,7 +7,7 @@
  {
   "tr": "Fiil artı sıfat ve tarlanın üç adı.",
   "kind": "intro",
-  "de": "Verb plus Adjektiv, und die drei Namen des Feldes."
+  "de": "Verb plus Adjektiv und die drei Namen des Feldes."
  },
  {
   "tr": "Tek gövde, iki önek; ve hedefin üç adı.",
@@ -22,7 +22,7 @@
  {
   "tr": "Raporun gönderme katmanı ve kirleten kim.",
   "kind": "intro",
-  "de": "Die Verweisebene des Berichts, und wer verschmutzt."
+  "de": "Die Verweisebene des Berichts und wer verschmutzt."
  },
  {
   "tr": "Sayılan ile sayılmayan. Hangisi geri gelmiyor?",
@@ -888,5 +888,10 @@
   "tr": "sürdürülebilirlik standardı",
   "kind": "gloss.tr",
   "de": "der Nachhaltigkeitsstandard"
+ },
+ {
+  "tr": "izin verilmiş",
+  "kind": "gloss.tr",
+  "de": "erlaubt"
  }
 ]

@@ -42,7 +42,7 @@ export const enB1: SkillExercise[] = [
       "The next week, I decided to sign up for an adult beginners' course at the local pool.\n\n" +
       "The first lesson was hard. I was the oldest person in the group, and I couldn't even put my face in the water. Our teacher, Marta, didn't laugh. " +
       "She told us that fear is normal and that most adults learn faster than they expect, because they listen.\n\n" +
-      "Since then, I have been to the pool twice a week. I have already learned to breathe in the water, and last month I swam twenty-five meters without stopping. " +
+      "Since then, I have gone to the pool twice a week. I have already learned to breathe in the water, and last month I swam twenty-five meters without stopping. " +
       "I haven't swum in the sea yet, but we have booked a vacation for August, and this time I won't be sitting on the beach.\n\n" +
       "If you have been thinking about lessons for years, my advice is simple: don't wait for the perfect moment. Book the first class. The rest will follow.",
     questions: [
@@ -73,11 +73,11 @@ export const enB1: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Since then, the writer has been to the pool ___ a week.",
+        text: "Since then, the writer has gone to the pool ___ a week.",
         options: [],
         answer: 0,
         accept: ["twice", "two times"],
-        explain: "„Since then, I have been to the pool twice a week.“ — dördüncü paragrafın ilk cümlesi.",
+        explain: "„Since then, I have gone to the pool twice a week.“ — dördüncü paragrafın ilk cümlesi.",
       },
       {
         kind: "short_answer",

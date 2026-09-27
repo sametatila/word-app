@@ -208,7 +208,7 @@ export const deA1P12: SkillExercise[] = [
           { de: "Liebe Frau …,", tr: "Sevgili … Hanım,", en: "Dear Ms. …," },
           { de: "Ich möchte vom … bis zum … Urlaub nehmen.", tr: "…'den …'e kadar izin almak istiyorum.", en: "I would like to take leave from … to …" },
           { de: "Meine Schwester heiratet in …", tr: "Kız kardeşim …'de evleniyor.", en: "My sister is getting married in …" },
-          { de: "In dieser Zeit macht … meine Arbeit.", tr: "Bu sürede işimi … yapıyor.", en: "During this time … is doing my work." },
+          { de: "In dieser Zeit macht … meine Arbeit.", tr: "Bu sürede işimi … yapıyor.", en: "During this time, … will do my work." },
           { de: "Ist das möglich?", tr: "Bu mümkün mü?", en: "Is that possible?" },
         ],
         sample:
@@ -318,7 +318,7 @@ export const deA1P12: SkillExercise[] = [
     course: "de",
     level: "A1",
     skill: "grammar",
-    title: "am Montag, um acht, im Mai",
+    title: "Am Montag, um acht, im Mai",
     genre: "grammar",
     intro: "Türkçede tek bir „-de“ eki yeter; Almancada gün, saat ve ay ayrı edat ister. Hangisinin ne zaman geldiğini öğren.",
     focus: "Zaman edatları: am (gün), um (saat), im (ay ve mevsim)",
@@ -333,7 +333,7 @@ export const deA1P12: SkillExercise[] = [
     explanation: [
       {
         heading: "Üç edat, üç zaman",
-        tr: "Türkçede „pazartesi günü, saat sekizde, mayısta“ derken hep aynı -de ekini kullanırsın. Almancada gün „am“, saat „um“, ay ve mevsim „im“ alır. Edatı zamanın türü seçer.",
+        tr: "Türkçede „hafta sonunda, saat sekizde, mayısta“ derken hep aynı -de ekini kullanırsın. Almancada gün „am“, saat „um“, ay ve mevsim „im“ alır. Edatı zamanın türü seçer.",
         examples: [
           { de: "Am Montag habe ich einen Kurs.", tr: "Pazartesi kursum var.", note: "gün → am" },
           { de: "Der Kurs beginnt um acht Uhr.", tr: "Kurs saat sekizde başlıyor.", note: "saat → um" },

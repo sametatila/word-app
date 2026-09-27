@@ -43,7 +43,7 @@ export const b2U12: SkillExercise[] = [
       { de: "der Zugriff", tr: "erişim", en: "access" },
       { de: "verschlüsseln", tr: "şifrelemek", en: "to encrypt" },
       { de: "unbefugt", tr: "yetkisiz", en: "unauthorized" },
-      { de: "sich anmelden", tr: "oturum açmak", en: "to register" },
+      { de: "sich anmelden", tr: "oturum açmak", en: "to log in" },
       { de: "protokollieren", tr: "kayda geçirmek", en: "to log" },
       { de: "ebenfalls", tr: "aynı şekilde", en: "likewise" },
       { de: "formlos", tr: "şekle bağlı olmayan", en: "informal" },
@@ -364,7 +364,7 @@ export const b2U12: SkillExercise[] = [
     genre: "build",
     intro: "indem yöntemi verir, dürfen nicht sınırı çizer, edilgen Perfekt sonucu bildirir.",
     gloss: [
-      { de: "vermessen", tr: "ölçüm yapmak", en: "to measure up" },
+      { de: "vermessen", tr: "ölçüm yapmak", en: "to measure" },
       { de: "der Zugriff", tr: "erişim", en: "access" },
       { de: "bedrohen", tr: "tehdit etmek", en: "to threaten" },
       { de: "zulassen", tr: "ruhsatlandırmak", en: "to approve" },

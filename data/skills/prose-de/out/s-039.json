@@ -7,7 +7,7 @@
  {
   "tr": "Geç kalınan bir karar. Ne zaman ciddileşmiş?",
   "kind": "intro",
-  "de": "Eine zu spät gekommene Entscheidung. Wann wurde es ernst?"
+  "de": "Eine verspätete Entscheidung. Wann wurde es ernst?"
  },
  {
   "tr": "Geçmişin iki katmanı ve geleceğin üç biçimi.",
@@ -112,7 +112,7 @@
  {
   "tr": "Araştırma, başlık, ilk paylaşım, paylaşımın paylaşımı.",
   "kind": "explain",
-  "de": "Die Studie, die Überschrift, der erste Beitrag, der Beitrag über den Beitrag."
+  "de": "Die Studie, die Überschrift, der erste Beitrag, das Weiterteilen des Beitrags."
  },
  {
   "tr": "„going to“ kanıta dayalı: karar alınmış, kâğıtlar imzalı.",
@@ -453,5 +453,15 @@
   "tr": "hakkını vermek gerekirse",
   "kind": "gloss.tr",
   "de": "fairerweise"
+ },
+ {
+  "tr": "yaş",
+  "kind": "gloss.tr",
+  "de": "das Alter"
+ },
+ {
+  "tr": "aldı",
+  "kind": "gloss.tr",
+  "de": "nahm"
  }
 ]

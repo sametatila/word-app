@@ -97,7 +97,7 @@
  {
   "tr": "Üç aktarma bir dosyada. Hangisinin dayanağı var?",
   "kind": "intro",
-  "en": "Three reports in a file. Which one has a ground under it?"
+  "en": "Three reports in a file. Which one has something to back it up?"
  },
  {
   "tr": "„„Must have failed to“ sounds like a description…“",
@@ -225,9 +225,9 @@
   "en": "„a closed conditional about somebody else's reliability is read as blame…“"
  },
  {
-  "tr": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“",
+  "tr": "„Two limits. Only after „be“, and never with a single adjective on its own.“",
   "kind": "explain",
-  "en": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“"
+  "en": "„Two limits. Only after „be“, and never with a single adjective on its own.“"
  },
  {
   "tr": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“",

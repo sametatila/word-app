@@ -108,11 +108,11 @@ export const enA1U08: SkillExercise[] = [
       "Waiter: No problem. Or cash, if you prefer.\n" +
       "Ali: I only have a card too. No cash today.\n" +
       "Waiter: That's fine. Here you are.\n" +
-      "Eda: Can I get a bill for my work, please?\n" +
+      "Eda: Can I get a receipt for my work, please?\n" +
       "Waiter: Yes, one moment. What time is it now?\n" +
       "Eda: It's a quarter to nine.\n" +
       "Waiter: Then we close at ten.\n" +
-      "Ali: Thank you. Can you give me the card?\n" +
+      "Ali: Thank you. Can I have my card back?\n" +
       "Waiter: Here. Have a good evening!",
     questions: [
       {
@@ -125,7 +125,7 @@ export const enA1U08: SkillExercise[] = [
         text: "How do they pay?",
         options: ["by card", "with cash", "with a check"],
         answer: 0,
-        explain: "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
+        explain: "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Eda'nın istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
       },
       {
         kind: "truefalse",
@@ -140,7 +140,7 @@ export const enA1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["nine", "9"],
-        explain: "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8:45.",
+        explain: "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8.45.",
       },
       {
         kind: "order",
@@ -161,7 +161,7 @@ export const enA1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["at ten", "ten", "10"],
-        explain: "„Then we close at ten.“ — bir saat sonra, yani onda.",
+        explain: "„Then we close at ten.“ — saat dokuza çeyrek var, restoran onda kapanıyor.",
       },
     ],
   },
@@ -201,7 +201,7 @@ export const enA1U08: SkillExercise[] = [
         text: "What time is it?",
         options: ["half past eight", "half past seven", "a quarter past eleven"],
         answer: 0,
-        explain: "„It's half past eight.“ — sekiz buçuk; on bir çeyrek Nil'in uyku saati.",
+        explain: "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Nil'in yatma saati.",
       },
       {
         text: "When does Nil wake up on Monday?",
@@ -353,7 +353,7 @@ export const enA1U08: SkillExercise[] = [
         tr: "Dokuza çeyrek var.",
         answer: "It's a quarter to nine.",
         alternatives: ["It is a quarter to nine."],
-        hint: "„to“ kala demek ve gelecek saati söyler: a quarter to nine, yani 8:45.",
+        hint: "„to“ kala demek ve gelecek saati söyler: a quarter to nine, yani 8.45.",
       },
       {
         kind: "build",
@@ -369,7 +369,7 @@ export const enA1U08: SkillExercise[] = [
         fields: [
           { label: "Get up", answer: "seven", accept: ["at seven", "7"] },
           { label: "Breakfast", answer: "half past eight", accept: ["at half past eight"] },
-          { label: "Work", answer: "nine to five", accept: ["from nine to five", "nine until five"] },
+          { label: "Work", answer: "nine to five", accept: ["from nine to five", "nine until five", "from nine until five"] },
           { label: "Sleep", answer: "midnight", accept: ["at midnight"] },
         ],
       },

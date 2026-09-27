@@ -80,7 +80,7 @@
   "de": "Welches Wort trägt die Zeitstufe? Und wann sagt es sie?"
  },
  {
-  "tr": "Başyazıda kaç yarık cümle? Ve neden anma yazısında hiç?",
+  "tr": "Başyazıda kaç yarık cümle? Ve anma yazısında neden hiç yok?",
   "kind": "intro",
   "de": "Wie viele Spaltsätze im Leitartikel? Und warum keiner im Nachruf?"
  },
@@ -590,11 +590,6 @@
   "de": "gesendet worden"
  },
  {
-  "tr": "birinci tekil",
-  "kind": "gloss.tr",
-  "de": "erste Person"
- },
- {
   "tr": "doğrulanmamış",
   "kind": "gloss.tr",
   "de": "unbestätigt"
@@ -708,5 +703,15 @@
   "tr": "değişken sabitlenseydi",
   "kind": "gloss.tr",
   "de": "wäre die Variable festgelegt gewesen"
+ },
+ {
+  "tr": "düşüyor",
+  "kind": "gloss.tr",
+  "de": "fällt"
+ },
+ {
+  "tr": "göründü",
+  "kind": "gloss.tr",
+  "de": "erschien"
  }
 ]

@@ -382,7 +382,7 @@
   {
     "tr": "Doğrusu, karşı taraf … konusunda haklı",
     "kind": "monologue.targets.tr",
-    "de": "Fairerweise muss man sagen: Die Gegenseite hat recht, wenn …"
+    "de": "Fairerweise muss man sagen: Die Gegenseite hat recht, was … angeht"
   },
   {
     "tr": "Maliyet … seçen kimdeyse orada durmalı",
@@ -397,7 +397,7 @@
   {
     "tr": "Konumum: vermeliler, önemli bir sınırla.",
     "kind": "monologue.targets.tr",
-    "de": "Meine Position: sie sollten sie geben, mit einer wichtigen Grenze."
+    "de": "Meine Position: Arbeitgeber sollten sie geben, mit einer wichtigen Grenze."
   },
   {
     "tr": "Deneyimime göre gerçekten işe yarayan şey …",
@@ -405,9 +405,9 @@
     "de": "Nach meiner Erfahrung hilft wirklich …"
   },
   {
-    "tr": "Karar …'de olmalı, hem de … olduğu için değil",
+    "tr": "Karar …'de olmalı; ama … olduğu için değil",
     "kind": "monologue.targets.tr",
-    "de": "Die Entscheidung sollte bei … liegen, und zwar nicht, weil …"
+    "de": "Die Entscheidung sollte bei … liegen, aber nicht, weil …"
   },
   {
     "tr": "Soru genelde … gibi soruluyor, oysa aslında …",
@@ -475,9 +475,9 @@
     "de": "Mir ist klar, dass sich das aus der Position … leichter sagen lässt"
   },
   {
-    "tr": "Bence bir yerde doğru değerleniyor, başka bir yerde fazlasıyla.",
+    "tr": "Bence bir yerde değeri doğru biçiliyor, başka bir yerde ise fazlasıyla abartılıyor.",
     "kind": "monologue.targets.tr",
-    "de": "Ich finde, an einer Stelle wird sie richtig bewertet, an einer anderen deutlich zu hoch."
+    "de": "Ich finde, an einer Stelle wird ihr Wert richtig eingeschätzt, an einer anderen wird sie deutlich übertrieben."
   },
   {
     "tr": "Sıram şöyle olurdu: önce varsayılanlar, sonra sürtünme, en son insanlar.",
@@ -487,7 +487,7 @@
   {
     "tr": "Hazırsın.",
     "kind": "drill.tr",
-    "de": "Du bist fertig."
+    "de": "Du bist bereit."
   },
   {
     "tr": "Gördün mü?",
@@ -502,7 +502,7 @@
   {
     "tr": "Hazır mısın?",
     "kind": "drill.tr",
-    "de": "Bist du fertig?"
+    "de": "Bist du bereit?"
   },
   {
     "tr": "Otobüs dolu.",

@@ -101,7 +101,7 @@ export const enC1U16: SkillExercise[] = [
       "Now the measurement, and this one runs the opposite way from the one this course usually finds. German takes the same two ideas and fuses them into one verb: written together, conjugated together, and listed in a dictionary as a single entry. The same is true of standing empty and of running dry.\n" +
       "So here it is English that keeps the pieces apart and German that compounds, which is the reverse of what happens with nouns, where German builds one word out of four and English keeps the four. The habit is not a property of a language as a whole. It belongs to a class, and this class goes the other way.\n" +
       "The consequence for a learner is the useful half. A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up; an English speaker meeting the German verb has to accept that it can, and that a new one cannot simply be made up.\n" +
-      "Behind the rural exodus stands a failed farm succession. One more posture verb, in a different job this time, holding the front slot of a sentence with no person anywhere in it.",
+      "Behind the rural exodus stands a failed farm succession. One more posture verb, in a different job this time, in a sentence whose front slot has gone to a place, with no person anywhere in it.",
     questions: [
       {
         text: "What carries the state?",
@@ -471,11 +471,11 @@ export const enC1U16: SkillExercise[] = [
         kind: "build",
         tr: "Kırdan kente göçün arkasında başarısız bir çiftlik devri duruyor.",
         answer: "Behind the rural exodus stands a failed farm succession.",
-        hint: "Yine bir duruş fiili, bu kez baştaki yuvada.",
+        hint: "Yine bir duruş fiili; bu kez baştaki yuvayı bir yer almış.",
       },
       {
         kind: "build",
-        tr: "Planda arazi tüketimi, köyde ekili bir arazi.",
+        tr: "Planda arazi tüketimi, köyde ekilebilir bir tarla.",
         answer: "In the plan it is land consumption; in the village, an arable field.",
         hint: "İki oda, iki sözcük; ikinci yarıda fiil yok.",
       },
@@ -543,7 +543,7 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yöntem, toprağı koruyan olsa da, toprak verimliliğini onarmıyor.",
+        tr: "Yöntem, toprağı korusa da, toprak verimliliğini onarmıyor.",
         answer: "The method, albeit soil-conserving, does not restore soil fertility.",
         hint: "Korumak ile onarmak iki ayrı fiil.",
       },

@@ -9,7 +9,7 @@
  { "tr": "tek yön bileti", "kind": "gloss.tr", "de": "einfache Fahrkarte" },
  { "tr": "terfi ettirmek", "kind": "gloss.tr", "de": "befördern" },
  { "tr": "trafik levhası", "kind": "gloss.tr", "de": "Verkehrsschild" },
- { "tr": "Yanayım, ama …", "kind": "gloss.tr", "de": "Ich bin dafür, aber …" },
+ { "tr": "Bu fikirden yanayım ama …", "kind": "gloss.tr", "de": "Ich bin dafür, aber …" },
  { "tr": "… eski şehirde.", "kind": "gloss.tr", "de": "… ist in der Altstadt." },
  { "tr": "… kararı alındı", "kind": "gloss.tr", "de": "Wir haben entschieden, dass …" },
  { "tr": "araba kullanmak", "kind": "gloss.tr", "de": "Auto fahren" },
@@ -20,7 +20,7 @@
  { "tr": "Lütfen … getir.", "kind": "gloss.tr", "de": "Bitte bring … mit." },
  { "tr": "Ne kadar sürer?", "kind": "gloss.tr", "de": "Wie lange dauert es?" },
  { "tr": "Ne kadar tutar?", "kind": "gloss.tr", "de": "Was kostet es?" },
- { "tr": "Otobüs gelmedi.", "kind": "gloss.tr", "de": "Der Bus ist nicht da." },
+ { "tr": "Otobüs gelmedi.", "kind": "gloss.tr", "de": "Der Bus ist nicht gekommen." },
  { "tr": "Sen en iyi …sın", "kind": "gloss.tr", "de": "Du bist der beste …" },
  { "tr": "… günü görüşürüz", "kind": "gloss.tr", "de": "Wir sehen uns am …" },
  { "tr": "… olmuş olabilir", "kind": "gloss.tr", "de": "Es kann … gewesen sein" },
@@ -66,7 +66,7 @@
  { "tr": "Yaşanan şu oldu: …", "kind": "gloss.tr", "de": "Passiert ist Folgendes: …" },
  { "tr": "Yine yapar mıydım?", "kind": "gloss.tr", "de": "Würde ich es wieder tun?" },
  { "tr": "…'e itiraz ediyoruz", "kind": "gloss.tr", "de": "Wir widersprechen …" },
- { "tr": "Acil bir durumda, …", "kind": "gloss.tr", "de": "In einem dringenden Fall, …" },
+ { "tr": "Acil bir durumda, …", "kind": "gloss.tr", "de": "Im Notfall …" },
  { "tr": "Ailemde … kişi var.", "kind": "gloss.tr", "de": "In meiner Familie sind … Personen." },
  { "tr": "Birazdan görüşürüz!", "kind": "gloss.tr", "de": "Bis gleich!" },
  { "tr": "Bize biraz … lazım.", "kind": "gloss.tr", "de": "Etwas … brauchen wir noch." },
@@ -141,5 +141,6 @@
  { "tr": "Yazının değinmediği şey …", "kind": "gloss.tr", "de": "Was der Text nicht behandelt, ist …" },
  { "tr": "Geçen hafta sonu … gittim.", "kind": "gloss.tr", "de": "Letztes Wochenende bin ich nach … gefahren." },
  { "tr": "Genelde gözden kaçan şey …", "kind": "gloss.tr", "de": "Was meistens übersehen wird, ist …" },
- { "tr": "O uzun boylu ve çok komik.", "kind": "gloss.tr", "de": "Er ist groß und sehr lustig." }
+ { "tr": "O uzun boylu ve çok komik.", "kind": "gloss.tr", "de": "Er ist groß und sehr lustig." },
+ { "tr": "„We're coming by train, so no parking.“", "kind": "explain", "de": "„We're coming by train, so no parking.“" }
 ]

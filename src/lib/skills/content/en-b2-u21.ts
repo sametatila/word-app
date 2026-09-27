@@ -330,8 +330,8 @@ export const enB2U21: SkillExercise[] = [
       { de: "afterward", tr: "sonradan" },
       { de: "backwards", tr: "tersinden" },
       { de: "catches", tr: "yakalıyor" },
-      { de: "passive", tr: "pasif" },
-      { de: "active", tr: "aktif" },
+      { de: "passive", tr: "edilgen" },
+      { de: "active", tr: "etken" },
     ],
     minutes: 7,
     segments: [
@@ -489,7 +489,7 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Barışması istenince reddettiler.",
+        tr: "Barışmaları istenince reddettiler.",
         answer: "Asked to reconcile, they refused.",
         hint: "Edilgen ortaç: „having been“ düşüyor.",
       },

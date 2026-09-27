@@ -197,7 +197,7 @@
  {
   "tr": "Plan için „going to“; zaman sözcüğü cümlenin sonunda.",
   "kind": "build.hint",
-  "de": "Für einen Plan „going to“; das Zeitwort steht am Satzende, nicht wie im Deutschen mitten im Satz."
+  "de": "Für einen Plan „going to“; die Zeitangabe steht am Satzende, nicht wie im Deutschen mitten im Satz."
  },
  {
   "tr": "„weather“ sayılamaz ve „the“ ile geliyor: the weather.",
@@ -205,9 +205,9 @@
   "de": "„weather“ ist nicht zählbar und steht mit „the“: the weather — wie „das Wetter“."
  },
  {
-  "tr": "„have to“ sonrası „to“ + fiil. Aynı anlam, başka biçim.",
+  "tr": "„have to“ sonrası eksiz fiil: have to wait. Aynı anlam, başka biçim.",
   "kind": "build.hint",
-  "de": "Nach „have to“ kommt „to“ + Verb. Dieselbe Bedeutung, eine andere Form; das Deutsche braucht dort kein „zu“."
+  "de": "Nach „have to“ kommt die Grundform des Verbs: have to wait. Dieselbe Bedeutung, eine andere Form."
  },
  {
   "tr": "„need“ nesnesini doğrudan alır; „need to a doctor“ olmaz.",

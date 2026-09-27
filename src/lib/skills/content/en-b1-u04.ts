@@ -382,7 +382,7 @@ export const enB1U04: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Taşınma kartını doldur.",
-        facts: "Kamyonet dokuzda; önce mutfak; kırılacak kutu elde taşındı; sayaç fotoğrafı dokuz onda.",
+        facts: "Kamyonet dokuzda; önce mutfak; kırılacak kutu elde taşındı; sayaç fotoğrafı dokuzu on geçe.",
         fields: [
           { label: "Van", answer: "at nine", accept: ["nine"] },
           { label: "First", answer: "the kitchen", accept: ["kitchen"] },

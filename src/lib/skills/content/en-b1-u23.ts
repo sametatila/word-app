@@ -68,7 +68,7 @@ export const enB1U23: SkillExercise[] = [
     minutes: 7,
     text:
       "Before they built the road, this was a field. Simple past in both halves, and nobody is confused: „before“ has already put the two events in order, so the verb does not have to do it again.\n" +
-      "Now take the same idea away from that conjunction. The farm had closed before we moved here. Here the order is the point — the closing came first and the moving second — and „had closed“ says so.\n" +
+      "Now keep the same conjunction and change the focus. The farm had closed before we moved here. Here the order is the point — the closing came first and the moving second — and „had closed“ says so.\n" +
       "Both sentences are correct, and the difference between them is small. That is why the rule is easy to state and hard to feel: when the conjunction does the ordering, the past perfect becomes a choice.\n" +
       "They had cut the forest before anyone noticed. This one keeps the „had“, because the sentence is about the gap between the two events and not about either of them.\n" +
       "Then there is „by the time“, and that one takes the choice away. By the time I understood, the memory had faded. „By the time“ names a deadline, not an event; the second verb has to be the earlier one, and only the past perfect can carry it.\n" +

@@ -137,12 +137,12 @@
  {
   "tr": "Bir belediyenin gürültü broşürü. Hangi adım hangi sırada geliyor?",
   "kind": "intro",
-  "en": "A council pamphlet about noise. Which step comes in which order?"
+  "en": "A city pamphlet about noise. Which step comes in which order?"
  },
  {
   "tr": "Bir foruma ilk deneyimini anlat: ne oldu ve o an nasıl hissettin?",
   "kind": "intro",
-  "en": "Tell a forum about one of your first times: what happened and how did you feel?"
+  "en": "Tell a forum about a first experience of yours: what happened and how did you feel?"
  },
  {
   "tr": "Bir ilacın nasıl kullanılacağını yaz. Resmî emirde zamiri unutma.",
@@ -162,7 +162,7 @@
  {
   "tr": "Bir şirketin uzaktan çalışma yönergesi. Neyi kim karara bağlıyor?",
   "kind": "intro",
-  "en": "A company's remote working policy. Who decides what?"
+  "en": "A company's remote work policy. Who decides what?"
  },
  {
   "tr": "Bir toplantıda itiraz. Kim neyi reddediyor, kim yalnız erteliyor?",
@@ -182,7 +182,7 @@
  {
   "tr": "Der Vergleich hinkt: benzetmenin sınırını kabul eden hazır kalıp.",
   "kind": "explain",
-  "en": "Der Vergleich hinkt: a ready phrase that admits the limit of a comparison."
+  "en": "Der Vergleich hinkt: a set phrase that admits the limit of a comparison."
  },
  {
   "tr": "Geçmişte gerçekleşmemiş olanak „hätte“ + çift mastar ile kurulur.",
@@ -322,7 +322,7 @@
  {
   "tr": "Utanç sende ise silinir; karşı taraf küçük düşürüldüyse silinmez.",
   "kind": "explain",
-  "en": "If the embarrassment is yours it can be wiped away; if the other side was shown up, it cannot."
+  "en": "If the embarrassment is yours it can be wiped away; if the other side was humiliated, it cannot."
  },
  {
   "tr": "Uzun bir dostluğu anlat. Türkçe 'bilmek' Almancada ikiye ayrılır.",
@@ -347,7 +347,7 @@
  {
   "tr": "Yanlış: konuşma dilinde sık karıştırılıyor, yazıda ayrım geçerli.",
   "kind": "explain",
-  "en": "False: it is often muddled in speech, but the distinction holds in writing."
+  "en": "False: it is often mixed up in speech, but the distinction holds in writing."
  },
  {
   "tr": "zwar … jedoch: önce taviz, sonra itiraz. İkinci bölüm ağır basar.",
@@ -362,7 +362,7 @@
  {
   "tr": "„…erst nach elf Monaten erteilt worden“ — bu sürede tadilat durdu.",
   "kind": "explain",
-  "en": "„…erst nach elf Monaten erteilt worden“ — the building work stopped in that time."
+  "en": "„…erst nach elf Monaten erteilt worden“ — the renovation was on hold during that time."
  },
  {
   "tr": "„Am Freitagabend bin ich losgefahren“ — pazar günü ise dönüş günü.",
@@ -492,7 +492,7 @@
  {
   "tr": "Biri izinsiz devamsızlık, öteki biletsiz seyahat — ikisi de ihlal.",
   "kind": "explain",
-  "en": "One is absence without leave, the other traveling without a ticket — both are offenses."
+  "en": "One is unexcused absence, the other traveling without a ticket — both are offenses."
  },
  {
   "tr": "Bitpazarı günlüğü: ne satıldı, ne satılmadı, pazarlık nasıl gitti?",

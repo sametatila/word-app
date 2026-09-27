@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  The document that they need is the original. ·
  *           The copy I sent was not valid. ·
  *           The woman who checked it asked for more. ·
- *           I decided to appeal against the decision. ·
+ *           I decided to appeal the decision. ·
  *           They insisted on seeing the original. ·
  *           I have the right to ask for a review. ·
  *           I am starting the new chapter on Monday. ·
@@ -54,7 +54,7 @@ export const enB1U13: SkillExercise[] = [
     text:
       "The application was rejected on the ninth of April for one reason: a missing document.\n" +
       "The document that they need is the original. I had sent a copy, translated, with a stamp from the office that translated it. The copy I sent was not valid, and nobody told me that on the phone in March when I asked exactly this question.\n" +
-      "I decided to appeal against the decision. Not because I was angry — because the rule they used is written in one line and that line has two readings.\n" +
+      "I decided to appeal the decision. Not because I was angry — because the rule they used is written in one line and that line has two readings.\n" +
       "They insisted on seeing the original. I brought it in person on the twenty-first. The woman who checked it asked for more: the original, the translation, and the receipt from the translator.\n" +
       "I have the right to ask for a review. That sentence is on the back of the letter, in the same size as everything else, and I had read the letter twice without finding it.\n" +
       "In the meantime the case is being reviewed and nothing is decided. I have learned one thing that is worth more than the document: ask what happens if the answer is no, on the first day, while everybody is still friendly.",
@@ -94,7 +94,7 @@ export const enB1U13: SkillExercise[] = [
         items: [
           "I sent a translated copy.",
           "The application was rejected.",
-          "I decided to appeal against the decision.",
+          "I decided to appeal the decision.",
           "I brought the original in person.",
         ],
         explain: "Kopya, ret, itiraz kararı, asıl belgenin götürülmesi.",
@@ -124,7 +124,7 @@ export const enB1U13: SkillExercise[] = [
       { de: "tutor", tr: "özel öğretmen" },
       { de: "least", tr: "en az" },
       { de: "the fourth", tr: "dördüncü" },
-      { de: "studying", tr: "tekrar" },
+      { de: "studying", tr: "ders çalışma" },
       { de: "itself", tr: "kendi kendine" },
       { de: "session", tr: "oturum" },
       { de: "impossible", tr: "imkânsız" },
@@ -140,7 +140,7 @@ export const enB1U13: SkillExercise[] = [
       "And one rule from last year, which is the only reason I passed: if I cannot concentrate after ten minutes, I stop and move the session. A bad hour is worse than no hour, because a bad hour teaches you that the chapter is impossible.",
     questions: [
       {
-        text: "Why is the chapter starting on Monday arranged?",
+        text: "How do we know the Monday start is arranged?",
         options: ["the tutor is expecting questions", "it is in the planner", "the exam is on Monday"],
         answer: 0,
         explain: "„the tutor and I agreed on it and she is expecting the questions on Thursday.“",
@@ -354,7 +354,7 @@ export const enB1U13: SkillExercise[] = [
     genre: "formal",
     intro: "Üç kalıp, üç ayrı biçim. Seçimi önceki sözcük yapıyor.",
     gloss: [
-      { de: "appeal against", tr: "itiraz etmek" },
+      { de: "appeal", tr: "itiraz etmek" },
       { de: "insisted on", tr: "ısrar ettiler" },
       { de: "a review", tr: "yeniden inceleme" },
       { de: "the ninth", tr: "dokuzu" },
@@ -364,8 +364,8 @@ export const enB1U13: SkillExercise[] = [
       {
         kind: "build",
         tr: "Karara itiraz etmeye karar verdim.",
-        answer: "I decided to appeal against the decision.",
-        hint: "„decide“ MASTAR alıyor; „appeal“ kendi edatını taşıyor: against.",
+        answer: "I decided to appeal the decision.",
+        hint: "„decide“ MASTAR alıyor; „appeal“ ise Amerikan İngilizcesinde edatsız, doğrudan nesne alıyor.",
       },
       {
         kind: "build",
@@ -388,7 +388,7 @@ export const enB1U13: SkillExercise[] = [
       {
         kind: "form",
         prompt: "İtiraz kartını doldur.",
-        facts: "Başvuru dokuz nisanda reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
+        facts: "Başvuru 9 Nisan'da reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
         fields: [
           { label: "Rejected", answer: "the ninth of April", accept: ["April 9", "April 9th", "9 April"] },
           { label: "Reason", answer: "a missing document", accept: ["missing document"] },

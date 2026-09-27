@@ -65,7 +65,7 @@
     "en": "Possessivartikel and negation: kein or nicht"
   },
   {
-    "tr": "Konjunktiv II der Vergangenheit ve gerçekdışı koşul",
+    "tr": "Konjunktiv II der Vergangenheit ve gerçek dışı koşul",
     "kind": "focus",
     "en": "Konjunktiv II der Vergangenheit and unreal conditions"
   },
@@ -305,7 +305,7 @@
     "en": "Preposition and article are frozen"
   },
   {
-    "tr": "Gerçekdışı koşul: iki yan",
+    "tr": "Gerçek dışı koşul: iki yan",
     "kind": "explanation.heading",
     "en": "Unreal condition: both halves"
   },
@@ -615,7 +615,7 @@
     "en": "Instead of „Das kann gemacht werden“, writing often says „Das lässt sich machen“. The structure looks active but the meaning is passive and it carries a „können“ inside it. The subject is the thing that is done; who does it is not said."
   },
   {
-    "tr": "Nesne bir KİŞİ ise bu biçimler kullanılmaz. Soru „edat + wen/wem“, işaret ise „edat + zamir“ olur: „Auf wen wartest du?“ — „Auf ihn.“ Bu ayrım Almancada zorunludur ve Türkçede karşılığı yoktur.",
+    "tr": "Nesne bir KİŞİ ise bu biçimler kullanılmaz. Soru „edat + wen/wem“, işaret ise „edat + zamir“ olur: „Auf wen wartest du?“ — „Auf ihn.“ Bu ayrım Almancada zorunludur; Türkçe soruda „kim/ne“ diye ayırır ama işarette ikisine de „onu“ der.",
     "kind": "explanation.tr",
     "en": "These forms are not used when the object is a PERSON. The question becomes „preposition + wen/wem“ and the pointing form „preposition + pronoun“: „Auf wen wartest du?“ — „Auf ihn.“ English keeps the preposition too, but German never allows wo(r)- for a person."
   },

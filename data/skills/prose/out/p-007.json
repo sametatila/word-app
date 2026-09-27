@@ -12,7 +12,7 @@
  {
   "tr": "„Das macht 38 Euro.“ 40 Euro verilen para — üstü bahşiş.",
   "kind": "explain",
-  "en": "„Das macht 38 Euro.“ 40 Euro is what was handed over — the rest is a tip."
+  "en": "„Das macht 38 Euro.“ 40 euros is what was handed over — the rest is a tip."
  },
  {
   "tr": "„Der Koffer gefällt mir gar nicht.“ — „gar nicht“ = hiç.",
@@ -172,7 +172,7 @@
  {
   "tr": "Kavgadan sonra 'siz'e dönmek herkesin duyduğu bir mesaj.",
   "kind": "explain",
-  "en": "Going back to 'Sie' after a row is a message everybody hears."
+  "en": "Going back to 'Sie' after a fight is a message everybody hears."
  },
  {
   "tr": "Kira indirimi rehberi. Hangi adım hangi hakkı doğuruyor?",
@@ -225,7 +225,7 @@
   "en": "The insurer refuses to pay. Which clause hides the reason?"
  },
  {
-  "tr": "Sorumluluk bireye kayınca çerçeve sorusu gözden düşüyor.",
+  "tr": "Sorumluluk bireye kayınca çerçeve sorusu gözden kayboluyor.",
   "kind": "explain",
   "en": "When responsibility shifts to the individual, the question of the frame drops away."
  },
@@ -282,7 +282,7 @@
  {
   "tr": "„Die Lieferung ist kostenlos.“ 17 Euro ürünlerin toplamı.",
   "kind": "explain",
-  "en": "„Die Lieferung ist kostenlos.“ 17 Euro is the total for the items."
+  "en": "„Die Lieferung ist kostenlos.“ 17 euros is the total for the items."
  },
  {
   "tr": "„Ich spiele Klavier, seit ich zehn bin.“ Gitar çalan Mia.",
@@ -522,7 +522,7 @@
  {
   "tr": "Sayı azken sonuç çıkarmamak — deyimin taşıdığı asıl öğüt.",
   "kind": "explain",
-  "en": "Drawing no conclusion from small numbers — that is what the idiom is for."
+  "en": "Drawing no conclusion from small numbers — that is the real advice the idiom carries."
  },
  {
   "tr": "Sıcak bir hafta konuşuluyor. Ne bekleniyor, ne yapılıyor?",
@@ -682,7 +682,7 @@
  {
   "tr": "Bir stajın ilk haftası. Hangi gün ne yapıldı, sırayla oku.",
   "kind": "intro",
-  "en": "The first week of a placement. What happened on which day, read it in order."
+  "en": "The first week of an internship. What happened on which day, read it in order."
  },
  {
   "tr": "Bir toplantı dağılmak üzere. Sorun ne, nasıl bir çıkış yolu öneriliyor?",
@@ -723,5 +723,10 @@
   "tr": "Edilgende ikinci hâl değil üçüncü hâl gelir: „was stolen“.",
   "kind": "explain",
   "en": "The passive takes the past participle, not the past tense: „was stolen“."
+ },
+ {
+  "tr": "„I'll weigh it first. Two kilos. Where to?“",
+  "kind": "explain",
+  "en": "„I'll weigh it first. Two kilos. Where to?“"
  }
 ]

@@ -252,7 +252,7 @@ export const enB2P3: SkillExercise[] = [
           { de: "We have the machines serviced …", tr: "Cihazlara … bakım yaptırıyoruz" },
           { de: "Repairs are said to take …", tr: "Onarımların … sürdüğü söyleniyor" },
           { de: "Please do not …", tr: "Lütfen … yapmayın" },
-          { de: "In an urgent case, …", tr: "Acil bir durumda, …" },
+          { de: "In urgent cases, …", tr: "Acil bir durumda, …" },
         ],
         sample:
           "How to get a machine repaired\n\n" +
@@ -267,7 +267,7 @@ export const enB2P3: SkillExercise[] = [
           "will be brought from the storeroom.\n\n" +
           "Please do not open anything yourself, and please do not have a repair done privately and send us the " +
           "bill. Both are refused, and the second one is refused twice.\n\n" +
-          "In an urgent case, for example water or smoke, call the internal number three three three first and " +
+          "In urgent cases, for example water or smoke, call the internal number three three three first and " +
           "write the email afterward.",
       },
     ],

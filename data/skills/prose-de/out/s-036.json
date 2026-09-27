@@ -130,11 +130,6 @@
   "de": "Ein „that“ in Subjektstellung darf nicht wegfallen, weil es das Subjekt des Relativsatzes ist."
  },
  {
-  "tr": "sıra",
-  "kind": "gloss.tr",
-  "de": "Reihe"
- },
- {
   "tr": "kimin",
   "kind": "gloss.tr",
   "de": "dessen"
@@ -448,5 +443,10 @@
   "tr": "arkadaki düğmeyi basılı tut",
   "kind": "gloss.tr",
   "de": "halte den hinteren Knopf gedrückt"
+ },
+ {
+  "tr": "uzunluk",
+  "kind": "gloss.tr",
+  "de": "die Länge"
  }
 ]

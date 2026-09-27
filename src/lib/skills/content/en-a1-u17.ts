@@ -45,7 +45,7 @@ export const enA1U17: SkillExercise[] = [
       "HOUSE RULES\n\n" +
       "You must be quiet from ten at night to seven in the morning. You must not make noise on Sunday.\n\n" +
       "The stairs must be clean. Please put the trash in the trash can downstairs, not in front of your door.\n\n" +
-      "Is it allowed to have a party? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
+      "Are parties allowed? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
       "Water and electricity are not included in the rent. Each apartment pays the bill every month.\n\n" +
       "In a fire: don't take the elevator. Go down the stairs.\n\n" +
       "Thank you!",
@@ -93,7 +93,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 17,
-    title: "Moving house",
+    title: "Moving day",
     genre: "dialogue",
     intro: "Taşınma günü. Kutu ağır, asansör çalışmıyor — kim ne yapıyor?",
     gloss: [
@@ -191,7 +191,7 @@ export const enA1U17: SkillExercise[] = [
       { speaker: "Son", text: "Yes. What do I have to do?" },
       { speaker: "Mother", text: "First, tidy up your room. Then take out the trash." },
       { speaker: "Son", text: "The trash can is full again!" },
-      { speaker: "Mother", text: "Yes, and after that you have to wash the plates." },
+      { speaker: "Mother", text: "Yes, and after that you have to wash the dishes." },
       { speaker: "Son", text: "Do I have to dry them too?" },
       { speaker: "Mother", text: "Yes. Wash them and then dry them, please." },
       { speaker: "Son", text: "And the floor?" },
@@ -203,7 +203,7 @@ export const enA1U17: SkillExercise[] = [
     questions: [
       {
         text: "What does the son have to do first?",
-        options: ["tidy up his room", "take out the trash", "wash the plates"],
+        options: ["tidy up his room", "take out the trash", "wash the dishes"],
         answer: 0,
         explain: "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
       },
@@ -222,7 +222,7 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He has to wash and then ___ the plates.",
+        text: "He has to wash and then ___ the dishes.",
         options: [],
         answer: 0,
         accept: ["dry"],

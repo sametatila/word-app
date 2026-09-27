@@ -60,7 +60,7 @@ export const enC1P4: SkillExercise[] = [
       "Do you still enjoy it?\n" +
       "Most days. Ask me again in February, working in an unheated church, having driven ninety minutes with " +
       "the tools on the back seat. But there is a moment, usually about twenty minutes in, when the instrument " +
-      "stops fighting. Whatever else the job is, that has not got old.",
+      "stops fighting. Whatever else the job is, that has not gotten old.",
     questions: [
       {
         text: "What does Halldór say his job really is?",
@@ -284,7 +284,7 @@ export const enC1P4: SkillExercise[] = [
           "same day because a child is sick would be charged, while appointments canceled a month ahead for no " +
           "reason would not.\n\n" +
           "We propose the following amendment: that the fee apply only from the second missed appointment in " +
-          "twelve months, that same-day cancellations for care or illness be exempt on a stated reason, and " +
+          "twelve months, that same-day cancellations for care or illness be exempt if a reason is given, and " +
           "that the figures be published by time of day so that the scheduling question can be settled.\n\n" +
           "We would ask for a written response by the thirtieth of September and would be glad to supply our own " +
           "data on first-slot attendance.",

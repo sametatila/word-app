@@ -42,7 +42,7 @@ export const enA2U09: SkillExercise[] = [
     gloss: [
       { de: "sink", tr: "lavabo" },
       { de: "easier", tr: "daha kolay" },
-      { de: "Best wishes", tr: "saygılarımla" },
+      { de: "Sincerely", tr: "saygılarımla" },
     ],
     minutes: 5,
     text:
@@ -54,7 +54,7 @@ export const enA2U09: SkillExercise[] = [
       "Could you send someone today or tomorrow? I am at home after four.\n" +
       "If it is easier for you, I can be at home on Saturday too.\n" +
       "Thank you very much.\n" +
-      "Best wishes,\n" +
+      "Sincerely,\n" +
       "Ela Demir",
     questions: [
       {

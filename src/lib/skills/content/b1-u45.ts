@@ -61,7 +61,7 @@ export const b1U45: SkillExercise[] = [
       "warm ist. Dann muss jemand Hilfe holen.\n\n" +
       "Und lassen Sie sich im Zweifel abholen, statt weiterzugehen. " +
       "Wer zurechtkommen will, kommt meistens auch zurecht — aber im " +
-      "Sturm ist das keine Frage von Willen, sondern von Wetter.",
+      "Sturm ist das keine Frage des Willens, sondern des Wetters.",
     questions: [
       {
         text: "Wo ist man bei Donner sicherer?",
@@ -321,7 +321,7 @@ export const b1U45: SkillExercise[] = [
       {
         kind: "build",
         tr: "Üşürseniz ıslak şeyleri çıkarın; yapay kumaştan giysiler daha çabuk kurur.",
-        answer: "Wenn Ihnen kalt wird, ziehen Sie nasse Sachen aus; künstliche Kleidung trocknet schneller.",
+        answer: "Wenn Ihnen kalt wird, ziehen Sie nasse Sachen aus; Kleidung aus künstlichem Stoff trocknet schneller.",
         hint: "„kalt werden“ kişiyi Dativ'e koyar.",
       },
       {
@@ -391,7 +391,7 @@ export const b1U45: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "B1 yolculuğunu kapat: nereden başladın, en zor ne oldu, ne zaman ilk kez 'oldu' dedin, şimdi neyi yapabiliyorsun ve neyi hâlâ yapamıyorsun, ve bundan sonra ne yapacaksın. En az üç yan cümle kullan ve fiilleri doğru yere koy.",
+        prompt: "B1 yolculuğunu kapat: nereden başladın, en zor ne oldu, ne zaman ilk kez 'oldu' dedin, şimdi neyi yapabiliyorsun ve neyi hâlâ yapamıyorsun ve bundan sonra ne yapacaksın. En az üç yan cümle kullan ve fiilleri doğru yere koy.",
         checklist: [
           "Başlangıç noktası anlatılmış mı?",
           "En zor şey somut mu?",
@@ -408,7 +408,7 @@ export const b1U45: SkillExercise[] = [
           "Reden. Ich habe monatelang alles im Kopf übersetzt, und wenn " +
           "ich endlich fertig war, war das Gespräch schon weiter.\n\n" +
           "Der Moment kam im letzten Winter beim Arzt. Ich habe erklärt, " +
-          "was mir weh tut, und erst danach gemerkt, dass ich nicht " +
+          "was mir wehtut, und erst danach gemerkt, dass ich nicht " +
           "übersetzt hatte. Seitdem weiß ich, dass ich im Alltag " +
           "zurechtkomme.\n\n" +
           "Was ich noch nicht kann, ist auch klar: schnelle Gespräche " +

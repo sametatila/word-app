@@ -119,7 +119,7 @@ export const deB1P20: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Frau Vogt", text: "Guten Morgen, ich bin Karin Vogt von der Stadtbibliothek. Viele sagen mir: Ich würde gern mehr lesen, aber ich habe keine Zeit. Heute drei Ideen dagegen." },
-      { speaker: "Frau Vogt", text: "Erstens: Tragen Sie immer ein Buch bei sich. Man liest nicht mehr, indem man Zeit sucht, sondern indem man kurze Wartezeiten nutzt, beim Arzt oder an der Haltestelle." },
+      { speaker: "Frau Vogt", text: "Erstens: Tragen Sie immer ein Buch bei sich. Mehr liest man nicht, indem man Zeit sucht, sondern indem man kurze Wartezeiten nutzt, beim Arzt oder an der Haltestelle." },
       { speaker: "Frau Vogt", text: "Zweitens: Lesen Sie ein Buch nicht nur deshalb zu Ende, weil Sie es angefangen haben. Wenn es Sie nach fünfzig Seiten langweilt, nehmen Sie ein anderes." },
       { speaker: "Frau Vogt", text: "Das klingt unhöflich gegenüber dem Autor. Aber ein langweiliges Buch ist der häufigste Grund, warum Menschen monatelang gar nichts lesen." },
       { speaker: "Frau Vogt", text: "Drittens: Statt abends noch schnell die Nachrichten zu lesen, lesen Sie im Bett zehn Seiten aus einem Roman. Danach schlafen die meisten auch besser." },

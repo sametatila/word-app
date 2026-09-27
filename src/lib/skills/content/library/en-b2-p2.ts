@@ -334,9 +334,9 @@ export const enB2P2: SkillExercise[] = [
     explanation: [
       {
         heading: "Türkçede önde, İngilizcede arkada",
-        tr: "Türkçede tarif ismin önüne gelir: „yan komşuda oturan kadın“. İngilizcede ismin arkasına tam bir yan cümle eklenir ve bu cümle who, which, that, where ya da whose ile başlar.",
+        tr: "Türkçede tarif ismin önüne gelir: „yan evde oturan kadın“. İngilizcede ismin arkasına tam bir yan cümle eklenir ve bu cümle who, which, that, where ya da whose ile başlar.",
         examples: [
-          { de: "The woman who lives next door is a nurse.", tr: "Yan komşuda oturan kadın hemşire." },
+          { de: "The woman who lives next door is a nurse.", tr: "Yan evde oturan kadın hemşire." },
           { de: "This is the town where I grew up.", tr: "Burası büyüdüğüm kasaba." },
           { de: "That is the man whose car was stolen.", tr: "Arabası çalınan adam o." },
         ],
@@ -355,7 +355,7 @@ export const enB2P2: SkillExercise[] = [
         tr: "Zaten belli olan bir şey hakkında ek bilgi veren ilgi cümlesi iki virgülle ayrılır. Burada „that“ KULLANILMAZ ve ilgi zamiri atılamaz. Cümleyi çıkarırsan geriye anlamlı bir cümle kalır.",
         examples: [
           { de: "My brother, who lives in Rome, is a teacher.", tr: "Roma'da yaşayan erkek kardeşim öğretmen.", note: "tek kardeş" },
-          { de: "The report, which was published in March, is now online.", tr: "Mart'ta yayımlanan rapor artık internette." },
+          { de: "The report, which was published in March, is now online.", tr: "Martta yayımlanan rapor artık internette." },
           { de: "Banks, whose job is to dislike surprises, are careful.", tr: "İşi sürprizlerden hoşlanmamak olan bankalar temkinlidir." },
         ],
       },

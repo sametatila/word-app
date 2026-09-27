@@ -22,7 +22,7 @@ export const deB1P6: SkillExercise[] = [
     gloss: [
       { de: "der Versuch", tr: "deneme", en: "trial" },
       { de: "die Belegschaft", tr: "çalışanlar", en: "workforce" },
-      { de: "der Umsatz", tr: "ciro", en: "turnover" },
+      { de: "der Umsatz", tr: "ciro", en: "revenue" },
       { de: "die Erreichbarkeit", tr: "ulaşılabilirlik", en: "availability" },
       { de: "die Besprechung", tr: "toplantı", en: "meeting" },
       { de: "einführen", tr: "uygulamaya koymak", en: "to introduce" },
@@ -282,7 +282,7 @@ export const deB1P6: SkillExercise[] = [
         "Als ich im letzten Semester nur vier Tage in der Bibliothek war, habe ich trotzdem gleich viel " +
         "geschafft, einfach weil ich vorher geplant habe, was an dem Tag fertig werden muss. " +
         "Nicht übertragbar ist das auf Arbeit, bei der jemand anwesend sein muss: In einer Bäckerei " +
-        "oder auf einer Station kann man Kunden und Patienten nicht schneller machen. " +
+        "oder auf einer Station lässt sich die Arbeit mit Kunden und Patienten nicht beliebig beschleunigen. " +
         "Meine Meinung würde sich ändern, wenn Studien zeigen würden, dass die Fehler zunehmen, " +
         "sobald die Zeit knapper wird.",
       rubricHint:

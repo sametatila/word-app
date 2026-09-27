@@ -77,7 +77,7 @@
  {
   "tr": "İki gelecek biçimi yan yana. Hangi karar önceden verilmiş, hangisi şimdi?",
   "kind": "intro",
-  "de": "Zwei Formen der Zukunft nebeneinander. Welche Entscheidung ist alt, welche fällt jetzt?"
+  "de": "Zwei Formen der Zukunft nebeneinander. Welche Entscheidung fiel vorher, welche fällt jetzt?"
  },
  {
   "tr": "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
@@ -107,7 +107,7 @@
  {
   "tr": "Üç hedef sırayla, sonra başarının kendi tanımı geliyor.",
   "kind": "explain",
-  "de": "Drei Ziele der Reihe nach, dann kommt die eigene Bestimmung von Erfolg."
+  "de": "Drei Ziele der Reihe nach, dann kommt die eigene Definition von Erfolg."
  },
  {
   "tr": "Önce mektup, sonra okuma, sonra anne, en son kız kardeş.",
@@ -340,11 +340,6 @@
   "de": "Art"
  },
  {
-  "tr": "fark",
-  "kind": "gloss.tr",
-  "de": "Unterschied"
- },
- {
   "tr": "hâlâ",
   "kind": "gloss.tr",
   "de": "noch"
@@ -352,7 +347,7 @@
  {
   "tr": "masa",
   "kind": "gloss.tr",
-  "de": "Tafel"
+  "de": "Tisch"
  },
  {
   "tr": "artık",
@@ -387,7 +382,7 @@
  {
   "tr": "ağrılı",
   "kind": "gloss.tr",
-  "de": "wund"
+  "de": "schmerzend"
  },
  {
   "tr": "başarı",
@@ -482,7 +477,7 @@
  {
   "tr": "bir bakayım",
   "kind": "gloss.tr",
-  "de": "lassen Sie mich nachsehen"
+  "de": "ich sehe mal nach"
  },
  {
   "tr": "birbirimizi",

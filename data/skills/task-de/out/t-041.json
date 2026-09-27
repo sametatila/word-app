@@ -50,7 +50,7 @@
   "de": "Der Gläubiger muss sie gewarnt haben."
  },
  {
-  "tr": "Barışması istenince reddettiler.",
+  "tr": "Barışmaları istenince reddettiler.",
   "kind": "build.tr",
   "de": "Um Versöhnung gebeten, lehnten sie ab."
  },
@@ -87,7 +87,7 @@
  {
   "tr": "Bir kariyeri belirleyen şey strateji.",
   "kind": "build.tr",
-  "de": "Was eine Laufbahn entscheidet, ist die Strategie."
+  "de": "Was eine Laufbahn bestimmt, ist die Strategie."
  },
  {
   "tr": "Faizsiz bir plan istememiz gerekirdi.",
@@ -147,7 +147,7 @@
  {
   "tr": "Son ödeme tarihine kadar gerisini nasıl kullanacağımıza karar vermiş olacağız.",
   "kind": "build.tr",
-  "de": "Bis zum Zahlungstermin werden wir entschieden haben, wie wir den Rest aufbrauchen."
+  "de": "Bis zum Zahlungstermin werden wir entschieden haben, wie wir den Rest verwenden."
  },
  {
   "tr": "Emeklilik sigortası daha erken başlasaydı şirket emekli maaşı şimdi daha yüksek olurdu.",
@@ -233,5 +233,10 @@
   "tr": "Katlamanın sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Faltung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Soruda „anything“; sıfat isimden SONRA geliyor.",
+  "kind": "build.hint",
+  "de": "In der Frage „anything“; das Adjektiv steht NACH dem Nomen."
  }
 ]

@@ -54,7 +54,7 @@ export const deA2P6: SkillExercise[] = [
           "Auch wer nicht schnell ist, gehört dazu.",
         ],
         answer: 2,
-        explain: "Devamı bunu açıklıyor: yorulan yürüyor ve ötekiler bekliyor.",
+        explain: "Devamı bunu açıklıyor: yorulan biraz yürüyüp ötekileri bekliyor.",
       },
       {
         kind: "truefalse",

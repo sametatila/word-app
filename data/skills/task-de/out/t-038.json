@@ -22,7 +22,7 @@
  {
   "tr": "Ad yalnızca anıtta yazılı.",
   "kind": "build.tr",
-  "de": "Nur im Denkmal steht der Name geschrieben."
+  "de": "Nur auf dem Denkmal steht der Name geschrieben."
  },
  {
   "tr": "Davalar arasındaki ayrım açık.",
@@ -127,7 +127,7 @@
  {
   "tr": "Böyle bir örüntü daha önce hiç ortaya çıkmadı.",
   "kind": "build.tr",
-  "de": "Nie ist ein solches Muster aufgetaucht."
+  "de": "Nie zuvor ist ein solches Muster aufgetaucht."
  },
  {
   "tr": "İki raporun karşılaştırılması bir hafta sürdü.",
@@ -220,9 +220,9 @@
   "de": "Das Verb wird zum Substantiv; Endung und Präposition kommen aus dem Gedächtnis."
  },
  {
-  "tr": "„contrast“ da „between“ alıyor; „parallel“ almıyor.",
+  "tr": "„contrast“ da „between“ alıyor; ikinci şey tek başına anılınca „with“.",
   "kind": "build.hint",
-  "de": "Auch „contrast“ nimmt „between“; „parallel“ nicht."
+  "de": "Auch „contrast“ nimmt „between“; wird das Zweite allein genannt, „with“."
  },
  {
   "tr": "„comparison“ „of“ istiyor; edat da ezberden geliyor.",

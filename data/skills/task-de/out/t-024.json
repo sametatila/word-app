@@ -17,7 +17,7 @@
  {
   "tr": "Küçük araba; üç gün; doksan euro; yakıt dâhil değil; iade cuma altıda.",
   "kind": "form.facts",
-  "de": "Kleines Auto; drei Tage; neunzig Euro; Sprit nicht dabei; Rückgabe Freitag um sechs."
+  "de": "Kleines Auto; drei Tage; neunzig Euro; Sprit nicht inklusive; Rückgabe Freitag um sechs."
  },
  {
   "tr": "Doğum günü cumartesi; saat yediden itibaren; sekiz kişi; hediye gerekmiyor.",
@@ -25,9 +25,9 @@
   "de": "Geburtstag am Samstag; ab sieben Uhr; acht Leute; ein Geschenk ist nicht nötig."
  },
  {
-  "tr": "Çift kişilik oda; iki gece; dört mayıstan; kahvaltı dâhil; toplam yüz kırk euro.",
+  "tr": "Çift kişilik oda; iki gece; 4 Mayıs'tan; kahvaltı dâhil; toplam yüz kırk euro.",
   "kind": "form.facts",
-  "de": "Doppelzimmer; zwei Nächte; ab dem vierten Mai; Frühstück dabei; insgesamt hundertvierzig Euro."
+  "de": "Doppelzimmer; zwei Nächte; ab dem 4. Mai; Frühstück inklusive; insgesamt hundertvierzig Euro."
  },
  {
   "tr": "Uçuşum gecikti.",
@@ -117,7 +117,7 @@
  {
   "tr": "Fiyat kahvaltıyı içeriyor mu?",
   "kind": "build.tr",
-  "de": "Ist das Frühstück im Preis dabei?"
+  "de": "Ist das Frühstück im Preis inbegriffen?"
  },
  {
   "tr": "Hesabı alabilir miyiz, lütfen?",
@@ -180,9 +180,9 @@
   "de": "Ein bestimmter Abend: simple past, der Tag mit „on“."
  },
  {
-  "tr": "Soruda „anything“; sıfat isimden SONRA geliyor.",
+  "tr": "Soruda „anything“; sıfat „anything“ten SONRA geliyor.",
   "kind": "build.hint",
-  "de": "In der Frage „anything“; das Adjektiv kommt DAHINTER, wie „etwas Billigeres“."
+  "de": "In der Frage „anything“; das Adjektiv kommt NACH „anything“."
  },
  {
   "tr": "„book“ burada fiil: ayırtmak demek, kitap değil.",
@@ -192,12 +192,12 @@
  {
   "tr": "„as“ burada „olarak“ demek; „like“ başka iş görür.",
   "kind": "build.hint",
-  "de": "„as“ heißt hier „als“; „like“ tut etwas anderes."
+  "de": "„as“ heißt hier „als“; „like“ bedeutet etwas anderes."
  },
  {
-  "tr": "„opposite“ önüne edat almıyor: „opposite to“ olmaz.",
+  "tr": "„opposite“ ardından edat almıyor: „opposite to“ olmaz.",
   "kind": "build.hint",
-  "de": "„opposite“ nimmt keine Präposition davor: „opposite to“ gibt es nicht."
+  "de": "„opposite“ nimmt danach keine Präposition: „opposite to“ gibt es nicht."
  },
  {
   "tr": "Otelde „Could I have“ kalıbı; „give me“ kaba durur.",
@@ -210,7 +210,7 @@
   "de": "„yet“ in der Verneinung und ganz hinten; noch nicht erledigt, aber es kommt."
  },
  {
-  "tr": "Çoğul özneyle aynı kalıp; Amerikan İngilizcesinde hesap „check“, İngilizcesi „bill“.",
+  "tr": "Çoğul özneyle aynı kalıp; Amerikan İngilizcesinde hesap „check“, İngiliz İngilizcesinde „bill“.",
   "kind": "build.hint",
   "de": "Dasselbe Muster mit Plural-Subjekt; im amerikanischen Englisch heißt die Rechnung „check“, im britischen „bill“."
  },

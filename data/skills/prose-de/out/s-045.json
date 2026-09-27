@@ -55,7 +55,7 @@
   "de": "Drei Substantive, drei Präpositionen. Welches nimmt kein „between“?"
  },
  {
-  "tr": "Üç kip, üç iş. Hangisi birinci tekil şahısta?",
+  "tr": "Üç kip, üç iş. Hangisi birinci şahısta?",
   "kind": "intro",
   "de": "Drei Modalverben, drei Aufgaben. Welches steht in der ersten Person?"
  },
@@ -265,7 +265,7 @@
   "de": "Beziehung"
  },
  {
-  "tr": "ip ucu",
+  "tr": "ipin ucu",
   "kind": "gloss.tr",
   "de": "Faden"
  },
@@ -330,7 +330,7 @@
   "de": "Vorschrift"
  },
  {
-  "tr": "ayartıcı",
+  "tr": "cazip",
   "kind": "gloss.tr",
   "de": "verlockend"
  },
@@ -348,11 +348,6 @@
   "tr": "destekçi",
   "kind": "gloss.tr",
   "de": "Geldgeber"
- },
- {
-  "tr": "devirmek",
-  "kind": "gloss.tr",
-  "de": "umstellen"
  },
  {
   "tr": "doğrudan",

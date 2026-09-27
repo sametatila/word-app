@@ -7,7 +7,7 @@
  {
   "tr": "İlk iş günü. Hangi an günü çeviriyor?",
   "kind": "intro",
-  "de": "Der erste Arbeitstag. Welcher Moment dreht den Tag?"
+  "de": "Der erste Arbeitstag. Welcher Moment bringt die Wende?"
  },
  {
   "tr": "Kayıp paket için forum. Önce ne yapmalı?",
@@ -237,7 +237,7 @@
  {
   "tr": "konu",
   "kind": "gloss.tr",
-  "de": "Streitfrage"
+  "de": "Thema"
  },
  {
   "tr": "düştü",
@@ -388,5 +388,25 @@
   "tr": "ne demek istiyorsunuz",
   "kind": "gloss.tr",
   "de": "wie meinen Sie das"
+ },
+ {
+  "tr": "güvenmek",
+  "kind": "gloss.tr",
+  "de": "vertrauen"
+ },
+ {
+  "tr": "kaçırmak",
+  "kind": "gloss.tr",
+  "de": "verpassen"
+ },
+ {
+  "tr": "tersinden",
+  "kind": "gloss.tr",
+  "de": "rückwärts"
+ },
+ {
+  "tr": "fark",
+  "kind": "gloss.tr",
+  "de": "der Unterschied"
  }
 ]

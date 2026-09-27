@@ -347,7 +347,7 @@ export const b1U42: SkillExercise[] = [
         prompt: "Ortaçların çekimini düzelt.",
         source: "Ein verhaftet Mensch ist noch kein verurteilt Mensch, und die beschränkt Öffentlichkeit braucht eine Begründung.",
         answer: "Ein verhafteter Mensch ist noch kein verurteilter Mensch, und die beschränkte Öffentlichkeit braucht eine Begründung.",
-        why: "Türkçede sıfat-fiil hiç çekilmez ('tutuklanan insan'), o yüzden Almancada da çıplak ortaç bırakılıyor. Almanca Partizip II'yi isimden ÖNCE kullanınca onu sıfat gibi çeker ve artikel neyse ona uyar: ein verhafteteR Mensch, die beschränktE Öffentlichkeit, das genannteN Beispiel. Yüklemde ise çekilmez: der Mensch ist verhaftet.",
+        why: "Türkçede sıfat-fiil hiç çekilmez ('tutuklanan insan'), o yüzden Almancada da çıplak ortaç bırakılıyor. Almanca Partizip II'yi isimden ÖNCE kullanınca onu sıfat gibi çeker ve artikel neyse ona uyar: ein verhafteteR Mensch, die beschränktE Öffentlichkeit, das genanntE Beispiel. Yüklemde ise çekilmez: der Mensch ist verhaftet.",
       },
     ],
   },
@@ -384,7 +384,7 @@ export const b1U42: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir kuralı açıkla (işyeri, bina, kurs — seçim senin): kural ne, kime uygulanır, istisnası var mı, uyulmazsa ne olur, ve neden böyle bir kural var. En az iki 'Es ist …, dass …' cümlesi kullan.",
+        prompt: "Bir kuralı açıkla (işyeri, bina, kurs — seçim senin): kural ne, kime uygulanır, istisnası var mı, uyulmazsa ne olur ve neden böyle bir kural var. En az iki 'Es ist …, dass …' cümlesi kullan.",
         checklist: [
           "Kural tek cümlede net mi?",
           "Kapsam (kime) söylenmiş mi?",

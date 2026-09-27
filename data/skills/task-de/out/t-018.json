@@ -342,7 +342,7 @@
  {
   "tr": "„times“ sayılabilir, o yüzden „how many“. Günde demek için „a day“.",
   "kind": "build.hint",
-  "de": "„times“ ist zählbar, deshalb „how many“. Für „am Tag“ steht „a day“, wo das Deutsche mit „wie oft“ auskommt."
+  "de": "„times“ ist zählbar, deshalb „how many“. Für „am Tag“ steht „a day“; statt „how many times“ kommt das Deutsche mit „wie oft“ aus."
  },
  {
   "tr": "Telefonda „this is“, yüz yüze „I am“. Türkçede ikisi de aynı cümle.",
@@ -372,7 +372,7 @@
  {
   "tr": "Düzenli fiil geçmişte „-ed“ alır: work → worked. Kişiye göre değişmez.",
   "kind": "build.hint",
-  "de": "Ein regelmäßiges Verb bekommt „-ed“: work → worked. Es ändert sich nicht nach der Person, anders als im Deutschen."
+  "de": "Ein regelmäßiges Verb bekommt in der Vergangenheit „-ed“: work → worked. Es ändert sich nicht nach der Person, anders als im Deutschen."
  },
  {
   "tr": "Kişiyle konuşmak „speak to“; „speak with“ de duyulur ama bu daha yaygın.",

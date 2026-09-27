@@ -36,7 +36,7 @@ export const enB2P11: SkillExercise[] = [
       { de: "overnight", tr: "geceleyen" },
       { de: "ban", tr: "yasak" },
       { de: "trouble", tr: "sorun" },
-      { de: "guesthouses", tr: "pansiyon" },
+      { de: "guesthouses", tr: "pansiyonlar" },
     ],
     minutes: 8,
     text:
@@ -126,7 +126,7 @@ export const enB2P11: SkillExercise[] = [
     genre: "interview",
     intro: "Bir radyo söyleşisi: tek bir fotoğrafla ünlenen bir patikayı yöneten kişi ne olduğunu ve ne yaptıklarını anlatıyor.",
     gloss: [
-      { de: "verge", tr: "yol kenarı" },
+      { de: "roadside", tr: "yol kenarı" },
       { de: "ditch", tr: "hendek" },
       { de: "to collapse", tr: "çökmek" },
       { de: "sneakers", tr: "spor ayakkabı" },
@@ -141,13 +141,13 @@ export const enB2P11: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Host", text: "Two years ago, almost nobody walked to Hollin Falls. Then a single photograph was shared a few million times. Ms. Kendal, you manage the trail. What happened next?" },
-      { speaker: "Ms. Kendal", text: "The first thing we noticed was the verges. People had been parking on the grass along the lane for weeks before anyone told us, and by then the ditch had collapsed in two places." },
+      { speaker: "Ms. Kendal", text: "The first thing we noticed was the roadsides. People had been parking on the grass along the lane for weeks before anyone told us, and by then the ditch had collapsed in two places." },
       { speaker: "Host", text: "And the path itself? Was it ever built for that kind of number?" },
       { speaker: "Ms. Kendal", text: "Not remotely. It was designed for perhaps sixty walkers a day. On the worst Sunday we counted nine hundred, and plenty of them had come in sneakers, expecting a short stroll." },
       { speaker: "Host", text: "So you introduced a booking system for the parking lot. Wasn't that unpopular?" },
       { speaker: "Ms. Kendal", text: "Less than we'd feared. Booking is free; what it removes is the uncertainty. People who had driven two hours to find no space were far angrier than people who simply couldn't book." },
       { speaker: "Host", text: "What about the people who don't plan ahead?" },
-      { speaker: "Ms. Kendal", text: "That's the honest weakness. Local families who used to decide on the morning now find the weekend full. We keep twenty places back for residents, but it isn't a perfect answer." },
+      { speaker: "Ms. Kendal", text: "That's the honest weakness. Local families who used to decide that same morning now find the weekend full. We keep twenty places back for residents, but it isn't a perfect answer." },
       { speaker: "Ms. Kendal", text: "What I'd tell any other site is this: count before the photograph, not after. By the time we had real numbers, the damage had already been done." },
     ],
     questions: [
@@ -172,14 +172,14 @@ export const enB2P11: SkillExercise[] = [
         text: "Ms. Kendal says that booking made most visitors angrier.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Less than we'd feared“: asıl öfkeli olanlar iki saat gelip yer bulamayanlardı.",
+        explain: "„Less than we'd feared“: asıl öfkeli olanlar iki saat yol gelip yer bulamayanlardı.",
       },
       {
         kind: "gapfill",
         text: "People had been parking on the ___ along the lane.",
         options: [],
         answer: 0,
-        accept: ["grass", "verges"],
+        accept: ["grass", "roadsides"],
         explain: "„People had been parking on the grass along the lane for weeks“.",
       },
       {

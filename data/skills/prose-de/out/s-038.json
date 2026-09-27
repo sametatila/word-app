@@ -62,7 +62,7 @@
  {
   "tr": "Grup ve gelecek cümleleri. Üç ödün sözcüğü son kez yan yana.",
   "kind": "intro",
-  "de": "Sätze zu Gruppe und Zukunft. Die drei Einwandwörter ein letztes Mal nebeneinander."
+  "de": "Sätze zu Gruppe und Zukunft. Die drei Einräumungswörter ein letztes Mal nebeneinander."
  },
  {
   "tr": "Dört haftalık bir plan. Hangi cümle ayarlanmış, hangisi karar?",
@@ -102,7 +102,7 @@
  {
   "tr": "Kopya, ret, itiraz kararı, asıl belgenin götürülmesi.",
   "kind": "explain",
-  "de": "Die Kopie, die Ablehnung, der Entschluss zum Widerspruch, das Original."
+  "de": "Die Kopie, die Ablehnung, der Entschluss zum Widerspruch, das Mitbringen des Originals."
  },
  {
   "tr": "Süre sürüyor ve sonuç şimdi görünüyor: present perfect.",
@@ -117,7 +117,7 @@
  {
   "tr": "„that“ nesne konumunda; düşebilirdi ama resmî yazıda kalıyor.",
   "kind": "explain",
-  "de": "„that“ steht in der Objektstellung; es dürfte wegfallen, bleibt im Amtsdeutsch aber stehen."
+  "de": "„that“ steht in der Objektstellung; es dürfte wegfallen, bleibt in förmlichen Texten aber stehen."
  },
  {
   "tr": "„despite“ bir isim alıyor; cümle gelseydi „although“ gerekirdi.",
@@ -280,11 +280,6 @@
   "de": "Erklärung"
  },
  {
-  "tr": "ifşa",
-  "kind": "gloss.tr",
-  "de": "die Offenlegung"
- },
- {
   "tr": "besbelli",
   "kind": "gloss.tr",
   "de": "offensichtlich"
@@ -427,7 +422,7 @@
  {
   "tr": "özel öğretmen",
   "kind": "gloss.tr",
-  "de": "Lehrkraft"
+  "de": "Privatlehrer"
  },
  {
   "tr": "düzeltme yapar",
@@ -473,5 +468,10 @@
   "tr": "kısa değerlendirme",
   "kind": "gloss.tr",
   "de": "eine Bemerkung"
+ },
+ {
+  "tr": "liderlik etmek",
+  "kind": "gloss.tr",
+  "de": "führen"
  }
 ]

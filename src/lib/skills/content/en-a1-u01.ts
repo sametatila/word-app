@@ -96,7 +96,7 @@ export const enA1U01: SkillExercise[] = [
     unit: 1,
     title: "Are you a student here?",
     genre: "dialogue",
-    intro: "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hal hatır sorma.",
+    intro: "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
     gloss: [
       { de: "a little", tr: "biraz" },
       { de: "See you", tr: "görüşürüz" },
@@ -426,7 +426,7 @@ export const enA1U01: SkillExercise[] = [
         tr: "İyiyim, teşekkürler.",
         answer: "I am fine, thanks.",
         alternatives: ["I'm fine, thanks."],
-        hint: "„fine“ hal hatır sorusunun hazır cevabı; „good“ da doğaldır.",
+        hint: "„fine“ hâl hatır sorusunun hazır cevabı; „good“ da doğaldır.",
       },
     ],
   },

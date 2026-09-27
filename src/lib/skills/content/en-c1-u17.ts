@@ -169,7 +169,7 @@ export const enC1U17: SkillExercise[] = [
       { de: "a farm gate", tr: "çiftlik kapısı" },
       { de: "a buyer", tr: "alıcı" },
       { de: "the gap", tr: "aralık" },
-      { de: "a haulier", tr: "nakliyeci" },
+      { de: "a hauler", tr: "nakliyeci" },
       { de: "a shelf", tr: "raf" },
       { de: "measured", tr: "ölçülen" },
       { de: "signed", tr: "imzalanan" },
@@ -191,7 +191,7 @@ export const enC1U17: SkillExercise[] = [
     minutes: 12,
     text:
       "A world market price is not a producer price. Two nouns that both end in the same word, and a paragraph that treats them as one has already made its mistake.\n" +
-      "A world market price is a number in a column somewhere else. A producer price is what is paid at a farm gate on a Tuesday, and the gap between the two is a haulier, a buyer, a shelf and a month.\n" +
+      "A world market price is a number in a column somewhere else. A producer price is what is paid at a farm gate on a Tuesday, and the gap between the two is a hauler, a buyer, a shelf and a month.\n" +
       "Price volatility is measured; a free trade agreement is signed. Two passives in one line, and by now this level has met enough of them to sort the pair without help.\n" +
       "The first has no agent and needs none: measuring is what a procedure does. The second has a very definite agent left out on purpose, because an agreement is signed by a delegation, on a date, and every one of those is in the file.\n" +
       "Trade liberalization and market regulation pull apart. Here is a verb that needs two things to be true at once, and both halves of the subject are in front of it.\n" +
@@ -342,7 +342,7 @@ export const enC1U17: SkillExercise[] = [
         text: "What would he put in a lease?",
         options: [],
         answer: 0,
-        accept: ["two measurements", "a measurement each end", "the difference priced"],
+        accept: ["two measurements", "a measurement at each end", "the difference priced"],
         explain: "„A measurement at the start and a measurement at the end, and the difference priced.“",
       },
     ],

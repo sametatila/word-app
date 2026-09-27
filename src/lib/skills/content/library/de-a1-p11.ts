@@ -205,7 +205,7 @@ export const deA1P11: SkillExercise[] = [
           { de: "Wir sind um … wieder zu Hause.", tr: "Saat …'de yine evdeyiz.", en: "We'll be back home at …" },
           { de: "Das Essen steht im Kühlschrank.", tr: "Yemek buzdolabında.", en: "The food is in the fridge." },
           { de: "Die Kinder dürfen …", tr: "Çocuklar … yapabilir.", en: "The children are allowed to …" },
-          { de: "Bitte kein Fernsehen.", tr: "Lütfen televizyon yok.", en: "No television, please." },
+          { de: "Bitte kein Fernsehen.", tr: "Televizyon yok, lütfen.", en: "No television, please." },
           { de: "Bei Problemen ruf mich bitte an.", tr: "Sorun olursa lütfen beni ara.", en: "If there are problems, please call me." },
         ],
         sample:
@@ -223,7 +223,7 @@ export const deA1P11: SkillExercise[] = [
     course: "de",
     level: "A1",
     skill: "speaking",
-    title: "dreizehn oder dreißig?",
+    title: "Dreizehn oder dreißig?",
     genre: "pronounce",
     intro: "On üç ile otuz, on dört ile kırk: Almancada sayıların sonu -zehn ya da -zig'dir ve birler basamağı önce söylenir. Altı cümlede ikisini ayır.",
     gloss: [

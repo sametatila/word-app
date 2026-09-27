@@ -2,7 +2,7 @@
  {
   "tr": "Aidiyetin sakladıkları ve emri veren.",
   "kind": "intro",
-  "de": "Was die Zugehörigkeit verbirgt, und wer den Befehl gibt."
+  "de": "Was die Zugehörigkeit verbirgt und wer den Befehl gibt."
  },
  {
   "tr": "Ağır nesne sona kayıyor; adıl asla kaymıyor.",
@@ -32,7 +32,7 @@
  {
   "tr": "Failin fiilin içinde kaybolması ve çekincenin işi.",
   "kind": "intro",
-  "de": "Wie der Handelnde im Verb verschwindet, und wozu die Einschränkung dient."
+  "de": "Wie der Handelnde im Verb verschwindet und wozu die Einschränkung dient."
  },
  {
   "tr": "İki sözcük karşıt görünüyor. Peki aynı eksende mi?",
@@ -62,7 +62,7 @@
  {
   "tr": "Kimse zorlamadıysa gönüllü müdür? Çekince nerede duruyor?",
   "kind": "intro",
-  "de": "Ist es freiwillig, wenn niemand gezwungen hat? Und wo steht die Einschränkung?"
+  "de": "Ist es freiwillig, wenn niemand Zwang ausgeübt hat? Und wo steht die Einschränkung?"
  },
  {
   "tr": "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
@@ -522,7 +522,7 @@
  {
   "tr": "yüzyıllar",
   "kind": "gloss.tr",
-  "de": "Jahrhunderte"
+  "de": "die Jahrhunderte"
  },
  {
   "tr": "baltalamak",
@@ -645,9 +645,9 @@
   "de": "einbehalten"
  },
  {
-  "tr": "iki katlı iş",
+  "tr": "çifte görev",
   "kind": "gloss.tr",
-  "de": "doppelte Arbeit"
+  "de": "die Doppelfunktion"
  },
  {
   "tr": "istatistikçi",
@@ -852,7 +852,7 @@
  {
   "tr": "iş güvencesizliği",
   "kind": "gloss.tr",
-  "de": "Arbeitsplatzunsicherheit"
+  "de": "die Arbeitsplatzunsicherheit"
  },
  {
   "tr": "mükemmeliyet girişimi",
@@ -873,5 +873,10 @@
   "tr": "ne kadar uzun olursa olsun",
   "kind": "gloss.tr",
   "de": "wie lang es auch ist"
+ },
+ {
+  "tr": "toplam tutar",
+  "kind": "gloss.tr",
+  "de": "der Gesamtbetrag"
  }
 ]

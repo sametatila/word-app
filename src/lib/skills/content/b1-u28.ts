@@ -39,7 +39,7 @@ export const b1U28: SkillExercise[] = [
       { de: "die Margarine", tr: "margarin", en: "margarine" },
       { de: "der Empfang", tr: "kabul / resepsiyon", en: "reception" },
       { de: "der Saal", tr: "salon", en: "hall" },
-      { de: "abwaschen", tr: "bulaşık yıkamak", en: "to wash up" },
+      { de: "abwaschen", tr: "bulaşık yıkamak", en: "to do the dishes" },
       { de: "die Glückwunschrede", tr: "tebrik konuşması", en: "congratulatory speech" },
     ],
     text:
@@ -115,10 +115,10 @@ export const b1U28: SkillExercise[] = [
     ],
     text:
       "Ein Rabatt von vierzig Prozent klingt gut, sagt aber allein gar " +
-      "nichts. Vierzig Prozent von einem zu teuren Preis sind wertlos.\n\n" +
+      "nichts. Vierzig Prozent von einem zu hohen Preis sind wertlos.\n\n" +
       "Schauen Sie deshalb nicht auf das Schild im Schaufenster, sondern " +
       "auf den Endpreis. Vergleichen Sie drei Anbieter, nicht zwei: " +
-      "bei zwei Händlern wissen Sie nur, welcher billiger ist, nicht " +
+      "Bei zwei Händlern wissen Sie nur, welcher billiger ist, nicht, " +
       "was im Durchschnitt normal ist.\n\n" +
       "Alles, was Sie im Katalog sehen, gibt es meistens auch in anderen Läden. " +
       "Die Ausnahme sind Modelle, die es nur bei einem Händler gibt — dort ist " +
@@ -129,9 +129,9 @@ export const b1U28: SkillExercise[] = [
     questions: [
       {
         text: "Warum sagt ein Rabatt allein nichts?",
-        options: ["Weil er zu klein ist", "Weil der Preis vorher zu teuer sein kann", "Weil er oft falsch ist"],
+        options: ["Weil er zu klein ist", "Weil der Preis vorher zu hoch sein kann", "Weil er oft falsch ist"],
         answer: 1,
-        explain: "„Vierzig Prozent von einem zu teuren Preis sind wertlos.“",
+        explain: "„Vierzig Prozent von einem zu hohen Preis sind wertlos.“",
       },
       {
         text: "Wie viele Anbieter soll man vergleichen?",

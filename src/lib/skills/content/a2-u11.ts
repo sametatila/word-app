@@ -53,7 +53,7 @@ export const a2U11: SkillExercise[] = [
       "CAFÉ LINDE SUCHT VERSTÄRKUNG\n\n" +
       "Wir sind ein kleines Team von acht Mitarbeitern und suchen ab Januar jemanden für den Service.\n\n" +
       "Sie brauchen keine Ausbildung als Koch oder Kellner. Wichtig sind gute Deutschkenntnisse und Freude an der Arbeit mit Menschen. Auch als Nebenjob am Wochenende möglich.\n\n" +
-      "Wir bieten: einen festen Vertrag, ein Gehalt über dem Minimum und jeden zweiten Sonntag frei.\n\n" +
+      "Wir bieten: einen festen Vertrag, ein Gehalt über dem Mindestlohn und jeden zweiten Sonntag frei.\n\n" +
       "Ihre Bewerbung schicken Sie bitte per E-Mail an info@cafe-linde.de. Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen. Das Bewerbungsgespräch dauert etwa zwanzig Minuten und findet direkt im Café statt.",
     questions: [
       {
@@ -74,7 +74,7 @@ export const a2U11: SkillExercise[] = [
         text: "Was bietet das Café?",
         options: ["Jeden Sonntag frei", "Einen festen Vertrag", "Eine Wohnung"],
         answer: 1,
-        explain: "„Wir bieten: einen festen Vertrag, ein Gehalt über dem Minimum und jeden zweiten Sonntag frei.“",
+        explain: "„Wir bieten: einen festen Vertrag, ein Gehalt über dem Mindestlohn und jeden zweiten Sonntag frei.“",
       },
       {
         kind: "short_answer",
@@ -118,7 +118,7 @@ export const a2U11: SkillExercise[] = [
       "FORUM · Deutsch lernen\n\n" +
       "Marta: Ich lerne Deutsch, weil meine Kinder hier zur Schule gehen. Ich möchte die Briefe von der Schule selbst lesen und nicht immer jemanden bitten, sie zu übersetzen.\n\n" +
       "Ibrahim: Bei mir ist es die Arbeit. Wegen meiner neuen Stelle brauche ich mindestens B1. Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern, aber die Sätze bleiben lang und kompliziert.\n\n" +
-      "Yara: Ich wohne seit acht Monaten hier und habe fast keine Kontakte. Darum lerne ich. Ich möchte mich beim Amt selbst informieren und nicht nur nicken. Mein Problem ist das Sprechen: ich weiß die Wörter, aber ich kann sie nicht gut aussprechen.",
+      "Yara: Ich wohne seit acht Monaten hier und habe fast keine Kontakte. Darum lerne ich. Ich möchte mich beim Amt selbst informieren und nicht nur nicken. Mein Problem ist das Sprechen: Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen.",
     questions: [
       {
         text: "Warum lernt Marta Deutsch?",
@@ -152,7 +152,7 @@ export const a2U11: SkillExercise[] = [
         text: "Yara kennt die Wörter, kann sie aber nicht gut aussprechen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „ich weiß die Wörter, aber ich kann sie nicht gut aussprechen“.",
+        explain: "Doğru: „Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen“.",
       },
     ],
   },
@@ -347,7 +347,7 @@ export const a2U11: SkillExercise[] = [
         kind: "reply",
         prompt: "İlana kısa bir başvuru e-postası yaz. Kim olduğunu söyle, neden başvurduğunu bir sebep cümlesiyle anlat ve ne zaman başlayabileceğini yaz.",
         stimulus:
-          "CAFÉ LINDE SUCHT VERSTÄRKUNG\n\nWir suchen ab Januar jemanden für den Service. Keine Ausbildung nötig, aber gute Deutschkenntnisse. Auch als Nebenjob am Wochenende möglich.\n\nWir bieten einen festen Vertrag und ein Gehalt über dem Minimum.\n\nIhre Bewerbung bitte per E-Mail an info@cafe-linde.de.",
+          "CAFÉ LINDE SUCHT VERSTÄRKUNG\n\nWir suchen ab Januar jemanden für den Service. Keine Ausbildung nötig, aber gute Deutschkenntnisse. Auch als Nebenjob am Wochenende möglich.\n\nWir bieten einen festen Vertrag und ein Gehalt über dem Mindestlohn.\n\nIhre Bewerbung bitte per E-Mail an info@cafe-linde.de.",
         checklist: [
           "Resmî hitapla başladın mı („Sehr geehrte Damen und Herren“)?",
           "Hangi ilan için yazdığını söyledin mi?",

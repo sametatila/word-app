@@ -110,7 +110,7 @@ export const enA2P11: SkillExercise[] = [
     course: "en",
     level: "A2",
     skill: "listening",
-    title: "Welcome on Board",
+    title: "Welcome Aboard",
     genre: "info",
     intro: "Adaya giden bir feribotta kalkıştan sonra yapılan anonsu dinleyeceksin: yolculuk ne kadar sürüyor, çantalar nereye, kime ne dikkat etmeli.",
     gloss: [
@@ -127,7 +127,7 @@ export const enA2P11: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { text: "Good morning, ladies and gentlemen, and welcome on board the Blue Star ferry to Castle Island." },
+      { text: "Good morning, ladies and gentlemen, and welcome aboard the Blue Star ferry to Castle Island." },
       { text: "The trip takes one hour and forty minutes. We stop once, at Green Point, where some passengers get off." },
       { text: "Please keep your bags with you or put them in the room behind the café. Do not leave them on the stairs." },
       { text: "Children must stay with an adult when they are outside on the top floor of the ship. The floor can be wet." },
@@ -140,7 +140,7 @@ export const enA2P11: SkillExercise[] = [
         text: "Where is the ferry going?",
         options: ["to Green Point only", "back to the city", "to Castle Island"],
         answer: 2,
-        explain: "„Welcome on board the Blue Star ferry to Castle Island.“ Green Point yalnız ara durak.",
+        explain: "„Welcome aboard the Blue Star ferry to Castle Island.“ Green Point yalnız ara durak.",
       },
       {
         text: "Where can passengers leave their bags?",

@@ -182,7 +182,7 @@
  {
   "tr": "Yan gider hesabındaki bir tutar yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
   "kind": "intro",
-  "en": "An amount on the utility bill statement is wrong. Write impersonally, with a date and with reasons."
+  "en": "An amount on the utilities statement is wrong. Write impersonally, with a date and with reasons."
  },
  {
   "tr": "İki arkadaş hafta sonunu konuşuyor. Kim nereye gitti, kim evde kaldı?",
@@ -293,11 +293,6 @@
   "tr": "Zor bir dönemden geçen birine yaz — teselli etmeden, yanında durarak.",
   "kind": "intro",
   "en": "Write to somebody going through a hard time — standing by them without consoling them."
- },
- {
-  "tr": "„…die Frage lautet nicht 'gefällt es mir', sondern 'ist es rentabel'.“",
-  "kind": "explain",
-  "en": "„…die Frage lautet nicht 'gefällt es mir', sondern 'ist es rentabel'.“"
  },
  {
   "tr": "„auch wenn sie es nicht benennen könnten“ — etki bilinçsiz ama gerçek.",
@@ -450,7 +445,7 @@
   "en": "The woman says \"It's about ten minutes\", so the walk is about ten minutes."
  },
  {
-  "tr": "Kısa dönem bir oda gösteriliyor. Dinle: ne var, ne yok, ne kadar süre?",
+  "tr": "Kısa dönemlik bir oda gösteriliyor. Dinle: ne var, ne yok, ne kadar süre?",
   "kind": "intro",
   "en": "A short-term room is being shown. Listen: what is there, what is not, for how long?"
  },
@@ -602,7 +597,7 @@
  {
   "tr": "„Vorwahl 0231“ — şehir kodu. Almanya'da her şehrin kendi Vorwahl'ı var.",
   "kind": "explain",
-  "en": "„Vorwahl 0231“ — the dialling code. Every German town has its own Vorwahl."
+  "en": "„Vorwahl 0231“ — the area code. Every German town has its own Vorwahl."
  },
  {
   "tr": "„Wir putzen dann das große Becken.“ Hava yarın sıcak ve güneşli olacak.",

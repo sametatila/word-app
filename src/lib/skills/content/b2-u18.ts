@@ -87,7 +87,7 @@ export const b2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ist es rentabel", "ob es rentabel ist", "lohnt es sich"],
-        explain: "„…die Frage lautet nicht 'gefällt es mir', sondern 'ist es rentabel'.“",
+        explain: "„…die Frage lautet nicht ‚gefällt es mir‘, sondern ‚ist es rentabel‘.“",
       },
       {
         text: "Warum ist der Marktanteil der Investoren umstritten?",
@@ -146,7 +146,7 @@ export const b2U18: SkillExercise[] = [
       "SPAREN ODER ANLEGEN? VIER SÄTZE, DIE REICHEN\n\n" +
       "Erstens: Je höher die erwartete Rendite, desto größer das Risiko. Diesen Satz kann man nicht umgehen. Wer Ihnen hohe Rendite ohne Risiko verspricht, hat entweder etwas nicht verstanden oder rechnet damit, dass Sie es nicht verstehen.\n\n" +
       "Zweitens: Bevor Sie anlegen, brauchen Sie eine Reserve. Drei Nettogehälter als Guthaben auf einem jederzeit verfügbaren Konto — nicht als Rendite gedacht, sondern damit Sie bei einer kaputten Waschmaschine nicht zum falschen Zeitpunkt verkaufen müssen.\n\n" +
-      "Drittens: Streuen Sie. Eine einzelne Aktie kann alles verlieren, ein breit gestreutes Wertpapier auf hunderte Unternehmen praktisch nicht. Das ist keine Meinung, das ist Arithmetik. Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.\n\n" +
+      "Drittens: Streuen Sie. Eine einzelne Aktie kann alles verlieren, ein über hunderte Unternehmen breit gestreutes Wertpapier praktisch nicht. Das ist keine Meinung, das ist Arithmetik. Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.\n\n" +
       "Viertens: Auf lange Sicht zählt vor allem die Zeit. Wer mit dreißig anfängt und monatlich einen kleinen Betrag anlegt, steht mit sechzig besser da als jemand, der mit fünfzig das Doppelte einzahlt. Nicht weil er klüger ist, sondern weil er länger dabei war.\n\n" +
       "Und die Ersparnis auf dem Sparbuch? Sie ist nicht falsch, aber sie ist kein Vermögensaufbau. Bei zwei Prozent Inflation verliert Geld, das gar nichts bringt, in zehn Jahren rund ein Fünftel seiner Kaufkraft — langsam genug, dass es niemand merkt.\n\n" +
       "Was wir nicht sagen können: welches Produkt für Sie passt. Das hängt davon ab, wie lange Sie das Geld nicht brauchen — und wie ruhig Sie schlafen wollen.",
@@ -243,7 +243,7 @@ export const b2U18: SkillExercise[] = [
       {
         text: "Warum überzeugt Ansgar das Foto nicht?",
         options: [
-          "weil keine Menschen auf dem Foto keine Menschen im Tal bedeutet",
+          "weil keine Menschen auf dem Foto nicht keine Menschen im Tal bedeutet",
           "weil das Foto alt ist",
           "weil er das Tal kennt",
         ],
@@ -301,7 +301,7 @@ export const b2U18: SkillExercise[] = [
       { speaker: "Vogt", text: "An welche Größenordnung denken Sie?" },
       { speaker: "Pelin", text: "Ich hätte mir sieben Prozent vorgestellt." },
       { speaker: "Vogt", text: "Eine Gehaltserhöhung in dieser Höhe ist deutlich mehr, als wir üblicherweise machen." },
-      { speaker: "Pelin", text: "Das ist mir bewusst. Ich führe seit einem Jahr das Team und habe zwei Projekte übernommen." },
+      { speaker: "Pelin", text: "Das ist mir bewusst. Ich vertrete seit einem Jahr die Teamleitung und habe zwei Projekte übernommen." },
       { speaker: "Vogt", text: "Wir sind allerdings an den Tarifvertrag gebunden, beim Stundenlohn wie beim Gehalt." },
       { speaker: "Pelin", text: "Beim Grundgehalt ja. Eine Prämie wäre davon unabhängig, wenn ich das richtig sehe." },
       { speaker: "Vogt", text: "Das stimmt. Vier Prozent könnte ich zusagen, plus eine Prämie im Frühjahr." },
@@ -394,7 +394,7 @@ export const b2U18: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Doğrudan talebi Konjunktiv II ile pazarlığa açık hale getir.",
+        prompt: "Doğrudan talebi Konjunktiv II ile pazarlığa açık hâle getir.",
         source: "Ich will zehn Prozent mehr.",
         answer: "Ich hätte mir zehn Prozent vorgestellt.",
         alternatives: [
@@ -438,12 +438,12 @@ export const b2U18: SkillExercise[] = [
         phrases: [
           { de: "Ich hätte mir … vorgestellt.", tr: "… düşünmüştüm", en: "I had in mind …" },
           { de: "Gemessen an den übernommenen Aufgaben …", tr: "üstlendiğim işlere bakılırsa …", en: "measured against the tasks taken on …" },
-          { de: "Über einen Termin würde ich mich freuen.", tr: "bir randevu için sevinirim", en: "I would welcome a meeting" },
+          { de: "Über einen Termin würde ich mich freuen.", tr: "bir görüşme ayarlayabilirsek sevinirim", en: "I would welcome a meeting" },
         ],
         sample:
           "Betreff: Bitte um ein Gespräch über meine Vergütung\n\n" +
           "Sehr geehrte Frau Kern,\n\n" +
-          "ich möchte Sie um einen Termin bitten, in dem wir über meine Vergütung sprechen.\n\n" +
+          "ich möchte Sie um einen Termin bitten, bei dem wir über meine Vergütung sprechen.\n\n" +
           "Ich bin seit zweieinhalb Jahren im Haus und seit einem Jahr in der Festanstellung. In dieser Zeit haben sich meine Aufgaben deutlich verändert: Ich betreue seit März die beiden großen Kunden allein, habe die Einarbeitung von zwei neuen Kolleginnen übernommen und führe seit dem Sommer die wöchentliche Planung.\n\n" +
           "Gemessen an diesen Aufgaben hätte ich mir eine Anpassung um sieben Prozent vorgestellt. Mir ist bewusst, dass das Grundgehalt an den Tarif gebunden ist; über die Form — Erhöhung, Prämie oder eine Kombination — würde ich gern mit Ihnen sprechen.\n\n" +
           "Außerdem würde mich interessieren, wie Sie meine Aufstiegschancen für das kommende Jahr einschätzen.\n\n" +

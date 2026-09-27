@@ -379,12 +379,12 @@ export const enA2U23: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kayıt formunu doldur.",
-        facts: "Soyadı Yılmaz; doğum tarihi üç haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
+        facts: "Soyadı Yılmaz; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
         fields: [
           { label: "Last name", answer: "Yılmaz" },
-          { label: "Date of birth", answer: "the third of June", accept: ["June 3", "June third", "June 3rd", "June"] },
+          { label: "Date of birth", answer: "the third of June", accept: ["June 3", "June third", "June 3rd"] },
           { label: "Place of birth", answer: "Bursa" },
-          { label: "Address", answer: "Garden Street forty-one", accept: ["Garden Street 41", "41 Garden Street", "forty-one Garden Street"] },
+          { label: "Address", answer: "41 Garden Street", accept: ["forty-one Garden Street", "Garden Street 41", "Garden Street forty-one"] },
         ],
       },
     ],

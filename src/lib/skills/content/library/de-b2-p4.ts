@@ -339,7 +339,7 @@ export const deB2P4: SkillExercise[] = [
         examples: [
           { de: "Je klarer die Regel ist, desto seltener gibt es Streit.", tr: "Kural ne kadar açıksa, tartışma o kadar az olur." },
           { de: "Je länger die Sitzung dauerte, desto weniger wurde gesagt.", tr: "Oturum uzadıkça daha az konuşuldu." },
-          { de: "Je mehr man übt, desto sicherer wird man.", tr: "İnsan ne kadar çalışırsa o kadar emin olur." },
+          { de: "Je mehr man übt, desto sicherer wird man.", tr: "İnsan ne kadar çalışırsa o kadar kendinden emin olur." },
         ],
       },
       {

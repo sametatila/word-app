@@ -46,7 +46,7 @@ export const enA1U14: SkillExercise[] = [
       "Ali: Round-trip, please. When does the next train leave?\n" +
       "Clerk: At ten past nine, from platform four.\n" +
       "Ali: How much is it?\n" +
-      "Clerk: Forty euros. Do you want a seat near the window?\n" +
+      "Clerk: Forty pounds. Do you want a seat near the window?\n" +
       "Ali: Yes, please. And how long does it take?\n" +
       "Clerk: Two hours. But the train is running late today — twenty minutes.\n" +
       "Ali: Twenty minutes! How long is the delay in the evening?\n" +
@@ -83,7 +83,7 @@ export const enA1U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How long does it take to London?",
+        text: "How long does it take to get to London?",
         options: [],
         answer: 0,
         accept: ["two hours", "2 hours", "two"],
@@ -110,7 +110,7 @@ export const enA1U14: SkillExercise[] = [
     text:
       "Ela: Hello. To the airport, please.\n" +
       "Driver: Of course. Which terminal?\n" +
-      "Ela: I don't know. My plane is at two o'clock.\n" +
+      "Ela: I don't know. My flight is at two o'clock.\n" +
       "Driver: Then terminal one. How long does it take? Forty minutes today.\n" +
       "Ela: Forty! Is that far?\n" +
       "Driver: The airport is far from here, yes. But the road is good.\n" +

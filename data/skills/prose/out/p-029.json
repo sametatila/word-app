@@ -60,7 +60,7 @@
   "en": "„I don't work on Sunday.“ — „on“ comes before the name of a day."
  },
  {
-  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8:45.",
+  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8.45.",
   "kind": "explain",
   "en": "„It's a quarter to nine.“ — a quarter before nine, that is 8:45."
  },
@@ -95,9 +95,9 @@
   "en": "„I'd like a juice… Apple, please.“ — the beer is Kaan's, the water is Deniz's."
  },
  {
-  "tr": "„Tomatoes are cheap this week — it's a sale.“ — pahalı olan et.",
+  "tr": "„Tomatoes are cheap this week — they're on sale.“ — pahalı olan et.",
   "kind": "explain",
-  "en": "„Tomatoes are cheap this week — it's a sale.“ — the expensive one is the meat."
+  "en": "„Tomatoes are cheap this week — they're on sale.“ — the expensive one is the meat."
  },
  {
   "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
@@ -195,14 +195,14 @@
   "en": "„In the evening I turn off the radio.“ — he turns it on in the morning and off in the evening."
  },
  {
-  "tr": "„It's half past eight.“ — sekiz buçuk; on bir çeyrek Nil'in uyku saati.",
+  "tr": "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Nil'in yatma saati.",
   "kind": "explain",
-  "en": "„It's half past eight.“ — half an hour after eight; a quarter past eleven is when Nil sleeps."
+  "en": "„It's half past eight.“ — half an hour after eight; a quarter past eleven is Nil's bedtime."
  },
  {
   "tr": "„The meat is expensive: nine euros a kilo.“ İndirimde daha ucuz oluyor.",
   "kind": "explain",
-  "en": "„The meat is expensive: nine euros a kilo.“ In a sale it gets cheaper."
+  "en": "„The meat is expensive: nine euros a kilo.“ On sale it gets cheaper."
  },
  {
   "tr": "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by check.",
@@ -277,7 +277,7 @@
  {
   "tr": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ en güçlü olumsuz.",
   "kind": "explain",
-  "en": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ is the strongest refusal."
+  "en": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ is the strongest negative."
  },
  {
   "tr": "Önce hesap gelir, sonra birlikte ödeme sorulur, sonra ödeme biçimi, en son saat.",
@@ -295,9 +295,9 @@
   "en": "„I always drink tea, never coffee.“ — the frequency adverb comes before the main verb: always drink."
  },
  {
-  "tr": "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
+  "tr": "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Eda'nın istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
   "kind": "explain",
-  "en": "„I'd like to pay by card… I only have a card too.“ The check is a record for Eda's work."
+  "en": "„I'd like to pay by card… I only have a card too.“ „with a check“ is wrong: what Eda wants is a „receipt“ for the work, not a way of paying."
  },
  {
   "tr": "„After work I buy fruit and vegetables at the market.“ — ekmek ve peynir kahvaltıda.",
@@ -353,5 +353,10 @@
   "tr": "Geç kalan bir öğrenci. Phrasal verb'lerin hepsi bir arada: come in, sit down, turn on, look for.",
   "kind": "intro",
   "en": "A student who is late. All the phrasal verbs at once: come in, sit down, turn on, look for."
+ },
+ {
+  "tr": "„…you'll see it on the screen in the terminal, not on your phone.“",
+  "kind": "explain",
+  "en": "„…you'll see it on the screen in the terminal, not on your phone.“"
  }
 ]

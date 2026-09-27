@@ -63,7 +63,7 @@ export const enA2U24: SkillExercise[] = [
       "Police: And the tram was full?\n" +
       "Ela: Very full. Somebody stood very close for two stops.\n" +
       "Police: Then it is not lost. Somebody stole it. That is a different report.\n" +
-      "Ela: Does that change something?\n" +
+      "Ela: Does that change anything?\n" +
       "Police: For the insurance, yes. And for us: three today on line two.",
     questions: [
       {
@@ -99,7 +99,7 @@ export const enA2U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["for the insurance", "the insurance"],
-        explain: "„Does that change something? — For the insurance, yes.“",
+        explain: "„Does that change anything? — For the insurance, yes.“",
       },
     ],
   },
@@ -374,7 +374,7 @@ export const enA2U24: SkillExercise[] = [
         kind: "build",
         tr: "Saat altı civarında oldu.",
         answer: "It happened at about six o'clock.",
-        hint: "„at about“ yaklaşık saat demek; „about“ tek başına „hakkında“ olurdu.",
+        hint: "„at about“ yaklaşık saat demek; „at“ saati, „about“ yaklaşıklığı veriyor.",
       },
       {
         kind: "build",

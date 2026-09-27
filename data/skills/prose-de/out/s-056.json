@@ -60,9 +60,9 @@
   "de": "Dasselbe Gebiet trägt in zwei Kapiteln zwei Namen. Was rettet der Verweis?"
  },
  {
-  "tr": "Aynı satırda fiilden iki isim. İkisi neden aynı yolla yapılmamış?",
+  "tr": "Aynı satırda fiilden iki isim, ikisi de aynı yolla yapılmış. Öteki yol neden seçilmemiş?",
   "kind": "intro",
-  "de": "Zwei Nomen aus Verben in einer Zeile. Warum sind sie nicht auf dieselbe Weise gemacht?"
+  "de": "Zwei Nomen aus Verben in einer Zeile, beide auf dieselbe Weise gebildet. Warum wurde der andere Weg nicht gewählt?"
  },
  {
   "tr": "Cümlenin sonundaki edatın ardında hiçbir şey yok. Nesnesi nerede?",
@@ -102,7 +102,7 @@
  {
   "tr": "Aynı tabloyu okuyan iki kişi, tek konu değil.",
   "kind": "explain",
-  "de": "Zwei Leute lesen dieselbe Tabelle, aber nicht über dasselbe."
+  "de": "Zwei Leute lesen dieselbe Tabelle, doch es geht nicht um dasselbe Thema."
  },
  {
   "tr": "Talep, dayanak, sıra; en sonda işe dönük öğüt.",
@@ -135,7 +135,7 @@
   "de": "Zwei Räume, zwei Rahmen, die Beweglichkeit; ganz am Ende Zahl und Geschichte."
  },
  {
-  "tr": "Fiil başta, bağlaç yok; ortak alanın neden yapıldığını adlandırıyor.",
+  "tr": "Fiil başta, bağlaç yok; ortak alanın neyden yapıldığını adlandırıyor.",
   "kind": "explain",
   "de": "Das Verb am Anfang, keine Konjunktion; es benennt, woraus die Allmende gemacht ist."
  },
@@ -147,7 +147,7 @@
  {
   "tr": "döngü",
   "kind": "gloss.tr",
-  "de": "Zyklus"
+  "de": "der Zyklus"
  },
  {
   "tr": "çember",
@@ -482,7 +482,7 @@
  {
   "tr": "zor kısım",
   "kind": "gloss.tr",
-  "de": "der schwere Teil"
+  "de": "der schwierige Teil"
  },
  {
   "tr": "denklemler",
@@ -587,7 +587,7 @@
  {
   "tr": "başarısızlık",
   "kind": "gloss.tr",
-  "de": "Scheitern"
+  "de": "das Scheitern"
  },
  {
   "tr": "hukuki belge",
@@ -783,5 +783,10 @@
   "tr": "inşaatın durdurulması",
   "kind": "gloss.tr",
   "de": "der Baustopp"
+ },
+ {
+  "tr": "geriye kalıyor",
+  "kind": "gloss.tr",
+  "de": "bleibt übrig"
  }
 ]

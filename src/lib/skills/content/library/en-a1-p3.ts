@@ -35,10 +35,10 @@ export const enA1P3: SkillExercise[] = [
     text:
       "LEMON CAKE — EASY AND FAST\n\n" +
       "You need: two eggs, one cup of sugar, one cup of flour, half a cup of oil, one lemon and a little salt.\n\n" +
-      "First, put the oven on at one hundred and eighty degrees.\n" +
+      "First, turn the oven on at one hundred and eighty degrees Celsius.\n" +
       "Then mix the eggs and the sugar for two minutes.\n" +
       "Add the oil, the flour and the salt. Mix again.\n" +
-      "Now wash the lemon. Put the juice and a little skin in the bowl.\n" +
+      "Now wash the lemon. Put the juice and a little peel in the bowl.\n" +
       "Put everything in a small pan and bake it for thirty-five minutes.\n\n" +
       "Wait ten minutes before you cut it. This cake is very good with tea.",
     questions: [
@@ -67,7 +67,7 @@ export const enA1P3: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["one hundred and eighty", "180"],
-        explain: "„First, put the oven on at one hundred and eighty degrees.“",
+        explain: "„First, turn the oven on at one hundred and eighty degrees Celsius.“",
       },
       {
         kind: "short_answer",
@@ -97,7 +97,7 @@ export const enA1P3: SkillExercise[] = [
     intro: "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",
     gloss: [
       { de: "floor", tr: "kat" },
-      { de: "cloakroom", tr: "vestiyer" },
+      { de: "coat check", tr: "vestiyer" },
       { de: "forget", tr: "unutmak" },
       { de: "visit", tr: "ziyaret" },
       { de: "map", tr: "harita" },
@@ -108,7 +108,7 @@ export const enA1P3: SkillExercise[] = [
       { text: "Good afternoon, everyone. The museum closes in twenty minutes, at six o'clock." },
       { text: "Please leave the rooms on the third floor now. That floor closes first." },
       { text: "The store is open until ten past six. Today all books are five euros." },
-      { text: "Do not forget your coats and bags. The cloakroom closes at six." },
+      { text: "Do not forget your coats and bags. The coat check closes at six." },
       { text: "Tomorrow we open at ten. The new room about old maps opens on Saturday." },
       { text: "Thank you for your visit. We hope to see you again soon." },
     ],
@@ -150,7 +150,7 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         text: "What opens on Saturday?",
-        options: ["a new room about old maps", "a new store for books and gifts", "a bigger cloakroom by the door"],
+        options: ["a new room about old maps", "a new store for books and gifts", "a bigger coat check by the door"],
         answer: 0,
         explain: "„The new room about old maps opens on Saturday.“",
       },

@@ -115,7 +115,7 @@ export const enA2U07: SkillExercise[] = [
     text:
       "On Monday my father had an appointment at the hospital. We were there at eight.\n" +
       "First we went to the information desk. The nurse asked for his card and his documents.\n" +
-      "Then we had to wait in line at the unit. Ten people were before us and we waited an hour.\n" +
+      "Then we had to wait in line at the unit. There were ten people ahead of us and we waited an hour.\n" +
       "The doctor looked at the results from March and said the treatment was working well.\n" +
       "After that we went to the insurance office. A woman gave us a form and asked for a signature.\n" +
       "My father asked: Does my insurance cover this? She said yes, but he has to pay ten euros for the medicine.\n" +
@@ -127,13 +127,13 @@ export const enA2U07: SkillExercise[] = [
         text: "How long did they wait at the unit?",
         options: ["an hour", "ten minutes", "a day"],
         answer: 0,
-        explain: "„Ten people were before us and we waited an hour.“",
+        explain: "„There were ten people ahead of us and we waited an hour.“",
       },
       {
         text: "What did the woman at the insurance office want?",
         options: ["a signature", "ten euros", "the results"],
         answer: 0,
-        explain: "„A woman gave us a form and asked for a signature.“ — para eczane için.",
+        explain: "„A woman gave us a form and asked for a signature.“ — para ilaç için.",
       },
       {
         kind: "truefalse",
@@ -165,7 +165,7 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will the writer take next time to read?",
+        text: "What will the writer take to read next time?",
         options: [],
         answer: 0,
         accept: ["a book", "a book to read", "book"],

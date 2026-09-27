@@ -265,7 +265,7 @@ export const enA2P12: SkillExercise[] = [
         tr: "Onu arayacağım.",
         hint: "Hızlı söyleyişte „going to“ = GA-nı: aym-GA-nı-KAL-hır. Plan anlatan „going to“da olur, „gidiyorum“ anlamındaki „going to the store“ta olmaz.",
         confusions: [
-          { heard: [], fix: "Kelimeleri tek tek söylemek yanlış değil ama yavaş duyulur; iki kelimeyi tek hecede birleştir.", expected: "going to" },
+          { heard: [], fix: "Kelimeleri tek tek söylemek yanlış değil ama yavaş duyulur; iki kelimeyi tek parçada birleştir.", expected: "going to" },
         ],
       },
       {
@@ -422,7 +422,7 @@ export const enA2P12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„If you heat water to 100 degrees, it boils.“ — Bu cümle doğru mu?",
+        text: "„If you heat water to 100 degrees Celsius, it boils.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Genel bir doğru; iki yan da present simple.",

@@ -48,7 +48,7 @@ export const b1U15: SkillExercise[] = [
       "Am Montag bin ich um sieben mit dem Rad in den Betrieb gefahren. Eine " +
       "Kollegin hat mich betreut und mir alles gezeigt.\n\n" +
       "Die ersten zwei Tage habe ich nur zugesehen. Das war keine verlorene " +
-      "Zeit: wer vorher genau beobachtet, macht später weniger Fehler. Am " +
+      "Zeit: Wer vorher genau beobachtet, macht später weniger Fehler. Am " +
       "Mittwoch durfte ich zum ersten Mal den Rechner bedienen.\n\n" +
       "Am Donnerstag kam eine Aushilfe dazu, und ich sollte ihr die Arbeit " +
       "erklären. Da habe ich gemerkt, wie viel ich schon verstanden hatte. " +
@@ -117,7 +117,7 @@ export const b1U15: SkillExercise[] = [
     text:
       "Es gibt keine Methode, die für alle passt. Aber es gibt Methoden, die " +
       "fast nie funktionieren. Einen Text zehnmal zu lesen ist fast sinnlos: " +
-      "es fühlt sich gut an und bringt kaum etwas.\n\n" +
+      "Es fühlt sich gut an und bringt kaum etwas.\n\n" +
       "Was hilft, ist die Wiederholung mit Abstand. Heute lernen, morgen kurz " +
       "prüfen, in einer Woche noch einmal. Das ist anstrengender, aber " +
       "es bleibt hängen. Ohne Anstrengung kein Fortschritt.\n\n" +
@@ -133,7 +133,7 @@ export const b1U15: SkillExercise[] = [
         text: "Was hält der Text für fast nutzlos?",
         options: ["Wiederholung mit Abstand", "Einen Text zehnmal lesen", "Aufschreiben"],
         answer: 1,
-        explain: "„Einen Text zehnmal zu lesen ist fast sinnlos: es fühlt sich gut an und bringt kaum etwas.“",
+        explain: "„Einen Text zehnmal zu lesen ist fast sinnlos: Es fühlt sich gut an und bringt kaum etwas.“",
       },
       {
         text: "Wie sieht Wiederholung mit Abstand aus?",
@@ -406,7 +406,7 @@ export const b1U15: SkillExercise[] = [
         phrases: [
           { de: "Ich weise dich darauf hin, damit …", tr: "Düzeltebilesin diye söylüyorum …", en: "I'm pointing it out so that …" },
           { de: "Das ist kein großes Problem.", tr: "Büyük bir sorun değil.", en: "That's not a big problem." },
-          { de: "Sag einfach Bescheid.", tr: "Sadece haber ver.", en: "Just let me know." },
+          { de: "Sag einfach Bescheid.", tr: "Haber vermen yeterli.", en: "Just let me know." },
         ],
       },
       {

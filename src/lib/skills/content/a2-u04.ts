@@ -32,21 +32,21 @@ export const a2U04: SkillExercise[] = [
     genre: "blog",
     intro: "Okul yıllarının anlatımı: neye izin vardı, ne zorunluydu?",
     gloss: [
-      { de: "das Gymnasium", tr: "lise", en: "grammar school" },
-      { de: "der Klassenlehrer", tr: "sınıf öğretmeni", en: "class teacher" },
+      { de: "das Gymnasium", tr: "lise", en: "academic high school" },
+      { de: "der Klassenlehrer", tr: "sınıf öğretmeni", en: "homeroom teacher" },
       { de: "der Mitschüler", tr: "sınıf arkadaşı", en: "classmate" },
       { de: "das Schulfach", tr: "okul dersi", en: "school subject" },
       { de: "streng", tr: "katı", en: "strict" },
       { de: "auswendig", tr: "ezbere", en: "by heart" },
       { de: "fleißig", tr: "çalışkan", en: "hard-working" },
-      { de: "das Zeugnis", tr: "karne", en: "school report" },
+      { de: "das Zeugnis", tr: "karne", en: "report card" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     minutes: 4,
     text:
       "Ich bin neun Jahre lang auf ein Gymnasium in einer kleinen Stadt gegangen. Wenn ich heute daran denke, war die Schule sehr streng.\n\n" +
-      "Unser Klassenlehrer hieß Herr Vogt. Wir durften im Unterricht nicht sprechen, und wir durften auch nicht aufstehen. Aber er war fair: wer eine Frage hatte, bekam immer eine Antwort.\n\n" +
+      "Unser Klassenlehrer hieß Herr Vogt. Wir durften im Unterricht nicht sprechen, und wir durften auch nicht aufstehen. Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.\n\n" +
       "Mein liebstes Schulfach war Geografie, weil wir dort Filme über andere Länder gesehen haben. Am schlimmsten war Latein. Wir mussten jede Woche zwanzig Wörter auswendig lernen, und ich war nie besonders fleißig.\n\n" +
       "Trotzdem war mein Zeugnis am Ende ganz okay. Zwei Mitschüler von damals sehe ich heute noch — wir sind seit fast zwanzig Jahren befreundet.",
     questions: [
@@ -82,7 +82,7 @@ export const a2U04: SkillExercise[] = [
         text: "Der Klassenlehrer war fair.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Aber er war fair: wer eine Frage hatte, bekam immer eine Antwort.“",
+        explain: "Doğru: „Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.“",
       },
     ],
   },
@@ -104,14 +104,14 @@ export const a2U04: SkillExercise[] = [
       { de: "die Wohnungssuche", tr: "ev arayışı", en: "apartment hunting" },
       { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
       { de: "komplett", tr: "tamamen", en: "completely" },
-      { de: "anzeigen", tr: "ilan", en: "ad" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
     ],
     minutes: 4,
     text:
       "Hallo zusammen,\n\n" +
       "ich lese hier schon lange mit und schreibe heute zum ersten Mal.\n\n" +
       "Vor drei Jahren bin ich nach Köln gekommen, wegen der Arbeit. Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten. Seither ist mein Leben komplett anders.\n\n" +
-      "Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug. Die Wohnungssuche hier ist wirklich hart: bislang habe ich auf zwölf Anzeigen geschrieben und nur zwei Antworten bekommen. Demnächst schaue ich mir eine Wohnung mit Garage an — die wäre perfekt, weil ich ein Auto habe.\n\n" +
+      "Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug. Die Wohnungssuche hier ist wirklich hart: Bislang habe ich auf zwölf Anzeigen geschrieben und nur zwei Antworten bekommen. Demnächst schaue ich mir eine Wohnung mit Garage an — die wäre perfekt, weil ich ein Auto habe.\n\n" +
       "Wenn alles klappt, ziehe ich im März ein. Hat jemand Tipps für die Suche?\n\n" +
       "Viele Grüße\nTobias",
     questions: [

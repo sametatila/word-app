@@ -319,7 +319,7 @@ export const deB2P10: SkillExercise[] = [
       { de: "die Verspätung", tr: "gecikme", en: "delay" },
       { de: "das Lokal", tr: "mekân", en: "restaurant" },
       { de: "unterwegs", tr: "yolda", en: "on the way" },
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "krank", tr: "hasta", en: "sick" },
     ],
     minutes: 10,
     explanation: [

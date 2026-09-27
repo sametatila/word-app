@@ -110,7 +110,7 @@
  { "tr": "„whereas“ beklenti bozmadan iki durumu karşılaştırır.", "kind": "explain", "de": "„whereas“ vergleicht zwei Lagen, ohne eine Erwartung zu brechen." },
  { "tr": "Anonimlik sebep olsaydı net bir fark beklenirdi; yok.", "kind": "explain", "de": "Wäre Anonymität die Ursache, erwartete man einen klaren Unterschied; den gibt es nicht." },
  { "tr": "Bir meslektaş kibarca hangi araştırmalar diye sormuş.", "kind": "explain", "de": "Eine Kollegin fragte höflich, welche Studien gemeint seien." },
- { "tr": "Görünür, programlanabilir ve bir isim listesi üretir.", "kind": "explain", "de": "Sie ist sichtbar, planbar und erzeugt eine Namensliste." },
+ { "tr": "Görünür, planlanabilir ve bir isim listesi üretir.", "kind": "explain", "de": "Sie ist sichtbar, planbar und erzeugt eine Namensliste." },
  { "tr": "İki nesne varsa önce kişi gelir ve araya edat girmez.", "kind": "explain", "de": "Bei zwei Objekten steht die Person zuerst, und keine Präposition dazwischen." },
  { "tr": "„look after“ ayrılmaz; nesne iki parçanın arkasına gelir: Please look after the children.", "kind": "explain", "de": "„look after“ ist untrennbar; das Objekt steht hinter beiden Teilen: Please look after the children." },
  { "tr": "Yaş „How old …?“ ile sorulur ve „be“ fiili öne geçer.", "kind": "explain", "de": "Nach dem Alter fragt man mit „How old …?“, und das Verb „be“ rückt nach vorn." },
@@ -126,6 +126,6 @@
  { "tr": "Aynı punto, bir kez söyleniyor ve sonra tekrarlanmıyor.", "kind": "explain", "de": "Dieselbe Schriftgröße, einmal gesagt und danach nicht wiederholt." },
  { "tr": "Başka bir şey okumasalar da doğru bilgiyle ayrılsınlar.", "kind": "explain", "de": "Auch wenn sie sonst nichts lesen, sollen sie mit der richtigen Information gehen." },
  { "tr": "Bir ana kadar başka bir şeyin olup bittiği anlatılıyor.", "kind": "explain", "de": "Es wird gesagt, dass bis zu einem Zeitpunkt etwas anderes geschehen war." },
- { "tr": "Gruplar için bırakmayı öneriyor; en zor yargılar orada.", "kind": "explain", "de": "Er schlägt vor, sie für Gruppen fallen zu lassen; dort liegen die schwersten Urteile." },
+ { "tr": "Kuralı gruplar için kaldırmayı öneriyor; en zor yargılar orada.", "kind": "explain", "de": "Er schlägt vor, die Regel für Gruppen abzuschaffen; dort liegen die schwersten Urteile." },
  { "tr": "Kötü fikir olduğunu söylemek için shouldn't kullanılır.", "kind": "explain", "de": "Um zu sagen, dass es eine schlechte Idee ist, wird shouldn't verwendet." }
 ]

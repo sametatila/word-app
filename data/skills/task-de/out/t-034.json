@@ -82,7 +82,7 @@
  {
   "tr": "Anladığımda anı çoktan solmuştu.",
   "kind": "build.tr",
-  "de": "Als ich es verstand, war die Erinnerung verblasst."
+  "de": "Als ich es verstand, war die Erinnerung schon verblasst."
  },
  {
   "tr": "Daha az utangaç olsam söylerdim.",
@@ -192,7 +192,7 @@
  {
   "tr": "Dilekçeyi imzalayıp imzalamadığımızı sordu.",
   "kind": "build.tr",
-  "de": "Sie fragte, ob wir die Unterschriftenliste unterschrieben hatten."
+  "de": "Sie fragte, ob wir die Unterschriftenliste unterschrieben hätten."
  },
  {
   "tr": "İşin bir anlamı vardı; sonuç olarak kaldım.",
@@ -282,7 +282,7 @@
  {
   "tr": "Şey için „that“; özne konumunda düşmüyor.",
   "kind": "build.hint",
-  "de": "Für eine Sache „that“; im Subjekt fällt es nicht weg."
+  "de": "Für eine Sache „that“; in der Subjektstellung fällt es nicht weg."
  },
  {
   "tr": "Yasak: „must not“, „don't have to“ değil.",

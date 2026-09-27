@@ -27,7 +27,7 @@ export const enA2P8: SkillExercise[] = [
       {
         de: "The station is near the information desk.",
         tr: "İstasyon danışmanın yanında.",
-        hint: "„-tion“ her zaman ŞIN okunur: STEY-şın, in-fı-MEY-şın. Vurgu ekten hemen ÖNCEKİ hecededir.",
+        hint: "„-tion“ neredeyse her zaman ŞIN okunur: STEY-şın, in-fı-MEY-şın. Vurgu ekten hemen ÖNCEKİ hecededir.",
         confusions: [
           { heard: [], fix: "t ve ion ayrı okunmaz; tek bir ş sesi verir.", expected: "station" },
         ],

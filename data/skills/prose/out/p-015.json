@@ -107,7 +107,7 @@
  {
   "tr": "Yıllık gider hesabı geldi ve tutar yüksek. Neyin nasıl hesaplandığını oku.",
   "kind": "intro",
-  "en": "The annual service charge statement has come and the sum is high. Read how it was worked out."
+  "en": "The annual utilities statement has come and the sum is high. Read how it was worked out."
  },
  {
   "tr": "„Alle wollen direkt vor dem Tor halten.“ — modal fiil ikinci, mastar sonda.",
@@ -135,7 +135,7 @@
   "en": "„Bitte die Karte von der Krankenkasse mitnehmen.“ — the health insurance card."
  },
  {
-  "tr": "„dass“dan sonra sıra özne + tümleçler + çekimli fiil: dass er morgen kommt.",
+  "tr": "„dass“tan sonra sıra özne + tümleçler + çekimli fiil: dass er morgen kommt.",
   "kind": "explain",
   "en": "After „dass“ the order is subject + complements + finite verb: dass er morgen kommt."
  },
@@ -162,7 +162,7 @@
  {
   "tr": "„Nimm sie dann bitte sofort heraus.“ Kurutma makinesi ayrı ve isteğe bağlı.",
   "kind": "explain",
-  "en": "„Nimm sie dann bitte sofort heraus.“ The tumble dryer is separate and optional."
+  "en": "„Nimm sie dann bitte sofort heraus.“ The dryer is separate and optional."
  },
  {
   "tr": "„Nur an der festen Feuerstelle beim Bach, nicht am Zelt.“ Saat 22.00'ye kadar.",
@@ -305,9 +305,9 @@
   "en": "The subject of „helfen“ in the clause is that person, so it takes the masculine nominative: der."
  },
  {
-  "tr": "Yanlış: „Die Waschmaschine im Keller ist frei, das ist in den Nebenkosten.“",
+  "tr": "Yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
   "kind": "explain",
-  "en": "False: „Die Waschmaschine im Keller ist frei, das ist in den Nebenkosten.“"
+  "en": "False: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“"
  },
  {
   "tr": "Yer için „where“ kullanılır; „which“ olsaydı arkasından bir edat gerekirdi.",
@@ -347,7 +347,7 @@
  {
   "tr": "„Gebraucht ist gut, rostig ist zu viel.“ — ikinci el sorun değil, pas sorun.",
   "kind": "explain",
-  "en": "„Gebraucht ist gut, rostig ist zu viel.“ — second hand is no problem, rust is."
+  "en": "„Gebraucht ist gut, rostig ist zu viel.“ — secondhand is no problem, rust is."
  },
  {
   "tr": "„however“ bağlaç değildir; virgül yerine nokta ya da noktalı virgül gerekir.",
@@ -495,7 +495,7 @@
   "en": "Persuade, but with proof: the claim, a figure, the distinguishing point, an admitted weakness."
  },
  {
-  "tr": "İlgi cümlesi durumu tek hamlede kuruyor; uzun bir önhikâyeye gerek kalmıyor.",
+  "tr": "İlgi cümlesi durumu tek hamlede kuruyor; uzun bir ön hikâyeye gerek kalmıyor.",
   "kind": "explain",
   "en": "The relative clause sets the scene in one move; no long back story is needed."
  },
@@ -547,7 +547,7 @@
  {
   "tr": "Telefonun bozuldu; önce iki cümle kur, sonra tamirciye kısa bir e-posta yaz.",
   "kind": "intro",
-  "en": "Your phone has broken; first form two sentences, then write a short email to the repairer."
+  "en": "Your phone has broken; first form two sentences, then write a short email to the repair shop."
  },
  {
   "tr": "Virgüllü açıklayıcı cümlede „that“ kullanılmaz; doğrusu „who lives in Rome“.",
@@ -677,7 +677,7 @@
  {
   "tr": "Bir forumda ev arkadaşlığı soruluyor; soruyu ve üç farklı cevabı okuyacaksın.",
   "kind": "intro",
-  "en": "A question about sharing a house on a forum; you will read the question and three answers."
+  "en": "A forum question about living with roommates; you will read the question and three answers."
  },
  {
   "tr": "Bir kurs için destek istiyorsun. Her cümlede amacın kime ait olduğunu göster.",

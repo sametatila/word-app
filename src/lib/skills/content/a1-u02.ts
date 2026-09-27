@@ -40,7 +40,7 @@ export const a1U02: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Sprachschule Mitte — Deutschkurs A1\n\nDer Kurs ist neu. Wir lernen zusammen Deutsch. Wir lernen Deutsch von A1 bis B1.\n\nDer Kurs kostet hundert Euro. Sie zahlen einmal, nicht jeden Monat.\n\nEine Gruppe hat mindestens zehn Personen. Mehr als zwanzig Personen sind zu viel.\n\nSie sprechen kein Deutsch? Kein Problem! Der A1-Kurs ist für Anfänger.\n\nFragen? Rufen Sie uns an: Nummer 030 22 44 88. Oder schreiben Sie an info@sprachschule-mitte.de. Mehr Information finden Sie auf Seite 2.",
+      "Sprachschule Mitte — Deutschkurs A1\n\nDer Kurs ist neu. Wir lernen zusammen Deutsch. Wir lernen Deutsch von A1 bis B1.\n\nDer Kurs kostet hundert Euro. Sie zahlen einmal, nicht jeden Monat.\n\nEine Gruppe hat mindestens zehn Personen. Mehr als zwanzig Personen sind zu viel.\n\nSie sprechen kein Deutsch? Kein Problem! Der A1-Kurs ist für Anfänger.\n\nFragen? Rufen Sie uns an: Nummer 030 22 44 88. Oder schreiben Sie an info@sprachschule-mitte.de. Mehr Informationen finden Sie auf Seite 2.",
     questions: [
       {
         text: "Wie viel kostet der Kurs?",
@@ -146,7 +146,7 @@ export const a1U02: SkillExercise[] = [
     unit: 2,
     title: "Wie schreibt man das?",
     genre: "phone",
-    intro: "Bir kadın telefonda adını harf harf söylüyor. Dinle ve yaz.",
+    intro: "Bir kadın telefonda soyadını harf harf söylüyor. Dinle ve yaz.",
     gloss: [
       { de: "buchstabieren", tr: "harf harf söylemek", en: "to spell" },
       { de: "der Nachname", tr: "soyadı", en: "last name" },

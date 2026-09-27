@@ -37,7 +37,7 @@
   {
     "tr": "Uyulmaması hâlinde ceza var.",
     "kind": "explanation.examples.tr",
-    "en": "If it is not kept to, there is a penalty."
+    "en": "Failure to comply carries a penalty."
   },
   {
     "tr": "Uzun süre telefonda konuştu.",
@@ -337,7 +337,7 @@
   {
     "tr": "Otobüsün ne zaman geleceğini soruyorum.",
     "kind": "explanation.examples.tr",
-    "en": "I'm asking when the bus comes."
+    "en": "I'm asking when the bus will come."
   },
   {
     "tr": "Yer kalıp kalmadığını sorabilir misiniz?",
@@ -357,7 +357,7 @@
   {
     "tr": "Poşet çoktan gitmişti, bu da canımı sıktı.",
     "kind": "explanation.examples.tr",
-    "en": "The bag had already gone, which annoyed me."
+    "en": "The bag was already gone, which annoyed me."
   },
   {
     "tr": "Daha erken yola çıksaydın treni yakalardın.",

@@ -240,9 +240,9 @@
   "de": "Im Aussagesatz „some“. „bread“ ist nicht zählbar, deshalb geht „a bread“ nicht."
  },
  {
-  "tr": "Hayvan için „a“ gerekir: a dog, a cat. Türkçede böyle bir sözcük yok.",
+  "tr": "Tekil sayılabilen isim „a“ ister: a dog, a cat. Türkçede „bir“ çoğu zaman düşebilir, İngilizcede düşmez.",
   "kind": "build.hint",
-  "de": "Vor dem Tier steht „a“: a dog, a cat — wie deutsch „ein“. Anders als im Türkischen, das kein solches Wort hat."
+  "de": "Ein zählbares Substantiv im Singular braucht „a“: a dog, a cat. Es entspricht dem deutschen „ein“ und darf im Englischen nicht wegfallen."
  },
  {
   "tr": "„a coffee“ bir fincan kahve demek; madde olarak kahve „coffee“ olurdu.",

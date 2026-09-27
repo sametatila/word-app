@@ -29,7 +29,7 @@ export const enB2P18: SkillExercise[] = [
       { de: "pensioner", tr: "emekli" },
       { de: "to withdraw", tr: "para çekmek" },
       { de: "register", tr: "yazar kasa" },
-      { de: "to pay in", tr: "yatırmak" },
+      { de: "to deposit", tr: "yatırmak" },
       { de: "credit union", tr: "tasarruf kurumu" },
       { de: "deposit", tr: "para yatırma" },
       { de: "necessity", tr: "zorunluluk" },
@@ -46,16 +46,16 @@ export const enB2P18: SkillExercise[] = [
       "planned to be: the only place in a town of three thousand people where you can both pay " +
       "with cash and get some back.\n\n" +
       "Every morning between eight and ten, a line forms that has nothing to do with groceries. " +
-      "Pensioners withdraw their weekly money at the register. A plumber pays in yesterday's takings. " +
+      "Pensioners withdraw their weekly money at the register. A plumber deposits yesterday's earnings. " +
       "The school's parent association drops off the coins from the summer fair, because neither " +
-      "the bank nor the credit union will accept a deposit that small any more without an " +
+      "the bank nor the credit union will accept a deposit that small anymore without an " +
       "appointment in the city.\n\n" +
       "Mr. Okonjo does not make money from any of this. Each withdrawal earns him a few cents from " +
       "the card company, and handling cash costs him far more than that in time and insurance. " +
       "When asked why he carries on, he says the answer is simple: if he stopped, none of his " +
       "older customers would have anywhere else to go.\n\n" +
       "Not everyone in town sees cash as a necessity. Most people under forty pay by card or " +
-      "phone and have not carried notes in years. Either they have never needed to, or they gave " +
+      "phone and have not carried cash in years. Either they have never needed to, or they gave " +
       "up when the machine disappeared.\n\n" +
       "The council has asked the banks to share a small branch one day a week in the library. " +
       "Both of the large banks have said they are “considering the request”. Until they decide, " +
@@ -260,7 +260,7 @@ export const enB2P18: SkillExercise[] = [
           "manage both. For a surprising number of people, one of those three is missing. " +
           "Both sides have a point. Handling cash is expensive for small businesses, and it is " +
           "hardly fair to ask a café owner to run a bank for free. At the same time, every store " +
-          "that stops accepting notes makes the next one's decision easier. " +
+          "that stops accepting cash makes the next one's decision easier. " +
           "Neither the banks nor the stores will solve this on their own, because each of them is " +
           "acting sensibly. What would help is a shared counter, paid for by all the banks " +
           "together, in every town that has lost its last branch. It would cost them very little, " +

@@ -317,7 +317,7 @@ export const enB2U09: SkillExercise[] = [
     unit: 9,
     title: "What the paper argues",
     genre: "monologue",
-    intro: "Başyazıda kaç yarık cümle? Ve neden anma yazısında hiç?",
+    intro: "Başyazıda kaç yarık cümle? Ve anma yazısında neden hiç yok?",
     gloss: [
       { de: "plain", tr: "yalın" },
       { de: "exists", tr: "var" },

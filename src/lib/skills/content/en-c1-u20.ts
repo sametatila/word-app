@@ -51,7 +51,7 @@ export const enC1U20: SkillExercise[] = [
     unit: 20,
     title: "What the plan leaves unsaid",
     genre: "info",
-    intro: "Aynı satırda fiilden iki isim. İkisi neden aynı yolla yapılmamış?",
+    intro: "Aynı satırda fiilden iki isim, ikisi de aynı yolla yapılmış. Öteki yol neden seçilmemiş?",
     gloss: [
       { de: "nouns", tr: "isimler" },
       { de: "noun", tr: "isim" },
@@ -94,7 +94,7 @@ export const enC1U20: SkillExercise[] = [
       "The other way is to add nothing at all. A verb is used as a noun with no ending, no change of shape and no visible mark of any kind, and the only thing saying it is a noun is the word in front of it.\n" +
       "This is called conversion and it is one of the cheapest machines in the language. A build. A spend. An ask. A reveal. A read. Any verb can be tried this way and most of them work, and there is no list to learn because there is nothing to add.\n" +
       "German cannot do it. A verb turned into a noun there always leaves a mark: a capital letter at least, usually an article, and often an ending as well, so the result is visibly a different word from the verb it came from. The change of class is written down.\n" +
-      "So here is the measurement, and it is the other end of something this level met one unit ago. There, English made a word by adding a prefix; here it makes one by adding nothing at all. Both machines are productive, and both are invisible to a reader who is not expecting them.\n" +
+      "So here is the measurement, and it is the other end of something this level met two units ago. There, English made a word by adding a prefix; here it makes one by adding nothing at all. Both machines are productive, and both are invisible to a reader who is not expecting them.\n" +
       "Both have the same cost too, and it is worth saying plainly. A new word built out of nothing looks like a term, or like a mistake. That is why the plan says „the repurposing“: „the repurpose“ in a planning document would sound like a stage in a procedure, and a reader who met it in a heading would assume that somewhere there is a form for it.\n" +
       "The moratorium survives as a promise, the construction freeze as a date. And then the closing line, in a shape this level knows by now: the houses fall into neglect; the halls, into ruin. The verb has gone from the second half and what is left is a preposition, carrying the difference between a slow thing and a finished one.",
     questions: [

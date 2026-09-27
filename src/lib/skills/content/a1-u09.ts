@@ -161,7 +161,7 @@ export const a1U09: SkillExercise[] = [
         text: "Wann steht die zweite Person auf?",
         options: ["um halb sieben", "um acht Uhr", "um elf"],
         answer: 0,
-        explain: "„Ich stehe um halb sieben auf.“ — 6:30.",
+        explain: "„Ich stehe um halb sieben auf.“ — 6.30.",
       },
       {
         kind: "gapfill",
@@ -233,7 +233,7 @@ export const a1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["halb"],
-        explain: "„Wir kommen um halb drei an.“ — 14:30.",
+        explain: "„Wir kommen um halb drei an.“ — 14.30.",
       },
       {
         text: "Richtig oder falsch? Die Schwester kommt sicher mit.",

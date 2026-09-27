@@ -63,7 +63,7 @@ export const enA1P6: SkillExercise[] = [
       {
         de: "She's a strong student.",
         tr: "O iyi bir öğrenci.",
-        hint: "„strong“ üç sessizle başlar: s-t-r. „student“ ise s-t-y. Zor olan kümeyi yavaş başlayıp hızlandır.",
+        hint: "„strong“ üç sessizle başlar: s-t-r. „student“ ise iki sessizle başlar: s-t. Zor olan kümeyi yavaş başlayıp hızlandır.",
         confusions: [
           { heard: ["is strong"], fix: "Önce yavaş söyle, sonra hızlandır; ünlü eklemeden.", expected: "strong" },
         ],
@@ -150,7 +150,7 @@ export const enA1P6: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["haven't", "have not"],
-        explain: "„have got“ olumsuzu haven't got'tur.",
+        explain: "„have got“ yapısının olumsuzu haven't got'tur.",
       },
       {
         kind: "gapfill",

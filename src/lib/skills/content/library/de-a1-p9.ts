@@ -238,7 +238,7 @@ export const deA1P9: SkillExercise[] = [
         confusions: [
           {
             heard: ["Das ist wirklik richtik"],
-            fix: "Kelime sonundaki -ig yumuşak ch sesiyle biter; k sesi Güney lehçesidir, ölçünlü değil.",
+            fix: "Kelime sonundaki -ig yumuşak ch sesiyle biter; k sesi güney ağızlarına özgüdür, ölçünlü değil.",
             expected: "richtig",
           },
         ],

@@ -113,7 +113,7 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         heading: "can't ile don't have to aynı DEĞİL",
-        tr: "Bu ikisi karşıt anlamlıdır ve karıştırmak tehlikelidir. YASAK günlük dilde „can't“ ile söylenir: „You can't smoke here.“ Tabelada ve yazılı kuralda „must not“ görürsün: „Visitors must not smoke.“ „don't have to“ ise GEREK YOK demektir: „You don't have to come.“ Türkçede ikisi de „-mek zorunda değilsin“ diye çevrilebildiği için hata sıktır.",
+        tr: "Bu ikisi karşıt anlamlıdır ve karıştırmak tehlikelidir. YASAK günlük dilde „can't“ ile söylenir: „You can't smoke here.“ Tabelada ve yazılı kuralda „must not“ görürsün: „Visitors must not smoke.“ „don't have to“ ise GEREK YOK demektir: „You don't have to come.“ „must not“ kelimesi kelimesine „-mek zorunda değilsin“ gibi göründüğü için hata sıktır.",
         examples: [
           { de: "You can't smoke here.", tr: "Burada sigara içemezsin.", note: "yasak, günlük dil" },
           { de: "Visitors must not smoke.", tr: "Ziyaretçilerin sigara içmesi yasaktır.", note: "yasak, yazılı kural" },

@@ -190,11 +190,6 @@
   "de": "Gewicht"
  },
  {
-  "tr": "sıkıntı",
-  "kind": "gloss.tr",
-  "de": "Not"
- },
- {
   "tr": "güç",
   "kind": "gloss.tr",
   "de": "Kraft"
@@ -255,9 +250,9 @@
   "de": "Insolvenz"
  },
  {
-  "tr": "kurum",
+  "tr": "kurumlar",
   "kind": "gloss.tr",
-  "de": "Institution"
+  "de": "die Organisationen"
  },
  {
   "tr": "kuşak",
@@ -310,11 +305,6 @@
   "de": "Besitz"
  },
  {
-  "tr": "tartma",
-  "kind": "gloss.tr",
-  "de": "Abwägung"
- },
- {
   "tr": "üreten",
   "kind": "gloss.tr",
   "de": "erzeugend"
@@ -335,9 +325,9 @@
   "de": "finanzierte"
  },
  {
-  "tr": "göründü",
+  "tr": "yer aldı",
   "kind": "gloss.tr",
-  "de": "ist aufgetaucht"
+  "de": "ist erschienen"
  },
  {
   "tr": "görüşme",
@@ -388,11 +378,6 @@
   "tr": "tutulan",
   "kind": "gloss.tr",
   "de": "vertreten"
- },
- {
-  "tr": "uzunluk",
-  "kind": "gloss.tr",
-  "de": "Länge"
  },
  {
   "tr": "müteahhit",
@@ -670,7 +655,7 @@
   "de": "wird erwartet"
  },
  {
-  "tr": "vatandaşlığı olan",
+  "tr": "vatandaşlığı … olan",
   "kind": "gloss.tr",
   "de": "deren Staatsbürgerschaft"
  },
@@ -687,7 +672,7 @@
  {
   "tr": "gibi görünüyor",
   "kind": "gloss.tr",
-  "de": "es scheint zu sein"
+  "de": "scheint zu sein"
  },
  {
   "tr": "fonlamamız gerekirdi",
@@ -698,5 +683,15 @@
   "tr": "belirsiz olmuş olmalı",
   "kind": "gloss.tr",
   "de": "muss unklar gewesen sein"
+ },
+ {
+  "tr": "festival",
+  "kind": "gloss.tr",
+  "de": "das Festival"
+ },
+ {
+  "tr": "harcanan",
+  "kind": "gloss.tr",
+  "de": "ausgegeben"
  }
 ]

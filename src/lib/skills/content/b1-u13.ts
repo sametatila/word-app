@@ -118,7 +118,7 @@ export const b1U13: SkillExercise[] = [
       "Nach elf Jahren habe ich vor, den Antrag zu stellen. Die Bedingungen kenne " +
       "ich inzwischen auswendig: genug Jahre im Land, ein Einkommen, " +
       "Sprachkenntnisse und ein Test über das Grundgesetz.\n\n" +
-      "Der Test ist leichter, als viele denken. Man muss keine Fremdsprache " +
+      "Der Test ist leichter, als viele denken. Man muss die Fremdsprache nicht " +
       "perfekt können, aber man sollte verstehen, wie die Gesellschaft hier " +
       "organisiert ist: welche Freiheiten gelten, wo die Grenzen sind und " +
       "warum abgestimmt wird.\n\n" +

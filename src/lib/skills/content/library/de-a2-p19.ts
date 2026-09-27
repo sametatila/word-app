@@ -299,7 +299,7 @@ export const deA2P19: SkillExercise[] = [
       {
         de: "Der Zug ist gerade abgefahren.",
         tr: "Tren az önce kalktı.",
-        hint: "Vuruşlar: ZUK, ge-RAA-de, AB-ge-fah-ren. abgefahren'de yalnız ab vurgulu, kalan üç hece kısa.",
+        hint: "Vuruşlar: ZUUK, ge-RAA-de, AB-ge-fah-ren. abgefahren'de yalnız ab vurgulu, kalan üç hece kısa.",
         confusions: [
           {
             heard: [],

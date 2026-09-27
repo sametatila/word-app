@@ -111,7 +111,7 @@ export const enA1U21: SkillExercise[] = [
       "When something hurts, we say: \"My head hurts\" or \"I have a headache.\" Both are good English. If you feel very bad, you must go to a doctor.",
     questions: [
       {
-        text: "How many fingers has each hand?",
+        text: "How many fingers does each hand have?",
         options: ["five", "two", "ten"],
         answer: 0,
         explain: "„My hands have five fingers each.“ — „each“ el başına demek.",
@@ -380,7 +380,7 @@ export const enA1U21: SkillExercise[] = [
         kind: "build",
         tr: "Burada beklemek zorundasın.",
         answer: "You have to wait here.",
-        hint: "„have to“ sonrası „to“ + fiil. Aynı anlam, başka biçim.",
+        hint: "„have to“ sonrası eksiz fiil: have to wait. Aynı anlam, başka biçim.",
       },
       {
         kind: "build",

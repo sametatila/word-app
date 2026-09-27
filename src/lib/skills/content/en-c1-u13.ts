@@ -54,7 +54,7 @@ export const enC1U13: SkillExercise[] = [
     genre: "info",
     intro: "„Where“ hangi yeri gösteriyor? Sökülebilen sözcük ile sökülemeyen.",
     gloss: [
-      { de: "either", tr: "ikisinden biri" },
+      { de: "either", tr: "de" },
       { de: "whereof", tr: "ki ondan" },
       { de: "whereupon", tr: "bunun üzerine" },
       { de: "preposition", tr: "edat" },
@@ -92,7 +92,7 @@ export const enC1U13: SkillExercise[] = [
       { de: "the spelling", tr: "yazım" },
       { de: "predicts", tr: "öngörüyor" },
       { de: "guess", tr: "tahmin etmek" },
-      { de: "tempting", tr: "ayartıcı" },
+      { de: "tempting", tr: "cazip" },
       { de: "technical", tr: "teknik" },
       { de: "the variable", tr: "değişken" },
     ],
@@ -533,7 +533,7 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Eski din maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
+        tr: "Eski din maneviyat olarak, inanç krizi bir soru olarak varlığını sürdürüyor.",
         answer: "The old religion survives as spirituality, the crisis of faith as a question.",
         hint: "Taşınamayan şey yok olmuyor, yer değiştiriyor.",
       },

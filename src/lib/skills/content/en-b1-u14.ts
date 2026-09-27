@@ -368,7 +368,7 @@ export const enB1U14: SkillExercise[] = [
         kind: "build",
         tr: "Günde on kelime ezberlemeye çalışıyorum.",
         answer: "I try to memorize ten words a day.",
-        hint: "„try“ burada MASTAR alıyor: denemek anlamında.",
+        hint: "„try“ burada MASTAR alıyor: çabalamak anlamında („try + -ing“ ise deneyip bakmak).",
       },
       {
         kind: "build",

@@ -41,7 +41,7 @@ export const b2U03: SkillExercise[] = [
       { de: "die Gleitzeit", tr: "esnek mesai", en: "flextime" },
       { de: "der Arbeitsablauf", tr: "iş akışı", en: "workflow" },
       { de: "koordinieren", tr: "koordine etmek", en: "to coordinate" },
-      { de: "freistellen", tr: "izinli saymak", en: "to release from duty" },
+      { de: "freistellen", tr: "muaf tutmak", en: "to exempt" },
       { de: "beruhen", tr: "dayanmak", en: "to be based on" },
       { de: "der Umfang", tr: "kapsam", en: "scope" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
@@ -156,7 +156,7 @@ export const b2U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["gezwungen"],
-        explain: "Resmî mektupta tehdit değil kayıt kurulur: 'kendimi mecbur görüyorum'. Özne cümleden çekilir.",
+        explain: "Resmî mektupta tehdit değil kayıt kurulur: 'kendimi mecbur görüyorum'. Kişi, adımı kendi isteği değil koşulların sonucu olarak sunar.",
       },
       {
         text: "Was ist laut Brief unzumutbar?",
@@ -239,7 +239,7 @@ export const b2U03: SkillExercise[] = [
         explain: "„…streiche ich jedes Wort, das ich meiner Mutter nicht erklären könnte.“",
       },
       {
-        text: "Was unterscheidet Frank von Selbstvertrauen?",
+        text: "Wovon unterscheidet Frank das Selbstvertrauen?",
         options: ["die Fachsprache", "die fachliche Kompetenz", "die Vorbereitung"],
         answer: 1,
         explain: "„Fachliche Kompetenz und Lust auf ein Mikrofon sind zwei verschiedene Dinge.“",

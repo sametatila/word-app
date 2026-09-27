@@ -53,7 +53,7 @@ export const b1U11: SkillExercise[] = [
       "sondern erklärt.\n\n" +
       "Neue Vorschriften werden immer schriftlich mitgeteilt. Sie hängen zwei Wochen " +
       "am Eingang, bevor sie gelten. Wer damit nicht einverstanden ist, kann das " +
-      "sagen: dafür ist der Donnerstag da.",
+      "sagen: Dafür ist der Donnerstag da.",
     questions: [
       {
         text: "Warum gibt es die Vorschriften?",

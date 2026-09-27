@@ -22,7 +22,7 @@
  {
   "tr": "„claimed“ kuşku koyuyor; „conceded“ doğruluğu artırıyor; „alleged“ kanıtlanmamış diyor; yansız olan yalnız „said“.",
   "kind": "form.facts",
-  "de": "„claimed“ sät Zweifel; „conceded“ erhöht die Glaubwürdigkeit; „alleged“ sagt unbewiesen; neutral ist nur „said“."
+  "de": "„claimed“ sät Zweifel; „conceded“ erhöht die Glaubwürdigkeit; „alleged“ sagt: unbewiesen; neutral ist nur „said“."
  },
  {
   "tr": "„not exactly cheap“ pahalı demek; „wouldn't say no“ evet demek; „hardly“ kendi olumsuzunu taşıyor; anlamı bağlam çözüyor.",
@@ -107,7 +107,7 @@
  {
   "tr": "O ileri sürdü; o kabul etti; onlar iddia etti.",
   "kind": "build.tr",
-  "de": "Er behauptete es; sie räumte es ein; sie gaben es als Vorwurf an."
+  "de": "Er behauptete es; sie räumte es ein; sie erhoben es als Vorwurf."
  },
  {
   "tr": "Bir iddiayı aktarmak onu tahrif etmek değildir.",
@@ -115,7 +115,7 @@
   "de": "Eine Behauptung wiederzugeben heißt nicht, sie zu verfälschen."
  },
  {
-  "tr": "Pek alçakgönüllü sayılmaz, öyle mi?",
+  "tr": "Pek alçakgönüllü sayılmaz, değil mi?",
   "kind": "build.tr",
   "de": "Kaum bescheiden, oder?"
  },
@@ -127,7 +127,7 @@
  {
   "tr": "O noktayı kabul ederdi, oysa öteki geçiştirirdi.",
   "kind": "build.tr",
-  "de": "Sie würde den Punkt einräumen, wohingegen er ihn beschönigen würde."
+  "de": "Sie würde den Punkt einräumen, wohingegen er ihn übergehen würde."
  },
  {
   "tr": "İsim vermeden sözcünün maskesini düşürüyorlar.",
@@ -165,7 +165,7 @@
   "de": "Zugegeben, die Zahl ist hoch, wenn auch erklärbar."
  },
  {
-  "tr": "İki olumsuz bir rica ediyor.",
+  "tr": "İki olumsuz bir rica kuruyor.",
   "kind": "build.hint",
   "de": "Zwei Verneinungen ergeben eine Bitte."
  },
@@ -242,7 +242,7 @@
  {
   "tr": "Tek sözcük bütün mektubun tonunu kuruyor.",
   "kind": "build.hint",
-  "de": "Ein einziges Wort setzt den Ton des ganzen Briefes."
+  "de": "Ein einziges Wort bestimmt den Ton des ganzen Briefes."
  },
  {
   "tr": "Aynı kipin öteki kalıntısı: „if“siz koşul.",

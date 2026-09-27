@@ -15,9 +15,9 @@
   "de": "Fülle die Freundschaftskarte aus."
  },
  {
-  "tr": "Yeni iş için tebrik; başlangıç bir ekim; cuma sınav var; bol şans dileniyor.",
+  "tr": "Yeni iş için tebrik; başlangıç 1 Ekim; cuma sınav var; bol şans dileniyor.",
   "kind": "form.facts",
-  "de": "Glückwunsch zur neuen Stelle; Beginn am ersten Oktober; Freitag ist die Prüfung; viel Glück gewünscht."
+  "de": "Glückwunsch zur neuen Stelle; Beginn am 1. Oktober; Freitag ist die Prüfung; viel Glück gewünscht."
  },
  {
   "tr": "Köprüyle ilgili haber; dün saat dörtte; bir şerit kapalı; kaynak sabahki makale.",
@@ -122,7 +122,7 @@
  {
   "tr": "Hiç bir festivale gittin mi?",
   "kind": "build.tr",
-  "de": "Warst du schon einmal auf einem Fest?"
+  "de": "Warst du schon einmal auf einem Festival?"
  },
  {
   "tr": "O benim yakın bir arkadaşım.",

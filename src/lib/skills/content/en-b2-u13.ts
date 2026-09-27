@@ -165,7 +165,7 @@ export const enB2U13: SkillExercise[] = [
     minutes: 9,
     text:
       "The measurement of inequality begins here. The documentation of discrimination is required. The reduction of prejudice takes a generation. Three nouns made from three verbs, and a report of this kind is written almost entirely in them.\n" +
-      "Every one of them takes „of“, which is a relief after the last unit, and it is also a trap: a reader who learns these three will write „the distinction of the two groups“ and be wrong.\n" +
+      "Every one of them takes „of“, which is a relief after unit 10, and it is also a trap: a reader who learns these three will write „the distinction of the two groups“ and be wrong.\n" +
       "The reason the nouns are used here is not the usual one. In a technical report the noun buys a number. In a report on inequality it buys distance, and distance is exactly what is being argued about.\n" +
       "„We measured inequality in four districts“ names us and dates the work. „The measurement of inequality“ names nothing and could have been written in any year. The first sentence can be checked. The second one can be agreed with by people who would disagree about everything underneath it.\n" +
       "That is not an argument against the form. A report that has to be signed by six bodies needs sentences that six bodies can sign, and solidarity between them is worth more than a sharper paragraph.\n" +

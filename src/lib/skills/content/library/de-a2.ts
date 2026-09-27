@@ -350,7 +350,7 @@ export const deA2: SkillExercise[] = [
         examples: [
           { de: "Ich habe im Supermarkt eingekauft.", tr: "Süpermarkette alışveriş yaptım.", note: "ein-ge-kauft" },
           { de: "Sie hat mich gestern angerufen.", tr: "Dün beni aradı.", note: "an-ge-rufen" },
-          { de: "Wir haben lange telefoniert.", tr: "Uzun konuştuk.", note: "-ieren: ge- yok" },
+          { de: "Wir haben lange telefoniert.", tr: "Telefonda uzun konuştuk.", note: "-ieren: ge- yok" },
           { de: "Er hat sein Auto verkauft.", tr: "Arabasını sattı.", note: "ver-: ge- yok" },
         ],
       },

@@ -179,7 +179,7 @@ export const enB2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A note about supervision only changes things.",
+        text: "A note only about supervision changes things.",
         options: ["True", "False"],
         answer: 1,
         explain: "„A note written that way is accurate and it changes nothing…“",

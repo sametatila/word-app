@@ -55,7 +55,7 @@ export const enB1U02: SkillExercise[] = [
       "Hi all,\n" +
       "Three things before Friday.\n" +
       "The agenda is attached. It was written by Sena and me on Tuesday, so if something is missing it is our fault, not yours. Add a line under point four if you need one.\n" +
-      "The client meeting is moved. I am seeing the client on Friday at two, not on Thursday. That means the numbers are needed by Thursday evening and not Friday morning. I am sorry — the change came from their side.\n" +
+      "The client meeting has been moved. I am seeing the client on Friday at two, not on Thursday. That means the numbers are needed by Thursday evening and not Friday morning. I am sorry — the change came from their side.\n" +
       "The report itself is going to be submitted tonight. Mert is going to check the last table and then it goes. If you find a mistake after that, tell me and I will send a short note to the client. A note is not a problem. A wrong number that nobody mentions is.\n" +
       "One more thing, and it is not urgent. The old agenda template is still used by two teams. It was replaced in March. If you are one of those teams, nobody told you, and that is on us.\n" +
       "See you Friday,\n" +
@@ -95,7 +95,7 @@ export const enB1U02: SkillExercise[] = [
         answer: 0,
         items: [
           "The agenda is attached.",
-          "The client meeting is moved to Friday.",
+          "The client meeting has been moved to Friday.",
           "The report is going to be submitted tonight.",
           "The old template is still used by two teams.",
         ],

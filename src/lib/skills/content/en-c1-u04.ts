@@ -50,7 +50,7 @@ export const enC1U04: SkillExercise[] = [
       { de: "unlike", tr: "aksine" },
       { de: "invert", tr: "devirmek" },
       { de: "principle", tr: "ilke" },
-      { de: "a construction", tr: "kuruluş" },
+      { de: "a construction", tr: "yapı" },
       { de: "collapses", tr: "çöküyor" },
       { de: "fronting", tr: "öne çıkarma" },
       { de: "keep apart", tr: "ayırt etmek" },
@@ -477,7 +477,7 @@ export const enC1U04: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Tam da vicdanlı sayılmazlar, öyle mi?",
+        tr: "Tam da vicdanlı sayılmazlar, değil mi?",
         answer: "Not exactly scrupulous, are they?",
         hint: "Olumsuzla söylenen olumlu; soru eki odaya devrediyor.",
       },
@@ -489,7 +489,7 @@ export const enC1U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Pek de felaket tellallığı sayılmaz, öyle mi?",
+        tr: "Pek de felaket tellallığı sayılmaz, değil mi?",
         answer: "Hardly alarmism, is it?",
         hint: "„hardly“ zaten olumsuz; ikinci „not“ yok.",
       },

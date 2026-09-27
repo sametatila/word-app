@@ -52,7 +52,7 @@
  {
   "tr": "Evi anlat ve daireyi sor. Karşılaştırma burada betimleme işinde.",
   "kind": "intro",
-  "de": "Beschreibe die Wohnung und frage nach ihr. Der Vergleich arbeitet hier als Beschreibung."
+  "de": "Beschreibe die Wohnung und frage nach ihr. Der Vergleich dient hier der Beschreibung."
  },
  {
   "tr": "Taşınmayı sırayla anlat. „yet“ ve „since“ henüz bitmemişi taşıyor.",
@@ -175,9 +175,9 @@
   "de": "„He came on Tuesday, looked at the pipe and said: I can't fix it.“"
  },
  {
-  "tr": "„A woman gave us a form and asked for a signature.“ — para eczane için.",
+  "tr": "„A woman gave us a form and asked for a signature.“ — para ilaç için.",
   "kind": "explain",
-  "de": "„A woman gave us a form and asked for a signature.“ — das Geld ist für die Apotheke."
+  "de": "„A woman gave us a form and asked for a signature.“ — das Geld ist für Medikamente."
  },
  {
   "tr": "„…there are two shelves on the wall.“ — tekili „shelf“, çoğulu „shelves“.",
@@ -197,7 +197,7 @@
  {
   "tr": "„The first week I said nothing.“ — yukarı çıkmak ikinci, mektup üçüncü adım.",
   "kind": "explain",
-  "de": "„The first week I said nothing.“ — hinaufgehen ist der zweite, der Brief der dritte Schritt."
+  "de": "„The first week I said nothing.“ — das Hinaufgehen ist der zweite, der Brief der dritte Schritt."
  },
  {
   "tr": "„The heating hasn't worked since Monday.“ — cumartesi sızıntının başlangıcı.",
@@ -377,7 +377,7 @@
  {
   "tr": "normal olarak",
   "kind": "gloss.tr",
-  "de": "normal"
+  "de": "normalerweise"
  },
  {
   "tr": "içinden geçmek",
@@ -408,5 +408,35 @@
   "tr": "servisin nerede olduğunu",
   "kind": "gloss.tr",
   "de": "wo die Station ist"
+ },
+ {
+  "tr": "en üstte",
+  "kind": "gloss.tr",
+  "de": "ganz oben"
+ },
+ {
+  "tr": "kurum",
+  "kind": "gloss.tr",
+  "de": "die Institution"
+ },
+ {
+  "tr": "bilmek",
+  "kind": "gloss.tr",
+  "de": "wissen"
+ },
+ {
+  "tr": "sıra",
+  "kind": "gloss.tr",
+  "de": "die Reihe"
+ },
+ {
+  "tr": "yol",
+  "kind": "gloss.tr",
+  "de": "der Weg"
+ },
+ {
+  "tr": "kabul etmek",
+  "kind": "gloss.tr",
+  "de": "einräumen"
  }
 ]

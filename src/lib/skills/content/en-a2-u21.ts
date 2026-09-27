@@ -49,7 +49,7 @@ export const enA2U21: SkillExercise[] = [
     text:
       "Three things people ask me every week.\n" +
       "My phone is slow. First open Settings, then tap Update. Usually the phone is not slow — it is old inside. An update takes eight minutes and you get a new keyboard too.\n" +
-      "Nothing works. Turn it off and turn it on again. I know how that sounds. It works because the phone forgets everything it did wrong since the morning.\n" +
+      "Nothing works. Turn it off and turn it on again. I know how that sounds. It works because the phone forgets everything it has done wrong since the morning.\n" +
       "The battery is empty at two in the afternoon. Look at Settings again. There is a list: which app took how much. The first one on that list is usually a map you opened in June.\n" +
       "And one more thing. The speaker gets quiet after two years. Clean it — thirty seconds, and it is loud again.\n" +
       "I don't think phones are hard. I think the menus are.",
@@ -135,7 +135,7 @@ export const enA2U21: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Answer 2 has had the account for ___ years.",
+        text: "The writer of Answer 2 has had the account for ___ years.",
         options: [],
         answer: 0,
         accept: ["two", "2"],

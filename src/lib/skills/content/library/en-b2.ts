@@ -20,7 +20,7 @@ export const enB2: SkillExercise[] = [
     skill: "reading",
     title: "The five-star problem",
     genre: "opinion",
-    intro: "Puanlama sistemlerinin neden işe yaramaz hale geldiğini anlatan bir yorum yazısı: sorun yıldızlarda mı, bizde mi?",
+    intro: "Puanlama sistemlerinin neden işe yaramaz hâle geldiğini anlatan bir yorum yazısı: sorun yıldızlarda mı, bizde mi?",
     gloss: [
       { de: "rating", tr: "puanlama" },
       { de: "average", tr: "ortalama" },

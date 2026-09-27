@@ -10,9 +10,9 @@
   "en": "The first day at work. Who is who, and who works with whom?"
  },
  {
-  "tr": "İşyerinde sorun çıkarsa kime gidilir? Üç adres.",
+  "tr": "İşyerinde sorun çıkarsa kime gidilir, ne yapılır?",
   "kind": "intro",
-  "en": "Something goes wrong at work — who do you go to? Three addresses."
+  "en": "Something goes wrong at work — who do you go to, and what do you do?"
  },
  {
   "tr": "Kayıt nezaket meselesi değil, muhatap meselesi.",
@@ -335,9 +335,9 @@
   "en": "Putting it into force changes both the authority and the procedure."
  },
  {
-  "tr": "„advice“ sayılamaz: çoğul olmaz ve artikel almaz.",
+  "tr": "„advice“ sayılamaz: çoğul olmaz ve önüne a / an gelmez.",
   "kind": "explain",
-  "en": "„advice“ is uncountable: no plural and no article."
+  "en": "„advice“ is uncountable: no plural and no a / an in front of it."
  },
  {
   "tr": "„anfangen“ ayrılır ve kök a → ä olur: fängt … an.",
@@ -365,7 +365,7 @@
   "en": "„es ist halb neun“ — that is 8:30, half an hour to nine."
  },
  {
-  "tr": "„hat 20 Minuten Verspätung“ — 14:20 yerine 14:40.",
+  "tr": "„hat 20 Minuten Verspätung“ — 14.20 yerine 14.40.",
   "kind": "explain",
   "en": "„hat 20 Minuten Verspätung“ — 14:40 instead of 14:20."
  },
@@ -743,5 +743,10 @@
   "tr": "İki kişi uykuyu konuşuyor. Sorun ne, ne deneniyor?",
   "kind": "intro",
   "en": "Two people talk about sleep. What is wrong, what is tried?"
+ },
+ {
+  "tr": "„We're coming by train, so no parking.“",
+  "kind": "explain",
+  "en": "„We're coming by train, so no parking.“"
  }
 ]

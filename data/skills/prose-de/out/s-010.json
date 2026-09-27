@@ -13,7 +13,7 @@
  { "tr": "Satılık: …", "kind": "gloss.tr", "de": "Zu verkaufen: …" },
  { "tr": "sınırlılık", "kind": "gloss.tr", "de": "Einschränkung" },
  { "tr": "söz vermek", "kind": "gloss.tr", "de": "versprechen" },
- { "tr": "su akıtmak", "kind": "gloss.tr", "de": "lecken" },
+ { "tr": "su sızdırmak", "kind": "gloss.tr", "de": "lecken" },
  { "tr": "şarj aleti", "kind": "gloss.tr", "de": "Ladegerät" },
  { "tr": "uygun kişi", "kind": "gloss.tr", "de": "die passende Person" },
  { "tr": "uyuyakaldı", "kind": "gloss.tr", "de": "schlief ein" },
@@ -27,7 +27,6 @@
  { "tr": "anket formu", "kind": "gloss.tr", "de": "Fragebogen" },
  { "tr": "anlaşmazlık", "kind": "gloss.tr", "de": "Streit" },
  { "tr": "Başta … idi", "kind": "gloss.tr", "de": "Anfangs war es …" },
- { "tr": "biriktirmek", "kind": "gloss.tr", "de": "sparen" },
  { "tr": "bloke etmek", "kind": "gloss.tr", "de": "sperren" },
  { "tr": "borç vermek", "kind": "gloss.tr", "de": "leihen" },
  { "tr": "Bu … olamaz", "kind": "gloss.tr", "de": "Das kann nicht … gewesen sein" },
@@ -56,7 +55,6 @@
  { "tr": "öngörülemez", "kind": "gloss.tr", "de": "unvorhersehbar" },
  { "tr": "resmî tatil", "kind": "gloss.tr", "de": "Feiertag" },
  { "tr": "sabit ücret", "kind": "gloss.tr", "de": "Grundgebühr" },
- { "tr": "sakındırmak", "kind": "gloss.tr", "de": "abraten" },
  { "tr": "sekiz buçuk", "kind": "gloss.tr", "de": "halb neun" },
  { "tr": "sıcak tutan", "kind": "gloss.tr", "de": "warm" },
  { "tr": "Son tarih …", "kind": "gloss.tr", "de": "Die Frist ist …" },
@@ -136,7 +134,7 @@
  { "tr": "Benim adım ...", "kind": "gloss.tr", "de": "Mein Name ist ..." },
  { "tr": "bilet makinesi", "kind": "gloss.tr", "de": "Fahrkartenautomat" },
  { "tr": "biyolojik saat", "kind": "gloss.tr", "de": "innere Uhr" },
- { "tr": "Buna rağmen, …", "kind": "gloss.tr", "de": "Trotzdem, …" },
+ { "tr": "Buna rağmen, …", "kind": "gloss.tr", "de": "Trotzdem …" },
  { "tr": "Dün ... gezdik", "kind": "gloss.tr", "de": "Gestern haben wir ... besichtigt" },
  { "tr": "Fiyatı … euro.", "kind": "gloss.tr", "de": "Der Preis ist … Euro." },
  { "tr": "gitti / gittim", "kind": "gloss.tr", "de": "ging" },
@@ -144,5 +142,6 @@
  { "tr": "hediyelik eşya", "kind": "gloss.tr", "de": "Souvenir" },
  { "tr": "İhbar süresi …", "kind": "gloss.tr", "de": "Die Kündigungsfrist ist …" },
  { "tr": "ihtiyacı olmak", "kind": "gloss.tr", "de": "brauchen" },
- { "tr": "Kira ne kadar?", "kind": "gloss.tr", "de": "Wie hoch ist die Miete?" }
+ { "tr": "Kira ne kadar?", "kind": "gloss.tr", "de": "Wie hoch ist die Miete?" },
+ { "tr": "„Yes, I'm going to buy two tickets.“", "kind": "explain", "de": "„Yes, I'm going to buy two tickets.“" }
 ]

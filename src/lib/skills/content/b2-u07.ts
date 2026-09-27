@@ -52,7 +52,7 @@ export const b2U07: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "WERKFÜHRUNG — WAS SIE AUF DEN VIER STATIONEN SEHEN\n\n" +
+      "WERKFÜHRUNG — WAS SIE AN DEN VIER STATIONEN SEHEN\n\n" +
       "Station 1: Anlieferung. Hier kommt an, was wir brauchen. Der Rohstoff wird angeliefert, gewogen und geprüft. Was die Prüfung nicht besteht, geht zurück — das sind im Schnitt zwei Lieferungen im Monat. Anschließend beginnt die Lagerung, und zwar getrennt nach Charge, damit später jederzeit nachvollzogen werden kann, woher ein Fehler kommt.\n\n" +
       "Station 2: Fertigung. In der Fertigung wird der Rohstoff in vier Schritten verarbeitet. Der Weg dauert knapp elf Minuten. Sie sehen hier kein Fließband im klassischen Sinn: Die Behälter fahren einzeln, weil jeder Auftrag eine andere Rezeptur hat.\n\n" +
       "Station 3: Abfüllung und Montage. Zuerst wird abgefüllt, dann folgt die Montage von Deckel und Ausgießer. Beide Schritte laufen automatisch, aber an jedem steht ein Mensch — nicht um zu arbeiten, sondern um zu sehen, wenn etwas nicht stimmt.\n\n" +

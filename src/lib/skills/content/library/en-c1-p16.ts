@@ -275,7 +275,7 @@ export const enC1P16: SkillExercise[] = [
           "of three people who each believe they caused the accident at its center, and it asks the audience to " +
           "decide which account to trust.\n\n" +
           "It works best when it trusts that structure. The second version, told by the brother, is the finest " +
-          "twenty minutes I have seen on a small stage this year, largely because the cast play it quietly, as " +
+          "twenty minutes I have seen on a small stage this year, largely because the cast plays it quietly, as " +
           "though nothing much were happening, and let the audience notice what has changed.\n\n" +
           "The ending is weaker. In the final scene, I would rather the director had trusted the audience; " +
           "instead a character steps forward and explains what we have just watched, as if the playwright were " +

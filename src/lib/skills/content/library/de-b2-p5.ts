@@ -37,7 +37,7 @@ export const deB2P5: SkillExercise[] = [
       "es ist ein Verfahren. Über jeden Posten wird protokolliert, wer geboten hat und wie viel.\n\n" +
       "Worüber ärgern sich die Leute am häufigsten?\n" +
       "Darüber, dass sie nichts anfassen dürfen, bevor sie bieten. Ich verstehe das, aber wir haften nicht für " +
-      "die Sachen. Wer sich für ein Fahrrad interessiert, kann es in der Besichtigung von allen Seiten ansehen — " +
+      "die Sachen. Wer sich für ein Fahrrad interessiert, kann es bei der Besichtigung von allen Seiten ansehen — " +
       "nur eben nicht fahren.\n\n" +
       "Was kommt am häufigsten herein?\n" +
       "Regenschirme im Herbst, Brillen das ganze Jahr, und Fahrräder, sehr viele Fahrräder. Worauf sich niemand " +
@@ -276,7 +276,7 @@ export const deB2P5: SkillExercise[] = [
         "İyi bir eğitimi (meslek eğitimi, kurs, çıraklık) neyden tanırsın? Yaygın ölçütü sına, kendi ölçütünü en az iki parçaya ayır ve her parçayı somutlaştır.",
       bulletsTr: [
         "Yaygın ölçütü adlandır ve neden yetersiz olduğunu söyle",
-        "Birinci ölçütünü ver: hatalarla nasıl davranılıyor",
+        "Birinci ölçütünü ver: hatalara nasıl yaklaşılıyor",
         "İkinci ölçütünü ver: sorumluluk hangi sırayla veriliyor",
         "Eğitimin neyle bittiğine bakarak bitir",
       ],

@@ -20,7 +20,7 @@ import type { SkillExercise } from "../types";
  *           If the pulse is normal, we will wait. ·
  *           If I were you, I would check the heart again. ·
  *           Unless the temperature falls, call us. ·
- *           I sent the note; moreover I called the office. ·
+ *           I sent the note; moreover, I called the office. ·
  *           Take the leave now; otherwise you lose it. ·
  *           Besides the note, they want a date.
  *
@@ -56,7 +56,7 @@ export const enB1U20: SkillExercise[] = [
     minutes: 7,
     text:
       "Four small words that do four different jobs, and a doctor's note is where you need all of them in one afternoon.\n" +
-      "I sent the note; moreover I called the office. „Moreover“ adds a second thing of the same kind and it makes the first one heavier. It belongs in writing and almost never in speech.\n" +
+      "I sent the note; moreover, I called the office. „Moreover“ adds a second thing of the same kind and it makes the first one heavier. It belongs in writing and almost never in speech.\n" +
       "Besides the note, they want a date. „Besides“ also adds, but it starts from what you already have: apart from this, there is that. Different shape, same direction.\n" +
       "Take the leave now; otherwise you lose it. „Otherwise“ is the only one of the four that carries a warning. It means: if you do not, this follows. Learners use it half as often as they should.\n" +
       "I did not send an email; instead I went to reception. „Instead“ replaces. Nothing is added — one thing is exchanged for another.\n" +
@@ -352,7 +352,7 @@ export const enB1U20: SkillExercise[] = [
       {
         kind: "build",
         tr: "Raporu gönderdim; üstelik ofisi de aradım.",
-        answer: "I sent the note; moreover I called the office.",
+        answer: "I sent the note; moreover, I called the office.",
         hint: "„moreover“ aynı türden ikinci bir şey EKLİYOR ve yazıya ait.",
       },
       {

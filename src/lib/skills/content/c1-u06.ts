@@ -186,7 +186,7 @@ export const c1U06: SkillExercise[] = [
       "„Kurz, klar, überzeugend.“ Drei Wörter, kein Komma zu viel. Die Dreierfigur ist die älteste Regel der Rhetorik und die einzige, die fast niemand bewusst lernt.\n\n" +
       "Der Grund ist wahrnehmungspsychologisch schlicht: Zwei Elemente bilden noch keinen Rhythmus, vier verlangen Aufmerksamkeit für die Aufzählung selbst. Drei genügen, damit das Ohr ein Muster erkennt — und ein erkanntes Muster wirkt einprägsam, auch wenn der Inhalt es nicht ist.\n\n" +
       "Genau darin liegt die Gefahr. Eine prägnante Dreierfigur kann eine schwache Aussage tragen, ohne sie besser zu machen. Wer „schneller, günstiger, nachhaltiger“ sagt, hat drei Behauptungen aufgestellt und keine belegt.\n\n" +
-      "Ähnlich die Metapher. Sie veranschaulicht, indem sie zwei Bereiche auf einen Nenner bringt. „Wir haben den roten Faden verloren“ erklärt in vier Wörtern, wozu ein Absatz nötig wäre.\n\n" +
+      "Ähnlich die Metapher. Sie veranschaulicht, indem sie zwei Bereiche auf einen Nenner bringt. „Wir haben den roten Faden verloren“ erklärt in einem Satz, wozu ein Absatz nötig wäre.\n\n" +
       "Doch jede Metapher bringt ihr eigenes Gepäck mit. Wer im Betrieb vom „Kampf um Marktanteile“ spricht, hat Gegner benannt und Verhandlung ausgeschlossen — meist ohne es zu wollen. Das Bild denkt weiter, wenn der Redner längst aufgehört hat.\n\n" +
       "Besonders zäh sind Metaphern, die niemand mehr als solche hört. „Wachstum“ kommt aus der Biologie und legt nahe, dass mehr immer natürlich sei; „Schulden abbauen“ kommt aus dem Bergbau und macht aus einer Zahl einen Berg. Beide Bilder tragen eine Wertung, die nie ausgesprochen und deshalb auch nie bestritten wird.\n\n" +
       "Wer Metaphern prüfen will, ersetzt sie testweise durch das nüchternste Wort, das passt, und liest den Satz noch einmal.\n\n" +
@@ -278,7 +278,7 @@ export const c1U06: SkillExercise[] = [
       { speaker: "Rednerin", text: "Gestatten Sie mir eine Rückfrage: Halten Sie fünf Jahre für zu lang, oder halten Sie die 3,2 Prozent für unrealistisch?" },
       { speaker: "Zwischenruf", text: "Das Zweite." },
       { speaker: "Rednerin", text: "Gut, dann reden wir über den Zinssatz und nicht über die Amortisation. Das ist die kürzere Diskussion." },
-      { speaker: "Moderator", text: "Wir nehmen das nachher auf, ja? Sonst verlieren wir die Zeit." },
+      { speaker: "Moderator", text: "Wir nehmen das nachher auf, ja? Sonst läuft uns die Zeit davon." },
       { speaker: "Rednerin", text: "Einen Satz noch: Der Einwand ist damit nicht entkräftet, nur eingegrenzt." },
       { speaker: "Moderator", text: "Sie bleiben bemerkenswert souverän." },
       { speaker: "Rednerin", text: "Ein Zwischenruf ist kein Angriff. Wer starr am Manuskript hängt, wirkt getroffen; wer aufgreift, hat den Raum." },
@@ -476,7 +476,7 @@ export const c1U06: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Aşağıdaki durum için bir konuşma girişi yaz (6-9 cümle). Şunları kullan: en az bir devrik cümle (ilk konumda özne OLMAYACAK), bir üçleme, ve bir metafor — ama metaforun getirdiği mantığı da düşün, düşman üretme. Sonda ana hattı bir cümleyle söyle.",
+          "Aşağıdaki durum için bir konuşma girişi yaz (6-9 cümle). Şunları kullan: en az bir devrik cümle (ilk konumda özne OLMAYACAK), bir üçleme ve bir metafor — ama metaforun getirdiği mantığı da düşün, düşman üretme. Sonda ana hattı bir cümleyle söyle.",
         stimulus:
           "DURUM: Belediyenin kütüphane bütçesini üçte bir kısma önerisine karşı, kütüphane müdürü olarak meclis önünde konuşuyorsun.\n\n" +
           "ELİNDEKİ VERİ:\n" +

@@ -28,7 +28,7 @@
  { "tr": "je … desto", "kind": "explanation.heading", "en": "je … desto" },
  { "tr": "Ne oluyor?", "kind": "explanation.heading", "en": "What is going on?" },
  { "tr": "Bir istisna", "kind": "explanation.heading", "en": "One exception" },
- { "tr": "En sık hata", "kind": "explanation.heading", "en": "The commonest mistake" },
+ { "tr": "En sık hata", "kind": "explanation.heading", "en": "The most common mistake" },
  { "tr": "Kaynaşmalar", "kind": "explanation.heading", "en": "Contractions" },
  { "tr": "İki sık hata", "kind": "explanation.heading", "en": "Two common mistakes" },
  { "tr": "war ve hatte", "kind": "explanation.heading", "en": "war and hatte" },
@@ -39,7 +39,6 @@
  { "tr": "als mi, wie mi?", "kind": "explanation.heading", "en": "als or wie?" },
  { "tr": "Beş çoğul biçimi", "kind": "explanation.heading", "en": "Five plural forms" },
  { "tr": "Cümlenin iki ucu", "kind": "explanation.heading", "en": "The two ends of the sentence" },
- { "tr": "Gerçekdışı koşul", "kind": "explanation.heading", "en": "Unreal conditions" },
  { "tr": "haben mı sein mi", "kind": "explanation.heading", "en": "haben or sein" },
  { "tr": "Ne zaman hangisi", "kind": "explanation.heading", "en": "Which one when" },
  { "tr": "W-sorusunda sıra", "kind": "explanation.heading", "en": "Word order in a W-question" },
@@ -56,7 +55,7 @@
  { "tr": "Hangi fiiller ister?", "kind": "explanation.heading", "en": "Which verbs take it?" },
  { "tr": "Hangi ön ek ayrılır?", "kind": "explanation.heading", "en": "Which prefixes separate?" },
  { "tr": "Tek kural, üç bağlaç", "kind": "explanation.heading", "en": "One rule, three conjunctions" },
- { "tr": "Türkçede olmayan şey", "kind": "explanation.heading", "en": "What English has not got either" },
+ { "tr": "Türkçede olmayan şey", "kind": "explanation.heading", "en": "What English doesn't have either" },
  { "tr": "Türkçedeki iki ortaç", "kind": "explanation.heading", "en": "The two participles you already know" },
  { "tr": "Edat varsa başa geçer", "kind": "explanation.heading", "en": "A preposition moves to the front" },
  { "tr": "Ek değil, ayrı kelime", "kind": "explanation.heading", "en": "Not an ending, a separate word" },
@@ -148,5 +147,6 @@
  { "tr": "Konjunktiv I kökten kurulur ve ek olarak -e, -est, -e, -en, -et, -en alır. Gösterge kipinden gerçekten ayrıldığı yer üçüncü tekildir: er kommt → er komme. „sein“ düzensizdir: ich sei, du seist, er sei, wir seien.", "kind": "explanation.tr", "en": "The Konjunktiv I is built on the stem and takes the endings -e, -est, -e, -en, -et, -en. Where it really differs from the indicative is the third person singular: er kommt → er komme. „sein“ is irregular: ich sei, du seist, er sei, wir seien." },
  { "tr": "Birincisi: „obwohl“ yan cümlesi ana cümlenin birinci öğesidir, ardından doğrudan çekimli fiil gelir; „trotzdem“ oraya, fiilin önüne konmaz. Pekiştirmek istersen fiilden sonra durabilir: „…, sind wir trotzdem geblieben“. İkincisi: „je … desto“ yapısında iki tarafta da karşılaştırma derecesi olmalı — „je klar“ değil „je klarer“.", "kind": "explanation.tr", "en": "First: an „obwohl“ clause is the first element of the main clause, so the finite verb comes straight after it; „trotzdem“ cannot go there, in front of the verb. For emphasis it can follow the verb: „…, sind wir trotzdem geblieben“. Second: in the „je … desto“ pattern both halves need a comparative — „je klarer“, not „je klar“." },
  { "tr": "Türkçede „gelseydi, görecektik“ gibi iki ayrı çekim vardır. Almancada Konjunktiv II'nin geçmişi için TEK bir biçim vardır: hätte ya da wäre + Partizip II. Hangi yardımcı fiilin geleceğini fiilin Perfekt'i belirler.", "kind": "explanation.tr", "en": "English uses two different shapes: if he had come, we would have seen. German has ONE single form for the past Konjunktiv II: hätte or wäre + Partizip II. Which auxiliary you need is decided by the verb's Perfekt." },
- { "tr": "Türkçede edilgen fiilin içine girer: yap-ılıyor, gönder-iliyor. Almancada iki kelime gerekir: „werden“ ikinci sırada çekilir, Partizip II cümlenin sonuna gider. Etken cümlenin nesnesi, edilgen cümlenin öznesi olur.", "kind": "explanation.tr", "en": "English needs two words too: it is being sent. German needs the same two, but pulled apart: „werden“ is conjugated in second position and the Partizip II goes to the end. The object of the active sentence becomes the subject of the passive one." }
+ { "tr": "Türkçede edilgen fiilin içine girer: yap-ılıyor, gönder-iliyor. Almancada iki kelime gerekir: „werden“ ikinci sırada çekilir, Partizip II cümlenin sonuna gider. Etken cümlenin nesnesi, edilgen cümlenin öznesi olur.", "kind": "explanation.tr", "en": "English needs two words too: it is being sent. German needs the same two, but pulled apart: „werden“ is conjugated in second position and the Partizip II goes to the end. The object of the active sentence becomes the subject of the passive one." },
+ { "tr": "Gerçekdışı koşul", "kind": "explanation.heading", "en": "Unreal condition" }
 ]

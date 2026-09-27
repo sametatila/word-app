@@ -112,7 +112,7 @@
  {
   "tr": "Kim toplar? Adı geçmiyor ama İngilizce yine de bir özne koyuyor.",
   "kind": "intro",
-  "de": "Wer holt den Müll? Der Name fällt nicht, und doch setzt Englisch ein Subjekt."
+  "de": "Wer holt den Müll ab? Der Name fällt nicht, und doch setzt Englisch ein Subjekt."
  },
  {
   "tr": "A2'nin son egzersizi. Randevu, belge ve seviyenin en çok dönen kalıbı.",
@@ -132,7 +132,7 @@
  {
   "tr": "Öğüt „should“ ile; sonrası fiil eksiz.",
   "kind": "explain",
-  "de": "Der Rat steht mit „should“; danach bleibt das Verb endungslos."
+  "de": "Der Rat wird mit „should“ gegeben; danach bleibt das Verb endungslos."
  },
  {
   "tr": "„We don't require the letter this year.“",
@@ -225,9 +225,9 @@
   "de": "„I agree with you about the games“ — nur für die Spiele, nicht für alles."
  },
  {
-  "tr": "„They collect the trash on Mondays.“ — perşembe sözü verilen arabanın günü.",
+  "tr": "„They collect the trash on Mondays.“ — perşembe sözü verilen kamyonun günü.",
   "kind": "explain",
-  "de": "„They collect the trash on Mondays.“ — der Donnerstag gehört zum versprochenen Wagen."
+  "de": "„They collect the trash on Mondays.“ — der Donnerstag gehört zum versprochenen Lastwagen."
  },
  {
   "tr": "nokta",
@@ -508,5 +508,20 @@
   "tr": "harf harf söylemek",
   "kind": "gloss.tr",
   "de": "buchstabieren"
+ },
+ {
+  "tr": "pasaport",
+  "kind": "gloss.tr",
+  "de": "der Reisepass"
+ },
+ {
+  "tr": "toplamak",
+  "kind": "gloss.tr",
+  "de": "sammeln"
+ },
+ {
+  "tr": "belgelemek",
+  "kind": "gloss.tr",
+  "de": "belegen"
  }
 ]

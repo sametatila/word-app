@@ -47,7 +47,7 @@
  {
   "tr": "Fiyatı belirleyen şey enflasyon.",
   "kind": "build.tr",
-  "de": "Was den Preis treibt, ist die Inflation."
+  "de": "Was den Preis bestimmt, ist die Inflation."
  },
  {
   "tr": "Görünüşe göre iddia akla yatkın.",
@@ -155,7 +155,7 @@
   "de": "Wäre die Abfindung fair gewesen, wäre die Stadt jetzt ruhig."
  },
  {
-  "tr": "Yeşil alanını kaybettikten sonra semt kentsel hissettiriyor.",
+  "tr": "Yeşil alanını kaybettikten sonra semt kentsel bir hava taşıyor.",
   "kind": "build.tr",
   "de": "Nachdem es seine Grünfläche verloren hat, wirkt das Viertel städtisch."
  },
@@ -268,5 +268,10 @@
   "tr": "Ölçeğin sırası: en sertten en yumuşağa koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Skala: vom Schärfsten zum Weichsten."
+ },
+ {
+  "tr": "Eski kip: „be“, „is“ değil.",
+  "kind": "build.hint",
+  "de": "Alte Konjunktivform: „be“, nicht „is“."
  }
 ]

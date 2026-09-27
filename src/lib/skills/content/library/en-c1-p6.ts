@@ -185,7 +185,7 @@ export const enC1P6: SkillExercise[] = [
           "hiring three more moderators",
         ],
         answer: 0,
-        explain: "Gruplar için bırakmayı öneriyor; en zor yargılar orada.",
+        explain: "Kuralı gruplar için kaldırmayı öneriyor; en zor yargılar orada.",
       },
       {
         kind: "truefalse",

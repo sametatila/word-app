@@ -75,7 +75,7 @@ export const deB2P17: SkillExercise[] = [
         text: "Am Dienstag hat die Autorin sofort nach dem Weg gefragt.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Salı günü gururundan sormadı ve yarım saat daireler çizdi; sormak çarşambaya kaldı.",
+        explain: "Salı günü gururundan sormadı ve yarım saat boyunca aynı yerlerde dolanıp durdu; sormak çarşambaya kaldı.",
       },
       {
         kind: "gapfill",

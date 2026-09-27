@@ -127,11 +127,11 @@ export const b1U30: SkillExercise[] = [
       "sagt, wo er jetzt steht.\n\n" +
       "Wer eine Tabelle liest, sucht deshalb zuerst die Überschrift. " +
       "Dort steht, worum es überhaupt geht. Der zweite Blick gehört den " +
-      "Jahren: eine Zahl allein sagt nichts, zwei Zahlen sagen etwas.\n\n" +
+      "Jahren: Eine Zahl allein sagt nichts, zwei Zahlen sagen etwas.\n\n" +
       "Ein wichtiger Faktor ist außerdem, was NICHT in der Tabelle steht. " +
       "Wenn die Produktion des Herstellers steigt und die Zahl der Stellen " +
       "fällt, erklärt die Tabelle das nicht — sie zeigt es nur.\n\n" +
-      "Und ein letzter Hinweis: knapp dreißig Prozent sind weniger als " +
+      "Und ein letzter Hinweis: Knapp dreißig Prozent sind weniger als " +
       "dreißig, gut dreißig sind mehr. Diese zwei kleinen Wörter ändern " +
       "die Richtung.",
     questions: [
@@ -247,7 +247,7 @@ export const b1U30: SkillExercise[] = [
     minutes: 4,
     gloss: [
       { de: "die Verwaltung", tr: "idare", en: "administration" },
-      { de: "der Ordner", tr: "klasör", en: "folder" },
+      { de: "der Ordner", tr: "klasör", en: "binder" },
       { de: "die Mappe", tr: "dosya", en: "file" },
       { de: "der Stempel", tr: "kaşe", en: "stamp" },
       { de: "drucken", tr: "yazdırmak", en: "to print" },
@@ -308,7 +308,7 @@ export const b1U30: SkillExercise[] = [
     unit: 30,
     title: "Zahlen berichten",
     genre: "report",
-    intro: "Rakamlarla bir gelişme anlat. Ne kadar arttı mı, kaça çıktı mı?",
+    intro: "Rakamlarla bir gelişme anlat. Ne kadar arttı, kaça çıktı?",
     minutes: 8,
     gloss: [
       { de: "die Produktion", tr: "üretim", en: "production" },
@@ -404,7 +404,7 @@ export const b1U30: SkillExercise[] = [
           "Annonce überein.\n\n" +
           "In der Annonce stand ein fester Preis. Im zweiten Abschnitt des " +
           "Vertrags steht dagegen „Preis auf Anfrage“. Ich habe am 8. Mai " +
-          "bei Ihrer Vertretung angerufen. Die Kollegin konnte mir die " +
+          "bei Ihrer Vertretung angerufen. Ihre Mitarbeiterin konnte mir die " +
           "Einzelheiten nicht erklären und wollte zurückrufen; das ist " +
           "bisher nicht passiert.\n\n" +
           "Ich bitte Sie um eine schriftliche Antwort mit dem Stempel des " +

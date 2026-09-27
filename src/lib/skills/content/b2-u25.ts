@@ -64,7 +64,7 @@ export const b2U25: SkillExercise[] = [
     text:
       "EMPFEHLUNGSSCHREIBEN\n\n" +
       "Frau Amina Yalçın war von März bis August 2026 als Werkstudentin in unserer Abteilung Planung tätig. Ich habe ihre Arbeit in diesen sechs Monaten unmittelbar begleitet und schreibe dieses Empfehlungsschreiben gern.\n\n" +
-      "Die von ihr geleistete Arbeit umfasste die Auswertung von Lieferdaten, die Vorbereitung von zwei Zwischenberichten und ab Mai die eigenständige Betreuung eines kleinen Standorts. Der zuletzt genannte Bereich war ursprünglich nicht vorgesehen; wir haben ihn übertragen, nachdem sich gezeigt hatte, dass Frau Yalçın komplexe Zusammenhänge schnell begreift.\n\n" +
+      "Die von ihr geleistete Arbeit umfasste die Auswertung von Lieferdaten, die Vorbereitung von zwei Zwischenberichten und ab Mai die eigenständige Betreuung eines kleinen Standorts. Der zuletzt genannte Bereich war ursprünglich nicht vorgesehen; wir haben ihn ihr übertragen, nachdem sich gezeigt hatte, dass Frau Yalçın komplexe Zusammenhänge schnell begreift.\n\n" +
       "Neben einer sichtbaren fachlichen Begabung ist besonders ihre Zuverlässigkeit hervorzuheben. Zugesagte Termine wurden ausnahmslos gehalten, und zwar auch dann, wenn Zulieferungen aus anderen Bereichen fehlten — in solchen Fällen hat sie früh nachgefragt, statt spät zu melden. Sie ist zielstrebig und lernbereit, ohne dabei über andere hinwegzugehen, und im besten Sinne wissbegierig: Sie fragt so lange nach, bis sie eine Sache verstanden hat, und nicht nur so lange, bis sie sie ausführen kann.\n\n" +
       "In Besprechungen mit externen Partnern hat sie sich als durchsetzungsfähig erwiesen. Zwei von ihr vorgeschlagene Änderungen am Ablauf sind übernommen worden und gelten bis heute.\n\n" +
       "Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen. Das Abschlusszeugnis wird sie im Frühjahr erhalten. Wir hätten sie gern länger beschäftigt und würden sie jederzeit wieder einstellen.\n\n" +
@@ -403,7 +403,7 @@ export const b2U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Geriye bakınca uzun bir etap kat edilmiş oldu.",
+        tr: "Geriye bakınca uzun bir yol kat edilmiş.",
         answer: "Rückblickend ist eine lange Etappe zurückgelegt worden",
         hint: "Edilgen Perfekt: sein artı ortaç artı worden.",
       },
@@ -416,7 +416,7 @@ export const b2U25: SkillExercise[] = [
           "Zwei von ihr vorgeschlagene Änderungen sind übernommen worden",
           "Zwei von ihr vorgeschlagene Änderungen wurden übernommen.",
         ],
-        why: "Referans mektubu kişiyi değil işi öne alır: ortaç sıfatı katkıyı ada bağlar, edilgen ise kararı verenin kim olduğunu geri plana atar. Sonuç aynı bilgiyi taşır ama övgü kişisel bir yorum gibi değil, kayda geçmiş bir olgu gibi okunur - bu tür metinlerde aranan tam olarak budur.",
+        why: "Referans mektubu kişiyi değil işi öne alır: ortaç sıfatı katkıyı ada bağlar, edilgen ise kararı verenin kim olduğunu geri plana atar. Sonuç aynı bilgiyi taşır ama övgü kişisel bir yorum gibi değil, kayda geçmiş bir olgu gibi okunur; bu tür metinlerde aranan tam olarak budur.",
       },
     ],
   },
@@ -448,7 +448,7 @@ export const b2U25: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Birlikte çalıştığın, okuduğun ya da bir işte gördüğün biri için referans mektubu yaz — gerçek ya da hayalî. Şu sırayı tut: kim, hangi dönemde, hangi görevde; ne yaptığı; hangi somut olayda kendini gösterdiği; ve kapanış tavsiyesi. Kural: her övgüyü bir olayla destekle. En az iki ortaç sıfatı kullan -die von ihm geleistete Arbeit gibi- ve en az bir edilgen Perfekt. Abartma; abartılmış mektup değersizdir.",
+          "Birlikte çalıştığın, okuduğun ya da bir işte gördüğün biri için referans mektubu yaz — gerçek ya da hayalî. Şu sırayı tut: kim, hangi dönemde, hangi görevde; ne yaptığı; hangi somut olayda kendini gösterdiği; ve kapanış tavsiyesi. Kural: her övgüyü bir olayla destekle. En az iki ortaç sıfatı kullan (die von ihm geleistete Arbeit gibi) ve en az bir edilgen Perfekt. Abartma; abartılmış mektup değersizdir.",
         checklist: [
           "Kişi, dönem ve görev baştan belli mi?",
           "Her övgü somut bir olayla destekleniyor mu?",

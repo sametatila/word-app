@@ -47,7 +47,7 @@ export const a2U05: SkillExercise[] = [
       "Vor genau einem Jahr habe ich meine Stelle gewechselt. Ich erinnere mich noch gut an den letzten Tag im alten Büro.\n\n" +
       "Damals war ich sehr unzufrieden. Ich bin jeden Morgen müde aufgestanden und habe abends nur noch auf dem Sofa gesessen. Ich wollte etwas ändern, aber ich hatte Angst.\n\n" +
       "Heute ist vieles anders. Die neue Arbeit ist nicht leichter, aber ich komme fachlich weiter und mein Deutsch hat sich stark verbessert, weil ich den ganzen Tag sprechen muss.\n\n" +
-      "Was ich nicht geplant hatte: ich bin auch privat entspannter geworden. Meine Schwester sagt, ich lache wieder mehr. Manches ändert man selbst, manches ändert sich einfach.",
+      "Was ich nicht geplant hatte: Ich bin auch privat entspannter geworden. Meine Schwester sagt, ich lache wieder mehr. Manches ändert man selbst, manches ändert sich einfach.",
     questions: [
       {
         text: "Was hat der Autor vor einem Jahr gemacht?",
@@ -110,7 +110,7 @@ export const a2U05: SkillExercise[] = [
       "In den Sommerferien war ich immer bei meinen Großeltern auf dem Land. Sie hatten sieben Enkelkinder, aber ich war das einzige, das jedes Jahr blieb.\n\n" +
       "Bei ihnen gab es einen alten Kamin im Wohnzimmer. Im Juli hat ihn natürlich niemand angemacht, aber er hat immer nach Holz gerochen. In der Küche stand ein sehr großer Topf, und am Freitag hat meine Großmutter darin Suppe gekocht.\n\n" +
       "Am liebsten habe ich beim Backen geholfen. Ich durfte den Teig rühren, und danach durfte ich die Schüssel auslecken.\n\n" +
-      "Reich waren sie nicht. Sie haben fünf Kinder allein großgezogen. Aber sie waren die liebevollsten Menschen, die ich kenne. Später habe ich von ihnen das kleine Haus geerbt.",
+      "Reich waren sie nicht. Sie haben fünf Kinder allein großgezogen. Aber sie waren die liebevollsten Menschen, die ich je gekannt habe. Später habe ich von ihnen das kleine Haus geerbt.",
     questions: [
       {
         text: "Wie viele Enkelkinder hatten die Großeltern?",

@@ -82,7 +82,7 @@
  {
   "tr": "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
   "kind": "intro",
-  "de": "Drei Zukunftsformen, drei Grade an Beleg. Welche ist Einschätzung, welche Kalender?"
+  "de": "Drei Zukunftsformen, drei Grade der Beweiskraft. Welche ist Einschätzung, welche Kalender?"
  },
  {
   "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor, hangisi değiştiriyor?",
@@ -305,9 +305,9 @@
   "de": "Differenz"
  },
  {
-  "tr": "ayrıca",
+  "tr": "ayrı olarak",
   "kind": "gloss.tr",
-  "de": "außerdem"
+  "de": "getrennt"
  },
  {
   "tr": "bozmak",
@@ -513,5 +513,10 @@
   "tr": "aciliyet sıralaması",
   "kind": "gloss.tr",
   "de": "die Dringlichkeitsprüfung"
+ },
+ {
+  "tr": "gazap",
+  "kind": "gloss.tr",
+  "de": "der Zorn"
  }
 ]

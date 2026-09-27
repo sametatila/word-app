@@ -279,7 +279,7 @@ export const enC1U14: SkillExercise[] = [
       { speaker: "Pelin", text: "The same desk, a new badge." },
       { speaker: "Cem", text: "The same desk, the same corridor, the same two people to ask, and a new contract with a different notice period at the bottom of page four." },
       { speaker: "Pelin", text: "The border, albeit permeable, does not remove the job insecurity." },
-      { speaker: "Cem", text: "That is the line I would keep out of the whole debate. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
+      { speaker: "Cem", text: "That is the one line from the whole debate I would keep. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
       { speaker: "Pelin", text: "So permeable is not the same as gone." },
       { speaker: "Cem", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
       { speaker: "Pelin", text: "Although gainfully employed, many still work on the side." },
@@ -347,7 +347,7 @@ export const enC1U14: SkillExercise[] = [
     gloss: [
       { de: "underneath", tr: "altta" },
       { de: "whatever", tr: "her ne" },
-      { de: "assumed", tr: "varsaydı" },
+      { de: "assumed", tr: "varsayılan" },
       { de: "the minutes", tr: "tutanak" },
       { de: "two verbs", tr: "iki fiil" },
       { de: "an ethic", tr: "ahlak" },
@@ -518,7 +518,7 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Alan dışından geçiş ile yetkinlik odaklılık birlikte geliyor.",
+        tr: "Alan dışından geçiş ile yetkinlik odaklı yaklaşım birlikte geliyor.",
         answer: "Lateral hiring and a competency-based approach arrive together.",
         hint: "Biri kapı, öteki kâğıdın hiç önemli olmadığını söyleyen ölçüt.",
       },

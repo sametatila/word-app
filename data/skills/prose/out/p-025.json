@@ -247,7 +247,7 @@
  {
   "tr": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
   "kind": "explain",
-  "en": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Not in the garden, inside yes."
+  "en": "\"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Not in the garden, but inside."
  },
  {
   "tr": "\"I speak Italian and Spanish.\" İngilizceyi henüz öğreniyor, konuştuğu diller arasında saymıyor.",
@@ -307,7 +307,7 @@
  {
   "tr": "mizah için",
   "kind": "note",
-  "en": "of humor"
+  "en": "for humor"
  },
  {
   "tr": "tatlı için",

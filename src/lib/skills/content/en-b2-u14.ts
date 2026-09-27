@@ -44,7 +44,7 @@ export const enB2U14: SkillExercise[] = [
     intro: "İlgi adılının iyelik hâli. Kişi mi, şey mi?",
     gloss: [
       { de: "sentence", tr: "cümle" },
-      { de: "appeared", tr: "göründü" },
+      { de: "appeared", tr: "yer aldı" },
       { de: "pronoun", tr: "adıl" },
       { de: "ordinary", tr: "olağan" },
       { de: "commas", tr: "virgüller" },
@@ -248,13 +248,13 @@ export const enB2U14: SkillExercise[] = [
       { de: "underneath", tr: "altta" },
       { de: "a district", tr: "semt" },
       { de: "moved out", tr: "taşındı" },
-      { de: "passive", tr: "pasif" },
+      { de: "passive", tr: "edilgen" },
     ],
     minutes: 7,
     segments: [
       { speaker: "Ceyda", text: "Facing a housing shortage, families moved out. Present participle, and here it is a reason: they moved because they were facing it." },
       { speaker: "Onat", text: "Not at the same time?" },
-      { speaker: "Ceyda", text: "Both, really, and that is the point from the last unit. The plain participle carries either, and the reader decides. Here only one reading makes sense of the sentence." },
+      { speaker: "Ceyda", text: "Both, really, and that is the point from unit 11. The plain participle carries either, and the reader decides. Here only one reading makes sense of the sentence." },
       { speaker: "Onat", text: "The second line starts with the third form." },
       { speaker: "Ceyda", text: "Built quickly, the residential area is overcrowded. Passive, and nobody is named as the builder — which in a housing report is a choice and not an accident." },
       { speaker: "Onat", text: "You would name them?" },
@@ -414,7 +414,7 @@ export const enB2U14: SkillExercise[] = [
     genre: "info",
     intro: "Üç ilgi adılı. Hangisi iyelik taşıyor?",
     gloss: [
-      { de: "whose citizenship", tr: "vatandaşlığı olan" },
+      { de: "whose citizenship", tr: "vatandaşlığı … olan" },
       { de: "which counts", tr: "sayan" },
       { de: "which mentions", tr: "söz eden" },
       { de: "drives", tr: "belirliyor" },
@@ -489,7 +489,7 @@ export const enB2U14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yeşil alanını kaybettikten sonra semt kentsel hissettiriyor.",
+        tr: "Yeşil alanını kaybettikten sonra semt kentsel bir hava taşıyor.",
         answer: "Having lost its green space, the district feels urban.",
         hint: "Önce olan iş: „having“ + üçüncü hâl.",
       },

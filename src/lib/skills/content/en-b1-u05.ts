@@ -79,7 +79,7 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The washing moved to ___ in the evening.",
+        text: "The laundry moved to ___ in the evening.",
         options: [],
         answer: 0,
         accept: ["seven", "7"],
@@ -129,7 +129,7 @@ export const enB1U05: SkillExercise[] = [
       "Nil: That is high for two people.\n" +
       "Mert: That is what I said. Then I looked at the reading. The last one was an estimate, not a real reading.\n" +
       "Nil: So they guessed.\n" +
-      "Mert: They guessed high. If we send the real reading today, the next bill is lower and the difference comes back.\n" +
+      "Mert: They guessed high. If we send the real reading today, the next bill will be lower and the difference will come back.\n" +
       "Nil: And the heating?\n" +
       "Mert: The heating is the other half. If we used less heating, the bill would be lower — but I am not cold in this apartment and I am not going to be.\n" +
       "Nil: Nobody said cold. One degree is not cold.\n" +

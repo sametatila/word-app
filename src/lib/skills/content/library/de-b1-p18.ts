@@ -230,7 +230,7 @@ export const deB1P18: SkillExercise[] = [
           "Liebe Aylin in zehn Jahren,\n\nwenn du diesen Brief liest, bist du achtunddreißig. Im Moment wohne " +
           "ich mit zwei Freundinnen in einer kleinen Wohnung in Leipzig und mache eine Ausbildung zur " +
           "Physiotherapeutin. Mein Deutsch ist gut, aber am Telefon werde ich immer noch nervös. Ich vermute, " +
-          "dass du inzwischen in einer großen Praxis arbeitest oder sogar eine eigene hast. Vielleicht wirst du sogar schon Kinder haben. In zehn Jahren " +
+          "dass du inzwischen in einer großen Praxis arbeitest oder sogar eine eigene hast. Vielleicht wirst du auch schon Kinder haben. In zehn Jahren " +
           "werde ich wahrscheinlich in einer anderen Stadt wohnen, vielleicht am Meer. Hast du eigentlich den " +
           "Führerschein gemacht? Und telefonierst du ohne Angst? Ich hoffe, dass du immer noch jeden Tag " +
           "Deutsch sprichst und dass du Oma in Izmir öfter besuchst als ich heute. Ich verspreche dir, dass " +

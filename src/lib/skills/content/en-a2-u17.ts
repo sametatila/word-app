@@ -45,17 +45,17 @@ export const enA2U17: SkillExercise[] = [
     minutes: 6,
     text:
       "Two days in this city, and everybody says: see the castle. We saw it. It is worth visiting, but not on Saturday — the line for the ticket is longer than the tour.\n" +
-      "My advice: go on Monday morning. The guide starts at ten and there are six people, not sixty.\n" +
+      "My advice: go on Monday morning. The guided tour starts at ten and there are six people, not sixty.\n" +
       "How about taking a bus tour first? Two hours, and after that you know where everything is. The tower, the museum, the old bridge. Then you choose.\n" +
       "The exhibition in the museum was the best part of the trip. Photos from nineteen twenty: the same streets, the same houses, different people. Worth seeing even if you don't like museums.\n" +
-      "And the tower? Two hundred steps. From the top you see the sea. I stayed there half an hour and said nothing. That does not happen often.\n" +
+      "And the tower? Two hundred steps. From the top you can see the sea. I stayed there half an hour and said nothing. That does not happen often.\n" +
       "Let's go again in September. The castle is open until eight then.",
     questions: [
       {
         text: "When should you visit the castle?",
         options: ["on Monday morning", "on Saturday", "in the evening"],
         answer: 0,
-        explain: "„My advice: go on Monday morning. The guide starts at ten and there are six people, not sixty.“",
+        explain: "„My advice: go on Monday morning. The guided tour starts at ten and there are six people, not sixty.“",
       },
       {
         text: "What was the best part of the trip?",
@@ -76,11 +76,11 @@ export const enA2U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["steps"],
-        explain: "„And the tower? Two hundred steps. From the top you see the sea.“",
+        explain: "„And the tower? Two hundred steps. From the top you can see the sea.“",
       },
       {
         kind: "short_answer",
-        text: "How long is the castle open in September?",
+        text: "How late is the castle open in September?",
         options: [],
         answer: 0,
         accept: ["until eight", "until 8", "eight"],
@@ -112,13 +112,13 @@ export const enA2U17: SkillExercise[] = [
       "Office: Ninety euros for three days.\n" +
       "Mert: Is the fuel included?\n" +
       "Office: No. You get it full and you bring it back full. The gas station is next to the airport.\n" +
-      "Mert: And if I come back with half?\n" +
+      "Mert: And if I come back with half a tank?\n" +
       "Office: Then we fill it and it costs more than at the station. Always more.\n" +
       "Mert: Understood. What is the speed limit on the highway?\n" +
       "Office: A hundred and thirty. In the city fifty.\n" +
       "Mert: I have to return the car at six on Friday, yes?\n" +
       "Office: Six, yes. After that every hour is extra.\n" +
-      "Mert: Then I come at five. I don't like extra.",
+      "Mert: Then I'll come at five. I don't like paying extra.",
     questions: [
       {
         text: "What does the car cost?",
@@ -127,7 +127,7 @@ export const enA2U17: SkillExercise[] = [
         explain: "„Ninety euros for three days.“ — yüz otuz hız sınırı.",
       },
       {
-        text: "What happens if the car comes back with half?",
+        text: "What happens if the car comes back with half a tank?",
         options: ["the office fills it and it costs more", "it is free", "the rent is longer"],
         answer: 0,
         explain: "„Then we fill it and it costs more than at the station. Always more.“",
@@ -166,7 +166,7 @@ export const enA2U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["at five", "five", "at 5"],
-        explain: "„Then I come at five. I don't like extra.“",
+        explain: "„Then I'll come at five. I don't like paying extra.“",
       },
     ],
   },
@@ -428,7 +428,7 @@ export const enA2U17: SkillExercise[] = [
         kind: "build",
         tr: "Hesabı alabilir miyiz, lütfen?",
         answer: "Could we have the check, please?",
-        hint: "Çoğul özneyle aynı kalıp; Amerikan İngilizcesinde hesap „check“, İngilizcesi „bill“.",
+        hint: "Çoğul özneyle aynı kalıp; Amerikan İngilizcesinde hesap „check“, İngiliz İngilizcesinde „bill“.",
       },
     ],
   },

@@ -45,7 +45,7 @@ export const a1U25: SkillExercise[] = [
     intro: "Dört mevsim, dört kısa paragraf. Kim hangisini seviyor?",
     gloss: [
       { de: "der Frühling", tr: "ilkbahar", en: "spring" },
-      { de: "der Herbst", tr: "sonbahar", en: "autumn" },
+      { de: "der Herbst", tr: "sonbahar", en: "fall" },
       { de: "gemütlich", tr: "huzurlu", en: "cozy" },
       { de: "früher", tr: "eskiden", en: "in the past" },
     ],
@@ -197,7 +197,7 @@ export const a1U25: SkillExercise[] = [
         explain: "„Ich bin um sieben aufgestanden.“ — kalkmak yer değiştirmedir: sein.",
       },
       {
-        text: "Was hat die Person nach dem Unterricht gemacht?",
+        text: "Was hat die Person direkt nach dem Unterricht gemacht?",
         options: ["die Hausaufgaben", "gegessen", "geschlafen"],
         answer: 0,
         explain: "„Danach habe ich meine Hausaufgaben gemacht.“",
@@ -316,7 +316,7 @@ export const a1U25: SkillExercise[] = [
         tr: "Saat yedide kalktım.",
         answer: "Ich bin um sieben aufgestanden",
         hint:
-          "Ayrılabilen fiilin ortacında „ge-“ öneğin İÇİNE girer: auf·GE·standen. „geaufstanden“ diye bir şey yoktur. Ve kalkmak yer değiştirmedir → sein.",
+          "Ayrılabilen fiilin ortacında „ge-“ ön ekle kökün ARASINA girer: auf·GE·standen. „geaufstanden“ diye bir şey yoktur. Ve kalkmak yer değiştirmedir → sein.",
       },
       {
         kind: "rewrite",

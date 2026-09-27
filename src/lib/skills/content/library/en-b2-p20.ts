@@ -24,7 +24,7 @@ export const enB2P20: SkillExercise[] = [
     intro: "Bir deneme: sadakat kartı basit bir indirim takası mı, yoksa karşılığında verilen şey sanılandan fazla mı?",
     gloss: [
       { de: "loyalty card", tr: "sadakat kartı" },
-      { de: "custom", tr: "müşterilik" },
+      { de: "business", tr: "müşterilik" },
       { de: "incomplete", tr: "eksik" },
       { de: "budget", tr: "bütçe" },
       { de: "to indicate", tr: "işaret etmek" },

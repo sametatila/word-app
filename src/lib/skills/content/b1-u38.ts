@@ -111,7 +111,7 @@ export const b1U38: SkillExercise[] = [
       { de: "die Lehre", tr: "çıraklık eğitimi", en: "apprenticeship" },
       { de: "die Lehrstelle", tr: "çıraklık yeri", en: "apprenticeship position" },
       { de: "der Lehrling", tr: "çırak", en: "apprentice" },
-      { de: "das Abitur", tr: "lise bitirme sınavı", en: "school-leaving exam" },
+      { de: "das Abitur", tr: "lise bitirme sınavı", en: "high school graduation exam" },
       { de: "die Fortbildung", tr: "mesleki eğitim", en: "further training" },
       { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
       { de: "verdienen", tr: "para kazanmak", en: "to earn" },
@@ -127,7 +127,7 @@ export const b1U38: SkillExercise[] = [
       "nichts. Nach drei Jahren hat er einen Abschluss und meistens auch " +
       "eine Stelle — oft im selben Betrieb, in dem er gelernt hat.\n\n" +
       "Wer eine Lehrstelle sucht, sollte früh anfangen. Die guten Plätze " +
-      "sind ein Jahr vorher weg. Und geh am besten selbst hin: viele " +
+      "sind ein Jahr vorher weg. Und geh am besten selbst hin: Viele " +
       "Betriebe stellen jemanden ein, den sie gesehen haben, nicht den " +
       "mit dem besten Brief.\n\n" +
       "Eine Fortbildung steht später beiden Wegen offen. Ein Studium ist " +

@@ -35,7 +35,7 @@ export const deC1P9: SkillExercise[] = [
       "Ich bin letzte Woche zweimal falsch abgebogen, auf einer Strecke, die ich zehn Jahre " +
       "gefahren bin.\n\n" +
       "ela_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. " +
-      "Interessant wäre, ob dabei etwas anderes gewinnt. Ich merke mir keine Telefonnummern " +
+      "Interessant wäre, ob man dabei etwas anderes gewinnt. Ich merke mir keine Telefonnummern " +
       "mehr, dafür merke ich mir, wo ich was finde — und das ist auch eine Leistung, " +
       "nur eine andere.\n\n" +
       "mko: Nur ist die zweite Leistung wertlos, sobald das Gerät weg ist. Die erste war es nicht.\n\n" +
@@ -249,7 +249,7 @@ export const deC1P9: SkillExercise[] = [
         ],
         minWords: 140,
         phrases: [
-          { de: "Ich lese hier zwei Positionen, die sich weniger widersprechen, als es scheint.", tr: "Burada göründüğünden daha az çelişen iki konum okuyorum.", en: "I read two positions here that contradict each other less than it seems." },
+          { de: "Ich lese hier zwei Positionen, die sich weniger widersprechen, als es scheint.", tr: "Burada göründüğünden daha az çelişen iki konum okuyorum.", en: "I see two positions here that contradict each other less than they seem to." },
           { de: "Hilfreich fände ich die Unterscheidung zwischen … und …", tr: "… ile … arasındaki ayrımı yararlı bulurdum", en: "I would find the distinction between … and … helpful." },
           { de: "Konkret heißt das: …", tr: "Somut olarak bu şu demek: …", en: "Concretely, that means: …" },
           { de: "Zugeben muss ich allerdings, dass …", tr: "Ama şunu kabul etmeliyim: …", en: "I do have to admit, however, that …" },
@@ -307,7 +307,7 @@ export const deC1P9: SkillExercise[] = [
         "die am leichtesten zu ersetzen wäre. " +
         "Mein Kriterium ist dabei nicht die Nützlichkeit, sondern die Frage, ob mir das " +
         "Verfahren zeigt, wann ein Ergebnis nicht stimmen kann. " +
-        "Wer im Kopf überschlägt, merkt sofort, dass eine Zahl um den Faktor zehn daneben liegt; " +
+        "Wer im Kopf überschlägt, merkt sofort, dass eine Zahl um den Faktor zehn danebenliegt; " +
         "wer nur abliest, merkt es nie, und genau dieser Fehler ist der teuerste. " +
         "Widersprüchlich ist daran, dass ich dieselbe Logik bei der Rechtschreibung nicht " +
         "anwende. Dort korrigiere ich seit Jahren automatisch und habe deutlich verlernt, " +

@@ -210,9 +210,9 @@
   "de": "schlicht"
  },
  {
-  "tr": "yol",
+  "tr": "işe gidiş geliş",
   "kind": "gloss.tr",
-  "de": "Straße"
+  "de": "der Arbeitsweg"
  },
  {
   "tr": "başına",
@@ -888,5 +888,10 @@
   "tr": "öne çıkarmak istediğim",
   "kind": "gloss.tr",
   "de": "was ich hervorheben will"
+ },
+ {
+  "tr": "kimlik",
+  "kind": "gloss.tr",
+  "de": "die Identität"
  }
 ]

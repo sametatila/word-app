@@ -75,9 +75,9 @@
   "de": "Was verbirgt die Argumentationslinie? Das Benannte und das Unbenannte."
  },
  {
-  "tr": "Hiçbir ilke kuşkusuz ayakta kalmıyor. Peki bu neyi bitiriyor?",
+  "tr": "Hiçbir ilke kuşkuya uğramadan ayakta kalmıyor. Peki bu neyi bitiriyor?",
   "kind": "intro",
-  "de": "Keine Maxime überlebt ohne Zweifel. Aber was beendet das?"
+  "de": "Keine Maxime übersteht es, ohne angezweifelt zu werden. Aber was beendet das?"
  },
  {
   "tr": "İki soyut isim ve ortada tanımlık yok. Ne zaman geri geliyor?",
@@ -100,9 +100,9 @@
   "de": "Wo die Ausschreibung schweigt, und die Verweise des Strategiepapiers."
  },
  {
-  "tr": "Dokuz sözcük ve seviyenin ölçtüğü her şey. Orada olmayanları say.",
+  "tr": "Sekiz sözcük ve seviyenin ölçtüğü her şey. Orada olmayanları say.",
   "kind": "intro",
-  "de": "Neun Wörter und alles, was dieses Niveau gemessen hat. Zähl, was nicht da ist."
+  "de": "Acht Wörter und alles, was dieses Niveau gemessen hat. Zähl, was nicht da ist."
  },
  {
   "tr": "Pazara nüfuz aşağıda doygunluğa yol açıyor. Gönderme neyi kurtarıyor?",
@@ -130,9 +130,9 @@
   "de": "Das eine ist eine Messung, das andere eine Entscheidung."
  },
  {
-  "tr": "Eski kip: „be“, „is“ değil.",
+  "tr": "Talep kipi: „be“, „is“ değil.",
   "kind": "explain",
-  "de": "Der alte Modus: „be“, nicht „is“."
+  "de": "Der Konjunktiv der Aufforderung: „be“, nicht „is“."
  },
  {
   "tr": "„„Alleges“ carries no burden.“",
@@ -155,7 +155,7 @@
   "de": "Der Satz, die Stelle, die Reihenfolge; ganz am Ende der juristische Satz."
  },
  {
-  "tr": "Kuşku, yaş, seçim; en sonda sayılması gereken.",
+  "tr": "Kuşku, eskilik, seçim; en sonda sayılması gereken.",
   "kind": "explain",
   "de": "Zweifel, Alter, Wahl; ganz am Ende das, was gezählt werden muss."
  },
@@ -210,7 +210,7 @@
   "de": "geprüft"
  },
  {
-  "tr": "daha dost",
+  "tr": "daha dostça",
   "kind": "gloss.tr",
   "de": "freundlicher"
  },
@@ -230,9 +230,9 @@
   "de": "die Argumentationslinie"
  },
  {
-  "tr": "yerleşik görüş",
+  "tr": "öğreti",
   "kind": "gloss.tr",
-  "de": "die herrschende Lehre"
+  "de": "die Doktrin"
  },
  {
   "tr": "ağ",
@@ -437,7 +437,7 @@
  {
   "tr": "bilanço",
   "kind": "gloss.tr",
-  "de": "Bilanz"
+  "de": "die Bilanz"
  },
  {
   "tr": "bulunan",
@@ -537,17 +537,12 @@
  {
   "tr": "tanımlık",
   "kind": "gloss.tr",
-  "de": "das Geschlechtswort"
+  "de": "der Artikel"
  },
  {
   "tr": "taşıdığı",
   "kind": "gloss.tr",
   "de": "was er trägt"
- },
- {
-  "tr": "yasadışı",
-  "kind": "gloss.tr",
-  "de": "rechtswidrig"
  },
  {
   "tr": "zararsız",
@@ -595,7 +590,7 @@
   "de": "das Mittelfeld"
  },
  {
-  "tr": "ödenmemiş",
+  "tr": "karşılıksız",
   "kind": "gloss.tr",
   "de": "unbezahlt"
  },
@@ -698,11 +693,6 @@
   "tr": "aynı şeyler",
   "kind": "gloss.tr",
   "de": "dieselben Dinge"
- },
- {
-  "tr": "çözüm metni",
-  "kind": "gloss.tr",
-  "de": "das Transkript"
  },
  {
   "tr": "geri okunan",
@@ -850,9 +840,9 @@
   "de": "erraten"
  },
  {
-  "tr": "uyarı sözcüğü",
+  "tr": "tek bir uyarı",
   "kind": "gloss.tr",
-  "de": "ein Warnwort"
+  "de": "ein Wort der Warnung"
  },
  {
   "tr": "yabancı aksan",
@@ -982,7 +972,7 @@
  {
   "tr": "sözleşme özgürlüğü",
   "kind": "gloss.tr",
-  "de": "Vertragsfreiheit"
+  "de": "die Vertragsfreiheit"
  },
  {
   "tr": "kendini kandırma",
@@ -1065,7 +1055,7 @@
   "de": "die Bewältigungsstrategie"
  },
  {
-  "tr": "muhasebe sahtekarlığı",
+  "tr": "muhasebe sahtekârlığı",
   "kind": "gloss.tr",
   "de": "der Bilanzbetrug"
  },
@@ -1073,5 +1063,10 @@
   "tr": "herkesin bildiği gerçek",
   "kind": "gloss.tr",
   "de": "eine Binsenweisheit"
+ },
+ {
+  "tr": "yerleşik görüş",
+  "kind": "gloss.tr",
+  "de": "die herrschende Meinung"
  }
 ]

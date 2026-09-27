@@ -324,7 +324,7 @@ export const b1U04: SkillExercise[] = [
       {
         kind: "build",
         tr: "Komşumla birlikte bir çözümde uzlaşabiliriz.",
-        answer: "Die Nachbarin und ich könnten uns gemeinsam auf eine Lösung einigen.",
+        answer: "Meine Nachbarin und ich könnten uns gemeinsam auf eine Lösung einigen.",
         hint: "Kibar öneri için Konjunktiv II; dönüşlü zamir fiilden hemen sonra.",
       },
       {

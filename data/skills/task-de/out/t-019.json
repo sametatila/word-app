@@ -292,7 +292,7 @@
  {
   "tr": "„first“ ve „then“ virgülle ayrılıyor; her ikisinde de özne tekrarlanıyor.",
   "kind": "build.hint",
-  "de": "„first“ und „then“ werden mit Komma abgetrennt, und das Subjekt wird beide Male wiederholt — anders als deutsch „dann nahm ich“."
+  "de": "„first“ und „then“ werden mit Komma abgetrennt, und das Subjekt wird beide Male wiederholt — wie im Deutschen, nur mit umgestellter Wortfolge: „dann nahm ich“."
  },
  {
   "tr": "„what“ burada özne, o yüzden „did“ girmiyor: „What did happen?“ denmiyor.",

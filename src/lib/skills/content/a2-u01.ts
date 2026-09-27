@@ -40,7 +40,7 @@ export const a2U01: SkillExercise[] = [
     minutes: 3,
     text:
       "Hallo Deniz,\n\n" +
-      "endlich habe ich Zeit zum Schreiben! Ich bin am ersten Juli mit meiner Schwester verreist. Wir sind nicht ans Meer gefahren, sondern in die Berge. Das war eine gute Idee: die Natur dort ist wirklich fantastisch.\n\n" +
+      "endlich habe ich Zeit zum Schreiben! Ich bin am ersten Juli mit meiner Schwester verreist. Wir sind nicht ans Meer gefahren, sondern in die Berge. Das war eine gute Idee: Die Natur dort ist wirklich fantastisch.\n\n" +
       "Wir haben jeden Tag etwas unternommen. Am Montag sind wir schon um sechs Uhr losgegangen, weil wir vor dem Regen oben sein wollten. Am Dienstag habe ich meine Sonnenbrille verloren, aber ein Kind hat sie später gefunden. Am Mittwoch hat unsere Vermieterin einen Kuchen gebacken und uns eingeladen.\n\n" +
       "Am Sonntag bin ich zurückgekommen. Ich bin müde, aber sehr glücklich. Nächstes Jahr fahren wir wieder dorthin.\n\n" +
       "Liebe Grüße\nSelin",
@@ -49,7 +49,7 @@ export const a2U01: SkillExercise[] = [
         text: "Wohin sind Selin und ihre Schwester gefahren?",
         options: ["Ans Meer", "In die Berge", "In eine große Stadt"],
         answer: 1,
-        explain: "„Wir sind nicht ans Meer gefahren, sondern in die Berge.“ Deniz bilerek konmuş çeldirici.",
+        explain: "„Wir sind nicht ans Meer gefahren, sondern in die Berge.“ „Ans Meer“ bilerek konmuş bir çeldirici.",
       },
       {
         kind: "gapfill",
@@ -102,7 +102,7 @@ export const a2U01: SkillExercise[] = [
     minutes: 3,
     text:
       "Abends bin ich meistens zu müde für große Pläne. Gestern war das auch so.\n\n" +
-      "Vorher habe ich noch schnell gekocht und die Küche aufgeräumt. Anschließend habe ich mich auf das Sofa gesetzt und ein Programm über Island angesehen. Es war wirklich spannend: die Bilder von der Natur waren fantastisch.\n\n" +
+      "Vorher habe ich noch schnell gekocht und die Küche aufgeräumt. Anschließend habe ich mich auf das Sofa gesetzt und ein Programm über Island angesehen. Es war wirklich spannend: Die Bilder von der Natur waren fantastisch.\n\n" +
       "Nach einer Stunde habe ich das Licht ausgeschaltet, weil meine Augen müde waren. Ich wollte nur kurz die Augen zumachen — aber ich bin sofort eingeschlafen. Um zwei Uhr nachts bin ich wieder wach geworden, und der Fernseher lief immer noch.\n\n" +
       "Zuletzt habe ich das Gerät ausgemacht und bin ins Bett gegangen. Heute Abend lese ich lieber ein Buch.",
     questions: [
@@ -118,7 +118,7 @@ export const a2U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["angesehen"],
-        explain: "„ansehen“ ayrılabilen bir fiil; ortacın hecesi ön ekle kökün arasına girer: angesehen.",
+        explain: "„ansehen“ ayrılabilen bir fiil; ortacın „ge“ hecesi ön ekle kökün arasına girer: angesehen.",
       },
       {
         text: "Warum hat er das Licht ausgeschaltet?",

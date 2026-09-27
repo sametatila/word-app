@@ -193,7 +193,7 @@ export const enA1U04: SkillExercise[] = [
       { speaker: "Lena", text: "The fish doesn't have a name. It's only a fish!" },
       { speaker: "Can", text: "Is the zoo good?" },
       { speaker: "Lena", text: "Yes, it is very good. There are horses, birds and many animals." },
-      { speaker: "Can", text: "I am never at the zoo. I always forget!" },
+      { speaker: "Can", text: "I never go to the zoo. I always forget!" },
       { speaker: "Lena", text: "Don't forget this year! There are two young birds there." },
     ],
     questions: [
@@ -339,7 +339,7 @@ export const enA1U04: SkillExercise[] = [
         kind: "build",
         tr: "Bir köpeğim var.",
         answer: "I have a dog.",
-        hint: "Hayvan için „a“ gerekir: a dog, a cat. Türkçede böyle bir sözcük yok.",
+        hint: "Tekil sayılabilen isim „a“ ister: a dog, a cat. Türkçede „bir“ çoğu zaman düşebilir, İngilizcede düşmez.",
       },
       {
         kind: "rewrite",

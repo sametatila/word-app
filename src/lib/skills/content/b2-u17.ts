@@ -140,7 +140,7 @@ export const b2U17: SkillExercise[] = [
       "Die Debatte läuft seit Jahrzehnten mit denselben Argumenten, und beide Seiten haben in einem Punkt recht.\n\n" +
       "Für den Altbau spricht der Grundriss. Ein Gebäude, dessen Räume drei Meter hoch sind und dessen Fenster bis fast zum Boden reichen, wirkt geräumig, auch wenn die Quadratmeterzahl kleiner ist als im Neubau. Dazu kommt etwas Unromantisches: Häuser, die hundert Jahre gestanden haben, haben bewiesen, dass sie stehen bleiben.\n\n" +
       "Gegen den Altbau spricht die Dämmung. Eine Fassade, deren Stuck man erhalten will, lässt sich von außen nicht dämmen; von innen geht es, kostet aber Fläche und braucht Sorgfalt, sonst schimmelt es. Das Dachgeschoss ist im Sommer heiß und im Winter kalt, solange nichts gemacht wird.\n\n" +
-      "Und der Neubau? Er ist rechnerisch sparsamer, und das ist kein kleines Argument. Der Haken steckt in der Bilanz davor: Ein Haus abzureißen und neu zu bauen verbraucht so viel Energie, dass der Vorsprung erst nach Jahrzehnten hereinkommt. Wer den Bestand umgestaltet, statt ihn abzureißen, hat diese Rechnung schon gewonnen.\n\n" +
+      "Und der Neubau? Er ist rechnerisch sparsamer, und das ist kein kleines Argument. Der Haken steckt in der Bilanz davor: Ein Haus abzureißen und neu zu bauen verbraucht so viel Energie, dass sich der Vorsprung erst nach Jahrzehnten rechnet. Wer den Bestand umgestaltet, statt ihn abzureißen, hat diese Rechnung schon gewonnen.\n\n" +
       "Was viele unterschätzen, ist der Bebauungsplan. Er entscheidet über Höhe, Abstand und Nutzung — und damit darüber, ob überhaupt etwas möglich ist. Die schönste Idee scheitert an zwei Zeilen, die 1968 geschrieben wurden.\n\n" +
       "Ein Vorschlag zur Güte: weniger über Stile streiten, mehr über Grundrisse. Ein gut geschnittener Neubau ist besser als ein schlecht geschnittener Altbau — und umgekehrt.",
     questions: [
@@ -168,7 +168,7 @@ export const b2U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["wegen der Energie beim Bau", "der Neubau verbraucht Energie", "wegen der Bilanz davor"],
-        explain: "„Ein Haus abzureißen und neu zu bauen verbraucht so viel Energie, dass der Vorsprung erst nach Jahrzehnten hereinkommt.“",
+        explain: "„Ein Haus abzureißen und neu zu bauen verbraucht so viel Energie, dass sich der Vorsprung erst nach Jahrzehnten rechnet.“",
       },
       {
         text: "Worüber entscheidet der Bebauungsplan?",
@@ -280,7 +280,7 @@ export const b2U17: SkillExercise[] = [
     unit: 17,
     title: "Auf dem Volksfest",
     genre: "dialogue",
-    intro: "Festivalden dönen iki kişi konuşuyor. Adlaştırılmış ifadelere dikkat et.",
+    intro: "Şenlikten dönen Ozan, Tine'a anlatıyor. Adlaştırılmış ifadelere dikkat et.",
     gloss: [
       { de: "das Volksfest", tr: "halk şenliği", en: "public festival" },
       { de: "der Brauch", tr: "görenek", en: "custom" },
@@ -369,7 +369,7 @@ export const b2U17: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Nabız dış ritme uyum sağlayarak kendini ayarlıyor.",
+        tr: "Nabız, kendini dış ritme göre ayarlayarak uyum sağlıyor.",
         answer: "Der Puls passt sich an, indem er sich am äußeren Rhythmus orientiert",
         hint: "indem yan cümlesinde özne tekrarlanır, çekimli fiil sona gider.",
       },
@@ -400,7 +400,7 @@ export const b2U17: SkillExercise[] = [
           "Beim Auftritt der Band war die Stimmung der Menge unglaublich",
           "Beim Auftritt der Band war die Stimmung im Publikum unglaublich.",
         ],
-        why: "Deneyim anlatımında üç sıfat üst üste yığmak hiçbir şey söylemez; okuyucu neyin nasıl olduğunu bilmez. Adlaştırma -beim Auftritt, die Stimmung der Menge- olayı ve anı adlandırır, böylece tek bir nitelik sıfatı yeterli hale gelir.",
+        why: "Deneyim anlatımında üç sıfat üst üste yığmak hiçbir şey söylemez; okuyucu neyin nasıl olduğunu bilmez. Adlaştırma -beim Auftritt, die Stimmung der Menge- olayı ve anı adlandırır, böylece tek bir nitelik sıfatı yeterli hâle gelir.",
       },
     ],
   },

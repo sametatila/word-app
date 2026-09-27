@@ -46,14 +46,14 @@ export const a2U16: SkillExercise[] = [
       { de: "also", tr: "yani", en: "so" },
       { de: "aufpassen", tr: "dikkat etmek", en: "to watch out" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
-      { de: "umsteigen", tr: "aktarma yapmak", en: "to change" },
+      { de: "umsteigen", tr: "aktarma yapmak", en: "to change trains" },
       { de: "gebucht", tr: "rezerve edilmiş", en: "booked" },
     ],
     minutes: 4,
     text:
       "Hallo Selin,\n\n" +
       "hier endlich unser Reiseplan.\n\n" +
-      "Die Anreise ist am Freitag. Wir fahren ans Meer, aber nicht direkt: um 8:14 geht der Zug ab Köln, in Mannheim müssen wir umsteigen. Ein Zwischenstopp von 40 Minuten, das reicht für einen Kaffee.\n\n" +
+      "Die Anreise ist am Freitag. Wir fahren ans Meer, aber nicht direkt: Um 8:14 geht der Zug ab Köln, in Mannheim müssen wir umsteigen. Ein Zwischenstopp von 40 Minuten, das reicht für einen Kaffee.\n\n" +
       "Auf dem Hinweg nehmen wir den Zug, zurück fliegen wir. Das Verkehrsmittel ist also nicht dasselbe — pass auf, dein Rückflug geht schon um sechs Uhr morgens.\n\n" +
       "Die Unterkunft habe ich gebucht: eine kleine Jugendherberge, zehn Minuten zu Fuß vom Strand. Kein Doppelbett, zwei einzelne Betten, aber sauber und günstig.\n\n" +
       "Die Abreise ist am Dienstag. Schau bitte noch mal auf die Landkarte, ob der Weg vom Bahnhof stimmt.\n\n" +
@@ -63,7 +63,7 @@ export const a2U16: SkillExercise[] = [
         text: "Wo müssen sie umsteigen?",
         options: ["In Köln", "In Mannheim", "Am Meer"],
         answer: 1,
-        explain: "„um 8:14 geht der Zug ab Köln, in Mannheim müssen wir umsteigen“.",
+        explain: "„Um 8:14 geht der Zug ab Köln, in Mannheim müssen wir umsteigen“.",
       },
       {
         kind: "gapfill",

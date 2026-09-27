@@ -216,7 +216,7 @@ export const enB1U19: SkillExercise[] = [
       { speaker: "Nil", text: "And the infection?" },
       { speaker: "Mert", text: "Gone. Ten days of pills and the sample from Friday came back clear." },
       { speaker: "Nil", text: "So a good morning." },
-      { speaker: "Mert", text: "A long morning with a good end. And one thing I will do differently: I will write the questions down before, because I forgot two of three." },
+      { speaker: "Mert", text: "A long morning with a good end. And one thing I will do differently: I will write the questions down beforehand, because I forgot two of the three." },
     ],
     questions: [
       {
@@ -260,7 +260,7 @@ export const enB1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["write the questions down", "write questions first", "prepare questions"],
-        explain: "„I will write the questions down before, because I forgot two of three.“",
+        explain: "„I will write the questions down beforehand, because I forgot two of the three.“",
       },
     ],
   },

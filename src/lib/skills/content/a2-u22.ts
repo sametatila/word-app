@@ -298,7 +298,7 @@ export const a2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["am"],
-        explain: "En üstün derece yüklem konumunda am ... -sten kalıbıyla kurulur.",
+        explain: "En üstün derece zarf ya da yüklem konumunda am ... -sten kalıbıyla kurulur.",
       },
       {
         text: "Warum hat die Schwiegermutter den Hut abgenommen?",
@@ -361,7 +361,7 @@ export const a2U22: SkillExercise[] = [
         source: "Ich interessiere mich an Kunst.",
         answer: "Ich interessiere mich für Kunst.",
         alternatives: ["Ich interessiere mich für Kunst", "Ich habe Interesse an Kunst."],
-        why: "Fiil için edatı für'dür; an ise isimle gider — Interesse AN Kunst. Aynı anlamı iki yapı taşır ama edatları farklıdır ve değiş tokuş edilemez.",
+        why: "Fiilin edatı für'dür; an ise isimle gider — Interesse AN Kunst. Aynı anlamı iki yapı taşır ama edatları farklıdır ve değiş tokuş edilemez.",
       },
     ],
   },

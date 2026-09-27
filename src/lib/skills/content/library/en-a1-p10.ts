@@ -53,7 +53,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Nerede oturuyorsun?",
         hint: "Soru sözcüğü varsa ton sonda İNER, çünkü türü zaten „where“ söylemiştir.",
         confusions: [
-          { heard: [], fix: "W- sorularında ezgi düz cümledeki gibi iner; yükseltmek tereddüt duyulur.", expected: "live" },
+          { heard: [], fix: "W- sorularında ezgi düz cümledeki gibi iner; yükseltirsen tereddüt gibi duyulur.", expected: "live" },
         ],
       },
       {

@@ -116,7 +116,7 @@ export const deB2P13: SkillExercise[] = [
     skill: "listening",
     title: "Erst das Bild, dann die Frage",
     genre: "interview",
-    intro: "Bir podcast söyleşisi: sokakta yabancıları fotoğraflayan biri, izin sormayı neden ve nasıl değiştirdiğini anlatıyor.",
+    intro: "Bir podcast söyleşisi: sokakta yabancıları fotoğraflayan biri, izin isteme biçimini neden ve nasıl değiştirdiğini anlatıyor.",
     gloss: [
       { de: "der Fotograf", tr: "fotoğrafçı", en: "photographer" },
       { de: "die Einwilligung", tr: "rıza", en: "consent" },

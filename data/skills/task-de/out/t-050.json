@@ -32,7 +32,7 @@
  {
   "tr": "İngilizce kararı konum ve yoklukla veriyor; Almanca ekle veriyor; ek öğrenilmek zorunda ve tahmin edilemez; delik öğrenilemez, tanıdık gelene kadar karşılaşmak gerekir.",
   "kind": "form.facts",
-  "de": "Das Englische entscheidet über Stellung und Abwesenheit; das Deutsche über Endungen; eine Endung muss gelernt werden und lässt sich nicht erraten; ein Loch lässt sich gar nicht lernen — man muss ihm oft genug begegnen, bis seine Form geläufig wird."
+  "de": "Das Englische entscheidet durch Stellung und Abwesenheit; das Deutsche durch Endungen; eine Endung muss gelernt werden und lässt sich nicht erraten; ein Loch lässt sich gar nicht lernen — man muss ihm oft genug begegnen, bis seine Form geläufig wird."
  },
  {
   "tr": "Cevap ölçülüydü; ton, daha az.",
@@ -60,7 +60,7 @@
   "de": "Ein Skaleneffekt senkt den Kapitalbedarf."
  },
  {
-  "tr": "Burada kayırmacılık yok; ahbap-çavuş ağımız var.",
+  "tr": "Burada kayırmacılık yok; ahbap çavuş ağımız var.",
   "kind": "build.tr",
   "de": "Wir haben hier keine Vetternwirtschaft; wir haben ein Netzwerk alter Bekannter."
  },
@@ -225,7 +225,7 @@
   "de": "Eine Studie falsch wiederzugeben ist eine Verzerrung, keine Binsenweisheit."
  },
  {
-  "tr": "Biri muhasebe sahtekarlığı ileri sürüyor; bir başkası zimmete geçirmeyi kanıtlıyor.",
+  "tr": "Biri muhasebe sahtekârlığı ileri sürüyor; bir başkası zimmete geçirmeyi kanıtlıyor.",
   "kind": "build.tr",
   "de": "Der eine behauptet Bilanzbetrug; ein anderer beweist Unterschlagung."
  },
@@ -235,7 +235,7 @@
   "de": "Eine zahlungsfähige Firma kann trotzdem ein Ausfallrisiko tragen und ihren Risikoappetit verlieren."
  },
  {
-  "tr": "Yaş bir sav değil.",
+  "tr": "Eskilik bir sav değil.",
   "kind": "build.hint",
   "de": "Alter ist kein Argument."
  },
@@ -337,12 +337,12 @@
  {
   "tr": "Çoğul şeyin adı; öteki tarihi olan tek bir olay.",
   "kind": "build.hint",
-  "de": "Der Plural ist der Name der Sache; das andere ein einzelnes Ereignis mit Datum."
+  "de": "Das eine ist der Name für etwas im Plural; das andere ein einzelnes Ereignis mit Datum."
  },
  {
   "tr": "Okulun arkasında da bir kurucu ve bir bölüm var.",
   "kind": "build.hint",
-  "de": "Hinter der Schule stehen ein Gründer und ein Institut."
+  "de": "Auch hinter der Schule stehen ein Gründer und ein Institut."
  },
  {
   "tr": "Taraflar neredeyse hiçbir zaman eşit özgür değil.",
@@ -355,9 +355,9 @@
   "de": "Die Formulierung wurde gestrichen, der Konflikt war am nächsten Morgen noch da."
  },
  {
-  "tr": "Biri yüz yazara olmuş, öteki tek sayfada duyuluyor.",
+  "tr": "Biri yüz yazarın başından geçmiş, ötekini okur bir mevsimde unutuyor.",
   "kind": "build.hint",
-  "de": "Das eine ist hundert Autoren widerfahren, das andere hört man auf einer Seite."
+  "de": "Das eine ist hundert Autoren widerfahren, das andere vergisst der Leser in einer Saison."
  },
  {
   "tr": "Burada tanımlık var ve olmalı: iki sayılabilir şey.",
@@ -390,9 +390,9 @@
   "de": "Das Objekt ist vorangestellt; das Unbenannte steht am Anfang."
  },
  {
-  "tr": "Biri bilançonun söylediği, öteki on beşinde ödenebilen.",
+  "tr": "Biri bilançonun söylediği, öteki ayın on beşinde ödenebilen.",
   "kind": "build.hint",
-  "de": "Das eine sagt die Vermögensaufstellung, das andere ist das, was am Fünfzehnten gezahlt werden kann."
+  "de": "Das eine ist, was die Bilanz sagt, das andere das, was am Fünfzehnten gezahlt werden kann."
  },
  {
   "tr": "Tür yadsınıyor, örnek daha dost bir adla kabul ediliyor.",

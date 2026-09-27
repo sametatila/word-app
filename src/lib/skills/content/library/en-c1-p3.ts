@@ -36,7 +36,7 @@ export const enC1P3: SkillExercise[] = [
       { de: "frame", tr: "çerçeve" },
       { de: "affect", tr: "etkilemek" },
       { de: "significant", tr: "kayda değer" },
-      { de: "identify", tr: "kimliğini göstermek" },
+      { de: "identify", tr: "kimliğini belirlemek" },
       { de: "analysis", tr: "analiz" },
       { de: "gender", tr: "cinsiyet" },
       { de: "identification", tr: "kimlik tespiti" },
@@ -246,7 +246,7 @@ export const enC1P3: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kısa vadede bu değişikliğin ölçülebilir bir etkisi olmamış olabilir.",
+        tr: "Kısa vadede bu değişikliğin pekâlâ ölçülebilir bir etkisi olmamış olabilir.",
         answer: "In the short term the change may well have had no measurable effect.",
         alternatives: ["The change may well have had no measurable effect in the short term."],
         hint: "„may well“ olasılığı güçlendirir; tek başına „may“ daha zayıf bir iddia taşır.",
@@ -358,7 +358,7 @@ export const enC1P3: SkillExercise[] = [
         tr: "Türkçede „galiba“, „büyük ölçüde“, „gibi görünüyor“ ile yaptığın şeyi İngilizce dört yolla yapar: kipler (may, might, could, would), fiiller (suggest, indicate, appear, tend to), zarflar (arguably, apparently, largely, broadly) ve niceleyiciler (some, a substantial share).",
         examples: [
           { de: "The figures suggest that the effect is small.", tr: "Rakamlar etkinin küçük olduğunu düşündürüyor." },
-          { de: "Costs tend to be underestimated in the first year.", tr: "Maliyetler ilk yıl hafife alınma eğilimindedir." },
+          { de: "Costs tend to be underestimated in the first year.", tr: "Maliyetler ilk yıl olduğundan düşük tahmin edilme eğilimindedir." },
           { de: "It may well be that the categories are the problem.", tr: "Sorun pekâlâ kategoriler olabilir." },
         ],
       },

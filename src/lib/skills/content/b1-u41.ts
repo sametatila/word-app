@@ -116,7 +116,7 @@ export const b1U41: SkillExercise[] = [
     text:
       "Eine Mehrheit ist keine Wahrheit. Das ist einfach, wird aber " +
       "in politischen Diskussionen ständig vergessen.\n\n" +
-      "Wenn achtzig Prozent etwas gut finden, heißt das nur: achtzig " +
+      "Wenn achtzig Prozent etwas gut finden, heißt das nur: Achtzig " +
       "Prozent finden es gut. Ob es richtig ist, steht auf einem anderen " +
       "Blatt. Eine Reform ist deshalb nicht automatisch gut, weil viele " +
       "dafür sind — und nicht automatisch schlecht, weil wenige dafür sind.\n\n" +
@@ -131,7 +131,7 @@ export const b1U41: SkillExercise[] = [
         text: "Was heißt es, wenn achtzig Prozent etwas gut finden?",
         options: ["Dass es richtig ist", "Nur, dass achtzig Prozent es gut finden", "Dass eine Reform kommt"],
         answer: 1,
-        explain: "„… heißt das nur: achtzig Prozent finden es gut.“",
+        explain: "„… heißt das nur: Achtzig Prozent finden es gut.“",
       },
       {
         text: "Was gilt für eine Minderheit?",
@@ -380,7 +380,7 @@ export const b1U41: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Aidiyet üzerine bir görüş yaz: 'buraya ait olmak' sence ne demek, hangi ölçüt önemli ve hangisi değil, kendi ya da bildiğin bir deneyim, ve karşı bir görüşe cevap. En az iki 'sein/werden + yalın yüklem' cümlesi kullan.",
+        prompt: "Aidiyet üzerine bir görüş yaz: 'buraya ait olmak' sence ne demek, hangi ölçüt önemli ve hangisi değil, kendi ya da bildiğin bir deneyim ve karşı bir görüşe cevap. En az iki 'sein/werden + yalın yüklem' cümlesi kullan.",
         checklist: [
           "Konu tek cümlede tanıtılmış mı?",
           "En az iki ölçüt tartışılmış mı?",
@@ -402,9 +402,9 @@ export const b1U41: SkillExercise[] = [
           "draußen.\n\n" +
           "Nächstes Jahr wird meine Schwester Bürgerin. Sie freut sich " +
           "darauf, endlich mit abzustimmen. Für sie ist das kein politisches " +
-          "Zeichen, sondern einfach der letzte Schritt eines langen Wegs. Eine nationale Prüfung gibt es dafür nicht.",
+          "Zeichen, sondern einfach der letzte Schritt eines langen Wegs. Die nationale Prüfung dafür hat sie schon bestanden.",
         phrases: [
-          { de: "Für mich ist Integration …", tr: "Bana göre uyum …", en: "For me integration is …" },
+          { de: "Für mich ist Integration …", tr: "Bana göre uyum …", en: "For me, integration is …" },
           { de: "Dem möchte ich widersprechen.", tr: "Buna karşı çıkmak isterim.", en: "I would like to contradict that." },
           { de: "… der letzte Schritt eines langen Wegs", tr: "… uzun bir yolun son adımı", en: "… the last step of a long road" },
         ],

@@ -203,7 +203,7 @@ export const b2U08: SkillExercise[] = [
       { de: "die Aufgabenverteilung", tr: "görev dağılımı", en: "division of tasks" },
       { de: "die Priorisierung", tr: "önceliklendirme", en: "prioritization" },
       { de: "das Zeitfenster", tr: "zaman aralığı", en: "time slot" },
-      { de: "die Stellvertretung", tr: "vekâlet", en: "stand-in" },
+      { de: "die Stellvertretung", tr: "vekil", en: "stand-in" },
       { de: "die Verpflegung", tr: "yeme içme", en: "catering" },
       { de: "ausstatten", tr: "donatmak", en: "to equip" },
       { de: "reibungslos", tr: "sorunsuz", en: "smooth" },

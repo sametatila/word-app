@@ -110,7 +110,7 @@ export const enA1U13: SkillExercise[] = [
       "I want to order two books and a computer bag from your list.\n\n" +
       "My address is: Deniz Kaya, Green Street 12, Bremen.\n\n" +
       "When does it arrive? I need the bag on Friday. Is that a problem? I can wait one or two days, but not a week.\n\n" +
-      "I have wifi at home, so you can write to my computer. Please don't call me at work — I am in a meeting every afternoon.\n\n" +
+      "I have wifi at home, so you can email me. Please don't call me at work — I am in a meeting every afternoon.\n\n" +
       "How much is the delivery? Is it free?\n\n" +
       "Thank you,\nDeniz",
     questions: [

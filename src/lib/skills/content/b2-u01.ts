@@ -34,7 +34,7 @@ export const b2U01: SkillExercise[] = [
     unit: 1,
     title: "Die ersten neunzig Sekunden",
     genre: "article",
-    intro: "Bir sunum eğitmeni, sunumun ilk dakikasında nelerin karara bağlandığını anlatıyor.",
+    intro: "Bir sunum eğitmeni, sunumun ilk doksan saniyesinde nelerin karara bağlandığını anlatıyor.",
     gloss: [
       { de: "der Überblick", tr: "genel bakış", en: "overview" },
       { de: "die Gliederung", tr: "ana hatlar", en: "outline" },
@@ -427,7 +427,7 @@ export const b2U01: SkillExercise[] = [
         minWords: 70,
         phrases: [
           { de: "Es wurde beschlossen, dass …", tr: "…-e karar verildi", en: "it was decided that …" },
-          { de: "Frau X stellte fest, … sei …", tr: "X hanım …-in … olduğunu belirtti", en: "Ms. X stated that … was …" },
+          { de: "Frau X stellte fest, … sei …", tr: "X Hanım …-in … olduğunu belirtti", en: "Ms. X stated that … was …" },
           { de: "Die Freigabe steht noch aus.", tr: "onay hâlâ bekleniyor", en: "approval is still pending" },
         ],
         sample:

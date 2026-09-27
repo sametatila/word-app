@@ -39,7 +39,7 @@ export const deC1P4: SkillExercise[] = [
       "Woran halten Sie sich dabei?\n" +
       "An den Partikeln, vor allem. Deutsch hat diese kleinen Wörter, die im Wörterbuch fast nichts bedeuten " +
       "und im Satz alles: doch, ja, mal, eben, halt. Wenn da steht „Das ist ja interessant“, ist der Satz ohne " +
-      "das „ja“ eine Feststellung. Mit „ja“ ist es Überraschung — oder Ironie, je nachdem, wie ich ihn lege.\n\n" +
+      "das „ja“ eine Feststellung. Mit „ja“ ist es Überraschung — oder Ironie, je nachdem, wie ich ihn spreche.\n\n" +
       "Können Sie ein Beispiel geben?\n" +
       "„Nimm es dir eben.“ Ohne „eben“ ist das eine Aufforderung. Mit „eben“ sage ich dir zusätzlich, dass es " +
       "keine große Sache ist und dass du zu lange fragst. Übersetzen kann man das kaum. Ich habe einmal eine " +
@@ -244,7 +244,7 @@ export const deC1P4: SkillExercise[] = [
         phrases: [
           { de: "Erst mal: Ich freue mich für dich.", tr: "Öncelikle: senin adına sevindim.", en: "First of all: I'm happy for you." },
           { de: "Ich sage dir einen Punkt, und dann lasse ich es.", tr: "Tek bir noktayı söyleyeyim, sonra bırakıyorum.", en: "I'll make one point and then I'll leave it." },
-          { de: "Du weißt ja selbst am besten, …", tr: "Sen zaten en iyi bilirsin …", en: "You know best yourself …" },
+          { de: "Du weißt ja selbst am besten, …", tr: "Sen zaten en iyi bilirsin …", en: "You know better than anyone …" },
           { de: "Das kann ich nicht beurteilen.", tr: "Bunu değerlendiremem.", en: "I can't judge that." },
           { de: "Ruf mich mal an, wenn …", tr: "… olunca bir ara beni ara", en: "Give me a call when …" },
         ],
@@ -341,7 +341,7 @@ export const deC1P4: SkillExercise[] = [
       },
       {
         heading: "Dördü ne yapar",
-        tr: "„doch“ beklenenin tersini söyler ya da emri yumuşatır. „ja“ karşındakinin zaten bildiği bir şeye gönderir; ünlemde şaşırma verir. „mal“ ricayı gündelikleştirir. „eben“ ve „halt“ kabullenme bildirir: değişmez, öyledir.",
+        tr: "„doch“ beklenenin tersini söyler ya da emri yumuşatır. „ja“ karşındakinin zaten bildiği bir şeye gönderme yapar; ünlemde şaşkınlık bildirir. „mal“ ricayı gündelikleştirir. „eben“ ve „halt“ kabullenme bildirir: değişmez, öyledir.",
         examples: [
           { de: "Komm doch mit, es dauert nicht lange.", tr: "Hadi gel, uzun sürmez.", note: "yumuşatılmış çağrı" },
           { de: "Kannst du mir mal kurz helfen?", tr: "Bir dakika yardım eder misin?", note: "gündelik rica" },

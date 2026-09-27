@@ -188,7 +188,7 @@ export const deB1: SkillExercise[] = [
           "Nur im Winter in den Wald kommen.",
         ],
         answer: 0,
-        explain: "Son cevabı bu iki şeyi istiyor ve gerekçesini de veriyor: yılda iki yüz bin ziyaretçi.",
+        explain: "Son cevabında bu iki şeyi istiyor ve gerekçesini de veriyor: yılda iki yüz bin ziyaretçi.",
       },
     ],
   },
@@ -227,7 +227,7 @@ export const deB1: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Aşağıdaki ilana e-postayla cevap ver. Kendini tanıt, neden katılmak istediğini açıkla, hangi günler uygun olduğunu söyle ve bir soru sor.",
+          "Aşağıdaki ilana e-postayla cevap ver. Kendini tanıt, neden katılmak istediğini açıkla, hangi günlerin uygun olduğunu söyle ve bir soru sor.",
         stimulus:
           "Lesepaten gesucht!\n\n" +
           "Die Stadtbibliothek sucht Menschen, die einmal pro Woche eine Stunde mit Kindern lesen. " +
@@ -292,7 +292,7 @@ export const deB1: SkillExercise[] = [
       minSeconds: 40,
       maxSeconds: 75,
       sampleDe:
-        "Meiner Meinung nach sollte man beides mischen. Der größte Vorteil vom Homeoffice ist, dass man keine Zeit " +
+        "Meiner Meinung nach sollte man beides mischen. Der größte Vorteil des Homeoffice ist, dass man keine Zeit " +
         "auf dem Weg verliert. Ich brauche jeden Tag fast eine Stunde ins Büro, und diese Stunde fehlt mir abends. " +
         "Außerdem kann ich zu Hause ruhiger arbeiten, weil niemand alle zehn Minuten etwas fragt. " +
         "Auf der anderen Seite verliert man den Kontakt zu den Kollegen. Viele Probleme löst man in drei Minuten " +
@@ -363,7 +363,7 @@ export const deB1: SkillExercise[] = [
           "Ich glaube, dass er kommt morgen.",
         ],
         answer: 0,
-        explain: "„dass“dan sonra sıra özne + tümleçler + çekimli fiil: dass er morgen kommt.",
+        explain: "„dass“tan sonra sıra özne + tümleçler + çekimli fiil: dass er morgen kommt.",
       },
       {
         text: "Wenn ich Zeit habe, ___ ich dich.",

@@ -242,7 +242,7 @@ export const enB2U24: SkillExercise[] = [
       { de: "a step", tr: "adım" },
       { de: "preparatory", tr: "hazırlık" },
       { de: "one after another", tr: "arka arkaya" },
-      { de: "active", tr: "aktif" },
+      { de: "active", tr: "etken" },
     ],
     minutes: 7,
     segments: [
@@ -341,7 +341,7 @@ export const enB2U24: SkillExercise[] = [
     segments: [
       { speaker: "Alp", text: "Never has an answer come so promptly. „Has“ in front of the subject, and it is the first line of a letter about a reply that took nine weeks." },
       { speaker: "Alp", text: "So it is irony, and irony in this shape is a risk: the sentence is also a perfectly good sincere sentence." },
-      { speaker: "Alp", text: "Rarely does a reply arrive so swiftly. The same again in the present, so „does“ arrives and „arrive“ loses its ending." },
+      { speaker: "Alp", text: "Rarely does a reply arrive so swiftly. The same again in the present, so „does“ arrives and „arrives“ loses its ending." },
       { speaker: "Alp", text: "Only after the third letter do they send a reminder. That one is not irony at all; it is a fact with a number in it." },
       { speaker: "Alp", text: "And that is why it works. Two ironic sentences and one plain one, and the plain one is the sentence that can be answered." },
       { speaker: "Alp", text: "A complaint written entirely in irony is read as anger, and anger in a letter is answered by a form." },
@@ -464,7 +464,7 @@ export const enB2U24: SkillExercise[] = [
     genre: "opinion",
     intro: "Üç devrik cümle ve iki ortaç.",
     gloss: [
-      { de: "so promptly", tr: "bu kadar derhâl" },
+      { de: "so promptly", tr: "bu kadar tez" },
       { de: "so swiftly", tr: "bu kadar çabuk" },
       { de: "a reminder", tr: "hatırlatma" },
       { de: "asked to follow up", tr: "geri dönüş istenince" },

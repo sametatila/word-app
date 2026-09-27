@@ -53,7 +53,7 @@ export const b1U16: SkillExercise[] = [
       "Einerseits gibt es einen klaren Vorteil: Wer weniger am Bildschirm sitzt, " +
       "schläft besser und bewegt sich mehr. Studien zeigen, dass zu viel Licht " +
       "am Abend Probleme beim Einschlafen verursacht.\n\n" +
-      "Andererseits gibt es einen echten Nachteil: der Bildschirm ist heute " +
+      "Andererseits gibt es einen echten Nachteil: Der Bildschirm ist heute " +
       "kein Spielzeug mehr, sondern Arbeitsgerät. Wer im Büro acht Stunden davor sitzt, kann seine Zeit nicht " +
       "einfach reduzieren. Der Vergleich mit Kindern ist daher nicht korrekt.\n\n" +
       "Es hängt also davon ab, worum es geht. Bewusst zu entscheiden bringt mehr " +
@@ -70,7 +70,7 @@ export const b1U16: SkillExercise[] = [
         text: "Was ist das Gegenargument?",
         options: ["Der Bildschirm ist ein Spielzeug", "Der Bildschirm ist Arbeitsgerät", "Es gibt keine Studien"],
         answer: 1,
-        explain: "„Andererseits gibt es einen echten Nachteil: der Bildschirm ist heute kein Spielzeug mehr …“",
+        explain: "„Andererseits gibt es einen echten Nachteil: Der Bildschirm ist heute kein Spielzeug mehr …“",
       },
       {
         text: "Was bringt laut Text mehr als eine feste Zahl?",
@@ -385,11 +385,11 @@ export const b1U16: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Bir konuda görüşünü yaz: konuyu tanıt, en az bir artı ve bir eksi say, kendi görüşünü gerekçesiyle söyle, ve karşı görüşe nazikçe cevap ver. En az bir 'da-' bileşiği kullan (davon, daran, darüber).",
+        prompt: "Bir konuda görüşünü yaz: konuyu tanıt, en az bir artı ve bir eksi say, kendi görüşünü gerekçesiyle söyle ve karşı görüşe nazikçe cevap ver. En az bir 'da-' bileşiği kullan (davon, daran, darüber).",
         checklist: [
           "Konu net tanıtılmış mı?",
           "En az bir artı ve bir eksi var mı?",
-          "Kendi görüş gerekçeli mi?",
+          "Kendi görüşün gerekçeli mi?",
           "Karşı görüşe nazik bir cevap var mı?",
           "En az bir 'da-' bileşiği kullanılmış mı?",
         ],

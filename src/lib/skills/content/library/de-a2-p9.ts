@@ -34,7 +34,7 @@ export const deA2P9: SkillExercise[] = [
       "Ich bin gerannt, bin eingestiegen und habe mich gefreut. " +
       "Dann habe ich gemerkt: Mein Koffer stand noch im anderen Zug.\n\n" +
       "Der Schaffner war sehr ruhig. „Das passiert oft“, hat er gesagt und telefoniert. " +
-      "Eine halbe Stunde später wusste er, dass ein Mitarbeiter den Koffer in Dresden abgegeben hat.\n\n" +
+      "Eine halbe Stunde später wusste er, dass ein Mitarbeiter den Koffer in Dresden abgegeben hatte.\n\n" +
       "Am Abend bin ich zum Fundbüro gegangen. Der Koffer war da, aber er war offen. " +
       "Eine Frau hatte ihn geöffnet, weil sie meinen Namen suchen wollte. " +
       "Sie hat mir eine Nachricht hineingelegt: „Schöne Hochzeit! Ihr Anzug hängt jetzt ordentlich.“\n\n" +
@@ -87,7 +87,7 @@ export const deA2P9: SkillExercise[] = [
           "Der Anzug war ordentlich aufgehängt.",
         ],
         answer: 2,
-        explain: "Notta „Ihr Anzug hängt jetzt ordentlich“ yazıyor ve takım gerçekten buruşuk değil.",
+        explain: "Notta „Ihr Anzug hängt jetzt ordentlich“ yazıyor ve takım elbise gerçekten buruşuk değil.",
       },
     ],
   },
@@ -264,7 +264,7 @@ export const deA2P9: SkillExercise[] = [
       {
         de: "Das ist eine einfache Antwort.",
         tr: "Bu basit bir cevap.",
-        hint: "Üç kelime de ünlüyle başlıyor: eine | einfache | Antwort. Üçünün de önünde küçük bir vuruş var.",
+        hint: "Dört kelime ünlüyle başlıyor: ist | eine | einfache | Antwort. Hepsinin önünde küçük bir vuruş var.",
         confusions: [
           {
             heard: [],
@@ -312,7 +312,7 @@ export const deA2P9: SkillExercise[] = [
       {
         de: "Am achten April um acht Uhr.",
         tr: "Sekiz Nisan'da saat sekizde.",
-        hint: "Beş sözcükten dördü ünlüyle başlıyor; hepsinin önünde aynı küçük duraklama var.",
+        hint: "Altı sözcüğün altısı da ünlüyle başlıyor; hepsinin önünde aynı küçük duraklama var.",
         confusions: [
           {
             heard: [],
@@ -363,7 +363,7 @@ export const deA2P9: SkillExercise[] = [
       },
       {
         heading: "Sabit edatlar",
-        tr: "Çoğu dönüşlü fiil belirli bir edatla kalıplaşmıştır ve o edat bir hâl ister: „sich freuen auf“ + Akkusativ (gelecek bir şey), „sich freuen über“ + Akkusativ (olmuş bir şey), „sich interessieren für“ + Akkusativ. Bu ikilileri fiille birlikte öğrenmek gerekir.",
+        tr: "Birçok dönüşlü fiil belirli bir edatla kalıplaşmıştır ve o edat bir hâl ister: „sich freuen auf“ + Akkusativ (gelecek bir şey), „sich freuen über“ + Akkusativ (olmuş bir şey), „sich interessieren für“ + Akkusativ. Bu ikilileri fiille birlikte öğrenmek gerekir.",
         examples: [
           { de: "Ich freue mich auf den Urlaub.", tr: "Tatili dört gözle bekliyorum.", note: "auf: henüz olmadı" },
           { de: "Ich freue mich über dein Geschenk.", tr: "Hediyene sevindim.", note: "über: olmuş bitmiş" },

@@ -51,7 +51,7 @@ export const enA2U13: SkillExercise[] = [
       "Could you confirm the time of the meeting on Friday? In my calendar it says two, but Mert wrote three in his email.\n" +
       "One more thing. I sent the short text to the customer yesterday and they replied this morning. They accept the new price but they want the product in September.\n" +
       "I haven't answered them yet. I would like to talk to you first.\n" +
-      "If you open my last email, you see their message.\n" +
+      "If you open my last email, you can see their message.\n" +
       "Best regards,\n" +
       "Deniz",
     questions: [
@@ -119,7 +119,7 @@ export const enA2U13: SkillExercise[] = [
       "Deniz: Good to know. How long do I have for a return?\n" +
       "Clerk: Fourteen days. After that we give a card, not money.\n" +
       "Deniz: And if the item is damaged?\n" +
-      "Clerk: Then there is no time. Damaged goods always go back.\n" +
+      "Clerk: Then there is no time limit. Damaged goods always go back.\n" +
       "Deniz: Thank you. That was easier than I expected.",
     questions: [
       {

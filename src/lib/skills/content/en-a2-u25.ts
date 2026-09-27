@@ -53,7 +53,7 @@ export const enA2U25: SkillExercise[] = [
       "Dear Sir or Madam,\n" +
       "I would like to make a complaint about the trash on Garden Street.\n" +
       "They collect the trash on Mondays. On our street they have not come since the twelfth of August. That is three weeks. I have waited for three weeks and I have called twice.\n" +
-      "The first time somebody said: we send a car on Thursday. No car came. The second time nobody answered.\n" +
+      "The first time somebody said: we will send a truck on Thursday. No truck came. The second time nobody answered.\n" +
       "I know the reason is not one person. But there is a list and our street is not on it.\n" +
       "Please put it on the list. I expect an answer within a week.\n" +
       "If you need a photo, I have eleven.\n" +
@@ -64,7 +64,7 @@ export const enA2U25: SkillExercise[] = [
         text: "When do they collect the trash?",
         options: ["on Mondays", "on Thursdays", "on the twelfth"],
         answer: 0,
-        explain: "„They collect the trash on Mondays.“ — perşembe sözü verilen arabanın günü.",
+        explain: "„They collect the trash on Mondays.“ — perşembe sözü verilen kamyonun günü.",
       },
       {
         text: "How long has Nil waited?",
@@ -74,10 +74,10 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "No car came.",
+        text: "No truck came.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„we send a car on Thursday. No car came.“",
+        explain: "„we will send a truck on Thursday. No truck came.“",
       },
       {
         kind: "gapfill",
@@ -379,7 +379,7 @@ export const enA2U25: SkillExercise[] = [
         fields: [
           { label: "Problem", answer: "the trash", accept: ["trash"] },
           { label: "Street", answer: "Garden Street", accept: ["Garden"] },
-          { label: "Since", answer: "the twelfth of August", accept: ["August 12", "August twelfth", "August 12th", "August"] },
+          { label: "Since", answer: "the twelfth of August", accept: ["August 12", "August twelfth", "August 12th"] },
           { label: "Calls", answer: "two", accept: ["twice", "2"] },
         ],
       },

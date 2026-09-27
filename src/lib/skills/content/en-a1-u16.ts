@@ -105,9 +105,9 @@ export const enA1U16: SkillExercise[] = [
       "Can: Under the sofa?\n" +
       "Ela: No. And not under the bed.\n" +
       "Can: In the kitchen? Next to the fridge?\n" +
-      "Ela: I look. No, it is not there. Is there a phone in the bathroom?\n" +
+      "Ela: Let me look. No, it is not there. Is there a phone in the bathroom?\n" +
       "Can: Why a phone in the bathroom? But look, please.\n" +
-      "Ela: No! Wait — I call it.\n" +
+      "Ela: No! Wait — let me call it.\n" +
       "Can: Good idea. Listen. I hear something. It is in the living room!\n" +
       "Ela: Where? Next to the chair, on the floor!\n" +
       "Can: Under the chair, I think. Now be quiet, please — the neighbor downstairs!",
@@ -246,7 +246,7 @@ export const enA1U16: SkillExercise[] = [
       { de: "through", tr: "içinden" },
       { de: "hear", tr: "duymak" },
       { de: "furniture", tr: "mobilya" },
-      { de: "know", tr: "bilmek" },
+      { de: "know", tr: "tanımak" },
     ],
     minutes: 4,
     segments: [

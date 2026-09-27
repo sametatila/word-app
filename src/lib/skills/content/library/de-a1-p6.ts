@@ -309,7 +309,7 @@ export const deA1P6: SkillExercise[] = [
       {
         de: "Der Koch sucht ein Buch.",
         tr: "Aşçı bir kitap arıyor.",
-        hint: "„Koch“ ve „Buch“ sert, „sucht“ da sert — üçünde de ünlü arka ünlü.",
+        hint: "„Koch“ ve „Buch“ sert, „sucht“ da sert — üçünde de ch'den önceki ünlü bir arka ünlü.",
         confusions: [
           {
             heard: ["Der Kok sucht ein Buch", "Der Koch suht ein Buch"],

@@ -125,7 +125,7 @@ export const enA2P14: SkillExercise[] = [
       },
       {
         de: "She looked after my cat.",
-        tr: "Kedime o baktı.",
+        tr: "Kedime baktı.",
         hint: "look EF-tır: vurgu edatın ilk hecesinde. „looked“ kısa: lukt.",
         confusions: [
           { heard: [], fix: "„after“ın ilk hecesi güçlü; „looked“ ona bağlanır.", expected: "looked after" },

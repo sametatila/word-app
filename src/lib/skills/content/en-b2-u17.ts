@@ -180,7 +180,7 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A review of the first two only stays in the memory.",
+        text: "A review with only the first two stays in the memory.",
         options: ["True", "False"],
         answer: 1,
         explain: "„A review written that way has an undisputed argument and no persistence in the memory.“",

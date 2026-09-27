@@ -368,7 +368,7 @@ export const enA2U06: SkillExercise[] = [
         kind: "build",
         tr: "Ne zamandır var?",
         answer: "How long have you had it?",
-        hint: "Hekimin ilk sorusu. „had“ iki kez geçiyor gibi görünüyor ama biri yardımcı.",
+        hint: "Hekimin ilk sorusu. „have“ ile „had“ aynı fiilden: „have“ yardımcı, „had“ asıl fiil.",
       },
       {
         kind: "form",

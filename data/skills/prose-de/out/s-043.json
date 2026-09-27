@@ -20,14 +20,14 @@
   "de": "Die Zwei-Sekunden-Probe für einen Satz ohne Quelle."
  },
  {
-  "tr": "Dört sözcüklük fiil. Kim yapacağı yazmıyor.",
+  "tr": "Dört sözcüklük fiil. Kimin yapacağı yazılmıyor.",
   "kind": "intro",
   "de": "Ein Verb aus vier Wörtern. Wer es tut, steht nicht da."
  },
  {
   "tr": "Öne çıkan öbek uzuyor. Devrilen hangi yarı?",
   "kind": "intro",
-  "de": "Das vorangestellte Glied wird länger. Welche Hälfte kippt?"
+  "de": "Das vorangestellte Glied wird länger. Welche Hälfte wird umgestellt?"
  },
  {
   "tr": "Özet ortaçla yazılıyor. Özne hangi yarıya ait?",
@@ -295,11 +295,6 @@
   "de": "Verstoß"
  },
  {
-  "tr": "kusur",
-  "kind": "gloss.tr",
-  "de": "Mangel"
- },
- {
   "tr": "nefes",
   "kind": "gloss.tr",
   "de": "Atemzug"
@@ -405,11 +400,6 @@
   "de": "verbirgt"
  },
  {
-  "tr": "güvenmek",
-  "kind": "gloss.tr",
-  "de": "vertrauen"
- },
- {
   "tr": "korunmuş",
   "kind": "gloss.tr",
   "de": "eingehalten"
@@ -480,7 +470,7 @@
   "de": "Einschränkung"
  },
  {
-  "tr": "süregelen",
+  "tr": "süren",
   "kind": "gloss.tr",
   "de": "laufend"
  },
@@ -735,7 +725,7 @@
   "de": "weil sie geladen wurde"
  },
  {
-  "tr": "yürütmüş olacak",
+  "tr": "yerine getirmiş olacak",
   "kind": "gloss.tr",
   "de": "wird ausgeführt haben"
  },
@@ -818,5 +808,10 @@
   "tr": "kabul ettiğini bildirdi",
   "kind": "gloss.tr",
   "de": "bestätigte den Empfang"
+ },
+ {
+  "tr": "tekrar",
+  "kind": "gloss.tr",
+  "de": "die Wiederholung"
  }
 ]

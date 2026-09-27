@@ -66,7 +66,7 @@ export const c1U23: SkillExercise[] = [
       "Befremdlich wirkt das nur am Anfang, und gewöhnungsbedürftig bleibt es unterschiedlich lange. Wer Kritik als Konfrontation gelernt hat, braucht länger als jemand, der sie als Arbeitsschritt kennt.\n\n" +
       "Der Unterschied liegt nicht in der Menge der Kritik, sondern in ihrer Adresse. „Der Absatz ist unverständlich“ ist ein Satz über den Absatz. In vielen Sprachen wird derselbe Inhalt eingepackt — „vielleicht könnte man überlegen, ob …“ —, und das Auspacken ist Teil der Verständigung. Wer aus einer solchen Sprache kommt, hört im deutschen Satz eine Schärfe, die nicht drin ist. Umgekehrt hört der deutsche Zuhörer im eingepackten Satz eine Unentschiedenheit, die auch nicht drin ist.\n\n" +
       "Es gibt einen einfachen Prüfstein. Wenn Kritik direkt und trotzdem freundlich gemeint ist, folgt fast immer ein Vorschlag. „Der Absatz ist unverständlich — nimm den zweiten Satz nach vorn.“ Fehlt der Vorschlag über längere Zeit, ist es tatsächlich Unzufriedenheit; dann ist Nachfragen angebracht.\n\n" +
-      "Und die Pünktlichkeit? Sie ist real, aber der Spielraum ist größer als ihr Ruf. Fünf Minuten sind pünktlich, zehn Minuten kosten eine kurze Nachricht, und niemand erwartet Entschuldigungen für den Verkehr. Was übel genommen wird, ist das schweigende Zuspätkommen — nicht die Verspätung selbst, sondern der fehlende Satz dazu.\n\n" +
+      "Und die Pünktlichkeit? Sie ist real, aber der Spielraum ist größer als ihr Ruf. Fünf Minuten sind pünktlich, zehn Minuten kosten eine kurze Nachricht, und niemand erwartet Entschuldigungen für den Verkehr. Was übelgenommen wird, ist das schweigende Zuspätkommen — nicht die Verspätung selbst, sondern der fehlende Satz dazu.\n\n" +
       "Anders, nicht falsch: Das ist die brauchbarste Zusammenfassung, solange man sie in beide Richtungen liest.",
     questions: [
       {
@@ -99,7 +99,7 @@ export const c1U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was wird bei Verspätung übel genommen?",
+        text: "Was wird bei Verspätung übelgenommen?",
         options: [],
         answer: 0,
         accept: [
@@ -330,7 +330,7 @@ export const c1U23: SkillExercise[] = [
       { speaker: "Frau Neubert", text: "Was können wir sofort tun?" },
       { speaker: "Herr Yildirim", text: "Kurzfristig schlage ich Folgendes vor: Wir behelfen uns mit dem alten Anbieter. Der läuft noch, ist aber labil bei hoher Last." },
       { speaker: "Frau Baum", text: "Wie labil?" },
-      { speaker: "Herr Yildirim", text: "Bis etwa vierzig Vorgänge die Minute trägt er. Darüber wird es notdürftig." },
+      { speaker: "Herr Yildirim", text: "Bis etwa vierzig Vorgänge die Minute trägt er. Darüber läuft es nur noch notdürftig." },
       { speaker: "Frau Neubert", text: "Dann ist es eine Zwischenlösung, und wir nennen sie auch so — nach außen und nach innen." },
       { speaker: "Frau Baum", text: "Ich formuliere die Kundenmitteilung. Sage ich, wann es behoben ist?" },
       { speaker: "Frau Neubert", text: "Nein. Sagen Sie, was gerade geht und wann wir das nächste Mal informieren. Ein Zeitpunkt, den wir nicht halten, kostet mehr als die Störung." },

@@ -305,7 +305,7 @@ export const enA1U05: SkillExercise[] = [
         text: "Who is with the dog?",
         options: [],
         answer: 0,
-        accept: ["the grandfather", "his grandfather", "grandfather"],
+        accept: ["the grandfather", "his grandfather", "grandfather", "Deniz's grandfather"],
         explain: "„My grandfather is here too, with the dog.“",
       },
     ],

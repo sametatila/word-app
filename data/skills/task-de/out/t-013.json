@@ -92,7 +92,7 @@
  {
   "tr": "Dokuza çeyrek var.",
   "kind": "build.tr",
-  "de": "Es ist viertel vor neun."
+  "de": "Es ist Viertel vor neun."
  },
  {
   "tr": "O asla geç kalmaz.",
@@ -275,7 +275,7 @@
   "de": "„too“ heißt hier nicht „sehr“, sondern „zu viel“ — wie deutsch „zu teuer“; es trägt eine Beschwerde."
  },
  {
-  "tr": "„to“ kala demek ve gelecek saati söyler: a quarter to nine, yani 8:45.",
+  "tr": "„to“ kala demek ve gelecek saati söyler: a quarter to nine, yani 8.45.",
   "kind": "build.hint",
   "de": "„to“ heißt vor und nennt die kommende Stunde: a quarter to nine, also 8:45."
  },
@@ -308,5 +308,10 @@
   "tr": "Siparişlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Bestellungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "which is why",
+  "kind": "explanation.examples.note",
+  "de": "which is why"
  }
 ]

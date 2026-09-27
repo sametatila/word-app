@@ -20,14 +20,14 @@
   "de": "Der Frageanhang wird jedes Mal neu berechnet; Hilfsverb, Polarität und Subjekt werden bestimmt; „hardly“ macht den Satz negativ; der Anhang gehört der Rede, nicht dem Beschluss."
  },
  {
-  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan İngilizcede işaretli.",
+  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan, İngilizcede işaretli.",
   "kind": "form.facts",
   "de": "Das Verb rückt nach vorn und die Konjunktion fällt weg; nur drei Verben sind zugelassen; der Mechanismus ist im Deutschen derselbe; der Unterschied liegt in der Sprachebene: im Deutschen alltäglich, im Englischen markiert."
  },
  {
   "tr": "Fiil siliniyor ve virgül yerini tutuyor; nesne siliniyor ve fiil bir siyaseti adlandırıyor; yüklem siliniyor ve olumsuzluk kalıyor; yön dile değil biçime bağlı.",
   "kind": "form.facts",
-  "de": "Das Verb wird getilgt und das Komma hält seine Stelle; das Objekt wird getilgt und das Verb benennt eine Politik; das Prädikat wird getilgt und die Verneinung bleibt; die Richtung hängt nicht von der Sprache ab, sondern von der Form."
+  "de": "Das Verb wird getilgt und das Komma vertritt es; das Objekt wird getilgt und das Verb benennt eine Politik; das Prädikat wird getilgt und die Verneinung bleibt; die Richtung hängt nicht von der Sprache ab, sondern von der Form."
  },
  {
   "tr": "Ben buna tutumlu demezdim.",
@@ -132,7 +132,7 @@
  {
   "tr": "Bazı yazılar kundaklama diyor; bazıları yaralama.",
   "kind": "build.tr",
-  "de": "Manche Artikel nennen Brandstiftung, andere Körperverletzung."
+  "de": "Manche Artikel sprechen von Brandstiftung, andere von Körperverletzung."
  },
  {
   "tr": "Hiçbir iddianın paradoksal olmamasını istiyorlar.",
@@ -150,7 +150,7 @@
   "de": "Der Zeitgeist fühlte sich epochal an; das Jahrzehnt nicht."
  },
  {
-  "tr": "Günlük konuşma dilinde aynı satır başka türlü düşüyor.",
+  "tr": "Günlük konuşma dilinde aynı satır başka türlü karşılanıyor.",
   "kind": "build.tr",
   "de": "In der Umgangssprache landet dieselbe Zeile anders."
  },
@@ -165,7 +165,7 @@
   "de": "So sehr wir die Verschuldung anerkennen, die Mandantin ist nicht zahlungsunfähig."
  },
  {
-  "tr": "Kesin bir dille söylenince içi boş bir söz iddia gibi duyuluyor.",
+  "tr": "Üstüne basa basa söylenince içi boş bir söz iddia gibi duyuluyor.",
   "kind": "build.tr",
   "de": "Nachdrücklich gesagt, klingt eine Leerformel wie eine Behauptung."
  },
@@ -175,7 +175,7 @@
   "de": "Sie kontextualisiert es; er entziffert es; sie sezieren es."
  },
  {
-  "tr": "Bir anımsama halk bilgisi olarak, bir eski eser şifre olarak sağ kalıyor.",
+  "tr": "Bir anımsama halk bilgisi olarak, bir eski eser şifre olarak yaşamını sürdürüyor.",
   "kind": "build.tr",
   "de": "Eine Erinnerung überlebt als Überlieferung, ein Relikt als Chiffre."
  },
@@ -198,11 +198,6 @@
   "tr": "Kurala yazılamayan bilgi.",
   "kind": "build.hint",
   "de": "Wissen, das sich nicht als Regel aufschreiben lässt."
- },
- {
-  "tr": "Eski kip: „be“, „is“ değil.",
-  "kind": "build.hint",
-  "de": "Der alte Modus: „be“, nicht „is“."
  },
  {
   "tr": "Hız çekingenliği büyütüyor.",
@@ -235,7 +230,7 @@
   "de": "Die Wörter blieben gleich; der Vortrag änderte sich."
  },
  {
-  "tr": "Eksiltili söyleyiş, sonra hesaplanan ek.",
+  "tr": "Az söyleme, sonra hesaplanan ek.",
   "kind": "build.hint",
   "de": "Erst die Untertreibung, dann der berechnete Frageanhang."
  },
@@ -272,7 +267,7 @@
  {
   "tr": "İkinci yarıda fiil yok; yerini virgül tutuyor.",
   "kind": "build.hint",
-  "de": "In der zweiten Hälfte fehlt das Verb; das Komma hält seine Stelle."
+  "de": "In der zweiten Hälfte fehlt das Verb; das Komma vertritt es."
  },
  {
   "tr": "Mastar özne; olumsuz biçim çıkarımı reddediyor.",
@@ -327,7 +322,7 @@
  {
   "tr": "Silinen fiilin yerini virgül tutuyor; boşluk dize sonunun işini görüyor.",
   "kind": "build.hint",
-  "de": "Das Komma hält die Stelle des getilgten Verbs; die Lücke tut, was ein Zeilenumbruch täte."
+  "de": "Das Komma vertritt das getilgte Verb; die Lücke tut, was ein Zeilenumbruch täte."
  },
  {
   "tr": "Dersin sırası: doğru sıraya koy.",

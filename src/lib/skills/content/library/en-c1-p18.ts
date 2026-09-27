@@ -80,7 +80,7 @@ export const enC1P18: SkillExercise[] = [
           "what kind of work was handed in",
         ],
         answer: 2,
-        explain: "Belli ki kopyalanmış ya da veli tarafından yapılmış ödevler çok azalmış.",
+        explain: "Kopyalandığı ya da veli tarafından yapıldığı belli olan ödevler çok azalmış.",
       },
       {
         kind: "truefalse",
@@ -113,7 +113,7 @@ export const enC1P18: SkillExercise[] = [
           "only how often a student attended",
         ],
         answer: 0,
-        explain: "Çocuğun öğrendiğini ve eve döndüğü mutfak masasını; ikisi ayrılamıyordu.",
+        explain: "Hem çocuğun ne öğrendiğini hem de eve dönünce nasıl bir mutfak masası bulduğunu ölçüyordu; ikisi ayrılamıyordu.",
       },
     ],
   },
@@ -187,7 +187,7 @@ export const enC1P18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["seventy", "70"],
-        explain: "„If rates in any grade level fall below seventy percent“ bir ay içinde toplanılacak.",
+        explain: "„If rates in any grade level fall below seventy percent“: bu durumda müdür ve okul yönetim kurulu bir ay içinde toplanacak.",
       },
       {
         kind: "short_answer",
@@ -273,7 +273,7 @@ export const enC1P18: SkillExercise[] = [
           "“I actually read them now, because there's nothing else to read.”\n\n" +
           "My own view is that both of them are right. Some of us will treat ungraded work as optional, at least " +
           "at first. But a grade was never the reason I learned anything from homework; the comment was, and the " +
-          "grade usually stopped me reading it.\n\n" +
+          "grade usually stopped me from reading it.\n\n" +
           "The number to watch is the completion rate. The first figures are due to appear in December, and if " +
           "they fall below seventy percent the school board is to meet within a month. If you have an opinion, " +
           "the parent-teacher meeting in May is open to students as well.",

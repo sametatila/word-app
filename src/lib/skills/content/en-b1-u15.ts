@@ -427,7 +427,7 @@ export const enB1U15: SkillExercise[] = [
         kind: "build",
         tr: "Yazdığım kısım en kısasıydı.",
         answer: "The part I wrote was the shortest.",
-        hint: "Nesne konumundaki bağlaç düşmüş; „that“ eklenebilirdi.",
+        hint: "Nesne konumundaki ilgi adılı düşmüş; „that“ eklenebilirdi.",
       },
       {
         kind: "build",

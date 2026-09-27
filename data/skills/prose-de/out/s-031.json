@@ -90,9 +90,9 @@
   "de": "Reiseproblem und Restaurant. Dasselbe Muster geht auch für zwei Personen."
  },
  {
-  "tr": "„Then I come at five. I don't like extra.“",
+  "tr": "„Then I'll come at five. I don't like paying extra.“",
   "kind": "explain",
-  "de": "„Then I come at five. I don't like extra.“"
+  "de": "„Then I'll come at five. I don't like paying extra.“"
  },
  {
   "tr": "Yol sorarken „get to“ kalıbı kullanılıyor.",
@@ -277,7 +277,7 @@
  {
   "tr": "söyledi",
   "kind": "gloss.tr",
-  "de": "erzählte"
+  "de": "sagte"
  },
  {
   "tr": "üstünde",
@@ -307,7 +307,7 @@
  {
   "tr": "fazladan",
   "kind": "gloss.tr",
-  "de": "überflüssig"
+  "de": "zusätzlich"
  },
  {
   "tr": "ayrı ayrı",
@@ -325,9 +325,9 @@
   "de": "wie wäre es mit"
  },
  {
-  "tr": "dört mayıs",
+  "tr": "4 Mayıs",
   "kind": "gloss.tr",
-  "de": "der vierte Mai"
+  "de": "der 4. Mai"
  },
  {
   "tr": "karşısında",
@@ -335,9 +335,9 @@
   "de": "gegenüber"
  },
  {
-  "tr": "paketlemek",
+  "tr": "paketleme",
   "kind": "gloss.tr",
-  "de": "einpacken"
+  "de": "das Packen"
  },
  {
   "tr": "yerel saat",
@@ -362,7 +362,7 @@
  {
   "tr": "geldiklerinde",
   "kind": "gloss.tr",
-  "de": "wenn sie eben kommen"
+  "de": "wenn sie kommen"
  },
  {
   "tr": "karşıya geçmek",
@@ -388,5 +388,10 @@
   "tr": "umarım beğenirsin",
   "kind": "gloss.tr",
   "de": "ich hoffe, es gefällt dir"
+ },
+ {
+  "tr": "devirmek",
+  "kind": "gloss.tr",
+  "de": "umkehren"
  }
 ]

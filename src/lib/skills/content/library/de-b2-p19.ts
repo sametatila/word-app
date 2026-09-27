@@ -151,7 +151,7 @@ export const deB2P19: SkillExercise[] = [
           "weil das Standesamt sie nicht mehr erlaubt",
         ],
         answer: 0,
-        explain: "Bu adlar bir bebeği değil büro çalışma arkadaşlarını düşündürüyor.",
+        explain: "Bu adlar bir bebeği değil bürodaki iş arkadaşlarını düşündürüyor.",
       },
       {
         kind: "truefalse",

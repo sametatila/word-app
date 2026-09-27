@@ -21,7 +21,7 @@ export const deC1P8: SkillExercise[] = [
     intro: "Bir blog yazısı: işe yeni girenin göremediği sessiz kurallar ve bunların kime yaradığı.",
     gloss: [
       { de: "die Gepflogenheit", tr: "teamül", en: "custom" },
-      { de: "die Einarbeitung", tr: "uyum süreci", en: "induction" },
+      { de: "die Einarbeitung", tr: "uyum süreci", en: "onboarding" },
       { de: "das Selbstverständnis", tr: "kendini görme biçimi", en: "self-image" },
       { de: "verunsichern", tr: "tedirgin etmek", en: "to unsettle" },
       { de: "die Besprechung", tr: "toplantı", en: "meeting" },
@@ -228,12 +228,12 @@ export const deC1P8: SkillExercise[] = [
         tr: "Yıllardır tartışılan konu hâlâ çözülmedi.",
         answer: "Die seit Jahren diskutierte Frage ist noch immer ungeklärt.",
         alternatives: ["Die Frage, die seit Jahren diskutiert wird, ist noch immer ungeklärt."],
-        hint: "Süre bildiren öbek de niteleyicinin içine girer ve sıfat gibi çekimlenir.",
+        hint: "Süre bildiren öbek de niteleyicinin içine girer; Partizip ise sıfat gibi çekimlenir.",
       },
       {
         kind: "free",
         prompt:
-          "Görevi devralan kişiye mektup yaz: neyi devrettiğini kısaca söyle, işin yazılmamış üç kuralını adlandır ve nereden geldiklerini açıkla, hangisine uymamanı tavsiye ettiğini yaz, kendi yanılgılarından birini kabul et ve yardım önerisiyle bitir.",
+          "Görevi devralan kişiye mektup yaz: neyi devrettiğini kısaca söyle, işin yazılmamış üç kuralını adlandır ve nereden geldiklerini açıkla, hangisine uymamasını tavsiye ettiğini yaz, kendi yanılgılarından birini kabul et ve yardım önerisiyle bitir.",
         checklist: [
           "Neyi devrettiğini ve mektubun amacını yaz",
           "Üç yazılmamış kuralı adlandır ve kaynağını açıkla",
@@ -244,7 +244,7 @@ export const deC1P8: SkillExercise[] = [
         phrases: [
           { de: "Vieles steht im Handbuch, dies hier nicht.", tr: "Çoğu şey el kitabında var, bunlar yok.", en: "A lot is in the handbook; this is not." },
           { de: "Es hat sich eingebürgert, dass …", tr: "… yerleşmiş durumda", en: "It has become customary that …" },
-          { de: "Dahinter steckt weniger eine Regel als …", tr: "Arkasında bir kuraldan çok … var", en: "Behind it lies less a rule than …" },
+          { de: "Dahinter steckt weniger eine Regel als …", tr: "Arkasında bir kuraldan çok … var", en: "It is less a rule than …" },
           { de: "Ich würde dir raten, dich gerade daran nicht zu halten.", tr: "Tam da buna uymamanı tavsiye ederim.", en: "I would advise you not to follow that one." },
           { de: "Rückblickend habe ich unterschätzt, wie sehr …", tr: "Geriye bakınca … olduğunu hafife almışım", en: "In hindsight I underestimated how much …" },
         ],

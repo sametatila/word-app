@@ -106,7 +106,7 @@ export const enA1U15: SkillExercise[] = [
       "Ela: Excuse me, could you help me? I'm lost.\n" +
       "Man: Of course. Where do you want to go?\n" +
       "Ela: To the train station. I have a map, but I can't find the way.\n" +
-      "Man: You are near. Can you see the church? Go on this path, behind the church.\n" +
+      "Man: It is near. Can you see the church? Take this path, behind the church.\n" +
       "Ela: And then?\n" +
       "Man: Then turn right. The station is at the end of the street.\n" +
       "Ela: How long does it take on foot?\n" +
@@ -151,7 +151,7 @@ export const enA1U15: SkillExercise[] = [
         items: [
           "Could you help me? I'm lost.",
           "Where do you want to go?",
-          "Go on this path, behind the church.",
+          "Take this path, behind the church.",
           "Then turn right.",
         ],
         explain: "Önce yardım istenir, sonra hedef sorulur, sonra ilk adım, sonra ikinci adım.",
@@ -186,7 +186,7 @@ export const enA1U15: SkillExercise[] = [
     segments: [
       { speaker: "Nil", text: "How do you get to work, Can?" },
       { speaker: "Can", text: "I go by bike. It is fast and I see the city." },
-      { speaker: "Nil", text: "Every day? Also in the winter?" },
+      { speaker: "Nil", text: "Every day? Even in the winter?" },
       { speaker: "Can", text: "In the winter I go on foot or by bus. My office is near." },
       { speaker: "Nil", text: "I go by train. The station is far from my house, so I ride a bike to the station." },
       { speaker: "Can", text: "That is a good idea. Do you go to the gym too?" },

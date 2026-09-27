@@ -116,7 +116,7 @@ export const b1U10: SkillExercise[] = [
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
-      "Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung. Man geht die " +
+      "Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung entfernt. Man geht die " +
       "Straße entlang, dann links, und plötzlich ist man am Ufer.\n\n" +
       "Dort steht eine alte Bank unter einem großen Baum. Die Aussicht ist nicht " +
       "besonders, aber sie reicht: Wasser, ein paar Boote, auf der anderen Seite " +
@@ -125,14 +125,14 @@ export const b1U10: SkillExercise[] = [
       "ich eine Stunde gesucht hatte, kam ich genau an diesen Platz. Seitdem gehöre " +
       "ich irgendwie dazu.\n\n" +
       "Ich komme her, wenn ich mich nicht bewegen will und trotzdem rausmuss. " +
-      "Für die Umwelt ist es auch gut: ich fahre nie mit dem Auto, sondern gehe " +
+      "Für die Umwelt ist es auch gut: Ich fahre nie mit dem Auto, sondern gehe " +
       "immer zu Fuß.",
     questions: [
       {
         text: "Wie weit ist der Ort von der Wohnung?",
         options: ["Zwanzig Minuten", "Eine Stunde", "Fünf Minuten"],
         answer: 0,
-        explain: "„Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung.“",
+        explain: "„Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung entfernt.“",
       },
       {
         text: "Was genießt die Person dort am meisten?",
@@ -219,7 +219,7 @@ export const b1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Womit lädt man die neue Marke auf?",
+        text: "Womit lädt man die Fernbedienung der neuen Marke auf?",
         options: [],
         answer: 0,
         accept: ["mit einem Kabel", "mit Kabel", "Kabel"],

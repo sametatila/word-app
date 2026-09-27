@@ -44,7 +44,7 @@ export const b1U07: SkillExercise[] = [
       "änderte ich die Reihenfolge meines Morgens.\n\n" +
       "Nun stehe ich früher auf. Bevor ich aus dem Haus gehe, mache ich mir einen Kaffee und " +
       "packe alles. Während ich im Zug sitze, lese ich die Nachrichten. Danach habe ich noch " +
-      "zwanzig Minuten und gehe den Rest zu Fuß.\n\n" +
+      "zwanzig Minuten Fußweg.\n\n" +
       "Unterwegs treffe ich oft dieselben Leute. Mit einer Kollegin unterhalte ich mich " +
       "inzwischen fast jeden Tag. Wir sprechen über alles, gleichzeitig wird der Weg kürzer.\n\n" +
       "Seitdem ich den Zug nehme, komme ich ruhiger an. Das Auto war schneller, wenn die " +
@@ -73,7 +73,7 @@ export const b1U07: SkillExercise[] = [
         text: "___ ich den Zug nehme, komme ich ruhiger an.",
         options: [],
         answer: 0,
-        accept: ["Seitdem"],
+        accept: ["Seitdem", "Seit"],
         explain: "Bir andan bugüne süren durum: „Seitdem“.",
       },
       {
@@ -82,7 +82,7 @@ export const b1U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["zwanzig Minuten", "zwanzig", "20 Minuten"],
-        explain: "„Danach habe ich noch zwanzig Minuten und gehe den Rest zu Fuß.“",
+        explain: "„Danach habe ich noch zwanzig Minuten Fußweg.“",
       },
     ],
   },
@@ -142,7 +142,7 @@ export const b1U07: SkillExercise[] = [
         text: "Früher war der Titel wichtig, ___ habe ich jede Gelegenheit genommen.",
         options: [],
         answer: 0,
-        accept: ["deshalb", "deswegen"],
+        accept: ["deshalb", "deswegen", "darum", "daher"],
         explain: "Sonuç zarfı: „deshalb/deswegen“ — arkasından fiil gelir (habe ich).",
       },
       {
@@ -214,7 +214,7 @@ export const b1U07: SkillExercise[] = [
         text: "Wer fährt auch dorthin?",
         options: [],
         answer: 0,
-        accept: ["die Schwester", "meine Schwester", "Schwester", "ihre Schwester", "seine Schwester"],
+        accept: ["die Schwester", "meine Schwester", "Schwester", "ihre Schwester", "Ninas Schwester"],
         explain: "„Übrigens fährt meine Schwester auch hin.“",
       },
     ],

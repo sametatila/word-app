@@ -42,7 +42,7 @@ export const a2U12: SkillExercise[] = [
       { de: "meinen", tr: "düşünmek / görüşünde olmak", en: "to think" },
       { de: "auf jeden Fall", tr: "kesinlikle", en: "definitely" },
       { de: "dass", tr: "ki", en: "that" },
-      { de: "der Start", tr: "start", en: "start" },
+      { de: "der Start", tr: "başlangıç", en: "start" },
     ],
     minutes: 4,
     text:
@@ -68,7 +68,7 @@ export const a2U12: SkillExercise[] = [
         explain: "Düşünme ve söyleme fiillerinden sonra bu bağlaç gelir ve yan cümlede fiil sona gider.",
       },
       {
-        text: "Wie wurde entschieden?",
+        text: "Was wurde entschieden?",
         options: ["Der Vorschlag wurde abgelehnt.", "Sie probieren es zwei Monate.", "Sie diskutieren nächste Woche weiter."],
         answer: 1,
         explain: "„Entschieden: Wir probieren es zwei Monate lang.“",
@@ -121,7 +121,7 @@ export const a2U12: SkillExercise[] = [
       "Nach 14 Uhr gibt es nur noch Kaffee und Kuchen. Für die Kaffeepause am Nachmittag ist der Raum bis 16:30 offen.",
     questions: [
       {
-        text: "Wie lange gibt es Mittagessen?",
+        text: "Wann gibt es Mittagessen?",
         options: ["Von 11:30 bis 14:00", "Von 12:00 bis 16:30", "Den ganzen Tag"],
         answer: 0,
         explain: "„Mittagessen gibt es von 11:30 bis 14:00 Uhr.“ 16.30 kahve molasının bitişi.",
@@ -233,7 +233,7 @@ export const a2U12: SkillExercise[] = [
       { de: "notfalls", tr: "gerekirse", en: "if necessary" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to suit" },
       { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 3,
@@ -253,7 +253,7 @@ export const a2U12: SkillExercise[] = [
         text: "Wie viele Urlaubstage hat Sinan noch?",
         options: ["Acht", "Zwölf", "Fünfzehn"],
         answer: 1,
-        explain: "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda anlaşılan tarihler.",
+        explain: "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda üzerinde anlaşılan tarihler.",
       },
       {
         kind: "gapfill",

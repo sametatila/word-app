@@ -122,7 +122,7 @@ export const b2U14: SkillExercise[] = [
     gloss: [
       { de: "das Ehrenamt", tr: "gönüllü görev", en: "voluntary work" },
       { de: "ehrenamtlich", tr: "fahri", en: "voluntary" },
-      { de: "sich engagieren", tr: "angaje olmak", en: "to get involved" },
+      { de: "sich engagieren", tr: "gönüllü katkıda bulunmak", en: "to get involved" },
       { de: "die Zivilgesellschaft", tr: "sivil toplum", en: "civil society" },
       { de: "die Solidarität", tr: "dayanışma", en: "solidarity" },
       { de: "der Zusammenhalt", tr: "birlik duygusu", en: "cohesion" },
@@ -287,7 +287,7 @@ export const b2U14: SkillExercise[] = [
       { de: "der Fachkräftemangel", tr: "nitelikli eleman eksikliği", en: "skills shortage" },
       { de: "der Mindestlohn", tr: "asgari ücret", en: "minimum wage" },
       { de: "die Erwerbstätigkeit", tr: "gelir getiren çalışma", en: "gainful employment" },
-      { de: "sich qualifizieren", tr: "hak kazanmak", en: "to qualify" },
+      { de: "sich qualifizieren", tr: "nitelik kazanmak", en: "to qualify" },
       { de: "befristet", tr: "süreli", en: "fixed-term" },
       { de: "unbefristet", tr: "süresiz", en: "permanent" },
       { de: "wettbewerbsfähig", tr: "rekabetçi", en: "competitive" },

@@ -108,7 +108,7 @@ export const deB1P12: SkillExercise[] = [
     genre: "guide",
     intro: "Tırmanma salonunda yeni gelenlere güvenlik anlatımı: hangi üç kural var, ne zaman tek başına tırmanılabilir.",
     gloss: [
-      { de: "die Einweisung", tr: "ön eğitim", en: "induction" },
+      { de: "die Einweisung", tr: "ön eğitim", en: "orientation" },
       { de: "der Knoten", tr: "düğüm", en: "knot" },
       { de: "prüfen", tr: "kontrol etmek", en: "to check" },
       { de: "selbstverständlich", tr: "apaçık", en: "obvious" },
@@ -304,7 +304,7 @@ export const deB1P12: SkillExercise[] = [
       { de: "das Training", tr: "antrenman", en: "training" },
       { de: "aufwärmen", tr: "ısınmak", en: "to warm up" },
       { de: "duschen", tr: "duş almak", en: "to shower" },
-      { de: "die Halle", tr: "salon", en: "hall" },
+      { de: "die Halle", tr: "salon", en: "gym" },
       { de: "anfangen", tr: "başlamak", en: "to start" },
     ],
     minutes: 9,

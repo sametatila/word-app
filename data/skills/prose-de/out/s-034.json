@@ -7,7 +7,7 @@
  {
   "tr": "İlk haftanın üç parçası. Hangisi kimin işi?",
   "kind": "intro",
-  "de": "Die drei Teile der ersten Woche. Wessen Aufgabe ist welcher?"
+  "de": "Die drei Teile der ersten Woche. Welcher ist wessen Aufgabe?"
  },
  {
   "tr": "Sıfat cümleleri. „that“ ne zaman düşebiliyor?",
@@ -57,7 +57,7 @@
  {
   "tr": "Bir değerlendirme görüşmesi. Zor olan kısım hangisiymiş?",
   "kind": "intro",
-  "de": "Ein Mitarbeitergespräch. Welcher Teil war der schwere?"
+  "de": "Ein Mitarbeitergespräch. Welcher Teil war der schwierige?"
  },
  {
   "tr": "Yirmi saniyede karar veren üç şey. Hangisi neden önemli?",
@@ -492,7 +492,7 @@
  {
   "tr": "teklif etseler",
   "kind": "gloss.tr",
-  "de": "wenn sie böten"
+  "de": "wenn sie anbieten würden"
  },
  {
   "tr": "sonradan anlaşıldı",
@@ -503,5 +503,15 @@
   "tr": "başvurmaya karar verdim",
   "kind": "gloss.tr",
   "de": "habe mich entschlossen, mich zu bewerben"
+ },
+ {
+  "tr": "aktif",
+  "kind": "gloss.tr",
+  "de": "aktiv"
+ },
+ {
+  "tr": "ergen",
+  "kind": "gloss.tr",
+  "de": "der Jugendliche"
  }
 ]

@@ -52,7 +52,7 @@ export const b2U11: SkillExercise[] = [
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "also", tr: "yani", en: "so" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "vorkommen", tr: "olmak", en: "to occur" },
+      { de: "vorkommen", tr: "yer almak", en: "to occur" },
     ],
     minutes: 6,
     text:
@@ -405,10 +405,10 @@ export const b2U11: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "İlgi cümlesini ortaç sıfatına çevir ve doğru ortacı seç.",
-        source: "Die Anleitung, die gerade aktualisiert wird, ist noch nicht verteilt.",
+        source: "Die Anleitung, die gerade aktualisiert wurde, ist noch nicht verteilt.",
         answer: "Die gerade aktualisierte Anleitung ist noch nicht verteilt.",
         alternatives: ["Die gerade aktualisierte Anleitung ist noch nicht verteilt"],
-        why: "İlgi cümlesi edilgen olduğu için ortaç II gerekir; ortaç I burada 'kılavuz güncelliyor' anlamına kayardı. Kural şu: edilgen ya da bitmiş iş ortaç II, süren ve etken iş ortaç I. Belirteç -gerade- ortacın önüne, artikelden sonraya taşınır.",
+        why: "İlgi cümlesi edilgen olduğu için ortaç II gerekir; ortaç I burada 'kılavuz güncelliyor' anlamına kayardı. Kural şu: edilgen ya da bitmiş iş ortaç II, süren ve etken iş ortaç I. Belirteç (gerade) ortacın önüne, artikelden sonraya taşınır.",
       },
     ],
   },
@@ -437,7 +437,7 @@ export const b2U11: SkillExercise[] = [
         prompt:
           "Bir denemenin ya da küçük bir araştırmanın sonucunu rapor et — yazılım denemesi, yeni bir çalışma yöntemi, evde denenmiş bir düzen, sen seç. Şu sırayı tut: ne denendi ve nasıl, ne işledi, ne açık kaldı, ne öneriyorsun. Biten işleri ortaç II sıfatıyla kısalt, süren durumları ortaç I ile ver. Sayı verirsen nereden geldiğini de söyle.",
         checklist: [
-          "Denemenin kurulumu -kaç kişi, ne kadar süre- söylendi mi?",
+          "Denemenin kurulumu (kaç kişi, ne kadar süre) söylendi mi?",
           "En az bir ortaç II sıfatı var mı?",
           "En az bir ortaç I sıfatı var mı?",
           "Açık kalan noktalar ile öneri ayrı mı?",

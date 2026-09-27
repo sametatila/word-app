@@ -165,7 +165,7 @@ export const enC1U10: SkillExercise[] = [
       { de: "pulled", tr: "çekilmiş" },
       { de: "deserves", tr: "hak ediyor" },
       { de: "easiest", tr: "en kolay" },
-      { de: "smuggle", tr: "kaçırmak" },
+      { de: "smuggle", tr: "gizlice geçirmek" },
       { de: "a clause", tr: "cümlecik" },
       { de: "verbless", tr: "fiilsiz" },
       { de: "a choice", tr: "seçim" },
@@ -494,7 +494,7 @@ export const enC1U10: SkillExercise[] = [
     intro: "Azı söylemek ve okumanın çekincesi.",
     gloss: [
       { de: "hearty", tr: "doyurucu" },
-      { de: "estrangement", tr: "uzaklaşma" },
+      { de: "estrangement", tr: "yabancılaşma" },
       { de: "headstrong", tr: "dik başlı" },
       { de: "inquisitive", tr: "her şeyi merak eden" },
       { de: "strangeness", tr: "tuhaflık" },
@@ -510,13 +510,13 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Burada hiç yabancılaşmayız; uzaklaşmayı sonradan adlandırırız.",
+        tr: "Burada hiç yabancılaşmayız; yabancılaşmayı sonradan adlandırırız.",
         answer: "We never become estranged here; we just name the estrangement later.",
         hint: "Olay yok, ad var: adlandırma sonradan geliyor.",
       },
       {
         kind: "build",
-        tr: "Dik başlı bir çocuk, dediler, ve epey meraklı.",
+        tr: "Dik başlı bir çocuk, dediler, epey de meraklı.",
         answer: "A headstrong child, they said, and rather inquisitive.",
         hint: "Araya sokulmuş cümlecik hükümden sonra geliyor.",
       },

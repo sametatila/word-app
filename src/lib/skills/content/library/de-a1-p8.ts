@@ -34,7 +34,7 @@ export const deA1P8: SkillExercise[] = [
       "Die Frau im Laden war sehr freundlich und hat uns alles erklärt.\n\n" +
       "Aber die Lieferung war ein Problem. Wir haben drei Wochen gewartet. " +
       "Am Telefon sagt man immer: „Nächste Woche kommt alles.“ Das ist nicht korrekt.\n\n" +
-      "Ein Stuhl war kaputt. Der Mann am Service hat aber schnell einen neuen Stuhl gebracht.\n\n" +
+      "Ein Stuhl war kaputt. Der Mann vom Service hat aber schnell einen neuen Stuhl gebracht.\n\n" +
       "Die Möbel sind gut, das Personal ist nett. Nur die Lieferung ist langsam. " +
       "Wir kaufen wieder dort, aber wir holen die Sachen selbst.",
     questions: [
@@ -55,7 +55,7 @@ export const deA1P8: SkillExercise[] = [
         text: "Der Service hat den kaputten Stuhl schnell getauscht.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„Der Mann am Service hat aber schnell einen neuen Stuhl gebracht.“",
+        explain: "„Der Mann vom Service hat aber schnell einen neuen Stuhl gebracht.“",
       },
       {
         kind: "gapfill",
@@ -101,7 +101,7 @@ export const deA1P8: SkillExercise[] = [
       { de: "der Kassenbon", tr: "fiş", en: "receipt" },
       { de: "die Größe", tr: "beden", en: "size" },
       { de: "passen", tr: "uymak", en: "to fit" },
-      { de: "die Kasse", tr: "kasa", en: "till" },
+      { de: "die Kasse", tr: "kasa", en: "checkout" },
     ],
     minutes: 4,
     segments: [
@@ -203,14 +203,14 @@ export const deA1P8: SkillExercise[] = [
         ],
         minWords: 30,
         phrases: [
-          { de: "Hallo liebe Nachbarn,", tr: "Merhaba sevgili komşular,", en: "Hello dear neighbors," },
+          { de: "Hallo, liebe Nachbarn,", tr: "Merhaba sevgili komşular,", en: "Hello, dear neighbors," },
           { de: "Ich wohne in der …", tr: "… sokağında oturuyorum", en: "I live on …" },
           { de: "Hat jemand …?", tr: "Kimsede … var mı?", en: "Does anyone have …?" },
           { de: "Ich brauche sie nur für …", tr: "Ona yalnız … için ihtiyacım var", en: "I only need it for …" },
           { de: "Bitte melden Sie sich bei mir.", tr: "Lütfen bana haber verin.", en: "Please get in touch with me." },
         ],
         sample:
-          "Hallo liebe Nachbarn, ich heiße Tarik und wohne seit zwei Monaten in der Lindenstraße 12. " +
+          "Hallo, liebe Nachbarn, ich heiße Tarik und wohne seit zwei Monaten in der Lindenstraße 12. " +
           "Hat jemand eine Bohrmaschine? Ich möchte ein Regal in der Küche montieren. " +
           "Ich brauche sie nur für zwei Stunden und bringe sie am Samstag zurück. " +
           "Bitte melden Sie sich bei mir, Wohnung 7, oder schreiben Sie hier. Vielen Dank!",
@@ -274,7 +274,7 @@ export const deA1P8: SkillExercise[] = [
       {
         de: "Meine Bücher sind im Büro.",
         tr: "Kitaplarım ofiste.",
-        hint: "İki kelimede de uzun ü var; „Büro“ son hecede vurgulu: bü-ROO.",
+        hint: "„Bücher“ içinde uzun ü var; „Büro“da ü vurgusuz ve kısadır, vurgu son hecede: bü-ROO.",
         confusions: [
           {
             heard: ["Meine Bucher sind im Buro"],

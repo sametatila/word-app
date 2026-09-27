@@ -321,7 +321,7 @@ export const c1U02: SkillExercise[] = [
       { speaker: "Deniz", text: "Wieso?" },
       { speaker: "Marek", text: "Weil der Sachstand, den er übermittelt, die Version ist, die zählt. Wer den Sachstand schreibt, bestimmt die Geschichte." },
       { speaker: "Deniz", text: "Dann sollte ich vorher lesen, was er schreibt." },
-      { speaker: "Marek", text: "Sag es freundlich: dass du dich gern vorher dazu abstimmst." },
+      { speaker: "Marek", text: "Sag es freundlich: dass du dich vorher gern dazu abstimmen würdest." },
     ],
     questions: [
       {
@@ -346,7 +346,7 @@ export const c1U02: SkillExercise[] = [
         text: "Warum nennt Marek diesen Satz den wichtigsten?",
         options: [
           "Weil der Ausschuss selten tagt",
-          "Weil wer den Sachstand schreibt, die Darstellung bestimmt",
+          "Weil derjenige, der den Sachstand schreibt, die Darstellung bestimmt",
           "Weil eine Übermittlung verbindlich ist",
         ],
         answer: 1,
@@ -392,7 +392,7 @@ export const c1U02: SkillExercise[] = [
         kind: "build",
         tr: "Bu konuyu bir sonraki turda gündeme getireceğiz.",
         answer: "Wir werden das Thema in der nächsten Runde zur Sprache bringen",
-        hint: "İşlev fiili öbeği belirteçsiz; mastar cümlenin sonunda.",
+        hint: "İşlev fiili öbeği tanımlıksız; mastar cümlenin sonunda.",
       },
       {
         kind: "build",
@@ -446,7 +446,7 @@ export const c1U02: SkillExercise[] = [
           "Her önemli cümlede fail adlandırıldı mı (kim yaptı)?",
           "Açık kalan nokta gizlenmeden yazıldı mı?",
           "Ekipten beklenen somut olarak söylendi mi?",
-          "En az bir işlev fiili öbeği var mı, belirteçsiz?",
+          "En az bir işlev fiili öbeği var mı, tanımlıksız?",
         ],
         minWords: 90,
         phrases: [

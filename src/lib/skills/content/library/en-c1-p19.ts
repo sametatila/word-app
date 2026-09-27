@@ -224,7 +224,7 @@ export const enC1P19: SkillExercise[] = [
           "where the argument is still open",
         ],
         answer: 2,
-        explain: "Oy birliğiyle yazılmış rapor sonucu, azınlık görüşlü rapor tartışmanın nerede açık kaldığını da söyler.",
+        explain: "Oy birliğiyle yazılmış rapor yalnız varılan sonucu söyler; azınlık görüşü içeren rapor tartışmanın nerede açık kaldığını da gösterir.",
       },
     ],
   },
@@ -291,7 +291,7 @@ export const enC1P19: SkillExercise[] = [
           "almost nothing. Our second is planting trees along the town's hottest streets. They are a much-needed " +
           "but slow solution, and we chose them knowing that some of us will be old ourselves before they are " +
           "fully grown.\n\n" +
-          "Not all of us agreed. Those who disagreed argued for cooled rooms in the library and the sports hall, " +
+          "Not all of us agreed. Those who disagreed argued for cooled rooms in the library and the recreation center, " +
           "because trees do nothing for anyone next July. Their statement is printed in full in the report, and I " +
           "think it deserves to be read rather than summarized by me.\n\n" +
           "If you would like to volunteer for the phone list, the council is looking for about sixty people. The " +
@@ -333,7 +333,7 @@ export const enC1P19: SkillExercise[] = [
         "I would give citizens chosen by lot a real role in public decisions, but a clearly limited one. " +
         "What a randomly chosen group can do that elected members cannot is ignore the next election. A " +
         "councilor with a four-year term has every reason to avoid a slow, unpopular measure whose benefits " +
-        "arrive after she has gone. Forty residents who will never stand for office can afford to think about " +
+        "arrive after she has gone. Forty residents who will never run for office can afford to think about " +
         "the town in twenty years. " +
         "They also bring people into the room who are usually missing from decision-making: shift workers, " +
         "young parents, people who would never join a party. " +

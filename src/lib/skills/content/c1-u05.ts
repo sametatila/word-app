@@ -63,10 +63,10 @@ export const c1U05: SkillExercise[] = [
     text:
       "„NICHT SCHLECHT“ — EIN LOB, DAS NICHT WIE EINES KLINGT\n\n" +
       "Eine internationale Studie ließ Teilnehmende dieselbe Arbeitsprobe bewerten. Die deutschen Bewertungen fielen im Schnitt eine ganze Stufe niedriger aus als die amerikanischen — bei identischer Einschätzung der Qualität.\n\n" +
-      "Der Grund ist keine Abneigung gegen Lob, sondern eine andere Skala. Wo in einem Kontext „großartig“ die Mitte markiert, markiert im deutschen Berufsleben „nicht schlecht“ die Mitte. „Sehr ordentlich“ liegt darüber. „Da ist noch Luft nach oben“ ist keine Kritik am Charakter, sondern eine Aussage über Prozentpunkte.\n\n" +
+      "Der Grund ist keine Abneigung gegen Lob, sondern eine andere Skala. Wo anderswo „großartig“ die Mitte markiert, markiert im deutschen Berufsleben „nicht schlecht“ die Mitte. „Sehr ordentlich“ liegt darüber. „Da ist noch Luft nach oben“ ist keine Kritik am Charakter, sondern eine Aussage über Prozentpunkte.\n\n" +
       "Für Zugereiste ist das doppelt heikel. Sie hören ein zurückhaltendes Lob als Kritik — und formulieren selbst so, wie sie es gewohnt sind. Ein begeistertes „Das ist fantastisch!“ wirkt dann nicht warm, sondern unpräzise. Wer übertreibt, verliert die Möglichkeit zu steigern: Wenn alles fantastisch ist, wie klingt das wirklich Gute?\n\n" +
       "Unbestreitbar hat die Sache eine Kehrseite. Untertreibung kann schroff wirken, und wer sie nur imitiert, ohne den anerkennenden Kern zu treffen, klingt gleichgültig statt genau.\n\n" +
-      "Praktisch wirkt sich die Skala vor allem dort aus, wo sie unsichtbar bleibt: in Zeugnissen und Beurteilungen. „Zu unserer vollen Zufriedenheit“ ist dort keine Bestnote, sondern die dritte Stufe; die Bestnote lautet „stets zu unserer vollsten Zufriedenheit“. Wer die Formel nicht kennt, liest ein gutes Zeugnis und hält es für ein sehr gutes.\n\n" +
+      "Praktisch wirkt sich die Skala vor allem dort aus, wo sie unsichtbar bleibt: in Zeugnissen und Beurteilungen. „Zu unserer vollen Zufriedenheit“ ist dort keine Bestnote, sondern die dritte Stufe; die Bestnote lautet „stets zu unserer vollsten Zufriedenheit“. Wer die Formel nicht kennt, liest ein befriedigendes Zeugnis und hält es für ein sehr gutes.\n\n" +
       "Dieselbe Verschiebung gilt in die andere Richtung. Ein deutscher Vorgesetzter, der „das war in Ordnung“ sagt, hat in vielen Fällen zugestimmt und nicht abgewertet. Wer darauf mit einer Rechtfertigung antwortet, macht aus einer abgeschlossenen Sache eine offene.\n\n" +
       "Die Regel ist am Ende einfach: Sagen Sie weniger, als Sie meinen — aber meinen Sie es.",
     questions: [
@@ -223,7 +223,7 @@ export const c1U05: SkillExercise[] = [
     intro: "Telefonda nezaket. Ses tonu yokken kibarlık neyle taşınıyor?",
     gloss: [
       { de: "durchstellen", tr: "bağlamak", en: "to put through" },
-      { de: "der Rückruf", tr: "geri arama", en: "call back" },
+      { de: "der Rückruf", tr: "geri arama", en: "callback" },
       { de: "die Leitung", tr: "hat", en: "line" },
       { de: "hinterlassen", tr: "bırakmak", en: "to leave", note: "mesaj için" },
       { de: "umgehend", tr: "derhâl", en: "promptly" },
@@ -469,7 +469,7 @@ export const c1U05: SkillExercise[] = [
         phrases: [
           { de: "Das ist sehr ordentlich gearbeitet.", tr: "bu çok düzgün bir iş", en: "that is very solid work" },
           { de: "Da ist noch Luft nach oben.", tr: "burada gelişime yer var", en: "there is room for improvement" },
-          { de: "Zwei Punkte würde ich anders lösen.", tr: "iki noktayı farklı çözerdim", en: "I would solve two points differently" },
+          { de: "Zwei Punkte würde ich anders lösen.", tr: "iki noktayı farklı çözerdim", en: "I would handle two points differently" },
         ],
         sample:
           "Liebe Frau Kern,\n\n" +

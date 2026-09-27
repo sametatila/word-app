@@ -47,7 +47,7 @@
  {
   "tr": "Eksiltmenin satın aldığı şey kısalık değil. Ne?",
   "kind": "intro",
-  "de": "Was die Ellipse einkauft, ist nicht Kürze. Was dann?"
+  "de": "Was die Ellipse erkauft, ist nicht Kürze. Was dann?"
  },
  {
   "tr": "Mastar özne, öne çıkarılmış nesne, düşmüş adıl.",
@@ -435,7 +435,7 @@
   "de": "glaubwürdig"
  },
  {
-  "tr": "sağ kalmış",
+  "tr": "ayakta kalmış",
   "kind": "gloss.tr",
   "de": "überlebt"
  },
@@ -698,5 +698,15 @@
   "tr": "yeniden adlandırıyor",
   "kind": "gloss.tr",
   "de": "benennt neu"
+ },
+ {
+  "tr": "paketlemek",
+  "kind": "gloss.tr",
+  "de": "einpacken"
+ },
+ {
+  "tr": "umut etmek",
+  "kind": "gloss.tr",
+  "de": "hoffen"
  }
 ]

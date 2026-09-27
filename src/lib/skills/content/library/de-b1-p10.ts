@@ -269,7 +269,7 @@ export const deB1P10: SkillExercise[] = [
       ],
       targets: [
         { de: "Ich bin grundsätzlich dafür, allerdings …", tr: "Temelde yanayım, ancak …" },
-        { de: "Man darf dabei nicht vergessen, dass …", tr: "Bu sırada … olduğu unutulmamalı" },
+        { de: "Man darf dabei nicht vergessen, dass …", tr: "Burada … olduğu da unutulmamalı" },
         { de: "Schwierig wird es für …", tr: "… için zor olur" },
         { de: "Akzeptabel wäre es für mich, wenn …", tr: "Benim için … olursa kabul edilebilir" },
       ],

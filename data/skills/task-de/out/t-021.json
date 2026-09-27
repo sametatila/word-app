@@ -157,7 +157,7 @@
  {
   "tr": "Sıfat isimden ÖNCE geliyor ve hiç çekilmiyor.",
   "kind": "build.hint",
-  "de": "Das Adjektiv steht VOR dem Nomen — Deutsch beugt es dort aber: eine helle Wohnung."
+  "de": "Das Adjektiv steht VOR dem Nomen und wird nie gebeugt — Deutsch beugt es dort dagegen: eine helle Wohnung."
  },
  {
   "tr": "„yet“ olumsuzda ve en SONDA; iş bitmedi ama bitecek.",
@@ -182,7 +182,7 @@
  {
   "tr": "Olumsuz present perfect + „since“: o günden bu yana HİÇ.",
   "kind": "build.hint",
-  "de": "Verneintes present perfect + „since“: seit dem Tag GAR NICHT. Deutsch nimmt das Präsens."
+  "de": "Verneintes present perfect + „since“: seit dem Tag GAR NICHT. Deutsch nimmt hier ebenfalls das Perfekt."
  },
  {
   "tr": "Üçüncü tekilde soru „does“ ile; asıl fiil eksiz kalıyor.",
@@ -270,7 +270,7 @@
   "de": "Geld ist unzählbar: „how much“. Die Pflicht heißt „have to“ und verlangt in der Frage „do“."
  },
  {
-  "tr": "Ayrıntıyı „with“ ekliyor; Türkçede sıfat-fiil olan yer İngilizcede edat.",
+  "tr": "Ayrıntıyı „with“ ekliyor; Türkçede sıfat öbeği olan yer İngilizcede edatla kuruluyor.",
   "kind": "build.hint",
   "de": "„with“ hängt das Detail an — Deutsch macht es genauso: ein Balkon mit Ausblick."
  },
@@ -287,7 +287,7 @@
  {
   "tr": "Dolaylı soruda sıra DÜZ cümleye dönüyor: „where the unit is“, „where is the unit“ değil.",
   "kind": "build.hint",
-  "de": "Indirekt wird die Stellung GERADE: „where the unit is“, nicht „where is the unit“. Deutsch lässt die Umstellung auch weg, schiebt das Verb aber ans Ende."
+  "de": "In der indirekten Frage gilt wieder die Wortstellung des AUSSAGESATZES: „where the unit is“, nicht „where is the unit“. Deutsch lässt die Umstellung auch weg, schiebt das Verb aber ans Ende."
  },
  {
   "tr": "Sabahın sırası: doğru sıraya koy.",

@@ -206,7 +206,7 @@ export const deC1P6: SkillExercise[] = [
     intro: "Bir tartışmanın tutanağını yazıyorsun: önce iki cümle kur, sonra tarafsız bir özet ve gerekçeli bir öneri yaz.",
     gloss: [
       { de: "das Protokoll", tr: "tutanak", en: "minutes" },
-      { de: "die Abwägung", tr: "tartma", en: "weighing up" },
+      { de: "die Abwägung", tr: "tartıp biçme", en: "weighing of options" },
       { de: "der Dissens", tr: "görüş ayrılığı", en: "disagreement" },
       { de: "wiedergeben", tr: "aktarmak", en: "to render" },
       { de: "die Formulierung", tr: "ifade", en: "wording" },
@@ -253,7 +253,7 @@ export const deC1P6: SkillExercise[] = [
           "behauptet, die durch die Daten nicht gedeckt ist, und dass ein Vorbehalt im dritten " +
           "Absatz praktisch wirkungslos bleibt. " +
           "Herr Prof. Adler hielt dem entgegen, dass eine Meldung ohne eingängige Zahl kaum " +
-          "aufgegriffen wird und die geringere Reichweite in Kauf zu nehmen sei. " +
+          "aufgegriffen werde und eine gewisse Vereinfachung in Kauf zu nehmen sei. " +
           "Einigkeit bestand darüber, dass die Aussage inhaltlich zutrifft und dass die " +
           "Datengrundlage öffentlich zugänglich gemacht wird. " +
           "Der Dissens betraf ausschließlich die Frage, an welcher Stelle die Spannbreite " +

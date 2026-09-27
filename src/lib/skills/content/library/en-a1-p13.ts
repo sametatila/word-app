@@ -40,7 +40,7 @@ export const enA1P13: SkillExercise[] = [
       "Please write your name and apartment number on the list on the door. One wash takes about one hour.\n\n" +
       "When your wash is finished, take your clothes out. Do not leave them in the machine.\n\n" +
       "After you use a machine, please clean the door.\n\n" +
-      "A problem with a machine? Call Mr. Bauer on 0160 71 28 44.",
+      "A problem with a machine? Call Mr. Bauer at 0160 71 28 44.",
     questions: [
       {
         text: "Where is the laundry room?",
@@ -212,7 +212,7 @@ export const enA1P13: SkillExercise[] = [
           { de: "Can you come on …?", tr: "… günü gelebilir misin?" },
         ],
         sample:
-          "Hi Defne, I have a new apartment! It is in Maple Street, near the river. There are two rooms, a small kitchen " +
+          "Hi Defne, I have a new apartment! It is on Maple Street, near the river. There are two rooms, a small kitchen " +
           "and a balcony. There is a big window in the kitchen and I can see the park from my room. The only problem is " +
           "the street: it is loud in the morning. Can you come on Saturday at six? I can cook for us. Love, Pelin",
       },

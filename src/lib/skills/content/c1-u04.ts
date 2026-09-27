@@ -60,7 +60,7 @@ export const c1U04: SkillExercise[] = [
       "Die Sprache unterscheidet die beiden kaum. Beide sagen „eben“, beide klingen ruhig. Der Unterschied liegt darin, was vorher passiert ist.\n\n" +
       "Der Psychologe Frank Retzlaff nennt das erste „begründetes Hinnehmen“ und das zweite „vorzeitiges Sichfügen“. Wer sich vorzeitig fügt, spart sich die Anstrengung des Prüfens — und zahlt später dafür, weil er auch dort nachgibt, wo Spielraum bestanden hätte.\n\n" +
       "Freilich ist das leichter beschrieben als erkannt. Von außen sieht ein resignierter Mensch oft gelassen aus. Ein Anhaltspunkt: Wer aus Einsicht hinnimmt, kann meist genau sagen, WAS unabänderlich ist. Wer aufgegeben hat, sagt „alles“.\n\n" +
-      "Die Sprache trennt beides schärfer, als es das Gefühl tut. „Ich habe mich damit abgefunden“ setzt einen Abschluss und klingt ruhig; „ich kann nichts machen“ setzt keinen und klingt es auch nicht. Wer den zweiten Satz häufig sagt, hat meist nicht geprüft, sondern aufgehört — und hört es sich selbst nicht an.\n\n" +
+      "Andere Sätze trennen beides schärfer als „eben“. „Ich habe mich damit abgefunden“ setzt einen Abschluss und klingt ruhig; „ich kann nichts machen“ setzt keinen und klingt es auch nicht. Wer den zweiten Satz häufig sagt, hat meist nicht geprüft, sondern aufgehört — und hört es sich selbst nicht an.\n\n" +
       "Auffällig ist, wie unterschiedlich die beiden Zustände sich anfühlen und wie ähnlich sie klingen.\n\n" +
       "Sich abfinden ist deshalb kein einheitlicher Vorgang. Wer sich mit einer geprüften Lage abfindet, hat entschieden; wer sich mit einer ungeprüften abfindet, hat nur aufgehört zu fragen.\n\n" +
       "Die Gegebenheiten ändern sich damit nicht. Aber die Frage, ob man sie geprüft hat, ändert alles daran, wie man mit ihnen lebt.",
@@ -157,7 +157,7 @@ export const c1U04: SkillExercise[] = [
       "„Er ist vermutlich weg“ klingt ähnlich, ist aber sachlicher; man hört die Wahrscheinlichkeit, nicht den Sprecher.\n\n" +
       "„Er ist vermeintlich weg“ heißt etwas ganz anderes: jemand behauptet es, und der Sprecher glaubt es nicht. Wer die beiden verwechselt, äußert Skepsis, wo er Zustimmung meinte — ein Fehler, der in Protokollen teuer wird.\n\n" +
       "Am oberen Ende steht „zweifellos“. Es duldet keinen Widerspruch und wird deshalb selten geglaubt: Wer sicher ist, sagt es meist ohne dieses Wort.\n\n" +
-      "Am unteren Ende steht „kaum“. „Er ist kaum schon weg“ ist keine schwache Vermutung, sondern eine begründete Verneinung.\n\n" +
+      "Am unteren Ende steht „kaum“. „Er kann kaum schon weg sein“ ist keine schwache Vermutung, sondern eine begründete Verneinung.\n\n" +
       "Zwischen den Stufen liegt außerdem eine Unterscheidung, die im Türkischen anders verläuft: Ob eine Vermutung auf eigener Beobachtung beruht oder auf Hörensagen, wird im Deutschen nicht am Verb sichtbar, sondern muss gesagt werden. „Er soll weg sein“ übernimmt fremde Rede und markiert dabei Distanz; „er ist offenbar weg“ stützt sich auf etwas, das der Sprecher selbst gesehen hat.\n\n" +
       "Praktisch heißt das: In einer Mail, die weitergeleitet werden könnte, gehört die Quelle in den Satz. „Nach Auskunft der Werkstatt ist das Teil nicht lieferbar“ hält, was „das Teil ist wohl nicht lieferbar“ nicht hält — und der Unterschied fällt erst auf, wenn jemand nachfragt, woher die Information stammt.\n\n" +
       "Man kann also annehmen, ohne sich festzulegen — aber nur, wenn man die Stufe kennt, auf der man steht.",
@@ -184,15 +184,15 @@ export const c1U04: SkillExercise[] = [
         text: "Warum wird „zweifellos“ laut Text selten geglaubt?",
         options: [
           "Weil es zu selten benutzt wird",
-          "Weil wer sicher ist, es meist ohne dieses Wort sagt",
+          "Weil jemand, der sicher ist, es meist ohne dieses Wort sagt",
           "Weil es veraltet klingt",
         ],
         answer: 1,
-        explain: "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgu kendisi bir zayıflık işareti.",
+        explain: "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgunun kendisi bir zayıflık işareti.",
       },
       {
         kind: "short_answer",
-        text: "Was ist „Er ist kaum schon weg“ laut Text — eine schwache Vermutung oder etwas anderes?",
+        text: "Was ist „Er kann kaum schon weg sein“ laut Text — eine schwache Vermutung oder etwas anderes?",
         options: [],
         answer: 0,
         accept: [
@@ -282,7 +282,7 @@ export const c1U04: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Selin'in iki teselliyi ayırdığı son cümleyi yaz.",
+        text: "Selin'in iki teselliyi ayırdığı cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -445,21 +445,21 @@ export const c1U04: SkillExercise[] = [
       {
         kind: "reply",
         prompt:
-          "Arkadaşının mesajına cevap yaz. Onu teselli et ama konuyu KAPATMA: sorunun tam olarak neyi olduğunu adlandır, bir soru sor, iyi ihtimali söylerken kötü ihtimalde de yanında olacağını belirt. „Das wird schon“ türü kapatıcı kalıplardan kaçın.",
+          "Arkadaşının mesajına cevap yaz. Onu teselli et ama konuyu KAPATMA: sorunun tam olarak ne olduğunu adlandır, bir soru sor, iyi ihtimali söylerken kötü ihtimalde de yanında olacağını belirt. „Das wird schon“ türü kapatıcı kalıplardan kaçın.",
         stimulus:
           "Hey,\n\n" +
           "die Sache mit der Wohnung ist geplatzt. Der Eigentümer hat an jemand anderen vermietet, drei Tage vor dem Umzug.\n\n" +
           "Ich habe gekündigt, die Kartons stehen im Flur, und ab dem Ersten habe ich formal keine Adresse mehr. Meine Schwester sagt, das wird schon.\n\n" +
           "Ich weiß gerade nicht, wo ich anfangen soll.\n\nMarie",
         checklist: [
-          "Sorunun tam olarak neyi olduğunu adlandırdın mı (belirsizlik mi, adres mi, süre mi)?",
+          "Sorunun tam olarak ne olduğunu adlandırdın mı (belirsizlik mi, adres mi, süre mi)?",
           "Bir soru sordun mu — konuyu açık tuttun mu?",
           "İyi ihtimalle birlikte kötü ihtimali de üstlendin mi?",
           "Kapatıcı kalıplardan kaçındın mı?",
         ],
         minWords: 80,
         phrases: [
-          { de: "Was davon drückt gerade am meisten?", tr: "şu an en çok hangisi ağır geliyor", en: "which part weighs most right now" },
+          { de: "Was davon drückt gerade am meisten?", tr: "şu an en çok hangisi ağır geliyor", en: "which part weighs on you most right now" },
           { de: "Wenn es nicht klappt, gehen wir das zusammen durch.", tr: "olmazsa birlikte bakarız", en: "if it does not work out, we will go through it together" },
           { de: "Das musst du nicht allein hinnehmen.", tr: "bunu tek başına kabullenmek zorunda değilsin", en: "you do not have to accept this alone" },
         ],

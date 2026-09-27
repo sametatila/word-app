@@ -275,7 +275,7 @@ export const deA2P20: SkillExercise[] = [
       },
       {
         de: "Das kostet zwölf Euro neunzig.",
-        tr: "Bu on iki doksan tutuyor.",
+        tr: "Bu on iki euro doksan tutuyor.",
         hint: "Fiyat iki grup: ZWÖLF Eu-ro | NEUN-zig. „Komma“ ya da „Cent“ söylenmez; kısa bir durak yeter.",
         confusions: [
           {

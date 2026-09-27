@@ -138,7 +138,7 @@ export const c1U14: SkillExercise[] = [
       { de: "besagen", tr: "şunu söylemek", en: "to state" },
       { de: "die Bezeichnung", tr: "adlandırma", en: "designation" },
       { de: "unzulässig", tr: "kabul edilemez", en: "inadmissible" },
-      { de: "verfolgen", tr: "peşine düşmek", en: "to pursue" },
+      { de: "verfolgen", tr: "gütmek", en: "to pursue" },
       { de: "widerrufen", tr: "caymak", en: "to withdraw" },
       { de: "rechtmäßig", tr: "meşru", en: "lawful" },
       { de: "beste", tr: "en iyi", en: "best" },
@@ -315,12 +315,12 @@ export const c1U14: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Beamtin", text: "Bitte schildern Sie den Tathergang, so wie Sie ihn erinnern." },
+      { speaker: "Beamtin", text: "Bitte schildern Sie den Tathergang, so wie Sie sich daran erinnern." },
       { speaker: "Frau Renner", text: "Gegen halb acht hörte ich Glas. Ich ging ans Fenster und sah zwei Personen wegrennen." },
       { speaker: "Beamtin", text: "Können Sie die Personen beschreiben?" },
       { speaker: "Frau Renner", text: "Eine trug eine helle Jacke. Bei der zweiten bin ich unsicher." },
       { speaker: "Beamtin", text: "Unsicher heißt was genau?" },
-      { speaker: "Frau Renner", text: "Ich habe später ein Foto in der Nachbarschaftsgruppe gesehen. Jetzt weiß ich nicht mehr, ob ich die Person gesehen oder das Foto erinnert habe." },
+      { speaker: "Frau Renner", text: "Ich habe später ein Foto in der Nachbarschaftsgruppe gesehen. Jetzt weiß ich nicht mehr, ob ich die Person gesehen oder mich an das Foto erinnert habe." },
       { speaker: "Beamtin", text: "Danke, dass Sie das sagen. Genau das nehme ich so auf." },
       { speaker: "Frau Renner", text: "Ist das ein Problem?" },
       { speaker: "Beamtin", text: "Im Gegenteil. Eine benannte Erinnerungslücke ist verwertbar. Eine vorgetäuschte Sicherheit ist es nicht." },
@@ -329,7 +329,7 @@ export const c1U14: SkillExercise[] = [
       { speaker: "Frau Renner", text: "Ich hatte Sorge, dass meine Zeugenaussage dadurch wertlos wird." },
       { speaker: "Beamtin", text: "Sie wird dadurch erst brauchbar. Über Ihr Urteilsvermögen entscheidet nicht, wie sicher Sie klingen, sondern ob Sie Sicheres von Unsicherem trennen." },
       { speaker: "Frau Renner", text: "Das beruhigt mich." },
-      { speaker: "Beamtin", text: "Ich gebe zu Protokoll: Die Zeugin erklärt, sie habe eine Person mit heller Jacke gesehen; hinsichtlich der zweiten Person bestehe eine Erinnerungslücke, da ein Lichtbild in sozialen Medien wahrgenommen wurde." },
+      { speaker: "Beamtin", text: "Ich gebe zu Protokoll: Die Zeugin erklärt, sie habe eine Person mit heller Jacke gesehen; hinsichtlich der zweiten Person bestehe eine Erinnerungslücke, da sie ein Lichtbild in sozialen Medien gesehen habe." },
     ],
     questions: [
       {
@@ -435,7 +435,7 @@ export const c1U14: SkillExercise[] = [
       { de: "in Verzug geraten", tr: "temerrüde düşmek", en: "to fall into default" },
       { de: "die Mietminderung", tr: "kira indirimi", en: "rent reduction" },
       { de: "geltend machen", tr: "ileri sürmek", en: "to assert" },
-      { de: "unter Vorbehalt", tr: "ihtirazî kayıtla", en: "under reservation" },
+      { de: "unter Vorbehalt", tr: "ihtirazî kayıtla", en: "under protest" },
     ],
     minutes: 12,
     tasks: [
@@ -460,14 +460,14 @@ export const c1U14: SkillExercise[] = [
         minWords: 90,
         phrases: [
           { de: "Hiermit zeige ich folgenden Mangel an: …", tr: "işbu yazıyla şu ayıbı bildiriyorum", en: "I hereby report the following defect" },
-          { de: "Ich setze Ihnen eine Frist bis zum …", tr: "size …-e kadar süre veriyorum", en: "I set you a deadline until …" },
-          { de: "Die Miete zahle ich weiterhin unter Vorbehalt.", tr: "kirayı ihtirazî kayıtla ödemeyi sürdürüyorum", en: "I continue to pay the rent under reservation" },
+          { de: "Ich setze Ihnen eine Frist bis zum …", tr: "size …-e kadar süre veriyorum", en: "I am setting you a deadline of …" },
+          { de: "Die Miete zahle ich weiterhin unter Vorbehalt.", tr: "kirayı ihtirazî kayıtla ödemeyi sürdürüyorum", en: "I continue to pay the rent under protest" },
         ],
         sample:
           "Sehr geehrte Frau Hartmann,\n\n" +
           "hiermit zeige ich folgenden Mangel an der Wohnung Lindenstraße 8, 3. OG, an:\n\n" +
           "Seit dem 6. Mai steht in der Wohnung kein Warmwasser zur Verfügung. Erst nach etwa fünfzehn Minuten Laufzeit erreicht das Wasser eine lauwarme Temperatur. Am 7. Mai habe ich die Hausverwaltung telefonisch informiert. Am 12. Mai war ein Installateur vor Ort und teilte mit, ein Ersatzteil sei erforderlich; seither habe ich keine Rückmeldung erhalten. In der Nachbarwohnung besteht derselbe Mangel.\n\n" +
-          "Ich setze Ihnen hiermit eine Frist zur Beseitigung bis zum 3. Juni. Nach fruchtlosem Ablauf dieser Frist geraten Sie in Verzug; ich behalte mir vor, ab dem 6. Mai eine Mietminderung geltend zu machen und die Beseitigung auf Ihre Kosten zu veranlassen.\n\n" +
+          "Ich setze Ihnen hiermit eine Frist zur Beseitigung bis zum 3. Juni. Nach fruchtlosem Ablauf dieser Frist geraten Sie in Verzug; ich behalte mir vor, ab dem 7. Mai eine Mietminderung geltend zu machen und die Beseitigung auf Ihre Kosten zu veranlassen.\n\n" +
           "Die Miete zahle ich bis dahin weiterhin in voller Höhe, ausdrücklich unter Vorbehalt.\n\n" +
           "Für eine kurze Rückmeldung, bis wann die Reparatur erfolgt, wäre ich Ihnen dankbar.\n\n" +
           "Mit freundlichen Grüßen\nA. Renner",

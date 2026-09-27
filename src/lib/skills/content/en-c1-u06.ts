@@ -47,7 +47,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "academic", tr: "akademik" },
       { de: "object", tr: "nesne" },
       { de: "fronted", tr: "öne alınmış" },
-      { de: "construction", tr: "kuruluş" },
+      { de: "construction", tr: "yapı" },
       { de: "phrasal", tr: "öbeksi" },
       { de: "underneath", tr: "altta" },
       { de: "an infinitive", tr: "mastar" },
@@ -70,10 +70,10 @@ export const enC1U06: SkillExercise[] = [
     text:
       "To enact a rule is not to enforce it. Two infinitives, one on each side of „be“, and the sentence denies that the two things are the same.\n" +
       "English lets an infinitive be the subject of a sentence without any support. „To enact a rule“ stands at the front, carries the weight of a noun, and nothing has to be put in front of it to hold it up. That is not true of every language, and it is the reason this shape feels natural here and heavy in translation.\n" +
-      "The affirmative version asserts an identity. „To resign oneself is to forfeit the argument“ says the two are one thing, and a reader who accepts the first half has accepted the second before noticing.\n" +
-      "The negative version is the more useful of the two, and it is the characteristic sentence of a legal or an academic paragraph. It denies an inference without denying a fact. Everything before it can stand; only the step the reader was about to take is refused. To record a revocation is not to accept it. To report a claim is not to falsify it.\n" +
+      "The affirmative version asserts an identity. „To give in is to forfeit the argument“ says the two are one thing, and a reader who accepts the first half has accepted the second before noticing.\n" +
+      "The negative version is the more useful of the two, and it is the characteristic sentence of a legal or an academic paragraph. It denies an inference without denying a fact. Everything before it can stand; only the step the reader was about to take is refused. To record a revocation is not to accept it. To report a claim is not to endorse it.\n" +
       "What a term of office grants, discretion can take. A different shape on the same page: the object has been fronted, and by now the first words tell you which construction you are in.\n" +
-      "They outvoted the group before the new members were sworn in. Two settled legal verbs in one line, and the second phrasal verb has left its particle stranded at the end, which English does without comment and many languages cannot do at all.\n" +
+      "They outvoted the group before the new members were sworn in. Two settled legal verbs in one line, and the second, a phrasal verb, has left its particle stranded at the end, which English does without comment and many languages cannot do at all.\n" +
       "Three shapes and one habit underneath them. Each of them puts something heavy at the front of the sentence and trusts the reader to carry it until the verb arrives. That trust is the register. A paragraph written this way is telling the reader that it expects to be read slowly, and a reader who is not going to read it slowly should be given a different paragraph.",
     questions: [
       {
@@ -152,7 +152,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "an item", tr: "kalem" },
       { de: "a corridor", tr: "koridor" },
       { de: "in his favor", tr: "lehine" },
-      { de: "survive", tr: "sağ kalmak" },
+      { de: "survive", tr: "ayakta kalmak" },
       { de: "the outcome", tr: "sonuç" },
       { de: "the reasoning", tr: "gerekçe" },
       { de: "narrow", tr: "dar" },

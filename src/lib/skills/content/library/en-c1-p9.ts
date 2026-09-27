@@ -319,7 +319,7 @@ export const enC1P9: SkillExercise[] = [
         "Bir ayrım öner",
       ],
       targets: [
-        { de: "I'd say it is correctly rated in one place and badly overrated in another.", tr: "Bence bir yerde doğru değerleniyor, başka bir yerde fazlasıyla." },
+        { de: "I'd say it is correctly rated in one place and badly overrated in another.", tr: "Bence bir yerde değeri doğru biçiliyor, başka bir yerde ise fazlasıyla abartılıyor." },
         { de: "Where it genuinely matters is …", tr: "Gerçekten önemli olduğu yer …" },
         { de: "Where it is used as a substitute for thought is …", tr: "Düşüncenin yerine geçirildiği yer …" },
         { de: "The distinction I'd hold on to is …", tr: "Tutunacağım ayrım …" },

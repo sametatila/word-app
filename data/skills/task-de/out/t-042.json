@@ -22,7 +22,7 @@
  {
   "tr": "„must have“ olumsuzlanamıyor; sert olumsuz „can't have“; yumuşak olumsuz ana fiile taşınıyor; ikisi aynı şey değil.",
   "kind": "form.facts",
-  "de": "„must have“ lässt sich nicht verneinen; die harte Verneinung ist „can't have“; die weiche wandert ins Hauptverb; beides ist nicht dasselbe."
+  "de": "„must have“ lässt sich nicht verneinen; die harte Verneinung ist „can't have“; die weiche wandert ins Hauptverb; die beiden sind nicht dasselbe."
  },
  {
   "tr": "„in view of“ geriye bakıyor; „provided that“ şart koyuyor; „if“ durumu betimliyor; seviyenin sorusu kimin kaybolduğu.",
@@ -265,7 +265,7 @@
   "de": "Dieselbe Form; so ist die Sprache der Überschriften gebaut."
  },
  {
-  "tr": "İki çekince; söylediği olan „on balance“.",
+  "tr": "İki çekince; bir şey söyleyen „on balance“.",
   "kind": "build.hint",
   "de": "Zwei Absicherungen; die aussagekräftige ist „on balance“."
  },
@@ -282,7 +282,7 @@
  {
   "tr": "Yarık cümle: liste gözden geçirilmiş demek.",
   "kind": "build.hint",
-  "de": "Spaltsatz: heißt, die Liste ist durchgegangen worden."
+  "de": "Spaltsatz: Das heißt, die Liste wurde durchgesehen."
  },
  {
   "tr": "„in view of“ geriye bakan bir neden veriyor.",

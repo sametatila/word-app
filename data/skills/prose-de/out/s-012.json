@@ -23,7 +23,7 @@
  { "tr": "Uzun süre … olduğuna inandım", "kind": "gloss.tr", "de": "Lange habe ich geglaubt, dass …" },
  { "tr": "Bir görüşmeye gelmek isterim.", "kind": "gloss.tr", "de": "Ich würde gern zu einem Gespräch kommen." },
  { "tr": "Ürün hâlâ garanti kapsamında.", "kind": "gloss.tr", "de": "Die Ware ist noch in der Garantie." },
- { "tr": "Yapman gereken bir şey daha …", "kind": "gloss.tr", "de": "Eine Sache solltest du noch tun: …" },
+ { "tr": "Yapman gereken bir şey …", "kind": "gloss.tr", "de": "Eine Sache solltest du tun: …" },
  { "tr": "… için endişelenmene gerek yok", "kind": "gloss.tr", "de": "Um … musst du dir keine Sorgen machen" },
  { "tr": "… yıldır … olarak çalışıyorum.", "kind": "gloss.tr", "de": "Als … arbeite ich seit … Jahren." },
  { "tr": "Bende işe yaramayan şey … oldu", "kind": "gloss.tr", "de": "Bei mir hat … nicht funktioniert" },
@@ -39,7 +39,7 @@
  { "tr": "Onarımların … sürdüğü söyleniyor", "kind": "gloss.tr", "de": "Die Reparaturen sollen … dauern" },
  { "tr": "Onları görmememizin tek nedeni …", "kind": "gloss.tr", "de": "Der einzige Grund, warum wir sie nicht sehen, ist …" },
  { "tr": "Yardımınız için teşekkür ederim.", "kind": "gloss.tr", "de": "Vielen Dank für Ihre Hilfe." },
- { "tr": "Yazdığınız için teşekkür ederiz.", "kind": "gloss.tr", "de": "Danke, dass Sie sich die Zeit genommen haben." },
+ { "tr": "Yazdığınız için teşekkür ederiz.", "kind": "gloss.tr", "de": "Danke für Ihr Schreiben." },
  { "tr": "… zamandır İngilizce çalışıyorum.", "kind": "gloss.tr", "de": "Seit … lerne ich Englisch." },
  { "tr": "Beni … numaradan arayabilirsiniz.", "kind": "gloss.tr", "de": "Sie können mich unter … anrufen." },
  { "tr": "Beş üzerinden … yıldız veriyorum.", "kind": "gloss.tr", "de": "Ich gebe … von fünf Sternen." },
@@ -71,5 +71,6 @@
  { "tr": "Lütfen tamir için birini gönderebilir misiniz?", "kind": "gloss.tr", "de": "Könnten Sie bitte jemanden zur Reparatur schicken?" },
  { "tr": "Metni okuduktan sonra … olduğunu kabul ediyoruz", "kind": "gloss.tr", "de": "Nach Lektüre der Anhörung räumen wir ein, dass …" },
  { "tr": "Rakamlar … olduğunu düşündürüyor, kanıtlamasa da", "kind": "gloss.tr", "de": "Die Zahlen legen nahe, dass … ist, ohne es zu beweisen" },
- { "tr": "Hangi belgeleri getirmem gerektiğini söyleyebilir misiniz?", "kind": "gloss.tr", "de": "Könnten Sie mir sagen, welche Unterlagen ich mitbringen muss?" }
+ { "tr": "Hangi belgeleri getirmem gerektiğini söyleyebilir misiniz?", "kind": "gloss.tr", "de": "Könnten Sie mir sagen, welche Unterlagen ich mitbringen muss?" },
+ { "tr": "„I'll weigh it first. Two kilos. Where to?“", "kind": "explain", "de": "„I'll weigh it first. Two kilos. Where to?“" }
 ]

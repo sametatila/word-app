@@ -351,7 +351,7 @@ export const b2U13: SkillExercise[] = [
     unit: 13,
     title: "Zwei Register, ein Grund",
     genre: "build",
-    intro: "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. İkisi de genitif ister.",
+    intro: "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. Dördü de genitif ister.",
     gloss: [
       { de: "das Unwetter", tr: "fırtına", en: "storm" },
       { de: "aussetzen", tr: "askıya almak", en: "to suspend" },

@@ -48,7 +48,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Was ist der Bücherschrank?",
         options: ["ein Ort zum Tauschen von Büchern", "ein kleiner Buchladen im Viertel", "eine Bibliothek mit Ausweis"],
         answer: 0,
-        explain: "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — takas, satış ya da üyelik değil.",
+        explain: "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — yani takas; satış ya da üyelik değil.",
       },
       {
         text: "Was war der Schrank früher?",
@@ -211,15 +211,15 @@ export const deA2P2: SkillExercise[] = [
           { de: "Auf Ihrem Ausweis steht …", tr: "Kimliğinizde … yazıyor", en: "Your ID says …" },
           { de: "In der Börse sind …", tr: "Cüzdanın içinde … var", en: "There is … in the wallet" },
           { de: "Sie können … abholen.", tr: "… gelip alabilirsiniz.", en: "You can pick … up." },
-          { de: "Sie erreichen mich unter …", tr: "Bana … numarasından ulaşabilirsiniz.", en: "You can reach me on …" },
+          { de: "Sie erreichen mich unter …", tr: "Bana … numarasından ulaşabilirsiniz.", en: "You can reach me at …" },
         ],
         sample:
-          "Sehr geehrte Frau Doblinger, ich habe gestern Abend im Stadtpark eine schwarze Geldbörse gefunden. " +
+          "Sehr geehrte Frau Doblinger,\n\nich habe gestern Abend im Stadtpark eine schwarze Geldbörse gefunden. " +
           "Auf Ihrem Ausweis habe ich Ihre Adresse gefunden, deshalb schreibe ich Ihnen. " +
           "In der Börse sind ein Ausweis, eine Buskarte und etwas Kleingeld. Ich wohne in der Wielandstraße 14 " +
           "und bin abends ab achtzehn Uhr zu Hause. Sie können die Börse dort abholen. " +
           "Sie erreichen mich auch unter 0176 882140. " +
-          "Mit freundlichen Grüßen, Yasin Aydın",
+          "Mit freundlichen Grüßen\nYasin Aydın",
       },
     ],
   },

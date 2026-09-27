@@ -158,7 +158,7 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The insurance pays the extra nights only against receipts.",
+        text: "The insurance pays for the extra nights only with receipts.",
         options: ["True", "False"],
         answer: 0,
         explain: "„We pay for up to three nights, but only with receipts.“",
@@ -213,7 +213,7 @@ export const enB1P5: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Otelin adresini yazman gerekir.",
+        tr: "Otelin adresini not etmelisin.",
         answer: "You should write down the address of the hotel.",
         alternatives: ["You should write the address of the hotel down."],
         hint: "„write down“ ayrılabilir bir fiildir; nesne uzunsa genelde ayrılmadan kullanılır.",
@@ -238,7 +238,7 @@ export const enB1P5: SkillExercise[] = [
         minWords: 60,
         phrases: [
           { de: "Three things you have to do.", tr: "Yapman gereken üç şey." },
-          { de: "One thing you should do …", tr: "Yapman gereken bir şey daha …" },
+          { de: "One thing you should do …", tr: "Yapman gereken bir şey …" },
           { de: "You do not have to worry about …", tr: "… için endişelenmene gerek yok" },
           { de: "Keep … separate from …", tr: "…'i …'den ayrı tut" },
           { de: "Have a wonderful time!", tr: "Harika vakit geçir!" },

@@ -70,7 +70,7 @@ export const b1U09: SkillExercise[] = [
       },
       {
         text: "Warum kauft sie das Haus jetzt nicht?",
-        options: ["Es gefällt ihr nicht", "Sie will keine langen Schulden", "Es ist zu klein"],
+        options: ["Es gefällt ihr nicht", "Sie will keine Schulden für viele Jahre", "Es ist zu klein"],
         answer: 1,
         explain: "„Ich möchte keine Schulden, mit denen ich zwanzig Jahre lebe.“",
       },
@@ -116,12 +116,12 @@ export const b1U09: SkillExercise[] = [
     text:
       "Es gibt Menschen, denen man sofort vertraut, und man weiß nicht genau warum. " +
       "Der Charakter zeigt sich nicht in schönen Worten, sondern im Verhalten.\n\n" +
-      "Ein Kollege, dem ich einmal begegnet bin, hat mir das gezeigt. Er sprach wenig. " +
+      "Ein Kollege, dem ich vor Jahren begegnet bin, hat mir das gezeigt. Er sprach wenig. " +
       "Aber jedes Mal, wenn jemand einen Rat brauchte, war er da. Er war hilfsbereit, " +
       "ohne darüber zu reden.\n\n" +
       "Natürlich enttäuscht jeder irgendwann jemanden. Das ist menschlich. Die Frage " +
       "ist, was danach passiert. Wer die Schuld sofort bei anderen sucht, den kann man " +
-      "schwer beruhigen. Wer dagegen sagt „das war mein Fehler“, dem verzeiht man leichter.\n\n" +
+      "schwer beruhigen. Wer dagegen sagt: „Das war mein Fehler“, dem verzeiht man leichter.\n\n" +
       "Ich hasse große Worte. Aber ein Gefühl bleibt: Menschen, mit denen man arbeiten " +
       "kann, beleidigen niemanden, wenn sie ärgerlich sind. Sie akzeptieren, dass der " +
       "andere anders ist, und verhalten sich trotzdem höflich.",
@@ -142,7 +142,7 @@ export const b1U09: SkillExercise[] = [
         text: "Wer bekommt leichter Verzeihung?",
         options: ["Wer die Schuld bei anderen sucht", "Wer den eigenen Fehler zugibt", "Wer nichts sagt"],
         answer: 1,
-        explain: "„Wer dagegen sagt „das war mein Fehler“, dem verzeiht man leichter.“",
+        explain: "„Wer dagegen sagt: „Das war mein Fehler“, dem verzeiht man leichter.“",
       },
       {
         kind: "gapfill",
@@ -369,7 +369,7 @@ export const b1U09: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yardım ettiğim insanlar hâlâ yazıyor.",
+        tr: "Yardım ettiğim insanlar bana hâlâ yazıyor.",
         answer: "Die Menschen, denen ich geholfen habe, schreiben mir noch.",
         hint: "„helfen“ Dativ ister → çoğulda denen.",
       },
@@ -398,7 +398,7 @@ export const b1U09: SkillExercise[] = [
         phrases: [
           { de: "Der Mensch, dem ich vertraue, …", tr: "Güvendiğim insan …", en: "The person I trust …" },
           { de: "einen Rat geben", tr: "öğüt vermek", en: "to give advice" },
-          { de: "Das ist menschlich.", tr: "Bu insanca.", en: "That is only human." },
+          { de: "Das ist menschlich.", tr: "Bu insani bir şey.", en: "That is only human." },
         ],
       },
       {

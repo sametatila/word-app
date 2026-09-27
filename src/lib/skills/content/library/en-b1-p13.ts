@@ -277,7 +277,7 @@ export const enB1P13: SkillExercise[] = [
         { de: "On balance, I think they should, at least …", tr: "Genel olarak bence olmalı, en azından …" },
         { de: "What convinced me was …", tr: "Beni ikna eden şey …" },
         { de: "The honest problem with free entry is …", tr: "Ücretsiz girişin açık sorunu …" },
-        { de: "One way round that would be …", tr: "Bunu aşmanın bir yolu … olurdu" },
+        { de: "One way around that would be …", tr: "Bunu aşmanın bir yolu … olurdu" },
       ],
       minSeconds: 40,
       maxSeconds: 80,
@@ -291,10 +291,10 @@ export const enB1P13: SkillExercise[] = [
         "The honest problem with free entry is money. Somebody pays for the heating and the guards, " +
         "and if it isn't the visitors, it is everybody through taxes, including people who never go. " +
         "Some free museums are also so crowded on weekends that a visit becomes tiring rather than relaxing. " +
-        "One way round that would be to keep the collection free but to charge for special " +
+        "One way around that would be to keep the collection free but to charge for special " +
         "exhibitions, and to ask tourists for a small donation at the door.",
       rubricHint:
-        "Görüş, kişisel bir deneyim, dürüst bir sakınca ve bir çözüm beklenir; „on balance“, „what convinced me was“, „one way round that“ kullanılabilir.",
+        "Görüş, kişisel bir deneyim, dürüst bir sakınca ve bir çözüm beklenir; „on balance“, „what convinced me was“, „one way around that“ kullanılabilir.",
     },
   },
 

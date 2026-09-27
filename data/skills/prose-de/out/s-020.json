@@ -77,12 +77,12 @@
  {
   "tr": "Zaman edatlarını yaz: günde ve hafta sonunda „on“, sabahta „in“, gecede „at“. Amerikan İngilizcesinde hafta sonu da „on“ alır.",
   "kind": "intro",
-  "de": "Schreibe die Zeitpräpositionen: beim Tag und beim Wochenende „on“, beim Morgen „in“, bei der Nacht „at“. Im amerikanischen Englisch steht auch beim Wochenende „on“."
+  "de": "Schreibe die Zeitpräpositionen: bei Tagen und bei „weekend“ „on“, bei „morning“ „in“, bei „night“ „at“. Im amerikanischen Englisch steht auch bei „weekend“ „on“."
  },
  {
   "tr": "Sevdiğini ve tercih ettiğini yaz. Dikkat: sevmek fiilinden sonra ikinci fiil „-ing“ alıyor.",
   "kind": "intro",
-  "de": "Schreibe, was du magst und was du bevorzugst. Achtung: nach dem Verb des Mögens bekommt das zweite Verb ein „-ing“."
+  "de": "Schreibe, was du magst und was du bevorzugst. Achtung: nach „like“ bekommt das zweite Verb ein „-ing“."
  },
  {
   "tr": "Geç kalan bir öğrenci. Phrasal verb'lerin hepsi bir arada: come in, sit down, turn on, look for.",
@@ -140,7 +140,7 @@
   "de": "„I don't work on Sunday.“ — vor dem Tagesnamen steht „on“."
  },
  {
-  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8:45.",
+  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8.45.",
   "kind": "explain",
   "de": "„It's a quarter to nine.“ — Viertel vor neun, also 8:45."
  },
@@ -170,9 +170,9 @@
   "de": "„I'd like a juice… Apple, please.“ — das Bier ist von Kaan, das Wasser von Deniz."
  },
  {
-  "tr": "„Tomatoes are cheap this week — it's a sale.“ — pahalı olan et.",
+  "tr": "„Tomatoes are cheap this week — they're on sale.“ — pahalı olan et.",
   "kind": "explain",
-  "de": "„Tomatoes are cheap this week — it's a sale.“ — teuer ist das Fleisch."
+  "de": "„Tomatoes are cheap this week — they're on sale.“ — teuer ist das Fleisch."
  },
  {
   "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
@@ -230,9 +230,9 @@
   "de": "„In the evening I turn off the radio.“ — morgens schaltet er es an, abends aus."
  },
  {
-  "tr": "„It's half past eight.“ — sekiz buçuk; on bir çeyrek Nil'in uyku saati.",
+  "tr": "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Nil'in yatma saati.",
   "kind": "explain",
-  "de": "„It's half past eight.“ — halb neun; viertel nach elf ist die Schlafenszeit von Nil."
+  "de": "„It's half past eight.“ — halb neun; um Viertel nach elf geht Nil ins Bett."
  },
  {
   "tr": "„The meat is expensive: nine euros a kilo.“ İndirimde daha ucuz oluyor.",
@@ -315,9 +315,9 @@
   "de": "„I always drink tea, never coffee.“ — das Häufigkeitsadverb steht vor dem Vollverb: always drink."
  },
  {
-  "tr": "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
+  "tr": "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Eda'nın istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
   "kind": "explain",
-  "de": "„I'd like to pay by card… I only have a card too.“ Der Scheck ist ein Beleg für die Arbeit von Eda."
+  "de": "„I'd like to pay by card… I only have a card too.“ „with a check“ ist falsch: Was Eda möchte, ist eine „receipt“, ein Beleg für die Arbeit, keine Zahlungsart."
  },
  {
   "tr": "„After work I buy fruit and vegetables at the market.“ — ekmek ve peynir kahvaltıda.",
@@ -392,7 +392,7 @@
  {
   "tr": "çeyrek kala",
   "kind": "gloss.tr",
-  "de": "viertel vor"
+  "de": "Viertel vor"
  },
  {
   "tr": "an",
@@ -517,7 +517,7 @@
  {
   "tr": "çeyrek geçe",
   "kind": "gloss.tr",
-  "de": "viertel nach"
+  "de": "Viertel nach"
  },
  {
   "tr": "henüz değil",
@@ -572,7 +572,7 @@
  {
   "tr": "… yerine …'i tercih etmek",
   "kind": "gloss.tr",
-  "de": "… lieber als …"
+  "de": "… lieber mögen als …"
  },
  {
   "tr": "birlikte ödeyebilir miyiz",
@@ -583,5 +583,10 @@
   "tr": "… yerine …'i tercih ederim",
   "kind": "gloss.tr",
   "de": "ich mag … lieber als …"
+ },
+ {
+  "tr": "„…you'll see it on the screen in the terminal, not on your phone.“",
+  "kind": "explain",
+  "de": "„…you'll see it on the screen in the terminal, not on your phone.“"
  }
 ]

@@ -99,7 +99,7 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Jeden Samstag gehe ich auf den Markt am Marktplatz. Das Obst und Gemüse ist dort sehr frisch und oft günstiger als im Supermarkt.\n\nHeute kaufe ich ein Pfund Tomaten und zwei Pfund Kartoffeln. Dann kommt die Frage: „Ein bisschen mehr?“ Ich möchte weniger — ein Pfund ist gut.\n\nDanach gehe ich in die Bäckerei und kaufe Brot und Brötchen.\n\nIch brauche Geld — die Bank ist auch am Marktplatz. Am Kiosk kaufe ich noch eine Zeitung. Das macht zusammen 14 Euro.\n\nDer Markt gefällt mir besser als der Supermarkt — im Supermarkt ist alles so groß.",
+      "Jeden Samstag gehe ich auf den Markt am Marktplatz. Das Obst und Gemüse ist dort sehr frisch und oft günstiger als im Supermarkt.\n\nHeute kaufe ich ein Pfund Tomaten und zwei Pfund Kartoffeln. Dann kommt die Frage: „Ein bisschen mehr?“ Nein danke, ein Pfund ist gut.\n\nDanach gehe ich in die Bäckerei und kaufe Brot und Brötchen.\n\nIch brauche Geld — die Bank ist auch am Marktplatz. Am Kiosk kaufe ich noch eine Zeitung. Das macht zusammen 14 Euro.\n\nDer Markt gefällt mir besser als der Supermarkt — im Supermarkt ist alles so groß.",
     questions: [
       {
         text: "Wann geht die Person auf den Markt?",

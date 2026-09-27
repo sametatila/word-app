@@ -247,7 +247,7 @@ export const deC1P16: SkillExercise[] = [
           { de: "Ich wende mich an Sie im Anschluss an …", tr: "… sonrasında size yazıyorum", en: "I am writing to you following …" },
           { de: "Besonders hervorheben möchte ich …", tr: "Özellikle … vurgulamak istiyorum", en: "I would particularly like to highlight …" },
           { de: "Weniger gelungen fand ich dagegen …", tr: "Buna karşılık … daha az başarılı buldum", en: "By contrast, I found … less successful" },
-          { de: "Mein Vorschlag wäre, …, sofern das organisatorisch möglich ist.", tr: "Düzen açısından mümkünse önerim … olurdu.", en: "My suggestion would be …, provided it is organisationally possible." },
+          { de: "Mein Vorschlag wäre, …, sofern das organisatorisch möglich ist.", tr: "Organizasyon açısından mümkünse önerim … olurdu.", en: "My suggestion would be …, provided it is organizationally possible." },
           { de: "Über eine kurze Antwort würde ich mich freuen.", tr: "Kısa bir yanıt beni sevindirir.", en: "I would be glad of a short reply." },
         ],
         sample:

@@ -51,7 +51,7 @@ export const enA1U09: SkillExercise[] = [
         text: "When does the writer get up?",
         options: ["at seven, every day", "at seven, but not on the weekend", "at midnight"],
         answer: 0,
-        explain: "„I always get up at seven, even on the weekend.“ — „also“ hafta sonunu da içine alıyor.",
+        explain: "„I always get up at seven, even on the weekend.“ — „even“ hafta sonunu da içine alıyor.",
       },
       {
         text: "Who is never angry?",
@@ -108,7 +108,7 @@ export const enA1U09: SkillExercise[] = [
       "Ali: I always turn it off before I sleep.\n" +
       "Teacher: Then look for a new clock on the weekend!\n" +
       "Ali: Yes. On Saturday I have time.\n" +
-      "Teacher: Good. Now, first take off your bag and sit down.\n" +
+      "Teacher: Good. Now, first take off your coat and sit down.\n" +
       "Ali: Sorry again!\n" +
       "Teacher: Never mind. We begin at half past nine. You are not late.",
     questions: [

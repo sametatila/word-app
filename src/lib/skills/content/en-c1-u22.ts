@@ -90,7 +90,7 @@ export const enC1U22: SkillExercise[] = [
       "That is not carelessness. „Cost“ can be counted, and „costs“ in that phrase is a plural with a singular nobody uses: nobody writes „a follow-on cost“ in a report, and the plural has become the name of the thing.\n" +
       "This is the part of English that a reader from German gets wrong for years without being corrected, because nothing in the error is ungrammatical enough to stop anybody.\n" +
       "The rule is not about the world. Advice, information, evidence, research, equipment, machinery and capital take no plural and no article in English. Their equivalents in German are ordinary countable nouns that make plurals without any trouble at all, and the things they name are the same things.\n" +
-      "So countability is a decision the language made rather than a fact about advice. Nothing in the world says that a warning comes in pieces and a piece of advice does not.\n" +
+      "So countability is a decision the language made rather than a fact about advice. Nothing in the world says that a warning comes in pieces and advice does not.\n" +
       "Where English has to count one, it borrows a counter: a piece of advice, an item of equipment, a body of evidence, a line of research. German adds an ending instead, and a writer who carries that habit across produces „an advice“ and „informations“, both of which are heard on the page as a foreign accent rather than as a mistake somebody made.\n" +
       "An economy of scale lowers the capital requirement. „Capital“ has no plural here and „requirement“ has one, and no principle joins the two: they were assigned separately and they have to be learned separately.\n" +
       "Follow-on costs are estimated; a cost overrun is announced. And the two halves show the last part of the rule. „Costs“ is a plural naming a category; „a cost overrun“ is a single countable event with a date on it. The same root, two shapes, and the shape is doing the work of a whole definition.",
@@ -439,7 +439,7 @@ export const enC1U22: SkillExercise[] = [
       { de: "an opportunity cost", tr: "fırsat maliyeti" },
       { de: "a cost overrun", tr: "maliyet aşımı" },
       { de: "an economy of scale", tr: "ölçek ekonomisi" },
-      { de: "accounting fraud", tr: "muhasebe sahtekarlığı" },
+      { de: "accounting fraud", tr: "muhasebe sahtekârlığı" },
       { de: "embezzlement", tr: "zimmete geçirme" },
       { de: "assume", tr: "varsaymak" },
     ],
@@ -465,7 +465,7 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Biri muhasebe sahtekarlığı ileri sürüyor; bir başkası zimmete geçirmeyi kanıtlıyor.",
+        tr: "Biri muhasebe sahtekârlığı ileri sürüyor; bir başkası zimmete geçirmeyi kanıtlıyor.",
         answer: "One alleges accounting fraud; another proves embezzlement.",
         hint: "Biri hiçbir yük taşımıyor, öteki belge taşıyor.",
       },
@@ -517,7 +517,7 @@ export const enC1U22: SkillExercise[] = [
         kind: "build",
         tr: "Yüksek bir tasarruf potansiyeli ödeme gücü anlamına gelmeyebilir.",
         answer: "A high savings potential might not mean solvency.",
-        hint: "Biri bilançonun söylediği, öteki on beşinde ödenebilen.",
+        hint: "Biri bilançonun söylediği, öteki ayın on beşinde ödenebilen.",
       },
       {
         kind: "build",
@@ -533,7 +533,7 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Burada kayırmacılık yok; ahbap-çavuş ağımız var.",
+        tr: "Burada kayırmacılık yok; ahbap çavuş ağımız var.",
         answer: "We have no nepotism here; we have an old boys' network.",
         hint: "Tür yadsınıyor, örnek daha dost bir adla kabul ediliyor.",
       },

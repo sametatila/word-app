@@ -126,7 +126,7 @@ export const b1U37: SkillExercise[] = [
       "Die Versicherung fragt später genau danach.\n\n" +
       "Vorläufig sollten Sie nicht allein schlafen, wenn es Ihnen " +
       "schwerfällt. Das ist keine Schwäche. Bei einem Einbruch wird " +
-      "fast nie Gewalt gebraucht, aber das Gefühl bleibt trotzdem lange.",
+      "fast nie Gewalt angewendet, aber das Gefühl bleibt trotzdem lange.",
     questions: [
       {
         text: "Was soll man zuerst tun?",
@@ -156,11 +156,11 @@ export const b1U37: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was wird bei einem Einbruch fast nie gebraucht?",
+        text: "Was wird bei einem Einbruch fast nie angewendet?",
         options: [],
         answer: 0,
         accept: ["Gewalt", "die Gewalt"],
-        explain: "„Bei einem Einbruch wird fast nie Gewalt gebraucht …“",
+        explain: "„Bei einem Einbruch wird fast nie Gewalt angewendet …“",
       },
     ],
   },
@@ -326,7 +326,7 @@ export const b1U37: SkillExercise[] = [
       {
         kind: "build",
         tr: "Şimdilik hiçbir şeye dokunmadım, hırsız şiddet kullanmamış.",
-        answer: "Vorläufig habe ich nichts angefasst, der Dieb hat keine Gewalt gebraucht.",
+        answer: "Vorläufig habe ich nichts angefasst, der Dieb hat keine Gewalt angewendet.",
         hint: "Zaman zarfı öne alınınca fiil ikinci sırada.",
       },
       {
@@ -345,7 +345,7 @@ export const b1U37: SkillExercise[] = [
         prompt: "Edilgen cümlenin öznesini düzelt.",
         source: "Ich wurde gestern eingebrochen und mein Laptop wurde gestohlen.",
         answer: "Bei mir wurde gestern eingebrochen und mein Laptop wurde gestohlen.",
-        why: "Türkçede edilgen daima bir özne ister ('evime girildi' bile evi özne yapar), o yüzden Almancada konuşan kendini özne yapıyor — ama 'ich wurde eingebrochen' KİŞİNİN kırıldığını söyler. Almanca özneSİZ edilgen kurabilir: eyleyen de nesne de yoktur, cümle yine tamdır — bei mir wurde eingebrochen, hier wird gearbeitet, heute wird nicht geputzt.",
+        why: "Türkçede 'evime girildi' öznesiz bir edilgendir, ama Almancada konuşan çoğu zaman kendini özne yapıyor — oysa 'ich wurde eingebrochen' anlamsızdır, sanki KİŞİNİN kendisine zorla girilmiş gibi. Almanca da özneSİZ edilgen kurabilir: eyleyen de nesne de yoktur, cümle yine tamdır — bei mir wurde eingebrochen, hier wird gearbeitet, heute wird nicht geputzt.",
       },
     ],
   },

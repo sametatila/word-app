@@ -242,7 +242,7 @@ export const deB2P12: SkillExercise[] = [
         phrases: [
           { de: "… und wende mich deshalb an Ihre Werkstatt.", tr: "… ve bu yüzden atölyenize başvuruyorum.", en: "… and am therefore contacting your workshop." },
           { de: "… ist in keinem guten Zustand.", tr: "… iyi durumda değil.", en: "… is not in good condition." },
-          { de: "Welche Arbeiten müssen unbedingt gemacht werden?", tr: "Hangi işlerin mutlaka yapılması gerekiyor?", en: "Which work absolutely has to be done?" },
+          { de: "Welche Arbeiten müssen unbedingt gemacht werden?", tr: "Hangi işlerin mutlaka yapılması gerekiyor?", en: "What work absolutely has to be done?" },
           { de: "Mit welchen Kosten muss ich ungefähr rechnen?", tr: "Aşağı yukarı ne kadar masraf beklemeliyim?", en: "Roughly what costs should I expect?" },
           { de: "Gern können Sie sich … vorher ansehen.", tr: "… önceden gelip bakabilirsiniz.", en: "You are welcome to look at … beforehand." },
         ],

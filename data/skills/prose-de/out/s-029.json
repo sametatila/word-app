@@ -62,7 +62,7 @@
  {
   "tr": "Bina kuralları. Hangisi zorunlu, hangisi yasak, hangisi serbest?",
   "kind": "intro",
-  "de": "Die Hausordnung. Was ist Pflicht, was verboten, was freigestellt?"
+  "de": "Die Hausordnung. Was ist Pflicht, was verboten, was erlaubt?"
  },
  {
   "tr": "Aynı özgeçmişte iki zaman. Hangisi deneyim, hangisi kapanmış dönem?",
@@ -327,7 +327,7 @@
  {
   "tr": "düzeltmek",
   "kind": "gloss.tr",
-  "de": "reparieren"
+  "de": "korrigieren"
  },
  {
   "tr": "gerek yok",
@@ -423,5 +423,15 @@
   "tr": "iş yerim nasıl bir yer?",
   "kind": "gloss.tr",
   "de": "wie ist mein Arbeitsplatz?"
+ },
+ {
+  "tr": "sıkıntı",
+  "kind": "gloss.tr",
+  "de": "die Schwierigkeit"
+ },
+ {
+  "tr": "kusur",
+  "kind": "gloss.tr",
+  "de": "der Mangel"
  }
 ]

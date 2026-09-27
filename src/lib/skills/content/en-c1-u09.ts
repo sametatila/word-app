@@ -203,7 +203,7 @@ export const enC1U09: SkillExercise[] = [
     text:
       "What the narrative perspective does is withhold. The shape of that sentence has been met twice already, a cleft with „is“ in the middle, and it is here because the claim needs the emphasis a cleft gives it.\n" +
       "A perspective is not a place the narrator stands. It is a list of things the reader is not going to be told, and the list was chosen before the first line was written. The reader feels it as atmosphere. It was arithmetic.\n" +
-      "Into the novella creeps a monologue. The place first, the subject last, and something has entered a text that was not built for it. Written the ordinary way round, a monologue creeps into the novella, the sentence reports an event. Written this way it stages one, and that is the whole difference between a summary and a scene.\n" +
+      "Into the novella creeps a monologue. The place first, the subject last, and something has entered a text that was not built for it. Written the ordinary way round („a monologue creeps into the novella“), the sentence reports an event. Written this way it stages one, and that is the whole difference between a summary and a scene.\n" +
       "The topos we know; the canon we argue about. Two objects at the front, and the second half repeats the shape rather than deleting the verb, because a deletion here would have made the two halves sound equal, and they are not.\n" +
       "Then the second lesson, which is about what a reader does to a text rather than what a text does to a reader. She contextualizes it; he deciphers it; they dissect it. Three verbs, three theories, and not one of them neutral: the first puts the text in a period, the second assumes a code, the third assumes a body on a table.\n" +
       "The interpretive framework openly claims what the reading merely assumes. That is a sentence a student ought to be able to write about their own paragraph, and most cannot, because the assumption is the part of a reading that never gets written down.\n" +
@@ -276,14 +276,14 @@ export const enC1U09: SkillExercise[] = [
       { de: "crime", tr: "suç" },
       { de: "units", tr: "üniteler" },
       { de: "deletion", tr: "silme" },
-      { de: "survive", tr: "sağ kalmak" },
+      { de: "survive", tr: "yaşamını sürdürmek" },
       { de: "halves", tr: "yarılar" },
       { de: "judgment", tr: "yargı" },
       { de: "whole", tr: "bütün" },
       { de: "century", tr: "yüzyıl" },
       { de: "a gap", tr: "boşluk" },
       { de: "a line break", tr: "dize sonu" },
-      { de: "survives", tr: "sağ kalıyor" },
+      { de: "survives", tr: "yaşamını sürdürüyor" },
       { de: "a pair", tr: "çift" },
       { de: "an ear", tr: "kulak" },
       { de: "a decade", tr: "on yıl" },
@@ -365,7 +365,7 @@ export const enC1U09: SkillExercise[] = [
     unit: 9,
     title: "Reporting a text",
     genre: "monologue",
-    intro: "Bir metni aktarırken hangi fiili seçtiğin bir kuram seçmektir.",
+    intro: "Bir metni aktarırken fiil seçmek, bir kuram seçmektir.",
     gloss: [
       { de: "theory", tr: "kuram" },
       { de: "either", tr: "de/da" },
@@ -434,7 +434,7 @@ export const enC1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["The interpretive framework openly claims what the reading merely assumes.", "The interpretive framework openly claims what the reading merely assumes"],
-        explain: "İki belge, iki katman: iddia ile varsayım.",
+        explain: "Bir çerçeve, bir okuma: iddia ile varsayım.",
       },
       {
         kind: "short_answer",
@@ -504,7 +504,7 @@ export const enC1U09: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bağlaçsız koşul kartını doldur.",
-        facts: "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan İngilizcede işaretli.",
+        facts: "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan, İngilizcede işaretli.",
         fields: [
           { label: "The three verbs", answer: "were, had, should", accept: ["were had should"] },
           { label: "What is dropped", answer: "the conjunction", accept: ["if"] },
@@ -541,7 +541,7 @@ export const enC1U09: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir anımsama halk bilgisi olarak, bir eski eser şifre olarak sağ kalıyor.",
+        tr: "Bir anımsama halk bilgisi olarak, bir eski eser şifre olarak yaşamını sürdürüyor.",
         answer: "A reminiscence survives as lore, a relic as a cipher.",
         hint: "İkinci yarı yine eksiltili; kulak kalıbı çoktan öğrendi.",
       },

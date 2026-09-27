@@ -34,7 +34,7 @@ export const enB1P12: SkillExercise[] = [
     minutes: 6,
     text:
       "Three weeks ago I stood on a stage for the first time in my life. I am forty-four, I work " +
-      "in an accounts office, and until last spring I had never acted in anything, not even " +
+      "in an accounting office, and until last spring I had never acted in anything, not even " +
       "a school play.\n\n" +
       "Our group performs two plays a year in the hall behind the library. I joined because " +
       "a friend had dropped out and they needed someone tall to play a policeman. I had four " +
@@ -125,7 +125,7 @@ export const enB1P12: SkillExercise[] = [
       { speaker: "Host", text: "This week: Little Ashby, a village of nine hundred people, whose soccer team reached the county cup final on Saturday. Their coach, Mr. Barnes, is with me." },
       { speaker: "Mr. Barnes", text: "Thanks. I should say first that we lost the final three–one. But nobody in the village seems to mind." },
       { speaker: "Host", text: "Why not?" },
-      { speaker: "Mr. Barnes", text: "Because until this season we had never won a single cup game. Two years ago we almost closed the club, because only eleven players had come to the first training." },
+      { speaker: "Mr. Barnes", text: "Because until this season we had never won a single cup game. Two years ago we almost closed the club, because only eleven players had come to the first practice." },
       { speaker: "Host", text: "So what changed?" },
       { speaker: "Mr. Barnes", text: "A teacher at the school had started a girls' team, and the parents who came to watch their daughters started watching us as well. Suddenly there were people along the field." },
       { speaker: "Mr. Barnes", text: "By the day of the final, the bus company had put on three extra buses. I'd never seen so many people from the village in one place, not even at a wedding." },
@@ -149,7 +149,7 @@ export const enB1P12: SkillExercise[] = [
           "The coach wanted to leave.",
         ],
         answer: 0,
-        explain: "„only eleven players had come to the first training“.",
+        explain: "„only eleven players had come to the first practice“.",
       },
       {
         kind: "truefalse",
@@ -286,13 +286,13 @@ export const enB1P12: SkillExercise[] = [
         "I think keeping score is fine, as long as the adults care about it less than the children do. " +
         "Children count goals anyway. If you tell them the score doesn't exist, they simply keep it " +
         "in their heads and argue about it in the car on the way home. " +
-        "When I was about ten, I played in a team that lost every game for a whole season. " +
+        "When I was about ten, I played on a team that lost every game for a whole season. " +
         "I had expected to hate it, but I didn't, because our coach talked about one thing after " +
         "every match: what we had done better than the week before. By the spring we were losing " +
         "by fewer goals each time, and that felt almost like winning. " +
         "The other side has a point when they say that some parents shout at referees who are " +
         "twelve years old. That is a real problem, but it is a problem with parents, not with numbers. " +
-        "A sensible middle way would be to keep the score but not to publish league tables for " +
+        "A sensible middle way would be to keep the score but not to publish standings for " +
         "children under eleven, so that nobody grows up at the bottom of a list.",
       rubricHint:
         "Görüş, kişisel bir örnek (past perfect ile geriye bakış), karşı görüşe ödün ve bir orta yol beklenir; „as long as“, „has a point when“ kullanılabilir.",

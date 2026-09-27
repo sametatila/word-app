@@ -111,7 +111,7 @@ export const b1U17: SkillExercise[] = [
       { de: "die Figur", tr: "karakter", en: "character" },
       { de: "die Autorin", tr: "yazar", en: "author", note: "kadın biçimi" },
       { de: "der Leser", tr: "okur", en: "reader" },
-      { de: "die Buchhandlung", tr: "kitapçı", en: "bookshop" },
+      { de: "die Buchhandlung", tr: "kitapçı", en: "bookstore" },
       { de: "das Gefälle", tr: "fark", en: "disparity" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "langweilig", tr: "sıkıcı", en: "boring" },
@@ -163,7 +163,7 @@ export const b1U17: SkillExercise[] = [
         text: "Was lesen sie nächstes Mal?",
         options: [],
         answer: 0,
-        accept: ["ein Gedicht", "Gedicht"],
+        accept: ["einen Gedichtband", "Gedichtband", "ein Gedichtband", "Gedichte", "ein Gedicht", "Gedicht"],
         explain: "„Nächstes Mal wählen wir einen Gedichtband statt eines Romans.“",
       },
     ],
@@ -389,7 +389,7 @@ export const b1U17: SkillExercise[] = [
       },
       {
         kind: "free",
-        prompt: "Okuduğun ya da izlediğin bir şey hakkında kulüp yazısı yaz: adı ve türü, konusu kısaca, neyi beğendiğin ve neyi beğenmediğin (gefallen kalıbıyla), ve başkalarına önerip önermediğin. En az bir 'freuen auf' ya da 'freuen über' cümlesi kullan.",
+        prompt: "Okuduğun ya da izlediğin bir şey hakkında kulüp yazısı yaz: adı ve türü, konusu kısaca, neyi beğendiğin ve neyi beğenmediğin (gefallen kalıbıyla) ve başkalarına önerip önermediğin. En az bir 'freuen auf' ya da 'freuen über' cümlesi kullan.",
         checklist: [
           "Ad ve tür söylenmiş mi?",
           "Konu kısaca anlatılmış mı?",

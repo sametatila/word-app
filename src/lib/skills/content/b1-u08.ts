@@ -53,7 +53,7 @@ export const b1U08: SkillExercise[] = [
       "einfach bequem für uns.\n\n" +
       "Notiz von Katrin: Ich esse eher wenig Fleisch, deshalb finde ich das " +
       "klasse. Mein Kollege dagegen sagt, der Typ Mensch, der jeden Tag " +
-      "Fleisch will, wird jetzt weniger Auswahl haben. Das ist aber falsch: es " +
+      "Fleisch will, wird jetzt weniger Auswahl haben. Das ist aber falsch: Es " +
       "gibt weiterhin jeden Tag ein Gericht mit Fleisch, dazu jetzt eine " +
       "Alternative.\n\n" +
       "Übrigens: Wer nichts auswählt, bekommt automatisch das vegetarische " +
@@ -124,7 +124,7 @@ export const b1U08: SkillExercise[] = [
       "Danach stieg er ein, ohne ein Wort zu sagen.\n\n" +
       "Die Frau, die vor Freude kaum sprechen konnte, erfuhr seinen Namen nie. " +
       "Sie schrieb später einen Brief an die Zeitung, damit die Leute die Wahrheit " +
-      "erfahren: es gibt sie noch, diese kleinen Taten.\n\n" +
+      "erfahren: Es gibt sie noch, diese kleinen Taten.\n\n" +
       "Der Mann, den die ganze Stadt danach suchte, meldete sich nicht. Ein Bekannter " +
       "meinte, er sei einfach so ein Typ. Wer jemanden rettet, tut es nicht für die " +
       "Zeitung, sondern weil es richtig ist.",

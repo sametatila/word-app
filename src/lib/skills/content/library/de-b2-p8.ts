@@ -42,7 +42,7 @@ export const deB2P8: SkillExercise[] = [
       "sondern „Ich weiß nicht, worauf ich mich damit einlasse“.\n\n" +
       "Deshalb machen wir es dieses Mal anders. Wir haben die Arbeit des Vorstands in " +
       "sieben klar beschriebene Zuständigkeiten zerlegt, jede mit einer geschätzten " +
-      "Stundenzahl pro Monat. Die Kassenführung sind vier Stunden, die Pflege der " +
+      "Stundenzahl pro Monat. Die Kassenführung umfasst vier Stunden, die Pflege der " +
       "Internetseite zwei, die Organisation des Sommerfests zwölf — allerdings nur im Juni.\n\n" +
       "Niemand muss alles übernehmen. Wer eine einzige dieser Aufgaben übernimmt, " +
       "entlastet den Vorstand spürbar. Die vollständige Liste liegt diesem Brief bei.\n\n" +
@@ -90,7 +90,7 @@ export const deB2P8: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["vier", "4", "vier Stunden"],
-        explain: "„Die Kassenführung sind vier Stunden.“",
+        explain: "„Die Kassenführung umfasst vier Stunden.“",
       },
       {
         text: "Was will der letzte Satz sagen?",
@@ -198,7 +198,7 @@ export const deB2P8: SkillExercise[] = [
     skill: "writing",
     title: "Warum sich niemand meldet",
     genre: "essay",
-    intro: "Kısa bir deneme yazıyorsun: önce iki cümle kur, sonra bir yaygın açıklamayı sına ve kendi açıklamanı kur.",
+    intro: "Kısa bir deneme yazıyorsun: önce iki cümle kur, sonra yaygın bir açıklamayı sına ve kendi açıklamanı kur.",
     gloss: [
       { de: "die Annahme", tr: "varsayım", en: "assumption" },
       { de: "widerlegen", tr: "çürütmek", en: "to refute" },
@@ -236,7 +236,7 @@ export const deB2P8: SkillExercise[] = [
         phrases: [
           { de: "Die gängige Erklärung lautet, dass …", tr: "Yaygın açıklama şu: …", en: "The common explanation is that …" },
           { de: "Diese Annahme ist bequem, weil …", tr: "Bu varsayım rahat, çünkü …", en: "This assumption is convenient because …" },
-          { de: "Dagegen spricht allerdings, dass …", tr: "Buna karşı olan şey ise …", en: "However, what speaks against it is that …" },
+          { de: "Dagegen spricht allerdings, dass …", tr: "Ne var ki buna karşı şu söylenebilir: …", en: "However, what speaks against it is that …" },
           { de: "Plausibler erscheint mir, dass …", tr: "Bana daha inandırıcı gelen şey …", en: "It seems more plausible to me that …" },
           { de: "Zugegeben: …", tr: "Kabul etmek gerek: …", en: "Admittedly: …" },
         ],
@@ -310,7 +310,7 @@ export const deB2P8: SkillExercise[] = [
     course: "de",
     level: "B2",
     skill: "grammar",
-    title: "nach der Prüfung oder nachdem geprüft wurde?",
+    title: "Nach der Prüfung oder nachdem geprüft wurde?",
     genre: "grammar",
     intro: "Resmî Almanca fiilleri isimleştirir; aynı içeriği iki biçimde kurmayı ve aralarında geçmeyi öğren.",
     focus: "Adlaştırma ve fiilleştirme: Nominalstil ↔ Verbalstil",

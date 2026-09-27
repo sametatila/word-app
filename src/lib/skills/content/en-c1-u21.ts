@@ -61,7 +61,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "anywhere", tr: "başka yerde" },
       { de: "pair", tr: "çift" },
       { de: "a figure", tr: "rakam" },
-      { de: "a payslip", tr: "bordro" },
+      { de: "a pay stub", tr: "bordro" },
       { de: "a frame", tr: "çerçeve" },
       { de: "freely", tr: "serbestçe" },
       { de: "a dimension", tr: "boyut" },
@@ -88,7 +88,7 @@ export const enC1U21: SkillExercise[] = [
     minutes: 12,
     text:
       "In the press release it is a downturn; in the model, stagnation. One number, two rooms, and the real subject of this lesson is a phrase that is not in that sentence yet.\n" +
-      "„In nominal terms.“ Three words that can be put in front of any claim about money, and they change what the claim says without changing a single figure in it. Wages rose four percent in nominal terms and fell one percent in real terms, and both halves are true of the same payslip.\n" +
+      "„In nominal terms.“ Three words that can be put in front of any claim about money, and they change what the claim says without changing a single figure in it. Wages rose four percent in nominal terms and fell one percent in real terms, and both halves are true of the same pay stub.\n" +
       "This is a frame. English builds them freely: in terms of scale, in urban design terms, in real terms, in nominal terms, in legal terms. The dimension a claim is measured on gets named in a phrase, and the phrase can go wherever the writer wants it.\n" +
       "Where it goes is the whole of its usefulness. At the front it warns the reader before the claim arrives, so nothing has to be taken back. At the end it corrects a reader who has already believed something larger. The words are identical and the two sentences do different work.\n" +
       "German mostly does this another way. The dimension goes into an adjective built out of the noun, or into a compound, and the result is bound to one element of the sentence rather than floating in front of the whole clause. So a German reader usually meets the limitation attached to the word it limits, and an English reader meets it as a frame around everything.\n" +
@@ -98,7 +98,7 @@ export const enC1U21: SkillExercise[] = [
     questions: [
       {
         text: "What does the frame change?",
-        options: ["what the claim says", "the figure", "the payslip"],
+        options: ["what the claim says", "the figure", "the pay stub"],
         answer: 0,
         explain: "„they change what the claim says without changing a single figure in it.“",
       },
@@ -130,7 +130,7 @@ export const enC1U21: SkillExercise[] = [
         answer: 0,
         items: [
           "In the press release it is a downturn; in the model, stagnation.",
-          "Both halves are true of the same payslip.",
+          "Both halves are true of the same pay stub.",
           "A frame can be moved and an ending cannot.",
           "Deflation is a number; the business cycle is a story.",
         ],
@@ -192,7 +192,7 @@ export const enC1U21: SkillExercise[] = [
       "Look at what „buried“ is doing. It is a passive with nobody in it, in a sentence that is otherwise about people, and it is the right choice: burying is usually done by a procedure rather than by a person, and naming one person would make the sentence smaller than the problem.\n" +
       "The practical part of this vocabulary is short and it is about records rather than courage. Write the date. Keep a copy outside the building. Tell one person who is not in the chain, so that there is a witness to the fact that it was said and not only to what was said.\n" +
       "A leak to a newspaper is a last resort and it is protected in fewer countries than people think. An internal report with a date on it is protected in most of them, and it is the document that decides everything afterward.\n" +
-      "None of that is grammar. It is in this unit because the sentences above are the ones a person writes on the worst week of a working life, and they should be written well.",
+      "None of that is grammar. It is in this unit because the sentences above are the ones a person writes in the worst week of a working life, and they should be written well.",
     questions: [
       {
         text: "What is „complete“?",
@@ -260,7 +260,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "particular", tr: "belirli" },
       { de: "either", tr: "ikisinden biri" },
       { de: "defense", tr: "savunma" },
-      { de: "spent", tr: "harcadı" },
+      { de: "spent", tr: "harcanan" },
       { de: "proposed", tr: "önerilen" },
       { de: "a rate", tr: "faiz oranı" },
       { de: "the young", tr: "gençler" },

@@ -218,7 +218,7 @@ export const enB1U08: SkillExercise[] = [
         text: "Whose car is outside?",
         options: ["Nil's", "Ela's", "Can's"],
         answer: 0,
-        explain: "„that is the woman whose car is outside. The blue one with the broken light. — Nil.“",
+        explain: "„That is the woman whose car is outside. The blue one with the broken light. — Nil.“",
       },
       {
         kind: "truefalse",

@@ -42,12 +42,12 @@
  {
   "tr": "Boyun eğmek tartışmayı yitirmektir.",
   "kind": "build.tr",
-  "de": "Sich zu fügen heißt, das Argument zu verlieren."
+  "de": "Sich zu fügen heißt, die Auseinandersetzung zu verlieren."
  },
  {
   "tr": "Hukuk devleti olmasa bütünlük çökerdi.",
   "kind": "build.tr",
-  "de": "Wäre da nicht der Rechtsstaat, würde der Zusammenhalt scheitern."
+  "de": "Wäre da nicht der Rechtsstaat, würde der Zusammenhalt zerbrechen."
  },
  {
   "tr": "İfade biçimi pekâlâ yaşlı okurları ötekileştirebilir.",
@@ -55,7 +55,7 @@
   "de": "Die Formulierung dürfte ältere Leser durchaus ausgrenzen."
  },
  {
-  "tr": "Tam da vicdanlı sayılmazlar, öyle mi?",
+  "tr": "Tam da vicdanlı sayılmazlar, değil mi?",
   "kind": "build.tr",
   "de": "Nicht gerade gewissenhaft, oder?"
  },
@@ -100,7 +100,7 @@
   "de": "Die Echokammer ist eine Filterblase mit einem Namen."
  },
  {
-  "tr": "Pek de felaket tellallığı sayılmaz, öyle mi?",
+  "tr": "Pek de felaket tellallığı sayılmaz, değil mi?",
   "kind": "build.tr",
   "de": "Kaum Alarmismus, oder?"
  },
@@ -172,7 +172,7 @@
  {
   "tr": "Virgül „serve“in yerini tutuyor.",
   "kind": "build.hint",
-  "de": "Das Komma hält die Stelle von „serve“."
+  "de": "Das Komma vertritt „serve“."
  },
  {
   "tr": "Aynı kipin öteki yarısı: varsayım.",
@@ -197,7 +197,7 @@
  {
   "tr": "Dört katman; işe yarayan „expected“.",
   "kind": "build.hint",
-  "de": "Vier Schichten; die brauchbare ist „expected“."
+  "de": "Vier Schichten; die tragende ist „expected“."
  },
  {
   "tr": "İstek kipi: „grant“, „grants“ değil.",
@@ -292,7 +292,7 @@
  {
   "tr": "Olumsuzla söylenen olumlu; soru eki odaya devrediyor.",
   "kind": "build.hint",
-  "de": "Das Positive, verneint gesagt; das Frageanhängsel gibt es dem Raum weiter."
+  "de": "Das Positive, verneint gesagt; der Frageanhang gibt es dem Raum weiter."
  },
  {
   "tr": "Mastar özne olabiliyor; olumsuz biçim bir çıkarımı reddediyor.",

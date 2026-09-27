@@ -32,7 +32,7 @@ export const enB1P7: SkillExercise[] = [
       "Mert, 22, worked for eight months in a hotel kitchen. We asked him about the first weeks.\n\n" +
       "Q: What surprised you most?\n" +
       "A: How little training there was. I had one afternoon with the head chef and then I was " +
-      "on a shift. Everyone assumed I knew where things were, because asking three times looks " +
+      "on a shift. Everyone assumed I knew where things were, and I didn't want to ask, because asking three times looks " +
       "worse than getting it wrong once.\n\n" +
       "Q: So you didn't ask?\n" +
       "A: Not for the first month. I thought asking meant I wasn't good enough. " +
@@ -210,7 +210,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "supervisor", tr: "sorumlu" },
       { de: "to improve", tr: "geliştirmek" },
       { de: "responsibility", tr: "sorumluluk" },
-      { de: "packing", tr: "paketlemek" },
+      { de: "packing", tr: "paketleme" },
     ],
     minutes: 12,
     tasks: [

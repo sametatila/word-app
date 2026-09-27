@@ -109,7 +109,7 @@ export const enA2U14: SkillExercise[] = [
     minutes: 6,
     text:
       "Ela: Good morning. I'd like to send this package abroad.\n" +
-      "Clerk: Put it here, please. I weigh it first. Two kilos. Where to?\n" +
+      "Clerk: Put it here, please. I'll weigh it first. Two kilos. Where to?\n" +
       "Ela: To Italy.\n" +
       "Clerk: Normal or express? Express is faster, but it's more expensive.\n" +
       "Ela: How much more is express?\n" +
@@ -147,7 +147,7 @@ export const enA2U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„I weigh it first. Two kilos. Where to?“",
+        explain: "„I'll weigh it first. Two kilos. Where to?“",
       },
       {
         kind: "order",
@@ -155,7 +155,7 @@ export const enA2U14: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "I weigh it first.",
+          "I'll weigh it first.",
           "Normal or express?",
           "Then insure it.",
           "Fill out this form.",

@@ -57,7 +57,7 @@
  { "tr": "Sahip bir isimse sonuna 's eklenir.", "kind": "explain", "de": "Ist der Besitzer ein Nomen, wird 's angehängt." },
  { "tr": "Yoksa dar sürüm kazara kalıcı olur.", "kind": "explain", "de": "Sonst wird die enge Fassung versehentlich dauerhaft." },
  { "tr": "„draw attention to“ kalıbı sabittir.", "kind": "explain", "de": "Die Fügung „draw attention to“ ist fest." },
- { "tr": "„have got“ olumsuzu haven't got'tur.", "kind": "explain", "de": "Die Verneinung von „have got“ ist haven't got." },
+ { "tr": "„have got“ yapısının olumsuzu haven't got'tur.", "kind": "explain", "de": "Die Verneinung von „have got“ ist haven't got." },
  { "tr": "Bekledin ama gerek yoktu: needn't have.", "kind": "explain", "de": "Du hast gewartet, aber es war nicht nötig: needn't have." },
  { "tr": "Belirleyiciden sonra isim düşebilir.", "kind": "explain", "de": "Nach dem Determinativ kann das Nomen entfallen." },
  { "tr": "Edattan sonra nesne biçimi: for him.", "kind": "explain", "de": "Nach der Präposition die Objektform: for him." },
@@ -117,5 +117,6 @@
  { "tr": "„must“ geçmişte kullanılmaz; had to gelir.", "kind": "explain", "de": "„must“ wird nicht in der Vergangenheit verwendet; es steht had to." },
  { "tr": "„sometimes“ cümlenin başında da durabilir.", "kind": "explain", "de": "„sometimes“ kann auch am Satzanfang stehen." },
  { "tr": "„unless“ tek başına „if not“ anlamı taşır.", "kind": "explain", "de": "„unless“ trägt allein die Bedeutung „if not“." },
- { "tr": "Arkasından özne ve fiil geliyor: although.", "kind": "explain", "de": "Es folgen Subjekt und Verb: although." }
+ { "tr": "Arkasından özne ve fiil geliyor: although.", "kind": "explain", "de": "Es folgen Subjekt und Verb: although." },
+ { "tr": "yaşamını sürdürüyor", "kind": "gloss.tr", "de": "überlebt" }
 ]

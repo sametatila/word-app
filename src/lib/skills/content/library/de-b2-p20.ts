@@ -147,7 +147,7 @@ export const deB2P20: SkillExercise[] = [
           "dass der Service zu langsam war",
         ],
         answer: 1,
-        explain: "Aşçılar da aynı derecede çalışıyor ama bahşiş neredeyse yalnız servise gidiyormuş.",
+        explain: "Aşçılar da aynı ölçüde sıkı çalışıyor ama bahşiş neredeyse yalnız servise gidiyormuş.",
       },
       {
         kind: "gapfill",
@@ -241,7 +241,7 @@ export const deB2P20: SkillExercise[] = [
         phrases: [
           { de: "Ich schreibe Ihnen im Namen des …, weil …", tr: "… adına yazıyorum, çünkü …", en: "I am writing to you on behalf of the … because …" },
           { de: "Seit …, landet ein großer Teil des …", tr: "…'den beri …'in büyük kısmı … gidiyor.", en: "Since …, a large part of the … ends up …" },
-          { de: "Deshalb hätten wir einige Fragen: …", tr: "Bu yüzden birkaç sorumuz olacak: …", en: "That is why we would have a few questions: …" },
+          { de: "Deshalb hätten wir einige Fragen: …", tr: "Bu yüzden birkaç sorumuz olacak: …", en: "That is why we have a few questions: …" },
           { de: "Unser Vorschlag wäre, …", tr: "Önerimiz … olurdu.", en: "Our suggestion would be …" },
           { de: "Wir würden uns freuen, …", tr: "… seviniriz.", en: "We would be glad …" },
         ],

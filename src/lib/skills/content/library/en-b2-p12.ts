@@ -26,13 +26,13 @@ export const enB2P12: SkillExercise[] = [
       { de: "slot", tr: "randevu saati" },
       { de: "forgetfulness", tr: "unutkanlık" },
       { de: "on hold", tr: "hatta beklerken" },
-      { de: "school run", tr: "okula götürme" },
+      { de: "school drop-off", tr: "okula bırakma" },
       { de: "to rebook", tr: "yeniden randevu vermek" },
       { de: "to release", tr: "boşaltmak" },
       { de: "caution", tr: "uyarı" },
       { de: "to struggle", tr: "zorlanmak" },
       { de: "to deserve", tr: "hak etmek" },
-      { de: "stretched", tr: "uzamak" },
+      { de: "stretched", tr: "uzamış" },
       { de: "explanation", tr: "açıklama" },
     ],
     minutes: 8,
@@ -44,13 +44,13 @@ export const enB2P12: SkillExercise[] = [
       "The usual explanation is forgetfulness, and reminders have been sent by text since 2019. " +
       "They help, but less than expected. When we phoned a sample of four hundred patients who " +
       "had missed an appointment, only a quarter said they had simply forgotten.\n\n" +
-      "The largest group, almost forty percent, had tried to cancel. Most had rung during the " +
+      "The largest group, almost forty percent, had tried to cancel. Most had called during the " +
       "morning, when the lines are busiest, and given up after several minutes on hold. " +
       "In other words, many of the appointments recorded as missed should have been recorded " +
       "as canceled, and could have been offered to another patient if canceling had been " +
       "easier.\n\n" +
       "A second group had been given a time they could not realistically attend: an early slot " +
-      "for a parent on the school run, or an appointment that had been moved without their " +
+      "for a parent doing the school drop-off, or an appointment that had been moved without their " +
       "knowledge. Several said they had never been told about the change at all.\n\n" +
       "Two changes are now being tested. Patients can cancel by replying to the reminder with " +
       "a single word, and appointments that are rebooked by the clinic must be confirmed by the " +
@@ -306,7 +306,7 @@ export const enB2P12: SkillExercise[] = [
         "or they were given a time they could never have made, or their week had simply fallen " +
         "apart. " +
         "The people it would hit hardest are exactly the ones a clinic ought to worry about most: " +
-        "people with unpredictable shifts, carers, and people who are unwell in ways that make " +
+        "people with unpredictable shifts, caregivers, and people who are unwell in ways that make " +
         "planning difficult. " +
         "What would work better, I think, is making canceling as easy as booking. If a patient " +
         "can cancel with one word in a text message, a lot of the missed slots become freed " +

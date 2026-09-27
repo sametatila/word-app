@@ -135,7 +135,7 @@ export const b2U23: SkillExercise[] = [
       "Perfektionismus wird oft als Tugend verkauft, im Bewerbungsgespräch sogar als hübsche Schwäche. Er ist keine. Er ist eine teure Angewohnheit, und sie kostet vor allem Zeit an den falschen Stellen.\n\n" +
       "Der Mechanismus ist einfach. Ich tue so, als ob jede Aufgabe gleich gut erledigt werden müsste. Also verwende ich auf eine interne Notiz dieselbe Sorgfalt wie auf einen Vertrag. Am Ende sind beide fertig, aber der Vertrag zu spät.\n\n" +
       "Dahinter steckt selten Ehrgeiz. Häufiger steckt dahinter ein Selbstwertgefühl, das an Ergebnisse gekoppelt ist: Wer schlecht abschneidet, fühlt sich nicht wie jemand, der schlecht abgeschnitten hat, sondern wie jemand, der weniger wert ist. Deshalb wächst mit dem Leistungsdruck auch das Schuldgefühl bei jeder Kleinigkeit.\n\n" +
-      "Zwei Missverständnisse gehören dazu. Erstens wird Perfektionismus mit hohen Ansprüchen verwechselt. Hohe Ansprüche richten sich auf das Wichtige; Perfektionismus verteilt sie gleichmäßig, und das ist genau der Fehler. Zweitens wird er mit Bescheidenheit verwechselt, weil beide leise auftreten — dabei ist das eine Genügsamkeit und das andere Angst.\n\n" +
+      "Zwei Missverständnisse gehören dazu. Erstens wird Perfektionismus mit hohen Ansprüchen verwechselt. Hohe Ansprüche richten sich auf das Wichtige; Perfektionismus verteilt sie gleichmäßig, und das ist genau der Fehler. Zweitens wird er mit Bescheidenheit verwechselt, weil beide leise auftreten — dabei ist das eine Angst und das andere Genügsamkeit.\n\n" +
       "Was hilft? Vor jeder Aufgabe eine Sekunde für die Frage: Wie gut muss das sein? Nicht: Wie gut kann ich das? Dazu ein Zeitlimit, das vorher gesetzt wird. Und die Bereitschaft, etwas bewusst mittelmäßig abzugeben, um zu erleben, dass nichts passiert.\n\n" +
       "Das Lampenfieber vor der ersten mittelmäßigen Abgabe ist übrigens echt. Es geht nach der dritten weg. Wer sich dagegen dauerhaft aufopfert, wird nicht besser, sondern nur empfindlicher — und Empfindlichkeit macht die nächste Rückmeldung noch schwerer.",
     questions: [
@@ -385,7 +385,7 @@ export const b2U23: SkillExercise[] = [
           "Könnten Sie mir die Zahlen bis morgen zusenden",
           "Wir wären Ihnen dankbar, wenn Sie uns die Zahlen bis morgen zusenden könnten.",
         ],
-        why: "Konjunktiv II burada talebi zayıflatmıyor, onu müzakereye açıyor: karşı taraf 'yarın olmaz, öbür gün olur' diyebiliyor. Tarih ve içerik aynen duruyor, değişen tek şey cevabın da mümkün hale gelmesi. Türkçedeki '-ebilir misiniz' aynı işi görür.",
+        why: "Konjunktiv II burada talebi zayıflatmıyor, onu müzakereye açıyor: karşı taraf 'yarın olmaz, öbür gün olur' diyebiliyor. Tarih ve içerik aynen duruyor, değişen tek şey cevabın da mümkün hâle gelmesi. Türkçedeki '-ebilir misiniz' aynı işi görür.",
       },
     ],
   },
@@ -423,7 +423,7 @@ export const b2U23: SkillExercise[] = [
         minWords: 80,
         phrases: [
           { de: "Könnten Sie uns mitteilen, ob …", tr: "… olup olmadığını bildirebilir misiniz", en: "could you let us know whether …" },
-          { de: "Wir wären Ihnen dankbar, wenn …", tr: "… için minnettar oluruz", en: "we would be grateful if …" },
+          { de: "Wir wären Ihnen dankbar, wenn …", tr: "…rseniz size minnettar oluruz", en: "we would be grateful if …" },
           { de: "Als Anlage erhalten Sie …", tr: "ekte … bulacaksınız", en: "please find enclosed …" },
         ],
         sample:

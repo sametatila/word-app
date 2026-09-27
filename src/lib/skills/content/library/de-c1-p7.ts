@@ -205,7 +205,7 @@ export const deC1P7: SkillExercise[] = [
     gloss: [
       { de: "das Verfahren", tr: "süreç", en: "procedure" },
       { de: "der Einwand", tr: "itiraz", en: "objection" },
-      { de: "die Auslegung", tr: "askıya çıkarma", en: "public display" },
+      { de: "die Auslegung", tr: "askıya çıkarma", en: "public inspection" },
       { de: "die Begründung", tr: "gerekçe", en: "justification" },
       { de: "die Maßnahme", tr: "önlem", en: "measure" },
     ],
@@ -237,8 +237,8 @@ export const deC1P7: SkillExercise[] = [
         ],
         minWords: 150,
         phrases: [
-          { de: "Im Rahmen der Auslegung vom … erhebe ich folgenden Einwand:", tr: "… tarihli askı süresi kapsamında şu itirazı yapıyorum:", en: "Within the public display from …, I raise the following objection:" },
-          { de: "Ausdrücklich begrüße ich, dass …", tr: "… olmasını açıkça olumlu buluyorum", en: "I expressly welcome that …" },
+          { de: "Im Rahmen der Auslegung vom … erhebe ich folgenden Einwand:", tr: "… tarihli askı süresi kapsamında şu itirazı yapıyorum:", en: "During the public inspection period of …, I raise the following objection:" },
+          { de: "Ausdrücklich begrüße ich, dass …", tr: "… olmasını açıkça olumlu buluyorum", en: "I expressly welcome the fact that …" },
           { de: "Mein Einwand beschränkt sich auf …", tr: "İtirazım yalnız … ile sınırlı", en: "My objection is limited to …" },
           { de: "Dem könnte entgegengehalten werden, dass …", tr: "Buna … diye karşı çıkılabilir", en: "It could be objected that …" },
           { de: "Ich beantrage daher, …", tr: "Bu yüzden … talep ediyorum", en: "I therefore request that …" },

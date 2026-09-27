@@ -30,9 +30,9 @@
   "de": "Geldbörse verloren; Straßenbahn Linie zwei; gegen sechs Uhr; darin Ausweis und zwanzig Euro."
  },
  {
-  "tr": "Soyadı Yılmaz; doğum tarihi üç haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
+  "tr": "Soyadı Yılmaz; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
   "kind": "form.facts",
-  "de": "Nachname Yılmaz; Geburtsdatum dritter Juni; Geburtsort Bursa; Adresse Garden Street einundvierzig."
+  "de": "Nachname Yılmaz; Geburtsdatum 3. Juni; Geburtsort Bursa; Adresse Garden Street einundvierzig."
  },
  {
   "tr": "Sonra dilini seç.",
@@ -282,7 +282,7 @@
  {
   "tr": "Kurumda „I'd like“; „register“ kayıt yaptırmak demek.",
   "kind": "build.hint",
-  "de": "In der Behörde „I'd like“; „register“ heißt sich anmelden."
+  "de": "Bei der Behörde „I'd like“; „register“ heißt sich anmelden."
  },
  {
   "tr": "Şikâyet „make“ ile kuruluyor; „do a complaint“ olmaz.",
@@ -345,9 +345,9 @@
   "de": "In der indirekten Frage wird die Stellung gerade: „where the counter is“. Deutsch schiebt das Verb ans Ende."
  },
  {
-  "tr": "„at about“ yaklaşık saat demek; „about“ tek başına „hakkında“ olurdu.",
+  "tr": "„at about“ yaklaşık saat demek; „at“ saati, „about“ yaklaşıklığı veriyor.",
   "kind": "build.hint",
-  "de": "„at about“ heißt ungefähr um; „about“ allein hieße „über“."
+  "de": "„at about“ heißt ungefähr um; „at“ gibt die Uhrzeit an, „about“ macht sie ungefähr."
  },
  {
   "tr": "Kopya „make“ ile alınıyor; „take a copy“ İngilizcede alışılmış değil.",

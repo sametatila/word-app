@@ -55,12 +55,12 @@ export const enA2U16: SkillExercise[] = [
       "Hotel: Fourth and fifth. We have a room on the second floor.\n" +
       "Ela: Does the price include breakfast?\n" +
       "Hotel: Yes, from seven to ten. But the parking is extra: eight euros a night.\n" +
-      "Ela: We come by train, so no parking. Are there any rooms with a balcony?\n" +
+      "Ela: We're coming by train, so no parking. Are there any rooms with a balcony?\n" +
       "Hotel: On the second floor, no. On the fourth there are two, but they cost fifteen euros more.\n" +
       "Ela: Then the second floor is fine. How much is it for everything?\n" +
       "Hotel: A hundred and forty for two nights, with breakfast.\n" +
       "Ela: Could I have a room away from the street?\n" +
-      "Hotel: I write it here. I can't promise, but usually it works.\n" +
+      "Hotel: I'll write it down. I can't promise, but usually it works.\n" +
       "Ela: Thank you. Could you confirm it by email?\n" +
       "Hotel: Of course. What is your address?",
     questions: [
@@ -74,7 +74,7 @@ export const enA2U16: SkillExercise[] = [
         text: "Why does Ela not want parking?",
         options: ["they come by train", "it is too expensive", "the hotel has no parking"],
         answer: 0,
-        explain: "„We come by train, so no parking.“",
+        explain: "„We're coming by train, so no parking.“",
       },
       {
         kind: "truefalse",
@@ -119,10 +119,10 @@ export const enA2U16: SkillExercise[] = [
     minutes: 5,
     text:
       "Before the gate\n" +
-      "Put your bag on the belt. Big luggage goes at the desk, small bags go with you. Water is not allowed after this point — drink it or leave it here.\n" +
+      "Put your bag on the belt. Big luggage is checked at the desk, small bags go with you. Water is not allowed after this point — drink it or leave it here.\n" +
       "At the gate you have to show your boarding pass and your passport. Both. Every time.\n" +
-      "Boarding starts forty minutes before the flight. If there is a delay, you see it on the screen in the terminal, not on your phone. The screen is always first.\n" +
-      "In the plane: bag under the seat or above you, phone off, seat belt on until the light is off.\n" +
+      "Boarding starts forty minutes before the flight. If there is a delay, you'll see it on the screen in the terminal, not on your phone. The screen is always first.\n" +
+      "On the plane: bag under the seat or above you, phone off, seat belt on until the light is off.\n" +
       "We land at ten past two. Local time is one hour later than here.\n" +
       "If you have any questions, ask at the desk before the gate. After the gate there is nobody.",
     questions: [
@@ -136,7 +136,7 @@ export const enA2U16: SkillExercise[] = [
         text: "Where do you see a delay?",
         options: ["on the screen in the terminal", "on your phone", "at the gate"],
         answer: 0,
-        explain: "„…you see it on the screen in the terminal, not on your phone.“",
+        explain: "„…you'll see it on the screen in the terminal, not on your phone.“",
       },
       {
         kind: "truefalse",
@@ -334,7 +334,7 @@ export const enA2U16: SkillExercise[] = [
       { de: "book a room", tr: "oda ayırtmak" },
       { de: "include", tr: "içermek" },
       { de: "any towels", tr: "hiç havlu" },
-      { de: "the fourth of May", tr: "dört mayıs" },
+      { de: "the fourth of May", tr: "4 Mayıs" },
     ],
     minutes: 7,
     tasks: [
@@ -367,7 +367,7 @@ export const enA2U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Rezervasyon kartını doldur.",
-        facts: "Çift kişilik oda; iki gece; dört mayıstan; kahvaltı dâhil; toplam yüz kırk euro.",
+        facts: "Çift kişilik oda; iki gece; 4 Mayıs'tan; kahvaltı dâhil; toplam yüz kırk euro.",
         fields: [
           { label: "Room", answer: "a double room", accept: ["double"] },
           { label: "Nights", answer: "two", accept: ["2"] },
@@ -410,7 +410,7 @@ export const enA2U16: SkillExercise[] = [
         tr: "Bankanın karşısında.",
         answer: "It's opposite the bank.",
         alternatives: ["It is opposite the bank."],
-        hint: "„opposite“ önüne edat almıyor: „opposite to“ olmaz.",
+        hint: "„opposite“ ardından edat almıyor: „opposite to“ olmaz.",
       },
       {
         kind: "build",

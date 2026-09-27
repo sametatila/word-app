@@ -186,7 +186,7 @@ export const deB1P14: SkillExercise[] = [
       { de: "die Hausverwaltung", tr: "bina yönetimi", en: "property management" },
       { de: "der Sonnenschutz", tr: "güneşlik", en: "sun protection" },
       { de: "die Erlaubnis", tr: "izin", en: "permission" },
-      { de: "anbringen", tr: "takmak", en: "to fit" },
+      { de: "anbringen", tr: "takmak", en: "to install" },
       { de: "die Hälfte", tr: "yarı", en: "half" },
     ],
     minutes: 12,

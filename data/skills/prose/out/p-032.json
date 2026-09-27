@@ -122,7 +122,7 @@
  {
   "tr": "Apartmandaki komşular anlatılıyor. Kim hangi katta, nasıl biri?",
   "kind": "intro",
-  "en": "The neighbors in the house are described. Who lives on which floor, and what are they like?"
+  "en": "The neighbors in the building are described. Who lives on which floor, and what are they like?"
  },
  {
   "tr": "Kira ve faturalar anlatılıyor. Hangi fatura ne zaman, ne kadar?",
@@ -232,7 +232,7 @@
  {
   "tr": "Varoluş cümlesini yaz. Yapı iki parçalı ve arkadaki isme göre tekil/çoğul seçiyor.",
   "kind": "intro",
-  "en": "Write the existence sentence. The structure has two parts and follows the noun behind it."
+  "en": "Write the existence sentence. The structure has two parts and is singular or plural depending on the noun after it."
  },
  {
   "tr": "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
@@ -267,7 +267,7 @@
  {
   "tr": "Hobi ve spor yaz. Top oyunları „play“ ile, tek başına yapılanlar „go“ + „-ing“ ile geliyor.",
   "kind": "intro",
-  "en": "Write about hobby and sport. Ball games take „play“, things done on your own take „go“ + „-ing“."
+  "en": "Write about hobbies and sports. Ball games take „play“, things done on your own take „go“ + „-ing“."
  },
  {
   "tr": "„an apartment on the second floor, with three rooms“ — iki yatak odasının sayısı, dört sandalyenin.",

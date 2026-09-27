@@ -25,7 +25,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "electricity", tr: "elektrik" },
       { de: "physics", tr: "fizik" },
       { de: "measure", tr: "ölçmek" },
-      { de: "upwards", tr: "yukarı doğru" },
+      { de: "upward", tr: "yukarı doğru" },
       { de: "cover", tr: "kapak" },
       { de: "waste", tr: "israf etmek" },
       { de: "engineer", tr: "mühendis" },
@@ -41,7 +41,7 @@ export const enB1P2: SkillExercise[] = [
       "sky, they draw six or seven stars,” says Kari Lund, who teaches physics. “That is what they see. " +
       "If they lived thirty kilometers from here, they would draw hundreds.”\n\n" +
       "The evening was not only about stars. Two engineers from the council used the time to measure how much " +
-      "light the town sends upwards. Their first result: about a third of it does not light anything at all. " +
+      "light the town sends upward. Their first result: about a third of it does not light anything at all. " +
       "It goes past the road and into the sky, because the lamps are old and have no cover on top.\n\n" +
       "“If we changed those lamps, we would use less electricity and see more sky,” said one of them. " +
       "“The problem is that nobody notices the light we waste. You cannot see what is missing.”\n\n" +
@@ -66,7 +66,7 @@ export const enB1P2: SkillExercise[] = [
           "how bright the stars above the town are",
         ],
         answer: 0,
-        explain: "„… used the time to measure how much light the town sends upwards.“",
+        explain: "„… used the time to measure how much light the town sends upward.“",
       },
       {
         kind: "truefalse",
@@ -228,7 +228,7 @@ export const enB1P2: SkillExercise[] = [
         stimulus:
           "Proposal for the owners' meeting: we want to open the roof as a shared terrace. Estimated cost: " +
           "twenty-four thousand euros for the railing, the door and the floor, shared between the twelve apartments. " +
-          "Please write your opinion before the thirtieth of April.",
+          "Please write your opinion before April 30.",
         checklist: [
           "Tutumunu ilk cümlede söyle",
           "İki gerekçe ver ve birini örnekle",
@@ -237,7 +237,7 @@ export const enB1P2: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "I am in favor, but …", tr: "Yanayım, ama …" },
+          { de: "I am in favor, but …", tr: "Bu fikirden yanayım ama …" },
           { de: "Two reasons first.", tr: "Önce iki gerekçe." },
           { de: "My condition is …", tr: "Şartım şu: …" },
           { de: "I also accept the objection about …", tr: "… ile ilgili itirazı da kabul ediyorum" },
@@ -245,7 +245,7 @@ export const enB1P2: SkillExercise[] = [
         ],
         sample:
           "I am in favor, but only with one condition. Two reasons first. If we open the roof, the building gets " +
-          "a real common space for the first time; at the moment the only place we meet is the letter boxes. " +
+          "a real common space for the first time; at the moment the only place we meet is the mailboxes. " +
           "And a terrace is worth more than a new front door, both for us now and if somebody sells later. " +
           "My condition is the noise. If there are no times written down, the apartments on the top floor will pay " +
           "for everybody's summer. I would put quiet hours from ten at night in the same paper as the costs. " +

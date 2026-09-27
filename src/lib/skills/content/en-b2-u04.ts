@@ -489,7 +489,7 @@ export const enB2U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Hüküm hükümsüz olsaydı dururduk.",
+        tr: "Madde hükümsüz olsaydı dururduk.",
         answer: "If the clause had been void, we would have stopped.",
         hint: "Yine kapalı: durma kararı o haftaya aitti.",
       },

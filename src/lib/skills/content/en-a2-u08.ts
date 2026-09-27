@@ -50,7 +50,7 @@ export const enA2U08: SkillExercise[] = [
       "Can: The last time they asked me about my old job and I said nothing good. I was so stressed.\n" +
       "Nil: And what happened?\n" +
       "Can: They said no. I was disappointed for a week.\n" +
-      "Nil: This time you are better. You know the company and you have more experience.\n" +
+      "Nil: This time you are better prepared. You know the company and you have more experience.\n" +
       "Can: Maybe. But I'm worried about the money question. What do I say?\n" +
       "Nil: Say a number, not a story. And breathe before you answer.\n" +
       "Can: You are always so relaxed. How do you do it?\n" +
@@ -115,7 +115,7 @@ export const enA2U08: SkillExercise[] = [
     text:
       "We looked at four apartments in two weeks. The first one was cheap, but it was on the first floor and very dark.\n" +
       "The second had a beautiful balcony, but the rent was eight hundred euros. Too much for us.\n" +
-      "The third one was in an old building. The rooms were spacious and bright, the ceiling was high.\n" +
+      "The third one was in an old building. The rooms were spacious and bright, and the ceiling was high.\n" +
       "But the ad said \"furnished\" and there was only a bed and a table.\n" +
       "The fourth apartment was small. The rooms were normal and the kitchen was old.\n" +
       "But it was quiet, the neighbors were friendly and the deposit was only one month.\n" +
@@ -209,7 +209,7 @@ export const enA2U08: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "When did the fever go?",
+        text: "When did the fever go away?",
         options: ["on Tuesday", "on Friday", "on Monday"],
         answer: 0,
         explain: "„Gone since Tuesday.“ — cuma soğuk algınlığının başlangıcı.",
@@ -410,7 +410,7 @@ export const enA2U08: SkillExercise[] = [
         kind: "build",
         tr: "Manzarası güzel bir balkonu var.",
         answer: "It has a balcony with a great view.",
-        hint: "Ayrıntıyı „with“ ekliyor; Türkçede sıfat-fiil olan yer İngilizcede edat.",
+        hint: "Ayrıntıyı „with“ ekliyor; Türkçede sıfat öbeği olan yer İngilizcede edatla kuruluyor.",
       },
       {
         kind: "build",

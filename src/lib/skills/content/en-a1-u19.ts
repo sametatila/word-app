@@ -46,7 +46,7 @@ export const enA1U19: SkillExercise[] = [
       "Ela: Tomorrow is good. What movie?\n" +
       "Can: A story about a music band in the sixties. The stars are very good.\n" +
       "Ela: I like music movies! Is there a ticket for me?\n" +
-      "Can: Yes, I buy two tickets. Let's go together at eight.\n" +
+      "Can: Yes, I'm going to buy two tickets. Let's go together at eight.\n" +
       "Ela: Good. How's the weather tomorrow?\n" +
       "Can: Cold and windy, I think. Maybe rain.\n" +
       "Ela: Then the movie theater is perfect. In the park it is too cold now.\n" +
@@ -74,11 +74,11 @@ export const enA1U19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Can buys two ___.",
+        text: "Can is going to buy two ___.",
         options: [],
         answer: 0,
         accept: ["tickets"],
-        explain: "„Yes, I buy two tickets.“",
+        explain: "„Yes, I'm going to buy two tickets.“",
       },
       {
         kind: "short_answer",
@@ -102,6 +102,7 @@ export const enA1U19: SkillExercise[] = [
     gloss: [
       { de: "winter", tr: "kış" },
       { de: "playground", tr: "oyun parkı" },
+      { de: "frozen", tr: "donmuş" },
       { de: "grass", tr: "çimen" },
     ],
     minutes: 4,
@@ -109,7 +110,7 @@ export const enA1U19: SkillExercise[] = [
       "On Sunday we go to the park. There is a big playground for children and there are many trees.\n\n" +
       "There is a lake with two boats. My son plays with a ball on the grass. Our dog runs everywhere.\n\n" +
       "Is there a café in the park? Yes, next to the lake. In the sun we sit outside and listen to music.\n\n" +
-      "Today it is sunny, but yesterday it was cold and there was rain. In the winter there is snow here and the lake is hard. Then the children play on the lake — but that is not for me!",
+      "Today it is sunny, but yesterday it was cold and there was rain. In the winter there is snow here and the lake is frozen. Then the children play on the lake — but that is not for me!",
     questions: [
       {
         text: "What is next to the lake?",
@@ -136,7 +137,7 @@ export const enA1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["snow"],
-        explain: "„In the winter there is snow here and the lake is hard.“",
+        explain: "„In the winter there is snow here and the lake is frozen.“",
       },
       {
         kind: "short_answer",

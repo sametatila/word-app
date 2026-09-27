@@ -266,7 +266,7 @@ export const enA1U03: SkillExercise[] = [
         text: "Who makes the cake?",
         options: ["her mother", "her father", "her grandma"],
         answer: 0,
-        explain: "„My mother makes a big cake.“ Baba keke adı yazıyor, yapan anne.",
+        explain: "„My mother makes a big cake.“ Baba pastaya adı yazıyor, yapan anne.",
       },
       {
         kind: "truefalse",
@@ -294,7 +294,7 @@ export const enA1U03: SkillExercise[] = [
           "My grandma and my grandpa are here.",
           "My family says: happy birthday, Ela!",
         ],
-        explain: "Önce gün, sonra kek, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
+        explain: "Önce gün, sonra pasta, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
       },
       {
         kind: "short_answer",

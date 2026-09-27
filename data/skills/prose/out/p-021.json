@@ -65,9 +65,9 @@
   "en": "„Herzlich willkommen im Möbelhaus Nord“ — the kitchen advice and the pick-up point for large furniture show it too."
  },
  {
-  "tr": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — takas, satış ya da üyelik değil.",
+  "tr": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — yani takas; satış ya da üyelik değil.",
   "kind": "explain",
-  "en": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — an exchange, not a sale or a membership."
+  "en": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — so an exchange; not a sale or a membership."
  },
  {
   "tr": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — memnun ama kusursuz değil.",
@@ -87,7 +87,7 @@
  {
   "tr": "Ayakkabı tamircisi telesekretere mesaj bırakıyor: ne yapıldı, ne kadar tuttu, ne getirmek gerekiyor.",
   "kind": "intro",
-  "en": "A shoe repairer leaves a message on the answerphone: what was done, what it cost, what has to be brought."
+  "en": "A shoe repairer leaves a message on the answering machine: what was done, what it cost, what has to be brought."
  },
  {
   "tr": "Basit bir çorba tarifi okuyacaksın: neler gerekiyor, hangi sırayla yapılıyor, sonunda ne öneriliyor.",
@@ -177,7 +177,7 @@
  {
   "tr": "Belediyenin görüşe açtığı bir öneriye resmî yanıt yazacaksın; önce iki cümle kur, sonra görüşünü yaz.",
   "kind": "intro",
-  "en": "You are going to write a formal reply to a council proposal put out for comment; first form two sentences, then your view."
+  "en": "You are going to write a formal reply to a city proposal put out for comment; first form two sentences, then your view."
  },
  {
   "tr": "Bir aksaklığın nedenini araştıran kısa bir iç rapor yazacaksın; önce iki cümle kur, sonra raporu yaz.",
@@ -607,7 +607,7 @@
  {
   "tr": "Jonas telesekretere mesaj bırakıyor: anahtar nerede, köpeğe ne zaman bakılacak, sorun olursa ne yapılacak.",
   "kind": "intro",
-  "en": "Jonas leaves a message on the answerphone: where the key is, when the dog has to be seen to, what to do if there is a problem."
+  "en": "Jonas leaves a message on the answering machine: where the key is, when the dog has to be seen to, what to do if there is a problem."
  },
  {
   "tr": "Kayıt \"Yoga classes are on Tuesday and Thursday evenings at seven\" diyor; yoga salı ve perşembe akşamları.",
@@ -702,7 +702,7 @@
  {
   "tr": "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",
   "kind": "intro",
-  "en": "You are going to hear the closing announcement in a museum: which floor shuts first, how long the shop stays open, what is on tomorrow."
+  "en": "You are going to hear the closing announcement in a museum: which floor shuts first, how long the store stays open, what is on tomorrow."
  },
  {
   "tr": "Not şöyle: \"We don't have Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var.",

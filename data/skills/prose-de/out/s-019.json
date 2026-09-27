@@ -257,7 +257,7 @@
  {
   "tr": "„Any milk? — No milk, thank you.“ Soruda „any“, cevapta yok.",
   "kind": "explain",
-  "de": "„Any milk? — No milk, thank you.“ In der Frage „any“, in der Antwort nichts."
+  "de": "„Any milk? — No milk, thank you.“ In der Frage „any“, in der Antwort nicht."
  },
  {
   "tr": "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
@@ -373,11 +373,6 @@
   "tr": "çok",
   "kind": "gloss.tr",
   "de": "sehr"
- },
- {
-  "tr": "bilmek",
-  "kind": "gloss.tr",
-  "de": "wissen"
  },
  {
   "tr": "benzemek",

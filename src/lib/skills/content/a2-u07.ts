@@ -37,7 +37,7 @@ export const a2U07: SkillExercise[] = [
       { de: "der Hustensaft", tr: "öksürük şurubu", en: "cough syrup" },
       { de: "die Augentropfen", tr: "göz damlası", en: "eye drops" },
       { de: "die Schlaftablette", tr: "uyku hapı", en: "sleeping pill" },
-      { de: "die Packung", tr: "paket", en: "packet" },
+      { de: "die Packung", tr: "paket", en: "package" },
       { de: "die Tube", tr: "tüp", en: "tube" },
       { de: "schlucken", tr: "yutmak", en: "to swallow" },
       { de: "die Kopfschmerzen", tr: "baş ağrısı", en: "headache" },
@@ -354,7 +354,7 @@ export const a2U07: SkillExercise[] = [
         phrases: [
           { de: "Im Anhang finden Sie …", tr: "ekte … bulacaksınız", en: "please find … attached" },
           { de: "Können Sie mir bitte bestätigen, dass …", tr: "…-i teyit edebilir misiniz", en: "could you please confirm that …" },
-          { de: "Mit freundlichen Grüßen", tr: "saygılarımla", en: "kind regards" },
+          { de: "Mit freundlichen Grüßen", tr: "saygılarımla", en: "sincerely" },
         ],
         sample:
           "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihren Bescheid vom 3. November.\n\nIm Anhang finden Sie eine Kopie meines Arbeitsvertrags. Ich hoffe, das Dokument reicht so.\n\nKönnen Sie mir bitte bestätigen, dass meine alte Karte wirklich bis zum 31. Dezember gültig ist? Ich habe im Januar einen Termin beim Zahnarzt und möchte sicher sein, dass alles in Ordnung ist.\n\nIst für die Zahnbehandlung noch etwas anderes notwendig?\n\nMit freundlichen Grüßen\nAyşe Demir",

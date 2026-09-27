@@ -41,14 +41,14 @@ export const b1U03: SkillExercise[] = [
       "In den meisten Verträgen steht eine Frist von vier Wochen zum Monatsende. " +
       "Wenn Sie am Zehnten kündigen, endet das Verhältnis nicht am Zehnten. " +
       "Es endet erst am Ende des nächsten Monats.\n\n" +
-      "Die Form ist einfach, aber wichtig: eine Kündigung muss schriftlich sein. " +
+      "Die Form ist einfach, aber wichtig: Eine Kündigung muss schriftlich sein. " +
       "Eine Mail reicht nicht; nötig ist ein Brief mit Unterschrift. " +
       "Schreiben Sie kurz, ohne Sorge und ohne böse Worte. Der Grund muss nicht im Brief stehen.\n\n" +
-      "Zusätzlich sollten Sie ein gutes Verhältnis haben. Sie brauchen später vielleicht " +
+      "Zusätzlich sollten Sie ein gutes Verhältnis zur Firma behalten. Sie brauchen später vielleicht " +
       "einen Kontakt in dieser Branche, und die Welt ist klein. " +
       "Fragen Sie auch nach einem Zeugnis, denn das ist Ihr Recht.\n\n" +
       "Anders ist es, wenn die Firma Sie entlässt. Dann gelten andere Bedingungen und Sie " +
-      "sollten sich sofort melden, weil Sie sonst Geld verlieren.",
+      "sollten sich sofort beim Arbeitsamt melden, weil Sie sonst Geld verlieren.",
     questions: [
       {
         text: "Was muss man beim Kündigen beachten?",
@@ -66,7 +66,7 @@ export const b1U03: SkillExercise[] = [
         text: "Wie muss eine Kündigung sein?",
         options: ["Schriftlich", "Am Telefon", "Nur eine Mail"],
         answer: 0,
-        explain: "„… eine Kündigung muss schriftlich sein.“",
+        explain: "„Eine Kündigung muss schriftlich sein.“",
       },
       {
         text: "Warum soll man ein gutes Verhältnis haben?",
@@ -121,7 +121,7 @@ export const b1U03: SkillExercise[] = [
       "Wohnung C: Erdgeschoss, sechzig Quadratmeter, alter Zustand, günstig. " +
       "Der Mieter muss selbst renovieren. Zusätzlich gibt es einen kleinen Garten.\n\n" +
       "Notiz von Herrn Kaya: Ich ziehe im August aus meiner alten Wohnung aus, also passt B " +
-      "vom Datum am besten. Aber ich überlege, ob die Kosten im Winter nötig sind. " +
+      "vom Datum her am besten. Aber ich überlege, ob ich die hohen Kosten im Winter bezahlen will. " +
       "Wohnung A ist kleiner, dafür ist der Zustand besser und ich könnte sofort einziehen. " +
       "Wohnung C wäre günstig, aber ich habe keine Zeit zu renovieren. " +
       "Eventuell schaue ich mir A und B beide an und entscheide dann.",

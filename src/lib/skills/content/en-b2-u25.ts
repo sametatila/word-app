@@ -80,7 +80,7 @@ export const enB2U25: SkillExercise[] = [
     minutes: 10,
     text:
       "It seems to be settled, in view of your letter. Apparently we can close this, provided that the file is complete. On balance, one last point is arguably worth making.\n" +
-      "Two of those three are old friends by now. The third has a word in it this course has not used: „provided that“.\n" +
+      "Two of those three are old friends by now. The second has a word in it this course has not used: „provided that“.\n" +
       "„Provided that“ is a condition and it is not „if“. „If the file is complete, we can close this“ describes a situation. „Provided that the file is complete“ sets a condition — it is something I am requiring, and the difference is who is speaking.\n" +
       "„In view of“ does the opposite job. It gives a reason and it points backwards, at something already on the table: your letter. A sentence can hold both, and then it is a whole negotiation in twenty words.\n" +
       "There is something larger to say here, at the end of a level. Look at what these twenty-five units have actually taught.\n" +
@@ -348,7 +348,7 @@ export const enB2U25: SkillExercise[] = [
     minutes: 7,
     segments: [
       { speaker: "Defne", text: "By March we will have signed the supplementary agreement. A point in time, a finished state, and nobody named as the person signing." },
-      { speaker: "Defne", text: "In a contract note that is right, because the thing that matters is the state and not the hand." },
+      { speaker: "Defne", text: "In a contract note, that is right, because the thing that matters is the state and not the hand." },
       { speaker: "Defne", text: "Next month we will be checking the price adjustment. Inside the work rather than after it, and honest: checking is what we will be doing for three weeks." },
       { speaker: "Defne", text: "By then the remaining amount will have been paid. Four words of verb — will, have, been, third form — and it is the only passive on the page." },
       { speaker: "Defne", text: "It is passive because I do not know who pays it. The department has changed twice this year and the answer is genuinely not in my hands." },
@@ -438,7 +438,7 @@ export const enB2U25: SkillExercise[] = [
         kind: "build",
         tr: "Her şey tartıldığında son bir nokta belki de belirtilmeye değer.",
         answer: "On balance, one last point is arguably worth making.",
-        hint: "İki çekince; söylediği olan „on balance“.",
+        hint: "İki çekince; bir şey söyleyen „on balance“.",
       },
       {
         kind: "build",

@@ -281,7 +281,7 @@ export const enB1U06: SkillExercise[] = [
       { speaker: "Mert", text: "That is not a contract, that is a hope." },
       { speaker: "Sena", text: "I will accept unless the price changes. That is what I want to write back." },
       { speaker: "Mert", text: "Then write exactly that. And add a number: unless it changes by more than three in a hundred." },
-      { speaker: "Sena", text: "Isn't that too hard?" },
+      { speaker: "Sena", text: "Isn't that too strict?" },
       { speaker: "Mert", text: "It is the normal sentence. Without a number, „changes“ can mean anything." },
       { speaker: "Sena", text: "I will sign as long as you keep the promise about the date. That is the other half." },
       { speaker: "Mert", text: "Put the date in the same line as the price. Two promises in two places is one promise." },

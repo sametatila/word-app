@@ -32,7 +32,7 @@ export const enB1P4: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "NOTES FROM THE MEETING — FOURTEENTH OF MARCH\n" +
+      "NOTES FROM THE MEETING — MARCH 14\n" +
       "For members who could not come\n\n" +
       "Forty-one people were at the meeting in the old school. Here is what was said and what was decided.\n\n" +
       "Mrs. Ferreira opened the meeting and explained that the store had closed in November and that the owner " +
@@ -139,7 +139,7 @@ export const enB1P4: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "What is the meeting point about?",
+        text: "What is point four of the meeting about?",
         options: ["hiring a paid coach", "repairing the roof", "the number of children in the club"],
         answer: 0,
         explain: "„Point four: the coach. Elif, you wrote the proposal.“",
@@ -241,13 +241,13 @@ export const enB1P4: SkillExercise[] = [
           { de: "If any of the above is not correct, …", tr: "Yukarıdakilerden biri doğru değilse, …" },
         ],
         sample:
-          "Dear Ms. Ortega, I am writing to confirm our phone call of the third of May at about eleven o'clock. " +
-          "Your colleague Mr. Hedin told me that the work on the heating would start in the week of the twelfth " +
-          "of May and that it would take four working days. He also said that the water would be turned off " +
+          "Dear Ms. Ortega, I am writing to confirm our phone call on May 3 at about eleven o'clock. " +
+          "Your colleague Mr. Hedin told me that the work on the heating would start in the week of May 12 " +
+          "and that it would take four working days. He also said that the water would be turned off " +
           "between nine and four on the first two days, and that a notice would be put in the hallway one week " +
           "before. Two points stayed open. He could not say whether the windows in the back rooms would be " +
           "changed at the same time, and he did not know who I should call if there is a problem on the weekend. " +
-          "Could you send me those two answers in writing before the eighth of May? If any of the above is not " +
+          "Could you send me those two answers in writing before May 8? If any of the above is not " +
           "correct, please tell me. Sincerely, Emre Bulut",
       },
     ],
@@ -284,8 +284,8 @@ export const enB1P4: SkillExercise[] = [
       sampleDe:
         "I would not choose between them, because they do different jobs. Apps are better at telling me that " +
         "something happened; people are better at telling me whether it matters. If a bridge is closed, I want " +
-        "that from an app, in ten seconds, with a map. But last year the school in our street changed its hours, " +
-        "and I found out from a neighbor at the letter boxes, three weeks before the letter came. No app knew, " +
+        "that from an app, in ten seconds, with a map. But last year the school on our street changed its hours, " +
+        "and I found out from a neighbor at the mailboxes, three weeks before the letter came. No app knew, " +
         "because nobody had written it down. The problem with people is that they tell you what they are " +
         "interested in, and the problem with apps is that they tell you what keeps you looking. My own rule is " +
         "about the order: I read one news site once a day and then I stop. Everything else I hear from " +

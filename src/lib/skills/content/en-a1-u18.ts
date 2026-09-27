@@ -45,7 +45,7 @@ export const enA1U18: SkillExercise[] = [
       "We have a small garden behind the house. There is a tree and there are many flowers.\n\n" +
       "In the sun the flowers are beautiful, but the ground is dry. I water the plants every morning. My neighbor has a field outside the city — that is a big garden!\n\n" +
       "On the balcony there are two chairs and a table. In the summer we eat outside. My son plays soccer in the garden, and sometimes the ball goes over the wall.\n\n" +
-      "Is there a faucet in the garden? Yes, next to the door. But the faucet is broken — it doesn't work. I call a man on Monday.",
+      "Is there a faucet in the garden? Yes, next to the door. But the faucet is broken — it doesn't work. I am going to call someone on Monday.",
     questions: [
       {
         text: "What is in the garden?",
@@ -110,9 +110,9 @@ export const enA1U18: SkillExercise[] = [
       "Ela: Of course. And one more thing: the printer in the basement doesn't work either.\n" +
       "Office: The printer is not our problem. Call the store.\n" +
       "Ela: And the telephone in the hall?\n" +
-      "Office: Is it broken too? Then we come on Wednesday.\n" +
+      "Office: Is it broken too? Then we can come on Wednesday.\n" +
       "Ela: Can you fix the faucet today? The water is everywhere!\n" +
-      "Office: Yes, today. Somebody comes at four.",
+      "Office: Yes, today. Somebody is coming at four.",
     questions: [
       {
         text: "What is broken in the kitchen?",
@@ -135,11 +135,11 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Somebody comes at ___.",
+        text: "Somebody is coming at ___.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„Yes, today. Somebody comes at four.“",
+        explain: "„Yes, today. Somebody is coming at four.“",
       },
       {
         kind: "order",

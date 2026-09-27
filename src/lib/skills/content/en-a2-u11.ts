@@ -370,7 +370,7 @@ export const enA2U11: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Başvuru kartını doldur.",
-        facts: "Mutfakta dört yıl; 2021–2023 büyük şirket; sonra iki yıl küçük restoran; başlangıç bir mart.",
+        facts: "Mutfakta dört yıl; 2021–2023 büyük şirket; sonra iki yıl küçük restoran; başlangıç 1 Mart.",
         fields: [
           { label: "Experience", answer: "four years", accept: ["4 years"] },
           { label: "2021 to 2023", answer: "a big company", accept: ["a cafeteria", "a big company with a cafeteria"] },

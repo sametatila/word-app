@@ -326,7 +326,7 @@ export const a2U25: SkillExercise[] = [
     unit: 25,
     title: "Gerekçe, koşul, karşılaştırma",
     genre: "grammar",
-    intro: "A2'nin üç yan cümlesi bir arada — hangisi fiili nereye atıyor?",
+    intro: "A2'nin üç yapısı bir arada — hangisi fiili nereye atıyor?",
     gloss: [
       { de: "der Programmierer", tr: "yazılımcı", en: "programmer" },
       { de: "aufgeregt", tr: "heyecanlı", en: "nervous" },

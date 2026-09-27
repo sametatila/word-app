@@ -32,7 +32,7 @@
  {
   "tr": "„is“ sonrası yalın fiil. Nerede oluyor bu?",
   "kind": "intro",
-  "de": "Ein blanker Infinitiv nach „is“. Wo kommt das vor?"
+  "de": "Ein bloßer Infinitiv nach „is“. Wo kommt das vor?"
  },
  {
   "tr": "Üç ortaç. Birincisi neden kurala aykırı değil?",
@@ -92,7 +92,7 @@
  {
   "tr": "En zayıf aktarma: biri söyledi, o kadar.",
   "kind": "explain",
-  "de": "Die schwächste Wiedergabe: jemand hat es gesagt, mehr nicht."
+  "de": "Die schwächste Wiedergabe: Jemand hat es gesagt, mehr nicht."
  },
  {
   "tr": "Üç adlaştırma, en sonda tek fiilli cümle.",
@@ -193,11 +193,6 @@
   "tr": "övülen",
   "kind": "gloss.tr",
   "de": "gelobt"
- },
- {
-  "tr": "tersinden",
-  "kind": "gloss.tr",
-  "de": "von hinten"
  },
  {
   "tr": "tam tersi",
@@ -358,11 +353,6 @@
   "tr": "kişiler",
   "kind": "gloss.tr",
   "de": "Figuren"
- },
- {
-  "tr": "kuruluş",
-  "kind": "gloss.tr",
-  "de": "Konstruktion"
  },
  {
   "tr": "kuruyor",
@@ -727,7 +717,7 @@
  {
   "tr": "üstüne plan yapmak",
   "kind": "gloss.tr",
-  "de": "darauf planen"
+  "de": "damit planen"
  },
  {
   "tr": "ancak finalden sonra",
@@ -737,11 +727,21 @@
  {
   "tr": "değiştiği düşünülüyor",
   "kind": "gloss.tr",
-  "de": "soll sich geändert haben"
+  "de": "hat sich vermutlich geändert"
  },
  {
   "tr": "işin aslı",
   "kind": "gloss.tr",
   "de": "der Stand der Dinge"
+ },
+ {
+  "tr": "varsaydı",
+  "kind": "gloss.tr",
+  "de": "nahm an"
+ },
+ {
+  "tr": "atlatıyor",
+  "kind": "gloss.tr",
+  "de": "übersteht"
  }
 ]

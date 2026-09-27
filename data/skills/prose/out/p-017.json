@@ -400,9 +400,9 @@
   "en": "You are going to hear a conversation from a job interview: a candidate cook describes their experience."
  },
  {
-  "tr": "Bir sunum eğitmeni, sunumun ilk dakikasında nelerin karara bağlandığını anlatıyor.",
+  "tr": "Bir sunum eğitmeni, sunumun ilk doksan saniyesinde nelerin karara bağlandığını anlatıyor.",
   "kind": "intro",
-  "en": "A presentation trainer explains what is settled in the first minute of a talk."
+  "en": "A presentation trainer explains what is settled in the first ninety seconds of a talk."
  },
  {
   "tr": "Birine sizin adınıza iş yapma yetkisi vermek. Neyin aslı, neyin kopyası gerekiyor?",
@@ -572,7 +572,7 @@
  {
   "tr": "Belediyenin mahalle sakinlerine gönderdiği kısa bilgilendirme yazısını okuyacaksın.",
   "kind": "intro",
-  "en": "You are going to read the short information letter the council has sent to residents."
+  "en": "You are going to read the short information letter the city has sent to residents."
  },
  {
   "tr": "Bir halk toplantısında iki dakikalık konuşma yaz — kısa, açık ve karşı tarafı anan.",
@@ -650,9 +650,9 @@
   "en": "The present passive: werden conjugated, the participle last. Naming the agent keeps it passive."
  },
  {
-  "tr": "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. İkisi de genitif ister.",
+  "tr": "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. Dördü de genitif ister.",
   "kind": "intro",
-  "en": "wegen and trotz in the street, aufgrund and infolge on the notice board. Both take the genitive."
+  "en": "wegen and trotz in the street, aufgrund and infolge on the notice board. All four take the genitive."
  },
  {
   "tr": "Yanlış: „…wer mit dir kooperiert hat, empfiehlt dich — wer deine Karte hat, nicht.“",

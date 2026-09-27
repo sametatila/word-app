@@ -404,7 +404,7 @@ export const b2U21: SkillExercise[] = [
           "Es klang, als ob alles geklärt wäre",
           "Es klang, als wäre alles geklärt.",
         ],
-        why: "als ob Konjunktiv II ister, çünkü yapı zaten gerçek olmayan bir durumu anlatıyor: kulağa öyle geldi ama değildi. Türkçedeki 'sanki' kipi değiştirmediği için Türkçe konuşan burada düz haber kipiyle devam etmeye yatkındır - 'als ob alles geklärt ist' kulağa doğru gelir ama değildir.",
+        why: "als ob Konjunktiv II ister, çünkü yapı zaten gerçek olmayan bir durumu anlatıyor: kulağa öyle geldi ama değildi. Türkçedeki 'sanki' kipi değiştirmediği için Türkçe konuşan burada düz haber kipiyle devam etmeye yatkındır: 'als ob alles geklärt ist' kulağa doğru gelir ama değildir.",
       },
     ],
   },
@@ -433,7 +433,7 @@ export const b2U21: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Bir yanlış anlamayı anlat: dilden, kültürden ya da sadece bir cümlenin tonundan doğmuş olabilir. Şu sırayı tut: durum ve söylenen cümle, senin nasıl anladığın, karşı tarafın ne demek istediği, nasıl çözüldüğü ve bugün ne düşündüğün. En az bir kez als ob ya da als + Konjunktiv II kullan, en az bir kez de tahmin bildiren bir kip -dürfte, könnte, müsste-. Kimseyi haksız çıkarmaya çalışma.",
+          "Bir yanlış anlamayı anlat: dilden, kültürden ya da sadece bir cümlenin tonundan doğmuş olabilir. Şu sırayı tut: durum ve söylenen cümle, senin nasıl anladığın, karşı tarafın ne demek istediği, nasıl çözüldüğü ve bugün ne düşündüğün. En az bir kez als ob ya da als + Konjunktiv II kullan, en az bir kez de tahmin bildiren bir kip (dürfte, könnte, müsste). Kimseyi haksız çıkarmaya çalışma.",
         checklist: [
           "Söylenen cümle ile anlaşılan ayrı ayrı verildi mi?",
           "En az bir als ob ya da als + Konjunktiv II var mı?",

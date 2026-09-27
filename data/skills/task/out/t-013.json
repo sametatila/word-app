@@ -66,9 +66,9 @@
  { "tr": "Bugünkü ayrımını tek cümleyle koy", "kind": "free.checklist", "en": "State today's distinction in one sentence" },
  { "tr": "En az bir ortaç II sıfatı var mı?", "kind": "free.checklist", "en": "Is there at least one Partizip II attribute?" },
  { "tr": "Gelecek üzerine bir cümle var mı?", "kind": "free.checklist", "en": "Is there a sentence about the future?" },
- { "tr": "Hem iyi hem eksik bir yön var mı?", "kind": "free.checklist", "en": "Is there both a good side and a lacking one?" },
+ { "tr": "Hem iyi hem eksik bir yön var mı?", "kind": "free.checklist", "en": "Is there both a good side and something missing?" },
  { "tr": "İki gerekçe ver ve birini örnekle", "kind": "free.checklist", "en": "Give two reasons and illustrate one of them" },
- { "tr": "Kararlar ayrı ve kısa yazıldı mı?", "kind": "free.checklist", "en": "Have the decisions been written separately and short?" },
+ { "tr": "Kararlar ayrı ve kısa yazıldı mı?", "kind": "free.checklist", "en": "Have the decisions been written separately and kept short?" },
  { "tr": "Kendin ne denediğini söyledin mi?", "kind": "free.checklist", "en": "Did you say what you tried yourself?" },
  { "tr": "Kendini bir cümleyle tanıttın mı?", "kind": "free.checklist", "en": "Did you introduce yourself in one sentence?" },
  { "tr": "Kendini tanıtan bir cümle var mı?", "kind": "free.checklist", "en": "Is there a sentence introducing yourself?" },
@@ -146,7 +146,7 @@
  { "tr": "Açık kalan noktalar ile öneri ayrı mı?", "kind": "free.checklist", "en": "Are the open points kept apart from the proposal?" },
  { "tr": "Aile büyüklüğü ve yerler söylenmiş mi?", "kind": "free.checklist", "en": "Have the size of the family and the places been given?" },
  { "tr": "Ayrım kalıbı ve üç somut önlem var mı?", "kind": "free.checklist", "en": "Is there a distinguishing pattern and three concrete measures?" },
- { "tr": "Bir iki ayrıntı daha sor ve cevap iste", "kind": "free.checklist", "en": "Ask one or two more details and ask for a reply" },
+ { "tr": "Bir iki ayrıntı daha sor ve cevap iste", "kind": "free.checklist", "en": "Ask about one or two more details and ask for a reply" },
  { "tr": "Çözüm ve bugünkü değerlendirme var mı?", "kind": "free.checklist", "en": "Are the solution and today's assessment there?" },
  { "tr": "Duyurulan planı tarih ve süreyle aktar", "kind": "free.checklist", "en": "Report the announced plan with its date and its duration" }
 ]
