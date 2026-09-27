@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/icons";
+import { LegalLanguageRow } from "@/components/legal-language-row";
 import { LEGAL_LOCALES, legalPath, type LegalLocale } from "@/lib/legal";
 import { legalConfig } from "@/lib/legal/config";
 import { legalDocument, type LegalDocId } from "@/lib/legal/documents";
@@ -101,18 +102,7 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
           {c.effective}: {cfg.effectiveDate} · {c.version} {cfg.version}
         </p>
       ) : null}
-      <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-body">
-        <span>{c.languageLabel}:</span>
-        {LEGAL_LOCALES.map((l) =>
-          l === locale ? (
-            <span key={l} className="font-semibold text-[var(--text)]">{c.names[l]}</span>
-          ) : (
-            <Link key={l} href={legalPath(doc, l)} hrefLang={l} className="underline-offset-4 hover:underline">
-              {c.names[l]}
-            </Link>
-          ),
-        )}
-      </p>
+      <LegalLanguageRow label={c.languageLabel} locales={LEGAL_LOCALES} current={locale} names={c.names} href={(l) => legalPath(doc, l)} />
       {isContract && c.binding ? <p className="muted mt-2 text-caption">{c.binding}</p> : null}
 
       {page.summary.length ? (

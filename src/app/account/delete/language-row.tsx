@@ -1,5 +1,6 @@
 "use client";
 
+import { LegalLanguageRow } from "@/components/legal-language-row";
 import { offeredNativeLangs } from "@/lib/courses";
 import { LANG_LABEL, type NativeLang } from "@/lib/i18n/dict";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -22,7 +23,7 @@ import { writeLangCookie } from "@/lib/i18n/set-lang";
  * `router.refresh()` değil: metnin tamamı sunucuda çiziliyor ve `<html lang>`
  * kök düzende çerezden okunuyor, yumuşak tazeleme ikisini eski dilde bırakırdı.
  *
- * Görünüm legal-shell'deki dil satırıyla aynı: seçili dil kalın düz metin,
+ * Görünüm legal-shell'deki dil satırıyla aynı (ortak `LegalLanguageRow`): seçili dil kalın düz metin,
  * ötekiler bağlantı gibi duran düğmeler. Dil adları KENDİ dillerinde ve `lang`
  * özniteliği taşıyor; ekran okuyucu "Deutsch"u Türkçe okumasın.
  *
@@ -47,25 +48,6 @@ export function DeleteLanguageRow() {
   }
 
   return (
-    <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-body">
-      <span>{t("del.language")}:</span>
-      {offered.map((l) =>
-        l === current ? (
-          <span key={l} lang={l} className="font-semibold text-[var(--text)]">
-            {LANG_LABEL[l]}
-          </span>
-        ) : (
-          <button
-            key={l}
-            type="button"
-            lang={l}
-            onClick={() => pick(l)}
-            className="underline-offset-4 hover:underline"
-          >
-            {LANG_LABEL[l]}
-          </button>
-        ),
-      )}
-    </p>
+    <LegalLanguageRow label={t("del.language")} locales={offered} current={current} names={LANG_LABEL} onPick={pick} tagLang />
   );
 }

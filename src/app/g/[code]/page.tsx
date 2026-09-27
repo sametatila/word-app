@@ -59,7 +59,7 @@ export default async function GroupTrialPage({ params }: { params: Promise<{ cod
           : peek.status === "disabled"
             ? t("groupw.disabled")
             : t("groupw.unknown_code");
-    return <TrialLanding invalid={{ title: t("groupw.bad_title"), lead }} />;
+    return <TrialLanding invalid={{ title: t("groupw.bad_title"), lead, home: t("common.home") }} />;
   }
 
   const android = control.store.android;

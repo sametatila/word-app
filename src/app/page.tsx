@@ -163,7 +163,7 @@ export default async function Home() {
             </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-2 text-4xl font-black leading-tight sm:text-6xl">
+            <h1 className="mt-2 text-display sm:text-6xl sm:leading-tight">
               {t("land.h1_before")}
               <span className="brand-text">{t("land.h1_accent")}</span>
               {t("land.h1_after")}

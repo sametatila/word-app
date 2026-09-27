@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FlowActions, FlowColumn, StateBody } from "@/components/flow";
 
 type Valid = {
   code: string;
@@ -54,12 +55,16 @@ type Copy = {
  * iOS BÖLÜMÜ UYGULAMAYA DEĞİL APP STORE'A GİDER (Guideline 3.1.1): kod
  * uygulamada girilmiyor, Apple'ın teklif kodu sayfası açılıyor.
  */
-export function TrialLanding({ valid, invalid, t }: { valid?: Valid; invalid?: { title: string; lead: string }; t?: Copy }) {
+export function TrialLanding({ valid, invalid, t }: { valid?: Valid; invalid?: { title: string; lead: string; home: string }; t?: Copy }) {
   if (!valid || !t) {
+    /* DURUM ŞABLONU (components/flow): geçersiz kodda da tek çıkış yolu var. */
     return (
-      <main className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-12 text-center">
-        <h1 className="text-h1 text-balance">{invalid?.title}</h1>
-        <p className="muted mt-2 text-body">{invalid?.lead}</p>
+      <main className="px-4 py-12">
+        <FlowColumn>
+          <StateBody title={invalid?.title} body={invalid?.lead} alert>
+            {invalid ? <FlowActions primary={{ label: invalid.home, href: "/" }} /> : null}
+          </StateBody>
+        </FlowColumn>
       </main>
     );
   }

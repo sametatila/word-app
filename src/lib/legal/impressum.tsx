@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LegalLanguageRow } from "@/components/legal-language-row";
 import { LEGAL_LOCALES, isLegalOmitted, isLegalPlaceholder, legalPath, type LegalLocale } from "./index";
 import type { LegalConfig } from "./shape";
 
@@ -173,18 +174,13 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
 
   return (
     <>
-      <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-body">
-        <span>{t.languageLabel}:</span>
-        {(["de", ...LEGAL_LOCALES.filter((l) => l !== "de")] as LegalLocale[]).map((l) =>
-          l === locale ? (
-            <span key={l} className="font-semibold text-[var(--text)]">{t.names[l]}</span>
-          ) : (
-            <Link key={l} href={legalPath("impressum", l)} hrefLang={l} className="underline-offset-4 hover:underline">
-              {t.names[l]}
-            </Link>
-          ),
-        )}
-      </p>
+      <LegalLanguageRow
+        label={t.languageLabel}
+        locales={["de", ...LEGAL_LOCALES.filter((l) => l !== "de")] as LegalLocale[]}
+        current={locale}
+        names={t.names}
+        href={(l) => legalPath("impressum", l)}
+      />
       {t.translation ? <p className="muted mt-2 text-caption">{t.translation}</p> : null}
 
       <article className="legal mt-8">
