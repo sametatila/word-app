@@ -21,19 +21,27 @@ import { READABLE_TEXT_MAX } from "../lib/useLayout";
  */
 export type IconCmp = (p: { color: string; size: number }) => React.ReactElement;
 
-export function ScreenHeader({ title, subtitle, right }: { title: string; subtitle?: string; right?: React.ReactNode }) {
+/**
+ * `eyebrow`: başlığın üstünde küçük künye (ör. "A1 · Ünite 3").
+ * `back={false}` + `inset={false}`: ekran başka bir kabuğun içinde (tablette
+ * yan panel) — geri düğmesi ve üst güvenli alan payı kabuğun işi.
+ */
+export function ScreenHeader({ title, subtitle, right, eyebrow, back = true, inset = true }: { title: string; subtitle?: string; right?: React.ReactNode; eyebrow?: string; back?: boolean; inset?: boolean }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: (inset ? insets.top : 0) + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+      {back ? (
       <PressableScale hitSlop={4} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <ArrowBackIcon color={colors.text} size={24} />
       </PressableScale>
+      ) : null}
       <View style={{ flex: 1 }}>
+        {eyebrow ? <Text variant="micro" color={colors.textMuted}>{eyebrow}</Text> : null}
         {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR (bkz. parity 259). */}
         <Text accessibilityRole="header" variant="h2">{title}</Text>
-        {subtitle ? <Text variant="caption" color={colors.textMuted}>{subtitle}</Text> : null}
+        {subtitle ? <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{subtitle}</Text> : null}
       </View>
       {right}
     </View>

@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Bar } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { useLearningPath } from "../lib/useLearningPath";
@@ -19,6 +19,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useAiDeclined } from "../lib/useAiDeclined";
 import { conversationLocked, pathWritingSpent } from "../lib/unlock";
 import { PathQuota } from "../ui/PathQuota";
+import { ScreenHeader } from "../social/common";
 
 
 /**
@@ -108,20 +109,13 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     // Gömülüyken zemin BOYANMIYOR: panelin kendi yüzeyi görünsün, üstüne ekran
     // zemini basılıp kap görünmez hâle gelmesin.
     <View style={{ flex: 1, backgroundColor: embedded ? "transparent" : colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: (embedded ? 0 : insets.top) + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        {!embedded && (
-          /* `ScreenHeader` üst satırı (ünite künyesi) taşımıyor; geri düğmesi
-             onun davranışıyla aynı: yığın boşsa sekmelere dön. */
-          <PressableScale hitSlop={4} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <ArrowBackIcon color={colors.text} size={24} />
-          </PressableScale>
-        )}
-        <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level, unit: t("common.unit"), n: index })}</Text>
-          <Text accessibilityRole="header" variant="h2">{theme}</Text>
-          {topics.length ? <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{topics.join(" · ")}</Text> : null}
-        </View>
-      </View>
+      <ScreenHeader
+        eyebrow={t("unit.header", { level, unit: t("common.unit"), n: index })}
+        title={theme}
+        subtitle={topics.length ? topics.join(" · ") : undefined}
+        back={!embedded}
+        inset={!embedded}
+      />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: (embedded ? 0 : insets.bottom) + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ marginTop: spacing.sm, marginBottom: 6 }}>
