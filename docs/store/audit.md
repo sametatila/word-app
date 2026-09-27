@@ -139,4 +139,4 @@ AND-4 → M9 · AND-6 → S10 · TEC-1 → T4 · LEG-13 → G4.
 | CNT-5 | Abonelik açıklamaları ücretsiz özelliği Premium gibi satıyor | ✅ | 2026-09-23 metni; paywall diliyle yeniden: S9 |
 | CNT-6 | Sınav "sertifikası" feragatsiz | ✅ | 470ba65a |
 | CNT-7 | Zürih seçilebiliyor, release'te STT logları | ✅ | aaeb03c2, 4b60150e, 648e6de2 |
-| CNT-8 | Deneme sınavı yönergeleri resmî sınavlara yakın | ◐ | 1580bd4c, f5c348d9 (66 yer); kalan kalıplar İ4 |
+| CNT-8 | Deneme sınavı yönergeleri resmî sınavlara yakın | ✅ | 1580bd4c, f5c348d9 (66 yer); kalan kalıplar İ4 ile kapandı (6feb7eff, 1.466 alan) |
