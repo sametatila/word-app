@@ -776,7 +776,6 @@ export const trBase: Record<string, string> = {
   "mockstats.empty": "Henüz tamamlanmış bir deneme sınavın yok. Bir bölüm çözdüğünde sonucun burada birikmeye başlar.",
   "mockstats.empty_title": "Henüz sonuç yok",
   "mockstats.local_note": "Aşağıdaki sayılar bu cihazda saklanan sonuçlardan; sunucudaki kayıt bundan farklı olabilir.",
-  "mockexams.stats": "İstatistik",
   "learn.mock_exams": "Deneme Sınavları",
   "learn.mock_exams_pitch": "Gerçek sınavdaki gibi, süre tutarak çöz",
   "exam.title": "Sınav",

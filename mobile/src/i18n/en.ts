@@ -774,7 +774,6 @@ export const en: Record<string, string> = {
   "mockstats.empty": "You have not finished a mock exam yet. Once you complete a part, your results collect here.",
   "mockstats.empty_title": "No results yet",
   "mockstats.local_note": "The numbers below come from results stored on this device; the server record may differ.",
-  "mockexams.stats": "Statistics",
   "learn.mock_exams": "Mock Exams",
   "learn.mock_exams_pitch": "Full exams against the clock, like the real thing",
   "exam.title": "Exam",

@@ -774,7 +774,6 @@ export const de: Record<string, string> = {
   "mockstats.empty": "Du hast noch keine Probeprüfung abgeschlossen. Sobald du einen Teil bearbeitest, sammeln sich hier deine Ergebnisse.",
   "mockstats.empty_title": "Noch keine Ergebnisse",
   "mockstats.local_note": "Die Zahlen unten stammen aus den auf diesem Gerät gespeicherten Ergebnissen; der Serverstand kann abweichen.",
-  "mockexams.stats": "Statistik",
   "learn.mock_exams": "Probeprüfungen",
   "learn.mock_exams_pitch": "Ganze Prüfungen mit Zeitlimit, wie im Ernstfall",
   "exam.title": "Prüfung",
