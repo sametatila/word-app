@@ -245,7 +245,7 @@
   "en": "reception",
   "beispiel": "Geben Sie den Schlüssel bitte am Empfang ab.",
   "beispielTr": "Anahtarı lütfen resepsiyona bırakın.",
-  "beispielEn": "Please leave the key at the reception."
+  "beispielEn": "Please leave the key at the front desk."
  },
  {
   "id": 2770,
@@ -324,7 +324,7 @@
   "tr": "cesur",
   "en": "brave",
   "beispiel": "Es war sehr mutig von dir, das zu sagen.",
-  "beispielTr": "Bunu söylemen çok cesurcaydı.",
+  "beispielTr": "Bunu söylemekle büyük cesaret gösterdin.",
   "beispielEn": "It was very brave of you to say that."
  },
  {

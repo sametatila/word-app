@@ -76,7 +76,7 @@
   "tr": "alkol",
   "en": "alcohol",
   "beispiel": "Vor der Fahrt darfst du keinen Alkohol trinken.",
-  "beispielTr": "Yolculuktan önce alkol içmemelisin.",
+  "beispielTr": "Araba kullanmadan önce alkol içmemelisin.",
   "beispielEn": "You must not drink alcohol before driving."
  },
  {
@@ -140,7 +140,7 @@
   "tr": "yaralanmak",
   "en": "to get hurt",
   "beispiel": "Ich habe mich beim Sport am Knie verletzt.",
-  "beispielTr": "Spor yaparken dizimden yaralandım.",
+  "beispielTr": "Spor yaparken dizimi sakatladım.",
   "beispielEn": "I hurt my knee while playing sports."
  },
  {
@@ -156,7 +156,7 @@
   "tr": "seans",
   "en": "showing",
   "beispiel": "Für die Vorstellung um acht gibt es keine Karten mehr.",
-  "beispielTr": "Saat sekiz seansı için bilet kalmadı.",
+  "beispielTr": "Saat sekiz seansına bilet kalmadı.",
   "beispielEn": "There are no more tickets for the eight o'clock showing."
  },
  {
@@ -325,7 +325,7 @@
   "en": "trial",
   "beispiel": "Der Prozess gegen den Bankräuber beginnt morgen.",
   "beispielTr": "Banka soyguncusunun davası yarın başlıyor.",
-  "beispielEn": "The trial against the bank robber starts tomorrow."
+  "beispielEn": "The bank robber's trial starts tomorrow."
  },
  {
   "id": 1523,
@@ -389,7 +389,7 @@
   "en": "alarm",
   "beispiel": "Bei Alarm müssen alle das Gebäude sofort verlassen.",
   "beispielTr": "Alarm çaldığında herkes binayı hemen terk etmeli.",
-  "beispielEn": "In case of alarm everyone must leave the building immediately."
+  "beispielEn": "If the alarm goes off, everyone must leave the building immediately."
  },
  {
   "id": 1837,

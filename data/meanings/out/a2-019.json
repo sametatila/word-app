@@ -245,7 +245,7 @@
     "en": "dice",
     "beispiel": "Ein Würfel fehlt, deshalb können wir nicht anfangen.",
     "beispielTr": "Bir zar eksik, bu yüzden başlayamıyoruz.",
-    "beispielEn": "One of the dice is missing so we cannot start."
+    "beispielEn": "One of the dice is missing, so we cannot start."
   },
   {
     "id": 7919,
@@ -298,7 +298,7 @@
   {
     "id": 7925,
     "tr": "devre",
-    "en": "half-time",
+    "en": "half",
     "beispiel": "In der ersten Halbzeit war das Spiel langweilig.",
     "beispielTr": "İlk devrede maç sıkıcıydı.",
     "beispielEn": "In the first half the game was boring."

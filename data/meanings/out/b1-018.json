@@ -76,7 +76,7 @@
     "tr": "bildirim",
     "en": "report",
     "beispiel": "Die Meldung über den Unfall war zum Glück falsch.",
-    "beispielTr": "Kazayla ilgili bildirim neyse ki yanlıştı.",
+    "beispielTr": "Kazayla ilgili haber neyse ki yanlıştı.",
     "beispielEn": "Luckily the report about the accident was false."
   },
   {
@@ -85,7 +85,7 @@
     "en": "to distinguish",
     "beispiel": "Auf dem Foto kann man euch kaum unterscheiden.",
     "beispielTr": "Fotoğrafta ikinizi ayırt etmek çok zor.",
-    "beispielEn": "In the photo one can hardly tell you apart."
+    "beispielEn": "In the photo, it's hard to tell you two apart."
   },
   {
     "id": 2497,
@@ -132,7 +132,7 @@
     "tr": "topluluk",
     "en": "community",
     "beispiel": "Die Gemeinschaft im Dorf hat uns sehr geholfen.",
-    "beispielTr": "Köydeki topluluk bize çok yardım etti.",
+    "beispielTr": "Köy halkı bize çok yardım etti.",
     "beispielEn": "The community in the village helped us a lot."
   },
   {
@@ -149,14 +149,14 @@
     "en": "to notice",
     "beispiel": "Ich habe gar nicht bemerkt, dass du gekommen bist.",
     "beispielTr": "Geldiğini hiç fark etmedim.",
-    "beispielEn": "I did not notice at all that you had come."
+    "beispielEn": "I didn't even notice that you had come."
   },
   {
     "id": 1481,
     "tr": "seçenek",
     "en": "selection",
     "beispiel": "Beim Frühstücksbuffet gab es eine riesige Auswahl an Käse.",
-    "beispielTr": "Açık büfe kahvaltıda çok büyük bir peynir seçeneği vardı.",
+    "beispielTr": "Açık büfe kahvaltıda peynir çeşidi çok boldu.",
     "beispielEn": "The breakfast buffet had a huge selection of cheeses."
   },
   {
@@ -274,10 +274,10 @@
   {
     "id": 1912,
     "tr": "arsız",
-    "en": "cheeky",
+    "en": "sassy",
     "beispiel": "Sei nicht so frech zu deiner Mutter!",
     "beispielTr": "Annene karşı bu kadar arsız olma!",
-    "beispielEn": "Do not be so cheeky to your mother!"
+    "beispielEn": "Don't be so sassy with your mother!"
   },
   {
     "id": 2818,
@@ -332,7 +332,7 @@
     "tr": "şikâyet etmek",
     "en": "to complain",
     "beispiel": "Wo können wir uns über den Lärm beschweren?",
-    "beispielTr": "Gürültüden nereye şikâyette bulunabiliriz?",
+    "beispielTr": "Gürültüyü nereye şikâyet edebiliriz?",
     "beispielEn": "Where can we complain about the noise?"
   },
   {

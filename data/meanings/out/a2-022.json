@@ -90,10 +90,10 @@
   {
     "id": 8049,
     "tr": "son durak",
-    "en": "final stop",
+    "en": "last stop",
     "beispiel": "Wir müssen bis zur Endstation fahren.",
     "beispielTr": "Son durağa kadar gitmemiz gerekiyor.",
-    "beispielEn": "We have to go to the final stop."
+    "beispielEn": "We have to go to the last stop."
   },
   {
     "id": 8050,
@@ -205,7 +205,7 @@
     "en": "passport control",
     "beispiel": "Die Passkontrolle am Flughafen hat lange gedauert.",
     "beispielTr": "Havaalanındaki pasaport kontrolü uzun sürdü.",
-    "beispielEn": "The passport control at the airport took a long time."
+    "beispielEn": "Passport control at the airport took a long time."
   },
   {
     "id": 8064,
@@ -221,7 +221,7 @@
     "en": "room key",
     "beispiel": "Ich habe den Zimmerschlüssel an der Rezeption abgegeben.",
     "beispielTr": "Oda anahtarını resepsiyona bıraktım.",
-    "beispielEn": "I left the room key at the reception."
+    "beispielEn": "I left the room key at the front desk."
   },
   {
     "id": 8066,

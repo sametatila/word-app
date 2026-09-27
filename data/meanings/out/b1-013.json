@@ -188,7 +188,7 @@
   "tr": "iki kat",
   "en": "double",
   "beispiel": "Wir mussten den doppelten Preis bezahlen.",
-  "beispielTr": "İki kat fiyat ödemek zorunda kaldık.",
+  "beispielTr": "Fiyatın iki katını ödemek zorunda kaldık.",
   "beispielEn": "We had to pay double the price."
  },
  {
@@ -201,7 +201,7 @@
  },
  {
   "id": 2271,
-  "tr": "ruh hali",
+  "tr": "ruh hâli",
   "en": "mood",
   "beispiel": "Gestern hatte mein Chef richtig schlechte Laune.",
   "beispielTr": "Dün patronumun morali çok bozuktu.",

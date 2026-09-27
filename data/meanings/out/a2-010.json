@@ -101,7 +101,7 @@
     "en": "golden",
     "beispiel": "Meine Oma trägt einen goldenen Ring.",
     "beispielTr": "Babaannem altın bir yüzük takıyor.",
-    "beispielEn": "My grandma wears a golden ring."
+    "beispielEn": "My grandma wears a gold ring."
   },
   {
     "id": 7451,
@@ -130,10 +130,10 @@
   {
     "id": 7454,
     "tr": "kareli",
-    "en": "checked",
+    "en": "checkered",
     "beispiel": "Auf dem Tisch liegt eine karierte Decke.",
     "beispielTr": "Masanın üstünde kareli bir örtü duruyor.",
-    "beispielEn": "There is a checked cloth on the table."
+    "beispielEn": "There is a checkered tablecloth on the table."
   },
   {
     "id": 7455,
@@ -276,7 +276,7 @@
     "tr": "şık",
     "en": "classy",
     "beispiel": "Der Ring sieht edel und teuer aus.",
-    "beispielTr": "Yüzük kaliteli ve pahalı görünüyor.",
+    "beispielTr": "Yüzük şık ve pahalı görünüyor.",
     "beispielEn": "The ring looks classy and expensive."
   },
   {
@@ -380,8 +380,8 @@
     "tr": "kapalı",
     "en": "overcast",
     "beispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
-    "beispielTr": "Bugün gökyüzü bütün gün bulutlu kalacak.",
-    "beispielEn": "Today the sky stays overcast all day."
+    "beispielTr": "Bugün gökyüzü bütün gün kapalı kalacak.",
+    "beispielEn": "The sky will stay overcast all day today."
   },
   {
     "id": 7486,

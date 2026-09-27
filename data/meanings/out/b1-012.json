@@ -53,7 +53,7 @@
   "en": "cross",
   "beispiel": "Machen Sie bitte ein Kreuz in das richtige Feld.",
   "beispielTr": "Lütfen doğru kutuya bir çarpı koyun.",
-  "beispielEn": "Please put a cross in the correct box."
+  "beispielEn": "Please put an X in the correct box."
  },
  {
   "id": 2729,
@@ -212,7 +212,7 @@
   "tr": "benzin",
   "en": "gasoline",
   "beispiel": "Das Benzin ist schon wieder teurer geworden.",
-  "beispielTr": "Benzin yine daha da pahalandı.",
+  "beispielTr": "Benzin yine pahalandı.",
   "beispielEn": "Gasoline has gotten more expensive again."
  },
  {
@@ -252,7 +252,7 @@
   "tr": "içte",
   "en": "on the inside",
   "beispiel": "Die Jacke ist innen mit Fell gefüttert.",
-  "beispielTr": "Ceketin içi kürkle kaplanmış.",
+  "beispielTr": "Ceketin içi kürk astarlı.",
   "beispielEn": "The jacket is lined with fur on the inside."
  },
  {

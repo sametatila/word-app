@@ -157,7 +157,7 @@
     "en": "assembly",
     "beispiel": "Auf der Versammlung der Mieter gab es viel Streit.",
     "beispielTr": "Kiracılar toplantısında çok tartışma çıktı.",
-    "beispielEn": "There was a lot of arguing at the tenants' assembly."
+    "beispielEn": "There was a lot of arguing at the tenants' meeting."
   },
   {
     "id": 2602,
@@ -165,7 +165,7 @@
     "en": "hall",
     "beispiel": "Der Saal war bis auf den letzten Platz besetzt.",
     "beispielTr": "Salon son koltuğuna kadar doluydu.",
-    "beispielEn": "The hall was full down to the last seat."
+    "beispielEn": "Every seat in the hall was taken."
   },
   {
     "id": 3117,
@@ -196,7 +196,7 @@
     "tr": "dâhil",
     "en": "including",
     "beispiel": "Die Wohnung kostet 900 Euro einschließlich Heizung.",
-    "beispielTr": "Ev ısınma dâhil 900 euro.",
+    "beispielTr": "Ev, ısınma dâhil 900 avro.",
     "beispielEn": "The apartment costs 900 euros, including heat."
   },
   {
@@ -284,7 +284,7 @@
     "tr": "banknot",
     "en": "bill",
     "beispiel": "Kannst du mir einen Schein in Münzen wechseln?",
-    "beispielTr": "Bana bir banknotu bozuk parayla değiştirebilir misin?",
+    "beispielTr": "Bana bir banknotu bozuk paraya bozabilir misin?",
     "beispielEn": "Can you change a bill into coins for me?"
   },
   {

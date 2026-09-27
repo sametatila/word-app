@@ -285,7 +285,7 @@
     "en": "before that",
     "beispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
     "beispielTr": "Kurs sekizde başlıyor, ondan önce bir kahve içiyorum.",
-    "beispielEn": "The course starts at eight, before that I have a coffee."
+    "beispielEn": "The course starts at eight; before that, I have a coffee."
   },
   {
     "id": 7574,
@@ -301,7 +301,7 @@
     "en": "afterward",
     "beispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
     "beispielTr": "Önce yemek yiyoruz, ardından sinemaya gidiyoruz.",
-    "beispielEn": "First we eat, afterward we go to the movies."
+    "beispielEn": "First we'll eat, and afterward we'll go to the movies."
   },
   {
     "id": 7576,
@@ -309,7 +309,7 @@
     "en": "at the earliest",
     "beispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
     "beispielTr": "Doktorun en erken cuma günü boş randevusu var.",
-    "beispielEn": "The doctor has an opening on Friday at the earliest."
+    "beispielEn": "The doctor has no opening until Friday at the earliest."
   },
   {
     "id": 7577,
@@ -317,7 +317,7 @@
     "en": "lately",
     "beispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
     "beispielTr": "Son zamanlarda babam işe bisikletle gidiyor.",
-    "beispielEn": "Lately my father rides his bike to work."
+    "beispielEn": "Lately my father has been riding his bike to work."
   },
   {
     "id": 7578,

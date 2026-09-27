@@ -21,7 +21,7 @@ import type { LegalDocDefault } from "./types";
 export const SUPPORT_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
   tr: {
     title: "Destek ve iletişim",
-    description: "Lernomi'ye nasıl ulaşacağın: destek adresi, yanıt süresi, hangi konu için hangi kanal, ve uygulama içindeki bildirme ve engelleme yolları.",
+    description: "Lernomi'ye nasıl ulaşacağın: destek adresi, yanıt süresi, hangi konu için hangi kanal ve uygulama içindeki bildirme ve engelleme yolları.",
     summary: [],
     body: `Bir sorun mu var, bir şey mi soracaksın? Buradan bize ulaşabilirsin. Gelen her mesaja bir insan bakıyor; otomatik yanıt kullanmıyoruz.
 
@@ -61,8 +61,8 @@ Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum
 
 |---|---|
 | **You hit a problem or bug, or have a suggestion** | Write to the support address. Telling us your device and app version helps a lot (it is at the bottom of Profile › Settings). |
-| **You want to delete your account and data** | You can do it yourself: in the app, Profile › Settings › Account › Delete account, or on the web the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone, and you must cancel a store subscription separately. If you use the app without an account (as a guest): in the app, Profile › Delete guest data. |
-| **You want to access, correct or erase your data (KVKK / GDPR)** | KVKK requests from Türkiye: {{privacyEmailTr}}. GDPR and UK GDPR requests from the EU, EEA and the United Kingdom (also reaches the EU representative): {{privacyEmailEu}}. Writing from the e-mail address on your account is enough to verify your identity. Deadlines and your rights are in section 10 of the [privacy policy]({{link:privacy}}). |
+| **You want to delete your account and data** | You can do it yourself: in the app, Profile › Settings › Account › Delete account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone, and you must cancel a store subscription separately. If you use the app without an account (as a guest): in the app, Profile › Delete guest data. |
+| **You want to access, correct or erase your data (KVKK / GDPR)** | KVKK requests from Türkiye: {{privacyEmailTr}}. GDPR and UK GDPR requests from the EU, EEA and the United Kingdom (also reaches the EU representative): {{privacyEmailEu}}. Writing from the email address on your account is enough to verify your identity. Deadlines and your rights are in section 10 of the [privacy policy]({{link:privacy}}). |
 | **Subscription, payment or refund** | Buying, renewing, canceling and refunding a subscription is handled by the store; we cannot process these ourselves. On Android: [Play › Subscriptions](https://play.google.com/store/account/subscriptions){{ifIos}}; on iOS: Settings › Apple Account › Subscriptions, and [reportaproblem.apple.com](https://reportaproblem.apple.com) for refunds{{/ifIos}}. If the store does not resolve it, write to us and we will do what we can. |
 | **You want to report objectionable content or a user** | Fastest from inside the app: **Report** under AI replies, and **Report** and **Block** on a user's profile. Reports are reviewed by a person. For anything urgent or serious you can also write to support directly. |
 | **Press, partnership or legal notice** | Write to the support address and we will route it. For formal legal service, the postal address below applies. |
@@ -85,16 +85,16 @@ Provider identification (Impressum): [imprint page]({{link:impressum}}).
   },
   de: {
     title: "Support und Kontakt",
-    description: "So erreichst du Lernomi: Support-Adresse, Antwortzeit, welcher Kanal für welches Thema, und die Melde- und Blockierwege in der App.",
+    description: "So erreichst du Lernomi: Support-Adresse, Antwortzeit, welcher Kanal für welches Thema und die Melde- und Blockierwege in der App.",
     summary: [],
     body: `Etwas funktioniert nicht, oder du hast eine Frage? So erreichst du uns. Jede Nachricht liest ein Mensch; automatische Antworten gibt es nicht.
 
 ## Was gehört wohin
 
 |---|---|
-| **Du hast ein Problem, einen Fehler oder einen Vorschlag** | Schreib an die Support-Adresse. Gerät und App-Version helfen sehr (sie stehen unten in Profil › Einstellungen). |
+| **Du hast ein Problem, einen Fehler oder einen Vorschlag** | Schreib an die Support-Adresse. Angaben zu Gerät und App-Version helfen sehr (sie stehen unten in Profil › Einstellungen). |
 | **Du möchtest dein Konto und deine Daten löschen** | Das kannst du selbst: in der App Profil › Einstellungen › Konto › Konto löschen, oder im Web über die [Seite zur Kontolöschung]({{link:deleteAccount}}). Die Löschung ist endgültig, und ein Store-Abonnement musst du zusätzlich kündigen. Nutzt du die App ohne Konto (als Gast): in der App Profil › Gastdaten löschen. |
-| **Du möchtest auf deine Daten zugreifen, sie berichtigen oder löschen lassen (DSGVO / KVKK)** | KVKK-Anträge aus der Türkei: {{privacyEmailTr}}. DSGVO- und UK-GDPR-Anträge aus der EU, dem EWR und dem Vereinigten Königreich (erreicht auch den EU-Vertreter): {{privacyEmailEu}}. Es genügt, von der E-Mail-Adresse deines Kontos zu schreiben. Fristen und Rechte stehen in Abschnitt 10 der [Datenschutzerklärung]({{link:privacy}}). |
+| **Du möchtest auf deine Daten zugreifen, sie berichtigen oder löschen lassen (DSGVO / KVKK)** | KVKK-Anträge aus der Türkei: {{privacyEmailTr}}. DSGVO- und UK-GDPR-Anträge aus der EU, dem EWR und dem Vereinigten Königreich (erreicht auch den EU-Vertreter): {{privacyEmailEu}}. Zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. Fristen und Rechte stehen in Abschnitt 10 der [Datenschutzerklärung]({{link:privacy}}). |
 | **Abonnement, Zahlung oder Erstattung** | Kauf, Verlängerung, Kündigung und Erstattung eines Abonnements wickelt der Store ab; wir können das nicht selbst bearbeiten. Unter Android: [Play › Abonnements](https://play.google.com/store/account/subscriptions){{ifIos}}; unter iOS: Einstellungen › Apple-Account › Abonnements, für Erstattungen [reportaproblem.apple.com](https://reportaproblem.apple.com){{/ifIos}}. Löst der Store es nicht, schreib uns — wir tun, was wir können. |
 | **Du möchtest anstößige Inhalte oder eine Person melden** | Am schnellsten in der App: **Melden** unter KI-Antworten sowie **Melden** und **Blockieren** im Profil einer Person. Meldungen prüft ein Mensch. In dringenden oder ernsten Fällen kannst du auch direkt an den Support schreiben. |
 | **Presse, Kooperation oder rechtliche Mitteilung** | Schreib an die Support-Adresse, wir leiten es weiter. Für förmliche Zustellungen gilt die Postanschrift unten. |

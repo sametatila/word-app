@@ -165,7 +165,7 @@
     "en": "caution",
     "beispiel": "Vorsicht, hier kommt ein Auto!",
     "beispielTr": "Dikkat, buradan bir araba geliyor!",
-    "beispielEn": "Careful, a car is coming here!"
+    "beispielEn": "Watch out, there's a car coming!"
   },
   {
     "id": 229,
@@ -252,7 +252,7 @@
     "tr": "genç",
     "en": "young",
     "beispiel": "Der neue Lehrer ist noch sehr jung.",
-    "beispielTr": "Yeni öğretmen daha çok genç.",
+    "beispielTr": "Yeni öğretmen henüz çok genç.",
     "beispielEn": "The new teacher is still very young."
   },
   {

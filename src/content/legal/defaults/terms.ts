@@ -119,7 +119,7 @@ Premium'da bu haklar beklemeden açıktır; Premium'un da kötüye kullanımı �
 
 ## 7b. Üçüncü taraf hizmetler
 
-Google ile giriş (Google Hesap şartları), Apple ile giriş (Apple Hesabı şartları), uygulamayı indirdiğin mağaza (Google Play Hizmet{{ifIos}} Şartları, Apple Media Services{{/ifIos}} Şartları ve ilgili iade politikaları) ve cihazının ya da tarayıcının konuşma tanıma servisi kendi sağlayıcılarının şartlarına tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası'nda listelenir; bunlar bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
+Google ile giriş (Google Hesabı şartları), Apple ile giriş (Apple Hesabı şartları), uygulamayı indirdiğin mağaza (Google Play Hizmet{{ifIos}} Şartları, Apple Media Services{{/ifIos}} Şartları ve ilgili iade politikaları) ve cihazının ya da tarayıcının konuşma tanıma servisi kendi sağlayıcılarının şartlarına tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası'nda listelenir; bunlar bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
 
 ## 8. Fikri mülkiyet
 
@@ -201,8 +201,8 @@ Lernomi is a language learning app offering vocabulary, listening, speaking and 
 ## 3. Account and age
 
 - Lernomi is intended for adults: you must be 18 or older to create an account. We close accounts we learn belong to someone under 18 and delete their data.
-- You can also use the mobile app without creating an account (as a guest); these terms and the minimum age of 18 apply to guest use too. Social features, Premium and AI feedback (apart from a single trial assessment) require an account; reminders are set up only on that device. Your guest progress is tied to the guest identity on that device: it may be lost if you delete the app or do not use it for {{sessionMaxDays}} days. When you create an account with e-mail, your guest identity becomes your account; with a social sign-in your progress moves into the account; if you sign in to an existing account, you are asked whether to add the progress. You can delete your guest data in the app under Profile › Delete guest data.
-- Your account details must be accurate; never share your password. You are responsible for activity on your account; tell us if you notice unauthorised use.
+- You can also use the mobile app without creating an account (as a guest); these terms and the minimum age of 18 apply to guest use too. Social features, Premium and AI feedback (apart from a single trial assessment) require an account; reminders are set up only on that device. Your guest progress is tied to the guest identity on that device: it may be lost if you delete the app or do not use it for {{sessionMaxDays}} days. When you create an account with email, your guest identity becomes your account; with a social sign-in your progress moves into the account; if you sign in to an existing account, you are asked whether to add the progress. You can delete your guest data in the app under Profile › Delete guest data.
+- Your account details must be accurate; never share your password. You are responsible for activity on your account; tell us if you notice unauthorized use.
 - You can delete your account at any time: in the app under Profile › Settings › Account › Delete account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone.
 
 ## 4. Acceptable use
@@ -227,7 +227,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 
 - A username is 3-20 characters of letters, digits and underscores; you may not use someone else's name, a trademark or a misleading identity. Inappropriate names may be changed.
 - Your social profile is public by default; you manage visibility, friend requests and activity sharing under Settings › Social.
-- Blocking is mutual and is not notified. Reports are reviewed by a human; false or malicious reports are themselves a breach of the rules.
+- Blocking is mutual, and the other person is not notified. Reports are reviewed by a human; false or malicious reports are themselves a breach of the rules.
 - There is no private messaging; reactions, nudges and shared quests are limited to your friends.
 
 ## 6. AI content
@@ -244,7 +244,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 - **Withdrawal and refunds:** Premium is sold by the store you downloaded the app from, and it becomes available as soon as you buy it. You confirm the purchase on the store's own payment screen; the app does not ask for a separate withdrawal consent. You exercise your right of withdrawal and request refunds through that store, under its terms: through Play support on Google Play{{ifIos}}, and at reportaproblem.apple.com on the App Store{{/ifIos}}. We honor refunds the store grants; if the store does not resolve an issue, you can write to us. Your statutory rights as a consumer are not affected.
 - **Price changes:** The subscription price can change over time. The rule is this: **the price you paid holds for the period you paid for** — an increase never applies retroactively and only takes effect from the next renewal. Before an increase you are notified through the store (e-mail and store notification) at least **30 days** in advance, with the new amount and the date it takes effect. Depending on the size of the increase and the store's rules, one of two paths applies: for small, infrequent increases the subscription renews at the new price unless you cancel; for anything beyond that **your explicit consent is required**, and without it the subscription simply ends instead of renewing. In both cases, if you cancel before the effective date you are not charged the new price. Amount differences caused by a change of currency, region or tax rate (for example VAT) are applied by the store and are not subject to the notice period in this clause.
 - **Promotional prices and gifted time:** A free trial, a discounted introductory price, a promo code and a referral reward are valid **only for the stated period**; when it ends the standard price applies, and this is shown at the time of purchase. Time gained from a gift or a code is not a monetary claim: it cannot be cashed out or transferred, and it does not mean future prices are fixed.
-- **Proof of purchase:** The sale is made by the store, which issues the receipt and sends it to the e-mail address on your store account; you can request a copy from the store's support. The service provider is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.
+- **Proof of purchase:** The sale is made by the store, which issues the receipt and sends it to the email address on your store account; you can request a copy from the store's support. The service provider is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.
 
 ## 7a. Fair use
 
@@ -293,14 +293,14 @@ Obligations are suspended for the duration of events beyond the parties' control
 - **Assignment:** You may not assign your account or your rights under this agreement. We may assign the agreement in the event of a transfer of the service or if the activity is moved into a company structure, preserving your rights and notifying you.
 - **Waiver:** Not exercising a right does not mean waiving it.
 - **Language:** The binding language of the agreement is Turkish; translations are for information. In case of a difference in interpretation, the Turkish text prevails.
-- **Notices:** Notices to us go to {{supportEmail}}; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.
+- **Notices:** Notices to us go to {{supportEmail}}; notices to you go to the email address on your account or as an in-app message, and are deemed served upon arrival.
 - **Retention:** This agreement is stored electronically. The version of the terms you accepted and the date of acceptance are recorded on your account; you may request the text of that version and its date.
 
 ## {{ifIos}}13a. Additional terms for the Apple App Store
 
 If you downloaded the app from the App Store, the following also applies. These are the minimum terms Apple requires from developers who do not use Apple's own EULA; they apply to the Apple version only and prevail in case of conflict.
 
-- **Parties:** This agreement is between you and us only, not with Apple. We alone are responsible for the app and its content.
+- **Parties:** This agreement is concluded between you and us only, not with Apple. We alone are responsible for the app and its content.
 - **Scope of the license:** We grant you a non-transferable license to use the app on Apple-branded devices that you own or control, within the Usage Rules of the App Store Terms of Service.
 - **Maintenance and support:** We alone are responsible for maintenance and support; Apple has no such obligation.
 - **Warranty:** We alone are responsible for any warranty. If the app fails to conform to an applicable warranty you may notify Apple, and Apple will refund the purchase price; beyond that Apple has no warranty obligation.
@@ -313,7 +313,7 @@ If you downloaded the app from the App Store, the following also applies. These 
 
 ## {{/ifIos}}13. Changes and contact
 
-When we update these terms, the effective date and version change; we announce material changes to your detriment at least 30 days in advance in the app and by e-mail, and you may close your account if you do not accept them. Questions: {{supportEmail}}.`,
+When we update these terms, the effective date and version change; we announce material changes to your detriment at least 30 days in advance in the app and by email, and you may close your account if you do not accept them. Questions: {{supportEmail}}.`,
   },
   de: {
     title: "Nutzungsbedingungen",
@@ -321,7 +321,7 @@ When we update these terms, the effective date and version change; we announce m
     summary: [
       "Mit der Nutzung von Lernomi nimmst du diese Vereinbarung an.",
       "Den Dienst bietet ein in der Türkei niedergelassener Entwickler an, der die App auch in den Stores veröffentlicht; die Server stehen in Deutschland. Die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
-      "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, bleibt dein.",
+      "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, gehört weiterhin dir.",
       "KI-Antworten können falsch sein.",
       "Premium wird in dem Store gekauft, aus dem du die App geladen hast, und dort gekündigt.",
     ],
@@ -356,7 +356,7 @@ Für anstößige Inhalte und missbräuchliche Nutzer gilt null Toleranz. Meldung
 
 ## 5. Deine Inhalte und Meldungen
 
-Die Texte, die du schreibst, die Transkripte dessen, was du sprichst, und dein Anzeigename gehören dir. Du erteilst uns nur das weltweite, nicht ausschließliche und unentgeltliche Nutzungsrecht, das zur Erbringung des Dienstes erforderlich ist: bewerten, Rückmeldung erzeugen und so viel wie du auswählst (Anzeigename, Fortschritt) anderen Nutzern zeigen. Wir nutzen deine Inhalte nicht für Werbung oder Modelltraining; mit der Löschung deines Kontos endet das Nutzungsrecht.
+Die Texte, die du schreibst, die Transkripte dessen, was du sprichst, und dein Anzeigename gehören dir. Du erteilst uns nur das weltweite, nicht ausschließliche und unentgeltliche Nutzungsrecht, das zur Erbringung des Dienstes erforderlich ist: bewerten, Rückmeldung erzeugen und so viel, wie du auswählst (Anzeigename, Fortschritt) anderen Nutzern zeigen. Wir nutzen deine Inhalte nicht für Werbung oder Modelltraining; mit der Löschung deines Kontos endet das Nutzungsrecht.
 
 Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt siehst (Name oder Verhalten eines anderen Nutzers), kannst du ihn über die Schaltfläche "Melden" in der App oder unter {{supportEmail}} melden; dies ist auch die einzige Kontaktstelle für Meldungen nach dem EU-Gesetz über digitale Dienste (DSA). Meldungen werden innerhalb von 24 Stunden von einem Menschen geprüft; Entscheidung und Rechtsbehelf werden der meldenden Person und dem Inhaber des Inhalts mitgeteilt, du erfährst also das Ergebnis deiner Meldung. Die Freundesfunktionen enthalten Schaltflächen zum Blockieren und Melden.
 
@@ -371,12 +371,12 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 
 - Chat-Antworten und Bewertungen werden von Sprachmodellen erzeugt; die App weist deutlich darauf hin, wo du mit einer KI interagierst. Antworten können falsch, unvollständig oder widersprüchlich sein; Grammatikkorrekturen dürfen nicht als endgültig richtig gelten.
 - Funktionen mit KI oder serverseitiger Spracherkennung setzen voraus, dass dein Text oder kurze Audioaufnahmen an die in der Datenschutzerklärung genannten Anbieter gesendet werden. Das geschieht erst, wenn du es in der App erlaubst; lehnst du ab oder widerrufst du die Erlaubnis unter Einstellungen › Datenschutz, laufen diese Funktionen ohne KI in eingeschränkter Form oder bleiben ausgeschaltet.
-- Eine anstößige oder fehlerhafte Antwort kannst du ohne die App zu verlassen über "Melden" unter der Antwort melden.
+- Eine anstößige oder fehlerhafte Antwort kannst du, ohne die App zu verlassen, über "Melden" unter der Antwort melden.
 - KI-Figuren sind keine echten Personen; sie erteilen keine medizinische, rechtliche oder finanzielle Beratung.
 
 ## 7. Premium-Abonnement, Zahlung und Widerruf
 
-- **Kauf:** Premium wird über das Zahlungssystem des Stores gekauft, aus dem du die App geladen hast: unter Android über Google Play Billing{{ifIos}}, unter iOS über den Apple In-App-Kauf{{/ifIos}}. Die Zahlung wickelt der Store ab, und dessen eigene Nutzungsbedingungen gelten zusätzlich. Preis, Währung, Laufzeit, Testbedingungen und Steuern zeigt der Store im Moment des Kaufs an; diese Angaben bilden die vorvertragliche Information nach dem türkischen Gesetz Nr. 6502 und der Fernabsatzverordnung.
+- **Kauf:** Premium wird über das Zahlungssystem des Stores gekauft, aus dem du die App geladen hast: unter Android über Google Play Billing{{ifIos}}, unter iOS über den In-App-Kauf von Apple{{/ifIos}}. Die Zahlung wickelt der Store ab, und dessen eigene Nutzungsbedingungen gelten zusätzlich. Preis, Währung, Laufzeit, Testbedingungen und Steuern zeigt der Store im Moment des Kaufs an; diese Angaben bilden die vorvertragliche Information nach dem türkischen Gesetz Nr. 6502 und der Fernabsatzverordnung.
 - **Verlängerung und Kündigung:** Wird das Abonnement nicht mindestens 24 Stunden vor Ende der Laufzeit gekündigt, verlängert es sich um denselben Zeitraum. Gekündigt wird in dem Store, in dem du gekauft hast: Play Store › Zahlungen und Abos{{ifIos}}, unter iOS Einstellungen › Apple-Account › Abonnements{{/ifIos}}. Das Löschen des Kontos kündigt das Abonnement nicht. Kündigst du vor Ende einer kostenlosen Testphase, fällt keine Gebühr an.
 - **Widerruf und Erstattung:** Premium verkauft der Store, aus dem du die App geladen hast, und es steht sofort nach dem Kauf zur Verfügung. Den Kauf bestätigst du auf dem Zahlungsbildschirm des Stores; die App holt keine gesonderte Widerrufszustimmung ein. Dein Widerrufsrecht und Erstattungswünsche machst du über diesen Store nach dessen Bedingungen geltend: bei Google Play über den Play-Support{{ifIos}}, im App Store über reportaproblem.apple.com{{/ifIos}}. Vom Store gewährte Erstattungen erkennen wir an; löst der Store ein Problem nicht, kannst du uns schreiben. Deine gesetzlichen Rechte als Verbraucher bleiben unberührt.
 - **Preisänderung:** Der Abopreis kann sich mit der Zeit ändern. Die Regel lautet: **Der bezahlte Preis gilt für den bezahlten Zeitraum** — eine Erhöhung wirkt nie rückwirkend und greift erst ab der nächsten Verlängerung. Vor einer Erhöhung wirst du über den Store (E-Mail und Store-Benachrichtigung) mindestens **30 Tage** vorher informiert, mit dem neuen Betrag und dem Datum des Inkrafttretens. Je nach Höhe der Erhöhung und den Regeln des Stores gilt einer von zwei Wegen: Bei kleinen, seltenen Erhöhungen verlängert sich das Abo zum neuen Preis, sofern du nicht kündigst; darüber hinaus ist **deine ausdrückliche Zustimmung erforderlich**, und ohne sie endet das Abo, statt sich zu verlängern. In beiden Fällen wird dir der neue Preis nicht berechnet, wenn du vor dem Stichtag kündigst. Betragsunterschiede durch geänderte Währung, Region oder Steuersätze (etwa die Mehrwertsteuer) setzt der Store um; sie unterliegen nicht der Frist in dieser Klausel.
@@ -393,7 +393,7 @@ Mit Premium ist all das ohne Warten offen; auch Premium hat tägliche Obergrenze
 
 ## 7b. Dienste Dritter
 
-Die Anmeldung mit Google (Google-Konto-Bedingungen), die Anmeldung mit Apple (Apple-Account-Bedingungen), der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{{ifIos}}, Apple-Media-Services-Bedingungen{{/ifIos}} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts oder Browsers unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
+Die Anmeldung mit Google (Google-Konto-Bedingungen), die Anmeldung mit Apple (Apple-Account-Bedingungen), der Store, aus dem du die App geladen hast (Google-Play-Nutzungsbedingungen{{ifIos}}, Apple-Media-Services-Bedingungen{{/ifIos}} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts oder Browsers unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
 
 ## 8. Geistiges Eigentum
 
@@ -438,7 +438,7 @@ Für die Dauer von Ereignissen außerhalb der Kontrolle der Parteien — Naturka
 Hast du die App aus dem App Store geladen, gilt zusätzlich Folgendes. Das sind die Mindestbedingungen, die Apple von Entwicklern verlangt, die nicht Apples eigene EULA verwenden; sie gelten nur für die Apple-Fassung und gehen im Widerspruchsfall vor.
 
 - **Vertragsparteien:** Diese Vereinbarung besteht nur zwischen dir und uns, nicht mit Apple. Für die App und ihre Inhalte sind allein wir verantwortlich.
-- **Umfang der Lizenz:** Wir gewähren dir eine nicht übertragbare Lizenz zur Nutzung der App auf Apple-Geräten, die du besitzt oder kontrollierst, im Rahmen der Nutzungsregeln der App Store-Nutzungsbedingungen.
+- **Umfang der Lizenz:** Wir gewähren dir eine nicht übertragbare Lizenz zur Nutzung der App auf Apple-Geräten, die du besitzt oder kontrollierst, im Rahmen der Nutzungsregeln der App-Store-Nutzungsbedingungen.
 - **Wartung und Support:** Für Wartung und Support sind allein wir verantwortlich; Apple trifft keine solche Pflicht.
 - **Gewährleistung:** Für die Gewährleistung sind allein wir verantwortlich. Entspricht die App einer geltenden Gewährleistung nicht, kannst du Apple benachrichtigen; Apple erstattet den Kaufpreis und trifft darüber hinaus keine Gewährleistungspflicht.
 - **Ansprüche:** Ansprüche im Zusammenhang mit der App — einschließlich Produkthaftung, Rechtskonformität, Verbraucherschutz und Datenschutz — richten sich an uns, nicht an Apple.

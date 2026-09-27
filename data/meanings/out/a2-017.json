@@ -29,7 +29,7 @@
     "en": "self-service",
     "beispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke.",
     "beispielTr": "Burası self servis, yemeği tezgâhtan kendin alıyorsun.",
-    "beispielEn": "This is self-service, you get the food at the counter."
+    "beispielEn": "This is self-service; you get the food at the counter."
   },
   {
     "id": 7792,
@@ -148,8 +148,8 @@
     "tr": "kupa",
     "en": "mug",
     "beispiel": "Ich trinke jeden Morgen einen Becher Kaffee.",
-    "beispielTr": "Her sabah bir bardak kahve içiyorum.",
-    "beispielEn": "I drink a cup of coffee every morning."
+    "beispielTr": "Her sabah bir kupa kahve içiyorum.",
+    "beispielEn": "I drink a mug of coffee every morning."
   },
   {
     "id": 7807,
@@ -221,7 +221,7 @@
     "en": "to send back",
     "beispiel": "Ich möchte die Jacke zurückschicken, sie passt nicht.",
     "beispielTr": "Ceketi geri göndermek istiyorum, bana olmadı.",
-    "beispielEn": "I want to send the jacket back, it doesn't fit."
+    "beispielEn": "I want to send the jacket back because it doesn't fit."
   },
   {
     "id": 7816,
@@ -229,7 +229,7 @@
     "en": "bottle deposit",
     "beispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
     "beispielTr": "Şişe için 25 sent depozito ödüyorsun.",
-    "beispielEn": "You pay a 25 cent deposit on the bottle."
+    "beispielEn": "You pay a 25-cent deposit on the bottle."
   },
   {
     "id": 7817,

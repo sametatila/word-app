@@ -37,7 +37,7 @@
     "en": "besides",
     "beispiel": "Das Auto ist alt und außerdem zu teuer.",
     "beispielTr": "Araba eski ve ayrıca çok pahalı.",
-    "beispielEn": "The car is old and, besides, too expensive."
+    "beispielEn": "The car is old, and besides, it's too expensive."
   },
   {
     "id": 865,
@@ -341,7 +341,7 @@
     "en": "opposite",
     "beispiel": "Die Bäckerei ist gegenüber vom Bahnhof.",
     "beispielTr": "Fırın garın karşısında.",
-    "beispielEn": "The bakery is opposite the train station."
+    "beispielEn": "The bakery is across from the train station."
   },
   {
     "id": 1321,

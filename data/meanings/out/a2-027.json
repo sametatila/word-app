@@ -76,7 +76,7 @@
   "tr": "e-posta atmak",
   "en": "to email",
   "beispiel": "Ich maile dir die Adresse heute Abend.",
-  "beispielTr": "Adresi bu akşam sana e-posta atarım.",
+  "beispielTr": "Adresi bu akşam sana e-postayla atarım.",
   "beispielEn": "I will email you the address tonight."
  },
  {
@@ -244,7 +244,7 @@
   "tr": "anlamak",
   "en": "to get it",
   "beispiel": "Jetzt kapiere ich die Regel endlich.",
-  "beispielTr": "Kuralı sonunda şimdi anlıyorum.",
+  "beispielTr": "Şimdi nihayet kuralı anlıyorum.",
   "beispielEn": "Now I finally get the rule."
  },
  {
@@ -333,7 +333,7 @@
   "en": "to motivate",
   "beispiel": "Meine Lehrerin motiviert uns jeden Tag neu.",
   "beispielTr": "Öğretmenim bizi her gün yeniden motive ediyor.",
-  "beispielEn": "My teacher motivates us anew every day."
+  "beispielEn": "My teacher motivates us all over again every day."
  },
  {
   "id": 8332,

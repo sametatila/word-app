@@ -68,8 +68,8 @@
     "tr": "teşvik etmek",
     "en": "to promote",
     "beispiel": "Die Stadt fördert junge Künstler mit Stipendien.",
-    "beispielTr": "Şehir genç sanatçıları burslarla teşvik ediyor.",
-    "beispielEn": "The city promotes young artists with scholarships."
+    "beispielTr": "Şehir genç sanatçıları burslarla destekliyor.",
+    "beispielEn": "The city supports young artists with grants."
   },
   {
     "id": 2246,
@@ -93,7 +93,7 @@
     "en": "average",
     "beispiel": "Im Durchschnitt brauche ich zwanzig Minuten zur Arbeit.",
     "beispielTr": "İşe gitmem ortalama yirmi dakika sürüyor.",
-    "beispielEn": "On average I need twenty minutes to get to work."
+    "beispielEn": "On average, it takes me twenty minutes to get to work."
   },
   {
     "id": 2975,
@@ -365,7 +365,7 @@
     "en": "set menu",
     "beispiel": "Das Menü des Tages kostet zwölf Euro.",
     "beispielTr": "Günün menüsü on iki avro.",
-    "beispielEn": "The set menu of the day costs twelve euros."
+    "beispielEn": "Today's set menu costs twelve euros."
   },
   {
     "id": 1919,

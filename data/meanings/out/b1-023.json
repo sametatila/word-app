@@ -37,7 +37,7 @@
     "en": "habit",
     "beispiel": "Aus alter Gewohnheit trinke ich morgens Kaffee.",
     "beispielTr": "Eski bir alışkanlıkla sabahları kahve içiyorum.",
-    "beispielEn": "Out of old habit I drink coffee in the morning."
+    "beispielEn": "Out of long habit, I drink coffee in the morning."
   },
   {
     "id": 3141,
@@ -180,7 +180,7 @@
     "tr": "kural",
     "en": "regulation",
     "beispiel": "Die neue Vorschrift gilt ab dem ersten Januar.",
-    "beispielTr": "Yeni yönetmelik bir Ocak'ta yürürlüğe giriyor.",
+    "beispielTr": "Yeni yönetmelik 1 Ocak'ta yürürlüğe giriyor.",
     "beispielEn": "The new regulation takes effect on January first."
   },
   {
@@ -197,7 +197,7 @@
     "en": "line",
     "beispiel": "Das Wort steht in der dritten Zeile.",
     "beispielTr": "Kelime üçüncü satırda.",
-    "beispielEn": "The word is in the third line."
+    "beispielEn": "The word is on the third line."
   },
   {
     "id": 2688,
@@ -242,10 +242,10 @@
   {
     "id": 1748,
     "tr": "demiryolu",
-    "en": "railway",
+    "en": "railroad",
     "beispiel": "Die Eisenbahn wurde vor hundert Jahren gebaut.",
     "beispielTr": "Demiryolu yüz yıl önce yapıldı.",
-    "beispielEn": "The railway was built a hundred years ago."
+    "beispielEn": "The railroad was built a hundred years ago."
   },
   {
     "id": 2244,
@@ -349,7 +349,7 @@
     "en": "provisional",
     "beispiel": "Die Bibliothek bleibt vorläufig wegen Renovierung geschlossen.",
     "beispielTr": "Kütüphane tadilat nedeniyle geçici olarak kapalı.",
-    "beispielEn": "The library is provisionally closed for renovation."
+    "beispielEn": "The library is temporarily closed for renovations."
   },
   {
     "id": 1804,

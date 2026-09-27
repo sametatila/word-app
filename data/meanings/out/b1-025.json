@@ -60,7 +60,7 @@
     "tr": "resmî tatil",
     "en": "public holiday",
     "beispiel": "Der Erste Mai ist ein gesetzlicher Feiertag.",
-    "beispielTr": "Bir Mayıs resmî tatildir.",
+    "beispielTr": "1 Mayıs resmî tatildir.",
     "beispielEn": "The first of May is a public holiday."
   },
   {
@@ -237,7 +237,7 @@
     "en": "to fill up",
     "beispiel": "Wir müssen vor der Autobahn noch tanken.",
     "beispielTr": "Otoyola girmeden önce benzin almalıyız.",
-    "beispielEn": "We have to fill up before the highway."
+    "beispielEn": "We have to fill up before we get on the highway."
   },
   {
     "id": 1537,
@@ -332,8 +332,8 @@
     "tr": "dönmek",
     "en": "to turn",
     "beispiel": "Nach der Bäckerei biegst du rechts in die Schulstraße ab.",
-    "beispielTr": "Fırından sonra sağa, Okul Sokağı'na dönüyorsun.",
-    "beispielEn": "After the bakery, you turn right onto School Street."
+    "beispielTr": "Fırından sonra sağa, Schulstraße'ye dönüyorsun.",
+    "beispielEn": "After the bakery, you turn right onto Schulstraße."
   },
   {
     "id": 2205,
@@ -357,7 +357,7 @@
     "en": "craftsman",
     "beispiel": "Morgen kommen die Handwerker zu uns.",
     "beispielTr": "Yarın ustalar bize geliyor.",
-    "beispielEn": "The craftsmen are coming to our place tomorrow."
+    "beispielEn": "The workmen are coming to our place tomorrow."
   },
   {
     "id": 1478,

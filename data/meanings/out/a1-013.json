@@ -108,7 +108,7 @@
     "tr": "susuzluk",
     "en": "thirst",
     "beispiel": "Nach dem Laufen hat Tom immer Durst.",
-    "beispielTr": "Tom koşudan sonra hep susuyor.",
+    "beispielTr": "Tom koşudan sonra hep susamış oluyor.",
     "beispielEn": "Tom is always thirsty after running."
   },
   {
@@ -348,8 +348,8 @@
     "tr": "tren",
     "en": "train",
     "beispiel": "Die Bahn ist oft unpünktlich.",
-    "beispielTr": "Demiryolu sık sık gecikiyor.",
-    "beispielEn": "The railway is often late."
+    "beispielTr": "Trenler sık sık gecikiyor.",
+    "beispielEn": "The trains are often late."
   },
   {
     "id": 568,

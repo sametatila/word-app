@@ -5,7 +5,7 @@
  { "id": 200009, "beispielDe": "Meine Freunde sind alle hier." },
  { "id": 200010, "beispielDe": "Meine Großmutter lebt allein in einem kleinen Haus." },
  { "id": 200012, "beispielDe": "Opa trägt immer noch seine alten braunen Schuhe." },
- { "id": 200013, "beispielDe": "Wir haben fast das gleiche Alter." },
+ { "id": 200013, "beispielDe": "Wir sind fast gleich alt." },
  { "id": 200015, "beispielDe": "Die anderen Kinder spielen schon draußen." },
  { "id": 200017, "beispielDe": "Der Film fängt um acht Uhr an." },
  { "id": 200019, "beispielDe": "Wann kommst du in London an?" },
@@ -46,7 +46,7 @@
  { "id": 200081, "beispielDe": "Wir bleiben heute Abend zu Hause." },
  { "id": 200082, "beispielDe": "Die Kinder malen Häuser mit einem Bleistift." },
  { "id": 200084, "beispielDe": "Im Garten sind gelbe Blumen." },
- { "id": 200086, "beispielDe": "Ich brauche etwas Hilfe dabei." },
+ { "id": 200086, "beispielDe": "Ich brauche dabei etwas Hilfe." },
  { "id": 200087, "beispielDe": "Dieser Brief ist heute Morgen für dich gekommen." },
  { "id": 200088, "beispielDe": "Ich bringe dir morgen die Bücher." }
 ]

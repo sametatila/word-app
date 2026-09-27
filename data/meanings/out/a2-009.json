@@ -18,10 +18,10 @@
   {
     "id": 1211,
     "tr": "muayene saati",
-    "en": "consultation hour",
+    "en": "office hours",
     "beispiel": "Die Sprechstunde ist von neun bis zwölf.",
     "beispielTr": "Muayene saatleri dokuzdan on ikiye kadar.",
-    "beispielEn": "The consultation hours are from nine to twelve."
+    "beispielEn": "Office hours are from nine to twelve."
   },
   {
     "id": 1257,
@@ -253,7 +253,7 @@
     "en": "lost items",
     "beispiel": "Dein Schlüssel liegt bei den Fundsachen.",
     "beispielTr": "Anahtarın kayıp eşyalarda duruyor.",
-    "beispielEn": "Your key is with the lost items."
+    "beispielEn": "Your key is at the lost and found."
   },
   {
     "id": 995,
@@ -364,7 +364,7 @@
     "tr": "kaba",
     "en": "coarse",
     "beispiel": "Das Salz ist zu grob für den Salat.",
-    "beispielTr": "Tuz salata için fazla kaba.",
+    "beispielTr": "Tuz salata için fazla iri.",
     "beispielEn": "The salt is too coarse for the salad."
   },
   {

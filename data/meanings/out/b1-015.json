@@ -93,7 +93,7 @@
     "en": "huge",
     "beispiel": "Der Garten hinter dem Haus ist riesig.",
     "beispielTr": "Evin arkasındaki bahçe kocaman.",
-    "beispielEn": "The backyard behind the house is huge."
+    "beispielEn": "The yard behind the house is huge."
   },
   {
     "id": 2321,
@@ -197,7 +197,7 @@
     "en": "viewer",
     "beispiel": "Nach dem Tor sprangen alle Zuschauer von ihren Plätzen auf.",
     "beispielTr": "Golden sonra bütün izleyiciler yerlerinden fırladı.",
-    "beispielEn": "After the goal all the viewers jumped up from their seats."
+    "beispielEn": "After the goal, all the spectators jumped up from their seats."
   },
   {
     "id": 1710,
@@ -293,7 +293,7 @@
     "en": "sum",
     "beispiel": "Die Summe auf der Rechnung scheint mir zu hoch.",
     "beispielTr": "Faturadaki tutar bana çok yüksek geliyor.",
-    "beispielEn": "The sum on the bill seems too high to me."
+    "beispielEn": "The total on the bill seems too high to me."
   },
   {
     "id": 2408,
@@ -394,7 +394,7 @@
   {
     "id": 1981,
     "tr": "adil",
-    "en": "just",
+    "en": "fair",
     "beispiel": "Wir sollten den Kuchen gerecht verteilen.",
     "beispielTr": "Pastayı adil bir şekilde paylaşmalıyız.",
     "beispielEn": "We should divide the cake fairly."

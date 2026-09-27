@@ -101,7 +101,7 @@
     "en": "as an exception",
     "beispiel": "Heute darfst du ausnahmsweise länger fernsehen.",
     "beispielTr": "Bugün istisna olarak daha uzun televizyon izleyebilirsin.",
-    "beispielEn": "Today you may watch TV longer as an exception."
+    "beispielEn": "Today, as an exception, you can watch TV longer."
   },
   {
     "id": 7601,
@@ -124,7 +124,7 @@
     "tr": "az çok",
     "en": "reasonably",
     "beispiel": "Ich spreche einigermaßen gut Deutsch.",
-    "beispielTr": "Almancayı az çok iyi konuşuyorum.",
+    "beispielTr": "Almancayı idare edecek kadar iyi konuşuyorum.",
     "beispielEn": "I speak German reasonably well."
   },
   {
@@ -148,7 +148,7 @@
     "tr": "şöyle böyle",
     "en": "more or less",
     "beispiel": "Das Zimmer ist jetzt halbwegs sauber.",
-    "beispielTr": "Oda şimdi şöyle böyle temiz.",
+    "beispielTr": "Oda şimdi az çok temiz.",
     "beispielEn": "The room is more or less clean now."
   },
   {
@@ -164,8 +164,8 @@
     "tr": "epeyce",
     "en": "quite a few",
     "beispiel": "Auf dem Markt gibt es etliche gute Angebote.",
-    "beispielTr": "Pazarda epeyce iyi teklif var.",
-    "beispielEn": "There are quite a few good offers at the market."
+    "beispielTr": "Pazarda epeyce iyi fırsat var.",
+    "beispielEn": "There are quite a few good deals at the market."
   },
   {
     "id": 7609,
@@ -269,7 +269,7 @@
     "en": "neither",
     "beispiel": "Ich habe weder Zeit noch Lust.",
     "beispielTr": "Ne vaktim ne de hevesim var.",
-    "beispielEn": "I have neither time nor desire."
+    "beispielEn": "I have neither the time nor the desire."
   },
   {
     "id": 7622,
@@ -293,7 +293,7 @@
     "en": "or rather",
     "beispiel": "Das Konzert beginnt um acht, beziehungsweise um halb neun.",
     "beispielTr": "Konser sekizde başlıyor, daha doğrusu sekiz buçukta.",
-    "beispielEn": "The concert starts at eight or rather at half past eight."
+    "beispielEn": "The concert starts at eight, or rather at half past eight."
   },
   {
     "id": 7625,
@@ -309,7 +309,7 @@
     "en": "the more",
     "beispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir.",
     "beispielTr": "Ne kadar erken yola çıkarsak o kadar az trafiğe takılırız.",
-    "beispielEn": "The earlier we leave the less traffic we have."
+    "beispielEn": "The earlier we leave, the less traffic we'll hit."
   },
   {
     "id": 7627,
@@ -341,7 +341,7 @@
     "en": "with the help of",
     "beispiel": "Mithilfe einer App finde ich jede Adresse.",
     "beispielTr": "Bir uygulama yardımıyla her adresi buluyorum.",
-    "beispielEn": "With the help of an app I find every address."
+    "beispielEn": "With the help of an app, I can find any address."
   },
   {
     "id": 7631,
@@ -357,7 +357,7 @@
     "en": "therefore",
     "beispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
     "beispielTr": "Nakit param yoktu, bu yüzden kartla ödedim.",
-    "beispielEn": "I had no cash, therefore I paid by card."
+    "beispielEn": "I had no cash; therefore, I paid by card."
   },
   {
     "id": 7633,
@@ -365,7 +365,7 @@
     "en": "instead",
     "beispiel": "Der Kuchen war alle, stattdessen habe ich ein Eis genommen.",
     "beispielTr": "Pasta bitmişti, onun yerine dondurma aldım.",
-    "beispielEn": "The cake was gone, instead I got an ice cream."
+    "beispielEn": "The cake was gone, so I got ice cream instead."
   },
   {
     "id": 7634,
@@ -380,7 +380,7 @@
     "tr": "hiç değilse",
     "en": "at least",
     "beispiel": "Das Essen war teuer, aber immerhin war es lecker.",
-    "beispielTr": "Yemek pahalıydı ama yine de lezzetliydi.",
+    "beispielTr": "Yemek pahalıydı ama hiç değilse lezzetliydi.",
     "beispielEn": "The food was expensive but at least it was tasty."
   },
   {
@@ -397,6 +397,6 @@
     "en": "for instance",
     "beispiel": "Du kannst beispielsweise am Wochenende vorbeikommen.",
     "beispielTr": "Örneğin hafta sonu uğrayabilirsin.",
-    "beispielEn": "You could stop by on the weekend for instance."
+    "beispielEn": "You could stop by on the weekend, for instance."
   }
 ]

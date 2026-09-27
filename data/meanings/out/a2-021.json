@@ -146,10 +146,10 @@
   {
     "id": 8006,
     "tr": "kablosuz internet",
-    "en": "wifi",
+    "en": "Wi-Fi",
     "beispiel": "Gibt es hier im Café ein kostenloses WLAN?",
     "beispielTr": "Kafede ücretsiz kablosuz internet var mı?",
-    "beispielEn": "Is there free wifi here in the café?"
+    "beispielEn": "Is there free Wi-Fi here in the café?"
   },
   {
     "id": 8007,
@@ -253,7 +253,7 @@
     "en": "attachment",
     "beispiel": "Die Rechnung ist im Anhang.",
     "beispielTr": "Fatura ekte.",
-    "beispielEn": "The invoice is in the attachment."
+    "beispielEn": "The invoice is attached."
   },
   {
     "id": 8020,

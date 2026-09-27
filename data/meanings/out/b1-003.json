@@ -100,7 +100,7 @@
     "tr": "yolda",
     "en": "on the way",
     "beispiel": "Warte kurz auf mich, ich bin schon unterwegs.",
-    "beispielTr": "Biraz bekle beni, çoktan yoldayım.",
+    "beispielTr": "Beni biraz bekle, yola çıktım bile.",
     "beispielEn": "Wait for me a moment, I'm already on my way."
   },
   {
@@ -365,14 +365,14 @@
     "en": "list",
     "beispiel": "Schreib bitte eine Liste für den Einkauf.",
     "beispielTr": "Alışveriş için bir liste yaz lütfen.",
-    "beispielEn": "Please write a list for the shopping."
+    "beispielEn": "Please write a shopping list."
   },
   {
     "id": 2995,
     "tr": "âşık",
     "en": "in love",
     "beispiel": "Ich bin seit einem Monat in Francesco verliebt.",
-    "beispielTr": "Bir aydır Francesco'ya aşığım.",
+    "beispielTr": "Bir aydır Francesco'ya âşığım.",
     "beispielEn": "I've been in love with Francesco for a month."
   },
   {

@@ -101,7 +101,7 @@
     "en": "engine",
     "beispiel": "Der Motor startet nicht mehr.",
     "beispielTr": "Motor artık çalışmıyor.",
-    "beispielEn": "The engine doesn't start anymore."
+    "beispielEn": "The engine won't start anymore."
   },
   {
     "id": 900,
@@ -324,7 +324,7 @@
     "tr": "stres",
     "en": "stress",
     "beispiel": "Vor Weihnachten haben alle im Geschäft viel Stress.",
-    "beispielTr": "Noel'den önce dükkanda herkes çok stresli.",
+    "beispielTr": "Noel'den önce dükkânda herkes çok stresli.",
     "beispielEn": "Before Christmas, everyone at the store is really stressed."
   },
   {
@@ -349,7 +349,7 @@
     "en": "voluntary",
     "beispiel": "Sie arbeitet freiwillig in einem Tierheim.",
     "beispielTr": "Bir hayvan barınağında gönüllü çalışıyor.",
-    "beispielEn": "She works voluntarily at an animal shelter."
+    "beispielEn": "She volunteers at an animal shelter."
   },
   {
     "id": 1153,
