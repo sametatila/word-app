@@ -55,3 +55,10 @@ export const contentColumnLayout = ({ children }: { children: React.ReactNode })
     <ContentColumn>{children}</ContentColumn>
   </ErrorBoundary>
 );
+
+/** Sekme ekranları için: çökme kartı yüzen sekme çubuğunun üstünde kalsın. */
+export const tabContentLayout = ({ children }: { children: React.ReactNode }) => (
+  <ErrorBoundary sekmeli>
+    <ContentColumn>{children}</ContentColumn>
+  </ErrorBoundary>
+);

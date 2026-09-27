@@ -1,7 +1,9 @@
 import React from "react";
+import { View } from "react-native";
 import { FlowScreen, FlowActions, StateBody } from "./flow";
 import { RefreshIcon } from "./icons";
 import { useTheme } from "../theme";
+import { TAB_BAR_SPACE } from "./Screen";
 import { t } from "../lib/i18n";
 import { track } from "../lib/track";
 import { reportError } from "../lib/errorReport";
@@ -30,7 +32,9 @@ import { reportError } from "../lib/errorReport";
  * `componentDidCatch` yerine `getDerivedStateFromError` + `componentDidCatch`
  * ikilisi: ilki çizimi değiştiriyor, ikincisi ölçüyor.
  */
-type Props = { children: React.ReactNode; ekran?: string };
+/** `sekmeli`: sınır bir sekme ekranını sarıyor; yüzen sekme çubuğu kartın
+ *  "Tekrar dene" düğmesini örtmesin diye alttan pay bırakılıyor. */
+type Props = { children: React.ReactNode; ekran?: string; sekmeli?: boolean };
 type State = { hata: boolean };
 
 export class ErrorBoundary extends React.Component<Props, State> {
@@ -50,20 +54,22 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   render(): React.ReactNode {
     if (!this.state.hata) return this.props.children;
-    return <CrashCard onRetry={() => this.setState({ hata: false })} />;
+    return <CrashCard sekmeli={this.props.sekmeli} onRetry={() => this.setState({ hata: false })} />;
   }
 }
 
-function CrashCard({ onRetry }: { onRetry: () => void }) {
+function CrashCard({ onRetry, sekmeli = false }: { onRetry: () => void; sekmeli?: boolean }) {
   const { colors } = useTheme();
   /* DURUM ŞABLONU (ui/flow): üzgün maskot · başlık · tek cümle · tek çıkış.
      Eskiden kırmızı ikon karosu vardı; öteki "açılamadı" ekranlarıyla aynı
      dili konuşsun diye maskota geçti. Sınıf bileşeni kanca kullanamadığı için
      (tema ve FlowScreen'in güvenli alanı kancadan) ayrı bir fonksiyon bileşeni. */
   return (
+    <View style={{ flex: 1, backgroundColor: colors.bg, paddingBottom: sekmeli ? TAB_BAR_SPACE : 0 }}>
     <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon color={colors.onPrimary} size={18} />, onPress: onRetry }} />}>
       {/* Hata duyuruluyor (`alert` = assertive bölge, eskisi gibi); başlık başlık olarak okunuyor (bkz. parity 259). */}
       <StateBody alert title={t("crash.title")} body={t("crash.body")} />
     </FlowScreen>
+    </View>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TabBar } from "./TabBar";
-import { contentColumnLayout } from "../ui/ContentColumn";
+import { tabContentLayout } from "../ui/ContentColumn";
 import { t, useLang } from "../lib/i18n";
 import { LearnScreen } from "../screens/LearnScreen";
 import { PathScreen } from "../screens/PathScreen";
@@ -52,7 +52,7 @@ export function RootTabs() {
   return (
     // `screenLayout` yalnız EKRAN içeriğini sarmalıyor; `tabBar` dışarıda kalıyor
     // ve kolona kendisi hizalanıyor (bkz. TabBar).
-    <Tab.Navigator tabBar={renderTabBar} screenOptions={{ headerShown: false }} screenLayout={contentColumnLayout}>
+    <Tab.Navigator tabBar={renderTabBar} screenOptions={{ headerShown: false }} screenLayout={tabContentLayout}>
       <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} />
       <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} />
       <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} />
