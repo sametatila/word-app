@@ -1,4 +1,5 @@
 import { t, setLang } from "../src/lib/i18n";
+import { en } from "../src/i18n/en";
 
 /**
  * TEKİL BİÇİM.
@@ -38,11 +39,22 @@ describe("tekil biçim", () => {
   */
   it("tekil biçimi olmayan anahtarda temel metin kullanılır", async () => {
     await setLang("en");
-    const bir = t("plan.free_weekly", { n: 1 });
+    /* Anahtar SÖZLÜKTEN seçiliyor: `{n}` ile başlayan ve `.one` biçimi
+       olmayan ilk anahtar. Eskiden `plan.free_weekly` elle yazılıydı; o
+       anahtara tekil biçim eklenince (2026-09-27) testin öncülü çöktü. */
+    const key = Object.keys(en).find((k) => !k.endsWith(".one") && !(k + ".one" in en) && en[k].startsWith("{n} ") && !/\{(?!n\})\w+\}/.test(en[k]));
+    expect(key).toBeDefined();
+    const bir = t(key!, { n: 1 });
     expect(bir.startsWith("1 ")).toBe(true);
     expect(bir.length).toBeGreaterThan(3);
     /* Aynı anahtar başka sayıda da yer tutucuyu dolduruyor: cümle sabit
        kalıyor, yalnız sayı değişiyor. */
-    expect(t("plan.free_weekly", { n: 3 })).toBe(bir.replace(/^1 /, "3 "));
+    expect(t(key!, { n: 3 })).toBe(bir.replace(/^1 /, "3 "));
+  });
+
+  it("tekil biçimi olan anahtarda birde tekil metin kullanılır", async () => {
+    await setLang("en");
+    expect(t("plan.free_weekly", { n: 1 })).toBe(en["plan.free_weekly.one"].replace("{n}", "1"));
+    expect(t("plan.free_weekly", { n: 3 })).toBe(en["plan.free_weekly"].replace("{n}", "3"));
   });
 });
