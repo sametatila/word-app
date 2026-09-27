@@ -3,7 +3,10 @@ import { AppState, Linking, Platform, View } from "react-native";
 import { FlowActions, FlowScreen, StateBody } from "./flow";
 import { PressableScale } from "./PressableScale";
 import { Text } from "./Text";
-import { spacing, radii, useTheme } from "../theme";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { spacing, radii, useTheme, cardShadow } from "../theme";
+import { useLayout } from "../lib/useLayout";
+import { TAB_BAR_SPACE } from "./Screen";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
 import { diagnoseNetwork } from "../lib/reachability";
@@ -35,7 +38,6 @@ const PLATFORM: "ios" | "android" = Platform.OS === "ios" ? "ios" : "android";
 const MIN_REFRESH_MS = 60_000;
 
 export function AppGate() {
-  const { colors } = useTheme();
   const [control, setControl] = useState<AppControl | null>(null);
   const [dismissed, setDismissed] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -83,40 +85,17 @@ export function AppGate() {
 
   if (blocked && !blockedDismissed && user) {
     return (
-      <View
-        accessibilityLiveRegion="polite"
-        style={{
-          position: "absolute",
-          left: spacing.lg,
-          right: spacing.lg,
-          bottom: spacing.xl * 3,
-          borderRadius: radii.lg,
-          backgroundColor: colors.surface,
-          borderColor: colors.border,
-          borderWidth: 1,
-          padding: spacing.md,
-          gap: spacing.sm,
+      <GateBanner
+        text={t("common.network_blocked")}
+        onLater={() => setBlockedDismissed(true)}
+        action={t("common.try_again")}
+        busy={busy}
+        onAction={async () => {
+          setBusy(true);
+          await refresh(true);
+          setBusy(false);
         }}
-      >
-        <Text variant="body">{t("common.network_blocked")}</Text>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: spacing.md }}>
-          <PressableScale accessibilityRole="button" onPress={() => setBlockedDismissed(true)} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
-            <Text variant="body" color={colors.textMuted}>{t("appgate.later")}</Text>
-          </PressableScale>
-          <PressableScale
-            accessibilityRole="button"
-            disabled={busy}
-            onPress={async () => {
-              setBusy(true);
-              await refresh(true);
-              setBusy(false);
-            }}
-            style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}
-          >
-            <Text variant="h3" color={colors.primary}>{t("common.try_again")}</Text>
-          </PressableScale>
-        </View>
-      </View>
+      />
     );
   }
 
@@ -165,34 +144,42 @@ export function AppGate() {
   }
 
   if (!dismissed && build > 0 && build < control.latestBuild[PLATFORM]) {
-    return (
-      <View
-        accessibilityLiveRegion="polite"
-        style={{
-          position: "absolute",
-          left: spacing.lg,
-          right: spacing.lg,
-          bottom: spacing.xl * 3,
-          borderRadius: radii.lg,
-          backgroundColor: colors.surface,
-          borderColor: colors.border,
-          borderWidth: 1,
-          padding: spacing.md,
-          gap: spacing.sm,
-        }}
-      >
-        <Text variant="body">{t("appgate.update_suggested")}</Text>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: spacing.md }}>
-          <PressableScale accessibilityRole="button" onPress={() => setDismissed(true)} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
-            <Text variant="body" color={colors.textMuted}>{t("appgate.later")}</Text>
-          </PressableScale>
-          <PressableScale accessibilityRole="button" onPress={openStore} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
-            <Text variant="h3" color={colors.primary}>{t("appgate.update_button")}</Text>
-          </PressableScale>
-        </View>
-      </View>
-    );
+    return <GateBanner text={t("appgate.update_suggested")} onLater={() => setDismissed(true)} action={t("appgate.update_button")} onAction={openStore} />;
   }
 
   return null;
+}
+
+/**
+ * ALTTAKİ BİLGİ ŞERİDİ — ağ engeli ve "güncelleme var".
+ *
+ * İki kopyaydı ve ikisi de `bottom: 60` ile sabit duruyordu: güvenli alanı
+ * bilmiyor, iPhone'da yüzen sekme çubuğunun üstüne biniyor, tablette kolonu
+ * değil bütün ekranı kaplıyordu. Şimdi sekme çubuğunun üstünde, onunla aynı
+ * kolonda ve kart yüzeyinde (saç çizgisi + kart gölgesi).
+ */
+function GateBanner({ text, onLater, action, onAction, busy = false }: { text: string; onLater: () => void; action: string; onAction: () => void; busy?: boolean }) {
+  const { colors } = useTheme();
+  const insets = useSafeAreaInsets();
+  const { contentWidth } = useLayout();
+  return (
+    <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + TAB_BAR_SPACE, alignItems: "center" }}>
+      <View style={{ width: "100%", maxWidth: contentWidth, paddingHorizontal: spacing.lg }}>
+      <View
+        accessibilityLiveRegion="polite"
+        style={[{ borderRadius: radii.lg, backgroundColor: colors.surface, borderColor: colors.hairline, borderWidth: 1, padding: spacing.md, gap: spacing.sm }, cardShadow(colors, 16)]}
+      >
+        <Text variant="body">{text}</Text>
+        <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: spacing.md }}>
+          <PressableScale accessibilityRole="button" onPress={onLater} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
+            <Text variant="body" color={colors.textMuted}>{t("appgate.later")}</Text>
+          </PressableScale>
+          <PressableScale accessibilityRole="button" disabled={busy} onPress={onAction} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
+            <Text variant="h3" color={colors.primary}>{action}</Text>
+          </PressableScale>
+        </View>
+      </View>
+      </View>
+    </View>
+  );
 }
