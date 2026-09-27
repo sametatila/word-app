@@ -8,6 +8,7 @@ import { useCourse } from "@/components/app-shell";
 import { scoreBand } from "@/lib/score-bands";
 import { useState } from "react";
 import { ReportDialog } from "@/components/report-dialog";
+import { CheckIcon, XIcon } from "@/components/icons";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -105,7 +106,11 @@ export function AssessmentCard({
         <ul className="mt-3 space-y-1 text-caption">
           {(result as FallbackAssessment).checks.map((c, i) => (
             <li key={i} className="flex items-center gap-2">
-              <span aria-hidden style={{ color: c.ok ? "var(--color-mint)" : "var(--color-rose)" }}>{c.ok ? "✓" : "✗"}</span>
+              {c.ok ? (
+                <CheckIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-mint)" }} />
+              ) : (
+                <XIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-rose)" }} />
+              )}
               <span className={c.ok ? "" : "opacity-80"}>{t(c.key, c.vars)}</span>
             </li>
           ))}

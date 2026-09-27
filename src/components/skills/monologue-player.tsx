@@ -263,7 +263,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <button
             type="button"
             onClick={() => void startRecording()}
-            className="btn btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 px-4 text-body"
+            className="btn btn-primary mt-4 flex w-full items-center justify-center gap-2 px-5 py-4"
           >
             <MicIcon size={18} /> {t("item.mono_start")}
           </button>
@@ -293,7 +293,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             type="button"
             onClick={stopRecording}
             disabled={seconds < mono.minSeconds}
-            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
+            className="btn btn-primary mt-3 w-full px-5 py-4"
           >
             {seconds < mono.minSeconds ? t("item.mono_stop_in", { n: mono.minSeconds - seconds }) : t("item.mono_stop")}
           </button>
@@ -324,17 +324,17 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                 spellCheck={false}
                 autoCapitalize="sentences"
                 autoCorrect="off"
-                className="card mt-1.5 w-full resize-none px-3 py-2 text-body outline-none"
+                className="input mt-1.5 w-full resize-none"
               />
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {usedTargets.map((t) => (
                   <span
                     key={t.de}
-                    className="chip px-2.5 py-1 text-caption"
+                    className="chip inline-flex items-center gap-1 px-2.5 py-1 text-caption"
                     style={t.used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
                     lang={lang}
                   >
-                    {t.used ? "✓ " : ""}
+                    {t.used ? <CheckIcon aria-hidden className="size-3.5 shrink-0" /> : null}
                     {t.de}
                   </span>
                 ))}
@@ -343,7 +343,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                 type="button"
                 onClick={() => void evaluate()}
                 disabled={!transcript.trim()}
-                className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
+                className="btn btn-primary mt-3 w-full px-5 py-4"
               >
                 {t("item.mono_score")}
               </button>
@@ -365,7 +365,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                   </li>
                 ))}
               </ul>
-              <button type="button" onClick={selfFinish} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
+              <button type="button" onClick={selfFinish} className="btn btn-primary mt-3 w-full px-5 py-4">
                 {t("item.mono_finish")}
               </button>
             </>

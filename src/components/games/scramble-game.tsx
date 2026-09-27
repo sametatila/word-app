@@ -301,12 +301,12 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
           })}
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <button
             type="button"
             onClick={backspace}
             disabled={status !== "playing" || placed.length === 0}
-            className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-60"
+            className="btn btn-ghost min-h-12 flex-1 px-4 text-body disabled:opacity-60"
           >
             {tx("common.delete")}
           </button>
@@ -315,7 +315,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
               type="button"
               onClick={useHint}
               disabled={status !== "playing" || placed.length >= targetLetters.length}
-              className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-60"
+              className="btn btn-ghost min-h-12 flex-1 px-4 text-body disabled:opacity-60"
             >
               {tx("rounds.hint")}
             </button>

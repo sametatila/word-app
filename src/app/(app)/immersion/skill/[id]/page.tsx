@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { getT } from "@/lib/i18n/server";
 import { LockIcon } from "@/components/icons";
-import { StateBody } from "@/components/flow";
+import { FlowActions, FlowColumn, StateBody } from "@/components/flow";
 import { gatedSkillKind, isSkillLocked, skillLibraryAccess } from "@/lib/premium/skill-access";
 import { gateNote } from "@/lib/premium/gate-note";
 import { exerciseQuota } from "@/lib/premium/unlock-view";
@@ -65,19 +64,16 @@ export default async function ImmersionSkillPage({
   if (lockedNote) {
     const t = await getT();
     return (
-      <div className="mx-auto w-full max-w-md space-y-3">
-        <StateBody icon={<LockIcon size={40} className="muted mx-auto" />} title={t("gate.premium_only")} body={lockedNote}>
-          {quota ? null : (
-            <Link href="/premium" prefetch={false} className="btn btn-primary w-full px-4 py-2.5 text-body">
-              {t("gate.see_plans")}
-            </Link>
-          )}
-          <Link href={`/skills?level=${source.level}`} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-body">
-            {t("item.back_to_skills")}
-          </Link>
-        </StateBody>
+      /* KİLİT ŞABLONU konuşma kilidiyle aynı (`conversation-player`): durum
+         kartı → nasıl açılır → düğmeler. */
+      <FlowColumn>
+        <StateBody icon={<LockIcon size={40} />} title={t("gate.premium_only")} body={lockedNote} />
         {quota ? <UnlockProgress copy={quota.copy} /> : null}
-      </div>
+        <FlowActions
+          primary={quota ? null : { label: t("gate.see_plans"), href: "/premium" }}
+          tertiary={{ label: t("item.back_to_skills"), href: `/skills?level=${source.level}` }}
+        />
+      </FlowColumn>
     );
   }
 

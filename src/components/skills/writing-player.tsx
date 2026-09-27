@@ -286,7 +286,7 @@ function BuildTask({
           <button
             type="button"
             onClick={() => onDone(phase === "correct")}
-            className="btn btn-primary px-6 py-2.5"
+            className="btn btn-primary w-full px-5 py-4"
           >
             {t("common.continue")}
           </button>
@@ -592,8 +592,8 @@ function FreeTask({
               {t(aiScore >= SCORE_MID_PCT ? "writp.improve" : "writp.retry_suggest")}
             </p>
           ) : null}
-          <div className="flex items-center gap-3">
-            <button type="button" onClick={() => done(ok, aiScore ?? undefined)} className="btn btn-primary px-6 py-2.5">
+          <div className="flex flex-col gap-2">
+            <button type="button" onClick={() => done(ok, aiScore ?? undefined)} className="btn btn-primary w-full px-5 py-4">
               {t("common.continue")}
             </button>
             <button
@@ -603,7 +603,7 @@ function FreeTask({
                 setFailure(null);
                 setQueued(false);
               }}
-              className="btn btn-ghost px-4 py-2.5 text-body"
+              className="btn btn-ghost min-h-12 w-full px-4 text-body"
             >
               {t("writp.try_once_more")}
             </button>
@@ -700,7 +700,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       {result ? (
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} reportRef={`writing:${level}:sentence`} />
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-body">
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary w-full px-5 py-4">
             {t("common.continue")}
           </button>
         </div>
@@ -820,11 +820,11 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
         ))}
       </div>
       {checked ? (
-        <div className="mt-3 flex items-center justify-between gap-3">
+        <div className="mt-3 flex flex-col gap-3">
           <p className="text-strong" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {t("writew.fields_ok", { n: okCount, total: task.fields.length })}
           </p>
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-11 px-4 text-body">
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary w-full px-5 py-4">
             {t("common.continue")}
           </button>
         </div>
@@ -871,7 +871,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             </div>
           ) : null}
           {task.why ? <p className="muted text-caption leading-relaxed">{task.why}</p> : null}
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 w-full px-4 text-body">
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary w-full px-5 py-4">
             {t("common.continue")}
           </button>
         </div>

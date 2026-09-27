@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { apiFetch, CHAT_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/conversations/offline-chat";
@@ -18,9 +17,9 @@ import {
   useSpeechAvailable,
 } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, CheckIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, LockIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
-import { DetailCard, FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
+import { DetailCard, FlowActions, FlowColumn, FlowNote, ResultHero, StatRow, StateBody } from "@/components/flow";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/conversations/cues";
@@ -233,16 +232,18 @@ export function ConversationPlayer({
   }, [locked]);
   if (locked) {
     return (
-      <div className="mx-auto w-full max-w-2xl space-y-3">
-        <div className="flex items-center gap-3">
-          <ConversationExit />
-        </div>
-        <UnlockProgress copy={quota?.view.copy ?? null} title={{ key: "unlock.locked_conv" }} />
-        {/* Hak yoksa da çıkış yolu var: Patika'ya dönüp açık adımları bitirmek. */}
-        <Link href="/immersion" prefetch={false} className="btn btn-ghost w-full px-4 py-2.5 text-body">
-          {t("nav.path")}
-        </Link>
-      </div>
+      /* KİLİT ŞABLONU beceri kilidiyle aynı (`immersion/skill/[id]`): durum
+         kartı → nasıl açılır → düğmeler. Planlar düğmesi yalnız gösterge
+         yokken; gösterge hak bitince kendi Premium düğmesini taşıyor. */
+      <FlowColumn>
+        <StateBody icon={<LockIcon size={40} />} title={t("unlock.locked_conv")} />
+        <UnlockProgress copy={quota?.view.copy ?? null} />
+        <FlowActions
+          primary={quota?.view.copy ? null : { label: t("gate.see_plans"), href: "/premium" }}
+          /* Hak yoksa da çıkış yolu var: Patika'ya dönüp açık adımları bitirmek. */
+          tertiary={{ label: t("nav.path"), href: "/immersion" }}
+        />
+      </FlowColumn>
     );
   }
   return <ConversationPlayerBody {...props} onLocked={() => setLocked(true)} />;
@@ -1363,7 +1364,7 @@ function ConversationPlayerBody({
                       if (handsFree) void requestMicrophone();
                       runStep(stepIndex + 1);
                     }}
-                    className="btn btn-primary w-full py-3 text-body"
+                    className="btn btn-primary w-full px-5 py-4"
                   >
                     {t("conversationp.ready_lets_start")}
                   </button>
@@ -1538,7 +1539,7 @@ function ConversationPlayerBody({
                 <button
                   type="button"
                   onClick={startChat}
-                  className="btn btn-primary w-full py-3 text-body"
+                  className="btn btn-primary w-full px-5 py-4"
                 >
                   {t("conversationp.to_chat")}
                 </button>

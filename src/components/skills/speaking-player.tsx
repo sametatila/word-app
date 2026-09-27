@@ -3,13 +3,14 @@
 import { useRef, useState } from "react";
 import type { SkillExercise, SpeakingTask } from "@/lib/skills/types";
 import type { PronounceScore } from "@/lib/pronounce";
-import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
+import { askPronounce } from "@/lib/pronounce-client";
+import { captureSpeech, type SpeechCapture } from "@/components/microphone";
 /* Geçme eşiği kuralın kendisinden: kopyası burada `PASS = 80` diye duruyordu
    ve "aynı olmalı" diyen bir yorum vardı, ölçen bir şey yoktu. */
 import { PASS_SCORE } from "@/lib/pronounce-const";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel } from "./quiz";
-import { useTargetLang } from "./player-context";
+import { localeOf, useTargetLang } from "./player-context";
 import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
@@ -28,11 +29,11 @@ type Durum = "idle" | "rec" | "scoring" | "done" | "failed";
  * Söyleyiş drilli oynatıcısı (Beceriler kütüphanesi, 2026-09).
  *
  * 2026-08'de "ayrı konuşma havuzu" ile birlikte kaldırılmıştı; içerik geri
- * gelince oynatıcı da geri geldi. Kayıt ve puanlama sınav oynatıcısındaki
- * akışın aynısı (captureClip + askPronounce): ikinci bir ses hattı yazmak
- * yerine çalışan hat kullanılıyor. Fark, sınavın tek deneme hakkı vermesi;
- * burada öğrenci istediği kadar tekrar edebilir — burası ölçme değil ÇALIŞMA
- * yüzeyi.
+ * gelince oynatıcı da geri geldi. Dinleme ve puanlama sınav oynatıcısındaki
+ * akışın aynısı (captureSpeech + askPronounce): tarayıcının tanıyıcısı yazıya
+ * çeviriyor, sunucuya yalnız döküm gidiyor, ses hiç gitmiyor. Fark, sınavın
+ * tek deneme hakkı vermesi; burada öğrenci istediği kadar tekrar edebilir —
+ * burası ölçme değil ÇALIŞMA yüzeyi.
  *
  * `confusions` alanı bu içeriğin asıl değeri: Türkçe konuşanın o cümlede
  * yapması beklenen belirli hata ve düzeltmesi. Puan düşükse önce o gösterilir,
@@ -50,7 +51,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
   const [score, setScore] = useState<PronounceScore | null>(null);
   const [reason, setReason] = useState<string | null>(null);
   const [passedCount, setPassedCount] = useState(0);
-  const capture = useRef<Capture | null>(null);
+  const capture = useRef<SpeechCapture | null>(null);
   const scores = useRef<number[]>([]);
 
   const task = tasks[idx];
@@ -60,9 +61,11 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     if (phase !== "idle" && phase !== "failed" && phase !== "done") return;
     setScore(null);
     setReason(null);
-    const cap = await captureClip(MAX_MS);
-    if (!cap) {
-      setReason(t("speakp.no_mic"));
+    /* Yalnız tarayıcının tanıyıcısı: yoksa (Firefox) ses başka bir yola
+       gönderilmiyor, hangi tarayıcıda çalıştığı söyleniyor. */
+    const cap = await captureSpeech(localeOf(lang), MAX_MS);
+    if (cap === "unsupported" || cap === "denied") {
+      setReason(t(cap === "unsupported" ? "speechw.unsupported" : "speakp.no_mic"));
       return setPhase("failed");
     }
     capture.current = cap;
@@ -75,10 +78,15 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     if (!cap) return;
     capture.current = null;
     setPhase("scoring");
-    const blob = await cap.stop();
-    const res = blob
-      ? await askPronounce(blob, task.de, { exerciseId: exercise.id, confusions: task.confusions, language: lang })
-      : ({ ok: false, reason: "failed" } as const);
+    const heard = await cap.stop();
+    /* Tanıyıcı oturum içinde öldüyse (izin geri alındı, mikrofon başka
+       yerde) boş döküm "hiç söylemedin" diye sıfır puan olurdu: mikrofon
+       arızası olarak söyleniyor. */
+    if (heard.error && !heard.text) {
+      setReason(t("speakp.no_mic"));
+      return setPhase("failed");
+    }
+    const res = await askPronounce(heard.text, task.de, { exerciseId: exercise.id, confusions: task.confusions, language: lang });
     if (res.ok) {
       /* Titresim — Android telaffuz kararında veriyor (`game/skillLibrary`);
          webde hiç yoktu. Eşik `PASS_SCORE`, ekrandaki onay/çarpı ile aynı. */
@@ -98,11 +106,6 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             ? t("assessw.fail_quota")
             : res.reason === "rate_limited"
               ? t("speakp.rate_limited")
-            /* İzin verilmedi: klip gönderilmedi, "gönderilemedi" değil.
-               Neyin çalışmadığı ve nereden açılacağı söyleniyor; "puansız
-               geç" düğmesi akışı sürdürüyor. */
-            : res.reason === "consent"
-              ? `${t("aiconsent.voice_without")} ${t("aiconsent.change_later")}`
             : t("speakp.send_failed"),
       );
       setPhase("failed");
@@ -267,10 +270,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             ) : null}
 
             <div className="mt-4 flex gap-2">
-              <button type="button" className="btn btn-ghost flex-1" onClick={() => void startRec()}>
+              <button type="button" className="btn btn-ghost min-h-12 flex-1 px-4 text-body" onClick={() => void startRec()}>
                 {t("speakp.read_again")}
               </button>
-              <button type="button" className="btn btn-primary flex-1" onClick={advance}>
+              <button type="button" className="btn btn-primary min-h-12 flex-1 px-4 text-body" onClick={advance}>
                 {t(isLast ? "common.finish" : "common.next")}
               </button>
             </div>
