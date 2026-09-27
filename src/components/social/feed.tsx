@@ -112,7 +112,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
         text={t("feedlist.empty_text")}
         action={
           onFindFriends ? (
-            <button className="btn btn-primary h-9 px-4 text-caption" onClick={onFindFriends}>
+            <button className="btn btn-primary h-9 px-3 text-caption" onClick={onFindFriends}>
               {t("friends.find_friends")}
             </button>
           ) : null

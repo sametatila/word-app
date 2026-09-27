@@ -59,13 +59,15 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           kullanıcı adı işareti gibi okunuyor ve kutunun ne işe yaradığını
           söylemiyordu — üstelik kutuya kullanıcı adı da isim de yazılabiliyor.
           Android aynı kutuda büyüteç çiziyor (`social/Find.tsx`). */}
-      <label className="card flex items-center gap-2 px-4 py-2.5">
-        <SearchIcon size={20} className="shrink-0" style={{ color: "var(--text-muted)" }} />
+      {/* Arama kutusu uygulamanın tek kalıbı: `.input` + başta büyüteç
+          (Kelimelerim'in aramasıyla aynı). */}
+      <div className="relative">
+        <SearchIcon size={20} className="muted pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" />
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={t("find.username_or_name")}
-          className="min-w-0 flex-1 bg-transparent text-body outline-none"
+          className={`input w-full pl-10 ${q ? "pr-12" : ""}`}
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
@@ -81,13 +83,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             type="button"
             onClick={() => setQ("")}
             aria-label={t("find.clear")}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-pill"
-            style={{ color: "var(--text-muted)" }}
+            className="muted absolute right-1.5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-pill"
           >
             <XIcon size={18} />
           </button>
         ) : null}
-      </label>
+      </div>
 
       <ErrorText text={err} className="px-1 text-caption" />
 
@@ -95,7 +96,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         hits === null ? (
           <PersonRowSkeleton rows={3} />
         ) : hits.length ? (
-          <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+          <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
             {hits.map((h) => (
               <PersonRow key={h.userId} user={h} note={`${h.level}${h.currentStreak ? ` · ${t("social.days_streak", { n: h.currentStreak })}` : ""}`}>
                 <UserAction userId={h.userId} relation={h.relation} compact onChange={onChanged} />
@@ -118,7 +119,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           {sugg === null ? (
             <PersonRowSkeleton rows={3} />
           ) : sugg.length ? (
-            <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+            <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
               {sugg.map((s) => (
                 <PersonRow
                   key={s.userId}
@@ -158,7 +159,7 @@ function PersonRow({
   const t = useT();
   const href = user.username ? `/u/${user.username}` : null;
   return (
-    <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
+    <li className="flex items-center gap-3 px-4 py-3">
       {/* Avatar da profile götürüyor: akış ve istek listelerinde öyle, burada
           değildi - "avatara bas" öğrenen kullanıcı bu listede karşılık
           bulamıyordu. Ekran okuyucudan gizli, çünkü hemen yanındaki ad aynı

@@ -62,15 +62,17 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
   const dirtyName = username.trim().toLowerCase() !== me.username;
 
   return (
-    <section id="social" className={`card overflow-hidden ${bare ? "" : "mt-4"}`}>
+    /* Bölümler ayarlar grubunun diliyle ayrılıyor (`settings-section`): kartın
+       kendi `divide-y`ı, ince `--hairline` çizgi. */
+    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden ${bare ? "" : "mt-4"}`}>
       {bare ? null : (
-        <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-          <h2 className="font-bold">{t("socialsettings.social_and_privacy")}</h2>
+        <div className="px-4 py-3">
+          <h2 className="text-strong">{t("socialsettings.social_and_privacy")}</h2>
           <p className="muted text-caption">{t("socialw.settings_sub")}</p>
         </div>
       )}
 
-      <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+      <div className="px-4 py-3">
         <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>
         <div className="mt-1.5 flex items-center gap-2">
           <span className="muted text-body">@</span>
@@ -84,8 +86,7 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
             autoCorrect="off"
             spellCheck={false}
             placeholder={t("socialsettings.username_2")}
-            className="min-w-0 flex-1 rounded-tile border px-3 py-2 text-body"
-            style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
+            className="input min-w-0 flex-1 px-3 py-2"
           />
           <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
             {t("common.save")}
@@ -100,7 +101,7 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
         </p>
       </div>
 
-      <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+      <div className="px-4 py-3">
         <p className="text-strong">{t("socialsettings.visibility")}</p>
         {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR — Android aynı üçlüyü
             `accessibilityRole="radio"` ile veriyor (`SocialSettingsScreen`). */}
@@ -124,30 +125,28 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
       {/* İZİNLER başlığı Android'de var: "Görünürlük"ün başlığı olduğu hâlde
           altındaki üç anahtarın başlığı yoktu ve üçü serbestçe asılı
           duruyordu. Başlık, neyin neye ait olduğunu bir bakışta söylüyor. */}
-      <p className="border-b px-4 pb-1.5 pt-3 text-strong" style={{ borderColor: "var(--border)" }}>
-        {t("socialsettings.permissions")}
-      </p>
+      <div>
+        <p className="px-4 pb-1.5 pt-3 text-strong">{t("socialsettings.permissions")}</p>
+        <div className="divide-y divide-[color:var(--hairline)]">
+          <SettingRow title={t("socialsettings.perm_requests")} sub={t("socialsettings.perm_requests_sub")}>
+            <Switch on={me.allowRequests} disabled={busy} label={t("socialsettings.perm_requests")} onChange={(v) => void save({ allowRequests: v })} />
+          </SettingRow>
+          <SettingRow title={t("socialsettings.perm_suggest")} sub={t("socialsettings.perm_suggest_sub")}>
+            <Switch on={me.showInSuggestions} disabled={busy} label={t("socialsettings.perm_suggest")} onChange={(v) => void save({ showInSuggestions: v })} />
+          </SettingRow>
+          <SettingRow title={t("socialsettings.perm_activity")} sub={t("socialsettings.perm_activity_sub")}>
+            <Switch on={me.showActivity} disabled={busy} label={t("socialsettings.perm_activity")} onChange={(v) => void save({ showActivity: v })} />
+          </SettingRow>
+        </div>
+        {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
+        {msg ? (
+          <p role={msg.ok ? "status" : "alert"} className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {msg.text}
+          </p>
+        ) : null}
+      </div>
 
-      <SettingRow title={t("socialsettings.perm_requests")} sub={t("socialsettings.perm_requests_sub")}>
-        <Switch on={me.allowRequests} disabled={busy} label={t("socialsettings.perm_requests")} onChange={(v) => void save({ allowRequests: v })} />
-      </SettingRow>
-      <div className="border-t" style={{ borderColor: "var(--border)" }} />
-      <SettingRow title={t("socialsettings.perm_suggest")} sub={t("socialsettings.perm_suggest_sub")}>
-        <Switch on={me.showInSuggestions} disabled={busy} label={t("socialsettings.perm_suggest")} onChange={(v) => void save({ showInSuggestions: v })} />
-      </SettingRow>
-      <div className="border-t" style={{ borderColor: "var(--border)" }} />
-      <SettingRow title={t("socialsettings.perm_activity")} sub={t("socialsettings.perm_activity_sub")}>
-        <Switch on={me.showActivity} disabled={busy} label={t("socialsettings.perm_activity")} onChange={(v) => void save({ showActivity: v })} />
-      </SettingRow>
-
-      {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
-      {msg ? (
-        <p role={msg.ok ? "status" : "alert"} className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
-          {msg.text}
-        </p>
-      ) : null}
-
-      <div className="border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
+      <div className="px-4 py-3">
         <p className="text-strong">{t("socialsettings.blocked_title")}</p>
         {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince başlığın
             altı yerinden oynamıyor. Android aynı yerde iskelet satırı
@@ -155,15 +154,15 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
         {blocked === null ? (
           <SkeletonLine variant="caption" width="60%" className="mt-1" />
         ) : blocked.length ? (
-          <ol className="mt-2 divide-y divide-[color:var(--border)]">
+          <ol className="mt-2 divide-y divide-[color:var(--hairline)]">
             {blocked.map((b) => (
-              <li key={b.userId} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--border)" }}>
+              <li key={b.userId} className="flex items-center gap-3 py-2">
                 <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={28} />
                 <span className="min-w-0 flex-1 truncate text-body">
                   {b.name ?? t("social.unnamed_short")} {b.username ? <span className="muted text-caption">@{b.username}</span> : null}
                 </span>
                 <button
-                  className="btn btn-ghost h-8 px-3 text-caption"
+                  className="btn btn-ghost h-9 px-3 text-caption"
                   disabled={busy}
                   onClick={() => {
                     setBusy(true);

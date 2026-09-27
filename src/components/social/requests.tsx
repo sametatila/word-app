@@ -40,7 +40,7 @@ export function Requests({
             <h3 className="muted text-micro uppercase tracking-eyebrow">{t("requests.incoming")}</h3>
             <span className="muted text-caption tabular-nums">{incoming.length}</span>
           </div>
-          <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+          <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
             {incoming.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming onChanged={onChanged} />
             ))}
@@ -55,7 +55,7 @@ export function Requests({
             <h3 className="muted text-micro uppercase tracking-eyebrow">{t("requests.sent")}</h3>
             <span className="muted text-caption tabular-nums">{outgoing.length}</span>
           </div>
-          <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+          <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
             {outgoing.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />
             ))}
@@ -86,7 +86,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
   const href = r.user.username ? `/u/${r.user.username}` : null;
   const name = r.user.name ?? t("social.unnamed");
   return (
-    <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
+    <li className="flex items-center gap-3 px-4 py-3">
       {/* Profile giden tek yol AVATAR — akış kartının kuralı (`feed.tsx`) ve
           Android'in kuralı da o. Bağlantı addaydı: aynı uygulamanın iki
           listesinde aynı iş iki ayrı yerden yapılıyordu ve adın altı çizili
@@ -111,10 +111,10 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
       </div>
       {incoming ? (
         <div className="flex shrink-0 gap-1.5">
-          <button className="btn btn-primary h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "accept"))}>
+          <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "accept"))}>
             {t("requests.accept")}
           </button>
-          <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "decline"))}>
+          <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "decline"))}>
             {t("requests.decline")}
           </button>
         </div>
@@ -122,7 +122,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
         /* Etiket "Vazgeç" idi ve gönderilmiş istekler listesinde neyden
            vazgeçildiğini söylemiyordu. Android aynı düğmeye "İsteği iptal et"
            diyor; anahtar taban sözlükte hazırdı. */
-        <button className="btn btn-ghost h-8 shrink-0 whitespace-nowrap px-3 text-caption" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
+        <button className="btn btn-ghost h-9 shrink-0 whitespace-nowrap px-3 text-caption" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
           {t("requests.cancel_request")}
         </button>
       )}

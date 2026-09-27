@@ -119,11 +119,11 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
           </p>
         ) : null}
         {more && !isSelf ? (
-          <div className="mt-3 flex flex-wrap gap-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
-            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => setBlocking(true)}>
+          <div className="mt-3 flex flex-wrap gap-2 border-t border-[color:var(--hairline)] pt-3">
+            <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => setBlocking(true)}>
               {t("user.block")}
             </button>
-            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => setReporting((r) => !r)}>
+            <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => setReporting((r) => !r)}>
               {t("user.report")}
             </button>
             {reporting ? (

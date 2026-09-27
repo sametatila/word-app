@@ -79,7 +79,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
             text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")}
             action={
               friends.length ? (
-                <button className="btn btn-primary h-9 px-4 text-caption" onClick={() => setPick((p) => !p)} disabled={!canStart}>
+                <button className="btn btn-primary h-9 px-3 text-caption" onClick={() => setPick((p) => !p)} disabled={!canStart}>
                   {t(pick ? "common.discard" : "quests.choose_friend")}
                 </button>
               ) : undefined
@@ -104,7 +104,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                       <span className="block truncate text-h3">{f.name ?? t("social.unnamed")}</span>
                       <span className="muted block text-caption">{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}</span>
                     </span>
-                    <button className="btn btn-primary h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
+                    <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
                       {t("quests.invite")}
                     </button>
                   </li>
@@ -260,16 +260,16 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           {q.invitedByMe ? (
             <>
               <span className="muted flex-1 self-center text-caption">{t("quests.awaiting_reply")}</span>
-              <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "cancel"))}>
+              <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "cancel"))}>
                 {t("common.cancel")}
               </button>
             </>
           ) : (
             <>
-              <button className="btn btn-primary h-8 flex-1 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "accept"))}>
+              <button className="btn btn-primary h-9 flex-1 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "accept"))}>
                 {t("quests.accept")}
               </button>
-              <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "decline"))}>
+              <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "decline"))}>
                 {t("quests.decline")}
               </button>
             </>

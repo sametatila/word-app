@@ -32,7 +32,7 @@ export function FriendList({
 }) {
   if (!friends.length) return null;
   return (
-    <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+    <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
       {friends.map((f) => (
         <FriendItem key={f.userId} f={f} nudged={nudgedToday.includes(f.userId)} onChanged={onChanged} />
       ))}
@@ -99,7 +99,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
 
   const href = f.username ? `/u/${f.username}` : null;
   return (
-    <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
+    <li className="flex items-center gap-3 px-4 py-3">
       {href ? (
         /* Ad zaten aynı adrese giden bir bağlantı; avatar onun süsü. Adsız
            ikinci bir durak eklemesin diye klavye ve ekran okuyucu dışında

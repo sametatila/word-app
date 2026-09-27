@@ -134,7 +134,7 @@ export function Inbox() {
      Mobil `InboxScreen` de aynı parçaları kullanıyor. */
   if (items === null)
     return (
-      <ol aria-hidden className="card divide-y divide-[color:var(--border)] overflow-hidden">
+      <ol aria-hidden className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
         {Array.from({ length: 5 }).map((_, i) => (
           <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
             <SkeletonTile size={40} className="rounded-full" />
@@ -161,12 +161,12 @@ export function Inbox() {
   }
   return (
     <div className="flex flex-col gap-2">
-      <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+      <ol className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
         {items.map((n) => {
           const { Icon, tint, fill } = tileFor(n);
           const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
           return (
-            <li key={n.id} style={{ borderColor: "var(--border)" }}>
+            <li key={n.id}>
               <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
                 {n.actor ? (
                   <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} />

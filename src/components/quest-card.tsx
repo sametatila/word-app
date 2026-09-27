@@ -235,7 +235,7 @@ export function QuestCard() {
                 <button
                   onClick={() => void claim(q.id)}
                   disabled={busy === q.id}
-                  className="btn btn-primary shrink-0 px-3 py-2 text-caption disabled:opacity-60"
+                  className="btn btn-primary h-9 shrink-0 px-3 text-caption disabled:opacity-60"
                 >
                   {busy === q.id ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}
                 </button>
@@ -266,7 +266,7 @@ export function QuestCard() {
                 <button
                   onClick={() => void claim(ALL_DONE_ID)}
                   disabled={busy === ALL_DONE_ID}
-                  className="btn btn-primary shrink-0 px-3 py-2 text-caption disabled:opacity-60"
+                  className="btn btn-primary h-9 shrink-0 px-3 text-caption disabled:opacity-60"
                 >
                   {busy === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}
                 </button>

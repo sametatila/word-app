@@ -9,7 +9,7 @@ import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackOnce } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
-import { CardsIcon, ChevronIcon } from "@/components/icons";
+import { CardsIcon, ChevronRightIcon, SearchIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { PageBack } from "@/components/page-back";
 import { SpeakButton } from "@/components/speak-button";
@@ -205,12 +205,13 @@ export function WordList({
               <span className="block text-strong">{tx("appheader.progress")}</span>
               {progressSummary ? <span className="muted block text-caption">{progressSummary}</span> : null}
             </span>
+            {/* Ok `Disclosure`ın dili: sağa bakar, açılınca aşağı döner. */}
             <motion.span
-              animate={{ rotate: showProgress ? 180 : 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+              animate={{ rotate: showProgress ? 90 : 0 }}
+              transition={{ duration: 0.18 }}
               className="muted shrink-0"
             >
-              <ChevronIcon size={18} />
+              <ChevronRightIcon size={18} />
             </motion.span>
           </button>
           <AnimatePresence initial={false}>
@@ -222,7 +223,7 @@ export function WordList({
                 transition={{ duration: 0.22, ease: "easeOut" }}
                 className="overflow-hidden"
               >
-                <div className="border-t px-4 pb-4 pt-4" style={{ borderColor: "var(--border)" }}>
+                <div className="border-t border-[color:var(--hairline)] px-4 pb-4 pt-4">
                   {progress}
                 </div>
               </motion.div>
@@ -232,17 +233,22 @@ export function WordList({
       ) : null}
 
       <div className="space-y-3">
-        <input
-          value={term}
-          onChange={(e) => setTerm(e.target.value)}
-          placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
-          aria-label={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
-          /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
-             İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
-          autoCapitalize="none"
-          enterKeyHint="done"
-          className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
-        />
+        {/* Arama kutusu uygulamanın tek kalıbı: `.input` + başta büyüteç
+            (Arkadaş bul'un aramasıyla aynı). */}
+        <div className="relative">
+          <SearchIcon size={20} className="muted pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" />
+          <input
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+            placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
+            aria-label={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
+            /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
+               İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
+            autoCapitalize="none"
+            enterKeyHint="done"
+            className="input w-full pl-10"
+          />
+        </div>
         {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince
             bir çizgiyle duruyorlardı ve iki grup tek bir süzgeç gibi
             okunuyordu; sarılma olduğunda çizgi de satır ortasında kalıyordu. */}
