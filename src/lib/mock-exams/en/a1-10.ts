@@ -838,7 +838,7 @@ Phone:              {{5}}`,
           prompt:
             "A package for your friend came to your house. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
-            "Arkadaşına ait bir koli senin evine geldi. Arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
+            "Arkadaşına ait bir koli senin evine geldi. Arkadaşına kısa bir ileti yaz. Her maddeye bir iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 25,

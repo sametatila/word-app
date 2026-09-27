@@ -318,7 +318,7 @@ I have started again somewhere smaller. There are four of us and there are no me
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -1211,7 +1211,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I know two families in my building and nobody else, although I have lived there for six years. Last winter the man upstairs took my mail in for a week while I was away, and he never said anything about it; I found it on my door. If I had one free afternoon a week, I would give it to the homework club at the school, because that is the only work near me where somebody would actually notice if I stopped.",
+              "I know two families in my building and nobody else, although I have lived there for six years. Last winter the man upstairs took my mail in for a week while I was away, and he never said anything about it; I found it outside my door. If I had one free afternoon a week, I would give it to the homework club at the school, because that is the only work near me where somebody would actually notice if I stopped.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Geçmişteki olay tek ve belirgin mi, yoksa genel mi kalmış?",
@@ -1308,7 +1308,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "Travel money is not payment, it is simply not charging people for helping. A woman in our group spent eleven euros a week getting to the kitchen, which is a real cost and it stopped her coming. I partly agree with the other argument, because I have seen a group where the small payment became the reason people came, and the atmosphere changed within a year. But there is a difference between paying for a bus ticket and paying for an hour.",
+              "Travel money is not payment, it is simply not charging people for helping. A woman in our group spent eleven euros a week getting to the kitchen, which is a real cost and it stopped her from coming. I partly agree with the other argument, because I have seen a group where the small payment became the reason people came, and the atmosphere changed within a year. But there is a difference between paying for a bus ticket and paying for an hour.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

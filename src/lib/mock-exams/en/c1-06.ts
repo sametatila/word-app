@@ -280,7 +280,7 @@ The most likely future is therefore a divided one, with different literatures se
               text: "PRACTICE",
               accept: ["practices"],
               explain:
-                "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different literatures`), dolayısıyla ad da çoğul. Britanya yazımında ad `practice`, fiil `practise`dir; iki yazım da kabul ediliyor.",
+                "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different literatures`), dolayısıyla ad da çoğul. Amerikan yazımında ad da fiil de `practice`dir; `practise` İngiliz yazımında yalnız fiil biçimidir ve burada ad gerekiyor.",
             },
           ],
         },
@@ -490,7 +490,7 @@ None of this would settle an argument that has run for two thousand years. It wo
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -537,7 +537,7 @@ This has an implication that the team did not welcome. If the entries that are e
               text: "Gap 31",
               answer: "a",
               explain:
-                "Giriş planı «record the words, define them … publish» diye özetliyor; (a) o planın gerçekte ne kadar sürdüğünü tek cümlede gösteriyor: on dört yılda yalnız A harfi. Başlıktaki kırk yıl da buradan anlaşılıyor.",
+                "Giriş planı «record the words, define them … publish» diye özetliyor; (a) o planın gerçekte ne kadar sürdüğünü tek cümlede gösteriyor: on dört yılda yalnız A harfi. Başlıktaki kırk yılın neden bu kadar uzadığı da buradan sezilir.",
             },
             {
               kind: "match",
@@ -1248,7 +1248,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
           prompt:
             "You have attended a seminar on translation. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A translation should reproduce as closely as possible what the original says.\n2. A translation should reproduce as closely as possible what the original does to a reader.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Çeviri üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çeviri, aslın SÖYLEDİĞİNİ olabildiğince yakın aktarmalı.\n2. Çeviri, aslın okurda YAPTIĞINI olabildiğince yakın aktarmalı.\n\n220–260 kelime yaz.",
+            "Çeviri üzerine bir seminere katıldın. Hocan için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çeviri, aslın SÖYLEDİĞİNİ olabildiğince yakın aktarmalı.\n2. Çeviri, aslın okurda YAPTIĞINI olabildiğince yakın aktarmalı.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1269,7 +1269,7 @@ My own view is that the choice is made false by the format. A translation that c
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu?",
+              "Kendi görüşü özetten ayrılıyor mu?",
               "Karşı görüşün en güçlü hâli mi kuruldu, yoksa zayıflatıldı mı?",
               "Çekimserlik ve ince ayrım ifadeleri C1 düzeyinde mi? (though for a narrower reason, on this account)",
               "220–260 kelime aralığında mı?",

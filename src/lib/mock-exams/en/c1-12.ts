@@ -488,7 +488,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
               kind: "match",
               id: "en-c1-12-l6-28",
               no: 28,
-              text: "Which writer defends a rule on the ground that it resists advocacy?",
+              text: "Which writer defends a rule on the grounds that it resists advocacy?",
               answer: "a",
               explain:
                 "(a) varış sırasını savunuyor: her seçenek bir yargı gerektiriyor, «advocacy is distributed with almost perfect unfairness».",
@@ -519,7 +519,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -598,7 +598,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
               text: "Gap 33",
               answer: "c",
               explain:
-                "Paragraf itirazı kimin kullandığını veriyor: «those who have previously used a comparable process somewhere else». (c) bunu genelliyor: eşit dağılmayan bir hak, toplamda kendi başına bir ölçüt gibi işliyor.",
+                "Paragraf itirazı kimin kullandığını veriyor: «those who have previously used a comparable process somewhere else». (c) bunu genelleştiriyor: eşit dağılmayan bir hak, toplamda kendi başına bir ölçüt gibi işliyor.",
             },
             {
               kind: "match",
@@ -1145,7 +1145,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
             { key: "b", label: "to argue that a proposed remedy would create a new problem" },
             { key: "c", label: "to object to the word used for a reform" },
             { key: "d", label: "to locate the unfairness before the list begins" },
-            { key: "e", label: "to defend a rule on the ground that it cannot be argued with" },
+            { key: "e", label: "to defend a rule on the grounds that it cannot be argued with" },
             { key: "f", label: "to admit that a personal expectation was not borne out" },
             { key: "g", label: "to complain about the length of official documents" },
             { key: "h", label: "to recommend a change that opponents could verify" },

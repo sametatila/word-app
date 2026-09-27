@@ -380,7 +380,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               text: "Familie Söz sucht am Sonntagnachmittag etwas für ihre fünfjährige Tochter.",
               answer: "e",
               explain:
-                "(e) cumartesi ve pazar 15.00'te, 4 yaş üstü için. Refakatçi yetişkin ücret ödemiyor, bu da aileye uyuyor.",
+                "(e) cumartesi ve pazar 15.00'te, 4 yaş ve üstü için. Refakatçi yetişkin ücret ödemiyor, bu da aileye uyuyor.",
             },
             {
               kind: "match",
@@ -665,7 +665,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               id: "h3",
               genre: "Nachricht auf der Mailbox",
               genreTr: "Sesli mesaj",
-              situation: "Bir dernek üyesine bilgi bırakıyor.",
+              situation: "Fotoğraf kulübünden biri bir üyeye mesaj bırakıyor.",
               plays: 1,
               segments: [
                 {
@@ -1295,7 +1295,7 @@ Sara`,
           prompt:
             "In einem Online-Forum wird diskutiert: \"Sollen Museen für junge Leute kostenlos sein?\" Schreiben Sie einen Beitrag (circa 80 Wörter). Nennen Sie Ihre Meinung, ein Argument dafür und ein Argument dagegen.",
           promptTr:
-            "Bir çevrimiçi forumda tartışılıyor: \"Müzeler gençler için ücretsiz mi olmalı?\" Bir yorum yaz (yaklaşık 80 kelime). Görüşünü, bir destekleyici ve bir karşı argüman söyle.",
+            "Bir çevrimiçi forumda tartışılıyor: \"Müzeler gençler için ücretsiz mi olmalı?\" Bir yorum yaz (yaklaşık 80 kelime). Görüşünü, lehte bir gerekçeyi ve aleyhte bir gerekçeyi yaz.",
           items: [],
           rubric: {
             minWords: 80,
@@ -1395,7 +1395,7 @@ Kaan Aslan`,
             {
               who: "partner",
               de: "Gut. Bleibt die Technik. Ich habe einen Beamer, aber keine Lautsprecher, und ohne Ton wird es schwierig.",
-              tr: "Peki. Geriye teknik kaldı. Bende projeksiyon var ama hoparlör yok, sessiz de olmaz.",
+              tr: "Peki. Geriye teknik kaldı. Bende projeksiyon cihazı var ama hoparlör yok, sessiz de olmaz.",
             },
             { who: "you", hint: "Ses sorununa somut bir çözüm öner.", expect: "somut bir teknik çözüm önermek", seconds: 40 },
             {
@@ -1516,7 +1516,7 @@ Kaan Aslan`,
               { de: "einen Kompromiss finden", tr: "Bir uzlaşmaya varmak" },
             ],
             sample:
-              "Es tut mir leid, das wusste ich nicht. Ich habe im Juni Prüfung und übe deshalb jeden Abend. Mein Vorschlag: Ich höre ab neun Uhr auf und übe dafür schon ab sechs. Wenn es trotzdem zu laut ist, kann ich zwei Abende in der Woche in der Musikschule üben. Am Wochenende fange ich sonntags erst nach elf an, dann haben Sie Ihren ruhigen Vormittag. Wäre das so in Ordnung für Sie?",
+              "Es tut mir leid, das wusste ich nicht. Ich habe im Juni eine Prüfung und übe deshalb jeden Abend. Mein Vorschlag: Ich höre ab neun Uhr auf und übe dafür schon ab sechs. Wenn es trotzdem zu laut ist, kann ich zwei Abende in der Woche in der Musikschule üben. Am Wochenende fange ich sonntags erst nach elf an, dann haben Sie Ihren ruhigen Vormittag. Wäre das so in Ordnung für Sie?",
             criteria: [
               "Şikâyet savunmaya geçmeden kabul edildi mi?",
               "Kendi durumu açıklandı ama bahane olarak kullanılmadı mı?",

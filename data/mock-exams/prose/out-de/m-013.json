@@ -71,7 +71,7 @@
  { "tr": "Ne yapmak istediğini söylemek", "kind": "rubric.points.tr", "en": "Sagen, was man machen möchte" },
  { "tr": "Sana neye mal olduğunu söyle.", "kind": "rubric.points.tr", "en": "Sag, was es dich gekostet hat." },
  { "tr": "Bir ayrım kurmak ve örneklemek", "kind": "rubric.points.tr", "en": "Eine Unterscheidung treffen und belegen" },
- { "tr": "Bir düzeni ayrıntıyla anlatmak", "kind": "rubric.points.tr", "en": "Einen gewohnten Tagesablauf mit einem Detail schildern" },
+ { "tr": "Bir düzeni ayrıntıyla anlatmak", "kind": "rubric.points.tr", "en": "Einen gewohnten Tagesablauf ausführlich schildern" },
  { "tr": "Karşı olgusal bir durum kurmak", "kind": "rubric.points.tr", "en": "Einen kontrafaktischen Fall entwerfen" },
  { "tr": "Kazanç ve kayıpları ortaya koy", "kind": "rubric.points.tr", "en": "Lege Gewinne und Verluste dar" },
  { "tr": "Ne zaman alışverişe gidiyorsun", "kind": "rubric.points.tr", "en": "Wann gehst du einkaufen" },
@@ -123,7 +123,7 @@
  { "tr": "Bunu kimin denetleyeceğini tartış.", "kind": "rubric.points.tr", "en": "Erörtere, wer das kontrollieren würde." },
  { "tr": "Dersleri neden kaçırdığını açıkla.", "kind": "rubric.points.tr", "en": "Erkläre, warum du den Unterricht verpasst hast." },
  { "tr": "Hayvanları sevip sevmediğini söyle", "kind": "rubric.points.tr", "en": "Sag, ob du Tiere magst" },
- { "tr": "Kendi seçiminde bir riski adlandır", "kind": "rubric.points.tr", "en": "Benenne ein Risiko deiner eigenen Wahl" },
+ { "tr": "Kendi seçiminde bir riski adlandır", "kind": "rubric.points.tr", "en": "Benenne ein Risiko bei deiner eigenen Wahl" },
  { "tr": "Mevcut durumu kesin biçimde anlat.", "kind": "rubric.points.tr", "en": "Schildere die derzeitige Lage genau." },
  { "tr": "Nereye ve kiminle gittiğini söyle.", "kind": "rubric.points.tr", "en": "Sag, wohin und mit wem du gefahren bist." },
  { "tr": "Ödemenin neyi tanıyacağını tartış.", "kind": "rubric.points.tr", "en": "Erörtere, was eine Zahlung anerkennen würde." },
@@ -146,6 +146,6 @@
  { "tr": "Arkadaşından seninle gelmesini iste.", "kind": "rubric.points.tr", "en": "Bitte deine Freundin, mitzukommen." },
  { "tr": "Gelecek yıl için açık bir öneri yap.", "kind": "rubric.points.tr", "en": "Mach einen klaren Vorschlag für das nächste Jahr." },
  { "tr": "Haftayı sıklık ifadeleriyle anlatmak", "kind": "rubric.points.tr", "en": "Die Woche mit Häufigkeitsangaben schildern" },
- { "tr": "Hangi mevsim iyi olur, neden, söyle.", "kind": "rubric.points.tr", "en": "Sag, welche Jahreszeit gut wäre und warum." },
+ { "tr": "Hangi mevsimin en iyi olduğunu ve nedenini söyle.", "kind": "rubric.points.tr", "en": "Sag, welche Jahreszeit am besten wäre und warum." },
  { "tr": "Kolinin senin evinde olduğunu söyle.", "kind": "rubric.points.tr", "en": "Sag, dass das Paket bei dir ist." }
 ]

@@ -75,7 +75,7 @@
  { "tr": "Peki. Öğrenciler için hangisini seçiyoruz?", "kind": "exchange.tr", "en": "Also gut. Welche wählen wir für die Studierenden?" },
  { "tr": "Günaydın. Buyurun oturun. Şikâyetiniz nedir?", "kind": "exchange.tr", "en": "Guten Morgen. Nehmen Sie bitte Platz. Was fehlt Ihnen?" },
  { "tr": "Güzel. Kuralı kâğıda yazacağımız gibi söyle.", "kind": "exchange.tr", "en": "Gut. Nenne die Regel so, wie wir sie auf das Blatt schreiben." },
- { "tr": "Geçmiş olsun. Doktor bu hafta sizi görebilir.", "kind": "exchange.tr", "en": "Gute Besserung. Der Arzt kann Sie diese Woche sehen." },
+ { "tr": "Geçmiş olsun. Doktor bu hafta sizi görebilir.", "kind": "exchange.tr", "en": "Gute Besserung. Der Arzt kann Sie diese Woche noch drannehmen." },
  { "tr": "Peki. Soruyu forma basacağımız hâliyle söyle.", "kind": "exchange.tr", "en": "Also gut. Nenne die Frage so, wie wir sie auf das Formular drucken." },
  { "tr": "Beş gün, yemekten sonra. Başka bir şey var mı?", "kind": "exchange.tr", "en": "Fünf Tage, nach dem Essen. Sonst noch etwas?" },
  { "tr": "İyi günler. İkinci el eşya alır mısın? Ne tür?", "kind": "exchange.tr", "en": "Guten Tag. Kaufst du gebrauchte Sachen? Was für welche?" },
@@ -99,7 +99,7 @@
  { "tr": "Tamir masrafı yenisine yakın olsaydı ne yapardın?", "kind": "exchange.tr", "en": "Was hättest du gemacht, wenn die Reparatur fast so viel gekostet hätte wie ein neues?" },
  { "tr": "Haftada daha çok vaktin olsa neyi farklı yapardın?", "kind": "exchange.tr", "en": "Was würdest du anders machen, wenn du in der Woche mehr Zeit hättest?" },
  { "tr": "İyi günler. Yaşadığın yerde kışın hava nasıl olur?", "kind": "exchange.tr", "en": "Guten Tag. Wie ist das Wetter im Winter dort, wo du wohnst?" },
- { "tr": "On dört euro. Tren iki numaralı perondan kalkıyor.", "kind": "exchange.tr", "en": "Vierzehn Euro. Der Zug fährt von Gleis zwei." },
+ { "tr": "On dört euro. Tren iki numaralı perondan kalkıyor.", "kind": "exchange.tr", "en": "Vierzehn Euro. Der Zug fährt von Gleis zwei ab." },
  { "tr": "Şu an güvendiğin bir kaynağa güvenini ne sarsardı?", "kind": "exchange.tr", "en": "Was würde dein Vertrauen in eine Quelle erschüttern, der du jetzt vertraust?" },
  { "tr": "Teşekkürler. En çok hangi mevsimi seversin, neden?", "kind": "exchange.tr", "en": "Danke. Welche Jahreszeit magst du am liebsten, und warum?" },
  { "tr": "50 beden burada. Seksen euro. Başka bir şey var mı?", "kind": "exchange.tr", "en": "Größe 50 ist hier. Achtzig Euro. Sonst noch etwas?" },
@@ -144,7 +144,7 @@
  { "tr": "Teşekkürler. Bunun için kâğıt mı telefon mu daha iyi? Neden?", "kind": "exchange.tr", "en": "Danke. Ist dafür Papier oder Handy besser? Warum?" },
  { "tr": "Teşekkürler. Yardım istemeyen birine yardım ettiğin oldu mu?", "kind": "exchange.tr", "en": "Danke. Hast du jemals jemandem geholfen, der sich nicht helfen lassen wollte?" },
  { "tr": "Yoğun bir günde neyi önce yapacağına nasıl karar veriyorsun?", "kind": "exchange.tr", "en": "Wie entscheidest du an einem vollen Tag, was du zuerst machst?" },
- { "tr": "İyi günler. Bir daha bakmayacağın hâlde sakladığın şey nedir?", "kind": "exchange.tr", "en": "Guten Tag. Was bewahrst du auf, obwohl du es nie wieder ansehen wirst?" },
- { "tr": "İyi günler. Yaşadığın yeri hiç gitmemiş birine anlatır mısın?", "kind": "exchange.tr", "en": "Guten Tag. Beschreibst du deinen Wohnort jemandem, der nie dort war?" },
+ { "tr": "İyi günler. Muhtemelen bir daha hiç bakmayacağın hâlde sakladığın ne var?", "kind": "exchange.tr", "en": "Guten Tag. Was bewahrst du auf, obwohl du es wahrscheinlich nie wieder ansehen wirst?" },
+ { "tr": "İyi günler. Yaşadığın yeri, oraya hiç gitmemiş birine anlatır mısın?", "kind": "exchange.tr", "en": "Guten Tag. Kannst du deinen Wohnort jemandem beschreiben, der noch nie dort war?" },
  { "tr": "Şimdi işi konuşuyoruz. İlk sözcüğün: ofis. Bana bir soru sor.", "kind": "exchange.tr", "en": "Jetzt sprechen wir über die Arbeit. Dein erstes Wort: Büro. Stell mir eine Frage." }
 ]

@@ -124,7 +124,7 @@ export const EN_B1_08: MockPaper = {
               options: ["There is no electricity in the room for typing", "A notebook is cheaper than a laptop", "Writing slowly is part of the method"],
               answer: 2,
               explain:
-                "Duyuru hızı bir kusur olarak anıyor: «We know that typing is faster; that is the problem». Elektrik ya da fiyat gerekçe olarak hiç geçmiyor; defter zaten pahalılığı için değil, elle yazmak için isteniyor.",
+                "Duyuru hızı bir kusur olarak anıyor: «We know that typing is faster; that is the problem». Elektrik ya da fiyat gerekçe olarak hiç geçmiyor; defter zaten ucuz olduğu için değil, elle yazmak için isteniyor.",
             },
             {
               kind: "mcq",
@@ -154,7 +154,7 @@ export const EN_B1_08: MockPaper = {
             { key: "c", label: "Typing Course", body: "Six weeks, Tuesday evenings. Ten fingers and no looking at the keys. Twenty euros for the whole course." },
             { key: "d", label: "Spoken Books", body: "Thousands of titles read aloud. Listen in the car or in the kitchen. Free with a library card." },
             { key: "e", label: "Parents' Evening Group", body: "First Monday of the month. For parents of children aged ten to fourteen. No experts, only parents." },
-            { key: "f", label: "Homework Club", body: "Monday to Thursday, four to seven, for children in years five to nine. Adults sit with them but do not do the work." },
+            { key: "f", label: "Homework Club", body: "Monday to Thursday, four to seven, for children in grades five to nine. Adults sit with them but do not do the work." },
             { key: "g", label: "Reading Aloud at the Elementary School", body: "Volunteers needed for one hour a week. You read, the children listen and then they read to you." },
             { key: "h", label: "Repair Evening", body: "First Thursday of the month. Phones, radios and small machines. We tell you the price before we start." },
           ],
@@ -322,7 +322,7 @@ So I have not stopped typing. I type in meetings, where I need the record, and I
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -946,7 +946,7 @@ The room is on the {{19}} floor`,
               text: "Gap 14",
               accept: ["thursday"],
               explain:
-                "Kayıt günü veriyor: «The study-skills hour runs on a Thursday». Pazartesi iptal günü, gün değil.",
+                "Kayıt günü veriyor: «The study-skills hour runs on a Thursday». Pazartesi iptal için son gün, hizmetin günü değil.",
             },
             {
               kind: "gap",
@@ -1029,7 +1029,7 @@ The room is on the {{19}} floor`,
                 { speaker: "Host", text: "And what did you lose?" },
                 { speaker: "Ondrej", text: "Time, mostly. Everything took longer and some of that was pure waste. I also missed two invitations, and one of them mattered." },
                 { speaker: "Host", text: "Do you have a smartphone now?" },
-                { speaker: "Ondrej", text: "I do, since last August. People find that disappointing, as if the year had been a failure." },
+                { speaker: "Ondrej", text: "I do. I have had one since last August. People find that disappointing, as if the year had been a failure." },
                 { speaker: "Host", text: "Was it?" },
                 { speaker: "Ondrej", text: "No. I use it about a third as much as I used to, and I do not think that would have happened any other way. The year was not the point; week seven was the point." },
               ],

@@ -132,7 +132,7 @@ export const EN_B1_02: MockPaper = {
               options: ["Anybody who arrives before the stands are full", "People with a season ticket", "People who have registered at the north entrance"],
               answer: 1,
               explain:
-                "Duyuru bir grup tanımlıyor: «The covered stands are for season ticket holders, who receive a code by email». Kuzey giriş kayıt yeri değil, ötekiler için açık park yerinin bulunduğu yer; doluluk sırası hiç geçmiyor.",
+                "Duyuru bir grup tanımlıyor: «The covered stands are for season ticket holders, who receive a code by email». Kuzey girişi kayıt yeri değil, ötekiler için açık park yerinin bulunduğu yer; doluluk sırası hiç geçmiyor.",
             },
           ],
         },
@@ -317,7 +317,7 @@ So I have stopped feeling proud about my trash can and I have started writing to
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -377,7 +377,7 @@ The most interesting effect may be a slower one. When people expect to repair a 
               text: "Gap 18",
               answer: "e",
               explain:
-                "Paragraf «Repair cafés, which are run by volunteers, have taught a generation that a machine can be opened» diyor; (e) bunu birinci tekil deneyime çeviriyor: bir kez içini gördükten sonra kapalı bir kutu olduğuna inanmazsın. Aynı düşüncenin somut hâli.",
+                "Paragraf «Repair cafés, which are run by volunteers, have taught a generation that a machine can be opened» diyor; (e) bunu kişisel bir deneyime çeviriyor: bir kez içini gördükten sonra kapalı bir kutu olduğuna inanmazsın. Aynı düşüncenin somut hâli.",
             },
             {
               kind: "match",
@@ -433,7 +433,7 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
               options: ["give", "pay", "make", "put"],
               answer: 1,
               explain:
-                "`pay attention to` sabit bir eşdizim. `give attention` bazı bağlamlarda geçse de `to` ile bu kalıbı kurmaz; `make attention` ve `put attention` İngilizcede yoktur.",
+                "`pay attention to` sabit bir eşdizim. `give attention to` daha resmî ve seyrek bir kullanım, bu cümlede doğal değil; `make attention` ve `put attention` İngilizcede yoktur.",
             },
             {
               kind: "mcq",
@@ -453,7 +453,7 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
               options: ["talk", "say", "tell", "speak"],
               answer: 1,
               explain:
-                "Boşluktan sonra `that` ile bir yan cümle geliyor ve nesne yok. `say that …` bu yapıyı kurar; `tell` bir kişi nesnesi ister (tell you that), `speak` yan cümle almaz, `explain` ise burada anlamı değil biçimi bozar.",
+                "Boşluktan sonra `that` ile bir yan cümle geliyor ve nesne yok. `say that …` bu yapıyı kurar; `tell` bir kişi nesnesi ister (tell you that), `speak` ve `talk` ise `that` ile yan cümle almaz.",
             },
             {
               kind: "mcq",
@@ -1139,7 +1139,7 @@ Emre Yildiz`,
           prompt:
             "Write an article for a website with this title: \"One habit I changed and one I could not\". Describe both, say why one worked and the other did not. Write about 100 words.",
           promptTr:
-            "Bir internet sitesi için şu başlıkla bir yazı yaz: \"Değiştirdiğim bir alışkanlık ve değiştiremediğim bir alışkanlık\". İkisini de anlat, birinin neden işe yaradığını ötekinin neden yaramadığını söyle. Yaklaşık 100 kelime.",
+            "Bir internet sitesi için şu başlıkla bir yazı yaz: \"Değiştirdiğim bir alışkanlık ve değiştiremediğim bir alışkanlık\". İkisini de anlat, birinin neden işe yaradığını, ötekinin neden yaramadığını söyle. Yaklaşık 100 kelime.",
           items: [],
           rubric: {
             minWords: 100,
@@ -1226,7 +1226,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A delivery box saves time and it makes you cook things you would never buy. On the other hand, you cannot plan, and if you do not like something you still have it. Shopping in a market takes longer but you see what you get and you can talk to the person who grew it. I would prefer the market, mainly because I cook from what I see, not from a plan. To be honest, there is a disadvantage: on a busy week I do not go, and then I eat badly.",
+              "A delivery box saves time and it makes you cook things you would never buy. On the other hand, you cannot plan, and if you do not like something you still have it. Shopping in a market takes longer but you see what you get and you can talk to the person who grew it. I would prefer the market, mainly because I cook from what I see, not from a plan. To be honest, there is a disadvantage: in a busy week I do not go, and then I eat badly.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, takes longer, whereas)",
@@ -1263,7 +1263,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would start with the bicycle shelter, because bicycles in the hall block the door. That is a strong argument, I had not thought about the numbers. All right: let us put the stairwell lights forward, and ask about the shelter next year.",
+              "I would start with the bicycle shelter, because bicycles in the hall block the door. That is a strong argument; I had not thought about the numbers. All right: let us put the stairwell lights forward, and ask about the shelter next year.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi?",

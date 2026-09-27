@@ -800,7 +800,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
               text: "Der Befund von Frau Kolbe ist unauffällig.",
               answer: true,
               explain:
-                "Mesaj sonucu ve sonucunu birlikte veriyor: \"Ihr Befund ist da und unauffällig, Sie brauchen deshalb keinen Termin\".",
+                "Mesaj tahlil sonucunu ve bunun doğurduğu durumu birlikte veriyor: \"Ihr Befund ist da und unauffällig, Sie brauchen deshalb keinen Termin\".",
             },
             {
               kind: "mcq",
@@ -1151,7 +1151,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
               plays: 1,
               segments: [
                 {
-                  text: "Liebe Patientinnen und Patienten, unser Praxissystem ist seit einer Stunde ausgefallen. Wir behandeln weiter, brauchen die Karten aber vorübergehend auf Papier. Rechnen Sie bitte mit längeren Wartezeiten.",
+                  text: "Liebe Patientinnen und Patienten, unser Praxissystem ist seit einer Stunde ausgefallen. Wir behandeln weiter, dokumentieren aber vorübergehend auf Papier. Rechnen Sie bitte mit längeren Wartezeiten.",
                 },
               ],
             },
@@ -1190,7 +1190,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
               plays: 1,
               segments: [
                 {
-                  text: "Am Donnerstag steht der Blutspendebus wieder auf dem Werksgelände. Die Teilnahme erfolgt während der Arbeitszeit und wird nicht angerechnet. Bitte tragen Sie sich in die Liste ein, damit die Pausen geplant werden können.",
+                  text: "Am Donnerstag steht der Blutspendebus wieder auf dem Werksgelände. Die Teilnahme erfolgt während der Arbeitszeit und wird nicht vom Zeitkonto abgezogen. Bitte tragen Sie sich in die Liste ein, damit die Pausen geplant werden können.",
                 },
               ],
             },
@@ -1306,7 +1306,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
               ],
               answer: 1,
               explain:
-                "Katılım gönüllü ama zamanı belirli: \"Die Teilnahme erfolgt während der Arbeitszeit und wird nicht angerechnet\".",
+                "Katılım gönüllü ama zamanı belirli: \"Die Teilnahme erfolgt während der Arbeitszeit und wird nicht vom Zeitkonto abgezogen\".",
             },
             {
               kind: "mcq",

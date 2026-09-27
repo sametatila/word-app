@@ -119,7 +119,7 @@ Fahrräder können nicht mitfahren.`,
               id: "de-a1-05-l1-4",
               no: 4,
               ref: "t2",
-              text: "Im Juni können Sie Ihr Fahrrad in den Bus stellen.",
+              text: "Vom 2. bis 6. Juni können Sie Ihr Fahrrad in den Bus stellen.",
               answer: false,
               explain:
                 "Duyuru \"Fahrräder können nicht mitfahren\" diyor. Yani ikame otobüslerde bisiklet taşınmıyor.",

@@ -117,7 +117,7 @@
  { "tr": "«Nachbarn» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Nachbarn»." },
  { "tr": "«Training» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Training»." },
  { "tr": "Cam kenarı yer iste, kibarca.", "kind": "exchange.hint", "en": "Ask for a window seat, politely." },
- { "tr": "Deneme kabinini sor, kibarca.", "kind": "exchange.hint", "en": "Ask about the changing room, politely." },
+ { "tr": "Deneme kabinini sor, kibarca.", "kind": "exchange.hint", "en": "Ask about the fitting room, politely." },
  { "tr": "«Fahrkarte» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Fahrkarte»." },
  { "tr": "Bir yer öner ve gerekçelendir.", "kind": "exchange.hint", "en": "Propose a place and give reasons." },
  { "tr": "Somut bir anahtar düzeni öner.", "kind": "exchange.hint", "en": "Propose a concrete arrangement for the keys." },

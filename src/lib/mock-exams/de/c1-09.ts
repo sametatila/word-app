@@ -61,7 +61,7 @@ Daraus folgt eine unbequeme Unterscheidung: Der ökologische Vorteil des Reparie
 
 Die verbreitete Antwort lautet Konstruktion. Geräte müssten so gebaut sein, dass sich einzelne Teile tauschen lassen. Das ist richtig und greift gleichwohl zu kurz, denn ein zerlegbares Gerät ist noch kein repariertes. Es fehlen weniger die Schrauben als die Werkstätten.
 
-Deren Zahl ist über dreißig Jahre weitgehend gesunken, und zwar nicht mangels Nachfrage, sondern weil der Beruf keine Lehrlinge mehr fand. Eine Werkstatt, die einmal geschlossen hat, kehrt nicht zurück, sobald sich die Rechtslage ändert.
+Deren Zahl ist über dreißig Jahre stetig gesunken, und zwar nicht mangels Nachfrage, sondern weil der Beruf keine Lehrlinge mehr fand. Eine Werkstatt, die einmal geschlossen hat, kehrt nicht zurück, sobald sich die Rechtslage ändert.
 
 Ein Einwand liegt nahe: Der Markt werde das regeln, sobald der Ersatz teurer wird. Er ließe sich indes entkräften, denn die Zeit, die eine Werkstatt zum Entstehen braucht, bemisst sich in Jahren; die Zeit, in der ein Preis steigt, in Wochen.
 
@@ -700,7 +700,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
                 },
                 {
                   speaker: "Frau Vietzke",
-                  text: "Das wäre mir zu schnell. Sie ist teuer und wirkt unsauber, ja. Aber sie ist das einzige Instrument, das beim Kunden ankommt und nicht erst über zehn Jahre. Ich verteidige sie ungern, und ich verteidige sie trotzdem.",
+                  text: "Das wäre mir zu schnell. Sie ist teuer und wirkt unsauber, ja. Aber sie ist das einzige Instrument, das beim Kunden ankommt und nicht erst in zehn Jahren. Ich verteidige sie ungern, und ich verteidige sie trotzdem.",
                 },
                 {
                   speaker: "Herr Achterberg",
@@ -838,7 +838,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               ],
               answer: 2,
               explain:
-                "\"das einzige Instrument, das beim Kunden ankommt und nicht erst über zehn Jahre\".",
+                "\"das einzige Instrument, das beim Kunden ankommt und nicht erst in zehn Jahren\".",
             },
             {
               kind: "mcq",
@@ -995,7 +995,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
           prompt:
             "In einer Wochenzeitung stand: \"Wer will, dass Geräte länger halten, muss Neugeräte teurer machen — alles andere ist Symbolpolitik.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir haftalık gazetede şöyle yazdı: \"Cihazların uzun ömürlü olmasını isteyen, yenilerini pahalılaştırmak zorundadır — geri kalanı sembolik siyasettir.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir haftalık gazetede şöyle yazıyordu: \"Cihazların uzun ömürlü olmasını isteyen, yenilerini pahalılaştırmak zorundadır — geri kalanı sembolik siyasettir.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,

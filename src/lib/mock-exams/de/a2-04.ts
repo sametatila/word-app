@@ -147,7 +147,7 @@ Nächstes Jahr mache ich den zweiten Teil der Prüfung. Ich weiß jetzt: Ich hab
 
 Der Chef Jan Hansen sagt, dass er zuerst Angst hatte. "Wir bauen Fenster. Wenn niemand da ist, steht die Maschine still."
 
-Deshalb hat die Firma zwei Gruppen gemacht. Die eine Gruppe hat frei am Montag, die andere am Freitag. So ist die Werkstatt immer offen.
+Deshalb hat die Firma zwei Gruppen gemacht. Die eine Gruppe hat am Montag frei, die andere am Freitag. So ist die Werkstatt immer offen.
 
 Nach einem Jahr sind die Zahlen da. Die Firma hat fast genauso viel produziert wie vorher. Die Mitarbeiter waren seltener krank: 2,9 Tage statt 4,1 Tage im Monat.
 
@@ -590,7 +590,7 @@ Anmeldung bis 15. September.`,
               options: ["Sie hat die Stelle bekommen.", "Sie hat eine Absage bekommen.", "Sie muss noch warten."],
               answer: 2,
               explain:
-                "Görüşmeler henüz yapılmamış; kurum \"Wir melden uns danach\" diyor. Ret de yok, bu açıkça reddediliyor: \"überhaupt nicht\".",
+                "Görüşmeler henüz yapılmamış; kurum \"Wir melden uns danach\" diyor. Ret de yok; görevli bunu açıkça söylüyor: \"überhaupt nicht\".",
             },
             {
               kind: "mcq",
@@ -654,7 +654,7 @@ Anmeldung bis 15. September.`,
               ref: "g1",
               text: "Deniz",
               answer: "a",
-              explain: "\"Ich baue den Stand auf\" — geçen yıl da yaptığı iş, ve konuşma boyunca değişmiyor.",
+              explain: "\"Ich baue den Stand auf\" — geçen yıl da yaptığı iş ve konuşma boyunca değişmiyor.",
             },
             {
               kind: "match",
@@ -714,7 +714,7 @@ Anmeldung bis 15. September.`,
               situation: "Bir çalışan izin tarihi istiyor.",
               plays: 2,
               segments: [
-                { speaker: "Kollege", text: "Ich möchte im August zwei Wochen frei." },
+                { speaker: "Kollege", text: "Ich möchte im August zwei Wochen frei haben." },
                 { speaker: "Chefin", text: "August ist schwierig. Zwei Kollegen sind schon weg." },
                 { speaker: "Kollege", text: "Und Ende Juli?" },
                 { speaker: "Chefin", text: "Ende Juli geht." },
@@ -764,7 +764,7 @@ Anmeldung bis 15. September.`,
               id: "s5",
               genre: "Gespräch über Überstunden",
               genreTr: "Fazla mesai üzerine konuşma",
-              situation: "Bir çalışan fazla saatlerin ne olduğunu soruyor.",
+              situation: "Bir çalışan fazla çalıştığı saatlerin karşılığını soruyor.",
               plays: 2,
               segments: [
                 { speaker: "Mitarbeiterin", text: "Ich arbeite oft zwei Stunden länger. Bekomme ich das bezahlt?" },
@@ -922,7 +922,7 @@ Anmeldung bis 15. September.`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {
@@ -933,14 +933,14 @@ Anmeldung bis 15. September.`,
           prompt:
             "Ihre Freundin Selma hat eine neue Stelle bekommen und hatte gestern ihren ersten Arbeitstag. Schreiben Sie ihr eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Arkadaşın Selma yeni bir iş buldu ve dün ilk iş günüydü. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Arkadaşın Selma yeni bir iş buldu ve dün ilk iş günüydü. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,
             points: [
               { de: "Gratulieren Sie.", tr: "Tebrik et." },
               { de: "Fragen Sie, wie der erste Tag war.", tr: "İlk günün nasıl geçtiğini sor." },
-              { de: "Schlagen Sie ein Treffen vor.", tr: "Buluşmayı öner." },
+              { de: "Schlagen Sie ein Treffen vor.", tr: "Bir buluşma öner." },
             ],
             sample: `Liebe Selma,
 

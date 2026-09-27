@@ -192,7 +192,7 @@ The rest of the audience treats forty percent {{12}} a failed prediction wheneve
               text: "Gap 11",
               accept: ["since"],
               explain:
-                "Yakın zamanlı geçmiş bir başlangıç noktası alıyor: «have been made since the nineteen eighties». `for` süre uzunluğu isterdi, on yıl adı değil.",
+                "`have been made` yapısı bir başlangıç noktası alıyor: «have been made since the nineteen eighties». `for` süre uzunluğu isterdi, on yıl adı değil.",
             },
             {
               kind: "gap",
@@ -327,7 +327,7 @@ Reviews carried out after major floods usually conclude that the information exi
               no: 21,
               text: "The officer acted on the forecast, so the town was not flooded.\nThe town would have been flooded ______ on the forecast.",
               cue: "ACTED",
-              accept: ["had the officer not acted"],
+              accept: ["had the officer not acted", "if the officer hadn't acted"],
               explain:
                 "Gerçekleşmemiş bir sonuç kuruluyor: üçüncü tip koşulun koşul yarısı `had + üçüncü hâl` ister, gerçek olan olumlu olduğu için koşul olumsuza çevrilir ve `if` düşünce devrik kuruluş zorunlu olur.",
             },
@@ -459,7 +459,7 @@ Three years later the same street was closed on the same reasoning and the water
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [

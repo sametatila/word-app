@@ -397,7 +397,7 @@ Ab Montag ist die Halle wieder offen.`,
               plays: 2,
               segments: [
                 { speaker: "Timo", text: "Wann ist die Prüfung? Am Dienstag?" },
-                { speaker: "Lea", text: "Nein, der Dienstag ist die Wiederholung. Die Prüfung ist am Freitag." },
+                { speaker: "Lea", text: "Nein, am Dienstag ist die Wiederholung. Die Prüfung ist am Freitag." },
                 { speaker: "Timo", text: "Gut, dann habe ich noch Zeit." },
               ],
             },

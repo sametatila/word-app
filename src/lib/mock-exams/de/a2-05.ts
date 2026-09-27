@@ -87,7 +87,7 @@ Heute habe ich ein anderes Konto und zahle nichts. Mein Rat: Unterschreiben Sie 
               ],
               answer: 2,
               explain:
-                "Belge için ikametgâh, ikametgâh için adres gerekiyordu; yazar \"dreimal hin- und hergelaufen\" diyor. Banka her gün kapalı değildi, ücret sorunu da sonradan çıkıyor.",
+                "Hesap için ikametgâh belgesi, belge için de adres gerekiyordu; yazar \"dreimal hin- und hergelaufen\" diyor. Banka her gün kapalı değildi, ücret sorunu da sonradan çıkıyor.",
             },
             {
               kind: "mcq",
@@ -141,13 +141,13 @@ Heute habe ich ein anderes Konto und zahle nichts. Mein Rat: Unterschreiben Sie 
               title: "Der Vertrag, den fast niemand liest",
               body: `Eine Verbraucherzentrale hat 500 Menschen gefragt, ob sie ihren Handyvertrag gelesen haben. Nur 62 Personen haben Ja gesagt.
 
-Das ist teuer. Viele Verträge laufen 24 Monate. Wer nicht rechtzeitig kündigt, verlängert automatisch. Seit 2022 gilt aber eine neue Regel: Nach dem ersten Jahr kann man jeden Monat kündigen.
+Das ist teuer. Viele Verträge laufen 24 Monate. Wer nicht rechtzeitig kündigt, verlängert den Vertrag automatisch. Seit 2022 gilt aber eine neue Regel: Nach dem ersten Jahr kann man jeden Monat kündigen.
 
 Die Beraterin Nina Frisch sagt: "Die meisten Leute rufen erst an, wenn die Rechnung schon hoch ist." Ihr Tipp ist einfach. Man soll das Kündigungsdatum sofort in den Kalender schreiben, am besten drei Monate vorher.
 
 Ein zweites Problem sind die Zusatzleistungen. Ein Musikdienst oder mehr Datenvolumen kostet oft nur zwei oder drei Euro im Monat. In zwei Jahren sind das aber bis zu 72 Euro.
 
-Die Verbraucherzentrale hat auch etwas Gutes gefunden. Wenn man anruft und kündigen will, bekommen viele Kunden sofort ein besseres Angebot. Bei 40 Prozent der Anrufe wurde der Preis kleiner.
+Die Verbraucherzentrale hat auch etwas Gutes gefunden. Wenn Kunden anrufen und kündigen wollen, bekommen viele sofort ein besseres Angebot. Bei 40 Prozent der Anrufe wurde der Preis niedriger.
 
 Frisch sagt zum Schluss: "Lesen dauert zehn Minuten. Ein falscher Vertrag dauert zwei Jahre."`,
               gloss: [
@@ -214,7 +214,7 @@ Frisch sagt zum Schluss: "Lesen dauert zehn Minuten. Ein falscher Vertrag dauert
               options: ["Die Firma legt sofort auf.", "Die Rechnung wird noch höher.", "Sie bekommen ein besseres Angebot."],
               answer: 2,
               explain:
-                "Aramaların yüzde 40'ında fiyat düşmüş: \"bekommen viele Kunden sofort ein besseres Angebot\". Bu, metnin bulduğu olumlu nokta.",
+                "Aramaların yüzde 40'ında fiyat düşmüş: \"bekommen viele sofort ein besseres Angebot\". Bu, metnin bulduğu olumlu nokta.",
             },
           ],
         },
@@ -300,7 +300,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["Den Vertrag bis Ende Juni ohne Kosten beenden.", "Den alten Preis wie bisher weiterzahlen und nichts tun.", "Bis Juli eine Antwort schreiben."],
               answer: 0,
               explain:
-                "Mektup tek bir seçenek veriyor: \"bis zum 30. Juni kostenlos kündigen\". Eski fiyatı sürdürmek ya da yalnız cevap yazmak yazmıyor.",
+                "Mektup tek bir seçenek veriyor: \"bis zum 30. Juni kostenlos kündigen\". Eski fiyatı sürdürmek ya da yalnız cevap yazmak metinde geçmiyor.",
             },
             {
               kind: "mcq",
@@ -344,7 +344,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["Alles zurück.", "Gar nichts zurück.", "80 Prozent der Gebühr."],
               answer: 2,
               explain:
-                "Tam iade yalnız iki haftadan önce; sonrasında kurum \"20 Prozent\" alıkoyuyor, yani geriye 80 kalıyor. Sıfır iade ancak ilk dersten sonra.",
+                "Tam iade yalnız iki haftadan önce; sonrasında kurum \"20 Prozent\" alıkoyuyor, yani ücretin yüzde 80'i geri ödeniyor. Sıfır iade ancak ilk dersten sonra.",
             },
           ],
         },
@@ -699,7 +699,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               id: "s1",
               genre: "Gespräch im Amt",
               genreTr: "Resmî dairede konuşma",
-              situation: "Bir vatandaş belgeyi getirmemiş.",
+              situation: "Bir vatandaş belgenin fotokopisini getirmemiş.",
               plays: 2,
               segments: [
                 { speaker: "Mitarbeiter", text: "Haben Sie die Kopie vom Pass dabei?" },
@@ -923,7 +923,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {
@@ -934,7 +934,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
           prompt:
             "Ihr Freund Mattis ist mit Ihnen zum Bürgeramt gegangen und hat beim Formular geholfen. Schreiben Sie ihm eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Arkadaşın Mattis seninle nüfus dairesine geldi ve formda yardım etti. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Arkadaşın Mattis seninle nüfus dairesine geldi ve formda yardım etti. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,

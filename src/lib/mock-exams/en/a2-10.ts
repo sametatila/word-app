@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A2 · Deneme 10 — "Second-hand Things, Selling and Buying".
+ * A2 · Deneme 10 — "Secondhand Things, Selling and Buying".
  *
  * A2'nin öteki denemeleriyle AYNI PLAN; konu ayrı. İkinci el alım satım
  * A2 için verimli: fiyat pazarlığı, buluşma saati, durum betimlemesi ve
@@ -20,7 +20,7 @@ export const EN_A2_10: MockPaper = {
   course: "en",
   level: "A2",
   no: 10,
-  theme: "Second-hand Things, Selling and Buying",
+  theme: "Secondhand Things, Selling and Buying",
   themeTr: "İkinci el eşya, satmak ve almak",
   minutes: 110,
   parts: [
@@ -67,7 +67,7 @@ Children's clothes, toys and books only. No electrical things.`,
               genre: "Email",
               genreTr: "E-posta",
               title: "Thank you for the table",
-              body: `Dear Bexi, thank you for the table. It is in the kitchen now and it is perfect. I put twenty euros in your letter box, because you were not at home. Please tell me if you did not get it.`,
+              body: `Dear Bexi, thank you for the table. It is in the kitchen now and it is perfect. I put twenty euros in your mailbox, because you were not at home. Please tell me if you did not get it.`,
             },
             {
               kind: "text",
@@ -119,10 +119,10 @@ We do not buy clothes.`,
               no: 3,
               ref: "m3",
               text: "Why does the writer write?",
-              options: ["The table is much too big", "She left the money in a letter box", "Bexi wants the table back"],
+              options: ["The table is much too big", "She left the money in a mailbox", "Bexi wants the table back"],
               answer: 1,
               explain:
-                "E-posta ödemenin nasıl yapıldığını bildiriyor: «I put twenty euros in your letter box, because you were not at home. Please tell me if you did not get it». Masadan memnun.",
+                "E-posta ödemenin nasıl yapıldığını bildiriyor: «I put twenty euros in your mailbox, because you were not at home. Please tell me if you did not get it». Masadan memnun.",
             },
             {
               kind: "mcq",
@@ -141,7 +141,7 @@ We do not buy clothes.`,
               no: 5,
               ref: "m5",
               text: "What did the writer learn?",
-              options: ["Nobody wants old furniture", "She asked too little money", "It is better to sell to the first person"],
+              options: ["Nobody wants old furniture", "She asked for too little money", "It is better to sell to the first person"],
               answer: 1,
               explain:
                 "İleti sonucu kendisi çıkarıyor: bir saatte on bir kişi yazmış ve «I think my price was too low». Gelecek sefer daha fazla isteyip bir hafta bekleyecek.",
@@ -160,9 +160,9 @@ We do not buy clothes.`,
           options: [
             { key: "a", label: "We Collect", body: "We take large furniture and machines from your apartment. We pay you less, but we carry it down. Send a photo first, please." },
             { key: "b", label: "School Market", body: "Sunday, 10 to 14. Bring your own table, three euros. Children's clothes, toys and books only." },
-            { key: "c", label: "Second-hand Furniture", body: "Beds, desks and chairs. Delivery in the city for eight euros. Open Tuesday to Saturday." },
+            { key: "c", label: "Secondhand Furniture", body: "Beds, desks and chairs. Delivery in the city for eight euros. Open Tuesday to Saturday." },
             { key: "d", label: "What Is It Worth?", body: "Free, Thursday afternoons. Bring one object. We look at it and we tell you. We do not buy anything." },
-            { key: "e", label: "Book Shelf in the Hallway", body: "Leave a book, take a book. Free for everybody. Please, no wet books." },
+            { key: "e", label: "Bookshelf in the Hallway", body: "Leave a book, take a book. Free for everybody. Please, no wet books." },
             { key: "f", label: "Clothing Store", body: "We buy good clothes and we pay the same day. Bring ten pieces at most." },
             { key: "g", label: "Tool Library", body: "Borrow a drill or a saw for two euros a day. You need a card and an address in the city." },
             { key: "h", label: "Small Ads", body: "Put your ad online free. Photograph, price and your street. You meet the buyer yourself." },
@@ -211,7 +211,7 @@ We do not buy clothes.`,
               text: "Lenn has old books and does not want money for them.",
               answer: "e",
               explain:
-                "İlan parasız bir düzen kuruyor: «Leave a book, take a book. Free for everybody». Giysi dükkânı (f) ise satın alır, yani para öder.",
+                "İlan parasız bir düzen kuruyor: «Leave a book, take a book. Free for everybody». Küçük ilanlar (h) ise satış içindir, yani para söz konusu.",
             },
           ],
         },
@@ -312,7 +312,7 @@ I put the price at forty euros. That was {{16}} than the price in the stores, an
 
 The first man came the same evening. He was very friendly, {{17}} he did not ask a single question. That was the moment I understood my mistake.
 
-Next month I {{18}} sell my desk, and this time I start high.
+Next month I {{18}} sell my desk, and this time I will start high.
 
 And one more thing: {{19}} you write an ad, take the photograph in the morning. The light is better.`,
             },
@@ -683,8 +683,8 @@ Tell Bexi by:       {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five people speaking, questions 11 to 15. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -770,7 +770,7 @@ Tell Bexi by:       {{10}}`,
               id: "en-a2-10-h3-13",
               no: 13,
               ref: "c3",
-              text: "Why does the speaker buy second-hand?",
+              text: "Why does the speaker buy secondhand?",
               options: ["Because it is cheaper", "Because it lasts longer", "Because the stores are far away"],
               answer: 1,
               explain:
@@ -1021,7 +1021,7 @@ Eren`,
           promptTr: "Sana eski eşya alıp satmak hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. Do you buy second-hand things? What kind?", tr: "İyi günler. İkinci el eşya alır mısın? Ne tür?" },
+            { who: "partner", de: "Good afternoon. Do you buy secondhand things? What kind?", tr: "İyi günler. İkinci el eşya alır mısın? Ne tür?" },
             { who: "you", hint: "Alıp almadığını söyle ve bir örnek ver.", expect: "bir alışkanlığı örnekle anlatmak", seconds: 30 },
             { who: "partner", de: "Thank you. Is it better to sell online or at a market? Why?", tr: "Teşekkürler. İnternetten satmak mı pazarda satmak mı daha iyi? Neden?" },
             { who: "you", hint: "Tercihini söyle ve bir gerekçe ver.", expect: "bir tercihi gerekçesiyle bildirmek", seconds: 30 },
@@ -1037,7 +1037,7 @@ Eren`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "Yes, I buy books and furniture second-hand, but never shoes. I think a market is better, because you see the thing and you can talk about the price. Last spring I sold my old desk online. Four people wrote and only one came, and he took it the same evening.",
+              "Yes, I buy books and furniture secondhand, but never shoes. I think a market is better, because you see the thing and you can talk about the price. Last spring I sold my old desk online. Four people wrote and only one came, and he took it the same evening.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",
@@ -1083,7 +1083,7 @@ Eren`,
           prompt:
             "You have one free Saturday and a lot of things you do not need. Talk with me about what to do and choose one thing together.",
           promptTr:
-            "Bir boş cumartesin ve ihtiyacın olmayan bir sürü eşyan var. Ne yapacağını benimle konuş ve birlikte birini seç.",
+            "Boş bir cumartesin ve ihtiyacın olmayan bir sürü eşyan var. Ne yapacağını benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a thrift store. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç euroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },

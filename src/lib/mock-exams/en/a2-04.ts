@@ -133,7 +133,7 @@ export const EN_A2_04: MockPaper = {
               options: ["Because the group reads it on Monday", "Because big files disappear there", "Because the file was not finished"],
               answer: 1,
               explain:
-                "Sebep cümlenin içinde: «because the chat deletes big files after a week». Pazartesi okuma günü, sohbetle ilgisi yok; dosya da bitmiş durumda («I finished the group work last night»).",
+                "Sebep cümlenin içinde: «because the chat deletes big files after a week». Pazartesi okuma için son gün, sohbetle ilgisi yok; dosya da bitmiş durumda («I finished the group work last night»).",
             },
           ],
         },
@@ -170,7 +170,7 @@ export const EN_A2_04: MockPaper = {
               kind: "match",
               id: "en-a2-04-l2-7",
               no: 7,
-              text: "Milos wants a stranger to look at his application before he sends it.",
+              text: "Milos wants somebody to check his job application before he sends it.",
               answer: "c",
               explain:
                 "İlan tam bu hizmeti veriyor: «We read your letter and tell you what to change», iki iş günü içinde. Öteki ilanlarda başvuru metnine bakan kimse yok.",
@@ -251,7 +251,7 @@ Now the course is finished. My English is better, but I learned something else t
               options: ["The grammar in the first lessons", "The questions from the teacher", "Working as fast as the others"],
               answer: 2,
               explain:
-                "Metin zorluğu adlandırıyor: «The problem was the speed». Gençler dizüstünde yazıyor, yazan hâlâ kâğıtla. Dilbilgisi açıkça sorun değil; öğretmenin soruları yazıda hiç geçmiyor.",
+                "Metin zorluğu adlandırıyor: «The problem was the speed». Gençler dizüstü bilgisayarda yazıyor, yazan hâlâ kâğıtla. Dilbilgisi açıkça sorun değil; öğretmenin soruları yazıda hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -261,7 +261,7 @@ Now the course is finished. My English is better, but I learned something else t
               options: ["The writer taught the whole class", "The two students helped each other", "The partner finished the task alone"],
               answer: 1,
               explain:
-                "Alışveriş karşılıklı: «she asked me about the words she did not know, and I asked her about the machine». Sınıfın tamamına ders verilmiyor; eş de görevi tek başına bitirmiyor, birlikte çalışıyorlar.",
+                "Alışveriş karşılıklı: «she asked me about the words she did not know, and I asked her about the machine». Sınıfın tamamına ders verilmiyor; çalışma arkadaşı da görevi tek başına bitirmiyor, birlikte çalışıyorlar.",
             },
             {
               kind: "mcq",
@@ -295,7 +295,7 @@ Write down every name. In the first week you {{15}} twenty people and you forget
 
 Ask your questions early. A question on Monday is much {{16}} than the same question in the third month.
 
-If you do not understand a word in a meeting, write it in your book and ask {{17}} the meeting.
+If you do not understand a word in a meeting, write it in your notebook and ask {{17}} the meeting.
 
 Next Monday I start in a new office myself, and I {{18}} follow my own advice.
 
@@ -666,8 +666,8 @@ Do the level test:       {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five short recordings, questions 11 to 15. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -822,7 +822,7 @@ Do the level test:       {{10}}`,
               situation: "İkinci konuşmacı çalışma saatinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I moved my study hour from the evening to six in the morning. The same forty minutes, but before work my head is empty and everything stays." },
+                { text: "I moved my study hour from the evening to six in the morning. The same forty minutes, but before work my head is clear and everything stays." },
               ],
             },
             {
@@ -1085,7 +1085,7 @@ Milos`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think the computer day is useful because we lose a lot of time with the new system. You are right, we use it every day, but nobody showed us the fast way. On the other hand, the phone calls are our first contact with customers. So let us choose the customer day this year and the system day next year.",
+              "I think the computer day is useful because we lose a lot of time with the new system. You are right, we use it every day, but nobody showed us the fast way. On the other hand, the phone calls are our first contact with customers. So let's choose the customer day this year and the system day next year.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

@@ -76,7 +76,7 @@ Rarely is a target withdrawn once it has been published, and the reasons are pol
               options: ["transferred", "amended", "shifted", "converted"],
               answer: 2,
               explain:
-                "Cümle ortalama sürenin hiç değişmediğini söylüyor ve `shift` bir ölçüm değerinin yer değiştirmesini anlatır. `amended` metin düzeltmede, `converted` biçim değiştirmede kullanılır; `altered` ise `at all` ile bu yapıda zayıf kalır.",
+                "Cümle ortalama sürenin hiç değişmediğini söylüyor ve `shift` bir ölçüm değerinin yer değiştirmesini anlatır. `amended` metin düzeltmede, `converted` biçim değiştirmede kullanılır; `transferred` ise bir yerden başka yere aktarmayı bildirir ve bir ortalama için kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -516,7 +516,7 @@ None of which should deter the reader. The book is a genuine contribution and it
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -983,7 +983,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               plays: 1,
               segments: [
                 { speaker: "Tarek", text: "I want to start by removing the moral vocabulary, because it is doing most of the damage in this field. Gaming, cheating, massaging: every one of those words implies an individual who decided something, and the effect I am describing survives the removal of every such individual." },
-                { speaker: "Tarek", text: "Consider a service in which nobody lies. Effort is finite. Attention is directed at what is reported upwards. Within eighteen months the reported figure improves and the underlying condition does not, and you can produce this result in a simulation with no dishonest agents in it at all." },
+                { speaker: "Tarek", text: "Consider a service in which nobody lies. Effort is finite. Attention is directed at what is reported upward. Within eighteen months the reported figure improves and the underlying condition does not, and you can produce this result in a simulation with no dishonest agents in it at all." },
                 { speaker: "Tarek", text: "The second point is about asymmetry, and it is the one I would keep if I could keep only one. A target that is being missed generates pressure to change the target. A target that is being met while the thing beneath it deteriorates generates no pressure whatsoever, because everybody positioned to notice is being assessed on the number that is rising." },
                 { speaker: "Tarek", text: "Third, and this is where I part company with most of my colleagues: none of this is an argument for abolishing measurement. The counterfactual is not a well-run service. It is the arrangement that preceded measurement, and in the case I know best that arrangement concealed regional differences considerably larger than anything the target subsequently produced." },
                 { speaker: "Chair", text: "Question from the floor: are you saying the distortion is acceptable?" },
@@ -1423,7 +1423,7 @@ The change should be judged after twelve months against a stated failure conditi
             { who: "partner", de: "Good morning. Has your work or study ever been judged by a single number?", tr: "Günaydın. İşin ya da öğrenimin hiç tek bir sayıyla değerlendirildi mi?" },
             { who: "you", hint: "Somut bir örnek ver ve ne ölçtüğünü söyle.", expect: "somut bir örnek verip ölçülen şeyi adlandırmak", seconds: 45 },
             { who: "partner", de: "Thank you. Did knowing the measure change how you worked?", tr: "Teşekkürler. Ölçütü bilmek çalışma biçimini değiştirdi mi?" },
-            { who: "you", hint: "Değişimi tarif et; kaçınmaya çalışmadan.", expect: "kendi davranışındaki değişimi tarif etmek", seconds: 45 },
+            { who: "you", hint: "Değişimi kaçamak yapmadan tarif et.", expect: "kendi davranışındaki değişimi tarif etmek", seconds: 45 },
             { who: "partner", de: "And what would have been lost if nothing had been measured at all?", tr: "Hiçbir şey ölçülmeseydi ne kaybedilirdi?" },
             { who: "you", hint: "Karşı olgusal durumu kur ve gerekçelendir.", expect: "karşı olgusal bir durumu kurmak ve gerekçelendirmek", seconds: 45 },
           ],

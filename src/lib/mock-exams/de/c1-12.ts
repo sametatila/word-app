@@ -58,7 +58,7 @@ export const C1_12: MockPaper = {
               title: "Was ein Bild nicht zeigt",
               body: `Eine Fotografie beweist, dass sich etwas vor der Linse befunden hat. Sie beweist nicht, was es bedeutet. Zwischen beiden Sätzen liegt der gesamte Streit über Bilder als Beleg.
 
-Die öffentliche Debatte hat sich indes fast vollständig auf die Fälschung verlagert. Gefragt wird, ob ein Bild verändert wurde. Das ist eine sinnvolle Frage und beantwortet die schwierigere nicht: Ein technisch unangetastetes Bild kann in die Irre führen, ohne dass ein einziges Pixel bewegt worden wäre.
+Die öffentliche Debatte hat sich indes fast vollständig auf die Fälschung verlagert. Gefragt wird, ob ein Bild verändert wurde. Das ist eine sinnvolle Frage, beantwortet aber die schwierigere nicht: Ein technisch unangetastetes Bild kann in die Irre führen, ohne dass ein einziges Pixel bewegt worden wäre.
 
 Verantwortlich dafür sind zwei Entscheidungen, die kein Betrachter sieht. Die erste ist der Ausschnitt. Was außerhalb des Rahmens geschieht, existiert für das Bild nicht, und der Rahmen wird gewählt.
 
@@ -177,7 +177,7 @@ Sein Schluss lautet, dass ein Bild dieselbe Behandlung brauche wie eine Aussage 
               text: "Lücke 9",
               accept: ["befragt", "vernommen", "geprüft"],
               explain:
-                "Karşılaştırmanın ikinci yarısı: tanıklar \"nicht abgeschafft, sondern befragt\" ediliyor.",
+                "Karşılaştırmanın ikinci yarısı: tanıklar kaldırılmıyor, sorgulanıyor: \"nicht abgeschafft, sondern befragt\".",
             },
             {
               kind: "gap",
@@ -206,7 +206,7 @@ Sein Schluss lautet, dass ein Bild dieselbe Behandlung brauche wie eine Aussage 
               title: "Der Ausschnitt, den ich gewählt habe",
               body: `Ich habe siebzehn Jahre lang Bilder für eine Tageszeitung ausgewählt. Gefragt wurde ich in dieser Zeit fast ausschließlich, ob ein Foto echt sei.
 
-Das war selten das Problem. Gefälschte Bilder sind mir in siebzehn Jahren vier untergekommen, und drei davon waren plump. Was mich nachts beschäftigt hat, war ein anderes.
+Das war selten das Problem. Gefälschte Bilder sind mir in siebzehn Jahren vier untergekommen, und drei davon waren plump. Was mich nachts beschäftigt hat, war etwas anderes.
 
 Im Sommer 2011 habe ich ein Bild von einer Demonstration gewählt. Darauf steht ein junger Mann, den Arm erhoben, das Gesicht angespannt. Neben ihm ein Polizist. Ich habe das Bild gedruckt, und es war nicht manipuliert.
 
@@ -726,7 +726,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
                 { speaker: "Moderator", text: "Ein Einwand: Wird damit nicht jedes Bild entwertet?" },
                 {
                   speaker: "Herr Prochnow",
-                  text: "Der Einwand kommt in jedem Verfahren. Er trägt nicht: Wir schaffen Zeugen ja auch nicht ab, weil sie sich erinnern müssen. Wir befragen sie.",
+                  text: "Der Einwand kommt in jedem Verfahren. Er trägt nicht: Wir schaffen Zeugen ja auch nicht ab, weil sie sich irren können. Wir befragen sie.",
                 },
                 {
                   speaker: "Frau Lindqvist",
@@ -904,7 +904,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
               ],
               answer: 1,
               explain:
-                "\"Wir schaffen Zeugen ja auch nicht ab, weil sie sich erinnern müssen. Wir befragen sie.\"",
+                "\"Wir schaffen Zeugen ja auch nicht ab, weil sie sich irren können. Wir befragen sie.\"",
             },
             {
               kind: "mcq",
@@ -986,7 +986,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
           prompt:
             "In einer Wochenzeitung stand: \"Solange ein Foto nicht bearbeitet wurde, zeigt es die Wahrheit.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir haftalık gazetede şöyle yazdı: \"Bir fotoğraf işlenmemişse gerçeği gösterir.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir haftalık gazetede şöyle yazıyordu: \"Bir fotoğraf işlenmemişse gerçeği gösterir.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,
@@ -1002,7 +1002,7 @@ Prüfen lässt sich das an einer Bildserie von einer Demonstration. Auf der eine
 
 Gegen meine Position spricht ein ernstes Argument: Wer so argumentiert, entwertet am Ende jeden Beleg, denn Auswahl steckt in jeder Darstellung. Der Einwand trifft und lässt sich gleichwohl einordnen. Zeugen erinnern sich unvollständig, und niemand fordert deshalb ihre Abschaffung; sie werden befragt.
 
-Was sich daraus ergibt, ist keine Geringschätzung der Fotografie, sondern eine andere Behandlung. Meine Schlussfolgerung lautet daher: Ein Bild braucht dieselbe Behandlung wie eine Aussage — Herkunft, Zeitpunkt, Umstände. Die Frage nach der Bearbeitung ist berechtigt und deckt nur die leichtere Hälfte ab.`,
+Was sich daraus ergibt, ist keine Geringschätzung der Fotografie, sondern eine andere Behandlung. Meine Schlussfolgerung lautet daher: Ein Bild braucht dieselbe Behandlung wie eine Aussage — Herkunft, Zeitpunkt, Umstände. Die Frage nach der Bearbeitung ist berechtigt, deckt aber nur die leichtere Hälfte ab.`,
             criteria: [
               "Sav gerçekten yerine oturtuldu mu — hangi ayrım kurulmadan sav ayakta duruyor?",
               "Örnek savı sınıyor mu, yoksa yalnız yazarın konumunu resimliyor mu?",
@@ -1037,7 +1037,7 @@ Vorab: Die Trennung von technischer und inhaltlicher Prüfung halte ich für ric
 
 Erstens werden private Anfragen {{3}} zurückgewiesen, obwohl die drei zugelassenen Prüfstellen nach meiner Erfahrung überlastet sind. Wartezeiten von acht Wochen sind dort keine Ausnahme.
 
-Zweitens ist das Ergebnis „ungeklärt“ im Entwurf {{4}} erläutert, um von Redaktionen richtig verstanden zu werden. In der Praxis wird es regelmäßig als Freigabe gelesen.
+Zweitens ist das Ergebnis „ungeklärt“ im Entwurf {{4}} knapp erläutert, um von Redaktionen richtig verstanden zu werden. In der Praxis wird es regelmäßig als Freigabe gelesen.
 
 Ich rege {{5}} an, für den Befund „ungeklärt“ eine kurze Erläuterung vorzusehen und die Kapazität der zugelassenen Stellen {{6}} zu überprüfen.
 
@@ -1084,7 +1084,7 @@ Vera {{10}}`,
               text: "Lücke 4 (Vergleich mit „um … zu“)",
               accept: ["zu"],
               explain:
-                "`zu knapp erläutert, um … verstanden zu werden` yapısı gerekiyor: açıklama, redaksiyonların doğru anlamasına yetecek kadar ayrıntılı değil.",
+                "`zu knapp erläutert, um … verstanden zu werden` yapısı gerekiyor: açıklama, yazı işlerinin doğru anlamasına yetecek kadar ayrıntılı değil.",
             },
             {
               kind: "gap",
@@ -1195,7 +1195,7 @@ Vera {{10}}`,
           prompt:
             "Treffen Sie gemeinsam eine Entscheidung. Eine Redaktion hat Mittel für eine Maßnahme und muss vier Fragen klären: technische Prüfsoftware oder eine zusätzliche Stelle? Kontextzeile unter jedem Bild oder nur bei Aufmachern? Verpflichtend oder freiwillig? Was geschieht bei ungeklärten Fällen? Einigen Sie sich.",
           promptTr:
-            "Birlikte bir karar verin. Bir yazı işlerinin tek bir önlem için kaynağı var ve dört soruyu çözmesi gerekiyor: teknik inceleme yazılımı mı, ek bir kadro mu? Bağlam satırı her fotoğrafın altında mı, yalnız manşetlerde mi? Zorunlu mu, gönüllü mü? Belirsiz kalan vakalarda ne olacak? Anlaşın.",
+            "Birlikte bir karar verin. Bir gazetenin tek bir önlem için kaynağı var ve dört soruyu çözmesi gerekiyor: teknik inceleme yazılımı mı, ek bir kadro mu? Bağlam satırı her fotoğrafın altında mı, yalnız manşetlerde mi? Zorunlu mu, gönüllü mü? Belirsiz kalan vakalarda ne olacak? Anlaşın.",
           minutes: 7,
           prepSeconds: 120,
           exchange: [

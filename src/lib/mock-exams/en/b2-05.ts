@@ -388,7 +388,7 @@ What I have changed is smaller. When somebody now says that a club runs on goodw
               options: ["A friend suggested it", "The club's accountant required it", "She wanted to resign", "The insurance company asked for it"],
               answer: 0,
               explain:
-                "Gerekçe cümlenin içinde: «I kept a record for one year, because a friend asked me to». Sigorta ve muhasebe metinde başka bağlamlarda geçiyor.",
+                "Gerekçe cümlenin içinde: «I kept a record for one year, because a friend asked me to». Sigorta metinde başka bir bağlamda geçiyor; muhasebeciden ise hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -428,7 +428,7 @@ What I have changed is smaller. When somebody now says that a club runs on goodw
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [

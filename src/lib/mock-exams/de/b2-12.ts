@@ -376,7 +376,7 @@ Das ist kein Vorwurf an die Personalabteilung. Bei vierzehnhundert Unterlagen un
 
 Denn die Erklärung nach außen lautet weiterhin, man suche die beste Person. Bei neunzig Sekunden sucht man die auffälligste, und das ist etwas anderes.
 
-Man wird einwenden, erfahrene Leserinnen erkennen Qualität schnell. Der Einwand hat einen wahren Kern: Vieles lässt sich tatsächlich in kurzer Zeit sehen. Nur zeigt dieselbe Erfahrung auch, dass die Reihenfolge im Stapel wirkt — und Reihenfolge ist keine Eigenschaft der Bewerberin.
+Man wird einwenden, erfahrene Leserinnen würden Qualität schnell erkennen. Der Einwand hat einen wahren Kern: Vieles lässt sich tatsächlich in kurzer Zeit sehen. Nur zeigt dieselbe Erfahrung auch, dass die Reihenfolge im Stapel wirkt — und Reihenfolge ist keine Eigenschaft der Bewerberin.
 
 Bemerkenswert finde ich, wie leicht das zu prüfen wäre. Man müsste den Stapel zweimal lesen, das zweite Mal umgekehrt. Eine Personalleiterin, mit der ich gesprochen habe, macht genau das und hat dadurch drei Einstellungen anders entschieden.
 
@@ -819,7 +819,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
               id: "de-b2-12-h1-6",
               no: 6,
               ref: "h3",
-              text: "In welchem Stand ist ihre Bewerbung?",
+              text: "Wie ist der Stand ihrer Bewerbung?",
               options: [
                 "Sie wurde abgelehnt.",
                 "Sie liegt noch bei der ersten Sichtung.",
@@ -960,7 +960,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
               ref: "i1",
               text: "Warum spricht sie offen darüber?",
               options: [
-                "Eine behauptete Methode schadete mehr.",
+                "Eine behauptete Methode würde mehr schaden.",
                 "Die Leitung hat sie dazu aufgefordert.",
                 "Sie möchte das Verfahren abschaffen.",
               ],
@@ -1039,7 +1039,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
                 { speaker: "Moderator", text: "Herr Sarrazin, Sie halten das für Symbolpolitik." },
                 {
                   speaker: "Herr Sarrazin",
-                  text: "Ich halte es für eine Antwort auf die falsche Frage. Bei achtzig Bewerbungen auf eine Stelle lade ich acht ein. Ob mit oder ohne Namen — zweiundsiebzig Leute bekommen eine Absage, die niemand richtig gelesen hat.",
+                  text: "Ich halte es für eine Antwort auf die falsche Frage. Bei achtzig Bewerbungen auf eine Stelle lade ich acht ein. Ob mit oder ohne Namen — zweiundsiebzig Leute bekommen eine Absage, ohne dass jemand ihre Bewerbung richtig gelesen hat.",
                 },
                 {
                   speaker: "Frau Emmerich",
@@ -1096,7 +1096,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
               ],
               answer: 2,
               explain:
-                "Sayıyla açıklıyor: seksen başvurudan sekizi davet ediliyor, \"zweiundsiebzig Leute bekommen eine Absage, die niemand richtig gelesen hat\".",
+                "Sayıyla açıklıyor: seksen başvurudan sekizi davet ediliyor, \"zweiundsiebzig Leute bekommen eine Absage, ohne dass jemand ihre Bewerbung richtig gelesen hat\".",
             },
             {
               kind: "mcq",
@@ -1237,7 +1237,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
               kind: "audio",
               id: "m6",
               genre: "Durchsage in der Hochschule",
-              genreTr: "Yüksekokulda anons",
+              genreTr: "Üniversitede anons",
               situation: "Bir başvuru tarihi.",
               plays: 1,
               segments: [
@@ -1523,10 +1523,10 @@ Beatrix Kunkel`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, wie viel Zufall in einem Berufsweg steckt. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Serbien wird der Anteil des Zufalls offen benannt, oft zu offen: Viele sagen, ohne Beziehungen gehe gar nichts. Das ist bequem, weil es einen von vornherein von der eigenen Anstrengung entlastet. Für diese Sicht spricht trotzdem einiges. Mein Onkel ist Ingenieur und hat elf Jahre keine Stelle gefunden, weil sein Fachgebiet damals niemanden interessierte. Heute wäre er gefragt. Dagegen spricht, dass Zufall nicht gleichmäßig wirkt. Wer sich vorbereitet hat, kann eine Gelegenheit nutzen; wer nicht, sieht sie nicht einmal. Meine Position ist deshalb, dass beide Seiten dieselbe Sache von zwei Seiten beschreiben. Anstrengung entscheidet, ob man bereit ist. Der Zufall entscheidet, wann. Zusammenfassend: Wer nur von Leistung spricht, tröstet die Angekommenen; wer nur vom Zufall spricht, entlastet alle anderen. Beides ist zu einfach.",
+              "Ich möchte heute darüber sprechen, wie viel Zufall in einem Berufsweg steckt. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Serbien wird der Anteil des Zufalls offen benannt, oft zu offen: Viele sagen, ohne Beziehungen gehe gar nichts. Das ist bequem, weil es einen von vornherein von der eigenen Anstrengung entlastet. Für diese Sicht spricht trotzdem einiges. Mein Onkel ist Ingenieur und hat elf Jahre keine Stelle gefunden, weil sein Fachgebiet damals niemanden interessierte. Heute wäre er gefragt. Dagegen spricht, dass Zufall nicht gleichmäßig wirkt. Wer sich vorbereitet hat, kann eine Gelegenheit nutzen; wer nicht, sieht sie nicht einmal. Meine Position ist deshalb, dass beide Seiten dieselbe Sache aus zwei Blickwinkeln beschreiben. Anstrengung entscheidet, ob man bereit ist. Der Zufall entscheidet, wann. Zusammenfassend: Wer nur von Leistung spricht, tröstet die Angekommenen; wer nur vom Zufall spricht, entlastet alle anderen. Beides ist zu einfach.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkesindeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve karşı tarafın noktasını kabul ediyor mu?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1600,7 +1600,7 @@ Beatrix Kunkel`,
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],
             sample:
-              "Ihr Argument mit der Quote überzeugt mich halb. Die Einladungsquote steigt tatsächlich, nur ändert sich bei den Einstellungen fast nichts — und dort sitzt der größere Teil des Problems. Ich schlage deshalb die Begründungspflicht vor. Zu Ihrem Einwand mit dem Papier: Er trifft, wenn man nur ein Feld ins Formular setzt. Er trifft nicht, wenn zwei Bedingungen dazukommen: Der Vermerk muss ein Kriterium nennen, und er muss der abgelehnten Person auf Verlangen zugänglich sein. Ein Satz, den jemand lesen kann, wird anders geschrieben. Streichen würde ich die strukturierten Fragebögen. Nicht weil sie schlecht wären, sondern weil sie erst im Gespräch wirken — und dorthin kommt nur, wer die Sichtung überstanden hat. Zusammengefasst: Begründungspflicht mit Kriterium und Einsichtsrecht; zweite Leserunde, Anonymisierung und Fragebögen später.",
+              "Ihr Argument mit der Quote überzeugt mich halb. Die Einladungsquote steigt tatsächlich, nur ändert sich bei den Einstellungen fast nichts — und dort sitzt der größere Teil des Problems. Ich schlage deshalb die Begründungspflicht vor. Zu Ihrem Einwand mit dem Papier: Er trifft, wenn man nur ein Feld ins Formular setzt. Er trifft nicht, wenn zwei Bedingungen dazukommen: Der Vermerk muss ein Kriterium nennen, und er muss der abgelehnten Person auf Verlangen zugänglich sein. Ein Satz, den jemand lesen kann, wird anders geschrieben. Streichen würde ich die anonymen Bewerbungen. Nicht weil sie wirkungslos wären, sondern weil sie nur die Einladungsquote verändern — und dort liegt nicht unser Engpass. Zusammengefasst: Begründungspflicht mit Kriterium und Einsichtsrecht; zweite Leserunde, Anonymisierung und Fragebögen später.",
             criteria: [
               "Öneri gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?",
               "İtiraz kabul edilip yanıtlandı mı, yoksa görmezden mi gelindi?",

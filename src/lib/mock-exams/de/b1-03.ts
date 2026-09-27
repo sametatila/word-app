@@ -385,7 +385,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               text: "Herr Timm will übermorgen mit seiner Frau ans Meer fahren und hat rund 500 Euro.",
               answer: "i",
               explain:
-                "(i) yarından sonra kalkıyor, denize gidiyor, kişi başı 249 euro (toplam 498) ve yalnız iki kişi için satılıyor — dört ölçüt de tutuyor.",
+                "(i) öbür gün kalkıyor, denize gidiyor, kişi başı 249 euro (toplam 498) ve yalnız iki kişi için satılıyor — dört ölçüt de tutuyor.",
             },
           ],
         },
@@ -673,7 +673,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               plays: 1,
               segments: [
                 {
-                  text: "Eine Information für Fährgäste: Wegen starkem Wind fällt die Zwölf-Uhr-Fähre aus. Die nächste Verbindung geht um vierzehn Uhr dreißig und ist bereits gut gebucht. Fahrzeuge werden auf dieser Fahrt nicht befördert, Fußgänger und Radfahrer schon. Tickets der ausgefallenen Fahrt behalten ihre Gültigkeit.",
+                  text: "Eine Information für Fährgäste: Wegen starken Windes fällt die Zwölf-Uhr-Fähre aus. Die nächste Verbindung geht um vierzehn Uhr dreißig und ist bereits gut gebucht. Fahrzeuge werden auf dieser Fahrt nicht befördert, Fußgänger und Radfahrer schon. Tickets der ausgefallenen Fahrt behalten ihre Gültigkeit.",
                 },
               ],
             },
@@ -1105,7 +1105,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               options: ["Er hält es für nötig.", "Er hält es für überflüssig.", "Er hält es für zu spät für einen Beschluss."],
               answer: 1,
               explain:
-                "\"Man muss sie nicht verbieten\" diyor; kısa uçuşların tren yeterince hızlanınca kendiliğinden kaybolacağını savunuyor. Yani yasağı gereksiz buluyor, geç ya da şart değil.",
+                "\"Man muss sie nicht verbieten\" diyor; kısa uçuşların tren yeterince hızlanınca kendiliğinden kaybolacağını savunuyor. Yani yasağı gereksiz buluyor; ne şart ne de geç kalmış sayıyor.",
             },
             {
               kind: "mcq",
@@ -1230,7 +1230,7 @@ Leider kann ich nur eine Woche mitkommen. Mein Chef hat den Urlaub schon geplant
 
 Mein Vorschlag: Ich komme in der zweiten Woche dazu. Du fährst zuerst allein nach Florenz und ich treffe dich in Rom. So verlierst du keine Zeit.
 
-Wie kommst du eigentlich hin, mit dem Zug oder mit dem Auto? Wenn du fliegst, buche ich denselben Rückflug.
+Wie kommst du eigentlich hin, mit dem Zug oder mit dem Flugzeug? Wenn du fliegst, buche ich denselben Rückflug.
 
 Liebe Grüße
 Ana`,
@@ -1251,7 +1251,7 @@ Ana`,
           prompt:
             "In einem Online-Forum wird diskutiert: \"Soll der Nahverkehr für alle kostenlos sein?\" Schreiben Sie einen Beitrag (circa 80 Wörter). Nennen Sie Ihre Meinung, ein Argument dafür und ein Argument dagegen.",
           promptTr:
-            "Bir çevrimiçi forumda tartışılıyor: \"Toplu taşıma herkes için ücretsiz mi olmalı?\" Bir yorum yaz (yaklaşık 80 kelime). Görüşünü, bir destekleyici ve bir karşı argüman söyle.",
+            "Bir çevrimiçi forumda tartışılıyor: \"Toplu taşıma herkes için ücretsiz mi olmalı?\" Bir yorum yaz (yaklaşık 80 kelime). Görüşünü, lehte bir gerekçeyi ve aleyhte bir gerekçeyi yaz.",
           items: [],
           rubric: {
             minWords: 80,
@@ -1267,7 +1267,7 @@ Dafür spricht viel: Wer wenig verdient, spart im Monat leicht sechzig Euro. Au�
 
 Dagegen spricht, dass kostenlose Busse nichts nützen, wenn sie nur zweimal am Tag fahren. Bei uns auf dem Dorf ist das genau so.
 
-Mein Fazit: erst mehr Verbindungen, dann günstigere Preise. Sonst wird der Nahverkehr billig, aber bleibt unbrauchbar.`,
+Mein Fazit: erst mehr Verbindungen, dann günstigere Preise. Sonst wird der Nahverkehr billig, bleibt aber unbrauchbar.`,
             criteria: [
               "Görüş ilk cümlelerde net söylenmiş mi?",
               "Lehte ve aleyhte birer gerekçe gerçekten ayrı ayrı verilmiş mi?",

@@ -484,7 +484,7 @@ Frau Sperling: Ich bin dafür. Bei uns bezahlt die Firma die Hälfte der Zeit un
               gloss: [
                 { de: "die Kapitulation", tr: "teslim olma", en: "capitulation" },
                 { de: "ersetzen", tr: "yerini doldurmak", en: "to replace" },
-                { de: "vorschreiben", tr: "zorunlu kılmak", en: "to prescribe" },
+                { de: "vorschreiben", tr: "zorunlu kılmak", en: "to mandate" },
                 { de: "die Freiwilligkeit", tr: "gönüllülük", en: "voluntariness" },
               ],
             },
@@ -728,7 +728,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
               kind: "audio",
               id: "h4",
               genre: "Gespräch im Bürgerhaus",
-              genreTr: "Halk evinde konuşma",
+              genreTr: "Toplum merkezinde konuşma",
               situation: "İki kişi buluşma saatini konuşuyor.",
               plays: 1,
               segments: [
@@ -1425,7 +1425,7 @@ Tesfay Tadesse`,
             {
               who: "partner",
               de: "Und wo? Im Bürgerhaus ist es kostenlos, aber laut. Im Café ist es angenehmer, aber wir müssen etwas bestellen.",
-              tr: "Nerede? Halk evi bedava ama gürültülü. Kafe daha rahat ama bir şeyler ısmarlamak gerekiyor.",
+              tr: "Nerede? Toplum merkezi bedava ama gürültülü. Kafe daha rahat ama bir şeyler ısmarlamak gerekiyor.",
             },
             { who: "you", hint: "Bir yer seç ve iki gerekçeyi de tart.", expect: "gerekçeli bir seçim yapıp iki argümanı da tartmak", seconds: 40 },
             {

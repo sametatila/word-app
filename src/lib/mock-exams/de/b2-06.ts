@@ -339,7 +339,7 @@ Für die Praxis heißt das eine Verschiebung des Blicks. Statt zu fragen, was je
               text: "Lücke 14",
               answer: "a",
               explain:
-                "Paragraf \"Entscheidungen wirken vor allem dort, wo sie andere nach sich ziehen\" diyor; (a) bunu somutlaştırıyor: kurul üyeliği tek başına ayrıştırmadan fazlasını değiştirir.",
+                "Paragraf \"Entscheidungen wirken vor allem dort, wo sie andere nach sich ziehen\" diyor; (a) bunu somutlaştırıyor: kurulda verilen tek bir oy, on yıllık çöp ayrıştırmasından fazlasını değiştirir.",
             },
             {
               kind: "match",
@@ -907,7 +907,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
                 { speaker: "Moderator", text: "Warum steht die Heizung dann so im Vordergrund?" },
                 {
                   speaker: "Frau Grohmann",
-                  text: "Weil sie ein Gerät ist. Man kann sie kaufen, sehen und vorzeigen. Eine dichte Tür sieht niemand, und sie taugt nicht als Gespräch am Gartenzaun.",
+                  text: "Weil sie ein Gerät ist. Man kann sie kaufen, sehen und vorzeigen. Eine dichte Tür sieht niemand, und sie taugt nicht als Gesprächsthema am Gartenzaun.",
                 },
                 { speaker: "Moderator", text: "Wie oft folgen die Leute Ihrem Rat?" },
                 {
@@ -961,7 +961,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
               ],
               answer: 2,
               explain:
-                "Gerekçesi görünürlük: kombi bir cihaz, satın alınıp gösterilebiliyor; sızdırmaz bir kapı ise \"taugt nicht als Gespräch am Gartenzaun\".",
+                "Gerekçesi görünürlük: kombi bir cihaz, satın alınıp gösterilebiliyor; sızdırmaz bir kapı ise \"taugt nicht als Gesprächsthema am Gartenzaun\".",
             },
             {
               kind: "mcq",
@@ -1520,7 +1520,7 @@ Tomas Bihar`,
             {
               who: "partner",
               de: "Gut. Fassen wir zusammen, damit ich es am Freitag vortragen kann: Worauf haben wir uns geeinigt?",
-              tr: "Peki. Cumada aktarabilmem için toparlayalım: Neyde anlaştık?",
+              tr: "Peki. Cuma günü aktarabilmem için toparlayalım: Neyde anlaştık?",
             },
             {
               who: "you",

@@ -182,7 +182,7 @@ export const EN_A2_06: MockPaper = {
               text: "Elia is often cold at home in the winter and does not like to be alone.",
               answer: "h",
               explain:
-                "İlan iki ihtiyacı birden karşılıyor: «Open every afternoon from November to March» ve «Everybody is welcome and nobody asks questions». Kışın sıcak ve kalabalık bir yer.",
+                "İlan iki ihtiyacı birden karşılıyor: «Open every afternoon from November to March» ve «Everybody is welcome and nobody asks questions». Kışın sıcak ve yalnız kalınmayan bir yer.",
             },
             {
               kind: "match",
@@ -200,7 +200,7 @@ export const EN_A2_06: MockPaper = {
               text: "Jara has an old umbrella from her mother and does not want to throw it away.",
               answer: "e",
               explain:
-                "İlan nesneyi adıyla anıyor: «Most repairs in fifteen minutes, from three euros». Küçük katlanır şemsiyeler dışarıda ama Jara'nınki annesinden kalma eski bir şemsiye.",
+                "İlan onarımı ve fiyatını veriyor: «Most repairs in fifteen minutes, from three euros». Küçük katlanır şemsiyeler dışarıda ama Jara'nınki annesinden kalma eski bir şemsiye.",
             },
           ],
         },
@@ -397,7 +397,7 @@ If you go in February, take boots {{24}} are really waterproof.`,
               text: "Gap 21",
               accept: ["but", "yet", "although", "though"],
               explain:
-                "İki yarı karşıt: sabah en soğuk gündü, ama güneş açtı. Karşıtlığı `but` verir; `yet`, `although` ve `though` da aynı ilişkiyi kurar. `so` sonuç bildirir, `because` ise sebep kurar ve ikisi de bu beklenmedikliği taşımaz.",
+                "İki yarı karşıt: ilk sabah en soğuğuydu, ama güneş açtı. Karşıtlığı `but` verir; `yet`, `although` ve `though` da aynı ilişkiyi kurar. `so` sonuç bildirir, `because` ise sebep kurar ve ikisi de bu beklenmedikliği taşımaz.",
             },
             {
               kind: "gap",
@@ -471,7 +471,7 @@ If you go in February, take boots {{24}} are really waterproof.`,
               plays: 2,
               segments: [
                 { speaker: "Man", text: "Hello, is the bus going on Saturday?" },
-                { speaker: "Woman", text: "Yes, but from the church, not from the station. There are building works at the station until March." },
+                { speaker: "Woman", text: "Yes, but from the church, not from the station. There is construction work at the station until March." },
                 { speaker: "Man", text: "Same time?" },
                 { speaker: "Woman", text: "Six, as always." },
               ],
@@ -798,7 +798,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
             { key: "a", label: "The flights got more expensive." },
             { key: "b", label: "Somebody in the family was sick." },
             { key: "c", label: "The weather was too hot there." },
-            { key: "d", label: "A friend could not come." },
+            { key: "d", label: "The person they wanted to travel with could not come." },
             { key: "e", label: "The hotel closed." },
             { key: "f", label: "They found a cheaper place." },
             { key: "g", label: "They had to work that week." },
@@ -937,7 +937,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
           rubric: {
             minWords: 50,
             points: [
-              { de: "Say which season is best and why.", tr: "Hangi mevsim iyi olur, neden, söyle." },
+              { de: "Say which season is best and why.", tr: "Hangi mevsimin en iyi olduğunu ve nedenini söyle." },
               { de: "Say what the weather is like then.", tr: "O zaman havanın nasıl olduğunu söyle." },
               { de: "Say what clothes she should bring.", tr: "Ne tür giysi getirmesi gerektiğini söyle." },
             ],
@@ -945,7 +945,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
 
 Come in May! The town is quiet then, because the tourists come in July and August.
 
-In May it is warm in the day, about twenty degrees, but the evenings are cool and it rains sometimes.
+In May it is warm during the day, about twenty degrees, but the evenings are cool and it rains sometimes.
 
 Bring a light jacket and good shoes for walking. We can go to the lake.
 
@@ -1087,7 +1087,7 @@ Jara`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think the mountains are the best idea because we are outside all day and it costs nothing. You are right about the rain, and shoes are a real problem. If we start at eight we are back before twelve, but with two people without shoes it is not fair. So let us take the museum and go to the mountains next month.",
+              "I think the mountains are the best idea because we are outside all day and it costs nothing. You are right about the rain, and shoes are a real problem. If we start at eight we are back before twelve, but with two people without shoes it is not fair. So let us choose the museum and go to the mountains next month.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

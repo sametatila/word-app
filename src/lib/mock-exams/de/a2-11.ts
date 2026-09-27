@@ -1142,7 +1142,7 @@ Maren`,
             {
               who: "partner",
               de: "Dienstags und donnerstags um zwanzig Uhr. Jetzt eine Frage an Sie: Haben Sie schon einmal ein Probetraining gemacht?",
-              tr: "Salı ve perşembe saat sekizde. Şimdi sana bir soru: Hiç deneme antrenmanına katıldın mı?",
+              tr: "Salı ve perşembe akşam saat sekizde. Şimdi sana bir soru: Hiç deneme antrenmanına katıldın mı?",
             },
             { who: "you", hint: "Soruyu cevapla ve kısa bir ayrıntı ekle.", expect: "soruya tam bir cümleyle cevap verip bir ayrıntı eklemek", seconds: 30 },
             {

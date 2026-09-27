@@ -872,7 +872,7 @@ Ich empfehle den Versuch. Ganz ohne Handy zu leben, das geht bei mir aber nicht.
                 { speaker: "Moderator", text: "Frau Steiner, Sie geben Internetkurse für ältere Menschen. Was überrascht Sie am meisten?" },
                 {
                   speaker: "Frau Steiner",
-                  text: "Wie schnell es geht. Die meisten brauchen keine zehn Stunden. Was fehlt, ist nicht der Kopf, sondern jemand, der in Ruhe zeigt.",
+                  text: "Wie schnell es geht. Die meisten brauchen keine zehn Stunden. Was fehlt, ist nicht der Kopf, sondern jemand, der es in Ruhe zeigt.",
                 },
                 { speaker: "Moderator", text: "Haben die Teilnehmer Angst vor der Technik?" },
                 {

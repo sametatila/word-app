@@ -204,7 +204,7 @@ S. Brandt`,
               ],
               answer: 1,
               explain:
-                "Lamba elektrik işidir. (b) lamba, priz ve kablo yazıyor. (a) boyacı; duvar boyar, lambayı değil.",
+                "Lamba elektrik işidir. (b) lamba, priz ve kablo yazıyor. (a) boyacı; duvar boyar, lamba tamir etmez.",
             },
           ],
         },
@@ -438,7 +438,7 @@ funktionieren hier nicht.`,
               options: ["3,20 Euro.", "60 Cent.", "4,40 Euro."],
               answer: 0,
               explain:
-                "İki ekmek + bir somun 4,40 ederdi, ama müşteri fikrini değiştirip yalnız somunu alıyor: 3,20. Fiyat duyulduktan SONRA gelen karar belirleyici.",
+                "İki küçük ekmek (Brötchen) ve bir somun 4,40 ederdi, ama müşteri fikrini değiştirip yalnız somunu alıyor: 3,20. Fiyat duyulduktan SONRA gelen karar belirleyici.",
             },
             {
               kind: "mcq",

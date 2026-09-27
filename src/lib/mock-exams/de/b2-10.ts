@@ -1204,7 +1204,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, hier ist die Redaktion. Ihr Hinweis war berechtigt: Wir haben eine Verdopplung gemeldet, ohne die absoluten Zahlen zu nennen. Es ging um drei statt anderthalb Fälle. Die Korrektur läuft morgen.",
+                  text: "Guten Tag, hier ist die Redaktion. Ihr Hinweis war berechtigt: Wir haben eine Verdopplung gemeldet, ohne die absoluten Zahlen zu nennen. Es ging um vier statt zwei Fälle. Die Korrektur läuft morgen.",
                 },
               ],
             },

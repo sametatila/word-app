@@ -644,7 +644,7 @@ Eyup`,
                 { speaker: "Woman", text: "Can I have a coffee?" },
                 { speaker: "Man", text: "The break room is on the third floor. It is free." },
                 { speaker: "Woman", text: "And the cup?" },
-                { speaker: "Man", text: "Please wash it after." },
+                { speaker: "Man", text: "Please wash it afterward." },
               ],
             },
             {
@@ -708,7 +708,7 @@ Eyup`,
               options: ["Bring her own", "Pay for it", "Wash it"],
               answer: 2,
               explain:
-                "Görevli tek bir şey istiyor: «Please wash it after». Kahve ücretsiz.",
+                "Görevli tek bir şey istiyor: «Please wash it afterward». Kahve ücretsiz.",
             },
             {
               kind: "mcq",
@@ -794,7 +794,7 @@ First day:         {{5}}`,
               id: "en-a1-12-w1-2",
               no: 2,
               text: "Age",
-              accept: ["29", "29 years", "twenty-nine", "twenty-nine years old"],
+              accept: ["29", "29 years", "29 years old", "twenty-nine", "twenty-nine years old"],
               explain:
                 "Yönergede «She is 29 years old» geçiyor. Rakam da yazı da kabul edilir; ölçülen şey imla değil, bilgiyi doğru alana taşımak.",
             },
@@ -835,7 +835,7 @@ First day:         {{5}}`,
           prompt:
             "A new colleague asks you about the cafeteria. Write a short message to your colleague. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
-            "Yeni bir iş arkadaşın sana kantini soruyor. İş arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
+            "Yeni bir iş arkadaşın sana kantini soruyor. İş arkadaşına kısa bir ileti yaz. Her maddeye bir iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 25,

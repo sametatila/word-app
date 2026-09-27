@@ -70,9 +70,12 @@ Bitte unterschreiben Sie den Zettel bis Dienstag.`,
 
 mein Sohn Emre war gestern krank und konnte nicht kommen.
 
-Er hat Fieber gehabt und musste beim Arzt sein. Heute geht es ihm besser.
+Er hat Fieber gehabt und musste zum Arzt. Heute geht es ihm besser.
 
-Können Sie mir bitte sagen, was die Klasse gemacht hat?`,
+Können Sie mir bitte sagen, was die Klasse gemacht hat?
+
+Mit freundlichen Grüßen
+Ayla Demir`,
               gloss: [{ de: "das Fieber", tr: "ateş", en: "fever" }],
             },
             {
@@ -84,7 +87,7 @@ Können Sie mir bitte sagen, was die Klasse gemacht hat?`,
 
 Der Grund ist, dass eine Kollegin in Rente geht und wir noch niemanden gefunden haben.
 
-Kinder, die früher abgeholt werden müssen, melden sich bitte im Sekretariat.`,
+Eltern, die ihr Kind nicht vor 13.30 Uhr abholen können, melden sich bitte im Sekretariat.`,
             },
             {
               kind: "text",
@@ -168,7 +171,7 @@ Wer nicht backen möchte, kann auch beim Aufbau helfen.`,
               ],
               answer: 2,
               explain:
-                "Metin sebep ve sonucu birleştiriyor: kırk öğretmen eksik ve \"weil die Klassen trotzdem unterrichtet werden müssen, arbeiten viele Lehrerinnen mehr Stunden\".",
+                "Metin sebep ve sonucu birleştiriyor: kırk öğretmen eksik ve \"Weil die Klassen trotzdem unterrichtet werden müssen, arbeiten viele Lehrerinnen mehr Stunden\".",
             },
             {
               kind: "mcq",
@@ -200,7 +203,7 @@ Wer nicht backen möchte, kann auch beim Aufbau helfen.`,
               id: "r1",
               genre: "Zeitungsartikel",
               genreTr: "Gazete yazısı",
-              title: "Die Klasse, die den Bus selbst plant",
+              title: "Ein Bus ohne Motor",
               body: `An der Grundschule in Bergrode gibt es seit zwei Jahren einen Laufbus.
 
 Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein, wie eine Buslinie mit festen Haltestellen.
@@ -896,7 +899,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               id: "i1",
               genre: "Radiointerview",
               genreTr: "Radyo söyleşisi",
-              situation: "Bir ilkokul müdürü okul yolunu anlatıyor.",
+              situation: "Bir ilkokul öğretmeni okul yolunu anlatıyor.",
               plays: 2,
               segments: [
                 { speaker: "Moderatorin", text: "Frau Wendland, immer mehr Kinder werden mit dem Auto gebracht. Ist das ein Problem?" },
@@ -943,7 +946,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               id: "de-a2-09-h4-17",
               no: 17,
               ref: "i1",
-              text: "Nach ihr fahren die Eltern meistens aus Angst.",
+              text: "Ihrer Meinung nach fahren die Eltern meistens aus Angst.",
               answer: true,
               explain:
                 "Rahatlık açıklamasını eliyor: \"Meistens nicht aus Bequemlichkeit. Sie haben Angst vor dem Verkehr.\"",
@@ -1013,7 +1016,7 @@ vielen Dank, dass Sie Lina gestern mitgenommen haben. Das hat mir sehr geholfen.
 
 Mein Bus hatte Verspätung, und ich habe es nicht rechtzeitig zur Schule geschafft.
 
-Wenn Sie einmal später kommen, hole ich Ihren Sohn gern mit ab. Sagen Sie einfach Bescheid.
+Wenn Sie einmal später kommen, hole ich Ihre Tochter gern mit ab. Sagen Sie einfach Bescheid.
 
 Herzliche Grüße
 Sara Brink`,
@@ -1181,7 +1184,7 @@ Sara Brink`,
             {
               who: "partner",
               de: "Einverstanden. Wir brauchen zwei Erwachsene. Ich kann leider nicht, ich arbeite an dem Tag.",
-              tr: "Anlaştık. İki yetişkin gerekiyor. Ben olamam, o gün çalışıyorum.",
+              tr: "Anlaştık. İki yetişkin gerekiyor. Ben gelemem, o gün çalışıyorum.",
             },
             { who: "you", hint: "Bir çözüm öner ve gerekirse kendin üstlen.", expect: "eşlik sorununu çözmek ve gerekirse bir işi üstlenmek", seconds: 35 },
             {

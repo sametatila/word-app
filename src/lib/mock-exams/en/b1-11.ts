@@ -230,11 +230,11 @@ This is not a charity meal and nobody asks you why you came.`,
 
 What is genuinely difficult is not the eating. It is the arithmetic. Almost every recipe in every book I own serves four, and dividing by four does not work. A quarter of an onion is a thing you can cut. A quarter of an egg is not, and a quarter of the cooking time produces something raw in the middle.
 
-The stores are the second half of the problem. Vegetables come in bags of six when I need one, and the bag costs less than the single piece. That means the cheap option is the one where half of it goes in the trash in nine days. If the loose carrot cost the bag price, I would buy one.
+The stores are the second half of the problem. Vegetables come in bags of six when I need one, and the bag costs less per kilo than the single piece. That means the cheap option is the one where half of it goes in the trash in nine days. If the loose carrot cost the bag price, I would buy one.
 
 I want to be fair to the recipe writers. A book of single portions sells badly, and they know it, because people who live alone buy the same books as everybody else and then adapt them, badly, in private.
 
-What changed things for me was not a recipe at all. It was a second small pan and a decision to cook the same thing on Mondays for a year. The repetition sounds bleak, and it removed the daily decision, which was the part that actually made the evening long.
+What changed things for me was not a recipe at all. It was a second small pan and a decision to cook the same thing on Mondays for a year. The repetition sounds bleak, but it removed the daily decision, which was the part that actually made the evening long.
 
 I still eat alone six nights a week. On the seventh I eat with four other people at the community center, and nobody there asks anybody why they came.`,
               gloss: [
@@ -288,7 +288,7 @@ I still eat alone six nights a week. On the seventh I eat with four other people
               ],
               answer: 3,
               explain:
-                "Üçüncü paragraf hesabı kuruyor: torba tek parçadan ucuz, «the cheap option is the one where half of it goes in the trash in nine days».",
+                "Üçüncü paragraf hesabı kuruyor: torba kilo başına tek parçadan ucuz, «the cheap option is the one where half of it goes in the trash in nine days».",
             },
             {
               kind: "mcq",
@@ -328,7 +328,7 @@ I still eat alone six nights a week. On the seventh I eat with four other people
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -426,7 +426,7 @@ None of this is an argument for shopping in an expensive store out of principle.
               title: "If you have just started living alone",
               body: `If you have just started living alone, the first month decides a great deal.
 
-Buy a second small pan. It sounds trivial and it {{21}} the number of evenings on which cooking feels like an event.
+Buy a second small pan. It sounds trivial, but it {{21}} the number of evenings on which cooking feels like an event.
 
 Do not divide a recipe written for four. Find one written for one, or accept that you {{22}} be eating it twice.
 
@@ -1286,7 +1286,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would start with the second evening meal, because it is the only option that reaches somebody who is not going to organize anything for themselves. You are right that most people can cook, and I want to concede that, because it is the strongest argument against the class; what a class actually teaches is buying, and that could be one evening rather than eight. So let us put forward the second meal, and ask for one shopping evening in the autumn.",
+              "I would start with the second evening meal, because it is the only option that reaches somebody who is not going to organize anything for themselves. You are right that most people can cook, and I want to concede that, because it is the strongest argument against the class; what a class actually teaches is buying, and that could be one evening rather than eight. So let us put forward the second meal, and ask for one shopping evening in the fall.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi?",
@@ -1317,7 +1317,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "Requiring it sounds heavy-handed to me, and there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a store can take on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
+              "Requiring it sounds heavy-handed to me, but there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a store can make on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

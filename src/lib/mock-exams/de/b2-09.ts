@@ -293,7 +293,7 @@ Was bleibt, ist eine schlichte Einsicht: Nicht die Zustimmung entscheidet über 
               text: "Lücke 10",
               answer: "a",
               explain:
-                "Önceki cümle sorunun kuralda olmadığını söylüyor; (a) nerede olduğunu veriyor — \"im Weg von der Vorschrift bis zur Wirkung\" — ve sonraki paragrafların ikisi de o yolun bir adımını anlatıyor.",
+                "Önceki cümle sorunun kuralda olmadığını söylüyor; (a) nerede olduğunu veriyor — \"auf dem Weg von der Vorschrift bis zur Wirkung\" — ve sonraki paragrafların ikisi de o yolun bir adımını anlatıyor.",
             },
             {
               kind: "match",
@@ -343,7 +343,7 @@ Was bleibt, ist eine schlichte Einsicht: Nicht die Zustimmung entscheidet über 
               text: "Lücke 15",
               answer: "f",
               explain:
-                "Sıra veriliyor: \"erst prüfen, ob eine Regel überprüfbar ist, dann sie beschließen\". (f) neden sevilmediğini söylüyor: \"weil sie manchen Beschluss von vornherein verhindert\".",
+                "Sıra veriliyor: \"erst prüfen, ob eine Regel überprüfbar ist, dann beschließen\". (f) neden sevilmediğini söylüyor: \"weil sie manchen Beschluss von vornherein verhindert\".",
             },
           ],
         },
@@ -874,7 +874,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               id: "i1",
               genre: "Radiointerview",
               genreTr: "Radyo söyleşisi",
-              situation: "Bir zabıta müdürü anlatıyor.",
+              situation: "Bir zabıta görevlisi anlatıyor.",
               plays: 2,
               segments: [
                 { speaker: "Moderator", text: "Frau Riedl, wie viele Verwarnungen schreibt Ihr Amt im Monat?" },
@@ -1189,7 +1189,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               plays: 1,
               segments: [
                 {
-                  text: "Zur Satzungsänderung: Wir sind heute nicht beschlussfähig, es fehlen vier Mitglieder. Die Abstimmung verschieben wir auf die nächste Versammlung. Dann genügt die einfache Mehrheit der Erschienenen.",
+                  text: "Zur Satzungsänderung: Wir sind heute nicht beschlussfähig, es fehlen vier Mitglieder. Die Abstimmung verschieben wir auf die nächste Versammlung. Diese ist dann unabhängig von der Zahl der Erschienenen beschlussfähig.",
                 },
               ],
             },
@@ -1401,7 +1401,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
 
 Ihr Satz klingt entschlossen und übersieht, woran Regeln tatsächlich scheitern.
 
-Zunächst wirkt nicht die Höhe der Strafe, sondern die Wahrscheinlichkeit, entdeckt zu werden. In einem Versuch in unserer Stadt sanken die Verstöße um vierzig Prozent, als dreimal statt einmal kontrolliert wurde — bei unveränderten Beträgen. Nach dem Ende des Versuchs waren sie binnen zwei Monaten zurück.
+Zunächst wirkt nicht die Höhe der Strafe, sondern die Wahrscheinlichkeit, entdeckt zu werden. In einem Versuch in unserer Stadt sanken die Verstöße um vierzig Prozent, als dreimal pro Woche statt einmal im Monat kontrolliert wurde — bei unveränderten Beträgen. Nach dem Ende des Versuchs waren sie binnen zwei Monaten zurück.
 
 Zweitens trifft derselbe Betrag Menschen sehr unterschiedlich. Fünfundfünfzig Euro sind für die einen ärgerlich, für die anderen eine Woche ohne Einkauf. Wer Gleichbehandlung will, muss das mitrechnen.
 

@@ -52,7 +52,7 @@ export const C1_04: MockPaper = {
 
 Zwischen einer Fünfundsechzigjährigen und einem Neunzigjährigen liegen fünfundzwanzig Jahre. Niemand käme auf den Gedanken, Zwanzig- und Fünfundvierzigjährige in einer Kategorie zu führen und für beide dieselben Angebote zu planen. Genau das geschieht am oberen Ende der Skala regelmäßig.
 
-Die Unterschiede innerhalb der Gruppe sind größer als die Unterschiede zwischen ihr und anderen Altersgruppen. Beim Einkommen etwa liegt die Spanne im Alter weiter auseinander als in jeder anderen Lebensphase, weil sich Erwerbsbiografien über Jahrzehnte fortschreiben: Wer unterbrochen gearbeitet hat, erkennt das an der Rente. Ähnliches gilt für Gesundheit. Die vielzitierte durchschnittliche Lebenserwartung verdeckt, dass die Zahl der gesunden Jahre zwischen Berufsgruppen um mehr als ein Jahrzehnt auseinanderfällt.
+Die Unterschiede innerhalb der Gruppe sind größer als die Unterschiede zwischen ihr und anderen Altersgruppen. Beim Einkommen etwa ist die Spanne im Alter größer als in jeder anderen Lebensphase, weil sich Erwerbsbiografien über Jahrzehnte fortschreiben: Wer unterbrochen gearbeitet hat, erkennt das an der Rente. Ähnliches gilt für Gesundheit. Die vielzitierte durchschnittliche Lebenserwartung verdeckt, dass die Zahl der gesunden Jahre zwischen Berufsgruppen um mehr als ein Jahrzehnt auseinanderfällt.
 
 Der Fehler ist nicht bloß begrifflich. Wo Politik mit dem Durchschnitt plant, entstehen Angebote, die weder den einen noch den anderen erreichen. Ein Bewegungskurs für "Seniorinnen und Senioren" richtet sich faktisch an die rüstige Minderheit; die Hochaltrigen kommen nicht hin, und die Sechzigjährigen fühlen sich nicht gemeint.
 
@@ -502,7 +502,7 @@ Ob daraus ein dauerhaftes Modell wird, ist offen. Fest steht {{25}}, dass die Vo
                   text: "Modell zwei ist das betreute Wohnen. Sie mieten eine eigene Wohnung und zahlen zusätzlich eine Betreuungspauschale, bei uns im Kreis zwischen achtzig und zweihundertvierzig Euro im Monat. Achten Sie darauf, welche Leistungen darin enthalten sind; der Hausnotruf ist es fast immer, die Reinigung fast nie.",
                 },
                 {
-                  text: "Modell drei nennt sich Wohngemeinschaft für Pflegebedürftige. Acht bis zwölf Personen teilen sich eine große Wohnung und beauftragen gemeinsam einen Pflegedienst. Entscheidend ist hier die Rechtsform: Die Bewohnerinnen bleiben Auftraggeber, nicht Heimbewohner. Wer das verwechselt, verliert Mitspracherechte.",
+                  text: "Modell drei nennt sich Wohngemeinschaft für Pflegebedürftige. Acht bis zwölf Personen teilen sich eine große Wohnung und beauftragen gemeinsam einen Pflegedienst. Entscheidend ist hier die Rechtsform: Die Bewohner bleiben Auftraggeber, nicht Heimbewohner. Wer das verwechselt, verliert Mitspracherechte.",
                 },
                 {
                   text: "Modell vier ist das Mehrgenerationenhaus. Hier gibt es keine Pflegeleistung, sondern nachbarschaftliche Hilfe auf Gegenseitigkeit. Das trägt gut bis zu einem gewissen Punkt und trägt nicht mehr, sobald eine Person dauerhaft Hilfe braucht. Sagen Sie das bitte weiter; diese Grenze wird regelmäßig unterschätzt.",
@@ -1200,7 +1200,7 @@ Dorothea Simon`,
             {
               who: "partner",
               de: "Ich halte eine Bezahlung für den falschen Weg. Sie macht es attraktiv, aus dem Beruf auszusteigen — und zwar für genau die Frauen, die ohnehin am wenigsten Rentenansprüche haben. Wie sehen Sie das?",
-              tr: "Ödemeyi yanlış yol buluyorum. Meslekten çıkmayı cazip kılıyor, üstelik zaten en az emeklilik hakkı olan kadınlar için. Sen ne düşünüyorsun?",
+              tr: "Ücret ödenmesini yanlış bir yol buluyorum. Meslekten çıkmayı cazip kılıyor, üstelik zaten en az emeklilik hakkı olan kadınlar için. Sen ne düşünüyorsun?",
             },
             {
               who: "you",

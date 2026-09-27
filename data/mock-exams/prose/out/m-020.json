@@ -86,7 +86,7 @@
  { "tr": "Duyuruya somut atıf var mı (tarih, konu)?", "kind": "rubric.criteria", "en": "Is there a concrete reference to the announcement (date, subject)?" },
  { "tr": "Dört anahtar sözcüğün her biri işlendi mi?", "kind": "rubric.criteria", "en": "Was each of the four key words covered?" },
  { "tr": "Kuruma yazıldığı için `Sie` kullanıldı mı?", "kind": "rubric.criteria", "en": "As this goes to an institution, was `Sie` used?" },
- { "tr": "Sorulan soru açık uçlu ve konuya bağlı mı?", "kind": "rubric.criteria", "en": "Is the question asked open and tied to the content?" },
+ { "tr": "Sorulan soru açık uçlu ve konuya bağlı mı?", "kind": "rubric.criteria", "en": "Is the question asked open-ended and tied to the content?" },
  { "tr": "Gelen ricaya doğal bir karşılık verildi mi?", "kind": "rubric.criteria", "en": "Was the request answered naturally?" },
  { "tr": "Öneriler somut mu, yoksa genel bir onay mı?", "kind": "rubric.criteria", "en": "Are the suggestions concrete, or just general agreement?" },
  { "tr": "Şikâyet savunmaya geçmeden kabul edildi mi?", "kind": "rubric.criteria", "en": "Was the complaint accepted without going on the defensive?" },

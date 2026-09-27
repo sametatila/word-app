@@ -979,7 +979,7 @@ Einwendungen schriftlich bis {{10}}.`,
           prompt:
             "In einer Regionalzeitung stand: \"Wer Landschaft erhalten will, soll Flächen kaufen, statt Auflagen zu machen.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir yerel gazetede şöyle yazdı: \"Peyzajı korumak isteyen şart koşmak yerine arazi satın alsın.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir yerel gazetede şu cümle yer aldı: \"Peyzajı korumak isteyen şart koşmak yerine arazi satın alsın.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,
@@ -1028,7 +1028,7 @@ Meine Schlussfolgerung lautet daher nicht Kauf oder Auflage, sondern Bindung an 
 
 Vorab: Das Ziel des Rückhalts halte ich für richtig. Meine Einwendungen richten sich {{2}} gegen das Vorhaben als solches, sondern gegen zwei Punkte der Ausführung.
 
-Erstens soll der südliche Uferweg während der Bauzeit gesperrt werden. Für die Anwohner des Ostufers ist er der einzige barrierefreie Zugang zum Ortskern. Eine Ersatzstrecke wurde bislang {{3}} benannt.
+Erstens soll der südliche Uferweg während der Bauzeit gesperrt werden. Für die Anwohner des Südufers ist er der einzige barrierefreie Zugang zum Ortskern. Eine Ersatzstrecke wurde bislang {{3}} benannt.
 
 Zweitens ist die Unterhaltung nach Fertigstellung {{4}} der Gemeinde zugeordnet, ohne dass ein Betrag genannt wird. Angesichts der genannten Dauer von fünfundzwanzig Jahren halte ich eine Bezifferung für {{5}}.
 
@@ -1167,7 +1167,7 @@ Beate {{10}}`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte darüber sprechen, ob Landschaft als Erbe oder als Ressource zu verstehen ist. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Erbe meine ich einen Bestand, der weitergegeben und dessen Veränderung begründet werden muss; mit Ressource eine Fläche, deren Nutzung sich nach ihrem Ertrag richtet. Für die Lesart als Erbe spricht, dass viele Wirkungen erst über Jahrzehnte entstehen. Eine Hecke, die heute gepflanzt wird, trägt in fünfzehn Jahren; wer sie nach Ertrag bewertet, pflanzt sie nie. Für die Lesart als Ressource spricht, dass Flächen bewirtschaftet werden müssen und dass Menschen davon leben. Eine Landschaft, die niemand nutzt, wird ohnehin nicht gepflegt — die ungepflegten kommunalen Ausgleichsflächen zeigen das deutlich genug. Meine Position ist, dass die Gegenüberstellung selbst in die Irre führt: Entscheidend ist nicht der Status der Fläche, sondern die Dauer der Zusage. Der Einwand dagegen wiegt allerdings schwer. Wer alles auf Verträge stellt, macht Landschaft von Haushalten abhängig, und Haushalte werden gekürzt. Eigentum wäre insofern robuster. Ich halte die Position gleichwohl, weil auch Eigentum ohne Pflegemittel wirkungslos bleibt. Zusammenfassend: Nicht wem die Fläche gehört, entscheidet über ihren Zustand, sondern wie lange jemand für sie einsteht.",
+              "Ich möchte darüber sprechen, ob Landschaft als Erbe oder als Ressource zu verstehen ist. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Erbe meine ich einen Bestand, der weitergegeben und dessen Veränderung begründet werden muss; mit Ressource eine Fläche, deren Nutzung sich nach ihrem Ertrag richtet. Für die Lesart als Erbe spricht, dass viele Wirkungen erst über Jahrzehnte entstehen. Eine Hecke, die heute gepflanzt wird, trägt in fünfzehn Jahren; wer sie nach Ertrag bewertet, pflanzt sie nie. Für die Lesart als Ressource spricht, dass Flächen bewirtschaftet werden müssen und dass Menschen davon leben. Eine Landschaft, die niemand nutzt, wird ohnehin nicht gepflegt — die ungepflegten kommunalen Ausgleichsflächen zeigen das deutlich genug. Meine Position ist, dass die Gegenüberstellung selbst in die Irre führt: Entscheidend ist nicht der Status der Fläche, sondern die Dauer der Zusage. Der Einwand dagegen wiegt allerdings schwer. Wer alles auf Verträge stellt, macht Landschaft von Haushalten abhängig, und Haushalte werden gekürzt. Eigentum wäre insofern robuster. Ich halte gleichwohl an dieser Position fest, weil auch Eigentum ohne Pflegemittel wirkungslos bleibt. Zusammenfassend: Nicht wem die Fläche gehört, entscheidet über ihren Zustand, sondern wie lange jemand für sie einsteht.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavramlar gerçekten açıldı mı?",

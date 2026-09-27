@@ -397,7 +397,7 @@ Selma Idrissi`,
               text: "Herr Aksoy hat wenig Geld und möchte mittags warm essen, ohne sich vorher anzumelden.",
               answer: "c",
               explain:
-                "(c) hem ucuz hem kayıtsız: \"ein warmes Gericht für 4 Euro. Keine Anmeldung.\"",
+                "(c) hem ucuz hem de kayıt istemiyor: \"ein warmes Gericht für 4 Euro. Keine Anmeldung.\"",
             },
             {
               kind: "match",
@@ -485,9 +485,9 @@ Ernst Wolfram: Ich habe dreißig Jahre in der Großküche gearbeitet und bin dag
 
 Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vorher wissen, wie viele essen. Ohne Meldesystem bestellt die Küche zu viel, und dann ist teurer eingekauft einfach teurer weggeworfen.`,
               gloss: [
-                { de: "vorschreiben", tr: "zorunlu kılmak", en: "to prescribe" },
+                { de: "vorschreiben", tr: "zorunlu kılmak", en: "to mandate" },
                 { de: "die Lücke", tr: "boşluk, açık", en: "gap" },
-                { de: "die Großküche", tr: "toplu yemek mutfağı", en: "industrial kitchen" },
+                { de: "die Großküche", tr: "toplu yemek mutfağı", en: "institutional kitchen" },
                 { de: "das Meldesystem", tr: "bildirim sistemi", en: "reporting system" },
               ],
             },
@@ -502,7 +502,7 @@ Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vo
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "Kendi deneyimiyle destekliyor: alım porsiyon başına on sekiz sent pahalı ama israf dörtte üç azalmış — \"Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.\"",
+                "Kendi deneyimiyle destekliyor: alım porsiyon başına on sekiz sent daha pahalı ama israf dörtte üç azalmış — \"Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.\"",
             },
             {
               kind: "mcq",
@@ -897,7 +897,7 @@ Die Kisten stehen freitags von 14 bis 19 Uhr bereit. Nicht abgeholte Kisten gebe
                 { speaker: "Frau Idrissi", text: "Die Äpfel waren lose in einer Kiste." },
                 {
                   speaker: "Berater",
-                  text: "Dann muss das Schild an der Kiste die Nummer tragen. Wenn es das nicht getan hat, war es entweder keine Bio-Ware oder ein Fehler im Laden.",
+                  text: "Dann muss das Schild an der Kiste die Nummer tragen. Wenn sie dort nicht stand, war es entweder keine Bio-Ware oder ein Fehler im Laden.",
                 },
                 { speaker: "Frau Idrissi", text: "Und wenn es ein Fehler war?" },
                 {
@@ -976,7 +976,7 @@ Die Kisten stehen freitags von 14 bis 19 Uhr bereit. Nicht abgeholte Kisten gebe
               ],
               answer: 0,
               explain:
-                "Sıra ve gerekçesi birlikte veriliyor: önce yazılı olarak dükkân, on dört gün süreyle, \"Erst danach melden Sie es der Kontrollbehörde. Umgekehrt dauert es länger.\"",
+                "Sıra ve gerekçesi birlikte veriliyor: önce on dört gün süre tanıyarak dükkâna yazılı başvuru, sonra \"Erst danach melden Sie es der Kontrollbehörde. Umgekehrt dauert es länger.\"",
             },
             {
               kind: "mcq",
@@ -1038,7 +1038,7 @@ Die Kisten stehen freitags von 14 bis 19 Uhr bereit. Nicht abgeholte Kisten gebe
                 { de: "die Nachlässigkeit", tr: "dikkatsizlik", en: "carelessness" },
                 { de: "das Mindesthaltbarkeitsdatum", tr: "tavsiye edilen tüketim tarihi", en: "best-before date" },
                 { de: "das Verbrauchsdatum", tr: "son tüketim tarihi", en: "use-by date" },
-                { de: "die Einschränkung", tr: "kayıt, sınırlama", en: "qualification" },
+                { de: "die Einschränkung", tr: "kayıt, sınırlama", en: "caveat" },
               ],
             },
           ],
@@ -1246,7 +1246,7 @@ Die Kisten stehen freitags von 14 bis 19 Uhr bereit. Nicht abgeholte Kisten gebe
               ],
               answer: 2,
               explain:
-                "Elli kuruş yerine günlük yirmi porsiyona bakılmasını istiyor: \"Da liegt viel mehr Geld.\"",
+                "Elli sent yerine günlük yirmi porsiyona bakılmasını istiyor: \"Da liegt viel mehr Geld.\"",
             },
             {
               kind: "mcq",
@@ -1444,7 +1444,7 @@ Ruth Kirchhoff`,
             {
               who: "partner",
               de: "Beim Essen bin ich unsicher. Kochen wir selbst oder bestellen wir? Selbst kochen ist billiger, aber wir brauchen Leute.",
-              tr: "Yemekte kararsızım. Kendimiz mi pişirelim, sipariş mi verelim? Kendimiz pişirmek ucuz ama insana ihtiyacımız var.",
+              tr: "Yemekte kararsızım. Kendimiz mi pişirelim, sipariş mi verelim? Kendimiz pişirmek daha ucuz ama insana ihtiyacımız var.",
             },
             { who: "you", hint: "Bir seçim yap ve nasıl çözüleceğini söyle.", expect: "gerekçeli bir seçim yapıp uygulamasını anlatmak", seconds: 40 },
             {

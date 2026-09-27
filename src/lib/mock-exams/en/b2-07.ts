@@ -460,7 +460,7 @@ What changed my mind about the alternative was not principle but a spreadsheet. 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -1135,7 +1135,7 @@ The study took {{16}} years.`,
               id: "en-b2-07-h4-23",
               no: 23,
               ref: "d1",
-              text: "What did Piet argue two years ago?",
+              text: "What did Piet originally argue?",
               options: ["That the cost would be too small to matter", "That the process would change nothing but the paperwork", "That the clients would object to the change"],
               answer: 1,
               explain:
@@ -1408,7 +1408,7 @@ I recommend that we continue for a further year, with one change: the second rou
             points: [
               { de: "evaluate the options against each other", tr: "Seçenekleri birbirine karşı değerlendirmek" },
               { de: "handle an objection", tr: "Bir itirazı karşılamak" },
-              { de: "agree an order with reasons", tr: "Gerekçeli bir sıralamada anlaşmak" },
+              { de: "agree on an order with reasons", tr: "Gerekçeli bir sıralamada anlaşmak" },
             ],
             sample:
               "The written first round is the only one of the four that changes what the panel sees, and everything else changes what the panel says afterward. You are right that the client survey looks weak from inside the company, and I partly accept that; what I would defend is that it removes an excuse rather than creating one, because three firms out of four have never asked. The scoring sheet is the one I would leave until last, since it is filled out after the impression has already formed. So: written tasks first, then the training, then the client survey, and the sheet last.",

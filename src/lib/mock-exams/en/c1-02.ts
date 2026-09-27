@@ -84,7 +84,7 @@ Whether any of this could have been prevented is an open question. Several citie
               options: ["attracts", "raises", "pulls", "gathers"],
               answer: 0,
               explain:
-                "`attract attention` yerleşik bir eşdizim. `draw attention` de doğrudur ama genellikle `to` ile bir hedefe yönlendirir; burada hedef yok. `pull` ve `gather` bu adla kullanılmaz.",
+                "`attract attention` yerleşik bir eşdizim. `draw attention` de doğrudur ama genellikle `to` ile bir hedefe yönlendirir; burada hedef yok. `raise` bu adla değil `awareness` ya da `concern` ile eşdizim kurar; `pull` ve `gather` da bu adla kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -94,7 +94,7 @@ Whether any of this could have been prevented is an open question. Several citie
               options: ["tightened", "narrowed", "compressed", "lowered"],
               answer: 1,
               explain:
-                "`margins narrow` sektör dilinde yerleşik bir kalıptır: kâr payının daralması. `tighten` bütçe ya da kural için, `compress` fiziksel sıkışma için, `shrink` ise toplam büyüklük için kullanılır; `margins` ile en doğal eş `narrow`.",
+                "`margins narrow` sektör dilinde yerleşik bir kalıptır: kâr payının daralması. `tighten` bütçe ya da kural için, `compress` fiziksel sıkışma için, `lower` ise geçişli kullanılır (`lower prices`) ve kendiliğinden daralmayı anlatmaz; `margins` ile en doğal eş `narrow`.",
             },
             {
               kind: "mcq",
@@ -114,7 +114,7 @@ Whether any of this could have been prevented is an open question. Several citie
               options: ["explains", "persuades", "assures", "reminds"],
               answer: 3,
               explain:
-                "Nesne insanlar ve devamında `that` yan cümlesi var; anlam ise zaten bilinen bir şeyi yeniden akla getirmek: `reminds people that …`. `convince` ve `persuade` bir görüşü değiştirmeyi, `assure` ise güvence vermeyi bildirir.",
+                "Nesne insanlar ve devamında `that` yan cümlesi var; anlam ise zaten bilinen bir şeyi yeniden akla getirmek: `reminds people that …`. `explain` kişiyi doğrudan nesne almaz (`explain to people`); `persuade` bir görüşü değiştirmeyi, `assure` ise güvence vermeyi bildirir.",
             },
           ],
         },
@@ -352,7 +352,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
               title: "Against the word scalable",
               body: `The word has become an unquestioned compliment. A practice that scales is admired; one that does not is described, with a faint note of pity, as artisanal. I want to argue that the compliment conceals a category error, and that the error has costs we are only now beginning to count.
 
-The tendency of the word is to flatten exactly this difference. Scaling is not neutral with respect to what is being scaled. Some activities lose nothing when repeated a thousand times: the manufacture of a bolt, the sorting of a package. Others lose the thing that made them worth doing, and the loss is not a failure of execution but a property of the activity itself. Teaching is the obvious case. So, less obviously, is diagnosis.
+The error lies here: scaling is not neutral with respect to what is being scaled. Some activities lose nothing when repeated a thousand times: the manufacture of a bolt, the sorting of a package. Others lose the thing that made them worth doing, and the loss is not a failure of execution but a property of the activity itself. Teaching is the obvious case. So, less obviously, is diagnosis.
 
 It is precisely this distinction that the vocabulary of scale erases. When we ask whether a practice can be scaled, we are asking an engineering question about a matter that is often not an engineering matter at all, and the framing tends to produce the answer it assumes.
 
@@ -513,7 +513,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -637,7 +637,7 @@ None of this shows that the original project was misconceived. It shows that the
             {
               key: "c",
               label: "c — Nurse educator",
-              body: "The literature says exposure to cases is what builds judgment, and I do not dispute it. My difficulty is practical: a student on a unit sees whatever comes through the door that two weeks, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
+              body: "The literature says exposure to cases is what builds judgment, and I do not dispute it. My difficulty is practical: a student on a unit sees whatever comes through the door in those two weeks, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
             },
             {
               key: "d",
@@ -828,7 +828,7 @@ None of this shows that the original project was misconceived. It shows that the
               options: ["Because it may have stopped following what it measures", "Because stability of this kind is rarely reported honestly", "Because indicators are replaced every decade"],
               answer: 0,
               explain:
-                "İki olasılık sunuluyor ve biri elenerek öteki bırakılıyor: dünya durmuş olmalı, «which is unlikely, or the indicator has quietly stopped tracking it». Yani göstergenin ölçtüğü şeyi izlemeyi bırakmış olması.",
+                "İki olasılık sunuluyor ve biri elenerek öteki bırakılıyor: ya dünya durmuştur, «which is unlikely, or the indicator has quietly stopped tracking it». Yani göstergenin ölçtüğü şeyi izlemeyi bırakmış olması.",
             },
           ],
         },
@@ -1326,7 +1326,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           prompt:
             "You have attended a seminar on training and expertise. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Eğitim ve uzmanlık üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı prosedürler bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
+            "Eğitim ve uzmanlık üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı prosedürler bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1347,7 +1347,7 @@ My own view is that the choice is a false one imposed by budgeting. The interest
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu?",
+              "Kendi görüşün özetten ayrılıyor mu?",
               "Karşı görüşün en güçlü hâli mi kuruldu, yoksa zayıflatıldı mı?",
               "Çekimserlik ve ince ayrım ifadeleri C1 düzeyinde mi? (though for a narrower reason, on this account)",
               "220–260 kelime aralığında mı?",
@@ -1411,7 +1411,7 @@ I recommend standardizing the process, but not before the four steps have been e
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about skill, learning and how work changes.",
+          prompt: "I will ask you some questions about skill, learning and how work changes.",
           promptTr: "Sana beceri, öğrenme ve işin nasıl değiştiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

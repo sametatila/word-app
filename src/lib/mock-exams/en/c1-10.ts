@@ -70,7 +70,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               options: ["take", "join", "fall", "come"],
               answer: 2,
               explain:
-                "`fall in with something` bir düzene uymayı anlatır ve cümle arazinin haritaya uymak zorunda olmadığını söylüyor. `give in` teslim olmak, `join in` katılmak, `come in` ise girmektir.",
+                "`fall in with something` bir düzene uymayı anlatır ve cümle arazinin haritaya uymak zorunda olmadığını söylüyor. `take in` içine almak ya da kandırmak, `join in` katılmak, `come in` ise girmektir.",
             },
             {
               kind: "mcq",
@@ -100,7 +100,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               options: ["award", "acquire", "assert", "attach"],
               answer: 1,
               explain:
-                "`acquire authority` bir şeyin zamanla otorite kazanmasını anlatır ve cümle haritanın çizildikten sonra bunu kazandığını söylüyor. `assume` üstlenmek, `assert` ileri sürmek, `attach` iliştirmektir.",
+                "`acquire authority` bir şeyin zamanla otorite kazanmasını anlatır ve cümle haritanın çizildikten sonra bunu kazandığını söylüyor. `award` ödül olarak vermek, `assert` ileri sürmek, `attach` iliştirmektir.",
             },
             {
               kind: "mcq",
@@ -110,7 +110,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               options: ["hold", "keep", "adhere", "point"],
               answer: 2,
               explain:
-                "`stand to something` bir belgeye bağlı kalmayı anlatan yapıdır ve soru insanların hangisine bağlı kalacağıdır. `hold to` de yakındır ama `would hold to` burada nesnesiz kalır; `point to` işaret etmektir.",
+                "`adhere to something` bir belgeye ya da kurala bağlı kalmayı anlatır ve soru insanların hangisine bağlı kalacağıdır. `hold to` ve `keep to` da bağlılık bildirir ama bir belgeye bağlılıkta en yerleşik eş dizim `adhere to`dur; `point to` ise işaret etmektir.",
             },
             {
               kind: "mcq",
@@ -168,7 +168,7 @@ As it is, the line is left alone, {{12}} suits everybody except the eleven house
               text: "Gap 8",
               accept: ["no"],
               explain:
-                "`a landscape that no longer exists` beklenirdi; ilgi adılı düşürülemeyeceği için boşluk olumsuzlayıcıya ait: `no longer`. Süreklilik `no longer` ile kesilir, `not longer` diye bir kalıp yoktur.",
+                "`that` ilgi adılı zaten yerinde; boşluk `longer` ile kalıp kuran olumsuzlayıcıya ait: `a landscape that no longer exists`. Süreklilik `no longer` ile kesilir, `not longer` diye bir kalıp yoktur.",
             },
             {
               kind: "gap",
@@ -522,7 +522,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -1380,7 +1380,7 @@ The site is defined by fourteen markers set in 1974. Our records consist of a ha
 What a full check would produce
 It would produce a defensible plan, and it would almost certainly produce at least one discrepancy of a size that requires a decision. On the northern edge our fence has stood for thirty years in a position that the schedule does not support, and the neighboring owner has maintained the hedge on our side of it throughout.
 
-That is the uncomfortable part and the committee should see it now rather than in a solicitor's letter. A check we commission is one we control; a check prompted by a sale is not.
+That is the uncomfortable part and the committee should see it now rather than in a lawyer's letter. A check we commission is one we control; a check prompted by a sale is not.
 
 Recommendation
 I recommend commissioning a survey this year, and I recommend that the report be written to us and retained rather than circulated.

@@ -327,7 +327,7 @@ Although I would do it differently now, I am not sorry that I recorded her. The 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -629,7 +629,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               situation: "Bir uzman saklama koşullarını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People ask me what to buy. Nothing, usually. The loft is the worst room in the house for paper and the closet under the stairs is one of the best. Moving the box costs you an afternoon and no money at all." },
+                { text: "People ask me what to buy. Nothing, usually. The attic is the worst room in the house for paper and the closet under the stairs is one of the best. Moving the box costs you an afternoon and no money at all." },
               ],
             },
             {
@@ -781,7 +781,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
                 { speaker: "Woman", text: "The library will scan them all." },
                 { speaker: "Man", text: "Free?" },
                 { speaker: "Woman", text: "Five a visit." },
-                { speaker: "Man", text: "Then it is forty visits. Or four visits and a hundred and forty euros. Pick the one you actually have." },
+                { speaker: "Man", text: "Then it is forty visits. Or four visits and a hundred and eighty euros. Pick the one you actually have." },
               ],
             },
             {
@@ -792,7 +792,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               situation: "Biri kendisine yapılan çağrıya karşılık veriyor.",
               plays: 2,
               segments: [
-                { text: "That is kind of you to ask, and I am going to say no for now. I sorted my mother's house in the spring and I have not opened a box since. Ask me in the autumn and I expect the answer will change." },
+                { text: "That is kind of you to ask, and I am going to say no for now. I cleared out my mother's house in the spring and I have not opened a box since. Ask me in the fall and I expect the answer will change." },
               ],
             },
             {
@@ -860,7 +860,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               options: ["A choice between time and money", "That the library rule is unfair to readers", "That scanning is not worth doing"],
               answer: 0,
               explain:
-                "Konuşmacı iki yolu sayıya döküyor: «forty visits. Or four visits and a hundred and forty euros. Pick the one you actually have».",
+                "Konuşmacı iki yolu sayıya döküyor: «forty visits. Or four visits and a hundred and eighty euros. Pick the one you actually have».",
             },
             {
               kind: "mcq",
@@ -871,7 +871,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               options: ["Asking for more time to decide", "Explaining a family argument", "Refusing for now only"],
               answer: 2,
               explain:
-                "Konuşmacı reddi süreyle sınırlıyor: «I am going to say no for now … Ask me in the autumn and I expect the answer will change».",
+                "Konuşmacı reddi süreyle sınırlıyor: «I am going to say no for now … Ask me in the fall and I expect the answer will change».",
             },
             {
               kind: "mcq",

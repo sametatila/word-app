@@ -94,7 +94,7 @@ export const EN_B1_01: MockPaper = {
               genre: "Notice in an apartment building",
               genreTr: "Apartman duyurusu",
               title: "Bicycles",
-              body: `The basement is now full, so we have marked ten new places in the back yard. These places are for people who use their bicycle every day. If your bicycle stands unused for a month, we will move it.`,
+              body: `The basement is now full, so we have marked ten new places in the backyard. These places are for people who use their bicycle every day. If your bicycle stands unused for a month, we will move it.`,
             },
           ],
           items: [
@@ -250,7 +250,7 @@ My own view after two years of reporting on this town is simple. The four-day we
               gloss: [
                 { de: "a council", tr: "belediye meclisi", en: "der Gemeinderat" },
                 { de: "a department", tr: "birim, bölüm", en: "die Abteilung" },
-                { de: "an application", tr: "başvuru", en: "der Antrag" },
+                { de: "an application", tr: "başvuru", en: "die Bewerbung" },
                 { de: "a care home", tr: "bakımevi", en: "das Pflegeheim" },
               ],
             },
@@ -339,7 +339,7 @@ My own view after two years of reporting on this town is simple. The four-day we
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -455,7 +455,7 @@ And finally, go home on time. A person who stays until eight in the first week s
               options: ["rely", "wait", "consider", "expect"],
               answer: 3,
               explain:
-                "Cümle bir önceki cümledeki `expects` fiilini karşıtlıkla sürdürüyor: kimse yararlı olmanı beklemiyor, ama insanların beklediği şey soru sormandır. `expect` bu yapıda nesnesini doğrudan alır; `hope` ve `wait` `for` ister, `consider` ise «göz önünde bulundurmak» demektir ve bir beklenti bildirmez.",
+                "Cümle bir önceki cümledeki `expects` fiilini karşıtlıkla sürdürüyor: kimse yararlı olmanı beklemiyor, ama insanların beklediği şey soru sormandır. `expect` bu yapıda nesnesini doğrudan alır; `rely` `on`, `wait` ise `for` ister, `consider` ise «göz önünde bulundurmak» demektir ve bir beklenti bildirmez.",
             },
             {
               kind: "mcq",
@@ -519,7 +519,7 @@ You write that the lane has made the journey slower for drivers. This is true, b
 
 If the council {{28}} removed the lane last year, those passengers would be in cars today, and the road would be worse for everybody.
 
-I have lived in this street for eleven years and I have never seen the sidewalk so busy. People are walking again in the street {{29}} they used to drive two hundred meters to the store.
+I have lived on this street for eleven years and I have never seen the sidewalk so busy. People are walking again in the street {{29}} they used to drive two hundred meters to the store.
 
 The lane is not perfect. But it should be judged {{30}} the number of people it moves, not by the speed of a single car.`,
             },
@@ -1141,7 +1141,7 @@ If you cannot come:      tell your {{19}}`,
 
 Thank you for your quick reply.
 
-I would prefer a shared apartment. I have lived alone for two years and I found it quiet, so this time I would like to cook and talk with other students. I do not mind sharing a kitchen.
+I would prefer a shared apartment. I have lived alone for two years and I found it too quiet, so this time I would like to cook and talk with other students. I do not mind sharing a kitchen.
 
 I need the room from September 1, because my course begins on the fourth and I would like a few days to find my way around the city.
 
@@ -1155,7 +1155,7 @@ Selin Aydin`,
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
               "Tercih bir gerekçeyle mi verildi, yoksa yalnız seçim mi bildirildi?",
               "Soru gerçekten soru biçiminde mi kuruldu? (Could you tell me whether …)",
-              "Kayıt tutarlı mı? Resmî bir yazışmada `Hi` ve `Cheers` uygun değil.",
+              "Üslup tutarlı mı? Resmî bir yazışmada `Hi` ve `Cheers` uygun değil.",
               "Yaklaşık 100 kelime yazıldı mı?",
               "Cümleler bağlaçlarla bağlanmış mı, yoksa kısa cümleler yan yana mı duruyor?",
             ],
@@ -1207,7 +1207,7 @@ If you visit, do not start at the bridge like everybody else. Start at the fores
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your work or studies and about your town.",
+          prompt: "I am going to ask you some questions about your work or studies and about your town.",
           promptTr: "Sana işin ya da öğrenimin ve yaşadığın şehir hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

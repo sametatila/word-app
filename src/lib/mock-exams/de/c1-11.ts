@@ -56,7 +56,7 @@ export const C1_11: MockPaper = {
 
 Gemeint sind Güter, die zwar einen Eigentümer haben, an denen aber Dritte einklagbare Rechte besitzen: ein Feldweg mit Wegerecht, ein Brunnen mit Nutzungsrecht, ein Wald mit Betretungsrecht. Der Eigentümer darf hier nicht alles, was Eigentum sonst erlaubt.
 
-Diese Konstruktion gilt vielen als Relikt. Der Einwand lautet, moderne Verhältnisse verlangten klare Verhältnisse: entweder privat oder öffentlich. Er lässt sich indes umkehren, denn gerade die unklaren Formen haben sich als erstaunlich haltbar erwiesen.
+Diese Konstruktion gilt vielen als Relikt. Der Einwand lautet, moderne Gesellschaften verlangten klare Verhältnisse: entweder privat oder öffentlich. Er lässt sich indes umkehren, denn gerade die unklaren Formen haben sich als erstaunlich haltbar erwiesen.
 
 Der Grund dafür ist ökonomischer Natur. Ein Weg, der zwanzig Höfe verbindet, wäre in öffentlicher Hand teuer zu unterhalten und in reinem Privateigentum jederzeit sperrbar. Die Zwischenform verteilt Last und Zugriff so, dass beide Seiten etwas verlieren und niemand alles.
 
@@ -137,7 +137,7 @@ Der Schluss lautet, dass das dritte Feld nicht verschwindet, wenn es niemand ben
               text: "Lücke 5",
               accept: ["haltbar", "beständig", "dauerhaft"],
               explain:
-                "Çevirme cümlesinde: \"gerade die unklaren Formen haben sich als erstaunlich haltbar erwiesen\".",
+                "İtirazı tersine çeviren cümlede: \"gerade die unklaren Formen haben sich als erstaunlich haltbar erwiesen\".",
             },
             {
               kind: "gap",
@@ -494,7 +494,7 @@ Was sich sagen lässt: Ein Fonds wirkt erst dann, {{25}} die Liste der Nutzungsb
               genre: "Informationsveranstaltung",
               genreTr: "Bilgilendirme konuşması",
               title: "Wegefonds Oberried — Bürgerinformation",
-              situation: "Kaymakamlıktan biri bir yol bakım fonunu anlatıyor; konuşan tek kişi.",
+              situation: "Belediyenin emlak dairesi müdürü bir yol bakım fonunu anlatıyor; konuşan tek kişi.",
               plays: 1,
               segments: [
                 {
@@ -693,7 +693,7 @@ Meldung eines Wegerechts bis {{10}}.`,
                 { speaker: "Moderatorin", text: "Inwiefern politisch?" },
                 {
                   speaker: "Herr Weitzel",
-                  text: "Weil Mitsprache an Einzahlung geknüpft wird. Das ist vertretbar und keineswegs harmlos. Wer nicht zahlen kann, verliert die Stimme, die er vorher als Anlieger hatte.",
+                  text: "Weil Mitsprache an Einzahlung geknüpft wird. Das ist vertretbar, aber keineswegs harmlos. Wer nicht zahlen kann, verliert die Stimme, die er vorher als Anlieger hatte.",
                 },
                 {
                   speaker: "Frau Repnik",
@@ -976,7 +976,7 @@ Meldung eines Wegerechts bis {{10}}.`,
           prompt:
             "In einer Regionalzeitung stand: \"Wem etwas gehört, der soll allein darüber bestimmen — alles andere ist kalte Enteignung.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir yerel gazetede şöyle yazdı: \"Bir şey kimin ise onun hakkında yalnız o karar versin — gerisi örtülü kamulaştırmadır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir yerel gazetede şöyle yazıyordu: \"Bir şey kimin ise onun hakkında yalnız o karar versin — gerisi örtülü kamulaştırmadır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,

@@ -172,7 +172,7 @@ Cards and other games.
 
 Free tea. Children come with a parent.
 
-No booking.`,
+No reservation needed.`,
             },
           ],
           items: [
@@ -204,7 +204,7 @@ No booking.`,
               options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 0,
               explain:
-                "Havuz duyurusu iki fiyat veriyor: tek seferlik üç euro, «or twenty for ten times». On kez giden kişi on euro kazanıyor.",
+                "Havuz duyurusu iki fiyat veriyor: tek seferlik üç euro, «or twenty for ten times». On kez giden kişi on euro az ödüyor.",
             },
             {
               kind: "mcq",
@@ -667,7 +667,7 @@ Juno`,
                 { speaker: "Tom", text: "Where is the game on Saturday?" },
                 { speaker: "Sam", text: "At the school, not at the club." },
                 { speaker: "Tom", text: "Why?" },
-                { speaker: "Sam", text: "The grass at the club is wet. It has rained all week." },
+                { speaker: "Sam", text: "The grass at the club is wet. It rained all week." },
               ],
             },
             {
@@ -923,7 +923,7 @@ Juno`,
             { who: "you", hint: "«club» sözcüğüyle bir soru kur.", expect: "club sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "I am in a small tennis club near the park. Your next word is: team.", tr: "Parkın yanındaki küçük bir tenis kulübündeyim. Sıradaki sözcüğün: takım." },
             { who: "you", hint: "«team» için bir soru kur.", expect: "team sözcüğüyle bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "There are eleven people in our team. Now a question for you: what do you do in the evening?", tr: "Takımımızda on bir kişi var. Şimdi sana bir soru: Akşamları ne yaparsın?" },
+            { who: "partner", de: "There are eleven people on our team. Now a question for you: what do you do in the evening?", tr: "Takımımızda on bir kişi var. Şimdi sana bir soru: Akşamları ne yaparsın?" },
             { who: "you", hint: "Bir etkinlik ve saat söyleyerek cevapla.", expect: "bir etkinliği ve saatini tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Thank you. Last question: how much is a month at a sports club where you live?", tr: "Teşekkürler. Son soru: Yaşadığın yerde bir spor kulübünün aylığı ne kadar?" },
             { who: "you", hint: "Bir fiyat söyle.", expect: "bir fiyatı İngilizce söylemek (para birimiyle)", seconds: 25 },
@@ -972,7 +972,7 @@ Juno`,
               { de: "ask about the price politely", tr: "Kibarca fiyat sormak" },
             ],
             sample:
-              "I would like to play soccer, please. — Which days is the training? — How much is it a month, please?",
+              "I would like to play soccer, please. — On which days is the training? — How much is it a month, please?",
             criteria: [
               "İstek açıkça söylendi mi? (hangi spor)",
               "Gün sorusu doğru kuruldu mu? (Which days … / When …)",

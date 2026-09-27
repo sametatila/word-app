@@ -75,7 +75,7 @@
  { "tr": "Yalnız yaşayan bir adam", "kind": "genreTr", "en": "Ein allein lebender Mann" },
  { "tr": "Yüzme havuzundaki levha", "kind": "genreTr", "en": "Schild im Schwimmbad" },
  { "tr": "Doktor kapısındaki levha", "kind": "genreTr", "en": "Schild an der Arzttür" },
- { "tr": "Meslektaşa bırakılan not", "kind": "genreTr", "en": "Hinterlassene Notiz für einen Kollegen" },
+ { "tr": "Meslektaşa bırakılan not", "kind": "genreTr", "en": "Notiz für einen Kollegen" },
  { "tr": "Otobüs durağındaki levha", "kind": "genreTr", "en": "Schild an der Bushaltestelle" },
  { "tr": "Dükkân kapısındaki tabela", "kind": "genreTr", "en": "Schild an der Ladentür" },
  { "tr": "Yeni ev arkadaşlarına ileti", "kind": "genreTr", "en": "Nachricht an die neuen Mitbewohner" },
@@ -147,6 +147,6 @@
  { "tr": "havayı somut biçimde betimlemek", "kind": "exchange.expect", "en": "das Wetter konkret beschreiben" },
  { "tr": "izin sormak (Can I … / May I …)", "kind": "exchange.expect", "en": "um Erlaubnis bitten (Can I … / May I …)" },
  { "tr": "team sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort team eine Frage bilden" },
- { "tr": "sport sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort sport eine Frage bilden" },
+ { "tr": "sports sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort sports eine Frage bilden" },
  { "tr": "tek bir olayı sonucuyla anlatmak", "kind": "exchange.expect", "en": "ein einzelnes Ereignis mit seiner Folge erzählen" }
 ]

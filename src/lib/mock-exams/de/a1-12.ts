@@ -200,11 +200,11 @@ Ihre Fahrkarten gelten auch im Bus.`,
               text: "Sie reisen mit einem Kind (5 Jahre) und möchten wissen, was es kostet.",
               options: [
                 "Gruppenreisen Nord\nab 10 Personen\nAnmeldung vier Wochen vorher\nBeratung nur nach Termin im Büro",
-                "Kinder fahren mit\nbis 6 Jahre kostenlos\nvon 6 bis 14 Jahren halber Preis\nimmer mit einem Erwachsenen",
+                "Kinder fahren mit\nunter 6 Jahren kostenlos\nvon 6 bis 14 Jahren halber Preis\nimmer mit einem Erwachsenen",
               ],
               answer: 1,
               explain:
-                "Çocuk beş yaşında, (b) yaş sınırlarını veriyor: `bis 6 Jahre kostenlos`. (a) en az on kişilik gruplar için.",
+                "Çocuk beş yaşında, (b) yaş sınırlarını veriyor: `unter 6 Jahren kostenlos`. (a) en az on kişilik gruplar için.",
             },
             {
               kind: "mcq",
@@ -217,7 +217,7 @@ Ihre Fahrkarten gelten auch im Bus.`,
               ],
               answer: 1,
               explain:
-                "Kendi bisikleti trene binecek: (b) `Fahrrad im Zug` ve yer kartı şartı. (a) bisiklet kiralıyor.",
+                "Kendi bisikleti trene binecek: (b) `Fahrrad im Zug` ve yer ayırtma şartı. (a) bisiklet kiralıyor.",
             },
           ],
         },
@@ -779,7 +779,7 @@ Unterschrift:             T. Berisha`,
               text: "Telefon",
               accept: ["0345 227390", "0345227390"],
               explain:
-                "Numara yönergede veriliyor: 0345 227390. Almanca formlarda alan kodu ile numara arasında boşluk bırakılır.",
+                "Numara yönergede veriliyor: 0345 227390. Alan kodu ile numara arasında boşluk bırakılabilir; bitişik yazım da kabul edilir.",
             },
             {
               kind: "gap",

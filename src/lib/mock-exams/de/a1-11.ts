@@ -190,7 +190,7 @@ Ihre Hausverwaltung`,
               ],
               answer: 0,
               explain:
-                "(a) pompayı ücretsiz veriyor: `Luftpumpe an der Wand`. (b) randevu ister ve bisiklet satar.",
+                "(a) bina sakinlerine pompa sunuyor: `Luftpumpe an der Wand`. (b) randevu ister ve bisiklet satar.",
             },
             {
               kind: "mcq",
@@ -778,7 +778,7 @@ Unterschrift:             A. Dziuba`,
               text: "Telefon",
               accept: ["0231 445208", "0231445208"],
               explain:
-                "Numara yönergede veriliyor: 0231 445208. Almanca formlarda alan kodu ile numara arasında boşluk bırakılır.",
+                "Numara yönergede veriliyor: 0231 445208. Alan kodu ile numara arasında boşluk bırakılabilir; bitişik yazım da kabul edilir.",
             },
             {
               kind: "gap",

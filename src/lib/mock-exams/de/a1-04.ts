@@ -109,7 +109,7 @@ Bei Regen fällt das Fest aus.`,
               text: "Kemal wohnt nicht im Erdgeschoss.",
               answer: true,
               explain:
-                "Daire \"im vierten Stock\", yani dördüncü katta. Yani zemin katta (Erdgeschoss) oturmuyor.",
+                "Daire \"im vierten Stock\", yani dördüncü katta; zemin katta (Erdgeschoss) oturmuyor.",
             },
             {
               kind: "bool",
@@ -933,7 +933,7 @@ Yusuf`,
               de: "Danke. Letzte Frage: Was trinken Sie zum Frühstück?",
               tr: "Teşekkürler. Son soru: Kahvaltıda ne içersin?",
             },
-            { who: "you", hint: "Bir içecek söyle.", expect: "bir içeceği belirsiz artikelle söylemek (einen Tee, einen Kaffee …)", seconds: 25 },
+            { who: "you", hint: "Bir içecek söyle.", expect: "bir içeceği tam bir cümleyle söylemek (Ich trinke Tee / Kaffee …)", seconds: 25 },
           ],
           items: [],
           rubric: {

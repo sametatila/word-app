@@ -536,7 +536,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -650,7 +650,7 @@ What is striking is how recent this discussion is. For most of the period in whi
             {
               key: "a",
               label: "a — Court interpreter",
-              body: "The hardest moment is a witness who says something that cannot be true in the target language without a choice being made. I render it as closely as the grammar permits and then, if the court allows, I say that a choice was made. Half of my colleagues consider that second step improper, and I understand why, but silence is also a choice and nobody calls it one.",
+              body: "The hardest moment is a witness who says something that cannot be put into the target language without a choice being made. I render it as closely as the grammar permits and then, if the court allows, I say that a choice was made. Half of my colleagues consider that second step improper, and I understand why, but silence is also a choice and nobody calls it one.",
             },
             {
               key: "b",
@@ -1345,7 +1345,7 @@ The most valuable material has come from the {{14}} visits.`,
           prompt:
             "You have attended a discussion on public archives. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Making records freely available online serves everyone equally.\n2. Records often contain information about people who never agreed to publication.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Kamu arşivleri üzerine bir tartışmaya katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıtları internette serbestçe erişilebilir kılmak herkese eşit hizmet eder.\n2. Kayıtlar çoğu zaman yayımlanmayı hiç kabul etmemiş insanlar hakkında bilgi taşır.\n\n220–260 kelime yaz.",
+            "Kamu arşivleri üzerine bir tartışmaya katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıtları internette serbestçe erişilebilir kılmak herkese eşit hizmet eder.\n2. Kayıtlar çoğu zaman yayımlanmayı hiç kabul etmemiş insanlar hakkında bilgi taşır.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1440,7 +1440,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
           exchange: [
             { who: "partner", de: "Good morning. Can you describe a time when you changed your mind about something you had held for a long time?", tr: "Günaydın. Uzun süredir savunduğun bir konuda fikrini değiştirdiğin bir anı anlatır mısın?" },
             { who: "you", hint: "Somut bir örnek ver ve neyin fikrini değiştirdiğini adlandır.", expect: "somut bir fikir değişimini anlatmak ve nedenini adlandırmak", seconds: 50 },
-            { who: "partner", de: "Thank you. Do you think people are generally too quick or too slow to revise their views?", tr: "Teşekkürler. Sence insanlar görüşlerini genelde çok mu çabuk çok mu geç gözden geçiriyor?" },
+            { who: "partner", de: "Thank you. Do you think people are generally too quick or too slow to revise their views?", tr: "Teşekkürler. Sence insanlar görüşlerini genelde çok mu çabuk yoksa çok mu geç gözden geçiriyor?" },
             { who: "you", hint: "Genel bir yargı ver ama koşullandır; tek yanlı olma.", expect: "genel bir yargıyı koşullandırarak vermek", seconds: 50 },
             { who: "partner", de: "And what would make you distrust a source that you currently rely on?", tr: "Şu an güvendiğin bir kaynağa güvenini ne sarsardı?" },
             { who: "you", hint: "Somut bir ölçüt söyle ve neden o ölçüt olduğunu açıkla.", expect: "bir ölçüt öne sürmek ve ölçüt seçimini gerekçelendirmek", seconds: 50 },
@@ -1503,7 +1503,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
             "Bir şehir arşivi sınırlı bir bütçeyi nasıl harcayacağına karar verecek. Seçenekleri benimle konuş ve ilk üç için bir öncelik sırasında anlaş.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: cataloging the uncataloged material, digitizing what is already cataloged, a public exhibition, training staff in privacy review, and extending the reading room's hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve açılış saatlerinin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
+            { who: "partner", de: "The options are: cataloging the uncataloged material, digitizing what is already cataloged, a public exhibition, training staff in privacy review, and extending the reading room's hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve okuma salonunun açık olduğu saatlerin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
             { who: "you", hint: "İki seçenek seç ve seçim ölçütünü açıkça söyle.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you on that. Everything you have chosen is invisible to the public, and this archive depends on public support for its funding. Is that not a real risk?", tr: "Bu noktada üsteleyeyim. Seçtiklerinin hepsi halka görünmez ve bu arşiv fonu için kamu desteğine bağlı. Bu gerçek bir risk değil mi?" },
             { who: "you", hint: "İtirazı ciddiye al: gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu ya revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1516,7 +1516,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
             points: [
               { de: "name an explicit criterion for choosing", tr: "Seçim için açık bir ölçüt adlandırmak" },
               { de: "engage seriously with a strong objection", tr: "Güçlü bir itirazı ciddiye almak" },
-              { de: "agree a justified priority order", tr: "Gerekçeli bir öncelik sırasında anlaşmak" },
+              { de: "agree on a justified priority order", tr: "Gerekçeli bir öncelik sırasında anlaşmak" },
             ],
             sample:
               "My criterion is whether the spending makes later spending cheaper. On that test, cataloging and privacy training come first, because both reduce the cost of everything else. Your objection is a real one and I do not want to wave it away: an archive that produces nothing visible for two years is a soft target at the next budget. Where I would move is on sequencing rather than on priorities. I would take a small part of the sum for a modest exhibition drawn from what is already cataloged, precisely so that the invisible work survives politically. So: cataloging first, privacy training second, a small exhibition third, and I would drop the extended hours, since the reading room is not currently full at the hours we already have.",

@@ -277,7 +277,7 @@ Für die Praxis heißt das zweierlei. Erstens sollte der Übergang später erfol
             {
               key: "f",
               label: "f",
-              body: "Wer im dritten Anlauf ankommt, sitzt in einer Klasse, in der alle anderen seit Jahren zusammen sind.",
+              body: "Wer erst später dazukommt, sitzt in einer Klasse, in der alle anderen seit Jahren zusammen sind.",
             },
             {
               key: "g",
@@ -1245,7 +1245,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               ],
               answer: 1,
               explain:
-                "Okul farkları düzenli değil \"sprunghaft\" büyütüyor, ve bu sıçramalar geçişlerde oluyor.",
+                "Okul farkları düzenli değil \"sprunghaft\" büyütüyor; bu sıçramalar geçişlerde oluyor.",
             },
             {
               kind: "mcq",
@@ -1417,7 +1417,7 @@ Leider fällt dieser Termin genau mit dem Sportunterricht meiner Tochter zusamme
 
 Dass die Schule das Angebot überhaupt macht, weiß ich zu schätzen; mir ist bewusst, dass die Stunden knapp sind.
 
-Wäre es möglich, den Förderunterricht in einer Woche auf einen anderen Tag zu legen oder meiner Tochter für diese Zeit eine Aufgabe zum selbstständigen Arbeiten mitzugeben? Ich würde zu Hause gern darauf achten.
+Wäre es möglich, den Förderunterricht auf einen anderen Tag zu legen oder meiner Tochter für diese Zeit eine Aufgabe zum selbstständigen Arbeiten mitzugeben? Ich würde zu Hause gern darauf achten.
 
 Mit freundlichen Grüßen
 Jens Brodersen`,

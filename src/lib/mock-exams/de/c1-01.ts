@@ -304,7 +304,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 0,
               explain:
-                "A: tartışmanın \"Fixierung auf Bildschirmberufe\" eleştiriliyor; çalışanların üçte ikisi için ev ofis sorusu hiç doğmuyor.",
+                "A: tartışmanın \"Fixierung auf Bildschirmberufe\" eleştiriliyor; çalışanların üçte ikisinden fazlası için ev ofis sorusu hiç doğmuyor.",
             },
             {
               kind: "mcq",
@@ -378,7 +378,7 @@ Die Begründungen ähneln sich auffällig. Fast immer ist von Zusammenarbeit die
 
 Aufschlussreicher als die offiziellen Gründe ist ein Blick auf die Struktur der Entscheidungen. Sie werden fast durchweg dort getroffen, wo Anwesenheit ohnehin selbstverständlich ist. Wer selbst täglich im Haus arbeitet, {{23}} die Kosten des Weges systematisch.
 
-Beobachten lässt sich zudem eine Verschiebung im Ton. Wo vor drei Jahren von Vertrauen die Rede war, steht heute die Formulierung von einer gemeinsamen Kultur, die sich nur vor Ort herstellen lasse. Das klingt versöhnlicher und meint dasselbe. Bemerkenswert ist dabei weniger die Wortwahl als der Umstand, dass die Begründung gewechselt hat, während die Maßnahme dieselbe geblieben ist.
+Beobachten lässt sich zudem eine Verschiebung im Ton. Wo vor drei Jahren von Vertrauen die Rede war, spricht man heute von einer gemeinsamen Kultur, die sich nur vor Ort herstellen lasse. Das klingt versöhnlicher und meint dasselbe. Bemerkenswert ist dabei weniger die Wortwahl als der Umstand, dass die Begründung gewechselt hat, während die Maßnahme dieselbe geblieben ist.
 
 Damit soll die Gegenbewegung nicht als bloße Laune abgetan werden. Für Berufsanfängerinnen ist die Anwesenheit anderer tatsächlich schwer zu ersetzen. {{24}} wäre daraus zu folgern, dass dieselbe Regel für alle sinnvoll ist.
 

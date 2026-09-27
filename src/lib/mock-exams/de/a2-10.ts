@@ -452,7 +452,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
             {
               key: "g",
               label: "Elektro-Schnellhilfe",
-              body: "Steckdosen, Lampen, Sicherungen. Termin innerhalb von 48 Stunden, Werktag zwischen 8 und 17 Uhr.",
+              body: "Steckdosen, Lampen, Sicherungen. Termin innerhalb von 48 Stunden, werktags zwischen 8 und 17 Uhr.",
             },
             {
               key: "h",
@@ -486,7 +486,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               text: "Bei Frau Ergün läuft nachts Wasser aus dem Rohr unter der Spüle.",
               answer: "c",
               explain:
-                "(c) tek gece hizmeti: \"Rund um die Uhr erreichbar, auch am Wochenende\". Öteki ilanlar mesai saatinde çalışıyor.",
+                "(c) tek gece hizmeti: \"Rund um die Uhr erreichbar, auch am Wochenende\". Öteki ilanların hiçbiri gece hizmet vermiyor.",
             },
             {
               kind: "match",
@@ -978,7 +978,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               id: "de-a2-10-h4-17",
               no: 17,
               ref: "i1",
-              text: "Nach ihr werfen die Leute Sachen aus Faulheit weg.",
+              text: "Ihrer Meinung nach werfen die Leute Sachen aus Faulheit weg.",
               answer: false,
               explain:
                 "Açıkça reddediyor: \"Nicht aus Faulheit. Sie wissen einfach nicht, dass es geht.\"",
@@ -1075,7 +1075,7 @@ Sina Dobrev`,
             minWords: 40,
             points: [
               { de: "Beschreiben Sie das Problem.", tr: "Sorunu tarif et." },
-              { de: "Sagen Sie, was Sie schon gemacht haben.", tr: "Ne yaptığını söyle." },
+              { de: "Sagen Sie, was Sie schon gemacht haben.", tr: "Şimdiye kadar ne yaptığını söyle." },
               { de: "Bitten Sie um einen Termin und nennen Sie eine Zeit.", tr: "Randevu iste ve bir zaman söyle." },
             ],
             sample: `Sehr geehrte Damen und Herren,

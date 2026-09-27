@@ -253,7 +253,7 @@ Kommst du uns im Mai besuchen? Ein Gästezimmer haben wir leider nicht mehr, abe
 Liebe Grüße
 Katja`,
               gloss: [
-                { de: "der Umzug", tr: "taşınma", en: "move (house)" },
+                { de: "der Umzug", tr: "taşınma", en: "move (to a new home)" },
                 { de: "das ist mir egal", tr: "benim için fark etmez", en: "I don't mind" },
                 { de: "Bescheid sagen", tr: "haber vermek", en: "to let someone know" },
               ],
@@ -634,7 +634,7 @@ Katja`,
               text: "Tom",
               answer: "d",
               explain:
-                "Sandalyeler ona veriliyor. Masaları da yapmayı öneriyor, ama Sara üstleniyor: \"Die Tische baue ich auf\".",
+                "Sandalyeler ona veriliyor. Masaları kurmayı da öneriyor, ama bu işi Sara üstleniyor: \"Die Tische baue ich auf\".",
             },
             {
               kind: "match",
@@ -747,7 +747,7 @@ Katja`,
               options: ["Morgen früh.", "Am vierzehnten Mai.", "Heute Nachmittag."],
               answer: 0,
               explain:
-                "14 Mayıs beklemek istemediği randevu. Yarın sabahki açık poliklinik saatine gidiyor: \"Das mache ich\".",
+                "14 Mayıs beklemek istemediği randevu. Yarın sabahki randevusuz muayene saatine gidiyor: \"Das mache ich\".",
             },
             {
               kind: "mcq",
@@ -846,7 +846,7 @@ Katja`,
               text: "Sie empfiehlt, den ganzen Tag zu stehen.",
               answer: false,
               explain:
-                "Ayakta çalışma masasını ancak DEĞİŞTİRME koşuluyla öneriyor: \"Wer den ganzen Tag steht, bekommt andere Probleme\".",
+                "Ayakta çalışma masasını ancak oturmayla DÖNÜŞÜMLÜ kullanma koşuluyla öneriyor: \"Wer den ganzen Tag steht, bekommt andere Probleme\".",
             },
             {
               kind: "bool",
@@ -888,7 +888,7 @@ Katja`,
           prompt:
             "Ihre Freundin Delia war zwei Wochen krank und kommt morgen wieder zum Sport. Schreiben Sie ihr eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Arkadaşın Delia iki hafta hastaydı, yarın spora geri dönüyor. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Arkadaşın Delia iki hafta hastaydı, yarın spora geri dönüyor. Ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,
@@ -1035,7 +1035,7 @@ Ali Karaca`,
           exchange: [
             { who: "partner", de: "Eine Freundin kommt am Samstag zu Besuch. Wir planen den Tag zusammen. Wann wollen wir uns treffen?", tr: "Cumartesi bir arkadaş ziyarete geliyor. Günü birlikte planlayalım. Ne zaman buluşalım?" },
             { who: "you", hint: "Saat on biri öner.", expect: "saat içeren bir öneri sunmak (Wollen wir … / Sollen wir …)", seconds: 30 },
-            { who: "partner", de: "Elf ist mir ehrlich gesagt zu früh. Geht auch eins? Und wo treffen wir uns am besten?", tr: "On bir bana açıkçası çok erken. Bir de olur mu? Peki nerede buluşalım?" },
+            { who: "partner", de: "Elf ist mir ehrlich gesagt zu früh. Geht auch eins? Und wo treffen wir uns am besten?", tr: "On bir bana açıkçası çok erken. Saat bir olur mu? Peki nerede buluşalım?" },
             { who: "you", hint: "Saati kabul et ya da başka bir saat öner, sonra bir yer söyle.", expect: "bir öneriye karşılık vermek ve yer önermek", seconds: 35 },
             { who: "partner", de: "Gut, das passt. Sollen wir etwas zu essen mitnehmen?", tr: "Tamam, uyar. Yanımıza yiyecek bir şey alalım mı?" },
             { who: "you", hint: "Kimin ne getireceğini söyle.", expect: "iş bölümü önermek ve karara bağlamak", seconds: 35 },

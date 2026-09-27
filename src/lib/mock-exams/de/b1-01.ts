@@ -65,7 +65,7 @@ export const B1_01: MockPaper = {
 
 Die erste Bewerbung habe ich im März geschrieben. Es folgten dreiundzwanzig weitere. Zwei Firmen haben mich eingeladen, beide haben danach abgesagt. Einmal hat man mir gesagt, dass ich zu lange weg war. Das hat wehgetan, aber ehrlich war es auch.
 
-Im Herbst habe ich einen Kurs bei der Arbeitsagentur gemacht: vier Wochen Buchhaltung am Computer. Ich war die Älteste im Raum und am ersten Tag die Langsamste. Nach zwei Wochen konnte ich mehr als die Hälfte der Gruppe.
+Im Herbst habe ich einen Kurs bei der Arbeitsagentur gemacht: vier Wochen Buchhaltung am Computer. Ich war die Älteste im Raum und am ersten Tag die Langsamste. Nach zwei Wochen war ich schon weiter als die Hälfte der Gruppe.
 
 Wirklich geholfen hat mir aber etwas anderes: ein Praktikum. Drei Monate, unbezahlt, in einem kleinen Betrieb für Fahrradteile. Ich habe dort gemacht, was gerade anfiel — Rechnungen, Telefon, einmal sogar das Lager. Nach dem Praktikum hat der Chef gefragt, ob ich bleiben möchte.
 
@@ -106,7 +106,7 @@ Wenn mich jemand fragt, was ich raten würde, sage ich immer dasselbe: Bewirb di
               text: "Nach zwei Wochen war sie besser als die Hälfte der Gruppe.",
               answer: true,
               explain:
-                "\"Nach zwei Wochen konnte ich mehr als die Hälfte der Gruppe\" — başlangıçta en yavaştı, iki hafta sonra grubun yarısını geçti.",
+                "\"Nach zwei Wochen war ich schon weiter als die Hälfte der Gruppe\" — başlangıçta en yavaştı, iki hafta sonra grubun yarısını geçti.",
             },
             {
               kind: "bool",
@@ -152,7 +152,7 @@ Wenn mich jemand fragt, was ich raten würde, sage ich immer dasselbe: Bewirb di
               title: "Handwerk sucht Nachwuchs",
               body: `In vielen Regionen bleiben Ausbildungsplätze im Handwerk unbesetzt. Allein im Bezirk Freiburg waren im vergangenen Jahr fast neunhundert Stellen frei — die meisten davon in Betrieben mit weniger als zwanzig Beschäftigten.
 
-Die Gründe sind bekannt. Über Jahrzehnte wurde jungen Leuten gesagt, dass nur ein Studium eine sichere Zukunft bringt. Das Ergebnis sieht man heute: Es gibt mehr Studienplätze als Bewerber im Handwerk.
+Die Gründe sind bekannt. Über Jahrzehnte wurde jungen Leuten gesagt, dass nur ein Studium eine sichere Zukunft bringt. Das Ergebnis sieht man heute: Es gibt im Handwerk mehr Ausbildungsplätze als Bewerber.
 
 Inzwischen ändert sich das Bild langsam. Wer eine Ausbildung als Elektronikerin oder Anlagenmechaniker abschließt, findet fast immer eine Stelle, oft im eigenen Ort. Die Gehälter sind in einigen Berufen deutlich gestiegen, weil die Betriebe um jeden Bewerber kämpfen.
 
@@ -300,7 +300,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
             {
               key: "c",
               label: "Meistervorbereitung Elektrotechnik",
-              body: "Berufsbegleitend, achtzehn Monate, Unterricht freitags und samstags. Voraussetzung ist eine abgeschlossene Ausbildung und drei Jahre Berufserfahrung.",
+              body: "Berufsbegleitend, achtzehn Monate, Unterricht freitags und samstags. Voraussetzung sind eine abgeschlossene Ausbildung und drei Jahre Berufserfahrung.",
             },
             {
               key: "d",
@@ -430,7 +430,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
 
 [24] Nesrin A.: Meine Kollegen und ich machen die gleiche Arbeit jetzt in vier Tagen. Das heißt: keine Pause mehr, mittags ein Brot am Schreibtisch, abends erschöpft. Auf dem Papier ein freier Tag, in Wirklichkeit vier harte. So nicht.
 
-[25] Dr. Weber: Die Zahlen aus den Versuchen sind eindeutiger, als viele glauben. Krankheitstage gehen zurück, die Leistung bleibt gleich. Wer heute noch behauptet, das funktioniere nirgends, hat die Untersuchungen der letzten Jahre nicht gelesen.
+[25] Dr. Weber: Die Zahlen aus den Versuchen sind eindeutiger, als viele glauben. Krankheitstage gehen zurück, die Leistung bleibt gleich. Wer heute noch behauptet, dass das nirgends funktioniert, hat die Untersuchungen der letzten Jahre nicht gelesen.
 
 [26] Marco S.: Vier Tage klingen gut, bis die Rechnung kommt. Kleine Betriebe wie meiner müssten eine fünfte Kraft einstellen, und die bezahlt niemand. Für Konzerne mag das gehen, für uns nicht.`,
               gloss: [
@@ -604,7 +604,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               ],
               answer: 0,
               explain:
-                "\"muss nicht wiederholt werden\" — bir kez alınan eğitim geçerliliğini koruyor. Her ayın ilk pazartesi eğitimin VERİLDİĞİ gün, tekrar zorunluluğu değil.",
+                "\"muss nicht wiederholt werden\" — bir kez alınan eğitim geçerliliğini koruyor. Her ayın ilk pazartesisi eğitimin VERİLDİĞİ gün, tekrar zorunluluğu değil.",
             },
             {
               kind: "mcq",
@@ -905,7 +905,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               options: ["Die technische Ausstattung der Werkstätten.", "Die Kosten.", "Die Gruppengröße."],
               answer: 2,
               explain:
-                "\"Was uns von einer Berufsschule unterscheidet, ist die Größe der Gruppen\" — makine başına en fazla sekiz kişi. Maliyet bunun sonucu, farkın kendisi değil.",
+                "\"Was uns von einer Berufsschule unterscheidet, ist die Größe der Gruppen\" — makine başına en fazla sekiz kişi. Maliyet ise fark değil, firmaların buna rağmen katlandığı bir yük.",
             },
             {
               kind: "mcq",
@@ -1192,9 +1192,9 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
 
 danke für deine Nachricht. Ich habe sie zweimal gelesen — und ich finde deine Entscheidung mutig, auch wenn sie sich gerade bestimmt unsicher anfühlt.
 
-Mir ging es vor drei Jahren ähnlich. Ich hatte vier Monate lang nichts, und rückblickend war genau diese Zeit nötig, um zu merken, was ich wirklich machen will.
+Mir ging es vor drei Jahren ähnlich. Ich hatte vier Monate lang keine Stelle, und rückblickend war genau diese Zeit nötig, um zu merken, was ich wirklich machen will.
 
-Wie wäre es, wenn du dich bei der Berufsberatung meldest? Dort gibt es kostenlose Gespräche, und du musst dich zu nichts entscheiden.
+Wie wäre es, wenn du dich bei der Berufsberatung meldest? Dort gibt es kostenlose Gespräche, und du musst dich zu nichts verpflichten.
 
 Sag mir bitte, wie ich helfen kann. Soll ich mir deine Unterlagen ansehen?
 

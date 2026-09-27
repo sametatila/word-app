@@ -108,7 +108,7 @@ The proposals that get discussed are all about speed. Very few of them {{6}} the
               options: ["giving", "falling", "dying", "going"],
               answer: 2,
               explain:
-                "Bir yetinin yavaşça yitmesi `die away` ile anlatılır. `wear away` aşınmayı, `fall away` düşmeyi, `go away` ise uzaklaşmayı bildirir ve beceri için kullanılmaz.",
+                "Bir yetinin yavaşça yitmesi `die away` ile anlatılır. `give away` elden çıkarmayı ya da ele vermeyi, `fall away` düşmeyi, `go away` ise uzaklaşmayı bildirir ve beceri için kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -460,7 +460,7 @@ Nine years is also long enough for a skill to go. Zsofia did not fail the superv
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -519,7 +519,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               text: "Gap 30",
               answer: "d",
               explain:
-                "Paragraf kuyruğun kimse tarafından eklenmediğini ve gecikmenin çoğunu oluşturduğunu söylüyor. (a) bunun neden gözden kaçtığını veriyor: «a backlog is not a stage and appears in no list of requirements».",
+                "Paragraf kuyruğun kimse tarafından eklenmediğini ve gecikmenin çoğunu oluşturduğunu söylüyor. (d) çıkarımı yapıyor: bu olgu reformun nereden başlaması gerektiğini gösteriyor, ama reformlar oradan başlamıyor.",
             },
             {
               kind: "match",
@@ -528,7 +528,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               text: "Gap 31",
               answer: "a",
               explain:
-                "Paragraf her aşamanın haklı bulunduğu inceleme döngüsünü anlatıyor. (d) çıkarımı yapıyor: reformun başlaması gereken yer, reformların başladığı yer değil. (e) 1985'te imzalanan mimarlık anlaşmasından söz ediyor ve metinde anlaşmaların tarihi hiç tartışılmıyor — hiçbir boşluğa uymayan cümle odur.",
+                "Paragraf her aşamanın haklı bulunduğu inceleme döngüsünü anlatıyor. (a) kuyruğun neden gözden kaçtığını veriyor: «a backlog is not a stage and appears in no list of requirements». (e) 1985'te imzalanan mimarlık anlaşmasından söz ediyor ve metinde anlaşmaların tarihi hiç tartışılmıyor — hiçbir boşluğa uymayan cümle odur.",
             },
           ],
         },
@@ -1370,7 +1370,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty percen
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed unit the supervisor is the person with least time, and a check that is recorded but never performed is worse than a waiting list, because it looks like an answer.",
+              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed unit the supervisor is the person with the least time, and a check that is recorded but never performed is worse than a waiting list, because it looks like an answer.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Karşı tarafın gücü kabul edildi mi?",

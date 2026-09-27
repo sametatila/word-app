@@ -54,7 +54,7 @@ Diese Beiläufigkeit ist der Grund für ihre Wirkung. Ein Denkmal verlangt eine 
 
 Umstritten ist deshalb weniger die Vergangenheit als die Gegenwart der Namen. Wer eine Umbenennung fordert, wird regelmäßig darauf hingewiesen, man könne Geschichte nicht auslöschen. Der Einwand geht am Gegenstand vorbei: Ein Straßenname ist keine Aufbewahrung, sondern eine fortlaufende Ehrung. Wer ihn ändert, löscht nichts, sondern beendet eine Auszeichnung.
 
-Gleichwohl wäre es zu einfach, die Frage allein moralisch zu führen. Untersuchungen zu Umbenennungen in mehreren europäischen Städten zeigen einen Befund, der beide Lager irritiert: Nach etwa fünfzehn Jahren erinnert sich kaum jemand mehr daran, wie eine Straße vorher hieß, und zwar unabhängig davon, wie heftig der Streit zuvor war. Die Erregung ist erheblich, die Halbwertszeit gering.
+Gleichwohl wäre es zu einfach, die Debatte allein moralisch zu führen. Untersuchungen zu Umbenennungen in mehreren europäischen Städten zeigen einen Befund, der beide Lager irritiert: Nach etwa fünfzehn Jahren erinnert sich kaum jemand mehr daran, wie eine Straße vorher hieß, und zwar unabhängig davon, wie heftig der Streit zuvor war. Die Erregung ist erheblich, die Halbwertszeit gering.
 
 Daraus folgt für manche, das Ganze sei Symbolpolitik. Diese Schlussfolgerung übersieht, dass die Debatte selbst der Vorgang ist, um den es geht. In den Anhörungen kommen Familien zu Wort, deren Geschichte in keinem Lehrbuch steht; Stadtarchive verzeichnen in solchen Jahren regelmäßig ein Vielfaches der üblichen Anfragen. Erinnerung entsteht nicht am Ende des Verfahrens, sondern in ihm.
 
@@ -80,7 +80,7 @@ Genau darin liegt ihre {{3}}: Ein Denkmal verlangt eine Entscheidung, ein Name v
 
 Der Einwand, man könne Geschichte nicht auslöschen, trifft nach dem Text nicht zu, weil ein Straßenname keine Aufbewahrung ist, sondern eine fortlaufende {{5}}. Wer ihn ändert, beendet also eine {{6}}.
 
-Untersuchungen zeigen allerdings, dass nach etwa {{7}} Jahren sich kaum jemand an den früheren Namen erinnert. Der Text schließt daraus nicht, dass alles bloße Symbolpolitik sei, denn der eigentliche Vorgang ist die {{8}} selbst; in solchen Jahren steigt auch die Zahl der Anfragen an die {{9}}.
+Untersuchungen zeigen allerdings, dass sich nach etwa {{7}} Jahren kaum jemand an den früheren Namen erinnert. Der Text schließt daraus nicht, dass alles bloße Symbolpolitik sei, denn der eigentliche Vorgang ist die {{8}} selbst; in solchen Jahren steigt auch die Zahl der Anfragen an die {{9}}.
 
 Vollständig ersetzen lässt sich ein Name jedoch nicht: Was bleibt, ist der {{10}}, also die Erinnerung an die Änderung.`,
             },
@@ -206,7 +206,7 @@ Die Kosten wurden früh zum Argument. Ein neues Schild, neue Zeugnisformulare, n
 
 Beschlossen wurde schließlich nicht der Vorschlag, mit dem alles begonnen hatte. Statt eines neuen Namenspatrons trägt die Schule heute den Namen der Straße, in der sie steht. Krautwig, die an der Abstimmung nicht mehr teilnahm, nennt das "die einzige Lösung, die niemanden zum Sieger macht". Ob das ein Kompliment ist, lässt sie offen.
 
-Ein Jahr später hat die Schule etwas eingeführt, das in keinem Antrag stand. In der neunten Klasse arbeitet jeder Jahrgang eine Woche im Stadtarchiv. Die Leiterin sagt, das sei der einzige Teil des Verfahrens, den sie unbedingt behalten wolle. Über den Namen spreche ohnehin niemand mehr — und genau daran erkenne man, dass er passe.`,
+Ein Jahr später hat die Schule etwas eingeführt, das in keinem Antrag stand. In der neunten Klasse arbeitet jeder Jahrgang eine Woche im Stadtarchiv. Die Schulleiterin sagt, das sei der einzige Teil des Verfahrens, den sie unbedingt behalten wolle. Über den Namen spreche ohnehin niemand mehr — und genau daran erkenne man, dass er passe.`,
               gloss: [
                 { de: "die Facharbeit", tr: "araştırma ödevi", en: "research paper" },
                 { de: "der Namensgeber", tr: "adı verilen kişi", en: "namesake" },
@@ -1254,7 +1254,7 @@ Rasmus Kienle`,
               { de: "eine gemeinsame Formulierung finden", tr: "Ortak bir formüle varmak" },
             ],
             sample:
-              "Ihren Einwand teile ich insoweit, als lange Verfahren tatsächlich zermürben. Nur richtet sich meine Forderung nicht auf Dauer, sondern auf Öffentlichkeit: Entscheidend ist, dass die Gründe nachvollziehbar dokumentiert werden, nicht dass zwei Jahre vergehen. Ihr zweiter Punkt trifft allerdings einen wunden Punkt. Deshalb würde ich das Verfahren anders binden: Anhörungen mit begrenzter Redezeit, eine feste Frist von höchstens neun Monaten und ein Vorrang für die Stimmen derjenigen, die unmittelbar betroffen sind. Zu den Kosten: Sie haben recht, dass Personal gebunden wird. Das spricht aber für einen einmal festgelegten Ablauf, nicht gegen das Verfahren — der teuerste Fall ist der, in dem jedes Mal neu über das Wie gestritten wird. Als gemeinsame Formulierung schlage ich vor: Eine Umbenennung setzt ein öffentliches Verfahren voraus, das binnen neun Monaten abzuschließen ist, die Gründe schriftlich festhält und den unmittelbar Betroffenen Vorrang einräumt. Eine Verlängerung ist ausdrücklich nicht vorgesehen.",
+              "Ihren Einwand teile ich insoweit, als lange Verfahren tatsächlich zermürben. Nur richtet sich meine Forderung nicht auf Dauer, sondern auf Öffentlichkeit: Entscheidend ist, dass die Gründe nachvollziehbar dokumentiert werden, nicht dass zwei Jahre vergehen. Ihr zweiter Einwand trifft allerdings einen wunden Punkt. Deshalb würde ich das Verfahren anders binden: Anhörungen mit begrenzter Redezeit, eine feste Frist von höchstens neun Monaten und ein Vorrang für die Stimmen derjenigen, die unmittelbar betroffen sind. Zu den Kosten: Sie haben recht, dass Personal gebunden wird. Das spricht aber für einen einmal festgelegten Ablauf, nicht gegen das Verfahren — der teuerste Fall ist der, in dem jedes Mal neu über das Wie gestritten wird. Als gemeinsame Formulierung schlage ich vor: Eine Umbenennung setzt ein öffentliches Verfahren voraus, das binnen neun Monaten abzuschließen ist, die Gründe schriftlich festhält und den unmittelbar Betroffenen Vorrang einräumt. Eine Verlängerung ist ausdrücklich nicht vorgesehen.",
             criteria: [
               "Konum gerekçelendirildi mi ve konuşma boyunca tutarlı kaldı mı?",
               "İtirazlar gerçekten ele alındı mı (kabul edilen kısım adlandırıldı mı)?",

@@ -631,7 +631,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
               options: [
                 "Bei Vermietung an höchstens drei Dritte.",
                 "Bei einer Wohnfläche unter 120 Quadratmetern.",
-                "Bei überwiegender Eigennutzung.",
+                "Bei mindestens hälftiger Eigennutzung.",
               ],
               answer: 2,
               explain:
@@ -1078,7 +1078,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
               ],
               answer: 2,
               explain:
-                "\"Das hängt davon ab, was man verspricht\" — kurtarma olarak değmez, ulaşılabilirlik olarak yaklaşık on sekiz yılda karşılıyor.",
+                "\"Das hängt davon ab, was man verspricht\" — kurtarma olarak değmiyor, ulaşılabilirlik olarak yaklaşık on sekiz yılda kendini karşılıyor.",
             },
             {
               kind: "mcq",
@@ -1314,7 +1314,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
               ],
               answer: 2,
               explain:
-                "Ev hâlâ boş ama \"zwei weitere Interessenten\" var ve gezme cumartesi olabiliyor.",
+                "Ev hâlâ boş ama \"zwei weitere Interessenten\" var ve evi görmek cumartesi mümkün.",
             },
             {
               kind: "mcq",
@@ -1597,7 +1597,7 @@ Rolf Zeplin`,
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],
             sample:
-              "Ihr Argument mit der Statistik stimmt und ist genau das Problem. Die Prämie zeigt sich im Zuzug, aber der Zuzug ist nicht das Ziel; wir wollen wissen, wer im dritten Jahr noch da ist. Ich schlage deshalb vor: hunderttausend für die Betreuung ab sieben Uhr, achtzigtausend für die Sanierung leer stehender Häuser, zwanzigtausend für eine frühe Busfahrt. Zum Einwand mit der schmalen Gruppe: Er trifft, nur ist die Gruppe genau die, die sonst geht. Wer mit sechzig hier wohnt, zieht in der Regel nicht wegen der Öffnungszeiten weg. Streichen würde ich die Prämie. Nicht weil sie wirkungslos wäre, sondern weil sie zweimal wirkt: einmal beim Einzug und danach nicht mehr. Zusammengefasst: Schwerpunkt auf Betreuung und Wohnraum, eine Busfahrt dazu, keine Prämie — und wir messen nach drei Jahren, nicht nach einem.",
+              "Ihr Argument mit der Statistik stimmt und ist genau das Problem. Die Prämie zeigt sich im Zuzug, aber der Zuzug ist nicht das Ziel; wir wollen wissen, wer im dritten Jahr noch da ist. Ich schlage deshalb vor: hunderttausend für die Betreuung ab sieben Uhr, achtzigtausend für die Sanierung leer stehender Häuser, zwanzigtausend für eine frühe Busfahrt. Zum Einwand mit der schmalen Gruppe: Er trifft, nur ist die Gruppe genau die, die sonst geht. Wer mit sechzig hier wohnt, zieht in der Regel nicht wegen der Öffnungszeiten weg. Streichen würde ich die Prämie. Nicht weil sie wirkungslos wäre, sondern weil sie nur einmal wirkt: beim Einzug und danach nicht mehr. Zusammengefasst: Schwerpunkt auf Betreuung und Wohnraum, eine Busfahrt dazu, keine Prämie — und wir messen nach drei Jahren, nicht nach einem.",
             criteria: [
               "Öneri gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?",
               "İtiraz kabul edilip yanıtlandı mı, yoksa görmezden mi gelindi?",

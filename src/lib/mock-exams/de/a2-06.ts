@@ -113,7 +113,7 @@ Heute lade ich selbst ein. Meine Gäste kommen pünktlich und niemand hilft in d
               no: 4,
               text: "Was hat ihn beim Essen am meisten überrascht?",
               options: [
-                "Der Beginn ohne Warten auf die Älteste.",
+                "Der Beginn ohne Warten auf die älteste Person.",
                 "Die Suppe war zu kalt für alle Gäste.",
                 "Es gab kein Fleisch auf dem ganzen Tisch.",
               ],
@@ -153,7 +153,7 @@ Heute lade ich selbst ein. Meine Gäste kommen pünktlich und niemand hilft in d
               title: "Das Hoffest kommt zurück",
               body: `In Rostock gab es im letzten Sommer 84 Hoffeste. Vor fünf Jahren waren es nur 31.
 
-Die Stadt hat dafür ein kleines Programm gemacht. Wer ein Fest im Hof plant, bekommt 150 Euro und leiht Tische und Bänke kostenlos. Dafür muss man das Fest zwei Wochen vorher anmelden.
+Die Stadt hat dafür ein kleines Programm gemacht. Wer ein Fest im Hof plant, bekommt 150 Euro und kann Tische und Bänke kostenlos ausleihen. Dafür muss man das Fest zwei Wochen vorher anmelden.
 
 Marion Deska aus dem Stadtteilbüro sagt: "Am Anfang haben viele gedacht, dass man dafür eine große Organisation braucht. Das stimmt nicht. Die meisten Feste machen drei oder vier Nachbarn."
 
@@ -537,7 +537,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               plays: 2,
               segments: [
                 { speaker: "Kunde", text: "Ich suche ein Geschenk für eine Kollegin. So bis 20 Euro." },
-                { speaker: "Verkäuferin", text: "Wie wäre eine Tasse mit Namen? Die kostet 18 Euro." },
+                { speaker: "Verkäuferin", text: "Wie wäre es mit einer Tasse mit Namen? Die kostet 18 Euro." },
                 { speaker: "Kunde", text: "Sie trinkt keinen Kaffee. Haben Sie etwas anderes?" },
                 { speaker: "Verkäuferin", text: "Dann vielleicht eine Pflanze für 16 Euro." },
               ],
@@ -697,7 +697,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               text: "Robin",
               answer: "c",
               explain:
-                "İçecekler Robin'de, çünkü arabası var: \"die Getränke bringt Robin\". Müzik kutusunu da teklif ediyor ama o iş ona kalmıyor.",
+                "İçecekler Robin'de, çünkü arabası var: \"die Getränke bringt Robin\". Hoparlörünü getirmeyi de teklif ediyor ama o iş ona kalmıyor.",
             },
             {
               kind: "match",
@@ -961,7 +961,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {
@@ -972,14 +972,14 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           prompt:
             "Ihre Nachbarin Frau Lorenz hat Sie zum Essen eingeladen. Schreiben Sie ihr am nächsten Tag eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Komşun Frau Lorenz seni yemeğe davet etti. Ertesi gün ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Komşun Frau Lorenz seni yemeğe davet etti. Ertesi gün ona bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,
             points: [
               { de: "Bedanken Sie sich für den Abend.", tr: "Akşam için teşekkür et." },
               { de: "Sagen Sie, was Ihnen besonders gefallen hat.", tr: "En çok neyi beğendiğini söyle." },
-              { de: "Laden Sie Frau Lorenz zu sich ein.", tr: "Frau Lorenz'i kendine davet et." },
+              { de: "Laden Sie Frau Lorenz zu sich ein.", tr: "Frau Lorenz'i kendi evine davet et." },
             ],
             sample: `Liebe Frau Lorenz,
 
@@ -1008,7 +1008,7 @@ Amir`,
           prompt:
             "Sie möchten am 12. Juli im Hof Ihres Hauses ein kleines Fest machen. Sie brauchen die Erlaubnis der Hausverwaltung. Schreiben Sie an die Hausverwaltung (circa 40 Wörter).",
           promptTr:
-            "12 Temmuz'da binanızın avlusunda küçük bir kutlama yapmak istiyorsun. Site yönetiminin iznine ihtiyacın var. Site yönetimine yaz (yaklaşık 40 kelime).",
+            "12 Temmuz'da oturduğun binanın avlusunda küçük bir kutlama yapmak istiyorsun. Bina yönetiminin iznine ihtiyacın var. Bina yönetimine yaz (yaklaşık 40 kelime).",
           items: [],
           rubric: {
             minWords: 40,
@@ -1135,7 +1135,7 @@ Katja Berg`,
           prompt:
             "Planen Sie gemeinsam etwas. Eine Freundin besucht Sie für ein Wochenende. Sprechen Sie über: Wann abholen? — Was am Samstag? — Wo essen? — Wer bezahlt was?",
           promptTr:
-            "Birlikte plan yap. Bir arkadaşın hafta sonu için ziyaretine geliyor. Şunları konuş: Ne zaman karşılanacak? — Cumartesi ne yapılacak? — Nerede yenecek? — Kim neyi ödeyecek?",
+            "Birlikte plan yap. Bir arkadaşın hafta sonu seni ziyarete geliyor. Şunları konuş: Ne zaman karşılanacak? — Cumartesi ne yapılacak? — Nerede yenecek? — Kim neyi ödeyecek?",
           prepSeconds: 45,
           exchange: [
             {

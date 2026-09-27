@@ -47,7 +47,7 @@ export const B1_02: MockPaper = {
               genre: "Blogbeitrag",
               genreTr: "Blog yazısı",
               title: "Ein Jahr ohne Auto — in einer Kleinstadt",
-              body: `Als unser alter Kombi im Januar den Dienst quittierte, standen wir vor einer Frage: neues Auto oder keins? Wir wohnen in einer Stadt mit siebzehntausend Einwohnern. Alle sagten uns, ohne Auto gehe das hier nicht.
+              body: `Als unser alter Kombi im Januar den Dienst quittierte, standen wir vor einer Frage: neues Auto oder keins? Wir wohnen in einer Stadt mit siebzehntausend Einwohnern. Alle sagten uns, ohne Auto geht das hier nicht.
 
 Wir haben es trotzdem probiert, zunächst für sechs Monate. Aus den sechs Monaten ist ein Jahr geworden.
 
@@ -55,7 +55,7 @@ Der Anfang war unangenehm. Der Weg zur Arbeit dauert mit dem Rad achtzehn Minute
 
 Praktisch gelöst haben wir es mit drei Dingen. Erstens ein Lastenrad, das wir gebraucht gekauft haben. Zweitens eine Mitgliedschaft beim Carsharing im Nachbarort — sechs Fahrten im Jahr, mehr brauchten wir nicht. Drittens der Zug, der immerhin jede Stunde fährt.
 
-Gerechnet haben wir natürlich auch. Ohne Versicherung, Steuer, Reparaturen und Sprit sparen wir etwa dreitausendvierhundert Euro im Jahr. Das Lastenrad hat sich nach fünf Monaten bezahlt gemacht.
+Gerechnet haben wir natürlich auch. Weil Versicherung, Steuer, Reparaturen und Sprit wegfallen, sparen wir etwa dreitausendvierhundert Euro im Jahr. Das Lastenrad hat sich nach fünf Monaten bezahlt gemacht.
 
 Ehrlich bleiben will ich trotzdem: Zweimal war es wirklich schwierig. Einmal, als unsere Tochter nachts hohes Fieber hatte, und einmal beim Umzug meiner Mutter. Beide Male haben uns Nachbarn geholfen. Wer das nicht hat, für den sieht die Rechnung anders aus.`,
               gloss: [
@@ -83,7 +83,7 @@ Ehrlich bleiben will ich trotzdem: Zweimal war es wirklich schwierig. Einmal, al
               text: "Der Arbeitsweg dauert mit dem Rad neun Minuten.",
               answer: false,
               explain:
-                "Bisikletle 18 dakika, arabayla 9. Metin iki süreyi \"statt\" ile karşılaştırıyor; ilk duyulan sayıya atlamamak gerekiyor.",
+                "Bisikletle 18 dakika, arabayla 9. Metin iki süreyi \"statt\" ile karşılaştırıyor; ilk göze çarpan sayıya atlamamak gerekiyor.",
             },
             {
               kind: "bool",
@@ -100,7 +100,7 @@ Ehrlich bleiben will ich trotzdem: Zweimal war es wirklich schwierig. Einmal, al
               no: 4,
               text: "Das Lastenrad war neu.",
               answer: false,
-              explain: "\"das wir gebraucht gekauft haben\" — ikinci el alınmış. Bu, beş ayda masrafını çıkarmasının da nedeni.",
+              explain: "\"das wir gebraucht gekauft haben\" — ikinci el alınmış.",
             },
             {
               kind: "bool",
@@ -164,7 +164,7 @@ Der Grund für den Boom ist weniger die Umwelt als der Preis. Ein Gerät kostet 
 
 Lange war der bürokratische Aufwand das größere Hindernis. Anmeldung beim Netzbetreiber, Zustimmung der Vermieterin, ein bestimmter Zähler: Viele haben schon vorher aufgegeben. Ein Teil dieser Regeln ist gefallen, andere gelten weiter.
 
-Wichtig bleibt die Frage nach dem richtigen Ort. Ein Balkon nach Norden bringt kaum etwas, ein verschatteter Balkon ebenfalls nicht. Wer unsicher ist, sollte einen Tag lang notieren, wann dort tatsächlich Sonne liegt.
+Wichtig bleibt die Frage nach dem richtigen Ort. Ein Balkon nach Norden bringt kaum etwas, ein verschatteter Balkon ebenfalls nicht. Wer unsicher ist, sollte einen Tag lang notieren, wann dort tatsächlich die Sonne scheint.
 
 Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht wird. Wer tagsüber nie zu Hause ist und kein Gerät laufen lässt, schickt den Strom kostenlos ins Netz.`,
               gloss: [
@@ -189,7 +189,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               ],
               answer: 2,
               explain:
-                "Ruhr bölgesi araştırması kirayı öne çıkarıyor: kiraların en çok arttığı yerde boşluk en büyük. Metin online ticareti \"naheliegende Erklärung\" diye anıp reddediyor.",
+                "Ruhr bölgesi araştırması kirayı öne çıkarıyor: kiraların en çok arttığı yerde boşluk en büyük. Metin online ticareti \"naheliegende Erklärung\" diye anıp tek başına yeterli bulmuyor.",
             },
             {
               kind: "mcq",
@@ -415,7 +415,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
 
 [21] Ben Hofer: Klar, die ersten Monate werden chaotisch, das war in jeder Stadt so. Aber ich war im Sommer in Gent, und niemand dort möchte zurück. Kinder auf der Straße, Cafés bis zum Bordstein, kein Gehupe. Ich verstehe nicht, worauf wir noch warten.
 
-[22] G. Sailer: Ich betreibe seit achtzehn Jahren ein Schuhgeschäft in der Fußgängerzone. Alle behaupten, autofrei bringe mehr Kundschaft. In meiner Straße ist seit der Sperrung der letzten Querstraße genau das Gegenteil passiert: Die Älteren kommen nicht mehr.
+[22] G. Sailer: Ich betreibe seit achtzehn Jahren ein Schuhgeschäft in der Fußgängerzone. Alle behaupten, dass eine autofreie Straße mehr Kundschaft bringt. In meiner Straße ist seit der Sperrung der letzten Querstraße genau das Gegenteil passiert: Die Älteren kommen nicht mehr.
 
 [23] Frau Cordes: Als Ärztin sehe ich jeden Winter dieselben Atemwegserkrankungen, und ich sehe auch, in welchen Straßen die Kinder wohnen. Die Diskussion über Parkplätze finde ich fast zynisch. Eine Stadt gehört zuerst denen, die in ihr atmen.
 
@@ -589,7 +589,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ref: "o1",
               text: "Wo darf ein Kinderwagen abgestellt werden?",
               options: [
-                "In dem Nebenraum der Waschküche.",
+                "Im Raum neben der Waschküche.",
                 "Im Treppenhaus, wenn er nicht im Weg steht.",
                 "In der Waschküche selbst, außerhalb der Waschzeiten.",
               ],
@@ -706,7 +706,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               id: "de-b1-02-h1-1",
               no: 1,
               ref: "h1",
-              text: "Die Abstellung betrifft nur einen Teil der Stadt.",
+              text: "Die Unterbrechung der Wasserversorgung betrifft nur einen Teil der Stadt.",
               answer: true,
               explain:
                 "\"Betroffen sind die Straßen rund um den Marktplatz\" — kesinti şehrin tamamını değil, meydan çevresindeki sokakları kapsıyor.",
@@ -986,7 +986,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ref: "g1",
               text: "Alle Bäume im Hof bleiben stehen.",
               answer: false,
-              explain: "«Zwei müssen weg, die alte Kastanie bleibt» — iki ağaç kesiliyor; kalan yalnız yaşlı kestane ve bu belediyenin koşulu.",
+              explain: "«Zwei müssen weg, die alte Kastanie bleibt» — iki ağaç kesiliyor; yaşlı kestanenin kalması belediyenin koşulu.",
             },
             {
               kind: "bool",

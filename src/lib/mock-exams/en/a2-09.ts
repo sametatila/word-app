@@ -158,7 +158,7 @@ export const EN_A2_09: MockPaper = {
             { key: "e", label: "Advice Desk", body: "Free. Tuesday and Thursday, two to five. We tell you whether a repair is worth the money." },
             { key: "f", label: "Tool Library", body: "Borrow a drill or a saw for two euros a day. You need a card and an address in the city." },
             { key: "g", label: "Phone Screens", body: "While you wait, twenty minutes. Thirty-five euros. Every model, no booking." },
-            { key: "h", label: "New and Second-hand Machines", body: "Delivery on Saturday. We take your old machine away free." },
+            { key: "h", label: "New and Secondhand Machines", body: "Delivery on Saturday. We take your old machine away free." },
           ],
           items: [
             {
@@ -222,9 +222,9 @@ export const EN_A2_09: MockPaper = {
               genre: "Consumer article",
               genreTr: "Tüketici yazısı",
               title: "Before you call somebody",
-              body: `Most people call a repair man too early. Here are three things to do first.
+              body: `Most people call a repairman too early. Here are three things to do first.
 
-Look at the plug and the cable. About one machine in five is not broken at all. The cable is loose or the plug is dead, and a repair man will charge fifty euros to tell you that.
+Look at the plug and the cable. About one machine in five is not broken at all. The cable is loose or the plug is dead, and a repairman will charge fifty euros to tell you that.
 
 Find the number of the model. It is on a small label on the back or under the door. With that number you can search on the internet, and often you find the answer in two minutes.
 
@@ -264,7 +264,7 @@ And one thing you should not do: never open a machine that uses water or gas. Th
               id: "en-a2-09-l3-13",
               no: 13,
               text: "What should you ask about before you agree?",
-              options: ["The name of the repair man", "What the part will cost", "The day he can come"],
+              options: ["The name of the repairman", "What the part will cost", "The day he can come"],
               answer: 1,
               explain:
                 "Metin uyarıyı gerekçesiyle veriyor: «Ask about the price of the part before you say yes», çünkü parça yeni makineden pahalı olabiliyor.",
@@ -379,7 +379,7 @@ It stops working about four times {{21}} year, always in the summer.
 
 The superintendent is very good, {{22}} he cannot make the parts himself.
 
-Last winter we waited {{23}} three weeks for a small piece of metal.
+Last summer we waited {{23}} three weeks for a small piece of metal.
 
 I live on the fourth floor and I still {{24}} not know how my neighbor on the sixth manages.`,
             },
@@ -571,7 +571,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbor on the si
               no: 5,
               ref: "a5",
               text: "What is the second speaker doing?",
-              options: ["Saying the money was not wasted", "Offering to pay half of it", "Complaining about the repair man"],
+              options: ["Saying the money was not wasted", "Offering to pay half of it", "Complaining about the repairman"],
               answer: 0,
               explain:
                 "İkinci konuşmacı sorumluluğu birinciye çeviriyor: «Did you look at the cable first?» ve «it is fifty euros for the lesson».",
@@ -672,8 +672,8 @@ If they cannot repair it, you pay: {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five people speaking, questions 11 to 15. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -705,7 +705,7 @@ If they cannot repair it, you pay: {{10}}`,
               situation: "Bir dinleyici iki makineyi karşılaştırıyor.",
               plays: 2,
               segments: [
-                { text: "I bought the cheap machine and I have repaired it four times in six years. My sister bought the expensive one and she has repaired it once. She paid more at the start and less since then, and I still tell people the cheap one is fine." },
+                { text: "I bought the cheap machine and I have repaired it four times in six years. My sister bought the expensive one and she has repaired it once. She paid more at the start and has paid less since then, and I still tell people the cheap one is fine." },
               ],
             },
             {
@@ -770,7 +770,7 @@ If they cannot repair it, you pay: {{10}}`,
               id: "en-a2-09-h3-14",
               no: 14,
               ref: "c4",
-              text: "Why is the woman calling?",
+              text: "Why is the person calling?",
               options: ["To ask for a lower price", "To arrange a new day", "To cancel the repair"],
               answer: 1,
               explain:
@@ -934,7 +934,7 @@ If they cannot repair it, you pay: {{10}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "The repair man comes on Thursday between eight and twelve and you cannot be at home. Write a message to your English neighbor Selma. Write about 50 words. Answer all three points.",
+            "The repairman comes on Thursday between eight and twelve and you cannot be at home. Write a message to your English neighbor Selma. Write about 50 words. Answer all three points.",
           promptTr:
             "Tamirci perşembe günü sekizle on iki arası geliyor ve sen evde olamayacaksın. İngiliz komşun Selma'ya bir ileti yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
           items: [],
@@ -947,7 +947,7 @@ If they cannot repair it, you pay: {{10}}`,
             ],
             sample: `Hi Selma,
 
-My washing machine is broken. The repair man comes on Thursday between eight and twelve, and I am at work.
+My washing machine is broken. The repairman comes on Thursday between eight and twelve, and I am at work.
 
 Could you open the door for him, please? He only needs ten minutes.
 

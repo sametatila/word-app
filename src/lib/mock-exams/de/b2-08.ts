@@ -218,7 +218,7 @@ Uns geht es um den Moment, in dem jemand zum ersten Mal einen Witz auf Deutsch v
               options: ["Frau Sattelberger", "Herr Kwiatkowski", "Frau Ndiaye", "Herr Bruck"],
               answer: 0,
               explain:
-                "\"Was mir fehlt, ist nicht Material. Es fehlt Zeit im Stundenplan\" — ve bunun bir başkasını silmek anlamına geldiğini de ekliyor.",
+                "\"Was mir fehlt, ist nicht Material. Es fehlt Zeit im Stundenplan\" — ve bunun için başka bir şeyi programdan çıkarması gerektiğini de ekliyor.",
             },
           ],
         },
@@ -365,7 +365,7 @@ Ein Beispiel. Für den Ehegattennachzug wird ein Nachweis auf Anfängerniveau ve
 
 Die amtliche Begründung lautet, frühe Kenntnisse erleichterten das Ankommen. Das klingt plausibel und ist empirisch dünn. Vergleichbare Länder ohne diese Hürde weisen nach zwei Jahren keine schlechteren Sprachstände auf.
 
-Man wird einwenden, eine Anforderung ohne Vorbedingung sei wertlos. Der Einwand hat Gewicht, richtet sich aber gegen ein Gespenst: Niemand fordert, den Nachweis zu streichen. Gefordert wird, ihn dorthin zu legen, wo Unterricht überhaupt verfügbar ist.
+Man wird einwenden, ein Nachweis, der erst nach der Einreise verlangt werde, sei wertlos. Der Einwand hat Gewicht, richtet sich aber gegen ein Gespenst: Niemand fordert, den Nachweis zu streichen. Gefordert wird, ihn dorthin zu legen, wo Unterricht überhaupt verfügbar ist.
 
 Bemerkenswert ist, wer von der jetzigen Regelung profitiert. Die Behörden nicht, deren Aufwand bleibt gleich. Profitiert haben private Anbieter, die in einigen Ländern die einzigen Prüfungsstellen betreiben.
 
@@ -597,7 +597,7 @@ Die Anmeldung erfolgt spätestens vier Wochen vor dem Termin. Eine Umbuchung auf
 Die Prüfung besteht aus vier Teilen. Wer in höchstens einem Teil unter sechzig Prozent bleibt, kann diesen Teil einmal wiederholen. Wer in zwei oder mehr Teilen darunter bleibt, wiederholt die gesamte Prüfung.
 
 §3 Nachteilsausgleich
-Ein Ausgleich wird auf Antrag gewährt und ist bei der Anmeldung nachzuweisen. Nachträgliche Anträge werden nur berücksichtigt, wenn der Grund kurzfristig eingetreten ist.
+Ein Ausgleich wird auf Antrag gewährt; der Bedarf ist bei der Anmeldung nachzuweisen. Nachträgliche Anträge werden nur berücksichtigt, wenn der Grund kurzfristig eingetreten ist.
 
 §4 Ergebnisse
 Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertung ist innerhalb eines Monats nach Zustellung möglich; eine Aushändigung von Kopien erfolgt nicht.`,
@@ -927,7 +927,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               id: "de-b2-08-h2-12",
               no: 12,
               ref: "i1",
-              text: "Womit erklärt Herr Pallas diese Zahl?",
+              text: "Warum fällt diese Zahl nach Herrn Pallas so aus?",
               options: [
                 "Wegen der neuen Prüfungsform.",
                 "Wegen fehlender Lehrkräfte.",
@@ -1321,7 +1321,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               ],
               answer: 0,
               explain:
-                "Fark ölçülmüş — dokuz puanlık geri dönüş farkı — ama değerlendirenler \"die Aussprache habe für sie keine Rolle gespielt\" demiş.",
+                "Fark ölçülmüş — geri arama oranında dokuz yüzde puanlık fark — ama değerlendirenler \"die Aussprache habe für sie keine Rolle gespielt\" demiş.",
             },
             {
               kind: "mcq",

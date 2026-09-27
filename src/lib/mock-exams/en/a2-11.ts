@@ -220,7 +220,7 @@ Please take the bags home with you; there is no trash can here.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Questions 11 to 14 are about the letter and the reply,. Pick one answer: a, b or c.",
+          prompt: "Questions 11 to 14 are about the letter and the reply. Pick one answer: a, b or c.",
           promptTr: "Mektubu ve yanıtı, sonra 11–14. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -396,7 +396,7 @@ She lived {{21}} her own in the street for two winters before that.
 
 She is quieter {{22}} our old cat, and much smaller.
 
-She sits on the window every evening {{23}} six o'clock.
+She sits in the window every evening {{23}} six o'clock.
 
 I have two good chairs in the kitchen and I still {{24}} not sit on either of them.`,
             },
@@ -588,7 +588,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               options: ["The cat is at the vet", "The owner is found", "The cat is lost again"],
               answer: 1,
               explain:
-                "İleti sahibi buluyor: «The cat you found is from number 14», ve aile çok mutlu.",
+                "İleti sahibin bulunduğunu söylüyor: «The cat you found is from number 14», ve aile çok mutlu.",
             },
           ],
         },
@@ -788,7 +788,7 @@ Please bring the:   {{10}}`,
               options: ["To cancel the visit", "To ask about the price", "To change the time"],
               answer: 2,
               explain:
-                "Arayan yeni bir saat öneriyor: «Can I come at half past five?», çünkü treni geç varıyor.",
+                "Arayan yeni bir saat öneriyor: «Can I come at half past five», çünkü treni geç varıyor.",
             },
             {
               kind: "mcq",
@@ -1069,7 +1069,7 @@ Vesna Roth`,
               { de: "say if you like animals", tr: "Hayvanları sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a waiting room at a vet. Four people are sitting on chairs along the wall with their animals. On the left a woman is holding a box on her knees; I think there is a cat inside. Next to her a man has a big dog on a leash and the dog is sleeping. A small child is standing in front of the box and looking at it. I like animals, but I do not want one, because I am not at home in the day.",
+              "This is a waiting room at a vet. Four people are sitting on chairs along the wall with their animals. On the left a woman is holding a box on her knees; I think there is a cat inside. Next to her a man has a big dog on a leash and the dog is sleeping. A small child is standing in front of the box and looking at it. I like animals, but I do not want one, because I am not at home during the day.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",

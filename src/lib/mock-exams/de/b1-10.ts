@@ -194,7 +194,7 @@ Abholung bis Sonntag, danach bringe ich ihn zum Wertstoffhof.`,
               id: "t4",
               genre: "Zeitungsnotiz",
               genreTr: "Gazete notu",
-              body: `Die Zahl der Anträge, die im Landkreis online gestellt werden, ist auf sechzig Prozent gestiegen.
+              body: `Der Anteil der Anträge, die im Landkreis online gestellt werden, ist auf sechzig Prozent gestiegen.
 
 Bei Anträgen, die eine Unterschrift verlangen, liegt der Anteil dagegen bei unter zehn Prozent.
 
@@ -404,7 +404,7 @@ Ich hätte gern eine Erklärung und einen neuen Termin, möglichst diese Woche.`
               kind: "match",
               id: "de-b1-10-l3-15",
               no: 15,
-              text: "Frau Bräutigam hat die einzigen Fotos ihrer Hochzeit auf einer Karte, die nicht mehr gelesen wird.",
+              text: "Frau Bräutigam hat die einzigen Fotos ihrer Hochzeit auf einer Speicherkarte, die sich nicht mehr lesen lässt.",
               answer: "d",
               explain:
                 "(d) bozuk bellekten dosya kurtarıyor ve inceleme ücretsiz. (c) açıkça \"Keine Datenrettung\" diyor.",
@@ -416,13 +416,13 @@ Ich hätte gern eine Erklärung und einen neuen Termin, möglichst diese Woche.`
               text: "Herr Krawczyk braucht für einen einzigen Abend einen Beamer und möchte keinen kaufen.",
               answer: "e",
               explain:
-                "(e) cihazı bir haftaya kadar ödünç veriyor ve listede projeksiyon aleti adıyla geçiyor.",
+                "(e) cihazı bir haftaya kadar ödünç veriyor ve listede projeksiyon cihazı adıyla geçiyor.",
             },
             {
               kind: "match",
               id: "de-b1-10-l3-17",
               no: 17,
-              text: "Frau Nolde vergisst ständig ihre Passwörter und schreibt sie auf Zettel neben den Rechner.",
+              text: "Frau Nolde vergisst ständig ihre Passwörter und schreibt sie auf Zettel, die neben dem Rechner kleben.",
               answer: "i",
               explain:
                 "(i) tam bu konuyu ele alıyor ve bir güvence veriyor: \"Wir sehen Ihre Daten nicht\".",
@@ -431,7 +431,7 @@ Ich hätte gern eine Erklärung und einen neuen Termin, möglichst diese Woche.`
               kind: "match",
               id: "de-b1-10-l3-18",
               no: 18,
-              text: "Herr Sommerfeld möchte seiner Enkelin am Wochenende Videoanrufe zeigen, kennt sich aber nicht aus.",
+              text: "Herr Sommerfeld möchte am Wochenende mit seiner Enkelin per Video telefonieren, kennt sich aber nicht aus.",
               answer: "a",
               explain:
                 "(a) görüntülü aramayı adıyla sayıyor. Hesap soruları dışında kalıyor ama bu konu ona uyuyor.",
@@ -471,7 +471,7 @@ Marek Priebe: Die Debatte tut so, als ginge es um Technik. Es geht um Öffnungsz
 
 Frau Bräutigam: Als Betreuerin schreibe ich Anträge für sieben Personen. Online geht das schneller, aber ich brauche für jede einzelne eine Vollmacht im System, und das dauert Wochen. Solange das so ist, bin ich dagegen — nicht grundsätzlich, sondern für den jetzigen Zustand.
 
-Timo Sommerfeld: Mein Vater ist einundachtzig und hat nie einen Rechner benutzt. Trotzdem finde ich, dass Ämter online gehen sollten. Genau die Zeit, die am Schalter frei wird, könnte jemand für ihn aufwenden. Heute wartet er zwischen dreißig anderen, weil alle in derselben Schlange stehen.
+Timo Sommerfeld: Mein Vater ist einundachtzig und hat nie einen Rechner benutzt. Trotzdem finde ich, dass Ämter online gehen sollten. Genau die Zeit, die am Schalter frei wird, könnte jemand für ihn aufwenden. Heute wartet er mit dreißig anderen, weil alle in derselben Schlange stehen.
 
 Anna Nolde: Ich habe zweimal versucht, online einen Termin zu bekommen, und zweimal ist das Portal abgestürzt. Beim dritten Mal bin ich hingefahren. Bevor man den einen Weg schließt, muss der andere funktionieren. Deshalb bin ich dagegen.
 
@@ -775,7 +775,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               text: "Nur die Zahl der digitalen Anträge ist gestiegen.",
               answer: false,
               explain:
-                "Haber bu daraltmayı açıkça reddediyor: \"die Zahl der Anträge insgesamt gestiegen, nicht nur die der digitalen\" — artış kâğıt başvurularda da var.",
+                "Haber bu daraltmayı açıkça reddediyor: \"die Zahl der Anträge insgesamt gestiegen, nicht nur die der digitalen\" — artış yalnız dijitalde değil, toplamda.",
             },
             {
               kind: "mcq",
@@ -1025,7 +1025,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
                 },
               ],
               gloss: [
-                { de: "der Abbruch", tr: "yarıda bırakma", en: "drop-out" },
+                { de: "der Abbruch", tr: "yarıda bırakma", en: "dropping out" },
                 { de: "hochladen", tr: "yüklemek", en: "to upload" },
                 { de: "die Anleitung", tr: "kılavuz", en: "instructions" },
               ],
@@ -1037,7 +1037,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               id: "de-b1-10-h3-16",
               no: 16,
               ref: "v1",
-              text: "Nach Frau Ostermann erklärt das Alter den Erfolg am besten.",
+              text: "Laut Frau Ostermann erklärt das Alter den Erfolg am besten.",
               answer: false,
               explain:
                 "İlk bulgu bunu reddediyor: \"Das Alter erklärt weniger, als man denkt\" — belirleyici olan meslekte bilgisayar kullanmış olmak.",
@@ -1172,7 +1172,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               ref: "d1",
               text: "Worin sieht sie das eigentliche Problem?",
               options: [
-                "Die fehlende Frage im Voraus.",
+                "Dass vorher niemand gefragt hat.",
                 "Dass die Filiale zu klein war.",
                 "Dass die Miete zu hoch war.",
               ],
@@ -1215,7 +1215,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               id: "de-b1-10-h4-27",
               no: 27,
               ref: "d1",
-              text: "Warum ist eine bezahlte Stelle nach Herrn Krawczyk schwierig?",
+              text: "Warum ist eine bezahlte Stelle laut Herrn Krawczyk schwierig?",
               options: [
                 "Weil das Geld dafür schlicht fehlt.",
                 "Weil niemand sich bewerben würde.",

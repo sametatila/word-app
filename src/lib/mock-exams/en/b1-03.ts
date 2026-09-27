@@ -279,7 +279,7 @@ I am running again now, three mornings instead of four. The physical therapist, 
               id: "en-b1-03-l3-15",
               no: 15,
               text: "What is the writer's main point in the article?",
-              options: ["Running four mornings is better than three", "Injuries teach you nothing useful", "She was going for reasons she had not noticed", "Physiotherapists understand runners better than runners do"],
+              options: ["Running four mornings is better than three", "Injuries teach you nothing useful", "She was going for reasons she had not noticed", "Physical therapists understand runners better than runners do"],
               answer: 2,
               explain:
                 "Yazının üç sürprizi de aynı yere çıkıyor: ışık, insanlar ve kendine ait saat. Son cümle bunu söylüyor: «I now know which part of it I was actually there for». Yazı dört sabahı savunmuyor, tersine üçe indiriyor.",
@@ -292,7 +292,7 @@ I am running again now, three mornings instead of four. The physical therapist, 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -418,7 +418,7 @@ And finally, be honest with the person treating you. A physical therapist can on
               options: ["are", "does", "did", "do"],
               answer: 3,
               explain:
-                "Önceki yüklem `had` geniş bir geçmiş durum bildiriyor ama boşluk şimdiki durumu karşılaştırıyor: «and you do not» — yani şimdi o birikime sahip değilsin. `did not` cümleyi tümüyle geçmişe taşır ve karşılaştırmayı bozar; `are` ve `have` bu yüklemin yerini tutamaz.",
+                "Önceki yüklem `had` geniş bir geçmiş durum bildiriyor ama boşluk şimdiki durumu karşılaştırıyor: «and you do not» — yani şimdi o birikime sahip değilsin. `did not` cümleyi tümüyle geçmişe taşır ve karşılaştırmayı bozar; `are` bu yüklemin yerini tutamaz, `does` ise `you` öznesiyle uyuşmaz.",
             },
             {
               kind: "mcq",
@@ -691,7 +691,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               options: ["Cancel the match", "Change the number of players", "Find two more people"],
               answer: 1,
               explain:
-                "Konuşmacı karşı takımdan «whether we can play seven a side» diye izin istiyor: takım boyu değişecek. Maç iptal edilmiyor ve eksik iki oyuncuyu aramaktan söz edilmiyor.",
+                "Konuşmacı karşı takımdan «whether we can play seven a side» diye izin istiyor: takımlardaki oyuncu sayısı değişecek. Maç iptal edilmiyor ve eksik iki oyuncuyu aramaktan söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -918,7 +918,7 @@ New members run in the:  {{19}} group`,
               text: "Gap 15",
               accept: ["400", "four hundred"],
               explain:
-                "«we now have four hundred» — bugünkü üye sayısı. On bir sayısı kuruluş yılına ait; not kâğıdı `Members now` diyerek hangisini istediğini belirtiyor.",
+                "«we now have four hundred» — bugünkü üye sayısı. On bir ise kuruluştaki üye sayısı; not kâğıdı `Members now` diyerek hangisini istediğini belirtiyor.",
             },
             {
               kind: "gap",
@@ -1283,7 +1283,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",
               "Kısmi katılım ifadeleri kullanıldı mı? (I partly agree, it depends on …)",
-              "Sınır nereye konduğu söylendi mi?",
+              "Sınırın nereye konduğu söylendi mi?",
             ],
           },
         },

@@ -366,7 +366,7 @@ The definition has to include intention, and once intention is admitted the argu
 
 This is the difficulty with the reforms of the past two decades. Video review is extremely good at establishing what happened and has nothing whatever to say about why. It has therefore improved the accuracy of decisions and left the underlying question precisely where it was, while creating the impression that the question has been answered.
 
-The impression is not harmless. A sport which believes it has solved cheating stops doing the slow things that actually govern conduct: the conversation in the changing room, the referee who has known a player for six seasons, the ordinary social cost of being thought unreliable by people whose opinion matters. Those mechanisms are unimpressive, unmeasurable and cheap, and they are the ones that were quietly retired when the cameras arrived. The erosion of them appears in no report, which is a large part of why nobody objected at the time.
+The impression is not harmless. A sport which believes it has solved cheating stops doing the slow things that actually govern conduct: the conversation in the locker room, the referee who has known a player for six seasons, the ordinary social cost of being thought unreliable by people whose opinion matters. Those mechanisms are unimpressive, unmeasurable and cheap, and they are the ones that were quietly retired when the cameras arrived. The erosion of them appears in no report, which is a large part of why nobody objected at the time.
 
 None of this is an argument for removing the cameras, which would restore neither trust nor accuracy. It is an argument for being exact about what they bought. They bought correct decisions. They did not buy honest players, and the confusion between the two is now built into the way the game is discussed.`,
               gloss: [
@@ -520,7 +520,7 @@ None of this is an argument for removing the cameras, which would restore neithe
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -1327,7 +1327,7 @@ Two competitions changed their recording {{14}} in the same season.`,
           prompt:
             "You have attended a seminar on rules in sport. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A deliberate offense should be punished more heavily than a careless one, because intention is what makes an act wrong.\n2. Both should be punished identically, because intention cannot be established reliably and a rule that cannot be applied is worse than a blunt one.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Spordaki kurallar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kasıtlı ihlal, dikkatsizlikle yapılandan daha ağır cezalandırılmalı; bir eylemi kötü kılan kasıttır.\n2. İkisi de aynı cezalandırılmalı; kast güvenilir biçimde saptanamaz ve uygulanamayan bir kural, kaba bir kuraldan kötüdür.\n\n220–260 kelime yaz.",
+            "Spordaki kurallar üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kasıtlı ihlal, dikkatsizlikle yapılandan daha ağır cezalandırılmalı; bir eylemi kötü kılan kasıttır.\n2. İkisi de aynı cezalandırılmalı; kast güvenilir biçimde saptanamaz ve uygulanamayan bir kural, kaba bir kuraldan kötüdür.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1377,13 +1377,13 @@ The problem
 In each of the last three seasons, between nine and fourteen teams have withdrawn after the draw was published. The effect is not primarily competitive. It falls on the club that has already paid for a field and on the league scheduler, who redraws the round by hand.
 
 What I propose
-That any team withdrawing after the draw forfeits its entry fee, and that the fee is raised from ten to twenty-five pounds so that the forfeit is meaningful. The money should be returned to the club left without an opponent rather than retained centrally, since it is that club which carries the loss.
+That any team withdrawing after the draw forfeits its entry fee, and that the fee is raised from ten to twenty-five dollars so that the forfeit is meaningful. The money should be returned to the club left without an opponent rather than retained centrally, since it is that club which carries the loss.
 
 What I do not propose
 I do not propose a ban on re-entry the following season, which has been suggested twice. It punishes the wrong people, since teams are rebuilt every year, and it would reduce the number of entrants, which is the underlying problem rather than the presenting one.
 
 How we would know it had failed
-Two findings would tell us. First, if withdrawals fall but total entries fall by a comparable number, we will simply have priced out the teams that were least certain of fielding a side. Second, if withdrawals move from after the draw to the week before it, the behavior has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
+Two findings would tell us. First, if withdrawals fall but total entries fall by a comparable number, we will simply have priced out the teams that were least certain of fielding a team. Second, if withdrawals move from after the draw to the week before it, the behavior has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
             criteria: [
               "Sorun somut sayılarla ve kime düştüğüyle birlikte anlatıldı mı?",
               "Önerilen ve bilerek önerilmeyen ayrı ayrı verildi mi?",
@@ -1457,7 +1457,7 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
               { de: "state a serious objection to your own position", tr: "Kendi konumuna ciddi bir itiraz getir" },
             ],
             sample:
-              "Technical detection has the advantage of working on strangers, which is what modern competition consists of, and it produces a record that can be examined afterward. Its cost is rarely stated: it converts a question of trust into a question of surveillance, and a player who is no longer trusted has correspondingly less reason to be trustworthy. Informal pressure is cheap, it reaches conduct that no rule describes, and it collapses the moment the group is large enough for anonymity. I would defend the technical route, chiefly because the alternative requires a stable community and most competitions no longer have one; nostalgia is not a governance strategy. The serious objection to my own position is that detection quietly retires the mechanisms it replaces. Clubs which install cameras stop having the conversation in the changing room, and if the cameras are later withdrawn, or simply fail, nothing is left underneath them.",
+              "Technical detection has the advantage of working on strangers, which is what modern competition consists of, and it produces a record that can be examined afterward. Its cost is rarely stated: it converts a question of trust into a question of surveillance, and a player who is no longer trusted has correspondingly less reason to be trustworthy. Informal pressure is cheap, it reaches conduct that no rule describes, and it collapses the moment the group is large enough for anonymity. I would defend the technical route, chiefly because the alternative requires a stable community and most competitions no longer have one; nostalgia is not a governance strategy. The serious objection to my own position is that detection quietly retires the mechanisms it replaces. Clubs which install cameras stop having the conversation in the locker room, and if the cameras are later withdrawn, or simply fail, nothing is left underneath them.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Konum gerekçelendirildi mi?",

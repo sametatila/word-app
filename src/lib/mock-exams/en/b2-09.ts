@@ -458,14 +458,14 @@ I do not think this was designed. I think it is what you get when a document is 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
             {
               kind: "text",
               id: "t6",
-              genre: "Science feature",
+              genre: "Feature article",
               genreTr: "İnceleme yazısı",
               title: "Why the summary does not help",
               body: `Every few years a regulator decides that the answer to an unreadable document is a shorter document. {{28}}
@@ -638,7 +638,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
               situation: "Bir görevli işinin en zor yanını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The hard calls are not the ones where somebody is trying it on. Those take four minutes. The hard ones are where the person has done nothing wrong, the clause is clear, and I have to read it to them anyway." },
+                { text: "The hard calls are not the ones where somebody is trying to pull something. Those take four minutes. The hard ones are where the person has done nothing wrong, the clause is clear, and I have to read it to them anyway." },
               ],
             },
             {
@@ -693,7 +693,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
               situation: "İki meslektaş bir taslağı konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Woman", text: "Legal have sent the clause back again." },
+                { speaker: "Woman", text: "Legal has sent the clause back again." },
                 { speaker: "Man", text: "What did they change?" },
                 { speaker: "Woman", text: "They put reasonably back in. I took it out because nobody can price it, and they put it in because nobody can argue with it." },
               ],
@@ -1013,7 +1013,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               situation: "Beşinci konuşmacı kendi uygulamasını değiştirdiğini söylüyor.",
               plays: 2,
               segments: [
-                { text: "I still write policies and I always will. What I stopped doing is signing off a clause that I could not explain to my mother in one sentence. I lost a client over it, and the clause is still in their document." },
+                { text: "I still write policies and I always will. What I stopped doing is signing off on a clause that I could not explain to my mother in one sentence. I lost a client over it, and the clause is still in their document." },
               ],
             },
             {
@@ -1077,7 +1077,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               text: "Speaker 5",
               answer: "c",
               explain:
-                "Konuşmacı mesleği bırakmıyor, kabul ettiği işi daraltıyor: «What I stopped doing is signing off a clause that I could not explain to my mother in one sentence».",
+                "Konuşmacı mesleği bırakmıyor, kabul ettiği işi daraltıyor: «What I stopped doing is signing off on a clause that I could not explain to my mother in one sentence».",
             },
             {
               kind: "match",
@@ -1118,7 +1118,7 @@ The reviewers think those customers knew what to {{16}} about.`,
                 { speaker: "Host", text: "So the vagueness is not laziness." },
                 { speaker: "Halvard", text: "It is not laziness and it is not innocent either. Both things are true. The vague word survives because it is genuinely hard to replace and because it happens to suit whoever is holding the money." },
                 { speaker: "Host", text: "What would you change if it were up to you?" },
-                { speaker: "Halvard", text: "Not the wording. I would publish the decisions. Every quarter, every company puts out the last three hundred applications of the phrase reasonable care, anonymized. Then the phrase would have a meaning you could look up." },
+                { speaker: "Halvard", text: "Not the wording. I would publish the decisions. Every quarter, every company would put out the last three hundred applications of the phrase reasonable care, anonymized. Then the phrase would have a meaning you could look up." },
                 { speaker: "Host", text: "Why has that not been done?" },
                 { speaker: "Halvard", text: "Because it would be a definition, and once it is a definition you can be held to it. That is precisely the property the current arrangement is designed to avoid." },
                 { speaker: "Host", text: "Do you think the industry knows this?" },
@@ -1286,7 +1286,7 @@ Companies should carry the responsibility, but the obligation should attach to p
 
 I am writing about claim 4471/22, refused on April 3.
 
-On March 11 a pipe failed under the kitchen floor of my apartment and the water damaged the floor and two cupboards. Your letter refuses the claim under clause 9.4, which excludes damage where the escape results from a lack of maintenance.
+On March 11 a pipe failed under the kitchen floor of my apartment and the water damaged the floor and two cabinets. Your letter refuses the claim under clause 9.4, which excludes damage where the escape results from a lack of maintenance.
 
 I do not dispute that the clause exists. I dispute that it was ever communicated to me. The summary document I was sent before purchase runs to two pages and does not mention maintenance at all. I have kept it and I attach a copy.
 

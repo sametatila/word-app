@@ -70,7 +70,7 @@ Was daraus folgt, ist unbequem: Distanz ist keine Haltung, die man mitbringt, so
               gloss: [
                 { de: "die Willkür", tr: "keyfîlik", en: "arbitrariness" },
                 { de: "die Zuneigung", tr: "yakınlık duyma", en: "affection" },
-                { de: "die Supervision", tr: "meslekî danışmanlık oturumu", en: "professional supervision" },
+                { de: "die Supervision", tr: "mesleki danışmanlık oturumu", en: "professional supervision" },
                 { de: "die Erschöpfung", tr: "tükenme", en: "exhaustion" },
                 { de: "der Rückzug", tr: "geri çekilme", en: "withdrawal" },
               ],
@@ -280,7 +280,7 @@ Meine Kollegin ist inzwischen in Rente. Sie hat mir zum Abschied gesagt, sie hab
               ref: "t2",
               text: "Warum nennt sie das Sitzen eine große Entscheidung?",
               options: [
-                "Weil ihre Kollegin es ihr abgeraten hatte.",
+                "Weil ihre Kollegin ihr davon abgeraten hatte.",
                 "Weil dabei Zeit verbraucht wird.",
                 "Weil die Station es als Nachlässigkeit wertet.",
                 "Weil es der Regel aus der Ausbildung widerspricht.",
@@ -818,7 +818,7 @@ Rückmeldungen zum Termin bis {{10}}.`,
               ref: "d1",
               text: "Wie reagiert Frau Buschmann auf diesen Vorschlag?",
               options: [
-                "Sie hält ihn für theoretisch folgenlos.",
+                "Sie hält ihn für praktisch folgenlos.",
                 "Sie hält ihn für sprachlich unpräzise.",
                 "Sie hält ihn für sofort umsetzbar.",
               ],
@@ -996,7 +996,7 @@ Rückmeldungen zum Termin bis {{10}}.`,
           prompt:
             "In einer Fachzeitschrift stand: \"Professionelle Distanz ist in den meisten Fällen nur ein anderes Wort für Gleichgültigkeit.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir meslek dergisinde şöyle yazdı: \"Mesleki mesafe çoğu durumda kayıtsızlığın başka bir adıdır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir meslek dergisinde şöyle yazıyordu: \"Mesleki mesafe çoğu durumda kayıtsızlığın başka bir adıdır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,

@@ -92,7 +92,7 @@ Whether any of this could have been prevented is an open question. Several citie
               options: ["put", "taken", "given", "set"],
               answer: 1,
               explain:
-                "`take something into the calculation` hesaba katmak anlamındadır ve `take … into account` kalıbının aynı ailesindendir. `put into`, `bring into` ve `set into` bu adla bu anlamı vermez.",
+                "`take something into the calculation` hesaba katmak anlamındadır ve `take … into account` kalıbının aynı ailesindendir. `put`, `give` ve `set` bu adla `into` ile bu anlamı vermez.",
             },
             {
               kind: "mcq",
@@ -156,7 +156,7 @@ It is worth adding that none of this is {{12}} any means a new observation; engi
               id: "en-c1-03-l2-8",
               no: 8,
               text: "Gap 8",
-              accept: ["however", "though"],
+              accept: ["however", "though", "although", "while"],
               explain:
                 "`however generous` bir ödün öbeği kurar: ne kadar cömert olursa olsun. `however` sıfatın önüne geçer; `although` da aynı kısaltılmış ödün öbeğini kurar (`although generous`) ve `though` gibi kabul edilir.",
             },
@@ -278,7 +278,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               id: "en-c1-03-l3-18",
               no: 18,
               text: "JUDGE",
-              accept: ["judgments"],
+              accept: ["judgments", "judgements"],
               explain:
                 "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different bodies`), dolayısıyla ad da çoğul. Britanya ve Amerika yazımı (`judgements` / `judgments`) ikisi de kabul edilir.",
             },
@@ -300,7 +300,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               no: 19,
               text: "Nobody realized how bad the roof was until the ceiling fell.\nNot until the ceiling fell ______ how bad the roof was.",
               cue: "ANYONE",
-              accept: ["did anyone realize"],
+              accept: ["did anyone realize", "did anyone realise"],
               explain:
                 "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did anyone realize». Anahtar sözcük `anyone` devrik yapının öznesi ve önüne `did` gerekiyor; İngiliz ve Amerikan yazımı ikisi de kabul edilir.",
             },
@@ -490,7 +490,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -880,7 +880,7 @@ The council has eleven inspectors and needs {{14}}.`,
               no: 11,
               ref: "b1",
               text: "Gap 11",
-              accept: ["a quarter", "one quarter", "25 percent"],
+              accept: ["a quarter", "one quarter", "25 percent", "25%"],
               explain:
                 "«About a quarter of the sum is urgent within two years» — acil pay. Geri kalanın on yıla yayılabildiği hemen ardından söyleniyor; oran ile toplamı karıştıran öğrenci yüz doksanı yazar.",
             },
@@ -1255,7 +1255,7 @@ The council has eleven inspectors and needs {{14}}.`,
           prompt:
             "You have attended a seminar on public spending. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. New projects attract funding because they are visible and can be opened.\n2. Maintenance is cheaper over time but produces nothing that can be shown.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Kamu harcamaları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yeni projeler görünür oldukları ve açılışı yapılabildiği için fon çeker.\n2. Bakım uzun vadede daha ucuzdur ama gösterilecek bir şey üretmez.\n\n220–260 kelime yaz.",
+            "Kamu harcamaları üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yeni projeler görünür oldukları ve açılışı yapılabildiği için fon çeker.\n2. Bakım uzun vadede daha ucuzdur ama gösterilecek bir şey üretmez.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1276,7 +1276,7 @@ My own view is that the framing invites a false choice. The interesting question
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu?",
+              "Kendi görüşün özetten ayrılıyor mu?",
               "Karşı görüşün en güçlü hâli mi kuruldu, yoksa zayıflatıldı mı?",
               "Çekimserlik ve ince ayrım ifadeleri C1 düzeyinde mi? (though for a narrower reason, on this account)",
               "220–260 kelime aralığında mı?",
@@ -1336,7 +1336,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about cities, public services and how decisions about them are made.",
+          prompt: "I will ask you some questions about cities, public services and how decisions about them are made.",
           promptTr: "Sana şehirler, kamu hizmetleri ve bunlara dair kararların nasıl alındığı hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
@@ -1406,7 +1406,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
             "Bir belediye bir yıllık bakım ödeneğini nasıl harcayacağına karar verecek. Seçenekleri benimle konuş, ikisini savun ve benimle bir öncelik sırası belirle.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: repairing the retaining walls, replacing street lighting, refurbishing two community halls, surveying the whole building stock properly, and clearing the backlog of small repairs. Which two would you defend, and on what criterion?", tr: "Seçenekler: istinat duvarlarını onarmak, sokak aydınlatmasını yenilemek, iki toplum salonunu elden geçirmek, tüm varlıkları düzgün biçimde tespit etmek ve küçük onarım birikimini eritmek. Hangi ikisini savunursun, hangi ölçütle?" },
+            { who: "partner", de: "The options are: repairing the retaining walls, replacing street lighting, refurbishing two community halls, surveying the whole building stock properly, and clearing the backlog of small repairs. Which two would you defend, and on what criterion?", tr: "Seçenekler: istinat duvarlarını onarmak, sokak aydınlatmasını yenilemek, iki toplum salonunu elden geçirmek, tüm bina stokunun durumunu düzgün biçimde tespit etmek ve küçük onarım birikimini eritmek. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you. A survey repairs nothing at all, and a one-year grant spent on paperwork is exactly what the public complains about. Is that not the worst possible use of the money?", tr: "Üsteleyeyim. Tespit çalışması hiçbir şeyi onarmıyor ve bir yıllık ödeneği evrak işine harcamak halkın tam da şikâyet ettiği şey. Bu paranın olabilecek en kötü kullanımı değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },

@@ -441,7 +441,7 @@ Ob sich das rechnet, hängt davon ab, was gerechnet wird. Pro Vorgang ist der Sc
               options: ["zumal", "sondern", "wohingegen", "geschweige denn"],
               answer: 1,
               explain:
-                "Önce olumsuzlanan bir varsayım var (\"nicht vorrangig ältere Menschen\"), sonra düzeltme geliyor. Bu yapı `nicht … sondern` ister; `vielmehr` tek başına bağlaç işlevi görmez.",
+                "Önce olumsuzlanan bir varsayım var (\"nicht vorrangig ältere Menschen\"), sonra düzeltme geliyor. Bu yapı `nicht … sondern` ister; `zumal` gerekçe ekler, `wohingegen` iki durumu karşılaştırır, `geschweige denn` olumsuzu daha da ileri taşır.",
             },
             {
               kind: "mcq",
@@ -988,7 +988,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               { de: "Wägen Sie Nutzen und Grenzen von Kontrolle ab.", tr: "Denetimin faydasını ve sınırlarını tart." },
               { de: "Formulieren Sie eine begründete Schlussfolgerung.", tr: "Gerekçeli bir sonuç yaz." },
             ],
-            sample: `Wer heute vom Vertrauensverlust spricht, meint meist ein Gefühl und beschreibt damit eine Struktur. Denn Vertrauen ist keine Stimmung, sondern die Erwartung, dass Zusagen auch ohne Aufsicht eingehalten werden — und genau diese Erwartung wird gegenwärtig ungleich verteilt.
+            sample: `Wer heute vom Vertrauensverlust spricht, meint meist ein Gefühl, beschreibt aber eine Struktur. Denn Vertrauen ist keine Stimmung, sondern die Erwartung, dass Zusagen auch ohne Aufsicht eingehalten werden — und genau diese Erwartung wird gegenwärtig ungleich verteilt.
 
 Zwei Ursachen lassen sich anführen. Zum einen ist die Zahl der Institutionen gewachsen, mit denen Menschen zu tun haben, ohne ihnen je persönlich zu begegnen; an die Stelle eigener Erfahrung tritt Berichterstattung, die notwendigerweise vom Ausnahmefall lebt. Zum anderen wird Verantwortung in arbeitsteiligen Verfahren so verteilt, dass am Ende niemand mehr erkennbar zuständig ist.
 
@@ -1123,7 +1123,7 @@ Bianca Hoffmann`,
               text: "Lücke 9 (höfliche Erwartung am Satzende)",
               accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "freue ich mich", "wäre ich dankbar"],
               explain:
-                "Cümle `Über eine Antwort …` ile başladığı için yüklem sona gelir ve özne devrilir. Süre isteği böylece baskı değil rica olarak okunur.",
+                "Cümle `Über eine Antwort …` ile başladığı için çekimli fiil ikinci sıraya, özne fiilden sonraya geçer. Süre isteği böylece baskı değil rica olarak okunur.",
             },
             {
               kind: "gap",

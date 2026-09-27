@@ -19,7 +19,7 @@
  { "tr": "Özetten ayrı olarak kendi görüşünü ver.", "kind": "rubric.points.tr", "en": "Äußere neben der Zusammenfassung deine eigene Meinung." },
  { "tr": "Seçtiğin yolun bir olumsuz yanını da söyle", "kind": "rubric.points.tr", "en": "Nenne auch einen Nachteil des von dir gewählten Wegs" },
  { "tr": "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir.", "kind": "rubric.points.tr", "en": "Sag, welcher wichtiger ist, und begründe die Wahl." },
- { "tr": "Kendi seçiminde bir sorunu adlandır", "kind": "rubric.points.tr", "en": "Benenne ein Problem deiner eigenen Wahl" },
+ { "tr": "Kendi seçiminde bir sorunu adlandır", "kind": "rubric.points.tr", "en": "Benenne ein Problem bei deiner eigenen Wahl" },
  { "tr": "Bir itiraza doğrudan karşılık vermek", "kind": "rubric.points.tr", "en": "Direkt auf einen Einwand antworten" },
  { "tr": "Seçenekleri birbirine karşı değerlendirmek", "kind": "rubric.points.tr", "en": "Die Optionen gegeneinander abwägen" },
  { "tr": "Hangisini tercih ettiğini ve nedenini söyle", "kind": "rubric.points.tr", "en": "Sag, was du vorziehst und warum" },
@@ -29,7 +29,6 @@
  { "tr": "Bir yol öner; neyi yapmayacağını da söyle.", "kind": "rubric.points.tr", "en": "Schlage einen Weg vor; sag auch, was du nicht tun würdest." },
  { "tr": "Gerekçeli, geliştirilmiş cevaplar vermek", "kind": "rubric.points.tr", "en": "Begründete, ausgebaute Antworten geben" },
  { "tr": "Neyi iyi yaptığını bir örnekle söyle.", "kind": "rubric.points.tr", "en": "Sag mit einem Beispiel, was es gut macht." },
- { "tr": "Ne yaptığını söyle.", "kind": "rubric.points.tr", "en": "Sag, was du machst." },
  { "tr": "Ne kadara mal olduğu", "kind": "rubric.points.tr", "en": "Was es kostet" },
  { "tr": "Güçlü bir itirazı karşılamak", "kind": "rubric.points.tr", "en": "Einen starken Einwand entkräften" },
  { "tr": "Bir seçim yap ve gerekçelendir", "kind": "rubric.points.tr", "en": "Triff eine Wahl und begründe sie" },
@@ -39,7 +38,7 @@
  { "tr": "İki savunmayı da adil biçimde kur", "kind": "rubric.points.tr", "en": "Lege beide Positionen fair dar" },
  { "tr": "Gerekçeli bir öncelik sırası kurmak", "kind": "rubric.points.tr", "en": "Eine begründete Rangfolge aufstellen" },
  { "tr": "Bir ölçüt önermek ve gerekçelendirmek", "kind": "rubric.points.tr", "en": "Ein Kriterium vorschlagen und es begründen" },
- { "tr": "Kendi konumuna ciddi bir itiraz getir", "kind": "rubric.points.tr", "en": "Bring einen ernsten Einwand gegen deine eigene Position" },
+ { "tr": "Kendi konumuna ciddi bir itiraz getir", "kind": "rubric.points.tr", "en": "Nenne einen ernsten Einwand gegen deine eigene Position" },
  { "tr": "Bir konum alırken bir şeyi kabul etmek", "kind": "rubric.points.tr", "en": "Beim Positionbeziehen etwas einräumen" },
  { "tr": "Bir öneriye gerekçeyle karşılık vermek", "kind": "rubric.points.tr", "en": "Auf einen Vorschlag mit Begründung antworten" },
  { "tr": "Zaman içindeki bir değişikliği anlatmak", "kind": "rubric.points.tr", "en": "Eine Veränderung im Lauf der Zeit schildern" },
@@ -134,7 +133,7 @@
  { "tr": "Neden koyduğunu söyle.", "kind": "rubric.points.tr", "en": "Sag, warum du sie dir gesetzt hast." },
  { "tr": "Neden sevdiğini söyle.", "kind": "rubric.points.tr", "en": "Sag, warum du ihn magst." },
  { "tr": "Neden yaptığını söyle.", "kind": "rubric.points.tr", "en": "Sag, warum du es machst." },
- { "tr": "Seçimin bedelini söyle", "kind": "rubric.points.tr", "en": "Nenne den Preis deiner Wahl" },
+ { "tr": "Seçimin bedelini söyle", "kind": "rubric.points.tr", "en": "Nenne, was deine Wahl kostet" },
  { "tr": "Yakınındaki bir dükkân", "kind": "rubric.points.tr", "en": "Ein Laden in deiner Nähe" },
  { "tr": "Bir boş zaman etkinliği", "kind": "rubric.points.tr", "en": "Eine Freizeitaktivität" },
  { "tr": "Bir ilaç ve bir arkadaş", "kind": "rubric.points.tr", "en": "Ein Medikament und ein Freund" },
@@ -150,5 +149,6 @@
  { "tr": "Ne işe yaradığını söyle.", "kind": "rubric.points.tr", "en": "Sag, was es leistet." },
  { "tr": "Yaşadığın sorunu söyle.", "kind": "rubric.points.tr", "en": "Sag, was das Problem war." },
  { "tr": "Soracağın soruyu söyle.", "kind": "rubric.points.tr", "en": "Sag, was die Frage ist." },
- { "tr": "Sorunla ilgili ne yaptığını söyle.", "kind": "rubric.points.tr", "en": "Sag, was du gemacht hast." }
+ { "tr": "Sorunla ilgili ne yaptığını söyle.", "kind": "rubric.points.tr", "en": "Sag, was du wegen des Problems gemacht hast." },
+ { "tr": "Ne yaptığını söyle.", "kind": "rubric.points.tr", "en": "Sag, was du machst." }
 ]

@@ -160,7 +160,7 @@ Montag bis Samstag 9.30–20.00 Uhr · Sonntag geschlossen
 KUNDENSERVICE
 Umtausch nur mit Kassenbon, im Erdgeschoss`,
               gloss: [
-                { de: "der Geldautomat", tr: "bankamatik", en: "cash machine" },
+                { de: "der Geldautomat", tr: "bankamatik", en: "ATM" },
                 { de: "der Umtausch", tr: "değişim, iade", en: "exchange" },
                 { de: "der Kassenbon", tr: "kasa fişi", en: "receipt" },
               ],
@@ -175,7 +175,7 @@ Umtausch nur mit Kassenbon, im Erdgeschoss`,
               options: ["Nur der Supermarkt hat geöffnet.", "Das Zentrum ist geschlossen.", "Das Zentrum öffnet um 9.30 Uhr."],
               answer: 1,
               explain:
-                "Çalışma saatleri pazartesi-cumartesi için; ardından \"Sonntag geschlossen\" yazıyor. 9.30 hafta içi açılış saati.",
+                "Çalışma saatleri pazartesi-cumartesi için; ardından \"Sonntag geschlossen\" yazıyor. 9.30 öteki günlerin açılış saati.",
             },
             {
               kind: "mcq",
@@ -301,7 +301,7 @@ Selin`,
               options: ["Wann er kommt.", "Ob er mit dem Rad zur Arbeit fährt.", "Wie das Wetter bei ihm ist."],
               answer: 1,
               explain:
-                "Mektubun tek sorusu bu: \"Bist du damit schon zur Arbeit gefahren?\" Hava durumu Selin'in kendi haberi.",
+                "E-postanın tek sorusu bu: \"Bist du damit schon zur Arbeit gefahren?\" Hava durumu Selin'in kendi haberi.",
             },
           ],
         },
@@ -846,7 +846,7 @@ Selin`,
               text: "Seine Tochter fliegt weiterhin.",
               answer: true,
               explain:
-                "\"Meine Tochter fliegt weiter\" — kızı uçmayı sürdürüyor ve buna karışmıyor.",
+                "\"Meine Tochter fliegt weiter\" — kızı uçmayı sürdürüyor; Herr Feld buna karışmıyor.",
             },
             {
               kind: "bool",
@@ -878,7 +878,7 @@ Selin`,
           prompt:
             "Sie sind von einer Reise zurückgekommen. Schreiben Sie Ihrem Freund Jonas eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Bir yolculuktan döndün. Arkadaşın Jonas'a bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Bir yolculuktan döndün. Arkadaşın Jonas'a bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,

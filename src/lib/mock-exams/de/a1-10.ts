@@ -690,7 +690,7 @@ Reduzierte Ware können wir nicht zurücknehmen.`,
               no: 14,
               ref: "m4",
               text: "Warum geht die Reparatur nicht?",
-              options: ["Die Sohle trägt nicht mehr.", "Die Stiefel sind viel zu alt.", "Es fehlt das richtige Material."],
+              options: ["Die Sohle hält nicht mehr.", "Die Stiefel sind viel zu alt.", "Es fehlt das richtige Material."],
               answer: 0,
               explain:
                 "Gerekçe kaydın sonunda: \"Die Sohle ist zu dünn\" — yani taban tamir tutmayacak kadar incelmiş. Botların yaşı ya da malzeme eksikliği hiç geçmiyor.",

@@ -163,7 +163,7 @@ export const EN_A2_02: MockPaper = {
               text: "Ravi finishes work at half past ten and often has nothing to eat at home.",
               answer: "h",
               explain:
-                "İlan «Open until midnight every day» diyor; Ravi'nin işi 22:30'da bitiyor, yani yetişiyor. Pazar günleri de açık. Green Market yalnız cumartesi sabahı, ona uymaz.",
+                "İlan «Open until midnight every day» diyor; Ravi'nin işi 22.30'da bitiyor, yani yetişiyor. Pazar günleri de açık. Green Market yalnız cumartesi sabahı, ona uymaz.",
             },
             {
               kind: "match",
@@ -310,7 +310,7 @@ And finally: {{19}} you have a long wait, take a book. Your phone battery will n
               options: ["arrive", "arriving", "arrived"],
               answer: 0,
               explain:
-                "Kalıp `it is a good idea to + yalın fiil`. `to` mastar ekidir ve arkasından yalın biçim gelir. `arriving` ile `arrived` bu yapıda kullanılmaz.",
+                "Kalıp `it is a good idea to + yalın fiil`. `to` mastar işaretidir ve arkasından yalın biçim gelir. `arriving` ile `arrived` bu yapıda kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -320,7 +320,7 @@ And finally: {{19}} you have a long wait, take a book. Your phone battery will n
               options: ["does", "should", "must"],
               answer: 2,
               explain:
-                "Cümle bir kuralı bildiriyor ve olumsuzu zorunluluğun yasaklanması: bir litreyi geçemez. `must not` bu kesin yasağı verir. `can not` yalnız imkânsızlığı, `should not` ise tavsiyeyi bildirir; havaalanı kuralı tavsiye değildir.",
+                "Cümle bir kural bildiriyor: toplam miktar bir litreyi geçemez. `must not` bu kesin yasağı verir. `does not be` kurulamaz, çünkü `be` fiili olumsuzda `do` yardımcısını almaz; `should not` ise tavsiyeyi bildirir ve havaalanı kuralı tavsiye değildir.",
             },
             {
               kind: "mcq",
@@ -665,8 +665,8 @@ Bring:                  a warm {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five short recordings. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -877,7 +877,7 @@ Bring:                  a warm {{10}}`,
               text: "Speaker 2",
               answer: "f",
               explain:
-                "İnternette turuncu görünen halı kutudan neredeyse kahverengi çıkıyor. Konuşmacı bedenin doğru olduğunu ayrıca söylüyor («The size was right»), yani sorun beden değil renk.",
+                "İnternette turuncu görünen halı kutudan neredeyse kahverengi çıkıyor. Konuşmacı ölçünün doğru olduğunu ayrıca söylüyor («The size was right»), yani sorun ölçü değil renk.",
             },
             {
               kind: "match",
@@ -1068,7 +1068,7 @@ Elif`,
             "Yurt dışından gelen bir arkadaşının senin şehrinde bir boş günü var. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: a boat trip on the river, a day in the old town with a guide, or a visit to the big market and a cooking evening. What do you think about the boat trip?", tr: "Üç fikir var: nehirde tekne turu, rehberli bir eski şehir günü, ya da büyük pazara gidip akşam yemek yapmak. Tekne turu hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: a boat trip on the river, a day in the old town with a guide, or a visit to the big market and a cooking evening. What do you think about the boat trip?", tr: "Üç fikir var: nehirde tekne turu, rehberli bir eski şehir günü ya da büyük pazara gidip akşam yemek yapmak. Tekne turu hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Tekne turu hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see your point. But the boat is expensive and it only runs in the afternoon. Is the market a better idea?", tr: "Anlıyorum. Ama tekne pahalı ve yalnız öğleden sonra çalışıyor. Pazar daha mı iyi bir fikir?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },
@@ -1084,7 +1084,7 @@ Elif`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think the boat trip is nice because you see the whole city from the water. You are right about the price, that is a problem. The market is cheaper and my friend likes cooking. So let us choose the market and the cooking evening.",
+              "I think the boat trip is nice because you see the whole city from the water. You are right about the price, that is a problem. The market is cheaper and my friend likes cooking. So let's choose the market and the cooking evening.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

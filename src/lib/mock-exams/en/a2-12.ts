@@ -55,7 +55,7 @@ export const EN_A2_12: MockPaper = {
               id: "m2",
               genre: "Notice at the school door",
               genreTr: "Okul kapısındaki duyuru",
-              title: "PARENTS' EVENING",
+              title: "PARENT-TEACHER CONFERENCE",
               body: `Tuesday, 18:00 to 20:00.
 
 Ten minutes with each teacher.
@@ -385,7 +385,7 @@ And one more thing: {{19}} a letter comes, write the date on it at once. In June
               title: "Three children, one school",
               body: `Our school was built {{20}} 1968 and the hall is still the same.
 
-We have lived in this street {{21}} nine years.
+We have lived on this street {{21}} nine years.
 
 The new letters are shorter {{22}} the old ones.
 
@@ -610,7 +610,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               id: "n1",
               genre: "Notes",
               genreTr: "Not kâğıdı",
-              title: "Parents' evening — notes",
+              title: "Parent-teacher conference — notes",
               body: `Date:                    Wednesday the {{6}}
 It starts at:            {{7}}
 Minutes with each teacher: {{8}}
@@ -953,11 +953,11 @@ If you cannot come, call: {{10}}`,
 
 Veli was not at school on Monday, March 4 and Tuesday, March 5.
 
-He had a temperature on Sunday evening and the doctor said he must stay at home for two days.
+He had a fever on Sunday evening and the doctor said he must stay at home for two days.
 
 He is better now. I will ask Rina's mother for the homework this evening, and he will bring it on Thursday.
 
-Yours,
+Sincerely,
 Petra Roth`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
@@ -1010,7 +1010,7 @@ Petra Roth`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about school, letters and dates. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about school, letters and dates. Answer in full sentences.",
           promptTr: "Sana okul, mektuplar ve tarihler hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [

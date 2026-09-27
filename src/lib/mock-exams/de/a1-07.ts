@@ -54,7 +54,7 @@ dein Paket ist heute gekommen. Ich habe es für dich angenommen.
 
 Ich bin bis 19 Uhr zu Hause. Danach fahre ich zu meiner Schwester.
 
-Klingel bitte bei Gerber, zweiter Stock.
+Klingle bitte bei Gerber, zweiter Stock.
 
 Morgen früh geht es nicht. Da muss ich um sieben zur Arbeit.
 
@@ -115,7 +115,7 @@ Ihr Team vom Markt am Ring`,
               text: "Lina wohnt im zweiten Stock.",
               answer: true,
               explain:
-                "\"Klingel bitte bei Gerber, zweiter Stock\" — Lina'nın soyadı Gerber ve zili ikinci katta.",
+                "\"Klingle bitte bei Gerber, zweiter Stock\" — Lina'nın soyadı Gerber ve zili ikinci katta.",
             },
             {
               kind: "bool",
@@ -186,7 +186,7 @@ Ihr Team vom Markt am Ring`,
               ],
               answer: 0,
               explain:
-                "Pantolon değiştirilecek. (a) `Umtausch in vierzehn Tagen` diyor. (b) aynı pantolonla ilgilenir ama onu değiştirmez, sadece dikişini düzeltir.",
+                "Pantolon değiştirilecek. (a) `Umtausch in vierzehn Tagen` diyor. (b) aynı pantolonla ilgilenir ama onu değiştirmez, yalnız tadilat yapar (boyunu kısaltır).",
             },
             {
               kind: "mcq",
@@ -199,7 +199,7 @@ Ihr Team vom Markt am Ring`,
               ],
               answer: 1,
               explain:
-                "Saat 19.00 olduğu için tek ölçüt kapanış saati. (b) `täglich bis 21 Uhr` açık. (a) `18.30 Uhr`'de kapanmış oluyor, yarım saat geç kalınmış.",
+                "Saat 19.00 olduğu için tek ölçüt kapanış saati. (b) `täglich bis 21 Uhr` açık. (a) 18.30'da kapanıyor; saat 19.00'da kapalı.",
             },
             {
               kind: "mcq",
@@ -427,7 +427,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               id: "de-a1-07-h1-3",
               no: 3,
               ref: "a3",
-              text: "Welche Jacke nimmt die Kundin?",
+              text: "Welche Jacke probiert die Kundin?",
               options: ["Die blaue.", "Die grüne.", "Gar keine."],
               answer: 1,
               explain:
@@ -656,7 +656,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               options: ["Noch heute.", "Ab morgen.", "Erst nächste Woche."],
               answer: 1,
               explain:
-                "Mesaj iki bilgi veriyor ve yalnız biri gün söylüyor: \"Sie können sie ab morgen abholen\". On sekiz saat bilgisi kapanışa ait.",
+                "Mesaj iki bilgi veriyor ve yalnız biri gün söylüyor: \"Sie können sie ab morgen abholen\". Saat on sekiz bilgisi kapanışa ait.",
             },
             {
               kind: "mcq",
@@ -700,7 +700,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               options: ["Am Dienstag.", "Am Mittwoch.", "Am Donnerstag."],
               answer: 2,
               explain:
-                "Gün mesajda açıkça söyleniyor: \"Ihr Einkauf kommt am Donnerstag zwischen neun und elf\". Dokuz ve on bir saat, gün değil.",
+                "Gün mesajda açıkça söyleniyor: \"Ihr Einkauf kommt am Donnerstag zwischen neun und elf\". Dokuz ile on bir saati bildiriyor, günü değil.",
             },
           ],
         },

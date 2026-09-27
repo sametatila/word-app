@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * B1 · Deneme 9 — "Sharing an Apartment and What Nobody Agreed".
+ * B1 · Deneme 9 — "Sharing an Apartment and What Nobody Agreed On".
  *
  * B1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Paylaşılan ev B1 için
  * elverişli: rica, ret, koşul, şikâyet ve uzlaşma dili aynı malzemede
@@ -20,7 +20,7 @@ export const EN_B1_09: MockPaper = {
   course: "en",
   level: "B1",
   no: 9,
-  theme: "Sharing an Apartment and What Nobody Agreed",
+  theme: "Sharing an Apartment and What Nobody Agreed On",
   themeTr: "Ev paylaşmak ve kimsenin anlaşmadığı kurallar",
   minutes: 155,
   parts: [
@@ -156,7 +156,7 @@ export const EN_B1_09: MockPaper = {
             { key: "d", label: "Talking It Through", body: "Two evenings with somebody from outside the household. For bills, cleaning and noise. Twenty euros for the whole household." },
             { key: "e", label: "Building Breakfast", body: "First Saturday of the month in the courtyard. Bring something to eat. Everybody in the building is welcome, including new arrivals." },
             { key: "f", label: "Deposit Loans", body: "We lend you the deposit and you pay it back over ten months. Interest applies and we ask for proof of income." },
-            { key: "g", label: "Removals", body: "A van and two people for four hours, ninety euros. Stairs cost extra above the third floor." },
+            { key: "g", label: "Movers", body: "A van and two people for four hours, ninety euros. Stairs cost extra above the third floor." },
             { key: "h", label: "Cleaning Company", body: "Weekly or every two weeks. Shared apartments a specialty. One price for the whole apartment, not per room." },
           ],
           items: [
@@ -323,7 +323,7 @@ The last part is the one households resist. He asks them to write the rules down
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -636,7 +636,7 @@ If I could give the two people arriving next month one piece of advice, it would
                 { speaker: "Emma", text: "Four of you and one bathroom?" },
                 { speaker: "Sam", text: "It works." },
                 { speaker: "Emma", text: "How?" },
-                { speaker: "Sam", text: "Nobody planned it. Sora gets up at six because of her shift, I am at seven, and the other two are students. If Sora changed jobs, the whole thing would fall over." },
+                { speaker: "Sam", text: "Nobody planned it. Sora gets up at six because of her shift, I am at seven, and the other two are students. If Sora changed jobs, the whole thing would fall apart." },
               ],
             },
             {
@@ -647,7 +647,7 @@ If I could give the two people arriving next month one piece of advice, it would
               situation: "Bir konuşmacı yaygın bir öğüdü ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The advice you always hear is: choose your roommates carefully. It is good advice and it is useless, because most people take the room that is free in the week they need it. What can actually be chosen is what you agree in the first month." },
+                { text: "The advice you always hear is: choose your roommates carefully. It is good advice and it is useless, because most people take the room that is free in the week they need it. What can actually be chosen is what you agree on in the first month." },
               ],
             },
             {
@@ -762,7 +762,7 @@ If I could give the two people arriving next month one piece of advice, it would
                 { speaker: "Kai", text: "And?" },
                 { speaker: "Iris", text: "Nothing happened for a week. Then I said the same sentence out loud at breakfast and it was done by lunchtime. The same words." },
                 { speaker: "Kai", text: "So write nothing?" },
-                { speaker: "Iris", text: "So say it to a face." },
+                { speaker: "Iris", text: "So say it face to face." },
               ],
             },
             {
@@ -775,7 +775,7 @@ If I could give the two people arriving next month one piece of advice, it would
               segments: [
                 { speaker: "Vera", text: "He offered to do all the cleaning if he pays less rent." },
                 { speaker: "Dan", text: "I would take that." },
-                { speaker: "Vera", text: "He offered the same thing in the school apartment last year. Six weeks, then nothing, and by then the rent was already lower." },
+                { speaker: "Vera", text: "He offered the same thing in his old apartment last year. Six weeks, then nothing, and by then the rent was already lower." },
                 { speaker: "Dan", text: "All right. That is fair." },
               ],
             },
@@ -826,7 +826,7 @@ If I could give the two people arriving next month one piece of advice, it would
               plays: 2,
               segments: [
                 { speaker: "Ben", text: "I have lived here longest, so I get the big room." },
-                { speaker: "Lisa", text: "Nobody agreed that." },
+                { speaker: "Lisa", text: "Nobody agreed to that." },
                 { speaker: "Ben", text: "It is how it works everywhere." },
                 { speaker: "Lisa", text: "It is how it worked in your last apartment. That is not the same thing as a rule." },
               ],
@@ -842,14 +842,14 @@ If I could give the two people arriving next month one piece of advice, it would
               options: ["Saying it in person works better", "Notes on the fridge should be longer", "The fridge is the wrong place for a note"],
               answer: 0,
               explain:
-                "Konuşmacı iki denemeyi karşılaştırıyor: yazı bir hafta işe yaramıyor, «The same words» sözlü söylenince öğlene kadar yapılıyor. Sonuç: «So say it to a face».",
+                "Konuşmacı iki denemeyi karşılaştırıyor: yazı bir hafta işe yaramıyor, «The same words» sözlü söylenince öğlene kadar yapılıyor. Sonuç: «So say it face to face».",
             },
             {
               kind: "mcq",
               id: "en-b1-09-h2-9",
               no: 9,
               ref: "b2",
-              text: "What do they agree in the end?",
+              text: "What do they agree on in the end?",
               options: ["The offer is generous", "The offer has failed before", "The rent should not change at all"],
               answer: 1,
               explain:
@@ -1075,7 +1075,7 @@ The quietest hour starts at: {{19}}`,
               id: "en-b1-09-h4-23",
               no: 23,
               ref: "d1",
-              text: "What does she say the agreement cannot do?",
+              text: "What does she say the agreement is no use for?",
               options: ["Settling arguments about noise at night", "Dividing the bills fairly between people", "Helping somebody who says nothing"],
               answer: 2,
               explain:
@@ -1207,7 +1207,7 @@ I did not ask it in my last apartment. In November one of us moved out and the b
             { who: "you", hint: "Durumu anlat ve bir örnek ver.", expect: "bir durumu betimlemek ve somut bir örnekle desteklemek", seconds: 40 },
             { who: "partner", de: "Thank you. Has there ever been an argument in a place where you lived? What was it really about?", tr: "Teşekkürler. Yaşadığın bir yerde hiç tartışma çıktı mı? Aslında neyle ilgiliydi?" },
             { who: "you", hint: "Geçmiş zamanla bir olay anlat ve gerçek sebebi söyle.", expect: "geçmişte olmuş bir olayı anlatmak ve nedenini çözümlemek", seconds: 40 },
-            { who: "partner", de: "And if you shared an apartment with three strangers, what would you agree in the first week?", tr: "Üç yabancıyla bir ev paylaşsan, ilk hafta neyi konuşup karara bağlardın?" },
+            { who: "partner", de: "And if you shared an apartment with three strangers, what would you agree on in the first week?", tr: "Üç yabancıyla bir ev paylaşsan, ilk hafta neyi konuşup karara bağlardın?" },
             { who: "you", hint: "Koşul kipiyle cevapla ve gerekçelendir.", expect: "ikinci tip koşul cümlesiyle bir varsayım kurmak", seconds: 40 },
           ],
           items: [],
@@ -1219,7 +1219,7 @@ I did not ask it in my last apartment. In November one of us moved out and the b
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I live with two other people and one of them I did not know before. It works because we eat at different times, which is luck rather than planning. Last year we argued for a month about the bathroom, and it was not really about the bathroom; it was that one person had never been asked and the rest of us had. If I shared an apartment with three strangers, I would agree the money in the first week, because money is the only thing you can write down honestly before you like each other.",
+              "I live with two other people and one of them I did not know before. It works because we eat at different times, which is luck rather than planning. Last year we argued for a month about the bathroom, and it was not really about the bathroom; it was that one person had never been asked and the rest of us had. If I shared an apartment with three strangers, I would agree on the money in the first week, because money is the only thing you can write down honestly before you like each other.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Olayın arkasındaki neden çözümlendi mi, yoksa yalnız anlatıldı mı?",

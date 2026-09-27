@@ -47,7 +47,7 @@ export const B2_01: MockPaper = {
       instruction:
         "In diesem Teil gibt es fünf Aufgaben. Sie lesen Erfahrungsberichte, einen Sachtext, einen Kommentar, Leserstimmen und eine Betriebsvereinbarung. Die Reihenfolge ist frei.",
       instructionTr:
-        "Bu bölümde beş görev var: kişisel anlatılar, bir bilgi metni, bir yorum yazısı, okur görüşleri ve bir işyeri sözleşmesi okuyacaksın. İstediğin görevle başlayabilirsin.",
+        "Bu bölümde beş görev var: kişisel anlatılar, bir bilgi metni, bir yorum yazısı, okur görüşleri ve bir iş yeri sözleşmesi okuyacaksın. İstediğin görevle başlayabilirsin.",
       tasks: [
         {
           id: "de-b2-01-l1",
@@ -88,7 +88,7 @@ Wenn ich frage, wo sie etwas gelesen haben, folgt meistens ein Achselzucken. Nic
 Ich beginne deshalb seit einiger Zeit jede Stunde mit fünf Minuten Herkunftsprüfung. Anfangs hielten das viele für Zeitverschwendung, auch im Kollegium. Inzwischen fragen die Jugendlichen von selbst, bevor ich es tue.`,
               gloss: [
                 { de: "das Achselzucken", tr: "omuz silkme", en: "shrug" },
-                { de: "das Kollegium", tr: "öğretmenler kurulu", en: "teaching staff" },
+                { de: "das Kollegium", tr: "öğretmen kadrosu, meslektaşlar", en: "teaching staff" },
               ],
             },
             {
@@ -559,13 +559,13 @@ Vielleicht ist das die eigentliche Nachricht: Lokaljournalismus ist keine Frage 
           format: "mcq",
           goal: "instruction",
           prompt: "Lesen Sie zuerst die Betriebsvereinbarung; dazu gehören die Aufgaben 28 bis 30. Kreuzen Sie a, b oder c an.",
-          promptTr: "İşyeri sözleşmesini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
+          promptTr: "İş yeri sözleşmesini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
               kind: "text",
               id: "b1",
               genre: "Betriebsvereinbarung",
-              genreTr: "İşyeri sözleşmesi",
+              genreTr: "İş yeri sözleşmesi",
               title: "Betriebsvereinbarung über die Nutzung dienstlicher Geräte",
               body: `§ 1 Geltungsbereich
 Diese Vereinbarung gilt für alle Beschäftigten, denen ein dienstliches Gerät überlassen wird, einschließlich befristet Beschäftigter und Auszubildender. Für Leiharbeitskräfte gilt sie entsprechend, soweit der Einsatz drei Monate überschreitet.
@@ -1348,7 +1348,7 @@ Trotzdem halte ich das für kein Entweder-oder. Sinnvoller wäre, unabhängige A
           prompt:
             "Sie haben an einer Fortbildung Ihres Betriebs zum Thema \"Digitale Kommunikation\" teilgenommen. Die Personalabteilung bittet um eine Rückmeldung. Schreiben Sie an Frau Wendt (circa 100 Wörter).",
           promptTr:
-            "İşyerinde \"Dijital iletişim\" konulu bir eğitime katıldın. İnsan kaynakları geri bildirim istiyor. Frau Wendt'e yaz (yaklaşık 100 kelime).",
+            "İş yerinde \"Dijital iletişim\" konulu bir eğitime katıldın. İnsan kaynakları geri bildirim istiyor. Frau Wendt'e yaz (yaklaşık 100 kelime).",
           items: [],
           rubric: {
             minWords: 100,

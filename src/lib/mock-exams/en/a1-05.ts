@@ -47,7 +47,7 @@ export const EN_A1_05: MockPaper = {
 
 My train arrives at 18:40, not at 17:40. Sorry!
 
-Please do not come to the station. I take the bus number 9 to your street.
+Please do not come to the station. I take bus number 9 to your street.
 
 I have one small bag and one big bag. Can you help me with the big one at the door?
 
@@ -203,7 +203,7 @@ You pay in the car, with money or with a card.`,
               kind: "mcq",
               id: "en-a1-05-l2-8",
               no: 8,
-              text: "You want to go three streets quickly and pay nothing.",
+              text: "You want to go three blocks quickly and pay nothing.",
               options: ["Station Office", "City Bike", "Night Taxi"],
               answer: 1,
               explain:
@@ -213,7 +213,7 @@ You pay in the car, with money or with a card.`,
               kind: "mcq",
               id: "en-a1-05-l2-9",
               no: 9,
-              text: "You are four people and you want one price for all of you.",
+              text: "There are four of you and you want one price for all of you.",
               options: ["Station Office", "City Bike", "Night Taxi"],
               answer: 2,
               explain:
@@ -254,10 +254,10 @@ Bikes: only in the first car.`,
             {
               kind: "text",
               id: "s2",
-              genre: "Sign in the bus",
+              genre: "Sign on the bus",
               genreTr: "Otobüsteki levha",
               title: "BUS 9",
-              body: `Get in at the front.
+              body: `Get on at the front.
 
 Show your ticket to the driver.
 
@@ -476,7 +476,7 @@ Timo`,
               situation: "Otobüste anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Next stop: Green Park. Please push the button before your stop. The bus does not go to the station today. Get out at Green Park and take bus three." },
+                { text: "Next stop: Green Park. Please push the button before your stop. The bus does not go to the station today. Get off at Green Park and take bus three." },
               ],
             },
             {
@@ -500,7 +500,7 @@ Timo`,
               id: "en-a1-05-h1-1",
               no: 1,
               ref: "a1",
-              text: "Which platform is the ten fifteen train?",
+              text: "Which platform does the ten fifteen train leave from?",
               options: ["Platform two", "Platform twelve", "Platform four"],
               answer: 2,
               explain:
@@ -545,10 +545,10 @@ Timo`,
               no: 5,
               ref: "a5",
               text: "What must people do to go to the station?",
-              options: ["Stay in the bus until the station", "Take another bus at Green Park", "Walk from the park"],
+              options: ["Stay on the bus until the station", "Take another bus at Green Park", "Walk from the park"],
               answer: 1,
               explain:
-                "Anons iki adım veriyor: «Get out at Green Park and take bus three». Otobüs bugün istasyona gitmiyor, yani içeride kalmak işe yaramaz.",
+                "Anons iki adım veriyor: «Get off at Green Park and take bus three». Otobüs bugün istasyona gitmiyor, yani içeride kalmak işe yaramaz.",
             },
             {
               kind: "mcq",
@@ -727,7 +727,7 @@ Timo`,
               id: "en-a1-05-h3-13",
               no: 13,
               ref: "c3",
-              text: "What has changed?",
+              text: "What is different now?",
               options: ["The gate", "The time", "The day"],
               answer: 0,
               explain:
@@ -927,7 +927,7 @@ Alma`,
             { who: "you", hint: "«train» sözcüğüyle bir soru kur.", expect: "train sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "I take the train to work every day. Your next word is: vacation.", tr: "Her gün işe trenle gidiyorum. Sıradaki sözcüğün: tatil." },
             { who: "you", hint: "«vacation» için bir soru kur.", expect: "vacation sözcüğüyle bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "In August I go to the sea. Now a question for you: how do you go to the city center?", tr: "Ağustosta denize gidiyorum. Şimdi sana bir soru: Şehir merkezine nasıl gidersin?" },
+            { who: "partner", de: "In August I go to the sea. Now a question for you: how do you get to the city center?", tr: "Ağustosta denize gidiyorum. Şimdi sana bir soru: Şehir merkezine nasıl gidersin?" },
             { who: "you", hint: "Ulaşım biçimini söyleyerek cevapla.", expect: "ulaşım biçimini tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Thank you. Last question: how much is a bus ticket where you live?", tr: "Teşekkürler. Son soru: Yaşadığın yerde otobüs bileti kaç para?" },
             { who: "you", hint: "Bir fiyat söyle.", expect: "bir fiyatı İngilizce söylemek (para birimiyle)", seconds: 25 },
@@ -940,7 +940,7 @@ Alma`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Do you like the train? — Yes, I read on the train. Where do you go on vacation? — To the sea. Do you have a car? — No, I have a bike. How do you go to the city center? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
+              "Do you like the train? — Yes, I read on the train. Where do you go on vacation? — To the sea. Do you have a car? — No, I have a bike. How do you get to the city center? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / Where … / How much …)",

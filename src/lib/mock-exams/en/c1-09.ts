@@ -143,7 +143,7 @@ The confusion is useful to a government, which can offer the cheaper of the two 
 
 It is also useful to some campaigners, {{9}} whom the words are a step toward the money rather than an end in themselves.
 
-The expectation of a settlement changes how the words are read. Nor {{10}} it obvious that the two should travel together. There are cases in which the money arrived and the description was never corrected at all.
+The words are not read the same way once a settlement is expected. Nor {{10}} it obvious that the two should travel together. There are cases in which the money arrived and the description was never corrected at all.
 
 {{11}} the apology precedes the settlement or follows it turns out to matter a great deal in practice.
 
@@ -521,7 +521,7 @@ The uncomfortable implication is that the instrument works best where it is wort
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -850,7 +850,7 @@ That is a defensible instinct, and it produces, reliably, the version of the wor
               title: "Review of state apologies — findings",
               body: `The review examined {{7}} state apologies.
 
-All of them were issued after {{8}}.
+All of them were issued in or after {{8}}.
 
 The median interval was {{9}} years.
 
@@ -1328,7 +1328,7 @@ The most common word in the interviews was {{14}}.`,
           prompt:
             "You have attended a seminar on official apologies. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Resmî özürler üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özrün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
+            "Resmî özürler üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özrün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1383,7 +1383,7 @@ The gain is not reputational and should not be presented as such. A statement wo
 The principal risk is precedent. Two other groups have raised comparable questions since 2019, and a statement that admits a general failure of method would be cited by them. That is a real cost and it is not a reason to withhold an accurate account; it is a reason to be exact about what is being admitted.
 
 Recommendation
-I recommend issuing the statement within this financial year, drafted by somebody who was not involved in the original decision, and I recommend that the drafting record be retained.
+I recommend issuing the statement within this fiscal year, drafted by somebody who was not involved in the original decision, and I recommend that the drafting record be retained.
 
 I would not publish it alongside a compensation offer, and I would not describe the delay as a review that is still under way.`,
             criteria: [

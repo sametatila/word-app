@@ -282,7 +282,7 @@ What I have changed is smaller. I no longer name the town in anything I write. I
               options: ["She has stopped writing about travel", "She writes only about large cities", "She checks her facts with local people", "She leaves the place name out"],
               answer: 3,
               explain:
-                "Son paragraf: «I no longer name the town in anything I write» ve bunun bir jest olduğunu da kabul ediyor. Yazmayı bırakmadığını da açıkça söylüyor.",
+                "Son paragraf: «I no longer name the town in anything I write» ve bunun küçük bir değişiklik olduğunu da kabul ediyor: «What I have changed is smaller». Yazmayı bırakmadığını da açıkça söylüyor.",
             },
           ],
         },
@@ -292,7 +292,7 @@ What I have changed is smaller. I no longer name the town in anything I write. I
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -418,7 +418,7 @@ None of this takes long. Ten minutes of questions can {{25}} you from a week of 
               options: ["talk", "say", "send", "speak"],
               answer: 2,
               explain:
-                "Kod bir nesne gibi iletiliyor: «send you a code». `tell` bir bilgiyi sözle aktarır ve burada da olabilirdi ama `a code the day before` fiziksel bir gönderim anlatıyor; `say` iki nesne almaz, `speak` ise doğrudan nesne almaz.",
+                "Kod bir nesne gibi iletiliyor: «send you a code». `say` iki nesne almaz, yani `say you a code` denmez; `talk` ve `speak` ise kişiyi doğrudan nesne olarak almaz.",
             },
             {
               kind: "mcq",
@@ -589,7 +589,7 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "Radyoda bir uzman dinleyici sorusunu yanıtlıyor.",
               plays: 2,
               segments: [
-                { text: "People ask me whether a city card is worth it. The arithmetic is simple: count the museums you will really enter, not the ones on the list, and add the buses. If the number is under four museums, it almost never pays." },
+                { text: "People ask me whether a city card is worth it. The arithmetic is simple: count the museums you will really enter, not the ones on the list, and add the buses. If the number is under four, it almost never pays." },
               ],
             },
             {
@@ -654,7 +654,7 @@ It is the second time this year {{30}} the date has moved.`,
               id: "en-b1-05-h1-3",
               no: 3,
               ref: "a3",
-              text: "What did the speaker book?",
+              text: "What did Tomas book?",
               options: ["A bed for twelve hours", "The cheaper option", "Nothing yet"],
               answer: 1,
               explain:
@@ -829,7 +829,7 @@ It is the second time this year {{30}} the date has moved.`,
               options: ["A photograph taken on arrival", "A phone call to the owner", "The wording of the agreement in the contract"],
               answer: 0,
               explain:
-                "Joris nedeni kendisi söylüyor: «I took a photo on the first day, which is the only reason I have the money». Sözleşme ya da telefon geçmiyor; yazışma iki mektupla olmuş.",
+                "Joris nedeni kendisi söylüyor: «I took a photo on the first day, which is the only reason I have the money». Sözleşme ya da telefon geçmiyor; Joris iki kez yazmak zorunda kalmış.",
             },
             {
               kind: "mcq",
@@ -1100,7 +1100,7 @@ New guides walk with an experienced guide for: {{19}} tours`,
             ],
             sample: `Dear Mr. Roth,
 
-I booked your apartment in Harbor Street for the week of June 3 and I arrived on Monday evening.
+I booked your apartment on Harbor Street for the week of June 3 and I arrived on Monday evening.
 
 Two things are different from the ad. The ad says the apartment is on the second floor; it is on the fourth, and there is no elevator. It also promises a washing machine, and there is none in the apartment or in the building.
 
@@ -1165,11 +1165,11 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about travel and about the place where you live.",
+          prompt: "I am going to ask you some questions about travel and the place where you live.",
           promptTr: "Sana yolculuk ve yaşadığın yer hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. Could you describe the place where you live to somebody who has never been there?", tr: "İyi günler. Yaşadığın yeri hiç gitmemiş birine anlatır mısın?" },
+            { who: "partner", de: "Good afternoon. Could you describe the place where you live to somebody who has never been there?", tr: "İyi günler. Yaşadığın yeri, oraya hiç gitmemiş birine anlatır mısın?" },
             { who: "you", hint: "Yeri sırayla anlat: büyüklük, insanlar, bir ayrıntı.", expect: "bir yeri düzenli biçimde betimlemek", seconds: 40 },
             { who: "partner", de: "Thank you. Has the number of visitors to your area changed in the last few years?", tr: "Teşekkürler. Bölgene gelen ziyaretçi sayısı son birkaç yılda değişti mi?" },
             { who: "you", hint: "Present perfect ya da `used to` ile bir değişimi anlat.", expect: "zaman içindeki bir değişimi anlatmak", seconds: 40 },
@@ -1265,7 +1265,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
           no: 4,
           format: "speaking",
           goal: "interaction",
-          prompt: "We talk a little more about the same topic: who a town belongs to.",
+          prompt: "Let's talk a little more about the same topic: who a town belongs to.",
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: bir şehir kime aittir.",
           prepSeconds: 15,
           exchange: [

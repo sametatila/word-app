@@ -187,7 +187,7 @@ Was ich nicht mehr mache, ist gegen Überzeugungen anzureden. Ich lege die Zahle
               options: ["Mira", "Robert", "Sandra", "Tomas"],
               answer: 3,
               explain:
-                "Tomas her şeyi isteyen ve hiçbir şeye güvenmeyen müşteriye aynı soruyu soruyor: \"Was würde passieren, wenn Sie nichts tun?\"",
+                "Tomas her şeyi isteyen müşteriye de hiçbir şeye güvenmeyene de aynı soruyu soruyor: \"Was würde passieren, wenn Sie nichts tun?\"",
             },
             {
               kind: "mcq",

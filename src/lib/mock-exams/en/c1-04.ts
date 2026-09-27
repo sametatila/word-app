@@ -419,7 +419,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
           prompt:
             "Read the five short texts a to e by different writers on the same subject. Questions 27 to 30: which writer is it? No writer is used twice.",
           promptTr:
-            "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddeler için bunun hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
+            "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddelerin hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
           options: [
             {
               key: "a",
@@ -492,7 +492,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -579,7 +579,7 @@ This has an uncomfortable implication for any system trained on administrative r
           prompt:
             "Read the four short texts a to d. Questions 35 to 40: which text is it? A text can be the answer more than once.",
           promptTr:
-            "a'dan d'ye dört kısa metni oku. 35–40. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
+            "a'dan d'ye dört kısa metni oku. 35–40. maddelerde söyleneni hangi metnin söylediğine karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
             {
               key: "a",
@@ -822,7 +822,7 @@ This has an uncomfortable implication for any system trained on administrative r
 
 Flooding at the level warned followed {{8}} of them.
 
-The service costs {{9}} million pounds a year.
+The service costs {{9}} million a year.
 
 People act most on the warnings that name a {{10}}.
 
@@ -864,7 +864,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               text: "Gap 9",
               accept: ["3.6", "three point six"],
               explain:
-                "«The total cost of the service is three point six million a year». Cümlede `million pounds a year` zaten yazılı olduğu için boşluğa yalnız sayı geliyor.",
+                "«The total cost of the service is three point six million a year». Cümlede `million a year` zaten yazılı olduğu için boşluğa yalnız sayı geliyor.",
             },
             {
               kind: "gap",
@@ -1255,9 +1255,9 @@ The service has nine duty forecasters and needs {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public warnings. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public warnings. Write an essay for your instructor summarizing the two points below, saying which is more important and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Kamu uyarıları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çok sık verilen bir uyarı sonunda dikkate alınmaz olur.\n2. İnandırıcılığı korumak için verilmeyen bir uyarı insanları hazırlıksız bırakır.\n\n220–260 kelime yaz.",
+            "Kamu uyarıları üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktayı özetle, hangisinin daha önemli olduğunu söyle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çok sık verilen bir uyarı sonunda dikkate alınmaz olur.\n2. İnandırıcılığı korumak için verilmeyen bir uyarı insanları hazırlıksız bırakır.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1278,7 +1278,7 @@ My own view is that the framing conceals the interesting question. Neither point
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu?",
+              "Kendi görüşün özetten ayrılıyor mu?",
               "Karşı görüşün en güçlü hâli mi kuruldu, yoksa zayıflatıldı mı?",
               "Çekimserlik ve ince ayrım ifadeleri C1 düzeyinde mi? (though for a narrower reason, on this account)",
               "220–260 kelime aralığında mı?",

@@ -1215,7 +1215,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
                 },
                 {
                   speaker: "Frau Prof. Nolte",
-                  text: "Zum Schluss die Einschränkung: Unsere Daten stammen aus Städten über 100 000 Einwohnern. Für Dörfer gilt das vermutlich nicht, und wir haben es nicht geprüft.",
+                  text: "Zum Schluss die Einschränkung: Unsere Daten stammen aus Städten mit über 100 000 Einwohnern. Für Dörfer gilt das vermutlich nicht, und wir haben es nicht geprüft.",
                 },
               ],
             },
@@ -1294,7 +1294,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 2,
               explain:
-                "Şenliklerden neredeyse hiç doğmuyor; çamaşırlık, çöp yeri, asansör ve okul durağı gibi \"regelmäßig und unfreiwillig\" paylaşılan yerlerde doğuyor.",
+                "Şenliklerden neredeyse hiç doğmuyor; çamaşırlık, çöp yeri, asansör ve okul önündeki veli durağı gibi \"regelmäßig und unfreiwillig\" paylaşılan yerlerde doğuyor.",
             },
             {
               kind: "mcq",
@@ -1339,7 +1339,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 2,
               explain:
-                "Son cümleler verilerin 100 000 üstü şehirlerden geldiğini ve köyler için geçerli olmayabileceğini söylüyor: \"wir haben es nicht geprüft\".",
+                "Son cümleler verilerin nüfusu 100 000'i aşan şehirlerden geldiğini ve köyler için geçerli olmayabileceğini söylüyor: \"wir haben es nicht geprüft\".",
             },
           ],
         },
@@ -1544,7 +1544,7 @@ Aylin Tekin`,
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],
             sample:
-              "Der Bedarf der Kinder ist unbestritten, ich würde ihn aber anders decken: Rasen und zwei Bäume kosten wenig und nutzen jedem Alter. Ihren Einwand teile ich sogar — deshalb bin ich für Lösungen, die sich mitverändern lassen. Verzichten würde ich auf die Werkstatt, weil wir dafür einen abschließbaren Raum bräuchten und den haben wir nicht. Wir hätten uns also geeinigt auf: Bäume und Sitzplätze für etwa 5000 Euro, ein einfaches Klettergerüst für 3000, kein Fahrradraum in diesem Jahr, und wir beantragen ihn im nächsten Programm erneut.",
+              "Der Bedarf der Kinder ist unbestritten, ich würde ihn aber anders decken: Rasen und zwei Bäume kosten wenig und nutzen jedem Alter. Ihren Einwand teile ich sogar — deshalb bin ich für Lösungen, die sich mitverändern lassen. Verzichten würde ich auf die Werkstatt, weil wir dafür einen abschließbaren Raum bräuchten, den wir nicht haben. Wir hätten uns also geeinigt auf: Bäume und Sitzplätze für etwa 5000 Euro, ein einfaches Klettergerüst für 3000, keinen Fahrradraum in diesem Jahr, und wir beantragen ihn im nächsten Programm erneut.",
             criteria: [
               "Kendi konumu gerekçelendirildi mi?",
               "Karşı tarafın itirazı gerçekten ele alındı mı?",

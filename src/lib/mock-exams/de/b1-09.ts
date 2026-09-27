@@ -70,7 +70,7 @@ Auch die Erwartungen gehen auseinander. Manche Ältere hätten gern mehr Kontakt
 
 "Ein solches Haus nimmt niemandem die Einsamkeit ab", sagt Frau Ehrlich. "Es macht sie nur weniger wahrscheinlich."`,
               gloss: [
-                { de: "die Vermietung", tr: "kiraya verme", en: "letting, rental" },
+                { de: "die Vermietung", tr: "kiraya verme", en: "renting out, rental" },
                 { de: "die Mischung", tr: "karışım", en: "mix" },
                 { de: "verwalten", tr: "yönetmek", en: "to manage" },
                 { de: "die Einsamkeit", tr: "yalnızlık", en: "loneliness" },
@@ -299,7 +299,7 @@ Wer den Raum nicht sauber hinterlässt, kann ihn ein halbes Jahr nicht mehr buch
               options: [
                 "Großeltern arbeiten heute weniger als früher.",
                 "Die Betreuungsplätze sind ausreichend geworden.",
-                "Großeltern betreuen häufiger als vor zehn Jahren.",
+                "Mehr Großeltern als vor zehn Jahren betreuen ihre Enkel.",
               ],
               answer: 2,
               explain:
@@ -551,7 +551,7 @@ Elif Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "Rahatsız edici bir şey söylediğini kabul ediyor: kırk yıl ödemiş olmasına rağmen yetmediğini kabul ediyor ve \"finde ich einen Beitrag von ihr richtig\" diyor.",
+                "Rahatsız edici bir şey söylediğini baştan belirtiyor: kırk yıl ödemiş olmasına rağmen yetmediğini kabul ediyor ve \"finde ich einen Beitrag von ihr richtig\" diyor.",
             },
             {
               kind: "mcq",
@@ -1057,7 +1057,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               id: "de-b1-09-h3-18",
               no: 18,
               ref: "v1",
-              text: "Nach ihr entsteht Nähe vor allem durch gemeinsame Wege.",
+              text: "Ihr zufolge entsteht Nähe vor allem durch gemeinsame Wege.",
               answer: true,
               explain:
                 "\"Nähe entsteht nicht durch Veranstaltungen, sondern durch Wege\" — aynı fırına gidenler konuşuyor.",

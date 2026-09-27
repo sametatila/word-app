@@ -69,11 +69,11 @@ Mrs. Talia Roth`,
               title: "For our patients",
               body: `Doctor Otto is not here from July 12 to 15.
 
-Doctor Pelin works in this house on those days. Her room is number 4.
+Doctor Pelin works here on those days. Her room is number 4.
 
 For a new appointment please call us. Do not write an email; we are slow with email.
 
-In the night and on the weekend, call 112.`,
+At night and on the weekend, call 112.`,
               gloss: [
                 { de: "an appointment", tr: "randevu", en: "der Termin" },
                 { de: "slow", tr: "yavaş", en: "langsam" },
@@ -120,7 +120,7 @@ In the night and on the weekend, call 112.`,
               text: "You can see a doctor on July 13.",
               answer: true,
               explain:
-                "13 Temmuz, Doktor Otto'nun olmadığı aralıkta (12–15) ama not devamı veriyor: «Doctor Pelin works in this house on those days». Yani o günlerde başka bir doktor var.",
+                "13 Temmuz, Doktor Otto'nun olmadığı aralıkta (12–15) ama not devamı veriyor: «Doctor Pelin works here on those days». Yani o günlerde başka bir doktor var.",
             },
             {
               kind: "bool",
@@ -161,7 +161,7 @@ Children under ten come with a parent.`,
               id: "p2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Saturday Sport Club",
+              title: "Saturday Sports Club",
               body: `Every Saturday from 10 to 12 in the schoolyard.
 
 Soccer, basketball and games for all ages.
@@ -191,17 +191,17 @@ For children we have a small room with toys.`,
               id: "en-a1-04-l2-6",
               no: 6,
               text: "You are sick on Wednesday afternoon and you want to see a doctor.",
-              options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
+              options: ["School Library", "Saturday Sports Club", "Doctor Yannis — Family Practice"],
               answer: 2,
               explain:
-                "Yalnız üçüncü duyuru bir doktora ait. Salı için «only in the morning» yazıyor, yani öğleden sonra kapalı — ama soru hangi YERİN doktor olduğunu soruyor ve öteki iki duyuru sağlıkla hiç ilgili değil.",
+                "Yalnız üçüncü duyuru bir doktora ait ve çarşamba öğleden sonra açık: «Monday, Wednesday and Friday: 8 to 12 and 14 to 18». Öteki iki duyuru sağlıkla hiç ilgili değil.",
             },
             {
               kind: "mcq",
               id: "en-a1-04-l2-7",
               no: 7,
               text: "You want to play soccer with other children.",
-              options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
+              options: ["School Library", "Saturday Sports Club", "Doctor Yannis — Family Practice"],
               answer: 1,
               explain:
                 "Spor kulübü duyurusu «Soccer, basketball and games for all ages» diyor. Kütüphanede kitap ve bilgisayar var, oyun yok; muayenehanedeki oyuncak odası bekleyen çocuklar için.",
@@ -211,7 +211,7 @@ For children we have a small room with toys.`,
               id: "en-a1-04-l2-8",
               no: 8,
               text: "You want a quiet place to do your homework on Wednesday.",
-              options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
+              options: ["School Library", "Saturday Sports Club", "Doctor Yannis — Family Practice"],
               answer: 0,
               explain:
                 "Kütüphane hafta içi 8–16 arası açık ve «Please be quiet» diyor; çalışmak için de «You can work here» yazıyor. Spor kulübü yalnız cumartesi.",
@@ -220,8 +220,8 @@ For children we have a small room with toys.`,
               kind: "mcq",
               id: "en-a1-04-l2-9",
               no: 9,
-              text: "It rains on Saturday morning and your son wants to do some sport.",
-              options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
+              text: "It rains on Saturday morning and your son wants to play some sports.",
+              options: ["School Library", "Saturday Sports Club", "Doctor Yannis — Family Practice"],
               answer: 1,
               explain:
                 "Duyuru yağmur için ayrı bir satır taşıyor: «When it rains, we play in the big room». Yani cumartesi programı yağmurda da sürüyor; kütüphane cumartesi kapalı.",
@@ -231,7 +231,7 @@ For children we have a small room with toys.`,
               id: "en-a1-04-l2-10",
               no: 10,
               text: "You have no appointment and you can come early in the morning.",
-              options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
+              options: ["School Library", "Saturday Sports Club", "Doctor Yannis — Family Practice"],
               answer: 2,
               explain:
                 "Muayenehane duyurusunda tam bu satır var: «Come without an appointment from 8 to 9». Öteki iki duyuruda randevu diye bir şey yok, dolayısıyla randevusuzluk bir ölçüt olmuyor.",
@@ -278,7 +278,7 @@ Do not eat or drink at the computers.`,
               title: "WAITING ROOM",
               body: `Please give your card at the desk first.
 
-Children can play with the toys. Take them back after.
+Children can play with the toys. Put them back after.
 
 Please do not use your phone here.`,
             },
@@ -287,7 +287,7 @@ Please do not use your phone here.`,
               id: "s4",
               genre: "Sign in the park",
               genreTr: "Parktaki levha",
-              title: "CITY PARK — SPORT",
+              title: "CITY PARK — SPORTS",
               body: `Soccer on the grass, not on the path.
 
 The tables for table tennis are free. Bring your own ball and bat.
@@ -592,7 +592,7 @@ Clara Weiss`,
               situation: "Okulda bir anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Good morning. The sports hall is closed this week. Sport is in the park. Please bring warm clothes." },
+                { text: "Good morning. The gym is closed this week. Gym class is in the park. Please bring warm clothes." },
               ],
             },
             {
@@ -610,7 +610,7 @@ Clara Weiss`,
               kind: "audio",
               id: "b3",
               genre: "Message on a phone",
-              genreTr: "Telefon anonsu",
+              genreTr: "Telefon iletisi",
               situation: "Bir muayenehanenin telesekreter mesajı.",
               plays: 2,
               segments: [
@@ -635,10 +635,10 @@ Clara Weiss`,
               id: "en-a1-04-h2-7",
               no: 7,
               ref: "b1",
-              text: "There is no sport this week.",
+              text: "There is no gym class this week.",
               answer: false,
               explain:
-                "Anons yeri değiştiriyor, dersi iptal etmiyor: «The sports hall is closed this week. Sport is in the park». Kapalı olan salon; ders sürüyor.",
+                "Anons yeri değiştiriyor, dersi iptal etmiyor: «The gym is closed this week. Gym class is in the park». Kapalı olan salon; ders sürüyor.",
             },
             {
               kind: "bool",
@@ -818,7 +818,7 @@ Clara Weiss`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your neighbor Janne Berg puts her son in the Saturday sport club. Her son is ten years old and his name is Rudi. They live at 12 Hill Road. Her phone number is 07700 900 631. The child cannot come in August. Five things are missing on the form. Write them in the gaps.",
+            "Your neighbor Janne Berg signs her son up for the Saturday sports club. Her son is ten years old and his name is Rudi. They live at 12 Hill Road. Her phone number is 07700 900 631. The child cannot come in August. Five things are missing on the form. Write them in the gaps.",
           promptTr:
             "Komşun Janne Berg oğlunu cumartesi spor kulübüne yazdırıyor. Oğlu on yaşında ve adı Rudi. 12 Hill Road adresinde oturuyorlar. Telefonu 07700 900 631. Çocuk ağustosta gelemiyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
@@ -827,13 +827,13 @@ Clara Weiss`,
               id: "f1",
               genre: "Form",
               genreTr: "Form",
-              title: "SATURDAY SPORT CLUB — NEW MEMBER",
+              title: "SATURDAY SPORTS CLUB — NEW MEMBER",
               body: `Family name:         Berg
 Name of the child:   {{1}}
 Age of the child:    {{2}}
 Street and number:   {{3}}
 Phone:               {{4}}
-No sport in:         {{5}}`,
+No sports in:         {{5}}`,
             },
           ],
           items: [
@@ -877,7 +877,7 @@ No sport in:         {{5}}`,
               kind: "gap",
               id: "en-a1-04-w1-5",
               no: 5,
-              text: "No sport in",
+              text: "No sports in",
               accept: ["August", "in August"],
               explain:
                 "Yönerge «The child cannot come in August» diyor ve form gelinemeyen ayı soruyor. Ay adı büyük harfle yazılır ama karşılaştırma büyük-küçük harfe bakmıyor.",
@@ -931,7 +931,7 @@ Meral`,
           no: 1,
           format: "speaking",
           goal: "production",
-          prompt: "Talk about your week. Speak about these words: Monday morning — work or school — sport — a free evening — the weekend — one thing you do not like.",
+          prompt: "Talk about your week. Speak about these words: Monday morning — work or school — sports — a free evening — the weekend — one thing you do not like.",
           promptTr: "Haftanı anlat. Şu sözcüklere göre konuş: pazartesi sabahı — iş ya da okul — spor — boş bir akşam — hafta sonu — sevmediğin bir şey.",
           prepSeconds: 30,
           speakSeconds: 90,
@@ -940,7 +940,7 @@ Meral`,
             minutes: 2,
             points: [
               { de: "Monday and your work or school", tr: "Pazartesi ve iş ya da okul" },
-              { de: "sport in your week", tr: "Haftanda spor" },
+              { de: "sports in your week", tr: "Haftanda spor" },
               { de: "a free evening and the weekend", tr: "Boş bir akşam ve hafta sonu" },
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
@@ -960,13 +960,13 @@ Meral`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Topic: free time and sport. Make a question for each word and answer my questions: sport — park — friends — evening — money.",
+            "Topic: free time and sports. Make a question for each word and answer my questions: sports — park — friends — evening — money.",
           promptTr:
             "Konu: boş zaman ve spor. Her sözcük için bir soru kur ve benim sorularımı cevapla: spor — park — arkadaşlar — akşam — para.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Now we talk about free time. Your first word is: sport. Please ask me a question.", tr: "Şimdi boş zamanı konuşuyoruz. İlk sözcüğün: spor. Bana bir soru sor." },
-            { who: "you", hint: "«sport» sözcüğüyle bir soru kur.", expect: "sport sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
+            { who: "partner", de: "Now we talk about free time. Your first word is: sports. Please ask me a question.", tr: "Şimdi boş zamanı konuşuyoruz. İlk sözcüğün: spor. Bana bir soru sor." },
+            { who: "you", hint: "«sports» sözcüğüyle bir soru kur.", expect: "sports sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "I play basketball on Tuesday. Your next word is: park.", tr: "Salı günleri basketbol oynuyorum. Sıradaki sözcüğün: park." },
             { who: "you", hint: "«park» için bir soru kur.", expect: "park sözcüğüyle bir soru kurmak", seconds: 25 },
             { who: "partner", de: "The park near my house is very big. Now a question for you: when do you meet your friends?", tr: "Evimin yanındaki park çok büyük. Şimdi sana bir soru: Arkadaşlarınla ne zaman buluşursun?" },
@@ -982,7 +982,7 @@ Meral`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Do you like sport? — Yes, I swim. Is there a park near your house? — Yes, five minutes on foot. When do you meet your friends? — On Friday evening. What do you do in the evening? — I read or I watch television. How much is a ticket? — Four euros.",
+              "Do you like sports? — Yes, I swim. Is there a park near your house? — Yes, five minutes on foot. When do you meet your friends? — On Friday evening. What do you do in the evening? — I read or I watch television. How much is a ticket? — Four euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / Is there … / When … / How much …)",
@@ -997,7 +997,7 @@ Meral`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "You are at the doctor's. Situations: you say what is wrong. — You ask about the medicine. — You ask for a note for your work.",
+            "You are at the doctor's. Situations: you say what is wrong. — You ask about the medicine. — You ask for a note for work.",
           promptTr:
             "Doktordasın. Durumlar: Neyin olduğunu söyle. — İlacı sor. — İşin için bir belge iste.",
           prepSeconds: 20,
@@ -1018,7 +1018,7 @@ Meral`,
               { de: "ask for something politely", tr: "Kibarca bir şey istemek" },
             ],
             sample:
-              "My head hurts and I am very tired. It started three days ago. — How many days do I take it? Before or after food? — Can I have a note for my work, please?",
+              "My head hurts and I am very tired. It started three days ago. — How many days do I take it? Before or after food? — Can I have a note for work, please?",
             criteria: [
               "Rahatsızlık anlaşılır söylendi mi? (My head hurts / I have a cold)",
               "Süre bildirildi mi? (three days, since Monday)",

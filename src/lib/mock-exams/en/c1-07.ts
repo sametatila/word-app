@@ -516,7 +516,7 @@ I notice that the digital form of this problem is discussed as though it had bee
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -1325,7 +1325,7 @@ Cataloging is the first line {{14}} in a budget round.`,
           prompt:
             "You have attended a seminar on public records. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An institution should keep as much as it possibly can, because nobody can know what will be wanted later.\n2. An institution should keep less and describe what it keeps, because material that cannot be found has not been kept.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Kamu belgeleri üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kurum elinden geldiğince çok şey saklamalı, çünkü sonradan neyin isteneceği bilinemez.\n2. Kurum daha az saklamalı ve sakladığını betimlemeli, çünkü bulunamayan şey saklanmış sayılmaz.\n\n220–260 kelime yaz.",
+            "Kamu belgeleri üzerine bir seminere katıldın. Hocan için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kurum elinden geldiğince çok şey saklamalı, çünkü sonradan neyin isteneceği bilinemez.\n2. Kurum daha az saklamalı ve sakladığını betimlemeli, çünkü bulunamayan şey saklanmış sayılmaz.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1346,7 +1346,7 @@ My own view is that the argument is miscast. What matters is neither volume nor 
             criteria: [
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
-              "Kendi görüş özetin tekrarı değil, ayrı bir sav mı?",
+              "Kendi görüşü özetin tekrarı değil, ayrı bir sav mı?",
               "Soyut adlaştırma ve ileri bağlayıcılar kullanıldı mı? (deferral, on this view, in practice)",
               "220–260 kelime aralığında mı?",
             ],
@@ -1413,7 +1413,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
           promptTr: "Sana kayıtlar, hafıza ve kurumların neyi sakladığı hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. What do you keep that you will probably never look at again?", tr: "İyi günler. Bir daha bakmayacağın hâlde sakladığın şey nedir?" },
+            { who: "partner", de: "Good afternoon. What do you keep that you will probably never look at again?", tr: "İyi günler. Muhtemelen bir daha hiç bakmayacağın hâlde sakladığın ne var?" },
             { who: "you", hint: "Somut bir örnek ver ve neden sakladığını açıkla.", expect: "somut bir örnekten genel bir gerekçeye geçmek", seconds: 45 },
             { who: "partner", de: "Thank you. Has anything ever been thrown away that you later needed?", tr: "Teşekkürler. Sonradan ihtiyaç duyduğun bir şey atıldı mı hiç?" },
             { who: "you", hint: "Tek bir olayı sonucuyla anlat.", expect: "geçmişte olmuş tek bir olayı sonucuyla anlatmak", seconds: 45 },

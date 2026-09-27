@@ -298,7 +298,7 @@ Ehlert sagt aber auch, dass die Regel nicht alles löst. "Die meisten Tiere komm
               ],
               answer: 0,
               explain:
-                "Sayı on birden ikiye inmiş, ve yıl boyu sahiplendirme sayısı \"gleich geblieben\" — yani azalmamış.",
+                "Sayı on birden ikiye inmiş ve yıl boyu sahiplendirme sayısı \"gleich geblieben\" — yani azalmamış.",
             },
             {
               kind: "mcq",
@@ -900,7 +900,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
               ],
               answer: 1,
               explain:
-                "Mart dolu, nisanda yer var, ve okul bir onay istiyor: \"Soll ich Sie dafür eintragen?\" Yani sorulan şey nisan kaydı.",
+                "Mart dolu, nisanda yer var ve okul bir onay istiyor: \"Soll ich Sie dafür eintragen?\" Yani sorulan şey nisan kaydı.",
             },
             {
               kind: "mcq",

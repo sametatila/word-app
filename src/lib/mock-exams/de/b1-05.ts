@@ -343,7 +343,7 @@ Der teuerste Teil ist übrigens nicht das Essen, sondern die Küche. Bei uns kos
               text: "Frau Ehlers sitzt acht Stunden am Schreibtisch und hat abends Rückenschmerzen. Tagsüber kann sie nicht.",
               answer: "a",
               explain:
-                "(a) hem akşam saatinde hem de \"für Menschen mit sitzender Arbeit\" kurulmuş; üstelik kasa maliyetin çoğunu geri ödüyor. (e) de sırt için iyi ama sabah 10'da.",
+                "(a) hem akşam saatinde hem de \"für Menschen mit sitzender Arbeit\" kurulmuş; üstelik kasa maliyetin çoğunu geri ödüyor. (e) de bir egzersiz sunuyor ama sabah 10'da.",
             },
             {
               kind: "match",
@@ -459,7 +459,7 @@ Anja P.: In unserer Kantine essen 400 Leute. Ohne festen Tag kocht die Küche je
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "Mercimekteki proteini tartışmıyor bile; itirazı karar yetkisine: \"entscheide ich das aber lieber selbst\" ve masasına karışılmasını reddediyor.",
+                "Mercimekteki proteini tartışmıyor bile; itirazı karar yetkisine: \"entscheide ich das aber lieber selbst\" ve tabağına karışılmasını reddediyor.",
             },
             {
               kind: "mcq",
@@ -1249,7 +1249,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde üç görev var: özel bir ileti, bir forum yazısı ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1346,7 +1346,7 @@ Mein Fazit: Das Verbot ist richtig, muss aber für Videoplattformen genauso gelt
 
 ich bin für den Rückenkurs am Dienstag um 19 Uhr angemeldet, Beginn am 8. April.
 
-Leider muss ich absagen: Mein Arzt hat mir nach einer Operation für sechs Wochen von Sport abgeraten. Das Attest lege ich bei.
+Leider muss ich absagen: Mein Arzt hat mir nach einer Operation für sechs Wochen vom Sport abgeraten. Das Attest lege ich bei.
 
 Entfällt die Bearbeitungsgebühr in diesem Fall?
 
@@ -1391,7 +1391,7 @@ Erol Kaya`,
             {
               who: "partner",
               de: "Einverstanden. Und das Programm? Ein Vortrag ist einfach zu organisieren, aber viele finden Vorträge langweilig.",
-              tr: "Anlaştık. Peki program? Bir sunum düzenlemesi kolay ama çoğu kişi sunumları sıkıcı buluyor.",
+              tr: "Anlaştık. Peki program? Bir sunum düzenlemek kolay ama çoğu kişi sunumları sıkıcı buluyor.",
             },
             {
               who: "you",

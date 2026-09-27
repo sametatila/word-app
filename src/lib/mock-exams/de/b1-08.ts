@@ -376,7 +376,7 @@ Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
             {
               key: "j",
               label: "Website betreuen",
-              body: "Termine eintragen und Fotos hochladen. Etwa zwei Stunden im Monat, von zu Hause aus und zu freier Zeit.",
+              body: "Termine eintragen und Fotos hochladen. Etwa zwei Stunden im Monat, von zu Hause aus und zeitlich flexibel.",
             },
           ],
           items: [
@@ -414,7 +414,7 @@ Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
               text: "Frau Terzi arbeitet Vollzeit und kann nur abends von zu Hause aus etwas tun.",
               answer: "j",
               explain:
-                "(j) tek uzaktan görev: \"von zu Hause aus und zu freier Zeit\". Öteki ilanların hepsi belirli bir saatte bir yerde olmayı istiyor.",
+                "(j) tek uzaktan görev: \"von zu Hause aus und zeitlich flexibel\". Öteki ilanların hepsi belirli bir saatte bir yerde olmayı istiyor.",
             },
             {
               kind: "match",
@@ -1405,7 +1405,7 @@ Ana Brahim`,
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:
-              "Ich schlage den ersten Samstag im Mai vor: Da sind die Ferien vorbei und der Herbstkalender ist noch weit weg. Beim Programm würde ich etwas zum Mitmachen anbieten, eine kurze Führung um elf und um zwei — Kaffee allein hält niemanden. Erreichen können wir neue Leute über die Schule und den Wochenmarkt; wer nur im Vereinsheim liest, ist ohnehin schon Mitglied. Und bei den Aufgaben machen wir eine Liste mit Namen: Ich übernehme die Führungen und frage zwei Leute für den Kuchen, du kümmerst dich nur um die Anmeldung.",
+              "Ich schlage den ersten Samstag im Mai vor: Da sind die Ferien vorbei und der Herbstkalender ist noch weit weg. Beim Programm würde ich etwas zum Mitmachen anbieten, eine kurze Führung um elf und um zwei — Kaffee allein hält niemanden. Erreichen können wir neue Leute über die Schule und den Wochenmarkt; wer nur im Vereinsheim liest, ist ohnehin schon Mitglied. Und bei den Aufgaben machen wir eine Liste mit Namen: Ich übernehme die Führungen und frage zwei Leute für den Kuchen, Sie kümmern sich nur um die Anmeldung.",
             criteria: [
               "Dört noktanın hepsi konuşuldu mu?",
               "Öneriler somut mu (tarih, saat, kanal), yoksa genel onay mı?",

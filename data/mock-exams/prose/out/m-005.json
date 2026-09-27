@@ -89,7 +89,7 @@
  { "tr": "anlaşmayı hafta sonuna genişletmek ve sonucu özetlemek", "kind": "exchange.expect", "en": "extending the agreement to the weekend and summarizing the outcome" },
  { "tr": "bir karşı öneriyi kabul ya da reddetmek ve gün önermek", "kind": "exchange.expect", "en": "accepting or rejecting a counter-proposal and proposing a day" },
  { "tr": "bir sıklık ifadesiyle cevap vermek (einmal im Monat …)", "kind": "exchange.expect", "en": "answering with an expression of frequency (einmal im Monat …)" },
- { "tr": "bir tutar söylemek ve pahalı/uygun bulduğunu belirtmek", "kind": "exchange.expect", "en": "naming an amount and saying whether you find it dear or fair" },
+ { "tr": "bir tutar söylemek ve pahalı/uygun bulduğunu belirtmek", "kind": "exchange.expect", "en": "naming an amount and saying whether you find it expensive or reasonable" },
  { "tr": "bir yer sorusu kurmak (Entschuldigung, wo finde ich …)", "kind": "exchange.expect", "en": "forming a question about a place (Entschuldigung, wo finde ich …)" },
  { "tr": "kibar bir soru kurmak (Kann ich das bitte anprobieren)", "kind": "exchange.expect", "en": "forming a polite question (Kann ich das bitte anprobieren)" },
  { "tr": "somut bir etkinlik söylemek ve kısaca gerekçelendirmek", "kind": "exchange.expect", "en": "naming a concrete activity and giving brief reasons" },

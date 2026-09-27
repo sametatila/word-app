@@ -293,7 +293,7 @@ However, I have started to hear things I could not hear before, and that has cha
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -924,7 +924,7 @@ New players sit in the:     {{19}} row`,
               text: "Gap 15",
               accept: ["88", "eighty-eight"],
               explain:
-                "«we now have eighty-eight» — bugünkü çalgıcı sayısı. On iki kuruluş anına ait; not kâğıdı `now` diyerek hangisini istediğini belirtiyor.",
+                "«we now have eighty-eight» — bugünkü çalgıcı sayısı. On iki, kuruluş anına ait; not kâğıdı `now` diyerek hangisini istediğini belirtiyor.",
             },
             {
               kind: "gap",

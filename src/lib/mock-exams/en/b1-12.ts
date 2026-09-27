@@ -45,7 +45,7 @@ export const EN_B1_12: MockPaper = {
               genre: "Sign on a store door",
               genreTr: "Dükkân kapısındaki tabela",
               title: "SUNDAYS",
-              body: `We used to open on Sundays and we have stopped. Sales on a Sunday were good, and the four of us were tired every Tuesday. We are open Monday to Saturday and the phone is off at six.`,
+              body: `We used to open on Sundays and we have stopped. Sales on a Sunday were good, but the four of us were tired every Tuesday. We are open Monday to Saturday and the phone is off at six.`,
             },
             {
               kind: "text",
@@ -329,7 +329,7 @@ Petran is careful about how far the study goes. Four hundred people in one town 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -475,7 +475,7 @@ I {{25}} to defend mine by explaining it. Now I say I am busy, which is shorter 
               options: ["give", "turn", "put", "take"],
               answer: 1,
               explain:
-                "`turn something into something` bir şeyi başka bir şeye dönüştürmeyi anlatır ve cümlede `into` var. `make` bu edatı almaz, `put into` yerleştirmedir, `take into` ise bu anlamı vermez.",
+                "`turn something into something` bir şeyi başka bir şeye dönüştürmeyi anlatır ve cümlede `into` var. `give` bu anlamda `into` almaz, `put into` yerleştirmedir, `take into` ise bu anlamı vermez.",
             },
             {
               kind: "mcq",

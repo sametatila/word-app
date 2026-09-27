@@ -233,13 +233,13 @@ Meine Neigung ist die erste. Nicht weil Einzelfälle unwichtig wären, sondern w
               text: "Was ist am beschriebenen Fall aus Norddeutschland bemerkenswert?",
               options: [
                 "Dass letztlich niemand benannt wurde.",
-                "Dass das Verfahren blieb.",
+                "Dass das Verfahren unverändert blieb.",
                 "Dass die Software ersetzt wurde.",
                 "Dass die Klinik geschlossen wurde.",
               ],
               answer: 1,
               explain:
-                "Sonuç üçlü olarak sayılıyor: \"ein Vergleich, ein Wechsel in der Leitung und keine Änderung des Verfahrens\". Üç kişi ya da kurum adlandırılmış, değişmeyen tek şey usul.",
+                "Sonuç üçlü olarak sayılıyor: \"ein Vergleich, ein Wechsel in der Leitung und keine Änderung des Verfahrens\". Sırayla bir bakım personeli, bir servis sorumlusu ve bir yazılım suçlanmış; değişmeyen tek şey usul.",
             },
             {
               kind: "mcq",
@@ -409,7 +409,7 @@ Untersuchungen zeigen, dass Zeugen ein Ereignis unterschiedlich schildern, je na
 
 Für die Praxis folgt daraus eine unbequeme Regel: Je später befragt wird, desto glatter fällt die Erzählung aus. Fachleute empfehlen deshalb, Aufzeichnungen unmittelbar anzulegen — {{24}} lückenhaft sie im ersten Moment auch sein mögen.
 
-Das Verfahren hat mithin Grenzen. Es verhindert nicht, dass später verglichen und geglättet wird. Es verschafft aber eine Fassung, die entstanden ist, {{25}} der Ausgang feststand.`,
+Das Verfahren hat allerdings Grenzen. Es verhindert nicht, dass später verglichen und geglättet wird. Es verschafft aber eine Fassung, die entstanden ist, {{25}} der Ausgang feststand.`,
             },
           ],
           items: [
@@ -994,7 +994,7 @@ Beispiel Ampullen: Lagerung nach {{10}} Meldungen getrennt.`,
           prompt:
             "In einer Fachzeitschrift stand: \"Wer Fehler folgenlos lässt, lädt zur Nachlässigkeit ein.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir meslek dergisinde şöyle yazdı: \"Hatayı sonuçsuz bırakan, dikkatsizliğe davetiye çıkarır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir meslek dergisinde şu cümle yer aldı: \"Hatayı sonuçsuz bırakan, dikkatsizliğe davetiye çıkarır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,
@@ -1045,7 +1045,7 @@ Der Text erweckt den Eindruck, unser Haus habe eingegangene Meldungen an die Per
 
 Richtig ist {{4}}, dass eine Meldung im vergangenen Jahr eine Leitungsperson betraf. Auch in diesem Fall wurde der Vorgang ausschließlich in der monatlichen Auswertungsrunde behandelt.
 
-Ich bedaure, dass Ihre Redaktion vor der Veröffentlichung keine Gelegenheit zur Stellungnahme eingeräumt hat, {{5}} eine solche Rückfrage üblich ist.
+Ich bedaure, dass Ihre Redaktion uns vor der Veröffentlichung keine Gelegenheit zur Stellungnahme eingeräumt hat, {{5}} eine solche Rückfrage üblich ist.
 
 {{6}} bitte ich Sie, in der nächsten Ausgabe eine Berichtigung abzudrucken. Ich stelle Ihnen die Verfahrensanweisung gern zur {{7}}.
 
@@ -1182,7 +1182,7 @@ Ruth {{10}}`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte darüber sprechen, wem in einer großen Organisation ein Fehler zugerechnet werden kann. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Person meine ich denjenigen, der handelt; mit Bedingung diejenigen Umstände, die sein Handeln nahelegen. Für die Zurechnung an Personen spricht, dass sie überhaupt erst Konsequenzen ermöglicht. Wo niemand benannt wird, ändert sich erfahrungsgemäß wenig; die Erfahrung mit Gremienbeschlüssen ist eindeutig. Für die Bedingungen spricht die Struktur moderner Abläufe. Wer zwei ähnlich aussehende Ampullen nebeneinander lagert, verletzt keine Regel und schafft dennoch die Voraussetzung des Fehlers. Meine Position ist, dass die Zurechnung an Bedingungen mehr verhindert. Der Einwand dagegen wiegt allerdings schwer: Sie entlastet diejenigen, die tatsächlich gehandelt haben, und für Betroffene ist genau das schwer erträglich. Ich halte die Position trotzdem, weil sich Bedingungen ändern lassen und Personen ersetzt, nicht verbessert werden. Zusammenfassend: Wer Fehler zählen will, sucht Personen. Wer sie verringern will, sucht Bedingungen — und muss dafür in Kauf nehmen, dass die zweite Antwort nie so befriedigend klingt wie die erste.",
+              "Ich möchte darüber sprechen, wem in einer großen Organisation ein Fehler zugerechnet werden kann. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Person meine ich denjenigen, der handelt; mit Bedingung diejenigen Umstände, die sein Handeln nahelegen. Für die Zurechnung an Personen spricht, dass sie überhaupt erst Konsequenzen ermöglicht. Wo niemand benannt wird, ändert sich erfahrungsgemäß wenig; die Erfahrung mit Gremienbeschlüssen ist eindeutig. Für die Bedingungen spricht die Struktur moderner Abläufe. Wer zwei ähnlich aussehende Ampullen nebeneinander lagert, verletzt keine Regel und schafft dennoch die Voraussetzung des Fehlers. Meine Position ist, dass die Zurechnung an Bedingungen mehr verhindert. Der Einwand dagegen wiegt allerdings schwer: Sie entlastet diejenigen, die tatsächlich gehandelt haben, und für Betroffene ist genau das schwer erträglich. Ich halte trotzdem an dieser Position fest, weil sich Bedingungen ändern lassen und Personen ersetzt, nicht verbessert werden. Zusammenfassend: Wer Fehler zählen will, sucht Personen. Wer sie verringern will, sucht Bedingungen — und muss dafür in Kauf nehmen, dass die zweite Antwort nie so befriedigend klingt wie die erste.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavramlar gerçekten açıldı mı, yoksa örtük mü bırakıldı?",

@@ -429,7 +429,7 @@ I am not going to recommend that anybody repeat it. What I would recommend is ch
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -441,7 +441,7 @@ I am not going to recommend that anybody repeat it. What I would recommend is ch
               title: "The problem with local",
               body: `Every campaign for local food rests on a simple idea: the shorter the journey, the smaller the cost. The idea is not wrong, but it is incomplete in a way that is easy to demonstrate. {{28}}
 
-Take tomatoes. A heated glasshouse two hours from the city can use several times the energy of a field two thousand kilometers away, and the label will call the first one local. {{29}}
+Take tomatoes. A heated greenhouse two hours from the city can use several times the energy of a field two thousand kilometers away, and the label will call the first one local. {{29}}
 
 Transport itself is also badly understood. A truck carrying twenty tonnes uses very little fuel per box, whereas a customer who drives four kilometers for six items uses a great deal. {{30}}
 
@@ -449,7 +449,7 @@ Given all this, some retailers have begun to publish a figure that includes the 
 
 None of this argues against buying from a nearby farm, which supports things that no calculation captures. It argues for knowing which part of the journey a number describes.`,
               gloss: [
-                { de: "a glasshouse", tr: "sera", en: "das Gewächshaus" },
+                { de: "a greenhouse", tr: "sera", en: "das Gewächshaus" },
                 { de: "a truck", tr: "kamyon", en: "der Lastwagen" },
                 { de: "fuel", tr: "yakıt", en: "der Kraftstoff" },
               ],
@@ -525,7 +525,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             {
               key: "c",
               label: "c — Devrim, food researcher",
-              body: "The cheapest food in history is also the most expensive, once you count the water, the soil and the health bill. Nobody pays that bill at the till, so nobody sees it. Until it appears somewhere, no label will change anything.",
+              body: "The cheapest food in history is also the most expensive, once you count the water, the soil and the health bill. Nobody pays that bill at the checkout, so nobody sees it. Until it appears somewhere, no label will change anything.",
             },
             {
               key: "d",
@@ -550,7 +550,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text claims that a real cost is invisible at the point of sale?",
               answer: "c",
               explain:
-                "Devrim maliyeti ve görünmezliğini birlikte veriyor: «Nobody pays that bill at the till, so nobody sees it». Su, toprak ve sağlık faturası fiyatın dışında kalıyor.",
+                "Devrim maliyeti ve görünmezliğini birlikte veriyor: «Nobody pays that bill at the checkout, so nobody sees it». Su, toprak ve sağlık faturası fiyatın dışında kalıyor.",
             },
             {
               kind: "match",
@@ -860,7 +860,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               no: 11,
               ref: "b1",
               text: "Gap 11",
-              accept: ["90000", "ninety thousand"],
+              accept: ["90000", "90,000", "ninety thousand"],
               explain:
                 "«In three years we have delivered about ninety thousand boxes» — üç yıllık kutu sayısı. Cümlede `about` zaten yazılı olduğu için yalnız sayı isteniyor.",
             },
@@ -1127,7 +1127,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               options: ["The loss of income in the first years", "The reaction of people nearby", "Learning new work"],
               answer: 1,
               explain:
-                "Parayı açıkça dışarıda bırakıyor: «No. The hardest part was the neighbors». Vadide ölçü dönüm sayısı ve düğününde bulunan iki kişi bir yıl konuşmamış.",
+                "Parayı açıkça dışarıda bırakıyor: «No. The hardest part was the neighbors». Vadide insanlar arazi büyüklüğüyle ölçülüyor ve düğününde bulunan iki kişi bir yıl konuşmamış.",
             },
             {
               kind: "mcq",
@@ -1342,7 +1342,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "A higher price through the stores keeps the relationship simple: the person who eats the food pays for it, and nobody has to design a form. The difficulty is that it falls hardest on people with the least money, and a policy that makes food more expensive for them is hard to defend. Public payment spreads the cost across everybody and can be targeted, but it creates paperwork that the largest farms are always best at completing, which is exactly what happened with area payments. I would choose public payment, mainly because the price route cannot be aimed at anybody. The problem with my own choice is that it hides the cost: nobody sees it at the till, so nobody defends it when a government looks for savings.",
+              "A higher price through the stores keeps the relationship simple: the person who eats the food pays for it, and nobody has to design a form. The difficulty is that it falls hardest on people with the least money, and a policy that makes food more expensive for them is hard to defend. Public payment spreads the cost across everybody and can be targeted, but it creates paperwork that the largest farms are always best at completing, which is exactly what happened with area payments. I would choose public payment, mainly because the price route cannot be aimed at anybody. The problem with my own choice is that it hides the cost: nobody sees it at the checkout, so nobody defends it when a government looks for savings.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",

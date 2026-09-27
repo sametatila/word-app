@@ -292,7 +292,7 @@ If somebody had asked me two years ago, I would have said that pay is a private 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
+            "Read the text. Gaps 16 to 20 each need one sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -448,7 +448,7 @@ None of these questions makes a bad impression. An employer who cannot answer th
               options: ["tells", "says", "speaks", "talks"],
               answer: 0,
               explain:
-                "`tell` iki nesne alabilir: «tells you something». `say` nesneyi `to` ile bağlar, `speak` ve `talk` ise doğrudan nesne almaz.",
+                "`tell` iki nesne alabilir: «tells you something». `say` dinleyeni ancak `to` ile bağlar (`says something to you`), `speak` ve `talk` ise dinleyeni doğrudan nesne olarak almaz.",
             },
           ],
         },
@@ -1102,7 +1102,7 @@ Sit with an adviser for:  {{19}} appointments`,
 
 I booked the Tuesday evening bookkeeping course on September 6 and paid the full fee of 180 pounds the same week.
 
-Since the middle of October my employer has moved me onto late shifts, and I now work until nine on Tuesdays. I have asked twice whether I can change back, and the answer is no before February.
+Since the middle of October my employer has moved me onto late shifts, and I now work until nine on Tuesdays. I have asked twice whether I can change back, and the answer is no, not before February.
 
 I would like to move my place to the spring group rather than ask for my money back, because I still want to do the course. If that is not possible, please tell me what my options are.
 
@@ -1163,7 +1163,7 @@ I would do it again, although not for the reason people expect. The new job was 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about work and about time off.",
+          prompt: "I am going to ask you some questions about work and time off.",
           promptTr: "Sana iş ve izin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
@@ -1183,7 +1183,7 @@ I would do it again, although not for the reason people expect. The new job was 
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I work from eight to four, Monday to Friday, and one Saturday a month. I used to spend my evenings with a laptop, but since I moved I have walked in the park instead. If I were given one extra free day a week, I would use it for a long trip out of the city, because a weekend is never enough for that.",
+              "I work from eight to four, Monday to Friday, and one Saturday a month. I used to spend my evenings with a laptop, but since I moved I have started walking in the park instead. If I were given one extra free day a week, I would use it for a long trip out of the city, because a weekend is never enough for that.",
             criteria: [
               "Hafta sırayla mı anlatıldı? (first, then, after that)",
               "`used to` ya da present perfect ile değişim anlatıldı mı?",
@@ -1212,7 +1212,7 @@ I would do it again, although not for the reason people expect. The new job was 
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A monthly salary is the same every month, so you can plan a rent and a vacation. On the other hand, working faster brings you nothing, and after a while that shows. Being paid for each job is fairer in that sense, but a quiet November is frightening. I would prefer the salary, mainly because I sleep badly when I do not know what is coming. The disadvantage is that I have stayed in one job longer than I should have, exactly because it was safe.",
+              "A monthly salary is the same every month, so you can plan for rent and a vacation. On the other hand, working faster brings you nothing, and after a while that shows. Being paid for each job is fairer in that sense, but a quiet November is frightening. I would prefer the salary, mainly because I sleep badly when I do not know what is coming. The disadvantage is that I have stayed in one job longer than I should have, exactly because it was safe.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, whereas, fairer than)",
@@ -1263,7 +1263,7 @@ I would do it again, although not for the reason people expect. The new job was 
           no: 4,
           format: "speaking",
           goal: "interaction",
-          prompt: "We talk a little more about the same topic: how open people should be about pay.",
+          prompt: "Let's talk a little more about the same topic: how open people should be about pay.",
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: insanlar ücret konusunda ne kadar açık olmalı.",
           prepSeconds: 15,
           exchange: [

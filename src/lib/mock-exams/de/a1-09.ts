@@ -460,7 +460,7 @@ Wenn die Lampe rot ist, bitte warten.`,
               options: ["Den Mietvertrag.", "Den Reisepass.", "Beide Papiere zusammen."],
               answer: 0,
               explain:
-                "Görevli ikisini ayırıyor: kira sözleşmesi asıl olarak, \"Vom Pass reicht die Kopie\".",
+                "Görevli ikisini ayırıyor: kira sözleşmesinin aslı gerekiyor, pasaport için \"Vom Pass reicht die Kopie\".",
             },
             {
               kind: "mcq",
@@ -663,7 +663,7 @@ Wenn die Lampe rot ist, bitte warten.`,
               options: ["Nur mit einem Termin.", "Ohne Termin.", "Erst im nächsten Monat."],
               answer: 1,
               explain:
-                "Mesaj bunu açıkça söylüyor: \"Sie können ihn ohne Termin abholen\". On beş saat kapanış zamanı, koşul değil.",
+                "Mesaj bunu açıkça söylüyor: \"Sie können ihn ohne Termin abholen\". Saat on beş yalnız kapanış saati, koşul değil.",
             },
             {
               kind: "mcq",
@@ -707,7 +707,7 @@ Wenn die Lampe rot ist, bitte warten.`,
               options: ["Am Zwölften wie geplant.", "Am Elften.", "Am Achtzehnten."],
               answer: 2,
               explain:
-                "İki tarih geçiyor: iptal edilen \"am Zwölften\", yenisi \"am Achtzehnten um elf Uhr\". On bir saat, gün değil.",
+                "İki tarih geçiyor: iptal edilen \"am Zwölften\", yenisi \"am Achtzehnten um elf Uhr\". `elf` burada saati veriyor, günü değil.",
             },
           ],
         },
@@ -946,8 +946,8 @@ Iwona Nowicka`,
             },
             {
               who: "partner",
-              de: "Das heißt: Sie leben allein, ohne Ehepartner. Zweite Situation: Sie brauchen einen Stift. Bitten Sie mich darum.",
-              tr: "Şu demek: Eşiniz yok, yalnız yaşıyorsunuz. İkinci durum: Bir kaleme ihtiyacın var. Benden iste.",
+              de: "Das heißt: Sie sind nicht verheiratet. Zweite Situation: Sie brauchen einen Stift. Bitten Sie mich darum.",
+              tr: "Şu demek: Evli değilsin. İkinci durum: Bir kaleme ihtiyacın var. Benden iste.",
             },
             { who: "you", hint: "Kalem iste, kibarca.", expect: "kibar bir rica kalıbı kurmak (Können Sie mir bitte … geben)", seconds: 20 },
             {

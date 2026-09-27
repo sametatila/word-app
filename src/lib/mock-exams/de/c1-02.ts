@@ -363,7 +363,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               genre: "Zeitschriftentext",
               genreTr: "Dergi metni",
               title: "Warum uns ausgerechnet Namen entfallen",
-              body: `Kaum ein Gedächtnisfehler ist so verbreitet und so peinlich wie der vergessene Name. Man erinnert den Beruf, die gemeinsame Reise, sogar den Namen des Hundes — {{21}} den Namen des Menschen, der vor einem steht.
+              body: `Kaum ein Gedächtnisfehler ist so verbreitet und so peinlich wie der vergessene Name. Man erinnert sich an den Beruf, an die gemeinsame Reise, sogar an den Namen des Hundes — {{21}} an den Namen des Menschen, der vor einem steht.
 
 Der Grund dafür ist weniger geheimnisvoll, als es scheint. Ein Name ist, {{22}} fast allen anderen Informationen über eine Person, willkürlich. Aus "Bäcker" folgt nichts über den Beruf, aus "Klein" nichts über die Größe. Es fehlt jede Brücke, an der sich das Wort festhalten könnte.
 
@@ -467,7 +467,7 @@ Der letzte Rat fällt vielen schwer, {{25}} er der wirksamste ist: Nachfragen ko
                   text: "Zunächst zur Idee. Eine Patin oder ein Pate begleitet ein Kind ein Schuljahr lang, einmal wöchentlich, für neunzig Minuten. Wichtig ist mir gleich zu Beginn eine Abgrenzung: Das ist keine Nachhilfe. Wir üben nicht für Klassenarbeiten, wir sprechen, lesen und spielen.",
                 },
                 {
-                  text: "Wer kann mitmachen? Vorausgesetzt wird Volljährigkeit und ein sicheres Deutsch, mindestens auf dem Niveau B zwei. Eine pädagogische Ausbildung ist ausdrücklich nicht erforderlich; zwei Drittel unserer Patinnen und Paten kommen aus ganz anderen Berufen.",
+                  text: "Wer kann mitmachen? Vorausgesetzt werden Volljährigkeit und ein sicheres Deutsch, mindestens auf dem Niveau B zwei. Eine pädagogische Ausbildung ist ausdrücklich nicht erforderlich; zwei Drittel unserer Patinnen und Paten kommen aus ganz anderen Berufen.",
                 },
                 {
                   text: "Vor dem ersten Treffen stehen zwei Dinge an. Erstens eine Schulung an zwei Samstagen, insgesamt zwölf Stunden. Zweitens ein erweitertes Führungszeugnis, das Sie beim Bürgeramt beantragen; die Gebühr übernehmen wir.",
@@ -545,7 +545,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ref: "a1",
               text: "Notiz 3",
               accept: ["B2", "B zwei", "Niveau B2", "auf B2"],
-              explain: "\"Vorausgesetzt wird Volljährigkeit und ein sicheres Deutsch, mindestens auf dem Niveau B zwei\" — iki koşul birlikte anılıyor; not istenen düzey.",
+              explain: "\"Vorausgesetzt werden Volljährigkeit und ein sicheres Deutsch, mindestens auf dem Niveau B zwei\" — iki koşul birlikte anılıyor; not istenen düzey.",
             },
             {
               kind: "gap",
@@ -825,7 +825,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ],
               answer: 1,
               explain:
-                "\"Da haben Sie recht, und ich nehme mich nicht aus.\" Yardımcı olan şey ikna değil, alışkanlık olmuş.",
+                "\"Da haben Sie recht, und ich nehme mich nicht aus.\" Yardımcı olan şey ikna değil, pratik olmuş.",
             },
             {
               kind: "mcq",

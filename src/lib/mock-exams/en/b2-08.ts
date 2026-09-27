@@ -77,7 +77,7 @@ The alternative is not more money, or not only that. It is asking one question a
               options: ["work", "come", "find", "turn"],
               answer: 3,
               explain:
-                "`turn out to be` beklenenin tersinin ortaya çıkmasını bildirir ve cümle tam bir şaşırtıcı bulgu veriyor. `come out` ortaya çıkmak anlamına gelse de `to` mastarıyla bu kalıbı kurmaz.",
+                "`turn out to` + yalın fiil beklenenin tersinin ortaya çıkmasını bildirir ve cümle tam bir şaşırtıcı bulgu veriyor. `come out` ortaya çıkmak anlamına gelse de `to` mastarıyla bu kalıbı kurmaz.",
             },
             {
               kind: "mcq",
@@ -221,7 +221,7 @@ There is a further problem. The people least likely to answer a survey are the p
               genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Home care",
-              body: `Home care is the provision of practical help to people who remain in their own housing rather than moving into an institution.
+              body: `Home care is the provision of practical help to people who remain in their own homes rather than moving into an institution.
 
 Its stated aim is to postpone {{13}} on residential services for as long as it is safe to do so.
 
@@ -461,7 +461,7 @@ The awkward part is the cost. Doing less is not cheaper here: the promise of two
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -835,7 +835,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the figures from our first two years, and I will include the ones we did not enjoy. We began with nine hundred households and we now work with two thousand. The average visit is twenty minutes, which is set by the contract and not by us. Our first finding is that the strongest predictor of a hospital admission is not age and it is not living alone; it is a fall in the previous year. Second, the households that use the most hours are a small group: eight percent of them take a third of the time. Third, on notice — when we tell people the day before rather than on the morning, cancellations drop by half. Fourth, and this is the uncomfortable one, our own survey found that forty percent of the people we visit could not name the person who came last. And finally, funding: the program is paid for until 2029.",
+                  text: "Thank you. These are the figures from our first two years, and I will include the ones we did not enjoy. We began with nine hundred households and we now work with two thousand. The average visit is twenty minutes, which is set by the contract and not by us. Our first finding is that the strongest predictor of a hospital admission is not age and it is not living alone; it is a fall in the previous year. Second, the households that use the most hours are a small group: eight percent of them take a third of the time. Third, on notice — when we tell people the day before rather than that morning, cancellations drop by half. Fourth, and this is the uncomfortable one, our own survey found that forty percent of the people we visit could not name the person who came last. And finally, funding: the program is paid for until 2029.",
                 },
               ],
             },
@@ -921,7 +921,7 @@ The program is funded until {{16}}.`,
               text: "Gap 14",
               accept: ["cancellations"],
               explain:
-                "«when we tell people the day before rather than on the morning, cancellations drop by half» — önceden haber vermenin yarıya indirdiği şey.",
+                "«when we tell people the day before rather than that morning, cancellations drop by half» — önceden haber vermenin yarıya indirdiği şey.",
             },
             {
               kind: "gap",
@@ -1017,7 +1017,7 @@ The program is funded until {{16}}.`,
               situation: "Beşinci konuşmacı ailelere yapılan çağrıyı ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The average person doing this unpaid is sixty-one years old and half of them are in work. When a minister says that families should step up, I want to ask which family, and what he imagines they are doing at the moment." },
+                { text: "The average person doing this unpaid is sixty-one years old and half of them have jobs. When a minister says that families should step up, I want to ask which family, and what he imagines they are doing at the moment." },
               ],
             },
             {
@@ -1081,7 +1081,7 @@ The program is funded until {{16}}.`,
               text: "Speaker 5",
               answer: "d",
               explain:
-                "Konuşmacı sayıyı verip çağrıyı boşa çıkarıyor: «The average person doing this unpaid is sixty-one years old and half of them are in work».",
+                "Konuşmacı sayıyı verip çağrıyı boşa çıkarıyor: «The average person doing this unpaid is sixty-one years old and half of them have jobs».",
             },
             {
               kind: "match",
@@ -1118,7 +1118,7 @@ The program is funded until {{16}}.`,
                 { speaker: "Host", text: "Shorter is usually described as a cut." },
                 { speaker: "Lior", text: "It is a cut. It is also, and nobody says this, sometimes an improvement. Forty minutes with somebody who does not want to be there is worse than fifteen with somebody who does." },
                 { speaker: "Host", text: "What would you change if you could change one thing?" },
-                { speaker: "Lior", text: "The number of different people. I have had, I think, thirty-one of them in nine years. Every one asks the same four questions at the door, and I have got faster at answering them, which is not a skill I ever wanted." },
+                { speaker: "Lior", text: "The number of different people. I have had, I think, thirty-one of them in nine years. Every one asks the same four questions at the door, and I have gotten faster at answering them, which is not a skill I ever wanted." },
                 { speaker: "Host", text: "Would you accept fewer hours in return for fewer people?" },
                 { speaker: "Lior", text: "Yes, and I have said so, and I was told that this is not how the contract works. I would take three hours a week from one person over five hours from four." },
                 { speaker: "Host", text: "Some people say that the answer is families." },
@@ -1291,7 +1291,7 @@ Your article of March 14 was right about one thing, and it is the thing most rep
 
 Where the article went wrong was in treating living alone and being lonely as the same condition. They overlap, but they are not one thing. My neighbor is eighty-four, lives alone and sees a dozen people every week; what she cannot do is carry a basket up her front steps. When she was assessed last year, she was offered a weekly conversation and no handrail.
 
-What I would like to see is not more visits but a different first question. Ask whether the person wants company or wants a job doing, record the answer, and send what was asked for.
+What I would like to see is not more visits but a different first question. Ask whether the person wants company or wants a job done, record the answer, and send what was asked for.
 
 That change would cost nothing and would spare a good many people a visitor they did not need.
 

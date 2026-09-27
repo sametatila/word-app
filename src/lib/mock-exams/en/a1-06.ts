@@ -65,7 +65,7 @@ Thank you! Suki`,
               genre: "Notice in the park",
               genreTr: "Park duyurusu",
               title: "CITY PARK",
-              body: `Open from 7 in the morning to 21 in the evening.
+              body: `Open from 7 in the morning to 9 in the evening.
 
 Dogs: only on the small path, not on the grass.
 
@@ -217,7 +217,7 @@ No money. Only a warm coat!`,
               options: ["Animal Doctor", "Pet Shop Nova", "Park Walking Group"],
               answer: 0,
               explain:
-                "Dükkân bunu açıkça dışlıyor: «We do not sell animals». Doktor duyurusunda kuşlar sayılıyor, yani kuş konusunda yardım edecek tek yer orası; yürüyüş grubu ise yalnız köpeklerle ilgili.",
+                "Doktor duyurusunda kuşlar sayılıyor: «Small animals: cats, dogs, birds». Hasta bir kuşa yardım edecek tek yer orası; dükkân yalnız mama ve eşya satıyor, yürüyüş grubu ise yalnız köpeklerle ilgili.",
             },
             {
               kind: "mcq",
@@ -846,7 +846,7 @@ Phone:              {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You are going away for a week and your neighbor is looking after your cat and your neighbor looks after your cat. Write a short message to your neighbor. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "You are going away for a week and your neighbor is looking after your cat. Write a short message to your neighbor. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Bir haftalığına şehir dışına çıkıyorsun ve komşun kedine bakacak. Komşuna kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
@@ -925,7 +925,7 @@ Vito`,
           exchange: [
             { who: "partner", de: "Now we talk about animals. Your first word is: dog. Please ask me a question.", tr: "Şimdi hayvanları konuşuyoruz. İlk sözcüğün: köpek. Bana bir soru sor." },
             { who: "you", hint: "«dog» sözcüğüyle bir soru kur.", expect: "dog sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "I have got two dogs. Your next word is: park.", tr: "İki köpeğim var. Sıradaki sözcüğün: park." },
+            { who: "partner", de: "I have two dogs. Your next word is: park.", tr: "İki köpeğim var. Sıradaki sözcüğün: park." },
             { who: "you", hint: "«park» için bir soru kur.", expect: "park sözcüğüyle bir soru kurmak", seconds: 25 },
             { who: "partner", de: "The park near my house is very quiet. Now a question for you: when do you walk in the morning?", tr: "Evimin yanındaki park çok sakin. Şimdi sana bir soru: Sabah ne zaman yürüyüşe çıkarsın?" },
             { who: "you", hint: "Saat vererek cevapla.", expect: "saat bildiren tam bir cümleyle cevap vermek", seconds: 25 },

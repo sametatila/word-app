@@ -291,13 +291,13 @@ This year I am organizing something myself: eight people, one long table, no mus
               title: "Nine years next to my grandmother",
               body: `I lived in the same street as my grandmother for nine years, and here is what I {{15}}.
 
-Visit at a bad time. A short visit on a normal Tuesday is {{16}} than a long one at Christmas.
+Visit on ordinary days. A short visit on a normal Tuesday is {{16}} than a long one at Christmas.
 
 Do not ask what she wants for her birthday. She will say nothing, {{17}} she will keep the small thing you choose for years.
 
 Next month I {{18}} move to another city, and I am already thinking about the train.
 
-And the last thing: {{19}} you take a photograph, print it. Nobody looks at a telephone twice.`,
+And the last thing: {{19}} you take a photograph, print it. Nobody looks at a photo on a phone twice.`,
             },
           ],
           items: [
@@ -349,7 +349,7 @@ And the last thing: {{19}} you take a photograph, print it. Nobody looks at a te
               options: ["so", "when", "because"],
               answer: 1,
               explain:
-                "Cümle bir durumu öğüde bağlıyor: fotoğraf çektiğin zaman bas. `when` bu koşullu zamanı verir; `so` sonuç, `because` sebep bildirir ve ikisi de baştaki yan cümleyi kuramaz.",
+                "Cümle bir durumu öğüde bağlıyor: fotoğraf çektiğin zaman bastır. `when` bu koşullu zamanı verir; `so` sonuç, `because` sebep bildirir ve ikisi de baştaki yan cümleyi kuramaz.",
             },
           ],
         },
@@ -457,7 +457,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
                 { speaker: "Man", text: "Are you coming to the wedding?" },
                 { speaker: "Woman", text: "I have the invitation but I have not answered." },
                 { speaker: "Man", text: "Why not?" },
-                { speaker: "Woman", text: "It is four hundred kilometers and I have two days off. I want to go and I do not know how." },
+                { speaker: "Woman", text: "It is four hundred kilometers and I have two days off. I want to go, but I do not know how." },
               ],
             },
             {
@@ -937,7 +937,7 @@ Please bring a plate and a {{10}}`,
             points: [
               { de: "Say what you are celebrating and when.", tr: "Neyi ne zaman kutladığını söyle." },
               { de: "Say who else is coming.", tr: "Başka kimlerin geleceğini söyle." },
-              { de: "Say what Wren should bring, or that she should bring nothing.", tr: "Wren'in ne getirmesi gerektiğini, ya da hiçbir şey getirmemesini söyle." },
+              { de: "Say what Wren should bring, or that she should bring nothing.", tr: "Wren'in ne getirmesi gerektiğini ya da hiçbir şey getirmemesini söyle." },
             ],
             sample: `Hi Wren,
 
@@ -1085,7 +1085,7 @@ Zsofia`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think a big party is nice because she has a very large family and she sees them once a year. You are right about the time, that is a real problem for her. If we do it at home, she can go to her room when she is tired. So let us make a dinner at home and invite twelve people, not forty.",
+              "I think a big party is nice because she has a very large family and she sees them once a year. You are right about the time, that is a real problem for her. If we do it at home, she can go to her room when she is tired. So let us have a dinner at home and invite twelve people, not forty.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

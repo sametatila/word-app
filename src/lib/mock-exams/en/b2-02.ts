@@ -73,7 +73,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
               options: ["check", "control", "prove", "remind"],
               answer: 0,
               explain:
-                "Anlam, ifadenin çalışmayla örtüşüp örtüşmediğini denetlemek: `check that …`. `control` Türkçedeki \"kontrol etmek\"in yanıltıcı karşılığıdır ve İngilizcede yönetmek demektir; `prove` ve `confirm` ise sonucu baştan varsayar.",
+                "Anlam, ifadenin çalışmayla örtüşüp örtüşmediğini denetlemek: `check that …`. `control` Türkçedeki \"kontrol etmek\"in yanıltıcı karşılığıdır ve İngilizcede yönetmek demektir; `prove` sonucu baştan varsayar; `remind` ise birine bir şeyi hatırlatmaktır ve `that` yan cümlesinden önce bir kişi nesnesi ister.",
             },
             {
               kind: "mcq",
@@ -103,7 +103,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
               options: ["declined", "reduced", "shortened", "narrowed"],
               answer: 1,
               explain:
-                "Nesne `the number of overstated claims` ve anlam sayıyı azaltmak: `reduce the number of` en doğal eşdizim. `lower` fiyat ya da düzeyle, `shorten` uzunlukla gider; `decrease` genelde geçişsiz kullanılır ve bu yapıda zayıf durur.",
+                "Nesne `the number of overstated claims` ve anlam sayıyı azaltmak: `reduce the number of` en doğal eşdizim. `declined` geçişsizdir ve nesne almaz; `shortened` uzunlukla, `narrowed` genişlik ya da kapsamla gider.",
             },
             {
               kind: "mcq",
@@ -245,7 +245,7 @@ The most likely future is therefore a mixed one, with different fields making di
               text: "CONSIST",
               accept: ["inconsistency"],
               explain:
-                "Cümlenin devamı iki hakemin tamamen anlaşmazlığa düştüğünü söylüyor: eleştiri tutarSIZLIĞA yapılıyor. Kökten önce `consistent` sıfatı, sonra olumsuzu `inconsistent`, sonra adı `inconsistency` türetiliyor. Olumsuzluk eki olmadan cümle tersine döner.",
+                "Cümlenin devamı iki hakemin tamamen anlaşmazlığa düştüğünü söylüyor: eleştiri tutarSIZLIĞA yapılıyor. Kökten ilk olarak `consistent` sıfatı, sonra olumsuzu `inconsistent`, sonra adı `inconsistency` türetiliyor. Olumsuzluk eki olmadan cümle tersine döner.",
             },
             {
               kind: "gap",
@@ -353,7 +353,7 @@ The most likely future is therefore a mixed one, with different fields making di
               title: "The trouble with explaining better",
               body: `Whenever public trust in some finding turns out to be low, the response is almost always the same: we must explain it better. Having sat through a decade of workshops on exactly this, I have come to think the diagnosis is comfortable rather than correct.
 
-The comfortable part is that it puts the problem in the audience. If people only understood, they would agree. Nevertheless, the studies that test this are not encouraging. When knowledge of a subject is measured directly, people who know more are often more firmly attached to their existing position, not less.
+The comfortable part is that it puts the problem in the audience. If people only understood, they would agree. However, the studies that test this are not encouraging. When knowledge of a subject is measured directly, people who know more are often more firmly attached to their existing position, not less.
 
 That result is easy to misread, so let me be careful. It does not mean that explanation is worthless, and it certainly does not mean that people are stupid. It means that explanation is doing something narrower than we assumed: it equips people to defend a view, and which view they defend was decided elsewhere.
 
@@ -454,7 +454,7 @@ I want to be clear that I am not against explanation, which would be an odd posi
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [

@@ -418,7 +418,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
           prompt:
             "Read the five short texts a to e by different writers on the same subject. Questions 27 to 30: which writer is it? No writer is used twice.",
           promptTr:
-            "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddeler için bunun hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
+            "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddelerin hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
           options: [
             {
               key: "a",
@@ -491,7 +491,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
+            "Read the text. Gaps 31 to 34 each need one paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -578,7 +578,7 @@ The third attempt was designed by people who had read the second report carefull
           prompt:
             "Read the four short texts a to d. Questions 35 to 40: which text is it? A text can be the answer more than once.",
           promptTr:
-            "a'dan d'ye dört kısa metni oku. 35–40. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
+            "a'dan d'ye dört kısa metni oku. 35–40. maddelerde söyleneni hangi metnin söylediğine karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
             {
               key: "a",
@@ -846,7 +846,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               text: "Gap 8",
               accept: ["390", "three hundred and ninety"],
               explain:
-                "«we were able to match three hundred and ninety of them to a performance review» — eşleştirilebilen sayı. Dört yüz altmış incelemenin tamamı.",
+                "«we were able to match three hundred and ninety of them to a performance review» — eşleştirilebilen sayı. Dört yüz altmış ise incelenen atamaların tamamı.",
             },
             {
               kind: "gap",
@@ -1033,7 +1033,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               options: ["Lenn", "Wren", "Juno", "None of them"],
               answer: 0,
               explain:
-                "Yalnız Lenn konumunu değiştirdiğini söylüyor: «Partly, and I should say so». Wren baştan «fair and incomplete» diyerek tamamlıyor, Juno ise savını sonuna kadar sürdürüyor.",
+                "Yalnız Lenn konumunu değiştirdiğini söylüyor: «Partly, and I should say so». Wren baştan «It is fair and it is incomplete» diyerek tamamlıyor, Juno ise savını sonuna kadar sürdürüyor.",
             },
           ],
         },
@@ -1247,9 +1247,9 @@ Cost of each competition in staff time: {{14}} pounds`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on hiring and automation. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on hiring and automation. Write an essay for your instructor summarizing the two points below, saying which is more important and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
           promptTr:
-            "İşe alım ve otomasyon üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Daha isabetli bir seçme yöntemi, yöneticiler sevmese de benimsenmeye değer.\n2. Yöneticilerin tasarlandığı gibi kullanmayacağı bir yöntem hiçbir iyileşme sağlamaz.\n\n220–260 kelime yaz.",
+            "İşe alım ve otomasyon üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktayı özetle, hangisinin daha önemli olduğunu söyle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Daha isabetli bir seçme yöntemi, yöneticiler sevmese de benimsenmeye değer.\n2. Yöneticilerin tasarlandığı gibi kullanmayacağı bir yöntem hiçbir iyileşme sağlamaz.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1270,7 +1270,7 @@ My own view is that the framing conceals the real question, which is not which m
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu?",
+              "Kendi görüşün özetten ayrılıyor mu?",
               "Karşı görüşün en güçlü hâli mi kuruldu, yoksa zayıflatıldı mı?",
               "Çekimserlik ve ince ayrım ifadeleri C1 düzeyinde mi? (though for a narrower reason, on this account)",
               "220–260 kelime aralığında mı?",
@@ -1402,7 +1402,7 @@ I recommend adopting the work sample for these positions, on two conditions: tha
           exchange: [
             { who: "partner", de: "The options are: paying for the scoring time of work samples, training every panel chair, auditing last year's appointments against performance, anonymizing applications, and reducing panels from five people to three. Which two would you defend, and on what criterion?", tr: "Seçenekler: iş örneği değerlendirmelerinin süresini ücretlendirmek, her kurul başkanını eğitmek, geçen yılın atamalarını sonraki iş performansıyla karşılaştırarak denetlemek, başvuruları anonimleştirmek ve kurulları beş kişiden üçe indirmek. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
-            { who: "partner", de: "Let me press you. An audit produces a report, and reports are where reforms go to die. Is that not exactly the wrong thing to buy with a single year?", tr: "Üsteleyeyim. Denetim bir rapor üretir ve reformlar raporlarda ölür. Tek bir yılla alınacak en yanlış şey tam da bu değil mi?" },
+            { who: "partner", de: "Let me press you. An audit produces a report, and reports are where reforms go to die. Is that not exactly the wrong thing to buy with a single year?", tr: "Üsteleyeyim. Denetim bir rapor üretir ve reformlar raporlarda ölür. Bir yıllık bütçeyle alınabilecek en yanlış şey tam da bu değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
             { who: "partner", de: "Understood. Can we settle a priority order for the top three, and name what we would drop?", tr: "Anlaşıldı. İlk üç için bir öncelik sırası belirleyip neyi bırakacağımızı söyleyebilir miyiz?" },
             { who: "you", hint: "Sıralamayı ver, her adımı gerekçelendir ve bırakılanı açıkla.", expect: "gerekçeli bir öncelik sırası kurmak ve dışarıda bırakılanı açıklamak", seconds: 50 },

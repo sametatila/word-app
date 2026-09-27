@@ -104,7 +104,7 @@ Der Text empfiehlt deshalb eine Aufteilung: Voreinstellungen für das Bekannte u
               text: "Lücke 2",
               accept: ["Denkfehler", "Fehler", "Irrtum"],
               explain:
-                "Metin bunu düzeltiyor: gözlem kamusal tartışmada \"als Denkfehler behandelt\" ediliyor, \"Sie ist jedoch keiner\".",
+                "Metin bunu düzeltiyor: gözlem kamusal tartışmada \"als Denkfehler behandelt\", yani düşünme hatası sayılıyor; \"Sie ist jedoch keiner\".",
             },
             {
               kind: "gap",
@@ -210,10 +210,10 @@ Auffällig ist, was nach der Übung passierte. Die Steckdosen wurden binnen drei
 
 Ob die Klinik heute besser vorbereitet ist, lässt sich schwer sagen. Zeller formuliert es vorsichtig: "Sie ist besser vorbereitet auf einen Stromausfall an einem Dienstagmorgen im März." Was ihn stärker beschäftigt, ist eine andere Zahl: Von den vierzehn Kliniken im Landkreis hat seit dieser Übung eine einzige eine eigene angesetzt.`,
               gloss: [
-                { de: "die Notstromversorgung", tr: "acil durum jeneratörü", en: "emergency power supply" },
+                { de: "die Notstromversorgung", tr: "acil durum güç beslemesi", en: "emergency power supply" },
                 { de: "nachhalten", tr: "izlemek, takip etmek", en: "to keep track of" },
                 { de: "die Nachlässigkeit", tr: "savsaklama", en: "negligence" },
-                { de: "ohne Umschweife", tr: "dolandırmadan, açıkça", en: "without beating about the bush" },
+                { de: "ohne Umschweife", tr: "dolandırmadan, açıkça", en: "without beating around the bush" },
               ],
             },
           ],
@@ -394,7 +394,7 @@ Ob die Klinik heute besser vorbereitet ist, lässt sich schwer sagen. Zeller for
               genre: "Zeitschriftentext",
               genreTr: "Dergi metni",
               title: "Der Vorrat kehrt zurück",
-              body: `Der private Notvorrat galt jahrzehntelang als Sache übervorsichtiger Menschen — {{21}} er in offiziellen Empfehlungen nie verschwunden war.
+              body: `Der private Notvorrat galt jahrzehntelang als Sache übervorsichtiger Menschen — {{21}} er aus offiziellen Empfehlungen nie verschwunden war.
 
 Seit einigen Jahren hat sich das gedreht. Die Verkaufszahlen für haltbare Lebensmittel steigen, und zwar nicht nur nach Ereignissen. Belastbare Erklärungen dafür sind {{22}} rar; die naheliegende Vermutung, es handle sich um eine Reaktion auf Krisen, erklärt den gleichmäßigen Verlauf gerade nicht.
 
@@ -497,7 +497,7 @@ Am Ende dürfte weniger entscheidend sein, wie viele Dosen im Keller stehen, {{2
                   text: "Zur Menge: Gerechnet wird mit zwei Litern pro Person und Tag zum Trinken, plus einem halben Liter zum Kochen. Für zehn Tage sind das bei zwei Personen fünfzig Liter. Das ist der Punkt, an dem die meisten aussteigen, und deshalb sage ich es deutlich: Fünf Tage sind besser als nichts.",
                 },
                 {
-                  text: "Was oft vergessen wird, ist der Dosenöffner. Ein mechanischer, nicht elektrisch. Ebenso ein Radio mit Batterien; das Handynetz fällt bei einem längeren Stromausfall nach etwa vier Stunden aus, weil die Sendemasten eigene Akkus haben, aber nur für diese Zeit.",
+                  text: "Was oft vergessen wird, ist der Dosenöffner. Ein mechanischer, kein elektrischer. Ebenso ein Radio mit Batterien; das Handynetz fällt bei einem längeren Stromausfall nach etwa vier Stunden aus, weil die Sendemasten eigene Akkus haben, aber nur für diese Zeit.",
                 },
                 {
                   text: "Zum Bargeld: Halten Sie einen kleinen Betrag in kleinen Scheinen bereit. Bei Kartenausfall kann niemand wechseln. Wir empfehlen zweihundert Euro pro Haushalt, in Zehnern und Zwanzigern.",
@@ -597,7 +597,7 @@ Vorrat laufend verbrauchen und nachkaufen.`,
               text: "Notiz 6",
               accept: ["Dosenöffner", "der Dosenöffner", "ein Dosenöffner"],
               explain:
-                "En sık unutulan şey: \"der Dosenöffner. Ein mechanischer, nicht elektrisch.\"",
+                "En sık unutulan şey: \"der Dosenöffner. Ein mechanischer, kein elektrischer.\"",
             },
             {
               kind: "gap",
@@ -1109,7 +1109,7 @@ Ruth Sundermann`,
               text: "Lücke 9 (höfliche Erwartung am Satzende)",
               accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "wäre ich dankbar", "freue ich mich"],
               explain:
-                "Cümle `Über eine Rückmeldung …` ile başladığı için yüklem sona geçiyor; süre isteği böylece baskı değil rica olarak okunuyor.",
+                "Cümle `Über eine Rückmeldung …` ile başladığı için çekimli fiil ikinci sıraya geçiyor ve özne fiilin ardına düşüyor; süre isteği böylece baskı değil rica olarak okunuyor.",
             },
             {
               kind: "gap",
@@ -1156,7 +1156,7 @@ Ruth Sundermann`,
               { de: "Ausblick", tr: "Kapanış ve ileriye bakış" },
             ],
             sample:
-              "Ich möchte über die Verteilung der Verantwortung bei der Vorsorge sprechen. Zunächst kläre ich, was ich unter Vorsorge verstehe, dann schildere ich die Lage in meinem Herkunftsland, danach wäge ich ab und komme zu meiner Position. Unter Vorsorge verstehe ich nicht den Vorrat im Keller, sondern die Fähigkeit, eine Störung eine bestimmte Zeit lang auszuhalten. Diese Unterscheidung ist wichtig, weil sie zeigt, dass ein Teil davon prinzipiell nicht privat organisierbar ist: Kein Haushalt kann ein Wasserwerk vorhalten. In Georgien, wo ich aufgewachsen bin, war das lange umgekehrt geregelt. Nach den Ausfällen der neunziger Jahre hat fast jede Familie eigene Reserven angelegt, und die öffentliche Versorgung galt als unzuverlässig. Das hat funktioniert, allerdings mit einem Preis: Wer keine Familie im Ort hatte, war nicht abgesichert. Für die Abwägung heißt das: Private Vorsorge ist sichtbar, sie motiviert und sie erreicht die Menschen dort, wo sie leben. Öffentliche Vorsorge ist wirksamer, aber sie ist unsichtbar, solange sie funktioniert, und wird deshalb zuerst gekürzt. Meine Position ist abgestuft: Der Staat schuldet die Struktur und die Übung, der Einzelne die Kenntnis der eigenen Wohnung. Für die Zukunft erwarte ich, dass die entscheidende Frage nicht mehr lautet, wie viel jemand lagert, sondern wie oft geübt wird — und wer die Ergebnisse zu sehen bekommt.",
+              "Ich möchte über die Verteilung der Verantwortung bei der Vorsorge sprechen. Zunächst kläre ich, was ich unter Vorsorge verstehe, dann schildere ich die Lage in meinem Herkunftsland, danach wäge ich ab und komme zu meiner Position. Unter Vorsorge verstehe ich nicht den Vorrat im Keller, sondern die Fähigkeit, eine Störung eine bestimmte Zeit lang auszuhalten. Diese Unterscheidung ist wichtig, weil sie zeigt, dass ein Teil davon prinzipiell nicht privat organisierbar ist: Kein Haushalt kann ein Wasserwerk vorhalten. In Georgien, wo ich aufgewachsen bin, war das lange umgekehrt geregelt. Nach den Ausfällen der neunziger Jahre hat fast jede Familie eigene Reserven angelegt, und die öffentliche Versorgung galt als unzuverlässig. Das hat funktioniert, allerdings um einen Preis: Wer keine Familie im Ort hatte, war nicht abgesichert. Für die Abwägung heißt das: Private Vorsorge ist sichtbar, sie motiviert und sie erreicht die Menschen dort, wo sie leben. Öffentliche Vorsorge ist wirksamer, aber sie ist unsichtbar, solange sie funktioniert, und wird deshalb zuerst gekürzt. Meine Position ist abgestuft: Der Staat schuldet die Struktur und die Übung, der Einzelne die Kenntnis der eigenen Wohnung. Für die Zukunft erwarte ich, dass die entscheidende Frage nicht mehr lautet, wie viel jemand lagert, sondern wie oft geübt wird — und wer die Ergebnisse zu sehen bekommt.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavram tanımı gerçekten yapıldı mı?",
@@ -1235,7 +1235,7 @@ Ruth Sundermann`,
               { de: "eine gemeinsame Formulierung finden", tr: "Ortak bir formüle varmak" },
             ],
             sample:
-              "Ihren Einwand teile ich insoweit, als eine Veröffentlichungspflicht die Übung verändern kann. Nur richtet sich meine Forderung nicht auf Bloßstellung, sondern auf Verbindlichkeit: Was ich veröffentlicht sehen möchte, ist nicht das Ergebnis, sondern die Tatsache, dass geübt wurde, und die Liste der daraus abgeleiteten Maßnahmen mit Fristen. Ihr zweiter Punkt trifft dabei genau meinen: Wenn Ergebnisse in Ordnern verschwinden, hilft die Übung niemandem. Deshalb würde ich die Pflicht an die Umsetzung binden, nicht an den Bericht. Zur Sicherheit: Sie haben recht, dass Schwachstellen nicht öffentlich gehören. Das spricht aber nicht gegen die Pflicht, sondern für eine Zweiteilung — der Befund geht an die Aufsicht, die Maßnahmenliste an die Öffentlichkeit. Als gemeinsame Formulierung schlage ich vor: Kritische Einrichtungen üben mindestens alle zwei Jahre; veröffentlicht werden das Datum der Übung und die daraus folgenden Maßnahmen samt Umsetzungsfrist, nicht jedoch die einzelnen Befunde. Eine Pflicht zur Offenlegung von Schwachstellen ist ausdrücklich nicht vorgesehen.",
+              "Ihren Einwand teile ich insoweit, als eine Veröffentlichungspflicht die Übung verändern kann. Nur richtet sich meine Forderung nicht auf Bloßstellung, sondern auf Verbindlichkeit: Was ich veröffentlicht sehen möchte, ist nicht das Ergebnis, sondern die Tatsache, dass geübt wurde, und die Liste der daraus abgeleiteten Maßnahmen mit Fristen. Ihr zweiter Punkt trifft dabei genau meinen: Wenn Ergebnisse in Ordnern verschwinden, hilft die Übung niemandem. Deshalb würde ich die Pflicht an die Umsetzung binden, nicht an den Bericht. Zur Sicherheit: Sie haben recht, dass Schwachstellen nicht in die Öffentlichkeit gehören. Das spricht aber nicht gegen die Pflicht, sondern für eine Zweiteilung — der Befund geht an die Aufsicht, die Maßnahmenliste an die Öffentlichkeit. Als gemeinsame Formulierung schlage ich vor: Kritische Einrichtungen üben mindestens alle zwei Jahre; veröffentlicht werden das Datum der Übung und die daraus folgenden Maßnahmen samt Umsetzungsfrist, nicht jedoch die einzelnen Befunde. Eine Pflicht zur Offenlegung von Schwachstellen ist ausdrücklich nicht vorgesehen.",
             criteria: [
               "Konum gerekçelendirildi mi ve konuşma boyunca tutarlı kaldı mı?",
               "İtirazlar gerçekten ele alındı mı (kabul edilen kısım adlandırıldı mı)?",

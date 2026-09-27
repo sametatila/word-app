@@ -155,7 +155,7 @@ The change has been resisted, and not {{12}} good reason: a gallery that explain
               text: "Gap 7",
               accept: ["although", "though"],
               explain:
-                "İki yarı arasında bir kabul-çekince ilişkisi var: oran küçük, ama tam değeri değişiyor. `although` ve `though` bu ödünü verir. `because` sebep kurar ve ikinci yarıyı birincinin gerekçesi yapar, oysa değil.",
+                "İki yarı arasında bir kabul-çekince ilişkisi var: oran küçük, ama tam değeri değişiyor. `although` ve `though` bu ödünü verir. `because` sebep kurar ve ikinci yarıyı birincinin gerekçesi yapar, oysa aralarında böyle bir ilişki yok.",
             },
             {
               kind: "gap",
@@ -433,7 +433,7 @@ What I would recommend to any museum is not a policy but a habit: take one objec
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -519,7 +519,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
             {
               key: "a",
               label: "a — Berk, museum director",
-              body: "We returned two objects last year and I was warned that it would start a flood. It did not. What it started was three years of correspondence about a fourth object that we still cannot trace, and that work is the real cost, not the loss of the objects themselves.",
+              body: "We returned two objects last year and I was warned that it would start a flood. It did not. What it started was three years of correspondence about a third object that we still cannot trace, and that work is the real cost, not the loss of the objects themselves.",
             },
             {
               key: "b",
@@ -671,7 +671,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               situation: "Bir çalışan cuma günü için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Friday. I can open the archive and sit with the researcher, but I have to leave at one for the school run. If we start at nine we will get through the 1890s boxes, and Beril said she can cover the afternoon." },
+                { text: "Hi, about Friday. I can open the archive and sit with the researcher, but I have to leave at one for school pickup. If we start at nine we will get through the 1890s boxes, and Beril said she can cover the afternoon." },
               ],
             },
             {
@@ -729,7 +729,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               no: 3,
               ref: "a3",
               text: "What does the second speaker say about the open day?",
-              options: ["Attendance was disappointing this year again", "Interest was concentrated on one thing", "The talks were too short"],
+              options: ["Attendance was disappointing again this year", "Interest was concentrated on one thing", "The talks were too short"],
               answer: 1,
               explain:
                 "Sorular tek bir nesnede toplanmış: «Almost all about one object» ve on iki sunumun on biri gereksiz kalmış. Katılım ise iki katına çıkmış, yani hayal kırıklığı değil.",

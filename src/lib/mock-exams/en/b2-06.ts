@@ -427,7 +427,7 @@ Nevertheless, I do not regret the year. What it changed was not my bill but my p
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -665,7 +665,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Bir kişi teknisyen randevusu için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Thursday. I can meet the engineer and let him in, but I have to leave at twelve for the school. If he starts at eight he will be finished by then, and Quim said he can come for the afternoon." },
+                { text: "Hi, about Thursday. I can meet the engineer and let him in, but I have to leave at twelve for the school. If he starts at eight he should be finished by then; if not, Quim said he can come for the afternoon." },
               ],
             },
             {
@@ -688,7 +688,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               plays: 2,
               segments: [
                 { speaker: "Iris", text: "Why is your bill so much lower than mine?" },
-                { speaker: "Tom", text: "Same apartment, same size." },
+                { speaker: "Tom", text: "Same building, same size." },
                 { speaker: "Iris", text: "Exactly." },
                 { speaker: "Tom", text: "I am on the top floor and you are on the corner. Three outside walls against my one. Nothing I do explains it." },
               ],
@@ -804,7 +804,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the program and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per pound is not new windows, it is loft insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen percent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety percent of our funding comes from one national program that ends in two years.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the program and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per pound is not new windows, it is attic insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen percent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety percent of our funding comes from one national program that ends in two years.",
                 },
               ],
             },
@@ -868,9 +868,9 @@ The households hardest to reach are those in the {{15}} properties.
               no: 12,
               ref: "b1",
               text: "Gap 12",
-              accept: ["loft insulation", "insulation"],
+              accept: ["attic insulation", "insulation"],
               explain:
-                "Kayıt beklentiyi bozuyor: «not new windows, it is loft insulation», çünkü ucuz ve 1985'ten beri neredeyse hiç yapılmamış. Pencereyi yazan öğrenci çürütülen şıkkı almış olur.",
+                "Kayıt beklentiyi bozuyor: «not new windows, it is attic insulation», çünkü ucuz ve 1985'ten beri neredeyse hiç yapılmamış. Pencereyi yazan öğrenci çürütülen şıkkı almış olur.",
             },
             {
               kind: "gap",
@@ -1357,7 +1357,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
             "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için iki önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a pamphlet in every mailbox, and a grant toward new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
+            { who: "partner", de: "The ideas are: free attic insulation for the worst properties, inspectors who actually enter the buildings, a pamphlet in every mailbox, and a grant toward new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would question the inspectors. They repair nothing at all, and a budget spent on visits is a budget not spent on insulation. Is that not the worst possible use of the money?", tr: "Denetçileri sorgularım. Hiçbir şeyi onarmıyorlar ve ziyarete harcanan bütçe yalıtıma harcanmayan bütçedir. Bu paranın olabilecek en kötü kullanımı değil mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },
@@ -1373,7 +1373,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest is free loft insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The pamphlet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the pamphlet.",
+              "The strongest is free attic insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The pamphlet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the pamphlet.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

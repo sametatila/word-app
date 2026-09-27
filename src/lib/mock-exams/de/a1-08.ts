@@ -85,7 +85,7 @@ Am Dienstag ist das Bad nur für Kurse offen, von 14 bis 18 Uhr.
 
 Ihr Team vom Freibad Süd`,
               gloss: [
-                { de: "das Gewitter", tr: "fırtına", en: "thunderstorm" },
+                { de: "das Gewitter", tr: "gök gürültülü fırtına", en: "thunderstorm" },
                 { de: "verlassen", tr: "terk etmek", en: "to leave" },
               ],
             },

@@ -86,7 +86,7 @@ That comparison is difficult to make, which is not the same as impossible, and t
               options: ["enforced", "obliged", "demanded", "necessary"],
               answer: 1,
               explain:
-                "`be obliged to + fiil` bir yükümlülüğün bulunmadığını bildirir. `required` edilgen kuruluşta `to` alır ama burada `not required to keep` biçimi anlamı zayıflatır; `demanded` özneyi kişi olarak istemez, `forced` ise zorlamayı bildirir.",
+                "`be obliged to + fiil` bir yükümlülüğün bulunmadığını bildirir. `enforced` bir kuralın uygulatılmasını bildirir ve kişi öznesiyle `to` mastarı almaz; `demanded` özneyi kişi olarak istemez, `necessary` ise kişi öznesiyle kurulmaz («it is necessary to»).",
             },
             {
               kind: "mcq",
@@ -106,7 +106,7 @@ That comparison is difficult to make, which is not the same as impossible, and t
               options: ["weighed", "estimated", "counted", "valued"],
               answer: 0,
               explain:
-                "`weigh something against something` iki tarafı karşılaştırmayı anlatır ve cümlede `against` var. `measured against` ölçüt bildirir, `counted` ile `valued` bu edatı bu anlamda almaz.",
+                "`weigh something against something` iki tarafı karşılaştırmayı anlatır ve cümlede `against` var. `estimated` tahmin etmeyi bildirir ve bu anlamda `against` almaz, `counted` ile `valued` bu edatı bu anlamda almaz.",
             },
             {
               kind: "mcq",
@@ -153,7 +153,7 @@ The difficulty with that reply is that repairability is not printed on the box, 
               id: "en-b2-11-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["whereas"],
+              accept: ["whereas", "while", "when", "but"],
               explain:
                 "İki yarı arasında karşıtlık var: nesnenin niteliği sanılan şey aslında bir kararın niteliği. `whereas` bu karşıtlığı kurar; `because` gerekçe verirdi.",
             },
@@ -180,7 +180,7 @@ The difficulty with that reply is that repairability is not printed on the box, 
               id: "en-b2-11-l2-10",
               no: 10,
               text: "Gap 10",
-              accept: ["what"],
+              accept: ["what", "all"],
               explain:
                 "Cümlenin öznesi bir ad tümcesi: «What the owner sees is a bill». `That` öncül isterdi, `which` ise özneyi kuramaz.",
             },
@@ -230,7 +230,7 @@ Manufacturers are under no general {{16}} to supply components once production h
 
 Independent testing bodies publish {{17}} scores for domestic appliances, although these are based on repair data rather than on failure rates.
 
-Proposals for a repairability label have been discussed since the nineteen nineties; the main {{18}} raised against them concerns who would verify the figures.`,
+Proposals for a repairability label have been discussed since the 1990s; the main {{18}} raised against them concerns who would verify the figures.`,
             },
           ],
           items: [
@@ -458,7 +458,7 @@ The remedy is not moral instruction aimed at designers. It is a rule that makes 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -1248,7 +1248,7 @@ Bring the {{16}} number`,
 
 The cost is real and it is not mainly storage. A warehouse has to decide today how many pumps will be wanted in 2034, and a wrong guess is paid for in metal that is eventually scrapped. That cost would be added to the price of every machine, including those of buyers who replace theirs after five years anyway.
 
-What is much harder to defend is the position of the buyer. Repairability is not printed on the box, and no ordinary purchaser can discover before paying whether the parts will exist. A market cannot reward a decision that nobody is able to see.
+What is much harder to defend is how little the buyer can know. Repairability is not printed on the box, and no ordinary purchaser can discover before paying whether the parts will exist. A market cannot reward a decision that nobody is able to see.
 
 My own view is that the two problems have been confused. Supply is expensive; information is cheap.
 

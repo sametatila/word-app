@@ -91,7 +91,7 @@ None of this means that quiet carriages solve anything large. They do, however, 
               options: ["stick", "hold", "obey", "follow"],
               answer: 0,
               explain:
-                "Boşluktan sonra `to them` var ve anlam kurallara uymak. `stick to` bu öbek fiili kurar. `hold to` başka bir anlam taşır (bir söze bağlı kalmak), `keep to` yakın ama devamında yol ya da program ister, `follow` ise `to` almaz.",
+                "Boşluktan sonra `to them` var ve anlam kurallara uymak. `stick to` bu öbek fiili kurar. `hold to` başka bir anlam taşır (bir söze bağlı kalmak), `obey` ve `follow` ise `to` almaz.",
             },
             {
               kind: "mcq",
@@ -480,7 +480,7 @@ The reason this reform is rarely adopted is that it is not dramatic. Abolishing 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
+            "Read the text. Gaps 28 to 31 each need one sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -872,7 +872,7 @@ The largest single group of night workers is {{11}}.
 
 The biggest complaint from surveys is the {{12}} of getting home.
 
-The earlier night bus failed because it ran only at {{13}}.
+The earlier night bus failed because it ran only on {{13}}.
 
 Noise complaints rose by {{14}} percent after the pedestrian zone opened.
 
@@ -1136,7 +1136,7 @@ The council is asked to provide a license officer who works after {{16}}.`,
                 { speaker: "Halim", text: "Partly, and I want to be precise here, because this is where I am often misquoted. I am not saying individuals have no responsibility. I am saying that we have spent twenty years on the smaller half of the problem." },
                 { speaker: "Host", text: "What does the research actually show about open-plan offices?" },
                 { speaker: "Halim", text: "Less than either side wants. The studies are noisy and the effects are smaller than the headlines. What is robust is something narrower: the number of face-to-face conversations falls when the walls come down, which is the opposite of the stated purpose." },
-                { speaker: "Host", text: "That is counter-intuitive. Why would that happen?" },
+                { speaker: "Host", text: "That is counterintuitive. Why would that happen?" },
                 { speaker: "Halim", text: "The most likely explanation is that people compensate. If you can be overheard, you write instead of speaking. It is not that people become unfriendly; it is that the cheapest private channel wins." },
                 { speaker: "Host", text: "And what about the advice to check messages only twice a day?" },
                 { speaker: "Halim", text: "It works for the individual and it fails as a policy, because it moves the cost onto whoever is waiting. Unless the whole team agrees the same rhythm, you are simply being slow at somebody else's expense." },

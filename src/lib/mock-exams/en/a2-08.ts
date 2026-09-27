@@ -43,7 +43,7 @@ export const EN_A2_08: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "Tonight",
-              body: `Hi Cato, I have two tickets for tonight and my brother is sick. The doors open at eight and the band starts at nine. It is a twenty-minute walk from your apartment. Tell me before six, because after that I give the ticket to somebody at work.`,
+              body: `Hi Cato, I have two tickets for tonight and my brother is sick. The doors open at eight and the band starts at nine. It is a twenty-minute walk from your apartment. Tell me before six, because after that I will give the ticket to somebody at work.`,
             },
             {
               kind: "text",
@@ -88,7 +88,7 @@ export const EN_A2_08: MockPaper = {
               options: ["Somebody to walk with her to the apartment", "A ticket for her brother, who is sick", "An answer before six o'clock"],
               answer: 2,
               explain:
-                "İletinin son cümlesi bir süre koyuyor: «Tell me before six, because after that I give the ticket to somebody at work». Kardeşi hasta olduğu için bilet zaten boşta.",
+                "İletinin son cümlesi bir süre koyuyor: «Tell me before six, because after that I will give the ticket to somebody at work». Kardeşi hasta olduğu için bilet zaten boşta.",
             },
             {
               kind: "mcq",
@@ -667,8 +667,8 @@ Leave the car at the {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five people speaking, questions 11 to 15. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -1086,7 +1086,7 @@ Vida`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I like the dance class because we sit all day and it is the only idea where we move. You are right about the money, eight euros every week is a lot for me too. But the film club is on Monday and I work late on Mondays. So let us choose soccer in the park; it is free and it is on Sunday.",
+              "I like the dance class because we sit all day and it is the only idea where we move. You are right about the money: eight euros every week is a lot for me too. But the film club is on Monday and I work late on Mondays. So let us choose soccer in the park; it is free and it is on Sunday.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

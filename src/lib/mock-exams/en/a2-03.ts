@@ -191,7 +191,7 @@ export const EN_A2_03: MockPaper = {
               text: "Anja studies alone and works better late in the evening than in the morning.",
               answer: "h",
               explain:
-                "İlan «Open until one in the morning, seven days a week» diyor ve sessiz. Anja tek başına çalışıyor, ev arkadaşı aramıyor; bu yüzden oda ilanı (a) ya da stüdyo (f) ona uymaz.",
+                "İlan «Open until one in the morning, seven days a week» diyor ve sessiz. Anja ev aramıyor, geç saate kadar açık bir çalışma yeri arıyor; bu yüzden oda ilanı (a) ya da stüdyo (f) ona uymaz.",
             },
             {
               kind: "match",
@@ -546,7 +546,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               options: ["She called the police at three", "She talked to the neighbors", "She wrote to the office again"],
               answer: 1,
               explain:
-                "Konuşmacı «I spoke to them this morning» diyor. Polisi aramak istemediğini de açıkça söylüyor; ofisin mektubu geçen ay ve başka biri tarafından gönderilmiş.",
+                "Konuşmacı «I spoke to them this morning» diyor. Polisi aramak istemediğini de açıkça söylüyor; mektubu ise geçen ay ofis göndermiş, o değil.",
             },
             {
               kind: "mcq",
@@ -657,7 +657,7 @@ Glass bin is now behind:  the {{10}}`,
               text: "Gap 10",
               accept: ["garage"],
               explain:
-                "Son cümle yeri değiştiriyor: cam kutusu «now behind the garage, not next to the door». Kapıyı yazan öğrenci eski yeri almış olur.",
+                "Son cümle yeri değiştiriyor: cam atık kutusu «now behind the garage, not next to the door». Kapıyı yazan öğrenci eski yeri almış olur.",
             },
           ],
         },
@@ -666,8 +666,8 @@ Glass bin is now behind:  the {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          prompt: "You hear five short recordings, questions 11 to 15. What is each person doing? Each recording plays twice.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -757,7 +757,7 @@ Glass bin is now behind:  the {{10}}`,
               options: ["Saying how she met her neighbors", "Complaining about the broken elevator in the building", "Inviting people for Sunday"],
               answer: 0,
               explain:
-                "Anlatı bir tanışma hikâyesi: dokuz yıl boyunca üst kattaki aileyi hiç görmemiş, «Then the elevator broke, we walked up together every day». Asansörden şikâyet etmiyor, tersine onu iyi bir şeyin başlangıcı sayıyor.",
+                "Anlatı bir tanışma hikâyesi: dokuz yıl boyunca üst kattaki aileyle hiç tanışmamış, «Then the elevator broke, we walked up together every day». Asansörden şikâyet etmiyor, tersine onu iyi bir şeyin başlangıcı sayıyor.",
             },
             {
               kind: "mcq",
@@ -789,7 +789,7 @@ Glass bin is now behind:  the {{10}}`,
           format: "match",
           goal: "detail",
           prompt:
-            "You hear five people, questions 16 to 20. Why did each person move house? The options are a to h. No answer is used twice. The recordings play twice.",
+            "You hear five people, questions 16 to 20. Why did each person move? The options are a to h. No answer is used twice. The recordings play twice.",
           promptTr:
             "Beş kişi dinleyeceksin, 16–20. maddeler. Her kişi neden taşındı? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -822,7 +822,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "İkinci konuşmacı eski mahallesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I loved that street and I loved the apartment. But I sat in the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it anymore." },
+                { text: "I loved that street and I loved the apartment. But I sat on the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it anymore." },
               ],
             },
             {
@@ -966,7 +966,7 @@ Sanne`,
           prompt:
             "Write a short text about a problem you had in your home. Say what the problem was, what you did and how it ended. Write about 60 words.",
           promptTr:
-            "Bir evde yaşadığın bir sorunu anlat. Sorunun ne olduğunu, ne yaptığını ve nasıl bittiğini yaz. Yaklaşık 60 kelime.",
+            "Evinde yaşadığın bir sorunu anlat. Sorunun ne olduğunu, ne yaptığını ve nasıl bittiğini yaz. Yaklaşık 60 kelime.",
           items: [],
           rubric: {
             minWords: 60,
@@ -1006,7 +1006,7 @@ Sanne`,
           exchange: [
             { who: "partner", de: "Good afternoon. Tell me about the place where you live. Is it an apartment or a house?", tr: "İyi günler. Yaşadığın yeri anlat. Daire mi ev mi?" },
             { who: "you", hint: "Evini ve bir odasını kısaca anlat.", expect: "yaşadığı yeri tam bir cümleyle betimlemek", seconds: 30 },
-            { who: "partner", de: "Thank you. Do you know your neighbors well? Why, or why not?", tr: "Teşekkürler. Komşularını iyi tanır mısın? Neden ya da neden değil?" },
+            { who: "partner", de: "Thank you. Do you know your neighbors well? Why, or why not?", tr: "Teşekkürler. Komşularını iyi tanır mısın? Neden?" },
             { who: "you", hint: "Cevabını bir gerekçeyle destekle.", expect: "bir durumu gerekçesiyle açıklamak", seconds: 30 },
             { who: "partner", de: "Interesting. Tell me about a time when you moved to a new home.", tr: "İlginç. Yeni bir eve taşındığın bir zamanı anlat." },
             { who: "you", hint: "Geçmiş zamanla kısa bir taşınma anlat.", expect: "geçmiş zamanda kısa bir anlatı vermek", seconds: 35 },
@@ -1085,7 +1085,7 @@ Sanne`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think the lights are important because a lot of older people live here and the stairs are dangerous in the dark. You are right, the bike room helps every day, but it is only for young people. So let us choose the lights, and next year we can look at the bikes again.",
+              "I think the lights are important because a lot of older people live here and the stairs are dangerous in the dark. You are right, the bike room helps every day, but it is only for young people. So let's choose the lights, and next year we can look at the bikes again.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

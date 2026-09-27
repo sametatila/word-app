@@ -428,7 +428,7 @@ Frau Dr. Amrein: Als Ökonomin sage ich: Der Umsatz steigt kaum, er verschiebt s
 
 Kilian S.: In meiner Stadt gibt es vier verkaufsoffene Sonntage im Jahr, und sie sind gut besucht. Niemand wird gezwungen, dort zu arbeiten; bei uns melden sich mehr Leute freiwillig, als wir brauchen, weil es Zuschläge gibt. Ich verstehe die Sorge, teile sie aber nach fünf Jahren Erfahrung nicht.
 
-Frau Endres: Ich bin katholisch und höre oft, mein Argument sei von gestern. Deshalb sage ich es anders: Eine Gesellschaft braucht einen Tag, an dem nicht alle gleichzeitig erreichbar sind. Ob man den Sonntag nennt oder anders — ohne so einen Tag verschwindet er einfach.`,
+Frau Endres: Ich bin katholisch und höre oft, mein Argument sei von gestern. Deshalb sage ich es anders: Eine Gesellschaft braucht einen Tag, an dem nicht alle gleichzeitig erreichbar sind. Ob man ihn Sonntag nennt oder anders: Wenn man ihn nicht schützt, verschwindet er einfach.`,
               gloss: [
                 { de: "der Einzelhandel", tr: "perakende", en: "retail" },
                 { de: "die Kette", tr: "zincir mağaza", en: "chain" },
@@ -852,7 +852,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
                 { speaker: "Frau Rutkowski", text: "Das Studio wollte ich schon lange kündigen." },
                 {
                   speaker: "Berater",
-                  text: "Zusammen sind das 61 Euro im Monat. Das ist ein Drittel Ihres Ziels, ohne dass Sie an einem einzigen Tag anders leben.",
+                  text: "Zusammen sind das 61 Euro im Monat. Das ist fast ein Drittel Ihres Ziels, ohne dass Sie an einem einzigen Tag anders leben.",
                 },
                 { speaker: "Frau Rutkowski", text: "Und die restlichen 140?" },
                 {
@@ -1252,7 +1252,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde üç görev var: özel bir ileti, bir forum yazısı ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1275,7 +1275,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
             ],
             sample: `Hallo Malte,
 
-die Idee finde ich grundsätzlich gut, und teilen ist mir lieber als zweimal kaufen.
+die Idee finde ich grundsätzlich gut, und Teilen ist mir lieber als zweimal kaufen.
 
 Ehrlich gesagt habe ich aber zwei Bedenken. Erstens brauche ich so eine Maschine höchstens zweimal im Jahr. Zweitens wohnst du am anderen Ende der Stadt — bis ich bei dir bin, habe ich das Loch längst gebohrt.
 
@@ -1465,7 +1465,7 @@ Ferit Alkan`,
               { de: "eigene Meinung mit Begründung", tr: "Gerekçeli kendi görüşün" },
             ],
             sample:
-              "Ich möchte heute über das Einkaufen sprechen: zuerst wie es bei uns früher war, dann meine eigene Erfahrung, danach Vor- und Nachteile und am Ende meine Meinung. In Bulgarien sind meine Eltern jeden zweiten Tag auf den Markt gegangen, weil man dort billiger und frischer eingekauft hat. Einen großen Supermarkt gab es in unserer Stadt erst ab 2005. Ich selbst bestelle heute fast alles online, auch Waschmittel. Ein Vorteil ist die Zeit: Ich spare in der Woche gut zwei Stunden. Ein Nachteil ist, dass ich niemanden mehr treffe. Meine Mutter hat auf dem Markt zwanzig Minuten geredet, ich rede beim Bestellen mit niemandem. Meiner Meinung nach ist Einkaufen praktischer geworden und gleichzeitig einsamer.",
+              "Ich möchte heute über das Einkaufen sprechen: zuerst wie es bei uns früher war, dann meine eigene Erfahrung, danach Vor- und Nachteile und am Ende meine Meinung. In Bulgarien sind meine Eltern jeden zweiten Tag auf den Markt gegangen, weil man dort billiger und frischer eingekauft hat. Einen großen Supermarkt gibt es in unserer Stadt erst seit 2005. Ich selbst bestelle heute fast alles online, auch Waschmittel. Ein Vorteil ist die Zeit: Ich spare in der Woche gut zwei Stunden. Ein Nachteil ist, dass ich niemanden mehr treffe. Meine Mutter hat auf dem Markt zwanzig Minuten geredet, ich rede beim Bestellen mit niemandem. Meiner Meinung nach ist Einkaufen praktischer geworden und gleichzeitig einsamer.",
             criteria: [
               "Beş bölümün hepsi var mı ve sırayla mı?",
               "Giriş sunumun yapısını duyuruyor mu?",
