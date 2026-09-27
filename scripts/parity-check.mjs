@@ -12040,7 +12040,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       }
     }
     if (!/<Stack\.Screen name="Tabs" component=\{RootTabs\} \/>/.test(rs)) sinirsiz.push("Tabs muafiyeti artik gecerli degil");
-    if (!/screenLayout=\{contentColumnLayout\}/.test(sil(read("mobile/src/navigation/RootTabs.tsx")))) sinirsiz.push("sekme ekranlari sarmalanmiyor");
+    // Sekmeler `tabContentLayout`: aynı kolon + sınır, çökme kartı sekme çubuğunun üstünde.
+    if (!/screenLayout=\{(?:contentColumnLayout|tabContentLayout)\}/.test(sil(read("mobile/src/navigation/RootTabs.tsx")))) sinirsiz.push("sekme ekranlari sarmalanmiyor");
     sameList(
       "duzen sarmalayicisiz ekran",
       sinirsiz.length ? sinirsiz : ["yok"],
