@@ -63,8 +63,9 @@ analitik ya da çökme raporlama SDK'sı yok. Tablo `mobile/ios/Lernomi/PrivacyI
 | Location › Coarse Location (Google ile Giriş SDK'sı, IP'den, dolandırıcılık önleme) | Evet | Evet | App Functionality |
 | Contacts, Health, Financial Info, Browsing/Search History, Sensitive Info, Precise Location | Hayır | — | — |
 
-Manifest bu on türü taşıyor. **Connect formu 2026-09-24'te dokuz türle yayımlandı**; Coarse
-Location ve Other Diagnostic Data'ya Analytics amacı henüz eklenmedi (denetim G4, Samet; API yok).
+Manifest bu on türü taşıyor ve **Connect formu da on türle yayımlı** (2026-09-27, Musa Atila hesabından
+Samet; denetim G4): Coarse Location ve Other Diagnostic Data'ya Analytics amacı eklendi, özet sayfası
+manifestle birebir. Form API'de yok; manifest değişirse Connect'te elle güncellenir.
 
 Notlar:
 
