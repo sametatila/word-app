@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { LeagueBoard } from "../social/LeagueBoard";
-import { ScreenHeader } from "../social/common";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { Chip } from "../ui/Chip";
-import { Text } from "../ui/Text";
 import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing } from "../theme";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
-import { PodiumIcon } from "../ui/icons";
+import { LockIcon, PodiumIcon } from "../ui/icons";
 
 /**
  * Sıralama — iki küme, tek ekran: LİG ve ARKADAŞLAR.
@@ -24,6 +26,7 @@ export function LeaderboardScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const { user } = useAuth();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [mode, setMode] = useState<"league" | "friends">("league");
 
   return (
@@ -46,7 +49,7 @@ export function LeaderboardScreen() {
         {user?.guest ? (
           <GuestAccountCard icon={PodiumIcon} title={t("guest.social_title")} text={t("guest.social_body")} />
         ) : !user ? (
-          <Text variant="body" color={colors.textMuted}>{t("leaderboard.sign_in_for_friends_board")}</Text>
+          <EmptyCard icon={LockIcon} title={t("leaderboard.leaderboard")} text={t("leaderboard.sign_in_for_friends_board")} action={t("auth.sign_in")} onAction={() => nav.navigate("Auth")} />
         ) : mode === "league" ? (
           <LeagueBoard />
         ) : (

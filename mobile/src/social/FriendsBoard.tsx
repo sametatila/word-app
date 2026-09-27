@@ -25,7 +25,9 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [board, setBoard] = useState<BoardView | null>(null);
   const [err, setErr] = useState(false);
-  useEffect(() => { social.board().then(setBoard).catch(() => setErr(true)); }, []);
+  // Hata kartındaki "tekrar dene" bu sayacı artırıp isteği yeniden atıyor.
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() => { social.board().then(setBoard).catch(() => setErr(true)); }, [attempt]);
   /*
    * AĞ HATASI "KİMSE YOK" DEĞİL.
    *
@@ -34,7 +36,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
    * koptuğunda arkadaşlarının kaybolduğunu görüyordu. Lig sekmesi aynı
    * durumu ayrı bir kartla söylüyor (`LeagueBoard`), iki sekme artık aynı.
    */
-  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
+  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
   // Satır iskeleti gerçek satırla aynı yükseklikte (40 arma + 12+12 dolgu).
   if (!board) {
     return (

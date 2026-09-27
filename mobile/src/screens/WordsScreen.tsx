@@ -5,11 +5,10 @@ import { useMe } from "../lib/useMe";
 import { trackOnce } from "../lib/track";
 import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, CardsIcon } from "../ui/icons";
-import { EmptyCard } from "../social/common";
+import { AlertIcon, CardsIcon } from "../ui/icons";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
@@ -66,7 +65,6 @@ export function WordsScreen() {
   const { listColumns } = useLayout();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [q, setQ] = useState("");
   /* Seviye süzgeci: uç `?level=` destekliyordu (web listesi kullanıyor) ama
@@ -125,28 +123,12 @@ export function WordsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" variant="h2">{t("words.my_words")}</Text>
-          {/* İLERLEME ÖZETİ — web listesi başlığın altında yazıyor. Sayılar
-              zaten `useMe` içinde geliyordu (`mastered`, `totalWords`,
-              `dueCount`); mobil hiçbirini göstermiyordu, yani liste "kaç
-              kelime pekişti, kaçı tekrar sırasında" sorusuna cevap
-              vermiyordu. Ek istek yok. */}
-          {me ? (
-            <Text variant="caption" color={colors.textMuted}>
-              {t("words.progress_summary", {
-                mastered: formatNumber(me.mastered),
-                seen: formatNumber(me.totalWords),
-                due: me.dueCount ?? 0,
-              })}
-            </Text>
-          ) : null}
-        </View>
-      </View>
+      {/* İLERLEME ÖZETİ — web listesi başlığın altında yazıyor; sayılar zaten
+          `useMe` içinde geliyor, ek istek yok. */}
+      <ScreenHeader
+        title={t("words.my_words")}
+        subtitle={me ? t("words.progress_summary", { mastered: formatNumber(me.mastered), seen: formatNumber(me.totalWords), due: me.dueCount ?? 0 }) : undefined}
+      />
 
       <View style={{ paddingHorizontal: spacing.lg, gap: spacing.md, paddingBottom: spacing.md }}>
         {/* Liste CANLI süzülüyor; return tuşunun işi klavyeyi kapatmak. */}
@@ -212,11 +194,17 @@ export function WordsScreen() {
               ))}
             </View>
           ) : phase === "error" ? (
-            <View accessibilityLiveRegion="assertive" style={{ alignItems: "center", gap: spacing.md, marginTop: spacing.xxl }}>
-              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("words.couldn_t_load_your_words")}</Text>
-              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
-              </PressableScale>
+            /* Hata da boş hâlle aynı kabukta (`EmptyCard`), duyurulan ve tekrar denenebilen. */
+            <View style={{ marginTop: spacing.xl }}>
+              <EmptyCard
+                live="assertive"
+                icon={AlertIcon}
+                tint={colors.danger}
+                title={t("words.my_words")}
+                text={t("words.couldn_t_load_your_words")}
+                action={t("common.try_again")}
+                onAction={() => setAttempt((n) => n + 1)}
+              />
             </View>
           ) : (
             /* Boş hâl EV KALIBINDA (`social/common.tsx` `EmptyCard`): ikon

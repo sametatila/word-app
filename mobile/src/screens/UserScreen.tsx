@@ -13,12 +13,13 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
+import { AlertIcon, FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
-import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
+import { EmptyCard, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
 import { FeedCard } from "../social/FeedList";
 import { UserActionButton } from "../social/UserActionButton";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
@@ -49,11 +50,14 @@ export function UserScreen() {
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
   const [more, setMore] = useState(false);
+  const [confirmBlock, setConfirmBlock] = useState(false);
+  // Hata kartındaki "tekrar dene" bu sayacı artırıp profili yeniden istiyor.
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!user || user.guest) return;
     social.profile(username).then((d) => { setData(d); setRel(d.relation); }).catch((e) => { if (e instanceof ApiError && e.status === 404) setNotFound(true); else setErr(errorText(e)); });
-  }, [username, user]);
+  }, [username, user, attempt]);
 
   async function act(fn: () => Promise<unknown>, done: string) {
     if (busy) return;
@@ -70,6 +74,9 @@ export function UserScreen() {
   if (user?.guest) return wrap(<GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />);
   if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.sign_in_required")} text={t("user.sign_in_to_see_profiles")} action={t("user.sign_in")} onAction={() => nav.navigate("Auth")} />);
   if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.user_not_found")} text={t("user.link_may_be_old_or_this_profile")} />);
+  /* HATA İSKELETTE KALMIYOR: iskelet "yükleniyor" diyor ve altındaki kırmızı
+     satırla birlikte sonsuza dek duruyordu; tekrar deneme yolu da yoktu. */
+  if (!data && err) return wrap(<EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={t("user.profile")} text={err} action={t("common.try_again")} onAction={() => { setErr(null); setAttempt((n) => n + 1); }} />);
   if (!data) return wrap(
     <>
       {/* Kimlik kartı + istatistik ızgarası: gerçek düzenin ölçüleriyle. */}
@@ -90,7 +97,6 @@ export function UserScreen() {
           </SkeletonCard>
         ))}
       </CardGrid>
-      <ErrorText text={err} />
     </>,
   );
 
@@ -162,10 +168,7 @@ export function UserScreen() {
             </PressableScale>
             {more ? (
               <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-                <Pill label={t("user.block_2")} tone="danger" disabled={busy} onPress={() => Alert.alert(t("user.block"), t("user.block_confirm", { name: u.name ?? t("social.this_person") }), [
-                  { text: t("common.discard"), style: "cancel" },
-                  { text: t("user.block"), style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, t("user.blocked_done")) },
-                ])} />
+                <Pill label={t("user.block_2")} tone="danger" disabled={busy} onPress={() => setConfirmBlock(true)} />
                 {/* DÖRDÜNCÜ SEBEP. Sunucu dört sebep kabul ediyor
                     (`REPORT_REASONS`: spam, abuse, impersonation, other) ve
                     web dördünü de sunuyor; mobil üç tanesini yazıyordu. Şikayeti
@@ -184,6 +187,17 @@ export function UserScreen() {
           </View>
         ) : null}
       </ScrollView>
+
+      <ConfirmDialog
+        visible={confirmBlock}
+        title={t("user.block")}
+        message={t("user.block_confirm", { name: u.name ?? t("social.this_person") })}
+        confirmLabel={t("user.block")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={() => { setConfirmBlock(false); void act(async () => { await social.block(u.userId); nav.goBack(); }, t("user.blocked_done")); }}
+        onCancel={() => setConfirmBlock(false)}
+      />
     </View>
   );
 }

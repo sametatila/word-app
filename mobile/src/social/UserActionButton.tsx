@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { t } from "../lib/i18n";
-import { Alert, View } from "react-native";
+import { View } from "react-native";
 import { social, errorText, type Relation } from "../api/social";
 import { Text } from "../ui/Text";
 import { UserPlusIcon, CheckIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
 import { ErrorText, Pill } from "./common";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 
 /** İlişkiye göre tek pill: Ekle · İstek gönderildi · Kabul et · Arkadaş (çıkar). */
 export function UserActionButton({ userId, relation, friendshipId, canRequest = true, onChange, small = true }: { userId: string; relation: Relation; friendshipId?: number | null; canRequest?: boolean; onChange?: (r: Relation) => void; small?: boolean }) {
@@ -14,6 +15,7 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
   const [fid, setFid] = useState<number | null>(friendshipId ?? null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [confirmRemove, setConfirmRemove] = useState(false);
 
   async function run(fn: () => Promise<Relation>) {
     if (busy) return;
@@ -27,7 +29,7 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
 
   let btn: React.ReactNode;
   if (state === "friends") {
-    btn = <Pill label={t("useractionbutton.friends")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("useractionbutton.no_notice"), [{ text: t("common.discard"), style: "cancel" }, { text: t("social.remove"), style: "destructive", onPress: () => void run(async () => { await social.remove(userId); return "none"; }) }])} />;
+    btn = <Pill label={t("useractionbutton.friends")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => setConfirmRemove(true)} />;
   } else if (state === "outgoing") {
     btn = <Pill label={t("useractionbutton.request_sent")} tone="ghost" small={small} disabled={busy} onPress={() => void run(async () => { await social.remove(userId); return "none"; })} />;
   } else if (state === "incoming") {
@@ -46,6 +48,16 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
       {btn}
       {!canRequest && state === "none" ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "right" }}>{t("social.err_requests_closed")}</Text> : null}
       <ErrorText text={err} />
+      <ConfirmDialog
+        visible={confirmRemove}
+        title={t("social.unfriend")}
+        message={t("useractionbutton.no_notice")}
+        confirmLabel={t("social.remove")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={() => { setConfirmRemove(false); void run(async () => { await social.remove(userId); return "none"; }); }}
+        onCancel={() => setConfirmRemove(false)}
+      />
     </View>
   );
 }

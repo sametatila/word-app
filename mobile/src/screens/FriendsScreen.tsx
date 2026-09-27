@@ -29,6 +29,7 @@ import { Quests } from "../social/Quests";
 import { Requests } from "../social/Requests";
 import { Find } from "../social/Find";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { Screen } from "../ui/Screen";
 
 type Tab = "friends" | "feed" | "find";
 /** Sekme etiketleri — t() çağrı anında (dil modül yüklenirken hazır değil). */
@@ -91,29 +92,28 @@ export function FriendsScreen() {
     try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${PRIMARY_BASE}/u/${me.username}?src=invite` }) }); } catch { /* kapatıldı */ }
   }
 
+  /* Misafir ve girişsiz hâl de öteki sekmeler gibi `Screen` içinde: kaydırılıyor
+     ve alt dolgu yüzen sekme çubuğunun altında kalmıyor. */
   if (user?.guest) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
+      <Screen>
         <AppHeader title={tx("friends.friends")} />
-        <View>
-          <GuestAccountCard icon={HandshakeIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
-        </View>
-      </View>
+        <GuestAccountCard icon={HandshakeIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
+      </Screen>
     );
   }
 
   if (!user) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
+      <Screen>
         <AppHeader title={tx("friends.friends")} />
-        <View>
-          <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
-        </View>
-      </View>
+        <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
+      </Screen>
     );
   }
 
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
+  const showErrLine = !!err && !(tab === "friends" && (data === null || !me));
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* Alt dolgu 96: yüzen sekme çubuğunun altında kalan içerik olmasın
@@ -209,7 +209,7 @@ export function FriendsScreen() {
               kartın sözünü vermek, onu hiç vaat etmemekten kötü.
             */}
             {err && (data === null || !me) ? (
-              <EmptyCard live="assertive" icon={HandshakeIcon} tint={colors.info} title={tx("friends.couldn_t_load")} text={tx("social.err_offline")} />
+              <EmptyCard live="assertive" icon={HandshakeIcon} tint={colors.info} title={tx("friends.couldn_t_load")} text={tx("social.err_offline")} action={tx("friends.try_again")} onAction={() => void reload()} />
             ) : data === null || !me ? (
               [0, 1].map((i) => <FriendCardSkeleton key={i} />)
             ) : (
@@ -235,8 +235,11 @@ export function FriendsScreen() {
             {data ? <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} /> : null}
           </View>
         ) : null}
-        <ErrorText text={err} />
-        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.try_again")} tone="ghost" onPress={() => void reload()} /></View> : null}
+        {/* Hata kartı çizildiyse (arkadaş sekmesi, veri yok) aynı hata ve düğme
+            ikinci kez yazılmıyor: bu satır yalnız elde veri VARKEN konuşuyor
+            (Gelen kutusu ile aynı kural). */}
+        <ErrorText text={showErrLine ? err : null} />
+        {showErrLine ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.try_again")} tone="ghost" onPress={() => void reload()} /></View> : null}
       </KeyboardAwareScroll>
     </View>
   );

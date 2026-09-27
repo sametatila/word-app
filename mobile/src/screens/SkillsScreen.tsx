@@ -10,8 +10,9 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
-import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { SkillsIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { FlowNote } from "../ui/flow";
+import { EmptyCard } from "../social/common";
 import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, levelGate, type SkillAccess } from "../lib/skillAccess";
 import { refreshPremium, usePremiumStatus } from "../lib/premium";
 import { tieredCopy } from "../lib/unlock";
@@ -142,6 +143,8 @@ export function SkillsScreen() {
     görünüyor.
   */
   const [pool, setPool] = useState<{ level: string; items: Record<string, SkillMeta[]>; ok: boolean } | null>(null);
+  // Paket inemediğinde kartın "tekrar dene"si bu sayacı artırıp indirmeyi yeniden deniyor.
+  const [packAttempt, setPackAttempt] = useState(0);
   useEffect(() => {
     let dead = false;
     void ensureSkills(activeLevel).then((ok) => {
@@ -151,7 +154,7 @@ export function SkillsScreen() {
       setPool({ level: activeLevel, items, ok });
     });
     return () => { dead = true; };
-  }, [activeLevel]);
+  }, [activeLevel, packAttempt]);
   const pools = pool?.level === activeLevel ? pool.items : null;
   const poolsReady = pools !== null;
   /* Paket inemediyse (ağ yok ve diskte kopya yok) "egzersiz yok" değil
@@ -266,11 +269,19 @@ export function SkillsScreen() {
       ) : (
         <>
           {!hasExercises ? (
-            <Card padded accessibilityLiveRegion={packFailed ? "assertive" : "polite"}>
-              <Text variant="body" color={colors.textMuted}>
-                {packFailed ? `${t("content.couldn_t_load")} ${t("social.err_offline")}` : t("skills.this_course_has_no_reading")}
-              </Text>
-            </Card>
+            packFailed ? (
+              <EmptyCard
+                live="assertive"
+                icon={SkillsIcon}
+                tint={colors.danger}
+                title={t("content.couldn_t_load")}
+                text={t("social.err_offline")}
+                action={t("common.try_again")}
+                onAction={() => { setPool(null); setPackAttempt((n) => n + 1); }}
+              />
+            ) : (
+              <EmptyCard icon={SkillsIcon} title={t("skills.skills")} text={t("skills.this_course_has_no_reading")} />
+            )
           ) : null}
 
           {/* Tek öneri: en geride kalan becerinin sıradaki egzersizi; hepsi

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { Alert, View, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -10,13 +10,14 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ReportSheet } from "../ui/ReportSheet";
 import { AiNotice } from "../ui/AiNotice";
-import { ArrowBackIcon, WriteIcon } from "../ui/icons";
+import { WriteIcon } from "../ui/icons";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
-import { EmptyCard } from "../social/common";
+import { EmptyCard, ScreenHeader } from "../social/common";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 import { scoreBand } from "../lib/learningRules";
 
@@ -106,20 +107,16 @@ export function WritingsScreen() {
 
   /* Silme ONAY İSTİYOR: geri alınamaz ve kullanıcının kendi ürettiği metin.
      Web de aynı soruyu soruyor (`writ.delete_confirm`). */
-  function askDelete(w: Writing) {
-    Alert.alert(t("writ.delete_confirm"), undefined, [
-      { text: t("common.discard"), style: "cancel" },
-      {
-        text: t("common.delete"),
-        style: "destructive",
-        onPress: () => {
-          /* Satır ÖNCE gidiyor, sunucu sonra: silme başarısızsa liste bir
-             sonraki açılışta zaten doğruyu gösterir ve kullanıcı beklemiyor. */
-          setItems((list) => (list ?? []).filter((x) => x.id !== w.id));
-          void deleteWriting(w.id).catch(() => {});
-        },
-      },
-    ]);
+  const [pendingDelete, setPendingDelete] = useState<Writing | null>(null);
+  function askDelete(w: Writing) { setPendingDelete(w); }
+  function reallyDelete() {
+    const w = pendingDelete;
+    setPendingDelete(null);
+    if (!w) return;
+    /* Satır ÖNCE gidiyor, sunucu sonra: silme başarısızsa liste bir
+       sonraki açılışta zaten doğruyu gösterir ve kullanıcı beklemiyor. */
+    setItems((list) => (list ?? []).filter((x) => x.id !== w.id));
+    void deleteWriting(w.id).catch(() => {});
   }
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [report, setReport] = useState<Writing | null>(null); // "Bildir" açık olan değerlendirme
@@ -137,19 +134,9 @@ export function WritingsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        {/* ALT BAŞLIK: listenin ne topladığını ve metinlerin yalnız kullanıcıya
-            görünür olduğunu söylüyor. Web kartın altında baştan beri yazıyor
-            (`writings-card` `writ.sub`); mobilde yalnız başlık vardı, yani
-            "bunlar kime görünüyor" sorusu ekranda hiç cevaplanmıyordu. */}
-        <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" variant="h2">{t("writings.my_writing")}</Text>
-          <Text variant="micro" color={colors.textMuted} numberOfLines={2}>{t("writ.sub")}</Text>
-        </View>
-      </View>
+      {/* ALT BAŞLIK: listenin ne topladığını ve metinlerin yalnız kullanıcıya
+          görünür olduğunu söylüyor (web `writings-card` `writ.sub`). */}
+      <ScreenHeader title={t("writings.my_writing")} subtitle={t("writ.sub")} />
       {phase === "loading" ? (
         /* İSKELETİN EKRAN OKUYUCU KARŞILIĞI: yükleme yalnız görseldeydi, sesli
            okuyucu boş bir ekran duyuruyordu. Web aynı iskelete `aria-busy` ve
@@ -220,6 +207,15 @@ export function WritingsScreen() {
           </CardGrid>
         </ScrollView>
       )}
+      <ConfirmDialog
+        visible={!!pendingDelete}
+        title={t("writ.delete_confirm")}
+        confirmLabel={t("common.delete")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={reallyDelete}
+        onCancel={() => setPendingDelete(null)}
+      />
       <ReportSheet visible={!!report} kind="assessment" refId={report ? String(report.id) : ""} content={report ? JSON.stringify(report.result ?? {}) : ""} onClose={() => setReport(null)} />
     </View>
   );

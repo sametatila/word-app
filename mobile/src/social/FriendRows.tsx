@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { t, formatNumber } from "../lib/i18n";
-import { Alert, View } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -13,6 +13,7 @@ import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, PartyIcon, XI
 import { useTheme, spacing, radii, onTint, soft } from "../theme";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { StatPill, type IconCmp } from "./common";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 
 /**
  * Her arkadaş kendi kartı (Sıralama/Günün görevleri gibi): kimlik + pill
@@ -76,6 +77,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
   const [msg, setMsg] = useState<string | null>(null);
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [confirmRemove, setConfirmRemove] = useState(false);
 
   async function act(fn: () => Promise<unknown>, done: string) {
     if (busy) return;
@@ -111,13 +113,20 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           onPress={() => void act(async () => { await social.nudge(f.userId, cheer ? "cheer" : "remind"); setSent(true); }, t(cheer ? "social.cheered_you" : "social.nudged_you"))}
         />
         <ActionTile icon={TargetIcon} label={t("friendrows.quest")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
-        <ActionTile icon={XIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") }), [
-          { text: t("common.discard"), style: "cancel" },
-          { text: t("social.remove"), style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, t("social.removed")) },
-        ])} />
+        <ActionTile icon={XIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => setConfirmRemove(true)} />
       </View>
       {/* HATA `assertive`, BASARI `polite` (bkz. `PaywallScreen`). */}
       {msg ? <Text accessibilityLiveRegion={ok ? "polite" : "assertive"} variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{msg}</Text> : null}
+      <ConfirmDialog
+        visible={confirmRemove}
+        title={t("social.unfriend")}
+        message={t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") })}
+        confirmLabel={t("social.remove")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={() => { setConfirmRemove(false); void act(async () => { await social.remove(f.userId); onChanged(); }, t("social.removed")); }}
+        onCancel={() => setConfirmRemove(false)}
+      />
     </Card>
   );
 }

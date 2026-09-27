@@ -28,6 +28,8 @@ export function LeagueBoard() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [view, setView] = useState<LeagueView | null>(null);
   const [err, setErr] = useState(false);
+  // Hata kartındaki "tekrar dene" bu sayacı artırıp isteği yeniden atıyor.
+  const [attempt, setAttempt] = useState(0);
   const [result, setResult] = useState<LeagueView["result"]>(null);
   // Ligdeki kişiler arkadaş DEĞİL: uygunsuz ad/arma bildirimi (Play UGC) burada
   // basılı tutmayla açılıyor — eski genel tablodaki davranışın aynısı.
@@ -40,7 +42,7 @@ export function LeagueBoard() {
       .then((v) => { if (alive) { setView(v); setResult(v.result); } })
       .catch(() => { if (alive) setErr(true); });
     return () => { alive = false; };
-  }, []);
+  }, [attempt]);
 
   function dismiss() {
     setResult(null);
@@ -48,7 +50,7 @@ export function LeagueBoard() {
     void social.leagueSeen().catch(() => {});
   }
 
-  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
+  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
   if (!view) {
     return (
       <View>
