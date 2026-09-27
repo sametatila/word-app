@@ -78,7 +78,7 @@ ASC salt okuma dökümünden güncellendi.
 | G6 | Mikrofon izin metni sunucuya gönderimi söylemiyor | ✅ | 86d7b3eb |
 | G7 | Veri güvenliğinde tutarsız işaretler | ⏳ Claude | CSV girilirken bilinçli seçim (G1 ile) |
 | G8 | Arama sorgusu URL'de, erişim günlüğünde | ✅ | Sunucuda nginx günlük maskesi (repo dışı) |
-| G9 | Ses yalnız ekran kapalı yürüyüşte sunucuya (Samet, 2026-09-27) | ◐ Claude | Zincir Azure → Deepgram → Groq (Cloudflare Workers AI, Speechmatics kalıcı çıktı; env üç dosyada temizlendi). `/api/stt` yalnız `mode=walk`; `/api/pronounce` yalnız tarayıcı metni. Web'de telaffuz, deneme sınavı konuşması ve yürüyüş tarayıcı tanıyıcısıyla, sunucu yedeği yok. Gizlilik 1.8.5, ses rızası 3, rıza/ayar metinleri üç dilde. Kalan: web istemci dönüşümünün doğrulaması, deploy |
+| G9 | Ses yalnız ekran kapalı yürüyüşte sunucuya (Samet, 2026-09-27) | ✅ | f139e0c4, adf6d817, 7c67639e, 6b26fb9b (+ belgeler 698b0a41 içinde); canlıda 18:35. Zincir Azure → Deepgram → Groq; `/api/stt` yalnız `mode=walk`, `/api/pronounce` yalnız metin; web tarayıcı tanıyıcısıyla. Gizlilik 1.8.5, ses rızası 3. Azure anahtarı geçersizdi (401); yeni kaynak `lernomi-speech` 2026-09-27'de bağlandı, sunucudan 200 |
 
 ### T — Yerel yapı ve teknik
 

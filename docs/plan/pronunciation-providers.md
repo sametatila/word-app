@@ -40,6 +40,9 @@ zincirinden kalıcı olarak çıktı. Kota modeli: `stt-capacity.md` (tarihsel).
 | `STT_ORDER` | üçünün sırasını ezer, ör. `"deepgram,azure"`; listede olmayanı ekleyemez |
 
 ## Azure hesabı
+- Kaynak (2026-09-27'de yeniden açıldı): kaynak grubu `lernomi`, ad `lernomi-speech`. Eski kaynağın
+  anahtarı 18–22 Eylül arasında Azure tarafında geçersizleşti (401) ve hesabı bulunamadı; hesap
+  bilgisi yerel `AGENTS.md`'de (depo herkese açık). Anahtar `.secrets/azure/speech-key` + iki `.env`.
 - Speech kaynağı **F0**, bölge **`germanywestcentral`**. F0: ayda 5 saat STT, eşzamanlı 1 istek,
   kota dolunca fatura çıkmaz, istek reddedilir.
 - Azure Cost Management'ta **1 € eşikli bütçe uyarısı** kurulu olmalı.
