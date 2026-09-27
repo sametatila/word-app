@@ -300,7 +300,7 @@ if (ctaSapan.length) {
  * üç yüzey öyle çevrildi (sınav ve deneme oynatıcıları, beceri sayfası, dört
  * iskelet, boss, meydan okuma, giriş kabuğu) ve her birinin gerekçesi commit
  * mesajında yazılı. */
-const KART_MUAF = /\/(?:confirm-dialog|mic-disclosure|report-dialog|placement-test|demo-placement|session-player|achievement-unlock|conversation-scored)\.tsx$|\/placement\/loading\.tsx$|^src\/app\/page\.tsx$|^src\/app\/demo-|^src\/app\/admin\/|^src\/components\/skills\//;
+const KART_MUAF = /\/(?:confirm-dialog|report-dialog|placement-test|demo-placement|session-player|achievement-unlock|conversation-scored)\.tsx$|\/placement\/loading\.tsx$|^src\/app\/page\.tsx$|^src\/app\/demo-|^src\/app\/admin\/|^src\/components\/skills\//;
 let kartSapan = 0;
 const kartYer = [];
 for (const f of await walkDir("src")) {

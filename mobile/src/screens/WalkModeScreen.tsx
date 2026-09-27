@@ -10,7 +10,7 @@ import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
-import { speechOfGloss } from "../game/gloss";
+import { glossOf, speechOfGloss } from "../game/gloss";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
@@ -68,16 +68,14 @@ const mapWord = (w: { id: number; de: string; tr: string; artikel?: string | nul
   ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Artikel | null) ?? undefined, en: w.en ?? null, deGloss: w.deGloss ?? null });
 
 /**
- * Kelimenin ANADİLDEKİ karşılığı — web `lib/option-label` `glossFor` ile aynı kural, düşüşsüz.
+ * Kelimenin ANADİLDEKİ karşılığı — oyunların `glossOf`u (web `lib/option-label` `glossFor`), düşüşsüz.
  * Burada hep `w.tr` okunuyordu: anadili İngilizce ya da Almanca olan kullanıcıya anlam Türkçe söyleniyordu
  * (üstelik İngilizce ya da Almanca anlatım sesiyle). Sunucu karşılığı olmayan kelimeyi tura hiç koymuyor.
  */
-function glossText(w: WalkWord): string {
-  const lang = currentLang();
-  if (lang === "en") return w.en ?? "";
-  if (lang === "de") return w.deGloss ?? "";
-  return w.tr;
-}
+const glossText = (w: WalkWord): string => glossOf(w).text;
+
+/** Anlatım tarafının tanıyıcı etiketi — arayüz dili neyse o dinleniyor (web `walk-player` `NATIVE_TAG`). */
+const NATIVE_TAG = { tr: "tr-TR", en: "en-US", de: "de-DE" } as const;
 /* Süzgeç ile ünlem AYRI iki iddia: süzgeç değişirse ünlem sessizce yalan
    söylemeye başlar. Tek geçişte hem eleme hem dönüştürme yapılıyor. */
 const mapRounds = (rs: Round[]): WalkRound[] =>
@@ -91,12 +89,12 @@ const mapRounds = (rs: Round[]): WalkRound[] =>
  * paylaşılır (POST /api/answers) — walk session_state yazmaz, `progress` göndermez.
  *
  * Tur türleri:
- *  - intro (yeni kelime): SORULMAZ, öğretilir → sırayla "Yeni kelime." (Emel) → Almanca
- *    (Katja) → Türkçe anlam (Emel) → Almanca (Katja). Hemen ardından aynı kelimenin
+ *  - intro (yeni kelime): SORULMAZ, öğretilir → sırayla "Yeni kelime." (anlatım, anadilde) →
+ *    hedef kelime → anadildeki anlam → hedef kelime. Hemen ardından aynı kelimenin
  *    speak turu gelir ve sorar.
- *  - speak: yalnız Türkçe ipucu (Emel) → kullanıcı Almancayı SÖYLER (native STT) →
- *    doğru (ses + Almanca okunur) / yanlış ("Doğrusu:" + Almanca) / duyamadım
- *    ("Duyamadım." + Almanca). ASLA aynı kelime tekrar sorulmaz — sıradakine geçilir.
+ *  - speak: yalnız anadilde ipucu → kullanıcı hedef dildeki kelimeyi SÖYLER (native STT) →
+ *    doğru (ses + hedef kelime okunur) / yanlış ("Doğrusu:" + hedef kelime) / duyamadım
+ *    ("Duyamadım." + hedef kelime). ASLA aynı kelime tekrar sorulmaz — sıradakine geçilir.
  *
  * Ekran çerçevesi Kelimelerine çalış ile aynı: sol X, orta ilerleme, sağ sayaç.
  */
@@ -436,7 +434,7 @@ export function WalkModeScreen() {
     return r;
   }
 
-  /** Yeni kelimeyi öğret (intro turu): anons + Almanca + Türkçe + Almanca. Soru YOK. */
+  /** Yeni kelimeyi öğret (intro turu): anons + hedef kelime + anadildeki anlam + hedef kelime. Soru YOK. */
   async function teachIntro(w: WalkWord, alive: () => boolean): Promise<boolean> {
     setPhase("teaching"); setVerdict(null); setHeard(""); wordStart.current = Date.now();
     const target = withArtikel(w);
@@ -780,12 +778,15 @@ export function WalkModeScreen() {
   async function listenConfirm(alive: () => boolean): Promise<boolean | null> {
     setPhase("continue");
     sfx("micon");
-    // Ekran kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
+    /* Cevap ANLATIM dilinde (soru da o dilde soruluyor; web `hear("native")`). Ekran kapalı → Azure,
+       ekran açık → native. İkisi de sabitti: Azure hep "tr", native tanıyıcı hedef dilin yereli —
+       İngilizce arayüzlü öğrencinin "yes"i Türkçe ya da Almanca dinleniyor, soru cevapsız kalıyordu. */
+    const native = currentLang();
     let yanit: string[] | null;
     if (screenOffRef.current) {
-      yanit = await azureListenOnce("", 4000, "tr");
+      yanit = await azureListenOnce("", 4000, native);
     } else {
-      yanit = await listenOnce(currentTargetLocale(), CONFIRM_SILENCE_MS);
+      yanit = await listenOnce(NATIVE_TAG[native], CONFIRM_SILENCE_MS);
     }
     if (!alive() || !yanit) return null;
     for (const s of yanit) { const c = parseConfirm(s); if (c !== null) return c; }
@@ -920,6 +921,7 @@ export function WalkModeScreen() {
   const teaching = phase === "teaching";
   const reveal = phase === "judging" || teaching; // Almanca göster: cevap açılınca veya öğretirken
   const listening = phase === "listening";
+  const curGloss = glossOf(curWord);
   /* DOLU daire + beyaz glif: zemin TEMAYA DUYARSIZ (`theme` `fillOf`).
      Rol renkleri koyu temada pastele dönüyor ve 42 px'lik beyaz glif
      görünmüyordu (ölçümler `theme/colors` `fillOf` başlığında). Boş hâl
@@ -1151,11 +1153,13 @@ export function WalkModeScreen() {
 
             {/* orta: kelime + mikrofon + durum */}
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.xxl }}>
+              {/* Anlam ANADİLDE (`glossOf`): burada `curWord.tr` basılıyordu, İngilizce ya da Almanca arayüzde
+                  sesli anlam anadilde okunurken ekranda Türkçesi duruyordu. Alt satır oyunlardaki gibi
+                  İngilizce ayırt edici (kısa/belirsiz kelimede hangi hedef kelimenin beklendiğini netleştirir). */}
               <View style={{ alignItems: "center", gap: 6, minHeight: ds(96), justifyContent: "center" }}>
-                <Text variant="display" color={colors.text} style={{ textAlign: "center" }}>{reveal ? withArtikel(curWord) : curWord.tr}</Text>
-                {/* İngilizce gloss — diğer oyunlardaki gibi (kısa/belirsiz kelimede hangi Almanca beklendiğini netleştirir). */}
-                {!reveal && curWord.en ? <Text variant="h3" color={colors.textFaint} style={{ textAlign: "center" }}>{curWord.en}</Text> : null}
-                {reveal ? <Text variant="h3" color={colors.textMuted} style={{ textAlign: "center" }}>{curWord.en ? `${curWord.tr} · ${curWord.en}` : curWord.tr}</Text> : null}
+                <Text variant="display" color={colors.text} style={{ textAlign: "center" }}>{reveal ? withArtikel(curWord) : curGloss.text}</Text>
+                {!reveal && curGloss.sub ? <Text variant="h3" color={colors.textFaint} style={{ textAlign: "center" }}>{curGloss.sub}</Text> : null}
+                {reveal ? <Text variant="h3" color={colors.textMuted} style={{ textAlign: "center" }}>{curGloss.sub ? `${curGloss.text} · ${curGloss.sub}` : curGloss.text}</Text> : null}
               </View>
 
               <View style={{ alignItems: "center", justifyContent: "center", minHeight: ds(104) }}>

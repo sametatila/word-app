@@ -7320,7 +7320,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const WEB = [
     ["onay", "src/components/confirm-dialog.tsx"],
     ["bildirim", "src/components/report-dialog.tsx"],
-    ["mikrofon", "src/components/mic-disclosure.tsx"],
+    /* "mikrofon" (mic-disclosure) 2026-09-27'de kalkti: web ekran acikken ses
+       gondermiyor, acıklama diyalogu da kalmadi (mobilde MicDisclosure duruyor). */
   ];
   sameList(
     "web diyalogunun adi",
@@ -15507,7 +15508,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const src = sil(read(f));
       if (!/accessibilityViewIsModal/.test(src) || !/onRequestClose/.test(src)) eksik.push(ad);
     }
-    const webDialog = ["confirm-dialog", "mic-disclosure", "report-dialog"].filter(
+    const webDialog = ["confirm-dialog", "report-dialog"].filter(
       (ad) => !/showModal\(\)/.test(sil(read("src/components/" + ad + ".tsx"))),
     );
     const webRozet = sil(read("src/components/achievement-unlock.tsx"));
@@ -16872,7 +16873,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         /* Yuruyus ikilisi ADIYLA duruyor mu: rakama donerse ortak sabit
            taramasi onlari goremez ve sessizce ayrisirlar. */
         "yuruyus cevabi adiyla=" + (/listenOnce\(currentTargetLocale\(\), ANSWER_WINDOW_MS\)/.test(mobYuruyus) ? "evet" : "HAYIR"),
-        "yuruyus onayi adiyla=" + (/listenOnce\(currentTargetLocale\(\), CONFIRM_SILENCE_MS\)/.test(mobYuruyus) ? "evet" : "HAYIR"),
+        /* Onay ANLATIM dilinde dinleniyor (web `hear("native")`): hedef dilin yereli burada hataydi. */
+        "yuruyus onayi adiyla=" + (/listenOnce\(NATIVE_TAG\[native\], CONFIRM_SILENCE_MS\)/.test(mobYuruyus) ? "evet" : "HAYIR"),
       ],
       ["web=12000", "mobil=12000", "mobil sabiti kullaniyor=evet", "yuruyus cevabi adiyla=evet", "yuruyus onayi adiyla=evet"],
       "bulunan",

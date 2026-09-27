@@ -14,7 +14,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
-import { courseName } from "@/lib/courses";
+import { courseName, speechLocaleOf } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
 import { recognitionCtor, requestMicrophone } from "@/components/microphone";
 import { spokenMatches } from "@/components/games/types";
@@ -599,7 +599,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       if (announce.current) {
         const text = announce.current;
         announce.current = null;
-        await say([{ lang: "tr", text, narration: true }]);
+        // Not sözlükten, yani arayüz dilinde: parça da o dilde (sabit "tr" Türkçe sesle okutuyordu).
+        await say([{ lang, text, narration: true }]);
         if (signal?.aborted) return [];
       }
 
@@ -610,7 +611,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       if (!browserRef.current || !visible()) return [];
       const startedAt = Date.now();
       const heard = await listen({
-        lang: side === "native" ? NATIVE_TAG[lang] : "de-DE",
+        // Hedef taraf kursun tanıyıcı dili: sabit "de-DE" İngilizce kursta cevabı Almanca dinliyordu.
+        lang: side === "native" ? NATIVE_TAG[lang] : speechLocaleOf(course),
         silenceMs: BROWSER_SILENCE_MS,
         maxMs: windowMs,
         accept,
@@ -638,7 +640,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       }
       return [];
     },
-    [cue, listen, note, say, lang, t],
+    [cue, listen, note, say, lang, t, course],
   );
 
   /**
