@@ -11,14 +11,16 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { ArrowBackIcon, CheckIcon, XIcon } from "../ui/icons";
+import { CheckIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
 import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
 import { Skeleton } from "../ui/Skeleton";
-import { StateBody } from "../ui/flow";
-import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { StateBody, FlowActions } from "../ui/flow";
+import { PrimaryButton } from "../ui/PrimaryButton";
+import { ScreenHeader } from "../social/common";
+import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 
 /** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
 function losses(guest = false): string[] {
@@ -163,8 +165,6 @@ export function DeleteAccountScreen() {
     setError(r.message);
   }
 
-  const pad = { paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg } as const;
-
   if (done) {
     return (
       /* DURUM ŞABLONU (`ui/flow` `StateBody`): ekran birkaç saniye sonra
@@ -182,12 +182,7 @@ export function DeleteAccountScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingBottom: spacing.sm, ...pad }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{tx(guest ? "guest.delete_row" : "deleteaccount.delete_account")}</Text>
-      </View>
+      <ScreenHeader title={tx(guest ? "guest.delete_row" : "deleteaccount.delete_account")} />
 
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
@@ -213,9 +208,13 @@ export function DeleteAccountScreen() {
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
             <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
             <Text variant="caption" color={colors.textMuted}>{tx(webPending ? "deleteaccount.apple_web_return" : "deleteaccount.for_security_deleting_your")}</Text>
-            <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? "..." : tx(webPending ? "deleteaccount.apple_web_delete" : freshProvider === "google" ? "deleteaccount.sign_in_with_google_again_and" : "deleteaccount.sign_in_with_apple_again_and")}</Text>
-            </PressableScale>
+            <PrimaryButton
+              size="md"
+              label={tx(webPending ? "deleteaccount.apple_web_delete" : freshProvider === "google" ? "deleteaccount.sign_in_with_google_again_and" : "deleteaccount.sign_in_with_apple_again_and")}
+              onPress={() => void reauthAndRetry()}
+              busy={busy}
+              style={{ marginTop: spacing.xs }}
+            />
           </Card>
         ) : (
           <>
@@ -255,12 +254,20 @@ export function DeleteAccountScreen() {
                 orada hata `alert`, burada `assertive` — RN'in karşılığı. */}
             {error ? <Text accessibilityLiveRegion="assertive" variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
-            <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
-              <Text variant="h3" color={ready ? colors.onFill : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx(guest ? "guest.delete_button" : "deleteaccount.permanently_delete_my_account")}</Text>
-            </PressableScale>
-            <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
-            </PressableScale>
+            {/* Meşgulken düğme kırmızı kalıyor ve "Siliniyor" diyor: `ready`
+                meşgulken yanlış, onu `disabled`e vermek dolguyu griye çekerdi. */}
+            <View style={{ marginTop: spacing.lg }}>
+              <FlowActions
+                primary={{
+                  label: busy ? tx("deleteaccount.deleting") : tx(guest ? "guest.delete_button" : "deleteaccount.permanently_delete_my_account"),
+                  onPress: () => setConfirm(true),
+                  disabled: !busy && !ready,
+                  busy,
+                  tone: "destructive",
+                }}
+                tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }}
+              />
+            </View>
           </>
         )}
       </KeyboardAwareScroll>
