@@ -233,7 +233,7 @@ export const deWeb: Record<string, string> = {
   "walk.paused": "Pausiert",
   "walk.preparing": "Die Runde wird vorbereitet…",
   "walk.unsupported_title": "Dieser Browser unterstützt gesprochene Antworten nicht",
-  "walk.unsupported_sub": "Der Gehmodus braucht die Spracherkennung des Browsers. In Chrome und Safari läuft sie; in Firefox noch nicht.",
+  "walk.unsupported_sub": "Der Gehmodus braucht die Spracherkennung des Browsers. In Chrome, Edge und Safari läuft sie; in Firefox noch nicht.",
   "walk.denied_title": "Keine Mikrofonberechtigung",
   "walk.denied_sub": "Eine Runde ohne Bildschirm braucht das Mikrofon. Erlaub es in den Website-Einstellungen des Browsers und versuch es noch mal.",
   "walk.intro_2": "Wenn du das Handy einsteckst, tippe auf Taschenmodus: Der Bildschirm wird dunkel, bleibt aber an, und die Erkennung hört weiter zu. Nicht die Ein-/Aus-Taste benutzen — bei ausgeschaltetem Bildschirm schaltet das Handy das Mikrofon stumm.",
@@ -259,11 +259,8 @@ export const deWeb: Record<string, string> = {
   "walk.pocket_darken": "Taschenmodus · Bildschirm abdunkeln",
   "walk.pause": "Pause",
   "walk.pocket_announce": "Du kannst das Handy einstecken. Zum Beenden dreimal tippen.",
-  "walk.browser_stt_dead_server": "Die Browser-Erkennung funktioniert nicht; ich schicke deine Antworten an den Server.",
   "walk.browser_stt_dead_stop": "Die Browser-Erkennung funktioniert nicht. Ich habe die Runde gestoppt.",
-  "walk.mic_unreachable": "Ich komme nicht ans Mikrofon. Ich habe die Runde gestoppt; wir machen weiter, wenn du das Handy entsperrst.",
   "walk.screen_off_warning": "Bei ausgeschaltetem Bildschirm höre ich dich nicht. Ich habe die Runde gestoppt. Für die Tasche schalte den Bildschirm nicht aus — mit Taschenmodus wird er dunkel, bleibt aber an.",
-  "micdw.you_start_it": "Du startest den Gehmodus selbst; das Mikrofon ist nur dann offen, und der Bildschirm zeigt, dass es zuhört.",
   "notfound.title": "Seite nicht gefunden",
   "notfound.sub": "Die gesuchte Seite ist vielleicht umgezogen — oder hat es nie gegeben.",
   "common.home": "Startseite",
@@ -289,15 +286,6 @@ export const deWeb: Record<string, string> = {
   "mockfb.work_on": "Arbeite an {goal}",
   "mockfb.wrong_of": "{wrong} von {total} Aufgaben zu diesem Ziel sind falsch ({pct}).",
   "mockfb.how_fallback": "Lies die Erklärungen zu deinen falschen Aufgaben der Reihe nach und schreib in eigenen Worten, woher der Fehler jeweils kam.",
-  /*
-    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
-    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
-    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
-    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
-    sağlayıcıları adlarıyla sayarken.
-  */
-  "mockexamw.transcript_note": "Dieser Text entstand, indem deine Stimme auf dem Server in Text umgewandelt wurde; du kannst Fehler korrigieren. Die Aufnahme wird nicht gespeichert.",
-  "mockexamw.voice_not_sent": "Deine Sprache wurde nicht in Text umgewandelt, weil das Senden deiner Stimme nicht erlaubt ist. Du kannst deine Antwort hier eintippen oder es in den Einstellungen einschalten.",
   "mockhow_en.gist": "Lies den Text in zwei Durchgängen. Im ersten nur den ersten und letzten Absatz — und sag dir in einem Satz, was der Text vertritt; Details ignorierst du. Im zweiten liest du die Fragen und prüfst diesen Satz.",
   "mockhow_en.detail": "Lies die Fragen VOR dem Text und markiere darin jede Zahl, Uhrzeit und jeden Eigennamen. Beim Überfliegen suchst du dann nur diese Markierungen. Die Falle ist hier meist eine zweite Zahl im Text.",
   "mockhow_en.opinion": "Lies den LETZTEN Satz jedes Textes gesondert: Dort zeigt sich meist die Haltung. Was nach `but`, `however`, `still`, `only`, `in fact` kommt, ist der Schluss der Autorin; davor steht oft das Zugeständnis.",
@@ -459,6 +447,7 @@ export const deWeb: Record<string, string> = {
   "listenp.real_audio": "Eine echte Dialektaufnahme — hör sie so oft du willst.",
   "listenp.no_tts": "Dieser Browser hat keine Sprachausgabe; du kannst die Übung lesend machen.",
   "speakp.no_mic": "Das Mikrofon war nicht erreichbar. Vielleicht ist die Browser-Berechtigung aus.",
+  "speechw.unsupported": "Dieser Browser hat keine Spracherkennung. Für gesprochene Antworten öffne die Seite in Chrome, Edge oder Safari.",
   "speakp.scoring_off": "Die Aussprachebewertung ist in dieser Installation aus.",
   "speakp.rate_limited": "Das Limit ist vorerst erreicht; versuch es gleich noch mal.",
   "speakp.send_failed": "Die Aufnahme ließ sich nicht senden. Versuchst du es noch mal?",

@@ -21,10 +21,10 @@
  *
  *   - **Aralık (`setInterval`).** Sayfa görünürken en keskini; gizliyken
  *     kısılıyor ama yok olmuyor.
- *   - **Kaydedicinin parçaları.** Kayıt yolunda mikrofon açıkken 200 ms'de
- *     bir (bkz. pocket-mic).
  *
- * İkisi de aynı listeyi yokluyor. Biri kısılsa diğeri yetişiyor.
+ * Nabız veren herkes aynı listeyi yokluyor (`tickClock`). (Kayıt yolunun
+ * kaydedici parçaları da bir nabızdı; web sesi sunucuya göndermeyi bırakınca
+ * kayıt yoluyla birlikte kalktı, 2026-09-27.)
  *
  * (Eskiden çalan sessiz döngünün `timeupdate`i de bir nabızdı; ekran kapalı
  * cep yoluyla birlikte kaldırıldı, 2026-09-17.)

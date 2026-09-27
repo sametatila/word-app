@@ -233,7 +233,7 @@ export const enWeb: Record<string, string> = {
   "walk.paused": "Paused",
   "walk.preparing": "Getting the round ready…",
   "walk.unsupported_title": "This browser doesn't support spoken answers",
-  "walk.unsupported_sub": "Walk mode relies on the browser's speech recognizer. It works in Chrome and Safari; Firefox doesn't have it yet.",
+  "walk.unsupported_sub": "Walk mode relies on the browser's speech recognizer. It works in Chrome, Edge and Safari; Firefox doesn't have it yet.",
   "walk.denied_title": "No microphone permission",
   "walk.denied_sub": "A screen-free round needs the microphone. Allow it in the browser's site settings and try again.",
   "walk.intro_2": "If you're putting the phone in your pocket, tap Pocket mode: the screen goes dark but stays on, and the recognizer keeps listening. Don't use the power button — the phone mutes the microphone when the screen turns off.",
@@ -259,11 +259,8 @@ export const enWeb: Record<string, string> = {
   "walk.pocket_darken": "Pocket mode · dim the screen",
   "walk.pause": "Pause",
   "walk.pocket_announce": "You can pocket the phone now. Tap three times to exit.",
-  "walk.browser_stt_dead_server": "The browser's recognizer isn't working; I'll send your answers to the server.",
   "walk.browser_stt_dead_stop": "The browser's recognizer isn't working. I've stopped the round.",
-  "walk.mic_unreachable": "I can't reach the microphone. I've stopped the round; we'll go on when you unlock the phone.",
   "walk.screen_off_warning": "I can't hear you once the screen turns off. I've stopped the round. To carry on in your pocket, don't turn the screen off — tap Pocket mode and it goes dark but stays on.",
-  "micdw.you_start_it": "You start walk mode yourself; the microphone is open only then, and the screen shows that it is listening.",
   "notfound.title": "Page not found",
   "notfound.sub": "The page you're looking for may have moved, or never existed.",
   "common.home": "Home",
@@ -289,15 +286,6 @@ export const enWeb: Record<string, string> = {
   "mockfb.work_on": "Work on {goal}",
   "mockfb.wrong_of": "{wrong} of the {total} items for this goal are wrong ({pct}).",
   "mockfb.how_fallback": "Read the explanations for your wrong items one by one and write, in your own words, where each mistake came from.",
-  /*
-    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
-    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
-    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
-    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
-    sağlayıcıları adlarıyla sayarken.
-  */
-  "mockexamw.transcript_note": "This text came from your voice being transcribed on the server; you can fix anything it got wrong. The recording is not stored.",
-  "mockexamw.voice_not_sent": "Your speech wasn't transcribed because sending your voice isn't allowed. You can type your answer here, or turn it on in the settings.",
   "mockhow_en.gist": "Read the text in two passes. In the first, read only the opening and closing paragraphs and tell yourself in one sentence what the text argues; ignore the detail. In the second, read the questions and test that sentence.",
   "mockhow_en.detail": "Read the questions BEFORE the text and mark every number, time or proper name in them. Then scan the text for those marks only. The trap in these items is usually a second number in the text.",
   "mockhow_en.opinion": "Read the LAST sentence of each text separately: that's usually where the stance shows. What follows `but`, `however`, `still`, `only`, `in fact` is the writer's conclusion; what comes before is often the concession.",
@@ -459,6 +447,7 @@ export const enWeb: Record<string, string> = {
   "listenp.real_audio": "A real dialect recording — replay it as often as you like.",
   "listenp.no_tts": "This browser has no speech synthesis; you can do the exercise by reading the text.",
   "speakp.no_mic": "The microphone couldn't be reached. Browser permission may be off.",
+  "speechw.unsupported": "This browser has no speech recognition. For spoken answers, open it in Chrome, Edge or Safari.",
   "speakp.scoring_off": "Pronunciation scoring is off in this installation.",
   "speakp.rate_limited": "You've hit the limit for now; try again shortly.",
   "speakp.send_failed": "The recording couldn't be sent. Could you try again?",

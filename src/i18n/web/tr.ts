@@ -269,7 +269,7 @@ export const trWeb: Record<string, string> = {
   "walk.paused": "Duraklatıldı",
   "walk.preparing": "Tur hazırlanıyor…",
   "walk.unsupported_title": "Bu tarayıcı sesli cevabı desteklemiyor",
-  "walk.unsupported_sub": "Yürüyüş modu tarayıcının konuşma tanıyıcısına dayanıyor. Chrome ya da Safari'de çalışıyor; Firefox'ta henüz yok.",
+  "walk.unsupported_sub": "Yürüyüş modu tarayıcının konuşma tanıyıcısına dayanıyor. Chrome, Edge ya da Safari'de çalışıyor; Firefox'ta henüz yok.",
   "walk.denied_title": "Mikrofon izni yok",
   "walk.denied_sub": "Ekransız tur için mikrofon gerekiyor. Tarayıcının site ayarlarından izin verip tekrar dene.",
   "walk.intro_2": "Telefonu cebine koyacaksan Cebe koy'a bas: ekran kararır ama açık kalır, tanıyıcı dinlemeyi sürdürür. Güç tuşuyla kapatma — ekran kapanınca telefon mikrofonu susturur.",
@@ -295,11 +295,8 @@ export const trWeb: Record<string, string> = {
   "walk.pocket_darken": "Cebe koy · ekranı karart",
   "walk.pause": "Duraklat",
   "walk.pocket_announce": "Cebe koyabilirsin. Çıkmak için üç kez dokun.",
-  "walk.browser_stt_dead_server": "Tarayıcının tanıyıcısı çalışmıyor; cevapları sunucuya soracağım.",
   "walk.browser_stt_dead_stop": "Tarayıcının tanıyıcısı çalışmıyor. Turu durdurdum.",
-  "walk.mic_unreachable": "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim.",
   "walk.screen_off_warning": "Ekran kapanınca sesini duyamıyorum. Turu durdurdum. Cepte devam etmek için ekranı kapatma; Cebe koy'a basınca ekran kararır ama açık kalır.",
-  "micdw.you_start_it": "Yürüyüş modunu sen başlatırsın; mikrofon yalnız o sırada açıktır ve dinlediğini ekranda görürsün.",
   "notfound.title": "Sayfa bulunamadı",
   "notfound.sub": "Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.",
   "common.home": "Ana sayfa",
@@ -325,15 +322,6 @@ export const trWeb: Record<string, string> = {
   "mockfb.work_on": "{goal} üzerine çalış",
   "mockfb.wrong_of": "Bu hedefteki {total} maddenin {wrong} tanesi yanlış ({pct}).",
   "mockfb.how_fallback": "Yanlış maddelerin açıklamalarını sırayla oku ve her birinde hatanın nereden geldiğini kendi cümlenle yaz.",
-  /*
-    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
-    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
-    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
-    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
-    sağlayıcıları adlarıyla sayarken.
-  */
-  "mockexamw.transcript_note": "Metin, sesinin sunucuda yazıya çevrilmesiyle oluştu; yanlış yazılan yerleri düzeltebilirsin. Ses kaydı saklanmıyor.",
-  "mockexamw.voice_not_sent": "Sesinin gönderilmesine izin vermediğin için konuşman yazıya çevrilmedi. Cevabını buraya yazabilirsin; istersen ayarlardan açabilirsin.",
   "mockhow_en.gist": "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
   "mockhow_en.detail": "Soruları metinden ÖNCE oku ve her sorudaki sayıyı, saati ya da özel adı işaretle. Sonra metni tararken yalnız o işaretleri ara. Bu maddelerde tuzak çoğu zaman metindeki ikinci bir sayıdır.",
   "mockhow_en.opinion": "Her metnin SON cümlesini ayrıca oku: taraf çoğu zaman orada belli olur. `but`, `however`, `still`, `only`, `in fact` sözcüklerinden sonrası yazarın vardığı sonuçtur; öncesi çoğu zaman karşı tarafa verilen paydır.",
@@ -495,6 +483,10 @@ export const trWeb: Record<string, string> = {
   "listenp.real_audio": "Gerçek lehçe kaydı — istediğin kadar tekrar dinle.",
   "listenp.no_tts": "Bu tarayıcıda konuşma sentezi yok; egzersizi metni okuyarak çözebilirsin.",
   "speakp.no_mic": "Mikrofona ulaşılamadı. Tarayıcı izni kapalı olabilir.",
+  /* Tarayıcıda konuşma tanıyıcısı yok (Firefox). Ekran açıkken ses sunucuya
+     gönderilmiyor (2026-09-27): telaffuz, sınav konuşması ve deneme sınavı
+     yalnız tarayıcının tanıyıcısıyla çalışıyor, yoksa bunu söylüyor. */
+  "speechw.unsupported": "Bu tarayıcıda konuşma tanıma yok. Sesli cevap için Chrome, Edge ya da Safari'de aç.",
   "speakp.scoring_off": "Telaffuz puanlaması bu kurulumda kapalı.",
   "speakp.rate_limited": "Şimdilik sınıra ulaşıldı, biraz sonra dene.",
   "speakp.send_failed": "Kayıt gönderilemedi. Tekrar dener misin?",

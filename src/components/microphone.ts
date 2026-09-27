@@ -93,3 +93,128 @@ export async function requestMicrophone(): Promise<"granted" | "denied" | "unava
     return "denied";
   }
 }
+
+/**
+ * Tanıyıcının bu oturumda kullanılamaz olduğunu söyleyen hata kodları: izin
+ * yok, mikrofon başka yerde, servis ya da dil kapalı. "no-speech" ve
+ * "aborted" bu listede değil — onlar geçici, yeniden açmak yeter.
+ */
+const DEAD_ERRORS = new Set(["not-allowed", "service-not-allowed", "audio-capture", "language-not-supported"]);
+
+export type SpeechCapture = {
+  /** Dinlemeyi bitirir ve o ana kadar duyulanı verir (hiç duyulmadıysa boş). */
+  stop: () => Promise<{ text: string; error?: string }>;
+};
+
+/**
+ * Serbest konuşmayı YALNIZ tarayıcının kendi tanıyıcısıyla yazıya çevirir.
+ *
+ * Ekran açıkken sunucuya ses gönderilmiyor (Samet, 2026-09-27): telaffuz
+ * turu, sınavın konuşma bölümü ve deneme sınavı kayıt almıyor, bunu
+ * çağırıyor; sunucuya giden yalnız metin. Tanıyıcı yoksa (Firefox)
+ * `"unsupported"`, mikrofon izni yoksa `"denied"` döner; çağıran taraf bunu
+ * ekranda söyler, sesi başka bir yola göndermez.
+ *
+ * Sürekli kip: Chrome sessizlikte oturumu kendiliğinden kapatıyor. `maxMs`
+ * dolana ya da `stop` çağrılana kadar her kapanışta yeni bir oturum açılıyor
+ * ve kesinleşen parçalar biriktiriliyor. Kalıcı bir hatada (izin geri
+ * alındı, mikrofon yok) yeniden açılmıyor; hata `stop`un sonucunda döner.
+ */
+export async function captureSpeech(lang: string, maxMs: number): Promise<SpeechCapture | "unsupported" | "denied"> {
+  const Ctor = recognitionCtor();
+  if (!Ctor) return "unsupported";
+  if ((await requestMicrophone()) !== "granted") return "denied";
+
+  let committed = "";
+  let sessionFinal = "";
+  let interim = "";
+  let error: string | undefined;
+  let stopped = false;
+  let rec: Recognition | null = null;
+  let ended: (() => void) | null = null;
+  const join = (...parts: string[]) => parts.join(" ").replace(/\s+/g, " ").trim();
+
+  const open = () => {
+    const r = new Ctor();
+    r.lang = lang;
+    r.continuous = true;
+    r.interimResults = true;
+    r.maxAlternatives = 1;
+    sessionFinal = "";
+    interim = "";
+    r.onresult = (e) => {
+      let fin = "";
+      let tmp = "";
+      for (let i = 0; i < e.results.length; i++) {
+        const res = e.results[i] as unknown as { isFinal?: boolean; 0?: { transcript: string } };
+        const text = res[0]?.transcript ?? "";
+        if (res.isFinal) fin += ` ${text}`;
+        else tmp += ` ${text}`;
+      }
+      sessionFinal = fin;
+      interim = tmp;
+    };
+    r.onerror = (e) => {
+      if (DEAD_ERRORS.has(e?.error)) error = e.error;
+    };
+    r.onend = () => {
+      // Oturumun duyduğu kalıcı metne geçiyor; yarım kalan ara sonuç da
+      // atılmıyor (kapanışta kesinleşmemiş son sözcükler olabiliyor).
+      committed = join(committed, sessionFinal, interim);
+      sessionFinal = "";
+      interim = "";
+      if (stopped || error) {
+        rec = null;
+        ended?.();
+        return;
+      }
+      try {
+        open();
+      } catch {
+        error = "start-failed";
+        rec = null;
+        ended?.();
+      }
+    };
+    rec = r;
+    r.start();
+  };
+
+  try {
+    open();
+  } catch {
+    return { stop: async () => ({ text: "", error: "start-failed" }) };
+  }
+
+  const finish = () =>
+    new Promise<void>((resolve) => {
+      stopped = true;
+      if (!rec) return resolve();
+      // Tanıyıcı `onend` vermeyebiliyor: kısa bir tavanla beklenmeyi bırak.
+      const guard = setTimeout(resolve, 1500);
+      ended = () => {
+        clearTimeout(guard);
+        resolve();
+      };
+      try {
+        rec.stop();
+      } catch {
+        clearTimeout(guard);
+        resolve();
+      }
+    });
+
+  let done: Promise<void> | null = null;
+  const guard = setTimeout(() => {
+    done ??= finish();
+  }, maxMs);
+
+  return {
+    stop: async () => {
+      clearTimeout(guard);
+      done ??= finish();
+      await done;
+      return { text: join(committed, sessionFinal, interim), error };
+    },
+  };
+}

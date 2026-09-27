@@ -1,7 +1,7 @@
 "use client";
 
 import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
-import { askAiConsentUpfront, isAiConsentDeclined, type AiConsentPurpose } from "@/lib/ai-consent-client";
+import { askAiConsentUpfront, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { dialogueSegments, prefetchSegments, speakSegments, stopSpeaking } from "@/components/speak-button";
@@ -13,7 +13,8 @@ import { AiNotice } from "@/components/ai-notice";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
 import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { captureClip } from "@/lib/pronounce-client";
+import { captureSpeech, recognitionCtor, type SpeechCapture } from "@/components/microphone";
+import { localeOf } from "@/components/skills/player-context";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
@@ -30,10 +31,10 @@ import { formatPercent } from "@/lib/i18n/dict";
  * dönülmez. Yönergeler sesle okunur, cevaplar sunucuya anlık kaydedilir ve
  * puan sunucuda hesaplanır (`/api/mock-exam`).
  *
- * TEK FARK KONUŞMADA. Mobilde konuşma cihazın tanıyıcısıyla (STT) yazıya
- * çevriliyor; tarayıcıda konuşma tanıma platformdan platforma değiştiği için
- * burada karşı tarafın replikleri yine sesle okunuyor ama cevap YAZILIYOR.
- * Değerlendirmeye giden şey iki uçta da aynı: dökümün kendisi.
+ * Konuşmada iki uç da cihazdaki tanıyıcıyı kullanıyor: mobilde cihazın STT'si,
+ * burada tarayıcının kendi tanıyıcısı (`captureSpeech`). Ses sunucuya
+ * gitmiyor; tanıyıcısı olmayan tarayıcıda cevap yazılıyor. Değerlendirmeye
+ * giden şey iki uçta da aynı: dökümün kendisi.
  */
 
 type Answers = Record<string, string>;
@@ -186,12 +187,12 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
 
 /**
  * Bölümün hangi yapay zekâ izinlerine dayandığı. Yazma metni değerlendirmeye
- * gidiyor; konuşmada ses önce sunucuda yazıya çevriliyor (`/api/stt`), sonra
- * döküm değerlendiriliyor. Okuma ve dinleme hiçbir sağlayıcıya gitmiyor.
+ * gidiyor; konuşmada ses tarayıcının tanıyıcısında yazıya çevriliyor ve
+ * sunucuya yalnız döküm gidiyor (ses rızası gerekmiyor), değerlendirilen de o
+ * döküm. Okuma ve dinleme hiçbir sağlayıcıya gitmiyor.
  */
 function consentPurposesOf(skill: MockPart["skill"]): AiConsentPurpose[] {
-  if (skill === "writing") return ["ai_text"];
-  if (skill === "speaking") return ["ai_voice", "ai_text"];
+  if (skill === "writing" || skill === "speaking") return ["ai_text"];
   return [];
 }
 
@@ -917,9 +918,10 @@ function OpenTask({
  *
  * Mobil oynatıcıyla aynı akış: hazırlık sayacı → karşı tarafın repliği sesle
  * okunur → sıra sana gelince mikrofon açılır → söylenen yazıya çevrilir.
- * Tarayıcı da mikrofonu kullanabiliyor (uygulama PWA olarak kuruluyor ve
- * lernomi.app HTTPS): ses `getUserMedia` ile kaydediliyor ve `/api/stt`
- * üzerinden yazıya çevriliyor — yürüyüş modunun kullandığı aynı zincir.
+ * Yazıya çeviren tarayıcının kendi tanıyıcısı (`captureSpeech`, sürekli kip):
+ * ses kaydedilmiyor ve sunucuya gönderilmiyor (Samet, 2026-09-27). Tanıyıcısı
+ * olmayan tarayıcıda (Firefox) mikrofon hiç açılmıyor, bunun sebebi söylenip
+ * cevap yazıyla alınıyor.
  *
  * DÖKÜM DÜZENLENEBİLİR. Tanıyıcı yanılabiliyor ve değerlendirilen şey döküm.
  * Bu yüzden metin bir alana yazılıyor ve öğrenci düzeltebiliyor; mikrofon hiç
@@ -943,14 +945,26 @@ function SpeakingTask({
   const [busy, setBusy] = useState(false);
   const [micErr, setMicErr] = useState(false);
   /**
-   * Sesin gönderilmesine izin verilmedi (izin diyaloğunda "ses göndermeden
-   * devam"): konuşma yazıya çevrilemiyor. Ref de var, çünkü karşılıklı konuşma
-   * döngüsü (`run`) kapanışta eski durumu görür.
+   * Mikrofon ya da tanıyıcı kullanılamıyor: kalan turlarda mikrofon açılmıyor,
+   * konuşma yazıyla sürüyor. Ref, çünkü karşılıklı konuşma döngüsü (`run`)
+   * kapanışta eski durumu görür.
    */
-  const [voiceOff, setVoiceOff] = useState(false);
-  const voiceOffRef = useRef(false);
+  const micOffRef = useRef(false);
+  /** Tarayıcının konuşma tanıyıcısı var mı — ilk çizimden sonra biliniyor. */
+  const [asr, setAsr] = useState<boolean | null>(null);
+  useEffect(() => setAsr(Boolean(recognitionCtor())), []);
+  /** Süren dinleme ve "bitirdim" düğmesinin beklemeyi erken bitiren kolu. */
+  const live = useRef<SpeechCapture | null>(null);
+  const endTurn = useRef<(() => void) | null>(null);
   const alive = useRef(true);
-  useEffect(() => () => { alive.current = false; }, []);
+  useEffect(
+    () => () => {
+      alive.current = false;
+      endTurn.current?.();
+      void live.current?.stop();
+    },
+    [],
+  );
 
   const exchange = task.exchange ?? [];
   const prep = task.prepSeconds ?? 60;
@@ -972,40 +986,44 @@ function SpeakingTask({
       sayIn(course, text, () => { clearTimeout(guard); finish(); }, partnerVoice(course));
     });
 
-  /** Bir turluk kayıt → `/api/stt` → düz metin. */
+  /**
+   * Bir turluk dinleme → düz metin. Tarayıcının tanıyıcısı turun süresi
+   * boyunca açık kalıyor (sessizlikte kapanırsa yeniden açılıyor, bkz.
+   * `captureSpeech`); süre dolunca ya da öğrenci "bitirdim" deyince kapanıyor.
+   *
+   * Güven eşiği UYGULANMIYOR: metin zaten düzenlenebilir ve eksik bir döküm
+   * hiç dökümden iyidir.
+   */
   async function listen(seconds: number): Promise<string> {
-    const cap = await captureClip(seconds * 1000 + 500);
-    if (!cap) { setMicErr(true); return ""; }
-    setCount(seconds);
-    await new Promise<void>((r) => setTimeout(r, seconds * 1000));
-    const blob = await cap.stop();
-    if (!blob) return "";
-    const form = new FormData();
-    const ext = blob.type.includes("wav") ? "wav" : blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
-    form.append("audio", blob, `clip.${ext}`);
-    form.append("language", course);
-    /* SINAV BAĞLAMI — yetkinin dayanağı.
-       `/api/stt` premium kapısını artık istemcinin `mode` beyanından değil
-       bağlamdan türetiyor: çalışan ve kullanıcıya ait bir kâğıdın kimliği
-       sunulmazsa istek "cepte yürüyüş" sayılıp kapıya giriyor. Konuşma bölümü
-       cepte yürüyüş değil, o yüzden kimliğini sunuyor. */
-    if (attemptId) form.append("exam", String(attemptId));
-    try {
-      const res = await apiFetch("/api/stt", { method: "POST", body: form });
-      if (await isAiConsentDeclined(res)) {
-        voiceOffRef.current = true;
-        setVoiceOff(true);
-        return "";
-      }
-      if (!res.ok) return "";
-      // Güven eşiği UYGULANMIYOR: yürüyüş modunda düşük güvenli metin yanlış
-      // bir cevabı doğru sayabilirdi, burada metin zaten düzenlenebilir ve
-      // eksik bir döküm hiç dökümden iyidir.
-      const d = (await res.json()) as { text?: string };
-      return (d.text ?? "").trim();
-    } catch {
+    const cap = await captureSpeech(localeOf(course), seconds * 1000 + 500);
+    if (cap === "unsupported" || cap === "denied") {
+      micOffRef.current = true;
+      if (cap === "unsupported") setAsr(false);
+      else setMicErr(true);
       return "";
     }
+    if (!alive.current) {
+      void cap.stop();
+      return "";
+    }
+    live.current = cap;
+    setCount(seconds);
+    await new Promise<void>((resolve) => {
+      const id = setTimeout(done, seconds * 1000);
+      function done() {
+        clearTimeout(id);
+        endTurn.current = null;
+        resolve();
+      }
+      endTurn.current = done;
+    });
+    live.current = null;
+    const heard = await cap.stop();
+    if (heard.error && !heard.text) {
+      micOffRef.current = true;
+      setMicErr(true);
+    }
+    return heard.text;
   }
 
   async function run() {
@@ -1017,9 +1035,9 @@ function SpeakingTask({
     } else {
       for (const [i, tn] of exchange.entries()) {
         if (!alive.current) return;
-        /* Ses gönderilemiyorsa kalan turlar için mikrofon açılmıyor: kaydı
-           gidecek bir yer yok. Konuşma yazıyla sürüyor. */
-        if (voiceOffRef.current) break;
+        /* Mikrofon ya da tanıyıcı yoksa kalan turlar için mikrofon açılmıyor:
+           dinleyecek bir şey yok. Konuşma yazıyla sürüyor. */
+        if (micOffRef.current) break;
         setTurn(i);
         if (tn.who === "partner") {
           setCount(0);
@@ -1076,10 +1094,16 @@ function SpeakingTask({
               ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
               : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
           </p>
-          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => { setCount(prep); setStep("prep"); }}>
-            <MicIcon className="size-4" /> {t("mockexam.speak_start")}
-          </button>
-          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-body" onClick={() => setStep("done")}>
+          {/* Tanıyıcı yoksa mikrofonla başlatma düğmesi hiç çıkmıyor: ses başka
+              bir yola gönderilmiyor, cevap yazıyla alınıyor. */}
+          {asr === false ? (
+            <p className="muted mt-3 text-body leading-relaxed">{t("speechw.unsupported")}</p>
+          ) : (
+            <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => { setCount(prep); setStep("prep"); }}>
+              <MicIcon className="size-4" /> {t("mockexam.speak_start")}
+            </button>
+          )}
+          <button type="button" className={`btn btn-ghost mt-3 px-4 py-2 text-body ${asr === false ? "" : "ml-2"}`} onClick={() => setStep("done")}>
             {t("mockexam.write_without_mic")}
           </button>
         </>
@@ -1102,6 +1126,11 @@ function SpeakingTask({
               <MicIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
               <p className="mt-1 text-strong" style={{ color: "var(--color-danger)" }}>{t("mockexam.speak_now")} · {mmss(count)}</p>
               <p className="muted mt-1 text-body">{current?.who === "you" ? current.hint : t("mockexam.solo_hint")}</p>
+              {/* Erken bitirmek: süre dolmadan söyleyeceğini bitiren öğrenci
+                  sessiz saniyeleri beklemiyor. */}
+              <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => endTurn.current?.()}>
+                {t("common.finish")}
+              </button>
             </div>
           )}
         </div>
@@ -1121,15 +1150,14 @@ function SpeakingTask({
             lang={course}
           />
           {/*
-            NOT WEBİN KENDİ CÜMLESİ. Ortak `mockexam.transcript_note` "metin
-            cihazın tanıyıcısından geldi, ses Lernomi sunucusuna gönderilmiyor"
-            diyor: mobilde doğru (orada cihaz tanıyıcısı), webde YANLIŞ — burada ses
-            `/api/stt` üzerinden sunucuda ve konuşma tanıma sağlayıcısında
-            yazıya çevriliyor ve izin diyaloğu bunu adlarıyla söylüyor. Aynı
-            ekranda ikisi birden çelişirdi.
+            Not mobil ile ORTAK cümle (`mockexam.transcript_note`): metin
+            cihazdaki tanıyıcıdan geldi, ses Lernomi sunucusuna gitmiyor. Web
+            eskiden sesi sunucuda yazıya çevirdiği için ayrı bir cümle
+            taşıyordu; artık tarayıcının tanıyıcısı çeviriyor ve söz ikisinde
+            de doğru. Tanıyıcı yoksa sebebi söyleniyor.
           */}
           <p className="muted mt-1 text-caption leading-relaxed">
-            {t(micErr ? "mockexam.mic_failed" : voiceOff ? "mockexamw.voice_not_sent" : "mockexamw.transcript_note")}
+            {t(micErr ? "mockexam.mic_failed" : asr === false ? "speechw.unsupported" : "mockexam.transcript_note")}
           </p>
           {score ? (
             <OpenResult score={score} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />

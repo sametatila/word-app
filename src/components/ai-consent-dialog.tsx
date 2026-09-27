@@ -36,8 +36,8 @@ import {
  */
 
 /**
- * Sağlayıcı listesi — mikrofon açıklaması (`mic-disclosure`) da aynı bileşeni
- * kullanıyor ki iki diyalog alıcıları aynı biçimde saysın.
+ * Sağlayıcı listesi. (Web yürüyüş modunun mikrofon açıklaması da bunu
+ * kullanıyordu; web ses göndermeyi bırakınca açıklama kalktı, 2026-09-27.)
  *
  * Kap zeminsiz ve çizgili: iskelet çubukları `surface-2` rengiyle çiziliyor
  * (`components/skeleton`), `surface-2` zeminli bir kutuda görünmezlerdi.
