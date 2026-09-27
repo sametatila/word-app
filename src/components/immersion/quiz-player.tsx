@@ -82,7 +82,7 @@ export function ImmersionQuizPlayer({
   const passed = pct >= PASS_PCT;
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-4 py-6">
+    <div className="mx-auto w-full max-w-2xl py-6">
       <div className="mb-5 flex items-center gap-3">
         {/* Geri düğmesi 44 - `PageBack` ve Android'in her ekran başlığındaki
             ölçü. 36 pikselde kalıyordu ve ok da bir bileşen değil düz "←"
@@ -106,7 +106,7 @@ export function ImmersionQuizPlayer({
           <KindIconFor kind={kind} size={18} />
         </span>
         <div className="min-w-0">
-          <h1 className="truncate font-bold">{title}</h1>
+          <h1 className="truncate text-h3">{title}</h1>
           <p className="muted truncate text-caption">{subtitle}</p>
         </div>
       </div>

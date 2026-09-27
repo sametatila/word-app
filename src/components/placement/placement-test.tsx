@@ -339,23 +339,29 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
 
   // Aşama ekranları
   const stage = phase as PlacementStage;
+  /* Aşama içi ilerleme: tur başlığıyla aynı çubuk (bkz. `session-player`). */
+  const stageDone = stage === "vocab" || stage === "grammar" ? index : textIndex;
+  const stageTotal = stage === "vocab" ? test!.vocab[level].length : stage === "grammar" ? test!.grammar[level].length : stage === "reading" ? test!.reading.length : test!.listening.length;
   const header = (
-    <div className="mb-3 flex items-center justify-between text-caption">
+    <div className="mb-3 flex flex-col gap-2 text-caption">
+      {/* Sıra tur başlığındaki gibi: çıkış en solda, sonra çubuk, sağda
+          aşamayı geç. Android'de başlıkta bir kapat düğmesi var ve
+          "cevapların kaydedilmiyor" diye sorup çıkıyor. Ölçü `RoundExit`te. */}
+      <div className="flex items-center gap-3">
+        <RoundExit onExit={() => setQuit(true)} labelKey="plc.quit_title" />
+        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
+          <div
+            className="brand-gradient h-full rounded-full transition-all"
+            style={{ width: `${Math.round((100 * stageDone) / Math.max(1, stageTotal))}%` }}
+          />
+        </div>
+        <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 shrink-0 underline-offset-2 hover:underline">
+          {t("plc.skip_stage")}
+        </button>
+      </div>
       <span>
         {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
-      <div className="flex items-center gap-3">
-        <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 underline-offset-2 hover:underline">
-          {t("plc.skip_stage")}
-        </button>
-        {/* ÇIKIŞ YOLU YOKTU: test başlayınca tek çıkış tarayıcının geri
-            düğmesiydi -- aynı kapan sınavda da vardı (bkz. `mock-exam-player`).
-            Android'de başlıkta bir kapat düğmesi var ve "cevapların
-            kaydedilmiyor" diye sorup çıkıyor; metin zaten sözlükte duruyordu,
-            web'de onu kullanan hiçbir şey yoktu. */}
-        {/* Ölçü Android'den (bkz. `exam-player`): 44 px karo, 22 px simge. */}
-        <RoundExit onExit={() => setQuit(true)} labelKey="plc.quit_title" />
-      </div>
     </div>
   );
   const quitDialog = (
@@ -417,7 +423,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     const item = items[index];
     if (!item) return null;
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section className="card mx-auto w-full max-w-md p-4">
         {quitDialog}
         {header}
         <p className="muted mb-3 text-caption">{t(STAGE_HINT[stage])}</p>
@@ -447,7 +453,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (!item) return null;
   const q = item.questions[qIndex];
   return (
-    <section className="card mx-auto w-full max-w-md p-5">
+    <section className="card mx-auto w-full max-w-md p-4">
       {quitDialog}
       {header}
       <p className="muted mb-2 text-caption">{t(STAGE_HINT[stage])} · {item.level}</p>

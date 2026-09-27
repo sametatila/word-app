@@ -200,19 +200,22 @@ export function WeeklyPlayer() {
     const item = quiz.items[index];
     const stim = item.ref ? quiz.stimuli.find((s) => s.id === item.ref) : null;
     return (
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 px-4 pb-10 pt-4">
-        <div className="flex items-center justify-between gap-3">
+      <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 pb-10 pt-4">
+        {/* Sıra tur başlığındaki gibi (`session-player`): çıkış en solda,
+            çubuk, sağda sayaç; bölüm adı altında. */}
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-3">
+            <RoundExit href="/learn" />
+            <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
+              <motion.div
+                className="brand-gradient h-full rounded-full"
+                animate={{ width: `${((index + 1) / quiz.items.length) * 100}%` }}
+                transition={{ duration: 0.25 }}
+              />
+            </div>
+            <span className="text-caption muted shrink-0 tabular-nums">{index + 1}/{quiz.items.length}</span>
+          </div>
           <span className="text-micro uppercase tracking-eyebrow muted">{t(BLOCK_KEY[item.block])}</span>
-          <span className="text-caption muted tabular-nums">{index + 1}/{quiz.items.length}</span>
-          <RoundExit href="/learn" />
-        </div>
-        <div className="h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-          <motion.div
-            className="h-full rounded-full"
-            style={{ background: "var(--color-brand)" }}
-            animate={{ width: `${((index + 1) / quiz.items.length) * 100}%` }}
-            transition={{ duration: 0.25 }}
-          />
         </div>
 
         <AnimatePresence mode="wait">

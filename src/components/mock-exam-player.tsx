@@ -5,7 +5,7 @@ import { askAiConsentUpfront, isAiConsentDeclined, type AiConsentPurpose } from 
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { dialogueSegments, prefetchSegments, speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon, XIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportDialog } from "@/components/report-dialog";
@@ -481,28 +481,30 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
 
   return (
     <section ref={kok} className="mx-auto w-full max-w-2xl">
-      <header className="card flex items-center justify-between gap-3 p-4">
-        <div>
-          <p className="muted text-caption tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
-          <p className="text-strong">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
-        </div>
+      {/* Sıra tur başlığındaki gibi (`session-player`): çıkış en solda,
+          çubuk, sağda görev sayacı. ÇIKIŞ YOLU YOKTU: sınav başlayınca tek
+          çıkış tarayıcının geri düğmesiydi; web iki saniyede bir kaydediyor,
+          yani "cevapların kaydedildi" sözü tutuluyor. SİMGE Android'den:
+          çarpı değil geri oku — bu başlık listeye dönüyor (`MockExamScreen`). */}
+      <header className="card flex flex-col gap-3 p-4">
         <div className="flex items-center gap-3">
+          <RoundExit onExit={() => setQuit(true)} labelKey="mockexam.quit_title" glyph="back" />
+          <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2" aria-hidden>
+            <div
+              className="brand-gradient h-full rounded-full transition-all"
+              style={{ width: `${Math.round((100 * ix) / Math.max(1, part.tasks.length))}%` }}
+            />
+          </div>
           {/* Sayaç GÖREV başına; etiketsiz bir geri sayım "sınavın tamamı bu
               kadar" diye okunabiliyordu. Android etiketi yazıyor. */}
-          <div className="text-right">
-            <p className="muted text-micro tracking-wide">{t("mockexam.task_time")}</p>
+          <div className="shrink-0 text-right">
+            <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.task_time")}</p>
             <p className="text-strong tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
           </div>
-          {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar
-              kapana kısılıyordu, tek çıkış tarayıcının geri düğmesiydi.
-              Android'de başlıkta bir kapat düğmesi var ve cevapların
-              kaydedildiğini söyleyip çıkıyor - web zaten iki saniyede bir
-              kaydediyor, yani söz tutuluyor. */}
-          {/* Ölçü ve SİMGE Android'den: 44 px karo, ve burada ÇARPI DEĞİL
-              GERİ OKU — bu başlık listeye dönüyor, ekranı kapatmıyor
-              (`MockExamScreen`: `ArrowBackIcon size={24}`). Web üç ekranda da
-              çarpı çiziyordu. */}
-          <RoundExit onExit={() => setQuit(true)} labelKey="mockexam.quit_title" glyph="back" />
+        </div>
+        <div>
+          <p className="muted text-micro uppercase tracking-eyebrow">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
+          <p className="text-strong">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
         </div>
       </header>
 
@@ -521,12 +523,6 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         }}
         onCancel={() => { setQuit(false); ayril.stay(); }}
       />
-
-      <div className="mt-2 flex gap-1" aria-hidden>
-        {part.tasks.map((tk, i) => (
-          <span key={tk.id} className="h-1 flex-1 rounded-full" style={{ background: i < ix ? "var(--color-success)" : i === ix ? "var(--color-brand)" : "var(--surface-2)" }} />
-        ))}
-      </div>
 
       {/* Tek satırlık notlar şablonun `FlowNote`u: süre dolup geçilmesi bir
           UYARI (kayıp yok, kural işledi). Mobil aynı iki notu çiziyor. */}
@@ -590,7 +586,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
 
       <div className="card mt-3 p-4">
         <p className="muted text-caption">{t("mockexam.no_back")}</p>
-        <button type="button" className="btn btn-primary mt-2 w-full py-3 text-body" onClick={() => advance(false)}>
+        <button type="button" className="btn btn-primary mt-2 w-full px-5 py-4" onClick={() => advance(false)}>
           {t(ix < part.tasks.length - 1 ? "mockexam.next_task" : "mockexam.submit")}
         </button>
       </div>
@@ -705,7 +701,7 @@ function Stimulus({ course, st, plays, playing, onPlay }: { course: MockCourse; 
   if (st.kind === "text") {
     return (
       <div className="card p-4">
-        <p className="muted text-caption tracking-wide">{st.genre} · {st.genreTr}</p>
+        <p className="muted text-micro uppercase tracking-eyebrow">{st.genre} · {st.genreTr}</p>
         {st.title ? <p className="mt-1 text-strong" lang={course}>{st.title}</p> : null}
         <p className="mt-2 whitespace-pre-line text-body leading-relaxed" lang={course}>{withBlanks(st.body)}</p>
       </div>
@@ -714,7 +710,7 @@ function Stimulus({ course, st, plays, playing, onPlay }: { course: MockCourse; 
   const rest = st.plays - (plays[st.id] ?? 0);
   return (
     <div className="card p-4">
-      <p className="muted text-caption tracking-wide">{st.genre} · {st.genreTr}</p>
+      <p className="muted text-micro uppercase tracking-eyebrow">{st.genre} · {st.genreTr}</p>
       {st.title ? <p className="mt-1 text-strong" lang={course}>{st.title}</p> : null}
       <p className="muted mt-1 text-body leading-relaxed">{st.situation}</p>
       <button
@@ -870,7 +866,7 @@ function OpenTask({
 
   return (
     <div className="card p-4">
-      <p className="muted text-caption tracking-wide">{t("mockexam.content_points")}</p>
+      <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
           <p className="text-body" lang={course}>• {p.de}</p>
@@ -1065,7 +1061,7 @@ function SpeakingTask({
   const current = exchange[turn];
   return (
     <div className="card p-4">
-      <p className="muted text-caption tracking-wide">{t("mockexam.content_points")}</p>
+      <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
           <p className="text-body" lang={course}>• {p.de}</p>
@@ -1089,7 +1085,7 @@ function SpeakingTask({
         </>
       ) : step === "prep" ? (
         <div className="mt-4 text-center">
-          <p className="muted text-caption tracking-wide">{t("mockexam.prep")}</p>
+          <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.prep")}</p>
           <p className="text-h1 tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
           <p className="muted mt-1 text-body">{t("mockexam.prep_hint")}</p>
         </div>
@@ -1097,7 +1093,7 @@ function SpeakingTask({
         <div className="mt-4">
           {current?.who === "partner" ? (
             <>
-              <p className="muted text-caption tracking-wide">{t("mockexam.partner")}</p>
+              <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.partner")}</p>
               <p className="mt-1 text-body leading-relaxed" lang={course}>{current.de}</p>
               <p className="muted mt-1 text-body">{current.tr}</p>
             </>
@@ -1111,7 +1107,7 @@ function SpeakingTask({
         </div>
       ) : (
         <>
-          <p className="muted mt-4 text-caption tracking-wide">{t("mockexam.transcript_you")}</p>
+          <p className="muted mt-4 text-micro uppercase tracking-eyebrow">{t("mockexam.transcript_you")}</p>
           <textarea
             value={value}
             onChange={(e) => onOpen(task.id, e.target.value)}
@@ -1248,21 +1244,21 @@ function Result({
           <h2 className="text-h3">{t("mockexam.review")}</h2>
           {part.tasks.map((task) => (
             <div key={task.id} className="space-y-2">
-              <p className="muted text-caption tracking-wide">Teil {task.no}</p>
+              <p className="muted text-micro uppercase tracking-eyebrow">Teil {task.no}</p>
               {isOpenTask(task) && task.rubric ? (
                 <div className="card p-4">
                   {(open[task.id] ?? "").trim() ? (
                     <>
-                      <p className="muted text-caption tracking-wide">{t("mockexam.your_answer")}</p>
+                      <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.your_answer")}</p>
                       <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{open[task.id]}</p>
                     </>
                   ) : null}
                   {openScores[task.id] ? <OpenResult score={openScores[task.id]} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={open[task.id] ?? ""} /> : null}
-                  <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.criteria")}</p>
+                  <p className="muted mt-3 text-micro uppercase tracking-eyebrow">{t("mockexam.criteria")}</p>
                   {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-body leading-relaxed">• {c}</p>)}
                   {reveal[task.id] ? (
                     <>
-                      <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.model_answer")}</p>
+                      <p className="muted mt-3 text-micro uppercase tracking-eyebrow">{t("mockexam.model_answer")}</p>
                       <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
                     </>
                   ) : (
@@ -1279,7 +1275,7 @@ function Result({
                         className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
                         style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
                       >
-                        {ok ? <CheckIcon className="size-3.5" /> : "×"}
+                        {ok ? <CheckIcon className="size-3.5" /> : <XIcon className="size-3.5" />}
                       </span>
                       <div className="min-w-0">
                         <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
@@ -1310,7 +1306,7 @@ function Result({
               {(task.texts ?? []).map((st) =>
                 st.kind === "audio" ? (
                   <div key={st.id} className="card p-4">
-                    <p className="muted text-caption tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
+                    <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexam.transcript")} · {st.genreTr}</p>
                     {st.segments.map((sg, i) => (
                       <p key={i} className="mt-1 text-body leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
                     ))}
@@ -1424,7 +1420,7 @@ function Glossary({
   if (!gloss?.length) return null;
   return (
     <>
-      <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.glossary")}</p>
+      <p className="muted mt-3 text-micro uppercase tracking-eyebrow">{t("mockexam.glossary")}</p>
       <dl className="mt-1">
         {gloss.map((g) => (
           <div key={g.de} className="muted flex gap-1.5 text-caption leading-relaxed">
