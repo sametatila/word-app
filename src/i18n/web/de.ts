@@ -610,7 +610,6 @@ export const deWeb: Record<string, string> = {
   "immw.review": "Quiz",
   "immw.grammar_exercise": "Grammatikübung",
   "profw.load_failed": "Profil konnte nicht geladen werden",
-  "bossw.exam_link": "Modulprüfung (25 Min., sieben Teile) →",
   "bossw.title": "Modultest",
   "certw.this_document": "Dieser Leistungsnachweis",
   "certw.awarded_to": "wird ausgestellt für das Bestehen der Prüfung mit {pct}.",

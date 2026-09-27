@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { getT } from "@/lib/i18n/server";
 import { notFound, redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { BossPlayer } from "@/components/boss-player";
@@ -23,7 +21,6 @@ export default async function BossPage({
 }: {
   params: Promise<{ level: string; module: string }>;
 }) {
-  const t = await getT();
   const userId = await getUserId();
   if (!userId) redirect("/login");
 
@@ -32,22 +29,9 @@ export default async function BossPage({
   if (!LEVELS.includes(level) || !Number.isInteger(index) || index < 0 || index > 20) notFound();
 
   return (
-    <>
-      {/*
-        Hız turu modülü GEÇİRMİYOR: yalnızca kelimeleri baskı altında
-        kullandırıyor. Modülün kapısı yedi bölümlük sınav, bu yüzden bağlantı
-        sayfanın en üstünde ve ne olduğunu söylüyor.
-
-        Yol haritasındaki giriş kaldırıldı (bkz. components/conversations/conversation-hub):
-        sınavın hemen altında duran "60 sn, 15 kelime" satırı ikinci bir sınav
-        gibi okunuyordu. Tura artık sınav SONUCU ekranından giriliyor.
-      */}
-      <div className="mx-auto mb-3 w-full max-w-2xl text-right">
-        <Link href={`/exam/${level}/${index}`} className="muted text-caption underline-offset-2 hover:underline">
-          {t("bossw.exam_link")}
-        </Link>
-      </div>
-      <BossPlayer level={level} moduleIndex={index} onExitHref="/immersion" />
-    </>
+    /* Sınav bağlantısı turun üstünden kalktı (2026-09-27): mobilde yoktu,
+       tura zaten sınav sonucundan giriliyor ve süreli turun tek çıkışı
+       soldaki Kapat. */
+    <BossPlayer level={level} moduleIndex={index} onExitHref="/immersion" />
   );
 }

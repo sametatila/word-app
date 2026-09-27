@@ -610,7 +610,6 @@ export const enWeb: Record<string, string> = {
   "immw.review": "Quiz",
   "immw.grammar_exercise": "Grammar exercise",
   "profw.load_failed": "Couldn't load the profile",
-  "bossw.exam_link": "Module exam (25 min, seven parts) →",
   "bossw.title": "Module test",
   "certw.this_document": "This certificate of achievement is",
   "certw.awarded_to": "awarded for passing the exam with {pct}.",

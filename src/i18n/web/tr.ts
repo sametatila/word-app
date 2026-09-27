@@ -670,7 +670,6 @@ export const trWeb: Record<string, string> = {
   "immw.review": "Quiz",
   "immw.grammar_exercise": "Dil bilgisi alıştırması",
   "profw.load_failed": "Profil yüklenemedi",
-  "bossw.exam_link": "Modül sınavı (25 dk, yedi bölüm) →",
   "bossw.title": "Modül sınavı",
   /* "Başarı belgesi", resmî sertifika değil (içerik denetimi CNT-11). */
   "certw.this_document": "Bu başarı belgesi",
