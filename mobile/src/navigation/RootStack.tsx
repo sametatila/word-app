@@ -130,13 +130,15 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Tabs" component={RootTabs} />
       {/* Bütün ekranlar AYNI kolonda (bkz. ui/ContentColumn): ekran başına
           genişlik yok, menüden içeriğe geçerken kenar zıplamıyor. */}
+      {/* Geçiş kuralı: geri oklu içerik sayfası (menüden açılan) yandan
+          gelir; X ile kapanan akış (tur, sınav, ödeme) alttan kayar. */}
       <Stack.Group screenLayout={contentColumnLayout}>
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="FirstPractice" component={FirstPracticeScreen} />
       <Stack.Screen name="NotifPrime" component={NotifPrimeScreen} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Avatar" component={AvatarScreen} />
       <Stack.Screen name="MockExams" component={MockExamsScreen} />
       <Stack.Screen name="MockExam" component={MockExamScreen} options={{ gestureEnabled: false }} />
       <Stack.Screen name="MockStats" component={MockStatsScreen} />
@@ -152,7 +154,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="Achievements" component={AchievementsScreen} />
-      <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Progress" component={ProgressScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
@@ -161,7 +163,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Practice" component={PracticeScreen} />
       <Stack.Screen name="Cando" component={CandoScreen} />
       <Stack.Screen name="Writings" component={WritingsScreen} />
       <Stack.Screen name="User" component={UserScreen} />
