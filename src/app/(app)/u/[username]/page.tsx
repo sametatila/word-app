@@ -3,9 +3,10 @@ import { getT } from "@/lib/i18n/server";
 import { getUserId } from "@/lib/auth/server";
 import { SocialError } from "@/lib/social/errors";
 import { ensureUsername, publicProfile } from "@/lib/social/profile";
-import { BackButton } from "@/components/page-back";
+import { PageBack } from "@/components/page-back";
 import { PublicProfile } from "@/components/social/public-profile";
 import { RetryButton } from "@/components/retry-button";
+import { FlowColumn, StateBody } from "@/components/flow";
 
 export const dynamic = "force-dynamic";
 
@@ -20,10 +21,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     const data = await publicProfile(userId, username);
     return (
       <div className="mx-auto w-full max-w-3xl">
-        <div className="mb-4 flex items-center gap-3">
-          <BackButton fallback="/friends" />
-          <h1 className="text-h2">{t("user.profile")}</h1>
-        </div>
+        <PageBack fallback="/friends" title={t("user.profile")} />
         <PublicProfile data={data} me={userId} />
       </div>
     );
@@ -31,11 +29,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     if (err instanceof SocialError && err.code === "not_found") notFound();
     console.error("[u page]", err);
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
-        <h2 className="text-h2">{t("profw.load_failed")}</h2>
-        <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
-        <RetryButton />
-      </div>
+      <FlowColumn>
+        <StateBody alert title={t("profw.load_failed")} body={t("socialw.try_in_a_moment")}>
+          <RetryButton className="btn btn-primary flex w-full items-center justify-center gap-2 px-5 py-4 disabled:opacity-60" />
+        </StateBody>
+      </FlowColumn>
     );
   }
 }

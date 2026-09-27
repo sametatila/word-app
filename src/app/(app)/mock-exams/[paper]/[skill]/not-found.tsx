@@ -17,7 +17,7 @@ import { getT } from "@/lib/i18n/server";
 export default async function MockPaperNotFound() {
   const t = await getT();
   return (
-    <div className="px-4 py-6">
+    <div className="py-6">
       <FlowColumn>
         <StateBody alert title={t("mockexam.exam_missing")} body={t("mockexam.exam_missing_sub")}>
           <FlowActions primary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }} />

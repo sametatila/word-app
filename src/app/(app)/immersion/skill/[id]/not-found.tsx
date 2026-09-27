@@ -16,7 +16,7 @@ import { getT } from "@/lib/i18n/server";
 export default async function SkillNotFound() {
   const t = await getT();
   return (
-    <div className="px-4 py-8">
+    <div className="py-8">
       <FlowColumn>
         <StateBody title={t("item.this_exercise_can_t_be_opened")}>
           <FlowActions

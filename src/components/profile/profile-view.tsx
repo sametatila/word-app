@@ -7,7 +7,7 @@ import { useState } from "react";
 import { MyAvatar } from "@/components/avatar";
 import { MenuRow } from "@/components/menu-row";
 import { ConfirmDialog } from "@/components/confirm-dialog";
-import { BackButton } from "@/components/page-back";
+import { PageBack } from "@/components/page-back";
 import { signOutOnDevice } from "@/components/session-keeper";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
@@ -80,9 +80,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <div className="mb-4 flex items-center gap-3">
-        <BackButton fallback="/learn" />
-        <h1 className="flex-1 text-h2">{t("profile.profile")}</h1>
+      <PageBack fallback="/learn" title={t("profile.profile")}>
         {/*
           Ayarlar dişlisi geri düğmesiyle AYNI ölçüde ve simetri kasıtlı:
           başlığı iki uçtaki eşit düğme ortalıyor. Mobilde de böyle.
@@ -99,7 +97,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           {/* Dişli, anahtar değil (bkz. `icons.tsx` `SettingsIcon`). */}
           <SettingsIcon size={22} />
         </Link>
-      </div>
+      </PageBack>
 
       {/* kimlik kartı */}
       <div className="card mb-4 flex flex-col items-center p-5">

@@ -13,7 +13,7 @@ export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-3xl space-y-5">
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 shrink-0 animate-pulse rounded-full surface-2" />
+        <div className="size-11 shrink-0 animate-pulse rounded-tile surface-2" />
         <div className="h-13 w-13 shrink-0 animate-pulse rounded-full surface-2" style={{ height: 52, width: 52 }} />
         <div className="min-w-0 flex-1 space-y-1.5">
           <div className="h-5 w-40 animate-pulse rounded-full surface-2" />

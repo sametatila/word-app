@@ -5,6 +5,7 @@ import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
 import { RetryButton } from "@/components/retry-button";
+import { FlowColumn, StateBody } from "@/components/flow";
 
 export const dynamic = "force-dynamic";
 
@@ -52,11 +53,11 @@ export default async function ProfilePage() {
   } catch (err) {
     console.error("[profile page]", err);
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
-        <h2 className="text-h3">{t("profw.load_failed")}</h2>
-        <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
-        <RetryButton />
-      </div>
+      <FlowColumn>
+        <StateBody alert title={t("profw.load_failed")} body={t("socialw.try_in_a_moment")}>
+          <RetryButton className="btn btn-primary flex w-full items-center justify-center gap-2 px-5 py-4 disabled:opacity-60" />
+        </StateBody>
+      </FlowColumn>
     );
   }
 }

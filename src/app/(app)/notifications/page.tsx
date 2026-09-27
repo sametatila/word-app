@@ -1,4 +1,4 @@
-import { BackButton } from "@/components/page-back";
+import { PageBack } from "@/components/page-back";
 import { titleMeta } from "@/lib/page-meta";
 import { NotificationSettings } from "@/components/notification-settings";
 import { getT } from "@/lib/i18n/server";
@@ -17,10 +17,7 @@ export default async function NotificationsPage() {
   const t = await getT();
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <div className="mb-4 flex items-center gap-3">
-        <BackButton fallback="/profile" />
-        <h1 className="text-h2">{t("notifications.notifications")}</h1>
-      </div>
+      <PageBack fallback="/profile" title={t("notifications.notifications")} />
       <NotificationSettings />
     </div>
   );

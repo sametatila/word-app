@@ -21,7 +21,7 @@ export default async function AppNotFound() {
   const t = await getT();
   /* DURUM ŞABLONU (components/flow): bulunamadı = düşünen maskot, tek çıkış. */
   return (
-    <div className="px-4 py-8">
+    <div className="py-8">
       <FlowColumn>
         <StateBody
           title={t("notfound.title")}

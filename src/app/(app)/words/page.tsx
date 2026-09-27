@@ -11,6 +11,7 @@ import { WordList, type WordRow } from "@/components/word-list";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatNumber } from "@/lib/i18n/dict";
 import { RetryButton } from "@/components/retry-button";
+import { FlowColumn, StateBody } from "@/components/flow";
 
 export const generateMetadata = titleMeta("words.my_words");
 export const dynamic = "force-dynamic";
@@ -163,15 +164,15 @@ export default async function WordsPage({
   } catch (err) {
     console.error("[words]", err);
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
-        <h2 className="text-h2">{t("words.couldn_t_load_your_words")}</h2>
+      <FlowColumn>
         {/* Buraya "npm run db:push çalıştır" yazıyordu: geliştirici yönergesi,
             üretimde kullanıcının karşısına çıkıyordu ve yapabileceği bir şey
             değildi. Sebep zaten sunucu günlüğünde; kullanıcıya bağlantı
             sorunu söyleniyor. Android aynı yerde tek satır gösteriyor. */}
-        <p className="muted mt-2 text-body">{t("social.err_offline")}</p>
-        <RetryButton />
-      </div>
+        <StateBody alert title={t("words.couldn_t_load_your_words")} body={t("social.err_offline")}>
+          <RetryButton className="btn btn-primary flex w-full items-center justify-center gap-2 px-5 py-4 disabled:opacity-60" />
+        </StateBody>
+      </FlowColumn>
     );
   }
 }

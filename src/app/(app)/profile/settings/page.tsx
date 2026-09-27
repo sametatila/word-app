@@ -6,6 +6,7 @@ import { ProfileForm } from "@/components/profile-form";
 import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
 import { RetryButton } from "@/components/retry-button";
+import { FlowColumn, StateBody } from "@/components/flow";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("settings.settings");
@@ -42,11 +43,11 @@ export default async function SettingsPage() {
 
   if (!veri) {
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
-        <h2 className="text-h2">{t("settingsw.load_failed")}</h2>
-        <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
-        <RetryButton />
-      </div>
+      <FlowColumn>
+        <StateBody alert title={t("settingsw.load_failed")} body={t("socialw.try_in_a_moment")}>
+          <RetryButton className="btn btn-primary flex w-full items-center justify-center gap-2 px-5 py-4 disabled:opacity-60" />
+        </StateBody>
+      </FlowColumn>
     );
   }
 

@@ -1,4 +1,5 @@
 import { getT } from "@/lib/i18n/server";
+import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
 import { XIcon } from "@/components/icons";
 
@@ -13,12 +14,19 @@ import { XIcon } from "@/components/icons";
 export default async function UserNotFound() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-md px-4 py-8">
+    /* Kart Android'in `UserScreen` boş kartı (§327 renk eşi); çıkmaz değil,
+       Arkadaşlar'a dönen tek çıkış taşıyor. */
+    <div className="mx-auto w-full max-w-md py-8">
       <EmptyCard
         icon={XIcon}
         tint="var(--color-rose)"
         title={t("user.user_not_found")}
         text={t("user.link_may_be_old_or_this_profile")}
+        action={
+          <Link href="/friends" prefetch={false} className="btn btn-primary px-4 py-2 text-body">
+            {t("friends.friends")}
+          </Link>
+        }
       />
     </div>
   );

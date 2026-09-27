@@ -18753,7 +18753,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          tek bir karti tasiyor ve `role` o govdede ariyor. */
       const bas = src.lastIndexOf("return (", i);
       const govde = bas < 0 ? src.slice(0, i) : src.slice(bas, i);
-      if (!/role="alert"/.test(govde)) sessiz.push(f.split("/").slice(-2).join("/"));
+      /* `<StateBody alert>` kendisi `role="alert"` çiziyor (components/flow). */
+      if (!/role="alert"|<StateBody[^>]*\balert\b/.test(govde)) sessiz.push(f.split("/").slice(-2).join("/"));
     }
   }
   sameList(
