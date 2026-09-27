@@ -1888,7 +1888,7 @@ export const deBase: Record<string, string> = {
   "writ.loading": "Deine Texte werden geladen",
   "weak.loading": "Deine Schwachstellen werden geladen",
   "progp.loading": "Dein Fortschritt wird geladen",
-  "cando.loading": "Was du kannst wird geladen",
+  "cando.loading": "Was du kannst, wird geladen",
   "writ.sub": "Deine bewerteten Sätze und Texte. Nur du siehst sie, und du kannst jeden löschen.",
   "writ.kind_chat": "Chat",
   "writ.empty_title": "Noch kein bewerteter Text",

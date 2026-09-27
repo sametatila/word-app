@@ -444,7 +444,7 @@ export const deWeb: Record<string, string> = {
   "pushw.enable": "Erinnerungen einschalten",
   "skillq.hide": "Ausblenden",
   "skillq.tap_word_hint": "Tipp ein Wort an, um die Aussprache zu hören.",
-  "listenp.real_audio": "Eine echte Dialektaufnahme — hör sie so oft du willst.",
+  "listenp.real_audio": "Eine echte Dialektaufnahme — hör sie, so oft du willst.",
   "listenp.no_tts": "Dieser Browser hat keine Sprachausgabe; du kannst die Übung lesend machen.",
   "speakp.no_mic": "Das Mikrofon war nicht erreichbar. Vielleicht ist die Browser-Berechtigung aus.",
   "speechw.unsupported": "Dieser Browser hat keine Spracherkennung. Für gesprochene Antworten öffne die Seite in Chrome, Edge oder Safari.",
