@@ -144,7 +144,7 @@ Schwierig bleibt der Umgang mit der {{10}}, weil sich ein Name besser für eine 
               text: "Lücke 6",
               accept: ["Jahrzehnten", "Dekaden"],
               explain:
-                "\"seit etwa zwanzig Jahren\" — yirmi yıl iki on yıl eder, özette çoğul datif isteniyor.",
+                "\"seit etwa zwanzig Jahren\" — yirmi yıl iki on yıl eder, özette çoğul Dativ isteniyor.",
             },
             {
               kind: "gap",

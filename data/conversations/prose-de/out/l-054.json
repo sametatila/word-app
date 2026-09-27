@@ -120,7 +120,7 @@
  { "tr": "Cevabı çok kolay. Küçük small, orta medium, büyük large.", "kind": "say.tr", "de": "Die Antwort ist leicht. Klein small, mittel medium, groß large." },
  { "tr": "Cevap verirken eşyayı tekrar söylemene gerek yok. Sadece", "kind": "say.tr", "de": "Beim Antworten musst du die Sache nicht wiederholen. Nur" },
  { "tr": "Çoğu mağazada kartla ödediysen yine de yardımcı olurlar.", "kind": "say.tr", "de": "In den meisten Läden hilft man dir auch bei Kartenzahlung." },
- { "tr": "Diş ağrım var demek. Toothache diş ağrısı. Lütfen söyle:", "kind": "say.tr", "de": "Heißt ich habe Zahnschmerzen. Toothache ist der Zahnschmerz. Sag:" },
+ { "tr": "Diş ağrım var demek. Toothache diş ağrısı. Lütfen söyle:", "kind": "say.tr", "de": "Heißt: Ich habe Zahnschmerzen. Toothache ist der Zahnschmerz. Sag:" },
  { "tr": "Doktorun sorusu: 'Bu ağrı ne zamandır var?' İngilizcesi:", "kind": "say.tr", "de": "Die Arztfrage: „Seit wann haben Sie diesen Schmerz?“ Auf Englisch:" },
  { "tr": "Duydun mu? Altı cümle, hepsi bir ipe dizili: first, then,", "kind": "say.tr", "de": "Gehört? Sechs Sätze, alle auf einer Schnur: first, then," },
  { "tr": "edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:", "kind": "say.tr", "de": ". Gratulieren wir zur neuen Stelle. Sag:" },

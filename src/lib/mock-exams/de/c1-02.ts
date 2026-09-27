@@ -1085,7 +1085,7 @@ Dr. Elena Sturm, Vorstand`,
               text: "Lücke 5 (Hinweis auf eine Anlage)",
               accept: ["Diesem Schreiben", "Dem Antrag", "Als Anlage", "Anbei", "Beigefügt"],
               explain:
-                "Ek belge duyurulur: `Diesem Schreiben liegt eine detaillierte Kalkulation bei` ya da `Als Anlage …`. Fiil `beiliegen` olduğu için datif tümleç uygun düşer.",
+                "Ek belge duyurulur: `Diesem Schreiben liegt eine detaillierte Kalkulation bei` ya da `Als Anlage …`. Fiil `beiliegen` olduğu için Dativ tümleç uygun düşer.",
             },
             {
               kind: "gap",

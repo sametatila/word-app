@@ -7,7 +7,7 @@
  { "tr": "ile başlarız; sonuna da", "kind": "say.tr", "de": "; ans Ende kommt" },
  { "tr": "ile sıralarsın, sonunda", "kind": "say.tr", "de": "— damit ordnest du sie, und am Ende:" },
  { "tr": "İlk soru isimle ilgili.", "kind": "say.tr", "de": "Die erste Frage betrifft den Namen." },
- { "tr": "Kahvaltı etmedim demek.", "kind": "say.tr", "de": "Heißt ich habe nicht gefrühstückt." },
+ { "tr": "Kahvaltı etmedim demek.", "kind": "say.tr", "de": "Heißt: Ich habe nicht gefrühstückt." },
  { "tr": "Kalıbı bir daha açayım:", "kind": "say.tr", "de": "Ich erkläre die Wendung noch einmal:" },
  { "tr": "Kartla ödemek istersen:", "kind": "say.tr", "de": "Wenn du mit Karte zahlen willst:" },
  { "tr": "kibarca geri çevirmek —", "kind": "say.tr", "de": "höflich ablehnen —" },

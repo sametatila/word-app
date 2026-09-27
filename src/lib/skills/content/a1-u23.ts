@@ -308,7 +308,7 @@ export const a1U23: SkillExercise[] = [
         kind: "build",
         tr: "Bana bir mesaj gönder!",
         answer: "Schick mir eine Nachricht",
-        hint: "Samimi emir: „schick“ (sonda -e yok). „mir“ datif, „eine Nachricht“ akkusatif.",
+        hint: "Samimi emir: „schick“ (sonda -e yok). „mir“ Dativ, „eine Nachricht“ Akkusativ.",
       },
     ],
   },

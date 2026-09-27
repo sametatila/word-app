@@ -42,7 +42,7 @@
  { "tr": "Lütfen ilkini söyle:", "kind": "say.tr", "de": "Bitte sag den ersten:" },
  { "tr": "Lütfen söyle: table.", "kind": "say.tr", "de": "Bitte sag: table." },
  { "tr": "Memur cevap veriyor:", "kind": "say.tr", "de": "Der Beamte antwortet:" },
- { "tr": "Nereye gittin demek.", "kind": "say.tr", "de": "Heißt wohin bist du gegangen." },
+ { "tr": "Nereye gittin demek.", "kind": "say.tr", "de": "Gemeint ist die Frage, wohin du gegangen bist." },
  { "tr": "O kelime İngilizcede", "kind": "say.tr", "de": "Dieses Wort ist auf Englisch" },
  { "tr": "olumsuz tavsiye için", "kind": "say.tr", "de": "für den verneinten Rat" },
  { "tr": "Özetleyelim. Girişte", "kind": "say.tr", "de": "Fassen wir zusammen. Beim Einchecken hast du" },

@@ -18,7 +18,7 @@ import type { SkillExercise } from "../types";
  * 1) "Was fehlt Ihnen?" — doktorun standart açılış sorusu. Kelimesi kelimesine
  *    "size ne EKSİK?" demek; "neyiniz var?" anlamına gelir. Türkçedeki
  *    "nen var?" mantığı burada tersine çalışır: Almanca eksikliği sorar.
- *    Cevap da datif ile gelir: "Mir fehlt nichts" / "Mir tut der Kopf weh".
+ *    Cevap da Dativ ile gelir: "Mir fehlt nichts" / "Mir tut der Kopf weh".
  *
  * 2) "wehtun" DATİF ister ve ayrılır: "Der Hals tut MIR weh." Ağrıyan yer
  *    ÖZNEDİR, kişi datiftedir — Türkçenin "boğazım ağrıyor"undaki iyelik
@@ -232,7 +232,7 @@ export const a1U21: SkillExercise[] = [
         text: "Was tut der kranken Person weh?",
         options: ["der Rücken", "der Kopf", "der Arm"],
         answer: 0,
-        explain: "„Mir tut der Rücken weh.“ — ağrıyan yer ÖZNE, kişi datif („mir“).",
+        explain: "„Mir tut der Rücken weh.“ — ağrıyan yer ÖZNE, kişi Dativ („mir“).",
       },
       {
         text: "Was soll die kranke Person machen?",
@@ -321,7 +321,7 @@ export const a1U21: SkillExercise[] = [
         kind: "build",
         tr: "Yarın için bir randevuya ihtiyacım var.",
         answer: "Ich brauche einen Termin für morgen",
-        hint: "„brauchen“ akkusatif ister: einen Termin. Telefonda randevu almanın standart açılışı.",
+        hint: "„brauchen“ Akkusativ ister: einen Termin. Telefonda randevu almanın standart açılışı.",
       },
       {
         kind: "free",

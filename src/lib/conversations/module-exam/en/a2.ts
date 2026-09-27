@@ -523,7 +523,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "Could you confirm the reservation?", tr: "Rezervasyonu teyit edebilir misiniz?", en: "Could you confirm the reservation?" },
       ],
       sample:
-        "Dear Sir or Madam,\n\nI'd like to book a double room for three nights, from Friday May 12 to Monday May 15. Could I have a room with a view, please? We arrive in the evening, at about eight o'clock.\n\nDoes the price include breakfast? And how do I get to the hotel from the airport — is there a bus?\n\nCould you confirm the reservation by email, please?\n\nBest regards,\nN. Aydin",
+        "Dear Sir or Madam,\n\nI'd like to book a double room for three nights, from Friday, May 12, to Monday, May 15. Could I have a room with a view, please? We arrive in the evening, at about eight o'clock.\n\nDoes the price include breakfast? And how do I get to the hotel from the airport — is there a bus?\n\nCould you confirm the reservation by email, please?\n\nBest regards,\nN. Aydin",
     },
   },
 

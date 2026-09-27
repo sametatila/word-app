@@ -96,7 +96,7 @@
  { "tr": "koyarsın, gerisi aynı kalır. Mesela:", "kind": "say.tr", "de": ", der Rest bleibt gleich. Zum Beispiel:" },
  { "tr": "koymuyoruz. \"By a bus\" değil, sadece", "kind": "say.tr", "de": "setzen wir nicht. Nicht „By a bus“, sondern nur" },
  { "tr": "Mola sırasında. Lütfen sen de söyle.", "kind": "say.tr", "de": "Während der Pause. Bitte sag du auch." },
- { "tr": "Ne oldu, demek. Lütfen sen de söyle.", "kind": "say.tr", "de": "Heißt was ist passiert. Bitte sag du auch." },
+ { "tr": "Ne oldu, demek. Lütfen sen de söyle.", "kind": "say.tr", "de": "Heißt: Was ist passiert? Bitte sag du auch." },
  { "tr": "Neye bağlı olduğunu eklemek istersen", "kind": "say.tr", "de": "Willst du sagen, wovon es abhängt:" },
  { "tr": "Önce mekânın adı. Postane, İngilizce", "kind": "say.tr", "de": "Zuerst der Name des Orts. Post heißt auf Englisch" },
  { "tr": "Parkta yeşil çimen var. İngilizcesi:", "kind": "say.tr", "de": "Im Park ist grüner Rasen. Auf Englisch:" },

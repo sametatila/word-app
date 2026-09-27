@@ -34,7 +34,7 @@
  { "tr": "Yani 'Beğendim.' Beğenmediğinde ise araya", "kind": "say.tr", "de": "Also „Es gefällt mir.“ Gefällt es dir nicht, gilt: das Wort" },
  { "tr": "Yani şu üçünü aklında tut, işin özü bu:", "kind": "say.tr", "de": "Merk dir diese drei, das ist der Kern:" },
  { "tr": "Yardım, aramak, ambulans, hızlı, tehlike.", "kind": "say.tr", "de": "Hilfe, anrufen, Krankenwagen, schnell, Gefahr." },
- { "tr": "Yeni bir güncelleme var demek. Tekrar et:", "kind": "say.tr", "de": "Heißt es gibt ein neues Update. Wiederhole:" },
+ { "tr": "Yeni bir güncelleme var demek. Tekrar et:", "kind": "say.tr", "de": "Heißt: Es gibt ein neues Update. Wiederhole:" },
  { "tr": "Yuuz diye okunur, sondaki z sesini duyur.", "kind": "say.tr", "de": "Es klingt wie juus, lass das z am Ende hören." },
  { "tr": "— Bunu değiştirebilir miyim? Lütfen söyle:", "kind": "say.tr", "de": "— Kann ich das umtauschen? Bitte sag:" },
  { "tr": "— fiyat demek. Etikete bakıp sorabilirsin:", "kind": "say.tr", "de": "— heißt Preis. Du kannst aufs Schild schauen und fragen:" },

@@ -1,7 +1,7 @@
 [
  { "tr": "Merhaba, hoş geldin. Bugün toplu taşımayı konuşacağız: otobüs, tren, istasyon.", "kind": "say.tr", "de": "Hallo, willkommen. Heute geht es um den Nahverkehr: Bus, Bahn, Bahnhof." },
  { "tr": "Ne kadar kaldığını söylerken for kullanıyoruz. For three days: üç gün boyunca.", "kind": "say.tr", "de": "Wie lange du geblieben bist, sagst du mit for. For three days: drei Tage lang." },
- { "tr": "Nerede ineceğim demek. Baştaki do, İngilizcede soru kurmanın küçük yardımcısı.", "kind": "say.tr", "de": "Heißt wo steige ich aus. Das do vorn ist der kleine Helfer für englische Fragen." },
+ { "tr": "Nerede ineceğim demek. Baştaki do, İngilizcede soru kurmanın küçük yardımcısı.", "kind": "say.tr", "de": "Heißt: Wo steige ich aus? Das do vorn ist der kleine Helfer für englische Fragen." },
  { "tr": "Odamda büyük bir pencere var. Sen istersen uzun hâlini kullan, ikisi de doğru.", "kind": "say.tr", "de": "In meinem Zimmer ist ein großes Fenster. Nimm ruhig die lange Form, beides stimmt." },
  { "tr": "Önce kısa bir ilan dinle. Her kelimeyi anlamana gerek yok, sadece havasını al.", "kind": "say.tr", "de": "Hör zuerst eine kurze Anzeige. Du musst nicht jedes Wort verstehen, nur die Stimmung." },
  { "tr": "Önce şunu söyleyeyim: İngilizce mesajlarda insanlar neredeyse hiç uzun yazmaz.", "kind": "say.tr", "de": "Vorweg: in englischen Nachrichten schreibt fast niemand lang." },
