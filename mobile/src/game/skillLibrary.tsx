@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { DetailCard, StateBody } from "../ui/flow";
 import { PressableScale } from "../ui/PressableScale";
+import { PrimaryButton } from "../ui/PrimaryButton";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -18,7 +19,7 @@ import { useAuth } from "../lib/AuthContext";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
-import { spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { spacing, radii, type Palette, ds } from "../theme";
 import type { Gloss } from "../data/skills";
 import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
@@ -157,11 +158,11 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       ) : null}
 
       {verdict === "idle" || verdict === "listening" ? (
-        <PressableScale onPress={listen} disabled={verdict === "listening" || sttOk === false}
-          style={[{ marginTop: spacing.md, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: spacing.sm, backgroundColor: verdict === "listening" ? colors.danger : colors.primary, borderRadius: radii.lg, paddingVertical: 14 }, softShadow(colors.primary, 8)]}>
-          <MicIcon color={colors.onPrimary} size={18} />
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t(verdict === "listening" ? "item.speak_listening" : "item.speak_record")}</Text>
-        </PressableScale>
+        /* Dinlerken düğme meşgul: mikrofonun yerinde dönen gösterge. */
+        <PrimaryButton size="md" onPress={listen} disabled={sttOk === false} busy={verdict === "listening"}
+          icon={<MicIcon color={colors.onPrimary} size={18} />}
+          label={t(verdict === "listening" ? "item.speak_listening" : "item.speak_record")}
+          style={{ marginTop: spacing.md }} />
       ) : null}
 
       {verdict !== "idle" && verdict !== "listening" ? (
@@ -418,10 +419,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
             {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })} {sttOk === false ? t("item.mono_no_stt") : t(guestLocked ? "guest.mono_unscored" : "item.mono_will_score")}
           </Text>
-          <PressableScale onPress={() => void start()} style={[{ marginTop: spacing.md, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14 }, softShadow(colors.primary, 8)]}>
-            <MicIcon color={colors.onPrimary} size={18} />
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.mono_start")}</Text>
-          </PressableScale>
+          <PrimaryButton size="md" onPress={() => void start()} icon={<MicIcon color={colors.onPrimary} size={18} />} label={t("item.mono_start")} style={{ marginTop: spacing.md }} />
         </>
       ) : null}
 
@@ -437,12 +435,9 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
               {transcript || t(sttOk === false ? "item.mono_recording" : "item.mono_listening")}
             </Text>
           </View>
-          <PressableScale onPress={() => void stop()} disabled={seconds < mono.minSeconds}
-            style={{ marginTop: spacing.md, backgroundColor: seconds < mono.minSeconds ? colors.surface2 : colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={seconds < mono.minSeconds ? colors.textFaint : colors.onPrimary}>
-              {seconds < mono.minSeconds ? t("item.mono_stop_in", { n: mono.minSeconds - seconds }) : t("item.mono_stop")}
-            </Text>
-          </PressableScale>
+          <PrimaryButton size="md" onPress={() => void stop()} disabled={seconds < mono.minSeconds}
+            label={seconds < mono.minSeconds ? t("item.mono_stop_in", { n: mono.minSeconds - seconds }) : t("item.mono_stop")}
+            style={{ marginTop: spacing.md }} />
         </>
       ) : null}
 
@@ -465,10 +460,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                   </View>
                 ))}
               </View>
-              <PressableScale onPress={() => void evaluate()} disabled={!transcript.trim()}
-                style={{ marginTop: spacing.md, backgroundColor: transcript.trim() ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={transcript.trim() ? colors.onPrimary : colors.textFaint}>{t("item.mono_score")}</Text>
-              </PressableScale>
+              <PrimaryButton size="md" onPress={() => void evaluate()} disabled={!transcript.trim()} label={t("item.mono_score")} style={{ marginTop: spacing.md }} />
             </>
           ) : (
             <>
@@ -481,9 +473,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                   <Text variant="body" style={{ flex: 1 }}>{b}</Text>
                 </PressableScale>
               ))}
-              <PressableScale onPress={selfFinish} style={{ marginTop: spacing.md, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.mono_finish")}</Text>
-              </PressableScale>
+              <PrimaryButton size="md" onPress={selfFinish} label={t("item.mono_finish")} style={{ marginTop: spacing.md }} />
             </>
           )}
         </>

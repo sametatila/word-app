@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, ActivityIndicator, AppState, Linking, Platform, TextInput } from "react-native";
+import { View, AppState, Linking, Platform, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -8,6 +8,9 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { PrimaryButton } from "../ui/PrimaryButton";
+import { Card } from "../ui/Card";
+import { SectionTitle } from "../social/common";
 import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
@@ -370,7 +373,7 @@ export function PaywallScreen() {
 
           {refNotice}
 
-          <Section title={t("paywall.what_you_get")} colors={colors}>
+          <Section title={t("paywall.what_you_get")}>
             {(status.copy.premium ?? []).map((l) => (
               <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
             ))}
@@ -502,7 +505,7 @@ export function PaywallScreen() {
           kartın iki bölümü oldular; ücretsiz taraf sönük yazılıyor. Webde de
           düzen aynı (`premium-paywall`).
         */}
-        <Section title={t("paywall.what_you_get")} colors={colors}>
+        <Section title={t("paywall.what_you_get")}>
           {(status?.copy.premium ?? []).map((l) => (
             <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
           ))}
@@ -554,9 +557,7 @@ export function PaywallScreen() {
            ekranda yapışık kalan yalnız EYLEM; açıklama içeriğin sonunda. */
         <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.sm }}>
           {compactHeight ? null : guestPitch}
-          <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 12)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t("guest.create_account")}</Text>
-          </PressableScale>
+          <PrimaryButton label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
           {/* GERİ YÜKLEME MİSAFİRDE DE (denetim S6, App Store 3.1.1): satın alma
               hesaba bağlı, yani misafirin geri yükleme yolu giriş yapmak. Düğme
               bunu söylüyor ve giriş ekranına götürüyor; sessizce saklanmıyor. */}
@@ -609,9 +610,7 @@ export function PaywallScreen() {
             sanıyor. */}
         {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
         {notice ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.sm }}>{notice}</Text> : null}
-        <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
-          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="h3" color={pkg ? colors.onPrimary : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
-        </PressableScale>
+        <PrimaryButton label={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} onPress={start} disabled={!pkg} busy={busy} />
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
             satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
@@ -673,13 +672,12 @@ function LegalLinks({ colors }: { colors: Palette }) {
   );
 }
 
-function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+/* Bölüm = ortak bölüm başlığı (Ayarlar'daki gibi, başlık rolüyle) + kart. */
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <View style={{ marginBottom: spacing.lg }}>
-      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{title.toLocaleUpperCase(dateLocale())}</Text>
-      <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
-        {children}
-      </View>
+      <SectionTitle title={title} />
+      <Card padded>{children}</Card>
     </View>
   );
 }
@@ -757,7 +755,7 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
   }
 
   return (
-    <Section title={t("promo.title")} colors={colors}>
+    <Section title={t("promo.title")}>
       <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "center" }}>
         {/* Enter = Uygula: webde kod alanı bir form içinde, yani klavyenin
             return tuşu kodu uyguluyor. Mobilde tuş hiçbir şey yapmıyordu. */}
@@ -773,9 +771,7 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           onSubmitEditing={() => { if (!busy && code.trim()) void apply(); }}
           style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
         />
-        <PressableScale onPress={apply} disabled={busy || !code.trim()} accessibilityRole="button" accessibilityLabel={t("promo.apply")} style={{ borderRadius: radii.md, backgroundColor: code.trim() ? colors.primary : colors.surface2, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="bodyStrong" color={code.trim() ? colors.onPrimary : colors.textFaint}>{t("promo.apply")}</Text>}
-        </PressableScale>
+        <PrimaryButton size="md" label={t("promo.apply")} onPress={apply} disabled={!code.trim()} busy={busy} />
       </View>
       {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta kendisi. */}
       {/* HATA `assertive`, BASARI `polite`. Tek oge iki durumu tasiyordu ve
@@ -898,19 +894,17 @@ function GroupCodeBox({
 
   if (guest) {
     return (
-      <Section title={t("grupkod.title")} colors={colors}>
+      <Section title={t("grupkod.title")}>
         <Text variant="caption" color={colors.textMuted}>{t("grupkod.guest")}</Text>
-        <PressableScale onPress={onAuth} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={{ marginTop: spacing.sm, alignSelf: "flex-start", borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("guest.create_account")}</Text>
-        </PressableScale>
+        <PrimaryButton size="md" label={t("guest.create_account")} onPress={onAuth} style={{ marginTop: spacing.sm, alignSelf: "flex-start" }} />
       </Section>
     );
   }
 
   const ready = Boolean(code.trim()) && !busy;
   return (
-    <View style={{ marginTop: spacing.lg }}>
-      <Section title={t("grupkod.title")} colors={colors}>
+    <View>
+      <Section title={t("grupkod.title")}>
         {group ? <Text variant="caption" color={colors.successText} style={{ marginBottom: spacing.xs }}>{t("grupkod.group", { group })}</Text> : null}
         <TextInput
           value={code}
@@ -929,9 +923,7 @@ function GroupCodeBox({
             {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
           </Text>
         ) : null}
-        <PressableScale onPress={begin} disabled={!ready} accessibilityRole="button" accessibilityLabel={t("grupkod.start")} style={{ marginTop: spacing.sm, borderRadius: radii.md, backgroundColor: ready ? colors.primary : colors.surface2, paddingVertical: 11, alignItems: "center" }}>
-          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="bodyStrong" color={ready ? colors.onPrimary : colors.textFaint}>{t("grupkod.start")}</Text>}
-        </PressableScale>
+        <PrimaryButton size="md" label={t("grupkod.start")} onPress={begin} disabled={!code.trim()} busy={busy} style={{ marginTop: spacing.sm }} />
         {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
       </Section>
     </View>
@@ -944,7 +936,7 @@ function GroupCodeBox({
  */
 function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number } }) {
   return (
-    <Section title={t("referral.title")} colors={colors}>
+    <Section title={t("referral.title")}>
       <Text variant="caption">{t("referral.explain")}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
 
@@ -968,10 +960,8 @@ function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: 
             <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{inviteLink(referral.code)}</Text>
           )}
         </View>
-        <PressableScale onPress={() => void shareInvite(referral.code)} accessibilityRole="button" accessibilityLabel={t("referral.copy_link")} style={{ borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11, flexDirection: "row", alignItems: "center", gap: 6 }}>
-          <ShareIcon color={colors.onPrimary} size={16} />
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.share")}</Text>
-        </PressableScale>
+        {/* Okunan ad görünen yazıyla aynı ("Paylaş"); eskiden "Bağlantıyı kopyala" okunuyordu. */}
+        <PrimaryButton size="md" label={t("common.share")} icon={<ShareIcon color={colors.onPrimary} size={16} />} onPress={() => void shareInvite(referral.code)} />
       </View>
 
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
