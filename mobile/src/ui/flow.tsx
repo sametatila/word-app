@@ -1,9 +1,10 @@
 import React from "react";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { Card } from "./Card";
 import { PressableScale } from "./PressableScale";
+import { PrimaryButton } from "./PrimaryButton";
 import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
 import { ArrowBackIcon, XIcon } from "./icons";
@@ -33,7 +34,8 @@ import { READABLE_TEXT_MAX } from "../lib/useLayout";
  */
 
 /** `hint`: düğmenin altında ikinci, küçük satır (ör. "Kendini puanla" · "yardım yok, 5 tur"). */
-export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string };
+/** `tone: "destructive"` yalnız birincilde: geri alınamayan eylem (hesap silme). */
+export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string; tone?: "primary" | "destructive" };
 
 /** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
 export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null }) {
@@ -41,17 +43,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
   return (
     <View style={{ gap: spacing.sm }}>
       {primary ? (
-        <PressableScale
-          onPress={primary.onPress}
-          disabled={primary.disabled || primary.busy}
-          style={[
-            { borderRadius: radii.lg, backgroundColor: primary.disabled ? colors.surface2 : colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm },
-            primary.disabled ? {} : softShadow(colors.primary, 10),
-          ]}
-        >
-          {primary.busy ? <ActivityIndicator color={colors.onPrimary} /> : primary.icon}
-          <Text variant="h3" color={primary.disabled ? colors.textFaint : colors.onPrimary}>{primary.label}</Text>
-        </PressableScale>
+        <PrimaryButton label={primary.label} onPress={primary.onPress} disabled={primary.disabled} busy={primary.busy} icon={primary.icon} tone={primary.tone} />
       ) : null}
       {secondary ? (
         <PressableScale
