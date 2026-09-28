@@ -75,11 +75,6 @@
   "en": "Three conditionals, one family. Which one belongs to this week?"
  },
  {
-  "tr": "„„on balance“ is the one that says something…“",
-  "kind": "explain",
-  "en": "„„on balance“ is the one that says something…“"
- },
- {
   "tr": "Üç koşul, bir fatura. Hangisi bir şey istiyor?",
   "kind": "intro",
   "en": "Three conditionals, one bill. Which one asks for something?"
@@ -98,11 +93,6 @@
   "tr": "Üç aktarma bir dosyada. Hangisinin dayanağı var?",
   "kind": "intro",
   "en": "Three reports in a file. Which one has something to back it up?"
- },
- {
-  "tr": "„„Must have failed to“ sounds like a description…“",
-  "kind": "explain",
-  "en": "„„Must have failed to“ sounds like a description…“"
  },
  {
   "tr": "„only“ sınırlama; „does“ ve „do“ aynı işi görüyor.",
@@ -145,11 +135,6 @@
   "en": "The first shape, the second shape, then the weight of each."
  },
  {
-  "tr": "„„What we lack is buffer time“ reads as an admission…“",
-  "kind": "explain",
-  "en": "„„What we lack is buffer time“ reads as an admission…“"
- },
- {
   "tr": "Gelecekte bir tarihten geriye bakış: bitmiş bir durum.",
   "kind": "explain",
   "en": "Looking back from a future date: a finished state."
@@ -160,29 +145,14 @@
   "en": "„has turned a morning's work into a register of nouns…“"
  },
  {
-  "tr": "„„Provided that the file is complete“ sets a condition…“",
-  "kind": "explain",
-  "en": "„„Provided that the file is complete“ sets a condition…“"
- },
- {
   "tr": "Nesne adılı bazen düşüyor, bazen düşmüyor. Sınır nerede?",
   "kind": "intro",
   "en": "The object pronoun sometimes drops and sometimes does not. Where is the limit?"
  },
  {
-  "tr": "„In front of the noun. „My reserved friend spoke first“…“",
-  "kind": "explain",
-  "en": "„In front of the noun. „My reserved friend spoke first“…“"
- },
- {
   "tr": "Kanıt, dışarıda bıraktığı, kendi payımız; en sonda istek.",
   "kind": "explain",
   "en": "The evidence, what it rules out, our own part; the request last."
- },
- {
-  "tr": "„„The report I sent“ is picking one report out of several.“",
-  "kind": "explain",
-  "en": "„„The report I sent“ is picking one report out of several.“"
  },
  {
   "tr": "„the“ ile „of“ birlikte geliyor. Biri olmadan öteki olur mu?",
@@ -195,14 +165,9 @@
   "en": "The soft negative, the strong one, our own part; the cost last."
  },
  {
-  "tr": "„its negative is „can't have“ — but „can't have“ is very strong.“",
+  "tr": "„its negative is ‚can't have‘ — but ‚can't have‘ is very strong.“",
   "kind": "explain",
-  "en": "„its negative is „can't have“ — but „can't have“ is very strong.“"
- },
- {
-  "tr": "„„My friend, always reserved with strangers, spoke first“ is fine…“",
-  "kind": "explain",
-  "en": "„„My friend, always reserved with strangers, spoke first“ is fine…“"
+  "en": "„its negative is ‚can't have‘ — but ‚can't have‘ is very strong.“"
  },
  {
   "tr": "Tek sıfat ortada duramıyor; ya isimden önce ya uzun bir öbek içinde.",
@@ -210,28 +175,8 @@
   "en": "A single adjective cannot stand in the middle; either in front of the noun or inside a longer phrase."
  },
  {
-  "tr": "„„does“ arrives to be the thing that moves, and „pass“ loses its ending.“",
-  "kind": "explain",
-  "en": "„„does“ arrives to be the thing that moves, and „pass“ loses its ending.“"
- },
- {
-  "tr": "„The „of“ has gone with it, and neither word can stay without the other.“",
-  "kind": "explain",
-  "en": "„The „of“ has gone with it, and neither word can stay without the other.“"
- },
- {
   "tr": "„a closed conditional about somebody else's reliability is read as blame…“",
   "kind": "explain",
   "en": "„a closed conditional about somebody else's reliability is read as blame…“"
- },
- {
-  "tr": "„Two limits. Only after „be“, and never with a single adjective on its own.“",
-  "kind": "explain",
-  "en": "„Two limits. Only after „be“, and never with a single adjective on its own.“"
- },
- {
-  "tr": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“",
-  "kind": "explain",
-  "en": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“"
  }
 ]

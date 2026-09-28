@@ -89,14 +89,14 @@ export const enB2U13: SkillExercise[] = [
         text: "What does „is said to“ mean?",
         options: ["somebody has said it", "a view is held", "a figure is known"],
         answer: 0,
-        explain: "„„Is said to“ means somebody has said it. That is all it means.“",
+        explain: "„‚Is said to‘ means somebody has said it. That is all it means.“",
       },
       {
         kind: "truefalse",
         text: "„Is thought to“ is stronger than „is said to“.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„It is stronger than „said“ because it implies that the claim has been looked at…“",
+        explain: "„It is stronger than ‚said‘ because it implies that the claim has been looked at…“",
       },
       {
         kind: "gapfill",
@@ -125,7 +125,7 @@ export const enB2U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two people", "two other people", "not just me"],
-        explain: "„„thought“ needs at least two people who are not me…“",
+        explain: "„‚thought‘ needs at least two people who are not me…“",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const enB2U13: SkillExercise[] = [
         text: "What is the trap after this unit?",
         options: ["writing „the distinction of“", "writing „of“ everywhere", "writing the verb"],
         answer: 0,
-        explain: "„a reader who learns these three will write „the distinction of the two groups“ and be wrong.“",
+        explain: "„a reader who learns these three will write ‚the distinction of the two groups‘ and be wrong.“",
       },
       {
         kind: "truefalse",
@@ -348,7 +348,7 @@ export const enB2U13: SkillExercise[] = [
         text: "Which hedge does Metin keep?",
         options: ["on balance", "arguably", "seems"],
         answer: 0,
-        explain: "„„on balance“ is the one to keep — it says a weighing has happened.“",
+        explain: "„‚on balance‘ is the one to keep — it says a weighing has happened.“",
       },
       {
         text: "What is the test?",

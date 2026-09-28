@@ -84,7 +84,7 @@ export const b1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["im Oktober", "Oktober"],
-        explain: "„Der Kurs „Deutsch im Büro“ beginnt im Oktober.“",
+        explain: "„Der Kurs ‚Deutsch im Büro‘ beginnt im Oktober.“",
       },
     ],
   },

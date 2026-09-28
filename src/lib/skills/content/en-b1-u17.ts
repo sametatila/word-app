@@ -153,7 +153,7 @@ export const enB1U17: SkillExercise[] = [
         text: "What is the opposite of „must“ here?",
         options: ["can't", "mustn't", "might"],
         answer: 0,
-        explain: "„It is the opposite of the first sentence — not „mustn't“, which would be a rule.“",
+        explain: "„It is the opposite of the first sentence — not ‚mustn't‘, which would be a rule.“",
       },
       {
         kind: "truefalse",
@@ -176,7 +176,7 @@ export const enB1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["might first, must last", "might then must", "might first"],
-        explain: "„Now I say „might“ first and „must“ last, in that order…“",
+        explain: "„Now I say ‚might‘ first and ‚must‘ last, in that order…“",
       },
     ],
   },

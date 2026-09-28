@@ -204,7 +204,7 @@ export const enC1U15: SkillExercise[] = [
         text: "What does „less so“ name?",
         options: ["no number", "the sum", "the rate"],
         answer: 0,
-        explain: "„„Less so“ names no number.“",
+        explain: "„‚Less so‘ names no number.“",
       },
       {
         text: "What does a competitive logic have none of?",

@@ -76,20 +76,20 @@ export const enB1U23: SkillExercise[] = [
         text: "Why is simple past enough in the first sentence?",
         options: ["„before“ gives the order", "the events are recent", "there is no second verb"],
         answer: 0,
-        explain: "„„before“ has already put the two events in order, so the verb does not have to do it again.“",
+        explain: "„‚before‘ has already put the two events in order, so the verb does not have to do it again.“",
       },
       {
         text: "Which one takes the choice away?",
         options: ["by the time", "before", "after that"],
         answer: 0,
-        explain: "„Then there is „by the time“, and that one takes the choice away.“",
+        explain: "„Then there is ‚by the time‘, and that one takes the choice away.“",
       },
       {
         kind: "truefalse",
         text: "„By the time“ names a deadline.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„By the time“ names a deadline, not an event…“",
+        explain: "„‚By the time‘ names a deadline, not an event…“",
       },
       {
         kind: "gapfill",
@@ -161,7 +161,7 @@ export const enB1U23: SkillExercise[] = [
         text: "What does „despite“ take?",
         options: ["a noun", "a clause", "a new sentence"],
         answer: 0,
-        explain: "„„Despite“ takes a noun — the distance, the snow, the rain — and never a clause.“",
+        explain: "„‚Despite‘ takes a noun — the distance, the snow, the rain — and never a clause.“",
       },
       {
         text: "Which linker belongs to a report?",
@@ -174,7 +174,7 @@ export const enB1U23: SkillExercise[] = [
         text: "„On the other hand“ can open a text.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„„on the other hand“ only works if a first hand has already been given.“",
+        explain: "„‚on the other hand‘ only works if a first hand has already been given.“",
       },
       {
         kind: "gapfill",
@@ -203,7 +203,7 @@ export const enB1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["although", "she writes although", "the word although"],
-        explain: "„In a letter I write „although“.“",
+        explain: "„In a letter I write ‚although‘.“",
       },
     ],
   },
@@ -257,7 +257,7 @@ export const enB1U23: SkillExercise[] = [
         text: "Which form does a moment take?",
         options: ["started", "has been", "is starting"],
         answer: 0,
-        explain: "„The feeling started when she left, which is a moment, and „started“ is the right form for a moment.“",
+        explain: "„The feeling started when she left, which is a moment, and ‚started‘ is the right form for a moment.“",
       },
       {
         kind: "truefalse",
@@ -272,7 +272,7 @@ export const enB1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["person"],
-        explain: "„Because „tired“ asks for sleep and „sad“ asks for a person.“",
+        explain: "„Because ‚tired‘ asks for sleep and ‚sad‘ asks for a person.“",
       },
       {
         kind: "dictation",

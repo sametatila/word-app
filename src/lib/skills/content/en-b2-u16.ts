@@ -92,7 +92,7 @@ export const enB2U16: SkillExercise[] = [
         text: "A learner who has met „Wanting a new role“ may wrongly write „I am wanting a new role“.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„a learner who has met „Wanting a new role“ goes back and writes „I am wanting a new role“.“",
+        explain: "„a learner who has met ‚Wanting a new role‘ goes back and writes ‚I am wanting a new role‘.“",
       },
       {
         kind: "gapfill",
@@ -276,7 +276,7 @@ export const enB2U16: SkillExercise[] = [
         text: "What does „is said to“ carry?",
         options: ["no weight of its own", "a model", "a date"],
         answer: 0,
-        explain: "„„Is said to“ carries no weight of its own…“",
+        explain: "„‚Is said to‘ carries no weight of its own…“",
       },
       {
         text: "What do the performers get?",
@@ -361,7 +361,7 @@ export const enB2U16: SkillExercise[] = [
         text: "What follows „is“ in that cleft?",
         options: ["a bare verb", "a „to“ form", "an „-ing“ form"],
         answer: 0,
-        explain: "„After „is“ there is a bare verb — „name“, not „to name“ and not „naming“.“",
+        explain: "„After ‚is‘ there is a bare verb — ‚name‘, not ‚to name‘ and not ‚naming‘.“",
       },
       {
         text: "What does a parody keep?",

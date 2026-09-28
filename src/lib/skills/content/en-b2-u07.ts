@@ -90,7 +90,7 @@ export const enB2U07: SkillExercise[] = [
         text: "What does the active version claim?",
         options: ["to know who", "to have evidence", "to be shorter"],
         answer: 0,
-        explain: "„„The update caused the disruption“ claims to know who.“",
+        explain: "„‚The update caused the disruption‘ claims to know who.“",
       },
       {
         kind: "truefalse",
@@ -180,7 +180,7 @@ export const enB2U07: SkillExercise[] = [
         text: "What makes „after the outage“ a trigger?",
         options: ["the word „only“", "the word „after“", "the word „outage“"],
         answer: 0,
-        explain: "„„only“ makes it a restriction…“",
+        explain: "„‚only‘ makes it a restriction…“",
       },
       {
         kind: "truefalse",
@@ -216,7 +216,7 @@ export const enB2U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["in the middle", "the middle", "not at the front"],
-        explain: "„buries the „not“ in the middle…“",
+        explain: "„buries the ‚not‘ in the middle…“",
       },
     ],
   },
@@ -272,14 +272,14 @@ export const enB2U07: SkillExercise[] = [
         text: "Where does the preposition go in that register?",
         options: ["in front of „which“", "at the end", "after the comma"],
         answer: 0,
-        explain: "„The preposition has gone in front of „which“…“",
+        explain: "„The preposition has gone in front of ‚which‘…“",
       },
       {
         kind: "truefalse",
         text: "„The rule we refer to“ is correct.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„The rule we refer to“, and it is correct.“",
+        explain: "„‚The rule we refer to‘, and it is correct.“",
       },
       {
         kind: "gapfill",

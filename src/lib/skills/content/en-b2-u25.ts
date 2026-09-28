@@ -92,7 +92,7 @@ export const enB2U25: SkillExercise[] = [
         text: "What does „provided that“ do?",
         options: ["sets a condition", "describes a situation", "gives a reason"],
         answer: 0,
-        explain: "„„Provided that the file is complete“ sets a condition…“",
+        explain: "„‚Provided that the file is complete‘ sets a condition…“",
       },
       {
         text: "Which way does „in view of“ point?",

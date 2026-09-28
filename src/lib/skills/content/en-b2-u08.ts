@@ -88,14 +88,14 @@ export const enB2U08: SkillExercise[] = [
         text: "What does „should“ mean in that sentence?",
         options: ["if it happens to", "it is an order", "it is advised"],
         answer: 0,
-        explain: "„It means „if it happens to“…“",
+        explain: "„It means ‚if it happens to‘…“",
       },
       {
         kind: "truefalse",
         text: "There is no negative short form.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„There is no negative short form: „hadn't the factor been known“ is not written.“",
+        explain: "„There is no negative short form: ‚hadn't the factor been known‘ is not written.“",
       },
       {
         kind: "gapfill",
@@ -177,7 +177,7 @@ export const enB2U08: SkillExercise[] = [
         text: "Which is the long route?",
         options: ["It is claimed that", "are said to", "is thought to"],
         answer: 0,
-        explain: "„„It is claimed that“ is the long route…“",
+        explain: "„‚It is claimed that‘ is the long route…“",
       },
       {
         kind: "truefalse",
@@ -268,13 +268,13 @@ export const enB2U08: SkillExercise[] = [
         text: "What does „to have been“ do?",
         options: ["puts the calibrating before", "names the source", "asks a question"],
         answer: 0,
-        explain: "„„to have been“ puts the calibrating before it.“",
+        explain: "„‚to have been‘ puts the calibrating before it.“",
       },
       {
         text: "Which hedge does Nehir remove?",
         options: ["arguably", "from one perspective", "seems"],
         answer: 0,
-        explain: "„„Arguably“. „From one perspective“ names the standpoint, which is information.“",
+        explain: "„‚Arguably‘. ‚From one perspective‘ names the standpoint, which is information.“",
       },
       {
         kind: "truefalse",

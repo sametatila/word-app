@@ -356,7 +356,7 @@ export const enC1U05: SkillExercise[] = [
         text: "Which layer brings in people who are not in the sentence?",
         options: ["expected", "might", "have been"],
         answer: 0,
-        explain: "„the useful one is „expected“, because it brings in people who are not in the sentence.“",
+        explain: "„the useful one is ‚expected‘, because it brings in people who are not in the sentence.“",
       },
       {
         text: "What has a paragraph of stacked modals performed?",

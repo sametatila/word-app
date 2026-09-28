@@ -121,7 +121,7 @@ export const enC1U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["it"],
-        explain: "„„spin it off“ is the only order anybody writes…“",
+        explain: "„‚spin it off‘ is the only order anybody writes…“",
       },
       {
         kind: "order",

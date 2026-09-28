@@ -276,13 +276,13 @@ export const enB2U02: SkillExercise[] = [
         text: "What is „must have“ doing here?",
         options: ["reading the evidence", "giving an order", "making a rule"],
         answer: 0,
-        explain: "„„Must have“ and „can't have“ read the evidence.“",
+        explain: "„‚Must have‘ and ‚can't have‘ read the evidence.“",
       },
       {
         text: "What is the negative of „must have“?",
         options: ["can't have", "mustn't have", "shouldn't have"],
         answer: 0,
-        explain: "„„Can't have“. We can't have caused the breakdown…“",
+        explain: "„‚Can't have‘. We can't have caused the breakdown…“",
       },
       {
         kind: "truefalse",
@@ -362,7 +362,7 @@ export const enB2U02: SkillExercise[] = [
         text: "What does putting the first half first do?",
         options: ["it makes the room wait", "it saves time", "it hides the point"],
         answer: 0,
-        explain: "„Putting „what I want to highlight“ first makes the room wait…“",
+        explain: "„Putting ‚what I want to highlight‘ first makes the room wait…“",
       },
       {
         text: "What was disputed?",

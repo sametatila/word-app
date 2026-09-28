@@ -145,7 +145,7 @@ export const enB1U11: SkillExercise[] = [
         text: "What happens to a form with an empty section?",
         options: ["it goes back in the mail", "it is read by a person", "it is copied"],
         answer: 0,
-        explain: "„it is read as „not finished“, and the form goes back in the mail.“",
+        explain: "„it is read as ‚not finished‘, and the form goes back in the mail.“",
       },
       {
         text: "Why should you print the last name?",
@@ -158,7 +158,7 @@ export const enB1U11: SkillExercise[] = [
         text: "You must give a phone number.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„You don't have to give a phone number. … the small word is „optional“.“",
+        explain: "„You don't have to give a phone number. … the small word is ‚optional‘.“",
       },
       {
         kind: "gapfill",

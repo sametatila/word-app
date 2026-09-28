@@ -147,7 +147,7 @@ export const enB1U12: SkillExercise[] = [
         text: "What does „unless“ mean here?",
         options: ["if not", "because", "after"],
         answer: 0,
-        explain: "„„Unless“ means „if not“…“",
+        explain: "„‚Unless‘ means ‚if not‘…“",
       },
       {
         text: "When do the seven days start?",
@@ -176,7 +176,7 @@ export const enB1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the unless lines", "unless lines", "the unless ones"],
-        explain: "„Read the „unless“ lines first. There are usually three…“",
+        explain: "„Read the ‚unless‘ lines first. There are usually three…“",
       },
     ],
   },

@@ -90,11 +90,6 @@
   "de": "Zwei Angebote werden abgewogen. Wohin rückt die Zeit in der Wiedergabe?"
  },
  {
-  "tr": "„„Unless“ means „if not“…“",
-  "kind": "explain",
-  "de": "„„Unless“ means „if not“…“"
- },
- {
   "tr": "O anda verilen karar: „will“.",
   "kind": "explain",
   "de": "Ein Entschluss im Moment: „will“."
@@ -120,24 +115,14 @@
   "de": "Das Frühere nimmt „had“ + dritte Form; das Hinsetzen kommt danach."
  },
  {
-  "tr": "„Read the „unless“ lines first. There are usually three…“",
-  "kind": "explain",
-  "de": "„Read the „unless“ lines first. There are usually three…“"
- },
- {
   "tr": "Aktarılınca zaman geri kayıyor: „has expired“ → „had expired“.",
   "kind": "explain",
   "de": "Wiedergegeben rückt die Zeit zurück: „has expired“ → „had expired“. Deutsch nimmt den Konjunktiv."
  },
  {
-  "tr": "„it is read as „not finished“, and the form goes back in the mail.“",
+  "tr": "„You don't have to give a phone number. … the small word is ‚optional‘.“",
   "kind": "explain",
-  "de": "„it is read as „not finished“, and the form goes back in the mail.“"
- },
- {
-  "tr": "„You don't have to give a phone number. … the small word is „optional“.“",
-  "kind": "explain",
-  "de": "„You don't have to give a phone number. … the small word is „optional“.“"
+  "de": "„You don't have to give a phone number. … the small word is ‚optional‘.“"
  },
  {
   "tr": "„She said that it would be cheaper.“ — aktarılınca „will“ „would“ oluyor.",

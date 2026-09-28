@@ -80,7 +80,7 @@ export const enC1U02: SkillExercise[] = [
         text: "Which verb is the neutral one?",
         options: ["said", "claimed", "noted"],
         answer: 0,
-        explain: "„The neutral verb is „said“, and it is the only one…“",
+        explain: "„The neutral verb is ‚said‘, and it is the only one…“",
       },
       {
         text: "What does „conceded“ suggest about the fact?",
@@ -122,7 +122,7 @@ export const enC1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["„said“ or a known choice", "be dull or choose", "say it or own it"],
-        explain: "„to use „said“ and be dull, or to choose the loaded verb and know that the choice has a byline on it.“",
+        explain: "„to use ‚said‘ and be dull, or to choose the loaded verb and know that the choice has a byline on it.“",
       },
     ],
   },
@@ -183,7 +183,7 @@ export const enC1U02: SkillExercise[] = [
         text: "What does „well“ do in „may well“?",
         options: ["raises it", "lowers it", "removes the modal"],
         answer: 0,
-        explain: "„„Well“ raises it: not merely possible but reasonably likely…“",
+        explain: "„‚Well‘ raises it: not merely possible but reasonably likely…“",
       },
       {
         text: "How many times has the writer stepped back in the second example?",
@@ -279,7 +279,7 @@ export const enC1U02: SkillExercise[] = [
         text: "What does „granted“ do?",
         options: ["takes a point off the table", "gives the point away", "asks a question"],
         answer: 0,
-        explain: "„„Granted“ takes a point off the table before the other side plays it…“",
+        explain: "„‚Granted‘ takes a point off the table before the other side plays it…“",
       },
       {
         text: "What does „albeit“ take?",
@@ -292,7 +292,7 @@ export const enC1U02: SkillExercise[] = [
         text: "„Whereas“ is the one of the three that is not about the writer.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„Whereas“ is the only one of the three that is not about me…“",
+        explain: "„‚Whereas‘ is the only one of the three that is not about me…“",
       },
       {
         kind: "gapfill",
@@ -365,7 +365,7 @@ export const enC1U02: SkillExercise[] = [
         text: "What goes with resources?",
         options: ["at one's disposal", "at one's command", "in one's hand"],
         answer: 0,
-        explain: "„„At one's disposal“ is the one that goes with resources…“",
+        explain: "„‚At one's disposal‘ is the one that goes with resources…“",
       },
       {
         text: "What cannot be worked out from context?",

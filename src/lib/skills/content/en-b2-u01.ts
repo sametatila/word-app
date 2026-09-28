@@ -177,14 +177,14 @@ export const enB2U01: SkillExercise[] = [
         text: "What can „which“ do that „that“ cannot?",
         options: ["point at a whole idea", "take a preposition", "open a sentence"],
         answer: 0,
-        explain: "„„Which“ here reaches back to the whole idea in front of it… that is something „that“ cannot do.“",
+        explain: "„‚Which‘ here reaches back to the whole idea in front of it… that is something ‚that‘ cannot do.“",
       },
       {
         kind: "truefalse",
         text: "People say „to whom“ in speech.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„In speech nobody says that; they say „the colleague we delegate to“…“",
+        explain: "„In speech nobody says that; they say ‚the colleague we delegate to‘…“",
       },
       {
         kind: "gapfill",
@@ -266,7 +266,7 @@ export const enB2U01: SkillExercise[] = [
         text: "What does „having finished“ show?",
         options: ["the finishing came first", "both happened together", "somebody else finished"],
         answer: 0,
-        explain: "„„Having finished“ means the finishing came first.“",
+        explain: "„‚Having finished‘ means the finishing came first.“",
       },
       {
         text: "Which shape is passive?",

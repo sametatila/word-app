@@ -80,7 +80,7 @@ export const enB2U23: SkillExercise[] = [
         text: "What happens when „the“ goes?",
         options: ["„of“ goes too", "„of“ stays", "the object goes"],
         answer: 0,
-        explain: "„The „of“ has gone with it, and neither word can stay without the other.“",
+        explain: "„The ‚of‘ has gone with it, and neither word can stay without the other.“",
       },
       {
         text: "What is the first shape?",
@@ -355,7 +355,7 @@ export const enB2U23: SkillExercise[] = [
         text: "Which hedge says something?",
         options: ["on balance", "arguably", "seems"],
         answer: 0,
-        explain: "„„on balance“ is the one that says something…“",
+        explain: "„‚on balance‘ is the one that says something…“",
       },
       {
         kind: "truefalse",

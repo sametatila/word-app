@@ -78,13 +78,13 @@ export const enB2U10: SkillExercise[] = [
         text: "Which preposition does „comparison“ take?",
         options: ["of", "between", "with"],
         answer: 0,
-        explain: "„„Comparison“ takes „of“.“",
+        explain: "„‚Comparison‘ takes ‚of‘.“",
       },
       {
         text: "Which one has the writer gotten wrong twice?",
         options: ["parallel", "distinction", "contrast"],
         answer: 0,
-        explain: "„…because I have been wrong about „parallel“ twice.“",
+        explain: "„…because I have been wrong about ‚parallel‘ twice.“",
       },
       {
         kind: "truefalse",
@@ -178,7 +178,7 @@ export const enB2U10: SkillExercise[] = [
         text: "What moves in the third sentence?",
         options: ["is", "written", "the name"],
         answer: 0,
-        explain: "„„only“ makes it a restriction, and what moves is „is“.“",
+        explain: "„‚only‘ makes it a restriction, and what moves is ‚is‘.“",
       },
       {
         kind: "truefalse",

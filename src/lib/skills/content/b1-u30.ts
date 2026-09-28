@@ -139,7 +139,7 @@ export const b1U30: SkillExercise[] = [
         text: "Was sagt „um zehn Prozent gestiegen“?",
         options: ["Wo der Wert jetzt steht", "Wie groß die Änderung war", "Wie alt die Zahl ist"],
         answer: 1,
-        explain: "„„Der Gewinn ist um zehn Prozent gestiegen“ sagt, wie groß die Änderung war.“",
+        explain: "„‚Der Gewinn ist um zehn Prozent gestiegen‘ sagt, wie groß die Änderung war.“",
       },
       {
         text: "Was sucht man zuerst in einer Tabelle?",

@@ -99,7 +99,7 @@ export const enC1U07: SkillExercise[] = [
         text: "What is standing where the verb would have been?",
         options: ["the comma", "a pronoun", "the subject"],
         answer: 0,
-        explain: "„The comma is standing where „name“ would have been…“",
+        explain: "„The comma is standing where ‚name‘ would have been…“",
       },
       {
         text: "What decides where a language deletes?",
@@ -206,7 +206,7 @@ export const enC1U07: SkillExercise[] = [
         text: "What does „albeit“ do?",
         options: ["takes half of it back", "adds a second fact", "opens the letter"],
         answer: 0,
-        explain: "„„Albeit“ takes half of it back…“",
+        explain: "„‚Albeit‘ takes half of it back…“",
       },
       {
         text: "How does English hedge?",
@@ -307,7 +307,7 @@ export const enC1U07: SkillExercise[] = [
         text: "What closes the shape in the first sentence?",
         options: ["the word „is“", "the place", "the subject"],
         answer: 0,
-        explain: "„„Is“ arrives and the shape is closed.“",
+        explain: "„‚Is‘ arrives and the shape is closed.“",
       },
       {
         text: "What arrives last in the bulletin sentence?",

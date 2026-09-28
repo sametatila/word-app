@@ -74,7 +74,7 @@ export const enB1U24: SkillExercise[] = [
         text: "Which word is for a place?",
         options: ["where", "that", "who"],
         answer: 0,
-        explain: "„„Where“ is for a place.“",
+        explain: "„‚Where‘ is for a place.“",
       },
       {
         text: "Where does the clause go?",
@@ -87,7 +87,7 @@ export const enB1U24: SkillExercise[] = [
         text: "The same „who“ serves a subject and an object.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„the same „who“ serves one woman and forty, a subject and an object…“",
+        explain: "„the same ‚who‘ serves one woman and forty, a subject and an object…“",
       },
       {
         kind: "gapfill",
@@ -171,14 +171,14 @@ export const enB1U24: SkillExercise[] = [
         text: "What does „unless“ carry?",
         options: ["its own negative", "a second verb", "a question"],
         answer: 0,
-        explain: "„„Unless“ carries its own negative: it means „if you do not“.“",
+        explain: "„‚Unless‘ carries its own negative: it means ‚if you do not‘.“",
       },
       {
         kind: "truefalse",
         text: "„If I was less shy“ is the written form.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„„If I was less shy“ is heard everywhere and written nowhere…“",
+        explain: "„‚If I was less shy‘ is heard everywhere and written nowhere…“",
       },
       {
         kind: "gapfill",
@@ -341,7 +341,7 @@ export const enB1U24: SkillExercise[] = [
         text: "What does „don't have to“ do?",
         options: ["takes a rule away", "puts a rule there", "asks a question"],
         answer: 0,
-        explain: "„„Don't have to“ takes a rule away; „can't“ puts one there…“",
+        explain: "„‚Don't have to‘ takes a rule away; ‚can't‘ puts one there…“",
       },
       {
         kind: "truefalse",

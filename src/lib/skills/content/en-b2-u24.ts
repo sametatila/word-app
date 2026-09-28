@@ -89,7 +89,7 @@ export const enB2U24: SkillExercise[] = [
         text: "„The report I sent“ names one report out of several.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„The report I sent“ is picking one report out of several.“",
+        explain: "„‚The report I sent‘ is picking one report out of several.“",
       },
       {
         kind: "gapfill",
@@ -174,7 +174,7 @@ export const enB2U24: SkillExercise[] = [
         text: "What does „What we lack is buffer time“ read as?",
         options: ["an admission", "a complaint", "a plan"],
         answer: 0,
-        explain: "„„What we lack is buffer time“ reads as an admission…“",
+        explain: "„‚What we lack is buffer time‘ reads as an admission…“",
       },
       {
         kind: "truefalse",

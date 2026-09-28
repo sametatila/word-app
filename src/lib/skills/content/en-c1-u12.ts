@@ -300,7 +300,7 @@ export const enC1U12: SkillExercise[] = [
         text: "What does „local custom“ do?",
         options: ["renames the violation", "changes the facts", "names a rule"],
         answer: 0,
-        explain: "„„Local custom“ renames the violation without changing a single fact in it.“",
+        explain: "„‚Local custom‘ renames the violation without changing a single fact in it.“",
       },
       {
         kind: "truefalse",
@@ -331,7 +331,7 @@ export const enC1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["medicine", "a medicine", "something healthy"],
-        explain: "„„rather good for“ is what you say about medicine.“",
+        explain: "„‚rather good for‘ is what you say about medicine.“",
       },
     ],
   },

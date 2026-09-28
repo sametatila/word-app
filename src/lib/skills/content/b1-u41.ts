@@ -143,7 +143,7 @@ export const b1U41: SkillExercise[] = [
         text: "Was ist laut Text die bessere Frage?",
         options: ["Wer sagt das", "Warum", "Wie viele"],
         answer: 1,
-        explain: "„Deshalb ist die bessere Frage nicht „wer sagt das“, sondern „warum“.“",
+        explain: "„Deshalb ist die bessere Frage nicht ‚wer sagt das‘, sondern ‚warum‘.“",
       },
       {
         kind: "gapfill",

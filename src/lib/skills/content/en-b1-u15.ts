@@ -75,7 +75,7 @@ export const enB1U15: SkillExercise[] = [
         text: "What does „unless“ carry?",
         options: ["the „not“", "a condition of time", "a reward"],
         answer: 0,
-        explain: "„„Unless“ already carries the „not“, so the sentence is not a double negative…“",
+        explain: "„‚Unless‘ already carries the ‚not‘, so the sentence is not a double negative…“",
       },
       {
         kind: "truefalse",

@@ -208,7 +208,7 @@ export const enC1U18: SkillExercise[] = [
         text: "What is „emission reduction“?",
         options: ["a percentage against a baseline", "the end of a fuel", "a label"],
         answer: 0,
-        explain: "„„Emission reduction“ is a percentage against a baseline year.“",
+        explain: "„‚Emission reduction‘ is a percentage against a baseline year.“",
       },
       {
         text: "What is usually the second side of the balance?",

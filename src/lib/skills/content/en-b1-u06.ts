@@ -141,7 +141,7 @@ export const enB1U06: SkillExercise[] = [
         text: "With which word is the order of the two parts fixed?",
         options: ["so", "because", "since"],
         answer: 0,
-        explain: "„„So“ introduces the result and it cannot move in front of the reason.“",
+        explain: "„‚So‘ introduces the result and it cannot move in front of the reason.“",
       },
       {
         text: "What extra meaning does „since“ carry?",
@@ -162,7 +162,7 @@ export const enB1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["reason"],
-        explain: "„„Because“ introduces the reason and it can also start the sentence…“",
+        explain: "„‚Because‘ introduces the reason and it can also start the sentence…“",
       },
       {
         kind: "short_answer",

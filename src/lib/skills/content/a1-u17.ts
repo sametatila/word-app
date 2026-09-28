@@ -112,7 +112,7 @@ export const a1U17: SkillExercise[] = [
         text: "Was heißt „warm“ hier?",
         options: ["mit Nebenkosten", "die Wohnung ist warm", "mit Möbeln"],
         answer: 0,
-        explain: "„„Warm“ heißt: mit Nebenkosten — mit Wasser und Müll.“ Sıcaklıkla ilgisi yok.",
+        explain: "„‚Warm‘ heißt: mit Nebenkosten — mit Wasser und Müll.“ Sıcaklıkla ilgisi yok.",
       },
       {
         kind: "gapfill",

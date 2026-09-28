@@ -273,13 +273,13 @@ export const enB2U04: SkillExercise[] = [
         text: "What does „must have“ say?",
         options: ["the evidence leaves one reading", "the reader is at fault", "the rule was broken"],
         answer: 0,
-        explain: "„„Must have“ says the evidence leaves one reading.“",
+        explain: "„‚Must have‘ says the evidence leaves one reading.“",
       },
       {
         text: "Which one invites an apology?",
         options: ["should have", "must have", "can't have"],
         answer: 0,
-        explain: "„„Should have“ invites an apology, and an apology is cheaper than a resolution.“",
+        explain: "„‚Should have‘ invites an apology, and an apology is cheaper than a resolution.“",
       },
       {
         kind: "truefalse",
@@ -366,7 +366,7 @@ export const enB2U04: SkillExercise[] = [
         text: "Why is „presumably“ there?",
         options: ["on purpose, as the weakest word", "to name the source", "to close the letter"],
         answer: 0,
-        explain: "„„Presumably“ is the weakest word in the letter and it is there on purpose…“",
+        explain: "„‚Presumably‘ is the weakest word in the letter and it is there on purpose…“",
       },
       {
         kind: "truefalse",

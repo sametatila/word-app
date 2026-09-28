@@ -281,7 +281,7 @@ export const enB2U11: SkillExercise[] = [
         text: "The distinction between two things takes „between“.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The distinction between two things takes „between“…“",
+        explain: "„The distinction between two things takes ‚between‘…“",
       },
       {
         kind: "gapfill",

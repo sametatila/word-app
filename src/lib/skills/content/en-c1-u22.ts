@@ -198,7 +198,7 @@ export const enC1U22: SkillExercise[] = [
         text: "What does „alleges“ carry?",
         options: ["no burden", "a document", "a signature"],
         answer: 0,
-        explain: "„„Alleges“ carries no burden.“",
+        explain: "„‚Alleges‘ carries no burden.“",
       },
       {
         text: "What is a gray area?",

@@ -87,7 +87,7 @@ export const enC1U04: SkillExercise[] = [
         text: "What happens to a cleft if you take „is“ away?",
         options: ["it collapses", "it becomes fronting", "nothing"],
         answer: 0,
-        explain: "„Take the „is“ away and the sentence collapses.“",
+        explain: "„Take the ‚is‘ away and the sentence collapses.“",
       },
       {
         kind: "truefalse",
@@ -273,7 +273,7 @@ export const enC1U04: SkillExercise[] = [
         text: "What does the tag question do?",
         options: ["hands it to the room", "makes the adjective softer", "removes the claim"],
         answer: 0,
-        explain: "„„Are they?“ hands it to the room.“",
+        explain: "„‚Are they?‘ hands it to the room.“",
       },
       {
         text: "Where is the negative in the second example?",
@@ -359,7 +359,7 @@ export const enC1U04: SkillExercise[] = [
         text: "What is holding the place of „serve“?",
         options: ["the comma", "the word „some“", "the word „others“"],
         answer: 0,
-        explain: "„The missing word is „serve“, and the comma is holding its place.“",
+        explain: "„The missing word is ‚serve‘, and the comma is holding its place.“",
       },
       {
         text: "What does ellipsis buy?",

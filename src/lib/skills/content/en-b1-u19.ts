@@ -229,7 +229,7 @@ export const enB1U19: SkillExercise[] = [
         text: "Why is „it has not changed in four years“ better?",
         options: ["it is information", "it is shorter", "it is kinder"],
         answer: 0,
-        explain: "„„Do not worry“ is nothing. „It has not changed in four years“ is information.“",
+        explain: "„‚Do not worry‘ is nothing. ‚It has not changed in four years‘ is information.“",
       },
       {
         kind: "truefalse",

@@ -198,7 +198,7 @@ export const enC1U21: SkillExercise[] = [
         text: "What is „complete“?",
         options: ["a threshold", "a direction", "a deadline"],
         answer: 0,
-        explain: "„„Complete“ is a threshold rather than a direction.“",
+        explain: "„‚Complete‘ is a threshold rather than a direction.“",
       },
       {
         text: "Why is a partial disclosure often worse?",

@@ -90,16 +90,6 @@
   "de": "Ein fehlender Buchstabe ändert die Art des Dokuments. Warum zählt die Reihenfolge?"
  },
  {
-  "tr": "„„stated“ is neutral in a record…“",
-  "kind": "explain",
-  "de": "„„stated“ is neutral in a record…“"
- },
- {
-  "tr": "„„Are they?“ hands it to the room.“",
-  "kind": "explain",
-  "de": "„„Are they?“ hands it to the room.“"
- },
- {
   "tr": "İstek kipi: „grant“, „grants“ değil.",
   "kind": "explain",
   "de": "Konjunktiv: „grant“, nicht „grants“."
@@ -113,11 +103,6 @@
   "tr": "Olumsuz sıfatta değil, söyleme fiilinde.",
   "kind": "explain",
   "de": "Die Verneinung steht nicht beim Adjektiv, sondern beim Verb des Sagens."
- },
- {
-  "tr": "„Take the „is“ away and the sentence collapses.“",
-  "kind": "explain",
-  "de": "„Take the „is“ away and the sentence collapses.“"
  },
  {
   "tr": "Eksik olan bir sıfat; iki yarı aynı biçimde kurulmuş.",
@@ -145,11 +130,6 @@
   "de": "Spaltsatz, Voranstellung, die Stelle, wo beide sich mischen, die umgestellte Form."
  },
  {
-  "tr": "„The missing word is „serve“, and the comma is holding its place.“",
-  "kind": "explain",
-  "de": "„The missing word is „serve“, and the comma is holding its place.“"
- },
- {
   "tr": "Mastar özne, öne çıkarılmış nesne, iki eşdizim; en sonda ortak alışkanlık.",
   "kind": "explain",
   "de": "Infinitiv als Subjekt, vorangestelltes Objekt, zwei Kollokationen; am Ende die gemeinsame Gewohnheit."
@@ -158,16 +138,6 @@
   "tr": "„would“ varsayım, „tend to“ eğilim; cümle artık gerçek bir metinle ilgili değil.",
   "kind": "explain",
   "de": "„would“ ist Annahme, „tend to“ ist Tendenz; der Satz handelt von keinem wirklichen Text mehr."
- },
- {
-  "tr": "„the useful one is „expected“, because it brings in people who are not in the sentence.“",
-  "kind": "explain",
-  "de": "„the useful one is „expected“, because it brings in people who are not in the sentence.“"
- },
- {
-  "tr": "„If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“.“",
-  "kind": "explain",
-  "de": "„If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“.“"
  },
  {
   "tr": "özdeşlik",

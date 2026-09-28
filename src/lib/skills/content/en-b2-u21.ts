@@ -182,7 +182,7 @@ export const enB2U21: SkillExercise[] = [
         text: "„She is said to feel distrust“ can be answered.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„„She is said to feel distrust“ cannot.“",
+        explain: "„‚She is said to feel distrust‘ cannot.“",
       },
       {
         kind: "gapfill",
@@ -349,7 +349,7 @@ export const enB2U21: SkillExercise[] = [
         text: "What is „Asked to reconcile“ short for?",
         options: ["having been asked", "they were asked", "asking"],
         answer: 0,
-        explain: "„it is short for „having been asked“…“",
+        explain: "„it is short for ‚having been asked‘…“",
       },
       {
         text: "What goes wrong?",

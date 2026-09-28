@@ -140,7 +140,7 @@ export const b1U27: SkillExercise[] = [
         text: "Was hilft niemandem?",
         options: ["„Es schmeckt nicht“", "„Die Suppe ist kalt“", "„Auf dem Glas ist ein Fleck“"],
         answer: 0,
-        explain: "„„Es schmeckt nicht“ hilft niemandem.“",
+        explain: "„‚Es schmeckt nicht‘ hilft niemandem.“",
       },
       {
         text: "Warum steht die Wirtin meistens auf Ihrer Seite?",

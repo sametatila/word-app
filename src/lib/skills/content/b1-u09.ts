@@ -142,7 +142,7 @@ export const b1U09: SkillExercise[] = [
         text: "Wer bekommt leichter Verzeihung?",
         options: ["Wer die Schuld bei anderen sucht", "Wer den eigenen Fehler zugibt", "Wer nichts sagt"],
         answer: 1,
-        explain: "„Wer dagegen sagt: „Das war mein Fehler“, dem verzeiht man leichter.“",
+        explain: "„Wer dagegen sagt: ‚Das war mein Fehler‘, dem verzeiht man leichter.“",
       },
       {
         kind: "gapfill",

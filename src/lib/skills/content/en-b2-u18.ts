@@ -170,7 +170,7 @@ export const enB2U18: SkillExercise[] = [
         text: "What does „especially since“ add?",
         options: ["a reason that strengthens", "a hedge", "a new claim"],
         answer: 0,
-        explain: "„„Especially since“ adds a reason that strengthens what was just said…“",
+        explain: "„‚Especially since‘ adds a reason that strengthens what was just said…“",
       },
       {
         text: "What does „in that respect“ do?",

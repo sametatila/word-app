@@ -82,7 +82,7 @@ export const enB2U19: SkillExercise[] = [
         text: "What is „Asked to supervise“ short for?",
         options: ["Having been asked to supervise", "She was asked to supervise", "Asking to supervise"],
         answer: 0,
-        explain: "„The full form is „Having been asked to supervise“…“",
+        explain: "„The full form is ‚Having been asked to supervise‘…“",
       },
       {
         text: "What does „asked“ keep?",

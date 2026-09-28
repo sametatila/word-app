@@ -80,13 +80,13 @@ export const enB2U09: SkillExercise[] = [
         text: "Which word carries the finished part?",
         options: ["have", "seems", "taken"],
         answer: 0,
-        explain: "„The finished part is carried by „have“.“",
+        explain: "„The finished part is carried by ‚have‘.“",
       },
       {
         text: "Where does English decide the tense?",
         options: ["early, at „have“", "at the end", "at the last word"],
         answer: 0,
-        explain: "„English decides at „have“ and lets the rest of the sentence arrive on top of a settled frame.“",
+        explain: "„English decides at ‚have‘ and lets the rest of the sentence arrive on top of a settled frame.“",
       },
       {
         kind: "truefalse",
@@ -122,7 +122,7 @@ export const enB2U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["from one angle", "the standpoint one", "the first one"],
-        explain: "„„From one angle“ names a standpoint and can be argued with.“",
+        explain: "„‚From one angle‘ names a standpoint and can be argued with.“",
       },
     ],
   },
@@ -168,7 +168,7 @@ export const enB2U09: SkillExercise[] = [
         text: "What is „must have been“?",
         options: ["a conclusion", "an accusation", "a prohibition"],
         answer: 0,
-        explain: "„„Must have been“ is the conclusion, not the accusation.“",
+        explain: "„‚Must have been‘ is the conclusion, not the accusation.“",
       },
       {
         text: "Which sentence will people remember?",

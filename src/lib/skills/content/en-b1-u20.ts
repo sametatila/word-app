@@ -67,13 +67,13 @@ export const enB1U20: SkillExercise[] = [
         text: "Which word carries a warning?",
         options: ["otherwise", "moreover", "besides"],
         answer: 0,
-        explain: "„„Otherwise“ is the only one of the four that carries a warning.“",
+        explain: "„‚Otherwise‘ is the only one of the four that carries a warning.“",
       },
       {
         text: "What does „instead“ do?",
         options: ["it replaces one thing with another", "it adds a second thing", "it gives a reason"],
         answer: 0,
-        explain: "„„Instead“ replaces. Nothing is added — one thing is exchanged for another.“",
+        explain: "„‚Instead‘ replaces. Nothing is added — one thing is exchanged for another.“",
       },
       {
         kind: "truefalse",

@@ -202,20 +202,20 @@ export const enC1U10: SkillExercise[] = [
         text: "What is „otherness“?",
         options: ["a relation", "a property", "an object"],
         answer: 0,
-        explain: "„„Otherness“ is a relation.“",
+        explain: "„‚Otherness‘ is a relation.“",
       },
       {
         text: "What does „albeit“ take?",
         options: ["no clause", "a clause", "a subject and a verb"],
         answer: 0,
-        explain: "„„Albeit“ takes no clause.“",
+        explain: "„‚Albeit‘ takes no clause.“",
       },
       {
         kind: "truefalse",
         text: "„Albeit“ normally opens a sentence.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„At the front of a sentence „although“ takes over…“",
+        explain: "„At the front of a sentence ‚although‘ takes over…“",
       },
       {
         kind: "gapfill",
@@ -300,7 +300,7 @@ export const enC1U10: SkillExercise[] = [
         text: "What does „less so“ make?",
         options: ["no claim", "a complaint", "a comparison nobody hears"],
         answer: 0,
-        explain: "„„Less so“ makes no claim…“",
+        explain: "„‚Less so‘ makes no claim…“",
       },
       {
         kind: "truefalse",

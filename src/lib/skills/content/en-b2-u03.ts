@@ -89,14 +89,14 @@ export const enB2U03: SkillExercise[] = [
         text: "Why is „do“ there?",
         options: ["so that something can move", "to make it formal", "to save time"],
         answer: 0,
-        explain: "„When there is no auxiliary to move, „do“ appears just so that something can move…“",
+        explain: "„When there is no auxiliary to move, ‚do‘ appears just so that something can move…“",
       },
       {
         kind: "truefalse",
         text: "„Yesterday I spoke to her“ keeps its order.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„Yesterday I spoke to her“ keeps its order…“",
+        explain: "„‚Yesterday I spoke to her‘ keeps its order…“",
       },
       {
         kind: "gapfill",
@@ -277,13 +277,13 @@ export const enB2U03: SkillExercise[] = [
         text: "What does „apparently“ do to the source?",
         options: ["puts it somewhere else", "names it", "removes the claim"],
         answer: 0,
-        explain: "„„Apparently“ puts the source somewhere else and leaves me holding nothing.“",
+        explain: "„‚Apparently‘ puts the source somewhere else and leaves me holding nothing.“",
       },
       {
         text: "Which word turns?",
         options: ["nevertheless", "hence", "roughly"],
         answer: 0,
-        explain: "„„Nevertheless“ turns. The cost is high; nevertheless, we continue.“",
+        explain: "„‚Nevertheless‘ turns. The cost is high; nevertheless, we continue.“",
       },
       {
         kind: "truefalse",

@@ -145,7 +145,7 @@ export const enC1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["a page", "to a page", "writing"],
-        explain: "„„Had I known“ belongs to a page rather than to a room…“",
+        explain: "„‚Had I known‘ belongs to a page rather than to a room…“",
       },
     ],
   },

@@ -104,7 +104,7 @@ export const enC1U08: SkillExercise[] = [
         text: "What has already made that sentence negative?",
         options: ["„hardly“", "the tag", "the subject"],
         answer: 0,
-        explain: "„„Hardly“ has already made the sentence negative…“",
+        explain: "„‚Hardly‘ has already made the sentence negative…“",
       },
       {
         kind: "truefalse",
@@ -245,7 +245,7 @@ export const enC1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["a description", "the description", "an earlier description"],
-        explain: "„„Such a“ points backwards at a description…“",
+        explain: "„‚Such a‘ points backwards at a description…“",
       },
     ],
   },

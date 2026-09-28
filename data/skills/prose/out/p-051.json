@@ -45,11 +45,6 @@
   "en": "Here the cleft sentence names an absence."
  },
  {
-  "tr": "„„Yesterday I spoke to her“ keeps its order…“",
-  "kind": "explain",
-  "en": "„„Yesterday I spoke to her“ keeps its order…“"
- },
- {
   "tr": "Zarflar iki işe ayrılıyor: ses düzeyi ve yön.",
   "kind": "intro",
   "en": "The adverbs split into two jobs: volume and direction."
@@ -85,9 +80,9 @@
   "en": "Inversion and careful adverbs. Which door is narrow?"
  },
  {
-  "tr": "„„Must have“ and „can't have“ read the evidence.“",
+  "tr": "„‚Must have‘ and ‚can't have‘ read the evidence.“",
   "kind": "explain",
-  "en": "„„Must have“ and „can't have“ read the evidence.“"
+  "en": "„‚Must have‘ and ‚can't have‘ read the evidence.“"
  },
  {
   "tr": "İki virgül bir cümlenin işini değiştiriyor. Nasıl?",
@@ -103,11 +98,6 @@
   "tr": "Üç ortaç ve iki ilgi cümlesi. Hangi özne kime ait?",
   "kind": "intro",
   "en": "Three participles and two relative clauses. Which subject belongs to whom?"
- },
- {
-  "tr": "„„Having finished“ means the finishing came first.“",
-  "kind": "explain",
-  "en": "„„Having finished“ means the finishing came first.“"
  },
  {
   "tr": "Geçmişe dönük üç kip. İkisi okuyor, biri yargılıyor.",
@@ -135,9 +125,9 @@
   "en": "Three lines of minutes, the writer's own correction last."
  },
  {
-  "tr": "„„Can't have“. We can't have caused the breakdown…“",
+  "tr": "„‚Can't have‘. We can't have caused the breakdown…“",
   "kind": "explain",
-  "en": "„„Can't have“. We can't have caused the breakdown…“"
+  "en": "„‚Can't have‘. We can't have caused the breakdown…“"
  },
  {
   "tr": "Uzun yol, kısa yol, seçimin gerekçesi, en sonda sınama.",
@@ -170,38 +160,8 @@
   "en": "Looking back from a future date: „will have“ + third form."
  },
  {
-  "tr": "„Putting „what I want to highlight“ first makes the room wait…“",
-  "kind": "explain",
-  "en": "„Putting „what I want to highlight“ first makes the room wait…“"
- },
- {
-  "tr": "„„Nevertheless“ turns. The cost is high; nevertheless, we continue.“",
-  "kind": "explain",
-  "en": "„„Nevertheless“ turns. The cost is high; nevertheless, we continue.“"
- },
- {
-  "tr": "„In speech nobody says that; they say „the colleague we delegate to“…“",
-  "kind": "explain",
-  "en": "„In speech nobody says that; they say „the colleague we delegate to“…“"
- },
- {
-  "tr": "„„Apparently“ puts the source somewhere else and leaves me holding nothing.“",
-  "kind": "explain",
-  "en": "„„Apparently“ puts the source somewhere else and leaves me holding nothing.“"
- },
- {
-  "tr": "„When there is no auxiliary to move, „do“ appears just so that something can move…“",
-  "kind": "explain",
-  "en": "„When there is no auxiliary to move, „do“ appears just so that something can move…“"
- },
- {
   "tr": "„because the loss is not a thing that happened once in March; it is a number on today's page.“",
   "kind": "explain",
   "en": "„because the loss is not a thing that happened once in March; it is a number on today's page.“"
- },
- {
-  "tr": "„„Which“ here reaches back to the whole idea in front of it… that is something „that“ cannot do.“",
-  "kind": "explain",
-  "en": "„„Which“ here reaches back to the whole idea in front of it… that is something „that“ cannot do.“"
  }
 ]

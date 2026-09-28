@@ -86,14 +86,14 @@ export const enB2U15: SkillExercise[] = [
         text: "Which earlier word has the same shape?",
         options: ["unless", "although", "despite"],
         answer: 0,
-        explain: "„It is the same shape as „unless“, which carried its own negative two levels ago…“",
+        explain: "„It is the same shape as ‚unless‘, which carried its own negative two levels ago…“",
       },
       {
         kind: "truefalse",
         text: "„Undeniable“ should almost never be written in a report.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„Undeniable“ is at the other end and should almost never be written…“",
+        explain: "„‚Undeniable‘ is at the other end and should almost never be written…“",
       },
       {
         kind: "gapfill",
@@ -169,7 +169,7 @@ export const enB2U15: SkillExercise[] = [
         text: "What does „must have been“ read?",
         options: ["the evidence", "the regulation", "the order"],
         answer: 0,
-        explain: "„„Must have been“ reads the evidence.“",
+        explain: "„‚Must have been‘ reads the evidence.“",
       },
       {
         text: "Which line will the official remember?",

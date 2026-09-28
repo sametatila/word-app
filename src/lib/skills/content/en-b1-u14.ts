@@ -154,7 +154,7 @@ export const enB1U14: SkillExercise[] = [
         text: "What did the tutor say?",
         options: ["this is common, and here is the pattern", "you are careless", "start again"],
         answer: 0,
-        explain: "„„this is common, and here is the pattern.“ Eight words of explanation and one example.“",
+        explain: "„‚this is common, and here is the pattern.‘ Eight words of explanation and one example.“",
       },
       {
         kind: "truefalse",

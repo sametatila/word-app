@@ -90,21 +90,6 @@
   "de": "In einer Zeile „we“ und „they“. Wer benutzt welches Wort?"
  },
  {
-  "tr": "„„Albeit“ takes no clause.“",
-  "kind": "explain",
-  "de": "„„Albeit“ takes no clause.“"
- },
- {
-  "tr": "„„Less so“ makes no claim…“",
-  "kind": "explain",
-  "de": "„„Less so“ makes no claim…“"
- },
- {
-  "tr": "„„Otherness“ is a relation.“",
-  "kind": "explain",
-  "de": "„„Otherness“ is a relation.“"
- },
- {
   "tr": "Bir satırda iki özne: „we“ ve „they“.",
   "kind": "explain",
   "de": "Zwei Subjekte in einer Zeile: „we“ und „they“."
@@ -123,11 +108,6 @@
   "tr": "İkinci yarı sıfatı da fiili de ödünç alıyor.",
   "kind": "explain",
   "de": "Die zweite Hälfte leiht sich Adjektiv und Verb."
- },
- {
-  "tr": "„…and this one is honest: the „we“ is named…“",
-  "kind": "explain",
-  "de": "„…and this one is honest: the „we“ is named…“"
  },
  {
   "tr": "Cümle, delik, onarım; en sonda güvenli biçim.",
@@ -155,11 +135,6 @@
   "de": "„A flood is nobody's fault and nobody's policy…“"
  },
  {
-  "tr": "„„rather good for“ is what you say about medicine.“",
-  "kind": "explain",
-  "de": "„„rather good for“ is what you say about medicine.“"
- },
- {
   "tr": "Soyut isim, yer, adlandırılmış „we“; en sonda bedel.",
   "kind": "explain",
   "de": "Abstraktes Nomen, Ort, ein genanntes „we“; ganz am Ende die Kosten."
@@ -168,11 +143,6 @@
   "tr": "İkinci yarıda fiil yok; iki yarı birbirine yaslanıyor.",
   "kind": "explain",
   "de": "In der zweiten Hälfte fehlt das Verb; die beiden Hälften lehnen sich aneinander."
- },
- {
-  "tr": "„At the front of a sentence „although“ takes over…“",
-  "kind": "explain",
-  "de": "„At the front of a sentence „although“ takes over…“"
  },
  {
   "tr": "Sayfada yer, cümle ortasında yineleme, savda yer; en sonda ölçü.",
@@ -188,16 +158,6 @@
   "tr": "Kişi ile sayı, hesap, iki edilgen; en sonda sözcüğün getirdiği resim.",
   "kind": "explain",
   "de": "Person und Zahl, die Rechnung, zwei Passive; ganz am Ende das Bild, das das Wort mitbringt."
- },
- {
-  "tr": "„„Local custom“ renames the violation without changing a single fact in it.“",
-  "kind": "explain",
-  "de": "„„Local custom“ renames the violation without changing a single fact in it.“"
- },
- {
-  "tr": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",
-  "kind": "explain",
-  "de": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“"
  },
  {
   "tr": "kişi",

@@ -273,13 +273,13 @@ export const enC1U06: SkillExercise[] = [
         text: "Which verb is neutral in a record?",
         options: ["stated", "said", "alleged"],
         answer: 0,
-        explain: "„„stated“ is neutral in a record…“",
+        explain: "„‚stated‘ is neutral in a record…“",
       },
       {
         text: "What does the report deserve if it shows what it says?",
         options: ["demonstrates", "claims", "assumes"],
         answer: 0,
-        explain: "„If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“.“",
+        explain: "„If it shows it, ‚claims‘ is a small act of damage and the report deserves ‚demonstrates‘.“",
       },
       {
         kind: "truefalse",

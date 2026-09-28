@@ -361,7 +361,7 @@ export const enB2U14: SkillExercise[] = [
         text: "Where does the plain version put the news?",
         options: ["in the middle", "at the front", "at the end"],
         answer: 0,
-        explain: "„„Voter turnout has never been so low“ puts the news in the middle…“",
+        explain: "„‚Voter turnout has never been so low‘ puts the news in the middle…“",
       },
       {
         text: "Where is the error?",

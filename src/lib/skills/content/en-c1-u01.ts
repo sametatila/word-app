@@ -88,7 +88,7 @@ export const enC1U01: SkillExercise[] = [
         text: "How is the negative formed?",
         options: ["without „do“", "with „do“", "with „should“"],
         answer: 0,
-        explain: "„The negative is formed without „do“ — „that he not attend“…“",
+        explain: "„The negative is formed without ‚do‘ — ‚that he not attend‘…“",
       },
       {
         kind: "truefalse",
@@ -190,7 +190,7 @@ export const enC1U01: SkillExercise[] = [
         text: "Where does new information belong?",
         options: ["at the end", "at the front", "between the two"],
         answer: 0,
-        explain: "„it puts „a connotation“ at the end, where the new information belongs.“",
+        explain: "„it puts ‚a connotation‘ at the end, where the new information belongs.“",
       },
       {
         text: "What happens to the subject and verb when the object is fronted?",

@@ -148,7 +148,7 @@ export const enC1U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["stand vacant", "a new one", "the English one"],
-        explain: "„A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up…“",
+        explain: "„A German speaker meeting ‚stand vacant‘ for the first time has to accept that it cannot be looked up…“",
       },
     ],
   },

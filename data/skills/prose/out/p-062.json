@@ -1,20 +1,5 @@
 [
  {
-  "tr": "„„Albeit“ takes no clause.“",
-  "kind": "explain",
-  "en": "„„Albeit“ takes no clause.“"
- },
- {
-  "tr": "„„Less so“ makes no claim…“",
-  "kind": "explain",
-  "en": "„„Less so“ makes no claim…“"
- },
- {
-  "tr": "„„Otherness“ is a relation.“",
-  "kind": "explain",
-  "en": "„„Otherness“ is a relation.“"
- },
- {
   "tr": "Talep eden metin ve fiilsiz taviz.",
   "kind": "intro",
   "en": "The demanding text and the verbless concession."
@@ -75,11 +60,6 @@
   "en": "The hole in a comparison and the words of migration."
  },
  {
-  "tr": "„…and this one is honest: the „we“ is named…“",
-  "kind": "explain",
-  "en": "„…and this one is honest: the „we“ is named…“"
- },
- {
   "tr": "Cümle, delik, onarım; en sonda güvenli biçim.",
   "kind": "explain",
   "en": "The sentence, the hole, the repair; the safe shape last."
@@ -120,11 +100,6 @@
   "en": "A number or a document? What are the words measuring?"
  },
  {
-  "tr": "„„rather good for“ is what you say about medicine.“",
-  "kind": "explain",
-  "en": "„„rather good for“ is what you say about medicine.“"
- },
- {
   "tr": "Bir ad ötekinin yerini alıyor. Hangisi hangisinin?",
   "kind": "intro",
   "en": "One name takes the place of another. Which replaces which?"
@@ -160,11 +135,6 @@
   "en": "When does a reading cover a whole field? And where does the hedge stand?"
  },
  {
-  "tr": "„At the front of a sentence „although“ takes over…“",
-  "kind": "explain",
-  "en": "„At the front of a sentence „although“ takes over…“"
- },
- {
   "tr": "İsim öbeği iki dilde iki ayrı uçtan yükleniyor. Hangisi nereden?",
   "kind": "intro",
   "en": "The two languages load a noun phrase from opposite ends. Which from where?"
@@ -188,15 +158,5 @@
   "tr": "Kişi ile sayı, hesap, iki edilgen; en sonda sözcüğün getirdiği resim.",
   "kind": "explain",
   "en": "A person and a number, the arithmetic, two passives; the picture the word brings last."
- },
- {
-  "tr": "„„Local custom“ renames the violation without changing a single fact in it.“",
-  "kind": "explain",
-  "en": "„„Local custom“ renames the violation without changing a single fact in it.“"
- },
- {
-  "tr": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",
-  "kind": "explain",
-  "en": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“"
  }
 ]

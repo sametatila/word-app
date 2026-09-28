@@ -206,7 +206,7 @@ export const enC1U11: SkillExercise[] = [
         text: "What has been given a verb of its own?",
         options: ["an abstract noun", "a committee", "a person"],
         answer: 0,
-        explain: "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",
+        explain: "„‚Marginalization‘ is an abstract noun in the front slot… and it has been given a verb of its own.“",
       },
       {
         text: "What is the short test?",
@@ -248,7 +248,7 @@ export const enC1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the third", "the last one", "the one with we"],
-        explain: "„…and this one is honest: the „we“ is named…“",
+        explain: "„…and this one is honest: the ‚we‘ is named…“",
       },
     ],
   },

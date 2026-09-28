@@ -82,7 +82,7 @@ export const enB1U25: SkillExercise[] = [
         text: "Which linker can only look backwards?",
         options: ["as a result", "in order to", "even though"],
         answer: 0,
-        explain: "„„As a result“ gives an outcome: the thing that followed, and it can only look backwards.“",
+        explain: "„‚As a result‘ gives an outcome: the thing that followed, and it can only look backwards.“",
       },
       {
         text: "Why is this mistake hard to catch?",
@@ -178,14 +178,14 @@ export const enB1U25: SkillExercise[] = [
         text: "What comes after „must“?",
         options: ["be", "been", "being"],
         answer: 0,
-        explain: "„the order never moves: „must“, then „be“, then the third form.“",
+        explain: "„the order never moves: ‚must‘, then ‚be‘, then the third form.“",
       },
       {
         kind: "truefalse",
         text: "„Your help is appreciated“ is the warmer sentence.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„„Your help is appreciated“ sounds generous and is not…“",
+        explain: "„‚Your help is appreciated‘ sounds generous and is not…“",
       },
       {
         kind: "gapfill",
@@ -268,7 +268,7 @@ export const enB1U25: SkillExercise[] = [
         text: "Which verb takes the infinitive?",
         options: ["decide", "avoid", "keep"],
         answer: 0,
-        explain: "„„Decide“ takes the infinitive; „avoid“ takes the „-ing“.“",
+        explain: "„‚Decide‘ takes the infinitive; ‚avoid‘ takes the ‚-ing‘.“",
       },
       {
         kind: "truefalse",
@@ -348,13 +348,13 @@ export const enB1U25: SkillExercise[] = [
         text: "What did she say in the room?",
         options: ["it is over", "it was over", "it is not over"],
         answer: 0,
-        explain: "„In the room she said „it is over“, and by the time I told anyone it had become „was“.“",
+        explain: "„In the room she said ‚it is over‘, and by the time I told anyone it had become ‚was‘.“",
       },
       {
         text: "What carries the work of the word order?",
         options: ["whether", "did", "not"],
         answer: 0,
-        explain: "„a reported question goes flat, and „whether“ carries what the word order used to carry.“",
+        explain: "„a reported question goes flat, and ‚whether‘ carries what the word order used to carry.“",
       },
       {
         kind: "truefalse",

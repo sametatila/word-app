@@ -1,10 +1,5 @@
 [
  {
-  "tr": "„„stated“ is neutral in a record…“",
-  "kind": "explain",
-  "en": "„„stated“ is neutral in a record…“"
- },
- {
   "tr": "Dilekçenin kipi ve iki dil düzeyi.",
   "kind": "intro",
   "en": "The mood of a petition and two registers."
@@ -13,11 +8,6 @@
   "tr": "Önergenin kipi ve iki kip katmanı.",
   "kind": "intro",
   "en": "The mood of a motion and two layers of modality."
- },
- {
-  "tr": "„„Are they?“ hands it to the room.“",
-  "kind": "explain",
-  "en": "„„Are they?“ hands it to the room.“"
  },
  {
   "tr": "Bir dosyada üç fiil. Hangisi yansız?",
@@ -75,11 +65,6 @@
   "en": "An infinitive subject, a fronted object, a dropped pronoun."
  },
  {
-  "tr": "„Take the „is“ away and the sentence collapses.“",
-  "kind": "explain",
-  "en": "„Take the „is“ away and the sentence collapses.“"
- },
- {
   "tr": "Bir harf eksik ve belge türü değişiyor. Hangisi?",
   "kind": "intro",
   "en": "One letter is missing and the kind of document changes. Which letter?"
@@ -135,11 +120,6 @@
   "en": "The cleft, the fronting, the place where they mix, the form that inverts."
  },
  {
-  "tr": "„The missing word is „serve“, and the comma is holding its place.“",
-  "kind": "explain",
-  "en": "„The missing word is „serve“, and the comma is holding its place.“"
- },
- {
   "tr": "Mastar özne, öne çıkarılmış nesne, iki eşdizim; en sonda ortak alışkanlık.",
   "kind": "explain",
   "en": "An infinitive subject, a fronted object, two collocations; the shared habit last."
@@ -148,15 +128,5 @@
   "tr": "„would“ varsayım, „tend to“ eğilim; cümle artık gerçek bir metinle ilgili değil.",
   "kind": "explain",
   "en": "„would“ is hypothetical and „tend to“ is a tendency; the sentence is no longer about any actual text."
- },
- {
-  "tr": "„the useful one is „expected“, because it brings in people who are not in the sentence.“",
-  "kind": "explain",
-  "en": "„the useful one is „expected“, because it brings in people who are not in the sentence.“"
- },
- {
-  "tr": "„If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“.“",
-  "kind": "explain",
-  "en": "„If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“.“"
  }
 ]

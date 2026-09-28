@@ -82,7 +82,7 @@ export const enB1U22: SkillExercise[] = [
         text: "Which form has no past?",
         options: ["must", "have to", "was allowed to"],
         answer: 0,
-        explain: "„„Must“ has no past. There is no „musted“…“",
+        explain: "„‚Must‘ has no past. There is no ‚musted‘…“",
       },
       {
         kind: "truefalse",
@@ -118,7 +118,7 @@ export const enB1U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["where the rule is mine", "for his rules", "for now"],
-        explain: "„I use „must“ where the rule is mine and „have to“ where it belongs to the company.“",
+        explain: "„I use ‚must‘ where the rule is mine and ‚have to‘ where it belongs to the company.“",
       },
     ],
   },
@@ -344,7 +344,7 @@ export const enB1U22: SkillExercise[] = [
         text: "Where does the „not“ go?",
         options: ["in front of the infinitive", "after the infinitive", "at the end"],
         answer: 0,
-        explain: "„the „not“ sits in front of the infinitive…“",
+        explain: "„the ‚not‘ sits in front of the infinitive…“",
       },
       {
         kind: "truefalse",

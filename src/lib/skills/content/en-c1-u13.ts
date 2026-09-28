@@ -111,7 +111,7 @@ export const enC1U13: SkillExercise[] = [
         text: "What does „where“ mean here?",
         options: ["in those cases", "in that room", "at that time"],
         answer: 0,
-        explain: "„„Where“ has been used to mean „in those cases in which“…“",
+        explain: "„‚Where‘ has been used to mean ‚in those cases in which‘…“",
       },
       {
         text: "What differs between the two families?",
@@ -124,7 +124,7 @@ export const enC1U13: SkillExercise[] = [
         text: "„Whereas“ cannot be taken apart by a reader who does not already know it.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„„whereas“ cannot be taken apart by anybody who does not already know the answer.“",
+        explain: "„‚whereas‘ cannot be taken apart by anybody who does not already know the answer.“",
       },
       {
         kind: "gapfill",
@@ -212,7 +212,7 @@ export const enC1U13: SkillExercise[] = [
         text: "What does „work intensification“ count?",
         options: ["what went in", "what came out", "the month"],
         answer: 0,
-        explain: "„„Work intensification“ counts what went in.“",
+        explain: "„‚Work intensification‘ counts what went in.“",
       },
       {
         text: "What cannot be true or false?",

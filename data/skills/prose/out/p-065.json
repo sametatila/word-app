@@ -65,11 +65,6 @@
   "en": "What does the model not know? And which number does the hedge hide?"
  },
  {
-  "tr": "„„Complete“ is a threshold rather than a direction.“",
-  "kind": "explain",
-  "en": "„„Complete“ is a threshold rather than a direction.“"
- },
- {
   "tr": "Gönderme, sınırlama, çerçeve; en sonda sıranın önemi.",
   "kind": "explain",
   "en": "A pointer, a limit, a frame; the order last."

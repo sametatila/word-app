@@ -84,7 +84,7 @@ export const enC1U03: SkillExercise[] = [
         text: "What does „not exactly cheap“ mean?",
         options: ["expensive", "reasonable", "free"],
         answer: 0,
-        explain: "„„Not exactly cheap“ means expensive.“",
+        explain: "„‚Not exactly cheap‘ means expensive.“",
       },
       {
         text: "Why is the claim left deniable?",
@@ -97,7 +97,7 @@ export const enC1U03: SkillExercise[] = [
         text: "„Hardly“ carries its own „not“ and takes no second one.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„It carries its own „not“, and a second one cannot be added…“",
+        explain: "„It carries its own ‚not‘, and a second one cannot be added…“",
       },
       {
         kind: "gapfill",
@@ -176,7 +176,7 @@ export const enC1U03: SkillExercise[] = [
         text: "Which link is the loosest?",
         options: ["this", "such", "the latter"],
         answer: 0,
-        explain: "„„This“ on its own is the loosest of the links.“",
+        explain: "„‚This‘ on its own is the loosest of the links.“",
       },
       {
         text: "What does „the latter“ mean?",
@@ -362,7 +362,7 @@ export const enC1U03: SkillExercise[] = [
         text: "Which of the three is strongest?",
         options: ["substantiate", "postulate", "refute"],
         answer: 0,
-        explain: "„„Substantiate“ is the strongest of the three: evidence was produced.“",
+        explain: "„‚Substantiate‘ is the strongest of the three: evidence was produced.“",
       },
       {
         kind: "truefalse",
