@@ -5,13 +5,13 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { InboxIcon } from "../ui/icons";
+import { BellIcon } from "../ui/icons";
 import { useTheme, radii, spacing } from "../theme";
 import { useUnread } from "./useUnread";
 import { t } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 
-/** Başlıktaki gelen kutusu zili — okunmamış varsa rozet. */
+/** Başlıktaki zil — Bildirimler (istekler, lig, sistem mesajları); okunmamış varsa rozet. */
 export function InboxBell() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -21,7 +21,7 @@ export function InboxBell() {
   if (useAuth().user?.guest) return null;
   return (
     <PressableScale hitSlop={4} onPress={() => nav.navigate("Inbox")} accessibilityLabel={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-      <InboxIcon color={colors.text} size={20} />
+      <BellIcon color={colors.text} size={20} />
       {unread > 0 ? (
         <View style={{ position: "absolute", top: -3, right: -3, minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: spacing.xs, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center" }}>
           <Text variant="micro" color={colors.badgeInk} style={{ fontWeight: "800" }}>{unread > 9 ? "9+" : unread}</Text>

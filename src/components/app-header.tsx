@@ -60,27 +60,24 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
       </div>
       <div className="flex shrink-0 items-center gap-2">
         {/*
-          Seri rozeti yalnız seri VARKEN. Sıfır bir seri, kullanıcıya
-          hatırlatılacak bir şey değil; mobilde de çizilmiyor.
-
-          Dokununca ilerlemeye gidiyor: seri bir sayı değil bir geçmiş, ve
-          "kaç gün" sorusunun devamı hep "hangi günler" oluyor.
+          ALEV HEP GÖRÜNÜR (2026-09-28, Samet'in kararı): seri 0 olunca
+          kayboluyordu ve Gelişim'e giden tek yol oydu. Sıfırda sönük; dokununca
+          yine Gelişim. Mobil `AppHeader` ile aynı.
         */}
-        {streak > 0 ? (
-          <Link
-            href="/profile/progress"
-            prefetch={false}
-            aria-label={t("appheader.progress")}
-            className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"
-            style={{
-              background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
-              color: "var(--color-flame)",
-            }}
-          >
-            <FlameIcon size={16} />
-            {streak}
-          </Link>
-        ) : null}
+        <Link
+          href="/profile/progress"
+          prefetch={false}
+          aria-label={t("appheader.progress")}
+          className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"
+          style={
+            streak > 0
+              ? { background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }
+              : { background: "var(--surface-2)", color: "var(--text-faint)" }
+          }
+        >
+          <FlameIcon size={16} />
+          {streak}
+        </Link>
         <NotificationBell />
         <Link
           href="/profile"

@@ -9,7 +9,7 @@ import { RetryButton } from "@/components/retry-button";
 import { FlowColumn, StateBody } from "@/components/flow";
 
 export const dynamic = "force-dynamic";
-export const generateMetadata = titleMeta("friends.friends");
+export const generateMetadata = titleMeta("nav.friends");
 export default async function FriendsPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   const t = await getT();
   const userId = await getUserId();
@@ -25,7 +25,7 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
             boyu ve sağdaki kimlik bir var bir yok oluyordu. Sosyal ayarların
             dişlisi başlığa SIĞMIYOR (dar telefonda dört düğme başlığı ezer),
             kimlik kartının köşesinde (`FriendsHub`). */}
-        <AppHeader title={t("friends.friends")} />
+        <AppHeader title={t("nav.friends")} />
         <FriendsHub me={me} initialTab={hubTab(tab)} />
       </div>
     );

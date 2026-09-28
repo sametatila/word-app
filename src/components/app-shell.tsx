@@ -16,9 +16,8 @@ import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
 import { flushPendingAnswers } from "@/lib/answer-queue";
 import { flushPendingConversations } from "@/lib/conversation-queue";
-import { useLang, useT } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
-import { BoltIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, UserIcon } from "./icons";
+import { useT } from "@/lib/i18n/client";
+import { HandshakeIcon, LearnIcon, PathIcon, SettingsIcon, SkillsIcon, UserIcon } from "./icons";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -105,9 +104,11 @@ export function useCourse(): string {
  * zaten başlıktaki zil götürüyor (`NotificationBell` → `/inbox`), hatırlatma
  * anahtarları da Ayarlar'ın kendi bölümünde. Satır kaldırıldı.
  */
+/* 2026-09-28 (Samet'in kararı): ayraç altında yalnız Profil ve Ayarlar.
+   Kelimelerim Profil › Gelişim'de; seri ve XP başlıktaki alevde ve Profil'de. */
 const SECONDARY = [
-  { href: "/words", labelKey: "profile.my_words", Icon: ListIcon },
-  { href: "/profile", labelKey: "profile.profile", Icon: UserIcon },
+  { href: "/profile", labelKey: "profile.profile", Icon: UserIcon, exact: true },
+  { href: "/profile/settings", labelKey: "settings.settings", Icon: SettingsIcon, exact: false },
 ];
 
 export function AppShell({
@@ -381,7 +382,7 @@ export function AppShell({
         */}
         <nav className="mt-4 flex flex-col gap-1 border-t pt-4" style={{ borderColor: "var(--border)" }}>
           {SECONDARY.map((item) => {
-            const active = pathname.startsWith(item.href);
+            const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
@@ -399,9 +400,6 @@ export function AppShell({
           })}
         </nav>
 
-        <div className="mt-auto">
-          <StatPills streak={stats.streak} xp={stats.xp} />
-        </div>
       </aside>
 
       <div className="relative flex min-w-0 flex-1 flex-col">
@@ -525,43 +523,3 @@ export function AppShell({
   );
 }
 
-function StatPills({ streak, xp }: { streak: number; xp: number }) {
-  /*
-   * SAYI BİÇİMİ SÖZLÜKTEN. XP rozeti ham sayıyı basıyordu ("12450"), oysa
-   * webin geri kalanı `formatNumber` kullanıyor: Türkçe ve Almanca arayüzde
-   * binlik ayracı nokta ("12.450"), İngilizcede virgül. Üst bar uygulamanın
-   * her ekranında duruyor, yani ayraçsız sayı en çok görülen sayıydı.
-   * Android'de bu rozet yok (telefon başlığı dar, orada yalnız seri var) —
-   * karşılaştırma bu yüzden webin kendi içinde.
-   */
-  const lang = useLang();
-  return (
-    <div className="flex items-center gap-2 text-strong">
-      {/*
-        SERİ SIFIRSA ROZET HİÇ ÇİZİLMEZ. "0" yazan bir alev rozeti bir sayı
-        değil, bir ödül işareti — henüz serisi olmayan kullanıcıya her ekranda
-        sıfır göstermek kazanılmamış bir madalyanın boş çerçevesi gibi duruyor.
-        Android'in aynı rozeti baştan beri `streak > 0` koşuluna bağlı
-        (`ui/AppHeader`), web her zaman çiziyordu.
-      */}
-      {streak > 0 ? (
-        <span
-          className="flex items-center gap-1 rounded-full px-2.5 py-1"
-          style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
-        >
-          <FlameIcon size={15} /> {streak}
-        </span>
-      ) : null}
-      <span
-        className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
-      >
-        {/* XP GLİFİ BOLT. Burada `SparkIcon` çiziliyordu; Spark bu uygulamada
-            kombo/yapay zeka/akış işareti, XP'nin glifi `BoltIcon` — profil
-            rozeti de aynı nedenle düzeltilmişti (bkz. "profil XP rozetinin
-            glifi" kapısı) ve Android XP'yi her yerde Bolt ile yazıyor. */}
-        <BoltIcon size={15} /> {formatNumber(xp, lang)}
-      </span>
-    </div>
-  );
-}

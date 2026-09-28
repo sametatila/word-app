@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { social } from "@/lib/social/client";
 import { useEffect, useState } from "react";
-import { InboxIcon } from "@/components/icons";
+import { BellIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -69,7 +69,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
       className={`pressable relative flex h-11 w-11 shrink-0 items-center justify-center ${className}`}
       style={{ borderRadius: "var(--radius-tile)", background: "var(--surface-2)", color: "var(--text)" }}
     >
-      <InboxIcon size={20} />
+      <BellIcon size={20} />
       {unread > 0 ? (
         <span
           className="absolute -right-[3px] -top-[3px] min-w-[18px] rounded-full px-1 text-center text-micro leading-[18px]"

@@ -37,7 +37,7 @@ function hrefFor(n: NotificationView): string {
        şeyin bulunduğu yere değil. Android doğru yere götürüyor
        (`InboxScreen` `open`). */
     case "league_up":
-      return "/leaderboard";
+      return "/friends?tab=league";
     /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir); destek
        sayfası itiraz yolunu anlatıyor. */
     case "report_closed":

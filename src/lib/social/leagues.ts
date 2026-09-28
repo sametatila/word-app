@@ -300,7 +300,7 @@ export async function closeLeagueWeek(lastWeek: string): Promise<void> {
           titleKey: "push.league_up_title",
           bodyKey: "push.league_up_body",
           vars: { league, rank: r.rank },
-          url: "/leaderboard",
+          url: "/friends?tab=league",
           tag: "league",
         },
       );

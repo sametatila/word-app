@@ -76,7 +76,7 @@ export function InboxScreen() {
       case "friend_accepted": if (n.actor?.username) nav.navigate("User", { username: n.actor.username }); else goFriends(nav); break;
       case "quest_invite": case "quest_accepted": case "quest_completed": goFriends(nav, "friends"); break;
       case "nudge": nav.navigate("Tabs"); break;
-      case "league_up": nav.navigate("Leaderboard"); break;
+      case "league_up": goFriends(nav, "league"); break;
       /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir), satır
          kendini anlatıyor; akışa atmak alakasız bir yere götürürdü. */
       case "report_closed": break;

@@ -16,7 +16,9 @@ import { track } from "@/lib/track";
  */
 export function inviteText(lang: NativeLang, course: string | null | undefined, code?: string | null): string {
   const origin = typeof window === "undefined" ? "https://www.lernomi.app" : window.location.origin;
-  const link = code ? `${origin}/premium?code=${code}` : origin;
+  /* `/r/<KOD>` — mobil `inviteLink` ile aynı adres (2026-09-28). Eski
+     `/premium?code=` iOS'ta kod kutusu olmadığı için bağı kuramıyordu. */
+  const link = code ? `${origin}/r/${code}` : origin;
   return translate(lang, "share.invite", { lang: courseName(course, lang), link });
 }
 

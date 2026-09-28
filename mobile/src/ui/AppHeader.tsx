@@ -50,12 +50,12 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
         </Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-        {streak > 0 && (
-          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
-            <FlameIcon color={colors.streakText} size={16} />
-            <Text variant="bodyStrong" color={colors.streakText}>{streak}</Text>
-          </PressableScale>
-        )}
+        {/* ALEV HEP GÖRÜNÜR (2026-09-28): seri 0 olunca kayboluyordu ve
+            Gelişim'e giden tek yol oydu. Sıfırda sönük, dokununca yine Gelişim. */}
+        <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: streak > 0 ? soft(colors.streak) : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+          <FlameIcon color={streak > 0 ? colors.streakText : colors.textFaint} size={16} />
+          <Text variant="bodyStrong" color={streak > 0 ? colors.streakText : colors.textFaint}>{streak}</Text>
+        </PressableScale>
         {/* Sosyal gelen kutusu: istek, tepki, dürtme. Uzak bildirim artık var (FCM)
             ama izin reddedilebilir ve jeton ölebilir; rozet tek güvenilir sayaç. */}
         <InboxBell />

@@ -11,19 +11,20 @@
  *
  * Buradaki iki şey de saf veri: istemci de sunucu da okuyabilir.
  */
-export type HubTab = "friends" | "feed" | "find";
+export type HubTab = "league" | "friends" | "feed";
 
+/** Topluluk sekmesi (2026-09-28): Lig · Arkadaşlar · Akış; ilk açılan Lig. */
 export const HUB_TABS: { key: HubTab; label: string }[] = [
+  { key: "league", label: "leaderboard.league" },
   { key: "friends", label: "social.tab_friends" },
   { key: "feed", label: "friends.tab_feed" },
-  { key: "find", label: "friends.tab_find" },
 ];
 
-/** Eski adresler (bildirimler, kayıtlı bağlantılar) hâlâ çalışsın. */
-const ALIAS: Record<string, HubTab> = { quests: "friends", requests: "friends" };
+/** Eski adresler (bildirimler, kayıtlı bağlantılar) hâlâ çalışsın: "Bul" Arkadaşlar'da. */
+const ALIAS: Record<string, HubTab> = { quests: "friends", requests: "friends", find: "friends" };
 
 export function hubTab(raw: string | undefined): HubTab {
-  if (!raw) return "friends";
+  if (!raw) return "league";
   if (HUB_TABS.some((t) => t.key === raw)) return raw as HubTab;
-  return ALIAS[raw] ?? "friends";
+  return ALIAS[raw] ?? "league";
 }

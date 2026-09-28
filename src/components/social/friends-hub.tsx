@@ -2,21 +2,19 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import { EmptyCard } from "@/components/empty-card";
-import Link from "next/link";
-import { SettingsIcon, UserPlusIcon } from "@/components/icons";
-import { MyAvatar } from "@/components/avatar";
-import { HandshakeIcon } from "@/components/icons";
+import { ShareIcon, UserPlusIcon, HandshakeIcon } from "@/components/icons";
 import { PersonRowSkeleton } from "@/components/skeleton";
-import { track } from "@/lib/track";
+import { apiFetch } from "@/lib/api-fetch";
+import { inviteText, shareInvite } from "@/lib/share";
 import { errorText, social, type FriendsView, type SocialMeView } from "@/lib/social/client";
 import { Feed } from "./feed";
 import { Find } from "./find";
 import { FriendList } from "./friend-list";
 import { FriendsBoard } from "./friends-board";
+import { LeagueBoard } from "./league-board";
 import { Quests } from "./quests";
 import { Requests } from "./requests";
 import { useT, useLang } from "@/lib/i18n/client";
-import { courseName } from "@/lib/courses";
 import { useShell } from "@/components/app-shell";
 import { HUB_TABS, type HubTab } from "@/lib/social/hub-tab";
 import { ErrorText } from "./error-text";
@@ -26,30 +24,24 @@ import { ErrorText } from "./error-text";
 const TABS = HUB_TABS;
 
 /**
- * Sosyal merkez — tek sayfa, ÜÇ sekme. Üstte kimlik kartı: kullanıcı adı ilk
- * kez burada görülür (otomatik atanır) ve profil bağlantısı buradan
- * paylaşılır; davetin adresi bu. Sekme URL'de (`?tab=`) durur ki bildirimden
- * gelen kişi doğrudan yerine düşsün.
+ * TOPLULUK — mobil `FriendsScreen` ile aynı kurgu (2026-09-28, Samet'in kararı;
+ * `docs/plan/profil-ayarlar-topluluk.md`).
  *
- * Beş sekmeydi ve ikisi kalıcı olmayı hak etmiyordu. "İstekler" haftanın
- * neredeyse tamamında boştu — istek gelmesi istisna, sekme ise sürekli.
- * "Görevler" ise tek bir kartı taşıyordu: sunucu kişi başına aynı anda tek
- * ortak göreve izin veriyor, yani o sekme tanım gereği hiçbir zaman bir
- * listeye dönüşemezdi. İkisi de asıl işlerinin yanına taşındı: gelen istekler
- * ve bu haftanın görevi arkadaş listesinin başında, gönderilen istekler
- * "Bul"un altında.
+ * Üç üst sekme: LİG (ilk açılan; "Grubum / Arkadaşlar" süzgeci, arkadaş
+ * tablosunun tek yeri), ARKADAŞLAR (gelen istekler, ortak görev, liste,
+ * arama, gönderilen istekler, tek davet `/r/KOD`) ve AKIŞ. Kimlik kartı ve
+ * dişli kalktı: kimlik Profil'de, sosyal ayarlar Ayarlar › Hesap / Gizlilik'te.
+ * Sekme adreste (`?tab=`) durur; eski `?tab=find` Arkadaşlar'a düşer.
  */
 export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: HubTab }) {
   const t = useT();
   const lang = useLang();
   const { course } = useShell();
   const [tab, setTab] = useState<HubTab>(initialTab);
+  const [board, setBoard] = useState<"group" | "friends">("group");
   /*
-   * SEKME ŞERİDİ, BAĞLANTI ŞERİDİ DEĞİL. Çipler `aria-current="page"`
-   * taşıyordu ve o, "bir bağlantı kümesindeki GEÇERLİ SAYFA" demek — burada
-   * ne bağlantı var ne sayfa değişiyor (adres yalnız `?tab=` ile
-   * tazeleniyor). `<nav>` da gereksiz bir gezinme dönüm noktası açıyordu.
-   * Doğrusu `tablist`/`tab`/`tabpanel`; Android'de aynısı (`FriendsScreen`).
+   * SEKME ŞERİDİ, BAĞLANTI ŞERİDİ DEĞİL: `tablist`/`tab`/`tabpanel`; Android'de
+   * aynısı (`FriendsScreen`).
    */
   const kok = useId();
   const sekmeId = (k: string) => `${kok}-${k}`;
@@ -66,13 +58,8 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
       setIncoming(d.incoming.length);
       setErr(null);
     } catch (e) {
-      /* AĞ HATASI "KİMSE YOK" DEĞİL. Hata boş bir görünüme çevriliyordu
-         (`friends: []`) ve sekme "henüz arkadaşın yok" kartına düşüyordu:
-         bağlantı koptuğunda arkadaşları olan kullanıcı onların silindiğini
-         görüyordu. Hemen altındaki sıralama kartı aynı kararı kendi içinde
-         zaten veriyor (`friends-board`). Android da aynı turda düzeltildi
-         (`FriendsScreen`). Önceki veri varsa o kalıyor; hiç yoksa sekme hata
-         kartını gösteriyor. */
+      /* AĞ HATASI "KİMSE YOK" DEĞİL: önceki veri varsa o kalıyor; hiç yoksa
+         sekme hata kartını gösteriyor (Android `FriendsScreen` ile aynı). */
       setErr(errorText(e));
     }
   }, []);
@@ -92,130 +79,26 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
     }
   }
 
-  async function share() {
-    /* `src=invite` DAVETIN VARIŞ TARAFINI ÖLÇÜYOR.
-       `components/telemetry` bu işareti görünce `invite_open` yazıyor ve
-       panelde davet hunisi o olaya bakıyor. İşaret hiçbir paylaşım yüzeyinde
-       konmuyordu — iki platform da çıplak `/u/<ad>` paylaşıyordu — yani huninin
-       varış yarısı ölçülüyor GİBİ görünüyor, gerçekte hep sıfır kalıyordu.
-       Mobil paylaşım da aynı işareti koyuyor (`FriendsScreen`) ve derin bağlantı
-       onu okuyup aynı olayı yazıyor (`lib/deepLink`, `App.tsx`). */
-    const url = `${window.location.origin}/u/${me.username}?src=invite`;
-    /* DAVET METNİ ÇEVİRİDEN. Web'de cümle doğrudan Türkçe yazılıydı: İngilizce
-       ya da Almanca oynayan kullanıcı arkadaşına Türkçe bir davet gönderiyordu.
-       Öğrenilen dil de "Almanca" diye sabitti - İngilizce kursundaki kullanıcı
-       "Almanca çalışıyorum" diye paylaşıyordu. Android ikisini de yerine
-       koyuyor (`friends.share_text`). */
-    const text = t("friends.share_text", { lang: courseName(course, lang), link: url });
-    track("share", 0, "profile");
+  /* TEK DAVET — ödüllü kod bağlantısı (`/r/KOD`): katılan kişi davet edene
+     arkadaşlık isteği gönderir, kabul edince ortak seri başlar. Kod okunamazsa
+     bağlantı yine paylaşılıyor. */
+  async function invite() {
+    let code: string | null = null;
     try {
-      if (navigator.share) {
-        await navigator.share({ text, url });
-        return;
-      }
+      const res = await apiFetch("/api/premium/referral", { cache: "no-store" });
+      if (res.ok) code = ((await res.json()) as { code?: string }).code ?? null;
     } catch {
-      /* paylaşım kapatıldı */
+      /* kod olmadan da davet edilebilir */
     }
-    try {
-      await navigator.clipboard.writeText(url);
+    if ((await shareInvite(inviteText(lang, course, code))) === "copied") {
       setCopied(true);
       setTimeout(() => setCopied(false), 2200);
-    } catch {
-      /* pano yok */
     }
   }
 
   return (
     <div className="mx-auto w-full max-w-3xl">
-      {/*
-        KİMLİK KARTI — Profil'deki kartla aynı kurgu (mobil `FriendsScreen`
-        de öyle): ortalanmış arma, ad, kullanıcı adı ve rozetler.
-
-        Önce tek satırlık sıkışık bir şeritti: 44px arma, iki satır metin, bir
-        buton ve bir dişli yan yana. 360 piksellik bir ekranda davet düğmesinin
-        etiketi ("Davet et") armanın altına düşüyordu ve kullanıcı adı —
-        davetin ADRESİ, bu ekranın var oluş sebebi — kırpılıyordu.
-      */}
-      <section className="card relative flex flex-col items-center p-5">
-        {/* Sosyal ayarlar kartın köşesinde: sekme başlığı artık diğer
-            sekmelerle aynı ve dördüncü bir düğmeye yer yok. 44 px karo +
-            22 px dişli (Android `HeaderButton`). */}
-        <Link
-          href="/friends/settings"
-          prefetch={false}
-          aria-label={t("friends.social_settings")}
-          className="pressable absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-tile"
-          style={{ background: "var(--surface-2)" }}
-        >
-          <SettingsIcon size={22} />
-        </Link>
-        {/* KENDİ avatarın: yerel seçim anında görünsün (başlıktaki ile aynı kaynak). */}
-        <MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={64} />
-        <p className="mt-3 text-h3">{me.name ?? t("social.unnamed")}</p>
-        <p className="muted text-caption">@{me.username}</p>
-        <div className="mt-3 flex gap-2">
-          <span
-            className="rounded-full px-3 py-1.5 text-caption"
-            style={{
-              /* %14 - bkz. `unit-pane`: %16'da açık temada 4.44, eşik 4.5. */
-              background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)",
-              color: "var(--color-mint)",
-            }}
-          >
-            {t("friends.count_friends", { n: me.counts.friends })}
-          </span>
-          {/* Bekleyen istek ve okunmamış rozetleri mobilde de burada; web'de
-              hiç çizilmiyordu ve "3 istek var" bilgisi yalnız sekme
-              rozetinde kalıyordu. */}
-          {me.counts.incoming > 0 ? (
-            <span
-              className="rounded-full px-3 py-1.5 text-caption"
-              style={{
-                /* %14 - %16'da 4.47, eşik 4.5. */
-                background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
-                color: "var(--color-flame)",
-              }}
-            >
-              {t("friends.count_requests", { n: me.counts.incoming })}
-            </span>
-          ) : null}
-          {me.counts.unread > 0 ? (
-            <span
-              className="rounded-full px-3 py-1.5 text-caption"
-              style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
-                color: "var(--color-brand)",
-              }}
-            >
-              {t("friends.count_new", { n: me.counts.unread })}
-            </span>
-          ) : null}
-        </div>
-      </section>
-
-      {/* Davet — premium bandıyla aynı dil: tam genişlikte, dolu zemin.
-          Bu ekranın tek asıl eylemi o ve satır sonunda bir düğme olarak
-          durduğunda öyle görünmüyordu. */}
-      <button
-        onClick={() => void share()}
-        className="pressable mt-3 flex w-full items-center gap-3 rounded-card p-4 glow-tint"
-        style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
-      >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile bg-white/20">
-          <HandshakeIcon size={22} />
-        </span>
-        <span className="min-w-0 flex-1 text-left">
-          <span className="block text-h3">{t(copied ? "socialw.link_copied" : "friends.invite_friend")}</span>
-          <span className="block text-caption text-white/85">{t("friends.send_your_profile_link_and_study")}</span>
-        </span>
-      </button>
-
-      {/* Sekmeler çipti ama DOLGUSU yoktu: `.chip` yalnız kenarlık, yarıçap
-          ve renk veriyor, ölçüyü kullanan yer seçiyor. Sonuç, yan yana yapışık
-          etiketlerdi — seçili olan dolu zeminliyken bile nerede bittiği
-          okunmuyordu. Rozet artık "Arkadaşlar"da: gelen istekler o sekmenin
-          başında duruyor. */}
-      <div role="tablist" aria-label={t("socialw.tabs")} className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1">
+      <div role="tablist" aria-label={t("socialw.tabs")} className="flex gap-1 rounded-panel p-1" style={{ background: "var(--surface-2)" }}>
         {TABS.map((tb) => (
           <button
             key={tb.key}
@@ -224,12 +107,13 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             type="button"
             aria-selected={tab === tb.key}
             aria-controls={panelId}
-            className={`chip shrink-0 px-3.5 py-2 text-caption ${tab === tb.key ? "chip-active" : ""}`}
+            className="pressable flex flex-1 items-center justify-center gap-1.5 rounded-tile px-3 py-2 text-strong"
+            style={tab === tb.key ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft-sm)" } : { color: "var(--text-muted)" }}
             onClick={() => go(tb.key)}
           >
             {t(tb.label)}
             {tb.key === "friends" && incoming > 0 ? (
-              <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame-500)", color: "var(--color-ink-900)" }}>
+              <span className="rounded-full px-1.5 text-micro" style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}>
                 {incoming}
               </span>
             ) : null}
@@ -237,11 +121,9 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         ))}
       </div>
 
-      <div id={panelId} role="tabpanel" aria-labelledby={sekmeId(tab)} tabIndex={0} className="mt-3">
-        {/* Hata metninin yanında YERİNDE tekrar deneme: Android burada bir
-            "tekrar dene" düğmesi gösteriyor (`FriendsScreen`) ve geçici bir
-            ağ hatasında kullanıcının sekmeyi terk etmesi gerekmiyor. */}
-        {err ? (
+      <div id={panelId} role="tabpanel" aria-labelledby={sekmeId(tab)} tabIndex={0} className="mt-4">
+        {/* Hata metninin yanında YERİNDE tekrar deneme (Android `FriendsScreen`). */}
+        {err && tab !== "league" ? (
           <div className="mb-2 flex items-center gap-2">
             <ErrorText text={err} className="text-caption" />
             <button type="button" onClick={() => void reload()} className="chip px-3 py-1 text-caption">
@@ -249,70 +131,65 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             </button>
           </div>
         ) : null}
+
+        {tab === "league" ? (
+          <div>
+            {/* Grubum / Arkadaşlar — aynı haftanın iki tablosu; arkadaş tablosu yalnız burada. */}
+            <div role="tablist" aria-label={t("leaderboard.league")} className="mb-3 flex gap-1.5">
+              {(["group", "friends"] as const).map((k) => (
+                <button
+                  key={k}
+                  role="tab"
+                  type="button"
+                  aria-selected={board === k}
+                  className={`chip px-3.5 py-2 text-caption ${board === k ? "chip-active" : ""}`}
+                  onClick={() => setBoard(k)}
+                >
+                  {t(k === "group" ? "community.my_group" : "social.tab_friends")}
+                </button>
+              ))}
+            </div>
+            {board === "group" ? <LeagueBoard /> : <FriendsBoard />}
+          </div>
+        ) : null}
+
         {tab === "friends" ? (
           <div className="flex flex-col gap-4">
-            {/*
-              İSKELET YÜKLENEN DÜZENİN KENDİSİ OLMALI.
-
-              Yükleme dalı üç kart vaat ediyordu: gelen istek kartı, ortak
-              görev kartı ve iki kişi satırı. Oysa gelen istek istisna
-              (haftanın neredeyse tamamında hiç yok) ve görev kartı ancak
-              arkadaşı olana çiziliyor — yani yükleme bitince iki kart birden
-              KAYBOLUYOR, altındaki sıralama tablosu da o an kendi iskeletine
-              başlıyordu: ekran önce uzuyor, sonra kısalıyor, sonra yine
-              uzuyordu. Eski hâli (yalnız kişi satırları) ters yöne kayıyordu;
-              bu tur ikisinin arasını buldu.
-
-              Artık iskelet yalnız BEKLENEN düzeni çiziyor (kişi satırları) ve
-              sıralama tablosu iki durumda da yerinde duruyor — kendi
-              iskeletini kendisi yönetiyor, yani o blok hiç yerinden
-              oynamıyor. Koşullu kartlar için iskelet çizilmiyor: olmayan bir
-              kartın sözünü vermek, onu hiç vaat etmemekten kötü.
-              Android'de aynısı (`FriendsScreen`).
-            */}
             {err && data === null ? (
-              <EmptyCard
-                role="alert"
-                icon={HandshakeIcon}
-                tint="var(--color-sky)"
-                title={t("friends.couldn_t_load")}
-                text={t("social.err_offline")}
-              />
+              <EmptyCard role="alert" icon={HandshakeIcon} tint="var(--color-sky)" title={t("friends.couldn_t_load")} text={t("social.err_offline")} />
             ) : data === null ? (
               <PersonRowSkeleton rows={2} />
             ) : (
               <>
                 {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
-                    taahhüdü (ortak görev), sonra liste. */}
+                    taahhüdü (ortak görev), liste, sonra arama. */}
                 <Requests incoming={data.incoming} outgoing={data.outgoing} side="incoming" onChanged={() => void reload()} />
                 {data.friends.length ? <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} /> : null}
                 {data.friends.length ? (
                   <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
                 ) : (
-                  <EmptyCard
-                    icon={UserPlusIcon}
-                    tint="var(--color-mint)"
-                    title={t("friends.no_friends_yet")}
-                    text={t("friends.search_by_username_or_send_your")}
-                    action={
-                      <button className="btn btn-primary px-4 py-2.5" onClick={() => go("find")}>
-                        {t("friends.find_friends")}
-                      </button>
-                    }
-                  />
+                  <EmptyCard icon={UserPlusIcon} tint="var(--color-mint)" title={t("friends.no_friends_yet")} text={t("friends.search_by_username_or_send_your")} />
                 )}
+                <Find onChanged={() => void reload()} />
+                <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} />
               </>
             )}
-            <FriendsBoard />
+            <button
+              type="button"
+              onClick={() => void invite()}
+              className="pressable flex w-full items-center gap-3 rounded-card p-4 text-left"
+              style={{ border: "1.5px dashed var(--color-brand)", color: "var(--color-brand)" }}
+            >
+              <ShareIcon size={22} />
+              <span className="min-w-0 flex-1">
+                <span className="block text-strong">{t(copied ? "referral.copied" : "friends.invite_friend")}</span>
+                <span className="muted block text-caption">{t("community.invite_sub")}</span>
+              </span>
+            </button>
           </div>
         ) : null}
-        {tab === "feed" ? <Feed onFindFriends={() => go("find")} /> : null}
-        {tab === "find" ? (
-          <div className="flex flex-col gap-4">
-            <Find onChanged={() => void reload()} />
-            {data ? <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} /> : null}
-          </div>
-        ) : null}
+
+        {tab === "feed" ? <Feed onFindFriends={() => go("friends")} /> : null}
       </div>
     </div>
   );

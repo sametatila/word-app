@@ -22,7 +22,7 @@ export type RootTabParams = {
   Learn: undefined;
   Path: undefined;
   Skills: undefined;
-  Friends: { tab?: "friends" | "feed" | "find" } | undefined;
+  Friends: { tab?: "league" | "friends" | "feed" | "find" } | undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParams>();

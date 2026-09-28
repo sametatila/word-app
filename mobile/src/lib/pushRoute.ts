@@ -18,10 +18,10 @@ import type { RootStackParams } from "../navigation/RootStack";
  */
 export const navigationRef = createNavigationContainerRef<RootStackParams>();
 
-/** Arkadaş ekranının sekmeleri — adresteki `?tab=` yalnız bunlardan biri olabilir.
-    Eski adresler (`quests`, `requests`) artık arkadaş sekmesinin başında. */
-const FRIEND_TABS = ["friends", "feed", "find"] as const;
-const ALIAS: Record<string, FriendTab> = { quests: "friends", requests: "friends" };
+/** Topluluk sekmesinin görünümleri — adresteki `?tab=` yalnız bunlardan biri olabilir.
+    Eski adresler (`quests`, `requests`, `find`) artık Arkadaşlar görünümünde. */
+const FRIEND_TABS = ["league", "friends", "feed"] as const;
+const ALIAS: Record<string, FriendTab> = { quests: "friends", requests: "friends", find: "friends" };
 type FriendTab = (typeof FRIEND_TABS)[number];
 function friendTab(v: string | null): FriendTab | undefined {
   if (!v) return undefined;
@@ -60,7 +60,8 @@ export function routeFromPush(url: string): PushRoute | null {
     const known = friendTab(tab);
     return { name: "Tabs", params: { screen: "Friends", params: known ? { tab: known } : undefined } };
   }
-  if (path.startsWith("/leaderboard")) return { name: "Leaderboard" };
+  /* Lig artık Topluluk sekmesinin ilk görünümü (2026-09-28); eski adres oraya. */
+  if (path.startsWith("/leaderboard")) return { name: "Tabs", params: { screen: "Friends", params: { tab: "league" } } };
   if (path.startsWith("/inbox")) return { name: "Inbox" };
   if (path.startsWith("/learn")) {
     const sub = path.slice("/learn/".length).split("/")[0];
