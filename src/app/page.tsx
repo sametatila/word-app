@@ -1,314 +1,512 @@
 import Link from "next/link";
+import { Bricolage_Grotesque } from "next/font/google";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getAccountUserId } from "@/lib/auth/server";
 import { SignOutLink } from "@/components/sign-out-link";
-import { Reveal } from "@/components/reveal";
 import { InstallGuide } from "@/components/install-guide";
-import {
-  CardsIcon,
-  CheckIcon,
-  KeyboardIcon,
-  ListenIcon,
-  LogoMark,
-  PuzzleIcon,
-  QuizIcon,
-  SortIcon,
-  StackIcon,
-  TagIcon,
-  TranslateIcon,
-  WriteIcon,
-} from "@/components/icons";
+import { LandingMotion } from "@/components/landing/landing-motion";
+import s from "@/components/landing/landing.module.css";
 import { getT, getLang } from "@/lib/i18n/server";
-import { courseName, courseSub, onboardingCoursesFor } from "@/lib/courses";
 import { legalPath } from "@/lib/legal";
-import { formatNumber } from "@/lib/i18n/dict";
-import { PLAYABLE_GAMES } from "@/lib/types";
-import { wordCountsByCourse } from "@/lib/landing-stats";
-
-/* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
-   sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor. */
-/* GLIF DE UYGULAMADAKI GLIF. Yukaridaki not adlarin uygulamayla ayni olmasini
-   istiyor; ikon da ayni sebebe tabi. Burada ucuncu bir kume yaziliydi
-   (eslestirmede `LinkIcon`, secmelide `TargetIcon`, siralamada `ListIcon`,
-   coguldan `BookIcon`) ve ziyaretci gordugu oyunu uygulamada tanimiyordu.
-   Kume pratik ekranindaki karolarla (ve Android `PracticeScreen` META ile)
-   birebir. */
-const GAMES = [
-  { Icon: CardsIcon, name: "games.match", desc: "land.game_match" },
-  { Icon: QuizIcon, name: "games.choice", desc: "land.game_choice" },
-  { Icon: TagIcon, name: "games.article_race", desc: "land.game_artikel" },
-  { Icon: PuzzleIcon, name: "games.scramble", desc: "land.game_scramble" },
-  { Icon: WriteIcon, name: "games.cloze", desc: "land.game_cloze" },
-  { Icon: KeyboardIcon, name: "games.typing", desc: "land.game_typing" },
-  { Icon: ListenIcon, name: "games.listen", desc: "land.game_listen" },
-  { Icon: SortIcon, name: "games.order", desc: "land.game_order" },
-  { Icon: StackIcon, name: "games.plural", desc: "land.game_plural" },
-  { Icon: CheckIcon, name: "games.truefalse", desc: "land.game_truefalse" },
-  /* Çeviri oyunu listede yoktu: sayfa "on oyun" diyordu, uygulama on bir
-     oynatıyor (`PLAYABLE_GAMES`; "Bütün oyunlar" başarımı da on bir sayıyor). */
-  { Icon: TranslateIcon, name: "games.translate", desc: "land.game_translate" },
-];
+import { appControl } from "@/lib/app-control";
+import { LANDING, SCREEN_LOCALES, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
 
 /*
-  Vitrin kursları da KAYIT DEFTERİNDEN ve ziyaretçinin diline göre süzülüyor.
-  Liste elle yazılıydı; İngilizce kursu tanıtımda hiç görünmüyordu ve alt
-  başlık `c.id === "de" ? "Hochdeutsch" : "Züritüütsch"` üçlüsüyle
-  üretiliyordu — kayıt defterinin tam olarak uyardığı desen: üçüncü bir kurs
-  sessizce Züritüütsch etiketi alırdı.
+  TANITIM SAYFASI (2026-09-28, yeniden yazıldı).
 
-  Alamayacağı bir kursu ziyaretçiye tanıtmıyoruz: arayüzü Almanca olan biri
-  Almanca kursunu göremez, çünkü seçemez de.
+  Eski sayfa "oynayarak öğren" diyordu ve on bir kelime oyununu sayıyordu;
+  uygulama o sırada Patika, konuşma, deneme sınavı ve yürüyüş moduyla bambaşka
+  bir ürün olmuştu. Yeni sayfa MAĞAZA VİTRİNİNİN kendisi: aynı konumlandırma,
+  aynı cümle ("Konuş, anla, sınava hazırlan"), aynı sütun sırası ve aynı sayılar
+  (`docs/store/README.md` "Vitrin kararları"). Metin `src/content/landing.ts`te.
+
+  Ekranlar GERÇEK: iPhone 6.9" simülatöründe, üretimdeki `screenshots@lernomi.app`
+  hesabıyla çekildi, açık ve koyu tema ayrı (`public/landing/<dil>/`). Sayfa hangi
+  temadaysa telefon da o temanın ekranını gösteriyor.
+
+  Tasarım: tek yazı tipi (Bricolage Grotesque; genişlik ekseni başlıkları
+  sıkıştırıyor, optik boyut ekseni gövdeyi okunur tutuyor), tek hareket fikri
+  (kaydırdıkça çizilen iz + masaüstünde yapışkan telefon, `LandingMotion`).
 */
-const COURSE_BODY: Record<string, string> = {
-  de: "land.course_de",
-  en: "land.course_en",
+const display = Bricolage_Grotesque({
+  subsets: ["latin", "latin-ext"],
+  axes: ["opsz", "wdth"],
+  display: "swap",
+});
+
+const SCOPE_ID = "yol";
+
+/** Masaüstündeki yapışkan telefonun ekran sırası: açılış, sonra sütunlar. */
+const DOCK: ScreenId[] = ["path", "unit", "conversation", "mock-task", "walk-intro", "home", "skills"];
+
+const MOTION_CLASSES = {
+  lit: s.lit,
+  on: s.frameOn,
+  past: s.framePast,
+  base: s.trailBase,
+  walk: s.trailWalk,
+  dock: s.dock,
+  cap: s.dockCap,
 };
 
-const FEATURES = [
-  { title: "land.f_srs_title", body: "land.f_srs_body" },
-  { title: "land.f_skills_title", body: "land.f_skills_body" },
-  { title: "land.f_level_title", body: "land.f_level_body" },
-  { title: "land.f_variety_title", body: "land.f_variety_body" },
-  { title: "land.f_survival_title", body: "land.f_survival_body" },
-  { title: "land.f_courses_title", body: "land.f_courses_body" },
-];
+function Shot({ locale, id, alt, eager = false }: { locale: string; id: ScreenId; alt: string; eager?: boolean }) {
+  const src = (theme: "light" | "dark", w: 480 | 720) => `/landing/${locale}/${id}-${theme}-${w}.webp`;
+  const set = (theme: "light" | "dark") => `${src(theme, 480)} 480w, ${src(theme, 720)} 720w`;
+  const sizes = "(min-width: 960px) 340px, 280px";
+  return (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element -- iki tema için elle hazırlanmış WebP srcset; sunucuda görsel işleme yok */}
+      <img className={`${s.shot} ${s.shotLight}`} src={src("light", 720)} srcSet={set("light")} sizes={sizes} width={720} height={1564} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" />
+      {/* eslint-disable-next-line @next/next/no-img-element -- aynı sebep, koyu tema */}
+      <img className={`${s.shot} ${s.shotDark}`} src={src("dark", 720)} srcSet={set("dark")} sizes={sizes} width={720} height={1564} alt={alt} loading="lazy" decoding="async" />
+    </>
+  );
+}
+
+function Phone({ children }: { children: React.ReactNode }) {
+  return (
+    <div className={s.phone}>
+      <div className={s.screen}>{children}</div>
+    </div>
+  );
+}
+
+function InlinePhone({ locale, copy, id, caption }: { locale: string; copy: LandingCopy; id: ScreenId; caption: string }) {
+  return (
+    <figure className={s.inline}>
+      <Phone>
+        <Shot locale={locale} id={id} alt={copy.alt[id]} />
+      </Phone>
+      <figcaption>{caption}</figcaption>
+    </figure>
+  );
+}
+
+function PillarHead({ p }: { p: Pillar }) {
+  return (
+    <div className={s.head}>
+      <span className={s.node} data-node aria-hidden />
+      <h2 className={s.pillar} id={`h-${p.id}`}>
+        {p.title}
+      </h2>
+    </div>
+  );
+}
+
+function StoreBadges({ copy, ios, android }: { copy: LandingCopy; ios: string | null; android: string | null }) {
+  return (
+    <>
+      {ios ? (
+        <a className={s.badge} href={ios} rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="currentColor" strokeWidth="1.6" />
+            <path d="M9.2 16.8 13.4 7.6M14.8 16.8 10.6 7.6M7.4 13.6h9.2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" fill="none" />
+          </svg>
+          <span>
+            <small>{copy.cta.appStoreSmall}</small>
+            <b>{copy.cta.appStoreLabel}</b>
+          </span>
+        </a>
+      ) : null}
+      {android ? (
+        <a className={s.badge} href={android} rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 3.2v17.6c0 .6.6.9 1.1.6l14.5-8.3c.5-.3.5-1 0-1.3L6.1 3.6C5.6 3.3 5 3.6 5 4.2" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+            <path d="M5.4 3.6 15.3 12 5.4 20.4" fill="none" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+          <span>
+            <small>{copy.cta.playSmall}</small>
+            <b>{copy.cta.playLabel}</b>
+          </span>
+        </a>
+      ) : null}
+    </>
+  );
+}
 
 export default async function Home() {
   /*
-    "Başla" oturuma göre iki yere gidiyor.
-
-    Önce hepsi `/learn`e gidiyordu ve girişi olmayan ziyaretçi oradan doğrudan
-    giriş duvarına düşüyordu: uygulamayı görmeden hesap açması isteniyordu.
-    Mobilde ilk açılış onboarding'e gider, oradan beş kelimelik ısınmaya, hesap
-    en sona kalır. Web de öyle oldu.
+    "Başla" oturuma göre iki yere gidiyor: girişli kullanıcı kaldığı yere
+    (`/learn`), misafir kuruluma (`/setup`). Önce hepsi `/learn`e gidiyordu ve
+    girişi olmayan ziyaretçi oradan doğrudan giriş duvarına düşüyordu:
+    uygulamayı görmeden hesap açması isteniyordu.
   */
   const t = await getT();
   const lang = await getLang();
-  // Misafir web'de girişsiz: "Başla" onu kuruluma götürür, uygulama düzenine değil.
+  const copy = LANDING[lang];
+  const locale = SCREEN_LOCALES.includes(lang) ? lang : "tr";
   const signedIn = Boolean(await getAccountUserId());
   const startHref = signedIn ? "/learn" : "/setup";
-  /*
-    VİTRİN = ZİYARETÇİNİN SEÇEBİLECEĞİ KURSLAR, SAYILAR VERİDEN (içerik
-    denetimi CNT-8). Başlık, rozet ve alt başlık yalnız Almancayı ve
-    duraklatılmış Zürih kursunu anlatıyordu; arayüzü Almanca olan ziyaretçi
-    o kursu seçemiyor bile. Kurslar `onboardingCoursesFor`dan, kelime sayısı
-    `words` tablosundan, oyun sayısı `PLAYABLE_GAMES`ten.
-  */
-  const courses = onboardingCoursesFor(lang);
-  const counts = await wordCountsByCourse();
-  const totalWords = courses.reduce((s, c) => s + (counts.get(c.id) ?? 0), 0);
-  const games = PLAYABLE_GAMES.length;
-  const courseList = new Intl.ListFormat(lang, { style: "long", type: "disjunction" }).format(courses.map((c) => courseName(c.id, lang)));
-  const badge = totalWords > 0
-    ? t("land.badge", { courses: courses.map((c) => courseName(c.id, lang)).join(" · "), words: formatNumber(totalWords, lang), games })
-    : t("land.badge_nowords", { courses: courses.map((c) => courseName(c.id, lang)).join(" · "), games });
-  // "İki kurs, tek ilerleme" yalnız gerçekten iki kurs seçilebiliyorsa.
-  const features = courses.length > 1 ? FEATURES : FEATURES.filter((f) => f.title !== "land.f_courses_title");
+  const startLabel = signedIn ? copy.cta.webSignedIn : copy.cta.web;
+
+  /* Mağaza rozetleri yalnız panelde "yayında" işaretli mağaza için: yayında
+     olmayan bir mağaza sayfasına göndermek kırık bir kapı olurdu. İkisi de
+     kapalıyken tarayıcıya ekleme adımları (PWA) açılabilir kalıyor. */
+  const store = (await appControl()).store;
+  const ios = store.ios.live ? store.ios.url : null;
+  const android = store.android.live ? store.android.url : null;
+  const anyStore = Boolean(ios || android);
+
+  const actions = (
+    <div className={s.actions}>
+      <StoreBadges copy={copy} ios={ios} android={android} />
+      <Link className={s.cta} href={startHref}>
+        {startLabel}
+      </Link>
+      {signedIn ? null : <p className={s.actionsNote}>{copy.hero.noAccount}</p>}
+    </div>
+  );
+
+  const { path, talk, exam, walk, daily, skills } = copy;
 
   return (
-    <div className="relative min-h-dvh overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--color-brand), transparent 65%)" }}
-      />
-
-      {/* 320 PİKSELDE BAŞLIK SIĞMIYORDU: logo + ad (~130 px) ile tema düğmesi,
-          "Giriş yap" ve "Başla" (~206 px) 280 piksellik alana giriyordu. Tema
-          düğmesi 29 piksele eziliyor, "Giriş yap" iki satıra kırılıyordu.
-          Artık 360'tan dar ekranda tema düğmesi başlıktan kalkıyor (tema
-          varsayılan olarak sistemi izliyor; giriş sonrası Ayarlar'da da var),
-          düğmeler kırılmıyor ve kenar payı daralıyor. */}
-      <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-5 max-[359px]:px-4 short:py-3">
-        <div className="flex min-w-0 items-center gap-2">
-          <LogoMark size={36} />
-          <span className="text-h3">Lernomi</span>
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <div className="contents max-[359px]:hidden">
+    <div className={`${display.className} ${s.root}`}>
+      <header className={`${s.top} ${s.wrap}`}>
+        <Link className={s.brand} href="/">
+          {/* eslint-disable-next-line @next/next/no-img-element -- küçük sabit PNG simge */}
+          <img src="/logo-mark.png" width={34} height={34} alt="" />
+          Lernomi
+        </Link>
+        <div className={s.topActions}>
+          <span className={s.hideNarrow}>
             <ThemeToggle />
-          </div>
-          {/*
-            ÇIKIŞ BAŞLIKTA. Önce yalnız altbilgiye konmuştu ve bu yetmedi:
-            çıkmak isteyen kullanıcının uzun bir vitrin sayfasını sonuna kadar
-            kaydırması gerekiyordu, yani pratikte yine görünmüyordu. Hesap
-            durumunun yeri başlık.
-          */}
+          </span>
           {signedIn ? (
             <SignOutLink />
           ) : (
-            /*
-              GİRİŞ YAP bağlantısı YOKTU ve eksikliği çıkıştan sonra ortaya
-              çıkıyordu: `startHref` oturumsuzken `/setup`e gidiyor (misafir
-              onboarding'i, bilinçli), yani hesabı olan kullanıcının kendi
-              hesabına dönecek hiçbir kapısı kalmıyordu.
-            */
-            <Link href="/login" className="btn btn-ghost whitespace-nowrap px-3 py-2.5 text-body">
+            <Link className={s.topPlain} href="/login">
               {t("auth.sign_in")}
             </Link>
           )}
-          <Link href={startHref} className="btn btn-primary whitespace-nowrap px-4 py-2.5 text-body">
-            {t(signedIn ? "land.cta_continue" : "common.start")}
+          <Link className={s.topLink} href={startHref}>
+            {signedIn ? t("land.cta_continue") : t("common.start")}
           </Link>
         </div>
       </header>
 
-      <main className="relative mx-auto w-full max-w-6xl px-5 pb-24">
-        {/* Kısa ekranda (`short`) kahraman bölümünün dikey payı daralıyor:
-            320×568'de "Ücretsiz başla" düğmesi ilk ekranın altında kalıyordu. */}
-        <section className="py-14 text-center short:py-6 sm:py-20">
-          <Reveal>
-            <span className="muted inline-block rounded-full border px-3 py-1 text-caption" style={{ borderColor: "var(--border)" }}>
-              {badge}
-            </span>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <h1 className="mt-2 text-display sm:text-6xl sm:leading-tight">
-              {t("land.h1_before")}
-              <span className="brand-text">{t("land.h1_accent")}</span>
-              {t("land.h1_after")}
-            </h1>
-          </Reveal>
-          <Reveal delay={0.12}>
-            {/* İkinci cümle ("neyi ne zaman tekrar edeceğine uygulama karar
-                verir") aşağıdaki özellik kartlarında zaten anlatılıyordu;
-                başlığın hemen altında sistemin çalışma mantığını anlatmak,
-                daha ne olduğu söylenmeden nasıl çalıştığını anlatmak oluyor. */}
-            <p className="muted mx-auto mt-5 max-w-xl text-body sm:text-h3">
-              {t("land.hero_sub", { courses: courseList, games })}
-            </p>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              {/*
-                Giriş yapmışa "Hemen başla — ücretsiz" demek yanlış: kullanıcı
-                zaten kayıtlı ve düğme onu kaldığı yere götürüyor. Etiketin
-                durumla ayrışması, dönen kullanıcının kendi içeri kapısını
-                tanıyamamasına yol açıyordu.
-              */}
-              <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-h3 sm:w-auto">
-                {t(signedIn ? "land.cta_continue" : "land.cta_free")}
-              </Link>
-              <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-h3 sm:w-auto">
-                {t("land.cta_skills")}
-              </Link>
-            </div>
-          </Reveal>
-        </section>
+      <main>
+        <div className={s.trailScope} id={SCOPE_ID}>
+          <svg className={s.trail} data-trail aria-hidden="true" focusable="false">
+            <path className={s.trailBase} d="" />
+            <path className={s.trailWalk} d="" />
+          </svg>
 
-        <section className="mb-12 grid gap-4 sm:grid-cols-2">
-          {/* YENİ ZİYARETÇİYE SUNULAN kurslar. Liste `coursesForNative` idi ve
-              duraklatılmış lehçe kursunu da (gsw-zh) reklam ediyordu: kayıt
-              olan kullanıcı onboarding'de onu bulamıyordu, çünkü orası
-              `onboardingCoursesFor` kullanıyor. Sayfa "ücretsiz başla"nın hemen
-              altında duruyor, yani bu kartlar bir teklif - tutulmayacak bir
-              teklif olmamalı. */}
-          {courses.map((c, i) => (
-            <Reveal key={c.id} delay={i * 0.08}>
-              <div className="card h-full p-6">
-                <div className="flex items-baseline gap-2">
-                  <h3 className="text-h3">{courseName(c.id, lang)}</h3>
-                  <span className="text-caption text-[color:var(--color-brand)]">
-                    {courseSub(c.id, lang)}
-                  </span>
+          <div className={`${s.journey} ${s.wrap}`}>
+            <div className={s.legs}>
+              {/* Açılış */}
+              <section className={`${s.leg} ${s.hero}`} data-show="path" aria-labelledby="h-hero">
+                <h1 className={s.h1} id="h-hero">
+                  <span>{copy.hero.line1}</span> <span>{copy.hero.line2}</span>
+                </h1>
+                <p className={s.intro}>{copy.hero.intro}</p>
+                {actions}
+                {anyStore ? null : (
+                  <details className={s.install}>
+                    <summary>{copy.cta.install}</summary>
+                    <p className={s.muted}>{copy.cta.soon}</p>
+                    <div className={s.installBody}>
+                      <InstallGuide />
+                    </div>
+                  </details>
+                )}
+                <div className={s.heroFoot} data-leg>
+                  <span className={s.node} data-node aria-hidden />
+                  <ul className={s.stats}>
+                    {copy.stats.map((st) => (
+                      <li key={st.label}>
+                        <b>{st.value}</b>
+                        <span>{st.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className={s.statsNote}>{copy.statsNote}</p>
                 </div>
-                <p className="muted mt-2 text-body leading-relaxed">{t(COURSE_BODY[c.id] ?? "land.course_de")}</p>
-                {counts.get(c.id) ? (
-                  <p className="mt-3 text-caption font-semibold text-[color:var(--color-brand)]">
-                    {t("land.words_n", { n: formatNumber(counts.get(c.id) ?? 0, lang) })} · A1–C1
-                  </p>
-                ) : null}
-              </div>
-            </Reveal>
-          ))}
-        </section>
+              </section>
 
-        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f, i) => (
-            <Reveal key={f.title} delay={i * 0.08}>
-              <div className="card h-full p-6">
-                <div className="brand-gradient mb-4 h-1.5 w-10 rounded-full" />
-                <h3 className="text-h3">{t(f.title)}</h3>
-                <p className="muted mt-2 text-body leading-relaxed">{t(f.body)}</p>
-              </div>
-            </Reveal>
-          ))}
-        </section>
+              {/* 1 · A1'den C1'e adım adım */}
+              <section className={`${s.leg} ${s.swing}`} data-leg data-show={path.screen} aria-labelledby={`h-${path.id}`} id={path.id}>
+                <PillarHead p={path} />
+                <div className={s.body}>
+                  <p className={s.lede}>{path.lede}</p>
+                  <div className={s.steps}>
+                    <p className={s.stepsLabel}>{path.stepsLabel}</p>
+                    <ul className={s.chips}>
+                      {path.steps.map((x) => (
+                        <li key={x}>{x}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  {path.more?.map((m) => <p key={m}>{m}</p>)}
+                </div>
+                <InlinePhone locale={locale} copy={copy} id={path.screen} caption={path.caption} />
+              </section>
 
-        <section className="mt-20">
-          <Reveal>
-            <h2 className="text-center text-h1 sm:text-display">{t("land.games_title", { n: games })}</h2>
-            <p className="muted mx-auto mt-3 max-w-lg text-center text-body">
-              {t("land.games_sub")}
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {GAMES.map((g, i) => (
-              <Reveal key={g.name} delay={i * 0.06}>
-                <div className="card flex h-full items-start gap-4 p-5">
-                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-tile text-[color:var(--color-brand)]">
-                    <g.Icon size={22} />
-                  </span>
-                  <div>
-                    <h3 className="text-h3">{t(g.name)}</h3>
-                    <p className="muted mt-1 text-body">{t(g.desc)}</p>
+              {/* 2 · Konuşarak öğren */}
+              <section className={s.leg} data-leg data-show={talk.screen} aria-labelledby={`h-${talk.id}`} id={talk.id}>
+                <PillarHead p={talk} />
+                <div className={s.body}>
+                  <p className={s.lede}>{talk.lede}</p>
+                  {talk.more?.map((m) => <p key={m}>{m}</p>)}
+                  <figure className={s.talk}>
+                    <figcaption className={s.talkHead}>
+                      <span>{talk.label}</span>
+                      <span>{talk.scene}</span>
+                    </figcaption>
+                    <ol className={s.talkList}>
+                      <li className={s.fromAi}>
+                        <p className={s.who}>
+                          {talk.aiName} <span className={s.aiTag}>{talk.aiTag}</span>
+                        </p>
+                        <div className={s.bubble}>
+                          <span lang={talk.lang}>{talk.ai1}</span>
+                          <span className={s.gloss}>{talk.ai1Gloss}</span>
+                        </div>
+                      </li>
+                      <li className={s.fromMe}>
+                        <p className={s.who}>{talk.me}</p>
+                        <div className={s.bubble}>
+                          <span lang={talk.lang}>
+                            {talk.mine.before}
+                            <del>{talk.mine.wrong}</del> <ins>{talk.mine.right}</ins>
+                            {talk.mine.after}
+                          </span>
+                          <span className={s.fix}>{talk.fix}</span>
+                        </div>
+                      </li>
+                      <li className={s.fromAi}>
+                        <p className={s.who}>
+                          {talk.aiName} <span className={s.aiTag}>{talk.aiTag}</span>
+                        </p>
+                        <div className={s.bubble} lang={talk.lang}>
+                          {talk.ai2}
+                        </div>
+                      </li>
+                      <li className={s.hints}>
+                        <p>{talk.hintsLabel}</p>
+                        <ul lang={talk.lang}>
+                          {talk.hints.map((h) => (
+                            <li key={h}>{h}</li>
+                          ))}
+                        </ul>
+                      </li>
+                    </ol>
+                  </figure>
+                </div>
+                <InlinePhone locale={locale} copy={copy} id={talk.screen} caption={talk.caption} />
+              </section>
+
+              {/* 3 · Deneme sınavları */}
+              <section className={`${s.leg} ${s.swing}`} data-leg data-show={exam.screen} aria-labelledby={`h-${exam.id}`} id={exam.id}>
+                <PillarHead p={exam} />
+                <div className={s.body}>
+                  <p className={s.lede}>{exam.lede}</p>
+                  <div className={`${s.tableScroll} overflow-x-auto`}>
+                  <table className={s.table}>
+                    <thead>
+                      <tr>
+                        <th scope="col">{exam.head[0]}</th>
+                        <th scope="col">{exam.head[1]}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {exam.rows.map((r) => (
+                        <tr key={r.name}>
+                          <th scope="row">
+                            <span lang={r.nameLang}>{r.name}</span>
+                            <span>{r.local}</span>
+                          </th>
+                          <td>{r.how}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                   </div>
                 </div>
-              </Reveal>
-            ))}
+                <InlinePhone locale={locale} copy={copy} id={exam.screen} caption={exam.caption} />
+              </section>
+
+              {/* 4 · Cepte yürüyüş */}
+              <section className={s.leg} data-leg data-show={walk.screen} aria-labelledby={`h-${walk.id}`} id={walk.id}>
+                <PillarHead p={walk} />
+                <div className={s.body}>
+                  <p className={s.lede}>{walk.lede}</p>
+                  <div className={s.cue} role="img" aria-label={walk.cueLabel}>
+                    <div>
+                      <small>{walk.heardLabel}</small>
+                      <b>{walk.heard}</b>
+                    </div>
+                    <span className={s.cueGap} aria-hidden />
+                    <div className={s.said}>
+                      <small>{walk.saidLabel}</small>
+                      <b lang={walk.saidLang}>{walk.said}</b>
+                    </div>
+                  </div>
+                  <dl className={s.modes}>
+                    {walk.modes.map((m) => (
+                      <div key={m.when}>
+                        <dt>{m.when}</dt>
+                        <dd className={m.premium ? s.prem : undefined}>{m.what}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <InlinePhone locale={locale} copy={copy} id={walk.screen} caption={walk.caption} />
+              </section>
+
+              {/* 5 · Her gün birkaç dakika */}
+              <section className={`${s.leg} ${s.swing}`} data-leg data-show={daily.screen} aria-labelledby={`h-${daily.id}`} id={daily.id}>
+                <PillarHead p={daily} />
+                <div className={s.body}>
+                  <p className={s.lede}>{daily.lede}</p>
+                  <p className={s.wordsLabel}>{daily.wordsLabel}</p>
+                  <ul className={s.words} lang={daily.wordsLang}>
+                    {daily.words.map((w) => (
+                      <li key={w.word}>
+                        {w.article ? <span className={s[w.article]}>{w.article} </span> : null}
+                        {w.word}
+                        <span className={s.wordGloss} lang={lang}>
+                          {w.gloss}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  {daily.wordsNote ? <p className={s.muted}>{daily.wordsNote}</p> : null}
+                  {daily.more?.map((m) => <p key={m}>{m}</p>)}
+                </div>
+                <InlinePhone locale={locale} copy={copy} id={daily.screen} caption={daily.caption} />
+              </section>
+
+              {/* 6 · Beceriler */}
+              <section className={s.leg} data-leg data-show={skills.screen} aria-labelledby={`h-${skills.id}`} id={skills.id}>
+                <PillarHead p={skills} />
+                <div className={s.body}>
+                  <p className={s.lede}>{skills.lede}</p>
+                  <ul className={s.chips}>
+                    {skills.list.map((x) => (
+                      <li key={x}>{x}</li>
+                    ))}
+                  </ul>
+                </div>
+                <InlinePhone locale={locale} copy={copy} id={skills.screen} caption={skills.caption} />
+              </section>
+            </div>
+
+            <aside className={s.dock} aria-label={copy.dockLabel}>
+              <div className={s.dockInner}>
+                <figure style={{ margin: 0 }}>
+                  <Phone>
+                    {DOCK.map((id, i) => {
+                      const cap = id === "path" ? copy.heroCaption : [path, talk, exam, walk, daily, skills].find((p) => p.screen === id)?.caption ?? "";
+                      return (
+                        <div key={id} className={`${s.frame} ${i === 0 ? s.frameOn : ""}`} data-screen={id} data-cap={cap} aria-hidden={i === 0 ? "false" : "true"}>
+                          <Shot locale={locale} id={id} alt={copy.alt[id]} eager={i === 0} />
+                        </div>
+                      );
+                    })}
+                  </Phone>
+                  <figcaption className={s.dockCap}>{copy.heroCaption}</figcaption>
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <section className={`${s.startGrid} ${s.wrap}`} aria-labelledby="h-start">
+          <h2 className={s.startTitle} id="h-start">
+            {copy.start.title}
+          </h2>
+          <div>
+            <p className={s.startBody}>{copy.start.body}</p>
+            {actions}
           </div>
         </section>
 
-        {/* Kurulum adımları giriş yapılmadan da görünüyor: tarayıcının kendi
-            önerisi bir kez çıkıyor ve reddedilirse bir daha gelmiyor, iOS'ta
-            ise hiç gelmiyor. Uygulamayı telefonuna almak isteyen birinin önce
-            hesap açması gerekmemeli. */}
-        <section className="mt-20">
-          <Reveal>
-            <h2 className="text-center text-h1 sm:text-display">{t("land.install_title")}</h2>
-            <p className="muted mx-auto mt-3 max-w-lg text-center text-body">
-              {t("land.install_sub")}
-            </p>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <div className="mx-auto mt-8 max-w-xl">
-              <InstallGuide />
+        <section className={`${s.plans} ${s.wrap}`} aria-labelledby="h-plans">
+          <div className={s.plansHead}>
+            <h2 id="h-plans">{copy.plans.title}</h2>
+            <p>{copy.plans.sub}</p>
+          </div>
+          <div className={s.planGrid}>
+            <div className={`${s.plan} ${s.planFree}`}>
+              <h3>{copy.plans.freeTitle}</h3>
+              <ul>
+                {copy.plans.free.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+              <p className={s.earn}>{copy.plans.earn}</p>
             </div>
-          </Reveal>
+            <div className={`${s.plan} ${s.planPrem}`}>
+              <h3>{copy.plans.premiumTitle}</h3>
+              <p className={s.planSub}>{copy.plans.premiumSub}</p>
+              <ul>
+                {copy.plans.premium.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+              <p className={s.packs}>{copy.plans.packs}</p>
+              <p className={s.trial}>{copy.plans.trial}</p>
+            </div>
+          </div>
         </section>
 
-        <section className="mt-20">
-          <Reveal>
-            <div className="card brand-gradient-deep p-8 text-center text-white sm:p-12">
-              <h2 className="text-h1 sm:text-display">{t("land.cta_title")}</h2>
-              <p className="mx-auto mt-3 max-w-md text-body opacity-90">
-                {t("land.cta_body")}
-              </p>
-              <Link
-                href={startHref}
-                className="btn mt-6 bg-white px-7 py-4 text-h3 text-[color:var(--color-brand-600)]"
-              >
-                {t("land.cta_button")}
-              </Link>
-            </div>
-          </Reveal>
+        <section className={`${s.fine} ${s.wrap}`}>
+          <div>
+            <h3>{copy.fine.accountTitle}</h3>
+            {copy.fine.account.map((x) => (
+              <p key={x}>{x}</p>
+            ))}
+          </div>
+          <div>
+            <h3>{copy.fine.certTitle}</h3>
+            <p>{copy.fine.cert}</p>
+            <p className={s.small}>{copy.fine.disclaimer}</p>
+          </div>
         </section>
       </main>
 
-      <footer className="muted border-t px-5 py-8 text-center text-caption" style={{ borderColor: "var(--border)" }}>
-        {t("land.footer_source")}
-        <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
-          <Link href={legalPath("privacy", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
-          <Link href={legalPath("terms", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
-          <Link href={legalPath("support", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("land.support")}</Link>
-          <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
-          {/* Künye (hukuk denetimi LEG-5; 1.7'den beri sağlayıcı kimliği +
-              GDPR m.27 AB temsilcisi): ana sayfadan doğrudan erişilebilir.
-              Adı her dilde "Impressum" — Almanca konuşulan ülkelerde aranan
-              sözcük bu. */}
-          <Link href={legalPath("impressum", lang)} prefetch={false} className="underline-offset-4 hover:underline">Impressum</Link>
+      <footer className={s.footer}>
+        <div className={`${s.wrap} ${s.foot}`}>
+          <Link className={s.brand} href="/">
+            {/* eslint-disable-next-line @next/next/no-img-element -- küçük sabit PNG simge */}
+            <img src="/logo-mark.png" width={34} height={34} alt="" loading="lazy" />
+            Lernomi
+          </Link>
+          {/* Künye (LEG-5): ana sayfadan doğrudan erişilebilir; adı her dilde
+              "Impressum". Hesap silme bağlantısı mağaza kuralı (Play hesap
+              silme adresi). */}
+          <ul className={s.footNav}>
+            <li>
+              <Link href={legalPath("privacy", lang)} prefetch={false}>
+                {t("auth.privacy_policy")}
+              </Link>
+            </li>
+            <li>
+              <Link href={legalPath("terms", lang)} prefetch={false}>
+                {t("auth.terms_of_use")}
+              </Link>
+            </li>
+            <li>
+              <Link href={legalPath("support", lang)} prefetch={false}>
+                {t("land.support")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/account/delete" prefetch={false}>
+                {t("land.delete_account")}
+              </Link>
+            </li>
+            <li>
+              <Link href={legalPath("impressum", lang)} prefetch={false}>
+                Impressum
+              </Link>
+            </li>
+          </ul>
+          <p className={s.copy}>© Lernomi</p>
         </div>
       </footer>
+
+      <LandingMotion scopeId={SCOPE_ID} classes={MOTION_CLASSES} />
     </div>
   );
 }

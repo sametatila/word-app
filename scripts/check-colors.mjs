@@ -38,7 +38,6 @@ const STEP = /var\(--color-[a-z]+-(?:100|200|300|400|500|600|700|800|900)\)/;
 
 /** Sabit dolgunun üstünde sabit yazı: zemin temayla değişmediği için geçerli. */
 const WEB_ALLOW = new Map([
-  ["src/app/page.tsx", "iniş sayfası CTA'sı: zemin `bg-white`, yani sabit dolgu üstünde sabit marka yazısı"],
   ["src/components/social/notification-bell.tsx", "sayaç rozeti: `flame-500` dolgu + `ink-900` yazı (6.04); anlamsal jeton koyu temada 300'e düşüp 1.49 veriyordu"],
   ["src/components/social/friends-hub.tsx", "aynı sayaç rozeti"],
 ]);

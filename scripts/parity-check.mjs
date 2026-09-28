@@ -9501,7 +9501,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [...acilis.matchAll(/\{ Icon: (\w+), name: "([\w.]+)"/g)].map((m) => [m[2], m[1]]),
     );
     const vitrinOyun = Object.keys(VITRIN_AD).sort();
-    sameList(
+    /* 2026-09-28: acilis sayfasi artik oyun listelemiyor (magaza vitrinine
+       gore yeniden yazildi; Patika, konusma, deneme sinavi, yurume). Olcu
+       ancak sayfa yine oyun karosu cizerse devreye giriyor. */
+    if (vitrin.size) sameList(
       "acilis vitrininin glifleri",
       vitrinOyun.map((g) => g + "=" + (vitrin.get(VITRIN_AD[g]) ?? "SATIR YOK")),
       vitrinOyun.map((g) => g + "=" + (webKaro.get(g)?.ikon ?? "KARO YOK")),

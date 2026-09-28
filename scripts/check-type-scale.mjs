@@ -56,12 +56,6 @@ const filter = process.argv[3] ?? "";
  * eşleşiyor, çünkü kod kaydıkça numara kayar.
  */
 const ALLOW = new Map([
-  ["src/app/page.tsx", [
-    /* 2026-09-27: telefonda artik `text-display` (olcekte en buyuk basamak);
-       yalniz genis ekrandaki buyume olcegin disinda kaliyor. */
-    ["text-display sm:text-6xl sm:leading-tight",
-     "inis sayfasinin kahraman basligi: pazarlama yuzeyi, mobil karsiligi YOK ve genis ekranda olcegin ustune bilerek cikiyor"],
-  ]],
   /* OYUN TURUNUN CEVAP ALANI IKI PLATFORMDA DA 18 px. Mobil ayni alani
      `fontSize: 18` ile yaziyor (`game/rounds.tsx`, dort giris) ve olcekte 18
      basamagi yok. Bu iddia bir sure YANLISTI - dordunden biri 17 px yaziyordu
