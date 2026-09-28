@@ -356,7 +356,6 @@ export const deWeb: Record<string, string> = {
   "land.delete_account": "Konto löschen",
   "land.support": "Support",
   "socialw.settings_sub": "Wie deine Freunde dich finden und was sie sehen.",
-  "socialw.link_copied": "Link kopiert",
   "socialw.tabs": "Soziale Reiter",
   "socialw.joined": "Dabei seit {date}",
   "onb.course_de": "Wortschatz für GER A1–C1, dazu Lesen, Hören und Schreiben im Prüfungsformat.",

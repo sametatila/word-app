@@ -356,7 +356,6 @@ export const enWeb: Record<string, string> = {
   "land.delete_account": "Delete your account",
   "land.support": "Support",
   "socialw.settings_sub": "How your friends find you and what they see.",
-  "socialw.link_copied": "Link copied",
   "socialw.tabs": "Social tabs",
   "socialw.joined": "Joined {date}",
   "onb.course_de": "CEFR A1–C1 vocabulary, plus reading, listening and writing in exam format.",

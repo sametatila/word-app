@@ -392,7 +392,6 @@ export const trWeb: Record<string, string> = {
   "land.delete_account": "Hesabını sil",
   "land.support": "Destek",
   "socialw.settings_sub": "Arkadaşların seni nasıl bulur, ne görür.",
-  "socialw.link_copied": "Bağlantı kopyalandı",
   "socialw.tabs": "Sosyal sekmeler",
   "socialw.joined": "Katılım {date}",
   "onb.course_de": "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma.",

@@ -1,8 +1,8 @@
 {
-  "total": 32,
+  "total": 33,
   "files": {
     "src/data/exams/index.ts": 1,
-    "src/game/immersionQuiz.ts": 16,
+    "src/game/immersionQuiz.ts": 17,
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
     "src/lib/native.ts": 2,
