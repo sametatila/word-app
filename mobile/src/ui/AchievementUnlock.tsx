@@ -12,7 +12,7 @@ import { useStatsBump } from "../lib/statsSignal";
 import { navigationRef } from "../lib/pushRoute";
 import { track } from "../lib/track";
 import type { Achievement, Tier } from "../data/achievements";
-import { useTheme, spacing, radii, softShadow, TIER_COLOR, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, TIER_COLOR, ds, motion } from "../theme";
 import { DIALOG_MAX_WIDTH } from "../lib/useLayout";
 import { NewAvatarParts } from "./NewAvatarParts";
 import type { UnlockedPart } from "../lib/avatarLayers";
@@ -182,7 +182,8 @@ export function AchievementUnlock() {
   /*
     KART YAYLANARAK GELİYOR. Modal yalnız soluyordu; webde kart küçükten,
     hafif eğik ve aşağıdan yayla oturuyor (`components/achievement-unlock.tsx`
-    `Card`: scale .7→1, y 18→0, rotate -4°→0, spring stiffness 320 damping 20).
+    `Card`: scale .7→1, y 18→0, rotate -4°→0, kutlama yayı `motion.celebrate`:
+    stiffness 320 damping 20).
     Tek değer 0→1 yaylanıyor, üç dönüşüm ondan; yayın taşması da üçüne aynı
     oranda yansıyor (webde her özellik aynı yayla gidiyor). Kuyruktaki her
     rozet kendi girişini oynuyor (webde `key={shownId}`). "Hareketi azalt"ta
@@ -195,7 +196,7 @@ export function AchievementUnlock() {
     if (reduceMotion()) { pop.setValue(1); return; }
     if (!shownId) { pop.setValue(0); return; }
     pop.setValue(0);
-    const a = Animated.spring(pop, { toValue: 1, stiffness: 320, damping: 20, mass: 1, useNativeDriver: true });
+    const a = Animated.spring(pop, { toValue: 1, ...motion.celebrate, mass: 1, useNativeDriver: true });
     a.start();
     return () => a.stop();
   }, [shownId, pop]);

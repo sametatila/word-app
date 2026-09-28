@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, PixelRatio } from "react-native";
+import { Animated, View, Image, PixelRatio } from "react-native";
 import { AvatarOverlay, HAT_COLORS } from "./avatarParts";
 import { useAvatar, parseAvatar, avatarBg, type AvatarConfig } from "../lib/avatar";
 import { avatarImageUrl, avatarLayers } from "../lib/avatarLayers";
@@ -163,9 +163,11 @@ export function MyAvatar({
  * PROFİL SAHNESİ — büyük avatar, arka planıyla (2026-09-28, taslak F2). Web
  * `AvatarStage` ile aynı düzen: 3B katalog açıkken arka plan görseli ve
  * göğüsten yukarı Nomi, kapalıyken arka planın düz geçişi ve büyük 2B daire.
- * `children` üst alanın düğmeleri.
+ * `children` üst alanın düğmeleri. `figureScale`: yalnız figürü ölçekleyen
+ * canlı değer (düzenleyicide parça seçilince küçük sıçrama,
+ * `screens/AvatarScreen`); arka plan ve düğmeler yerinde. Verilmezse duruk.
  */
-export function AvatarStage({ config, height = 280, children }: { config: AvatarConfig; height?: number; children?: React.ReactNode }) {
+export function AvatarStage({ config, height = 280, children, figureScale }: { config: AvatarConfig; height?: number; children?: React.ReactNode; figureScale?: Animated.Value }) {
   const catalog = useAvatarCatalog();
   const g = avatarBg(config.bg);
   if (catalog) {
@@ -175,11 +177,12 @@ export function AvatarStage({ config, height = 280, children }: { config: Avatar
       <View style={{ height, overflow: "hidden" }}>
         {L.bg ? <Image source={{ uri: `${catalog.base}/${L.bg}` }} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} resizeMode="cover" /> : <Fill from={g.from} to={g.to} />}
         <View style={{ position: "absolute", bottom: height * 0.07, alignSelf: "center", width: fig * 0.6, height: 24, borderRadius: radii.pill, backgroundColor: "rgba(0,0,0,0.18)" }} />
-        <View style={{ position: "absolute", bottom: 0, alignSelf: "center", width: fig, height: fig }}>
+        {/* Ölçek ayaklardan: figür zemindeki gölgesinden kopmadan sıçrıyor. */}
+        <Animated.View style={{ position: "absolute", bottom: 0, alignSelf: "center", width: fig, height: fig, transformOrigin: "bottom", transform: figureScale ? [{ scale: figureScale }] : [] }}>
           {[L.base, ...L.layers].map((f) => (
             <Image key={f} source={{ uri: `${catalog.base}/${f}` }} style={{ position: "absolute", width: fig, height: fig }} resizeMode="contain" />
           ))}
-        </View>
+        </Animated.View>
         {children}
       </View>
     );
@@ -189,9 +192,9 @@ export function AvatarStage({ config, height = 280, children }: { config: Avatar
     <View style={{ height, overflow: "hidden" }}>
       <Fill from={g.from} to={g.to} />
       <View style={{ position: "absolute", bottom: height * 0.14, alignSelf: "center", width: d * 0.9, height: 20, borderRadius: radii.pill, backgroundColor: "rgba(0,0,0,0.16)" }} />
-      <View style={{ position: "absolute", bottom: height * 0.17, alignSelf: "center", borderRadius: d, borderWidth: 5, borderColor: "rgba(255,255,255,0.85)" }}>
+      <Animated.View style={{ position: "absolute", bottom: height * 0.17, alignSelf: "center", borderRadius: d, borderWidth: 5, borderColor: "rgba(255,255,255,0.85)", transform: figureScale ? [{ scale: figureScale }] : [] }}>
         <MascotAvatar config={config} size={d} />
-      </View>
+      </Animated.View>
       {children}
     </View>
   );

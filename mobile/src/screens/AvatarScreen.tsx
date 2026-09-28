@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { t, currentLang } from "../lib/i18n";
-import { View, ScrollView, Image } from "react-native";
+import { Animated, Easing, View, ScrollView, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -14,7 +14,9 @@ import { saveAvatar, useAvatar, DEFAULT_AVATAR, AVATAR_BGS, AVATAR_RARITY, EXTRA
 import { useAvatarCatalog } from "../lib/avatarCatalog";
 import { partIcon, type CatalogPart } from "../lib/avatarLayers";
 import { api } from "../api/client";
-import { useTheme, spacing, radii, cardShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, cardShadow, motion, type Palette } from "../theme";
+import { haptic } from "../lib/haptics";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * AVATAR DÜZENLEYİCİ (2026-09-28, taslak F2; `docs/plan/profil-ayarlar-topluluk.md`).
@@ -84,8 +86,30 @@ export function AvatarScreen() {
   const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
   const lang = currentLang();
 
+  /*
+    SEÇİM HİSSİ: parça seçilince sahnedeki avatar küçük bir sıçrama yapıyor
+    (ölçek 1→1.06→1, toplam `motion.short`) ve hafif bir dokunuş titreşimi
+    (`haptic("tap")`; titreşim ve ses kendi ayarlarına bağlı). Parça küçük
+    bir ikonda seçiliyor, değişiklik büyük sahnede oluyor; sıçrama gözü
+    sahneye çekiyor. "Hareketi azalt"ta sıçrama yok, titreşim kalıyor.
+  */
+  const bounce = useRef(new Animated.Value(1)).current;
+  const hop = () => {
+    haptic("tap");
+    if (reduceMotion()) return;
+    bounce.stopAnimation();
+    bounce.setValue(1);
+    const half = motion.short / 2;
+    const ease = Easing.bezier(...motion.ease);
+    Animated.sequence([
+      Animated.timing(bounce, { toValue: 1.06, duration: half, easing: ease, useNativeDriver: true }),
+      Animated.timing(bounce, { toValue: 1, duration: half, easing: ease, useNativeDriver: true }),
+    ]).start();
+  };
+
   const tiles: Tile[] = useMemo(() => {
     const pick = (s: Slot, id: string | null, color?: string | null) => {
+      hop();
       if (s === "bg") return setCfg({ bg: id });
       if (s === "hat") return setCfg({ hat: id });
       if (s === "glasses") return setCfg({ glasses: id });
@@ -137,7 +161,7 @@ export function AvatarScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <AvatarStage config={cfg} height={260 + insets.top}>
+      <AvatarStage config={cfg} height={260 + insets.top} figureScale={bounce}>
         <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", alignItems: "center" }}>
           <StageButton label={t("common.close")} onPress={() => nav.goBack()}><XIcon color={colors.text} size={20} /></StageButton>
           <Text accessibilityRole="header" variant="h3" color="#fff" style={{ flex: 1, textAlign: "center", textShadowColor: "rgba(0,0,0,0.35)", textShadowRadius: 6 }}>{t("avatar.your_avatar")}</Text>

@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, Modal, Pressable, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { trigger, type HapticFeedbackTypes } from "react-native-haptic-feedback";
 import { t } from "../lib/i18n";
 import { sfx } from "../lib/sfx";
+import { vibrate } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
 import { LEAGUE_TIERS, tierName } from "../api/social";
 import { Text } from "../ui/Text";
 import { Celebrate } from "../ui/Celebrate";
 import { TrophyIcon } from "../ui/icons";
 import { DIALOG_MAX_WIDTH } from "../lib/useLayout";
-import { useTheme, spacing, radii, softShadow, TIER_COLOR, fillOf, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, TIER_COLOR, fillOf, ds, motion } from "../theme";
 
 /** Kutlamanın ekranda kaldığı süre — rozet açılışıyla aynı (`ui/AchievementUnlock` SOLO_MS; web `league-up` LEAGUE_UP_MS). */
 const LEAGUE_UP_MS = 2600;
@@ -67,14 +67,18 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
 
   useEffect(() => {
     sfx("unlock");
-    try {
-      trigger("notificationSuccess" as HapticFeedbackTypes, { enableVibrateFallback: true, ignoreAndroidSystemSettings: false });
-    } catch { /* haptik motoru yoksa yut */ }
+    /* Yalnız titreşim (başarı deseni), titreşim ayarına bağlı; `trigger`
+       doğrudan çağrılıyordu ve "Titreşim" kapalıyken de titriyordu. */
+    vibrate("streak");
     if (!still) {
-      Animated.spring(card, { toValue: 1, friction: 6, tension: 120, useNativeDriver: true }).start();
+      /* Kart kutlama yayıyla (`motion.celebrate`; web `league-up` kartı aynı
+         değer). Rozet bilerek daha yaylı ve kartın ardından geliyor: web
+         `league-up` rozeti stiffness 260 damping 10, 120 ms gecikme -
+         koreografi değeri, jeton değil. */
+      Animated.spring(card, { toValue: 1, ...motion.celebrate, mass: 1, useNativeDriver: true }).start();
       Animated.sequence([
         Animated.delay(120),
-        Animated.spring(badge, { toValue: 1, friction: 3.5, tension: 110, useNativeDriver: true }),
+        Animated.spring(badge, { toValue: 1, stiffness: 260, damping: 10, mass: 1, useNativeDriver: true }),
       ]).start();
     }
     const end = setTimeout(() => done.current(), LEAGUE_UP_MS);

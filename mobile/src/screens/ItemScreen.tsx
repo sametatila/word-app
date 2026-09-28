@@ -8,7 +8,6 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { Celebrate } from "../ui/Celebrate";
 import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
@@ -21,7 +20,7 @@ import { QuestionList, GlossPanel, WritingList, SkillReportContext, type Writing
 import { ReportFlag } from "../ui/ReportFlag";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/pathProgress";
-import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
+import { isSkillDone, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
 import { speakTarget, speakAndWaitVoiced, prefetchDialogue, speakPassage, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
 import { currentCourseId } from "../lib/courses";
@@ -388,10 +387,6 @@ export function ItemScreen() {
   /* Rubrikle puanlananlarda (yazma, monolog) yüzde rubrik puanından: monolog
      tek görev ve doğru/toplam ya %0 ya %100 olurdu. */
   const pct = scoreOf(correct, total, lastScore);
-  /* Maskotun ruh hâli ve konfeti PUAN BANDINDAN: eşikler (70 / 40) burada
-     elle yazılıydı, oysa aynı iki sayı uygulamanın her yerinde aynı ayrımı
-     yapıyor (web `lib/score-bands.ts`). */
-  const band = scoreBand(pct);
   const fromSkills = params.from === "skills";
   const perfect = total > 0 && correct === total;
   /* Olumsuz sonuç = adım "bitti" sayılmadı. Monologda hüküm rubrik eşiği
@@ -407,11 +402,11 @@ export function ItemScreen() {
     → düğmeler. Eskiden tek kart: maskot, "x/y doğru", XP, seri, iki not ve
     yüzde satırı alt alta aynı ağırlıkta. Band sonucun kendisini söylüyor;
     eşiğin altında sessizleşiyor ve birincil düğme "Tekrar dene" oluyor.
-    Web karşılığı `skills/player-shell` `ResultCard`.
+    Web karşılığı `skills/player-shell` `ResultCard`. Konfeti YOK: beceri
+    alıştırması sıradan bir adım, kutlama büyük anlara ayrıldı (`ui/Celebrate`).
   */
   const resultHead = (
     <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
-      <Celebrate show={band === "good" && passed} />
       <ResultHero
         eyebrow={`${skillKey ? t(skillKey) : t("item.content")} · ${exercise.level}`}
         title={t(isTasks ? (passed ? "item.tasks_done" : "skillp.result_retry") : perfect ? "skillp.result_perfect" : passed ? "skillp.result_done" : "skillp.result_retry")}

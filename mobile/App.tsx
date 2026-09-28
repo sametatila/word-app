@@ -14,6 +14,7 @@ import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
 import { attachTelemetry, screenChanged } from "./src/lib/telemetry";
 import { loadSoundPref } from "./src/lib/sfx";
+import { loadHapticsPref } from "./src/lib/haptics";
 import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadCoachSeen } from "./src/game/coachLines";
 import { loadLang, useLang } from "./src/lib/i18n";
@@ -316,6 +317,8 @@ function Nav() {
       .then(() => loadAnalyticsPref())
       /* Oyun sesleri tercihi — ilk sesten ÖNCE okunmalı. */
       .then(() => loadSoundPref())
+      /* Titreşim tercihi — sesten ayrı bayrak (`lib/haptics`), aynı sebeple ilk dokunuştan önce. */
+      .then(() => loadHapticsPref())
       // "Hareketi azalt" sistem tercihi — animasyon kararı veren her yer bunu
       // senkron okuyor, o yüzden ilk çizimden önce yüklenmesi gerekiyor.
       .then(() => loadReduceMotion())

@@ -37,6 +37,7 @@ import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode, ds } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
+import { hapticsEnabled, setHapticsEnabled, vibrate } from "../lib/haptics";
 import { hasMicConsent, revokeMicConsent } from "../lib/micConsent";
 import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentState } from "../lib/aiConsent";
 import { openLegal } from "../lib/legal";
@@ -214,6 +215,7 @@ export function SettingsScreen() {
      sessiz bir yerde çalışmak isteyen kullanıcı telefonu kısınca konuşmayı da
      kaybediyordu; web ikisini baştan beri ayırıyor (`sound-settings`). */
   const [sounds, setSounds] = useState(soundEnabled());
+  const [vibes, setVibes] = useState(hapticsEnabled());
   const [uiLang, setUiLang] = useState<NativeLang>(currentLang());
   const [micConsent, setMicConsentState] = useState<boolean | null>(null);
   useEffect(() => { void hasMicConsent().then(setMicConsentState); }, []);
@@ -487,6 +489,22 @@ export function SettingsScreen() {
                 value={sounds}
                 onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
                 accessibilityLabel={t("snd.game_sounds")}
+                trackColor={{ true: colors.primary, false: colors.surface2 }}
+                thumbColor="#fff"
+              />
+            </View>
+            {/* TİTREŞİM AYRI (`lib/haptics`): sesi kapatan titreşimi, titreşimi
+                kapatan sesi kaybetmiyor. Açılınca bir kez hafif titreşim - ayarın
+                ne yaptığını hissettiriyor. */}
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("snd.haptics")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("snd.haptics_sub")}</Text>
+              </View>
+              <Switch
+                value={vibes}
+                onValueChange={(v) => { setVibes(v); void setHapticsEnabled(v); if (v) vibrate("tap"); }}
+                accessibilityLabel={t("snd.haptics")}
                 trackColor={{ true: colors.primary, false: colors.surface2 }}
                 thumbColor="#fff"
               />

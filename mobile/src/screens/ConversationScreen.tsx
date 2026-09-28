@@ -19,7 +19,6 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
-import { Celebrate } from "../ui/Celebrate";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
 import { foldCompare, foldTight } from "../lib/textFold";
@@ -1414,11 +1413,11 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
     SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
     altta sabit düğmeler (en çok üç). Eskiden 110'luk maskot, dev başlık, üç
     ayrı kutu, dört kart, iki not ve beş düğmeye kadar alt alta diziliyordu;
-    "Patika'ya dön" hep en altta kayboluyordu.
+    "Patika'ya dön" hep en altta kayboluyordu. Konfeti YOK: konuşma
+    Patika'nın sıradan bir adımı, kutlama büyük anlara ayrıldı (`ui/Celebrate`).
   */
   return (
     <View style={{ flex: 1 }}>
-      <Celebrate show={!unfinished && pct >= 80} />
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
         <ResultHero
           eyebrow={`${tx("unitkind.conversation")} · ${conversation.title}`}

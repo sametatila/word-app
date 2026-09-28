@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trigger, type HapticFeedbackTypes } from "react-native-haptic-feedback";
 import { sfx } from "./sfx";
 
@@ -31,11 +32,43 @@ const MAP: Record<HapticKind, HapticFeedbackTypes> = {
   streak: "notificationSuccess" as HapticFeedbackTypes,
 };
 
-export function haptic(kind: HapticKind): void {
+/**
+ * TİTREŞİM AÇIK MI — oyun seslerinden AYRI bayrak. `haptic()` hem sesi hem
+ * titreşimi çalıyordu ve ikisi tek anahtara bağlıydı: sesi kapatan titreşimi
+ * de kaybediyordu (ya da tersi, kütüphanede sessizce çalışmak isteyen
+ * titreşimi istiyor, sesi istemiyor). Şimdi ses `sfx` içinde `soundEnabled`e,
+ * titreşim buradaki bayrağa bakıyor; ikisi birbirinden bağımsız.
+ *
+ * `lib/sfx` `loadSoundPref` kalıbı: tercih AÇILIŞTA okunuyor (`App.tsx`
+ * önyükleme zinciri), okunmadan önce varsayılan açık; yalnız "kapalı" yazılı.
+ * Anahtar mobil önekiyle (`lernomi:`); web karşılığı `lib/fx` `lernomi-haptics`
+ * (ses de böyle ayrık: `lernomi:sound` / `lernomi-sound`).
+ */
+const HAPTICS_PREF_KEY = "lernomi:haptics";
+let hapticsOn = true;
+
+export async function loadHapticsPref(): Promise<boolean> {
+  try { hapticsOn = (await AsyncStorage.getItem(HAPTICS_PREF_KEY)) !== "off"; } catch { hapticsOn = true; }
+  return hapticsOn;
+}
+export function hapticsEnabled(): boolean { return hapticsOn; }
+export async function setHapticsEnabled(on: boolean): Promise<void> {
+  hapticsOn = on;
+  try { if (on) await AsyncStorage.removeItem(HAPTICS_PREF_KEY); else await AsyncStorage.setItem(HAPTICS_PREF_KEY, "off"); } catch { /* yut */ }
+}
+
+/** Yalnız titreşim (ses yok) — sesi ayrı seçen çağıranlar için (ör. lig atlama). */
+export function vibrate(kind: HapticKind): void {
+  if (!hapticsOn) return;
   try {
     trigger(MAP[kind], { enableVibrateFallback: true, ignoreAndroidSystemSettings: false });
   } catch {
     /* haptik motoru yoksa yut */
   }
+}
+
+/** Titreşim (titreşim ayarına bağlı) + aynı adın sesi (ses ayarına bağlı, `sfx` içinde). */
+export function haptic(kind: HapticKind): void {
+  vibrate(kind);
   sfx(kind);
 }

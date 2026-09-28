@@ -20,20 +20,33 @@ import { reduceMotion } from "../lib/reduceMotion";
 const CONFETTI = ["#fb8f2a", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
 
 /**
- * Kutlama konfetisi — tamamlanma/başarı ekranlarında bir kez patlar. Saf JS
- * (Animated), native modül yok. pointerEvents kapalı: altındaki butonları engellemez.
+ * Kutlama konfetisi — BÜYÜK anlarda bir kez patlar. Saf JS (Animated), native
+ * modül yok. pointerEvents kapalı: altındaki butonları engellemez.
+ *
+ * AZ VE ANLAMLI. Yüz on parça vardı ve konfeti neredeyse her sonuç ekranında
+ * çıkıyordu (ünite quizi, konuşma, beceri alıştırması); her geçişte patlayan
+ * kutlama kutlama olmaktan çıkıyor. Şimdi yalnız: başarım
+ * (`AchievementUnlock`), özellik/Premium açılışı (`UnlockCelebration`), lig
+ * atlama (`LeagueBoardUp`), sınav geçti ve tur sonu mükemmel (`ui/flow`
+ * `FlowScreen celebrate`).
+ *
+ * 40 parça: web `components/celebrate.tsx` `Confetti` varsayılanı 34 (rozet ve
+ * lig 30). Birkaç fazlası, çünkü bu top ekranın tepesinden tek noktadan
+ * patlıyor ve parçaların bir kısmı hemen ekran dışına savruluyor; webde
+ * parçalar kartın ortasından yelpaze açıyor, hepsi görünür kalıyor.
  */
+const CONFETTI_COUNT = 40;
 export function Celebrate({ show }: { show: boolean }) {
   // Döndürme/yeniden boyutlanmada (tablet, yatay) güncel genişlik.
   const { width } = useWindowDimensions();
   /* "Hareketi azalt" açıkken konfeti HİÇ çizilmiyor - web `celebrate.tsx` de
-     aynı kararı veriyor (`if (!fire || reducedMotion()) return`). Yüz on
-     parçacık bu ayarın kapatmayı istediği şeyin ta kendisi. */
+     aynı kararı veriyor (`if (!fire || reducedMotion()) return`). Uçuşan
+     parçacıklar bu ayarın kapatmayı istediği şeyin ta kendisi. */
   if (!show || reduceMotion()) return null;
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       <ConfettiCannon
-        count={110}
+        count={CONFETTI_COUNT}
         origin={{ x: width / 2, y: -20 }}
         autoStart
         fadeOut

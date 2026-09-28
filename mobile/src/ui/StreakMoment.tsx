@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { Animated, Pressable, View } from "react-native";
+import { Animated, Easing, Pressable, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { t } from "../lib/i18n";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
 import { Text } from "./Text";
 import { FlameIcon } from "./icons";
-import { useTheme, spacing, softShadow, fillOf, ds } from "../theme";
+import { useTheme, spacing, softShadow, fillOf, ds, motion } from "../theme";
 
 /** Sahnenin ekranda kaldığı süre — web `streak-moment` `STREAK_MOMENT_MS` ile aynı. */
 export const STREAK_MOMENT_MS = 1200;
@@ -41,10 +41,12 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
   useEffect(() => {
     haptic("streak");
     if (!still) {
-      Animated.spring(flame, { toValue: 1, friction: 4, tension: 120, useNativeDriver: true }).start();
+      /* Alev kutlama yayıyla (`motion.celebrate`; başarım kartı ve lig kartıyla aynı). */
+      Animated.spring(flame, { toValue: 1, ...motion.celebrate, mass: 1, useNativeDriver: true }).start();
     }
     const s = setTimeout(() => {
-      if (!still) Animated.spring(swap, { toValue: 1, friction: 7, tension: 140, useNativeDriver: true }).start();
+      /* Sayı değişimi kayma, kutlama değil: yavaşlayarak oturan giriş eğrisi. */
+      if (!still) Animated.timing(swap, { toValue: 1, duration: motion.medium, easing: Easing.bezier(...motion.emphasized), useNativeDriver: true }).start();
     }, SWAP_MS);
     const end = setTimeout(() => done.current(), STREAK_MOMENT_MS);
     return () => { clearTimeout(s); clearTimeout(end); };

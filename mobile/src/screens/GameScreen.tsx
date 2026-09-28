@@ -41,6 +41,11 @@ type RoundSubmit = SubmitResult & { streakUp?: boolean };
  * TUR SONU KOREOGRAFİSİ — XP, doğruluk, seri sırayla sayarak geliyor; kapanış
  * sesiyle aynı anda başlıyor. Web `session-player` ile aynı üç sabit: aralık
  * 150 ms, her sayı 700 ms, son sayı 1 sn'de oturuyor.
+ *
+ * Bunlar hareket jetonuna (`theme` `motion`) BAĞLANMADI, bilerek: `motion.stagger`
+ * (30 ms) bir listenin birlikte girişinde ögeler arası aralık; burada her sayı
+ * ayrı bir vuruş, öğrenci birinin oturduğunu görüp ötekine geçiyor. 30 ms'de
+ * üç sayı aynı anda başlamış görünür. Bu bir koreografi değeri, jeton değil.
  */
 const COUNT_STEP_MS = 150;
 const COUNT_MS = 700;

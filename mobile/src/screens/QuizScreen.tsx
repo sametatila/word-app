@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { ensureConversations } from "../data/conversations";
@@ -142,9 +141,10 @@ export function QuizScreen() {
             adımın AÇIK kaldığını ve eşiği hiçbir yerde görmüyordu; şimdi band
             sessizleşiyor, etiket "Adım açık kaldı" diyor ve birincil düğme
             "Tekrar dene". Sonucu duyuran canlı bölge bandın kendisinde.
+            Konfeti YOK: ünite quizi her ünitede geçilen sıradan bir adım,
+            kutlama büyük anlara ayrıldı (bkz. `ui/Celebrate`).
           */
           <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
-            <Celebrate show={passed} />
             <ResultHero
               eyebrow={`${t("common.unit")} ${params.unitIndex} · ${t(isGrammar ? "unitkind.grammar" : isUnitQuiz ? "unitkind.unit_quiz" : "unitkind.quiz")}`}
               title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}

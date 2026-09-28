@@ -14,7 +14,7 @@ import { accountRequiredError } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
-import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
+import { Animated, Easing, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
 import { Text } from "../ui/Text";
 import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
@@ -37,7 +37,7 @@ import type { ContentReport, ReportSurface } from "../lib/report";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
-import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, cardShadow, motion, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
 const withArtikel = (w: RoundWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
@@ -369,7 +369,8 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     /* "Hareketi azalt": tur yerinde beliriyor. */
     if (reduceMotion()) slide.setValue(0);
-    else Animated.timing(slide, { toValue: 0, duration: 200, useNativeDriver: true }).start();
+    /* Geri bildirim paneli: `motion.short` + yavaşlayarak oturan eğri (web `T.short`). */
+    else Animated.timing(slide, { toValue: 0, duration: motion.short, easing: Easing.bezier(...motion.emphasized), useNativeDriver: true }).start();
   }, [slide]);
   return (
     <Animated.View

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, Easing, View, type LayoutChangeEvent } from "react-native";
-import { useTheme } from "../theme";
+import { useTheme, motion } from "../theme";
 import { reduceMotion } from "../lib/reduceMotion";
 
 /**
@@ -23,14 +23,15 @@ export const BAR_HEIGHT = { inline: 6, hero: 10 } as const;
  * yayı). Burada genişlik canlandırılmıyor (yerel sürücü width'i taşımaz):
  * dolgu tam genişlikte çiziliyor ve sola `translateX` ile kaydırılıyor, iz
  * `overflow: hidden` ile maske. `scaleX` değil, çünkü ölçek yuvarlak ucu
- * yassılaştırıyordu. 320 ms, `cubic-bezier(.2,0,0,1)` (webin yayının oturma
- * hissine en yakın eğri).
+ * yassılaştırıyordu. Süre ve eğri hareket jetonundan: `motion.medium` (320 ms)
+ * + `motion.emphasized` (`cubic-bezier(.2,0,0,1)`, webin `--motion-medium` /
+ * `--ease-emphasized`; `lib/motion` `T.medium`).
  *
  * İlk çizimde animasyon YOK: çubuk ekrana olduğu değerle geliyor, yalnız
  * sonraki değişimler kayıyor. "Hareketi azalt"ta değişim de anında.
  */
-const FILL_MS = 320;
-const FILL_EASE = Easing.bezier(0.2, 0, 0, 1);
+const FILL_MS = motion.medium;
+const FILL_EASE = Easing.bezier(...motion.emphasized);
 
 /** 0..1 hedefe yumuşak giden değer; ilk değer olduğu gibi. */
 function useFillValue(target: number): Animated.Value {
