@@ -220,7 +220,7 @@ export const deA2P8: SkillExercise[] = [
           { de: "Ich verkaufe mein …", tr: "… satıyorum", en: "I am selling my …" },
           { de: "Das Rad ist in gutem Zustand.", tr: "Bisiklet iyi durumda.", en: "The bike is in good condition." },
           { de: "Ein kleiner Kratzer ist am …", tr: "…'de küçük bir çizik var", en: "There is a small scratch on the …" },
-          { de: "Der Preis ist … Euro, Verhandeln möglich.", tr: "Fiyat … euro, pazarlık payı var.", en: "The price is … euros, negotiable." },
+          { de: "Der Preis ist … Euro, Verhandeln möglich.", tr: "Fiyat … avro, pazarlık payı var.", en: "The price is … euros, negotiable." },
           { de: "Abholung in …", tr: "…'den teslim alınır", en: "Collection in …" },
         ],
         sample:

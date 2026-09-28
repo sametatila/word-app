@@ -574,7 +574,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               ],
               answer: 1,
               explain:
-                "\"führt zum Ausschluss für den Rest des Semesters\" — dönem sonuna kadar giriş yasak. On euro başka bir maddenin (temizlik) cezası.",
+                "\"führt zum Ausschluss für den Rest des Semesters\" — dönem sonuna kadar giriş yasak. On avro başka bir maddenin (temizlik) cezası.",
             },
             {
               kind: "mcq",

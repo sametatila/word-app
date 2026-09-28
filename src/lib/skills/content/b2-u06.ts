@@ -309,7 +309,7 @@ export const b2U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["nach vierzehn Aufträgen", "vierzehn", "nach 14 Aufträgen", "ab vierzehn Aufträgen", "14"],
-        explain: "800 euro tek seferlik, sipariş başına 60 euro tasarruf: „Also nach vierzehn Aufträgen.“",
+        explain: "800 avro tek seferlik, sipariş başına 60 avro tasarruf: „Also nach vierzehn Aufträgen.“",
       },
       {
         text: "Was hat Lea bereits nachgewiesen?",

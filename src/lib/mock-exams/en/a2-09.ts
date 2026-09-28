@@ -1075,7 +1075,7 @@ Noor`,
             "Çamaşır makineniz bozuldu. Ne yapacağınızı benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: repair it now for a hundred and eighty euros, buy a new one for three hundred, or wait three weeks for a part that costs thirty. What do you think about the repair now?", tr: "Üç fikir var: şimdi yüz seksen euroya tamir ettirmek, üç yüz euroya yenisini almak ya da otuz euroluk parça için üç hafta beklemek. Şimdi tamir fikri hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: repair it now for a hundred and eighty euros, buy a new one for three hundred, or wait three weeks for a part that costs thirty. What do you think about the repair now?", tr: "Üç fikir var: şimdi yüz seksen avroya tamir ettirmek, üç yüz avroya yenisini almak ya da otuz avroluk parça için üç hafta beklemek. Şimdi tamir fikri hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Tamir fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see. But the machine is nine years old, and three weeks without a machine with two children is very hard. Does that change anything?", tr: "Anlıyorum. Ama makine dokuz yaşında ve iki çocukla üç hafta makinesiz kalmak çok zor. Bu bir şey değiştirir mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },

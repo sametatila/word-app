@@ -735,7 +735,7 @@ Handys bitte leise stellen.`,
               options: ["5,00 Euro.", "13,90 Euro.", "8,90 Euro."],
               answer: 2,
               explain:
-                "Reçeteli fiyat 5 euro, reçetesiz 8,90 euro. Müşteri reçetesini yanında getirmediği için yüksek fiyatı ödüyor. 13,90 iki fiyatın toplamı ve yalnız tuzak.",
+                "Reçeteli fiyat 5 avro, reçetesiz 8,90 avro. Müşteri reçetesini yanında getirmediği için yüksek fiyatı ödüyor. 13,90 iki fiyatın toplamı ve yalnız tuzak.",
             },
             {
               kind: "mcq",

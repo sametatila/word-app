@@ -139,7 +139,7 @@ export const deA2P6: SkillExercise[] = [
         text: "Die Ummeldung kostet fünf Euro.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Adres bildirimi ücretsiz; beş euro yalnız ayrıca belge isteyenler için.",
+        explain: "Adres bildirimi ücretsiz; beş avro yalnız ayrıca belge isteyenler için.",
       },
       {
         kind: "gapfill",

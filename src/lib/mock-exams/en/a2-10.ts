@@ -915,7 +915,7 @@ Tell Bexi by:       {{10}}`,
               text: "Speaker 4",
               answer: "d",
               explain:
-                "Sorun kat: «Everybody wanted it until they read the word fourth». Sonunda taşıyan şirket otuz euro daha az ödemiş.",
+                "Sorun kat: «Everybody wanted it until they read the word fourth». Sonunda taşıyan şirket otuz avro daha az ödemiş.",
             },
             {
               kind: "match",
@@ -1086,7 +1086,7 @@ Eren`,
             "Boş bir cumartesin ve ihtiyacın olmayan bir sürü eşyan var. Ne yapacağını benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a thrift store. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç euroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a thrift store. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç avroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },
             { who: "you", hint: "İnternetten satma fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see your point. But you have about forty things, and online you write forty ads and wait at home for forty people. Is the market not easier?", tr: "Anlıyorum. Ama kırk kadar eşyan var; internette kırk ilan yazıp kırk kişiyi evde beklersin. Pazar daha kolay değil mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },

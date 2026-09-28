@@ -55,7 +55,7 @@ export const deA1P7: SkillExercise[] = [
         text: "Jeder bezahlt zwanzig Euro.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Jeder gibt zehn Euro“ — altı kişi toplam altmış euro veriyor.",
+        explain: "„Jeder gibt zehn Euro“ — altı kişi toplam altmış avro veriyor.",
       },
       {
         kind: "gapfill",

@@ -48,7 +48,7 @@ export const enA1P4: SkillExercise[] = [
         text: "How much is a ticket for a student?",
         options: ["four euros", "seven euros", "five euros"],
         answer: 0,
-        explain: "„For children and students they are four euros.“ Yedi euro normal fiyat, beş euro pazartesi fiyatı.",
+        explain: "„For children and students they are four euros.“ Yedi avro normal fiyat, beş avro pazartesi fiyatı.",
       },
       {
         kind: "truefalse",
@@ -204,7 +204,7 @@ export const enA1P4: SkillExercise[] = [
         phrases: [
           { de: "For sale: …", tr: "Satılık: …" },
           { de: "It is … years old.", tr: "… yaşında." },
-          { de: "The price is … euros.", tr: "Fiyatı … euro." },
+          { de: "The price is … euros.", tr: "Fiyatı … avro." },
           { de: "You can pick it up on …", tr: "… günü gelip alabilirsin." },
           { de: "Please write me a message!", tr: "Lütfen bana mesaj yaz!" },
         ],

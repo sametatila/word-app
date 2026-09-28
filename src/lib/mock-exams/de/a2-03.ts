@@ -184,7 +184,7 @@ Im Sommer gibt es jeden Monat ein Gartenfest. Dann kocht jeder etwas mit Gemüse
               options: ["Vier Euro.", "20 Euro.", "38 Euro."],
               answer: 1,
               explain:
-                "Yıllık ücret 20 euro ve toprakla su için toplanıyor. 4 ilk katılan aile sayısı, 38 ise bugünkü kişi sayısı; ikisi de ücret değil.",
+                "Yıllık ücret 20 avro ve toprakla su için toplanıyor. 4 ilk katılan aile sayısı, 38 ise bugünkü kişi sayısı; ikisi de ücret değil.",
             },
             {
               kind: "mcq",
@@ -208,7 +208,7 @@ Im Sommer gibt es jeden Monat ein Gartenfest. Dann kocht jeder etwas mit Gemüse
               ],
               answer: 2,
               explain:
-                "Kural net: üç kez gelmeyen parselini kaybediyor. Uyarı ya da ek ödeme metinde hiç geçmiyor; 20 euro yıllık aidat ve cezayla ilgisi yok.",
+                "Kural net: üç kez gelmeyen parselini kaybediyor. Uyarı ya da ek ödeme metinde hiç geçmiyor; 20 avro yıllık aidat ve cezayla ilgisi yok.",
             },
             {
               kind: "mcq",
@@ -418,7 +418,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               text: "Hanna (21) studiert und sucht ein günstiges Zimmer. Sie kocht gern mit anderen zusammen.",
               answer: "a",
               explain:
-                "(a) öğrenci evi, 320 euro ve \"wir kochen oft zusammen\" — üç ölçüt de tutuyor. (c) de oda ama mutfağı yok ve yalnız hafta içi; (f) bedava, karşılığında günde iki saat iş isteniyor.",
+                "(a) öğrenci evi, 320 avro ve \"wir kochen oft zusammen\" — üç ölçüt de tutuyor. (c) de oda ama mutfağı yok ve yalnız hafta içi; (f) bedava, karşılığında günde iki saat iş isteniyor.",
             },
             {
               kind: "match",
@@ -454,7 +454,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               text: "Tobias hat im Moment kein Geld und kann dafür im Haushalt helfen.",
               answer: "f",
               explain:
-                "(f) odayı bedava veriyor, karşılığı günde iki saat ev ve bahçe işi. (a) en ucuz kiralık ama yine de 320 euro istiyor.",
+                "(f) odayı bedava veriyor, karşılığı günde iki saat ev ve bahçe işi. (a) en ucuz kiralık ama yine de 320 avro istiyor.",
             },
           ],
         },
@@ -789,7 +789,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               options: ["Das Wasser.", "Der Strom im Winter.", "Die Miete."],
               answer: 0,
               explain:
-                "180 euro ek ödemenin sebebi su; elektrik için açıkça \"Der Strom nicht\" deniyor. Kiradan hiç söz edilmiyor.",
+                "180 avro ek ödemenin sebebi su; elektrik için açıkça \"Der Strom nicht\" deniyor. Kiradan hiç söz edilmiyor.",
             },
             {
               kind: "mcq",

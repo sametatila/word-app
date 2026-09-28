@@ -95,7 +95,7 @@
  { "tr": "Nasılsın? İyi mi, pek değil mi?", "kind": "sayTr", "en": "How are you? Well, or not so well?" },
  { "tr": "Sonra birlikte kahve içelim mi?", "kind": "askTr", "en": "Should we have a coffee together afterward?" },
  { "tr": "Tercihini söyle: Deutsch, bitte", "kind": "cue", "en": "Say which you prefer: Deutsch, bitte" },
- { "tr": "Ayda kırk beş euro — olur mu?", "kind": "sayTr", "en": "Forty-five euros a month — is that all right?" },
+ { "tr": "Ayda kırk beş avro — olur mu?", "kind": "sayTr", "en": "Forty-five euros a month — is that all right?" },
  { "tr": "Bu işi ne zamandır yapıyorsunuz?", "kind": "askTr", "en": "How long have you been doing this job?" },
  { "tr": "Hafta sonu da çalışıyor musunuz?", "kind": "askTr", "en": "Do you work on the weekend as well?" },
  { "tr": "Kibarca cevap ver ve adını söyle", "kind": "cue", "en": "Answer politely and say your name" },

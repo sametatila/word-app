@@ -162,7 +162,7 @@ export const deB1P15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["dreißig", "30"],
-        explain: "„… und er kostet dreißig Euro im Monat.“ İki euroluk aidat bu yüzden yetmiyor.",
+        explain: "„… und er kostet dreißig Euro im Monat.“ İki avroluk aidat bu yüzden yetmiyor.",
       },
       {
         kind: "short_answer",
@@ -170,7 +170,7 @@ export const deB1P15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["2,50 Euro", "zwei Euro fünfzig", "2,50", "die Hälfte", "zweieinhalb Euro", "2,50 €", "2.50 Euro", "zwei fünfzig", "die Hälfte von fünf Euro", "Hälfte"],
-        explain: "Aidat beş euro, öğrenciler için yarısı: iki buçuk euro.",
+        explain: "Aidat beş avro, öğrenciler için yarısı: iki buçuk avro.",
       },
       {
         text: "Wer schreibt das Protokoll?",

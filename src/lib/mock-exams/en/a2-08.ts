@@ -1072,7 +1072,7 @@ Vida`,
           exchange: [
             { who: "partner", de: "Here are three ideas: a dance class, a film club, or soccer in the park. What do you think about the dance class?", tr: "Üç fikir var: dans kursu, sinema kulübü ya da parkta futbol. Dans kursu hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Dans kursu hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
-            { who: "partner", de: "All right. But the class is eight euros every week, and the film club is only two for students. Is that not better?", tr: "Peki. Ama kurs her hafta sekiz euro, sinema kulübü ise öğrencilere yalnız iki euro. Bu daha iyi değil mi?" },
+            { who: "partner", de: "All right. But the class is eight euros every week, and the film club is only two for students. Is that not better?", tr: "Peki. Ama kurs her hafta sekiz avro, sinema kulübü ise öğrencilere yalnız iki avro. Bu daha iyi değil mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },
             { who: "partner", de: "So which one do we take?", tr: "Peki hangisini seçiyoruz?" },
             { who: "you", hint: "Bir seçim yap ve kısa bir gerekçe ver.", expect: "ortak bir karara varmak ve gerekçelendirmek", seconds: 30 },

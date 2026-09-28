@@ -100,7 +100,7 @@ Wer ein Buch verliert, bezahlt es.`,
               text: "Amina bekommt das Buch am ersten Tag.",
               answer: true,
               explain:
-                "E-posta \"Das Buch bekommst du am ersten Tag\" diyor ve fiyatını da veriyor: 22 euro.",
+                "E-posta \"Das Buch bekommst du am ersten Tag\" diyor ve fiyatını da veriyor: 22 avro.",
             },
             {
               kind: "bool",

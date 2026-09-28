@@ -805,7 +805,7 @@ Anmeldung bis 15. September.`,
               options: ["Nur Kaffeetrinker zahlen.", "Alle im Büro zahlen fünf Euro.", "Sie ist kostenlos."],
               answer: 0,
               explain:
-                "Kural şarta bağlı: \"Nur wenn du Kaffee trinkst\". Aidat ayda 5 euro ama herkes için değil, yalnız kahve içenler için.",
+                "Kural şarta bağlı: \"Nur wenn du Kaffee trinkst\". Aidat ayda 5 avro ama herkes için değil, yalnız kahve içenler için.",
             },
             {
               kind: "mcq",

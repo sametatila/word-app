@@ -367,7 +367,7 @@ export const enA2U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Rezervasyon kartını doldur.",
-        facts: "Çift kişilik oda; iki gece; 4 Mayıs'tan; kahvaltı dâhil; toplam yüz kırk euro.",
+        facts: "Çift kişilik oda; iki gece; 4 Mayıs'tan; kahvaltı dâhil; toplam yüz kırk avro.",
         fields: [
           { label: "Room", answer: "a double room", accept: ["double"] },
           { label: "Nights", answer: "two", accept: ["2"] },

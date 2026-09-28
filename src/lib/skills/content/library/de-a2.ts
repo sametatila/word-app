@@ -71,7 +71,7 @@ export const deA2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["kostenlos", "frei"],
-        explain: "„Der Eintritt ist kostenlos.“ Yalnız kahve ve kek iki euro tutuyor.",
+        explain: "„Der Eintritt ist kostenlos.“ Yalnız kahve ve kek iki avro tutuyor.",
       },
       {
         kind: "short_answer",

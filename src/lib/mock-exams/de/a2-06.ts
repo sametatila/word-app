@@ -192,7 +192,7 @@ Für dieses Jahr sind schon 60 Feste angemeldet.`,
               ],
               answer: 1,
               explain:
-                "Şehir 150 euro veriyor ve masa ile bankları ücretsiz ödünç veriyor. Kurulum yardımı ya da cadde izni metinde yok.",
+                "Şehir 150 avro veriyor ve masa ile bankları ücretsiz ödünç veriyor. Kurulum yardımı ya da cadde izni metinde yok.",
             },
             {
               kind: "mcq",
@@ -350,7 +350,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               options: ["32 Euro für das ganze Geschenk.", "8 Euro.", "Nichts, es ist schon bezahlt."],
               answer: 1,
               explain:
-                "Hediye 32 euro ve dört kişiye bölünüyor; mesaj \"Bring bitte am Samstag acht Euro mit\" diyor.",
+                "Hediye 32 avro ve dört kişiye bölünüyor; mesaj \"Bring bitte am Samstag acht Euro mit\" diyor.",
             },
             {
               kind: "mcq",
@@ -601,7 +601,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               options: ["Eine Tasse mit Namen für 18 Euro.", "Eine Pflanze.", "Einen Gutschein für 20 Euro."],
               answer: 1,
               explain:
-                "Kupa eleniyor çünkü meslektaş kahve içmiyor; ikinci öneri 16 euroluk bir bitki. Hediye çeki hiç geçmiyor.",
+                "Kupa eleniyor çünkü meslektaş kahve içmiyor; ikinci öneri 16 avroluk bir bitki. Hediye çeki hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -920,7 +920,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               text: "Ein Hoffest ist billiger, als viele denken.",
               answer: true,
               explain:
-                "\"Weniger als die Leute glauben\" diyor ve rakam veriyor: herkes bir şey getirirse 100 euro yetiyor.",
+                "\"Weniger als die Leute glauben\" diyor ve rakam veriyor: herkes bir şey getirirse 100 avro yetiyor.",
             },
             {
               kind: "bool",

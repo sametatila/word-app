@@ -449,7 +449,7 @@ Nach dem Bezahlen haben Sie 15 Minuten Zeit.`,
               options: ["Die Kurzstrecke für 2 Euro.", "Den Einzelfahrschein.", "Eine Tageskarte für den Markt."],
               answer: 1,
               explain:
-                "Kısa mesafe bileti yalnız dört durağa kadar geçerli, oysa yolculuk altı durak. Bu yüzden 2,80 euroluk tek yön bileti alınıyor.",
+                "Kısa mesafe bileti yalnız dört durağa kadar geçerli, oysa yolculuk altı durak. Bu yüzden 2,80 avroluk tek yön bileti alınıyor.",
             },
             {
               kind: "mcq",

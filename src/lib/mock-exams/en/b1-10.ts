@@ -994,7 +994,7 @@ Volunteers come on Saturday: {{19}}`,
               text: "Gap 18",
               accept: ["5", "five"],
               explain:
-                "«Five scans a visit are free; after that it is one euro each» — ücretsiz tarama sayısı. Bir euro sonraki her tarama için.",
+                "«Five scans a visit are free; after that it is one euro each» — ücretsiz tarama sayısı. Bir avro sonraki her tarama için.",
             },
             {
               kind: "gap",

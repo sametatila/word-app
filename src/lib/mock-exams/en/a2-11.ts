@@ -111,7 +111,7 @@ Please take the bags home with you; there is no trash can here.`,
               options: ["The book with the dates", "The twenty euros for the first visit", "A telephone number"],
               answer: 0,
               explain:
-                "Duyuru bunu açıkça istiyor: «Please bring the little book with your animal's dates». Yirmi euro ilk ziyaretin ücreti, getirilecek belge değil.",
+                "Duyuru bunu açıkça istiyor: «Please bring the little book with your animal's dates». Yirmi avro ilk ziyaretin ücreti, getirilecek belge değil.",
             },
             {
               kind: "mcq",

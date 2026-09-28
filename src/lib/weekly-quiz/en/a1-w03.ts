@@ -98,7 +98,7 @@ export const EN_A1_W03: QuizWeek = {
       stem: "How much is the book?",
       options: ["2 euros", "10 euros", "12 euros", "20 euros"],
       answer: 2,
-      why: "\"The book is 12 euros.\" 2 euro kartın fiyatı, 10 euro Anna'nın parası — üç sayı da konuşmada geçiyor.",
+      why: "\"The book is 12 euros.\" 2 avro kartın fiyatı, 10 avro Anna'nın parası — üç sayı da konuşmada geçiyor.",
       targets: ["listening.detail", "wordfield.price"],
     },
     {
@@ -118,7 +118,7 @@ export const EN_A1_W03: QuizWeek = {
       stem: "Why does Anna not buy the book?",
       options: ["It is expensive", "It is too small", "She has it", "The store is closed"],
       answer: 0,
-      why: "\"That is expensive\" diyor ve sonra yalnız 10 euro'su olduğunu ekliyor. Sebep iki cümleye yayılmış.",
+      why: "\"That is expensive\" diyor ve sonra yalnız 10 avro'su olduğunu ekliyor. Sebep iki cümleye yayılmış.",
       targets: ["listening.inference", "wordfield.price"],
     },
 

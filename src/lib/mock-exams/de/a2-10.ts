@@ -375,7 +375,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               ],
               answer: 1,
               explain:
-                "\"Gespart habe ich weniger, als ich gehofft hatte\" — tamirler toplam yüz yirmi euro tutmuş.",
+                "\"Gespart habe ich weniger, als ich gehofft hatte\" — tamirler toplam yüz yirmi avro tutmuş.",
             },
             {
               kind: "mcq",

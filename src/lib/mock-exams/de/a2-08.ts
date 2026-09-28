@@ -256,7 +256,7 @@ Ein Problem bleibt: Es fehlen jüngere Fahrer, denn die meisten im Team sind üb
               ],
               answer: 1,
               explain:
-                "Gerekçe hemen arkasından geliyor: \"Damit kommen die Schulkinder zum Zug\". Fiyat her sefer için aynı: iki euro.",
+                "Gerekçe hemen arkasından geliyor: \"Damit kommen die Schulkinder zum Zug\". Fiyat her sefer için aynı: iki avro.",
             },
             {
               kind: "mcq",

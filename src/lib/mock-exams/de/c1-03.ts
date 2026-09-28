@@ -605,7 +605,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               text: "Notiz 6",
               accept: ["40 000 Euro", "40000 Euro", "vierzigtausend Euro"],
               explain:
-                "Öneri başına üst sınır 40 000 euro; gerekçesi de veriliyor: tek bir proje bütün bütçeyi bağlamasın.",
+                "Öneri başına üst sınır 40 000 avro; gerekçesi de veriliyor: tek bir proje bütün bütçeyi bağlamasın.",
             },
             {
               kind: "gap",

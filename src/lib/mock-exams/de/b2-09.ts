@@ -561,7 +561,7 @@ Mein Fazit fällt entsprechend unbequem aus: Ich halte die Reform für richtig u
               text: "Die heutige Regel trifft die Ärmsten am härtesten.",
               answer: "e",
               explain:
-                "(e) somut karşılığını veriyor: elli beş euro \"eine Woche ohne Einkauf\" demek, bu yüzden eşit muamele sayılmıyor.",
+                "(e) somut karşılığını veriyor: elli beş avro \"eine Woche ohne Einkauf\" demek, bu yüzden eşit muamele sayılmıyor.",
             },
             {
               kind: "match",

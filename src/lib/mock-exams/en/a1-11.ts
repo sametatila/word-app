@@ -124,7 +124,7 @@ Some medicine only with a paper from the doctor.`,
               text: "You need a paper from the doctor for some medicine.",
               answer: true,
               explain:
-                "Duyurunun son satırı bunu söylüyor: «Some medicine only with a paper from the doctor». Baş ağrısı hapı ise üç euro ve kâğıt istemiyor.",
+                "Duyurunun son satırı bunu söylüyor: «Some medicine only with a paper from the doctor». Baş ağrısı hapı ise üç avro ve kâğıt istemiyor.",
             },
           ],
         },

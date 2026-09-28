@@ -129,7 +129,7 @@ Bei Regen fällt das Fest aus.`,
               text: "Der Kaffee kostet nichts.",
               answer: true,
               explain:
-                "\"Kuchen und Kaffee gibt es umsonst\" — kahve bedava. Para istenen tek şey sosis ve o da 2 euro.",
+                "\"Kuchen und Kaffee gibt es umsonst\" — kahve bedava. Para istenen tek şey sosis ve o da 2 avro.",
             },
             {
               kind: "bool",
@@ -493,7 +493,7 @@ Wir backen täglich ab 5 Uhr.`,
               options: ["Heute.", "Morgen.", "Am Wochenende."],
               answer: 0,
               explain:
-                "Bugünkü fiyat üç euro ve satıcı \"Morgen sind sie teurer\" diyor. Yani ucuz olan gün bugün; hafta sonu hiç konuşulmuyor.",
+                "Bugünkü fiyat üç avro ve satıcı \"Morgen sind sie teurer\" diyor. Yani ucuz olan gün bugün; hafta sonu hiç konuşulmuyor.",
             },
             {
               kind: "mcq",

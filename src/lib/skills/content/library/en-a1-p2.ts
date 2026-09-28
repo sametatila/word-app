@@ -117,13 +117,13 @@ export const enA1P2: SkillExercise[] = [
         text: "Why does Piotr call?",
         options: ["The shoes are ready.", "The shoes are not ready.", "He needs more money."],
         answer: 0,
-        explain: "„Your black shoes are ready.“ Fiyat da söylenenden iki euro daha az.",
+        explain: "„Your black shoes are ready.“ Fiyat da söylenenden iki avro daha az.",
       },
       {
         text: "How much is the repair?",
         options: ["twenty-two euros", "twenty-four euros", "two euros"],
         answer: 0,
-        explain: "„The price is twenty-two euros.“ İki euro, söylenen fiyattan olan farktır.",
+        explain: "„The price is twenty-two euros.“ İki avro, söylenen fiyattan olan farktır.",
       },
       {
         kind: "truefalse",

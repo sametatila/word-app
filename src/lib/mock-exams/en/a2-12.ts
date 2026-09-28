@@ -567,7 +567,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               options: ["Only a towel from home", "A hat too", "Four euros for every lesson"],
               answer: 1,
               explain:
-                "Anons iki şey sayıyor: «Children need a towel and a hat». Dört euro yalnız bonenin fiyatı.",
+                "Anons iki şey sayıyor: «Children need a towel and a hat». Dört avro yalnız bonenin fiyatı.",
             },
             {
               kind: "mcq",

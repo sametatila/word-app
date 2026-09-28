@@ -35,7 +35,7 @@ export const enA2U18: SkillExercise[] = [
     unit: 18,
     title: "Buying souvenirs",
     genre: "dialogue",
-    intro: "Altı hediye, yirmi euro. Kime ne alınıyor?",
+    intro: "Altı hediye, yirmi avro. Kime ne alınıyor?",
     gloss: [
       { de: "idea", tr: "fikir" },
       { de: "Here you are", tr: "buyurun" },

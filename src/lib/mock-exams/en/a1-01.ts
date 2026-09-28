@@ -236,7 +236,7 @@ Bring a friend!`,
               options: ["City Library", "Sports Center", "Language Café"],
               answer: 2,
               explain:
-                "Dil Kafe hem yeni insanlar (\"with new people\") hem ücretsizlik (\"no money\") ölçütünü karşılıyor. Spor merkezinde bilet 4 euro; kütüphane ücretsiz olabilir ama orada insanlarla tanışmaktan söz edilmiyor, tersine \"Quiet rooms\" deniyor.",
+                "Dil Kafe hem yeni insanlar (\"with new people\") hem ücretsizlik (\"no money\") ölçütünü karşılıyor. Spor merkezinde bilet 4 avro; kütüphane ücretsiz olabilir ama orada insanlarla tanışmaktan söz edilmiyor, tersine \"Quiet rooms\" deniyor.",
             },
             {
               kind: "mcq",
@@ -541,7 +541,7 @@ Nuray`,
               options: ["The green jacket", "The blue jacket", "Both of the jackets"],
               answer: 0,
               explain:
-                "Müşteri son cümlede kararını söylüyor: «I'll take the green one». Mavi ceket 35 euro, yeşil 28 euro; ilk sorulan mavi olduğu için dinlemeden şık işaretleyen öğrenci onu seçer. Üçüncü şık da tek bir ceket alındığı için elenir (\"the green ONE\").",
+                "Müşteri son cümlede kararını söylüyor: «I'll take the green one». Mavi ceket 35 avro, yeşil 28 avro; ilk sorulan mavi olduğu için dinlemeden şık işaretleyen öğrenci onu seçer. Üçüncü şık da tek bir ceket alındığı için elenir (\"the green ONE\").",
             },
             {
               kind: "mcq",

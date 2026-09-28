@@ -414,7 +414,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               options: ["11,50 Euro", "9,00 Euro", "2,50 Euro"],
               answer: 0,
               explain:
-                "Kasiyer üç sayı söylüyor: dokuz euro yetişkinler, iki elli çocuk, \"Zusammen elf fünfzig\". Sorulan toplam.",
+                "Kasiyer üç sayı söylüyor: dokuz avro yetişkinler, iki elli çocuk, \"Zusammen elf fünfzig\". Sorulan toplam.",
             },
             {
               kind: "mcq",
@@ -951,7 +951,7 @@ Nuray`,
             {
               who: "partner",
               de: "Hier bitte, es kostet zwei Euro. Jetzt bitte ich Sie um etwas: Kann ich Ihr Fahrrad für eine Stunde nehmen?",
-              tr: "Buyur, iki euro. Şimdi ben senden bir şey rica ediyorum: Bisikletini bir saatliğine alabilir miyim?",
+              tr: "Buyur, iki avro. Şimdi ben senden bir şey rica ediyorum: Bisikletini bir saatliğine alabilir miyim?",
             },
             {
               who: "you",

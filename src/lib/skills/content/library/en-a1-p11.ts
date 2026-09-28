@@ -161,7 +161,7 @@ export const enA1P11: SkillExercise[] = [
         text: "How much does everyone pay for the present?",
         options: ["twelve euros", "twenty-four euros", "two euros"],
         answer: 2,
-        explain: "„It's twenty-four euros, so everyone pays two euros.“ — yirmi dört euro çantanın toplam fiyatı.",
+        explain: "„It's twenty-four euros, so everyone pays two euros.“ — yirmi dört avro çantanın toplam fiyatı.",
       },
     ],
   },

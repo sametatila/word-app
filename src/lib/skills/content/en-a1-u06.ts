@@ -54,7 +54,7 @@ export const enA1U06: SkillExercise[] = [
         text: "How much is a sandwich with cheese?",
         options: ["four euros", "two euros", "five euros"],
         answer: 0,
-        explain: "„Sandwich with cheese: 4 euros“ — iki euro ekmek, beş euro çorba.",
+        explain: "„Sandwich with cheese: 4 euros“ — iki avro ekmek, beş avro çorba.",
       },
       {
         text: "What is in the breakfast?",
@@ -67,7 +67,7 @@ export const enA1U06: SkillExercise[] = [
         text: "Water is one euro.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Water: 1 euro“ — iki euro olan kahve.",
+        explain: "„Water: 1 euro“ — iki avro olan kahve.",
       },
       {
         kind: "gapfill",
@@ -127,7 +127,7 @@ export const enA1U06: SkillExercise[] = [
         text: "How much is the check?",
         options: ["nine euros", "five euros", "four euros"],
         answer: 0,
-        explain: "„It is nine euros.“ — beş euro çorba, dört euro sandviç; toplamı dokuz.",
+        explain: "„It is nine euros.“ — beş avro çorba, dört avro sandviç; toplamı dokuz.",
       },
       {
         kind: "truefalse",
@@ -210,7 +210,7 @@ export const enA1U06: SkillExercise[] = [
         text: "How much is the coffee?",
         options: ["three euros", "two euros", "five euros"],
         answer: 0,
-        explain: "„the coffee is three euros“ — iki euro gazete, beş euro toplam.",
+        explain: "„the coffee is three euros“ — iki avro gazete, beş avro toplam.",
       },
       {
         kind: "truefalse",

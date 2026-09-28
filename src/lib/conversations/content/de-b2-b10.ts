@@ -189,7 +189,7 @@ export const deB2B10: Conversation[] = [
       scene: "Bir meslektaşınla üç teklifi kıyaslıyorsunuz: fiyat, kapsam ve süre bakımından hangisi ne sunuyor, hangi risk var ve hangisini seçiyorsunuz. Kararınızı gerekçelendirin.",
       partner: "en ucuzu savunan, riskleri hafife alan bir meslektaş",
       opening: "Das billigste ist tausend Euro günstiger. Gibt es einen Grund, warum wir es nicht nehmen sollten?",
-      openingTr: "En ucuzu bin euro daha uygun. Onu almamamız için bir sebep var mı?",
+      openingTr: "En ucuzu bin avro daha uygun. Onu almamamız için bir sebep var mı?",
       goal: "Üç teklif fiyat, kapsam ve risk bakımından tartılmış ve biri gerekçesiyle seçilmiş olur.",
       minTurns: 8,
     },

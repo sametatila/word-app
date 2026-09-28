@@ -560,7 +560,7 @@ I would go again, but next time I will call {{24}} the morning.`,
               options: ["Two euros for the small ones", "Three euros", "Five euros"],
               answer: 1,
               explain:
-                "Müşteri bir kilo istiyor ve satıcı «Then three» diyor. Beş, iki kilonun fiyatı; iki euro ise arkadaki küçük domateslerin fiyatı, alınan onlar değil.",
+                "Müşteri bir kilo istiyor ve satıcı «Then three» diyor. Beş, iki kilonun fiyatı; iki avro ise arkadaki küçük domateslerin fiyatı, alınan onlar değil.",
             },
             {
               kind: "mcq",

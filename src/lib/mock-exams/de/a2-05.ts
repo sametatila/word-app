@@ -204,7 +204,7 @@ Frisch sagt zum Schluss: "Lesen dauert zehn Minuten. Ein falscher Vertrag dauert
               ],
               answer: 1,
               explain:
-                "Metin hesabı yapıyor: ayda iki üç euro, iki yılda \"bis zu 72 Euro\". Yani sorun aylık fiyat değil, toplam.",
+                "Metin hesabı yapıyor: ayda iki üç avro, iki yılda \"bis zu 72 Euro\". Yani sorun aylık fiyat değil, toplam.",
             },
             {
               kind: "mcq",
@@ -322,7 +322,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["Der Beitrag selbst.", "Die Zahl der Mitglieder im Verein.", "Der Zeitpunkt der Zahlung."],
               answer: 2,
               explain:
-                "Tutar 60 euroda kalıyor; değişen şey \"Neu ist die Zahlung\" — artık yılda bir kez şubatta çekiliyor.",
+                "Tutar 60 avroda kalıyor; değişen şey \"Neu ist die Zahlung\" — artık yılda bir kez şubatta çekiliyor.",
             },
             {
               kind: "mcq",
@@ -555,7 +555,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["Am Schalter für sechs Euro.", "Sie überweist es gar nicht.", "Online für zwei Euro."],
               answer: 2,
               explain:
-                "Gişe 6, internet 2 euro; Frau Sen \"Dann mache ich es lieber online\" diyor. Karar fiyat farkına dayanıyor.",
+                "Gişe 6, internet 2 avro; Frau Sen \"Dann mache ich es lieber online\" diyor. Karar fiyat farkına dayanıyor.",
             },
             {
               kind: "mcq",
@@ -794,7 +794,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["40 Euro.", "20 Euro.", "Nichts."],
               answer: 2,
               explain:
-                "Danışman \"Das erste Gespräch ist kostenlos\" diyor; 40 euro sonraki saatler için geçerli.",
+                "Danışman \"Das erste Gespräch ist kostenlos\" diyor; 40 avro sonraki saatler için geçerli.",
             },
             {
               kind: "mcq",
@@ -816,7 +816,7 @@ Danach behalten wir 20 Prozent. Ab dem ersten Termin gibt es keine Rückgabe.`,
               options: ["45 Euro.", "15 Euro.", "30 Euro."],
               answer: 1,
               explain:
-                "Hediye 45 euro ve üç kişiye bölünüyor; Levi hesabı yapıyor: \"Also 15 Euro pro Person\".",
+                "Hediye 45 avro ve üç kişiye bölünüyor; Levi hesabı yapıyor: \"Also 15 Euro pro Person\".",
             },
           ],
         },
@@ -970,7 +970,7 @@ Sara`,
           prompt:
             "Sie haben eine Rechnung für einen Musikdienst bekommen, den Sie nie bestellt haben: 4,99 Euro im Monat, seit drei Monaten. Schreiben Sie an den Kundenservice (circa 40 Wörter).",
           promptTr:
-            "Hiç sipariş etmediğin bir müzik hizmeti için fatura geldi: ayda 4,99 euro, üç aydır. Müşteri hizmetlerine yaz (yaklaşık 40 kelime).",
+            "Hiç sipariş etmediğin bir müzik hizmeti için fatura geldi: ayda 4,99 avro, üç aydır. Müşteri hizmetlerine yaz (yaklaşık 40 kelime).",
           items: [],
           rubric: {
             minWords: 40,

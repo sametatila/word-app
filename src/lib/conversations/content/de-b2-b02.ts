@@ -76,7 +76,7 @@ export const deB2B02: Conversation[] = [
       scene: "Bir tedarikçiyle yıllık sözleşmenin fiyatını pazarlık ediyorsun. Teklifini dilek kipiyle sun, jest iste, karşı teklife tepki ver ve bir rakamda ya da koşulda anlaş.",
       partner: "deneyimli, kolay indirim vermeyen ama ilişkiyi önemseyen bir satış müdürü",
       opening: "Unser Angebot liegt bei achtundvierzig Euro pro Einheit. Was schwebt Ihnen denn vor?",
-      openingTr: "Teklifimiz birim başına kırk sekiz euro. Sizin aklınızda ne var?",
+      openingTr: "Teklifimiz birim başına kırk sekiz avro. Sizin aklınızda ne var?",
       goal: "Karşılıklı teklifler sunulmuş ve bir fiyat ya da koşul üzerinde anlaşılmış olur.",
       minTurns: 9,
     },

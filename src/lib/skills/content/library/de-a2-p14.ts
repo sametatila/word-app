@@ -58,7 +58,7 @@ export const deA2P14: SkillExercise[] = [
         text: "Wofür hat Jana überraschend viel Geld ausgegeben?",
         options: ["für Essen zu Hause", "für die Miete", "für Kleinigkeiten unterwegs"],
         answer: 2,
-        explain: "Yolda aldığı ufak şeylere ayda neredeyse 140 euro gitmiş; yemeğe fazla harcamıyor.",
+        explain: "Yolda aldığı ufak şeylere ayda neredeyse 140 avro gitmiş; yemeğe fazla harcamıyor.",
       },
       {
         kind: "truefalse",
@@ -127,7 +127,7 @@ export const deA2P14: SkillExercise[] = [
         text: "Wie viel kostet ein normales Rad für das ganze Wochenende?",
         options: ["zwölf Euro", "dreißig Euro", "sechzig Euro"],
         answer: 1,
-        explain: "„Von Freitag bis Sonntag sind es dreißig Euro“; altmış euro iki bisikletin toplamı.",
+        explain: "„Von Freitag bis Sonntag sind es dreißig Euro“; altmış avro iki bisikletin toplamı.",
       },
       {
         text: "Warum nimmt Kemal keine E-Bikes?",

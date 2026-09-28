@@ -276,7 +276,7 @@ export const enA1U08: SkillExercise[] = [
         text: "How much are the apples?",
         options: ["two euros a kilo", "half a euro", "nine euros"],
         answer: 0,
-        explain: "„Two euros a kilo.“ — yarım euro muzun fiyatı, dokuz euro toplam.",
+        explain: "„Two euros a kilo.“ — yarım avro muzun fiyatı, dokuz avro toplam.",
       },
       {
         kind: "truefalse",

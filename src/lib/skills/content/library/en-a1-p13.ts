@@ -52,7 +52,7 @@ export const enA1P13: SkillExercise[] = [
         text: "How much is the dryer?",
         options: ["one euro", "two euros", "three euros"],
         answer: 0,
-        explain: "„… and the dryer costs one euro.“ — iki euro bir yıkamanın fiyatı.",
+        explain: "„… and the dryer costs one euro.“ — iki avro bir yıkamanın fiyatı.",
       },
       {
         kind: "truefalse",
@@ -143,7 +143,7 @@ export const enA1P13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["fifteen euros", "15 euros", "fifteen", "15"],
-        explain: "Bitki on beş euro; saksıyla yirmi iki olurdu ama Nora saksıyı almıyor.",
+        explain: "Bitki on beş avro; saksıyla yirmi iki olurdu ama Nora saksıyı almıyor.",
       },
       {
         kind: "dictation",

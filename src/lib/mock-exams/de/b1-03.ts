@@ -86,7 +86,7 @@ Würde ich es wieder machen? Ja, aber nicht auf jeder Strecke. Unter sechs Stund
               text: "Der Flug wäre an diesem Tag teurer gewesen als die Zugfahrt.",
               answer: false,
               explain:
-                "Sayılar tersini söylüyor: kuşet 49 euro, uçak o gün 39 euro. Yazar da bunu \"Wer nur auf den Preis schaut, steigt also nicht in den Zug\" diye bağlıyor.",
+                "Sayılar tersini söylüyor: kuşet 49 avro, uçak o gün 39 avro. Yazar da bunu \"Wer nur auf den Preis schaut, steigt also nicht in den Zug\" diye bağlıyor.",
             },
             {
               kind: "bool",
@@ -214,7 +214,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               options: ["Er gibt deutlich weniger aus.", "Er gibt ungefähr gleich viel aus.", "Er gibt mehr aus als vorher."],
               answer: 0,
               explain:
-                "Yeni giderler 58 artı yaklaşık 30 euro; eskisi sigorta, vergi ve servisle birlikte 300 euronun üstünde. Eski gider yenisinin üç katından fazla ve metin bunu \"Teuer geworden ist es trotzdem nicht\" diye özetliyor.",
+                "Yeni giderler 58 artı yaklaşık 30 avro; eskisi sigorta, vergi ve servisle birlikte 300 avronun üstünde. Eski gider yenisinin üç katından fazla ve metin bunu \"Teuer geworden ist es trotzdem nicht\" diye özetliyor.",
             },
             {
               kind: "mcq",
@@ -340,7 +340,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               text: "Marek reist allein ins Ausland, hat nur einen Rucksack und wenig Geld.",
               answer: "b",
               explain:
-                "(b) 15 euroyla en ucuzu, yurt dışına gidiyor ve zaten yalnız el bagajı kabul ediyor. (a) da ucuz ama yurt içinde kalıyor.",
+                "(b) 15 avroyla en ucuzu, yurt dışına gidiyor ve zaten yalnız el bagajı kabul ediyor. (a) da ucuz ama yurt içinde kalıyor.",
             },
             {
               kind: "match",
@@ -385,7 +385,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               text: "Herr Timm will übermorgen mit seiner Frau ans Meer fahren und hat rund 500 Euro.",
               answer: "i",
               explain:
-                "(i) öbür gün kalkıyor, denize gidiyor, kişi başı 249 euro (toplam 498) ve yalnız iki kişi için satılıyor — dört ölçüt de tutuyor.",
+                "(i) öbür gün kalkıyor, denize gidiyor, kişi başı 249 avro (toplam 498) ve yalnız iki kişi için satılıyor — dört ölçüt de tutuyor.",
             },
           ],
         },
@@ -881,7 +881,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               options: ["Frühstück und Abendessen.", "Nur das Frühstück.", "Keine Mahlzeiten."],
               answer: 1,
               explain:
-                "Danışman ayrımı açıkça yapıyor: \"Frühstück ist dabei, Abendessen nicht\". İlk fiyat 1180 euro bu kapsamla veriliyor.",
+                "Danışman ayrımı açıkça yapıyor: \"Frühstück ist dabei, Abendessen nicht\". İlk fiyat 1180 avro bu kapsamla veriliyor.",
             },
             {
               kind: "mcq",
@@ -892,7 +892,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               options: ["Weil dann die Hotels voll sind.", "Weil die Strecken dann länger sind.", "Weil ihr Urlaub vorher endet."],
               answer: 2,
               explain:
-                "İki yüz euroluk indirimi duyuyor ama \"ich habe nur bis Mitte September Urlaub\" diyor. Engel fiyat değil, izin süresi.",
+                "İki yüz avroluk indirimi duyuyor ama \"ich habe nur bis Mitte September Urlaub\" diyor. Engel fiyat değil, izin süresi.",
             },
             {
               kind: "mcq",
@@ -991,7 +991,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               text: "Nachts ist der Rufbus teurer als am Tag.",
               answer: true,
               explain:
-                "Gündüz normal bilet fiyatı geçerli; 23 ile 5 arasında iki euroluk bir ek ücret ekleniyor. Yani gece pahalı.",
+                "Gündüz normal bilet fiyatı geçerli; 23 ile 5 arasında iki avroluk bir ek ücret ekleniyor. Yani gece pahalı.",
             },
             {
               kind: "bool",
@@ -1285,7 +1285,7 @@ Mein Fazit: erst mehr Verbindungen, dann günstigere Preise. Sonst wird der Nahv
           prompt:
             "Ihr Bus hatte 40 Minuten Verspätung und Sie mussten ein Taxi nehmen. Die Quittung über 22 Euro haben Sie. Schreiben Sie an die Regionalbus GmbH (circa 40 Wörter).",
           promptTr:
-            "Otobüsün 40 dakika geç kaldı ve taksiye binmek zorunda kaldın. 22 euroluk makbuz elinde. Regionalbus GmbH'ye yaz (yaklaşık 40 kelime).",
+            "Otobüsün 40 dakika geç kaldı ve taksiye binmek zorunda kaldın. 22 avroluk makbuz elinde. Regionalbus GmbH'ye yaz (yaklaşık 40 kelime).",
           items: [],
           rubric: {
             minWords: 40,

@@ -652,7 +652,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
               ],
               answer: 0,
               explain:
-                "§ 6 sonradan boşaltmayı kapatıyor: \"erfolgt keine Nachleerung; die nächste reguläre Abfuhr ist abzuwarten\". Özel sefer ise 45 euro.",
+                "§ 6 sonradan boşaltmayı kapatıyor: \"erfolgt keine Nachleerung; die nächste reguläre Abfuhr ist abzuwarten\". Özel sefer ise 45 avro.",
             },
             {
               kind: "mcq",

@@ -135,7 +135,7 @@ export const a2U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["20", "zwanzig"],
-        explain: "Anahtar kaybında 20 euro — kuralın ikinci bölümünde yazıyor.",
+        explain: "Anahtar kaybında 20 avro — kuralın ikinci bölümünde yazıyor.",
       },
       {
         text: "Was macht man mit dem Gepäck, wenn man vor 15 Uhr ankommt?",
@@ -159,7 +159,7 @@ export const a2U16: SkillExercise[] = [
         text: "Das Frühstück ist bei jedem Zimmer dabei.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: kahvaltısız oda ayırtanlar altı euroya sonradan ekletiyor.",
+        explain: "Yanlış: kahvaltısız oda ayırtanlar altı avroya sonradan ekletiyor.",
       },
     ],
   },

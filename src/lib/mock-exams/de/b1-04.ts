@@ -344,7 +344,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               text: "Frau Alt möchte fotografieren lernen, hat aber nur ihr Handy und kein Geld dafür übrig.",
               answer: "a",
               explain:
-                "(a) hem ücretsiz hem de telefon kameralarını açıkça kabul ediyor. (f) de medya kursu ama 120 euro ve indirimli hâli bile 70 euro; para ölçütünde düşüyor.",
+                "(a) hem ücretsiz hem de telefon kameralarını açıkça kabul ediyor. (f) de medya kursu ama 120 avro ve indirimli hâli bile 70 avro; para ölçütünde düşüyor.",
             },
             {
               kind: "match",
@@ -389,7 +389,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               text: "Jonas studiert und will an einem Wochenende lernen, wie man Audio produziert.",
               answer: "f",
               explain:
-                "(f) hafta sonu kursu, teknik veriliyor ve öğrenciler için ücret 70 euroya iniyor. (a) da medyayla ilgili ama fotoğraf, ses değil.",
+                "(f) hafta sonu kursu, teknik veriliyor ve öğrenciler için ücret 70 avroya iniyor. (a) da medyayla ilgili ama fotoğraf, ses değil.",
             },
             {
               kind: "match",
@@ -595,7 +595,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               options: ["10,00 Euro, weil das die Obergrenze ist.", "2,40 Euro.", "Nichts, wenn die Bibliothek geschlossen war."],
               answer: 1,
               explain:
-                "Günlük 0,20 euro × 12 gün = 2,40 euro; üst sınır olan 10 euroya daha çok var. Kapalı günler de sayılıyor, o yüzden üçüncü şık da yanlış.",
+                "Günlük 0,20 avro × 12 gün = 2,40 avro; üst sınır olan 10 avroya daha çok var. Kapalı günler de sayılıyor, o yüzden üçüncü şık da yanlış.",
             },
             {
               kind: "mcq",
@@ -610,7 +610,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               ],
               answer: 0,
               explain:
-                "Madde 4'e göre oda kimse gelmezse 15 dakika sonra serbest bırakılıyor. 20 dakikalık gecikme bu sınırın dışında; 10 euro ise gecikme ücretinin üst sınırı, oda kuralıyla ilgisi yok.",
+                "Madde 4'e göre oda kimse gelmezse 15 dakika sonra serbest bırakılıyor. 20 dakikalık gecikme bu sınırın dışında; 10 avro ise gecikme ücretinin üst sınırı, oda kuralıyla ilgisi yok.",
             },
           ],
         },
@@ -909,7 +909,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               options: ["Fünf Euro.", "Vierzig Euro.", "Fünfzig Euro."],
               answer: 1,
               explain:
-                "On seanslık kart 40 euro. 5 euro tek seansın ücreti, 50 ise on seansın tek tek ödenmiş hâli — yani kart 10 euro tasarruf ettiriyor.",
+                "On seanslık kart 40 avro. 5 avro tek seansın ücreti, 50 ise on seansın tek tek ödenmiş hâli — yani kart 10 avro tasarruf ettiriyor.",
             },
             {
               kind: "mcq",

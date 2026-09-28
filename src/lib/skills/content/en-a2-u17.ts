@@ -373,7 +373,7 @@ export const enA2U17: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kiralama kartını doldur.",
-        facts: "Küçük araba; üç gün; doksan euro; yakıt dâhil değil; iade cuma altıda.",
+        facts: "Küçük araba; üç gün; doksan avro; yakıt dâhil değil; iade cuma altıda.",
         fields: [
           { label: "Car", answer: "a small car", accept: ["small"] },
           { label: "Days", answer: "three", accept: ["3"] },

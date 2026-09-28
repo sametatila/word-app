@@ -204,7 +204,7 @@ No reservation needed.`,
               options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 0,
               explain:
-                "Havuz duyurusu iki fiyat veriyor: tek seferlik üç euro, «or twenty for ten times». On kez giden kişi on euro az ödüyor.",
+                "Havuz duyurusu iki fiyat veriyor: tek seferlik üç avro, «or twenty for ten times». On kez giden kişi on avro az ödüyor.",
             },
             {
               kind: "mcq",
@@ -304,7 +304,7 @@ No bicycles on the grass.`,
               text: "You keep the euro for the locker.",
               answer: false,
               explain:
-                "Levha tam tersini söylüyor: «You get the euro back». Bir euro yalnız kapıyı açıp kapatmak için veriliyor.",
+                "Levha tam tersini söylüyor: «You get the euro back». Bir avro yalnız kapıyı açıp kapatmak için veriliyor.",
             },
             {
               kind: "bool",

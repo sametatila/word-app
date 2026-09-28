@@ -89,7 +89,7 @@ export const EN_B1_06: MockPaper = {
               options: ["Charge for repairs", "Rent out instruments after the first year", "Give back the fee if you stop early"],
               answer: 2,
               explain:
-                "Duyurunun son cümlesi bunu söylüyor: «we do not return the year's fee». Onarım için ücret ALINIYOR («You pay for repairs») ve kira ikinci yıl da sürüyor (yirmi euro), yani öteki iki şık okulun yaptığı şeyler.",
+                "Duyurunun son cümlesi bunu söylüyor: «we do not return the year's fee». Onarım için ücret ALINIYOR («You pay for repairs») ve kira ikinci yıl da sürüyor (yirmi avro), yani öteki iki şık okulun yaptığı şeyler.",
             },
             {
               kind: "mcq",
@@ -164,7 +164,7 @@ export const EN_B1_06: MockPaper = {
               text: "Tuva wants to try an instrument for a few months before she spends money on one.",
               answer: "e",
               explain:
-                "İlan tam bu denemeyi satıyor: «Borrow an instrument for three months and decide afterward», üstelik yirmi euro sonradan satın alınırsa iade ediliyor. Satış ilanı (h) ise denemeden önce ödeme ister.",
+                "İlan tam bu denemeyi satıyor: «Borrow an instrument for three months and decide afterward», üstelik yirmi avro sonradan satın alınırsa iade ediliyor. Satış ilanı (h) ise denemeden önce ödeme ister.",
             },
             {
               kind: "match",
@@ -173,7 +173,7 @@ export const EN_B1_06: MockPaper = {
               text: "Goran has a violin that belonged to his father and does not know if it can be played.",
               answer: "b",
               explain:
-                "İlan tam bu soruya cevap veriyor: «A repairer looks at it with you and tells you what it needs», ayda bir cumartesi ve on euro. Ödünç kütüphanesi (e) ise elindeki çalgıyla ilgilenmiyor.",
+                "İlan tam bu soruya cevap veriyor: «A repairer looks at it with you and tells you what it needs», ayda bir cumartesi ve on avro. Ödünç kütüphanesi (e) ise elindeki çalgıyla ilgilenmiyor.",
             },
             {
               kind: "match",

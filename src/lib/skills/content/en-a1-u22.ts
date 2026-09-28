@@ -374,7 +374,7 @@ export const enA1U22: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Eczane fişini doldur.",
-        facts: "Tablet; baş ağrısı; günde üç kez; altı euro.",
+        facts: "Tablet; baş ağrısı; günde üç kez; altı avro.",
         fields: [
           { label: "Medicine", answer: "tablets", accept: ["tablet"] },
           { label: "Problem", answer: "headache", accept: ["a headache"] },

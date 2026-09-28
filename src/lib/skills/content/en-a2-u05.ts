@@ -358,7 +358,7 @@ export const enA2U05: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Karşılaştırma kartını doldur.",
-        facts: "Siyah çanta kırk euro; kahverengi çanta altmış euro; kahverengi daha geniş; kahverengi seçildi.",
+        facts: "Siyah çanta kırk avro; kahverengi çanta altmış avro; kahverengi daha geniş; kahverengi seçildi.",
         fields: [
           { label: "Black", answer: "forty euros", accept: ["40 euros"] },
           { label: "Brown", answer: "sixty euros", accept: ["60 euros"] },

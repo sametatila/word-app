@@ -655,7 +655,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               ],
               answer: 2,
               explain:
-                "Kural iki davranışı ayırıyor: bildiren en fazla otuz euro öder, \"Wer ihn verschweigt, trägt die vollen Kosten der Reparatur.\"",
+                "Kural iki davranışı ayırıyor: bildiren en fazla otuz avro öder, \"Wer ihn verschweigt, trägt die vollen Kosten der Reparatur.\"",
             },
           ],
         },
@@ -1080,7 +1080,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               text: "Die Begleitung ist teurer als die Bearbeitung am Schalter.",
               answer: false,
               explain:
-                "Karşılaştırma tersini veriyor: eşlik başına on iki euro, gişede işlenen başvuru idareye \"ein Vielfaches davon\" tutuyor.",
+                "Karşılaştırma tersini veriyor: eşlik başına on iki avro, gişede işlenen başvuru idareye \"ein Vielfaches davon\" tutuyor.",
             },
             {
               kind: "bool",

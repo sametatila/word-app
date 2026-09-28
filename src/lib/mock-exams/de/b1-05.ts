@@ -564,7 +564,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               options: ["150 Euro.", "120 Euro.", "100 Euro."],
               answer: 2,
               explain:
-                "Yüzde 80 hesabı 120 euro yapar, ama madde 2 bir üst sınır koyuyor: \"höchstens jedoch 100 Euro je Kurs\". Üst sınır yüzdeyi keser.",
+                "Yüzde 80 hesabı 120 avro yapar, ama madde 2 bir üst sınır koyuyor: \"höchstens jedoch 100 Euro je Kurs\". Üst sınır yüzdeyi keser.",
             },
             {
               kind: "mcq",
@@ -579,7 +579,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               ],
               answer: 0,
               explain:
-                "Madde 3 süreyi üç ayla sınırlıyor ve \"Später eingehende Unterlagen können nicht berücksichtigt werden\" diyor. 15 euro ise iptal ücreti, gecikme cezası değil.",
+                "Madde 3 süreyi üç ayla sınırlıyor ve \"Später eingehende Unterlagen können nicht berücksichtigt werden\" diyor. 15 avro ise iptal ücreti, gecikme cezası değil.",
             },
             {
               kind: "mcq",
@@ -590,7 +590,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               options: ["Die vollen Kurskosten.", "15 Euro Bearbeitungsgebühr.", "Nichts."],
               answer: 2,
               explain:
-                "On gün kala normalde 15 euro alınır, ama madde 4 istisna koyuyor: sağlık nedeniyle iptalde rapor varsa \"entfällt die Gebühr\".",
+                "On gün kala normalde 15 avro alınır, ama madde 4 istisna koyuyor: sağlık nedeniyle iptalde rapor varsa \"entfällt die Gebühr\".",
             },
             {
               kind: "mcq",

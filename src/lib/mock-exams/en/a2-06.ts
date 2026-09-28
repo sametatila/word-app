@@ -548,7 +548,7 @@ If you go in February, take boots {{24}} are really waterproof.`,
               options: ["The warm ones without water protection", "The waterproof ones", "Neither"],
               answer: 1,
               explain:
-                "Müşteri her gün yağmurda yürüdüğünü söyleyince görevli «Then take the second ones» diyor; ikinci çift hem sıcak hem su geçirmez, yirmi euro daha pahalı.",
+                "Müşteri her gün yağmurda yürüdüğünü söyleyince görevli «Then take the second ones» diyor; ikinci çift hem sıcak hem su geçirmez, yirmi avro daha pahalı.",
             },
             {
               kind: "mcq",

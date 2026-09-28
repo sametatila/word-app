@@ -373,7 +373,7 @@ export const enA2U14: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kargo formunu doldur.",
-        facts: "İki kilo; İtalya'ya; normal gönderi; sigortalı; toplam on dört euro.",
+        facts: "İki kilo; İtalya'ya; normal gönderi; sigortalı; toplam on dört avro.",
         fields: [
           { label: "Weight", answer: "two kilos", accept: ["2 kilos"] },
           { label: "Where to", answer: "Italy", accept: ["to Italy"] },

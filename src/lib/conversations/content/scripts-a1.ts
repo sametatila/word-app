@@ -148,7 +148,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["postleitzahl", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "zehn", "zwanzig", "dreißig", "achtzig"], "Perfekt. Möchten Sie die Monatskarte oder die Jahreskarte?", "Mükemmel. Aylık kart mı istersiniz, yıllık mı?", "t3", []),
     ], { say: "Die Postleitzahl, bitte.", sayTr: "Posta kodu, lütfen.", example: "Acht null null null fünf." }),
     t("t3", "Möchten Sie die Monatskarte oder die Jahreskarte?", "Aylık kart mı, yıllık mı?", "Birini seç ve fiyatı sor: Wie viel kostet das?", [
-      r(["monatskarte", "monat", "jahreskarte", "jahr", "kostet", "kosten", "preis", "wie viel"], "Die Monatskarte kostet fünfundvierzig Euro, die Jahreskarte vierhundert. Möchten Sie bar oder mit Karte bezahlen?", "Aylık kart kırk beş euro, yıllık kart dört yüz. Nakit mi, kartla mı ödemek istersiniz?", "t4", ["Wie viel kostet das?"]),
+      r(["monatskarte", "monat", "jahreskarte", "jahr", "kostet", "kosten", "preis", "wie viel"], "Die Monatskarte kostet fünfundvierzig Euro, die Jahreskarte vierhundert. Möchten Sie bar oder mit Karte bezahlen?", "Aylık kart kırk beş avro, yıllık kart dört yüz. Nakit mi, kartla mı ödemek istersiniz?", "t4", ["Wie viel kostet das?"]),
     ], { say: "Monatskarte oder Jahreskarte?", sayTr: "Aylık kart mı, yıllık kart mı?", example: "Die Monatskarte, bitte. Wie viel kostet das?" }),
     t("t4", "Möchten Sie bar oder mit Karte bezahlen?", "Nakit mi, kartla mı?", "Ödeme şeklini söyle: bar / mit Karte", [
       r(["bar", "karte", "bezahle", "bezahlen", "kreditkarte"], "Sehr gut. Ab wann möchten Sie anfangen — heute oder ab Montag?", "Çok iyi. Ne zaman başlamak istersiniz — bugün mü, pazartesiden mi?", "t5", []),
@@ -157,11 +157,11 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["heute", "montag", "morgen", "woche", "nächste", "naechste", "ab"], "Notiert. Und wie ist Ihre Handynummer?", "Not aldım. Peki cep telefonu numaranız kaç?", "t6", []),
     ], { say: "Heute oder ab Montag?", sayTr: "Bugün mü, pazartesiden mi?", example: "Ab Montag, bitte." }),
     t("t6", "Wie ist Ihre Handynummer?", "Cep telefonu numaranız kaç?", "Numaranı rakam rakam söyle", [
-      r(["nummer", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "handy", "telefon"], "Danke. Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Teşekkürler. Aidat ayda kırk beş euro — uygun mu?", "t7", ["Meine Nummer ist …"]),
+      r(["nummer", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "handy", "telefon"], "Danke. Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Teşekkürler. Aidat ayda kırk beş avro — uygun mu?", "t7", ["Meine Nummer ist …"]),
     ], { say: "Ihre Handynummer, bitte.", sayTr: "Cep telefonu numaranız, lütfen.", example: "Meine Nummer ist null eins sieben sechs, eins zwei drei." }),
-    t("t7", "Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Aidat ayda kırk beş euro — uygun mu?", "Onayla ya da fiyatı bir daha sor", [
-      r(["ja", "okay", "ok", "gut", "ordnung", "teuer", "nein", "wie viel", "kostet"], "Alles klar: fünfundvierzig Euro, Start am Montag. Hier ist Ihre Karte — viel Spaß beim Training!", "Tamamdır: kırk beş euro, başlangıç pazartesi. İşte kartınız — antrenmanda iyi eğlenceler!", undefined, ["Wie viel kostet das?"]),
-    ], { say: "Fünfundvierzig Euro im Monat — geht das?", sayTr: "Ayda kırk beş euro — olur mu?", example: "Ja, das ist in Ordnung." }),
+    t("t7", "Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Aidat ayda kırk beş avro — uygun mu?", "Onayla ya da fiyatı bir daha sor", [
+      r(["ja", "okay", "ok", "gut", "ordnung", "teuer", "nein", "wie viel", "kostet"], "Alles klar: fünfundvierzig Euro, Start am Montag. Hier ist Ihre Karte — viel Spaß beim Training!", "Tamamdır: kırk beş avro, başlangıç pazartesi. İşte kartınız — antrenmanda iyi eğlenceler!", undefined, ["Wie viel kostet das?"]),
+    ], { say: "Fünfundvierzig Euro im Monat — geht das?", sayTr: "Ayda kırk beş avro — olur mu?", example: "Ja, das ist in Ordnung." }),
   ],
 
   "de-a1-alphabet": [

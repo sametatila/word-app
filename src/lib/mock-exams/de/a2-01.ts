@@ -551,7 +551,7 @@ Katja`,
               options: ["Ein Rezept.", "Ihren Ausweis.", "Genau fünf Euro in bar."],
               answer: 1,
               explain:
-                "Getirilmesi istenen tek şey kimlik. Beş euro ödenecek bir ücret, ama \"bar\" (nakit) denmiyor; reçete hiç geçmiyor.",
+                "Getirilmesi istenen tek şey kimlik. Beş avro ödenecek bir ücret, ama \"bar\" (nakit) denmiyor; reçete hiç geçmiyor.",
             },
           ],
         },

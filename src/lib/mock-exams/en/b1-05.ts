@@ -352,7 +352,7 @@ The council now publishes the count every year, in a table that fits on one page
               text: "Gap 18",
               answer: "a",
               explain:
-                "Önceki cümle kişi başına dört euroluk harcamayı veriyor; (a) «The number» ile o rakama gönderme yapıp neden akılda kaldığını söylüyor: bir afişe sığacak kadar küçük.",
+                "Önceki cümle kişi başına dört avroluk harcamayı veriyor; (a) «The number» ile o rakama gönderme yapıp neden akılda kaldığını söylüyor: bir afişe sığacak kadar küçük.",
             },
             {
               kind: "match",
@@ -658,7 +658,7 @@ It is the second time this year {{30}} the date has moved.`,
               options: ["A bed for twelve hours", "The cheaper option", "Nothing yet"],
               answer: 1,
               explain:
-                "Konuşmacı «A seat, not a bed» diyor ve fiyatı veriyor: yirmi euro. On iki saat soran kişinin varsayımı; gerçek süre dokuz saat.",
+                "Konuşmacı «A seat, not a bed» diyor ve fiyatı veriyor: yirmi avro. On iki saat soran kişinin varsayımı; gerçek süre dokuz saat.",
             },
             {
               kind: "mcq",

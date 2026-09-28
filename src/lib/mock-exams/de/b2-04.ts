@@ -1486,7 +1486,7 @@ Aylin Tekin`,
           prompt:
             "Ihr Haus bekommt 8000 Euro aus einem Förderprogramm für den Innenhof. Einigen Sie sich mit Ihrer Gesprächspartnerin: Spielgeräte für Kinder, ein überdachter Fahrradraum, Bäume und Sitzplätze oder eine gemeinsame Werkstatt.",
           promptTr:
-            "Binanız iç avlu için bir destek programından 8000 euro alıyor. Karşındakiyle anlaş: çocuklar için oyun aletleri, üstü kapalı bisiklet alanı, ağaç ve oturma yerleri ya da ortak atölye.",
+            "Binanız iç avlu için bir destek programından 8000 avro alıyor. Karşındakiyle anlaş: çocuklar için oyun aletleri, üstü kapalı bisiklet alanı, ağaç ve oturma yerleri ya da ortak atölye.",
           prepSeconds: 90,
           exchange: [
             {

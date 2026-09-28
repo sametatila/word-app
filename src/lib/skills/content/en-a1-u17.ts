@@ -366,7 +366,7 @@ export const enA1U17: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kira formunu doldur.",
-        facts: "Altı yüz euro; her ay ödenir; su dâhil; elektrik ayrı.",
+        facts: "Altı yüz avro; her ay ödenir; su dâhil; elektrik ayrı.",
         fields: [
           { label: "Rent", answer: "six hundred euros", accept: ["600 euros"] },
           { label: "Pay", answer: "every month", accept: ["each month"] },

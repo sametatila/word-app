@@ -115,7 +115,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Fiyat görüşmesi",
       situation: "Bir alıcı ile satış müdürü yıllık sözleşmeyi konuşuyor.",
       turns: [
-        { speaker: "Vertrieb", de: "Unser Angebot liegt bei achtundvierzig Euro pro Einheit. Bei größeren Mengen ließe sich darüber reden.", tr: "Teklifimiz birim başına kırk sekiz euro. Büyük miktarlarda bunun üzerine konuşulabilir." },
+        { speaker: "Vertrieb", de: "Unser Angebot liegt bei achtundvierzig Euro pro Einheit. Bei größeren Mengen ließe sich darüber reden.", tr: "Teklifimiz birim başına kırk sekiz avro. Büyük miktarlarda bunun üzerine konuşulabilir." },
         { speaker: "Einkauf", de: "Wir könnten uns vierzig vorstellen. Kämen Sie uns beim Preis entgegen, würden wir zweitausend Stück abnehmen.", tr: "Kırkı düşünebiliriz. Fiyatta bize yaklaşırsanız iki bin adet alırız." },
         { speaker: "Vertrieb", de: "Vierzig ist zwar unter unserer Grenze, aber bei zweitausend Stück wird es interessant. Sagen wir vierundvierzig?", tr: "Kırk bizim sınırımızın altında, ama iki bin adette iş ilginçleşiyor. Kırk dört diyelim mi?" },
         { speaker: "Einkauf", de: "Beim Preis gebe ich nicht ganz nach, aber beim Termin bin ich flexibel. Zweiundvierzig, dafür Lieferung erst im Oktober.", tr: "Fiyatta tam geri adım atmıyorum ama tarihte esneğim. Kırk iki, karşılığında teslimat ekimde." },

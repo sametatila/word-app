@@ -485,7 +485,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
               text: "Which writer says the object under discussion stands in for another dispute?",
               answer: "a",
               explain:
-                "Writer A asıl konuyu ayırıyor: «What is at stake is the water rights that follow from it», ve haritanın tartışılma nedenini veriyor: iki hükümetin de tanıdığı tek nesne o.",
+                "Writer A asıl konuyu ayırıyor: «What is at stake is the water rights that follow from it», ve haritanın tartışılma nedenini veriyor: iki hükûmetin de tanıdığı tek nesne o.",
             },
             {
               kind: "match",
@@ -590,7 +590,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
               text: "Gap 34",
               answer: "a",
               explain:
-                "Paragraf üç önerinin de aynı soruda takıldığını söylüyor: personeli hangi hükümet istihdam edecek. (a) o sorunun niteliğini veriyor: teknik de pahalı da değil, yine de dosya otuz dört yıldır açık. (e) direklerin 1911'deki üretimi ve ağırlığından söz ediyor; metinde direğin yapımı ya da ağırlığı hiç tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
+                "Paragraf üç önerinin de aynı soruda takıldığını söylüyor: personeli hangi hükûmet istihdam edecek. (a) o sorunun niteliğini veriyor: teknik de pahalı da değil, yine de dosya otuz dört yıldır açık. (e) direklerin 1911'deki üretimi ve ağırlığından söz ediyor; metinde direğin yapımı ya da ağırlığı hiç tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
             },
           ],
         },

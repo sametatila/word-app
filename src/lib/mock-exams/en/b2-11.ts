@@ -801,7 +801,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
               options: ["The charge for each repair", "The number of items accepted", "The workshop's hours"],
               answer: 1,
               explain:
-                "Duyuru değişikliği veriyor: «two items per person rather than one», ücret ise on iki euroda kalıyor.",
+                "Duyuru değişikliği veriyor: «two items per person rather than one», ücret ise on iki avroda kalıyor.",
             },
             {
               kind: "mcq",
@@ -963,7 +963,7 @@ Bring the {{16}} number`,
               id: "c1",
               genre: "Speaker 1",
               genreTr: "Birinci konuşmacı",
-              situation: "Birinci konuşmacı dört euroluk parçayı anlatıyor.",
+              situation: "Birinci konuşmacı dört avroluk parçayı anlatıyor.",
               plays: 2,
               segments: [
                 { text: "Everybody quotes the four euros, and the four euros is true, and it puts the argument in the wrong place. It sounds like somebody is overcharging. Nobody is. The ninety is three hours of work that genuinely has to be done." },
@@ -1034,7 +1034,7 @@ Bring the {{16}} number`,
               text: "Speaker 1",
               answer: "e",
               explain:
-                "Birinci konuşmacı rakamın etkisini anlatıyor: «It sounds like somebody is overcharging. Nobody is», yani dört euro tartışmayı yanlış yere koyuyor.",
+                "Birinci konuşmacı rakamın etkisini anlatıyor: «It sounds like somebody is overcharging. Nobody is», yani dört avro tartışmayı yanlış yere koyuyor.",
             },
             {
               kind: "match",

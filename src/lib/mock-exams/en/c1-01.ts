@@ -499,7 +499,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
               text: "Which writer argues that the wrong remedy is being demanded because the right concept is missing?",
               answer: "a",
               explain:
-                "Yazar A talebi yeniden tanımlıyor: istenen şey silme değil orantı, «Erasure is what we ask for when we have no vocabulary for proportion». Yani yanlış çare, doğru kavramın yokluğundan doğuyor. D de çareyi eleştiriyor ama gerekçesi kavram eksikliği değil, kimin yararlandığı.",
+                "Writer A talebi yeniden tanımlıyor: istenen şey silme değil orantı, «Erasure is what we ask for when we have no vocabulary for proportion». Yani yanlış çare, doğru kavramın yokluğundan doğuyor. D de çareyi eleştiriyor ama gerekçesi kavram eksikliği değil, kimin yararlandığı.",
             },
             {
               kind: "match",

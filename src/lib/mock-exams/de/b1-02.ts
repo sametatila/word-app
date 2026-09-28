@@ -373,7 +373,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               text: "Frau Lindqvist (79) lebt allein in einer Vier-Zimmer-Wohnung. Sie möchte umziehen, hat aber Angst vor den Kosten.",
               answer: "e",
               explain:
-                "(e) tam bu durum için: küçük eve geçmek isteyen yaşlılara takas partneri buluyor ve taşınma masrafını 1.500 euroya kadar üstleniyor.",
+                "(e) tam bu durum için: küçük eve geçmek isteyen yaşlılara takas partneri buluyor ve taşınma masrafını 1.500 avroya kadar üstleniyor.",
             },
             {
               kind: "match",
@@ -896,7 +896,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ],
               answer: 2,
               explain:
-                "\"nicht aus dem Stadthaushalt, sondern über Patenschaften\" — tarh başına yılda 80 euro. Belediye bütçesi açıkça eleniyor.",
+                "\"nicht aus dem Stadthaushalt, sondern über Patenschaften\" — tarh başına yılda 80 avro. Belediye bütçesi açıkça eleniyor.",
             },
             {
               kind: "mcq",

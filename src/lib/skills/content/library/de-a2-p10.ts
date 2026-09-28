@@ -168,7 +168,7 @@ export const deA2P10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["fünfundsiebzig Euro", "75 Euro", "etwa fünfundsiebzig Euro", "fünfundsiebzig", "etwa 75 Euro"],
-        explain: "Otuz euroluk parça artı kırk beş euroluk işçilik: „etwa fünfundsiebzig Euro“.",
+        explain: "Otuz avroluk parça artı kırk beş avroluk işçilik: „etwa fünfundsiebzig Euro“.",
       },
       {
         text: "Wann ist die Maschine fertig?",

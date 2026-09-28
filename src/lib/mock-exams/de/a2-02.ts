@@ -88,7 +88,7 @@ Und jetzt? Das Jahr ist vorbei. Ich kaufe wieder, aber weniger und langsamer. Me
               options: ["Sie hat eine neue Jacke gekauft.", "Sie hat ihre Jacke reparieren lassen.", "Sie hat ihre Jacke verkauft."],
               answer: 1,
               explain:
-                "Ceket bozulunca terziye gidiyor, tamir 12 euro tutuyor. 80 euro yeni ceketin fiyatı — yani almadığı şeyin.",
+                "Ceket bozulunca terziye gidiyor, tamir 12 avro tutuyor. 80 avro yeni ceketin fiyatı — yani almadığı şeyin.",
             },
             {
               kind: "mcq",
@@ -373,7 +373,7 @@ Selin`,
               text: "Ein Student sucht eine billige Fahrt nach Berlin. Er hat Zeit und braucht keine schnelle Verbindung.",
               answer: "d",
               explain:
-                "(d) 14,90 euro ve gece yolculuğu — ucuz ama uzun. (h) de Berlin'e gidiyor, ama 89 euro ve hızlı: öğrencinin aradığı ölçüte ters.",
+                "(d) 14,90 avro ve gece yolculuğu — ucuz ama uzun. (h) de Berlin'e gidiyor, ama 89 avro ve hızlı: öğrencinin aradığı ölçüte ters.",
             },
             {
               kind: "match",
@@ -758,7 +758,7 @@ Selin`,
               options: ["Mit Bargeld.", "Mit Karte.", "Er kauft noch etwas dazu."],
               answer: 0,
               explain:
-                "Kart 25 eurodan itibaren geçiyor, tutar 23,50. Müşteri ek alışveriş teklifini reddedip nakit ödüyor.",
+                "Kart 25 avrodan itibaren geçiyor, tutar 23,50. Müşteri ek alışveriş teklifini reddedip nakit ödüyor.",
             },
             {
               kind: "mcq",

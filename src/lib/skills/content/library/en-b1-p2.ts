@@ -209,7 +209,7 @@ export const enB1P2: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Herkes katılırsa maliyet daire başına iki bin euro olacak.",
+        tr: "Herkes katılırsa maliyet daire başına iki bin avro olacak.",
         answer: "If everybody joins, the cost will be two thousand euros per apartment.",
         alternatives: ["The cost will be two thousand euros per apartment if everybody joins."],
         hint: "Birinci tip koşulda „if“ yarısı geniş zaman, ana yarısı „will“ alır.",

@@ -98,7 +98,7 @@ export const EN_A2_07: MockPaper = {
               options: ["Plates and glasses", "The first four hours", "The music"],
               answer: 0,
               explain:
-                "Duyurunun son cümlesi bunu söylüyor: «We do not have plates or glasses; bring your own». Dört saat altmış euroya dâhil; müzik ise saatle sınırlı ama ücretle ilgili değil.",
+                "Duyurunun son cümlesi bunu söylüyor: «We do not have plates or glasses; bring your own». Dört saat altmış avroya dâhil; müzik ise saatle sınırlı ama ücretle ilgili değil.",
             },
             {
               kind: "mcq",
@@ -131,7 +131,7 @@ export const EN_A2_07: MockPaper = {
               options: ["The whole dinner is canceled", "The price for everybody falls", "The writer pays for it"],
               answer: 2,
               explain:
-                "Son cümle sonucu veriyor: «after that I pay for the empty seat». Yemek iptal edilmiyor ve fiyat kişi başı otuz euro olarak kalıyor.",
+                "Son cümle sonucu veriyor: «after that I pay for the empty seat». Yemek iptal edilmiyor ve fiyat kişi başı otuz avro olarak kalıyor.",
             },
           ],
         },
@@ -171,7 +171,7 @@ export const EN_A2_07: MockPaper = {
               text: "Zsofia needs somewhere for fifty people on a Saturday afternoon.",
               answer: "a",
               explain:
-                "İlan kapasiteyi veriyor: «Room for eighty people», dört saati altmış euro. Elli kişi bu sınırın içinde; lokantadaki oda (e) en fazla on altı kişilik.",
+                "İlan kapasiteyi veriyor: «Room for eighty people», dört saati altmış avro. Elli kişi bu sınırın içinde; lokantadaki oda (e) en fazla on altı kişilik.",
             },
             {
               kind: "match",
@@ -557,7 +557,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               options: ["The bigger set", "Twelve euros", "Coming back later"],
               answer: 0,
               explain:
-                "Müşteri yirmi beş fotoğraf istiyor ve görevli «Then the second price is better» diyor: elli fotoğraf için yirmi euro. On iki euro yalnız yirmi fotoğrafın fiyatı.",
+                "Müşteri yirmi beş fotoğraf istiyor ve görevli «Then the second price is better» diyor: elli fotoğraf için yirmi avro. On iki avro yalnız yirmi fotoğrafın fiyatı.",
             },
             {
               kind: "mcq",

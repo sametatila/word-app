@@ -68,7 +68,7 @@ export const enA1U02: SkillExercise[] = [
         text: "The course is thirty euros for students.",
         options: ["True", "False"],
         answer: 0,
-        explain: "Öğrenciler için otuz euro: „For students: thirty euros.“ Kırk euro ötekiler için.",
+        explain: "Öğrenciler için otuz avro: „For students: thirty euros.“ Kırk avro ötekiler için.",
       },
       {
         kind: "gapfill",

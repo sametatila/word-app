@@ -95,7 +95,7 @@
  { "tr": "İki arkadaş hafta sonu için plan yapıyor.", "kind": "listening.situation", "en": "Two friends are making plans for the weekend." },
  { "tr": "İki arkadaş sürpriz doğum günü planlıyor.", "kind": "listening.situation", "en": "Two friends are planning a surprise birthday party." },
  { "tr": "Karışım kavanoza girmeden önce ne oluyor?", "kind": "question", "en": "What happens before the mixture goes into the jars?" },
- { "tr": "Kırk sekiz euro. Gidiş dönüş doksan euro.", "kind": "turn", "en": "Forty-eight euros. A round trip costs ninety euros." },
+ { "tr": "Kırk sekiz avro. Gidiş dönüş doksan avro.", "kind": "turn", "en": "Forty-eight euros. A round trip costs ninety euros." },
  { "tr": "Neyi artık yapabildiğini somut olarak yaz", "kind": "writing.checklist", "en": "Write concretely what you can now do" },
  { "tr": "Nora, Kai'nin davranışını nasıl algıladı?", "kind": "question", "en": "How did Nora experience Kai's behavior?" },
  { "tr": "O benim kız kardeşim Ayşe. Yirmi yaşında.", "kind": "turn", "en": "That is my sister Ayşe. She is twenty years old." },
@@ -146,7 +146,7 @@
  { "tr": "Helal olsun — bunu çok ustaca çözdün.", "kind": "speaking", "en": "Hats off — you handled that really skillfully." },
  { "tr": "İki arkadaş iptal olan bir planı konuşuyor.", "kind": "listening.situation", "en": "Two friends are talking about a plan that fell through." },
  { "tr": "İki iş arkadaşı pazartesi gününü konuşuyor.", "kind": "listening.situation", "en": "Two colleagues are talking about Monday." },
- { "tr": "İlki ücretsiz, yıl içinde ikincisi on euro.", "kind": "turn", "en": "The first one is free, the second one in the year costs ten euros." },
+ { "tr": "İlki ücretsiz, yıl içinde ikincisi on avro.", "kind": "turn", "en": "The first one is free, the second one in the year costs ten euros." },
  { "tr": "İş görüşmesinde motivasyonunu anlatıyorsun.", "kind": "speaking.situation", "en": "You are explaining your motivation in a job interview." },
  { "tr": "Memnun görünüyorsun. Yeni iş nasıl gidiyor?", "kind": "turn", "en": "You look pleased. How is the new job going?" }
 ]

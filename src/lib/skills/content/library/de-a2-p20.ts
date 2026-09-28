@@ -240,7 +240,7 @@ export const deA2P20: SkillExercise[] = [
     skill: "speaking",
     title: "Zahlen in Gruppen",
     genre: "pronounce",
-    intro: "Uzun sayılar Almancada gruplar hâlinde söylenir: yıllar yüzlükle, fiyatlar euro ve sent diye, telefon numaraları rakam rakam. Altı cümlede doğru gruplarla söyle.",
+    intro: "Uzun sayılar Almancada gruplar hâlinde söylenir: yıllar yüzlükle, fiyatlar avro ve sent diye, telefon numaraları rakam rakam. Altı cümlede doğru gruplarla söyle.",
     gloss: [
       { de: "die Nummer", tr: "numara", en: "number" },
       { de: "kosten", tr: "tutmak", en: "to cost" },
@@ -275,7 +275,7 @@ export const deA2P20: SkillExercise[] = [
       },
       {
         de: "Das kostet zwölf Euro neunzig.",
-        tr: "Bu on iki euro doksan tutuyor.",
+        tr: "Bu on iki avro doksan tutuyor.",
         hint: "Fiyat iki grup: ZWÖLF Eu-ro | NEUN-zig. „Komma“ ya da „Cent“ söylenmez; kısa bir durak yeter.",
         confusions: [
           {

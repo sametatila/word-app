@@ -50,7 +50,7 @@ export const deB1P10: SkillExercise[] = [
         text: "Wie viel hat das eigene Auto pro Jahr gekostet?",
         options: ["ungefähr elfhundert Euro", "ungefähr dreitausend Euro", "ungefähr fünfhundert Euro"],
         answer: 1,
-        explain: "Sigorta, vergi, servis ve park yeriyle birlikte üç bin euro.",
+        explain: "Sigorta, vergi, servis ve park yeriyle birlikte üç bin avro.",
       },
       {
         text: "Warum ist Carsharing für diese Familie günstiger?",

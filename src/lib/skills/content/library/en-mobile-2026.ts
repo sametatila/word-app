@@ -1014,7 +1014,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Metinde \"Students pay only 25 euros\" diyor; 40 euro normal üyelik ücreti."
+        "explain": "Yanlış. Metinde \"Students pay only 25 euros\" diyor; 40 avro normal üyelik ücreti."
       },
       {
         "text": "When is the swimming class for beginners?",
@@ -2640,7 +2640,7 @@ export const enMobile2026: SkillExercise[] = [
           "Forty-five euros"
         ],
         "answer": 1,
-        "explain": "\"A one-month card is thirty euros for students\" deniyor; kırk beş euro öğrenci olmayan üyeler için."
+        "explain": "\"A one-month card is thirty euros for students\" deniyor; kırk beş avro öğrenci olmayan üyeler için."
       },
       {
         "text": "When are the yoga classes?",
@@ -5643,7 +5643,7 @@ export const enMobile2026: SkillExercise[] = [
           "It is free"
         ],
         "answer": 0,
-        "explain": "Park yeri sorulunca resepsiyonist \"Yes, but it costs 5 euros a day\" diyor. 60 euro odanın bir gecelik fiyatı."
+        "explain": "Park yeri sorulunca resepsiyonist \"Yes, but it costs 5 euros a day\" diyor. 60 avro odanın bir gecelik fiyatı."
       },
       {
         "text": "When does check-in start?",

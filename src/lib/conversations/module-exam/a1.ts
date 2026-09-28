@@ -405,7 +405,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Reisender", de: "Muss ich umsteigen?", tr: "Aktarma yapmam gerekiyor mu?" },
         { speaker: "Mitarbeiter", de: "Nein, der Zug fährt direkt.", tr: "Hayır, tren direkt gidiyor." },
         { speaker: "Reisender", de: "Und was kostet eine Fahrkarte, einfach?", tr: "Peki tek yön bilet kaç para?" },
-        { speaker: "Mitarbeiter", de: "Achtundvierzig Euro. Hin und zurück kostet neunzig Euro.", tr: "Kırk sekiz euro. Gidiş dönüş doksan euro." },
+        { speaker: "Mitarbeiter", de: "Achtundvierzig Euro. Hin und zurück kostet neunzig Euro.", tr: "Kırk sekiz avro. Gidiş dönüş doksan avro." },
       ],
       questions: [
         { de: "Von welchem Gleis fährt der Zug?", tr: "Tren hangi perondan kalkıyor?", options: ["Von Gleis eins", "Von Gleis zwei", "Von Gleis drei", "Von Gleis zehn"], answer: 2 },

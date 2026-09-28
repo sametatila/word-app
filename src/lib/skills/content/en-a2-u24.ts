@@ -385,7 +385,7 @@ export const enA2U24: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kayıp bildirimini doldur.",
-        facts: "Kayıp cüzdan; iki numaralı tramvay; saat altı civarı; içinde kimlik ve yirmi euro.",
+        facts: "Kayıp cüzdan; iki numaralı tramvay; saat altı civarı; içinde kimlik ve yirmi avro.",
         fields: [
           { label: "What", answer: "a wallet", accept: ["wallet"] },
           { label: "Where", answer: "tram line two", accept: ["on the tram", "line two"] },

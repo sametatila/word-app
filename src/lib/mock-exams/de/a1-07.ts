@@ -256,7 +256,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               text: "Man kann jeden Betrag mit Karte zahlen.",
               answer: false,
               explain:
-                "Levhada bir alt sınır var: \"Karte erst ab zehn Euro\". On euronun altında kart geçmiyor.",
+                "Levhada bir alt sınır var: \"Karte erst ab zehn Euro\". On avronun altında kart geçmiyor.",
             },
             {
               kind: "bool",
@@ -409,7 +409,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               options: ["14,80 Euro", "15,00 Euro", "15,80 Euro"],
               answer: 0,
               explain:
-                "Kasiyer iki fiyat söylüyor: poşetsiz \"vierzehn Euro achtzig\", poşetle on beş euro. Müşteri \"Ohne Tüte\" diyor, yani düşük olan geçerli.",
+                "Kasiyer iki fiyat söylüyor: poşetsiz \"vierzehn Euro achtzig\", poşetle on beş avro. Müşteri \"Ohne Tüte\" diyor, yani düşük olan geçerli.",
             },
             {
               kind: "mcq",
@@ -442,7 +442,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               options: ["1,10 Euro", "4,00 Euro", "5,10 Euro"],
               answer: 0,
               explain:
-                "İki fiyat var: standart \"ein Euro zehn\", hızlısı dört euro. Adam \"Es hat Zeit\" deyip ucuz olanı seçiyor.",
+                "İki fiyat var: standart \"ein Euro zehn\", hızlısı dört avro. Adam \"Es hat Zeit\" deyip ucuz olanı seçiyor.",
             },
             {
               kind: "mcq",
@@ -888,7 +888,7 @@ Elif Yalçın`,
             {
               who: "partner",
               de: "Das Brot dort kostet zwei Euro vierzig. Und jetzt eine Frage an Sie: Nehmen Sie eine Tüte mit?",
-              tr: "Oradaki ekmek iki euro kırk. Şimdi sana bir soru: Yanında poşet götürür müsün?",
+              tr: "Oradaki ekmek iki avro kırk. Şimdi sana bir soru: Yanında poşet götürür müsün?",
             },
             { who: "you", hint: "Soruyu cevapla — poşet götürüyor musun?", expect: "evet/hayır sorusuna tam bir cümleyle cevap vermek", seconds: 25 },
             {

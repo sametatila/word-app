@@ -583,7 +583,7 @@ Zuletzt ein Wort zur Ehrlichkeit. Solange Schulen behaupten, sie könnten alle K
               text: "Das Geld sollte früher eingesetzt werden.",
               answer: "h",
               explain:
-                "Herr Vollmer 9000 euroluk maliyeti tekrara karşı bir argüman saymıyor, \"eines dafür, das Geld vorher auszugeben, wo es noch etwas ändert\" diyor.",
+                "Herr Vollmer 9000 avroluk maliyeti tekrara karşı bir argüman saymıyor, \"eines dafür, das Geld vorher auszugeben, wo es noch etwas ändert\" diyor.",
             },
           ],
         },
@@ -1482,7 +1482,7 @@ Jens Brodersen`,
           prompt:
             "Ihre Schule bekommt 12 000 Euro zusätzlich. Einigen Sie sich mit Ihrer Gesprächspartnerin, wofür das Geld ausgegeben wird: zusätzliche Förderstunden, digitale Ausstattung, eine Schulsozialarbeiterin oder eine Ferienlernwoche.",
           promptTr:
-            "Okulunuza 12.000 euro ek bütçe geliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: ek destek dersleri, dijital donanım, bir okul sosyal hizmet uzmanı ya da tatilde bir öğrenme haftası.",
+            "Okulunuza 12.000 avro ek bütçe geliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: ek destek dersleri, dijital donanım, bir okul sosyal hizmet uzmanı ya da tatilde bir öğrenme haftası.",
           prepSeconds: 90,
           exchange: [
             {

@@ -205,7 +205,7 @@ export const a2U15: SkillExercise[] = [
         text: "Was kostet das Konto für Frau Kaya?",
         options: ["Nichts", "Vier Euro im Monat", "Vier Euro im Jahr"],
         answer: 1,
-        explain: "Ücretsizlik yalnız öğrenciler için; o çalışıyor, yani ayda dört euro.",
+        explain: "Ücretsizlik yalnız öğrenciler için; o çalışıyor, yani ayda dört avro.",
       },
       {
         kind: "dictation",
@@ -266,7 +266,7 @@ export const a2U15: SkillExercise[] = [
         text: "Wofür entscheidet sich Herr Bilir?",
         options: ["Express", "Normal", "Er schickt nichts"],
         answer: 1,
-        explain: "„Dann normal, es hat keine Eile.“ — hızlısı 29 euro, acelesi yok.",
+        explain: "„Dann normal, es hat keine Eile.“ — hızlısı 29 avro, acelesi yok.",
       },
       {
         kind: "short_answer",

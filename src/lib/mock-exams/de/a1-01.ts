@@ -133,7 +133,7 @@ Familie Yılmaz, Wohnung 3 B`,
               text: "Der Kuchen ist kostenlos.",
               answer: true,
               explain:
-                "\"Kaffee und Kuchen kosten nichts\" — bedava. 5 euro yalnız akşam yemeği için isteniyor; iki bilgiyi karıştırmamak maddenin sınadığı şey.",
+                "\"Kaffee und Kuchen kosten nichts\" — bedava. 5 avro yalnız akşam yemeği için isteniyor; iki bilgiyi karıştırmamak maddenin sınadığı şey.",
             },
             {
               kind: "bool",
@@ -457,7 +457,7 @@ zahlen alle nur 3 €.`,
               options: ["29,90 Euro.", "19 Euro.", "90 Euro."],
               answer: 1,
               explain:
-                "İki fiyat geçiyor: mavi kazak 29,90; gri olan indirimde ve 19 euro. Soru grinin fiyatını soruyor. 90 sayısı `neunzig` içinden gelen tuzak.",
+                "İki fiyat geçiyor: mavi kazak 29,90; gri olan indirimde ve 19 avro. Soru grinin fiyatını soruyor. 90 sayısı `neunzig` içinden gelen tuzak.",
             },
             {
               kind: "mcq",

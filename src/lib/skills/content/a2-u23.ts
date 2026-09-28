@@ -96,7 +96,7 @@ export const a2U23: SkillExercise[] = [
         text: "Die Anmeldung kostet fünf Euro.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: kayıt ücretsiz; beş euro ikinci belge için.",
+        explain: "Yanlış: kayıt ücretsiz; beş avro ikinci belge için.",
       },
     ],
   },

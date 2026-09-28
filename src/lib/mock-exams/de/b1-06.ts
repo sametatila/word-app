@@ -194,7 +194,7 @@ Solange das so bleibt, ist der Vorwurf an die Kundschaft billig — im doppelten
               ],
               answer: 2,
               explain:
-                "\"billig heißt, dass man leichter Ja sagt\" — dört euroluk kazak denetlenmeden alınıyor. Kalite ve toplam maliyet metinde tartışılmıyor.",
+                "\"billig heißt, dass man leichter Ja sagt\" — dört avroluk kazak denetlenmeden alınıyor. Kalite ve toplam maliyet metinde tartışılmıyor.",
             },
             {
               kind: "mcq",
@@ -239,7 +239,7 @@ Solange das so bleibt, ist der Vorwurf an die Kundschaft billig — im doppelten
               ],
               answer: 2,
               explain:
-                "Sayılar karşılaştırılıyor: 29 artı 40 euroya karşı 59 euroluk yeni cihaz. Yazar da \"Die Frau war nicht bequem, sie hat gerechnet\" diyor.",
+                "Sayılar karşılaştırılıyor: 29 artı 40 avroya karşı 59 avroluk yeni cihaz. Yazar da \"Die Frau war nicht bequem, sie hat gerechnet\" diyor.",
             },
             {
               kind: "mcq",
@@ -589,7 +589,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               options: ["34,05 Euro.", "38 Euro.", "38 Euro plus Porto."],
               answer: 0,
               explain:
-                "50 euronun altında iade kargosunu müşteri taşıyor ve tutar iadeden düşülüyor: 38 eksi 3,95 eşittir 34,05 euro.",
+                "50 avronun altında iade kargosunu müşteri taşıyor ve tutar iadeden düşülüyor: 38 eksi 3,95 eşittir 34,05 avro.",
             },
             {
               kind: "mcq",
@@ -753,7 +753,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               text: "Die Reparatur war günstiger als erwartet.",
               answer: true,
               explain:
-                "Mesaj rakamları veriyor: parça \"statt achtzig nur fünfundfünfzig Euro\". Yani beklenenden 25 euro ucuz.",
+                "Mesaj rakamları veriyor: parça \"statt achtzig nur fünfundfünfzig Euro\". Yani beklenenden 25 avro ucuz.",
             },
             {
               kind: "mcq",
@@ -803,7 +803,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               text: "Die Tomaten sind billiger als angeschrieben.",
               answer: false,
               explain:
-                "Doğru fiyat rafta yazandan yüksek: 99 cent değil 1,49 euro. Yani ürün daha pahalı, daha ucuz değil.",
+                "Doğru fiyat rafta yazandan yüksek: 99 cent değil 1,49 avro. Yani ürün daha pahalı, daha ucuz değil.",
             },
             {
               kind: "mcq",
@@ -1490,7 +1490,7 @@ Ferit Alkan`,
             {
               who: "partner",
               de: "Du, kannst du mir bis Freitag zwanzig Euro leihen? Ich habe mein Konto überzogen.",
-              tr: "Cumaya kadar bana yirmi euro borç verebilir misin? Hesabım eksiye düştü.",
+              tr: "Cumaya kadar bana yirmi avro borç verebilir misin? Hesabım eksiye düştü.",
             },
             {
               who: "you",
@@ -1501,7 +1501,7 @@ Ferit Alkan`,
             {
               who: "partner",
               de: "Jetzt tust du so, als ginge es um viel Geld. Es sind doch nur zwanzig Euro.",
-              tr: "Şimdi çok paraymış gibi yapıyorsun. Sadece yirmi euro.",
+              tr: "Şimdi çok paraymış gibi yapıyorsun. Sadece yirmi avro.",
             },
             {
               who: "you",

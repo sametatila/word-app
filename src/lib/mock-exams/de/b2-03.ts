@@ -1491,7 +1491,7 @@ Deniz Kaya`,
           prompt:
             "Ihre Abteilung bekommt 5000 Euro für Weiterbildung. Einigen Sie sich mit Ihrer Gesprächspartnerin darauf, wofür das Geld ausgegeben wird: ein großer Kurs für alle, mehrere kleine Kurse, eine externe Beratung oder Freistellung für Selbstlernzeit.",
           promptTr:
-            "Bölümünüze eğitim için 5000 euro veriliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: herkese açık büyük bir kurs, birkaç küçük kurs, dışarıdan danışmanlık ya da kendi kendine öğrenme için izin.",
+            "Bölümünüze eğitim için 5000 avro veriliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: herkese açık büyük bir kurs, birkaç küçük kurs, dışarıdan danışmanlık ya da kendi kendine öğrenme için izin.",
           prepSeconds: 90,
           exchange: [
             {

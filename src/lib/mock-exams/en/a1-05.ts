@@ -113,7 +113,7 @@ The last bus on Sunday is at 22:00.`,
               text: "A ticket from the driver costs two euros.",
               answer: false,
               explain:
-                "Duyuru iki fiyat veriyor: «In the store: 2 euros. From the driver: 3 euros». İki euro dükkândaki fiyat; şoförden alınan bilet bir euro daha pahalı.",
+                "Duyuru iki fiyat veriyor: «In the store: 2 euros. From the driver: 3 euros». İki avro dükkândaki fiyat; şoförden alınan bilet bir avro daha pahalı.",
             },
             {
               kind: "bool",
@@ -962,7 +962,7 @@ Alma`,
           exchange: [
             { who: "partner", de: "Good morning. How can I help you?", tr: "Günaydın. Nasıl yardımcı olabilirim?" },
             { who: "you", hint: "Bir bilet iste; nereye ve ne zaman olduğunu söyle.", expect: "bir bilet istemek, yer ve zaman bildirmek", seconds: 25 },
-            { who: "partner", de: "That is fourteen euros. The train leaves from platform two.", tr: "On dört euro. Tren iki numaralı perondan kalkıyor." },
+            { who: "partner", de: "That is fourteen euros. The train leaves from platform two.", tr: "On dört avro. Tren iki numaralı perondan kalkıyor." },
             { who: "you", hint: "Trenin saatini sor.", expect: "kalkış saatini sormak", seconds: 25 },
             { who: "partner", de: "At ten past eleven. Anything else?", tr: "On biri on geçe. Başka bir şey var mı?" },
             { who: "you", hint: "Ağır çantan için kibarca yardım iste.", expect: "kibarca yardım istemek", seconds: 25 },

@@ -476,7 +476,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
               text: "Which writer says that the disagreement rests on a failure to separate two different things?",
               answer: "c",
               explain:
-                "Yazar C ayrımı kendisi kuruyor: daha çok hastaya ölçeklemek ile daha çok hastalığa ölçeklemek farklı işler ve «almost every disagreement I have read collapses once that separation is made». Tartışma bir ayrım yapılmadığı için sürüyor.",
+                "Writer C ayrımı kendisi kuruyor: daha çok hastaya ölçeklemek ile daha çok hastalığa ölçeklemek farklı işler ve «almost every disagreement I have read collapses once that separation is made». Tartışma bir ayrım yapılmadığı için sürüyor.",
             },
             {
               kind: "match",
@@ -485,7 +485,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
               text: "Which writer reports having abandoned a position they once defended publicly?",
               answer: "b",
               explain:
-                "Yazar B eski konumunu ve onu savunduğu yeri söylüyor: «Five years ago I would have said … and I argued it in print», sonra fikrinin değiştiğini ve zorluğun geçici olmadığını ekliyor.",
+                "Writer B eski konumunu ve onu savunduğu yeri söylüyor: «Five years ago I would have said … and I argued it in print», sonra fikrinin değiştiğini ve zorluğun geçici olmadığını ekliyor.",
             },
             {
               kind: "match",
