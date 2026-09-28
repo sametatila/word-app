@@ -95,6 +95,11 @@ const SKIP = [
   "lib/admin-content.ts",
   // Uyarıların panel/konsol adresleri ve bölüm etiketleri: panel ve Telegram.
   "lib/admin-links.ts",
+  // Geri dönüş süreleri, "nasıl dönülür" rehberi ve kuyruk özeti: yalnız panel
+  // ve Telegram. Yorum yanıt şablonları üç dilli ama mağaza konsoluna elle
+  // yapıştırılıyor, uygulamada gösterilmiyor.
+  "lib/response-sla.ts",
+  "lib/response-queue.ts",
   // Panelden yönetilen işletim: yalnız sunucu günlüğü ve panel etiketleri.
   // Kullanıcıya giden metinler (bakım, güncelleme, duyuru) sözlükte ya da
   // panelde üç dilde yazılıyor.
