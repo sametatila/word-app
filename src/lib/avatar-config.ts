@@ -75,12 +75,12 @@ export function parseAvatar(raw: unknown): AvatarConfig | null {
  * açılınca aynı seçim görselle çizilir. İlk renk üst, ikincisi alt.
  */
 export const AVATAR_BGS: { id: string; from: string; to: string }[] = [
-  { id: "bg_orange", from: "#ffb25e", to: "#f87612" },
-  { id: "bg_mint", from: "#bfead3", to: "#4fbf88" },
-  { id: "bg_sky", from: "#bfe3ff", to: "#4a9fe8" },
-  { id: "bg_savanna", from: "#f6b36a", to: "#b8452f" },
-  { id: "bg_ocean", from: "#8fd3f4", to: "#1f6fb2" },
-  { id: "bg_night", from: "#3a3f8f", to: "#141633" },
+  { id: "bg_orange", from: "#ffb45c", to: "#f2761a" },
+  { id: "bg_mint", from: "#dcf4e8", to: "#8fd0b4" },
+  { id: "bg_sky", from: "#cfe7ff", to: "#76aee9" },
+  { id: "bg_lilac", from: "#ece4ff", to: "#ab98ee" },
+  { id: "bg_peach", from: "#ffe9d8", to: "#f2ab8c" },
+  { id: "bg_slate", from: "#4a5367", to: "#1c2130" },
 ];
 export function avatarBg(id: string | null | undefined): { from: string; to: string } {
   return AVATAR_BGS.find((b) => b.id === id) ?? AVATAR_BGS[0];

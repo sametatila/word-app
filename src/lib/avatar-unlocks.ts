@@ -68,17 +68,17 @@ export const PART_UNLOCKS: Record<string, string> = {
   butterfly: "invite3", heartcheeks: "invite3",
   goldheart: "invite10", heartdangle: "invite10",
   // keşif
-  bg_night: "night50", bg_savanna: "early50", unicorn: "marathon150",
+  bg_night: "night50", bg_sunrise: "early50", unicorn: "marathon150",
   bg_forest: "days30", bg_ocean: "days30", tiara: "days100",
   wizard: "bilingual", earcuff: "quests20",
   // lig
   fez: "league_1", studs: "league_1", santa: "league_1", aviator: "league_1",
-  ushanka: "league_2", bg_hearts: "league_2", witch: "league_2", star: "league_2",
+  ushanka: "league_2", bg_candy: "league_2", witch: "league_2", star: "league_2",
   devil: "league_3", cape: "league_3", bunnyears: "league_3", flower: "league_3",
   emperor: "league_4", astronaut: "league_4", halo: "league_4",
   crown: "league_win",
   // kalan nadir parçalar: ilk rozetlere yayıldı (her rozet bir-üç parça)
-  beard: "conversation1", ginger: "skill1", bg_confetti: "exam1", bg_desert: "grammar5",
+  beard: "conversation1", ginger: "skill1", bg_confetti: "exam1",
   clownnose: "answers500", stethoscope: "exam10", pearldrop: "writing15", hibiscus: "streak7",
   boater: "streak3",
   // Premium seti (üyelik sürerken)

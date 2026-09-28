@@ -6,7 +6,7 @@
  * tabloda unutulursa herkese bedava olur. Derleyici ikisini de görmez.
  *
  *   - her anahtar gerçek bir rozet (ACHIEVEMENTS) ya da özel anahtar
- *   - her parça kimliği katalogda var (public/avatar/v1/katalog.json)
+ *   - her parça kimliği katalogda var (public/avatar/ altındaki EN YENİ sürüm, v<n>/katalog.json)
  *   - kataloğun sıradan olmayan her parçası tabloda
  *   - kapı bütün yuvalarda eliyor, açık parçaya dokunmuyor, ayrıca verilen parçayı tanıyor
  *
@@ -20,7 +20,8 @@ import { DEFAULT_AVATAR, type AvatarConfig } from "../src/lib/avatar-config";
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => fs.readFileSync(path.join(ROOT, p), "utf8");
 const ach = new Set([...read("src/lib/achievements.ts").matchAll(/\{ id: "(\w+)", titleKey/g)].map((m) => m[1]));
-const cat = JSON.parse(read("public/avatar/v1/katalog.json")) as { parcalar: { id: string; nadir: string }[] };
+const LATEST = fs.readdirSync(path.join(ROOT, "public", "avatar")).filter((d) => /^v\d+$/.test(d)).sort((a, b) => Number(a.slice(1)) - Number(b.slice(1))).at(-1);
+const cat = JSON.parse(read(`public/avatar/${LATEST}/katalog.json`)) as { parcalar: { id: string; nadir: string }[] };
 const ids = new Set(cat.parcalar.map((p) => p.id));
 const special = new Set<string>(SPECIAL_UNLOCK_KEYS);
 
