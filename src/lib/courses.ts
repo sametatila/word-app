@@ -324,3 +324,19 @@ export function mockCourseOf(id: string | null | undefined): "de" | "en" {
 export function targetLangOf(id: string | null | undefined): TargetLang {
   return courseOrDefault(id).targetLang;
 }
+
+/**
+ * Bu oyun türü bu kursta üretilebilir mi — mobil `lib/courses` `supportsGame`
+ * karşılığı, gövdesi birebir aynı.
+ *
+ * `artikel` ve `plural` cinsiyetli isim sistemine dayanıyor (der/die/das ve
+ * "die …" çoğulu); İngilizcede karşılıkları yok. Web bu kararı pratik
+ * ekranında satır içinde veriyordu, görev panosu hiç vermiyordu: İngilizce
+ * öğrenen kullanıcıya "5 artikel doğru bil" görevi düşüyor ve hiç
+ * bitmiyordu (2026-09-28, iOS). Pratik seçicisi, görev havuzu ve
+ * `check:parity` artık bu tek karara bakıyor.
+ */
+export function supportsGame(id: string | null | undefined, game: string): boolean {
+  if (game === "artikel" || game === "plural") return courseOrDefault(id).hasArticles;
+  return true;
+}

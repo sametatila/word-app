@@ -5,7 +5,7 @@ import { PageBack } from "@/components/page-back";
 import { CardGrid } from "@/components/layout";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { courseOrDefault } from "@/lib/courses";
+import { supportsGame } from "@/lib/courses";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { getT } from "@/lib/i18n/server";
 import {
@@ -106,10 +106,10 @@ export default async function PracticePage() {
   }
   // Artikel ve çoğul dile bağlı: hedef dil Almanca değilse o oyunlar listelenmez.
   /* Eleme kursun KENDİ bayrağına bakıyor, hedef dilin adına değil: artikel
-     Almancaya değil dilin cinsiyetli isim sistemine ait bir özellik. Mobil
-     de aynı bayrağı kullanıyor (`supportsGame`). */
-  const articles = courseOrDefault(course).hasArticles;
-  const list = TILES.filter((g) => articles || (g.game !== "artikel" && g.game !== "plural"));
+     Almancaya değil dilin cinsiyetli isim sistemine ait bir özellik. Karar
+     `supportsGame`de: mobil pratik seçicisi ve günün görevleri de ona
+     bakıyor, üçü ayrışamıyor. */
+  const list = TILES.filter((g) => supportsGame(course, g.game));
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-5">

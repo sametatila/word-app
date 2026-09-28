@@ -3,6 +3,8 @@ import { and, eq, gte, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { supportsGame } from "@/lib/courses";
+import type { PlayableGame } from "@/lib/types";
 import {
   dailyStats,
   questClaims,
@@ -58,14 +60,22 @@ type QuestDef = {
    * kimsenin açmadığı bölümler kapalı kalmaya devam ederdi.
    */
   discovery?: boolean;
+  /**
+   * Oyuna bağlı görevin oyunu — ilerleme o oyundaki doğru cevaplardan okunur.
+   *
+   * Aynı alan görevin KURSTA verilip verilemeyeceğini de belirliyor
+   * (`supportsGame`): İngilizcede artikel yok, "5 artikel doğru bil" orada hiç
+   * bitmeyecek bir görevdi.
+   */
+  game?: PlayableGame;
 };
 
 const QUESTS: QuestDef[] = [
   { id: "reviews10", labelKey: "quest.reviews10", href: "/learn", target: 10, xp: 120 },
   { id: "reviews25", labelKey: "quest.reviews25", href: "/learn", target: 25, xp: 200 },
   { id: "newWords3", labelKey: "quest.newWords3", href: "/learn", target: 3, xp: 120 },
-  { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150 },
-  { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
+  { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150, game: "artikel" },
+  { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150, game: "listen" },
   { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
   { id: "conversation1", labelKey: "quest.conversation1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
@@ -101,8 +111,31 @@ function pick<T>(items: T[], rand: () => number): T {
   return items[Math.floor(rand() * items.length)];
 }
 
-/** Günün üç görevi: ikisi çalışma, biri keşif. */
-export function questsFor(day: string, userId: string): QuestDef[] {
+/** Görev bu kursta yapılabilir mi — oyuna bağlıysa oyun kursta olmalı. */
+function fitsCourse(q: QuestDef, course: string | null | undefined): boolean {
+  return !q.game || supportsGame(course, q.game);
+}
+
+/**
+ * Günün üç görevi: ikisi çalışma, biri keşif.
+ *
+ * KURSA GÖRE ELEME SEÇİMDEN SONRA. Görevler hiçbir yerde saklanmıyor, her
+ * okumada gün + kullanıcı tohumundan yeniden türetiliyor; saklanan yalnız
+ * alınan ödüller (`quest_claims`). Havuz seçimden ÖNCE süzülseydi İngilizce
+ * öğrenenin tohumu başka görevlere düşer, sabah aldığı ödülün görevi
+ * panodan kaybolur, yerine ikinci kez ödül alabileceği yenisi gelirdi. Bu
+ * yüzden seçim her kurs için aynı yapılıyor ve yalnız kursa uymayan görev,
+ * aynı tohumun DEVAMIYLA seçilen bir yedekle değiştiriliyor:
+ *   - Almanca kursunda sonuç eskisiyle birebir aynı.
+ *   - İngilizce kursunda bugün "5 artikel" almış kullanıcı düzeltme canlıya
+ *     çıkar çıkmaz yerine yapılabilir bir görev görüyor; öteki iki görevi
+ *     değişmiyor. Veritabanına dokunmak gerekmiyor.
+ *   - Gün içinde kurs değiştiren kullanıcının panosu bir sonraki okumada yeni
+ *     kursa uyuyor; geri dönünce eski pano aynen geri geliyor. Önceki kursta
+ *     alınmış bir ödül `quest_claims`te kalıyor (XP zaten verildi); aynı
+ *     görev iki kez ödüllenemiyor, birincil anahtar gün + görev.
+ */
+export function questsFor(day: string, userId: string, course: string | null | undefined): QuestDef[] {
   const rand = rng(seedOf(day, userId));
   const work = QUESTS.filter((q) => !q.discovery);
   const discovery = QUESTS.filter((q) => q.discovery);
@@ -115,7 +148,13 @@ export function questsFor(day: string, userId: string): QuestDef[] {
     pool.splice(pool.indexOf(q), 1);
   }
   chosen.push(pick(discovery, rand));
-  return chosen;
+
+  const spare = work.filter((q) => fitsCourse(q, course) && !chosen.includes(q));
+  return chosen.flatMap((q) => {
+    if (fitsCourse(q, course)) return [q];
+    if (!spare.length) return [];
+    return spare.splice(Math.floor(rand() * spare.length), 1);
+  });
 }
 
 export type QuestProgress = {
@@ -140,9 +179,14 @@ export async function questBoard(
   userId: string,
   day: string,
   /** Etiketlerin çevrileceği arayüz dili — çağıranın profilinden gelir. */
-  lang: NativeLang = DEFAULT_NATIVE,
+  lang: NativeLang,
+  /**
+   * Kullanıcının ŞU ANKİ kursu (profilden). Zorunlu: varsayılanı olsaydı
+   * unutan çağıran sessizce Almanca havuzu alırdı — hatanın kendisi buydu.
+   */
+  course: string | null | undefined,
 ): Promise<{ quests: QuestProgress[]; allDone: boolean; allClaimed: boolean }> {
-  const chosen = questsFor(day, userId);
+  const chosen = questsFor(day, userId, course);
   const ids = chosen.map((q) => q.id);
 
   const [stat, claims] = await Promise.all([
@@ -166,7 +210,7 @@ export async function questBoard(
   // Oyun bazlı görevler: o gün verilen doğru cevaplar. `reviews` tablosunda
   // gün alanı yok, zaman damgası var — bu yüzden günün sınırları kullanıcının
   // yerel gününden değil, tarihin kendisinden hesaplanıyor.
-  const gameQuests = ids.filter((id) => id === "artikel5" || id === "listen5");
+  const gameQuests = chosen.filter((q): q is QuestDef & { game: PlayableGame } => !!q.game);
   if (gameQuests.length) {
     const rows = await db
       .select({ game: reviews.game, n: sql<number>`count(*)::int` })
@@ -175,15 +219,14 @@ export async function questBoard(
         and(
           eq(reviews.userId, userId),
           eq(reviews.correct, true),
-          inArray(reviews.game, gameQuests.map((id) => (id === "artikel5" ? "artikel" : "listen"))),
+          inArray(reviews.game, gameQuests.map((q) => q.game)),
           gte(reviews.createdAt, sql`${day}::date`),
           sql`${reviews.createdAt} < ${day}::date + 1`,
         ),
       )
       .groupBy(reviews.game);
     for (const r of rows) {
-      if (r.game === "artikel") counts.set("artikel5", Number(r.n));
-      if (r.game === "listen") counts.set("listen5", Number(r.n));
+      for (const q of gameQuests) if (q.game === r.game) counts.set(q.id, Number(r.n));
     }
   }
 
@@ -243,8 +286,11 @@ export async function claimQuest(
   userId: string,
   day: string,
   questId: string,
+  /** Panoyla AYNI kurs: kursa uymayan görev panoda yok, ödülü de alınamaz. */
+  course: string | null | undefined,
 ): Promise<{ xp: number }> {
-  const board = await questBoard(userId, day);
+  // Dil yalnız etiketi çeviriyor; doğrulamada etikete bakılmıyor.
+  const board = await questBoard(userId, day, DEFAULT_NATIVE, course);
 
   let xp = 0;
   if (questId === ALL_DONE_ID) {

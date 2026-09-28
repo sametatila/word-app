@@ -277,6 +277,16 @@ console.log("\n" + C.b + "2. OYNANABILIR OYUNLAR" + C.off);
     ipucu("mobile/src/game/session.ts", /hint: "(prac\.\w+)"/g),
     ipucu("src/app/(app)/learn/practice/page.tsx", /hint: "(prac\.\w+)"/g),
   );
+
+  /* Kursa bağlı oyunlar: `supportsGame` iki tarafta aynı oyunları kapatmalı.
+     Web bu kararı pratik ekranında satır içinde veriyordu, görev panosu hiç
+     vermiyordu; İngilizce kursta "5 artikel" görevi çıkıyordu (2026-09-28).
+     Artık pratik seçicisi ve görev havuzu bu işleve bakıyor. */
+  const kapali = (p) => {
+    const g = read(p).match(/export function supportsGame\([^)]*\)[^{]*\{(.*?)\n\}/s);
+    return g ? [...named(g[1], "game")] : ["supportsGame YOK"];
+  };
+  sameSet("kursa bagli oyunlar", kapali("mobile/src/lib/courses.ts"), kapali("src/lib/courses.ts"));
 }
 
 /* basarim gruplari */

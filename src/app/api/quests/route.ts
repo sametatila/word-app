@@ -20,10 +20,13 @@ export async function GET(req: Request) {
       Sebep çağıran: bu ucu mobil uygulama da kullanıyor ve orada bizim dil
       çerezimiz yok. Profil iki istemcinin de paylaştığı tek kaynak, yani
       mobilin yayınlanmış sürümleri bile bu düzeltmeden yararlanıyor.
+
+      Kurs da buradan: görev havuzu kursa göre süzülüyor (İngilizcede artikel
+      görevi yok, bkz. lib/quests `questsFor`).
     */
     const profile = await ensureProfile(userId).catch(() => null);
     const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
-    return NextResponse.json(await questBoard(userId, day, lang));
+    return NextResponse.json(await questBoard(userId, day, lang, profile?.course));
   } catch (err) {
     console.error("[quests]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });
@@ -56,16 +59,18 @@ export async function POST(req: Request) {
   const day = normalizeDay(body.day);
 
   try {
-    const { xp } = await claimQuest(userId, day, questId);
+    // Profil ödülden ÖNCE okunuyor: talep, kullanıcının gördüğü panoyla aynı
+    // kursa göre doğrulanmalı (kursa uymayan görev panoda yok, ödülü de yok).
+    const profile = await ensureProfile(userId).catch(() => null);
+    const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+    const { xp } = await claimQuest(userId, day, questId, profile?.course);
     // Görev ödülü de ortak geçitten geçiyor: XP, günlük istatistik ve seri
     // tek yerden işleniyor (bkz. lib/award.ts). Süre eklenmiyor — görevin
     // kendisi zaten yapılan işin süresini saymıştı.
     const award = xp > 0 ? await awardActivity(userId, day, xp, 0) : null;
     // Ödül sonrası dönen tahtanın etiketleri de kullanıcının dilinde olmalı;
     // aksi hâlde bir görevi tamamlamak listeyi Türkçeye çeviriyordu.
-    const profile = await ensureProfile(userId).catch(() => null);
-    const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
-    const board = await questBoard(userId, day, lang);
+    const board = await questBoard(userId, day, lang, profile?.course);
     return NextResponse.json({
       xp,
       totalXp: award?.totalXp ?? null,
