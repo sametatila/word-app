@@ -15,6 +15,8 @@ import { NewAvatarParts } from "../ui/NewAvatarParts";
 import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, IconTile, Pill, SectionTitle } from "./common";
+import { LeagueUp, leagueUpFor } from "./LeagueBoardUp";
+import { useAuth } from "../lib/AuthContext";
 
 /**
  * Haftalık lig — Sıralama ekranının asıl tablosu.
@@ -35,15 +37,26 @@ export function LeagueBoard() {
   // Ligdeki kişiler arkadaş DEĞİL: uygunsuz ad/arma bildirimi (Play UGC) burada
   // basılı tutmayla açılıyor — eski genel tablodaki davranışın aynısı.
   const [report, setReport] = useState<LeagueRow | null>(null);
+  /* LİG ATLAMA ANI: yükselinen lig; kutlama kapanınca null. Karar cihazdaki
+     "son görülen lig"le (`leagueUpFor`), sekmeye ilk girişte bir kez (web
+     `league-board` aynı). */
+  const [up, setUp] = useState<number | null>(null);
+  const { user } = useAuth();
+  const userId = user?.id ?? null;
 
   useEffect(() => {
     let alive = true;
     social
       .league()
-      .then((v) => { if (alive) { setView(v); setResult(v.result); } })
+      .then((v) => {
+        if (!alive) return;
+        setView(v);
+        setResult(v.result);
+        void leagueUpFor(userId, v.tier, v.result?.outcome === "promoted").then((yes) => { if (yes && alive) setUp(v.tier); });
+      })
       .catch(() => { if (alive) setErr(true); });
     return () => { alive = false; };
-  }, [attempt]);
+  }, [attempt, userId]);
 
   function dismiss() {
     setResult(null);
@@ -66,6 +79,13 @@ export function LeagueBoard() {
 
   return (
     <View>
+      {up !== null ? (
+        <LeagueUp
+          tier={up}
+          rank={result?.outcome === "promoted" ? t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp) }) : null}
+          onDone={() => setUp(null)}
+        />
+      ) : null}
       {result ? <ResultCard result={result} onDismiss={dismiss} /> : null}
       <SectionTitle title={tierName(view.tier)} right={view.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: view.daysLeft })} />
       {view.rows.length < 2 ? (

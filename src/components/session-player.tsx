@@ -40,6 +40,24 @@ import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { flushPendingAnswers, isPermanentStatus, queueAnswers } from "@/lib/answer-queue";
 import { formatPercent } from "@/lib/i18n/dict";
+import { CountUp } from "@/components/celebrate";
+import { StreakMoment } from "@/components/streak-moment";
+
+/**
+ * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU istekte
+ * arttı (günün ilk kaydı). Alan `AnswerResult`a (lib/types) henüz yazılmadı;
+ * o dosya bu işin dışında, bayrak burada isteğe bağlı okunuyor.
+ */
+type RoundAnswer = AnswerResult & { streakUp?: boolean };
+
+/*
+ * TUR SONU KOREOGRAFİSİ — XP, doğruluk, seri sırayla sayarak geliyor; kapanış
+ * sesiyle ("finish"/"perfect") aynı anda başlıyor. Aralık 150 ms, her sayı
+ * 700 ms: son sayı 1 sn'de oturuyor (kutlama ≤ 1,2 sn). Mobil `GameScreen`
+ * aynı üç sabiti kullanıyor.
+ */
+const COUNT_STEP_MS = 150;
+const COUNT_MS = 700;
 
 /**
  * Turun durumları.
@@ -128,6 +146,12 @@ function SessionRound() {
   const [index, setIndex] = useState(0);
   const [tally, setTally] = useState({ correct: 0, total: 0, xp: 0 });
   const [result, setResult] = useState<AnswerResult | null>(null);
+  /**
+   * SERİ ANI: bu turda seri arttıysa yeni değeri. Özetten önce kısa sahne
+   * (`StreakMoment`) bununla oynuyor; sahne bitince null'a dönüyor ve özet
+   * açılıyor. Yeni turda sıfırlanıyor.
+   */
+  const [streakTo, setStreakTo] = useState<number | null>(null);
   const [errorKind, setErrorKind] = useState<ErrorKind>("db");
   /**
    * Kaydetme uyarısı — iki ayrı durum, iki ayrı söz.
@@ -238,8 +262,9 @@ function SessionRound() {
   useEffect(() => {
     // Yan modlar (günün turu, yürüyüş, hayatta kalma) artık ayrı adreslerde ve
     // aynı sinyali kendileri atıyor (bkz. components/learn/mode-screen).
-    window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: status === "playing" } }));
-  }, [status]);
+    // Seri anı da meşgul sayılıyor: rozet kutlaması onun üstüne binmesin, ardından gelsin.
+    window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: status === "playing" || streakTo !== null } }));
+  }, [status, streakTo]);
 
   /* ÖNCEKİ OTURUMDAN KALAN CEVAPLAR. Sekme çevrimdışı kapandıysa kuyrukta
      bekliyorlar; tur ekranı açılınca ilk iş onları göndermek. Android aynı
@@ -276,6 +301,7 @@ function SessionRound() {
     // Basamak her turda sıfırdan: hafifletme o oturuma ait bir karar.
     setEased(false);
     missStreak.current = 0;
+    setStreakTo(null);
     resetCombo();
     play("start");
     // Tur türü: karışık, tek oyun (hangisi), ek tur — üretim oranı KPI'sını
@@ -442,6 +468,7 @@ function SessionRound() {
     missed.current = resumable.missed;
     startedAt.current = Date.now();
     setCombo(0);
+    setStreakTo(null);
     resetCombo();
     play("start");
     track("session_resume", resumable.index);
@@ -539,8 +566,10 @@ function SessionRound() {
         }
         setSaveWarning(null);
         void flushPendingAnswers(); // bağlantı var: bekleyenler de gitsin
-        const data = (await res.json()) as AnswerResult;
+        const data = (await res.json()) as RoundAnswer;
         sessionXp.current += data.xpGained;
+        // Seri bu istekte arttı: sahne tur sonunda, özetten önce oynayacak.
+        if (data.streakUp && data.currentStreak > 0) setStreakTo(data.currentStreak);
         if (wager) setWagerResult(data.wagerXp ?? 0);
         // üst bardaki seri/XP rozetlerini anında güncelle
         window.dispatchEvent(
@@ -807,6 +836,15 @@ function SessionRound() {
         />
       </Screen>
     );
+  /* SERİ ANI ÖZETTEN ÖNCE. Özet ancak sahne bitince kuruluyor, yani kapanış
+     sesi ve sayaçlar sahnenin üstüne binmiyor, sahneden sonra başlıyor. */
+  if (status === "done" && streakTo !== null)
+    return (
+      <Screen>
+        <StreakMoment streak={streakTo} onDone={() => setStreakTo(null)} />
+      </Screen>
+    );
+
   if (status === "done")
     return (
       <Screen>
@@ -1326,15 +1364,16 @@ function SummaryCard({
         eyebrow={onlyGame ? t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) }) : t("flow.round")}
         title={t(total ? (partial ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
         figure={total ? `${tally.correct}/${total}` : null}
-        sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
+        sub={total ? (xp > 0 ? <>+<CountUp value={xp} duration={COUNT_MS} /> XP · {t("game.saved")}</> : t("game.saved")) : t("game.nothing_to_review")}
       />
       {targeted && total > 0 ? <CoachLine moment="weak_done" /> : null}
       {total > 0 ? (
         <StatRow
+          /* Sayılar sırayla: XP (bantta) → doğruluk → seri; bkz. `COUNT_STEP_MS`. */
           items={[
-            { value: formatPercent(accuracy, lang), label: t("summary.accuracy") },
+            { value: <CountUp value={accuracy} duration={COUNT_MS} delay={COUNT_STEP_MS} format={(n) => formatPercent(n, lang)} />, label: t("summary.accuracy") },
             { value: String(total), label: t("summary.words") },
-            { value: t("profile.days", { n: result?.currentStreak ?? 0 }), label: t("summary.streak") },
+            { value: <CountUp value={result?.currentStreak ?? 0} duration={COUNT_MS} delay={COUNT_STEP_MS * 2} format={(n) => t("profile.days", { n })} />, label: t("summary.streak") },
           ]}
         />
       ) : null}

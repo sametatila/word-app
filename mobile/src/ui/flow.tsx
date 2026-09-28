@@ -7,9 +7,10 @@ import { PressableScale } from "./PressableScale";
 import { PrimaryButton } from "./PrimaryButton";
 import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
+import { ProgressTrack } from "./Bar";
 import { ArrowBackIcon, XIcon } from "./icons";
 import { t } from "../lib/i18n";
-import { useTheme, spacing, radii, softShadow, soft, type Palette, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, soft, onSolid, type Palette, ds } from "../theme";
 import { READABLE_TEXT_MAX } from "../lib/useLayout";
 
 /**
@@ -130,9 +131,11 @@ export function FlowProgress({ onClose, back = false, closeLabel, value, count, 
       <View
         accessibilityRole="progressbar"
         accessibilityValue={{ min: 0, max: 100, now: pct }}
-        style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}
+        style={{ flex: 1 }}
       >
-        <View style={{ height: "100%", width: `${pct}%`, backgroundColor: tint ?? colors.primary, borderRadius: 5 }} />
+        {/* Dolgu değişimde yumuşak kayıyor (`ui/Bar` `ProgressTrack`; web
+            `session-player` tur çubuğu yayı). */}
+        <ProgressTrack pct={pct} tint={tint ?? colors.primary} height={10} track={colors.surface2} />
       </View>
       {extra}
       {typeof count === "string" ? <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{count}</Text> : count}
@@ -180,7 +183,8 @@ export function ResultHero({ eyebrow, title, figure, sub, aside, pill, quiet = f
   eyebrow: string;
   title: string;
   figure?: string | null;
-  sub?: string | null;
+  /** Düz metin ya da metin içine yazılan düğüm (ör. sayaçlı XP, `ui/CountUp`). */
+  sub?: React.ReactNode;
   /**
    * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Nomi'yi kendisi
    * çizerdi; animasyon artık yalnız günlük turda olduğu için bu şablon
@@ -232,7 +236,9 @@ export function ResultHero({ eyebrow, title, figure, sub, aside, pill, quiet = f
 }
 
 /** En çok üç sayı — aynı bileşen her sonuçta. */
-export function StatRow({ items }: { items: { value: string; label: string; tone?: "ok" | "bad" | "streak" | null }[] }) {
+/* `value` metnin içine yazılan bir düğüm de olabilir: tur sonunda sayılar
+   sayarak geliyor (`ui/CountUp`, web `StatRow` zaten `ReactNode` alıyor). */
+export function StatRow({ items }: { items: { value: React.ReactNode; label: string; tone?: "ok" | "bad" | "streak" | null }[] }) {
   const { colors } = useTheme();
   const shown = items.slice(0, 3);
   return (
@@ -330,7 +336,7 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
   return (
     <View style={{ gap: spacing.md, paddingTop: spacing.md }}>
       <View style={[{ width: ds(56), height: ds(56), borderRadius: radii.lg, backgroundColor: tint, alignItems: "center", justifyContent: "center" }, softShadow(tint, 8)]}>
-        <Icon color="#fff" size={28} />
+        <Icon color={onSolid(tint, colors)} size={28} />
       </View>
       <View style={{ gap: spacing.xs }}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{eyebrow}</Text>

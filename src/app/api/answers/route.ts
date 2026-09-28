@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { profiles } from "@/lib/db/schema";
 import { clampDay } from "@/lib/award";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
@@ -55,6 +58,20 @@ export async function POST(req: Request) {
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   try {
+    /*
+      SERİ ANI İÇİN "ÖNCE". Tur sonundaki kısa sahne (web `streak-moment`,
+      mobil `ui/StreakMoment`) yalnız serinin BU istekte arttığı günde
+      oynuyor. Yanıttaki `currentStreak` tek başına bunu söylemiyor: günün
+      ikinci turunda da aynı sayı dönüyor. Gün, `lastActiveDay` bu istekten
+      önce bugünden GERİDEYSE sayıldı (`nextStreak` o durumda seriyi ya bir
+      artırıyor ya da 1'den başlatıyor); ileri tarihli ya da bugünkü değer
+      seriye dokunmuyor. Profil satırı yoksa ilk etkinlik, o da sayılır.
+    */
+    const [before] = await db
+      .select({ lastActiveDay: profiles.lastActiveDay })
+      .from(profiles)
+      .where(eq(profiles.userId, userId))
+      .limit(1);
     const result = await submitAnswers(
       userId,
       parsed.answers,
@@ -65,7 +82,8 @@ export async function POST(req: Request) {
     // Turun nerede kalındığı cevaplarla aynı istekte gider: her turda iki ayrı
     // ağ isteği yapmak mobilde gereksiz bir gecikme olurdu.
     if (parsed.progress) await saveSessionProgress(userId, parsed.day, parsed.progress);
-    return NextResponse.json(result);
+    const streakUp = !before?.lastActiveDay || before.lastActiveDay < parsed.day;
+    return NextResponse.json({ ...result, streakUp });
   } catch (err) {
     console.error("[answers]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });

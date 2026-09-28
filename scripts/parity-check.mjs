@@ -1028,6 +1028,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   for (const cue of ["micon", "micoff", "premium"]) {
     sameList("yuruyus sesi " + cue, rows(mob, "SFX_NOTES", cue), rows(web, "WALK_NOTES", cue));
   }
+  /* Neredeyse ve seri sesleri de iki platformda aynı notalardan: web
+     `SHARED_NOTES`, mobil `SFX_NOTES`. Kombo ışıltısı (`sparkle`) katmanı da. */
+  for (const cue of ["near", "streak"]) {
+    sameList("ortak ses " + cue, rows(mob, "SFX_NOTES", cue), rows(web, "SHARED_NOTES", cue));
+  }
 }
 
 /* ── 22. ayni adi tasiyan sabitler ─────────────────────────────────────────
@@ -5419,10 +5424,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
              - `social/public-profile` `<Stat>`: `formatNumber`i kendi
                govdesinde cagiriyor (asagida denetleniyor),
              - `session-player` `<CountUp>`: TUR BASINA kazanilan XP, iki
-               haneli bir sayi; Android de ham yaziyor (`+${xpGained} XP`). */
+               haneli bir sayi; Android de ham yaziyor (`+${xpGained} XP`).
+             - `GameScreen` `<CountUp>` (mobil `ui/CountUp`): ayni sayi, tur
+               sonu koreografisinde sayarak geliyor (2026-09-28). */
         const etiket = src.slice(0, m.index).match(/<([A-Z]\w*)[^<>]*$/)?.[1] ?? "";
         const cift = f.split("/").pop() + ":" + etiket;
-        if (cift === "public-profile.tsx:Stat" || cift === "session-player.tsx:CountUp") continue;
+        if (cift === "public-profile.tsx:Stat" || cift === "session-player.tsx:CountUp" || cift === "GameScreen.tsx:CountUp") continue;
         hamlar.push(f.split("/").pop() + ": {" + ifade + "}");
       }
     }
@@ -5432,7 +5439,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Muafiyetlerin kendisi: `<Stat>` gercekten bicimliyor mu, `CountUp`
      gercekten ham mi. Biri degisirse muafiyet gerekcesi de degisir. */
   const statBicimli = /formatNumber\(value \?\? 0, lang\)/.test(read("src/components/social/public-profile.tsx"));
-  const countUpHam = /return <>\{shown\}<\/>;/.test(read("src/components/celebrate.tsx"));
+  /* `format` verilmezse ham: XP muafiyeti bicimsiz cagriya dayaniyor. Mobil
+     `ui/CountUp` ayni kalipla (`String(shown)`). */
+  const countUpHam =
+    /return <>\{format \? format\(shown\) : shown\}<\/>;/.test(read("src/components/celebrate.tsx")) &&
+    /return <>\{format \? format\(shown\) : String\(shown\)\}<\/>;/.test(read("mobile/src/ui/CountUp.tsx"));
   sameList(
     "toplam bicimi muafiyetleri",
     ["Stat bicimliyor=" + (statBicimli ? "evet" : "hayir"), "CountUp ham=" + (countUpHam ? "evet" : "hayir")],
@@ -8567,7 +8578,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      *
      * iOS'ta bir adim daha var: dosyanin diskte olmasi yetmez, Xcode
      * projesine KAYITLI olmali (`Resources` fazi) yoksa pakete girmez. */
-    const notaAdlari = [...new Set([...sil(read("mobile/src/lib/sfxNotes.ts")).matchAll(/^\s{2}(\w+):\s*\[/gm)].map((m) => m[1]))].sort();
+    /* KATMANLAR (`SfxLayer`, ör. kombo ışıltısı `sparkle`) tek başına çalınmıyor,
+       yalnız bir sesin üstüne biniyor; mp3 yedeği yok (render-sfx.py üretmiyor). */
+    const katmanlar = new Set([...((sil(read("mobile/src/lib/sfxNotes.ts")).match(/export type SfxLayer = ([^;]+);/) ?? [])[1] ?? "").matchAll(/"(\w+)"/g)].map((m) => m[1]));
+    const notaAdlari = [...new Set([...sil(read("mobile/src/lib/sfxNotes.ts")).matchAll(/^\s{2}(\w+):\s*\[/gm)].map((m) => m[1]))].filter((n) => !katmanlar.has(n)).sort();
     const androidRaw = readdirSync(new URL("../mobile/android/app/src/main/res/raw", import.meta.url))
       .filter((f) => f.endsWith(".mp3")).map((f) => f.replace(/\.mp3$/, "")).sort();
     const iosRaw = readdirSync(new URL("../mobile/ios/Lernomi/sfx", import.meta.url))
@@ -8764,6 +8778,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const SADECE_ANDROID = new Map([
       ["addListener", "RN olay yayicisinin kalibi; iOS'ta `RCTEventEmitter` kendisi sagliyor"],
       ["removeListeners", "ayni kalip, ayni sebep"],
+      ["sfxSilent", "zil modu sessizse efekt susar; iOS'ta ayni kapi Swift `playSfx` icinde (sessiz tus olcumu), ayri yontem .m tanitimi isterdi"],
     ]);
     const SADECE_IOS = new Map([
       ["ensureMicPermission", "Android izni JS'te soruyor (`PermissionsAndroid.RECORD_AUDIO`, kendi basligiyla); iOS'ta izni native taraf sormak zorunda (Info.plist NSMicrophoneUsageDescription)"],
@@ -18227,7 +18242,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     };
     const ktTablo = () => {
       const src = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
-      const i = src.indexOf("fun playSfx");
+      // Tablo `playSfx`ten ayrı bir işlevde (`sfxNotes`): çalma artık "ad+katman@oran" tarifi çözüyor.
+      const i = src.indexOf("fun sfxNotes");
       const blok = i < 0 ? "" : src.slice(i, src.indexOf("\n  }", i));
       const out = new Map();
       for (const m of blok.matchAll(/"(\w+)" -> listOf\(([\s\S]*?)\n\s+\)/g)) {
@@ -18265,7 +18281,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "js-kotlin ilk fark=" + ilk(J, K),
         "js-swift ilk fark=" + ilk(J, W),
       ],
-      ["js ipucu=13", "kotlin ipucu=13", "swift ipucu=13", "js-kotlin ilk fark=yok", "js-swift ilk fark=yok"],
+      ["js ipucu=16", "kotlin ipucu=16", "swift ipucu=16", "js-kotlin ilk fark=yok", "js-swift ilk fark=yok"],
       "bulunan",
       "beklenen",
     );
@@ -19090,7 +19106,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Cubugun yuksekligi ve tabani ORTAK bilesende (`Bar`), nabzin icinde degil:
      kapi oradan okuyor, kendi icine sayi yazmiyor. */
   const barBoy = /size = "inline"/.test(bar) ? ((bar.match(/BAR_HEIGHT = \{ inline: (\d+),/) ?? [])[1] ?? "YOK") : "YOK";
-  const barTaban = (bar.match(/width: `\$\{Math\.max\((\d+), clamp\(pct\)\)\}%`/) ?? [])[1] ?? "YOK";
+  // Taban artık `ProgressTrack`in `minPct` propu (çubuk yerel sürücüyle kayarak dolar).
+  const barTaban = (bar.match(/minPct=\{(\d+)\}/) ?? [])[1] ?? "YOK";
   sameList(
     "ortak gorev nabzinin olculeri",
     [

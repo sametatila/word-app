@@ -76,30 +76,52 @@ export function Confetti({ fire, count = 34 }: { fire: number; count?: number })
   );
 }
 
-/** Sayıyı sıfırdan hedefe sayarak gösterir — kazanım hissini güçlendirir. */
-export function CountUp({ value, duration = 900 }: { value: number; duration?: number }) {
-  const [shown, setShown] = useState(0);
+/**
+ * Sayıyı sıfırdan (ya da `from`dan) hedefe sayarak gösterir — kazanım hissini
+ * güçlendirir. Mobil karşılığı `ui/CountUp`, aynı eğri ve aynı alanlar.
+ *
+ * `delay`: sayma başlamadan önce beklenen süre; tur sonunda XP, doğruluk ve
+ * seri sırayla gelsin diye (bkz. `session-player` `SummaryCard`). Beklerken
+ * başlangıç değeri görünüyor, boşluk değil: satırın genişliği oynamasın.
+ * `format`: sayının ekrandaki biçimi (yüzde, "5 gün"); ara değerler de
+ * aynı biçimle yazılıyor.
+ */
+export function CountUp({
+  value,
+  duration = 900,
+  delay = 0,
+  from = 0,
+  format,
+}: {
+  value: number;
+  duration?: number;
+  delay?: number;
+  from?: number;
+  format?: (n: number) => React.ReactNode;
+}) {
+  const [shown, setShown] = useState(from);
   const raf = useRef<number | null>(null);
 
   useEffect(() => {
-    if (reducedMotion() || value <= 0) {
+    if (reducedMotion() || value <= from) {
       setShown(value);
       return;
     }
-    const start = performance.now();
+    let start: number | null = null;
     const step = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
+      if (start === null) start = now + delay;
+      const t = Math.max(0, Math.min(1, (now - start) / duration));
       // yavaşlayarak biten eğri
-      setShown(Math.round(value * (1 - Math.pow(1 - t, 3))));
+      setShown(Math.round(from + (value - from) * (1 - Math.pow(1 - t, 3))));
       if (t < 1) raf.current = requestAnimationFrame(step);
     };
     raf.current = requestAnimationFrame(step);
     return () => {
       if (raf.current) cancelAnimationFrame(raf.current);
     };
-  }, [value, duration]);
+  }, [value, duration, delay, from]);
 
-  return <>{shown}</>;
+  return <>{format ? format(shown) : shown}</>;
 }
 
 /** Kombo/rekor gibi anlık başarıların ekranın ortasında beliren rozeti. */

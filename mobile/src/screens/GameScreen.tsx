@@ -18,7 +18,7 @@ import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
-import { sfx } from "../lib/sfx";
+import { sfx, resetCombo } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, type Palette, soft } from "../theme";
@@ -26,6 +26,31 @@ import { onTint } from "../theme/colors";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { HeaderButton } from "../social/common";
 import { useBackConfirm } from "../lib/useBackConfirm";
+import { CountUp } from "../ui/CountUp";
+import { StreakMoment } from "../ui/StreakMoment";
+
+/**
+ * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU kayıtta arttı
+ * (günün ilk kaydı). Alan `game/session` `SubmitResult`a henüz yazılmadı; o
+ * dosya bu işin dışında, bayrak burada isteğe bağlı okunuyor (web
+ * `session-player` `RoundAnswer` aynı).
+ */
+type RoundSubmit = SubmitResult & { streakUp?: boolean };
+
+/*
+ * TUR SONU KOREOGRAFİSİ — XP, doğruluk, seri sırayla sayarak geliyor; kapanış
+ * sesiyle aynı anda başlıyor. Web `session-player` ile aynı üç sabit: aralık
+ * 150 ms, her sayı 700 ms, son sayı 1 sn'de oturuyor.
+ */
+const COUNT_STEP_MS = 150;
+const COUNT_MS = 700;
+/**
+ * Son kaydın beklenme sınırı. Özet artık kaydın yanıtını bekliyor (web de
+ * `flush`ı bekleyip özeti açıyor): seri anı ancak yanıtla belli oluyor.
+ * Bağlantı yavaşsa özet bu kadar sonra yine açılıyor; yanıt sonra gelirse
+ * sayılar yerine oturuyor, seri anı o turda atlanıyor.
+ */
+const FINISH_WAIT_MS = 1500;
 
 /* AYNI DURUMUN TEK ADI. Bu ekran "play" yazıyordu, web karşılığı ve mobilin
    kendi öteki oynatıcıları (`BossScreen`, `ChallengeScreen`) "playing" —
@@ -91,6 +116,8 @@ function GameRound() {
   /* Sunucu yanıtının tamamı: özet XP, günlük hedef ve yarına kalan tekrarı
      buradan okuyor (web `session-player` de aynısını yapıyor). */
   const [result, setResult] = useState<SubmitResult | null>(null);
+  /** SERİ ANI: bu turda seri arttıysa yeni değeri; sahne bitince null (web `streakTo`). */
+  const [streakTo, setStreakTo] = useState<number | null>(null);
   /*
    * KAYIT UYARISI. Tur biterken yazma düşerse eskiden hiçbir şey söylenmiyordu
    * ("sessizce düşer"): ekranda puan artıyor, sunucuda hiçbir şey değişmiyordu.
@@ -190,6 +217,10 @@ function GameRound() {
       xpEstimate.current = 0;
       submitted.current = false;
       setCombo(0);
+      setStreakTo(null);
+      /* Doğru cevap merdiveni her turda dipten başlıyor (web `session-player`
+         `load`/`resume` aynı çağrı). */
+      resetCombo();
       // Yarım kalan turdan devam yalnız karışık turda (pratik taze başlar).
       const r = onlyGame ? null : p.resume;
       const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
@@ -351,9 +382,11 @@ function GameRound() {
     answers.current = [];
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     try {
-      const r = await submitAnswers(batch, day.current, secs, progressNow(), wager);
+      const r: RoundSubmit = await submitAnswers(batch, day.current, secs, progressNow(), wager);
       bumpStats();
       if (r) setResult(r);
+      // Seri bu etabın kaydında arttı: sahne tur sonunda, özetten önce oynayacak.
+      if (r?.streakUp && r.currentStreak > 0) setStreakTo(r.currentStreak);
       if (wager) setWagerResult(r?.wagerXp ?? 0);
     } catch (e) {
       /* Çevrimdışıysa batch cihazdaki kuyruğa alındı; etap yine kapanıyor. */
@@ -366,13 +399,12 @@ function GameRound() {
     const total = resumeBase.current.total + roundsSeen.current;
     setFinalCorrect(totalCorrect);
     setFinalTotal(total);
-    setPhase("done");
     /* Kapanış sesi BURADA çalmıyor: hangi ses olacağı pekişen kelime sayısına
        bakıyor ve o sayı sunucu yanıtıyla geliyor. Karar özet açılınca veriliyor
        (aşağıdaki etki), web de öyle yapıyor (`session-player` özet kartı). */
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     track("session_done", totalCorrect, sessionKind.current);
-    if (submitted.current) return;
+    if (submitted.current) { setPhase("done"); return; }
     submitted.current = true;
     setSaveWarning(null);
     /*
@@ -393,18 +425,28 @@ function GameRound() {
         }
       : null;
     wagerOn.current = false;
-    try {
-      if (answers.current.length || wager) {
-        const r = await submitAnswers(answers.current, day.current, secs, progressNow(), wager);
-        bumpStats(); // sayılar değişti: başlık ve özet tazelensin
-        if (r?.streakRepaired) setRepaired(r.currentStreak);
-        if (r?.newlyMastered) setMastered(r.newlyMastered);
-        if (r) setResult(r);
-        if (wager) setWagerResult(r?.wagerXp ?? 0);
+    /* Özet süre sınırına kadar kaydı bekliyor (bkz. `FINISH_WAIT_MS`); sınır
+       aşılırsa açılıyor ve geç gelen seri anı atlanıyor — özetin ortasında
+       sahne açılmaz. */
+    let open = false;
+    const save = (async () => {
+      try {
+        if (answers.current.length || wager) {
+          const r: RoundSubmit = await submitAnswers(answers.current, day.current, secs, progressNow(), wager);
+          bumpStats(); // sayılar değişti: başlık ve özet tazelensin
+          if (r?.streakRepaired) setRepaired(r.currentStreak);
+          if (r?.newlyMastered) setMastered(r.newlyMastered);
+          if (r) setResult(r);
+          if (r?.streakUp && r.currentStreak > 0 && !open) setStreakTo(r.currentStreak);
+          if (wager) setWagerResult(r?.wagerXp ?? 0);
+        }
+      } catch (e) {
+        setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
       }
-    } catch (e) {
-      setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
-    }
+    })();
+    await Promise.race([save, new Promise((res) => setTimeout(res, FINISH_WAIT_MS))]);
+    open = true;
+    setPhase("done");
   }
 
   /*
@@ -416,10 +458,13 @@ function GameRound() {
    * aynı, yani ses ile konfeti tek karardan çıkıyor.
    */
   const doneDeserved = mastered > 0 || (finalTotal > 0 && Math.round((finalCorrect / finalTotal) * 100) >= 80 && finalTotal >= 4);
+  /* Seri anı sürerken ses beklemede: sahnenin kendi sesi var ve özet ancak
+     sahne bitince açılıyor (sayaçlar da o an başlıyor). */
+  const showingMoment = phase === "done" && streakTo !== null;
   useEffect(() => {
-    if (phase !== "done" || finalTotal === 0) return;
+    if (phase !== "done" || finalTotal === 0 || showingMoment) return;
     sfx(doneDeserved ? "perfect" : "finish");
-  }, [phase, finalTotal, doneDeserved]);
+  }, [phase, finalTotal, doneDeserved, showingMoment]);
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
@@ -489,6 +534,9 @@ function GameRound() {
     );
   }
 
+  /* SERİ ANI ÖZETTEN ÖNCE (web `session-player` aynı sıra). */
+  if (phase === "done" && streakTo !== null) return <StreakMoment streak={streakTo} onDone={() => setStreakTo(null)} />;
+
   if (phase === "done") {
     const total = finalTotal;
     const pct = total ? Math.round((finalCorrect / total) * 100) : 0;
@@ -528,15 +576,16 @@ function GameRound() {
           eyebrow={gameLabel ? t("game.practice_suffix", { game: gameLabel }) : t("flow.round")}
           title={t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
           figure={total ? `${finalCorrect}/${total}` : null}
-          sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
+          sub={total ? (xp > 0 ? <>+<CountUp value={xp} duration={COUNT_MS} /> XP · {t("game.saved")}</> : t("game.saved")) : t("game.nothing_to_review")}
           /* ZAYIF NOKTA TURUNDA Nomi bandda değil, altında konuşuyor (web `weak_done`). */
         />
         {onlyGame && total > 0 ? <CoachLine moment="weak_done" /> : null}
         {total > 0 ? (
           <StatRow items={[
-            { value: formatPercent(pct), label: t("summary.accuracy") },
+            /* Sayılar sırayla: XP (bantta) → doğruluk → seri; bkz. `COUNT_STEP_MS`. */
+            { value: <CountUp value={pct} duration={COUNT_MS} delay={COUNT_STEP_MS} format={(n) => formatPercent(n)} />, label: t("summary.accuracy") },
             { value: String(total), label: t("summary.words") },
-            { value: t("profile.days", { n: result?.currentStreak ?? 0 }), label: t("summary.streak") },
+            { value: <CountUp value={result?.currentStreak ?? 0} duration={COUNT_MS} delay={COUNT_STEP_MS * 2} format={(n) => t("profile.days", { n })} />, label: t("summary.streak") },
           ]} />
         ) : null}
 

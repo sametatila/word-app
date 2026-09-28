@@ -10,6 +10,7 @@ import { RowSkeleton, SkeletonCard, SkeletonLine, SkeletonPill } from "@/compone
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
 import { LEAGUE_TIERS } from "@/lib/social/types";
 import { NewAvatarParts } from "@/components/new-avatar-parts";
+import { LeagueUp, leagueUpFor } from "@/components/social/league-up";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 
@@ -39,6 +40,9 @@ export function LeagueBoard() {
      basılı tutunca aynı kartı açıyor. */
   const [report, setReport] = useState<LeagueRowView | null>(null);
   const [attempt, setAttempt] = useState(0);
+  /* LİG ATLAMA ANI: yükselinen lig; kutlama kapanınca null. Karar cihazdaki
+     "son görülen lig"le (`leagueUpFor`), sekmeye ilk girişte bir kez. */
+  const [up, setUp] = useState<number | null>(null);
 
   useEffect(() => {
     social
@@ -46,6 +50,7 @@ export function LeagueBoard() {
       .then((v) => {
         setView(v);
         setResult(v.result);
+        if (leagueUpFor(v.tier, v.result?.outcome === "promoted")) setUp(v.tier);
       })
       .catch(() => setErr(true));
   }, [attempt]);
@@ -104,6 +109,13 @@ export function LeagueBoard() {
 
   return (
     <div className="flex flex-col gap-3">
+      {up !== null ? (
+        <LeagueUp
+          tier={up}
+          rank={result?.outcome === "promoted" ? t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp, lang) }) : null}
+          onDone={() => setUp(null)}
+        />
+      ) : null}
       {result ? <ResultCard result={result} onDismiss={dismiss} /> : null}
 
       {/*
