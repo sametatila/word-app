@@ -18,9 +18,9 @@ import type { NativeLang } from "@/lib/i18n/dict";
  * KONUŞMA DÖKÜMÜ GERÇEK. Türkçe ve İngilizce sürümdeki iş görüşmesi, uygulamada
  * B1 "Das Vorstellungsgespräch" adımında yapay zekâyla, o dilin arayüzüyle
  * yapılmış konuşmalardan birebir alındı (ekranları `public/landing/tr-de/` ve
- * `en-de/conversation-*`); düzeltme ve üç öneri modelin kendi cevabı. Almanca
- * sürüm İngilizce kursu anlatıyor; oradaki döküm şimdilik örnek, de-en çekimi
- * yapılınca o konuşmayla değişecek.
+ * `en-de/conversation-*`); düzeltme ve öneriler modelin kendi cevabı. Almanca
+ * sürüm İngilizce kursu anlatıyor; onun dökümü de Almanca arayüzle yapılmış
+ * İngilizce konuşmadan (`de-en/conversation-*`).
  *
  * YAZILMAYANLAR (vitrin kuralları): "eğlenceli", "oyun", "çocuk"; sınav markası;
  * fiyat; "ücretsiz ve sınırsız sohbet"; "tam unutmak üzereyken". Deneme sınavı
@@ -111,7 +111,8 @@ export type LandingCopy = {
     me: string;
     ai1: string;
     ai1Gloss: string;
-    mine: { before: string; wrong: string; right: string; after: string };
+    /** Öğrencinin cümlesi; ikinci düzeltme varsa `wrong2/right2/after2`. */
+    mine: { before: string; wrong: string; right: string; after: string; wrong2?: string; right2?: string; after2?: string };
     fix: string;
     ai2: string;
     hintsLabel: string;
@@ -559,9 +560,9 @@ const de: LandingCopy = {
   },
   alt: {
     path: "Pfad-Ansicht: Niveau B1, aktuelle Einheit, nächster Schritt und die Schaltfläche Weiter.",
-    unit: "Einheit-Ansicht: die Schritte einer Einheit; der Sprechen-Schritt ist erledigt, Lesen kommt als Nächstes.",
+    unit: "Einheit-Ansicht im Englischkurs: My career so far ist erledigt, als Nächstes der Lesetext Three rules for a résumé.",
     conversation:
-      "Sprechen-Schritt: Im Vorstellungsgespräch fragt die KI-Figur, ein Fehler in der Antwort wird korrigiert, darunter drei Vorschläge.",
+      "Sprechen-Schritt im Englischkurs: Eine alte Schulfreundin fragt nach deinem Beruf; I work … since three years wird zu I have worked … for three years korrigiert, darunter drei Vorschläge.",
     "mock-task": "Probeprüfung, Teil Schreiben: Aufgabenzeit, Aufgabe mit Erklärung und Inhaltspunkte.",
     "walk-intro": "Gehmodus: Du hörst den Hinweis und sagst das Wort laut; verbleibende Runden heute.",
     home: "Lernen-Ansicht: tägliche Wortrunde, Tagesziel und Aufgaben des Tages.",
@@ -587,27 +588,32 @@ const de: LandingCopy = {
     more: [
       "Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Die App zeigt an, dass du mit einer KI sprichst.",
     ],
-    label: "Ein Gespräch, wie es im Englischkurs läuft",
-    scene: "B1 · Vorstellungsgespräch",
+    /* Almanca arayüzle, İngilizce kursunda yapılan konuşmadan (2026-09-28,
+       ekran görüntüsü `public/landing/de-en/conversation-*`): Almanca
+       konuşanın tipik hatası "since three years" + şimdiki zaman. */
+    label: "Ein Gespräch aus dem Englischkurs",
+    scene: "B1 · Mein beruflicher Weg",
     lang: "en",
-    aiName: "Interviewerin",
+    aiName: "Schulfreundin",
     aiTag: "KI",
     me: "Du",
-    ai1: "Good morning, thanks for coming in. So, why are you applying for this position?",
-    ai1Gloss: "Guten Morgen, danke fürs Kommen. Warum bewerben Sie sich auf diese Stelle?",
+    ai1: "It's so good to see you! What are you doing these days?",
+    ai1Gloss: "Schön, dich zu sehen! Was machst du zurzeit?",
     mine: {
-      before: "I'm applying because I have worked in sales ",
-      wrong: "since",
-      right: "for",
-      after: " three years and I'm looking for new challenges.",
+      before: "I ",
+      wrong: "work",
+      right: "have worked",
+      after: " as a nurse in a hospital in Hamburg ",
+      wrong2: "since",
+      right2: "for",
+      after2: " three years.",
     },
-    fix: "Für eine Zeitspanne steht for: for three years.",
-    ai2: "That sounds like useful experience. What strengths would you bring to our team?",
+    fix: "Läuft es seit drei Jahren und noch heute, steht im Englischen das Present Perfect mit for, nicht die Gegenwart mit since.",
+    ai2: "That's wonderful! Before becoming a nurse, did you have any other job in the healthcare field?",
     hintsLabel: "Wenn du nicht weiterweißt, schlägt sie vor:",
     hints: [
-      "I'm very reliable because I always meet my deadlines.",
-      "My main strength is working with customers.",
-      "I work well in a team because I have done it for years.",
+      "I have worked as a medical assistant for two years.",
+      "I worked there for one year before changing.",
     ],
     caption: "Fehler werden mitten im Gespräch korrigiert.",
   },
@@ -647,12 +653,12 @@ const de: LandingCopy = {
     screen: "home",
     title: "Jeden Tag ein paar Minuten.",
     lede: "In der täglichen Runde bringt verteilte Wiederholung Wörter zurück, bevor du sie vergisst.",
-    wordsLabel: "Beispiel: Wörter rund ums Vorstellungsgespräch",
+    wordsLabel: "Beispiel: Wörter aus der ersten B1-Einheit",
     wordsLang: "en",
     words: [
-      { word: "CV", gloss: "der Lebenslauf" },
+      { word: "career", gloss: "die Karriere" },
       { word: "experience", gloss: "die Erfahrung" },
-      { word: "job interview", gloss: "das Vorstellungsgespräch" },
+      { word: "responsibility", gloss: "die Verantwortung" },
     ],
     more: ["Dazu ein Wochen-Quiz, deine Serie und die Wochenliga; wenn du willst, vergleichst du dich mit Freunden."],
     caption: "Lernen-Ansicht: tägliche Runde und Aufgaben des Tages.",
@@ -713,11 +719,10 @@ export const LANDING: Record<NativeLang, LandingCopy> = { tr, en, de };
  * `docs/store/screenshots.md`.
  *
  * `null`: o dilin seti henüz çekilmedi; sayfa `SCREEN_FALLBACK`i gösteriyor.
- * de-en (Almanca arayüz + İngilizce kursu) çekimi yarıda kaldı (2026-09-28).
  */
 export const SCREEN_SET: Record<NativeLang, string | null> = {
   tr: "tr-de",
   en: "en-de",
-  de: null,
+  de: "de-en",
 };
 export const SCREEN_FALLBACK = "en-de";

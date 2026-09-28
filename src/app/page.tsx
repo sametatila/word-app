@@ -313,6 +313,12 @@ export default async function Home() {
                             {talk.mine.before}
                             <del>{talk.mine.wrong}</del> <ins>{talk.mine.right}</ins>
                             {talk.mine.after}
+                            {talk.mine.wrong2 ? (
+                              <>
+                                <del>{talk.mine.wrong2}</del> <ins>{talk.mine.right2}</ins>
+                                {talk.mine.after2}
+                              </>
+                            ) : null}
                           </span>
                           <span className={s.fix}>{talk.fix}</span>
                         </div>
