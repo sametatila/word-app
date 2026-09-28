@@ -37,7 +37,7 @@ const display = Bricolage_Grotesque({
   display: "swap",
 });
 
-const SCOPE_ID = "yol";
+const SCOPE_ID = "landing-trail";
 
 /** Masaüstündeki yapışkan telefonun ekran sırası: açılış, sonra sütunlar. */
 const DOCK: ScreenId[] = ["path", "unit", "conversation", "mock-task", "walk-intro", "home", "skills"];
