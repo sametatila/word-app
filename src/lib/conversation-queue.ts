@@ -12,7 +12,10 @@
  *    gönderileni bugüne yazmak seriyi yanlış hesaplardı),
  *  - aynı konuşma yeniden bitirilirse son kayıt kalıyor (uç en iyi denemeyi
  *    zaten tutuyor),
- *  - biri düşerse kalanı kuyrukta kalıyor ve sıradakiler denenmiyor.
+ *  - biri düşerse kalanı kuyrukta kalıyor ve sıradakiler denenmiyor,
+ *  - kayıt bitirişin kimliğini (`finishId`) taşıyor: oynatıcının anlık yeniden
+ *    denemesi ve kuyruktan gönderim aynı kimlikle gidiyor, sunucu ilk isteği
+ *    işlemişse ikinciyi yazmıyor (`recordConversation`).
  */
 import { apiFetch } from "@/lib/api-fetch";
 
@@ -22,7 +25,20 @@ export type PendingConversation = {
   chatDone: boolean;
   day: string;
   seconds: number;
+  /** Bitirişin kimliği; bu değişiklikten önce kuyruğa girmiş kayıtta yok. */
+  finishId?: string;
 };
+
+/**
+ * Bir bitirişin kimliği (idempotency anahtarı): bitirişte BİR KEZ üretiliyor,
+ * yeniden deneme ve kuyruk aynısını gönderiyor. Mobil `pathProgress` aynı
+ * gövdeyle; sunucu biçimi `isFinishId` (8-64, harf/rakam/-/_).
+ */
+export function newFinishId(): string {
+  const c = (globalThis as { crypto?: { randomUUID?: () => string } }).crypto;
+  if (typeof c?.randomUUID === "function") return c.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}${Math.random().toString(36).slice(2)}`;
+}
 
 const KEY = "lernomi-conversations-pending"; // storage-hygiene CONVERSATIONS_PENDING_KEY ile aynı
 

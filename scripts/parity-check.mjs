@@ -2921,13 +2921,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "konusma basina tek=" + (/filter\(\(x\) => x\.conversationId !== item\.conversationId\)/.test(src) ? "var" : "yok"),
       "sinir=" + ((src.match(/slice\(-(\d+)\)/) ?? [])[1] ?? "yok"),
       "kalani birak=" + (/slice\(i\)/.test(src) ? "var" : "yok"),
+      "bitiris kimligi=" + (/finishId\?: string/.test(src) ? "var" : "yok"),
+      /* Kimligin uretimi de ayni: sunucu bicimi (`isFinishId`) iki tarafi
+         birden kabul etmeli, biri UUID digeri baska bir sey uretmesin. */
+      "kimlik uretimi=" + ((src.match(/export function newFinishId\(\): string \{([\s\S]*?)\n\}/) ?? [])[1]?.replace(/\s+/g, " ").trim() ?? "yok"),
     ];
   };
   sameList("konusma sonucu kuyrugu", kuyruk("mobile/src/game/pathProgress.ts"), kuyruk("src/lib/conversation-queue.ts"));
 
   /* Gonderim govdesi de esit olmali: web `day` ve `seconds`i HIC
      gondermiyordu - her konuşma sunucuda sifir saniye goruluyor ve gece
-     yarisindan sonra bitirilen konuşma serinin yanlis gunune yaziliyordu. */
+     yarisindan sonra bitirilen konuşma serinin yanlis gunune yaziliyordu.
+     `finishId` (bitiris kimligi) eksik olan taraf yeniden denemede konuşmayı
+     iki kez saydirir. */
   const govde = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     const i = src.indexOf("const payload = {");
@@ -2935,7 +2941,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const govde = src.slice(i, src.indexOf("}", i) + 1);
     /* Kisayol yazim da sayiliyor (`seconds` ile `seconds: secs` ayni alan);
        yalnizca iki nokta arayan bir desen yanlis ayrisma gosterirdi. */
-    return ["conversationId", "correct", "chatDone", "day", "seconds"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
+    return ["conversationId", "correct", "chatDone", "day", "seconds", "finishId"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
   };
   sameSet("konusma kayit govdesi", govde("mobile/src/screens/ConversationScreen.tsx"), govde("src/components/conversations/conversation-player.tsx"), "mobil", "web");
 }

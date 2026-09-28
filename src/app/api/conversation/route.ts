@@ -4,7 +4,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
 import { findConversation } from "@/lib/conversations";
 import { scoredSteps } from "@/lib/conversations/types";
-import { recordConversation } from "@/lib/conversations/progress";
+import { isFinishId, recordConversation } from "@/lib/conversations/progress";
 
 export const dynamic = "force-dynamic";
 
@@ -30,12 +30,18 @@ export async function POST(req: Request) {
   if (typeof body !== "object" || body === null) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  const { conversationId, correct, chatDone, day, seconds } = body as Record<string, unknown>;
+  const { conversationId, correct, chatDone, day, seconds, finishId } = body as Record<string, unknown>;
 
   const conversation = typeof conversationId === "string" ? await findConversation(conversationId) : undefined;
   if (!conversation) return NextResponse.json({ error: "bad_conversation" }, { status: 400 });
   if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(conversation)) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });
+  }
+  /* Bitiriş kimliği (idempotency anahtarı): yeniden deneme ve kuyruk aynı
+     kimliği gönderiyor, uç ikinciyi yazmıyor (`recordConversation`). Kimliksiz
+     istek (build 9/10) eskisi gibi işleniyor; biçimi bozuk kimlik reddediliyor. */
+  if (finishId !== undefined && finishId !== null && !isFinishId(finishId)) {
+    return NextResponse.json({ error: "bad_finish_id" }, { status: 400 });
   }
 
   // Gün istemciden geliyor çünkü seri kullanıcının yerel gününe göre işliyor;
@@ -54,6 +60,7 @@ export async function POST(req: Request) {
       chatDone === true,
       today,
       secs,
+      isFinishId(finishId) ? finishId : null,
     );
     return NextResponse.json(result);
   } catch (err) {

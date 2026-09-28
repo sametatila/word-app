@@ -980,6 +980,10 @@ export const userConversations = pgTable(
     dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
     intervalDays: integer("interval_days").notNull().default(0),
     lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
+    /** Son işlenen bitirişin kimliği (istemcinin `finishId`i). Aynı kimlikle
+     *  gelen tekrar gönderim yazılmıyor (bkz. `recordConversation`); boş =
+     *  kimlik göndermeyen eski sürüm ya da sütundan önceki satır. */
+    lastFinishId: text("last_finish_id"),
   },
   (t) => [primaryKey({ columns: [t.userId, t.conversationId] })],
 );

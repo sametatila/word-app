@@ -40,7 +40,7 @@ import { derivedConfusions } from "../src/lib/speech-rules";
 import { germanLexicon } from "../src/lib/speech-lexicon";
 import { CONVERSATIONS, sourceConversationsFor as conversationsFor, sourceFindConversation as findConversation } from "../src/lib/conversations/source";
 import { scoredSteps } from "../src/lib/conversations/types";
-import { conversationBoard, nextConversation, recordConversation, weakRules } from "../src/lib/conversations/progress";
+import { conversationBoard, isFinishId, nextConversation, recordConversation, weakRules } from "../src/lib/conversations/progress";
 import { MAX_HISTORY } from "../src/lib/conversations/chat-const";
 import { chatPrompt } from "../src/lib/conversations/chat";
 import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
@@ -796,6 +796,60 @@ async function main() {
     // Aynı konuşmayı yeniden çözmek XP kasmaya dönüşmemeli: en iyi sonuç zaten
     // alınmışken fark sıfır.
     check("tekrar çözüm XP kasmıyor", second.xpGained === 0, `(${second.xpGained})`);
+
+    /*
+      BİTİRİŞ KİMLİĞİ (idempotency anahtarı). İstemci her bitirişte bir kimlik
+      üretiyor; ağ hatasındaki yeniden deneme ve kuyruktan gönderim aynısını
+      taşıyor. Aynı kimlik ikinci kez gelirse hiçbir şey yazılmamalı (deneme,
+      merdiven basamağı, XP, süre); farklı kimlik ve kimliksiz istek (eski
+      sürüm) yeni deneme sayılmalı. Yukarıdaki kimliksiz iki kayıt da hızlı
+      art arda geldiği hâlde sayıldı — eski 2 dakikalık pencere onu yutuyordu.
+    */
+    const attemptsNow = async () =>
+      (await db
+        .select({ attempts: userConversations.attempts })
+        .from(userConversations)
+        .where(and(eq(userConversations.userId, USER), eq(userConversations.conversationId, conversation.id))))[0]?.attempts ?? 0;
+    const secondsOn = async (day: string) =>
+      (await db
+        .select({ seconds: dailyStats.seconds })
+        .from(dailyStats)
+        .where(and(eq(dailyStats.userId, USER), eq(dailyStats.day, day))))[0]?.seconds ?? 0;
+
+    const idA = "e2e-finish-a-0001";
+    const beforeA = await attemptsNow();
+    const third = await recordConversation(USER, conversation, full, true, conversationDay, 40, idA);
+    check("kimlikli bitiriş sayılıyor", (await attemptsNow()) === beforeA + 1 && third.nextDays > second.nextDays,
+      `(${beforeA} → ${await attemptsNow()}, ${second.nextDays} → ${third.nextDays})`);
+    const secsA = await secondsOn(conversationDay);
+    const thirdAgain = await recordConversation(USER, conversation, full, true, conversationDay, 40, idA);
+    check("aynı kimlik ikinci kez yazılmıyor", (await attemptsNow()) === beforeA + 1, `(${await attemptsNow()})`);
+    check("tekrar gönderim aynı aralığı döndürüyor", thirdAgain.nextDays === third.nextDays && thirdAgain.passed === third.passed,
+      `(${third.nextDays} / ${thirdAgain.nextDays})`);
+    check("tekrar gönderim XP vermiyor", thirdAgain.xpGained === 0 && thirdAgain.totalXp === third.totalXp,
+      `(${thirdAgain.xpGained}, ${third.totalXp} → ${thirdAgain.totalXp})`);
+    check("tekrar gönderim süreyi iki kez eklemiyor", (await secondsOn(conversationDay)) === secsA,
+      `(${secsA} → ${await secondsOn(conversationDay)})`);
+    check("tekrar gönderim seriyi bozmuyor", thirdAgain.currentStreak === third.currentStreak);
+
+    const fourth = await recordConversation(USER, conversation, full, true, conversationDay, 0, "e2e-finish-b-0002");
+    check("farklı kimlik yeni deneme sayılıyor", (await attemptsNow()) === beforeA + 2 && fourth.nextDays > third.nextDays,
+      `(${await attemptsNow()}, ${third.nextDays} → ${fourth.nextDays})`);
+    await recordConversation(USER, conversation, full, true, conversationDay);
+    check("kimliksiz istek (eski sürüm) sayılıyor", (await attemptsNow()) === beforeA + 3, `(${await attemptsNow()})`);
+
+    // İlk istek hâlâ işlenirken gelen yeniden deneme: iki kopya aynı anda,
+    // yalnız biri yazmalı (koşullu upsert satır kilidi altında bakıyor).
+    await Promise.all([
+      recordConversation(USER, conversation, full, true, conversationDay, 0, "e2e-finish-c-0003"),
+      recordConversation(USER, conversation, full, true, conversationDay, 0, "e2e-finish-c-0003"),
+    ]);
+    check("eşzamanlı iki kopya bir kez sayılıyor", (await attemptsNow()) === beforeA + 4, `(${await attemptsNow()})`);
+
+    check("kimlik biçimi: UUID geçiyor", isFinishId("6f1c2b1e-3d4a-4f5b-9c8d-7e6f5a4b3c2d"));
+    check("kimlik biçimi: yedek biçim geçiyor", isFinishId("mg5k2x1a-4fzq8l0k1b2c3d4e5f"));
+    check("kimlik biçimi: kısa, uzun, boşluklu, sayı reddediliyor",
+      !isFinishId("abc") && !isFinishId("x".repeat(65)) && !isFinishId("a b c d e f g h") && !isFinishId(12345678));
 
     // Başarısızlık merdiveni başa alıyor — kural oturmadıysa uzun aralık
     // öğrenciyi kaybettirir.

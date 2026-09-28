@@ -27,7 +27,7 @@ import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendChat, chatAvailability, parseReply, patternUsed, type ChatMsg } from "../game/chat";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineChat";
-import { markItemDone, queueConversationResult, loadConversationResume, saveConversationResume, clearConversationResume, type ConversationResume } from "../game/pathProgress";
+import { markItemDone, newFinishId, queueConversationResult, loadConversationResume, saveConversationResume, clearConversationResume, type ConversationResume } from "../game/pathProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
@@ -854,7 +854,9 @@ export function ConversationScreen() {
       void clearConversationResume(conversation.id);
     }
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
-    const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds };
+    /* `finishId` bu bitiriş için bir kez: anlık yeniden deneme ve kuyruk aynısını
+       gönderiyor, sunucu aynı bitirişi ikinci kez yazmıyor. */
+    const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds, finishId: newFinishId() };
     const gonder = () => fetchWithTimeout(`${apiBase()}/api/conversation`, {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -870,8 +872,9 @@ export function ConversationScreen() {
         hiç varmadı (erişim günlüğünde yok), sonuç cihaz kuyruğunda kaldı;
         Patika adımı "0/13 · Şimdi" gösterirken Konuşma hakkı harcanmıştı.
         İkinci deneme yeni bağlantıyla gidiyor. İlk istek sunucuya varmışsa
-        ikinci kopya zararsız: uç kısa pencerede gelen aynı sonucu yeniden
-        yazmıyor (`recordConversation`). Web `conversation-player` aynı yolda.
+        ikinci kopya zararsız: ikisi aynı `finishId`i taşıyor ve uç aynı
+        bitirişi yeniden yazmıyor (`recordConversation`). Web
+        `conversation-player` aynı yolda.
       */
       let res: Response;
       try {

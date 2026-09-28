@@ -146,9 +146,27 @@ export async function syncItemProgress(level?: string): Promise<void> {
  *
  * `day` KAYITLA BİRLİKTE saklanıyor: seri kullanıcının O gününe ait, ertesi
  * gün gönderilen konuşmayı bugüne yazmak seriyi yanlış hesaplardı.
+ *
+ * `finishId` de öyle: bitirişin kimliği. `ConversationScreen`in anlık yeniden
+ * denemesi ve kuyruktan gönderim aynı kimlikle gidiyor; sunucu ilk isteği
+ * işlemişse ikinciyi yazmıyor (`recordConversation`). Bu değişiklikten önce
+ * kuyruğa girmiş kayıtta yok; sunucu kimliksiz isteği eskisi gibi işliyor.
  */
 const CONVERSATION_KEY = "lernomi-conversations-pending";
-export type PendingConversation = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
+export type PendingConversation = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number; finishId?: string };
+
+/**
+ * Bir bitirişin kimliği (idempotency anahtarı): bitirişte BİR KEZ üretiliyor,
+ * yeniden deneme ve kuyruk aynısını gönderiyor. Web `conversation-queue` aynı
+ * gövdeyle; sunucu biçimi `isFinishId` (8-64, harf/rakam/-/_). Hermes'te
+ * `crypto.randomUUID` olmayabilir: zaman + rastgele parça yedeği yeterli, kimlik
+ * yalnız aynı kullanıcının aynı konuşmasındaki son bitirişle karşılaştırılıyor.
+ */
+export function newFinishId(): string {
+  const c = (globalThis as { crypto?: { randomUUID?: () => string } }).crypto;
+  if (typeof c?.randomUUID === "function") return c.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}${Math.random().toString(36).slice(2)}`;
+}
 
 export async function queueConversationResult(item: PendingConversation): Promise<void> {
   try {

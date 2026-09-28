@@ -38,7 +38,7 @@ import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
 import { localDay } from "@/lib/day";
-import { flushPendingConversations, queueConversationResult } from "@/lib/conversation-queue";
+import { flushPendingConversations, newFinishId, queueConversationResult } from "@/lib/conversation-queue";
 import { CONVERSATION_RESUME_DAYS, CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
 
 /**
@@ -1186,14 +1186,19 @@ function ConversationPlayerBody({
     if (offlineRef.current) {
       track("production_attempt", offlineSummary(conversation, offlineRef.current).score, "chat");
     }
+    /* Gövde try'ın DIŞINDA kuruluyor: ağ hatasında kuyruğa giden kayıt aynı
+       `finishId`i taşımalı. Kimlik bu bitiriş için bir kez üretiliyor; anlık
+       yeniden deneme de kuyruktan gönderim de onu kullanıyor ve sunucu ilk
+       isteği işlemişse ikinciyi yazmıyor (`recordConversation`). */
+    const payload = {
+      conversationId: conversation.id,
+      correct: correctCount,
+      chatDone,
+      day: localDay(),
+      seconds: Math.round((Date.now() - startedAt.current) / 1000),
+      finishId: newFinishId(),
+    };
     try {
-      const payload = {
-        conversationId: conversation.id,
-        correct: correctCount,
-        chatDone,
-        day: localDay(),
-        seconds: Math.round((Date.now() - startedAt.current) / 1000),
-      };
       const gonder = () =>
         apiFetch("/api/conversation", {
           method: "POST",
@@ -1202,9 +1207,9 @@ function ConversationPlayerBody({
         });
       /* Ağ hatasında BİR KEZ DAHA, sonra kuyruk. Boşta kapanmış bir bağlantıdan
          giden POST sunucuya varmadan düşebiliyor (iOS'ta görüldü, 2026-09-28);
-         ikinci deneme yeni bağlantıyla gidiyor. Sunucu kısa pencerede gelen aynı
-         sonucu yeniden yazmıyor (`recordConversation`), yani ilk istek varmışsa
-         da zararsız. Mobil `ConversationScreen` aynı yolda. */
+         ikinci deneme yeni bağlantıyla gidiyor. İkisi aynı `finishId`i taşıyor ve
+         sunucu aynı bitirişi ikinci kez yazmıyor (`recordConversation`), yani
+         ilk istek varmışsa da zararsız. Mobil `ConversationScreen` aynı yolda. */
       let res: Response;
       try {
         res = await gonder();
@@ -1233,14 +1238,9 @@ function ConversationPlayerBody({
       }
     } catch {
       /* ÇEVRİMDIŞI: özet yine gösteriliyor ama sonuç artık kaybolmuyor -
-         kendi günüyle kuyruğa alınıyor ve sonraki açılışta gidiyor. */
-      queueConversationResult({
-        conversationId: conversation.id,
-        correct: correctCount,
-        chatDone,
-        day: localDay(),
-        seconds: Math.round((Date.now() - startedAt.current) / 1000),
-      });
+         kendi günüyle ve aynı bitiriş kimliğiyle kuyruğa alınıyor ve sonraki
+         açılışta gidiyor. */
+      queueConversationResult(payload);
     }
   }
 

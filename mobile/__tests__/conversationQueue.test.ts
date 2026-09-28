@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { flushPendingConversations, queueConversationResult, type PendingConversation } from "../src/game/pathProgress";
+import { flushPendingConversations, newFinishId, queueConversationResult, type PendingConversation } from "../src/game/pathProgress";
 
 /**
  * ÇEVRİMDIŞI BİTİRİLEN KONUŞMANIN KUYRUĞU.
@@ -10,7 +10,7 @@ import { flushPendingConversations, queueConversationResult, type PendingConvers
  * gönderilemeyen kayıt kuyrukta duruyor.
  */
 const KEY = "lernomi-conversations-pending";
-const item: PendingConversation = { conversationId: "a1-01", correct: 7, chatDone: true, day: "2026-09-01", seconds: 300 };
+const item: PendingConversation = { conversationId: "a1-01", correct: 7, chatDone: true, day: "2026-09-01", seconds: 300, finishId: "f-0000-aaaa" };
 
 jest.mock("../src/api/client", () => ({
   api: jest.fn(),
@@ -94,4 +94,54 @@ test("boşaltma sürerken kuyruğa giren sonuç kaybolmuyor", async () => {
   await flushPendingConversations();
   const list = JSON.parse((await AsyncStorage.getItem(KEY)) ?? "[]") as PendingConversation[];
   expect(list.map((x) => x.conversationId)).toEqual(["a1-03"]);
+});
+
+/* BİTİRİŞ KİMLİĞİ: `ConversationScreen`in anlık yeniden denemesi ve kuyruktan
+   gönderim aynı `finishId`i taşımalı — sunucu ikinci kopyayı ancak böyle
+   tanıyıp yazmıyor. Kuyruk kimliği saklamalı ve gövdede aynen göndermeli. */
+test("kuyruk bitiriş kimliğini saklıyor ve aynen gönderiyor", async () => {
+  await queueConversationResult(item);
+  expect((JSON.parse((await AsyncStorage.getItem(KEY)) ?? "[]") as PendingConversation[])[0].finishId).toBe("f-0000-aaaa");
+  api.mockResolvedValue({});
+  await flushPendingConversations();
+  const body = JSON.parse((api.mock.calls[0][1] as { body: string }).body) as PendingConversation;
+  expect(body.finishId).toBe("f-0000-aaaa");
+});
+
+test("aynı konuşmanın yeni bitirişi eskisinin kimliğini değiştiriyor", async () => {
+  await queueConversationResult(item);
+  await queueConversationResult({ ...item, finishId: "f-1111-bbbb" });
+  const list = JSON.parse((await AsyncStorage.getItem(KEY)) ?? "[]") as PendingConversation[];
+  expect(list.map((x) => x.finishId)).toEqual(["f-1111-bbbb"]);
+});
+
+/* Bu değişiklikten önce kuyruğa girmiş kayıt kimliksiz: yine gidiyor, sunucu
+   kimliksiz isteği eskisi gibi işliyor. */
+test("kimliksiz eski kayıt da gönderiliyor", async () => {
+  const eski: PendingConversation = { ...item };
+  delete eski.finishId;
+  await AsyncStorage.setItem(KEY, JSON.stringify([eski]));
+  api.mockResolvedValue({});
+  expect(await flushPendingConversations()).toBe(1);
+  expect(await AsyncStorage.getItem(KEY)).toBeNull();
+});
+
+/* Kimlik sunucunun biçimine uymalı (`isFinishId`: 8-64, harf/rakam/-/_);
+   uymayan kimlik 400 alır ve kuyruk sonucu düşürür. randomUUID olmayan
+   ortamdaki yedek biçim de sınanıyor. */
+test("üretilen kimlik sunucu biçimine uyuyor ve her seferinde farklı", () => {
+  const bicim = /^[A-Za-z0-9_-]{8,64}$/;
+  const a = newFinishId();
+  const b = newFinishId();
+  expect(a).toMatch(bicim);
+  expect(a).not.toBe(b);
+  const asil = globalThis.crypto;
+  try {
+    Object.defineProperty(globalThis, "crypto", { value: undefined, configurable: true });
+    const yedek = newFinishId();
+    expect(yedek).toMatch(bicim);
+    expect(yedek).not.toBe(newFinishId());
+  } finally {
+    Object.defineProperty(globalThis, "crypto", { value: asil, configurable: true });
+  }
 });

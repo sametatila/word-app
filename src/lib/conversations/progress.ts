@@ -1,7 +1,7 @@
 import "server-only";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { userConversations } from "@/lib/db/schema";
+import { profiles, userConversations } from "@/lib/db/schema";
 import { allConversations, conversationsFor, levelIndex } from "./index";
 import { scoredSteps, type Conversation } from "./types";
 import { awardActivity } from "@/lib/award";
@@ -29,8 +29,17 @@ const LADDER = [1, 3, 7, 16, 35];
  *  (`chat-const`): özet, olumsuz hükmün sebebini aynı sayıdan söylüyor. */
 const PASS_RATIO = CONVERSATION_PASS_RATIO;
 
-/** Bu süre içinde gelen, kaydı iyileştirmeyen sonuç tekrar gönderim sayılıyor (bkz. `recordConversation`). */
-const DUPLICATE_WINDOW_MS = 2 * 60_000;
+/**
+ * Bitiriş kimliğinin biçimi: istemci (`newFinishId`, web `conversation-queue`,
+ * mobil `pathProgress`) UUID ya da zaman+rastgele parçadan kuruyor. Uzunluk ve
+ * karakter kümesi dar tutuluyor: kimlik satıra yazılıyor, keyfi metin taşımasın.
+ */
+const FINISH_ID_RE = /^[A-Za-z0-9_-]{8,64}$/;
+
+/** İstekteki `finishId` geçerli bir bitiriş kimliği mi. */
+export function isFinishId(v: unknown): v is string {
+  return typeof v === "string" && FINISH_ID_RE.test(v);
+}
 
 export type ConversationState = {
   conversationId: string;
@@ -123,6 +132,12 @@ export async function recordConversation(
   /** Kullanıcının yerel günü — XP ve seri buna işlenir. */
   today: string,
   seconds = 0,
+  /**
+   * Bitirişin kimliği (istemci her bitirişte bir kez üretiyor; yeniden deneme
+   * ve kuyruk aynısını gönderiyor). Yoksa (kimlik göndermeyen eski sürüm)
+   * istek eskisi gibi her seferinde yeni deneme sayılıyor.
+   */
+  finishId: string | null = null,
 ): Promise<{
   passed: boolean;
   nextDays: number;
@@ -139,30 +154,19 @@ export async function recordConversation(
     .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
 
   /*
-    AYNI SONUCUN İKİNCİ KEZ GELMESİ — yeni deneme değil, tekrar gönderim.
+    AYNI BİTİRİŞİN İKİNCİ KEZ GELMESİ — yeni deneme değil, tekrar gönderim.
 
     İstemciler kaydı ağ hatasında bir kez daha deniyor ve düşeni kuyruğa alıp
     Patika açılırken yeniden gönderiyor (mobil `pathProgress`, web
     `conversation-queue`). Bağlantı yanıttan önce koptuysa sunucu ilk isteği
-    işlemiş olabilir; ikinci kopya denemeyi iki kez sayar ve geçilmiş
-    konuşmada tekrar merdivenini iki basamak çıkarırdı. Kısa pencerede gelen
-    ve kaydı İYİLEŞTİRMEYEN sonuç yazılmıyor, kayıtlı durum dönüyor. Gerçek bir
-    yeniden deneme bu pencereye sığmaz: anlatım ve sohbet dakikalar sürüyor.
+    işlemiş olabilir; ikinci kopya denemeyi iki kez sayar, süreyi iki kez
+    ekler ve geçilmiş konuşmada tekrar merdivenini iki basamak çıkarırdı.
+    Bitiriş kimliği son yazılanla aynıysa hiçbir şey yazılmıyor, kayıtlı durum
+    dönüyor. Eskiden bu iş bir zaman penceresiyle (2 dk) yapılıyordu; pencere
+    hızlı yapılan gerçek bir ikinci denemeyi de yutuyordu, kimlik yutmuyor.
   */
-  if (
-    existing &&
-    Date.now() - existing.lastAt.getTime() < DUPLICATE_WINDOW_MS &&
-    correct <= existing.correct &&
-    (existing.chatDone || !chatDone)
-  ) {
-    const award = await awardActivity(userId, today, 0, 0);
-    return {
-      passed: existing.chatDone && existing.total > 0 && existing.correct / existing.total >= PASS_RATIO,
-      nextDays: existing.intervalDays,
-      xpGained: 0,
-      currentStreak: award.currentStreak,
-      totalXp: award.totalXp,
-    };
+  if (finishId && existing?.lastFinishId === finishId) {
+    return duplicateResult(userId, passed, existing.intervalDays);
   }
 
   const step = passed
@@ -170,7 +174,7 @@ export async function recordConversation(
     : 0;
   const nextDays = LADDER[Math.max(0, step)];
 
-  await db
+  const written = await db
     .insert(userConversations)
     .values({
       userId,
@@ -183,6 +187,7 @@ export async function recordConversation(
       intervalDays: nextDays,
       dueAt: sql`now() + (${nextDays} || ' days')::interval`,
       lastAt: new Date(),
+      lastFinishId: finishId,
     })
     .onConflictDoUpdate({
       target: [userConversations.userId, userConversations.conversationId],
@@ -196,8 +201,25 @@ export async function recordConversation(
         intervalDays: nextDays,
         dueAt: sql`now() + (${nextDays} || ' days')::interval`,
         lastAt: new Date(),
+        lastFinishId: finishId,
       },
-    });
+      /* Yukarıdaki okuma ile bu yazma arasında aynı bitirişin öbür kopyası
+         yazmış olabilir (ilk istek hâlâ işlenirken gelen yeniden deneme). Koşul
+         satır kilidi altında bir daha bakıyor: kimlik artık aynıysa güncelleme
+         yapılmıyor ve `returning` boş dönüyor. Kimliksiz istek her zaman yazar. */
+      setWhere: finishId
+        ? sql`${userConversations.lastFinishId} is distinct from ${finishId}`
+        : undefined,
+    })
+    .returning({ intervalDays: userConversations.intervalDays });
+
+  if (!written.length) {
+    const [row] = await db
+      .select({ intervalDays: userConversations.intervalDays })
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
+    return duplicateResult(userId, passed, row?.intervalDays ?? nextDays);
+  }
 
   // XP: konuşmanın tasarlanmış süresine göre, tekrar çözümlerde yalnızca iyileşme
   // farkı. Konuşma bölümü daha önce hiç puan vermiyordu — sekiz tamamlanmış konuşma
@@ -224,6 +246,28 @@ export async function recordConversation(
     xpGained: award.xpGained,
     currentStreak: award.currentStreak,
     totalXp: award.totalXp,
+  };
+}
+
+/**
+ * Tekrar gönderimin yanıtı: ilk isteğin döndürdüğüyle aynı biçim, hiçbir yazma
+ * olmadan. `passed` isteğin kendi sonucundan (aynı bitiriş, aynı gövde),
+ * `nextDays` o bitirişin kurduğu aralıktan; XP ve süre ilk istekte işlendi,
+ * burada sıfır. Seri ve toplam XP profilden OKUNUYOR — `awardActivity(0, 0)`
+ * çağırmak günlük satıra ve profile yine yazardı.
+ */
+async function duplicateResult(userId: string, passed: boolean, nextDays: number) {
+  const [profile] = await db
+    .select({ currentStreak: profiles.currentStreak, totalXp: profiles.totalXp })
+    .from(profiles)
+    .where(eq(profiles.userId, userId))
+    .limit(1);
+  return {
+    passed,
+    nextDays,
+    xpGained: 0,
+    currentStreak: profile?.currentStreak ?? 0,
+    totalXp: profile?.totalXp ?? 0,
   };
 }
 
