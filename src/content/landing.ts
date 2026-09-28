@@ -29,6 +29,35 @@ import type { NativeLang } from "@/lib/i18n/dict";
 
 export type ScreenId = "path" | "unit" | "conversation" | "mock-task" | "walk-intro" | "home" | "skills";
 
+/** Kursların hedef dili ve anlatım dili (arayüz dili). */
+export type CourseLang = "de" | "en";
+export type PairNative = NativeLang;
+
+/**
+ * DİL YOLLARI — `lib/courses` `PAIR_READY`in vitrine açılan kısmı: Türkçe
+ * konuşan Almanca ve İngilizce, İngilizce konuşan Almanca, Almanca konuşan
+ * İngilizce öğreniyor. Züritüütsch (gsw-zh) duraklatılmış, yeni kullanıcıya
+ * sunulmuyor; burada da yok. Çift açılır ya da kapanırsa burası da değişir.
+ * Sıra: önce ziyaretçinin kendi yolları, sonra ötekiler (sayfada sıralanıyor).
+ */
+export const PAIRS: readonly { native: PairNative; course: CourseLang }[] = [
+  { native: "tr", course: "de" },
+  { native: "tr", course: "en" },
+  { native: "en", course: "de" },
+  { native: "de", course: "en" },
+];
+
+/**
+ * Sayfayı başka dilde açan düğmenin etiketi — KENDİ dilinde yazılıyor: onu
+ * arayan kişi sayfanın şu anki dilini okuyamıyor olabilir (LangSetting de
+ * dilleri kendi adlarıyla yazıyor).
+ */
+export const SWITCH_LABEL: Record<NativeLang, string> = {
+  tr: "Sayfayı Türkçe göster",
+  en: "Show this page in English",
+  de: "Diese Seite auf Deutsch",
+};
+
 export type Pillar = {
   id: string;
   screen: ScreenId;
@@ -52,6 +81,21 @@ export type LandingCopy = {
   };
   stats: { value: string; label: string }[];
   statsNote: string;
+  /** Dört dil yolu (bkz. `PAIRS`): Lernomi tek dil uygulaması değil. */
+  langs: {
+    title: string;
+    lede: string;
+    /** Kursun hedef dili, ziyaretçinin dilinde: "Almanca", "German", "Deutsch". */
+    course: Record<CourseLang, string>;
+    /** Anlatım dili, ziyaretçinin dilinde: "Türkçe anlatımla", "Explained in Turkish". */
+    explained: Record<PairNative, string>;
+    /** Kursun kelime sayısı (vitrindeki yuvarlak sayı). */
+    words: Record<CourseLang, string>;
+    rest: string;
+    yours: string;
+    /** Başka anadil ziyaretçisine: bu sayfayı onun dilinde aç (etiket o dilde, `SWITCH_LABEL`). */
+    langNav: string;
+  };
   /** Ekranların erişilebilir açıklamaları (uygulamanın o dildeki görüntüsü). */
   alt: Record<ScreenId, string>;
   heroCaption: string;
@@ -119,7 +163,7 @@ const tr: LandingCopy = {
     line1: "Konuş, anla,",
     line2: "sınava hazırlan.",
     intro:
-      "Lernomi ile Almancayı A1'den C1'e, Türkçe anlatımla ve konuşarak öğren. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
+      "Lernomi ile Almanca ya da İngilizce öğren: A1'den C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
     noAccount: "Hesap açmadan başlarsın.",
   },
   cta: {
@@ -133,11 +177,21 @@ const tr: LandingCopy = {
     install: "Şimdilik telefonuna ekle",
   },
   stats: [
-    { value: "8.500+", label: "kelime" },
-    { value: "900+", label: "alıştırma" },
-    { value: "50+", label: "deneme sınavı" },
+    { value: "2", label: "kurs: Almanca, İngilizce" },
+    { value: "900+", label: "alıştırma, her kursta" },
+    { value: "50+", label: "deneme sınavı, her kursta" },
   ],
-  statsNote: "Almanca kursunda. İngilizce kursu da aynı yapıda: 7.000'den fazla kelime, 900'den fazla alıştırma, 50'den fazla deneme sınavı.",
+  statsNote: "Almancada 8.500'den, İngilizcede 7.000'den fazla kelime. Aşağıdaki örnekler Almanca kursundan.",
+  langs: {
+    title: "Tek dil değil: dört dil yolu.",
+    lede: "Patika, konuşma adımları, deneme sınavları ve anlatım her yolda aynı yapıda. Anlatım, ipuçları ve geri bildirim senin dilinde.",
+    course: { de: "Almanca", en: "İngilizce" },
+    explained: { tr: "Türkçe anlatımla", en: "İngilizce anlatımla", de: "Almanca anlatımla" },
+    words: { de: "8.500+ kelime", en: "7.000+ kelime" },
+    rest: "Başka dilde konuşanlar için",
+    yours: "Senin için",
+    langNav: "Sayfanın dili",
+  },
   alt: {
     path: "Patika ekranı: B1 seviyesi, şu anki ünite İş dünyası, sıradaki adım okuma, Devam et düğmesi.",
     unit: "Ünite ekranı: İş dünyası ünitesinin adımları; konuşma adımı tamamlanmış, sıradaki okuma.",
@@ -168,7 +222,7 @@ const tr: LandingCopy = {
     more: [
       "Her Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. Karşındakinin yapay zekâ olduğunu uygulama ekranda söyler.",
     ],
-    label: "Uygulamada geçen bir konuşma",
+    label: "Almanca kursunda geçen bir konuşma",
     scene: "B1 · İş görüşmesi",
     lang: "de",
     aiName: "Görüşmeci",
@@ -309,6 +363,16 @@ const en: LandingCopy = {
     { value: "50+", label: "mock exams" },
   ],
   statsNote: "From A1 to C1, with explanations in English.",
+  langs: {
+    title: "One app, four language paths.",
+    lede: "Path, speaking steps, mock exams and explanations work the same way on every path. Explanations, hints and feedback come in your own language.",
+    course: { de: "German", en: "English" },
+    explained: { tr: "Explained in Turkish", en: "Explained in English", de: "Explained in German" },
+    words: { de: "8,500+ words", en: "7,000+ words" },
+    rest: "For speakers of other languages",
+    yours: "For you",
+    langNav: "Page language",
+  },
   alt: {
     path: "Path screen: level B1, current unit on the working world, next step reading, Continue button.",
     unit: "Unit screen: the steps of the working-world unit; the speaking step is done, reading is next.",
@@ -339,7 +403,7 @@ const en: LandingCopy = {
     more: [
       "Each Speaking step opens with a short intro in English to the phrases you'll use. The app tells you on screen that you're talking to an AI.",
     ],
-    label: "A conversation from the app",
+    label: "A conversation from the German course",
     scene: "B1 · Job interview",
     lang: "de",
     aiName: "Interviewer",
@@ -480,6 +544,16 @@ const de: LandingCopy = {
     { value: "50+", label: "Probeprüfungen" },
   ],
   statsNote: "Von A1 bis C1, mit Erklärungen auf Deutsch.",
+  langs: {
+    title: "Eine App, vier Sprachwege.",
+    lede: "Pfad, Sprechen-Schritte, Probeprüfungen und Erklärungen sind auf jedem Weg gleich aufgebaut. Erklärungen, Hinweise und Feedback bekommst du in deiner Sprache.",
+    course: { de: "Deutsch", en: "Englisch" },
+    explained: { tr: "Auf Türkisch erklärt", en: "Auf Englisch erklärt", de: "Auf Deutsch erklärt" },
+    words: { de: "8.500+ Wörter", en: "7.000+ Wörter" },
+    rest: "Für andere Muttersprachen",
+    yours: "Für dich",
+    langNav: "Sprache der Seite",
+  },
   alt: {
     path: "Pfad-Ansicht: Niveau B1, aktuelle Einheit, nächster Schritt und die Schaltfläche Weiter.",
     unit: "Einheit-Ansicht: die Schritte einer Einheit; der Sprechen-Schritt ist erledigt, Lesen kommt als Nächstes.",
@@ -510,7 +584,7 @@ const de: LandingCopy = {
     more: [
       "Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Die App zeigt an, dass du mit einer KI sprichst.",
     ],
-    label: "Ein Gespräch, wie es in der App läuft",
+    label: "Ein Gespräch, wie es im Englischkurs läuft",
     scene: "B1 · Vorstellungsgespräch",
     lang: "en",
     aiName: "Interviewerin",

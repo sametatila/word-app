@@ -9,7 +9,10 @@ import s from "@/components/landing/landing.module.css";
 import { getT, getLang } from "@/lib/i18n/server";
 import { legalPath } from "@/lib/legal";
 import { appControl } from "@/lib/app-control";
-import { LANDING, SCREEN_LOCALES, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
+import { LandingLangButton } from "@/components/landing/landing-lang";
+import { LANG_LABEL, NATIVE_LANGS } from "@/lib/i18n/dict";
+import { offeredNativeLangs } from "@/lib/courses";
+import { LANDING, PAIRS, SCREEN_LOCALES, SWITCH_LABEL, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
 
 /*
   TANITIM SAYFASI (2026-09-28, yeniden yazıldı).
@@ -158,6 +161,11 @@ export default async function Home() {
   );
 
   const { path, talk, exam, walk, daily, skills } = copy;
+  /* Önce ziyaretçinin kendi yolları, sonra ötekiler; yalnız anadili gerçekten
+     sunulan yollar (`PAIR_READY`). */
+  const offered = new Set(offeredNativeLangs());
+  const open = PAIRS.filter((p) => offered.has(p.native));
+  const pairs = [...open.filter((p) => p.native === lang), ...open.filter((p) => p.native !== lang)];
 
   return (
     <div className={`${display.className} ${s.root}`}>
@@ -221,6 +229,40 @@ export default async function Home() {
                   </ul>
                   <p className={s.statsNote}>{copy.statsNote}</p>
                 </div>
+              </section>
+
+              {/* Dil yolları: vitrin Almancayı öne alıyor ama Lernomi tek dil
+                  uygulaması değil. Ziyaretçinin kendi yolları önde; ötekilerde
+                  sayfayı o dilde açan düğme (etiketi o dilde). */}
+              <section className={s.leg} data-leg data-show="path" aria-labelledby="h-diller" id="diller">
+                <div className={s.head}>
+                  <span className={s.node} data-node aria-hidden />
+                  <h2 className={s.pillar} id="h-diller">
+                    {copy.langs.title}
+                  </h2>
+                </div>
+                <div className={s.body}>
+                  <p className={s.lede}>{copy.langs.lede}</p>
+                </div>
+                <ul className={s.pairs}>
+                  {pairs.map((p) => {
+                    const mine = p.native === lang;
+                    return (
+                      <li key={`${p.native}-${p.course}`} className={`${s.pair} ${mine ? s.pairMine : ""}`}>
+                        <span className={s.pairFrom}>{copy.langs.explained[p.native]}</span>
+                        <b className={s.pairTo}>{copy.langs.course[p.course]}</b>
+                        <span className={s.pairMeta}>A1–C1 · {copy.langs.words[p.course]}</span>
+                        {mine ? (
+                          <span className={s.pairYours}>{copy.langs.yours}</span>
+                        ) : (
+                          <LandingLangButton lang={p.native} className={s.pairSwitch}>
+                            {SWITCH_LABEL[p.native]}
+                          </LandingLangButton>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </section>
 
               {/* 1 · A1'den C1'e adım adım */}
@@ -502,6 +544,20 @@ export default async function Home() {
               </Link>
             </li>
           </ul>
+          {/* Sayfanın dili: diller KENDİ adlarıyla (LangSetting ile aynı). */}
+          <div className={s.langs} role="group" aria-label={copy.langs.langNav}>
+            {NATIVE_LANGS.filter((l) => offered.has(l)).map((l) =>
+              l === lang ? (
+                <span key={l} lang={l} aria-current="true" className={s.langOn}>
+                  {LANG_LABEL[l]}
+                </span>
+              ) : (
+                <LandingLangButton key={l} lang={l} className={s.langBtn}>
+                  {LANG_LABEL[l]}
+                </LandingLangButton>
+              ),
+            )}
+          </div>
           <p className={s.copy}>© Lernomi</p>
         </div>
       </footer>

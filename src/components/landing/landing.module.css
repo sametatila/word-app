@@ -212,6 +212,28 @@
 .inline .phone { --pw: min(280px, 100%); }
 .inline figcaption { margin-top: 14px; color: var(--text-muted); font-size: 0.92rem; text-align: center; max-width: 26rem; }
 
+/* ---------- dil yolları ---------- */
+.pairs { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 12px; max-width: 44rem; }
+@media (min-width: 600px) {
+  .pairs { grid-template-columns: 1fr 1fr; }
+}
+.pair {
+  display: grid; align-content: start; gap: 2px;
+  padding: 18px 20px; border-radius: 20px;
+  background: var(--surface); border: 1.5px solid var(--l-line);
+}
+.pairMine { border-color: var(--l-accent); background: var(--l-soft); }
+.pairFrom { font-size: 0.92rem; color: var(--text-muted); font-weight: 600; }
+.pairTo { font-size: clamp(1.9rem, 1.5rem + 1.2vw, 2.4rem); font-stretch: 82%; font-weight: 720; letter-spacing: -0.02em; line-height: 1.05; }
+.pairMeta { color: var(--l-ink-2); font-size: 0.95rem; }
+.pairYours { margin-top: 10px; font-size: 0.9rem; font-weight: 700; color: var(--color-brand); }
+.pairSwitch {
+  margin-top: 10px; justify-self: start; padding: 0; border: 0; background: none; font: inherit;
+  font-size: 0.92rem; font-weight: 600; color: var(--color-brand); cursor: pointer;
+  text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px;
+}
+.pairSwitch:hover { text-decoration-thickness: 2px; }
+
 /* ---------- sütun ayrıntıları ---------- */
 .steps { margin: 30px 0 26px; }
 .stepsLabel { margin: 0 0 10px; font-size: 0.95rem; color: var(--text-muted); font-weight: 600; }
@@ -316,6 +338,11 @@
 .footNav a { color: var(--l-ink-2); text-decoration: none; }
 .footNav a:hover { text-decoration: underline; }
 .copy { color: var(--text-muted); margin: 0 !important; }
+.langs { display: inline-flex; border: 1.5px solid var(--l-line-2); border-radius: 999px; padding: 3px; background: var(--bg); }
+.langOn, .langBtn { padding: 6px 12px; border-radius: 999px; font: inherit; font-size: 0.9rem; font-weight: 600; border: 0; }
+.langOn { background: var(--text); color: var(--bg); }
+.langBtn { background: none; color: var(--l-ink-2); cursor: pointer; }
+.langBtn:hover { color: var(--text); }
 
 @media (prefers-reduced-motion: reduce) {
   .root *, .root *::before, .root *::after { transition: none !important; animation: none !important; }
