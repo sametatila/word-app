@@ -8,6 +8,7 @@ import { unlockedAchievementIds } from "@/lib/achievements";
 import { isPremium } from "@/lib/premium";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import type { UnlockedPart } from "@/lib/avatar-layers";
+import { FALLBACK_HOST, FALLBACK_ORIGIN, PRIMARY_ORIGIN } from "@/lib/site";
 import { LEAGUE_TIERS } from "@/lib/social/types";
 import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
@@ -23,6 +24,18 @@ import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/
 export function avatar3dBase(): string | null {
   const v = (process.env.AVATAR_3D_BASE ?? "").trim().replace(/\/+$/, "");
   return /^https?:\/\//.test(v) ? v : null;
+}
+
+/**
+ * İsteğin geldiği adrese göre katalog kökü. Mobil, ana adresi kesen kurum
+ * ağlarında yedek adrese geçiyor (`lib/site` FALLBACK_ORIGIN); katalog ana
+ * adreste kalsaydı o kullanıcıların avatarları ve kutlama ikonları hiç
+ * yüklenmezdi. Yedek host aynı dosyaları ve `/api/avatar/img`yi sunuyor.
+ */
+export function avatar3dBaseFor(host: string | null | undefined): string | null {
+  const b = avatar3dBase();
+  if (!b || host !== FALLBACK_HOST || !b.startsWith(PRIMARY_ORIGIN)) return b;
+  return FALLBACK_ORIGIN + b.slice(PRIMARY_ORIGIN.length);
 }
 
 export async function ownedAvatarItems(userId: string): Promise<{ itemId: string; source: string; acquiredAt: Date }[]> {
@@ -113,8 +126,8 @@ function catalogParts(): Promise<Map<string, CatalogLite["parcalar"][number]>> {
  * kapalıyken boş: 2B maskotta bu parçalar yok, "yeni aksesuar" demek yalan olur.
  * Katalog okunamazsa da boş: kutlamanın kendisi aksesuar yüzünden düşmemeli.
  */
-export async function partsForKeys(keys: Iterable<string>, lang: NativeLang): Promise<UnlockedPart[]> {
-  const base = avatar3dBase();
+export async function partsForKeys(keys: Iterable<string>, lang: NativeLang, host?: string | null): Promise<UnlockedPart[]> {
+  const base = avatar3dBaseFor(host);
   const want = new Set(keys);
   if (!base || !want.size) return [];
   const cat = await catalogParts().catch(() => null);

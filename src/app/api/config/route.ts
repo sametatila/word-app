@@ -3,7 +3,7 @@ import { authEnabled, googleConfigured, appleConfigured, appleWebConfigured } fr
 import { turnstileSiteKey } from "@/lib/auth/captcha";
 import { appControl } from "@/lib/app-control";
 import { guestAttestationConfig } from "@/lib/auth/play-integrity";
-import { avatar3dBase } from "@/lib/avatar-items";
+import { avatar3dBaseFor } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
  * kullanıcıya boş bir doğrulama kutusu göstermemesi. Anahtar genel — Turnstile
  * widget'ı onu zaten sayfa kaynağında taşıyor.
  */
-export async function GET() {
+export async function GET(req: Request) {
   /*
     UYGULAMA DENETİMİ de buradan iniyor: en düşük/önerilen build, bakım modu,
     mağaza bağlantıları (bkz. lib/app-control-shared). Açılışta zaten okunan
@@ -57,8 +57,9 @@ export async function GET() {
         Nomi 3B avatar kataloğunun kökü (`AVATAR_3D_BASE`). Boşken `null` ve
         iki istemci bugünkü 2B maskotu çiziyor; dolunca `katalog.json` ve
         katmanlar buradan iniyor — uygulama güncellemesi gerekmeden açılır.
+        Yedek adresten gelen istemciye yedek adresteki kopya (`avatar3dBaseFor`).
       */
-      avatar3d: avatar3dBase(),
+      avatar3d: avatar3dBaseFor(req.headers.get("host")),
       app,
     },
     { headers: { "cache-control": "public, max-age=300" } },

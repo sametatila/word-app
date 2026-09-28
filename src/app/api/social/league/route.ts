@@ -19,7 +19,7 @@ export async function GET(req: Request) {
     /* Sonuç ekranı: bu hafta İLK KEZ açılan lig parçaları (`result.parts`).
        Aksesuar hesabı düşerse sonuç ekranı yine çıkar. */
     const parts = await leagueResultKeys(user, board.result)
-      .then(async (keys) => (keys.length ? partsForKeys(keys, await profileLang(user)) : []))
+      .then(async (keys) => (keys.length ? partsForKeys(keys, await profileLang(user), req.headers.get("host")) : []))
       .catch(() => []);
     return ok(parts.length ? { ...board, result: { ...board.result, parts } } : board);
   } catch (err) {

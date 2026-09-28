@@ -8,7 +8,7 @@ import { partsForKeys } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "auth" }, { status: 401 });
   try {
@@ -26,7 +26,7 @@ export async function GET() {
        (`rows`) bunu taşımıyor. */
     const fresh = await Promise.all(
       board.fresh.map(async (r) => {
-        const parts = await partsForKeys([r.id], lang);
+        const parts = await partsForKeys([r.id], lang, req.headers.get("host"));
         return parts.length ? { ...r, parts } : r;
       }),
     );
