@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { sfx } from "../lib/sfx";
 import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
 import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
@@ -593,6 +594,7 @@ export function ExamScreen() {
           />
         }
       >
+        <ResultChime passed={passed} level={moduleIx === null} />
         <ResultHero
           eyebrow={examLabel}
           title={result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
@@ -773,6 +775,24 @@ export function ExamScreen() {
 }
 
 /* ─────────────────────────── bölümler ─────────────────────────── */
+
+/**
+ * SONUÇ SESİ — sonuç ekranı ilk göründüğünde bir kez: geçti → `finish`,
+ * kaldı → `stage` (kapanışı söylüyor, kutlamıyor). Web `exam-player` sonuç
+ * kartı aynı kural. Kayıt düştüyse (çevrimdışı, hüküm yok) de `stage`: tur
+ * bitti, kutlanacak bir karar yok. Sonuç bir `if` dalı olduğu için ses küçük
+ * bir bileşende (koşullu hook olmasın); ref ikinci kez çalmasın.
+ */
+function ResultChime({ passed, level }: { passed: boolean; level: boolean }) {
+  const sounded = useRef(false);
+  useEffect(() => {
+    if (sounded.current) return;
+    sounded.current = true;
+    // Seviye sınavını geçmek bir seviye atlaması: açılış sesi (web `exam-player` aynı kural).
+    sfx(passed ? (level ? "unlock" : "finish") : "stage");
+  }, [passed, level]);
+  return null;
+}
 
 function SectionBody({
   id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss,

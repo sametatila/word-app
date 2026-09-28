@@ -73,7 +73,9 @@ export type Cue =
   | "record"
   | "unlock"
   | "finish"
-  | "danger";
+  | "danger"
+  | "near"
+  | "streak";
 
 let enabled: boolean | null = null;
 let master: GainNode | null = null;
@@ -83,6 +85,8 @@ let combo = 0;
 let lastCorrectAt = 0;
 let lastCue: Cue | "" = "";
 let lastCueAt = 0;
+/** Son çalan efektin biteceği an (ms) — telaffuzu efektin arkasına koyan yer okuyor. */
+let busyUntil = 0;
 
 export function soundEnabled(): boolean {
   if (enabled !== null) return enabled;
@@ -221,6 +225,48 @@ export const WALK_NOTES: Record<WalkCue, number[][]> = {
   ],
 };
 
+/**
+ * İKİ PLATFORMUN ORTAK SESLERİ — `near` ve `streak`, mobille BİREBİR aynı tablo.
+ *
+ * Yürüyüş seslerinden sonra aynı kaynaktan okunan ikinci grup: gövdesi
+ * `mobile/src/lib/sfxNotes.ts` `SFX_NOTES`teki `near`/`streak` satırlarının
+ * kopyası, çalıcısı da aynı (`playNotes`). Tabloyu değiştiren iki kopyayı birden
+ * değiştirir.
+ *
+ *   - `near` ("Neredeyse"): cevap kabul edildi ama kusurlu (yazım sapması).
+ *     Doğru sesi çalmak "kusursuz" demekti, yanlış sesi haksızdı; iki yumuşak
+ *     nota, doğrudan kısık ve kısa (~0,35 sn).
+ *   - `streak`: seri anı. Kısa, parlak bir yükseliş ve üstünde ışıltı (~0,9 sn).
+ */
+export type SharedCue = "near" | "streak";
+export const SHARED_NOTES: Record<SharedCue, number[][]> = {
+  // Mi–Sol (E5 G5), 100 ms aralık: doğrunun Do'ya çözülen yükselişinin yarısı.
+  near: [
+    [659.25, 0.0, 0.2, 0.13, 0, 0, 0, 0.006, 0, 0],
+    [659.25, 0.0, 0.18, 0.04, 1, 0, 1600, 0.006, 0, 0],
+    [783.99, 0.1, 0.25, 0.13, 0, 0, 0, 0.006, 0, 0],
+    [783.99, 0.1, 0.22, 0.04, 1, 0, 1600, 0.006, 0, 0],
+  ],
+  // Sol–La–Do–Re–Mi pentatonik tırmanış, Sol6'da durup Do7–Mi7–Sol7 ışıltısı (~0,87 sn).
+  streak: [
+    [783.99, 0.0, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [783.99, 0.0, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [880.0, 0.05, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [880.0, 0.05, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1046.5, 0.1, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1046.5, 0.1, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1174.66, 0.15, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1174.66, 0.15, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1318.51, 0.2, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1318.51, 0.2, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1567.98, 0.27, 0.45, 0.04, 2, 0, 3000, 0.004, 0, 0],
+    [1567.98, 0.27, 0.55, 0.14, 0, 0, 0, 0.004, 0, 0],
+    [2093.0, 0.33, 0.2, 0.05, 1, 0, 0, 0.008, 0, 0],
+    [2637.02, 0.4, 0.2, 0.04, 1, 0, 0, 0.008, 0, 0],
+    [3135.96, 0.47, 0.4, 0.035, 1, 0, 0, 0.008, 0, 0],
+  ],
+};
+
 /** Nota tablosunu çalar — mobilin köprüye enjekte ettiği sentezin birebiri. */
 function playNotes(notes: number[][]) {
   const b = bus();
@@ -263,6 +309,52 @@ export function walkCueMs(cue: WalkCue): number {
   return Math.round(Math.max(...WALK_NOTES[cue].map((n) => n[1] + n[2])) * 1000) + 20;
 }
 
+/** Bir nota tablosunun süresi (ms) — mobil `sfxDurationMs` ile aynı hesap (+20). */
+function notesMs(notes: number[][]): number {
+  return Math.round(Math.max(...notes.map((n) => n[1] + n[2])) * 1000) + 20;
+}
+
+/**
+ * Web'in kendi seslerinin süresi (sn) — `play` içindeki tariflerin son notasının
+ * bittiği an. Kombo merdiveni perdeyi değiştiriyor, süreyi değil (üstteki
+ * parıltı gövdeden önce bitiyor); yani `correct` her basamakta aynı uzunlukta.
+ */
+const OWN_DUR_S: Record<Exclude<Cue, WalkCue | SharedCue>, number> = {
+  correct: 0.22,
+  wrong: 0.25,
+  tap: 0.035,
+  start: 0.22,
+  stage: 0.33,
+  perfect: 0.63,
+  record: 0.65,
+  unlock: 0.68,
+  finish: 0.82,
+  danger: 0.07,
+};
+
+/**
+ * Bir efektin süresi (ms) — mobil `sfxDurationMs` karşılığı.
+ *
+ * Cevabın ardından gelen telaffuz efektin ÜSTÜNE binmesin diye var: mobil
+ * `game/rounds` okumayı `sfxDurationMs(kind) + 60` ms sonra başlatıyor.
+ */
+export function cueDurationMs(cue: Cue): number {
+  if (cue in WALK_NOTES) return notesMs(WALK_NOTES[cue as WalkCue]);
+  if (cue in SHARED_NOTES) return notesMs(SHARED_NOTES[cue as SharedCue]);
+  return Math.round(OWN_DUR_S[cue as keyof typeof OWN_DUR_S] * 1000) + 20;
+}
+
+/**
+ * Son çalan efektin bitmesine kalan süre (ms); çalan yoksa 0.
+ *
+ * Telaffuzu başlatan yer (`games/use-round-exit`) buna bakıp bekliyor. Ses
+ * kapalıyken hiçbir efekt çalmadığı için 0 döner ve okuma gecikmeden gelir —
+ * mobil burada kapalıyken de bekliyor; beklenecek ses yokken beklemek boşuna.
+ */
+export function cueRemainingMs(): number {
+  return Math.max(0, busyUntil - Date.now());
+}
+
 function correctCue() {
   const now = Date.now();
   if (now - lastCorrectAt > COMBO_IDLE_MS) combo = 0;
@@ -298,7 +390,7 @@ export function play(cue: Cue) {
   if (!soundEnabled()) {
     // Kapalıyken bile kombo sayacı akmalı: ses açıldığında merdiven
     // kullanıcının gerçekte kaçıncı doğruda olduğunu göstersin.
-    if (cue === "correct") combo++;
+    if (cue === "correct" || cue === "near") combo++;
     if (cue === "wrong") combo = 0;
     return;
   }
@@ -307,6 +399,7 @@ export function play(cue: Cue) {
   if (cue === lastCue && now - lastCueAt < DEDUPE_MS) return;
   lastCue = cue;
   lastCueAt = now;
+  busyUntil = Math.max(busyUntil, now + cueDurationMs(cue));
 
   switch (cue) {
     // Yürüyüş modunun üç sesi — mobille birebir aynı tablo (bkz. WALK_NOTES).
@@ -314,6 +407,16 @@ export function play(cue: Cue) {
     case "micoff":
     case "premium":
       return playNotes(WALK_NOTES[cue]);
+    // Neredeyse ve seri anı — mobille birebir aynı tablo (bkz. SHARED_NOTES).
+    case "near":
+      // Kabul edilmiş bir cevap: seriyi kırmıyor, merdiveni bir basamak
+      // ilerletiyor — ama kendi sesiyle, "kusursuz" demeden.
+      if (Date.now() - lastCorrectAt > COMBO_IDLE_MS) combo = 0;
+      lastCorrectAt = Date.now();
+      combo++;
+      return playNotes(SHARED_NOTES.near);
+    case "streak":
+      return playNotes(SHARED_NOTES.streak);
     case "correct":
       return correctCue();
     case "wrong":

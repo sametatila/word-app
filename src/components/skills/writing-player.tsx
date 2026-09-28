@@ -850,6 +850,14 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
   const [text, setText] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
+  /* Kontrol sesi — mobil `skillQuiz` RewriteCard ile aynı: tam → doğru,
+     yalnız yazım → neredeyse, gerisi → yanlış. */
+  const check = () => {
+    if (!text.trim()) return;
+    const m = matchSentence(text, task.answer, task.alternatives ?? [], lang);
+    setMatch(m);
+    vibrate(m.verdict === "exact" ? "correct" : m.verdict === "spelling" ? "near" : "wrong");
+  };
   return (
     <section className="card mt-4 p-5">
       <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
@@ -883,7 +891,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                 e.preventDefault();
-                if (text.trim()) setMatch(matchSentence(text, task.answer, task.alternatives ?? [], lang));
+                check();
               }
             }}
             rows={2}
@@ -897,7 +905,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
           />
           <button
             type="button"
-            onClick={() => text.trim() && setMatch(matchSentence(text, task.answer, task.alternatives ?? [], lang))}
+            onClick={check}
             disabled={!text.trim()}
             className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
           >

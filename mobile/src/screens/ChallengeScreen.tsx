@@ -341,6 +341,7 @@ export function ChallengeScreen() {
         top={<FlowTopBar onClose={exit} />}
         actions={<FlowActions primary={{ label: t("common.try_again"), onPress: start }} tertiary={{ label: t("common.back_to_learn"), onPress: exit }} />}
       >
+        <RecordChime fire={isRecord} />
         <ResultHero
           eyebrow={t("learn.survival")}
           title={t("daily.your_score")}
@@ -424,4 +425,17 @@ export function ChallengeScreen() {
       />
     </View>
   );
+}
+
+/**
+ * Bitiş sesi — web `challenge-player` `RecordChime` ile aynı kural: rekor
+ * kırıldıysa "record", kırılmadıysa "finish". Mobilde tur sessiz bitiyordu.
+ * Sonuç bir `if` dalı olduğu için ses küçük bir bileşende (koşullu hook
+ * olmasın); konfetiyle aynı koşula bağlı: göz ne görüyorsa kulak onu duyuyor.
+ */
+function RecordChime({ fire }: { fire: boolean }) {
+  useEffect(() => {
+    sfx(fire ? "record" : "finish");
+  }, [fire]);
+  return null;
 }

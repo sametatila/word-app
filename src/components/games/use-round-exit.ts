@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { speakThen } from "@/components/speak-button";
+import { cueRemainingMs } from "@/lib/sfx";
 
 /**
  * Turun kapanışını yöneten yardımcı — ve sökülürken bekleyen her şeyi iptal eder.
@@ -93,7 +94,18 @@ export function useRoundExit() {
   const speak = useCallback(
     (text: string, opts: { maxWaitMs?: number } = {}) => {
       abort();
-      cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, { ...opts, word: true });
+      const start = () => {
+        timer.current = null;
+        cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, { ...opts, word: true });
+      };
+      /* OKUMA EFEKTTEN SONRA — mobil `game/rounds` ile aynı kural. Oyunlar
+         `vibrate()` ile doğru/yanlış sesini çalıp hemen okumayı istiyor; ikisi
+         üst üste binince Almanca cevap duyulmuyordu. Bekleme efektin KENDİ
+         süresinden (`lib/sfx` `cueRemainingMs`, + 60 ms pay); ses kapalıysa
+         çalan efekt yok, okuma hemen. Zamanlayıcı `abort`la iptal ediliyor. */
+      const wait = cueRemainingMs();
+      if (wait > 0) timer.current = setTimeout(start, wait + 60);
+      else start();
     },
     [abort],
   );

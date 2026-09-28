@@ -3,6 +3,7 @@ import React
 import MediaPlayer
 import Speech
 import AVFoundation
+import AudioToolbox
 import UIKit
 
 /**
@@ -675,26 +676,68 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   // --- Ekran-kapalı SFX: TON SENTEZİ (ham PCM → WAV → AVAudioPlayer). Hazır mp3/
   //     react-native-sound arka planda codec yüzünden çalmıyor; ham PCM codec istemez.
   //     Android'de karşılığı AudioTrack + MODE_STREAM. Ses oturumuna DOKUNULMUYOR:
-  //     `sfx.ts:59` buraya yalnız ekran-kapalı modda düşüyor, orada yürüyüş oturumu
-  //     zaten açık. ---
+  //     ekran-kapalı yürüyüşte yürüyüş oturumu zaten açık; ekran açıkken (2026-09-28'den
+  //     beri iOS'ta bütün efektler buradan, sessiz tuş kapısı için) uygulamanın
+  //     `.playback` kategorisi geçerli — köprünün WebAudio'su da aynı oturumdan çalıyordu. ---
   private let sfxQueue = DispatchQueue(label: "app.lernomi.sfx")
   private var sfxPlayers: [AVAudioPlayer] = [] // yalnız sfxQueue üzerinde okunur/yazılır
 
+  private lazy var silentSwitch = SilentSwitch(
+    silence: LernomiSpeech.wavContainer(Data(count: 11025 * 2), rate: 44100)) // 0,25 sn sessizlik
+
+  /**
+   * Tarif "ad[+katman][@oran]" (src/lib/sfxNotes.ts başı; köprü ve Kotlin aynı biçimi
+   * çözüyor): parçaların notaları birleşir, frekans/glide/lp `oran`la çarpılır — kombo
+   * merdiveni. iOS'ta efektler ekran AÇIKKEN de buradan geliyor (sfx.ts "SESSİZ TUŞ"):
+   * sessiz tuş kapısı yalnız burada kurulabiliyor. Boş tarif: yalnız yoklamayı başlat.
+   */
   @objc(playSfx:)
-  func playSfx(_ kind: String) {
-    let notes = LernomiSpeech.sfxNotes(kind)
-    sfxQueue.async {
-      let wav = LernomiSpeech.renderWav(notes)
-      guard !wav.isEmpty else { return }
-      do {
-        let player = try AVAudioPlayer(data: wav, fileTypeHint: AVFileType.wav.rawValue)
-        // Biteni at, oynayanı TUT: serbest bırakılan AVAudioPlayer ortada susar.
-        self.sfxPlayers.removeAll { !$0.isPlaying }
-        self.sfxPlayers.append(player)
-        player.play()
-      } catch {
-        NSLog("%@", "LernomiWalk playSfx: \(error.localizedDescription)")
+  func playSfx(_ spec: String) {
+    DispatchQueue.main.async {
+      self.silentSwitch.touch(skip: self.sfxExempt())
+      if spec.isEmpty || self.sfxSilenced() { return }
+      self.sfxQueue.async {
+        let wav = LernomiSpeech.renderWav(LernomiSpeech.sfxSpecNotes(spec))
+        guard !wav.isEmpty else { return }
+        do {
+          let player = try AVAudioPlayer(data: wav, fileTypeHint: AVFileType.wav.rawValue)
+          // Biteni at, oynayanı TUT: serbest bırakılan AVAudioPlayer ortada susar.
+          self.sfxPlayers.removeAll { !$0.isPlaying }
+          self.sfxPlayers.append(player)
+          player.play()
+        } catch {
+          NSLog("%@", "LernomiWalk playSfx: \(error.localizedDescription)")
+        }
       }
+    }
+  }
+
+  /// Yürüyüş turu: efektler arayüzün kendisi (mikrofon açıldı, karar) → sessiz tuş
+  /// onları susturmaz. Kayıt oturumunda iOS sistem seslerini bastırdığı için yoklama da
+  /// orada yanlış "sessiz" okurdu; ikisi aynı koşul. main thread.
+  private func sfxExempt() -> Bool {
+    return walkSessionHeld || AVAudioSession.sharedInstance().category == .playAndRecord
+  }
+
+  /// Oyun efekti sessiz tuşa uyuyor mu — telaffuz (TTS) bu kapıdan geçmiyor. main thread.
+  private func sfxSilenced() -> Bool {
+    return !sfxExempt() && silentSwitch.muted
+  }
+
+  /// Tarifi notalara çevirir (Kotlin `playSfx`in birebir karşılığı).
+  private static func sfxSpecNotes(_ spec: String) -> [[Double]] {
+    let at = spec.split(separator: "@", maxSplits: 1).map(String.init)
+    var ratio = at.count > 1 ? Double(at[1]) ?? 1.0 : 1.0
+    if !(ratio >= 0.25 && ratio <= 4.0) { ratio = 1.0 }
+    let parts = (at.first ?? "").split(separator: "+").map(String.init)
+    var notes = sfxNotes(parts.first ?? "")
+    if notes.isEmpty { notes = sfxNotes("tap") }
+    for layer in parts.dropFirst() { notes += sfxNotes(layer) }
+    if ratio == 1.0 { return notes }
+    return notes.map { n in
+      var m = n
+      m[0] *= ratio; m[5] *= ratio; m[6] *= ratio
+      return m
     }
   }
 
@@ -703,6 +746,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
    * `python3 scripts/render-sfx.py --kotlin` çıktısı, bu tablo aynı çıktının Swift'i).
    * Nota: [freq, start, dur, peak, wave(0 sine,1 tri,2 square), glide(hedef Hz, 0 yok),
    * lp(alçak geçiren Hz, 0 yok), attack(sn), hold(0 pluck / 1 tut), release(sn)].
+   * Bilinmeyen ad boş dizi: ana ses boşsa "tap"a düşülür, katman boşsa atlanır.
    */
   private static func sfxNotes(_ kind: String) -> [[Double]] {
     switch kind {
@@ -812,12 +856,41 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         [659.25, 0.075, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
         [783.99, 0.15, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
       ]
+    case "near":
+      return [
+        [659.25, 0.0, 0.2, 0.13, 0.0, 0.0, 0.0, 0.006, 0.0, 0.0],
+        [659.25, 0.0, 0.18, 0.04, 1.0, 0.0, 1600.0, 0.006, 0.0, 0.0],
+        [783.99, 0.1, 0.25, 0.13, 0.0, 0.0, 0.0, 0.006, 0.0, 0.0],
+        [783.99, 0.1, 0.22, 0.04, 1.0, 0.0, 1600.0, 0.006, 0.0, 0.0],
+      ]
+    case "streak":
+      return [
+        [783.99, 0.0, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [783.99, 0.0, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [880.0, 0.05, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [880.0, 0.05, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.1, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.1, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1174.66, 0.15, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [1174.66, 0.15, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1318.51, 0.2, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [1318.51, 0.2, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1567.98, 0.27, 0.45, 0.04, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0],
+        [1567.98, 0.27, 0.55, 0.14, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [2093.0, 0.33, 0.2, 0.05, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0],
+        [2637.02, 0.4, 0.2, 0.04, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0],
+        [3135.96, 0.47, 0.4, 0.035, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0],
+      ]
+    case "sparkle":
+      return [
+        [1569.75, 0.05, 0.12, 0.05, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0],
+      ]
     case "tap":
       return [
         [1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0],
       ]
     default:
-      return [[1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0]]
+      return []
     }
   }
 
@@ -1069,5 +1142,92 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       self.cleanup()
     }
     super.invalidate()
+  }
+}
+
+/**
+ * iOS SESSİZ TUŞU — oyun efektleri uysun, telaffuz (TTS) uymasın.
+ *
+ * Tuşun durumunu soran genel bir API yok. Uygulamanın kategorisi `.playback` (TTS
+ * sessizde de duyulsun diye; bkz. `applyPlaybackCategory`) ve efektler aynı oturumdan
+ * çalıyor, yani kategoriyle ayırmak TTS'i ya da yürüyüş oturumunu bozmadan olmuyor.
+ *
+ * Bilinen, oturuma DOKUNMAYAN yöntem: sessiz bir SİSTEM sesi çal (AudioServices) ve
+ * bitişini ölç. Sistem sesleri tuşa uyar: tuş sessizdeyse tamamlanma hemen (<0,1 sn)
+ * gelir, değilse sesin süresi kadar (0,25 sn) sonra. AVAudioSession kategorisi,
+ * etkinliği, kısma — hiçbiri değişmez. Sezgisel bir ölçü: şüphede SES ÇALAR (ilk
+ * ölçüm gelene dek `muted` false).
+ *
+ * Tazelik: efekt çalındıkça saniyede bir yoklanıyor; 60 sn efekt gelmezse ya da
+ * uygulama öne dönük değilse duruyor. Tuş çevrildikten sonraki en çok ~1 sn içindeki
+ * efekt eski durumla çalabilir.
+ */
+private final class SilentSwitch {
+  private let silence: Data
+  private var soundID: SystemSoundID = 0
+  private var probing = false
+  private var timer: Timer?
+  private var lastUse = Date.distantPast
+  /// Son ölçüm. Yalnız main thread.
+  private(set) var muted = false
+
+  init(silence: Data) { self.silence = silence }
+
+  deinit {
+    timer?.invalidate()
+    if soundID != 0 { AudioServicesDisposeSystemSoundID(soundID) }
+  }
+
+  /// Bir efekt geldi (ya da açılış): yoklamayı canlı tut. `skip`: yürüyüş, yoklama yok. main.
+  func touch(skip: Bool) {
+    lastUse = Date()
+    if skip { return }
+    if timer == nil {
+      probe()
+      let t = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in self?.tick() }
+      RunLoop.main.add(t, forMode: .common)
+      timer = t
+    }
+  }
+
+  private func tick() {
+    if Date().timeIntervalSince(lastUse) > 60 || UIApplication.shared.applicationState != .active {
+      timer?.invalidate()
+      timer = nil
+      return
+    }
+    // Kayıt sürerken sistem sesleri bastırılır → ölçüm yanlış "sessiz" der; atla.
+    if AVAudioSession.sharedInstance().category == .playAndRecord { return }
+    probe()
+  }
+
+  private func probe() {
+    guard !probing, let id = sound() else { return }
+    probing = true
+    let begin = CACurrentMediaTime()
+    AudioServicesPlaySystemSoundWithCompletion(id) { [weak self] in
+      let elapsed = CACurrentMediaTime() - begin
+      DispatchQueue.main.async {
+        self?.muted = elapsed < 0.1
+        self?.probing = false
+      }
+    }
+  }
+
+  /// Sessiz WAV geçici dizinde üretiliyor: pakete dosya eklemek project.pbxproj ister.
+  private func sound() -> SystemSoundID? {
+    if soundID != 0 { return soundID }
+    let url = FileManager.default.temporaryDirectory.appendingPathComponent("lernomi-silence.wav")
+    do { try silence.write(to: url, options: .atomic) } catch { return nil }
+    var id: SystemSoundID = 0
+    guard AudioServicesCreateSystemSoundID(url as CFURL, &id) == kAudioServicesNoError else { return nil }
+    // "Arayüz sesi" DEĞİL: öyle olsaydı Ayarlar'daki "Klavye/arayüz sesleri" kapalıyken de
+    // hemen biter ve tuş açıkken efektler susardı. Yalnız zil/sessiz tuşuna uysun.
+    var uiSound: UInt32 = 0
+    AudioServicesSetProperty(kAudioServicesPropertyIsUISound,
+                             UInt32(MemoryLayout<SystemSoundID>.size), &id,
+                             UInt32(MemoryLayout<UInt32>.size), &uiSound)
+    soundID = id
+    return id
   }
 }

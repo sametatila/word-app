@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { SFX_NOTES, type SfxKind } from "../src/lib/sfxNotes";
+import { SFX_NOTES, type SfxKind, type SfxLayer } from "../src/lib/sfxNotes";
 
 /**
  * SFX nota tablosu — TEK kaynak `src/lib/sfxNotes.ts`, iki NATIVE kopya.
@@ -34,7 +34,7 @@ function notalar(blok: string): number[][] {
   return out;
 }
 
-const TURLER = Object.keys(SFX_NOTES) as SfxKind[];
+const TURLER = Object.keys(SFX_NOTES) as (SfxKind | SfxLayer)[];
 
 describe("SFX nota tablosu iki native kopyada da aynı", () => {
   const kotlin = oku("android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
@@ -59,7 +59,9 @@ describe("SFX nota tablosu iki native kopyada da aynı", () => {
     // uyarısı, rekor ve kusursuz tur webde vardı, mobilde yoktu (web-parity
     // §11.15) — beşi de eklendi ve iki native kopyaya yeniden üretildi.
     // On iki → on üç: etap bitiş sesi (etap duraklaması mobilde hiç yoktu).
-    expect(TURLER.length).toBe(13);
+    // On üç → on altı: `near`, `streak` (ortak ses sözleşmesi) ve kombo ışıltısı
+    // katmanı `sparkle` (tek başına çalınmaz, doğru sesinin üstüne biner).
+    expect(TURLER.length).toBe(16);
     for (const tur of TURLER) {
       expect(kotlin).toContain(`"${tur}" -> listOf(`);
       expect(swift).toContain(`case "${tur}":`);

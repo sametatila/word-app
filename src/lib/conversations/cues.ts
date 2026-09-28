@@ -20,8 +20,13 @@
  */
 
 import { sharedAudioContext } from "@/lib/audio-context";
+import { soundEnabled } from "@/lib/sfx";
 
 function tone(at: number, freq: number, dur: number, peak: number) {
+  /* Ses anahtarı bu işaretleri de kapsıyor: kapalıyken "hiç ses yok" demek.
+     Mobilde de böyle — yürüyüşün mikrofon işareti `sfx()`ten geçiyor ve o
+     `soundOn` kapalıyken dönüyor. Telaffuz (TTS) bu anahtara bağlı değil. */
+  if (!soundEnabled()) return;
   const c = sharedAudioContext();
   if (!c || c.state !== "running") return;
   const osc = c.createOscillator();

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { sfx } from "../lib/sfx";
 import { View, TextInput, ActivityIndicator } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -1301,6 +1302,16 @@ function ResultView({
   /* Konfeti bir kez: çözümlerden sonuca dönüşte yeniden patlamasın. */
   const [celebrated, setCelebrated] = useState(false);
   const graded = score.total > 0;
+  /* SONUÇ SESİ — ekran ilk göründüğünde bir kez (çözümlerden dönüşte değil;
+     `ResultView` o arada kalkmıyor): geçti → `finish`; kaldı ya da puansız
+     bölüm → `stage` (kapanışı söylüyor, kutlamıyor). Web `mock-exam-player`
+     aynı kural. */
+  const sounded = useRef(false);
+  useEffect(() => {
+    if (sounded.current) return;
+    sounded.current = true;
+    sfx(graded && score.passed ? "finish" : "stage");
+  }, [graded, score.passed]);
   /*
    * AÇIK BÖLÜM (yazma/konuşma, denetim T15). Sunucu yüzdeyi görevlerin
    * yapay zekâ puanından kuruyor (`scoreSection`) ve `open` dökümünü

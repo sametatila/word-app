@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useT } from "@/lib/i18n/client";
 import { CheckIcon, CrownIcon, FlameIcon, LockIcon } from "@/components/icons";
 import { Confetti } from "@/components/celebrate";
+import { play } from "@/lib/sfx";
 import type { Line, UnlockCopy } from "@/lib/premium/unlock-copy";
 
 /**
@@ -122,7 +123,13 @@ export function useUnlockCelebration(key: string | undefined, open: number | und
     } catch {
       return;
     }
-    if (prev !== null && Number.isFinite(prev) && open > prev) setFire(Date.now());
+    if (prev !== null && Number.isFinite(prev) && open > prev) {
+      setFire(Date.now());
+      // Konfetinin sesi — mobil `UnlockCelebration` `present` aynı `unlock`u çalıyor.
+      // Sayfa dokunuşsuz açıldıysa ses bağlamı henüz uyanık değil ve `play` sessiz
+      // kalıyor; askıdaki bağlama iş biriktirilmiyor (bkz. `lib/sfx` `bus`).
+      play("unlock");
+    }
   }, [key, open]);
   return fire;
 }

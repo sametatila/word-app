@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { apiBase, onBaseChange } from "../api/client";
 import { PACE_PARAM, PITCH_PARAM, paceOf, type Pace, type Pitch, type VoiceId } from "./voices";
-import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
+import { SFX_MASTER, SFX_NOTES } from "./sfxNotes";
 import { nativeDelay } from "./stt";
 
 export type { SfxKind } from "./sfxNotes";
@@ -151,28 +151,36 @@ onBaseChange(() => bridgeRefresh(true));
  * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Nota tablosu ve sentez modeli
  * `sfxNotes.ts`'te (TEK KAYNAK); native ekran-kapalı yol (LernomiSpeechModule.playSfx) ve
  * res/raw mp3 yedeği aynı tabloyu aynı zarf/filtre modeliyle üretir → üç yol birebir aynı ses.
- * Kademeli (combo) mantık YOK — correct/wrong SABİT. Marka sesleri ksilofon ailesi:
+ * Kademe (kombo merdiveni) `sfx.ts`te hesaplanıyor ve buraya TARİF olarak geliyor:
+ * "ad[+katman][@oran]" (bkz. sfxNotes.ts başı) — parçalar birleşir, frekans/glide/lp
+ * `oran`la çarpılır. Kotlin ve Swift aynı tarifi aynı biçimde çözüyor. Marka sesleri:
  *  - correct: Do–Mi–Sol–Do yükselen staccato · wrong: Sol–Mi♭–Do inen minör
  *  - micon/micoff: Do–Sol / Sol–Do iki nota (micoff bugün çalınmıyor) · finish: soru–cevap jingle'ı
  * Dosya/res-raw gerektirmez; köprü hazırsa en güvenilir yol. Tanım bir kez enjekte + çağrılır.
+ * Ad `__nomiSfx2`: tarif biçimi geldiğinde (2026-09-28) değişti ki sayfada eski imzalı
+ * tanım kalmışsa (`if(window.__nomiSfx)return`) yenisi onun yüzünden atlanmasın.
  */
 const SFX_DEF =
-  "(function(){if(window.__nomiSfx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;" +
+  "(function(){if(window.__nomiSfx2)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;" +
   "var T=" + JSON.stringify(SFX_NOTES) + ";var M=" + SFX_MASTER + ";var ctx,master;" +
   "function bus(){if(!ctx)ctx=new A();if(ctx.state==='suspended'){try{ctx.resume();}catch(e){}}" +
   "if(!master){master=ctx.createGain();master.gain.value=M;master.connect(ctx.destination);}return ctx;}" +
   // n = [freq, start, dur, peak, wave, glide, lp, attack, hold, release] — bkz. sfxNotes.ts
-  "function note(t0,n){var c=bus();if(!c)return;var f=n[0],t=t0+n[1],d=n[2],p=n[3],w=n[4],to=n[5],lp=n[6],a=n[7]||0.004,h=n[8],r=n[9];" +
+  "function note(t0,n,k){var c=bus();if(!c)return;var f=n[0]*k,t=t0+n[1],d=n[2],p=n[3],w=n[4],to=n[5]*k,lp=n[6]*k,a=n[7]||0.004,h=n[8],r=n[9];" +
   "var o=c.createOscillator(),g=c.createGain();o.type=w===2?'square':w===1?'triangle':'sine';o.frequency.setValueAtTime(f,t);" +
   "if(to>0)o.frequency.exponentialRampToValueAtTime(Math.max(20,to),t+d);var src=o;" +
   "if(lp>0){var q=c.createBiquadFilter();q.type='lowpass';q.Q.value=0.7;q.frequency.setValueAtTime(lp,t);o.connect(q);src=q;}" +
   "g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+a);" +
   "if(h>=0.5){g.gain.setValueAtTime(p,t+d-r);g.gain.exponentialRampToValueAtTime(0.0001,t+d);}else{g.gain.exponentialRampToValueAtTime(0.0001,t+d);}" +
   "src.connect(g).connect(master);o.start(t);o.stop(t+d+0.03);}" +
-  "window.__nomiSfx=function(k){try{var ns=T[k]||T.tap;var c=bus();if(!c)return;var t0=c.currentTime+0.01;for(var i=0;i<ns.length;i++)note(t0,ns[i]);}catch(e){}};})();";
-export function bridgeSfx(kind: SfxKind): void {
+  // Tarif: "ad[+katman][@oran]"; oran 0.25–4 dışındaysa 1 (bozuk tarif sesi uçurmasın).
+  "window.__nomiSfx2=function(s){try{var at=String(s).split('@'),k=parseFloat(at[1]);if(!(k>=0.25&&k<=4))k=1;" +
+  "var ks=at[0].split('+'),c=bus();if(!c)return;var t0=c.currentTime+0.01;" +
+  "for(var j=0;j<ks.length;j++){var ns=T[ks[j]]||(j===0?T.tap:[]);for(var i=0;i<ns.length;i++)note(t0,ns[i],k);}}catch(e){}};})();";
+/** `spec`: `sfx.ts` `sfxSpec()` tarifi — düz ad da geçerli ("correct"). */
+export function bridgeSfx(spec: string): void {
   if (!bridgeReady()) return;
-  const js = SFX_DEF + " window.__nomiSfx&&window.__nomiSfx(" + JSON.stringify(kind) + "); true;";
+  const js = SFX_DEF + " window.__nomiSfx2&&window.__nomiSfx2(" + JSON.stringify(spec) + "); true;";
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
 

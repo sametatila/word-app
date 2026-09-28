@@ -18,6 +18,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { formatPercent, localeOf, type NativeLang } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
+import { play } from "@/lib/sfx";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
 
@@ -207,6 +208,12 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   useEffect(() => {
     setPicked(null);
   }, [phase, level, index, textIndex, qIndex]);
+
+  /* Tamamlanma sesi — sonuç ekranı açıldığında bir kez (sunucu kaydı da yerel
+     tahmin de). Mobil `PlacementScreen` `finishNow` aynı `finish`i çalıyor. */
+  useEffect(() => {
+    if (phase === "result") play("finish");
+  }, [phase]);
 
   // ── Ekranlar ──
   /* "Son alma" satırı — kapakta ve bekleme kilidinde aynı cümle. */

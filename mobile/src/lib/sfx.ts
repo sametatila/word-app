@@ -2,11 +2,16 @@ import Sound from "react-native-sound";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NativeModules, Platform } from "react-native";
 import { bridgeReady, bridgeSfx, type SfxKind } from "./ttsBridge";
-import { SFX_NOTES } from "./sfxNotes";
+import { SFX_NOTES, type SfxLayer } from "./sfxNotes";
 
 /** Ekran-kapalı SFX için native ton sentezi + arka planda çalışan gecikme (Handler). */
 const LernomiSfx = NativeModules.LernomiSpeech as
-  | { playSfx?: (kind: string) => void; delay?: (ms: number) => Promise<boolean> }
+  | {
+      playSfx?: (spec: string) => void;
+      delay?: (ms: number) => Promise<boolean>;
+      /** Yalnız Android (senkron): zil modu sessiz/titreşim mi. */
+      sfxSilent?: () => boolean;
+    }
   | undefined;
 
 // Her sesin süresi (ms) — nota tablosundan: en geç biten notanın start+dur'u + küçük pay.
@@ -68,7 +73,39 @@ function preload(name: string): void {
 }
 
 // Modül açılışında önden yükle.
-(["correct", "wrong", "tap", "micon", "micoff", "finish", "premium"] as const).forEach(preload);
+(["correct", "wrong", "tap", "micon", "micoff", "finish", "premium", "near", "streak"] as const).forEach(preload);
+
+/*
+ * MP3 YEDEĞİ OLMAYAN SESLER — iOS: `near` / `streak` mp3'leri `ios/Lernomi/sfx`e
+ * yazıldı ama Xcode hedefine eklenmedi (mp3'ler tek tek dosya referansı, klasör
+ * referansı değil → project.pbxproj değişikliği ister). Dosya bulunamazsa bu sese
+ * düşülüyor; bu dal zaten son çare (köprü ve native sentez varken hiç gelinmez).
+ *  - near → start: iki yumuşak sinüs nota, yükselen. "correct"e düşmek YANLIŞ olurdu:
+ *    neredeyse-doğru cevaba "doğru" demek geri bildirimi yalana çevirir.
+ *  - streak → unlock: yükselen üçgen parıltı, aynı "kazandın" ailesi.
+ */
+const MP3_FALLBACK: Partial<Record<SfxKind, SfxKind>> = { near: "start", streak: "unlock" };
+
+/*
+ * SESSİZ TUŞ / ZİL MODU — oyun efektleri telefonun sessiz ayarına uyuyor, telaffuz
+ * (TTS) uymuyor (dil öğrenirken sesi duymak işin kendisi).
+ *
+ * iOS: kapı Swift'te (`LernomiSpeech.playSfx` → `sfxSilenced`). JS sessiz tuşu
+ * okuyamaz; Swift de ayrı bir yöntemle soramıyor çünkü yeni yöntem `LernomiSpeech.m`
+ * dışa aktarımı ister. Bu yüzden iOS'ta efektler ekran açıkken de native sentezden
+ * gidiyor (köprüden değil) — kapı tek yerde, üç yolun hepsini kapsıyor. Açılışta boş
+ * tarifle bir kez çağrılıyor: Swift sessiz tuş yoklamasını başlatıyor, ses çalmıyor
+ * (yoksa sessizdeki telefonda turun ilk sesi yoklama sonucunu beklemeden çalardı).
+ *
+ * Android: `AudioManager.getRingerMode()` NORMAL değilse efekt susuyor. Ekran-kapalı
+ * yürüyüşte kapı YOK: orada efektler arayüzün kendisi (mikrofon açıldı, karar).
+ */
+if (Platform.OS === "ios") { try { LernomiSfx?.playSfx?.(""); } catch { /* yut */ } }
+
+function deviceSilent(): boolean {
+  if (Platform.OS !== "android" || screenOffMode) return false;
+  try { return LernomiSfx?.sfxSilent?.() === true; } catch { return false; }
+}
 
 // Ekran-kapalı: WebView köprüsü askıya alınıp sustuğu için native res/raw'a düş (arka planda çalar).
 let screenOffMode = false;
@@ -80,12 +117,14 @@ function waitMs(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-function playNow(kind: SfxKind): void {
+function playNow(kind: SfxKind, spec: string): void {
   try {
     // Ekran kapalı: WebView köprüsü de react-native-sound de arka planda çalmıyor → native ton sentezi.
-    if (screenOffMode) { LernomiSfx?.playSfx?.(kind); return; }
+    if (screenOffMode) { LernomiSfx?.playSfx?.(spec); return; }
+    // iOS: sessiz tuş kapısı native'de → efektler hep oradan (yukarıdaki SESSİZ TUŞ notu).
+    if (Platform.OS === "ios" && LernomiSfx?.playSfx) { LernomiSfx.playSfx(spec); return; }
     // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış (TTS de buradan).
-    if (bridgeReady()) { bridgeSfx(kind); return; }
+    if (bridgeReady()) { bridgeSfx(spec); return; }
     /*
      * Köprü hazır DEĞİL ve ekran açık: NATIVE ton sentezi. Aynı nota tablosu, aynı ses.
      *
@@ -105,10 +144,13 @@ function playNow(kind: SfxKind): void {
      * (Kotlin `playSfx`, Swift `playSfx`), ekran açıkken de çalışıyor ve zaten aynı
      * tabloyu çalıyor. Böylece bu dalın hiçbir dosyaya bağımlılığı kalmadı.
      */
-    if (LernomiSfx?.playSfx) { LernomiSfx.playSfx(kind); return; }
-    // Son çare: mp3 (debug yapısı, ya da native modülün bulunmadığı bir ortam).
-    const s = cache[kind];
+    if (LernomiSfx?.playSfx) { LernomiSfx.playSfx(spec); return; }
+    // Son çare: mp3 (debug yapısı, ya da native modülün bulunmadığı bir ortam). Kombo
+    // perdesi burada YOK: dosya sabit, merdiven yalnız sentez yollarında yükseliyor.
+    let s = cache[kind];
     if (s === undefined) { preload(kind); return; }
+    const alt = MP3_FALLBACK[kind];
+    if (!s && alt) { s = cache[alt]; kind = alt; }
     if (!s) return;
     s.stop(() => { s.setVolume(kind === "tap" ? 0.4 : 0.85); s.play(); });
   } catch { /* yut */ }
@@ -118,6 +160,58 @@ function playNow(kind: SfxKind): void {
  *  konuşmayı başlatan yer bunu kullanıyor (WalkModeScreen, premium bilgilendirmesi). */
 export function sfxDurationMs(kind: SfxKind): number { return SFX_DUR[kind] ?? 300; }
 
+/*
+ * YÜKSELEN SERİ (kombo merdiveni) — web `lib/sfx` `LADDER` / `COMBO_IDLE_MS` /
+ * `correctCue` ile BİREBİR: her ardışık doğruda kök bir pentatonik basamak çıkıyor,
+ * 25 sn sessizlikte başa dönüyor, 4. doğrudan itibaren üstte ışıltı (`sparkle`).
+ * Mobilin doğru sesi webinkinden farklı bir ezgi (D10 ksilofon arpeji, kökü C5) —
+ * perde kaydırmayla kökü basamağın frekansına oturuyor: oran = basamak / 523.25.
+ * Sayaç sesin kendi belleğinde (web gibi); tur başında GameScreen `resetCombo()` çağırır.
+ */
+const COMBO_LADDER = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5, 1174.66, 1318.51, 1567.98];
+const COMBO_IDLE_MS = 25_000;
+const CORRECT_ROOT = 523.25; // SFX_NOTES.correct kökü (C5)
+let combo = 0;
+let lastCorrectAt = 0;
+
+/** Kombo merdivenini başa sarar — yeni tur başlarken çağrılır (web `resetCombo`). */
+export function resetCombo(): void { combo = 0; lastCorrectAt = 0; }
+
+/** Şu anki kombo basamağı (0 tabanlı; web `comboStep`). */
+export function comboStep(): number { return combo; }
+
+/**
+ * Çalma tarifi: "ad[+katman][@oran]" — köprü, Kotlin ve Swift aynı biçimi çözüyor
+ * (bkz. sfxNotes.ts başı). Oran 1 ise yazılmıyor.
+ */
+export function sfxSpec(kind: SfxKind, ratio = 1, layers: readonly SfxLayer[] = []): string {
+  const name = [kind, ...layers].join("+");
+  // Makine dizgisi, ekrana çıkmıyor: altı basamağa yuvarlanmış oran (toFixed değil —
+  // parity "sayacin ondalik ayraci" ekrandaki sayıları arıyor).
+  return Math.abs(ratio - 1) < 1e-9 ? name : `${name}@${Math.round(ratio * 1e6) / 1e6}`;
+}
+
+/** Merdiveni bir basamak ilerletir; dönen değer bu cevabın basamağı (0 tabanlı). */
+function climb(): number {
+  const now = Date.now();
+  if (now - lastCorrectAt > COMBO_IDLE_MS) combo = 0;
+  lastCorrectAt = now;
+  return combo++;
+}
+
+/** Doğru cevabın tarifi (web `correctCue`). */
+function correctSpec(): string {
+  const root = COMBO_LADDER[Math.min(climb(), COMBO_LADDER.length - 1)];
+  return sfxSpec("correct", root / CORRECT_ROOT, combo >= 4 ? ["sparkle"] : []);
+}
+
+/** Ses kapalıyken de kombo sayacı akıyor (web `play` ile aynı): ses açılınca merdiven
+ *  kullanıcının gerçekte kaçıncı doğruda olduğunu göstersin. */
+function countSilently(kind: SfxKind): void {
+  if (kind === "correct" || kind === "near") combo++;
+  if (kind === "wrong") combo = 0;
+}
+
 let lastKind = "";
 let lastAt = 0;
 // Sesleri SIRAYA sok — iki ses üst üste binebiliyor (ör. mikrofon açılışının
@@ -126,12 +220,18 @@ let lastAt = 0;
 let busyUntil = 0;
 export function sfx(kind: SfxKind): void {
   if (__DEV__) console.log("PROBE sfx", kind, "screenOff=", screenOffMode, "acik=", soundOn);
-  if (!soundOn) return; // kullanıcı kapattı: efektler susuyor, konuşma sesi değil
+  if (!soundOn) return countSilently(kind); // kullanıcı kapattı: efektler susuyor, konuşma sesi değil
   const now = Date.now();
   if (kind === lastKind && now - lastAt < 120) return; // aynı sesi kısa sürede çift çalma (dedupe)
   lastKind = kind; lastAt = now;
+  if (kind === "wrong") combo = 0;
+  /* Neredeyse kabul edilmiş bir cevap: seriyi kırmıyor, merdiveni bir basamak
+     ilerletiyor — ama kendi sesiyle, perde kaydırmadan (web `play("near")` aynı). */
+  if (kind === "near") climb();
+  const spec = kind === "correct" ? correctSpec() : kind;
+  if (deviceSilent()) return; // Android zil modu sessiz/titreşim (merdiven yine ilerledi)
   const wait = Math.min(600, Math.max(0, busyUntil - now));
   busyUntil = now + wait + (SFX_DUR[kind] ?? 300);
-  if (wait > 0) void waitMs(wait).then(() => playNow(kind));
-  else playNow(kind);
+  if (wait > 0) void waitMs(wait).then(() => playNow(kind, spec));
+  else playNow(kind, spec);
 }

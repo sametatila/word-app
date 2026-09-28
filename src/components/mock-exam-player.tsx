@@ -23,6 +23,7 @@ import { castFor, type VoiceId } from "@/lib/tts/voices";
 import { useLang, useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
+import { play } from "@/lib/sfx";
 
 /**
  * Deneme sınavı oynatıcısı — web.
@@ -1288,6 +1289,15 @@ function Result({
     top.current?.scrollIntoView({ block: "start" });
   };
   const graded = score.total > 0;
+  /* SONUÇ SESİ — ekran ilk göründüğünde bir kez (çözümlerden dönüşte değil):
+     geçti → `finish`; kaldı ya da puansız bölüm → `stage` (kapanışı söylüyor,
+     kutlamıyor). Mobil `MockExamScreen` aynı kural; ref Strict Mode için. */
+  const sounded = useRef(false);
+  useEffect(() => {
+    if (sounded.current) return;
+    sounded.current = true;
+    play(graded && score.passed ? "finish" : "stage");
+  }, [graded, score.passed]);
   /*
    * AÇIK BÖLÜM (yazma/konuşma, denetim T15). Sunucu yüzdeyi görevlerin
    * yapay zekâ puanından kuruyor (`scoreSection`) ve `open` dökümünü

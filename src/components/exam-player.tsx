@@ -41,6 +41,7 @@ import type { PronounceScore } from "@/lib/pronounce";
 import { localDay } from "@/lib/day";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 import { formatPercent } from "@/lib/i18n/dict";
+import { play } from "@/lib/sfx";
 
 /**
  * Sınav oynatıcısı (WP-41 v3).
@@ -1232,6 +1233,16 @@ function Result({
     Band `role="status"` taşıyor: TURUN SONUCU DUYURULUYOR (bkz. 11.337).
     Sınavın TEK sonucu bu; bölüm geçişleri ayrı bir sonuç değil.
   */
+  /* SONUÇ SESİ — ekran ilk göründüğünde bir kez: geçti → `finish` (seviye sınavı → `unlock`), kalmadı
+     değil kaldı → `stage` (kapanışı söylüyor, kutlamıyor). Mobil `ExamScreen`
+     aynı kural. Ref: Strict Mode'un çift etkisi ikinci kez çaldırmasın. */
+  const sounded = useRef(false);
+  useEffect(() => {
+    if (sounded.current) return;
+    sounded.current = true;
+    // Seviye sınavını geçmek bir seviye atlaması: başarım ve lig atlamasıyla aynı açılış sesi.
+    play(result.passed ? (moduleIndex === null ? "unlock" : "finish") : "stage");
+  }, [result.passed, moduleIndex]);
   const rows = result.sections;
   const byPct = [...rows].sort((a, b) => a.pct - b.pct);
   const weakest = byPct[0];

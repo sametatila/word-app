@@ -117,7 +117,9 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     setResult(m);
     const correct = accepted;
     setStatus(correct ? "correct" : "wrong");
-    vibrate(correct ? "correct" : "wrong");
+    // Yazım sapmasıyla kabul: katman "neredeyse" tonunda (aşağıda `tone`), ses de
+    // öyle — doğru sesi "kusursuz" derdi. Mobil `TranslateRound` aynı `near`.
+    vibrate(!correct ? "wrong" : m.verdict === "spelling" ? "near" : "correct");
     if (hintShown) quality = Math.min(quality, 3);
     setPending({
       wordId: word.id,

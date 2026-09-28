@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import androidx.core.content.ContextCompat
 import android.media.AudioAttributes
 import android.media.AudioFormat
+import android.media.AudioManager
 import android.media.AudioRecord
 import android.media.AudioTrack
 import android.media.MediaPlayer
@@ -296,111 +297,158 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   // --- Ekran-kapalı SFX: TON SENTEZİ (AudioTrack, ham PCM). MP3/SoundPool/react-native-sound
   //     arka planda codec/OMX yüzünden çalmıyor; ham PCM codec gerektirmez, kesin çalar. ---
   @ReactMethod
-  fun playSfx(kind: String) {
-    // Nota tablosu src/lib/sfxNotes.ts ile BİREBİR (tek kaynak orası; `python3 scripts/render-sfx.py --kotlin`
-    // çıktısı). Nota: [freq, start, dur, peak, wave(0 sine,1 tri,2 square), glide(hedef Hz, 0 yok),
-    // lp(alçak geçiren Hz, 0 yok), attack(sn), hold(0 pluck / 1 tut), release(sn)].
-    val notes: List<DoubleArray> = when (kind) {
-      "correct" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.0, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.08, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.08, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.16, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.16, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.24, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.24, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "wrong" -> listOf(
-        doubleArrayOf(392.0, 0.0, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(392.0, 0.0, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(311.13, 0.09, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(311.13, 0.09, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(261.63, 0.18, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(261.63, 0.18, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "micon" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.06, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "micoff" -> listOf(
-        doubleArrayOf(783.99, 0.0, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.06, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "finish" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.0, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.075, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.075, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.15, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.15, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.225, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.225, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(698.46, 0.42, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(698.46, 0.42, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(880.0, 0.495, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(880.0, 0.495, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.57, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.57, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1396.91, 0.645, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1396.91, 0.645, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.92, 0.68, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.92, 0.8, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1318.51, 0.92, 0.68, 0.03, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1318.51, 0.92, 0.8, 0.1, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(261.63, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
-        doubleArrayOf(392.0, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
-      )
-      "premium" -> listOf(
-        doubleArrayOf(261.63, 0.0, 1.05, 0.1, 1.0, 0.0, 1100.0, 0.09, 1.0, 0.55),
-        doubleArrayOf(392.0, 0.0, 1.05, 0.08, 1.0, 0.0, 1100.0, 0.09, 1.0, 0.55),
-        doubleArrayOf(523.25, 0.1, 0.34, 0.13, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.24, 0.34, 0.12, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.38, 0.46, 0.12, 0.0, 0.0, 0.0, 0.035, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.38, 0.3, 0.025, 2.0, 0.0, 1200.0, 0.02, 0.0, 0.0),
-      )
-      "start" -> listOf(
-        doubleArrayOf(392.0, 0.0, 0.14, 0.13, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(587.33, 0.08, 0.14, 0.13, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "unlock" -> listOf(
-        doubleArrayOf(880.0, 0.0, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1174.66, 0.06, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1318.51, 0.12, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1760.0, 0.18, 0.5, 0.06, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "danger" -> listOf(
-        doubleArrayOf(349.23, 0.0, 0.07, 0.12, 2.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "record" -> listOf(
-        doubleArrayOf(261.63, 0.0, 0.65, 0.07, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(523.25, 0.0, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(698.46, 0.085, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(880.0, 0.17, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1174.66, 0.255, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "perfect" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.07, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.14, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.21, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(1567.98, 0.28, 0.35, 0.09, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "stage" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.075, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.15, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
-      )
-      "tap" -> listOf(
-        doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0),
-      )
-      else -> listOf(doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0))
+  fun playSfx(spec: String) {
+    // Tarif "ad[+katman][@oran]" (src/lib/sfxNotes.ts başı; köprü ve Swift aynı biçimi çözüyor):
+    // parçaların notaları birleşir, frekans/glide/lp `oran`la çarpılır — kombo merdiveni.
+    // Boş tarif iOS'un sessiz-tuş yoklama çağrısı; Android'de anlamı yok (JS de göndermiyor).
+    if (spec.isEmpty()) return
+    val at = spec.split("@", limit = 2)
+    val ratio = at.getOrNull(1)?.toDoubleOrNull()?.takeIf { it in 0.25..4.0 } ?: 1.0
+    val parts = at[0].split("+")
+    val base = sfxNotes(parts[0]).ifEmpty { sfxNotes("tap") }
+    val notes = (base + parts.drop(1).flatMap { sfxNotes(it) }).map { nt ->
+      if (ratio == 1.0) nt else nt.copyOf().also { it[0] *= ratio; it[5] *= ratio; it[6] *= ratio }
     }
     playNotes(notes)
+  }
+
+  /** Oyun efektleri telefonun zil moduna uyuyor: sessiz/titreşimdeyse efekt susar, telaffuz
+   *  (TTS) çalar. iOS'taki sessiz tuş kapısının karşılığı (LernomiSpeech.sfxSilenced). JS
+   *  (`sfx.ts` `deviceSilent`) her efektten önce soruyor; ekran-kapalı yürüyüşte sormuyor. */
+  @ReactMethod(isBlockingSynchronousMethod = true)
+  fun sfxSilent(): Boolean = try {
+    val am = reactCtx.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    am.ringerMode != AudioManager.RINGER_MODE_NORMAL
+  } catch (_: Exception) { false }
+
+  // Nota tablosu src/lib/sfxNotes.ts ile BİREBİR (tek kaynak orası; `python3 scripts/render-sfx.py --kotlin`
+  // çıktısı — fonksiyonun tamamı yapıştırılır). Nota: [freq, start, dur, peak, wave(0 sine,1 tri,2 square),
+  // glide(hedef Hz, 0 yok), lp(alçak geçiren Hz, 0 yok), attack(sn), hold(0 pluck / 1 tut), release(sn)].
+  private fun sfxNotes(kind: String): List<DoubleArray> = when (kind) {
+    "correct" -> listOf(
+      doubleArrayOf(523.25, 0.0, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.0, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.08, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.08, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.16, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.16, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.24, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.24, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "wrong" -> listOf(
+      doubleArrayOf(392.0, 0.0, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(392.0, 0.0, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(311.13, 0.09, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(311.13, 0.09, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(261.63, 0.18, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(261.63, 0.18, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "micon" -> listOf(
+      doubleArrayOf(523.25, 0.0, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.06, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "micoff" -> listOf(
+      doubleArrayOf(783.99, 0.0, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.06, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "finish" -> listOf(
+      doubleArrayOf(523.25, 0.0, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.0, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.075, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.075, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.15, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.15, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.225, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.225, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(698.46, 0.42, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(698.46, 0.42, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(880.0, 0.495, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(880.0, 0.495, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.57, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.57, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1396.91, 0.645, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1396.91, 0.645, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.92, 0.68, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.92, 0.8, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1318.51, 0.92, 0.68, 0.03, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1318.51, 0.92, 0.8, 0.1, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(261.63, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
+      doubleArrayOf(392.0, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
+    )
+    "premium" -> listOf(
+      doubleArrayOf(261.63, 0.0, 1.05, 0.1, 1.0, 0.0, 1100.0, 0.09, 1.0, 0.55),
+      doubleArrayOf(392.0, 0.0, 1.05, 0.08, 1.0, 0.0, 1100.0, 0.09, 1.0, 0.55),
+      doubleArrayOf(523.25, 0.1, 0.34, 0.13, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.24, 0.34, 0.12, 0.0, 0.0, 0.0, 0.03, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.38, 0.46, 0.12, 0.0, 0.0, 0.0, 0.035, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.38, 0.3, 0.025, 2.0, 0.0, 1200.0, 0.02, 0.0, 0.0),
+    )
+    "start" -> listOf(
+      doubleArrayOf(392.0, 0.0, 0.14, 0.13, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(587.33, 0.08, 0.14, 0.13, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "unlock" -> listOf(
+      doubleArrayOf(880.0, 0.0, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1174.66, 0.06, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1318.51, 0.12, 0.22, 0.13, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1760.0, 0.18, 0.5, 0.06, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "danger" -> listOf(
+      doubleArrayOf(349.23, 0.0, 0.07, 0.12, 2.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "record" -> listOf(
+      doubleArrayOf(261.63, 0.0, 0.65, 0.07, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(523.25, 0.0, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(698.46, 0.085, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(880.0, 0.17, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1174.66, 0.255, 0.24, 0.17, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "perfect" -> listOf(
+      doubleArrayOf(523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.07, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.14, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.21, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1567.98, 0.28, 0.35, 0.09, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "stage" -> listOf(
+      doubleArrayOf(523.25, 0.0, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.075, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.15, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+    )
+    "near" -> listOf(
+      doubleArrayOf(659.25, 0.0, 0.2, 0.13, 0.0, 0.0, 0.0, 0.006, 0.0, 0.0),
+      doubleArrayOf(659.25, 0.0, 0.18, 0.04, 1.0, 0.0, 1600.0, 0.006, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.1, 0.25, 0.13, 0.0, 0.0, 0.0, 0.006, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.1, 0.22, 0.04, 1.0, 0.0, 1600.0, 0.006, 0.0, 0.0),
+    )
+    "streak" -> listOf(
+      doubleArrayOf(783.99, 0.0, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(783.99, 0.0, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(880.0, 0.05, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(880.0, 0.05, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.1, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1046.5, 0.1, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1174.66, 0.15, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1174.66, 0.15, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1318.51, 0.2, 0.14, 0.05, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1318.51, 0.2, 0.16, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1567.98, 0.27, 0.45, 0.04, 2.0, 0.0, 3000.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(1567.98, 0.27, 0.55, 0.14, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      doubleArrayOf(2093.0, 0.33, 0.2, 0.05, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+      doubleArrayOf(2637.02, 0.4, 0.2, 0.04, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+      doubleArrayOf(3135.96, 0.47, 0.4, 0.035, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+    )
+    "sparkle" -> listOf(
+      doubleArrayOf(1569.75, 0.05, 0.12, 0.05, 1.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+    )
+    "tap" -> listOf(
+      doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+    )
+    else -> emptyList()
   }
 
   /** Köprünün (sfxNotes.ts) sentezini birebir: üstel zarf (0.0001→peak @attack; pluck: dur sonunda

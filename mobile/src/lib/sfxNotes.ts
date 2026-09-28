@@ -7,6 +7,9 @@
  *    Tabloyu değiştirince İKİ çıktıyı da yapıştır; kapı __tests__/sfxNotes.test.ts.
  *  - mp3 yedeği (react-native-sound): `python3 scripts/render-sfx.py` iki pakete birden
  *    yazar — android res/raw + ios/Lernomi/sfx.
+ * ÇALMA TARİFİ (spec): üç yol da `sfx.ts` `sfxSpec()` dizgisini alıyor: "ad", "ad+katman"
+ * ve isteğe bağlı "@oran" — ör. "correct+sparkle@1.498501". Parçaların notaları
+ * birleştirilir, frekans/glide/lp `oran` ile çarpılır (perde kaydırma; kombo merdiveni).
  * Sesler: Duolingo tarzı ksilofon ailesi (artifact'ta seçilen D10 / Y10 / A2 / K2 / B11).
  *
  * Nota: [freq, start, dur, peak, wave, glide, lp, attack, hold, release]
@@ -33,13 +36,25 @@ export type SfxKind =
   | "perfect"
   /* Etap bitti - web `lib/sfx` `stage` ile aynı tarif. Etap duraklaması
      mobilde hiç yoktu, sesi de yoktu. */
-  | "stage";
+  | "stage"
+  /* Ortak ses sözleşmesi (2026-09-28): Neredeyse ve seri anı. Web `lib/sfx`
+     `near` / `streak` bu tablonun BİREBİR kopyasını çalıyor. */
+  | "near"
+  | "streak";
+
+/**
+ * Tabloda olup kendi başına ÇALINMAYAN katman: kombo merdiveninin ışıltısı.
+ * `sfx("correct")` 4. basamaktan sonra bunu doğru sesinin üstüne bindiriyor
+ * (bkz. `sfx.ts` `comboSpec`). Tabloda durması şart — üç çalma yolu (köprü,
+ * Kotlin, Swift) katmanı da aynı tablodan buluyor.
+ */
+export type SfxLayer = "sparkle";
 
 /** Ana kazanç — tüm yollarda aynı (köprü, native, mp3). */
 export const SFX_MASTER = 0.8;
 
 // sfx-notes-begin
-export const SFX_NOTES: Record<SfxKind, number[][]> = {
+export const SFX_NOTES: Record<SfxKind | SfxLayer, number[][]> = {
   // D10 Ksilofon: Do–Mi–Sol–Do (C5 E5 G5 C6), 80 ms aralık, 240 ms nota. Filtreli kare + sinüs gövde.
   correct: [
     [523.25, 0.0, 0.204, 0.07, 2, 0, 2400, 0.004, 0, 0],
@@ -155,6 +170,41 @@ export const SFX_NOTES: Record<SfxKind, number[][]> = {
     [523.25, 0.0, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
     [659.25, 0.075, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
     [783.99, 0.15, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
+  ],
+  // Neredeyse (yazım hatası, küçük eksik): Mi–Sol (E5 G5) iki yumuşak nota, 100 ms
+  // aralık. Doğrunun Do'ya çözülen yükselişinin YARISI — çözülmüyor, "az kaldı" diyor.
+  // Sinüs gövde + boğuk üçgen (1600 Hz), kare yok: doğrudan daha yumuşak. ~0,35 sn.
+  near: [
+    [659.25, 0.0, 0.2, 0.13, 0, 0, 0, 0.006, 0, 0],
+    [659.25, 0.0, 0.18, 0.04, 1, 0, 1600, 0.006, 0, 0],
+    [783.99, 0.1, 0.25, 0.13, 0, 0, 0, 0.006, 0, 0],
+    [783.99, 0.1, 0.22, 0.04, 1, 0, 1600, 0.006, 0, 0],
+  ],
+  // Seri anı: Sol–La–Do–Re–Mi (G5→E6) pentatonik hızlı tırmanış (50 ms), Sol6'da
+  // durup ışıldıyor: üstte Do7–Mi7–Sol7 üçgen ışıltı. Ksilofon ailesi (kare + sinüs).
+  // ~0,87 sn — kutlama ≤1,5 sn kuralının içinde.
+  streak: [
+    [783.99, 0.0, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [783.99, 0.0, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [880.0, 0.05, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [880.0, 0.05, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1046.5, 0.1, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1046.5, 0.1, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1174.66, 0.15, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1174.66, 0.15, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1318.51, 0.2, 0.14, 0.05, 2, 0, 3000, 0.004, 0, 0],
+    [1318.51, 0.2, 0.16, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [1567.98, 0.27, 0.45, 0.04, 2, 0, 3000, 0.004, 0, 0],
+    [1567.98, 0.27, 0.55, 0.14, 0, 0, 0, 0.004, 0, 0],
+    [2093.0, 0.33, 0.2, 0.05, 1, 0, 0, 0.008, 0, 0],
+    [2637.02, 0.4, 0.2, 0.04, 1, 0, 0, 0.008, 0, 0],
+    [3135.96, 0.47, 0.4, 0.035, 1, 0, 0, 0.008, 0, 0],
+  ],
+  // KATMAN (tek başına çalınmaz): kombo ışıltısı. Web `correctCue` 4. doğrudan sonra
+  // `note(0.05, root * 3, 0.12, 0.05, "triangle")` çalıyor; kök burada C5 (523.25),
+  // merdiven perdesi `@oran` ile birlikte kaydırılıyor → root * 3 birebir.
+  sparkle: [
+    [1569.75, 0.05, 0.12, 0.05, 1, 0, 0, 0.008, 0, 0],
   ],
   // Kısa dokunuş blip'i (scramble/order karo yerleştirme).
   tap: [

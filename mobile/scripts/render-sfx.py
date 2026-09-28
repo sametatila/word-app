@@ -7,8 +7,12 @@ kaynaktır: WebView köprüsü (ttsBridge) ve ekran-kapalı native sentez
 modelini numpy ile uygular ve react-native-sound yedeği için mp3 yazar.
 
   python3 scripts/render-sfx.py            # tüm sesler
-  python3 scripts/render-sfx.py --kotlin   # Kotlin tablosunu stdout'a bas (LernomiSpeechModule.playSfx)
+  python3 scripts/render-sfx.py --only near,streak   # yalnız bu sesler (ötekiler bit bit aynı kalsın)
+  python3 scripts/render-sfx.py --kotlin   # Kotlin tablosunu stdout'a bas (LernomiSpeechModule.sfxNotes)
   python3 scripts/render-sfx.py --swift    # Swift tablosunu stdout'a bas (LernomiSpeech.sfxNotes)
+
+Katmanlar (LAYERS, ör. kombo ışıltısı `sparkle`) tek başına çalınmaz: native tablolara
+girer, mp3'ü üretilmez. Kombo perdesi ("@oran") çalma anında uygulanır, tabloda yok.
 
 Nota formatı (10 sayı): [freq, start, dur, peak, wave, glide, lp, attack, hold, release]
   wave: 0 sine, 1 triangle, 2 square · glide: hedef frekans (0 = yok, dur boyunca üstel)
@@ -35,6 +39,8 @@ RAW = os.path.join(ROOT, "android", "app", "src", "main", "res", "raw")
 # Bu yüzden mp3'ler Xcode hedefine TEK TEK dosya olarak eklenmeli; "folder reference"
 # (mavi klasör) eklenirse paket içinde sfx/ altında kalır ve sfx.ts hiçbirini bulamaz.
 IOS = os.path.join(ROOT, "ios", "Lernomi", "sfx")
+# Tek başına çalınmayan katmanlar (sfxNotes.ts `SfxLayer`): mp3 yok.
+LAYERS = {"sparkle"}
 RATE = 44100
 MASTER = 0.8
 
@@ -46,6 +52,7 @@ def load_table():
         sys.exit("sfxNotes.ts: sfx-notes-begin/end işaretleri bulunamadı")
     body = m.group(1)
     body = body[body.index("{"):]                  # "export const ... =" başlığını at
+    body = re.sub(r"/\*.*?\*/", "", body, flags=re.S)  # blok yorumları (ör. micoff notu)
     body = re.sub(r"//[^\n]*", "", body)          # satır yorumları
     body = re.sub(r",\s*([}\]])", r"\1", body)     # sondaki virgüller
     body = re.sub(r"(\w+):", r'"\1":', body)       # anahtarları tırnakla
@@ -120,14 +127,15 @@ def write_mp3(name, samples):
 
 
 def kotlin(table):
-    lines = ['    val notes: List<DoubleArray> = when (kind) {']
+    # Bilinmeyen ad boş liste: çağıran (playSfx) ana ses boşsa "tap"a düşer, katman boşsa atlar.
+    lines = ['  private fun sfxNotes(kind: String): List<DoubleArray> = when (kind) {']
     for kind, notes in table.items():
-        lines.append(f'      "{kind}" -> listOf(')
+        lines.append(f'    "{kind}" -> listOf(')
         for n in notes:
-            lines.append("        doubleArrayOf(" + ", ".join(repr(float(v)) for v in n) + "),")
-        lines.append("      )")
-    lines.append('      else -> listOf(doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0))')
-    lines.append("    }")
+            lines.append("      doubleArrayOf(" + ", ".join(repr(float(v)) for v in n) + "),")
+        lines.append("    )")
+    lines.append('    else -> emptyList()')
+    lines.append("  }")
     return "\n".join(lines)
 
 
@@ -147,7 +155,7 @@ def swift(table):
             lines.append("        [" + ", ".join(repr(float(v)) for v in n) + "],")
         lines.append("      ]")
     lines.append("    default:")
-    lines.append("      return [[1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0]]")
+    lines.append("      return []")
     lines.append("    }")
     return "\n".join(lines)
 
@@ -160,7 +168,12 @@ if __name__ == "__main__":
     if "--swift" in sys.argv:
         print(swift(table))
         sys.exit(0)
+    only = None
+    if "--only" in sys.argv:
+        only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
     for kind, notes in table.items():
+        if kind in LAYERS or (only is not None and kind not in only):
+            continue
         path = write_mp3(kind, render(notes))
         print(f"{kind:8s} {max(n[1] + n[2] for n in notes):.2f}s  {os.path.getsize(path)} B  {os.path.relpath(path, ROOT)}")
-    print(f"\n{len(table)} ses x 2 paket: {os.path.relpath(RAW, ROOT)} + {os.path.relpath(IOS, ROOT)}")
+    print(f"\n{len(table) - len(LAYERS)} ses x 2 paket: {os.path.relpath(RAW, ROOT)} + {os.path.relpath(IOS, ROOT)}")

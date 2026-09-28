@@ -19,13 +19,19 @@ import { sfx } from "./sfx";
  * sayıyordu; doğru/yanlış aynı hissediliyordu). Android'de titreşim; sistem
  * kapalıysa `enableVibrateFallback` ile yine dener. Motor/ses yoksa sessizce yutulur.
  */
-const MAP: Record<"correct" | "wrong" | "tap", HapticFeedbackTypes> = {
+type HapticKind = "correct" | "wrong" | "tap" | "near" | "streak";
+
+const MAP: Record<HapticKind, HapticFeedbackTypes> = {
   correct: "notificationSuccess" as HapticFeedbackTypes,
   wrong: "notificationError" as HapticFeedbackTypes,
   tap: "impactLight" as HapticFeedbackTypes,
+  // Neredeyse: ne başarı ne hata deseni — orta bir darbe (ortak ses sözleşmesi).
+  near: "impactMedium" as HapticFeedbackTypes,
+  // Seri anı: başarı deseni, sesi (`streak`) ayrı ve daha parlak.
+  streak: "notificationSuccess" as HapticFeedbackTypes,
 };
 
-export function haptic(kind: "correct" | "wrong" | "tap"): void {
+export function haptic(kind: HapticKind): void {
   try {
     trigger(MAP[kind], { enableVibrateFallback: true, ignoreAndroidSystemSettings: false });
   } catch {

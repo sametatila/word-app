@@ -1,6 +1,6 @@
 "use client";
 
-import { WALK_NOTES, type WalkCue } from "@/lib/sfx";
+import { soundEnabled, WALK_NOTES, type WalkCue } from "@/lib/sfx";
 
 /**
  * Yürüyüş seslerinin `<audio>` öğesiyle çalınan hâli.
@@ -154,6 +154,8 @@ function lowpass(x: Float32Array, freq: number, rate: number): void {
 /** Yürüyüş sesini `<audio>` öğesiyle çalar (mobil ile aynı ses). */
 export function pocketWalkCue(cue: WalkCue): void {
   if (typeof window === "undefined") return;
+  // WebAudio yolu (`play`) gibi ses anahtarını dinler; mobil `sfx()` de öyle.
+  if (!soundEnabled()) return;
   let el = walkCueCache.get(cue);
   if (!el) {
     el = new Audio(renderWalkCue(cue));
@@ -167,6 +169,7 @@ export function pocketWalkCue(cue: WalkCue): void {
 /** Mikrofonun açıldığını kulağa söyler — kayıt yolunun kısa bipi. */
 export function pocketCue() {
   if (typeof window === "undefined") return;
+  if (!soundEnabled()) return;
   if (!cue) {
     cue = new Audio(beepUrl(880, 140));
     cue.preload = "auto";

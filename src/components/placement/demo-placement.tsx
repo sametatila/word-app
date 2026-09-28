@@ -13,6 +13,7 @@ import { readOnboardingPrefs, saveOnboardingPrefs } from "@/lib/onboarding-prefs
 import { track } from "@/lib/track";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { play } from "@/lib/sfx";
 
 /**
  * Giriş öncesi seviye testi — misafir yolu.
@@ -61,7 +62,11 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
     // Kısa bir bekleme: doğru şık yeşile dönerken sayfa değişmesin.
     setTimeout(() => {
       setPicked(null);
-      if (index + 1 >= total) setDone(true);
+      if (index + 1 >= total) {
+        // Tamamlanma sesi, sonuç ekranıyla birlikte — mobil `PlacementScreen` `finishNow`.
+        play("finish");
+        setDone(true);
+      }
       else setIndex((i) => i + 1);
     }, 520);
   }

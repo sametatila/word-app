@@ -22,13 +22,17 @@
 
 import { play } from "@/lib/sfx";
 
-export type FxKind = "correct" | "wrong" | "tap";
+export type FxKind = "correct" | "wrong" | "tap" | "near" | "streak";
 
 /** Titreşim desenleri — kısa tutulur, rahatsız etmemeli. */
 const PATTERN: Record<FxKind, number | number[]> = {
   correct: 18,
   wrong: [0, 34, 60, 34],
   tap: 8,
+  // Neredeyse: doğrudan hafif — kabul edildi ama kusurlu (mobil `haptic("near")`).
+  near: 12,
+  // Seri anı: iki kısa darbe, kutlama ama rahatsız etmeyecek kadar kısa.
+  streak: [0, 20, 40, 30],
 };
 
 export function reducedMotion(): boolean {

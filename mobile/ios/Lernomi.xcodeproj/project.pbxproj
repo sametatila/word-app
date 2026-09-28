@@ -15,6 +15,8 @@
 		AB01F1002D4E51A700000004 /* LernomiSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000002 /* LernomiSpeech.m */; };
 		AB01F1002D4E51A700000015 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000011 /* InfoPlist.strings */; };
 		AB01F1002D4E51A700000031 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000021 /* correct.mp3 */; };
+		AB01F1002D4E51A7000000B1 /* near.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A7000000A1 /* near.mp3 */; };
+		AB01F1002D4E51A7000000B2 /* streak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A7000000A2 /* streak.mp3 */; };
 		AB01F1002D4E51A700000032 /* finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000022 /* finish.mp3 */; };
 		AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000023 /* micoff.mp3 */; };
 		AB01F1002D4E51A700000034 /* micon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000024 /* micon.mp3 */; };
@@ -48,6 +50,8 @@
 		AB01F1002D4E51A700000013 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Lernomi/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000014 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = Lernomi/de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000021 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = Lernomi/sfx/correct.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A7000000A1 /* near.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = near.mp3; path = Lernomi/sfx/near.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A7000000A2 /* streak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = streak.mp3; path = Lernomi/sfx/streak.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000022 /* finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finish.mp3; path = Lernomi/sfx/finish.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000023 /* micoff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micoff.mp3; path = Lernomi/sfx/micoff.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000024 /* micon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micon.mp3; path = Lernomi/sfx/micon.mp3; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				AB01F1002D4E51A700000021 /* correct.mp3 */,
+				AB01F1002D4E51A7000000A1 /* near.mp3 */,
+				AB01F1002D4E51A7000000A2 /* streak.mp3 */,
 				AB01F1002D4E51A700000022 /* finish.mp3 */,
 				AB01F1002D4E51A700000023 /* micoff.mp3 */,
 				AB01F1002D4E51A700000024 /* micon.mp3 */,
@@ -235,6 +241,8 @@
 				AB01F1002D4E51A700000015 /* InfoPlist.strings in Resources */,
 				AB01F1002D4E51A700000072 /* GoogleService-Info.plist in Resources */,
 				AB01F1002D4E51A700000031 /* correct.mp3 in Resources */,
+				AB01F1002D4E51A7000000B1 /* near.mp3 in Resources */,
+				AB01F1002D4E51A7000000B2 /* streak.mp3 in Resources */,
 				AB01F1002D4E51A700000032 /* finish.mp3 in Resources */,
 				AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */,
 				AB01F1002D4E51A700000034 /* micon.mp3 in Resources */,
