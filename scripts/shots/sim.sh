@@ -5,6 +5,8 @@
 #   scripts/shots/sim.sh boot                 simülatörü aç, durum çubuğunu 9:41'e sabitle
 #   scripts/shots/sim.sh build                Release derle (simülatör), kur
 #   scripts/shots/sim.sh launch               uygulamayı başlat
+#   scripts/shots/sim.sh restart              uygulamayı kapatıp aç (`simctl … booted` KULLANMA: başka
+#                                             oturumun açık simülatörü varsa yanlış cihaza gider)
 #   scripts/shots/sim.sh tap <x%> <y%>        ekranın yüzdesine dokun (TAM SAYI: Maestro "66.8"i kabul etmiyor)
 #   scripts/shots/sim.sh tapText "<metin>"    görünen metne dokun (düzenli ifade; başlıkla çakışabilir)
 #   scripts/shots/sim.sh type "<metin>"       odaktaki kutuya yaz + Enter
@@ -58,6 +60,7 @@ case "$cmd" in
     xcrun simctl install "$D" "$DD/Build/Products/Release-iphonesimulator/Lernomi.app"
     echo "kuruldu";;
   launch) xcrun simctl launch "$D" "$APP_ID" >/dev/null;;
+  restart) xcrun simctl terminate "$D" "$APP_ID" 2>/dev/null || true; sleep 1; xcrun simctl launch "$D" "$APP_ID" >/dev/null;;
   tap) printf -- '- tapOn:\n    point: "%s%%,%s%%"\n' "$1" "$2" | flow;;
   tapText) printf -- '- tapOn: "%s"\n' "$1" | flow;;
   type) printf -- '- inputText: "%s"\n- pressKey: Enter\n' "$1" | flow;;

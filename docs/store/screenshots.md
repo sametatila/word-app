@@ -74,9 +74,24 @@ node scripts/shots/to-webp.mjs <set>      # → public/landing/<set>/<ekran>-<te
 ve `landing.ts` `SCREEN_SET`e set yazılır. Sayfayı yerelde görmek: `npx next dev -p 3100`,
 Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 1440 ve 390 genişlik.
 
+## Durum (2026-09-28)
+
+| Set | Ekranlar | Not |
+|---|---|---|
+| `tr-de` | 7/7 | eski sıcak palet (B paletinden önce) |
+| `en-de` | 7/7 | eski sıcak palet |
+| `de-en` | 7/7 | B paleti |
+| `tr-en` | 6/7 | `conversation` yok: hesabın B1 konuşma hakkı bitti; Premium vermek üretime yazmak, Samet'e sorulur. Sayfa bu seti henüz kullanmıyor |
+
 ## Tuzaklar (2026-09-28'de yaşandı)
 
 - Maestro yüzde koordinatta ondalık kabul etmiyor (`"66.8%"` → NumberFormatException).
+- Yüzde koordinat bazen kayıyor ya da dokunuş bir adım geç işleniyor (sürücü her çağrıda yeniden
+  kuruluyor). Güvenilir yol: metinle `tapText`, olmazsa NOKTA koordinatı (`point: "75,196"`, 414×900
+  önizlemedeki konumla aynı ölçek); öğenin kutusunu görmek için
+  `~/.maestro/bin/maestro --device <udid> hierarchy`. Her dokunuştan sonra `peek`.
+- Başka bir oturum ikinci bir simülatör açmış olabilir: `xcrun simctl … booted` yanlış cihaza gider;
+  betik cihazı adıyla seçiyor, uygulamayı yeniden açmak için `sim.sh restart`.
 - `tapText` aynı metni taşıyan başlığa gidebilir ("Hesap oluştur" başlık + düğme): düğmeye `tap` ile.
 - `xcrun simctl privacy … grant` uygulamayı kapatır; yeniden `launch`.
 - Sohbette her gönderimden sonra klavye kapanıyor: `say` kutuya her seferinde dokunuyor.
