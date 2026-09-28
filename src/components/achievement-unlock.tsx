@@ -8,6 +8,8 @@ import { useT } from "@/lib/i18n/client";
 import { Confetti } from "@/components/celebrate";
 import { play } from "@/lib/sfx";
 import { track } from "@/lib/track";
+import { NewAvatarParts } from "@/components/new-avatar-parts";
+import type { UnlockedPart } from "@/lib/avatar-layers";
 
 /**
  * Rozet açılış kutlaması.
@@ -34,7 +36,8 @@ import { track } from "@/lib/track";
  *    bir satır var: kapatılamayan bir kutlama, kutlama değil engeldir.
  */
 
-type Fresh = BadgeRow & { group: string; unlockedAt: string | null };
+/** `parts`: rozetin açtığı avatar parçaları (3B katalog açıkken, sunucudan). */
+type Fresh = BadgeRow & { group: string; unlockedAt: string | null; parts?: UnlockedPart[] };
 
 /** Tek tek gösterilecek en fazla rozet; üstü toplu karta düşer. */
 const MAX_SOLO = 2;
@@ -251,6 +254,7 @@ export function AchievementUnlock() {
               </p>
             ) : null}
             <p className="muted text-body">{tt("achu.batch_note")}</p>
+            <NewAvatarParts parts={view.items.flatMap((it) => it.parts ?? [])} />
             <Hint />
           </Card>
         ) : (
@@ -265,6 +269,7 @@ export function AchievementUnlock() {
               <AchievementBadge row={{ ...view.queue[0], unlocked: true }} size={92} />
             </div>
             <p className="muted text-body">{view.queue[0].hint}</p>
+            <NewAvatarParts parts={view.queue[0].parts} />
             {view.queue.length > 1 ? (
               <p className="muted mt-3 text-caption">{tt("achu.n_more", { n: view.queue.length - 1 })}</p>
             ) : null}

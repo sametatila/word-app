@@ -52,6 +52,9 @@ export function avatarLayers(cfg: AvatarConfig, cat: AvatarCatalog): { bg: strin
   return { bg: bg?.dosyalar.varsayilan ?? null, base: cat.taban, layers: chosen.map((c) => c.file) };
 }
 
+/** Bir kazanımla açılan parça (kutlama kartı): adı kullanıcının dilinde, ikon tam adres. */
+export type UnlockedPart = { id: string; name: string; icon: string };
+
 /**
  * Parça kartının ikonu. Renklenen parçada karo seçili rengi gösterir (yeşil
  * şapka seçiliyken kep ikonu da yeşil); renk parçada yoksa katmanla aynı kural,

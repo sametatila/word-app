@@ -11,6 +11,7 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
+import { NewAvatarParts } from "../ui/NewAvatarParts";
 import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, IconTile, Pill, SectionTitle } from "./common";
@@ -164,6 +165,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
         <View style={{ flex: 1 }}>
           <Text variant="h3">{t(up ? "league.result_promoted" : down ? "league.result_demoted" : "league.result_stayed", { league: tierName(result.nextTier) })}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp) })}</Text>
+          <NewAvatarParts parts={result.parts} compact />
         </View>
       </View>
       <Pill label={t("league.result_go")} onPress={onDismiss} tone="primary" block />

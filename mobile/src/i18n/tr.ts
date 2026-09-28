@@ -9,6 +9,7 @@ export const tr: Record<string, string> = {
   "achu.n_unlocked": "{n} başarım açıldı",
   "achu.n_unlocked.one": "{n} başarım açıldı",
   "achu.n_more": "+{n} başarım daha",
+  "achu.new_parts": "Nomi'nin dolabına eklendi",
   "achu.n_more.one": "+{n} başarım daha",
   "achu.and_n_more": "ve {n} tane daha",
   "achu.and_n_more.one": "ve {n} tane daha",

@@ -4,6 +4,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { achievementBoard, markAchievementsSeen } from "@/lib/achievements";
 import { ensureProfile } from "@/lib/session";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { partsForKeys } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +21,16 @@ export async function GET() {
     const profile = await ensureProfile(userId).catch(() => null);
     const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
     const board = await achievementBoard(userId, lang);
-    return NextResponse.json(board);
+    /* Kutlanacak rozetin açtığı avatar parçaları (`parts`, yoksa alan yok):
+       kutlama kartı "yeni aksesuar" diye gösteriyor. Yalnız `fresh`e; duvar
+       (`rows`) bunu taşımıyor. */
+    const fresh = await Promise.all(
+      board.fresh.map(async (r) => {
+        const parts = await partsForKeys([r.id], lang);
+        return parts.length ? { ...r, parts } : r;
+      }),
+    );
+    return NextResponse.json({ ...board, fresh });
   } catch (err) {
     console.error("[api/achievements]", err);
     return NextResponse.json({ error: "db" }, { status: 500 });

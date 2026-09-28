@@ -1,6 +1,7 @@
 import { api, ApiError } from "./client";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
+import type { UnlockedPart } from "../lib/avatarLayers";
 
 /**
  * Sosyal API istemcisi — web'deki lib/social/client.ts'in aynası. Tipler
@@ -58,7 +59,8 @@ export type LeagueOutcome = "promoted" | "demoted" | "stayed";
 export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean; hidden?: boolean };
 export type LeagueView = {
   weekStart: string; tier: number; daysLeft: number; rows: LeagueRow[]; promote: number; demote: number;
-  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;
+  /** `parts`: bu sonuçla İLK KEZ açılan avatar parçaları (3B katalog açıkken). */
+  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome; parts?: UnlockedPart[] } | null;
 };
 
 /** Lig basamakları — sunucudaki LEAGUE_TIERS ile aynı sıra. */

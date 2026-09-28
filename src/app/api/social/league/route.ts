@@ -2,6 +2,7 @@ import { SocialError } from "@/lib/social/errors";
 import { dayParam, handleError, ok, readJson, requireUser } from "@/lib/social/http";
 import { leagueBoard, markLeagueResultSeen } from "@/lib/social/leagues";
 import { closeWeekIfNeeded } from "@/lib/social/weekly";
+import { leagueResultKeys, partsForKeys, profileLang } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +14,14 @@ export async function GET(req: Request) {
   try {
     // Geçen haftanın kapanışı tabloyu okumadan ÖNCE: sonuç ekranı ilk bakışta çıksın.
     await closeWeekIfNeeded(today);
-    return ok(await leagueBoard(user, today));
+    const board = await leagueBoard(user, today);
+    if (!board.result) return ok(board);
+    /* Sonuç ekranı: bu hafta İLK KEZ açılan lig parçaları (`result.parts`).
+       Aksesuar hesabı düşerse sonuç ekranı yine çıkar. */
+    const parts = await leagueResultKeys(user, board.result)
+      .then(async (keys) => (keys.length ? partsForKeys(keys, await profileLang(user)) : []))
+      .catch(() => []);
+    return ok(parts.length ? { ...board, result: { ...board.result, parts } } : board);
   } catch (err) {
     return handleError("social:league", err);
   }

@@ -1,12 +1,15 @@
 import "server-only";
-import { and, eq, gte, isNotNull, max, sql } from "drizzle-orm";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { and, eq, gte, isNotNull, lt, lte, max, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { avatarItems, leagueMembers } from "@/lib/db/schema";
+import { avatarItems, leagueMembers, profiles } from "@/lib/db/schema";
 import { unlockedAchievementIds } from "@/lib/achievements";
 import { isPremium } from "@/lib/premium";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
+import type { UnlockedPart } from "@/lib/avatar-layers";
 import { LEAGUE_TIERS } from "@/lib/social/types";
-import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Nomi avatar altyapısı — sunucu tarafı (2026-09-28).
@@ -85,4 +88,72 @@ export async function lockedAvatarParts(userId: string, lang: NativeLang): Promi
     if (!keys.has(key) && !owned.has(id)) out[id] = unlockHint(lang, key);
   }
   return out;
+}
+
+/* ------------------------------------------------------------------ */
+/* Açılış anı: "bu kazanımla şu parçalar açıldı"                        */
+/* ------------------------------------------------------------------ */
+
+type CatalogLite = { parcalar: { id: string; ad: string; adlar?: Record<string, string>; ikon: string }[] };
+let catalogLite: Promise<Map<string, CatalogLite["parcalar"][number]>> | null = null;
+/* Katalog `public/avatar/v1`de, yani sunucunun diskinde; `AVATAR_3D_BASE` o
+   dizinin yayındaki adresi. Bir kez okunur (süreç başına). */
+function catalogParts(): Promise<Map<string, CatalogLite["parcalar"][number]>> {
+  catalogLite ??= readFile(path.join(process.cwd(), "public", "avatar", "v1", "katalog.json"), "utf8")
+    .then((t) => new Map((JSON.parse(t) as CatalogLite).parcalar.map((p) => [p.id, p] as const)))
+    .catch((err) => {
+      catalogLite = null;
+      throw err;
+    });
+  return catalogLite;
+}
+
+/**
+ * Bu koşul anahtarlarıyla açılan parçalar (kutlama kartı için). 3B katalog
+ * kapalıyken boş: 2B maskotta bu parçalar yok, "yeni aksesuar" demek yalan olur.
+ * Katalog okunamazsa da boş: kutlamanın kendisi aksesuar yüzünden düşmemeli.
+ */
+export async function partsForKeys(keys: Iterable<string>, lang: NativeLang): Promise<UnlockedPart[]> {
+  const base = avatar3dBase();
+  const want = new Set(keys);
+  if (!base || !want.size) return [];
+  const cat = await catalogParts().catch(() => null);
+  if (!cat) return [];
+  const out: UnlockedPart[] = [];
+  for (const [id, key] of Object.entries(PART_UNLOCKS)) {
+    const p = want.has(key) ? cat.get(id) : undefined;
+    if (p) out.push({ id, name: p.adlar?.[lang] ?? p.ad, icon: `${base}/${p.ikon}` });
+  }
+  return out;
+}
+
+/**
+ * Lig haftası sonucunun İLK KEZ açtığı koşullar: o hafta terfiyle ilk kez
+ * çıkılan lig (`league_<n>`) ve ilk haftalık birincilik (`league_win`).
+ * Daha önce aynı lige çıkmış ya da birinci olmuş kullanıcıya "yeni" denmez.
+ */
+export async function leagueResultKeys(
+  userId: string,
+  r: { weekStart: string; nextTier: number; rank: number; xp: number; outcome: string },
+): Promise<string[]> {
+  /* Sonuç haftasının kendi ligi o hafta başında zaten açılmıştı: tavan
+     hesabına dahil (`<=`); birincilik ise yalnız ÖNCEKİ haftalarda aranır. */
+  const upTo = and(eq(leagueMembers.userId, userId), lte(leagueMembers.weekStart, r.weekStart));
+  const before = and(eq(leagueMembers.userId, userId), lt(leagueMembers.weekStart, r.weekStart));
+  const [prevTop, prevWin] = await Promise.all([
+    db.select({ top: max(leagueMembers.tier) }).from(leagueMembers).where(upTo),
+    db.select({ n: sql<number>`count(*)` }).from(leagueMembers)
+      .where(and(before, eq(leagueMembers.rank, 1), isNotNull(leagueMembers.outcome), gte(leagueMembers.finalXp, 1))),
+  ]);
+  const keys: string[] = [];
+  const top = Math.max(Number(prevTop[0]?.top ?? 0), 0);
+  if (r.outcome === "promoted") for (let t = top + 1; t <= r.nextTier; t++) keys.push(`league_${t}`);
+  if (r.rank === 1 && r.xp >= 1 && Number(prevWin[0]?.n ?? 0) === 0) keys.push("league_win");
+  return keys;
+}
+
+/** Kullanıcının anadili (profilden; mobil istekte bizim dil çerezimiz yok). */
+export async function profileLang(userId: string): Promise<NativeLang> {
+  const [p] = await db.select({ lang: profiles.nativeLang }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  return isNativeLang(p?.lang) ? p.lang : DEFAULT_NATIVE;
 }

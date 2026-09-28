@@ -6,6 +6,7 @@ export const deBase: Record<string, string> = {
   "achu.n_unlocked": "{n} Erfolge freigeschaltet",
   "achu.n_unlocked.one": "{n} Erfolg freigeschaltet",
   "achu.n_more": "+{n} weitere Erfolge",
+  "achu.new_parts": "Neu in Nomis Garderobe",
   "achu.n_more.one": "+{n} weiterer Erfolg",
   "achu.and_n_more": "und {n} weitere",
   "achu.and_n_more.one": "und {n} weiteres",

@@ -13,6 +13,8 @@ import { track } from "../lib/track";
 import type { Achievement, Tier } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, TIER_COLOR, ds } from "../theme";
 import { DIALOG_MAX_WIDTH } from "../lib/useLayout";
+import { NewAvatarParts } from "./NewAvatarParts";
+import type { UnlockedPart } from "../lib/avatarLayers";
 
 /**
  * Rozet açılış kutlaması — mobilde HİÇ YOKTU.
@@ -73,7 +75,9 @@ const TIER_LABEL_KEY: Record<Tier, string> = {
 /** Kademesi yüksek olan önce: "İlk kıvılcım" ile "Yüz gün" aynı anda açıldıysa büyük olan başta. */
 const TIER_RANK: Record<string, number> = { legend: 0, gold: 1, silver: 2, bronze: 3 };
 
-type Celebration = { kind: "solo"; queue: Achievement[] } | { kind: "batch"; items: Achievement[] } | null;
+/** `parts`: rozetin açtığı avatar parçaları (3B katalog açıkken, sunucudan). */
+type Fresh = Achievement & { parts?: UnlockedPart[] };
+type Celebration = { kind: "solo"; queue: Fresh[] } | { kind: "batch"; items: Fresh[] } | null;
 
 function busyNow(): boolean {
   try {
@@ -99,10 +103,10 @@ export function AchievementUnlock() {
   const bump = useStatsBump();
   const [view, setView] = useState<Celebration>(null);
   /** Meşgulken beklemeye alınanlar — işaretlenmeden bekliyorlar. */
-  const held = useRef<Achievement[] | null>(null);
+  const held = useRef<Fresh[] | null>(null);
   const running = useRef(false);
 
-  const present = useCallback((fresh: Achievement[]) => {
+  const present = useCallback((fresh: Fresh[]) => {
     const sorted = [...fresh].sort((a, b) => (TIER_RANK[a.tier] ?? 9) - (TIER_RANK[b.tier] ?? 9));
     setView(sorted.length > MAX_SOLO ? { kind: "batch", items: sorted } : { kind: "solo", queue: sorted });
     /* Rozet açılışının SESİ: web açılış kartıyla birlikte çalıyor
@@ -121,7 +125,7 @@ export function AchievementUnlock() {
     if (running.current || !user) return;
     running.current = true;
     try {
-      const data = await api<{ fresh?: Achievement[] }>("/api/achievements");
+      const data = await api<{ fresh?: Fresh[] }>("/api/achievements");
       const fresh = Array.isArray(data?.fresh) ? data.fresh : [];
       if (!fresh.length) return;
       if (busyNow()) {
@@ -209,6 +213,7 @@ export function AchievementUnlock() {
                 </Text>
               ) : null}
               <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achu.batch_note")}</Text>
+              <NewAvatarParts parts={view.items.flatMap((it) => it.parts ?? [])} />
             </>
           ) : solo ? (
             <>
@@ -218,6 +223,7 @@ export function AchievementUnlock() {
               <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}><Badge a={solo} size={ds(92)} /></View>
               <Text variant="h2" style={{ textAlign: "center" }}>{solo.title}</Text>
               <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{solo.hint}</Text>
+              <NewAvatarParts parts={solo.parts} />
               {view.kind === "solo" && view.queue.length > 1 ? (
                 <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
                   {t("achu.n_more", { n: view.queue.length - 1 })}

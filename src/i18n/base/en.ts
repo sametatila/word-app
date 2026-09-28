@@ -6,6 +6,7 @@ export const enBase: Record<string, string> = {
   "achu.n_unlocked": "{n} achievements unlocked",
   "achu.n_unlocked.one": "{n} achievement unlocked",
   "achu.n_more": "+{n} more achievements",
+  "achu.new_parts": "Added to Nomi's wardrobe",
   "achu.n_more.one": "+{n} more achievement",
   "achu.and_n_more": "and {n} more",
   "achu.and_n_more.one": "and {n} more",

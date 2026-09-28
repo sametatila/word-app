@@ -1,3 +1,4 @@
+import type { UnlockedPart } from "@/lib/avatar-layers";
 import { LEAGUE_TIERS, type FeedItem, type FriendRow, type LeagueOutcome, type PublicUser, type QuestView, type ReactionKind, type ReactionSummary, type Relation } from "./types";
 import { USERNAME_CHANGE_COOLDOWN_DAYS } from "@/lib/social/username";
 import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -162,7 +163,8 @@ export type LeagueView = {
   rows: LeagueRowView[];
   promote: number;
   demote: number;
-  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;
+  /** `parts`: bu sonuçla İLK KEZ açılan avatar parçaları (3B katalog açıkken). */
+  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome; parts?: UnlockedPart[] } | null;
 };
 
 /** Lig adının sözlük anahtarı — basamak dizinden, sınır dışı değer en alta düşer. */

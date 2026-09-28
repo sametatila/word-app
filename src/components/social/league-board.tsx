@@ -9,6 +9,7 @@ import { EmptyCard } from "@/components/empty-card";
 import { RowSkeleton, SkeletonCard, SkeletonLine, SkeletonPill } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
 import { LEAGUE_TIERS } from "@/lib/social/types";
+import { NewAvatarParts } from "@/components/new-avatar-parts";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 
@@ -325,6 +326,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
           })}
         </p>
         <p className="muted text-caption">{t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp, lang) })}</p>
+        <NewAvatarParts parts={result.parts} compact />
       </div>
       <button type="button" className="btn btn-primary h-9 shrink-0 px-3 text-caption" onClick={onDismiss}>
         {t("league.result_go")}
