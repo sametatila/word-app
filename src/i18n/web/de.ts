@@ -65,6 +65,9 @@ export const deWeb: Record<string, string> = {
   "quest.skill1": "Eine Fertigkeitsübung abschließen",
   "quest.conversation1": "Ein Gespräch abschließen",
   /* Başarımlar — sunucuda çözülüyor, bkz. tr.ts notu. */
+  "avatar.unlock_league": "Steige auf: {tier}",
+  "avatar.unlock_league_win": "Beende eine Ligawoche auf Platz 1 deiner Gruppe",
+  "avatar.unlock_premium": "Für Premium-Mitglieder",
   "ach.streak3.title": "3-Tage-Serie",
   "ach.streak3.hint": "Lerne 3 Tage in Folge",
   "ach.streak7.title": "7-Tage-Serie",

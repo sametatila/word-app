@@ -93,6 +93,9 @@ export const trWeb: Record<string, string> = {
    * öyle dönüyordu — yani mobil uygulama da rozetleri Türkçe gösteriyordu.
    * Görev etiketleriyle aynı desen, aynı çözüm: anahtar sunucuda çözülüyor.
    */
+  "avatar.unlock_league": "Lige yüksel: {tier}",
+  "avatar.unlock_league_win": "Ligde bir haftayı grubunda birinci bitir",
+  "avatar.unlock_premium": "Premium üyelere özel",
   "ach.streak3.title": "3 günlük seri",
   "ach.streak3.hint": "3 gün üst üste çalış",
   "ach.streak7.title": "7 günlük seri",

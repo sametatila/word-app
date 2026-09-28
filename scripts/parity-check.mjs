@@ -10728,44 +10728,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
-    /* ---- KAZANILAN AKSESUARLAR: ESLEME IKI PLATFORMDA AYNI --------------
+    /* ---- KAZANILAN AKSESUARLAR: KILIT TEK YERDE, SUNUCUDA ---------------
      *
-     * Aksesuarlarin tamami herkese acikti; kilit diye bir kavram yoktu.
-     * Davetin elle tutulur karsiligi olsun diye acildi (2026-09-17): rozet
-     * kazanilinca bir aksesuar da geliyor.
+     * Kilit tablosu (`lib/avatar-unlocks`, 2026-09-28) yalniz sunucuda: 105
+     * satir ve her birinin ipucu uc dilde; iki istemcide kopyasi tutulsaydi
+     * ayrisma riski satir sayisiyla buyurdu. Duzenleyiciler kilidi
+     * `/api/avatar/items` (mobil) ve sayfa sunucusundan (web) aliyor; tablonun
+     * kendisini `check:avatar-unlocks` dogruluyor.
      *
-     * ESLEME IKI DOSYADA YAZILI (`lib/avatar-unlocks` ve mobil
-     * `lib/avatarUnlocks`) ve ayrisirsa bir platformda kilitli olan otekinde
-     * ACIK gorunur - kullanici oradan secer, sunucu sessizce duşurur ve
-     * secimi "kaydedilmedi" diye kaybolur. Hicbir derleyici bunu gormez.
-     *
-     * KATALOG DA AYNI OLMALI: parca iki tarafta da cizilebilmeli, yoksa ayni
-     * avatar bir platformda sapkali otekinde sapkasiz gorunur.
+     * KATALOG IKI TARAFTA AYNI OLMALI: parca iki tarafta da cizilebilmeli.
      *
      * KILIDIN KENDISI SUNUCUDA: `api/profile` kaydederken kazanilmamis
-     * parcayi eliyor. Istemcideki liste yalniz neyin gri cizilecegini
-     * biliyor; istemcide duran bir kilit kilit degildir (ayni ilke
-     * `api/stt` kapisinda da yazili). */
+     * parcayi eliyor; istemcide duran bir kilit kilit degildir. */
     {
-      const esleme = (yol) => {
-        const src = read(yol);
-        const i = src.indexOf("PART_UNLOCKS");
-        const j = src.indexOf("};", i);
-        return [...(src.slice(i, j).match(/^\s*(\w+):\s*"([^"]+)"/gm) ?? [])].map((x) => x.trim()).sort();
-      };
       const katalog = (yol) => {
         const src = read(yol);
         return ["HATS", "GLASSES", "MUSTACHES"]
           .map((ad) => ad + "=" + ((src.match(new RegExp("const " + ad + " = \\[([^\\]]*)\\]")) ?? [])[1] ?? "YOK").replace(/[\s"]/g, ""))
           .join(" · ");
       };
-      sameSet(
-        "kazanilan aksesuar eslemesi",
-        esleme("mobile/src/lib/avatarUnlocks.ts"),
-        esleme("src/lib/avatar-unlocks.ts"),
-        "mobil",
-        "web",
-      );
       sameList(
         "aksesuar katalogu iki platformda",
         [katalog("mobile/src/ui/avatarParts.tsx")],
@@ -10773,16 +10754,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil",
         "web",
       );
-      /* Kilidi SUNUCU dayatiyor: istemci listesi degistiginde bu satir
-         dusmezse kilit yalniz bir suslemedir. */
+      /* Istemcide kilit tablosu kopyasi YOK: geri gelirse tek kaynak bozulur. */
+      sameList(
+        "kilit tablosu istemcide kopyalanmamis",
+        [existsSync(new URL("../mobile/src/lib/avatarUnlocks.ts", import.meta.url)) ? "mobil kopya VAR" : "yok"],
+        ["yok"],
+        "bulunan",
+        "beklenen",
+      );
       const profil = sil(read("src/app/api/profile/route.ts"));
       sameList(
         "kazanilmamis aksesuar sunucuda eleniyor",
-        ["kapi=" + (/stripLockedParts\(cfg, await unlockedAchievementIds\(userId\)\)/.test(profil) ? "var" : "YOK")],
+        ["kapi=" + (/stripLockedParts\(cfg, keys, owned\)/.test(profil) && /avatarUnlockKeys\(userId\)/.test(profil) ? "var" : "YOK")],
         ["kapi=var"],
         "bulunan",
         "beklenen",
       );
+      /* Turetilmis avatarin havuzu (yalniz herkese acik parcalar) iki tarafta ayni. */
+      const havuz = (yol) => ["FREE_HATS", "FREE_GLASSES", "FREE_MUSTACHES"].map((ad) => ad + "=" + ((read(yol).match(new RegExp("const " + ad + " = \\[([^\\]]*)\\]")) ?? [])[1] ?? "YOK").replace(/[\s"]/g, "")).join(" · ");
+      sameList("turetilmis avatar havuzu", [havuz("mobile/src/ui/Avatar.tsx")], [havuz("src/components/avatar.tsx")], "mobil", "web");
     }
 
     /* 3) ROZET KUTLAMASI. Webde vardi, Androidde hic yoktu - rozet yalniz

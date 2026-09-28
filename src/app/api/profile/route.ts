@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
 import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
 import { stripLockedParts } from "@/lib/avatar-unlocks";
-import { unlockedAchievementIds } from "@/lib/achievements";
+import { avatarUnlockKeys, ownedAvatarItemIds } from "@/lib/avatar-items";
 import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -107,7 +107,10 @@ export async function POST(req: Request) {
       böyle eliyor. Kullanıcı hak ettiği şapkayı kaybetmiyor, yalnız hak
       etmediği parça kaydedilmiyor.
     */
-    if (cfg) cfg = stripLockedParts(cfg, await unlockedAchievementIds(userId));
+    if (cfg) {
+      const [keys, owned] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId)]);
+      cfg = stripLockedParts(cfg, keys, owned);
+    }
     patch.avatar = cfg ? serializeAvatar(cfg) : null;
   }
   /*

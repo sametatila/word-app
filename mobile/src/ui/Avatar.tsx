@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Image } from "react-native";
-import { AvatarOverlay, GLASSES, HAT_COLORS, HATS, MUSTACHES } from "./avatarParts";
-import { isLockedPart } from "../lib/avatarUnlocks";
+import { AvatarOverlay, HAT_COLORS } from "./avatarParts";
 import { useAvatar, parseAvatar, avatarBg, type AvatarConfig } from "../lib/avatar";
 import { avatarLayers } from "../lib/avatarLayers";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
@@ -40,13 +39,15 @@ function hash(seed: string): number {
 }
 
 /**
- * Türetilen avatarda KİLİTLİ parça çıkmıyor — web `derivedAvatar` ile aynı.
- * Kazanılmamış bir aksesuarı rastgele dağıtmak, kazananın rozetini
- * değersizleştirirdi.
+ * Türetilen avatarda YALNIZ HERKESE AÇIK parçalar çıkıyor (iki platformda aynı
+ * liste). Kazanılmamış bir aksesuarı rastgele dağıtmak, kazananın emeğini
+ * değersizleştirirdi; kilit tablosu yalnız sunucuda (`lib/avatar-unlocks`),
+ * istemci onu bilmiyor. Taç eskiden bu havuzdaydı, artık lig birinciliğiyle
+ * açılıyor.
  */
-const FREE_HATS = HATS.filter((h) => !isLockedPart(h));
-const FREE_GLASSES = GLASSES.filter((g) => !isLockedPart(g));
-const FREE_MUSTACHES = MUSTACHES.filter((m) => !isLockedPart(m));
+const FREE_HATS = ["beanie", "cap"];
+const FREE_GLASSES = ["round", "square"];
+const FREE_MUSTACHES = ["curl", "thick"];
 
 /**
  * Avatar seçmemiş kişinin kimliğinden türeyen maskot — web `derivedAvatar`

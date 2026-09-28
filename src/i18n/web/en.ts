@@ -65,6 +65,9 @@ export const enWeb: Record<string, string> = {
   "quest.skill1": "Finish one skill exercise",
   "quest.conversation1": "Complete one conversation",
   /* Başarımlar — sunucuda çözülüyor, bkz. tr.ts notu. */
+  "avatar.unlock_league": "Reach the {tier}",
+  "avatar.unlock_league_win": "Finish a league week first in your group",
+  "avatar.unlock_premium": "For Premium members",
   "ach.streak3.title": "3-day streak",
   "ach.streak3.hint": "Study 3 days in a row",
   "ach.streak7.title": "7-day streak",

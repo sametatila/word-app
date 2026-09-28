@@ -166,6 +166,7 @@ const WEB_ONLY = {
  * olmadigini BELGELEMEKTIR.
  */
 const MOBIL_ONLY = {
+  "/api/avatar/items": "avatar kilitleri; web ayni bilgiyi sayfa sunucusunda okuyor (profile/avatar/page, lockedAvatarParts)",
   "/api/account/apple-code": "Apple girisinin native kod takasi; webde akis tarayicida tamamlaniyor",
   "/api/account/guest": "misafir verisini silme; misafir modu yalniz mobilde, web hesap istiyor (magaza on inceleme B24)",
   "/api/account/guest/claim": "misafirin ilerlemesini hesaba birlestirme; misafir modu yalniz mobilde",
@@ -197,6 +198,7 @@ const MOBIL_ONLY_METHOD = {
   "GET /api/stt": "ekran kapali yuruyusun sesi native uploadStt ile POST gidiyor (JS'te yontemsiz, GET sayiliyor); web ekran acikken ses gondermiyor",
   "POST /api/account/apple-code": "native Apple kod takasi",
   "DELETE /api/account/guest": "misafir verisini silme (yalniz mobil misafir modu)",
+  "GET /api/avatar/items": "avatar kilitleri; web ayni bilgiyi sayfa sunucusunda okuyor (profile/avatar/page, lockedAvatarParts), istemci istegi yok",
   "POST /api/account/guest/claim": "misafiri hesaba birlestirme (yalniz mobil misafir modu)",
   "GET /api/immersion": "web `lib/immersion/build`i sunucuda cagiriyor",
   "GET /api/me": "web `lib/session`i sunucuda cagiriyor",

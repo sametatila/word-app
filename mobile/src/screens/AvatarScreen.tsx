@@ -11,7 +11,6 @@ import { AvatarStage, derivedAvatar, MascotAvatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type AvatarConfig, type ExtraSlot } from "../lib/avatar";
-import { PART_UNLOCKS } from "../lib/avatarUnlocks";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
 import type { CatalogPart } from "../lib/avatarLayers";
 import { api } from "../api/client";
@@ -64,27 +63,22 @@ export function AvatarScreen() {
   const [hint, setHint] = useState<string | null>(null);
 
   /*
-    KAZANILMIŞ ROZETLER ve PARÇALAR. Kilit yalnız GÖSTERİM için; kaydı sunucu
-    eliyor. İstek düşerse liste boş kalıyor ve kilitli olan kilitli görünüyor.
+    KİLİTLER SUNUCUDAN: bu kullanıcı için kilitli parçalar ve her birinin nasıl
+    açılacağı, kullanıcının dilinde (`/api/avatar/items` › `locked`; tanım
+    web `lib/avatar-unlocks`ta, istemcide kopyası yok). Kilit yalnız GÖSTERİM
+    için; kaydı sunucu eliyor. Misafir ve istek düşerse boş kalır: sunucu
+    kaydederken yine eler.
   */
-  const [unlocked, setUnlocked] = useState<Set<string>>(new Set());
-  const [owned, setOwned] = useState<Set<string>>(new Set());
+  const [locked, setLocked] = useState<Record<string, string>>({});
   useEffect(() => {
     let alive = true;
-    void api<Partial<{ rows: { id: string; unlocked: boolean }[] }>>("/api/achievements")
-      .then((d) => { if (alive) setUnlocked(new Set((d.rows ?? []).filter((r) => r.unlocked).map((r) => r.id))); })
-      .catch(() => {});
     if (user && !user.guest) {
-      void api<Partial<{ items: { id: string }[] }>>("/api/avatar/items")
-        .then((d) => { if (alive) setOwned(new Set((d.items ?? []).map((i) => i.id))); })
+      void api<Partial<{ locked: Record<string, string> }>>("/api/avatar/items")
+        .then((d) => { if (alive && d.locked) setLocked(d.locked); })
         .catch(() => {});
     }
     return () => { alive = false; };
   }, [user]);
-  const badgeLocked = (id: string | null) => {
-    const rozet = id ? PART_UNLOCKS[id] : undefined;
-    return !!rozet && !unlocked.has(rozet);
-  };
 
   const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
   const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
@@ -105,9 +99,7 @@ export function AvatarScreen() {
       const parts: CatalogPart[] = catalog.cat.parcalar.filter((p) => p.slot === slot);
       const list: Tile[] = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, none: true, apply: () => pick(slot, null) }];
       for (const p of parts) {
-        const byBadge = badgeLocked(p.id);
-        const locked = (p.nadir !== "common" && !owned.has(p.id)) || byBadge;
-        list.push({ key: p.id, label: p.adlar[lang] ?? p.ad, selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"), locked, hint: t(byBadge ? "avatar.locked_hint" : "avatar.locked_earn"), rarity: p.nadir, icon: `${catalog.base}/${p.ikon}`, apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null) });
+        list.push({ key: p.id, label: p.adlar[lang] ?? p.ad, selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"), locked: p.id in locked, hint: locked[p.id], rarity: p.nadir, icon: `${catalog.base}/${p.ikon}`, apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null) });
       }
       return list;
     }
@@ -117,12 +109,19 @@ export function AvatarScreen() {
     const ids = slot === "hat" ? HATS : slot === "glasses" ? GLASSES : MUSTACHES;
     return [
       { key: "none", label: t(slot === "hat" ? "avatar.no_hat" : slot === "glasses" ? "avatar.no_glasses" : "avatar.no_mustache"), selected: !current(slot), locked: false, preview: none({ [slot]: null }), apply: () => pick(slot, null) },
-      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: badgeLocked(id), hint: t("avatar.locked_hint"), preview: none({ [slot]: id }), apply: () => pick(slot, id) })),
+      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: id in locked, hint: locked[id], preview: none({ [slot]: id }), apply: () => pick(slot, id) })),
     ];
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [catalog, slot, cfg, owned, unlocked, lang]);
+  }, [catalog, slot, cfg, locked, lang]);
 
-  const colorable = slot === "hat" && !!cfg.hat && (!catalog || (catalog.cat.parcalar.find((p) => p.id === cfg.hat)?.renkler.length ?? 0) > 0);
+  /* RENK: seçili parça renkleniyorsa renk şeridi (web `avatar-editor` ile aynı
+     kural). Şapka rengi `hatColor`da, yeni yuvalarınki `extra[yuva].color`da. */
+  const cur = slot === "bg" ? cfg.bg : slot === "hat" ? cfg.hat : slot === "glasses" ? cfg.glasses : slot === "mustache" ? cfg.mustache : cfg.extra[slot]?.id ?? null;
+  const selPart = catalog ? catalog.cat.parcalar.find((p) => p.id === cur) : undefined;
+  const palette: string[] = catalog ? (selPart?.renkler ?? []) : slot === "hat" && cfg.hat ? HAT_COLORS : [];
+  const colorNow = slot === "hat" ? cfg.hatColor : slot !== "bg" && slot !== "glasses" && slot !== "mustache" ? cfg.extra[slot]?.color ?? palette[0] : null;
+  const setColor = (col: string) => (slot === "hat" ? setCfg({ hatColor: col }) : slot !== "bg" && slot !== "glasses" && slot !== "mustache" && cfg.extra[slot] ? setCfg({ extra: { ...cfg.extra, [slot]: { ...cfg.extra[slot]!, color: col } } }) : undefined);
+  const colorable = palette.length > 0 && colorNow !== null;
 
   /* Kayıt eşzamansız: bitene kadar düğme meşgul, ikinci dokunuş ikinci kayıt açmıyor. */
   const [saving, setSaving] = useState(false);
@@ -158,17 +157,17 @@ export function AvatarScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.md, paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
           {colorable ? (
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.xs, paddingBottom: spacing.md }}>
-              <Text variant="caption" color={colors.textMuted}>{t("avatar.hat_color")}</Text>
-              {HAT_COLORS.map((col) => {
-                const sel = cfg.hatColor === col;
-                return <PressableScale key={col} hitSlop={4} accessibilityRole="radio" accessibilityState={{ selected: sel }} accessibilityLabel={`${t("avatar.hat_color")} ${col}`} onPress={() => setCfg({ hatColor: col })} style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : colors.bg }} />;
+              <Text variant="caption" color={colors.textMuted}>{t("avatar.color")}</Text>
+              {palette.map((col) => {
+                const sel = colorNow === col;
+                return <PressableScale key={col} hitSlop={4} accessibilityRole="radio" accessibilityState={{ selected: sel }} accessibilityLabel={`${t("avatar.color")} ${col}`} onPress={() => setColor(col)} style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : colors.bg }} />;
               })}
             </View>
           ) : null}
 
           <View accessibilityRole="radiogroup" style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {tiles.map((tile) => (
-              <OptCard key={tile.key} tile={tile} colors={colors} onLocked={() => setHint(tile.hint ?? t("avatar.locked_earn"))} />
+              <OptCard key={tile.key} tile={tile} colors={colors} onLocked={() => setHint(tile.hint ?? null)} />
             ))}
           </View>
         </ScrollView>
@@ -203,7 +202,7 @@ function OptCard({ tile, colors, onLocked }: { tile: Tile; colors: Palette; onLo
       <PressableScale
         accessibilityRole="radio"
         accessibilityState={{ selected: tile.selected, disabled: tile.locked }}
-        accessibilityLabel={tile.locked ? `${tile.label} — ${tile.hint ?? t("avatar.locked_earn")}` : tile.label || t("avatar.slot_bg")}
+        accessibilityLabel={tile.locked ? `${tile.label} — ${tile.hint ?? ""}` : tile.label || t("avatar.slot_bg")}
         onPress={tile.locked ? onLocked : tile.apply}
         style={[{ alignItems: "center", gap: 6, padding: spacing.sm, borderRadius: radii.lg, borderWidth: tile.selected ? 2.5 : 1.5, borderColor: tile.selected ? colors.primary : edge, backgroundColor: colors.surface }, tile.selected ? cardShadow(colors, 6) : null]}
       >

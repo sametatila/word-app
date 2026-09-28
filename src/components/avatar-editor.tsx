@@ -1,15 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AvatarStage, derivedAvatar, MascotAvatar } from "@/components/avatar";
 import { useShell } from "@/components/app-shell";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type ExtraSlot } from "@/lib/avatar-config";
-import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
-import { apiFetch } from "@/lib/api-fetch";
 import { CheckIcon, LockIcon, RefreshIcon, XIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -40,16 +38,11 @@ const RARITY = AVATAR_RARITY;
 
 type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; preview?: AvatarConfig; swatch?: { from: string; to: string }; apply: () => void };
 
-export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
+export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   const t = useT();
   const lang = useLang();
   const router = useRouter();
   const catalog = useAvatarCatalog();
-  const acik = new Set(unlocked);
-  const badgeLocked = (id: string | null) => {
-    const rozet = id ? PART_UNLOCKS[id] : undefined;
-    return !!rozet && !acik.has(rozet);
-  };
   /*
     TASLAK ile KAYITLI ayrı duruyor: kayıtlı değer reaktif, taslak yalnız
     kullanıcı bir şeye dokununca doluyor ve o andan sonra kazanıyor. Hiç
@@ -62,16 +55,6 @@ export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
   const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
   const [slot, setSlot] = useState<Slot>("hat");
   const [hint, setHint] = useState<string | null>(null);
-  const [owned, setOwned] = useState<Set<string>>(new Set());
-  useEffect(() => {
-    let alive = true;
-    apiFetch("/api/avatar/items", { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d: { items?: { id: string }[] } | null) => { if (alive && d?.items) setOwned(new Set(d.items.map((i) => i.id))); })
-      .catch(() => {});
-    return () => { alive = false; };
-  }, []);
-
   const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
   const only = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
   const current = (s: Slot): string | null => (s === "bg" ? cfg.bg : s === "hat" ? cfg.hat : s === "glasses" ? cfg.glasses : s === "mustache" ? cfg.mustache : cfg.extra[s]?.id ?? null);
@@ -91,13 +74,12 @@ export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
     const parts = catalog.cat.parcalar.filter((p) => p.slot === slot);
     tiles = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, apply: () => pick(slot, null) }];
     for (const p of parts) {
-      const byBadge = badgeLocked(p.id);
       tiles.push({
         key: p.id,
         label: p.adlar[lang] ?? p.ad,
         selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"),
-        locked: (p.nadir !== "common" && !owned.has(p.id)) || byBadge,
-        hint: t(byBadge ? "avatar.locked_hint" : "avatar.locked_earn"),
+        locked: p.id in locked,
+        hint: locked[p.id],
         rarity: p.nadir,
         icon: `${catalog.base}/${p.ikon}`,
         apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null),
@@ -109,10 +91,17 @@ export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
     const ids = slot === "hat" ? HATS : slot === "glasses" ? GLASSES : MUSTACHES;
     tiles = [
       { key: "none", label: t(slot === "hat" ? "avatar.no_hat" : slot === "glasses" ? "avatar.no_glasses" : "avatar.no_mustache"), selected: !current(slot), locked: false, preview: only({ [slot]: null }), apply: () => pick(slot, null) },
-      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: badgeLocked(id), hint: t("avatar.locked_hint"), preview: only({ [slot]: id }), apply: () => pick(slot, id) })),
+      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: id in locked, hint: locked[id], preview: only({ [slot]: id }), apply: () => pick(slot, id) })),
     ];
   }
-  const colorable = slot === "hat" && !!cfg.hat && (!catalog || (catalog.cat.parcalar.find((p) => p.id === cfg.hat)?.renkler.length ?? 0) > 0);
+  /* RENK: seçili parça renkleniyorsa (şapka, boyun, sırt… kataloğun `renkler`i)
+     parçanın altında renk şeridi. Şapka rengi eski alanında (`hatColor`),
+     yeni yuvalarınki parçanın yanında (`extra[yuva].color`). */
+  const selPart = catalog ? catalog.cat.parcalar.find((p) => p.id === current(slot)) : undefined;
+  const colors: string[] = catalog ? (selPart?.renkler ?? []) : slot === "hat" && cfg.hat ? HAT_COLORS : [];
+  const colorNow = slot === "hat" ? cfg.hatColor : slot !== "bg" && slot !== "glasses" && slot !== "mustache" ? cfg.extra[slot]?.color ?? colors[0] : null;
+  const setColor = (col: string) => (slot === "hat" ? setCfg({ hatColor: col }) : slot !== "bg" && slot !== "glasses" && slot !== "mustache" && cfg.extra[slot] ? setCfg({ extra: { ...cfg.extra, [slot]: { ...cfg.extra[slot]!, color: col } } }) : undefined);
+  const colorable = colors.length > 0 && colorNow !== null;
 
   function save() {
     saveAvatar(cfg);
@@ -156,18 +145,18 @@ export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
         {colorable ? (
           /* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android aynı şeritleri
              `accessibilityRole="radio"` ile veriyor (`AvatarScreen`). */
-          <div role="radiogroup" aria-label={t("avatar.hat_color")} className="flex flex-wrap items-center gap-2 py-2">
-            <span className="muted text-caption">{t("avatar.hat_color")}</span>
-            {HAT_COLORS.map((col) => (
+          <div role="radiogroup" aria-label={t("avatar.color")} className="flex flex-wrap items-center gap-2 py-2">
+            <span className="muted text-caption">{t("avatar.color")}</span>
+            {colors.map((col) => (
               <button
                 key={col}
                 type="button"
-                aria-label={`${t("avatar.hat_color")} ${col}`}
+                aria-label={`${t("avatar.color")} ${col}`}
                 role="radio"
-                aria-checked={cfg.hatColor === col}
-                onClick={() => setCfg({ hatColor: col })}
+                aria-checked={colorNow === col}
+                onClick={() => setColor(col)}
                 className="pressable h-8 w-8 rounded-full"
-                style={{ background: col, border: `3px solid ${cfg.hatColor === col ? "var(--text)" : "var(--bg)"}` }}
+                style={{ background: col, border: `3px solid ${colorNow === col ? "var(--text)" : "var(--bg)"}` }}
               />
             ))}
           </div>
@@ -181,7 +170,7 @@ export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
               role="radio"
               aria-checked={tile.selected}
               aria-label={tile.locked ? `${tile.label} — ${tile.hint ?? ""}` : tile.label || t("avatar.slot_bg")}
-              onClick={tile.locked ? () => setHint(tile.hint ?? t("avatar.locked_earn")) : tile.apply}
+              onClick={tile.locked ? () => setHint(tile.hint ?? null) : tile.apply}
               className="pressable relative flex flex-col items-center gap-1.5 rounded-panel p-2"
               style={{ background: "var(--surface)", border: `${tile.selected ? 2.5 : 1.5}px solid ${tile.selected ? "var(--color-brand-500)" : tile.rarity ? RARITY[tile.rarity] ?? "var(--border)" : "var(--border)"}` }}
             >

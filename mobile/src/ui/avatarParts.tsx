@@ -7,9 +7,8 @@ import type { AvatarConfig } from "../lib/avatar";
  * Placeholder vektörler; Replicate aşamasında gerçek sanata dönüşecek. Katalog
  * (HATS/GLASSES/MUSTACHES) düzenleme ekranını besler.
  */
-/* `party` KİLİTLİ: davet rozetiyle açılıyor (bkz. lib/avatarUnlocks).
-   Katalogda duruyor çünkü çizilebilmesi gerekiyor — kimin kullanabileceğine
-   sunucu karar veriyor, liste değil. */
+/* `party` KİLİTLİ: davet rozetiyle açılıyor. Kilit tablosu yalnız sunucuda
+   (web `lib/avatar-unlocks`); katalog burada çünkü parçanın çizilebilmesi gerekiyor. */
 export const HATS = ["beanie", "cap", "crown", "party"] as const;
 export const GLASSES = ["round", "square"] as const;
 export const MUSTACHES = ["curl", "thick"] as const;

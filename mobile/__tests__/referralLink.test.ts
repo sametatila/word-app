@@ -1,9 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { parseDeepLink } from "../src/lib/deepLink";
-import { PART_UNLOCKS, isLockedPart, stripLockedParts } from "../src/lib/avatarUnlocks";
 
 /**
- * DAVET BAĞLANTISI — mobil tarafın SESSİZ kırılabilen üç yeri.
+ * DAVET BAĞLANTISI — mobil tarafın SESSİZ kırılabilen iki yeri.
  *
  * NEDEN TEST. Bu zincirin hiçbir halkası kırıldığında hata vermiyor:
  * bağlantı uygulamayı açar ve hiçbir şey olmaz, ya da kilitli aksesuar açık
@@ -19,8 +18,9 @@ import { PART_UNLOCKS, isLockedPart, stripLockedParts } from "../src/lib/avatarU
  *     RN'in `URL`i düzenli ifadeyle çalıştığı için `https://saldirgan.com/
  *     @www.lernomi.app/...` adresinde ana makineyi bizim sanıyor.
  *
- *  3. KAZANILAN AKSESUAR. Kilit listesi web ile aynı olmalı; ayrışırsa bir
- *     platformda kilitli olan ötekinde açık görünür.
+ *
+ * (Davetle kazanılan aksesuarın kilidi artık yalnız sunucuda: web
+ * `lib/avatar-unlocks`, sınaması `check:avatar-unlocks`.)
  */
 jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), apiBase: () => "https://www.lernomi.app", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com" }));
 
@@ -51,16 +51,3 @@ test("yabancı kökenden gelen davet adresi reddediliyor", () => {
   expect(parseDeepLink("http://www.lernomi.app/r/7RE97B")).toBeNull();
 });
 
-test("kazanılan aksesuar kilidi", () => {
-  /* Eşleme web (`lib/avatar-unlocks`) ile birebir — `check:parity` ikisini
-     karşılaştırıyor; burada DAVRANIŞ sınanıyor. */
-  expect(PART_UNLOCKS.party).toBe("invite1");
-  expect(isLockedPart("party")).toBe(true);
-  expect(isLockedPart("beanie")).toBe(false);
-
-  const cfg = { hat: "party", hatColor: "#c0392b", glasses: "round", mustache: null };
-  /* Rozetsiz: yalnız kilitli parça düşüyor, ötekiler duruyor. */
-  expect(stripLockedParts(cfg, new Set<string>())).toEqual({ ...cfg, hat: null });
-  /* Rozetli: dokunulmuyor. */
-  expect(stripLockedParts(cfg, new Set(["invite1"]))).toEqual(cfg);
-});
