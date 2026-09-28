@@ -62,9 +62,11 @@ async function setStreak(id: string, longest: number, current = longest) {
   await db.update(profiles).set({ longestStreak: longest, currentStreak: current }).where(eq(profiles.userId, id));
 }
 
-/** Konuşma adımının konuşması bitirildi (`/api/conversation`in yazdığı satır). */
+/** Konuşma adımının konuşması bitirildi (`/api/conversation`in yazdığı satır).
+    `chatDone: true` şart: hak sayımı Patika ile aynı "bitti" kuralını kullanıyor
+    (2f1aa355); "Şimdilik bırak" ile kalan satır bitirme sayılmıyor. */
 async function finishConversation(id: string, conversationId: string) {
-  await db.insert(userConversations).values({ userId: id, conversationId, ruleId: "r", total: 1 }).onConflictDoNothing();
+  await db.insert(userConversations).values({ userId: id, conversationId, ruleId: "r", total: 1, chatDone: true }).onConflictDoNothing();
 }
 
 async function cleanup() {
