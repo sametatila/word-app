@@ -1,0 +1,2865 @@
+{
+ "boyut": 512,
+ "taban": "taban.webp",
+ "palet": [
+  "#c0392b",
+  "#2d6cdf",
+  "#27ae60",
+  "#8e44ad",
+  "#e67e22",
+  "#2c3e50"
+ ],
+ "sira": {
+  "back": 0,
+  "neck": 1,
+  "face": 2,
+  "mustache": 3,
+  "ear": 4,
+  "glasses": 5,
+  "hat": 6,
+  "bg": -1
+ },
+ "nadirlik": [
+  "common",
+  "rare",
+  "epic",
+  "legendary"
+ ],
+ "parcalar": [
+  {
+   "id": "beanie",
+   "slot": "hat",
+   "ad": "Bere",
+   "adlar": {
+    "tr": "Bere",
+    "en": "Beanie",
+    "de": "Mütze"
+   },
+   "nadir": "common",
+   "ikon": "ikon/beanie.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "beanie__c0392b.webp",
+    "#2d6cdf": "beanie__2d6cdf.webp",
+    "#27ae60": "beanie__27ae60.webp",
+    "#8e44ad": "beanie__8e44ad.webp",
+    "#e67e22": "beanie__e67e22.webp",
+    "#2c3e50": "beanie__2c3e50.webp"
+   }
+  },
+  {
+   "id": "cap",
+   "slot": "hat",
+   "ad": "Kep",
+   "adlar": {
+    "tr": "Kep",
+    "en": "Cap",
+    "de": "Kappe"
+   },
+   "nadir": "common",
+   "ikon": "ikon/cap.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "cap__c0392b.webp",
+    "#2d6cdf": "cap__2d6cdf.webp",
+    "#27ae60": "cap__27ae60.webp",
+    "#8e44ad": "cap__8e44ad.webp",
+    "#e67e22": "cap__e67e22.webp",
+    "#2c3e50": "cap__2c3e50.webp"
+   }
+  },
+  {
+   "id": "crown",
+   "slot": "hat",
+   "ad": "Taç",
+   "adlar": {
+    "tr": "Taç",
+    "en": "Crown",
+    "de": "Krone"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/crown.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "crown.webp"
+   }
+  },
+  {
+   "id": "party",
+   "slot": "hat",
+   "ad": "Parti şapkası",
+   "adlar": {
+    "tr": "Parti şapkası",
+    "en": "Party hat",
+    "de": "Partyhut"
+   },
+   "nadir": "common",
+   "ikon": "ikon/party.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "party__c0392b.webp",
+    "#2d6cdf": "party__2d6cdf.webp",
+    "#27ae60": "party__27ae60.webp",
+    "#8e44ad": "party__8e44ad.webp",
+    "#e67e22": "party__e67e22.webp",
+    "#2c3e50": "party__2c3e50.webp"
+   }
+  },
+  {
+   "id": "tophat",
+   "slot": "hat",
+   "ad": "Silindir şapka",
+   "adlar": {
+    "tr": "Silindir şapka",
+    "en": "Top hat",
+    "de": "Zylinder"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/tophat.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "tophat__c0392b.webp",
+    "#2d6cdf": "tophat__2d6cdf.webp",
+    "#27ae60": "tophat__27ae60.webp",
+    "#8e44ad": "tophat__8e44ad.webp",
+    "#e67e22": "tophat__e67e22.webp",
+    "#2c3e50": "tophat__2c3e50.webp"
+   }
+  },
+  {
+   "id": "grad",
+   "slot": "hat",
+   "ad": "Mezuniyet kepi",
+   "adlar": {
+    "tr": "Mezuniyet kepi",
+    "en": "Graduation cap",
+    "de": "Doktorhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/grad.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "grad.webp"
+   }
+  },
+  {
+   "id": "fez",
+   "slot": "hat",
+   "ad": "Fes",
+   "adlar": {
+    "tr": "Fes",
+    "en": "Fez",
+    "de": "Fes"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/fez.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "fez.webp"
+   }
+  },
+  {
+   "id": "cowboy",
+   "slot": "hat",
+   "ad": "Kovboy şapkası",
+   "adlar": {
+    "tr": "Kovboy şapkası",
+    "en": "Cowboy hat",
+    "de": "Cowboyhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/cowboy.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "cowboy.webp"
+   }
+  },
+  {
+   "id": "beret",
+   "slot": "hat",
+   "ad": "Fransız beresi",
+   "adlar": {
+    "tr": "Fransız beresi",
+    "en": "Beret",
+    "de": "Baskenmütze"
+   },
+   "nadir": "common",
+   "ikon": "ikon/beret.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "beret__c0392b.webp",
+    "#2d6cdf": "beret__2d6cdf.webp",
+    "#27ae60": "beret__27ae60.webp",
+    "#8e44ad": "beret__8e44ad.webp",
+    "#e67e22": "beret__e67e22.webp",
+    "#2c3e50": "beret__2c3e50.webp"
+   }
+  },
+  {
+   "id": "wizard",
+   "slot": "hat",
+   "ad": "Büyücü şapkası",
+   "adlar": {
+    "tr": "Büyücü şapkası",
+    "en": "Wizard hat",
+    "de": "Zauberhut"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/wizard.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "wizard__c0392b.webp",
+    "#2d6cdf": "wizard__2d6cdf.webp",
+    "#27ae60": "wizard__27ae60.webp",
+    "#8e44ad": "wizard__8e44ad.webp",
+    "#e67e22": "wizard__e67e22.webp",
+    "#2c3e50": "wizard__2c3e50.webp"
+   }
+  },
+  {
+   "id": "santa",
+   "slot": "hat",
+   "ad": "Noel Baba şapkası",
+   "adlar": {
+    "tr": "Noel Baba şapkası",
+    "en": "Santa hat",
+    "de": "Weihnachtsmütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/santa.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "santa.webp"
+   }
+  },
+  {
+   "id": "viking",
+   "slot": "hat",
+   "ad": "Viking kaskı",
+   "adlar": {
+    "tr": "Viking kaskı",
+    "en": "Viking helmet",
+    "de": "Wikingerhelm"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/viking.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "viking.webp"
+   }
+  },
+  {
+   "id": "flower",
+   "slot": "hat",
+   "ad": "Çiçek tacı",
+   "adlar": {
+    "tr": "Çiçek tacı",
+    "en": "Flower crown",
+    "de": "Blumenkranz"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/flower.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "flower.webp"
+   }
+  },
+  {
+   "id": "chef",
+   "slot": "hat",
+   "ad": "Aşçı şapkası",
+   "adlar": {
+    "tr": "Aşçı şapkası",
+    "en": "Chef hat",
+    "de": "Kochmütze"
+   },
+   "nadir": "common",
+   "ikon": "ikon/chef.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "chef.webp"
+   }
+  },
+  {
+   "id": "bucket",
+   "slot": "hat",
+   "ad": "Balıkçı şapkası",
+   "adlar": {
+    "tr": "Balıkçı şapkası",
+    "en": "Bucket hat",
+    "de": "Fischerhut"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bucket.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "bucket__c0392b.webp",
+    "#2d6cdf": "bucket__2d6cdf.webp",
+    "#27ae60": "bucket__27ae60.webp",
+    "#8e44ad": "bucket__8e44ad.webp",
+    "#e67e22": "bucket__e67e22.webp",
+    "#2c3e50": "bucket__2c3e50.webp"
+   }
+  },
+  {
+   "id": "headphones",
+   "slot": "hat",
+   "ad": "Kulaklık",
+   "adlar": {
+    "tr": "Kulaklık",
+    "en": "Headphones",
+    "de": "Kopfhörer"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/headphones.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "headphones__c0392b.webp",
+    "#2d6cdf": "headphones__2d6cdf.webp",
+    "#27ae60": "headphones__27ae60.webp",
+    "#8e44ad": "headphones__8e44ad.webp",
+    "#e67e22": "headphones__e67e22.webp",
+    "#2c3e50": "headphones__2c3e50.webp"
+   }
+  },
+  {
+   "id": "bow",
+   "slot": "hat",
+   "ad": "Fiyonk",
+   "adlar": {
+    "tr": "Fiyonk",
+    "en": "Hair bow",
+    "de": "Haarschleife"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bow.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "bow__c0392b.webp",
+    "#2d6cdf": "bow__2d6cdf.webp",
+    "#27ae60": "bow__27ae60.webp",
+    "#8e44ad": "bow__8e44ad.webp",
+    "#e67e22": "bow__e67e22.webp",
+    "#2c3e50": "bow__2c3e50.webp"
+   }
+  },
+  {
+   "id": "pirate",
+   "slot": "hat",
+   "ad": "Korsan şapkası",
+   "adlar": {
+    "tr": "Korsan şapkası",
+    "en": "Pirate hat",
+    "de": "Piratenhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/pirate.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pirate.webp"
+   }
+  },
+  {
+   "id": "snapback",
+   "slot": "hat",
+   "ad": "Snapback",
+   "adlar": {
+    "tr": "Snapback",
+    "en": "Snapback",
+    "de": "Snapback-Kappe"
+   },
+   "nadir": "common",
+   "ikon": "ikon/snapback.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "snapback__c0392b.webp",
+    "#2d6cdf": "snapback__2d6cdf.webp",
+    "#27ae60": "snapback__27ae60.webp",
+    "#8e44ad": "snapback__8e44ad.webp",
+    "#e67e22": "snapback__e67e22.webp",
+    "#2c3e50": "snapback__2c3e50.webp"
+   }
+  },
+  {
+   "id": "visor",
+   "slot": "hat",
+   "ad": "Güneşlik",
+   "adlar": {
+    "tr": "Güneşlik",
+    "en": "Sun visor",
+    "de": "Sonnenblende"
+   },
+   "nadir": "common",
+   "ikon": "ikon/visor.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "visor__c0392b.webp",
+    "#2d6cdf": "visor__2d6cdf.webp",
+    "#27ae60": "visor__27ae60.webp",
+    "#8e44ad": "visor__8e44ad.webp",
+    "#e67e22": "visor__e67e22.webp",
+    "#2c3e50": "visor__2c3e50.webp"
+   }
+  },
+  {
+   "id": "sweatband",
+   "slot": "hat",
+   "ad": "Ter bandı",
+   "adlar": {
+    "tr": "Ter bandı",
+    "en": "Sweatband",
+    "de": "Stirnband"
+   },
+   "nadir": "common",
+   "ikon": "ikon/sweatband.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "sweatband__c0392b.webp",
+    "#2d6cdf": "sweatband__2d6cdf.webp",
+    "#27ae60": "sweatband__27ae60.webp",
+    "#8e44ad": "sweatband__8e44ad.webp",
+    "#e67e22": "sweatband__e67e22.webp",
+    "#2c3e50": "sweatband__2c3e50.webp"
+   }
+  },
+  {
+   "id": "sailor",
+   "slot": "hat",
+   "ad": "Denizci şapkası",
+   "adlar": {
+    "tr": "Denizci şapkası",
+    "en": "Sailor cap",
+    "de": "Matrosenmütze"
+   },
+   "nadir": "common",
+   "ikon": "ikon/sailor.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "sailor.webp"
+   }
+  },
+  {
+   "id": "papercrown",
+   "slot": "hat",
+   "ad": "Kâğıt taç",
+   "adlar": {
+    "tr": "Kâğıt taç",
+    "en": "Paper crown",
+    "de": "Papierkrone"
+   },
+   "nadir": "common",
+   "ikon": "ikon/papercrown.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "papercrown__c0392b.webp",
+    "#2d6cdf": "papercrown__2d6cdf.webp",
+    "#27ae60": "papercrown__27ae60.webp",
+    "#8e44ad": "papercrown__8e44ad.webp",
+    "#e67e22": "papercrown__e67e22.webp",
+    "#2c3e50": "papercrown__2c3e50.webp"
+   }
+  },
+  {
+   "id": "catears",
+   "slot": "hat",
+   "ad": "Kedi kulakları",
+   "adlar": {
+    "tr": "Kedi kulakları",
+    "en": "Cat ears",
+    "de": "Katzenohren"
+   },
+   "nadir": "common",
+   "ikon": "ikon/catears.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "catears__c0392b.webp",
+    "#2d6cdf": "catears__2d6cdf.webp",
+    "#27ae60": "catears__27ae60.webp",
+    "#8e44ad": "catears__8e44ad.webp",
+    "#e67e22": "catears__e67e22.webp",
+    "#2c3e50": "catears__2c3e50.webp"
+   }
+  },
+  {
+   "id": "bearears",
+   "slot": "hat",
+   "ad": "Ayı kulakları",
+   "adlar": {
+    "tr": "Ayı kulakları",
+    "en": "Bear ears",
+    "de": "Bärenohren"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bearears.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bearears.webp"
+   }
+  },
+  {
+   "id": "bunnyears",
+   "slot": "hat",
+   "ad": "Tavşan kulakları",
+   "adlar": {
+    "tr": "Tavşan kulakları",
+    "en": "Bunny ears",
+    "de": "Hasenohren"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bunnyears.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bunnyears.webp"
+   }
+  },
+  {
+   "id": "chullo",
+   "slot": "hat",
+   "ad": "Kulaklı bere",
+   "adlar": {
+    "tr": "Kulaklı bere",
+    "en": "Chullo",
+    "de": "Inkamütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/chullo.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "chullo__c0392b.webp",
+    "#2d6cdf": "chullo__2d6cdf.webp",
+    "#27ae60": "chullo__27ae60.webp",
+    "#8e44ad": "chullo__8e44ad.webp",
+    "#e67e22": "chullo__e67e22.webp",
+    "#2c3e50": "chullo__2c3e50.webp"
+   }
+  },
+  {
+   "id": "fedora",
+   "slot": "hat",
+   "ad": "Fötr şapka",
+   "adlar": {
+    "tr": "Fötr şapka",
+    "en": "Fedora",
+    "de": "Fedora"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/fedora.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "fedora__c0392b.webp",
+    "#2d6cdf": "fedora__2d6cdf.webp",
+    "#27ae60": "fedora__27ae60.webp",
+    "#8e44ad": "fedora__8e44ad.webp",
+    "#e67e22": "fedora__e67e22.webp",
+    "#2c3e50": "fedora__2c3e50.webp"
+   }
+  },
+  {
+   "id": "bowler",
+   "slot": "hat",
+   "ad": "Melon şapka",
+   "adlar": {
+    "tr": "Melon şapka",
+    "en": "Bowler hat",
+    "de": "Melone"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bowler.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bowler.webp"
+   }
+  },
+  {
+   "id": "boater",
+   "slot": "hat",
+   "ad": "Hasır şapka",
+   "adlar": {
+    "tr": "Hasır şapka",
+    "en": "Straw boater",
+    "de": "Kreissäge"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/boater.webp",
+   "sira": 6,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "boater__c0392b.webp",
+    "#2d6cdf": "boater__2d6cdf.webp",
+    "#27ae60": "boater__27ae60.webp",
+    "#8e44ad": "boater__8e44ad.webp",
+    "#e67e22": "boater__e67e22.webp",
+    "#2c3e50": "boater__2c3e50.webp"
+   }
+  },
+  {
+   "id": "sombrero",
+   "slot": "hat",
+   "ad": "Sombrero",
+   "adlar": {
+    "tr": "Sombrero",
+    "en": "Sombrero",
+    "de": "Sombrero"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/sombrero.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "sombrero.webp"
+   }
+  },
+  {
+   "id": "deerstalker",
+   "slot": "hat",
+   "ad": "Dedektif şapkası",
+   "adlar": {
+    "tr": "Dedektif şapkası",
+    "en": "Deerstalker",
+    "de": "Jägermütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/deerstalker.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "deerstalker.webp"
+   }
+  },
+  {
+   "id": "safari",
+   "slot": "hat",
+   "ad": "Safari kaskı",
+   "adlar": {
+    "tr": "Safari kaskı",
+    "en": "Safari helmet",
+    "de": "Tropenhelm"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/safari.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "safari.webp"
+   }
+  },
+  {
+   "id": "mushroom",
+   "slot": "hat",
+   "ad": "Mantar şapka",
+   "adlar": {
+    "tr": "Mantar şapka",
+    "en": "Mushroom cap",
+    "de": "Pilzhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/mushroom.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "mushroom.webp"
+   }
+  },
+  {
+   "id": "propeller",
+   "slot": "hat",
+   "ad": "Pervaneli şapka",
+   "adlar": {
+    "tr": "Pervaneli şapka",
+    "en": "Propeller beanie",
+    "de": "Propellermütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/propeller.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "propeller.webp"
+   }
+  },
+  {
+   "id": "witch",
+   "slot": "hat",
+   "ad": "Cadı şapkası",
+   "adlar": {
+    "tr": "Cadı şapkası",
+    "en": "Witch hat",
+    "de": "Hexenhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/witch.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "witch.webp"
+   }
+  },
+  {
+   "id": "devil",
+   "slot": "hat",
+   "ad": "Şeytan boynuzları",
+   "adlar": {
+    "tr": "Şeytan boynuzları",
+    "en": "Devil horns",
+    "de": "Teufelshörner"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/devil.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "devil.webp"
+   }
+  },
+  {
+   "id": "captain",
+   "slot": "hat",
+   "ad": "Kaptan şapkası",
+   "adlar": {
+    "tr": "Kaptan şapkası",
+    "en": "Captain hat",
+    "de": "Kapitänsmütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/captain.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "captain.webp"
+   }
+  },
+  {
+   "id": "ushanka",
+   "slot": "hat",
+   "ad": "Kürk şapka",
+   "adlar": {
+    "tr": "Kürk şapka",
+    "en": "Fur hat",
+    "de": "Fellmütze"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/ushanka.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "ushanka.webp"
+   }
+  },
+  {
+   "id": "jester",
+   "slot": "hat",
+   "ad": "Soytarı külahı",
+   "adlar": {
+    "tr": "Soytarı külahı",
+    "en": "Jester hat",
+    "de": "Narrenkappe"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/jester.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "jester.webp"
+   }
+  },
+  {
+   "id": "unicorn",
+   "slot": "hat",
+   "ad": "Tek boynuz tacı",
+   "adlar": {
+    "tr": "Tek boynuz tacı",
+    "en": "Unicorn headband",
+    "de": "Einhorn-Haarreif"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/unicorn.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "unicorn.webp"
+   }
+  },
+  {
+   "id": "tiara",
+   "slot": "hat",
+   "ad": "Tiara",
+   "adlar": {
+    "tr": "Tiara",
+    "en": "Tiara",
+    "de": "Diadem"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/tiara.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "tiara.webp"
+   }
+  },
+  {
+   "id": "laurel",
+   "slot": "hat",
+   "ad": "Defne tacı",
+   "adlar": {
+    "tr": "Defne tacı",
+    "en": "Golden laurel",
+    "de": "Goldener Lorbeer"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/laurel.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "laurel.webp"
+   }
+  },
+  {
+   "id": "halo",
+   "slot": "hat",
+   "ad": "Hale",
+   "adlar": {
+    "tr": "Hale",
+    "en": "Halo",
+    "de": "Heiligenschein"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/halo.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "halo.webp"
+   }
+  },
+  {
+   "id": "icecrown",
+   "slot": "hat",
+   "ad": "Buz tacı",
+   "adlar": {
+    "tr": "Buz tacı",
+    "en": "Ice crown",
+    "de": "Eiskrone"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/icecrown.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "icecrown.webp"
+   }
+  },
+  {
+   "id": "emperor",
+   "slot": "hat",
+   "ad": "İmparator tacı",
+   "adlar": {
+    "tr": "İmparator tacı",
+    "en": "Imperial crown",
+    "de": "Kaiserkrone"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/emperor.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "emperor.webp"
+   }
+  },
+  {
+   "id": "flamecrown",
+   "slot": "hat",
+   "ad": "Alev tacı",
+   "adlar": {
+    "tr": "Alev tacı",
+    "en": "Flame crown",
+    "de": "Flammenkrone"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/flamecrown.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "flamecrown.webp"
+   }
+  },
+  {
+   "id": "astronaut",
+   "slot": "hat",
+   "ad": "Astronot kaskı",
+   "adlar": {
+    "tr": "Astronot kaskı",
+    "en": "Astronaut helmet",
+    "de": "Astronautenhelm"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/astronaut.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "astronaut.webp"
+   }
+  },
+  {
+   "id": "galaxywizard",
+   "slot": "hat",
+   "ad": "Galaksi büyücüsü",
+   "adlar": {
+    "tr": "Galaksi büyücüsü",
+    "en": "Galaxy wizard hat",
+    "de": "Galaxie-Zauberhut"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/galaxywizard.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "galaxywizard.webp"
+   }
+  },
+  {
+   "id": "round",
+   "slot": "glasses",
+   "ad": "Yuvarlak gözlük",
+   "adlar": {
+    "tr": "Yuvarlak gözlük",
+    "en": "Round glasses",
+    "de": "Runde Brille"
+   },
+   "nadir": "common",
+   "ikon": "ikon/round.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "round.webp"
+   }
+  },
+  {
+   "id": "square",
+   "slot": "glasses",
+   "ad": "Kare gözlük",
+   "adlar": {
+    "tr": "Kare gözlük",
+    "en": "Square glasses",
+    "de": "Eckige Brille"
+   },
+   "nadir": "common",
+   "ikon": "ikon/square.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "square.webp"
+   }
+  },
+  {
+   "id": "nerd",
+   "slot": "glasses",
+   "ad": "Kalın çerçeve",
+   "adlar": {
+    "tr": "Kalın çerçeve",
+    "en": "Bold frames",
+    "de": "Hornbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/nerd.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "nerd.webp"
+   }
+  },
+  {
+   "id": "aviator",
+   "slot": "glasses",
+   "ad": "Pilot gözlüğü",
+   "adlar": {
+    "tr": "Pilot gözlüğü",
+    "en": "Aviators",
+    "de": "Pilotenbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/aviator.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "aviator.webp"
+   }
+  },
+  {
+   "id": "heart",
+   "slot": "glasses",
+   "ad": "Kalp gözlük",
+   "adlar": {
+    "tr": "Kalp gözlük",
+    "en": "Heart glasses",
+    "de": "Herzbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/heart.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "heart.webp"
+   }
+  },
+  {
+   "id": "star",
+   "slot": "glasses",
+   "ad": "Yıldız gözlük",
+   "adlar": {
+    "tr": "Yıldız gözlük",
+    "en": "Star glasses",
+    "de": "Sternbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/star.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "star.webp"
+   }
+  },
+  {
+   "id": "monocle",
+   "slot": "glasses",
+   "ad": "Tek gözlük",
+   "adlar": {
+    "tr": "Tek gözlük",
+    "en": "Monocle",
+    "de": "Monokel"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/monocle.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "monocle.webp"
+   }
+  },
+  {
+   "id": "cateye",
+   "slot": "glasses",
+   "ad": "Kedi göz gözlük",
+   "adlar": {
+    "tr": "Kedi göz gözlük",
+    "en": "Cat-eye glasses",
+    "de": "Katzenaugenbrille"
+   },
+   "nadir": "common",
+   "ikon": "ikon/cateye.webp",
+   "sira": 5,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "cateye__c0392b.webp",
+    "#2d6cdf": "cateye__2d6cdf.webp",
+    "#27ae60": "cateye__27ae60.webp",
+    "#8e44ad": "cateye__8e44ad.webp",
+    "#e67e22": "cateye__e67e22.webp",
+    "#2c3e50": "cateye__2c3e50.webp"
+   }
+  },
+  {
+   "id": "roundsun",
+   "slot": "glasses",
+   "ad": "Renkli güneş gözlüğü",
+   "adlar": {
+    "tr": "Renkli güneş gözlüğü",
+    "en": "Tinted round shades",
+    "de": "Getönte Rundbrille"
+   },
+   "nadir": "common",
+   "ikon": "ikon/roundsun.webp",
+   "sira": 5,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "roundsun__c0392b.webp",
+    "#2d6cdf": "roundsun__2d6cdf.webp",
+    "#27ae60": "roundsun__27ae60.webp",
+    "#8e44ad": "roundsun__8e44ad.webp",
+    "#e67e22": "roundsun__e67e22.webp",
+    "#2c3e50": "roundsun__2c3e50.webp"
+   }
+  },
+  {
+   "id": "sport",
+   "slot": "glasses",
+   "ad": "Spor gözlük",
+   "adlar": {
+    "tr": "Spor gözlük",
+    "en": "Sport shades",
+    "de": "Sportbrille"
+   },
+   "nadir": "common",
+   "ikon": "ikon/sport.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "sport.webp"
+   }
+  },
+  {
+   "id": "glasses3d",
+   "slot": "glasses",
+   "ad": "3B gözlük",
+   "adlar": {
+    "tr": "3B gözlük",
+    "en": "3D glasses",
+    "de": "3D-Brille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/glasses3d.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "glasses3d.webp"
+   }
+  },
+  {
+   "id": "swim",
+   "slot": "glasses",
+   "ad": "Yüzücü gözlüğü",
+   "adlar": {
+    "tr": "Yüzücü gözlüğü",
+    "en": "Swim goggles",
+    "de": "Schwimmbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/swim.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "swim.webp"
+   }
+  },
+  {
+   "id": "ski",
+   "slot": "glasses",
+   "ad": "Kayak gözlüğü",
+   "adlar": {
+    "tr": "Kayak gözlüğü",
+    "en": "Ski goggles",
+    "de": "Skibrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/ski.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "ski.webp"
+   }
+  },
+  {
+   "id": "pixel",
+   "slot": "glasses",
+   "ad": "Piksel gözlük",
+   "adlar": {
+    "tr": "Piksel gözlük",
+    "en": "Pixel shades",
+    "de": "Pixelbrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/pixel.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pixel.webp"
+   }
+  },
+  {
+   "id": "eyepatch",
+   "slot": "glasses",
+   "ad": "Göz bandı",
+   "adlar": {
+    "tr": "Göz bandı",
+    "en": "Eye patch",
+    "de": "Augenklappe"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/eyepatch.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "eyepatch.webp"
+   }
+  },
+  {
+   "id": "steampunk",
+   "slot": "glasses",
+   "ad": "Steampunk gözlük",
+   "adlar": {
+    "tr": "Steampunk gözlük",
+    "en": "Steampunk goggles",
+    "de": "Steampunk-Brille"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/steampunk.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "steampunk.webp"
+   }
+  },
+  {
+   "id": "heromask",
+   "slot": "glasses",
+   "ad": "Kahraman maskesi",
+   "adlar": {
+    "tr": "Kahraman maskesi",
+    "en": "Hero mask",
+    "de": "Heldenmaske"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/heromask.webp",
+   "sira": 5,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "heromask__c0392b.webp",
+    "#2d6cdf": "heromask__2d6cdf.webp",
+    "#27ae60": "heromask__27ae60.webp",
+    "#8e44ad": "heromask__8e44ad.webp",
+    "#e67e22": "heromask__e67e22.webp",
+    "#2c3e50": "heromask__2c3e50.webp"
+   }
+  },
+  {
+   "id": "goldheart",
+   "slot": "glasses",
+   "ad": "Altın kalp gözlük",
+   "adlar": {
+    "tr": "Altın kalp gözlük",
+    "en": "Golden heart glasses",
+    "de": "Goldene Herzbrille"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/goldheart.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "goldheart.webp"
+   }
+  },
+  {
+   "id": "cybervisor",
+   "slot": "glasses",
+   "ad": "Siber vizör",
+   "adlar": {
+    "tr": "Siber vizör",
+    "en": "Cyber visor",
+    "de": "Cyber-Visier"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/cybervisor.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "cybervisor.webp"
+   }
+  },
+  {
+   "id": "diamondshades",
+   "slot": "glasses",
+   "ad": "Elmas gözlük",
+   "adlar": {
+    "tr": "Elmas gözlük",
+    "en": "Diamond shades",
+    "de": "Diamantbrille"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/diamondshades.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "diamondshades.webp"
+   }
+  },
+  {
+   "id": "curl",
+   "slot": "mustache",
+   "ad": "Kıvrık bıyık",
+   "adlar": {
+    "tr": "Kıvrık bıyık",
+    "en": "Curly mustache",
+    "de": "Zwirbelbart"
+   },
+   "nadir": "common",
+   "ikon": "ikon/curl.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "curl.webp"
+   }
+  },
+  {
+   "id": "thick",
+   "slot": "mustache",
+   "ad": "Kalın bıyık",
+   "adlar": {
+    "tr": "Kalın bıyık",
+    "en": "Chevron mustache",
+    "de": "Schnauzbart"
+   },
+   "nadir": "common",
+   "ikon": "ikon/thick.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "thick.webp"
+   }
+  },
+  {
+   "id": "handlebar",
+   "slot": "mustache",
+   "ad": "Gidon bıyık",
+   "adlar": {
+    "tr": "Gidon bıyık",
+    "en": "Handlebar mustache",
+    "de": "Lenkerbart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/handlebar.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "handlebar.webp"
+   }
+  },
+  {
+   "id": "pencil",
+   "slot": "mustache",
+   "ad": "Kalem bıyık",
+   "adlar": {
+    "tr": "Kalem bıyık",
+    "en": "Pencil mustache",
+    "de": "Oberlippenbärtchen"
+   },
+   "nadir": "common",
+   "ikon": "ikon/pencil.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pencil.webp"
+   }
+  },
+  {
+   "id": "walrus",
+   "slot": "mustache",
+   "ad": "Fırça bıyık",
+   "adlar": {
+    "tr": "Fırça bıyık",
+    "en": "Walrus mustache",
+    "de": "Walrossbart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/walrus.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "walrus.webp"
+   }
+  },
+  {
+   "id": "horseshoe",
+   "slot": "mustache",
+   "ad": "Nal bıyık",
+   "adlar": {
+    "tr": "Nal bıyık",
+    "en": "Horseshoe mustache",
+    "de": "Hufeisenbart"
+   },
+   "nadir": "common",
+   "ikon": "ikon/horseshoe.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "horseshoe.webp"
+   }
+  },
+  {
+   "id": "fumanchu",
+   "slot": "mustache",
+   "ad": "Sarkık uzun bıyık",
+   "adlar": {
+    "tr": "Sarkık uzun bıyık",
+    "en": "Long drooping mustache",
+    "de": "Langer Hängebart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/fumanchu.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "fumanchu.webp"
+   }
+  },
+  {
+   "id": "dali",
+   "slot": "mustache",
+   "ad": "Sivri kalkık bıyık",
+   "adlar": {
+    "tr": "Sivri kalkık bıyık",
+    "en": "Upturned mustache",
+    "de": "Gezwirbelter Bart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/dali.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "dali.webp"
+   }
+  },
+  {
+   "id": "ginger",
+   "slot": "mustache",
+   "ad": "Kızıl kıvrık bıyık",
+   "adlar": {
+    "tr": "Kızıl kıvrık bıyık",
+    "en": "Ginger curl mustache",
+    "de": "Roter Zwirbelbart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/ginger.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "ginger.webp"
+   }
+  },
+  {
+   "id": "goldstache",
+   "slot": "mustache",
+   "ad": "Altın bıyık",
+   "adlar": {
+    "tr": "Altın bıyık",
+    "en": "Golden mustache",
+    "de": "Goldener Schnurrbart"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/goldstache.webp",
+   "sira": 3,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "goldstache.webp"
+   }
+  },
+  {
+   "id": "bowtie",
+   "slot": "neck",
+   "ad": "Papyon",
+   "adlar": {
+    "tr": "Papyon",
+    "en": "Bow tie",
+    "de": "Fliege"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bowtie.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "bowtie__c0392b.webp",
+    "#2d6cdf": "bowtie__2d6cdf.webp",
+    "#27ae60": "bowtie__27ae60.webp",
+    "#8e44ad": "bowtie__8e44ad.webp",
+    "#e67e22": "bowtie__e67e22.webp",
+    "#2c3e50": "bowtie__2c3e50.webp"
+   }
+  },
+  {
+   "id": "tie",
+   "slot": "neck",
+   "ad": "Kravat",
+   "adlar": {
+    "tr": "Kravat",
+    "en": "Necktie",
+    "de": "Krawatte"
+   },
+   "nadir": "common",
+   "ikon": "ikon/tie.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "tie__c0392b.webp",
+    "#2d6cdf": "tie__2d6cdf.webp",
+    "#27ae60": "tie__27ae60.webp",
+    "#8e44ad": "tie__8e44ad.webp",
+    "#e67e22": "tie__e67e22.webp",
+    "#2c3e50": "tie__2c3e50.webp"
+   }
+  },
+  {
+   "id": "scarf",
+   "slot": "neck",
+   "ad": "Atkı",
+   "adlar": {
+    "tr": "Atkı",
+    "en": "Scarf",
+    "de": "Schal"
+   },
+   "nadir": "common",
+   "ikon": "ikon/scarf.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "scarf__c0392b.webp",
+    "#2d6cdf": "scarf__2d6cdf.webp",
+    "#27ae60": "scarf__27ae60.webp",
+    "#8e44ad": "scarf__8e44ad.webp",
+    "#e67e22": "scarf__e67e22.webp",
+    "#2c3e50": "scarf__2c3e50.webp"
+   }
+  },
+  {
+   "id": "medal",
+   "slot": "neck",
+   "ad": "Madalya",
+   "adlar": {
+    "tr": "Madalya",
+    "en": "Medal",
+    "de": "Medaille"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/medal.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "medal.webp"
+   }
+  },
+  {
+   "id": "bandana",
+   "slot": "neck",
+   "ad": "Fular",
+   "adlar": {
+    "tr": "Fular",
+    "en": "Bandana",
+    "de": "Halstuch"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bandana.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "bandana__c0392b.webp",
+    "#2d6cdf": "bandana__2d6cdf.webp",
+    "#27ae60": "bandana__27ae60.webp",
+    "#8e44ad": "bandana__8e44ad.webp",
+    "#e67e22": "bandana__e67e22.webp",
+    "#2c3e50": "bandana__2c3e50.webp"
+   }
+  },
+  {
+   "id": "pearls",
+   "slot": "neck",
+   "ad": "İnci kolye",
+   "adlar": {
+    "tr": "İnci kolye",
+    "en": "Pearl necklace",
+    "de": "Perlenkette"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/pearls.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pearls.webp"
+   }
+  },
+  {
+   "id": "lei",
+   "slot": "neck",
+   "ad": "Çiçek kolye",
+   "adlar": {
+    "tr": "Çiçek kolye",
+    "en": "Flower lei",
+    "de": "Blumenkette"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/lei.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "lei.webp"
+   }
+  },
+  {
+   "id": "goldchain",
+   "slot": "neck",
+   "ad": "Altın zincir",
+   "adlar": {
+    "tr": "Altın zincir",
+    "en": "Gold chain",
+    "de": "Goldkette"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/goldchain.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "goldchain.webp"
+   }
+  },
+  {
+   "id": "stethoscope",
+   "slot": "neck",
+   "ad": "Stetoskop",
+   "adlar": {
+    "tr": "Stetoskop",
+    "en": "Stethoscope",
+    "de": "Stethoskop"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/stethoscope.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "stethoscope.webp"
+   }
+  },
+  {
+   "id": "ruff",
+   "slot": "neck",
+   "ad": "Fırfırlı yaka",
+   "adlar": {
+    "tr": "Fırfırlı yaka",
+    "en": "Ruff collar",
+    "de": "Halskrause"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/ruff.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "ruff.webp"
+   }
+  },
+  {
+   "id": "bellcollar",
+   "slot": "neck",
+   "ad": "Çıngıraklı tasma",
+   "adlar": {
+    "tr": "Çıngıraklı tasma",
+    "en": "Bell collar",
+    "de": "Glöckchenhalsband"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bellcollar.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "bellcollar__c0392b.webp",
+    "#2d6cdf": "bellcollar__2d6cdf.webp",
+    "#27ae60": "bellcollar__27ae60.webp",
+    "#8e44ad": "bellcollar__8e44ad.webp",
+    "#e67e22": "bellcollar__e67e22.webp",
+    "#2c3e50": "bellcollar__2c3e50.webp"
+   }
+  },
+  {
+   "id": "locket",
+   "slot": "neck",
+   "ad": "Madalyon",
+   "adlar": {
+    "tr": "Madalyon",
+    "en": "Heart locket",
+    "de": "Herzmedaillon"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/locket.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "locket.webp"
+   }
+  },
+  {
+   "id": "boa",
+   "slot": "neck",
+   "ad": "Tüy boa",
+   "adlar": {
+    "tr": "Tüy boa",
+    "en": "Feather boa",
+    "de": "Federboa"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/boa.webp",
+   "sira": 1,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "boa__c0392b.webp",
+    "#2d6cdf": "boa__2d6cdf.webp",
+    "#27ae60": "boa__27ae60.webp",
+    "#8e44ad": "boa__8e44ad.webp",
+    "#e67e22": "boa__e67e22.webp",
+    "#2c3e50": "boa__2c3e50.webp"
+   }
+  },
+  {
+   "id": "diamondnecklace",
+   "slot": "neck",
+   "ad": "Pırlanta gerdanlık",
+   "adlar": {
+    "tr": "Pırlanta gerdanlık",
+    "en": "Diamond necklace",
+    "de": "Diamantcollier"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/diamondnecklace.webp",
+   "sira": 1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "diamondnecklace.webp"
+   }
+  },
+  {
+   "id": "blush",
+   "slot": "face",
+   "ad": "Yanak allığı",
+   "adlar": {
+    "tr": "Yanak allığı",
+    "en": "Blush",
+    "de": "Rouge"
+   },
+   "nadir": "common",
+   "ikon": "ikon/blush.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "blush.webp"
+   }
+  },
+  {
+   "id": "freckles",
+   "slot": "face",
+   "ad": "Çiller",
+   "adlar": {
+    "tr": "Çiller",
+    "en": "Freckles",
+    "de": "Sommersprossen"
+   },
+   "nadir": "common",
+   "ikon": "ikon/freckles.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "freckles.webp"
+   }
+  },
+  {
+   "id": "bandaid",
+   "slot": "face",
+   "ad": "Yara bandı",
+   "adlar": {
+    "tr": "Yara bandı",
+    "en": "Bandage",
+    "de": "Pflaster"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bandaid.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bandaid.webp"
+   }
+  },
+  {
+   "id": "goatee",
+   "slot": "face",
+   "ad": "Keçi sakalı",
+   "adlar": {
+    "tr": "Keçi sakalı",
+    "en": "Goatee",
+    "de": "Ziegenbart"
+   },
+   "nadir": "common",
+   "ikon": "ikon/goatee.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "goatee.webp"
+   }
+  },
+  {
+   "id": "beard",
+   "slot": "face",
+   "ad": "Gür sakal",
+   "adlar": {
+    "tr": "Gür sakal",
+    "en": "Full beard",
+    "de": "Vollbart"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/beard.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "beard.webp"
+   }
+  },
+  {
+   "id": "clownnose",
+   "slot": "face",
+   "ad": "Palyaço burnu",
+   "adlar": {
+    "tr": "Palyaço burnu",
+    "en": "Clown nose",
+    "de": "Clownsnase"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/clownnose.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "clownnose.webp"
+   }
+  },
+  {
+   "id": "fangs",
+   "slot": "face",
+   "ad": "Vampir dişleri",
+   "adlar": {
+    "tr": "Vampir dişleri",
+    "en": "Vampire fangs",
+    "de": "Vampirzähne"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/fangs.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "fangs.webp"
+   }
+  },
+  {
+   "id": "lollipop",
+   "slot": "face",
+   "ad": "Lolipop",
+   "adlar": {
+    "tr": "Lolipop",
+    "en": "Lollipop",
+    "de": "Lutscher"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/lollipop.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "lollipop.webp"
+   }
+  },
+  {
+   "id": "starsticker",
+   "slot": "face",
+   "ad": "Parıltılı yıldız",
+   "adlar": {
+    "tr": "Parıltılı yıldız",
+    "en": "Glitter star",
+    "de": "Glitzerstern"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/starsticker.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "starsticker.webp"
+   }
+  },
+  {
+   "id": "heartcheeks",
+   "slot": "face",
+   "ad": "Kalp çıkartmaları",
+   "adlar": {
+    "tr": "Kalp çıkartmaları",
+    "en": "Heart stickers",
+    "de": "Herzsticker"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/heartcheeks.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "heartcheeks.webp"
+   }
+  },
+  {
+   "id": "warpaint",
+   "slot": "face",
+   "ad": "Savaş boyası",
+   "adlar": {
+    "tr": "Savaş boyası",
+    "en": "War paint",
+    "de": "Kriegsbemalung"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/warpaint.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "warpaint.webp"
+   }
+  },
+  {
+   "id": "facegems",
+   "slot": "face",
+   "ad": "Elmas yanak taşları",
+   "adlar": {
+    "tr": "Elmas yanak taşları",
+    "en": "Diamond face gems",
+    "de": "Diamant-Gesichtssteine"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/facegems.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "facegems.webp"
+   }
+  },
+  {
+   "id": "neonlines",
+   "slot": "face",
+   "ad": "Neon yüz çizgileri",
+   "adlar": {
+    "tr": "Neon yüz çizgileri",
+    "en": "Neon face lines",
+    "de": "Neon-Gesichtslinien"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/neonlines.webp",
+   "sira": 2,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "neonlines.webp"
+   }
+  },
+  {
+   "id": "hoops",
+   "slot": "ear",
+   "ad": "Halka küpe",
+   "adlar": {
+    "tr": "Halka küpe",
+    "en": "Gold hoops",
+    "de": "Goldcreolen"
+   },
+   "nadir": "common",
+   "ikon": "ikon/hoops.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "hoops.webp"
+   }
+  },
+  {
+   "id": "studs",
+   "slot": "ear",
+   "ad": "Pırlanta küpe",
+   "adlar": {
+    "tr": "Pırlanta küpe",
+    "en": "Diamond studs",
+    "de": "Diamantstecker"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/studs.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "studs.webp"
+   }
+  },
+  {
+   "id": "pearldrop",
+   "slot": "ear",
+   "ad": "İnci küpe",
+   "adlar": {
+    "tr": "İnci küpe",
+    "en": "Pearl drops",
+    "de": "Perlenohrringe"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/pearldrop.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pearldrop.webp"
+   }
+  },
+  {
+   "id": "stardangle",
+   "slot": "ear",
+   "ad": "Yıldız küpe",
+   "adlar": {
+    "tr": "Yıldız küpe",
+    "en": "Star earrings",
+    "de": "Sternohrringe"
+   },
+   "nadir": "common",
+   "ikon": "ikon/stardangle.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "stardangle.webp"
+   }
+  },
+  {
+   "id": "feather",
+   "slot": "ear",
+   "ad": "Tüy küpe",
+   "adlar": {
+    "tr": "Tüy küpe",
+    "en": "Feather earrings",
+    "de": "Federohrringe"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/feather.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "feather.webp"
+   }
+  },
+  {
+   "id": "heartdangle",
+   "slot": "ear",
+   "ad": "Kalp küpe",
+   "adlar": {
+    "tr": "Kalp küpe",
+    "en": "Heart earrings",
+    "de": "Herzohrringe"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/heartdangle.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "heartdangle.webp"
+   }
+  },
+  {
+   "id": "lightning",
+   "slot": "ear",
+   "ad": "Neon şimşek",
+   "adlar": {
+    "tr": "Neon şimşek",
+    "en": "Neon bolts",
+    "de": "Neon-Blitze"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/lightning.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "lightning.webp"
+   }
+  },
+  {
+   "id": "emeralddrop",
+   "slot": "ear",
+   "ad": "Zümrüt damla",
+   "adlar": {
+    "tr": "Zümrüt damla",
+    "en": "Emerald drops",
+    "de": "Smaragdtropfen"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/emeralddrop.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "emeralddrop.webp"
+   }
+  },
+  {
+   "id": "cape",
+   "slot": "back",
+   "ad": "Pelerin",
+   "adlar": {
+    "tr": "Pelerin",
+    "en": "Cape",
+    "de": "Umhang"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/cape.webp",
+   "sira": 0,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "cape__c0392b.webp",
+    "#2d6cdf": "cape__2d6cdf.webp",
+    "#27ae60": "cape__27ae60.webp",
+    "#8e44ad": "cape__8e44ad.webp",
+    "#e67e22": "cape__e67e22.webp",
+    "#2c3e50": "cape__2c3e50.webp"
+   }
+  },
+  {
+   "id": "backpack",
+   "slot": "back",
+   "ad": "Sırt çantası",
+   "adlar": {
+    "tr": "Sırt çantası",
+    "en": "Backpack",
+    "de": "Rucksack"
+   },
+   "nadir": "common",
+   "ikon": "ikon/backpack.webp",
+   "sira": 0,
+   "renkler": [
+    "#c0392b",
+    "#2d6cdf",
+    "#27ae60",
+    "#8e44ad",
+    "#e67e22",
+    "#2c3e50"
+   ],
+   "dosyalar": {
+    "#c0392b": "backpack__c0392b.webp",
+    "#2d6cdf": "backpack__2d6cdf.webp",
+    "#27ae60": "backpack__27ae60.webp",
+    "#8e44ad": "backpack__8e44ad.webp",
+    "#e67e22": "backpack__e67e22.webp",
+    "#2c3e50": "backpack__2c3e50.webp"
+   }
+  },
+  {
+   "id": "butterfly",
+   "slot": "back",
+   "ad": "Kelebek kanatları",
+   "adlar": {
+    "tr": "Kelebek kanatları",
+    "en": "Butterfly wings",
+    "de": "Schmetterlingsflügel"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/butterfly.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "butterfly.webp"
+   }
+  },
+  {
+   "id": "fairy",
+   "slot": "back",
+   "ad": "Peri kanatları",
+   "adlar": {
+    "tr": "Peri kanatları",
+    "en": "Fairy wings",
+    "de": "Feenflügel"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/fairy.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "fairy.webp"
+   }
+  },
+  {
+   "id": "jetpack",
+   "slot": "back",
+   "ad": "Jetpack",
+   "adlar": {
+    "tr": "Jetpack",
+    "en": "Jetpack",
+    "de": "Jetpack"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/jetpack.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "jetpack.webp"
+   }
+  },
+  {
+   "id": "angelwings",
+   "slot": "back",
+   "ad": "Melek kanatları",
+   "adlar": {
+    "tr": "Melek kanatları",
+    "en": "Angel wings",
+    "de": "Engelsflügel"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/angelwings.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "angelwings.webp"
+   }
+  },
+  {
+   "id": "dragonwings",
+   "slot": "back",
+   "ad": "Ejderha kanatları",
+   "adlar": {
+    "tr": "Ejderha kanatları",
+    "en": "Dragon wings",
+    "de": "Drachenflügel"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/dragonwings.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "dragonwings.webp"
+   }
+  },
+  {
+   "id": "bulb",
+   "slot": "hat",
+   "ad": "Fikir ampulü",
+   "adlar": {
+    "tr": "Fikir ampulü",
+    "en": "Idea bulb",
+    "de": "Ideen-Glühbirne"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/bulb.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bulb.webp"
+   }
+  },
+  {
+   "id": "bookhat",
+   "slot": "hat",
+   "ad": "Kitap şapka",
+   "adlar": {
+    "tr": "Kitap şapka",
+    "en": "Book hat",
+    "de": "Buchhut"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bookhat.webp",
+   "sira": 6,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bookhat.webp"
+   }
+  },
+  {
+   "id": "halfmoon",
+   "slot": "glasses",
+   "ad": "Okuma gözlüğü",
+   "adlar": {
+    "tr": "Okuma gözlüğü",
+    "en": "Reading glasses",
+    "de": "Lesebrille"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/halfmoon.webp",
+   "sira": 5,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "halfmoon.webp"
+   }
+  },
+  {
+   "id": "pencilear",
+   "slot": "ear",
+   "ad": "Kulak arkası kalem",
+   "adlar": {
+    "tr": "Kulak arkası kalem",
+    "en": "Pencil behind ear",
+    "de": "Bleistift hinterm Ohr"
+   },
+   "nadir": "common",
+   "ikon": "ikon/pencilear.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "pencilear.webp"
+   }
+  },
+  {
+   "id": "earbuds",
+   "slot": "ear",
+   "ad": "Kablosuz kulaklık",
+   "adlar": {
+    "tr": "Kablosuz kulaklık",
+    "en": "Earbuds",
+    "de": "Ohrstöpsel"
+   },
+   "nadir": "common",
+   "ikon": "ikon/earbuds.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "earbuds.webp"
+   }
+  },
+  {
+   "id": "earcuff",
+   "slot": "ear",
+   "ad": "Kulak manşeti",
+   "adlar": {
+    "tr": "Kulak manşeti",
+    "en": "Ear cuffs",
+    "de": "Ohrklemmen"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/earcuff.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "earcuff.webp"
+   }
+  },
+  {
+   "id": "hibiscus",
+   "slot": "ear",
+   "ad": "Kulakta çiçek",
+   "adlar": {
+    "tr": "Kulakta çiçek",
+    "en": "Hibiscus",
+    "de": "Hibiskusblüte"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/hibiscus.webp",
+   "sira": 4,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "hibiscus.webp"
+   }
+  },
+  {
+   "id": "guitar",
+   "slot": "back",
+   "ad": "Gitar",
+   "adlar": {
+    "tr": "Gitar",
+    "en": "Guitar",
+    "de": "Gitarre"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/guitar.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "guitar.webp"
+   }
+  },
+  {
+   "id": "balloons",
+   "slot": "back",
+   "ad": "Balonlar",
+   "adlar": {
+    "tr": "Balonlar",
+    "en": "Balloons",
+    "de": "Luftballons"
+   },
+   "nadir": "common",
+   "ikon": "ikon/balloons.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "balloons.webp"
+   }
+  },
+  {
+   "id": "phoenix",
+   "slot": "back",
+   "ad": "Anka kanatları",
+   "adlar": {
+    "tr": "Anka kanatları",
+    "en": "Phoenix wings",
+    "de": "Phönixflügel"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/phoenix.webp",
+   "sira": 0,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "phoenix.webp"
+   }
+  },
+  {
+   "id": "bg_orange",
+   "slot": "bg",
+   "ad": "Nomi turuncusu",
+   "adlar": {
+    "tr": "Nomi turuncusu",
+    "en": "Nomi orange",
+    "de": "Nomi-Orange"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bg_orange.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_orange.webp"
+   }
+  },
+  {
+   "id": "bg_mint",
+   "slot": "bg",
+   "ad": "Nane",
+   "adlar": {
+    "tr": "Nane",
+    "en": "Mint",
+    "de": "Minze"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bg_mint.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_mint.webp"
+   }
+  },
+  {
+   "id": "bg_sky",
+   "slot": "bg",
+   "ad": "Gökyüzü",
+   "adlar": {
+    "tr": "Gökyüzü",
+    "en": "Sky",
+    "de": "Himmel"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bg_sky.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_sky.webp"
+   }
+  },
+  {
+   "id": "bg_dots",
+   "slot": "bg",
+   "ad": "Puantiye",
+   "adlar": {
+    "tr": "Puantiye",
+    "en": "Polka dots",
+    "de": "Punkte"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bg_dots.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_dots.webp"
+   }
+  },
+  {
+   "id": "bg_stripes",
+   "slot": "bg",
+   "ad": "Çizgili",
+   "adlar": {
+    "tr": "Çizgili",
+    "en": "Stripes",
+    "de": "Streifen"
+   },
+   "nadir": "common",
+   "ikon": "ikon/bg_stripes.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_stripes.webp"
+   }
+  },
+  {
+   "id": "bg_savanna",
+   "slot": "bg",
+   "ad": "Savan gün batımı",
+   "adlar": {
+    "tr": "Savan gün batımı",
+    "en": "Savanna sunset",
+    "de": "Savannen-Sonnenuntergang"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bg_savanna.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_savanna.webp"
+   }
+  },
+  {
+   "id": "bg_desert",
+   "slot": "bg",
+   "ad": "Kalahari kumulları",
+   "adlar": {
+    "tr": "Kalahari kumulları",
+    "en": "Kalahari dunes",
+    "de": "Kalahari-Dünen"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bg_desert.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_desert.webp"
+   }
+  },
+  {
+   "id": "bg_ocean",
+   "slot": "bg",
+   "ad": "Okyanus",
+   "adlar": {
+    "tr": "Okyanus",
+    "en": "Ocean",
+    "de": "Ozean"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bg_ocean.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_ocean.webp"
+   }
+  },
+  {
+   "id": "bg_forest",
+   "slot": "bg",
+   "ad": "Orman",
+   "adlar": {
+    "tr": "Orman",
+    "en": "Forest",
+    "de": "Wald"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bg_forest.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_forest.webp"
+   }
+  },
+  {
+   "id": "bg_confetti",
+   "slot": "bg",
+   "ad": "Konfeti",
+   "adlar": {
+    "tr": "Konfeti",
+    "en": "Confetti",
+    "de": "Konfetti"
+   },
+   "nadir": "rare",
+   "ikon": "ikon/bg_confetti.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_confetti.webp"
+   }
+  },
+  {
+   "id": "bg_night",
+   "slot": "bg",
+   "ad": "Yıldızlı gece",
+   "adlar": {
+    "tr": "Yıldızlı gece",
+    "en": "Starry night",
+    "de": "Sternennacht"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/bg_night.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_night.webp"
+   }
+  },
+  {
+   "id": "bg_sunburst",
+   "slot": "bg",
+   "ad": "Güneş patlaması",
+   "adlar": {
+    "tr": "Güneş patlaması",
+    "en": "Sunburst",
+    "de": "Sonnenstrahlen"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/bg_sunburst.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_sunburst.webp"
+   }
+  },
+  {
+   "id": "bg_hearts",
+   "slot": "bg",
+   "ad": "Kalpler",
+   "adlar": {
+    "tr": "Kalpler",
+    "en": "Hearts",
+    "de": "Herzen"
+   },
+   "nadir": "epic",
+   "ikon": "ikon/bg_hearts.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_hearts.webp"
+   }
+  },
+  {
+   "id": "bg_aurora",
+   "slot": "bg",
+   "ad": "Kuzey ışıkları",
+   "adlar": {
+    "tr": "Kuzey ışıkları",
+    "en": "Aurora",
+    "de": "Polarlicht"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/bg_aurora.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_aurora.webp"
+   }
+  },
+  {
+   "id": "bg_galaxy",
+   "slot": "bg",
+   "ad": "Galaksi",
+   "adlar": {
+    "tr": "Galaksi",
+    "en": "Galaxy",
+    "de": "Galaxie"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/bg_galaxy.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_galaxy.webp"
+   }
+  },
+  {
+   "id": "bg_goldrays",
+   "slot": "bg",
+   "ad": "Altın ışıltı",
+   "adlar": {
+    "tr": "Altın ışıltı",
+    "en": "Golden glory",
+    "de": "Goldener Glanz"
+   },
+   "nadir": "legendary",
+   "ikon": "ikon/bg_goldrays.webp",
+   "sira": -1,
+   "renkler": [],
+   "dosyalar": {
+    "varsayilan": "bg/bg_goldrays.webp"
+   }
+  }
+ ]
+}

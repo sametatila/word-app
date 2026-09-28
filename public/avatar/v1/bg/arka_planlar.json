@@ -1,0 +1,194 @@
+[
+ {
+  "id": "bg_orange",
+  "slot": "bg",
+  "ad": "Nomi turuncusu",
+  "adlar": {
+   "tr": "Nomi turuncusu",
+   "en": "Nomi orange",
+   "de": "Nomi-Orange"
+  },
+  "nadir": "common",
+  "dosya": "bg_orange.webp"
+ },
+ {
+  "id": "bg_mint",
+  "slot": "bg",
+  "ad": "Nane",
+  "adlar": {
+   "tr": "Nane",
+   "en": "Mint",
+   "de": "Minze"
+  },
+  "nadir": "common",
+  "dosya": "bg_mint.webp"
+ },
+ {
+  "id": "bg_sky",
+  "slot": "bg",
+  "ad": "Gökyüzü",
+  "adlar": {
+   "tr": "Gökyüzü",
+   "en": "Sky",
+   "de": "Himmel"
+  },
+  "nadir": "common",
+  "dosya": "bg_sky.webp"
+ },
+ {
+  "id": "bg_dots",
+  "slot": "bg",
+  "ad": "Puantiye",
+  "adlar": {
+   "tr": "Puantiye",
+   "en": "Polka dots",
+   "de": "Punkte"
+  },
+  "nadir": "common",
+  "dosya": "bg_dots.webp"
+ },
+ {
+  "id": "bg_stripes",
+  "slot": "bg",
+  "ad": "Çizgili",
+  "adlar": {
+   "tr": "Çizgili",
+   "en": "Stripes",
+   "de": "Streifen"
+  },
+  "nadir": "common",
+  "dosya": "bg_stripes.webp"
+ },
+ {
+  "id": "bg_savanna",
+  "slot": "bg",
+  "ad": "Savan gün batımı",
+  "adlar": {
+   "tr": "Savan gün batımı",
+   "en": "Savanna sunset",
+   "de": "Savannen-Sonnenuntergang"
+  },
+  "nadir": "rare",
+  "dosya": "bg_savanna.webp"
+ },
+ {
+  "id": "bg_desert",
+  "slot": "bg",
+  "ad": "Kalahari kumulları",
+  "adlar": {
+   "tr": "Kalahari kumulları",
+   "en": "Kalahari dunes",
+   "de": "Kalahari-Dünen"
+  },
+  "nadir": "rare",
+  "dosya": "bg_desert.webp"
+ },
+ {
+  "id": "bg_ocean",
+  "slot": "bg",
+  "ad": "Okyanus",
+  "adlar": {
+   "tr": "Okyanus",
+   "en": "Ocean",
+   "de": "Ozean"
+  },
+  "nadir": "rare",
+  "dosya": "bg_ocean.webp"
+ },
+ {
+  "id": "bg_forest",
+  "slot": "bg",
+  "ad": "Orman",
+  "adlar": {
+   "tr": "Orman",
+   "en": "Forest",
+   "de": "Wald"
+  },
+  "nadir": "rare",
+  "dosya": "bg_forest.webp"
+ },
+ {
+  "id": "bg_confetti",
+  "slot": "bg",
+  "ad": "Konfeti",
+  "adlar": {
+   "tr": "Konfeti",
+   "en": "Confetti",
+   "de": "Konfetti"
+  },
+  "nadir": "rare",
+  "dosya": "bg_confetti.webp"
+ },
+ {
+  "id": "bg_night",
+  "slot": "bg",
+  "ad": "Yıldızlı gece",
+  "adlar": {
+   "tr": "Yıldızlı gece",
+   "en": "Starry night",
+   "de": "Sternennacht"
+  },
+  "nadir": "epic",
+  "dosya": "bg_night.webp"
+ },
+ {
+  "id": "bg_sunburst",
+  "slot": "bg",
+  "ad": "Güneş patlaması",
+  "adlar": {
+   "tr": "Güneş patlaması",
+   "en": "Sunburst",
+   "de": "Sonnenstrahlen"
+  },
+  "nadir": "epic",
+  "dosya": "bg_sunburst.webp"
+ },
+ {
+  "id": "bg_hearts",
+  "slot": "bg",
+  "ad": "Kalpler",
+  "adlar": {
+   "tr": "Kalpler",
+   "en": "Hearts",
+   "de": "Herzen"
+  },
+  "nadir": "epic",
+  "dosya": "bg_hearts.webp"
+ },
+ {
+  "id": "bg_aurora",
+  "slot": "bg",
+  "ad": "Kuzey ışıkları",
+  "adlar": {
+   "tr": "Kuzey ışıkları",
+   "en": "Aurora",
+   "de": "Polarlicht"
+  },
+  "nadir": "legendary",
+  "dosya": "bg_aurora.webp"
+ },
+ {
+  "id": "bg_galaxy",
+  "slot": "bg",
+  "ad": "Galaksi",
+  "adlar": {
+   "tr": "Galaksi",
+   "en": "Galaxy",
+   "de": "Galaxie"
+  },
+  "nadir": "legendary",
+  "dosya": "bg_galaxy.webp"
+ },
+ {
+  "id": "bg_goldrays",
+  "slot": "bg",
+  "ad": "Altın ışıltı",
+  "adlar": {
+   "tr": "Altın ışıltı",
+   "en": "Golden glory",
+   "de": "Goldener Glanz"
+  },
+  "nadir": "legendary",
+  "dosya": "bg_goldrays.webp"
+ }
+]
