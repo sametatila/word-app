@@ -15,6 +15,8 @@ export type CatalogPart = {
   sira: number;
   renkler: string[];
   dosyalar: Record<string, string>;
+  /** Renklenen parçada renk başına ikon (renk → yol); yoksa `ikon`. */
+  ikonlar?: Record<string, string>;
 };
 export type AvatarCatalog = {
   boyut: number;
@@ -48,6 +50,16 @@ export function avatarLayers(cfg: AvatarConfig, cat: AvatarCatalog): { bg: strin
   chosen.sort((a, b) => a.sira - b.sira);
   const bg = byId.get(cfg.bg ?? "bg_orange") ?? byId.get("bg_orange");
   return { bg: bg?.dosyalar.varsayilan ?? null, base: cat.taban, layers: chosen.map((c) => c.file) };
+}
+
+/**
+ * Parça kartının ikonu. Renklenen parçada karo seçili rengi gösterir (yeşil
+ * şapka seçiliyken kep ikonu da yeşil); renk parçada yoksa katmanla aynı kural,
+ * paletin ilk rengi. Yol kataloğa göredir.
+ */
+export function partIcon(p: CatalogPart, color: string | null | undefined): string {
+  if (!p.ikonlar) return p.ikon;
+  return (color ? p.ikonlar[color] : undefined) ?? (p.renkler[0] ? p.ikonlar[p.renkler[0]] : undefined) ?? p.ikon;
 }
 
 /**

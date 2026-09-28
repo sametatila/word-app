@@ -12,7 +12,7 @@ import { useAuth } from "../lib/AuthContext";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type AvatarConfig, type ExtraSlot } from "../lib/avatar";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
-import type { CatalogPart } from "../lib/avatarLayers";
+import { partIcon, type CatalogPart } from "../lib/avatarLayers";
 import { api } from "../api/client";
 import { useTheme, spacing, radii, cardShadow, type Palette } from "../theme";
 
@@ -98,8 +98,12 @@ export function AvatarScreen() {
     if (catalog) {
       const parts: CatalogPart[] = catalog.cat.parcalar.filter((p) => p.slot === slot);
       const list: Tile[] = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, none: true, apply: () => pick(slot, null) }];
+      /* Karo, yuvanın şu anki rengini gösterir; başka parçaya geçince renk
+         korunur (parça o rengi taşıyorsa). */
+      const slotColor = slot === "hat" ? cfg.hatColor : slot === "bg" || slot === "glasses" || slot === "mustache" ? null : cfg.extra[slot]?.color ?? null;
       for (const p of parts) {
-        list.push({ key: p.id, label: p.adlar[lang] ?? p.ad, selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"), locked: p.id in locked, hint: locked[p.id], rarity: p.nadir, icon: `${catalog.base}/${p.ikon}`, apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null) });
+        const col = slot === "hat" ? cfg.hatColor : slotColor && p.renkler.includes(slotColor) ? slotColor : p.renkler[0] ?? null;
+        list.push({ key: p.id, label: p.adlar[lang] ?? p.ad, selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"), locked: p.id in locked, hint: locked[p.id], rarity: p.nadir, icon: `${catalog.base}/${partIcon(p, col)}`, apply: () => pick(slot, p.id, col) });
       }
       return list;
     }

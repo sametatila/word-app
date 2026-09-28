@@ -8,6 +8,7 @@ import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts"
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type ExtraSlot } from "@/lib/avatar-config";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
+import { partIcon } from "@/lib/avatar-layers";
 import { CheckIcon, LockIcon, RefreshIcon, XIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -73,7 +74,11 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   if (catalog) {
     const parts = catalog.cat.parcalar.filter((p) => p.slot === slot);
     tiles = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, apply: () => pick(slot, null) }];
+    /* Karo, yuvanın şu anki rengini gösterir; başka parçaya geçince renk
+       korunur (parça o rengi taşıyorsa). */
+    const slotColor = slot === "hat" ? cfg.hatColor : slot === "bg" || slot === "glasses" || slot === "mustache" ? null : cfg.extra[slot]?.color ?? null;
     for (const p of parts) {
+      const col = slot === "hat" ? cfg.hatColor : slotColor && p.renkler.includes(slotColor) ? slotColor : p.renkler[0] ?? null;
       tiles.push({
         key: p.id,
         label: p.adlar[lang] ?? p.ad,
@@ -81,8 +86,8 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
         locked: p.id in locked,
         hint: locked[p.id],
         rarity: p.nadir,
-        icon: `${catalog.base}/${p.ikon}`,
-        apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null),
+        icon: `${catalog.base}/${partIcon(p, col)}`,
+        apply: () => pick(slot, p.id, col),
       });
     }
   } else if (slot === "bg") {
