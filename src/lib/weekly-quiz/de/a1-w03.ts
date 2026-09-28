@@ -116,7 +116,7 @@ export const DE_A1_W03: QuizWeek = {
       stem: "Warum kauft der Kunde das Buch nicht?",
       options: ["Es ist teuer", "Es ist zu klein", "Er hat es schon", "Der Laden ist zu"],
       answer: 0,
-      why: "\"Das ist teuer\" diyor ve sonra yalnız 10 Euro'su olduğunu ekliyor. Sebep iki cümleye yayılmış.",
+      why: "\"Das ist teuer\" diyor ve sonra yalnız 10 avro'su olduğunu ekliyor. Sebep iki cümleye yayılmış.",
       targets: ["hoeren.zusammenhang", "wortfeld.preis"],
     },
 
