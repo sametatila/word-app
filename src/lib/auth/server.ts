@@ -48,7 +48,7 @@ async function emailLang(userId: string): Promise<NativeLang> {
     return contentLang(null);
   }
 }
-import { guestAttestationMode, startGuestAttestation } from "@/lib/auth/play-integrity";
+import { checkGuestAttestation, guestAttestationMode, startGuestAttestation } from "@/lib/auth/play-integrity";
 import { CLIENT_HEADER } from "@/lib/app-control-shared";
 
 /**
@@ -669,6 +669,27 @@ export const auth = betterAuth({
   hooks: {
     before: createAuthMiddleware(async (ctx) => {
       /**
+       * MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — ENGELLEME KİPİ (Aşama 3,
+       * lib/auth/play-integrity `checkGuestAttestation`). Yalnız
+       * `GUEST_ATTESTATION=enforce`ken ve kimlik AÇILMADAN önce. Kayıt kipinde
+       * burası hiçbir şey yapmıyor; kayıt `after` kancasında.
+       */
+      if (ctx.path === "/sign-in/anonymous") {
+        if (guestAttestationMode() === "enforce") {
+          const gate = await checkGuestAttestation({
+            clientHeader: ctx.headers?.get(CLIENT_HEADER) ?? ctx.request?.headers.get(CLIENT_HEADER),
+            body: ctx.body,
+          });
+          if (!gate.allow) {
+            throw new APIError("FORBIDDEN", {
+              code: gate.code,
+              message: "This device could not be verified for a guest session. Continue with an account.",
+            });
+          }
+        }
+        return;
+      }
+      /**
        * HESAP BAŞINA KİLİT — parola denenmeden önce.
        *
        * IP başına sınır tek bir hesaba yüzlerce IP'den gelen denemeyi
@@ -734,7 +755,8 @@ export const auth = betterAuth({
         MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — KAYIT KİPİ (lib/auth/play-integrity).
         Yalnız kimlik gerçekten açıldıysa ve kip açıksa; iş başlatılıp
         BEKLENMİYOR, sonucu ne olursa olsun misafir açılışı değişmiyor.
-        Engelleme (Aşama 3) geldiğinde karar `before`a taşınacak.
+        Engelleme kipinde karar `before`da verildi; buraya yalnız izin verilen
+        açılış geliyor ve belge ikinci kez çözülmüyor (önceden çözülen hüküm kullanılıyor).
       */
       if (ctx.path === "/sign-in/anonymous") {
         const mode = guestAttestationMode();

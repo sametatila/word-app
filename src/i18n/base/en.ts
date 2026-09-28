@@ -39,6 +39,7 @@ export const enBase: Record<string, string> = {
   "auth.guest_hint": "Vocabulary rounds, the Path, skills, exams and reminders work without an account. Friends, AI feedback and Premium need one.",
   "auth.guest_rate_limited": "Too many guest sessions were started from this connection. Try again later or continue with an account.",
   "auth.guest_failed": "Couldn't start a guest session. Try again.",
+  "auth.guest_attestation_failed": "This device couldn't be verified for a guest session. Update the app from Google Play and try again, or continue with an account.",
   "auth.guest_upgrade_title": "Create your account",
   "auth.guest_upgrade_sub": "The progress you made as a guest moves to your account. If you already have one, the two are combined.",
   "guest.claim_moved": "Your guest progress moved to your account.",

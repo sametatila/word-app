@@ -19,14 +19,11 @@ export { ATTESTATION_RETENTION_DAYS };
  * Mağazanın imzalı belgesi isteğin gerçek bir cihazdaki, Play'den gelen,
  * değiştirilmemiş uygulamadan geldiğini kanıtlıyor (docs/plan/device-attestation.md).
  *
- * BU AŞAMADA KİMSE REDDEDİLMİYOR. Belge Google'a çözdürülüyor, sonuç
- * `guest_attestations`a yazılıyor ve o kadar. Engelleme (Aşama 3) ancak gerçek
- * kullanıcıların geçme oranı ölçüldükten sonra açılacak: Google Play hizmetleri
- * olmayan cihazlar, eski telefonlar ve emülatörler şimdiden bilinemiyor.
- *
  * KİP `GUEST_ATTESTATION` ile: boş/`off` = hiçbir şey olmaz (istemciye de bayrak
- * inmiyor, Google'a istek gitmiyor); `log` = kayıt; `enforce` = HENÜZ YOK,
- * `log` gibi davranıyor ve bunu bir kez log'a yazıyor. Servis hesabı anahtarı
+ * inmiyor, Google'a istek gitmiyor); `log` = kayıt, kimse reddedilmiyor;
+ * `enforce` = ENGELLEME (Aşama 3, aşağıda `checkGuestAttestation`). Engelleme
+ * ancak herkese açık yayından sonra gerçek kullanıcıların geçme oranı
+ * ölçülünce açılıyor (docs/plan/device-attestation.md). Servis hesabı anahtarı
  * (`PLAY_INTEGRITY_KEY_PATH`) yoksa kip ne derse desin kapalı: doğrulanamayan
  * belgeyi istemciye ürettirmek boşa kota ve gecikme.
  *
@@ -56,16 +53,13 @@ const MAX_SKEW_MS = 2 * 60_000;
 /** Google çağrılarının tavanı. Kayıt misafir açılışını beklemiyor ama asılı istek birikmesin. */
 const TIMEOUT_MS = 8_000;
 
-let warnedEnforce = false;
+/** Engelleme kipinde Google'ın beklendiği tavan: misafir açılışı bu kadar bekler, fazlası "hata" (izin). */
+const ENFORCE_TIMEOUT_MS = 4_000;
 
 export function guestAttestationMode(): GuestAttestationMode {
   const raw = (process.env.GUEST_ATTESTATION ?? "").trim().toLowerCase();
   const mode: GuestAttestationMode = raw === "log" || raw === "enforce" ? raw : "off";
   if (mode === "off" || !process.env.PLAY_INTEGRITY_KEY_PATH) return "off";
-  if (mode === "enforce" && !warnedEnforce) {
-    warnedEnforce = true;
-    console.warn("[attest] GUEST_ATTESTATION=enforce is not implemented yet (stage 3); running as log, nobody is rejected");
-  }
   return mode;
 }
 
@@ -151,12 +145,12 @@ export class DecodeError extends Error {
   }
 }
 
-export type Decoder = (token: string) => Promise<IntegrityPayload>;
+export type Decoder = (token: string, timeoutMs?: number) => Promise<IntegrityPayload>;
 
 type ServiceAccount = { client_email: string; private_key: string; private_key_id?: string; token_uri?: string };
 let cachedAccess: { token: string; expiresAt: number } | null = null;
 
-async function accessToken(): Promise<string> {
+async function accessToken(timeoutMs = TIMEOUT_MS): Promise<string> {
   if (cachedAccess && cachedAccess.expiresAt > Date.now() + 60_000) return cachedAccess.token;
   let sa: ServiceAccount;
   try {
@@ -186,7 +180,7 @@ async function accessToken(): Promise<string> {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: `${head}.${sig}` }),
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
     });
   } catch (err) {
     throw new DecodeError("network", `oauth ${(err as Error).name}`);
@@ -197,15 +191,15 @@ async function accessToken(): Promise<string> {
   return cachedAccess.token;
 }
 
-const googleDecoder: Decoder = async (token) => {
-  const access = await accessToken();
+const googleDecoder: Decoder = async (token, timeoutMs = TIMEOUT_MS) => {
+  const access = await accessToken(timeoutMs);
   let res: Response;
   try {
     res = await fetch(`https://playintegrity.googleapis.com/v1/${PLAY_INTEGRITY_PACKAGE}:decodeIntegrityToken`, {
       method: "POST",
       headers: { authorization: `Bearer ${access}`, "content-type": "application/json" },
       body: JSON.stringify({ integrity_token: token }),
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
     });
   } catch (err) {
     throw new DecodeError("network", `decode ${(err as Error).name}`);
@@ -244,7 +238,7 @@ export type AttestationRecord = Evaluation & { platform: string | null; build: n
  * fırlatmaz ve hiçbir şeyi reddetmez; iOS'ta (App Attest Aşama 4) yazmaz.
  */
 export async function recordGuestAttestation(input: {
-  userId: string;
+  userId: string | null;
   mode: Exclude<GuestAttestationMode, "off">;
   clientHeader: string | null | undefined;
   body: unknown;
@@ -254,8 +248,15 @@ export async function recordGuestAttestation(input: {
   const { token, nonce, clientError } = readAttestationInput(input.body);
   const requestHash = nonce ? guestRequestHash(nonce) : null;
 
+  /* Engelleme kipinde belge `before` kancasında ZATEN çözüldü: aynı belgeyi
+     ikinci kez Google'a göndermek hem gecikme hem de (kayıt henüz yokken)
+     tekrar denetimini boşa düşürürdü. */
+  const pre = requestHash ? takePrecomputed(requestHash) : null;
+
   let ev: Evaluation;
-  if (!token) {
+  if (pre) {
+    ev = pre;
+  } else if (!token) {
     ev = { result: "missing", reasons: [clientError ? `client:${clientError}` : "no_token"], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
   } else {
     try {
@@ -286,6 +287,91 @@ export async function recordGuestAttestation(input: {
     createdAt: sql`now()`,
   });
   return row;
+}
+
+/* ── Engelleme (Aşama 3) ─────────────────────────────────────────────────── */
+
+/*
+ * `before` kancasının hükmü `after` kancasındaki kayda taşınıyor (aynı süreç,
+ * aynı istek; özet anahtar). Beş dakikadan eski girdi atılıyor.
+ */
+const precomputed = new Map<string, { ev: Evaluation; at: number }>();
+function takePrecomputed(hash: string): Evaluation | null {
+  const now = Date.now();
+  for (const [k, v] of precomputed) if (now - v.at > 5 * 60_000) precomputed.delete(k);
+  const hit = precomputed.get(hash);
+  if (!hit) return null;
+  precomputed.delete(hash);
+  return hit.ev;
+}
+
+export type AttestationGate =
+  | { allow: true; ev: Evaluation | null }
+  | { allow: false; code: "GUEST_ATTESTATION_REQUIRED" | "GUEST_ATTESTATION_FAILED"; ev: Evaluation };
+
+/**
+ * ENGELLEME KİPİ — misafir kimliği AÇILMADAN önce karar (`before` kancası).
+ *
+ * KURAL:
+ *   - iOS muaf (App Attest Aşama 4). Web misafir açmıyor; istemci başlığı
+ *     OLMAYAN istek (betik) Android gibi belge göstermek zorunda.
+ *   - Belge yok → RED (`GUEST_ATTESTATION_REQUIRED`). Play hizmetleri olmayan
+ *     cihaz misafir yolunu kaybediyor ama hesapla girebiliyor; mesaj bunu söylüyor.
+ *   - Belge var ve KESİN geçmiyor (Google reddetti, başka paket/özet, bayat,
+ *     tanınmayan uygulama, cihaz bütünlüğü yok, tekrar kullanım) → RED
+ *     (`GUEST_ATTESTATION_FAILED`).
+ *   - Google'a ulaşılamadı, anahtar okunamadı, 4 sn doldu → İZİN ("hata"):
+ *     bizim ya da Google'ın arızası gerçek kullanıcıyı kapıda bırakmamalı.
+ * Ret de kaydediliyor (kimliksiz satır), ölçüm engellenenleri de görsün.
+ */
+export async function checkGuestAttestation(input: { clientHeader: string | null | undefined; body: unknown }): Promise<AttestationGate> {
+  const client = parseClientHeader(input.clientHeader);
+  if (client?.platform === "ios") return { allow: true, ev: null };
+  const { token, nonce, clientError } = readAttestationInput(input.body);
+  const requestHash = nonce ? guestRequestHash(nonce) : null;
+
+  let ev: Evaluation;
+  if (!token) {
+    ev = { result: "missing", reasons: [clientError ? `client:${clientError}` : "no_token"], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
+  } else {
+    const seen = requestHash
+      ? await db.select({ id: guestAttestations.id }).from(guestAttestations).where(eq(guestAttestations.requestHash, requestHash)).limit(1).catch(() => [])
+      : [];
+    if (seen.length) {
+      ev = { result: "fail", reasons: ["replay"], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
+    } else {
+      try {
+        ev = evaluateIntegrity(await decoder(token, ENFORCE_TIMEOUT_MS), requestHash);
+      } catch (err) {
+        const kind = err instanceof DecodeError ? err.kind : "network";
+        ev = { result: kind === "invalid" ? "fail" : "error", reasons: [`decode:${kind}`], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
+        if (kind !== "invalid") console.warn(`[attest] enforce decode failed (${kind}), allowing: ${(err as Error).message}`);
+      }
+    }
+  }
+
+  if (ev.result === "pass" || ev.result === "error") {
+    if (requestHash) precomputed.set(requestHash, { ev, at: Date.now() });
+    return { allow: true, ev };
+  }
+  try {
+    await db.insert(guestAttestations).values({
+      userId: null,
+      platform: client?.platform ?? null,
+      build: client?.build ?? null,
+      mode: "enforce",
+      result: ev.result,
+      reasons: [...ev.reasons, "rejected"].join(","),
+      appVerdict: ev.appVerdict,
+      deviceVerdict: ev.deviceVerdict,
+      licensingVerdict: ev.licensingVerdict,
+      requestHash,
+      createdAt: sql`now()`,
+    });
+  } catch (err) {
+    console.warn("[attest] reject record failed:", (err as Error).message);
+  }
+  return { allow: false, code: ev.result === "missing" ? "GUEST_ATTESTATION_REQUIRED" : "GUEST_ATTESTATION_FAILED", ev };
 }
 
 /**

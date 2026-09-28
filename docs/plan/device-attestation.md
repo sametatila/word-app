@@ -6,7 +6,7 @@
 |---|---|
 | 1. Konsol adımları (Android) | Yapıldı: Play Integrity API açık ve Play Console'a bağlı; sunucu anahtarı mevcut `reviews-readonly` servis hesabı (ayrı hesap açılmadı) |
 | 2. Kayıt kipi (Android) | **Canlıda, 2026-09-24'ten beri.** Sunucu `GUEST_ATTESTATION=log`, `PLAY_INTEGRITY_KEY_PATH=/opt/lernomi/secrets/reviews-readonly.json`. Belge gönderen ilk sürüm Android vc 6 |
-| 3. Engelleme kipi | Sıradaki: birkaç gün ölçüm (aşağıdaki SQL) → temizse aç |
+| 3. Engelleme kipi | **Kod hazır (2026-09-28), kapalı.** Ölçüm verisi yetersizdi (tüm zamanlarda 2 açılış: 1 pass, 1 eski sürüm missing). Herkese açık yayından 1 hafta sonra aşağıdaki SQL temizse sunucuda `GUEST_ATTESTATION=enforce` + rolling restart |
 | 4. iOS App Attest | Sonra |
 
 AGENTS.md "Tarihli işler" bu belgeye bakıyor.
@@ -50,7 +50,7 @@ doğrulanamayan sıkı sınıra düşer.
 
 | Env (üç env dosyasında aynı satır) | Değer |
 |---|---|
-| `GUEST_ATTESTATION` | boş/`off` = kapalı · `log` = kaydet · `enforce` = henüz yok, `log` gibi çalışır ve bunu log'a yazar |
+| `GUEST_ATTESTATION` | boş/`off` = kapalı · `log` = kaydet · `enforce` = engelle (aşağıda) |
 | `PLAY_INTEGRITY_KEY_PATH` | servis hesabı JSON yolu (`/opt/lernomi/secrets/…`, `root:lernomi 0640`); boşken kip ne derse desin kapalı |
 
 Proje numarası (`658160017552`, `nomi-507213`) sunucuda sabit, `/api/config` ile iner. Kapatmak:
@@ -72,10 +72,22 @@ select platform, build, result, count(*) from guest_attestations
  where created_at > now() - interval '7 days' group by 1, 2, 3 order by 1, 2 desc, 3;
 ```
 
-## Aşama 3 — engelleme (ölçüm temizse)
-- Doğrulanamayan istemci reddedilir ya da sıkı IP sınırına düşer; doğrulananın IP sınırı gevşer.
-- Geçemeyen gerçek kullanıcıya giriş ekranında açık mesaj ve hesapla devam yolu.
-- Yönetim panelindeki misafir sayısı öncesi/sonrası karşılaştırılır.
+## Aşama 3 — engelleme (kod hazır, yayında açılacak)
+`src/lib/auth/play-integrity.ts` `checkGuestAttestation`, Better Auth `before` kancasında, kimlik AÇILMADAN:
+
+| Açılış | Karar |
+|---|---|
+| iOS (`x-lernomi-client: ios/…`) | izin (App Attest Aşama 4) |
+| Belge geçti | izin; hüküm `after` kaydına taşınır, belge ikinci kez çözülmez |
+| Belge kesin geçmiyor (Google reddetti, paket/özet, bayat, tanınmayan uygulama, cihaz bütünlüğü yok, tekrar) | **403 `GUEST_ATTESTATION_FAILED`** |
+| Belge yok (Play hizmetleri yok, zaman aşımı, eski sürüm, istemci başlığı olmayan betik) | **403 `GUEST_ATTESTATION_REQUIRED`** |
+| Google'a ulaşılamadı / anahtar okunamadı / 4 sn doldu | izin (`error`): arıza gerçek kullanıcıyı durdurmasın |
+
+- Ret kimliksiz satır olarak yazılır (`reasons` sonunda `rejected`), ölçüm engellenenleri de görür.
+- Mobil (`AuthScreen`): iki kodda `auth.guest_attestation_failed` ("Google Play'den güncelle ya da hesapla devam et"). Hesap yolu hiç etkilenmez.
+- Bilinen delik: iOS başlığı taklit edilebilir; Aşama 4'e kadar kapanmaz. Web misafir açmıyor.
+- IP sınırı (saatte 10) değişmedi; doğrulananın sınırını gevşetmek ayrı bir iş.
+- Açmadan önce: yayın sonrası 1 hafta ölçüm; `missing` ve `fail` gerçek kullanıcı oranı düşük olmalı (özellikle `client:-1` Play hizmetsiz cihazlar). Açtıktan sonra panelde misafir sayısı öncesi/sonrası karşılaştırılır. Test: `npm run test:guest-attestation` (engelleme bölümü).
 
 ## Aşama 4 — iOS
 - Apple Developer › Identifiers › `app.lernomi.ios`: App Attest yetkisi.

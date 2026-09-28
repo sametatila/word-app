@@ -18,7 +18,7 @@ import {
 } from "../src/lib/auth/play-integrity";
 
 /**
- * MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — KAYIT KİPİ (docs/plan/device-attestation.md Aşama 2).
+ * MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — KAYIT ve ENGELLEME KİPİ (docs/plan/device-attestation.md Aşama 2–3).
  *
  * Google çağrısı sahte bir çözücüyle değiştiriliyor; geri kalan her şey gerçek:
  * Better Auth'un kendi işleyicisi, `after` kancası ve Postgres'teki tablo.
@@ -72,12 +72,12 @@ async function signIn(body: unknown, client: string | null) {
     headers: { "content-type": "application/json", origin: BASE, ...(client ? { "x-lernomi-client": client } : {}) },
     body: JSON.stringify(body),
   }));
-  const json = (await res.json().catch(() => null)) as { user?: { id?: string } } | null;
+  const json = (await res.json().catch(() => null)) as { user?: { id?: string }; code?: string } | null;
   const uid = json?.user?.id ?? null;
   if (uid) created.push(uid);
   await settleGuestAttestations();
   const rows = uid ? rowsOf(await db.execute(sql`select * from guest_attestations where user_id = ${uid}`)) : [];
-  return { status: res.status, uid, rows };
+  return { status: res.status, uid, rows, code: json?.code ?? null };
 }
 
 const nonce = (s: string) => `nonce-${s}-${Math.random().toString(36).slice(2, 12)}`.padEnd(24, "x");
@@ -128,7 +128,7 @@ async function main() {
   check("anahtar yolu boşken log bile off", guestAttestationMode() === "off" && guestAttestationConfig() === null);
   process.env.PLAY_INTEGRITY_KEY_PATH = "/yok/sahte.json";
   process.env.GUEST_ATTESTATION = "enforce";
-  check("enforce: henüz log gibi (kip adıyla kaydediliyor)", guestAttestationMode() === "enforce");
+  check("enforce: engelleme kipi", guestAttestationMode() === "enforce");
   process.env.GUEST_ATTESTATION = "log";
 
   await cleanup();
@@ -187,6 +187,39 @@ async function main() {
     check("off: açıldı, satır yok, Google'a gidilmedi", off.status === 200 && off.rows.length === 0 && decodes === before, { rows: off.rows, decodes });
     process.env.GUEST_ATTESTATION = "log";
 
+    console.log("\nMisafir açılışı — engelleme kipi");
+    process.env.GUEST_ATTESTATION = "enforce";
+    const rejectedRow = async (n: string) =>
+      rowsOf(await db.execute(sql`select * from guest_attestations where request_hash = ${guestRequestHash(n)} and user_id is null`));
+    const e1 = nonce("enf-ok");
+    let enfDecodes = 0;
+    setIntegrityDecoderForTests(async () => { enfDecodes++; return payload(e1); });
+    const pass = await signIn({ attestation: { token: TOKEN, nonce: e1 } }, ANDROID);
+    check("geçen belge: açıldı, tek satır pass (kip enforce)", pass.status === 200 && pass.rows.length === 1 && pass.rows[0].result === "pass" && pass.rows[0].mode === "enforce", pass.rows);
+    check("…belge bir kez çözüldü (after yeniden çözmedi)", enfDecodes === 1, enfDecodes);
+    const again2 = await signIn({ attestation: { token: TOKEN, nonce: e1 } }, ANDROID);
+    check("aynı belge ikinci kez: 403 GUEST_ATTESTATION_FAILED", again2.status === 403 && !again2.uid && again2.code === "GUEST_ATTESTATION_FAILED", again2);
+    const e2 = nonce("enf-emu");
+    setIntegrityDecoderForTests(async () => payload(e2, { app: "UNRECOGNIZED_VERSION", device: [] }));
+    const emu2 = await signIn({ attestation: { token: TOKEN, nonce: e2 } }, ANDROID);
+    check("emülatör/yan yükleme: 403, kimlik açılmadı", emu2.status === 403 && !emu2.uid && emu2.code === "GUEST_ATTESTATION_FAILED", emu2);
+    const rej = await rejectedRow(e2);
+    check("…ret kimliksiz satır olarak kaydedildi", rej.length === 1 && rej[0].result === "fail" && String(rej[0].reasons).includes("rejected"), rej);
+    const miss2 = await signIn({}, ANDROID);
+    check("belgesiz Android: 403 GUEST_ATTESTATION_REQUIRED", miss2.status === 403 && !miss2.uid && miss2.code === "GUEST_ATTESTATION_REQUIRED", miss2);
+    const bot2 = await signIn({}, null);
+    check("istemci başlığı yok (betik): 403", bot2.status === 403 && !bot2.uid, bot2);
+    setIntegrityDecoderForTests(async () => { throw new DecodeError("invalid", "decode http 400"); });
+    const forged2 = await signIn({ attestation: { token: TOKEN, nonce: nonce("enf-sahte") } }, ANDROID);
+    check("Google belgeyi reddetti: 403", forged2.status === 403 && forged2.code === "GUEST_ATTESTATION_FAILED", forged2);
+    setIntegrityDecoderForTests(async () => { throw new DecodeError("network", "decode TimeoutError"); });
+    const down2 = await signIn({ attestation: { token: TOKEN, nonce: nonce("enf-ag") } }, ANDROID);
+    check("Google'a ulaşılamadı: YİNE açıldı (arıza kullanıcıyı durdurmuyor), error", down2.status === 200 && !!down2.uid && down2.rows[0]?.result === "error", down2.rows);
+    const ios2 = await signIn({}, "ios/1.0.0/4");
+    check("iOS belgesiz: açıldı (App Attest Aşama 4)", ios2.status === 200 && !!ios2.uid, ios2.status);
+    await db.execute(sql`delete from guest_attestations where user_id is null and reasons like '%rejected%'`);
+    process.env.GUEST_ATTESTATION = "log";
+
     console.log("\nHesap silme");
     await purgeUserData(ok.uid!);
     const left = rowsOf(await db.execute(sql`select user_id from guest_attestations where request_hash = ${guestRequestHash(n1)} order by id`));
@@ -218,7 +251,7 @@ async function main() {
     console.log(`\n${failures} doğrulama başarısız.`);
     process.exit(1);
   }
-  console.log("\ntamam: misafir açılışı belgeyi kaydediyor, kimseyi reddetmiyor");
+  console.log("\ntamam: kayıt kipi kimseyi reddetmiyor; engelleme kipi yalnız kesin başarısız ve belgesiz Android açılışını durduruyor");
   process.exit(0);
 }
 

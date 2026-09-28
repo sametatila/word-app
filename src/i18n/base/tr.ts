@@ -39,6 +39,7 @@ export const trBase: Record<string, string> = {
   "auth.guest_hint": "Kelime turları, Patika, beceriler, sınavlar ve hatırlatmalar hesapsız açık. Arkadaşlar, yapay zekâ değerlendirmesi ve Premium için hesap gerekir.",
   "auth.guest_rate_limited": "Bu bağlantıdan çok fazla misafir oturumu açıldı. Biraz sonra dene ya da hesapla devam et.",
   "auth.guest_failed": "Misafir oturumu açılamadı. Tekrar dene.",
+  "auth.guest_attestation_failed": "Bu cihaz misafir oturumu için doğrulanamadı. Uygulamayı Google Play'den güncelleyip tekrar dene ya da hesapla devam et.",
   "auth.guest_upgrade_title": "Hesabını oluştur",
   "auth.guest_upgrade_sub": "Misafir olarak yaptığın ilerleme hesabına taşınır. Hesabın zaten varsa ikisi birleşir.",
   "guest.claim_moved": "Misafir ilerlemen hesabına taşındı.",

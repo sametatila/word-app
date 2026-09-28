@@ -281,7 +281,10 @@ export function AuthScreen() {
       nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
       return;
     }
+    /* Cihaz doğrulaması engelleme kipinde (sunucu GUEST_ATTESTATION=enforce):
+       belgesiz ya da geçmeyen cihaz misafir açamıyor, hesapla devam edebiliyor. */
     setError(r.status === 429 ? t("auth.guest_rate_limited")
+      : r.code === "GUEST_ATTESTATION_REQUIRED" || r.code === "GUEST_ATTESTATION_FAILED" ? t("auth.guest_attestation_failed")
       : r.code === "BLOCKED" ? t("common.network_blocked")
         : r.status === 0 ? t("common.connection_failed") : t("auth.guest_failed"));
   }

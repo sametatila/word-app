@@ -39,6 +39,7 @@ export const deBase: Record<string, string> = {
   "auth.guest_hint": "Vokabelrunden, der Pfad, Übungen, Prüfungen und Erinnerungen funktionieren ohne Konto. Für Freunde, KI-Feedback und Premium brauchst du eins.",
   "auth.guest_rate_limited": "Von dieser Verbindung wurden zu viele Gastsitzungen gestartet. Versuche es später erneut oder fahre mit einem Konto fort.",
   "auth.guest_failed": "Die Gastsitzung konnte nicht gestartet werden. Versuche es erneut.",
+  "auth.guest_attestation_failed": "Dieses Gerät konnte für eine Gastsitzung nicht verifiziert werden. Aktualisiere die App über Google Play und versuche es erneut, oder mach mit einem Konto weiter.",
   "auth.guest_upgrade_title": "Erstelle dein Konto",
   "auth.guest_upgrade_sub": "Dein Fortschritt als Gast wird in dein Konto übernommen. Hast du schon ein Konto, wird beides zusammengeführt.",
   "guest.claim_moved": "Dein Gastfortschritt ist jetzt in deinem Konto.",

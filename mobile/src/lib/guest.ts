@@ -136,9 +136,11 @@ export type GuestStart =
  * Sunucuda misafir kimliği açar ve jetonunu cihaza yazar.
  *
  * Sunucu cihaz doğrulamasını açtıysa (`/api/config` `guestAttestation`) Android
- * bir Play Integrity belgesi ekliyor; sunucu onu yalnız kaydediyor. Belge
- * alınamazsa (zaman aşımı, Play hizmetleri yok) yerine hata kodu gidiyor ve
- * açılış yine sürüyor (bkz. lib/integrity).
+ * bir Play Integrity belgesi ekliyor. Kayıt kipinde sunucu onu yalnız
+ * kaydediyor; engelleme kipinde belgesiz ya da geçmeyen açılış 403
+ * (`GUEST_ATTESTATION_REQUIRED` / `_FAILED`) dönüyor ve ekran hesapla devam
+ * yolunu gösteriyor. Belge alınamazsa (zaman aşımı, Play hizmetleri yok) yerine
+ * hata kodu gidiyor (bkz. lib/integrity).
  */
 export async function startGuest(): Promise<GuestStart> {
   try {
