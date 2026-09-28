@@ -1669,16 +1669,19 @@ export function makeRound(
       return { id: nextId(), game: "free_sentence", word, partners: [toRoundWord(pick, false)], level: word.niveau };
     }
     case "translate": {
-      // Kaynak: kelimenin kendi örnek cümlesi ve Türkçesi. Türkçesi yoksa
-      // soru yok; 4'ten kısa cümle yazdırmaya değmez, 12'den uzunu telefonda
-      // bir turluk iş olmaktan çıkar.
+      // Kaynak: kelimenin kendi örnek cümlesi ve ANADİLDEKİ çevirisi. 4'ten
+      // kısa cümle yazdırmaya değmez, 12'den uzunu telefonda bir turluk iş
+      // olmaktan çıkar.
       const de = firstExample(word.beispiel)?.trim();
       const tr = firstExample(word.beispielTr)?.trim();
       // Çevrilecek cümle ANADİLDE. Anadilde çevirisi olmayan kelimeye bu tur
       // kurulmuyor: Türkçe cümleyi İngilizce anadilli öğrenciye çevirtmek,
       // ölçtüğü şeyi Türkçe bilgisine çeviriyordu.
       const native_ = firstExample(exampleGlossFor(word, native))?.trim();
-      if (!de || !tr || !native_) return null;
+      // Türkçe çeviri artık şart değil (2026-09-28): yalnız anadilde çeviri
+      // aranıyor; Türkçe şartı en/de anadillilerde bu turların bir kısmını
+      // sebepsiz düşürüyordu. `tr` eski istemciler için boş dizge kalabiliyor.
+      if (!de || !native_) return null;
       const n = de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean).length;
       if (n < 4 || n > 12) return null;
       const en = firstExample(word.beispielEn);
@@ -1686,7 +1689,7 @@ export function makeRound(
         id: nextId(),
         game: "translate",
         word,
-        sentence: { tr, de, en, native: native_, nativeSub: native === "en" ? null : en },
+        sentence: { tr: tr ?? "", de, en, native: native_, nativeSub: native === "en" ? null : en },
         alternatives: [],
       };
     }
