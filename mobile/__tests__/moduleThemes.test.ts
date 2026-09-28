@@ -91,7 +91,7 @@ test("çözücü dile göre karar veriyor", async () => {
   await setLang("en");
   expect(moduleTheme("de", "A1", 0)).toBe("Introductions and me");
   await setLang("de");
-  expect(moduleTheme("de", "A1", 0)).toBe("Vorstellen und ich");
+  expect(moduleTheme("de", "A1", 0)).toBe("Sich vorstellen");
   // Kursun listesi yoksa çağıran kendi yedeğini kullanır: burası boş döner.
   expect(moduleTheme("de", "A1", 99)).toBeUndefined();
   await setLang("tr");
