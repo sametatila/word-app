@@ -309,19 +309,42 @@ kararlanıyor, kelime tekrar sorulmuyor.
 ### 6.3 · Ses efektleri ve TTS, köprü hazırken
 **Önce:** 6.2
 **Yap:** Aynı turda micon/micoff/doğru/yanlış seslerini dinle; web ve Android ile
-karşılaştır.
-**Geçti:** aynı sesler, aynı yükseklikte, üst üste binmiyor.
-**Geçmezse:** `mobile/src/lib/sfx.ts` (köprü → `react-native-sound` → native sıralaması),
-`mobile/src/lib/sfxNotes.ts` tek kaynak.
+karşılaştır. Art arda beş-altı doğru ver, sonra bir yanlış; bir kelimeyi bilerek
+bir harf yanlış yaz (yazım "neredeyse").
+**Geçti:** aynı sesler, aynı yükseklikte, üst üste binmiyor. Art arda doğrularda nota
+her seferinde bir basamak yükseliyor, 4. doğrudan sonra ışıltı ekleniyor, yanlışta
+başa dönüyor. Neredeyse kendi (doğrudan yumuşak, iki notalı) sesini çalıyor.
+Telaffuz efekt bitince başlıyor.
+**Geçmezse:** `mobile/src/lib/sfx.ts` (köprü → `react-native-sound` → native sıralaması;
+kombo tarifi `"correct+sparkle@oran"`, `sfxSpec`), `mobile/src/lib/sfxNotes.ts` tek kaynak.
 
 ### 6.4 · Sessiz anahtar
 **Önce:** 6.2
-**Yap:** Sessiz anahtarı AÇ (zil kapalı), turu sürdür.
-**Geçti:** TTS ve efektler duyuluyor.
-**Geçmezse:** kategori çekişmesi ihtimali: `mobile/src/lib/sfx.ts` modül yüklenirken
-`Sound.setCategory("Playback", false)` çağırıyor, `LernomiSpeech.swift` ise tur boyunca
-`.playAndRecord`/`.measurement` kuruyor. Son ayarlayan kazanır; önce bu iki çağrının
-sırasına bak.
+**Yap:** Sessiz anahtarı AÇ (zil kapalı), turu sürdür. ~2 sn bekle, sonra kapat ve
+bir cevap daha ver.
+**Geçti:** anahtar açıkken oyun efektleri SUSUYOR, Almanca telaffuz (TTS) çalmaya devam
+ediyor; anahtar kapanınca efektler geri geliyor. Yürüyüş modu bu kuralın dışında (orada
+efektler çalar). Anahtarı çevirdikten sonraki ~1 sn içindeki efekt eski durumla çalabilir;
+bu bilinen sınır.
+**Geçmezse:** iOS'ta sessiz anahtarın public API'si yok; `LernomiSpeech.swift` `SilentSwitch`
+kısa sessiz bir sistem sesi çalıp bitiş süresini ölçüyor (AVAudioSession'a dokunmadan).
+Şüphede ses ÇALAR — yani "efektler susmuyor" ölçümün tutmadığını, "TTS de sustu" ise
+oturum kategorisinin bozulduğunu gösterir (ikincisi ciddi: `sfx.ts` `Sound.setCategory`
+ve Swift `.playAndRecord`/`.measurement` sırasına bak).
+
+### 6.4a · Seri anı, tur sonu, lig atlama
+**Önce:** 6.2 · günün İLK turu (o gün hiç tur oynanmamış hesap)
+**Yap:** Turu bitir. Sonra Topluluk > Lig'e gir (lig atlamış bir hesapla ya da hafta
+dönümünden sonra).
+**Geçti:** sonuçtan önce ~1,2 sn seri sahnesi: alev büyüyor, sayı bir artıyor, seri sesi +
+başarı titreşimi; dokununca hemen geçiyor. Sonuçta XP, doğruluk, seri sırayla sayarak
+geliyor. Aynı gün ikinci turda seri sahnesi YOK. Lig atlandıysa Lig sekmesine ilk girişte
+yeni lig rozeti yaylanarak geliyor, açılış sesi + konfeti; ikinci girişte yok.
+Ayarlar > Uygulama > Titreşim kapalıyken ses var titreşim yok; Oyun sesleri kapalıyken
+tersi.
+**Geçmezse:** `/api/answers` yanıtında `streakUp`; `mobile/src/screens/GameScreen.tsx`
+(`FINISH_WAIT_MS`, `StreakMoment`), `mobile/src/social/LeagueBoardUp.tsx` (görülen lig
+AsyncStorage `lernomi.league.seen.<id>`), `mobile/src/lib/haptics.ts`.
 
 ### 6.5 · Analitikte platform
 **Önce:** 5.1 · **Kaynak:** E2
