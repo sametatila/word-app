@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import {
   accountSuspensions,
   achievements,
+  avatarItems,
   activityEvents,
   aiUsage,
   assessments,
@@ -89,6 +90,7 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(sessionState).where(eq(sessionState.userId, userId));
     await tx.delete(questClaims).where(eq(questClaims.userId, userId));
     await tx.delete(achievements).where(eq(achievements.userId, userId));
+    await tx.delete(avatarItems).where(eq(avatarItems.userId, userId));
     await tx.delete(events).where(eq(events.userId, userId));
     await tx.delete(moduleClears).where(eq(moduleClears.userId, userId));
     await tx.delete(aiUsage).where(eq(aiUsage.userId, userId));

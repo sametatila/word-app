@@ -3,7 +3,10 @@
 import { AvatarOverlay, GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { isLockedPart } from "@/lib/avatar-unlocks";
 import { useAvatar } from "@/lib/avatar";
-import { parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
+import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
+import { avatarLayers } from "@/lib/avatar-layers";
+import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
+import type { ReactNode } from "react";
 
 /**
  * Bir kişinin avatarı — iki platformda tek kural: HERKES maskotla çizilir.
@@ -57,6 +60,10 @@ export function derivedAvatar(seed: string): AvatarConfig {
     hatColor: HAT_COLORS[(h >>> 4) % HAT_COLORS.length],
     glasses: (h >>> 8) % 3 === 0 ? FREE_GLASSES[(h >>> 10) % FREE_GLASSES.length] : null,
     mustache: (h >>> 12) % 4 === 0 ? FREE_MUSTACHES[(h >>> 14) % FREE_MUSTACHES.length] : null,
+    bg: null,
+    extra: {},
+    fur: null,
+    expression: null,
   };
 }
 
@@ -102,15 +109,74 @@ export function MascotAvatar({
   ring?: string | null;
   className?: string;
 }) {
+  const catalog = useAvatarCatalog();
+  /* 3B KATALOG AÇIKSA katmanlar: arka plan, Nomi tabanı, yuvalar. Kare
+     çıktının yüzü merkezin biraz altında; dairede yüz ortalansın diye hafif
+     büyütülüp aşağıdan hizalanıyor (profil üst alanı kareyi olduğu gibi çiziyor). */
+  if (catalog) {
+    const L = avatarLayers(config, catalog.cat);
+    return (
+      <span
+        className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}
+        style={{ width: size, height: size, background: L.bg ? `center / cover url(${catalog.base}/${L.bg})` : "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
+      >
+        {[L.base, ...L.layers].map((f) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ transform: "scale(1.12)", transformOrigin: "50% 62%" }} />
+        ))}
+      </span>
+    );
+  }
   return (
     <span
       className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}
       style={{ width: size, height: size, background: "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
     >
+      {/* Büyük boyda aynı çizimin 512 px'liği: 128'lik taban profil üst
+          alanında bulanıklaşıyordu. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo-mark.png" alt="" width={size} height={size} className="block h-full w-full object-cover" />
+      <img src={size > 72 ? "/icon-512.png" : "/logo-mark.png"} alt="" width={size} height={size} className="block h-full w-full object-cover" />
       <AvatarOverlay config={config} size={size} />
     </span>
+  );
+}
+
+/**
+ * PROFİL SAHNESİ — büyük avatar, arka planıyla (2026-09-28, taslak F2).
+ *
+ * 3B katalog açıkken kullanıcının arka plan görseli ve göğüsten yukarı Nomi
+ * (katmanlar kare, alttan hizalı). Kapalıyken arka planın düz geçişi ve
+ * ortada büyük 2B avatar dairesi. `children` üst alanın düğmeleri (geri,
+ * ayarlar, koleksiyon etiketi). Mobil `AvatarStage` ile aynı düzen.
+ */
+export function AvatarStage({ config, height = 280, children, className = "" }: { config: AvatarConfig; height?: number; children?: ReactNode; className?: string }) {
+  const catalog = useAvatarCatalog();
+  const g = avatarBg(config.bg);
+  if (catalog) {
+    const L = avatarLayers(config, catalog.cat);
+    const fig = Math.round(height * 1.02);
+    return (
+      <div className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center 30% / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
+        <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.07, width: fig * 0.6, height: 26, background: "radial-gradient(closest-side, rgba(0,0,0,.3), transparent)" }} />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2" style={{ width: fig, height: fig }}>
+          {[L.base, ...L.layers].map((f) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
+          ))}
+        </div>
+        {children}
+      </div>
+    );
+  }
+  const d = Math.round(height * 0.56);
+  return (
+    <div className={`relative overflow-hidden ${className}`} style={{ height, background: `linear-gradient(${g.from}, ${g.to})` }}>
+      <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.14, width: d * 0.9, height: 22, background: "radial-gradient(closest-side, rgba(0,0,0,.28), transparent)" }} />
+      <div className="absolute left-1/2 -translate-x-1/2 rounded-full" style={{ bottom: height * 0.17, boxShadow: "0 0 0 5px rgba(255,255,255,.85), 0 14px 30px rgba(0,0,0,.18)" }}>
+        <MascotAvatar config={config} size={d} />
+      </div>
+      {children}
+    </div>
   );
 }
 

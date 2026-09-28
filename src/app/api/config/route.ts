@@ -3,6 +3,7 @@ import { authEnabled, googleConfigured, appleConfigured, appleWebConfigured } fr
 import { turnstileSiteKey } from "@/lib/auth/captcha";
 import { appControl } from "@/lib/app-control";
 import { guestAttestationConfig } from "@/lib/auth/play-integrity";
+import { avatar3dBase } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -52,6 +53,12 @@ export async function GET() {
         proje numarası; sır değil.
       */
       guestAttestation: guestAttestationConfig(),
+      /*
+        Nomi 3B avatar kataloğunun kökü (`AVATAR_3D_BASE`). Boşken `null` ve
+        iki istemci bugünkü 2B maskotu çiziyor; dolunca `katalog.json` ve
+        katmanlar buradan iniyor — uygulama güncellemesi gerekmeden açılır.
+      */
+      avatar3d: avatar3dBase(),
       app,
     },
     { headers: { "cache-control": "public, max-age=300" } },

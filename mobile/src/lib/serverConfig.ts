@@ -35,6 +35,8 @@ export type ServerConfig = {
    * da hata: `null` - kapı hiçbir şeyi engellemiyor.
    */
   app: AppControl | null;
+  /** Nomi 3B avatar kataloğunun kökü; `null` = 2B maskot (bkz. lib/avatarCatalog). */
+  avatar3d: string | null;
   /** Yalnız okuma düştüğünde: bu değerler sunucudan değil, kapalı yedekten. */
   offline?: true;
 };
@@ -87,6 +89,7 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       turnstileSiteKey: typeof c.turnstileSiteKey === "string" ? c.turnstileSiteKey : "",
       guestAttestation: attestationOf((c as { guestAttestation?: unknown }).guestAttestation),
       app: appControlOf((c as { app?: unknown }).app),
+      avatar3d: (() => { const v = (c as { avatar3d?: unknown }).avatar3d; return typeof v === "string" && /^https?:\/\//.test(v) ? v : null; })(),
     };
   } catch (e) {
     /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
@@ -101,7 +104,7 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       işaretli; bir sonraki çağrı yeniden deniyor ve sebep hata kaydına düşüyor.
     */
     reportError(e, "serverConfig");
-    return { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null, offline: true };
+    return { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null, avatar3d: null, offline: true };
   }
   return cached;
 }

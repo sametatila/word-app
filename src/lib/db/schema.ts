@@ -567,6 +567,27 @@ export const achievements = pgTable(
 );
 
 /**
+ * NOMİ AVATAR PARÇALARI — kimin hangi parçaya sahip olduğu (2026-09-28).
+ *
+ * Nomi'nin 3B katmanlı avatarı (3B avatar hattı, katalog `AVATAR_3D_BASE`)
+ * yuvalara ayrılmış yüzlerce parça taşıyor; bir kısmı herkese açık, bir kısmı
+ * kazanılıyor (rozet, lig, seri, Premium, etkinlik). Kazanılan parça burada
+ * tutuluyor: sunucu kuşandırırken yalnız sahip olunanı kabul edecek. `source`
+ * kazanım yolu (`badge`, `league`, `streak`, `premium`, `event`, `grant`).
+ * Hesap silmede silinir, misafir birleşmesinde taşınır.
+ */
+export const avatarItems = pgTable(
+  "avatar_items",
+  {
+    userId: text("user_id").notNull(),
+    itemId: text("item_id").notNull(),
+    source: text("source").notNull(),
+    acquiredAt: timestamp("acquired_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.itemId] })],
+);
+
+/**
  * Ürün olayları.
  *
  * Bugüne kadarki her tasarım kararı ölçüme dayandı ama ölçüm elle SQL

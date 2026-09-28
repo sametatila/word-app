@@ -39,7 +39,6 @@ const STEP = /var\(--color-[a-z]+-(?:100|200|300|400|500|600|700|800|900)\)/;
 /** Sabit dolgunun üstünde sabit yazı: zemin temayla değişmediği için geçerli. */
 const WEB_ALLOW = new Map([
   ["src/components/social/notification-bell.tsx", "sayaç rozeti: `flame-500` dolgu + `ink-900` yazı (6.04); anlamsal jeton koyu temada 300'e düşüp 1.49 veriyordu"],
-  ["src/components/social/friends-hub.tsx", "aynı sayaç rozeti"],
 ]);
 
 /* ── mobil: ham onaltılık ──────────────────────────────────────────────── */
@@ -56,11 +55,14 @@ const MOBILE_SKIP = [
      `components/avatar.tsx` basinda). Iki dosyanin ayni on iki cifti
      tasidigini parity-check 209 olcuyor. */
   "mobile/src/ui/Avatar.tsx",
+  /* Avatar arka planlari ve nadirlik renkleri: kullanicinin sectigi/kazandigi
+     ICERIK, palet degil (web `lib/avatar-config` `AVATAR_BGS`, `AVATAR_RARITY`
+     ile birebir; 3B katalogdaki arka plan gorsellerinin 2B karsiligi). */
+  "mobile/src/lib/avatar.ts",
 ];
 
 /** Paletin dışında kalması KABUL EDİLEN değerler, sebepleriyle. */
 const MOBILE_ALLOW = new Map([
-  ["#c0392b", "varsayılan şapka rengi: kullanıcının seçtiği aksesuar, palet değil"],
   ["#E8650F", "Android bildirim vurgu rengi (`lib/notifications` `NOTIF_COLOR`): sistem bildirim gölgesinde çiziliyor, uygulamanın teması orada yok; `res/values/colors.xml` `notification_accent` ile birebir aynı kalmalı"],
   /* Konfeti kimlik listesi - web `components/celebrate.tsx` `COLORS` ile birebir. */
   ["#fb8f2a", "konfeti (web listesiyle birebir) — brand-400, `orange[400]`"],

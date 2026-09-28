@@ -512,6 +512,13 @@
       "when": 1790800000000,
       "tag": "0072_session_state_native_lang",
       "breakpoints": true
+    },
+    {
+      "idx": 73,
+      "version": "7",
+      "when": 1790900000000,
+      "tag": "0073_avatar_items",
+      "breakpoints": true
     }
   ]
 }

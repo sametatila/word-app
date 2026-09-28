@@ -208,6 +208,14 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
         sql`update achievements set user_id = ${T} where user_id = ${G}`,
       ],
     },
+    {
+      /* Avatar parçası bir kez: hesapta zaten varsa misafirinki düşer. */
+      table: "avatar_items",
+      statements: [
+        sql`delete from avatar_items g using avatar_items t where g.user_id = ${G} and t.user_id = ${T} and t.item_id = g.item_id`,
+        sql`update avatar_items set user_id = ${T} where user_id = ${G}`,
+      ],
+    },
     { table: "events", statements: [sql`update events set user_id = ${T} where user_id = ${G}`] },
     {
       table: "module_clears",
