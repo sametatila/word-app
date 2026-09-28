@@ -21,7 +21,7 @@ import type { LegalDocDefault } from "./types";
 export const SUPPORT_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
   tr: {
     title: "Destek ve iletişim",
-    description: "Lernomi'ye nasıl ulaşacağın: destek adresi, yanıt süresi, hangi konu için hangi kanal ve uygulama içindeki bildirme ve engelleme yolları.",
+    description: "Lernomi'ye nasıl ulaşacağın: destek adresi, hangi konu için hangi kanal ve uygulama içindeki bildirme ve engelleme yolları.",
     summary: [],
     body: `Bir sorun mu var, bir şey mi soracaksın? Buradan bize ulaşabilirsin. Gelen her mesaja bir insan bakıyor; otomatik yanıt kullanmıyoruz.
 
@@ -53,7 +53,7 @@ Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum
   },
   en: {
     title: "Support and contact",
-    description: "How to reach Lernomi: the support address, response time, which channel for which topic, and the in-app reporting and blocking paths.",
+    description: "How to reach Lernomi: the support address, which channel for which topic, and the in-app reporting and blocking paths.",
     summary: [],
     body: `Something wrong, or a question? This is how you reach us. A person reads every message; we do not use automated replies.
 
@@ -85,7 +85,7 @@ Provider identification (Impressum): [imprint page]({{link:impressum}}).
   },
   de: {
     title: "Support und Kontakt",
-    description: "So erreichst du Lernomi: Support-Adresse, Antwortzeit, welcher Kanal für welches Thema und die Melde- und Blockierwege in der App.",
+    description: "So erreichst du Lernomi: Support-Adresse, welcher Kanal für welches Thema und die Melde- und Blockierwege in der App.",
     summary: [],
     body: `Etwas funktioniert nicht, oder du hast eine Frage? So erreichst du uns. Jede Nachricht liest ein Mensch; automatische Antworten gibt es nicht.
 

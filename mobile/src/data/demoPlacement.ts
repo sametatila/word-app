@@ -52,7 +52,7 @@ const DE_EN: PlacementQ[] = [
   { id: "p4", level: "A2", promptKey: "placement.fill_blank", question: "Yesterday I ___ at the movies.", answer: "was", options: ["was", "am", "have", "were"] },
   { id: "p5", level: "A2", promptKey: "placement.right_preposition", question: "I am interested ___ music.", answer: "in", options: ["in", "on", "at", "with"] },
   { id: "p6", level: "B1", promptKey: "placement.fill_blank", question: "If I ___ time, I would travel.", answer: "had", options: ["had", "have", "would have", "having"] },
-  { id: "p7", level: "B1", promptKey: "placement.right_conjunction", question: "I stay at home ___ it is raining.", answer: "because", options: ["because", "although", "however", "despite"] },
+  { id: "p7", level: "B1", promptKey: "placement.right_conjunction", question: "I'm staying home ___ it's raining.", answer: "because", options: ["because", "although", "however", "despite"] },
   { id: "p8", level: "B2", promptKey: "placement.fill_blank", question: "The project ___ we are working is important.", answer: "on which", options: ["on which", "in which", "at which", "with which"] },
 ];
 

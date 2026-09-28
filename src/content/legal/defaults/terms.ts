@@ -252,7 +252,7 @@ To protect AI and speech recognition provider quotas for everyone, daily per-acc
 
 On a free account, some AI-powered features have limited allowances: the Speaking and Writing steps in Path, speaking and writing assessments in Skills, and mock exams are open in a set number per level; walk mode is used with the screen on and for a set number of rounds a day. New allowances unlock as you finish what is open and keep your streak going. The numbers and how they unlock are written **on the Premium page in the app**. A step or exercise you have started stays open even when your allowance runs out.
 
-With Premium these allowances are open without waiting; Premium also has daily upper limits to prevent abuse (walk mode rounds, AI assessments and conversation messages). Because these are tuned together with the product, no fixed number is written here; **the values in force are shown on the Premium page in the app** and can be seen before you buy. If a limit is lowered, the change is announced on that same page. Premium is never advertised as “unlimited”.
+With Premium these allowances are open without waiting; Premium also has daily upper limits to prevent abuse (walk mode rounds, AI assessments and conversation messages). Because these are tuned together with the product, no fixed number is written here; **the values in force are shown on the Premium page in the app** and can be seen before you buy. If a limit is lowered, the change is announced on that same page. Premium is never advertised as “unlimited.”
 
 ## 7b. Third-party services
 
@@ -306,7 +306,7 @@ If you downloaded the app from the App Store, the following also applies. These 
 - **Warranty:** We alone are responsible for any warranty. If the app fails to conform to an applicable warranty you may notify Apple, and Apple will refund the purchase price; beyond that Apple has no warranty obligation.
 - **Claims:** Claims relating to the app — including product liability, legal compliance, consumer protection and privacy — are addressed to us, not to Apple.
 - **Intellectual property:** If a third party claims the app infringes their intellectual property rights, investigation, defense and settlement are ours alone.
-- **Legal compliance:** By using the app you represent that you are not located in a country subject to a US embargo or designated by the US as "terrorist supporting", and that you are not on any US list of prohibited parties.
+- **Legal compliance:** By using the app you represent that you are not located in a country subject to a US embargo or designated by the US as "terrorist supporting," and that you are not on any US list of prohibited parties.
 - **Contact:** For questions, complaints and claims, the contact details in section 1 apply.
 - **Third-party terms:** You agree to comply with applicable third-party terms when using the app.
 - **Third-party beneficiary:** Apple and its subsidiaries are third-party beneficiaries of this agreement and have the right to enforce it against you.
