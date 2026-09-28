@@ -9,7 +9,7 @@
  * Yaptığı:
  *   - eksik anahtarları hesaplar (`tts-own-needs`, elle çalışan `tts:coverage` ile aynı hesap),
  *   - üretim işini `TTS_OWN_DIR/eksik.jsonl`e yazar (tts-test `kelimeler.py` biçimi),
- *   - bir önceki ölçümü `TTS_OWN_DIR/eksik-durum.json`da tutar ve YALNIZ YENİ eksik varsa tek satır mesaj basar.
+ *   - bir önceki ölçümü `TTS_OWN_DIR/eksik-durum.json`da tutar ve YALNIZ YENİ eksik varsa çok satırlı mesaj basar.
  * Mesaj boşsa söylenecek bir şey yok; sarmalayıcı mesajı Telegram'a yollar. Üretim sürerken kalan binlerce
  * eksik her gece tekrar bildirilmesin diye ölçüt "yeni", toplam yalnız bağlam olarak yazılıyor.
  *
@@ -48,18 +48,42 @@ async function main() {
   const fresh = missing.filter((m) => !before.has(m.key));
   const unused = Object.keys(map).filter((k) => !needed.has(k)).length;
 
+  const n = (x: number) => x.toLocaleString("tr-TR");
   if (first) {
-    console.log(`Ses bekçisi ilk ölçüm: ${silent.length} anahtar sesiz (+${missing.length - silent.length} anlatım Edge'de), tabloda kullanılmayan ${unused}. İş: ${lines.length} metin → ${dir}/eksik.jsonl`);
+    console.log(
+      [
+        "Ses bekçisi ilk ölçüm",
+        `Sessiz anahtar: ${n(silent.length)} · Edge'de çalan anlatım: ${n(missing.length - silent.length)}`,
+        `Tabloda kullanılmayan: ${n(unused)} · İş listesi: ${n(lines.length)} metin (${dir}/eksik.jsonl)`,
+      ].join("\n"),
+    );
     return;
   }
   if (!fresh.length) return;
 
+  /* Telegram'a çok satırlı düz metin (tts-watch.sh bütün çıktıyı alıyor). Anahtar `ses|dil|metin`; aynı metnin iki
+     sesi tek satırda: "let someone know (en · Defne, Aras)". */
   const freshSilent = fresh.filter((m) => !narration(m));
-  const sample = fresh.slice(0, 5).map(({ key: k }) => (k.length > 60 ? `${k.slice(0, 57)}…` : k)).join(" · ");
+  const byText = new Map<string, { lang: string; text: string; voices: string[] }>();
+  for (const { key } of fresh) {
+    const [voice, lang, ...rest] = key.split("|");
+    const text = rest.join("|");
+    const e = byText.get(`${lang}|${text}`) ?? { lang, text, voices: [] };
+    e.voices.push(voice.charAt(0).toLocaleUpperCase("tr-TR") + voice.slice(1));
+    byText.set(`${lang}|${text}`, e);
+  }
+  const clip = (s: string) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
+  const sample = [...byText.values()].slice(0, 5).map((e) => `• ${clip(e.text)} (${e.lang} · ${e.voices.join(", ")})`);
   console.log(
-    `Sesi olmayan YENİ metin: ${fresh.length} anahtar (${freshSilent.length} sesiz, ${fresh.length - freshSilent.length} anlatım Edge'de). ` +
-      `Örnek: ${sample}. Toplam eksik ${missing.length}, tabloda kullanılmayan ${unused}. ` +
-      `Üretim: scp lernomi:${dir}/eksik.jsonl → tts-test kelimeler/jobs/eksik_<tarih>.jsonl, kelimeler.py eksik_<tarih>`,
+    [
+      `Sesi olmayan yeni metin: ${n(byText.size)} metin (${n(fresh.length)} anahtar)`,
+      `Kelime katmanı, sessiz: ${n(freshSilent.length)} · Yürüyüş anlatımı, Edge'de çalıyor: ${n(fresh.length - freshSilent.length)}`,
+      "Örnekler:",
+      ...sample,
+      ...(byText.size > sample.length ? [`… ve ${n(byText.size - sample.length)} metin daha`] : []),
+      `Toplam eksik: ${n(missing.length)} anahtar · Tabloda kullanılmayan: ${n(unused)}`,
+      `Üretim: ${dir}/eksik.jsonl → tts-test kelimeler/jobs/, kelimeler.py ile`,
+    ].join("\n"),
   );
 }
 
