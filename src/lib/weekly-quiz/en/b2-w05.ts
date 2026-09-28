@@ -38,15 +38,15 @@ export const EN_B2_W05: QuizWeek = {
         "Posted by Clara_M\n\n" +
         "I've just heard that Harper's, the bookstore on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
         "I knew it had been having difficulties for a while, but I honestly hadn't realized how bad things were.\n\n" +
-        "The family who run the store are said to have tried everything: evenings with authors, a small café, even an online store. " +
+        "The family who runs the store is said to have tried everything: evenings with authors, a small café, even an online store. " +
         "Apparently none of it was enough. The building is going to be turned into offices for a software company, which, to be fair, will bring some jobs into the town center.\n\n" +
-        "What bothers me is that most of us must have seen this coming. How many times did we look at a book in Harper's and then order it online because it was two pounds cheaper? " +
+        "What bothers me is that most of us must have seen this coming. How many times did we look at a book in Harper's and then order it online because it was two dollars cheaper? " +
         "I'm not blaming anyone, because I did it myself. But if more of us had bought our books there, the store might still be open today.\n\n" +
         "I also think the town could have done something. Other towns have reduced taxes for independent stores, and it seems to have worked.\n\n" +
         "Reply from Dan_K\n\n" +
         "I understand how you feel, but I'm not sure we should blame ourselves. Bookstores like Harper's have been closing all over the country, so it is probably a much bigger problem than one town's shopping habits. " +
         "That said, I agree about the town. The problem should at least have been pointed out at a public meeting before the building was sold.\n\n" +
-        "The good news is that the family are apparently planning to open a smaller store near the station. If they do, I'll definitely be buying my books there.",
+        "The good news is that the family is apparently planning to open a smaller store near the station. If they do, I'll definitely be buying my books there.",
     },
     {
       kind: "audio",
@@ -170,16 +170,16 @@ export const EN_B2_W05: QuizWeek = {
     {
       id: "en-b2-w05-g1",
       block: "grammar",
-      stem: "The family who run the store ___ to have tried everything.",
-      options: ["say", "are said", "are saying", "have said"],
+      stem: "The family who runs the store ___ to have tried everything.",
+      options: ["says", "is said", "is saying", "has said"],
       answer: 1,
-      why: "Kaynağı belirsiz, geçmişe dair bilgi `are said to have` + üçüncü hâl ile verilir. Türkçe 'her şeyi denemişler' kanıtsallık ekiyle kurulduğu için aile özne olarak kalıyor ve etken `say` seçiliyor; ama sözü söyleyen aile değil.",
+      why: "Kaynağı belirsiz, geçmişe dair bilgi `is said to have` + üçüncü hâl ile verilir. Türkçe 'her şeyi denemişler' kanıtsallık ekiyle kurulduğu için aile özne olarak kalıyor ve etken `says` seçiliyor; ama sözü söyleyen aile değil.",
       targets: ["passive.reporting"],
       byNative: {
         de: {
-          options: ["have said", "say", "are said", "are saying"],
+          options: ["has said", "says", "is said", "is saying"],
           answer: 2,
-          why: "Almanca `Man sagt, die Familie habe alles versucht` etken bir yapı ve `say`/`have said` kurduruyor. İngilizcede aile özne olunca kalıp edilgen: `are said to have tried`.",
+          why: "Almanca `Man sagt, die Familie habe alles versucht` etken bir yapı ve `says`/`has said` kurduruyor. İngilizcede aile özne olunca kalıp edilgen: `is said to have tried`.",
         },
       },
     },

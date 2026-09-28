@@ -202,7 +202,7 @@ export const DE_C1_W02: QuizWeek = {
     {
       id: "de-c1-w02-g4",
       block: "grammar",
-      stem: "Sie wollen die Anwesenheitspflicht wieder einführen? Das ist ___ ein Rückschritt.",
+      stem: "Sie halten die Wiedereinführung der Anwesenheitspflicht für einen Fortschritt? Das ist ___ ein Rückschritt!",
       options: ["ja", "doch", "wohl", "eben"],
       answer: 1,
       why: "`doch` burada bir itirazı işaretler: konuşan, karşı tarafın beklemediği bir şey söylediğini vurguluyor. `ja` bilinen bir şeyi, `wohl` tahmini, `eben` kaçınılmazlığı bildirir — dördü de dil bilgisel, ama tutumları başka.",

@@ -246,13 +246,13 @@ export const EN_B2_W04: QuizWeek = {
       stem: "Sales hardly changed, so the fee ___ many customers away.",
       options: ["mustn't drive", "shouldn't have driven", "can't have driven", "didn't must drive"],
       answer: 2,
-      why: "Kanıta dayanan olumsuz geçmiş çıkarım `can't have` ile kurulur: 'uzaklaştırmış olamaz'. `can't have` en güvenli olumsuz çıkarım; `mustn't` İngiliz İngilizcesinde yasak anlamına kayar ve `mustn't drive` geçmişi de taşımaz. `shouldn't have` ise bir eleştiri. Türkçe '-miş olamaz' ile '-memeli' yakın düştüğü için `mustn't` seçiliyor.",
+      why: "Kanıta dayanan olumsuz geçmiş çıkarım `can't have` ile kurulur: 'uzaklaştırmış olamaz'. `can't have` en güvenli olumsuz çıkarım; `mustn't` yasak anlamına kayar ve `mustn't drive` geçmişi de taşımaz. `shouldn't have` ise bir eleştiri. Türkçe '-miş olamaz' ile '-memeli' yakın düştüğü için `mustn't` seçiliyor.",
       targets: ["modal-perfect.cant-have"],
       byNative: {
         de: {
           options: ["can't have driven", "mustn't drive", "didn't must drive", "shouldn't have driven"],
           answer: 0,
-          why: "Almanca `kann … nicht vertrieben haben` doğru sezgiyi veriyor, ama `muss nicht` → `mustn't` aktarımı da güçlü. `mustn't` İngiliz İngilizcesinde yasak bildirir; güvenli olumsuz çıkarım `can't have`.",
+          why: "Almanca `kann … nicht vertrieben haben` doğru sezgiyi veriyor, ama `muss nicht` → `mustn't` aktarımı da güçlü. `mustn't` yasak bildirir; güvenli olumsuz çıkarım `can't have`.",
         },
       },
     },

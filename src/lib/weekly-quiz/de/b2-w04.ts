@@ -1,7 +1,7 @@
 import type { QuizWeek } from "../types";
 
 /**
- * B2 · Hafta 4 · Ekonomi, tüketim ve etik.
+ * B2 · Hafta 4 · Ekonomi, tüketim ve sorumluluk.
  *
  * ÖLÇÜLEN ŞEY: ucuz giyimin gerçek maliyeti üzerine bir yorum yazısını ve bir
  * tüketici danışma hattı görüşmesini anlamak; `je … desto`, `nicht nur …
@@ -24,7 +24,7 @@ export const DE_B2_W04: QuizWeek = {
   level: "B2",
   no: 4,
   theme: "Wirtschaft, Konsum und Verantwortung",
-  themeTr: "Ekonomi, tüketim ve etik",
+  themeTr: "Ekonomi, tüketim ve sorumluluk",
   canDo: ["B2.GR.4", "B2.GR.5", "B2.RD.1", "B2.RD.2", "B2.LS.5"],
 
   stimuli: [

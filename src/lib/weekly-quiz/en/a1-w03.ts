@@ -126,7 +126,7 @@ export const EN_A1_W03: QuizWeek = {
     {
       id: "en-a1-w03-g1",
       block: "grammar",
-      stem: "___ is the bread?",
+      stem: "___ is the bread? — It is 3 euros.",
       options: ["How many", "How much", "How", "What many"],
       answer: 1,
       why: "Fiyat sorusu `How much…?` ile kurulur çünkü para sayılamaz. `How many` sayılabilir isimlerle kullanılır (how many books).",

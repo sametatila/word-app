@@ -36,7 +36,7 @@ export const EN_A1_W02: QuizWeek = {
         "Then I go home and read a book. " +
         "Sometimes I meet friends in the city. " +
         "I do not have much time, but I learn English at school. " +
-        "I always sleep late.",
+        "I always go to bed late.",
     },
     {
       kind: "audio",
