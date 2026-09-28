@@ -35,6 +35,13 @@ Kurallar:
 
 - **Karşılık yoksa Türkçeye düşülmez.** `glossFor` `null` döner, kelime havuzdan elenir.
   Türkçeye düşmek görünürde çalışan en kötü eksik çeviridir.
+- **İkinci satır her zaman İngilizce, bilinçli.** Türkçe ve Almanca anadilliye ana satırın
+  altında İngilizce karşılık da görünür ("kez · time", "sahip olmak / to have"); ana satır
+  zaten İngilizceyse ikinci satır yok. Sebep ayırt etmek: Türkçede tek kelimeye çöken
+  anlamlar İngilizcede ayrılır (er/sie/es hepsi "o", he/she/it). Kaynak `glossFor`,
+  `exampleFor` (`src/lib/option-label.ts`), mobil `mobile/src/game/gloss.ts`,
+  `data/meanings/SPEC.md`; `test:gloss` ve mobil `gameGloss` testi kilitliyor. Sızıntı
+  değil (2026-09-28'de simülatörde öyle sanılıp denetim T17'de kapatıldı).
 - `makeRound`un `native` parametresi zorunlu; varsayılan olsaydı yeni bir çağıran sessizce
   Türkçeye düşerdi.
 - Çözücü hep-ya-hiç: bir dizenin karşılığı yoksa o konuşma tümden çevrilmez.
