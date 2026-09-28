@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
-import { reduceMotion } from "../lib/reduceMotion";
+import { useEnterAnim } from "../ui/EnterView";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useTheme, spacing, radii, cardShadow } from "../theme";
 import { haptic } from "../lib/haptics";
@@ -37,20 +37,12 @@ export type ChoiceRound = {
 export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRound; onDone: (correct: boolean) => void; reveal?: boolean }) {
   const { colors } = useTheme();
   const [picked, setPicked] = useState<string | null>(null);
-  const fade = useRef(new Animated.Value(0)).current;
-  const slide = useRef(new Animated.Value(12)).current;
+  /* Giriş ortak parçada (`ui/EnterView`); öteki turlar da aynı değerle giriyor. */
+  const { opacity: fade, translateY: slide } = useEnterAnim(round.wordId);
 
   useEffect(() => {
     setPicked(null);
-    fade.setValue(0);
-    slide.setValue(12);
-    /* "Hareketi azalt": tur kayarak/solarak girmiyor, yerinde beliriyor. */
-    if (reduceMotion()) { fade.setValue(1); slide.setValue(0); return; }
-    Animated.parallel([
-      Animated.timing(fade, { toValue: 1, duration: 260, useNativeDriver: true }),
-      Animated.spring(slide, { toValue: 0, useNativeDriver: true, speed: 14, bounciness: 6 }),
-    ]).start();
-  }, [round.wordId, fade, slide]);
+  }, [round.wordId]);
 
   function choose(opt: string) {
     if (picked) return;

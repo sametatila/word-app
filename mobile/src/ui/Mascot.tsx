@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, View } from "react-native";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * Nomi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
@@ -40,6 +41,20 @@ const CLIP = {
 export type Mood = keyof typeof CLIP;
 
 /**
+ * Azaltılmış harekette Nomi DURUR: her klibin ilk karesi (320 px, ~25 KB).
+ * Web `components/mascot` aynı ayarda durgun görsel gösteriyor; mobilde
+ * animasyonlu WebP bu ayarı dinlemiyordu. Kareler kliplerden `sharp` ile
+ * (`page: 0`) çıkarıldı; klip değişirse kare de yeniden üretilir.
+ */
+const STILL: Record<Mood, number> = {
+  idle: require("../assets/mascot/still/idle-sit.webp"),
+  happy: require("../assets/mascot/still/happy.webp"),
+  thumbsup: require("../assets/mascot/still/thumbsup.webp"),
+  sad: require("../assets/mascot/still/sad.webp"),
+  celebrate: require("../assets/mascot/still/celebrate.webp"),
+};
+
+/**
  * Nomi'nin boyu — TEK sayı, çünkü Nomi'nin tek yeri var: Öğren ekranının
  * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `ui/flow` içindeydi
  * (şablonlar maskotu kendisi çiziyordu), sonra iki sayı olarak buraya taşındı
@@ -58,7 +73,7 @@ export function Mascot({
   return (
     <View style={{ width: size, height: size * 1.5, alignItems: "center", justifyContent: "flex-end" }}>
       <Image
-        source={CLIP[mood] ?? CLIP.idle}
+        source={reduceMotion() ? (STILL[mood] ?? STILL.idle) : (CLIP[mood] ?? CLIP.idle)}
         style={{ width: size, height: size * 1.5 }}
         resizeMode="contain"
         fadeDuration={0}

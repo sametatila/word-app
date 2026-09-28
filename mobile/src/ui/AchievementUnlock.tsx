@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { sfx } from "../lib/sfx";
-import { Modal, View, Pressable } from "react-native";
+import { Animated, Modal, View, Pressable } from "react-native";
+import { reduceMotion } from "../lib/reduceMotion";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { AchievementIcon } from "./achievementIcon";
@@ -178,6 +179,34 @@ export function AchievementUnlock() {
     return () => clearTimeout(id);
   }, [shownId, advance]);
 
+  /*
+    KART YAYLANARAK GELİYOR. Modal yalnız soluyordu; webde kart küçükten,
+    hafif eğik ve aşağıdan yayla oturuyor (`components/achievement-unlock.tsx`
+    `Card`: scale .7→1, y 18→0, rotate -4°→0, spring stiffness 320 damping 20).
+    Tek değer 0→1 yaylanıyor, üç dönüşüm ondan; yayın taşması da üçüne aynı
+    oranda yansıyor (webde her özellik aynı yayla gidiyor). Kuyruktaki her
+    rozet kendi girişini oynuyor (webde `key={shownId}`). "Hareketi azalt"ta
+    yalnız Modal'ın solması kalıyor.
+  */
+  const pop = useRef(new Animated.Value(reduceMotion() ? 1 : 0)).current;
+  /* Düzen efekti: sıfırlama ilk kareden önce, kart bir kare tam boy görünüp
+     sonra küçülmesin. Kapanınca da sıfırda bekliyor. */
+  useLayoutEffect(() => {
+    if (reduceMotion()) { pop.setValue(1); return; }
+    if (!shownId) { pop.setValue(0); return; }
+    pop.setValue(0);
+    const a = Animated.spring(pop, { toValue: 1, stiffness: 320, damping: 20, mass: 1, useNativeDriver: true });
+    a.start();
+    return () => a.stop();
+  }, [shownId, pop]);
+  const cardMotion = {
+    transform: [
+      { translateY: pop.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) },
+      { scale: pop.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1] }) },
+      { rotate: pop.interpolate({ inputRange: [0, 1], outputRange: ["-4deg", "0deg"] }) },
+    ],
+  };
+
   if (!view) return null;
   const batch = view.kind === "batch";
   const solo = view.kind === "solo" ? view.queue[0] : null;
@@ -191,11 +220,11 @@ export function AchievementUnlock() {
         {/* ROL VE AD — web `achievement-unlock` `role="dialog" aria-label` ile
             aynı iş. Kutlama kutusu adsızdı: ekran okuyucu ne olduğunu ancak
             rozet adı okunurken anlıyordu. */}
-        <View
+        <Animated.View
           accessibilityViewIsModal
           accessibilityRole="alert"
           accessibilityLabel={t("achievements.achievements")}
-          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
+          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18), cardMotion]}>
           {batch && view.kind === "batch" ? (
             <>
               <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>
@@ -232,7 +261,7 @@ export function AchievementUnlock() {
             </>
           ) : null}
           <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.lg }}>{t("achu.tap_to_continue")}</Text>
-        </View>
+        </Animated.View>
       </Pressable>
     </Modal>
   );

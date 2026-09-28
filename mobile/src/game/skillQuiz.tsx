@@ -302,9 +302,11 @@ export type WritingTask = BuildTask | FreeTask | RewriteTask | FormTask;
 /** Yazma egzersizi görevleri — de içeriğinde iki tür: build (TR→DE cümle) ve free. */
 export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { tasks: WritingTask[]; level: string; exerciseId: string; onAllDone: (correct: number) => void; colors: Palette }) {
   const [results, setResults] = useState<(boolean | null)[]>(() => tasks.map(() => null));
-  function settle(i: number, ok: boolean) {
+  /* `near`: yazım sapmasıyla geçti ("Neredeyse") — tam doğrunun parlak sesi
+     değil, yumuşak "near" (bkz. `game/rounds` `markAnswer`). */
+  function settle(i: number, ok: boolean, near = false) {
     if (results[i] !== null) return;
-    haptic(ok ? "correct" : "wrong");
+    haptic(ok ? (near ? "near" : "correct") : "wrong");
     const n = [...results]; n[i] = ok; setResults(n);
     if (n.every((r) => r !== null)) onAllDone(n.filter(Boolean).length);
   }
@@ -324,7 +326,7 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
         yüzeyiyle çiziyor (`skills/writing-player`).
       */}
       {tasks.map((t, i) => {
-        const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean) => settle(i, ok), colors };
+        const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean, near?: boolean) => settle(i, ok, near), colors };
         if (t.kind === "build") return <BuildCard key={i} t={t} {...shared} />;
         if (t.kind === "rewrite") return <RewriteCard key={i} t={t} {...shared} />;
         if (t.kind === "form") return <FormCard key={i} t={t} {...shared} />;
@@ -433,7 +435,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
  * gösterilmesi: öğrenci onu dönüştürüyor. Web'in karşılığı
  * `skills/writing-player` içindeki `rewrite` dalı.
  */
-function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
+function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: number; done: boolean; onSettle: (ok: boolean, near?: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
   const ok = match ? isPass(match) : false;
@@ -441,7 +443,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
     if (done || !typed.trim()) return;
     const m = matchSentence(typed, t.answer, t.alternatives ?? [], currentTargetLang());
     setMatch(m);
-    onSettle(isPass(m));
+    onSettle(isPass(m), m.verdict === "spelling");
   }
   return (
     <Card padded>

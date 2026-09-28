@@ -25,6 +25,8 @@ import { isAiConsentDeclined } from "../lib/aiConsent";
 import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
+import { MicPulse, TypingDots } from "../ui/ConversationFx";
+import { sfx } from "../lib/sfx";
 
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
@@ -316,6 +318,9 @@ export function ConversationScoredScreen() {
     if (listening || busy) return;
     if (!(await ensureMicPermission())) { setAsr(false); return; }
     setListening(true);
+    /* Mikrofon açılış sesi — `ConversationScreen` `dinle` ile aynı (web
+       `cueListen`; yürüyüşün 180 ms zamanlaması). */
+    const miconTimer = setTimeout(() => sfx("micon"), 180);
     try {
       /* Tanıyıcı birkaç aday döndürüyor; sınavda ilki alınıyor - konuşma
          turlarının kendi eşleştiricisi yok, cevap düz metin gidiyor. */
@@ -323,6 +328,7 @@ export function ConversationScoredScreen() {
       if (!mounted.current) return;
       if (heard) { setDraft(heard); void send(heard); }
     } finally {
+      clearTimeout(miconTimer);
       if (mounted.current) setListening(false);
     }
   }
@@ -551,7 +557,13 @@ export function ConversationScoredScreen() {
             ) : null}
           </View>
         ))}
-        {busy ? <ActivityIndicator color={colors.primary} style={{ alignSelf: "flex-start" }} /> : null}
+        {/* "Yazıyor" noktaları — `ConversationScreen` ile aynı baloncuk (web
+            `conversation-player` `TypingDots`). */}
+        {busy ? (
+          <View style={{ alignSelf: "flex-start", backgroundColor: colors.surface2, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+            <TypingDots />
+          </View>
+        ) : null}
       </KeyboardAwareScroll>
       {/* KLAVYE ALT ÇUBUĞU ÖRTÜYORDU. Yazma kutusu kaydırma alanının ALTINDA,
           sabit bir çubukta duruyor; edge-to-edge altında (Android 15+/targetSdk 35+)
@@ -567,7 +579,7 @@ export function ConversationScoredScreen() {
             accessibilityLabel={tx("conversation.mic_talk")}
             style={[{ width: 48, height: 48, borderRadius: radii.pill, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
           >
-            <MicIcon color={colors.onPrimary} size={20} />
+            <MicPulse active={listening}><MicIcon color={colors.onPrimary} size={20} /></MicPulse>
           </PressableScale>
         ) : null}
         <TextInput

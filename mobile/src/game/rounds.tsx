@@ -23,6 +23,7 @@ import { haptic } from "../lib/haptics";
 import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
+import { EnterView } from "../ui/EnterView";
 import { useKeyboardInset, useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useLayout } from "../lib/useLayout";
 import { whyFor, whyLabel, type Why } from "./why";
@@ -205,13 +206,18 @@ function sesiKes(): void {
   stopSpeaking();
 }
 
-function markAnswer(ok: boolean, speak?: string | null): void {
+/**
+ * `near`: kabul edildi ama kusurlu (yazım sapması, katman "Neredeyse"
+ * tonunda). Tam doğrunun parlak sesi değil, ortak ses sözleşmesindeki
+ * yumuşak "near" (web `play("near")`).
+ */
+function markAnswer(ok: boolean, speak?: string | null, near = false): void {
   /* SES `haptic`IN ICINDEN GIDIYOR. Burada ikisi birden yaziliydi ve ses iki
      kez isteniyordu; tek duyulmasini `sfx`in 120 ms yineleme penceresine
      borcluyduk. `lib/haptics` bu ciftlemenin dort yerde temizlendigini
      yaziyordu - en cok gecilen yol olan burasi atlanmis. Webde ayni artik
      `walk-player`da duruyordu (bkz. web-parity 11.435). */
-  const kind = ok ? "correct" : "wrong";
+  const kind = ok ? (near ? "near" : "correct") : "wrong";
   haptic(kind);
   if (!speak) return;
   /*
@@ -316,6 +322,16 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
   const shellRef = useRef<React.ComponentRef<typeof View>>(null);
   const lift = useKeyboardLift(shellRef, spacing.md);
   const kbOpen = useKeyboardInset() > 0;
+  /*
+    SORU KARTI GİRİŞİ HER TURDA. Yalnız `ChoiceGame` solarak/kayarak
+    giriyordu; öteki turlar bir anda beliriyordu. Tur bileşeni her turda
+    yeniden kuruluyor (`RoundView` `key`), yani giriş mount'ta bir kez.
+    Yalnız içerik kayıyor: dip (girdi + "Kontrol et") klavye payını ölçüyor,
+    kayan bir kap o ölçüyü ilk karede şaşırtırdı. Kaydırmalı kapta `flexGrow`
+    (esas boy içerikten): `flex: 1` uzun içeriği sıfır esastan ezebilirdi.
+    Web: `session-player` ~949.
+  */
+  const content = <EnterView enterKey={0} style={scroll ? { flexGrow: 1 } : { flex: 1 }}>{children}</EnterView>;
   return (
     <KeyboardOpen.Provider value={kbOpen}>
     <View ref={shellRef} collapsable={false} style={{ flex: 1 }}>
@@ -326,10 +342,10 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
-          {children}
+          {content}
         </ScrollView>
       ) : (
-        <View style={{ flex: 1 }}>{children}</View>
+        <View style={{ flex: 1 }}>{content}</View>
       )}
       {/* Sonuç katmanı açıkken dip görünmez ama yerini koruyor: katmanın yuvarlak
           köşelerinin arkasından turuncu "Kontrol et" kenarları taşıyordu. */}
@@ -1705,7 +1721,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     }
     judged.current = m;
     Keyboard.dismiss();
-    markAnswer(ok, s.de); // doğru Almanca cümleyi oku
+    markAnswer(ok, s.de, ok && !rescued && m.verdict === "spelling"); // doğru Almanca cümleyi oku; yazım sapması "near"
     /* HÜKÜM TEK İFADE, cevap kendi satırında: "Doğrusu:" iki kez yazılıyordu
        (etiket + `match.wrong` hükmü). Yazım sapmasında katman "neredeyse"
        tonunda; sıra hatası yanlış sayılıyor ama adını söylüyor. */
