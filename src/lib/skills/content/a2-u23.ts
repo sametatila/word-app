@@ -310,7 +310,7 @@ export const a2U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll Frau Yıldız vor dem Unterschreiben machen?",
+        text: "Was soll Frau Yildiz vor dem Unterschreiben machen?",
         options: [],
         answer: 0,
         accept: [
@@ -419,11 +419,11 @@ export const a2U23: SkillExercise[] = [
           "Betreff: Terminwunsch — Anmeldung nach Umzug\n\n" +
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich möchte mich anmelden. Ich bin am 3. Juni in die Lindenstraße 12 umgezogen und wohne jetzt in Ihrem Bezirk.\n\n" +
-          "Mein Name ist Deniz Aydın, geboren am 14. März 1994.\n\n" +
+          "Mein Name ist Deniz Aydin, geboren am 14. März 1994.\n\n" +
           "Möglich wäre bei mir Donnerstag, der 19. Juni, am späten Nachmittag, oder Freitag, der 20. Juni, am Vormittag.\n\n" +
           "Eine Frage noch: Was muss ich mitbringen? Das Anmeldeformular habe ich schon von Ihrer Website heruntergeladen und ausgefüllt. Reicht mein Pass, oder brauchen Sie auch die Bestätigung des Vermieters?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydın",
+          "Mit freundlichen Grüßen\nDeniz Aydin",
       },
     ],
   },

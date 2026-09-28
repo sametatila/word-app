@@ -86,7 +86,7 @@ Bringen Sie bitte Ihre Kinder mit! Wir haben Spiele und Musik.
 
 Bei Regen feiern wir unten im Waschkeller.
 
-Familie Yılmaz, Wohnung 3 B`,
+Familie Yilmaz, Wohnung 3 B`,
               gloss: [
                 { de: "der Hof", tr: "avlu", en: "courtyard" },
                 { de: "kosten nichts", tr: "ücretsiz", en: "free of charge" },

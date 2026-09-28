@@ -342,7 +342,7 @@ export const a1U03: SkillExercise[] = [
           { de: "Meine Eltern wohnen in …", tr: "Annemle babam …'da oturuyor.", en: "My parents live in …" },
         ],
         sample:
-          "Hallo zusammen!\n\nIch heiße Yusuf und ich bin 25 Jahre alt. Ich bin in Ankara geboren.\n\nDas ist meine Familie: Meine Mutter heißt Ayşe und mein Vater heißt Kemal. Beide arbeiten in einer Firma.\n\nIch habe eine Schwester. Sie ist zehn Jahre alt. Meine Großeltern wohnen auch in Ankara.\n\nUnd ihr? Habt ihr Geschwister?\nYusuf",
+          "Hallo zusammen!\n\nIch heiße Yusuf und ich bin 25 Jahre alt. Ich bin in Ankara geboren.\n\nDas ist meine Familie: Meine Mutter heißt Ayse und mein Vater heißt Kemal. Beide arbeiten in einer Firma.\n\nIch habe eine Schwester. Sie ist zehn Jahre alt. Meine Großeltern wohnen auch in Ankara.\n\nUnd ihr? Habt ihr Geschwister?\nYusuf",
       },
     ],
   },

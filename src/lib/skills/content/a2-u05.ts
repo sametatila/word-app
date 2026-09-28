@@ -230,7 +230,7 @@ export const a2U05: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Reporterin", text: "Frau Aydın, Sie haben letzten Monat den Wettbewerb gewonnen. Wie lange haben Sie dafür trainiert?" },
+      { speaker: "Reporterin", text: "Frau Aydin, Sie haben letzten Monat den Wettbewerb gewonnen. Wie lange haben Sie dafür trainiert?" },
       { speaker: "Frau Aydın", text: "Fast drei Jahre. Am Anfang zweimal pro Woche, später jeden Tag vor der Arbeit." },
       { speaker: "Reporterin", text: "Das klingt hart." },
       { speaker: "Frau Aydın", text: "Es war hart. Im zweiten Jahr wollte ich aufhören. Ich habe es dreimal versucht und bin dreimal zurückgekommen." },
@@ -241,7 +241,7 @@ export const a2U05: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wie lange hat Frau Aydın trainiert?",
+        text: "Wie lange hat Frau Aydin trainiert?",
         options: ["Einen Monat", "Fast drei Jahre", "Siebzig Jahre"],
         answer: 1,
         explain: "„Fast drei Jahre.“ Yetmiş, antrenörünün yaşı.",

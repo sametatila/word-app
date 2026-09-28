@@ -1380,7 +1380,7 @@ Natürlich gibt es Kinder, die alle Möglichkeiten haben und sie nicht nutzen. D
 Mein Schluss: Solange wir Ausnahmen als Beweis nehmen, müssen wir nichts ändern. Genau das ist die Funktion solcher Sätze.
 
 Mit freundlichen Grüßen
-Meral Doğan`,
+Meral Dogan`,
             criteria: [
               "İddiaya doğrudan atıf yapıldı mı ve tutum net mi?",
               "En az iki farklı gerekçe var mı ve bunlar somut mu?",

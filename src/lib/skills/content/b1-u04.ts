@@ -245,7 +245,7 @@ export const b1U04: SkillExercise[] = [
       { de: "spätestens", tr: "en geç", en: "at the latest" },
     ],
     segments: [
-      { speaker: "Herr Yıldız", text: "Guten Tag, hier ist Familie Yıldız aus der zweiten Etage." },
+      { speaker: "Herr Yıldız", text: "Guten Tag, hier ist Familie Yildiz aus der zweiten Etage." },
       { speaker: "Vermieterin", text: "Guten Tag. Was kann ich für Sie tun?" },
       { speaker: "Herr Yıldız", text: "Unsere Heizung funktioniert seit gestern nicht mehr." },
       { speaker: "Vermieterin", text: "Haben Sie schon geprüft, ob genug Wasser drin ist?" },
@@ -386,7 +386,7 @@ export const b1U04: SkillExercise[] = [
           "Handwerker spätestens am Freitag kommt. Am Vormittag bin ich zu Hause.\n\n" +
           "Bitte sorgen Sie dafür, dass der Schaden schnell repariert wird. " +
           "Falls Sie Fragen haben, klopfen Sie einfach oder rufen Sie an.\n\n" +
-          "Mit freundlichen Grüßen\nAyla Yıldız",
+          "Mit freundlichen Grüßen\nAyla Yildiz",
         phrases: [
           { de: "Ich melde Ihnen einen Schaden.", tr: "Size bir arıza bildiriyorum.", en: "I am reporting some damage." },
           { de: "seit dem …", tr: "…'den beri", en: "since …" },

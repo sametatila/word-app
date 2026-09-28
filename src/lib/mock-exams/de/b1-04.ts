@@ -988,7 +988,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               id: "de-b1-04-h3-16",
               no: 16,
               ref: "v1",
-              text: "Herr Doğan nennt eine feste Zahl für die tägliche Bildschirmzeit.",
+              text: "Herr Dogan nennt eine feste Zahl für die tägliche Bildschirmzeit.",
               answer: false,
               explain:
                 "Sunumun ilk cümlesi bunu reddediyor: \"Diese Zahl gibt es nicht, und wer sie Ihnen nennt, verkauft Ihnen etwas\".",

@@ -200,7 +200,7 @@ S. Brandt`,
               text: "Die Lampe im Wohnzimmer geht nicht mehr. Sie brauchen Hilfe.",
               options: [
                 "Malerbetrieb Frey\nWir streichen Ihre Wohnung, innen und außen\nAuch Tapeten und Böden\nkostenlose Beratung bei Ihnen zu Hause",
-                "Elektriker Yıldız\nLampen, Steckdosen, Kabel\nauch abends und am Samstag",
+                "Elektriker Yildiz\nLampen, Steckdosen, Kabel\nauch abends und am Samstag",
               ],
               answer: 1,
               explain:

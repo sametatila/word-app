@@ -219,7 +219,7 @@ export const deA2P2: SkillExercise[] = [
           "In der Börse sind ein Ausweis, eine Buskarte und etwas Kleingeld. Ich wohne in der Wielandstraße 14 " +
           "und bin abends ab achtzehn Uhr zu Hause. Sie können die Börse dort abholen. " +
           "Sie erreichen mich auch unter 0176 882140. " +
-          "Mit freundlichen Grüßen\nYasin Aydın",
+          "Mit freundlichen Grüßen\nYasin Aydin",
       },
     ],
   },

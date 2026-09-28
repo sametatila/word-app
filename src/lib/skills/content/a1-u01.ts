@@ -218,7 +218,7 @@ export const a1U01: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 1,
-    title: "Sind Sie Frau Yılmaz?",
+    title: "Sind Sie Frau Yilmaz?",
     genre: "dialogue",
     intro: "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
     gloss: [
@@ -230,8 +230,8 @@ export const a1U01: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Herr Koch", text: "Guten Tag! Sind Sie Frau Yılmaz?" },
-      { speaker: "Frau Yılmaz", text: "Ja, ich heiße Elif Yılmaz." },
+      { speaker: "Herr Koch", text: "Guten Tag! Sind Sie Frau Yilmaz?" },
+      { speaker: "Frau Yılmaz", text: "Ja, ich heiße Elif Yilmaz." },
       { speaker: "Herr Koch", text: "Woher kommen Sie?" },
       { speaker: "Frau Yılmaz", text: "Ich komme aus der Türkei, aus Izmir." },
       { speaker: "Herr Koch", text: "Und wo wohnen Sie jetzt?" },
@@ -245,7 +245,7 @@ export const a1U01: SkillExercise[] = [
         text: "Wie heißt die Frau?",
         options: ["Elif Yılmaz", "Emma", "Mia"],
         answer: 0,
-        explain: "„Ja, ich heiße Elif Yılmaz.“",
+        explain: "„Ja, ich heiße Elif Yilmaz.“",
       },
       {
         text: "Woher kommt Frau Yılmaz?",
@@ -267,7 +267,7 @@ export const a1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Frau Yılmaz wohnt jetzt in ___.",
+        text: "Frau Yilmaz wohnt jetzt in ___.",
         options: [],
         answer: 0,
         accept: ["Frankfurt"],
@@ -278,7 +278,7 @@ export const a1U01: SkillExercise[] = [
         text: "Konuşmanın sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
-        items: ["Herr Koch fragt: Sind Sie Frau Yılmaz?", "Sie sagt ihren Namen.", "Herr Koch fragt: Woher kommen Sie?", "Sie sagt: aus der Türkei."],
+        items: ["Herr Koch fragt: Sind Sie Frau Yilmaz?", "Sie sagt ihren Namen.", "Herr Koch fragt: Woher kommen Sie?", "Sie sagt: aus der Türkei."],
         explain: "Önce „siz misiniz“, sonra ad, sonra „nerelisiniz“, sonra cevap.",
       },
           {

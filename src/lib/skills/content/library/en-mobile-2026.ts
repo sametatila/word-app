@@ -2342,7 +2342,7 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Voice message",
-        "text": "Hi Ayşe, it's Mert. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Deniz there on Saturday at eleven o'clock."
+        "text": "Hi Ayse, it's Mert. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Deniz there on Saturday at eleven o'clock."
       },
       {
         "speaker": "Voice message",
@@ -2375,7 +2375,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"The tickets are only twenty lira for students.\" cümlesinden öğrenci biletinin yirmi lira olduğu anlaşılıyor."
       },
       {
-        "text": "Mert wants Ayşe to bring food.",
+        "text": "Mert wants Ayse to bring food.",
         "options": [
           "True",
           "False"
@@ -2406,7 +2406,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What does Mert ask Ayşe to bring?",
+        "text": "What does Mert ask Ayse to bring?",
         "options": [],
         "answer": 0,
         "accept": [

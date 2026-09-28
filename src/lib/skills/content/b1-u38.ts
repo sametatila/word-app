@@ -51,7 +51,7 @@ export const b1U38: SkillExercise[] = [
     text:
       "Frau Berger ist Architektin. Sie hat studiert, sechs Jahre lang, und " +
       "arbeitet heute in einem kleinen Büro mit vier Personen.\n\n" +
-      "Herr Aydın ist Übersetzer. Er hat kein Diplom in diesem Fach, sondern " +
+      "Herr Aydin ist Übersetzer. Er hat kein Diplom in diesem Fach, sondern " +
       "zwei Sprachen von zu Hause und ein Zertifikat aus einer Fortbildung. " +
       "Seine Frau ist Ingenieurin und verdient mehr, das sagt er ganz " +
       "offen.\n\n" +
@@ -69,7 +69,7 @@ export const b1U38: SkillExercise[] = [
         explain: "„Sie hat studiert, sechs Jahre lang …“",
       },
       {
-        text: "Was hat Herr Aydın statt eines Diploms?",
+        text: "Was hat Herr Aydin statt eines Diploms?",
         options: ["Zwei Sprachen und ein Zertifikat", "Ein Abitur", "Eine Lehre"],
         answer: 0,
         explain: "„… sondern zwei Sprachen von zu Hause und ein Zertifikat aus einer Fortbildung.“",

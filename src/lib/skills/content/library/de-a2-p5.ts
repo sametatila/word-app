@@ -220,7 +220,7 @@ export const deA2P5: SkillExercise[] = [
           { de: "Ich vermisse dich!", tr: "Seni özlüyorum!", en: "I miss you!" },
         ],
         sample:
-          "Liebe Ayşe, seit sechs Monaten habe ich dir nicht geschrieben, das tut mir leid. " +
+          "Liebe Ayse, seit sechs Monaten habe ich dir nicht geschrieben, das tut mir leid. " +
           "Bei mir hat sich viel verändert. Letzten Monat sind wir in eine neue Wohnung gezogen, " +
           "jetzt haben wir endlich einen Balkon. Ich arbeite noch in derselben Firma, aber nur vier Tage " +
           "pro Woche. Der freie Freitag tut mir sehr gut. Und wie geht es dir? Gefällt dir die Arbeit " +

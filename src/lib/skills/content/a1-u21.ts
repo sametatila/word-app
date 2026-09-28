@@ -161,7 +161,7 @@ export const a1U21: SkillExercise[] = [
     minutes: 2,
     segments: [
       { speaker: "Arzthelferin", text: "Praxis Dr. Weber, guten Tag." },
-      { speaker: "Elif", text: "Guten Tag, hier ist Elif Yılmaz. Ich brauche einen Termin." },
+      { speaker: "Elif", text: "Guten Tag, hier ist Elif Yilmaz. Ich brauche einen Termin." },
       { speaker: "Arzthelferin", text: "Gern. Was fehlt Ihnen denn?" },
       { speaker: "Elif", text: "Mein Bauch tut seit zwei Tagen weh. Es ist sehr dringend." },
       { speaker: "Arzthelferin", text: "Dann kommen Sie heute um 16 Uhr. Geht das?" },

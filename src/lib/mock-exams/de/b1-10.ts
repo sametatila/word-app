@@ -386,7 +386,7 @@ Ich hätte gern eine Erklärung und einen neuen Termin, möglichst diese Woche.`
               kind: "match",
               id: "de-b1-10-l3-13",
               no: 13,
-              text: "Frau Yalçın soll einen Antrag online stellen und traut sich nicht allein an den Rechner.",
+              text: "Frau Yalcin soll einen Antrag online stellen und traut sich nicht allein an den Rechner.",
               answer: "f",
               explain:
                 "(f) tam bu durum için: \"Wir sitzen mit Ihnen am Rechner und füllen gemeinsam aus\" — üstelik randevu istemiyor.",
@@ -475,7 +475,7 @@ Timo Sommerfeld: Mein Vater ist einundachtzig und hat nie einen Rechner benutzt.
 
 Anna Nolde: Ich habe zweimal versucht, online einen Termin zu bekommen, und zweimal ist das Portal abgestürzt. Beim dritten Mal bin ich hingefahren. Bevor man den einen Weg schließt, muss der andere funktionieren. Deshalb bin ich dagegen.
 
-Herr Yalçın: Ich bin dafür, mit einer Bedingung: Jedes Amt behält eine Stelle für Menschen ohne Zugang. Nicht als Ausnahme, sondern als feste Aufgabe mit einer Person, die dafür bezahlt wird. Ohne diese Stelle wäre ich dagegen.`,
+Herr Yalcin: Ich bin dafür, mit einer Bedingung: Jedes Amt behält eine Stelle für Menschen ohne Zugang. Nicht als Ausnahme, sondern als feste Aufgabe mit einer Person, die dafür bezahlt wird. Ohne diese Stelle wäre ich dagegen.`,
               gloss: [
                 { de: "der Standard", tr: "varsayılan, alışılmış yol", en: "default" },
                 { de: "die Vollmacht", tr: "vekâletname", en: "power of attorney" },
@@ -1381,7 +1381,7 @@ Am 18. April wurde mir am Schalter gesagt, der Termin sei nicht im System.
 Ich bitte Sie um einen neuen Termin, möglichst in dieser Woche.
 
 Mit freundlichen Grüßen
-Sina Yalçın`,
+Sina Yalcin`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Olay tarihlerle ve sırayla anlatıldı mı?",

@@ -6121,7 +6121,7 @@
      },
      {
       "lang": "en",
-      "text": "My name is Ayşe."
+      "text": "My name is Ayse."
      },
      {
       "lang": "tr",
@@ -54590,7 +54590,7 @@
      },
      {
       "lang": "en",
-      "text": "Hi, this is Ayşe. I'm calling because I'm sick."
+      "text": "Hi, this is Ayse. I'm calling because I'm sick."
      },
      {
       "lang": "tr",
@@ -57378,7 +57378,7 @@
   ],
   "patterns": [
    {
-    "de": "Hello, this is Ayşe.",
+    "de": "Hello, this is Ayse.",
     "tr": "telefonda kendini tanıtırken kullanılır"
    },
    {
@@ -57574,7 +57574,7 @@
      },
      {
       "lang": "en",
-      "text": "I am Ayşe"
+      "text": "I am Ayse"
      },
      {
       "lang": "tr",
@@ -57582,7 +57582,7 @@
      },
      {
       "lang": "en",
-      "text": "This is Ayşe."
+      "text": "This is Ayse."
      },
      {
       "lang": "tr",
@@ -57599,10 +57599,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hello, this is Ayşe.",
+     "target": "Hello, this is Ayse.",
      "accept": [
-      "Hi, this is Ayşe.",
-      "This is Ayşe.",
+      "Hi, this is Ayse.",
+      "This is Ayse.",
       "Hello, this is Ayse."
      ],
      "hint": [
@@ -57620,7 +57620,7 @@
       },
       {
        "lang": "en",
-       "text": "Hello, this is Ayşe."
+       "text": "Hello, this is Ayse."
       },
       {
        "lang": "tr",
@@ -57996,7 +57996,7 @@
      },
      {
       "lang": "en",
-      "text": "This is Ayşe."
+      "text": "This is Ayse."
      },
      {
       "lang": "tr",

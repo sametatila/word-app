@@ -252,13 +252,13 @@ export const deB1: SkillExercise[] = [
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich habe Ihre Anzeige für Lesepaten auf der Internetseite der Bibliothek gelesen und interessiere mich sehr dafür. " +
-          "Mein Name ist Elif Yalçın, ich bin 34 Jahre alt und arbeite zurzeit halbtags in einem Büro. " +
+          "Mein Name ist Elif Yalcin, ich bin 34 Jahre alt und arbeite zurzeit halbtags in einem Büro. " +
           "Ich möchte mitmachen, weil ich selbst als Kind kaum Bücher zu Hause hatte und weiß, wie viel eine Stunde Vorlesen " +
           "bedeuten kann. Außerdem habe ich zwei Jahre lang meiner Nichte beim Lesen geholfen.\n\n" +
           "Dienstags hätte ich immer Zeit, donnerstags nur jede zweite Woche. Eine Frage habe ich noch: " +
           "Wie viele Kinder betreut man an einem Nachmittag?\n\n" +
           "Über eine Antwort würde ich mich freuen.\n" +
-          "Mit freundlichen Grüßen\nElif Yalçın",
+          "Mit freundlichen Grüßen\nElif Yalcin",
       },
     ],
   },

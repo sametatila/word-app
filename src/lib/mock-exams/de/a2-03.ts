@@ -983,7 +983,7 @@ ich wohne in der Gartenstraße 21 im zweiten Stock. Seit zwei Wochen funktionier
 Können Sie das bitte bald reparieren lassen?
 
 Mit freundlichen Grüßen
-Nuri Aydın`,
+Nuri Aydin`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Yarı resmî ileti olduğu için `Sie` ve resmî hitap kullanıldı mı? (Sehr geehrte Damen und Herren / Mit freundlichen Grüßen)",

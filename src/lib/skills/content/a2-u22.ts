@@ -389,7 +389,7 @@ export const a2U22: SkillExercise[] = [
           "Betreff: Frage zum Kurs im Herbst\n\n" +
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich möchte am Deutschkurs B1 im Herbst teilnehmen. Kann ich mich schon jetzt anmelden, und was kostet der Kurs?\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydın",
+          "Mit freundlichen Grüßen\nDeniz Aydin",
         checklist: [
           "İlk yazını ne zaman gönderdiğini hatırlattın mı?",
           "Ne sorduğunu kısaca tekrarladın mı?",
@@ -409,7 +409,7 @@ export const a2U22: SkillExercise[] = [
           "Meine Frage war: Kann ich mich schon jetzt für den Deutschkurs B1 im Herbst anmelden, und was kostet er?\n\n" +
           "Können Sie meine Frage bitte beantworten? Ich brauche die Information bis Freitag, weil ich mich sonst bei einer anderen Schule anmelden muss.\n\n" +
           "Vielen Dank für Ihre Mühe.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydın",
+          "Mit freundlichen Grüßen\nDeniz Aydin",
       },
     ],
   },

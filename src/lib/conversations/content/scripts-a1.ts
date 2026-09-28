@@ -80,10 +80,10 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
   "de-a1-du-oder-sie": [
     t("t1", "Guten Tag! Sind Sie neu hier im Team?", "İyi günler! Ekibe yeni misiniz?", "Kibarca cevap ver ve adını söyle", [
       r(["ja", "neu", "heiße", "heisse", "bin", "name"], "Willkommen! Ich bin Herr Braun, der Abteilungsleiter. Und wie heißen Sie?", "Hoş geldiniz! Ben Bay Braun, bölüm müdürü. Peki sizin adınız ne?", "t2", ["Sind Sie …?"]),
-    ], { say: "Sind Sie neu hier? Ja oder nein?", sayTr: "Burada yeni misiniz? Evet mi hayır mı?", example: "Ja, ich bin neu hier. Ich heiße Ayşe Demir." }),
+    ], { say: "Sind Sie neu hier? Ja oder nein?", sayTr: "Burada yeni misiniz? Evet mi hayır mı?", example: "Ja, ich bin neu hier. Ich heiße Ayse Demir." }),
     t("t2", "Wie heißen Sie?", "Adınız ne?", "Adını söyle, sonra kibarca onun adını sor: Wie heißen Sie?", [
       r(["heiße", "heisse", "bin", "name", "heißen", "heissen"], "Freut mich, Sie kennenzulernen. Woher kommen Sie?", "Tanıştığımıza memnun oldum. Nerelisiniz?", "t3", ["Wie heißen Sie?"]),
-    ], { say: "Ihr Name, bitte?", sayTr: "Adınız, lütfen?", example: "Ich heiße Ayşe Demir. Und wie heißen Sie?" }),
+    ], { say: "Ihr Name, bitte?", sayTr: "Adınız, lütfen?", example: "Ich heiße Ayse Demir. Und wie heißen Sie?" }),
     t("t3", "Woher kommen Sie?", "Nerelisiniz?", "Nereli olduğunu söyle: Ich komme aus …", [
       r(["komme", "aus", "türkei", "turkei", "istanbul", "ankara"], "Interessant! Und wo wohnen Sie hier in der Stadt?", "İlginç! Peki burada, şehirde nerede oturuyorsunuz?", "t4", []),
     ], { say: "Aus welchem Land kommen Sie?", sayTr: "Hangi ülkeden geliyorsunuz?", example: "Ich komme aus der Türkei." }),
@@ -167,7 +167,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
   "de-a1-alphabet": [
     t("t1", "Guten Tag! Ich brauche Ihren Vornamen und Ihren Nachnamen. Können Sie das buchstabieren?", "İyi günler! Adınıza ve soyadınıza ihtiyacım var. Harf harf söyleyebilir misiniz?", "Adını söyle: Mein Vorname ist … Mein Nachname ist …", [
       r(["vorname", "nachname", "heiße", "heisse", "name", "bin"], "Danke. Buchstabieren Sie bitte den Nachnamen.", "Teşekkürler. Lütfen soyadınızı harf harf söyleyin.", "t2", ["Mein Nachname ist …"]),
-    ], { say: "Wie ist Ihr Vor- und Nachname?", sayTr: "Adınız ve soyadınız ne?", example: "Mein Vorname ist Ayşe. Mein Nachname ist Demir." }),
+    ], { say: "Wie ist Ihr Vor- und Nachname?", sayTr: "Adınız ve soyadınız ne?", example: "Mein Vorname ist Ayse. Mein Nachname ist Demir." }),
     t("t2", "Buchstabieren Sie bitte den Nachnamen.", "Soyadınızı harf harf söyleyin lütfen.", "Harf harf söyle: D-E-M-I-R", [
       r(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "y", "z", "buchstabiere"], "Danke. Und wie heißt Ihre Straße?", "Teşekkürler. Peki sokağınızın adı ne?", "t3", ["Buchstabieren Sie bitte."]),
     ], { say: "Bitte langsam buchstabieren: D – E – M …", sayTr: "Lütfen yavaşça harf harf söyleyin: D – E – M…", example: "D, E, M, I, R." }),
@@ -233,7 +233,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
   "de-a1-formular": [
     t("t1", "Guten Tag! Wie ist Ihr Name, bitte?", "İyi günler! Adınız nedir?", "Adını ve soyadını söyle: Mein Name ist …", [
       r(["name", "heiße", "heisse", "bin", "vorname", "nachname"], "Danke. Wie ist Ihre Adresse?", "Teşekkürler. Adresiniz nedir?", "t2", ["Wie ist Ihr Name?"]),
-    ], { say: "Ihr Name, bitte — Vorname und Nachname.", sayTr: "Adınız, lütfen — ad ve soyadı.", example: "Mein Name ist Ayşe Demir." }),
+    ], { say: "Ihr Name, bitte — Vorname und Nachname.", sayTr: "Adınız, lütfen — ad ve soyadı.", example: "Mein Name ist Ayse Demir." }),
     t("t2", "Wie ist Ihre Adresse?", "Adresiniz nedir?", "Adresini söyle: Meine Adresse ist … Straße, Nummer …", [
       r(["adresse", "straße", "strasse", "weg", "platz", "nummer", "wohne"], "Und die Postleitzahl?", "Peki posta kodu?", "t3", ["Meine Adresse ist …"]),
     ], { say: "Ihre Adresse, bitte: Straße und Hausnummer.", sayTr: "Adresiniz, lütfen: sokak ve kapı numarası.", example: "Meine Adresse ist Bahnhofstraße zwölf." }),

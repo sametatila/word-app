@@ -53,7 +53,7 @@ export const a2U13: SkillExercise[] = [
       "Ich war heute Morgen beim Arzt. Er hat gesagt, dass es ansteckend ist, und hat mich bis Freitag krankgeschrieben. Das Attest ist im Anhang; das Original verschicke ich heute noch per Post.\n\n" +
       "Meine Termine am Donnerstag habe ich abgesagt. Die Unterlagen für das Projekt liegen bei Frau Klein auf dem Schreibtisch.\n\n" +
       "Ich melde mich am Freitag wieder.\n\n" +
-      "Mit freundlichen Grüßen\nSinan Aydın",
+      "Mit freundlichen Grüßen\nSinan Aydin",
     questions: [
       {
         text: "Was hat Sinan?",

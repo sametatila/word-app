@@ -399,7 +399,7 @@ export const b1U29: SkillExercise[] = [
           "Ich bitte Sie, die fehlenden Teile bis zum 20. April zu schicken. " +
           "Eine Mahnung habe ich bisher nicht bekommen und erwarte auch keine, " +
           "solange die Sache offen ist.\n\n" +
-          "Mit freundlichen Grüßen\nSedef Aydın",
+          "Mit freundlichen Grüßen\nSedef Aydin",
         phrases: [
           { de: "Die Lieferung kam pünktlich, aber …", tr: "Teslimat zamanında geldi ama …", en: "The delivery came on time, but …" },
           { de: "Es fehlen zwei Teile: …", tr: "İki parça eksik: …", en: "Two parts are missing: …" },

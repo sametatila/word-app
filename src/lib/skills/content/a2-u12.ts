@@ -360,7 +360,7 @@ export const a2U12: SkillExercise[] = [
           { de: "Meine Aufgaben übernimmt …", tr: "işlerimi … devralıyor", en: "my tasks will be taken over by …" },
         ],
         sample:
-          "Betreff: Urlaubsantrag 8. bis 15. Juli\n\nSehr geehrte Frau Petrow,\n\nhiermit beantrage ich Urlaub vom 8. bis zum 15. Juli, also sechs Arbeitstage. Danach habe ich noch sechs Urlaubstage übrig.\n\nWie besprochen habe ich die erste Juliwoche nicht gewählt, weil in dieser Zeit die Geschäftsreise nach Wien stattfindet. Ich denke, dass der spätere Termin für das Team besser ist.\n\nMeine Aufgaben übernimmt in dieser Zeit Frau Klein. Die offenen Punkte trage ich vorher in den gemeinsamen Kalender ein.\n\nMit freundlichen Grüßen\nSinan Aydın",
+          "Betreff: Urlaubsantrag 8. bis 15. Juli\n\nSehr geehrte Frau Petrow,\n\nhiermit beantrage ich Urlaub vom 8. bis zum 15. Juli, also sechs Arbeitstage. Danach habe ich noch sechs Urlaubstage übrig.\n\nWie besprochen habe ich die erste Juliwoche nicht gewählt, weil in dieser Zeit die Geschäftsreise nach Wien stattfindet. Ich denke, dass der spätere Termin für das Team besser ist.\n\nMeine Aufgaben übernimmt in dieser Zeit Frau Klein. Die offenen Punkte trage ich vorher in den gemeinsamen Kalender ein.\n\nMit freundlichen Grüßen\nSinan Aydin",
       },
     ],
   },

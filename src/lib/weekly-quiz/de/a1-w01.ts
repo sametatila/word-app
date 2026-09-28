@@ -50,7 +50,7 @@ export const DE_A1_W01: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Tim", text: "Hallo, ich bin Tim. Wie heißt du?" },
-        { speaker: "Ayşe", text: "Ich heiße Ayşe. Hallo Tim!" },
+        { speaker: "Ayşe", text: "Ich heiße Ayse. Hallo Tim!" },
         { speaker: "Tim", text: "Woher kommst du?" },
         { speaker: "Ayşe", text: "Ich komme aus der Türkei. Und du?" },
         { speaker: "Tim", text: "Ich komme aus Berlin. Und was machst du hier in Berlin?" },
@@ -109,7 +109,7 @@ export const DE_A1_W01: QuizWeek = {
       id: "de-a1-w01-l2",
       block: "listen",
       ref: "a1",
-      stem: "Was macht Ayşe in Berlin?",
+      stem: "Was macht Ayse in Berlin?",
       options: ["Sie arbeitet", "Sie spielt Musik", "Sie lernt Deutsch", "Sie liest Bücher"],
       answer: 2,
       why: "\"Ich lerne Deutsch. Ich bin Studentin.\" Soru mesleğini değil, ne YAPTIĞINI soruyor ve konuşmada ikisi tek nefeste geçiyor.",

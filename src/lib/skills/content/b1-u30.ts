@@ -410,7 +410,7 @@ export const b1U30: SkillExercise[] = [
           "Ich bitte Sie um eine schriftliche Antwort mit dem Stempel des " +
           "Hauses bis zum 25. Mai. Wenn der Preis nicht gilt, möchte ich " +
           "vom Vertrag zurücktreten.\n\n" +
-          "Mit freundlichen Grüßen\nSedef Aydın",
+          "Mit freundlichen Grüßen\nSedef Aydin",
         phrases: [
           { de: "Am … habe ich … erhalten.", tr: "… tarihinde … aldım.", en: "On … I received …" },
           { de: "Die Angaben des Vertrags stimmen nicht.", tr: "Sözleşmenin bilgileri doğru değil.", en: "The contract's details are not correct." },

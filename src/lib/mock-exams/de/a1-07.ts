@@ -813,7 +813,7 @@ Der Schal ist blau und sehr lang. Er lag bei der Kasse zwei.
 Wann kann ich ihn abholen?
 
 Vielen Dank und freundliche Grüße
-Elif Yalçın`,
+Elif Yalcin`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? Kuruma yazıldığı için `Sehr geehrte Damen und Herren` uygun.",

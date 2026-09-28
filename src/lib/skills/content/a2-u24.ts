@@ -422,7 +422,7 @@ export const a2U24: SkillExercise[] = [
           "Ich studiere an der Fachhochschule, also zahle ich die Hälfte. Meinen Ausweis bringe ich zum ersten Termin mit.\n\n" +
           "Eine Frage habe ich noch: Wie sieht der Stundenplan in den Ferien aus — fällt der Kurs im Oktober zwei Wochen aus, oder läuft er durch?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nSelma Koç",
+          "Mit freundlichen Grüßen\nSelma Koc",
       },
     ],
   },
