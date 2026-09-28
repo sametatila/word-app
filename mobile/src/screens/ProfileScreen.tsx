@@ -209,7 +209,7 @@ function Head({ title, action, onAction, colors }: { title: string; action: stri
 function Tile({ icon, value, label, onPress, colors }: { icon: React.ReactNode; value?: string | null; label: string; onPress: () => void; colors: Palette }) {
   return (
     <PressableScale onPress={onPress} accessibilityRole="button" accessibilityLabel={value ? `${label}, ${value}` : label} style={{ flex: 1 }}>
-      <Card padded style={{ gap: 6, minHeight: 96 }}>
+      <Card padded style={{ gap: 6, minHeight: 96, padding: spacing.md }}>
         <View style={{ width: 30, height: 30, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.primarySoft }}>{icon}</View>
         {value !== undefined ? (value === null ? <SkeletonLine variant="h3" width={36} /> : <Text variant="h3">{value}</Text>) : null}
         <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{label}</Text>
