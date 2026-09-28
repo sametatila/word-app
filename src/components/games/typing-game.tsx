@@ -9,7 +9,7 @@ import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { grammarLine } from "./grammar-line";
-import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
+import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchWord } from "@/components/speak-button";
@@ -170,9 +170,11 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
            var; klavye kapanınca satır geri geliyor. */
         <span className="text-h1 kb:text-h2 sm:text-display">
           {meaningOf(word, lang)}
-          {word.en ? (
+          {/* İkinci satır anadile bağlı çözücüden (`meaningSubOf`): `word.en` anadili İngilizce olana
+              ana satırın aynısını ikinci kez basıyordu. */}
+          {meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
-              {word.en}
+              {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </span>

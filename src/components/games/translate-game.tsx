@@ -15,6 +15,7 @@ import { whyFor, type Why } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
+import { translateSourceFor } from "@/lib/option-label";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -51,10 +52,9 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, sentence, alternatives } = round;
-  /* Çevrilecek cümle ANADİLDE. Sunucu `native`i koyuyor; eski kayıtlı turlarda
-     yoksa `tr`ye düşülüyor (o turlar Türkçe anadil için kurulmuştu). */
-  const source = sentence.native ?? sentence.tr;
-  const sourceSub = sentence.native ? (sentence.nativeSub ?? null) : sentence.en;
+  /* Çevrilecek cümle ANADİLDE (`translateSourceFor`). Sunucu `native`i koyuyor; eski kayıtlı turda
+     yalnız Türkçe anadilde `tr`ye düşülüyor. */
+  const { text: source, sub: sourceSub } = translateSourceFor(sentence, lang);
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [hintShown, setHintShown] = useState(false);

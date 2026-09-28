@@ -1,4 +1,4 @@
-import { exampleOf, glossOf } from "./gloss";
+import { claimLine, exampleOf, glossOf, meaningLine, translateSource } from "./gloss";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { seededShuffle } from "../lib/shuffle";
 import { grammarLine, typLabel } from "./wordGrammar";
@@ -67,12 +67,6 @@ function norm(s: string): string {
 function grammarDetail(w: RoundWord): string | null {
   const line = grammarLine(w, w.tr);
   return line === typLabel(w.typ, w.tr) ? null : line;
-}
-
-/** Anlam satırı ANADİLDE + (Türkçe/Almanca anadilde) İngilizce ayırt edici (`glossOf`). */
-function meaningLine(w: { tr: string; en: string | null; deGloss?: string | null }): string {
-  const g = glossOf(w);
-  return g.sub ? `${g.text} · ${g.sub}` : g.text;
 }
 
 /** İpucu iskeleti (web skeleton): her kelimede ilk harf + her 3. harf açık, gerisi "_". */
@@ -694,7 +688,8 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
           <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.means")}</Text>
           <View style={{ height: 1, width: 40, backgroundColor: colors.border }} />
         </View>
-        <Text variant="h2" style={{ textAlign: "center" }}>{round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)}</Text>
+        {/* İddia sunucudan ANADİLDE geliyor (`Option`): olduğu gibi çizilir, `glossOf`tan yeniden geçirilmez (bkz. `claimLine`). */}
+        <Text variant="h2" style={{ textAlign: "center" }}>{claimLine(round, word)}</Text>
       </View>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: tx("common.correct") }, { v: false, l: tx("common.wrong") }].map(({ v, l }) => {
@@ -1602,9 +1597,8 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
 function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const guest = Boolean(useAuth().user?.guest);
   const s = typeof round.sentence === "object" && round.sentence ? round.sentence : { tr: "", de: "", en: null };
-  /* Çevrilecek cümle ANADİLDE (sunucu `native`); eski turlarda `tr`ye düşülür. */
-  const source = s.native ?? s.tr;
-  const sourceSub = s.native ? (s.nativeSub ?? null) : s.en;
+  /* Çevrilecek cümle ANADİLDE (sunucu `native`); eski turda yalnız Türkçe anadilde `tr`ye düşülür (`translateSource`). */
+  const { text: source, sub: sourceSub } = translateSource(s);
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
   const [hintShown, setHintShown] = useState(false);

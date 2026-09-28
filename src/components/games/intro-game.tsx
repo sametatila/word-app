@@ -7,6 +7,7 @@ import { GameShell } from "./game-shell";
 import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
+import { exampleFor } from "@/lib/option-label";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -28,8 +29,11 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const [skipping, setSkipping] = useState(false);
   const started = useRef(Date.now());
   const example = firstExample(word.beispiel);
-  const exampleTr = firstExample(word.beispielTr);
-  const exampleEn = firstExample(word.beispielEn);
+  /* Örneğin çevirisi ANADİLDE (`exampleFor`): Türkçe ve İngilizce satır herkese birlikte basılıyordu. */
+  const exampleNative = exampleFor(
+    { sentenceTr: firstExample(word.beispielTr), sentenceEn: firstExample(word.beispielEn), sentenceDe: firstExample(word.beispielDe ?? null) },
+    lang,
+  );
 
   useEffect(() => {
     started.current = Date.now();
@@ -115,8 +119,8 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
               <SpeakButton word text={example} size="sm" />
             </span>
             <SentenceTranslation
-              tr={exampleTr}
-              en={exampleEn}
+              tr={exampleNative?.text ?? null}
+              en={exampleNative?.sub ?? null}
               className="mt-1 not-italic opacity-80"
             />
           </motion.p>

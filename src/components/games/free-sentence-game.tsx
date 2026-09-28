@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
-import { withArtikel, currentTargetLang, type GameProps } from "./types";
+import { withArtikel, currentTargetLang, meaningOf, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
@@ -206,7 +206,8 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               className="chip px-3 py-1.5 text-body"
             >
               <strong lang={course}>{withArtikel(t)}</strong>
-              <span className="muted ml-1.5 text-caption">{t.tr}</span>
+              {/* Anlam ANADİLDE: `t.tr` herkese Türkçe idi. */}
+              <span className="muted ml-1.5 text-caption">{meaningOf(t, lang)}</span>
             </button>
           ))}
         </div>

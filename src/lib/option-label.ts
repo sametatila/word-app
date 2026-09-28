@@ -174,3 +174,18 @@ export function optionLabel(
   if (direction !== "de-tr") return { text: withArtikel(p), sub: null };
   return glossFor(p, native);
 }
+
+/**
+ * Çeviri turunda çevrilecek cümle ANADİLDE — mobil `game/gloss` `translateSource` ile aynı kural.
+ * Sunucu `native`i koyuyor; eski kayıtlı turda yok ve `tr` herkese Türkçe idi: oraya yalnız Türkçe
+ * anadilde düşülüyor, İngilizce anadilde `en` cümlenin kendisi, Almanca anadilde boş (yanlış dilde
+ * cümle çevirtmektense). Ayırt edici satır ana satırın aynısıysa çizilmez.
+ */
+export function translateSourceFor(
+  s: { tr: string; en: string | null; native?: string; nativeSub?: string | null },
+  native: NativeLang,
+): Option {
+  if (s.native) return { text: s.native, sub: s.nativeSub && s.nativeSub !== s.native ? s.nativeSub : null };
+  if (native === "tr") return { text: s.tr, sub: s.en };
+  return { text: native === "en" ? (s.en ?? "") : "", sub: null };
+}

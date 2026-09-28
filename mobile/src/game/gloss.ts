@@ -22,6 +22,39 @@ export function glossOf(w: GlossWord): Gloss {
 }
 
 /**
+ * Sunucunun kurduğu şık/iddia (`Option`) tek satırda: ana satır + (varsa) ayırt edici.
+ *
+ * SUNUCU ŞIKKI ZATEN ANADİLDE. Onu sahte bir kelimeye sarıp (`{ tr: o.text, en: o.sub }`) yeniden
+ * `glossOf`tan geçirmek, İngilizce anadilde `en` (ayırt edici, çoğunlukla null), Almanca anadilde
+ * `deGloss` (hiç yok) okuyordu: Doğru/Yanlış turunun iddiası en→de ve de→en çiftlerinde BOŞ çıkıyordu.
+ */
+export function optionLine(o: Gloss): string {
+  return o.sub && o.sub !== o.text ? `${o.text} · ${o.sub}` : o.text;
+}
+
+/** Kelimenin anlam satırı ANADİLDE + (Türkçe/Almanca anadilde) İngilizce ayırt edici. */
+export function meaningLine(w: GlossWord): string {
+  return optionLine(glossOf(w));
+}
+
+/** Doğru/Yanlış turunda öne sürülen anlam: sunucunun iddiası olduğu gibi; eski turda kelimenin kendi anlamı. */
+export function claimLine(round: { claim?: Gloss | null }, word: GlossWord): string {
+  return round.claim ? optionLine(round.claim) : meaningLine(word);
+}
+
+/**
+ * Çeviri turunda çevrilecek cümle: sunucunun ANADİLDEKİ cümlesi (`native`). Eski kayıtlı turda `native`
+ * yok ve `tr` herkese Türkçe idi; oraya ancak Türkçe anadilde düşülüyor, öteki anadillerde boş kalıyor
+ * (boş satır fark edilir, yanlış dilde cümle edilmez). Ayırt edici satır ana satırın aynısıysa çizilmez.
+ */
+export function translateSource(s: { tr: string; en: string | null; native?: string; nativeSub?: string | null }): Gloss {
+  if (s.native) return { text: s.native, sub: s.nativeSub && s.nativeSub !== s.native ? s.nativeSub : null };
+  const lang = currentLang();
+  if (lang === "tr") return { text: s.tr, sub: s.en };
+  return { text: lang === "en" ? (s.en ?? "") : "", sub: null };
+}
+
+/**
  * Karşılığın SESLİ hâli: parantez ayırt edicidir ("o (erkek)" / "o (kadın)"), seslendirme onu silerdi.
  * Web `lib/option-label` `speechOfGloss` ile aynı gövde (parity).
  */

@@ -50,6 +50,16 @@ export type WhyWord = {
   typ?: string;
 };
 
+/**
+ * Açıklamadaki anlam ANADİLDE ve TÜRKÇEYE DÜŞMEDEN - mobil `game/why` `gloss` ile aynı kural:
+ * karşılık yoksa ayırt edici (İngilizce), o da yoksa kelimenin kendisi. `?? w.tr` idi: anadilde
+ * karşılığı eksik kelimede İngilizce ya da Almanca konuşana Türkçe anlam basılıyordu.
+ */
+function whyGloss(w: WhyWord, lang: NativeLang): string {
+  const g = glossFor({ ...w, en: w.en ?? null }, lang);
+  return g?.text || g?.sub || w.de;
+}
+
 /* ───────────────────────────── artikel ───────────────────────────── */
 
 type ArticleRule = {
@@ -393,8 +403,8 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         type: "meaning",
         text: w
           ? input.detail
-            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr })
-            : `${withArt(w)} = ${glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr}.`
+            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: whyGloss(w, lang) })
+            : `${withArt(w)} = ${whyGloss(w, lang)}.`
           : translate(lang, "whyrule.meaning.general"),
         href: null,
       };
@@ -406,7 +416,7 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
           ? translate(lang, input.detail ? "why.listening_with_pick" : "why.listening", {
               word: withArt(w),
               // Açıklama da anadilde: "Auto = araba" mı "Auto = car" mı.
-              meaning: glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr,
+              meaning: whyGloss(w, lang),
               picked: input.detail ?? "",
             })
           : translate(lang, "whyrule.listening.general"),

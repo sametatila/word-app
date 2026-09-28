@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { foldTight, withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
+import { foldTight, withArtikel, type GameProps, type GameResult , meaningOf, meaningSubOf } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
@@ -220,9 +220,11 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
           {meaningOf(word, lang)}
           {/* Karıştırılmış harflerden kelimeyi kuran şey anlam; anlam Türkçede
               başka bir kelimeyle çakışıyorsa İngilizce satır ayırıyor. */}
-          {word.en ? (
+          {/* İkinci satır anadile bağlı çözücüden (`meaningSubOf`): `word.en` anadili İngilizce olana
+              ana satırın aynısını ikinci kez basıyordu. */}
+          {meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
-              {word.en}
+              {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </span>
