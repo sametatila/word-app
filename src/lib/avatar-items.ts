@@ -8,7 +8,7 @@ import { unlockedAchievementIds } from "@/lib/achievements";
 import { isPremium } from "@/lib/premium";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import type { UnlockedPart } from "@/lib/avatar-layers";
-import { FALLBACK_HOST, FALLBACK_ORIGIN, PRIMARY_ORIGIN } from "@/lib/site";
+import { FALLBACK_HOST, PRIMARY_ORIGIN } from "@/lib/site";
 import { LEAGUE_TIERS } from "@/lib/social/types";
 import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
@@ -26,16 +26,29 @@ export function avatar3dBase(): string | null {
   return /^https?:\/\//.test(v) ? v : null;
 }
 
+/* Uygulamayı sunan kendi adreslerimiz: asıl (www), www'suz kök ve yedek. */
+const PRIMARY_HOST = new URL(PRIMARY_ORIGIN).host;
+const OWN_HOSTS: ReadonlySet<string> = new Set([PRIMARY_HOST, PRIMARY_HOST.replace(/^www\./, ""), FALLBACK_HOST]);
+
 /**
- * İsteğin geldiği adrese göre katalog kökü. Mobil, ana adresi kesen kurum
- * ağlarında yedek adrese geçiyor (`lib/site` FALLBACK_ORIGIN); katalog ana
- * adreste kalsaydı o kullanıcıların avatarları ve kutlama ikonları hiç
- * yüklenmezdi. Yedek host aynı dosyaları ve `/api/avatar/img`yi sunuyor.
+ * İsteğin geldiği adrese göre katalog kökü: katalog, isteği karşılayan
+ * adresin KENDİSİNDEN verilir.
+ *
+ * - www'suz `lernomi.app` uygulamayı yönlendirmeden sunuyor; katalog
+ *   www'da kalsaydı tarayıcı `katalog.json`u başka kökenden okuyacaktı ve
+ *   CORS başlığı olmadığı için web avatarı 2B maskota düşüyordu.
+ * - Mobil, ana adresi kesen kurum ağlarında yedek adrese (`lib/site`
+ *   FALLBACK_ORIGIN) geçiyor; katalog ana adreste kalsaydı o kullanıcıların
+ *   avatarları ve kutlama ikonları hiç yüklenmezdi.
+ *
+ * Üç adres de aynı dosyaları ve `/api/avatar/img`yi sunuyor. Başka bir
+ * kökten verilen katalog (ör. CDN) olduğu gibi kalır.
  */
 export function avatar3dBaseFor(host: string | null | undefined): string | null {
   const b = avatar3dBase();
-  if (!b || host !== FALLBACK_HOST || !b.startsWith(PRIMARY_ORIGIN)) return b;
-  return FALLBACK_ORIGIN + b.slice(PRIMARY_ORIGIN.length);
+  const h = (host ?? "").toLowerCase();
+  if (!b || !OWN_HOSTS.has(h) || !b.startsWith(PRIMARY_ORIGIN)) return b;
+  return `https://${h}` + b.slice(PRIMARY_ORIGIN.length);
 }
 
 export async function ownedAvatarItems(userId: string): Promise<{ itemId: string; source: string; acquiredAt: Date }[]> {

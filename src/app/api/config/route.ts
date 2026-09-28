@@ -57,7 +57,8 @@ export async function GET(req: Request) {
         Nomi 3B avatar kataloğunun kökü (`AVATAR_3D_BASE`). Boşken `null` ve
         iki istemci bugünkü 2B maskotu çiziyor; dolunca `katalog.json` ve
         katmanlar buradan iniyor — uygulama güncellemesi gerekmeden açılır.
-        Yedek adresten gelen istemciye yedek adresteki kopya (`avatar3dBaseFor`).
+        Kök, isteği karşılayan kendi adresimizden (www, www'suz, yedek):
+        `avatar3dBaseFor`.
       */
       avatar3d: avatar3dBaseFor(req.headers.get("host")),
       app,
