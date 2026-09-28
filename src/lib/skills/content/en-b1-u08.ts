@@ -39,7 +39,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 8,
-    title: "The place where I grew up",
+    title: "A village on the coast",
     genre: "story",
     intro: "Kıyıda küçük bir köy. İki virgül ne değiştiriyor?",
     gloss: [
@@ -116,7 +116,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 8,
-    title: "The rules here",
+    title: "Rules for members",
     genre: "info",
     intro: "Üye kuralları. Hangisi zorunlu, hangisi yasak, hangisi öğüt?",
     gloss: [
@@ -179,7 +179,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 8,
-    title: "The one with the glasses",
+    title: "Faces in a photo",
     genre: "dialogue",
     intro: "Fotoğrafta kim kim? Betimlemeler nasıl kuruluyor?",
     gloss: [
@@ -259,7 +259,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 8,
-    title: "What I have done",
+    title: "Two years abroad",
     genre: "interview",
     intro: "Deneyim soruları. Hangi cevap tarihli, hangisi tarihsiz?",
     gloss: [
@@ -343,7 +343,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 8,
-    title: "The town, which is on the coast, is small",
+    title: "Notes on the village",
     genre: "personal",
     intro: "Virgül anlamı değiştiriyor. Hangisi seçiyor, hangisi ekliyor?",
     gloss: [
@@ -396,7 +396,7 @@ export const enB1U08: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 8,
-    title: "You must show your card at the door",
+    title: "Rules and experience",
     genre: "info",
     intro: "Kural, yasak, öğüt ve deneyim. Hangi kip hangi gücü taşıyor?",
     gloss: [

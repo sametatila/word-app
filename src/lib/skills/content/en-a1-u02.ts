@@ -94,7 +94,7 @@ export const enA1U02: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 2,
-    title: "What do you do?",
+    title: "A doctor and a singer",
     genre: "dialogue",
     intro: "İki kişi işlerini, yaşlarını ve konuştukları dilleri anlatıyor.",
     gloss: [
@@ -380,7 +380,7 @@ export const enA1U02: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 2,
-    title: "Do you speak English?",
+    title: "Languages and work",
     genre: "profile",
     intro: "„do“ ile kurulan soruyu ve kısa cevabı yaz. „be“ ile kurulan soruyla karışması kolay.",
     gloss: [

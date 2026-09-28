@@ -40,7 +40,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 4,
-    title: "The formal complaint",
+    title: "Where the pattern breaks",
     genre: "info",
     intro: "Üç fiil, üç ayrı ek. Hangisi kuraldan çıkarılabiliyor?",
     gloss: [
@@ -141,7 +141,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 4,
-    title: "If we had agreed",
+    title: "A dispute, looking back",
     genre: "opinion",
     intro: "Uyuşmazlıkta iki koşul. Hangisi bugüne dokunuyor?",
     gloss: [
@@ -232,7 +232,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 4,
-    title: "What was agreed",
+    title: "A conclusion, not an accusation",
     genre: "dialogue",
     intro: "Üç kip, üç ayrı ağırlık. Hangisi özür davet ediyor?",
     gloss: [
@@ -320,7 +320,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 4,
-    title: "Meeting halfway",
+    title: "A letter that gives ground",
     genre: "monologue",
     intro: "Ödün vermek ve yine de durmak. İkisi aynı paragrafta.",
     gloss: [
@@ -409,7 +409,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 4,
-    title: "The enforcement of the rule took months",
+    title: "Notes for a complaint",
     genre: "info",
     intro: "Üç isim, üç ayrı ek. Hangisi listeden geliyor?",
     gloss: [
@@ -464,7 +464,7 @@ export const enB2U04: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 4,
-    title: "If we had asked for an extension, we would be calmer now",
+    title: "An unsettled matter",
     genre: "opinion",
     intro: "Kapalı koşul, karışık koşul, iki çıkarım.",
     gloss: [

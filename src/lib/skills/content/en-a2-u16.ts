@@ -35,7 +35,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 16,
-    title: "Booking a room",
+    title: "A call to Hotel Marmara",
     genre: "phone",
     intro: "Telefonda oda ayırtılıyor. Fiyata ne dâhil, ne değil?",
     gloss: [
@@ -107,7 +107,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 16,
-    title: "At the airport",
+    title: "Before the gate",
     genre: "info",
     intro: "Havaalanı yönergesi. Ne zorunlu, nerede bakılır?",
     gloss: [
@@ -171,7 +171,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 16,
-    title: "Hotel check-in",
+    title: "Two nights in room 304",
     genre: "dialogue",
     intro: "Resepsiyonda giriş. Odada ne eksik?",
     gloss: [
@@ -248,7 +248,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 16,
-    title: "Finding your way abroad",
+    title: "The way to the post office",
     genre: "dialogue",
     intro: "Yol tarifi. Dört adım, tek yön.",
     gloss: [
@@ -327,7 +327,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 16,
-    title: "I'd like to book a room",
+    title: "Towels and breakfast",
     genre: "formal",
     intro: "Otel cümleleri. Olumluda „some“, olumsuz ve soruda „any“.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA2U16: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 16,
-    title: "Excuse me, how do I get to …?",
+    title: "Directions in town",
     genre: "personal",
     intro: "Yol ve havaalanı cümleleri. „any“ sayılamayanla da çalışıyor.",
     gloss: [

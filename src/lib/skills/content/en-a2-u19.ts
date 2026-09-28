@@ -34,7 +34,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 19,
-    title: "A wedding",
+    title: "A wedding in a garden",
     genre: "story",
     intro: "Bahçede bir düğün. Kim ne yapıyor, kim ne diyor?",
     gloss: [
@@ -94,7 +94,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 19,
-    title: "Congratulations!",
+    title: "A new job and an exam",
     genre: "message",
     intro: "İki haber, iki dilek. Hangi kalıp hangi edatı alıyor?",
     gloss: [
@@ -176,7 +176,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 19,
-    title: "Festivals and holidays",
+    title: "The end of summer",
     genre: "monologue",
     intro: "Bir aile geleneği. Ne zaman, kaç kişi, hangi kural?",
     gloss: [
@@ -248,7 +248,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 19,
-    title: "Saying sorry",
+    title: "Late, and the wrong file",
     genre: "dialogue",
     intro: "Üç özür, tek öğüt. Sorun neymiş?",
     gloss: [
@@ -328,7 +328,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 19,
-    title: "Congratulations on your new job!",
+    title: "A card for good news",
     genre: "personal",
     intro: "Kutlama ve özür kalıpları: üçü ayrı edat alıyor, biri hiç almıyor. Hiçbiri tahmin edilemez.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA2U19: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 19,
-    title: "I'm sorry about the …",
+    title: "Parties and apologies",
     genre: "personal",
     intro: "Özür ve deneyim cümleleri. „about“ iki kalıbı birden taşıyor.",
     gloss: [

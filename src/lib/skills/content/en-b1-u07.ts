@@ -37,7 +37,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 7,
-    title: "In the news",
+    title: "Three items from this week",
     genre: "report",
     intro: "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
     gloss: [
@@ -116,7 +116,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 7,
-    title: "What had happened",
+    title: "A bad morning",
     genre: "story",
     intro: "Kötü bir sabah. Hangi olay hangisinden önce oldu?",
     gloss: [
@@ -182,7 +182,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 7,
-    title: "What they said",
+    title: "A missed meeting",
     genre: "meeting",
     intro: "Toplantı özeti. Kim ne söyledi, kim ne önerdi?",
     gloss: [
@@ -261,7 +261,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 7,
-    title: "The one with the handle",
+    title: "Lost and found",
     genre: "phone",
     intro: "Kayıp eşya bürosu. Hangi ayrıntı çantayı bulduruyor?",
     gloss: [
@@ -342,7 +342,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 7,
-    title: "The case is being investigated",
+    title: "The bridge report",
     genre: "report",
     intro: "Üç edilgen. Hangisi bitti, hangisi şu anda sürüyor?",
     gloss: [
@@ -396,7 +396,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 7,
-    title: "By the time I arrived, the store had closed",
+    title: "A morning and a meeting",
     genre: "personal",
     intro: "Olayların sırası ve aktarılan sözler. Hangi biçim „daha önce“ diyor?",
     gloss: [

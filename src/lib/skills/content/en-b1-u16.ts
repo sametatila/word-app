@@ -38,7 +38,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 16,
-    title: "Reacting to the news",
+    title: "A headline on four sites",
     genre: "opinion",
     intro: "Bir başlık ve bir sabah. Neden bu kadar yayıldı?",
     gloss: [
@@ -120,7 +120,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 16,
-    title: "Agreeing and disagreeing",
+    title: "Four ways to disagree",
     genre: "guide",
     intro: "Katılmanın dereceleri. Neden düz „hayır“ az duyuluyor?",
     gloss: [
@@ -191,7 +191,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 16,
-    title: "The debate",
+    title: "After the debate",
     genre: "meeting",
     intro: "Tartışma sonrası değerlendirme. Kim ne söyledi?",
     gloss: [
@@ -271,7 +271,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 16,
-    title: "In my view",
+    title: "A month with the new system",
     genre: "dialogue",
     intro: "Bir fikir savunuluyor. Gerekçe nerede duruyor?",
     gloss: [
@@ -354,7 +354,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 16,
-    title: "I find the headline shocking",
+    title: "Forty thousand readers",
     genre: "opinion",
     intro: "Fiil, nesne, sıfat. Arada hiçbir şey yok.",
     gloss: [
@@ -407,7 +407,7 @@ export const enB1U16: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 16,
-    title: "If you mean the price, I agree",
+    title: "Half agreeing",
     genre: "opinion",
     intro: "Katılmanın dereceleri. Hangi koşul gerçek, hangisi değil?",
     gloss: [

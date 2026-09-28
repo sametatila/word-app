@@ -34,7 +34,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 4,
-    title: "My life story",
+    title: "Ten years in the city",
     genre: "personal",
     intro: "Bir hayat hikâyesi. „since“ ve „for“ art arda geçiyor — hangisi süre, hangisi başlangıç?",
     gloss: [
@@ -94,7 +94,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 4,
-    title: "Have you finished yet?",
+    title: "A report for the boss",
     genre: "dialogue",
     intro: "İşte bir rapor bekleniyor. „already“, „yet“ ve „just“ üçü de geçiyor.",
     gloss: [
@@ -176,7 +176,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 4,
-    title: "Since and for",
+    title: "New in the city",
     genre: "dialogue",
     intro: "İki kişi ne zamandır burada olduklarını konuşuyor.",
     gloss: [
@@ -253,7 +253,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 4,
-    title: "Will or going to?",
+    title: "Two plans for the weekend",
     genre: "monologue",
     intro: "İki gelecek biçimi yan yana. Hangi karar önceden verilmiş, hangisi şimdi?",
     gloss: [
@@ -331,7 +331,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 4,
-    title: "since and for",
+    title: "A card about my life",
     genre: "personal",
     intro: "Süre ve başlangıcı yaz. Sonunda hayat kartını doldur.",
     gloss: [
@@ -384,7 +384,7 @@ export const enA2U04: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 4,
-    title: "already, yet, just",
+    title: "Promises and plans",
     genre: "personal",
     intro: "Üç küçük sözcüğün yeri farklı. Ve geleceğin iki biçimini ayır.",
     gloss: [

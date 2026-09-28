@@ -33,7 +33,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 2,
-    title: "My childhood",
+    title: "A village by the sea",
     genre: "personal",
     intro: "Bir çocukluk anlatısı. Eskiden ne vardı, sonra ne değişti?",
     gloss: [
@@ -94,7 +94,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 2,
-    title: "A vacation I remember",
+    title: "Five days in Antalya",
     genre: "story",
     intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, afterward, after that.",
     gloss: [
@@ -168,7 +168,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 2,
-    title: "I used to …",
+    title: "Guitar and soccer",
     genre: "dialogue",
     intro: "Eski alışkanlıklar konuşuluyor. „used to“nun üç biçimi de geçiyor.",
     gloss: [
@@ -244,7 +244,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 2,
-    title: "First, then, after that",
+    title: "A long Saturday",
     genre: "monologue",
     intro: "Uzun bir günün anlatısı. Sıralama sözcükleri hikâyeyi taşıyor.",
     gloss: [
@@ -320,7 +320,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 2,
-    title: "I used to …",
+    title: "A childhood card",
     genre: "personal",
     intro: "Eski alışkanlıkları yaz. Olumluda „used“, olumsuz ve soruda „use“.",
     gloss: [
@@ -373,7 +373,7 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 2,
-    title: "First I …, then I …",
+    title: "A summer trip",
     genre: "story",
     intro: "Bir tatil anlat. Sıralama sözcükleri cümleleri birbirine bağlıyor.",
     gloss: [

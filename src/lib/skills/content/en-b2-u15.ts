@@ -41,7 +41,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 15,
-    title: "Speaking about a group",
+    title: "Five hedges and a trap",
     genre: "opinion",
     intro: "Beş çekince ve bir tuzak. „not“ nerede?",
     gloss: [
@@ -132,7 +132,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 15,
-    title: "The law that failed",
+    title: "An unclear bill",
     genre: "info",
     intro: "Üç kip, üç iş. Hangisi hatırlanıyor?",
     gloss: [
@@ -223,7 +223,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 15,
-    title: "If the plant had stayed",
+    title: "The town after the bankruptcy",
     genre: "dialogue",
     intro: "Üç koşul, bir kasaba. Hangisi bu sabaha ait?",
     gloss: [
@@ -310,7 +310,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 15,
-    title: "By the end of the decade",
+    title: "An economic forecast",
     genre: "monologue",
     intro: "Öngörüde iki biçim. Hangisi geri getiriliyor?",
     gloss: [
@@ -394,7 +394,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 15,
-    title: "On balance the figure is arguably questionable",
+    title: "A careful paragraph",
     genre: "opinion",
     intro: "Üç çekince ve bir olumsuz öbek.",
     gloss: [
@@ -450,7 +450,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 15,
-    title: "The bill must have been unclear",
+    title: "Why the regulation failed",
     genre: "info",
     intro: "Üç kip ve iki koşul. Hangisi bize dair?",
     gloss: [

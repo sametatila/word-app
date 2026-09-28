@@ -33,7 +33,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 20,
-    title: "At the pool",
+    title: "Swimming in summer",
     genre: "personal",
     intro: "Havuz anlatılıyor. Su ne zaman soğuk, çocuklar nerede öğreniyor?",
     gloss: [
@@ -91,7 +91,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 20,
-    title: "Maybe next time",
+    title: "Ali's invitation",
     genre: "dialogue",
     intro: "Bir davet reddediliyor ama kapı kapanmıyor. Reddin üç parçasını bul.",
     gloss: [
@@ -172,7 +172,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 20,
-    title: "I can't swim",
+    title: "Learning to swim",
     genre: "dialogue",
     intro: "Yüzme konuşuluyor. Kim nerede yüzebiliyor, kim öğreniyor?",
     gloss: [
@@ -247,7 +247,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 20,
-    title: "Making plans",
+    title: "Deniz's busy week",
     genre: "monologue",
     intro: "Bir haftanın planı. Hangi gün ne var, hangi gün boş?",
     gloss: [
@@ -323,7 +323,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 20,
-    title: "I can swim",
+    title: "The pool card",
     genre: "personal",
     intro: "Yapabilme ve alışkanlık yaz. Sonunda havuz kartını doldur.",
     gloss: [
@@ -378,7 +378,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 20,
-    title: "Maybe next time",
+    title: "A polite no",
     genre: "personal",
     intro: "Nazik reddi yaz. Üç parça: özür, gerekçe, kapıyı açık bırakan söz.",
     gloss: [

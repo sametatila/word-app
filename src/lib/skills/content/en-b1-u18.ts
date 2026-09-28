@@ -38,7 +38,7 @@ export const enB1U18: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 18,
-    title: "Describing symptoms",
+    title: "Fever since Monday",
     genre: "dialogue",
     intro: "Muayenede iki zaman. Hangisi süre, hangisi başlangıç?",
     gloss: [
@@ -185,7 +185,7 @@ export const enB1U18: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 18,
-    title: "By the time we decided",
+    title: "Eleven minutes too late",
     genre: "monologue",
     intro: "Geç kalınan bir karar. Ne zaman ciddileşmiş?",
     gloss: [
@@ -260,7 +260,7 @@ export const enB1U18: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 18,
-    title: "What happens next",
+    title: "Predictions with a date",
     genre: "dialogue",
     intro: "Gelecek konuşuluyor. Hangi cümle öngörü, hangisi plan?",
     gloss: [
@@ -344,7 +344,7 @@ export const enB1U18: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 18,
-    title: "I have had a fever since Monday",
+    title: "A list of symptoms",
     genre: "personal",
     intro: "Aynı hastalık, iki zaman. Hangisi süre, hangisi an?",
     gloss: [
@@ -398,7 +398,7 @@ export const enB1U18: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 18,
-    title: "By the time I spoke, they had already decided",
+    title: "Decisions and predictions",
     genre: "personal",
     intro: "Geçmişin iki katmanı ve geleceğin üç biçimi.",
     gloss: [

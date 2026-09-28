@@ -39,7 +39,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 23,
-    title: "Before they built it",
+    title: "A field before the road",
     genre: "info",
     intro: "Yol yapılmadan önce burası neydi? Hangi cümlede „had“ gerekiyor?",
     gloss: [
@@ -128,7 +128,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 23,
-    title: "City or country",
+    title: "Busy city, quiet country",
     genre: "opinion",
     intro: "İki yaşam yan yana. Hangi bağlaç isim alıyor?",
     gloss: [
@@ -215,7 +215,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 23,
-    title: "Naming a feeling",
+    title: "A low week",
     genre: "dialogue",
     intro: "Duyguyu adlandırmak. Hangi cümle çizgi, hangisi nokta?",
     gloss: [
@@ -298,7 +298,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 23,
-    title: "Looking back",
+    title: "Eleven years later",
     genre: "monologue",
     intro: "Geriye bakış. Hangi olay önce oldu?",
     gloss: [
@@ -382,7 +382,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 23,
-    title: "By the time I understood, the memory had faded",
+    title: "The field, the farm, the forest",
     genre: "opinion",
     intro: "Geçmişin iki katmanı. Hangi cümlede „had“ zorunlu?",
     gloss: [
@@ -436,7 +436,7 @@ export const enB1U23: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 23,
-    title: "Despite the distance, I take my bicycle",
+    title: "City days and moods",
     genre: "opinion",
     intro: "Karşıtlığın üç biçimi ve duygunun iki zamanı.",
     gloss: [

@@ -40,7 +40,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 8,
-    title: "Had it been checked",
+    title: "Conditions without if",
     genre: "info",
     intro: "„if“ düşüyor, yerine ne geliyor?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 8,
-    title: "Reading a headline",
+    title: "Three headlines",
     genre: "opinion",
     intro: "Üç manşet. Üçüncüsü ötekilerden nerede ayrılıyor?",
     gloss: [
@@ -225,7 +225,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 8,
-    title: "It seems to have been",
+    title: "A calibration nobody saw",
     genre: "dialogue",
     intro: "İki sözcük işi geriye taşıyor. Hangileri?",
     gloss: [
@@ -315,7 +315,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 8,
-    title: "Quoting a source",
+    title: "The reporter and the quote",
     genre: "monologue",
     intro: "Aynı paragrafta iki tür ilgi cümlesi. Ayıran ne?",
     gloss: [
@@ -401,7 +401,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 8,
-    title: "Had the factor been known, we would have stopped",
+    title: "A study, looking back",
     genre: "info",
     intro: "„if“siz koşul ve mastarın kendi zamanı.",
     gloss: [
@@ -455,7 +455,7 @@ export const enB2U08: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 8,
-    title: "It seems to have been calibrated last month",
+    title: "Headlines with no source",
     genre: "info",
     intro: "Kaynağı söylemeyen üç manşet ve bir çekince.",
     gloss: [

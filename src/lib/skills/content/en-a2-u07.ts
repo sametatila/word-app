@@ -181,7 +181,7 @@ export const enA2U07: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 7,
-    title: "Could you tell me where the unit is?",
+    title: "A visit to Unit 2",
     genre: "dialogue",
     intro: "Hastane danışmasında üç dolaylı soru. Hepsi kibar.",
     gloss: [
@@ -260,7 +260,7 @@ export const enA2U07: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 7,
-    title: "How often do you exercise?",
+    title: "Walking, swimming, soccer",
     genre: "monologue",
     intro: "Sıradan bir hafta. Sıklık zarfları ve „times a week“ kalıbı bir arada.",
     gloss: [
@@ -334,7 +334,7 @@ export const enA2U07: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 7,
-    title: "Take one tablet twice a day",
+    title: "A medicine card",
     genre: "personal",
     intro: "Doz ve sıklık cümlelerini yaz. Sonunda ilaç kartını doldur.",
     gloss: [
@@ -388,7 +388,7 @@ export const enA2U07: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 7,
-    title: "Does my insurance cover this?",
+    title: "Questions about insurance",
     genre: "formal",
     intro: "Sigorta ve bekleme soruları. Sonuncusu ünitenin asıl işi: dolaylı soru.",
     gloss: [

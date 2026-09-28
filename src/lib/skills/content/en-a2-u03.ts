@@ -32,7 +32,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 3,
-    title: "What happened?",
+    title: "A fall on the stairs",
     genre: "dialogue",
     intro: "Küçük bir kaza anlatılıyor. Ne oldu, ne kadar ciddi, sonrası ne?",
     gloss: [
@@ -98,7 +98,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 3,
-    title: "Have you ever been abroad?",
+    title: "Two trips to Italy",
     genre: "dialogue",
     intro: "Deneyimler konuşuluyor. Dikkat: „has gone“ hâlâ orada, „has been“ döndü demek.",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 3,
-    title: "Asking about the past",
+    title: "Ten days on an island",
     genre: "dialogue",
     intro: "Geçmiş hakkında sorular. Her soru başka bir şeyi öğreniyor.",
     gloss: [
@@ -255,7 +255,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 3,
-    title: "Been and gone",
+    title: "A family that travels",
     genre: "monologue",
     intro: "İki sözcüğün farkı anlatılıyor. Kim hâlâ orada, kim döndü?",
     gloss: [
@@ -332,7 +332,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 3,
-    title: "What happened?",
+    title: "An accident form",
     genre: "personal",
     intro: "Bir kazayı anlat ve geçmişi sor. Sonunda kaza formunu doldur.",
     gloss: [
@@ -386,7 +386,7 @@ export const enA2U03: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 3,
-    title: "Have you ever …?",
+    title: "Trips abroad",
     genre: "personal",
     intro: "Deneyim sor ve anlat. Son görev „been“ ile „gone“ arasındaki farkı ölçüyor.",
     gloss: [

@@ -51,7 +51,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 25,
-    title: "The choice itself",
+    title: "Eight words, a whole level",
     genre: "info",
     intro: "Sekiz sözcük ve seviyenin ölçtüğü her şey. Orada olmayanları say.",
     gloss: [
@@ -159,7 +159,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 25,
-    title: "Holding a long case together",
+    title: "Weighing a project",
     genre: "opinion",
     intro: "Tutarlı bir plan ne zaman yetmiyor?",
     gloss: [
@@ -259,7 +259,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 25,
-    title: "Measured indeed",
+    title: "A measured answer",
     genre: "dialogue",
     intro: "Cevap ölçülüydü; ton daha az. Sessizlik ne söylüyor?",
     gloss: [
@@ -352,7 +352,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 25,
-    title: "How well do you know yourself",
+    title: "Self-image and self-knowledge",
     genre: "monologue",
     intro: "Benlik algısı kendini bilmeden daha uzun yaşayabilir. Nasıl?",
     gloss: [
@@ -441,7 +441,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 25,
-    title: "Serenity we learn; sincerity, we choose",
+    title: "Thoughts on a calm life",
     genre: "info",
     intro: "Seviyenin kapanışı: konum ve yokluk.",
     gloss: [
@@ -504,7 +504,7 @@ export const enC1U25: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 25,
-    title: "A self-image may well outlive self-knowledge",
+    title: "Defenses of the self",
     genre: "info",
     intro: "Kendini bilmenin çekinceleri ve ölçülü olan cevap.",
     gloss: [

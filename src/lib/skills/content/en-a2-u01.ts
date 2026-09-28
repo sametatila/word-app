@@ -33,7 +33,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 1,
-    title: "I lost my phone",
+    title: "The phone on the bus",
     genre: "story",
     intro: "Kaybolan bir telefonun hikâyesi. Ne zaman ne oldu, sırasıyla takip et.",
     gloss: [
@@ -92,7 +92,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 1,
-    title: "What were you doing?",
+    title: "Three missed calls",
     genre: "dialogue",
     intro: "İki kişi dün ne yaptıklarını konuşuyor. Hangi iş sürüyordu, hangisi bir andı?",
     gloss: [
@@ -173,7 +173,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 1,
-    title: "While I was cooking",
+    title: "The burning rice",
     genre: "dialogue",
     intro: "Mutfakta bir gün. Aynı anda kaç iş sürüyor?",
     gloss: [
@@ -250,7 +250,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 1,
-    title: "Two days ago",
+    title: "A new computer",
     genre: "monologue",
     intro: "Bir bilgisayar hikâyesi. Zaman ifadelerini sırayla yakala.",
     gloss: [
@@ -326,7 +326,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 1,
-    title: "I bought a new phone",
+    title: "A lost property form",
     genre: "personal",
     intro: "Düzensiz geçmişi yaz. Sonunda kayıp eşya formunu doldur.",
     gloss: [
@@ -379,7 +379,7 @@ export const enA2U01: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 1,
-    title: "I was cooking when you called",
+    title: "A call at dinner time",
     genre: "personal",
     intro: "İki geçmişi bir arada yaz: süren iş ve onun içindeki an.",
     gloss: [

@@ -48,7 +48,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 22,
-    title: "The vocabulary of cost",
+    title: "Cost and costs",
     genre: "info",
     intro: "Aynı sözcük bir satır sonra tanımlıksız ve çoğul. Kural nerede?",
     gloss: [
@@ -152,7 +152,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 22,
-    title: "Reporting the books",
+    title: "Alleging or proving fraud",
     genre: "opinion",
     intro: "Biri iddia ediyor, öteki kanıtlıyor. İki fiilin bedeli aynı mı?",
     gloss: [
@@ -253,7 +253,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 22,
-    title: "Thoroughly green",
+    title: "Forty pages of brochure",
     genre: "dialogue",
     intro: "Yeşil aklama titizdi; denetim daha az. Hangi ad hangisini örtüyor?",
     gloss: [
@@ -343,7 +343,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 22,
-    title: "How certain is the forecast",
+    title: "Orders and savings",
     genre: "monologue",
     intro: "Ödeme gücü olan bir şirket neden hâlâ risk taşıyor?",
     gloss: [
@@ -429,7 +429,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 22,
-    title: "A marginal cost is not an opportunity cost",
+    title: "The company accounts",
     genre: "info",
     intro: "Sayılabilirlik ve defterlerin iki fiili.",
     gloss: [
@@ -495,7 +495,7 @@ export const enC1U22: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 22,
-    title: "The greenwashing was thorough; the audit, less so",
+    title: "Risks behind a good image",
     genre: "info",
     intro: "Tahminin çekinceleri ve yeşil aklamanın sözcükleri.",
     gloss: [

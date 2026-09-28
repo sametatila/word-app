@@ -38,7 +38,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 18,
-    title: "The cost report",
+    title: "The cost estimate",
     genre: "info",
     intro: "İki isim yan yana. Hangisi hangisini niteliyor?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 18,
-    title: "Saying you disliked it",
+    title: "A weak ending, politely",
     genre: "opinion",
     intro: "„especially since“ ne yapıyor? Ödün mü, tersi mi?",
     gloss: [
@@ -224,7 +224,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 18,
-    title: "If she had portrayed it",
+    title: "The empty hall",
     genre: "dialogue",
     intro: "Üç koşul, boş bir salon. Hangisi bu akşama ait?",
     gloss: [
@@ -312,7 +312,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 18,
-    title: "The company report",
+    title: "A paused expansion",
     genre: "monologue",
     intro: "Üç derece üç satırda. Sıra neden böyle?",
     gloss: [
@@ -396,7 +396,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 18,
-    title: "The preparation of the cost estimate took a week",
+    title: "Accounting tasks",
     genre: "info",
     intro: "Dışta adlaştırma, içte bileşik. Soldaki tekil mi?",
     gloss: [
@@ -453,7 +453,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 18,
-    title: "If the depiction had been more elegant, the hall would be full now",
+    title: "A stage design, looking back",
     genre: "opinion",
     intro: "İki kapalı, bir karışık ve iki aktarma.",
     gloss: [

@@ -37,7 +37,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 9,
-    title: "This one or that one",
+    title: "Two machines on one table",
     genre: "opinion",
     intro: "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
     gloss: [
@@ -120,7 +120,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 9,
-    title: "The faulty order",
+    title: "The third complaint",
     genre: "email",
     intro: "Üçüncü şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
     gloss: [
@@ -193,7 +193,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 9,
-    title: "You should see it",
+    title: "Worth watching twice",
     genre: "dialogue",
     intro: "Kitap mı önce, dizi mi? Tavsiye nasıl kuruluyor?",
     gloss: [
@@ -280,7 +280,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 9,
-    title: "How it works",
+    title: "Two buttons, two jobs",
     genre: "dialogue",
     intro: "Cihaz anlatılıyor. Neden hep edilgen kullanılıyor?",
     gloss: [
@@ -361,7 +361,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 9,
-    title: "This one is small, whereas that one is big",
+    title: "Comparing two machines",
     genre: "opinion",
     intro: "İki bağlaç, iki iş. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
     gloss: [
@@ -414,7 +414,7 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 9,
-    title: "I have written twice about this",
+    title: "A complaint about a device",
     genre: "formal",
     intro: "Şikâyet ve kılavuz cümleleri. Hangisi tarihli, hangisi değil?",
     gloss: [

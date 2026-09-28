@@ -31,7 +31,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 23,
-    title: "Healthy living",
+    title: "Tips for a healthy life",
     genre: "guide",
     intro: "Sağlıklı yaşam öğütleri. Ne yapmalı, ne yapmamalı?",
     gloss: [
@@ -90,7 +90,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 23,
-    title: "At the dentist",
+    title: "Kaan's tooth",
     genre: "dialogue",
     intro: "Diş hekiminde. Ne zaman ağrıyor, sebebi ne?",
     gloss: [
@@ -175,7 +175,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 23,
-    title: "On the phone",
+    title: "A call to the office",
     genre: "phone",
     intro: "Telefonda kendini tanıtma. Dikkat: yüz yüze „I am“, telefonda „this is“.",
     gloss: [
@@ -250,7 +250,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 23,
-    title: "Texting a friend",
+    title: "Messages or calls",
     genre: "monologue",
     intro: "Mesajlaşma anlatılıyor. Hangi durumda mesaj, hangisinde telefon?",
     gloss: [
@@ -326,7 +326,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 23,
-    title: "I have a toothache",
+    title: "The dentist form",
     genre: "personal",
     intro: "Diş ağrısını iki biçimde de yaz. Sonunda diş hekimi formunu doldur.",
     gloss: [
@@ -379,7 +379,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 23,
-    title: "Hello, this is …",
+    title: "Phone phrases",
     genre: "phone",
     intro: "Telefon cümlelerini yaz. Telefonda kendini „this is“ ile tanıtıyorsun.",
     gloss: [

@@ -49,7 +49,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 15,
-    title: "What work leaves unsaid",
+    title: "Pensions without an agent",
     genre: "info",
     intro: "Hiçbir şey silinmemiş ve yine de kimse yok. Fail nereye gitti?",
     gloss: [
@@ -160,7 +160,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 15,
-    title: "The excellence initiative",
+    title: "An audit of the initiative",
     genre: "opinion",
     intro: "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
     gloss: [
@@ -258,7 +258,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 15,
-    title: "How voluntary is it",
+    title: "Knowledge work and self-exploitation",
     genre: "dialogue",
     intro: "Kimse zorlamadıysa gönüllü müdür? Çekince nerede duruyor?",
     gloss: [
@@ -345,7 +345,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 15,
-    title: "Holding a long report together",
+    title: "Pointers in a long report",
     genre: "monologue",
     intro: "Uzun raporu ne bir arada tutuyor? Belirsiz sorumluluk neyi bozuyor?",
     gloss: [
@@ -433,7 +433,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 15,
-    title: "The pension level fell; the full retirement age did not",
+    title: "Work, age and pensions",
     genre: "info",
     intro: "Failin fiilin içinde kaybolması ve çekincenin işi.",
     gloss: [
@@ -498,7 +498,7 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 15,
-    title: "The excellence initiative was a success",
+    title: "Pressure in the university",
     genre: "info",
     intro: "Meblağsız kabul ve raporun gönderme katmanı.",
     gloss: [

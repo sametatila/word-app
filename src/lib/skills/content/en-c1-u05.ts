@@ -38,7 +38,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 5,
-    title: "The same objection",
+    title: "The middle voice",
     genre: "info",
     intro: "Fiil etken, özne edilgen. Bu hangi çatı?",
     gloss: [
@@ -135,7 +135,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 5,
-    title: "Binding a long argument",
+    title: "One word holding twenty pages",
     genre: "info",
     intro: "Yirmi sayfayı üç sözcük tutuyor. Hangisi güvenli?",
     gloss: [
@@ -225,7 +225,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 5,
-    title: "The language of motions",
+    title: "Wording a motion",
     genre: "dialogue",
     intro: "Bir harf eksik ve belge türü değişiyor. Hangisi?",
     gloss: [
@@ -314,7 +314,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 5,
-    title: "How strong is your claim",
+    title: "Stacking the hedges",
     genre: "monologue",
     intro: "Yığılan kipler. Nerede ölçüm, nerede mesafe?",
     gloss: [
@@ -405,7 +405,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 5,
-    title: "A wave of outrage reads differently in each register",
+    title: "Outrage in the media",
     genre: "info",
     intro: "Orta çatı ve üç kalıp daha. Fail nerede?",
     gloss: [
@@ -462,7 +462,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 5,
-    title: "We move that the board grant worker participation",
+    title: "A motion on worker participation",
     genre: "info",
     intro: "Önergenin kipi ve iki kip katmanı.",
     gloss: [

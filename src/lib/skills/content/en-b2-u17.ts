@@ -39,7 +39,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 17,
-    title: "What the festival is",
+    title: "A traditional costume",
     genre: "info",
     intro: "İki sözcük silinince ne kalıyor?",
     gloss: [
@@ -135,7 +135,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 17,
-    title: "The second act",
+    title: "A hasty ending",
     genre: "opinion",
     intro: "Üç kip, bir eleştiri. Hangisi eleştirmene dair?",
     gloss: [
@@ -224,7 +224,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 17,
-    title: "Never such an outrage",
+    title: "A defeat on the sports page",
     genre: "dialogue",
     intro: "Devrik sırada parçacık nereye gidiyor?",
     gloss: [
@@ -314,7 +314,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 17,
-    title: "By the opening",
+    title: "Archiving the letters",
     genre: "monologue",
     intro: "Planda bizim olan ve olmayan. Hangisi hangi biçimde?",
     gloss: [
@@ -400,7 +400,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 17,
-    title: "The dress, which is a traditional costume, is new",
+    title: "A folk festival",
     genre: "info",
     intro: "Üç ilgi cümlesi. Hangisinden iki sözcük silinebiliyor?",
     gloss: [
@@ -455,7 +455,7 @@ export const enB2U17: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 17,
-    title: "Never has a defeat caused such outrage",
+    title: "Fans in the grandstand",
     genre: "opinion",
     intro: "Üç devrik cümle ve bir plan satırı.",
     gloss: [

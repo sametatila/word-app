@@ -38,7 +38,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 24,
-    title: "Reporting a loss",
+    title: "A wallet on the tram",
     genre: "dialogue",
     intro: "Karakolda bildirim. Kaybolmuş mu, çalınmış mı?",
     gloss: [
@@ -109,7 +109,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 24,
-    title: "At the library",
+    title: "Library rules",
     genre: "info",
     intro: "Kütüphane kuralları. Ne serbest, ne değil?",
     gloss: [
@@ -186,7 +186,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 24,
-    title: "Residence permit",
+    title: "Early at the office",
     genre: "dialogue",
     intro: "İzin yenileme. Hangi belge gerekli, hangisi değil?",
     gloss: [
@@ -265,7 +265,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 24,
-    title: "Transit card",
+    title: "The green machine",
     genre: "dialogue",
     intro: "Kart ve makine. Hangi düğme, hangi para?",
     gloss: [
@@ -347,7 +347,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 24,
-    title: "I lost my wallet",
+    title: "A form for the police",
     genre: "formal",
     intro: "Kayıp mı, hırsızlık mı? Fark öznede.",
     gloss: [
@@ -401,7 +401,7 @@ export const enA2U24: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 24,
-    title: "You have to be quiet",
+    title: "Books and cards",
     genre: "info",
     intro: "Kütüphane ve kart. Zorunluluk, izin ve bitmemiş iş.",
     gloss: [

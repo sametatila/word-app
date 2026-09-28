@@ -39,7 +39,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 14,
-    title: "The group affected",
+    title: "A new citizen votes",
     genre: "info",
     intro: "İlgi adılının iyelik hâli. Kişi mi, şey mi?",
     gloss: [
@@ -133,7 +133,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 14,
-    title: "What drives the price",
+    title: "Inflation, not the rest",
     genre: "opinion",
     intro: "Üç yarık cümle. Üçüncüsü neyi kabul ediyor?",
     gloss: [
@@ -228,7 +228,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 14,
-    title: "Rents rising",
+    title: "A housing report",
     genre: "dialogue",
     intro: "Üç ortaç, bir konut raporu. Hangisi karar anlatıyor?",
     gloss: [
@@ -318,7 +318,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 14,
-    title: "Never has turnout been so low",
+    title: "Record low turnout",
     genre: "monologue",
     intro: "Üç devrik cümle. Yanlış hangisinde çıkıyor?",
     gloss: [
@@ -410,7 +410,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 14,
-    title: "My neighbor, whose citizenship is recent, votes today",
+    title: "Migration and citizenship",
     genre: "info",
     intro: "Üç ilgi adılı. Hangisi iyelik taşıyor?",
     gloss: [
@@ -464,7 +464,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 14,
-    title: "Facing a housing shortage, families moved out",
+    title: "A changing neighborhood",
     genre: "opinion",
     intro: "Üç ortaç, bir yarık cümle, bir devrik sıra.",
     gloss: [

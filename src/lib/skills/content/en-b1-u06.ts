@@ -38,7 +38,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 6,
-    title: "Why I signed up",
+    title: "The real reason",
     genre: "blog",
     intro: "Kursa neden kaydolunmuş? Kısa cevap gerçek cevap değil.",
     gloss: [
@@ -115,7 +115,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 6,
-    title: "Reason and result",
+    title: "Four words for one idea",
     genre: "guide",
     intro: "Dört sözcük, tek fikir. Hangisi cümleye başlayabiliyor?",
     gloss: [
@@ -182,7 +182,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 6,
-    title: "When I arrive",
+    title: "Last minutes at the station",
     genre: "dialogue",
     intro: "İstasyonda son dakikalar. Hangi cümlede „will“ var, hangisinde yok?",
     gloss: [
@@ -261,7 +261,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 6,
-    title: "Only if",
+    title: "A new line in the contract",
     genre: "dialogue",
     intro: "Sözleşmeye tek satır eklenmiş. Cevap nasıl yazılıyor?",
     gloss: [
@@ -345,7 +345,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 6,
-    title: "When I arrive, I will call you",
+    title: "The train journey",
     genre: "personal",
     intro: "Yan cümlede gelecek nasıl kuruluyor? Dört bağlaç, tek kural.",
     gloss: [
@@ -398,7 +398,7 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 6,
-    title: "I was late because the train stopped",
+    title: "A late train and a course",
     genre: "info",
     intro: "Sebep, sonuç ve amaç. Hangi sözcük nereye konabiliyor?",
     gloss: [

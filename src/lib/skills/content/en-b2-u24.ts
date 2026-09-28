@@ -36,7 +36,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 24,
-    title: "The person responsible",
+    title: "A task list nobody read",
     genre: "info",
     intro: "Nesne adılı bazen düşüyor, bazen düşmüyor. Sınır nerede?",
     gloss: [
@@ -128,7 +128,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 24,
-    title: "What caused the delay",
+    title: "A scheduling conflict",
     genre: "opinion",
     intro: "Üç yarık cümle. Hangisi bir eksikliği adlandırıyor?",
     gloss: [
@@ -222,7 +222,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 24,
-    title: "How the work runs",
+    title: "The work package",
     genre: "dialogue",
     intro: "Üç ortaç bir iş akışında. Hangisi edilgen?",
     gloss: [
@@ -312,7 +312,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 24,
-    title: "Never so promptly",
+    title: "An ironic complaint",
     genre: "monologue",
     intro: "Devrik sıra bir şikâyet mektubunda. Ne kazandırıyor?",
     gloss: [
@@ -402,7 +402,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 24,
-    title: "The division of tasks, which nobody read, is old",
+    title: "Sharing out the tasks",
     genre: "info",
     intro: "Üç ilgi cümlesi. Hangisinden ne düşüyor?",
     gloss: [
@@ -460,7 +460,7 @@ export const enB2U24: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 24,
-    title: "Never has an answer come so promptly",
+    title: "Waiting for a reply",
     genre: "opinion",
     intro: "Üç devrik cümle ve iki ortaç.",
     gloss: [

@@ -34,7 +34,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 23,
-    title: "At the city hall",
+    title: "Number sixty-four",
     genre: "dialogue",
     intro: "Belediyede kayıt. Hangi sıra, hangi form, hangi renk?",
     gloss: [
@@ -102,7 +102,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 23,
-    title: "What I think about technology",
+    title: "Phones, good and bad",
     genre: "opinion",
     intro: "İyi mi kötü mü? Yazar soruyu değiştiriyor.",
     gloss: [
@@ -178,7 +178,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 23,
-    title: "Explaining how to do it",
+    title: "The button on the left",
     genre: "dialogue",
     intro: "Ekran ekran talimat. Hangi adımda ne oluyor?",
     gloss: [
@@ -257,7 +257,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 23,
-    title: "Filling out a form",
+    title: "Spelling a last name",
     genre: "dialogue",
     intro: "Form doldurma. Hangi bilgi nereye yazılıyor?",
     gloss: [
@@ -339,7 +339,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 23,
-    title: "First, press the button",
+    title: "A registration form",
     genre: "info",
     intro: "Emir zinciri. Özne yok, sırayı zarflar kuruyor.",
     gloss: [
@@ -395,7 +395,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 23,
-    title: "I think phones are useful",
+    title: "My opinion on phones",
     genre: "opinion",
     intro: "Görüş bildirme ve kurum dili. Her fiil kendi edatını taşıyor.",
     gloss: [

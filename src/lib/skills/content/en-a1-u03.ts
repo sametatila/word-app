@@ -33,7 +33,7 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 3,
-    title: "This is my family",
+    title: "Ayla's family",
     genre: "personal",
     intro: "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
     gloss: [
@@ -162,7 +162,7 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 3,
-    title: "Do you have a big family?",
+    title: "Tarik's family",
     genre: "dialogue",
     intro: "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
     gloss: [
@@ -314,7 +314,7 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 3,
-    title: "Filling a form",
+    title: "The library form",
     genre: "formal",
     intro: "Yaşı, doğum gününü ve form sorularını yaz. Sonunda kütüphane kartını doldur.",
     gloss: [
@@ -370,7 +370,7 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 3,
-    title: "His name, her name",
+    title: "About my family",
     genre: "personal",
     intro: "Aileni yaz. Dikkat: İngilizcede iyelik ayrı bir sözcük ve SAHİBİN cinsiyetine göre değişiyor.",
     gloss: [

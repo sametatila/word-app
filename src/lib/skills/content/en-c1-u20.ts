@@ -49,7 +49,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 20,
-    title: "What the plan leaves unsaid",
+    title: "Nouns made from verbs",
     genre: "info",
     intro: "Aynı satırda fiilden iki isim, ikisi de aynı yolla yapılmış. Öteki yol neden seçilmemiş?",
     gloss: [
@@ -154,7 +154,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 20,
-    title: "Holding a city report together",
+    title: "From plan to zoning map",
     genre: "opinion",
     intro: "Aynı alan iki bölümde iki ad taşıyor. Gönderme neyi kurtarıyor?",
     gloss: [
@@ -255,7 +255,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 20,
-    title: "Revitalized indeed",
+    title: "A new square, higher rents",
     genre: "dialogue",
     intro: "Meydan canlandı, komşular daha az. Hangi sözcük hangisini iptal ediyor?",
     gloss: [
@@ -348,7 +348,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 20,
-    title: "How certain is the model",
+    title: "Feedback loops and tipping points",
     genre: "monologue",
     intro: "Model neyi bilmiyor? Çekince hangi sayıyı saklıyor?",
     gloss: [
@@ -438,7 +438,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "The dismantling began; the repurposing did not",
+    title: "An old industrial quarter",
     genre: "info",
     intro: "Fiilden isimler ve raporun göndermeleri.",
     gloss: [
@@ -501,7 +501,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "The square was revitalized; the neighbors, less so",
+    title: "City change and nature",
     genre: "info",
     intro: "Türü yadsıyan cümle ve modelin çekinceleri.",
     gloss: [

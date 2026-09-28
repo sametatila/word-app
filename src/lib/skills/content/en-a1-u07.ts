@@ -90,7 +90,7 @@ export const enA1U07: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 7,
-    title: "At the market",
+    title: "Two kilos of tomatoes",
     genre: "dialogue",
     intro: "Pazarda pazarlık. Kilo, gram ve fiyat art arda geliyor — sayıları takip et.",
     gloss: [
@@ -174,7 +174,7 @@ export const enA1U07: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 7,
-    title: "Cooking together",
+    title: "Rice with vegetables",
     genre: "dialogue",
     intro: "İki kişi birlikte yemek pişiriyor. Hangi adım önce, hangisi sonra?",
     gloss: [
@@ -342,7 +342,7 @@ export const enA1U07: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 7,
-    title: "I like eating pizza",
+    title: "Pizza or rice",
     genre: "personal",
     intro: "Sevdiğini ve tercih ettiğini yaz. Dikkat: sevmek fiilinden sonra ikinci fiil „-ing“ alıyor.",
     gloss: [
@@ -396,7 +396,7 @@ export const enA1U07: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 7,
-    title: "First, then, after that",
+    title: "A simple recipe",
     genre: "personal",
     intro: "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
     gloss: [

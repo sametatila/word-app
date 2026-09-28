@@ -40,7 +40,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 1,
-    title: "The morning briefing",
+    title: "Three lines from a briefing",
     genre: "opinion",
     intro: "Kaynağı söylemeyen üç cümle. İki yoldan hangisi kısa?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 1,
-    title: "Introducing a colleague",
+    title: "Two commas and Ana",
     genre: "info",
     intro: "İki virgül bir cümlenin işini değiştiriyor. Nasıl?",
     gloss: [
@@ -225,7 +225,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 1,
-    title: "The handover note",
+    title: "A one-line handover",
     genre: "dialogue",
     intro: "Üç ortaç, üç ayrı iş. Hangisi edilgen?",
     gloss: [
@@ -313,7 +313,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 1,
-    title: "By the end of the quarter",
+    title: "Looking back from June",
     genre: "monologue",
     intro: "Gelecekten geriye bakmak. Hangi cümle bitmişi anlatıyor?",
     gloss: [
@@ -402,7 +402,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 1,
-    title: "Stakeholders are thought to be ready",
+    title: "Briefing notes without names",
     genre: "info",
     intro: "Kişisiz aktarmanın iki yolu. Hangisi kısa olan?",
     gloss: [
@@ -456,7 +456,7 @@ export const enB2U01: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 1,
-    title: "Having finished the draft, she left",
+    title: "Notes on the team",
     genre: "info",
     intro: "Üç ortaç ve iki ilgi cümlesi. Hangi özne kime ait?",
     gloss: [

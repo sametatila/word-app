@@ -31,7 +31,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 14,
-    title: "Buying a ticket",
+    title: "A ticket to London",
     genre: "dialogue",
     intro: "Gişede bilet alınıyor. Peron, saat, fiyat ve rötar — dördünü de yakala.",
     gloss: [
@@ -97,7 +97,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 14,
-    title: "In a taxi",
+    title: "To the airport",
     genre: "dialogue",
     intro: "Havalimanına taksi. Ne kadar sürüyor, ne kadar tutuyor?",
     gloss: [
@@ -182,7 +182,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 14,
-    title: "The train is running late",
+    title: "A station announcement",
     genre: "report",
     intro: "İstasyon anonsu. Rötar kaç dakika, yolcular nerede bekleyecek?",
     gloss: [
@@ -252,7 +252,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 14,
-    title: "Near and far",
+    title: "The bank and the hotel",
     genre: "dialogue",
     intro: "Konum edatları art arda: next to, behind, between, in front of.",
     gloss: [
@@ -333,7 +333,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 14,
-    title: "I'd like a ticket",
+    title: "The ticket form",
     genre: "formal",
     intro: "Bilet ve taksi cümlelerini yaz. Sonunda bilet formunu doldur.",
     gloss: [
@@ -388,7 +388,7 @@ export const enA1U14: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 14,
-    title: "near, next to, behind",
+    title: "Places in town",
     genre: "personal",
     intro: "Konum ve mesafe yaz. Edatların hepsi ayrı bir ilişki söylüyor.",
     gloss: [

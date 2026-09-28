@@ -89,7 +89,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 8,
-    title: "Paying the check",
+    title: "Card or cash?",
     genre: "dialogue",
     intro: "Hesap ödeniyor. Nakit mi, kart mı, birlikte mi?",
     gloss: [
@@ -175,7 +175,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 8,
-    title: "What time is it?",
+    title: "Half past eight",
     genre: "dialogue",
     intro: "Saatler ve günlük akış. „past“ geçe, „to“ kala — ikisine de dikkat.",
     gloss: [
@@ -250,7 +250,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 8,
-    title: "Fruit and vegetables",
+    title: "Saturday at the market",
     genre: "monologue",
     intro: "Ela pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
     gloss: [
@@ -326,7 +326,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 8,
-    title: "What time is it?",
+    title: "My daily plan",
     genre: "personal",
     intro: "Saati yaz. Sonunda günlük programı doldur.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 8,
-    title: "Can I pay by card?",
+    title: "At the shop",
     genre: "formal",
     intro: "Ödeme ve alışveriş isteklerini yaz. Sayılabilen çoğulda „are“, tekilde „is“.",
     gloss: [

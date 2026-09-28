@@ -52,7 +52,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 18,
-    title: "What the seed leaves unsaid",
+    title: "Reforest and deforest",
     genre: "info",
     intro: "Tek gövde, iki önek. Çift neden ötekinde görünmüyor?",
     gloss: [
@@ -159,7 +159,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 18,
-    title: "Three names for one target",
+    title: "Emission cuts or decarbonization",
     genre: "opinion",
     intro: "Bir hedef, üç ad. Hangisi denge, hangisi etiket?",
     gloss: [
@@ -262,7 +262,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 18,
-    title: "Who does the polluting",
+    title: "The load nobody counts",
     genre: "dialogue",
     intro: "Sayılan ile sayılmayan. Hangisi geri gelmiyor?",
     gloss: [
@@ -349,7 +349,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 18,
-    title: "Holding a climate report together",
+    title: "Two chapters, one term",
     genre: "monologue",
     intro: "Gönderme katmanı ve her alanda işlemeyen önlem.",
     gloss: [
@@ -441,7 +441,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 18,
-    title: "They reforest the hillside; the plain, they deforest",
+    title: "Forests, seeds and climate",
     genre: "info",
     intro: "Tek gövde, iki önek; ve hedefin üç adı.",
     gloss: [
@@ -505,7 +505,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 18,
-    title: "The climate adaptation described above",
+    title: "Notes on climate justice",
     genre: "info",
     intro: "Raporun gönderme katmanı ve kirleten kim.",
     gloss: [

@@ -95,7 +95,7 @@ export const enA1U21: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 21,
-    title: "Parts of the body",
+    title: "My body",
     genre: "guide",
     intro: "Vücut bölümleri ve ağrının iki söyleniş biçimi.",
     gloss: [
@@ -155,7 +155,7 @@ export const enA1U21: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 21,
-    title: "My back hurts",
+    title: "A bad back",
     genre: "dialogue",
     intro: "Doktor muayenesi. Ne ağrıyor, ne ağrımıyor, ne yapmak gerekiyor?",
     gloss: [
@@ -231,7 +231,7 @@ export const enA1U21: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 21,
-    title: "Must and have to",
+    title: "Things to do today",
     genre: "monologue",
     intro: "Bir günün zorunlulukları. „must“ ile „have to“ art arda geçiyor.",
     gloss: [
@@ -307,7 +307,7 @@ export const enA1U21: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 21,
-    title: "I have a headache",
+    title: "The appointment form",
     genre: "personal",
     intro: "Ağrıyı iki biçimde de yaz. Sonunda randevu formunu doldur.",
     gloss: [
@@ -360,7 +360,7 @@ export const enA1U21: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 21,
-    title: "I must go",
+    title: "Waiting room rules",
     genre: "personal",
     intro: "Zorunluluk ve iyelik yaz. „must“ ile „have to“ aynı işi görüyor ama biçimleri farklı.",
     gloss: [

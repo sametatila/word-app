@@ -34,7 +34,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 20,
-    title: "Close friends",
+    title: "Ten years of friendship",
     genre: "story",
     intro: "On yıllık bir arkadaşlık. Ne zaman yakın oldular?",
     gloss: [
@@ -94,7 +94,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 20,
-    title: "Family and relationships",
+    title: "My cousin's family",
     genre: "dialogue",
     intro: "Bir fotoğraf, bir aile. Kim kimin nesi?",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 20,
-    title: "Small talk at a party",
+    title: "A new face at the party",
     genre: "dialogue",
     intro: "Partide ilk konuşma. Kim kimi nereden tanıyor?",
     gloss: [
@@ -255,7 +255,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 20,
-    title: "Saying thank you",
+    title: "A note on the desk",
     genre: "monologue",
     intro: "Beş sözcüğün işi. Neden kâğıt, neden ayrıntı?",
     gloss: [
@@ -329,7 +329,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 20,
-    title: "Thank you for your help",
+    title: "A friendship card",
     genre: "personal",
     intro: "Aynı edat, iki ayrı devam. İsim de olur, „-ing“ de — mastar olmaz.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA2U20: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 20,
-    title: "We have been friends for ten years",
+    title: "Friends and family",
     genre: "personal",
     intro: "Aynı fiil, iki ayrı iş: „got married“ o an, „have been married“ bugün.",
     gloss: [

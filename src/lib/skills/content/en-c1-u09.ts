@@ -45,7 +45,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 9,
-    title: "The language of the classic",
+    title: "Conditions without if",
     genre: "info",
     intro: "Aynı hareket iki dilde var. Peki aynı katta mı?",
     gloss: [
@@ -155,7 +155,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 9,
-    title: "Where the narrator stands",
+    title: "What a narrator holds back",
     genre: "opinion",
     intro: "Bakış açısı bir yer değil bir liste. Neyin listesi?",
     gloss: [
@@ -268,7 +268,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 9,
-    title: "What the poem leaves out",
+    title: "Gaps in a poem",
     genre: "dialogue",
     intro: "Yedinci ünitedeki silme geri döndü. Burada ne yapıyor?",
     gloss: [
@@ -363,7 +363,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 9,
-    title: "Reporting a text",
+    title: "The first seminar",
     genre: "monologue",
     intro: "Bir metni aktarırken fiil seçmek, bir kuram seçmektir.",
     gloss: [
@@ -454,7 +454,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 9,
-    title: "Were it not for metaphysics",
+    title: "Notes for a philosophy class",
     genre: "info",
     intro: "Bağlaçsız koşul ve eski kip.",
     gloss: [
@@ -520,7 +520,7 @@ export const enC1U09: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 9,
-    title: "The poem is fragmentary; the reader, contemplative",
+    title: "A seminar on poetry",
     genre: "info",
     intro: "Şiirde silme ve metni aktaran üç fiil.",
     gloss: [

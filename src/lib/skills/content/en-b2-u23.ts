@@ -38,7 +38,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 23,
-    title: "The official letter",
+    title: "Filing an enclosure",
     genre: "info",
     intro: "„the“ ile „of“ birlikte geliyor. Biri olmadan öteki olur mu?",
     gloss: [
@@ -132,7 +132,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 23,
-    title: "According to the file",
+    title: "Three lines in a case file",
     genre: "opinion",
     intro: "Üç aktarma bir dosyada. Hangisinin dayanağı var?",
     gloss: [
@@ -226,7 +226,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 23,
-    title: "If we had talked",
+    title: "Custody, looking back",
     genre: "dialogue",
     intro: "Üç koşul, bir aile. Hangisi bu haftaya ait?",
     gloss: [
@@ -314,7 +314,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 23,
-    title: "Naming a feeling",
+    title: "A nonverbal signal",
     genre: "monologue",
     intro: "Üç çekince. Hangisi bir şey söylüyor?",
     gloss: [
@@ -398,7 +398,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 23,
-    title: "The filing of the enclosure is done",
+    title: "The mail room",
     genre: "info",
     intro: "„the“ ile „of“ birlikte. Üç kayıt satırı.",
     gloss: [
@@ -454,7 +454,7 @@ export const enB2U23: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 23,
-    title: "If the child support had been fair, the family would be calm now",
+    title: "After the divorce",
     genre: "opinion",
     intro: "İki kapalı, bir karışık ve iki çekince.",
     gloss: [

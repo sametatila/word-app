@@ -41,7 +41,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 11,
-    title: "In the lab",
+    title: "Heat, then the catalyst",
     genre: "info",
     intro: "Yalın ortaç ne söylüyor: „aynı anda“ mı, „çünkü“ mü?",
     gloss: [
@@ -133,7 +133,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 11,
-    title: "How the study works",
+    title: "A cohort too small",
     genre: "opinion",
     intro: "Üç aktarma. Üçüncüsü zamanı nereye koyuyor?",
     gloss: [
@@ -226,7 +226,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 11,
-    title: "The automation of the process",
+    title: "Abstract and acknowledgments",
     genre: "dialogue",
     intro: "Özette isimler, teşekkürde fiiller. Neden?",
     gloss: [
@@ -315,7 +315,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 11,
-    title: "When the data lands",
+    title: "Emissions by June",
     genre: "monologue",
     intro: "Planda kaç söz var, kaç boşluk var?",
     gloss: [
@@ -400,7 +400,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 11,
-    title: "Having heated the liquid, add the catalyst",
+    title: "Lab notes",
     genre: "info",
     intro: "Üç ortaç. İkincisi hangi ilişkiyi taşıyor?",
     gloss: [
@@ -456,7 +456,7 @@ export const enB2U11: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 11,
-    title: "The automation of the process took a year",
+    title: "Writing an abstract",
     genre: "info",
     intro: "Üç adlaştırma ve iki aktarma.",
     gloss: [

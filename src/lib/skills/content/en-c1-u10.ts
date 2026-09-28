@@ -44,7 +44,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 10,
-    title: "Holding a long essay together",
+    title: "Above and below",
     genre: "info",
     intro: "İsim öbeği iki dilde iki ayrı uçtan yükleniyor. Hangisi nereden?",
     gloss: [
@@ -149,7 +149,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 10,
-    title: "The difference in reading",
+    title: "Strangeness or otherness",
     genre: "opinion",
     intro: "„Albeit“ bir cümlecik istemiyor. Peki ne istiyor?",
     gloss: [
@@ -256,7 +256,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 10,
-    title: "Saying less than you mean",
+    title: "Hearty meal, cold welcome",
     genre: "dialogue",
     intro: "„Less so“ neyi kısaltıyor? Azı söylemek neyi büyütüyor?",
     gloss: [
@@ -341,7 +341,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 10,
-    title: "How much the text says",
+    title: "A careful first reading",
     genre: "monologue",
     intro: "Bir okuma ne zaman bir alanı kaplar? Çekince nerede duruyor?",
     gloss: [
@@ -426,7 +426,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 10,
-    title: "The multilayeredness described above explains the predisposition discussed below",
+    title: "Notes on anger and resentment",
     genre: "info",
     intro: "Sona asılan niteleme ve fiilsiz taviz.",
     gloss: [
@@ -489,7 +489,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 10,
-    title: "The meal was hearty; the welcome, less so",
+    title: "Being a stranger",
     genre: "info",
     intro: "Azı söylemek ve okumanın çekincesi.",
     gloss: [

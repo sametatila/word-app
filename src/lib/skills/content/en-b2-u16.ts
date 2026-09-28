@@ -39,7 +39,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 16,
-    title: "A life on stage",
+    title: "An actress leaves",
     genre: "info",
     intro: "Durum fiili ortaçta „-ing“ alıyor. Nasıl oluyor?",
     gloss: [
@@ -131,7 +131,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 16,
-    title: "The catalog entry",
+    title: "Restoring a canvas",
     genre: "info",
     intro: "Üç isim, üç ek. Hangisinin eki hiç yok?",
     gloss: [
@@ -233,7 +233,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 16,
-    title: "The season announcement",
+    title: "News of a sick composer",
     genre: "dialogue",
     intro: "Üç aktarma fiili, bir duyuru. Hangisi oyunculara gitmiyor?",
     gloss: [
@@ -323,7 +323,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 16,
-    title: "What the play does",
+    title: "A play that names the cost",
     genre: "monologue",
     intro: "„is“ sonrası yalın fiil. Nerede oluyor bu?",
     gloss: [
@@ -410,7 +410,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 16,
-    title: "Wanting a new role, she left the company",
+    title: "Life in a theater company",
     genre: "info",
     intro: "Üç ortaç. Birincisi neden kurala aykırı değil?",
     gloss: [
@@ -465,7 +465,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 16,
-    title: "The restoration of the canvas took two years",
+    title: "Museum notes",
     genre: "info",
     intro: "Üç adlaştırma ve iki aktarma.",
     gloss: [

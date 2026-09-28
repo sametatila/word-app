@@ -94,7 +94,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 1,
-    title: "Are you a student here?",
+    title: "Mert meets Lena",
     genre: "dialogue",
     intro: "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
     gloss: [
@@ -175,7 +175,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 1,
-    title: "My name is Ava",
+    title: "Ava from Canada",
     genre: "profile",
     intro: "Ava kendini tanıtıyor. Dinlerken üç şeye dikkat et: nereli, nerede yaşıyor, ne iş yapıyor.",
     gloss: [
@@ -246,7 +246,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 1,
-    title: "Excuse me, are you Mr. Kaya?",
+    title: "Mr. Kaya and Ms. Rossi",
     genre: "dialogue",
     intro: "Resmî bir tanışma. Dikkat: burada ad değil, „Mr.“ ve „Ms.“ ile soyadı kullanılıyor.",
     gloss: [
@@ -330,7 +330,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 1,
-    title: "I introduce myself",
+    title: "A card for Ali",
     genre: "profile",
     intro: "Kendini tanıtmayı yazarak çalış. Önce parçaları birleştir, sonra tanışma kartını doldur.",
     gloss: [

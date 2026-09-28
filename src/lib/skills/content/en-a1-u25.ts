@@ -34,7 +34,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 25,
-    title: "My last weekend",
+    title: "A trip to the mountains",
     genre: "personal",
     intro: "Geçen hafta sonu anlatılıyor. Düzensiz geçmiş biçimlerini yakala.",
     gloss: [
@@ -94,7 +94,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 25,
-    title: "Did you …?",
+    title: "Work and tennis",
     genre: "dialogue",
     intro: "Geçmişte soru sorma. Dikkat: „did“ varken fiil ilk hâline dönüyor.",
     gloss: [
@@ -176,7 +176,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 25,
-    title: "Where did you go?",
+    title: "A weekend on a farm",
     genre: "dialogue",
     intro: "İki kişi hafta sonunu anlatıyor. Kim nereye gitti, kim ne yaptı?",
     gloss: [
@@ -251,7 +251,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 25,
-    title: "Staying in touch",
+    title: "Ela's last day",
     genre: "dialogue",
     intro: "A1'in son metni: bir veda. Sonra ne olacak, ne zaman görüşülecek?",
     gloss: [
@@ -334,7 +334,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 25,
-    title: "I worked yesterday",
+    title: "A weekend form",
     genre: "personal",
     intro: "Geçmiş zamanı yaz. Olumsuzda ve soruda fiil ilk hâline dönüyor.",
     gloss: [
@@ -389,7 +389,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 25,
-    title: "See you soon!",
+    title: "Back from the mountains",
     genre: "personal",
     intro: "A1'in son yazma egzersizi: düzensiz geçmiş ve veda.",
     gloss: [

@@ -39,7 +39,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 17,
-    title: "Where did you read that?",
+    title: "Eighty-one in a hundred",
     genre: "guide",
     intro: "Bir rakamın izi sürülüyor. Kaynak nerede bitiyor?",
     gloss: [
@@ -116,7 +116,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 17,
-    title: "It must be true",
+    title: "The missing key",
     genre: "story",
     intro: "Kayıp bir anahtar ve üç çıkarım. Hangisi kesin?",
     gloss: [
@@ -269,7 +269,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 17,
-    title: "Online and offline",
+    title: "A deleted profile",
     genre: "monologue",
     intro: "Bir hesabın silinmesi. Ne değişti, ne değişmedi?",
     gloss: [
@@ -344,7 +344,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 17,
-    title: "He must know the truth",
+    title: "Checking a source",
     genre: "personal",
     intro: "Üç kip, üç kesinlik derecesi. Burada „must“ zorunluluk değil.",
     gloss: [
@@ -398,7 +398,7 @@ export const enB1U17: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 17,
-    title: "I persuaded him to change the date",
+    title: "Changing a date",
     genre: "personal",
     intro: "İkna ve kaynak cümleleri. Hangi fiil mastar, hangisi „-ing“ alıyor?",
     gloss: [

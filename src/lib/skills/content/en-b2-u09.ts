@@ -41,7 +41,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 9,
-    title: "Checking a claim",
+    title: "Taken from a database",
     genre: "opinion",
     intro: "Zamanı hangi sözcük taşıyor? Ve ne zaman söylüyor?",
     gloss: [
@@ -132,7 +132,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 9,
-    title: "The correction",
+    title: "How to print a correction",
     genre: "opinion",
     intro: "Düzeltmenin üç işi. Hangisini kimse atlamıyor?",
     gloss: [
@@ -222,7 +222,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 9,
-    title: "A press summary",
+    title: "An eleven-line summary",
     genre: "dialogue",
     intro: "On bir satırlık özet. Ortaç ne kazandırıyor?",
     gloss: [
@@ -315,7 +315,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 9,
-    title: "What the paper argues",
+    title: "Editorials and obituaries",
     genre: "monologue",
     intro: "Başyazıda kaç yarık cümle? Ve anma yazısında neden hiç yok?",
     gloss: [
@@ -403,7 +403,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 9,
-    title: "It seems to have been taken from a database",
+    title: "A study under question",
     genre: "info",
     intro: "Mastarın zamanı ve iki çıkarım.",
     gloss: [
@@ -457,7 +457,7 @@ export const enB2U09: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 9,
-    title: "What the paper argues is accountability",
+    title: "Lines for an editorial",
     genre: "opinion",
     intro: "İki yarık cümle ve iki ortaç.",
     gloss: [

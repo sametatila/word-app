@@ -39,7 +39,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 14,
-    title: "How I learn best",
+    title: "Podcasts, words and a notebook",
     genre: "blog",
     intro: "Üç yöntem, bir defter. Hangi cümle alışkanlık, hangisi alışkın olmak?",
     gloss: [
@@ -119,7 +119,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 14,
-    title: "Learning from mistakes",
+    title: "Eleven months of a wrong rule",
     genre: "story",
     intro: "Baştan yanlış öğrenilen bir şey. Ne zaman fark ediliyor?",
     gloss: [
@@ -189,7 +189,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 14,
-    title: "How far I have come",
+    title: "Two years and four months",
     genre: "dialogue",
     intro: "İki yıllık ilerleme. Neyle ölçülüyor?",
     gloss: [
@@ -268,7 +268,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 14,
-    title: "What the tutor said",
+    title: "A short, useful session",
     genre: "dialogue",
     intro: "Geri bildirim oturumu. Aktarılan cümleler nasıl kuruluyor?",
     gloss: [
@@ -348,7 +348,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 14,
-    title: "I am used to writing in a notebook",
+    title: "My learning habits",
     genre: "personal",
     intro: "Üç sözcük aynı, anlam ayrı. Hangisi bitmiş alışkanlık, hangisi alışkın olmak?",
     gloss: [
@@ -401,7 +401,7 @@ export const enB1U14: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 14,
-    title: "She said that my comment had helped",
+    title: "Progress and feedback",
     genre: "personal",
     intro: "İlerleme ve geri bildirim cümleleri. Aktarmada zaman nereye kayıyor?",
     gloss: [

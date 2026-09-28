@@ -47,7 +47,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 19,
-    title: "The vocabulary of waste",
+    title: "A preposition at the end",
     genre: "info",
     intro: "Cümlenin sonundaki edatın ardında hiçbir şey yok. Nesnesi nerede?",
     gloss: [
@@ -149,7 +149,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 19,
-    title: "The growth debate",
+    title: "Growth and the pensions",
     genre: "opinion",
     intro: "Eleştiri haklı ve yine de fatura ödeniyor. İki yarı nasıl duruyor?",
     gloss: [
@@ -250,7 +250,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 19,
-    title: "Reporting the measurement",
+    title: "Two readers of one table",
     genre: "dialogue",
     intro: "Bir bulguyu seyreltmek ile oynak demek aynı şey değil.",
     gloss: [
@@ -342,7 +342,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 19,
-    title: "The precautionary principle",
+    title: "Protection first",
     genre: "monologue",
     intro: "Bir ilke neyi önce sayıyor? Sıra neden karar demek?",
     gloss: [
@@ -426,7 +426,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 19,
-    title: "Obsolescence is designed; longevity is paid for",
+    title: "Waste and recycling",
     genre: "info",
     intro: "Edat edilgeni ve önce gelen sorumluluk.",
     gloss: [
@@ -493,7 +493,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 19,
-    title: "Much as I agree with the criticism of growth",
+    title: "Growth and its limits",
     genre: "info",
     intro: "Büyük taviz, tek iddia; ve ölçümü aktarmak.",
     gloss: [

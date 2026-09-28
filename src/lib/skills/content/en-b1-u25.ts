@@ -42,7 +42,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 25,
-    title: "Where I want to be",
+    title: "Three linkers, three jobs",
     genre: "opinion",
     intro: "Üç bağlaç, üç ayrı iş. Hangisi yalnız geriye bakıyor?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 25,
-    title: "Being thankful",
+    title: "A gift chosen with care",
     genre: "info",
     intro: "Üç edilgen, üç ayrı iş. Hangisinde fail geri geliyor?",
     gloss: [
@@ -226,7 +226,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 25,
-    title: "Fears and worries",
+    title: "Walking home in the dark",
     genre: "dialogue",
     intro: "Bir korkuyla yüzleşme. Hangi fiil mastar istiyor?",
     gloss: [
@@ -309,7 +309,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 25,
-    title: "What they told me",
+    title: "The end of a friendship",
     genre: "monologue",
     intro: "Aktarılan üç cümle, bir dostluk. Hangisinde sıra düzleşiyor?",
     gloss: [
@@ -397,7 +397,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 25,
-    title: "I changed jobs in order to find a direction",
+    title: "A change of direction",
     genre: "opinion",
     intro: "Amaç, sonuç, ödün. Hangi bağlaç nereye gidiyor?",
     gloss: [
@@ -451,7 +451,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 25,
-    title: "The gift was chosen with care",
+    title: "Gifts, thanks and secrets",
     genre: "info",
     intro: "Edilgen ve aktarma. Fail nerede duruyor?",
     gloss: [

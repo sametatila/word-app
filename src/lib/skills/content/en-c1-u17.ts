@@ -50,7 +50,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 17,
-    title: "Humane indeed",
+    title: "No or not",
     genre: "info",
     intro: "İki olumsuzlama var ve biri bir beden daha yüksek. Hangisi?",
     gloss: [
@@ -152,7 +152,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 17,
-    title: "The vocabulary of farm prices",
+    title: "Two kinds of price",
     genre: "opinion",
     intro: "Ölçülen ile imzalanan aynı satırda. İkisi aynı tür mü?",
     gloss: [
@@ -257,7 +257,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 17,
-    title: "How long does soil last",
+    title: "Soil on a slope",
     genre: "dialogue",
     intro: "Bir kuşakta tükenen şey nedir? Çekince neyi ayakta tutuyor?",
     gloss: [
@@ -353,7 +353,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 17,
-    title: "Reporting the label",
+    title: "Label and traceability",
     genre: "monologue",
     intro: "Etiketi savunan ile izlenebilirlikten kuşku duyan aynı masada.",
     gloss: [
@@ -444,7 +444,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 17,
-    title: "We have no factory farming here",
+    title: "Farm life and prices",
     genre: "info",
     intro: "Türü yadsımak ile örneği yadsımak.",
     gloss: [
@@ -507,7 +507,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 17,
-    title: "To call it knowledge transfer is not to call it agronomic advice",
+    title: "Soil and food labels",
     genre: "info",
     intro: "Etiketin iki katmanı ve toprağın süresi.",
     gloss: [

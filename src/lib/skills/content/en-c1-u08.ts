@@ -44,7 +44,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 8,
-    title: "No irony in a ruling",
+    title: "Building a tag question",
     genre: "info",
     intro: "İki sözcüklük ek, üç ayrı karar. Ek neyi açığa çıkarıyor?",
     gloss: [
@@ -150,7 +150,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 8,
-    title: "Spoken and written",
+    title: "One line, two registers",
     genre: "opinion",
     intro: "Aynı satır iki dil düzeyinde. Hangi kusur bağışlanıyor?",
     gloss: [
@@ -257,7 +257,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 8,
-    title: "Managing the conversation",
+    title: "Chairing a meeting",
     genre: "dialogue",
     intro: "Görüşmeyi kısaltmak ile soruyu atlatmak arasındaki fark.",
     gloss: [
@@ -350,7 +350,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 8,
-    title: "Holding a contract together",
+    title: "The key clause",
     genre: "monologue",
     intro: "Bir belgeyi bir arada tutan sözcükler hangileri?",
     gloss: [
@@ -446,7 +446,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 8,
-    title: "Not exactly lucrative, is it?",
+    title: "Remarks about money",
     genre: "info",
     intro: "Hesaplanan ek ve gizli kutup.",
     gloss: [
@@ -511,7 +511,7 @@ export const enC1U08: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 8,
-    title: "In colloquial language the same line lands differently",
+    title: "Office language and everyday speech",
     genre: "info",
     intro: "Dil düzeyi ve büronun üç satırı.",
     gloss: [

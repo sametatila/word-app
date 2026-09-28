@@ -89,7 +89,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 12,
-    title: "Can I exchange this?",
+    title: "A dirty sweater",
     genre: "dialogue",
     intro: "Bir kazak iade ediliyor. Değişim mi, para iadesi mi?",
     gloss: [
@@ -173,7 +173,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 12,
-    title: "What do you think?",
+    title: "Sena's new jacket",
     genre: "dialogue",
     intro: "Bir ceket üzerine fikir soruluyor. Beğeni cümleleri art arda geliyor.",
     gloss: [
@@ -247,7 +247,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 12,
-    title: "How many, how much",
+    title: "Cooking for six",
     genre: "monologue",
     intro: "Kaan yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
     gloss: [
@@ -323,7 +323,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 12,
-    title: "I like it",
+    title: "The return form",
     genre: "personal",
     intro: "Beğeni ve iade cümlelerini yaz. Sonunda iade formunu doldur.",
     gloss: [
@@ -376,7 +376,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 12,
-    title: "How many, how much",
+    title: "Apples and water",
     genre: "personal",
     intro: "Miktar sorularını yaz. Sayılabilene „how many“, sayılamayana „how much“.",
     gloss: [

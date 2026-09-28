@@ -33,7 +33,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 8,
-    title: "Are you OK?",
+    title: "Afraid of the interview",
     genre: "dialogue",
     intro: "Mülakat öncesi. Kim neyden endişeli, kim neyden korkuyor?",
     gloss: [
@@ -182,7 +182,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 8,
-    title: "Getting better",
+    title: "After the fever",
     genre: "dialogue",
     intro: "İyileşme konuşması. Kim hangi süreyi söylüyor, hangisi doğru?",
     gloss: [
@@ -260,7 +260,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 8,
-    title: "My home",
+    title: "A balcony with a view",
     genre: "monologue",
     intro: "Bir daire tek tek anlatılıyor. Hangi oda daha aydınlık, hangisi daha rahat?",
     gloss: [
@@ -335,7 +335,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 8,
-    title: "I'm worried about the exam",
+    title: "Feelings and health",
     genre: "personal",
     intro: "His cümleleri. Her sıfatın kendi edatı var; ezberlenecek yer orası.",
     gloss: [
@@ -391,7 +391,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 8,
-    title: "I live in a bright apartment",
+    title: "Describing an apartment",
     genre: "personal",
     intro: "Evi anlat ve daireyi sor. Karşılaştırma burada betimleme işinde.",
     gloss: [

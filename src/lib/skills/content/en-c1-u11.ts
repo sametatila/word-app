@@ -46,7 +46,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 11,
-    title: "Three names for a culture",
+    title: "Four words for nobody",
     genre: "info",
     intro: "„Hiç kimse“ demenin dört yolu. Hangisi yansız?",
     gloss: [
@@ -160,7 +160,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 11,
-    title: "Fronting the excluded",
+    title: "An abstract noun that acts",
     genre: "opinion",
     intro: "Öne alınan soyut isim faili nasıl gizliyor?",
     gloss: [
@@ -260,7 +260,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 11,
-    title: "The integration debate",
+    title: "Acculturation or assimilation",
     genre: "dialogue",
     intro: "Bir satırda „we“ ve „they“. Hangisi hangi sözcüğü kullanıyor?",
     gloss: [
@@ -346,7 +346,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 11,
-    title: "Demanding equality",
+    title: "A principle that makes demands",
     genre: "monologue",
     intro: "Talep eden bir metinde özne kim oluyor?",
     gloss: [
@@ -433,7 +433,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 11,
-    title: "What one calls a cultural scene, another calls a parallel society",
+    title: "Culture and its labels",
     genre: "info",
     intro: "Genel özne ve öne alınan soyut isim.",
     gloss: [
@@ -496,7 +496,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 11,
-    title: "The principle of equality demands that human dignity be untouchable for all, not just for some",
+    title: "Equal rights for all",
     genre: "info",
     intro: "Talep eden metin ve fiilsiz taviz.",
     gloss: [

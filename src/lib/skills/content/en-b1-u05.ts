@@ -38,7 +38,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 5,
-    title: "The noise problem",
+    title: "The washing machine upstairs",
     genre: "story",
     intro: "Üst kattaki çamaşır makinesi. Sorun nasıl çözülüyor?",
     gloss: [
@@ -114,7 +114,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 5,
-    title: "The bills",
+    title: "A high electricity bill",
     genre: "dialogue",
     intro: "Yüksek bir fatura. Asıl sorun hangisi?",
     gloss: [
@@ -184,7 +184,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 5,
-    title: "Moving out",
+    title: "The final inspection",
     genre: "monologue",
     intro: "Çıkış kontrolü. Depozito neden tam geri geliyor?",
     gloss: [
@@ -257,7 +257,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 5,
-    title: "The neighborhood",
+    title: "One more year here",
     genre: "dialogue",
     intro: "Bir yıl daha mı? Karar neye dayanıyor?",
     gloss: [
@@ -337,7 +337,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 5,
-    title: "Although I asked twice, the noise continued",
+    title: "Notes on the bill",
     genre: "personal",
     intro: "Üç ödün sözcüğü. Hangisi cümle, hangisi isim, hangisi yeni cümle istiyor?",
     gloss: [
@@ -391,7 +391,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 5,
-    title: "I had cleaned everything before they arrived",
+    title: "After the inspection",
     genre: "personal",
     intro: "Çıkış ve mahalle cümleleri. Hangi fiil mastar, hangisi „-ing“ alıyor?",
     gloss: [

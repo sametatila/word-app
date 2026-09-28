@@ -48,7 +48,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 23,
-    title: "Three registers of one claim",
+    title: "Nouns without an article",
     genre: "info",
     intro: "İki soyut isim ve ortada tanımlık yok. Ne zaman geri geliyor?",
     gloss: [
@@ -148,7 +148,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 23,
-    title: "What the tender leaves unsaid",
+    title: "The tender and the permit",
     genre: "opinion",
     intro: "İhale bir form olarak, onay bir gecikme olarak sürüyor. Hangisi kimin?",
     gloss: [
@@ -253,7 +253,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 23,
-    title: "The order of the argument",
+    title: "A hidden flaw in reasoning",
     genre: "dialogue",
     intro: "Akıl yürütme neyi gizliyor? Adlandırılan ile adlandırılmayan.",
     gloss: [
@@ -341,7 +341,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 23,
-    title: "Holding a strategy paper together",
+    title: "Penetration and saturation",
     genre: "monologue",
     intro: "Pazara nüfuz aşağıda doygunluğa yol açıyor. Gönderme neyi kurtarıyor?",
     gloss: [
@@ -431,7 +431,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 23,
-    title: "In the essay it is rhetoric; in the pamphlet, pathos",
+    title: "Style and argument",
     genre: "info",
     intro: "Çıplak soyut isim ve savın gizlediği hata.",
     gloss: [
@@ -495,7 +495,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 23,
-    title: "The consortium builds; the operating model, it does not name",
+    title: "Bidding for a big project",
     genre: "info",
     intro: "İhalenin sessiz kaldığı yer ve strateji belgesinin göndermeleri.",
     gloss: [

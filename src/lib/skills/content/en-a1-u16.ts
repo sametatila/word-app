@@ -88,7 +88,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 16,
-    title: "Where is my phone?",
+    title: "The lost phone",
     genre: "dialogue",
     intro: "Kayıp telefon aranıyor. Konum edatlarını takip et: on, under, next to, in.",
     gloss: [
@@ -171,7 +171,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 16,
-    title: "Showing my home",
+    title: "Nil's apartment",
     genre: "monologue",
     intro: "Nil dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
     gloss: [
@@ -240,7 +240,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 16,
-    title: "Neighbors",
+    title: "The people next door",
     genre: "dialogue",
     intro: "Apartmandaki komşular anlatılıyor. Kim hangi katta, nasıl biri?",
     gloss: [
@@ -323,7 +323,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 16,
-    title: "There is a room",
+    title: "Rooms and things",
     genre: "personal",
     intro: "Varoluş cümlesini yaz. Yapı iki parçalı ve arkadaki isme göre tekil/çoğul seçiyor.",
     gloss: [
@@ -376,7 +376,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 16,
-    title: "Where is it?",
+    title: "My phone and my neighbor",
     genre: "personal",
     intro: "Konum ve komşu cümlelerini yaz. „live“ fiili üçüncü tekil kişide „-s“ alıyor.",
     gloss: [

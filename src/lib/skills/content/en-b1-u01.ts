@@ -43,7 +43,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 1,
-    title: "Writing a résumé",
+    title: "Three rules for a résumé",
     genre: "guide",
     intro: "Yirmi saniyede karar veren üç şey. Hangisi neden önemli?",
     gloss: [
@@ -119,7 +119,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 1,
-    title: "The job interview",
+    title: "Can's interview",
     genre: "interview",
     intro: "Bir mülakat baştan sona. Hangi cevap neden işe yarıyor?",
     gloss: [
@@ -191,7 +191,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 1,
-    title: "My career so far",
+    title: "Six years, three companies",
     genre: "monologue",
     intro: "Altı yıllık bir yol. Hangi adım hangisinden önce geldi?",
     gloss: [
@@ -266,7 +266,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 1,
-    title: "The cover letter",
+    title: "A better first line",
     genre: "dialogue",
     intro: "Ön yazı düzeltiliyor. İlk satır neden bu kadar önemli?",
     gloss: [
@@ -346,7 +346,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 1,
-    title: "I had finished my degree before I started there",
+    title: "Notes for a résumé",
     genre: "formal",
     intro: "İki geçmiş olay. Önce olan „had“ alıyor, sonraki sade kalıyor.",
     gloss: [
@@ -400,7 +400,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 1,
-    title: "I am writing to mention my strengths",
+    title: "Applying for a new job",
     genre: "formal",
     intro: "Ön yazı ve mülakat cümleleri. Hangi fiil mastar, hangisi „-ing“ istiyor?",
     gloss: [

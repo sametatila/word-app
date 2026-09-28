@@ -40,7 +40,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 6,
-    title: "Once completed",
+    title: "Instructions without a subject",
     genre: "info",
     intro: "İki yarının da öznesi yazılmıyor. Yine de aynı mı?",
     gloss: [
@@ -131,7 +131,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 6,
-    title: "As it is reported",
+    title: "An origin nobody knows",
     genre: "opinion",
     intro: "Kaynaksız cümlenin iki saniyelik sınaması.",
     gloss: [
@@ -225,7 +225,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 6,
-    title: "The treatment of the surface",
+    title: "A process log",
     genre: "dialogue",
     intro: "Süreç notu isimlerle yazılıyor. Ek nereden geliyor?",
     gloss: [
@@ -318,7 +318,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 6,
-    title: "It will have been done",
+    title: "The pilot in June",
     genre: "monologue",
     intro: "Dört sözcüklük fiil. Kimin yapacağı yazılmıyor.",
     gloss: [
@@ -404,7 +404,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 6,
-    title: "Having filtered the liquid, mix the powder",
+    title: "Workshop instructions",
     genre: "info",
     intro: "Talimatta üç ortaç. Özne nerede duruyor?",
     gloss: [
@@ -458,7 +458,7 @@ export const enB2U06: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 6,
-    title: "It is reported that the origin is unclear",
+    title: "Notes on the pilot",
     genre: "info",
     intro: "Kaynaksız üç cümle ve bitmiş bir gelecek.",
     gloss: [

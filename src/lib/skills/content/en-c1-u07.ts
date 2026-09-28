@@ -42,7 +42,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 7,
-    title: "What the article omits",
+    title: "Three sizes of gap",
     genre: "info",
     intro: "Bir derste üç ayrı büyüklükte delik. Hangisini hangi dil kapatıyor?",
     gloss: [
@@ -151,7 +151,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 7,
-    title: "The appeal letter",
+    title: "Conceding without giving in",
     genre: "opinion",
     intro: "Taviz gibi iki sözcük, ama hiç ödün yok. Zincir neden bu kadar uzun?",
     gloss: [
@@ -260,7 +260,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 7,
-    title: "Which party comes first",
+    title: "The union's gain",
     genre: "dialogue",
     intro: "Üç cümle, üç ayrı başlangıç. Hangisi neyi öne alıyor?",
     gloss: [
@@ -354,7 +354,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 7,
-    title: "How binding is it",
+    title: "Counting the layers",
     genre: "monologue",
     intro: "Bir cümlede kaç katman var? Sayarak dinle.",
     gloss: [
@@ -446,7 +446,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 7,
-    title: "Some articles name arson; others, bodily harm",
+    title: "Notes for the local news",
     genre: "info",
     intro: "Üç ayrı büyüklükte delik ve iki ayrı başlangıç.",
     gloss: [
@@ -510,7 +510,7 @@ export const enC1U07: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 7,
-    title: "Granted, the insolvency is real, albeit recent",
+    title: "A letter about a debt",
     genre: "info",
     intro: "Taviz sözcükleri ve mesafe zinciri.",
     gloss: [

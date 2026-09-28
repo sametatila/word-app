@@ -87,7 +87,7 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 5,
-    title: "What does he look like?",
+    title: "Sena's grandfather",
     genre: "dialogue",
     intro: "Sena akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
     gloss: [
@@ -319,7 +319,7 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 5,
-    title: "What does he look like?",
+    title: "A card about Kaan",
     genre: "personal",
     intro: "Görünüş yaz. Sonunda kişi kartını doldur.",
     gloss: [
@@ -372,7 +372,7 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 5,
-    title: "He is very kind",
+    title: "Kind, quiet or funny",
     genre: "personal",
     intro: "Karakteri yaz. Olumsuzu ve sorusu „be“ ile kuruluyor, „do“ ile değil.",
     gloss: [

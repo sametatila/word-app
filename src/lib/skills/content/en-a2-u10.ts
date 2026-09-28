@@ -34,7 +34,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 10,
-    title: "Calling a repairman",
+    title: "The washing machine",
     genre: "phone",
     intro: "Bozuk makine için telefon. Ne zaman geliyor, kaça mal oluyor?",
     gloss: [
@@ -104,7 +104,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 10,
-    title: "Building rules",
+    title: "Trash, noise and stairs",
     genre: "info",
     intro: "Bina kuralları. Hangisi zorunlu, hangisi yasak, hangisi serbest?",
     gloss: [
@@ -170,7 +170,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 10,
-    title: "My neighborhood",
+    title: "A park ten minutes away",
     genre: "monologue",
     intro: "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
     gloss: [
@@ -241,7 +241,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 10,
-    title: "Local stores",
+    title: "At the bakery",
     genre: "dialogue",
     intro: "Fırında kısa bir alışveriş. Pazar günü ne açık, ne kapalı?",
     gloss: [
@@ -318,7 +318,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 10,
-    title: "You have to, you can't, you don't have to",
+    title: "House rules",
     genre: "info",
     intro: "Zorunluluk üçlüsü. İkincisi yasak, üçüncüsü gerek yok: anlamları tam karşıt.",
     gloss: [
@@ -376,7 +376,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 10,
-    title: "There is a park nearby",
+    title: "Around my home",
     genre: "personal",
     intro: "Mahalleni anlat ve tamirciye sor.",
     gloss: [

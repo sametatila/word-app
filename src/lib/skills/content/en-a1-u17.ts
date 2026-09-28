@@ -30,7 +30,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 17,
-    title: "House rules",
+    title: "Rules for our building",
     genre: "formal",
     intro: "Apartman kuralları. Ne yasak, ne serbest, ne zaman?",
     gloss: [
@@ -176,7 +176,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 17,
-    title: "Housework",
+    title: "Helping at home",
     genre: "dialogue",
     intro: "Ev işleri paylaşılıyor. Hangi iş önce, hangisi sonra?",
     gloss: [
@@ -253,7 +253,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 17,
-    title: "Rent and bills",
+    title: "Deniz's bills",
     genre: "monologue",
     intro: "Kira ve faturalar anlatılıyor. Hangi fatura ne zaman, ne kadar?",
     gloss: [
@@ -329,7 +329,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 17,
-    title: "You must be quiet",
+    title: "The rent form",
     genre: "formal",
     intro: "Zorunluluk ve yasak yaz. Sonunda kira formunu doldur.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 17,
-    title: "Can you help me?",
+    title: "A heavy box",
     genre: "personal",
     intro: "Yardım ve ev işi cümlelerini yaz. İki parçalı fiillerde nesnenin yeri önemli.",
     gloss: [

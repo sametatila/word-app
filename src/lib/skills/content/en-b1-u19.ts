@@ -39,7 +39,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 19,
-    title: "Reading the label",
+    title: "Six lines on a package",
     genre: "info",
     intro: "Prospektüsün altı satırı. Neden hep edilgen?",
     gloss: [
@@ -121,7 +121,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 19,
-    title: "At the emergency room",
+    title: "The ambulance at the door",
     genre: "story",
     intro: "Acil serviste bir akşam. Ne zaten olmuştu?",
     gloss: [
@@ -190,7 +190,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 19,
-    title: "The results are in",
+    title: "A normal blood test",
     genre: "dialogue",
     intro: "Tahlil sonuçları. Hangi cümle aktarılmış?",
     gloss: [
@@ -271,7 +271,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 19,
-    title: "Seeing a specialist",
+    title: "The doctor upstairs",
     genre: "dialogue",
     intro: "Sevk kâğıdı ve röntgen. Hangi hekim nerede?",
     gloss: [
@@ -355,7 +355,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 19,
-    title: "The package must be kept in the fridge",
+    title: "The medicine leaflet",
     genre: "info",
     intro: "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
     gloss: [
@@ -408,7 +408,7 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 19,
-    title: "She told me not to worry about the scan",
+    title: "After the tests",
     genre: "personal",
     intro: "Aktarılan buyruk olumsuzlanınca „not“ nereye gidiyor?",
     gloss: [

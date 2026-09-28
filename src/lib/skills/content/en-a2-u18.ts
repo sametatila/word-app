@@ -33,7 +33,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 18,
-    title: "Buying souvenirs",
+    title: "Six gifts",
     genre: "dialogue",
     intro: "Altı hediye, yirmi avro. Kime ne alınıyor?",
     gloss: [
@@ -101,7 +101,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 18,
-    title: "Talking about a trip",
+    title: "A cheap boat trip",
     genre: "blog",
     intro: "Üç günlük gezi. İlk gün ile ikinci gün arasında ne değişiyor?",
     gloss: [
@@ -178,7 +178,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 18,
-    title: "Inviting a friend",
+    title: "Saturday at seven",
     genre: "dialogue",
     intro: "Doğum günü daveti. Kim geliyor, kim gelemiyor?",
     gloss: [
@@ -257,7 +257,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 18,
-    title: "Birthdays and gifts",
+    title: "A book for my sister",
     genre: "monologue",
     intro: "Geç kalan bir hediye. Kaç ayda alınıyor?",
     gloss: [
@@ -330,7 +330,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 18,
-    title: "Would you like to come?",
+    title: "An invitation card",
     genre: "personal",
     intro: "Davet ve cevabı. Cevapta fiil düşüyor, „to“ kalıyor.",
     gloss: [
@@ -385,7 +385,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 18,
-    title: "We arrived on Friday evening",
+    title: "Notes from a trip",
     genre: "personal",
     intro: "Gezi anlatısı ve dükkân. Kapanmış günler simple past istiyor.",
     gloss: [

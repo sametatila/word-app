@@ -33,7 +33,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 22,
-    title: "A computer problem",
+    title: "A slow laptop",
     genre: "dialogue",
     intro: "Yavaşlayan bir dizüstü. Sorun nerede çıkıyor?",
     gloss: [
@@ -101,7 +101,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 22,
-    title: "Useful apps",
+    title: "Three good apps, one bad",
     genre: "blog",
     intro: "Üç uygulama ve silinen bir tanesi. Hangisi neye yarıyor?",
     gloss: [
@@ -178,7 +178,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 22,
-    title: "Passwords and safety",
+    title: "The paper under the keyboard",
     genre: "dialogue",
     intro: "Parola tartışması. Hangi öğüt tutuyor?",
     gloss: [
@@ -256,7 +256,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 22,
-    title: "A video call",
+    title: "A bad connection",
     genre: "dialogue",
     intro: "Görüntülü aramanın ilk iki dakikası. Ne çalışmıyor?",
     gloss: [
@@ -337,7 +337,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 22,
-    title: "I use this app to …",
+    title: "Apps and problems",
     genre: "personal",
     intro: "Aynı amaç, iki biçim. Mastar ne zaman, „-ing“ ne zaman?",
     gloss: [
@@ -392,7 +392,7 @@ export const enA2U22: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 22,
-    title: "You should change your password",
+    title: "Safe online",
     genre: "personal",
     intro: "Öğüt ve arama cümleleri. „should“ emir değil, tavsiye.",
     gloss: [

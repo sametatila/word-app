@@ -30,7 +30,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 18,
-    title: "Balcony and garden",
+    title: "Our small garden",
     genre: "personal",
     intro: "Bahçe ve balkon anlatılıyor. Ne var, ne bozuk?",
     gloss: [
@@ -90,7 +90,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 18,
-    title: "It doesn't work",
+    title: "A broken faucet",
     genre: "dialogue",
     intro: "Arıza bildiriliyor. Hangi arıza kimin işi?",
     gloss: [
@@ -172,7 +172,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 18,
-    title: "Hobbies",
+    title: "Painting on weekends",
     genre: "dialogue",
     intro: "İki kişi hobilerini anlatıyor. „enjoy“ ve „like“ sonrası fiil nasıl geliyor?",
     gloss: [
@@ -247,7 +247,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 18,
-    title: "Sports",
+    title: "Soccer and swimming",
     genre: "monologue",
     intro: "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
     gloss: [
@@ -324,7 +324,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 18,
-    title: "It's broken",
+    title: "The repair form",
     genre: "formal",
     intro: "Arıza cümlelerini yaz. Sonunda arıza formunu doldur.",
     gloss: [
@@ -378,7 +378,7 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 18,
-    title: "I play soccer, I go swimming",
+    title: "Hobbies and games",
     genre: "personal",
     intro: "Hobi ve spor yaz. Top oyunları „play“ ile, tek başına yapılanlar „go“ + „-ing“ ile geliyor.",
     gloss: [

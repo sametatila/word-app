@@ -38,7 +38,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 21,
-    title: "Talking about the climate",
+    title: "The evidence behind a forecast",
     genre: "opinion",
     intro: "Aynı konu, üç gelecek biçimi. Hangisi kanaat, hangisi veri?",
     gloss: [
@@ -120,7 +120,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 21,
-    title: "Sorting the trash",
+    title: "Bins and collection days",
     genre: "info",
     intro: "Ayırma kuralları. Yanlış kutu neye mal oluyor?",
     gloss: [
@@ -193,7 +193,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 21,
-    title: "Saving energy at home",
+    title: "Four minutes in the shower",
     genre: "dialogue",
     intro: "Faturayı düşüren şeyler. Hangi koşul gerçek?",
     gloss: [
@@ -275,7 +275,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 21,
-    title: "Parks and green space",
+    title: "The park open late",
     genre: "monologue",
     intro: "Bir park anlatılıyor. Hangi ilgi zamiri cümleden düşemez?",
     gloss: [
@@ -353,7 +353,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 21,
-    title: "The storm is arriving on Saturday",
+    title: "Climate forecasts",
     genre: "opinion",
     intro: "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
     gloss: [
@@ -406,7 +406,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 21,
-    title: "Plastic must be separated from paper",
+    title: "Small green habits",
     genre: "info",
     intro: "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
     gloss: [

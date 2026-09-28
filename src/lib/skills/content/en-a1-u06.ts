@@ -93,7 +93,7 @@ export const enA1U06: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 6,
-    title: "At the restaurant",
+    title: "A table for two",
     genre: "dialogue",
     intro: "Restoranda sipariş ve hesap. Sipariş kalıplarına dikkat: „I'd like“ ve „I'll have“ aynı işi görüyor.",
     gloss: [
@@ -175,7 +175,7 @@ export const enA1U06: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 6,
-    title: "At the kiosk",
+    title: "A newspaper and a coffee",
     genre: "dialogue",
     intro: "Büfede alışveriş. Fiyatları ve toplamı yakala.",
     gloss: [
@@ -383,7 +383,7 @@ export const enA1U06: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 6,
-    title: "Some or any?",
+    title: "Bread, milk and eggs",
     genre: "personal",
     intro: "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",
     gloss: [

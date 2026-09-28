@@ -32,7 +32,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 5,
-    title: "Me, then and now",
+    title: "Working from home",
     genre: "personal",
     intro: "On yıl önce ve şimdi. Ne değişti, ne aynı kaldı?",
     gloss: [
@@ -92,7 +92,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 5,
-    title: "The best day",
+    title: "A letter in June",
     genre: "story",
     intro: "Hayatın en güzel günü anlatılıyor. Üstünlük biçimlerini yakala.",
     gloss: [
@@ -167,7 +167,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 5,
-    title: "Which one is better?",
+    title: "A new bag for work",
     genre: "dialogue",
     intro: "Üç çanta karşılaştırılıyor. Kısa sıfat mı, uzun sıfat mı?",
     gloss: [
@@ -242,7 +242,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 5,
-    title: "Hopes and plans",
+    title: "Three hopes",
     genre: "monologue",
     intro: "Üç hedef anlatılıyor. Hangisi umut, hangisi hayal?",
     gloss: [
@@ -320,7 +320,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 5,
-    title: "… is cheaper than …",
+    title: "A comparison card",
     genre: "personal",
     intro: "Karşılaştırma yaz. Kısa sıfat „-er“, uzun sıfat „more“ alıyor.",
     gloss: [
@@ -374,7 +374,7 @@ export const enA2U05: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 5,
-    title: "I used to …, but now …",
+    title: "Dreams for the future",
     genre: "personal",
     intro: "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
     gloss: [

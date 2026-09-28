@@ -39,7 +39,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 2,
-    title: "Meetings and deadlines",
+    title: "Friday's agenda",
     genre: "email",
     intro: "Cuma öncesi üç bilgi. Hangisi değişti, hangisi acil değil?",
     gloss: [
@@ -117,7 +117,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 2,
-    title: "Talking about salary",
+    title: "Asking for a raise",
     genre: "dialogue",
     intro: "Zam görüşmesi. Hangi koşul gerçek, hangisi değil?",
     gloss: [
@@ -191,7 +191,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 2,
-    title: "The people I work with",
+    title: "Mert's team",
     genre: "monologue",
     intro: "Bir ekip anlatılıyor. Hangi cümlede „that“ düşüyor?",
     gloss: [
@@ -265,7 +265,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 2,
-    title: "The first week",
+    title: "A badge that did not work",
     genre: "dialogue",
     intro: "İlk haftanın üç parçası. Hangisi kimin işi?",
     gloss: [
@@ -346,7 +346,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 2,
-    title: "The equipment is given on the first day",
+    title: "Notes on the first week",
     genre: "info",
     intro: "Edilgen cümleler. Fail ne zaman söyleniyor, ne zaman düşüyor?",
     gloss: [
@@ -399,7 +399,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 2,
-    title: "If I get the bonus, I will stay",
+    title: "The bonus and the budget",
     genre: "personal",
     intro: "İki koşul cümlesi. Biri olabilir, öteki olmuyor.",
     gloss: [

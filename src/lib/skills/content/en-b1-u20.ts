@@ -39,7 +39,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 20,
-    title: "The doctor's note",
+    title: "Four small words",
     genre: "guide",
     intro: "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
     gloss: [
@@ -119,7 +119,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 20,
-    title: "Choosing a treatment",
+    title: "Two good answers",
     genre: "story",
     intro: "İki yol, bir karar. Neye göre seçilmiş?",
     gloss: [
@@ -186,7 +186,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 20,
-    title: "A second opinion",
+    title: "The pulse and the heart",
     genre: "dialogue",
     intro: "İkinci bir görüş isteniyor. Hangi koşul gerçek?",
     gloss: [
@@ -265,7 +265,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 20,
-    title: "A night in the hospital",
+    title: "The first on the list",
     genre: "monologue",
     intro: "Bir gecelik yatış. Hangi cümle plan, hangisi ayarlanmış?",
     gloss: [
@@ -339,7 +339,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 20,
-    title: "Take the leave now; otherwise you lose it",
+    title: "Rules for a sick note",
     genre: "info",
     intro: "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor, hangisi değiştiriyor?",
     gloss: [
@@ -392,7 +392,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 20,
-    title: "If I were you, I would check the heart again",
+    title: "Health advice",
     genre: "personal",
     intro: "Öğüt, koşul ve üç gelecek. Hangisi gerçek, hangisi değil?",
     gloss: [

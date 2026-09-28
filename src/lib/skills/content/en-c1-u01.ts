@@ -39,7 +39,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 1,
-    title: "The formal request",
+    title: "A verb with no ending",
     genre: "info",
     intro: "Üçüncü kişide ek yok. Hangi fiillerden sonra?",
     gloss: [
@@ -134,7 +134,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 1,
-    title: "Weight at the end",
+    title: "A phrase moved forward",
     genre: "opinion",
     intro: "Eski bilgi başta, yeni bilgi sonda. Neden?",
     gloss: [
@@ -239,7 +239,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 1,
-    title: "The same thing in three registers",
+    title: "Three letters, one message",
     genre: "dialogue",
     intro: "Aynı içerik, üç mektup. Fark nerede duruyor?",
     gloss: [
@@ -327,7 +327,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 1,
-    title: "Leaving it out",
+    title: "The missing verbs",
     genre: "monologue",
     intro: "Eksiltme. Okur eksik olanı nasıl geri koyuyor?",
     gloss: [
@@ -417,7 +417,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 1,
-    title: "I insist that the board convene tomorrow",
+    title: "Requests to the board",
     genre: "info",
     intro: "İstek kipi ve onun ikizi. Ek nerede yok?",
     gloss: [
@@ -473,7 +473,7 @@ export const enC1U01: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 1,
-    title: "The denotation we know; the subtext we guess",
+    title: "Notes on an essayist",
     genre: "opinion",
     intro: "Öne çıkarma ve eksiltme. Ağırlık nereye düşüyor?",
     gloss: [

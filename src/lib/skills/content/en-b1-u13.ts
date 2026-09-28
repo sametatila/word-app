@@ -38,7 +38,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 13,
-    title: "Appealing the decision",
+    title: "A missing original",
     genre: "story",
     intro: "Bir ret ve itiraz. Hangi belge sorunu çözüyor?",
     gloss: [
@@ -115,7 +115,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 13,
-    title: "My study plan",
+    title: "Four weeks to the exam",
     genre: "blog",
     intro: "Dört haftalık bir plan. Hangi cümle ayarlanmış, hangisi karar?",
     gloss: [
@@ -184,7 +184,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 13,
-    title: "The papers they need",
+    title: "Original or copy",
     genre: "dialogue",
     intro: "Belge listesi. Hangisi asıl, hangisi kopya?",
     gloss: [
@@ -263,7 +263,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 13,
-    title: "Before the exam",
+    title: "Three rules and one tip",
     genre: "dialogue",
     intro: "Sınav kuralları. Hangisi zorunlu, hangisi yasak, hangisi öğüt?",
     gloss: [
@@ -350,7 +350,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 13,
-    title: "They insisted on seeing the original",
+    title: "The appeal form",
     genre: "formal",
     intro: "Üç kalıp, üç ayrı biçim. Seçimi önceki sözcük yapıyor.",
     gloss: [
@@ -404,7 +404,7 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 13,
-    title: "I am going to review every evening",
+    title: "An evening study routine",
     genre: "personal",
     intro: "Plan ve sınav cümleleri. Hangi gelecek, hangi kip?",
     gloss: [

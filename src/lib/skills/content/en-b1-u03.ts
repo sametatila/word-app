@@ -36,7 +36,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 3,
-    title: "The performance review",
+    title: "A review on a Tuesday",
     genre: "story",
     intro: "Bir değerlendirme görüşmesi. Zor olan kısım hangisiymiş?",
     gloss: [
@@ -112,7 +112,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 3,
-    title: "The showing",
+    title: "Brighter than the photos",
     genre: "dialogue",
     intro: "Daire geziliyor. Hangi iki soru her şeyi söylüyor?",
     gloss: [
@@ -184,7 +184,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 3,
-    title: "Resigning and handing over",
+    title: "Five weeks of handover",
     genre: "monologue",
     intro: "Beş haftalık devir teslim. Hangi sayı neden önemli?",
     gloss: [
@@ -257,7 +257,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 3,
-    title: "Looking for an apartment",
+    title: "Five apartments, no signature",
     genre: "dialogue",
     intro: "Beş daire, hiç imza yok. Neden?",
     gloss: [
@@ -336,7 +336,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 3,
-    title: "She said that I had improved",
+    title: "After the review",
     genre: "personal",
     intro: "Dolaylı anlatımın üç biçimi. Hangisi bildirme, hangisi buyruk, hangisi soru?",
     gloss: [
@@ -391,7 +391,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 3,
-    title: "The apartment that I saw yesterday was bright",
+    title: "Apartment hunting",
     genre: "personal",
     intro: "Sıfat cümleleri. „that“ ne zaman düşebiliyor?",
     gloss: [

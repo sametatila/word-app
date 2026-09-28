@@ -48,7 +48,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 16,
-    title: "Who takes the land",
+    title: "Verb plus adjective",
     genre: "info",
     intro: "İki sözcük yan yana duruyor. Tek sözcük olmadıkları nasıl anlaşılıyor?",
     gloss: [
@@ -159,7 +159,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 16,
-    title: "Three names for a field",
+    title: "Plan versus village",
     genre: "opinion",
     intro: "Bir tarla, üç ad. Hangisi olgu, hangisi anlaşmazlık?",
     gloss: [
@@ -262,7 +262,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 16,
-    title: "Yield or variety",
+    title: "Agroecology and the city",
     genre: "dialogue",
     intro: "Övdüğümüz yöntem ile şehri doyuran yöntem aynı değil.",
     gloss: [
@@ -351,7 +351,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 16,
-    title: "Demanding food sovereignty",
+    title: "The subject of a demand",
     genre: "monologue",
     intro: "Talep eden metinde kim özne oluyor, hangi sayı eksik?",
     gloss: [
@@ -440,7 +440,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 16,
-    title: "The barren fields lie fallow",
+    title: "The emptying countryside",
     genre: "info",
     intro: "Fiil artı sıfat ve tarlanın üç adı.",
     gloss: [
@@ -504,7 +504,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 16,
-    title: "Food sovereignty demands that the agricultural reform be decided locally",
+    title: "Farming policy",
     genre: "info",
     intro: "Talep eden metin ve verim ile çeşit arasındaki takas.",
     gloss: [

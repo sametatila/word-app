@@ -38,7 +38,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 24,
-    title: "The thing that moved me",
+    title: "That, who and where",
     genre: "opinion",
     intro: "Üç ilgi cümlesi. Hangi sözcük hangi boşluğa gidiyor?",
     gloss: [
@@ -126,7 +126,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 24,
-    title: "If I could",
+    title: "Two kinds of if",
     genre: "opinion",
     intro: "İki koşul yan yana. Hangisi gerçek olmayanı anlatıyor?",
     gloss: [
@@ -219,7 +219,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 24,
-    title: "What I dream of",
+    title: "A dream with no date",
     genre: "monologue",
     intro: "Üç gelecek biçimi, tek kişi. Hangisi ayarlanmış?",
     gloss: [
@@ -300,7 +300,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 24,
-    title: "Cheering someone up",
+    title: "Tea and forty minutes",
     genre: "dialogue",
     intro: "Biri üzgün. Hangi kural kaldırıyor, hangisi koyuyor?",
     gloss: [
@@ -384,7 +384,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 24,
-    title: "The movie that made me cry was old",
+    title: "A thing, a person, a place",
     genre: "opinion",
     intro: "Şey, kişi, yer. Hangi adıl hangi boşluğa giriyor?",
     gloss: [
@@ -439,7 +439,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 24,
-    title: "If I were less shy, I would say it",
+    title: "Kind words for a friend",
     genre: "opinion",
     intro: "İki koşul ve iki kural. Hangisi gerçek?",
     gloss: [

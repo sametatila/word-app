@@ -41,7 +41,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 10,
-    title: "The comparison of the reports",
+    title: "Nouns and their prepositions",
     genre: "info",
     intro: "İsim kendi edatını getiriyor. Fiilinkiyle aynı mı?",
     gloss: [
@@ -130,7 +130,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 10,
-    title: "Never before published",
+    title: "A landmark, never shown",
     genre: "opinion",
     intro: "Üç tetikleyici. Hangisinde ana fiil yalın hâline dönüyor?",
     gloss: [
@@ -226,7 +226,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 10,
-    title: "If they had printed it",
+    title: "Consent, too late",
     genre: "dialogue",
     intro: "İki kapalı, bir karışık. Hangisine kimse dokunamıyor?",
     gloss: [
@@ -312,7 +312,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 10,
-    title: "By the time it airs",
+    title: "The merger schedule",
     genre: "monologue",
     intro: "Takvimde iki biçim. Hangisi benim elimde?",
     gloss: [
@@ -397,7 +397,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 10,
-    title: "The comparison of the two reports took a week",
+    title: "Comparing two reports",
     genre: "info",
     intro: "Üç isim, üç edat. Hangisi „between“ almıyor?",
     gloss: [
@@ -452,7 +452,7 @@ export const enB2U10: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 10,
-    title: "Never before has such a landmark been shown",
+    title: "A memorial and its legacy",
     genre: "opinion",
     intro: "Üç tetikleyici, bir takvim, bir karışık koşul.",
     gloss: [

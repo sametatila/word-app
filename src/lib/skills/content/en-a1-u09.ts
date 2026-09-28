@@ -91,7 +91,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 9,
-    title: "Come in, sit down",
+    title: "Late again",
     genre: "dialogue",
     intro: "Geç kalan bir öğrenci. Phrasal verb'lerin hepsi bir arada: come in, sit down, turn on, look for.",
     gloss: [
@@ -172,7 +172,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 9,
-    title: "My morning",
+    title: "Deniz's morning",
     genre: "monologue",
     intro: "Sabahın adımları sırayla. First, then, after that, before, finally.",
     gloss: [
@@ -324,7 +324,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 9,
-    title: "on Monday, on the weekend",
+    title: "Days and times",
     genre: "personal",
     intro: "Zaman edatlarını yaz: günde ve hafta sonunda „on“, sabahta „in“, gecede „at“. Amerikan İngilizcesinde hafta sonu da „on“ alır.",
     gloss: [
@@ -381,7 +381,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 9,
-    title: "always, usually, never",
+    title: "My habits",
     genre: "personal",
     intro: "Sıklık zarfının yeri kurala bağlı: ana fiilden ÖNCE, „be“ fiilinden SONRA.",
     gloss: [

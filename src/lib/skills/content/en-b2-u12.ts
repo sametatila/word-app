@@ -41,7 +41,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 12,
-    title: "Never has a pattern emerged",
+    title: "Patterns that never emerged",
     genre: "info",
     intro: "Taşınacak yardımcı fiil yoksa ne oluyor?",
     gloss: [
@@ -135,7 +135,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 12,
-    title: "What the study shows",
+    title: "The limit, not the cause",
     genre: "opinion",
     intro: "Üçüncü yarık cümle ötekilerden fazla ne yapıyor?",
     gloss: [
@@ -226,7 +226,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 12,
-    title: "The software, which was updated",
+    title: "A bug report",
     genre: "dialogue",
     intro: "Bir hata kaydı. Virgüller neyi belirliyor?",
     gloss: [
@@ -316,7 +316,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 12,
-    title: "It must have failed",
+    title: "Three runs, one missing step",
     genre: "monologue",
     intro: "Üç kip, üç iş. Hangisi birinci şahısta?",
     gloss: [
@@ -402,7 +402,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 12,
-    title: "Never has such a pattern emerged",
+    title: "Unusual results",
     genre: "info",
     intro: "Üç devrik cümle. İkisinde „does“ neden var?",
     gloss: [
@@ -456,7 +456,7 @@ export const enB2U12: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 12,
-    title: "What the study determines is the limit",
+    title: "The discussion section",
     genre: "opinion",
     intro: "İki yarık cümle, bir karşıtlık, iki çıkarım.",
     gloss: [

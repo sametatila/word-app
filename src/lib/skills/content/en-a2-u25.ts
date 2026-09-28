@@ -38,7 +38,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 25,
-    title: "Making a complaint",
+    title: "Trash on Garden Street",
     genre: "letter",
     intro: "Üç haftalık bir şikâyet. Ne istendi, ne bekleniyor?",
     gloss: [
@@ -104,7 +104,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 25,
-    title: "City services",
+    title: "Trash, paper and glass",
     genre: "info",
     intro: "Şehrin takvimi. Ne zaman ne oluyor?",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 25,
-    title: "Booking an appointment",
+    title: "Tuesday at ten",
     genre: "phone",
     intro: "Randevu ve belge listesi. Ne getirilecek, ne zaman gelinecek?",
     gloss: [
@@ -257,7 +257,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 25,
-    title: "Documents and copies",
+    title: "A copy with a stamp",
     genre: "dialogue",
     intro: "Kopya mı, resmî kopya mı? Fark neye mal oluyor?",
     gloss: [
@@ -337,7 +337,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 25,
-    title: "They collect the trash on Mondays",
+    title: "Trash day",
     genre: "info",
     intro: "Kim toplar? Adı geçmiyor ama İngilizce yine de bir özne koyuyor.",
     gloss: [
@@ -392,7 +392,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 25,
-    title: "Could I book an appointment?",
+    title: "At the city office",
     genre: "formal",
     intro: "A2'nin son egzersizi. Randevu, belge ve seviyenin en çok dönen kalıbı.",
     gloss: [

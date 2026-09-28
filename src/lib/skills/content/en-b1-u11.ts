@@ -37,7 +37,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 11,
-    title: "Registering here",
+    title: "How registration works",
     genre: "guide",
     intro: "Kayıt işleminin dili. Cümleler neden hep edilgen?",
     gloss: [
@@ -116,7 +116,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 11,
-    title: "Filling out the form",
+    title: "Six rules for a form",
     genre: "info",
     intro: "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
     gloss: [
@@ -186,7 +186,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 11,
-    title: "At the embassy",
+    title: "An expired visa",
     genre: "dialogue",
     intro: "Vize görüşmesi. Aktarılan cümlelerde zaman nereye kayıyor?",
     gloss: [
@@ -268,7 +268,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 11,
-    title: "Opening an account",
+    title: "Three questions for the bank",
     genre: "dialogue",
     intro: "Banka hesabı açılıyor. Hangi ücret var, hangisi yok?",
     gloss: [
@@ -351,7 +351,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 11,
-    title: "The form is stamped at the desk",
+    title: "At the registration desk",
     genre: "info",
     intro: "Aynı edilgen, üç ayrı iş. Hangisinde zaman var, hangisinde yok?",
     gloss: [
@@ -404,7 +404,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 11,
-    title: "She said that the visa had expired",
+    title: "Papers and permits",
     genre: "formal",
     intro: "Büyükelçilik ve banka cümleleri. Aktarmada zaman nereye kayıyor?",
     gloss: [

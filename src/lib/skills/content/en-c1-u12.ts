@@ -45,7 +45,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 12,
-    title: "How close is close",
+    title: "A comparison with two readings",
     genre: "info",
     intro: "Bir karşılaştırma iki cümle demek olabiliyor. Onarımı ne?",
     gloss: [
@@ -146,7 +146,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 12,
-    title: "The vocabulary of migration",
+    title: "A person or a number",
     genre: "opinion",
     intro: "Bir sayı mı, bir belge mi? Sözcükler neyi ölçüyor?",
     gloss: [
@@ -252,7 +252,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 12,
-    title: "A warm welcome indeed",
+    title: "An opulent banquet",
     genre: "dialogue",
     intro: "Bir ad ötekinin yerini alıyor. Hangisi hangisinin?",
     gloss: [
@@ -343,7 +343,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 12,
-    title: "Who reports the past",
+    title: "Guarding the past",
     genre: "monologue",
     intro: "Yorum yetkisini kim tutuyor? Bir fiil neyi ele veriyor?",
     gloss: [
@@ -434,7 +434,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 12,
-    title: "Kinship may well shape the lifeworld more than the law",
+    title: "Family, law and migration",
     genre: "info",
     intro: "Karşılaştırmanın deliği ve göçün sözcükleri.",
     gloss: [
@@ -497,7 +497,7 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 12,
-    title: "The exegesis openly claims what the tradition merely assumes",
+    title: "Tradition and its readers",
     genre: "info",
     intro: "Yorum yetkisi ve ihlalin yerine geçen ad.",
     gloss: [

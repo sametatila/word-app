@@ -35,7 +35,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 13,
-    title: "A work email",
+    title: "The Friday meeting",
     genre: "email",
     intro: "Bir iş e-postası. Hangi iş bitti, hangisi bekliyor?",
     gloss: [
@@ -98,7 +98,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 13,
-    title: "Returns and exchanges",
+    title: "The wrong size",
     genre: "dialogue",
     intro: "İade konuşması. Fişle ne oluyor, fişsiz ne oluyor?",
     gloss: [
@@ -181,7 +181,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 13,
-    title: "My first day",
+    title: "Ten names, one password",
     genre: "monologue",
     intro: "İlk iş günü. Hangi an günü çeviriyor?",
     gloss: [
@@ -252,7 +252,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 13,
-    title: "Complaining about a product",
+    title: "A broken lamp",
     genre: "dialogue",
     intro: "Hasarlı bir ürün. Nerede kırıldı, ne veriliyor?",
     gloss: [
@@ -331,7 +331,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 13,
-    title: "I have attached the file",
+    title: "A return form",
     genre: "formal",
     intro: "İki zaman, tek kural: zaman belirteci varsa simple past.",
     gloss: [
@@ -386,7 +386,7 @@ export const enA2U13: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 13,
-    title: "There's a problem with this",
+    title: "Back at the store",
     genre: "personal",
     intro: "Şikâyet ve ilk gün. Her fiil kendi edatını getiriyor.",
     gloss: [

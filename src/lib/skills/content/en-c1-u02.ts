@@ -38,7 +38,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 2,
-    title: "The verb carries the verdict",
+    title: "Three verbs, three verdicts",
     genre: "opinion",
     intro: "Üç kez aynı iş bildiriliyor. Üç ayrı yargı nereden geliyor?",
     gloss: [
@@ -132,7 +132,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 2,
-    title: "The nuance of may well",
+    title: "Layers of possibility",
     genre: "info",
     intro: "Üst üste binen kipler. Her katman ne ekliyor?",
     gloss: [
@@ -237,7 +237,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 2,
-    title: "The tone of concession",
+    title: "Two concessions in one line",
     genre: "dialogue",
     intro: "Ödün vermenin üç aracı. Hangisi hiçbir şey bırakmıyor?",
     gloss: [
@@ -326,7 +326,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 2,
-    title: "The settled pairing",
+    title: "A phrase you cannot change",
     genre: "monologue",
     intro: "Yerleşmiş eşleşmeler. Neden değiştirilemiyor?",
     gloss: [
@@ -414,7 +414,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 2,
-    title: "He claimed it; she conceded it; they alleged it",
+    title: "Reporting a press statement",
     genre: "opinion",
     intro: "Üç aktarma fiili. Yargı nereden geliyor?",
     gloss: [
@@ -470,7 +470,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 2,
-    title: "Granted, the figure is high, albeit explicable",
+    title: "Weighing both sides",
     genre: "opinion",
     intro: "Üç ödün aracı ve iki kip katmanı.",
     gloss: [

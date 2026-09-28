@@ -40,7 +40,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 2,
-    title: "If we had known",
+    title: "Two kinds of regret",
     genre: "opinion",
     intro: "İki koşul, iki ayrı yer. Sonuç nerede yaşıyor?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 2,
-    title: "Writing the minutes",
+    title: "Minutes in nouns",
     genre: "info",
     intro: "Tutanak isimlerle yazılıyor. Bedeli ne?",
     gloss: [
@@ -235,7 +235,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 2,
-    title: "What went wrong",
+    title: "Reading the logs",
     genre: "dialogue",
     intro: "Geçmişe dönük üç kip. İkisi okuyor, biri yargılıyor.",
     gloss: [
@@ -323,7 +323,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 2,
-    title: "Making the point land",
+    title: "Making the room wait",
     genre: "monologue",
     intro: "Yarık cümle. Boşluk önce mi açılıyor?",
     gloss: [
@@ -411,7 +411,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 2,
-    title: "If we had planned better, the loss would be smaller now",
+    title: "Looking back at the project",
     genre: "opinion",
     intro: "Kapalı koşul, karışık koşul. Sonuç nerede duruyor?",
     gloss: [
@@ -465,7 +465,7 @@ export const enB2U02: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 2,
-    title: "The fault must have been there for weeks",
+    title: "After the breakdown",
     genre: "info",
     intro: "Geçmişe dönük kipler ve yarık cümle.",
     gloss: [

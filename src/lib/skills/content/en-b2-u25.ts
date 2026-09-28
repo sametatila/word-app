@@ -43,7 +43,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 25,
-    title: "The closing line",
+    title: "Closing the file",
     genre: "opinion",
     intro: "Şart koymak ile durumu betimlemek. Ve seviyenin ortak çizgisi.",
     gloss: [
@@ -144,7 +144,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 25,
-    title: "The complaint answered",
+    title: "A misleading ad",
     genre: "info",
     intro: "Üç kip bir şikâyette. Hangisi kişiyle yanıtlanıyor?",
     gloss: [
@@ -240,7 +240,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 25,
-    title: "If the offer had held",
+    title: "A voucher that never came",
     genre: "dialogue",
     intro: "Üç koşul, bir fatura. Hangisi bir şey istiyor?",
     gloss: [
@@ -327,7 +327,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 25,
-    title: "When the contract closes",
+    title: "A contract note",
     genre: "monologue",
     intro: "Tek edilgen. Neden orada duruyor?",
     gloss: [
@@ -410,7 +410,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 25,
-    title: "It seems to be settled, in view of your letter",
+    title: "Final lines of a letter",
     genre: "opinion",
     intro: "Bir neden, bir şart, bir çekince.",
     gloss: [
@@ -465,7 +465,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 25,
-    title: "The ad must have been misleading",
+    title: "A customer complaint",
     genre: "info",
     intro: "İki kip, iki koşul ve bir takvim.",
     gloss: [

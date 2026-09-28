@@ -35,7 +35,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 21,
-    title: "Using a smartphone",
+    title: "Three phone problems",
     genre: "guide",
     intro: "Üç sık soru, üç kısa cevap. Hangisi hangi sorunu çözüyor?",
     gloss: [
@@ -97,7 +97,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 21,
-    title: "Social media",
+    title: "An account at thirteen",
     genre: "forum",
     intro: "On üç yaşında bir hesap sorusu. Dört cevap, tek karar.",
     gloss: [
@@ -172,7 +172,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 21,
-    title: "Series and movies",
+    title: "The new series",
     genre: "dialogue",
     intro: "Yeni bir dizi. Kaç bölüm izlendi, konusu ne?",
     gloss: [
@@ -250,7 +250,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 21,
-    title: "Following the news",
+    title: "The bridge photo",
     genre: "dialogue",
     intro: "Bir fotoğraf dolaşıyor. Ne kadarı doğru?",
     gloss: [
@@ -331,7 +331,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 21,
-    title: "I don't think social media is good",
+    title: "A news card",
     genre: "personal",
     intro: "Olumsuz nereye takılıyor? İngilizce onu öne çekiyor.",
     gloss: [
@@ -388,7 +388,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 21,
-    title: "Have you updated your phone yet?",
+    title: "Phone tips",
     genre: "personal",
     intro: "Telefon ve hesap cümleleri. Ayrılabilen fiiller burada nesneyi araya alıyor.",
     gloss: [

@@ -39,7 +39,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 22,
-    title: "The daily commute",
+    title: "Rules on the bus route",
     genre: "info",
     intro: "Kapıdaki üç kural. Hangisi dünü anlatabiliyor?",
     gloss: [
@@ -128,7 +128,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 22,
-    title: "How the city changed",
+    title: "A town since 2010",
     genre: "info",
     intro: "Bir kasaba 2010'dan beri değişti. Hangi cümlede tarih var?",
     gloss: [
@@ -215,7 +215,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 22,
-    title: "Water and waste",
+    title: "A pipe on no map",
     genre: "dialogue",
     intro: "İki kişi bir nehri konuşuyor. Hangi fiil „-ing“ istiyor?",
     gloss: [
@@ -302,7 +302,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 22,
-    title: "A local project",
+    title: "Forty people on a Saturday",
     genre: "monologue",
     intro: "Aktarılan üç cümle. Hangisinde „whether“ geliyor?",
     gloss: [
@@ -387,7 +387,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 22,
-    title: "You must not bike in the bus lane",
+    title: "Bus and bike rules",
     genre: "info",
     intro: "Üç kural, üç ayrı iş. Hangisi geçmişe gidebiliyor?",
     gloss: [
@@ -441,7 +441,7 @@ export const enB1U22: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 22,
-    title: "The mayor said the space was free",
+    title: "The neighborhood petition",
     genre: "info",
     intro: "Aktarma ve fiil sonrası biçim. Hangi fiil mastar istiyor?",
     gloss: [

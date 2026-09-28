@@ -39,7 +39,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 7,
-    title: "It must have been moved",
+    title: "The update and the disruption",
     genre: "info",
     intro: "Dört sözcüklük fiil. Başka bir sırası var mı?",
     gloss: [
@@ -131,7 +131,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 7,
-    title: "Nowhere is it written",
+    title: "Safeguards in writing",
     genre: "opinion",
     intro: "Üç tetikleyici, tek kural. Olumsuz nerede duruyor?",
     gloss: [
@@ -228,7 +228,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 7,
-    title: "Which was checked in May",
+    title: "A failed sensor",
     genre: "dialogue",
     intro: "Bir bulgu cümlesi. Virgüller neyi değiştiriyor?",
     gloss: [
@@ -313,7 +313,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 7,
-    title: "What was changed",
+    title: "One change in the inventory",
     genre: "monologue",
     intro: "Yarık cümle bir memoda. Kaç tane yeter?",
     gloss: [
@@ -402,7 +402,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 7,
-    title: "The disruption must have been caused by the update",
+    title: "A maintenance report",
     genre: "info",
     intro: "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
     gloss: [
@@ -456,7 +456,7 @@ export const enB2U07: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 7,
-    title: "Nowhere is it written that a safeguard is optional",
+    title: "Safety after the outage",
     genre: "opinion",
     intro: "Üç tetikleyici ve iki yarık cümle.",
     gloss: [

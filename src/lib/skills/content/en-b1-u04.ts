@@ -37,7 +37,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 4,
-    title: "Moving day",
+    title: "The kitchen boxes",
     genre: "story",
     intro: "Taşınma günü. Ne plana uydu, ne uymadı?",
     gloss: [
@@ -113,7 +113,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 4,
-    title: "Living with roommates",
+    title: "Before you move in",
     genre: "dialogue",
     intro: "Üç kural değil, üç gerekçe. Hangisi neden var?",
     gloss: [
@@ -187,7 +187,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 4,
-    title: "Getting it fixed",
+    title: "No hot water",
     genre: "dialogue",
     intro: "Dört gündür sıcak su yok. Ne işe yarıyor?",
     gloss: [
@@ -343,7 +343,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 4,
-    title: "The van is coming at nine",
+    title: "The moving plan",
     genre: "personal",
     intro: "Üç gelecek, üç anlam. Hangisi ayarlanmış, hangisi plan, hangisi o anki karar?",
     gloss: [
@@ -398,7 +398,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 4,
-    title: "We should agree on a schedule",
+    title: "Sharing an apartment",
     genre: "personal",
     intro: "Ev kuralları ve aktarılan sözler. Hangi fiil kişiyi doğrudan alıyor?",
     gloss: [

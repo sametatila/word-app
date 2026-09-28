@@ -40,7 +40,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 13,
-    title: "According to the figures",
+    title: "Debt, deficit and taxes",
     genre: "opinion",
     intro: "Üç edilgen aktarma. Hangisinin arkasında bir model var?",
     gloss: [
@@ -135,7 +135,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 13,
-    title: "The inequality report",
+    title: "Measuring inequality",
     genre: "opinion",
     intro: "İsimler mesafe satın alıyor. Bedeli ne?",
     gloss: [
@@ -229,7 +229,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 13,
-    title: "Had the sample been larger",
+    title: "The size of the sample",
     genre: "dialogue",
     intro: "Üç koşul. Hangisi hâlâ masada?",
     gloss: [
@@ -315,7 +315,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 13,
-    title: "A tentative conclusion",
+    title: "Too many hedges",
     genre: "monologue",
     intro: "Çekince üstüne çekince. Hangisi yanlış olabilir?",
     gloss: [
@@ -397,7 +397,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 13,
-    title: "The tax burden is thought to have doubled",
+    title: "Public finances",
     genre: "info",
     intro: "Üç aktarma fiili. Hangisi ileriye bakıyor?",
     gloss: [
@@ -452,7 +452,7 @@ export const enB2U13: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 13,
-    title: "If the method had been clear, the result would remain valid now",
+    title: "Limits of a study",
     genre: "opinion",
     intro: "İki kapalı, bir karışık ve iki adlaştırma.",
     gloss: [

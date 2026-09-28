@@ -36,7 +36,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 14,
-    title: "Online orders",
+    title: "The missing chair",
     genre: "forum",
     intro: "Kayıp paket için forum. Önce ne yapmalı?",
     gloss: [
@@ -98,7 +98,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 14,
-    title: "Sending a package",
+    title: "A package to Italy",
     genre: "dialogue",
     intro: "Postanede bir koli. Normal mi, hızlı mı, sigortalı mı?",
     gloss: [
@@ -180,7 +180,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 14,
-    title: "At the bank",
+    title: "A new bank account",
     genre: "dialogue",
     intro: "Hesap açılıyor. Neyin ücreti var, neyin yok?",
     gloss: [
@@ -257,7 +257,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 14,
-    title: "A phone contract",
+    title: "A cheaper offer",
     genre: "dialogue",
     intro: "Sözleşme iptali. Hangi teklif hangisinden ucuz, hangisi daha pahalı?",
     gloss: [
@@ -335,7 +335,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 14,
-    title: "Express is faster, but it's more expensive",
+    title: "Fast or cheap",
     genre: "personal",
     intro: "Tek cümlede iki karşılaştırma biçimi. Hangisi kısa, hangisi uzun sıfat?",
     gloss: [
@@ -389,7 +389,7 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 14,
-    title: "I'd like to open an account",
+    title: "Money and orders",
     genre: "formal",
     intro: "Banka ve sipariş cümleleri. Zaman belirteci yine zamanı seçiyor.",
     gloss: [

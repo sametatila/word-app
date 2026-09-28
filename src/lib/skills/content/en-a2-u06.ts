@@ -34,7 +34,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 6,
-    title: "Describing symptoms",
+    title: "Fever and a sore throat",
     genre: "dialogue",
     intro: "Hekimde şikâyet anlatılıyor. Ne kadar zamandır, ne kadar ciddi?",
     gloss: [
@@ -101,7 +101,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 6,
-    title: "Changing an appointment",
+    title: "A new appointment time",
     genre: "phone",
     intro: "Randevu değiştiriliyor. Hangi gün kalıyor, hangisi iptal?",
     gloss: [
@@ -183,7 +183,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 6,
-    title: "You should rest",
+    title: "A week with a cold",
     genre: "dialogue",
     intro: "Arkadaş öğüdü. „should“ ve „shouldn't“ hekim dilinde de aynı işi görüyor.",
     gloss: [
@@ -259,7 +259,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 6,
-    title: "How long have you had it?",
+    title: "A knee and three doctors",
     genre: "monologue",
     intro: "Altı aylık bir ağrı. Üç hekim, üç ayrı cevap.",
     gloss: [
@@ -335,7 +335,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 6,
-    title: "I have a fever",
+    title: "A form for the doctor",
     genre: "personal",
     intro: "Şikâyeti ve süresini yaz. Sonunda şikâyet formunu doldur.",
     gloss: [
@@ -389,7 +389,7 @@ export const enA2U06: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 6,
-    title: "I'd like to change my appointment",
+    title: "Moving an appointment",
     genre: "formal",
     intro: "Randevu ve öğüt cümlelerini yaz.",
     gloss: [

@@ -36,7 +36,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 9,
-    title: "Telling the landlord",
+    title: "A leak and cold rooms",
     genre: "email",
     intro: "İki arıza bildiriliyor. Hangisi ne zamandan beri sürüyor?",
     gloss: [
@@ -100,7 +100,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 9,
-    title: "Moving in",
+    title: "Moving day",
     genre: "story",
     intro: "Taşınma günü, adım adım. Ne bitti, ne henüz bitmedi?",
     gloss: [
@@ -180,7 +180,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 9,
-    title: "Furniture and rooms",
+    title: "Grandmother's armchair",
     genre: "dialogue",
     intro: "Yeni daire geziliyor. Ne nerede duruyor?",
     gloss: [
@@ -258,7 +258,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 9,
-    title: "Noisy neighbors",
+    title: "Saturday night upstairs",
     genre: "monologue",
     intro: "Gürültü şikâyeti, üç adımda. Sonuncusu pastayla bitiyor.",
     gloss: [
@@ -333,7 +333,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 9,
-    title: "There's a leak in the bathroom",
+    title: "A repair form",
     genre: "formal",
     intro: "Arızayı bildir. Süren bozukluk olumsuz present perfect istiyor.",
     gloss: [
@@ -388,7 +388,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 9,
-    title: "Moving in",
+    title: "A new home",
     genre: "personal",
     intro: "Taşınmayı sırayla anlat. „yet“ ve „since“ henüz bitmemişi taşıyor.",
     gloss: [

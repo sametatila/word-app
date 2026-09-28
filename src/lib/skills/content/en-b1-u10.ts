@@ -38,7 +38,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 10,
-    title: "The mix-up",
+    title: "The wrong box",
     genre: "story",
     intro: "Yanlış kutu. Hangi olay hangisinden önce oldu?",
     gloss: [
@@ -115,7 +115,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 10,
-    title: "Making up my mind",
+    title: "Two offers, four opinions",
     genre: "opinion",
     intro: "İki seçenek tartılıyor. Aktarılan cümlelerde zaman nereye kayıyor?",
     gloss: [
@@ -178,7 +178,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 10,
-    title: "Changing the appointment",
+    title: "A call to the clinic",
     genre: "phone",
     intro: "Randevu değişiyor. Hangi cümle ayarlanmış, hangisi plan?",
     gloss: [
@@ -259,7 +259,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 10,
-    title: "Step by step",
+    title: "Four pages of instructions",
     genre: "dialogue",
     intro: "Alet kullanımı anlatılıyor. Hangi kural zorunlu, hangisi öğüt?",
     gloss: [
@@ -339,7 +339,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 10,
-    title: "They had sent the wrong box",
+    title: "Mixed-up orders",
     genre: "personal",
     intro: "Aynı „had“, iki ayrı iş. Hangisi anlatı, hangisi aktarma?",
     gloss: [
@@ -392,7 +392,7 @@ export const enB1U10: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 10,
-    title: "You must read every instruction first",
+    title: "Plans and instructions",
     genre: "info",
     intro: "Randevu ve yönerge cümleleri. Hangi kip hangi gücü taşıyor?",
     gloss: [

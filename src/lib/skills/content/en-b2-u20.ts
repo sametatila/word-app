@@ -38,7 +38,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 20,
-    title: "By December",
+    title: "Using up the rest",
     genre: "info",
     intro: "Bütün bir yan cümle mastara katlanıyor. Ne düşüyor?",
     gloss: [
@@ -133,7 +133,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 20,
-    title: "If the contract had covered it",
+    title: "Insurance and pension",
     genre: "opinion",
     intro: "Üç koşul, aynı başlangıç. Fark nerede başlıyor?",
     gloss: [
@@ -223,7 +223,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 20,
-    title: "The loan that failed",
+    title: "A file on a failed loan",
     genre: "dialogue",
     intro: "Üç kip, bir dosya. Hangisi geri alıntılanıyor?",
     gloss: [
@@ -311,7 +311,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 20,
-    title: "The salary conversation",
+    title: "Hedging about a raise",
     genre: "monologue",
     intro: "Çekince nereye konuyor, nereye konmuyor?",
     gloss: [
@@ -394,7 +394,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 20,
-    title: "By the payment deadline we will have decided how to use up the rest",
+    title: "Paying off the loan",
     genre: "info",
     intro: "İki katlama ve bir katlamasız cümle.",
     gloss: [
@@ -450,7 +450,7 @@ export const enB2U20: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 20,
-    title: "The creditor must have warned them",
+    title: "Money mistakes",
     genre: "opinion",
     intro: "İki kip ve iki koşul. Hangisi bu ayın ekstresinde?",
     gloss: [

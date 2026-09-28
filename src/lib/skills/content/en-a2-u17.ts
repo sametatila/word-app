@@ -33,7 +33,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 17,
-    title: "Sightseeing",
+    title: "Two days, one castle",
     genre: "blog",
     intro: "İki günlük gezi yazısı. Neyi ne zaman görmeli?",
     gloss: [
@@ -94,7 +94,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 17,
-    title: "Renting a car",
+    title: "A car for three days",
     genre: "dialogue",
     intro: "Araba kiralama. Yakıt dâhil mi, sınır kaç?",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 17,
-    title: "Travel problems",
+    title: "A missed connection",
     genre: "dialogue",
     intro: "Kaçan aktarma ve kayıp çanta. Ne zaman, nerede?",
     gloss: [
@@ -256,7 +256,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 17,
-    title: "Eating out abroad",
+    title: "No fish, please",
     genre: "dialogue",
     intro: "Lokantada sipariş. Alerji nerede sorun çıkarıyor?",
     gloss: [
@@ -336,7 +336,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 17,
-    title: "How about taking a bus tour?",
+    title: "Plans for a city trip",
     genre: "personal",
     intro: "Üç öneri kalıbı. Hangisi eksiz fiil, hangisi „-ing“ istiyor?",
     gloss: [
@@ -390,7 +390,7 @@ export const enA2U17: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 17,
-    title: "Could you help me, please?",
+    title: "Help on the road",
     genre: "formal",
     intro: "Seyahat sorunu ve lokanta. Aynı kalıp iki kişi için de çalışıyor.",
     gloss: [

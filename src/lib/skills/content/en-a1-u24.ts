@@ -31,7 +31,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 24,
-    title: "A short email",
+    title: "An email to Anna",
     genre: "email",
     intro: "Kısa bir e-posta. Soru ne, sorun ne, geçen hafta ne olmuş?",
     gloss: [
@@ -92,7 +92,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 24,
-    title: "At the post office",
+    title: "A letter to Ireland",
     genre: "dialogue",
     intro: "Postanede mektup ve paket. Hangi fiyat neye ait?",
     gloss: [
@@ -175,7 +175,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 24,
-    title: "Online and apps",
+    title: "A website for class",
     genre: "dialogue",
     intro: "İnternet ve uygulama konuşuluyor. Parola neden sorun?",
     gloss: [
@@ -251,7 +251,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 24,
-    title: "Yesterday I was",
+    title: "Deniz in Ireland",
     genre: "monologue",
     intro: "Geçmişte „olmak“ fiili. „was“ ve „were“ art arda geçiyor.",
     gloss: [
@@ -327,7 +327,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 24,
-    title: "Dear Anna",
+    title: "Writing an email",
     genre: "email",
     intro: "E-posta kalıplarını yaz. Sonunda e-posta formunu doldur.",
     gloss: [
@@ -381,7 +381,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 24,
-    title: "I was at home",
+    title: "Stamps and letters",
     genre: "personal",
     intro: "Geçmişte „olmak“ fiilini yaz. Tek fiilin iki biçimi var: was ve were.",
     gloss: [

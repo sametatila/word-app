@@ -39,7 +39,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 12,
-    title: "Writing to the office",
+    title: "Account 4471",
     genre: "letter",
     intro: "Üçüncü mektup. Resmî dil neyi değiştiriyor?",
     gloss: [
@@ -122,7 +122,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 12,
-    title: "What the policy covers",
+    title: "Three lines from a policy",
     genre: "info",
     intro: "Poliçenin üç cümlesi. Hangi koşul gerçek, hangisi değil?",
     gloss: [
@@ -188,7 +188,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 12,
-    title: "The tax return",
+    title: "One missing number",
     genre: "dialogue",
     intro: "Vergi beyanı. Hangi cümle tarihli, hangisi değil?",
     gloss: [
@@ -269,7 +269,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 12,
-    title: "Waiting my turn",
+    title: "Ticket B62",
     genre: "monologue",
     intro: "Bekleme salonunda iki saat. Sıra nasıl işliyor?",
     gloss: [
@@ -344,7 +344,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 12,
-    title: "I am writing with a request",
+    title: "Letters with no reply",
     genre: "formal",
     intro: "Resmî mektubun dört sabit parçası. Kısaltma yok, „but“ yok.",
     gloss: [
@@ -398,7 +398,7 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 12,
-    title: "You are not covered unless you report it",
+    title: "Accidents and long lines",
     genre: "info",
     intro: "Poliçe ve sıra cümleleri. Hangi koşul gerçek, hangisi değil?",
     gloss: [

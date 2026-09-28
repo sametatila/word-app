@@ -34,7 +34,7 @@ export const enA2U15: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 15,
-    title: "At the hairdresser",
+    title: "A new haircut",
     genre: "dialogue",
     intro: "Kuaförde kısa bir konuşma. Hangi fotoğraf, hangi tarak?",
     gloss: [
@@ -102,7 +102,7 @@ export const enA2U15: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 15,
-    title: "Warranty and receipts",
+    title: "The warranty rules",
     genre: "dialogue",
     intro: "Garanti konuşması. Hangi durumda garanti geçerli, hangisinde değil?",
     gloss: [
@@ -187,7 +187,7 @@ export const enA2U15: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 15,
-    title: "Comparing prices",
+    title: "Two stores, one machine",
     genre: "monologue",
     intro: "İki dükkân, bir makine. Ucuz olan gerçekten ucuz mu?",
     gloss: [
@@ -338,7 +338,7 @@ export const enA2U15: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 15,
-    title: "This one is cheaper than that one",
+    title: "Prices and discounts",
     genre: "personal",
     intro: "Fiyat karşılaştırması. Ad düşmüyor, yerine „one“ giriyor.",
     gloss: [
@@ -392,7 +392,7 @@ export const enA2U15: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 15,
-    title: "It's still under warranty",
+    title: "At the service desk",
     genre: "formal",
     intro: "Garanti ve hizmet cümleleri. Zaman belirteci yine zamanı seçiyor.",
     gloss: [

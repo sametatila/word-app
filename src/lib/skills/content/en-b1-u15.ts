@@ -39,7 +39,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 15,
-    title: "Keeping it up",
+    title: "Eight months, four breaks",
     genre: "opinion",
     intro: "Sekiz aylık bir seri. Kopmayı ne engelliyor?",
     gloss: [
@@ -121,7 +121,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 15,
-    title: "The online course",
+    title: "How the course works",
     genre: "info",
     intro: "Kurs nasıl işliyor? Cümleler neden edilgen?",
     gloss: [
@@ -191,7 +191,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 15,
-    title: "Working in a group",
+    title: "Four parts, one rule",
     genre: "dialogue",
     intro: "Grup projesi bölüşülüyor. Kim neyi yazıyor?",
     gloss: [
@@ -273,7 +273,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 15,
-    title: "What comes next",
+    title: "The advanced level",
     genre: "dialogue",
     intro: "İleri düzey mi, ara mı? Karar neye bağlı?",
     gloss: [
@@ -354,7 +354,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 15,
-    title: "If I were less tired, I would study more",
+    title: "Course facts",
     genre: "personal",
     intro: "İki koşul ve bir tuzak. Ne zaman „was“ değil „were“?",
     gloss: [
@@ -407,7 +407,7 @@ export const enB1U15: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 15,
-    title: "Although the advanced level is hard, I want it",
+    title: "Partners and plans",
     genre: "personal",
     intro: "Grup ve gelecek cümleleri. Üç ödün sözcüğü son kez yan yana.",
     gloss: [

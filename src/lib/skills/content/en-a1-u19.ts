@@ -30,7 +30,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 19,
-    title: "Would you like to go to the movies?",
+    title: "A movie night",
     genre: "dialogue",
     intro: "Sinema daveti. Davet, ret ve yeni bir gün — üçü de ayrı kalıpla.",
     gloss: [
@@ -96,7 +96,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 19,
-    title: "In the park",
+    title: "Sunday by the lake",
     genre: "personal",
     intro: "Parkta bir pazar. Ne var, hava nasıl, kışın ne oluyor?",
     gloss: [
@@ -157,7 +157,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 19,
-    title: "What music do you like?",
+    title: "Three hundred CDs",
     genre: "dialogue",
     intro: "İki kişi müziği konuşuyor. Kim ne çalıyor, kim ne dinliyor?",
     gloss: [
@@ -232,7 +232,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 19,
-    title: "How's the weather?",
+    title: "Rain here, sun there",
     genre: "phone",
     intro: "İki şehirde hava. Kaç derece, ne yağıyor?",
     gloss: [
@@ -313,7 +313,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 19,
-    title: "I like this song",
+    title: "The movie plan",
     genre: "personal",
     intro: "Müzik ve hava cümlelerini yaz. Sonunda sinema planını doldur.",
     gloss: [
@@ -367,7 +367,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 19,
-    title: "It's raining",
+    title: "Weather and plans",
     genre: "personal",
     intro: "Hava ve davet yaz. Hava cümlesinde „it“ boş bir özne ama zorunlu.",
     gloss: [

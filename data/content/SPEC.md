@@ -39,6 +39,18 @@ kapı geçerlidir, belge düzeltilir. Konuşmalar: `data/conversations-plan/SPEC
 - `id` bütün kurslarda benzersiz; `level` A1–C1; `genre` kapalı listeden
   (`GENRES`, çeviri anahtarı `genre.*`); `minutes` 1–20; `cando` yalnız tanımlı kimlikler.
 - Aynı seviyede iki ayrı ünitede aynı başlık hata (aynı ünite içinde serbest).
+- **Başlık metnin konusudur** (Patika kartında konuşma kartlarının arasında
+  görünür). Hedef dilde, 1–5 kelime, isim öbeği ya da doğal kısa başlık:
+  „Die Stellenanzeige“, „Zwei Lebensläufe“, "Three rules for a résumé",
+  "A badge that did not work", "Notes for a new job". Yazmada senaryo adı
+  (formun konusu, cümlelerin hizmet ettiği durum). Olmaz: kalıp ya da alıştırma
+  cümlesi ("I had finished my degree before I started there", "What were you
+  doing?"), üç noktalı kalıp ("I don't …"), aynı seviyedeki bir konuşmanın adı,
+  aynı ünitedeki başka egzersizin başlığı. A1–A2'de yalnız basit sözcükler; büyük
+  harf yalnız ilk sözcükte ve özel adlarda. Hedef dildeki başlık çevrilmez
+  (`nativeTitles` yalnız Türkçe yazılmış başlığı anadile çeviriyor), yani yeni
+  başlık anadil sözlüğüne girmez. Kapı İngilizce kursta hata (`test:content`);
+  Almanca kursta konuşma adını taşıyan 180 başlık var, hepsi konu adı, kapı dışı.
 - `gloss`: her `de` metinde geçer (`data/meanings/contains.mjs`; okuma/dinlemede
   soru ve şıklar da sayılır), aynı madde iki kez yok, `tr` dolu.
 - **Okuma/dinleme:** ≥ 3 soru, her soruda `explain`. `mcq`/`truefalse` 2–4 şık;

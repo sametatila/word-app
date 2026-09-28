@@ -39,7 +39,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 4,
-    title: "Shifting the stress",
+    title: "Two sentences starting with what",
     genre: "opinion",
     intro: "İki cümle de „what“ ile başlıyor. Ayıran hangi sözcük?",
     gloss: [
@@ -133,7 +133,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 4,
-    title: "The phrases of debate",
+    title: "Two infinitives and a verdict",
     genre: "opinion",
     intro: "Mastarla kurulan denklem. Neyi reddediyor?",
     gloss: [
@@ -231,7 +231,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 4,
-    title: "The barbed reply",
+    title: "A reply in four drafts",
     genre: "dialogue",
     intro: "Dört taslak, tek satır. Soru eki ne yapıyor?",
     gloss: [
@@ -320,7 +320,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 4,
-    title: "The short answer",
+    title: "A comma for a verb",
     genre: "monologue",
     intro: "Eksiltmenin satın aldığı şey kısalık değil. Ne?",
     gloss: [
@@ -408,7 +408,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 4,
-    title: "What we enshrine we rarely comprehend",
+    title: "Myths about the past",
     genre: "opinion",
     intro: "İki „what“ ve iki öne çıkarma. „what“ öbeğinden sonra ne geliyor?",
     gloss: [
@@ -464,7 +464,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 4,
-    title: "Not exactly scrupulous, are they?",
+    title: "Comments on politicians",
     genre: "opinion",
     intro: "Üç eksiltili söyleyiş ve iki boşluk.",
     gloss: [

@@ -50,7 +50,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 14,
-    title: "At the bargaining table",
+    title: "Long objects go last",
     genre: "info",
     intro: "Sıra yanlış görünüyor ama değil. Neye göre sıralanıyor?",
     gloss: [
@@ -152,7 +152,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 14,
-    title: "The vocabulary of qualification",
+    title: "Deskilling and professionalization",
     genre: "opinion",
     intro: "İki sözcük karşıt görünüyor. Peki aynı eksende mi?",
     gloss: [
@@ -253,7 +253,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 14,
-    title: "The flexibility bargain",
+    title: "Same desk, new badge",
     genre: "dialogue",
     intro: "Birim ayrılıyor ama iş kalıyor. Sınır neyi kaldırmıyor?",
     gloss: [
@@ -341,7 +341,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 14,
-    title: "Reporting the meeting",
+    title: "Two verbs in the minutes",
     genre: "monologue",
     intro: "Toplantı tutanağında hangi fiil kimi ele veriyor?",
     gloss: [
@@ -491,7 +491,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 14,
-    title: "Deskilling is not the opposite of professionalization",
+    title: "Skills and the labor market",
     genre: "info",
     intro: "Nitelik sözcükleri ve toplantının iki fiili.",
     gloss: [

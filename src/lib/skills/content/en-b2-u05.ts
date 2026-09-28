@@ -40,7 +40,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 5,
-    title: "A firm letter",
+    title: "No delay accepted",
     genre: "opinion",
     intro: "Öne çıkan öbek uzuyor. Devrilen hangi yarı?",
     gloss: [
@@ -133,7 +133,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 5,
-    title: "Who is who",
+    title: "The parties to a tender",
     genre: "info",
     intro: "Tarafları sayan paragraf. Virgüller ne yapıyor?",
     gloss: [
@@ -223,7 +223,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 5,
-    title: "What happened, briefly",
+    title: "An incident in ninety seconds",
     genre: "dialogue",
     intro: "Özet ortaçla yazılıyor. Özne hangi yarıya ait?",
     gloss: [
@@ -316,7 +316,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 5,
-    title: "By the time you read this",
+    title: "Two kinds of promise",
     genre: "monologue",
     intro: "Söz veren iki biçim. Hangisi denetlenecek bir tarih?",
     gloss: [
@@ -402,7 +402,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 5,
-    title: "Under no circumstances will we accept a severe delay",
+    title: "Firm lines for a letter",
     genre: "opinion",
     intro: "Üç kapı: olumsuzluk, „not until“, „only then“.",
     gloss: [
@@ -456,7 +456,7 @@ export const enB2U05: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 5,
-    title: "Having reviewed the incident, we wrote the note",
+    title: "The incident summary",
     genre: "info",
     intro: "Özette ortaç, takvimde gelecek. Hangi özne kime ait?",
     gloss: [

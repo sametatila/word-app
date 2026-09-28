@@ -48,7 +48,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 24,
-    title: "Reporting a claim",
+    title: "The slot before the verb",
     genre: "info",
     intro: "Özne ile fiil arasında bir yuva var. İçine ne konuyor?",
     gloss: [
@@ -147,7 +147,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 24,
-    title: "The relativism debate",
+    title: "Relativism and doubt",
     genre: "opinion",
     intro: "Hiçbir ilke kuşkuya uğramadan ayakta kalmıyor. Peki bu neyi bitiriyor?",
     gloss: [
@@ -248,7 +248,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 24,
-    title: "The vocabulary of evidence",
+    title: "Measured or decided",
     genre: "dialogue",
     intro: "Biri seçiliyor, öteki bulunuyor. Hangi sayı kimin kararı?",
     gloss: [
@@ -340,7 +340,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 24,
-    title: "Demanding a freedom",
+    title: "A chain of freedoms",
     genre: "monologue",
     intro: "Bir özgürlük ötekini nasıl taşıyor? Sınama neden gerekli?",
     gloss: [
@@ -429,7 +429,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 24,
-    title: "One advocates the claim; another merely affirms it",
+    title: "Studies and statistics",
     genre: "info",
     intro: "Orta konum belirteci ve kanıtın iki sayısı.",
     gloss: [
@@ -492,7 +492,7 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 24,
-    title: "Freedom of conscience demands that no one be forced to act against their beliefs",
+    title: "Freedoms and beliefs",
     genre: "info",
     intro: "Özgürlükler zinciri ve göreceliğin sınaması.",
     gloss: [

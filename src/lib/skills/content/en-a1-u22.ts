@@ -30,7 +30,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 22,
-    title: "At the pharmacy",
+    title: "Tablets for a headache",
     genre: "dialogue",
     intro: "Eczanede ilaç alınıyor. Günde kaç kez, ne kadar, kime uygun?",
     gloss: [
@@ -96,7 +96,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 22,
-    title: "Calling in sick",
+    title: "A call to Mr. Kaya",
     genre: "phone",
     intro: "İşe rapor bildiriliyor. Bugün ne oluyor, yarın ne, öbür gün ne?",
     gloss: [
@@ -177,7 +177,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 22,
-    title: "Friendly advice",
+    title: "Tired every morning",
     genre: "dialogue",
     intro: "Bir arkadaş öğüt veriyor. „should“ ve „shouldn't“ art arda geliyor.",
     gloss: [
@@ -252,7 +252,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 22,
-    title: "Emergency",
+    title: "A man on the ground",
     genre: "dialogue",
     intro: "Acil bir durum. Emirler art arda geliyor — kim ne yapıyor?",
     gloss: [
@@ -335,7 +335,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 22,
-    title: "Can I have some medicine?",
+    title: "A pharmacy form",
     genre: "formal",
     intro: "Eczane ve rapor cümlelerini yaz. Sonunda eczane fişini doldur.",
     gloss: [
@@ -390,7 +390,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 22,
-    title: "You should …",
+    title: "Advice and help",
     genre: "personal",
     intro: "Öğüt ve acil çağrı yaz. „should“ kural değil tavsiye söylüyor.",
     gloss: [

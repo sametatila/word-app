@@ -195,6 +195,38 @@ function checkSkills(list: SkillExercise[]) {
   for (const [k, u] of baslik)
     if (u.size > 1) E("[skills]", `başlık iki ünitede birden: "${k}" → ünite ${[...u].sort((a, b) => a - b).join(", ")}`);
 
+  /* BAŞLIK METNİN KONUSU (İngilizce kurs, 2026-09-28). Patika'da beceri kartı
+     konuşma kartlarının arasında duruyor. İngilizce kursta 750 başlığın 439'u
+     aynı ünitenin konuşma adını tekrar ediyordu ("Writing a résumé" hem
+     konuşma hem okuma) ve 197'si egzersizin kendi kalıp cümlesiydi ("I had
+     finished my degree before I started there"): öğrenci kartın neyle ilgili
+     olduğunu göremiyordu. Kural `data/content/SPEC.md` "Başlık". Almanca kurs
+     bu kapının DIŞINDA: orada 180 başlık konuşma adını taşıyor ama hepsi konu
+     adı; ayrıca ele alınacak. */
+  const norm = (s: string) => foldSentence(s);
+  const convTitles = new Map<string, Set<string>>();
+  for (const c of CONVERSATIONS) {
+    const k = `${c.course} ${c.level}`;
+    const s = convTitles.get(k) ?? new Set<string>();
+    s.add(norm(c.title)); convTitles.set(k, s);
+  }
+  const inUnit = new Map<string, string[]>();
+  for (const e of list) {
+    if (e.unit == null || e.course !== "en") continue;
+    const w = `[skills] ${e.id} «${e.title}»`;
+    const t = norm(e.title);
+    if (convTitles.get(`en ${e.level}`)?.has(t)) E(w, "başlık bir konuşmanın adı — metnin konusunu ver");
+    const drill = ((e as { tasks?: { answer?: string; alternatives?: string[] }[] }).tasks ?? [])
+      .flatMap((k) => [k.answer, ...(k.alternatives ?? [])])
+      .filter((x): x is string => typeof x === "string");
+    if (drill.some((a) => norm(a) === t)) E(w, "başlık egzersizin kalıp cümlesi — metnin konusunu ver");
+    if (/…|\.\.\./.test(e.title)) E(w, "başlıkta üç nokta — kalıp değil konu");
+    const k = `${e.level} ${e.unit}`;
+    const seen = inUnit.get(k) ?? [];
+    if (seen.includes(t)) E(w, "başlık aynı ünitede iki egzersizde");
+    seen.push(t); inUnit.set(k, seen);
+  }
+
   /* Doğru/yanlış sorusunun cevap dengesi. 2026-09-12'de ölçüldü: İngilizce
      kursun 500 sorusunun 499'u „False“ idi — hiçbir şey okumadan hep „False“
      diyen öğrenci %99,8 alıyordu. Şık konumu yanlılığı kapısı yalnız çoktan

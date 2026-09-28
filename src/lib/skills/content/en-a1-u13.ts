@@ -95,7 +95,7 @@ export const enA1U13: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 13,
-    title: "Ordering online",
+    title: "Two books and a bag",
     genre: "email",
     intro: "İnternetten sipariş için yazılan mesaj. Ne isteniyor, ne zaman lazım?",
     gloss: [
@@ -159,7 +159,7 @@ export const enA1U13: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 13,
-    title: "Asking directions",
+    title: "The way to the station",
     genre: "dialogue",
     intro: "Yol soruluyor. Sağ mı sol mu, dümdüz mü — yönleri takip et.",
     gloss: [
@@ -312,7 +312,7 @@ export const enA1U13: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 13,
-    title: "I need …",
+    title: "An online order",
     genre: "formal",
     intro: "İhtiyaç ve sipariş cümlelerini yaz. Sonunda sipariş formunu doldur.",
     gloss: [
@@ -366,7 +366,7 @@ export const enA1U13: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 13,
-    title: "Go straight, turn left",
+    title: "Directions and buses",
     genre: "personal",
     intro: "Yol tarifi ve ulaşım yaz. Araçta „by“ geliyor ve artikel hiç kullanılmıyor.",
     gloss: [

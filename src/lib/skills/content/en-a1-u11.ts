@@ -160,7 +160,7 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 11,
-    title: "Can I try it on?",
+    title: "A cheaper jacket",
     genre: "dialogue",
     intro: "Ceket deneniyor. Beden ve renk iki kez değişiyor — sonuncuyu yakala.",
     gloss: [
@@ -235,7 +235,7 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 11,
-    title: "Colors",
+    title: "Nil's favorite color",
     genre: "monologue",
     intro: "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
     gloss: [
@@ -312,7 +312,7 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 11,
-    title: "I'm looking for a shirt",
+    title: "A new shirt",
     genre: "formal",
     intro: "Mağaza cümlelerini yaz. Sonunda alışveriş formunu doldur.",
     gloss: [
@@ -368,7 +368,7 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 11,
-    title: "What color is it?",
+    title: "Colors and prices",
     genre: "personal",
     intro: "Renk ve fiyat yaz. Renk sıfatı isimden önce gelir ve hiç çekilmez.",
     gloss: [

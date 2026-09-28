@@ -40,7 +40,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 3,
-    title: "Opening a formal talk",
+    title: "The first line of a speech",
     genre: "opinion",
     intro: "Yardımcı fiil özneden öne geçiyor. Hangi zarftan sonra?",
     gloss: [
@@ -135,7 +135,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 3,
-    title: "The claim",
+    title: "A letter about a late supplier",
     genre: "info",
     intro: "Mesafe koyan cümleler. Ne zaman bedeli oluyor?",
     gloss: [
@@ -231,7 +231,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 3,
-    title: "Saying it carefully",
+    title: "Words that step back",
     genre: "dialogue",
     intro: "Zarflar iki işe ayrılıyor: ses düzeyi ve yön.",
     gloss: [
@@ -324,7 +324,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 3,
-    title: "What the issue is",
+    title: "The delay and nothing else",
     genre: "monologue",
     intro: "Bir uyuşmazlıkta yarık cümle. Neden tek bir şey?",
     gloss: [
@@ -410,7 +410,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 3,
-    title: "Rarely have I had such a pleasure",
+    title: "Speaking at a session",
     genre: "opinion",
     intro: "Devrik sıra ve dikkatli zarflar. Hangi kapı dar?",
     gloss: [
@@ -464,7 +464,7 @@ export const enB2U03: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 3,
-    title: "What we contest is the delay",
+    title: "A dispute with a supplier",
     genre: "info",
     intro: "Yarık cümle ve mesafe. Ne ileri sürülüyor, ne sürülmüyor?",
     gloss: [

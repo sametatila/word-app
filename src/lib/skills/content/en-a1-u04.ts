@@ -91,7 +91,7 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 4,
-    title: "Who is this?",
+    title: "Eda's photo",
     genre: "dialogue",
     intro: "Eda bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
     gloss: [
@@ -173,7 +173,7 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 4,
-    title: "I don't have a pet",
+    title: "No pet at home",
     genre: "dialogue",
     intro: "Lena ile Can evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
     gloss: [
@@ -249,7 +249,7 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 4,
-    title: "In the picture",
+    title: "A photo from work",
     genre: "monologue",
     intro: "Ayse iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
     gloss: [
@@ -326,7 +326,7 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 4,
-    title: "I don't …",
+    title: "Dogs, cats and birds",
     genre: "personal",
     intro: "Olumsuz cümleyi yaz. Dikkat: üçüncü tekil kişide „don't“ değil „doesn't“ geliyor.",
     gloss: [
@@ -378,7 +378,7 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 4,
-    title: "One or many",
+    title: "Two friends, many people",
     genre: "personal",
     intro: "Tekil ile çoğulu yaz. İngilizcede çoğul, ismi ve ona bağlı sözcükleri birlikte değiştiriyor.",
     gloss: [

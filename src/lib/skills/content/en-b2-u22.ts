@@ -40,7 +40,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 22,
-    title: "He must have misunderstood",
+    title: "A negative without not",
     genre: "info",
     intro: "Kip olumlu kalıyor. Olumsuz nereye gidiyor?",
     gloss: [
@@ -126,7 +126,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 22,
-    title: "Never felt so heavy",
+    title: "A pamphlet on trauma",
     genre: "opinion",
     intro: "Üç devrik cümle. Hangisinde „does“ giriyor?",
     gloss: [
@@ -217,7 +217,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 22,
-    title: "The person between us",
+    title: "A reserved friend",
     genre: "dialogue",
     intro: "„who is“ + sıfat. Burada silme neden işlemiyor?",
     gloss: [
@@ -304,7 +304,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 22,
-    title: "A year from now",
+    title: "A family plan for next year",
     genre: "monologue",
     intro: "Bir yıl sonrası. Hangi cümle bitmişi anlatıyor?",
     gloss: [
@@ -387,7 +387,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 22,
-    title: "He must have failed to empathize",
+    title: "Looking back at a conflict",
     genre: "info",
     intro: "Üç kip. Olumsuz hangisinde fiile geçiyor?",
     gloss: [
@@ -441,7 +441,7 @@ export const enB2U22: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 22,
-    title: "Never has a burden felt so heavy",
+    title: "Coping with trauma",
     genre: "opinion",
     intro: "Üç devrik cümle ve bir takvim.",
     gloss: [

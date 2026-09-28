@@ -33,7 +33,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 15,
-    title: "Places to visit",
+    title: "A city guide",
     genre: "guide",
     intro: "Şehir rehberi. Ne zaman açık, nereye nasıl gidiliyor?",
     gloss: [
@@ -93,7 +93,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 15,
-    title: "I'm lost",
+    title: "Help in the street",
     genre: "dialogue",
     intro: "Kaybolan biri yardım istiyor. Kibar istek kalıbına dikkat.",
     gloss: [
@@ -174,7 +174,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 15,
-    title: "How do you get to work?",
+    title: "Bike, bus or train",
     genre: "dialogue",
     intro: "İki kişi ulaşımı konuşuyor. „by bike“ ile „on foot“ aynı cümlede.",
     gloss: [
@@ -248,7 +248,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 15,
-    title: "At the information desk",
+    title: "Questions at the museum",
     genre: "dialogue",
     intro: "Danışmada soru sorma. Saat, süre ve izin — üçü de ayrı kalıpla.",
     gloss: [
@@ -329,7 +329,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 15,
-    title: "You can visit the museum",
+    title: "A day in the city",
     genre: "guide",
     intro: "Gezi cümlelerini yaz. Sonunda gezi formunu doldur.",
     gloss: [
@@ -384,7 +384,7 @@ export const enA1U15: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 15,
-    title: "Could you help me?",
+    title: "Asking for help",
     genre: "personal",
     intro: "Kibar istek yaz. „could“ „can“den daha kibar ve yabancıya söylenen biçim.",
     gloss: [

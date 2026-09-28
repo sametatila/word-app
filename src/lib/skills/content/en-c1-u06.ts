@@ -37,7 +37,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 6,
-    title: "The settled legal phrase",
+    title: "Enacting versus enforcing",
     genre: "info",
     intro: "Mastar özne olabiliyor. Olumsuz biçim neyi reddediyor?",
     gloss: [
@@ -133,7 +133,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 6,
-    title: "The same event in three texts",
+    title: "Two words for one offense",
     genre: "opinion",
     intro: "Aynı olay, üç metin. Hangi olgular yolculuğa dayanıyor?",
     gloss: [
@@ -230,7 +230,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 6,
-    title: "What the witness said",
+    title: "Verbs in a case file",
     genre: "dialogue",
     intro: "Bir dosyada üç fiil. Hangisi yansız?",
     gloss: [
@@ -321,7 +321,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 6,
-    title: "The petition",
+    title: "Lodging an appeal",
     genre: "monologue",
     intro: "Eksik bir harf belgenin türünü değiştiriyor. Sıra neden önemli?",
     gloss: [
@@ -405,7 +405,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 6,
-    title: "To enact a rule is not to enforce it",
+    title: "Power on the council",
     genre: "info",
     intro: "Mastar özne, öne çıkarılmış nesne, düşmüş adıl.",
     gloss: [
@@ -461,7 +461,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 6,
-    title: "We request that our lawyer lodge the appeal today",
+    title: "A request to the court",
     genre: "info",
     intro: "Dilekçenin kipi ve iki dil düzeyi.",
     gloss: [

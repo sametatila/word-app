@@ -48,7 +48,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 21,
-    title: "Three names for one number",
+    title: "In nominal terms",
     genre: "info",
     intro: "Üç sözcük tek rakamı değiştirmeden iddiayı değiştiriyor. Nerede duruyorlar?",
     gloss: [
@@ -152,7 +152,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 21,
-    title: "Demanding disclosure",
+    title: "A complete disclosure",
     genre: "opinion",
     intro: "Talep eden bir kurum ve gömülen bir usulsüzlük. Sıra neden önemli?",
     gloss: [
@@ -252,7 +252,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 21,
-    title: "The interest rate debate",
+    title: "Interest rates and the young",
     genre: "dialogue",
     intro: "Politika işliyor ve yine de birine zarar veriyor. Kime?",
     gloss: [
@@ -344,7 +344,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 21,
-    title: "Who loses the money",
+    title: "Deficit and market failure",
     genre: "monologue",
     intro: "Bir açık neyi gizliyor? Hangi riski sigortalıyoruz?",
     gloss: [
@@ -438,7 +438,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 21,
-    title: "In the press release it is a downturn; in the model, stagnation",
+    title: "Words for a crisis",
     genre: "info",
     intro: "Çerçeve öbeği ve gizlenen başarısızlık.",
     gloss: [
@@ -503,7 +503,7 @@ export const enC1U21: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 21,
-    title: "The financial regulator demands that the disclosure be complete",
+    title: "Rules for the banks",
     genre: "info",
     intro: "Eksiksizlik eşiği ve faizin iki yarısı.",
     gloss: [

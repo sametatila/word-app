@@ -50,7 +50,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 13,
-    title: "When meaning shifts",
+    title: "Where without a place",
     genre: "info",
     intro: "„Where“ hangi yeri gösteriyor? Sökülebilen sözcük ile sökülemeyen.",
     gloss: [
@@ -163,7 +163,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 13,
-    title: "Three names for one measure",
+    title: "Efficiency gain or harder work",
     genre: "opinion",
     intro: "Tek bir önlem, üç ad. Adı koyan tartışmayı nasıl kazanıyor?",
     gloss: [
@@ -266,7 +266,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 13,
-    title: "Who gives the orders",
+    title: "The flat organization chart",
     genre: "dialogue",
     intro: "Yetki devrinin arkasında ne duruyor? Ne fark edilmiyor?",
     gloss: [
@@ -357,7 +357,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 13,
-    title: "What belonging leaves unsaid",
+    title: "Diaspora and enclave",
     genre: "monologue",
     intro: "İki topluluk, iki ayrı şey saklıyor. Hangisi hangisini?",
     gloss: [
@@ -448,7 +448,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 13,
-    title: "Where the semantic context is missing",
+    title: "Words for change at work",
     genre: "info",
     intro: "Yer bildirmeyen „where“ ve tek ölçünün üç adı.",
     gloss: [
@@ -512,7 +512,7 @@ export const enC1U13: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 13,
-    title: "The diaspora keeps the heritage language",
+    title: "Community and power",
     genre: "info",
     intro: "Aidiyetin sakladıkları ve emri veren.",
     gloss: [

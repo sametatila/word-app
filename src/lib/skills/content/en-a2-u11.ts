@@ -36,7 +36,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 11,
-    title: "Reading a job ad",
+    title: "Kitchen helper wanted",
     genre: "ad",
     intro: "Bir iş ilanı. Ne zorunlu, ne değil?",
     gloss: [
@@ -100,7 +100,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 11,
-    title: "My experience",
+    title: "A letter to Mr. Arda",
     genre: "letter",
     intro: "Başvuru mektubu. Hangi cümle deneyimi, hangisi kapanmış dönemi söylüyor?",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 11,
-    title: "At the interview",
+    title: "Four years in kitchens",
     genre: "interview",
     intro: "Mülakat. Hangi soruya hangi zamanla cevap veriliyor?",
     gloss: [
@@ -256,7 +256,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 11,
-    title: "My workplace",
+    title: "An office on the third floor",
     genre: "monologue",
     intro: "Bir ofis anlatılıyor. Kaç kişi, hangi kat, nesi özel?",
     gloss: [
@@ -331,7 +331,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 11,
-    title: "I have worked at a big company",
+    title: "An application card",
     genre: "formal",
     intro: "Aynı özgeçmişte iki zaman. Hangisi deneyim, hangisi kapanmış dönem?",
     gloss: [
@@ -386,7 +386,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 11,
-    title: "At the interview",
+    title: "Interview answers",
     genre: "formal",
     intro: "Mülakatın beş cümlesi. İlanın dili edilgen, cevabın dili birinci tekil.",
     gloss: [

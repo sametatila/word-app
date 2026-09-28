@@ -30,7 +30,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 10,
-    title: "A work day",
+    title: "A day at the office",
     genre: "personal",
     intro: "Bir iş günü baştan sona. İş kaçta başlıyor, kaçta bitiyor, sonrası ne oluyor?",
     gloss: [
@@ -89,7 +89,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 10,
-    title: "What time do you open?",
+    title: "Opening hours",
     genre: "phone",
     intro: "Bir dükkânın saatleri soruluyor. Açılış, kapanış, otobüs — hepsi ayrı saatte.",
     gloss: [
@@ -170,7 +170,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 10,
-    title: "Weekend plans",
+    title: "Sena's weekend",
     genre: "dialogue",
     intro: "İki kişi hafta sonu planını konuşuyor. Gelecek kalıbının üç biçimi de geçiyor.",
     gloss: [
@@ -247,7 +247,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 10,
-    title: "After work",
+    title: "Ali's free time",
     genre: "monologue",
     intro: "Ali iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
     gloss: [
@@ -324,7 +324,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 10,
-    title: "I start work at eight",
+    title: "Work and free time",
     genre: "personal",
     intro: "İş gününü ve sevdiklerini yaz. „like“ sonrası fiil yine „-ing“ alıyor.",
     gloss: [
@@ -380,7 +380,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 10,
-    title: "I'm going to …",
+    title: "Plans for next week",
     genre: "personal",
     intro: "Geleceği yaz. Üç parça var ve olumsuzu ile sorusu parçaları oynatarak kuruluyor.",
     gloss: [

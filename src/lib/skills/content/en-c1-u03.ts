@@ -40,7 +40,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 3,
-    title: "Not exactly cheap",
+    title: "The art of understatement",
     genre: "opinion",
     intro: "Olumsuzla söylenen olumlu. Okur nasıl çözüyor?",
     gloss: [
@@ -136,7 +136,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 3,
-    title: "Holding the text together",
+    title: "Words that point back",
     genre: "info",
     intro: "Üç bağlayıcı. Hangisi geriye tek bir şeye işaret ediyor?",
     gloss: [
@@ -230,7 +230,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 3,
-    title: "Dissent without rupture",
+    title: "The minutes, first line",
     genre: "dialogue",
     intro: "Ayrışmak ama kopmamak. Hangi araç kimi koruyor?",
     gloss: [
@@ -317,7 +317,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 3,
-    title: "Quoting the opponent",
+    title: "Three verbs for an opponent",
     genre: "monologue",
     intro: "Karşı tarafı aktarmak. Fiil neyi ele veriyor?",
     gloss: [
@@ -405,7 +405,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 3,
-    title: "Not exactly cheap, that one",
+    title: "Polite complaints",
     genre: "opinion",
     intro: "Olumsuzla söylenen olumlu: üç kalıp ve „the latter“.",
     gloss: [
@@ -459,7 +459,7 @@ export const enC1U03: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 3,
-    title: "She postulates it; he refutes it; they substantiate it",
+    title: "Answering a manifesto",
     genre: "opinion",
     intro: "Üç aktarma fiili ve üç ödün aracı.",
     gloss: [

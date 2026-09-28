@@ -39,7 +39,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 19,
-    title: "The hiring chain",
+    title: "Hiring in three sentences",
     genre: "info",
     intro: "Üç ortaç, üç ses. Ortadaki neyin kısası?",
     gloss: [
@@ -134,7 +134,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 19,
-    title: "Never so hard to find",
+    title: "An ad for skilled workers",
     genre: "opinion",
     intro: "Devrik sıra bir ilanda. Kaç tane fazla?",
     gloss: [
@@ -225,7 +225,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 19,
-    title: "The person in the contract",
+    title: "A permanent offer",
     genre: "dialogue",
     intro: "Üç ilgi cümlesi bir karşılaştırmada. Kısaltmak iyi mi?",
     gloss: [
@@ -313,7 +313,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 19,
-    title: "What decides a career",
+    title: "Career advice at a workshop",
     genre: "monologue",
     intro: "Üç yarık cümle. Hangisi adı konmamış olanı adlandırıyor?",
     gloss: [
@@ -400,7 +400,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 19,
-    title: "Asked to supervise, she agreed",
+    title: "Notes from recruiting",
     genre: "info",
     intro: "Üç ortaç, üç çatı. Hangisinde iki sözcük düşmüş?",
     gloss: [
@@ -454,7 +454,7 @@ export const enB2U19: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 19,
-    title: "What decides a career is strategy",
+    title: "Career choices",
     genre: "opinion",
     intro: "İki yarık cümle ve iki devrik sıra.",
     gloss: [

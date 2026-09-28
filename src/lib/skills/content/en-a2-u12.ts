@@ -32,7 +32,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 12,
-    title: "What I do at work",
+    title: "A normal Tuesday",
     genre: "blog",
     intro: "Sıradan bir salı. Hangi iş ne kadar sürüyor?",
     gloss: [
@@ -93,7 +93,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 12,
-    title: "Asking for time off",
+    title: "A day off on Friday",
     genre: "email",
     intro: "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
     gloss: [
@@ -172,7 +172,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 12,
-    title: "A short meeting",
+    title: "The long report",
     genre: "meeting",
     intro: "Yirmi dakikalık toplantı. Kim ne öneriyor, ne karar çıkıyor?",
     gloss: [
@@ -249,7 +249,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 12,
-    title: "A problem at work",
+    title: "The wrong numbers",
     genre: "dialogue",
     intro: "Bir hata bildiriliyor. Ne bitti, ne bitmedi, ne yapılacak?",
     gloss: [
@@ -329,7 +329,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 12,
-    title: "Could I take a day off?",
+    title: "The day-off form",
     genre: "formal",
     intro: "Aynı ricanın üç basamağı. Hangisini seçeceğin kimden istediğine bağlı.",
     gloss: [
@@ -382,7 +382,7 @@ export const enA2U12: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 12,
-    title: "I'm sorry, I made a mistake",
+    title: "Mistakes and ideas",
     genre: "personal",
     intro: "Hata, bitmemiş iş ve o anda verilen karar.",
     gloss: [

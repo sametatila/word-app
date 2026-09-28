@@ -40,7 +40,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 21,
-    title: "The assessment",
+    title: "Measuring self-confidence",
     genre: "info",
     intro: "İki yol var: listeden geçen ve her zaman açık olan.",
     gloss: [
@@ -131,7 +131,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 21,
-    title: "What is said about her",
+    title: "Talk about a colleague",
     genre: "opinion",
     intro: "Bir kişi hakkında üç kaynaksız cümle. Sınama ne?",
     gloss: [
@@ -223,7 +223,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 21,
-    title: "What really hurt",
+    title: "Rage and jealousy",
     genre: "dialogue",
     intro: "Üç yarık cümle. Hangisi bir adayı listeden çıkarıyor?",
     gloss: [
@@ -313,7 +313,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 21,
-    title: "How we fell out",
+    title: "A failed attempt to mediate",
     genre: "monologue",
     intro: "Üç ortaç. Yanlış giden hep hangi parça?",
     gloss: [
@@ -398,7 +398,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 21,
-    title: "The building of self-confidence is slow",
+    title: "A psychology report",
     genre: "info",
     intro: "Üç adlaştırma. Hangisi listeden, hangisi kuraldan?",
     gloss: [
@@ -454,7 +454,7 @@ export const enB2U21: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 21,
-    title: "What really hurt was not the rage",
+    title: "The end of a friendship",
     genre: "opinion",
     intro: "Üç yarık cümle ve iki ortaç.",
     gloss: [
