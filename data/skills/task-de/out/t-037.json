@@ -217,12 +217,12 @@
  {
   "tr": "Mastar geçmişe bakıyor: iş düşünmeden önce olmuş.",
   "kind": "build.hint",
-  "de": "Der Infinitiv blickt zurück: die Handlung liegt vor dem Denken."
+  "de": "Der Infinitiv blickt zurück: Die Handlung liegt vor dem Denken."
  },
  {
   "tr": "Kısa yol: özne öne çıkıyor, mastar geriye kalıyor.",
   "kind": "build.hint",
-  "de": "Kurzer Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+  "de": "Kurzer Weg: Das Subjekt tritt vor, der Infinitiv bleibt zurück."
  },
  {
   "tr": "„has“ özneyi atlıyor, fiilin gerisi yerinde kalıyor.",
@@ -237,7 +237,7 @@
  {
   "tr": "Mastarın kendi zamanı var: iş görünmeden önce olmuş.",
   "kind": "build.hint",
-  "de": "Der Infinitiv hat eine eigene Zeitstufe: die Handlung liegt vor dem Anschein."
+  "de": "Der Infinitiv hat eine eigene Zeitstufe: Die Handlung liegt vor dem Anschein."
  },
  {
   "tr": "Olumsuz çıkarım ve edilgen üst üste; sıra yine aynı.",
@@ -247,21 +247,21 @@
  {
   "tr": "Fiilin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Verbs: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Verbs: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Düzeltmenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Richtigstellung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Richtigstellung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Manşetlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Schlagzeilen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Schlagzeilen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Denetlemenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Prüfung: Bring sie in die richtige Ordnung."
  }
 ]

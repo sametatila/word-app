@@ -222,7 +222,7 @@
  {
   "tr": "Buradaki „you“ da belirsiz: herkes demek.",
   "kind": "build.hint",
-  "de": "Auch dieses „you“ ist unbestimmt: es meint alle, wie deutsch „man“."
+  "de": "Auch dieses „you“ ist unbestimmt: Es meint alle, wie deutsch „man“."
  },
  {
   "tr": "„can't“ burada beceri değil, izin yok demek.",
@@ -307,7 +307,7 @@
  {
   "tr": "Aynı amaç, başka biçim: „for“ sonrası fiil „-ing“ alıyor.",
   "kind": "build.hint",
-  "de": "Derselbe Zweck, andere Form: nach „for“ steht das Verb auf „-ing“ — deutsch „zum Finden“."
+  "de": "Derselbe Zweck, andere Form: Nach „for“ steht das Verb auf „-ing“ — deutsch „zum Finden“."
  },
  {
   "tr": "Alet için „work“ çalışmak demek; üçüncü tekilde „doesn't“.",
@@ -367,7 +367,7 @@
  {
   "tr": "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe „çalındı“ der ve faili hiç anmaz.",
   "kind": "build.hint",
-  "de": "Englisch setzt hier „someone“ statt eines Passivs. Deutsch macht es wie das Türkische: mein Handy wurde gestohlen."
+  "de": "Englisch setzt hier „someone“ statt eines Passivs. Deutsch macht es wie das Türkische: Mein Handy wurde gestohlen."
  },
  {
   "tr": "Buradaki „they“ belirsiz: belediye. Türkçe edilgen kurardı, İngilizce özneyi boş bırakmıyor.",
@@ -377,21 +377,21 @@
  {
   "tr": "Metnin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Textes: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Textes: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Yazının sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Beitrags: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Beitrags: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Kuralların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Regeln: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Regeln: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Uygulamaların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Apps: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Apps: Bring sie in die richtige Ordnung."
  }
 ]

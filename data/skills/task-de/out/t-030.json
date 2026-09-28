@@ -202,7 +202,7 @@
  {
   "tr": "Edilgen soru: düzenleyen kimse odada değil.",
   "kind": "build.hint",
-  "de": "Passivfrage: wer ausstellt, sitzt nicht in diesem Raum."
+  "de": "Passivfrage: Wer ausstellt, sitzt nicht in diesem Raum."
  },
  {
   "tr": "„should“ öğüt; „ensure“ sonrası „that“ düşebiliyor.",
@@ -222,7 +222,7 @@
  {
   "tr": "Ayarlanmış gelecek: saat belli ve karşı taraf biliyor.",
   "kind": "build.hint",
-  "de": "Verabredete Zukunft: die Uhrzeit steht fest und die andere Seite weiß davon."
+  "de": "Verabredete Zukunft: Die Uhrzeit steht fest und die andere Seite weiß davon."
  },
  {
   "tr": "Resmî kayıtta „but“ yerine „although“; kısaltma da yok.",
@@ -237,12 +237,12 @@
  {
   "tr": "Yasak değil, gerek yok: formdaki küçük sözcük „optional“.",
   "kind": "build.hint",
-  "de": "Kein Verbot, keine Pflicht: das kleine Wort auf dem Formular heißt „optional“."
+  "de": "Kein Verbot, keine Pflicht: Das kleine Wort auf dem Formular heißt „optional“."
  },
  {
   "tr": "Zaman yok: bu bir olay değil, işleyiş. Her zaman böyle olur.",
   "kind": "build.hint",
-  "de": "Keine Zeitangabe: das ist kein Ereignis, sondern der Ablauf. So läuft es immer."
+  "de": "Keine Zeitangabe: Das ist kein Ereignis, sondern der Ablauf. So läuft es immer."
  },
  {
   "tr": "Anlatının kendi anı: sade geçmiş. „had“ burada yanlış olurdu.",
@@ -252,7 +252,7 @@
  {
   "tr": "Gerçek olmayan koşul: geçmiş biçim burada geçmişi anlatmıyor.",
   "kind": "build.hint",
-  "de": "Irreale Bedingung: die Vergangenheitsform meint hier keine Vergangenheit."
+  "de": "Irreale Bedingung: Die Vergangenheitsform meint hier keine Vergangenheit."
  },
  {
   "tr": "„By the time“ iki geçmişi bağlıyor; uzama varıştan önce olmuş.",

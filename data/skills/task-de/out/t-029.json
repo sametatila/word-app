@@ -167,12 +167,12 @@
  {
   "tr": "Kılavuz dili edilgen: kimin açtığı önemsiz.",
   "kind": "build.hint",
-  "de": "Die Sprache der Anleitung ist Passiv: wer einschaltet, ist gleich."
+  "de": "Die Sprache der Anleitung ist Passiv: Wer einschaltet, ist gleich."
  },
  {
   "tr": "Virgül YOK: birçok yer arasından bunu seçiyor.",
   "kind": "build.hint",
-  "de": "KEIN Komma: der Satz wählt einen Ort aus vielen. Deutsch setzt trotzdem eins."
+  "de": "KEIN Komma: Der Satz wählt einen Ort aus vielen. Deutsch setzt trotzdem eins."
  },
  {
   "tr": "Tarih verilmiyor ve süre sürüyor: present perfect.",
@@ -217,7 +217,7 @@
  {
   "tr": "„claim“ burada „söyledi“ değil: kaynak tek ve doğrulanmamış.",
   "kind": "build.hint",
-  "de": "„claim“ heißt hier nicht einfach „sagte“: die Quelle ist einzeln und ungeprüft."
+  "de": "„claim“ heißt hier nicht einfach „sagte“: Die Quelle ist einzeln und ungeprüft."
  },
  {
   "tr": "Aktarılınca zaman geriye kayıyor: „changed“ → „had changed“.",
@@ -237,7 +237,7 @@
  {
   "tr": "İki virgül: kasaba zaten belli, arada duran yalnızca ek bilgi.",
   "kind": "build.hint",
-  "de": "Zwei Kommas: die Stadt steht fest, dazwischen nur eine Zusatzinfo. Im Deutschen sagt das Komma das nicht."
+  "de": "Zwei Kommas: Die Stadt steht fest, dazwischen nur eine Zusatzinfo. Im Deutschen sagt das Komma das nicht."
  },
  {
   "tr": "„prefer“ doğrudan nesne alıyor; adın yerini yine „one“ tutuyor.",
@@ -267,7 +267,7 @@
  {
   "tr": "„although“ beklenmedik olanı bağlıyor: ikinci yarı birinciyi geri alıyor.",
   "kind": "build.hint",
-  "de": "„although“ hängt das Unerwartete an: die zweite Hälfte nimmt die erste zurück. Deutsch sagt „obwohl“."
+  "de": "„although“ hängt das Unerwartete an: Die zweite Hälfte nimmt die erste zurück. Deutsch sagt „obwohl“."
  },
  {
   "tr": "„must“ kuralın kendisinden geliyor; „have to“ da olurdu ama bu daha sert.",
@@ -282,6 +282,6 @@
  {
   "tr": "Haberlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Meldungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Meldungen: Bring sie in die richtige Ordnung."
  }
 ]

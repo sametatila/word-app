@@ -268,7 +268,7 @@ export const enB2P16: SkillExercise[] = [
           "for it. " +
           "What we propose is a shared garden with eight raised beds, two benches and a rain barrel. " +
           "The beds would be built by volunteers, and the materials would cost around nine hundred " +
-          "pounds, most of which we have already raised. " +
+          "dollars, most of which we have already raised. " +
           "We recognize that residents who still dry clothes outside would lose that space, so we " +
           "would keep two lines along the south wall, and we would rather you didn't remove them. " +
           "A committee of four residents, whose names are attached, would be responsible for the " +

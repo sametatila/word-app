@@ -128,8 +128,8 @@ export const enB1P8: SkillExercise[] = [
     segments: [
       { speaker: "Ms. Fenton", text: "Right, bikes. We now have nine people cycling in and space for four. Ideas, please." },
       { speaker: "Ahmet", text: "The old storage room by the back door is empty. Six bikes would fit easily, maybe eight." },
-      { speaker: "Ms. Fenton", text: "It's empty because the door doesn't lock. That's a hundred and forty pounds for a new lock, and it isn't in this year's budget." },
-      { speaker: "Clare", text: "Cheaper idea: two more racks outside, under the roof. About sixty pounds each." },
+      { speaker: "Ms. Fenton", text: "It's empty because the door doesn't lock. That's a hundred and forty dollars for a new lock, and it isn't in this year's budget." },
+      { speaker: "Clare", text: "Cheaper idea: two more racks outside, under the roof. About sixty dollars each." },
       { speaker: "Ahmet", text: "Outside is fine in June. In November people stop cycling because the bike gets wet and nobody says why." },
       { speaker: "Clare", text: "Then let's do both, but not at once. Racks now, and the storage room when the budget opens in April." },
       { speaker: "Ms. Fenton", text: "I can agree to that. One condition: if we open the room, we need a booking system, otherwise the same three bikes live there permanently." },
@@ -151,7 +151,7 @@ export const enB1P8: SkillExercise[] = [
         text: "Why is the storage room empty?",
         options: ["It is too small.", "The door doesn't lock.", "It is used for deliveries."],
         answer: 1,
-        explain: "„It's empty because the door doesn't lock.“ Yeni kilit yüz kırk sterlin ve bu yılki bütçede yok.",
+        explain: "„It's empty because the door doesn't lock.“ Yeni kilit yüz kırk dolar ve bu yılki bütçede yok.",
       },
       {
         kind: "truefalse",
@@ -162,11 +162,11 @@ export const enB1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Each new rack costs about ___ pounds.",
+        text: "Each new rack costs about ___ dollars.",
         options: [],
         answer: 0,
         accept: ["sixty", "60"],
-        explain: "„About sixty pounds each.“",
+        explain: "„About sixty dollars each.“",
       },
       {
         kind: "short_answer",
@@ -250,7 +250,7 @@ export const enB1P8: SkillExercise[] = [
         ],
         sample:
           "I took my bike in on a Tuesday morning with a broken gear cable and a wheel that had " +
-          "been making a noise for weeks. They gave me a quote of thirty-five pounds before " +
+          "been making a noise for weeks. They gave me a quote of thirty-five dollars before " +
           "starting and called me when they found that the chain also needed replacing, " +
           "which took it to fifty-two. " +
           "What I liked most was that phone call. They didn't try to sell me anything I didn't " +

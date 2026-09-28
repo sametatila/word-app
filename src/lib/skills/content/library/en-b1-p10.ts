@@ -37,7 +37,7 @@ export const enB1P10: SkillExercise[] = [
       "on the apartment below yours. In March a colleague finally got access and took a real reading. " +
       "It turned out that the estimate was too low, and the difference has now been added " +
       "to one bill.\n\n" +
-      "This means you owe two hundred and forty pounds more than you expected. " +
+      "This means you owe two hundred and forty dollars more than you expected. " +
       "We understand that this is a large amount to arrive at once, and it is not your fault.\n\n" +
       "You have three options. You can pay the full amount by April 30. You can pay in six " +
       "monthly installments at no extra cost — just reply to this letter or call us. " +
@@ -77,11 +77,11 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The customer owes ___ hundred and forty pounds more.",
+        text: "The customer owes ___ hundred and forty dollars more.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„you owe two hundred and forty pounds more than you expected“.",
+        explain: "„you owe two hundred and forty dollars more than you expected“.",
       },
       {
         kind: "short_answer",

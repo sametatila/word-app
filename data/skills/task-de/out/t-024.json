@@ -172,7 +172,7 @@
  {
   "tr": "„Let's“ sonrası fiil eksiz ve „to“ almıyor.",
   "kind": "build.hint",
-  "de": "Nach „Let's“ steht das nackte Verb, ohne „to“."
+  "de": "Nach „Let's“ steht das Verb in der Grundform, ohne „to“."
  },
  {
   "tr": "Belirli bir akşam: simple past, gün „on“ ile.",
@@ -247,7 +247,7 @@
  {
   "tr": "„water“ sayılamaz: „isn't any“ geliyor, „aren't any“ değil.",
   "kind": "build.hint",
-  "de": "„water“ ist unzählbar: es heißt „isn't any“, nicht „aren't any“."
+  "de": "„water“ ist unzählbar: Es heißt „isn't any“, nicht „aren't any“."
  },
  {
   "tr": "Fiil düşüyor, „to“ kalıyor: „I'd love to come“ın kısası bu.",
@@ -282,7 +282,7 @@
  {
   "tr": "„How about“ sonrası fiil „-ing“ biçimine giriyor, mastar olmaz.",
   "kind": "build.hint",
-  "de": "Nach „How about“ steht das Verb auf „-ing“. Deutsch nimmt dort ein Nomen: wie wäre es mit einer Bustour."
+  "de": "Nach „How about“ steht das Verb auf „-ing“. Deutsch nimmt dort ein Nomen: Wie wäre es mit einer Bustour."
  },
  {
   "tr": "Davetin kalıbı „would you like“; „do you want“ daha sert durur.",
@@ -297,6 +297,6 @@
  {
   "tr": "Gezinin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Reise: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Reise: Bring sie in die richtige Ordnung."
  }
 ]

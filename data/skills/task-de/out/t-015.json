@@ -302,16 +302,16 @@
  {
   "tr": "Kaan'ın anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Kaan: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Kaan: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sorulan şeylerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Fragen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Fragen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sorulan yerlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der erfragten Orte: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der erfragten Orte: Bring sie in die richtige Ordnung."
  }
 ]

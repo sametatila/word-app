@@ -276,7 +276,7 @@ export const enB2P19: SkillExercise[] = [
           "all her life. She is neutered, vaccinated and very calm, and she currently lives with " +
           "my mother, who is moving into a nursing home. " +
           "To reduce any risk, I would be willing to pay an additional deposit of two hundred " +
-          "pounds and to have the carpets professionally cleaned when I leave. I would also take " +
+          "dollars and to have the carpets professionally cleaned when I leave. I would also take " +
           "out insurance that covers damage caused by pets, and I would take full responsibility " +
           "for anything it does not cover. " +
           "I have attached a letter from my mother's landlord, confirming that there has been no " +

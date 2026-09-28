@@ -18,7 +18,7 @@ export const enB1P20: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "reading",
-    title: "I'd Rather Not Go to Lisbon",
+    title: "I'd Rather Not Go to New Orleans",
     genre: "letter",
     intro: "Bir tavsiye köşesi: arkadaşlarının pahalı doğum günü gezisine gitmek istemeyen biri yazıyor, köşe yazarı cevap veriyor.",
     gloss: [
@@ -37,10 +37,10 @@ export const enB1P20: SkillExercise[] = [
     text:
       "Dear Maggie,\n\n" +
       "Six of my oldest friends are turning thirty this year, and someone had the idea that we " +
-      "should celebrate with a long weekend in Lisbon. Everybody said yes immediately. I didn't " +
+      "should celebrate with a long weekend in New Orleans. Everybody said yes immediately. I didn't " +
       "say anything, which they took as a yes too.\n\n" +
       "The problem is money. The flights and the apartment together will cost about four hundred " +
-      "pounds, and I'm saving for a deposit on an apartment of my own. I'd rather spend one evening with " +
+      "dollars, and I'm saving for a deposit on an apartment of my own. I'd rather spend one evening with " +
       "them here than a weekend there. But I'd hate to be the person who spoils it. What should " +
       "I do? — Quietly Counting\n\n" +
       "Dear Quietly Counting,\n\n" +
@@ -48,14 +48,14 @@ export const enB1P20: SkillExercise[] = [
       "grows around you, and the harder it is to step out without a drama.\n\n" +
       "I'd rather you didn't invent an excuse, either. “I'm busy that weekend” will be checked " +
       "against your photos online within a day. The truth is simpler: you're saving for something " +
-      "important, and four hundred pounds is too much right now. Most people respect that more " +
+      "important, and four hundred dollars is too much right now. Most people respect that more " +
       "than you expect.\n\n" +
       "Then offer something. Suggest that you organize the first evening when they come back, " +
       "with their photos and your food. That way you are choosing a different part of the " +
       "celebration, not refusing all of it. — Maggie",
     questions: [
       {
-        text: "Why doesn't the writer of the letter want to go to Lisbon?",
+        text: "Why doesn't the writer of the letter want to go to New Orleans?",
         options: [
           "The writer is afraid of flying.",
           "The writer has to work that weekend.",
@@ -79,11 +79,11 @@ export const enB1P20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The trip will cost about four ___ pounds.",
+        text: "The trip will cost about four ___ dollars.",
         options: [],
         answer: 0,
         accept: ["hundred"],
-        explain: "„will cost about four hundred pounds“.",
+        explain: "„will cost about four hundred dollars“.",
       },
       {
         kind: "short_answer",
@@ -129,10 +129,10 @@ export const enB1P20: SkillExercise[] = [
       { speaker: "Omar", text: "Right, the reunion. Twenty years since we left school, and we have to choose a place by Friday. Options: the Crown Hotel, the school hall, or Jana's idea." },
       { speaker: "Jana", text: "My idea is a picnic in Hilltop Park. It's free, children can come, and nobody has to dress up. I'd rather be outside than sit in a room with a DJ." },
       { speaker: "Clare", text: "I like it, but it's in June. If it rains, we've got a hundred people and nowhere to go. We'd better have a plan B." },
-      { speaker: "Omar", text: "The Crown is easy. They do the food and the tables. But it's thirty pounds a person, and some people just won't come for that." },
+      { speaker: "Omar", text: "The Crown is easy. They do the food and the tables. But it's thirty dollars a person, and some people just won't come for that." },
       { speaker: "Jana", text: "I'd prefer the school hall to the hotel. At least it means something. We could look at the old photos on the walls." },
-      { speaker: "Clare", text: "What if we do both? The park in the afternoon, and we book the school hall as a backup in case it rains. It's only eighty pounds." },
-      { speaker: "Omar", text: "I'd rather not pay for a room we might not use, but eighty pounds split a hundred ways is nothing. Fine. Jana, you'd better check the park rules for barbecues." },
+      { speaker: "Clare", text: "What if we do both? The park in the afternoon, and we book the school hall as a backup in case it rains. It's only eighty dollars." },
+      { speaker: "Omar", text: "I'd rather not pay for a room we might not use, but eighty dollars split a hundred ways is nothing. Fine. Jana, you'd better check the park rules for barbecues." },
     ],
     questions: [
       {
@@ -149,18 +149,18 @@ export const enB1P20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The Crown Hotel costs thirty pounds a person.",
+        text: "The Crown Hotel costs thirty dollars a person.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„it's thirty pounds a person“.",
+        explain: "„it's thirty dollars a person“.",
       },
       {
         kind: "gapfill",
-        text: "Booking the school hall as a backup costs ___ pounds.",
+        text: "Booking the school hall as a backup costs ___ dollars.",
         options: [],
         answer: 0,
         accept: ["eighty", "80"],
-        explain: "„It's only eighty pounds.“",
+        explain: "„It's only eighty dollars.“",
       },
       {
         kind: "short_answer",

@@ -167,12 +167,12 @@
  {
   "tr": "„otherwise“ UYARIYOR: yapmazsan şu olur.",
   "kind": "build.hint",
-  "de": "„otherwise“ WARNT: wenn du es nicht tust, passiert das."
+  "de": "„otherwise“ WARNT: Wenn du es nicht tust, passiert das."
  },
  {
   "tr": "Edilgen ve zamansız: işleyiş anlatılıyor.",
   "kind": "build.hint",
-  "de": "Passiv und zeitlos: der Ablauf wird beschrieben."
+  "de": "Passiv und zeitlos: Der Ablauf wird beschrieben."
  },
  {
   "tr": "„unless“ olumsuzluğu kendi içinde taşıyor.",
@@ -187,7 +187,7 @@
  {
   "tr": "En güçlü ve en dar: takvimde günüyle duruyor.",
   "kind": "build.hint",
-  "de": "Am stärksten und am engsten: es steht mit dem Tag im Kalender."
+  "de": "Am stärksten und am engsten: Es steht mit dem Tag im Kalender."
  },
  {
   "tr": "„besides“ elindekinden başlayıp üstüne KATIYOR.",
@@ -197,7 +197,7 @@
  {
   "tr": "„instead“ DEĞİŞTİRİYOR: eklemiyor, yerine koyuyor.",
   "kind": "build.hint",
-  "de": "„instead“ TAUSCHT: es fügt nichts hinzu, es ersetzt."
+  "de": "„instead“ TAUSCHT: Es fügt nichts hinzu, es ersetzt."
  },
  {
   "tr": "„that“ burada da özne konumunda; o yüzden kalıyor.",
@@ -222,7 +222,7 @@
  {
   "tr": "Elde görünen veri var: ölçümler bir yöne işaret ediyor.",
   "kind": "build.hint",
-  "de": "Es liegen Daten vor: die Messungen zeigen in eine Richtung."
+  "de": "Es liegen Daten vor: Die Messungen zeigen in eine Richtung."
  },
  {
   "tr": "Önce olan iş „had“ + üçüncü hâl; konuşma sonra geliyor.",
@@ -252,12 +252,12 @@
  {
   "tr": "Gerçek olmayan koşul: geçmiş biçim olmayan bir şimdiyi anlatıyor.",
   "kind": "build.hint",
-  "de": "Irreale Bedingung: die Vergangenheitsform meint eine Gegenwart, die es nicht gibt."
+  "de": "Irreale Bedingung: Die Vergangenheitsform meint eine Gegenwart, die es nicht gibt."
  },
  {
   "tr": "Edilgen ve zamansız: ilacın işleyişi anlatılıyor, emir verilmiyor.",
   "kind": "build.hint",
-  "de": "Passiv und zeitlos: die Wirkweise des Medikaments wird beschrieben, kein Befehl."
+  "de": "Passiv und zeitlos: Die Wirkweise des Medikaments wird beschrieben, kein Befehl."
  },
  {
   "tr": "„whether“ ile „if“ burada aynı işi görüyor; „whether“ biraz daha resmî.",
@@ -277,7 +277,7 @@
  {
   "tr": "Prospektüsün sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Beipackzettels: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Beipackzettels: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Kanıt sırası: en zayıftan en güçlüye koy.",

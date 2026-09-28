@@ -187,7 +187,7 @@
  {
   "tr": "Yarık cümle: „what“ öbeğinden sonra „is“ geliyor.",
   "kind": "build.hint",
-  "de": "Spaltsatz: auf den „what“-Teil folgt „is“."
+  "de": "Spaltsatz: Auf den „what“-Teil folgt „is“."
  },
  {
   "tr": "İki nesne öne çıkmış; özne ile fiil yer değiştirmiyor.",
@@ -237,7 +237,7 @@
  {
   "tr": "Orta çatı: okuyan kimse adlandırılmıyor.",
   "kind": "build.hint",
-  "de": "Medium: niemand wird als Leser genannt."
+  "de": "Medium: Niemand wird als Leser genannt."
  },
  {
   "tr": "„be“ olduğu gibi kalıyor; olumsuz öznede.",
@@ -257,12 +257,12 @@
  {
   "tr": "Orta çatı: özne okunan şey, fiil etken biçimde.",
   "kind": "build.hint",
-  "de": "Medium: das Subjekt ist das Gelesene, das Verb steht aktiv."
+  "de": "Medium: Das Subjekt ist das Gelesene, das Verb steht aktiv."
  },
  {
   "tr": "Edilgen ortaç: bağlam değişince değer değişiyor.",
   "kind": "build.hint",
-  "de": "Passives Partizip: ändert sich der Zusammenhang, ändert sich der Wert."
+  "de": "Passives Partizip: Ändert sich der Zusammenhang, ändert sich der Wert."
  },
  {
   "tr": "Öne çıkarılmış nesne; „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
@@ -272,12 +272,12 @@
  {
   "tr": "Öne çıkarılmış nesne: „what“ öbeğinden sonra „is“ değil, bir özne geliyor.",
   "kind": "build.hint",
-  "de": "Vorangestelltes Objekt: auf den „what“-Teil folgt nicht „is“, sondern ein Subjekt."
+  "de": "Vorangestelltes Objekt: Auf den „what“-Teil folgt nicht „is“, sondern ein Subjekt."
  },
  {
   "tr": "Sondaki boşluk: fiil bir önceki cümleden geliyor.",
   "kind": "build.hint",
-  "de": "Die Lücke am Ende: das Verb kommt aus dem vorigen Satz."
+  "de": "Die Lücke am Ende: Das Verb kommt aus dem vorigen Satz."
  },
  {
   "tr": "„may well“: olası, ama ne kadar olduğu söylenmiyor.",
@@ -287,7 +287,7 @@
  {
   "tr": "İki isim: ikincisi birincisini yeniden adlandırıyor.",
   "kind": "build.hint",
-  "de": "Zwei Substantive: das zweite benennt das erste neu."
+  "de": "Zwei Substantive: Das zweite benennt das erste neu."
  },
  {
   "tr": "Olumsuzla söylenen olumlu; soru eki odaya devrediyor.",
@@ -302,6 +302,6 @@
  {
   "tr": "Bağlayıcıların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Verknüpfungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Verknüpfungen: Bring sie in die richtige Ordnung."
  }
 ]

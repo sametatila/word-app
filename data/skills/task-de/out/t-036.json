@@ -172,7 +172,7 @@
  {
   "tr": "Karışık koşul: sonuç bugüne ait.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge gehört dem Heute."
+  "de": "Gemischte Bedingung: Die Folge gehört dem Heute."
  },
  {
   "tr": "Gelecekte bir tarihten geriye bakış.",
@@ -182,17 +182,17 @@
  {
   "tr": "Çıkarım: kanıt tek bir okuma bırakıyor.",
   "kind": "build.hint",
-  "de": "Ein Schluss: der Beleg lässt nur eine Lesart."
+  "de": "Ein Schluss: Der Beleg lässt nur eine Lesart."
  },
  {
   "tr": "Kanıt kapatıyor: olumsuzu „can't have“.",
   "kind": "build.hint",
-  "de": "Der Beleg schließt es aus: die Verneinung ist „can't have“."
+  "de": "Der Beleg schließt es aus: Die Verneinung ist „can't have“."
  },
  {
   "tr": "Yine kapalı: durma kararı o haftaya aitti.",
   "kind": "build.hint",
-  "de": "Wieder geschlossen: die Entscheidung gehörte jener Woche."
+  "de": "Wieder geschlossen: Die Entscheidung gehörte jener Woche."
  },
  {
   "tr": "„only“ da bir sınırlama; kapıyı o da açıyor.",
@@ -217,12 +217,12 @@
  {
   "tr": "Üçüncü hâlle başlıyor: durduran söylenmiyor.",
   "kind": "build.hint",
-  "de": "Beginnt mit der dritten Form: wer aussetzte, wird nicht genannt."
+  "de": "Beginnt mit der dritten Form: Wer aussetzte, wird nicht genannt."
  },
  {
   "tr": "Üçüncü hâlle başlıyor: yapıştıran söylenmiyor.",
   "kind": "build.hint",
-  "de": "Beginnt mit der dritten Form: wer klebte, wird nicht genannt."
+  "de": "Beginnt mit der dritten Form: Wer klebte, wird nicht genannt."
  },
  {
   "tr": "Devrilen ana cümle: „will“ özneden öne geçiyor.",
@@ -247,7 +247,7 @@
  {
   "tr": "Sınama: fiilin önüne bir ad koy, cümle hâlâ doğru mu?",
   "kind": "build.hint",
-  "de": "Die Probe: setz einen Namen vor das Verb — stimmt der Satz noch?"
+  "de": "Die Probe: Setz einen Namen vor das Verb — stimmt der Satz noch?"
  },
  {
   "tr": "Öne çıkan öbek devrilmiyor; devrilen arkasından gelen.",
@@ -262,31 +262,31 @@
  {
   "tr": "Notun sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Notiz: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Notiz: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Eklerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Endungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Endungen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sertliğin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Schärfe: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Schärfe: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Talimatın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Anleitung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Anleitung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Tarafların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Parteien: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Parteien: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Uyuşmazlığın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Streitfalls: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Streitfalls: Bring sie in die richtige Ordnung."
  }
 ]

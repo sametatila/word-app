@@ -242,7 +242,7 @@ export const a1U14: SkillExercise[] = [
           "Die Person möchte Geld zurück",
         ],
         answer: 0,
-        explain: "„Stimmt so“ = üstü kalsın. 38 Euro'luk yolculuğa 40 Euro veriliyor.",
+        explain: "„Stimmt so“ = üstü kalsın. 38 avroluk yolculuğa 40 avro veriliyor.",
       },
           {
         kind: "gapfill",

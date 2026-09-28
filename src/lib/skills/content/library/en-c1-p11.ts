@@ -20,7 +20,7 @@ export const enC1P11: SkillExercise[] = [
     skill: "reading",
     title: "The Library That Let People Talk",
     genre: "article",
-    intro: "Bir makale: sessizlik kuralını birinci katta kaldıran bir kütüphane ve dört yıl sonra ortaya çıkan tablo.",
+    intro: "Bir makale: sessizlik kuralını zemin katta (Amerikan sayımında first floor zemin kattır) kaldıran bir kütüphane ve dört yıl sonra ortaya çıkan tablo.",
     gloss: [
       { de: "petition", tr: "dilekçe" },
       { de: "loyal", tr: "sadık" },
@@ -92,7 +92,7 @@ export const enC1P11: SkillExercise[] = [
         text: "The quiet readers stopped using the library altogether.",
         options: ["True", "False"],
         answer: 1,
-        explain: "Kaybolmadılar; sessizliğin gerçekten uygulandığı üçüncü kata çıktılar.",
+        explain: "Kaybolmadılar; sessizliğin gerçekten uygulandığı ikinci kata (third floor) çıktılar.",
       },
       {
         kind: "gapfill",

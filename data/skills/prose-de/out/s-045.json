@@ -653,5 +653,10 @@
   "tr": "sağlama",
   "kind": "gloss.tr",
   "de": "die Bereitstellung"
+ },
+ {
+  "tr": "tamirci",
+  "kind": "gloss.tr",
+  "de": "der Monteur"
  }
 ]

@@ -197,7 +197,7 @@
  {
   "tr": "Varsayım: savın dayanağı burada.",
   "kind": "build.hint",
-  "de": "Eine Annahme: hier liegt der Grund des Arguments."
+  "de": "Eine Annahme: Hier liegt der Grund des Arguments."
  },
  {
   "tr": "İki oda konuşanların yerini tutuyor.",
@@ -277,7 +277,7 @@
  {
   "tr": "Biri özellik, öteki ilişki: fark nesnede değil.",
   "kind": "build.hint",
-  "de": "Das eine ist eine Eigenschaft, das andere eine Beziehung: der Unterschied liegt nicht im Gegenstand."
+  "de": "Das eine ist eine Eigenschaft, das andere eine Beziehung: Der Unterschied liegt nicht im Gegenstand."
  },
  {
   "tr": "„Only in name“ söyleneni yadsımadan geri alıyor.",
@@ -317,7 +317,7 @@
  {
   "tr": "İki edilgen, iki ayrı tür: biri usul gizliyor, öteki imza.",
   "kind": "build.hint",
-  "de": "Zwei Passive, zwei Arten: das eine verbirgt ein Verfahren, das andere eine Unterschrift."
+  "de": "Zwei Passive, zwei Arten: Das eine verbirgt ein Verfahren, das andere eine Unterschrift."
  },
  {
   "tr": "Cümle başında „albeit“ değil „although“; ardında yine fiilsiz bir isim öbeği.",

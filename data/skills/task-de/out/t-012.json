@@ -57,7 +57,7 @@
  {
   "tr": "„be“ öne geçer. Bir önceki üniteye dikkat: „do“ ile kurulan soru başka bir fiil ailesi.",
   "kind": "rewrite.why",
-  "de": "„be“ rückt nach vorn, genau wie im Deutschen. Achtung auf die vorige Einheit: die Frage mit „do“ betrifft eine andere Verbfamilie."
+  "de": "„be“ rückt nach vorn, genau wie im Deutschen. Achtung auf die vorige Einheit: Die Frage mit „do“ betrifft eine andere Verbfamilie."
  },
  {
   "tr": "Bu kim?",
@@ -272,11 +272,11 @@
  {
   "tr": "Ayse'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in Ayses Erzählung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in Ayses Erzählung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Deniz'in anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in Deniz' Erzählung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in Deniz' Erzählung: Bring sie in die richtige Ordnung."
  }
 ]

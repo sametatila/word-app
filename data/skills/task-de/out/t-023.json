@@ -217,7 +217,7 @@
  {
   "tr": "Türkçede ad düşüyor, İngilizcede yerine „one“ konuyor.",
   "kind": "build.hint",
-  "de": "Türkisch lässt das Nomen weg, Englisch setzt „one“ ein. Deutsch braucht dort kein Wort: dieses ist billiger."
+  "de": "Türkisch lässt das Nomen weg, Englisch setzt „one“ ein. Deutsch braucht dort kein Wort: Dieses ist billiger."
  },
  {
   "tr": "Belirli ve kapanmış bir gün: simple past. Gün „on“ ile.",
@@ -257,7 +257,7 @@
  {
   "tr": "„expensive“ uzun: „more“ istiyor. Karşılaştırılan yine „one“.",
   "kind": "build.hint",
-  "de": "„expensive“ ist lang: es verlangt „more“. Verglichen wird wieder mit „one“."
+  "de": "„expensive“ ist lang: Es verlangt „more“. Verglichen wird wieder mit „one“."
  },
  {
   "tr": "İş yazışmasının olağan ricası; „Can you“ biraz daha kısa durur.",
@@ -267,7 +267,7 @@
  {
   "tr": "„exchange“in edatı „for“: neyle değişeceğin ondan sonra geliyor.",
   "kind": "build.hint",
-  "de": "Die Präposition von „exchange“ ist „for“: wogegen getauscht wird, kommt danach."
+  "de": "Die Präposition von „exchange“ ist „for“: Wogegen getauscht wird, kommt danach."
  },
  {
   "tr": "„replace“, eskisinin yerine yenisini koymak demek; „change“ başka iş görür.",
@@ -277,16 +277,16 @@
  {
   "tr": "Aynı cümlede iki biçim: kısa sıfat „-er“ alıyor, uzun sıfat „more“ istiyor.",
   "kind": "build.hint",
-  "de": "Zwei Formen in einem Satz: das kurze Adjektiv nimmt „-er“, das lange verlangt „more“. Deutsch hängt in beiden Fällen „-er“ an."
+  "de": "Zwei Formen in einem Satz: Das kurze Adjektiv nimmt „-er“, das lange verlangt „more“. Deutsch hängt in beiden Fällen „-er“ an."
  },
  {
   "tr": "„ago“ zamanı çiviliyor, o yüzden simple past. „have bought … ago“ diye bir cümle yok.",
   "kind": "build.hint",
-  "de": "„ago“ nagelt die Zeit fest, deshalb simple past. „have bought … ago“ gibt es nicht — Deutsch dagegen sagt genau das: ich habe es vor zwei Tagen gekauft."
+  "de": "„ago“ nagelt die Zeit fest, deshalb simple past. „have bought … ago“ gibt es nicht — Deutsch dagegen sagt genau das: Ich habe es vor zwei Tagen gekauft."
  },
  {
   "tr": "Postanedeki sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge auf der Post: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge auf der Post: Bring sie in die richtige Ordnung."
  }
 ]

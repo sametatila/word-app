@@ -227,7 +227,7 @@
  {
   "tr": "„bright“ kısa: „-er“ alıyor. İki taraf „than“ ile bağlanıyor.",
   "kind": "build.hint",
-  "de": "„bright“ ist kurz: es nimmt „-er“. Beide Seiten verbindet „than“."
+  "de": "„bright“ ist kurz: Es nimmt „-er“. Beide Seiten verbindet „than“."
  },
  {
   "tr": "„after that“ bir sonraki adımı bağlıyor; „get“in geçmişi „got“.",
@@ -292,16 +292,16 @@
  {
   "tr": "Sabahın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Vormittags: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Vormittags: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Dairelerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Wohnungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Wohnungen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Taşınma gününün sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Umzugstags: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Umzugstags: Bring sie in die richtige Ordnung."
  }
 ]

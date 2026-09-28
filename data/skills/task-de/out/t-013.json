@@ -302,12 +302,12 @@
  {
   "tr": "Pişirmenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge beim Kochen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge beim Kochen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Siparişlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Bestellungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Bestellungen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "which is why",

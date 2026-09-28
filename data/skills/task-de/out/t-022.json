@@ -202,7 +202,7 @@
  {
   "tr": "„have to“ dışarıdan gelen zorunluluk: kural böyle diyor.",
   "kind": "build.hint",
-  "de": "„have to“ ist die Pflicht von außen: die Regel sagt es so."
+  "de": "„have to“ ist die Pflicht von außen: Die Regel sagt es so."
  },
  {
   "tr": "„I think“ öneriyi yumuşatıyor; „should“ emir değil öneri.",
@@ -237,12 +237,12 @@
  {
   "tr": "En üst basamak: özne bile kayboluyor, istek kişiden ayrılıyor.",
   "kind": "build.hint",
-  "de": "Oberste Stufe: sogar das Subjekt verschwindet, die Bitte löst sich von der Person."
+  "de": "Oberste Stufe: Sogar das Subjekt verschwindet, die Bitte löst sich von der Person."
  },
  {
   "tr": "„quiet“ kısa: „-er“ alıyor ve sondaki „t“den önce „e“ düşmüyor.",
   "kind": "build.hint",
-  "de": "„quiet“ ist kurz: es nimmt „-er“ und das „e“ vor dem „t“ bleibt stehen."
+  "de": "„quiet“ ist kurz: Es nimmt „-er“ und das „e“ vor dem „t“ bleibt stehen."
  },
  {
   "tr": "Buradaki „have“ sahiplik, yardımcı fiil değil; ölçüyü „of“ bağlıyor.",
@@ -282,11 +282,11 @@
  {
   "tr": "Mektubun sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Briefes: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Briefes: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "İş geçmişinin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Berufsjahre: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Berufsjahre: Bring sie in die richtige Ordnung."
  }
 ]

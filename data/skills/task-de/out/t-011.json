@@ -42,7 +42,7 @@
  {
   "tr": "Kısa cevap sorunun yardımcı fiilini tekrarlar: soru „do“ ile kurulduysa cevap da „do“ taşır.",
   "kind": "rewrite.why",
-  "de": "Die Kurzantwort wiederholt das Hilfsverb der Frage: steht in der Frage „do“, steht es auch in der Antwort. Im Deutschen reicht ein bloßes Ja."
+  "de": "Die Kurzantwort wiederholt das Hilfsverb der Frage: Steht in der Frage „do“, steht es auch in der Antwort. Im Deutschen reicht ein bloßes Ja."
  },
  {
   "tr": "Adın ne?",
@@ -162,7 +162,7 @@
  {
   "tr": "İki „do“ var: ilki soruyu kuran yardımcı, ikincisi „yapmak“ fiili.",
   "kind": "build.hint",
-  "de": "Zweimal „do“: das erste bildet die Frage, das zweite ist das Verb machen."
+  "de": "Zweimal „do“: Das erste bildet die Frage, das zweite ist das Verb machen."
  },
  {
   "tr": "„What's“ = „What is“. Formda uzun biçim, konuşmada kısa biçim doğal.",
@@ -197,11 +197,11 @@
  {
   "tr": "Konuşmacıların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Sprecher: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Sprecher: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Ela'nın anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in Elas Erzählung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in Elas Erzählung: Bring sie in die richtige Ordnung."
  }
 ]

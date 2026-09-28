@@ -202,12 +202,12 @@
  {
   "tr": "Yine kapalı: gösterim martta bitti.",
   "kind": "build.hint",
-  "de": "Wieder geschlossen: die Spielzeit endete im März."
+  "de": "Wieder geschlossen: Die Spielzeit endete im März."
  },
  {
   "tr": "Üçüncü tür: fiil zaten isim, eki yok.",
   "kind": "build.hint",
-  "de": "Die dritte Art: das Verb ist schon ein Substantiv, ohne Endung."
+  "de": "Die dritte Art: Das Verb ist schon ein Substantiv, ohne Endung."
  },
  {
   "tr": "„does“ geliyor; ana fiil çekimini kaybediyor.",
@@ -232,7 +232,7 @@
  {
   "tr": "Karışık koşul: sonuç bu akşamın koltuklarında.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge sitzt in den Sesseln dieses Abends."
+  "de": "Gemischte Bedingung: Die Folge sitzt in den Sesseln dieses Abends."
  },
  {
   "tr": "„which is“ buradan silinebilir; virgüller şart.",
@@ -242,7 +242,7 @@
  {
   "tr": "İsim + isim: soldaki niteliyor ve tekil kalıyor.",
   "kind": "build.hint",
-  "de": "Substantiv + Substantiv: das linke bestimmt und bleibt im Singular."
+  "de": "Substantiv + Substantiv: Das linke bestimmt und bleibt im Singular."
  },
  {
   "tr": "„acquire“ → „acquisition“; kimse bunu tahmin etmiyor.",
@@ -267,21 +267,21 @@
  {
   "tr": "Eleştirinin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Kritik: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Kritik: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Künyenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Eintrags: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Eintrags: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Şenliğin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Festes: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Festes: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Bileşiğin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Kompositums: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Kompositums: Bring sie in die richtige Ordnung."
  }
 ]

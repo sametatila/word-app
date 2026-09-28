@@ -207,7 +207,7 @@
  {
   "tr": "Ek yok: bu satır yazıya ait.",
   "kind": "build.hint",
-  "de": "Kein Frageanhang: diese Zeile gehört der Schrift."
+  "de": "Kein Frageanhang: Diese Zeile gehört der Schrift."
  },
  {
   "tr": "İki taviz sözcüğü, ama gerçekte hiçbir şey verilmiyor.",
@@ -302,7 +302,7 @@
  {
   "tr": "Yer başta, özne sonda: olayı bildirmiyor, sahneliyor.",
   "kind": "build.hint",
-  "de": "Der Ort am Anfang, das Subjekt am Ende: das Ereignis wird nicht berichtet, sondern inszeniert."
+  "de": "Der Ort am Anfang, das Subjekt am Ende: Das Ereignis wird nicht berichtet, sondern inszeniert."
  },
  {
   "tr": "İkinci yarı yine eksiltili; kulak kalıbı çoktan öğrendi.",
@@ -327,6 +327,6 @@
  {
   "tr": "Dersin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Lektion: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Lektion: Bring sie in die richtige Ordnung."
  }
 ]

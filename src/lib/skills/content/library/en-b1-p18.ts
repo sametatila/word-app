@@ -234,7 +234,7 @@ export const enB1P18: SkillExercise[] = [
         ],
         sample:
           "We booked the two-hour seal trip from Bridge Street for a Saturday in August. Tickets " +
-          "were twenty-two pounds for adults and twelve for children, which felt fair for what you " +
+          "were twenty-two dollars for adults and twelve for children, which felt fair for what you " +
           "get. The boat is small, with room for about twenty people, and the captain talks the " +
           "whole time, mostly about the seals and sometimes about his dog. " +
           "The best moment was when we stopped near the rocks and a young seal swam right up to the " +

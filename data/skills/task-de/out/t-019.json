@@ -202,7 +202,7 @@
  {
   "tr": "Soruda da aynı: „did“ varken „use“, „used“ değil.",
   "kind": "build.hint",
-  "de": "In der Frage genauso: steht „did“ da, heißt es „use“, nicht „used“."
+  "de": "In der Frage genauso: Steht „did“ da, heißt es „use“, nicht „used“."
  },
  {
   "tr": "İki tekil özne, iki „was“. „weather“ hep „the“ ile.",
@@ -257,7 +257,7 @@
  {
   "tr": "„so“ sonucu söylüyor; „because“ ise sebebi. İkisi ters yönde.",
   "kind": "build.hint",
-  "de": "„so“ nennt die Folge, „because“ den Grund. Achtung, falscher Freund: englisch „so“ ist deutsch „also“, nicht „so“."
+  "de": "„so“ nennt die Folge, „because“ den Grund. Achtung, falscher Freund: Englisch „so“ ist deutsch „also“, nicht „so“."
  },
  {
   "tr": "„has gone“ hâlâ orada demek. Dönmüş olsaydı „has been“ olurdu.",
@@ -302,21 +302,21 @@
  {
   "tr": "Olayların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Ereignisse: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Ereignisse: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Günün sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Tages: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Tages: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Tatilin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Urlaubs: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Urlaubs: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Anlatımın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Erzählung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Erzählung: Bring sie in die richtige Ordnung."
  }
 ]

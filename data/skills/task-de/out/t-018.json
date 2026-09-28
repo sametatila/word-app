@@ -232,7 +232,7 @@
  {
   "tr": "„go“ düzensiz: geçmişi „went“ ve „-ed“ almıyor.",
   "kind": "build.hint",
-  "de": "„go“ ist unregelmäßig: die Vergangenheit heißt „went“ und nimmt kein „-ed“ — wie gehen und ging."
+  "de": "„go“ ist unregelmäßig: Die Vergangenheit heißt „went“ und nimmt kein „-ed“ — wie gehen und ging."
  },
  {
   "tr": "„to work“ hedef; „work“ önünde artikel almıyor.",
@@ -262,7 +262,7 @@
  {
   "tr": "İki „do“ var: ilki soruyu kuran „did“, ikincisi asıl fiil.",
   "kind": "build.hint",
-  "de": "Zweimal „do“: das erste ist das fragende „did“, das zweite das Vollverb. Das Deutsche hat dafür kein Gegenstück."
+  "de": "Zweimal „do“: Das erste ist das fragende „did“, das zweite das Vollverb. Das Deutsche hat dafür kein Gegenstück."
  },
  {
   "tr": "Soruda da aynı: „did“ geçmişi taşıyor, fiil eksiz kalıyor.",
@@ -397,21 +397,21 @@
  {
   "tr": "Vedanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Abschieds: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Abschieds: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Mesajların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Nachrichten: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Nachrichten: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Yapılanların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Handlungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Handlungen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sorulan soruların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der gestellten Fragen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der gestellten Fragen: Bring sie in die richtige Ordnung."
  }
 ]

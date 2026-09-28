@@ -75,9 +75,9 @@
   "de": "\"You can bring an item back within 30 days.\" Bei Elektronik sind es 14 Tage."
  },
  {
-  "tr": "\"We have already received your deposit of £60.\" Toplam fiyat 240 pound.",
+  "tr": "\"We have already received your deposit of $60.\" Toplam fiyat 240 dolar.",
   "kind": "explain",
-  "de": "\"We have already received your deposit of £60.\" Der Gesamtpreis liegt bei 240 Pfund."
+  "de": "\"We have already received your deposit of $60.\" Der Gesamtpreis liegt bei 240 Dollar."
  },
  {
   "tr": "\"It's cold this morning, only four degrees\" — yarın on iki derece olacak.",

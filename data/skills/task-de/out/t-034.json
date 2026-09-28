@@ -242,12 +242,12 @@
  {
   "tr": "Çizgi: başladı ve sürüyor.",
   "kind": "build.hint",
-  "de": "Eine Linie: es begann und hält an."
+  "de": "Eine Linie: Es begann und hält an."
  },
  {
   "tr": "Kural YOK demek; yasak değil.",
   "kind": "build.hint",
-  "de": "Heißt: es gibt KEINE Regel; kein Verbot."
+  "de": "Heißt: Es gibt KEINE Regel; kein Verbot."
  },
  {
   "tr": "Yasak koyuyor; kuralı kaldırmıyor.",
@@ -337,12 +337,12 @@
  {
   "tr": "Amaç: neden önce geliyor, „in order to“ + mastar.",
   "kind": "build.hint",
-  "de": "Zweck: der Grund kommt zuerst, „in order to“ + Infinitiv."
+  "de": "Zweck: Der Grund kommt zuerst, „in order to“ + Infinitiv."
  },
  {
   "tr": "Ödün: bir şeyi kabul ediyor, sonra yine de diyor.",
   "kind": "build.hint",
-  "de": "Einräumung: es räumt etwas ein und sagt trotzdem das andere."
+  "de": "Einräumung: Es räumt etwas ein und sagt trotzdem das andere."
  },
  {
   "tr": "Yer için „where“; sayı ve görev onu değiştirmiyor.",
@@ -367,21 +367,21 @@
  {
   "tr": "„by the time“ seçenek bırakmıyor: önceki iş „had“ + üçüncü hâl.",
   "kind": "build.hint",
-  "de": "„by the time“ lässt keine Wahl: das Frühere ist „had“ + dritte Form."
+  "de": "„by the time“ lässt keine Wahl: Das Frühere ist „had“ + dritte Form."
  },
  {
   "tr": "Vadinin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Tals: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Tals: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Kasabanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Kleinstadt: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Kleinstadt: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Koşulların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Bedingungen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Bedingungen: Bring sie in die richtige Ordnung."
  }
 ]

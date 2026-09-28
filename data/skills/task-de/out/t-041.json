@@ -197,7 +197,7 @@
  {
   "tr": "Karışık koşul: sonuç bu ayın ekstresinde.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge steht auf dem Auszug dieses Monats."
+  "de": "Gemischte Bedingung: Die Folge steht auf dem Auszug dieses Monats."
  },
  {
   "tr": "Yarık cümle bir adayı listeden çıkarıyor.",
@@ -212,7 +212,7 @@
  {
   "tr": "Üretken kapı: her fiile „-ing“ takılabiliyor.",
   "kind": "build.hint",
-  "de": "Die produktive Tür: an jedes Verb lässt sich „-ing“ hängen."
+  "de": "Die produktive Tür: An jedes Verb lässt sich „-ing“ hängen."
  },
  {
   "tr": "Soru sözcüğü + mastar: özne de zaman da düşüyor.",
@@ -227,12 +227,12 @@
  {
   "tr": "İlanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Anzeige: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Anzeige: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Katlamanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Faltung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Faltung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Soruda „anything“; sıfat isimden SONRA geliyor.",

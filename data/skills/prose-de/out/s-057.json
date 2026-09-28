@@ -17,7 +17,7 @@
  {
   "tr": "Çıplak soyut isim ve savın gizlediği hata.",
   "kind": "intro",
-  "de": "Das nackte abstrakte Nomen und der Fehler, den das Argument verbirgt."
+  "de": "Das abstrakte Nomen ohne Artikel und der Fehler, den das Argument verbirgt."
  },
  {
   "tr": "Orta konum belirteci ve kanıtın iki sayısı.",
@@ -162,7 +162,7 @@
  {
   "tr": "Çıplak isim, daraltma, kural; en sonda tanımlıklı çift.",
   "kind": "explain",
-  "de": "Das nackte Nomen, die Einengung, die Regel; ganz am Ende das Paar mit Artikel."
+  "de": "Das Nomen ohne Artikel, die Einengung, die Regel; ganz am Ende das Paar mit Artikel."
  },
  {
   "tr": "İki fiil, kasıt, sınırın kayması; en sonda okuma kuralı.",

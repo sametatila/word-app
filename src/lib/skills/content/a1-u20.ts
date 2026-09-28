@@ -10,7 +10,7 @@ import type { SkillExercise } from "../types";
  *             der Spielplatz, der Wald, der Fluss · das Schwimmbad,
  *             der Eintritt, das Handtuch, tauchen, tief, der Strand,
  *             das Meer, die Insel · die Sendung, der Kanal, die Serie,
- *             die Nachrichten, schauen, das Radio, die Zeitung, der Comic ·
+ *             die Nachrichten, schauen, das Radio, die Zeitung ·
  *             schade, klappen, diesmal, trotzdem, unbedingt, hoffen,
  *             vergessen, einverstanden sein
  *
@@ -100,10 +100,11 @@ export const a1U20: SkillExercise[] = [
       { de: "die Nachrichten", tr: "haberler", en: "the news" },
       { de: "die Serie", tr: "dizi", en: "series" },
       { de: "der Kanal", tr: "kanal", en: "channel" },
+      { de: "der Zeichentrickfilm", tr: "çizgi film", en: "cartoon" },
     ],
     minutes: 3,
     text:
-      "HEUTE ABEND IM FERNSEHEN\n\nKanal 1\n19:00 Die Nachrichten\n19:30 Wetter für morgen\n20:15 Film: Eine Insel im Meer\n\nKanal 2\n19:15 Sport: Fußball\n20:15 Serie: Familie Berger\n21:00 Musik aus Berlin — ein Konzert\n\nKanal 3\n19:30 Ein Comic für Kinder\n20:15 Eine Sendung für Kinder\n21:00 Die Nachrichten\n\nSie haben keinen Fernseher? Alle Sendungen laufen auch im Radio oder im Internet.",
+      "HEUTE ABEND IM FERNSEHEN\n\nKanal 1\n19:00 Die Nachrichten\n19:30 Wetter für morgen\n20:15 Film: Eine Insel im Meer\n\nKanal 2\n19:15 Sport: Fußball\n20:15 Serie: Familie Berger\n21:00 Musik aus Berlin — ein Konzert\n\nKanal 3\n19:30 Zeichentrickfilm für Kinder\n20:15 Eine Sendung für Kinder\n21:00 Die Nachrichten\n\nSie haben keinen Fernseher? Alle Sendungen laufen auch im Radio oder im Internet.",
     questions: [
       {
         text: "Wann kommen die Nachrichten auf Kanal 1?",

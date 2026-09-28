@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Calling a repairman · Building rules · My neighborhood ·
  * Local stores.
  *
- *   Kelime: repair, tool, cost, estimate, tomorrow, mechanic, drill,
+ *   Kelime: repair, tool, cost, estimate, tomorrow, drill,
  *           screw, rule, allow, forbidden, trash, quiet, be allowed,
  *           garbage can, attic, area, nearby, crowded, park, safe,
  *           neighborhood, bus stop, city center, bakery, corner store,
@@ -38,6 +38,7 @@ export const enA2U10: SkillExercise[] = [
     genre: "phone",
     intro: "Bozuk makine için telefon. Ne zaman geliyor, kaça mal oluyor?",
     gloss: [
+      { de: "repairman", tr: "tamirci" },
       { de: "washing machine", tr: "çamaşır makinesi" },
       { de: "tools", tr: "aletler" },
       { de: "part", tr: "parça" },
@@ -46,19 +47,19 @@ export const enA2U10: SkillExercise[] = [
     minutes: 5,
     text:
       "Ela: Hello, is this the repair service?\n" +
-      "Mechanic: Yes. What is the problem?\n" +
+      "Repairman: Yes. What is the problem?\n" +
       "Ela: My washing machine isn't working. It starts and then it stops after two minutes.\n" +
-      "Mechanic: Since when?\n" +
+      "Repairman: Since when?\n" +
       "Ela: Since Friday. The janitor looked at it but he had no tools.\n" +
-      "Mechanic: I see. Can you tell me the name on the machine?\n" +
+      "Repairman: I see. Can you tell me the name on the machine?\n" +
       "Ela: It says Bosch, and under it a number.\n" +
-      "Mechanic: Good. Can I come tomorrow morning?\n" +
+      "Repairman: Good. Can I come tomorrow morning?\n" +
       "Ela: Tomorrow is difficult. I work until four.\n" +
-      "Mechanic: Then Thursday at five.\n" +
+      "Repairman: Then Thursday at five.\n" +
       "Ela: That is fine. How much will it cost?\n" +
-      "Mechanic: The visit is thirty euros. With a new part it can be a hundred.\n" +
+      "Repairman: The visit is thirty euros. With a new part it can be a hundred.\n" +
       "Ela: Could you give me an estimate first?\n" +
-      "Mechanic: Of course. I look at it, I tell you the price, and then you decide.",
+      "Repairman: Of course. I look at it, I tell you the price, and then you decide.",
     questions: [
       {
         text: "What is the problem with the machine?",
@@ -67,7 +68,7 @@ export const enA2U10: SkillExercise[] = [
         explain: "„It starts and then it stops after two minutes.“",
       },
       {
-        text: "When does the mechanic come?",
+        text: "When does the repairman come?",
         options: ["on Thursday at five", "tomorrow morning", "on Friday"],
         answer: 0,
         explain: "Yarın Ela dörde kadar çalışıyor, o yüzden „Then Thursday at five.“",

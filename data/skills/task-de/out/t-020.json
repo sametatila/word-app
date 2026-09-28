@@ -272,7 +272,7 @@
  {
   "tr": "„cheap“ kısa: „-er“ alıyor. Karşılaştırma „than“ ile bağlanıyor.",
   "kind": "build.hint",
-  "de": "„cheap“ ist kurz: es nimmt „-er“, wie deutsch „billiger“. Der Vergleich wird mit „than“ verbunden."
+  "de": "„cheap“ ist kurz: Es nimmt „-er“, wie deutsch „billiger“. Der Vergleich wird mit „than“ verbunden."
  },
  {
   "tr": "„anything“ soruda; sıfat isimden SONRA geliyor: anything earlier.",
@@ -287,7 +287,7 @@
  {
   "tr": "„important“ uzun: „more“ istiyor. „importanter“ diye bir sözcük yok.",
   "kind": "build.hint",
-  "de": "„important“ ist lang: es verlangt „more“. „importanter“ gibt es nicht — Achtung, das Deutsche hängt auch hier „-er“ an: wichtiger."
+  "de": "„important“ ist lang: Es verlangt „more“. „importanter“ gibt es nicht — Achtung, das Deutsche hängt auch hier „-er“ an: wichtiger."
  },
  {
   "tr": "Hekimin ilk sorusu. „have“ ile „had“ aynı fiilden: „have“ yardımcı, „had“ asıl fiil.",
@@ -297,11 +297,11 @@
  {
   "tr": "SÜRE olduğu için „for“. Türkçe şimdiki zaman diyor, İngilizce „have lived“.",
   "kind": "build.hint",
-  "de": "Weil es die DAUER ist, steht „for“. Deutsch sagt wie das Türkische Präsens: ich wohne seit drei Jahren, englisch „have lived“."
+  "de": "Weil es die DAUER ist, steht „for“. Deutsch sagt wie das Türkische Präsens: Ich wohne seit drei Jahren, englisch „have lived“."
  },
  {
   "tr": "Hedeflerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Ziele: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Ziele: Bring sie in die richtige Ordnung."
  }
 ]

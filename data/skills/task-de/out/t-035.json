@@ -187,22 +187,22 @@
  {
   "tr": "İkinci yarık biçim: ışık isme düşüyor.",
   "kind": "build.hint",
-  "de": "Die zweite Spaltform: das Licht fällt auf das Substantiv."
+  "de": "Die zweite Spaltform: Das Licht fällt auf das Substantiv."
  },
  {
   "tr": "Yargı: olanı değil, olmayanı anlatıyor.",
   "kind": "build.hint",
-  "de": "Ein Urteil: es spricht nicht vom Geschehenen, sondern vom Fehlenden."
+  "de": "Ein Urteil: Es spricht nicht vom Geschehenen, sondern vom Fehlenden."
  },
  {
   "tr": "Çıkarım: kanıt okunuyor, emir verilmiyor.",
   "kind": "build.hint",
-  "de": "Ein Schluss: der Beleg wird gelesen, kein Befehl gegeben."
+  "de": "Ein Schluss: Der Beleg wird gelesen, kein Befehl gegeben."
  },
  {
   "tr": "Resmî biçim: edat „whom“un önüne geçiyor.",
   "kind": "build.hint",
-  "de": "Die förmliche Form: die Präposition rückt vor „whom“."
+  "de": "Die förmliche Form: Die Präposition rückt vor „whom“."
  },
  {
   "tr": "Kaynak söylenmiyor; söyleyen fiil edilgen.",
@@ -227,12 +227,12 @@
  {
   "tr": "Yine kapalı: bekleme kararı o haftaya aitti.",
   "kind": "build.hint",
-  "de": "Wieder geschlossen: die Entscheidung gehörte jener Woche."
+  "de": "Wieder geschlossen: Die Entscheidung gehörte jener Woche."
  },
  {
   "tr": "Mesafe: söylenen şey henüz doğrulanmış değil.",
   "kind": "build.hint",
-  "de": "Abstand: das Gesagte ist noch nicht bestätigt."
+  "de": "Abstand: Das Gesagte ist noch nicht bestätigt."
  },
  {
   "tr": "„Never before“ da olumsuz zarf; sıra bozuluyor.",
@@ -247,7 +247,7 @@
  {
   "tr": "Kısa yol: özne öne çıkıyor, geriye mastar kalıyor.",
   "kind": "build.hint",
-  "de": "Kurzer Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+  "de": "Kurzer Weg: Das Subjekt tritt vor, der Infinitiv bleibt zurück."
  },
  {
   "tr": "Işık isme düşüyor, gerisi „that“ın arkasına gidiyor.",
@@ -257,12 +257,12 @@
  {
   "tr": "İkinci yol: özne öne çıkıyor, geriye mastar kalıyor.",
   "kind": "build.hint",
-  "de": "Zweiter Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+  "de": "Zweiter Weg: Das Subjekt tritt vor, der Infinitiv bleibt zurück."
  },
  {
   "tr": "Yarık cümle: önce boşluk açılıyor, sonra şey geliyor.",
   "kind": "build.hint",
-  "de": "Spaltsatz: zuerst wird die Lücke geöffnet, dann kommt die Sache."
+  "de": "Spaltsatz: Zuerst wird die Lücke geöffnet, dann kommt die Sache."
  },
  {
   "tr": "Taşınacak yardımcı fiil yoksa „do“ bunun için geliyor.",
@@ -292,7 +292,7 @@
  {
   "tr": "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı bugüne geliyor.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge dauert an, die zweite Hälfte reicht bis heute."
+  "de": "Gemischte Bedingung: Die Folge dauert an, die zweite Hälfte reicht bis heute."
  },
  {
   "tr": "Olumsuz zarf başa geçince yardımcı fiil özneden ÖNE geliyor.",
@@ -302,11 +302,11 @@
  {
   "tr": "Açılışın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Eröffnung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Eröffnung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Tutanağın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Protokolls: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Protokolls: Bring sie in die richtige Ordnung."
  }
 ]

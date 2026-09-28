@@ -277,7 +277,7 @@
  {
   "tr": "Zamir „it“ iki parçanın ARASINA girer: try it on. „try on it“ yanlış.",
   "kind": "build.hint",
-  "de": "Das Pronomen „it“ steht ZWISCHEN den Teilen: try it on. „try on it“ ist falsch; deutsch ebenso: zieh es an."
+  "de": "Das Pronomen „it“ steht ZWISCHEN den Teilen: try it on. „try on it“ ist falsch; deutsch ebenso: Zieh es an."
  },
  {
   "tr": "Soruda „be“ öne geçiyor: you are → are you. „going to“ yerinde kalıyor.",
@@ -302,16 +302,16 @@
  {
   "tr": "Kaan'ın saydığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge, in der Kaan zählt: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge, in der Kaan zählt: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Nil'in anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Nil: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Nil: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Ali'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Ali: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Ali: Bring sie in die richtige Ordnung."
  }
 ]

@@ -60,7 +60,7 @@
   "en": "„sehen“ is not a change of place, hence haben: Ich habe … gesehen."
  },
  {
-  "tr": "„Stimmt so“ = üstü kalsın. 38 Euro'luk yolculuğa 40 Euro veriliyor.",
+  "tr": "„Stimmt so“ = üstü kalsın. 38 avroluk yolculuğa 40 avro veriliyor.",
   "kind": "explain",
   "en": "„Stimmt so“ = keep the change. 40 euros are handed over for a 38-euro ride."
  },
@@ -400,9 +400,9 @@
   "en": "Difficult feedback. In what order do the observation, the suggestion and the question come?"
  },
  {
-  "tr": "'Price: 320 pounds a month.' satırı aylık ücreti veriyor: 320 pound.",
+  "tr": "'Price: 320 dollars a month.' satırı aylık ücreti veriyor: 320 dolar.",
   "kind": "explain",
-  "en": "The line 'Price: 320 pounds a month.' gives the monthly rate: 320 pounds."
+  "en": "The line 'Price: 320 dollars a month.' gives the monthly rate: 320 dollars."
  },
  {
   "tr": "„als“ bir karşılaştırma bağlacıdır, yani -er eki gerekir: älter als.",

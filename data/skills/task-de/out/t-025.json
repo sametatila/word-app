@@ -227,7 +227,7 @@
  {
   "tr": "„turn off“ ve „turn on“ ayrılabiliyor: nesne araya giriyor.",
   "kind": "build.hint",
-  "de": "„turn off“ und „turn on“ sind trennbar: das Objekt steht dazwischen, wie deutsch „schalt es aus“."
+  "de": "„turn off“ und „turn on“ sind trennbar: Das Objekt steht dazwischen, wie deutsch „schalt es aus“."
  },
  {
   "tr": "„worry“ da „about“ alıyor; iki kalıp aynı edatı paylaşıyor.",
@@ -277,7 +277,7 @@
  {
   "tr": "Aynı çekme burada da var: olumsuz „believe“e takılıyor, iç cümleye değil.",
   "kind": "build.hint",
-  "de": "Dieselbe Verschiebung: die Verneinung hängt an „believe“, nicht am Nebensatz — genau wie deutsch „ich glaube nicht, dass …“."
+  "de": "Dieselbe Verschiebung: Die Verneinung hängt an „believe“, nicht am Nebensatz — genau wie deutsch „ich glaube nicht, dass …“."
  },
  {
   "tr": "Burada durum anlatılıyor, o yüzden „been“; „got“ olsaydı o günü söylerdi.",
@@ -287,7 +287,7 @@
  {
   "tr": "İngilizce olumsuzu ÖNE alıyor: „don't think … is“, „think … isn't“ değil.",
   "kind": "build.hint",
-  "de": "Englisch zieht die Verneinung nach VORN: „don't think … is“. Deutsch macht es genauso: ich glaube nicht, dass das so ist."
+  "de": "Englisch zieht die Verneinung nach VORN: „don't think … is“. Deutsch macht es genauso: Ich glaube nicht, dass das so ist."
  },
  {
   "tr": "Aynı „for“ bu kez fiil alıyor ve fiil „-ing“ biçimine giriyor; mastar olmaz.",
@@ -302,6 +302,6 @@
  {
   "tr": "Cevapların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Antworten: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Antworten: Bring sie in die richtige Ordnung."
  }
 ]

@@ -380,9 +380,9 @@
   "en": "An „r“ at the start of a syllable comes from the throat; at the end of one it turns almost into an „a“."
  },
  {
-  "tr": "İlandaki \"What we offer\" listesinde \"14 pounds an hour\" yazıyor, yani saat ücreti 14 pound.",
+  "tr": "İlandaki \"What we offer\" listesinde \"14 dollars an hour\" yazıyor, yani saat ücreti 14 dolar.",
   "kind": "explain",
-  "en": "The \"What we offer\" list in the ad says \"14 pounds an hour\", so the hourly rate is 14 pounds."
+  "en": "The \"What we offer\" list in the ad says \"14 dollars an hour\", so the hourly rate is 14 dollars."
  },
  {
   "tr": "Kadın \"there are two bus stops in front of it\" diyor, yani istasyonun önünde iki durak var.",
@@ -420,9 +420,9 @@
   "en": "False. He says \"I can speak a little English, but I can't speak French\"; he does not speak French."
  },
  {
-  "tr": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil.",
+  "tr": "Yanlış. Metinde \"Total price: $240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil.",
   "kind": "explain",
-  "en": "False. The text says \"Total price: £240 (breakfast included)\", so breakfast is in the price."
+  "en": "False. The text says \"Total price: $240 (breakfast included)\", so breakfast is in the price."
  },
  {
   "tr": "\"20:00 Music evening. Deniz is going to play the guitar for us.\" Emma ise 1. gündeki rehber.",

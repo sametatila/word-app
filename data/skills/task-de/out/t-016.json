@@ -182,7 +182,7 @@
  {
   "tr": "Edilgen bir kalıp: izin veren kim, söylenmiyor.",
   "kind": "build.hint",
-  "de": "Eine passive Wendung: wer erlaubt, wird nicht genannt — wie deutsch „ist das erlaubt“."
+  "de": "Eine passive Wendung: Wer erlaubt, wird nicht genannt — wie deutsch „ist das erlaubt“."
  },
  {
   "tr": "„broken“ sıfat ve „be“ ile geliyor; özne „it“ zorunlu.",
@@ -217,7 +217,7 @@
  {
   "tr": "Özne „it“ zorunlu: Türkçedeki gibi öznesiz cümle olmuyor.",
   "kind": "build.hint",
-  "de": "Das Subjekt „it“ ist Pflicht: einen Satz ohne Subjekt gibt es nicht, genauso wenig wie im Deutschen."
+  "de": "Das Subjekt „it“ ist Pflicht: Einen Satz ohne Subjekt gibt es nicht, genauso wenig wie im Deutschen."
  },
  {
   "tr": "„help“ nesnesini edatsız alır: help me, „help to me“ değil.",
@@ -297,26 +297,26 @@
  {
   "tr": "Ali'nin saydığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge, in der Ali aufzählt: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge, in der Ali aufzählt: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Deniz'in saydığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge, in der Deniz aufzählt: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge, in der Deniz aufzählt: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Aranan yerlerin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der abgesuchten Orte: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der abgesuchten Orte: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sorulan komşuların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der erfragten Nachbarn: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der erfragten Nachbarn: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Bildirilen arızaların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der gemeldeten Schäden: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der gemeldeten Schäden: Bring sie in die richtige Ordnung."
  }
 ]

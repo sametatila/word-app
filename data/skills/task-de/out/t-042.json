@@ -237,7 +237,7 @@
  {
   "tr": "Karışık koşul: sonuç bu haftaya ait.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge gehört zu dieser Woche."
+  "de": "Gemischte Bedingung: Die Folge gehört zu dieser Woche."
  },
  {
   "tr": "Üçüncü kayıt satırı, aynı iki parça.",
@@ -272,7 +272,7 @@
  {
   "tr": "Karışık koşul: sonuç bu ayın faturasında.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge steht auf der Rechnung dieses Monats."
+  "de": "Gemischte Bedingung: Die Folge steht auf der Rechnung dieses Monats."
  },
  {
   "tr": "Virgüllü cümlecikte nesne adılı düşmüyor.",
@@ -307,7 +307,7 @@
  {
   "tr": "Burada „which is“ silinebilir: arkasında isim öbeği var.",
   "kind": "build.hint",
-  "de": "Hier kann „which is“ wegfallen: dahinter steht eine Nominalphrase."
+  "de": "Hier kann „which is“ wegfallen: Dahinter steht eine Nominalphrase."
  },
  {
   "tr": "„provided that“ bir şart koyuyor; „if“ yalnızca durumu betimliyor.",
@@ -317,26 +317,26 @@
  {
   "tr": "Kuralın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Regel: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Regel: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Broşürün sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Faltblatts: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Faltblatts: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Dosyanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Akte: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Akte: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Kapanışın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Schlusses: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Schlusses: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Şikâyetin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Beschwerde: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Beschwerde: Bring sie in die richtige Ordnung."
  }
 ]

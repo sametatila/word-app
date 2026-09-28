@@ -212,7 +212,7 @@
  {
   "tr": "Edilgen: ödeyen kim, söylenmiyor; kural anlatılıyor.",
   "kind": "build.hint",
-  "de": "Passiv: wer zahlt, wird nicht genannt; es geht um die Regel."
+  "de": "Passiv: Wer zahlt, wird nicht genannt; es geht um die Regel."
  },
  {
   "tr": "„although“ bir CÜMLE bağlıyor; virgül iki yarıyı ayırıyor.",
@@ -227,7 +227,7 @@
  {
   "tr": "„as long as“ da aynı kurala giriyor: yan cümlede „will“ yok.",
   "kind": "build.hint",
-  "de": "„as long as“ folgt derselben Regel: im Nebensatz steht kein „will“."
+  "de": "„as long as“ folgt derselben Regel: Im Nebensatz steht kein „will“."
  },
  {
   "tr": "„unless“ „eğer … değilse“ demek ve yine şimdiki zaman alıyor.",
@@ -287,12 +287,12 @@
  {
   "tr": "Gerçek olmayan koşul: geçmiş biçim burada olmayan bir şimdiyi anlatıyor.",
   "kind": "build.hint",
-  "de": "Irreale Bedingung: die Vergangenheitsform meint hier eine Gegenwart, die es nicht gibt."
+  "de": "Irreale Bedingung: Die Vergangenheitsform meint hier eine Gegenwart, die es nicht gibt."
  },
  {
   "tr": "Ayarlanmış: saat belli ve karşı taraf da biliyor. Şimdiki zamanın sürekli biçimi.",
   "kind": "build.hint",
-  "de": "Verabredet: die Uhrzeit steht fest und die andere Seite weiß es. Die Verlaufsform der Gegenwart."
+  "de": "Verabredet: Die Uhrzeit steht fest und die andere Seite weiß es. Die Verlaufsform der Gegenwart."
  },
  {
   "tr": "Zaman yan cümlesinde gelecek ŞİMDİKİ zamanla kuruluyor; „will“ ana cümlede kalıyor.",

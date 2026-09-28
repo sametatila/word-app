@@ -780,7 +780,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna at 07700 900412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 dollars a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna at (206) 555-0412 after 6 p.m. You can also send a message.",
     "questions": [
       {
         "text": "Where is the apartment?",
@@ -804,12 +804,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "How much is the room every month?",
         "options": [
-          "320 pounds",
-          "412 pounds",
-          "600 pounds"
+          "320 dollars",
+          "412 dollars",
+          "600 dollars"
         ],
         "answer": 0,
-        "explain": "'Price: 320 pounds a month.' satırı aylık ücreti veriyor: 320 pound."
+        "explain": "'Price: 320 dollars a month.' satırı aylık ücreti veriyor: 320 dolar."
       },
       {
         "text": "When can you call Anna?",
@@ -819,7 +819,7 @@ export const enMobile2026: SkillExercise[] = [
           "In the morning"
         ],
         "answer": 1,
-        "explain": "İlanın sonunda 'Call Anna at 07700 900412 after 6 p.m.' yazıyor. Arama saati akşam 6'dan sonrası."
+        "explain": "İlanın sonunda 'Call Anna at (206) 555-0412 after 6 p.m.' yazıyor. Arama saati akşam 6'dan sonrası."
       },
       {
         "kind": "gapfill",
@@ -880,7 +880,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big closet.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty pounds.\n\nThanks a lot!\nDan",
+    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big closet.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty dollars.\n\nThanks a lot!\nDan",
     "questions": [
       {
         "text": "What time is Dan at work until?",
@@ -914,23 +914,23 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "How much money is on the table?",
         "options": [
-          "Twelve pounds",
-          "Twenty pounds",
-          "Two pounds"
+          "Twelve dollars",
+          "Twenty dollars",
+          "Two dollars"
         ],
         "answer": 1,
-        "explain": "Son satırda \"Money for the store is on the table — twenty pounds\" deniyor. Masada yirmi pound var."
+        "explain": "Son satırda \"Money for the store is on the table — twenty dollars\" deniyor. Masada yirmi dolar var."
       },
       {
         "kind": "gapfill",
-        "text": "The money for the store is ___ pounds.",
+        "text": "The money for the store is ___ dollars.",
         "options": [],
         "answer": 0,
         "accept": [
           "twenty",
           "20"
         ],
-        "explain": "\"Money for the store is on the table — twenty pounds.\""
+        "explain": "\"Money for the store is on the table — twenty dollars.\""
       },
       {
         "kind": "short_answer",
@@ -1699,7 +1699,7 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good afternoon, shoppers. Welcome to Green Market. It's three o'clock, and we've got some special offers for you today. Fresh apples are only two pounds a kilo."
+        "text": "Good afternoon, shoppers. Welcome to Green Market. It's three o'clock, and we've got some special offers for you today. Fresh apples are only two dollars a kilo."
       },
       {
         "speaker": "Announcement",
@@ -1737,12 +1737,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "How much are the fresh apples?",
         "options": [
-          "One pound a kilo",
-          "Two pounds a kilo",
-          "Three pounds a kilo"
+          "One dollar a kilo",
+          "Two dollars a kilo",
+          "Three dollars a kilo"
         ],
         "answer": 1,
-        "explain": "\"Fresh apples are only two pounds a kilo.\" diyor, yani kilosu iki pound."
+        "explain": "\"Fresh apples are only two dollars a kilo.\" diyor, yani kilosu iki dolar."
       },
       {
         "text": "What time is the store closing?",
@@ -1957,39 +1957,39 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good morning. Welcome to Central Station. This is an announcement for all passengers. The train to Manchester is leaving from platform five at nine fifteen. Please go to platform five now."
+        "text": "Good morning. Welcome to Central Station. This is an announcement for all passengers. The train to Boston is leaving from platform five at nine fifteen. Please go to platform five now."
       },
       {
         "speaker": "Announcement",
-        "text": "The train to Liverpool is late. It's coming at ten forty, not ten twenty. We're very sorry. Passengers for Liverpool can wait in the café next to platform three. It's open now."
+        "text": "The train to Chicago is late. It's coming at ten forty, not ten twenty. We're very sorry. Passengers for Chicago can wait in the café next to platform three. It's open now."
       },
       {
         "speaker": "Announcement",
-        "text": "Tickets are eight pounds fifty. There's a ticket machine near the main door. Please don't leave your bags. Thank you and have a good day."
+        "text": "Tickets are eight dollars fifty. There's a ticket machine near the main door. Please don't leave your bags. Thank you and have a good day."
       }
     ],
     "questions": [
       {
-        "text": "Which platform is the Manchester train leaving from?",
+        "text": "Which platform is the Boston train leaving from?",
         "options": [
           "Platform three",
           "Platform five",
           "Platform nine"
         ],
         "answer": 1,
-        "explain": "Anonsta \"The train to Manchester is leaving from platform five at nine fifteen.\" deniyor. Manchester treni beşinci perondan kalkıyor."
+        "explain": "Anonsta \"The train to Boston is leaving from platform five at nine fifteen.\" deniyor. Boston treni beşinci perondan kalkıyor."
       },
       {
-        "text": "The train to Liverpool is late.",
+        "text": "The train to Chicago is late.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "\"The train to Liverpool is late.\" cümlesi bunu açıkça söylüyor, bu yüzden doğru."
+        "explain": "\"The train to Chicago is late.\" cümlesi bunu açıkça söylüyor, bu yüzden doğru."
       },
       {
-        "text": "What time is the Liverpool train coming?",
+        "text": "What time is the Chicago train coming?",
         "options": [
           "At ten twenty",
           "At ten forty",
@@ -1999,25 +1999,25 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"It's coming at ten forty, not ten twenty.\" deniyor. Yani eski saat 10.20, yeni saat 10.40."
       },
       {
-        "text": "Where can passengers for Liverpool wait?",
+        "text": "Where can passengers for Chicago wait?",
         "options": [
           "In the café next to platform three",
           "At the ticket machine",
           "On the train"
         ],
         "answer": 0,
-        "explain": "\"Passengers for Liverpool can wait in the café next to platform three.\" cümlesinden anlıyoruz; kafe üç numaralı peronun yanında ve açık."
+        "explain": "\"Passengers for Chicago can wait in the café next to platform three.\" cümlesinden anlıyoruz; kafe üç numaralı peronun yanında ve açık."
       },
       {
         "kind": "gapfill",
-        "text": "Tickets are eight pounds ___.",
+        "text": "Tickets are eight dollars ___.",
         "options": [],
         "answer": 0,
         "accept": [
           "fifty",
           "50"
         ],
-        "explain": "\"Tickets are eight pounds fifty.\""
+        "explain": "\"Tickets are eight dollars fifty.\""
       },
       {
         "kind": "short_answer",
@@ -4099,17 +4099,17 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
-    "text": "APARTMENT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz at 07700 900412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
+    "text": "APARTMENT FOR RENT — 14 Green Street, Santa Cruz\n\nRent: $850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz at (831) 555-0412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
     "questions": [
       {
         "text": "How much is the rent every month?",
         "options": [
-          "£850",
-          "£412",
-          "£1,700"
+          "$850",
+          "$412",
+          "$1,700"
         ],
         "answer": 0,
-        "explain": "İlanda \"Rent: £850 a month\" yazıyor. Depozito ayrıca bir aylık kira, ama aylık kira 850 sterlin."
+        "explain": "İlanda \"Rent: $850 a month\" yazıyor. Depozito ayrıca bir aylık kira, ama aylık kira 850 dolar."
       },
       {
         "text": "There is an elevator in the building.",
@@ -4199,7 +4199,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 pounds an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a store.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Deniz. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in England before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nDeniz",
+    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 dollars an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a store.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Deniz. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in the United States before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nDeniz",
     "questions": [
       {
         "text": "What time does the work start?",
@@ -4212,13 +4212,13 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "İlanda çalışma saati \"from 8 a.m. to 3 p.m.\" yazıyor, yani iş sabah 8'de başlıyor."
       },
       {
-        "text": "The café pays 14 pounds an hour.",
+        "text": "The café pays 14 dollars an hour.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "İlandaki \"What we offer\" listesinde \"14 pounds an hour\" yazıyor, yani saat ücreti 14 pound."
+        "explain": "İlandaki \"What we offer\" listesinde \"14 dollars an hour\" yazıyor, yani saat ücreti 14 dolar."
       },
       {
         "text": "Where can you leave a note for Martina?",
@@ -4934,7 +4934,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "confirmation", "tr": "teyit" },
     ],
     "minutes": 5,
-    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your license plate number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
+    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Santa Cruz\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of $60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: $240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your license plate number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is (831) 555-0108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
     "questions": [
       {
         "text": "When must the guests leave the room on Monday?",
@@ -4953,12 +4953,12 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Metinde \"Total price: £240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil."
+        "explain": "Yanlış. Metinde \"Total price: $240 (breakfast included)\" diyor, yani kahvaltı fiyata dâhil."
       },
       {
         "text": "What must the guests do when they use the hotel parking lot?",
         "options": [
-          "Pay £10 for every day",
+          "Pay $10 for every day",
           "Tell the hotel their car number",
           "Book a place on the website"
         ],
@@ -4968,23 +4968,23 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "How much money has the hotel already received?",
         "options": [
-          "£60",
-          "£240",
-          "£108"
+          "$60",
+          "$240",
+          "$108"
         ],
         "answer": 0,
-        "explain": "\"We have already received your deposit of £60\" cümlesine göre otel şimdiye kadar 60 sterlin kapora almış; 240 sterlin ise toplam fiyat."
+        "explain": "\"We have already received your deposit of $60\" cümlesine göre otel şimdiye kadar 60 dolar kapora almış; 240 dolar ise toplam fiyat."
       },
       {
         "kind": "gapfill",
-        "text": "The deposit was ___ pounds.",
+        "text": "The deposit was ___ dollars.",
         "options": [],
         "answer": 0,
         "accept": [
           "60",
           "sixty"
         ],
-        "explain": "\"We have already received your deposit of £60.\" Toplam fiyat 240 pound."
+        "explain": "\"We have already received your deposit of $60.\" Toplam fiyat 240 dolar."
       },
       {
         "kind": "short_answer",

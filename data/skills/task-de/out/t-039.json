@@ -172,7 +172,7 @@
  {
   "tr": "Karışık koşul: sonuç hâlâ masada.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge liegt noch auf dem Tisch."
+  "de": "Gemischte Bedingung: Die Folge liegt noch auf dem Tisch."
  },
  {
   "tr": "Yalın ortaç burada NEDEN taşıyor.",
@@ -202,17 +202,17 @@
  {
   "tr": "Yine kapalı: ne taraflıydı ne de çöktü.",
   "kind": "build.hint",
-  "de": "Wieder geschlossen: sie war nicht verzerrt und es scheiterte nicht."
+  "de": "Wieder geschlossen: Sie war nicht verzerrt und es scheiterte nicht."
  },
  {
   "tr": "Üçüncü hâlle başlıyor: yapan söylenmiyor.",
   "kind": "build.hint",
-  "de": "Beginnt mit der dritten Form: wer es baute, wird nicht genannt."
+  "de": "Beginnt mit der dritten Form: Wer es baute, wird nicht genannt."
  },
  {
   "tr": "Karışık koşul: sonuç bu sabahın sokağında.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge steht heute Morgen auf der Straße."
+  "de": "Gemischte Bedingung: Die Folge steht heute Morgen auf der Straße."
  },
  {
   "tr": "„has“ özneyi atlıyor; özne iki sözcük uzunluğunda.",
@@ -252,17 +252,17 @@
  {
   "tr": "Fiyatın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Preises: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Preises: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Raporun sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Berichts: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Berichts: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "İncelemenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Prüfung: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Ölçeğin sırası: en sertten en yumuşağa koy.",

@@ -192,12 +192,12 @@
  {
   "tr": "İstek kipi: üçüncü kişide ek yok.",
   "kind": "build.hint",
-  "de": "Konjunktiv: in der dritten Person fehlt die Endung."
+  "de": "Konjunktiv: In der dritten Person fehlt die Endung."
  },
  {
   "tr": "Yarık cümle: ağırlık sona kayıyor.",
   "kind": "build.hint",
-  "de": "Spaltsatz: das Gewicht rutscht ans Ende."
+  "de": "Spaltsatz: Das Gewicht rutscht ans Ende."
  },
  {
   "tr": "„would“ varsayım, „tend to“ eğilim.",
@@ -237,7 +237,7 @@
  {
   "tr": "Olumsuzla söylenen olumlu: pahalı demek.",
   "kind": "build.hint",
-  "de": "Das Positive, verneint gesagt: es heißt teuer."
+  "de": "Das Positive, verneint gesagt: Es heißt teuer."
  },
  {
   "tr": "Tek sözcük bütün mektubun tonunu kuruyor.",
@@ -257,7 +257,7 @@
  {
   "tr": "Eksiltme: okur eksik olanı geri koyabiliyor.",
   "kind": "build.hint",
-  "de": "Ellipse: der Leser kann das Fehlende wieder einsetzen."
+  "de": "Ellipse: Der Leser kann das Fehlende wieder einsetzen."
  },
  {
   "tr": "„the latter“ tam olarak ikiden ikincisi demek.",
@@ -302,16 +302,16 @@
  {
   "tr": "Kipin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Modus: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Modus: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Katmanların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Schichten: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Schichten: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Eksiltili söyleyişin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Untertreibung: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Untertreibung: Bring sie in die richtige Ordnung."
  }
 ]

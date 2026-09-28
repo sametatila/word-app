@@ -177,12 +177,12 @@
  {
   "tr": "Karışık koşul: sonuç bugünün masasında.",
   "kind": "build.hint",
-  "de": "Gemischte Bedingung: die Folge liegt auf dem heutigen Tisch."
+  "de": "Gemischte Bedingung: Die Folge liegt auf dem heutigen Tisch."
  },
  {
   "tr": "Çıkarım: kanıt tek bir açıklama bırakıyor.",
   "kind": "build.hint",
-  "de": "Ein Schluss: der Beleg lässt nur eine Erklärung übrig."
+  "de": "Ein Schluss: Der Beleg lässt nur eine Erklärung übrig."
  },
  {
   "tr": "Olumsuzu „can't have“; „mustn't have“ yok.",
@@ -207,12 +207,12 @@
  {
   "tr": "Üçüncü hâlle başlıyor: oluşturan söylenmiyor.",
   "kind": "build.hint",
-  "de": "Beginnt mit der dritten Form: wer es bildete, wird nicht genannt."
+  "de": "Beginnt mit der dritten Form: Wer es bildete, wird nicht genannt."
  },
  {
   "tr": "Mastar geçmişe bakıyor: iş düşünmeden önceye ait.",
   "kind": "build.hint",
-  "de": "Der Infinitiv blickt zurück: die Handlung liegt vor dem Denken."
+  "de": "Der Infinitiv blickt zurück: Die Handlung liegt vor dem Denken."
  },
  {
   "tr": "Fiil isme dönüyor; ek de edat da ezberden geliyor.",
@@ -247,31 +247,31 @@
  {
   "tr": "Yöntemin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Methode: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Methode: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Edatların sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Präpositionen: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Präpositionen: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Kataloğun sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Katalogs: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Katalogs: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Çalışmanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Studie: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Studie: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Tartışmanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der Diskussion: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der Diskussion: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Bulgular bölümünün sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Ergebnisteils: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Ergebnisteils: Bring sie in die richtige Ordnung."
  }
 ]

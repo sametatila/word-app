@@ -130,11 +130,11 @@ export const enB1P6: SkillExercise[] = [
       { speaker: "Mr. Patel", text: "Four? For a book about kitchen gardens?" },
       { speaker: "Ms. Oduya", text: "It's the season. Everybody remembers their garden in March and forgets it again in July." },
       { speaker: "Mr. Patel", text: "Fair enough. When is it due back?" },
-      { speaker: "Ms. Oduya", text: "Saturday. And there's a fine on your account from last year, one pound eighty." },
+      { speaker: "Ms. Oduya", text: "Saturday. And there's a fine on your account from last year, a dollar eighty." },
       { speaker: "Mr. Patel", text: "I paid that. I'm fairly sure I paid it at the machine in the hall." },
       { speaker: "Ms. Oduya", text: "Then the machine didn't send it through. It happens. Do you have the receipt?" },
       { speaker: "Mr. Patel", text: "Not with me, no." },
-      { speaker: "Ms. Oduya", text: "I'll waive it. It's less work than checking, and one pound eighty isn't worth either of our afternoons." },
+      { speaker: "Ms. Oduya", text: "I'll waive it. It's less work than checking, and a dollar eighty isn't worth either of our afternoons." },
     ],
     questions: [
       {
@@ -166,11 +166,11 @@ export const enB1P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The fine on the account is one pound ___.",
+        text: "The fine on the account is a dollar ___.",
         options: [],
         answer: 0,
         accept: ["eighty", "80"],
-        explain: "„one pound eighty“.",
+        explain: "„a dollar eighty“.",
       },
       {
         kind: "short_answer",
@@ -188,7 +188,7 @@ export const enB1P6: SkillExercise[] = [
           "The library has a rule about old fines.",
         ],
         answer: 0,
-        explain: "„It's less work than checking, and one pound eighty isn't worth either of our afternoons.“",
+        explain: "„It's less work than checking, and a dollar eighty isn't worth either of our afternoons.“",
       },
     ],
   },

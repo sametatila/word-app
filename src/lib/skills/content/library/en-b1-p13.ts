@@ -38,8 +38,8 @@ export const enB1P13: SkillExercise[] = [
       "buses on a Friday night did not sound exciting to me, and I expected to be bored within " +
       "twenty minutes. I stayed until they turned the lights off.\n\n" +
       "The “Late Friday” evenings run once a month from seven to eleven. The ticket costs twelve " +
-      "pounds and includes one drink, which is not cheap, but the normal daytime entrance is " +
-      "nine pounds anyway.\n\n" +
+      "dollars and includes one drink, which is not cheap, but the normal daytime entrance is " +
+      "nine dollars anyway.\n\n" +
       "What makes the evening different is the people. Instead of signs on the walls, retired " +
       "drivers and engineers stand next to the vehicles and tell you about them. One man had " +
       "driven the number 14 bus for twenty-six years. His stories were funny, sometimes a little " +
@@ -72,7 +72,7 @@ export const enB1P13: SkillExercise[] = [
         text: "The evening ticket includes a drink.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The ticket costs twelve pounds and includes one drink“.",
+        explain: "„The ticket costs twelve dollars and includes one drink“.",
       },
       {
         kind: "gapfill",
@@ -242,7 +242,7 @@ export const enB1P13: SkillExercise[] = [
           "my honest answer. I went on Saturday with my cousin and we stayed about four hours. " +
           "What I found most interesting was a stall where a woman from Georgia was baking bread " +
           "in a clay oven. We watched her for twenty minutes and nobody around us was bored. " +
-          "The food in general was amazing, and most dishes cost five or six pounds, which I " +
+          "The food in general was amazing, and most dishes cost eight or ten dollars, which I " +
           "thought was fair. " +
           "The tiring part was the crowd. After two o'clock it was so full that you waited in line for " +
           "everything, even for water, and I was exhausted by four. I was a bit disappointed that " +
@@ -285,7 +285,7 @@ export const enB1P13: SkillExercise[] = [
         "On balance, I think they should, at least for the permanent collection. " +
         "What convinced me was a small thing. When I was a student, the city museum was free, " +
         "and I went in almost every week, sometimes just for fifteen minutes to look at one painting. " +
-        "I would never have done that if each visit had cost ten pounds, because when you pay, " +
+        "I would never have done that if each visit had cost ten dollars, because when you pay, " +
         "you feel you have to stay all afternoon and see everything. Free entry turns a museum " +
         "into a place you walk through, like a park. " +
         "The honest problem with free entry is money. Somebody pays for the heating and the guards, " +

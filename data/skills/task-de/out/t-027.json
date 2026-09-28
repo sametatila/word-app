@@ -212,17 +212,17 @@
  {
   "tr": "„one month's“ iyelik eki alıyor: süre de iyelik kurabiliyor.",
   "kind": "build.hint",
-  "de": "„one month's“ nimmt den Genitiv: auch eine Zeitspanne kann besitzen."
+  "de": "„one month's“ nimmt den Genitiv: Auch eine Zeitspanne kann besitzen."
  },
  {
   "tr": "Edilgen: işi kimin yaptığı önemsiz, o yüzden fail hiç geçmiyor.",
   "kind": "build.hint",
-  "de": "Passiv: wer es tut, ist gleich, deshalb kommt der Urheber gar nicht vor."
+  "de": "Passiv: Wer es tut, ist gleich, deshalb kommt der Urheber gar nicht vor."
  },
  {
   "tr": "Tek bir geçmiş olay: sade geçmiş yetiyor, „had“ gereksiz olurdu.",
   "kind": "build.hint",
-  "de": "Nur ein Ereignis in der Vergangenheit: das einfache Präteritum reicht, „had“ wäre überflüssig."
+  "de": "Nur ein Ereignis in der Vergangenheit: Das einfache Präteritum reicht, „had“ wäre überflüssig."
  },
  {
   "tr": "Ayarlanmış gelecek, şimdiki zamanın sürekli biçimiyle anlatılıyor.",
@@ -282,21 +282,21 @@
  {
   "tr": "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi „bana“ diye yönelme ekinde kalır.",
   "kind": "build.hint",
-  "de": "Englisch kann die PERSON zum Subjekt machen; Deutsch kann das nicht, dort bleibt sie im Dativ: mir wurde ein Ausweis gegeben."
+  "de": "Englisch kann die PERSON zum Subjekt machen; Deutsch kann das nicht, dort bleibt sie im Dativ: Mir wurde ein Ausweis gegeben."
  },
  {
   "tr": "Gerçek olmayan koşul: geçmiş biçim burada geçmişi değil, olmayan bir şimdiyi anlatıyor.",
   "kind": "build.hint",
-  "de": "Irreale Bedingung: die Vergangenheitsform meint hier keine Vergangenheit, sondern eine Gegenwart, die es nicht gibt."
+  "de": "Irreale Bedingung: Die Vergangenheitsform meint hier keine Vergangenheit, sondern eine Gegenwart, die es nicht gibt."
  },
  {
   "tr": "E-postanın sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge der E-Mail: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge der E-Mail: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Görüşmenin sırası: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge des Gesprächs: bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge des Gesprächs: Bring sie in die richtige Ordnung."
  }
 ]
