@@ -220,7 +220,7 @@ Hesapsız (misafir) kullanıyorsan verilerini uygulamada **Profil › Misafir ve
 
 ## 12. Çocuklar
 
-Lernomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve resmî dil sınavı hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığı fark edilirse hesap ve veriler silinir; ebeveynler {{privacyEmailTr}} adresine yazabilir.
+Lernomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve resmî dil sınavı hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığı fark edilirse hesap ve veriler silinir; ebeveynler KVKK kapsamında {{privacyEmailTr}}, GDPR ve UK GDPR kapsamında {{privacyEmailEu}} adresine yazabilir.
 
 ## 13. Güvenlik
 
@@ -228,7 +228,7 @@ Tüm bağlantılar HTTPS ile şifrelenir. Parolalar geri döndürülemez özet o
 
 ## 14. Değişiklikler
 
-Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir; işleme amaçlarını genişleten bir değişiklikte uygulama içinde bilgilendirme yapılır ve gerekiyorsa yeniden onay istenir. Sorular için: {{privacyEmailTr}}.`,
+Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir; işleme amaçlarını genişleten bir değişiklikte uygulama içinde bilgilendirme yapılır ve gerekiyorsa yeniden onay istenir. Sorular için: KVKK kapsamında {{privacyEmailTr}}, GDPR ve UK GDPR kapsamında {{privacyEmailEu}}.`,
   },
   en: {
     title: "Privacy Policy",
@@ -404,7 +404,7 @@ If you use the app without an account (as a guest), you can delete your data in 
 
 ## 12. Children
 
-Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at official language exam preparation; because the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If someone under 18 is found to have created an account, the account and the data are deleted; parents can write to {{privacyEmailEu}}.
+Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at official language exam preparation; because the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If someone under 18 is found to have created an account, the account and the data are deleted; parents can write to {{privacyEmailEu}} under the GDPR or UK GDPR, or to {{privacyEmailTr}} under Turkish data protection law (KVKK).
 
 ## 13. Security
 
@@ -412,7 +412,7 @@ All connections are encrypted with HTTPS. Passwords are stored as irreversible h
 
 ## 14. Changes
 
-When this policy changes, the effective date and version on this page are updated; for a change that broadens the purposes of processing you are informed in the app and, where necessary, asked for consent again. Questions: {{privacyEmailEu}}.`,
+When this policy changes, the effective date and version on this page are updated; for a change that broadens the purposes of processing you are informed in the app and, where necessary, asked for consent again. Questions: {{privacyEmailEu}} under the GDPR or UK GDPR, {{privacyEmailTr}} under Turkish data protection law (KVKK).`,
   },
   de: {
     title: "Datenschutzerklärung",
@@ -588,7 +588,7 @@ Nutzt du die App ohne Konto (als Gast), kannst du deine Daten in der App unter *
 
 ## 12. Kinder
 
-Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an erwachsene Lernende und an die Vorbereitung auf offizielle Sprachprüfungen; da die App offene KI-Gespräche und Interaktion zwischen Nutzern enthält, ist sie für ein kindliches Publikum nicht geeignet. Wird bekannt, dass eine Person unter 18 Jahren ein Konto erstellt hat, werden Konto und Daten gelöscht; Eltern können an {{privacyEmailEu}} schreiben.
+Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an erwachsene Lernende und an die Vorbereitung auf offizielle Sprachprüfungen; da die App offene KI-Gespräche und Interaktion zwischen Nutzern enthält, ist sie für ein kindliches Publikum nicht geeignet. Wird bekannt, dass eine Person unter 18 Jahren ein Konto erstellt hat, werden Konto und Daten gelöscht; Eltern können nach DSGVO oder UK GDPR an {{privacyEmailEu}} und nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}} schreiben.
 
 ## 13. Sicherheit
 
@@ -596,6 +596,6 @@ Alle Verbindungen sind mit HTTPS verschlüsselt. Passwörter werden als nicht um
 
 ## 14. Änderungen
 
-Wenn sich diese Erklärung ändert, werden Gültigkeitsdatum und Version auf dieser Seite aktualisiert; bei einer Änderung, die die Verarbeitungszwecke erweitert, wirst du in der App informiert und erforderlichenfalls erneut um deine Einwilligung gebeten. Fragen: {{privacyEmailEu}}.`,
+Wenn sich diese Erklärung ändert, werden Gültigkeitsdatum und Version auf dieser Seite aktualisiert; bei einer Änderung, die die Verarbeitungszwecke erweitert, wirst du in der App informiert und erforderlichenfalls erneut um deine Einwilligung gebeten. Fragen: nach DSGVO oder UK GDPR an {{privacyEmailEu}}, nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}}.`,
   },
 };

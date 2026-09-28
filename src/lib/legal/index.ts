@@ -183,7 +183,7 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * işlemenin anlatımı kapsamıyla eşitlendi.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-28";
-export const LEGAL_VERSION = "1.8.6";
+export const LEGAL_VERSION = "1.8.7";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -412,6 +412,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: iki iletişim adresi her bölümde birlikte veriliyor; hak, alıcı, sebep ya da süre değişmedi. */
+    version: "1.8.7",
+    date: "2026-09-28",
+    changes: {
+      tr: [
+        "Gizlilik politikası: ebeveynler bölümünde ve son \"Sorular\" satırında iki iletişim adresi birlikte veriliyor (KVKK için kvkk@, GDPR ve UK GDPR için gdpr@); önceden adres metnin diline göre tekti. Hakların ve başvuru yolunun kendisi değişmedi.",
+      ],
+      en: [
+        "Privacy policy: the parents section and the closing \"Questions\" line now give both contact addresses (gdpr@ for the GDPR and UK GDPR, kvkk@ for Turkish law); before, a single address was chosen by the language of the text. The rights and the way to exercise them did not change.",
+      ],
+      de: [
+        "Datenschutzerklärung: Der Abschnitt für Eltern und die abschließende Zeile \"Fragen\" nennen jetzt beide Kontaktadressen (gdpr@ für DSGVO und UK GDPR, kvkk@ für türkisches Recht); zuvor wurde eine Adresse nach der Sprache des Textes gewählt. Die Rechte und der Weg, sie auszuüben, haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: var olan bildirim işlemesinin anlatımı kapsamıyla eşitlendi; yeni alıcı, sebep ya da süre yok. */
     version: "1.8.6",
