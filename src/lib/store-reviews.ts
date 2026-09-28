@@ -2,6 +2,7 @@ import "server-only";
 import crypto from "node:crypto";
 import { promises as fs } from "node:fs";
 import https from "node:https";
+import { withRetry } from "@/lib/http-retry";
 
 /**
  * MAĞAZA YORUMLARI — App Store ve Google Play, panelde (/admin/reviews).
@@ -26,6 +27,12 @@ import https from "node:https";
  *
  * ÖNBELLEK 30 dakika: yorumlar dakikalık değişmiyor, iki API'nin de kotası var.
  * Uyarı motoru da aynı önbellekten okuyor (yeni 1-2 yıldızlı yorum → Telegram).
+ *
+ * GEÇİCİ HATA (2026-09-28): iki API de ara sıra tek bir 500/503 dönüyor; tek denemede hata sayılınca Telegram'a
+ * "okunamadı / düzeldi" gidip geliyordu. Artık her istek geçici hatada `withRetry` ile yeniden deneniyor. Denemeler
+ * de tükenirse hata YİNE bildiriliyor (uyarı susturulmuyor) ama liste o mağazanın SON BAŞARILI okumasıyla dolu
+ * kalıyor: panel ve yeni yorum uyarısı kör olmuyor. Hatalı sonuç önbelleğe 30 dakika değil `ERROR_TTL_MS` giriyor,
+ * bir sonraki kontrol yeniden deniyor.
  */
 
 export const APP_STORE_APP_ID = "6810593275";
@@ -86,9 +93,10 @@ async function appStoreReviews(): Promise<StoreReviewsResult> {
     const now = Math.floor(Date.now() / 1000);
     const head = `${b64url({ alg: "ES256", kid, typ: "JWT" })}.${b64url({ iss, iat: now, exp: now + 600, aud: "appstoreconnect-v1" })}`;
     const jwt = `${head}.${crypto.sign("sha256", Buffer.from(head), { key, dsaEncoding: "ieee-p1363" }).toString("base64url")}`;
-    const r = await request(
-      `https://api.appstoreconnect.apple.com/v1/apps/${APP_STORE_APP_ID}/customerReviews?sort=-createdDate&limit=100&include=response`,
-      { headers: { authorization: `Bearer ${jwt}` } },
+    const r = await withRetry(() =>
+      request(`https://api.appstoreconnect.apple.com/v1/apps/${APP_STORE_APP_ID}/customerReviews?sort=-createdDate&limit=100&include=response`, {
+        headers: { authorization: `Bearer ${jwt}` },
+      }),
     );
     if (r.status !== 200) return { store: "ios", configured: true, error: `App Store Connect HTTP ${r.status}`, reviews: [] };
     const body = r.json as { data?: { id: string; attributes?: Record<string, unknown>; relationships?: { response?: { data?: unknown } } }[] };
@@ -125,17 +133,21 @@ async function playReviews(): Promise<StoreReviewsResult> {
     const now = Math.floor(Date.now() / 1000);
     const head = `${b64url({ alg: "RS256", typ: "JWT", kid: sa.private_key_id })}.${b64url({ iss: sa.client_email, scope: "https://www.googleapis.com/auth/androidpublisher", aud: sa.token_uri, iat: now, exp: now + 600 })}`;
     const jwt = `${head}.${crypto.sign("sha256", Buffer.from(head), sa.private_key).toString("base64url")}`;
-    const tok = await request(sa.token_uri, {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt }).toString(),
-    });
+    const tok = await withRetry(() =>
+      request(sa.token_uri, {
+        method: "POST",
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt }).toString(),
+      }),
+    );
     const access = (tok.json as { access_token?: string } | null)?.access_token;
     if (!access) return { store: "android", configured: true, error: `Google OAuth HTTP ${tok.status}`, reviews: [] };
     // Play API yalnız SON 7 GÜNÜN metinli yorumlarını döndürüyor (Google'ın sınırı).
-    const r = await request(`https://androidpublisher.googleapis.com/androidpublisher/v3/applications/${PLAY_PACKAGE}/reviews?maxResults=100`, {
-      headers: { authorization: `Bearer ${access}` },
-    });
+    const r = await withRetry(() =>
+      request(`https://androidpublisher.googleapis.com/androidpublisher/v3/applications/${PLAY_PACKAGE}/reviews?maxResults=100`, {
+        headers: { authorization: `Bearer ${access}` },
+      }),
+    );
     if (r.status !== 200) return { store: "android", configured: true, error: `Google Play HTTP ${r.status}`, reviews: [] };
     type PlayReview = {
       reviewId: string;
@@ -173,10 +185,23 @@ async function playReviews(): Promise<StoreReviewsResult> {
 
 let cache: { at: number; value: StoreReviewsResult[] } | null = null;
 const TTL_MS = 30 * 60_000;
+/** Bir mağaza hata verdiyse sonuç yalnız bu kadar tutulur: uyarı motoru (10 dk'da bir) bir sonraki turda yeniden dener. */
+const ERROR_TTL_MS = 5 * 60_000;
+/** Mağaza başına son başarılı okuma — hata anında liste boşalmasın diye. */
+const lastGood = new Map<StoreReviewsResult["store"], StoreReview[]>();
 
 export async function storeReviews(fresh = false): Promise<{ results: StoreReviewsResult[]; at: number }> {
-  if (!fresh && cache && Date.now() - cache.at < TTL_MS) return { results: cache.value, at: cache.at };
-  const value = await Promise.all([appStoreReviews(), playReviews()]);
+  if (cache && !fresh) {
+    const ttl = cache.value.some((r) => r.error) ? ERROR_TTL_MS : TTL_MS;
+    if (Date.now() - cache.at < ttl) return { results: cache.value, at: cache.at };
+  }
+  const value = (await Promise.all([appStoreReviews(), playReviews()])).map((r) => {
+    if (!r.error) {
+      lastGood.set(r.store, r.reviews);
+      return r;
+    }
+    return { ...r, reviews: lastGood.get(r.store) ?? [] };
+  });
   cache = { at: Date.now(), value };
   return { results: value, at: cache.at };
 }

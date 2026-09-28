@@ -2,6 +2,7 @@ import "server-only";
 import crypto from "node:crypto";
 import { promises as fs } from "node:fs";
 import https from "node:https";
+import { withRetry } from "@/lib/http-retry";
 import { PLAY_PACKAGE } from "@/lib/store-reviews";
 
 /**
@@ -77,9 +78,14 @@ function post(url: string, headers: Record<string, string>, body: string): Promi
 
 const EMPTY: VitalsSeries = { points: [], latest28d: null, latestDay: null };
 let cache: { at: number; value: AndroidVitals } | null = null;
+/** Son başarılı okuma: geçici hata anında oranlar boşalıp eşik uyarısı kör olmasın (bkz. `lib/http-retry`). */
+let lastGood: AndroidVitals | null = null;
+const TTL_MS = 6 * 3_600_000;
+/** Hatalı sonuç 6 saat değil bu kadar tutulur: eskiden tek bir 503, çökme/ANR eşik uyarısını 6 saat körleştiriyordu. */
+const ERROR_TTL_MS = 15 * 60_000;
 
 export async function androidVitals(fresh = false): Promise<AndroidVitals> {
-  if (!fresh && cache && Date.now() - cache.at < 6 * 3_600_000) return cache.value;
+  if (!fresh && cache && Date.now() - cache.at < (cache.value.error ? ERROR_TTL_MS : TTL_MS)) return cache.value;
   const saPath = process.env.STORE_REVIEWS_PLAY_SA_PATH;
   if (!saPath) return { configured: false, error: null, crash: EMPTY, anr: EMPTY };
   let value: AndroidVitals;
@@ -89,7 +95,9 @@ export async function androidVitals(fresh = false): Promise<AndroidVitals> {
     const now = Math.floor(Date.now() / 1000);
     const head = `${b64({ alg: "RS256", typ: "JWT", kid: sa.private_key_id })}.${b64({ iss: sa.client_email, scope: "https://www.googleapis.com/auth/playdeveloperreporting", aud: sa.token_uri, iat: now, exp: now + 600 })}`;
     const jwt = `${head}.${crypto.sign("sha256", Buffer.from(head), sa.private_key).toString("base64url")}`;
-    const tok = await post(sa.token_uri, { "content-type": "application/x-www-form-urlencoded" }, new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt }).toString());
+    const tok = await withRetry(() =>
+      post(sa.token_uri, { "content-type": "application/x-www-form-urlencoded" }, new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt }).toString()),
+    );
     const access = (tok.json as { access_token?: string } | null)?.access_token;
     if (!access) throw new Error(`Google OAuth HTTP ${tok.status}`);
 
@@ -100,10 +108,13 @@ export async function androidVitals(fresh = false): Promise<AndroidVitals> {
     };
     const spec = { aggregationPeriod: "DAILY", startTime: d(Date.now() - 32 * 86_400_000), endTime: d(Date.now() - 2 * 86_400_000) };
     const query = async (set: string, metrics: string[]) => {
-      const r = await post(
-        `https://playdeveloperreporting.googleapis.com/v1beta1/apps/${PLAY_PACKAGE}/${set}:query`,
-        { authorization: `Bearer ${access}`, "content-type": "application/json" },
-        JSON.stringify({ timelineSpec: spec, metrics }),
+      // Sorgu yalnız okuyor (POST biçiminde): tekrarlamak güvenli.
+      const r = await withRetry(() =>
+        post(
+          `https://playdeveloperreporting.googleapis.com/v1beta1/apps/${PLAY_PACKAGE}/${set}:query`,
+          { authorization: `Bearer ${access}`, "content-type": "application/json" },
+          JSON.stringify({ timelineSpec: spec, metrics }),
+        ),
       );
       if (r.status !== 200) throw new Error(`Play Reporting ${set} HTTP ${r.status}`);
       return ((r.json as { rows?: Row[] } | null)?.rows ?? []) as Row[];
@@ -118,8 +129,10 @@ export async function androidVitals(fresh = false): Promise<AndroidVitals> {
       crash: parseVitalsRows(crashRows, "userPerceivedCrashRate", "userPerceivedCrashRate28dUserWeighted"),
       anr: parseVitalsRows(anrRows, "userPerceivedAnrRate", "userPerceivedAnrRate28dUserWeighted"),
     };
+    lastGood = value;
   } catch (err) {
-    value = { configured: true, error: (err as Error).message, crash: EMPTY, anr: EMPTY };
+    // Hata YİNE bildiriliyor (uyarı motoru `vitals-api`); oranlar son başarılı okumadan.
+    value = { configured: true, error: (err as Error).message, crash: lastGood?.crash ?? EMPTY, anr: lastGood?.anr ?? EMPTY };
   }
   cache = { at: Date.now(), value };
   return value;
