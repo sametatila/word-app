@@ -3,7 +3,7 @@
 import { AvatarOverlay, HAT_COLORS } from "@/components/avatar-parts";
 import { useAvatar } from "@/lib/avatar";
 import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
-import { avatarImageUrl, avatarLayers } from "@/lib/avatar-layers";
+import { avatarImageUrl, avatarLayers, catalogBlink, catalogSize, circleFrame, type AvatarCatalog } from "@/lib/avatar-layers";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import { useEffect, type ReactNode } from "react";
 import { motion, useAnimationControls } from "framer-motion";
@@ -111,9 +111,9 @@ export function MascotAvatar({
   className?: string;
 }) {
   const catalog = useAvatarCatalog();
-  /* 3B KATALOG AÇIKSA katmanlar: arka plan, Nomi tabanı, yuvalar. Kare
-     çıktının yüzü merkezin biraz altında; dairede yüz ortalansın diye hafif
-     büyütülüp aşağıdan hizalanıyor (profil üst alanı kareyi olduğu gibi çiziyor). */
+  /* 3B KATALOG AÇIKSA katmanlar: arka plan, Nomi tabanı, yuvalar. Tuvalin
+     yalnız yüzü içeren karesi (`circleFrame`, katalogdan) daireyi dolduruyor;
+     profil sahnesi tuvalin tamamını çiziyor. */
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
     /* KÜÇÜK BOY TEK GÖRSEL: listelerde kişi başına bir istek (sunucuda
@@ -133,15 +133,18 @@ export function MascotAvatar({
         />
       );
     }
+    const fr = circleFrame(catalog.cat);
     return (
       <span
         className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}
-        style={{ width: size, height: size, background: L.bg ? `center / cover url(${catalog.base}/${L.bg})` : "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
+        style={{ width: size, height: size, background: "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
       >
-        {[L.base, ...L.layers].map((f) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ transform: "scale(1.12)", transformOrigin: "50% 62%" }} />
-        ))}
+        <span className="absolute block" style={{ left: `${fr.left}%`, top: `${fr.top}%`, width: `${fr.w}%`, height: `${fr.h}%` }}>
+          {[L.bg, L.base, ...L.layers].filter((f): f is string => !!f).map((f) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
+          ))}
+        </span>
       </span>
     );
   }
@@ -183,22 +186,53 @@ function useBump(bump: number) {
   return controls;
 }
 
-export function AvatarStage({ config, height = 280, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
+/**
+ * Nomi'nin tuvali (profil sahnesi, düzenleyici): taban, göz kırpma kareleri
+ * ve yuvalar, BEKLEME HAREKETİYLE (2026-09-29): nefes (4,2 sn), çok küçük
+ * sallanma (7,5 sn) ve ara ara göz kırpma. Hepsi CSS (`globals.css`
+ * `.nomi-idle`), JS döngüsü yok; "hareketi azalt"ta durur. Göz kırpma
+ * katalogdan (`kirpma`, v2): kapalı göz yalnız gözlerin kutusu kadar iki küçük
+ * kare, tabanın hemen üstünde, aksesuarların altında.
+ */
+function NomiFigure({ cat, base, files }: { cat: AvatarCatalog; base: string; files: { base: string; layers: string[] } }) {
+  const blink = catalogBlink(cat);
+  return (
+    <div className="nomi-idle absolute inset-0">
+      <div className="nomi-breathe absolute inset-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={`${base}/${files.base}`} alt="" className="absolute inset-0 h-full w-full" />
+        {blink
+          ? blink.frames.slice(0, 2).map((f, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={f} src={`${base}/${f}`} alt="" className={`nomi-blink-${i + 1} absolute`} style={{ left: `${blink.left}%`, top: `${blink.top}%`, width: `${blink.w}%`, height: `${blink.h}%` }} />
+            ))
+          : null}
+        {files.layers.map((f) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={f} src={`${base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function AvatarStage({ config, height = 280, inset = 0, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; /** Altta sahnenin üstüne binen içeriğin payı (px): tuval o kadar yukarıda, kesik alt kenarı içeriğin arkasında kalır. */ inset?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
   const catalog = useAvatarCatalog();
   const controls = useBump(bump);
   const g = avatarBg(config.bg);
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
-    const fig = Math.round(height * 1.02);
+    const { w, h } = catalogSize(catalog.cat);
+    /* TUVAL ALANIN GENİŞLİĞİNDE, alta hizalı; geniş ekranda yüksekliğe
+       sığdırılıyor (hiçbir parça kesilmesin: kanat, balon). Arka plan tüm
+       sahneyi kaplıyor, alttan hizalı ki ışığı başın arkasında kalsın. Alt
+       kenar binen içeriğin (`inset`) biraz altında: kesik göğüs orada
+       görünmez, sallanırken de çizgi açılmaz. */
     return (
-      <div className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center 30% / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
-        <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.07, width: fig * 0.6, height: 26, background: "radial-gradient(closest-side, rgba(0,0,0,.3), transparent)" }} />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2" style={{ width: fig, height: fig }}>
+      <div className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center bottom / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
+        <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: Math.max(0, inset - 6) - height * 0.015, width: `min(100%, ${Math.round(((height - Math.max(0, inset - 6)) * w) / h)}px)`, aspectRatio: `${w} / ${h}` }}>
           <motion.div animate={controls} className="absolute inset-0 origin-bottom">
-            {[L.base, ...L.layers].map((f) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
-            ))}
+            <NomiFigure cat={catalog.cat} base={catalog.base} files={L} />
           </motion.div>
         </div>
         {children}

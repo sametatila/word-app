@@ -83,7 +83,7 @@ export function ProfileScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        <AvatarStage config={cfg} height={300 + insets.top}>
+        <AvatarStage config={cfg} height={300 + insets.top} inset={28}>
           <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", justifyContent: "space-between" }}>
             <StageButton label={t("common.back")} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))}><ArrowBackIcon color={colors.text} size={22} /></StageButton>
             <StageButton label={t("settings.settings")} onPress={() => nav.navigate("Settings")}><SettingsIcon color={colors.text} size={22} /></StageButton>

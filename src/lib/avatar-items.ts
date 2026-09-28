@@ -127,17 +127,23 @@ export async function lockedAvatarParts(userId: string, lang: NativeLang): Promi
 /* ------------------------------------------------------------------ */
 
 type CatalogLite = { parcalar: { id: string; ad: string; adlar?: Record<string, string>; ikon: string }[] };
-let catalogLite: Promise<Map<string, CatalogLite["parcalar"][number]>> | null = null;
-/* Katalog `public/avatar/v1`de, yani sunucunun diskinde; `AVATAR_3D_BASE` o
-   dizinin yayındaki adresi. Bir kez okunur (süreç başına). */
+const catalogLite = new Map<string, Promise<Map<string, CatalogLite["parcalar"][number]>>>();
+/* Katalog `public/avatar/v<n>`de, yani sunucunun diskinde; `AVATAR_3D_BASE`
+   o dizinin yayındaki adresi (sürüm kökün sonundan). Sürüm başına bir kez
+   okunur (süreç başına). */
 function catalogParts(): Promise<Map<string, CatalogLite["parcalar"][number]>> {
-  catalogLite ??= readFile(path.join(process.cwd(), "public", "avatar", "v1", "katalog.json"), "utf8")
-    .then((t) => new Map((JSON.parse(t) as CatalogLite).parcalar.map((p) => [p.id, p] as const)))
-    .catch((err) => {
-      catalogLite = null;
-      throw err;
-    });
-  return catalogLite;
+  const v = /\/avatar\/v(\d+)$/.exec(avatar3dBase() ?? "")?.[1] ?? "1";
+  let p = catalogLite.get(v);
+  if (!p) {
+    p = readFile(path.join(process.cwd(), "public", "avatar", `v${v}`, "katalog.json"), "utf8")
+      .then((t) => new Map((JSON.parse(t) as CatalogLite).parcalar.map((q) => [q.id, q] as const)))
+      .catch((err) => {
+        catalogLite.delete(v);
+        throw err;
+      });
+    catalogLite.set(v, p);
+  }
+  return p;
 }
 
 /**

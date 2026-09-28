@@ -144,13 +144,13 @@ const nextConfig: NextConfig = {
       },
       {
         /*
-          NOMİ 3B AVATAR KATALOĞU sürümlü bir kök: `/avatar/v1` bir kez
-          yayınlanınca değişmiyor (yeni katalog yeni kök, `v2`). Katmanlar ve
+          NOMİ 3B AVATAR KATALOĞU sürümlü bir kök: `/avatar/v<n>` bir kez
+          yayınlanınca değişmiyor (yeni katalog yeni kök: v1 → v2). Katmanlar ve
           ikonlar bir yıl `immutable`; düzenleyici ve profil sahnesi her açılışta
           yeniden doğrulama isteği atmasın. `katalog.json` hariç tutulmuyor:
           kökle birlikte sürümleniyor.
         */
-        source: "/avatar/v1/:path*",
+        source: "/avatar/:version(v\\d+)/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {

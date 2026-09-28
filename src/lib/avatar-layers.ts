@@ -20,6 +20,13 @@ export type CatalogPart = {
 };
 export type AvatarCatalog = {
   boyut: number;
+  /** v2: tuvalin eni ve boyu (px). Yoksa kare `boyut` (v1). */
+  en?: number;
+  boy?: number;
+  /** v2: küçük daire avatarın tuvaldeki karesi [x, y, kenar] (px). Yoksa v1 kuralı. */
+  daire?: [number, number, number];
+  /** v2: göz kırpma: tabanın üstüne konan iki kare (yarım, kapalı) ve tuvaldeki kutuları [x, y, en, boy] (px). */
+  kirpma?: { kutu: [number, number, number, number]; kareler: string[] } | null;
   taban: string;
   palet: string[];
   sira: Record<string, number>;
@@ -65,6 +72,45 @@ export function partIcon(p: CatalogPart, color: string | null | undefined): stri
   return (color ? p.ikonlar[color] : undefined) ?? (p.renkler[0] ? p.ikonlar[p.renkler[0]] : undefined) ?? p.ikon;
 }
 
+/** Tuvalin boyu (px): v2 3:2, v1 kare. */
+export function catalogSize(cat: AvatarCatalog): { w: number; h: number } {
+  return { w: cat.en ?? cat.boyut, h: cat.boy ?? cat.boyut };
+}
+
+/**
+ * Küçük daire avatarın tuvaldeki karesi [x, y, kenar] (px). v2 katalog bunu
+ * kendisi söylüyor; v1'de kural 1,12 büyütme ve (50 %, 62 %) kökenliydi, aynı
+ * kareye çevriliyor. Daire çizen her yer (web, mobil, `/api/avatar/img`) bunu
+ * kullanır: tuval değişince kırpma tek yerden değişir.
+ */
+export function circleBox(cat: AvatarCatalog): [number, number, number] {
+  if (cat.daire) return cat.daire;
+  const n = cat.boyut, k = 1 / 1.12;
+  return [0.5 * n * (1 - k), 0.62 * n * (1 - k), n * k];
+}
+
+/**
+ * Tuvali `circleBox` karesi kutuyu dolduracak şekilde yerleştirmek için
+ * yüzdeler (kutunun kenarına göre): genişlik, yükseklik, sol, üst.
+ */
+export function circleFrame(cat: AvatarCatalog): { w: number; h: number; left: number; top: number } {
+  const { w, h } = catalogSize(cat);
+  const [x, y, s] = circleBox(cat);
+  return { w: (w / s) * 100, h: (h / s) * 100, left: (-x / s) * 100, top: (-y / s) * 100 };
+}
+
+/**
+ * Göz kırpma kareleri ve tuvaldeki yerleri (yüzde). Katalogda yoksa null
+ * (v1): bekleme hareketi kırpmasız çalışır.
+ */
+export function catalogBlink(cat: AvatarCatalog): { frames: string[]; left: number; top: number; w: number; h: number } | null {
+  const k = cat.kirpma;
+  if (!k || k.kareler.length < 2) return null;
+  const { w, h } = catalogSize(cat);
+  const [x, y, bw, bh] = k.kutu;
+  return { frames: k.kareler, left: (x / w) * 100, top: (y / h) * 100, w: (bw / w) * 100, h: (bh / h) * 100 };
+}
+
 /**
  * Küçük avatarın TEK GÖRSELİ (`/api/avatar/img`, 2026-09-28).
  *
@@ -81,5 +127,7 @@ export function avatarImageUrl(base: string, L: { bg: string | null; base: strin
   const origin = base.replace(/^(https?:\/\/[^/]+).*$/, "$1");
   const s = AVATAR_IMG_SIZES.find((x) => x >= px) ?? AVATAR_IMG_SIZES[AVATAR_IMG_SIZES.length - 1];
   const q = [L.bg ?? "", L.base, ...L.layers].map(encodeURIComponent).join(",");
-  return `${origin}/api/avatar/img?v=1&s=${s}&l=${q}`;
+  /* Katalog sürümü kökün sonundan (`/avatar/v2`): sunucu dosyaları o sürümün dizininde arar. */
+  const v = /\/avatar\/v(\d+)$/.exec(base)?.[1] ?? "1";
+  return `${origin}/api/avatar/img?v=${v}&s=${s}&l=${q}`;
 }

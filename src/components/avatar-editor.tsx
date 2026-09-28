@@ -125,12 +125,15 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="-mx-4 overflow-hidden sm:mx-0 sm:rounded-card">
-        <AvatarStage config={cfg} height={260} bump={bump}>
+        <AvatarStage config={cfg} height={260} inset={24} bump={bump}>
           <div className="absolute inset-x-3 top-3 flex items-center">
             <button type="button" onClick={() => router.back()} aria-label={t("common.close")} className="pressable flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "var(--surface)", color: "var(--text)" }}>
               <XIcon size={20} />
             </button>
-            <h1 className="flex-1 text-center text-h3" style={{ color: "#fff", textShadow: "0 1px 6px rgba(0,0,0,.35)" }}>{t("avatar.your_avatar")}</h1>
+            {/* Başlık düğmeler gibi yüzey hapında: zemin açık da olabilir koyu da (nane, gece). */}
+            <div className="flex flex-1 justify-center">
+              <h1 className="rounded-full px-4 py-2 text-h3" style={{ background: "var(--surface)", color: "var(--text)" }}>{t("avatar.your_avatar")}</h1>
+            </div>
             <button type="button" onClick={() => setDraft(null)} aria-label={t("avatar.reset")} className="pressable flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "var(--surface)", color: "var(--text)" }}>
               <RefreshIcon size={20} />
             </button>

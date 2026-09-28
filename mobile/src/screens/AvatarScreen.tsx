@@ -161,10 +161,15 @@ export function AvatarScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <AvatarStage config={cfg} height={260 + insets.top} figureScale={bounce}>
+      <AvatarStage config={cfg} height={260 + insets.top} inset={22} figureScale={bounce}>
         <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", alignItems: "center" }}>
           <StageButton label={t("common.close")} onPress={() => nav.goBack()}><XIcon color={colors.text} size={20} /></StageButton>
-          <Text accessibilityRole="header" variant="h3" color="#fff" style={{ flex: 1, textAlign: "center", textShadowColor: "rgba(0,0,0,0.35)", textShadowRadius: 6 }}>{t("avatar.your_avatar")}</Text>
+          {/* Başlık düğmeler gibi yüzey hapında: zemin açık da olabilir koyu da (web ile aynı). */}
+          <View style={{ flex: 1, alignItems: "center" }}>
+            <View style={{ backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
+              <Text accessibilityRole="header" variant="h3">{t("avatar.your_avatar")}</Text>
+            </View>
+          </View>
           <StageButton label={t("avatar.reset")} onPress={() => setDraft(null)}><RefreshIcon color={colors.text} size={20} /></StageButton>
         </View>
       </AvatarStage>

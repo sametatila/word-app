@@ -67,7 +67,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
   return (
     <div className="mx-auto w-full max-w-3xl">
       <div className="-mx-4 overflow-hidden sm:mx-0 sm:rounded-card">
-        <AvatarStage config={cfg} height={300}>
+        <AvatarStage config={cfg} height={300} inset={28}>
           <div className="absolute inset-x-3 top-3 flex justify-between">
             <Link href="/learn" prefetch={false} aria-label={t("common.back")} className="pressable flex h-11 w-11 items-center justify-center rounded-tile" style={{ background: "var(--surface)", color: "var(--text)" }}>
               <ArrowLeftIcon size={22} />
