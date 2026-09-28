@@ -294,7 +294,7 @@ export const c1U03: SkillExercise[] = [
     genre: "dialogue",
     intro: "Şaşkınlık mı, kibar bir itiraz mı? Aynı cümle iki yönde okunuyor.",
     gloss: [
-      { de: "die Überraschung", tr: "şaşkınlık", en: "surprise" },
+      { de: "überraschen", tr: "şaşırtmak", en: "surprise" },
       { de: "erstaunt", tr: "hayret etmiş", en: "astonished" },
       { de: "der Nachdruck", tr: "vurgu", en: "emphasis" },
       { de: "locker", tr: "rahat", en: "relaxed" },
@@ -305,7 +305,6 @@ export const c1U03: SkillExercise[] = [
       { de: "interessant", tr: "ilginç", en: "interesting" },
       { de: "einzige", tr: "tek", en: "only" },
       { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 5,
     segments: [
@@ -319,7 +318,7 @@ export const c1U03: SkillExercise[] = [
       { speaker: "Nadja", text: "Sie haben zweimal „ja“ gesagt und einmal „hm“. Bei Ihnen ist das ein Gutachten." },
       { speaker: "Chef", text: "Gut. Dann mit Nachdruck: zwei Tage Test haben sich bei uns noch nie als ausreichend erwiesen." },
       { speaker: "Nadja", text: "Ehrlich gesagt bin ich erstaunt. Ich hatte Ihr „interessant“ locker als Lob gelesen." },
-      { speaker: "Chef", text: "Das war keine Überraschung für mich — genau so war es gemeint und genau so nicht." },
+      { speaker: "Chef", text: "Das überrascht mich nicht. So klingt es, aber so war es nicht gemeint." },
       { speaker: "Nadja", text: "Warum sagen Sie das nicht gleich so?" },
       { speaker: "Chef", text: "Weil ich gehofft hatte, Sie kommen selbst darauf. Das bewirkt mehr." },
       { speaker: "Nadja", text: "Gewissermaßen ist das ja auch passiert." },

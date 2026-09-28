@@ -52,7 +52,7 @@
  { "tr": "Soruyu anlamadım.", "kind": "explanation.examples.tr", "de": "Ich habe die Frage nicht verstanden." },
  { "tr": "Çok kitabımız var.", "kind": "explanation.examples.tr", "de": "Wir haben viele Bücher." },
  { "tr": "Gitar çalabiliyor.", "kind": "explanation.examples.tr", "de": "Er kann Gitarre spielen." },
- { "tr": "Henüz bitirdin mi?", "kind": "explanation.examples.tr", "de": "Bist du schon fertig?" },
+ { "tr": "Bitirdin mi?", "kind": "explanation.examples.tr", "de": "Bist du fertig?" },
  { "tr": "İçeri gel ve otur.", "kind": "explanation.examples.tr", "de": "Komm herein und setz dich." },
  { "tr": "Kitapları severim.", "kind": "explanation.examples.tr", "de": "Ich mag Bücher." },
  { "tr": "bir kutu → iki kutu", "kind": "explanation.examples.tr", "de": "eine Schachtel → zwei Schachteln" },

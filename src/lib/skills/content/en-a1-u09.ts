@@ -38,12 +38,13 @@ export const enA1U09: SkillExercise[] = [
     gloss: [
       { de: "clothes", tr: "giysi" },
       { de: "radio", tr: "radyo" },
+      { de: "boss", tr: "patron" },
       { de: "drink", tr: "içmek" },
     ],
     minutes: 4,
     text:
       "I always get up at seven, even on the weekend. First I wake up, then I put on my clothes and I turn on the radio.\n\n" +
-      "On Monday and on Friday I work in the city. I usually walk to work. Sometimes I am late, but my teacher is never angry.\n\n" +
+      "On Monday and on Friday I work in the city. I usually walk to work. Sometimes I am late, but my boss is never angry.\n\n" +
       "In the evening I turn off the radio and I sit down with a newspaper. I often sit there until midnight.\n\n" +
       "On the weekend I look for a good game. After that I cook. Finally, before I sleep, I drink a cup of warm milk. That is my usual day.",
     questions: [
@@ -55,9 +56,9 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         text: "Who is never angry?",
-        options: ["the teacher", "the writer", "nobody"],
+        options: ["the boss", "the writer", "nobody"],
         answer: 0,
-        explain: "„Sometimes I am late, but my teacher is never angry.“ — „never“ „be“ fiilinden SONRA.",
+        explain: "„Sometimes I am late, but my boss is never angry.“ — „never“ „be“ fiilinden SONRA.",
       },
       {
         kind: "truefalse",

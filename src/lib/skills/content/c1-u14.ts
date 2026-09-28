@@ -47,7 +47,7 @@ export const c1U14: SkillExercise[] = [
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "berechtigen", tr: "hak vermek", en: "to entitle" },
       { de: "beziffern", tr: "rakamla belirtmek", en: "to put a figure on" },
-      { de: "miss", tr: "olumsuzluk ön eki", en: "negative prefix" },
+      { de: "die Bruttomiete", tr: "brüt kira", en: "gross rent" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "raten", tr: "tavsiye etmek", en: "to advise" },
       { de: "der Text", tr: "metin", en: "text" },
@@ -60,7 +60,7 @@ export const c1U14: SkillExercise[] = [
       "MIETMINDERUNG — DIE REIHENFOLGE ENTSCHEIDET\n\n" +
       "Ein Mangel allein begründet noch keine Mietminderung. Entscheidend ist, was der Mieter tut, nachdem er ihn bemerkt hat.\n\n" +
       "SCHRITT EINS: die Anzeige. Der Mangel muss dem Vermieter gemeldet werden, nachweisbar und mit Datum. Wer drei Monate schweigt und dann rückwirkend mindert, verliert für diese drei Monate — nicht, weil der Mangel kleiner wäre, sondern weil der Vermieter keine Gelegenheit hatte, ihn zu beseitigen.\n\n" +
-      "SCHRITT ZWEI: die Frist. Mit der Anzeige wird eine angemessene Frist zur Beseitigung gesetzt. Erst wenn sie verstreicht, gerät der Vermieter in Verzug. Vorher besteht kein Anspruch, den man geltend machen könnte.\n\n" +
+      "SCHRITT ZWEI: die Frist. Mit der Anzeige wird eine angemessene Frist zur Beseitigung gesetzt. Erst wenn sie verstreicht, gerät der Vermieter in Verzug. Vorher besteht kein Anspruch auf Schadensersatz oder Selbstvornahme, den man geltend machen könnte.\n\n" +
       "SCHRITT DREI: die Minderung selbst. Sie tritt kraft Gesetzes ein, muss also nicht beantragt werden. Wer dennoch die volle Miete unter Vorbehalt zahlt, verliert nichts und behält seine Position — ein Rat, den viele Beratungsstellen geben, weil eine falsch berechnete Minderung selbst zum Kündigungsgrund werden kann.\n\n" +
       "Zwei Irrtümer halten sich hartnäckig. Erstens: Die Minderung ist keine Wiedergutmachung für Ärger, sondern eine Anpassung des Preises an die tatsächliche Nutzbarkeit. Zweitens: Sie ist kein Druckmittel. Wer sie so einsetzt, produziert einen Rechtsstreit, den er auch bei berechtigtem Mangel verlieren kann.\n\n" +
       "Wer Anspruch auf Minderung erheben will, sollte ihn deshalb beziffern und begründen, statt ihn anzudeuten. Ein unbezifferter Anspruch ist für die Gegenseite kein Anspruch, sondern eine Beschwerde.\n\n" +
@@ -223,7 +223,7 @@ export const c1U14: SkillExercise[] = [
       { de: "die Personalakte", tr: "özlük dosyası", en: "personnel file" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "die Akte", tr: "dosya", en: "case file" },
-      { de: "voraus", tr: "önden", en: "ahead" },
+      { de: "voraussetzen", tr: "gerektirmek", en: "to require" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
     ],
@@ -387,7 +387,7 @@ export const c1U14: SkillExercise[] = [
       { de: "in Verzug geraten", tr: "temerrüde düşmek", en: "to fall into default" },
       { de: "geltend machen", tr: "ileri sürmek", en: "to assert" },
       { de: "die Beseitigung", tr: "giderme", en: "rectification" },
-      { de: "mangels", tr: "yokluğundan", en: "for lack of" },
+      { de: "der Mangel", tr: "ayıp / kusur", en: "defect" },
     ],
     minutes: 8,
     tasks: [
@@ -401,7 +401,7 @@ export const c1U14: SkillExercise[] = [
         kind: "build",
         tr: "Süre geçtikten sonra kiraya veren temerrüde düşer.",
         answer: "Nach Ablauf der Frist gerät der Vermieter in Verzug",
-        hint: "in Verzug geraten: öbek belirteç almaz.",
+        hint: "in Verzug geraten: öbek tanımlık almaz.",
       },
       {
         kind: "build",
@@ -446,7 +446,7 @@ export const c1U14: SkillExercise[] = [
         stimulus:
           "DURUM\n\n" +
           "— Daire: Lindenstraße 8, 3. kat, kira 940 € + 180 € yan gider\n" +
-          "— 6 Mayıs'tan beri banyoda sıcak su yok; sabahları 15 dakika akıtınca ılık geliyor\n" +
+          "— 6 Mayıs'tan beri banyoda su yeterince ısınmıyor; sabahları 15 dakika akıtınca ılık geliyor\n" +
           "— 7 Mayıs'ta yöneticiye telefon edildi, kayıt yok\n" +
           "— 12 Mayıs'ta tesisatçı geldi, \"parça gerekiyor\" dedi, o gün bugündür haber yok\n" +
           "— Bugün 24 Mayıs\n" +
@@ -466,7 +466,7 @@ export const c1U14: SkillExercise[] = [
         sample:
           "Sehr geehrte Frau Hartmann,\n\n" +
           "hiermit zeige ich folgenden Mangel an der Wohnung Lindenstraße 8, 3. OG, an:\n\n" +
-          "Seit dem 6. Mai steht in der Wohnung kein Warmwasser zur Verfügung. Erst nach etwa fünfzehn Minuten Laufzeit erreicht das Wasser eine lauwarme Temperatur. Am 7. Mai habe ich die Hausverwaltung telefonisch informiert. Am 12. Mai war ein Installateur vor Ort und teilte mit, ein Ersatzteil sei erforderlich; seither habe ich keine Rückmeldung erhalten. In der Nachbarwohnung besteht derselbe Mangel.\n\n" +
+          "Seit dem 6. Mai steht im Bad kein ausreichend warmes Wasser zur Verfügung. Erst nach etwa fünfzehn Minuten Laufzeit erreicht das Wasser eine lauwarme Temperatur. Am 7. Mai habe ich die Hausverwaltung telefonisch informiert. Am 12. Mai war ein Installateur vor Ort und teilte mit, ein Ersatzteil sei erforderlich; seither habe ich keine Rückmeldung erhalten. In der Nachbarwohnung besteht derselbe Mangel.\n\n" +
           "Ich setze Ihnen hiermit eine Frist zur Beseitigung bis zum 3. Juni. Nach fruchtlosem Ablauf dieser Frist geraten Sie in Verzug; ich behalte mir vor, ab dem 7. Mai eine Mietminderung geltend zu machen und die Beseitigung auf Ihre Kosten zu veranlassen.\n\n" +
           "Die Miete zahle ich bis dahin weiterhin in voller Höhe, ausdrücklich unter Vorbehalt.\n\n" +
           "Für eine kurze Rückmeldung, bis wann die Reparatur erfolgt, wäre ich Ihnen dankbar.\n\n" +

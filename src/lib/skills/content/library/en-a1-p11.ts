@@ -231,7 +231,7 @@ export const enA1P11: SkillExercise[] = [
     skill: "speaking",
     title: "bag or back?",
     genre: "pronounce",
-    intro: "Türkçede kelime sonundaki b, d, g ve v sertleşir (kitap, ağaç); İngilizcede sertleşmez ve sertleşirse kelime değişir.",
+    intro: "Türkçede kelime sonundaki b, c, d ve g sertleşir (kitap, ağaç); İngilizcede sertleşmez ve sertleşirse kelime değişir.",
     gloss: [
       { de: "bag", tr: "çanta" },
       { de: "hard", tr: "sert" },

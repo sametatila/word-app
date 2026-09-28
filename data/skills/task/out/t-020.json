@@ -146,7 +146,7 @@
  { "tr": "„Ich heiße …“ + ad. Fiil ikinci sırada.", "kind": "build.hint", "en": "„Ich heiße …“ + the name. The verb in second position." },
  { "tr": "„wohnen in“ → edat zamirin önüne geçer.", "kind": "build.hint", "en": "„wohnen in“ → the preposition moves in front of the pronoun." },
  { "tr": "dass yan cümlesinde de fiil sona gider.", "kind": "build.hint", "en": "In a dass clause the verb goes to the end as well." },
- { "tr": "in Verzug geraten: öbek belirteç almaz.", "kind": "build.hint", "en": "in Verzug geraten: the phrase takes no article." },
+ { "tr": "in Verzug geraten: öbek tanımlık almaz.", "kind": "build.hint", "en": "in Verzug geraten: the phrase takes no article." },
  { "tr": "Ya aus + Dativ ya tek sözcüklü bileşik.", "kind": "build.hint", "en": "Either aus + Dativ or a one-word compound." },
  { "tr": "„der Neffe“ zayıf isim: Akkusativ'de -n.", "kind": "build.hint", "en": "„der Neffe“ is a weak noun: -n in the accusative." }
 ]

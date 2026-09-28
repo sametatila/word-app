@@ -225,9 +225,9 @@
   "de": "„I'm looking for a shirt.“ — die Jacke liegt neben der Umkleidekabine."
  },
  {
-  "tr": "„It's too big. Do you have a small size?“ — küçüğünü sonra istiyor.",
+  "tr": "„It's too big. Do you have it in small?“ — küçüğünü sonra istiyor.",
   "kind": "explain",
-  "de": "„It's too big. Do you have a small size?“ — die kleine verlangt sie danach."
+  "de": "„It's too big. Do you have it in small?“ — die kleine verlangt sie danach."
  },
  {
   "tr": "„She has a green car and a green jacket.“ — renk sıfatı isimden önce.",
@@ -367,7 +367,7 @@
  {
   "tr": "özel",
   "kind": "gloss.tr",
-  "de": "privat"
+  "de": "besonders"
  },
  {
   "tr": "park",

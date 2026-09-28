@@ -283,7 +283,7 @@ export const enB2P13: SkillExercise[] = [
     skill: "speaking",
     title: "Should Phones Be Banned in Schools?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir yasağın neyi çözüp neyi çözmediğini ayır.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir yasağın neyi çözüp neyi çözmediğini ayır.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -338,7 +338,7 @@ export const enB2P13: SkillExercise[] = [
       { de: "to hand in", tr: "teslim etmek" },
       { de: "to allow", tr: "izin vermek" },
       { de: "to rewrite", tr: "yeniden yazmak" },
-      { de: "homework", tr: "ödev" },
+      { de: "homework", tr: "ev ödevi" },
     ],
     minutes: 9,
     explanation: [

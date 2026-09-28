@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *
  * İlgi zamiri edatla birlikte gelince Türkçe konuşan için iki şey aynı anda
  * değişir: edat öne çıkar ve zamirin hâli edata bağlanır. dessen/deren ise
- * sahibin değil, SAHİP OLUNANIN cinsine göre seçilmez — bu ünitenin en sık
+ * SAHİP OLUNANIN değil, sahibin cinsine göre seçilir — bu ünitenin en sık
  * hata alınan noktası.
  */
 export const b2U16: SkillExercise[] = [

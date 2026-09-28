@@ -454,7 +454,7 @@ export const c1U17: SkillExercise[] = [
           "DURUMUN: İki finalistten biri seçildi. Diğerinin teknik çözümü iyiydi, ekip liderliği deneyimi yetersiz kaldı. Altı ay içinde ikinci bir pozisyon açılacak ve bu kişiyi tekrar davet etmek istiyorsun.",
         checklist: [
           "Ret açık mı, yumuşatılıp belirsizleştirilmemiş mi?",
-          "Gerekçe somut mu (teknik çözüm iyi, ekip liderliği deneyimi)?",
+          "Gerekçe somut mu (teknik çözüm iyi, ekip liderliği deneyimi eksik)?",
           "Altı ay sonraki pozisyon gerçekçi bir dille mi anıldı?",
           "En az bir gönderme sözcüğü ve bir ara açıklama var mı?",
         ],

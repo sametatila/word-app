@@ -112,8 +112,8 @@ export const a2U07: SkillExercise[] = [
     text:
       "Sehr geehrte Frau Demir,\n\n" +
       "vielen Dank für Ihren Anruf. Mit diesem Bescheid bestätigen wir Ihre neue Adresse.\n\n" +
-      "Ihre alte Versichertenkarte ist noch bis zum 31. Dezember gültig. Danach schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.\n\n" +
-      "Eine Sache ist aber notwendig: Bitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Familienversicherung zu nutzen.\n\n" +
+      "Ihre alte Versichertenkarte ist noch bis zum 31. Dezember gültig. Vorher schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.\n\n" +
+      "Eine Sache ist aber notwendig: Bitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Leistungen zu nutzen.\n\n" +
       "Wenn Sie zusätzlich privat versichert sind, teilen Sie uns das bitte mit. Für Zahnbehandlungen gibt es dann eine andere Vereinbarung.\n\n" +
       "Mit freundlichen Grüßen\nAOK Nordwest",
     questions: [
@@ -343,7 +343,7 @@ export const a2U07: SkillExercise[] = [
         kind: "reply",
         prompt: "Sigortadan gelen mektuba cevap yaz. Belgeyi gönderdiğini söyle, kartının ne zamana kadar geçerli olduğunu teyit et ve bir soru sor.",
         stimulus:
-          "Sehr geehrte Frau Demir,\n\nmit diesem Bescheid bestätigen wir Ihre neue Adresse. Ihre alte Karte ist noch bis zum 31. Dezember gültig.\n\nBitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Familienversicherung zu nutzen.\n\nMit freundlichen Grüßen\nAOK Nordwest",
+          "Sehr geehrte Frau Demir,\n\nmit diesem Bescheid bestätigen wir Ihre neue Adresse. Ihre alte Karte ist noch bis zum 31. Dezember gültig.\n\nBitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Leistungen zu nutzen.\n\nMit freundlichen Grüßen\nAOK Nordwest",
         checklist: [
           "Resmî hitapla başladın mı („Sehr geehrte Damen und Herren“)?",
           "Belgeyi gönderdiğini yazdın mı?",

@@ -275,7 +275,7 @@ export const enB2P7: SkillExercise[] = [
     skill: "speaking",
     title: "Does an Accent Change How You Are Heard?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: kişisel deneyimi bir iddiayla birleştir.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: kişisel deneyimi bir iddiayla birleştir.",
     gloss: [],
     minutes: 7,
     monologue: {

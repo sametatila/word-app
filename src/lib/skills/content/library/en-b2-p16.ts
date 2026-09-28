@@ -128,7 +128,7 @@ export const enB2P16: SkillExercise[] = [
     intro: "Bir sakinler toplantısı: iki yıllığına kullanıma açılan boş bir arsa oyun alanı mı olsun, bahçe mi?",
     gloss: [
       { de: "plot", tr: "arsa" },
-      { de: "planning application", tr: "imar başvurusu" },
+      { de: "zoning application", tr: "imar başvurusu" },
       { de: "insurance", tr: "sigorta" },
       { de: "inspection", tr: "denetim" },
       { de: "fenced off", tr: "çitle çevrili" },
@@ -141,7 +141,7 @@ export const enB2P16: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Chair", text: "Next item: the empty plot on Canal Road. The owner has agreed to let residents use it for two years while the planning application is decided." },
+      { speaker: "Chair", text: "Next item: the empty plot on Canal Road. The owner has agreed to let residents use it for two years while the zoning application is decided." },
       { speaker: "Ms. Adeyemi", text: "It's time we had somewhere for the younger children. The nearest playground is across the main road, and I'd rather they didn't have to cross it." },
       { speaker: "Mr. Lowe", text: "I'm not against that, but a playground needs equipment, insurance and inspections. For a site we might lose in two years, that's a lot of money to spend." },
       { speaker: "Ms. Adeyemi", text: "So what would you rather we did? Leave it fenced off until somebody builds apartments on it?" },
@@ -156,7 +156,7 @@ export const enB2P16: SkillExercise[] = [
         text: "How long can residents use the plot?",
         options: ["for one year", "for two years", "until apartments are built"],
         answer: 1,
-        explain: "„let residents use it for two years while the planning application is decided“.",
+        explain: "„let residents use it for two years while the zoning application is decided“.",
       },
       {
         text: "What worries Mr. Lowe about a playground?",
@@ -288,7 +288,7 @@ export const enB2P16: SkillExercise[] = [
     skill: "speaking",
     title: "Should Empty Land Go to Residents?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: sahibin kaygısını hakkıyla ver ve işi kimin taşıyacağını söyle.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: sahibin kaygısını hakkıyla ver ve işi kimin taşıyacağını söyle.",
     gloss: [],
     minutes: 7,
     monologue: {

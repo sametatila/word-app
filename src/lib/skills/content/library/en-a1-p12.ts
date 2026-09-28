@@ -230,7 +230,7 @@ export const enA1P12: SkillExercise[] = [
     skill: "speaking",
     title: "sing or sink?",
     genre: "pronounce",
-    intro: "„ng“ İngilizcede tek bir burun sesidir; Türkçedeki gibi arkasına g ya da k eklenmez, eklenirse kelime değişir.",
+    intro: "„ng“ İngilizcede tek bir burun sesidir; arkasına g ya da k sesi eklenmez (Türkçe alışkanlıkla eklenirse kelime değişir).",
     gloss: [
       { de: "to sing", tr: "şarkı söylemek" },
       { de: "wing", tr: "kanat" },

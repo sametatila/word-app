@@ -292,7 +292,7 @@ export const enB2P20: SkillExercise[] = [
     skill: "speaking",
     title: "Should Personal Prices Be Allowed?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir uygulamanın kime yaradığını kabul et ve sorunun tam yerini göster.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir uygulamanın kime yaradığını kabul et ve sorunun tam yerini göster.",
     gloss: [],
     minutes: 7,
     monologue: {

@@ -78,7 +78,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "a word of warning", tr: "tek bir uyarı" },
       { de: "measured", tr: "ölçülen" },
       { de: "survive", tr: "dayanmak" },
-      { de: "agree", tr: "katılmak" },
+      { de: "agree", tr: "aynı fikirde olmak" },
     ],
     minutes: 12,
     text:

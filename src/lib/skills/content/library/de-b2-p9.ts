@@ -331,7 +331,7 @@ export const deB2P9: SkillExercise[] = [
         heading: "was: bütün bir cümleye gönderme",
         tr: "İlgi zamiri tek bir isme değil ÖNCEKİ CÜMLENİN TAMAMINA gönderme yapıyorsa „was“ kullanılır. Ayrıca „alles“, „nichts“, „etwas“, „das“ ve üstünlük sıfatlarından sonra da „was“ gelir — „der/die/das“ değil.",
         examples: [
-          { de: "Die Tüte war schon weg, was mich geärgert hat.", tr: "Poşet çoktan gitmişti, bu da canımı sıktı.", note: "cümlenin tamamına" },
+          { de: "Die Tüte war schon weg, was mich geärgert hat.", tr: "Poşet çoktan kaybolmuştu, bu da canımı sıktı.", note: "cümlenin tamamına" },
           { de: "Das ist alles, was ich weiß.", tr: "Bildiğim her şey bu.", note: "alles → was" },
           { de: "Das Beste, was du tun kannst, ist warten.", tr: "Yapabileceğin en iyi şey beklemek.", note: "üstünlük → was" },
         ],

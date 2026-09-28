@@ -40,9 +40,9 @@
   "de": "Drei Modalverben, eine Akte. Welches wird einem vorgehalten?"
  },
  {
-  "tr": "Dört sözcük iki sözcüğe katlanıyor. Ne düşüyor?",
+  "tr": "Bütün bir yan cümle mastara katlanıyor. Ne düşüyor?",
   "kind": "intro",
-  "de": "Vier Wörter falten sich zu zweien. Was fällt weg?"
+  "de": "Ein ganzer Nebensatz faltet sich zum Infinitiv. Was fällt weg?"
  },
  {
   "tr": "Üç koşul, aynı başlangıç. Fark nerede başlıyor?",
@@ -542,7 +542,7 @@
  {
   "tr": "işe almak istedikleri için",
   "kind": "gloss.tr",
-  "de": "weil sie schnell einstellen wollten"
+  "de": "weil sie einstellen wollten"
  },
  {
   "tr": "daha dost",
@@ -553,5 +553,10 @@
   "tr": "hareketli",
   "kind": "gloss.tr",
   "de": "lebhaft"
+ },
+ {
+  "tr": "endişeler",
+  "kind": "gloss.tr",
+  "de": "die Bedenken"
  }
 ]

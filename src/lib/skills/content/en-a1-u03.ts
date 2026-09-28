@@ -408,7 +408,7 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İki çocuğu var.",
+        tr: "Onun (bir kadının) iki çocuğu var.",
         answer: "She's got two children.",
         alternatives: ["She has two children.", "She has got two children."],
         hint: "Üçüncü tekil kişide „have“ → „has“: she has, she's got.",

@@ -80,7 +80,7 @@ export const b2U13: SkillExercise[] = [
       {
         text: "Was gilt für das Gießen von Gärten?",
         options: [
-          "Es ist zwischen 8 und 20 Uhr betroffen.",
+          "Es ist zwischen 8 und 20 Uhr eingeschränkt.",
           "Es ist rund um die Uhr erlaubt.",
           "Es ist vollständig verboten.",
         ],

@@ -110,10 +110,8 @@ export const b1U08: SkillExercise[] = [
       { de: "verschwinden", tr: "kaybolmak", en: "to disappear" },
       { de: "die Wahrheit", tr: "gerçek", en: "truth" },
       { de: "die Tat", tr: "eylem", en: "deed" },
-      { de: "verlobt", tr: "nişanlı", en: "engaged" },
       { de: "die Papiere", tr: "belgeler", en: "documents" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Stiege", tr: "merdiven", en: "staircase" },
     ],
     text:
       "Es geschah an einem Dienstag im November. Eine Frau, die jeden Morgen den gleichen " +
@@ -362,7 +360,6 @@ export const b1U08: SkillExercise[] = [
       { de: "höflich", tr: "kibar", en: "polite" },
       { de: "neugierig", tr: "meraklı", en: "curious" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "der Verstand", tr: "zihin", en: "mind" },
     ],
     tasks: [
       {

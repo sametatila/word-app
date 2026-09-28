@@ -283,7 +283,7 @@ export const enB2P11: SkillExercise[] = [
     skill: "speaking",
     title: "Should Popular Places Limit Visitors?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir sınırlama yöntemini tart ve kimi dışarıda bıraktığını söyle.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir sınırlama yöntemini tart ve kimi dışarıda bıraktığını söyle.",
     gloss: [],
     minutes: 7,
     monologue: {

@@ -434,10 +434,10 @@ export const deA2P8: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Ich schenke ein Buch meiner Mutter.“ — Bu sıra doğru mu?",
+        text: "„Ich schenke ein Buch meiner Mutter.“ — Vurgusuz cümlede olağan sıra bu mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "İki isim varsa Dativ önce gelir: „Ich schenke meiner Mutter ein Buch.“",
+        explain: "Vurgusuz olağan sırada iki isimden Dativ önce gelir: „Ich schenke meiner Mutter ein Buch.“",
       },
       {
         kind: "truefalse",

@@ -105,7 +105,7 @@ export const enB1U17: SkillExercise[] = [
         text: "What three things does the writer look for?",
         options: [],
         answer: 0,
-        accept: ["year, people, who paid", "the year and the number", "three things"],
+        accept: ["year, people, who paid", "year, number of people, who paid"],
         explain: "„find the year, find the number of people, find who paid.“",
       },
     ],

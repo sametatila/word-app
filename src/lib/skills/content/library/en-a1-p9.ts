@@ -113,7 +113,7 @@ export const enA1P9: SkillExercise[] = [
       },
       {
         heading: "Sıra: kim, sonra ne",
-        tr: "İki nesne varsa sıra şöyledir: önce kişi, sonra şey — „Give me the book.“ Şeyi öne almak istiyorsan araya „to“ ya da „for“ gerekir: „Give the book to me.“ Zamirle söylerken birinci biçim daha doğaldır.",
+        tr: "İki nesne varsa sıra şöyledir: önce kişi, sonra şey — „Give me the book.“ Şeyi öne almak istiyorsan araya „to“ ya da „for“ gerekir: „Give the book to me.“ Şey bir zamirse („it“, „them“) ikinci biçim kullanılır: „Give it to me.“",
         examples: [
           { de: "Give me the book, please.", tr: "Kitabı bana ver lütfen.", note: "kişi önce" },
           { de: "Send the message to her.", tr: "Mesajı ona gönder.", note: "şey önce → to" },

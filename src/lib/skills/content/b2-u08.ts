@@ -215,7 +215,7 @@ export const b2U08: SkillExercise[] = [
     segments: [
       { speaker: "Nadja", text: "Zwei Wochen noch. Machen wir zuerst die Aufgabenverteilung, dann den Rest." },
       { speaker: "Kai", text: "Bevor wir verteilen: Was ist vorrangig? Sonst arbeiten wir wieder am Falschen." },
-      { speaker: "Nadja", text: "Gute Priorisierung wäre: Strom, Verpflegung, Programm. In der Reihenfolge." },
+      { speaker: "Nadja", text: "Eine gute Priorisierung wäre: Strom, Verpflegung, Programm. In der Reihenfolge." },
       { speaker: "Kai", text: "Strom ist klar. Wir müssen sechs Stände mit Strom ausstatten, das kann nicht am Vortag passieren." },
       { speaker: "Nadja", text: "Es muss also bis Mittwoch bestellt werden. Wer übernimmt das?" },
       { speaker: "Kai", text: "Ich. Und wenn ich krank werde, brauchen wir eine Stellvertretung." },
@@ -232,7 +232,7 @@ export const b2U08: SkillExercise[] = [
         text: "Nadja'nın önceliklendirme sırasını söylediği cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Gute Priorisierung wäre: Strom, Verpflegung, Programm."],
+        accept: ["Eine gute Priorisierung wäre: Strom, Verpflegung, Programm."],
         explain: "Toplantı dilinde önce sıra, sonra dağıtım. Dağıtmadan önce sıralamak Kai'nin şartıydı.",
       },
       {

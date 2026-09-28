@@ -307,7 +307,7 @@ export const enB2P14: SkillExercise[] = [
     skill: "speaking",
     title: "Should Cities Welcome Shared Scooters?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir rakamı doğru yorumla ve bedeli kimin ödediğini göster.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir rakamı doğru yorumla ve bedeli kimin ödediğini göster.",
     gloss: [],
     minutes: 7,
     monologue: {

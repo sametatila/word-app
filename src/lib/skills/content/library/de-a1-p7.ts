@@ -254,12 +254,12 @@ export const deA1P7: SkillExercise[] = [
         ],
       },
       {
-        de: "Die Uhr ist schon halb vier.",
-        tr: "Saat çoktan üç buçuk.",
+        de: "Die Uhr zeigt schon halb vier.",
+        tr: "Saat çoktan üç buçuğu gösteriyor.",
         hint: "„Uhr“ ve „vier“ sonundaki r de a'ya döner: UU-a, Fİİ-a.",
         confusions: [
           {
-            heard: ["Die Ur ist schon halb vier"],
+            heard: ["Die Ur zeigt schon halb vier"],
             fix: "Uzun u'dan sonra r yutulmaz; ses hafif bir a ile biter.",
             expected: "Uhr",
           },
@@ -292,11 +292,11 @@ export const deA1P7: SkillExercise[] = [
       {
         de: "Wer repariert mein Fahrrad?",
         tr: "Bisikletimi kim tamir ediyor?",
-        hint: "„Wer“ sonda a gibi, „repariert“ içinde iki r, „Fahrrad“ içinde çift r tek ses.",
+        hint: "„Wer“ sonda a gibi, „repariert“ içinde iki r, „Fahrrad“ iki parça: Fahr- sonundaki r a'ya kayar, -rad başındaki r tam söylenir.",
         confusions: [
           {
             heard: [],
-            fix: "Çift r tek ses verir ama önündeki a kısalmaz: FAAR-raat.",
+            fix: "İlk r a'ya kayar, ikinci r boğazdan tam gelir: FAA-a-raat.",
             expected: "Fahrrad",
           },
         ],

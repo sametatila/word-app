@@ -275,7 +275,7 @@ export const enB2P12: SkillExercise[] = [
     skill: "speaking",
     title: "Should Missed Appointments Cost Money?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir cezanın çekiciliğini kabul et, sonra kimi vuracağını göster.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir cezanın çekiciliğini kabul et, sonra kimi vuracağını göster.",
     gloss: [],
     minutes: 7,
     monologue: {

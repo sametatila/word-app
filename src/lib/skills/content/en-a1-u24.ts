@@ -35,7 +35,6 @@ export const enA1U24: SkillExercise[] = [
     genre: "email",
     intro: "Kısa bir e-posta. Soru ne, sorun ne, geçen hafta ne olmuş?",
     gloss: [
-      { de: "read", tr: "okumak" },
       { de: "important", tr: "önemli" },
       { de: "soon", tr: "yakında" },
       { de: "password", tr: "parola" },
@@ -43,8 +42,8 @@ export const enA1U24: SkillExercise[] = [
     minutes: 4,
     text:
       "Dear Anna,\n\n" +
-      "Thank you very much for your message. I was at home yesterday and I read it in the evening.\n\n" +
-      "I have a question: which website do you use for the course? I tried two, but I can't find the class.\n\n" +
+      "Thank you very much for your message. I was at home yesterday and I was happy with your message.\n\n" +
+      "I have a question: which website do you use for the course? I know two, but I can't find the class.\n\n" +
       "My password doesn't work either. Can you send me a new one? Or can we speak on the phone?\n\n" +
       "Last week I was very tired. I was sick and the internet was not important.\n\n" +
       "Thank you and see you soon,\nDeniz",
@@ -59,7 +58,7 @@ export const enA1U24: SkillExercise[] = [
         text: "Where was Deniz yesterday?",
         options: ["at home", "at the course", "on the phone"],
         answer: 0,
-        explain: "„I was at home yesterday and I read it in the evening.“",
+        explain: "„I was at home yesterday and I was happy with your message.“",
       },
       {
         kind: "truefalse",

@@ -63,7 +63,7 @@ export const deB2P2: SkillExercise[] = [
         explain: "Başlık ve ikinci paragraf aynı şeyi söylüyor: gereken sayıya ulaşılamıyor.",
       },
       {
-        text: "Welche Voraussetzung nennt der Text für das Amt?",
+        text: "Was sagt der Text über die Voraussetzungen für das Amt?",
         options: [
           "Juristische Kenntnisse sind nicht nötig.",
           "Man muss vorher einen Kurs besuchen.",

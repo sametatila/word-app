@@ -107,7 +107,6 @@ export const a2U03: SkillExercise[] = [
       { de: "die Übersetzung", tr: "çeviri", en: "translation" },
       { de: "einzige", tr: "tek", en: "only" },
       { de: "fremd", tr: "yabancı", en: "unfamiliar" },
-      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
     ],
     minutes: 4,
     text:

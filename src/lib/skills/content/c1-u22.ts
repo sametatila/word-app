@@ -291,7 +291,7 @@ export const c1U22: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Kollege'nin lehçenin şehirde ve kırsalda durumunu anlattığı cümleyi yaz.",
+        text: "İş arkadaşının lehçenin şehirde ve kırsalda durumunu anlattığı cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [

@@ -359,7 +359,7 @@ export const enA2U10: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bina kuralları kartını doldur.",
-        facts: "Çöp sekizden önce; gürültü geceden sabaha yasak; merdivenler şirkete ait; tavan arası nisandan ekime açık.",
+        facts: "Çöp sekizden önce; gürültü geceden sabaha yasak; merdivenleri bir şirket temizliyor; tavan arası nisandan ekime açık.",
         fields: [
           { label: "Trash", answer: "before eight", accept: ["before 8"] },
           { label: "Noise", answer: "forbidden at night", accept: ["forbidden", "not at night"] },

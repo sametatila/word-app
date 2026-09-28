@@ -43,7 +43,7 @@ export const c1U08: SkillExercise[] = [
       { de: "das Zitat", tr: "alıntı", en: "quotation" },
       { de: "die Weisheit", tr: "bilgelik", en: "wisdom" },
       { de: "der Abschnitt", tr: "bölüm / dönem", en: "chapter" },
-      { de: "miss", tr: "olumsuzluk ön eki", en: "negative prefix" },
+      { de: "scheitern an", tr: "…yüzünden başarısız olmak", en: "to fail because of" },
       { de: "schließen", tr: "kapatmak", en: "to close" },
       { de: "erzeugen", tr: "üretmek", en: "to generate" },
       { de: "fremd", tr: "yabancı", en: "unfamiliar" },
@@ -60,7 +60,7 @@ export const c1U08: SkillExercise[] = [
     minutes: 7,
     text:
       "DIE REDE, DIE NIEMAND VORHER SCHREIBT\n\n" +
-      "Abschiedsreden misslingen selten am Aufbau. Sie misslingen an der Leihgabe.\n\n" +
+      "Abschiedsreden scheitern selten am Aufbau. Sie scheitern an der Leihgabe.\n\n" +
       "Fast jede beginnt mit einem Zitat. Ein Satz von Goethe, eine Weisheit über Türen, die sich schließen, und andere, die sich öffnen. Das ist bequem: Das Zitat trägt die Feierlichkeit, und der Redner muss sie nicht selbst erzeugen.\n\n" +
       "Der Preis ist hoch. Wer mit fremden Worten beginnt, sagt im ersten Satz: Ich habe nichts Eigenes für diesen Anlass. Die Anwesenden hören das, auch wenn sie es nicht benennen könnten.\n\n" +
       "Was stattdessen trägt, ist überraschend klein. Ein Detail, das nur der Redner kennt: die kalte Kanne im Vorzimmer, der Zettel an der Tür, der Satz, den die Verabschiedete in jeder zweiten Sitzung gesagt hat. Wer solche Dinge nennt, würdigt, ohne zu loben.\n\n" +
@@ -71,10 +71,10 @@ export const c1U08: SkillExercise[] = [
       "Ein Zitat darf durchaus vorkommen. Aber am Ende, nicht am Anfang: als Schlussstein auf etwas Eigenes, nicht als Ersatz dafür.",
     questions: [
       {
-        text: "Woran misslingen Abschiedsreden laut Text?",
+        text: "Woran scheitern Abschiedsreden laut Text?",
         options: ["Am Aufbau", "An der Leihgabe", "An der Länge"],
         answer: 1,
-        explain: "„Sie misslingen an der Leihgabe“ — ödünç alınmış sözle başlamak.",
+        explain: "„Sie scheitern an der Leihgabe“ — ödünç alınmış sözle başlamak.",
       },
       {
         kind: "gapfill",
@@ -139,14 +139,14 @@ export const c1U08: SkillExercise[] = [
       { de: "stützen", tr: "desteklemek", en: "to support" },
       { de: "die Debatte", tr: "tartışma", en: "debate" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "die Wartezeit", tr: "bekleme süresi", en: "waiting time" },
       { de: "strittig", tr: "ihtilaflı", en: "disputed" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "die Autorität", tr: "otorite", en: "authority" },
       { de: "verlagern", tr: "kaydırmak", en: "to shift" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "verlobt", tr: "nişanlı", en: "engaged" },
+      { de: "verlieren", tr: "kaybetmek", en: "to lose" },
       { de: "gestiegen", tr: "yükselmiş", en: "risen" },
       { de: "gestritten", tr: "tartışılmış", en: "argued" },
       { de: "unstrittig", tr: "tartışmasız", en: "undisputed" },
@@ -393,7 +393,7 @@ export const c1U08: SkillExercise[] = [
       { de: "einräumen", tr: "kabul etmek", en: "to concede" },
       { de: "stichhaltig", tr: "sağlam", en: "cogent" },
       { de: "sich berufen", tr: "dayanak göstermek", en: "to invoke" },
-      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "die Wartezeit", tr: "bekleme süresi", en: "waiting time" },
       { de: "täuschen", tr: "aldatmak", en: "to deceive" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "gestiegen", tr: "yükselmiş", en: "risen" },

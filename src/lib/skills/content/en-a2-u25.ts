@@ -375,7 +375,7 @@ export const enA2U25: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Şikâyet formunu doldur.",
-        facts: "Çöp toplanmıyor; Garden Street; on iki ağustostan beri; iki kez arandı.",
+        facts: "Çöp toplanmıyor; Garden Street; on iki Ağustos'tan beri; iki kez arandı.",
         fields: [
           { label: "Problem", answer: "the trash", accept: ["trash"] },
           { label: "Street", answer: "Garden Street", accept: ["Garden"] },

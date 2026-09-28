@@ -308,7 +308,7 @@ export const b1U31: SkillExercise[] = [
     intro: "Bir yolculuk planla. Araç bildirirken artikel düşmez.",
     minutes: 8,
     gloss: [
-      { de: "die Eisenbahn", tr: "demiryolu", en: "railroad" },
+      { de: "die Eisenbahn", tr: "demir yolu", en: "railroad" },
       { de: "die Linie", tr: "hat", en: "line" },
       { de: "das Tram", tr: "tramvay", en: "streetcar" },
       { de: "der Aufenthalt", tr: "mola", en: "stopover" },
@@ -322,7 +322,7 @@ export const b1U31: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Oradan trenle devam ediyorum, demiryolunun doğrudan bir hattı var.",
+        tr: "Oradan trenle devam ediyorum, demir yolunun doğrudan bir hattı var.",
         answer: "Von dort fahre ich mit dem Zug weiter, die Eisenbahn hat eine direkte Linie.",
         hint: "Yine mit + dem.",
       },

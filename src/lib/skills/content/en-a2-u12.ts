@@ -387,7 +387,7 @@ export const enA2U12: SkillExercise[] = [
     intro: "Hata, bitmemiş iş ve o anda verilen karar.",
     gloss: [
       { de: "made a mistake", tr: "hata yaptım" },
-      { de: "agree with", tr: "katılmak" },
+      { de: "agree with", tr: "aynı fikirde olmak" },
       { de: "fix", tr: "düzeltmek" },
     ],
     minutes: 7,

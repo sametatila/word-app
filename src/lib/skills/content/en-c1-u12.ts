@@ -51,7 +51,6 @@ export const enC1U12: SkillExercise[] = [
     gloss: [
       { de: "noun", tr: "isim" },
       { de: "except", tr: "dışında" },
-      { de: "nouns", tr: "isimler" },
       { de: "object", tr: "nesne" },
       { de: "comma", tr: "virgül" },
       { de: "exists", tr: "var" },
@@ -83,7 +82,7 @@ export const enC1U12: SkillExercise[] = [
       "Kinship may well shape the lifeworld more than the law. Read that once and you have understood it. Read it twice and you will find that you cannot say which of two things it means.\n" +
       "Either kinship shapes the lifeworld more than the law shapes it, or kinship shapes the lifeworld more than it shapes the law. Two readings, and nothing in the sentence chooses between them.\n" +
       "This is not a rare accident. Every English comparison that ends in a bare noun has the same hole in it, because the second half is allowed to leave out everything except the one word being compared, and once the verb has gone there is nothing left to show which role that word had.\n" +
-      "A neighboring language does not have the problem and does nothing clever to avoid it. Its nouns carry an ending for their role, so the compared word arrives already marked: one ending says it is a subject, another says it is an object, and the reader has the answer before the sentence ends. The gap is closed by a single letter that English threw away several hundred years ago.\n" +
+      "A neighboring language often does not have the problem and does nothing clever to avoid it. Its articles carry an ending for the noun's role, so the compared word usually arrives already marked: one ending says it is a subject, another says it is an object, and the reader has the answer before the sentence ends. With a masculine noun the gap is closed by a single letter, the kind of ending that English threw away several hundred years ago.\n" +
       "So an English writer has to repair it by hand, and there is exactly one repair. Put the verb back. „More than the law does“ has one reading. „More than it does the law“ has the other. Nothing else works: not a comma, not word order, and not any amount of context that a careful reader will agree to trust.\n" +
       "Which makes this one of the few places where the small helping verb earns its keep. It has no meaning of its own, it exists to stand where a real verb would have stood, and here it is the only thing that can hold the role of a noun open long enough to be read.\n" +
       "Reciprocity might be reciprocal only in name. The second line of the lesson, with a hole of its own and a different one: the noun and its adjective sit on either side of the verb, and „only in name“ takes back what the sentence has just said without denying any of it.\n" +
@@ -420,7 +419,7 @@ export const enC1U12: SkillExercise[] = [
         text: "What will the guarding side bring?",
         options: [],
         answer: 0,
-        accept: ["the room", "a room", "the key"],
+        accept: ["the room", "a room"],
         explain: "„The side that is guarding will bring the room…“",
       },
     ],

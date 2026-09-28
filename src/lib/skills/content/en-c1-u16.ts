@@ -60,7 +60,6 @@ export const enC1U16: SkillExercise[] = [
       { de: "idle", tr: "atıl" },
       { de: "vacant", tr: "boş" },
       { de: "adverb", tr: "zarf" },
-      { de: "conjugated", tr: "çekilen" },
       { de: "apart", tr: "ayrı" },
       { de: "compounds", tr: "bileştiriyor" },
       { de: "nouns", tr: "isimler" },
@@ -98,7 +97,7 @@ export const enC1U16: SkillExercise[] = [
       "„Lie fallow.“ A verb and an adjective standing side by side with nothing between them. The verb is not „be“ and it has not lost its meaning: the fields are lying, in the sense of being low and spread out, and „fallow“ says what state they are in while they do it. Posture in the verb, state in the adjective, and the two are separate words.\n" +
       "English keeps a whole workshop of these. Stand empty, run dry, fall silent, come loose, go hungry, lie idle. They are not fixed expressions to be memorized one at a time. The pattern is productive, and a writer can make a new one this afternoon — stand vacant, fall quiet — and be understood on the first reading.\n" +
       "Two small tests show that the two words really are two. An adverb can be pushed between them: the fields lie completely fallow. And a degree word can be put in front of the adjective: the barns stand almost empty. Neither of those would be possible inside a single word.\n" +
-      "Now the measurement, and this one runs the opposite way from the one this course usually finds. German takes the same two ideas and fuses them into one verb: written together, conjugated together, and listed in a dictionary as a single entry. The same is true of standing empty and of running dry.\n" +
+      "Now the measurement, and this one runs the opposite way from the one this course usually finds. German takes the same two ideas and fuses them into one verb: written together in the infinitive and listed in a dictionary as a single entry. Standing empty can go the same way, and the dictionary allows it as one word or as two.\n" +
       "So here it is English that keeps the pieces apart and German that compounds, which is the reverse of what happens with nouns, where German builds one word out of four and English keeps the four. The habit is not a property of a language as a whole. It belongs to a class, and this class goes the other way.\n" +
       "The consequence for a learner is the useful half. A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up; an English speaker meeting the German verb has to accept that it can, and that a new one cannot simply be made up.\n" +
       "Behind the rural exodus stands a failed farm succession. One more posture verb, in a different job this time, in a sentence whose front slot has gone to a place, with no person anywhere in it.",

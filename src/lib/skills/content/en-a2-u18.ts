@@ -271,7 +271,7 @@ export const enA2U18: SkillExercise[] = [
       { speaker: "Mert", text: "Every year the same problem: what do I buy? And every year the same answer, two days too late." },
       { speaker: "Mert", text: "This year I asked in January. My sister said: a book. In March I forgot the name of the book." },
       { speaker: "Mert", text: "In May I asked again. She said: the same book. In June I bought it." },
-      { speaker: "Mert", text: "And now, in September, I'm giving it to her. Four candles on the cake, one for every month I waited." },
+      { speaker: "Mert", text: "And now, in September, I'm giving it to her. Four candles on the cake, one for every month since I asked again." },
       { speaker: "Mert", text: "My sister opened it and laughed. Then she said: I haven't bought your present yet. Your birthday is in November." },
       { speaker: "Mert", text: "That is our family. Candy, jokes, a hug, and the presents come when they come." },
       { speaker: "Mert", text: "We celebrate the day, not the paper. That is the surprise nobody buys." },
@@ -287,7 +287,7 @@ export const enA2U18: SkillExercise[] = [
         text: "How many candles are on the cake?",
         options: ["four", "one", "twelve"],
         answer: 0,
-        explain: "„Four candles on the cake, one for every month I waited.“",
+        explain: "„Four candles on the cake, one for every month since I asked again.“",
       },
       {
         kind: "truefalse",

@@ -47,7 +47,7 @@ export const deA1P6: SkillExercise[] = [
           "Sie möchte ein Paket schicken.",
         ],
         answer: 1,
-        explain: "Cuma günü kızına gidiyor ve yokken çiçekleriyle postasının ilgilenilmesini istiyor.",
+        explain: "Cuma günü kızına gidiyor ve yokken çiçekleriyle ve postasıyla ilgilenilmesini istiyor.",
       },
       {
         text: "Wo liegt der Schlüssel?",
@@ -288,8 +288,8 @@ export const deA1P6: SkillExercise[] = [
         hint: "Üçünde de yumuşak ch var: „Mädchen“, „möchte“, „Milch“. Küçültme eki -chen her zaman yumuşaktır.",
         confusions: [
           {
-            heard: ["Das Mädchen möchte Milk", "Das Mätchen möchte Milch"],
-            fix: "-chen ekinden önceki d ayrı okunur: MEET-şın değil, MEET-hın.",
+            heard: ["Das Mädchen möchte Milk", "Das Mädschen möchte Milch"],
+            fix: "-chen içindeki ch ş gibi okunmaz: MEET-şın değil, MEET-hın.",
             expected: "Mädchen",
           },
         ],

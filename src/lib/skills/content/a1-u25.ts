@@ -309,7 +309,7 @@ export const a1U25: SkillExercise[] = [
         tr: "Dün hastaydım.",
         answer: "Gestern war ich krank",
         hint:
-          "DİKKAT: „sein“ Perfekt KULLANMAZ. „Ich bin krank gewesen“ neredeyse hiç duyulmaz — konuşmada bile „war“ denir. Aynı şey „haben“ için de geçerli (hatte).",
+          "DİKKAT: „sein“ konuşmada da çoğunlukla Perfekt değil Präteritum ile kullanılır: „war“. „Ich bin krank gewesen“ daha seyrek duyulur (en çok güneyde). Aynı şey „haben“ için de geçerli (hatte).",
       },
       {
         kind: "build",

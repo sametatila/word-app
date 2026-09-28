@@ -140,7 +140,7 @@ export const deA1: SkillExercise[] = [
         text: "Wann kommt das Paket an?",
         options: [],
         answer: 0,
-        accept: ["in fünf bis sieben Tagen", "in 5 bis 7 Tagen", "fünf bis sieben Tage", "in fünf bis sieben Tage"],
+        accept: ["in fünf bis sieben Tagen", "in 5 bis 7 Tagen", "fünf bis sieben Tage"],
         explain: "„In fünf bis sieben Tagen.“ — beş ila yedi gün içinde.",
       },
       {

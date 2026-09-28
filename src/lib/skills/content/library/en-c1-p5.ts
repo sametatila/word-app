@@ -59,7 +59,7 @@ export const enC1P5: SkillExercise[] = [
       "allow us to say by how much, since there was no comparison class. Attendance did not change. We would " +
       "therefore caution against the claim, made in one newspaper report, that the program has improved results; " +
       "nothing here supports that.\n\n" +
-      "Costs. The program costs thirty-one euros per child tested, of which nineteen is the frames. A second " +
+      "Costs. The program costs thirty-one euros per child fitted with glasses, of which nineteen goes on the frames. A second " +
       "pair, requested by forty percent of families, would add eleven euros. We recommend funding it, and not " +
       "primarily for convenience: children who break their only pair go without for an average of five weeks.\n\n" +
       "Recommendation. Continue the program, extend it to seventh grade rather than to any other grade, and " +
@@ -135,7 +135,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "draft", tr: "taslak" },
       { de: "skim", tr: "göz gezdirmek" },
       { de: "paragraph", tr: "paragraf" },
-      { de: "connective", tr: "bağlayıcı" },
+      { de: "connective", tr: "bağlaç" },
       { de: "redundant", tr: "gereksiz" },
       { de: "assumption", tr: "varsayım" },
       { de: "assume", tr: "varsaymak" },

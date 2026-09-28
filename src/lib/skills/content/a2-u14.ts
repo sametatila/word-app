@@ -318,7 +318,7 @@ export const a2U14: SkillExercise[] = [
         source: "Ich möchte ein kariert Hemd.",
         answer: "Ich möchte ein kariertes Hemd.",
         alternatives: ["Ich möchte ein kariertes Hemd"],
-        why: "Belirsiz artikel ismin cinsini göstermediği için o işi sıfat üstlenir ve cinssiz isimde iki harfle biter.",
+        why: "Belirsiz artikel ismin cinsini göstermediği için o işi sıfat üstlenir ve nötr isimde iki harfle biter.",
       },
     ],
   },

@@ -338,10 +338,10 @@ export const deB2P19: SkillExercise[] = [
       },
       {
         heading: "wohl ile tahmin: bugün ve geçmiş",
-        tr: "„werden“ + „wohl“ (ya da „sicher“, „vermutlich“) çoğu zaman gelecek değil, bugüne ya da geçmişe dair bir TAHMİN bildirir. Bugün için Futur I („Sie wird wohl im Büro sein“ = muhtemelen büroda), geçmiş için Futur II („Er wird es wohl vergessen haben“ = herhalde unutmuştur) kullanılır. Öznel modal fiillerden farkı: burada kesinlik derecesini modal fiil değil „wohl“ taşır.",
+        tr: "„werden“ + „wohl“ (ya da „sicher“, „vermutlich“) çoğu zaman gelecek değil, bugüne ya da geçmişe dair bir TAHMİN bildirir. Bugün için Futur I („Sie wird wohl im Büro sein“ = muhtemelen büroda), geçmiş için Futur II („Er wird es wohl vergessen haben“ = herhâlde unutmuştur) kullanılır. Öznel modal fiillerden farkı: burada kesinlik derecesini modal fiil değil „wohl“ taşır.",
         examples: [
           { de: "Sie ist nicht da. Sie wird wohl noch im Büro sein.", tr: "Burada değil. Muhtemelen hâlâ büroda.", note: "bugüne dair tahmin" },
-          { de: "Er wird den Termin wohl vergessen haben.", tr: "Randevuyu herhalde unutmuştur.", note: "geçmişe dair tahmin" },
+          { de: "Er wird den Termin wohl vergessen haben.", tr: "Randevuyu herhâlde unutmuştur.", note: "geçmişe dair tahmin" },
           { de: "Das Paket wird wohl schon angekommen sein.", tr: "Paket muhtemelen çoktan gelmiştir.", note: "sein ile" },
         ],
       },

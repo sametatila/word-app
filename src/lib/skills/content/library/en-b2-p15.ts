@@ -297,7 +297,7 @@ export const enB2P15: SkillExercise[] = [
     skill: "speaking",
     title: "Should Leaving Be as Easy as Joining?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: şirketlerin gerekçesini hakkıyla ver ve zor çıkışın bedelini kimin ödediğini söyle.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: şirketlerin gerekçesini hakkıyla ver ve zor çıkışın bedelini kimin ödediğini söyle.",
     gloss: [],
     minutes: 7,
     monologue: {

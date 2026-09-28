@@ -81,10 +81,10 @@ export const enB2U10: SkillExercise[] = [
         explain: "„„Comparison“ takes „of“.“",
       },
       {
-        text: "Which one never takes „between“?",
+        text: "Which one has the writer gotten wrong twice?",
         options: ["parallel", "distinction", "contrast"],
         answer: 0,
-        explain: "„„Parallel“ takes „with“ and never „between“…“",
+        explain: "„…because I have been wrong about „parallel“ twice.“",
       },
       {
         kind: "truefalse",
@@ -441,7 +441,7 @@ export const enB2U10: SkillExercise[] = [
           { label: "Comparison", answer: "of", accept: ["of the reports"] },
           { label: "Distinction", answer: "between", accept: ["between the cases"] },
           { label: "Contrast", answer: "between", accept: ["between the versions"] },
-          { label: "Parallel", answer: "with", accept: ["never between"] },
+          { label: "Parallel", answer: "with", accept: ["with the second thing"] },
         ],
       },
     ],

@@ -315,7 +315,6 @@ export const b1U45: SkillExercise[] = [
       { de: "künstlich", tr: "yapay", en: "artificial" },
       { de: "quer", tr: "çapraz", en: "across" },
       { de: "maximal", tr: "en çok", en: "at most" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     tasks: [
       {

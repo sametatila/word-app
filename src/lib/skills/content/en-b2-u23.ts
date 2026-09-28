@@ -10,9 +10,9 @@ import type { SkillExercise } from "../types";
  *   Kelime: custody, reliability, affection, compassion, nonverbal,
  *           rephrase, enclosure, filing, template, confidentiality,
  *           status, metric, proceedings.
- *   Kalıp:  If we had talked, the custody would have been shared. ·
+ *   Kalıp:  If we had talked, custody would have been shared. ·
  *           If the child support had been fair, the family would be calm now. ·
- *           If the reliability had been there, we would have stayed. ·
+ *           If they had been reliable, we would have stayed. ·
  *           It seems to be a nonverbal signal. ·
  *           Apparently the tone of voice carried it. ·
  *           On balance the choice of words is arguably the problem. ·
@@ -248,7 +248,7 @@ export const enB2U23: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Su", text: "If we had talked, the custody would have been shared. Closed on both sides, and it is the sentence both of them say." },
+      { speaker: "Su", text: "If we had talked, custody would have been shared. Closed on both sides, and it is the sentence both of them say." },
       { speaker: "Ali Rıza", text: "And neither can change it." },
       { speaker: "Su", text: "Neither can change it, and that is why the sentence is safe to say and useless to hear." },
       { speaker: "Ali Rıza", text: "The second one is different." },
@@ -256,7 +256,7 @@ export const enB2U23: SkillExercise[] = [
       { speaker: "Ali Rıza", text: "Mixed." },
       { speaker: "Su", text: "Mixed, and it is the only one of the three that anybody can act on, because a family that is not calm is a fact with today's date." },
       { speaker: "Ali Rıza", text: "The third?" },
-      { speaker: "Su", text: "If the reliability had been there, we would have stayed. Closed, and it is the one that sounds like a reproach however it is said." },
+      { speaker: "Su", text: "If they had been reliable, we would have stayed. Closed, and it is the one that sounds like a reproach however it is said." },
       { speaker: "Ali Rıza", text: "Do you write it down?" },
       { speaker: "Su", text: "Not in the letter. In a hearing a closed conditional about somebody else's reliability is read as blame, and affection and compassion are the two words the letter is trying to keep." },
       { speaker: "Ali Rıza", text: "So the letter has one conditional." },
@@ -295,7 +295,7 @@ export const enB2U23: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["If we had talked, the custody would have been shared.", "If we had talked, the custody would have been shared"],
+        accept: ["If we had talked, custody would have been shared.", "If we had talked, custody would have been shared"],
         explain: "Kapalı kutu: iki yarı da geçmişte.",
       },
       {
@@ -468,7 +468,7 @@ export const enB2U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "Konuşsaydık velayet paylaşılmış olurdu.",
-        answer: "If we had talked, the custody would have been shared.",
+        answer: "If we had talked, custody would have been shared.",
         hint: "Kapalı kutu: iki yarı da geçmişte.",
       },
       {
@@ -479,8 +479,8 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Güvenilirlik olsaydı kalırdık.",
-        answer: "If the reliability had been there, we would have stayed.",
+        tr: "Güvenilir olsalardı kalırdık.",
+        answer: "If they had been reliable, we would have stayed.",
         hint: "Yine kapalı; sitem gibi okunuyor.",
       },
       {

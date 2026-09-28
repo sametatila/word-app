@@ -382,7 +382,7 @@
  { "tr": "ortadan kaldırmak", "kind": "gloss.tr", "de": "beseitigen" },
  { "tr": "yeniden tasarlamak", "kind": "gloss.tr", "de": "umgestalten" },
  { "tr": "„Code: 28195“ — posta kodu adresle aynı satırda değil, kendi satırında.", "kind": "explain", "de": "„Code: 28195“ — die Postleitzahl steht nicht in derselben Zeile wie die Adresse, sondern in einer eigenen." },
- { "tr": "„Then we close at ten.“ — saat dokuza çeyrek var, restoran onda kapanıyor.", "kind": "explain", "de": "„Then we close at ten.“ — es ist Viertel vor neun, das Restaurant schließt um zehn." },
+ { "tr": "„We close at ten.“ — saat dokuza çeyrek var, restoran onda kapanıyor.", "kind": "explain", "de": "„We close at ten.“ — es ist Viertel vor neun, das Restaurant schließt um zehn." },
  { "tr": "„I always get up at seven, even on the weekend.“ — „even“ hafta sonunu da içine alıyor.", "kind": "explain", "de": "„I always get up at seven, even on the weekend.“ — „even“ schließt das Wochenende mit ein." },
  { "tr": "„I have a map, but I can't find the way.“ — harita var, yön yok.", "kind": "explain", "de": "„I have a map, but I can't find the way.“ — Karte ja, Richtung nein." },
  { "tr": "„Three times: morning, afternoon and evening.“ — her seferde bir tane, altı ise fiyat.", "kind": "explain", "de": "„Three times: morning, afternoon and evening.“ — eine pro Mal, sechs ist der Preis." },

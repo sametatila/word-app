@@ -362,7 +362,6 @@ export const b1U39: SkillExercise[] = [
       { de: "die Leitung", tr: "yönetim", en: "management" },
       { de: "mitteilen", tr: "bildirmek", en: "to inform" },
       { de: "einsetzen", tr: "görevlendirmek", en: "to deploy" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
       { de: "mehrere", tr: "birden fazla", en: "several" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],

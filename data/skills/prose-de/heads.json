@@ -23,7 +23,6 @@
  {"head": "standing up", "tr": "ayakta", "de": "im Stehen"},
  {"head": "survived", "tr": "ayakta kaldı", "de": "überlebten"},
  {"head": "favor", "tr": "ayrıcalık", "de": "die Gefälligkeit"},
- {"head": "differ", "tr": "ayrılmak", "de": "sich unterscheiden"},
  {"head": "to separate", "tr": "ayırmak", "de": "trennen"},
  {"head": "to set aside", "tr": "ayırmak", "de": "zurücklegen"},
  {"head": "reserves", "tr": "ayırıyor", "de": "vorbehält"},
@@ -285,7 +284,6 @@
  {"head": "to run out of", "tr": "tükenmek", "de": "ausgehen (Vorrat)"},
  {"head": "to sell out", "tr": "tükenmek", "de": "ausverkauft sein"},
  {"head": "climb", "tr": "tırmanmak", "de": "klettern"},
- {"head": "climbing", "tr": "tırmanmak", "de": "klettern"},
  {"head": "reached", "tr": "ulaştı", "de": "erreichte"},
  {"head": "reaches", "tr": "ulaşıyor", "de": "erreicht"},
  {"head": "match", "tr": "uymak", "de": "entsprechen"},
@@ -320,7 +318,7 @@
  {"head": "timer", "tr": "zamanlayıcı", "de": "Timer"},
  {"head": "a loss", "tr": "zarar", "de": "der Verlust"},
  {"head": "poor", "tr": "zayıf", "de": "mager"},
- {"head": "weak", "tr": "zayıf", "de": "schwach"},
+ {"head": "thin", "tr": "zayıf", "de": "dünn"},
  {"head": "necessity", "tr": "zorunluluk", "de": "Notwendigkeit"},
  {"head": "stole", "tr": "çaldı", "de": "hat gestohlen"},
  {"head": "laundry", "tr": "çamaşırhane", "de": "Waschküche"},
@@ -358,5 +356,8 @@
  {"head": "grown", "tr": "uzamış", "de": "gewachsen"},
  {"head": "stretched", "tr": "uzamış", "de": "verlängert"},
  {"head": "construction", "tr": "yapı", "de": "die Konstruktion"},
- {"head": "structure", "tr": "yapı", "de": "die Struktur"}
+ {"head": "structure", "tr": "yapı", "de": "die Struktur"},
+ {"head": "asking", "tr": "talep etmek", "de": "ersuchen"},
+ {"head": "private", "tr": "özel", "de": "privat"},
+ {"head": "particular", "tr": "özel", "de": "bestimmt"}
 ]

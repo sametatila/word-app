@@ -345,7 +345,7 @@ export const b1U30: SkillExercise[] = [
           { label: "Produktion", answer: "um 30 Prozent gestiegen", accept: ["um dreißig Prozent", "um 30 Prozent", "+30%"] },
           { label: "Stellen", answer: "um 12 Prozent gestiegen", accept: ["um zwölf Prozent", "um 12 Prozent", "+12%"] },
           { label: "Export jetzt", answer: "auf 60 Prozent", accept: ["auf sechzig Prozent", "sechzig Prozent", "60 Prozent", "60%"] },
-          { label: "Export früher", answer: "etwa 30 Prozent", accept: ["etwa dreißig Prozent", "ungefähr 30 Prozent", "30 Prozent", "30%"] },
+          { label: "Export früher", answer: "etwa 30 Prozent", accept: ["etwa dreißig Prozent", "ungefähr 30 Prozent", "ungefähr dreißig Prozent", "knapp 30 Prozent", "knapp dreißig Prozent", "dreißig Prozent", "30 Prozent", "30%"] },
         ],
       },
       {

@@ -208,7 +208,7 @@ export const enB1U19: SkillExercise[] = [
       { speaker: "Nil", text: "And the scan?" },
       { speaker: "Mert", text: "She told me not to worry about the scan. Which is a sentence that makes everybody worry, and she knows it." },
       { speaker: "Nil", text: "Then why say it?" },
-      { speaker: "Mert", text: "Because she said the next part too: there is a small thing on it, it has been there since 2021, and it has not changed." },
+      { speaker: "Mert", text: "Because she said the next part too: there is a small thing on it, it has been there for four years, and it has not changed." },
       { speaker: "Nil", text: "That is a different sentence." },
       { speaker: "Mert", text: "It is the whole difference. „Do not worry“ is nothing. „It has not changed in four years“ is information." },
       { speaker: "Nil", text: "Did they ask you anything?" },

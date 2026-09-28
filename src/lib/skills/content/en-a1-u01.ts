@@ -162,7 +162,7 @@ export const enA1U01: SkillExercise[] = [
         text: "Is Mert from Türkiye?",
         options: [],
         answer: 0,
-        accept: ["Yes", "Yes, he is", "yes he is", "Yes, I am"],
+        accept: ["Yes", "Yes, he is"],
         explain: "„I am from Türkiye.“ — evet. Kısa cevap „Yes, he is.“ biçiminde kurulur.",
       },
     ],

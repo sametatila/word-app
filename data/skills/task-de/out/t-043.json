@@ -285,9 +285,9 @@
   "de": "Eine vollständig zitierte Antwort kann trotzdem verlieren."
  },
  {
-  "tr": "Fiil, nesneye „alleged“ın yaptığını özneye yapıyor.",
+  "tr": "Fiil, „alleged“ gibi, kanıttan önce hüküm veriyor.",
   "kind": "build.hint",
-  "de": "Das Verb tut dem Subjekt an, was „alleged“ dem Objekt antut."
+  "de": "Das Verb fällt, wie „alleged“, ein Urteil vor dem Beweis."
  },
  {
   "tr": "„hardly“ kendi olumsuzunu taşıyor; ikinci „not“ olmaz.",

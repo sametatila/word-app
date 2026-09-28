@@ -50,7 +50,6 @@ export const enB1U23: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "either", tr: "ikisinden biri" },
       { de: "event", tr: "olay" },
-      { de: "whole", tr: "bütün" },
       { de: "conjunction", tr: "bağlaç" },
       { de: "the order", tr: "sıra" },
       { de: "a choice", tr: "seçim" },
@@ -59,7 +58,6 @@ export const enB1U23: SkillExercise[] = [
       { de: "earlier", tr: "önceki" },
       { de: "carry", tr: "taşımak" },
       { de: "faded", tr: "soldu" },
-      { de: "the valley", tr: "vadi" },
       { de: "the wall", tr: "duvar" },
       { de: "grass", tr: "ot" },
       { de: "reached", tr: "ulaştı" },
@@ -72,7 +70,7 @@ export const enB1U23: SkillExercise[] = [
       "Both sentences are correct, and the difference between them is small. That is why the rule is easy to state and hard to feel: when the conjunction does the ordering, the past perfect becomes a choice.\n" +
       "They had cut the forest before anyone noticed. This one keeps the „had“, because the sentence is about the gap between the two events and not about either of them.\n" +
       "Then there is „by the time“, and that one takes the choice away. By the time I understood, the memory had faded. „By the time“ names a deadline, not an event; the second verb has to be the earlier one, and only the past perfect can carry it.\n" +
-      "The island is the clearest case in the whole valley. The lake had reached the wall before the first house was finished, and the wild grass took the rest. People far from here still call it a farm.",
+      "The island in the lake was a farm once. The lake had reached the wall before the first house was finished, and the wild grass took the rest. People far from here still call it a farm.",
     questions: [
       {
         text: "Why is simple past enough in the first sentence?",
@@ -137,7 +135,7 @@ export const enB1U23: SkillExercise[] = [
       { de: "unit", tr: "ünite" },
       { de: "sentence", tr: "cümle" },
       { de: "a clause", tr: "cümlecik" },
-      { de: "a linker", tr: "bağlayıcı" },
+      { de: "a linker", tr: "bağlaç" },
       { de: "a noun", tr: "isim" },
       { de: "common", tr: "yaygın" },
       { de: "a mistake", tr: "yanlış" },

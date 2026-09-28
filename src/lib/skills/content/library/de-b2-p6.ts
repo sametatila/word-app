@@ -344,7 +344,7 @@ export const deB2P6: SkillExercise[] = [
         tr: "En basit karşılık „man“dır ve konuşma diline en yakın olanıdır. Ayrıca „-bar“ sıfatları da aynı işi yapar: „lösbar“, „machbar“, „vergleichbar“. Seçim üsluptur: „man“ konuşmada, „sich lassen“ tarafsız yazıda, „sein + zu“ resmî metinde.",
         examples: [
           { de: "Man kann das Problem nicht mit Geld lösen.", tr: "Sorunu parayla çözemezsin.", note: "konuşma dili" },
-          { de: "Das Problem ist nicht lösbar.", tr: "Sorun çözülebilir değil.", note: "-bar sıfatı" },
+          { de: "Das Problem ist nicht lösbar.", tr: "Bu sorun çözülemez.", note: "-bar sıfatı" },
           { de: "Die Frist ist einzuhalten.", tr: "Süreye uyulmalıdır.", note: "resmî üslup" },
         ],
       },

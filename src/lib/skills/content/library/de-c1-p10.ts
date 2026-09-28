@@ -347,7 +347,7 @@ export const deC1P10: SkillExercise[] = [
         tr: "„un-“ karşıtlık kurar (klar → unklar) ama her sıfatta işlemez. „ver-“ çoğu zaman yanlışlık, kayıp ya da tamamlanma katar: laufen → verlaufen, lernen → verlernen, kaufen → verkaufen. „ent-“ ayırma ve geri alma bildirir: laden → entladen, schärfen → entschärfen. Bu ekler kalıp değil eğilimdir: yön verir, garanti etmez.",
         examples: [
           { de: "Die Angaben blieben unklar.", tr: "Veriler belirsiz kaldı.", note: "un-: karşıtlık" },
-          { de: "Ich habe das Kopfrechnen verlernt.", tr: "Zihinden hesabı unuttum.", note: "ver-: kayıp" },
+          { de: "Ich habe das Kopfrechnen verlernt.", tr: "Kafadan hesap yapmayı unuttum.", note: "ver-: kayıp" },
           { de: "Die Regel wurde entschärft.", tr: "Kural yumuşatıldı.", note: "ent-: geri alma" },
         ],
       },

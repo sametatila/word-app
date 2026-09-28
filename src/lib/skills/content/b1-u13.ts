@@ -38,7 +38,6 @@ export const b1U13: SkillExercise[] = [
       { de: "vertreten", tr: "temsil etmek", en: "to represent" },
       { de: "der Vertreter", tr: "temsilci", en: "representative" },
       { de: "das Original", tr: "asıl nüsha", en: "original" },
-      { de: "die Urkunde", tr: "belge / senet", en: "certificate" },
       { de: "verlangen", tr: "talep etmek", en: "to demand" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
@@ -48,7 +47,7 @@ export const b1U13: SkillExercise[] = [
       "wobei vertritt.\n\n" +
       "Die Vollmacht muss das Datum, beide Namen und eine Unterschrift haben. " +
       "Viele Ämter verlangen zusätzlich eine Kopie Ihres Ausweises. Das " +
-      "Original der Urkunde bleibt bei Ihnen; der Vertreter nimmt nur die " +
+      "Original bleibt bei Ihnen; der Vertreter nimmt nur die " +
       "Kopie mit.\n\n" +
       "Es ist wichtig, genau festzulegen, wofür die Vollmacht gilt. „Für " +
       "alles“ ist keine gute Idee — schreiben Sie lieber, worum es geht. Wenn " +
@@ -68,7 +67,7 @@ export const b1U13: SkillExercise[] = [
         text: "Was nimmt der Vertreter mit?",
         options: ["Das Original", "Nur die Kopie", "Gar nichts"],
         answer: 1,
-        explain: "„Das Original der Urkunde bleibt bei Ihnen; der Vertreter nimmt nur die Kopie mit.“",
+        explain: "„Das Original bleibt bei Ihnen; der Vertreter nimmt nur die Kopie mit.“",
       },
       {
         text: "Was soll man tun, wenn ein Amt sich weigert?",

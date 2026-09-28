@@ -39,7 +39,7 @@ export const b1U03: SkillExercise[] = [
     text:
       "Wer die Stelle wechseln will, muss zwei Dinge beachten: die Frist und die Form. " +
       "In den meisten Verträgen steht eine Frist von vier Wochen zum Monatsende. " +
-      "Wenn Sie am Zehnten kündigen, endet das Verhältnis nicht am Zehnten. " +
+      "Wenn Sie am Zehnten kündigen, endet der Vertrag nicht am Zehnten. " +
       "Es endet erst am Ende des nächsten Monats.\n\n" +
       "Die Form ist einfach, aber wichtig: Eine Kündigung muss schriftlich sein. " +
       "Eine Mail reicht nicht; nötig ist ein Brief mit Unterschrift. " +
@@ -57,7 +57,7 @@ export const b1U03: SkillExercise[] = [
         explain: "„… muss zwei Dinge beachten: die Frist und die Form.“",
       },
       {
-        text: "Wann endet das Verhältnis, wenn man am Zehnten kündigt?",
+        text: "Wann endet der Vertrag, wenn man am Zehnten kündigt?",
         options: ["Am Zehnten", "Am Ende des nächsten Monats", "Nach einer Woche"],
         answer: 1,
         explain: "„Es endet erst am Ende des nächsten Monats.“",

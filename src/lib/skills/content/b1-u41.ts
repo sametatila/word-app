@@ -184,7 +184,7 @@ export const b1U41: SkillExercise[] = [
       { de: "teilweise", tr: "kısmen", en: "partly" },
     ],
     segments: [
-      { speaker: "Antragstellerin", text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft. Das Konsulat verlangt sie." },
+      { speaker: "Antragstellerin", text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft. Die Botschaft hat mich zu Ihnen ins Konsulat geschickt." },
       { speaker: "Beamter", text: "Gern. Bitte zuerst die Personalien und den Zivilstand." },
       { speaker: "Antragstellerin", text: "Hier ist mein Ausweis. Nicht ledig, sondern seit letztem Jahr geschieden." },
       { speaker: "Beamter", text: "Danke. Wird Ihr Abschluss hier schon anerkannt?" },

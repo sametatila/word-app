@@ -153,7 +153,7 @@ export const enC1U07: SkillExercise[] = [
     unit: 7,
     title: "The appeal letter",
     genre: "opinion",
-    intro: "İki taviz, hiçbir ödün. Zincir neden bu kadar uzun?",
+    intro: "Taviz gibi iki sözcük, ama hiç ödün yok. Zincir neden bu kadar uzun?",
     gloss: [
       { de: "passive", tr: "edilgen" },
       { de: "content", tr: "içerik" },

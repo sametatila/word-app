@@ -359,7 +359,7 @@ export const enC1P6: SkillExercise[] = [
     intro: "İngilizce yazı tekrardan kaçınmak için sözcükleri düşürür ya da yerine kısa bir biçim koyar; bunu okumak da yazmak da C1 işidir.",
     focus: "Eksilti ve yerine geçme: so/neither, do so, one/ones, auxiliary stripping",
     gloss: [
-      { de: "to agree", tr: "katılmak" },
+      { de: "to agree", tr: "aynı fikirde olmak" },
       { de: "proposal", tr: "öneri" },
       { de: "version", tr: "sürüm" },
       { de: "to object", tr: "itiraz etmek" },

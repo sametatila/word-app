@@ -64,7 +64,7 @@ export const c1U18: SkillExercise[] = [
       "Bemerkenswert ist, dass viele Muttersprachler die beiden ebenfalls vermischen — „scheinbar“ wird umgangssprachlich oft für „anscheinend“ verwendet. In geschriebener Sprache und in Prüfungen gilt die Unterscheidung gleichwohl.\n\n" +
       "Ein ähnliches Paar: effektiv und effizient. Effektiv ist, was das Ziel erreicht. Effizient ist, was es mit geringem Aufwand erreicht. Eine Maßnahme kann effektiv und zugleich völlig ineffizient sein — sie wirkt, kostet aber das Zehnfache. Wer beides gleichsetzt, verliert genau die Aussage, auf die es in einem Bericht ankommt.\n\n" +
       "Der Unterschied ist auch keine Frage der Interpretation. Er steht im Wörterbuch, und er steht in jedem Kommentar zum Arbeitsrecht.\n\n" +
-      "Ein drittes Paar gehört dazu, weil es dieselbe Falle stellt: „sensibel“ und „sensitiv“. Das erste beschreibt einen Menschen, das zweite ein Messgerät oder Daten. „Sensitive Kollegen“ steht in mehr Berichten, als man denkt.\n\n" +
+      "Ein drittes Paar gehört dazu, weil es dieselbe Falle stellt: „rational“ und „rationell“. Das erste heißt vernünftig begründet, das zweite wirtschaftlich, ohne Verschwendung. „Rationelle Argumente“ steht in mehr Berichten, als man denkt.\n\n" +
       "Genauigkeit auf dieser Ebene wirkt kleinlich, solange nichts davon abhängt. Sie fällt erst auf, wenn ein Satz anders ausgelegt wird, als er gemeint war — und dann fällt sie zurück auf den, der ihn geschrieben hat.",
     questions: [
       {
@@ -146,7 +146,7 @@ export const c1U18: SkillExercise[] = [
       "Ein Serverausfall, vier Stunden, zweitausend Nutzer betroffen. Drei Texte.\n\n" +
       "Die interne Meldung: „Ausfall Node 3, 09:12–13:04, Ursache Speicherleck im Cache-Dienst. Fix eingespielt, Monitoring angepasst.“ Kein vollständiger Satz, keine Entschuldigung. Der Adressat kennt das System und braucht Daten.\n\n" +
       "Die Kundenmitteilung: „Am Dienstagvormittag war unser Dienst rund vier Stunden nicht erreichbar. Die Ursache lag bei uns; wir haben sie behoben und die Überwachung erweitert, damit sie sich nicht wiederholt. Für die Unterbrechung entschuldigen wir uns.“ Ganze Sätze, Verantwortung benannt, keine technischen Details.\n\n" +
-      "Die Pressemeldung: „Nach einer technischen Störung am Dienstag ist der Dienst seit Dienstagnachmittag wieder uneingeschränkt verfügbar.“ Kürzer als beide, und auffällig: Der Ausfall steht im Nebensatz, die Wiederherstellung im Hauptsatz.\n\n" +
+      "Die Pressemeldung: „Der Dienst ist seit Dienstagnachmittag wieder uneingeschränkt verfügbar, nachdem es am Vormittag zu einer technischen Störung gekommen war.“ Ein einziger Satz, und auffällig: Der Ausfall steht im Nebensatz, die Wiederherstellung im Hauptsatz.\n\n" +
       "Wer denselben Vorgang für eine andere Textsorte umschreibt, ändert also nicht den Stil, sondern die Auswahl.\n\n" +
       "Der Inhalt ist derselbe. Was sich ändert, ist der Adressat — und mit ihm, welche Information tragend ist.\n\n" +
       "Zwei Fehler sind typisch. Der erste: die interne Tonlage nach außen tragen. Ein Kunde, der „Speicherleck im Cache-Dienst“ liest, fühlt sich nicht informiert, sondern abgefertigt. Der zweite ist subtiler: die Kundensprache nach innen tragen. Wer im Team schreibt „Wir bedauern die entstandenen Unannehmlichkeiten“, klingt nicht höflich, sondern überheblich — als spräche er nicht mit Kollegen, sondern über sie.\n\n" +

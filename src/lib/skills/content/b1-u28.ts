@@ -44,7 +44,7 @@ export const b1U28: SkillExercise[] = [
     ],
     text:
       "Am Samstag ist der Empfang im großen Saal. Alles, was wir dafür " +
-      "brauchen, hängt im Flur — bitte streicht durch, was ihr schon " +
+      "brauchen, steht auf der Liste im Flur — bitte streicht durch, was ihr schon " +
       "mitgebracht habt.\n\n" +
       "Der Kuchen wird bei uns gebacken, nicht gekauft. Mit Margarine statt " +
       "Butter geht es genauso gut und ist billiger. Für achtzig Leute brauchen " +
@@ -75,7 +75,7 @@ export const b1U28: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Alles, ___ wir dafür brauchen, hängt im Flur.",
+        text: "Alles, ___ wir dafür brauchen, steht auf der Liste im Flur.",
         options: [],
         answer: 0,
         accept: ["was"],

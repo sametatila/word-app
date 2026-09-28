@@ -352,7 +352,7 @@ export const deC1P14: SkillExercise[] = [
         examples: [
           { de: "Die Reform scheint zu wirken.", tr: "Reform işe yarıyor gibi görünüyor.", note: "şimdiki izlenim" },
           { de: "Der Trainer scheint das vergessen zu haben.", tr: "Antrenör bunu unutmuş görünüyor.", note: "geçmiş: Partizip II + zu haben" },
-          { de: "Es scheint, als hätten die Eltern recht.", tr: "Aileler haklıymış gibi görünüyor.", note: "es scheint + als" },
+          { de: "Es scheint, als hätten die Eltern recht.", tr: "Anne babalar haklıymış gibi görünüyor.", note: "es scheint + als" },
         ],
       },
       {

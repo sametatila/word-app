@@ -255,7 +255,7 @@ export const enB2U22: SkillExercise[] = [
     questions: [
       {
         text: "When does the deletion work?",
-        options: ["before a noun phrase", "before an adjective", "always"],
+        options: ["before a noun phrase", "before a single adjective", "always"],
         answer: 0,
         explain: "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“",
       },

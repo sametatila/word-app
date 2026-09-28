@@ -124,8 +124,6 @@ export const enB1U07: SkillExercise[] = [
       { de: "row", tr: "sıra" },
       { de: "version", tr: "sürüm" },
       { de: "roommate", tr: "ev arkadaşı" },
-      { de: "inside", tr: "içinde" },
-      { de: "pocket", tr: "cep" },
       { de: "sentence", tr: "cümle" },
       { de: "brown", tr: "kahverengi" },
     ],
@@ -133,9 +131,9 @@ export const enB1U07: SkillExercise[] = [
     text:
       "By the time I arrived, the store had closed. That is the short version and it hides the interesting part.\n" +
       "I had left my keys at home. I realized it at the bus stop, which is eight minutes from the door and eleven minutes back, so I ran.\n" +
-      "The bag was on the table where I had put it the night before. Brown leather, one broken handle, a label with my name on it from a course in March. I took it and ran again.\n" +
+      "The bag was on the table where I had put it the night before. Brown leather, one broken handle, a label from a course in March. I took it and ran again.\n" +
       "On the bus I suddenly realized the second problem: the bag was the wrong one. Same shape, same size, same material. My roommate had bought hers in the same store.\n" +
-      "Luckily the man who found my bag on the bus the week before had left his number inside the front pocket. I called him from the store door at two minutes past six, and he laughed before I finished the sentence.\n" +
+      "Luckily the man who had found my bag on the bus the week before had sent me his number. I called him from the store door at two minutes past six, and he laughed before I finished the sentence.\n" +
       "He had had the same morning in April. His keys had been in the bag he did not take.\n" +
       "Finally I got home at seven. The mess on the table was the same mess. I put both bags in different rows on the shelf, and I wrote on one of them: not yours.",
     questions: [

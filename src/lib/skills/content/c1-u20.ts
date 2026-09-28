@@ -259,7 +259,7 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Jan", text: "Kollektiv entscheiden heißt am Ende: Jemand zahlt und jemand nicht." },
       { speaker: "Vater", text: "So ist es. Nur steht dann wenigstens fest, wer." },
       { speaker: "Jan", text: "Und wer entscheidet das?" },
-      { speaker: "Vater", text: "Ihr. Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden. Das ist der Teil, den meine Generation ungern ausspricht." },
+      { speaker: "Vater", text: "Ihr. In zwanzig Jahren seid ihr die Mehrheit der Wähler, nicht wir. Das ist der Teil, den meine Generation ungern ausspricht." },
     ],
     questions: [
       {
@@ -296,8 +296,8 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden.",
-          "Ihr seid mehr Wähler, als wir es in zwanzig Jahren sein werden",
+          "In zwanzig Jahren seid ihr die Mehrheit der Wähler, nicht wir.",
+          "In zwanzig Jahren seid ihr die Mehrheit der Wähler, nicht wir",
         ],
         explain: "Karar gücü zamanla yer değiştiriyor.",
       },

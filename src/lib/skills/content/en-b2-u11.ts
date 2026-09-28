@@ -52,7 +52,7 @@ export const enB2U11: SkillExercise[] = [
       { de: "laboratory", tr: "laboratuvar" },
       { de: "lead", tr: "götürmek" },
       { de: "action", tr: "eylem" },
-      { de: "differ", tr: "ayrılmak" },
+      { de: "differ", tr: "farklı olmak" },
       { de: "the sequence", tr: "sıra" },
       { de: "a relation", tr: "ilişki" },
       { de: "guesses", tr: "tahmin ediyor" },
@@ -165,7 +165,7 @@ export const enB2U11: SkillExercise[] = [
       "„To be stable“ is about now. „To have been too small“ is about before the thinking — the cohort was too small when the study ran, and somebody worked that out afterward. Two words carry the whole of that, and they sit in the middle of the sentence where a fast reader does not stop.\n" +
       "The rest is the familiar machinery: the long route with „it“, the short route with the subject in front, and in both of them the person who reports, says and thinks is left out.\n" +
       "In a paper that omission is defensible, and in a summary of a paper it often is not. The paper names its own sources in a list at the end. A summary that says „the measurements are said to be stable“ and gives no list has borrowed the paper's authority without borrowing its evidence.\n" +
-      "The test is the one from the last unit and it has not changed. Put a name in front of the verb. „The second cohort reports that the measurements are stable“ either survives or it does not.\n" +
+      "The test is the one from unit 6 and it has not changed. Put a name in front of the verb. „The second cohort reports that the measurements are stable“ either survives or it does not.\n" +
       "Where it does not, the passive was never doing the work of a source. It was doing the work of a mood, and a therapy, a dosage or an organism described in that mood is a claim that nobody has signed.",
     questions: [
       {
@@ -404,7 +404,7 @@ export const enB2U11: SkillExercise[] = [
     genre: "info",
     intro: "Üç ortaç. İkincisi hangi ilişkiyi taşıyor?",
     gloss: [
-      { de: "differ", tr: "ayrılmak" },
+      { de: "differ", tr: "farklı olmak" },
       { de: "conjunction", tr: "bağlaç" },
       { de: "having heated", tr: "ısıttıktan sonra" },
       { de: "being slow", tr: "yavaş olduğu için" },

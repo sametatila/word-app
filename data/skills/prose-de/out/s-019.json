@@ -150,9 +150,9 @@
   "de": "„My grandparents live together in Izmir.“ — die beiden zusammen."
  },
  {
-  "tr": "„My mother takes a photo.“ — bu yüzden anne fotoğrafta yok.",
+  "tr": "„My mother always takes our photos.“ — bu yüzden anne fotoğrafta yok.",
   "kind": "explain",
-  "de": "„My mother takes a photo.“ — deshalb ist die Mutter nicht auf dem Foto."
+  "de": "„My mother always takes our photos.“ — deshalb ist die Mutter nicht auf dem Foto."
  },
  {
   "tr": "„Soup of the day: 5 euros“ — menünün en pahalı tek maddesi.",
@@ -518,11 +518,6 @@
   "tr": "şarkı söylemek",
   "kind": "gloss.tr",
   "de": "singen"
- },
- {
-  "tr": "fotoğraf çekmek",
-  "kind": "gloss.tr",
-  "de": "ein Foto machen"
  },
  {
   "tr": "o cana yakın mı",

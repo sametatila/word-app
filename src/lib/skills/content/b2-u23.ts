@@ -73,7 +73,7 @@ export const b2U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Zuordnung ___ zu einem Vorgang; gibt es keinen, wird einer angelegt.",
+        text: "Die Zuordnung zu einem Vorgang ___ danach; gibt es keinen, wird einer angelegt.",
         options: [],
         answer: 0,
         accept: ["erfolgt"],

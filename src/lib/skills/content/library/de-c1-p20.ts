@@ -8,7 +8,7 @@ import type { SkillExercise } from "../../types";
  * emsal: `de-c1.ts` (parti 1), `de-c1-p10.ts` ve `data/content/SPEC.md`.
  *
  * Parti 20 yavaş yolculuk hattı: bir gece treni denemesi, bir tüketici
- * bilgilendirme yayını, bir demiryolu şirketine şikâyet. Dil bilgisi çift
+ * bilgilendirme yayını, bir demir yolu şirketine şikâyet. Dil bilgisi çift
  * mastar (Ersatzinfinitiv) ve yan cümlede yardımcı fiilin öne geçmesi —
  * B2'deki „hätte … müssen“den farkı, kuralın Perfekt'te, lassen/sehen'de
  * ve yan cümle dizilişinde bütünüyle işlenmesi.
@@ -205,7 +205,7 @@ export const deC1P20: SkillExercise[] = [
     skill: "writing",
     title: "Beschwerde mit Augenmaß",
     genre: "email",
-    intro: "Bir demiryolu şirketine şikâyet yazıyorsun: önce iki cümle kur, sonra öfkeyi değil olguları öne çıkaran ve talebini net söyleyen bir e-posta yaz.",
+    intro: "Bir demir yolu şirketine şikâyet yazıyorsun: önce iki cümle kur, sonra öfkeyi değil olguları öne çıkaran ve talebini net söyleyen bir e-posta yaz.",
     gloss: [
       { de: "die Buchungsnummer", tr: "rezervasyon numarası", en: "booking number" },
       { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
@@ -232,7 +232,7 @@ export const deC1P20: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Gece treni iptal edilen bir yolcu olarak demiryolu şirketine e-posta yaz: rezervasyonu ve olayı tarih, saat ve olgularla anlat, yaşadığın somut zararı belirt, hangi hakka dayandığını söyle, ne talep ettiğini tutarıyla açıkça yaz ve bir süre belirterek nazikçe kapat.",
+          "Gece treni iptal edilen bir yolcu olarak demir yolu şirketine e-posta yaz: rezervasyonu ve olayı tarih, saat ve olgularla anlat, yaşadığın somut zararı belirt, hangi hakka dayandığını söyle, ne talep ettiğini tutarıyla açıkça yaz ve bir süre belirterek nazikçe kapat.",
         checklist: [
           "Rezervasyonu ve olayı olgularla anlat",
           "Somut zararı ve masrafları belirt",
@@ -262,7 +262,7 @@ export const deC1P20: SkillExercise[] = [
           "begründet. " +
           "Gemäß den Fahrgastrechten steht mir die Erstattung des Fahrpreises sowie der " +
           "angemessenen Übernachtungskosten zu. Ich bitte Sie daher, den Betrag von insgesamt " +
-          "371 Euro bis zum 30. November auf mein unten genanntes Konto zu erstatten. " +
+          "313 Euro bis zum 30. November auf mein unten genanntes Konto zu erstatten. " +
           "Mit freundlichen Grüßen, Selin Hartmann",
       },
     ],

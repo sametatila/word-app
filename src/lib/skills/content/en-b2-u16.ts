@@ -111,9 +111,9 @@ export const enB2U16: SkillExercise[] = [
           "Wanting a new role, she left the company.",
           "Having watched her rehearse, the jury voted.",
           "Praised for years, the actor stayed modest.",
-          "A participle is not a tense at all.",
+          "Those two forms look the same and are not.",
         ],
-        explain: "Durum, önceki iş, edilgen; en sonda kuralın kendisi.",
+        explain: "Durum, önceki iş, edilgen; en sonda dersin uyarısı.",
       },
       {
         kind: "short_answer",

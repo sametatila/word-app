@@ -370,7 +370,7 @@ export const enC1U22: SkillExercise[] = [
       { speaker: "Görkem", text: "The gap between those two is called selling something, and selling something takes a buyer, a price and about four weeks." },
       { speaker: "Görkem", text: "A solvent firm may still carry a default risk and lose its risk appetite. Three things in one line and the third is the one nobody plans for." },
       { speaker: "Görkem", text: "A firm that has been close to the edge once stops taking the decisions that made it grow, and it stops taking them for about five years." },
-      { speaker: "Görkem", text: "That is not in any model I have read. It is in every firm I have worked with, and the people who make it are not wrong to be careful." },
+      { speaker: "Görkem", text: "That is not in any model I have read. It is in every firm I have worked with, and the people who run them are not wrong to be careful." },
       { speaker: "Görkem", text: "So when a bank withdraws a line of credit, the damage is not the month it covers. It is the five years of decisions that follow." },
       { speaker: "Görkem", text: "Write that into the case. A number for the month is easy and a number for the five years is a guess, and a guess in the file beats a silence." },
     ],

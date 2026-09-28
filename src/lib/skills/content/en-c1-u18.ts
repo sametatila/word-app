@@ -274,7 +274,7 @@ export const enC1U18: SkillExercise[] = [
       { de: "a bog", tr: "bataklık" },
       { de: "drained", tr: "kurutulmuş" },
       { de: "a hectare", tr: "hektar" },
-      { de: "a ledger", tr: "defter" },
+      { de: "a ledger", tr: "muhasebe defteri" },
       { de: "a species", tr: "tür" },
       { de: "a list", tr: "liste" },
       { de: "frozen", tr: "donmuş" },

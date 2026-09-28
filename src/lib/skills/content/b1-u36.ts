@@ -196,7 +196,7 @@ export const b1U36: SkillExercise[] = [
     questions: [
       {
         text: "Seit wann hat die Person keine Verbindung?",
-        options: ["Seit heute Morgen", "Seit gestern", "Seit vier Uhr"],
+        options: ["Seit heute Morgen", "Seit gestern", "Seit einer Woche"],
         answer: 0,
         explain: "„Seit heute Morgen habe ich keine Verbindung.“",
       },

@@ -101,7 +101,7 @@ export const a2U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Hausordnung der Jugendherberge",
-    genre: "phone",
+    genre: "info",
     intro: "Hostel kuralları. Ne zaman giriş, ne zaman çıkış, eşyalar nerede?",
     gloss: [
       { de: "die Jugendherberge", tr: "gençlik hosteli", en: "youth hostel" },

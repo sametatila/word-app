@@ -48,7 +48,7 @@ export const c1U09: SkillExercise[] = [
       { de: "zuweisen", tr: "tahsis etmek", en: "to allocate" },
       { de: "das Glück", tr: "şans", en: "luck" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to fit" },
       { de: "unter Dach und Fach", tr: "tamamlanmış", en: "settled" },
       { de: "tauschen", tr: "takas etmek", en: "to swap" },
       { de: "verfolgen", tr: "takip etmek", en: "to pursue" },

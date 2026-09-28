@@ -225,7 +225,7 @@ export const enA2P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Go ___ the stairs to the third floor.",
+        text: "Go ___ the stairs to the third floor. (from the lobby)",
         options: [],
         answer: 0,
         accept: ["up"],

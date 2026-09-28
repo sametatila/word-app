@@ -47,7 +47,7 @@
  {
   "tr": "„gone“ hâlâ orada demek; cümle „evde“ dediği için döndüğünü anlatan „been“ gerekiyor.",
   "kind": "rewrite.why",
-  "de": "„gone“ heißt noch dort; weil der Satz „zu Hause“ sagt, braucht es „been“, das die Rückkehr nennt. Deutsch sagt in beiden Fällen nur „war“."
+  "de": "„gone“ heißt noch dort; weil der Satz „zu Hause“ sagt, braucht es „been“, das die Rückkehr nennt."
  },
  {
   "tr": "Ne oldu?",
@@ -232,7 +232,7 @@
  {
   "tr": "Gidip dönmüş olmak „have been to“; sayı cümlenin sonunda.",
   "kind": "build.hint",
-  "de": "Hin und zurück gewesen sein heißt „have been to“; die Zahl steht am Satzende. Das Deutsche sagt in beiden Fällen nur „war“."
+  "de": "Hin und zurück gewesen sein heißt „have been to“; die Zahl steht am Satzende."
  },
  {
   "tr": "Olumsuzda „didn't“ geçmişi taşıyor ve „used“ → „use“ olur.",
@@ -262,7 +262,7 @@
  {
   "tr": "„has gone“ hâlâ orada demek. Dönmüş olsaydı „has been“ olurdu.",
   "kind": "build.hint",
-  "de": "„has gone“ heißt, er ist noch dort. Wäre er zurück, hieße es „has been“. Im Deutschen macht das Verb diesen Unterschied nicht."
+  "de": "„has gone“ heißt, er ist noch dort. Wäre er zurück, hieße es „has been“."
  },
  {
   "tr": "Soru bir ANI soruyor („happened“), „while“ arka planı veriyor.",

@@ -54,7 +54,6 @@ export const enC1U02: SkillExercise[] = [
       { de: "desperate", tr: "çaresiz" },
       { de: "receives", tr: "alıyor" },
       { de: "whole", tr: "bütün" },
-      { de: "object", tr: "nesne" },
       { de: "uncomfortable", tr: "rahatsız edici" },
       { de: "dull", tr: "sıkıcı" },
       { de: "alleged", tr: "iddia ettiler" },
@@ -74,7 +73,7 @@ export const enC1U02: SkillExercise[] = [
       "None of those three is neutral, and that is the point of the unit. The neutral verb is „said“, and it is the only one, and a page that needs more variety than „said“ provides has to buy that variety with judgment.\n" +
       "So the choice is not stylistic. „Pointed out“ makes the following clause a fact. „Admitted“ makes it damaging. „Insisted“ makes it repeated and slightly desperate. „Noted“ makes it small. Each of them arrives without an adjective and without a source, and the reader receives the verdict before reaching the claim.\n" +
       "The rebuttal itself said less than the verb used to report it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
-      "They unmask the mouthpiece without naming names. Here two of the same kind sit together, and „unmask“ is doing to the subject what „alleged“ does to the object.\n" +
+      "They unmask the mouthpiece without naming names. „Unmask“ passes a verdict on the mouthpiece before any evidence is given, just as „alleged“ does on a claim.\n" +
       "What follows from this is uncomfortable. A writer cannot be invisible in reported speech. There is no way to report without choosing, and the only honest options are to use „said“ and be dull, or to choose the loaded verb and know that the choice has a byline on it whether or not the sentence carries one.",
     questions: [
       {
@@ -444,7 +443,7 @@ export const enC1U02: SkillExercise[] = [
         kind: "build",
         tr: "İsim vermeden sözcünün maskesini düşürüyorlar.",
         answer: "They unmask the mouthpiece without naming names.",
-        hint: "Fiil, nesneye „alleged“ın yaptığını özneye yapıyor.",
+        hint: "Fiil, „alleged“ gibi, kanıttan önce hüküm veriyor.",
       },
       {
         kind: "build",

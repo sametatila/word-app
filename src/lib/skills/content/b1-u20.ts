@@ -120,7 +120,7 @@ export const b1U20: SkillExercise[] = [
       "wir dann drei Stunden warten, weil zwei schwerere Fälle vor uns kamen. " +
       "Das war richtig so, auch wenn es lang war.\n\n" +
       "Der Verdacht war, dass der Knochen kaputt ist. Nach dem Bild wussten " +
-      "wir: Er ist heil, es ist nur eine schwere Verletzung. Sie durfte nach " +
+      "wir: Er ist heil, es ist nur eine leichte Verletzung. Sie durfte nach " +
       "Hause, mit einer Salbe und der Anweisung, den Arm ruhig zu halten.\n\n" +
       "Seit einer Woche geht es ihr besser. Sie kann den Arm wieder heben, " +
       "zumindest langsam. Ich habe gelernt: Bei einem Sturz wählt man den " +
@@ -140,9 +140,9 @@ export const b1U20: SkillExercise[] = [
       },
       {
         text: "Was war das Ergebnis?",
-        options: ["Der Knochen war kaputt", "Nur eine schwere Verletzung", "Nichts"],
+        options: ["Der Knochen war kaputt", "Nur eine leichte Verletzung", "Nichts"],
         answer: 1,
-        explain: "„Er ist heil, es ist nur eine schwere Verletzung.“",
+        explain: "„Er ist heil, es ist nur eine leichte Verletzung.“",
       },
       {
         kind: "gapfill",
@@ -321,8 +321,8 @@ export const b1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Dün acile gidemedim, acil çağrı hattı meşguldü.",
-        answer: "Gestern konnte ich nicht in die Notaufnahme gehen, der Notruf war besetzt.",
+        tr: "Dün doktora ulaşamadım, telefon hep meşguldü.",
+        answer: "Gestern konnte ich den Arzt nicht erreichen, das Telefon war immer besetzt.",
         hint: "Kipli fiil geçmişte Präteritum.",
       },
       {

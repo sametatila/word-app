@@ -96,7 +96,7 @@ export const enB2P8: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What have most comments in the consultation been about?",
+        text: "What has much of the comment in the consultation been about?",
         options: [],
         answer: 0,
         accept: ["storage space", "space", "storage"],
@@ -281,7 +281,7 @@ export const enB2P8: SkillExercise[] = [
     skill: "speaking",
     title: "Who Should Pay for Packaging Waste?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: sorumluluğu dağıt ve istenmeyen sonucu düşün.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: sorumluluğu dağıt ve istenmeyen sonucu düşün.",
     gloss: [],
     minutes: 7,
     monologue: {

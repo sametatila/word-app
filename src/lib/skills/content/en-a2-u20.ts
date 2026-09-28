@@ -106,7 +106,7 @@ export const enA2U20: SkillExercise[] = [
     minutes: 6,
     text:
       "Mert: Is that your sister in the photo?\n" +
-      "Nil: My cousin. She got married in 2015.\n" +
+      "Nil: My cousin. She got married young.\n" +
       "Mert: And the man next to her?\n" +
       "Nil: Her husband. They have been married for ten years — no, nine. I always say ten.\n" +
       "Mert: And the little one?\n" +

@@ -110,7 +110,7 @@ export const enA2U01: SkillExercise[] = [
       "Sena: Because I worked twelve hours. While I was working, it was raining all day.\n" +
       "Ali: And this morning?\n" +
       "Sena: This morning I was waiting for the bus when I saw your message.\n" +
-      "Ali: Good. I lost my keys last week and I found them yesterday — in your car!\n" +
+      "Ali: Good. I was looking for my keys all last week and I found them yesterday — in your car!\n" +
       "Sena: In my car! When did you leave them there?\n" +
       "Ali: Two weeks ago, I think. I was wearing a big jacket that day and the keys fell down.\n" +
       "Sena: Then come and take them. I am at home now.",
@@ -125,7 +125,7 @@ export const enA2U01: SkillExercise[] = [
         text: "Where were Ali's keys?",
         options: ["in Sena's car", "in his jacket", "at the bus stop"],
         answer: 0,
-        explain: "„I lost my keys last week and I found them yesterday — in your car!“",
+        explain: "„I was looking for my keys all last week and I found them yesterday — in your car!“",
       },
       {
         kind: "truefalse",
@@ -149,7 +149,7 @@ export const enA2U01: SkillExercise[] = [
         answer: 0,
         items: [
           "Two weeks ago the keys fell down.",
-          "Ali lost his keys last week.",
+          "Last week Ali was looking for his keys.",
           "Yesterday he found them.",
           "This morning Sena saw the message.",
         ],

@@ -274,7 +274,7 @@ export const b2U04: SkillExercise[] = [
       { de: "impulsiv", tr: "fevri", en: "impulsive" },
       { de: "zumuten", tr: "katlanmasını beklemek", en: "to expect somebody to put up with" },
       { de: "die Erleichterung", tr: "rahatlama", en: "relief" },
-      { de: "ausreden", tr: "sözünü bitirmek", en: "to finish speaking" },
+      { de: "die Ausrede", tr: "bahane", en: "excuse" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "investieren", tr: "yatırım yapmak", en: "to invest" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },

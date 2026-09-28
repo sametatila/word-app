@@ -91,7 +91,7 @@ export const deB2P20: SkillExercise[] = [
         text: "Wem gehört das Trinkgeld laut Sabine Horn rechtlich?",
         options: [],
         answer: 0,
-        accept: ["den Beschäftigten", "Beschäftigten", "dem Personal", "den Mitarbeitern", "den Angestellten", "den Arbeitnehmern", "der Bedienung"],
+        accept: ["den Beschäftigten", "Beschäftigten", "dem Personal", "den Mitarbeitern", "den Angestellten", "den Arbeitnehmern"],
         explain: "„Rechtlich gehört es den Beschäftigten“ — işveren onu tutamaz ve maaştan düşemez.",
       },
       {

@@ -158,7 +158,7 @@ export const enB2U17: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The ending must have been hasty. Four words of verb, and the first is a conclusion rather than an instruction.\n" +
+      "The ending must have been hasty. Three words of verb, and the first is a conclusion rather than an instruction.\n" +
       "The evidence is in the text: two characters who have not spoken for an hour resolve everything in a page, and a line that the second act had been building toward is given to the wrong person. Only one explanation survives that.\n" +
       "They can't have missed the shortcoming. The negative of the same conclusion, and it is „can't have“ and never „mustn't have“ — the second is a prohibition and a prohibition cannot be sent back to a rehearsal.\n" +
       "We should have noticed the revealing line. The third one, and it is the only sentence in the review that is about us. It is not about what happened on the stage; it is about what we did not see, and a reader remembers that sentence and forgets the other two.\n" +
@@ -211,7 +211,7 @@ export const enB2U17: SkillExercise[] = [
         text: "In which person is the third sentence written?",
         options: [],
         answer: 0,
-        accept: ["the first person", "first person", "about us"],
+        accept: ["the first person", "first person", "in the first person"],
         explain: "„near the end, in the first person…“",
       },
     ],

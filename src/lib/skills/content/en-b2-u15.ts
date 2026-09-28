@@ -157,7 +157,7 @@ export const enB2U15: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The bill must have been unclear. Four words of verb, and the first of them is not giving an order.\n" +
+      "The bill must have been unclear. Three words of verb, and the first of them is not giving an order.\n" +
       "„Must have been“ reads the evidence. Three administrations applied the same regulation in three different ways, and only one explanation survives that. The sentence is a conclusion and it says so with a modal rather than with an argument.\n" +
       "They can't have read the regulation. The negative, and it is „can't have“ and never „mustn't have“: a prohibition cannot be sent backwards to last year.\n" +
       "We should have funded enforcement. The third one, and it is the only sentence in the paragraph about us. It is not about what happened; it is about what did not, and a public official reading the note will remember that line and forget the other two.\n" +

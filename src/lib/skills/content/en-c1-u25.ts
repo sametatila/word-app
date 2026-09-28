@@ -136,7 +136,7 @@ export const enC1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Serenity we learn; sincerity, we choose.",
+          "Serenity we learn from others; sincerity, from ourselves.",
           "Count what is not there.",
           "Each decision is made by a position or an absence.",
           "English moves things and leaves holes.",

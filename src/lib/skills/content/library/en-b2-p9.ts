@@ -85,7 +85,7 @@ export const enB2P9: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How does D_Novak say he learned the job?",
+        text: "How did D_Novak learn the job?",
         options: [],
         answer: 0,
         accept: [
@@ -282,7 +282,7 @@ export const enB2P9: SkillExercise[] = [
     skill: "speaking",
     title: "Should Working From Home Be a Right?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir hakkı tartış ve kimin bedelini ödediğini söyle.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir hakkı tartış ve kimin bedelini ödediğini söyle.",
     gloss: [],
     minutes: 7,
     monologue: {

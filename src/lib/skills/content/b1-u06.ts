@@ -348,7 +348,6 @@ export const b1U06: SkillExercise[] = [
       { de: "das Erlebnis", tr: "yaşantı", en: "experience" },
       { de: "irgendwann", tr: "bir zaman", en: "at some point" },
       { de: "der Schnee", tr: "kar", en: "snow" },
-      { de: "verlobt", tr: "nişanlı", en: "engaged" },
     ],
     tasks: [
       {

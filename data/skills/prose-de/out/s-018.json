@@ -295,9 +295,9 @@
   "de": "machen"
  },
  {
-  "tr": "istemek",
+  "tr": "talep etmek",
   "kind": "gloss.tr",
-  "de": "bitten"
+  "de": "verlangen"
  },
  {
   "tr": "yaşında",
@@ -373,5 +373,10 @@
   "tr": "sahibi kadınsa",
   "kind": "gloss.note",
   "de": "wenn die Besitzerin weiblich ist"
+ },
+ {
+  "tr": "istemek",
+  "kind": "gloss.tr",
+  "de": "bitten"
  }
 ]

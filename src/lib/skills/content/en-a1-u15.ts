@@ -266,7 +266,7 @@ export const enA1U15: SkillExercise[] = [
       { speaker: "Clerk", text: "No problem. But please ask before you take a photo of a person." },
       { speaker: "Visitor", text: "I understand. How do I get to the church from here?" },
       { speaker: "Clerk", text: "You can walk. It is five minutes on foot. Here is a map — the church is on it." },
-      { speaker: "Visitor", text: "Thank you. One more question: is there a course for visitors?" },
+      { speaker: "Visitor", text: "Thank you. One more question: is there a photography course for visitors?" },
       { speaker: "Clerk", text: "Yes, every Friday at three. You can buy a ticket here." },
       { speaker: "Visitor", text: "Perfect. Thank you very much!" },
     ],
@@ -292,7 +292,7 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The course for visitors is every ___.",
+        text: "The photography course is every ___.",
         options: [],
         answer: 0,
         accept: ["Friday"],

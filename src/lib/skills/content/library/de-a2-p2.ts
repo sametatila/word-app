@@ -99,7 +99,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Durchsage im Möbelhaus",
-    genre: "phone",
+    genre: "monologue",
     intro: "Mobilya mağazasında kapanış anonsunu dinleyeceksin: indirim, restoran saati, kaybolan çocuk ve teslim alma.",
     gloss: [
       { de: "das Möbelhaus", tr: "mobilyacı", en: "furniture store" },

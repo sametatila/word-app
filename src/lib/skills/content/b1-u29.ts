@@ -177,7 +177,6 @@ export const b1U29: SkillExercise[] = [
       { de: "elegant", tr: "şık", en: "elegant" },
       { de: "die Wolle", tr: "yün", en: "wool" },
       { de: "der Stoff", tr: "kumaş", en: "fabric" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { speaker: "Kundin", text: "Ich suche ein Kostüm für eine Feier. Nicht zu elegant." },

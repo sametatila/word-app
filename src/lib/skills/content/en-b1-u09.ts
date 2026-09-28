@@ -57,7 +57,7 @@ export const enB1U09: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Two machines, one table, and two sentences that look the same and are not.\n" +
+      "Two machines on one table. But first, two example sentences that have nothing to do with them: they look the same and are not.\n" +
       "Although it is cheaper, the quality is worse. That sentence has a surprise in it. Cheaper usually sounds good; the second half takes it away. „Although“ always works like that — it puts something you did not expect after something you did.\n" +
       "This one is small, whereas that one is big. No surprise anywhere. Two facts side by side, equal weight, and the reader is not being warned about anything. „Whereas“ compares; it does not concede.\n" +
       "The test is simple. Take the two halves and ask: does the second one take something back? If yes, you want „although“. If the two halves just stand next to each other, you want „whereas“.\n" +

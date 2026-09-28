@@ -212,7 +212,7 @@ export const enC1U05: SkillExercise[] = [
         text: "What should never break a chain of argument?",
         options: [],
         answer: 0,
-        accept: ["a reader counting back", "going back to count", "a count"],
+        accept: ["a reader counting back", "going back to count", "a reader who has to count"],
         explain: "„should not be broken by a reader who has to go back and count.“",
       },
     ],

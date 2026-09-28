@@ -159,7 +159,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "large", tr: "büyük" },
       { de: "rises", tr: "yükseliyor" },
       { de: "circle", tr: "çember" },
-      { de: "agree with", tr: "katılmak" },
+      { de: "agree with", tr: "aynı fikirde olmak" },
       { de: "a pension", tr: "emekli aylığı" },
       { de: "uncomfortable", tr: "rahatsız edici" },
       { de: "a household", tr: "hane" },

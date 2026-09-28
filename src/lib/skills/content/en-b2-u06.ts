@@ -248,7 +248,6 @@ export const enB2U06: SkillExercise[] = [
       { de: "figures", tr: "rakamlar" },
       { de: "argue", tr: "tartışmak" },
       { de: "an accident", tr: "rastlantı" },
-      { de: "nowhere", tr: "hiçbir yer" },
     ],
     minutes: 7,
     segments: [
@@ -258,7 +257,7 @@ export const enB2U06: SkillExercise[] = [
       { speaker: "Berk", text: "So the endings are memorized." },
       { speaker: "Işıl", text: "Every one of them. There is no rule in English for which verb takes which, and a process note is written almost entirely in these." },
       { speaker: "Berk", text: "Why not just write the verbs?" },
-      { speaker: "Işıl", text: "Because a noun can carry a number. „The treatment took two hours“ has a time in it; „we treated the surface“ has nowhere to put one." },
+      { speaker: "Işıl", text: "Because a noun can carry a number. „The treatment took two hours“ has a time in it; „we treated the surface“ has to add one on at the end." },
       { speaker: "Berk", text: "And the refinement?" },
       { speaker: "Işıl", text: "The refinement of the process is ongoing, which is a sentence with no date and no person, and that is exactly what the guideline wants at this stage." },
       { speaker: "Berk", text: "The second check?" },

@@ -33,6 +33,7 @@ export const enA1U11: SkillExercise[] = [
     gloss: [
       { de: "know", tr: "bilmek" },
       { de: "I think", tr: "bence" },
+      { de: "large", tr: "büyük beden" },
       { de: "help", tr: "yardım etmek" },
     ],
     minutes: 4,
@@ -41,11 +42,11 @@ export const enA1U11: SkillExercise[] = [
       "Seller: What color would you like?\n" +
       "Ela: Blue or white. Not black.\n" +
       "Seller: What size are you?\n" +
-      "Ela: I don't know. A big size, I think.\n" +
+      "Ela: I don't know. Large, I think.\n" +
       "Seller: Try this blue shirt. Can I help you?\n" +
       "Ela: Where is the fitting room?\n" +
       "Seller: There, near the red jacket.\n" +
-      "Ela: Thank you. It's too big. Do you have a small size?\n" +
+      "Ela: Thank you. It's too big. Do you have it in small?\n" +
       "Seller: Yes, here. And this yellow sweater is cheap — only ten dollars.\n" +
       "Ela: How much is the shirt?\n" +
       "Seller: Twenty dollars. The shoes are expensive: sixty dollars.\n" +
@@ -68,7 +69,7 @@ export const enA1U11: SkillExercise[] = [
         text: "The first shirt is too big.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„It's too big. Do you have a small size?“ — küçüğünü sonra istiyor.",
+        explain: "„It's too big. Do you have it in small?“ — küçüğünü sonra istiyor.",
       },
       {
         kind: "gapfill",
@@ -317,6 +318,7 @@ export const enA1U11: SkillExercise[] = [
     gloss: [
       { de: "I'm looking for …", tr: "… arıyorum" },
       { de: "Can I try it on?", tr: "üstümde deneyebilir miyim" },
+      { de: "large", tr: "büyük beden" },
       { de: "Where is the fitting room?", tr: "deneme kabini nerede" },
     ],
     minutes: 6,
@@ -354,7 +356,7 @@ export const enA1U11: SkillExercise[] = [
         fields: [
           { label: "Item", answer: "shirt", accept: ["a shirt"] },
           { label: "Color", answer: "blue" },
-          { label: "Size", answer: "big" },
+          { label: "Size", accept: ["big"], answer: "large" },
           { label: "Price", answer: "twenty dollars", accept: ["20 dollars", "twenty"] },
         ],
       },

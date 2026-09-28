@@ -34,7 +34,6 @@
  { "tr": "nine", "kind": "gloss.tr", "de": "Oma" },
  { "tr": "oluk", "kind": "gloss.tr", "de": "Rinne" },
  { "tr": "orta", "kind": "gloss.tr", "de": "Mitte" },
- { "tr": "ödev", "kind": "gloss.tr", "de": "Hausaufgabe" },
  { "tr": "öğün", "kind": "gloss.tr", "de": "Mahlzeit" },
  { "tr": "önce", "kind": "gloss.tr", "de": "vor" },
  { "tr": "övgü", "kind": "gloss.tr", "de": "Lob" },
@@ -117,9 +116,8 @@
  { "tr": "öneri", "kind": "gloss.tr", "de": "Vorschlag" },
  { "tr": "paket", "kind": "gloss.tr", "de": "Päckchen" },
  { "tr": "palto", "kind": "gloss.tr", "de": "Mantel" },
- { "tr": "parti", "kind": "gloss.tr", "de": "Charge" },
+ { "tr": "üretim partisi", "kind": "gloss.tr", "de": "die Charge" },
  { "tr": "perde", "kind": "gloss.tr", "de": "Vorhang" },
- { "tr": "peşin", "kind": "gloss.tr", "de": "im Voraus" },
  { "tr": "pompa", "kind": "gloss.tr", "de": "Pumpe" },
  { "tr": "posta", "kind": "gloss.tr", "de": "Post" },
  { "tr": "resmî", "kind": "gloss.tr", "de": "förmlich" },
@@ -149,5 +147,8 @@
  { "tr": "yanıt", "kind": "gloss.tr", "de": "Antwort" },
  { "tr": "yasak", "kind": "gloss.tr", "de": "verboten" },
  { "tr": "yatak", "kind": "gloss.tr", "de": "Bett" },
- { "tr": "yedek", "kind": "gloss.tr", "de": "Ersatz" }
+ { "tr": "yedek", "kind": "gloss.tr", "de": "Ersatz" },
+ { "tr": "ödev", "kind": "gloss.tr", "de": "Hausaufgabe" },
+ { "tr": "parti", "kind": "gloss.tr", "de": "Charge" },
+ { "tr": "peşin", "kind": "gloss.tr", "de": "im Voraus" }
 ]

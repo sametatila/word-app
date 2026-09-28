@@ -277,7 +277,7 @@ export const enB2P18: SkillExercise[] = [
     skill: "speaking",
     title: "Should Stores Have to Accept Cash?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: iki kesimin gerekçesini karşılaştır ve bir orta yol öner.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: iki kesimin gerekçesini karşılaştır ve bir orta yol öner.",
     gloss: [],
     minutes: 7,
     monologue: {

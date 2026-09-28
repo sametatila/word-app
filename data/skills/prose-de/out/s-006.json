@@ -39,7 +39,6 @@
  { "tr": "iptal etmek", "kind": "gloss.tr", "de": "absagen" },
  { "tr": "karar vermek", "kind": "gloss.tr", "de": "entscheiden" },
  { "tr": "üye", "kind": "gloss.tr", "de": "Mitglied" },
- { "tr": "açık", "kind": "gloss.tr", "de": "Defizit" },
  { "tr": "eşik", "kind": "gloss.tr", "de": "Schwelle" },
  { "tr": "gezi", "kind": "gloss.tr", "de": "Ausflug" },
  { "tr": "ilan", "kind": "gloss.tr", "de": "Anzeige" },
@@ -151,5 +150,6 @@
  { "tr": "tur", "kind": "gloss.tr", "de": "Tour" },
  { "tr": "yağ", "kind": "gloss.tr", "de": "Öl" },
  { "tr": "zıt", "kind": "gloss.tr", "de": "entgegengesetzt" },
- { "tr": "zil", "kind": "gloss.tr", "de": "Klingel" }
+ { "tr": "zil", "kind": "gloss.tr", "de": "Klingel" },
+ { "tr": "açık", "kind": "gloss.tr", "de": "Defizit" }
 ]

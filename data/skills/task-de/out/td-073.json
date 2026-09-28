@@ -127,7 +127,7 @@
  { "tr": "„They looked at each other and laughed.“ — Bu cümle doğru mu?", "kind": "question.text", "de": "„They looked at each other and laughed.“ — Stimmt dieser Satz?" },
  { "tr": "„The delay was due to a technical fault.“ — Bu cümle doğru mu?", "kind": "question.text", "de": "„The delay was due to a technical fault.“ — Stimmt dieser Satz?" },
  { "tr": "„Who are you waiting?“ (Kimi bekliyorsun?) — Bu soru doğru mu?", "kind": "question.text", "de": "„Who are you waiting?“ (Auf wen wartest du?) — Ist diese Frage richtig?" },
- { "tr": "Üst kattaki tehlikeyi söyleyen kısa cümleyi duyduğun gibi yaz.", "kind": "question.text", "de": "Schreib den kurzen Satz über die Gefahr im oberen Stock so, wie du ihn hörst." },
+ { "tr": "Üst güvertedeki tehlikeyi söyleyen kısa cümleyi duyduğun gibi yaz.", "kind": "question.text", "de": "Schreib den kurzen Satz über die Gefahr auf dem Oberdeck so, wie du ihn hörst." },
  { "tr": "„Because of it was raining, we stayed in.“ — Bu cümle doğru mu?", "kind": "question.text", "de": "„Because of it was raining, we stayed in.“ — Stimmt dieser Satz?" },
  { "tr": "“Small as are the apartments, nobody has left.” — Bu cümle doğru mu?", "kind": "question.text", "de": "“Small as are the apartments, nobody has left.” — Stimmt dieser Satz?" },
  { "tr": "„The system is being updated.“ — Güncelleme şu anda sürüyor mu?", "kind": "question.text", "de": "„The system is being updated.“ — Läuft die Aktualisierung gerade?" },

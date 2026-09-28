@@ -185,9 +185,9 @@
   "de": "Der ehrlichste Satz in diesem Feld."
  },
  {
-  "tr": "Varsayım genellikle örneklemdir.",
+  "tr": "Raporun gizlediği varsayım genellikle örneklemdir.",
   "kind": "build.hint",
-  "de": "Die Annahme ist meistens die Stichprobe."
+  "de": "Die Annahme, die der Bericht verschweigt, ist meistens die Stichprobe."
  },
  {
   "tr": "Tek gövde, iki önek, ters yönler.",

@@ -279,7 +279,7 @@ export const enB2P10: SkillExercise[] = [
     skill: "speaking",
     title: "Change the System or the People?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir öncelik sırası kur ve kendi kuralının sınırını kabul et.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir öncelik sırası kur ve kendi kuralının sınırını kabul et.",
     gloss: [],
     minutes: 7,
     monologue: {

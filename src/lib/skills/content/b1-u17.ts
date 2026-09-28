@@ -112,7 +112,6 @@ export const b1U17: SkillExercise[] = [
       { de: "die Autorin", tr: "yazar", en: "author", note: "kadın biçimi" },
       { de: "der Leser", tr: "okur", en: "reader" },
       { de: "die Buchhandlung", tr: "kitapçı", en: "bookstore" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "langweilig", tr: "sıkıcı", en: "boring" },
       { de: "aufgehen", tr: "doğmak", en: "to rise" },
@@ -184,7 +183,6 @@ export const b1U17: SkillExercise[] = [
       { de: "überraschen", tr: "şaşırtmak", en: "to surprise" },
       { de: "die Stimmung", tr: "atmosfer / hava", en: "mood" },
       { de: "rechnen", tr: "beklemek / hesaba katmak", en: "to expect / to count on" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { speaker: "Mia", text: "Und? Wie fandest du die letzte Folge?" },
@@ -247,12 +245,11 @@ export const b1U17: SkillExercise[] = [
       { de: "die Bühne", tr: "sahne", en: "stage" },
       { de: "die Stimme", tr: "ses", en: "voice" },
       { de: "wunderschön", tr: "harikulade", en: "beautiful" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { speaker: "Jonas", text: "Der Auftritt gestern war wunderschön." },
       { speaker: "Clara", text: "Findest du? Mir hat die zweite Sängerin besser gefallen." },
-      { speaker: "Jonas", text: "Ihre Stimme ist stark, das stimmt. Aber sie stand kaum auf der Bühne." },
+      { speaker: "Jonas", text: "Ihre Stimme ist stark, das stimmt. Aber auf der Bühne hat sie kaum gesungen." },
       { speaker: "Clara", text: "Das war Absicht, glaube ich. Sie wollte den Tanz zeigen." },
       { speaker: "Jonas", text: "Möglich. Mir fehlte trotzdem etwas." },
       { speaker: "Clara", text: "Was denn?" },
@@ -267,7 +264,7 @@ export const b1U17: SkillExercise[] = [
         explain: "„Mir hat die zweite Sängerin besser gefallen.“",
       },
       {
-        text: "Warum stand sie kaum auf der Bühne?",
+        text: "Warum hat sie kaum gesungen?",
         options: ["Sie war krank", "Sie wollte den Tanz zeigen", "Es war zu dunkel"],
         answer: 1,
         explain: "„Das war Absicht, glaube ich. Sie wollte den Tanz zeigen.“",
@@ -311,7 +308,6 @@ export const b1U17: SkillExercise[] = [
       { de: "die Figur", tr: "karakter", en: "character" },
       { de: "die Serie", tr: "dizi", en: "series" },
       { de: "die Heldin", tr: "kadın kahraman", en: "heroine" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     tasks: [
       {

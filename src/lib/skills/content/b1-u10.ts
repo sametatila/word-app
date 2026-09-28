@@ -306,7 +306,6 @@ export const b1U10: SkillExercise[] = [
       { de: "die Marke", tr: "marka", en: "brand" },
       { de: "der Inhalt", tr: "içerik", en: "contents" },
       { de: "braun", tr: "kahverengi", en: "brown" },
-      { de: "verlobt", tr: "nişanlı", en: "engaged" },
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     tasks: [

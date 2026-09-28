@@ -126,7 +126,7 @@ export const enB2P2: SkillExercise[] = [
     intro: "Bir podcast bölümünde varsayılan kuralın etkisi tartışılıyor: yasa ne kadar değiştiriyor, asıl darboğaz nerede.",
     gloss: [
       { de: "donor", tr: "bağışçı" },
-      { de: "switch", tr: "geçmek" },
+      { de: "switch", tr: "geçiş yapmak" },
       { de: "coordinator", tr: "koordinatör" },
       { de: "bottleneck", tr: "darboğaz" },
       { de: "check", tr: "işaretlemek" },
@@ -231,8 +231,8 @@ export const enB2P2: SkillExercise[] = [
       {
         kind: "build",
         tr: "Geçen yıldan beri bahsettiğim mağaza iade oranlarını gösteriyor.",
-        answer: "Since last year the store that I mentioned has shown the return rates.",
-        alternatives: ["The store that I mentioned has shown the return rates since last year."],
+        answer: "Since last year the store that I mentioned has been showing the return rates.",
+        alternatives: ["The store that I mentioned has been showing the return rates since last year."],
         hint: "İlgi zamiri nesne konumundaysa atılabilir; „since“ öbeği başta da sonda da durabilir.",
       },
       {

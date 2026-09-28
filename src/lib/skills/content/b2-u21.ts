@@ -391,8 +391,8 @@ export const b2U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Göz temasını sürdürerek özgüvenli görünüyoruz.",
-        answer: "Wir wirken selbstbewusst, indem wir den Blickkontakt halten",
+        tr: "Göz temasını düzenli aralıklarla keserek özgüvenli görünüyoruz.",
+        answer: "Wir wirken selbstbewusst, indem wir den Blickkontakt in normalen Abständen unterbrechen",
         hint: "indem yan cümlesinde özne tekrarlanır, fiil sona gider.",
       },
       {
@@ -404,7 +404,7 @@ export const b2U21: SkillExercise[] = [
           "Es klang, als ob alles geklärt wäre",
           "Es klang, als wäre alles geklärt.",
         ],
-        why: "als ob Konjunktiv II ister, çünkü yapı zaten gerçek olmayan bir durumu anlatıyor: kulağa öyle geldi ama değildi. Türkçedeki 'sanki' kipi değiştirmediği için Türkçe konuşan burada düz haber kipiyle devam etmeye yatkındır: 'als ob alles geklärt ist' kulağa doğru gelir ama değildir.",
+        why: "als ob Konjunktiv II ister, çünkü yapı zaten gerçek olmayan bir durumu anlatıyor: kulağa öyle geldi ama değildi. Türkçedeki 'sanki' kipi değiştirmediği için Türkçe konuşan burada düz haber kipiyle devam etmeye yatkındır: 'als ob alles geklärt ist' günlük konuşmada duyulur, ama yazı dilinde ve özenli konuşmada Konjunktiv II beklenir.",
       },
     ],
   },

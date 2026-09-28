@@ -281,7 +281,7 @@ export const enB2P6: SkillExercise[] = [
     skill: "speaking",
     title: "Should Employers Give Reasons?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir konum al ve uygulamasını düşün.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir konum al ve uygulamasını düşün.",
     gloss: [],
     minutes: 7,
     monologue: {

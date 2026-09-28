@@ -364,7 +364,7 @@ export const enC1U10: SkillExercise[] = [
       { speaker: "Aylin", text: "The scene may well be mundane rather than highly symbolic. Start every reading with that sentence and half your work is already done." },
       { speaker: "Aylin", text: "„May well be“ is the hedge, and here it is not weakness. It is the only honest opening when the evidence is a single scene." },
       { speaker: "Aylin", text: "A reading that begins with certainty has decided before it looked, and a reader can hear that in the first line of a paper." },
-      { speaker: "Aylin", text: "A reading of great age might permeate a whole field. This is the danger and it is quiet, because nobody chooses it." },
+      { speaker: "Aylin", text: "A time-honored reading might permeate a whole field. This is the danger and it is quiet, because nobody chooses it." },
       { speaker: "Aylin", text: "One paper says it, a second quotes the first, a third quotes the second, and by the fourth the claim has become a footnote nobody has checked." },
       { speaker: "Aylin", text: "The age of a reading is not evidence for it. That is the shortest rule in this seminar and the hardest one to keep." },
       { speaker: "Aylin", text: "A culture may hand down its exoticism and ostracize the doubter. The same two moves, one page higher, and now they are about people rather than papers." },

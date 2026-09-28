@@ -268,7 +268,6 @@ export const a2U22: SkillExercise[] = [
       { de: "köstlich", tr: "nefis", en: "delicious" },
       { de: "lebendig", tr: "canlı", en: "lively" },
       { de: "der Hut", tr: "şapka", en: "hat" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
       { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 3,

@@ -1,7 +1,7 @@
 [
  { "tr": "yoğun", "kind": "gloss.tr", "de": "belebt" },
  { "tr": "yüzdü", "kind": "gloss.tr", "de": "schwamm" },
- { "tr": "zayıf", "kind": "gloss.tr", "de": "dünn" },
+ { "tr": "zayıf", "kind": "gloss.tr", "de": "schwach" },
  { "tr": "atölye", "kind": "gloss.tr", "de": "Werkstatt" },
  { "tr": "bakmak", "kind": "gloss.tr", "de": "sich kümmern um" },
  { "tr": "balkon", "kind": "gloss.tr", "de": "Balkon" },
@@ -15,7 +15,7 @@
  { "tr": "çıkmak", "kind": "gloss.tr", "de": "gehen" },
  { "tr": "çoktan", "kind": "gloss.tr", "de": "schon" },
  { "tr": "çökmek", "kind": "gloss.tr", "de": "abstürzen" },
- { "tr": "defter", "kind": "gloss.tr", "de": "Hauptbuch" },
+ { "tr": "muhasebe defteri", "kind": "gloss.tr", "de": "das Hauptbuch" },
  { "tr": "derece", "kind": "gloss.tr", "de": "Grad" },
  { "tr": "dökmek", "kind": "gloss.tr", "de": "verschütten" },
  { "tr": "dükkân", "kind": "gloss.tr", "de": "Laden" },
@@ -26,7 +26,7 @@
  { "tr": "fatura", "kind": "gloss.tr", "de": "Rechnung" },
  { "tr": "fincan", "kind": "gloss.tr", "de": "Tasse" },
  { "tr": "garson", "kind": "gloss.tr", "de": "Kellner" },
- { "tr": "geçmek", "kind": "gloss.tr", "de": "wechseln" },
+ { "tr": "geçiş yapmak", "kind": "gloss.tr", "de": "umstellen" },
  { "tr": "giymek", "kind": "gloss.tr", "de": "tragen" },
  { "tr": "gömülü", "kind": "gloss.tr", "de": "eingebettet" },
  { "tr": "gözlük", "kind": "gloss.tr", "de": "Brille" },
@@ -149,5 +149,7 @@
  { "tr": "ziyaret", "kind": "gloss.tr", "de": "Besuch" },
  { "tr": "zorunlu", "kind": "gloss.tr", "de": "verpflichtend" },
  { "tr": "akıcılık", "kind": "gloss.tr", "de": "Geläufigkeit" },
- { "tr": "antrenör", "kind": "gloss.tr", "de": "Trainer" }
+ { "tr": "antrenör", "kind": "gloss.tr", "de": "Trainer" },
+ { "tr": "defter", "kind": "gloss.tr", "de": "Hauptbuch" },
+ { "tr": "geçmek", "kind": "gloss.tr", "de": "wechseln" }
 ]

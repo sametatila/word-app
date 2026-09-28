@@ -47,7 +47,7 @@ export const a2U02: SkillExercise[] = [
       "Manche Tage gehen einfach schief. Mein Montag war so ein Tag.\n\n" +
       "Zuerst habe ich verschlafen, weil mein Wecker nicht geklingelt hat. Ich bin um Viertel nach acht aufgewacht — eine Stunde zu spät. Ich habe mich nicht geduscht, nur schnell angezogen, und bin aus dem Haus gelaufen.\n\n" +
       "An der Haltestelle habe ich dann den Bus verpasst. Der nächste kam erst nach zwanzig Minuten, und es hat die ganze Zeit geregnet. Meine Schuhe und meine Jacke waren komplett nass.\n\n" +
-      "Im Bus ist dann auch noch die Heizung stehengeblieben. Alle Leute waren nass und schlecht gelaunt. Im Büro habe ich mich um fast eine Stunde verspätet. Mein Chef hat nichts gesagt, aber der ganze Vormittag war hektisch.\n\n" +
+      "Unterwegs ist der Bus dann auch noch lange stehengeblieben. Alle Leute waren nass und schlecht gelaunt. Im Büro habe ich mich um fast eine Stunde verspätet. Mein Chef hat nichts gesagt, aber der ganze Vormittag war hektisch.\n\n" +
       "Am Abend war ich einfach nur müde. Ein schrecklicher Tag — zum Glück nur einer.",
     questions: [
       {

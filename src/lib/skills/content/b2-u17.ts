@@ -400,7 +400,7 @@ export const b2U17: SkillExercise[] = [
           "Beim Auftritt der Band war die Stimmung der Menge unglaublich",
           "Beim Auftritt der Band war die Stimmung im Publikum unglaublich.",
         ],
-        why: "Deneyim anlatımında üç sıfat üst üste yığmak hiçbir şey söylemez; okuyucu neyin nasıl olduğunu bilmez. Adlaştırma -beim Auftritt, die Stimmung der Menge- olayı ve anı adlandırır, böylece tek bir nitelik sıfatı yeterli hâle gelir.",
+        why: "Deneyim anlatımında üç sıfat üst üste yığmak hiçbir şey söylemez; okuyucu neyin nasıl olduğunu bilmez. Adlaştırma (beim Auftritt, die Stimmung der Menge) olayı ve anı adlandırır, böylece tek bir nitelik sıfatı yeterli hâle gelir.",
       },
     ],
   },

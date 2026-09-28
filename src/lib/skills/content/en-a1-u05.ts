@@ -241,7 +241,7 @@ export const enA1U05: SkillExercise[] = [
     genre: "dialogue",
     intro: "Deniz fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
     gloss: [
-      { de: "take a photo", tr: "fotoğraf çekmek" },
+      { de: "photo", tr: "fotoğraf" },
       { de: "grandparents", tr: "büyükanne ve büyükbaba" },
       { de: "Is this …?", tr: "bu … mi" },
     ],
@@ -256,7 +256,7 @@ export const enA1U05: SkillExercise[] = [
       { speaker: "Ayse", text: "Is this your cousin?" },
       { speaker: "Deniz", text: "Yes, that is my cousin Ali. We are one family!" },
       { speaker: "Ayse", text: "Are your parents in the photo?" },
-      { speaker: "Deniz", text: "No, they aren't. My mother takes a photo." },
+      { speaker: "Deniz", text: "No, they aren't. My mother always takes our photos." },
       { speaker: "Ayse", text: "Then it is a good photo!" },
     ],
     questions: [
@@ -267,10 +267,10 @@ export const enA1U05: SkillExercise[] = [
         explain: "„No, that is my aunt's husband. His name is Kaan.“ — Ayse amca sanıyor.",
       },
       {
-        text: "Who takes the photo?",
+        text: "Who takes the family photos?",
         options: ["Deniz's mother", "Deniz's grandmother", "Ayse"],
         answer: 0,
-        explain: "„My mother takes a photo.“ — bu yüzden anne fotoğrafta yok.",
+        explain: "„My mother always takes our photos.“ — bu yüzden anne fotoğrafta yok.",
       },
       {
         kind: "truefalse",

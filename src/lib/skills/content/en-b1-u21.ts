@@ -277,7 +277,7 @@ export const enB1U21: SkillExercise[] = [
     unit: 21,
     title: "Parks and green space",
     genre: "monologue",
-    intro: "Bir park anlatılıyor. Hangi cümlede bağlaç düşüyor?",
+    intro: "Bir park anlatılıyor. Hangi ilgi zamiri cümleden düşemez?",
     gloss: [
       { de: "planted", tr: "dikti" },
       { de: "the path", tr: "patika" },

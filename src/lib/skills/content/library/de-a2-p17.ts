@@ -189,7 +189,7 @@ export const deA2P17: SkillExercise[] = [
         kind: "build",
         tr: "Konser yarım saat geç başladı.",
         answer: "Das Konzert hat eine halbe Stunde später angefangen.",
-        alternatives: ["Eine halbe Stunde später hat das Konzert angefangen."],
+        alternatives: ["Das Konzert hat erst eine halbe Stunde später angefangen."],
         hint: "anfangen ayrılabilen bir fiil: Perfekt'te an-ge-fangen ve ortaç cümlenin sonunda.",
       },
       {

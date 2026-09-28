@@ -181,7 +181,7 @@ export const enB2P3: SkillExercise[] = [
         text: "Where is the frame number usually?",
         options: [],
         answer: 0,
-        accept: ["under the pedals", "below the pedals", "under the bike"],
+        accept: ["under the pedals", "below the pedals"],
         explain: "„A bike has a frame number, usually under the pedals.“",
       },
       {

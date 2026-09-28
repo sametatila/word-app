@@ -399,7 +399,7 @@ export const enA2U23: SkillExercise[] = [
     genre: "opinion",
     intro: "Görüş bildirme ve kurum dili. Her fiil kendi edatını taşıyor.",
     gloss: [
-      { de: "agree with", tr: "katılmak" },
+      { de: "agree with", tr: "aynı fikirde olmak" },
       { de: "depends on", tr: "bağlı" },
       { de: "the counter", tr: "gişe" },
     ],

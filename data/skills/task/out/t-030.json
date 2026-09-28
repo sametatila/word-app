@@ -137,7 +137,7 @@
  { "tr": "Yarın mı geliyorsun?", "kind": "drill.tr", "en": "Are you coming tomorrow?" },
  { "tr": "Elma masanın üstünde.", "kind": "drill.tr", "en": "The apple is on the table." },
  { "tr": "Şarkı güzel, şarkılar da.", "kind": "drill.tr", "en": "The song is lovely, and so are the songs." },
- { "tr": "Saat çoktan üç buçuk.", "kind": "drill.tr", "en": "It's already half past three." },
+ { "tr": "Saat çoktan üç buçuğu gösteriyor.", "kind": "drill.tr", "en": "The clock already says half past three." },
  { "tr": "Aşçı bir kitap arıyor.", "kind": "drill.tr", "en": "The cook is looking for a book." },
  { "tr": "Eski bir arabamız var.", "kind": "drill.tr", "en": "We have an old car." },
  { "tr": "Komşu çok güler yüzlü.", "kind": "drill.tr", "en": "The neighbor is very friendly." },

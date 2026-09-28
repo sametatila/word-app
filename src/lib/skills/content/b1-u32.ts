@@ -184,21 +184,21 @@ export const b1U32: SkillExercise[] = [
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
-      { speaker: "Lena", text: "Die Fähre fährt um zehn. Sollen wir vorher an den Hafen gehen?" },
+      { speaker: "Lena", text: "Die Fähre fährt um drei. Sollen wir vorher an den Hafen gehen?" },
       { speaker: "Paul", text: "Gern. Am Hafen gibt es diesen alten Turm." },
       { speaker: "Lena", text: "Den kenne ich noch nicht. Kann man nach oben?" },
       { speaker: "Paul", text: "Ja, aber nur bis zwölf. Danach macht er zu." },
       { speaker: "Lena", text: "Dann zuerst der Turm, dann das Denkmal am Wasser." },
       { speaker: "Paul", text: "Und die Burg? Die liegt auf dem Hügel über der Stadt." },
       { speaker: "Lena", text: "Dafür reicht die Zeit nicht. In zwei Wochen komme ich wieder." },
-      { speaker: "Paul", text: "Gut. Dann gehen wir jetzt an die Küste und essen dort." },
+      { speaker: "Paul", text: "Gut. Und zum Schluss gehen wir an die Küste und essen dort." },
     ],
     questions: [
       {
         text: "Wann fährt die Fähre?",
-        options: ["Um zehn", "Um zwölf", "Um acht"],
+        options: ["Um drei", "Um zwölf", "Um acht"],
         answer: 0,
-        explain: "„Die Fähre fährt um zehn.“",
+        explain: "„Die Fähre fährt um drei.“",
       },
       {
         text: "Bis wann kann man auf den Turm?",

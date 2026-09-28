@@ -440,7 +440,7 @@ export const enB2U21: SkillExercise[] = [
         fields: [
           { label: "From the list", answer: "measurement", accept: ["measure"] },
           { label: "From the rule", answer: "building", accept: ["naming"] },
-          { label: "Works for", answer: "any of them", accept: ["all of them"] },
+          { label: "Works for", answer: "every verb", accept: ["any verb", "all verbs", "all of them", "any of them"] },
           { label: "The cost", answer: "a heavy sound", accept: ["it sounds heavy"] },
         ],
       },

@@ -40,7 +40,7 @@ export const enB2U20: SkillExercise[] = [
     unit: 20,
     title: "By December",
     genre: "info",
-    intro: "Dört sözcük iki sözcüğe katlanıyor. Ne düşüyor?",
+    intro: "Bütün bir yan cümle mastara katlanıyor. Ne düşüyor?",
     gloss: [
       { de: "whole", tr: "bütün" },
       { de: "tense", tr: "zaman kipi" },
@@ -69,7 +69,7 @@ export const enB2U20: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "By the payment deadline we will have decided how to use up the rest. Look at the last four words, because they are a whole clause that has been folded into two.\n" +
+      "By the payment deadline we will have decided how to use up the rest. Look at the last six words, because they are a whole clause that has been folded into an infinitive.\n" +
       "„How to use up the rest“ has no subject and no tense. Unfolded it would be „how we should use up the rest“ or „how we are going to use up the rest“, and the short version does not say which, because it does not have to: the main clause has already told you who and when.\n" +
       "The same shape works with the other question words. What to say. Where to go. Whether to pay. Each of them is a question with the subject and the tense taken out, and each of them follows a verb that can hold a question: decide, know, wonder, ask, explain, forget.\n" +
       "It does not work after every verb. „I hope how to do it“ is nothing; „hope“ cannot hold a question, and neither can „want“ or „like“.\n" +

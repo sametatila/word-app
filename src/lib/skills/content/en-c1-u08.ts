@@ -77,7 +77,7 @@ export const enC1U08: SkillExercise[] = [
       { de: "out loud", tr: "yüksek sesle" },
       { de: "a room", tr: "oda" },
       { de: "a face", tr: "yüz" },
-      { de: "agree", tr: "katılmak" },
+      { de: "agree", tr: "aynı fikirde olmak" },
       { de: "a floor", tr: "taban" },
       { de: "a ruling", tr: "karar" },
       { de: "a clause", tr: "yan cümle" },

@@ -106,7 +106,7 @@ export const b1U04: SkillExercise[] = [
       { de: "der Lärm", tr: "gürültü", en: "noise" },
       { de: "sich beschweren", tr: "şikâyet etmek", en: "to complain" },
       { de: "der Ärger", tr: "sıkıntı / dert", en: "trouble" },
-      { de: "aufmerksam", tr: "dikkatli", en: "considerate" },
+      { de: "aufmerksam", tr: "düşünceli", en: "considerate" },
       { de: "der Hausmeister", tr: "kapıcı", en: "janitor" },
       { de: "die Notiz", tr: "not", en: "note" },
       { de: "böse", tr: "kızgın", en: "angry" },
@@ -120,7 +120,7 @@ export const b1U04: SkillExercise[] = [
       "Zettel 3: Wegen Ärger im Haus: Am Freitag um acht treffen wir uns unten. " +
       "Der Hausmeister kommt auch. Wir wollen uns gemeinsam einigen, statt jeden Monat " +
       "neue Zettel zu schreiben. Bitte klopft bei mir, falls ihr nicht kommen könnt.\n\n" +
-      "Notiz des Hausmeisters: Zettel 2 und 3 sind aufmerksam geschrieben und helfen wirklich. " +
+      "Notiz des Hausmeisters: Zettel 2 und 3 sind freundlich geschrieben und helfen wirklich. Ihre Schreiber sind aufmerksame Nachbarn. " +
       "Zettel 1 macht den Streit nur größer. Ein Gespräch hilft mehr als ein böser Satz.",
     questions: [
       {

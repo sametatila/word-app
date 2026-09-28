@@ -241,7 +241,7 @@ export const enC1P10: SkillExercise[] = [
         kind: "build",
         tr: "O kadar emin olmama gerek yokmuş.",
         answer: "I needn't have been so confident.",
-        alternatives: ["I did not need to be so confident."],
+        alternatives: [],
         hint: "„needn't have + üçüncü biçim“ yapılmış ama gereksiz olan bir şeyi bildirir.",
       },
       {

@@ -3105,11 +3105,7 @@ export const enMobile2026: SkillExercise[] = [
         "answer": "I have got two sisters.",
         "alternatives": [
           "I've got two sisters.",
-          "I have two sisters.",
-          "I have got two sisters",
-          "I've got two sisters",
-          "I have two sisters",
-          "I've two sisters."
+          "I have two sisters."
         ],
         "hint": "Sahip olmayı anlatırken 'have got' ya da 'have' kullanılır: I have got / I have."
       },

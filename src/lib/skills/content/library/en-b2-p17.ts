@@ -289,7 +289,7 @@ export const enB2P17: SkillExercise[] = [
     skill: "speaking",
     title: "Would a Four-Day Week Work Everywhere?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: kanıtın gücünü doğru tart ve bir sınır çiz.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: kanıtın gücünü doğru tart ve bir sınır çiz.",
     gloss: [],
     minutes: 7,
     monologue: {

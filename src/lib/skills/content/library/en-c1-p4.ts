@@ -353,7 +353,7 @@ export const enC1P4: SkillExercise[] = [
       { de: "hurry", tr: "acele" },
       { de: "mistake", tr: "hata" },
       { de: "delay", tr: "gecikme" },
-      { de: "agree", tr: "katılmak" },
+      { de: "agree", tr: "aynı fikirde olmak" },
     ],
     minutes: 9,
     explanation: [

@@ -362,8 +362,8 @@ export const enC1P14: SkillExercise[] = [
         heading: "Edat öne geçer: to whom, in which",
         tr: "Gündelik İngilizcede edat ilgi cümlesinin sonunda kalır: „the person I lent it to“. Resmî yazıda edat ilgi zamirinin önüne alınır ve o zaman yalnız „whom“ (insan) ya da „which“ (nesne) kullanılabilir: „the person to whom I lent it“. Edattan sonra „that“ ya da „who“ gelmez. B2'de öğrenilen ayrım virgül sorusuydu; buradaki soru kayıt ve edatın yeridir.",
         examples: [
-          { de: "The stranger to whom the library had lent it left a note.", tr: "Kütüphanenin onu ödünç verdiği yabancı bir not bırakmıştı.", note: "resmî: to whom" },
-          { de: "The stranger the library had lent it to left a note.", tr: "Kütüphanenin onu ödünç verdiği yabancı bir not bırakmıştı.", note: "gündelik: edat sonda" },
+          { de: "The stranger to whom the library had lent it left a note.", tr: "Kütüphanenin onu ödünç verdiği yabancı bir not bıraktı.", note: "resmî: to whom" },
+          { de: "The stranger the library had lent it to left a note.", tr: "Kütüphanenin onu ödünç verdiği yabancı bir not bıraktı.", note: "gündelik: edat sonda" },
           { de: "It is a comfort in which nothing is ever new.", tr: "Hiçbir şeyin yeni olmadığı bir rahatlık bu.", note: "in which" },
         ],
       },

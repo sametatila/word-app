@@ -309,7 +309,7 @@ export const enB1: SkillExercise[] = [
         tr: "already olumlu cümlede have ile fiilin arasına girer („çoktan“). yet olumsuz cümlede ve soruda en sona gelir („henüz“). ever soruda „hiç“ demektir; never olumsuz cümlenin kendisidir, „hiç … -medi“ anlamını verir ve not ile birlikte kullanılmaz.",
         examples: [
           { de: "I have already finished the report.", tr: "Raporu çoktan bitirdim." },
-          { de: "Have you finished yet?", tr: "Henüz bitirdin mi?", note: "yet sonda" },
+          { de: "Have you finished yet?", tr: "Bitirdin mi?", note: "yet sonda" },
           { de: "Have you ever eaten Turkish breakfast?", tr: "Hiç Türk kahvaltısı yedin mi?" },
           { de: "I have never seen snow.", tr: "Hiç kar görmedim.", note: "never + üçüncü hâl, not yok" },
         ],

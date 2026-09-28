@@ -296,7 +296,7 @@ export const enB2P19: SkillExercise[] = [
     skill: "speaking",
     title: "Should Landlords Be Able to Ban Pets?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: karşı tarafın kaygısını hakkıyla ver ve adil bir ölçütü örnekle sına.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: karşı tarafın kaygısını hakkıyla ver ve adil bir ölçütü örnekle sına.",
     gloss: [],
     minutes: 7,
     monologue: {

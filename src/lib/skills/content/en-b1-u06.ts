@@ -130,18 +130,18 @@ export const enB1U06: SkillExercise[] = [
     minutes: 7,
     text:
       "Four words for one idea, and they do not go in the same place.\n" +
-      "I was late because the train stopped. „Because“ introduces the reason and it can also start the sentence: Because the train stopped, I was late. Both are correct; the second one is more formal.\n" +
-      "The train stopped, so I was late. „So“ introduces the result and it cannot start a sentence. That is the difference and it is the mistake I see most often.\n" +
+      "I was late because the train stopped. „Because“ introduces the reason and it can also start the sentence: Because the train stopped, I was late. Both are correct; the second one puts the reason first.\n" +
+      "The train stopped, so I was late. „So“ introduces the result and it cannot move in front of the reason. That is the difference and it is the mistake I see most often.\n" +
       "Since the train stopped, I was late. „Since“ works like „because“ but it usually comes first, and it carries a small extra meaning: we both already know this part.\n" +
       "Therefore is the formal one. The train was canceled. Therefore, the meeting was moved. In an email it is right. At a table it sounds like a machine.\n" +
       "One way to check. If you can put the two parts in either order, you are using because or since. If the order is fixed, it is so.\n" +
       "And one more thing: since also means from that time. Since March I have worked here. The reader knows which one from the tense, not from the word.",
     questions: [
       {
-        text: "Which word cannot start a sentence?",
+        text: "With which word is the order of the two parts fixed?",
         options: ["so", "because", "since"],
         answer: 0,
-        explain: "„„So“ introduces the result and it cannot start a sentence.“",
+        explain: "„„So“ introduces the result and it cannot move in front of the reason.“",
       },
       {
         text: "What extra meaning does „since“ carry?",

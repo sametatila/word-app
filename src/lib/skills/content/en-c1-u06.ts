@@ -329,7 +329,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "appears", tr: "beliriyor" },
       { de: "a petition", tr: "dilekçe" },
       { de: "a request", tr: "talep" },
-      { de: "asking", tr: "istemek" },
+      { de: "asking", tr: "talep etmek" },
       { de: "a ground", tr: "dayanak" },
       { de: "considered", tr: "değerlendirilmiş" },
       { de: "in words", tr: "yazıyla" },

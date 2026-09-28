@@ -115,9 +115,9 @@
   "de": "„„Arise“, not „arises“. The ending has gone…“"
  },
  {
-  "tr": "„„Parallel“ takes „with“ and never „between“…“",
+  "tr": "„…because I have been wrong about „parallel“ twice.“",
   "kind": "explain",
-  "de": "„„Parallel“ takes „with“ and never „between“…“"
+  "de": "„…because I have been wrong about „parallel“ twice.“"
  },
  {
   "tr": "Kanıt kapıyı kapatıyor: olumsuzu „can't have“.",
@@ -648,5 +648,10 @@
   "tr": "istatistiksel sınamaydı",
   "kind": "gloss.tr",
   "de": "war der statistische Test"
+ },
+ {
+  "tr": "sağlama",
+  "kind": "gloss.tr",
+  "de": "die Bereitstellung"
  }
 ]

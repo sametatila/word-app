@@ -118,7 +118,6 @@ export const a2U21: SkillExercise[] = [
       { de: "mitbekommen", tr: "duymak / farkına varmak", en: "to catch wind of" },
       { de: "herausfinden", tr: "öğrenmek / ortaya çıkarmak", en: "to find out" },
       { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
-      { de: "heraus", tr: "dışarı", en: "out" },
       { de: "lang", tr: "uzun", en: "long" },
       { de: "aller", tr: "hepsinden", en: "of all" },
     ],

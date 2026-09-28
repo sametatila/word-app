@@ -361,8 +361,8 @@ export const deA1P10: SkillExercise[] = [
         explain: "Zaman sözcüğü başa gelince özne fiilin arkasına geçer; fiil ikinci sırada kalır.",
       },
       {
-        text: "Wie fragt man nach „ja“ oder „nein“?",
-        options: ["Du arbeitest heute?", "Arbeitest du heute?", "Wann arbeitest du?"],
+        text: "Welche Ja-Nein-Frage ist richtig?",
+        options: ["Du heute arbeitest?", "Arbeitest du heute?", "Wann arbeitest du?"],
         answer: 1,
         explain: "Evet-hayır sorusunda çekimli fiil birinci sıraya geçer.",
       },

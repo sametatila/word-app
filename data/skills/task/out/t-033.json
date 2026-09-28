@@ -109,7 +109,7 @@
  { "tr": "„Wir bringen den Nachbarn Kuchen.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Wir bringen den Nachbarn Kuchen.“ — Is this sentence correct?" },
  { "tr": "„der am Freitag verschickte Entwurf“ — Bu öbek doğru mu?", "kind": "question.text", "en": "„der am Freitag verschickte Entwurf“ — Is this phrase correct?" },
  { "tr": "„Das ist ein Ergebnis guter Arbeit.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Das ist ein Ergebnis guter Arbeit.“ — Is this sentence correct?" },
- { "tr": "„Ich schenke ein Buch meiner Mutter.“ — Bu sıra doğru mu?", "kind": "question.text", "en": "„Ich schenke ein Buch meiner Mutter.“ — Is this order correct?" },
+ { "tr": "„Ich schenke ein Buch meiner Mutter.“ — Vurgusuz cümlede olağan sıra bu mu?", "kind": "question.text", "en": "„Ich schenke ein Buch meiner Mutter.“ — Is this the usual order in a sentence without special emphasis?" },
  { "tr": "„Es ist gut, dass du angerufen hast.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Es ist gut, dass du angerufen hast.“ — Is this sentence correct?" },
  { "tr": "„Ich komme nicht, weil ich bin krank.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Ich komme nicht, weil ich bin krank.“ — Is this sentence correct?" },
  { "tr": "„Wir nehmen morgen eine Entscheidung.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Wir nehmen morgen eine Entscheidung.“ — Is this sentence correct?" },
