@@ -11172,7 +11172,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "finish=" + (/if \(row\.state !== "running"\) \{[\s\S]{0,400}?NextResponse\.json\(\{ attempt: shape\(row\)/.test(govde("finish")) ? "kayitli sonuc" : "HATA"),
         "finish yaris=" + (/if \(!saved\) \{/.test(govde("finish")) ? "kayitli sonuc" : "YOK"),
-        "assess=" + (/oncekiler\[taskId\] !== undefined\) return NextResponse\.json\(\{ result: oncekiler\[taskId\] \}\)/.test(govde("assessOpen")) ? "mevcut puan" : "YOK"),
+        /* `withRight(...)` sarmalı: kayıtlı puanın düzeltme alanı `right` adıyla da
+           dönüyor (denetim T14); dönen yine MEVCUT puan. */
+        "assess=" + (/oncekiler\[taskId\] !== undefined\) return NextResponse\.json\(\{ result: (?:withRight\()?oncekiler\[taskId\]\)? \}\)/.test(govde("assessOpen")) ? "mevcut puan" : "YOK"),
       ],
       ["finish=kayitli sonuc", "finish yaris=kayitli sonuc", "assess=mevcut puan"],
       "bulunan",

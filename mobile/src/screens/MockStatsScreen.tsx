@@ -207,9 +207,12 @@ export function MockStatsScreen() {
                 <View key={r.id} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                   <View style={{ flex: 1 }}>
                     <Text variant="body">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
-                    <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text>
+                    {/* Puansız deneme (yazma/konuşmada hiçbir görev yapay zekâ
+                        puanı almadı, `total` 0): "0/0 doğru · %0" değil, nötr
+                        "bitti" (denetim T15). Web istatistik sayfası aynı. */}
+                    {r.total > 0 ? <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text> : null}
                   </View>
-                  <Text variant="bodyStrong" color={r.passed ? colors.successText : colors.dangerText}>{formatPercent(r.score)}</Text>
+                  <Text variant="bodyStrong" color={r.total <= 0 ? colors.textMuted : r.passed ? colors.successText : colors.dangerText}>{r.total > 0 ? formatPercent(r.score) : t("mockexams.state_finished")}</Text>
                 </View>
               ))}
             </Card>

@@ -43,7 +43,12 @@ type OpenScore = {
   score: number | null;
   tip?: string;
   praise?: string;
-  errors?: { wrong?: string; right?: string; why_tr?: string }[];
+  /**
+   * Düzeltmenin adı sunucuda `fix` (değerlendirme şeması); uç eski
+   * istemciler için `right` adıyla da gönderiyor (denetim T14). İkisi de
+   * okunuyor: biri eksik gelse de doğru biçim boş kalmıyor.
+   */
+  errors?: { wrong?: string; right?: string; fix?: string; why_tr?: string }[];
   /**
    * Puan yok çünkü yapay zekâya izin verilmedi (metin gönderilmedi) — yalnız
    * istemcide, kaydedilmiyor. "Yapay zekâ kullanılamıyor" cümlesi bu durumda
@@ -59,6 +64,18 @@ type Score = {
   correct: number; total: number; pct: number; passed: boolean;
   byGoal: { goal: string; correct: number; total: number }[];
   items: ScoredItem[];
+  /**
+   * Yazma/konuşma bölümünde puanın dökümü (sunucu `scoreSection`, denetim
+   * T15); okuma ve dinlemede yok. Varsa `correct/total` madde değil yüzde
+   * (x/100) ve sonuç "kaç madde" yerine "kaç görev" diyor. Mobil
+   * `game/mockExam` `MockScore.open` ile aynı biçim.
+   */
+  open?: {
+    tasks: { taskId: string; taskNo: number; goal: string; format: string; state: "objective" | "scored" | "empty" | "unscored"; pct: number | null }[];
+    scored: number;
+    empty: number;
+    unscored: number;
+  };
 };
 
 /** Ölçüm hedefleri — mobilin `mockexam.goal_*` anahtarlarıyla aynı küme. */
@@ -427,6 +444,9 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           rules={[
             {
               icon: <ClockIcon size={16} />,
+              /* "puanlanmaz" DEĞİL (denetim T15): görevleri yapay zekâ puanlıyor.
+                 Misafir varyantı (`part_open_guest`) yalnız mobilde: web hesap
+                 istiyor, misafir bu sayfaya gelmiyor (`getAccountUserId`). */
               text: points
                 ? t("mockexams.part_summary", { minutes: part.minutes, n: points })
                 : t("mockexams.part_open", { minutes: part.minutes }),
@@ -1201,8 +1221,11 @@ function OpenResult({ score, refId, answer }: { score: OpenScore; refId: string;
       <p className="text-h3" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(score.score, lang)}</p>
       {score.praise ? <p className="muted mt-1 text-body leading-relaxed">{score.praise}</p> : null}
       {score.tip ? <p className="mt-1 text-body leading-relaxed">{score.tip}</p> : null}
+      {/* DOĞRU BİÇİM `right` YA DA `fix` (denetim T14): sunucu ikisini de
+          gönderiyor, eski kayıtta yalnız `fix` olabilir. Hatalı parça boşsa
+          (eksik sözcük) ok çizilmiyor — `assessment-card` ile aynı kalıp. */}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
-        <p key={i} className="muted mt-1 text-body">{e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}</p>
+        <p key={i} className="muted mt-1 text-body">{e.wrong ? `${e.wrong} → ` : ""}{e.right || e.fix || ""}{e.why_tr ? ` · ${e.why_tr}` : ""}</p>
       ))}
       <AiNotice variant="output" className="mt-3" />
       <div className="mt-2">
@@ -1265,7 +1288,17 @@ function Result({
     top.current?.scrollIntoView({ block: "start" });
   };
   const graded = score.total > 0;
-  const need = graded && !score.passed ? shortBy(score) : 0;
+  /*
+   * AÇIK BÖLÜM (yazma/konuşma, denetim T15). Sunucu yüzdeyi görevlerin
+   * yapay zekâ puanından kuruyor (`scoreSection`) ve `open` dökümünü
+   * gönderiyor. Birim madde değil GÖREV: "78/100 doğru" ve "geçmek için 5
+   * doğru daha" cümleleri burada anlamsız, yerine "2 görevin ortalaması" ve
+   * puanlanan görev sayısı. `open` yoksa (okuma/dinleme) eski çizim. Mobil
+   * `MockExamScreen` `ResultView` aynı kararı veriyor.
+   */
+  const openPart = score.open;
+  const counted = openPart ? openPart.tasks.filter((x) => x.pct !== null).length : 0;
+  const need = graded && !score.passed && !openPart ? shortBy(score) : 0;
 
   if (review) {
     return (
@@ -1379,20 +1412,32 @@ function Result({
           eyebrow={eyebrow}
           title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}
           figure={graded ? formatPercent(score.pct, lang) : null}
-          sub={graded ? t("mockexam.result_sub", { correct: score.correct, total: score.total, pct: MOCK_PASS_PCT }) : t("mockexam.not_scored")}
+          sub={
+            !graded
+              ? t("mockexam.not_scored")
+              : openPart
+                ? t("mockexam.open_result_sub", { n: counted, pct: MOCK_PASS_PCT })
+                : t("mockexam.result_sub", { correct: score.correct, total: score.total, pct: MOCK_PASS_PCT })
+          }
           quiet={graded && !score.passed}
           pill={need > 0 ? { text: t("mockexam.short_by", { n: need }), tone: "bad" } : null}
         />
         {graded ? (
           <StatRow
             items={[
-              { value: `${score.correct}/${score.total}`, label: t("mockexam.stat_correct") },
+              openPart
+                ? { value: `${counted}/${openPart.tasks.length}`, label: t("mockexam.stat_tasks") }
+                : { value: `${score.correct}/${score.total}`, label: t("mockexam.stat_correct") },
               { value: formatPercent(score.pct, lang), label: t("mockexam.stat_score"), tone: score.passed ? "ok" : "bad" },
               { value: formatPercent(MOCK_PASS_PCT, lang), label: t("mockexam.stat_threshold") },
             ]}
           />
         ) : null}
 
+        {/* Metni olup puanı olmayan görev ortalamaya girmiyor; kaç tane olduğu söyleniyor. */}
+        {graded && openPart && openPart.unscored > 0 ? (
+          <FlowNote icon={<AlertIcon size={16} className="muted shrink-0" />} text={t("mockexam.open_unscored", { n: openPart.unscored })} />
+        ) : null}
         {/* Sunucuya ulaşılamadı: sebep kırmızı, sonucun nerede saklandığı ayrı satır. */}
         {offline ? <FlowNote tone="bad" icon={<AlertIcon size={16} className="shrink-0" />} text={t(FAIL_KEYS[offline])} /> : null}
         {offline ? <FlowNote icon={<CheckIcon size={16} className="muted shrink-0" />} text={t("mockexam.saved_locally")} /> : null}
@@ -1405,7 +1450,8 @@ function Result({
                 <div key={g.goal}>
                   <div className="flex justify-between text-body">
                     <span>{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</span>
-                    <span className="font-semibold">{g.correct}/{g.total}</span>
+                    {/* Açık bölümde hedef de görev ortalaması: sayı değil yüzde. */}
+                    <span className="font-semibold">{openPart ? formatPercent(pct, lang) : `${g.correct}/${g.total}`}</span>
                   </div>
                   <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
                     <div className="h-1 rounded-full" style={{ width: `${pct}%`, background: pct >= 70 ? "var(--color-success)" : pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />

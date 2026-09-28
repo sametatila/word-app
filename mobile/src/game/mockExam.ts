@@ -46,7 +46,12 @@ export type OpenScore = {
   tip?: string;
   praise?: string;
   corrected?: string;
-  errors?: { wrong?: string; right?: string; why_tr?: string }[];
+  /**
+   * Düzeltmenin adı sunucuda `fix` (değerlendirme şeması); uç eski
+   * istemciler için `right` adıyla da gönderiyor (denetim T14). Ekran ikisini
+   * de okuyor: biri eksik gelse de doğru biçim boş kalmıyor.
+   */
+  errors?: { wrong?: string; right?: string; fix?: string; why_tr?: string }[];
   reason?: string;
 };
 
@@ -95,6 +100,18 @@ export type MockScore = {
   byGoal: { goal: string; correct: number; total: number }[];
   byTask: { taskId: string; taskNo: number; format: string; goal: string; correct: number; total: number }[];
   items: ScoredItem[];
+  /**
+   * Yazma/konuşma bölümünde puanın dökümü (sunucu `scoreSection`, denetim
+   * T15); okuma ve dinlemede yok, eski sunucuda da yok. Varsa `correct/total`
+   * madde değil yüzde (x/100) ve sonuç ekranı "kaç madde" yerine "kaç görev"
+   * diyor.
+   */
+  open?: {
+    tasks: { taskId: string; taskNo: number; goal: string; format: string; state: "objective" | "scored" | "empty" | "unscored"; pct: number | null }[];
+    scored: number;
+    empty: number;
+    unscored: number;
+  };
 };
 
 /**

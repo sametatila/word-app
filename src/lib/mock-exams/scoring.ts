@@ -1,5 +1,6 @@
 import type { MockCourse, MockItem, MockPaper, MockPart, MockSkill, MockTask } from "./types";
 import { MOCK_PASS_PCT, mockBoolLabels } from "./types";
+import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
 
 /**
  * Deneme sınavının puanlanması — SAF, sunucuya bağlı değil.
@@ -96,6 +97,49 @@ export type MockScore = {
   /** Teil'e göre kırılım. */
   byTask: { taskId: string; taskNo: number; format: string; goal: string; correct: number; total: number }[];
   items: ScoredItem[];
+  /**
+   * Açık görevi olan bölümde (yazma/konuşma) puanın nereden geldiği; okuma
+   * ve dinlemede YOK. Varsa `correct`/`total` madde değil yüzde: `total`
+   * 100, `correct` bölüm yüzdesi (bkz. `scoreSection`).
+   */
+  open?: OpenBreakdown;
+};
+
+/**
+ * Açık görevin kayıtlı yapay zekâ sonucu (`mock_exam_attempts.open_scores`).
+ *
+ * Hata maddesinde doğru biçimin adı `fix` (değerlendirme şeması,
+ * `AssessError`). Uç istemciye `right` adıyla da veriyor, çünkü yayındaki
+ * build 9/10 onu okuyor (denetim T14); iki ad da burada kabul ediliyor.
+ */
+export type OpenScoreEntry = {
+  score: number | null;
+  tip?: string;
+  praise?: string;
+  corrected?: string;
+  errors?: { wrong?: string; fix?: string; right?: string; why_tr?: string; type?: string; span?: [number, number] }[];
+  reason?: string;
+};
+
+/**
+ * Bölümdeki bir görevin sonuca giren durumu.
+ *
+ *   objective  nesnel görev (ör. A1 Schreiben'daki form): maddelerinden yüzde
+ *   scored     açık görev, yapay zekâ puanı var
+ *   empty      açık görev, boş ya da değerlendirilemeyecek kadar kısa: 0 sayılır
+ *   unscored   açık görev, metin var ama puan yok (Değerlendir'e basılmadı,
+ *              izin yok, kota, sağlayıcı hatası): ortalamaya GİRMİYOR
+ */
+export type OpenTaskState = "objective" | "scored" | "empty" | "unscored";
+
+export type OpenBreakdown = {
+  tasks: { taskId: string; taskNo: number; goal: string; format: string; state: OpenTaskState; pct: number | null }[];
+  /** Yapay zekâ puanı alan açık görev sayısı. */
+  scored: number;
+  /** Boş kalıp 0 sayılan açık görev sayısı. */
+  empty: number;
+  /** Metni olduğu hâlde puanı olmayan, ortalamaya girmeyen açık görev sayısı. */
+  unscored: number;
 };
 
 function expectedLabel(item: MockItem, task: MockTask, course: MockCourse): string {
@@ -184,5 +228,113 @@ export function scorePart(
     byGoal: [...goals.entries()].map(([goal, v]) => ({ goal, ...v })),
     byTask,
     items,
+  };
+}
+
+const kelime = (s: string | undefined) => (s ?? "").trim().split(/\s+/).filter(Boolean).length;
+
+/** Kayıtlı puan gerçekten bir sayı mı; değilse null (sağlayıcı yoktu, hata). */
+function aiPct(entry: OpenScoreEntry | undefined): number | null {
+  const s = entry?.score;
+  return typeof s === "number" && Number.isFinite(s) ? Math.max(0, Math.min(100, s)) : null;
+}
+
+/**
+ * Bölümün RESMÎ puanı — açık görevler dahil (denetim T15).
+ *
+ * `scorePart` yalnız nesnel maddeleri sayıyor ve yazma/konuşma görevlerini
+ * atlıyor. Görev başına yapay zekâ puanı `assess` eyleminde zaten üretilip
+ * `open_scores`a yazılıyordu ama bitişte hiç okunmuyordu: iki görevi %84 ve
+ * %71 alan öğrenci bölüm sonunda "makinece puanlanmıyor" görüyordu. Vitrin
+ * metni "yazma ve konuşma cevaplarını yapay zekâ puanlar … sonunda başarı
+ * yüzdeni alırsın" diyor; o sözün karşılığı burası.
+ *
+ * NASIL BİRLEŞİYOR. Her görev (Teil) eşit ağırlıkta: nesnel görevin yüzdesi
+ * maddelerinden, açık görevinki yapay zekâ puanından. Bölüm yüzdesi sayılan
+ * görevlerin ortalaması. Madde ağırlığı burada anlamsız — bir mektubun
+ * "madde sayısı" yok ve 5 maddelik bir form 1 maddelik bir mektubu ezmemeli.
+ *
+ * HANGİ GÖREV SAYILIYOR — adil olan seçildi:
+ *   - BOŞ görev (MIN_ASSESS_WORDS altı) 0 sayılıyor. Gerçek sınavda da yazılmamış
+ *     mektup sıfır puan; saymamak, tek görevi yazıp bölümden %90 almak olurdu.
+ *   - METNİ OLUP PUANI OLMAYAN görev ortalamaya GİRMİYOR. Öğrenci işi yaptı;
+ *     eksik olan puan onun performansı değil (izin, kota, sağlayıcı hatası ya
+ *     da basılmamış bir düğme). 0 saymak yazdığı metni cezalandırırdı.
+ *     Bitişte bu görevler için model ÇAĞRILMIYOR: bitiş zaten bir çağrı
+ *     yapıyor (özet) ve istemcinin bitiş isteği 25 sn'de kesiliyor; önüne
+ *     görev başına bir değerlendirme daha eklemek sınırı aşabilir ve kotadan
+ *     görev başına "Değerlendir"in ötesinde yer. Kaç görevin dışarıda kaldığı
+ *     `open.unscored` ile ekranda söyleniyor.
+ *
+ * PUANSIZ BÖLÜM. Hiçbir açık görev yapay zekâ puanı almadıysa ve nesnel
+ * görev de yoksa bölüm PUANSIZ kalıyor (`total` 0): misafir, izin vermeyen ya
+ * da hiç değerlendirmeyen öğrenci için dürüst cevap "yüzde yok", %0 değil.
+ * Nesnel görevli karışık bölümde (A1 Schreiben: form + mektup) mektup
+ * puansızsa sonuç eskisi gibi formun maddelerinden.
+ *
+ * `correct`/`total` BİÇİMİ. Açık görevli bölümde `total` 100, `correct`
+ * bölüm yüzdesi. Yayındaki istemciler (build 9/10) sonucu `correct/total`
+ * ve `pct` ile çiziyor: "78/100 doğru · eşik %60" okunur bir cümle ve
+ * "geçmek için kaç eksik" hesabı (`shortBy`) puan cinsinden doğru çıkıyor.
+ * İstatistiğin beceri kırılımı (`mockStats`, Σcorrect/Σtotal) da böylece
+ * denemelerin yüzde ortalaması oluyor.
+ */
+export function scoreSection(
+  paper: MockPaper,
+  skill: MockSkill,
+  answers: Record<string, string>,
+  open: Record<string, string>,
+  openScores: Record<string, OpenScoreEntry | undefined>,
+): MockScore | null {
+  const base = scorePart(paper, skill, answers);
+  const part = findPart(paper, skill);
+  if (!base || !part || !part.tasks.some(isOpenTask)) return base;
+
+  const tasks: OpenBreakdown["tasks"] = [];
+  for (const task of part.tasks) {
+    const row = { taskId: task.id, taskNo: task.no, goal: task.goal, format: task.format };
+    if (!isOpenTask(task)) {
+      const t = base.byTask.find((x) => x.taskId === task.id);
+      const pct = t && t.total ? (100 * t.correct) / t.total : null;
+      tasks.push({ ...row, state: "objective", pct });
+      continue;
+    }
+    const ai = aiPct(openScores[task.id]);
+    if (ai !== null) tasks.push({ ...row, state: "scored", pct: ai });
+    else if (kelime(open[task.id]) < MIN_ASSESS_WORDS) tasks.push({ ...row, state: "empty", pct: 0 });
+    else tasks.push({ ...row, state: "unscored", pct: null });
+  }
+  const breakdown: OpenBreakdown = {
+    tasks,
+    scored: tasks.filter((t) => t.state === "scored").length,
+    empty: tasks.filter((t) => t.state === "empty").length,
+    unscored: tasks.filter((t) => t.state === "unscored").length,
+  };
+
+  /* Ne yapay zekâ puanı ne nesnel madde: puansız bölüm. */
+  const hasObjective = tasks.some((t) => t.state === "objective" && t.pct !== null);
+  if (!breakdown.scored && !hasObjective) {
+    return { ...base, correct: 0, total: 0, pct: 0, passed: false, byGoal: [], open: breakdown };
+  }
+  /* Karışık bölümde mektup puansız VE boş değilse: sonuç formun maddelerinden
+     (eski davranış), yalnız dökümü ekleniyor. */
+  if (!breakdown.scored && !breakdown.empty) return { ...base, open: breakdown };
+
+  const counted = tasks.filter((t): t is typeof t & { pct: number } => t.pct !== null);
+  const mean = (xs: number[]) => xs.reduce((a, x) => a + x, 0) / xs.length;
+  const pct = Math.round(mean(counted.map((t) => t.pct)));
+  const goals = new Map<string, number[]>();
+  for (const t of counted) goals.set(t.goal, [...(goals.get(t.goal) ?? []), t.pct]);
+  return {
+    ...base,
+    correct: pct,
+    total: 100,
+    pct,
+    passed: pct >= MOCK_PASS_PCT,
+    /* Hedef kırılımı da aynı birimde (x/100): eski istemci onu "78/100" diye,
+       çubuğu yüzdesiyle çiziyor. */
+    byGoal: [...goals.entries()].map(([goal, xs]) => ({ goal, correct: Math.round(mean(xs)), total: 100 })),
+    byTask: counted.map((t) => ({ taskId: t.taskId, taskNo: t.taskNo, format: t.format, goal: t.goal, correct: Math.round(t.pct), total: 100 })),
+    open: breakdown,
   };
 }

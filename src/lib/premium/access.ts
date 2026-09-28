@@ -415,13 +415,20 @@ async function paperStats(userId: string, papers: string[]): Promise<Map<string,
   if (!papers.length) return stat;
   try {
     const rows = await db
-      .select({ paperId: mockExamAttempts.paperId, correct: mockExamAttempts.correct, total: mockExamAttempts.total })
+      .select({ paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, correct: mockExamAttempts.correct, total: mockExamAttempts.total })
       .from(mockExamAttempts)
       .where(and(eq(mockExamAttempts.userId, userId), isNotNull(mockExamAttempts.finishedAt), inArray(mockExamAttempts.paperId, papers)));
     for (const r of rows) {
       const s = stat.get(r.paperId) ?? { correct: 0, total: 0, done: false };
-      s.correct += r.correct;
-      s.total += r.total;
+      /* YÜZDE NESNEL MADDELERDEN (`MockPack.pct`). Yazma/konuşma bölümünün
+         sonucu artık görevlerin yapay zekâ puanından x/100 biçiminde yazılıyor
+         (`scoreSection`, denetim T15): madde sayısıyla toplansaydı bir mektup
+         yüz maddelik bir okuma bölümü kadar ağırlık alırdı. Açık bölüm yine
+         "bitirildi" sayılıyor; kilit onunla işliyor, yüzdeyle değil. */
+      if (r.skill !== "writing" && r.skill !== "speaking") {
+        s.correct += r.correct;
+        s.total += r.total;
+      }
       s.done = true;
       stat.set(r.paperId, s);
     }

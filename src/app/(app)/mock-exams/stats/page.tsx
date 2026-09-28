@@ -144,15 +144,20 @@ export default async function MockStatsPage() {
                   <span className="block truncate text-body">
                     {paperLabel(r.paperId)} · {skillLabel(r.skill, r.paperId)}
                   </span>
-                  <span className="muted block text-micro">
-                    {t("common.n_correct", { correct: r.correct, total: r.total })}
-                  </span>
+                  {/* Puansız deneme (yazma/konuşmada hiçbir görev yapay zekâ
+                      puanı almadı, `total` 0): "0/0 doğru · %0" değil, nötr
+                      "bitti" (denetim T15). Mobil `MockStatsScreen` aynı. */}
+                  {r.total > 0 ? (
+                    <span className="muted block text-micro">
+                      {t("common.n_correct", { correct: r.correct, total: r.total })}
+                    </span>
+                  ) : null}
                 </span>
                 <span
                   className="shrink-0 text-strong"
-                  style={{ color: r.passed ? "var(--color-mint)" : "var(--color-rose)" }}
+                  style={{ color: r.total <= 0 ? "var(--text-muted)" : r.passed ? "var(--color-mint)" : "var(--color-rose)" }}
                 >
-                  {formatPercent(r.score, lang)}
+                  {r.total > 0 ? formatPercent(r.score, lang) : t("mockexams.state_finished")}
                 </span>
               </div>
             ))}

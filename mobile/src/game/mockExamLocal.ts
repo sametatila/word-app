@@ -93,7 +93,8 @@ export async function pushLocalResult(r: Omit<LocalResult, "at">): Promise<void>
   } catch { /* depolama kapalı */ }
 }
 
-export type PartState = { pct: number; passed: boolean; synced: boolean } | "running" | null;
+/** `scored` false: bölüm bitti ama puanı yok (açık bölüm, hiçbir görev yapay zekâ puanı almadı). */
+export type PartState = { pct: number; passed: boolean; synced: boolean; scored: boolean } | "running" | null;
 
 /**
  * Bir kâğıdın bölümlerinin durumu — listede rozet olarak gösteriliyor.
@@ -111,7 +112,7 @@ export async function localPartStates(paperId: string, skills: MockSkill[]): Pro
   skills.forEach((skill, i) => {
     if (runs[i]) { out[skill] = "running"; return; }
     const last = results.find((r) => r.paperId === paperId && r.skill === skill);
-    out[skill] = last ? { pct: last.pct, passed: last.passed, synced: last.synced } : null;
+    out[skill] = last ? { pct: last.pct, passed: last.passed, synced: last.synced, scored: last.total > 0 } : null;
   });
   return out;
 }

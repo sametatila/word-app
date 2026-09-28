@@ -108,7 +108,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       .orderBy(desc(mockExamAttempts.startedAt))
       .limit(5),
     db
-      .select({ skill: mockExamAttempts.skill, score: mockExamAttempts.score, paperId: mockExamAttempts.paperId, passed: mockExamAttempts.passed })
+      .select({ skill: mockExamAttempts.skill, score: mockExamAttempts.score, paperId: mockExamAttempts.paperId, passed: mockExamAttempts.passed, total: mockExamAttempts.total })
       .from(mockExamAttempts)
       .where(and(eq(mockExamAttempts.userId, userId), isNotNull(mockExamAttempts.finishedAt)))
       .orderBy(desc(mockExamAttempts.finishedAt))
@@ -127,16 +127,22 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
    *
    * `done` en yeniden eskiye sıralı, o yüzden İLK kayıt en güncel deneme.
    */
-  const partState = new Map<string, { pct: number; passed: boolean } | "running">();
+  /* `scored` false: bölüm bitti ama puanı yok (yazma/konuşmada hiçbir görev
+     yapay zekâ puanı almadı, `total` 0). Rozet "%0" kırmızı değil nötr "bitti"
+     diyor — puan yokken bir başarısızlık söylüyordu (denetim T15). Mobil
+     `MockExamsScreen` `PartBadge` aynı kararı veriyor. */
+  const partState = new Map<string, { pct: number; passed: boolean; scored: boolean } | "running">();
   for (const r of done) {
     const k = `${r.paperId}:${r.skill}`;
-    if (!partState.has(k)) partState.set(k, { pct: r.score, passed: r.passed ?? false });
+    if (!partState.has(k)) partState.set(k, { pct: r.score, passed: r.passed ?? false, scored: r.total > 0 });
   }
   /* Yarım kalan, bitmiş kaydı EZİYOR: kullanıcı o bölüme yeniden girmiş ve
      şu an içinde — satırın söylemesi gereken şey bu. */
   for (const r of running) partState.set(`${r.paperId}:${r.skill}`, "running");
   const bySkill = new Map<string, { n: number; sum: number; best: number }>();
-  for (const r of done.filter((x) => mine(x.paperId))) {
+  /* Puansız denemeler ortalamaya girmiyor: %0 değiller, ölçülmediler
+     (istatistik `mockStats` de `total > 0` ile süzüyor). */
+  for (const r of done.filter((x) => mine(x.paperId) && x.total > 0)) {
     const s = bySkill.get(r.skill) ?? { n: 0, sum: 0, best: 0 };
     s.n++;
     s.sum += r.score;
@@ -279,6 +285,8 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                     <span className="text-body">
                       <span className="font-semibold" lang={course}>{mockSkillLabel(course, part.skill)}</span>
                       <span className="muted ml-2">
+                        {/* "puanlanmaz" DEĞİL (denetim T15): görevleri yapay zekâ puanlıyor.
+                            Misafir varyantı yalnız mobilde; web hesap istiyor. */}
                         {pts
                           ? t("mockexams.part_summary", { minutes: part.minutes, n: pts })
                           : t("mockexams.part_open", { minutes: part.minutes })}
@@ -288,14 +296,19 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                       const st = partState.get(`${p.id}:${part.skill}`);
                       if (!st) return null;
                       const running = st === "running";
+                      const unscored = !running && !st.scored;
                       // Rozet Beceriler satırındaki puan rozetiyle aynı: %14 tint + anlamsal jeton.
                       const hue = running ? "flame" : st.passed ? "mint" : "rose";
                       return (
                         <span
                           className="ml-auto shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
-                          style={{ background: `color-mix(in srgb, var(--color-${hue}-500) 14%, transparent)`, color: `var(--color-${hue})` }}
+                          style={
+                            unscored
+                              ? { background: "var(--surface-2)", color: "var(--text-muted)" }
+                              : { background: `color-mix(in srgb, var(--color-${hue}-500) 14%, transparent)`, color: `var(--color-${hue})` }
+                          }
                         >
-                          {running ? t("mockexams.state_running") : t("mockexams.state_done", { pct: st.pct })}
+                          {running ? t("mockexams.state_running") : unscored ? t("mockexams.state_finished") : t("mockexams.state_done", { pct: st.pct })}
                         </span>
                       );
                     })()}

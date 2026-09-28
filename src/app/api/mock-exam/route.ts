@@ -15,7 +15,7 @@ import type { MockLevel, MockPaper } from "@/lib/mock-exams/types";
 import { mockCourseOf } from "@/lib/courses";
 import { canMockPaper, mockAccess } from "@/lib/premium/access";
 import { takeUsage } from "@/lib/premium";
-import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
+import { findPart, isOpenTask, scoreSection, type OpenScoreEntry } from "@/lib/mock-exams/scoring";
 import { deliverPart } from "@/lib/mock-exams/deliver";
 import { paperDisabled, pointer } from "@/lib/content/read";
 import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
@@ -77,6 +77,28 @@ const MOCK_AI_KEY = "mock_exam_ai_calls";
 
 type Attempt = typeof mockExamAttempts.$inferSelect;
 
+/**
+ * DÜZELTMENİN ADI İKİ TANE (denetim T14).
+ *
+ * Değerlendirme şeması doğru biçimi `fix` diye yazıyor (`AssessError`) ve
+ * satıra da öyle giriyordu; iki oynatıcı ise `right` okuyordu: hata satırı
+ * "hatalı → · açıklama" diye, düzeltmesi boş çıkıyordu. Yayındaki build 9/10
+ * `right` okuduğu için uç ikisini de gönderiyor. Eşleme ÇIKIŞTA yapılıyor,
+ * yani daha önce yalnız `fix` ile kaydedilmiş satırlar da düzgün dönüyor.
+ */
+function withRight(entry: unknown): unknown {
+  if (!entry || typeof entry !== "object") return entry;
+  const e = entry as OpenScoreEntry;
+  if (!Array.isArray(e.errors)) return entry;
+  return { ...e, errors: e.errors.map((x) => ({ ...x, right: x.right ?? x.fix ?? "", fix: x.fix ?? x.right ?? "" })) };
+}
+
+function openScoresOut(v: unknown): Record<string, OpenScoreEntry> {
+  const out: Record<string, OpenScoreEntry> = {};
+  for (const [k, e] of Object.entries((v ?? {}) as Record<string, unknown>)) out[k] = withRight(e) as OpenScoreEntry;
+  return out;
+}
+
 function shape(a: Attempt) {
   return {
     id: a.id,
@@ -85,7 +107,7 @@ function shape(a: Attempt) {
     state: a.state,
     answers: (a.answers ?? {}) as Record<string, string>,
     open: (a.open ?? {}) as Record<string, string>,
-    openScores: (a.openScores ?? {}) as Record<string, { score: number | null; tip?: string; corrected?: string }>,
+    openScores: openScoresOut(a.openScores),
     taskIx: a.taskIx,
     secondsLeft: a.secondsLeft,
     plays: (a.plays ?? {}) as Record<string, number>,
@@ -321,16 +343,23 @@ async function deliveredPaper(userId: string, paper: MockPaper, skill: MockSkill
  * Kâğıt önce çevriliyor: `explain` kullanıcının anadilinde yazılmış bir
  * cümle ve sonuç dökümünde olduğu gibi gösteriliyor.
  */
-async function scoreWithExplains(
-  paperId: string,
-  skill: MockSkill,
-  answers: Record<string, string>,
-  lang: NativeLang,
-  release: number | null,
-) {
-  const source = await mockPaperAt(release, paperId);
+/*
+ * AÇIK GÖREVLER DE AYNI HESAPLA. Bitmiş kâğıdın kayıtlı sonucu yeniden
+ * kuruluyor; bölüm puanı `scoreSection`dan geldiği için burada da o
+ * çağrılıyor, yoksa ikinci bitirme isteği yazma bölümünü yine "puansız"
+ * gösterirdi (satırdaki `score` %78 derken).
+ */
+async function scoreWithExplains(row: Attempt, lang: NativeLang) {
+  const source = await mockPaperAt(row.release, row.paperId);
   if (!source) return null;
-  const score = scorePart(source, skill, answers);
+  const skill = row.skill as MockSkill;
+  const score = scoreSection(
+    source,
+    skill,
+    (row.answers ?? {}) as Record<string, string>,
+    (row.open ?? {}) as Record<string, string>,
+    (row.openScores ?? {}) as Record<string, OpenScoreEntry>,
+  );
   if (!score) return null;
   const localised = await localiseMockPaper(source, lang);
   const part = findPart(localised, skill);
@@ -426,7 +455,7 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
    */
   if (row.state !== "running") return NextResponse.json({ error: "attempt_done" }, { status: 409 });
   const oncekiler = (row.openScores ?? {}) as Record<string, unknown>;
-  if (oncekiler[taskId] !== undefined) return NextResponse.json({ result: oncekiler[taskId] });
+  if (oncekiler[taskId] !== undefined) return NextResponse.json({ result: withRight(oncekiler[taskId]) });
 
   const paper = await mockPaperAt(row.release, row.paperId);
   const part = paper ? findPart(paper, row.skill as MockSkill) : null;
@@ -494,12 +523,12 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
       .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId)))
       .limit(1);
     const kayitli = ((son?.openScores ?? {}) as Record<string, unknown>)[taskId];
-    if (kayitli !== undefined) return NextResponse.json({ result: kayitli });
+    if (kayitli !== undefined) return NextResponse.json({ result: withRight(kayitli) });
     return NextResponse.json({ error: "attempt_done" }, { status: 409 });
   }
 
   // Sağlayıcı yoksa bu bir hata değil: ekran ölçüt listesini gösterir.
-  return NextResponse.json({ result: entry, configured: outcome.ok });
+  return NextResponse.json({ result: withRight(entry), configured: outcome.ok });
 }
 
 async function finish(userId: string, body: Record<string, unknown>) {
@@ -519,7 +548,13 @@ async function finish(userId: string, body: Record<string, unknown>) {
   /* KÂĞIT DENEMENİN SABİTLENMİŞ SÜRÜMÜNDEN: sınav hangi kâğıtla açıldıysa
      onunla bitiyor (bkz. `mock_exam_attempts.release`). */
   const pinned = await mockPaperAt(row.release, row.paperId);
-  const score = pinned ? scorePart(pinned, row.skill as MockSkill, merged) : null;
+  /* Açık görevlerin puanı KAYITLI olandan (`open_scores`, `assess` eylemi):
+     bitiş metinleri yeniden değerlendirmiyor, yani görev başına
+     "Değerlendir"in harcadığının ötesinde kota yemiyor (bkz. `scoreSection`). */
+  const openScores = (row.openScores ?? {}) as Record<string, OpenScoreEntry>;
+  const score = pinned
+    ? scoreSection(pinned, row.skill as MockSkill, merged, (row.open ?? {}) as Record<string, string>, openScores)
+    : null;
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   /*
@@ -548,13 +583,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
    * acmiyor.
    */
   if (row.state !== "running") {
-    const kayitli = await scoreWithExplains(
-      row.paperId,
-      row.skill as MockSkill,
-      (row.answers ?? {}) as Record<string, string>,
-      lang,
-      row.release,
-    );
+    const kayitli = await scoreWithExplains(row, lang);
     return NextResponse.json({ attempt: shape(row), score: kayitli ?? score, ai: row.ai ?? null });
   }
 
@@ -579,14 +608,38 @@ async function finish(userId: string, body: Record<string, unknown>) {
   */
   /* Günlük tavan doluysa model çağrılmıyor ama sınav yine bitiyor: kural
      tabanlı özet dönüyor (sağlayıcı kapalıyken kullanılan). */
-  const aiAllowed = (await hasAiConsent(userId, "ai_text")) && (await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING));
-  const ai = !aiAllowed ? rulesFeedback(score, paper.course, lang) : await mockFeedback(
-    score,
-    explains,
-    paper.course,
-    (r) => recordAiUsage(userId, { kind: "assess", ...r }),
-    lang,
-  );
+  /*
+   * PUANSIZ AÇIK BÖLÜMDE ÖZET YOK (denetim T15).
+   *
+   * Yazma/konuşma bölümünde hiçbir görev yapay zekâ puanı almadıysa (misafir,
+   * izin yok, hiç değerlendirilmedi) özetin dayanacağı bir şey yok. Eskiden
+   * burada kural tabanlı özet dönüyordu: "makinece puanlanmıyor" cümlesi ve
+   * altında "yapay zekâ değerlendirmesi şu an kullanılamıyor" notu — ikisi
+   * de çoğu zaman doğru değildi. Özet `null`; bölüm sonucunun kendi cümlesi
+   * (`mockexam.not_scored`) durumu söylüyor. Kotadan da yemiyor: eskiden
+   * tavan sayacı düşülüyor, sonra model hiç çağrılmıyordu.
+   *
+   * PUANLI AÇIK BÖLÜMDE özet görevlerin yapay zekâ puanlarına ve hata
+   * listelerine dayanıyor (`mockFeedback`in `open` kolu); bölüm başına tek
+   * çağrı, bütçe hesabındaki "bölüm başına bir geri bildirim".
+   */
+  const unscoredOpen = !!score.open && score.total === 0;
+  const aiAllowed =
+    !unscoredOpen &&
+    (await hasAiConsent(userId, "ai_text")) &&
+    (await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING));
+  const ai = unscoredOpen
+    ? null
+    : !aiAllowed
+      ? rulesFeedback(score, paper.course, lang, openScores)
+      : await mockFeedback(
+          score,
+          explains,
+          paper.course,
+          (r) => recordAiUsage(userId, { kind: "assess", ...r }),
+          lang,
+          openScores,
+        );
 
   const [saved] = await db
     .update(mockExamAttempts)
@@ -608,13 +661,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
   if (!saved) {
     const [son] = await db.select().from(mockExamAttempts).where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId))).limit(1);
     if (!son) return NextResponse.json({ error: "not_found" }, { status: 404 });
-    const kayitli = await scoreWithExplains(
-      son.paperId,
-      son.skill as MockSkill,
-      (son.answers ?? {}) as Record<string, string>,
-      lang,
-      son.release,
-    );
+    const kayitli = await scoreWithExplains(son, lang);
     return NextResponse.json({ attempt: shape(son), score: kayitli ?? score, ai: son.ai ?? null });
   }
 

@@ -1,6 +1,6 @@
 import "server-only";
 import { completeChat, chatConfigured, type CallReport } from "@/lib/chat-providers";
-import type { MockScore } from "./scoring";
+import type { MockScore, OpenScoreEntry } from "./scoring";
 import type { MockCourse } from "./types";
 import { translate, formatPercent, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { EN_VARIETY, EN_FEEDBACK } from "@/lib/assess-prompts";
@@ -104,8 +104,10 @@ export function rulesFeedback(
   score: MockScore,
   course: MockCourse = "de",
   lang: NativeLang = DEFAULT_NATIVE,
+  openScores: Record<string, OpenScoreEntry | undefined> = {},
 ): MockFeedback {
   const how = course === "en" ? GOAL_HOW_EN_KEYS : GOAL_HOW_KEYS;
+  if (score.open && score.total > 0) return openRules(score, how, lang, openScores);
   const ranked = score.byGoal
     .filter((g) => g.total > 0)
     .map((g) => ({ ...g, pct: Math.round((100 * g.correct) / g.total) }))
@@ -131,7 +133,7 @@ export function rulesFeedback(
                 pct: formatPercent(picked[0].pct, lang),
               })
             : translate(lang, "mockfb.balanced"))
-        : translate(lang, "mockfb.not_machine_scored"),
+        : translate(lang, "mockexam.not_scored"),
     strengths: strong.map(
       (g) => `${goalName(g.goal, lang)} (${formatPercent(g.pct, lang)})`,
     ),
@@ -148,8 +150,57 @@ export function rulesFeedback(
   };
 }
 
+/**
+ * Açık görevli bölümün (yazma/konuşma) kural tabanlı listesi — model bu kez
+ * çağrılamadığında (izin geri alındı, günlük tavan, sağlayıcı hatası).
+ *
+ * Nesnel bölümün cümleleri burada YANLIŞ olurdu: "100 maddenin 78 tanesi
+ * doğru" bir mektup için anlamsız. Birim GÖREV: özet görev ortalamasını,
+ * yapılacaklar en düşük görevleri söylüyor. "Nasıl" alanı, varsa, o görevin
+ * yapay zekâ değerlendirmesinin kendi ipucu (`tip`, kullanıcının dilinde
+ * üretilmiş); yoksa hedefin bilinen çalışma yolu.
+ */
+function openRules(
+  score: MockScore,
+  how: Record<string, string>,
+  lang: NativeLang,
+  openScores: Record<string, OpenScoreEntry | undefined>,
+): MockFeedback {
+  const counted = (score.open?.tasks ?? [])
+    .filter((t): t is typeof t & { pct: number } => t.pct !== null)
+    .map((t) => ({ ...t, pct: Math.round(t.pct) }));
+  const ranked = [...counted].sort((a, b) => a.pct - b.pct);
+  const weak = ranked.filter((t) => t.pct < 70).slice(0, 3);
+  const picked = weak.length ? weak : ranked.slice(0, 1);
+  const lowest = ranked[0];
+  return {
+    summary:
+      `${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}: ` +
+      translate(lang, "mockfb.open_summary", { n: counted.length, pct: formatPercent(score.pct, lang) }) +
+      (lowest && counted.length > 1
+        ? " " + translate(lang, "mockfb.open_lowest", { no: lowest.taskNo, pct: formatPercent(lowest.pct, lang) })
+        : ""),
+    strengths: ranked.filter((t) => t.pct >= 80).map((t) => `Teil ${t.taskNo} (${formatPercent(t.pct, lang)})`),
+    todo: picked.map((t) => {
+      const tip = openScores[t.taskId]?.tip?.trim();
+      return {
+        title: translate(lang, "mockfb.work_on", { goal: goalName(t.goal, lang) }),
+        why:
+          t.state === "empty"
+            ? translate(lang, "mockfb.open_task_empty", { no: t.taskNo })
+            : translate(lang, "mockfb.open_task_why", { no: t.taskNo, pct: formatPercent(t.pct, lang) }),
+        how: tip || (how[t.goal] ? translate(lang, how[t.goal]) : translate(lang, "mockfb.how_fallback")),
+      };
+    }),
+    source: "rules",
+  };
+}
+
 const SYSTEM = (dil: string, cevapDili: string) => `Sen ${dil} sınavlarına hazırlanan bir öğrencinin çalışma koçusun.
 Öğrencinin bir deneme sınavı bölümündeki sonucunu ve yanlış maddelerini alacaksın.
+Yazma ya da konuşma bölümünde madde yerine görevleri alırsın: her görevin yapay zekâ puanı,
+değerlendirmenin bulduğu hatalar (verdi → doğrusu, gerekçe) ve ipucu. Listeyi bu hatalardaki
+örüntüye dayandır; metni yeniden puanlama.
 Görevin, ölçülebilir ve tek oturumda yapılabilir bir YAPILACAKLAR listesi üretmek.
 
 Kurallar:
@@ -220,14 +271,52 @@ function wrongDigest(score: MockScore, explains: Record<string, string>): string
     .join("\n");
 }
 
+/**
+ * Açık görevlerin özeti — yazma/konuşma bölümünde isteme giren kısım.
+ *
+ * Maddenin yerini GÖREV alıyor: görevin yapay zekâ puanı, değerlendirmenin
+ * bulduğu hatalar (hatalı parça → doğru biçim, gerekçe) ve ipucu. Model
+ * örüntüyü bu hatalarda arıyor; öğrencinin metnini yeniden değerlendirmiyor
+ * (puan zaten verildi, bitiş yeni bir değerlendirme yapmıyor).
+ *
+ * Hatalı parça ÖĞRENCİNİN metninden birebir kopya: `studentValue` ile tek
+ * satıra indirilip tırnağı etkisizleştiriliyor, nesnel maddelerin "verdi"
+ * değeriyle aynı kural.
+ */
+function openDigest(score: MockScore, openScores: Record<string, OpenScoreEntry | undefined>): string {
+  const lines: string[] = [];
+  for (const t of score.open?.tasks ?? []) {
+    if (t.state === "objective") continue;
+    if (t.state === "unscored") {
+      lines.push(`- Teil ${t.taskNo} [${t.goal}]: puanlanmadı (ortalamaya girmedi).`);
+      continue;
+    }
+    if (t.state === "empty") {
+      lines.push(`- Teil ${t.taskNo} [${t.goal}]: boş bırakıldı, 0 sayıldı.`);
+      continue;
+    }
+    const e = openScores[t.taskId];
+    lines.push(`- Teil ${t.taskNo} [${t.goal}]: yapay zekâ puanı %${Math.round(t.pct ?? 0)}.`);
+    for (const x of (e?.errors ?? []).slice(0, 8)) {
+      lines.push(
+        `  · verdi "${studentValue(x.wrong)}", doğrusu "${studentValue(x.fix ?? x.right)}"` +
+          (x.why_tr ? ` — ${x.why_tr.replace(/[\r\n]+/g, " ").slice(0, 200)}` : ""),
+      );
+    }
+    if (e?.tip) lines.push(`  · ipucu: ${e.tip.replace(/[\r\n]+/g, " ").slice(0, 200)}`);
+  }
+  return lines.join("\n") || "Görev yok.";
+}
+
 export async function mockFeedback(
   score: MockScore,
   explains: Record<string, string>,
   course: MockCourse = "de",
   report?: CallReport,
   lang: NativeLang = DEFAULT_NATIVE,
+  openScores: Record<string, OpenScoreEntry | undefined> = {},
 ): Promise<MockFeedback> {
-  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course, lang);
+  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course, lang, openScores);
 
   const dil = course === "en" ? "İngilizce" : "Almanca";
   // Modelin CEVABI kullanıcının dilinde olmalı: liste doğrudan ekrana çıkıyor
@@ -236,20 +325,28 @@ export async function mockFeedback(
   const goals = score.byGoal
     .map((g) => `${goalName(g.goal, lang)}: ${g.correct}/${g.total}`)
     .join(" · ");
-  const user =
-    `Seviye: ${score.level}\n` +
-    `Bölüm: ${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}\n` +
-    `Sonuç: ${score.correct}/${score.total} (%${score.pct})\n` +
-    `Ölçüm hedeflerine göre: ${goals}\n\n` +
-    `Yanlış maddeler:\n${wrongDigest(score, explains)}`;
+  /* Açık görevli bölümde "Sonuç" madde sayısı değil görev ortalaması, ve
+     yanlış maddelerin yanına görevlerin hata listesi giriyor. Karışık
+     bölümde (A1 Schreiben: form + mektup) ikisi birden var. */
+  const user = score.open
+    ? `Seviye: ${score.level}\n` +
+      `Bölüm: ${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)} (yazma/konuşma; görevleri yapay zekâ puanladı)\n` +
+      `Sonuç: görev ortalaması %${score.pct}\n\n` +
+      `Görevler:\n${openDigest(score, openScores)}` +
+      (score.items.length ? `\n\nYanlış maddeler:\n${wrongDigest(score, explains)}` : "")
+    : `Seviye: ${score.level}\n` +
+      `Bölüm: ${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}\n` +
+      `Sonuç: ${score.correct}/${score.total} (%${score.pct})\n` +
+      `Ölçüm hedeflerine göre: ${goals}\n\n` +
+      `Yanlış maddeler:\n${wrongDigest(score, explains)}`;
 
   try {
     // İngilizce kurs ve İngilizce geri bildirim Amerikan (bkz. `EN_VARIETY`).
     const system = SYSTEM(dil, cevapDili) + (course === "en" ? "\n" + EN_VARIETY : "") + (lang === "en" ? "\n" + EN_FEEDBACK : "");
     const raw = await completeChat(system, [{ role: "user", content: user }], 900, report);
-    return parse(raw) ?? rulesFeedback(score, course, lang);
+    return parse(raw) ?? rulesFeedback(score, course, lang, openScores);
   } catch {
     // Sağlayıcı hatası öğrencinin sonucunu görmesini engellememeli.
-    return rulesFeedback(score, course, lang);
+    return rulesFeedback(score, course, lang, openScores);
   }
 }

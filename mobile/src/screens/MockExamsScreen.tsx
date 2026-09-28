@@ -16,6 +16,7 @@ import { UnlockProgress } from "../ui/UnlockProgress";
 import { mockCopy, whenText } from "../lib/unlock";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
+import { useAuth } from "../lib/AuthContext";
 import { currentCourseId } from "../lib/courses";
 import { mockSkillLabel, type MockLevel, type MockSkill } from "../data/exams";
 import { mockCatalogFor, type MockCatalogEntry } from "../content/mockCatalog";
@@ -273,6 +274,9 @@ export function MockExamsScreen() {
 }
 
 function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: { paper: MockCatalogEntry; states: Record<string, PartState>; locked: boolean; hint?: string | null; showPlans: boolean; onOpen: (skill: MockSkill) => void; onPlans: () => void }) {
+  /* Misafire yapay zekâ puanı verilmiyor (değerlendirme hesap istiyor):
+     açık bölümün etiketi ona "puanlar" demiyor. */
+  const guest = Boolean(useAuth().user?.guest);
   const { colors } = useTheme();
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
@@ -316,7 +320,8 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{mockSkillLabel(paper.course, part.skill)}</Text>
                 <Text variant="micro" color={colors.textMuted}>
-                  {pts ? t("mockexams.part_summary", { minutes: part.minutes, n: pts }) : t("mockexams.part_open", { minutes: part.minutes })}
+                  {/* "puanlanmaz" DEĞİL (denetim T15): yazma ve konuşmayı yapay zekâ puanlıyor. */}
+                  {pts ? t("mockexams.part_summary", { minutes: part.minutes, n: pts }) : t(guest ? "mockexams.part_open_guest" : "mockexams.part_open", { minutes: part.minutes })}
                 </Text>
               </View>
               <PartBadge state={states[part.skill] ?? null} />
@@ -340,10 +345,16 @@ function PartBadge({ state }: { state: PartState }) {
   const { colors } = useTheme();
   if (!state) return null;
   const running = state === "running";
-  const tone = running ? colors.streak : state.passed ? colors.success : colors.danger;
+  /* PUANSIZ BİTMİŞ BÖLÜM (yazma/konuşmada hiçbir görev yapay zekâ puanı
+     almadı): "%0" kırmızı rozeti bir başarısızlık söylüyordu, oysa puan yok.
+     Nötr "bitti". Eski yerel kayıtta `scored` yok; o zaman eski çizim. */
+  const unscored = !running && state.scored === false;
+  const tone = running ? colors.streak : unscored ? colors.textMuted : state.passed ? colors.success : colors.danger;
   const label = running
     ? t("mockexams.state_running")
-    : t(state.synced ? "mockexams.state_done" : "mockexams.state_local", { pct: state.pct });
+    : unscored
+      ? t("mockexams.state_finished")
+      : t(state.synced ? "mockexams.state_done" : "mockexams.state_local", { pct: state.pct });
   return (
     <View style={{ paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface, marginRight: spacing.xs }}>
       <Text variant="micro" color={tone}>{label}</Text>

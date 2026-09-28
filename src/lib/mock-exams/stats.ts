@@ -28,14 +28,27 @@ export async function mockStats(userId: string) {
   const bySkill = new Map<string, { attempts: number; correct: number; total: number; best: number }>();
   const byLevel = new Map<string, { attempts: number; passed: number }>();
   for (const r of rows) {
-    if (r.total > 0) {
-      const s = bySkill.get(r.skill) ?? { attempts: 0, correct: 0, total: 0, best: 0 };
-      s.attempts++;
+    /*
+     * PUANSIZ DENEME HİÇBİR KIRILIMA GİRMİYOR (`total` 0: yazma/konuşmada
+     * hiçbir görev yapay zekâ puanı almadı). %0 değil, ölçülmedi; seviye
+     * kırılımında da "geçemedi" sayılmamalı. Eskiden bütün açık bölümler
+     * böyleydi ve seviye satırı her yazma denemesini kalmış sayıyordu.
+     */
+    if (r.total <= 0) continue;
+    const s = bySkill.get(r.skill) ?? { attempts: 0, correct: 0, total: 0, best: 0 };
+    s.attempts++;
+    /* Açık bölümde birim YÜZDE (`scoreSection`, denetim T15): her deneme
+       kendi yüzdesiyle, eşit ağırlıkta. Eski kayıtlar (A1 Schreiben'ın
+       form maddeleri) de böylece aynı ölçekte. */
+    if (r.skill === "writing" || r.skill === "speaking") {
+      s.correct += r.score;
+      s.total += 100;
+    } else {
       s.correct += r.correct;
       s.total += r.total;
-      s.best = Math.max(s.best, r.score);
-      bySkill.set(r.skill, s);
     }
+    s.best = Math.max(s.best, r.score);
+    bySkill.set(r.skill, s);
     const l = byLevel.get(r.level) ?? { attempts: 0, passed: 0 };
     l.attempts++;
     if (r.passed) l.passed++;
