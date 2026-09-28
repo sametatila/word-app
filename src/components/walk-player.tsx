@@ -831,7 +831,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       const summary =
         total > 0
           ? t("walk.tour_done_continue", { total, correct })
-          : `${t("common.round_done")} ${t("walk.continue_q")}`;
+          : `${t("common.round_done")}. ${t("walk.continue_q")}`;
       setAsking(true);
       setVerdict(null);
       try {
