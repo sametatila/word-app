@@ -24,11 +24,12 @@ export const enB2P13: SkillExercise[] = [
     gloss: [
       { de: "to hand in", tr: "teslim etmek" },
       { de: "pouch", tr: "kılıf" },
-      { de: "corridor", tr: "koridor" },
+      { de: "hallway", tr: "koridor" },
       { de: "outcome", tr: "sonuç" },
-      { de: "playground", tr: "okul bahçesi" },
+      { de: "schoolyard", tr: "okul bahçesi" },
       { de: "instant", tr: "anında" },
       { de: "locker", tr: "dolap" },
+      { de: "semester", tr: "dönem" },
       { de: "habit", tr: "alışkanlık" },
       { de: "to rely on", tr: "güvenmek" },
       { de: "to impose", tr: "dayatmak" },
@@ -43,17 +44,17 @@ export const enB2P13: SkillExercise[] = [
       "Phones are handed in at the gate, locked in pouches and given back at half past three. " +
       "I voted against the policy, and I want to explain why I have changed my mind, and also " +
       "what I still think we got wrong.\n\n" +
-      "The change in the corridors was immediate. Break time became loud again. Students who " +
+      "The change in the hallways was immediate. The breaks between classes became loud again. Students who " +
       "had spent lunch looking down started arguing about soccer, which is not an educational " +
       "outcome but is not nothing either. Staff noticed that fewer fights began online and " +
-      "finished in the playground, because during the day there was no online for them to " +
+      "finished in the schoolyard, because during the day there was no online for them to " +
       "begin in.\n\n" +
       "What I had not expected was the reaction of the students themselves. When we asked them " +
       "after a year, a clear majority said they would not want to go back. Several told me the " +
       "rule had made it easier to say no to their friends: nobody could expect an instant reply " +
       "from someone whose phone was in a locker.\n\n" +
       "Where I think we went wrong was in making it a rule about phones rather than about " +
-      "attention. We still let students use laptops in lessons, and within a term the same " +
+      "attention. We still let students use laptops in class, and within a semester the same " +
       "habits had moved to a different screen. Getting teenagers to concentrate is not solved " +
       "by removing one device.\n\n" +
       "The other cost falls on parents. Some had relied on being able to reach their children " +
@@ -64,7 +65,7 @@ export const enB2P13: SkillExercise[] = [
         text: "What happens to students' phones during the school day?",
         options: [
           "They are handed in and locked away.",
-          "They are switched off in lessons only.",
+          "They are switched off in class only.",
           "They are kept at home by the parents.",
         ],
         answer: 0,
@@ -73,7 +74,7 @@ export const enB2P13: SkillExercise[] = [
       {
         text: "What does the writer say about fights between students?",
         options: [
-          "They became more common at break.",
+          "They became more common between classes.",
           "Fewer of them started online.",
           "They moved from phones to laptops.",
         ],
@@ -233,8 +234,8 @@ export const enB2P13: SkillExercise[] = [
       {
         kind: "build",
         tr: "Öğretmenler derslerde öğrencilerin dizüstü bilgisayar kullanmasına izin veriyor.",
-        answer: "Teachers let students use laptops during lessons.",
-        alternatives: ["During lessons, teachers let students use laptops."],
+        answer: "Teachers let students use laptops during class.",
+        alternatives: ["During class, teachers let students use laptops."],
         hint: "let + kişi + yalın fiil; edilgende „be allowed to“ kullanılır.",
       },
       {
@@ -250,24 +251,24 @@ export const enB2P13: SkillExercise[] = [
         minWords: 130,
         phrases: [
           { de: "The purpose of this report is to …", tr: "Bu raporun amacı …", en: "" },
-          { de: "Over the term, we observed that …", tr: "Dönem boyunca şunu gözlemledik: …", en: "" },
+          { de: "Over the semester, we observed that …", tr: "Dönem boyunca şunu gözlemledik: …", en: "" },
           { de: "A less positive finding was that …", tr: "Daha az olumlu bir bulgu şuydu: …", en: "" },
           { de: "It is worth noting that …", tr: "Şunu belirtmek gerekir: …", en: "" },
           { de: "We therefore recommend that …", tr: "Bu nedenle … öneriyoruz", en: "" },
         ],
         sample:
-          "The purpose of this report is to summarize the first term of the phone-free trial and " +
+          "The purpose of this report is to summarize the first semester of the phone-free trial and " +
           "to make one recommendation to the parent council. " +
           "Since September, the school has made students hand in their phones at the gate each " +
           "morning. They are allowed to collect them at the end of the day, or earlier if a parent " +
           "calls the office. " +
-          "Over the term, we observed that break times became noticeably more active and that the " +
+          "Over the semester, we observed that the breaks between classes became noticeably more active and that the " +
           "number of incidents reported by staff fell from thirty-one to twelve. In a short survey, " +
           "sixty percent of students said the rule had helped them concentrate. " +
           "A less positive finding was that parents felt they had not been consulted. Several had " +
           "relied on messaging their children during the day and heard about the change from " +
           "their children rather than from the school. " +
-          "It is worth noting that students are still allowed to use laptops in lessons, and " +
+          "It is worth noting that students are still allowed to use laptops in class, and " +
           "teachers report that some habits have simply moved there. " +
           "We therefore recommend that the rules for laptops be reviewed before spring, and that " +
           "parents be invited to a meeting before any further change is made.",
@@ -306,10 +307,10 @@ export const enB2P13: SkillExercise[] = [
       sampleDe:
         "I'd support a ban during the school day, with conditions, because what I've heard from " +
         "schools that have tried it is more encouraging than I expected. " +
-        "What a ban does solve is the social side. Break times get louder, arguments that used " +
+        "What a ban does solve is the social side. Breaks between classes get louder, arguments that used " +
         "to start online at lunch have nowhere to start, and some students say it's easier to " +
         "ignore a group chat when nobody expects them to answer. " +
-        "What it doesn't solve is attention in lessons. If students are allowed to use laptops, " +
+        "What it doesn't solve is attention in class. If students are allowed to use laptops, " +
         "the same habits move to the bigger screen, and the school has banned a device rather " +
         "than a behavior. " +
         "Parents are right to worry about being unable to reach their children, but that is a " +
@@ -364,7 +365,7 @@ export const enB2P13: SkillExercise[] = [
         heading: "Edilgende ne olur?",
         tr: "„let“ edilgene girmez; yerine „be allowed to“ kullanılır. „make“ edilgene geçince „to“ geri gelir: „They were made to wait.“ Etken cümledeki „to“suz kalıp edilgende korunmaz.",
         examples: [
-          { de: "Students are allowed to use laptops in lessons.", tr: "Öğrencilerin derste dizüstü kullanmasına izin veriliyor.", note: "let → be allowed to" },
+          { de: "Students are allowed to use laptops in class.", tr: "Öğrencilerin derste dizüstü kullanmasına izin veriliyor.", note: "let → be allowed to" },
           { de: "We were made to wait outside.", tr: "Dışarıda bekletildik.", note: "make → be made to" },
           { de: "She isn't allowed to keep her phone upstairs.", tr: "Telefonunu üst katta tutmasına izin verilmiyor.", note: "olumsuz" },
         ],

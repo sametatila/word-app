@@ -556,7 +556,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Nuray", de: "What a pity! The wedding is in a garden and there is music and dancing.", tr: "Ne yazık! Düğün bahçede, müzik ve dans da var." },
         { speaker: "Jonas", de: "I am sorry about that. Have you bought a present yet?", tr: "Üzüldüm. Hediye aldın mı?" },
         { speaker: "Nuray", de: "I haven't bought a present yet. I have no idea what to buy!", tr: "Henüz almadım. Ne alacağımı hiç bilmiyorum!" },
-        { speaker: "Jonas", de: "How about a photograph of the family? My cousin got one for her wedding and she loved it.", tr: "Ailenin bir fotoğrafı nasıl olur? Kuzenime düğününde bir tane verdiler, çok sevdi." },
+        { speaker: "Jonas", de: "How about a photograph of the family? My cousin got one for her wedding and she loved it.", tr: "Bir aile fotoğrafına ne dersin? Kuzenime düğününde bir tane verdiler, çok sevdi." },
         { speaker: "Nuray", de: "That's a great idea. Thank you for your help!", tr: "Çok güzel bir fikir. Yardımın için teşekkürler!" },
       ],
       questions: [

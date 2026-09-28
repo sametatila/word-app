@@ -162,7 +162,7 @@ export const enB2P18: SkillExercise[] = [
           "A half rule confuses people.",
         ],
         answer: 2,
-        explain: "„A half rule confuses everyone“ ve on biri beş geçe biri geri çevrilir.",
+        explain: "„A half rule confuses everyone“ ve saat on biri beş geçe gelen biri geri çevrilir.",
       },
       {
         kind: "truefalse",

@@ -97,7 +97,7 @@
  { "tr": "Zorlukla başarılan tek bir iş: managed to + yalın fiil.", "kind": "explain", "en": "A single task achieved with difficulty: managed to + base verb." },
  { "tr": "„abhängig von“ sabit bir kalıptır: von Spenden abhängig.", "kind": "explain", "en": "„abhängig von“ is a fixed pattern: von Spenden abhängig." },
  { "tr": "„Er pflegt früh aufzustehen“ onun alışkanlığını anlatır.", "kind": "explain", "en": "„Er pflegt früh aufzustehen“ describes his habit." },
- { "tr": "„es gibt“ zorunlu öznedir: „Heute gibt es keinen Beleg.“", "kind": "explain", "en": "„es“ is the obligatory subject of „es gibt“: „Heute gibt es keinen Beleg.“" },
+ { "tr": "„es gibt“ kalıbında „es“ zorunlu öznedir: „Heute gibt es keinen Beleg.“", "kind": "explain", "en": "„es“ is the obligatory subject of „es gibt“: „Heute gibt es keinen Beleg.“" },
  { "tr": "„es sei denn“ bir istisnadır: yağmur yağarsa gelmiyoruz.", "kind": "explain", "en": "„es sei denn“ is an exception: if it rains, we are not coming." },
  { "tr": "„gehen“ Perfekt'te sein alır; Futur II'de de sein gelir.", "kind": "explain", "en": "„gehen“ takes sein in the Perfekt; in the Futur II sein is used too." },
  { "tr": "„hatte früher eine Buchhandlung“ — yani kitap satıyordu.", "kind": "explain", "en": "„hatte früher eine Buchhandlung“ — so she used to sell books." },

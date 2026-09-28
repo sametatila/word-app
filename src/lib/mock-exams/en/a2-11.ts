@@ -159,7 +159,7 @@ Please take the bags home with you; there is no trash can here.`,
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Dog School", body: "Tuesday evenings, eight weeks. For dogs that bark, pull or run away. Twelve euros an evening." },
-            { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or call us; we come to you for free anywhere in the city." },
+            { key: "b", label: "Animal Shelter", body: "We look for the owner. Bring the animal to us or call us; we come to you for free anywhere in the city." },
             { key: "c", label: "Vacation Care", body: "We keep cats, dogs and rabbits from three days to a month. Fourteen euros a day. Book two weeks before." },
             { key: "d", label: "The Vet Comes to You", body: "For old animals and for people without a car. Thursday afternoons. Thirty euros and then the treatment." },
             { key: "e", label: "Food Advice", body: "Free, Saturday mornings at the store in Mill Street. Bring the vet's paper if you have one." },
@@ -231,7 +231,7 @@ Please take the bags home with you; there is no trash can here.`,
               title: "He cannot be alone",
               body: `Dear Animal Life,
 
-We got a dog in March. He is two years old and he came from the animal home. Everything is good except one thing: he cannot be alone.
+We got a dog in March. He is two years old and he came from the animal shelter. Everything is good except one thing: he cannot be alone.
 
 When I go to the store for twenty minutes, he cries. The neighbor told us and she was very kind about it. Now I take him everywhere, and that is not a life for me.
 
@@ -249,7 +249,7 @@ And do not stop taking him out. A tired dog waits better than a bored one.
 
 The Editor`,
               gloss: [
-                { de: "an animal home", tr: "hayvan barınağı", en: "das Tierheim" },
+                { de: "an animal shelter", tr: "hayvan barınağı", en: "das Tierheim" },
                 { de: "bored", tr: "canı sıkkın", en: "gelangweilt" },
                 { de: "a return", tr: "dönüş", en: "die Rückkehr" },
               ],
@@ -314,13 +314,13 @@ The Editor`,
               title: "Our cat and eighteen hours",
               body: `We got our cat in 2019, and here is what I {{15}}.
 
-A cat from the animal home is {{16}} than a young one from a store. She was four and she knew everything already.
+A cat from the animal shelter is {{16}} than a young one from a store. She was four and she knew everything already.
 
 She sleeps eighteen hours a day, {{17}} she is awake at exactly five in the morning.
 
 Next month I {{18}} buy a second bowl, because she does not like the water next to the food.
 
-And one more thing: {{19}} you go on vacation, book the animal care early. In August everything is full.`,
+And one more thing: {{19}} you go on vacation, book pet care early. In August everything is full.`,
             },
           ],
           items: [
@@ -598,7 +598,7 @@ She sleeps on the two good chairs in the kitchen, and I still {{24}} not sit on 
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear information from an animal care place. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
+            "You hear information from a pet care center. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
           promptTr:
             "Bir hayvan bakım yerinden bilgi dinleyeceksin. 6–10. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -620,7 +620,7 @@ She sleeps on the two good chairs in the kitchen, and I still {{24}} not sit on 
               id: "n1",
               genre: "Notes",
               genreTr: "Not kâğıdı",
-              title: "Animal care — notes",
+              title: "Pet care — notes",
               body: `Open from eight to: {{6}}
 On Sunday from:     {{7}}
 A cat costs:        {{8}} euros a day
@@ -708,7 +708,7 @@ Please bring the:   {{10}}`,
               situation: "Veterinerde pazartesi için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The vet is closed on Monday morning. Doctor Sora is at the animal home. For an emergency call 4180. We open again at two." },
+                { text: "The vet is closed on Monday morning. Doctor Sora is at the animal shelter. For an emergency call 4180. We open again at two." },
               ],
             },
             {
@@ -1105,7 +1105,7 @@ Vesna Roth`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would like a dog, because we all go for a walk on Sunday and a dog gives us a reason to do it every day. You are right about the middle of the day; ten hours is too long for a dog and paying somebody every day is expensive. So let us take a cat from the animal home, and we can think about a dog when I finish school.",
+              "I would like a dog, because we all go for a walk on Sunday and a dog gives us a reason to do it every day. You are right about the middle of the day; ten hours is too long for a dog and paying somebody every day is expensive. So let us take a cat from the animal shelter, and we can think about a dog when I finish school.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

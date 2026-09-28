@@ -893,11 +893,11 @@ Aras`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "My doctor is Doctor Ilic and her office is near my house. I go on Wednesday morning, because I work in the afternoon. I take two tablets a day for my back. My friend Aras comes with me and we have a coffee afterward. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
+              "My doctor is Doctor Ilic and her office is near my house. I go on Wednesday mornings, because I work in the afternoon. I take two tablets a day for my back. My friend Aras comes with me and we have a coffee afterward. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
-              "Sıklık ifadeleri kullanıldı mı? (two tablets a day, on Wednesday)",
+              "Sıklık ifadeleri kullanıldı mı? (two tablets a day, on Wednesdays)",
               "Anlaşılır bir tempoda mı konuşuldu?",
             ],
           },

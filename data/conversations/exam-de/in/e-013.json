@@ -1597,6 +1597,17 @@
    ]
   },
   {
+   "tr": "Bir aile fotoğrafına ne dersin? Kuzenime düğününde bir tane verdiler, çok sevdi.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "How about a photograph of the family? My cousin got one for her wedding and she loved it."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · Jonas"
+   ]
+  },
+  {
    "tr": "Bir gazete yazısına okur mektubu yaz: görüşünü söyle ve karşı görüşe de yer ver.",
    "kind": "writing.prompt",
    "n": 1,
@@ -1636,17 +1647,6 @@
    ],
    "ctx": [
     "B2.4 Media and reported speech · Reporter"
-   ]
-  },
-  {
-   "tr": "İhtiyat ilkesi koruma sorumluluğunun imar planından önce gelmesini gerektiriyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "The precautionary principle demands that the responsibility to protect be given priority over the zoning plan."
-   ],
-   "ctx": [
-    "C1.8 Climate and the city · Planner"
    ]
   }
  ]

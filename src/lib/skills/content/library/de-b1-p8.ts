@@ -142,7 +142,7 @@ export const deB1P8: SkillExercise[] = [
         explain: "„Wir brauchen eine Kernzeit, in der alle erreichbar sind.“",
       },
       {
-        text: "Warum passt Frau Özkan zehn Uhr nicht?",
+        text: "Warum passt Frau Özkan der Beginn um zehn Uhr nicht?",
         options: [
           "Sie beginnt erst um elf.",
           "Sie muss um sechzehn Uhr in der Kita sein.",

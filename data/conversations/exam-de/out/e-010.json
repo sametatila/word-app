@@ -46,7 +46,7 @@
  { "tr": "Gerçekten mi? Bu bir rahatlama. O hâlde belki önümüzdeki ay ona yazarım.", "kind": "turn", "de": "Wirklich? Das ist eine Erleichterung. Dann schreibe ich ihr vielleicht nächsten Monat." },
  { "tr": "İki yıl süren her sözleşmenin sürekli hâle getirilmesini talep ediyoruz.", "kind": "speaking", "de": "Wir beantragen, dass jeder Vertrag, der zwei Jahre läuft, entfristet wird." },
  { "tr": "Örnekte enfeksiyon yok. Ancak nisanda çekilen röntgen eklemde bir sorun gösteriyor.", "kind": "turn", "de": "In der Probe ist keine Infektion. Das Röntgenbild vom April zeigt aber ein Problem am Gelenk." },
- { "tr": "Ailenin bir fotoğrafı nasıl olur? Kuzenime düğününde bir tane verdiler, çok sevdi.", "kind": "turn", "de": "Wie wäre ein Foto der Familie? Meine Cousine hat zu ihrer Hochzeit eins bekommen und sich sehr darüber gefreut." },
+ { "tr": "Bir aile fotoğrafına ne dersin? Kuzenime düğününde bir tane verdiler, çok sevdi.", "kind": "turn", "de": "Wie wäre ein Familienfoto? Meine Cousine hat zu ihrer Hochzeit eins bekommen und sich sehr darüber gefreut." },
  { "tr": "Ben daha ölçülü söylerdim: eğlenceli, görülmeye değer ama kalıcı bir eser değil.", "kind": "turn", "de": "Ich würde es maßvoller sagen: unterhaltsam, sehenswert, aber nicht zeitlos." },
  { "tr": "Bir mağazanın internet sitesine kısa bir mesaj yaz ve aradığın ürünü sor.", "kind": "writing.prompt", "de": "Schreib eine kurze Nachricht an einen Onlineshop und frag nach dem Produkt, das du suchst." },
  { "tr": "Bir şerit kaldırılıyor, yol daha sessiz oluyor. Bisiklet yolu genişliyor.", "kind": "turn", "de": "Eine Spur fällt weg, die Strecke wird ruhiger. Der Radweg wird breiter." },

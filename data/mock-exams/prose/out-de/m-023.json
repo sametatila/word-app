@@ -140,7 +140,7 @@
  { "tr": "Present perfect doğru kullanıldı mı? (`I have not had an answer`)", "kind": "rubric.criteria", "en": "Wurde present perfect richtig verwendet? (`I have not had an answer`)" },
  { "tr": "Rapor biçimi kullanıldı mı? Başlıklar ya da açık bölümler var mı?", "kind": "rubric.criteria", "en": "Wurde die Form eines Berichts verwendet? Gibt es Überschriften oder klare Abschnitte?" },
  { "tr": "Sıklık ifadeleri kullanıldı mı? (most days, once a week, usually)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (most days, once a week, usually)" },
- { "tr": "Sıklık ifadeleri kullanıldı mı? (two tablets a day, on Wednesday)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (two tablets a day, on Wednesday)" },
+ { "tr": "Sıklık ifadeleri kullanıldı mı? (two tablets a day, on Wednesdays)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (two tablets a day, on Wednesdays)" },
  { "tr": "Sorular doğru kuruldu mu? (Do you … / Where is … / How much is …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Do you … / Where is … / How much is …)" },
  { "tr": "Sorular doğru kuruldu mu? (Where … / Do you have … / How much …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where … / Do you have … / How much …)" },
  { "tr": "Sorular doğru kuruldu mu? (Where is … / Do you … / How much is …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where is … / Do you … / How much is …)" },

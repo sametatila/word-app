@@ -380,7 +380,7 @@ export const deC1P13: SkillExercise[] = [
           "Es gibt keinen Beleg.",
         ],
         answer: 2,
-        explain: "„es gibt“ zorunlu öznedir: „Heute gibt es keinen Beleg.“",
+        explain: "„es gibt“ kalıbında „es“ zorunlu öznedir: „Heute gibt es keinen Beleg.“",
       },
       {
         text: "„Dass die Frage offen bleibt, ist uns bewusst.“ — Warum fehlt hier „es“?",

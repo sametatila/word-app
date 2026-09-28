@@ -1306,7 +1306,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               text: "Speaker 8",
               answer: "h",
               explain:
-                "Konuşmacı teknik çözümün doğuracağı yeni sorunu uyarıyor: «Ambiguity was doing a great deal of work, and we are about to remove it without having agreed what replaces it».",
+                "Konuşmacı teknik çözümün doğuracağı yeni sorun konusunda uyarıyor: «Ambiguity was doing a great deal of work, and we are about to remove it without having agreed what replaces it».",
             },
           ],
         },

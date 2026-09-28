@@ -1445,7 +1445,7 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi bir arkadaşın mektubunu okuyup sana sorular soracak."
+      "text": "Şimdi bir arkadaşın, mektubunu okuyup sana sorular soracak."
      }
     ]
    }
@@ -26748,16 +26748,16 @@
      },
      {
       "lang": "en",
-      "text": "The online course is checked every semester."
+      "text": "The online course is checked every year."
      },
      {
       "lang": "tr",
-      "text": "Çevrimiçi kurs her dönem kontrol ediliyor."
+      "text": "Çevrimiçi kurs her yıl kontrol ediliyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The online course is checked every semester."
+     "target": "The online course is checked every year."
     }
    },
    {

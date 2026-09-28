@@ -2,6 +2,17 @@
  "packet": "e-014",
  "words": [
   {
+   "tr": "İhtiyat ilkesi koruma sorumluluğunun imar planından önce gelmesini gerektiriyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "The precautionary principle demands that the responsibility to protect be given priority over the zoning plan."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · Planner"
+   ]
+  },
+  {
    "tr": "Oyunun yaptığı şey o dönemin bedelini adlandırmak. Bağlam ilk sahneden belliydi.",
    "kind": "turn",
    "n": 1,
@@ -109,17 +120,6 @@
    ],
    "ctx": [
     "C1.5 Belonging and its words · Officer"
-   ]
-  },
-  {
-   "tr": "Ailenin bir fotoğrafı nasıl olur? Kuzenime düğününde bir tane verdiler, çok sevdi.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "How about a photograph of the family? My cousin got one for her wedding and she loved it."
-   ],
-   "ctx": [
-    "A2.8 Celebrations and people · Jonas"
    ]
   },
   {
