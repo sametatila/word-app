@@ -143,3 +143,6 @@ CLAUDE.md
 
 # Kütüphane yazar girdileri — üretilir (npm run prep:library)
 data/library/in/
+
+# Ekran görüntüsü çekimi ara çıktıları (scripts/shots/sim.sh)
+.shots/

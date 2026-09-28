@@ -296,6 +296,9 @@ Image.open('mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.p
 
 ## Yeni ham görüntü çekmek
 
+**iOS simülatöründe (tanıtım sayfası ve iOS kareleri):** `docs/store/screenshots.md`
+(`scripts/shots/sim.sh`, Maestro, `screenshots@lernomi.app`, dil çifti başına set). Aşağısı Android.
+
 Gerçek cihaz (ya da emülatör) + **imzalı release yapısı** + giriş yapılmış hesap gerekir.
 Debug yapısı olmaz: R8 küçültmesi ve paketlenmiş varlıklar yalnız release'te devrede ve
 karelerdeki ekran mağazadaki uygulamanın ekranı olmalı.
