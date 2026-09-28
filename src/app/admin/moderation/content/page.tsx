@@ -4,6 +4,7 @@ import { adminGate } from "@/lib/admin";
 import { CONTENT_PAGE_SIZE, contentFeedbackList, contentQueryParams, parseContentQuery, type ContentQuery } from "@/lib/moderation-admin";
 import { AdminDenied, AdminPage, Badge, BTN, DataTable, Empty, Field, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, Segmented, when } from "../../_ui/ui";
 import { reasonText, surfaceText, targetText } from "./labels";
+import { ResponseGuide, SlaBadge } from "../../_ui/sla";
 
 export const metadata: Metadata = { title: "İçerik geri bildirimi" };
 export const dynamic = "force-dynamic";
@@ -57,6 +58,7 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
         actions={<a href={csv} className={BTN.secondary} download>CSV</a>}
       />
       {data.error ? <Notice tone="bad" title="Sorgu başarısız">{data.error}</Notice> : null}
+      <ResponseGuide queue="content_feedback" />
 
       <Panel>
         <div className="mb-3">
@@ -111,7 +113,15 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
               <span key="d" className="whitespace-nowrap tabular-nums">{when(g.first)}<br /><span className="muted">{when(g.last)}</span></span>,
               <span key="c" className="font-mono">{g.courses.join(", ") || "—"} / {g.natives.join(", ") || "—"}</span>,
               <span key="p">{g.platforms.join(", ") || "—"}</span>,
-              g.open > 0 ? <Badge key="st" tone={g.count >= 3 ? "bad" : "warn"}>açık</Badge> : <Badge key="st" tone="ok">kapalı</Badge>,
+              /* Süre grubun EN ESKİ açık bildiriminden: "Açık" süzgecinde `first` tam olarak o. */
+              g.open > 0 ? (
+                <span key="st" className="inline-flex flex-col items-start gap-1">
+                  <Badge tone={g.count >= 3 ? "bad" : "warn"}>açık</Badge>
+                  {q.status === "open" ? <SlaBadge queue="content_feedback" at={g.first} /> : null}
+                </span>
+              ) : (
+                <Badge key="st" tone="ok">kapalı</Badge>
+              ),
             ])}
           />
         ) : (

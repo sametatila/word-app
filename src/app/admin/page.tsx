@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
-import { loadAlerts, loadPanel, panelIssues, parseRange } from "./_data";
+import { loadAlerts, loadPanel, loadResponses, panelIssues, parseRange } from "./_data";
 import { StatusSection } from "./dashboard";
 import { AdminDenied } from "./_ui/ui";
 import { PanelPage } from "./_ui/panel-page";
@@ -21,10 +21,10 @@ export default async function AdminHomePage({ searchParams }: { searchParams: Pr
   const sp = await searchParams;
   const fresh = sp.taze === "1";
   const days = parseRange(sp.aralik);
-  const [{ value, at }, alerts] = await Promise.all([loadPanel(fresh, days), loadAlerts(fresh)]);
+  const [{ value, at }, alerts, responses] = await Promise.all([loadPanel(fresh, days), loadAlerts(fresh), loadResponses(fresh)]);
   return (
-    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), son 7 gün, temel sayılar." href="/admin" at={at} issues={panelIssues(value)} days={days}>
-      <StatusSection days={days} data={value.data} coverage={value.coverage} openReports={value.openReports} trends={value.trends.metrics} alerts={alerts.value} />
+    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), geri dönüş bekleyenler, son 7 gün, temel sayılar." href="/admin" at={at} issues={panelIssues(value)} days={days}>
+      <StatusSection days={days} data={value.data} coverage={value.coverage} openReports={value.openReports} trends={value.trends.metrics} alerts={alerts.value} responses={responses.value} />
     </PanelPage>
   );
 }

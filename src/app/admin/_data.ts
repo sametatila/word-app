@@ -7,6 +7,7 @@ import { cached } from "@/lib/admin-query";
 import { revenueMetrics } from "@/lib/premium/revenue";
 import { weeklyTrends } from "@/lib/admin-trends";
 import { collectAlerts, type Alert } from "@/lib/alerts";
+import { responseQueues, type QueueSummary } from "@/lib/response-queue";
 import { PANEL_RANGES, parseRange, type PanelRange } from "./_data-shared";
 
 export { PANEL_RANGES, parseRange, type PanelRange };
@@ -44,4 +45,9 @@ export function panelIssues(v: PanelData) {
  */
 export async function loadAlerts(fresh = false): Promise<{ value: Alert[]; at: number }> {
   return cached("admin:alerts", 60_000, fresh, () => collectAlerts());
+}
+
+/** Geri dönüş bekleyenler — kuyruk başına açık / yaklaşan / geciken (`lib/response-queue`). */
+export async function loadResponses(fresh = false): Promise<{ value: QueueSummary[]; at: number }> {
+  return cached("admin:responses", 60_000, fresh, () => responseQueues(fresh));
 }

@@ -6,6 +6,7 @@ import type { Coverage } from "@/lib/admin-coverage";
 import type { Revenue } from "@/lib/premium/revenue";
 import { trendDelta, type TrendMetric } from "@/lib/admin-trends-shared";
 import { alertLinks } from "@/lib/admin-links";
+import { RESPONSE_SLA, slaState, slaText, type QueueSummary } from "@/lib/response-sla";
 import { BarList, Funnel, SeriesChart, Sparkline, BTN, DataTable, Dot, fmt, Notice, Panel, PanelGrid, Stat, Stats, TONE, type Tone } from "./_ui/ui";
 
 /**
@@ -171,8 +172,52 @@ type Base = { data: AdminData; coverage: Coverage; days: number };
 
 export type StatusAlert = { key: string; level: "kritik" | "uyari"; text: string };
 
+/**
+ * GERİ DÖNÜŞ BEKLEYENLER — kuyruk başına açık iş, süresi yaklaşan (%75), süresi
+ * geçen ve en eski işin kalan süresi. Hedefler `lib/response-sla` (destek
+ * sayfasındaki sözle aynı); tıklayınca kuyruğun kendisi açılıyor.
+ */
+function ResponsesPanel({ items }: { items: QueueSummary[] }) {
+  const late = items.reduce((a, q) => a + q.late, 0);
+  const soon = items.reduce((a, q) => a + q.soon, 0);
+  return (
+    <Panel
+      title="Geri dönüş bekleyenler"
+      tone={late ? "bad" : soon ? "warn" : undefined}
+      hint="Hedefler destek sayfasındaki sözle aynı: bildirimler 48 saat, cevapsız 1-2★ yorumlar 2 iş günü, içerik geri bildirimi 7 gün (iç hedef). Her kuyrukta 'nasıl dönülür' rehberi var."
+    >
+      <Stats cols={4}>
+        {items.map((q) => {
+          const def = RESPONSE_SLA[q.queue];
+          const s = q.oldest ? slaState(q.queue, q.oldest) : null;
+          const tone = q.late ? "bad" : q.soon ? "warn" : q.open ? undefined : "ok";
+          return (
+            <Stat
+              key={q.queue}
+              label={def.label}
+              value={fmt(q.open)}
+              tone={tone}
+              sub={
+                <>
+                  hedef {def.target}
+                  {q.late ? <> · <b style={{ color: TONE.bad }}>{q.late} gecikti</b></> : null}
+                  {q.soon ? <> · <span style={{ color: TONE.warn }}>{q.soon} yaklaşıyor</span></> : null}
+                  {s ? <><br /><span suppressHydrationWarning>en eski: {slaText(s)}</span></> : null}
+                  {q.error ? <><br /><span style={{ color: TONE.bad }}>okunamadı: {q.error}</span></> : null}
+                  <br />
+                  <a href={def.path} className="underline-offset-2 hover:underline">Aç →</a>
+                </>
+              }
+            />
+          );
+        })}
+      </Stats>
+    </Panel>
+  );
+}
+
 /* ── DURUM ── */
-export function StatusSection({ days, data: d, coverage: c, openReports, trends, alerts }: Base & { openReports: number; trends: TrendMetric[]; alerts: StatusAlert[] }) {
+export function StatusSection({ days, data: d, coverage: c, openReports, trends, alerts, responses }: Base & { openReports: number; trends: TrendMetric[]; alerts: StatusAlert[]; responses: QueueSummary[] }) {
   const k = d.kpi;
   const sess = d.sessionFunnel;
   const sessRate = sess.started ? sess.done / sess.started : 0;
@@ -204,6 +249,7 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
       {critical.length ? <Notice tone="bad" title={`${critical.length} kritik sorun`}>{list(critical)}</Notice> : null}
       {warning.length ? <Notice tone="warn" title={`${warning.length} uyarı`}>{list(warning)}</Notice> : null}
       {!alerts.length ? <Notice tone="ok">Sorun yok: uyarı motorunun bütün kontrolleri temiz (sunucu, yedek, zamanlanmış işler, hatalar, mağaza, yapay zekâ, şikâyetler).</Notice> : null}
+      <ResponsesPanel items={responses} />
       <TrendRow trends={trends} />
           <Panel title="Kullanıcı ve kullanım" hint={`Tüm zamanlar; aksi yazılıysa son ${days} gün.`}>
             <Stats cols={6}>

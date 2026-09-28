@@ -11,6 +11,8 @@ import { storeReviews } from "@/lib/store-reviews";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD } from "@/lib/android-vitals";
 import { absolute, alertLinks } from "@/lib/admin-links";
 import { SITE_URL } from "@/lib/site";
+import { responseQueues } from "@/lib/response-queue";
+import { RESPONSE_SLA } from "@/lib/response-sla";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -176,14 +178,23 @@ export async function collectAlerts(): Promise<Alert[]> {
         alerts.push({ key: "webhook", level: "kritik", text: "Mağaza yayında ama satın alma webhook'u kapalı (REVENUECAT_WEBHOOK_AUTH boş): satın alınan Premium hiçbir hesaba yazılmıyor." });
       }
     }),
-    guard("moderation", async () => {
-      const [r] = await rows(sql`
-        select
-          (select count(*) from user_reports u where u.created_at < now() - interval '24 hours'
-             and not exists (select 1 from moderation_actions m where m.target = 'user_report' and m.ref_id = u.id))::int users,
-          (select count(*) from content_reports where status = 'open' and created_at < now() - interval '24 hours')::int content`);
-      const n = num(r?.users) + num(r?.content);
-      if (n > 0) alerts.push({ key: "reports", level: "uyari", text: `${n} şikâyet 24 saatten uzun süredir açık (mağaza kuralı hızlı işlenmesini bekliyor).` });
+    guard("responses", async () => {
+      /*
+        GERİ DÖNÜŞ SÜRELERİ (`lib/response-sla`, destek sayfasındaki sözle aynı).
+        Kuyruk başına iki anahtar: `sla-soon:<kuyruk>` süresinin %75'i dolan iş
+        (uyarı), `sla-late:<kuyruk>` süresi geçen iş (kritik). Sürdükçe 6 saatte
+        bir hatırlatma, iş kapanınca "düzeldi". Eski `reports` kuralının (24 saat,
+        tek eşik) yerini aldı.
+      */
+      for (const q of await responseQueues()) {
+        const def = RESPONSE_SLA[q.queue];
+        if (q.late > 0) {
+          alerts.push({ key: `sla-late:${q.queue}`, level: "kritik", text: `${def.label}: ${q.late} iş geri dönüş süresini (${def.target}) aştı. Nasıl dönüleceği sayfadaki rehberde.` });
+        }
+        if (q.soon > 0) {
+          alerts.push({ key: `sla-soon:${q.queue}`, level: "uyari", text: `${def.label}: ${q.soon} işin geri dönüş süresi (${def.target}) dolmak üzere.` });
+        }
+      }
     }),
     guard("feedback", async () => {
       /*

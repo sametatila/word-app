@@ -7,9 +7,13 @@ import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, Badge, when as fmtWhen, BTN, Empty, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 import { KIND_LABEL, REASON_LABEL } from "@/lib/content-feedback-labels";
+import { ResponseGuide, SlaBadge } from "../_ui/sla";
 
 /**
  * Şikâyet kuyruğu görünümü.
+ *
+ * GERİ DÖNÜŞ SÜRESİ: her kartta kalan süre (`lib/response-sla`, destek
+ * sayfasındaki 48 saat sözü); kuyruk EN ESKİDEN başlıyor, en acil iş üstte.
  *
  * SIRA: önce kullanıcı şikâyetleri, çünkü onlar başka bir KİŞİYE dokunuyor
  * (taciz, taklit) ve mağaza kuralı hızlı işlenmelerini bekliyor; yapay zekâ
@@ -125,14 +129,18 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
       {!data.ready ? <Notice tone="warn">Karar tablosu (moderation_actions) canlıda yok: kullanıcı şikâyetleri okunabiliyor ama kapatılamıyor.</Notice> : null}
       {msg ? <Notice tone="bad">{msg}</Notice> : null}
 
-      <Panel title="Kullanıcı şikâyetleri" hint="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse 'Adı sıfırla' ikisini de siler ve şikâyeti kapatır.">
+      <Panel title="Kullanıcı şikâyetleri" hint="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse 'Adı sıfırla' ikisini de siler ve şikâyeti kapatır. En eskisi üstte.">
+        <div className="mb-3"><ResponseGuide queue="user_report" /></div>
         {userReports.length ? (
           <div className="space-y-3">
             {userReports.map((r) => (
               <div key={r.id} className={card} style={cardStyle}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-strong">{USER_REASON[r.reason] ?? r.reason}</span>
-                  <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
+                  <span className="inline-flex flex-wrap items-center gap-2">
+                    <SlaBadge queue="user_report" at={r.at} />
+                    <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
+                  </span>
                 </div>
                 <div className="mt-1.5">Şikâyet edilen: <Person p={r.reported} /></div>
                 <div className="mt-0.5" style={{ color: r.reportsAgainst > 1 || r.blockedBy > 1 ? TONE.bad : "var(--text-muted)" }}>
@@ -149,14 +157,18 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
         )}
       </Panel>
 
-      <Panel title="Yapay zekâ bildirimleri" hint="Yapay zekâ yanıtı ya da değerlendirme çıktısı için, tek tek. Play üretken yapay zekâ politikası: insan inceler. Öğrenme içeriği bildirimleri hedefe göre gruplu olarak 'İçerik geri bildirimi' sayfasında.">
+      <Panel title="Yapay zekâ bildirimleri" hint="Yapay zekâ yanıtı ya da değerlendirme çıktısı için, tek tek. Play üretken yapay zekâ politikası: insan inceler. Öğrenme içeriği bildirimleri hedefe göre gruplu olarak 'İçerik geri bildirimi' sayfasında. En eskisi üstte.">
+        <div className="mb-3"><ResponseGuide queue="ai_report" /></div>
         {contentReports.length ? (
           <div className="space-y-3">
             {contentReports.map((r) => (
               <div key={r.id} className={card} style={cardStyle}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-strong">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
-                  <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
+                  <span className="inline-flex flex-wrap items-center gap-2">
+                    <SlaBadge queue="ai_report" at={r.at} />
+                    <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
+                  </span>
                 </div>
                 <div className="muted mt-0.5 font-mono">
                   <a href={`/admin/moderation/content/group?g=${encodeURIComponent(r.group)}`} className="underline-offset-2 hover:underline">{r.ref}</a>

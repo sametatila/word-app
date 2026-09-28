@@ -94,7 +94,7 @@ function joinWho(prefix: string, idCol: string) {
     left join "user" ${prefix}u on ${prefix}u.id = ${idCol}`);
 }
 
-async function hasActionsTable(): Promise<boolean> {
+export async function hasActionsTable(): Promise<boolean> {
   try {
     const r = await rows(sql`select to_regclass('public.moderation_actions') is not null as ok`);
     return r[0]?.ok === true;
@@ -117,14 +117,14 @@ export async function moderationData(): Promise<ModerationData> {
         (select count(*) from user_blocks k where k.blocked_id = r.reported_id)::int as blocked_by
       from user_reports r ${joinWho("a", "r.reporter_id")} ${joinWho("b", "r.reported_id")}
       where ${openUser}
-      order by r.id desc limit 100`).catch(() => [] as Row[]),
+      order by r.id asc limit 100`).catch(() => [] as Row[]),
     rows(sql`
       select r.id, r.created_at as at, r.kind, r.ref, r.reason, coalesce(r.content, '') as content,
         coalesce(r.detail, '') as detail, coalesce(r.group_key, 'legacy:' || r.kind || ':' || r.ref) as gkey,
         ${who("a", "r.user_id")}
       from content_reports r ${joinWho("a", "r.user_id")}
       where r.status = 'open' and r.kind <> 'content'
-      order by r.id desc limit 100`).catch(() => [] as Row[]),
+      order by r.id asc limit 100`).catch(() => [] as Row[]),
     ready
       ? rows(sql`select target, ref_id, action, coalesce(actor, '') as actor, coalesce(note, '') as note,
           created_at as at from moderation_actions order by id desc limit 30`).catch(() => [] as Row[])

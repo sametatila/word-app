@@ -64,6 +64,17 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } };
     case "reports":
       return { panel: { path: "/admin/moderation", label: "Kullanıcılar › Moderasyon" } };
+    case "sla-late":
+    case "sla-soon": {
+      if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi" } };
+      if (tail === "store_review") {
+        return {
+          panel: { path: "/admin/reviews#yorumlar", label: "İşletim › Mağaza › Yorumlar" },
+          external: { url: EXTERNAL.playReviews, label: "Play Console'da cevapla (App Store: App Store Connect)" },
+        };
+      }
+      return { panel: { path: "/admin/moderation", label: "Kullanıcılar › Moderasyon" } };
+    }
     case "err-reportnew":
       return { panel: { path: "/admin/moderation/content", label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi" } };
     case "err-reporthot":

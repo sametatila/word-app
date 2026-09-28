@@ -3,6 +3,8 @@ import { adminGate } from "@/lib/admin";
 import { storeReviews, summarizeReviews, type StoreReview } from "@/lib/store-reviews";
 import { AdminDenied, AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, PanelGrid, Stat, Stats, TONE } from "../_ui/ui";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD, type VitalsSeries } from "@/lib/android-vitals";
+import { ResponseGuide, SlaBadge } from "../_ui/sla";
+import { ReplyTemplates } from "../_ui/reply-templates";
 
 export const metadata: Metadata = { title: "Mağaza" };
 export const dynamic = "force-dynamic";
@@ -78,7 +80,8 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
         })}
       </PanelGrid>
 
-      <Panel id="yorumlar" title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor.">
+      <Panel id="yorumlar" title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor. Cevapsız 1-2★ yorumda kalan süre yazıyor (hedef 2 iş günü).">
+        <div className="mb-3"><ResponseGuide queue="store_review" /></div>
         {ordered.length === 0 ? (
           <Empty>Gösterilecek yorum yok.</Empty>
         ) : (
@@ -89,6 +92,7 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
                   <b style={{ color: r.rating <= 2 ? TONE.bad : r.rating >= 4 ? TONE.ok : undefined }} aria-label={`${r.rating} yıldız`}>{starsText(r.rating)}</b>
                   <Badge>{STORE[r.store]}</Badge>
                   {r.answered ? <Badge tone="ok">cevaplandı</Badge> : <Badge tone={r.rating <= 2 ? "bad" : undefined}>cevapsız</Badge>}
+                  {!r.answered && r.rating > 0 && r.rating <= 2 && r.at ? <SlaBadge queue="store_review" at={r.at} /> : null}
                   {r.title ? <span className="text-strong">{r.title}</span> : null}
                   <span className="muted">
                     {r.author || "anonim"} · {r.at ? new Date(r.at).toLocaleDateString("tr-TR") : "—"}{r.version ? ` · ${r.version}` : ""}{r.territory ? ` · ${r.territory}` : ""}
@@ -99,6 +103,10 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
             ))}
           </div>
         )}
+      </Panel>
+
+      <Panel id="sablonlar" title="Yanıt şablonları" hint="Başlangıç noktası: yorumu okuyup [ ] kısımlarını doldur ve kişiselleştir. Yorumun dilinde cevap ver; Play cevabı en çok 350 karakter.">
+        <ReplyTemplates />
       </Panel>
     </AdminPage>
   );
