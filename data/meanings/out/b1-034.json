@@ -97,7 +97,7 @@
   },
   {
     "id": 1740,
-    "tr": "şehir sakini",
+    "tr": "kadın şehir sakini",
     "en": "female resident",
     "beispiel": "Sie ist die älteste Einwohnerin der Stadt.",
     "beispielTr": "O, şehrin en yaşlı sakini.",
@@ -306,7 +306,7 @@
   {
     "id": 2020,
     "tr": "mangal yapmak",
-    "en": "to grill in Swiss German",
+    "en": "Swiss word for grilling",
     "beispiel": "Am Samstag grillieren wir mit den Nachbarn am See.",
     "beispielTr": "Cumartesi komşularla gölün kenarında mangal yapıyoruz.",
     "beispielEn": "On Saturday we're grilling with the neighbors by the lake."

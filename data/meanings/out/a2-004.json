@@ -91,9 +91,9 @@
     "id": 1126,
     "tr": "valiz toplamak",
     "en": "to pack",
-    "beispiel": "Hast du die Badesachen schon in die Tasche gepackt?",
-    "beispielTr": "Havuz eşyalarını çantaya koydun mu?",
-    "beispielEn": "Have you packed the swimming things in the bag yet?"
+    "beispiel": "Hast du deinen Koffer schon gepackt?",
+    "beispielTr": "Valizini topladın mı?",
+    "beispielEn": "Have you packed your suitcase yet?"
   },
   {
     "id": 1099,
@@ -233,7 +233,7 @@
   },
   {
     "id": 1324,
-    "tr": "sayı",
+    "tr": "ödemek",
     "en": "number",
     "beispiel": "Meine Glückszahl ist die Zahl sieben.",
     "beispielTr": "Şanslı sayım yedi.",

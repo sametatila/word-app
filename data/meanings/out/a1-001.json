@@ -84,7 +84,7 @@
     "tr": "fazla",
     "en": "too",
     "beispiel": "Die Hose ist mir zu groß.",
-    "beispielTr": "Pantolon bana çok büyük.",
+    "beispielTr": "Pantolon bana fazla büyük.",
     "beispielEn": "The pants are too big for me."
   },
   {
@@ -338,7 +338,7 @@
   {
     "id": 466,
     "tr": "saat …-de; için",
-    "en": "at",
+    "en": "at; in order to",
     "beispiel": "Der Film beginnt um halb neun.",
     "beispielTr": "Film sekiz buçukta başlıyor.",
     "beispielEn": "The movie starts at eight thirty."

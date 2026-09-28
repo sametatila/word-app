@@ -121,10 +121,10 @@
   },
   {
     "id": 7418,
-    "tr": "baştan sona denemek",
+    "tr": "tek tek ele almak",
     "en": "to run through",
     "beispiel": "Im Krisenstab haben wir alle denkbaren Verläufe einmal durchgespielt.",
-    "beispielTr": "Kriz masasında olası bütün gidişatları bir kez baştan sona denedik.",
+    "beispielTr": "Kriz masasında olası bütün senaryoları bir kez tek tek ele aldık.",
     "beispielEn": "In the crisis team we ran through every conceivable scenario once."
   },
   {
@@ -138,10 +138,10 @@
   {
     "id": 7420,
     "tr": "tersine dönmek",
-    "en": "to swing around",
+    "en": "to swing",
     "beispiel": "Die Stimmung im Saal ist nach der Rede umgeschlagen.",
     "beispielTr": "Salondaki hava konuşmadan sonra tersine döndü.",
-    "beispielEn": "The mood in the hall swung around after the speech."
+    "beispielEn": "The mood in the hall swung after the speech."
   },
   {
     "id": 7421,

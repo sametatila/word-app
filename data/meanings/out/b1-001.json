@@ -65,7 +65,7 @@
   },
   {
     "id": 2433,
-    "tr": "acaba",
+    "tr": "acaba; -ip -mediği",
     "en": "whether",
     "beispiel": "Frag doch mal, ob der Laden sonntags offen hat.",
     "beispielTr": "Dükkânın pazar günleri açık olup olmadığını bir sorsana.",
@@ -193,7 +193,7 @@
   },
   {
     "id": 2711,
-    "tr": "sağlamak",
+    "tr": "sağlama",
     "en": "to ensure",
     "beispiel": "Die Trainerin sorgt dafür, dass niemand zu kurz kommt.",
     "beispielTr": "Antrenör kimsenin geri planda kalmamasını sağlıyor.",
@@ -369,7 +369,7 @@
   },
   {
     "id": 2712,
-    "tr": "endişe",
+    "tr": "endişeler",
     "en": "worry",
     "beispiel": "Mach dir keine Sorgen um mich.",
     "beispielTr": "Benim için endişelenme.",

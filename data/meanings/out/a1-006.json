@@ -337,7 +337,7 @@
  },
  {
   "id": 750,
-  "tr": "parti",
+  "tr": "üretim partisi",
   "en": "party",
   "beispiel": "Nach der Party war die Küche total schmutzig.",
   "beispielTr": "Partiden sonra mutfak bayağı kirliydi.",
@@ -369,7 +369,7 @@
  },
  {
   "id": 734,
-  "tr": "istemek",
+  "tr": "talep etmek",
   "en": "would like",
   "beispiel": "Ich möchte heute Abend lieber zu Hause bleiben.",
   "beispielTr": "Bu akşam evde kalmayı tercih ederim.",

@@ -33,7 +33,7 @@
   },
   {
     "id": 4899,
-    "tr": "tırmanmak",
+    "tr": "tırmanma",
     "en": "to climb",
     "beispiel": "Im Sommer wollen wir gemeinsam den höchsten Gipfel besteigen.",
     "beispielTr": "Yazın birlikte en yüksek zirveye tırmanmak istiyoruz.",
@@ -321,10 +321,10 @@
   },
   {
     "id": 4935,
-    "tr": "kategori",
+    "tr": "bölüm",
     "en": "category",
     "beispiel": "Auf der Startseite gibt es eine neue Rubrik für Podcasts.",
-    "beispielTr": "Ana sayfada podcastler için yeni bir kategori var.",
+    "beispielTr": "Ana sayfada podcastler için yeni bir bölüm var.",
     "beispielEn": "There is a new category for podcasts on the homepage."
   },
   {

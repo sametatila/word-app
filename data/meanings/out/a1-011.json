@@ -201,7 +201,7 @@
   },
   {
     "id": 741,
-    "tr": "açık",
+    "tr": "güvenlik açığı",
     "en": "open",
     "beispiel": "Die Bäckerei ist am Sonntag geöffnet.",
     "beispielTr": "Fırın pazar günü açık.",
@@ -321,7 +321,7 @@
   },
   {
     "id": 820,
-    "tr": "merdiven",
+    "tr": "bekleme süresi",
     "en": "stairs",
     "beispiel": "Wir nehmen die Treppe nach oben.",
     "beispielTr": "Yukarıya merdivenden çıkıyoruz.",

@@ -177,8 +177,8 @@
   },
   {
     "id": 2357,
-    "tr": "olumsuzluk ön eki",
-    "en": "negative prefix",
+    "tr": "yanlış-",
+    "en": "mis-",
     "beispiel": "Leider hat der Kellner meine Bestellung missverstanden.",
     "beispielTr": "Garson maalesef siparişimi yanlış anladı.",
     "beispielEn": "Unfortunately, the waiter misunderstood my order."
