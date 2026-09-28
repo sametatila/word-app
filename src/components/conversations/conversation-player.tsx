@@ -1,6 +1,6 @@
 "use client";
 
-import { ReportFlag, snapshot } from "@/components/report-flag";
+import { ReportFlag, ReportLink, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { apiFetch, CHAT_TIMEOUT_MS } from "@/lib/api-fetch";
@@ -68,7 +68,15 @@ type Turn = { role: "user" | "assistant"; content: string };
  * güncellemeleri giriş animasyonlarını şaşırtabiliyordu.
  */
 type FeedItem =
-  | { id: number; role: "assistant"; segments: Segment[]; tone?: "hint"; pending?: boolean }
+  | {
+      id: number;
+      role: "assistant";
+      segments: Segment[];
+      tone?: "hint";
+      pending?: boolean;
+      /** Yazılı ders adımının sırası (0'dan) — içerik bildiriminin hedefi. Ara baloncuklarda yok. */
+      step?: number;
+    }
   | { id: number; role: "user"; text: string };
 
 const HANDSFREE_KEY = "lernomi-conversation-handsfree";
@@ -697,7 +705,7 @@ function ConversationPlayerBody({
       // görünümünde donmuş baloncuk kalmamalı.
       setFeed((f) => [
         ...f.map((it) => ("pending" in it && it.pending ? { ...it, pending: false } : it)),
-        { id, role: "assistant", segments, pending: ttsAvailable },
+        { id, role: "assistant", segments, pending: ttsAvailable, step: index },
       ]);
       const token = ++speechToken.current;
       cancelSpeech.current?.();
@@ -1249,17 +1257,6 @@ function ConversationPlayerBody({
         <div className="min-w-0 flex-1">
           <Steps phase={phase} />
         </div>
-        {/* İÇERİK BİLDİRİMİ yalnız yazılı adımlarda (ders): sohbet yanıtları
-            yapay zekâ çıktısı ve kendi "Bildir" bağlantılarını taşıyor. Hedef
-            konuşma + adım sırası (1'den). */}
-        {phase === "lecture" ? (
-          <ReportFlag
-            variant="tile"
-            surface="conversation"
-            target={{ type: "conversation", id: conversation.id, sub: String(stepIndex + 1) }}
-            content={() => snapshot({ step: conversation.lecture[stepIndex] })}
-          />
-        ) : null}
       </div>
 
       {phase === "lecture" ? (
@@ -1351,6 +1348,8 @@ function ConversationPlayerBody({
                   item={item}
                   ttsAvailable={ttsAvailable}
                   speaking={speakingId === item.id}
+                  conversationId={conversation.id}
+                  stepData={item.role === "assistant" && item.step != null ? conversation.lecture[item.step] : undefined}
                 />
               ))}
             </div>
@@ -2078,10 +2077,15 @@ function LectureBubble({
   item,
   ttsAvailable,
   speaking,
+  conversationId,
+  stepData,
 }: {
   item: FeedItem;
   ttsAvailable: boolean;
   speaking: boolean;
+  conversationId: string;
+  /** Baloncuk yazılı bir ders adımıysa o adımın verisi (bildirimin anlık görüntüsü). */
+  stepData?: unknown;
 }) {
   const t = useT();
   const still = useStill();
@@ -2099,55 +2103,68 @@ function LectureBubble({
   }
   const hint = item.tone === "hint";
   return (
-    <motion.div {...bubbleEntrance(still)} className="flex items-end gap-1.5">
-      <div
-        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body leading-relaxed"
-        style={{
-          background: hint
-            ? "color-mix(in srgb, var(--color-flame) 10%, transparent)"
-            : "var(--surface-2)",
-        }}
-      >
-        {item.pending ? (
-          <TypingDots />
-        ) : (
-          <motion.span
-            className="inline"
-            {...(still
-              ? {}
-              : {
-                  initial: { opacity: 0, y: 4 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.22, ease: "easeOut" as const },
-                })}
-          >
-            {item.segments.map((seg, i) => (
-              <span key={i}>
-                {seg.lang !== "tr" ? (
-                  <span className="brand-text font-bold">{seg.text}</span>
-                ) : (
-                  seg.text
-                )}
-                {i < item.segments.length - 1 ? " " : null}
-              </span>
-            ))}
-          </motion.span>
-        )}
-      </div>
-      {item.pending ? null : speaking ? (
-        <SpeakingBars />
-      ) : ttsAvailable ? (
-        <motion.button
-          type="button"
-          whileTap={{ scale: 0.96 }}
-          onClick={() => speakSegments(item.segments)}
-          aria-label={t("conversationp.listen_again")}
-          /* 28px gorunen daire, `hit-8` ile 44 hedef: mobil karsiligi da
-             `hitSlop={8}` tasiyor (`ConversationScreen`). */
-          className="btn btn-ghost hit-8 h-7 w-7 shrink-0"
+    <motion.div {...bubbleEntrance(still)} className="flex flex-col items-start gap-1">
+      <div className="flex w-full items-end gap-1.5">
+        <div
+          className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body leading-relaxed"
+          style={{
+            background: hint
+              ? "color-mix(in srgb, var(--color-flame) 10%, transparent)"
+              : "var(--surface-2)",
+          }}
         >
-          <SpeakerIcon size={13} />
-        </motion.button>
+          {item.pending ? (
+            <TypingDots />
+          ) : (
+            <motion.span
+              className="inline"
+              {...(still
+                ? {}
+                : {
+                    initial: { opacity: 0, y: 4 },
+                    animate: { opacity: 1, y: 0 },
+                    transition: { duration: 0.22, ease: "easeOut" as const },
+                  })}
+            >
+              {item.segments.map((seg, i) => (
+                <span key={i}>
+                  {seg.lang !== "tr" ? (
+                    <span className="brand-text font-bold">{seg.text}</span>
+                  ) : (
+                    seg.text
+                  )}
+                  {i < item.segments.length - 1 ? " " : null}
+                </span>
+              ))}
+            </motion.span>
+          )}
+        </div>
+        {item.pending ? null : speaking ? (
+          <SpeakingBars />
+        ) : ttsAvailable ? (
+          <motion.button
+            type="button"
+            whileTap={{ scale: 0.96 }}
+            onClick={() => speakSegments(item.segments)}
+            aria-label={t("conversationp.listen_again")}
+            /* 28px gorunen daire, `hit-8` ile 44 hedef: mobil karsiligi da
+               `hitSlop={8}` tasiyor (`ConversationScreen`). */
+            className="btn btn-ghost hit-8 h-7 w-7 shrink-0"
+          >
+            <SpeakerIcon size={13} />
+          </motion.button>
+        ) : null}
+      </div>
+      {/* İÇERİK BİLDİRİMİ yazılı ders adımının altında — sohbetteki yapay
+          zekâ yanıtlarının "Bildir"iyle aynı yer ve biçim. Başlıktaki karo
+          kalktı. Hedef konuşma + adım sırası (1'den). Ara baloncuklar
+          (ipucu, övgü) ayrı bir adım değil; bağlantı taşımıyor. */}
+      {item.step != null && !item.pending ? (
+        <ReportFlag
+          surface="conversation"
+          target={{ type: "conversation", id: conversationId, sub: String(item.step + 1) }}
+          content={() => snapshot({ step: stepData })}
+        />
       ) : null}
     </motion.div>
   );
@@ -2224,16 +2241,9 @@ function Bubble({
           "yapay zekâ ile üretilen içerik" politikası: rahatsız edici bir
           yanıt uygulamadan çıkmadan bildirilebilmeli). */}
       {onReport && body.trim() && !pending ? (
-        <button
-          type="button"
-          onClick={() => onReport(turn.content)}
-          /* Yalniz 11px yazi: hedefin yuksekligi yazinin kendisi kadardi,
-             yani WCAG 2.2'nin 24px asgarisinin ALTINDA. `hit-8` ile ~29.
-             Mobil karsiligi da `hitSlop={8}` tasiyor. */
-          className="muted text-micro underline underline-offset-2 hit-8"
-        >
-          {t("conversation.report_this_answer")}
-        </button>
+        /* Uygulamanın tek bildirim biçimi (`ReportLink`): ders adımlarının
+           içerik bildirimiyle aynı görünüş. Hedef ölçüsü orada. */
+        <ReportLink onClick={() => onReport(turn.content)} label={t("conversation.report_this_answer")} />
       ) : null}
     </motion.div>
   );

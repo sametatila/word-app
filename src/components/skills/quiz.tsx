@@ -35,7 +35,7 @@ export function QuestionList({
   questions: SkillQuestion[];
   onAllAnswered: (correct: number) => void;
   /**
-   * İçerik bildirimi: soru kartının bayrağı hedefi buradan kuruyor
+   * İçerik bildirimi: sorunun cevaptan sonraki bağlantısı hedefi buradan kuruyor
    * (`exercise` + `sub` = soru sırası, 1'den). Verilmezse bayrak yok.
    * Yüzey verilmezse oynatıcı çerçevesinden (Patika / Beceriler).
    */
@@ -65,22 +65,10 @@ export function QuestionList({
         const wasCorrect = results[qi] === true;
         return (
           <section key={qi} className="card p-4">
-            <div className="flex items-start gap-2">
-              <p className="min-w-0 flex-1 text-strong leading-relaxed">
-                <span className="muted mr-1.5">{qi + 1}.</span>
-                {q.text}
-              </p>
-              {report ? (
-                <ReportFlag
-                  className="-mr-2 -mt-1.5"
-                  surface={report.surface ?? frameSurface}
-                  target={{ type: "exercise", id: report.exerciseId, sub: String(qi + 1) }}
-                  content={() =>
-                    snapshot({ kind, text: q.text, options: q.options, answer: q.answer, accept: q.accept, items: q.items, result: results[qi] })
-                  }
-                />
-              ) : null}
-            </div>
+            <p className="text-strong leading-relaxed">
+              <span className="muted mr-1.5">{qi + 1}.</span>
+              {q.text}
+            </p>
             {kind === "order" ? (
               <OrderInput q={q} done={done} onSettle={(ok) => settle(qi, ok)} />
             ) : kind === "gapfill" || kind === "short_answer" || kind === "dictation" ? (
@@ -102,6 +90,19 @@ export function QuestionList({
               >
                 {q.explain}
               </motion.p>
+            ) : null}
+            {/* İçerik bildirimi CEVAPTAN SONRA, açıklamanın altında: soru
+                ekranında bayrak dikkati bölüyordu; yanlış anahtar da çoğu
+                zaman açıklamayı okurken fark ediliyor. */}
+            {done && report ? (
+              <ReportFlag
+                className="mt-2"
+                surface={report.surface ?? frameSurface}
+                target={{ type: "exercise", id: report.exerciseId, sub: String(qi + 1) }}
+                content={() =>
+                  snapshot({ kind, text: q.text, options: q.options, answer: q.answer, accept: q.accept, items: q.items, result: results[qi] })
+                }
+              />
             ) : null}
           </section>
         );

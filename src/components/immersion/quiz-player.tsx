@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { QuestionList } from "@/components/skills/quiz";
+import { ReportFlag, snapshot } from "@/components/report-flag";
 import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
 import { RoundExit } from "@/components/round-exit";
 import { FlowActions, FlowColumn, ResultHero, StatRow, StateBody } from "@/components/flow";
@@ -146,6 +147,16 @@ export function ImmersionQuizPlayer({
           ) : (
             <FlowActions primary={{ label: t("quiz.try_again"), onClick: retry }} secondary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
           )}
+          {/* İçerik bildirimi, adımın BÜTÜNÜ için: sonucun dibinde. Sorular
+              cevaptan sonra kendi açıklamalarının altında ayrıca bildiriliyor
+              (`QuestionList`). */}
+          <div className="flex justify-center">
+            <ReportFlag
+              surface="path"
+              target={{ type: "exercise", id: itemId }}
+              content={() => snapshot({ title, kind, questions: questions.length, correct: score })}
+            />
+          </div>
         </FlowColumn>
       )}
     </div>

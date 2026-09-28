@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportLink } from "@/components/report-flag";
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { CardGrid } from "@/components/layout";
@@ -205,15 +206,8 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
                   {/* Değerlendirmeyi bildir — mobilde de açık kartın altında.
                       Yapay zekâ yanıtı rahatsız edici ya da yanlışsa kullanıcı
                       uygulamadan çıkmadan söyleyebilmeli (Play politikası). */}
-                  <button
-                    type="button"
-                    onClick={() => setReported(it)}
-                    /* Bkz. `conversation-player` bildir baglantisi: 11px yazinin
-                       kendisi kadar bir hedef 24px asgarisinin altinda. */
-                    className="muted mt-2 text-micro underline underline-offset-2 hit-8"
-                  >
-                    {t("writings.report_this_feedback")}
-                  </button>
+                  {/* Uygulamanın tek bildirim biçimi (`ReportLink`); hedef ölçüsü orada. */}
+                  <ReportLink className="mt-2" onClick={() => setReported(it)} label={t("writings.report_this_feedback")} />
                 </div>
               ) : open === it.id ? (
                 <p className="muted mt-2 text-caption" lang={course}>

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { RuleLink } from "@/components/feedback/feedback-line";
 import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "@/components/feedback/marked";
 import { CheckIcon, XIcon } from "@/components/icons";
+import { ReportFlag, useRoundReport } from "@/components/report-flag";
 import { SpeakButton } from "@/components/speak-button";
 import { useCourse } from "@/components/app-shell";
 import { useStill } from "@/lib/use-still";
@@ -120,6 +121,12 @@ export type SheetData = {
   why?: Why | null;
   /** Hüküm bandının altına eklenen serbest satır (eşleştirme özeti gibi). */
   extra?: ReactNode;
+  /**
+   * Katmanda zaten bir "Bildir" varsa (serbest cümlede açılan yapay zekâ
+   * değerlendirmesinin bağlantısı) içerik bağlantısı çizilmiyor: aynı
+   * katmanda iki "Bildir" hangisinin neyi bildirdiğini belirsizleştiriyordu.
+   */
+  noReport?: boolean;
 };
 
 /**
@@ -151,7 +158,7 @@ export function RoundSheet({
   const still = useStill();
   const open = sheet != null;
   const tone = sheet ? sheetTone(sheet) : "ok";
-
+  const report = useRoundReport();
 
   if (!host) return null;
 
@@ -181,7 +188,25 @@ export function RoundSheet({
               yüzey ama içindeki metin ve düğme kartın kolonunda kalıyor. */}
           <div className="mx-auto flex w-full max-w-md flex-col gap-2" style={{ minHeight: BODY_FULL }}>
             <SheetBody data={sheet} />
-            {onContinue ? <ContinueButton tone={tone} onContinue={onContinue} /> : null}
+            {onContinue ? (
+              /* "⚑ Bildir" Devam'ın SOLUNDA (Duolingo/Babbel düzeni): içerik
+                 bildirimi cevaptan sonra, soru ekranında değil. Satır tek
+                 sıra; bağlantı daralmıyor, düğme kalan genişliği alıyor
+                 (320 px'te ~210 px). Satırın yüksekliği değişmiyor, yani
+                 ayrılan pay (`BODY_FULL`) aynı. */
+              <div className="flex items-center gap-3">
+                {report && !sheet.noReport ? (
+                  <ReportFlag
+                    surface={report.surface}
+                    target={report.target}
+                    content={report.content}
+                    onOpenChange={report.onOpenChange}
+                    className="px-1"
+                  />
+                ) : null}
+                <ContinueButton tone={tone} onContinue={onContinue} />
+              </div>
+            ) : null}
           </div>
         </motion.div>
       ) : null}
@@ -206,6 +231,8 @@ function ContinueButton({ tone, onContinue }: { tone: SheetTone; onContinue: () 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Enter" && e.key !== " ") return;
+      // Bildirim penceresi açıkken tuşlar pencerenin: Enter turu kapatmasın.
+      if (document.querySelector("dialog[open]")) return;
       // Yazma turlarında girdi hâlâ odaktaysa boşluk metne gitmeli.
       const el = document.activeElement;
       if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) return;
@@ -226,7 +253,7 @@ function ContinueButton({ tone, onContinue }: { tone: SheetTone; onContinue: () 
       ref={continueRef}
       autoFocus
       onClick={onContinue}
-      className="btn glow-tint-sm w-full py-4 text-h3"
+      className="btn glow-tint-sm w-full min-w-0 flex-1 py-4 text-h3"
       /* Android `rounds` devam düğmesi: `softShadow(btnBg, 8)` - gölge
          düğmenin kendi rengi. */
       style={{

@@ -1,5 +1,6 @@
 "use client";
 
+import { ReportLink } from "@/components/report-flag";
 import { FeedbackLine } from "@/components/feedback/feedback-line";
 import { ASSESS_FAILURE_KEYS, fallbackNoteKey, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -162,13 +163,9 @@ export function AssessmentCard({
           {/* Bildir — konuşma sohbetindeki ve "Yazdıklarım"daki bağlantıyla aynı
               biçim (Play "yapay zekâ ile üretilen içerik": çıktı, uygulamadan
               çıkmadan bildirilebilmeli). */}
-          <button
-            type="button"
-            onClick={() => setReporting(true)}
-            className="muted mt-3 text-micro underline underline-offset-2 hit-8"
-          >
-            {t("writings.report_this_feedback")}
-          </button>
+          <div className="mt-3">
+            <ReportLink onClick={() => setReporting(true)} label={t("writings.report_this_feedback")} />
+          </div>
           <ReportDialog
             open={reporting}
             kind="assessment"

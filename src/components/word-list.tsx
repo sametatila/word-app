@@ -371,11 +371,12 @@ export function WordList({
                   >
                     <div className="flex items-center gap-2">
                       <SpeakButton word text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
-                      <span className="muted flex-1">
+                      <span className="muted min-w-0 flex-1">
                         {typLabel(r.typ, r.tr, lang)}
                         {note ? ` · ${note}` : ""}
                       </span>
-                      {/* İçerik bildirimi: açılan kelime kartının sağ ucunda. */}
+                      {/* İçerik bildirimi: açılan kelime kartının eylem satırında,
+                          sağ uçta ("⚑ Bildir", uygulamanın tek bildirim biçimi). */}
                       <ReportFlag
                         surface="words"
                         target={{ type: "word", id: String(r.id) }}

@@ -215,13 +215,6 @@ export function WeeklyPlayer() {
               />
             </div>
             <span className="text-caption muted shrink-0 tabular-nums">{index + 1}/{quiz.items.length}</span>
-            {/* İçerik bildirimi: ekrandaki quiz maddesi. */}
-            <ReportFlag
-              variant="tile"
-              surface="quiz"
-              target={{ type: "quiz_item", id: item.id }}
-              content={() => snapshot({ item, stimulus: stim ?? undefined })}
-            />
           </div>
           <span className="text-micro uppercase tracking-eyebrow muted">{t(BLOCK_KEY[item.block])}</span>
         </div>
@@ -301,14 +294,20 @@ export function WeeklyPlayer() {
             <div className="flex flex-col gap-3">
               {wrong.map((w) => (
                 <div key={w.itemId} className="flex flex-col gap-1 border-b pb-3 last:border-b-0 last:pb-0" style={{ borderColor: "var(--hairline)" }}>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-center gap-2">
                     <span className="min-w-0 flex-1 text-micro uppercase tracking-eyebrow muted">{t(BLOCK_KEY[w.block])}</span>
-                    {/* Dökümde de bildirilebiliyor: yanlış anahtar çoğu zaman burada fark ediliyor. */}
+                    {/* İçerik bildirimi YALNIZ DÖKÜMDE: quiz cevaptan sonra geri
+                        bildirim göstermiyor (şık seçilince sıradaki madde), yani
+                        maddenin "cevaptan sonrası" burası. Yanlış anahtar da
+                        çoğu zaman burada fark ediliyor. */}
                     <ReportFlag
-                      className="-mr-2 -mt-2"
                       surface="quiz"
                       target={{ type: "quiz_item", id: w.itemId }}
-                      content={() => snapshot({ item: quiz?.items.find((x) => x.id === w.itemId), given: picked[w.itemId], why: w.why, review: true })}
+                      content={() => {
+                        const item = quiz?.items.find((x) => x.id === w.itemId);
+                        const stimulus = item?.ref ? quiz?.stimuli.find((x) => x.id === item.ref) : undefined;
+                        return snapshot({ item, stimulus, given: picked[w.itemId], why: w.why, review: true });
+                      }}
                     />
                   </div>
                   <p className="text-body">{w.why}</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
+import { RoundReportScope, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
@@ -81,6 +81,28 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   const [outcome, setOutcome] = useState<Outcome | null>(null);
 
   const deadline = useRef(0);
+
+  /* İÇERİK BİLDİRİMİ SÜRE YEMİYOR: pencere açıkken sayaç duruyor, kapanınca
+
+     geçen süre bitiş anına ekleniyor. Bildirmek cezalandırılmamalı. */
+
+  const pausedAt = useRef<number | null>(null);
+
+  const reportOpenChange = useCallback((open: boolean) => {
+
+    if (open) {
+
+      if (pausedAt.current === null) pausedAt.current = Date.now();
+
+    } else if (pausedAt.current !== null) {
+
+      deadline.current += Date.now() - pausedAt.current;
+
+      pausedAt.current = null;
+
+    }
+
+  }, []);
   const pending = useRef<Answer[]>([]);
   const finished = useRef(false);
   /** Bitiş geri sayımdan da tetiklenebildiği için puan ref'ten okunur. */
@@ -150,6 +172,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     // Tık saniyede bir, yalnızca kritik eşiğin altında.
     let lastTick = Infinity;
     const tick = () => {
+      // Bildirim penceresi açıkken sayaç duruyor (bkz. `reportOpenChange`).
+      if (pausedAt.current !== null) return;
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
       const whole = Math.ceil(remaining);
@@ -169,6 +193,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     resetCombo();
     play("start");
     deadline.current = Date.now() + START_SECONDS * 1000;
+    pausedAt.current = null;
     setLeft(START_SECONDS);
     // Bir önceki turun rekoru artık "mevcut rekor" olur.
     if (outcome) setRecord(outcome.best);
@@ -376,8 +401,6 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 Android'de de vardı (`ChallengeScreen`). */}
             {t("challenge.seconds", { n: formatDecimal(left, lang) })}
           </motion.span>
-          {/* İçerik bildirimi: meydan okuma kelime turlarından kurulu (pratik yüzeyi). */}
-          <ReportFlag variant="tile" surface="practice" target={roundTarget(round)} content={() => snapshot({ challenge: true, round })} />
         </div>
 
         <div className="h-2 w-full overflow-hidden rounded-full surface-2">
@@ -424,7 +447,9 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           className="flex min-h-0 flex-1 flex-col"
         >
           <FitBox>
-            <GameSwitch round={round} onDone={(res) => handleDone(round, res)} />
+            <RoundReportScope report={{ onOpenChange: reportOpenChange, surface: "practice", target: roundTarget(round), content: () => snapshot({ challenge: true, round }) }}>
+              <GameSwitch round={round} onDone={(res) => handleDone(round, res)} />
+            </RoundReportScope>
           </FitBox>
         </motion.div>
       </AnimatePresence>

@@ -116,7 +116,6 @@ export function PlayerShell({
 }) {
   const t = useT();
   const frame = usePlayerFrame();
-  const surface = useReportSurface();
   const back = backHref ?? frame.backHref;
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -140,15 +139,6 @@ export function PlayerShell({
           </div>
           <h1 className="truncate text-h3">{exercise.title}</h1>
         </div>
-        {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge);
-            tek tek sorular kendi kartlarında ayrıca bayrak taşıyor (`quiz`). */}
-        <ReportFlag
-          variant="tile"
-          className="ml-auto"
-          surface={surface}
-          target={{ type: "exercise", id: exercise.id }}
-          content={() => snapshot({ title: exercise.title, skill: exercise.skill, level: exercise.level })}
-        />
       </div>
       <ShellExercise.Provider value={exercise}>{children}</ShellExercise.Provider>
     </div>
@@ -182,6 +172,7 @@ export function ResultCard({
   const lang = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const frame = usePlayerFrame();
+  const surface = useReportSurface();
   const exercise = useContext(ShellExercise);
   const visible = state.phase !== "idle";
   // Sonuç sayfanın en altına eklenir; öğrenci görmeden kaçırmasın.
@@ -264,6 +255,19 @@ export function ResultCard({
         ) : (
           <FlowActions primary={retry} secondary={back} />
         )}
+        {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge):
+            egzersiz bittikten sonra, sonucun dibinde. Tek tek sorular kendi
+            açıklamalarının altında ayrıca bildiriliyor (`quiz`). Başlıktaki
+            karo kalktı: soru çözülürken dikkati bölüyordu. */}
+        {exercise ? (
+          <div className="flex justify-center">
+            <ReportFlag
+              surface={surface}
+              target={{ type: "exercise", id: exercise.id }}
+              content={() => snapshot({ title: exercise.title, skill: exercise.skill, level: exercise.level })}
+            />
+          </div>
+        ) : null}
       </FlowColumn>
     </motion.div>
   );

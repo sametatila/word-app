@@ -1,6 +1,5 @@
 "use client";
 
-import { ReportFlag, snapshot } from "@/components/report-flag";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -345,19 +344,10 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   /* Aşama içi ilerleme: tur başlığıyla aynı çubuk (bkz. `session-player`). */
   const stageDone = stage === "vocab" || stage === "grammar" ? index : textIndex;
   const stageTotal = stage === "vocab" ? test!.vocab[level].length : stage === "grammar" ? test!.grammar[level].length : stage === "reading" ? test!.reading.length : test!.listening.length;
-  /* İçerik bildirimi: ekrandaki madde. Kimlikler sunucunun verdiği biçimde
-     (`v<kelime>`, `r:<alıştırma>`, `l:<alıştırma>`); metin sorularında soru
-     sırası `sub`. */
-  const flagOf = (): { id: string; sub?: string; data: Record<string, unknown> } | null => {
-    if (stage === "vocab" || stage === "grammar") {
-      const it = (stage === "vocab" ? test!.vocab[level] : test!.grammar[level])[index];
-      return it ? { id: it.id, data: { stage, item: it } } : null;
-    }
-    const it = (stage === "reading" ? test!.reading : test!.listening)[textIndex];
-    const q = it?.questions[qIndex];
-    return it && q ? { id: it.id, sub: String(qIndex + 1), data: { stage, question: q } } : null;
-  };
-  const flag = flagOf();
+  /* İÇERİK BİLDİRİMİ YOK (2026-09-28): bildirim cevaptan sonraki geri
+     bildirimde duruyor ve seviye testi cevaptan sonra geri bildirim vermiyor;
+     sonuç ekranı da madde listesi değil, beceri özeti — bildirilecek bir
+     madde yok. Test sırasında bayrak dikkati bölüyordu. */
   const header = (
     <div className="mb-3 flex flex-col gap-2 text-caption">
       {/* Sıra tur başlığındaki gibi: çıkış en solda, sonra çubuk, sağda
@@ -374,12 +364,6 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 shrink-0 underline-offset-2 hover:underline">
           {t("plc.skip_stage")}
         </button>
-        <ReportFlag
-          variant="tile"
-          surface="placement"
-          target={flag ? { type: "placement_item", id: flag.id, sub: flag.sub } : null}
-          content={() => snapshot(flag?.data ?? {})}
-        />
       </div>
       <span>
         {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>

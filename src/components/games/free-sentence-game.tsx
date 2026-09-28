@@ -169,6 +169,9 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               detail: "offline" in result && result.offline ? tx("rounds.basic_check") : null,
               you: result.corrected.trim() && result.corrected.trim() !== value.trim() ? value.trim() : null,
               why,
+              /* Ayrıntılar açıkken değerlendirme kartının kendi "Bildir"i
+                 görünüyor (yedek hesapta yok): katmanda tek bağlantı kalsın. */
+              noReport: details && !("offline" in result && result.offline),
               extra: (
                 <div className="mt-1">
                   <button

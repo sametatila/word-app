@@ -33,7 +33,7 @@ import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIco
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
+import { RoundReportScope, roundTarget, snapshot } from "@/components/report-flag";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -921,16 +921,6 @@ function SessionRound() {
         <span className="muted shrink-0 tabular-nums">
           {index + 1} / {session!.rounds.length}
         </span>
-        {/* İÇERİK BİLDİRİMİ — başlığın sağ ucunda, çıkış karosunun eşi. Sonuç
-            katmanı açıkken de görünüyor: yanlış cevap anahtarı çoğu zaman
-            cevaptan sonra fark ediliyor. Hedef turun kelimesi (eşleştirmede
-            ilki; anlık görüntü hepsini taşıyor). */}
-        <ReportFlag
-          variant="tile"
-          surface={onlyGame ? "practice" : "round"}
-          target={roundTarget(round)}
-          content={() => snapshot({ round: eased ? easeRound(round) : round })}
-        />
       </div>
       {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
           bunu söyleyen tek yer buydu, mobilde de öyle. */}
@@ -970,7 +960,20 @@ function SessionRound() {
                 onun oyun adıyla kaydedilir (çeviri yerine cümle diz). */}
             {(() => {
               const played = eased ? easeRound(round) : round;
-              return <GameSwitch round={played} onDone={(res) => void handleDone(played, res)} />;
+              /* İçerik bildirimi sonuç katmanında, "Devam"ın solunda
+                 (bkz. `RoundReportScope`). Hedef oynanan turun kelimesi
+                 (eşleştirmede ilki; anlık görüntü hepsini taşıyor). */
+              return (
+                <RoundReportScope
+                  report={{
+                    surface: onlyGame ? "practice" : "round",
+                    target: roundTarget(played),
+                    content: () => snapshot({ round: played }),
+                  }}
+                >
+                  <GameSwitch round={played} onDone={(res) => void handleDone(played, res)} />
+                </RoundReportScope>
+              );
             })()}
           </FitBox>
         </motion.div>

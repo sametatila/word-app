@@ -1,6 +1,6 @@
 "use client";
 
-import { ReportFlag, roundTarget, snapshot } from "@/components/report-flag";
+import { RoundReportScope, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
@@ -87,6 +87,28 @@ export function BossPlayer({
   const [isRecord, setIsRecord] = useState(false);
 
   const deadline = useRef(0);
+
+  /* İÇERİK BİLDİRİMİ SÜRE YEMİYOR: pencere açıkken sayaç duruyor, kapanınca
+
+     geçen süre bitiş anına ekleniyor. Bildirmek cezalandırılmamalı. */
+
+  const pausedAt = useRef<number | null>(null);
+
+  const reportOpenChange = useCallback((open: boolean) => {
+
+    if (open) {
+
+      if (pausedAt.current === null) pausedAt.current = Date.now();
+
+    } else if (pausedAt.current !== null) {
+
+      deadline.current += Date.now() - pausedAt.current;
+
+      pausedAt.current = null;
+
+    }
+
+  }, []);
   const finished = useRef(false);
   const pending = useRef<Answer[]>([]);
   const startedAt = useRef(Date.now());
@@ -182,6 +204,8 @@ export function BossPlayer({
     if (status !== "playing") return;
     let lastTick = Infinity;
     const tick = () => {
+      // Bildirim penceresi açıkken sayaç duruyor (bkz. `reportOpenChange`).
+      if (pausedAt.current !== null) return;
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
       const whole = Math.ceil(remaining);
@@ -200,6 +224,7 @@ export function BossPlayer({
     if (!data) return;
     finished.current = false;
     deadline.current = Date.now() + data.seconds * 1000;
+    pausedAt.current = null;
     setLeft(data.seconds);
     setIndex(0);
     setTally({ correct: 0, total: 0 });
@@ -370,8 +395,6 @@ export function BossPlayer({
               yazıyor ve ikinci bir anahtar aynı metnin ikinci kopyası olurdu. */}
           {t("challenge.seconds", { n: formatDecimal(left, lang) })}
         </motion.span>
-        {/* İçerik bildirimi: patron turları kelime turları; hedef kelime + oyun. */}
-        <ReportFlag variant="tile" surface="exam" target={roundTarget(round)} content={() => snapshot({ boss: true, round })} />
       </div>
       <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div
@@ -383,7 +406,9 @@ export function BossPlayer({
         />
       </div>
       <FitBox>
-        <GameSwitch round={round} onDone={(results) => handleDone(round, results)} />
+        <RoundReportScope report={{ onOpenChange: reportOpenChange, surface: "exam", target: roundTarget(round), content: () => snapshot({ boss: true, round }) }}>
+          <GameSwitch round={round} onDone={(results) => handleDone(round, results)} />
+        </RoundReportScope>
       </FitBox>
       {/* Süreli turdan çıkış ONAYLI (oyun turu gibi); uygulama içi bağlantı ve
           yenileme de `useLeaveGuard` ile aynı diyalogdan geçiyor. */}

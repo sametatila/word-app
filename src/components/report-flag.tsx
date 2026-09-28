@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import { FlagIcon } from "@/components/icons";
 import { ReportDialog } from "@/components/report-dialog";
 import { targetRef, type ReportSurface, type ReportTarget } from "@/lib/report";
@@ -8,34 +8,38 @@ import type { Round } from "@/lib/types";
 import { useT } from "@/lib/i18n/client";
 
 /**
- * İçerik bildirimi bayrağı — her öğe/soru kartında aynı küçük düğme
- * (`docs/plan/content-feedback.md` › Arayüz).
- *
- * Yapay zekâ çıktılarındaki "Bildir" bağlantısı ayrı ve yerinde kalıyor; bu
- * bayrak ÖĞRENME İÇERİĞİ için: kelime, soru, sınav maddesi. Cevaptan önce de
- * sonra da görünüyor, çünkü sorunların çoğu (yanlış cevap anahtarı, eksik
- * çeviri) ancak cevaptan sonra fark ediliyor.
+ * İçerik bildirimi — "⚑ Bildir" (`docs/plan/content-feedback.md` › Arayüz).
+ * ÖĞRENME İÇERİĞİ için: kelime, soru, sınav maddesi. Yapay zekâ çıktılarının
+ * bildirimi ayrı bir tür (`ReportDialog kind="assessment"` vb.) ama aynı
+ * bağlantıyı (`ReportLink`) çiziyor.
  *
  * ANLIK GÖRÜNTÜ AÇILIŞTA ALINIYOR. `content` bir işlev olabilir: soru,
  * şıklar ve kullanıcının cevabı bayrağa basıldığı andaki hâliyle panele
  * gidiyor; her çizimde JSON kurmak gerekmiyor.
  *
- * İki ölçü, sınıflar iki dalda da ELLE yazılı (`check:hit` sınıftan okuyor):
- *   `tile`   başlık satırında, çıkış karosunun (`RoundExit`) eşi: 44x44.
- *   `inline` kart içinde, sönük ve zeminsiz: 36x36 + `hit-8`.
+ * YERİ CEVAPTAN SONRA (2026-09-28, Duolingo/Babbel düzeni). Bayrak soru
+ * ekranındaydı (başlık karosu, ilerleme satırı, soru başlığı) ve cevap
+ * vermeden önce dikkati bölüyordu. Artık bildirim cevaptan sonraki geri
+ * bildirimde: tur katmanında "Devam"ın solunda (`RoundReportScope`),
+ * alıştırmada sorunun açıklamasının altında, sınavda sonuç listesinin her
+ * maddesinde. Sınav sürerken hiçbir yerde yok. Mobil `ReportFlag` aynı yerler.
+ *
+ * Tek biçim: yapay zekâ çıktılarının altındaki bağlantıyla AYNI görünüş
+ * (`ReportLink`). Başlık karosu (`tile`) ve kart içi ikon (`inline`) kalktı.
  */
 export function ReportFlag({
   surface,
   target,
   content,
-  variant = "inline",
+  onOpenChange,
   className = "",
 }: {
   surface: ReportSurface;
   /** Hedef henüz yoksa (soru yükleniyor) bayrak çizilmiyor. */
   target: ReportTarget | null | undefined;
   content: string | (() => string);
-  variant?: "tile" | "inline";
+  /** Pencere açılınca `true`, kapanınca `false` — süreli turlar sayacı bununla durduruyor. */
+  onOpenChange?: (open: boolean) => void;
   className?: string;
 }) {
   const t = useT();
@@ -51,32 +55,11 @@ export function ReportFlag({
     }
     setSnap(text);
     setOpen(true);
+    onOpenChange?.(true);
   };
   return (
     <>
-      {variant === "tile" ? (
-        <button
-          type="button"
-          onClick={openSheet}
-          aria-label={t("report.flag_a11y")}
-          aria-haspopup="dialog"
-          className={`pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile ${className}`}
-          style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
-        >
-          <FlagIcon size={20} />
-        </button>
-      ) : (
-        <button
-          type="button"
-          onClick={openSheet}
-          aria-label={t("report.flag_a11y")}
-          aria-haspopup="dialog"
-          className={`pressable hit-8 flex h-9 w-9 shrink-0 items-center justify-center rounded-tile ${className}`}
-          style={{ color: "var(--text-muted)" }}
-        >
-          <FlagIcon size={18} />
-        </button>
-      )}
+      <ReportLink onClick={openSheet} label={t("report.flag_a11y")} className={className} />
       <ReportDialog
         open={open}
         kind="content"
@@ -84,10 +67,77 @@ export function ReportFlag({
         content={snap}
         surface={surface}
         target={target}
-        onClose={() => setOpen(false)}
+        onClose={() => {
+          setOpen(false);
+          onOpenChange?.(false);
+        }}
       />
     </>
   );
+}
+
+/**
+ * Uygulamanın TEK bildirim bağlantısı: küçük bayrak + "Bildir", sönük.
+ * İçerik bayrağı da yapay zekâ çıktılarının altındaki bağlantılar da bunu
+ * çiziyor; iki ayrı görünüş öğrenciye iki ayrı şey gibi geliyordu. Görünen
+ * etiket her yerde aynı kısa söz (`conversation.report`); NE bildirildiği
+ * ekran okuyucu adında (`label`: "Bu içerikle ilgili sorun bildir", "Bu
+ * yanıtı bildir", "Değerlendirmeyi bildir"). Mobil `ui/ReportLink`
+ * `ReportButton` aynı düzen.
+ *
+ * Hedef: 11 px yazı tek başına ~18 px — WCAG 2.2'nin 24'ünün altı. `min-h-6`
+ * görünen satırı 24'e, `hit-8` dokunma hedefini her eksende 8 px büyütüyor
+ * (~40). `whitespace-nowrap` + `shrink-0`: 320 px'te bile etiket bölünmüyor,
+ * dar satırda yanındaki öğe daralıyor.
+ */
+export function ReportLink({
+  onClick,
+  label,
+  className = "",
+}: {
+  onClick: () => void;
+  /** Ekran okuyucu adı: ne bildiriliyor. */
+  label: string;
+  className?: string;
+}) {
+  const t = useT();
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      aria-haspopup="dialog"
+      className={`muted hit-8 inline-flex min-h-6 shrink-0 items-center gap-1 whitespace-nowrap text-micro underline-offset-2 hover:underline ${className}`}
+    >
+      <FlagIcon size={12} />
+      <span>{t("conversation.report")}</span>
+    </button>
+  );
+}
+
+/**
+ * Tur katmanının bildirimi — oyuncu (tur, meydan okuma, patron) turun hedefini
+ * ve anlık görüntüsünü buraya koyuyor, `round-sheet` "Devam"ın soluna çiziyor.
+ * On üç oyuna ayrı ayrı prop geçirmek yerine bağlam (bkz. `games/no-hints`).
+ * Kapsam yoksa (sınavın kelime bölümü: sınav sürerken bildirim yok) katman
+ * bağlantısız kalıyor.
+ */
+export type RoundReport = {
+  surface: ReportSurface;
+  target: ReportTarget | null | undefined;
+  content: string | (() => string);
+  /** Süreli turlar (meydan okuma, patron): pencere açıkken sayaç duruyor, bildirmek süre yemiyor. */
+  onOpenChange?: (open: boolean) => void;
+};
+
+const RoundReportContext = createContext<RoundReport | null>(null);
+
+export function RoundReportScope({ report, children }: { report: RoundReport; children: ReactNode }) {
+  return <RoundReportContext.Provider value={report}>{children}</RoundReportContext.Provider>;
+}
+
+export function useRoundReport(): RoundReport | null {
+  return useContext(RoundReportContext);
 }
 
 /** Anlık görüntü: kısa JSON, boş alanlar atılmış, 4000 karakterle sınırlı. */

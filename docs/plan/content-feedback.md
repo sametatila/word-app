@@ -59,8 +59,14 @@ açılmaz, `{ ok: true, duplicate: true }` döner. Günlük tavan `DAILY_QUOTAS.
 
 ## Arayüz
 
-- Her öğe/soru kartında küçük bayrak simgesi (a11y: `report.flag_a11y`); cevaptan sonra da görünür.
-  Yapay zekâ çıktılarında mevcut "Bildir" bağlantısı kalıyor.
+- "⚑ Bildir" bağlantısı CEVAPTAN SONRA (2026-09-28, Duolingo/Babbel düzeni; a11y `report.flag_a11y`).
+  Soru ekranında (başlık, ilerleme satırı, soru başlığı) bayrak yok. Yerler: tur katmanında "Devam"ın
+  solunda (tur, meydan okuma, patron); alıştırma ve Patika quizinde her sorunun açıklamasının altında,
+  egzersizin bütünü sonuç ekranında; sınav, deneme sınavı ve haftalık quizde yalnız döküm/sonuç listesinin
+  maddelerinde (sınav sürerken yok); seviye testinde yok (cevap sonrası geri bildirim ve madde listesi yok);
+  yürüyüşte hükümden sonra kelime kartında ve duraklamada; kelime listesinde açılan kartın eylem satırında;
+  konuşmada yazılı ders adımının baloncuğu altında, puanlı konuşmada açılış baloncuğu altında.
+  Yapay zekâ çıktılarının "Bildir"i aynı görünüş (web `ReportLink`, mobil `ReportButton`): tek biçim.
 - Sayfa: başlık `reportsheet.content_title`, açıklama `reportsheet.content_lead`, neden listesi
   (radiogroup), isteğe bağlı ayrıntı alanı (`reportsheet.detail_label` / `detail_placeholder`), Gönder.
   Başarıda `reportsheet.thanks_we_ll_look_into_it`, mükerrerde `report.already`.

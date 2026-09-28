@@ -11,7 +11,9 @@ import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, selectedVoice, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ConfirmDialog } from "@/components/confirm-dialog";
-import { ReportFlag, snapshot } from "@/components/report-flag";
+import { ReportLink, snapshot } from "@/components/report-flag";
+import { ReportDialog } from "@/components/report-dialog";
+import { targetRef, type ReportTarget } from "@/lib/report";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
@@ -322,6 +324,11 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
    * telaffuzunda mı yoksa tanıyıcıda mı olduğunu anında görüyor.
    */
   const [heardText, setHeardText] = useState("");
+  /* Açık içerik bildirimi (hedef + açılış anındaki anlık görüntü). Yürüyüşte
+     bildirim TURU DURAKLATIYOR: döngü kelimeyi birkaç saniyede değiştiriyor ve
+     kart yeniden çiziliyor, yani kartın içindeki bir pencere yazılırken
+     kapanırdı. Pencere duraklama ekranında açık kalıyor, tur oradan sürüyor. */
+  const [wordReport, setWordReport] = useState<{ target: ReportTarget; snap: string } | null>(null);
   /**
    * Tarayıcının kendi tanıyıcısı kullanılabiliyor mu — TEK yakalama yolu.
    *
@@ -1466,6 +1473,20 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       </FlowColumn>
     );
 
+  /* İçerik bildirimi: ekrandaki kelime (yürüyüş sesli; ses sorunu da buradan).
+     Başlıkta değil: hükümden SONRA kelime kartının altında ve duraklamada —
+     yürürken ekrana bakılmıyor, bildirmek için durulan anlar bunlar. */
+  const openWordReport = () => {
+    if (!prompt) return;
+    const snap = snapshot({ de: prompt.de, gloss: prompt.tr, heard: heardText || undefined, verdict });
+    if (status === "playing") pause();
+    setWordReport({ target: { type: "word", id: String(prompt.id), game: prompt.game }, snap });
+  };
+  const reportWord = (className: string) =>
+    prompt ? (
+      <ReportLink onClick={openWordReport} label={t("report.flag_a11y")} className={className} />
+    ) : null;
+
   if (status === "ready" || status === "paused") {
     /* Bugün kalan tur — bu tur sayıldıktan SONRAKİ sayı; son turdaysa satır yok. */
     const walkLine = walkNow && !walkNow.premium && walkNow.remaining > 0 ? t("unlock.walk_left", { n: walkNow.remaining }) : null;
@@ -1497,7 +1518,21 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       <FlowColumn>
         {status === "paused" ? (
           /* DURAKLAMA — durum şablonu (bekleniyor = düşünen maskot). */
-          <StateBody title={t("walk.paused")} body={t("walk.paused_note")} />
+          <>
+            <StateBody title={t("walk.paused")} body={t("walk.paused_note")} />
+            {prompt ? <div className="flex justify-center">{reportWord("")}</div> : null}
+            {wordReport ? (
+              <ReportDialog
+                open
+                kind="content"
+                refId={targetRef(wordReport.target)}
+                content={wordReport.snap}
+                surface="walk"
+                target={wordReport.target}
+                onClose={() => setWordReport(null)}
+              />
+            ) : null}
+          </>
         ) : (
           /* KAPAK ŞABLONU — mobil `WalkModeScreen` kapağıyla aynı kural
              satırları (eski iki paragraflık tanıtım bunlara bölündü).
@@ -1630,12 +1665,6 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           <span className="muted tabular-nums">
             {t("common.n_correct", { correct: tally.correct, total: tally.total })}
           </span>
-          {/* İçerik bildirimi: ekrandaki kelime (yürüyüş sesli; ses sorunu da buradan). */}
-          <ReportFlag
-            surface="walk"
-            target={prompt ? { type: "word", id: String(prompt.id), game: prompt.game } : null}
-            content={() => snapshot({ de: prompt?.de, gloss: prompt?.tr, heard: heardText || undefined, verdict })}
-          />
         </span>
       </div>
 
@@ -1709,6 +1738,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
                 {t("walk.i_heard")} <span className="font-semibold">“{heardText}”</span>
               </p>
             ) : null}
+            {reportWord("mt-2")}
           </>
         ) : (
           <>

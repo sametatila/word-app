@@ -571,35 +571,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   }
 
   const doneItems = section === "reading" || section === "listening" ? qIdx : idx;
-  /* İÇERİK BİLDİRİMİ: ekrandaki maddenin hedefi ve anlık görüntüsü. Kelime
-     bölümü kelime hedefi taşıyor (tur ile aynı gruba düşsün); öteki
-     bölümler sınav maddesi + kâğıt kimliği. */
-  const current = (() => {
-    const s = paper!.sections;
-    if (section === "vocab") {
-      const r = s.vocab[idx];
-      return r ? { target: roundTarget(r), data: { section, round: r } } : null;
-    }
-    if (section === "grammar") {
-      const g = s.grammar[idx];
-      return g ? { target: examTarget(paper, g.id), data: { section, item: g, picked } } : null;
-    }
-    if (section === "produce") {
-      const it = s.produce[idx];
-      return it ? { target: examTarget(paper, it.id), data: { section, prompt: it.prompt, answer: it.de, mode: it.mode, typed } } : null;
-    }
-    if (section === "reading" || section === "listening") {
-      const it = s[section][idx];
-      const q = it?.questions[qIdx];
-      return it && q ? { target: examTarget(paper, `${it.id}:${qIdx + 1}`), data: { section, title: it.title, question: q, picked } } : null;
-    }
-    if (section === "speaking") {
-      const it = s.speaking[idx];
-      return it ? { target: examTarget(paper, it.id), data: { section, de: it.de, tr: it.tr, situation: it.situation } } : null;
-    }
-    const w = s.writing[0];
-    return w ? { target: examTarget(paper, w.id), data: { section, task: w.task } } : null;
-  })();
   const header = (
     <div className="mb-3">
       {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar kapana
@@ -632,7 +603,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <span className="shrink-0 tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
         </span>
-        <ReportFlag variant="tile" surface="exam" target={current?.target} content={() => snapshot(current?.data ?? {})} />
       </div>
       <p className="mt-2 text-caption">
         {SECTION_WORD_TARGET[targetLangOf(course)]} {teil}/{list.length} · <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>
@@ -1347,13 +1317,14 @@ function Result({
             <ul className="space-y-2.5">
               {misses.map((m, i) => (
                 <li key={i} className="border-t pt-2 text-body" style={{ borderColor: "var(--hairline)" }}>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-center gap-2">
                     <p className="muted min-w-0 flex-1 text-caption">
                       <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                     </p>
-                    {/* Dökümde de bildirilebiliyor: cevap anahtarı hatası çoğu zaman burada fark ediliyor. */}
+                    {/* İçerik bildirimi YALNIZ DÖKÜMDE: sınav sürerken bildirim
+                        yok (dikkat sınavda); cevap anahtarı hatası da çoğu
+                        zaman burada fark ediliyor. */}
                     <ReportFlag
-                      className="-mr-2 -mt-2"
                       surface="exam"
                       target={m.target}
                       content={() => snapshot({ section: m.section, prompt: m.prompt, answer: m.answer, given: m.given, review: true })}

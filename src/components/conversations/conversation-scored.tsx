@@ -1,6 +1,6 @@
 "use client";
 
-import { ReportFlag, snapshot } from "@/components/report-flag";
+import { ReportFlag, ReportLink, snapshot } from "@/components/report-flag";
 import Link from "next/link";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
@@ -444,14 +444,6 @@ export function ConversationScored({
           <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
             {mm}:{ss}
           </span>
-          {/* İçerik bildirimi: sahne ve yazılı açılış (yapay zekâ yanıtları
-              altlarındaki "Bildir" ile ayrı gidiyor). Hedef konuşma + kullanıcı tur sayısı. */}
-          <ReportFlag
-            className="-mr-2"
-            surface="scored"
-            target={{ type: "conversation", id: conversation.id, sub: String(userTurns) }}
-            content={() => snapshot({ scene: conversation.chat.scene, opening: turns[0]?.content })}
-          />
         </span>
       </div>
       <AiNotice variant="character" className="mt-3" />
@@ -468,14 +460,23 @@ export function ConversationScored({
             </motion.p>
             {/* Bildir — konuşma sohbetindeki gibi her yapay zekâ yanıtının altında.
                 İlk tur (i = 0) konuşmanın yazılı açılış cümlesi, model çıktısı değil. */}
+            {/* İçerik bildirimi: sahne ve yazılı açılış, açılış baloncuğunun
+                altında — yapay zekâ yanıtlarının "Bildir"iyle aynı yer ve biçim.
+                Başlıktaki bayrak kalktı. Hedef konuşma + kullanıcı tur sayısı. */}
+            {turn.role === "assistant" && i === 0 ? (
+              <ReportFlag
+                className="mt-1"
+                surface="scored"
+                target={{ type: "conversation", id: conversation.id, sub: String(userTurns) }}
+                content={() => snapshot({ scene: conversation.chat.scene, opening: turns[0]?.content })}
+              />
+            ) : null}
             {turn.role === "assistant" && i > 0 ? (
-              <button
-                type="button"
+              <ReportLink
+                className="mt-1"
+                label={t("conversation.report_this_answer")}
                 onClick={() => setReported({ ref: `${conversation.id}:scored:${i}`, text: turn.content })}
-                className="muted mt-1 text-micro underline underline-offset-2 hit-8"
-              >
-                {t("conversation.report_this_answer")}
-              </button>
+              />
             ) : null}
           </div>
         ))}
