@@ -399,7 +399,7 @@ export const enA1U23: SkillExercise[] = [
         kind: "build",
         tr: "Bay Demir ile konuşabilir miyim?",
         answer: "Can I speak to Mr. Demir?",
-        hint: "Kişiyle konuşmak „speak to“; „speak with“ de duyulur ama bu daha yaygın.",
+        hint: "Kişiyle konuşmak „speak to“; „speak with“ de duyulur ama „speak to“ daha yaygın.",
       },
       {
         kind: "build",

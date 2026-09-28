@@ -19,7 +19,7 @@
  { "tr": "Somut bir ziyaret zamanı önerilmiş mi?", "kind": "free.checklist", "en": "Has a concrete time for a visit been suggested?" },
  { "tr": "Süre verdin mi? (Es dauert … Minuten.)", "kind": "free.checklist", "en": "Did you give a duration? (Es dauert … Minuten.)" },
  { "tr": "Tarihi, yeri ve katılımcı sayısını yaz", "kind": "free.checklist", "en": "Write the date, the place and the number of people" },
- { "tr": "Tartışmalı bir nokta ve çözümü var mı?", "kind": "free.checklist", "en": "Is there a contested point and its solution?" },
+ { "tr": "Tartışmalı bir nokta ve çözümü var mı?", "kind": "free.checklist", "en": "Is there a point of contention and a solution to it?" },
  { "tr": "Ürün ve satın alma tarihi verilmiş mi?", "kind": "free.checklist", "en": "Have the product and the date of purchase been given?" },
  { "tr": "Bir yıl önce ne yapamadığını yazdın mı?", "kind": "free.checklist", "en": "Did you write what you could not do a year ago?" },
  { "tr": "En az iki çıplak mastar cümlesi var mı?", "kind": "free.checklist", "en": "Are there at least two bare-infinitive sentences?" },

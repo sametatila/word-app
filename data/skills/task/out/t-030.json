@@ -93,7 +93,7 @@
  { "tr": "Bu yalnız bir koşulla doğru: …", "kind": "monologue.targets.tr", "en": "This is true on one condition only: …" },
  { "tr": "Daha mantıklı bulduğum kural …", "kind": "monologue.targets.tr", "en": "The rule I find more sensible is …" },
  { "tr": "Tutumum ancak … olursa değişir", "kind": "monologue.targets.tr", "en": "My position would only change if …" },
- { "tr": "Burada … olduğu da unutulmamalı", "kind": "monologue.targets.tr", "en": "It should also not be forgotten here that …" },
+ { "tr": "Burada … olduğu da unutulmamalı", "kind": "monologue.targets.tr", "en": "It should also be remembered here that …" },
  { "tr": "En iyi karşı argüman … değil, …", "kind": "monologue.targets.tr", "en": "The best counter-argument is not …, but …" },
  { "tr": "Ölçüt olarak şunu öneriyorum: …", "kind": "monologue.targets.tr", "en": "As a criterion I propose this: …" },
  { "tr": "Uygulamada bu yüzden … yapardım", "kind": "monologue.targets.tr", "en": "In practice I would therefore …" },

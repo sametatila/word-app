@@ -322,8 +322,8 @@ export const enC1P16: SkillExercise[] = [
         "they were going to get. " +
         "But the two situations are not the same. A large company has marketing, a budget and a dozen other " +
         "reviews; a bad notice is one voice among many. " +
-        "Suppose a review were the only record of a first play in a small room. Then it is no longer just " +
-        "advice to readers. It is the first result for the writer's name, perhaps for ten years. " +
+        "Suppose a review were the only record of a first play in a small room. Then it would no longer be just " +
+        "advice to readers. It would be the first result for the writer's name, perhaps for ten years. " +
         "So my principle would be this: be exactly as honest with beginners, but be more specific. " +
         "Say what the play was attempting, what worked and what did not, in terms the writer could use. " +
         "A verdict without reasons is harmless to a national theater and cruel to a beginner. " +

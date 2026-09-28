@@ -143,7 +143,7 @@
  { "tr": "İlk yazını ne zaman gönderdiğini hatırlattın mı?", "kind": "reply.checklist", "en": "Did you recall when you sent your first email?" },
  { "tr": "Somut bir alternatif önerdin mi (gün ya da yer)?", "kind": "reply.checklist", "en": "Did you suggest a concrete alternative (a day or a place)?" },
  { "tr": "Geliş sebebini ve ne zaman taşındığını yazdın mı?", "kind": "reply.checklist", "en": "Did you write why you are coming and when you moved?" },
- { "tr": "Sorumluluk müşteri metninde açıkça üstlenildi mi?", "kind": "reply.checklist", "en": "Is responsibility plainly taken in the customer text?" },
+ { "tr": "Sorumluluk müşteri metninde açıkça üstlenildi mi?", "kind": "reply.checklist", "en": "Does the reply to the customer clearly accept responsibility?" },
  { "tr": "En az iki somut öneri verdin mi („Du solltest …“)?", "kind": "reply.checklist", "en": "Did you give at least two concrete suggestions („Du solltest …“)?" },
  { "tr": "İki arızayı ve ne zamandır sürdüklerini yazdın mı?", "kind": "reply.checklist", "en": "Did you write the two faults and how long they have lasted?" },
  { "tr": "Ret açık mı, yumuşatılıp belirsizleştirilmemiş mi?", "kind": "reply.checklist", "en": "Is the refusal clear, not softened into vagueness?" },

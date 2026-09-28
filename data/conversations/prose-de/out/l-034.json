@@ -81,7 +81,7 @@
  { "tr": "Bilgisayarım çalışmıyor.", "kind": "say.tr", "de": "Mein Computer funktioniert nicht." },
  { "tr": "Bir de cevap vermek var:", "kind": "say.tr", "de": "Und es gibt das Antworten:" },
  { "tr": "Bir meslek daha: doktor.", "kind": "say.tr", "de": "Noch ein Beruf: Arzt." },
- { "tr": "Bir zaman kelimesi daha:", "kind": "say.tr", "de": "Noch ein Zeitwort:" },
+ { "tr": "Bir zaman kelimesi daha:", "kind": "say.tr", "de": "Noch eine Zeitangabe:" },
  { "tr": "Birden beşe kadar dinle:", "kind": "say.tr", "de": "Hör von eins bis fünf:" },
  { "tr": "Bugünün en önemli fiili:", "kind": "say.tr", "de": "Das wichtigste Verb von heute:" },
  { "tr": "Az önceki Yes, I'd love to cevabında bir kısaltma var:", "kind": "say.tr", "de": "In der Antwort Yes, I'd love to von eben steckt eine Kurzform:" },

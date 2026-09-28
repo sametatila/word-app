@@ -120,7 +120,7 @@
  { "tr": "Kuzen: my cousin. Plan olduğu için is going to, sonra get engaged, en sona next month.", "kind": "hint.tr", "de": "Cousin: my cousin. Weil es ein Plan ist, is going to, dann get engaged, ans Ende next month." },
  { "tr": "Geçmiş zamanla başla: I restarted my computer. Sonra but. Hâlâ için still, en sona slow.", "kind": "hint.tr", "de": "Mit der Vergangenheit beginnen: I restarted my computer. Dann but. Für noch still, ans Ende slow." },
  { "tr": "İki doğru yol var: ya Sometimes ile başla, ya da I ile başlayıp sometimes'ı fiilden önce koy.", "kind": "hint.tr", "de": "Zwei richtige Wege: entweder mit Sometimes beginnen oder mit I und sometimes vor das Verb setzen." },
- { "tr": "Thanks for helping me ile başla, sonuna yesterday ekle. Zaman kelimesi cümlenin sonuna gelir.", "kind": "hint.tr", "de": "Mit Thanks for helping me beginnen, ans Ende yesterday anfügen. Das Zeitwort kommt ans Satzende." },
+ { "tr": "Thanks for helping me ile başla, sonuna yesterday ekle. Zaman kelimesi cümlenin sonuna gelir.", "kind": "hint.tr", "de": "Mit Thanks for helping me beginnen, ans Ende yesterday anfügen. Die Zeitangabe kommt ans Satzende." },
  { "tr": "I'd like, sonra two tickets, sonra to Boston, sonunda please. Bilet iki tane olduğu için sonuna s gelecek.", "kind": "hint.tr", "de": "I'd like, dann two tickets, dann to Boston, am Ende please. Weil es zwei Karten sind, kommt ein s ans Ende." },
  { "tr": "de.", "kind": "say.tr", "de": "— sag das." },
  { "tr": "İlk kelimemiz:", "kind": "say.tr", "de": "Unser erstes Wort:" },

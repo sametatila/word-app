@@ -95,7 +95,7 @@
  { "tr": "Şimdi iki kelime daha.", "kind": "say.tr", "de": "Jetzt noch zwei Wörter." },
  { "tr": "Şimdi sen dene. Lütfen", "kind": "say.tr", "de": "Jetzt probier du. Bitte" },
  { "tr": "Şimdi sen söyle: menu.", "kind": "say.tr", "de": "Jetzt sag du: menu." },
- { "tr": "Şimdi zaman kelimemiz:", "kind": "say.tr", "de": "Jetzt unser Zeitwort:" },
+ { "tr": "Şimdi zaman kelimemiz:", "kind": "say.tr", "de": "Jetzt unsere Zeitangabe:" },
  { "tr": "tek kişilik oda demek.", "kind": "say.tr", "de": "heißt Einzelzimmer." },
  { "tr": "Üçüncü kelime patates:", "kind": "say.tr", "de": "Drittes Wort Kartoffel:" },
  { "tr": "Ve fiyatı sormak için:", "kind": "say.tr", "de": "Und um nach dem Preis zu fragen:" },

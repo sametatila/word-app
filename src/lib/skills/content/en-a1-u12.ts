@@ -229,7 +229,7 @@ export const enA1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["What do you think?", "What do you think"],
-        explain: "„What do you think?“ — fikir sorusu „do“ ile; „how“ ile değil.",
+        explain: "„What do you think?“ — fikir sorusu „what“ ile kurulur; „how“ ile değil.",
       },
       {
         kind: "short_answer",

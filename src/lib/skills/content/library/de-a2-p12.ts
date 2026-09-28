@@ -220,7 +220,7 @@ export const deA2P12: SkillExercise[] = [
           { de: "Wir haben uns alle sehr gefreut.", tr: "Hepimiz çok sevindik.", en: "We were all very happy." },
           { de: "Mit dieser Karte bekommt ihr …", tr: "Bu kartla birlikte … alıyorsunuz", en: "With this card you get …" },
           { de: "Wenn ihr etwas braucht, …", tr: "Bir şeye ihtiyacınız olursa …", en: "If you need anything, …" },
-          { de: "Genießt die Zeit zu dritt!", tr: "Üç kişi olarak geçirdiğiniz zamanın tadını çıkarın!", en: "Enjoy the time as a family of three!" },
+          { de: "Genießt die Zeit zu dritt!", tr: "Üçünüz birlikte geçirdiğiniz zamanın tadını çıkarın!", en: "Enjoy the time as a family of three!" },
         ],
         sample:
           "Liebe Jana, lieber Marco,\n\n" +

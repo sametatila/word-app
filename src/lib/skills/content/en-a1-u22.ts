@@ -110,7 +110,7 @@ export const enA1U22: SkillExercise[] = [
       "Office: One moment. Yes, here is Mr. Kaya.\n" +
       "Deniz: Good morning. I'm not feeling well. I can't come to work today.\n" +
       "Mr. Kaya: I'm sorry. What is the problem?\n" +
-      "Deniz: I have a headache and I am cold. Maybe thirty-eight degrees.\n" +
+      "Deniz: I have a headache and I am cold. I think I am sick.\n" +
       "Mr. Kaya: Then you should stay at home. Do you have medicine?\n" +
       "Deniz: Yes, tablets. I take them three times a day.\n" +
       "Mr. Kaya: Good. And drink more water.\n" +

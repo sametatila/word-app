@@ -1834,10 +1834,10 @@ export const deA1B07: Conversation[] = [
         say: [tr("Bir tane daha: 'Bagajı buraya koyabilir misin?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Kannst du das Gepäck hierher legen",
+          target: "Kannst du das Gepäck hierherlegen",
           hint: [
             tr("Kip fiili başa geçiyor, asıl fiil mastar hâlinde sonda kalıyor:"),
-            de("Kannst du das Gepäck hierher legen?"),
+            de("Kannst du das Gepäck hierherlegen?"),
             tr("Tekrar dene."),
           ],
         },
