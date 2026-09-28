@@ -45,11 +45,26 @@ export function queueConversationResult(item: PendingConversation): void {
   }
 }
 
-/** Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
-export async function flushPendingConversations(): Promise<void> {
+let inFlight: Promise<number> | null = null;
+
+/**
+ * Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır.
+ * Gönderilen kayıt sayısını döndürür — çağıran (`app-shell`) bir şey gittiyse
+ * sunucu bileşenlerini (Patika) tazeliyor.
+ *
+ * Aynı anda iki boşaltma (kabuk + oynatıcı) aynı kaydı iki kez göndermesin
+ * diye tek uçuş. Mobil `pathProgress` aynı kurallarla.
+ */
+export function flushPendingConversations(): Promise<number> {
+  if (!inFlight) inFlight = flush().finally(() => { inFlight = null; });
+  return inFlight;
+}
+
+async function flush(): Promise<number> {
   const list = read();
-  if (!list.length) return;
+  if (!list.length) return 0;
   const remaining: PendingConversation[] = [];
+  let sent = 0;
   for (const [i, item] of list.entries()) {
     try {
       const res = await apiFetch("/api/conversation", {
@@ -60,15 +75,21 @@ export async function flushPendingConversations(): Promise<void> {
       /* 4xx bir daha kabul edilmeyecek demek: kuyrukta tutmak her seferinde
          aynı isteği tekrarlardı. 5xx ve ağ hatası bekletiliyor. */
       if (!res.ok && res.status >= 500) throw new Error(String(res.status));
+      if (res.ok) sent++;
     } catch {
       remaining.push(...list.slice(i));
       break;
     }
   }
   try {
-    if (remaining.length) localStorage.setItem(KEY, JSON.stringify(remaining));
+    /* Boşaltma sürerken kuyruğa yeni bir sonuç girmiş olabilir: yazmadan önce
+       güncel liste okunuyor, işlenen kayıtlar ondan düşülüyor. */
+    const done = new Set(list.filter((x) => !remaining.includes(x)).map((x) => JSON.stringify(x)));
+    const next = read().filter((x) => !done.has(JSON.stringify(x)));
+    if (next.length) localStorage.setItem(KEY, JSON.stringify(next));
     else localStorage.removeItem(KEY);
   } catch {
     /* yut */
   }
+  return sent;
 }

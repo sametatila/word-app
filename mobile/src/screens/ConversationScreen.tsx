@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
-import { View, TextInput, ActivityIndicator } from "react-native";
+import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useLayout } from "../lib/useLayout";
@@ -45,6 +45,7 @@ import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningR
 import { produceMiss } from "../lib/sentenceMatch";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
+import { MicPulse, TypingDots } from "../ui/ConversationFx";
 import { ApiError } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
 import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
@@ -68,6 +69,9 @@ import { UnlockProgress } from "../ui/UnlockProgress";
 
 /** Eller serbest tercihi — web `conversation-player` ile aynı anahtar adı. */
 const HANDSFREE_KEY = "lernomi-conversation-handsfree";
+
+/** Sonuç kaydı ağ hatasında bu kadar sonra bir kez daha deneniyor — web `conversation-player` ile aynı ad, aynı sayı. */
+const CONVERSATION_SAVE_RETRY_MS = 1200;
 
 type Phase = "lecture" | "chat" | "summary";
 
@@ -514,9 +518,16 @@ export function ConversationScreen() {
     const izin = await ensureMicPermission();
     if (!izin) { setSttOk(false); sttOkRef.current = false; setSttSebep("denied"); return null; }
     setListening(true);
+    /* Mikrofon açıldığında kısa "seni dinliyorum" sesi — web `cueListen`
+       (`lib/conversations/cues`, 660→880 Hz) karşılığı mobilin `micon`u.
+       Yürüyüşle aynı zamanlama (`WalkModeScreen`): tanıyıcı açıldıktan
+       180 ms sonra; o arada biterse çalmıyor. Ses anahtarı kapalıysa `sfx`
+       zaten susuyor. */
+    const miconTimer = setTimeout(() => sfx("micon"), 180);
     try {
       return await listenOnce(currentTargetLocale(), LISTEN_CEILING_MS);
     } finally {
+      clearTimeout(miconTimer);
       setListening(false);
     }
   }
@@ -828,12 +839,31 @@ export function ConversationScreen() {
     }
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds };
+    const gonder = () => fetchWithTimeout(`${apiBase()}/api/conversation`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
     try {
-      const res = await fetchWithTimeout(`${apiBase()}/api/conversation`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      /*
+        AĞ HATASINDA BİR KEZ DAHA. iOS'ta boşta kalmış bir bağlantı sunucu
+        tarafında kapanmışken (nginx keepalive, deploy'daki yeniden yükleme)
+        POST aynı bağlantıdan gidip "bağlantı koptu" ile düşüyor ve işletim
+        sistemi POST'u kendiliğinden yinelemiyor. Görüldü 2026-09-28: son
+        istekten ~80 sn sonra (nginx keepalive 75 sn) basılan "bitir" sunucuya
+        hiç varmadı (erişim günlüğünde yok), sonuç cihaz kuyruğunda kaldı;
+        Patika adımı "0/13 · Şimdi" gösterirken Konuşma hakkı harcanmıştı.
+        İkinci deneme yeni bağlantıyla gidiyor. İlk istek sunucuya varmışsa
+        ikinci kopya zararsız: uç kısa pencerede gelen aynı sonucu yeniden
+        yazmıyor (`recordConversation`). Web `conversation-player` aynı yolda.
+      */
+      let res: Response;
+      try {
+        res = await gonder();
+      } catch {
+        await new Promise((r) => setTimeout(r, CONVERSATION_SAVE_RETRY_MS));
+        res = await gonder();
+      }
       /* Sunucu gövdeyi reddettiyse (4xx) kuyruğa almanın anlamı yok; ağ ya da
          sunucu kaynaklı bir düşüş ise sonuç bekletiliyor. */
       if (!res.ok && res.status >= 500) await queueConversationResult(payload);
@@ -1006,9 +1036,12 @@ export function ConversationScreen() {
         <>
           <KeyboardAwareScroll ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })} onLayout={(e) => onSohbetLayout(e.nativeEvent.layout.height)}>
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} conversationId={conversation.id} />)}
+            {/* Karşı taraf yanıt hazırlarken baloncuk içinde "yazıyor" noktaları
+                (web `conversation-player` `TypingDots`); dönen çark bekleme
+                gibi görünüyordu, noktalar karşı tarafın yazması gibi. */}
             {busy && (
-              <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
-                <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("conversation.typing")}</Text>
+              <View style={{ alignSelf: "flex-start", marginTop: spacing.xs, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+                <TypingDots />
               </View>
             )}
           </KeyboardAwareScroll>
@@ -1117,7 +1150,7 @@ function MicButton({ listening, onPress, label, colors }: { listening: boolean; 
   return (
     <PressableScale onPress={listening ? () => {} : onPress}>
       <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, listening ? {} : softShadow(colors.primary, 10)]}>
-        <MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} />
+        <MicPulse active={listening}><MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} /></MicPulse>
         <Text variant="h3" color={listening ? colors.primaryText : colors.onPrimary}>
           {listening ? tx("speak.listening") : label}
         </Text>
@@ -1413,8 +1446,19 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
                       {used ? <CheckIcon color={colors.successText} size={14} /> : null}
                     </View>
                   ) : null}
-                  <Text variant="bodyStrong" color={used ? colors.successText : colors.text}>{p.de}</Text>
-                  <Text variant="caption" color={colors.textMuted} style={{ flex: 1, textAlign: "right" }}>{p.tr}</Text>
+                  {/*
+                    KALIP ÜSTTE, AÇIKLAMA ALTINDA. İkisi yan yanaydı: kalıp
+                    doğal genişliğini alıyor, açıklama `flex: 1` ile ARTANI
+                    alıyordu. Uzun bir İngilizce kalıpta ("I have worked in this
+                    industry for six years.") artan kalmıyor ve açıklama tek harf
+                    genişliğinde harf harf kırılıyordu (iOS, 2026-09-28). Alt
+                    alta her iki metin de satırın tamamını kullanıyor. Web
+                    `conversation-player` aynı düzende.
+                  */}
+                  <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                    <Text variant="bodyStrong" color={used ? colors.successText : colors.text}>{p.de}</Text>
+                    {p.tr ? <Text variant="caption" color={colors.textMuted}>{p.tr}</Text> : null}
+                  </View>
                 </View>
               );
             })}

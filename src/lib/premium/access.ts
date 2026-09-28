@@ -136,14 +136,22 @@ async function ownedWithPrefix(userId: string, prefix: string): Promise<string[]
   }
 }
 
-/** Bitirilmiş konuşmalar — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`). */
+/**
+ * Bitirilmiş konuşmalar — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`).
+ *
+ * ÖLÇÜ `chat_done`, satırın varlığı DEĞİL — Patika'nın adımı "bitti" saydığı
+ * ölçüyle aynı (`immersion/progress`). Satır "Şimdilik bırak"ta da yazılıyor
+ * (adım "denendi" görünsün diye); yalnız varlığa bakınca yarım bırakılan
+ * konuşma kilit açma sayacında "bitirildi", Patika'da "bitmedi" görünüyordu.
+ * `finishedConversationSet` aynı koşulu kullanıyor.
+ */
 async function finishedConversations(userId: string, ids: string[]): Promise<number> {
   if (!ids.length) return 0;
   try {
     const [row] = await db
       .select({ n: sql<number>`count(*)::int` })
       .from(userConversations)
-      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids)));
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), eq(userConversations.chatDone, true)));
     return row?.n ?? 0;
   } catch {
     return 0;
@@ -154,9 +162,9 @@ async function finishedConversations(userId: string, ids: string[]): Promise<num
  * Bir yüzeyin o seviyedeki "kullanıldı" ve "bitirildi" sayıları.
  *
  * BİTİRMEK yüzeye göre:
- *  - Konuşma: sahiplenilmiş adımın konuşması bitirilmiş (`user_conversations` satırı —
- *    konuşmanın sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek dilimi
- *    tamamlamıyor.
+ *  - Konuşma: sahiplenilmiş adımın konuşması bitirilmiş (`user_conversations.chat_done` —
+ *    konuşmanın sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek ya da
+ *    "Şimdilik bırak" dilimi tamamlamıyor.
  *  - Yazma ve Beceriler: hak ilk değerlendirmede düşüyor, yani sahiplenmek
  *    değerlendirilmiş bir gönderim demek; kullanılan = bitirilen.
  */
@@ -616,7 +624,7 @@ async function finishedConversationSet(userId: string, ids: string[]): Promise<S
     const rows = await db
       .select({ id: userConversations.conversationId })
       .from(userConversations)
-      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids)));
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), eq(userConversations.chatDone, true)));
     return new Set(rows.map((r) => r.id));
   } catch {
     return new Set();

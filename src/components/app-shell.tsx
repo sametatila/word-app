@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode, useRef } from "react";
 import { TopProgress } from "./top-progress";
@@ -139,6 +139,7 @@ export function AppShell({
   avatar?: string | null;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const navRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
   const [stats, setStats] = useState({ streak, xp });
@@ -173,6 +174,25 @@ export function AppShell({
     void flushPendingAnswers();
     void flushPendingConversations();
   }, [userId]);
+
+  /*
+    KONUŞMA KUYRUĞU HER SAYFA GEÇİŞİNDE DE. Yalnız açılışta boşaltılınca, tek
+    bir ağ hıçkırığında kuyruğa düşen konuşma kullanıcı Patika'ya döndüğünde
+    hâlâ gönderilmemiş oluyordu: Patika "bitmedi" diyor, Konuşma hakkı (ilk
+    sohbet turunda düşüyor) harcanmış görünüyordu (mobilde görüldü,
+    2026-09-28). Kuyruk boşsa bu yalnız bir depolama okuması. Bir şey gittiyse
+    sunucu bileşenleri (Patika, ünite) yeniden çiziliyor. Mobil aynı işi
+    Patika yüklenirken yapıyor (`useLearningPath`). Açılıştaki boşaltmayla
+    aynı anda koşarsa kuyruk tek uçuşlu: kayıt bir kez gidiyor.
+  */
+  useEffect(() => {
+    if (!userId) return;
+    let alive = true;
+    void flushPendingConversations().then((sent) => {
+      if (alive && sent > 0) router.refresh();
+    });
+    return () => { alive = false; };
+  }, [userId, pathname, router]);
 
   // Telaffuz doğru sesi seçebilsin diye kurs ve ses cihazda tutulur.
   // Kaynak yine veritabanı; buradaki yalnızca bir ayna. Gerekçesi zamanlama:

@@ -29,6 +29,9 @@ const LADDER = [1, 3, 7, 16, 35];
  *  (`chat-const`): özet, olumsuz hükmün sebebini aynı sayıdan söylüyor. */
 const PASS_RATIO = CONVERSATION_PASS_RATIO;
 
+/** Bu süre içinde gelen, kaydı iyileştirmeyen sonuç tekrar gönderim sayılıyor (bkz. `recordConversation`). */
+const DUPLICATE_WINDOW_MS = 2 * 60_000;
+
 export type ConversationState = {
   conversationId: string;
   correct: number;
@@ -134,6 +137,33 @@ export async function recordConversation(
     .select()
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
+
+  /*
+    AYNI SONUCUN İKİNCİ KEZ GELMESİ — yeni deneme değil, tekrar gönderim.
+
+    İstemciler kaydı ağ hatasında bir kez daha deniyor ve düşeni kuyruğa alıp
+    Patika açılırken yeniden gönderiyor (mobil `pathProgress`, web
+    `conversation-queue`). Bağlantı yanıttan önce koptuysa sunucu ilk isteği
+    işlemiş olabilir; ikinci kopya denemeyi iki kez sayar ve geçilmiş
+    konuşmada tekrar merdivenini iki basamak çıkarırdı. Kısa pencerede gelen
+    ve kaydı İYİLEŞTİRMEYEN sonuç yazılmıyor, kayıtlı durum dönüyor. Gerçek bir
+    yeniden deneme bu pencereye sığmaz: anlatım ve sohbet dakikalar sürüyor.
+  */
+  if (
+    existing &&
+    Date.now() - existing.lastAt.getTime() < DUPLICATE_WINDOW_MS &&
+    correct <= existing.correct &&
+    (existing.chatDone || !chatDone)
+  ) {
+    const award = await awardActivity(userId, today, 0, 0);
+    return {
+      passed: existing.chatDone && existing.total > 0 && existing.correct / existing.total >= PASS_RATIO,
+      nextDays: existing.intervalDays,
+      xpGained: 0,
+      currentStreak: award.currentStreak,
+      totalXp: award.totalXp,
+    };
+  }
 
   const step = passed
     ? Math.min((existing?.intervalDays ?? 0) === 0 ? 0 : LADDER.indexOf(existing!.intervalDays) + 1, LADDER.length - 1)

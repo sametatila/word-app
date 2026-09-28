@@ -82,6 +82,9 @@ type FeedItem =
 
 const HANDSFREE_KEY = "lernomi-conversation-handsfree";
 
+/** Sonuç kaydı ağ hatasında bu kadar sonra bir kez daha deneniyor — mobil `ConversationScreen` ile aynı ad, aynı sayı. */
+const CONVERSATION_SAVE_RETRY_MS = 1200;
+
 /**
  * Eller serbestken mikrofonun boşuna açık kalabileceği süre.
  *
@@ -1184,11 +1187,24 @@ function ConversationPlayerBody({
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),
       };
-      const res = await apiFetch("/api/conversation", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const gonder = () =>
+        apiFetch("/api/conversation", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      /* Ağ hatasında BİR KEZ DAHA, sonra kuyruk. Boşta kapanmış bir bağlantıdan
+         giden POST sunucuya varmadan düşebiliyor (iOS'ta görüldü, 2026-09-28);
+         ikinci deneme yeni bağlantıyla gidiyor. Sunucu kısa pencerede gelen aynı
+         sonucu yeniden yazmıyor (`recordConversation`), yani ilk istek varmışsa
+         da zararsız. Mobil `ConversationScreen` aynı yolda. */
+      let res: Response;
+      try {
+        res = await gonder();
+      } catch {
+        await new Promise((r) => setTimeout(r, CONVERSATION_SAVE_RETRY_MS));
+        res = await gonder();
+      }
       if (!res.ok && res.status >= 500) queueConversationResult(payload);
       if (res.ok) {
         const data = (await res.json()) as {
@@ -1875,10 +1891,16 @@ function ConversationPlayerBody({
                             {used ? <CheckIcon size={14} /> : null}
                           </span>
                         ) : null}
-                        <span className="text-strong" style={used ? { color: "var(--color-mint)" } : undefined}>
-                          {pt.de}
+                        {/* Kalıp üstte, açıklama altında: yan yana dururken uzun
+                            bir kalıp (İngilizce B1 cümleleri) açıklamanın payını
+                            sıfıra indiriyor, açıklama harf harf kırılıyordu.
+                            Mobil `ConversationScreen` özeti aynı düzende. */}
+                        <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                          <span className="text-strong" style={used ? { color: "var(--color-mint)" } : undefined}>
+                            {pt.de}
+                          </span>
+                          {pt.tr ? <span className="muted text-caption">{pt.tr}</span> : null}
                         </span>
-                        <span className="muted min-w-0 flex-1 text-right text-caption">{pt.tr}</span>
                       </div>
                     );
                   })}

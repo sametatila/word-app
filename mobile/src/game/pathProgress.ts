@@ -5,7 +5,7 @@
  * gerçek track gelene kadar Patika'ya hangi adımın bittiğini söyler.
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { api } from "../api/client";
+import { api, ApiError } from "../api/client";
 import { isSkillDone, scoreOf } from "../lib/learningRules";
 
 const KEY = "lernomi-items-done";
@@ -162,27 +162,65 @@ export async function queueConversationResult(item: PendingConversation): Promis
   } catch { /* depolama yoksa yapacak bir şey yok */ }
 }
 
-/** Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
-export async function flushPendingConversations(): Promise<void> {
+/**
+ * Sunucu bu kaydı bir daha kabul etmeyecek mi (4xx) — kuyrukta tutmak her
+ * boşaltmada aynı isteği tekrarlar ve arkasındakileri de bekletirdi. Web
+ * `conversation-queue` 4xx'i aynı biçimde düşürüyor. İstisnalar geçici: oturum
+ * yok (401, ör. yedek tabanda henüz girilmemiş), zaman aşımı (408), tavan (429).
+ */
+function kaliciRet(e: unknown): boolean {
+  return e instanceof ApiError && e.status >= 400 && e.status < 500 && e.status !== 401 && e.status !== 408 && e.status !== 429;
+}
+
+let konusmaBosaltiliyor: Promise<number> | null = null;
+
+/**
+ * Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır.
+ * Gönderilen kayıt sayısını döndürür.
+ *
+ * NE ZAMAN: uygulama açılışında (`App.tsx`) ve PATİKA HER YÜKLENİRKEN, isteğin
+ * ÖNÜNDE (`useLearningPath`). Yalnız açılışta boşaltılıyordu: tek bir ağ
+ * hıçkırığında kuyruğa düşen konuşma, uygulama yeniden başlatılana kadar
+ * sunucuya gitmiyordu ve Patika adımı "0/13 · Şimdi" gösterirken Konuşma hakkı
+ * (ilk sohbet turunda düşüyor) harcanmış görünüyordu (iOS, 2026-09-28).
+ *
+ * Aynı anda iki boşaltma aynı kaydı iki kez göndermesin diye tek uçuş.
+ */
+export function flushPendingConversations(): Promise<number> {
+  if (!konusmaBosaltiliyor) konusmaBosaltiliyor = konusmalariBosalt().finally(() => { konusmaBosaltiliyor = null; });
+  return konusmaBosaltiliyor;
+}
+
+async function konusmalariBosalt(): Promise<number> {
   let list: PendingConversation[] = [];
   try {
     const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
     list = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
-  } catch { return; }
-  if (!list.length) return;
+  } catch { return 0; }
+  if (!list.length) return 0;
   const kalan: PendingConversation[] = [];
+  let giden = 0;
   for (const [i, item] of list.entries()) {
     try {
       await api("/api/conversation", { method: "POST", body: JSON.stringify(item) });
-    } catch {
+      giden++;
+    } catch (e) {
+      if (kaliciRet(e)) continue;
       kalan.push(...list.slice(i));
       break;
     }
   }
   try {
-    if (kalan.length) await AsyncStorage.setItem(CONVERSATION_KEY, JSON.stringify(kalan));
+    /* Boşaltma sürerken yeni bir sonuç kuyruğa girmiş olabilir: yazmadan önce
+       güncel liste okunuyor, gönderilen kayıtlar ondan düşülüyor. */
+    const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
+    const simdiki = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
+    const islenen = new Set(list.filter((x) => !kalan.includes(x)).map((x) => JSON.stringify(x)));
+    const yeni = simdiki.filter((x) => !islenen.has(JSON.stringify(x)));
+    if (yeni.length) await AsyncStorage.setItem(CONVERSATION_KEY, JSON.stringify(yeni));
     else await AsyncStorage.removeItem(CONVERSATION_KEY);
   } catch { /* yut */ }
+  return giden;
 }
 
 /**
@@ -211,27 +249,46 @@ export async function recordPathItem(item: PendingPathItem): Promise<void> {
   }
 }
 
-/** Bekleyen pratik adım sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
-export async function flushPendingPathItems(): Promise<void> {
+let adimBosaltiliyor: Promise<number> | null = null;
+
+/**
+ * Bekleyen pratik adım sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır.
+ * Konuşma kuyruğuyla aynı kurallar: Patika yüklenirken de boşaltılıyor, tek
+ * uçuş, kalıcı ret (4xx) düşürülüyor. Gönderilen kayıt sayısını döndürür.
+ */
+export function flushPendingPathItems(): Promise<number> {
+  if (!adimBosaltiliyor) adimBosaltiliyor = adimlariBosalt().finally(() => { adimBosaltiliyor = null; });
+  return adimBosaltiliyor;
+}
+
+async function adimlariBosalt(): Promise<number> {
   let list: PendingPathItem[] = [];
   try {
     const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);
     list = raw ? (JSON.parse(raw) as PendingPathItem[]) : [];
-  } catch { return; }
-  if (!list.length) return;
+  } catch { return 0; }
+  if (!list.length) return 0;
   const kalan: PendingPathItem[] = [];
+  let giden = 0;
   for (const [i, item] of list.entries()) {
     try {
       await api("/api/immersion/item", { method: "POST", body: JSON.stringify(item) });
-    } catch {
+      giden++;
+    } catch (e) {
+      if (kaliciRet(e)) continue;
       kalan.push(...list.slice(i));
       break;
     }
   }
   try {
-    if (kalan.length) await AsyncStorage.setItem(PATH_ITEM_KEY, JSON.stringify(kalan));
+    const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);
+    const simdiki = raw ? (JSON.parse(raw) as PendingPathItem[]) : [];
+    const islenen = new Set(list.filter((x) => !kalan.includes(x)).map((x) => JSON.stringify(x)));
+    const yeni = simdiki.filter((x) => !islenen.has(JSON.stringify(x)));
+    if (yeni.length) await AsyncStorage.setItem(PATH_ITEM_KEY, JSON.stringify(yeni));
     else await AsyncStorage.removeItem(PATH_ITEM_KEY);
   } catch { /* yut */ }
+  return giden;
 }
 
 /** Egzersiz bitince puanı da yerele yazılır (web `recordSkillResult` karşılığı). */
