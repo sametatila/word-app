@@ -4,7 +4,6 @@
  { "tr": "Belki başka sefere. Lütfen tekrar et.", "kind": "say.tr", "de": "Vielleicht ein andermal. Bitte wiederhole." },
  { "tr": "Ben için am, sen için are kullanılır:", "kind": "say.tr", "de": "Für ich nimmt man am, für du are:" },
  { "tr": "Bir dükkândaki hazır fiyatı sorsaydın", "kind": "say.tr", "de": "Würdest du nach einem festen Ladenpreis fragen," },
- { "tr": "Bir kelime daha: wait, yani beklemek.", "kind": "say.tr", "de": "Noch ein Wort: wait, also warten." },
  { "tr": "Bir şeyi birine uzatırken İngilizcede", "kind": "say.tr", "de": "Wenn du jemandem etwas reichst, beginnst du auf Englisch mit" },
  { "tr": "Bir şeyi üstünde denemeye İngilizcede", "kind": "say.tr", "de": "Etwas anzuprobieren heißt auf Englisch" },
  { "tr": "Bir şeyler ters. Lütfen sen de söyle.", "kind": "say.tr", "de": "Irgendetwas stimmt nicht. Bitte sag du auch." },

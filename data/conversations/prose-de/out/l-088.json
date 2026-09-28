@@ -898,5 +898,15 @@
   "tr": "Tartışmayı aktarırken en sık yapılan hata zamanı olduğu gibi bırakmak; İngilizcede zaman bir basamak geriye gider. Hazır mısın?",
   "kind": "say.tr",
   "de": "Der häufigste Fehler beim Wiedergeben einer Debatte ist, die Zeit gleich zu lassen; im Englischen rückt sie eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Siparişinizi alabilir miyim?",
+  "kind": "say.tr",
+  "de": "Kann ich Ihre Bestellung aufnehmen?"
+ },
+ {
+  "tr": "Şimdi yakın olanı sen söyle:",
+  "kind": "say.tr",
+  "de": "Jetzt sag du den Satz mit nah:"
  }
 ]

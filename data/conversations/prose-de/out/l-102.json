@@ -888,5 +888,10 @@
   "tr": "Merhaba! Bugün yanlış çıkan bir haberi değerlendirmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne atlandı.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir, eine Meldung zu bewerten, die sich als falsch erwiesen hat: wobei du sicher bist, was du ausschließt, was übersehen wurde."
+ },
+ {
+  "tr": "edilgen olanı, yani özneye yapılanı,",
+  "kind": "say.tr",
+  "de": "das Passive, also das, was mit dem Subjekt gemacht wird,"
  }
 ]

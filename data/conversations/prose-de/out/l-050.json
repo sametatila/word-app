@@ -44,7 +44,7 @@
  { "tr": "Ayrılırken duyguyu da söyleyebiliriz. Kelimemiz:", "kind": "say.tr", "de": "Beim Abschied darf auch das Gefühl mit. Unser Wort:" },
  { "tr": "Bir de karşılaştırma: cheaper than, closer than.", "kind": "say.tr", "de": "Und der Vergleich: cheaper than, closer than." },
  { "tr": "Bir de kibar yardım isteme cümlesini cebine koy.", "kind": "say.tr", "de": "Und steck dir den höflichen Hilfesatz ein." },
- { "tr": "Bu, süre olarak saat: \"one hour\" bir saat demek.", "kind": "say.tr", "de": "Das ist die Stunde als Dauer: „one hour“ heißt eine Stunde." },
+ { "tr": "Bu, süre olarak saat: one hour, bir saat demek. Lütfen tekrar et:", "kind": "say.tr", "de": "Das ist die Stunde als Dauer: one hour heißt eine Stunde. Bitte sprich nach:" },
  { "tr": "Bunu biletle birleştirelim. Bir bilet istiyorum:", "kind": "say.tr", "de": "Verbinden wir das mit der Karte. Ich möchte eine Karte:" },
  { "tr": "Bunu cümlenin ortasına, fiilden sonra koyuyoruz:", "kind": "say.tr", "de": "Das setzen wir in die Satzmitte, hinter das Verb:" },
  { "tr": "deriz, arabaya ise \"drive\". Lütfen sen de söyle:", "kind": "say.tr", "de": "sagen wir, beim Auto dagegen „drive“. Bitte sag du auch:" },

@@ -1453,9 +1453,17 @@
      },
      {
       "lang": "tr",
-      "text": "bir yerden ayrılmak. Geçmişi left. Bunları birazdan cümlede kullanacağız."
+      "text": "bir yerden ayrılmak. Geçmişi left. Bunları birazdan cümlede kullanacağız; önce ikisini de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "meet, leave"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "meet, leave"
+    }
    },
    {
     "say": [
@@ -1837,30 +1845,6 @@
     "expect": {
      "kind": "repeat",
      "target": "middle"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "leave"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: ayrılmak, bırakmak. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "leave"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "leave"
     }
    },
    {
@@ -7898,8 +7882,20 @@
      {
       "lang": "tr",
       "text": "Emma'yı on yıldır tanıyorum. Türkçede 'tanıyorum' dersin ama İngilizcede burada mutlaka 'have' gerekir."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I have known Emma for ten years."
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have known Emma for ten years."
+    }
    },
    {
     "say": [
@@ -8221,30 +8217,6 @@
     "expect": {
      "kind": "repeat",
      "target": "for hours"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "know"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: bilmek, tanımak. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "know"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "know"
     }
    },
    {
@@ -13371,7 +13343,7 @@
     "tr": "geri aramak"
    },
    {
-    "de": "let know",
+    "de": "let someone know",
     "tr": "haber vermek"
    },
    {
@@ -13776,20 +13748,44 @@
      },
      {
       "lang": "en",
-      "text": "let know"
+      "text": "let someone know"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: haber vermek. Lütfen tekrar et:"
+      "text": "Türkçesi: birine haber vermek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "let know"
+      "text": "let someone know"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "let know"
+     "target": "let someone know"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Someone yerine haber verilecek kişiyi koyarsın. Telefonu kapatırken bunu çok duyarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Please let me know."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen bana haber verin. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Please let me know."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Please let me know."
     }
    },
    {
@@ -13844,15 +13840,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Acil durumda az önce öğrendiğin kelime işine yarar:"
-     },
-     {
-      "lang": "en",
-      "text": "urgent"
-     },
-     {
-      "lang": "tr",
-      "text": "acil demek. Diş ağrın varsa şöyle dersin:"
+      "text": "Acil durumda az önce öğrendiğin kelime işine yarar. Diş ağrın varsa şöyle dersin:"
      },
      {
       "lang": "en",
@@ -15479,8 +15467,20 @@
      {
       "lang": "tr",
       "text": ". Bu üçünü kutunun arkasında sık görürsün."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "after meals"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "after meals"
+    }
    },
    {
     "say": [
@@ -15956,30 +15956,6 @@
     "expect": {
      "kind": "repeat",
      "target": "pharmacy"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "meal"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: öğün. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "meal"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "meal"
     }
    },
    {
@@ -22134,24 +22110,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha:"
+      "text": "Tamir için bir cümle daha. Boruyu tamir edecek birine ihtiyacın var:"
      },
      {
       "lang": "en",
-      "text": "to fix"
+      "text": "I need someone to fix the pipe."
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: tamir etmek. Lütfen tekrar et:"
+      "text": "Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "to fix"
+      "text": "I need someone to fix the pipe."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "to fix"
+     "target": "I need someone to fix the pipe."
     }
    },
    {
@@ -23614,7 +23590,7 @@
     "tr": "yarın"
    },
    {
-    "de": "mechanic",
+    "de": "repairman",
     "tr": "tamirci"
    },
    {
@@ -23848,20 +23824,20 @@
      },
      {
       "lang": "en",
-      "text": "mechanic"
+      "text": "repairman"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: tamirci. Lütfen tekrar et:"
+      "text": "Türkçesi: tamirci, yani evdeki eşyaları tamir eden kişi. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "mechanic"
+      "text": "repairman"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "mechanic"
+     "target": "repairman"
     }
    },
    {
@@ -30049,8 +30025,20 @@
      {
       "lang": "en",
       "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi müdürün sorusunu sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "What's the reason?"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What's the reason?"
+    }
    },
    {
     "say": [
@@ -30355,30 +30343,6 @@
     "expect": {
      "kind": "repeat",
      "target": "arrange"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "reason"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: sebep. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "reason"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "reason"
     }
    },
    {
@@ -30858,15 +30822,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sorunu söyledin, peki çözüm? Anahtar kelime:"
-     },
-     {
-      "lang": "en",
-      "text": "solve"
-     },
-     {
-      "lang": "tr",
-      "text": "çözmek. Günlük konuşmada aynı işi gören bir kelime daha var: fix, yani düzeltmek."
+      "text": "Sorunu söyledin, peki çözüm? Burada az önce öğrendiğin solve işine yarar. Günlük konuşmada aynı işi gören bir kelime daha var: fix, yani düzeltmek."
      },
      {
       "lang": "en",
@@ -35444,15 +35400,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İçinde değerli bir şey varsa sigorta sorarsın. Kelimemiz:"
-     },
-     {
-      "lang": "en",
-      "text": "insure"
-     },
-     {
-      "lang": "tr",
-      "text": "sigortalamak. Görevli de sana sorabilir:"
+      "text": "İçinde değerli bir şey varsa sigorta sorarsın. Görevli de sana sorabilir:"
      },
      {
       "lang": "en",
@@ -36868,8 +36816,20 @@
      {
       "lang": "en",
       "text": "What do you think?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk cümleyi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I like this style."
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I like this style."
+    }
    },
    {
     "say": [
@@ -36906,7 +36866,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Bir kelime daha:"
      },
      {
       "lang": "en",
@@ -36914,7 +36874,23 @@
      },
      {
       "lang": "tr",
-      "text": "— bahşiş. Parayı uzatırken şunu dersin:"
+      "text": "Türkçesi: bahşiş. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "tip"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "tip"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bahşiş verirken parayı uzatıp şunu dersin:"
      },
      {
       "lang": "en",
@@ -37000,54 +36976,6 @@
     "expect": {
      "kind": "repeat",
      "target": "comb one's hair"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "style"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: tarz. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "style"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "style"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "tip"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: bahşiş. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "tip"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "tip"
     }
    },
    {
@@ -38803,8 +38731,20 @@
      {
       "lang": "tr",
       "text": "Fiş, satın alma kanıtıdır."
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimeyi sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "proof"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "proof"
+    }
    },
    {
     "say": [
@@ -38932,30 +38872,6 @@
     "expect": {
      "kind": "repeat",
      "target": "final"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "proof"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: kanıt. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "proof"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "proof"
     }
    },
    {
@@ -39772,15 +39688,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bu kelimeyi kullanalım:"
-     },
-     {
-      "lang": "en",
-      "text": "confirm"
-     },
-     {
-      "lang": "tr",
-      "text": "\"teyit etmek\" demek. Rezervasyonun kesinleşsin istiyorsan sorarsın:"
+      "text": "Şimdi bu kelimeyi kullanalım. Rezervasyonun kesinleşsin istiyorsan sorarsın:"
      },
      {
       "lang": "en",
@@ -43358,15 +43266,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Az önce öğrendiğin"
-     },
-     {
-      "lang": "en",
-      "text": "extra"
-     },
-     {
-      "lang": "tr",
-      "text": "yani fazladan demek. Kiralamada ek ücret sorarken:"
+      "text": "Az önce öğrendiğin kelime kiralamada ek ücret sorarken işine yarar:"
      },
      {
       "lang": "en",
@@ -52440,15 +52340,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Az önce tekrar ettiğin kelime:"
-     },
-     {
-      "lang": "en",
-      "text": "note"
-     },
-     {
-      "lang": "tr",
-      "text": "kısa yazı, not demek. Bir hediye veya büyük bir yardım sonrası insanlar teşekkür notu yazar:"
+      "text": "Bir hediye veya büyük bir yardım sonrası insanlar teşekkür notu yazar:"
      },
      {
       "lang": "en",
@@ -58628,8 +58520,20 @@
      {
       "lang": "tr",
       "text": "'Oldu, bitti.'"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It's done."
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's done."
+    }
    },
    {
     "say": [
@@ -59087,30 +58991,6 @@
     "expect": {
      "kind": "repeat",
      "target": "repeat"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "done"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: tamam. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "done"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "done"
     }
    },
    {
@@ -60016,8 +59896,20 @@
      {
       "lang": "tr",
       "text": "Oraya şehri yazarsın, mesela İzmir."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "place of birth"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "place of birth"
+    }
    },
    {
     "say": [
@@ -60210,30 +60102,6 @@
     "expect": {
      "kind": "repeat",
      "target": "I've already filled out the form."
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "place of birth"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: doğum yeri. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "place of birth"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "place of birth"
     }
    },
    {
@@ -61381,16 +61249,28 @@
      },
      {
       "lang": "tr",
-      "text": "Geçmiş hâli düzensizdir: stole. Türkçede çantam çalındı deriz; anadili İngilizce olanlar daha çok biri çaldı der:"
+      "text": "Geçmiş hâli düzensizdir: stole. Önce fiili söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "steal"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "steal"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Türkçede çantam çalındı deriz; anadili İngilizce olanlar daha çok biri çaldı der:"
      },
      {
       "lang": "en",
       "text": "Someone stole my bag."
-     }
-    ]
-   },
-   {
-    "say": [
+     },
      {
       "lang": "tr",
       "text": "Lütfen tekrar et:"
@@ -61570,30 +61450,6 @@
     "expect": {
      "kind": "repeat",
      "target": "description"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "steal"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: çalmak. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "steal"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "steal"
     }
    },
    {
@@ -65442,8 +65298,20 @@
      {
       "lang": "en",
       "text": "the blue bin, the green bin"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi çöp kovasını sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "trash can"
      }
-    ]
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "trash can"
+    }
    },
    {
     "say": [
@@ -65806,30 +65674,6 @@
     "expect": {
      "kind": "repeat",
      "target": "How often do they collect the trash?"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "trash can"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: çöp kovası. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "trash can"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "trash can"
     }
    },
    {

@@ -54,7 +54,7 @@
  { "tr": "Yeterince param yok. Lütfen tekrar et.", "kind": "say.tr", "de": "Ich habe nicht genug Geld. Bitte wiederhole." },
  { "tr": "Yukarıdan başlayalım. Kafa demek için:", "kind": "say.tr", "de": "Fangen wir oben an. Für Kopf:" },
  { "tr": "Zaman ifadesi cümlenin sonuna geliyor.", "kind": "say.tr", "de": "Die Zeitangabe kommt ans Satzende." },
- { "tr": "— bahşiş. Parayı uzatırken şunu dersin:", "kind": "say.tr", "de": "— Trinkgeld. Beim Hinreichen sagst du das:" },
+ { "tr": "Bahşiş verirken parayı uzatıp şunu dersin:", "kind": "say.tr", "de": "Beim Trinkgeld reichst du das Geld hin und sagst:" },
  { "tr": "— Paramı geri alabilir miyim? Az önceki", "kind": "say.tr", "de": "— Kann ich mein Geld zurückbekommen? Das vorhin gehörte" },
  { "tr": ". Bunlar genelde cümlenin başına gelir.", "kind": "say.tr", "de": ". Die stehen meistens am Satzanfang." },
  { "tr": ". İptal etmek demek. Tam cümlesi şöyle:", "kind": "say.tr", "de": ". Heißt kündigen. Der ganze Satz lautet so:" },

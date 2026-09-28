@@ -94,7 +94,7 @@
  { "tr": "Roma'da iki kez bulundum. Hiç gitmediysen:", "kind": "say.tr", "de": "Ich war zweimal in Rom. Wenn du nie da warst:" },
  { "tr": "Satıcı sana kaç tane istediğini sorabilir:", "kind": "say.tr", "de": "Man kann dich fragen, wie viele du willst:" },
  { "tr": "Sen sor bakalım: \"Evde yardım eder misin?\"", "kind": "say.tr", "de": "Frag du mal: „Hilfst du im Haushalt?“" },
- { "tr": "Sen soruyu sorarsın, görevli cevabı verir.", "kind": "say.tr", "de": "Du stellst die Frage, das Personal gibt die Antwort." },
+ { "tr": "Sen soruyu sorarsın, görevli cevabı verir. Cevap kelimesini sen de söyle:", "kind": "say.tr", "de": "Du stellst die Frage, das Personal gibt die Antwort. Sag du auch das Wort für Antwort:" },
  { "tr": "Sıra sende: 'İlk günümde çok tedirgindim.'", "kind": "say.tr", "de": "Du bist dran: „An meinem ersten Tag war ich sehr nervös.“" },
  { "tr": "Sıra sende. \"Ondan sonra pilavı pişir\" de.", "kind": "say.tr", "de": "Du bist dran. Sag „Danach koch den Reis“." },
  { "tr": "Son olarak sen sor: ders ne kadar sürüyor?", "kind": "say.tr", "de": "Zum Schluss fragst du: Wie lange dauert die Unterrichtsstunde?" },

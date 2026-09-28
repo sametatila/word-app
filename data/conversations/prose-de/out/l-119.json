@@ -1950,8 +1950,13 @@
   "de": "– sagst du das, ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die stellen muss, wer den Plan liest."
  },
  {
-  "tr": "Bu kelimeyi garsonla konuşurken de duyacaksın:",
+  "tr": "Kelimeyi sen de söyle:",
   "kind": "say.tr",
-  "de": "Dieses Wort hörst du auch im Gespräch mit der Bedienung:"
+  "de": "Sag du auch das Wort:"
+ },
+ {
+  "tr": "etken olanı, yani öznenin aynı anda yaptığını,",
+  "kind": "say.tr",
+  "de": "das Aktive, also das, was das Subjekt gleichzeitig tut,"
  }
 ]

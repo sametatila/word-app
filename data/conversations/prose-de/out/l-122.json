@@ -43,7 +43,7 @@
  { "tr": "Şimdi soru soralım. Bir şeyin yerini sormak için:", "kind": "say.tr", "de": "Jetzt fragen wir. Um nach dem Ort zu fragen:" },
  { "tr": "Şimdi komşuyu tarif eden iki kelime öğrenelim.", "kind": "say.tr", "de": "Jetzt zwei Wörter, die die Nachbarn beschreiben." },
  { "tr": "Şimdi kuralların kalbi: must. Türkçedeki -meli, -malı eki gibi düşün. You must, yani yapmalısın.", "kind": "say.tr", "de": "Jetzt das Herz der Regeln: must. Denk an unser „du musst“. You must, also du musst." },
- { "tr": "Şimdi bir kelime daha: clean, temiz. Bir yeri temiz tutmak için keep ... clean deriz. Örneğin the kitchen mutfak demek.", "kind": "say.tr", "de": "Jetzt noch ein Wort: clean, sauber. Um einen Ort sauber zu halten, sagen wir keep … clean. The kitchen heißt zum Beispiel die Küche." },
+ { "tr": "temiz demek. Bir yeri temiz tutmak için keep ... clean deriz. Örneğin the kitchen mutfak demek. Kelimeyi sen de söyle:", "kind": "say.tr", "de": "heißt sauber. Um einen Ort sauber zu halten, sagen wir keep ... clean. The kitchen heißt zum Beispiel die Küche. Sag du auch das Wort:" },
  { "tr": "İngilizcede belli bir evin kirasından bahsederken önüne the koyarız:", "kind": "say.tr", "de": "Für die Miete einer bestimmten Wohnung setzt das Englische the davor:" },
  { "tr": "İngilizcede kelimeleri yan yana koyarak fatura çeşidini söyleriz. Su faturası:", "kind": "say.tr", "de": "Im Englischen stellt man die Wörter nebeneinander. Die Wasserrechnung:" },
  { "tr": "Şimdi bir kelime daha:", "kind": "say.tr", "de": "Jetzt noch ein Wort:" },

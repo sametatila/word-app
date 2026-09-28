@@ -126,7 +126,7 @@
  { "tr": "Bir şeyi almak istediğini söylerken: I want to buy… Yani 'satın almak istiyorum'.", "kind": "say.tr", "de": "Wenn du etwas kaufen willst: I want to buy… Also „ich möchte kaufen“." },
  { "tr": "Burada anlamı: bu yüzden. because sebebi getirir, so sonucu getirir. Karşılaştır:", "kind": "say.tr", "de": "Hier heißt es: deshalb. because bringt den Grund, so bringt die Folge. Vergleiche:" },
  { "tr": "can yerine could dersen cümle daha nazik olur. Bugün birini gönderebilir misiniz:", "kind": "say.tr", "de": "Sagst du statt can ein could, wird der Satz höflicher. Können Sie heute jemanden schicken:" },
- { "tr": "çözmek. Günlük konuşmada aynı işi gören bir kelime daha var: fix, yani düzeltmek.", "kind": "say.tr", "de": "lösen. Im Alltag gibt es dafür noch ein Wort: fix, also in Ordnung bringen." },
+ { "tr": "Sorunu söyledin, peki çözüm? Burada az önce öğrendiğin solve işine yarar. Günlük konuşmada aynı işi gören bir kelime daha var: fix, yani düzeltmek.", "kind": "say.tr", "de": "Du hast das Problem genannt, und die Lösung? Hier hilft dir das eben gelernte solve. Im Alltag gibt es dafür noch ein Wort: fix, also in Ordnung bringen." },
  { "tr": "dersin. Ama şu anda havaalanında mahsur kaldıysan, yani sorun hâlâ devam ediyorsa", "kind": "say.tr", "de": ". Steckst du aber gerade am Flughafen fest, läuft das Problem also noch, sagst du:" },
  { "tr": "Doğum günü demek. İki parçadan oluşuyor: birth, yani doğum; day, yani gün. Söyle:", "kind": "say.tr", "de": "Heißt Geburtstag. Es besteht aus zwei Teilen: birth, die Geburt; day, der Tag. Sag:" },
  { "tr": "Harika iş çıkardın. Bugün öğrendiğimiz kelimelerden bazıları: music, song, listen, band, guitar.", "kind": "say.tr", "de": "Großartig gemacht. Einige der Wörter von heute: music, song, listen, band, guitar." },
@@ -143,5 +143,6 @@
  { "tr": "Şimdi aynı bilgiyi başlangıç noktasıyla verelim. Tek değişen kısım cümlenin sonu:", "kind": "say.tr", "de": "Jetzt dieselbe Information mit dem Anfangspunkt. Nur das Satzende ändert sich:" },
  { "tr": "Şimdi bir otelin resepsiyonundasın: görevli adını yazacak. Adını söyle ve harf harf tekrarla.", "kind": "say.tr", "de": "Jetzt bist du an einer Hotelrezeption: dein Name wird notiert. Sag und buchstabier ihn." },
  { "tr": "Şimdi bu cümleye for'u ekle. Söyle: Kız kardeşim için bir hediye almak istiyorum.", "kind": "say.tr", "de": "Häng jetzt das for an. Sag: Ich möchte ein Geschenk für meine Schwester kaufen." },
- { "tr": "Şimdi bugünün kuralı. İngilizcede renk, tıpkı Türkçedeki gibi ismin önünde durur.", "kind": "say.tr", "de": "Jetzt die Regel von heute. Im Englischen steht die Farbe wie im Deutschen vor dem Substantiv." }
+ { "tr": "Şimdi bugünün kuralı. İngilizcede renk, tıpkı Türkçedeki gibi ismin önünde durur.", "kind": "say.tr", "de": "Jetzt die Regel von heute. Im Englischen steht die Farbe wie im Deutschen vor dem Substantiv." },
+ { "tr": "İkisini de söyle:", "kind": "say.tr", "de": "Sag beide:" }
 ]

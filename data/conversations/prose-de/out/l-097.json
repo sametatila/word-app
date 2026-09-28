@@ -1163,5 +1163,10 @@
   "tr": "Merhaba! Bugün olan bitenin çözümlemesini öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne yapılmalıydı.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir die Auswertung des Geschehenen: wobei du sicher bist, was du für unmöglich hältst, was hätte getan werden sollen."
+ },
+ {
+  "tr": "Şimdi müdürün sorusunu sen söyle:",
+  "kind": "say.tr",
+  "de": "Jetzt sag du die Frage deines Chefs:"
  }
 ]

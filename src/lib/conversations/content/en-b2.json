@@ -26286,7 +26286,7 @@
    },
    {
     "de": "Built quickly, the residential area is overcrowded.",
-    "tr": "geçmişte olanı sonuca bağlar"
+    "tr": "özneye yapılanı (edilgen) sonuca bağlar"
    },
    {
     "de": "Having lost its green space, the district feels urban.",
@@ -26361,7 +26361,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+      "text": "İkinci kalıbımız özneye yapılanı, yani edilgen olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -26425,7 +26425,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç zamanı var:"
+      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç türü var:"
      },
      {
       "lang": "en",
@@ -26433,7 +26433,7 @@
      },
      {
       "lang": "tr",
-      "text": "aynı anda olanı,"
+      "text": "etken olanı, yani öznenin aynı anda yaptığını,"
      },
      {
       "lang": "en",
@@ -26441,7 +26441,7 @@
      },
      {
       "lang": "tr",
-      "text": "yapılmış olanı,"
+      "text": "edilgen olanı, yani özneye yapılanı,"
      },
      {
       "lang": "en",
@@ -26579,7 +26579,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Geçmişte olanı sonuca bağlamak için"
+       "text": "Özneye yapılanı, yani edilgen olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -26678,7 +26678,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: aynı anda"
+      "text": "Özetleyelim: öznenin aynı anda yaptığı"
      },
      {
       "lang": "en",
@@ -26686,7 +26686,7 @@
      },
      {
       "lang": "tr",
-      "text": "yapılmış"
+      "text": "özneye yapılan"
      },
      {
       "lang": "en",
@@ -31240,11 +31240,11 @@
    },
    {
     "de": "Praised for years, the actor stayed modest.",
-    "tr": "geçmişte olanı sonuca bağlar"
+    "tr": "özneye yapılanı (edilgen) sonuca bağlar"
    },
    {
     "de": "Wanting a new role, she left the company.",
-    "tr": "aynı anda olanı sonuca bağlar"
+    "tr": "öznenin aynı anda yaptığını (etken) sonuca bağlar"
    }
   ],
   "lecture": [
@@ -31315,7 +31315,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+      "text": "İkinci kalıbımız özneye yapılanı, yani edilgen olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -31335,7 +31335,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız aynı anda olanı sonuca bağlıyor. Tekrar et:"
+      "text": "Son kalıbımız öznenin aynı anda yaptığını, yani etken olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -31355,7 +31355,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç zamanı var:"
+      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç türü var:"
      },
      {
       "lang": "en",
@@ -31371,7 +31371,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte yapılmış olanı bağlar,"
+      "text": "edilgen olanı, yani özneye yapılanı bağlar,"
      },
      {
       "lang": "en",
@@ -31379,7 +31379,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise aynı anda olanı bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
+      "text": "ise etken olanı, yani öznenin aynı anda yaptığını bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
      }
     ]
    },
@@ -31505,7 +31505,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Aynı anda olanı sonuca bağlamak için"
+       "text": "Öznenin aynı anda yaptığını, yani etken olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -31631,7 +31631,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Geçmişte olanı sonuca bağlamak için"
+       "text": "Özneye yapılanı, yani edilgen olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -31664,7 +31664,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte yapılmış"
+      "text": "özneye yapılan"
      },
      {
       "lang": "en",
@@ -31672,7 +31672,7 @@
      },
      {
       "lang": "tr",
-      "text": "aynı anda"
+      "text": "öznenin aynı anda yaptığı"
      },
      {
       "lang": "en",
@@ -31686,11 +31686,11 @@
    }
   ],
   "chat": {
-   "scene": "Hayran olduğun bir sanatçının hayatını arkadaşına anlatıyorsun. Önce bitmiş olanı, geçmişte yapılmış olanı ve aynı anda olanı ortaç öbekleriyle bağla.",
+   "scene": "Hayran olduğun bir sanatçının hayatını arkadaşına anlatıyorsun. Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını ortaç öbekleriyle bağla.",
    "partner": "hayat hikâyesini yalnız ödüllerle özetleyen bir arkadaş",
    "opening": "How many prizes did she win?",
    "openingTr": "Kaç ödül kazandı?",
-   "goal": "Önce bitmiş olanı, geçmişte yapılmış olanı ve aynı anda olanı üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "goal": "Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -36114,11 +36114,11 @@
    },
    {
     "de": "Asked to supervise, she agreed.",
-    "tr": "geçmişte olanı sonuca bağlar"
+    "tr": "özneye yapılanı (edilgen) sonuca bağlar"
    },
    {
     "de": "Wanting to recruit fast, they cut the selection process.",
-    "tr": "aynı anda olanı sonuca bağlar"
+    "tr": "öznenin aynı anda yaptığını (etken) sonuca bağlar"
    }
   ],
   "lecture": [
@@ -36181,7 +36181,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+      "text": "İkinci kalıbımız özneye yapılanı, yani edilgen olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -36225,7 +36225,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız aynı anda olanı sonuca bağlıyor. Tekrar et:"
+      "text": "Son kalıbımız öznenin aynı anda yaptığını, yani etken olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -36245,7 +36245,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç zamanı var:"
+      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç türü var:"
      },
      {
       "lang": "en",
@@ -36261,7 +36261,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olanı bağlar,"
+      "text": "edilgen olanı, yani özneye yapılanı bağlar,"
      },
      {
       "lang": "en",
@@ -36269,7 +36269,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise aynı anda olanı bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
+      "text": "ise etken olanı, yani öznenin aynı anda yaptığını bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
      }
     ]
    },
@@ -36399,7 +36399,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Aynı anda olanı sonuca bağlamak için"
+       "text": "Öznenin aynı anda yaptığını, yani etken olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -36481,7 +36481,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Geçmişte olanı sonuca bağlamak için"
+       "text": "Özneye yapılanı, yani edilgen olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -36514,7 +36514,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olan"
+      "text": "özneye yapılan"
      },
      {
       "lang": "en",
@@ -36522,7 +36522,7 @@
      },
      {
       "lang": "tr",
-      "text": "aynı anda"
+      "text": "öznenin aynı anda yaptığı"
      },
      {
       "lang": "en",
@@ -36536,11 +36536,11 @@
    }
   ],
   "chat": {
-   "scene": "Ekibindeki bir işe alım sürecini yöneticine anlatıyorsun. Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı ortaç öbekleriyle bağla.",
+   "scene": "Ekibindeki bir işe alım sürecini yöneticine anlatıyorsun. Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını ortaç öbekleriyle bağla.",
    "partner": "süreci tek bir görüşmeye indirgeyen, adımları merak etmeyen bir yönetici",
    "opening": "Wasn't it just one interview?",
    "openingTr": "Tek bir görüşme değil miydi?",
-   "goal": "Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "goal": "Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -41076,11 +41076,11 @@
    },
    {
     "de": "Asked to reconcile, they refused.",
-    "tr": "geçmişte olanı sonuca bağlar"
+    "tr": "özneye yapılanı (edilgen) sonuca bağlar"
    },
    {
     "de": "Wanting to adapt, he said nothing.",
-    "tr": "aynı anda olanı sonuca bağlar"
+    "tr": "öznenin aynı anda yaptığını (etken) sonuca bağlar"
    }
   ],
   "lecture": [
@@ -41143,7 +41143,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+      "text": "İkinci kalıbımız özneye yapılanı, yani edilgen olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -41179,7 +41179,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız aynı anda olanı sonuca bağlıyor. Tekrar et:"
+      "text": "Son kalıbımız öznenin aynı anda yaptığını, yani etken olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -41199,7 +41199,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç zamanı var:"
+      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç türü var:"
      },
      {
       "lang": "en",
@@ -41215,7 +41215,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olanı bağlar,"
+      "text": "edilgen olanı, yani özneye yapılanı bağlar,"
      },
      {
       "lang": "en",
@@ -41223,7 +41223,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise aynı anda olanı bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış kişiye bağlanır."
+      "text": "ise etken olanı, yani öznenin aynı anda yaptığını bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış kişiye bağlanır."
      }
     ]
    },
@@ -41349,7 +41349,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Aynı anda olanı sonuca bağlamak için"
+       "text": "Öznenin aynı anda yaptığını, yani etken olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -41467,7 +41467,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Geçmişte olanı sonuca bağlamak için"
+       "text": "Özneye yapılanı, yani edilgen olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -41500,7 +41500,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olan"
+      "text": "özneye yapılan"
      },
      {
       "lang": "en",
@@ -41508,7 +41508,7 @@
      },
      {
       "lang": "tr",
-      "text": "aynı anda"
+      "text": "öznenin aynı anda yaptığı"
      },
      {
       "lang": "en",
@@ -41522,11 +41522,11 @@
    }
   ],
   "chat": {
-   "scene": "İki arkadaşının nasıl bozuştuğunu üçüncü bir kişiye anlatıyorsun. Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı ortaç öbekleriyle bağla ve suçlu arama.",
+   "scene": "İki arkadaşının nasıl bozuştuğunu üçüncü bir kişiye anlatıyorsun. Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını ortaç öbekleriyle bağla ve suçlu arama.",
    "partner": "hikâyeyi dinlerken hemen bir taraf tutmak isteyen biri",
    "opening": "Okay, but whose fault was it?",
    "openingTr": "Tamam da kimin suçuydu?",
-   "goal": "Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "goal": "Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -46093,11 +46093,11 @@
    },
    {
     "de": "Asked to follow up, she wrote again.",
-    "tr": "geçmişte olanı sonuca bağlar"
+    "tr": "özneye yapılanı (edilgen) sonuca bağlar"
    },
    {
     "de": "Wanting to carry out the test, they waited.",
-    "tr": "aynı anda olanı sonuca bağlar"
+    "tr": "öznenin aynı anda yaptığını (etken) sonuca bağlar"
    }
   ],
   "lecture": [
@@ -46160,7 +46160,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+      "text": "İkinci kalıbımız özneye yapılanı, yani edilgen olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -46196,7 +46196,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız aynı anda olanı sonuca bağlıyor. Tekrar et:"
+      "text": "Son kalıbımız öznenin aynı anda yaptığını, yani etken olanı sonuca bağlıyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -46216,7 +46216,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç zamanı var:"
+      "text": "Şimdi bugünün kuralı. Ortaç öbeğinin üç türü var:"
      },
      {
       "lang": "en",
@@ -46232,7 +46232,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olanı bağlar,"
+      "text": "edilgen olanı, yani özneye yapılanı bağlar,"
      },
      {
       "lang": "en",
@@ -46240,7 +46240,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise aynı anda olanı bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
+      "text": "ise etken olanı, yani öznenin aynı anda yaptığını bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
      }
     ]
    },
@@ -46370,7 +46370,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Aynı anda olanı sonuca bağlamak için"
+       "text": "Öznenin aynı anda yaptığını, yani etken olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -46488,7 +46488,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Geçmişte olanı sonuca bağlamak için"
+       "text": "Özneye yapılanı, yani edilgen olanı sonuca bağlamak için"
       },
       {
        "lang": "en",
@@ -46521,7 +46521,7 @@
      },
      {
       "lang": "tr",
-      "text": "geçmişte olan"
+      "text": "özneye yapılan"
      },
      {
       "lang": "en",
@@ -46529,7 +46529,7 @@
      },
      {
       "lang": "tr",
-      "text": "aynı anda"
+      "text": "öznenin aynı anda yaptığı"
      },
      {
       "lang": "en",
@@ -46543,11 +46543,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir projenin nasıl yürüdüğünü yeni katılan bir ekip üyesine anlatıyorsun. Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı ortaç öbekleriyle bağla.",
+   "scene": "Bir projenin nasıl yürüdüğünü yeni katılan bir ekip üyesine anlatıyorsun. Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını ortaç öbekleriyle bağla.",
    "partner": "projeyi tek bir toplantıdan ibaret sanan yeni bir ekip üyesi",
    "opening": "Isn't it just one meeting a week?",
    "openingTr": "Haftada bir toplantıdan ibaret değil mi?",
-   "goal": "Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "goal": "Önce bitmiş olanı, özneye yapılanı ve öznenin aynı anda yaptığını üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },

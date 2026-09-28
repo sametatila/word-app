@@ -143,5 +143,6 @@
  { "tr": "Ülke yerine şehir de söyleyebilirsin. Sıra sende: \"Ankaralıyım\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Statt des Landes geht auch die Stadt. Du bist dran: bilde „Ich komme aus Ankara“ auf Englisch." },
  { "tr": "Ve bunları benim, senin anlamına gelen iki küçük kelimeyle birleştireceğiz. Hazır mısın?", "kind": "say.tr", "de": "Und wir verbinden sie mit zwei kleinen Wörtern für mein und dein. Bist du bereit?" },
  { "tr": ", tavsiye etmek. Söylenişine dikkat: vurgu son hecede, 'rekoMEND'. Lütfen 'recommend' de.", "kind": "say.tr", "de": ", empfehlen. Achte auf die Aussprache: Betonung hinten, „rekoMEND“. Bitte sag „recommend“." },
- { "tr": "\"Aydınlık\" demek. Pencereden bol ışık giren bir oda için kullanılır. Lütfen sen de söyle:", "kind": "say.tr", "de": "„Hell“ heißt das. Für ein Zimmer, in das viel Licht fällt. Bitte sag du auch:" }
+ { "tr": "\"Aydınlık\" demek. Pencereden bol ışık giren bir oda için kullanılır. Lütfen sen de söyle:", "kind": "say.tr", "de": "„Hell“ heißt das. Für ein Zimmer, in das viel Licht fällt. Bitte sag du auch:" },
+ { "tr": "geçer:", "kind": "say.tr", "de": "vor:" }
 ]

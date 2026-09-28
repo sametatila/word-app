@@ -137,7 +137,6 @@
  { "tr": "Sıra sende. Elinde azıcık su olduğunu söyle.", "kind": "say.tr", "de": "Du bist dran. Sag, dass du ein wenig Wasser hast." },
  { "tr": "Sıra sende. Hâlâ kimsenin gelmediğini söyle.", "kind": "say.tr", "de": "Du bist dran. Sag, dass noch niemand gekommen ist." },
  { "tr": "Son kelimemiz, en çok işine yarayacak olanı:", "kind": "say.tr", "de": "Unser letztes Wort, das nützlichste von allen:" },
- { "tr": "Sorunu söyledin, peki çözüm? Anahtar kelime:", "kind": "say.tr", "de": "Das Problem hast du genannt, und die Lösung? Schlüsselwort:" },
  { "tr": "Sorunun sebebi genelde bağlantıdır. Bağlantı", "kind": "say.tr", "de": "Der Grund ist meistens die Verbindung. Verbindung" },
  { "tr": "Şimdi bagaj derdine geçelim. Kayıp kelimesi:", "kind": "say.tr", "de": "Jetzt zum Gepäckproblem. Das Wort für verloren:" },
  { "tr": "Şimdi bunları gerçek bir sohbette deneyelim.", "kind": "say.tr", "de": "Probieren wir das jetzt in einem echten Gespräch." },

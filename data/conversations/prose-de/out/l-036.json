@@ -1,7 +1,7 @@
 [
  { "tr": "Net ve yüksek sesle söyle.", "kind": "say.tr", "de": "Sag es klar und laut." },
  { "tr": "Okul kelimesini de alalım:", "kind": "say.tr", "de": "Nehmen wir auch das Wort Schule:" },
- { "tr": "Önce üç kelime. Birincisi:", "kind": "say.tr", "de": "Zuerst drei Wörter. Das erste:" },
+ { "tr": "Önce iki kelime. Birincisi:", "kind": "say.tr", "de": "Zuerst zwei Wörter. Das erste:" },
  { "tr": "Pencere kenarı istiyorsan:", "kind": "say.tr", "de": "Wenn du am Fenster sitzen willst:" },
  { "tr": "Sebebi çünkü ile bağlarız:", "kind": "say.tr", "de": "Den Grund verbinden wir mit weil:" },
  { "tr": "Sıra fişindeki numara ise:", "kind": "say.tr", "de": "Die Nummer auf dem Wartezettel dagegen:" },
@@ -38,7 +38,7 @@
  { "tr": "\"halı\" demek. Sen de söyle.", "kind": "say.tr", "de": "Heißt „Teppich“. Sag du auch." },
  { "tr": "Acilse şunu ekleyebilirsin:", "kind": "say.tr", "de": "Wenn es dringend ist, kannst du anfügen:" },
  { "tr": "Bakiyeni öğrenmek istersen:", "kind": "say.tr", "de": "Wenn du deinen Kontostand wissen willst:" },
- { "tr": "Acil durumda az önce öğrendiğin kelime işine yarar:", "kind": "say.tr", "de": "Im Notfall hilft dir das Wort von eben:" },
+ { "tr": "Acil durumda az önce öğrendiğin kelime işine yarar. Diş ağrın varsa şöyle dersin:", "kind": "say.tr", "de": "Im Notfall hilft dir das Wort von eben. Hast du Zahnschmerzen, sagst du:" },
  { "tr": "Bir kadın bana yardım etti.", "kind": "say.tr", "de": "Eine Frau hat mir geholfen." },
  { "tr": "Bitirdim. Lütfen tekrar et.", "kind": "say.tr", "de": "Ich beendete es. Bitte wiederhole." },
  { "tr": "Bunları cümlede kullanalım:", "kind": "say.tr", "de": "Verwenden wir sie im Satz:" },

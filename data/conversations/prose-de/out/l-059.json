@@ -125,7 +125,7 @@
  { "tr": "'Çöpü ayırmak zorunda mıyım?' demek. Kısa cevaplar da hazır dursun:", "kind": "say.tr", "de": "„Muss ich den Müll trennen?“ heißt das. Halt kurze Antworten bereit:" },
  { "tr": "\"dolap\" demek. Yazılışı uzun ama okunuşu kısadır. Lütfen tekrar et.", "kind": "say.tr", "de": "„Schrank“ heißt das. Lang geschrieben, kurz gesprochen. Bitte wiederhole." },
  { "tr": "\"Ne zaman\" demek. Zamanı sorduğun her yerde bu kelimeyle başlarsın.", "kind": "say.tr", "de": "„Wann“ heißt das. Überall, wo du nach der Zeit fragst, fängst du damit an." },
- { "tr": "\"teyit etmek\" demek. Rezervasyonun kesinleşsin istiyorsan sorarsın:", "kind": "say.tr", "de": "„bestätigen“ heißt das. Soll die Buchung fest sein, fragst du:" },
+ { "tr": "Şimdi bu kelimeyi kullanalım. Rezervasyonun kesinleşsin istiyorsan sorarsın:", "kind": "say.tr", "de": "Nutzen wir dieses Wort jetzt. Soll die Buchung fest sein, fragst du:" },
  { "tr": "ambulans. Yazılışı Türkçeye benziyor ama okunuşu farklı, dikkat et.", "kind": "say.tr", "de": "Krankenwagen. Es sieht dem deutschen Wort ähnlich, klingt anders, pass auf." },
  { "tr": "aramak, telefon etmek demek. Otelde ya da işte çok işine yarayacak:", "kind": "say.tr", "de": "heißt anrufen, telefonieren. Im Hotel und bei der Arbeit sehr nützlich:" },
  { "tr": "Bir de anlamı test edelim. Şu cümleyi dinle ve karar ver: doğru mu?", "kind": "say.tr", "de": "Testen wir auch die Bedeutung. Hör den Satz und entscheide: Stimmt er?" },
@@ -142,6 +142,6 @@
  { "tr": "Geçen hafta iyiydi. Kısacık cümleler, ama tam olması gereken bilgi.", "kind": "say.tr", "de": "Letzte Woche war es gut. Ganz kurze Sätze, aber genau die nötige Info." },
  { "tr": "Geçmiş zamanda soru sorarken de Did kullanırız ve fiil yalın kalır.", "kind": "say.tr", "de": "Auch in der Vergangenheit fragen wir mit Did und das Verb bleibt in der Grundform." },
  { "tr": "Gördüğün gibi altı kısa cümle bütün bir iş yerini anlatmaya yetiyor.", "kind": "say.tr", "de": "Wie du siehst, reichen sechs kurze Sätze für einen ganzen Arbeitsplatz." },
- { "tr": "Işık, televizyon, radyo, telefon... hepsi için bu ikisi kullanılır.", "kind": "say.tr", "de": "Licht, Fernseher, Radio, Handy… für alle diese zwei." },
+ { "tr": "Işık, televizyon, radyo, telefon... hepsi için bu ikisi kullanılır. Kapamayı sen de söyle:", "kind": "say.tr", "de": "Licht, Fernseher, Radio, Handy… für alle diese zwei. Sag du auch das Ausschalten:" },
  { "tr": "İlan eskiyse bu soru sana zaman kazandırır. Ve şunu ekleyebilirsin:", "kind": "say.tr", "de": "Bei einer alten Anzeige spart dir die Frage Zeit. Und du kannst ergänzen:" }
 ]

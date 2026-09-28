@@ -66,7 +66,7 @@
  { "tr": "— mobilyalı. Söyle:", "kind": "say.tr", "de": "— möbliert. Sag:" },
  { "tr": ", sonra fiil. Yani:", "kind": "say.tr", "de": ", dann das Verb. Also:" },
  { "tr": ", ya da daha kolayı", "kind": "say.tr", "de": ", oder noch einfacher" },
- { "tr": ", yani onu denemek.", "kind": "say.tr", "de": ", also es anprobieren." },
+ { "tr": ", yani onu denemek. Önce fiilin kendisini söyle:", "kind": "say.tr", "de": ", also es anprobieren. Sag zuerst das Verb selbst:" },
  { "tr": ". Bir de iki kalıp:", "kind": "say.tr", "de": ". Und zwei Wendungen:" },
  { "tr": ". Duvarda şu yazar:", "kind": "say.tr", "de": ". An der Wand steht:" },
  { "tr": ". Senin cümlelerin:", "kind": "say.tr", "de": ". Deine Sätze:" },
