@@ -1,6 +1,7 @@
 import { getUserInfo } from "@/lib/auth/server";
 import { getT } from "@/lib/i18n/server";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, getProgress } from "@/lib/session";
+import { socialMe } from "@/lib/social/profile";
 import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
@@ -27,6 +28,13 @@ export default async function ProfilePage() {
 
   try {
     const profile = await ensureProfile(user.id, user.name);
+    const today = new Date().toISOString().slice(0, 10);
+    /* Gelişim kutusunun sayısı ve kullanıcı adı — ikisi de düşerse profil yine
+       çiziliyor (sayı 0, alt satırda yalnız kurs). */
+    const [progress, social] = await Promise.all([
+      getProgress(user.id, today).catch(() => null),
+      socialMe(user.id).catch(() => null),
+    ]);
 
     return (
       <ProfileView
@@ -43,10 +51,11 @@ export default async function ProfilePage() {
               web dogrudan "Ogrenci" yaziyordu.
           */
           name: profile.displayName || user.name || user.email?.split("@")[0] || t("profile.student"),
-          email: user.email ?? null,
           streak: profile.currentStreak,
           xp: profile.totalXp,
           premium: await isPremium(user.id),
+          username: social?.username ?? null,
+          mastered: progress ? progress.levels.reduce((n, l) => n + l.mastered, 0) : 0,
         }}
       />
     );

@@ -1,115 +1,128 @@
-import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import React, { useEffect, useMemo, useState } from "react";
+import { t, currentLang } from "../lib/i18n";
+import { View, ScrollView, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LockIcon } from "../ui/icons";
+import { LockIcon, XIcon, RefreshIcon, CheckIcon } from "../ui/icons";
 import { PrimaryButton } from "../ui/PrimaryButton";
-import { ScreenHeader, SectionTitle } from "../social/common";
-import { derivedAvatar, MascotAvatar } from "../ui/Avatar";
+import { AvatarStage, derivedAvatar, MascotAvatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
-import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
+import { saveAvatar, useAvatar, DEFAULT_AVATAR, AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type AvatarConfig, type ExtraSlot } from "../lib/avatar";
 import { PART_UNLOCKS } from "../lib/avatarUnlocks";
+import { useAvatarCatalog } from "../lib/avatarCatalog";
+import type { CatalogPart } from "../lib/avatarLayers";
 import { api } from "../api/client";
-import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { useTheme, spacing, radii, cardShadow, type Palette } from "../theme";
 
 /**
- * Bir aksesuar seçeneği — o aksesuarı taşıyan mini avatar önizlemesi + seçili
- * çerçeve.
+ * AVATAR DÜZENLEYİCİ (2026-09-28, taslak F2; `docs/plan/profil-ayarlar-topluluk.md`).
  *
- * SEÇİLİLİK YALNIZ ÇERÇEVEYLE anlatılıyordu: ekran okuyucu bu karoları adsız
- * düğmeler olarak okuyor, hangisinin seçili olduğunu hiç söylemiyordu. Rol ve
- * durum verilince en azından "seçili" duyuluyor; ad da grubun adı ve sıra
- * numarasından kuruluyor (aksesuarların kendi adları yok, uydurulmadı).
+ * Üstte büyük sahne (profildekiyle aynı `AvatarStage`), altında kâğıt: yuva
+ * sekmeleri, parça kartları, renklenen parçada renk satırı, altta Kaydet.
+ *
+ * İKİ KİP. 3B katalog kapalıyken (bugün) yuvalar arka plan, şapka, gözlük ve
+ * bıyık; kartlar parçayı taşıyan mini 2B avatar. Katalog açılınca
+ * (`AVATAR_3D_BASE`) boyun, yüz, küpe ve sırt da gelir; kartlar kataloğun
+ * ikonları, adları ve nadirlik renkleriyle çizilir. Kilitli parça gizlenmez:
+ * dokununca nasıl açılacağı yazar (görünmeyen bir ödül kimseyi peşinden
+ * koşturmaz). Web `avatar-editor` ile aynı düzen.
  */
-function OptTile({ preview, selected, onPress, colors, label, locked = false, lockHint = "" }: { preview: AvatarConfig; selected: boolean; onPress: () => void; colors: Palette; label: string; locked?: boolean; lockHint?: string }) {
-  /* KİLİTLİ olan gizlenmiyor, kilitli çiziliyor: görünmeyen bir ödül kimseyi
-     peşinden koşturmaz. Erişilebilirlik adı nasıl açılacağını da söylüyor —
-     yalnız `disabled` verilseydi ekran okuyucu "neden?" sorusunu cevapsız
-     bırakırdı (web `avatar-editor` `Opt` ile aynı). */
-  return (
-    /* KİLİT ROZETİ BASILABİLİR ALANIN DIŞINDA, üstüne bindirilmiş bir kardeş.
-       İçeride olsaydı dokunma hedefi ölçüsü (`check:hit`) onu hedef sanardı —
-       oysa hedef 54 piksellik karonun kendisi; rozet yalnız işaret ve
-       dokunmayı hiç almıyor (`pointerEvents="none"`). */
-    <View>
-      <PressableScale
-        accessibilityRole="radio"
-        accessibilityState={{ selected, disabled: locked }}
-        accessibilityLabel={locked ? `${label} — ${lockHint}` : label}
-        onPress={locked ? undefined : onPress}
-        style={{ padding: spacing.xs, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent", opacity: locked ? 0.35 : 1 }}
-      >
-        <MascotAvatar config={preview} size={ds(54)} />
-      </PressableScale>
-      {locked ? (
-        <View pointerEvents="none" style={{ position: "absolute", right: 2, bottom: 2, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <LockIcon color={colors.textMuted} size={12} />
-        </View>
-      ) : null}
-    </View>
-  );
-}
+type Slot = "bg" | "hat" | "glasses" | "mustache" | ExtraSlot;
+const SLOT_LABEL: Record<Slot, string> = {
+  bg: "avatar.slot_bg",
+  hat: "avatar.hat",
+  glasses: "avatar.glasses",
+  mustache: "avatar.mustache",
+  neck: "avatar.slot_neck",
+  face: "avatar.slot_face",
+  ear: "avatar.slot_ear",
+  back: "avatar.slot_back",
+};
+const RARITY = AVATAR_RARITY;
 
-function Group({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <View>
-      <SectionTitle title={title} />
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingRight: spacing.lg }}>
-        {children}
-      </ScrollView>
-    </View>
-  );
-}
+type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; preview?: AvatarConfig; swatch?: { from: string; to: string }; none?: boolean; apply: () => void };
 
-/**
- * Avatar düzenleme — Nomi maskotuna şapka (renkli), gözlük, bıyık ekleme. Canlı
- * önizleme; seçim yerelde saklanır ve header/profilde anında görünür (Replicate
- * sanatı sonra). Profil kimlik avatarına veya "Avatarını düzenle"ye dokununca açılır.
- */
 export function AvatarScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
+  const catalog = useAvatarCatalog();
   /*
-    TASLAK ile KAYITLI ayrı duruyor — webdeki düzenleme ekranıyla aynı sebep.
-
-    Ekran kayıtlı avatarı bir kez okuyup duruma kopyalıyordu; okuma eşzamansız
-    ve sunucudan gelen avatarın cihaza yazılmasıyla yarışıyor. Başka bir
-    cihazda avatarını seçmiş biri boş maskot görüp üzerine yazabiliyordu.
-
-    Kayıtlı değer artık reaktif; taslak yalnız kullanıcı bir şeye dokununca
-    doluyor ve o andan sonra kazanıyor.
+    TASLAK ile KAYITLI ayrı duruyor: kayıtlı değer reaktif, taslak yalnız
+    kullanıcı bir şeye dokununca doluyor ve o andan sonra kazanıyor (başka
+    cihazda seçilmiş avatarın üzerine boş maskot yazılmasın).
   */
   const stored = useAvatar();
   const [draft, setDraft] = useState<AvatarConfig | null>(null);
-  /* Hiç seçmemiş kişi listelerde kimliğinden türeyen maskotla görünüyor;
-     ekran da ondan başlıyor (web `avatar-editor` ile aynı). */
   const { user } = useAuth();
   const cfg = draft ?? stored ?? derivedAvatar(user?.id ?? "");
   const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
+  const [slot, setSlot] = useState<Slot>("hat");
+  const [hint, setHint] = useState<string | null>(null);
 
   /*
-    KAZANILMIŞ ROZETLER. Kilit yalnız GÖSTERİM için; kaydı sunucu eliyor
-    (`api/profile`, `lib/avatar-unlocks`). İstek düşerse liste boş kalıyor ve
-    kilitli aksesuarlar kilitli görünüyor — açık görünüp kaydedilmemekten iyi.
+    KAZANILMIŞ ROZETLER ve PARÇALAR. Kilit yalnız GÖSTERİM için; kaydı sunucu
+    eliyor. İstek düşerse liste boş kalıyor ve kilitli olan kilitli görünüyor.
   */
   const [unlocked, setUnlocked] = useState<Set<string>>(new Set());
+  const [owned, setOwned] = useState<Set<string>>(new Set());
   useEffect(() => {
     let alive = true;
     void api<Partial<{ rows: { id: string; unlocked: boolean }[] }>>("/api/achievements")
       .then((d) => { if (alive) setUnlocked(new Set((d.rows ?? []).filter((r) => r.unlocked).map((r) => r.id))); })
-      .catch(() => { /* kilitli kalsın */ });
+      .catch(() => {});
+    if (user && !user.guest) {
+      void api<Partial<{ items: { id: string }[] }>>("/api/avatar/items")
+        .then((d) => { if (alive) setOwned(new Set((d.items ?? []).map((i) => i.id))); })
+        .catch(() => {});
+    }
     return () => { alive = false; };
-  }, []);
-  const kilitli = (id: string | null) => {
+  }, [user]);
+  const badgeLocked = (id: string | null) => {
     const rozet = id ? PART_UNLOCKS[id] : undefined;
     return !!rozet && !unlocked.has(rozet);
   };
 
-  const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, ...over });
+  const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
+  const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
+  const lang = currentLang();
+
+  const tiles: Tile[] = useMemo(() => {
+    const pick = (s: Slot, id: string | null, color?: string | null) => {
+      if (s === "bg") return setCfg({ bg: id });
+      if (s === "hat") return setCfg({ hat: id });
+      if (s === "glasses") return setCfg({ glasses: id });
+      if (s === "mustache") return setCfg({ mustache: id });
+      const extra = { ...cfg.extra };
+      if (id) extra[s] = { id, color: color ?? null }; else delete extra[s];
+      return setCfg({ extra });
+    };
+    const current = (s: Slot): string | null => (s === "bg" ? cfg.bg : s === "hat" ? cfg.hat : s === "glasses" ? cfg.glasses : s === "mustache" ? cfg.mustache : cfg.extra[s]?.id ?? null);
+    if (catalog) {
+      const parts: CatalogPart[] = catalog.cat.parcalar.filter((p) => p.slot === slot);
+      const list: Tile[] = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, none: true, apply: () => pick(slot, null) }];
+      for (const p of parts) {
+        const byBadge = badgeLocked(p.id);
+        const locked = (p.nadir !== "common" && !owned.has(p.id)) || byBadge;
+        list.push({ key: p.id, label: p.adlar[lang] ?? p.ad, selected: current(slot) === p.id || (slot === "bg" && !cfg.bg && p.id === "bg_orange"), locked, hint: t(byBadge ? "avatar.locked_hint" : "avatar.locked_earn"), rarity: p.nadir, icon: `${catalog.base}/${p.ikon}`, apply: () => pick(slot, p.id, slot === "hat" ? cfg.hatColor : p.renkler[0] ?? null) });
+      }
+      return list;
+    }
+    if (slot === "bg") {
+      return AVATAR_BGS.map((b) => ({ key: b.id, label: "", selected: (cfg.bg ?? "bg_orange") === b.id, locked: false, swatch: b, apply: () => pick("bg", b.id) }));
+    }
+    const ids = slot === "hat" ? HATS : slot === "glasses" ? GLASSES : MUSTACHES;
+    return [
+      { key: "none", label: t(slot === "hat" ? "avatar.no_hat" : slot === "glasses" ? "avatar.no_glasses" : "avatar.no_mustache"), selected: !current(slot), locked: false, preview: none({ [slot]: null }), apply: () => pick(slot, null) },
+      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: badgeLocked(id), hint: t("avatar.locked_hint"), preview: none({ [slot]: id }), apply: () => pick(slot, id) })),
+    ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [catalog, slot, cfg, owned, unlocked, lang]);
+
+  const colorable = slot === "hat" && !!cfg.hat && (!catalog || (catalog.cat.parcalar.find((p) => p.id === cfg.hat)?.renkler.length ?? 0) > 0);
 
   /* Kayıt eşzamansız: bitene kadar düğme meşgul, ikinci dokunuş ikinci kayıt açmıyor. */
   const [saving, setSaving] = useState(false);
@@ -121,51 +134,96 @@ export function AvatarScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={t("avatar.your_avatar")} />
-
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        {/* canlı önizleme */}
-        <View style={{ alignItems: "center", marginVertical: spacing.lg }}>
-          <View style={softShadow(colors.primary, 12)}><MascotAvatar config={cfg} size={ds(140)} /></View>
+      <AvatarStage config={cfg} height={260 + insets.top}>
+        <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", alignItems: "center" }}>
+          <StageButton label={t("common.close")} onPress={() => nav.goBack()}><XIcon color={colors.text} size={20} /></StageButton>
+          <Text accessibilityRole="header" variant="h3" color="#fff" style={{ flex: 1, textAlign: "center", textShadowColor: "rgba(0,0,0,0.35)", textShadowRadius: 6 }}>{t("avatar.your_avatar")}</Text>
+          <StageButton label={t("avatar.reset")} onPress={() => setDraft(null)}><RefreshIcon color={colors.text} size={20} /></StageButton>
         </View>
+      </AvatarStage>
 
-        <Group title={t("avatar.hat")}>
-          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPress={() => setCfg({ hat: null })} colors={colors} />
-          {HATS.map((h, i) => (
-            <OptTile key={h} label={`${t("avatar.hat")} ${i + 1}`} preview={none({ hat: h })} selected={cfg.hat === h} locked={kilitli(h)} lockHint={t("avatar.locked_hint")} onPress={() => setCfg({ hat: h })} colors={colors} />
-          ))}
-        </Group>
+      <View style={{ flex: 1, marginTop: -22, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, backgroundColor: colors.bg }}>
+        {/* YUVA SEKMELERİ */}
+        <ScrollView accessibilityRole="tablist" horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.xs, paddingHorizontal: spacing.md, paddingTop: spacing.md, paddingBottom: spacing.sm }} style={{ flexGrow: 0 }}>
+          {slots.map((s) => {
+            const on = s === slot;
+            return (
+              <PressableScale key={s} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => { setSlot(s); setHint(null); }} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: on ? colors.primarySoft : colors.surface2 }}>
+                <Text variant="bodyStrong" color={on ? colors.onPrimarySoft : colors.textMuted}>{t(SLOT_LABEL[s])}</Text>
+              </PressableScale>
+            );
+          })}
+        </ScrollView>
 
-        {cfg.hat ? (
-          <View>
-            <SectionTitle title={t("avatar.hat_color")} />
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.md, paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
+          {colorable ? (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.xs, paddingBottom: spacing.md }}>
+              <Text variant="caption" color={colors.textMuted}>{t("avatar.hat_color")}</Text>
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
-                return (
-                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg({ hatColor: col })} style={{ width: 44, height: 44, borderRadius: radii.lg, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
-                );
+                return <PressableScale key={col} hitSlop={4} accessibilityRole="radio" accessibilityState={{ selected: sel }} accessibilityLabel={`${t("avatar.hat_color")} ${col}`} onPress={() => setCfg({ hatColor: col })} style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : colors.bg }} />;
               })}
             </View>
+          ) : null}
+
+          <View accessibilityRole="radiogroup" style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+            {tiles.map((tile) => (
+              <OptCard key={tile.key} tile={tile} colors={colors} onLocked={() => setHint(tile.hint ?? t("avatar.locked_earn"))} />
+            ))}
           </View>
-        ) : null}
+        </ScrollView>
 
-        <Group title={t("avatar.glasses")}>
-          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPress={() => setCfg({ glasses: null })} colors={colors} />
-          {GLASSES.map((g, i) => (
-            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 1}`} preview={none({ glasses: g })} selected={cfg.glasses === g} locked={kilitli(g)} lockHint={t("avatar.locked_hint")} onPress={() => setCfg({ glasses: g })} colors={colors} />
-          ))}
-        </Group>
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline, gap: spacing.sm }}>
+          {hint ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted}>{hint}</Text> : null}
+          <PrimaryButton label={t("common.save")} onPress={save} busy={saving} />
+        </View>
+      </View>
+    </View>
+  );
+}
 
-        <Group title={t("avatar.mustache")}>
-          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPress={() => setCfg({ mustache: null })} colors={colors} />
-          {MUSTACHES.map((m, i) => (
-            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 1}`} preview={none({ mustache: m })} selected={cfg.mustache === m} locked={kilitli(m)} lockHint={t("avatar.locked_hint")} onPress={() => setCfg({ mustache: m })} colors={colors} />
-          ))}
-        </Group>
+function StageButton({ label, onPress, children }: { label: string; onPress: () => void; children: React.ReactNode }) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale hitSlop={4} onPress={onPress} accessibilityLabel={label} style={{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface }}>
+      {children}
+    </PressableScale>
+  );
+}
 
-        <PrimaryButton label={t("common.save")} onPress={save} busy={saving} style={{ marginTop: spacing.xxl }} />
-      </ScrollView>
+/**
+ * Parça kartı — önizleme (mini avatar, katalog ikonu ya da arka plan rengi),
+ * altta adı; nadirlik kenar rengi; seçiliyse ✓. Kilitli kart soluk ve kilitli;
+ * dokununca açılış ipucu (rozet işareti dokunmayı almıyor).
+ */
+function OptCard({ tile, colors, onLocked }: { tile: Tile; colors: Palette; onLocked: () => void }) {
+  const edge = tile.rarity ? RARITY[tile.rarity] ?? colors.border : colors.border;
+  return (
+    <View style={{ width: "31.5%" }}>
+      <PressableScale
+        accessibilityRole="radio"
+        accessibilityState={{ selected: tile.selected, disabled: tile.locked }}
+        accessibilityLabel={tile.locked ? `${tile.label} — ${tile.hint ?? t("avatar.locked_earn")}` : tile.label || t("avatar.slot_bg")}
+        onPress={tile.locked ? onLocked : tile.apply}
+        style={[{ alignItems: "center", gap: 6, padding: spacing.sm, borderRadius: radii.lg, borderWidth: tile.selected ? 2.5 : 1.5, borderColor: tile.selected ? colors.primary : edge, backgroundColor: colors.surface }, tile.selected ? cardShadow(colors, 6) : null]}
+      >
+        <View style={{ width: 64, height: 64, alignItems: "center", justifyContent: "center", opacity: tile.locked ? 0.35 : 1 }}>
+          {tile.preview ? <MascotAvatar config={tile.preview} size={60} />
+            : tile.icon ? <Image source={{ uri: tile.icon }} style={{ width: 60, height: 60 }} resizeMode="contain" />
+            : tile.swatch ? <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: tile.swatch.to, borderWidth: 6, borderColor: tile.swatch.from }} />
+            : <View style={{ width: 44, height: 44, borderRadius: 22, borderWidth: 2, borderStyle: "dashed", borderColor: colors.border }} />}
+        </View>
+        {tile.label ? <Text variant="micro" color={colors.textMuted} numberOfLines={1}>{tile.label}</Text> : null}
+      </PressableScale>
+      {tile.locked ? (
+        <View pointerEvents="none" style={{ position: "absolute", right: 6, top: 6, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <LockIcon color={colors.textMuted} size={12} />
+        </View>
+      ) : tile.selected ? (
+        <View pointerEvents="none" style={{ position: "absolute", right: 6, top: 6, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }}>
+          <CheckIcon color={colors.onPrimary} size={12} />
+        </View>
+      ) : null}
     </View>
   );
 }

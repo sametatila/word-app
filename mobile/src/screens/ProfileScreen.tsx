@@ -1,261 +1,219 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { t, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { goFriends } from "../lib/goFriends";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
-import { MyAvatar } from "../ui/Avatar";
-import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
+import { ArrowBackIcon, ChevronRightIcon, CrownIcon, SettingsIcon, SparkIcon, PenIcon, BookIcon, CheckIcon, WriteIcon, FlameIcon } from "../ui/icons";
+import { AvatarStage, derivedAvatar } from "../ui/Avatar";
+import { SkeletonLine } from "../ui/Skeleton";
+import { AchievementIcon } from "../ui/achievementIcon";
 import { useAuth } from "../lib/AuthContext";
-import { shareInvite } from "../lib/share";
 import { useMe } from "../lib/useMe";
+import { useAvatar, parseAvatar } from "../lib/avatar";
 import { usePremiumStatus } from "../lib/premium";
 import { hasMockExams } from "../data/exams";
-import { currentCourseId } from "../lib/courses";
-import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
-import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { useLayout } from "../lib/useLayout";
-import { CardGrid } from "../ui/CardGrid";
+import { currentCourseId, courseOrDefault } from "../lib/courses";
+import { currentLang } from "../lib/i18n";
+import { api } from "../api/client";
+import { social, tierName, type LeagueView } from "../api/social";
+import type { Achievement } from "../data/achievements";
+import { useTheme, spacing, radii, softShadow, cardShadow, TIER_COLOR, type Palette } from "../theme";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
-import { HeaderButton, ScreenHeader } from "../social/common";
 
-function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
-  return (
-    <Card padded style={{ gap: 2 }}>
-      <Text variant="h1" color={color}>{value}</Text>
-      <Text variant="caption" color={colors.textMuted}>{label}</Text>
-    </Card>
-  );
-}
-
+/**
+ * PROFİL — "sen" ekranı (2026-09-28, Samet'in kararı; taslak F2,
+ * `docs/plan/profil-ayarlar-topluluk.md`).
+ *
+ * Üstte SAHNE: kullanıcının avatar arka planı ve büyük Nomi (3B katalog
+ * açıkken göğüsten yukarı katmanlar, kapalıyken 2B daire; bkz. ui/Avatar
+ * `AvatarStage`). İçerik sahnenin üstüne bir kâğıt gibi biniyor.
+ *
+ * Yalnız "sen": ad ve "Avatarı düzenle", seri · XP · lig sırası tek satırda,
+ * Gelişim (Kelimelerim, Yapabildiklerim, Yazılarım), son başarımlar, Premium.
+ *
+ * KALKANLAR ve yeni yerleri: Bildirimler (başlıktaki zil), Arkadaşlar ve
+ * haftalık lig (Topluluk sekmesi), davet (Topluluk), Çıkış yap ve Hesabı sil
+ * (Ayarlar). Profilde başlıkta zaten olan bir şey tekrar edilmiyor.
+ */
+type Board = { rows: Achievement[]; unlockedCount: number; total: number };
 
 export function ProfileScreen() {
   const { colors } = useTheme();
-  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
-  // Tam durum: davet kodu da buradan geliyor (paylaşım bağlantısı onu taşıyor).
-  const { status: premiumStatus, loading: premiumLoading } = usePremiumStatus();
+  const { status: premiumStatus } = usePremiumStatus();
   const premium = !!premiumStatus?.premium;
-  /* MİSAFİR (mağaza ön inceleme B24): adı ve e-postası yok; kimlik kartı
-     "Misafir" diyor, kartın altında hesap oluşturma çağrısı duruyor. Hesapta
-     adı yoksa e-posta adından türet. */
   const guest = Boolean(user?.guest);
-  const displayName = guest ? t("guest.name") : user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
-  const [confirmOut, setConfirmOut] = useState(false);
-  async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
-  // Veri gelmeden rakam gösterilmez (uydurma "1.2k" yok): yükleniyor kartı var.
+  const local = useAvatar();
+  const cfg = local ?? parseAvatar(me?.avatar) ?? derivedAvatar(user?.id ?? "?");
+  const displayName = guest ? t("guest.name") : me?.name?.trim() || user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
+
+  const [username, setUsername] = useState<string | null>(null);
+  const [league, setLeague] = useState<LeagueView | null>(null);
+  const [board, setBoard] = useState<Board | null>(null);
+  useEffect(() => {
+    if (!user || guest) return;
+    let alive = true;
+    social.me().then((m) => { if (alive) setUsername(m.username); }).catch(() => {});
+    social.league().then((l) => { if (alive) setLeague(l); }).catch(() => {});
+    return () => { alive = false; };
+  }, [user, guest]);
+  useEffect(() => {
+    if (!user) return;
+    let alive = true;
+    api<Partial<Board>>("/api/achievements")
+      .then((d) => { if (alive && Array.isArray(d?.rows) && typeof d.total === "number" && typeof d.unlockedCount === "number") setBoard({ rows: d.rows, unlockedCount: d.unlockedCount, total: d.total }); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, [user]);
+
+  const course = courseOrDefault(me?.course ?? currentCourseId()).label[currentLang()];
+  const sub = [username ? `@${username}` : null, me ? `${course} · ${me.level}` : null].filter(Boolean).join(" · ");
+  const myRank = league?.rows.find((r) => r.isMe)?.rank ?? null;
+  const recent = (board?.rows ?? []).filter((a) => a.unlocked).sort((a, b) => String(b.unlockedAt ?? "").localeCompare(String(a.unlockedAt ?? ""))).slice(0, 3);
+  const goLeague = () => nav.navigate("Tabs", { screen: "Friends", params: { tab: "league" } });
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {/* başlık */}
-      <ScreenHeader title={t("profile.profile")} right={<HeaderButton icon={SettingsIcon} label={t("settings.settings")} onPress={() => nav.navigate("Settings")} />} />
-
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        {/* kimlik kartı */}
-        <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-          <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.edit_your_avatar")} style={softShadow(colors.primary, 10)}>
-            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={ds(76)} />
-          </PressableScale>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
-          <Text variant="caption" color={colors.textMuted}>{guest ? t("guest.subline") : user?.email ?? t("profile.not_signed_in")}</Text>
-          {/* Seri ve XP burada YOK: hemen alttaki iki karo aynı sayıları
-              gösteriyordu. Kimlik kartı kimliğe (avatar, ad) ayrıldı. */}
-        </Card>
-
-        {/* Misafir: ilerlemenin hesapta durması için tek çağrı (bkz. ui/GuestAccountCard). */}
-        {guest ? (
-          <View style={{ marginBottom: spacing.lg }}>
-            <GuestAccountCard icon={SparkIcon} title={t("guest.profile_title")} text={t("guest.profile_body")} />
+      <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+        <AvatarStage config={cfg} height={300 + insets.top}>
+          <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", justifyContent: "space-between" }}>
+            <StageButton label={t("common.back")} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))}><ArrowBackIcon color={colors.text} size={22} /></StageButton>
+            <StageButton label={t("settings.settings")} onPress={() => nav.navigate("Settings")}><SettingsIcon color={colors.text} size={22} /></StageButton>
           </View>
-        ) : null}
+        </AvatarStage>
 
-        {/*
-          İKİ KARO, DÖRT DEĞİL. Profil kimliktir, ölçüm tablosu değil: öğrenilen
-          kelime ve toplam süre Gelişim ekranında zaten duruyor ve burada birebir
-          tekrar ediyorlardı. Kalan ikisi kimliğin parçası — seri "ne kadar
-          düzenlisin", XP "ne kadar biriktirdin" der ve ikisi herkese açık
-          profilde de görünür (bkz. lib/social/profile publicProfile).
-
-          Binlik ayracı SÖZLÜKTEN (`formatNumber`). Burada elle yazılmış bir
-          düzenli ifade vardı ve ayracı "." olarak KODA GÖMÜYORDU: İngilizce
-          arayüzde de "1.240" çıkıyordu. Aynı karo kişi profilinde
-          (UserScreen `StatTile`) ve webin iki profil karosunda zaten
-          `formatNumber` kullanıyor.
-        */}
-        {/*
-          ÜÇ HÂL, İKİ DEĞİL. Izgara yalnız `me`ye bakıyordu: okuma patlayınca
-          (`me` null, `loading` bitmiş) iki karo SONSUZA KADAR iskelet
-          çiziyordu. Aynı dosyanın on beş satır yukarısındaki rozetleri
-          `meLoading ? iskelet : me ? rozet : null` ile doğru yazılmıştı —
-          aynı ekranda iki ayrı kalıp. Izgara da ona çekildi: sayı yoksa karo
-          hiç çizilmiyor, kimlik kartı ve menü satırları yerinde kalıyor
-          (bkz. Gelişim ekranı, §321 — orada ekranın TAMAMI sayıya bağlı
-          olduğu için hata kartı çiziliyor).
-        */}
-        {meLoading ? (
-          // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: iki karo
-          // gelince ekran bir satır boyu uzamıyor.
-          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
-            {[0, 1].map((i) => (
-              <SkeletonCard key={i} style={{ gap: 2 }}>
-                <SkeletonLine variant="h1" width="60%" />
-                <SkeletonLine variant="caption" width="85%" />
-              </SkeletonCard>
-            ))}
-          </CardGrid>
-        ) : me ? (
-          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
-            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
-            <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
-          </CardGrid>
-        ) : null}
-
-        {/*
-          Premium bandı MAĞAZADAN BAĞIMSIZ görünüyor.
-
-          Eskiden `billingAvailable()` arkasındaydı ve gerekçesi "satın
-          alınamayan şey vaat edilmez"di. Doğru bir kural ama yanlış yere
-          uygulanmıştı: bant satın almaya değil, PAYWALL SAYFASINA götürüyor ve o
-          sayfada mağazadan bağımsız çalışan iki şey var — promo kodu ve davet
-          ödülü. İkisi de bugün premium olmanın gerçek yolu. Bant gizliyken o
-          yollara hiçbir yerden ulaşılamıyordu; kullanıcı kazandığı ödülü
-          bozduramıyordu.
-
-          Vaat kuralı yerinde duruyor: satın alma DÜĞMESİ hâlâ yalnız mağaza
-          canlıyken çiziliyor (PaywallScreen).
-        */}
-        {/*
-          PREMIUM ÜYEYE "PREMIUM OL" GÖSTERİLMEZ. Bant yalnız `premium`
-          değerine bakıyordu, o da durum inene kadar false: soğuk açılışta
-          premium üye kendi profilinde bir an mavi "Premium ol" çağrısını
-          görüyor, sonra yeşil "Premium üye" bandına dönüyordu (durum bir kez
-          indikten sonra modülde önbellekli, yani hata yalnız ilk açılışta
-          görünüyor ve gözden kaçıyor). İki bant da aynı yükseklikte, iskelet
-          de öyle: bant yerine oturunca altındaki menü kaymıyor.
-        */}
-        {premiumLoading && !premiumStatus ? (
-          <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
-            <SkeletonTile size={46} radius={radii.md} />
-            <View style={{ flex: 1 }}>
-              <SkeletonLine variant="h3" width="46%" />
-              <SkeletonLine variant="caption" width="78%" />
+        {/* KÂĞIT — sahnenin üstüne biniyor; köşeleri yuvarlak, zemin sayfanın zemini. */}
+        <View style={{ marginTop: -28, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, backgroundColor: colors.bg, paddingHorizontal: spacing.lg, paddingTop: spacing.lg, gap: spacing.lg }}>
+          <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md }}>
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <Text accessibilityRole="header" variant="h1" numberOfLines={1}>{displayName}</Text>
+              {sub ? <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{sub}</Text> : meLoading ? <SkeletonLine variant="caption" width={160} /> : null}
             </View>
-          </SkeletonCard>
-        ) : premium ? (
-          /* DOKUNULABİLİR. Eskiden düz bir View'du ve premium kullanıcının
-             paywall'a giden başka yolu yoktu (kilit ekranları premium'da
-             çıkmıyor): abone "Aboneliği yönet"e, inceleme hesabı da (premium)
-             satın alma ekranına uygulama içinden ulaşamıyordu. Paywall'ın
-             premium dalı durumu, bitiş tarihini ve yönetim bağlantısını gösteriyor. */
-          <PressableScale onPress={() => nav.navigate("Paywall")} style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
-            <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
-              <CrownIcon color={colors.onFill} size={26} />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text variant="h3" color={colors.successText}>{t("profile.premium_member")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
-            </View>
-            <ChevronRightIcon color={colors.successText} size={22} />
-          </PressableScale>
-        ) : (
-          <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
-            <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
-              <CrownIcon color="#fff" size={26} />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text variant="h3" color="#fff">{t("profile.go_premium")}</Text>
-              {/* "Sınırsız" değil, gerçek kapsam: premium'un adil kullanım tavanı var (paywall'da yazılı). */}
-              <Text variant="caption" color="#ffffffcc">{t(hasMockExams(currentCourseId()) ? "profile.premium_band_exams" : "profile.premium_band")}</Text>
-            </View>
-            <ChevronRightIcon color="#fff" size={22} />
-          </PressableScale>
-        )}
-
-        {/*
-          MENÜNÜN KURALI: burada duran şey ya KİMLİĞİN ya da BAŞKALARIYLA
-          İLİŞKİN. Kendi ölçün Gelişim ekranında.
-
-          Buradan taşınanlar: Kelimelerim (Gelişim'de "kelime ustalığı"
-          kartının detayı), Yapabildiklerim (yeterlik ölçüsü), Yazılarım
-          (değerlendirilmiş üretimin arşivi). Kaldırılanlar: "Avatarını
-          düzenle" (avatarın kendisi zaten o ekranı açıyor) ve "Bildirimler"
-          (içeriği ayar; Ayarlar → Uygulama'ya taşındı).
-
-          Başarımlar KALIYOR çünkü rozet sayısı herkese açık profilde
-          görünüyor: statü işareti, yani kimliğin parçası. Haftalık sıralama da
-          kalıyor — o bir ölçüm değil, başkalarıyla kıyas.
-        */}
-        {/* Misafirde yalnız rozetler: sıralama, arkadaşlar, gelen kutusu ve davet
-            hesap istiyor ve kimlik kartının altındaki çağrı bunu zaten söylüyor. */}
-        <Card padded style={{ paddingVertical: 0 }}>
-          <MenuRow icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} last={guest} />
-          {!guest && (
-            <>
-              <MenuRow icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
-              <MenuRow icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => goFriends(nav)} />
-              <MenuRow icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
-              <MenuRow icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} last />
-            </>
-          )}
-        </Card>
-
-        {/*
-          HESAPTAN ÇIKIŞ İKİLİSİ — en altta, birlikte.
-
-          "Hesabı sil" Ayarlar'ın EN ÜSTÜNDEKİ hesap bölümünde, ad kutusunun
-          hemen altında duruyordu: yıkıcı bir eylem, sık kullanılan bir alanın
-          bir dokunuş yanında. Yeri burası çünkü (1) çıkış yap zaten burada ve
-          ikisi aynı işin iki ucu, (2) yıkıcı eylem grubun SONUNDA durur,
-          (3) mağaza kuralları (App Store 5.1.1(v), Play veri silme) "kolay
-          bulunur" istiyor — profil sekmesinin dibi, ayarların ortasından daha
-          kolay bulunur.
-
-          İKİNCİ KAPI AYARLAR › HESAP'TA (2026-09-14). Buradaki bağlantı tek
-          başına kalınca bütün metinlerin anlattığı yol ("Profil › Ayarlar ›
-          Hesap › Hesabı sil") boşa düşmüştü; satır orada grubun sonuna geri
-          kondu. İkisi aynı ekranı açıyor.
-        */}
-        {/* MİSAFİRİN ÇIKIŞI YOK: giriş yöntemi olmadığı için geri dönemez. Yerine
-            "Misafir verilerini sil" var — hesap silmenin misafirdeki karşılığı,
-            aynı ekran (bkz. DeleteAccountScreen). */}
-        {guest ? (
-          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("guest.delete_row")} style={{ alignItems: "center", marginTop: spacing.lg, paddingVertical: spacing.md }}>
-            <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
-          </PressableScale>
-        ) : (
-          <>
-            <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, paddingVertical: spacing.md }}>
-              <LogoutIcon color={colors.dangerText} size={20} />
-              <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
+            <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityRole="button" accessibilityLabel={t("profile.edit_avatar")} style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primary, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }, softShadow(colors.primary, 8)]}>
+              <PenIcon color={colors.onPrimary} size={16} />
+              <Text variant="bodyStrong" color={colors.onPrimary}>{t("profile.edit_avatar")}</Text>
             </PressableScale>
+          </View>
 
-            <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.delete_account")}</Text>
+          {/* SERİ · XP · LİG — tek kart, üç sütun. Lig sütunu Topluluk › Lig'i açıyor. */}
+          <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline }, cardShadow(colors, 8)]}>
+            <Stat value={me ? String(me.streak) : meLoading ? null : "–"} label={t("profile.day_streak")} icon={<FlameIcon color={colors.streakText} size={18} />} colors={colors} />
+            <Stat value={me ? formatNumber(me.xp) : meLoading ? null : "–"} label={t("profile.total_xp")} colors={colors} divider />
+            {guest ? null : (
+              <PressableScale onPress={goLeague} accessibilityRole="button" accessibilityLabel={league ? `${tierName(league.tier)}, ${myRank ?? "–"}` : t("leaderboard.league")} style={{ flex: 1, alignItems: "center", paddingVertical: spacing.md, borderLeftWidth: 1, borderLeftColor: colors.hairline }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
+                  <View style={{ width: 14, height: 16, borderTopLeftRadius: 4, borderTopRightRadius: 4, borderBottomLeftRadius: 8, borderBottomRightRadius: 8, backgroundColor: TIER_COLOR.gold }} />
+                  <Text variant="h2">{myRank ? `${myRank}.` : "–"}</Text>
+                </View>
+                <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{league ? tierName(league.tier) : t("leaderboard.league")}</Text>
+              </PressableScale>
+            )}
+          </View>
+
+          {guest ? <GuestAccountCard icon={SparkIcon} title={t("guest.profile_title")} text={t("guest.profile_body")} /> : null}
+
+          {/* GELİŞİM — seri 0 olunca alev kayboluyordu ve buraya giden tek yol oydu. */}
+          <View style={{ gap: spacing.sm }}>
+            <Head title={t("appheader.progress")} action={t("profile.see_all")} onAction={() => nav.navigate("Progress")} colors={colors} />
+            <View style={{ flexDirection: "row", gap: spacing.sm }}>
+              <Tile icon={<BookIcon color={colors.primaryText} size={18} />} value={me ? formatNumber(me.mastered) : meLoading ? null : "–"} label={t("profile.my_words")} onPress={() => nav.navigate("Words")} colors={colors} />
+              <Tile icon={<CheckIcon color={colors.primaryText} size={18} />} label={t("profile.what_can_i_do")} onPress={() => nav.navigate("Cando")} colors={colors} />
+              <Tile icon={<WriteIcon color={colors.primaryText} size={18} />} label={t("profile.my_posts")} onPress={() => nav.navigate("Writings")} colors={colors} />
+            </View>
+          </View>
+
+          {/* SON BAŞARIMLAR — en yeni üç; hiç yoksa kart yok, "Tümü" duruyor. */}
+          <View style={{ gap: spacing.sm }}>
+            <Head title={t("profile.achievements")} action={board ? `${board.unlockedCount}/${board.total}` : t("profile.see_all")} onAction={() => nav.navigate("Achievements")} colors={colors} />
+            {recent.length ? (
+              <View style={{ flexDirection: "row", gap: spacing.sm }}>
+                {recent.map((a) => (
+                  <PressableScale key={a.id} onPress={() => nav.navigate("Achievements")} accessibilityLabel={a.title} style={{ flex: 1, alignItems: "center", gap: 6 }}>
+                    <View style={{ width: 56, height: 56, borderRadius: 28, alignItems: "center", justifyContent: "center", backgroundColor: TIER_COLOR[a.tier] }}>
+                      <AchievementIcon name={a.icon} color="#fff" size={26} />
+                    </View>
+                    <Text variant="micro" color={colors.textMuted} numberOfLines={2} style={{ textAlign: "center" }}>{a.title}</Text>
+                  </PressableScale>
+                ))}
+              </View>
+            ) : null}
+          </View>
+
+          {/* PREMIUM — üyeye abonelik satırı (yönetim Paywall'da), olmayana tek kart. */}
+          {premium ? (
+            <PressableScale onPress={() => nav.navigate("Paywall")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline }}>
+              <CrownIcon color={colors.streakText} size={22} />
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("profile.premium_member")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
+              </View>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
-          </>
-        )}
+          ) : premiumStatus ? (
+            <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.primary, borderRadius: radii.xl, padding: spacing.lg }, softShadow(colors.primary, 10)]}>
+              <CrownIcon color={colors.onPrimary} size={24} />
+              <View style={{ flex: 1 }}>
+                <Text variant="h3" color={colors.onPrimary}>{t("profile.go_premium")}</Text>
+                <Text variant="caption" color={colors.onPrimary} style={{ opacity: 0.85 }}>{t(hasMockExams(currentCourseId()) ? "profile.premium_band_exams" : "profile.premium_band")}</Text>
+              </View>
+              <ChevronRightIcon color={colors.onPrimary} size={22} />
+            </PressableScale>
+          ) : null}
+        </View>
       </ScrollView>
-
-      <ConfirmDialog
-        visible={confirmOut}
-        title={t("profile.log_out")}
-        message={t("profile.signout_confirm")}
-        confirmLabel={t("profile.signout")}
-        cancelLabel={t("common.discard")}
-        destructive
-        onConfirm={reallySignOut}
-        onCancel={() => setConfirmOut(false)}
-      />
     </View>
+  );
+}
+
+/** Sahnenin üstündeki yuvarlak düğme — zemin yarı saydam yüzey, arka plan ne olursa okunur. */
+function StageButton({ label, onPress, children }: { label: string; onPress: () => void; children: React.ReactNode }) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale hitSlop={4} onPress={onPress} accessibilityLabel={label} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface }}>
+      {children}
+    </PressableScale>
+  );
+}
+
+function Stat({ value, label, icon, colors, divider }: { value: string | null; label: string; icon?: React.ReactNode; colors: Palette; divider?: boolean }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.md, borderLeftWidth: divider ? 1 : 0, borderLeftColor: colors.hairline }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
+        {icon}
+        {value === null ? <SkeletonLine variant="h2" width={40} /> : <Text variant="h2">{value}</Text>}
+      </View>
+      <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{label}</Text>
+    </View>
+  );
+}
+
+function Head({ title, action, onAction, colors }: { title: string; action: string; onAction: () => void; colors: Palette }) {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", paddingHorizontal: spacing.xs }}>
+      <Text accessibilityRole="header" variant="h3">{title}</Text>
+      <PressableScale onPress={onAction} hitSlop={8} accessibilityRole="button">
+        <Text variant="bodyStrong" color={colors.primaryText}>{action} ›</Text>
+      </PressableScale>
+    </View>
+  );
+}
+
+function Tile({ icon, value, label, onPress, colors }: { icon: React.ReactNode; value?: string | null; label: string; onPress: () => void; colors: Palette }) {
+  return (
+    <PressableScale onPress={onPress} accessibilityRole="button" accessibilityLabel={value ? `${label}, ${value}` : label} style={{ flex: 1 }}>
+      <Card padded style={{ gap: 6, minHeight: 96 }}>
+        <View style={{ width: 30, height: 30, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.primarySoft }}>{icon}</View>
+        {value !== undefined ? (value === null ? <SkeletonLine variant="h3" width={36} /> : <Text variant="h3">{value}</Text>) : null}
+        <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{label}</Text>
+      </Card>
+    </PressableScale>
   );
 }
