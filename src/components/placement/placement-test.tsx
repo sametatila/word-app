@@ -4,6 +4,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { fillStyle, staggerDelay } from "@/lib/motion";
 import { dialogueSegments, speakSegments } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
@@ -364,8 +365,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         <RoundExit onExit={() => setQuit(true)} labelKey="plc.quit_title" />
         <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <div
-            className="brand-gradient h-full rounded-full transition-all"
-            style={{ width: `${Math.round((100 * stageDone) / Math.max(1, stageTotal))}%` }}
+            className="brand-gradient bar-fill h-full rounded-full"
+            style={fillStyle(Math.round((100 * stageDone) / Math.max(1, stageTotal)))}
           />
         </div>
         <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 shrink-0 underline-offset-2 hover:underline">
@@ -408,7 +409,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
              `ChoiceGame` `reveal={false}` dali. */
           role="radio"
           aria-checked={picked === i}
-          transition={{ delay: i * 0.05 }}
+          transition={{ delay: staggerDelay(i) }}
           disabled={picked !== null}
           onClick={() => {
             setPicked(i);

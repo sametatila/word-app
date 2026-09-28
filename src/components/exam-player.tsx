@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "@/components/flow";
 import { AnimatePresence, motion } from "framer-motion";
+import { T, fillStyle } from "@/lib/motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
@@ -597,8 +598,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <RoundExit onExit={() => setQuit(true)} labelKey="exam.quit_title" />
         <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <div
-            className="brand-gradient h-full rounded-full transition-all"
-            style={{ width: `${Math.round((100 * doneItems) / Math.max(1, sectionCount(paper!, section)))}%` }}
+            className="brand-gradient bar-fill h-full rounded-full"
+            style={fillStyle(Math.round((100 * doneItems) / Math.max(1, sectionCount(paper!, section))))}
           />
         </div>
         <span className="shrink-0 tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
@@ -645,7 +646,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
         {header}
         <AnimatePresence mode="wait">
-          <motion.div key={round.id} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.18 }} className="flex min-h-0 flex-1 flex-col">
+          <motion.div key={round.id} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20, transition: T.instant }} transition={T.medium} className="flex min-h-0 flex-1 flex-col">
             <FitBox>
               {/* Kâğıdın kuralı: ipucu yok. */}
               <NoHints>

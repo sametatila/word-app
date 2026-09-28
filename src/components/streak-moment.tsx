@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { T } from "@/lib/motion";
 import { FlameIcon } from "@/components/icons";
 import { vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
@@ -77,7 +78,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
       <motion.span
         initial={still ? false : { scale: 0.4, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 11 }}
+        transition={T.celebrate}
         className="glow-tint flex h-24 w-24 items-center justify-center rounded-full on-fill"
         style={{ background: "var(--color-flame-500)", "--tint-fill": "var(--color-flame-500)" } as React.CSSProperties}
       >

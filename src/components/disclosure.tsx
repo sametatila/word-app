@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRightIcon } from "@/components/icons";
+import { T } from "@/lib/motion";
+import { useStill } from "@/lib/use-still";
 
 /**
  * Açılır kutu.
@@ -45,6 +47,7 @@ export function Disclosure({
   className?: string;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const still = useStill();
 
   return (
     <div className={className}>
@@ -72,7 +75,10 @@ export function Disclosure({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+            /* Yükseklik `auto`ya açılıyor (içerik akışı gerek, dönüşümle
+               olmaz). MotionConfig yalnız dönüşümü kapatıyor, yüksekliği
+               değil: "hareketi azalt"ta panel anında açılıp kapanıyor. */
+            transition={still ? { duration: 0 } : T.short}
             className="overflow-hidden"
           >
             <div className="pt-3">{children}</div>

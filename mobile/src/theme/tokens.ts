@@ -45,6 +45,25 @@ const ts = (n: number, taban: number) => Math.max(taban, Math.round(n * typeDens
 */
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 20, xxl: 28, xxxl: 40 };
 export const radii = { sm: 10, md: 14, lg: 20, xl: 26, xxl: 34, pill: 999 };
+
+/*
+  HAREKET — süre, eğri ve yay TEK tabloda (2026-09-28). Önce her dosya kendi
+  sayısını yazıyordu ve iki platform yorumlarla elle eşleniyordu. Web
+  karşılığı `globals.css` `--motion-*` / `--ease-*` ve framer için
+  `src/lib/motion.ts`; `check:tokens` üçünü karşılaştırıyor.
+  - instant: basma, seçim, küçük durum değişimi
+  - short:   geri bildirim paneli, rozet, geçiş
+  - medium:  kart girişi, ilerleme çubuğu
+  - stagger: sıralı girişte ögeler arası (seçenekler, sayaçlar)
+  - ease: standart eğri (iki yönlü); emphasized: girişte yavaşlayarak oturan
+  - celebrate: kutlama yayı (başarım, seri, lig)
+*/
+export const motion = {
+  instant: 120, short: 200, medium: 320, stagger: 30,
+  ease: [0.2, 0, 0.2, 1] as const,
+  emphasized: [0.2, 0, 0, 1] as const,
+  celebrate: { stiffness: 320, damping: 20 },
+};
 for (const k of Object.keys(spacing) as (keyof typeof spacing)[]) spacing[k] = Math.max(2, Math.round(spacing[k] * density));
 for (const k of Object.keys(radii) as (keyof typeof radii)[]) if (k !== "pill") radii[k] = ds(radii[k]);
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
+import { staggerDelay } from "@/lib/motion";
 import { GameShell } from "./game-shell";
 import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
@@ -118,7 +119,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
                  `accessibilityRole="radio"` (bkz. game/rounds). */
               role="radio"
               aria-checked={picked === option}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: staggerDelay(i) }}
               disabled={picked != null}
               onClick={() => choose(option)}
               className={`option flex min-h-14 items-center justify-center px-3 py-3 text-center text-body ${state} ${

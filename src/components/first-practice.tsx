@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { fillStyle } from "@/lib/motion";
 import { useRouter } from "next/navigation";
 import { CheckIcon, SpeakerIcon } from "@/components/icons";
 import { speakWord } from "@/components/speak-button";
@@ -108,8 +109,8 @@ export function FirstPractice() {
             marka gradyanı dolgu. */}
         <div className="h-2 flex-1 overflow-hidden rounded-full surface-2">
           <div
-            className="brand-gradient h-full rounded-full transition-[width] duration-300"
-            style={{ width: `${((idx + (seen ? 1 : 0)) / words.length) * 100}%` }}
+            className="brand-gradient bar-fill h-full rounded-full"
+            style={fillStyle(((idx + (seen ? 1 : 0)) / words.length) * 100)}
           />
         </div>
         <span className="muted text-caption tabular-nums">

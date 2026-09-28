@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { T } from "@/lib/motion";
 import { TrophyIcon } from "@/components/icons";
 import { Confetti } from "@/components/celebrate";
 import { TIER_COLOR } from "@/components/achievement-badge";
 import { tierKey } from "@/lib/social/client";
 import { LEAGUE_TIERS } from "@/lib/social/types";
 import { play } from "@/lib/sfx";
+import { buzz } from "@/lib/fx";
 import { useT } from "@/lib/i18n/client";
 
 /** Kutlamanın ekranda kaldığı süre — tek rozet açılışıyla aynı (`achievement-unlock` SOLO_MS). */
@@ -80,11 +82,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
 
   useEffect(() => {
     play("unlock");
-    try {
-      navigator.vibrate?.([0, 20, 40, 30]);
-    } catch {
-      /* tarayıcı izin vermeyebilir */
-    }
+    buzz([0, 20, 40, 30]);
     const geri = document.activeElement as HTMLElement | null;
     box.current?.focus();
     const end = setTimeout(() => done.current(), LEAGUE_UP_MS);
@@ -118,7 +116,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
       <motion.div
         initial={{ scale: 0.7, y: 18, rotate: -4 }}
         animate={{ scale: 1, y: 0, rotate: 0 }}
-        transition={{ type: "spring", stiffness: 320, damping: 20 }}
+        transition={T.celebrate}
         className="card w-full max-w-xs px-4 py-5 text-center"
         style={{ boxShadow: `0 24px 60px -20px ${color}` }}
       >
@@ -128,7 +126,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
           <motion.span
             initial={{ scale: 0.3 }}
             animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 260, damping: 10, delay: 0.12 }}
+            transition={{ ...T.celebrate, delay: 0.12 }}
             className="flex h-[92px] w-[92px] items-center justify-center rounded-full text-white"
             style={{ background: color, boxShadow: `0 10px 26px -10px ${color}` }}
           >

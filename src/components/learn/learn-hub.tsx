@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { fillStyle } from "@/lib/motion";
 import type { ReactNode } from "react";
 import { QuestCard } from "@/components/quest-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
@@ -149,8 +150,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
             </div>
             <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "color-mix(in srgb, currentColor 30%, transparent)" }}>
               <div
-                className="h-full rounded-full transition-[width] duration-500"
-                style={{ width: `${Math.max(3, goalPct)}%`, background: "currentColor" }}
+                className="bar-fill h-full rounded-full"
+                style={{ ...fillStyle(Math.max(3, goalPct)), background: "currentColor" }}
               />
             </div>
           </div>

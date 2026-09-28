@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
+import { T } from "@/lib/motion";
 import { AchievementBadge, TIER_COLOR, TIER_LABEL_KEYS, type BadgeRow } from "@/components/achievement-badge";
 import { useT } from "@/lib/i18n/client";
 import { Confetti } from "@/components/celebrate";
@@ -287,7 +288,7 @@ function Card({ tier, children }: { tier: string; children: React.ReactNode }) {
       initial={{ scale: 0.7, y: 18, rotate: -4 }}
       animate={{ scale: 1, y: 0, rotate: 0 }}
       exit={{ scale: 0.9, y: -10, opacity: 0 }}
-      transition={{ type: "spring", stiffness: 320, damping: 20 }}
+      transition={T.celebrate}
       /* Android `AchievementUnlock` kartı: dikey 20, yatay 16. */
       className="card w-full max-w-xs px-4 py-5 text-center"
       style={{ boxShadow: `0 24px 60px -20px ${TIER_COLOR[tier] ?? "var(--color-brand)"}` }}

@@ -1388,6 +1388,8 @@ export const tr: Record<string, string> = {
   "sessions.unknown_device": "Bilinmeyen cihaz",
   "snd.game_sounds": "Efekt sesleri",
   "snd.game_sounds_sub": "Telaffuz sesi bundan bağımsız; bu kapalıyken de çalar",
+  "snd.haptics": "Titreşim",
+  "snd.haptics_sub": "Doğru, yanlış ve kutlamalarda",
   "settings.analytics_sub": "Hangi özelliklerin kullanıldığı. Üçüncü tarafa gitmez.",
   "settings.settings": "Ayarlar",
   "settings.not_sure_take_placement_test": "Seviye testini çöz →",

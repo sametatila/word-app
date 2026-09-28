@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
+import { T, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -914,10 +915,10 @@ function SessionRound() {
         <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
         <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <motion.div
-            className="brand-gradient h-full rounded-full"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-            transition={{ type: "spring", stiffness: 180, damping: 26 }}
+            className="brand-gradient h-full w-full rounded-full"
+            initial={{ x: "-100%" }}
+            animate={{ x: fillX(progress) }}
+            transition={T.medium}
           />
         </div>
         {/* Combo üç doğrudan önce görünmüyor: her doğru cevapta yanıp sönen
@@ -989,8 +990,11 @@ function SessionRound() {
           key={round.id}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.18, ease: "easeOut" }}
+          /* Kart girişi hareket jetonuyla (`T.medium`, mobil `motion.medium`);
+             çıkış kısa (`T.instant`): `mode="wait"` ikisini art arda
+             oynatıyor, uzun çıkış her soruyu bekletirdi. */
+          exit={{ opacity: 0, x: -20, transition: T.instant }}
+          transition={T.medium}
           className="flex min-h-0 flex-1 flex-col"
         >
           <FitBox>
@@ -1422,11 +1426,11 @@ function SummaryCard({
         >
           <div className="h-2 w-full overflow-hidden rounded-full surface-2">
             <motion.div
-              className="h-full rounded-full"
+              className="h-full w-full rounded-full"
               style={{ background: "var(--color-mint)" }}
-              initial={{ width: 0 }}
-              animate={{ width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%` }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 160, damping: 24 }}
+              initial={{ x: "-100%" }}
+              animate={{ x: fillX(Math.round((result.reviewsToday / result.dailyGoal) * 100)) }}
+              transition={{ ...T.medium, delay: 0.2 }}
             />
           </div>
           <p className="muted text-caption tabular-nums">

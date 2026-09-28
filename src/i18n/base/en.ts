@@ -1385,6 +1385,8 @@ export const enBase: Record<string, string> = {
   "sessions.unknown_device": "Unknown device",
   "snd.game_sounds": "Sound effects",
   "snd.game_sounds_sub": "Pronunciation audio is separate and plays even when this is off",
+  "snd.haptics": "Vibration",
+  "snd.haptics_sub": "On correct, wrong and celebrations",
   "settings.analytics_sub": "Which features get used. Never shared.",
   "settings.settings": "Settings",
   "settings.not_sure_take_placement_test": "Take the placement test →",

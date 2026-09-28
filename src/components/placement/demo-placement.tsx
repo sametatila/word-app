@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { T, fillX, staggerDelay } from "@/lib/motion";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StateBody } from "@/components/flow";
 import { CheckIcon } from "@/components/icons";
@@ -125,9 +126,10 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
         <RoundExit onExit={leave} labelKey="common.close" />
         <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <motion.div
-            className="brand-gradient h-full rounded-full"
-            animate={{ width: `${Math.round((index / total) * 100)}%` }}
-            transition={{ type: "spring", stiffness: 160, damping: 24 }}
+            className="brand-gradient h-full w-full rounded-full"
+            initial={false}
+            animate={{ x: fillX(Math.round((index / total) * 100)) }}
+            transition={T.medium}
           />
         </div>
         <span className="muted shrink-0 text-strong tabular-nums">
@@ -161,7 +163,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
                  (`ChoiceGame` `reveal`) simgeyi de ciziyor. */
               role="radio"
               aria-checked={picked === o}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: staggerDelay(i) }}
               disabled={picked !== null}
               onClick={() => pick(o)}
               className={`option flex items-center justify-between gap-2 px-3.5 py-3 text-left text-strong ${

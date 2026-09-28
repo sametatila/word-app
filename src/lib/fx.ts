@@ -40,14 +40,58 @@ export function reducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+/*
+ * TİTREŞİM AYRI BİR TERCİH. Önce ses ve titreşim tek anahtara bağlıydı:
+ * titreşimi rahatsız edici bulan sesi de kaybediyordu, ya da tersi. Tercih
+ * cihazda (ses gibi, `lib/sfx` `lernomi-sound`), varsayılan AÇIK; yalnız
+ * kapatılınca yazılıyor. Mobil karşılığı ayarlardaki "Titreşim" satırı
+ * (`snd.haptics`).
+ */
+const HAPTICS_KEY = "lernomi-haptics";
+let haptics: boolean | null = null;
+
+/** Tarayıcı titreşimi destekliyor mu (masaüstü ve iOS Safari: hayır). */
+export function canVibrate(): boolean {
+  return typeof navigator !== "undefined" && "vibrate" in navigator;
+}
+
+export function hapticsEnabled(): boolean {
+  if (haptics !== null) return haptics;
+  try {
+    haptics = localStorage.getItem(HAPTICS_KEY) !== "off";
+  } catch {
+    haptics = true;
+  }
+  return haptics;
+}
+
+export function setHapticsEnabled(next: boolean) {
+  haptics = next;
+  try {
+    if (next) localStorage.removeItem(HAPTICS_KEY);
+    else localStorage.setItem(HAPTICS_KEY, "off");
+  } catch {
+    /* depolama kapalıysa tercih yalnızca bu oturum boyunca geçerli olur */
+  }
+}
+
 export function vibrate(kind: FxKind) {
   // Ses önce: titreşim API'si bazı tarayıcılarda sessizce reddediliyor ve
   // erken dönüş sesi de yutardı. Masaüstünde titreşim hiç yok — geri
   // bildirimin tek kaldığı yer burası.
   play(kind);
-  if (typeof navigator === "undefined" || !("vibrate" in navigator)) return;
+  buzz(PATTERN[kind]);
+}
+
+/**
+ * Yalnız titreşim, sessiz — tercihe bağlı. Kendi sesini ayrıca çalan yerler
+ * (lig atlama `unlock`) ve anahtarın önizlemesi bunu kullanıyor;
+ * `navigator.vibrate` doğrudan çağrılmıyor, yoksa tercih atlanır.
+ */
+export function buzz(pattern: number | number[]) {
+  if (!canVibrate() || !hapticsEnabled()) return;
   try {
-    navigator.vibrate(PATTERN[kind]);
+    navigator.vibrate(pattern);
   } catch {
     /* tarayıcı izin vermeyebilir */
   }

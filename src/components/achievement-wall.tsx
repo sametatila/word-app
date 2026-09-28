@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
+import { T, fillX } from "@/lib/motion";
 import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
@@ -184,10 +185,10 @@ export function AchievementWall() {
 
       <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <motion.div
-          className="brand-gradient h-full rounded-full"
-          initial={{ width: 0 }}
-          animate={{ width: `${pct}%` }}
-          transition={{ type: "spring", stiffness: 120, damping: 24 }}
+          className="brand-gradient h-full w-full rounded-full"
+          initial={{ x: "-100%" }}
+          animate={{ x: fillX(pct) }}
+          transition={T.medium}
         />
       </div>
 

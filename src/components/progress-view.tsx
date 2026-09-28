@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { T, fillStyle, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
@@ -73,18 +74,18 @@ export function WordProgress({
                 </div>
                 <div className="relative h-3 w-full overflow-hidden rounded-full surface-2">
                   <motion.div
-                    className="absolute inset-y-0 left-0 rounded-full opacity-40"
+                    className="absolute inset-0 rounded-full opacity-40"
                     style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${pct}%` }}
-                    transition={{ delay: i * 0.08, type: "spring", stiffness: 140, damping: 24 }}
+                    initial={{ x: "-100%" }}
+                    animate={{ x: fillX(pct) }}
+                    transition={{ ...T.medium, delay: i * 0.08 }}
                   />
                   <motion.div
-                    className="absolute inset-y-0 left-0 rounded-full"
+                    className="absolute inset-0 rounded-full"
                     style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${masteredPct}%` }}
-                    transition={{ delay: i * 0.08 + 0.1, type: "spring", stiffness: 140, damping: 24 }}
+                    initial={{ x: "-100%" }}
+                    animate={{ x: fillX(masteredPct) }}
+                    transition={{ ...T.medium, delay: i * 0.08 + 0.1 }}
                   />
                 </div>
               </div>
@@ -244,8 +245,8 @@ export function ActivityProgress({
         </div>
         <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
           <div
-            className="h-full rounded-full transition-[width] duration-500"
-            style={{ width: `${Math.max(3, pct)}%`, background: "var(--color-mint-500)" }}
+            className="bar-fill h-full rounded-full"
+            style={{ ...fillStyle(Math.max(3, pct)), background: "var(--color-mint-500)" }}
           />
         </div>
       </Link>
@@ -421,10 +422,13 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
           return (
             <div key={d.day} className="flex min-w-0 flex-1 items-end" style={{ height: "100%" }}>
               {d.reviews > 0 ? (
+                /* Yükseklik değil dikey ölçek: çubuk son boyuyla yerleşiyor, yalnız
+                   giriş `scaleY` 0→1 (alttan). Yerleşim her karede yeniden
+                   hesaplanmıyor; bitince ölçek 1, köşe yuvarlağı bozulmuyor. */
                 <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: `${pct}%` }}
-                  transition={{ delay: i * 0.02, type: "spring", stiffness: 180, damping: 22 }}
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ ...T.medium, delay: i * 0.02 }}
                   /* ÇUBUĞUN ADI VAR. Buradaki sayı yalnız `title`da duruyordu —
                      fareyle üstüne gelmeyi gerektiren, dokunmatikte ve ekran
                      okuyucuda hiç bulunmayan bir bilgi. Grafiğin altındaki
@@ -435,8 +439,8 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
                   role="img"
                   aria-label={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
                   title={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
-                  className={`w-full rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
-                  style={isToday ? undefined : { background: heatColor(d.reviews) }}
+                  className={`w-full origin-bottom rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
+                  style={isToday ? { height: `${pct}%` } : { height: `${pct}%`, background: heatColor(d.reviews) }}
                 />
               ) : (
                 <div

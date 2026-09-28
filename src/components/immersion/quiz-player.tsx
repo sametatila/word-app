@@ -124,9 +124,11 @@ export function ImmersionQuizPlayer({
           SONUÇ ŞABLONU (components/flow): band → üç sayı → düğmeler. Geçemeyen
           öğrenci adımın açık kaldığını ve eşiği görmüyordu; band sessizleşiyor,
           etiket "Adım açık kaldı" diyor ve birincil düğme "Tekrar dene".
-          Konfeti yalnız geçince. Sonucu duyuran `role="status"` bandın kendisinde.
+          Konfeti YOK: sınav Patika'nın sıradan bir adımı, kutlama büyük anlara
+          ayrıldı (mobil `QuizScreen` aynı). Sonucu duyuran `role="status"`
+          bandın kendisinde.
         */
-        <FlowColumn celebrate={passed} key={`sonuc-${round}`}>
+        <FlowColumn key={`sonuc-${round}`}>
           <ResultHero
             eyebrow={`${unitNo != null ? `${t("common.unit")} ${unitNo} · ` : ""}${t(kind === "grammar" ? "unitkind.grammar" : kind === "unitQuiz" ? "unitkind.unit_quiz" : "unitkind.quiz")}`}
             title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}

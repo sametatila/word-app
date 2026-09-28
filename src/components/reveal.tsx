@@ -3,6 +3,7 @@
 import { Children, isValidElement, type ReactNode } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useStill } from "@/lib/use-still";
+import { T, staggerDelay } from "@/lib/motion";
 
 /** Görünür olunca yumuşakça beliren sarmalayıcı — uzun, kaydırılan sayfalar için. */
 export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
@@ -33,9 +34,10 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  * başlık, sonra sayılar, sonra ayrıntı. Göz zaten o sırayla gezecekti;
  * animasyon onu yönlendiriyor, ona yeni bir iş çıkarmıyor.
  *
- * Gecikme bilerek kısa (45 ms). Ölçüldü: yedi bölümlü tur özetinde 70 ms
- * aralık zinciri 800 ms'ye çıkarıyordu ve ekran "yükleniyor" gibi
- * görünüyordu; amaç bekletmek değil, sıra duygusu vermek.
+ * Gecikme bilerek kısa: hareket jetonu `MOTION.stagger` (30 ms; mobil
+ * `motion.stagger`, CSS `--motion-stagger`). Ölçüldü: yedi bölümlü tur
+ * özetinde 70 ms aralık zinciri 800 ms'ye çıkarıyordu ve ekran "yükleniyor"
+ * gibi görünüyordu; amaç bekletmek değil, sıra duygusu vermek.
  *
  * ## Çocukları neden kendisi sarıyor
  *
@@ -59,7 +61,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  */
 export function Stagger({
   children,
-  gap = 0.045,
+  gap = staggerDelay(1),
   delay = 0,
   className = "",
   role,
@@ -84,7 +86,7 @@ export function Stagger({
   };
   const item: Variants = {
     hidden: still ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { duration: still ? 0 : 0.34, ease: EASE } },
+    show: { opacity: 1, y: 0, transition: still ? { duration: 0 } : T.medium },
   };
   return (
     <motion.div

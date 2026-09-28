@@ -1831,15 +1831,17 @@ function ConversationPlayerBody({
               kartları → en çok üç düğme. Mobil `ConversationScreen` `Summary` ile
               alanlar ve sıra birebir.
 
-              KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ konuşmanın ALIŞTIRMA İSABETİ (`pct >= 80`
-              kutla, `>= 50` sevin); hüküm (yarım kaldı mı) ayrı: yarım kalan
-              konuşma band sessizleşiyor ve konfeti hiç atılmıyor.
+              MASKOTUN ÖLÇÜTÜ konuşmanın ALIŞTIRMA İSABETİ (`pct >= 80` kutla,
+              `>= 50` sevin); hüküm (yarım kaldı mı) ayrı: yarım kalan konuşma
+              band sessizleşiyor. Konfeti YOK: konuşma Patika'nın sıradan bir
+              adımı, kutlama büyük anlara ayrıldı (mobil `ConversationScreen`
+              `Summary` aynı; puanlı konuşmanın "geçti"si kalıyor).
 
               BAŞLIĞIN BİLİNMEYEN HÂLİ: kayıt isteği düşerse `saved` null kalır;
               yarım sayılması için ya sunucu açıkça "sayılmadı" demeli ya da
               asgari tur yerelde dolmamış olmalı — konuşma yerelde bittiyse bitti.
             */}
-            <FlowColumn celebrate={!unfinished && pct >= 80}>
+            <FlowColumn>
               <ResultHero
                 eyebrow={`${t("unitkind.conversation")} · ${conversation.title}`}
                 title={t(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}

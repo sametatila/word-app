@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { fillStyle } from "@/lib/motion";
 import { usePathname } from "next/navigation";
 
 /**
@@ -75,10 +76,11 @@ export function TopProgress() {
       }}
     >
       <div
-        className="brand-gradient h-full"
+        className="brand-gradient h-full w-full"
         style={{
-          width: `${value}%`,
-          transition: "width .18s ease-out",
+          // Genişlik değil kayma (bkz. lib/motion `fillX`): yerleşim tetiklenmiyor.
+          ...fillStyle(value),
+          transition: "transform .18s ease-out",
           boxShadow: "0 0 8px color-mix(in srgb, var(--color-brand) 60%, transparent)",
         }}
       />

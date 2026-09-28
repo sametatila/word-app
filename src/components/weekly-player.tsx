@@ -4,6 +4,7 @@ import { ReportFlag, snapshot } from "@/components/report-flag";
 import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { T, fillX } from "@/lib/motion";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
@@ -209,9 +210,10 @@ export function WeeklyPlayer() {
             <RoundExit href="/learn" />
             <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
               <motion.div
-                className="brand-gradient h-full rounded-full"
-                animate={{ width: `${((index + 1) / quiz.items.length) * 100}%` }}
-                transition={{ duration: 0.25 }}
+                className="brand-gradient h-full w-full rounded-full"
+                initial={false}
+                animate={{ x: fillX(((index + 1) / quiz.items.length) * 100) }}
+                transition={T.medium}
               />
             </div>
             <span className="text-caption muted shrink-0 tabular-nums">{index + 1}/{quiz.items.length}</span>
@@ -224,8 +226,8 @@ export function WeeklyPlayer() {
             key={item.id}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
+            exit={{ opacity: 0, y: -8, transition: T.instant }}
+            transition={T.medium}
             className="flex flex-col gap-4"
           >
             {stim ? <Stim stim={stim} t={t} /> : null}

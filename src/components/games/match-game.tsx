@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
+import { staggerDelay } from "@/lib/motion";
 import { GameShell } from "./game-shell";
 import type { SheetData } from "./round-sheet";
 import { useCourse } from "@/components/app-shell";
@@ -177,7 +178,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                    hangisini bekletmekte oldugunu bilmiyordu. Android
                    karsiligi `MatchCard` `selected: state === "sel"`. */
                 aria-pressed={isSelected}
-                transition={{ delay: i * 0.05, duration: 0.28 }}
+                transition={{ delay: staggerDelay(i), duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseLeft(w.id)}
                 className={`option min-h-14 px-3 py-3 text-left text-strong sm:text-h3 disabled:opacity-60 ${state} ${
@@ -208,7 +209,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0, scale: pulseId === item.wordId ? [1, 1.1, 1] : 1 }}
                 aria-pressed={isSelected}
-                transition={{ delay: i * 0.05, duration: 0.28 }}
+                transition={{ delay: staggerDelay(i), duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseRight(i)}
                 className={`option min-h-14 px-3 py-3 text-left font-semibold disabled:opacity-60 ${state} ${

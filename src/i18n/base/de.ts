@@ -1385,6 +1385,8 @@ export const deBase: Record<string, string> = {
   "sessions.unknown_device": "Unbekanntes Gerät",
   "snd.game_sounds": "Soundeffekte",
   "snd.game_sounds_sub": "Die Aussprache ist davon unabhängig und läuft auch, wenn das aus ist",
+  "snd.haptics": "Vibration",
+  "snd.haptics_sub": "Bei richtig, falsch und Erfolgen",
   "settings.analytics_sub": "Welche Funktionen genutzt werden. Nicht an Dritte.",
   "settings.settings": "Einstellungen",
   "settings.not_sure_take_placement_test": "Einstufungstest machen →",

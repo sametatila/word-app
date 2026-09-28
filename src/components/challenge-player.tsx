@@ -4,6 +4,7 @@ import { RoundReportScope, roundTarget, snapshot } from "@/components/report-fla
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
+import { T, fillStyle } from "@/lib/motion";
 import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
@@ -405,11 +406,11 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
 
         <div className="h-2 w-full overflow-hidden rounded-full surface-2">
           <div
-            className="h-full rounded-full"
+            className="h-full w-full rounded-full"
             style={{
-              width: `${pct}%`,
+              ...fillStyle(pct),
               background: urgent ? "var(--color-rose)" : "var(--color-flame)",
-              transition: "width .12s linear, background-color .3s ease",
+              transition: "transform .12s linear, background-color .3s ease",
             }}
           />
         </div>
@@ -442,8 +443,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           key={round.id}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.16, ease: "easeOut" }}
+          exit={{ opacity: 0, x: -20, transition: T.instant }}
+          transition={T.medium}
           className="flex min-h-0 flex-1 flex-col"
         >
           <FitBox>

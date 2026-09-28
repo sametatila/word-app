@@ -4,6 +4,7 @@ import { ReportFlag, snapshot } from "@/components/report-flag";
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
+import { T } from "@/lib/motion";
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
@@ -11,7 +12,7 @@ import { recordSkillResult } from "@/lib/skills/progress";
 import { AlertIcon } from "@/components/icons";
 import { RoundExit } from "@/components/round-exit";
 import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
-import { isSkillDone, RUBRIC_PASS_PCT, scoreBand, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
+import { isSkillDone, RUBRIC_PASS_PCT, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame, useReportSurface } from "./player-context";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -183,11 +184,11 @@ export function ResultCard({
   const score = state.score;
   const isMono = !!exercise && "monologue" in exercise;
   const perfect = total > 0 && correct === total;
-  /* SONUÇ ANDROID'DEKİ GİBİ ÜÇ BANTLI VE KONFETİLİ. Bantlar tek kaynaktan
-     (`lib/score-bands.ts`); rubrikle puanlananlarda yüzde rubrik puanından —
-     monolog tek görev ve doğru/toplam ya %0 ya %100 olurdu. */
+  /* Yüzde tek kaynaktan (`lib/score-bands.ts`); rubrikle puanlananlarda
+     rubrik puanından — monolog tek görev ve doğru/toplam ya %0 ya %100
+     olurdu. Puan bandı yalnız konfetiyi seçiyordu; konfeti kalkınca o da
+     kalktı (mobil `ItemScreen` aynı). */
   const pct = scoreOf(correct, total, score);
-  const band = scoreBand(pct);
   /* Olumsuz sonuç = adım "bitti" sayılmadı: band sessizleşiyor, birincil düğme
      "Tekrar dene". Monologda hüküm rubrik eşiği (tek görevin geçip geçmediği). */
   const passed = isMono ? perfect : isSkillDone(pct);
@@ -214,12 +215,14 @@ export function ResultCard({
       ref={ref}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", stiffness: 200, damping: 22 }}
+      transition={T.medium}
       className="mt-5"
     >
       {/* TURUN SONUCU DUYURULUYOR: `ResultHero` `role="status"` taşıyor —
           sorular kayboluyor, yerine puan ve yargı beliriyor. */}
-      <FlowColumn celebrate={band === "good" && passed}>
+      {/* Konfeti YOK: beceri alıştırması sıradan bir adım, kutlama büyük
+          anlara ayrıldı (mobil `ItemScreen` aynı). */}
+      <FlowColumn>
         <ResultHero
           eyebrow={exercise ? `${t(SKILL_LABEL_KEYS[exercise.skill])} · ${exercise.level}` : t("item.content")}
           title={title}

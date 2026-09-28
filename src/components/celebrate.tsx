@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { T } from "@/lib/motion";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { FlameIcon, TrophyIcon } from "@/components/icons";
 
@@ -153,7 +154,7 @@ export function AchievementFlash({
           initial={{ opacity: 0, scale: 0.6, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 1.25, y: -18 }}
-          transition={{ type: "spring", stiffness: 340, damping: 16 }}
+          transition={T.celebrate}
           className="pointer-events-none absolute inset-x-0 top-24 z-40 flex justify-center"
         >
           <span

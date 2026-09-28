@@ -6,6 +6,7 @@ import { useCachedJson } from "@/lib/use-cached";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { T, fillX } from "@/lib/motion";
 import { BoltIcon, CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
@@ -217,10 +218,11 @@ export function QuestCard() {
                 <div className="mt-0.5 flex items-center gap-2">
                   <div className="h-1 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
                     <motion.div
-                      className="h-full rounded-full"
+                      className="h-full w-full rounded-full"
                       style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${Math.max(3, pct)}%` }}
+                      initial={{ x: "-100%" }}
+                      animate={{ x: fillX(Math.max(3, pct)) }}
+                      transition={T.medium}
                     />
                   </div>
                   <span className="muted shrink-0 text-micro tabular-nums">

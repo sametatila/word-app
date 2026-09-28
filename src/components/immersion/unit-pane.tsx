@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { fillStyle } from "@/lib/motion";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
 import {
@@ -167,8 +168,8 @@ export function UnitPane({
 
       <div className="h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div
-          className="h-full rounded-full transition-[width] duration-500"
-          style={{ width: `${pct}%`, background: "var(--color-mint-500)" }}
+          className="bar-fill h-full rounded-full"
+          style={{ ...fillStyle(pct), background: "var(--color-mint-500)" }}
         />
       </div>
       <p className="muted mb-4 mt-1.5 text-caption">

@@ -17,6 +17,8 @@ import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { reducedMotion } from "@/lib/fx";
+import { T, staggerDelay } from "@/lib/motion";
+import { useStill } from "@/lib/use-still";
 import { ReportFlag, snapshot } from "@/components/report-flag";
 
 export type WordRow = {
@@ -122,6 +124,8 @@ export function WordList({
   const tx = useT();
   const lang = useLang();
   const [showProgress, setShowProgress] = useState(false);
+  // Yükseklik panelleri için: MotionConfig yüksekliği kapatmıyor (bkz. `Disclosure`).
+  const still = useStill();
   const router = useRouter();
   const params = useSearchParams();
   const [term, setTerm] = useState(query.q);
@@ -221,7 +225,7 @@ export function WordList({
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.22, ease: "easeOut" }}
+                transition={still ? { duration: 0 } : T.short}
                 className="overflow-hidden"
               >
                 <div className="border-t border-[color:var(--hairline)] px-4 pb-4 pt-4">
@@ -324,7 +328,7 @@ export function WordList({
                 key={r.id}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: Math.min(i * 0.015, 0.3) }}
+                transition={{ ...T.medium, delay: Math.min(staggerDelay(i), 0.3) }}
                 className="card overflow-hidden"
               >
                 <button
@@ -366,6 +370,7 @@ export function WordList({
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
+                    transition={still ? { duration: 0 } : T.short}
                     className="border-t px-4 py-3 text-body"
                     style={{ borderColor: "var(--border)" }}
                   >

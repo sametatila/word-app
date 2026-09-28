@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SettingRow, Switch } from "@/components/setting-row";
 import { SpeakerIcon } from "@/components/icons";
 import { play, setSoundEnabled, soundEnabled } from "@/lib/sfx";
+import { buzz, canVibrate, hapticsEnabled, setHapticsEnabled } from "@/lib/fx";
 import { track } from "@/lib/track";
 import { useT } from "@/lib/i18n/client";
 
@@ -28,9 +29,15 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
   // anında gerçek tercihle düzeltiliyor.
   const [on, setOn] = useState(true);
   const [ready, setReady] = useState(false);
+  // Titreşim ayrı anahtar; satır yalnız tarayıcı titreşebiliyorsa (Android
+  // Chrome) görünüyor — masaüstünde ve iOS'ta çalışmayan bir anahtar olurdu.
+  const [shake, setShake] = useState(true);
+  const [canBuzz, setCanBuzz] = useState(false);
 
   useEffect(() => {
     setOn(soundEnabled());
+    setShake(hapticsEnabled());
+    setCanBuzz(canVibrate());
     setReady(true);
   }, []);
 
@@ -38,6 +45,15 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
     setOn(next);
     setSoundEnabled(next);
     track("sound_toggle", next ? 1 : 0);
+  }
+
+  function toggleBuzz(next: boolean) {
+    setShake(next);
+    setHapticsEnabled(next);
+    // Açılınca tek kısa darbe: ne açıldığı hissedilsin (ses anahtarının
+    // önizleme notası gibi). Ses çalmıyor, doğrudan titreşim.
+    if (next) buzz(8);
+    track("setting_change", next ? 1 : 0, "haptics");
   }
 
   /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
@@ -59,6 +75,21 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
       <Switch on={on} onChange={toggle} disabled={!ready} label={t("snd.game_sounds")} />
     </SettingRow>
   );
+  const haptics = canBuzz ? (
+    <SettingRow title={t("snd.haptics")} sub={t("snd.haptics_sub")}>
+      <Switch on={shake} onChange={toggleBuzz} disabled={!ready} label={t("snd.haptics")} />
+    </SettingRow>
+  ) : null;
 
-  return bare ? body : <section className="card">{body}</section>;
+  return bare ? (
+    <>
+      {body}
+      {haptics}
+    </>
+  ) : (
+    <section className="card">
+      {body}
+      {haptics}
+    </section>
+  );
 }

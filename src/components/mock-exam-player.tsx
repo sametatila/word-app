@@ -1,6 +1,7 @@
 "use client";
 
 import { ReportFlag, ReportLink, snapshot } from "@/components/report-flag";
+import { fillStyle } from "@/lib/motion";
 import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 import { askAiConsentUpfront, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
@@ -514,8 +515,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           <RoundExit onExit={() => setQuit(true)} labelKey="mockexam.quit_title" glyph="back" />
           <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2" aria-hidden>
             <div
-              className="brand-gradient h-full rounded-full transition-all"
-              style={{ width: `${Math.round((100 * ix) / Math.max(1, part.tasks.length))}%` }}
+              className="brand-gradient bar-fill h-full rounded-full"
+              style={fillStyle(Math.round((100 * ix) / Math.max(1, part.tasks.length)))}
             />
           </div>
           {/* Sayaç GÖREV başına; etiketsiz bir geri sayım "sınavın tamamı bu

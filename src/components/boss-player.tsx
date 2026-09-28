@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { fillStyle } from "@/lib/motion";
 import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
@@ -398,9 +399,9 @@ export function BossPlayer({
       </div>
       <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div
-          className="h-full rounded-full transition-[width] duration-100"
+          className="h-full w-full rounded-full transition-transform duration-100"
           style={{
-            width: `${pct}%`,
+            ...fillStyle(pct),
             background: urgent ? "var(--color-flame)" : "var(--color-brand)",
           }}
         />

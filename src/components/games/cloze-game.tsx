@@ -6,6 +6,7 @@ import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
+import { staggerDelay } from "@/lib/motion";
 import { GameShell } from "./game-shell";
 import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
@@ -220,7 +221,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
                  `accessibilityRole="radio"` (bkz. game/rounds). */
               role="radio"
               aria-checked={picked === opt}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: staggerDelay(i) }}
               disabled={picked != null}
               onClick={() => choose(opt)}
               className={`option flex min-h-14 items-center justify-center gap-2 px-4 py-3 text-center text-body ${state} ${

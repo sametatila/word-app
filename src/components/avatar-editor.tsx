@@ -11,6 +11,7 @@ import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import { partIcon } from "@/lib/avatar-layers";
 import { CheckIcon, LockIcon, RefreshIcon, XIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
+import { vibrate } from "@/lib/fx";
 
 /**
  * AVATAR DÜZENLEYİCİ — mobil `AvatarScreen` ile aynı düzen (2026-09-28, taslak
@@ -56,6 +57,14 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
   const [slot, setSlot] = useState<Slot>("hat");
   const [hint, setHint] = useState<string | null>(null);
+  // Parça seçilince sahnedeki figür sıçrıyor (`AvatarStage` `bump`) ve kısa
+  // "tap" sesi + titreşim; renk ve yuva sekmesi gezinme, sessiz.
+  const [bump, setBump] = useState(0);
+  const choose = (tile: Tile) => {
+    tile.apply();
+    setBump((n) => n + 1);
+    vibrate("tap");
+  };
   const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
   const only = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
   const current = (s: Slot): string | null => (s === "bg" ? cfg.bg : s === "hat" ? cfg.hat : s === "glasses" ? cfg.glasses : s === "mustache" ? cfg.mustache : cfg.extra[s]?.id ?? null);
@@ -116,7 +125,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="-mx-4 overflow-hidden sm:mx-0 sm:rounded-card">
-        <AvatarStage config={cfg} height={260}>
+        <AvatarStage config={cfg} height={260} bump={bump}>
           <div className="absolute inset-x-3 top-3 flex items-center">
             <button type="button" onClick={() => router.back()} aria-label={t("common.close")} className="pressable flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "var(--surface)", color: "var(--text)" }}>
               <XIcon size={20} />
@@ -175,7 +184,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               role="radio"
               aria-checked={tile.selected}
               aria-label={tile.locked ? `${tile.label} — ${tile.hint ?? ""}` : tile.label || t("avatar.slot_bg")}
-              onClick={tile.locked ? () => setHint(tile.hint ?? null) : tile.apply}
+              onClick={tile.locked ? () => setHint(tile.hint ?? null) : () => choose(tile)}
               className="pressable relative flex flex-col items-center gap-1.5 rounded-panel p-2"
               style={{ background: "var(--surface)", border: `${tile.selected ? 2.5 : 1.5}px solid ${tile.selected ? "var(--color-brand-500)" : tile.rarity ? RARITY[tile.rarity] ?? "var(--border)" : "var(--border)"}` }}
             >

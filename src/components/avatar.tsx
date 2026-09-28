@@ -5,7 +5,10 @@ import { useAvatar } from "@/lib/avatar";
 import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
 import { avatarImageUrl, avatarLayers } from "@/lib/avatar-layers";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import { motion, useAnimationControls } from "framer-motion";
+import { T } from "@/lib/motion";
+import { useStill } from "@/lib/use-still";
 
 /**
  * Bir kişinin avatarı — iki platformda tek kural: HERKES maskotla çizilir.
@@ -164,8 +167,25 @@ export function MascotAvatar({
  * ortada büyük 2B avatar dairesi. `children` üst alanın düğmeleri (geri,
  * ayarlar, koleksiyon etiketi). Mobil `AvatarStage` ile aynı düzen.
  */
-export function AvatarStage({ config, height = 280, children, className = "" }: { config: AvatarConfig; height?: number; children?: ReactNode; className?: string }) {
+/**
+ * Sahnedeki figürün küçük sıçraması (1 → 1,06 → 1, `T.short`): düzenleyicide
+ * parça seçilince "giydin" hissi. `bump` her seçimde artan bir sayaç; 0 iken
+ * hareket yok. "Hareketi azalt"ta hiç başlamıyor. Mobil karşılığı
+ * `AvatarScreen` sahnesi.
+ */
+function useBump(bump: number) {
+  const controls = useAnimationControls();
+  const still = useStill();
+  useEffect(() => {
+    if (!bump || still) return;
+    void controls.start({ scale: [1, 1.06, 1], transition: T.short });
+  }, [bump, still, controls]);
+  return controls;
+}
+
+export function AvatarStage({ config, height = 280, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
   const catalog = useAvatarCatalog();
+  const controls = useBump(bump);
   const g = avatarBg(config.bg);
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
@@ -174,10 +194,12 @@ export function AvatarStage({ config, height = 280, children, className = "" }: 
       <div className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center 30% / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
         <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.07, width: fig * 0.6, height: 26, background: "radial-gradient(closest-side, rgba(0,0,0,.3), transparent)" }} />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2" style={{ width: fig, height: fig }}>
-          {[L.base, ...L.layers].map((f) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
-          ))}
+          <motion.div animate={controls} className="absolute inset-0 origin-bottom">
+            {[L.base, ...L.layers].map((f) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={f} src={`${catalog.base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
+            ))}
+          </motion.div>
         </div>
         {children}
       </div>
@@ -187,8 +209,10 @@ export function AvatarStage({ config, height = 280, children, className = "" }: 
   return (
     <div className={`relative overflow-hidden ${className}`} style={{ height, background: `linear-gradient(${g.from}, ${g.to})` }}>
       <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.14, width: d * 0.9, height: 22, background: "radial-gradient(closest-side, rgba(0,0,0,.28), transparent)" }} />
-      <div className="absolute left-1/2 -translate-x-1/2 rounded-full" style={{ bottom: height * 0.17, boxShadow: "0 0 0 5px rgba(255,255,255,.85), 0 14px 30px rgba(0,0,0,.18)" }}>
-        <MascotAvatar config={config} size={d} />
+      <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: height * 0.17 }}>
+        <motion.div animate={controls} className="rounded-full" style={{ boxShadow: "0 0 0 5px rgba(255,255,255,.85), 0 14px 30px rgba(0,0,0,.18)" }}>
+          <MascotAvatar config={config} size={d} />
+        </motion.div>
       </div>
       {children}
     </div>

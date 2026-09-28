@@ -14595,8 +14595,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    *  1. KUTLAMA VE MASKOT. Web `saved?.passed` boolean'ina bagliydi, yani
    *     %79'la biten bir konuşma %10'la biten konuşmayla ayni gorunuyordu. Android
-   *     uc kademe kullaniyor (`pct >= 80` kutla, `>= 50` sevin, alti sakin) ve
-   *     konfeti de ayni esikten cikiyor. Hukum sunucunun karari, kutlama ise
+   *     uc kademe kullaniyor (`pct >= 80` kutla, `>= 50` sevin, alti sakin);
+   *     konfeti ayni esikten cikiyordu, 2026-09-28'de iki tarafta da kalkti. Hukum sunucunun karari, kutlama ise
    *     "nasil gecti"nin karsiligi - ikisi ayri sey olcuyor.
    *  2. BASLIGIN BILINMEYEN HALI. Web `saved?.passed` truthy degilse
    *     "konusma bitmedi" diyordu - kayit istegi DUSTUGUNDE de oyle diyordu:
@@ -14617,7 +14617,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "isabet hesabi=" + (/const pct = total \? Math\.round\(\(correct \/ total\) \* 100\) : 100/.test(dm) ? "correct/total" : (/const pct = /.test(dm) ? "BASKA" : "YOK")),
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dm) ? "uc kademe" : "TEK"),
-        "konfeti=" + (/<Celebrate show=\{pct >= 80\}/.test(dm) ? "80 esigi" : "BASKA"),
+        /* Konfeti 2026-09-28'de iki platformda da kalkti: konusma Patika'nin
+           siradan bir adimi, kutlama buyuk anlara ayrildi. Olcu artik
+           "yok"u bekliyor; biri geri koyarsa iki taraf ayrisir. */
+        "konfeti=" + (/<Celebrate\b/.test(dm) ? "VAR" : "yok"),
         "baslik bilinmeyende=" + (/passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dm) ? "tamamlandi" : "BITMEDI"),
         "ilk karo etiketi=" + (/conversation\.correct_production/.test(dm) ? "ortak" : "?"),
       ],
@@ -14627,7 +14630,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            bu olcu adi elle yaziyordu ve yeniden adlandirma onu kirmiziya
            cevirdi. */
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
-        "konfeti=" + (/<Confetti fire=\{pct >= 80 \? 1 : 0\}/.test(dw) ? "80 esigi" : "BASKA"),
+        "konfeti=" + (/<Confetti\b|<FlowColumn celebrate=/.test(dw) ? "VAR" : "yok"),
         "baslik bilinmeyende=" + (/saved\?\.passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
         "ilk karo etiketi=" + (/conversation\.correct_production/.test(dw) ? "ortak" : "?"),
       ],
@@ -16358,7 +16361,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * yerinde bir puani "iyi / orta / zayif" diye bantliyor - yazma kartinin
    * puan tonu, degerlendirme kartinin tonu, egzersiz sonucundaki maskot ve
    * konfeti. Dordu de elle yaziliydi; biri degistirilirse ayni puan iki
-   * ekranda iki ayri renk alirdi.
+   * ekranda iki ayri renk alirdi. Egzersiz sonucunun konfetisi iki
+   * platformda da kalkti (kutlama buyuk anlara ayrildi), bant orada artik
+   * hesaplanmiyor; olcu kalan uc yerde.
    *
    * Kapi bandi HESAPLAYAN cagriyi ariyor: sabiti ice alip yine `>= 70`
    * yazmak baglantiyi kurmuyor. */
@@ -16374,16 +16379,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         bant("web yazma karti", "src/components/writings-card.tsx"),
         bant("web degerlendirme karti", "src/components/feedback/assessment-card.tsx"),
-        bant("web egzersiz sonucu", "src/components/skills/player-shell.tsx"),
         bant("mobil yazma listesi", "mobile/src/screens/WritingsScreen.tsx"),
-        bant("mobil egzersiz sonucu", "mobile/src/screens/ItemScreen.tsx"),
       ],
       [
         "web yazma karti=kaynaktan",
         "web degerlendirme karti=kaynaktan",
-        "web egzersiz sonucu=kaynaktan",
         "mobil yazma listesi=kaynaktan",
-        "mobil egzersiz sonucu=kaynaktan",
       ],
       "bulunan",
       "beklenen",
@@ -17237,6 +17238,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       /* "lernomi-app-open" 2026-09-23'te cikti: gunun ilk acilisi artik
          sunucuda tekillesiyor (hukuk denetimi LEG-10, lib/events ONCE_PER_DAY). */
       "lernomi-conversation-handsfree", //   eller serbest tercihi - cihazin kullanim bicimi
+      "lernomi-haptics", //            titresim acik/kapali (ses gibi cihaza ait; lib/fx)
       "lernomi-onboarding", //         misafir ilk acilis tercihleri (hesap yok)
       "lernomi-sound", //              ses acik/kapali
       "lernomi-theme", //              tema
@@ -17262,6 +17264,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
       "lernomi-conversation-handsfree", //   eller serbest tercihi
+      "lernomi:haptics", //            titresim acik/kapali (ses gibi cihaza ait; lib/haptics)
       "lernomi:analytics", //          analitik onayi
       "lernomi:mic-consent:v2", //     mikrofon onayi (v2: saglayicilar adiyla sayiliyor, onay yeniden soruluyor)
       "lernomi:notif-ids-v1", //       bildirim kimlikleri (OS tarafi)

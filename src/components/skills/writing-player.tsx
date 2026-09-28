@@ -6,6 +6,7 @@ import { useTargetLang } from "./player-context";
 import { written } from "./quiz";
 import type { TargetLang } from "@/lib/courses";
 import { motion } from "framer-motion";
+import { T, fillX } from "@/lib/motion";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { glossTitle } from "./gloss-entry";
@@ -104,9 +105,10 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
         </div>
         <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
           <motion.div
-            className="brand-gradient h-full rounded-full"
-            animate={{ width: `${(step / total) * 100}%` }}
-            transition={{ type: "spring", stiffness: 160, damping: 24 }}
+            className="brand-gradient h-full w-full rounded-full"
+            initial={false}
+            animate={{ x: fillX((step / total) * 100) }}
+            transition={T.medium}
           />
         </div>
       </div>

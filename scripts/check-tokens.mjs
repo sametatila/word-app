@@ -347,12 +347,35 @@ if (web24 > TAVAN.web24) {
   problems.push(`boşluk: webde 24/32 px boşluk ${web24} (tavan ${TAVAN.web24}) — Android ölçeği 20'den 28'e atlıyor`);
 }
 
+/* HAREKET: mobil `motion` tablosu = web CSS `--motion-*`/`--ease-*` = framer
+   `lib/motion.ts` `MOTION`. Süreler ms, eğriler dört sayı, kutlama yayı. */
+{
+  const motionTs = await readFile(new URL("../src/lib/motion.ts", import.meta.url), "utf8");
+  const num = (src, key) => Number(new RegExp(`\\b${key}: (\\d+)`).exec(src)?.[1]);
+  const curve = (src, key) => (new RegExp(`\\b${key}: \\[([^\\]]+)\\]`).exec(src)?.[1] ?? "").split(",").map((x) => Number(x.trim())).join(",");
+  const cssCurve = (name) => (/cubic-bezier\(([^)]+)\)/.exec(cssVar(name) ?? "")?.[1] ?? "").split(",").map((x) => Number(x.trim())).join(",");
+  const mMotion = mob.slice(mob.indexOf("export const motion"));
+  for (const k of ["instant", "short", "medium", "stagger"]) {
+    const m = num(mMotion, k);
+    const c = Number(/^(\d+)ms$/.exec(cssVar("motion-" + k) ?? "")?.[1]);
+    const f = num(motionTs, k);
+    if (!(m > 0) || m !== c || m !== f) problems.push(`hareket ${k}: mobil ${m} · css ${c} · framer ${f}`);
+  }
+  for (const [k, cssName] of [["ease", "ease-standard"], ["emphasized", "ease-emphasized"]]) {
+    const m = curve(mMotion, k);
+    if (!m || m !== cssCurve(cssName) || m !== curve(motionTs, k)) problems.push(`hareket eğrisi ${k}: mobil ${m} · css ${cssCurve(cssName)} · framer ${curve(motionTs, k)}`);
+  }
+  for (const k of ["stiffness", "damping"]) {
+    if (num(mMotion, k) !== num(motionTs, k)) problems.push(`kutlama yayı ${k}: mobil ${num(mMotion, k)} · framer ${num(motionTs, k)}`);
+  }
+}
+
 if (problems.length) {
   console.error("check:tokens — tasarım ölçekleri ayrışmış:");
   for (const p of problems) console.error("  " + p);
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
-  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) gölge (3 basamak + iki temanın tinti) ve hareket (4 süre, 2 eğri, kutlama yayı) ölçekleri iki platformda birebir: tamam`);
   console.log(`check:tokens — ${cssVarKullanim.size} jeton okunuyor, hepsi tanımlı (${cssVarTanim.size} tanım)`);
   console.log(`check:tokens — birincil düğmenin dikey dolgusu iki platformda da 16 (ölçek dışına dönen yok)`);
   console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24} · kart dolgusu ${kartSapan}/${TAVAN.kartSapan}`);
