@@ -36,7 +36,7 @@ import type { ContentReport, ReportSurface } from "../lib/report";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
-import { useTheme, spacing, radii, softShadow, cardShadow, soft, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
 const withArtikel = (w: RoundWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
@@ -237,11 +237,12 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
 }
 
 /**
- * Sonuç katmanının kapladığı yükseklik (px) — şerit + ara + "Devam" + iç pay.
+ * Sonuç katmanının kapladığı yükseklik (px) — hüküm başlığı + cevap satırı +
+ * ara + "Devam" + gövdenin iç payı.
  * Yer turun BAŞINDAN bu ölçüde ayrılıyor; ölçü katmanın kendisiyle aynı yerden
  * okunuyor ki ikisi ayrı yazılıp sessizce kaymasın.
  */
-const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
+const SHEET_H = 44 + spacing.md + 30 + spacing.sm + 50 + spacing.md;
 /**
  * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
  * alanı ALTTA.
@@ -373,20 +374,22 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * SONUÇ KATMANI — hüküm bandı + etiketli satırlar + Devam.
+ * SONUÇ KATMANI — yüzen kart: dolu renkli hüküm başlığı + nötr gövde + Devam.
  *
- * Kendi YÜZEYİ var: katman içeriğin üstüne bindiği için altındaki şıkların
- * arasından sızmamalı. Band hükmün tonunda (`*Soft` zemin, `*Text` yazı —
- * dolgu tonu açık zeminde okunurluk eşiğinin altındaydı), satırlar nötr.
- * Uzun bir yanlışta katman ekranın yarısını aşmasın diye satırlar kendi içinde
- * kayıyor. Web `games/round-sheet` aynı alanları aynı sırayla çiziyor.
+ * Maskot kalkınca (2026-09-22) eski düzende iç içe iki kutu (beyaz kart +
+ * açık tonlu bant) ve 18 pt'lik bir nokta kalmıştı; hüküm küçük, kart boş
+ * görünüyordu. Samet'in seçimi (2026-09-28, taslak F): hükmü kartın üstünde
+ * sonucun DOLU renginde bir şerit söylüyor, gövde beyaz ve sola hizalı.
+ * Dolgu `*Text` tonu, yazı `onFill` (açıkta beyaz, koyuda mürekkep): açık
+ * temada beyazın dört dolguda da kontrastı 4,5'in üstünde.
+ * Uzun bir yanlışta gövde ekranın yarısını aşmasın diye kendi içinde kayıyor;
+ * başlık ve Devam hep görünür. Web `games/round-sheet` aynı düzeni çiziyor.
  */
 function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
   const { isDark } = useTheme();
   const tone = data.tone ?? (data.correct ? "ok" : "bad");
-  const bandBg = tone === "ok" ? colors.successSoft : tone === "bad" ? colors.dangerSoft : tone === "near" ? soft(colors.streak) : colors.surface2;
-  const ink = tone === "ok" ? colors.successText : tone === "bad" ? colors.dangerText : tone === "near" ? colors.streakText : colors.text;
-  const dot = tone === "ok" ? colors.success : tone === "bad" ? colors.danger : tone === "near" ? colors.streak : colors.textMuted;
+  const headBg = tone === "ok" ? colors.successText : tone === "bad" ? colors.dangerText : tone === "near" ? colors.streakText : colors.surface2;
+  const headInk = tone === "neutral" ? colors.text : colors.onFill;
   const label = data.label ?? tx(data.correct ? "sheet.correct" : "sheet.wrong");
   const speakText = data.speak ?? data.answer ?? undefined;
   const wrong = !data.correct;
@@ -408,69 +411,79 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
     // Katman her tur bir kez beliriyor; cevap o anki hâliyle.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const hasAnswer = !!(data.answerTokens?.length || (data.why?.diff && wrong) || data.answer);
   return (
-    /* SONUÇ DUYURULUYOR: renk, ikon ve maskot yalnız görene bir şey söylüyor
-       (web `round-sheet` `role="status" aria-live="polite"`). */
-    <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(dot, 16)]}>
-      <ScrollView style={{ maxHeight: height * 0.5 }} contentContainerStyle={{ gap: spacing.sm }} showsVerticalScrollIndicator={false} bounces={false}>
-        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: bandBg, borderRadius: radii.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm }}>
-          <View style={{ flex: 1, gap: 2 }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-              <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: dot, alignItems: "center", justifyContent: "center" }}>
-                {tone === "bad" ? <XIcon color={colors.onFill} size={12} /> : <CheckIcon color={colors.onFill} size={12} />}
+    /* SONUÇ DUYURULUYOR: renk ve ikon yalnız görene bir şey söylüyor
+       (web `round-sheet` `role="status" aria-live="polite"`).
+       Gölge dış görünümde, kırpma iç görünümde: iOS'ta `overflow: hidden`
+       aynı görünümün gölgesini de kesiyor. Kart nötr yüzey, gölgesi nötr
+       (`cardShadow`); renk başlıkta. */
+    <View accessibilityLiveRegion="polite" style={[{ borderRadius: radii.xl, backgroundColor: colors.surface }, cardShadow(colors, 16)]}>
+      <View style={{ borderRadius: radii.xl, overflow: "hidden", borderWidth: 1, borderColor: colors.hairline }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: headBg, paddingVertical: spacing.sm + 2, paddingHorizontal: spacing.md, minHeight: 44 }}>
+          <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: tone === "neutral" ? colors.surface : `${headInk}3D`, alignItems: "center", justifyContent: "center" }}>
+            {tone === "bad" ? <XIcon color={headInk} size={14} /> : <CheckIcon color={headInk} size={14} />}
+          </View>
+          <Text variant="h3" color={headInk} style={{ flex: 1 }} numberOfLines={2}>{label}</Text>
+        </View>
+        <View style={{ padding: spacing.md, gap: spacing.sm }}>
+          <ScrollView style={{ maxHeight: height * 0.42 }} contentContainerStyle={{ gap: spacing.sm }} showsVerticalScrollIndicator={false} bounces={false}>
+            {hasAnswer || data.meaning || data.detail || data.extra || speakText ? (
+              <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+                <View style={{ flex: 1, gap: 2 }}>
+                  {data.answerTokens?.length ? (
+                    <Text variant="h3"><MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} /></Text>
+                  ) : data.why?.diff && wrong ? (
+                    <Text variant="h3"><CharMarked segs={data.why.diff.target} side="target" /></Text>
+                  ) : data.answer ? (
+                    <Text variant="h3" color={colors.text}>{data.answer}</Text>
+                  ) : null}
+                  {data.meaning ? <Text variant="body" color={colors.textMuted}>{data.meaning}</Text> : null}
+                  {data.detail ? <Text variant="caption" color={colors.textMuted}>{data.detail}</Text> : null}
+                  {data.extra}
+                </View>
+                {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
               </View>
-              <Text variant="bodyStrong" color={ink} style={{ flex: 1 }}>{label}</Text>
-              {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
-            </View>
-            {data.answerTokens?.length ? (
-              <Text variant="h3"><MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} /></Text>
-            ) : data.why?.diff && wrong ? (
-              <Text variant="h3"><CharMarked segs={data.why.diff.target} side="target" /></Text>
-            ) : data.answer ? (
-              <Text variant="h3" color={colors.text}>{data.answer}</Text>
             ) : null}
-            {data.meaning ? <Text variant="body" color={colors.textMuted}>{data.meaning}</Text> : null}
-            {data.detail ? <Text variant="caption" color={colors.textMuted}>{data.detail}</Text> : null}
-            {data.extra}
+            {showYou || showDiffs || showWhy ? (
+              <View style={{ gap: 6 }}>
+                {showYou ? (
+                  <SheetRow label={tx("sheet.you")} colors={colors}>
+                    {data.youTokens?.length ? (
+                      <Text variant="body"><MarkedSentence tokens={data.youTokens} strong={false} /></Text>
+                    ) : data.why?.diff ? (
+                      <Text variant="body"><CharMarked segs={data.why.diff.typed} side="typed" /></Text>
+                    ) : (
+                      <Text variant="body" color={colors.textMuted}>{data.you}</Text>
+                    )}
+                  </SheetRow>
+                ) : null}
+                {showDiffs && data.diffs ? (
+                  <SheetRow label={tx("sheet.diffs")} colors={colors}>
+                    <DiffLines target={data.diffs.target} typed={data.diffs.typed} />
+                  </SheetRow>
+                ) : null}
+                {showWhy && data.why ? (
+                  <SheetRow label={tx("sheet.why")} colors={colors}>
+                    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 6 }}>
+                      <MarkTag label={whyLabel(data.why.type)} fg={colors.text} bg={colors.surface2} />
+                      <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{data.why.text}</Text>
+                    </View>
+                  </SheetRow>
+                ) : null}
+              </View>
+            ) : null}
+          </ScrollView>
+          {/* "Bildir" Devam'ın SOLUNDA, aynı satırda (Duolingo/Babbel düzeni):
+              cevap görüldükten sonra, soru ekranını kalabalıklaştırmadan. Bağlantı
+              daralmıyor; dar ekranda Devam daralıyor. */}
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+            {reportFor ? <ReportFlag report={() => reportFor.build(info())} onOpen={reportFor.onOpen} onClose={reportFor.onClose} style={{ paddingHorizontal: spacing.xs }} /> : null}
+            <PressableScale onPress={onContinue} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
+              <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
+            </PressableScale>
           </View>
         </View>
-        {showYou || showDiffs || showWhy ? (
-          <View style={{ gap: 6, paddingHorizontal: spacing.xs }}>
-            {showYou ? (
-              <SheetRow label={tx("sheet.you")} colors={colors}>
-                {data.youTokens?.length ? (
-                  <Text variant="body"><MarkedSentence tokens={data.youTokens} strong={false} /></Text>
-                ) : data.why?.diff ? (
-                  <Text variant="body"><CharMarked segs={data.why.diff.typed} side="typed" /></Text>
-                ) : (
-                  <Text variant="body" color={colors.textMuted}>{data.you}</Text>
-                )}
-              </SheetRow>
-            ) : null}
-            {showDiffs && data.diffs ? (
-              <SheetRow label={tx("sheet.diffs")} colors={colors}>
-                <DiffLines target={data.diffs.target} typed={data.diffs.typed} />
-              </SheetRow>
-            ) : null}
-            {showWhy && data.why ? (
-              <SheetRow label={tx("sheet.why")} colors={colors}>
-                <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 6 }}>
-                  <MarkTag label={whyLabel(data.why.type)} fg={colors.text} bg={colors.surface2} />
-                  <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{data.why.text}</Text>
-                </View>
-              </SheetRow>
-            ) : null}
-          </View>
-        ) : null}
-      </ScrollView>
-      {/* "Bildir" Devam'ın SOLUNDA, aynı satırda (Duolingo/Babbel düzeni):
-          cevap görüldükten sonra, soru ekranını kalabalıklaştırmadan. Bağlantı
-          daralmıyor; dar ekranda Devam daralıyor. */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        {reportFor ? <ReportFlag report={() => reportFor.build(info())} onOpen={reportFor.onOpen} onClose={reportFor.onClose} style={{ paddingHorizontal: spacing.xs }} /> : null}
-        <PressableScale onPress={onContinue} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
-          <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
-        </PressableScale>
       </View>
     </View>
   );
