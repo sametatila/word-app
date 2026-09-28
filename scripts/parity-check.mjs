@@ -6111,7 +6111,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["deneme sinavini birakma", "mobile/src/screens/MockExamScreen.tsx", "src/components/mock-exam-player.tsx"],
     ["yerlestirmeyi birakma", "mobile/src/screens/PlacementScreen.tsx", "src/components/placement/placement-test.tsx"],
     ["yuruyusu bitirme", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
-    ["cikis yapma", "mobile/src/screens/ProfileScreen.tsx", "src/components/profile/profile-view.tsx"],
+    /* Cikis yap 2026-09-28'de Profil'den Ayarlar listesinin dibine tasindi. */
+    ["cikis yapma", "mobile/src/screens/SettingsScreen.tsx", "src/components/settings-nav.tsx"],
     ["hesap silme", "mobile/src/screens/DeleteAccountScreen.tsx", "src/components/account-delete-form.tsx"],
   ];
   sameList(
@@ -6210,9 +6211,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const WEB = [
     ["kelimeler", "src/app/(app)/words/page.tsx", /words\.couldn_t_load_your_words/],
     ["arkadaslar", "src/app/(app)/friends/page.tsx", /socialw\.friends_load_failed/],
-    ["arkadas ayarlari", "src/app/(app)/friends/settings/page.tsx", /socialw\.friends_load_failed/],
     ["profil", "src/app/(app)/profile/page.tsx", /profw\.load_failed/],
+    /* Sosyal ayarlar 2026-09-28'de Ayarlar'a tasindi; `/friends/settings`
+       Gizlilik'e yonleniyor. Ayar gruplari kendi sayfasinda. */
     ["ayarlar", "src/app/(app)/profile/settings/page.tsx", /settings/],
+    ["ayar grubu", "src/app/(app)/profile/settings/[section]/page.tsx", /settingsw\.load_failed/],
     ["baskasinin profili", "src/app/(app)/u/[username]/page.tsx", /profw\.load_failed/],
     ["yuruyus", "src/components/walk-player.tsx", /walk\.error_title/],
   ];
@@ -8049,8 +8052,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        duserse "eksik yok" bos bir dogru olur. */
     sameList(
       "taranan ekran sayisi",
-      ["metin kutulu kaydirma alani=" + (kutulu >= 7 ? "7+" : kutulu)],
-      ["metin kutulu kaydirma alani=7+"],
+      /* 2026-09-28: sosyal ayarlar kendi ekrani olmaktan cikti (Ayarlar › Hesap
+         ve Gizlilik'e gomulu); esik 7'den 6'ya indi. */
+      ["metin kutulu kaydirma alani=" + (kutulu >= 6 ? "6+" : kutulu)],
+      ["metin kutulu kaydirma alani=6+"],
       "bulunan",
       "beklenen",
     );
@@ -9590,14 +9595,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* Kursu ANLAMINI koruyor: yalniz siralamayi gosteren satirda. */
+    /* Kursu ANLAMINI koruyor: yalniz siralamanin kendisinde. Profil
+       2026-09-28'den beri ligi kendi basamak kalkaniyla gosteriyor (Topluluk ›
+       Lig'e gidiyor); kursu profilde ve ilerlemede cizilmiyor. */
     sameList(
       "kursu yalniz siralamada",
       [
-        "mobil profil=" + (/icon=\{PodiumIcon\} label=\{t\("profile\.weekly_leaderboard"\)\}/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "siralama" : "BASKA"),
+        "mobil profil=" + (/\bPodiumIcon\b/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "VAR" : "yok"),
         "mobil ilerleme=" + (/\bPodiumIcon\b/.test(mobProg) ? "VAR" : "yok"),
       ],
-      ["mobil profil=siralama", "mobil ilerleme=yok"],
+      ["mobil profil=yok", "mobil ilerleme=yok"],
       "bulunan",
       "beklenen",
     );
@@ -9640,8 +9647,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["ChevronIcon", "web kelime listesinin SAYFALAMASI; mobil sonsuz kaydirma kullaniyor (`words.load_more`)"],
       ["InfoIcon", "e-posta dogrulama seridi ve beceri sorusu ipucu - ikisi de web yuzeyi"],
       ["LinkIcon", "acilis sayfasi ve pano metni kopyalama; mobil OS paylasim sayfasini aciyor"],
-      ["ListIcon", "web kabugunun IKINCIL gezinme grubu (Kelimeler); mobil o yollara ekrandan gidiyor"],
-      ["UserIcon", "web kabugunun ikincil gezinme grubu (Profil)"],
+      ["UserIcon", "web kabugunun ikincil gezinme grubu (Profil) ve Ayarlar listesinin Hesap satiri"],
     ]);
     const cizilenYok = [...webSet]
       .filter((n) => !mobSet.has(n))
@@ -12143,7 +12149,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const basliksiz = [];
     for (const f of walkTsx259("mobile/src/screens")) {
       const src = sil(read(f));
-      if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader)\b/.test(src) || sablonBasligi.test(src)) continue;
+      /* `SectionTitle` da rolu kendi tasiyor (social/common); 2026-09-28'den
+         beri ekran olmayan, Ayarlar'a gomulu bolum dosyalari (SocialSettings)
+         yalniz onu kullaniyor. */
+      if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader|SectionTitle)\b/.test(src) || sablonBasligi.test(src)) continue;
       if (MUAF.has(f)) continue;
       basliksiz.push(f.split("/").pop());
     }
@@ -15823,11 +15832,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobIstek = sil(read("mobile/src/social/Requests.tsx"));
     const sira = (src, adlar) => adlar.map((a) => (src.indexOf(a) >= 0 ? src.indexOf(a) : Infinity));
     const artan = (xs) => xs.every((v, i) => i === 0 || (xs[i - 1] < v && v !== Infinity));
-    /* Tablo kosulun disinda mi: yukleme dalinin iskeletinden SONRA ve
-       gercek listeden de sonra tek bir kez geciyor. */
-    const disarida = (src, iskelet, liste) => {
+    /* 2026-09-28 (Topluluk): arkadas tablosu artik Arkadaslar listesinin
+       dibinde degil, LIG sekmesinin "Arkadaslar" suzgecinde ve tek yerde.
+       Yukleme dalinin kaymasi sorunu bu yuzden ortadan kalkti; olcu tablonun
+       lig sekmesinde ve bir kez cizildigi. */
+    const disarida = (src) => {
       const b = src.indexOf("<FriendsBoard");
-      return b > src.indexOf(iskelet) && b > src.indexOf(liste) && src.split("<FriendsBoard").length === 2;
+      const lig = src.search(/tab === "league" \?/);
+      return lig >= 0 && b > lig && b < src.indexOf('tab === "friends" ?') && src.split("<FriendsBoard").length === 2;
     };
     sameList(
       "sosyal merkez yukleme dali",
@@ -15838,21 +15850,21 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil olu iskelet=" + (/export function RequestCardSkeleton/.test(mobIstek) ? "VAR" : "yok"),
         "web satir iskeleti=" + (webMerkez.includes("<PersonRowSkeleton rows={2}") ? "var" : "YOK"),
         "mobil satir iskeleti=" + (mobMerkez.includes("<FriendCardSkeleton") ? "var" : "YOK"),
-        "web tablo kosul disi=" + (disarida(webMerkez, "<PersonRowSkeleton", "<FriendList friends") ? "var" : "YOK"),
-        "mobil tablo kosul disi=" + (disarida(mobMerkez, "<FriendCardSkeleton", "<FriendRows friends") ? "var" : "YOK"),
+        "web tablo lig sekmesinde=" + (disarida(webMerkez) ? "var" : "YOK"),
+        "mobil tablo lig sekmesinde=" + (disarida(mobMerkez) ? "var" : "YOK"),
         "web hata karti=" + (/err && data === null \? \([\s\S]{0,240}couldn_t_load/.test(webMerkez) ? "var" : "YOK"),
         "mobil hata karti=" + (/err && \(data === null \|\| !me\) \?[\s\S]{0,240}couldn_t_load/.test(mobMerkez) ? "var" : "YOK"),
         "web hatada bos veri=" + (/setData\(\(prev\) => prev \?\?/.test(webMerkez) ? "VAR" : "yok"),
         "mobil hatada bos veri=" + (/setData\(\(prev\) => prev \?\?/.test(mobMerkez) ? "VAR" : "yok"),
         /* Gercek dizilim de olculuyor: yukleme dali ona benzemek zorunda. */
-        "web gercek sira=" + (artan(sira(webMerkez, ["<Requests incoming", "<Quests friends", "<FriendList friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
-        "mobil gercek sira=" + (artan(sira(mobMerkez, ["<Requests incoming", "<Quests friends", "<FriendRows friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
+        "web gercek sira=" + (artan(sira(webMerkez, ["<Requests incoming", "<Quests friends", "<FriendList friends", "<Find "])) ? "dogru" : "AYRI"),
+        "mobil gercek sira=" + (artan(sira(mobMerkez, ["<Requests incoming", "<Quests friends", "<FriendRows friends", "<Find "])) ? "dogru" : "AYRI"),
       ],
       [
         "web kosullu iskelet=yok", "mobil kosullu iskelet=yok",
         "web olu iskelet=yok", "mobil olu iskelet=yok",
         "web satir iskeleti=var", "mobil satir iskeleti=var",
-        "web tablo kosul disi=var", "mobil tablo kosul disi=var",
+        "web tablo lig sekmesinde=var", "mobil tablo lig sekmesinde=var",
         "web hata karti=var", "mobil hata karti=var",
         "web hatada bos veri=yok", "mobil hatada bos veri=yok",
         "web gercek sira=dogru", "mobil gercek sira=dogru",
@@ -17352,23 +17364,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobLink = sil(read("mobile/src/lib/deepLink.ts"));
     const webTel = sil(read("src/components/telemetry.tsx"));
     const mobApp = sil(read("mobile/App.tsx"));
+    /* 2026-09-28: tek davet `/r/<KOD>` (Topluluk › Arkadaslar). Profil
+       baglantisi (`/u/<ad>?src=invite`) davet dugmesinden cikti; eski
+       isaretin okunmasi (`src=invite`) kurulu baglantilar icin duruyor. Acilma
+       olayi `/r` yolunda: web sayfada (`app/r/[code]`), mobil derin baglantida
+       (`kind: "referral"`). */
+    const webShare = sil(read("src/lib/share.ts"));
+    const mobShare = sil(read("mobile/src/lib/share.ts"));
+    const webR = sil(read("src/app/r/[code]/page.tsx"));
     sameList(
       "davet hunisi iki yariyla da olculuyor",
       [
-        "web baglanti=" + (/\/u\/\$\{me\.username\}\?src=invite/.test(webPay) ? "isaretli" : "ISARETSIZ"),
-        "mobil baglanti=" + (/\/u\/\$\{me\.username\}\?src=invite/.test(mobPay) ? "isaretli" : "ISARETSIZ"),
+        "web baglanti=" + (/\/r\/\$\{code\}/.test(webShare) && /shareInvite\(inviteText\(/.test(webPay) ? "/r/KOD" : "BASKA"),
+        "mobil baglanti=" + (/\/r\/\$\{referralCode\}/.test(mobShare) && /shareInvite\(/.test(mobPay) ? "/r/KOD" : "BASKA"),
         "mobil okuyor=" +
           (/get\("src"\) === "invite"/.test(mobLink) && /has\("invite"\)/.test(mobLink) ? "evet" : "HAYIR"),
         "web okuyor=" +
           (/get\("src"\) === "invite"/.test(webTel) && /has\("invite"\)/.test(webTel) ? "evet" : "HAYIR"),
-        "web olay=" + (/track\("invite_open"\)/.test(webTel) ? "var" : "YOK"),
-        "mobil olay=" + (/track\("invite_open"\)/.test(mobApp) ? "var" : "YOK"),
-        "web paylasim olayi=" + (/track\("share", 0, "profile"\)/.test(webPay) ? "var" : "YOK"),
-        "mobil paylasim olayi=" + (/track\("share", 0, "profile"\)/.test(mobPay) ? "var" : "YOK"),
+        "web olay=" + (/track\(userId, "invite_open"/.test(webR) && /track\("invite_open"\)/.test(webTel) ? "var" : "YOK"),
+        "mobil olay=" + (/kind === "referral"\) \{\s*track\("invite_open"\)/.test(mobApp) ? "var" : "YOK"),
+        "web paylasim olayi=" + (/track\("share", 0, kind\)/.test(webShare) ? "var" : "YOK"),
+        "mobil paylasim olayi=" + (/track\("share", 0, "invite"\)/.test(mobPay) ? "var" : "YOK"),
       ],
       [
-        "web baglanti=isaretli",
-        "mobil baglanti=isaretli",
+        "web baglanti=/r/KOD",
+        "mobil baglanti=/r/KOD",
         "mobil okuyor=evet",
         "web okuyor=evet",
         "web olay=var",
@@ -18688,14 +18708,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "profil karolarinin alanlari olu degil",
     ["alan=" + alanlar.length, "olu=" + (oluAlan.length ? oluAlan.join("+") : "yok")],
-    ["alan=5", "olu=yok"],
+    ["alan=6", "olu=yok"],
     "bulunan",
     "beklenen",
   );
+  /* 2026-09-28: Profil'in Gelisim kutusu ustalasilan kelime sayisini
+     GOSTERIYOR (`stats.mastered`), yani `getProgress` artik olu degil. Olcu:
+     cagriliyorsa sonucu `mastered`a akiyor. */
   sameList(
     "profil sayfasi olu sorgu atmiyor",
-    ["getProgress=" + (/getProgress\(/.test(sayfa) ? "CAGIRIYOR" : "yok")],
-    ["getProgress=yok"],
+    ["getProgress=" + (/getProgress\(/.test(sayfa) ? (/mastered: progress \?/.test(sayfa) && /stats\.mastered/.test(gorunum) ? "okunuyor" : "OLU") : "yok")],
+    ["getProgress=okunuyor"],
     "bulunan",
     "beklenen",
   );
@@ -18703,33 +18726,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const karolar = (src, desen) => [...src.matchAll(desen)].map((m) => m[1]);
   sameSet(
     "profil karo izgarasi",
-    karolar(mobEkran, /<StatTile value=\{[^}]*\} label=\{t\("([\w.]+)"\)\}/g),
-    karolar(gorunum, /<Stat value=\{[^}]*\} label=\{t\("([\w.]+)"\)\}/g),
+    karolar(mobEkran, /<Stat value=\{[^}]*\} label=\{t\("([\w.]+)"\)\}/g),
+    karolar(gorunum, /<span className="muted truncate text-caption">\{t\("(profile\.[\w.]+)"\)\}/g),
   );
-  /* Uc hal kalibi: iskelet YALNIZ yukleniyorken.
-     Olcu IKI YUZEYI ayri ayri okuyor. Ilk yazilisinda iki olcu de
-     `{meLoading ? (...) : me ? (` deseniydi, yalniz pencere boyu farkliydi -
-     genis pencere rozet blogunu da eslesiyordu, yani iki olcu AYNI seyi
-     soyluyordu (ayni sentineli uretmenin bir bicimi). Simdi her yuzeyin KENDI
-     isaretinden geriye dogru en yakin `{meLoading ? (` bulunuyor. */
-  const ucHal = (ad, isaret) => {
-    const i = mobEkran.indexOf(isaret);
-    if (i < 0) return ad + "=ISARET YOK";
-    /* Yuzeyi saran kosul: geriye dogru en yakin `{meLoading ? (` DEGIL, en
-       yakin KOSUL ACICISI. Ilk yazilisinda yalniz `meLoading` acicisi
-       araniyordu; izgara `{!me ? (`e cevrilince olcu bir ustteki rozet
-       blogunun acicisini buluyor ve "uc halli" demeye devam ediyordu -
-       pencerenin komsu bloga tasmasi. */
-    const acicilar = [...mobEkran.slice(0, i).matchAll(/\{(?:meLoading \? \(|!me \? \(|me \? \()/g)];
-    if (!acicilar.length) return ad + "=KOSUL YOK";
-    const son = acicilar[acicilar.length - 1];
-    if (!son[0].startsWith("{meLoading")) return ad + "=IKI HALLI";
-    return ad + "=" + (/\) : me \? \(/.test(mobEkran.slice(son.index, i)) ? "uc halli" : "IKI HALLI");
-  };
   sameList(
     "profil izgarasi uc halli",
     /* Kimlik kartindaki seri/XP rozetleri kalkti (2026-09-27); olcu yalniz izgarada. */
-    [ucHal("izgara", "<StatTile value=")],
+    /* 2026-09-28: karolar tek kartta uc sutun; her hucre kendi uc halini
+       tasiyor (`me ? deger : meLoading ? iskelet : "–"`). */
+    ["izgara=" + (/<Stat value=\{me \? String\(me\.streak\) : meLoading \? null : "–"\}/.test(mobEkran) && /<Stat value=\{me \? formatNumber\(me\.xp\) : meLoading \? null : "–"\}/.test(mobEkran) ? "uc halli" : "IKI HALLI")],
     ["izgara=uc halli"],
     "bulunan",
     "beklenen",
@@ -18892,15 +18897,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 
   const ubM = silX(read("mobile/src/ui/AppHeader.tsx"));
-  const ubW = silX(read("src/components/app-shell.tsx"));
+  const ubW = silX(read("src/components/app-header.tsx"));
   const bcM = silX(read("mobile/src/screens/ItemScreen.tsx"));
   const bcW = silX(read("src/components/skills/player-shell.tsx"));
   sameList(
     "sifir odul rozeti cizilmiyor",
     [
-      "ust bar mobil=" + (/\{streak > 0 && \(/.test(ubM) ? "kosullu" : "KOSULSUZ"),
-      "ust bar web=" + (/\{streak > 0 \? \(/.test(ubW) ? "kosullu" : "KOSULSUZ"),
-      "ust bar web glif=" + (/<BoltIcon size=\{15\} \/> \{formatNumber\(xp, lang\)\}/.test(ubW) ? "bolt" : "SPARK"),
+      /* UST BAR ALEVI 2026-09-28'DEN BERI HEP GORUNUR (Samet'in karari): seri 0
+         olunca Gelisim'e giden tek yol kayboluyordu. Sifirda SONUK cizilir -
+         bir odul degil, bir kapi. Olcu: iki tarafta da sifir hali sonuk. Kenar
+         cubugunun seri/XP rozetleri kalkti. */
+      "ust bar mobil=" + (/streak > 0 \? colors\.streakText : colors\.textFaint/.test(ubM) ? "sifirda sonuk" : "BASKA"),
+      "ust bar web=" + (/streak > 0\s*\?[\s\S]{0,160}: \{ background: "var\(--surface-2\)", color: "var\(--text-faint\)" \}/.test(ubW) ? "sifirda sonuk" : "BASKA"),
       /* SONUC SABLONU (2026-09-15): XP bandin alt satirinda bir oge
          (`xp > 0 ? \`+${xp} XP\` : null`), seri uc sayidan biri
          (`streak > 0 ? { … } : null`). Rozet JSX'i kalkti; kosul ayni. Webde
@@ -18911,9 +18919,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beceri web seri=" + (/\bstreak > 0 \?/.test(bcW) ? "kosullu" : "KOSULSUZ"),
     ],
     [
-      "ust bar mobil=kosullu",
-      "ust bar web=kosullu",
-      "ust bar web glif=bolt",
+      "ust bar mobil=sifirda sonuk",
+      "ust bar web=sifirda sonuk",
       "beceri mobil xp=kosullu",
       "beceri mobil seri=kosullu",
       "beceri web xp=kosullu",
@@ -19323,12 +19330,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     [
       "karo=" + ((w.match(/width: (\d+), height: (\d+),/) ?? []).slice(1, 3).join("x") || "YOK"),
       "yaricap=" + (/rounded-tile/.test(w) ? "md" : "FARKLI"),
-      "ikon=" + ((silM(read("src/components/profile/profile-view.tsx")).match(/<MenuRow [^>]*icon=\{<\w+ size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      /* 2026-09-28: profil menusu kalkti; satirin cok kullanildigi yer artik Ayarlar listesi. */
+      "ikon=" + ((silM(read("src/components/settings-nav.tsx")).match(/<MenuRow [^>]*icon=\{<\w+ size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "murekkep=" + (/color: `var\(--color-\$\{tone\}\)`/.test(w) ? "rol turevi" : "HAM TON"),
-      "etiket=" + (/className="flex-1 text-strong"/.test(w) ? "bodyStrong" : "FARKLI"),
+      "etiket=" + (/className="min-w-0 flex-1 truncate text-strong"/.test(w) ? "bodyStrong" : "FARKLI"),
       "sevron=" + ((w.match(/<ChevronRightIcon size=\{(\d+)\} className="shrink-0" style=\{\{ color: "var\(--text-faint\)" \}\}/) ?? [])[1] ?? "YOK"),
       "dikey pay=" + (/gap-3 py-3/.test(w) ? "md" : "FARKLI"),
-      "ayrac=" + (/last \? undefined : \{ borderBottom: "1px solid var\(--hairline\)" \}/.test(w) ? "sonda yok" : "FARKLI"),
+      "ayrac=" + (/last \? \{\} : \{ borderBottom: "1px solid var\(--hairline\)" \}/.test(w) ? "sonda yok" : "FARKLI"),
     ],
     "mobil",
     "web",
@@ -19351,9 +19359,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "prop tipi=" + (/tone: MenuTone;/.test(w) ? "MenuTone" : "FARKLI"),
       "profil el yapimi=" + (eskiKalip.test(sayfa("src/components/profile/profile-view.tsx")) ? "VAR" : "yok"),
       "gelisim el yapimi=" + (eskiKalip.test(sayfa("src/components/progress-view.tsx")) ? "VAR" : "yok"),
-      "cagri yeri=" + [...sayfa("src/components/profile/profile-view.tsx").matchAll(/<MenuRow /g)].length + "+" + [...sayfa("src/components/progress-view.tsx").matchAll(/<MenuRow /g)].length,
+      "cagri yeri=" + [...sayfa("src/components/settings-nav.tsx").matchAll(/<MenuRow /g)].length + "+" + [...sayfa("src/components/progress-view.tsx").matchAll(/<MenuRow /g)].length,
     ],
-    ["ton tipi=aile adi (6)", "prop tipi=MenuTone", "profil el yapimi=yok", "gelisim el yapimi=yok", "cagri yeri=5+2"],
+    ["ton tipi=aile adi (6)", "prop tipi=MenuTone", "profil el yapimi=yok", "gelisim el yapimi=yok", "cagri yeri=7+2"],
     "bulunan",
     "beklenen",
   );
@@ -21320,7 +21328,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "ayar grubunun olculeri",
     [
-      "ust pay=" + (/marginTop: spacing\.xxl/.test(mobGrupBlok) ? "28" : "BASKA"),
+      "ust pay=" + (/marginTop: title \? spacing\.xxl/.test(mobGrupBlok) ? "28" : "BASKA"),
       "kart dolgusu=" + (/<Card padded>/.test(mobGrupBlok) ? "16" : "BASKA"),
       "bolum payi=" + (/paddingTop: spacing\.lg/.test(mobGrupBlok) ? "16" : "BASKA"),
     ],
