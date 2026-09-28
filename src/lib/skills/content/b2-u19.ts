@@ -415,7 +415,7 @@ export const b2U19: SkillExercise[] = [
       { de: "die Bescheinigung", tr: "belge", en: "certificate" },
       { de: "der Mietvertrag", tr: "kira sözleşmesi", en: "lease" },
       { de: "die Halle", tr: "atölye binası", en: "workshop building" },
-      { de: "die Berufsgenossenschaft", tr: "meslek sigortası kurumu", en: "occupational accident insurer" },
+      { de: "die Berufsgenossenschaft", tr: "meslek sigortası kurumu", en: "workers' compensation insurer" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],
     minutes: 12,

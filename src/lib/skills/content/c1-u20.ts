@@ -227,7 +227,7 @@ export const c1U20: SkillExercise[] = [
     genre: "dialogue",
     intro: "Kuşak sözleşmesi: yük kimin üstünde?",
     gloss: [
-      { de: "der Generationenvertrag", tr: "kuşak sözleşmesi", en: "generational contract" },
+      { de: "der Generationenvertrag", tr: "kuşak sözleşmesi", en: "intergenerational contract" },
       { de: "die Beitragslast", tr: "prim yükü", en: "contribution burden" },
       { de: "zulasten", tr: "-in aleyhine", en: "at the expense of" },
       { de: "solidarisch", tr: "dayanışmacı", en: "based on solidarity" },
